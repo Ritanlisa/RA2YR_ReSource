@@ -16,7 +16,7 @@ int MovementAI::IsPathMovementAllowed()
 
   if ( !byte_A8E9A0 ) /*0x487e0b*/
     return this->u32_100 != 0; /*0x487e0b*/
-  v2 = (unsigned int *)this->u32_E4; /*0x487e0d*/
+    v2 = (unsigned int *)*((unsigned int *)this + 228);
   if ( !v2 ) /*0x487e15*/
     return this->u32_100 != 0; /*0x487e15*/
   while ( (*(int (**)(unsigned int *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
@@ -40,13 +40,13 @@ int MovementAI::IsProgressAtEnd()
   int v2; // edx
   int MovementAI_field_10; // eax
 
-  if ( !IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
+    if ( !*((unsigned char *)this + 96) )
     return 1; /*0x4a5150*/
-  MovementAI_field_14 = this->MovementAI_field_14; /*0x4a515b*/
+    v1 = *((unsigned int *)this + 80);
   if ( !MovementAI_field_14 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
-  v2 = this->m_Target[2]; /*0x4a5166*/
-  MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
+    v2 = *((unsigned int *)this + 32);
+    v3 = *((unsigned int *)this + 64);
   if ( v2 != -1 ) /*0x4a516f*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= MovementAI_field_10 ) /*0x4a517b*/
@@ -54,7 +54,7 @@ int MovementAI::IsProgressAtEnd()
     else
       MovementAI_field_10 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a517d*/
   }
-  return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
+    return (double)(v1 - v3) / (double)*((int *)this + 80) == 1.0;
 }
 } // namespace gamemd
 // 0x4A5360
@@ -64,19 +64,19 @@ void MovementAI::Check()
   char result; // al
 
   result = 0; /*0x4a5363*/
-  if ( IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5360*/
+    if ( *((unsigned int *)this + 96) )
   {
-    if ( IDA_BYTE1(this->MovementAI_field_18) ) /*0x4a5369*/
+        if ( *((unsigned int *)this + 100) )
     {
-      IDA_LOBYTE(this->MovementAI_field_18) = 0; /*0x4a536e*/
-      IDA_BYTE1(this->MovementAI_field_18) = 1; /*0x4a5371*/
+            *((unsigned int *)this + 96) = 0;
+            *((unsigned int *)this + 100) = 1;
     }
-    if ( IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5375*/
+        if ( *((unsigned int *)this + 96) )
     {
-      if ( !IDA_BYTE1(this->MovementAI_field_18) ) /*0x4a537a*/
+            if ( !*((unsigned int *)this + 100) )
       {
-        IDA_LOBYTE(this->MovementAI_field_18) = 0; /*0x4a537f*/
-        IDA_BYTE1(this->MovementAI_field_18) = 0; /*0x4a5382*/
+                *((unsigned int *)this + 96) = 0;
+                *((unsigned int *)this + 100) = 0;
       }
     }
   }

@@ -17,10 +17,10 @@ int LCWStraw::Dtor()
   v2 = (void *)((unsigned int)((void *)this->u32_14));
   *(unsigned int *)this->__pad_0 = (void*)&LCWStraw_vftable; /*0x552456*/
   RA2_OPDEL(v2); /*0x55245d*/
-  v3 = (void *)this->u32_18; /*0x552462*/
-  this->u32_14 = 0; /*0x552465*/
+    v3 = (void *)*((unsigned int *)this + 24);
+    *((unsigned int *)this + 20) = 0;
   RA2_OPDEL(v3); /*0x55246d*/
-  this->u32_18 = 0; /*0x552477*/
+    *((unsigned int *)this + 24) = 0;
 // 0x6c9850
   return Straw::Dtor(); /*0x552483*/
 }

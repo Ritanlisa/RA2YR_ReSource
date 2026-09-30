@@ -15,7 +15,7 @@
 namespace gamemd {
 void VtableStub::VtableStub_643E70()
 {
-  *(&this->q0085) = 0; /*0x643e70*/
+    *((unsigned int *)this + 100) = 0;
 }
 }
 // 0x65D690

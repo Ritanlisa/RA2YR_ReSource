@@ -13,9 +13,9 @@ int ColorListClass::SetColor()
 {
   int v1; // eax
 
-  v1 = this->u32_16C; /*0x557ae0*/
-  if ( this->u32_44 > v1 ) /*0x557aeb*/
-    return *(unsigned int *)(this->u32_38 + 4 * v1); /*0x557af3*/
+    v1 = *((unsigned int *)this + 364);
+    if ( *((unsigned int *)this + 68) > v1 )
+        return *(unsigned int *)(*((unsigned int *)this + 56) + 4 * v1);
   else
     return 0; /*0x557aed*/
 }
@@ -28,19 +28,19 @@ int ColorListClass::Clear(unsigned int a2)
   int v4; // ecx
 
   result = a2; /*0x557f40*/
-  if ( a2 >= this->u32_44 ) /*0x557f4a*/
+    if ( a2 >= *((unsigned int *)this + 68) )
   {
-    this->u32_16C = 0; /*0x557f9b*/
+        *((unsigned int *)this + 364) = 0;
   }
   else
   {
-    this->u32_16C = a2; /*0x557f4c*/
+        *((unsigned int *)this + 364) = a2;
     (*(void (**)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
-    if ( this->u32_16C < this->u32_170 ) /*0x557f67*/
-      (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, this->u32_16C); /*0x557f6e*/
-    v4 = this->q014; /*0x557f74*/
-    result = this->u32_16C; /*0x557f7d*/
-    if ( result >= v4 + this->u32_170 ) /*0x557f87*/
+        if ( *((unsigned int *)this + 364) < *((unsigned int *)this + 368) )
+            (*(void (**)(int *, unsigned int))(*(char *)this + 768))(this, *((unsigned int *)this + 364));
+        v4 = *((unsigned int *)this + 80);
+        result = *((unsigned int *)this + 364);
+        if ( result >= v4 + *((unsigned int *)this + 368) )
       return (*(int (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
@@ -52,12 +52,12 @@ void ColorListClass::RemoveColor(wchar_t * String2)
 {
   int v3; // esi
 
-  if ( String2 && this->u32_44 > 0 ) /*0x558022*/
+    if ( String2 && (int)*((unsigned int *)this + 68) > 0 )
   {
     v3 = 0; /*0x558024*/
-    while ( _wcsicmp(*(const wchar_t **)(this->u32_38 + 4 * v3), String2) ) /*0x55803c*/
+        while ( _wcsicmp(*(const wchar_t **)(*((unsigned int *)this + 56) + 4 * v3), String2) )
     {
-      if ( ++v3 >= this->u32_44 ) /*0x558044*/
+            if ( ++v3 >= *((unsigned int *)this + 68) )
         return; /*0x558044*/
     }
     (*(void (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 184))(this, v3); /*0x558051*/
@@ -68,7 +68,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
 namespace gamemd {
 int ColorListClass::GetColor(int a2)
 {
-  return (*(int (**)(ColorListClass *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 204))(this, a2, 0); /*0x488eef*/
+    return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)this + 204))(this, a2, 0);
 }
 } // namespace gamemd
 // 0x488F00
@@ -83,7 +83,7 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
   v4 = (char *)((unsigned int)((char *)this + 372));
   *(unsigned int *)this->__pad_0 = (void*)&ColorListClass_vftable; /*0x488f13*/
   (*(void (**)(char *))(v3 + 12))((char *)this + 372); /*0x488f19*/
-  this->u32_190 = 0; /*0x488f1e*/
+    *((unsigned int *)Block + 100) = 0;
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
   *(unsigned int *)v4 = (void*)&VectorClass_int_vftable; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/

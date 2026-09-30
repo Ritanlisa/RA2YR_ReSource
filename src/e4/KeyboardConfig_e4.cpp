@@ -102,7 +102,7 @@ int KeyboardConfig::LoadINI()
   }
   else
   {
-    this->Debug::Log(); /*0x533efe*/
+        Debug::Log();
     *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
@@ -128,17 +128,17 @@ AbstractClass * KeyboardConfig::ReleaseBuffer()
   v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+    for ( i = 0; i < *((unsigned int *)this + 16); *(unsigned int *)&v3[v5 + 4] = v6[1] )
   {
     v5 = 8 * i; /*0x538bb9*/
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x538bc2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   RA2_OPDEL(); /*0x538bdb*/
-  v7 = a2 + v3->vtable3; /*0x538be6*/
+    v7 = a2 + *((unsigned int *)this + 32);
   *(unsigned int *)v3 = v3; /*0x538be8*/
-  v3->vtable3 = v7; /*0x538bea*/
-  v3->uniqueId = 0; /*0x538bed*/
+    *((unsigned int *)this + 32) = v7;
+    *((unsigned int *)this + 64) = 0;
   return 1; /*0x538bf4*/
 }
 } // namespace gamemd

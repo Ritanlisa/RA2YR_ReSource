@@ -689,8 +689,8 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
 
   v2 = this; /*0x627598*/
   v36 = this; /*0x62759c*/
-  v3 = *(unsigned int *)this->__pad_0; /*0x6275a0*/
-  if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x6275a6*/
+    v3 = (ObjectClass *)*this;
+    if ( *this == -1 )
     return 0; /*0x6275ab*/
   strcpy(String, aP1); /*0x6275d6*/
   strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/

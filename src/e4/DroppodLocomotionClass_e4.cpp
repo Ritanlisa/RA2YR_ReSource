@@ -90,7 +90,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1452) > (int)thisa ) /*0x4b5bd5*/
     thisa = *(DropPodLocomotionClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1452); /*0x4b5bd7*/
   v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1456); /*0x4b5bf3*/
-  if ( !a1->__pad_18[0] ) /*0x4b5bdb*/
+    if ( *(unsigned char *)(a1 + 24) )
     *(double *)v34 = (double)v36; /*0x4b5c1c*/
   v33 = (double)(int)thisa; /*0x4b5bf4*/
   Math::ArcTan2(v30); /*0x4b5bf8*/
@@ -344,14 +344,14 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)this->LocomotionClass = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
-  *(unsigned int *)this->__pad_18 = (void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
-  Piggybackee = this->Piggybackee; /*0x4b6707*/
+    *Block = (ILocomotion *)&DropPodLocomotionClass::`vftable';
+    *(Block + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable';
+    *(Block + 6) = (ILocomotion *)&vt_DropPodLocomotionClass;
+    v3 = *(Block + 11);
   if ( Piggybackee ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
   LocomotionClass::Construct(); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
     RA2_OPDEL(); /*0x4b6723*/
-  return this->LocomotionClass; /*0x4b672d*/
+    return (DropPodLocomotionClass *)Block;
 }

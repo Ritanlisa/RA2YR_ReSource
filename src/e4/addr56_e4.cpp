@@ -74,7 +74,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   unsigned int v31[4]; // [esp+6Ch] [ebp-10h] BYREF
 
   v2 = IDA___PAIR64__(yBottom, xRight); /*0x560bf9*/
-  this->Debug::Log(); /*0x560c00*/
+    Debug::Log();
   lParam = *(unsigned long long *)&g_DisplayWidth; /*0x560c13*/
   BitShift_Green = GetBitShift_Green(); /*0x560c20*/
   BitShift_Red = GetBitShift_Red(); /*0x560c27*/
@@ -90,46 +90,46 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560c78*/
     *(unsigned long long *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560c7e*/
     *(unsigned long long *)&g_DisplayWidth = v2; /*0x560c8a*/
-    this->Debug::Log(); /*0x560c96*/
+        Debug::Log();
   LABEL_19:
     if ( DSurface_Alternate ) /*0x560e07*/
     {
-      this->Debug::Log(); /*0x560e0e*/
+            Debug::Log();
       if ( DSurface_Alternate ) /*0x560e1e*/
         (*(void (**)(DSurface *, int))DSurface_Alternate->DSurface_field_0x0)(DSurface_Alternate, 1); /*0x560e24*/
       DSurface_Alternate = 0; /*0x560e26*/
     }
     if ( g_DSurface_Hidden ) /*0x560e32*/
     {
-      this->Debug::Log(); /*0x560e39*/
+            Debug::Log();
       if ( g_DSurface_Hidden ) /*0x560e49*/
         (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->AbstractClass)(g_DSurface_Hidden, 1); /*0x560e4f*/
       g_DSurface_Hidden = 0; /*0x560e51*/
     }
     if ( DSurface_Tile ) /*0x560e5d*/
     {
-      this->Debug::Log(); /*0x560e64*/
+            Debug::Log();
       if ( DSurface_Tile ) /*0x560e74*/
         (*(void (**)(DSurface *, int))DSurface_Tile->DSurface_field_0x0)(DSurface_Tile, 1); /*0x560e7a*/
       DSurface_Tile = 0; /*0x560e7c*/
     }
     if ( DSurface_Sidebar ) /*0x560e88*/
     {
-      this->Debug::Log(); /*0x560e8f*/
+            Debug::Log();
       if ( DSurface_Sidebar ) /*0x560e9f*/
         (*(void (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0)(DSurface_Sidebar, 1); /*0x560ea5*/
       DSurface_Sidebar = 0; /*0x560ea7*/
     }
     if ( DSurface_Composite ) /*0x560eb3*/
     {
-      this->Debug::Log(); /*0x560eba*/
+            Debug::Log();
       if ( DSurface_Composite ) /*0x560eca*/
         (**(void (***)(AudioStream *, int))DSurface_Composite->__pad_0)(DSurface_Composite, 1); /*0x560ed0*/
       DSurface_Composite = 0; /*0x560ed2*/
     }
     if ( g_DDraw_Initialized ) /*0x560ee6*/
     {
-      this->Debug::Log(); /*0x560f1f*/
+            Debug::Log();
       SetRect(&rc, 0, 0, v2, IDA_SHIDWORD(v2)); /*0x560f30*/
       WindowLongA = GetWindowLongA(g_hWnd, -20); /*0x560f4c*/
       v16 = GetMenu(g_hWnd) != 0; /*0x560f60*/
@@ -139,9 +139,9 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     }
     else
     {
-      this->Debug::Log(); /*0x560ee8*/
+            Debug::Log();
       SetWindowPos(g_hWnd, 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
-      this->Debug::Log(); /*0x560f09*/
+            Debug::Log();
       g_DSurface_Primary = (DSurface *)DSurface::CreatePrimary(0); /*0x560f18*/
     }
     Viewport = Display::GetViewport(v30); /*0x560fa1*/
@@ -167,7 +167,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     v30[1] = 0; /*0x56100a*/
     AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56101e*/
-    this->Debug::Log(); /*0x561024*/
+        Debug::Log();
     sub_491100(BitShift_Red, BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
@@ -201,42 +201,42 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     TacticalClass::BuildCommandBar((TabClass *)1, v2, v19); /*0x561113*/
     SidebarClass::LoadResources(v20); /*0x56111d*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x561129*/
-    for ( i = (Dialog *)this->Dialog::GetCurrent(); i; i = (Dialog *)Dialog::FindByPtr(i) ) /*0x561137*/
+        for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)Dialog::FindByPtr(i) )
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
       ResizeDialogAndEnum((HWND)i, (LPARAM)&lParam); /*0x561146*/
     }
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561160*/
-    this->Debug::Log(); /*0x561168*/
+        Debug::Log();
     return 1; /*0x561170*/
   }
   if ( stru_887598.lineTrailer ) /*0x560cac*/
   {
-    this->Debug::Log(); /*0x560cb3*/
+        Debug::Log();
     if ( stru_887598.lineTrailer ) /*0x560cc3*/
       (**(void (***)(void *, int))stru_887598.lineTrailer)(stru_887598.lineTrailer, 1); /*0x560cc9*/
     stru_887598.lineTrailer = 0; /*0x560ccb*/
   }
   if ( g_DSurface_Primary ) /*0x560cd7*/
   {
-    this->Debug::Log(); /*0x560cde*/
+        Debug::Log();
     if ( g_DSurface_Primary ) /*0x560cee*/
       (*(void (**)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x560cf4*/
     g_DSurface_Primary = 0; /*0x560cf6*/
   }
   if ( InitializeDDraw((int)g_hWnd, v2, IDA_HIDWORD(v2), 0x10u) ) /*0x560d07*/
   {
-    this->Debug::Log(); /*0x560dd4*/
+        Debug::Log();
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[8] = 0; /*0x560de2*/
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560de7*/
     *(unsigned long long *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560ded*/
-    this->Debug::Log(); /*0x560df9*/
+        Debug::Log();
     goto LABEL_19; /*0x560df9*/
   }
-  this->Debug::Log(); /*0x560d19*/
-  this->Debug::Log(); /*0x560d23*/
+    Debug::Log();
+    Debug::Log();
   g_DSurface_Primary = (DSurface *)DSurface::CreatePrimary(0); /*0x560d32*/
-  this->Debug::Log(); /*0x560d3c*/
+    Debug::Log();
   v4 = (MouseClass *)RA2_OPNEW(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
     stru_887598.lineTrailer = ((MouseClass *)(v4))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
@@ -503,7 +503,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
         {
           v6 = *(unsigned int *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
-          v7 = this->M244; /*0x56afa9*/
+                    v7 = *((unsigned int *)this + 244);
           Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
             && (int16_t)v6 - IDA_SHIWORD(v6) < v7
@@ -579,7 +579,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
         {
           v6 = *(unsigned int *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
-          v7 = this->q03D; /*0x56b2ba*/
+                    v7 = *((unsigned int *)this + 244);
           Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
             && (int16_t)v6 - IDA_SHIWORD(v6) < v7
@@ -812,7 +812,7 @@ unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
   int v6; // ecx
   int v7; // esi
 
-  v3 = this->q03D; /*0x5654e5*/
+    v3 = *((unsigned int *)this + 244);
   v4 = a3[1]; /*0x5654ec*/
   v5 = *a3; /*0x5654f5*/
   if ( (v3 & 1) != 0 ) /*0x5654f7*/
@@ -837,7 +837,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   int16_t v7; // si
   int16_t *v9; // [esp+14h] [ebp+8h]
 
-  v3 = this->q03D; /*0x565615*/
+    v3 = *((unsigned int *)this + 244);
   v4 = a3[1]; /*0x56561c*/
   v5 = *a3; /*0x565627*/
   if ( (v3 & 1) != 0 ) /*0x565629*/
@@ -870,27 +870,27 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   v3 = 0; /*0x56ae48*/
   LCWPipe::Constructor((LCWPipe *)v14, 0, 0x2000); /*0x56ae54*/
   Pipe::SetDelegate(v14, v9); /*0x56ae62*/
-  for ( i = 0; i < this->customSound_controller; ++i ) /*0x56ae71*/
+    for ( i = 0; i < *((unsigned int *)this + 320); ++i )
   {
-    v5 = *(unsigned int *)(this->q04F + 4 * i); /*0x56ae7b*/
+        v5 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * i);
     if ( v5 ) /*0x56ae80*/
       v6 = LCW::Compress((LCWPipe *)v14, (char *)(v5 + 56), 2); /*0x56ae86*/
     else
       v6 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[144], 2); /*0x56ae91*/
     v3 += (int)v6; /*0x56ae96*/
   }
-  for ( j = 0; j < this->customSound_controller; ++j ) /*0x56aead*/
+    for ( j = 0; j < *((unsigned int *)this + 320); ++j )
   {
-    v8 = *(unsigned int *)(this->q04F + 4 * j); /*0x56aeb7*/
+        v8 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * j);
     if ( v8 ) /*0x56aebc*/
       v9 = LCW::Compress((LCWPipe *)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
     else
       v9 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 2, 1); /*0x56aecf*/
     v3 += (int)v9; /*0x56aed4*/
   }
-  for ( k = 0; k < this->customSound_controller; ++k ) /*0x56aeeb*/
+    for ( k = 0; k < *((unsigned int *)this + 320); ++k )
   {
-    v11 = *(unsigned int *)(this->q04F + 4 * k); /*0x56aef5*/
+        v11 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * k);
     if ( v11 ) /*0x56aefa*/
       v12 = LCW::Compress((LCWPipe *)v14, (char *)(v11 + 283), 1); /*0x56af02*/
     else
@@ -924,20 +924,20 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
   v2 = 0; /*0x56b0fa*/
   v3 = 0; /*0x56b0fc*/
   a2 = a2; /*0x56b0ff*/
-  for ( i = 0; v3 < this->vtable2.lastLayer; i = v3 ) /*0x56b10d*/
+    for ( i = 0; v3 < v16[80]; i = v3 )
   {
-    v5 = *(unsigned int *)(this->q04F + 4 * v3); /*0x56b11d*/
+        v5 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * v3);
     if ( v3 ) /*0x56b120*/
     {
       if ( v5 ) /*0x56b128*/
       {
         v6 = *(unsigned int *)(v5 + 36); /*0x56b12e*/
-        v7 = this->q03D; /*0x56b131*/
+                v7 = *((unsigned int *)this + 244);
         IDA_HIWORD(a2) = IDA_HIWORD(v6); /*0x56b137*/
         v8 = (int16_t)v6; /*0x56b13b*/
         v9 = IDA_SHIWORD(v6); /*0x56b13e*/
         a2 = (int *)(IDA_SHIWORD(a2) + v8); /*0x56b148*/
-        if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * this->vtable2.ambientSoundController[4] ) /*0x56b17b*/
+                if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] )
         {
           a2 = *(int **)(v5 + 36); /*0x56b18b*/
           if ( a2 != *(int **)&g_MissionQueueFrame.waypoints[2134] /*0x56b1bd*/

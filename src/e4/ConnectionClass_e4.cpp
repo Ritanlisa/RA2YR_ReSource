@@ -28,8 +28,8 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   int v14; // eax
   signed int v15; // [esp+14h] [ebp+8h]
 
-  v6 = *(unsigned int *)this->Active; /*0x48b755*/
-  if ( this-((unsigned int *)(>PhoneNumber))[8] == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
+    v6 = *((unsigned int *)this + 8);
+    if ( *((unsigned int *)this + 56) == v6 || a3 > *((unsigned int *)this + 12) )
     return 0; /*0x48b768*/
   v8 = 0; /*0x48b76a*/
   if ( v6 <= 0 ) /*0x48b772*/
@@ -47,7 +47,7 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   if ( v8 == -1 ) /*0x48b793*/
   {
   LABEL_9:
-    this->Debug::Log(); /*0x48b795*/
+        Debug::Log();
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
@@ -56,11 +56,11 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[7] + v12) &= ~4u; /*0x48b7d2*/
   v13 = dword_887340; /*0x48b7d9*/
   if ( dword_887338 != -1 ) /*0x48b7e2*/
-    v13 += this->Timer::GetTicks() - dword_887338; /*0x48b7f4*/
+        v13 += Timer::GetTicks() - MEMORY[0x887338];
   *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 4) = v13; /*0x48b7fb*/
   *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 8) = a3; /*0x48b806*/
   qmemcpy(*(void **)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 12), a2, a3); /*0x48b816*/
-  if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b832*/
+    if ( a4 && a5 > 0 && a5 <= *((unsigned int *)this + 16) )
   {
     qmemcpy(*(void **)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 20), a4, a5); /*0x48b842*/
     *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 16) = a5; /*0x48b84e*/
@@ -69,7 +69,7 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   {
     *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[7] + v12 + 16) = 0; /*0x48b857*/
   }
-  *(unsigned int *)(this-((unsigned int *)(>PhoneNumber))[10] + 4 * this->PhoneNumber[8]) = v15; /*0x48b86a*/
+    *(unsigned int *)(*((unsigned int *)this + 64) + 4 * *((unsigned int *)this + 56)) = v15;
   v14 = this-((unsigned int *)(>PhoneNumber))[9] + 1; /*0x48b874*/
   ++this-((unsigned int *)(>PhoneNumber))[8]; /*0x48b875*/
   this-((unsigned int *)(>PhoneNumber))[9] = v14; /*0x48b878*/
@@ -87,25 +87,25 @@ int ConnectionClass::initQueue(void* a1, void* a2, void* a3)
   unsigned int v6; // eax
   unsigned int result; // eax
 
-  v2 = this->u32_18; /*0x48ba10*/
+    v2 = *((unsigned int *)this + 24);
   if ( v2 == 256 ) /*0x48ba1c*/
   {
-    v3 = a2 - this->u32_1C + this->PacketsReceived; /*0x48ba2c*/
-    this->PacketsReceived = v3; /*0x48ba2e*/
+        v3 = a2 - *((unsigned int *)this + 28) + *((unsigned int *)this + 20);
+        *((unsigned int *)this + 20) = v3;
     v4 = ((uint8_t)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
   else
   {
     v5 = v2 + 1; /*0x48ba4e*/
-    v6 = a2 + this->PacketsReceived; /*0x48ba56*/
-    this->u32_18 = v5; /*0x48ba58*/
-    this->PacketsReceived = v6; /*0x48ba5b*/
+        v6 = a2 + *((unsigned int *)this + 20);
+        *((unsigned int *)this + 24) = v5;
+        *((unsigned int *)this + 20) = v6;
     v4 = v6 / v5; /*0x48ba5e*/
   }
-  this->u32_1C = v4; /*0x48ba60*/
-  result = this->Active; /*0x48ba63*/
+    *((unsigned int *)this + 28) = v4;
+    result = *((unsigned int *)this + 32);
   if ( a2 > result ) /*0x48ba68*/
-    this->Active = a2; /*0x48ba6a*/
+        *((unsigned int *)this + 32) = a2;
   return result; /*0x48ba6d*/
 }
 } // namespace gamemd
@@ -119,7 +119,7 @@ void ConnectionClass::dtor()
   v2 = (void *)((unsigned int)((void *)this->Active));
   *(unsigned int *)this->__pad_0 = (void*)&ConnectionClass_vftable; /*0x48bee6*/
   RA2_OPDEL(v2); /*0x48beed*/
-  PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
+    v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 4);
   if ( PlayerIndex ) /*0x48befb*/
     (**PlayerIndex)(PlayerIndex, 1); /*0x48bf01*/
 }
@@ -128,33 +128,33 @@ void ConnectionClass::dtor()
 namespace gamemd {
 AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
-  **(unsigned short **)(&this->LastPacketTime2) = this->__pad_009; /*0x48bf4b*/
+    **(unsigned short **)((char *)this + 128) = *((unsigned short *)this + 144);
   if ( aP3 ) /*0x48bf54*/
   {
-    *(unsigned char *)(this->Active + 2) = 0; /*0x48bf59*/
-    *(unsigned int *)(this->Active + 4) = this->PacketsSent; /*0x48bf63*/
-    this->Debug::Log(); /*0x48bf6f*/
+        *(unsigned char *)(*((unsigned int *)this + 128) + 2) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 128) + 4) = *((unsigned int *)this + 256);
+        Debug::Log();
   }
   else
   {
-    *(unsigned char *)(this->Active + 2) = 1; /*0x48bf7c*/
-    *(unsigned int *)(this->Active + 4) = this->u32_3C; /*0x48bf86*/
+        *(unsigned char *)(*((unsigned int *)this + 128) + 2) = 1;
+        *(unsigned int *)(*((unsigned int *)this + 128) + 4) = *((unsigned int *)this + 240);
   }
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 && byte_A8DBA0 ) /*0x48bf99*/
-    *(unsigned char *)(this->Active + 3) = aP4; /*0x48bfa2*/
-  if ( this->u32_1C < (unsigned int)(aP2) ) /*0x48bfae*/
+        *(unsigned char *)(*((unsigned int *)this + 128) + 3) = (unsigned char)aP4;
+    if ( *((unsigned int *)this + 112) < (int)aP2 )
   {
-    this->Debug::Log(); /*0x48bfb6*/
-    this->Debug::Log(); /*0x48bfc1*/
+        Debug::Log();
+        Debug::Log();
     return 0; /*0x48bfcd*/
   }
-  qmemcpy((void *)(this->Active + 14), aP1, aP2); /*0x48bfe5*/
+    qmemcpy((void *)(*((unsigned int *)this + 128) + 14), aP1, (unsigned int)aP2);
   if ( !ConnectionClass::queueSendPacket(this->Active, aP2 + 14, 0, 0, 0) ) /*0x48c006*/
     return 0; /*0x48c006*/
   if ( aP3 ) /*0x48c00e*/
-    ++this->PacketsSent; /*0x48c015*/
+        ++*((unsigned int *)this + 256);
   else
-    ++this->u32_3C; /*0x48c026*/
+        ++*((unsigned int *)this + 240);
   return 1; /*0x48bfc9*/
 }
 } // namespace gamemd
@@ -187,9 +187,9 @@ int ConnectionClass::receivePacket(int a2, int a3)
   char v28; // [esp+12h] [ebp-Eh]
   unsigned char v29[13]; // [esp+13h] [ebp-Dh]
 
-  if ( *(unsigned short *)a2 != this->__pad_009 ) /*0x48c054*/
+    if ( *(unsigned short *)a2 != *((unsigned short *)this + 18) )
   {
-    ++this->u32_18; /*0x48c05b*/
+        ++*((unsigned int *)this + 24);
     return 0; /*0x48c066*/
   }
   v5 = *(unsigned char *)(a2 + 2); /*0x48c069*/
@@ -202,46 +202,46 @@ int ConnectionClass::receivePacket(int a2, int a3)
       {
         if ( ConnectionClass::allocPacketSlot((ConnectionClass *)PlayerIndex, (const void *)a2, a3, 0, 0) ) /*0x48c115*/
         {
-          v11 = this->u32_34 + 1; /*0x48c14b*/
-          this->u32_34 = v11; /*0x48c14c*/
-          this->LastPacketTime = *(unsigned int *)(a2 + 4) - v11 + 1; /*0x48c155*/
+                    v10 = *((unsigned int *)this + 52) + 1;
+                    *((unsigned int *)this + 52) = v10;
+                    *((unsigned int *)this + 12) = *(unsigned int *)(a2 + 4) - v10 + 1;
           v12 = *(unsigned int *)(a2 + 4); /*0x48c158*/
           if ( v12 ) /*0x48c15d*/
-            this->PacketsSent = 100 - 100 * v11 / (unsigned int)(v12 + 1); /*0x48c174*/
+                        *((unsigned int *)this + 16) = 100 - 100 * v10 / (unsigned int)(v11 + 1);
           return 1; /*0x48c17a*/
         }
         else
         {
-          this->Debug::Log(); /*0x48c12d*/
-          ++this->PacketsReceived; /*0x48c139*/
+                    Debug::Log();
+                    ++*((unsigned int *)this + 20);
           return 0; /*0x48c13f*/
         }
       }
       else
       {
-        ++this->PacketsReceived; /*0x48c0f4*/
-        this->Debug::Log(); /*0x48c0f7*/
+                ++*((unsigned int *)this + 20);
+                Debug::Log();
         return 0; /*0x48c0ff*/
       }
     }
     if ( !v5 ) /*0x48c188*/
     {
-      v13 = this->q011; /*0x48c18e*/
+            v12 = *((unsigned int *)this + 68);
       if ( *(unsigned int *)(a2 + 4) <= v13 && v13 != -1 ) /*0x48c19b*/
       {
   LABEL_40:
         v25 = *(unsigned int *)(a2 + 4); /*0x48c288*/
-        v27 = this->__pad_009; /*0x48c28f*/
+                v25 = *((unsigned short *)this + 18);
         v28 = 2; /*0x48c29c*/
         *(unsigned int *)&v29[1] = v25; /*0x48c2a1*/
         if ( unk_A8DBA0 ) /*0x48c2a5*/
           v29[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
         else
           v29[0] = 0; /*0x48c2b0*/
-        this->Debug::Log(); /*0x48c2c6*/
+                Debug::Log();
         unk_A8EA0C = unk_A8EA0C; /*0x48c2cb*/
         IDA_LOBYTE(unk_A8EA0C) = this == (ConnectionClass *)unk_A8EA0C; /*0x48c2d7*/
-        (*(void (**)(ConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 /*0x48c2ea*/
+                (*(void (**)(unsigned int *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(char *)this + 144))(
                                                                                                + 36))(
           this,
           &v27,
@@ -252,7 +252,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
           0);
         return 1; /*0x48c2f9*/
       }
-      v14 = (Terrain *)this->PlayerIndex; /*0x48c1a1*/
+            v13 = (unsigned int *)*((unsigned int *)this + 4);
       v15 = 0; /*0x48c1a4*/
       if ( (int)v14->Terrain_field_0x38 > 0 ) /*0x48c1ab*/
       {
@@ -265,24 +265,24 @@ int ConnectionClass::receivePacket(int a2, int a3)
             if ( !*(unsigned char *)(v17 + 2) && *(unsigned int *)(v17 + 4) == *(unsigned int *)(a2 + 4) ) /*0x48c1c9*/
               goto LABEL_40; /*0x48c1c9*/
           }
-          v14 = (Terrain *)this->PlayerIndex; /*0x48c1cf*/
+                    v13 = (unsigned int *)*((unsigned int *)this + 4);
         }
         while ( ++v15 < (int)v14->Terrain_field_0x38 ); /*0x48c1ae*/
       }
       v18 = (int)(this->PlayerIndex);
-      if ( (this->LastPacketTime - this->u32_3C > 1 || *(unsigned int *)(a2 + 4) == this->q011 + 1) /*0x48c216*/
+            if ( (*(unsigned int *)(*((unsigned int *)this + 4) + 8) - *(unsigned int *)(*((unsigned int *)this + 4) + 56) > 1 || *(unsigned int *)(a2 + 4) == *((unsigned int *)this + 68) + 1)
 // 0x48b750
         && ConnectionClass::allocPacketSlot((ConnectionClass *)v18, (const void *)a2, a3, 0, 0) )
       {
-        v19 = this->q011 + 1; /*0x48c23f*/
-        ++this->u32_38; /*0x48c240*/
+                v17 = *((unsigned int *)this + 68) + 1;
+                ++*((unsigned int *)this + 56);
         v20 = *(unsigned int *)(a2 + 4); /*0x48c243*/
         if ( v20 == v19 ) /*0x48c248*/
         {
           while ( 1 ) /*0x48c24a*/
           {
             v21 = (int)(this->PlayerIndex);
-            this->q011 = v20; /*0x48c24d*/
+                        *((unsigned int *)this + 68) = v18;
             v22 = 0; /*0x48c250*/
             if ( this->u32_3C <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
@@ -292,11 +292,11 @@ int ConnectionClass::receivePacket(int a2, int a3)
               if ( v23 ) /*0x48c261*/
               {
                 v24 = (int)(*(unsigned int *)(v23 + 12));
-                if ( !*(unsigned char *)(v24 + 2) && *(unsigned int *)(v24 + 4) == this->q011 + 1 ) /*0x48c276*/
+                                if ( !*(unsigned char *)(v22 + 2) && *(unsigned int *)(v22 + 4) == *((unsigned int *)this + 68) + 1 )
                   break; /*0x48c276*/
               }
               v21 = (int)(this->PlayerIndex);
-              if ( ++v22 >= this->u32_3C ) /*0x48c27f*/
+                            if ( ++v20 >= v19[14] )
                 goto LABEL_40; /*0x48c27f*/
             }
             v20 = *(unsigned int *)(v24 + 4); /*0x48c283*/
@@ -305,13 +305,13 @@ int ConnectionClass::receivePacket(int a2, int a3)
         goto LABEL_40; /*0x48c257*/
       }
     }
-    this->Debug::Log(); /*0x48c301*/
+        Debug::Log();
     return 0; /*0x48c309*/
   }
-  this->Debug::Log(); /*0x48c079*/
-  v6 = this->PlayerIndex; /*0x48c07e*/
+    Debug::Log();
+    v6 = (unsigned int *)*((unsigned int *)this + 4);
   v7 = 0; /*0x48c084*/
-  if ( this->u32_2C > 0 ) /*0x48c08b*/
+    if ( (int)v6[10] > 0 )
   {
     while ( 1 ) /*0x48c08e*/
     {
@@ -323,7 +323,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
           break; /*0x48c0a2*/
       }
       v6 = (int)(this->PlayerIndex);
-      if ( ++v7 >= this->u32_2C ) /*0x48c0b0*/
+            if ( ++v7 >= v6[10] )
         return 1; /*0x48c0be*/
     }
     *TileIndex |= 2u; /*0x48c0c1*/
@@ -344,7 +344,7 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
   bool v11; // zf
 
   v4 = 0; /*0x48c326*/
-  PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c328*/
+    v5 = (unsigned int *)*((unsigned int *)this + 4);
   if ( PlayerIndex->Terrain_field_0x38 <= 0 ) /*0x48c330*/
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
@@ -359,7 +359,7 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
     if ( v8 == 1 ) /*0x48c359*/
       goto LABEL_10; /*0x48c359*/
   LABEL_7:
-    PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c35b*/
+        v5 = (unsigned int *)*((unsigned int *)this + 4);
     if ( ++v4 >= PlayerIndex->Terrain_field_0x38 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
@@ -414,7 +414,7 @@ int ConnectionClass::serviceSendQueue()
         {
           v6 = dword_887340; /*0x48c419*/
           if ( dword_887338 != -1 ) /*0x48c422*/
-            v6 += this->Timer::GetTicks() - dword_887338; /*0x48c434*/
+                        v6 += Timer::GetTicks() - MEMORY[0x887338];
           ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
@@ -425,17 +425,17 @@ int ConnectionClass::serviceSendQueue()
     while ( v2 < *(unsigned int *)(PlayerIndex + 40) ); /*0x48c45f*/
   }
   v7 = 0; /*0x48c464*/
-  v22 = *(unsigned int *)(this->PlayerIndex + 40); /*0x48c46b*/
+    v22 = *(unsigned int *)(*((unsigned int *)this + 4) + 40);
   if ( v22 <= 0 ) /*0x48c46f*/
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
-    v8 = Terrain::GetTileIndex((Terrain *)this->PlayerIndex, v7); /*0x48c47e*/
+        v8 = Terrain::GetTileIndex((unsigned int *)*((unsigned int *)this + 4), v7);
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
       v9 = dword_887340; /*0x48c48e*/
       if ( dword_887338 != -1 ) /*0x48c497*/
-        v9 += this->Timer::GetTicks() - dword_887338; /*0x48c4a9*/
+                v9 += Timer::GetTicks() - MEMORY[0x887338];
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( (unsigned int)(v9 - v10) > this-((unsigned int *)(>PhoneNumber))[4] ) /*0x48c4b7*/
       {
@@ -455,7 +455,7 @@ int ConnectionClass::serviceSendQueue()
         *(unsigned int *)(v8 + 8) = v9; /*0x48c4e8*/
         if ( v12 ) /*0x48c4ed*/
         {
-          ++*(unsigned int *)this->Active; /*0x48c503*/
+                    ++*((unsigned int *)this + 8);
         }
         else
         {
@@ -493,7 +493,7 @@ int ConnectionClass::serviceSendQueue()
   while ( v7 < v22 ); /*0x48c552*/
   if ( !v21 ) /*0x48c55e*/
     return 1; /*0x48c57a*/
-  this->Debug::Log(); /*0x48c565*/
+    Debug::Log();
   return 0; /*0x48c56f*/
 }
 } // namespace gamemd

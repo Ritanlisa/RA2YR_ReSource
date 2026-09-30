@@ -24,8 +24,8 @@
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  *(unsigned int *)this->CommandClass = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
-  return this->CommandClass; /*0x537dd8*/
+    *this = &vt_PageUserCommandClass;
+    return this;
 }
 // 0x537DE0
 char * PageUserCommandClass::AddRef()

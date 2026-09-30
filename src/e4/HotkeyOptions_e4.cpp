@@ -332,7 +332,7 @@ LABEL_16:
     {
       if ( !IDA_HIWORD(a3) ) /*0x5fba05*/
       {
-        this->Debug::Log(); /*0x5fba13*/
+                Debug::Log();
         CCFileClass::Construct(v79, aKeyboardmdIni); /*0x5fba24*/
         FileClass::Delete((void *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/

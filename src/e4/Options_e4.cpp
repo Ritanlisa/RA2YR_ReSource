@@ -107,7 +107,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
     if ( (byte_A8EDF8 & 1) == 0 ) /*0x4f12be*/
     {
       byte_A8EDF8 |= 1u; /*0x4f12ca*/
-      dword_A8EE30 = this->Timer::GetTicks(); /*0x4f12da*/
+            *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = Timer::GetTicks();
       dword_A8EE38 = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
@@ -214,7 +214,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         {
           if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
           {
-            this->Debug::Log(); /*0x4f15eb*/
+                        Debug::Log();
           }
           else
           {
@@ -224,7 +224,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19); /*0x4f15c6*/
             ((void (__stdcall *)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
-            this->Debug::Log(); /*0x4f15dc*/
+                        Debug::Log();
           }
         }
       }
@@ -245,7 +245,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          this->Debug::Log(); /*0x4f169e*/
+                    Debug::Log();
         }
       }
     }
@@ -260,7 +260,7 @@ namespace gamemd {
 void Options::PrepareSaveLoadDlg()
 {
   this->field_4 = (unsigned int)((void *)3);
-  this->field_C = 0; /*0x558847*/
+    *(dwNewLong + 3) = 0;
   return SaveLoadDialog::DlgProc();
 }
 }
@@ -372,7 +372,7 @@ char Options::Screen_Dialog()
       Dialog::Show(v1); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fcec*/
+                if ( Dialog::PumpMessages() == 1 )
           break; /*0x55fcec*/
         IDA_LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
@@ -391,7 +391,7 @@ char Options::Screen_Dialog()
         Dialog::Show(v4); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fd71*/
+                    if ( Dialog::PumpMessages() == 1 )
             break; /*0x55fd71*/
           IDA_LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
@@ -427,7 +427,7 @@ int Options::DeleteAndZero()
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = (char *)this->field_8 + v3; /*0x6244f4*/
+            v4 = *((unsigned int *)this + 8) + v3;
       DeleteAndZero::Alt((DeleteAndZero *)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((DeleteAndZero *)(v4 + 4)); /*0x624501*/
       result = *(unsigned int *)this->__pad_0; /*0x624506*/
@@ -461,13 +461,13 @@ void Options::EnsureCapacity()
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
   v6 = (void *)RA2_OPNEW(24 * v5); /*0x6248dd*/
-  v7 = this->field_8; /*0x6248e2*/
+    v7 = (const void *)*((unsigned int *)this + 8);
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
   RA2_OPDEL(this->field_8); /*0x62490f*/
-  this->field_8 = v8; /*0x62491b*/
-  this->field_4 = (void *)v5; /*0x62491e*/
+    *((unsigned int *)this + 8) = v8;
+    *((unsigned int *)this + 4) = v5;
   return 1; /*0x6248b2*/
 }
 }
@@ -481,7 +481,7 @@ int Options::GrowBuffer()
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *(unsigned int *)this->__pad_0; /*0x6253b4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x6253bb*/
+    if ( *this < *((unsigned int *)this + 4) )
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/
   v6 = 2 * v2; /*0x6253cb*/
@@ -492,14 +492,14 @@ int Options::GrowBuffer()
   }
   v5 = (void *)RA2_OPNEW(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
-  if ( this->field_8 ) /*0x625403*/
+    if ( *((unsigned int *)this + 8) )
   {
-    qmemcpy(v5, this->field_8, 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
+        qmemcpy(v5, (const void *)*((unsigned int *)this + 8), 4 * *this);
     v4 = v6; /*0x625421*/
   }
   RA2_OPDEL(this->field_8); /*0x625429*/
-  this->field_4 = (void *)v4; /*0x625431*/
-  this->field_8 = v5; /*0x625434*/
+    *((unsigned int *)this + 4) = v4;
+    *((unsigned int *)this + 8) = (int)v5;
   return 1; /*0x6253bf*/
 }
 }
@@ -524,13 +524,13 @@ int Options::ReadOptionValue()
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
   v6 = (void *)RA2_OPNEW(20 * v5); /*0x62550d*/
-  v7 = this->field_8; /*0x625512*/
+    v7 = (const void *)*((unsigned int *)this + 8);
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
   RA2_OPDEL(this->field_8); /*0x62553f*/
-  this->field_8 = v8; /*0x62554b*/
-  this->field_4 = (void *)v5; /*0x62554e*/
+    *((unsigned int *)this + 8) = v8;
+    *((unsigned int *)this + 4) = v5;
   return 1; /*0x6254e2*/
 }
 }
@@ -543,12 +543,12 @@ AbstractClass * * Options::DestroyComposite(char a2)
   unsigned int *v5; // edx
   void *v6; // esi
 
-  if ( *(unsigned int *)&this->u32_2C ) /*0x625563*/
+    if ( *((unsigned int *)Block + 11) )
   {
     RA2_OPDEL(*(void **)&this-((unsigned int *)(>__pad_14))[24]); /*0x62556b*/
-    *(unsigned int *)&this->__pad_14[24] = 0; /*0x625573*/
+        *((unsigned int *)Block + 11) = 0;
   }
-  for ( i = *(unsigned int **)&this->__pad_34[4]; i; i = *(unsigned int **)&this->__pad_34[4] ) /*0x62557f*/
+    for ( i = (unsigned int *)*((unsigned int *)Block + 14); i; i = (unsigned int *)*((unsigned int *)Block + 14) )
   {
     v4 = i; /*0x625581*/
     v5 = 0; /*0x625583*/
@@ -562,12 +562,12 @@ AbstractClass * * Options::DestroyComposite(char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *(unsigned int *)&this->ptr_38 = *v4; /*0x6255a7*/
+            *((unsigned int *)Block + 14) = *v4;
     RA2_OPDEL(v4); /*0x6255ab*/
   LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = *(void **)&this->__pad_34[12]; /*0x6255bb*/
+    v6 = (void *)*((unsigned int *)Block + 16);
   if ( v6 ) /*0x6255c0*/
   {
     DeleteAndZero::Alt(*(DeleteAndZero **)&this->__pad_34[12]); /*0x6255c4*/
@@ -606,10 +606,10 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   v4 = 0; /*0x625600*/
   *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
   v5 = &this->field_8; /*0x625607*/
-  this->field_4 = (void *)aP1[1]; /*0x62560a*/
-  this->field_8 = 0; /*0x625615*/
-  this->field_C = 0; /*0x625617*/
-  this->field_10 = 0; /*0x62561a*/
+    *((unsigned int *)this + 4) = *(unsigned int *)&aP1->__pad_0[4];
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 16) = 0;
   unknown_libname_74(&v19); /*0x62561d*/
   unknown_libname_74(&v19.DeleteAndZero_field_0x04); /*0x625626*/
   v18 = 0; /*0x62562e*/
@@ -688,7 +688,7 @@ int Options::SaveOptionValue()
   void *v7; // [esp+4h] [ebp-4h]
 
   v2 = *(unsigned int *)this->__pad_0; /*0x625a24*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x625a2b*/
+    if ( *this < *((unsigned int *)this + 4) )
     return 0; /*0x625a2d*/
   v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
@@ -696,12 +696,12 @@ int Options::SaveOptionValue()
   v5 = (void *)RA2_OPNEW(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = v5; /*0x625a64*/
-  v6 = this->field_8; /*0x625a6a*/
+    v6 = (const void *)*((unsigned int *)this + 8);
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
   RA2_OPDEL(this->field_8); /*0x625a8d*/
-  this->field_4 = (void *)v4; /*0x625a99*/
-  this->field_8 = v7; /*0x625a9c*/
+    *((unsigned int *)this + 4) = v4;
+    *((unsigned int *)this + 8) = v7;
   return 1; /*0x625a2f*/
 }
 }
@@ -816,10 +816,10 @@ void Options::SetVoiceVolume(float volume, int pad)
   *(unsigned int *)&this->q0F0 = v4; /*0x5fa5b0*/
   IDA_LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
   ThemeClass::GetField(v5); /*0x5fa5c0*/
-  IDA_LOWORD(v6) = Math::RoundToInt(this->q0F0 * 16384.0); /*0x5fa5ce*/
+    v6 = Math::RoundToInt(*(float *)&this->__pad_34[8] * 16384.0);
   EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/
-    PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, this->q0F0, 0); /*0x5fa5ff*/
+        PlayVocClass(*(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 1808), 0x2000, *(float *)&this->__pad_34[8], 0);
 // 0x4068e0
   return Debug::Log(); /*0x5fa61b*/
 }

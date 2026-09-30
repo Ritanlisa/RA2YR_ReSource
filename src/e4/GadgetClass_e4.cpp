@@ -19,19 +19,19 @@ ControlClass GadgetClass::Construct(void* a1, void* a2, void* a3, void* a4, void
   unsigned int *result; // eax
 
   result = this->__pad_0; /*0x4e12f4*/
-  this->Height = aP2; /*0x4e12fb*/
-  this->Width = aP1; /*0x4e1302*/
-  this->ID = aP4; /*0x4e1309*/
-  *(unsigned int *)this->Visible = aP3; /*0x4e1312*/
+    *((unsigned int *)this + 16) = a3;
+    *((unsigned int *)this + 12) = a2;
+    *((unsigned int *)this + 24) = a5;
+    *((unsigned int *)this + 20) = a4;
   this->X = 0; /*0x4e1319*/
   this->Y = 0; /*0x4e131c*/
-  IDA_LOBYTE(this->Image) = 0; /*0x4e131f*/
-  IDA_BYTE2(this->Image) = 0; /*0x4e1322*/
-  IDA_BYTE1(this->Image) = aP6; /*0x4e1327*/
-  *(unsigned int *)this->Hovered = aP5; /*0x4e132a*/
+    *((unsigned char *)this + 28) = 0;
+    *((unsigned char *)this + 30) = 0;
+    *((unsigned char *)this + 29) = a7;
+    *((unsigned int *)this + 32) = a6;
   *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
-    *(unsigned int *)this->Hovered = (unsigned int)(aP5)| 5; /*0x4e1339*/
+        *((unsigned int *)this + 32) = a6 | 5;
   return result; /*0x4e1333*/
 }
 }
@@ -46,9 +46,9 @@ ControlClass GadgetClass::Dtor(void* a1, void* a2, void* a3, void* a4, void* a5,
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E90 ) /*0x4e139f*/
   {
-    v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
+        v2 = *((unsigned int *)this + 32);
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
+        *((unsigned int *)this + 32) = v2;
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
@@ -80,21 +80,21 @@ ControlClass GadgetClass::DrawBuildingPlacement(void* a1, void* a2, void* a3, vo
     this->ListClass_field_0x10,
     this->ListClass_field_0x14,
     this->ListClass_field_0x18);
-  ListClass_field_0x14 = this->ListClass_field_0x14; /*0x55796b*/
-  ListClass_field_0x10 = this->ListClass_field_0x10; /*0x55796e*/
-  v9[0] = this->ListClass_field_0x0C; /*0x557971*/
-  ListClass_field_0x18 = this->ListClass_field_0x18; /*0x557975*/
+    v3 = *((unsigned int *)this + 80);
+    v4 = *((unsigned int *)this + 64);
+    v9[0] = *((unsigned int *)this + 48);
+    v5 = *((unsigned int *)this + 96);
   v9[2] = ListClass_field_0x14; /*0x557978*/
   v9[3] = ListClass_field_0x18; /*0x55797c*/
   v9[1] = ListClass_field_0x10; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
-  if ( this->u32_44 ) /*0x557994*/
+    if ( *((unsigned int *)this + 272) )
   {
-    for ( i = 0; i < this->Visible; ++i ) /*0x5579a2*/
+        for ( i = 0; i < *((unsigned int *)this + 320); ++i )
     {
-      v7 = i + this->u32_170; /*0x5579ad*/
-      if ( this->u32_44 > v7 ) /*0x5579b1*/
-        (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
+            v7 = i + *((unsigned int *)this + 1472);
+            if ( *((unsigned int *)this + 272) > v7 )
+                (*(void (**)(int, int, int, int, int, bool))(*(unsigned int *)this + 200))(
           this,
           v7,
           this->ListClass_field_0x0C + 1,
@@ -276,10 +276,10 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
   int v3; // eax
   wchar_t *v4; // eax
 
-  if ( this->u32_28 ) /*0x623564*/
+    if ( *((unsigned int *)this + 40) )
   {
     RA2_OPDEL(*((void **)&this->X0)); /*0x62356c*/
-    this->u32_28 = 0; /*0x623574*/
+        *((unsigned int *)this + 40) = 0;
   }
   if ( aP1 ) /*0x623581*/
   {

@@ -45,6 +45,8 @@ struct E4Recv_4C2790 {
     unsigned int q6408;  // 0x6408
     unsigned int AbstractClass;
     unsigned int owningHouseIndex;
+    unsigned int q02A;  // 0x2A
+    unsigned int q030;  // 0x30
 // --- flat members (END) ---
     int sub_4C2790();  // 0x4C2790
 };

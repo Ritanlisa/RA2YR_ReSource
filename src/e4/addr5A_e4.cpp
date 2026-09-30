@@ -1376,8 +1376,8 @@ int E4Recv_5A6BA0::sub_5A6BA0()
   int16_t v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+14h] [ebp-4h]
 
-  vtable0_high = IDA_SHIWORD(this->AbstractClass); /*0x5a6ba3*/
-  vtable0_low = SLOWORD(this->AbstractClass); /*0x5a6ba7*/
+    v1 = *((unsigned int *)this + 4);
+    v2 = *this;
   v3 = vtable0_low + 7; /*0x5a6bae*/
   v4 = vtable0_low - 7; /*0x5a6bb1*/
   v5 = vtable0_high - 7; /*0x5a6bb6*/
@@ -4315,9 +4315,9 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   _ESI->? = 0; /*0x5af649*/
   _ESI->? = 0; /*0x5af64c*/
   _ESI->? = 0; /*0x5af64f*/
-  _ESI->occupant = 0; /*0x5af652*/
-  _ESI->owningHouseIndex = 1065353216; /*0x5af655*/
-  _ESI->fallRate = 0; /*0x5af658*/
+    *((unsigned int *)this + 144) = 0;
+    *((unsigned int *)this + 160) = 1065353216;
+    *((unsigned int *)this + 176) = 0;
   __asm { fld dword ptr [edi] } /*0x5af65b*/
   v36 = 0; /*0x5af65d*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af669*/
@@ -4330,7 +4330,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   }
   *(float *)&_ESI->? = _ET1; /*0x5af677*/
   __asm { fstp dword ptr [esi+2Ch] } /*0x5af67a*/
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af67a*/
+    *(float *)((char *)this + 176) = 0.0;
   __asm { fadd [esp+24h+arg_4] } /*0x5af680*/
   v25 = *((unsigned int *)_EDI + 1); /*0x5af684*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af68d*/
@@ -4354,7 +4354,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fst [esp+28h+var_18]
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af6b2*/
+    *(float *)((char *)this + 176) = v13;
   __asm { fld [esp+28h+arg_4] } /*0x5af6b5*/
   __asm { fadd st, st(1) }
   v32 = *((unsigned int *)_EDI + 2); /*0x5af6be*/
@@ -4374,7 +4374,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fadd [esp+28h+var_4]
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af6dc*/
+    *(float *)((char *)this + 176) = v13 + v22;
   sub_5AF120((float *)_ESI, v30, v34); /*0x5af6df*/
   __asm { fld [esp+20h+var_8] } /*0x5af6e8*/
   __asm
@@ -4602,9 +4602,9 @@ unsigned int * globalHelper_0A7640(unsigned int * a0, MapSeedClass * aP1)
 namespace gamemd {
 ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
-  this->AbstractClass = (void *)*a1; /*0x5a992c*/
-  *(void **)&this->M4 = (void *)aP2; /*0x5a992e*/
-  return &this->AbstractClass; /*0x5a9931*/
+    *this = *a1;
+    *((unsigned int *)this + 4) = aP2;
+    return (ObjectClass *)this;
 }
 } // namespace gamemd
 
@@ -4612,9 +4612,9 @@ ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 namespace gamemd {
 ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
 {
-  this->AbstractClass = (void *)*a1; /*0x5a9968*/
-  *(void **)&this->M4 = (void *)a1[1]; /*0x5a996d*/
-  return &this->AbstractClass; /*0x5a9970*/
+    *this = *a1;
+    *((unsigned int *)this + 4) = a1[1];
+    return (ObjectClass *)this;
 }
 } // namespace gamemd
 
@@ -4623,10 +4623,10 @@ namespace gamemd {
 unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6)
 {
   *this = a2; /*0x5a998a*/
-  this->M4 = *a3; /*0x5a9992*/
-  this->M8 = a4; /*0x5a9999*/
-  this->M12 = *a5; /*0x5a99a2*/
-  *(unsigned int *)&this->M16 = a6; /*0x5a99a5*/
+    *((unsigned int *)this + 4) = *a3;
+    *((unsigned int *)this + 8) = a4;
+    *((unsigned int *)this + 12) = *a5;
+    *((unsigned int *)this + 16) = a6;
   return this; /*0x5a99a8*/
 }
 } // namespace gamemd
@@ -4635,12 +4635,12 @@ unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsi
 namespace gamemd {
 unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
 {
-  this->AbstractClass = (void *)*a2; /*0x5a99f8*/
-  *(void **)&this->M4 = (void *)a2[1]; /*0x5a99fd*/
-  *(void **)&this->M8 = (void *)a2[2]; /*0x5a9a03*/
-  *(void **)&this->M12 = (void *)a2[3]; /*0x5a9a09*/
-  this->M16 = a2[4]; /*0x5a9a0f*/
-  return &this->AbstractClass; /*0x5a9a12*/
+    *this = *a2;
+    *((unsigned int *)this + 4) = a2[1];
+    *((unsigned int *)this + 8) = a2[2];
+    *((unsigned int *)this + 12) = a2[3];
+    *((unsigned int *)this + 16) = a2[4];
+    return this;
 }
 } // namespace gamemd
 
@@ -4649,7 +4649,7 @@ namespace gamemd {
 Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_details_Concurrency__QAE_XZ()
 {
   *(unsigned int *)this = 0; /*0x5a9bf2*/
-  this->vtable2 = 0; /*0x5a9bf8*/
+    *((unsigned int *)this + 1) = 0;
   return this; /*0x5a9bff*/
 }
 } // namespace gamemd
@@ -4840,7 +4840,7 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
   result = (const char **)String::NotEquals((String *)a2, 0); /*0x5ae50c*/
   if ( (unsigned char)result ) /*0x5ae513*/
   {
-    result = sub_5CF840((ObjectClass *)this->customSound_controller, (const char **)a2); /*0x5ae519*/
+        v3 = sub_5CF840((char *)this + 80, a2);
     if ( result ) /*0x5ae520*/
       return (const char **)nullsub_24(v4); /*0x5ae524*/
   }
@@ -4857,7 +4857,7 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   void *v5; // [esp+8h] [ebp-8h]
 
   v3 = this; /*0x5ae538*/
-  String::Reassign((String *)&this->customSound, aP1); /*0x5ae541*/
+    String::Reassign((char *)this + 200, (AbstractClass *)aP1);
   result = Timer::GetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/
@@ -4903,26 +4903,26 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aec5f*/
   Math::ArcTan2(v19); /*0x5aec65*/
   __asm { fld [esp+40h+arg_0] } /*0x5aec70*/
-  abstractFlags = this->M40; /*0x5aec74*/
+    v10 = *(float *)((char *)this + 80);
   __asm { fchs } /*0x5aec7b*/
-  NeedsSaveOrLink = this->M40; /*0x5aec7d*/
+    v8 = *(float *)((char *)this + 128);
   __asm /*0x5aec84*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
   uniqueId = this->M40; /*0x5aec8a*/
-  nextArrayIndex = this->M40; /*0x5aec8e*/
+    v11 = *(float *)((char *)this + 96);
   __asm { fld [esp+40h+var_20] } /*0x5aec92*/
   __asm { fmul st, st(3) }
-  occupant = this->occupant; /*0x5aec9e*/
-  IDA_LODWORD(v19) = *(unsigned short *)&this->M40; /*0x5aeca2*/
-  result = this->owningHouseIndex; /*0x5aeca6*/
+    v9 = *(float *)((char *)this + 144);
+    v13 = *(float *)((char *)this + 112);
+    result = *((int *)this + 160);
   __asm { faddp st(1), st } /*0x5aecac*/
   v16 = result; /*0x5aecae*/
-  fallRate = this->fallRate; /*0x5aecb2*/
+    v12 = *(float *)((char *)this + 176);
   __asm { fstp dword ptr [esi+10h] } /*0x5aecb9*/
-  *(unsigned short *)&this->M16 = _ET1; /*0x5aecb9*/
+    *(float *)((char *)this + 64) = v8 * v5 + v6 * v4;
   __asm /*0x5aecbc*/
   {
     fld [esp+30h+var_1C]
@@ -4932,7 +4932,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  *(unsigned short *)&this->M20 = _ET1; /*0x5aecca*/
+    *(float *)((char *)this + 80) = v9 * v5 + v10 * v4;
   __asm /*0x5aeccd*/
   {
     fld [esp+30h+var_14]
@@ -4942,7 +4942,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  *(unsigned short *)&this->q018 = _ET1; /*0x5aecdb*/
+    *(float *)((char *)this + 96) = *(float *)&result * v5 + v11 * v4;
   __asm /*0x5aecde*/
   {
     fld [esp+30h+var_C]
@@ -4952,7 +4952,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+1Ch]
   }
-  *(unsigned short *)&this->M28 = _ET1; /*0x5aecec*/
+    *(float *)((char *)this + 112) = v12 * v5 + v13 * v4;
   __asm /*0x5aecef*/
   {
     fstp st
@@ -4963,7 +4963,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
-  *(unsigned short *)&this->q020 = _ET1; /*0x5aed01*/
+    *(float *)((char *)this + 128) = v8 * v4 + v6 * v14;
   __asm /*0x5aed04*/
   {
     fld [esp+30h+var_1C]
@@ -4973,7 +4973,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+24h]
   }
-  this->occupant = _ET1; /*0x5aed14*/
+    *(float *)((char *)this + 144) = v9 * v4 + v10 * v14;
   __asm /*0x5aed17*/
   {
     fld [esp+30h+var_14]
@@ -4983,7 +4983,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+28h]
   }
-  this->owningHouseIndex = _ET1; /*0x5aed27*/
+    *(float *)((char *)this + 160) = *(float *)&result * v4 + v11 * v14;
   __asm /*0x5aed2a*/
   {
     fld [esp+30h+var_C]
@@ -4993,7 +4993,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
   }
   __asm { fstp dword ptr [esi+2Ch] }
-  this->fallRate = _ET1; /*0x5aed3b*/
+    *(float *)((char *)this + 176) = v12 * v4 + v13 * v14;
   __asm { fstp st } /*0x5aed40*/
   return result; /*0x5aed42*/
 }
@@ -5032,11 +5032,11 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fmul st, st(5)
   }
   vtable1 = _ESI->?; /*0x5aed95*/
-  result = _ESI->occupant; /*0x5aed99*/
+    result = *((int *)this + 9);
   v13 = result; /*0x5aed9c*/
   vtable2 = _ESI->?; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
-  owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
+    v11 = *((unsigned int *)this + 40);
   vtable3 = _ESI->?; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *(float *)&_ESI->AbstractClass = _ET1; /*0x5aedb4*/
@@ -5047,7 +5047,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fld [esp+38h+var_1C]
     fmul st, st(5)
   }
-  IDA_LODWORD(v17) = _ESI->fallRate; /*0x5aedca*/
+    v13 = *((unsigned int *)this + 44);
   __asm /*0x5aedce*/
   {
     faddp st(1), st
@@ -5093,7 +5093,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+24h]
   }
-  *(float *)&_ESI->occupant = _ET1; /*0x5aee14*/
+    *((unsigned int *)this + 36) = v9 * v5 + *(float *)&result * v4;
   __asm /*0x5aee17*/
   {
     fld [esp+28h+var_14]
@@ -5103,7 +5103,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+28h]
   }
-  *(float *)&_ESI->owningHouseIndex = _ET1; /*0x5aee25*/
+    *((unsigned int *)this + 40) = v10 * v5 + v11 * v4;
   __asm /*0x5aee28*/
   {
     fld [esp+28h+var_C]
@@ -5113,7 +5113,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5aee36*/
+    *((unsigned int *)this + 44) = v12 * v5 + v13 * v4;
   __asm { fstp st } /*0x5aee39*/
   __asm { fstp st }
   return result; /*0x5aee40*/
@@ -5140,26 +5140,26 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = this->q040; /*0x5aee83*/
+    v10 = *((unsigned int *)this + 4);
   __asm { fchs } /*0x5aee8a*/
-  uniqueId = this->q040; /*0x5aee8c*/
+    v8 = *((unsigned int *)this + 16);
   __asm /*0x5aee93*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
   vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = this->q040; /*0x5aee9d*/
+    v11 = *((unsigned int *)this + 8);
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
-  abstractFlags = this->q040; /*0x5aeead*/
-  IDA_LODWORD(v19) = *(unsigned short *)&this->q040; /*0x5aeeb1*/
-  result = this->q018; /*0x5aeeb5*/
+    v9 = *((unsigned int *)this + 20);
+    v13 = *((unsigned int *)this + 12);
+    result = *((int *)this + 6);
   __asm { faddp st(1), st } /*0x5aeebb*/
   v16 = result; /*0x5aeebd*/
-  referenceCount = this->q040; /*0x5aeec1*/
+    v12 = *((unsigned int *)this + 28);
   __asm { fstp dword ptr [esi] } /*0x5aeec8*/
-  this->AbstractClass = _ET1; /*0x5aeec8*/
+    *this = v8 * v5 + v6 * v4;
   __asm /*0x5aeeca*/
   {
     fld [esp+30h+var_1C]
@@ -5169,7 +5169,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+4]
   }
-  *(unsigned short *)&this->M4 = _ET1; /*0x5aeed8*/
+    *((unsigned int *)this + 4) = v9 * v5 + v10 * v4;
   __asm /*0x5aeedb*/
   {
     fld [esp+30h+var_14]
@@ -5179,7 +5179,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+8]
   }
-  *(unsigned short *)&this->M8 = _ET1; /*0x5aeee9*/
+    *((unsigned int *)this + 8) = *(float *)&result * v5 + v11 * v4;
   __asm /*0x5aeeec*/
   {
     fld [esp+30h+var_C]
@@ -5189,7 +5189,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+0Ch]
   }
-  *(unsigned short *)&this->M12 = _ET1; /*0x5aeefa*/
+    *((unsigned int *)this + 12) = v12 * v5 + v13 * v4;
   __asm /*0x5aeefd*/
   {
     fstp st
@@ -5200,7 +5200,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+10h]
   }
-  *(unsigned short *)&this->M16 = _ET1; /*0x5aef0f*/
+    *((unsigned int *)this + 16) = v8 * v4 + v6 * v14;
   __asm /*0x5aef12*/
   {
     fld [esp+30h+var_1C]
@@ -5210,7 +5210,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  *(unsigned short *)&this->M20 = _ET1; /*0x5aef22*/
+    *((unsigned int *)this + 20) = v9 * v4 + v10 * v14;
   __asm /*0x5aef25*/
   {
     fld [esp+30h+var_14]
@@ -5220,7 +5220,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  *(unsigned short *)&this->q018 = _ET1; /*0x5aef35*/
+    *((unsigned int *)this + 24) = *(float *)&result * v4 + v11 * v14;
   __asm /*0x5aef38*/
   {
     fld [esp+30h+var_C]
@@ -5230,7 +5230,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
   }
   __asm { fstp dword ptr [esi+1Ch] }
-  *(unsigned short *)&this->M28 = _ET1; /*0x5aef49*/
+    *((unsigned int *)this + 28) = v12 * v4 + v13 * v14;
   __asm { fstp st } /*0x5aef4e*/
   return result; /*0x5aef50*/
 }
@@ -5247,18 +5247,18 @@ void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
   double v7; // st7
   double v8; // st6
 
-  v3 = this->vtable2; /*0x5af000*/
-  v4 = this->vtable3; /*0x5af003*/
-  this->vtable2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
-  this->vtable3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
-  v5 = this->abstractFlags; /*0x5af026*/
-  v6 = this->nextArrayIndex; /*0x5af029*/
-  this->abstractFlags = v6 * aP1 + v5 * aP2; /*0x5af03a*/
-  this->nextArrayIndex = v6 * aP2 - v5 * aP1; /*0x5af049*/
-  v7 = this->objectTypeFlags; /*0x5af04c*/
-  v8 = *(&this->vtable20); /*0x5af04f*/
-  this->objectTypeFlags = v8 * aP1 + v7 * aP2; /*0x5af060*/
-  *(&this->vtable20) = v8 * aP2 - v7 * aP1; /*0x5af06f*/
+    v3 = *((unsigned int *)this + 4);
+    v4 = *((unsigned int *)this + 8);
+    *((unsigned int *)this + 4) = v4 * *(float *)&aP1 + v3 * *(float *)&aP2;
+    *((unsigned int *)this + 8) = v4 * *(float *)&aP2 - v3 * *(float *)&aP1;
+    v5 = *((unsigned int *)this + 20);
+    v6 = *((unsigned int *)this + 24);
+    *((unsigned int *)this + 20) = v6 * *(float *)&aP1 + v5 * *(float *)&aP2;
+    *((unsigned int *)this + 24) = v6 * *(float *)&aP2 - v5 * *(float *)&aP1;
+    v7 = *((unsigned int *)this + 36);
+    v8 = *((unsigned int *)this + 40);
+    *((unsigned int *)this + 36) = v8 * *(float *)&aP1 + v7 * *(float *)&aP2;
+    *((unsigned int *)this + 40) = v8 * *(float *)&aP2 - v7 * *(float *)&aP1;
 }
 } // namespace gamemd
 
@@ -5274,17 +5274,17 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
   double v8; // st6
 
   v3 = *this; /*0x5af120*/
-  v4 = this->vtable3; /*0x5af122*/
+    v4 = *((unsigned int *)this + 8);
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
-  this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
-  v5 = this->uniqueId; /*0x5af146*/
-  v6 = this->nextArrayIndex; /*0x5af149*/
-  this->uniqueId = v5 * a3 - v6 * a2; /*0x5af15a*/
-  this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
-  v7 = this->NeedsSaveOrLink; /*0x5af16e*/
-  v8 = *(&this->vtable20); /*0x5af171*/
-  this->NeedsSaveOrLink = v7 * a3 - v8 * a2; /*0x5af182*/
-  *(&this->vtable20) = v7 * a2 + v8 * a3; /*0x5af193*/
+    *((unsigned int *)this + 8) = v3 * a2 + v4 * a3;
+    v5 = *((unsigned int *)this + 16);
+    v6 = *((unsigned int *)this + 24);
+    *((unsigned int *)this + 16) = v5 * a3 - v6 * a2;
+    *((unsigned int *)this + 24) = v5 * a2 + v6 * a3;
+    v7 = *((unsigned int *)this + 32);
+    v8 = *((unsigned int *)this + 40);
+    *((unsigned int *)this + 32) = v7 * a3 - v8 * a2;
+    *((unsigned int *)this + 40) = v7 * a2 + v8 * a3;
 }
 } // namespace gamemd
 
@@ -5554,8 +5554,8 @@ int sub_5AFED0()
 namespace gamemd {
 void E4Recv_5AFF50::sub_5AFF50()
 {
-  *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5aff50*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff56*/
+    *this = &MechLocomotionClass::`vftable';
+    *((unsigned int *)this + 4) = &vt_MechLocomotionClass;
   LocomotionClass::Construct(); /*0x5aff5d*/
 }
 } // namespace gamemd

@@ -116,22 +116,22 @@ void* JumpjetLocomotionClass::Update2(void* a1, void* a2, void* a3)
   char v90[48]; // [esp+118h] [ebp-30h] BYREF
 
   v2 = this; /*0x439b09*/
-  v3 = *(unsigned int *)&this->Owner; /*0x439b17*/
+    v2 = *((double *)this + 2);
   v4 = (float *)(this + 3); /*0x439b1a*/
   *(double *)v72[0].__tail_0 = v3; /*0x439b22*/
-  v6 = this->Accel; /*0x439b28*/
-  v7 = this->Speed; /*0x439b2b*/
-  v77 = *(unsigned int *)&this->vtable3; /*0x439b2e*/
-  v8 = v6 - this->vtable2; /*0x439b32*/
-  v9 = this->Climb; /*0x439b35*/
+    v5 = *((float *)this + 11);
+    v6 = *((float *)this + 7);
+    v63 = *((float *)this + 6);
+    v7 = v5 - *((double *)this + 1);
+    v8 = *((float *)this + 8);
   v5 = (char *)&this->u32_90; /*0x439b1d*/
   v7 = v7; /*0x439b3a*/
   v9 = v9; /*0x439b3e*/
-  v80 = this->Crash; /*0x439b44*/
-  v10 = this->Height; /*0x439b4a*/
+    v66 = *((unsigned int *)this + 9);
+    v9 = *((unsigned int *)this + 10);
   v85[0] = *(unsigned int *)this; /*0x439b4d*/
   v10 = v10; /*0x439b51*/
-  v11 = this->Accel; /*0x439b58*/
+    v10 = *((float *)this + 11);
   v85[1] = this->vtable2; /*0x439b5b*/
   *((float *)v5 + 2) = v8; /*0x439b5f*/
   v11 = v11; /*0x439b62*/
@@ -325,7 +325,7 @@ void* JumpjetLocomotionClass::Update2(void* a1, void* a2, void* a3)
 namespace gamemd {
 void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0(void* a1, void* a2, void* a3)
 {
-  Math::Sqrt(*this * *this + (unsigned int)(this->vtable2)* (unsigned int)(this->vtable2)+ (unsigned int)(this->Owner)* this->Owner); /*0x43a154*/
+    Math::Sqrt(*this * *this + *((unsigned int *)this + 4) * *((unsigned int *)this + 4) + *((unsigned int *)this + 8) * *((unsigned int *)this + 8));
 }
 } // namespace gamemd
 // 0x4848B0
@@ -352,8 +352,8 @@ void* JumpjetLocomotionClass::AdjustClimbFacing(void* a1, void* a2, void* a3)
 
   a2 = a2; /*0x4848b4*/
   smudgeTypeIndex = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2)->smudgeTypeIndex; /*0x4848c8*/
-  Crash_low = SLOWORD(this->Crash); /*0x4848cb*/
-  Crash_high = IDA_SHIWORD(this->Crash); /*0x4848cf*/
+    v5 = *((unsigned int *)this + 72);
+    v6 = *((unsigned int *)this + 76);
   smudgeTypeIndex = smudgeTypeIndex; /*0x4848d3*/
   v7 = Crash_high - IDA_SHIWORD(smudgeTypeIndex); /*0x4848de*/
   v8 = Crash_low - (int16_t)smudgeTypeIndex; /*0x4848e6*/
@@ -418,7 +418,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
   v6 = (gamemd::AbstractClass **)((int)(128));
   v7 = (gamemd::AbstractClass **)((int)(128));
   inited = (int)(Isometric::InitTables((int)this, &v6));
-  if ( byte_A8E9A0 && (v3 = this->q039) != 0 ) /*0x4850b6*/
+    if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = *((unsigned int *)this + 228)) != 0 )
   {
     while ( (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) != 6 ) /*0x4850c2*/
     {
@@ -535,7 +535,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       {
         v31 = *a3 << 6; /*0x4b02c1*/
         *a3 = v31; /*0x4b02c4*/
-        *a3 = v31 + a1->TurnRate; /*0x4b02cb*/
+                *a3 = v24 + a1[6];
       }
       Transform = Turret::GetTransform((LocomotionClass *)a1, v60, a3); /*0x4b02d7*/
       Transform::Copy(v59, Transform); /*0x4b02e4*/
@@ -692,22 +692,22 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
   int64_t v13; // [esp+14h] [ebp-8h]
 
-  a1->MovementSpeed[1] = a2; /*0x4b0c53*/
-  a1->TrackNumber = 0; /*0x4b0c56*/
+    *(unsigned int *)(a1 + 84) = a2;
+    *(unsigned int *)(a1 + 88) = 0;
   v4 = g_DDraw_ClipRect; /*0x4b0c5d*/
   if ( a3 != g_DDraw_ClipRect || a4 != qword_8A0794 ) /*0x4b0c70*/
   {
     v5 = (char *)a1 - 4; /*0x4b0c88*/
     v13 = a4; /*0x4b0c8f*/
-    v6 = &a1->Dest[2]; /*0x4b0c93*/
+        v6 = (unsigned int *)(a1 - 4 + 64);
     v12 = a3; /*0x4b0c9a*/
-    if ( *v6 != g_DDraw_ClipRect || IDA___PAIR64__(a1->HeadToCoord[1], a1->HeadToCoord[0]) != qword_8A0794 ) /*0x4b0ca5*/
+        if ( *v6 != MEMORY[0x8A0790] || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != MEMORY[0x8A0794] )
     {
       *v6 = g_DDraw_ClipRect; /*0x4b0cb6*/
-      a1->HeadToCoord[0] = qword_8A0794; /*0x4b0cbd*/
+            *(unsigned int *)(a1 + 64) = MEMORY[0x8A0794];
       v7 = IDA_HIDWORD(qword_8A0794); /*0x4b0cc0*/
       v5[99] = 0; /*0x4b0cc6*/
-      a1->HeadToCoord[1] = v7; /*0x4b0cca*/
+            *(unsigned int *)(a1 - 4 + 72) = v7;
       v4 = g_DDraw_ClipRect; /*0x4b0ccd*/
     }
     if ( IDA___PAIR64__(a4, a3) != IDA___PAIR64__(qword_8A0794, v4) /*0x4b0cee*/
@@ -716,7 +716,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       v8 = v13; /*0x4b0cf4*/
       v5[99] = 1; /*0x4b0cfa*/
       *v6 = a3; /*0x4b0cfe*/
-      *(unsigned long long *)a1->HeadToCoord = v8; /*0x4b0d00*/
+            *(unsigned long long *)(a1 + 64) = v8;
       v11 = *((unsigned int *)v5 + 3); /*0x4b0d0d*/
       v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x4b0d14*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x4b0d27*/
@@ -771,7 +771,7 @@ int JumpjetLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   unsigned int v25; // [esp+28h] [ebp-4h]
 
   v4 = a1; /*0x4b4925*/
-  v5 = (int *)(*(int (__stdcall **)(DriveLocomotionClass *, unsigned int *))(*(unsigned int *)a1->LocomotionClass + 24))( /*0x4b4932*/
+    v5 = (int *)(*(int (__stdcall **)(int, unsigned int *))(*(unsigned int *)a1 + 24))(a1, v21);
                 a1,
                 v21);
   v6 = *v5; /*0x4b4935*/
@@ -841,7 +841,7 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
   v2 = a1->?->pathDirections[0]; /*0x4b4b09*/
   if ( v2 < -1 || v2 > 8 ) /*0x4b4b1b*/
     return 0; /*0x4b4b1b*/
-  v3 = 12 * a1->MovementSpeed[1] + 8289064; /*0x4b4b2c*/
+    v3 = 12 * *(unsigned int *)(a1 + 84) + 8289064;
   v4 = IDA_LOBYTE(a1->TrackIndex)
      ? (char)algn_7E7B29[12 * a1->MovementSpeed[1]]
      : byte_7E7B28[12 * a1->MovementSpeed[1]];
@@ -850,7 +850,7 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
   if ( v2 == -1 ) /*0x4b4b4c*/
     return 0; /*0x4b4b4c*/
   IDA_LOBYTE(v5) = 0; /*0x4b4b53*/
-  IDA_HIBYTE(v5) = algn_7E7B29[12 * a1->MovementSpeed[1] + 3]; /*0x4b4b55*/
+    HIBYTE(v5) = algn_7E7B29[12 * *(unsigned int *)(a1 + 84) + 3];
   IDA_LOWORD(a1) = v5; /*0x4b4b58*/
   if ( (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) == v2 ) /*0x4b4b78*/
     return 0; /*0x4b4b78*/
@@ -890,8 +890,8 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
   int v19[3]; // [esp+10h] [ebp-Ch] BYREF
 
   v4 = a1; /*0x4b604b*/
-  result = *(void ***)&a1->IsOutOfMap; /*0x4b604f*/
-  _ESI = &a1->IsOutOfMap; /*0x4b6052*/
+    result = (void **)a1[7];
+    v5 = a1 + 7;
   if ( result == (void **)dword_8A0820 ) /*0x4b6057*/
   {
     result = (void **)dword_8A0824; /*0x4b6060*/
@@ -901,7 +901,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
       if ( a1->DestinationCoords[1] == dword_8A0828 ) /*0x4b6077*/
       {
         v7 = a3; /*0x4b6086*/
-        p_IsOutOfMap = &a1->IsOutOfMap; /*0x4b608c*/
+                v14 = a1 + 7;
         *(double *)_ESI = VeteranCombat_low; /*0x4b608d*/
         *((unsigned int *)_ESI + 2) = v7; /*0x4b6097*/
         v4->DestinationCoords[1] = Cell::GetGroundHeight(p_IsOutOfMap); /*0x4b609f*/
@@ -919,7 +919,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
         v19[0] = v9; /*0x4b60f4*/
         if ( !(uint8_t)IsCoordVisibleMap((ObjectClass *)&stru_87F5F0.__pad_58[416], v19) ) /*0x4b6102*/
         {
-          v4->__pad_18[0] = 1; /*0x4b610c*/
+                    *(unsigned char *)(v3 + 24) = 1;
           _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4b6110*/
           __asm { fild dword ptr [esi] } /*0x4b6115*/
           v17 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1456); /*0x4b6124*/
@@ -974,10 +974,10 @@ int JumpjetLocomotionClass::StubReturnZero_5()
   FootClass *Owner; // esi
   int v2; // eax
 
-  if ( SLOWORD(*(unsigned short *)&this->RefCount) <= 0 ) /*0x4c94b6*/
+    if ( *((unsigned int *)this + 40) <= 0 )
     return 0; /*0x4c94b6*/
-  Owner = *(unsigned int *)&this->Owner; /*0x4c94b8*/
-  v2 = *(unsigned int *)&this->Powered; /*0x4c94bb*/
+    v1 = *((unsigned int *)this + 2);
+    v2 = *((unsigned int *)this + 4);
   if ( Owner != (FootClass *)-1 ) /*0x4c94c1*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)Owner >= v2 ) /*0x4c94cd*/
@@ -985,7 +985,7 @@ int JumpjetLocomotionClass::StubReturnZero_5()
     v2 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)Owner; /*0x4c94cf*/
   }
   if ( v2 ) /*0x4c94d3*/
-    return (int16_t)(IDA_LOWORD(this->LocomotionClass[0]) - IDA_LOWORD(this->LocomotionClass[1])) > 0; /*0x4c94e7*/
+        return (__int16)(*this - *((unsigned int *)this + 8)) > 0;
   return 0; /*0x4c94d8*/
 }
 } // namespace gamemd
@@ -996,10 +996,10 @@ int JumpjetLocomotionClass::StubReturnZero_6()
   FootClass *Owner; // esi
   int v2; // eax
 
-  if ( SLOWORD(*(unsigned short *)&this->RefCount) <= 0 ) /*0x4c94f6*/
+    if ( *((unsigned int *)this + 40) <= 0 )
     return 0; /*0x4c94f6*/
-  Owner = *(unsigned int *)&this->Owner; /*0x4c94f8*/
-  v2 = *(unsigned int *)&this->Powered; /*0x4c94fb*/
+    v1 = *((unsigned int *)this + 2);
+    v2 = *((unsigned int *)this + 4);
   if ( Owner != (FootClass *)-1 ) /*0x4c9501*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)Owner >= v2 ) /*0x4c950d*/
@@ -1007,7 +1007,7 @@ int JumpjetLocomotionClass::StubReturnZero_6()
     v2 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)Owner; /*0x4c950f*/
   }
   if ( v2 ) /*0x4c9513*/
-    return (int16_t)(IDA_LOWORD(this->LocomotionClass[0]) - IDA_LOWORD(this->LocomotionClass[1])) < 0; /*0x4c9525*/
+        return (__int16)(*this - *((unsigned int *)this + 8)) < 0;
   return 0; /*0x4c9518*/
 }
 } // namespace gamemd
@@ -1039,7 +1039,7 @@ Coord * * JumpjetLocomotionClass::UpdateFootLocomotion(int a1, int a2, int a3, i
 
   v4 = a1; /*0x4ccc84*/
   v5 = a2; /*0x4ccc89*/
-  if ( (uint16_t)(a2 / 256) != (uint16_t)(*(unsigned int *)&a1->AirportBound / 256) /*0x4ccce0*/
+    if ( (unsigned __int16)(a2 / 256) != (unsigned __int16)(*(unsigned int *)(a1 + 24) / 256)
     || (uint16_t)(a3 / 256) != (uint16_t)(a1->MovingDestination[0] / 256)
     || (IDA_LOBYTE(v6) = a1->IsLanding, !(unsigned char)v6) )
   {
@@ -1214,7 +1214,7 @@ TechnoClass * * JumpjetLocomotionClass::ComputeMoveToPosition(int a1)
   int GroundHeight; // [esp+1Ch] [ebp-4h]
 
   v1 = a1; /*0x4ccfd4*/
-  result = (*(int (__stdcall **)(FlyLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1); /*0x4ccfdc*/
+    result = (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 16))(a1);
   if ( result ) /*0x4ccfe1*/
   {
     Owner = *(unsigned int *)&v1->Owner; /*0x4ccfe7*/
@@ -1340,12 +1340,12 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
   int v8; // [esp+8h] [ebp-10h] BYREF
   unsigned int v9[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( this->__pad_50[3] && this->?->? > 0 ) /*0x4ce5b9*/
+    if ( *((unsigned char *)this + 332) && *(int *)(*((unsigned int *)this + 48) + 108) > 0 )
   {
-    if ( (*(uint8_t (__stdcall **)(int *))(this->LocomotionClass[1] + 96))(&this->LocomotionClass[1]) ) /*0x4ce5c6*/
+        if ( (*(unsigned __int8 (__stdcall **)(int))(*((unsigned int *)this + 16) + 96))((char *)this + 16) )
     {
       LinkedTo = *(unsigned int *)&this->LinkedTo; /*0x4ce636*/
-      this->__pad_50[3] = 0; /*0x4ce639*/
+            *((unsigned char *)this + 332) = 0;
       LinkedTo = (FootClass *)((char *)LinkedTo + 156); /*0x4ce63d*/
       v9[0] = LinkedTo->TechnoClass; /*0x4ce645*/
       v9[1] = LinkedTo->?; /*0x4ce651*/
@@ -1355,10 +1355,10 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
     }
     else
     {
-      IDA_LOWORD(v7) = *ProgressTimer::GetValue((ProgressTimer *)*(unsigned short *)&this->vtable3->?, &v8) /*0x4ce5ee*/
+            LOWORD(v7) = *ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 48) + 904), &v8)
                  + ((uint16_t)*(unsigned int *)&this->__pad_50[4] << 8);
-      FacingClass::Set_SyncLog((char *)this->?->?, &v7); /*0x4ce605*/
-      v2 = *(unsigned int *)&this->__pad_50[4]; /*0x4ce60a*/
+            FacingClass::Set_SyncLog((char *)(*((unsigned int *)this + 48) + 904), &v7);
+            v2 = *((unsigned int *)this + 336);
       v3 = abs32(v2); /*0x4ce612*/
       if ( v3 >= 1 ) /*0x4ce617*/
         v3 = 1; /*0x4ce619*/
@@ -1366,7 +1366,7 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
         v4 = v2 - v3; /*0x4ce62c*/
       else
         v4 = v3 + v2; /*0x4ce622*/
-      *(unsigned int *)&this->__pad_50[4] = v4; /*0x4ce624*/
+            *((unsigned int *)this + 336) = v4;
     }
   }
 }
@@ -1479,9 +1479,9 @@ int JumpjetLocomotionClass::DispatchVirtualCall_0(int a1)
 namespace gamemd {
 int JumpjetLocomotionClass::ClearLocomotionDirty(unsigned char * a1)
 {
-  if ( (*(uint8_t (__stdcall **)(FlyLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) ) /*0x4cfd28*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 16))(a1) )
   {
-    a1->__pad_4F[0] = 1; /*0x4cfd2f*/
+        a1[79] = 1;
     *(unsigned int *)&a1->__pad_4F[1] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 20, 30); /*0x4cfd48*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 50 ) /*0x4cfd63*/
       *(unsigned int *)&a1->__pad_4F[1] = -*(unsigned int *)&a1->__pad_4F[1]; /*0x4cfd6a*/
@@ -1602,15 +1602,15 @@ int JumpjetLocomotionClass::ClearLocomotionDirty_0(unsigned char * a1)
 {
   int currentMission; // eax
 
-  if ( (*(uint8_t (__stdcall **)(HoverLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 96))(a1) ) /*0x516bf8*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1) )
   {
     currentMission = a1->?->?; /*0x516c02*/
     if ( currentMission ) /*0x516c0a*/
     {
       if ( currentMission != 7 ) /*0x516c0f*/
       {
-        IDA_LOBYTE(a1->CurrentWobbles[1]) = 1; /*0x516c11*/
-        *(unsigned int *)&a1->HoverLocomotionClass_field_bool_68 = Random::Range( /*0x516c2a*/
+                a1[100] = 1;
+                *((unsigned int *)a1 + 26) = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 20, 30);
                                                                  (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                                                                  20,
                                                                  30);
@@ -1669,8 +1669,8 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
   unsigned char v32[12]; // [esp+40h] [ebp-Ch] BYREF
   JumpjetLocomotionClass *thisa; // [esp+50h] [ebp+4h]
 
-  v3 = (*(int (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 116))(a1); /*0x54aecb*/
-  v4 = a1->LocomotionClass[0]; /*0x54aece*/
+    v2 = (*(int (__stdcall **)(unsigned int *))(*a1 + 116))(a1);
+    v3 = *a1;
   v28 = v3; /*0x54aed1*/
   if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(v4 + 16))(a1) /*0x54aedf*/
     || (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 128))(a1) )
@@ -1803,13 +1803,13 @@ int JumpjetLocomotionClass::SmoothObjectPlacement(int a1, int a2, int a3, int a4
   int v17[3]; // [esp+14h] [ebp-Ch] BYREF
 
   v4 = a1; /*0x54b1cc*/
-  if ( (*(unsigned int *)&a1->__pad_39[3] != dword_ABC5A8 /*0x54b1fe*/
+    if ( (*(unsigned int *)(a1 + 60) != dword_ABC5A8
      || a1->DestinationCoords[0] != dword_ABC5AC
      || a1->DestinationCoords[1] != dword_ABC5B0)
     && *(unsigned int *)&a1->IsMoving
     && a1->__pad_89[3] )
   {
-    (*((void (**)(FootClass *, char *))a1->?->TechnoClass + 61))(a1->?, &a1->__pad_39[3]); /*0x54b20e*/
+        (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 244))(*(unsigned int *)(a1 + 8), a1 + 60);
     v4->__pad_89[3] = 0; /*0x54b214*/
   }
   v5 = a2; /*0x54b21e*/
@@ -1949,17 +1949,17 @@ Coord * * JumpjetLocomotionClass::MoveToDestination(int a1)
   if ( !dword_A8E7AC ) /*0x54b4dd*/
   {
     v2 = a1; /*0x54b4e3*/
-    result = IDA_LOBYTE(a1->DestinationCoords[2]); /*0x54b4e7*/
+        result = *(unsigned __int8 *)(a1 + 72);
     if ( (unsigned char)result ) /*0x54b4ec*/
     {
-      v3 = &a1->__pad_39[3]; /*0x54b4fb*/
-      if ( (*(unsigned int *)&a1->__pad_39[3] != dword_ABC5A8 /*0x54b521*/
+            v3 = (unsigned int *)(a1 + 60);
+            if ( (*(unsigned int *)(a1 + 60) != dword_ABC5A8
          || a1->DestinationCoords[0] != dword_ABC5AC
          || a1->DestinationCoords[1] != dword_ABC5B0)
         && *(unsigned int *)&a1->IsMoving
         && a1->__pad_89[3] )
       {
-        (*((void (**)(FootClass *, char *))a1->?->TechnoClass + 61))(a1->?, &a1->__pad_39[3]); /*0x54b531*/
+                (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 244))(*(unsigned int *)(a1 + 8), a1 + 60);
         v2->__pad_89[3] = 0; /*0x54b537*/
       }
       Owner = *(unsigned int *)&v2->Owner; /*0x54b541*/
@@ -2047,7 +2047,7 @@ void* * JumpjetLocomotionClass::ProcessLanding(int * v6, unsigned int * a3)
   int GroundHeight; // [esp+Ch] [ebp-10h]
   int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  LinkedTo = *(unsigned int *)&this->LinkedTo; /*0x54d6d0*/
+    v3 = *((unsigned int *)this + 12);
   if ( LinkedTo && (*((int (**)(FootClass *))LinkedTo->TechnoClass + 11))(LinkedTo) == 1 ) /*0x54d6e7*/
   {
     v4 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a3); /*0x54d6f7*/
@@ -2201,22 +2201,22 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
   int v15; // [esp+24h] [ebp+8h]
   int v16; // [esp+28h] [ebp+Ch]
 
-  v4 = *(unsigned int *)&this->q0F4; /*0x586ac8*/
+    v4 = *((unsigned int *)this + 244);
   v5 = *aP2; /*0x586acf*/
   v6 = aP2[1]; /*0x586ad4*/
   if ( (v4 & 1) != 0 ) /*0x586ae1*/
     v7 = v5 - v6 + 1; /*0x586ae5*/
   else
     v7 = v5 - v6; /*0x586ae8*/
-  v8 = v4 / 2 + (v7 >> 1) - this->q0FC; /*0x586b05*/
-  v9 = v5 + v6 - v4 - this->q100; /*0x586b0d*/
-  v15 = this->q104 / 2; /*0x586b2d*/
-  v10 = this->q108 / 2; /*0x586b36*/
+    v8 = v4 / 2 + (v7 >> 1) - *((unsigned int *)this + 252);
+    v9 = v5 + v6 - v4 - *((unsigned int *)this + 256);
+    aP2a = *((unsigned int *)this + 260) / 2;
+    v10 = *((unsigned int *)this + 264) / 2;
   if ( (int)abs32(v8 - v15) >= (int)abs32(v9 - v10) ) /*0x586b45*/
   {
     if ( v9 >= v10 ) /*0x586b83*/
     {
-      v11 = this->q108; /*0x586b98*/
+            v11 = *((unsigned int *)this + 264);
       if ( a4 ) /*0x586b9e*/
         --v11; /*0x586ba0*/
     }
@@ -2228,9 +2228,9 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
   else if ( v8 >= v15 ) /*0x586b4b*/
   {
     if ( a4 ) /*0x586b64*/
-      v8 = this->q104 - 1; /*0x586b6c*/
+            v8 = *((unsigned int *)this + 260) - 1;
     else
-      v8 = this->q104; /*0x586b75*/
+            v8 = *((unsigned int *)this + 260);
     v11 = v9; /*0x586b6f*/
   }
   else
@@ -2238,8 +2238,8 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
     v8 = a4 != 0; /*0x586b58*/
     v11 = v9; /*0x586b5a*/
   }
-  v12 = this->q100 + v11; /*0x586bb1*/
-  v13 = v8 + this->q0FC; /*0x586bb3*/
+    v12 = *((unsigned int *)this + 256) + v11;
+    v13 = v8 + *((unsigned int *)this + 252);
   IDA_LOWORD(v16) = v13 + ((v12 + 1) >> 1); /*0x586bc7*/
   IDA_HIWORD(v16) = v4 + (v12 >> 1) - v13; /*0x586bcf*/
   *aP1 = v16; /*0x586bdc*/
@@ -2413,7 +2413,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
       {
         v31 = *a3 << 6; /*0x69f9d1*/
         *a3 = v31; /*0x69f9d4*/
-        *a3 = v31 + a1->TurnRate; /*0x69f9db*/
+                *a3 = v24 + a1[6];
       }
       Transform = Turret::GetTransform((LocomotionClass *)a1, v60, a3); /*0x69f9e7*/
       Transform::Copy(v59, Transform); /*0x69f9f4*/
@@ -2573,7 +2573,7 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
   v2 = a1->?->pathDirections[0]; /*0x6a4139*/
   if ( v2 < -1 || v2 > 8 ) /*0x6a414b*/
     return 0; /*0x6a414b*/
-  v3 = 12 * a1->MovementSpeed[1] + 8333888; /*0x6a415c*/
+    v3 = 12 * *(unsigned int *)(a1 + 84) + 8333888;
   v4 = IDA_LOBYTE(a1->TrackIndex)
      ? (char)algn_7F2A41[12 * a1->MovementSpeed[1]]
      : byte_7F2A40[12 * a1->MovementSpeed[1]];
@@ -2582,7 +2582,7 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
   if ( v2 == -1 ) /*0x6a417c*/
     return 0; /*0x6a417c*/
   IDA_LOBYTE(v5) = 0; /*0x6a4183*/
-  IDA_HIBYTE(v5) = algn_7F2A41[12 * a1->MovementSpeed[1] + 3]; /*0x6a4185*/
+    HIBYTE(v5) = algn_7F2A41[12 * *(unsigned int *)(a1 + 84) + 3];
   IDA_LOWORD(a1) = v5; /*0x6a4188*/
   if ( (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) == v2 ) /*0x6a41a8*/
     return 0; /*0x6a41a8*/
@@ -2615,15 +2615,15 @@ int JumpjetLocomotionClass::StubReturnZero_16()
 
   if ( !FootClass::CanEnterCell((int)this, 0) ) /*0x709489*/
     return 0; /*0x7094d5*/
-  v2 = this->u32_2B4; /*0x709497*/
-  v3 = this->LocomotionClass[0]; /*0x70949e*/
-  this->u32_4FC = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x7094a9*/
+    v2 = *((unsigned int *)this + 692);
+    v3 = *this;
+    *((unsigned int *)this + 1276) = MEMORY[0xA8ED84];
   v4 = (*(int (**)(JumpjetLocomotionClass *, unsigned char *, int))(v3 + 72))(this, v6, 1); /*0x7094af*/
   result = (*(int (**)(JumpjetLocomotionClass *, int))(v3 + 924))(this, v4); /*0x7094b5*/
   if ( result ) /*0x7094be*/
   {
-    if ( this->u32_2B4 != v2 ) /*0x7094c6*/
-      this->u32_50C = 1; /*0x7094c8*/
+        if ( *((unsigned int *)this + 692) != v2 )
+            *((unsigned char *)this + 1292) = 1;
   }
   return result; /*0x7094cf*/
 }
@@ -2636,8 +2636,8 @@ int JumpjetLocomotionClass::SetCoordinateField(unsigned int * a1)
   int result; // eax
   FootClass *LinkedTo; // ecx
 
-  v1 = a1->Timer[0]; /*0x719bf5*/
-  result = a1->Timer[2]; /*0x719bf8*/
+    v1 = a1[15];
+    result = a1[17];
   if ( v1 == -1 ) /*0x719bfe*/
   {
   LABEL_4:
@@ -2918,11 +2918,11 @@ int JumpjetLocomotionClass_26::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x54eb20*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x54eb23*/
   if ( m_10 <= 0 ) /*0x54eb28*/
     return -1; /*0x54eb3f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x54eb2e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x54eb3d*/
       return -1; /*0x54eb3d*/
@@ -2945,21 +2945,21 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
   int v13; // [esp+1Ch] [ebp-10h]
   unsigned int v14[3]; // [esp+20h] [ebp-Ch] BYREF
 
-  v2 = Math::RoundToInt(this->vtable3); /*0x439a1a*/
-  v3 = this->Speed; /*0x439a1f*/
+    v2 = Math::RoundToInt(*(float *)((char *)this + 96));
+    v3 = *(float *)((char *)this + 112);
   v14[0] = v2; /*0x439a22*/
   v4 = Math::RoundToInt(v3); /*0x439a26*/
-  v5 = this->Climb; /*0x439a2b*/
+    v5 = *(float *)((char *)this + 128);
   v14[1] = v4; /*0x439a2e*/
   v14[2] = Math::RoundToInt(v5); /*0x439a37*/
   GroundHeight = Cell::GetGroundHeight(v14); /*0x439a45*/
-  v7 = Math::RoundToInt(this->Climb - (double)GroundHeight); /*0x439a5e*/
+    v7 = Math::RoundToInt(*(float *)((char *)this + 128) - (double)GroundHeight);
   v10 = v7; /*0x439a66*/
   if ( (*((unsigned int *)Coord::To_Cell(&MapClass_Instance, v14) + 80) & 0x100) != 0 && v7 >= dword_89C76C ) /*0x439a81*/
     v10 = v7 - dword_89C76C; /*0x439a85*/
-  v11 = Math::RoundToInt(this->Crash); /*0x439a94*/
-  v12 = Math::RoundToInt(this->Height); /*0x439aa1*/
-  v13 = Math::RoundToInt((double)v10 * this->Owner + this->Accel); /*0x439ab8*/
+    v11 = Math::RoundToInt(*(float *)((char *)this + 144));
+    v12 = Math::RoundToInt(*(float *)((char *)this + 160));
+    v13 = Math::RoundToInt((double)v10 * *(double *)((char *)this + 32) + *(float *)((char *)this + 176));
   v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12); /*0x439adc*/
   return (double)(int)Math::RoundToInt(v8); /*0x439af2*/
 }
@@ -2978,8 +2978,8 @@ int   JumpjetLocomotionClass::LoadLocomotionFromStream()
   v2 = this; /*0x4af611*/
   if ( !this ) /*0x4af618*/
     return -2147467261; /*0x4af621*/
-  pad_50 = this->__pad_50; /*0x4af62b*/
-  if ( *(unsigned int *)this->__pad_50 ) /*0x4af628*/
+    v4 = a1 + 20;
+    if ( a1[20] )
   {
     this = 0; /*0x4af634*/
     v5 = StreamClass::Set2((StreamClass *)&this, pad_50); /*0x4af645*/
@@ -2987,10 +2987,10 @@ int   JumpjetLocomotionClass::LoadLocomotionFromStream()
       WinAPI::Wrapper(v5); /*0x4af656*/
     if ( !this ) /*0x4af661*/
       return -2147467259; /*0x4af66a*/
-    v6 = (*(int (__stdcall **)(JumpjetLocomotionClass *, unsigned int *))(this->LocomotionClass[0] + 12))(this, v2); /*0x4af674*/
+        v6 = (*(int (__stdcall **)(unsigned int *, unsigned int *))(*a1 + 12))(a1, v2);
     if ( this ) /*0x4af67c*/
     {
-      (*(void (__stdcall **)(JumpjetLocomotionClass *))(this->LocomotionClass[0] + 8))(this); /*0x4af685*/
+            (*(void (__stdcall **)(unsigned int *))(*a1 + 8))(a1);
       return v6; /*0x4af68c*/
     }
   }
@@ -3031,9 +3031,9 @@ int JumpjetLocomotionClass::StubReturnZero(int a1, int a2)
 {
   if ( !a2 ) /*0x4af8e6*/
     return -2147467261; /*0x4af8e8*/
-  if ( *(unsigned int *)a1->__pad_50 ) /*0x4af8f4*/
+    if ( *(unsigned int *)(a1 + 80) )
     return -2147467259; /*0x4af91b*/
-  *(unsigned int *)a1->__pad_50 = a2; /*0x4af902*/
+    *(unsigned int *)(a1 + 80) = a2;
   (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x4af908*/
   return 0; /*0x4af8ed*/
 }
@@ -3044,11 +3044,11 @@ int JumpjetLocomotionClass::StubReturnZero_0(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4af936*/
     return -2147467261; /*0x4af938*/
-  v3 = *(unsigned int *)a1->__pad_50; /*0x4af944*/
+    v3 = *(unsigned int *)(a1 + 80);
   if ( !v3 ) /*0x4af949*/
     return 1; /*0x4af959*/
   *a2 = v3; /*0x4af94b*/
-  *(unsigned int *)a1->__pad_50 = 0; /*0x4af94d*/
+    *(unsigned int *)(a1 + 80) = 0;
   return 0; /*0x4af93d*/
 }
 // 0x4AF970
@@ -3064,20 +3064,20 @@ unsigned int * JumpjetLocomotionClass::InitMovementState(unsigned int * a1, int 
 {
   int v3; // [esp+8h] [ebp-Ch]
 
-  a1->CurrentRamp = a2; /*0x4afb4d*/
-  *(unsigned int *)a1->__pad_18 = a2; /*0x4afb50*/
-  a1->PreviousRamp = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4afb5f*/
-  a1->SlopeTimer[0] = v3; /*0x4afb65*/
-  a1->SlopeTimer[1] = 0; /*0x4afb68*/
-  a1->SlopeTimer[2] = 0; /*0x4afb6b*/
-  return &a1->PreviousRamp; /*0x4afb6e*/
+    a1[7] = a2;
+    a1[6] = a2;
+    a1[8] = MEMORY[0xA8ED84];
+    a1[9] = v3;
+    a1[10] = 0;
+    a1[11] = 0;
+    return a1 + 8;
 }
 // 0x4AFB80
 bool JumpjetLocomotionClass::StubReturnTrue(int a1)
 {
-  if ( IDA_LODWORD(a1->Wobbles) != g_DDraw_ClipRect || *(unsigned long long *)&a1->Deviation != qword_8A0794 ) /*0x4afba1*/
+    if ( *(unsigned int *)(a1 + 48) != MEMORY[0x8A0790] || *(unsigned long long *)(a1 + 52) != MEMORY[0x8A0794] )
     return 1; /*0x4afbb1*/
-  return (*(unsigned int *)&a1->__pad_39[3] != g_DDraw_ClipRect || *(unsigned long long *)a1->DestinationCoords != qword_8A0794) /*0x4afc00*/
+    return (*(unsigned int *)(a1 + 60) != MEMORY[0x8A0790] || *(unsigned long long *)(a1 + 64) != MEMORY[0x8A0794])
       && (*(unsigned int *)&a1->__pad_39[3] != a1->?->?[0] || a1->DestinationCoords[0] != a1->?->?[1]);
 }
 // 0x4AFC20
@@ -3113,7 +3113,7 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate(unsigned int * a1, un
   int v7; // edx
   int v8; // esi
 
-  if ( *(unsigned int *)&a1->__pad_39[3] == g_DDraw_ClipRect && *(unsigned long long *)a1->DestinationCoords == qword_8A0794 ) /*0x4afcde*/
+    if ( a1[15] == MEMORY[0x8A0790] && *((unsigned long long *)a1 + 8) == MEMORY[0x8A0794] )
   {
     Owner = *(unsigned int *)&a1->Owner; /*0x4afd0b*/
     location = *(unsigned int *)&Owner->vtable3; /*0x4afd14*/
@@ -3129,7 +3129,7 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate(unsigned int * a1, un
   {
     v2 = a1->DestinationCoords[0]; /*0x4afcf4*/
     v3 = a1->DestinationCoords[1]; /*0x4afcf7*/
-    *a2 = *(unsigned int *)&a1->__pad_39[3]; /*0x4afcfc*/
+        *a2 = a1[15];
     a2[1] = v2; /*0x4afcfe*/
     a2[2] = v3; /*0x4afd01*/
     return a2; /*0x4afd04*/
@@ -3157,9 +3157,9 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int
           result = a1; /*0x4afd8a*/
           v5 = aP1_4; /*0x4afd8e*/
           v6 = aP3; /*0x4afd92*/
-          arg0->SlopeTimer[3] = (int)a1; /*0x4afd99*/
-          arg0->Dest[0] = v5; /*0x4afd9c*/
-          arg0->Dest[1] = v6; /*0x4afd9f*/
+                    *(unsigned int *)(arg0 + 48) = a1;
+                    *(unsigned int *)(arg0 + 52) = v5;
+                    *(unsigned int *)(arg0 + 56) = v6;
           if ( result != (unsigned int *)g_DDraw_ClipRect || IDA___PAIR64__(v6, v5) != qword_8A0794 ) /*0x4afdb2*/
           {
             a1 = result; /*0x4afdbc*/
@@ -3186,7 +3186,7 @@ int JumpjetLocomotionClass::CheckWindowsErrorWrapper(int result)
   double v3; // st7
   int result; // eax
 
-  if ( result->Dest[2] != g_DDraw_ClipRect || *(unsigned long long *)result->HeadToCoord != qword_8A0794 ) /*0x4afe1d*/
+    if ( *(unsigned int *)(a1 + 60) != MEMORY[0x8A0790] || *(unsigned long long *)(a1 + 64) != MEMORY[0x8A0794] )
   {
     if ( *(unsigned char *)((*((int (**)(FootClass *))result->?->TechnoClass + 33))(result->?) + 3220) ) /*0x4afe36*/
     {
@@ -3228,11 +3228,11 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation(unsigned int * a1, float 
   FootClass *Owner; // edx
   float v9[12]; // [esp+Ch] [ebp-30h] BYREF
 
-  v3 = a1->SlopeTimer[2]; /*0x4b0419*/
+    v3 = a1[11];
   if ( v3 ) /*0x4b0422*/
   {
-    PreviousRamp = a1->PreviousRamp; /*0x4b042c*/
-    v6 = a1->SlopeTimer[1]; /*0x4b042f*/
+        v5 = a1[8];
+        v6 = a1[10];
     if ( PreviousRamp != -1 ) /*0x4b0435*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - PreviousRamp >= v6 ) /*0x4b0441*/
@@ -3240,7 +3240,7 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation(unsigned int * a1, float 
       else
         v6 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - PreviousRamp; /*0x4b0443*/
     }
-    v4 = (double)(v3 - v6) / (double)a1->SlopeTimer[2]; /*0x4b0453*/
+        v4 = (double)(v3 - v6) / (double)(int)a1[11];
   }
   else
   {
@@ -3260,7 +3260,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall(int * a1)
   int v1; // edi
   int v2; // eax
 
-  v1 = *(unsigned int *)a1->LocomotionClass; /*0x4b04d9*/
+    v1 = *a1;
   v2 = (*((int (**)(FootClass *))a1->?->TechnoClass + 111))(a1->?); /*0x4b04dd*/
   return (*(int (__stdcall **)(DriveLocomotionClass *, unsigned int))(v1 + 124))(a1, *(uint8_t *)(v2 + 284)); /*0x4b04f0*/
 }
@@ -3300,29 +3300,29 @@ char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
 // 0x4B4BE0
 int JumpjetLocomotionClass::SetByteField(int a1)
 {
-  a1->IsTurretLockedDown = 0; /*0x4b4be4*/
-  return (int)a1->LocomotionClass; /*0x4b4be8*/
+    *(unsigned char *)(a1 + 97) = 0;
+    return a1;
 }
 // 0x4B4BF0
 int JumpjetLocomotionClass::SetByteField_0(int a1)
 {
-  a1->IsTurretLockedDown = 1; /*0x4b4bf4*/
-  return (int)a1->LocomotionClass; /*0x4b4bf8*/
+    *(unsigned char *)(a1 + 97) = 1;
+    return a1;
 }
 // 0x4B4C00
 int JumpjetLocomotionClass::GetField_0x54(int a1)
 {
-  return a1->MovementSpeed[1]; /*0x4b4c07*/
+    return *(unsigned int *)(a1 + 84);
 }
 // 0x4B4C10
 int JumpjetLocomotionClass::GetField_0x58(int a1)
 {
-  return a1->TrackNumber; /*0x4b4c17*/
+    return *(unsigned int *)(a1 + 88);
 }
 // 0x4B4C20
 int JumpjetLocomotionClass::GetField_0x48(int a1)
 {
-  return a1->HeadToCoord[2]; /*0x4b4c27*/
+    return *(unsigned int *)(a1 + 72);
 }
 // 0x4B4C60
 int JumpjetLocomotionClass::MissionStub6(int a1)
@@ -3510,12 +3510,12 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_0(unsigned int * a1, unsign
 // 0x4B65F0
 BOOL JumpjetLocomotionClass::ShortFunc_4B65F0(DropPodLocomotionClass * aP0)
 {
-  return aP0->__pad_18[0] != 0; /*0x4b65fe*/
+    return aP0->__pad_18[0] != 0;
 }
 // 0x4B6610
 int JumpjetLocomotionClass::Thunk_VtableDispatch4(int a1)
 {
-  return (*(int (__stdcall **)(LocomotionClass *))(*(unsigned int *)a1->ILocomotion + 16))(a1); /*0x4b661a*/
+    return (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 16))(a1);
 }
 // 0x4B6620
 void JumpjetLocomotionClass::Stub7(int a1, int a2)
@@ -3612,12 +3612,12 @@ int JumpjetLocomotionClass::StubReturnZero_7(LocomotionClass * aP0, unsigned int
 // 0x4CCA90
 BOOL JumpjetLocomotionClass::ComputeFloatExpression(int a1)
 {
-  return IDA_LOBYTE(a1->Wobbles) || a1->?->? > 0.0; /*0x4ccab3*/
+    return *(unsigned char *)(a1 + 48) || *(float *)(*(unsigned int *)(a1 + 8) + 744) > 0.0;
 }
 // 0x4CCAC0
 bool JumpjetLocomotionClass::ComputeFloatExpression_0(int a1)
 {
-  return *(double *)a1->CurrentSpeed != 0.0; /*0x4ccad6*/
+    return *(double *)(a1 + 68) != 0.0;
 }
 // 0x4CCAE0
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate(unsigned int * a1, unsigned int * a2)
@@ -3627,13 +3627,13 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate(unsigned int * a1, 
   float Climb; // esi
   float *v5; // edi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 16))(a1) ) /*0x4ccae9*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = a2; /*0x4ccaf0*/
     Speed = a1->Speed; /*0x4ccaf7*/
     Climb = a1->Climb; /*0x4ccafa*/
     v5 = (float *)a2; /*0x4ccafd*/
-    *a2 = a1->TurnRate; /*0x4ccaff*/
+        *a2 = a1[6];
   }
   else
   {
@@ -3655,10 +3655,10 @@ char JumpjetLocomotionClass::ProcessLocomotionStep(int a1)
   char result; // al
   FootClass *v4; // ecx
 
-  if ( !a1->IsLanding && !a1->IsTakingOff && *(double *)a1->TargetSpeed >= 1.0 && !*(unsigned int *)&a1->HasMoveOrder ) /*0x4ccb65*/
+    if ( !*(unsigned char *)(a1 + 77) && !*(unsigned char *)(a1 + 76) && *(double *)(a1 + 60) >= 1.0 && !*(unsigned int *)(a1 + 52) )
   {
     v1 = (*((int (**)(FootClass *))a1->?->TechnoClass + 33))(a1->?); /*0x4ccb71*/
-    *(unsigned int *)&a1->HasMoveOrder = (*(int (**)(int))(*(unsigned int *)v1 + 188))(v1); /*0x4ccb81*/
+        *(unsigned int *)(a1 + 52) = (*(int (**)(int))(*(unsigned int *)v1 + 188))(v1);
   }
   Owner = a1->?; /*0x4ccb84*/
   if ( *(unsigned short *)&Owner->reloadTimer > 0 /*0x4ccb9e*/
@@ -3716,12 +3716,12 @@ char JumpjetLocomotionClass::IsMapCoordVisible()
   TeamClass *team; // eax
   unsigned int v10[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  location = this->LinkedTo->?; /*0x4cd519*/
+    v2 = (unsigned int *)(*((unsigned int *)this + 12) + 156);
   v10[0] = *location; /*0x4cd520*/
   v10[1] = location[1]; /*0x4cd52c*/
   v10[2] = location[2]; /*0x4cd538*/
   v3 = IsCoordVisibleMap((ObjectClass *)&stru_87F5F0.__pad_58[416], v10); /*0x4cd53c*/
-  LinkedTo = *(unsigned int *)&this->LinkedTo; /*0x4cd541*/
+    v4 = (unsigned char *)*((unsigned int *)this + 12);
   if ( v3 ) /*0x4cd546*/
   {
     LinkedTo->? = 1; /*0x4cd5f0*/
@@ -3740,7 +3740,7 @@ char JumpjetLocomotionClass::IsMapCoordVisible()
     if ( v6 ) /*0x4cd5a7*/
       (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x4cd5ae*/
   }
-  team = this->?->team; /*0x4cd5c2*/
+    v8 = *(unsigned int *)(*((unsigned int *)this + 12) + 1492);
   if ( team ) /*0x4cd5ca*/
     team->unknown82 = 1; /*0x4cd5cc*/
   (*((void (**)(FootClass *))this->?->TechnoClass + 232))(this->?); /*0x4cd5d7*/
@@ -3891,9 +3891,9 @@ long long JumpjetLocomotionClass::ComputeFloatExpression_1(int a1)
 // 0x4CFE50
 int JumpjetLocomotionClass::StubReturnZero_8(unsigned char * a1)
 {
-  if ( a1->IsLanding ) /*0x4cfe54*/
+    if ( a1[77] )
     return 1; /*0x4cfe5b*/
-  if ( a1->IsTakingOff ) /*0x4cfe63*/
+    if ( a1[76] )
     return 0; /*0x4cfe6a*/
   return 3 /*0x4cfe60*/
        - ((*(uint8_t (__stdcall **)(FlyLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) != 0);
@@ -3903,7 +3903,7 @@ BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
 {
   if ( a2 ) /*0x4d0409*/
     WinAPI::Wrapper(-2147467261); /*0x4d0410*/
-  return this->LocomotionClass[0] == 0; /*0x4d041e*/
+    return *this == 0;
 }
 // 0x4D0510
 int JumpjetLocomotionClass::GetInterface(int a1, const void * a2, unsigned int * a3)
@@ -3950,7 +3950,7 @@ BOOL JumpjetLocomotionClass::HasScoreDisplayChanged(unsigned int * a1)
 // 0x514C80
 BOOL JumpjetLocomotionClass::ComputeFloatExpression_2(int a1)
 {
-  return (*(uint8_t (__stdcall **)(HoverLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) /*0x514ca4*/
+    return (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)a1 + 16))(a1) && *(double *)(a1 + 68) != 0.0;
       && *(double *)&a1->LocomotionFacing[5] != 0.0;
 }
 // 0x514CB0
@@ -3972,7 +3972,7 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0(unsigned in
   }
   else
   {
-    TurnRate = a1->TurnRate; /*0x514ce2*/
+        v4 = a1[6];
     Speed = a1->Speed; /*0x514ce5*/
     *a2 = a1->?; /*0x514cea*/
     a2[1] = TurnRate; /*0x514cec*/
@@ -4020,12 +4020,12 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned in
 {
   unsigned int *result; // eax
 
-  result = a1->LocomotionClass; /*0x516320*/
-  if ( a1->? != a1->Dest[2] || a1->Dest[0] != a1->HeadToCoord[0] || a1->Dest[1] != a1->HeadToCoord[1] ) /*0x516340*/
+    result = a1;
+    if ( a1[5] != a1[8] || a1[6] != a1[9] || a1[7] != a1[10] )
   {
     a1->RefCount = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x516348*/
-    a1->Dest[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x516351*/
-    a1->Dest[1] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x51635a*/
+        a1[6] = MEMORY[0xA8F184];
+        a1[7] = MEMORY[0xA8F188];
     result = &a1->Owner->TechnoClass; /*0x51635d*/
     result[376] = -1; /*0x516360*/
   }
@@ -4114,7 +4114,7 @@ char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int
   int v15; // [esp+28h] [ebp-8h]
 
   v2 = a1; /*0x516e15*/
-  if ( !(*(uint8_t (__stdcall **)(HoverLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 96))(a1) ) /*0x516e1d*/
+    if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)a1 + 96))(a1) )
     return 0; /*0x516e1d*/
   if ( IDA_LOBYTE(v2->HoverLocomotionClass_field_6C) ) /*0x516e28*/
     return 0; /*0x516e28*/
@@ -4167,12 +4167,12 @@ char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int
 // 0x516FC0
 char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0, HoverLocomotionClass * aP1)
 {
-  if ( !(*(uint8_t (__stdcall **)(HoverLocomotionClass *, int))(*(unsigned int *)aP0->LocomotionClass + 104))( /*0x516fcd*/
+    if ( !(*(unsigned __int8 (__stdcall **)(HoverLocomotionClass *, HoverLocomotionClass *))(*(unsigned int *)aP0->__pad_0 + 104))(
           aP0,
           aP1) )
     return 0; /*0x517017*/
-  IDA_LOBYTE(aP0->CurrentWobbles[1]) = 1; /*0x516fd4*/
-  *(unsigned int *)&aP0->HoverLocomotionClass_field_bool_68 = Random::Range( /*0x516fed*/
+    LOBYTE(aP0->CurrentWobbles[1]) = 1;
+    *(unsigned int *)&aP0->HoverLocomotionClass_field_bool_68 = Random::Range(
                                                            (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                                                            20,
                                                            30);
@@ -4197,7 +4197,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_3(unsigned int * a1, int a2)
   result = a2; /*0x5171c0*/
   if ( !a2 ) /*0x5171c9*/
   {
-    v3 = (unsigned int *)(*(int (__stdcall **)(HoverLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))( /*0x5171d8*/
+        v3 = (unsigned int *)(*(int (__stdcall **)(unsigned int *, unsigned char *))(*a1 + 24))(a1, v6);
                      a1,
                      v6);
     v5[0] = *v3; /*0x5171dd*/
@@ -4217,7 +4217,7 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold(int a1, int a2, int a3, i
   int v7; // eax
   unsigned char v9[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v4 = (int *)(*(int (__stdcall **)(HoverLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))(a1, v9); /*0x517223*/
+    v4 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)a1 + 24))(a1, v9);
   v5 = v4[2]; /*0x51722b*/
   v6 = *v4; /*0x517257*/
   v7 = v4[1] / 256; /*0x51726d*/
@@ -4259,7 +4259,7 @@ int JumpjetLocomotionClass::InitMovementParams(int a1, int a2)
 // 0x54AE50
 char JumpjetLocomotionClass::SmallStub_54AE50(int a1)
 {
-  return a1->DestinationCoords[2]; /*0x54ae57*/
+    return *(unsigned char *)(a1 + 72);
 }
 // 0x54AE60
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_0(unsigned int * a1, unsigned int * a2)
@@ -4269,13 +4269,13 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_0(unsigned int * a1
   int v4; // esi
   unsigned int *v5; // edi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 16))(a1) ) /*0x54ae69*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = a2; /*0x54ae70*/
     v3 = a1->DestinationCoords[0]; /*0x54ae77*/
     v4 = a1->DestinationCoords[1]; /*0x54ae7a*/
     v5 = a2; /*0x54ae7d*/
-    *a2 = *(unsigned int *)&a1->__pad_39[3]; /*0x54ae7f*/
+        *a2 = a1[15];
   }
   else
   {
@@ -4423,7 +4423,7 @@ bool JumpjetLocomotionClass::CheckCompositeState(int a1)
 {
   int v1; // eax
 
-  v1 = *(unsigned int *)&a1->IsMoving; /*0x54d0d4*/
+    v1 = *(unsigned int *)(a1 + 76);
   return v1 && v1 != 2; /*0x54d0e2*/
 }
 // 0x54D820
@@ -4442,7 +4442,7 @@ int JumpjetLocomotionClass::GetFloorZSetContext()
   int v13; // [esp+10h] [ebp-8h]
   int v14; // [esp+14h] [ebp-4h]
 
-  location = this->LinkedTo->?; /*0x54d82a*/
+    v2 = (int *)(*((unsigned int *)this + 48) + 156);
   v12 = *location; /*0x54d831*/
   v13 = location[1]; /*0x54d83d*/
   v14 = location[2]; /*0x54d849*/
@@ -4450,9 +4450,9 @@ int JumpjetLocomotionClass::GetFloorZSetContext()
   ClosestOccupiableCell = JumpjetLocomotionClass::FindClosestOccupiableCell((JumpjetLocomotionClass *)v3); /*0x54d863*/
   if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12)->flags[0] & 0x100) != 0 ) /*0x54d873*/
     ClosestOccupiableCell += dword_ABC5DC; /*0x54d875*/
-  if ( *(double *)&this->CurrentHeight <= 0.0 ) /*0x54d889*/
+    if ( *(double *)((char *)this + 448) <= 0.0 )
     return ClosestOccupiableCell; /*0x54d926*/
-  v5 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)&this->__pad_50[4], &v11) >> 12) + 1) >> 1) & 7; /*0x54d8ac*/
+    v5 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)((char *)this + 336), &v11) >> 12) + 1) >> 1) & 7;
   v6 = v12 + g_DDrawSurfaceManager.scenario[2 * v5 + 102]; /*0x54d8bd*/
   v7 = g_DDrawSurfaceManager.scenario[2 * v5 + 103]; /*0x54d8bf*/
   v12 = v6; /*0x54d8c2*/
@@ -4478,7 +4478,7 @@ char JumpjetLocomotionClass::DispatchVirtualCall_4(int a1, int a2)
   IDA_LOBYTE(v2) = a2; /*0x54d930*/
   if ( !a2 ) /*0x54d93a*/
   {
-    v3 = (unsigned int *)(*(int (__stdcall **)(JumpjetLocomotionClass *, unsigned char *))(a1->LocomotionClass[0] + 24))(a1, v7); /*0x54d949*/
+        v3 = (unsigned int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)a1 + 24))(a1, v7);
     v6[0] = *v3; /*0x54d954*/
     v4 = v3[1]; /*0x54d958*/
     v6[1] = v4; /*0x54d95b*/
@@ -4486,10 +4486,10 @@ char JumpjetLocomotionClass::DispatchVirtualCall_4(int a1, int a2)
     v6[2] = v2; /*0x54d964*/
     if ( v6[0] != dword_ABC5A8 || v4 != dword_ABC5AC || v2 != dword_ABC5B0 ) /*0x54d979*/
     {
-      if ( !*(unsigned int *)&a1->IsMoving || (IDA_LOBYTE(v2) = a1->__pad_89[3], (unsigned char)v2) ) /*0x54d98a*/
+            if ( !*(unsigned int *)(a1 + 76) || (LOBYTE(v2) = *(unsigned char *)(a1 + 140), (unsigned char)v2) )
       {
         IDA_LOBYTE(v2) = (*((int (**)(FootClass *, unsigned int *))a1->?->TechnoClass + 61))(a1->?, v6); /*0x54d996*/
-        a1->__pad_89[3] = 0; /*0x54d99c*/
+                *(unsigned char *)(a1 + 140) = 0;
       }
     }
   }
@@ -4507,7 +4507,7 @@ unsigned int * JumpjetLocomotionClass::GetConditionedCoordinate(unsigned int * a
   {
     v5 = a1->DestinationCoords[0]; /*0x54d9e7*/
     v6 = a1->DestinationCoords[1]; /*0x54d9ea*/
-    *a2 = *(unsigned int *)&a1->__pad_39[3]; /*0x54d9ef*/
+        *a2 = a1[15];
     a2[1] = v5; /*0x54d9f1*/
     a2[2] = v6; /*0x54d9f4*/
     return a2; /*0x54d9f7*/
@@ -4527,9 +4527,9 @@ int JumpjetLocomotionClass::StubReturnZero_9(int a1, int a2)
 {
   if ( !a2 ) /*0x54da06*/
     return -2147467261; /*0x54da08*/
-  if ( *(unsigned int *)&a1->__pad_74[8] ) /*0x54da14*/
+    if ( *(unsigned int *)(a1 + 124) )
     return -2147467259; /*0x54da3b*/
-  *(unsigned int *)&a1->__pad_74[8] = a2; /*0x54da22*/
+    *(unsigned int *)(a1 + 124) = a2;
   (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x54da28*/
   return 0; /*0x54da0d*/
 }
@@ -4556,11 +4556,11 @@ int JumpjetLocomotionClass::StubReturnZero_10(int a1, unsigned int * a2)
     *(unsigned int *)(*((unsigned int *)a1 - 3) + 1064) = 0; /*0x54dac4*/
     *(unsigned int *)(*((unsigned int *)a1 - 3) + 1068) = 0; /*0x54dacd*/
   }
-  v5 = *(unsigned int *)&a1->__pad_74[8]; /*0x54dad3*/
+    v5 = *(unsigned int *)(a1 + 124);
   if ( !v5 ) /*0x54dad8*/
     return 1; /*0x54dae9*/
   *a2 = v5; /*0x54dada*/
-  *(unsigned int *)&a1->__pad_74[8] = 0; /*0x54dadc*/
+    *(unsigned int *)(a1 + 124) = 0;
   return 0; /*0x54da5d*/
 }
 // 0x54DB00
@@ -4572,9 +4572,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_2(int a1)
   result = 0; /*0x54db3e*/
   if ( !(*(uint8_t (__stdcall **)(char *))(*((unsigned int *)a1 - 5) + 16))((char *)a1 - 20) ) /*0x54db0c*/
   {
-    if ( *(unsigned int *)&a1->__pad_74[8] ) /*0x54db13*/
+        if ( *(unsigned int *)(a1 + 124) )
     {
-      if ( !a1->__pad_74[5] ) /*0x54db1a*/
+            if ( !*(unsigned char *)(a1 + 121) )
       {
         v1 = *((unsigned int *)a1 - 3); /*0x54db21*/
         if ( !*(unsigned char *)(v1 + 1709) || *(unsigned char *)(v1 + 1710) ) /*0x54db2e*/
@@ -4598,8 +4598,8 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_1(unsigned int * a1, unsign
   v2 = a2; /*0x54db51*/
   if ( !a2 ) /*0x54db58*/
     return -2147467261; /*0x54db61*/
-  v4 = &a1->__pad_74[8]; /*0x54db6b*/
-  if ( *(unsigned int *)&a1->__pad_74[8] ) /*0x54db68*/
+    v4 = a1 + 31;
+    if ( a1[31] )
   {
     a1 = 0; /*0x54db74*/
     v5 = StreamClass::Set2((StreamClass *)&a1, v4); /*0x54db85*/
@@ -4661,16 +4661,16 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
 {
   ILocomotion *Piggybackee; // eax
 
-  this->LocomotionClass[0] = (int)&JumpjetLocomotionClass_vftable; /*0x54dfa3*/
-  this->LocomotionClass[1] = (int)&JumpjetLocomotionClass_vftable; /*0x54dfa9*/
-  this->TurnRate = (int)&JumpjetLocomotionClass_vftable; /*0x54dfb0*/
-  Piggybackee = *(unsigned int *)&this->Piggybackee; /*0x54dfb7*/
+    *Block = (int)&JumpjetLocomotionClass::`vftable';
+    *(Block + 1) = (int)&JumpjetLocomotionClass::`vftable';
+    *(Block + 6) = (int)&vt_JumpjetLocomotionClass;
+    v3 = *(Block + 37);
   if ( Piggybackee ) /*0x54dfbf*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x54dfc4*/
   LocomotionClass::Construct(); /*0x54dfc9*/
   if ( (a2 & 1) != 0 ) /*0x54dfd3*/
     RA2_OPDEL(); /*0x54dfd6*/
-  return this->LocomotionClass; /*0x54dfe0*/
+    return (JumpjetLocomotionClass *)Block;
 }
 // 0x54DFF0
 int JumpjetLocomotionClass::SmallStub_54DFF0(int a1, const void * a2, int * a3)
@@ -4709,14 +4709,14 @@ void JumpjetLocomotionClass_26::ClearBuffer()
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x54e896*/
-  this->q010 = 0; /*0x54e899*/
-  if ( v2 && this->IsAllocated ) /*0x54e8a0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x54e8a6*/
-    *(unsigned int *)&this->q004 = 0; /*0x54e8ae*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x54e8b1*/
-  this->q008 = 0; /*0x54e8b4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -4724,8 +4724,8 @@ void JumpjetLocomotionClass_26::ClearBuffer()
 namespace gamemd {
 unsigned int JumpjetLocomotionClass_26::PointerToIndex(int a2)
 {
-  if ( this->q00C ) /*0x54e8c0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x54e8d5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x54e8c7*/
 }
@@ -4735,7 +4735,7 @@ unsigned int JumpjetLocomotionClass_26::PointerToIndex(int a2)
 namespace gamemd {
 int JumpjetLocomotionClass_26::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x54e8ea*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 }
 // 0x54E8F0
@@ -4747,13 +4747,13 @@ char JumpjetLocomotionClass_26::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x54e8f2*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x54e8fd*/
   {
     v3 = 0; /*0x54e8ff*/
     if ( m_8 <= 0 ) /*0x54e903*/
       return 1; /*0x54e923*/
-    v4 = *(unsigned int **)&this->q004; /*0x54e905*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x54e90b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x54e914*/
     {
@@ -4777,30 +4777,30 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54e93c*/
   {
-    this->q00C = 0; /*0x54e946*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x54e94c*/
       v4 = a3; /*0x54e962*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x54e95e*/
-    this->q00C = 1; /*0x54e966*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x54e96a*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x54e975*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x54e97c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x54e981*/
           m_8 = a2; /*0x54e983*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x54e989*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x54e98e*/
-        if ( this->IsAllocated ) /*0x54e99b*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x54e9a6*/
-          *(unsigned int *)&this->q004 = 0; /*0x54e9ae*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x54e9b7*/
-      this->q008 = a2; /*0x54e9bf*/
-      this->IsAllocated = a3 == 0; /*0x54e9c2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x54e9c8*/
     }
     else
@@ -4810,7 +4810,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54e9d2*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x54e9d8*/
   }
 }
@@ -4820,13 +4820,13 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void JumpjetLocomotionClass_26::ddtor()
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x54e9ed*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x54e9f3*/
-    *(unsigned int *)&this->q004 = 0; /*0x54e9fb*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x54e9fe*/
-  this->q008 = 0; /*0x54ea01*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -4838,9 +4838,9 @@ int JumpjetLocomotionClass_26::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x54ea10*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x54ea18*/
-  m_8 = this->q008; /*0x54ea1e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x54ea21*/
   if ( m_8 <= 0 ) /*0x54ea25*/
     return -1; /*0x54ea3c*/
@@ -4857,8 +4857,8 @@ int JumpjetLocomotionClass_26::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int JumpjetLocomotionClass_26::Write(int a2)
 {
-  if ( this->q00C ) /*0x54ea50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x54ea65*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x54ea57*/
 }
@@ -4875,38 +4875,38 @@ char JumpjetLocomotionClass_26::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54ea7c*/
   {
-    this->q00C = 0; /*0x54ea82*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x54ea88*/
       v4 = a3; /*0x54ea9e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x54ea9a*/
-    this->q00C = 1; /*0x54eaa2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x54eaa6*/
       return 0; /*0x54eb1a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x54eaa8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x54eaaf*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x54eab4*/
         m_8 = a2; /*0x54eab6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x54eabc*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x54eac1*/
-      if ( this->IsAllocated ) /*0x54eace*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x54ead9*/
-        *(unsigned int *)&this->q004 = 0; /*0x54eae1*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x54eaea*/
-    this->q008 = a2; /*0x54eaf2*/
-    this->IsAllocated = a3 == 0; /*0x54eaf5*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54eafe*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x54eb01*/
-  if ( v7 < this->q010 ) /*0x54eb09*/
-    this->q010 = v7; /*0x54eb0b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x54eb0e*/
 }
 } // namespace gamemd
@@ -4917,15 +4917,15 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->q004; /*0x54eb53*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_KamikazeControl___vftable; /*0x54eb56*/
-  if ( v3 && this->IsAllocated ) /*0x54eb60*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_KamikazeControl;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x54eb68*/
-    *(unsigned int *)&this->q004 = 0; /*0x54eb70*/
+        *(Block + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x54eb7b*/
-  *(unsigned short *)&this->q008 = 0; /*0x54eb81*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x54eb88*/
     RA2_OPDEL(); /*0x54eb8b*/
   return this; /*0x54eb95*/
@@ -4938,15 +4938,15 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->q004; /*0x54eba3*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_KamikazeControl___vftable; /*0x54eba6*/
-  if ( v3 && this->IsAllocated ) /*0x54ebb0*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_KamikazeControl;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x54ebb8*/
-    *(unsigned int *)&this->q004 = 0; /*0x54ebc0*/
+        *(Block + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x54ebcb*/
-  *(unsigned short *)&this->q008 = 0; /*0x54ebd1*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x54ebd8*/
     RA2_OPDEL(); /*0x54ebdb*/
   return this; /*0x54ebe5*/
@@ -5069,7 +5069,7 @@ int JumpjetLocomotionClass::MissionStub11(int a1)
 // 0x5AFF70
 char JumpjetLocomotionClass::SmallStub_5AFF70(int a1)
 {
-  return IDA_LOBYTE(a1->Accel); /*0x5aff77*/
+    return *(unsigned char *)(a1 + 44);
 }
 // 0x5AFF80
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_1(unsigned int * a1, unsigned int * a2)
@@ -5079,10 +5079,10 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_1(unsigned int * a1
   int Speed; // esi
   unsigned int *v5; // edi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 16))(a1) ) /*0x5aff89*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = a2; /*0x5aff90*/
-    TurnRate = a1->TurnRate; /*0x5aff97*/
+        v3 = a1[6];
     Speed = a1->Speed; /*0x5aff9a*/
     v5 = a2; /*0x5aff9d*/
     *a2 = a1->?; /*0x5aff9f*/
@@ -5162,8 +5162,8 @@ int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2
           v5 = aP2; /*0x5b00c5*/
           v6 = aP3; /*0x5b00ca*/
           a1->? = aP1; /*0x5b00dd*/
-          a1->MovingDestination[0] = v5; /*0x5b00e4*/
-          a1->MovingDestination[1] = v6; /*0x5b00ec*/
+                    *(unsigned int *)(a1 + 24) = v5;
+                    *(unsigned int *)(a1 + 28) = v6;
           result = (int)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &aP1); /*0x5b00ef*/
           if ( (*(unsigned int *)(result + 320) & 0x100) != 0 ) /*0x5b00fe*/
           {
@@ -5184,13 +5184,13 @@ int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
 
   result = (int)a1; /*0x5b0120*/
   a1->? = g_MissionQueueFrame.localVariables[227]; /*0x5b012d*/
-  a1->MovingDestination[0] = g_MissionQueueFrame.localVariables[228]; /*0x5b0136*/
-  a1->MovingDestination[1] = g_MissionQueueFrame.localVariables[229]; /*0x5b013f*/
-  if ( a1->MovingDestination[2] == g_MissionQueueFrame.localVariables[227] /*0x5b0165*/
+    *(unsigned int *)(a1 + 24) = MEMORY[0xABEE14];
+    *(unsigned int *)(a1 + 28) = MEMORY[0xABEE18];
+    if ( *(unsigned int *)(a1 + 32) == g_MatrixTransformState
     && a1->HeadToCoord[0] == g_MissionQueueFrame.localVariables[228]
     && a1->HeadToCoord[1] == g_MissionQueueFrame.localVariables[229] )
   {
-    IDA_LOBYTE(a1->HeadToCoord[2]) = 0; /*0x5b0167*/
+        *(unsigned char *)(a1 + 44) = 0;
   }
   return result; /*0x5b016b*/
 }
@@ -5203,9 +5203,9 @@ char JumpjetLocomotionClass::UpdateFacingDirection_1(int a1, int a2)
 // 0x5B01A0
 int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a3, int a4)
 {
-  a1->MovingDestination[2] = a2; /*0x5b01b4*/
-  a1->HeadToCoord[0] = a3; /*0x5b01b6*/
-  a1->HeadToCoord[1] = a4; /*0x5b01b9*/
+    a1[8] = a2;
+    a1[9] = a3;
+    a1[10] = a4;
   return a2; /*0x5b01bc*/
 }
 // 0x5B19D0
@@ -5236,7 +5236,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
   result = a2; /*0x5b1a50*/
   if ( !a2 ) /*0x5b1a59*/
   {
-    v3 = (unsigned int *)(*(int (__stdcall **)(MechLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))( /*0x5b1a68*/
+        v3 = (unsigned int *)(*(int (__stdcall **)(unsigned int *, unsigned char *))(*a1 + 24))(a1, v6);
                      a1,
                      v6);
     v5[0] = *v3; /*0x5b1a6d*/
@@ -5256,7 +5256,7 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3,
   int v7; // eax
   unsigned char v9[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v4 = (int *)(*(int (__stdcall **)(MechLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))(a1, v9); /*0x5b1ab3*/
+    v4 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)a1 + 24))(a1, v9);
   v5 = v4[2]; /*0x5b1abb*/
   v6 = *v4; /*0x5b1ae7*/
   v7 = v4[1] / 256; /*0x5b1afd*/
@@ -5267,14 +5267,14 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3,
 // 0x661F50
 BOOL JumpjetLocomotionClass::HasFieldStateChanged(unsigned int * a1)
 {
-  return a1->? != dword_B04E38 || a1->TurnRate != dword_B04E3C || a1->Speed != dword_B04E40; /*0x661f7d*/
+    return a1[5] != dword_B04E38 || a1[6] != dword_B04E3C || a1[7] != dword_B04E40;
 }
 // 0x661F90
 bool JumpjetLocomotionClass::CheckCompositeState_0(int a1)
 {
   int v1; // eax
 
-  v1 = a1->TrailerTimer[2]; /*0x661f94*/
+    v1 = *(unsigned int *)(a1 + 60);
   return v1 >= 3 && v1 <= 5; /*0x661fa3*/
 }
 // 0x661FB0
@@ -5283,7 +5283,7 @@ unsigned int * JumpjetLocomotionClass::GetCoordinate_0(unsigned int * a1, unsign
   int TurnRate; // edx
   int Speed; // eax
 
-  TurnRate = a1->TurnRate; /*0x661fbd*/
+    v2 = a1[6];
   Speed = a1->Speed; /*0x661fc0*/
   *a2 = a1->?; /*0x661fc5*/
   a2[1] = TurnRate; /*0x661fc7*/
@@ -5319,22 +5319,22 @@ int JumpjetLocomotionClass::ComputeFloatExpression_3(int a1, int a2, int a3, int
   {
     if ( *(unsigned int *)v6 ) /*0x66334c*/
     {
-      a1->TrailerTimer[2] = 1; /*0x663353*/
+            *(unsigned int *)(a1 + 60) = 1;
       v8 = *(unsigned int *)v6; /*0x663360*/
     }
     else
     {
-      a1->TrailerTimer[2] = 2; /*0x66336e*/
+            *(unsigned int *)(a1 + 60) = 2;
       v8 = *(unsigned int *)(v6 + 4); /*0x66337b*/
     }
-    a1->MovingDestination[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663365*/
-    a1->MissionTimer[0] = v9; /*0x663388*/
-    a1->MissionTimer[1] = v8; /*0x66338b*/
-    a1->MissionTimer[2] = v8; /*0x66338e*/
-    *(float *)&a1->RocketLocomotionClass_field_bool_4C = *(float *)(v6 + 8) * 1.570796326794897; /*0x6633a3*/
+        *(unsigned int *)(a1 + 32) = MEMORY[0xA8ED84];
+        *(unsigned int *)(a1 + 36) = v9;
+        *(unsigned int *)(a1 + 40) = v8;
+        *(unsigned int *)(a1 + 44) = v8;
+        *(float *)(a1 + 80) = *((float *)p_TiberiumExplosionDamage + 2) * 1.570796326794897;
     a1->? = a2; /*0x6633aa*/
-    a1->MovingDestination[0] = a3; /*0x6633ac*/
-    a1->MovingDestination[1] = a4; /*0x6633af*/
+        *(unsigned int *)(a1 + 24) = a3;
+        *(unsigned int *)(a1 + 28) = a4;
     return a2; /*0x6633a6*/
   }
   return result; /*0x6633b2*/
@@ -5358,8 +5358,8 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_2(unsigned int * a1, unsign
   v2 = a2; /*0x69ed21*/
   if ( !a2 ) /*0x69ed28*/
     return -2147467261; /*0x69ed31*/
-  pad_50 = a1->__pad_50; /*0x69ed3b*/
-  if ( *(unsigned int *)a1->__pad_50 ) /*0x69ed38*/
+    v4 = a1 + 20;
+    if ( a1[20] )
   {
     a1 = 0; /*0x69ed44*/
     v5 = StreamClass::Set2((StreamClass *)&a1, pad_50); /*0x69ed55*/
@@ -5411,9 +5411,9 @@ int JumpjetLocomotionClass::StubReturnZero_12(int a1, int a2)
 {
   if ( !a2 ) /*0x69eff6*/
     return -2147467261; /*0x69eff8*/
-  if ( *(unsigned int *)a1->__pad_50 ) /*0x69f004*/
+    if ( *(unsigned int *)(a1 + 80) )
     return -2147467259; /*0x69f02b*/
-  *(unsigned int *)a1->__pad_50 = a2; /*0x69f012*/
+    *(unsigned int *)(a1 + 80) = a2;
   (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x69f018*/
   return 0; /*0x69effd*/
 }
@@ -5424,11 +5424,11 @@ int JumpjetLocomotionClass::StubReturnZero_13(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x69f046*/
     return -2147467261; /*0x69f048*/
-  v3 = *(unsigned int *)a1->__pad_50; /*0x69f054*/
+    v3 = *(unsigned int *)(a1 + 80);
   if ( !v3 ) /*0x69f059*/
     return 1; /*0x69f069*/
   *a2 = v3; /*0x69f05b*/
-  *(unsigned int *)a1->__pad_50 = 0; /*0x69f05d*/
+    *(unsigned int *)(a1 + 80) = 0;
   return 0; /*0x69f04d*/
 }
 // 0x69F080
@@ -5444,20 +5444,20 @@ unsigned int * JumpjetLocomotionClass::InitMovementState_0(unsigned int * a1, in
 {
   int v3; // [esp+8h] [ebp-Ch]
 
-  a1->CurrentRamp = a2; /*0x69f25d*/
-  *(unsigned int *)a1->__pad_18 = a2; /*0x69f260*/
-  a1->PreviousRamp = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x69f26f*/
-  a1->SlopeTimer[0] = v3; /*0x69f275*/
-  a1->SlopeTimer[1] = 0; /*0x69f278*/
-  a1->SlopeTimer[2] = 0; /*0x69f27b*/
-  return &a1->PreviousRamp; /*0x69f27e*/
+    a1[7] = a2;
+    a1[6] = a2;
+    a1[8] = MEMORY[0xA8ED84];
+    a1[9] = v3;
+    a1[10] = 0;
+    a1[11] = 0;
+    return a1 + 8;
 }
 // 0x69F290
 bool JumpjetLocomotionClass::StubReturnTrue_5(int a1)
 {
-  if ( IDA_LODWORD(a1->Wobbles) != g_OverlayTypeConfig || *(unsigned long long *)&a1->Deviation != qword_B077FC ) /*0x69f2b1*/
+    if ( *(unsigned int *)(a1 + 48) != MEMORY[0xB077F8] || *(unsigned long long *)(a1 + 52) != MEMORY[0xB077FC] )
     return 1; /*0x69f2c1*/
-  return (*(unsigned int *)&a1->__pad_39[3] != g_OverlayTypeConfig || *(unsigned long long *)a1->DestinationCoords != qword_B077FC) /*0x69f310*/
+    return (*(unsigned int *)(a1 + 60) != MEMORY[0xB077F8] || *(unsigned long long *)(a1 + 64) != MEMORY[0xB077FC])
       && (*(unsigned int *)&a1->__pad_39[3] != a1->?->?[0] || a1->DestinationCoords[0] != a1->?->?[1]);
 }
 // 0x69F330
@@ -5493,7 +5493,7 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_1(unsigned int * a1, 
   int v7; // edx
   int v8; // esi
 
-  if ( *(unsigned int *)&a1->__pad_39[3] == g_OverlayTypeConfig && *(unsigned long long *)a1->DestinationCoords == qword_B077FC ) /*0x69f3ee*/
+    if ( a1[15] == MEMORY[0xB077F8] && *((unsigned long long *)a1 + 8) == MEMORY[0xB077FC] )
   {
     Owner = *(unsigned int *)&a1->Owner; /*0x69f41b*/
     location = *(unsigned int *)&Owner->vtable3; /*0x69f424*/
@@ -5509,7 +5509,7 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_1(unsigned int * a1, 
   {
     v2 = a1->DestinationCoords[0]; /*0x69f404*/
     v3 = a1->DestinationCoords[1]; /*0x69f407*/
-    *a2 = *(unsigned int *)&a1->__pad_39[3]; /*0x69f40c*/
+        *a2 = a1[15];
     a2[1] = v2; /*0x69f40e*/
     a2[2] = v3; /*0x69f411*/
     return a2; /*0x69f414*/
@@ -5537,9 +5537,9 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned i
           result = a1; /*0x69f49a*/
           v5 = aP1_4; /*0x69f49e*/
           v6 = aP3; /*0x69f4a2*/
-          arg0->SlopeTimer[3] = (int)a1; /*0x69f4a9*/
-          arg0->Dest[0] = v5; /*0x69f4ac*/
-          arg0->Dest[1] = v6; /*0x69f4af*/
+                    *(unsigned int *)(arg0 + 48) = a1;
+                    *(unsigned int *)(arg0 + 52) = v5;
+                    *(unsigned int *)(arg0 + 56) = v6;
           if ( result != (unsigned int *)g_OverlayTypeConfig || IDA___PAIR64__(v6, v5) != qword_B077FC ) /*0x69f4c2*/
           {
             a1 = result; /*0x69f4cc*/
@@ -5566,7 +5566,7 @@ int JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(int result)
   double v3; // st7
   int result; // eax
 
-  if ( result->Dest[2] != g_OverlayTypeConfig || *(unsigned long long *)result->HeadToCoord != qword_B077FC ) /*0x69f52d*/
+    if ( *(unsigned int *)(a1 + 60) != MEMORY[0xB077F8] || *(unsigned long long *)(a1 + 64) != MEMORY[0xB077FC] )
   {
     if ( *(unsigned char *)((*((int (**)(FootClass *))result->?->TechnoClass + 33))(result->?) + 3220) ) /*0x69f546*/
     {
@@ -5608,11 +5608,11 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation_1(unsigned int * a1, floa
   FootClass *Owner; // edx
   float v9[12]; // [esp+Ch] [ebp-30h] BYREF
 
-  v3 = a1->SlopeTimer[2]; /*0x69fb29*/
+    v3 = a1[11];
   if ( v3 ) /*0x69fb32*/
   {
-    PreviousRamp = a1->PreviousRamp; /*0x69fb3c*/
-    v6 = a1->SlopeTimer[1]; /*0x69fb3f*/
+        v5 = a1[8];
+        v6 = a1[10];
     if ( PreviousRamp != -1 ) /*0x69fb45*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - PreviousRamp >= v6 ) /*0x69fb51*/
@@ -5620,7 +5620,7 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation_1(unsigned int * a1, floa
       else
         v6 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - PreviousRamp; /*0x69fb53*/
     }
-    v4 = (double)(v3 - v6) / (double)a1->SlopeTimer[2]; /*0x69fb63*/
+        v4 = (double)(v3 - v6) / (double)(int)a1[11];
   }
   else
   {
@@ -5640,7 +5640,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_6(int * a1)
   int v1; // edi
   int v2; // eax
 
-  v1 = *(unsigned int *)a1->LocomotionClass; /*0x69fbe9*/
+    v1 = *a1;
   v2 = (*((int (**)(FootClass *))a1->?->TechnoClass + 111))(a1->?); /*0x69fbed*/
   return (*(int (__stdcall **)(ShipLocomotionClass *, unsigned int))(v1 + 124))(a1, *(uint8_t *)(v2 + 284)); /*0x69fc00*/
 }
@@ -5680,29 +5680,29 @@ char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 // 0x6A4210
 int JumpjetLocomotionClass::SetByteField_1(int a1)
 {
-  a1->IsTurretLockedDown = 0; /*0x6a4214*/
-  return (int)a1->LocomotionClass; /*0x6a4218*/
+    *(unsigned char *)(a1 + 97) = 0;
+    return a1;
 }
 // 0x6A4220
 int JumpjetLocomotionClass::SetByteField_2(int a1)
 {
-  a1->IsTurretLockedDown = 1; /*0x6a4224*/
-  return (int)a1->LocomotionClass; /*0x6a4228*/
+    *(unsigned char *)(a1 + 97) = 1;
+    return a1;
 }
 // 0x6A4230
 int JumpjetLocomotionClass::SmallStub_6A4230(int a1)
 {
-  return a1->MovementSpeed[1]; /*0x6a4237*/
+    return *(unsigned int *)(a1 + 84);
 }
 // 0x6A4240
 int JumpjetLocomotionClass::SmallStub_6A4240(int a1)
 {
-  return a1->TrackNumber; /*0x6a4247*/
+    return *(unsigned int *)(a1 + 88);
 }
 // 0x6A4250
 int JumpjetLocomotionClass::SmallStub_6A4250(int a1)
 {
-  return a1->HeadToCoord[2]; /*0x6a4257*/
+    return *(unsigned int *)(a1 + 72);
 }
 // 0x6A4280
 BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer_0(int a1)
@@ -5745,7 +5745,7 @@ LONG JumpjetLocomotionClass::loc_6A4350(int a1)
 // 0x718080
 bool JumpjetLocomotionClass::ShortFunc_718080(int a1)
 {
-  return IDA_LOBYTE(a1->Wobbles) == 1; /*0x71808b*/
+    return *(unsigned char *)(a1 + 48) == 1;
 }
 // 0x718090
 int JumpjetLocomotionClass::ShortFunc_718090()
@@ -5764,10 +5764,10 @@ unsigned int *   JumpjetLocomotionClass::GetCoordinateConditional()
   int Speed; // edx
   float Climb; // esi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(this->LocomotionClass[0] + 16))(this) ) /*0x7180a9*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = this; /*0x7180b0*/
-    TurnRate = this->TurnRate; /*0x7180b4*/
+        v3 = a1[6];
     Speed = this->Speed; /*0x7180b7*/
     Climb = this->Climb; /*0x7180ba*/
   }
@@ -5819,8 +5819,8 @@ namespace gamemd {
         Cell::ApplyDamage((Cell *)v9, (int)&g_BuildingLoadQueue_Array.?, 1, 1, 0); /*0x71819f*/
       }
       Factory::CalculateExitCell((Factory *)&v11, v6, a2, v10, v11, v12[0]); /*0x7181ac*/
-      result = &this->MovingDestination[2]; /*0x7181ba*/
-      if ( this->MovingDestination[2] == g_BuildingLoadQueue_Array.? /*0x7181d9*/
+          result = (unsigned int *)(a3 + 36);
+          if ( *(unsigned int *)(a3 + 36) == MEMORY[0xB0EBF8]
         && this->LastCoords[0] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
         && this->LastCoords[1] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) )
       {
@@ -5828,10 +5828,10 @@ namespace gamemd {
       }
       else
       {
-        IDA_LOBYTE(this->LastCoords[2]) = 1; /*0x7181db*/
-        *(unsigned int *)this->__pad_18 = *result; /*0x7181e4*/
-        this->MovingDestination[0] = this->LastCoords[0]; /*0x7181e9*/
-        this->MovingDestination[1] = this->LastCoords[1]; /*0x7181ef*/
+              *(unsigned char *)(a3 + 48) = 1;
+              *(unsigned int *)(a3 + 24) = *result;
+              *(unsigned int *)(a3 + 28) = *(unsigned int *)(a3 + 40);
+              *(unsigned int *)(a3 + 32) = *(unsigned int *)(a3 + 44);
       }
     }
     return result; /*0x7181f2*/
@@ -5875,12 +5875,12 @@ namespace gamemd {
 // 0x718230
 int JumpjetLocomotionClass::ResetMovementState(int a1)
 {
-  *(unsigned int *)a1->__pad_18 = g_BuildingLoadQueue_Array.?; /*0x71823d*/
-  a1->MovingDestination[0] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718246*/
-  a1->MovingDestination[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71824f*/
-  IDA_LOBYTE(a1->LastCoords[2]) = 0; /*0x718254*/
-  IDA_BYTE2(a1->LastCoords[2]) = 0; /*0x718257*/
-  return (int)a1->LocomotionClass; /*0x71825a*/
+    *(unsigned int *)(a1 + 24) = MEMORY[0xB0EBF8];
+    *(unsigned int *)(a1 + 28) = MEMORY[0xB0EBFC];
+    *(unsigned int *)(a1 + 32) = MEMORY[0xB0EC00];
+    *(unsigned char *)(a1 + 48) = 0;
+    *(unsigned char *)(a1 + 50) = 0;
+    return a1;
 }
 // 0x7192C0
 char JumpjetLocomotionClass::UpdateFacingDirection_3(int a1, int a2)
@@ -6027,9 +6027,9 @@ int JumpjetLocomotionClass::StubReturnZero_18(int a1, int a2)
 {
   if ( !a2 ) /*0x719e96*/
     return -2147467261; /*0x719e98*/
-  if ( IDA_LODWORD(a1->Wobbles) ) /*0x719ea4*/
+    if ( *(unsigned int *)(a1 + 48) )
     return -2147467259; /*0x719ecb*/
-  IDA_LODWORD(a1->Wobbles) = a2; /*0x719eb2*/
+    *(unsigned int *)(a1 + 48) = a2;
   (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x719eb8*/
   return 0; /*0x719e9d*/
 }
@@ -6047,11 +6047,11 @@ int JumpjetLocomotionClass::StubReturnZero_19(int a1, unsigned int * a2)
     *(unsigned int *)(v3 + 1064) = 0; /*0x719eff*/
     *(unsigned int *)(*((unsigned int *)a1 - 3) + 1068) = 0; /*0x719f08*/
   }
-  Wobbles = a1->Wobbles; /*0x719f0e*/
+    v4 = *(unsigned int *)(a1 + 48);
   if ( Wobbles == 0.0 ) /*0x719f13*/
     return 1; /*0x719f20*/
   *(float *)a2 = Wobbles; /*0x719f15*/
-  a1->Wobbles = 0.0; /*0x719f17*/
+    *(unsigned int *)(a1 + 48) = 0;
   return 0; /*0x719ef0*/
 }
 // 0x719F30
@@ -6063,12 +6063,12 @@ bool JumpjetLocomotionClass::StubReturnTrue_7(int a1)
   result = 0; /*0x719f75*/
   if ( !(*(uint8_t (__stdcall **)(char *))(*((unsigned int *)a1 - 5) + 16))((char *)a1 - 20) ) /*0x719f3c*/
   {
-    if ( IDA_LODWORD(a1->Wobbles) ) /*0x719f43*/
+        if ( *(unsigned int *)(a1 + 48) )
     {
-      if ( !IDA_BYTE1(a1->Speed) ) /*0x719f4a*/
+            if ( !*(unsigned char *)(a1 + 29) )
       {
         v1 = *((unsigned int *)a1 - 3); /*0x719f51*/
-        if ( !*(unsigned char *)(v1 + 636) && !IDA_LODWORD(a1->Climb) && !*(unsigned char *)(v1 + 1709) ) /*0x719f65*/
+                if ( !*(unsigned char *)(v1 + 636) && !*(unsigned int *)(a1 + 32) && !*(unsigned char *)(v1 + 1709) )
           return 1; /*0x719f41*/
       }
     }
@@ -6149,7 +6149,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_7(unsigned int * a1, int a2)
   result = a2; /*0x71a090*/
   if ( !a2 ) /*0x71a099*/
   {
-    v3 = (unsigned int *)(*(int (__stdcall **)(TeleportLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))( /*0x71a0a8*/
+        v3 = (unsigned int *)(*(int (__stdcall **)(unsigned int *, unsigned char *))(*a1 + 24))(a1, v6);
                      a1,
                      v6);
     v5[0] = *v3; /*0x71a0ad*/
@@ -6187,13 +6187,13 @@ TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(char a2)
 {
   ILocomotion *Piggybackee; // eax
 
-  Piggybackee = *(unsigned int *)&this->Piggybackee; /*0x71a133*/
+    v3 = *(Block + 18);
   if ( Piggybackee ) /*0x71a138*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x71a13d*/
   LocomotionClass::Construct(); /*0x71a142*/
   if ( (a2 & 1) != 0 ) /*0x71a14c*/
     RA2_OPDEL(); /*0x71a14f*/
-  return this->LocomotionClass; /*0x71a159*/
+    return (TeleportLocomotionClass *)Block;
 }
 // 0x71A160
 int JumpjetLocomotionClass::SmallStub_71A160(int a1, const void * a2, int * a3)
@@ -6235,7 +6235,7 @@ char JumpjetLocomotionClass::StubReturnZero_20(unsigned int * a1)
 {
   char result; // al
 
-  if ( !(*(uint8_t (__stdcall **)(TunnelLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) ) /*0x728a68*/
+    if ( !(*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
     return 0; /*0x728a68*/
   result = 1; /*0x728a72*/
   if ( a1->RefCount == 1 ) /*0x728a79*/
@@ -6250,10 +6250,10 @@ unsigned int * JumpjetLocomotionClass::GetCoordinateConditional_0(unsigned int *
   int Speed; // edx
   float Climb; // esi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 16))(a1) ) /*0x728a99*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = a2; /*0x728aa0*/
-    TurnRate = a1->TurnRate; /*0x728aa4*/
+        v3 = a1[6];
     Speed = a1->Speed; /*0x728aa7*/
     Climb = a1->Climb; /*0x728aaa*/
   }
@@ -6303,9 +6303,9 @@ int JumpjetLocomotionClass::SyncMovementPosition(int a1, int a2, int a3, int a4)
           v12[2] = a4; /*0x728b5e*/
           v9 = (*((int (**)(FootClass *))Owner->TechnoClass + 34))(Owner); /*0x728b64*/
           v10 = (int *)(*(int (**)(int, int *, unsigned int *))(*(unsigned int *)v9 + 108))(v9, &a2, v12); /*0x728b78*/
-          a1->CurrentState[0] = *v10; /*0x728b80*/
-          a1->CurrentState[1] = v10[1]; /*0x728b86*/
-          a1->CurrentState[2] = v10[2]; /*0x728b8c*/
+                    *(unsigned int *)(a1 + 24) = *v10;
+                    *(unsigned int *)(a1 + 28) = v10[1];
+                    *(unsigned int *)(a1 + 32) = v10[2];
           if ( (v8 != *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352] /*0x728bb5*/
              || v6 != *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]
              || v7 != *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360])
@@ -6401,12 +6401,12 @@ BOOL JumpjetLocomotionClass::ShortFunc_72A1E0(int a1)
 // 0x75AB30
 char JumpjetLocomotionClass::SmallStub_75AB30(int a1)
 {
-  return IDA_LOBYTE(a1->Wobbles); /*0x75ab37*/
+    return *(unsigned char *)(a1 + 48);
 }
 // 0x75AB40
 bool JumpjetLocomotionClass::ComputeFloatExpression_4(unsigned int * a1)
 {
-  return (*(uint8_t (__stdcall **)(WalkLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) /*0x75ab8c*/
+    return (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1)
       && *(double *)a1->?->currentSpeed_percentage > 0.0
       && (a1->Dest[2] != g_AsyncMovieState
        || a1->HeadToCoord[0] != g_MovieFrameState1
@@ -6420,13 +6420,13 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_2(unsigned int * a1
   float Climb; // esi
   float *v5; // edi
 
-  if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(a1->LocomotionClass[0] + 16))(a1) ) /*0x75aba9*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int *))(*a1 + 16))(a1) )
   {
     result = a2; /*0x75abb0*/
     Speed = a1->Speed; /*0x75abb7*/
     Climb = a1->Climb; /*0x75abba*/
     v5 = (float *)a2; /*0x75abbd*/
-    *a2 = a1->TurnRate; /*0x75abbf*/
+        *a2 = a1[6];
   }
   else
   {
@@ -6478,7 +6478,7 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_2(unsigned int * a1, 
 // 0x75AC80
 int JumpjetLocomotionClass::DrawVoxelAnimation(unsigned char * a1)
 {
-  IDA_BYTE1(a1->HeadToCoord[2]) = 1; /*0x75ac8a*/
+    a1[49] = 1;
   VoxelAnim::Draw((int)a1 - 4, (unsigned int *)1); /*0x75ac8e*/
   IDA_BYTE1(a1->HeadToCoord[2]) = 0; /*0x75ac93*/
   return (*(int (__stdcall **)(WalkLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1); /*0x75ac9d*/
@@ -6502,17 +6502,17 @@ char JumpjetLocomotionClass::ConvertCoordToCell_4(int a1, int a2, int a3, int a4
         v4 = a2; /*0x75acf1*/
         v5 = a3; /*0x75acf5*/
         v6 = a4; /*0x75acf9*/
-        *(unsigned int *)a1->__pad_18 = a2; /*0x75ad00*/
-        a1->Dest[0] = v5; /*0x75ad03*/
-        a1->Dest[1] = v6; /*0x75ad06*/
+                *(unsigned int *)(a1 + 24) = a2;
+                *(unsigned int *)(a1 + 28) = v5;
+                *(unsigned int *)(a1 + 32) = v6;
         if ( v4 == g_AsyncMovieState && v5 == g_MovieFrameState1 && v6 == g_MovieFrameState2 ) /*0x75ad25*/
         {
-          if ( a1->Dest[2] == g_AsyncMovieState /*0x75ad72*/
+                    if ( *(unsigned int *)(a1 + 36) == g_AsyncMovieState
             && a1->HeadToCoord[0] == g_MovieFrameState1
             && a1->HeadToCoord[1] == g_MovieFrameState2 )
           {
-            IDA_LOBYTE(v4) = a1->HeadToCoord[2]; /*0x75ad74*/
-            IDA_LOBYTE(a1->HeadToCoord[2]) = 0; /*0x75ad77*/
+                        LOBYTE(v4) = *(unsigned char *)(a1 + 48);
+                        *(unsigned char *)(a1 + 48) = 0;
             if ( (unsigned char)v4 ) /*0x75ad7d*/
               IDA_LOBYTE(v4) = (*((char (**)(FootClass *))a1->?->TechnoClass + 339))(a1->?); /*0x75ad84*/
           }
@@ -6541,16 +6541,16 @@ int JumpjetLocomotionClass::DispatchVirtualCall_8(FootClass * aP0)
   int result; // eax
 
   result = (int)aP0; /*0x75ada0*/
-  *(unsigned int *)aP0->__pad_18 = g_AsyncMovieState; /*0x75adad*/
-  aP0->Dest[0] = g_MovieFrameState1; /*0x75adb6*/
-  aP0->Dest[1] = g_MovieFrameState2; /*0x75adbf*/
-  if ( aP0->Dest[2] == g_AsyncMovieState /*0x75ade5*/
+    aP0->nextArrayIndex = g_AsyncMovieState.field_0;
+    aP0->referenceCount = g_AsyncMovieState.field_4;
+    aP0->NeedsSaveOrLink = (void *)g_AsyncMovieState.field_8;
+    if ( aP0->objectTypeFlags == g_AsyncMovieState.field_0
     && aP0->HeadToCoord[0] == g_MovieFrameState1
     && aP0->HeadToCoord[1] == g_MovieFrameState2 )
   {
-    IDA_LOBYTE(aP0->HeadToCoord[2]) = 0; /*0x75ade9*/
-    IDA_BYTE2(aP0->HeadToCoord[2]) = 0; /*0x75adec*/
-    return (*((int (**)(FootClass *))*(unsigned short *)&aP0->q54C->TechnoClass + 339))(*(unsigned short *)&aP0->q54C); /*0x75adf6*/
+        LOBYTE(aP0->nextObject) = 0;
+        BYTE2(aP0->nextObject) = 0;
+        return (*(int (**)(unsigned int))(**(unsigned int **)&aP0->__pad_0[8] + 1356))(*(unsigned int *)&aP0->__pad_0[8]);
   }
   return result; /*0x75adfc*/
 }
@@ -6568,7 +6568,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_9(int a1, int a2, int a3, int a4
   unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v6[0] = a2; /*0x75ae45*/
-  v4 = a1->HeadToCoord[2]; /*0x75ae4d*/
+    v4 = *(unsigned char *)(a1 + 48);
   v6[1] = a3; /*0x75ae51*/
   v6[2] = a4; /*0x75ae59*/
   Voxel::DrawHelper((Voxel *)((char *)a1 - 4), v6); /*0x75ae5d*/
@@ -6596,9 +6596,9 @@ int JumpjetLocomotionClass::StubReturnZero_22(int a1, int a2)
 {
   if ( !a2 ) /*0x75c856*/
     return -2147467261; /*0x75c858*/
-  if ( IDA_LODWORD(a1->Climb) ) /*0x75c864*/
+    if ( *(unsigned int *)(a1 + 32) )
     return -2147467259; /*0x75c88b*/
-  IDA_LODWORD(a1->Climb) = a2; /*0x75c872*/
+    *(unsigned int *)(a1 + 32) = a2;
   (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x75c878*/
   return 0; /*0x75c85d*/
 }
@@ -6609,11 +6609,11 @@ int JumpjetLocomotionClass::StubReturnZero_23(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x75c8a6*/
     return -2147467261; /*0x75c8a8*/
-  Climb = a1->Climb; /*0x75c8b4*/
+    v3 = *(unsigned int *)(a1 + 32);
   if ( Climb == 0.0 ) /*0x75c8b9*/
     return 1; /*0x75c8c9*/
   *(float *)a2 = Climb; /*0x75c8bb*/
-  a1->Climb = 0.0; /*0x75c8bd*/
+    *(unsigned int *)(a1 + 32) = 0;
   return 0; /*0x75c8ad*/
 }
 // 0x75C8E0
@@ -6698,7 +6698,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_10(unsigned int * a1, int a2)
   result = a2; /*0x75ca30*/
   if ( !a2 ) /*0x75ca39*/
   {
-    v3 = (unsigned int *)(*(int (__stdcall **)(WalkLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))( /*0x75ca48*/
+        v3 = (unsigned int *)(*(int (__stdcall **)(unsigned int *, unsigned char *))(*a1 + 24))(a1, v6);
                      a1,
                      v6);
     v5[0] = *v3; /*0x75ca4d*/
@@ -6718,7 +6718,7 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_1(int a1, int a2, int a3,
   int v7; // eax
   unsigned char v9[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v4 = (int *)(*(int (__stdcall **)(WalkLocomotionClass *, unsigned char *))(*(unsigned int *)a1->LocomotionClass + 24))(a1, v9); /*0x75ca93*/
+    v4 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)a1 + 24))(a1, v9);
   v5 = v4[2]; /*0x75ca9b*/
   v6 = *v4; /*0x75cac7*/
   v7 = v4[1] / 256; /*0x75cadd*/
@@ -6729,18 +6729,18 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_1(int a1, int a2, int a3,
 // 0x75CB20
 char JumpjetLocomotionClass::SmallStub_75CB20(int a1)
 {
-  return IDA_BYTE2(a1->HeadToCoord[2]); /*0x75cb27*/
+    return *(unsigned char *)(a1 + 50);
 }
 // 0x75CB30
 unsigned int * JumpjetLocomotionClass::InitMultiFieldArray_1(unsigned int * a1)
 {
-  *(unsigned int *)a1->__pad_18 = g_AsyncMovieState; /*0x75cb40*/
-  a1->Dest[0] = g_MovieFrameState1; /*0x75cb48*/
-  a1->Dest[1] = g_MovieFrameState2; /*0x75cb51*/
-  a1->Dest[2] = g_AsyncMovieState; /*0x75cb5a*/
-  a1->HeadToCoord[0] = g_MovieFrameState1; /*0x75cb62*/
-  a1->HeadToCoord[1] = g_MovieFrameState2; /*0x75cb6b*/
-  return &a1->Dest[2]; /*0x75cb6e*/
+    a1[6] = g_AsyncMovieState;
+    a1[7] = MEMORY[0xB45BEC];
+    a1[8] = MEMORY[0xB45BF0];
+    a1[9] = g_AsyncMovieState;
+    a1[10] = MEMORY[0xB45BEC];
+    a1[11] = MEMORY[0xB45BF0];
+    return a1 + 9;
 }
 // 0x75CBA0
 BOOL JumpjetLocomotionClass::ShortFunc_75CBA0(int a1)
@@ -6750,8 +6750,8 @@ BOOL JumpjetLocomotionClass::ShortFunc_75CBA0(int a1)
 // 0x75CBC0
 int JumpjetLocomotionClass::SetByteField_3(int a1)
 {
-  IDA_BYTE2(a1->HeadToCoord[2]) = 0; /*0x75cbc4*/
-  return (int)a1->LocomotionClass; /*0x75cbc8*/
+    *(unsigned char *)(a1 + 50) = 0;
+    return a1;
 }
 // 0x75CC30
 int JumpjetLocomotionClass::SmallStub_75CC30(int a1, const void * a2, int * a3)

@@ -46,7 +46,7 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
   if ( v9 > 19 ) /*0x413534*/
     v9 = 19; /*0x413536*/
   v10 = 3 * (v8 + 20 * v9); /*0x413541*/
-  result = *(&(unsigned int)(this->u32_1E0)* v9 + 6 * v8 + 2); /*0x413544*/
+    result = *((char *)this + 480 * v9 + 6 * v8 + 2);
   v12 = (char *)(&(unsigned int)(this->q008)* v10); /*0x413548*/
   if ( *((unsigned int *)v12 + 4) < result /*0x413574*/
     || (v12[13] || !result)
@@ -96,7 +96,7 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
   v7 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
-  v8 = *(unsigned int *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
+    v8 = *((char *)this + 480 * v7 + 6 * v6);
   v9 = this + 60 * v7 + 3 * v6; /*0x413683*/
   result = (*(int (**)(GadgetGrid *, int *))(v8 + 16))(v9, &aP1); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/

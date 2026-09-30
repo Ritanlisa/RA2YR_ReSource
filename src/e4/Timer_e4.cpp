@@ -15,7 +15,7 @@ namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
   *(unsigned int *)this->__pad_0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
-  *(unsigned int *)&this->ptr_8 = aP1; /*0x46b64e*/
+    *((unsigned int *)this + 8) = aP1;
   return this; /*0x46b651*/
 }
 }
@@ -27,13 +27,13 @@ int Timer::StartDouble(double a2)
   int v4; // ecx
   int v5; // [esp+8h] [ebp-Ch]
 
-  if ( IDA_LOBYTE(this->q018) || (IDA_LOBYTE(result) = IDA_BYTE1(this->u32_14), (unsigned char)result) ) /*0x4a5252*/
+    if ( *((unsigned int *)this + 96) || (LOBYTE(v3) = *((unsigned int *)this + 100), (unsigned char)v3) )
   {
-    IDA_LOBYTE(this->q018) = 1; /*0x4a525e*/
+        *((unsigned int *)this + 96) = 1;
     *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
     IDA_LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
     v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4a5269*/
-    IDA_BYTE1(this->q018) = 0; /*0x4a5272*/
+        *((unsigned int *)this + 100) = 0;
     *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = v4; /*0x4a5276*/
     *(unsigned int *)&this-((unsigned int *)(>__pad_6))[6] = v5; /*0x4a527c*/
     *(unsigned int *)&this-((unsigned int *)(>__pad_6))[10] = result; /*0x4a527f*/
@@ -58,7 +58,7 @@ int Timer::GetRemainingMs()
   int v1; // edi
   int v2; // ecx
 
-  v1 = *(unsigned int *)&this->ptr_8; /*0x4f1b26*/
+    v1 = *((unsigned int *)this + 8);
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
     return *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2]; /*0x4f1b4c*/
   v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
@@ -75,19 +75,19 @@ DWORD * Timer::PumpMessages(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, 
   int v2; // eax
   int result; // eax
 
-  if ( (this->u32_318 + 1) % 256 != this->u32_314 ) /*0x54f73e*/
+    if ( (*((unsigned int *)this + 792) + 1) % 256 != *((unsigned int *)this + 788) )
     MessageLoop(); /*0x54f740*/
-  v2 = this->u32_318; /*0x54f745*/
-  this->u32_314 = v2; /*0x54f74b*/
+    v2 = *((unsigned int *)this + 792);
+    *((unsigned int *)this + 788) = v2;
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
-    result = this->u32_318; /*0x54f77b*/
-    this->u32_314 = result; /*0x54f781*/
+        result = *((unsigned int *)this + 792);
+        *((unsigned int *)this + 788) = result;
   }
   else
   {
     result = (int)MessageLoop(); /*0x54f768*/
-    this->u32_314 = this->u32_318; /*0x54f773*/
+        *((unsigned int *)this + 788) = *((unsigned int *)this + 792);
   }
   return result; /*0x54f779*/
 }
@@ -101,7 +101,7 @@ int Timer::GetHighPrecision()
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C, unk_ABEED4, 0, 0); /*0x5b1e5e*/
-  if ( !*this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
+    if ( !*(unsigned int *)this && *((unsigned int *)this + 1) == 1072693248 || dword_82C24C <= 4 )
     return timeGetTime(); /*0x5b1eba*/
   result = Timer::ReadTSC(&v3); /*0x5b1e7f*/
   v3 = v3; /*0x5b1e9b*/
@@ -114,7 +114,7 @@ int Timer::GetElapsed()
 {
   int v1; // edi
 
-  v1 = *(unsigned int *)&this->ptr_8; /*0x5f1396*/
+    v1 = *((unsigned int *)this + 8);
   if ( *(unsigned int *)this->__pad_0 != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
   return v1; /*0x5f13ac*/

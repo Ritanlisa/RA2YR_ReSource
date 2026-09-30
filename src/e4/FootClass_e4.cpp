@@ -38,11 +38,11 @@ AbstractClass * FootClass::Destruct()
   void *v9; // eax
   FootClass *v11; // [esp+8h] [ebp-4h] BYREF
 
-  team = (int *)this->team; /*0x4d3597*/
-  this->TechnoClass = (void*)&FootClass_vftable; /*0x4d359d*/
-  *(void **)&this->vtable2 = (void*)&FootClass_vftable; /*0x4d35a5*/
-  *(void **)&this->vtable3 = (void*)&FootClass_vftable; /*0x4d35ac*/
-  *(void **)&this->vtable4 = (void*)&FootClass_vftable; /*0x4d35b3*/
+    v2 = *((unsigned int *)this + 373);
+    *(unsigned int *)this = &FootClass::`vftable';
+    *((unsigned int *)this + 1) = &FootClass::`vftable';
+    *((unsigned int *)this + 2) = &FootClass::`vftable';
+    *((unsigned int *)this + 3) = &vt_FootClass;
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -55,11 +55,11 @@ AbstractClass * FootClass::Destruct()
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
     DynamicVector::RemoveItem((DynamicVector *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2), v4); /*0x4d3616*/
-  parasiteImUsing = this->parasiteImUsing; /*0x4d361b*/
+    v5 = (AbstractClass *)*((unsigned int *)this + 423);
   if ( parasiteImUsing ) /*0x4d3623*/
   {
     (*((void (**)(ParasiteClass *, int))parasiteImUsing->AbstractClass + 8))(parasiteImUsing, 1); /*0x4d3629*/
-    this->parasiteImUsing = 0; /*0x4d362c*/
+        *((unsigned int *)this + 423) = 0;
   }
   if ( this-((unsigned int *)(>currentJumpjetMapCoords))[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
@@ -67,26 +67,26 @@ AbstractClass * FootClass::Destruct()
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
-  Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
+    Mixer::ReleaseChannel((int **)this + 337);
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
   v7 = this-((unsigned int *)(>locomotor))[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(this-((unsigned int *)(>locomotor))[0]); /*0x4d3690*/
-  v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
+    v8 = (CCINIClass *)*((unsigned int *)this + 364);
   this-((unsigned int *)(>FootClass_field_abstract_array_5AC))[0] = (int)&VectorClass_AbstractClass___vftable; /*0x4d36a0*/
-  if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
+    if ( v8 && *((unsigned char *)this + 1465) )
   {
     RA2_OPDEL(v8); /*0x4d36b1*/
-    *(unsigned int *)this->__pad_5B0 = 0; /*0x4d36b9*/
+        *((unsigned int *)this + 364) = 0;
   }
   this-((unsigned int *)(>__pad_5B0))[9] = 0; /*0x4d36bf*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_5B0))[4] = 0; /*0x4d36c5*/
-  v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
+    v9 = (CCINIClass *)*((unsigned int *)this + 355);
   this-((unsigned int *)(>unknownAbstractArray588))[0] = (int)&VectorClass_AbstractClass___vftable; /*0x4d36d1*/
-  if ( v9 && this->u8_595 ) /*0x4d36dc*/
+    if ( v9 && *((unsigned char *)this + 1429) )
   {
     RA2_OPDEL(v9); /*0x4d36e5*/
-    *(unsigned int *)this->__pad_58C = 0; /*0x4d36ed*/
+        *((unsigned int *)this + 355) = 0;
   }
   this-((unsigned int *)(>__pad_58C))[9] = 0; /*0x4d36f5*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_58C))[4] = 0; /*0x4d36fb*/
@@ -101,10 +101,10 @@ void FootClass::Destroyed(int a2)
   int64_t v3; // rax
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (uint8_t)House::IsHumanPlayer((House *)this->?) /*0x4d98dd*/
+    if ( (unsigned __int8)House::IsHumanPlayer(*((unsigned int *)this + 540))
     && !*(unsigned char *)((*((int (**)(FootClass *))this->TechnoClass + 33))(this) + 3412) )
   {
-    v3 = ((int64_t (__thiscall *)(FootClass *, unsigned char *))*((unsigned int *)this->TechnoClass + 110))(this, v4); /*0x4d98f0*/
+        v3 = ((__int64 (*)(#375 **, unsigned char *))*((unsigned int *)*(char *)this + 440))(this, v4);
     if ( (uint8_t)CreateTriggerClassIfFarEnough(7, IDA_SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay((VoxClass *)&(unsigned int *)((char *)&stru_822420 + 8), -1); /*0x4d9911*/
   }
@@ -118,8 +118,8 @@ int FootClass::updateThreat()
   int v1; // edx
   int v2; // eax
 
-  v1 = *(unsigned int *)&this->targetingTimer; /*0x70f7e0*/
-  v2 = *(unsigned int *)&this->q188; /*0x70f7e6*/
+    v1 = *((unsigned int *)this + 384);
+    v2 = *((unsigned int *)this + 392);
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
@@ -319,7 +319,7 @@ unsigned int FootClass::checkTurning()
 {
   unsigned int result; // eax
 
-  result = *(unsigned int *)&this->infantryBlinkTimer; /*0x50daa0*/
+    result = *((unsigned int *)this + 480);
   if ( result >= 4 ) /*0x50daa8*/
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/

@@ -63,29 +63,29 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   v6 = *(unsigned int **)(&this->q0146); /*0x52685a*/
   if ( v6 && *v6 == v3 ) /*0x526863*/
     goto LABEL_9; /*0x526863*/
-  if ( !this->needsSave_flag ) /*0x526865*/
+    if ( !*((unsigned char *)this + 208) )
   {
     qsort(*(void **)(&this->sectionHead0), v4, 8u, CompareFunc4Int); /*0x526876*/
-    this->unknown38 = 0; /*0x52687e*/
-    this->needsSave_flag = 1; /*0x526881*/
+        *((unsigned int *)this + 224) = 0;
+        *((unsigned char *)this + 208) = 1;
   }
   v15[0] = (unsigned int)((gamemd::ObjectClass **)(v3));
   v7 = (gamemd::ObjectClass **)(System_Search(v15));
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
-  this->unknown38 = v7; /*0x5268a1*/
+    *((unsigned int *)this + 224) = eax7;
   LABEL_9:
   v8 = this->INIClass_field_2C; /*0x5268a4*/
   if ( !v8 ) /*0x5268aa*/
     return unk_B7882C; /*0x5268aa*/
   v9 = *(unsigned int **)(&this->q0146); /*0x5268ac*/
   if ( v9 && *v9 == v3 ) /*0x5268b5*/
-    return *(unsigned int *)(this->unknown38 + 4); /*0x526933*/
-  if ( !this->needsSave_flag ) /*0x5268b7*/
+        return *(unsigned int *)(*((unsigned int *)this + 224) + 4);
+    if ( !*((unsigned char *)this + 208) )
   {
     qsort(*(void **)(&this->sectionHead0), v8, 8u, CompareFunc4Int); /*0x5268c8*/
-    this->unknown38 = 0; /*0x5268d0*/
-    this->needsSave_flag = 1; /*0x5268d3*/
+        *((unsigned int *)this + 224) = 0;
+        *((unsigned char *)this + 208) = 1;
   }
   v10 = (gamemd::ObjectClass **)((gamemd::VoxelStruct *)((int)((gamemd::ObjectClass **)(this->INIClass_field_2C))));
   v11 = (gamemd::VoxelStruct *)((gamemd::ObjectClass **)(this->q028));
@@ -206,17 +206,17 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   v9 = a2; /*0x528a3d*/
   if ( !a2 ) /*0x528a43*/
     return 0; /*0x528a43*/
-  if ( aP1 == (gamemd::INIClass *)((uint8_t *))this->headNode[0] ) /*0x528a4f*/
+    if ( aP1 == (INIClass *)*((unsigned int *)this + 4) )
   {
-    v10 = this->headNode[1]; /*0x528a55*/
+        v10 = (unsigned __int8 *)*((unsigned int *)this + 8);
     goto LABEL_7; /*0x528a55*/
   }
   memset(v26, 0, sizeof(v26)); /*0x528af3*/
   v19 = (uint8_t *)Checksummer::Add_Buffer((Checksummer *)v26, aP1, strlen((const char *)aP1)); /*0x528b19*/
   aP1 = v19; /*0x528b1b*/
-  if ( !this->INIClass_field_2C ) /*0x528b1f*/
+    if ( !*((unsigned int *)this + 44) )
     goto LABEL_29; /*0x528b1f*/
-  unknown38 = (uint8_t **)this->unknown38; /*0x528b26*/
+    v20 = (INIClass **)*((unsigned int *)this + 56);
   if ( unknown38 && *unknown38 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
   v21 = SortedArray::BinarySearch((SortedArray *)&this-((unsigned int *)(>__pad_20))[8], (int *)&aP1); /*0x528b38*/
@@ -224,14 +224,14 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   {
   LABEL_29: v23 = (char *)(aP3);
     v6 = (char *)(aP4);
-    this->headNode[0] = 0; /*0x528b8a*/
-    this->headNode[1] = 0; /*0x528b8d*/
+        *((unsigned int *)this + 4) = 0;
+        *((unsigned int *)this + 8) = 0;
     goto LABEL_36; /*0x528b90*/
   }
   this->unknown38 = (unsigned int)((gamemd::INIClass *)((unsigned int)((char *)(v21))));
   LABEL_24: aP1 = (gamemd::INIClass *)((char *)(v19));
   if ( (uint8_t)HashTable::BinarySearch((int *)&this-((unsigned int *)(>__pad_20))[8], (int *)&aP1) ) /*0x528b4f*/
-    v22 = (int *)(this->unknown38 + 4); /*0x528b5b*/
+        v22 = *((unsigned int *)this + 56) + 1;
   else
     v22 = (int *)&unk_B7882C; /*0x528b60*/
   v10 = *v22; /*0x528b65*/
@@ -239,8 +239,8 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
     goto LABEL_29; /*0x528b69*/
   v9 = a2; /*0x528b6b*/
   v6 = aP4; /*0x528b6f*/
-  this->headNode[1] = v10; /*0x528b73*/
-  this->headNode[0] = (int)v8; /*0x528b76*/
+    *((unsigned int *)this + 8) = (unsigned __int8 **)v10;
+    *((unsigned int *)this + 4) = v8;
   LABEL_7:
   if ( v10 ) /*0x528a5a*/
   {
@@ -263,9 +263,9 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
           v17 = HashTable::BinarySearchAlt(v13, (int *)&a2); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
-            v13->HashTable_field_0x10 = v17; /*0x528ae5*/
+                        *((unsigned int *)v13 + 4) = v17;
   LABEL_18:
-            v18 = (int *)(v13->HashTable_field_0x10 + 4); /*0x528ae8*/
+                        v18 = (int *)(*((unsigned int *)v13 + 4) + 4);
   LABEL_31:
             v24 = *v18; /*0x528b97*/
             if ( v24 ) /*0x528b9b*/
@@ -286,7 +286,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
       v15 = HashTable::BinarySearchAlt(v13, (int *)&a2); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
-        v13->HashTable_field_0x10 = v15; /*0x528ab4*/
+                *((unsigned int *)v13 + 4) = v15;
         v11 = a2; /*0x528ab7*/
         goto LABEL_13; /*0x528ab7*/
       }

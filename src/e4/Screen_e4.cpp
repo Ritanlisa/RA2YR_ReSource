@@ -139,7 +139,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 
   v5 = (int)aP2; /*0x68f07a*/
   v6 = *(unsigned int *)this + a4; /*0x68f085*/
-  v7 = this->u32_4 + 244; /*0x68f08a*/
+    v7 = *((unsigned int *)this + 4) + 244;
   v68 = 0; /*0x68f092*/
   v69 = 0; /*0x68f096*/
   v70 = 0; /*0x68f09a*/
@@ -174,7 +174,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v60 = 1; /*0x68f136*/
   v58 = v8; /*0x68f140*/
   v10 = v7 - v8; /*0x68f144*/
-  v11 = *(unsigned int *)&this->q008; /*0x68f146*/
+    v11 = *((unsigned int *)this + 8);
   v10 = v10; /*0x68f149*/
   v56 = v10; /*0x68f14d*/
   v55 = v6; /*0x68f15a*/
@@ -184,7 +184,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   (*(void (**)(int, int *, int *, int))(*(unsigned int *)v11 + 28))(v11, &v55, &v53, 25); /*0x68f17b*/
   v58 = v61; /*0x68f189*/
   v55 = v6 + 4; /*0x68f18d*/
-  v12 = *(unsigned int *)&this->q008; /*0x68f191*/
+    v12 = *((unsigned int *)this + 8);
   v56 = v10; /*0x68f19b*/
   v57 = 7; /*0x68f19f*/
   IDA_LOWORD(v53) = -18947; /*0x68f1a7*/
@@ -192,7 +192,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   (*(void (**)(int, int *, int *, int))(*(unsigned int *)v12 + 28))(v12, &v55, &v53, 50); /*0x68f1bc*/
   v58 = v61; /*0x68f1ca*/
   v55 = v6 + 11; /*0x68f1ce*/
-  v13 = *(unsigned int *)&this->q008; /*0x68f1d2*/
+    v13 = *((unsigned int *)this + 8);
   v56 = v10; /*0x68f1dc*/
   v57 = 4; /*0x68f1e0*/
   IDA_LOWORD(v53) = -18947; /*0x68f1e8*/
@@ -201,7 +201,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v62 = v6 + 132; /*0x68f20a*/
   v55 = v6 + 132; /*0x68f20e*/
   v58 = v59; /*0x68f214*/
-  v14 = *(unsigned int *)&this->q008; /*0x68f21a*/
+    v14 = *((unsigned int *)this + 8);
   v73 = v7 - v59; /*0x68f21d*/
   v56 = v7 - v59; /*0x68f221*/
   v57 = 4; /*0x68f22c*/
@@ -211,14 +211,14 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v55 = v6 + 136; /*0x68f255*/
   v56 = v73; /*0x68f259*/
   v57 = 7; /*0x68f25d*/
-  v15 = *(unsigned int *)&this->q008; /*0x68f269*/
+    v15 = *((unsigned int *)this + 8);
   v58 = v59; /*0x68f26c*/
   IDA_LOWORD(v53) = 7418; /*0x68f277*/
   IDA_BYTE2(v53) = 28; /*0x68f280*/
   (*(void (**)(int, int *, int *, int))(*(unsigned int *)v15 + 28))(v15, &v55, &v53, 50); /*0x68f28b*/
   v58 = v59; /*0x68f29c*/
   v55 = v6 + 143; /*0x68f2a0*/
-  v16 = *(unsigned int *)&this->q008; /*0x68f2a4*/
+    v16 = *((unsigned int *)this + 8);
   v56 = v73; /*0x68f2ae*/
   v57 = 4; /*0x68f2b2*/
   IDA_LOWORD(v53) = 7418; /*0x68f2ba*/
@@ -254,10 +254,10 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     {
       v54 = g_DSurface_Hidden; /*0x68f414*/
       swprintf(v79, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v17); /*0x68f418*/
-      v28 = (unsigned int *)this->u32_C; /*0x68f41d*/
+            v28 = (unsigned int *)*((unsigned int *)this + 12);
       v29 = v7 - v28[2] - v61; /*0x68f430*/
       (*(void (**)(unsigned int *, ObjectClass *, wchar_t *, int, int, int))(*v28 + 12))(v28, v54, v79, v6, v29, 2); /*0x68f443*/
-      v30 = (int *)this->u32_C; /*0x68f446*/
+            v30 = (int *)*((unsigned int *)this + 12);
       v31 = *v30; /*0x68f44c*/
       v54 = (ObjectClass *)v30[2]; /*0x68f44e*/
       v70 = (*(int (**)(int *, wchar_t *))(v31 + 8))(v30, v79); /*0x68f45d*/
@@ -268,7 +268,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     else
     {
       v58 = v18; /*0x68f351*/
-      v21 = *(unsigned int *)&this->q008; /*0x68f35e*/
+            v21 = *((unsigned int *)this + 8);
       v56 = v53; /*0x68f361*/
       v55 = v6; /*0x68f36c*/
       v57 = 15; /*0x68f370*/
@@ -284,7 +284,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       if ( (int)aP1 / v60 >= v17 ) /*0x68f397*/
         v22 = v17; /*0x68f399*/
       swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v22); /*0x68f3a9*/
-      v23 = (unsigned int *)this->u32_C; /*0x68f3ae*/
+            v23 = (unsigned int *)*((unsigned int *)this + 12);
       v24 = v53 - v23[2]; /*0x68f3c2*/
       (*(void (**)(unsigned int *, ObjectClass *, wchar_t *, int, int, int))(*v23 + 12))( /*0x68f3d0*/
         v23,
@@ -293,7 +293,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         v6,
         v24,
         2);
-      v25 = (int *)this->u32_C; /*0x68f3d3*/
+            v25 = (int *)*((unsigned int *)this + 12);
       v26 = *v25; /*0x68f3d9*/
       v54 = (ObjectClass *)v25[2]; /*0x68f3db*/
       v27 = (*(int (**)(int *, wchar_t *))(v26 + 8))(v25, Buffer); /*0x68f3e7*/
@@ -314,7 +314,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     {
       v54 = g_DSurface_Hidden; /*0x68f585*/
       swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f589*/
-      v41 = (unsigned int *)this->u32_C; /*0x68f58e*/
+            v41 = (unsigned int *)*((unsigned int *)this + 12);
       v42 = v7 - v41[2] - v59; /*0x68f5a3*/
       (*(void (**)(unsigned int *, ObjectClass *, wchar_t *, int, int, int))(*v41 + 12))( /*0x68f5b5*/
         v41,
@@ -323,7 +323,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         v62,
         v42,
         2);
-      v43 = (int *)this->u32_C; /*0x68f5b8*/
+            v43 = (int *)*((unsigned int *)this + 12);
       v44 = *v43; /*0x68f5be*/
       v54 = (ObjectClass *)v43[2]; /*0x68f5c0*/
       v45 = (*(int (**)(int *, wchar_t *))(v44 + 8))(v43, v76); /*0x68f5c9*/
@@ -336,7 +336,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     {
       v53 = v53; /*0x68f4b4*/
       v58 = v63; /*0x68f4b8*/
-      v33 = *(unsigned int *)&this->q008; /*0x68f4c5*/
+            v33 = *((unsigned int *)this + 8);
       v55 = v62; /*0x68f4c8*/
       v56 = v53; /*0x68f4d3*/
       v57 = 15; /*0x68f4d7*/
@@ -352,7 +352,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       if ( (int)aP2 / v60 >= (int)aP2 ) /*0x68f505*/
         v34 = aP2; /*0x68f507*/
       swprintf(v78, (const size_t)g_Str_Fmt_PctD, v34); /*0x68f517*/
-      v35 = (unsigned int *)this->u32_C; /*0x68f51c*/
+            v35 = (unsigned int *)*((unsigned int *)this + 12);
       v36 = v53 - v35[2]; /*0x68f529*/
       (*(void (**)(unsigned int *, ObjectClass *, wchar_t *, int, int, int))(*v35 + 12))( /*0x68f53e*/
         v35,
@@ -361,7 +361,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         v62,
         v36,
         2);
-      v37 = (int *)this->u32_C; /*0x68f541*/
+            v37 = (int *)*((unsigned int *)this + 12);
       v38 = *v37; /*0x68f547*/
       v54 = (ObjectClass *)v37[2]; /*0x68f549*/
       v39 = (*(int (**)(int *, wchar_t *))(v38 + 8))(v37, v78); /*0x68f555*/
@@ -375,9 +375,9 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     {
       if ( Audio::IsSoundEnabled() ) /*0x68f5ed*/
       {
-        for ( i = 0; i < this->q044; ++i ) /*0x68f5fd*/
+                for ( i = 0; i < *((unsigned int *)this + 68); ++i )
         {
-          if ( !_strcmpi(g_INI_Key_BarGraph, **(char ***)(this->q00E + 4 * i)) ) /*0x68f60d*/
+                    if ( !_strcmpi(&stru_830620.__pad_579C[34356], **(const void ***)(*((unsigned int *)this + 56) + 4 * i)) )
             break; /*0x68f617*/
         }
       }
@@ -402,7 +402,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v19 = v61; /*0x68f6a9*/
   }
   v56 = v10; /*0x68f6b3*/
-  v47 = *(unsigned int *)&this->q008; /*0x68f6be*/
+    v47 = *((unsigned int *)this + 8);
   v58 = v19; /*0x68f6c1*/
   v55 = v6; /*0x68f6cc*/
   v57 = 15; /*0x68f6d0*/
@@ -422,7 +422,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v6,
     v7 - *(unsigned int *)(this->u32_C + 8) - v61,
     2);
-  (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f72c*/
+    (*(void (**)(unsigned int, wchar_t *))(*(unsigned int *)*((unsigned int *)this + 12) + 8))(*((unsigned int *)this + 12), v81);
   v54 = (ObjectClass *)DSurface_Alternate; /*0x68f740*/
   swprintf(v76, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v17); /*0x68f744*/
   (*(void (__stdcall **)(ObjectClass *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f76c*/
@@ -431,7 +431,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v6,
     v7 - *(unsigned int *)(this->u32_C + 8) - v61,
     2);
-  (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f779*/
+    (*(void (**)(unsigned int, wchar_t *))(*(unsigned int *)*((unsigned int *)this + 12) + 8))(*((unsigned int *)this + 12), v81);
   if ( v66 > 0 && v67 > 0 ) /*0x68f78a*/
     (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f7a9*/
       g_DSurface_Hidden,
@@ -442,7 +442,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       1);
   v62 = v62; /*0x68f7b4*/
   v56 = v73; /*0x68f7b8*/
-  v49 = *(unsigned int *)&this->q008; /*0x68f7c5*/
+    v49 = *((unsigned int *)this + 8);
   v58 = v59; /*0x68f7c8*/
   v55 = v62; /*0x68f7d3*/
   v57 = 15; /*0x68f7d7*/
@@ -462,7 +462,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v62,
     v7 - *(unsigned int *)(this->u32_C + 8) - v59,
     2);
-  (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f82e*/
+    (*(void (**)(unsigned int, wchar_t *))(*(unsigned int *)*((unsigned int *)this + 12) + 8))(*((unsigned int *)this + 12), v81);
   v51 = DSurface_Alternate; /*0x68f838*/
   swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f849*/
   (*(void (__stdcall **)(DSurface *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f86b*/
@@ -471,7 +471,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v62,
     v7 - *(unsigned int *)(this->u32_C + 8) - v59,
     2);
-  (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f878*/
+    (*(void (**)(unsigned int, wchar_t *))(*(unsigned int *)*((unsigned int *)this + 12) + 8))(*((unsigned int *)this + 12), v81);
 // 0x690160
   return Screen::TransitionLoop(20); /*0x68f884*/
 }
@@ -538,7 +538,7 @@ int Screen::TransitionLoop(int a2)
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
                                                                                         *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1) )
         {
-          for ( i = 0; i < this->u32_2C; ++i ) /*0x690292*/
+                    for ( i = 0; i < (int)this->field_2C; ++i )
           {
             v8 = *(unsigned int *)(this->q020 + 4 * i); /*0x690297*/
             (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x69029c*/
@@ -548,7 +548,7 @@ int Screen::TransitionLoop(int a2)
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/
           }
-          for ( j = 0; j < this->u32_2C; ++j ) /*0x6902cc*/
+                    for ( j = 0; j < (int)this->field_2C; ++j )
           {
             v10 = *(unsigned int *)(this->q020 + 4 * j); /*0x6902d1*/
             (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x6902d6*/

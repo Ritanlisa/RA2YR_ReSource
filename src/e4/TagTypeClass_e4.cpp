@@ -29,28 +29,28 @@ AbstractTypeClass * TagTypeClass::Construct(char* a1)
   char v7; // [esp+38h] [ebp-4h]
 
   AbstractTypeClass::Constructor(aP1); /*0x6e5b6c*/
-  this->u32_98 = -1; /*0x6e5b78*/
-  this->u32_9C = 0; /*0x6e5b82*/
-  this->persistence = 0; /*0x6e5b88*/
+    *((unsigned int *)this + 38) = -1;
+    *((unsigned int *)this + 39) = 0;
+    *((unsigned int *)this + 40) = 0;
   *(unsigned int *)this = (void*)&TagTypeClass_vftable; /*0x6e5b8e*/
-  this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5b95*/
-  this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5b9c*/
-  this->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e5ba3*/
+    *((unsigned int *)this + 1) = &TagTypeClass::`vftable';
+    *((unsigned int *)this + 2) = &TagTypeClass::`vftable';
+    *((unsigned int *)this + 3) = &vt_TagTypeClass;
   if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
   }
   else
   {
-    strncpy(Destination, &this->arrayIndex, 0x30u); /*0x6e5bba*/
+        strncpy(Destination, (char *)this + 144, 0x30u);
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != &this->persistence0 ) /*0x6e5bd0*/
+    if ( Destination != (char *)this + 400 )
   {
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
-    this->u32_250 = v7; /*0x6e5bde*/
+        *((unsigned int *)this + 592) = v7;
   }
-  this->u32_98 = g_MultiplayerCleanup; /*0x6e5be6*/
+    *((unsigned int *)this + 38) = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6140];
   if ( g_MultiplayerCleanup < dword_B0E788 /*0x6e5c1e*/
     || (byte_B0E78D || !dword_B0E788)
     && dword_B0E794 > 0
@@ -88,13 +88,13 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   int v7; // eax
   int v8; // eax
 
-  this->AbstractClass = (void*)&TagTypeClass_vftable; /*0x6e5ca7*/
-  *(void **)&this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5cad*/
-  *(void **)&this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5cb4*/
-  *(void **)&this->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e5cbb*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e5cc2*/
-  v2 = (unsigned int *)this->persistence; /*0x6e5cc7*/
-  this->persistence = 0; /*0x6e5ccd*/
+    *(unsigned int *)this = &TagTypeClass::`vftable';
+    *((unsigned int *)this + 16) = &TagTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &TagTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_TagTypeClass;
+    AbstractClass::AnnounceExpiredPointer((void **)this, 1);
+    v2 = *(unsigned int **)((char *)this + 640);
+    *((unsigned int *)this + 640) = 0;
   if ( v2 ) /*0x6e5cd9*/
   {
     do /*0x6e5cfa*/
@@ -151,7 +151,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return this->AbstractTypeClass::Dtor(); /*0x6e5dc9*/
+    return AbstractTypeClass::Dtor((unsigned int *)this);
 }
 }
 // 0x6E5E50
@@ -160,11 +160,11 @@ int TagTypeClass::GetEvent(int a2, int a3)
 {
   int result; // eax
 
-  result = *(&this->uniqueId0); /*0x6e5e50*/
+    result = *((unsigned int *)this + 160);
   if ( result == a2 ) /*0x6e5e5c*/
   {
     result = result->q0A8; /*0x6e5e5e*/
-    *(&this->uniqueId0) = result; /*0x6e5e64*/
+        *((unsigned int *)this + 160) = result;
   }
   return result; /*0x6e5e6a*/
 }
@@ -189,7 +189,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
           128) )
     return 0; /*0x6e6151*/
   strtok(String, Delimiter); /*0x6e60cb*/
-  this->q09C = atoi(String); /*0x6e60e1*/
+    *((unsigned int *)this + 624) = atoi(String);
   v3 = strtok(0, Delimiter); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
@@ -200,10 +200,10 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   {
     Destination[0] = 0; /*0x6e60f3*/
   }
-  if ( Destination != (char *)(&this->persistence0) ) /*0x6e6118*/
+    if ( Destination != (char *)((char *)this + 400) )
   {
-    qmemcpy((void *)(&this->persistence0), Destination, 0x30u); /*0x6e6123*/
-    this->q094 = v7; /*0x6e6125*/
+        qmemcpy((void *)((char *)this + 400), Destination, 0x30u);
+        *((unsigned char *)this + 592) = v7;
   }
   v4 = (char *)((unsigned int)((char *)((void *)(strtok(0, Delimiter)))));
   this->q0A0 = (unsigned int)((void *)(TagTypeClass::FindOrCreateTriggerType(v4)));
@@ -218,10 +218,10 @@ int TagTypeClass::GetParameter(char * a2)
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 v3 = (void *)(this->q0A0);
   if ( v3 ) /*0x6e6171*/
-    wsprintfA(Source, "%d,%s,%s", this->q09C, (const char *)(&this->persistence0), (const char *)((unsigned int)(v3)+ 36)); /*0x6e61b4*/
+        wsprintfA(Source, MEMORY[0x842CCC], *((unsigned int *)this + 624), (const char *)((char *)this + 400), (const char *)(v3 + 36));
   else
     wsprintfA(Source, "%s,<none>", (const char *)(&this->persistence0)); /*0x6e6181*/
-  INIClass::SetString(a2, (uint8_t *)aTags, (char *)(&this->vtable46), Source); /*0x6e6199*/
+    INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x842C3C], (char *)((char *)this + 144), Source);
   return 1; /*0x6e61db*/
 }
 }
@@ -258,14 +258,14 @@ int TagTypeClass::PowerDrainUpdate(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6e63e9*/
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_9C); /*0x6e63fc*/
+    return Power::TimerProcess(*((unsigned int *)this + 624));
 }
 }
 // 0x6E64B0
 namespace gamemd {
 int TagTypeClass::GetAuxField()
 {
-  return this->q098; /*0x6e64b6*/
+    return *((unsigned int *)this + 152);
 }
 }
 // 0x727AA0

@@ -88,11 +88,11 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  *(void **)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
+    *Block = &vt_UnholyAlliance;
   MultiplayerGameMode::Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     RA2_OPDEL(); /*0x5cb556*/
-  return &this->m_Enabled; /*0x5cb560*/
+    return (UnholyAlliance *)Block;
 }
 // 0x5CB3F0
 char UnholyAlliance::Read()

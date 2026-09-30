@@ -197,7 +197,7 @@ char E4Recv_6D1570::sub_6D1570()
   int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-  result = (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B0CC40); /*0x6d157a*/
+    result = (*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CC40]);
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
     v2[2] = stru_B0CC40.Height; /*0x6d1597*/
@@ -464,7 +464,7 @@ void E4Recv_6D1E80::sub_6D1E80()
   this-((unsigned int *)(>Tactical_field_0x8))[0] = (int)&Tactical_vftable; /*0x6d1e8d*/
   this-((unsigned int *)(>Tactical_field_0xC))[0] = (int)&Tactical_vftable; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
-  this->AbstractClass::DTOR(); /*0x6d1ea5*/
+    AbstractClass::DTOR(this);
 }
 } // namespace gamemd
 
@@ -492,7 +492,7 @@ namespace gamemd {
 void E4Recv_6D4E00::sub_6D4E00()
 {
   this-((unsigned int *)(>location))[2] = -1; /*0x6d4e00*/
-  IDA_LOWORD(this->occupant) = 0; /*0x6d4e0a*/
+    *((unsigned short *)this + 144) = 0;
 }
 } // namespace gamemd
 

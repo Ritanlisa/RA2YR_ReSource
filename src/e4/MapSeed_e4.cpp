@@ -28,7 +28,7 @@ int MapSeed::ValidateName(int a2)
   int result; // eax
 
   if ( a2 ) /*0x597736*/
-    return (*(int (__stdcall **)(int, char *))(this->q008)(a2, &this->q00C0); /*0x597740*/
+        return (*(int (__stdcall **)(int, char *))(*(unsigned int *)this + 8))(a2, (char *)this + 480);
   IDA_LOBYTE(&this->q00C0); /*0x597752*/
   return result; /*0x597744*/
 }

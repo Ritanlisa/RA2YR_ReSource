@@ -982,7 +982,7 @@ void GlobalFlag_Set(char a1)
 namespace gamemd {
 int E4Recv_70DE20::sub_70DE20(int a2)
 {
-  this->M324 += a2; /*0x70de2c*/
+    *((unsigned int *)this + 324) += a2;
   return a2; /*0x70de32*/
 }
 } // namespace gamemd
@@ -1006,7 +1006,7 @@ int E4Recv_70F740::sub_70F740(int a2)
 namespace gamemd {
 int E4Recv_70FE40::sub_70FE40(int a2)
 {
-  this->M464 = a2; /*0x70fe44*/
+    *((unsigned int *)this + 464) = a2;
   return a2; /*0x70fe4a*/
 }
 } // namespace gamemd
@@ -1018,20 +1018,20 @@ int E4Recv_70FE50::sub_70FE50()
   int drainAnim; // ecx
   int result; // eax
 
-  drainAnim = this->drainAnim; /*0x70fe53*/
+    v2 = *((unsigned int *)this + 468);
   if ( drainAnim ) /*0x70fe5b*/
   {
     (*(void (**)(int))(*(unsigned int *)drainAnim + 248))(drainAnim); /*0x70fe5f*/
-    this->drainAnim = 0; /*0x70fe65*/
+        *((unsigned int *)this + 468) = 0;
   }
-  result = this->drainTarget; /*0x70fe6f*/
+    result = *((unsigned int *)this + 460);
   if ( result ) /*0x70fe77*/
   {
     result->isOnMap = 0; /*0x70fe79*/
-    result = *(unsigned int *)(this->drainTarget + 540); /*0x70fe89*/
+        result = *(unsigned int *)(*((unsigned int *)this + 460) + 540);
     if ( result ) /*0x70fe91*/
       *(unsigned char *)(result + 22392) = 1; /*0x70fe93*/
-    this->drainTarget = 0; /*0x70fe9a*/
+        *((unsigned int *)this + 460) = 0;
   }
   return result; /*0x70fea4*/
 }

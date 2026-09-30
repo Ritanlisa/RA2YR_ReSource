@@ -27,7 +27,7 @@ int ToolTipManager::ddtor(char a2)
 
   if ( a2 == 1 ) /*0x724b89*/
     ToolTipClass::initString(); /*0x724b8b*/
-  result = this->Position[0]; /*0x724b90*/
+    result = *((unsigned int *)this + 16);
   if ( result ) /*0x724b95*/
     /*0x724b90*/
   if ( result ) /*0x724b95*/
@@ -41,7 +41,7 @@ int ToolTipManager::ddtor(char a2)
 namespace gamemd {
 void ToolTipManager::read(int a1)
 {
-  this->Debug::Log(); /*0x724bbd*/
+    Debug::Log();
 }
 } // namespace gamemd
 // 0x724BD0
@@ -59,13 +59,13 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
-  if ( v3 && this->IsAllocated ) /*0x724f50*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x724f58*/
-    *(unsigned int *)&this->Items = 0; /*0x724f60*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->Capacity = 0; /*0x724f71*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     RA2_OPDEL(); /*0x724f7b*/
   return this; /*0x724f85*/

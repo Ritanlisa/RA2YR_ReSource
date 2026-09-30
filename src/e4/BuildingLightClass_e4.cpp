@@ -52,9 +52,9 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
 
   result = (unsigned int)(aP1);
-  *(&this->uniqueId4) = 0; /*0x436bfa*/
-  *(&this->abstractFlags5) = aP1; /*0x436c00*/
-  *(&this->uniqueId5) = 0; /*0x436c06*/
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned int *)this + 220) = aP1;
+    *((unsigned int *)this + 180) = 0;
   if ( aP1 == (gamemd::CCINIClass *)((unsigned int *))3 ) /*0x436c0c*/
   {
     v4 = (gamemd::ObjectClass *)(*(unsigned int *)this->GetCellCoords_Alt(&v24));
@@ -115,7 +115,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     while ( v17 < 2 ); /*0x436d74*/
     result = v22; /*0x436d7a*/
     if ( v22 ) /*0x436d80*/
-      *(void **)&this->BuildingLightClass_field_E0 = v22; /*0x436d82*/
+            v3->BuildingLightClass_field_E0 = (int)v22;
   }
   return (unsigned int *)(result);
 }
@@ -129,8 +129,8 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 
   this->vtable0 = (unsigned int)((void *)((int)&BuildingLightClass_vftable));
   this->vtable1 = (void *)((int)&BuildingLightClass_vftable);
-  *(unsigned int *)&this->vtable2 = (int)&BuildingLightClass_vftable; /*0x4370d1*/
-  *(unsigned int *)&this->vtable3 = (int)&BuildingLightClass_vftable; /*0x4370d8*/
+    *((unsigned int *)Block + 2) = &BuildingLightClass::`vftable';
+    *((unsigned int *)Block + 3) = &vt_BuildingLightClass;
   if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x4370ee*/
   v5 = this; /*0x437103*/
@@ -144,7 +144,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  this->ObjectClass::Dtor(); /*0x43713e*/
+    ObjectClass::Dtor(Block);
   if ( (a2 & 1) != 0 ) /*0x437148*/
     RA2_OPDEL(); /*0x43714b*/
   return this; /*0x437155*/
@@ -209,8 +209,8 @@ signed int BuildingLightClass::UpdateOscillation()
     if ( Cell::GetGroundHeight(&v28) > (_T)(GroundHeight) ) /*0x513dca*/
       v26 = v24 - IDA_HIDWORD(g_RulesClass_Instance->VeteranROF); /*0x513ddc*/
   }
-  v25 = Math::RoundToInt((double)v24 + *(double *)(&this->objectTypeFlags6)); /*0x513dec*/
-  v13 = (*(int (__stdcall **)(int))(*(unsigned int *)(this->vtable4 + 4) + 16))(this->vtable4 + 4); /*0x513df9*/
+    v25 = Math::RoundToInt((double)v24 + *(double *)((char *)this + 384));
+    v13 = (*(int (__stdcall **)(int))(*(unsigned int *)(*((unsigned int *)this + 48) + 4) + 16))(*((unsigned int *)this + 48) + 4);
   if ( (v13 & 1) != 0 ) /*0x513dfe*/
     v14 = 1.0; /*0x513e00*/
   else
@@ -222,21 +222,21 @@ signed int BuildingLightClass::UpdateOscillation()
   v18 = Math::RoundToInt(v17 + v17 + (double)v25); /*0x513e5d*/
   if ( v18 < 0 ) /*0x513e66*/
   {
-    this->q060 = 0; /*0x513e68*/
-    this->customSound = 0; /*0x513e6b*/
+        *((unsigned int *)this + 384) = 0;
+        *((unsigned int *)this + 400) = 0;
     v18 = 0; /*0x513e6e*/
   }
   v19 = (void *)(this->vtable4);
   v20 = (void *)((char)((void *)(*(unsigned char *)((unsigned int)(v19)+ 116))));
   *(unsigned char *)((unsigned int)(v19)+ 116) = 0; /*0x513e77*/
-  (*(void (**)(unsigned int, int))(**(unsigned int **)(&this->vtable22) + 460))(this->vtable4, v18); /*0x513e7f*/
-  result = this->vtable4; /*0x513e85*/
+    (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 48) + 460))(*((unsigned int *)this + 48), v18);
+    result = *((unsigned int *)this + 48);
   *(unsigned char *)((unsigned int)(result)+ 116) = v20; /*0x513e8c*/
   v22 = g_RulesClass_Instance; /*0x513e8f*/
   if ( v26 < IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) ) /*0x513e9b*/
   {
-    if ( this->vtable2.GetDirty() ) /*0x513ea1*/
-      *(double *)(&this->objectTypeFlags6) = ((double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) /*0x513ec8*/
+        if ( StreamClass::GetDirty((char *)this + 16) )
+            *(double *)((char *)this + 384) = ((double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen)
                               + (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
                               - (double)v26)
                              / (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
@@ -247,13 +247,13 @@ signed int BuildingLightClass::UpdateOscillation()
     if ( v26 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((uint64_t)(1431655766LL * ((unsigned int *)(g_RulesClass_Instance))[1].WeatherConBoltExplosion) >> 32) >> 31; /*0x513ef5*/
-      *(double *)(&this->objectTypeFlags6) = (double)(((unsigned int *)(g_RulesClass_Instance))[1].WeatherConBoltExplosion / 3) + *(double *)(&this->objectTypeFlags6); /*0x513f05*/
+            *(double *)((char *)this + 384) = (double)(MEMORY[0x8871E0][1].? / 3) + *(double *)((char *)this + 384);
       v22 = g_RulesClass_Instance; /*0x513f08*/
     }
   }
   v23 = (int)(*(double *)(&this->objectTypeFlags6) - (double)((unsigned int *)(v22))[1].WeatherConBoltExplosion);
-  *(double *)(&this->objectTypeFlags6) = v23; /*0x513f18*/
-  *(double *)(&this->objectTypeFlags6) = v23 * *(double *)&g_RulesClass_Instance->GameForming; /*0x513f27*/
+    *(double *)((char *)this + 384) = v23;
+    *(double *)((char *)this + 384) = v23 * *(double *)&MEMORY[0x8871E0]->HoverDampen;
   return result; /*0x513f2a*/
 }
 }

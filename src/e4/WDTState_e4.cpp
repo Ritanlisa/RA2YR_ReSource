@@ -26,7 +26,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-    IDA_LOBYTE(this->q00C) = 0; /*0x76ba87*/
+        *((unsigned int *)this + 48) = 0;
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
@@ -70,35 +70,35 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         v6 = 0; /*0x76bacd*/
       }
     }
-    IDA_LOBYTE(this->q00C) = 1; /*0x76baff*/
+        *((unsigned int *)this + 48) = 1;
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
-    if ( *(unsigned int *)&this->q004 ) /*0x76bb05*/
+        if ( *((unsigned int *)this + 1) )
     {
-      if ( a2 >= this->Capacity ) /*0x76bb11*/
-        m_8 = this->Capacity; /*0x76bb13*/
+            if ( a2 >= *((unsigned int *)this + 2) )
+                v3 = *((unsigned int *)this + 2);
       for ( i = 0; i < m_8; ++i ) /*0x76bb19*/
-        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76bb26*/
-      if ( this->IsAllocated ) /*0x76bb30*/
+                ComPtr::Set(&v6[2 * i], *(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4));
+            if ( *((unsigned int *)this + 52) )
       {
-        v11 = *(void (****)(unsigned int, int))&this->q004; /*0x76bb37*/
+                v11 = (void (***)(unsigned int, int))*((unsigned int *)this + 1);
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
-        *(unsigned int *)&this->q004 = 0; /*0x76bb44*/
+                *((unsigned int *)this + 1) = 0;
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *(void **)&this->q004 = v6; /*0x76bb5a*/
-    this->Capacity = m_8; /*0x76bb5d*/
-    this->IsAllocated = a3 == 0; /*0x76bb60*/
+        *((unsigned int *)this + 1) = v6;
+        *((unsigned int *)this + 2) = v3;
+        *((unsigned int *)this + 52) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76bb69*/
+        (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this);
   }
-  v12 = this->Capacity; /*0x76bb6c*/
-  if ( v12 < this->q010 ) /*0x76bb74*/
-    this->q010 = v12; /*0x76bb76*/
+    v12 = *((unsigned int *)this + 2);
+    if ( v12 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v12;
   return 1; /*0x76bb79*/
 }
 }
@@ -110,14 +110,14 @@ int WDTState_4::ddtor(void *a1 = 0)
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x76b716*/
-  this->q010 = 0; /*0x76b719*/
-  if ( v2 && this->IsAllocated ) /*0x76b720*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     result = (**v2)(v2, 3); /*0x76b72d*/
-    *(unsigned int *)&this->q004 = 0; /*0x76b72f*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x76b732*/
-  this->Capacity = 0; /*0x76b735*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
   return result; /*0x76b738*/
 }
 } // namespace gamemd
@@ -126,8 +126,8 @@ int WDTState_4::ddtor(void *a1 = 0)
 namespace gamemd {
 unsigned int WDTState_4::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->q00C) ) /*0x76b740*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x76b755*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 3;
   else
     return 0; /*0x76b747*/
 }
@@ -141,11 +141,11 @@ int WDTState_4::Read(int a2, void *a1 = 0)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x76bb90*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x76bb93*/
   if ( m_10 <= 0 ) /*0x76bb98*/
     return -1; /*0x76bbb3*/
-  for ( i = (unsigned int *)(*(unsigned int *)&this->q004 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76bba1*/
+    for ( i = (unsigned int *)(*((unsigned int *)this + 4) + 4); *i != *(unsigned int *)(a2 + 4); i += 2 )
   {
     if ( ++result >= m_10 ) /*0x76bbb1*/
       return -1; /*0x76bbb1*/
@@ -161,13 +161,13 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
-  if ( v3 && this->IsAllocated ) /*0x76bc20*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     (**v3)(v3, 3); /*0x76bc2f*/
-    *(unsigned int *)&this->q004 = 0; /*0x76bc31*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->Capacity = 0; /*0x76bc42*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     RA2_OPDEL(); /*0x76bc4c*/
   return this; /*0x76bc56*/

@@ -31,7 +31,7 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
   int result; // eax
   int v4; // edx
 
-  Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
+    v2 = (AbstractClass *)*((unsigned int *)this + 4);
   result = 0; /*0x4346c3*/
   if ( Font_field_04 ) /*0x4346c7*/
   {

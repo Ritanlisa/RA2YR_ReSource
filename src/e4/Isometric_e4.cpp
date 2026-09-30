@@ -196,18 +196,18 @@ AbstractClass * Isometric::InitTables(void* a1, void* a2, void* a3)
     dword_81CC04 = 0; /*0x47ba79*/
     *(double *)&qword_81CC18 = dbl_89E720 * -0.5; /*0x47ba89*/
   }
-  result = Math::RoundToInt((double)(dword_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
-  if ( this->u8_11C ) /*0x47bab5*/
+    result = Math::RoundToInt((double)(MEMORY[0x89E7C0] * *((char *)this + 1132)) + 0.5);
+    if ( *((unsigned char *)this + 1136) )
   {
-    v5 = 40 * (*(uint8_t *)(&this->u32_704) - 1); /*0x47baec*/
+        v5 = 40 * (*(unsigned __int8 *)((char *)this + 1136) - 1);
     v6 = (double)(uint8_t)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
        + (double)(uint8_t)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5]; /*0x47bb41*/
+        if ( v6 > *(double *)&MEMORY[0x81C918][5 * *(unsigned __int8 *)((char *)this + 1136) - 5] )
+            v6 = *(double *)&MEMORY[0x81C918][5 * *(unsigned __int8 *)((char *)this + 1136) - 5];
 // 0x7c5f00
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }

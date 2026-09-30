@@ -180,14 +180,14 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
   v2 = (unsigned int)dword_A8ED84 + 1; /*0x652240*/
   if ( dword_A8B24C == 2 ) /*0x652246*/
     v2 = dword_A8B554 * (((unsigned int)dword_A8ED84 + dword_A8B554) / dword_A8B554); /*0x652255*/
-  this->vtable4 = v2; /*0x652258*/
+    *(unsigned int *)(v2 + 3) = v3;
   if ( dword_8B41F8 >= 0x4000 ) /*0x652265*/
   {
     result = ((unsigned int *)(dword_A8B238))[0]; /*0x6522b7*/
     if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x6522c7*/
     {
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x6522d0*/
-        this->Timer::UpdateDelta(); /*0x6522d2*/
+                Timer::UpdateDelta();
       ++dword_A8DAB4; /*0x6522e4*/
       StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Queue_CPP, 8878); /*0x65230f*/
       v5 = (int *)GetStringCSF(g_Str_TXT_QUEUE_FULL, 0, g_Str_File_Queue_CPP, 8878); /*0x65231a*/
@@ -197,16 +197,16 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       dword_A8B8BC = 0; /*0x652347*/
       byte_A8E9A0 = 0; /*0x652351*/
       if ( dword_B04874 ) /*0x652358*/
-        this->Mouse::HideWindow(); /*0x65235a*/
+                Mouse::HideWindow();
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x652366*/
       {
         byte_B0BD78 = 1; /*0x65236a*/
         byte_A8B8C1 = 1; /*0x65236f*/
         byte_A8B8C2 = 1; /*0x652374*/
-        this->Timer::UpdateDelta(); /*0x652379*/
+                Timer::UpdateDelta();
         ProcessGameResults(0); /*0x652380*/
       }
-      this->MouseClass::LoadCursors(); /*0x652385*/
+            MouseClass::LoadCursors();
       return ToggleDisplayMode(0); /*0x65238c*/
     }
   }
@@ -1314,7 +1314,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
     if ( !wcslen(v2) ) /*0x6ca40f*/
       return 1; /*0x6ca48f*/
   }
-  this->Debug::Log(); /*0x6ca426*/
+    Debug::Log();
   return 0; /*0x6ca440*/
 }
 }

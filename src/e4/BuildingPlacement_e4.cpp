@@ -78,7 +78,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   v6 = v5[328]; /*0x4fb8b3*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = v5; /*0x4fb8b9*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = v6; /*0x4fb8bf*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
+    MEMORY[0x880994] = *((unsigned int *)this + 192);
   v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], v7); /*0x4fb8df*/
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
@@ -147,7 +147,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   CellClass * v50;
 v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellClass *)((BuildingPlacement *)((char *)&this->u32_184))));
   v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)&this->q0046));
-  BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
+    v4 = *((unsigned int *)this + 48);
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
   if ( !*(unsigned char *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
   {
@@ -156,35 +156,35 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
       && *(unsigned int *)(BuildingPlacement_field_0x0C + 180) != 7
       && (*(int (**)(int))(*(unsigned int *)BuildingPlacement_field_0x0C + 388))(BuildingPlacement_field_0x0C) != 7 )
     {
-      if ( (uint8_t)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
+            if ( ObjectClass::HasLinkedObject(*((unsigned int *)this + 48)) )
       {
         v7 = Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
-        v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
+                v8 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 48) + 444))(*((unsigned int *)this + 48));
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
         NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
-        (*(void (**)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
-        v11 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
+                (*(void (**)(unsigned int, void *, int))(v9 + 1152))(*((unsigned int *)this + 48), NeighbourContent, 1);
+                v11 = *(unsigned char **)((char *)this + 48);
         IDA_LOBYTE(v9) = v11[116]; /*0x54c600*/
         (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v11 + 292))(v11, 0); /*0x54c603*/
-        v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c609*/
+                v12 = *(char **)((char *)this + 48);
         IDA_LOBYTE(v12->unknown74) = v9; /*0x54c60d*/
-        this->q014 = 3; /*0x54c610*/
+                *((unsigned int *)this + 320) = 3;
       }
       else
       {
-        v13 = (CellClass *)(*(int (__stdcall **)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c624*/
+                v13 = (unsigned int *)(*(int (__stdcall **)(unsigned int))(**(unsigned int **)((char *)this + 48) + 444))(*((unsigned int *)this + 48));
         CellClass::AttachObject(v13, v45); /*0x54c62c*/
-        v14 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
+                v14 = *(unsigned char **)((char *)this + 48);
         v15 = v14[116]; /*0x54c638*/
         IDA_LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))(v14, 0); /*0x54c63b*/
-        *(unsigned char *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
-        v16 = this->u32_2C; /*0x54c648*/
-        this->q014 = 2; /*0x54c64b*/
-        this->u32_20 = v16; /*0x54c652*/
+                *(unsigned char *)(*((unsigned int *)this + 48) + 116) = v15;
+                v16 = *((unsigned int *)this + 176);
+                *((unsigned int *)this + 320) = 2;
+                *((unsigned int *)this + 512) = v16;
       }
       return (gamemd::VectorClass_flat **)((char)v12);
     }
-    v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C /*0x54c675*/
+        v48 = (*(int (**)(unsigned int, unsigned int *, int, int, unsigned int, int))(**(unsigned int **)((char *)this + 48) + 428))(
                                                                                  + 428))(
             this->BuildingPlacement_field_0x0C,
             v5,
@@ -192,13 +192,13 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
             -1,
             0,
             1);
-    v17 = Input::OffsetToDirection((Input *)&this->q0046); /*0x54c684*/
+        v18 = v17;
     if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, IDA_BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
       || (v46 = 0, this->u32_90) )
     {
       v46 = 1; /*0x54c6a8*/
     }
-    if ( (*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 44))(this->BuildingPlacement_field_0x0C) == 1 /*0x54c6bc*/
+        if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 48) + 44))(*((unsigned int *)this + 48)) == 1 && !v18 )
       && !v17 )
     {
       v46 = 1; /*0x54c6be*/
@@ -210,28 +210,28 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
         || (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)&this->q0046)->flags[0] & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !this->u32_90) )
       {
-        IDA_LOBYTE(v12) = (*(char (__stdcall **)(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
+                LOBYTE(v12) = (*(int (__stdcall **)(int))(*((unsigned int *)this + 16) + 72))((char *)this + 16);
         return (char)v12; /*0x54ca4d*/
       }
-      if ( !this->u32_90 ) /*0x54c71a*/
+            if ( !*((unsigned char *)this + 576) )
       {
-        v19 = this->BuildingPlacement_field_0x0C; /*0x54c724*/
-        this->u32_90 = 1; /*0x54c727*/
-        (*(void (**)(int, char *))(*(unsigned int *)v19 + 240))(v19, (char *)&this->u32_184); /*0x54c731*/
+                v20 = *((unsigned int *)this + 48);
+                *((unsigned char *)this + 576) = 1;
+                (*(void (**)(int, int))(*(unsigned int *)v20 + 240))(v20, (char *)this + 256);
       }
     }
   }
-  v20 = (unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c737*/
+    v21 = *(unsigned int **)((char *)this + 48);
   if ( v20 ) /*0x54c73c*/
   {
-    if ( (*(int (**)(int))(*v20 + 44))(this->BuildingPlacement_field_0x0C) == 1 ) /*0x54c748*/
+        if ( (*(int (**)(unsigned int))(*v21 + 44))(*((unsigned int *)this + 48)) == 1 )
     {
       if ( *(unsigned char *)(v20[433] + 3603) ) /*0x54c750*/
       {
-        if ( !*(unsigned char *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
+                if ( !*(unsigned char *)(*((unsigned int *)this + 48) + 1709) )
         {
           v21 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c776*/
-          Value = ProgressTimer::GetValue((ProgressTimer *)((char *)&this->u32_204), &v47); /*0x54c77a*/
+                    Value = ProgressTimer::GetValue((unsigned short *)((char *)this + 336), &v48);
           IDA_LOBYTE(v23) = 0; /*0x54c77f*/
           IDA_HIBYTE(v23) = v21; /*0x54c781*/
           if ( *(unsigned short *)Value != v23 ) /*0x54c786*/
@@ -239,16 +239,16 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
             IDA_LOBYTE(v24) = 0; /*0x54c78d*/
             IDA_HIBYTE(v24) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c793*/
             IDA_LOWORD(v47) = v24; /*0x54c799*/
-            this->q054.Update(&v47); /*0x54c79e*/
+                        FacingClass::Update((char *)((char *)this + 336), &v48);
           }
         }
       }
     }
   }
-  v25 = this->BuildingPlacement_field_0x0C; /*0x54c7a3*/
-  this->u32_20 = 0; /*0x54c7a6*/
+    v26 = *((unsigned int *)this + 48);
+    *((unsigned int *)this + 512) = 0;
   v26 = (*(int (**)(int))(*(unsigned int *)v25 + 456))(v25); /*0x54c7b8*/
-  v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c7ba*/
+    v12 = *(char **)((char *)this + 48);
   if ( !IDA_LOBYTE(v12->sensorsOfHouses[4]) ) /*0x54c7bd*/
   {
     v27 = (gamemd::CellClass *)(&v12-((unsigned int *)(>sensorsOfHouses))[8]);
@@ -265,17 +265,17 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
   }
   if ( !v26 )
   {
-    (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 1348))( /*0x54c814*/
+        (*(void (**)(unsigned int, unsigned int, unsigned int))(**(unsigned int **)((char *)this + 48) + 1348))(*((unsigned int *)this + 48), 0, 0);
       this->BuildingPlacement_field_0x0C,
       0,
       0);
-    (*(void (**)(int, unsigned int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c820*/
+        (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 48) + 292))(*((unsigned int *)this + 48), 0);
       this->BuildingPlacement_field_0x0C,
       0);
     v28 = (unsigned char *)((gamemd::CellClass *)((unsigned char *)((gamemd::CellClass *)((unsigned char *)this->BuildingPlacement_field_0x0C))));
     if ( !v28[1709] ) /*0x54c829*/
-      (*(void (**)(unsigned char *, char *))(*(unsigned int *)v28 + 436))(v28, (char *)&this->u32_184); /*0x54c836*/
-    v29 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c83f*/
+            (*(void (**)(unsigned char *, int))(*(unsigned int *)v29 + 436))(v29, (char *)this + 256);
+        v30 = (int *)(*((unsigned int *)this + 48) + 156);
     v48 = *v29; /*0x54c848*/
     v49 = v29[1]; /*0x54c84f*/
     v30 = v29[2]; /*0x54c853*/
@@ -289,22 +289,22 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
       v49 = (gamemd::CellClass *)(v31[1]);
       v50 = (gamemd::CellClass *)(v31[2]);
       if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48)->flags[0] & 0x100) != 0 ) /*0x54c8b2*/
-        *(unsigned char *)(this->BuildingPlacement_field_0x0C + 140) = 1; /*0x54c8b7*/
+                *(unsigned char *)(*((unsigned int *)this + 48) + 140) = 1;
     }
-    (*(void (**)(int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c8c5*/
+        (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 48) + 292))(*((unsigned int *)this + 48), 1);
       this->BuildingPlacement_field_0x0C,
       1);
     *(unsigned int *)v2->__pad_0 = dword_ABC5A8; /*0x54c8d2*/
-    this->u32_44 = dword_ABC5AC; /*0x54c8db*/
-    v32 = this->BuildingPlacement_field_0x0C; /*0x54c8e4*/
-    this->u32_48 = dword_ABC5B0; /*0x54c8e7*/
-    this->u32_4C = 0; /*0x54c8ea*/
+        *((unsigned int *)this + 272) = dword_ABC5AC;
+        v33 = *((unsigned int *)this + 48);
+        *((unsigned int *)this + 288) = dword_ABC5B0;
+        *((unsigned char *)this + 304) = 0;
     (*(void (**)(int, int))(*(unsigned int *)v32 + 396))(v32, 2); /*0x54c8f0*/
-    (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 1152))( /*0x54c8ff*/
+        (*(void (**)(unsigned int, unsigned int, int))(**(unsigned int **)((char *)this + 48) + 1152))(*((unsigned int *)this + 48), 0, 1);
       this->BuildingPlacement_field_0x0C,
       0,
       1);
-    v33 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c905*/
+        v34 = *(unsigned char **)((char *)this + 48);
     IDA_LOBYTE(v12) = v33[144]; /*0x54c908*/
     if ( (unsigned char)v12 )
     {
@@ -315,7 +315,7 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
         if ( !(unsigned char)v12 )
         {
           (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v33 + 1164))(v33, 0, 0, 0, 0); /*0x54c93c*/
-          v34 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c942*/
+                    v35 = *(unsigned char **)((char *)this + 48);
           if ( v34[144] ) /*0x54c945*/
             (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v34 + 1160))( /*0x54c95b*/
               v34,
@@ -324,7 +324,7 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
               0,
               0,
               0);
-          v35 = this->BuildingPlacement_field_0x0C; /*0x54c961*/
+                    v36 = *((unsigned int *)this + 48);
           if ( *(unsigned char *)(v35 + 144) ) /*0x54c964*/
           {
             v48 = (gamemd::CellClass *)(*(unsigned int *)(v35 + 156));
@@ -337,31 +337,31 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::gamemd::CellClass *)((gamemd::CellCl
               *(unsigned int *)(v35 + 608) + 3,
               0);
           }
-          v47 = this->BuildingPlacement_field_0x0C; /*0x54c9ac*/
+                    v48 = *((unsigned int *)this + 48);
           v47 = v47; /*0x54c9aa*/
           if ( *(unsigned int *)((*(int (**)(void))(*(unsigned int *)v47 + 444))() + 224) == v47 ) /*0x54c9be*/
           {
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v47 + 444))(v47); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
-          v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
-          this->q014 = 0; /*0x54c9e4*/
+                    GadgetGrid::RemoveItem(MEMORY[0x887888], *((unsigned int *)this + 48));
+                    v39 = *((unsigned int *)this + 48);
+                    *((unsigned int *)this + 320) = 0;
           v38 = v38; /*0x54c9eb*/
           v39 = (CrateClass *)(*(int (**)(int))(*(unsigned int *)v38 + 444))(v38); /*0x54c9ee*/
           CrateClass::ProcessPickup(v39, v38); /*0x54c9f6*/
           v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c9fb*/
           v12[((unsigned int *)(5].__pad_28))[30] = 1; /*0x54c9fe*/
-          *(unsigned char *)(this->BuildingPlacement_field_0x0C + 1063) = 0; /*0x54ca08*/
-          *(unsigned char *)(this->BuildingPlacement_field_0x0C + 1061) = 0; /*0x54ca12*/
-          v40 = this->BuildingPlacement_field_0x0C; /*0x54ca19*/
-          this->u32_90 = 0; /*0x54ca1e*/
+                    *(unsigned char *)(*((unsigned int *)this + 48) + 1063) = 0;
+                    *(unsigned char *)(*((unsigned int *)this + 48) + 1061) = 0;
+                    v41 = *((unsigned int *)this + 48);
+                    *((unsigned char *)this + 576) = 0;
           if ( v40 )
           {
             v12 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v40 + 44))(v40); /*0x54ca29*/
             if ( v12 == (CellClass *)1 )
             {
-              v41 = this->BuildingPlacement_field_0x0C; /*0x54ca31*/
+                            v42 = *((unsigned int *)this + 48);
               if ( v41 )
                 v42 = (*(int (**)(int))(*(unsigned int *)v41 + 44))(this->BuildingPlacement_field_0x0C) == 1
                     ? v41
@@ -443,7 +443,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   uint64_t v59; // [esp+40h] [ebp-8h]
 
   __asm { fild dword_ABE030 } /*0x594f49*/
-  BuildingPlacement_field_0x20 = this->BuildingPlacement_field_0x20; /*0x594f51*/
+    v2 = *((unsigned int *)this + 32);
   __asm { fmul ds:dbl_7E3808 } /*0x594f55*/
   v45 = BuildingPlacement_field_0x20; /*0x594f5b*/
   v58 = -1.0; /*0x594f5f*/

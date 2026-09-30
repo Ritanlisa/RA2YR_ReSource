@@ -20,20 +20,20 @@ void LightSourceClass::Construct(void* a1, void* a2, void* a3, void* a4, int a5,
   int v10; // eax
 
   AbstractClass::Constructor(); /*0x554763*/
-  this->LightTint[0] = a7; /*0x554774*/
-  this->LightIntensity = a6; /*0x554777*/
-  this->LightTint[1] = aP7; /*0x55477e*/
-  this->LightTint[2] = a9; /*0x554788*/
-  this->DetailLevel = 2; /*0x55478f*/
-  this->Location[0] = a2; /*0x554796*/
-  this->Activated = 0; /*0x55479c*/
-  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x5547a0*/
-  this->Location[1] = a3; /*0x5547a6*/
-  this->LightVisibility = a5; /*0x5547ad*/
-  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x5547b0*/
-  this->Location[2] = aP3; /*0x5547b7*/
-  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x5547ba*/
-  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x5547c1*/
+    *((unsigned int *)this + 40) = a7;
+    *((unsigned int *)this + 36) = a6;
+    *((unsigned int *)this + 44) = a8;
+    *((unsigned int *)this + 48) = a9;
+    *((unsigned int *)this + 52) = 2;
+    *((unsigned int *)this + 56) = a2;
+    *((unsigned char *)this + 72) = 0;
+    *this = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 60) = a3;
+    *((unsigned int *)this + 68) = a5;
+    *((unsigned int *)this + 4) = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 64) = a4;
+    *((unsigned int *)this + 8) = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 12) = &LightSourceClass::`vftable';
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -45,7 +45,7 @@ void LightSourceClass::Construct(void* a1, void* a2, void* a3, void* a4, int a5,
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
-  return &this->AbstractClass; /*0x55481e*/
+    return this;
 }
 } // namespace gamemd
 // 0x554830
@@ -56,20 +56,20 @@ void LightSourceClass::Constructor(void* a1, void* a2, void* a3, void* a4, int a
   int v3; // eax
 
   AbstractClass::Constructor(); /*0x554833*/
-  this->LightIntensity = 0; /*0x55483d*/
-  this->LightTint[0] = 0; /*0x554840*/
-  this->LightTint[1] = 0; /*0x554843*/
-  this->LightTint[2] = 0; /*0x554846*/
-  this->Location[0] = g_MissionQueueFrame.random[125]; /*0x55484f*/
-  this->Location[1] = g_MissionQueueFrame.random[126]; /*0x554857*/
+    *((unsigned int *)this + 144) = 0;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned int *)this + 192) = 0;
+    *((unsigned int *)this + 224) = MEMORY[0xABCA00];
+    *((unsigned int *)this + 240) = MEMORY[0xABCA04];
   v2 = g_MissionQueueFrame.random[127]; /*0x55485a*/
-  this->LightVisibility = 0; /*0x554860*/
-  this->Activated = 0; /*0x554863*/
-  this->Location[2] = v2; /*0x554866*/
-  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x554869*/
-  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x55486f*/
-  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x554876*/
-  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55487d*/
+    *((unsigned int *)this + 272) = 0;
+    *((unsigned char *)this + 288) = 0;
+    *((unsigned int *)this + 256) = v2;
+    *(unsigned int *)this = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 16) = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 32) = &LightSourceClass::`vftable';
+    *((unsigned int *)this + 48) = &LightSourceClass::`vftable';
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -160,11 +160,11 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   int v3; // eax
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x555156*/
-  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x55515c*/
-  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x555163*/
-  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
+    *Block = &LightSourceClass::`vftable';
+    *(Block + 1) = &LightSourceClass::`vftable';
+    *(Block + 2) = &LightSourceClass::`vftable';
+    *(Block + 3) = &vt_LightSourceClass;
+    AbstractClass::AnnounceExpiredPointer(Block, 1);
   v5 = this; /*0x555186*/
   v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],
@@ -180,14 +180,14 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
       ++v3; /*0x5551ad*/
     }
   }
-  if ( this->Activated ) /*0x5551bf*/
+    if ( *((unsigned char *)Block + 72) )
   {
-    this->Activated = 0; /*0x5551ca*/
+        *((unsigned char *)Block + 72) = 0;
     TacticalClass::ScrollView(0); /*0x5551ce*/
   }
-  this->AbstractClass::DTOR(); /*0x5551d5*/
+    AbstractClass::DTOR(Block);
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     RA2_OPDEL(); /*0x5551e2*/
-  return &this->AbstractClass; /*0x5551ec*/
+    return (LightSourceClass *)Block;
 }
 } // namespace gamemd

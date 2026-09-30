@@ -14,7 +14,7 @@
 namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
-  return (*(int (**)(unsigned int, char *, unsigned int))(*(unsigned int *)(this->q014) + 20))(this->q014, &a3, a2); /*0x411328*/
+    return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int *)this + 20) + 20))(*((unsigned int *)this + 20), &a3, a2);
 }
 } // namespace gamemd
 // 0x4114B0
@@ -25,10 +25,10 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
   char * result;
 
   v4 = (unsigned int)((*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_14 + 92))(this->u32_14, aP1, aP2));
-  (*(void (**)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x4114cd*/
-  result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
-  if ( result >= (char *)((unsigned int))this->u32_1C ) /*0x4114da*/
-    result -= this->u32_8; /*0x4114dc*/
+    (*(void (**)(unsigned int))(**(unsigned int **)((char *)this + 80) + 96))(*((unsigned int *)this + 80));
+    result = v4 + *((unsigned int *)this + 64);
+    if ( result >= *((unsigned int *)this + 112) )
+        result -= *((unsigned int *)this + 128);
   return result; /*0x4114df*/
 }
 } // namespace gamemd
@@ -114,14 +114,14 @@ int StreamClass::Set(void* a1)
 namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-  return IDA_BYTE1(aP0->field_10) == 0; /*0x4b4c3e*/
+    return aP0->__pad_10[1] == 0;
 }
 } // namespace gamemd
 // 0x4B4C50
 namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
-  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 128))(a1); /*0x4b4c5d*/
+    return (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 128))(a1);
 }
 } // namespace gamemd
 // 0x55A710
@@ -137,16 +137,16 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 namespace gamemd {
 int StreamClass::SetDirty(unsigned char * a1)
 {
-  IDA_LOBYTE(a1->field_C) = 1; /*0x55a8f5*/
-  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a8fe*/
+    a1[12] = 1;
+    return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1);
 }
 } // namespace gamemd
 // 0x55A910
 namespace gamemd {
 int StreamClass::ClearDirty(unsigned char * a1)
 {
-  IDA_LOBYTE(a1->field_C) = 0; /*0x55a915*/
-  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a91e*/
+    a1[12] = 0;
+    return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1);
 }
 } // namespace gamemd
 // 0x55A930

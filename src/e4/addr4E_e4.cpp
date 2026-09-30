@@ -46,11 +46,11 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
   int v9; // ecx
   void *v10; // eax
 
-  this->Items = 0; /*0x4e0a0a*/
-  this->Capacity = a2; /*0x4e0a11*/
-  this->IsInitialized = 1; /*0x4e0a14*/
-  this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = (void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0a1c*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = a2;
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
+    *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a2 ) /*(int *)(0x4e0a2a)*/
@@ -68,7 +68,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
         }
         while ( v5 ); /*0x4e0a46*/
       }
-      this->Items = a2 + 1; /*0x4e0a48*/
+            *((unsigned int *)this + 4) = a3 + 1;
     }
     else
     {
@@ -95,14 +95,14 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       {
         v10 = 0; /*0x4e0a81*/
       }
-      this->Items = v10; /*0x4e0a83*/
-      this->IsAllocated = 1; /*0x4e0a86*/
+            *((unsigned int *)this + 4) = v10;
+            *((unsigned char *)this + 13) = 1;
     }
   }
-  this->vtable0 = (void*)&DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0a8a*/
-  this->M20 = 10; /*0x4e0a90*/
-  this->M16 = 0; /*0x4e0a97*/
-  return &this->vtable0; /*0x4e0aa0*/
+    *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
+    *((unsigned int *)this + 20) = 10;
+    *((unsigned int *)this + 16) = 0;
+    return this;
 }
 }
 // 0x4E1FE0
@@ -240,7 +240,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
           v21 = GetDlgItem(hDlg, 1325); /*0x4e2212*/
           if ( v21 ) /*0x4e2216*/
           {
-            IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x4e221c*/
+                        IsSoundEnabled = Audio::IsSoundEnabled();
             EnableWindow(v21, IsSoundEnabled); /*0x4e2223*/
             return 0; /*0x4e222f*/
           }
@@ -1929,30 +1929,30 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e924c*/
   {
-    this->IsInitialized = 0; /*0x4e9256*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
       v4 = RA2_OPNEW(4 * a2); /*0x4e926e*/
-    this->IsInitialized = 1; /*0x4e9276*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x4e927a*/
     {
-      if ( this->Items ) /*0x4e9285*/
+            if ( *((unsigned int *)this + 1) )
       {
-        v6 = this->Capacity; /*0x4e928c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < v6 ) /*0x4e9291*/
           v6 = a2; /*0x4e9293*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4e9299*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x4e929e*/
-        if ( this->IsAllocated ) /*0x4e92ab*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*((void **)this + 1)); /*0x4e92b6*/
-          this->Items = 0; /*0x4e92be*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      this->Items = v4; /*0x4e92c7*/
-      this->Capacity = a2; /*0x4e92cf*/
-      this->IsAllocated = a3 == 0; /*0x4e92d2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x4e92d8*/
     }
     else
@@ -1962,7 +1962,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)&this->Items2))(this); /*0x4e92e2*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x4e92e8*/
   }
 }
@@ -1977,30 +1977,30 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
 
   if ( a2 ) /*0x4e9e2c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x4e9e36*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4e9e4e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x4e9e56*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x4e9e5a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4e9e65*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->m_8; /*0x4e9e6c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x4e9e71*/
           m_8 = a2; /*0x4e9e73*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e9e79*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x4e9e7e*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x4e9e8b*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9e96*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4e9e9e*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4e9ea7*/
-      this->m_8 = a2; /*0x4e9eaf*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4e9eb2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x4e9eb8*/
     }
     else
@@ -2010,7 +2010,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x4e9ec8*/
   }
 }
@@ -2019,13 +2019,13 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
 namespace gamemd {
 void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4e9edd*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9ee3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4e9eeb*/
+        *((unsigned int *)this + 16) = 0;
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4e9eee*/
-  this->m_8 = 0; /*0x4e9ef1*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 }
 // 0x4E0C30
@@ -2362,29 +2362,29 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   int v8; // eax
 
   ControlClass::Construct(aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
-  v7 = this->M48; /*0x4e2a79*/
+    v7 = *((unsigned int *)this + 192);
   *(unsigned int *)this->__pad_0 = (void*)&GaugeClass_vftable; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
-    this->M48 = 255; /*0x4e2a8d*/
+        *((unsigned int *)this + 192) = 255;
     VectorClass_ptr_ConvertClass::MarkDirty(); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
-  if ( this->M48 < 0 ) /*0x4e2a9d*/
-    v8 = this->M48; /*0x4e2a9f*/
-  if ( v8 != this->q034 ) /*0x4e2aa4*/
+    if ( *((int *)this + 192) < 0 )
+        v8 = *((unsigned int *)this + 192);
+    if ( v8 != *((unsigned int *)this + 208) )
   {
-    this->q034 = v8; /*0x4e2aa6*/
-    (*(void (**)(GaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2aad*/
+        *((unsigned int *)this + 208) = v8;
+        (*(void (**)(int))(*(unsigned int *)this + 72))(this);
   }
-  this->M45 = 1; /*0x4e2ab2*/
-  this->M46 = aP4 > aP5; /*0x4e2ab9*/
-  this->M44 = 1; /*0x4e2abc*/
-  this->M56 = 0; /*0x4e2ac0*/
-  this->M60 = 0; /*0x4e2ac7*/
-  this->q040 = 0; /*0x4e2ace*/
-  *(unsigned int *)this->__pad_0 = (void*)&TriColorGaugeClass_vftable; /*0x4e2ad5*/
-  return (int)this->__pad_0; /*0x4e2add*/
+    *((unsigned char *)this + 180) = 1;
+    *((unsigned char *)this + 184) = (int)aP4 > aP5;
+    *((unsigned char *)this + 176) = 1;
+    *((unsigned int *)this + 224) = 0;
+    *((unsigned int *)this + 240) = 0;
+    *((unsigned int *)this + 256) = 0;
+    *(unsigned int *)this = &vt_TriColorGaugeClass;
+    return this;
 }
 } // namespace gamemd
 
@@ -2860,12 +2860,12 @@ LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 namespace gamemd {
 int E4Recv_4E6070::sub_4E6070()
 {
-  *(unsigned int *)&this->bombVisible = 0; /*0x4e6087*/
-  this->health = 0; /*0x4e608a*/
+    *((unsigned int *)this + 416) = 0;
+    *((unsigned int *)this + 432) = 0;
   Debug::Log(); /*0x4e608d*/
   memset(0xFFu, 0x18u); /*0x4e609f*/
-  IDA_LOWORD(this->?) = -1; /*0x4e60a9*/
-  *((unsigned int *)&this->AbstractClass + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
+    *((unsigned short *)this + 96) = -1;
+    *(unsigned int *)((char *)this + 16 * (*((unsigned int *)this + 416))++) = 2;
   Debug::Log(); /*0x4e60d6*/
   return (int)this; /*0x4e612c*/
 }
@@ -4852,13 +4852,13 @@ char sub_4E8220()
 namespace gamemd {
 void HouseClass::vt_03_()
 {
-  if ( this->vtable2 && this->relatedTagsCapacity ) /*0x4e92fd*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(this->vtable2); /*0x4e9303*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x4e930b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->relatedTagsCapacity = 0; /*0x4e930e*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x4e9311*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -4870,9 +4870,9 @@ int HouseClass::vt_04_(int * a2)
   int v3; // edx
   unsigned int *i; // ecx
 
-  if ( !this->vtable4 ) /*0x4e9320*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x4e9328*/
-  v3 = *(unsigned int *)&this->vtable3; /*0x4e932e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x4e9331*/
   if ( v3 <= 0 ) /*0x4e9335*/
     return -1; /*0x4e934c*/
@@ -4889,8 +4889,8 @@ int HouseClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int HouseClass::vt_05_(int a2)
 {
-  if ( this->vtable4 ) /*0x4e9360*/
-    return (unsigned int)(a2 - this->vtable2) >> 2; /*0x4e9375*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4e9367*/
 }
@@ -4904,9 +4904,9 @@ int ParticleSystemClass::vt_04_(int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->vtable4) ) /*0x4e9f00*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x4e9f08*/
-  m_8 = *(unsigned int *)&this->vtable3; /*0x4e9f0e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x4e9f11*/
   if ( m_8 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
@@ -4923,8 +4923,8 @@ int ParticleSystemClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int ParticleSystemClass::vt_05_(int a2)
 {
-  if ( IDA_LOBYTE(this->vtable4) ) /*0x4e9f40*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->vtable2) >> 2; /*0x4e9f55*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4e9f47*/
 }
@@ -4936,15 +4936,15 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->vtable2; /*0x4ef4e3*/
+    v3 = (void *)*(Block + 1);
   *this = (void*)&VectorClass_TagClass___vftable; /*0x4ef4e6*/
-  if ( v3 && this->relatedTagsCapacity ) /*0x4ef4f0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4ef4f8*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x4ef500*/
+        *(Block + 1) = 0;
   }
-  this->relatedTagsCapacity = 0; /*0x4ef50b*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x4ef511*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
     RA2_OPDEL(); /*0x4ef51b*/
   return this; /*0x4ef525*/
@@ -4957,15 +4957,15 @@ VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->vtable2; /*0x4ef803*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
-  if ( v3 && IDA_BYTE1(this->vtable4) ) /*0x4ef810*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_ParticleClass;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4ef818*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x4ef820*/
+        *(Block + 1) = 0;
   }
-  IDA_BYTE1(this->vtable4) = 0; /*0x4ef82b*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x4ef831*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
     RA2_OPDEL(); /*0x4ef83b*/
   return this; /*0x4ef845*/

@@ -61,7 +61,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= (unsigned int)PingPongBuffer::GetWriteOffset() /*0x62cedc*/
     || *((unsigned int *)this->ParticleClass_field_0xAC + 186) )
   {
-    if ( stru_A8EB00.ObjectTypeClass[30] || (v4 = *((unsigned int *)this->ParticleClass_field_0xAC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+        if ( MEMORY[0xA8EB78] || (v4 = *(unsigned int *)(*((unsigned int *)this + 43) + 788), v4 != 1) && v4 != 3 )
     {
       if ( *((unsigned int *)((char *)&stru_A8EB00 + 391)) /*0x62cf58*/
         || !g_hWnd
@@ -71,7 +71,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v31 = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[124],
             !(uint8_t)Game::Stub3((int)&v29)) )
       {
-        v5 = *((unsigned int *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
+                v5 = *(unsigned int *)(*((unsigned int *)this + 43) + 788);
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
           v28[0] = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[116]; /*0x62d036*/
@@ -103,15 +103,15 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                 {
                   ParticleClass_field_0xB4 = (IUnknown *)(this->ParticleClass_field_0xB4);
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
-                    pad_B0 = (char *)(*((unsigned int *)this->ParticleClass_field_0xAC + 175) /*0x62d13f*/
+                                        v19 = *(unsigned int *)(*((unsigned int *)this + 43) + 700) + 3 * v18;
                                     + 3 * (unsigned int)ParticleClass_field_0xB4);
                   else
-                    pad_B0 = this->__pad_B0; /*0x62d12e*/
+                                        v19 = (int)(char *)this + 704;
                   v20 = *(unsigned short *)pad_B0; /*0x62d145*/
                   v21 = pad_B0[2]; /*0x62d148*/
                   IDA_LOWORD(v28[0]) = v20; /*0x62d14b*/
                   IDA_BYTE2(v28[0]) = v21; /*0x62d15a*/
-                  v22 = 1.0 - *(double *)&this->ParticleClass_field_0xB8; /*0x62d16d*/
+                                    v22 = 1.0 - *((double *)this + 23);
                   IDA_LOWORD(v23) = Math::RoundToInt(v22); /*0x62d1ac*/
                   v24 = v23; /*0x62d1c9*/
                   IDA_LOWORD(v25) = Math::RoundToInt(v22); /*0x62d1e1*/
@@ -136,16 +136,16 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
-          v6 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 464))(this); /*0x62cf87*/
+                    v6 = (*(int (**)(void *))(*(unsigned int *)this + 464))(this);
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 108))(this); /*0x62cfa2*/
+                    v8 = (*(int (**)(void *))(*(unsigned int *)this + 108))(this);
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 488))(this); /*0x62cfb5*/
+                        v10 = (*(int (**)(void *))(*(unsigned int *)this + 488))(this);
             if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
-              v11 = this->Translucency; /*0x62cfc4*/
+                            v11 = *((unsigned char *)this + 303);
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/
@@ -210,23 +210,23 @@ void ParticleClass::AdjustHeight()
     result = v3 - 1; /*0x62d602*/
     if ( !result ) /*0x62d603*/
     {
-      v5 = this->q0E4; /*0x62d609*/
-      v13[0] = *(&this->vtable49); /*0x62d623*/
-      v6 = *(&this->q0100); /*0x62d627*/
-      v13[2] = *(&this->q0101); /*0x62d630*/
-      v7 = *(&this->q0101); /*0x62d636*/
+              v4 = *(float *)this->__pad_E4;
+              v12[0] = *(unsigned int *)&this->__pad_28[116];
+              v5 = *(unsigned int *)&this->__pad_28[120];
+              v12[2] = *(unsigned int *)&this->__pad_28[124];
+              v6 = *(unsigned int *)&this->__pad_28[124];
       v10 = v13[0]; /*0x62d639*/
       v11 = v6; /*0x62d640*/
       v12 = v7; /*0x62d644*/
       v13[1] = v6; /*0x62d648*/
       if ( v5 > 0.0 ) /*0x62d64c*/
       {
-        v8 = *(&this->q0186); /*0x62d654*/
-        v10 = *(&this->q0184) + v13[0]; /*0x62d65c*/
-        v11 = *(&this->q0185) + v6; /*0x62d66a*/
+                  v7 = *(unsigned int *)&this->__pad_E4[36];
+                  v10 = (MouseClass *)(*(unsigned int *)&this->__pad_E4[28] + v12[0]);
+                  var14 = *(unsigned int *)&this->__pad_E4[32] + v5;
         v12 = v8 + v7; /*0x62d66e*/
       }
-      if ( this->q0E4 > 0.0 ) /*0x62d683*/
+              if ( *(float *)this->__pad_E4 > 0.0 )
       {
         GroundHeight = (void *)((int)((void *)(Cell::GetGroundHeight(v13))));
         if ( (int)Cell::GetGroundHeight(&v10) > (int)(GroundHeight) ) /*0x62d6a7*/

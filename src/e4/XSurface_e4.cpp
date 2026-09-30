@@ -73,8 +73,8 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (int *)(*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this); /*0x7ba947*/
-  v14 = (int16_t *)(*(int (**)(XSurface *, int, int))(*(unsigned int *)this->Surface + 92))(this, v7, v40); /*0x7ba94f*/
+    v42 = (*(int (**)(void *))(*(unsigned int *)this + 112))(this);
+    v14 = (unsigned short *)(*(int (**)(void *, int, int))(*(unsigned int *)this + 92))(this, v7, v40);
   v43 = v14; /*0x7ba954*/
   if ( v14 )
   {
@@ -101,9 +101,9 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     else if ( v7 == v8 )
     {
       if ( v40 <= v9 ) /*0x7ba9ac*/
-        v18 = (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 116))(this); /*0x7ba9be*/
+                v18 = (*(int (**)(void *))(*(unsigned int *)this + 116))(this);
       else
-        v18 = -(*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 116))(this); /*0x7ba9b5*/
+                v18 = -(*(int (**)(void *))(*(unsigned int *)this + 116))(this);
       v19 = abs32(v9 - v40); /*0x7ba9cb*/
       if ( v19 >= 0 )
       {
@@ -131,7 +131,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     {
       v22 = v9 - v40; /*0x7baa1d*/
       v23 = v8 - v7; /*0x7baa23*/
-      v24 = (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 116))(this); /*0x7baa27*/
+            v24 = (*(int (**)(void *))(*(unsigned int *)this + 116))(this);
       v25 = v24; /*0x7baa2a*/
       v39 = v24; /*0x7baa2e*/
       if ( v22 < 0 ) /*0x7baa32*/
@@ -200,7 +200,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
         }
       }
     }
-    (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7bab1e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 96))(this);
   }
   return v13; /*0x7bab23*/
 }
@@ -444,7 +444,7 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
     return 0; /*0x7bb066*/
   if ( a2[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
-  v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
+    v6 = (*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 120))(this, v43);
   v7 = ClipRectIntersection(&v50, aP1, v6, 0, 0); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
@@ -943,7 +943,7 @@ char XSurface::entry_68_(int a1, int a2)
 namespace gamemd {
 int XSurface::Lock(int a2, int a3)
 {
-  ++this->LockCount; /*0x411564*/
+    ++*((unsigned int *)this + 12);
   return 0; /*0x411569*/
 }
 } // namespace gamemd
@@ -951,7 +951,7 @@ int XSurface::Lock(int a2, int a3)
 namespace gamemd {
 char XSurface::Unlock()
 {
-  --this->LockCount; /*0x411574*/
+    --*((unsigned int *)this + 12);
   return 1; /*0x411579*/
 }
 } // namespace gamemd
@@ -1043,25 +1043,25 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
   v12 = v9[0]; /*0x7badfb*/
   v9[1] = v5; /*0x7bae08*/
   v10[1] = v5; /*0x7bae0c*/
-  (*(void (**)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae17*/
+    (*(void (**)(void *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this + 44))(this, a2, v9, v10, a4);
     this,
     a2,
     v9,
     v10,
     a4);
-  (*(void (**)(XSurface *, int, unsigned int *, int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae2a*/
+    (*(void (**)(void *, int, unsigned int *, int *, int))(*(unsigned int *)this + 44))(this, a2, v9, &v12, a4);
     this,
     a2,
     v9,
     &v12,
     a4);
-  (*(void (**)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae3d*/
+    (*(void (**)(void *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this + 44))(this, a2, v10, v11, a4);
     this,
     a2,
     v10,
     v11,
     a4);
-  (*(void (**)(XSurface *, int, int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae50*/
+    (*(void (**)(void *, int, int *, unsigned int *, int))(*(unsigned int *)this + 44))(this, a2, &v12, v11, a4);
     this,
     a2,
     &v12,

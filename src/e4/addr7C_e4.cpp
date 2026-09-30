@@ -9546,7 +9546,7 @@ int ProcessAudioStreamBuffer(int a1, signed int a2, int a3)
 namespace gamemd {
 int E4Recv_7C35B0::sub_7C35B0()
 {
-  return *((uint16_t *)&this->q05A6); /*0x7c35b9*/
+    return *((unsigned int *)this + 3624);
 }
 } // namespace gamemd
 
@@ -9554,9 +9554,9 @@ int E4Recv_7C35B0::sub_7C35B0()
 namespace gamemd {
 int E4Recv_7C3670::sub_7C3670()
 {
-  this->u32_710 = -1; /*0x7c3673*/
-  this->u32_708 = -1; /*0x7c3679*/
-  this->u32_70C = -1; /*0x7c367f*/
+    *((unsigned int *)this + 1808) = -1;
+    *((unsigned int *)this + 1800) = -1;
+    *((unsigned int *)this + 1804) = -1;
   return -1; /*0x7c3685*/
 }
 } // namespace gamemd
@@ -12139,7 +12139,7 @@ void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 
   *(unsigned int *)this = &off_7F9594; /*0x7c8a93*/
   _lock(27); /*0x7c8a99*/
-  v2 = (void *)this->q004; /*0x7c8a9e*/
+    v2 = (void *)*((unsigned int *)this + 1);
   if ( v2 ) /*0x7c8aa4*/
     free(v2); /*0x7c8aa7*/
   _unlock(27); /*0x7c8aaf*/
@@ -12185,7 +12185,7 @@ BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
-  return (char *)&this->?; /*0x7c8b2c*/
+  return (char *)&this->u32_20; /*0x7c8b2c*/
 }
 } // namespace gamemd
 
@@ -12193,8 +12193,8 @@ char * E4Recv_7C8B29::sub_7C8B29()
 namespace gamemd {
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
-  this->AbstractClass = &off_7F9594; /*0x7c8b2f*/
-  return &this->AbstractClass; /*0x7c8b35*/
+    *this = &off_7F9594;
+    return this;
 }
 } // namespace gamemd
 
@@ -13070,7 +13070,7 @@ namespace gamemd {
 exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
   __0exception_QAE_ABV0__Z(a1); /*0x7ca9d3*/
-  this->m_0 = (int)&bad_typeid_vftable; /*0x7ca9d8*/
+    this->vfptr = &vt_bad_typeid;
   return (exception *)this; /*0x7ca9e0*/
 }
 } // namespace gamemd

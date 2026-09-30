@@ -53,13 +53,13 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   int v39; // [esp+20h] [ebp-Ch] BYREF
   int v40; // [esp+24h] [ebp-8h]
 
-  if ( !aP2 || a0->slaveOwner ) /*0x6fc0c5*/
+    if ( !aP2 || a0[183] )
     return 5; /*0x6fc0c5*/
-  if ( (*((uint8_t (**)(TechnoClass *))a0->RadioClass + 118))(a0) ) /*0x6fc0d5*/
+    if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 472))(a0) )
     return 3; /*0x6fc0eb*/
-  if ( a0->locomotorTarget == (FootClass *)aP2 ) /*0x6fc0f4*/
+    if ( (TechnoClass *)a0[171] == aP2 )
     return 3; /*0x6fc102*/
-  if ( (*((uint8_t (**)(TechnoClass *))a0->RadioClass + 117))(a0) /*0x6fc145*/
+    if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 468))(a0)
     || a0->__pad_1C4[4]
     || a0->isSinking
     || aP2 == (unsigned char *)a0->drainTarget
@@ -67,9 +67,9 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   {
     return 5; /*0x6fc145*/
   }
-  if ( (*((uint8_t (**)(TechnoClass *))a0->RadioClass + 119))(a0) ) /*0x6fc14f*/
+    if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 476))(a0) )
   {
-    temporalUsing = a0->temporalUsing; /*0x6fc159*/
+        v7 = a0[157];
     if ( temporalUsing ) /*0x6fc161*/
     {
       if ( aP2 == *(unsigned char **)temporalUsing->__pad_28 ) /*0x6fc166*/

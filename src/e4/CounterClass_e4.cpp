@@ -15,10 +15,10 @@ CounterClass * CounterClass::QueryInterface(char a2)
 
   count = (void *)((unsigned int)((void *)this->count));
   this->items = (unsigned int)((void*)&VectorClass_int_vftable);
-  if ( count && this->u32_D ) /*0x49fcf0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(count); /*0x49fcf8*/
-    this->count = 0; /*0x49fd00*/
+        *(Block + 1) = 0;
   }
   this->u32_D = (unsigned int)((gamemd::CounterClass *)(0));
   this->u32_8 = (unsigned int)((gamemd::CounterClass *)(0));

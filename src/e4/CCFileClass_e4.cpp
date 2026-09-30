@@ -19,27 +19,27 @@ AudioController * * CCFileClass::Close(void *a1 = 0)
   char result; // al
   AudioController ** v3;
 
-  if ( !IDA_BYTE1(this->BufferSize) ) /*0x4325c3*/
+    if ( !*((unsigned int *)this + 164) )
 // 0x65cca0
     return FileClass::CloseHandle(); /*0x432607*/
   BufferIO::Flush(); /*0x4325ca*/
-  result = IDA_BYTE2(this->BufferOffset); /*0x4325cf*/
+    result = *((unsigned int *)this + 152);
   if ( result ) /*0x4325d4*/
   {
-    if ( this->MixFileIndex ) /*0x4325d6*/
+        if ( *((unsigned int *)this + 20) )
     {
       v3 = (unsigned int)((gamemd::AudioController **)(this->FileClass));
-      IDA_BYTE1(this->BufferSize) = 0; /*0x4325e1*/
+            *((unsigned int *)this + 164) = 0;
       result = (*(int (**)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x4325e5*/
-      IDA_BYTE1(this->BufferSize) = 1; /*0x4325e8*/
-      IDA_BYTE2(this->BufferOffset) = 0; /*0x4325ec*/
-      IDA_BYTE1(this->BufferOffset) = 0; /*0x4325f0*/
+            *((unsigned int *)this + 164) = 1;
+            *((unsigned int *)this + 152) = 0;
+            *((unsigned int *)this + 148) = 0;
       return result; /*0x4325f5*/
     }
     result = FileClass::CloseHandle(this); /*0x4325f8*/
-    IDA_BYTE2(this->BufferOffset) = 0; /*0x4325fd*/
+        *((unsigned int *)this + 152) = 0;
   }
-  IDA_BYTE1(this->BufferOffset) = 0; /*0x432601*/
+    *((unsigned int *)this + 148) = 0;
   return result; /*0x4325f4*/
 }
 } // namespace gamemd
@@ -48,9 +48,9 @@ namespace gamemd {
 void CCFileClass::Destruct()
 {
   *(unsigned int *)this->CDFileClass = (void*)&CCFileClass_vftable; /*0x535a76*/
-  this->tail_19 = 0; /*0x535a7c*/
-  Vector::Clear((int)&this->CacheReadAhead8); /*0x535a83*/
-  *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
+    *((unsigned int *)this + 100) = 0;
+    Vector::Clear((int)((char *)this + 88));
+    *this = &off_7E1668;
 // 0x431b80
   return BufferIOFileClass::Dtor(); /*0x535a95*/
 }
@@ -66,20 +66,20 @@ void CCFileClass::GetFileSize()
   int v6; // [esp-8h] [ebp-10h]
 
   FileSize = 0; /*0x65d0d4*/
-  result = (int)this->FileName; /*0x65d0d6*/
+    result = *((unsigned int *)this + 16);
   if ( result == -1 ) /*0x65d0dc*/
   {
     if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
+            FileSize = GetFileSize((HANDLE)*((unsigned int *)this + 20), 0);
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = *(unsigned int *)this->FileClass; /*0x65d0fd*/
-        v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
+                v6 = *((unsigned int *)this + 24);
         LastError = GetLastError(); /*0x65d102*/
         (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
-        result = -1 - (unsigned int)this->Handle; /*0x65d113*/
-        this->FileName = (void *)result; /*0x65d116*/
+                result = -1 - *((unsigned int *)this + 12);
+                *((unsigned int *)this + 16) = result;
         return result; /*0x65d11b*/
       }
     }
@@ -88,8 +88,8 @@ void CCFileClass::GetFileSize()
       FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
       (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
-    result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
-    this->FileName = (void *)result; /*0x65d140*/
+        result = FileSize - *((unsigned int *)this + 12);
+        *((unsigned int *)this + 16) = result;
   }
   return result; /*0x65d119*/
 }

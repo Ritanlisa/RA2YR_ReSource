@@ -121,61 +121,61 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   int v4; // eax
 
   ObjectTypeClass::ConstructFull(aP1); /*0x46bbc9*/
-  this->airburst = 0; /*0x46bbd5*/
-  this->floater = 0; /*0x46bbdb*/
-  this->subjectToCliffs = 0; /*0x46bbe1*/
-  this->subjectToElevation = 0; /*0x46bbe7*/
-  this->subjectToWalls = 0; /*0x46bbed*/
-  this->veryHigh = 0; /*0x46bbf3*/
-  this->shadow = 1; /*0x46bbf9*/
-  this->arcing = 0; /*0x46bc00*/
-  this->dropping = 0; /*0x46bc06*/
-  this->level = 0; /*0x46bc0c*/
-  this->inviso = 0; /*0x46bc12*/
-  this->proximity = 0; /*0x46bc18*/
-  this->ranged = 0; /*0x46bc1e*/
-  this->noRotate = 1; /*0x46bc24*/
-  this->inaccurate = 0; /*0x46bc2b*/
-  this->flakScatter = 0; /*0x46bc31*/
-  this->AA = 0; /*0x46bc37*/
-  this->q2A5 = 1; /*0x46bc3d*/
-  *(unsigned int *)&this->acceleration = 3; /*0x46bc44*/
-  this->spawnDelay = 3; /*0x46bc4a*/
-  this->degenerates = 0; /*0x46bc50*/
-  this->bouncy = 0; /*0x46bc59*/
-  this->animPalette = 0; /*0x46bc5f*/
-  this->elasticity = 0; /*0x46bc65*/
-  this->firersPalette = 0; /*0x46bc6c*/
-  this->cluster = 1; /*0x46bc72*/
-  *(unsigned int *)&this->airburstWeapon = 0; /*0x46bc7c*/
-  *(unsigned int *)&this->shrapnelWeapon = 0; /*0x46bc82*/
-  this->shrapnelCount = 0; /*0x46bc88*/
-  this->detonationAltitude = 0; /*0x46bc8e*/
-  this->vertical = 0; /*0x46bc94*/
-  this->Acceleration = 1072168960; /*0x46bc9a*/
-  *(unsigned int *)&this->Color = 0; /*0x46bca4*/
-  this->trailer = 0; /*0x46bcaa*/
-  this->rot = 0; /*0x46bcb0*/
-  this->courseLockDuration = 0; /*0x46bcb6*/
-  this->scaledSpawnDelay = 0; /*0x46bcbc*/
-  this->scalable = 0; /*0x46bcc2*/
-  this->arm = 0; /*0x46bcc8*/
-  this->animLow = 0; /*0x46bcce*/
-  this->animHigh = 0; /*0x46bcd4*/
-  this->animRate = 0; /*0x46bcda*/
-  this->flat = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = (void*)&BulletTypeClass_vftable; /*0x46bce6*/
-  *(unsigned int *)&this->ObjectTypeClass[4] = (void*)&BulletTypeClass_vftable; /*0x46bcec*/
-  *(unsigned int *)&this->ObjectTypeClass[8] = (void*)&BulletTypeClass_vftable; /*0x46bcf2*/
-  *(unsigned int *)&this->ObjectTypeClass[12] = (void*)&BulletTypeClass_vftable; /*0x46bcf9*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ObjectTypeClass[4]); /*0x46bd00*/
-  this->q234 = 1; /*0x46bd05*/
-  this->q22F = 1; /*0x46bd0c*/
-  this->q230 = 0; /*0x46bd13*/
-  this->q231 = 0; /*0x46bd19*/
-  this->q232 = 1; /*0x46bd1f*/
-  this->q233 = 1; /*0x46bd26*/
-  this->q235 = 0; /*0x46bd2d*/
+    *((unsigned int *)this + 2640) = 0;
+    *((unsigned int *)this + 2644) = 0;
+    *((unsigned int *)this + 2648) = 0;
+    *((unsigned int *)this + 2652) = 0;
+    *((unsigned int *)this + 2656) = 0;
+    *((unsigned int *)this + 2660) = 0;
+    *((unsigned int *)this + 2664) = 1;
+    *((unsigned int *)this + 2668) = 0;
+    *((unsigned int *)this + 2672) = 0;
+    *((unsigned int *)this + 2676) = 0;
+    *((unsigned int *)this + 2680) = 0;
+    *((unsigned int *)this + 2684) = 0;
+    *((unsigned int *)this + 2688) = 0;
+    *((unsigned int *)this + 2692) = 1;
+    *((unsigned int *)this + 2696) = 0;
+    *((unsigned int *)this + 2700) = 0;
+    *((unsigned int *)this + 2704) = 0;
+    *((unsigned int *)this + 2708) = 1;
+    *((unsigned int *)this + 180) = 3;
+    *((unsigned int *)this + 185) = 3;
+    *((unsigned int *)this + 2712) = 0;
+    *((unsigned int *)this + 2716) = 0;
+    *((unsigned int *)this + 2720) = 0;
+    *((unsigned int *)this + 178) = 0;
+    *((unsigned int *)this + 2724) = 0;
+    *((unsigned int *)this + 171) = 1;
+    *((unsigned int *)this + 172) = 0;
+    *((unsigned int *)this + 173) = 0;
+    *((unsigned int *)this + 174) = 0;
+    *((unsigned int *)this + 175) = 0;
+    *((unsigned int *)this + 2816) = 0;
+    *((unsigned int *)this + 179) = 1072168960;
+    *((unsigned int *)this + 181) = 0;
+    *((unsigned int *)this + 182) = 0;
+    *((unsigned int *)this + 183) = 0;
+    *((unsigned int *)this + 184) = 0;
+    *((unsigned int *)this + 186) = 0;
+    *((unsigned int *)this + 2992) = 0;
+    *((unsigned int *)this + 188) = 0;
+    *((unsigned int *)this + 3024) = 0;
+    *((unsigned int *)this + 3028) = 0;
+    *((unsigned int *)this + 3032) = 0;
+    *((unsigned int *)this + 3036) = 0;
+    *(unsigned int *)this = &BulletTypeClass::`vftable';
+    *((unsigned int *)this + 1) = &BulletTypeClass::`vftable';
+    *((unsigned int *)this + 2) = &BulletTypeClass::`vftable';
+    *((unsigned int *)this + 3) = &vt_BulletTypeClass;
+    AbstractClass::GenerateUniqueID((int)((char *)this + 16));
+    *((unsigned int *)this + 2256) = 1;
+    *((unsigned int *)this + 2236) = 1;
+    *((unsigned int *)this + 2240) = 0;
+    *((unsigned int *)this + 2244) = 0;
+    *((unsigned int *)this + 2248) = 1;
+    *((unsigned int *)this + 2252) = 1;
+    *((unsigned int *)this + 2260) = 0;
   if ( dword_A83C90 < dword_A83C88 /*0x46bd65*/
     || (byte_A83C8D || !dword_A83C88)
     && dword_A83C94 > 0
@@ -198,7 +198,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x46bdc5*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x46bdd4*/
   }
-  return this->ObjectTypeClass; /*0x46bdd9*/
+    return this;
 }
 } // namespace gamemd
 // 0x46BEE0
@@ -551,41 +551,41 @@ int BulletTypeClass::ProcessPower(int * a2)
   int v18; // edx
 
   v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x46c569*/
-  IDA_LOBYTE(v3) = this->airburst; /*0x46c56e*/
+    LOBYTE(v3) = *((unsigned char *)this + 2640);
   Power::FlagProcess((Power *)a2, v3); /*0x46c577*/
-  IDA_LOBYTE(v4) = this->shadow; /*0x46c57c*/
+    LOBYTE(v4) = *((unsigned char *)this + 2664);
   Power::FlagProcess((Power *)a2, v4); /*0x46c585*/
-  IDA_LOBYTE(v5) = this->arcing; /*0x46c58a*/
+    LOBYTE(v5) = *((unsigned char *)this + 2668);
   v6 = Power::FlagProcess((Power *)a2, v5); /*0x46c593*/
-  IDA_LOBYTE(v6) = this->dropping; /*0x46c598*/
+    LOBYTE(v6) = *((unsigned char *)this + 2672);
   Power::FlagProcess((Power *)a2, v6); /*0x46c5a1*/
-  IDA_LOBYTE(v7) = this->level; /*0x46c5a6*/
+    LOBYTE(v7) = *((unsigned char *)this + 2676);
   Power::FlagProcess((Power *)a2, v7); /*0x46c5af*/
-  IDA_LOBYTE(v8) = this->inviso; /*0x46c5b4*/
+    LOBYTE(v8) = *((unsigned char *)this + 2680);
   v9 = Power::FlagProcess((Power *)a2, v8); /*0x46c5bd*/
-  IDA_LOBYTE(v9) = this->proximity; /*0x46c5c2*/
+    LOBYTE(v9) = *((unsigned char *)this + 2684);
   Power::FlagProcess((Power *)a2, v9); /*0x46c5cb*/
-  IDA_LOBYTE(v10) = this->ranged; /*0x46c5d0*/
+    LOBYTE(v10) = *((unsigned char *)this + 2688);
   Power::FlagProcess((Power *)a2, v10); /*0x46c5d9*/
-  IDA_LOBYTE(v11) = this->noRotate; /*0x46c5de*/
+    LOBYTE(v11) = *((unsigned char *)this + 2692);
   v12 = Power::FlagProcess((Power *)a2, v11); /*0x46c5e7*/
-  IDA_LOBYTE(v12) = this->inaccurate; /*0x46c5ec*/
+    LOBYTE(v12) = *((unsigned char *)this + 2696);
   Power::FlagProcess((Power *)a2, v12); /*0x46c5f5*/
-  IDA_LOBYTE(v13) = this->flakScatter; /*0x46c5fa*/
+    LOBYTE(v13) = *((unsigned char *)this + 2700);
   Power::FlagProcess((Power *)a2, v13); /*0x46c603*/
-  IDA_LOBYTE(v14) = this->AA; /*0x46c608*/
+    LOBYTE(v14) = *((unsigned char *)this + 2704);
   v15 = Power::FlagProcess((Power *)a2, v14); /*0x46c611*/
-  IDA_LOBYTE(v15) = this->q2A5; /*0x46c616*/
+    LOBYTE(v15) = *((unsigned char *)this + 2708);
   Power::FlagProcess((Power *)a2, v15); /*0x46c61f*/
-  IDA_LOBYTE(v16) = this->degenerates; /*0x46c624*/
+    LOBYTE(v16) = *((unsigned char *)this + 2712);
   Power::FlagProcess((Power *)a2, v16); /*0x46c62d*/
-  IDA_LOBYTE(v17) = this->bouncy; /*0x46c632*/
+    LOBYTE(v17) = *((unsigned char *)this + 2716);
   Power::FlagProcess((Power *)a2, v17); /*0x46c63b*/
-  Checksummer::Add_double((Checksummer *)a2, this->elasticity, this->Acceleration); /*0x46c650*/
-  Power::TimerProcess(this->acceleration); /*0x46c65e*/
-  Power::TimerProcess(this->rot); /*0x46c66c*/
-  Power::TimerProcess(this->arm); /*0x46c67a*/
-  IDA_LOBYTE(v18) = this->flat; /*0x46c67f*/
+    Checksummer::Add_double(*((unsigned int *)this + 2848), *((unsigned int *)this + 2864));
+    Power::TimerProcess(*((unsigned int *)this + 2880));
+    Power::TimerProcess(*((unsigned int *)this + 2928));
+    Power::TimerProcess(*((unsigned int *)this + 3008));
+    LOBYTE(v18) = *((unsigned char *)this + 3036);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v18); /*0x46c68d*/
 }
@@ -598,10 +598,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
   int v4; // eax
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->ObjectTypeClass = (void*)&BulletTypeClass_vftable; /*0x46c896*/
-  *(unsigned int *)&this->ObjectTypeClass[4] = (void*)&BulletTypeClass_vftable; /*0x46c89c*/
-  *(unsigned int *)&this->ObjectTypeClass[8] = (void*)&BulletTypeClass_vftable; /*0x46c8a3*/
-  *(unsigned int *)&this->ObjectTypeClass[12] = (void*)&BulletTypeClass_vftable; /*0x46c8aa*/
+    *Block = &BulletTypeClass::`vftable';
+    *(Block + 1) = &BulletTypeClass::`vftable';
+    *(Block + 2) = &BulletTypeClass::`vftable';
+    *(Block + 3) = &vt_BulletTypeClass;
   AbstractClass::AnnounceExpiredPointer(1); /*0x46c8b1*/
   v6 = this; /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
@@ -954,8 +954,8 @@ int BulletTypeClass::GetWarhead(int a2, int a3)
 {
 
   a2 = a2; /*0x46c820*/
-  if ( a2 == this->trailer ) /*0x46c82c*/
-    this->trailer = 0; /*0x46c82e*/
+    if ( a2 == *((unsigned int *)this + 728) )
+        *((unsigned int *)this + 728) = 0;
 }
 } // namespace gamemd
 // 0x46C850
@@ -1018,7 +1018,7 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int 
   while ( v8 ); /*0x475213*/
   if ( v4 ) /*0x47521e*/
 // 0x528660
-    return INIClass::SetString(this->ObjectTypeClass, Block, a3, Source); /*0x475239*/
+        return INIClass::SetString(this, Block, a3, Source);
   else
     return 1; /*0x475248*/
 }

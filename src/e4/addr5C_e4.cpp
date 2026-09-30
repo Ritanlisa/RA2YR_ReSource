@@ -140,7 +140,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   v7 = strrchr(Str, 46); /*0x5c083a*/
   if ( v7 && !_strcmpi(v7, aBik) ) /*0x5c084c*/
   {
-    this->Debug::Log(); /*0x5c085d*/
+        Debug::Log(aPlayMovieAsBin);
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
       v9 = BinkMovie::Open(v8, Str, (int)a2); /*0x5c087d*/
@@ -196,7 +196,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
-  MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c17e7*/
+    v6 = *((unsigned int *)this + 64);
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
     if ( (uint8_t)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
@@ -2706,37 +2706,37 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
 
   if ( a2[2] <= 0 || a2[3] <= 0 ) /*0x5cd6ac*/
   {
-    v20 = (unsigned int *)(&this->u32_146); /*0x5cd81e*/
-    v21 = WideString::GetOrEmpty((wchar_t **)(&this->M88)); /*0x5cd825*/
-    result = sub_5D30C0(*(size_t **)(&this->u32_142), v21, (unsigned int *)(&this->u32_146)); /*0x5cd82e*/
-    v22 = this->M8; /*0x5cd836*/
-    *v20 = this->M4; /*0x5cd839*/
-    this->M60 = v22; /*0x5cd83b*/
+        v20 = (unsigned int *)((char *)this + 224);
+        v21 = WideString::GetOrEmpty((wchar_t **)((char *)this + 112));
+        result = sub_5D30C0(*(size_t **)((char *)this + 208), v21, (unsigned int *)((char *)this + 224));
+        v22 = *((unsigned int *)this + 32);
+        *v20 = *((unsigned int *)this + 16);
+        *((unsigned int *)this + 240) = v22;
   }
   else
   {
-    v4 = (int *)(&this->u32_146); /*0x5cd6b2*/
-    v23 = (unsigned int *)(&this->u32_146); /*0x5cd6b6*/
-    v5 = WideString::GetOrEmpty((wchar_t **)(&this->M88)); /*0x5cd6ba*/
-    sub_5D30C0(*(size_t **)(&this->u32_142), v5, v23); /*0x5cd6c3*/
-    v6 = this->M52; /*0x5cd6dc*/
-    this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
-    v7 = a2[3] % v6->q008 / 2 + this->M8; /*0x5cd706*/
-    v8 = this->M60; /*0x5cd70d*/
-    *v4 += this->M4; /*0x5cd710*/
-    this->M8 = v7; /*0x5cd71a*/
-    this->M60 = v7 + v8; /*0x5cd71d*/
+        v4 = (int *)((char *)this + 224);
+        v23 = (unsigned int *)((char *)this + 224);
+        v5 = WideString::GetOrEmpty((wchar_t **)((char *)this + 112));
+        sub_5D30C0(*(size_t **)((char *)this + 208), v5, v23);
+        v6 = *((unsigned int *)this + 208);
+        *((unsigned int *)this + 16) += (a2[2] - *((unsigned int *)this + 256)) / 2;
+        v7 = a2[3] % *(unsigned int *)(v6 + 8) / 2 + *((unsigned int *)this + 32);
+        v8 = *((unsigned int *)this + 240);
+        *v4 += *((unsigned int *)this + 16);
+        *((unsigned int *)this + 32) = v7;
+        *((unsigned int *)this + 240) = v7 + v8;
     Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
-    v10 = this->M60; /*0x5cd729*/
-    v11 = this->M64; /*0x5cd72c*/
+        v10 = *((unsigned int *)this + 240);
+        v11 = *((unsigned int *)this + 256);
     v27 = v11; /*0x5cd72f*/
-    v28 = this->M68; /*0x5cd736*/
+        v28 = *((unsigned int *)this + 272);
     v29 = a2[2]; /*0x5cd73f*/
     if ( a2[2] <= 0 ) /*0x5cd743*/
       goto LABEL_20; /*0x5cd743*/
     v25 = a2[3]; /*0x5cd74e*/
-    if ( v25 <= 0 || this->M64 <= 0 || this->M68 <= 0 ) /*0x5cd768*/
+        if ( v25 <= 0 || *((int *)this + 256) <= 0 || *((int *)this + 272) <= 0 )
       goto LABEL_20; /*0x5cd768*/
     v12 = *a2; /*0x5cd76a*/
     if ( v9 < *a2 ) /*0x5cd76e*/
@@ -2778,12 +2778,12 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
       v17 = v9; /*0x5cd7e2*/
     }
     *v4 = v17; /*0x5cd7f6*/
-    v18 = this->M52; /*0x5cd7f8*/
-    this->M60 = v10; /*0x5cd7fb*/
-    this->M64 = v16; /*0x5cd7fe*/
-    this->M68 = v15; /*0x5cd801*/
+        v18 = *((unsigned int *)this + 208);
+        *((unsigned int *)this + 240) = v10;
+        *((unsigned int *)this + 256) = v16;
+        *((unsigned int *)this + 272) = v15;
     result = (unsigned int *)(v18->q004 / 2); /*0x5cd80f*/
-    this->M4 += result; /*0x5cd813*/
+        *((unsigned int *)this + 16) += result;
   }
   return result; /*0x5cd80e*/
 }
@@ -2977,10 +2977,10 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
   int v18; // [esp+24h] [ebp-8h]
   int v19; // [esp+30h] [ebp+4h]
 
-  nextArrayIndex = this->q018; /*0x5ce0cb*/
-  if ( this->? != -1 ) /*0x5ce0d1*/
+    v4 = *((unsigned int *)this + 96);
+    if ( *((unsigned int *)this + 64) != -1 )
   {
-    v5 = Timer::GetTicks() - this->M16; /*0x5ce0db*/
+        v5 = Timer::GetTicks() - *((unsigned int *)this + 64);
     if ( v5 >= nextArrayIndex ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     nextArrayIndex -= v5; /*0x5ce0e2*/
@@ -2995,19 +2995,19 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
     return 0; /*0x5ce296*/
   }
   LABEL_5:
-  if ( IDA_LOBYTE(this->M12) != 1 ) /*0x5ce0f6*/
+    if ( *((unsigned char *)this + 48) != 1 )
     goto LABEL_24; /*0x5ce0f6*/
-  fallRate = this->fallRate; /*0x5ce0fc*/
-  this->M16 = Timer::GetTicks(); /*0x5ce108*/
-  this->M20 = v18; /*0x5ce10f*/
-  this->q018 = fallRate; /*0x5ce112*/
-  if ( this->q020 >= WideString::Length((const wchar_t **)&this->q020) ) /*0x5ce122*/
+    v6 = *((unsigned int *)this + 176);
+    *((unsigned int *)this + 64) = Timer::GetTicks();
+    *((unsigned int *)this + 80) = v20;
+    *((unsigned int *)this + 96) = v6;
+    if ( *((unsigned int *)this + 128) >= (unsigned int)WideString::Length((const wchar_t **)((char *)this + 112)) )
   {
     IDA_LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
-  if ( IDA_LOBYTE(this->nextObject) == 1 && this->customSound_controller[3] > 0 && this->customSound_controller[4] > 0 ) /*0x5ce15f*/
+    if ( *((unsigned char *)this + 192) == 1 && *((int *)this + 368) > 0 && *((int *)this + 384) > 0 )
     (*(void (**)(int, int *, DSurface *, int *, unsigned int, int))(*(unsigned int *)a2 + 8))( /*0x5ce173*/
       a2,
       &this->customSound_controller[1],
@@ -3015,10 +3015,10 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->M73; /*0x5ce179*/
-  if ( IDA_BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
-    vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
-  NeedsSaveOrLink = (char *)this->?; /*0x5ce18b*/
+    v9 = *((unsigned int *)this + 16);
+    if ( *((unsigned char *)this + 292) )
+        v9 += *((unsigned int *)this + 304);
+    v18 = *((unsigned int *)this + 128);
   v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
   for ( i = WideString::GetChar((const wchar_t **)&this->?, (size_t)NeedsSaveOrLink); /*0x5ce198*/
         (unsigned short)i != 10;
@@ -3026,7 +3026,7 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
   {
     if ( !(unsigned short)i ) /*0x5ce19d*/
       break; /*0x5ce19d*/
-    (*((void (**)(TagClass *, int, int, char *, int, int, unsigned int))this->attachedTag->AbstractClass + 4))( /*0x5ce1b5*/
+          (*(void (**)(unsigned int, int, int, int, unsigned int, unsigned int, unsigned int))(**(unsigned int **)((char *)this + 208) + 16))(
       this->attachedTag,
       a2,
       i,
@@ -3034,44 +3034,44 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
       this->customSound_controller[0],
       this->occupant,
       0);
-    vtable1 += (*((int (**)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
+          v9 += (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 208) + 4))(*((unsigned int *)this + 208), v12);
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
-  v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  vtable2 = this->attachedTag->?; /*0x5ce1e3*/
-  v19 = this->customSound_controller[0]; /*0x5ce1e6*/
-  *a3 = this->attachedBomb; /*0x5ce1ee*/
+    v14 = *((unsigned int *)this + 256);
+    v15 = *(unsigned int *)(*((unsigned int *)this + 208) + 8);
+    v21 = *((unsigned int *)this + 320);
+    *a3 = *((unsigned int *)this + 224);
   a3[1] = v19; /*0x5ce1f4*/
   a3[2] = v12; /*0x5ce1f7*/
   a3[3] = vtable2; /*0x5ce1fa*/
-  if ( this->occupant == 2 ) /*0x5ce203*/
+    if ( *((unsigned int *)this + 144) == 2 )
   {
-    this->customSound_controller[1] = 0; /*0x5ce20b*/
-    this->customSound_controller[2] = 0; /*0x5ce20e*/
-    this->customSound_controller[3] = 0; /*0x5ce211*/
-    this->customSound_controller[4] = 0; /*0x5ce214*/
-    *(void **)&this->q020 = v10; /*0x5ce217*/
+        *((unsigned int *)this + 336) = 0;
+        *((unsigned int *)this + 352) = 0;
+        *((unsigned int *)this + 368) = 0;
+        *((unsigned int *)this + 384) = 0;
+        *((unsigned int *)this + 128) = v10;
     if ( (unsigned short)i == 10 ) /*0x5ce21a*/
     {
       IDA_LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v14); /*0x5ce234*/
-      this->customSound_controller[0] += (int)this->attachedTag->?; /*0x5ce244*/
+            *((unsigned int *)this + 320) += *(unsigned int *)(*((unsigned int *)this + 208) + 8);
     }
   }
   else
   {
-    this->customSound_controller[1] = *a3; /*0x5ce24e*/
-    this->customSound_controller[2] = a3[1]; /*0x5ce254*/
-    this->customSound_controller[3] = a3[2]; /*0x5ce25a*/
-    this->customSound_controller[4] = a3[3]; /*0x5ce260*/
+        *((unsigned int *)this + 336) = *a3;
+        *((unsigned int *)this + 352) = a3[1];
+        *((unsigned int *)this + 368) = a3[2];
+        *((unsigned int *)this + 384) = a3[3];
   }
-  if ( IDA_LOBYTE(this->nextObject) == 1 ) /*0x5ce26c*/
+    if ( *((unsigned char *)this + 192) == 1 )
   {
     v15 = this->occupant + 1; /*0x5ce272*/
-    this->occupant = v15; /*0x5ce274*/
+        *((unsigned int *)this + 144) = v17;
     if ( v15 > 2 ) /*0x5ce27a*/
     {
-      this->occupant = 0; /*0x5ce27c*/
+            *((unsigned int *)this + 144) = 0;
       return 0; /*0x5ce287*/
     }
   }
@@ -3091,7 +3091,7 @@ namespace gamemd {
 int BinkMovieHandle::_vt03(unsigned char a2)
 {
 // 0x432c30
-  return BinkMovie::Pause(this->height, a2); /*0x5c054d*/
+    return BinkMovie::Pause(*((unsigned int *)this + 16), a2);
 }
 } // namespace gamemd
 
@@ -3107,7 +3107,7 @@ void E4Recv_5C0630::sub_5C0630()
 namespace gamemd {
 void E4Recv_5C0E10::sub_5C0E10()
 {
-  this->m_0 = (int)&MultiplayerBattle_vftable; /*0x5c0e10*/
+    this->vfptr = &vt_MultiplayerBattle;
   MultiplayerGameMode::Dtor(); /*0x5c0e16*/
 }
 } // namespace gamemd
@@ -3398,7 +3398,7 @@ int sub_5C5CC0()
 namespace gamemd {
 void E4Recv_5C5D20::sub_5C5D20()
 {
-  this->m_0 = (int)&FreeForAll_vftable; /*0x5c5d20*/
+    this->vfptr = &vt_FreeForAll;
   MultiplayerGameMode::Dtor(); /*0x5c5d26*/
 }
 } // namespace gamemd
@@ -3561,7 +3561,7 @@ int sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 namespace gamemd {
 void E4Recv_5C6190::sub_5C6190()
 {
-  this->MultiplayerManBattle_field_00 = (int)&MultiplayerManBattle_vftable; /*0x5c6190*/
+    *(unsigned int *)this = &vt_MultiplayerManBattle;
   MultiplayerGameMode::Dtor(); /*0x5c6196*/
 }
 } // namespace gamemd
@@ -4123,7 +4123,7 @@ int sub_5C93C0()
 namespace gamemd {
 void E4Recv_5C9420::sub_5C9420()
 {
-  *(unsigned int *)this->__pad_0 = (void*)&Megawealth_vftable; /*0x5c9420*/
+    *(unsigned int *)this = &vt_Megawealth;
   MultiplayerGameMode::Dtor(); /*0x5c9426*/
 }
 } // namespace gamemd
@@ -4419,7 +4419,7 @@ int sub_5CA610()
 namespace gamemd {
 void E4Recv_5CA670::sub_5CA670()
 {
-  this->MultiplayerSiege_field_00 = (int)&MultiplayerSiege_vftable; /*0x5ca670*/
+    *(unsigned int *)this = &vt_MultiplayerSiege;
   MultiplayerGameMode::Dtor(); /*0x5ca676*/
 }
 } // namespace gamemd
@@ -4491,7 +4491,7 @@ void sub_5CACD0()
 namespace gamemd {
 void E4Recv_5CAE60::sub_5CAE60()
 {
-  *(unsigned int *)this->__pad_0 = (void*)&MultiplayerSiegeDefenderTeam_vftable; /*0x5cae60*/
+    *this = &vt_MultiplayerSiegeDefenderTeam;
   MultiplayerTeam::Destructor(); /*0x5cae66*/
 }
 } // namespace gamemd
@@ -4515,11 +4515,11 @@ DWORD E4Recv_5CAF70::sub_5CAF70()
   if ( QueryPerformanceFrequency(&Frequency) ) /*0x5caf7b*/
   {
     result = Frequency.LowPart; /*0x5caf89*/
-    this->AbstractClass = (void *)Frequency.HighPart; /*0x5caf8d*/
+        *this = Frequency.HighPart;
   }
   else
   {
-    this->AbstractClass = 0; /*0x5caf94*/
+        *this = 0;
     return 0; /*0x5caf9a*/
   }
   return result; /*0x5caf8f*/
@@ -4590,7 +4590,7 @@ int sub_5CB360()
 namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
-  *(void **)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb3e0*/
+    *(unsigned int *)this = &vt_UnholyAlliance;
   MultiplayerGameMode::Dtor(); /*0x5cb3e6*/
 }
 } // namespace gamemd
@@ -4622,43 +4622,43 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   int v16; // [esp+3Ch] [ebp+20h]
   int v17; // [esp+40h] [ebp+24h]
 
-  this->q008 = a4; /*0x5cd581*/
-  this->q004 = a3; /*0x5cd587*/
-  this->q00C = 1; /*0x5cd58a*/
+    *((unsigned int *)this + 32) = a4;
+    *((unsigned int *)this + 16) = a3;
+    *((unsigned char *)this + 48) = 1;
   v11 = 0; /*0x5cd597*/
-  this->q040 = Timer::GetTicks(); /*0x5cd59c*/
-  this->q018 = 0; /*0x5cd59f*/
-  WideString::AssignFromPtr((wchar_t **)(&this->q0088), a2); /*0x5cd5ab*/
-  this->q02C = a8; /*0x5cd5c0*/
-  this->q030 = a9; /*0x5cd5c7*/
-  this->q020 = 0; /*0x5cd5ce*/
-  this->q024 = a7; /*0x5cd5d1*/
-  this->q028 = 0; /*0x5cd5d4*/
-  this->q034 = a5; /*0x5cd5d7*/
-  this->q048 = 0; /*0x5cd5da*/
-  this->q124 = a10; /*0x5cd5dd*/
-  this->q04C = 0; /*0x5cd5e0*/
-  this->q040 = Timer::GetTicks(); /*0x5cd5f6*/
-  this->q050 = v15; /*0x5cd5f9*/
-  this->q018 = a7; /*0x5cd5ff*/
+    *((unsigned int *)this + 64) = Timer::GetTicks();
+    *((unsigned int *)this + 96) = 0;
+    WideString::AssignFromPtr((wchar_t **)((char *)this + 112), a2);
+    *((unsigned int *)this + 176) = a8;
+    *((unsigned char *)this + 192) = a9;
+    *((unsigned int *)this + 128) = 0;
+    *((unsigned int *)this + 144) = a7;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned int *)this + 208) = a5;
+    *((unsigned char *)this + 288) = 0;
+    *((unsigned char *)this + 292) = a10;
+    *((unsigned int *)this + 304) = 0;
+    *((unsigned int *)this + 64) = Timer::GetTicks();
+    *((unsigned int *)this + 80) = v15;
+    *((unsigned int *)this + 96) = a7;
   sub_5CD690(a6); /*0x5cd602*/
   if ( a10 ) /*0x5cd60b*/
   {
     v17 = 0; /*0x5cd611*/
-    v16 = this->q034->q004; /*0x5cd618*/
-    if ( WideString::GetChar((const wchar_t **)(&this->q0088), 0) ) /*0x5cd61e*/
+        v16 = *(unsigned int *)(*((unsigned int *)this + 208) + 4);
+        if ( WideString::GetChar((const wchar_t **)((char *)this + 112), 0) )
     {
       do /*0x5cd658*/
       {
-        if ( WideString::GetChar((const wchar_t **)(&this->q0088), v11) == 10 ) /*0x5cd634*/
+                if ( WideString::GetChar((const wchar_t **)((char *)this + 112), v11) == 10 )
           break; /*0x5cd634*/
-        v12 = *this->q034; /*0x5cd63c*/
-        IDA_LOWORD(v13) = WideString::GetChar((const wchar_t **)(&this->q0088), v11++); /*0x5cd63e*/
-        v17 += (*(int (**)(unsigned int, int))(v12 + 4))(this->q034, v13); /*0x5cd651*/
+                v12 = **(unsigned int **)((char *)this + 208);
+                LOWORD(v13) = WideString::GetChar((const wchar_t **)((char *)this + 112), v11++);
+                v17 += (*(int (**)(unsigned int, int))(v12 + 4))(*((unsigned int *)this + 208), v13);
       }
-      while ( WideString::GetChar((const wchar_t **)(&this->q0088), v11) ); /*0x5cd658*/
+            do
     }
-    this->q04C = (this->q040 - v17 - v16) / 2; /*0x5cd676*/
+        *((unsigned int *)this + 304) = (*((unsigned int *)this + 256) - v17 - v16) / 2;
   }
   return this; /*0x5cd67b*/
 }
@@ -4716,9 +4716,9 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
   {
     if ( (uint16_t)WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
-    vtable0 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
+        v5 = **((unsigned int *)this + 52);
     Char = WideString::GetChar(a2, v4); /*0x5ce366*/
-    v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
+        v3 = (*(int (**)(unsigned int, int))(v5 + 4))(*((unsigned int *)this + 52), v6) + i;
     ++v4; /*0x5ce37a*/
   }
   return v3; /*0x5ce38d*/
@@ -4749,18 +4749,18 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     || (v4 = ClipRectIntersection(v17, a3, (int *)&this->attachedBomb, 0, 0), result = v4[2], v6 = v4[3], result > 0)
     && v6 > 0 )
   {
-    result = (int)this->q020; /*0x5ce3e7*/
-    vtable2 = (int *)this->M8; /*0x5ce3ea*/
-    vtable1 = (char *)this->M4; /*0x5ce3ed*/
+        result = *((unsigned int *)this + 128);
+        v7 = *((unsigned int *)this + 32);
+        v8 = *((unsigned int *)this + 16);
     v9 = 0; /*0x5ce3f0*/
     v18 = vtable2; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
-      if ( (uint16_t)WideString::GetChar((const wchar_t **)&this->M52, v9) == 10 ) /*0x5ce40f*/
+            if ( WideString::GetChar((const wchar_t **)((char *)this + 112), v9) == 10 )
       {
-        vtable1 = (char *)this->M4; /*0x5ce414*/
-        vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
-        v14 = this->attachedTag->?; /*0x5ce420*/
+                v8 = *((unsigned int *)this + 16);
+                v7 += *(unsigned int *)(*((unsigned int *)this + 208) + 8);
+                v14 = *(unsigned int *)(*((unsigned int *)this + 208) + 8);
         v18 = vtable2; /*0x5ce426*/
         result = (*(int (**)(int))(*(unsigned int *)a2 + 128))(a2); /*0x5ce42a*/
         if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/
@@ -4768,12 +4768,12 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       }
       else
       {
-        vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
+                v15 = **(unsigned int **)((char *)this + 208);
         Char = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce45b*/
-        vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
-        v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
-        v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/
-        v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
+                (*(void (**)(unsigned int, int, int, int, int, int, int))(v15 + 16))(
+                v11 = **(unsigned int **)((char *)this + 208);
+                LOWORD(v12) = WideString::GetChar((const wchar_t **)((char *)this + 112), v9);
+                v13 = (*(int (**)(unsigned int, int))(v11 + 4))(*((unsigned int *)this + 208), v12);
         vtable2 = v18; /*0x5ce479*/
         vtable1 += v12; /*0x5ce47d*/
       }
@@ -4796,12 +4796,12 @@ const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
   if ( !Audio::IsSoundEnabled() ) /*0x5cf847*/
     return 0; /*0x5cf847*/
   v3 = 0; /*0x5cf853*/
-  if ( this->customSound_controller[1] <= 0 ) /*0x5cf857*/
+    if ( (int)*((unsigned int *)this + 84) <= 0 )
     return 0; /*0x5cf8b5*/
   v4 = aP1; /*0x5cf859*/
   while ( 1 ) /*0x5cf864*/
   {
-    v5 = *(const char ***)(this->ambientSoundController[3] + 4 * v3); /*0x5cf864*/
+      while ( 1 )
     String::AssignFromPtr((String *)&v7, v5); /*0x5cf868*/
     String::ToLower((String *)&v7); /*0x5cf871*/
     String::AssignFromPtr((String *)&aP1, v4); /*0x5cf87b*/
@@ -4810,7 +4810,7 @@ const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
       break; /*0x5cf892*/
     DeleteAndZero((ObjectClass *)&aP1); /*0x5cf89f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5cf8a8*/
-    if ( ++v3 >= this->customSound_controller[1] ) /*0x5cf8b3*/
+        if ( ++v3 >= *((unsigned int *)this + 84) )
       return 0; /*0x5cf8b3*/
   }
   DeleteAndZero((ObjectClass *)&aP1); /*0x5cf8bf*/

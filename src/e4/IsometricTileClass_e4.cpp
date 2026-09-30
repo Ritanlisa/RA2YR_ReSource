@@ -16,14 +16,14 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
   int v4; // eax
 
   ObjectClass::ctor(); /*0x543786*/
-  this->u32_AC = *(IsometricTileClass *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * aP1); /*0x54379c*/
+    *((unsigned int *)this + 172) = *(IsometricTileClass *)(*(unsigned int *)&HouseClass_Player.__pad_5568[23160] + 4 * (unsigned int)aP1);
   *this = (IsometricTileClass)(void*)&IsometricTileClass_vftable; /*0x5437a2*/
-  this->u32_4 = (void*)&IsometricTileClass_vftable; /*0x5437a8*/
-  this->u32_8 = (void*)&IsometricTileClass_vftable; /*0x5437af*/
-  this->u32_C = (void*)&IsometricTileClass_vftable; /*0x5437b6*/
+    *((unsigned int *)this + 1) = &IsometricTileClass::`vftable';
+    *((unsigned int *)this + 2) = &IsometricTileClass::`vftable';
+    *((unsigned int *)this + 3) = &vt_IsometricTileClass;
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
-    this->u32_81 = 0; /*0x543805*/
+        *((unsigned char *)this + 129) = 0;
     ObjectClass::SetPosition(); /*0x54380c*/
     (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this + 292))(this, 1); /*0x543818*/
   }

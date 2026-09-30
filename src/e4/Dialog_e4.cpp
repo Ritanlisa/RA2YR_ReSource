@@ -32,9 +32,9 @@ void Dialog::MapDialogResource()
 {
   if ( *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4] == 48879 ) /*0x49f74a*/
   {
-    this->Debug::Log(); /*0x49f751*/
-    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
-    this->Debug::Log(); /*0x49f77e*/
+        Debug::Log();
+        MEMORY[0x87F7E8][32733] = ((int (__stdcall *)(unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int))MapViewOfFileEx)(
+        Debug::Log();
   }
 }
 }
@@ -61,61 +61,61 @@ int Dialog::InitializeGameSettings()
   HWND v18; // eax
   HWND v19; // eax
 
-  this->Debug::Log(); /*0x5b5bcb*/
-  DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1641); /*0x5b5be1*/
+    Debug::Log();
+    DlgItem = GetDlgItem(*this, 1641);
   if ( DlgItem ) /*0x5b5bf0*/
     SendMessageA(DlgItem, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[32]); /*0x5b5c00*/
-  v3 = GetDlgItem(*(HWND *)this->__pad_0, 1360); /*0x5b5c0a*/
+    v3 = GetDlgItem(*this, 1360);
   if ( v3 ) /*0x5b5c0e*/
     SendMessageA(v3, 0x405u, 1u, g_RulesInitConfig); /*0x5b5c1e*/
-  v4 = GetDlgItem(*(HWND *)this->__pad_0, 1026); /*0x5b5c28*/
+    v4 = GetDlgItem(*this, 1026);
   if ( v4 ) /*0x5b5c2c*/
     SendMessageA(v4, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[12]); /*0x5b5c3c*/
-  v5 = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b5c46*/
+    v5 = GetDlgItem(*this, 1362);
   if ( v5 ) /*0x5b5c4a*/
     SendMessageA(v5, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[36]); /*0x5b5c5a*/
-  v6 = GetDlgItem(*(HWND *)this->__pad_0, 1321); /*0x5b5c64*/
+    v6 = GetDlgItem(*this, 1321);
   if ( v6 ) /*0x5b5c68*/
     SendMessageA(v6, 0x405u, 1u, 6 - *(unsigned int *)&stru_A8B250.__pad_0[24]); /*0x5b5c7f*/
-  v7 = GetDlgItem(*(HWND *)this->__pad_0, 1363); /*0x5b5c89*/
+    v7 = GetDlgItem(*this, 1363);
   if ( v7 ) /*0x5b5c8d*/
     SendMessageA(v7, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[40]); /*0x5b5c9d*/
-  v8 = GetDlgItem(*(HWND *)this->__pad_0, 1643); /*0x5b5ca7*/
+    v8 = GetDlgItem(*this, 1643);
   if ( v8 ) /*0x5b5cab*/
     SendMessageA(v8, 0xF1u, dword_A8B320 == 1, 0); /*0x5b5cc3*/
-  v9 = GetDlgItem(*(HWND *)this->__pad_0, 1642); /*0x5b5ccd*/
+    v9 = GetDlgItem(*this, 1642);
   if ( v9 ) /*0x5b5cd1*/
     SendMessageA(v9, 0xF1u, stru_A8B250.__pad_0[8] == 1, 0); /*0x5b5ce9*/
-  v10 = GetDlgItem(*(HWND *)this->__pad_0, 1361); /*0x5b5cf3*/
+    v10 = GetDlgItem(*this, 1361);
   if ( v10 ) /*0x5b5cf7*/
     SendMessageA(v10, 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b5d0f*/
-  v11 = GetDlgItem(*(HWND *)this->__pad_0, 1358); /*0x5b5d19*/
+    v11 = GetDlgItem(*this, 1358);
   if ( v11 ) /*0x5b5d1d*/
     SendMessageA(v11, 0xF1u, stru_A8B250.__pad_0[18] == 1, 0); /*0x5b5d35*/
-  v12 = GetDlgItem(*(HWND *)this->__pad_0, 1690); /*0x5b5d3f*/
+    v12 = GetDlgItem(*this, 1690);
   if ( v12 ) /*0x5b5d43*/
     SendMessageA(v12, 0xF1u, stru_A8B250.__pad_0[19] == 1, 0); /*0x5b5d5b*/
-  v13 = GetDlgItem(*(HWND *)this->__pad_0, 1693); /*0x5b5d65*/
+    v13 = GetDlgItem(*this, 1693);
   if ( v13 ) /*0x5b5d69*/
     SendMessageA(v13, 0xF1u, stru_A8B250.__pad_0[20] == 1, 0); /*0x5b5d81*/
-  v14 = GetDlgItem(*(HWND *)this->__pad_0, 1356); /*0x5b5d8b*/
+    v14 = GetDlgItem(*this, 1356);
   if ( v14 ) /*0x5b5d8f*/
     SendMessageA(v14, 0xF1u, stru_A8B250.__pad_0[17] == 1, 0); /*0x5b5da7*/
-  v15 = GetDlgItem(*(HWND *)this->__pad_0, 1357); /*0x5b5db1*/
+    v15 = GetDlgItem(*this, 1357);
   if ( v15 ) /*0x5b5db5*/
     SendMessageA(v15, 0xF1u, byte_A8B31F == 1, 0); /*0x5b5dcd*/
-  v16 = GetDlgItem(*(HWND *)this->__pad_0, 1572); /*0x5b5dd7*/
+    v16 = GetDlgItem(*this, 1572);
   if ( v16 ) /*0x5b5ddb*/
     SendMessageA(v16, 0xF1u, stru_A8B250.__pad_0[16] == 1, 0); /*0x5b5df3*/
-  v17 = GetDlgItem(*(HWND *)this->__pad_0, 1430); /*0x5b5dfd*/
+    v17 = GetDlgItem(*this, 1430);
   if ( v17 ) /*0x5b5e01*/
     SendMessageA(v17, 0xF1u, byte_A8B31D == 1, 0); /*0x5b5e19*/
-  v18 = GetDlgItem(*(HWND *)this->__pad_0, 1448); /*0x5b5e23*/
+    v18 = GetDlgItem(*this, 1448);
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b5e48*/
-  v19 = GetDlgItem(*(HWND *)this->__pad_0, 1); /*0x5b5e51*/
+        Session::PrepareGame(*this);
+    v19 = GetDlgItem(*this, 1);
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
   return PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1716), 0x2000, 1.0, 0); /*0x5b5e7c*/
@@ -278,7 +278,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
 v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
   v6 = (wchar_t *)((int)((wchar_t *)(3)));
-  this->Debug::Log(); /*0x5f2968*/
+    Debug::Log();
   if ( a4 == 1 ) /*0x5f2979*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
   else
@@ -291,21 +291,21 @@ v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
   Dialog::Show((Dialog *)MessageBox); /*0x5f29df*/
-  this->Debug::Log(); /*0x5f29e9*/
+    Debug::Log();
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
-  this->Debug::Log(); /*0x5f2a09*/
+    Debug::Log();
   (*(void (**)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2a24*/
     g_ClipboardBuffer,
     60,
     Source,
     81,
     -1);
-  this->Debug::Log(); /*0x5f2a2c*/
+    Debug::Log();
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, aP1); /*0x5f2a44*/
   (*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
   g_NetworkTestFlag = 0; /*0x5f2a57*/
   v11 = *(unsigned int *)&this-((unsigned int *)(>__pad_10))[20]; /*0x5f2a5e*/
-  this->Debug::Log(); /*0x5f2a66*/
+    Debug::Log();
   while ( 1 ) /*0x5f2a6e*/
   {
     if ( (uint8_t)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2a82*/
@@ -319,7 +319,7 @@ v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
         WinModemClass::WriteSerial((int *)v13, &Buffer, 2u); /*0x5f2c99*/
       }
   LABEL_35:
-      this->Debug::Log(); /*0x5f2c9e*/
+            Debug::Log();
       goto LABEL_36; /*0x5f2ca3*/
     }
     IDA_LOBYTE(v12) = 0; /*0x5f2a88*/
@@ -341,13 +341,13 @@ v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
     }
     _strupr(Source); /*0x5f2ac4*/
     if ( strlen(Source) ) /*0x5f2acd*/
-      this->Debug::Log(); /*0x5f2ae6*/
+            Debug::Log();
     if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
     {
       memset(byte_AC1288, 0, 0x50u); /*0x5f2b12*/
       strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2b1e*/
       v6 = 0; /*0x5f2b27*/
-      this->Debug::Log(); /*0x5f2b2f*/
+            Debug::Log();
     }
     else
     {
@@ -369,7 +369,7 @@ v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
           goto LABEL_23; /*0x5f2bb9*/
         v6 = 3; /*0x5f2bbb*/
       }
-      this->Debug::Log(); /*0x5f2bca*/
+            Debug::Log();
     }
     v5 = 0; /*0x5f2bd2*/
   LABEL_23:
@@ -378,9 +378,9 @@ v5 = (wchar_t *)((unsigned int)((wchar_t *)((int)((char)((wchar_t *)(1))))));
     if ( v5 != (wchar_t *)(1) ) /*0x5f2bdb*/
       goto LABEL_36; /*0x5f2bdb*/
   }
-  this->Debug::Log(); /*0x5f2c1a*/
+    Debug::Log();
   if ( strlen(Source) ) /*0x5f2c2b*/
-    this->Debug::Log(); /*0x5f2c3c*/
+        Debug::Log();
   if ( g_ClipboardBuffer ) /*0x5f2c4c*/
   {
     Buffer = (int16_t)((wchar_t *)(word_8327A0));
@@ -2061,9 +2061,9 @@ AbstractClass * * Dialog::Resize()
     result = DSurface_Alternate; /*0x6213b4*/
     if ( DSurface_Alternate ) /*0x6213bb*/
     {
-      ScreenDialogToClient(this->u32_14, &v6); /*0x6213c8*/
-      GetClientRect(this->u32_14, &Rect); /*0x6213d6*/
-      result = GetWindowLongA(this->u32_14, -16); /*0x6213e2*/
+            ScreenDialogToClient(*((unsigned int *)this + 20), &v6);
+            ((void (__stdcall *)(unsigned int, __int128 *))GetClientRect)(*((unsigned int *)this + 20), &Rect);
+            result = ((int (__stdcall *)(unsigned int, int))GetWindowLongA)(*((unsigned int *)this + 20), -16);
       if ( ((unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor' & result) != 0 ) /*0x6213ed*/
       {
         SystemMetrics = GetSystemMetrics(5); /*0x6213fa*/
@@ -2076,7 +2076,7 @@ AbstractClass * * Dialog::Resize()
       if ( *(unsigned int *)this == 4 ) /*0x62142c*/
       {
         result = g_DialogHashMap_Count; /*0x62142e*/
-        v4 = (HWND)this->u32_14; /*0x621433*/
+                v4 = *((unsigned int *)this + 20);
         v4 = v4; /*0x621438*/
         if ( g_DialogHashMap_Count ) /*0x62143c*/
         {
@@ -2093,7 +2093,7 @@ AbstractClass * * Dialog::Resize()
             result += 4; /*0x621480*/
             if ( result ) /*0x621485*/
             {
-              result->q0E8 = this->q010; /*0x621491*/
+                            *(unsigned int *)(result + 232) = *((unsigned int *)this + 16);
               InvalidateRect(v4, (const RECT *)((char *)&this->q068 + 8), 0); /*0x621497*/
               return UpdateWindow(v4); /*0x62149e*/
             }
@@ -2463,12 +2463,12 @@ CampaignClass * * Dialog::CleanupTree()
   int *v4; // edx
   DeleteAndZero *Dialog_field_0x3C; // esi
 
-  if ( this->Dialog_field_0x28 ) /*0x6233a3*/
+    if ( *((unsigned int *)this + 160) )
   {
     RA2_OPDEL(this->Dialog_field_0x28); /*0x6233ab*/
-    this->Dialog_field_0x28 = 0; /*0x6233b3*/
+        *((unsigned int *)this + 160) = 0;
   }
-  for ( i = this->Dialog_field_0x34; i; i = this->Dialog_field_0x34 ) /*0x6233bf*/
+    for ( i = *(unsigned int **)((char *)this + 208); i; i = *(unsigned int **)((char *)this + 208) )
   {
     v3 = (int *)i; /*0x6233c1*/
     v4 = 0; /*0x6233c3*/
@@ -2482,12 +2482,12 @@ CampaignClass * * Dialog::CleanupTree()
     if ( v4 ) /*0x6233dd*/
       *v4 = *v3; /*0x6233e1*/
     else
-      this->Dialog_field_0x34 = *v3; /*0x6233e7*/
+            *((unsigned int *)this + 208) = *v3;
     RA2_OPDEL(v3); /*0x6233eb*/
   LABEL_12:
     ; /*0x6233f3*/
   }
-  Dialog_field_0x3C = (DeleteAndZero *)this->Dialog_field_0x3C; /*0x6233fa*/
+    v5 = *(void ***)((char *)this + 240);
   if ( Dialog_field_0x3C ) /*0x6233ff*/
   {
     DeleteAndZero::Alt(Dialog_field_0x3C); /*0x623403*/
@@ -2501,9 +2501,9 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 {
   unsigned int *v4; // eax
 
-  if ( !*(unsigned int *)&this->__pad_0[4] ) /*0x624934*/
+    if ( !*((unsigned int *)this + 4) )
     return 0; /*0x62493c*/
-  v4 = *(unsigned int **)(*(unsigned int *)this->__pad_0 /*0x62495a*/
+    v4 = *(unsigned int **)(*(char *)this + 16 * (((int (*)(unsigned int *))*((unsigned int *)this + 24))(a2) & ((1 << *((unsigned int *)this + 12)) - 1)));
                   + 4
                   * ((*(int (**)(unsigned int *))&this->__pad_10[8])(a2) & ((1 << (int)this->Dialog_field_0xC) - 1)));
   if ( !v4 ) /*0x62495f*/
@@ -2535,16 +2535,16 @@ AbstractClass * * Dialog::GrowBuffer()
   int v12; // eax
   unsigned int *v13; // [esp+4h] [ebp-4h]
 
-  if ( this->__pad_10[4] != 1 ) /*0x624be8*/
+    if ( *((unsigned char *)this + 20) != 1 )
   {
-    v2 = this->Dialog_field_0x8[0]; /*0x624bf0*/
+        v2 = *((unsigned int *)this + 8);
     v3 = *(unsigned int **)this->__pad_0; /*0x624bf3*/
-    v4 = (AnimClass *)((char *)&this->Dialog_field_0xC->AnimClass_field_0x0 + 1); /*0x624bfc*/
-    this->Dialog_field_0x8[0] = 2 * v2; /*0x624bfd*/
+        v4 = *((unsigned int *)this + 12) + 1;
+        *((unsigned int *)this + 8) = 2 * v2;
     v13 = v3; /*0x624c00*/
-    this->Dialog_field_0xC = v4; /*0x624c08*/
+        *((unsigned int *)this + 12) = v4;
     v5 = (void *)RA2_OPNEW(8 * v2); /*0x624c13*/
-    v6 = 4 * this->Dialog_field_0x8[0]; /*0x624c18*/
+        v6 = 4 * *((unsigned int *)this + 8);
     *(unsigned int *)this->__pad_0 = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
     if ( v2 > 0 ) /*0x624c2f*/
@@ -2558,7 +2558,7 @@ AbstractClass * * Dialog::GrowBuffer()
         {
           do /*0x624c61*/
           {
-            v10 = (*(int (**)(int))&this->__pad_10[8])(v9) & ((1 << (int)this->Dialog_field_0xC) - 1); /*0x624c4b*/
+                        v10 = ((int (*)(int))*((unsigned int *)this + 24))(v9) & ((1 << *((unsigned int *)this + 12)) - 1);
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x624c4f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x624c55*/
             v12 = *(unsigned int *)(v9 + 8); /*0x624c57*/
@@ -2619,13 +2619,13 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   char *Blockb; // [esp+2Ch] [ebp+8h]
   char *Blockc; // [esp+2Ch] [ebp+8h]
 
-  v4 = *(unsigned int *)&this->__pad_0[4]; /*0x624cab*/
+    v4 = *((unsigned int *)this + 1);
   if ( !v4 ) /*0x624cb0*/
     return 0; /*0x624cb5*/
-  v39 = (double)(unsigned int)(v4 - 1) / (double)this->Dialog_field_0x8[0]; /*0x624ce0*/
-  v6 = (*(int (**)(int *))&this->__pad_10[8])(aP1) & ((1 << (int)this->Dialog_field_0xC) - 1); /*0x624cf5*/
+    v39 = (double)(unsigned int)(v4 - 1) / (double)*((int *)this + 2);
+    v6 = (*((int (**)(int *))(char *)this + 24))(a2) & ((1 << *((unsigned int *)this + 3)) - 1);
   v6 = v6; /*0x624cf7*/
-  v7 = *(int **)(*(unsigned int *)this->__pad_0 + 4 * v6); /*0x624cfb*/
+    v7 = *(char **)(*(unsigned int *)this + 4 * v6);
   v36 = v7; /*0x624d00*/
   if ( !v7 ) /*0x624d04*/
     return 0; /*0x624d09*/
@@ -2662,7 +2662,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
       SymbolTable::Rebuild((SymbolTable *)aP2, v10[13]); /*0x624dae*/
       v6 = v6; /*0x624db3*/
     }
-    v15 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v6); /*0x624dba*/
+        v15 = *(unsigned int *)(*(unsigned int *)this + 4 * v6);
     v16 = *(unsigned int *)(v15 + 516); /*0x624dbf*/
     if ( v15 ) /*0x624dc5*/
     {
@@ -2675,22 +2675,22 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
       RA2_OPDEL((void *)v15); /*0x624dfa*/
       v6 = v6; /*0x624dff*/
     }
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v6) = v16; /*0x624e0d*/
-    v19 = v39 < *(double *)&this->__pad_10[16]; /*0x624e13*/
-    v20 = v39 == *(double *)&this->__pad_10[16]; /*0x624e13*/
-    --*(unsigned int *)&this->__pad_0[4]; /*0x624e17*/
+        *(unsigned int *)(*(unsigned int *)this + 4 * v6) = v16;
+        v19 = v39 < *((unsigned int *)this + 16);
+        v19 = v39 < *((unsigned int *)this + 16);
+        --*((unsigned int *)this + 1);
     if ( v19 || v20 ) /*0x624e1c*/
     {
-      v21 = this->Dialog_field_0x8[0]; /*0x624e25*/
-      if ( v21 > *(unsigned int *)&this->__pad_2C[4] && this->__pad_10[4] != 1 ) /*0x624e37*/
+            v21 = *((unsigned int *)this + 2);
+            if ( v21 > *((unsigned int *)this + 12) && *((unsigned char *)this + 20) != 1 )
       {
         v22 = *(char **)this->__pad_0; /*0x624e40*/
         Blockb = *(char **)this->__pad_0; /*0x624e45*/
-        v23 = (AnimClass *)((char *)this->Dialog_field_0xC - 1); /*0x624e4b*/
-        this->Dialog_field_0x8[0] = v21 >> 1; /*0x624e4c*/
-        this->Dialog_field_0xC = v23; /*0x624e56*/
+                v23 = *((unsigned int *)this + 3) - 1;
+                *((unsigned int *)this + 2) = v21 >> 1;
+                *((unsigned int *)this + 3) = v23;
         v24 = (void *)RA2_OPNEW(4 * (v21 >> 1)); /*0x624e62*/
-        v25 = 4 * this->Dialog_field_0x8[0]; /*0x624e67*/
+                v25 = 4 * *((unsigned int *)this + 2);
         *(unsigned int *)this->__pad_0 = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/
         if ( (int)v21 > 0 ) /*0x624e7f*/
@@ -2704,9 +2704,9 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
             {
               do /*0x624eb8*/
               {
-                v29 = (*(int (**)(int))&this->__pad_10[8])(v28) & ((1 << (int)this->Dialog_field_0xC) - 1); /*0x624e9b*/
-                v30 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29); /*0x624ea0*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29) = v28; /*0x624ea6*/
+                                v29 = (*((int (**)(int))(char *)this + 24))(v28) & ((1 << *((unsigned int *)this + 3)) - 1);
+                                v30 = *(unsigned int *)(*(unsigned int *)this + 4 * v29);
+                                *(unsigned int *)(*(unsigned int *)this + 4 * v29) = v28;
                 v31 = *(unsigned int *)(v28 + 516); /*0x624ea8*/
                 *(unsigned int *)(v28 + 516) = v30; /*0x624eae*/
                 v28 = v31; /*0x624eb4*/
@@ -2756,7 +2756,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
         v32 = v43; /*0x624f6b*/
       }
       v7[129] = v32[129]; /*0x624f75*/
-      --*(unsigned int *)&this->__pad_0[4]; /*0x624f81*/
+            --*((unsigned int *)this + 1);
       if ( v32 ) /*0x624f84*/
       {
         Dialog::CleanupTree((Dialog *)(v32 + 1)); /*0x624f89*/
@@ -2765,7 +2765,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
       v33 = 1; /*0x624f97*/
     }
   LABEL_41:
-    if ( v39 <= *(double *)&this->__pad_10[16] ) /*0x624fa5*/
+        if ( v39 <= *((unsigned int *)this + 16) )
       HashTable::Rebuild2(); /*0x624fa9*/
     return v33; /*0x624fb0*/
   }
@@ -2815,7 +2815,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   result = INIClass::BinarySearchSection((int)v37, (uint8_t *)aMultiplayerdia); /*0x671eb0*/
   if ( result ) /*0x671ebc*/
   {
-    this->q520 = INIClass::ReadInt_Overwrite( /*0x671edc*/
+        *((unsigned int *)this + 1312) = INIClass::ReadInt_Overwrite(aMultiplayerdia, aMinmoney, *((unsigned int *)this + 1312));
                                  v37,
                                  (uint8_t *)aMultiplayerdia,
                                  aMinmoney,
@@ -2825,67 +2825,67 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                       (uint8_t *)aMultiplayerdia,
                       aMoney,
                       this->u32_1484);
-    v4 = this->u32_1488; /*0x671efc*/
-    this->u32_1484 = Int_Overwrite; /*0x671f02*/
+        v4 = *((unsigned int *)this + 1314);
+        *((unsigned int *)this + 1313) = IntOverwriteINIClass;
     v5 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxmoney, v4); /*0x671f16*/
-    v6 = this->u32_148C; /*0x671f1b*/
-    this->u32_1488 = v5; /*0x671f21*/
-    this->u32_148C = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMoneyincrement, v6); /*0x671f3b*/
-    v7 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMinunitcount, this->q524); /*0x671f56*/
-    v8 = this->u32_1494; /*0x671f5b*/
-    this->q524 = v7; /*0x671f61*/
+        v6 = *((unsigned int *)this + 1315);
+        *((unsigned int *)this + 1314) = v5;
+        *((unsigned int *)this + 1315) = INIClass::ReadInt_Overwrite(aMultiplayerdia, aMoneyincrement, v6);
+        v7 = INIClass::ReadInt_Overwrite(aMultiplayerdia, aMinunitcount, *((unsigned int *)this + 1316));
+        v8 = *((unsigned int *)this + 1317);
+        *((unsigned int *)this + 1316) = v7;
     v9 = INIClass::ReadInt_Overwrite( /*0x671f75*/
            v37,
            (uint8_t *)aMultiplayerdia,
            (uint8_t *)g_INI_Key_UnitCount,
            v8);
-    v10 = this->u32_1498; /*0x671f7a*/
-    this->u32_1494 = v9; /*0x671f80*/
-    this->u32_1498 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxunitcount, v10); /*0x671f9a*/
+        v10 = *((unsigned int *)this + 1318);
+        *((unsigned int *)this + 1317) = v9;
+        *((unsigned int *)this + 1318) = INIClass::ReadInt_Overwrite(aMultiplayerdia, aMaxunitcount, v10);
     v11 = INIClass::ReadInt_Overwrite( /*0x671fb5*/
             v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_TechLevel,
             this->u32_149C);
-    v12 = this->q528; /*0x671fba*/
-    this->u32_149C = v11; /*0x671fc0*/
+        v12 = *((unsigned int *)this + 1320);
+        *((unsigned int *)this + 1319) = v11;
     v13 = INIClass::ReadInt_Overwrite( /*0x671fd4*/
             v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_GameSpeed,
             v12);
-    v14 = this->u32_14A4; /*0x671fd9*/
-    this->q528 = v13; /*0x671fdf*/
-    this->u32_14A4 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
-    v15 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAiplayers, this->u32_14A8); /*0x672014*/
-    v16 = this->u32_14AC; /*0x672019*/
-    this->u32_14A8 = v15; /*0x67201f*/
+        v14 = *((unsigned int *)this + 1321);
+        *((unsigned int *)this + 1320) = v13;
+        *((unsigned int *)this + 1321) = INIClass::ReadInt_Overwrite(aMultiplayerdia, aAidifficulty, v14);
+        v15 = INIClass::ReadInt_Overwrite(aMultiplayerdia, aAiplayers, *((unsigned int *)this + 1322));
+        v16 = *((unsigned char *)this + 5292);
+        *((unsigned int *)this + 1322) = v15;
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBridgedestruct, v16); /*0x672033*/
-    v18 = this->u32_14AD; /*0x672038*/
-    this->u32_14AC = Bool_Overwrite; /*0x67203e*/
-    this->u32_14AD = INIClass::ReadBool_Overwrite( /*0x672058*/
+        v18 = *((unsigned char *)this + 5293);
+        *((unsigned char *)this + 5292) = BoolOverwriteINIClass;
+        *((unsigned char *)this + 5293) = INIClass::ReadBool_Overwrite(aMultiplayerdia, aShadowgrow, v18);
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aShadowgrow,
                                 v18);
-    v19 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aShroud, this->u32_14AE); /*0x672073*/
-    v20 = this->u32_14AF; /*0x672078*/
-    this->u32_14AE = v19; /*0x67207e*/
+        v19 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aShroud, *((unsigned char *)this + 5294));
+        v20 = *((unsigned char *)this + 5295);
+        *((unsigned char *)this + 5294) = v19;
     v21 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBases, v20); /*0x672092*/
-    v22 = this->q52C; /*0x672097*/
-    this->u32_14AF = v21; /*0x67209d*/
-    this->q52C = INIClass::ReadBool_Overwrite( /*0x6720b7*/
+        v22 = *((unsigned char *)this + 5296);
+        *((unsigned char *)this + 5295) = v21;
+        *((unsigned char *)this + 5296) = INIClass::ReadBool_Overwrite(aMultiplayerdia, g_INI_Key_TiberiumGrows, v22);
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_TiberiumGrows,
                                 v22);
-    v23 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCrates, this->u32_14B1); /*0x6720d2*/
-    v24 = this->u32_14B2; /*0x6720d7*/
-    this->u32_14B1 = v23; /*0x6720dd*/
+        v23 = INIClass::ReadBool_Overwrite(aMultiplayerdia, aCrates, *((unsigned char *)this + 5297));
+        v24 = *((unsigned char *)this + 5298);
+        *((unsigned char *)this + 5297) = v23;
     v25 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCapturetheflag, v24); /*0x6720f1*/
-    v26 = this->u32_14B3; /*0x6720f6*/
-    this->u32_14B2 = v25; /*0x6720fc*/
-    this->u32_14B3 = INIClass::ReadBool_Overwrite( /*0x672116*/
+        v26 = *((unsigned char *)this + 5299);
+        *((unsigned char *)this + 5298) = v25;
+        *((unsigned char *)this + 5299) = INIClass::ReadBool_Overwrite(aMultiplayerdia, aHarvestertruce, v26);
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aHarvestertruce,
@@ -2895,12 +2895,12 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (uint8_t *)aMultiplayerdia,
             aMultiengineer,
             this->u32_14B4);
-    v28 = this->u32_14B5; /*0x672136*/
-    this->u32_14B4 = v27; /*0x67213c*/
+        v28 = *((unsigned char *)this + 5301);
+        *((unsigned char *)this + 5300) = v27;
     v29 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aAlliesallowed, v28); /*0x672150*/
-    v30 = this->u32_14BB; /*0x672155*/
-    this->u32_14B5 = v29; /*0x67215b*/
-    this->u32_14BB = INIClass::ReadBool_Overwrite( /*0x672175*/
+        v30 = *((unsigned char *)this + 5307);
+        *((unsigned char *)this + 5301) = v29;
+        *((unsigned char *)this + 5307) = INIClass::ReadBool_Overwrite(aMultiplayerdia, aAllychangeallo, v30);
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 aAllychangeallo,
@@ -2910,16 +2910,16 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_ShortGame,
             this->u32_14B6);
-    v32 = this->u32_14B9; /*0x672195*/
-    this->u32_14B6 = v31; /*0x67219b*/
+        v32 = *((unsigned char *)this + 5305);
+        *((unsigned char *)this + 5302) = v31;
     v33 = INIClass::ReadBool_Overwrite( /*0x6721af*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_SuperWeaponsAllowed,
             v32);
-    v34 = this->u32_14BA; /*0x6721b4*/
-    this->u32_14B9 = v33; /*0x6721ba*/
-    this->u32_14BA = INIClass::ReadBool_Overwrite( /*0x6721d4*/
+        v34 = *((unsigned char *)this + 5306);
+        *((unsigned char *)this + 5305) = v33;
+        *((unsigned char *)this + 5306) = INIClass::ReadBool_Overwrite(aMultiplayerdia, g_INI_Key_BuildOffAlly, v34);
                                 (int *)v37,
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_BuildOffAlly,
@@ -2929,10 +2929,10 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_FogOfWar,
             this->u32_14B7);
-    v36 = this->u32_14B8; /*0x6721f4*/
-    this->u32_14B7 = v35; /*0x6721fa*/
+        v36 = *((unsigned char *)this + 5304);
+        *((unsigned char *)this + 5303) = v35;
     result = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aMcvredeploys, v36); /*0x67220e*/
-    this->u32_14B8 = result; /*0x672213*/
+        *((unsigned char *)this + 5304) = result;
     IDA_LOBYTE(result) = 1; /*0x67221a*/
   }
   else

@@ -125,7 +125,7 @@ void Lobby::UpdatePlayerLabels()
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb09d*/
   {
-    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0a8*/
+        if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
       v1 = 6; /*0x5eb0b8*/
     else
       v1 = 2; /*0x5eb0b1*/
@@ -141,7 +141,7 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_25; /*0x5eb0d7*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb0df*/
   {
-    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0ea*/
+        if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
       v2 = 6; /*0x5eb0fa*/
     else
       v2 = 2; /*0x5eb0f3*/
@@ -185,11 +185,11 @@ void Lobby::UpdatePlayerLabels()
         }
         if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb185*/
         {
-          if ( this->Network::IsLobbyFeature() ) /*0x5eb187*/
+                    if ( Network::IsLobbyFeature() )
           {
             PlayerCountMap &= ~1u; /*0x5eb190*/
           }
-          else if ( this->Network::IsMultiplayerActive() ) /*0x5eb195*/
+                    else if ( Network::IsMultiplayerActive() )
           {
             PlayerCountMap = 2; /*0x5eb19e*/
           }
@@ -328,11 +328,11 @@ void Lobby::UpdatePlayerLabels()
             }
             if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb48c*/
             {
-              if ( this->Network::IsLobbyFeature() ) /*0x5eb48e*/
+                            if ( Network::IsLobbyFeature() )
               {
                 v17 &= ~1u; /*0x5eb497*/
               }
-              else if ( this->Network::IsMultiplayerActive() ) /*0x5eb49c*/
+                            else if ( Network::IsMultiplayerActive() )
               {
                 v17 = 2; /*0x5eb4a5*/
               }
@@ -496,7 +496,7 @@ void Lobby::SetupPlayerWidgets()
       {
         ShowWindow(v13, 5); /*0x5ebb9f*/
         ShowWindow(nIDDlgItema, 5); /*0x5ebba8*/
-        if ( *(unsigned int *)&dword_A8B238 != 4 || !this->Network::IsLobbyFeature() ) /*0x5ebbb3*/
+                if ( MEMORY[0xA8B238][0] != 4 || !Network::IsLobbyFeature() )
         {
           ShowWindow(v9, 5); /*0x5ebbbf*/
           return ShowWindow(v17, 5); /*0x5ebbcf*/

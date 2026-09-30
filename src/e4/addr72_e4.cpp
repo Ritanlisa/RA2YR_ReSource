@@ -1532,16 +1532,16 @@ int sub_720420()
 namespace gamemd {
 unsigned int * E4Recv_720440::sub_720440()
 {
-  this->owningHouseIndex0 = 0; /*0x720444*/
-  this->chronoLockRemaining = 0; /*0x72044a*/
-  IDA_LOBYTE(this->chronoDestCoords[0]) = 1; /*0x720450*/
-  IDA_BYTE1(this->chronoDestCoords[0]) = 0; /*0x720457*/
-  IDA_BYTE2(this->chronoDestCoords[0]) = 0; /*0x72045d*/
-  this->chronoDestCoords[1] = -1; /*0x720463*/
-  IDA_LOBYTE(this->vtable0) = 0; /*0x72046d*/
-  IDA_LOBYTE(this->animation[2]) = 0; /*0x72046f*/
-  IDA_LOWORD(this->reloadTimer[1]) = 0; /*0x720475*/
-  return &this->vtable0; /*0x72047c*/
+    *((unsigned int *)this + 640) = 0;
+    *((unsigned int *)this + 644) = 0;
+    *((unsigned char *)this + 648) = 1;
+    *((unsigned char *)this + 649) = 0;
+    *((unsigned char *)this + 650) = 0;
+    *((unsigned int *)this + 652) = -1;
+    *(unsigned char *)this = 0;
+    *((unsigned char *)this + 256) = 0;
+    *((unsigned short *)this + 256) = 0;
+    return this;
 }
 } // namespace gamemd
 
@@ -1549,22 +1549,22 @@ unsigned int * E4Recv_720440::sub_720440()
 namespace gamemd {
 unsigned int * E4Recv_720960::sub_720960()
 {
-  this->AbstractClass = (void *)-1; /*0x720965*/
-  *(void **)&this->M4 = (void *)-1; /*0x720967*/
-  *(void **)&this->M8 = (void *)-1; /*0x72096a*/
-  *(unsigned short *)&this->M12 = (void *)255; /*0x72096f*/
-  IDA_LOBYTE(this->M16) = 0; /*0x720976*/
-  IDA_BYTE1(this->M16) = 0; /*0x720979*/
-  IDA_BYTE2(this->M16) = 0; /*0x72097c*/
-  this->M18 = 0; /*0x72097f*/
-  this->M28 = 0; /*0x720982*/
-  IDA_LOBYTE(this->q020) = 1; /*0x720985*/
-  IDA_BYTE1(this->q020) = 0; /*0x720989*/
-  *(unsigned short *)&this->M20 = (int)&DynamicVectorClass_ThemeControl___vftable; /*0x72098c*/
-  this->owningHouseIndex = 10; /*0x720993*/
-  this->occupant = 0; /*0x72099a*/
-  this->fallRate = 0; /*0x72099d*/
-  return &this->AbstractClass; /*0x7209a0*/
+    *this = -1;
+    *((unsigned int *)this + 4) = -1;
+    *((unsigned int *)this + 8) = -1;
+    *((unsigned int *)this + 12) = 255;
+    *((unsigned char *)this + 16) = 0;
+    *((unsigned char *)this + 17) = 0;
+    *((unsigned char *)this + 18) = 0;
+    *((unsigned int *)this + 24) = 0;
+    *((unsigned int *)this + 28) = 0;
+    *((unsigned char *)this + 32) = 1;
+    *((unsigned char *)this + 33) = 0;
+    *((unsigned int *)this + 20) = &vt_DynamicVectorClass_ThemeControl;
+    *((unsigned int *)this + 40) = 10;
+    *((unsigned int *)this + 36) = 0;
+    *((unsigned int *)this + 44) = 0;
+    return this;
 }
 } // namespace gamemd
 
@@ -1743,31 +1743,31 @@ void E4Recv_722A20::sub_722A20()
   int i; // ecx
   void **v4; // edi
 
-  v2 = (unsigned int *)this->q03D; /*0x722a26*/
+    v2 = *(unsigned int **)((char *)this + 976);
   if ( v2 ) /*0x722a2e*/
   {
     for ( i = 0; i <= *v2; *(unsigned int *)(v2[2] + 4 * i - 4) = 0 ) /*0x722a36*/
       ++i; /*0x722a3b*/
     *v2 = 0; /*0x722a47*/
-    v4 = (void **)this->q03D; /*0x722a49*/
+        v4 = *(void ***)((char *)this + 976);
     if ( v4 ) /*0x722a51*/
     {
       RA2_OPDEL(v4[2]); /*0x722a57*/
       RA2_OPDEL(v4); /*0x722a5d*/
     }
-    this->q03D = 0; /*0x722a65*/
+        *((unsigned int *)this + 976) = 0;
   }
-  if ( this->u32_FC ) /*0x722a6c*/
+    if ( *((unsigned int *)this + 1008) )
   {
     RA2_OPDEL(*((void **)&this->nextArrayIndex3)); /*0x722a77*/
-    this->u32_FC = 0; /*0x722a7f*/
+        *((unsigned int *)this + 1008) = 0;
   }
-  if ( this->u32_F8 ) /*0x722a85*/
+    if ( *((unsigned int *)this + 992) )
   {
     RA2_OPDEL(*((void **)&this->nextArrayIndex2)); /*0x722a90*/
-    this->u32_F8 = 0; /*0x722a98*/
+        *((unsigned int *)this + 992) = 0;
   }
-  this->ambientSoundController = 0; /*0x722a9e*/
+    *((unsigned int *)this + 960) = 0;
 }
 } // namespace gamemd
 
@@ -1779,31 +1779,31 @@ void E4Recv_723510::sub_723510()
   int i; // ecx
   void **v4; // edi
 
-  v2 = (unsigned int *)this->q044; /*0x723516*/
+    v2 = *(unsigned int **)((char *)this + 1088);
   if ( v2 ) /*0x72351e*/
   {
     for ( i = 0; i <= *v2; *(unsigned int *)(v2[2] + 4 * i - 4) = 0 ) /*0x723526*/
       ++i; /*0x72352b*/
     *v2 = 0; /*0x723537*/
-    v4 = (void **)this->q044; /*0x723539*/
+        v4 = *(void ***)((char *)this + 1088);
     if ( v4 ) /*0x723541*/
     {
       RA2_OPDEL(v4[2]); /*0x723547*/
       RA2_OPDEL(v4); /*0x72354d*/
     }
-    this->q044 = 0; /*0x723555*/
+        *((unsigned int *)this + 1088) = 0;
   }
-  if ( this->u32_46 ) /*0x72355c*/
+    if ( *((unsigned int *)this + 1120) )
   {
     RA2_OPDEL(*((void **)&this->referenceCount0)); /*0x723567*/
-    this->u32_46 = 0; /*0x72356f*/
+        *((unsigned int *)this + 1120) = 0;
   }
-  if ( this->u8_45 ) /*0x723575*/
+    if ( *((unsigned int *)this + 1104) )
   {
     RA2_OPDEL(*((void **)&this->nextArrayIndex9)); /*0x723580*/
-    this->u8_45 = 0; /*0x723588*/
+        *((unsigned int *)this + 1104) = 0;
   }
-  this->u32_10C = 0; /*0x72358e*/
+    *((unsigned int *)this + 1072) = 0;
 }
 } // namespace gamemd
 
@@ -1980,7 +1980,7 @@ int sub_723FE0()
 namespace gamemd {
 int E4Recv_724550::sub_724550()
 {
-  return this->cloakProgress[3]; /*0x724556*/
+    return *((unsigned int *)this + 560);
 }
 } // namespace gamemd
 
@@ -1988,7 +1988,7 @@ int E4Recv_724550::sub_724550()
 namespace gamemd {
 int E4Recv_724560::sub_724560(int a2)
 {
-  *(unsigned int *)&this->M560 = a2; /*0x724564*/
+    *((unsigned int *)this + 560) = a2;
   return a2; /*0x72456a*/
 }
 } // namespace gamemd
@@ -1997,7 +1997,7 @@ int E4Recv_724560::sub_724560(int a2)
 namespace gamemd {
 int E4Recv_724570::sub_724570()
 {
-  return this->cloakDelayTimer[1]; /*0x724576*/
+    return *((unsigned int *)this + 580);
 }
 } // namespace gamemd
 
@@ -2014,11 +2014,11 @@ int E4Recv_724A30::sub_724A30(int * a2)
   int v8; // ecx
   int v10; // [esp+10h] [ebp-4h]
 
-  v2 = this->cloakDelayTimer[1]; /*0x724a33*/
+    v2 = *((unsigned int *)this + 580);
   v3 = 0; /*0x724a39*/
   if ( v2 <= 0 ) /*0x724a3f*/
     return 0; /*0x724a86*/
-  v10 = this->cloakProgress[5]; /*0x724a4b*/
+    v10 = *((unsigned int *)this + 568);
   v4 = v10; /*0x724a4f*/
   v5 = *a2; /*0x724a51*/
   while ( 1 ) /*0x724a55*/
@@ -2686,8 +2686,8 @@ int sub_725F80()
 namespace gamemd {
 unsigned int * E4Recv_7266C0::sub_7266C0(char a2)
 {
-  this->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
-  return &this->AbstractClass; /*0x7266d0*/
+    *((unsigned int *)this + 64) |= 1 << a2;
+    return this;
 }
 } // namespace gamemd
 
@@ -2695,7 +2695,7 @@ unsigned int * E4Recv_7266C0::sub_7266C0(char a2)
 namespace gamemd {
 char E4Recv_726780::sub_726780()
 {
-  return (char)this->nextObject; /*0x726783*/
+    return *((unsigned int *)this + 192);
 }
 } // namespace gamemd
 
@@ -2703,7 +2703,7 @@ char E4Recv_726780::sub_726780()
 namespace gamemd {
 int E4Recv_726920::sub_726920(int a2)
 {
-  *(unsigned int *)&this->M44 = a2; /*0x726924*/
+    *((unsigned int *)this + 44) = a2;
   return a2; /*0x726927*/
 }
 } // namespace gamemd
@@ -3029,12 +3029,12 @@ char E4Recv_728540::sub_728540(int a2)
   int16_t v6; // cx
   int16_t v8; // [esp+Eh] [ebp-2h]
 
-  occupant = this->occupant; /*0x728547*/
+    v2 = *((unsigned int *)this + 36);
   v8 = IDA_HIWORD(occupant); /*0x728551*/
   if ( occupant == *(unsigned int *)a2 ) /*0x728555*/
     return 1; /*0x728555*/
-  p_nextObject = &this->nextObject; /*0x728565*/
-  if ( this->nextObject == (ObjectClass *)-1 ) /*0x72856b*/
+    v3 = (char *)this + 48;
+    if ( *((unsigned int *)this + 48) == -1 )
     return 1; /*0x7285bd*/
   while ( 1 ) /*0x72856d*/
   {
@@ -3199,14 +3199,14 @@ int E4Recv_7294E0::sub_7294E0()
   unsigned int v6[2]; // [esp+8h] [ebp-Ch] BYREF
   int v7; // [esp+10h] [ebp-4h]
 
-  v2 = (unsigned int *)this->vtable4; /*0x7294e6*/
+    v2 = (unsigned int *)*((unsigned int *)this + 12);
   v6[0] = v2[39]; /*0x7294f5*/
   v6[1] = v2[40]; /*0x7294fc*/
   v7 = v2[41]; /*0x729508*/
   if ( v7 <= -256 ) /*0x72950c*/
   {
     result = (*(int (**)(unsigned int *, unsigned int))(*v2 + 292))(v2, 0); /*0x729569*/
-    this->nextArrayIndex = 4; /*0x72956f*/
+        *((unsigned int *)this + 24) = 4;
   }
   else
   {
@@ -3217,7 +3217,7 @@ int E4Recv_7294E0::sub_7294E0()
     v7 -= v3; /*0x729542*/
     if ( v7 < -256 ) /*0x729546*/
       v7 = -256; /*0x729548*/
-    return (*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)this->vtable4 + 436))(this->vtable4, v6); /*0x72955a*/
+        return (*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)*((unsigned int *)this + 12) + 436))(*((unsigned int *)this + 12), v6);
   }
   return result; /*0x729560*/
 }

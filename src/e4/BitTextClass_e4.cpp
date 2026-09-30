@@ -20,42 +20,42 @@ int BitTextClass::ParseFontData(char * Source)
   unsigned int *Font; // eax
 v3 = (void *)((unsigned int)((tagRECT *)((unsigned int)((struct tagRECT *)(&this->m_CharWidth8)))));
   *(unsigned int *)this = (void*)&BitFont_vftable; /*0x433895*/
-  this->m_CharWidth = 0; /*0x43389b*/
-  this->u32_24 = 0x7FFF; /*0x43389e*/
-  this->u32_26 = 13653; /*0x4338a4*/
-  this->u32_28 = 64; /*0x4338aa*/
-  this->u32_40 = 1; /*0x4338b1*/
-  this->u32_41 = 1; /*0x4338b4*/
-  this->u32_18 = 1; /*0x4338b7*/
-  this->u32_1C = 1; /*0x4338ba*/
-  *(unsigned int *)&this->ptr_8 = 0; /*0x4338bd*/
-  this->u32_C = 0; /*0x4338c0*/
-  *(unsigned int *)&this->ptr_8 = 0; /*0x4338c3*/
+    *((unsigned int *)this + 16) = 0;
+    *((unsigned short *)this + 144) = 0x7FFF;
+    *((unsigned short *)this + 152) = 13653;
+    *((unsigned int *)this + 160) = 64;
+    *((unsigned char *)this + 256) = 1;
+    *((unsigned char *)this + 260) = 1;
+    *((unsigned int *)this + 96) = 1;
+    *((unsigned int *)this + 112) = 1;
+    *((unsigned int *)this + 128) = 0;
+    *((unsigned int *)this + 48) = 0;
+    *((unsigned int *)this + 32) = 0;
   SetRect((LPRECT)(&this->m_CharWidth8), 0, 0, 0, 0); /*0x4338c6*/
-  this->u32_2C = 1; /*0x4338d0*/
+    *((unsigned int *)this + 176) = 1;
   Font = File::LoadFont(Source); /*0x4338d3*/
-  *(void **)&this->m_CharWidth = Font; /*0x4338da*/
+    *((unsigned int *)this + 16) = Font;
   if ( Font ) /*0x4338dd*/
   {
-    this->u32_18 = Font[1]; /*0x4338e2*/
-    this->u32_1C = Font[3]; /*0x4338ea*/
+        *((unsigned int *)this + 96) = Font[1];
+        *((unsigned int *)this + 112) = Font[3];
     sub_434700(); /*0x4338ed*/
   }
   else
   {
-    this->m_CharWidth = 0; /*0x433900*/
-    this->u32_24 = 0x7FFF; /*0x433903*/
-    this->u32_26 = 13653; /*0x433909*/
-    this->u32_28 = 64; /*0x43390f*/
-    this->u32_40 = 1; /*0x433916*/
-    this->u32_41 = 1; /*0x433919*/
-    this->u32_18 = 1; /*0x43391c*/
-    this->u32_1C = 1; /*0x43391f*/
-    *(unsigned int *)&this->ptr_8 = 0; /*0x433922*/
-    this->u32_C = 0; /*0x433925*/
-    *(unsigned int *)&this->ptr_8 = 0; /*0x433928*/
+        *((unsigned int *)this + 16) = 0;
+        *((unsigned short *)this + 144) = 0x7FFF;
+        *((unsigned short *)this + 152) = 13653;
+        *((unsigned int *)this + 160) = 64;
+        *((unsigned char *)this + 256) = 1;
+        *((unsigned char *)this + 260) = 1;
+        *((unsigned int *)this + 96) = 1;
+        *((unsigned int *)this + 112) = 1;
+        *((unsigned int *)this + 128) = 0;
+        *((unsigned int *)this + 48) = 0;
+        *((unsigned int *)this + 32) = 0;
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
-    this->u32_2C = 1; /*0x433931*/
+        *((unsigned int *)this + 176) = 1;
   }
   return (int)(this);
 }

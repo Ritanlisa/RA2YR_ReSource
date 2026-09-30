@@ -354,7 +354,7 @@ int Scenario::CopyLocalScenarioData()
     i += 41; /*0x4c618d*/
     ++v2; /*0x4c6190*/
   }
-  this->Scenario_field_0x34 = (void *)(*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x4c61b1*/
+    *((unsigned int *)this + 208) = (*(int (__stdcall **)(char *))(*((unsigned int *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36);
   vtable3 = dword_A8B230[127].vtable3; /*0x4c61ba*/
   abstractFlags = (char *)dword_A8B230[127].abstractFlags; /*0x4c61c0*/
   if ( vtable3 != (void *)-1 ) /*0x4c61c9*/
@@ -364,10 +364,10 @@ int Scenario::CopyLocalScenarioData()
     else
       abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x4c61d7*/
   }
-  this->Scenario_field_0x38 = abstractFlags; /*0x4c61dd*/
+    *((unsigned int *)this + 224) = v5;
   result = *(unsigned int *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
-  *(unsigned int *)this->__pad_3C = result; /*0x4c61ec*/
-  *(unsigned short *)&this->__pad_3C[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
+    *((unsigned int *)this + 240) = result;
+    *((unsigned short *)this + 256) = *((unsigned short *)MEMORY[0xA8B230] + 6864);
   return result; /*0x4c6200*/
 }
 }
@@ -398,8 +398,8 @@ int Scenario::ProcessSidebarUnits()
       v6 = (int *)RA2_OPNEW(8u); /*0x50d660*/
       *v6 = v5; /*0x50d665*/
       v6[1] = v4; /*0x50d66d*/
-      v7 = *(unsigned int *)&this->__pad_9C[216]; /*0x50d670*/
-      if ( *(unsigned int *)&this->__pad_9C[224] < v7 /*0x50d695*/
+            v7 = *((unsigned int *)this + 1488);
+            if ( *((unsigned int *)this + 1520) < v7
         || (this->__pad_9C[221] || !v7)
         && (v8 = *(unsigned int *)&this->__pad_9C[228], v8 > 0)
         && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&this->__pad_9C[208] + 8))(
@@ -407,9 +407,9 @@ int Scenario::ProcessSidebarUnits()
              v7 + v8,
              0) )
       {
-        v9 = *(unsigned int *)&this->__pad_9C[224]; /*0x50d69c*/
-        v10 = *(unsigned int *)&this->__pad_9C[212]; /*0x50d69f*/
-        *(unsigned int *)&this->__pad_9C[224] = v9 + 1; /*0x50d6a5*/
+                v9 = *((unsigned int *)this + 1520);
+                v10 = *((unsigned int *)this + 1472);
+                *((unsigned int *)this + 1520) = v9 + 1;
         *(unsigned int *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
       }
     }
@@ -443,11 +443,11 @@ Game * * Scenario::ComputeDisplayPosition()
     if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = (int)*(&g_DisplayWidth + 1); /*0x552baa*/
-    this->Scenario_field_0x24 = v2; /*0x552baf*/
-    this->Scenario_field_0x28 = (void *)v9; /*0x552bb4*/
-    this->Scenario_field_0x20 = (void *)((v10 - v9) / 2); /*0x552bc6*/
+        *((unsigned int *)this + 36) = v2;
+        *((unsigned int *)this + 40) = v9;
+        *((unsigned int *)this + 32) = (v10 - v9) / 2;
     result = (int)&v1->__pad_0[-v2] / 2; /*0x552bc9*/
-    this->Scenario_field_0x1C = (void *)result; /*0x552bcd*/
+        *((unsigned int *)this + 28) = result;
   }
   else
   {
@@ -456,22 +456,22 @@ Game * * Scenario::ComputeDisplayPosition()
       v3 = 600; /*0x552b46*/
     v4 = (void *)(v3 - 80); /*0x552b4b*/
     v5 = (char *)&(*(&g_DisplayWidth + 1))[1].LoadingScreen_field_0x10 - v3; /*0x552b5c*/
-    this->Scenario_field_0x14 = (void *)v2; /*0x552b5e*/
-    this->Scenario_field_0x24 = v2; /*0x552b64*/
+        *((unsigned int *)this + 20) = v2;
+        *((unsigned int *)this + 36) = v2;
     v6 = (int)(v5 - 80) / 2; /*0x552b6f*/
-    this->Scenario_field_0x10 = (void *)v6; /*0x552b71*/
+        *((unsigned int *)this + 16) = v6;
     v6 += 40; /*0x552b74*/
     v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
-    this->Scenario_field_0x34 = (void *)v2; /*0x552b78*/
-    this->Scenario_field_0xC = (void *)v7; /*0x552b7b*/
-    this->Scenario_field_0x1C = (void *)v7; /*0x552b7e*/
-    this->Scenario_field_0x20 = (void *)v6; /*0x552b81*/
-    this->Scenario_field_0x2C = (void *)v7; /*0x552b84*/
+        *((unsigned int *)this + 52) = v2;
+        *((unsigned int *)this + 12) = v7;
+        *((unsigned int *)this + 28) = v7;
+        *((unsigned int *)this + 32) = v6;
+        *((unsigned int *)this + 44) = v7;
     result = (int)v4 + v6; /*0x552b88*/
-    this->Scenario_field_0x28 = v4; /*0x552b8b*/
-    this->Scenario_field_0x18 = (void *)40; /*0x552b8f*/
-    this->Scenario_field_0x30 = (void *)result; /*0x552b92*/
-    this->Scenario_field_0x38 = (void *)40; /*0x552b95*/
+        *((unsigned int *)this + 40) = v4;
+        *((unsigned int *)this + 24) = 40;
+        *((unsigned int *)this + 48) = result;
+        *((unsigned int *)this + 56) = 40;
   }
   return result; /*0x552b87*/
 }
@@ -493,7 +493,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x552beb*/
   {
-    v6 = Copy8Bytes(&v11, (int *)&this->Scenario_field_0x1C); /*0x552c3b*/
+        v6 = Copy8Bytes(&v11, (char *)this + 28);
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
@@ -512,8 +512,8 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   }
   else
   {
-    Scenario_field_0x2C = (char *)this->Scenario_field_0x2C; /*0x552bf8*/
-    Scenario_field_0x30 = (char *)this->Scenario_field_0x30; /*0x552bff*/
+        v2 = *((unsigned int *)this + 44);
+        v3 = *((unsigned int *)this + 48);
     result = a2; /*0x552c02*/
     if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x552bfd*/
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/
@@ -867,9 +867,9 @@ void Scenario::Update()
     (*(void (**)(unsigned int))(**((unsigned int **)dword_B04BD4 + k) + 92))(*((unsigned int *)dword_B04BD4 + k)); /*0x55b5e4*/
   UpdateDeferredLightSurfaces(6, 0); /*0x55b5f1*/
   LocomotionClass::UpdateAll(v60); /*0x55b5f6*/
-  for ( m = 0; m < (int)this->Scenario_field_0x10; ++m ) /*0x55b606*/
+    for ( m = 0; m < *((unsigned int *)this + 16); ++m )
   {
-    v49 = *((unsigned int *)this->Scenario_field_0x4 + m); /*0x55b60b*/
+        v50 = *(unsigned int *)(*((unsigned int *)this + 4) + 4 * m);
     (*(void (**)(int))(*(unsigned int *)v49 + 92))(v49); /*0x55b610*/
   }
   if ( *(unsigned int *)&dword_A8B238 ) /*0x55b622*/
@@ -913,7 +913,7 @@ namespace gamemd {
 int Scenario::LoadOrReloadOptions(IUnknown * aP1)
 {
   if ( aP1 ) /*0x597a16*/
-    return (*(char (**)(Scenario *, int))(this->Scenario_field_0x0 + 4))(this, aP1); /*0x597a1b*/
+        return (*(char (**)(unsigned int *, IUnknown *))(*(char *)this + 16))(this, aP1);
   else
     return (uint8_t)LoadOptions::Run((LoadOptions *)this) != 0; /*0x597a28*/
 }
@@ -943,7 +943,7 @@ int Scenario::PreGameInit()
 namespace gamemd {
 void Scenario::SetByte96()
 {
-  IDA_LOBYTE(this->Scenario_field_0x60) = 0; /*0x642ad0*/
+    *((unsigned char *)this + 96) = 0;
 }
 }
 // 0x684240
@@ -1760,7 +1760,7 @@ void * Scenario::ResetDisplayArrays()
 namespace gamemd {
 int Scenario::SetDword32(int a2)
 {
-  this->Scenario_field_0x80 = (void *)a2; /*0x642b14*/
+    *((unsigned int *)this + 32) = a2;
   return a2; /*0x642b1a*/
 }
 } // namespace gamemd
@@ -1769,7 +1769,7 @@ int Scenario::SetDword32(int a2)
 namespace gamemd {
 int Scenario::SetDword30(int a2)
 {
-  this->Scenario_field_0x78 = (void *)a2; /*0x642df4*/
+    *((unsigned int *)this + 30) = a2;
   return a2; /*0x642df7*/
 }
 } // namespace gamemd

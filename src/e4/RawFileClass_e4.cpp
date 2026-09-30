@@ -21,11 +21,11 @@ int RawFileClass::Dtor()
   result = RawFileClass::Write(this); /*0x65ca09*/
   if ( (unsigned char)result ) /*0x65ca11*/
   {
-    result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65ca17*/
+        if ( !CloseHandle((HANDLE)*((unsigned int *)this + 20)) )
     if ( !result ) /*0x65ca1f*/
     {
       v3 = this->FileClass; /*0x65ca25*/
-      v5 = *(unsigned int *)this->FileNameAllocated; /*0x65ca27*/
+            v4 = *((unsigned int *)this + 24);
       LastError = GetLastError(); /*0x65ca29*/
       result = (*(int (**)(BufferIOFileClass *, DWORD, unsigned int, int))(*(unsigned int *)&v3 + 64))( /*0x65ca32*/
                  this,
@@ -33,16 +33,16 @@ int RawFileClass::Dtor()
                  0,
                  v5);
     }
-    *(unsigned int *)this->FileTimeDateLo = -1; /*0x65ca36*/
+        *((unsigned int *)this + 20) = -1;
   }
   IDA_LOBYTE(result) = this-((unsigned int *)(>CacheReadAhead))[0]; /*0x65ca3d*/
   if ( (unsigned char)result ) /*0x65ca42*/
   {
-    result = *(unsigned int *)this->FileNameAllocated; /*0x65ca44*/
+      if ( *((unsigned char *)this + 32) && *((unsigned int *)this + 24) )
     if ( result ) /*0x65ca49*/
     {
       result = (int)(free(*(void **)this->FileNameAllocated));
-      *(unsigned int *)this->FileNameAllocated = 0; /*0x65ca54*/
+          *((unsigned int *)this + 24) = 0;
       this-((unsigned int *)(>CacheReadAhead))[0] = 0; /*0x65ca5b*/
     }
   }
@@ -54,7 +54,7 @@ int RawFileClass::Dtor()
 namespace gamemd {
 int RawFileClass::Close(int a2, int a3)
 {
-  (*(void (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, a3); /*0x65cb4b*/
+    (*(void (**)(void *, int))(*(unsigned int *)this + 8))(this, a2);
+    return (*(int (**)(void *, int))(*(unsigned int *)this + 28))(this, a3);
 }
 } // namespace gamemd

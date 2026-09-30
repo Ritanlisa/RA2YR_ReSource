@@ -160,13 +160,13 @@ char MoveFeedback::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *(unsigned int *)&this->q008; /*0x40b962*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(unsigned int **)&this->q004; /*0x40b975*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
@@ -187,11 +187,11 @@ int MoveFeedback::Draw(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x40bb90*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40bb9e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -207,13 +207,13 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
-  if ( v3 && this->IsAllocated ) /*0x40bcc0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x40bcc8*/
-    *(unsigned int *)&this->q004 = 0; /*0x40bcd0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x40bce1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     RA2_OPDEL(); /*0x40bceb*/
   return this; /*0x40bcf5*/
@@ -226,22 +226,22 @@ void MoveFeedback::Destroy()
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x40be56*/
-  *(unsigned int *)&this->q010 = 0; /*0x40be59*/
-  if ( v2 && this->IsAllocated ) /*0x40be60*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x40be66*/
-    *(unsigned int *)&this->q004 = 0; /*0x40be6e*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x40be71*/
-  *(unsigned int *)&this->q008 = 0; /*0x40be74*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 // 0x40BE80
 namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-  if ( this->q00C ) /*0x40be80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x40be95*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x40be87*/
 }
@@ -257,38 +257,38 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c03c*/
   {
-    this->q00C = 0; /*0x40c042*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x40c05a*/
-    this->q00C = 1; /*0x40c062*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(unsigned int *)&this->q004 ) /*0x40c068*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = *(unsigned int *)&this->q008; /*0x40c06f*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x40c07c*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x40c081*/
-      if ( this->IsAllocated ) /*0x40c08e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x40c099*/
-        *(unsigned int *)&this->q004 = 0; /*0x40c0a1*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x40c0aa*/
-    *(unsigned int *)&this->q008 = a2; /*0x40c0b2*/
-    this->IsAllocated = a3 == 0; /*0x40c0b5*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = *(unsigned int *)&this->q008; /*0x40c0c1*/
-  if ( v7 < *(unsigned int *)&this->q010 ) /*0x40c0c9*/
-    *(unsigned int *)&this->q010 = v7; /*0x40c0cb*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x40c0ce*/
 }
 } // namespace gamemd
@@ -300,11 +300,11 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x40c0e0*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40c0ee*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/
@@ -320,13 +320,13 @@ void MoveFeedback::Constructor()
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
-  if ( v3 && this->IsAllocated ) /*0x40c170*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x40c178*/
-    *(unsigned int *)&this->q004 = 0; /*0x40c180*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x40c191*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x40c198*/
     RA2_OPDEL(); /*0x40c19b*/
   return this; /*0x40c1a5*/

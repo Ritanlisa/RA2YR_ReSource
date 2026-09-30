@@ -78,7 +78,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   vtable0 = (char *)this->AbstractClass; /*0x690429*/
-  vtable1 = (char *)this->M4; /*0x69042f*/
+    v3 = *((unsigned int *)this + 4);
   v5[0] = vtable0; /*0x690432*/
   v6[0] = &vtable0[Rect.left]; /*0x69043d*/
   v5[1] = vtable1; /*0x690441*/
@@ -162,9 +162,9 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v36 = 0; /*0x693b86*/
   Waypoint::InitInvalid(v39); /*0x693b8a*/
   Debug::Log(aGettingFileFro); /*0x693b94*/
-  this->Timer::GetTicks(); /*0x693ba0*/
+    Timer::GetTicks();
   Debug::Log(aRequestingFile); /*0x693bb2*/
-  Ticks = this->Timer::GetTicks(); /*0x693bc3*/
+    Ticks = Timer::GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693be4*/
   {
     memset(v41, 0, sizeof(v41)); /*0x693cd4*/
@@ -176,14 +176,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v8 = 3600; /*0x693d06*/
       if ( Ticks != -1 ) /*0x693d0d*/
       {
-        v9 = this->Timer::GetTicks() - Ticks; /*0x693d18*/
+                v9 = Timer::GetTicks() - Ticks;
         if ( v9 >= 3600 ) /*0x693d1e*/
           break; /*0x693d1e*/
         v8 = 3600 - v9; /*0x693d20*/
       }
       if ( !v8 ) /*0x693d24*/
         break; /*0x693d24*/
-      this->Event::Dispatch(); /*0x693d26*/
+            Event::Dispatch();
     }
   }
   else
@@ -211,20 +211,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
       {
-        v7 = this->Timer::GetTicks() - Ticks; /*0x693c9c*/
+                v7 = Timer::GetTicks() - Ticks;
         if ( v7 >= 3600 ) /*0x693ca2*/
           break; /*0x693ca2*/
         v6 = 3600 - v7; /*0x693ca8*/
       }
       if ( !v6 ) /*0x693cac*/
         break; /*0x693cac*/
-      this->Event::Dispatch(); /*0x693cb2*/
+            Event::Dispatch();
     }
   }
   v10 = 3600; /*0x693d39*/
   if ( Ticks != -1 ) /*0x693d44*/
   {
-    v11 = this->Timer::GetTicks() - Ticks; /*0x693d4f*/
+        v11 = Timer::GetTicks() - Ticks;
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
@@ -235,18 +235,18 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v10 ) /*0x693d5b*/
     goto LABEL_24; /*0x693d5b*/
-  v33 = this->Timer::GetTicks(); /*0x693d8e*/
+    v33 = Timer::GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693da8*/
   {
     while ( 1 ) /*0x693e97*/
     {
-      this->Event::Dispatch(); /*0x693e97*/
+          while ( 1 )
       if ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v46, (int)v40) > 0 && *(unsigned int *)v46 == 111 ) /*0x693ebe*/
         break; /*0x693ebe*/
       v18 = 3600; /*0x693ec4*/
       if ( v33 != -1 ) /*0x693ecb*/
       {
-        v19 = this->Timer::GetTicks() - v33; /*0x693ed6*/
+                v19 = Timer::GetTicks() - v33;
         if ( v19 >= 3600 ) /*0x693edc*/
           goto LABEL_50; /*0x693edc*/
         v18 = 3600 - v19; /*0x693ede*/
@@ -261,14 +261,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   {
     while ( 1 ) /*0x693db3*/
     {
-      this->Event::Dispatch(); /*0x693db3*/
+          while ( 1 )
       v37 = 455; /*0x693dd4*/
       if ( Network::Send((int)unk_A8E9C0, (int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
       {
         v13 = NetworkID::Compare((int)v39, (int)&stru_A8BB1C); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
-          v14 = this->GameSettings::FindFlagged(); /*0x693dfb*/
+                    v14 = GameSettings::FindFlagged();
           v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
         }
         if ( v48 == 17 && v13 ) /*0x693e2d*/
@@ -277,7 +277,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v15 = 3600; /*0x693e33*/
       if ( v33 != -1 ) /*0x693e3a*/
       {
-        v16 = this->Timer::GetTicks() - v33; /*0x693e45*/
+                v16 = Timer::GetTicks() - v33;
         if ( v16 >= 3600 ) /*0x693e4b*/
           goto LABEL_50; /*0x693e4b*/
         v15 = 3600 - v16; /*0x693e51*/
@@ -295,7 +295,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v20 = 3600; /*0x693f33*/
   if ( v33 != -1 ) /*0x693f3e*/
   {
-    v21 = this->Timer::GetTicks() - v33; /*0x693f49*/
+        v21 = Timer::GetTicks() - v33;
     if ( v21 >= 3600 ) /*0x693f4f*/
     {
   LABEL_54:
@@ -307,7 +307,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   if ( !v20 ) /*0x693f55*/
     goto LABEL_54; /*0x693f55*/
   Debug::Log(aSendingFileInf); /*0x693f78*/
-  v34 = this->Timer::GetTicks(); /*0x693f95*/
+    v34 = Timer::GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693faa*/
   {
     memset(v41, 0, sizeof(v41)); /*0x6940b8*/
@@ -319,14 +319,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v26 = 3600; /*0x6940ea*/
       if ( v34 != -1 ) /*0x6940f1*/
       {
-        v27 = this->Timer::GetTicks() - v34; /*0x6940fc*/
+                v27 = Timer::GetTicks() - v34;
         if ( v27 >= 3600 ) /*0x694102*/
           break; /*0x694102*/
         v26 = 3600 - v27; /*0x694104*/
       }
       if ( !v26 ) /*0x694108*/
         break; /*0x694108*/
-      this->Event::Dispatch(); /*0x69410a*/
+            Event::Dispatch();
     }
   }
   else
@@ -354,20 +354,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
       {
-        v25 = this->Timer::GetTicks() - v34; /*0x694080*/
+                v25 = Timer::GetTicks() - v34;
         if ( v25 >= 3600 ) /*0x694086*/
           break; /*0x694086*/
         v24 = 3600 - v25; /*0x69408c*/
       }
       if ( !v24 ) /*0x694090*/
         break; /*0x694090*/
-      this->Event::Dispatch(); /*0x694096*/
+            Event::Dispatch();
     }
   }
   v28 = 3600; /*0x69411d*/
   if ( v34 != -1 ) /*0x694128*/
   {
-    v29 = this->Timer::GetTicks() - v34; /*0x694133*/
+        v29 = Timer::GetTicks() - v34;
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
@@ -429,12 +429,12 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   LPCSTR v43[9]; // [esp+74h] [ebp-24h] BYREF
 
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
-  Ticks = this->Timer::GetTicks(); /*0x6941bb*/
+    v32.CampaignScore_field_0x04 = Timer::GetTicks();
   v35 = 0; /*0x6941bf*/
   Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
-  this->Debug::Log(); /*0x6941e3*/
+    Debug::Log();
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
@@ -460,7 +460,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-  Ticks = this->Timer::GetTicks(); /*0x69432b*/
+    v32.CampaignScore_field_0x04 = Timer::GetTicks();
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
@@ -1502,7 +1502,7 @@ int E4Recv_69B690::sub_69B690()
     result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b6aa*/
     if ( result == -2 ) /*0x69b6b1*/
       return result; /*0x69b6fa*/
-    v3 = this->M10316; /*0x69b6b3*/
+        v3 = *((unsigned int *)this + 10316);
     v4 = 0; /*0x69b6b9*/
     if ( v3 <= 0 ) /*0x69b6bd*/
     {
@@ -1516,7 +1516,7 @@ int E4Recv_69B690::sub_69B690()
     }
     else
     {
-      v5 = (int *)this->M10304; /*0x69b6bf*/
+            v5 = (int *)*((unsigned int *)this + 10304);
       while ( 1 ) /*0x69b6c5*/
       {
         v6 = *v5; /*0x69b6c5*/
@@ -1575,11 +1575,11 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(&v13); /*0x69f0cc*/
-  nextObject = this->nextObject; /*0x69f0d1*/
+    v3 = *((unsigned int *)this + 48);
   if ( nextObject ) /*0x69f0da*/
   {
-    occupant = this->occupant; /*0x69f0e0*/
-    fallRate = this->fallRate; /*0x69f0e3*/
+        v4 = *((unsigned int *)this + 36);
+        v5 = *((unsigned int *)this + 44);
     if ( occupant != -1 ) /*0x69f0ef*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x69f0f7*/
@@ -1587,13 +1587,13 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
       else
         fallRate -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x69f0f9*/
     }
-    if ( (double)((int)nextObject - fallRate) / (double)(int)this->nextObject < 1.0 ) /*0x69f118*/
+        if ( (double)(v3 - v5) / (double)*((unsigned int *)this + 48) < 1.0 )
     {
-      v6 = this->nextObject; /*0x69f11a*/
+            v6 = *((unsigned int *)this + 48);
       if ( v6 ) /*0x69f123*/
       {
-        v8 = this->occupant; /*0x69f12d*/
-        v9 = this->fallRate; /*0x69f130*/
+                v8 = *((unsigned int *)this + 36);
+                v9 = *((unsigned int *)this + 44);
         if ( v8 != -1 ) /*0x69f136*/
         {
           if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x69f13e*/
@@ -1601,7 +1601,7 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
           else
             v9 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x69f140*/
         }
-        v7 = (double)((int)v6 - v9) / (double)(int)this->nextObject; /*0x69f150*/
+                v7 = (double)(v6 - v9) / (double)*((unsigned int *)this + 48);
       }
       else
       {
@@ -1611,7 +1611,7 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
       goto LABEL_17; /*0x69f16a*/
     }
   }
-  referenceCount = this->M28; /*0x69f16c*/
+    v11 = *((unsigned int *)this + 28);
   if ( referenceCount ) /*0x69f171*/
   {
     v10 = CopyAudioData(v14, referenceCount); /*0x69f177*/
@@ -1640,9 +1640,9 @@ void E4Recv_690530::sub_690530(void * a2, int a3)
   {
     if ( Audio::IsSoundEnabled() ) /*0x69053d*/
     {
-      for ( i = 0; i < this->ambientSoundController[2]; ++i ) /*0x69054d*/
+            for ( i = 0; i < *((unsigned int *)this + 68); ++i )
       {
-        if ( !_strcmpi((char *)a2, **((char ***)&this->attachedBomb->AbstractClass + i)) ) /*0x690559*/
+                if ( !_strcmpi(a2, **(const void ***)(*((unsigned int *)this + 56) + 4 * i)) )
           break; /*0x690563*/
       }
     }
@@ -1657,13 +1657,13 @@ char * E4Recv_6905F0::sub_6905F0()
   void *ScoreFontClass_field_0x0C; // eax
   char *result; // eax
 
-  ScoreFontClass_field_0x0C = (void *)this->ScoreFontClass_field_0x0C; /*0x6905f6*/
-  *(unsigned int *)this->__pad_0 = (void*)&ScoreFontClass_vftable; /*0x6905f9*/
-  if ( ScoreFontClass_field_0x0C && this->M16 == 1 ) /*0x690607*/
+    v2 = (void *)*((unsigned int *)this + 12);
+    *this = &vt_ScoreFontClass;
+    if ( v2 && *((unsigned char *)this + 16) == 1 )
   {
     RA2_OPDEL(ScoreFontClass_field_0x0C); /*0x69060a*/
-    this->ScoreFontClass_field_0x0C = 0; /*0x690612*/
-    this->M16 = 0; /*0x690615*/
+        *((unsigned int *)this + 12) = 0;
+        *((unsigned char *)this + 16) = 0;
   }
   result = (char *)--dword_B0558C; /*0x69061d*/
   if ( !dword_B0558C ) /*0x690623*/
@@ -2271,11 +2271,11 @@ HWND E4Recv_6966D0::sub_6966D0()
   HWND DlgItem; // eax
   int result; // eax
 
-  v2 = this->lastLayer == 0; /*0x6966ec*/
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1628); /*0x6966ef*/
+    v2 = *((unsigned int *)this + 592) == 0;
+    DlgItem = GetDlgItem(*(HWND *)this, 1628);
   if ( DlgItem ) /*0x6966f9*/
     SendMessageA(DlgItem, 0xF1u, v2, 0); /*0x69670c*/
-  result = (int)GetDlgItem((HWND)this->AbstractClass, 1627); /*0x696716*/
+    result = GetDlgItem(*(HWND *)this, 1627);
   if ( result ) /*0x69671a*/
     return SendMessageA((HWND)result, 0xF1u, !v2, 0); /*0x69672c*/
   return result; /*0x69672e*/
@@ -2289,18 +2289,18 @@ HWND E4Recv_696950::sub_696950()
   int result; // eax
   HWND v3; // ebx
 
-  result = (int)GetDlgItem((HWND)this->AbstractClass, 1626); /*0x69695c*/
+    result = GetDlgItem(*(HWND *)this, 1626);
   v3 = (HWND)result; /*0x696962*/
   if ( result ) /*0x696966*/
   {
     ShowWindow((HWND)result, 0); /*0x69696c*/
     EnableWindow(v3, 0); /*0x696975*/
     SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&this->ptr_8); /*0x696987*/
-    IDA_HIBYTE(this->?) = 0; /*0x69698f*/
-    String::Trim((char *)&this->M23); /*0x696993*/
-    _strupr((char *)&this->?); /*0x696999*/
+        *((unsigned char *)this + 92) = 0;
+        String::Trim((char *)((char *)this + 32));
+    _strupr((char *)&this->ptr_8); /*0x696999*/
 // 0x6969c0
-    return ListBox::SetCustomEntry(1625, 3, &this->?); /*0x6969ab*/
+        return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)((char *)this + 32));
   }
   return result; /*0x6969b1*/
 }
@@ -2492,7 +2492,7 @@ DWORD sub_69A340()
 namespace gamemd {
 char E4Recv_69ADE0::sub_69ADE0(char a2)
 {
-  *(&this->u32_980) = a2; /*0x69ade4*/
+    *((unsigned int *)this + 1520) = a2;
   return a2; /*0x69adea*/
 }
 } // namespace gamemd
@@ -2547,7 +2547,7 @@ int sub_69DCD0()
 namespace gamemd {
 char E4Recv_69E060::sub_69E060()
 {
-  return (char)this->attachedTag; /*0x69e063*/
+    return *((unsigned int *)this + 208);
 }
 } // namespace gamemd
 
@@ -2572,8 +2572,8 @@ int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
   if ( !a1 || aP2 < 1 ) /*0x69ea03*/
     return 0; /*0x69ea29*/
   v4 = Delegate::Invoke((Straw *)this, a1, aP2); /*0x69ea0d*/
-  if ( !IDA_LOBYTE(this->M12) ) /*0x69ea0f*/
-    SHA1::Process((SHA1 *)&this->?, a1, v4); /*0x69ea1b*/
+    if ( !*((unsigned char *)this + 48) )
+        SHA1::Process((Pipe *)((char *)this + 64), (Pipe *)a1, v4);
   return v4; /*0x69ea23*/
 }
 } // namespace gamemd
@@ -2722,11 +2722,11 @@ double E4Recv_69F1B0::sub_69F1B0()
   int occupant; // edx
   int fallRate; // eax
 
-  nextObject = this->nextObject; /*0x69f1b4*/
+    v1 = *((unsigned int *)this + 48);
   if ( !nextObject ) /*0x69f1bd*/
     return 1.0; /*0x69f1c9*/
-  occupant = this->occupant; /*0x69f1ca*/
-  fallRate = this->fallRate; /*0x69f1cd*/
+    v3 = *((unsigned int *)this + 36);
+    v4 = *((unsigned int *)this + 44);
   if ( occupant != -1 ) /*0x69f1d3*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant < fallRate ) /*0x69f1df*/
@@ -2746,11 +2746,11 @@ int E4Recv_69F210::sub_69F210(int a2)
   unsigned int *v3; // ecx
   int v4; // [esp+4h] [ebp-Ch]
 
-  result = this->M28; /*0x69f210*/
+    result = *((unsigned int *)this + 28);
   if ( a2 != result ) /*0x69f21c*/
   {
-    this->M32 = result; /*0x69f21e*/
-    this->M28 = a2; /*0x69f221*/
+        *((unsigned int *)this + 32) = result;
+        *((unsigned int *)this + 28) = a2;
     v3 = &this->u32_24; /*0x69f229*/
     *v3 = dword_A8ED84; /*0x69f232*/
     v3[1] = v4; /*0x69f23a*/
@@ -2773,11 +2773,11 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
   float *vtable3; // ecx
   BOOL result; // eax
 
-  nextObject = this->nextObject; /*0x69f5e4*/
+    v1 = *((unsigned int *)this + 48);
   if ( nextObject ) /*0x69f5ed*/
   {
-    fallRate = this->fallRate; /*0x69f5f7*/
-    occupant = this->occupant; /*0x69f5fb*/
+        v3 = *((unsigned int *)this + 44);
+        v4 = *((unsigned int *)this + 36);
     if ( occupant != -1 ) /*0x69f601*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x69f60d*/
@@ -2785,7 +2785,7 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
       else
         fallRate -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x69f60f*/
     }
-    v2 = (double)((int)nextObject - fallRate) / (double)(int)this->nextObject; /*0x69f620*/
+        v2 = (double)(v1 - v3) / (double)(int)*((unsigned int *)this + 48);
   }
   else
   {
@@ -2794,7 +2794,7 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
   result = 0; /*0x69f65f*/
   if ( v2 == 1.0 ) /*0x69f630*/
   {
-    vtable3 = (float *)this->M12; /*0x69f632*/
+        v5 = *((unsigned int *)this + 12);
     if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x69f65d*/
       return 1; /*0x69f630*/
   }

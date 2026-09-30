@@ -29,7 +29,7 @@ int Mixer::ReleaseChannel(void* a1, void* a2, void* a3, void* a4)
   if ( !this->Mixer_field_00 ) /*0x406079*/
     goto LABEL_14; /*0x40607d*/
   result = *(unsigned int *)(Mixer_field_00 + 36); /*0x40607f*/
-  if ( this->u32_8 == result && this->u32_4 == *(unsigned int *)(Mixer_field_00 + 312) ) /*0x406094*/
+    if ( *((unsigned int *)this + 8) == (int *)result && *((unsigned int *)this + 4) == (int *)v3[78] )
   {
     if ( (result->Tail & 1) == 0 || *(unsigned int *)(result + 76) ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
@@ -41,8 +41,8 @@ int Mixer::ReleaseChannel(void* a1, void* a2, void* a3, void* a4)
         AudioFile::GetCallback(*(AudioFile **)(Mixer_field_00 + 176)); /*0x4060bb*/
         *(unsigned int *)(Mixer_field_00 + 24) |= 0x60u; /*0x4060c6*/
         result = AudioStream::Stop(*(AudioStream **)(Mixer_field_00 + 176)); /*0x4060cf*/
-        this->Mixer_field_00 = 0; /*0x4060d4*/
-        this->u32_8 = 0; /*0x4060d6*/
+                *this = 0;
+                *((unsigned int *)this + 8) = 0;
         return result; /*0x4060dc*/
       }
       result = *(unsigned int *)(Mixer_field_00 + 24); /*0x4060dd*/
@@ -50,9 +50,9 @@ int Mixer::ReleaseChannel(void* a1, void* a2, void* a3, void* a4)
       *(unsigned int *)(Mixer_field_00 + 24) = result; /*0x4060e2*/
     }
   }
-  this->Mixer_field_00 = 0; /*0x4060e5*/
+    *this = 0;
   LABEL_14:
-  this->u32_8 = 0; /*0x4060e7*/
+    *((unsigned int *)this + 8) = 0;
   return result; /*0x4060d9*/
 }
 } // namespace gamemd

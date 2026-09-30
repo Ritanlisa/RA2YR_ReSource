@@ -2337,7 +2337,7 @@ int E4Recv_77D3F0::sub_77D3F0()
     DeleteAndZero((ObjectClass *)&v6); /*0x77d46e*/
     return 0; /*0x77d47e*/
   }
-  p_occupant = &this->occupant; /*0x77d410*/
+    v4 = (char *)this + 144;
   while ( 1 ) /*0x77d413*/
   {
     if ( v3 >= 0 && v3 < *(int *)g_WindowManager.__pad_0 ) /*0x77d41d*/
@@ -3341,14 +3341,14 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   String v17; // [esp+8h] [ebp-8h] BYREF
 
   v16 = (char **)aP4; /*0x77085b*/
-  v6 = StaticString::Factory((StaticString *)this->AbstractClass); /*0x77085e*/
+    v6 = StaticString::Factory(*this);
   ConcatStringAlloc((char **)&v17.q4, (const char **)v6, v16); /*0x770869*/
   unknown_libname_73(&v17); /*0x770872*/
   String::Assign((String *)&aP4, &g_INI_DefaultBuffer); /*0x770880*/
   INIClass::ReadString((INIClass *)a1, a2, (char **)&v17.q4, (char **)&aP4, (int)&v17); /*0x77089d*/
   DeleteAndZero((ObjectClass *)&aP4); /*0x7708a6*/
-  v7 = *((unsigned int *)&this->nextArrayIndex * a4 + 223); /*0x7708b2*/
-  v8 = (char *)&this->q060 * a4 + 892; /*0x7708b9*/
+    v7 = (int)*((char *)this + 24 * a4 + 223);
+    v8 = (char *)this + 24 * a4 + 223;
   (*(void (**)(char *))(v7 + 12))(v8); /*0x7708c2*/
   unknown_libname_73(&aP4); /*0x7708c9*/
   for ( i = String::Tokenize(&v17, 0, Str, (void **)&aP4); i != -1; i = String::Tokenize(&v17, i, Str, (void **)&aP4) ) /*0x7708e8*/
@@ -3361,7 +3361,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
       if ( !v8[13] && v10 ) /*0x770907*/
         continue; /*0x770907*/
       v13 = *((unsigned int *)v8 + 5); /*0x770909*/
-      if ( v13 <= 0 || !(*(uint8_t (**)(char *, int, unsigned int))(this->NeedsSaveOrLink)(v8, v10 + v13, 0) ) /*0x770919*/
+            if ( v13 <= 0 || !(*((unsigned __int8 (**)(void **, int, unsigned int))*v8 + 2))(v8, (int)v10 + v13, 0) )
         continue; /*0x770919*/
     }
     v14 = *((unsigned int *)v8 + 4); /*0x770920*/
@@ -3392,8 +3392,8 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770976*/
-  vtable0 = this->AbstractClass; /*0x77097f*/
-  v6 = &this->? + 37 * a2 + 12 * a3; /*0x770990*/
+    v5 = *this;
+  v6 = &this->u32_94 + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
   if ( v7 <= 0 ) /*0x7709a0*/
@@ -3440,8 +3440,8 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770a56*/
-  vtable0 = this->AbstractClass; /*0x770a5f*/
-  v6 = &this->? + 37 * a2 + 12 * a3; /*0x770a70*/
+    v5 = *this;
+  v6 = &this->u32_94 + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
   if ( v7 <= 0 ) /*0x770a80*/
@@ -3489,8 +3489,8 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   void *v15; // [esp+10h] [ebp-4h] BYREF
 
   a3 = a3; /*0x770b38*/
-  vtable0 = this->AbstractClass; /*0x770b41*/
-  v5 = (char *)&this->q060 * a2 + 892; /*0x770b43*/
+    v4 = *this;
+    v5 = (int)((char *)this + 24 * a2 + 223);
   DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
   v6 = *((unsigned int *)v5 + 4); /*0x770b51*/
   if ( v6 <= 0 ) /*0x770b56*/
@@ -3573,7 +3573,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   void *v14; // [esp+8h] [ebp-4h] BYREF
 
   v4 = a4; /*0x770f17*/
-  v5 = &this->? + 12 * a3; /*0x770f21*/
+  v5 = &this->u32_C0 + 12 * a3; /*0x770f21*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770f27*/
   v6 = (int)v5[4]; /*0x770f2c*/
   if ( v6 <= 0 ) /*0x770f31*/
@@ -3619,7 +3619,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   void *v14; // [esp+8h] [ebp-4h] BYREF
 
   v4 = a4; /*0x770fe7*/
-  v5 = &this->? + 12 * a3; /*0x770ff1*/
+  v5 = &this->u32_C0 + 12 * a3; /*0x770ff1*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770ff7*/
   v6 = v5[4]; /*0x770ffc*/
   if ( v6 <= 0 ) /*0x771001*/
@@ -3661,29 +3661,29 @@ int E4Recv_771710::sub_771710()
   int v7; // edx
   int result; // eax
 
-  v2 = *(unsigned int *)this->isUseless; /*0x771720*/
+    v2 = *((unsigned int *)this + 3904);
   v3 = v2 - 1; /*0x771722*/
-  if ( v2 > this->targetLaserTimer[0] ) /*0x771725*/
+    if ( v2 > *((unsigned int *)this + 3824) )
   {
     do /*0x771768*/
     {
-      v4 = *(unsigned int *)this->isUseless; /*0x771728*/
+            v4 = *((unsigned int *)this + 3904);
       if ( v3 < v4 ) /*0x771730*/
       {
         v5 = v4 - 1; /*0x771732*/
         v6 = v3; /*0x771733*/
-        for ( *(unsigned int *)this->isUseless = v5; v6 < *(unsigned int *)this->isUseless; ++v6 ) /*0x77173d*/
+                for ( *((unsigned int *)this + 3904) = v5; v6 < *((unsigned int *)this + 3904); ++v6 )
           String::Reassign( /*0x77174d*/
             (String *)(this->targetLaserTimer[2] + 4 * v6),
             (const char **)(this->targetLaserTimer[2] + 4 * v6 + 4));
       }
       v7 = v3--; /*0x771763*/
     }
-    while ( v7 > this->targetLaserTimer[0] ); /*0x771768*/
+        do
   }
-  result = this->targetLaserTimer[0]; /*0x77176b*/
+    result = *((unsigned int *)this + 3824);
   if ( !result ) /*0x771773*/
-    IDA_LOBYTE(this->currentBurstIndex) = 1; /*0x771775*/
+        *((unsigned char *)this + 3808) = 1;
   return result; /*0x77177c*/
 }
 } // namespace gamemd
@@ -3712,13 +3712,13 @@ DWORD E4Recv_7717A0::sub_7717A0()
   int *v3; // esi
   int v4; // [esp+8h] [ebp-8h]
 
-  if ( *(int *)this->isUseless > 0 ) /*0x7717ae*/
+    if ( (int)*((unsigned int *)this + 976) > 0 )
   {
     StopThemeClass(1); /*0x7717b2*/
-    (*(void (**)(int *))(this->targetLaserTimer[1] + 12))(&this->targetLaserTimer[1]); /*0x7717c3*/
+        (*(void (**)(DWORD *))(*((unsigned int *)this + 960) + 12))((char *)this + 960);
   }
   result = Timer::GetTicks(); /*0x7717ca*/
-  v3 = &this->secondaryFacing[3]; /*0x7717d5*/
+    v3 = (char *)this + 940;
   *v3 = result; /*0x7717db*/
   v3[1] = v4; /*0x7717dd*/
   v3[2] = 0; /*0x7717e0*/
@@ -3738,12 +3738,12 @@ int j_Audio_IsPlaying()
 namespace gamemd {
 unsigned int * E4Recv_771850::sub_771850(int a2)
 {
-  this->M4 = 0; /*0x771859*/
-  this->q008 = 0; /*0x77185c*/
-  this->q00C = 0; /*0x77185f*/
-  this->q010 = Timer::GetTicks(); /*0x771867*/
-  this->q018 = 0; /*0x77186e*/
-  this->q01C = a2; /*0x771871*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned char *)this + 12) = 0;
+    *((unsigned int *)this + 16) = Timer::GetTicks();
+    *((unsigned int *)this + 24) = 0;
+    *((unsigned int *)this + 28) = a2;
   return this; /*0x77187c*/
 }
 } // namespace gamemd
@@ -3752,13 +3752,13 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
 namespace gamemd {
 int E4Recv_7719E0::sub_7719E0()
 {
-  this->IsInitialized = 1; /*0x7719e2*/
-  this->Items = 0; /*0x7719e6*/
-  this->Capacity = 0; /*0x7719e9*/
-  this->IsAllocated = 0; /*0x7719ec*/
-  *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7719ef*/
-  this->CapacityIncrement[0] = 10; /*0x7719f5*/
-  this->Count = 0; /*0x7719fc*/
+    *((unsigned int *)this + 48) = 1;
+    *((unsigned int *)this + 1) = 0;
+    *((unsigned int *)this + 2) = 0;
+    *((unsigned int *)this + 52) = 0;
+    *(unsigned int *)this = &vt_DynamicVectorClass_unsigned_int;
+    *((unsigned int *)this + 5) = 10;
+    *((unsigned int *)this + 4) = 0;
   return 0; /*0x7719ff*/
 }
 } // namespace gamemd
@@ -3769,15 +3769,15 @@ void E4Recv_771A00::sub_771A00()
 {
   void *Items; // eax
 
-  Items = this->Items; /*0x771a06*/
-  this->vtable0 = (void*)&VectorClass_unsigned_int_vftable; /*0x771a09*/
-  if ( Items && this->IsAllocated ) /*0x771a13*/
+    v2 = (CCINIClass *)*((unsigned int *)this + 1);
+    *(unsigned int *)this = &vt_VectorClass_unsigned_int;
+    if ( v2 && *((unsigned char *)this + 13) )
   {
     RA2_OPDEL(Items); /*0x771a19*/
-    this->Items = 0; /*0x771a21*/
+        *((unsigned int *)this + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x771a24*/
-  this->Capacity = 0; /*0x771a27*/
+    *((unsigned char *)this + 13) = 0;
+    *((unsigned int *)this + 2) = 0;
 }
 } // namespace gamemd
 
@@ -4097,8 +4097,8 @@ char AnimClass::sub_773590(int a2, int a3)
 
   this->q410 = a2; /*0x77359e*/
   Debug::Log(); /*0x7735a4*/
-  v4 = ((char *)&this->vtable1 + 2); /*0x7735ac*/
-  if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)&this->vtable3) >= 0 ) /*0x7735c6*/
+    v4 = &this->field_8;
+    if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, &this->field_8) >= 0 )
   {
     Debug::Log(); /*0x7735cd*/
     (*(void (__stdcall **)(unsigned int, unsigned int *))(*(unsigned int *)*v4 + 20))(*v4, this); /*0x7735db*/
@@ -4121,7 +4121,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
   if ( !Value ) /*0x7738c7*/
   {
     strcpy(ValueName, cbData); /*0x7738e8*/
-    if ( !this->M8 ) /*0x7738ec*/
+        if ( !*((unsigned int *)this + 8) )
       strcat(ValueName, asc_84968C); /*0x77391d*/
     cbData = Type; /*0x773932*/
     Value = RegQueryValueExA(phkResult, ValueName, 0, (LPDWORD)&Type, lpData, (LPDWORD)&cbData); /*0x77394f*/
@@ -4413,12 +4413,12 @@ unsigned int E4Recv_7767F0::sub_7767F0()
   char *referenceCount; // edi
   LPARAM lParam[10]; // [esp+8h] [ebp-28h] BYREF
 
-  referenceCount = (char *)this->M28; /*0x7767f7*/
+    v2 = *((unsigned int *)this + 28);
   if ( !referenceCount ) /*0x7767fc*/
     return 0; /*0x776873*/
   String::Trim(referenceCount); /*0x776801*/
   strcpy((char *)dword_B73080, referenceCount); /*0x77681e*/
-  lParam[1] = this->?; /*0x776835*/
+    lParam[1] = (LPARAM)*((unsigned int *)this + 16);
   lParam[0] = 1; /*0x776847*/
   lParam[4] = dword_B73080; /*0x77684f*/
   SendMessageA(qword_B730A0, 0x110Du, 0, (LPARAM)lParam); /*0x776853*/
@@ -4609,29 +4609,29 @@ void * E4Recv_776EB0::sub_776EB0()
   DWORD dwPlatformId; // eax
   struct _OSVERSIONINFOA VersionInformation; // [esp+8h] [ebp-94h] BYREF
 
-  this->AbstractClass = 0; /*0x776ec1*/
-  this->M4 = 0; /*0x776ec3*/
-  this->M8 = 0; /*0x776ec6*/
-  this->onBridge = 0; /*0x776ec9*/
-  this->isFallingDown = 0; /*0x776ecf*/
+    *(unsigned int *)this = 0;
+    *((unsigned int *)this + 1) = 0;
+    *((unsigned int *)this + 2) = 0;
+    *((unsigned char *)this + 140) = 0;
+    *((unsigned char *)this + 141) = 0;
   VersionInformation.dwOSVersionInfoSize = 148; /*0x776ed5*/
   GetVersionExA(&VersionInformation); /*0x776edd*/
   dwBuildNumber = (void *)VersionInformation.dwBuildNumber; /*0x776ee7*/
   dwMinorVersion = (void *)VersionInformation.dwMinorVersion; /*0x776eeb*/
-  this->AbstractClass = (void *)VersionInformation.dwMajorVersion; /*0x776eef*/
-  *(void **)&this->M8 = dwBuildNumber; /*0x776ef1*/
+    *(unsigned int *)this = VersionInformation.dwMajorVersion;
+    *((unsigned int *)this + 2) = dwBuildNumber;
   dwPlatformId = VersionInformation.dwPlatformId; /*0x776ef4*/
-  *(void **)&this->M4 = dwMinorVersion; /*0x776efd*/
+    *((unsigned int *)this + 1) = dwMinorVersion;
   if ( dwPlatformId == 1 ) /*0x776f02*/
   {
-    this->onBridge = 1; /*0x776f04*/
+        *((unsigned char *)this + 140) = 1;
   }
   else if ( dwPlatformId == 2 ) /*0x776f0f*/
   {
-    this->isFallingDown = 1; /*0x776f11*/
+        *((unsigned char *)this + 141) = 1;
   }
-  strncpy((char *)&this->?, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
-  IDA_HIBYTE(this->parachute) = 0; /*0x776f2a*/
+    strncpy((char *)this + 12, VersionInformation.szCSDVersion, 0x7Fu);
+    *((unsigned char *)this + 139) = 0;
   return this; /*0x776f32*/
 }
 } // namespace gamemd

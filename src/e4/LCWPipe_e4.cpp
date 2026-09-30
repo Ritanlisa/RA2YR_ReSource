@@ -16,10 +16,10 @@ int LCWPipe::Dtor()
 v2 = (void *)((unsigned int)((void *)this->u32_14));
   *(unsigned int *)this->__pad_0 = (void*)&LCWPipe_vftable; /*0x552066*/
   RA2_OPDEL(v2); /*0x55206d*/
-  v3 = (void *)this->u32_18; /*0x552072*/
-  this->u32_14 = 0; /*0x552075*/
+    v3 = (void *)*((unsigned int *)this + 24);
+    *((unsigned int *)this + 20) = 0;
   RA2_OPDEL(v3); /*0x55207d*/
-  this->u32_18 = 0; /*0x552087*/
+    *((unsigned int *)this + 24) = 0;
 // 0x631c80
   return Pipe::Dtor(); /*0x552093*/
 }

@@ -16,10 +16,10 @@ int Bounds::Subtract(void* a1, void* a2)
   int v6; // ecx
   int v7; // edx
 
-  v3 = this->u32_4; /*0x487ee0*/
+    v3 = *((unsigned int *)this + 4);
   Bounds_field_00 = this->Bounds_field_00; /*0x487ee3*/
-  v5 = this->u32_8; /*0x487ef1*/
-  v6 = this->u32_C; /*0x487ef4*/
+    v5 = *((unsigned int *)this + 8);
+    v6 = *((unsigned int *)this + 12);
   v7 = v3 - a2[1]; /*0x487ef7*/
   *(unsigned int *)aP1 = Bounds_field_00 - *a2; /*0x487f01*/
   aP1[1] = v7; /*0x487f06*/

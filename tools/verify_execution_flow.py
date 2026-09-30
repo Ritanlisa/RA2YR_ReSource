@@ -1260,10 +1260,42 @@ def _build_ida_cfg_events(efv, ida_decompiled, this_type, M, class_name=None):
     return cfg
 
 
+def _cpp_this_alias(cpp_text, class_name):
+    """G41: the corpus may demote `this` into the def's first param (e.g.
+    `Cls::M(_DWORD *Block, ...)` with the body on `Block->`). Enabled only
+    when the body NEVER uses `this->` and the candidate alias actually
+    appears as a receiver — a plain first param stays a plain local."""
+    if not class_name or not cpp_text:
+        return None
+    bidx = cpp_text.find('{')
+    head = cpp_text[:bidx] if bidx >= 0 else cpp_text
+    body = cpp_text[bidx:] if bidx >= 0 else ''
+    if 'this->' in body:
+        return None
+    m = re.match(r'[^;(]*?\(\s*([^,()]+)', head.strip())
+    if not m:
+        return None
+    pm = re.search(r'([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*$', m.group(1).strip())
+    if not pm or pm.group(1) in ('void', 'this'):
+        return None
+    alias = pm.group(1)
+    # active when used as a receiver (`Block->M`) or in raw pointer
+    # arithmetic (`*(Block + 1)` — the restored cache-truth form)
+    return alias if re.search(r'\b%s\s*(?:->|\+)' % re.escape(alias),
+                              body) else None
+
+
 def _build_cpp_cfg_events(efv, cpp_text, class_name, M, signals):
     cfg = efv["cpp_cfg"].build_cpp_cfg(cpp_text)
     cfg = efv["normalize"].normalize(cfg)
-    efv["cpp_events"].extract_events_into(cfg, class_name, maps=M, signals=signals)
+    try:
+        efv["cpp_events"].extract_events_into(cfg, class_name, maps=M,
+                                              signals=signals,
+                                              this_alias=_cpp_this_alias(
+                                                  cpp_text, class_name))
+    except TypeError:
+        efv["cpp_events"].extract_events_into(cfg, class_name, maps=M,
+                                              signals=signals)
     cfg = efv["normalize"].normalize(cfg)
     canonicalize_branch_polarity(cfg)
     return cfg

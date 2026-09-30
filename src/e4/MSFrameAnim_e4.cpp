@@ -41,7 +41,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   m_8 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
-    IDA_LOBYTE(this->q00C) = 0; /*0x769ff7*/
+        *((unsigned int *)this + 48) = 0;
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
@@ -86,35 +86,35 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         v6 = 0; /*0x76a03d*/
       }
     }
-    IDA_LOBYTE(this->q00C) = 1; /*0x76a06f*/
+        *((unsigned int *)this + 48) = 1;
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
-    if ( *(unsigned int *)&this->q004 ) /*0x76a075*/
+        if ( *((unsigned int *)this + 1) )
     {
-      if ( a2 >= (int)(this->q008) ) /*0x76a081*/
-        m_8 = *(unsigned int *)&this->q008; /*0x76a083*/
+            if ( a2 >= *((unsigned int *)this + 2) )
+                v3 = *((unsigned int *)this + 2);
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
-        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76a096*/
-      if ( this->IsAllocated ) /*0x76a0a0*/
+                ComPtr::Set(&v6[2 * i], *(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4));
+            if ( *((unsigned int *)this + 52) )
       {
-        v11 = *(void (****)(unsigned int, int))&this->q004; /*0x76a0a7*/
+                v11 = (void (***)(unsigned int, int))*((unsigned int *)this + 1);
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
-        *(unsigned int *)&this->q004 = 0; /*0x76a0b4*/
+                *((unsigned int *)this + 1) = 0;
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *(void **)&this->q004 = v6; /*0x76a0ca*/
-    *(unsigned int *)&this->q008 = m_8; /*0x76a0cd*/
-    this->IsAllocated = a3 == 0; /*0x76a0d0*/
+        *((unsigned int *)this + 1) = v6;
+        *((unsigned int *)this + 2) = v3;
+        *((unsigned int *)this + 52) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a0d9*/
+        (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this);
   }
-  v12 = *(unsigned int *)&this->q008; /*0x76a0dc*/
-  if ( v12 < (int)(this->q010) ) /*0x76a0e4*/
-    *(unsigned int *)&this->q010 = v12; /*0x76a0e6*/
+    v12 = *((unsigned int *)this + 2);
+    if ( v12 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v12;
   return 1; /*0x76a0e9*/
 }
 }
@@ -144,8 +144,8 @@ void MSFrameAnim::Draw(int a1, int * a2)
 
   if ( byte_8487BD ) /*0x767efc*/
   {
-    v2 = (*(int (**)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (**)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
+        v2 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1);
+        v3 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1);
     if ( a2 ) /*0x767f1b*/
     {
       v4 = a2[1]; /*0x767f1f*/
@@ -173,9 +173,9 @@ namespace gamemd {
 unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 {
   *(unsigned int *)a1->__pad_0 = 0; /*0x767f8c*/
-  a1->MSFrameAnim_field_0x4 = 0; /*0x767f99*/
-  a1->MSFrameAnim_field_0x8 = (void *)640; /*0x767f9c*/
-  a1->MSFrameAnim_field_0xC = (void *)480; /*0x767f9f*/
+    a1[1] = 0;
+    a1[2] = 640;
+    a1[3] = 480;
   return a1->__pad_0; /*0x767fa2*/
 }
 } // namespace gamemd
@@ -188,14 +188,14 @@ int MSFrameAnim::initAnimation()
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x769c56*/
-  *(unsigned int *)&this->q010 = 0; /*0x769c59*/
-  if ( v2 && this->IsAllocated ) /*0x769c60*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     result = (**v2)(v2, 3); /*0x769c6d*/
-    *(unsigned int *)&this->q004 = 0; /*0x769c6f*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x769c72*/
-  *(unsigned int *)&this->q008 = 0; /*0x769c75*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
   return result; /*0x769c78*/
 }
 } // namespace gamemd
@@ -204,8 +204,8 @@ int MSFrameAnim::initAnimation()
 namespace gamemd {
 unsigned int MSFrameAnim::startAnimation(int a2)
 {
-  if ( IDA_LOBYTE(this->q00C) ) /*0x769c80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x769c95*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 3;
   else
     return 0; /*0x769c87*/
 }
@@ -218,14 +218,14 @@ void MSFrameAnim::stopAnimation()
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x769cd6*/
-  *(unsigned int *)&this->q010 = 0; /*0x769cd9*/
-  if ( v2 && this->IsAllocated ) /*0x769ce0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x769ce6*/
-    *(unsigned int *)&this->q004 = 0; /*0x769cee*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x769cf1*/
-  *(unsigned int *)&this->q008 = 0; /*0x769cf4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -233,8 +233,8 @@ void MSFrameAnim::stopAnimation()
 namespace gamemd {
 unsigned int MSFrameAnim::pauseAnimation(int a2)
 {
-  if ( IDA_LOBYTE(this->q00C) ) /*0x769d00*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x769d15*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x769d07*/
 }
@@ -260,11 +260,11 @@ int MSFrameAnim::getCurrentFrame(int a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x76a100*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x76a103*/
   if ( m_10 <= 0 ) /*0x76a108*/
     return -1; /*0x76a123*/
-  for ( i = (unsigned int *)(*(unsigned int *)&this->q004 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76a111*/
+    for ( i = (unsigned int *)(*((unsigned int *)this + 4) + 4); *i != *(unsigned int *)(a2 + 4); i += 2 )
   {
     if ( ++result >= m_10 ) /*0x76a121*/
       return -1; /*0x76a121*/
@@ -283,39 +283,39 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x76a2bc*/
   {
-    IDA_LOBYTE(this->q00C) = 0; /*0x76a2c2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x76a2da*/
-    IDA_LOBYTE(this->q00C) = 1; /*0x76a2e2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x76a2e8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = *(unsigned int *)&this->q008; /*0x76a2ef*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x76a2f4*/
         m_8 = a2; /*0x76a2f6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x76a2fc*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x76a301*/
-      if ( this->IsAllocated ) /*0x76a30e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x76a319*/
-        *(unsigned int *)&this->q004 = 0; /*0x76a321*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x76a32a*/
-    *(unsigned int *)&this->q008 = a2; /*0x76a332*/
-    this->IsAllocated = a3 == 0; /*0x76a335*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
                                                                                               + 12))(this);
   }
-  v7 = *(unsigned int *)&this->q008; /*0x76a341*/
-  if ( v7 < (int)(this->q010) ) /*0x76a349*/
-    *(unsigned int *)&this->q010 = v7; /*0x76a34b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x76a34e*/
 }
 } // namespace gamemd
@@ -328,11 +328,11 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x76a360*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x76a363*/
   if ( m_10 <= 0 ) /*0x76a368*/
     return -1; /*0x76a37f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x76a36e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x76a37d*/
       return -1; /*0x76a37d*/
@@ -348,13 +348,13 @@ DynamicVector * MSFrameAnim::setPosition(char a2)
 
   v3 = (unsigned int)(*(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
-  if ( v3 && this->IsAllocated ) /*0x76a690*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     (**v3)(v3, 3); /*0x76a69f*/
-    *(unsigned int *)&this->q004 = 0; /*0x76a6a1*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned int *)&this->q008 = 0; /*0x76a6b2*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     RA2_OPDEL(); /*0x76a6bc*/
   return this; /*0x76a6c6*/
@@ -369,13 +369,13 @@ DynamicVector * MSFrameAnim::setScale(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
-  if ( v3 && this->IsAllocated ) /*0x76a730*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x76a738*/
-    *(unsigned int *)&this->q004 = 0; /*0x76a740*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned int *)&this->q008 = 0; /*0x76a751*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     RA2_OPDEL(); /*0x76a75b*/
   return this; /*0x76a765*/

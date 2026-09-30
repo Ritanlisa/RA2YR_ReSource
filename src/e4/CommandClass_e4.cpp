@@ -206,7 +206,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   aP1 = (gamemd::ToolTipManager *)(aP1);
   v4 = (int *)((gamemd::ToolTipManager *)((int *)(&this->u32_E88)));
   aP1 = (gamemd::ToolTipManager *)(*(unsigned int *)aP1);
-  if ( this->u32_250 ) /*0x724596*/
+    if ( *((unsigned int *)this + 2368) )
   {
     if ( (uint8_t)CommandClass::executeAction(&aP1) ) /*0x7245a4*/
       return 0; /*0x7245ab*/
@@ -228,8 +228,8 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     v7[4] = aP1->Duration; /*0x7245ff*/
     v7[5] = aP1->DisplayTimer; /*0x724605*/
     *((unsigned char *)v7 + 24) = aP1->q018; /*0x724611*/
-    v9 = this->u32_23C; /*0x724614*/
-    if ( this->q244 < v9 /*0x724641*/
+        v9 = *((unsigned int *)this + 2288);
+        if ( *((unsigned int *)this + 2320) < v9
       || (this->u8_241 || !v9)
       && (v10 = this->u32_248, v10 > 0)
       && (*(uint8_t (**)(int, int, unsigned int))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )

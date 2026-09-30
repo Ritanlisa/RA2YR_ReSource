@@ -22,11 +22,11 @@ int FoggedObject::DrawVector_Constructor(void* a1)
   int v9; // ecx
 
   v4 = 0; /*0x4d2db9*/
-  this->FoggedObject_field_0x4 = 0; /*0x4d2dbd*/
-  this->u32_8 = aP1; /*0x4d2dc0*/
-  this->u32_C = 1; /*0x4d2dc3*/
-  this->u32_D = 0; /*0x4d2dc7*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = aP1;
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
+    *this = &vt_VectorClass_FoggedObjectClass_DrawRecord;
   if ( !aP1 ) /*0x4d2dd0*/
     return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
@@ -51,8 +51,8 @@ int FoggedObject::DrawVector_Constructor(void* a1)
       }
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
-    this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
-    this->u32_D = 1; /*0x4d2e34*/
+        *((unsigned int *)this + 4) = v4;
+        *((unsigned char *)this + 13) = 1;
     return this; /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
@@ -70,7 +70,7 @@ int FoggedObject::DrawVector_Constructor(void* a1)
     }
     while ( aP1 ); /*0x4d2df4*/
   }
-  this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
+    *((unsigned int *)this + 4) = aP2;
   return this; /*0x4d2dfb*/
 }
 }
@@ -79,15 +79,15 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->q004; /*0x4d2d13*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
-  if ( v3 && this->IsAllocated ) /*0x4d2d20*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_FoggedObjectClass_DrawRecord;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4d2d28*/
-    *(unsigned int *)&this->q004 = 0; /*0x4d2d30*/
+        *(Block + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x4d2d3b*/
-  *(unsigned short *)&this->q008 = 0; /*0x4d2d41*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     RA2_OPDEL(); /*0x4d2d4b*/
   return this; /*0x4d2d55*/

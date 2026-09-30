@@ -42,7 +42,7 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
   }
   else
   {
-    *(&this->ptr_88) = 0; /*0x49b7cc*/
+        *((unsigned int *)this + 112) = 0;
   }
   return result; /*0x49b7c5*/
 }
@@ -56,15 +56,15 @@ void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
   char *v6; // edi
 
   strncpy(aP1, 4u); /*0x4cb5ed*/
-  this->ptr_4 = 2; /*0x4cb5f4*/
-  this->u16_6 = 1; /*0x4cb5fa*/
+    *((unsigned short *)Destination + 2) = 2;
+    *((unsigned short *)Destination + 3) = 1;
   v4 = (char *)operator new(1u); /*0x4cb600*/
-  v5 = *(unsigned int *)&this->u32_C; /*0x4cb611*/
-  this->ptr_8 = v4; /*0x4cb613*/
+    v5 = *((unsigned __int16 *)Destination + 3);
+    *((unsigned int *)Destination + 2) = v4;
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + 4 * (v5 >> 2), v5 & 3); /*0x4cb625*/
-  this->u32_C = 0; /*0x4cb628*/
+    *((unsigned int *)Destination + 3) = 0;
   return this; /*0x4cb627*/
 }
 }
@@ -72,9 +72,9 @@ void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 namespace gamemd {
 int String::Release()
 {
-  if ( this->u32_C ) /*0x5bd5a3*/
+    if ( *((unsigned int *)this + 12) )
     RA2_OPDEL(this->u32_C); /*0x5bd5ab*/
-  this->u32_C = 0; /*0x5bd5b3*/
+    *((unsigned int *)this + 12) = 0;
 }
 }
 // 0x5D0380
@@ -90,9 +90,9 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   char *v10; // [esp+Ch] [ebp-4h] BYREF
 
   String::Assign(0); /*0x5d0389*/
-  this->ptr_4 = 0; /*0x5d0392*/
-  this->ptr_8 = 0; /*0x5d0395*/
-  this->u32_C = 0; /*0x5d0398*/
+    *((unsigned int *)this + 16) = 0;
+    *((unsigned int *)this + 32) = 0;
+    *((unsigned int *)this + 48) = 0;
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
   if ( String::Length((String *)&v10) ) /*0x5d03bc*/
@@ -101,19 +101,19 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   if ( String::Length((String *)&v10) ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
-    this->ptr_4 = v5; /*0x5d03fb*/
+        *((unsigned int *)this + 16) = v5;
   }
   v6 = String::Tokenize(aP1, v4, Str, (void **)&v10); /*0x5d0414*/
   if ( String::Length((String *)&v10) ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
-    this->ptr_8 = v7; /*0x5d0428*/
+        *((unsigned int *)this + 32) = v7;
   }
   String::Tokenize(aP1, v6, Str, (void **)&v10); /*0x5d0438*/
   if ( String::Length((String *)&v10) ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
-    this->u32_C = v8; /*0x5d0453*/
+        *((unsigned int *)this + 48) = v8;
   }
   DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
   return this; /*0x5d0461*/
@@ -162,8 +162,8 @@ ControlClass * * String::To_Waypoint()
   int v2; // esi
 
   v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->ptr_4)) ) /*0x7636ba*/
-    return toupper(this->ptr_4) + 26 * v2 - 39; /*0x7636db*/
+    if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*((unsigned int *)this + 4))) )
+        return toupper(*((unsigned int *)this + 4)) + 26 * v2 - 39;
   else
     return v2; /*0x7636e0*/
 }

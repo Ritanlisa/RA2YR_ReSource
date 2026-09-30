@@ -23,12 +23,12 @@ void AudioStream::ReleaseSubsystem()
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (****)(unsigned int, int))&this->u32_110; /*0x401913*/
+    v2 = (int (***)(unsigned int, int))*((unsigned int *)this + 272);
   *(unsigned int *)&this-((unsigned int *)(>__pad_D8))[64] = 0; /*0x401919*/
   if ( v2 ) /*0x401925*/
   {
     result = (**v2)(v2, 1); /*0x40192b*/
-    *(unsigned int *)&this->u32_110 = 0; /*0x40192d*/
+        *((unsigned int *)this + 272) = 0;
   }
   return result; /*0x401937*/
 }
@@ -86,24 +86,24 @@ int AudioStream::Reset()
 {
   *(unsigned int *)this->__pad_0 = 0; /*0x403822*/
   this-((unsigned int *)(>AudioStream_field_0x4))[0] = 0; /*0x403824*/
-  this->AudioStream_field_0x8 = 0; /*0x403827*/
-  this->AudioStream_field_0xC = 0; /*0x40382a*/
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
   this-((unsigned int *)(>AudioStream_field_0x10))[0] = 0; /*0x40382d*/
   this-((unsigned int *)(>AudioStream_field_0x14))[0] = 0; /*0x403830*/
   this-((unsigned int *)(>AudioStream_field_0x18))[0] = 0; /*0x403833*/
-  this->AudioStream_field_0x1C = 0; /*0x403836*/
-  this->AudioStream_field_0x28 = 0; /*0x403839*/
+    *((unsigned int *)this + 28) = 0;
+    *((unsigned int *)this + 40) = 0;
   this-((unsigned int *)(>AudioStream_field_0x2C))[0] = 0; /*0x40383c*/
-  this->AudioStream_field_0x48 = 0; /*0x40383f*/
-  this->AudioStream_field_0x50 = 0; /*0x403842*/
-  this->AudioStream_field_0x40 = 5000; /*0x403845*/
-  this->AudioStream_field_0x44 = 0; /*0x40384c*/
-  this->AudioStream_field_0x30 = 0; /*0x40384f*/
+    *((unsigned int *)this + 72) = 0;
+    *((unsigned int *)this + 80) = 0;
+    *((unsigned int *)this + 64) = 5000;
+    *((unsigned int *)this + 68) = 0;
+    *((unsigned int *)this + 48) = 0;
   this-((unsigned int *)(>AudioStream_field_0x34))[0] = 0; /*0x403852*/
-  this->AudioStream_field_0x38 = 0; /*0x403855*/
-  this->AudioStream_field_0x3C = 0; /*0x403858*/
-  this->AudioStream_field_0x54 = 0; /*0x40385b*/
-  this->AudioStream_field_0x4C = 0; /*0x40385e*/
+    *((unsigned int *)this + 56) = 0;
+    *((unsigned int *)this + 60) = 0;
+    *((unsigned int *)this + 84) = 0;
+    *((unsigned int *)this + 76) = 0;
   return 0; /*0x403861*/
 }
 }
@@ -120,8 +120,8 @@ int AudioStream::ResetChannel(int a2, int a3)
 namespace gamemd {
 int AudioStream::ResetChannel2(int a2, int a3)
 {
-  this->AudioStream_field_0x20 = a2; /*0x4038c4*/
-  this->AudioStream_field_0x24 = a3; /*0x4038cb*/
+    *((unsigned int *)this + 32) = a2;
+    *((unsigned int *)this + 36) = a3;
   return a2; /*0x4038ce*/
 }
 }
@@ -141,22 +141,22 @@ int AudioStream::SetupPlayback()
   this->AudioStream_field_0x1E0 = (unsigned int)(v1);
   if ( !v1 || (this-((unsigned int *)(>AudioStream_field_0x18))[0] & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
-  AudioStream_field_0x24 = this->AudioStream_field_0x24; /*0x40471c*/
+    v4 = *((unsigned int *)this + 144);
   if ( *(unsigned int *)(AudioStream_field_0x24 + 88) >= 0x21u ) /*0x404727*/
     return (int)this->AudioStream_field_0x28 + 28; /*0x404727*/
   if ( (*(unsigned char *)(AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40472d*/
   {
     v3 = (unsigned int)(1);
     this->AudioStream_field_0x1E0 = (unsigned int)(v1 - 1);
-    this->AudioStream_field_0xAC = 0; /*0x40473b*/
+        *((unsigned int *)this + 688) = 0;
   }
   else
   {
     this->AudioStream_field_0xAC = (unsigned int)((void *)-1);
   }
   if ( (*(unsigned char *)(AudioStream_field_0x24 + 16) & 0x40) != 0 ) /*0x404751*/
-    --this->AudioStream_field_0x1E0; /*0x404753*/
-  if ( (int)this->AudioStream_field_0x1E0 <= 0 ) /*0x404761*/
+        --*((unsigned int *)this + 1920);
+    if ( *((int *)this + 1920) <= 0 )
   {
     *(unsigned int *)(AudioStream_field_0x24 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
@@ -170,7 +170,7 @@ int AudioStream::SetupPlayback()
     ++v3; /*0x40477d*/
   }
   while ( v2 < (int)this->AudioStream_field_0x1E0 ); /*0x404780*/
-  if ( (this-((unsigned int *)(>AudioStream_field_0x18))[0] & 8) == 0 && (*(unsigned char *)(this->AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40478f*/
+    if ( (*((unsigned char *)this + 96) & 8) == 0 && (*(unsigned char *)(*((unsigned int *)this + 144) + 16) & 0x20) != 0 )
     return (int)this->AudioStream_field_0x28 + 28; /*0x402030*/
   else
 // 0x4047b0
@@ -193,16 +193,16 @@ int AudioStream::SelectRandom()
 
   v2 = (int)(*(unsigned int **)(&this->q00C6));
   v3 = (void *)((int)((void *)(v2[4])));
-  if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
+    if ( v2[22] >= 0x21u && (*((unsigned char *)this + 96) & 0x20) == 0 )
     return 0; /*0x4047c5*/
-  v4 = *(unsigned int *)&this->q1E0; /*0x4047cb*/
-  if ( v4 && (this->u32_18 & 0x20) == 0 ) /*0x4047d9*/
+    v4 = *((unsigned int *)this + 1920);
+    if ( v4 && (*((unsigned char *)this + 96) & 0x20) == 0 )
   {
     if ( ((unsigned int)(v3)& 2) != 0 ) /*0x4047de*/
     {
       v5 = (int)(Random::Range(&Randomizer_Global, 0, (unsigned int)(v4)- 1));
       v6 = (void *)((unsigned int)(this->q1E0)- 1);
-      *(unsigned int *)&this->q0AC = *(unsigned int *)(&(unsigned int)(this->u32_10)* v5 + 352); /*0x404804*/
+            *((unsigned int *)this + 688) = *(unsigned int *)((char *)this + 16 * v5 + 352);
       v5 = v5; /*0x40480c*/
       if ( v5 < (int)(v6) ) /*0x40480f*/
       {
@@ -218,31 +218,31 @@ int AudioStream::SelectRandom()
     }
     else
     {
-      ++this->q0AC; /*0x404829*/
+            ++*((unsigned int *)this + 688);
     }
-    --this->q1E0; /*0x404836*/
-    v9 = *(unsigned int *)(&(unsigned int)(this->u32_10)* this->q0AC + 40); /*0x404842*/
+        --*((unsigned int *)this + 1920);
+        v9 = *(unsigned int *)((char *)this + 16 * *((unsigned int *)this + 688) + 40);
     return v9 + 28; /*0x404847*/
   }
-  if ( ((unsigned int)(v3)& 1) != 0 && (this->u32_18 & 0x20) == 0 ) /*0x404855*/
+    if ( (v3 & 1) != 0 && (*((unsigned char *)this + 96) & 0x20) == 0 )
   {
     v10 = v2[19]; /*0x404857*/
-    if ( !v10 || this->u32_1E4 < v10 - 1 ) /*0x404867*/
+        if ( !v10 || *((unsigned int *)this + 1936) < v10 - 1 )
     {
-      ++this->u32_1E4; /*0x404872*/
+            ++*((unsigned int *)this + 1936);
 // 0x404700
       return AudioStream::SetupPlayback(); /*0x404879*/
     }
   }
   if ( ((unsigned int)(v3)& 0x40) == 0 ) /*0x404881*/
     return 0; /*0x404881*/
-  if ( (this->u32_18 & 0x10) != 0 ) /*0x404887*/
+    if ( (*((unsigned char *)this + 96) & 0x10) != 0 )
     return 0; /*0x404887*/
-  v12 = this->u32_A8; /*0x404889*/
+    v12 = *((unsigned int *)this + 672);
   if ( v12 < 1 ) /*0x404892*/
     return 0; /*0x4048aa*/
-  this->u32_18 |= 0x10u; /*0x40489a*/
-  v9 = *(unsigned int *)(&(unsigned int)(this->u32_10)* v12 + 36); /*0x40489d*/
+    *((unsigned int *)this + 96) |= 0x10u;
+    v9 = *(unsigned int *)((char *)this + 16 * v12 + 36);
   return v9 + 28; /*0x404878*/
 }
 }
@@ -355,7 +355,7 @@ int AudioStream::SetPlaybackCallback()
   v1 = this-((unsigned int *)(>AudioStream_field_0xC0))[0]; /*0x407a31*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a3b*/
   {
-    *(unsigned int *)(v1 + 32) = this->Audio::Callback(); /*0x407a42*/
+        *(unsigned int *)(v1 + 32) = Audio::Callback();
     *(unsigned int *)(v1 + 36) = v2; /*0x407a45*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a48*/
@@ -376,7 +376,7 @@ int AudioStream::ProcessCallback()
   v1 = this-((unsigned int *)(>AudioStream_field_0xC0))[0]; /*0x407a61*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a6b*/
   {
-    *(unsigned int *)(v1 + 32) = this->Audio::Callback(); /*0x407a72*/
+        *(unsigned int *)(v1 + 32) = Audio::Callback();
     *(unsigned int *)(v1 + 36) = v2; /*0x407a75*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a78*/
@@ -409,7 +409,7 @@ namespace gamemd {
 int AudioStream::ReadStreamAndReturn()
 {
   ReadAudioStream((int *)this->__pad_0, 0); /*0x409315*/
-  return (int)this->AudioStream_field_0x8; /*0x40931d*/
+    return *((unsigned int *)this + 8);
 }
 }
 // 0x4A33A0
@@ -628,7 +628,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
-  v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v78); /*0x4beae2*/
+    v8 = (int *)(*(int (**)(void *, MouseClass **))(*(unsigned int *)this + 120))(this, &v76);
   v9 = ClipRectIntersection(&v76, aP1, v8, 0, 0); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
@@ -700,8 +700,8 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     else
       v89 = (char *)(v15 - v29); /*0x4becf1*/
   }
-  (*(void (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 112))(this); /*0x4bed0b*/
-  v101 = (*(int (**)(AudioStream *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v80, v81); /*0x4bed25*/
+    (*(void (**)(void *))(*(unsigned int *)this + 112))(this);
+    v99 = (*(int (**)(void *, MouseClass *, int))(*(unsigned int *)this + 92))(this, aP1a, v79);
   if ( !g_ZBufferDescriptor ) /*0x4bed2e*/
     return 0; /*0x4bed2e*/
   Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4bed38*/
@@ -725,7 +725,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   v72 = v82 - v80; /*0x4bee0c*/
   v97 = v83 - v81; /*0x4bee19*/
   v90 = (unsigned int *)(v92 - v89); /*0x4bee2b*/
-  v37 = (*(int (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 116))(this); /*0x4bee32*/
+    v35 = (*(int (**)(void *))(*(unsigned int *)this + 116))(this);
   v66 = v37; /*0x4bee3c*/
   if ( v97 < 0 ) /*0x4bee42*/
   {
@@ -976,7 +976,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     }
   }
   LABEL_52:
-  (*(void (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 96))(this); /*0x4bf132*/
+    (*(void (**)(void *))(*(unsigned int *)this + 96))(this);
   return 1; /*0x4bf13b*/
 }
 }
@@ -987,9 +987,9 @@ int AudioStream::SetFlag4C()
   int result; // eax
 
   (*(void (__cdecl **)(int, int, unsigned int, unsigned int))&this->q160)(this, 4, 0, 0); /*0x7bd27a*/
-  result = *(unsigned int *)((char *)&this->q1992 + 1374); /*0x7bd27d*/
+    result = *((unsigned int *)this + 7920);
   IDA_LOBYTE(result) = result | 0x40; /*0x7bd286*/
-  *(unsigned int *)((char *)&this->q1992 + 1374) = result; /*0x7bd288*/
+    *((unsigned int *)this + 7920) = result;
   return result; /*0x7bd28e*/
 }
 }
@@ -1011,63 +1011,63 @@ int AudioStream::CalcReadPos()
   unsigned int i; // ecx
   unsigned int v17; // [esp+10h] [ebp-Ch]
 
-  if ( (*(unsigned int *)&this->u8_84 & 1) == 0 ) /*0x7bd2e1*/
+    if ( (*((unsigned char *)this + 528) & 1) == 0 )
     return -1; /*0x7bd2e1*/
-  if ( !this->u32_78C ) /*0x7bd2e7*/
+    if ( !*((unsigned int *)this + 7728) )
     return -1; /*0x7bd2e7*/
-  v2 = this->u32_7B0; /*0x7bd2f5*/
+    v2 = *((unsigned int *)this + 7872);
   if ( !v2 ) /*0x7bd2fd*/
     return -1; /*0x7bd2fd*/
-  v3 = this->u32_7AC; /*0x7bd303*/
-  v4 = this->u32_790; /*0x7bd30f*/
-  v5 = *(unsigned int *)this->__pad_9C; /*0x7bd315*/
-  v6 = (char *)(v3 + this->u32_7A8); /*0x7bd31b*/
+    v3 = *((unsigned int *)this + 7856);
+    v4 = *((unsigned int *)this + 7744);
+    v5 = *((unsigned int *)this + 624);
+    v6 = (char *)(v3 + *((unsigned int *)this + 7840));
   v7 = v2 - v3; /*0x7bd31d*/
-  v17 = this->u32_790 / v5; /*0x7bd32b*/
+    v17 = *((unsigned int *)this + 7744) / v5;
   v8 = (v4 + v7) / v5; /*0x7bd332*/
-  v9 = this->u32_79C; /*0x7bd334*/
+    v9 = *((unsigned int *)this + 7792);
   if ( v8 >= v9 ) /*0x7bd33c*/
     v8 -= v9; /*0x7bd33e*/
-  if ( *(unsigned char *)(this->u32_794 + v8) == 1 ) /*0x7bd34a*/
+    if ( *(unsigned char *)(*((unsigned int *)this + 7760) + v8) == 1 )
   {
-    ++*(unsigned int *)&this->__pad_D8[180]; /*0x7bd355*/
+        ++*((unsigned int *)this + 1584);
     return -11; /*0x7bd365*/
   }
   if ( v17 > v8 ) /*0x7bd36a*/
   {
-    v13 = (unsigned int)this->AudioStream_field_0x98 - v4; /*0x7bd3cd*/
-    qmemcpy((void *)(this->u32_78C + v4), v6, v13); /*0x7bd3e4*/
-    qmemcpy(*((void **)&this->u32_C03), &v6[v13], v7 - v13); /*0x7bd404*/
+        v13 = *((unsigned int *)this + 608) - v4;
+        qmemcpy((void *)(*((unsigned int *)this + 7728) + v4), v6, v13);
+        qmemcpy(*(void **)((char *)this + 7728), &v6[v13], v7 - v13);
     v17 = v17; /*0x7bd40f*/
-    v15 = this->u32_79C; /*0x7bd413*/
-    this->u32_790 = v7 - v13; /*0x7bd41b*/
-    this->u32_7B0 = 0; /*0x7bd421*/
-    this->u32_7AC = 0; /*0x7bd427*/
+        v15 = *((unsigned int *)this + 7792);
+        *((unsigned int *)this + 7744) = v7 - v13;
+        *((unsigned int *)this + 7872) = 0;
+        *((unsigned int *)this + 7856) = 0;
     if ( v17 < v15 ) /*0x7bd42d*/
     {
       do /*0x7bd443*/
       {
         ++v17; /*0x7bd435*/
-        *(unsigned char *)(this->u32_794 + v17 - 1) = 1; /*0x7bd436*/
+                *(unsigned char *)(*((unsigned int *)this + 7760) + v14 - 1) = 1;
       }
-      while ( v17 < this->u32_79C ); /*0x7bd443*/
+            do
     }
-    for ( i = 0; i < v8; *(unsigned char *)(this->u32_794 + i - 1) = 1 ) /*0x7bd449*/
+        for ( i = 0; i < v8; *(unsigned char *)(*((unsigned int *)this + 7760) + i - 1) = 1 )
       ++i; /*0x7bd451*/
     return -1; /*0x7bd459*/
   }
-  qmemcpy((void *)(this->u32_78C + v4), v6, v7); /*0x7bd37b*/
-  v11 = this->u32_790; /*0x7bd384*/
-  this->u32_7B0 = 0; /*0x7bd38c*/
-  this->u32_7AC = 0; /*0x7bd392*/
+    qmemcpy((void *)(*((unsigned int *)this + 7728) + v4), v6, v7);
+    v11 = *((unsigned int *)this + 7744);
+    *((unsigned int *)this + 7872) = 0;
+    *((unsigned int *)this + 7856) = 0;
   v17 = v17; /*0x7bd398*/
-  this->u32_790 = v7 + v11; /*0x7bd3a0*/
+    *((unsigned int *)this + 7744) = v7 + v11;
   if ( v17 >= v8 ) /*0x7bd3a6*/
     return -1; /*0x7bd45e*/
   do /*0x7bd3ba*/
   {
     ++v17; /*0x7bd3b2*/
-    *(unsigned char *)(this->u32_794 + v17 - 1) = 1; /*0x7bd3b5*/
+        *(unsigned char *)(*((unsigned int *)this + 7760) + v12 - 1) = 1;
   }
   while ( v17 < v8 ); /*0x7bd3ba*/
   return -1; /*0x7bd352*/
@@ -1112,24 +1112,24 @@ int AudioStream::ProcessStream()
   int v35; // [esp+18h] [ebp-4h]
 
   v1 = (gamemd::AudioStream *)(this);
-  v2 = *(unsigned int *)((char *)&this->__pad_666 + 26); /*0x7bea8d*/
-  v3 = (unsigned int *)((char *)&this->__pad_666 + 26); /*0x7bea93*/
+    v2 = *((unsigned int *)this + 1664);
+    v3 = (unsigned int *)((char *)this + 1664);
   v4 = &this->q040; /*0x7bea99*/
   if ( (*(unsigned char *)(v2 + 20) & 1) != 0 )
   {
-    if ( (*(unsigned char *)&this->u8_1A4 & 0x10) != 0 ) /*0x7beafb*/
+        if ( (*((unsigned char *)this + 1680) & 0x10) != 0 )
     {
-      *(unsigned int *)((char *)&this->q1992 + 430) = *(unsigned int *)(*(unsigned int *)((char *)&this->__pad_666 + 26) + 28); /*0x7beb04*/
-      *(unsigned int *)((char *)&this->__pad_666 + 42) |= 8u; /*0x7beb10*/
+            *((unsigned int *)this + 6976) = *(unsigned int *)(*((unsigned int *)this + 1664) + 28);
+            *((unsigned int *)this + 1680) |= 8u;
       v10 = *(unsigned int *)(v2 + 20); /*0x7beb13*/
       IDA_LOBYTE(v10) = v10 | 0x80; /*0x7beb16*/
       *(unsigned int *)(v2 + 20) = v10; /*0x7beb18*/
       return -1; /*0x7beb23*/
     }
-    if ( (*(unsigned char *)&this->u8_84 & 2) != 0 ) /*0x7beb28*/
+        if ( (*((unsigned char *)this + 528) & 2) != 0 )
     {
-      *(unsigned int *)((char *)&this->q1992 + 430) = *(unsigned int *)(v2 + 28); /*0x7beb2d*/
-      CalcAudioStreamOffset(60 * *(unsigned int *)(v2 + 28) / *(unsigned int *)((char *)&this->u32_1C0 + 16)); /*0x7beb48*/
+            *((unsigned int *)this + 6976) = *(unsigned int *)(v2 + 28);
+            CalcAudioStreamOffset(this, 60 * *(unsigned int *)(v2 + 28) / *((unsigned int *)this + 464));
       return -1; /*0x7beb57*/
     }
     Position = AudioStream::GetPosition(this); /*0x7beb5f*/
@@ -1278,18 +1278,18 @@ int AudioStream::ProcessStream()
   }
   else
   {
-    v5 = *(unsigned char *)&this->u8_1A4; /*0x7beaa8*/
-    ++*(unsigned int *)((char *)&this->q1992 + 462); /*0x7beaae*/
-    if ( (v5 & 4) != 0 && (*(unsigned char *)&this->q150 & 4) == 0 ) /*0x7beac1*/
+        v5 = *((unsigned char *)this + 1680);
+        ++*((unsigned int *)this + 7008);
+        if ( (v5 & 4) != 0 && (*((unsigned char *)this + 1344) & 4) == 0 )
     {
       v6 = *(unsigned int *)(v2 + 16); /*0x7beac9*/
       *v3 = v6; /*0x7beacc*/
       *(unsigned int *)(v6 + 20) = *(unsigned int *)(v6 + 24); /*0x7bead1*/
-      v7 = *(unsigned int *)((char *)&this->__pad_666 + 42); /*0x7bead4*/
+            v7 = *((unsigned int *)this + 1680);
       if ( (v7 & 0x10) != 0 ) /*0x7bead9*/
       {
         IDA_LOBYTE(v7) = v7 | 8; /*0x7beadf*/
-        *(unsigned int *)((char *)&this->__pad_666 + 42) = v7; /*0x7beae2*/
+                *((unsigned int *)this + 1680) = v7;
         v8 = *(unsigned int *)(v2 + 20); /*0x7beae5*/
         IDA_LOBYTE(v8) = v8 | 0x80; /*0x7beae8*/
         *(unsigned int *)(v2 + 20) = v8; /*0x7beaeb*/
@@ -1305,7 +1305,7 @@ int AudioStream::ProcessStream()
 namespace gamemd {
 unsigned int AudioStream::GetPosition()
 {
-  return (unsigned int)(60 * ((int (__cdecl *)(AudioStream *))this->AudioStream_field_0x50)(this)) /*0x7c3982*/
+    return (unsigned int)(60 * (*(int (__cdecl **)(int))((char *)this + 320))(this)) / *((unsigned int *)this + 480)
        / *(unsigned int *)&this->__pad_5C[28]
        + *(unsigned int *)&this->__pad_D8[112];
 }
@@ -1317,14 +1317,14 @@ void AudioStream::Destructor()
   void (__thiscall *v2)(AudioStream *); // eax
   int result; // eax
 
-  (*(void (**)(void))(this->AudioStream_field_0xD4[0] + 40))(); /*0x402559*/
-  if ( (this->__pad_9C[8] & 5) != 0 ) /*0x402563*/
-    (*(void (**)(AudioStream *))(this->AudioStream_field_0xD4[0] + 16))(this); /*0x40256d*/
-  (*(void (**)(AudioStream *))(this->AudioStream_field_0xD4[0] + 44))(this); /*0x402578*/
-  v2 = (void (__thiscall *)(AudioStream *))this->AudioStream_field_0xBC[0]; /*0x40257b*/
+    (*(void (**)(void))(*(Block + 53) + 40))();
+    if ( (*(unsigned char *)(Block + 41) & 5) != 0 )
+        (*(void (**)(unsigned int *))(*(Block + 53) + 16))(Block);
+    (*(void (**)(unsigned int *))(*(Block + 53) + 44))(Block);
+    v2 = (void (*)(unsigned int *))*(Block + 47);
   if ( v2 ) /*0x402583*/
     v2(); /*0x402587*/
-  *(unsigned int *)&this->q168 = 0; /*0x40258b*/
+    *(Block + 90) = 0;
   AudioStream::InitListAndCounters(); /*0x402595*/
   (*(void (**)(AudioStream *))(this->AudioStream_field_0xD4[0] + 8))(this); /*0x4025a2*/
   RA2_OPDEL(); /*0x4025a6*/
@@ -1362,7 +1362,7 @@ int AudioStream::InitListAndCounters()
   unsigned int *AudioStream_field_0xAC; // esi
   int result; // eax
 
-  AudioStream_field_0xAC = this->AudioStream_field_0xAC; /*0x4028b4*/
+    v2 = *((unsigned int *)this + 688);
   LinkedList::Init(); /*0x4028ba*/
   --AudioStream_field_0xAC[60]; /*0x4028c6*/
   ++AudioStream_field_0xAC[65]; /*0x4028d3*/

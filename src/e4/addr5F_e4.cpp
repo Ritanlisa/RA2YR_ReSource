@@ -58,14 +58,14 @@ char sub_5F0070()
     Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
-      v1 += this->Timer::GetTicks() - dword_887338; /*0x5f00e2*/
+            v1 += Timer::GetTicks() - MEMORY[0x887338];
     while ( 1 ) /*0x5f00e4*/
     {
       IDA_LOBYTE(v0) = dword_887338; /*0x5f00e4*/
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
-        v0 = this->Timer::GetTicks() - dword_887338; /*0x5f00fe*/
+                v0 = Timer::GetTicks() - MEMORY[0x887338];
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
@@ -194,7 +194,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   else
     StringCSF = GetStringCSF(aTxtWaitingForC_0, 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
-  this->Debug::Log(); /*0x5f2d32*/
+    Debug::Log();
   v6 = 1; /*0x5f2d41*/
   g_NetworkTestFlag = 0; /*0x5f2d52*/
   v7 = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
@@ -211,10 +211,10 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   v9 = 3600; /*0x5f2d92*/
   while ( 1 )
   {
-    if ( (uint8_t)this->Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
+        if ( Dialog::PumpMessages() == 1 || *((unsigned char *)&g_MatrixTransformState + 9524) )
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-      this->Debug::Log(); /*0x5f30fa*/
+            Debug::Log();
       v14 = g_ClipboardBuffer; /*0x5f30ff*/
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
         goto LABEL_36; /*0x5f310a*/
@@ -229,11 +229,11 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
            Source,
            81,
            v19 != 0 ? 15 : -1);
-    this->Debug::Log(); /*0x5f2ded*/
+        Debug::Log();
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-      this->Debug::Log(); /*0x5f30c5*/
+            Debug::Log();
       v14 = g_ClipboardBuffer; /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
@@ -245,13 +245,13 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     }
     _strupr(Source); /*0x5f2e06*/
     if ( strlen(Source) ) /*0x5f2e0f*/
-      this->Debug::Log(); /*0x5f2e28*/
+            Debug::Log();
     if ( !strncmp(Source, aRing, 4u) ) /*0x5f2e3c*/
     {
-      this->Debug::Log(); /*0x5f2e4d*/
+            Debug::Log();
       v11 = GetStringCSF(aTxtAnswering, 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
-      this->Debug::Log(); /*0x5f2e7b*/
+            Debug::Log();
       WinModemClass::WriteSerial((int *)g_ClipboardBuffer, aAta, strlen(aAta)); /*0x5f2e9e*/
       v19 = 1; /*0x5f2ea7*/
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
@@ -262,24 +262,24 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       memset(byte_AC1288, 0, 0x50u); /*0x5f2ed8*/
       strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
-      this->Debug::Log(); /*0x5f2ef5*/
+            Debug::Log();
     }
     else if ( !strncmp(Source, aBusy, 4u) ) /*0x5f2f0e*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(2));
-      this->Debug::Log(); /*0x5f2f29*/
+            Debug::Log();
     }
     else if ( !strncmp(Source, aNoC, 4u) ) /*0x5f2f42*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(1));
-      this->Debug::Log(); /*0x5f2f5d*/
+            Debug::Log();
     }
     else
     {
       if ( strncmp(Source, aErro, 4u) ) /*0x5f2f73*/
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
-      this->Debug::Log(); /*0x5f2f8e*/
+            Debug::Log();
       v21 = (HWND)asc_82083C; /*0x5f2f9d*/
       v16 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fba*/
       v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
@@ -300,21 +300,21 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   }
   if ( (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 ) /*0x5f3009*/
   {
-    this->Debug::Log(); /*0x5f3038*/
+        Debug::Log();
     if ( strlen(Source) ) /*0x5f3041*/
-      this->Debug::Log(); /*0x5f305a*/
+            Debug::Log();
     v21 = (HWND)asc_82083C; /*0x5f3079*/
     v17 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
     v13 = (int *)GetStringCSF(g_Str_TXT_ERROR_TIMEOUT, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
-    this->Debug::Log(); /*0x5f30ac*/
+        Debug::Log();
     v3 = 5; /*0x5f30b4*/
   }
   else
   {
     sprintf(byte_AC1288, "%s", aConnected); /*0x5f301a*/
     v3 = 0; /*0x5f3024*/
-    this->Debug::Log(); /*0x5f3026*/
+        Debug::Log();
   }
   LABEL_36:
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/
@@ -330,7 +330,7 @@ void* sub_5F33B0()
   uint16_t v0; // ax
   int v1; // esi
 
-  this->Event::Dispatch(); /*0x5f33b1*/
+    Event::Dispatch();
   MessageLoop(); /*0x5f33b6*/
   v0 = EventQueue::Process(dword_87F770); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
@@ -1002,33 +1002,33 @@ int sub_5F15A0()
 namespace gamemd {
 unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
-  this->ambientSoundController[2] = a2; /*0x5f15cc*/
-  this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  *(void **)&this->M8 = (void *)a4; /*0x5f15da*/
-  IDA_LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
-  this->fallRate = 60; /*0x5f15eb*/
-  this->customSound_controller[3] = 60; /*0x5f15ee*/
-  this->AbstractClass = (void*)&NullModemClass_vftable; /*0x5f15f1*/
-  this->ambientSoundController[1] = -1; /*0x5f15f7*/
-  this->attachedBomb = 0; /*0x5f15fa*/
-  this->customSound_controller[0] = 0; /*0x5f15fd*/
-  this->M4 = 0; /*0x5f1600*/
-  *(unsigned short *)&this->M16 = 500; /*0x5f1603*/
-  this->M12 = 0; /*0x5f160a*/
-  this->q018 = -1; /*0x5f160d*/
-  this->M28 = 0; /*0x5f1610*/
-  this->M32 = 0; /*0x5f1613*/
-  this->occupant = 3000; /*0x5f1616*/
-  this->owningHouseIndex = 1200; /*0x5f161d*/
-  IDA_LOBYTE(this->nextObject) = 43; /*0x5f1624*/
-  *(unsigned int *)&this->bombVisible = 0; /*0x5f1628*/
-  this->health = 0; /*0x5f162b*/
-  this->estimatedHealth = 0; /*0x5f162e*/
-  this->ambientSoundController[0] = 0; /*0x5f1631*/
-  this->customSound_controller[4] = -1; /*0x5f1634*/
-  this->customSound = 1200; /*0x5f1637*/
-  this->attachedTag = 0; /*0x5f163e*/
-  return &this->AbstractClass; /*0x5f1641*/
+    *((unsigned int *)this + 68) = a2;
+    *((unsigned int *)this + 72) = a3;
+    *((unsigned int *)this + 8) = a4;
+    *((unsigned short *)this + 38) = a5;
+    *((unsigned int *)this + 44) = 60;
+    *((unsigned int *)this + 92) = 60;
+    *this = &vt_NullModemClass;
+    *((unsigned int *)this + 64) = -1;
+    *((unsigned int *)this + 56) = 0;
+    *((unsigned int *)this + 80) = 0;
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 16) = 500;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 24) = -1;
+    *((unsigned int *)this + 28) = 0;
+    *((unsigned int *)this + 32) = 0;
+    *((unsigned int *)this + 36) = 3000;
+    *((unsigned int *)this + 40) = 1200;
+    *((unsigned char *)this + 48) = 43;
+    *((unsigned int *)this + 104) = 0;
+    *((unsigned int *)this + 108) = 0;
+    *((unsigned int *)this + 112) = 0;
+    *((unsigned int *)this + 60) = 0;
+    *((unsigned int *)this + 96) = -1;
+    *((unsigned int *)this + 100) = 1200;
+    *((unsigned int *)this + 52) = 0;
+    return this;
 }
 } // namespace gamemd
 
@@ -1041,7 +1041,7 @@ int E4Recv_5F1F20::sub_5F1F20()
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  vtable1 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
+    v3 = *(unsigned int **)(*((unsigned int *)this + 56) + 4);
   if ( vtable1[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
@@ -1053,7 +1053,7 @@ int E4Recv_5F1F20::sub_5F1F20()
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    vtable1 = (int *)this->attachedBomb->?; /*0x5f1f53*/
+        v3 = *(unsigned int **)(*((unsigned int *)this + 56) + 4);
     if ( v2 >= vtable1[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }

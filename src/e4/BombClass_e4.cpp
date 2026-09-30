@@ -26,16 +26,16 @@ int BombClass::AbstractClass()
   int v2; // eax
 
   AbstractClass::Constructor(); /*0x4385d4*/
-  this->BombClass_field_54 = 0; /*0x4385de*/
-  this->AbstractClass = (void*)&BombClass_vftable; /*0x4385e1*/
-  *(void **)&this->vtable2 = (void*)&BombClass_vftable; /*0x4385e7*/
-  *(void **)&this->vtable3 = (void*)&BombClass_vftable; /*0x4385ee*/
-  *(void **)&this->vtable4 = (void*)&BombClass_vftable; /*0x4385f5*/
-  this->BombClass_field_28 = 0; /*0x4385fc*/
-  this->BombClass_field_2C = 0; /*0x4385ff*/
-  this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((AudioController *)&this->audioController[3]); /*0x438605*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
+    *((unsigned int *)this + 336) = 0;
+    *(unsigned int *)this = &BombClass::`vftable';
+    *((unsigned int *)this + 16) = &BombClass::`vftable';
+    *((unsigned int *)this + 32) = &BombClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_BombClass;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned char *)this + 352) = 0;
+    AudioController::Init((unsigned int *)((char *)this + 240));
+    *((unsigned int *)this + 320) = MEMORY[0x8871E0]->ZoomInFactor;
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
@@ -57,9 +57,9 @@ void * BombClass::GetCurrentFrame()
 {
   int v2; // ecx
 
-  if ( *(&this->vtable22) == 1 ) /*0x438a04*/
+    if ( *((unsigned int *)this + 48) == 1 )
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)g_CurrentFrame - *(&this->vtable23)) / (g_RulesClass_Instance->WaterCrate[1] / 6)); /*0x438a4c*/
+    v2 = 2 * (((int)MEMORY[0xA8ED84] - *((unsigned int *)this + 52)) / (MEMORY[0x8871E0]->?[1] / 6));
   if ( (int)g_CurrentFrame % (2 * g_RulesClass_Instance->WaterCrate[3]) >= g_RulesClass_Instance->WaterCrate[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
@@ -92,13 +92,13 @@ int BombClass::Stat(int * a2)
   int v9; // eax
 
   AbstractClass::ProcessPower(); /*0x438a99*/
-  BombClass_field_28 = this->BombClass_field_28; /*0x438a9e*/
+    v4 = *((unsigned int *)this + 160);
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
     v5 = (*(int (__stdcall **)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = *(unsigned int *)this->__pad_24; /*0x438ab7*/
+    v6 = *((unsigned int *)this + 144);
   if ( v6 ) /*0x438abc*/
   {
     v7 = (*(int (__stdcall **)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
@@ -110,7 +110,7 @@ int BombClass::Stat(int * a2)
     v9 = (*(int (__stdcall **)(int))(*(unsigned int *)(BombClass_field_2C + 4) + 16))(BombClass_field_2C + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
-  IDA_LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
+    LOBYTE(v3) = *((unsigned char *)this + 352);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v3); /*0x438af4*/
 }
@@ -196,10 +196,10 @@ BombClass * BombClass::CopyTo(char a2)
   int v3; // eax
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&BombClass_vftable; /*0x4393f7*/
-  *(void **)&this->vtable2 = (void*)&BombClass_vftable; /*0x4393fd*/
-  *(void **)&this->vtable3 = (void*)&BombClass_vftable; /*0x439404*/
-  *(void **)&this->vtable4 = (void*)&BombClass_vftable; /*0x43940b*/
+    *Block = &BombClass::`vftable';
+    *(Block + 1) = &BombClass::`vftable';
+    *(Block + 2) = &BombClass::`vftable';
+    *(Block + 3) = &vt_BombClass;
   AudioFileClass::Release((AudioFileClass *)&this-((unsigned int *)(>audioController))[3]); /*0x439412*/
   v5 = this; /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
@@ -212,9 +212,9 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  this->AbstractClass::DTOR(); /*0x439462*/
+    AbstractClass::DTOR(Block);
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     RA2_OPDEL(); /*0x43946f*/
-  return &this->AbstractClass; /*0x439479*/
+    return (BombClass *)Block;
 }
 } // namespace gamemd

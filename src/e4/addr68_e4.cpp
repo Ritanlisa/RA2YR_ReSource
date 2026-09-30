@@ -466,11 +466,11 @@ void sub_683FB0()
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 == -1 ) /*0x683fd0*/
   {
     p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vtable2; /*0x683fc1*/
-    *p_vtable2 = this->Timer::GetTicks(); /*0x683fda*/
+        *v0 = Timer::GetTicks();
   }
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 != -1 ) /*0x683ff7*/
-    this->Timer::GetTicks(); /*0x683ffc*/
-  this->Debug::Log(); /*0x68400b*/
+        Timer::GetTicks();
+    Debug::Log();
   if ( dword_887368 ) /*0x68401d*/
     Tooltip::Enable(dword_887368, byte_A8EB80); /*0x684026*/
   EndBufferMixer(&g_MixerState->vtable0, dword_83D834); /*0x684037*/
@@ -513,7 +513,7 @@ void * * ScenarioClass_SetTimer(int a1)
       v5 = (unsigned int *)((char *)dword_A8B230 + 1556);
       if ( *((unsigned int *)dword_A8B230 + 389) != -1 ) /*0x6840f1*/
       {
-        v6 = this->Timer::GetTicks(); /*0x6840f6*/
+                v6 = Timer::GetTicks();
         v7 = v5[2]; /*0x6840fd*/
         v8 = v6 - *v5; /*0x684100*/
         *v5 = -1; /*0x684102*/
@@ -579,28 +579,28 @@ void WaitForMultiplayerLoadSync()
 
   if ( !((unsigned int *)(g_GameMode_Current))[0] || ((unsigned int *)(g_GameMode_Current))[0] == 5 ) /*0x68438d*/
     return 1; /*0x68460b*/
-  this->Timer::GetTicks(); /*0x684397*/
-  TicksTimer = this->Timer::GetTicks(); /*0x6843b5*/
+    Timer::GetTicks();
+    TicksTimer = Timer::GetTicks();
   v16 = 300; /*0x6843b9*/
-  v13 = this->Timer::GetTicks(); /*0x6843cb*/
+    v13 = Timer::GetTicks();
   v14 = 3600; /*0x6843d3*/
   AverageProgress = Progress::GetAverage((int)g_UIManager); /*0x6843e5*/
   while ( 1 )
   {
     EventQueue::Process(g_BinkMoviePlayer); /*0x6843ef*/
-    this->Event::Dispatch(); /*0x6843f4*/
+        Event::Dispatch();
     v0 = 1; /*0x6843fe*/
     if ( ((unsigned int *)(g_GameMode_Current))[0] == 1 /*0x684418*/
       && g_ClipboardBuffer
       && (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 )
     {
-      this->Debug::Log(); /*0x684524*/
+            Debug::Log();
       return 0; /*0x684535*/
     }
     v1 = v14; /*0x684422*/
     if ( v13 != -1 ) /*0x68442b*/
     {
-      v2 = this->Timer::GetTicks() - v13; /*0x684436*/
+            v2 = Timer::GetTicks() - v13;
       if ( v2 >= v14 ) /*0x68443c*/
         break; /*0x68443c*/
       v1 = v14 - v2; /*0x684442*/
@@ -615,14 +615,14 @@ void WaitForMultiplayerLoadSync()
     }
     if ( v3 != AverageProgress ) /*0x684474*/
     {
-      v13 = this->Timer::GetTicks(); /*0x684490*/
+            v13 = Timer::GetTicks();
       v14 = 7200; /*0x684498*/
       AverageProgress = v3; /*0x6844a4*/
     }
     v6 = v16; /*0x6844b0*/
     if ( TicksTimer != -1 ) /*0x6844b6*/
     {
-      v7 = this->Timer::GetTicks() - TicksTimer; /*0x6844c1*/
+            v7 = Timer::GetTicks() - TicksTimer;
       if ( v7 >= v16 ) /*0x6844c7*/
         goto LABEL_18; /*0x6844c7*/
       v6 = v16 - v7; /*0x6844c9*/
@@ -630,7 +630,7 @@ void WaitForMultiplayerLoadSync()
     if ( v6 <= 0 )
     {
   LABEL_18:
-      TicksTimer = this->Timer::GetTicks(); /*0x6844d3*/
+            TicksTimer = Timer::GetTicks();
       v16 = 60; /*0x6844f1*/
       Multiplayer::ShowProgress(g_GameMode_Current, *((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
     }
@@ -642,7 +642,7 @@ void WaitForMultiplayerLoadSync()
       v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
       ToWideStringChar(v10); /*0x684567*/
       ToWideStringChar(v10); /*0x684570*/
-      this->Debug::Log(); /*0x68457c*/
+            Debug::Log();
       v11 = *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect(v11, 1); /*0x684596*/
       if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(void **)&HouseClass_Array->gap0[4 * v11]) ) /*0x6845aa*/
@@ -879,7 +879,7 @@ void PostLoadInitScenario()
           v31 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x6850b1*/
           if ( v31 ) /*0x6850b8*/
           {
-            v32 = (int *)(*(int (**)(Building *, int *))(*(unsigned int *)n->__pad_0 + 72))(n, &v36); /*0x6850cd*/
+                        v31 = (int *)(*(int (**)(int, int *))(*(unsigned int *)n + 72))(n, &v34);
             AnimClass::ctor( /*0x6850e0*/
               v31,
               *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6256),
@@ -2089,7 +2089,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
 namespace gamemd {
 int E4Recv_681070::sub_681070()
 {
-  return (int)this->?; /*0x681073*/
+    return *((unsigned int *)this + 4);
 }
 } // namespace gamemd
 
@@ -2097,7 +2097,7 @@ int E4Recv_681070::sub_681070()
 namespace gamemd {
 int E4Recv_681090::ReadPointerFromECX3()
 {
-  return (int)this->AbstractClass; /*0x681092*/
+    return *(unsigned int *)this;
 }
 } // namespace gamemd
 
@@ -2105,7 +2105,7 @@ int E4Recv_681090::ReadPointerFromECX3()
 namespace gamemd {
 const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 {
-  return (char *)&this->NeedsSaveOrLink; /*0x6810c3*/
+    return (char *)this + 8;
 }
 } // namespace gamemd
 
@@ -2121,7 +2121,7 @@ char * E4Recv_681180::sub_681180()
 namespace gamemd {
 char * E4Recv_6811B0::sub_6811B0()
 {
-  return (char *)&this->airstrike; /*0x6811b6*/
+    return (char *)this + 2640;
 }
 } // namespace gamemd
 
@@ -2129,7 +2129,7 @@ char * E4Recv_6811B0::sub_6811B0()
 namespace gamemd {
 char * E4Recv_6811F0::sub_6811F0()
 {
-  return (char *)&this->spawnOwner; /*0x6811f6*/
+    return (char *)this + 2896;
 }
 } // namespace gamemd
 
@@ -2137,8 +2137,8 @@ char * E4Recv_6811F0::sub_6811F0()
 namespace gamemd {
 unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 {
-  *a2 = this->turretRecoil[0]; /*0x68122a*/
-  a2[1] = this->turretRecoil[1]; /*0x681232*/
+    *a2 = *((unsigned int *)this + 984);
+    a2[1] = *((unsigned int *)this + 988);
   return a2; /*0x681235*/
 }
 } // namespace gamemd
@@ -2147,8 +2147,8 @@ unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 namespace gamemd {
 unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 {
-  *a2 = this->turretRecoil[2]; /*0x68126a*/
-  a2[1] = this->turretRecoil[3]; /*0x681272*/
+    *a2 = *((unsigned int *)this + 992);
+    a2[1] = *((unsigned int *)this + 996);
   return a2; /*0x681275*/
 }
 } // namespace gamemd
@@ -2157,8 +2157,8 @@ unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 namespace gamemd {
 unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
 {
-  *a2 = this->turretRecoil[4]; /*0x6812aa*/
-  a2[1] = this->turretRecoil[5]; /*0x6812b2*/
+    *a2 = *((unsigned int *)this + 1000);
+    a2[1] = *((unsigned int *)this + 1004);
   return a2; /*0x6812b5*/
 }
 } // namespace gamemd
@@ -2457,7 +2457,7 @@ char E4Recv_689790::sub_689790(const char * a2, unsigned char * a3)
   }
   if ( v3 < 0 ) /*0x6897ec*/
     return 0; /*0x6897e6*/
-  *a3 = *(&this->q0A0 * v3 + v3 + 7344); /*0x689811*/
+    *a3 = *((char *)this + 160 * v3 + v3 + 7344);
   return 1; /*0x6897df*/
 }
 } // namespace gamemd
@@ -2497,11 +2497,11 @@ char E4Recv_689960::sub_689960(const char * a2, char a3)
     return 1; /*0x6899ae*/
   if ( v3 >= 0x64 ) /*0x6899b9*/
     return 0; /*0x6899f3*/
-  v6 = *(&this->q0A0 * v3 + v3 + 9394); /*0x6899c1*/
+    v6 = *((char *)this + 160 * v3 + v3 + 9394);
   if ( v6 != a3 ) /*0x6899d5*/
   {
-    *((unsigned char *)&this->q0A0 * v3 + v3 + 9394) = a3; /*0x6899d7*/
-    this->u32_34AA = 1; /*0x6899d9*/
+        *((unsigned char *)this + 40 * v3 + v3 + 9394) = a3;
+        *((unsigned char *)this + 13482) = 1;
     TriggerActionQueue::ProcessAll((void *)v3); /*0x6899e2*/
   }
   return v6; /*0x6899a8*/
@@ -2516,14 +2516,14 @@ char E4Recv_689A30::sub_689A30(const char * a2, unsigned char * a3)
   const char *i; // ebp
 
   v3 = 0; /*0x689a3d*/
-  for ( i = &this->q9228; strcmp(a2, i); i += 41 ) /*0x689a3f*/
+    for ( i = (char *)this + 37416; strcmp(a2, i); i += 41 )
   {
     if ( ++v3 >= 100 ) /*0x689a7d*/
       return 0; /*0x689a7d*/
   }
   if ( v3 < 0 ) /*0x689a8c*/
     return 0; /*0x689a86*/
-  *a3 = *(&this->q0A0 * v3 + v3 + 9394); /*0x689ab1*/
+    *a3 = *((char *)this + 160 * v3 + v3 + 9394);
   return 1; /*0x689a7f*/
 }
 } // namespace gamemd
@@ -2536,7 +2536,7 @@ int E4Recv_689AC0::sub_689AC0(const char * a2)
   const char *i; // edi
 
   v2 = 0; /*0x689ac8*/
-  for ( i = &this->q9228; strcmp(a2, i); i += 41 ) /*0x689aca*/
+    for ( i = (char *)this + 37416; strcmp(a2, i); i += 41 )
   {
     if ( ++v2 >= 100 ) /*0x689b08*/
       return -1; /*0x689b11*/
@@ -2805,9 +2805,9 @@ int E4Recv_68F8A0::sub_68F8A0()
   v4 = RA2_OPNEW(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    vtable3 = this->M12; /*0x68f8f8*/
-    v6 = (char *)this->? + 214; /*0x68f8fd*/
-    *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
+        v5 = *((unsigned int *)this + 48);
+        v6 = *((unsigned int *)this + 16) + 214;
+        v4[1] = 590 - 12 * (v3 - 1) + *(unsigned int *)this;
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
     *(unsigned int *)(v4 + 12) = Timer::GetTicks(); /*0x68f910*/
     *(unsigned int *)(v4 + 20) = 0; /*0x68f915*/
@@ -2822,9 +2822,9 @@ int E4Recv_68F8A0::sub_68F8A0()
   {
     v4 = 0; /*0x68f934*/
   }
-  occupant = this->occupant; /*0x68f936*/
-  p_referenceCount = &this->?; /*0x68f93c*/
-  if ( this->fallRate < occupant /*0x68f95e*/
+    v7 = *((unsigned int *)this + 144);
+    v8 = (int *)((char *)this + 112);
+    if ( *((unsigned int *)this + 176) < v7
     || (IDA_BYTE1(this->owningHouseIndex) || !occupant)
     && (nextObject = this->nextObject, (int)nextObject > 0)
     && (*(uint8_t (**)(int *, int, unsigned int))(*p_referenceCount + 8))(
@@ -2832,14 +2832,14 @@ int E4Recv_68F8A0::sub_68F8A0()
          (int)nextObject + occupant,
          0) )
   {
-    fallRate = this->fallRate; /*0x68f965*/
-    NeedsSaveOrLink = this->M4; /*0x68f968*/
-    this->fallRate = fallRate + 1; /*0x68f96e*/
+        v10 = *((unsigned int *)this + 176);
+        v11 = *((unsigned int *)this + 128);
+        *((unsigned int *)this + 176) = v10 + 1;
     NeedsSaveOrLink[fallRate] = v4; /*0x68f971*/
   }
   v12 = *p_referenceCount; /*0x68f974*/
   v15 = v4; /*0x68f97d*/
-  for ( result = (*(int (**)(int *, int *))(v12 + 16))(&this->?, &v15); /*0x68f987*/
+    for ( result = (*(int (**)(int, unsigned int **))(v12 + 16))((char *)this + 112, &v15);
         result != -1;
         result = (*(int (**)(int *, int *))(v14 + 16))(&this->?, &v15) )
   {
@@ -2867,10 +2867,10 @@ unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a7, int a3, size_t Buffe
   if ( (int)Format >= (int)a6 ) /*0x68fb2b*/
     v8 = a6; /*0x68fb2d*/
   swprintf(Buffer, BufferCount, v8); /*0x68fb3d*/
-  vtable3 = this->M12; /*0x68fb42*/
+    v10 = (unsigned int *)*((unsigned int *)this + 12);
   v11 = a8 - vtable3[2]; /*0x68fb5d*/
   (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*vtable3 + 12))(vtable3, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
-  v12 = this->M12; /*0x68fb71*/
+    v12 = (unsigned int *)*((unsigned int *)this + 12);
   v13 = v12[2]; /*0x68fb7b*/
   v14 = (*(int (**)(unsigned int *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
   *a7 = a7; /*0x68fb8a*/

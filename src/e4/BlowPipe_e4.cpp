@@ -14,14 +14,14 @@ void BlowPipe_31::ddtor(void *a1 = 0)
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x63dc26*/
-  this->q010 = 0; /*0x63dc29*/
-  if ( v2 && this->IsAllocated ) /*0x63dc30*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x63dc36*/
-    *(unsigned int *)&this->q004 = 0; /*0x63dc3e*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x63dc41*/
-  this->q008 = 0; /*0x63dc44*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -29,8 +29,8 @@ void BlowPipe_31::ddtor(void *a1 = 0)
 namespace gamemd {
 unsigned int BlowPipe_31::Write(int a2)
 {
-  if ( this->q00C ) /*0x63dc50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x63dc65*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x63dc57*/
 }
@@ -40,7 +40,7 @@ unsigned int BlowPipe_31::Write(int a2)
 namespace gamemd {
 int BlowPipe_31::Seek(int a2, void *a1 = 0)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x63dc7a*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -51,14 +51,14 @@ void BlowPipe_23::Clear(void *a1 = 0)
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x63dc86*/
-  this->q010 = 0; /*0x63dc89*/
-  if ( v2 && this->IsAllocated ) /*0x63dc90*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x63dc96*/
-    *(unsigned int *)&this->q004 = 0; /*0x63dc9e*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x63dca1*/
-  this->q008 = 0; /*0x63dca4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -66,8 +66,8 @@ void BlowPipe_23::Clear(void *a1 = 0)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount(int a2)
 {
-  if ( this->q00C ) /*0x63dcb0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x63dcc5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x63dcb7*/
 }
@@ -77,7 +77,7 @@ unsigned int BlowPipe_23::GetCount(int a2)
 namespace gamemd {
 int BlowPipe_23::Seek(int a2, void *a1 = 0)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x63dcda*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -88,14 +88,14 @@ void BlowPipe_23::Clear_0()
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x63dce6*/
-  this->q010 = 0; /*0x63dce9*/
-  if ( v2 && this->IsAllocated ) /*0x63dcf0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x63dcf6*/
-    *(unsigned int *)&this->q004 = 0; /*0x63dcfe*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x63dd01*/
-  this->q008 = 0; /*0x63dd04*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -103,8 +103,8 @@ void BlowPipe_23::Clear_0()
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_0(int a2)
 {
-  if ( this->q00C ) /*0x63dd10*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x63dd25*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x63dd17*/
 }
@@ -119,13 +119,13 @@ char BlowPipe_31::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x63e312*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e31d*/
   {
     v3 = 0; /*0x63e31f*/
     if ( m_8 <= 0 ) /*0x63e323*/
       return 1; /*0x63e343*/
-    v4 = *(unsigned int **)&this->q004; /*0x63e325*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e32b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e334*/
     {
@@ -149,30 +149,30 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e35c*/
   {
-    this->q00C = 0; /*0x63e366*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x63e37e*/
-    this->q00C = 1; /*0x63e386*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x63e38a*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x63e395*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x63e39c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x63e3a1*/
           m_8 = a2; /*0x63e3a3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x63e3a9*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x63e3ae*/
-        if ( this->IsAllocated ) /*0x63e3bb*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x63e3c6*/
-          *(unsigned int *)&this->q004 = 0; /*0x63e3ce*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x63e3d7*/
-      this->q008 = a2; /*0x63e3df*/
-      this->IsAllocated = a3 == 0; /*0x63e3e2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x63e3e8*/
     }
     else
@@ -182,7 +182,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e3f2*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x63e3f8*/
   }
 }
@@ -192,13 +192,13 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 void BlowPipe_23::Clear_1()
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x63e40d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x63e413*/
-    *(unsigned int *)&this->q004 = 0; /*0x63e41b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x63e41e*/
-  this->q008 = 0; /*0x63e421*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -210,9 +210,9 @@ int BlowPipe_23::FindItemIndex(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x63e430*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x63e438*/
-  m_8 = this->q008; /*0x63e43e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x63e441*/
   if ( m_8 <= 0 ) /*0x63e445*/
     return -1; /*0x63e45c*/
@@ -229,8 +229,8 @@ int BlowPipe_23::FindItemIndex(unsigned int * a2)
 namespace gamemd {
 unsigned int BlowPipe_23::GetCount_1(int a2)
 {
-  if ( this->q00C ) /*0x63e470*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x63e485*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x63e477*/
 }
@@ -247,38 +247,38 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e49c*/
   {
-    this->q00C = 0; /*0x63e4a2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x63e4ba*/
-    this->q00C = 1; /*0x63e4c2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x63e4c8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x63e4cf*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x63e4d4*/
         m_8 = a2; /*0x63e4d6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x63e4dc*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x63e4e1*/
-      if ( this->IsAllocated ) /*0x63e4ee*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x63e4f9*/
-        *(unsigned int *)&this->q004 = 0; /*0x63e501*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x63e50a*/
-    this->q008 = a2; /*0x63e512*/
-    this->IsAllocated = a3 == 0; /*0x63e515*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x63e521*/
-  if ( v7 < this->q010 ) /*0x63e529*/
-    this->q010 = v7; /*0x63e52b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x63e52e*/
 }
 } // namespace gamemd
@@ -291,11 +291,11 @@ int BlowPipe_31::Read(int a2, void *a1 = 0)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x63e620*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x63e623*/
   if ( m_10 <= 0 ) /*0x63e628*/
     return -1; /*0x63e63f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x63e62e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x63e63d*/
       return -1; /*0x63e63d*/
@@ -312,13 +312,13 @@ char BlowPipe_23::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x63e652*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e65d*/
   {
     v3 = 0; /*0x63e65f*/
     if ( m_8 <= 0 ) /*0x63e663*/
       return 1; /*0x63e683*/
-    v4 = *(unsigned int **)&this->q004; /*0x63e665*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e66b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e674*/
     {
@@ -342,30 +342,30 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e69c*/
   {
-    this->q00C = 0; /*0x63e6a6*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x63e6be*/
-    this->q00C = 1; /*0x63e6c6*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x63e6ca*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x63e6d5*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x63e6dc*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x63e6e1*/
           m_8 = a2; /*0x63e6e3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x63e6e9*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x63e6ee*/
-        if ( this->IsAllocated ) /*0x63e6fb*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x63e706*/
-          *(unsigned int *)&this->q004 = 0; /*0x63e70e*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x63e717*/
-      this->q008 = a2; /*0x63e71f*/
-      this->IsAllocated = a3 == 0; /*0x63e722*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x63e728*/
     }
     else
@@ -375,7 +375,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e732*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x63e738*/
   }
 }
@@ -385,13 +385,13 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void BlowPipe_23::ddtor(void *a1 = 0)
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x63e74d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x63e753*/
-    *(unsigned int *)&this->q004 = 0; /*0x63e75b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x63e75e*/
-  this->q008 = 0; /*0x63e761*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -403,9 +403,9 @@ int BlowPipe_23::Read(int a2, void *a1 = 0)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x63e770*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x63e778*/
-  m_8 = this->q008; /*0x63e77e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x63e781*/
   if ( m_8 <= 0 ) /*0x63e785*/
     return -1; /*0x63e79c*/
@@ -422,8 +422,8 @@ int BlowPipe_23::Read(int a2, void *a1 = 0)
 namespace gamemd {
 unsigned int BlowPipe_23::Write(int a2)
 {
-  if ( this->q00C ) /*0x63e7b0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x63e7c5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x63e7b7*/
 }
@@ -440,38 +440,38 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e7dc*/
   {
-    this->q00C = 0; /*0x63e7e2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x63e7fa*/
-    this->q00C = 1; /*0x63e802*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x63e808*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x63e80f*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x63e814*/
         m_8 = a2; /*0x63e816*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x63e81c*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x63e821*/
-      if ( this->IsAllocated ) /*0x63e82e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x63e839*/
-        *(unsigned int *)&this->q004 = 0; /*0x63e841*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x63e84a*/
-    this->q008 = a2; /*0x63e852*/
-    this->IsAllocated = a3 == 0; /*0x63e855*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x63e861*/
-  if ( v7 < this->q010 ) /*0x63e869*/
-    this->q010 = v7; /*0x63e86b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x63e86e*/
 }
 } // namespace gamemd
@@ -484,11 +484,11 @@ int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x63e8d0*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x63e8d3*/
   if ( m_10 <= 0 ) /*0x63e8d8*/
     return -1; /*0x63e8ef*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x63e8de*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x63e8ed*/
       return -1; /*0x63e8ed*/
@@ -507,38 +507,38 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63eadc*/
   {
-    this->q00C = 0; /*0x63eae2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x63eafa*/
-    this->q00C = 1; /*0x63eb02*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x63eb08*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x63eb0f*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x63eb14*/
         m_8 = a2; /*0x63eb16*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x63eb1c*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x63eb21*/
-      if ( this->IsAllocated ) /*0x63eb2e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x63eb39*/
-        *(unsigned int *)&this->q004 = 0; /*0x63eb41*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x63eb4a*/
-    this->q008 = a2; /*0x63eb52*/
-    this->IsAllocated = a3 == 0; /*0x63eb55*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x63eb61*/
-  if ( v7 < this->q010 ) /*0x63eb69*/
-    this->q010 = v7; /*0x63eb6b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x63eb6e*/
 }
 } // namespace gamemd
@@ -551,11 +551,11 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x63ec20*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x63ec23*/
   if ( m_10 <= 0 ) /*0x63ec28*/
     return -1; /*0x63ec3f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x63ec2e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x63ec3d*/
       return -1; /*0x63ec3d*/
@@ -572,13 +572,13 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
-  if ( v3 && this->IsAllocated ) /*0x63eda0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x63eda8*/
-    *(unsigned int *)&this->q004 = 0; /*0x63edb0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x63edc1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
     RA2_OPDEL(); /*0x63edcb*/
   return this; /*0x63edd5*/
@@ -593,13 +593,13 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
-  if ( v3 && this->IsAllocated ) /*0x63edf0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x63edf8*/
-    *(unsigned int *)&this->q004 = 0; /*0x63ee00*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x63ee11*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     RA2_OPDEL(); /*0x63ee1b*/
   return this; /*0x63ee25*/
@@ -614,13 +614,13 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
-  if ( v3 && this->IsAllocated ) /*0x63ee40*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x63ee48*/
-    *(unsigned int *)&this->q004 = 0; /*0x63ee50*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x63ee61*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
     RA2_OPDEL(); /*0x63ee6b*/
   return this; /*0x63ee75*/
@@ -635,13 +635,13 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
-  if ( v3 && this->IsAllocated ) /*0x63ee90*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x63ee98*/
-    *(unsigned int *)&this->q004 = 0; /*0x63eea0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x63eeb1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
     RA2_OPDEL(); /*0x63eebb*/
   return this; /*0x63eec5*/
@@ -656,13 +656,13 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
-  if ( v3 && this->IsAllocated ) /*0x63ef30*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x63ef38*/
-    *(unsigned int *)&this->q004 = 0; /*0x63ef40*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x63ef51*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
     RA2_OPDEL(); /*0x63ef5b*/
   return this; /*0x63ef65*/

@@ -31,11 +31,11 @@ void Debug::ScrollText(char* a1)
   result = IDA_BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bd0d0*/
   if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd0dd*/
   {
-    v4 = this->u32_2724; /*0x5bd0ef*/
-    v5 = this->u32_271C + v4; /*0x5bd108*/
-    v13 = this->u32_2720 + this->u32_2728; /*0x5bd10e*/
-    v6 = v4 + this->u32_272C; /*0x5bd112*/
-    this->u32_2734 = 0; /*0x5bd119*/
+        v4 = *((unsigned int *)this + 40080);
+        v5 = (IUnknown *)(*((unsigned int *)this + 40048) + v4);
+        aP2 = (IUnknown *)(*((unsigned int *)this + 40064) + *((unsigned int *)this + 40096));
+        v6 = (IUnknown *)(v4 + *((unsigned int *)this + 40112));
+        *((unsigned char *)this + 40144) = 0;
     v7 = v5 + strlen(aP1); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
@@ -49,16 +49,16 @@ void Debug::ScrollText(char* a1)
       {
         v15 = v9[v5]; /*0x5bd16f*/
         *v12 = Debug_Helper(v15); /*0x5bd187*/
-        *v11 = this->u32_2710; /*0x5bd18f*/
+                *v11 = *((unsigned int *)this + 40000);
         if ( v15 == 10 ) /*0x5bd197*/
         {
-          v10 = this->u32_2720; /*0x5bd199*/
-          this->u32_271C = 0; /*0x5bd19f*/
-          this->u32_2720 = v10 + 1; /*0x5bd1aa*/
+                    v10 = *((unsigned int *)this + 40064);
+                    *((unsigned int *)this + 40048) = 0;
+                    *((unsigned int *)this + 40064) = v10 + 1;
         }
         else
         {
-          ++this->u32_271C; /*0x5bd1b2*/
+                    ++*((unsigned int *)this + 40048);
         }
         ++v5; /*0x5bd1c0*/
         v11 += 25; /*0x5bd1c9*/
@@ -81,7 +81,7 @@ void Debug::AccumFlags(char* a1)
   int i; // edi
   int Flags; // eax
 
-  Debug_field_0xA0 = (TriggerTypeClass *)this->Debug_field_0xA0; /*0x6e61f1*/
+    v1 = *((unsigned int *)this + 160);
   for ( i = 0; Debug_field_0xA0; i |= Flags ) /*0x6e61fc*/
   {
     Flags = TriggerTypeClass::GetFlags(Debug_field_0xA0); /*0x6e6200*/

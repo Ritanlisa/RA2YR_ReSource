@@ -21,11 +21,11 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
 
   v3 = (void *)((unsigned int)((void *)this->u32_1C));
   *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5ceb86*/
-  if ( v3 && this->u32_3C ) /*0x5ceb90*/
+    if ( v3 && *((unsigned char *)Block + 60) )
   {
     RA2_OPDEL(v3); /*0x5ceb98*/
-    this->u32_1C = 0; /*0x5ceba0*/
-    this->u32_3C = 0; /*0x5ceba7*/
+        *(Block + 7) = 0;
+        *((unsigned char *)Block + 60) = 0;
   }
   *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/

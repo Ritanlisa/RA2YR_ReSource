@@ -23,30 +23,30 @@ int FlyLocomotionClass::LocomotionClass()
   int v2; // edx
 
   LocomotionClass::Init(); /*0x4cc9a3*/
-  this->AirportBound = 0; /*0x4cc9ad*/
-  this->MovingDestination[0] = dword_8B3C78; /*0x4cc9b6*/
-  this->MovingDestination[1] = dword_8B3C7C; /*0x4cc9be*/
-  this->MovingDestination[2] = dword_8B3C80; /*0x4cc9c7*/
-  this->XYZ2[0] = dword_8B3C78; /*0x4cc9d3*/
-  this->XYZ2[1] = dword_8B3C7C; /*0x4cc9dc*/
+    *((unsigned char *)this + 96) = 0;
+    *((unsigned int *)this + 112) = MEMORY[0x8B3C78];
+    *((unsigned int *)this + 128) = MEMORY[0x8B3C7C];
+    *((unsigned int *)this + 144) = MEMORY[0x8B3C80];
+    *((unsigned int *)this + 160) = MEMORY[0x8B3C78];
+    *((unsigned int *)this + 176) = MEMORY[0x8B3C7C];
   v2 = dword_8B3C80; /*0x4cc9df*/
-  this->TargetSpeed[1] = 0; /*0x4cc9e5*/
-  this->CurrentSpeed[1] = 0; /*0x4cc9e8*/
-  this->HasMoveOrder = 0; /*0x4cc9eb*/
-  this->FlightLevel = 0; /*0x4cc9ee*/
-  this->CurrentSpeed[0] = 0; /*0x4cc9f1*/
-  *(unsigned int *)&this->IsTakingOff = 0; /*0x4cc9f4*/
-  this->__pad_4F[1] = 0; /*0x4cc9f7*/
-  this->__pad_4F[2] = 0; /*0x4cc9fa*/
-  this->__pad_4F[3] = 0; /*0x4cc9fd*/
-  this->FlyLocomotionClass_field_bool_53 = 0; /*0x4cca00*/
-  this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
-  this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
-  this->IsElevating = 0; /*0x4cca09*/
-  *(unsigned int *)this->LocomotionClass = (void*)&FlyLocomotionClass_vftable; /*0x4cca0c*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&FlyLocomotionClass_vftable; /*0x4cca12*/
-  this->XYZ2[2] = v2; /*0x4cca1b*/
-  return (int)this->LocomotionClass; /*0x4cca1e*/
+    *((unsigned int *)this + 256) = 0;
+    *((unsigned int *)this + 288) = 0;
+    *((unsigned char *)this + 208) = 0;
+    *((unsigned int *)this + 224) = 0;
+    *((unsigned int *)this + 272) = 0;
+    *((unsigned int *)this + 304) = 0;
+    *((unsigned char *)this + 320) = 0;
+    *((unsigned char *)this + 324) = 0;
+    *((unsigned char *)this + 328) = 0;
+    *((unsigned char *)this + 332) = 0;
+    *((unsigned int *)this + 336) = 0;
+    *((unsigned int *)this + 352) = 0;
+    *((unsigned char *)this + 368) = 0;
+    *(unsigned int *)this = &FlyLocomotionClass::`vftable';
+    *((unsigned int *)this + 16) = &FlyLocomotionClass::`vftable';
+    *((unsigned int *)this + 192) = v2;
+    return this;
 }
 } // namespace gamemd
 // 0x4CFE80
@@ -221,9 +221,9 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->LocomotionClass = (void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
-  this->LocomotionClass::Construct(); /*0x4d03b0*/
+    LocomotionClass::Construct(Block);
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     RA2_OPDEL(); /*0x4d03bd*/
-  return this->LocomotionClass; /*0x4d03c7*/
+    return (FlyLocomotionClass *)Block;
 }
 } // namespace gamemd

@@ -80,8 +80,8 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     *(int *)((char *)&v5[((unsigned int *)(1].parent_gap))[1] + 3) = 0; /*0x438f89*/
     *(int *)((char *)&v5[((unsigned int *)(1].parent_gap))[3] + 3) = v7; /*0x438f8c*/
     aP2[14] = v5; /*(unsigned int)(0x438f8f)*/
-    v8 = *(unsigned int *)&this->vtable3; /*0x438f92*/
-    if ( this->uniqueId < (unsigned int)(v8) /*0x438fb4*/
+        v8 = *((unsigned int *)this + 8);
+        if ( *((unsigned int *)this + 16) < v8
       || (this->q034 || !v8)
       && (v9 = this->abstractFlags, v9 > 0)
       && this->COMStub_Release((unsigned int)(v8)+ v9, 0) )
@@ -91,7 +91,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       this->uniqueId = (unsigned int)(v10 + 1);
       *(unsigned int *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
-    *(&this->vtable22) = 1; /*0x438fca*/
+        *((unsigned int *)this + 48) = 1;
     if ( g_RulesClass_Instance->RepairBridgeSound != -1 ) /*0x438fde*/
     {
       if ( (uint8_t)House::IsHumanPlayer(aP1[135]) ) /*0x438fe6*/
@@ -696,9 +696,9 @@ void AbstractClass::DTOR()
   int result; // eax
 
   this->vtable0 = (void*)&AbstractClass_vftable; /*0x4101f0*/
-  this->vtable1 = (void*)&AbstractClass_vftable; /*0x4101f6*/
-  this->vtable2 = (void*)&AbstractClass_vftable; /*0x4101fd*/
-  this->vtable3 = (void*)&AbstractClass_vftable; /*0x410204*/
+    *((unsigned int *)this + 4) = &AbstractClass::`vftable';
+    *((unsigned int *)this + 8) = &AbstractClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_AbstractClass;
   return result; /*0x41020b*/
 }
 } // namespace gamemd
@@ -915,7 +915,7 @@ int AbstractClass::GetField9()
 namespace gamemd {
 unsigned int AbstractClass::updateLayer()
 {
-  return this->q0C8; /*0x425526*/
+    return *((unsigned int *)this + 50);
 }
 } // namespace gamemd
 
@@ -1143,7 +1143,7 @@ int AbstractClass::getAltitude()
 namespace gamemd {
 int AbstractClass::getMapCoords()
 {
-  return *((uint16_t *)&this->needsSave1); /*0x426a89*/
+    return *((unsigned int *)this + 324);
 }
 } // namespace gamemd
 
@@ -1236,7 +1236,7 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  *(unsigned int *)this->BlitterCore = (void*)&Blitter_vftable; /*0x499cc9*/
+    *(unsigned int *)this = &vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     RA2_OPDEL(); /*0x499cd2*/
   return (std::locale::facet *)this; /*0x499cdc*/
@@ -1280,7 +1280,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  *(unsigned int *)this->RLEBlitterCore = (void*)&RLEBlitter_vftable; /*0x499da9*/
+    *(unsigned int *)this = &vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     RA2_OPDEL(); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1291,7 +1291,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 namespace gamemd {
 int AbstractClass::GetType()
 {
-  return this->u32_58; /*0x4ca163*/
+    return *((unsigned int *)this + 88);
 }
 } // namespace gamemd
 
@@ -1330,8 +1330,8 @@ char AbstractClass::getCurrentMission()
 namespace gamemd {
 unsigned int AbstractClass::queueMission(int a2)
 {
-  if ( this->IsInitialized ) /*0x4e01c0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x4e01d5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4e01c7*/
 }
@@ -1341,7 +1341,7 @@ unsigned int AbstractClass::queueMission(int a2)
 namespace gamemd {
 GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
-  this->vfptr[0] = (int)&off_7EA6FC; /*0x4f4c09*/
+    *(unsigned int *)this = &off_7EA6FC;
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
     RA2_OPDEL(); /*0x4f4c12*/
   return (std::locale::facet *)this; /*0x4f4c1c*/
@@ -1360,7 +1360,7 @@ int AbstractClass::computeMovementCost()
 namespace gamemd {
 int AbstractClass::checkPassability()
 {
-  return this->vtable4; /*0x50e373*/
+    return *((unsigned int *)this + 48);
 }
 } // namespace gamemd
 
@@ -1478,13 +1478,13 @@ namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(char a2)
 {
   this->vtable0 = (void*)&MissionClass_vftable; /*0x5b3a63*/
-  this->vtable1 = (void*)&MissionClass_vftable; /*0x5b3a69*/
-  this->vtable2 = (void*)&MissionClass_vftable; /*0x5b3a70*/
-  this->vtable3 = (void*)&MissionClass_vftable; /*0x5b3a77*/
+    *(Block + 1) = &MissionClass::`vftable';
+    *(Block + 2) = &MissionClass::`vftable';
+    *(Block + 3) = &vt_MissionClass;
   ObjectClass::Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     RA2_OPDEL(); /*0x5b3a8b*/
-  return &this->vtable0; /*0x5b3a95*/
+    return (MissionClass *)Block;
 }
 } // namespace gamemd
 
@@ -1492,7 +1492,7 @@ MissionClass * AbstractClass::getWeaponRange(char a2)
 namespace gamemd {
 char AbstractClass::validatePathNode()
 {
-  return this->playing; /*0x5c02e3*/
+    return *((unsigned int *)this + 80);
 }
 } // namespace gamemd
 
@@ -1828,7 +1828,7 @@ char AbstractClass::updateTeamState()
 namespace gamemd {
 char AbstractClass::processTeamOrder()
 {
-  return this->u32_1C; /*0x65c333*/
+    return *((unsigned char *)this + 28);
 }
 } // namespace gamemd
 
@@ -1836,7 +1836,7 @@ char AbstractClass::processTeamOrder()
 namespace gamemd {
 int AbstractClass::checkTeamObjective()
 {
-  return (int)this->RAMFileClass_field_0x10; /*0x65c4a3*/
+    return this->field_10;
 }
 } // namespace gamemd
 
@@ -1844,7 +1844,7 @@ int AbstractClass::checkTeamObjective()
 namespace gamemd {
 void AbstractClass::resetTeamState()
 {
-  this->u32_1C = 0; /*0x65c540*/
+    *((unsigned char *)this + 28) = 0;
 }
 } // namespace gamemd
 

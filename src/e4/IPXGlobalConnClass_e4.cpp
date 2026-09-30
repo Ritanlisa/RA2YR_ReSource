@@ -35,36 +35,36 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  this->Debug::Log(); /*0x540132*/
-  IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x540137*/
+    Debug::Log();
+    v3 = *(unsigned int **)(v2 + 4);
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
     TileType = Terrain::GetTileType(IPXGlobalConnClass_field_0x04, i); /*0x540158*/
-    this->Debug::Log(); /*0x54015a*/
+        Debug::Log();
     if ( TileType ) /*0x540164*/
     {
-      this->Debug::Log(); /*0x540170*/
+            Debug::Log();
       v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x540175*/
       v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x540186*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
       {
-        Ticks = this->Timer::GetTicks(); /*0x54019a*/
+                Ticks = Timer::GetTicks();
         v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x54019c*/
         v7 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5401a3*/
       }
       if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          this->Timer::GetTicks(); /*0x540244*/
-        this->Debug::Log(); /*0x54026f*/
+                    Timer::GetTicks();
+                Debug::Log();
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          this->Timer::GetTicks(); /*0x5401c0*/
-        this->Debug::Log(); /*0x5401eb*/
+                    Timer::GetTicks();
+                Debug::Log();
         v9 = 0; /*0x5401fa*/
-        v10 = this->u32_D4; /*0x5401ff*/
+                v10 = *((unsigned int *)this + 848);
         if ( v10 > 0 ) /*0x540207*/
         {
           v11 = (unsigned int *)this->q034; /*0x54020f*/
@@ -75,7 +75,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
             if ( v9 >= v10 ) /*0x54021b*/
               goto LABEL_14; /*0x54021b*/
           }
-          *(unsigned int *)(this->q034 + 4 * v9) = -1; /*0x54021f*/
+                    *(unsigned int *)(*((unsigned int *)this + 832) + 4 * v9) = -1;
         }
   LABEL_14:
         PacketQueue::ReleaseEntry((PacketQueue *)this->IPXGlobalConnClass_field_0x04, 0, 0, i--, 0, 0); /*0x540226*/
@@ -83,7 +83,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
     }
     IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
-  this->Debug::Log(); /*0x540296*/
+    Debug::Log();
 }
 } // namespace gamemd
 // 0x5403F0
@@ -196,14 +196,14 @@ int IPXGlobalConnClass::CheckStatus()
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
 
   v2 = 0; /*0x5400d4*/
-  IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x5400d6*/
+    v3 = (unsigned int *)*((unsigned int *)this + 4);
   if ( (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 > 0 ) /*0x5400de*/
   {
     do /*0x540104*/
     {
       if ( (*(unsigned char *)Terrain::GetTileType(IPXGlobalConnClass_field_0x04, v2) & 2) != 0 ) /*0x5400e9*/
-        PacketQueue::ReleaseEntry((PacketQueue *)this->IPXGlobalConnClass_field_0x04, 0, 0, v2--, 0, 0); /*0x5400f7*/
-      IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x5400fd*/
+                PacketQueue::ReleaseEntry((unsigned int *)*((unsigned int *)this + 4), 0, 0, v2--, 0, 0);
+            v3 = (unsigned int *)*((unsigned int *)this + 4);
       ++v2; /*0x540100*/
     }
     while ( v2 < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 ); /*0x540104*/
@@ -226,7 +226,7 @@ void IPXGlobalConnClass::Send()
 
   v2 = 0; /*0x5402db*/
   v3 = 0; /*0x5402dd*/
-  IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x5402df*/
+    v4 = (unsigned int *)*((unsigned int *)this + 4);
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) > 0 ) /*0x5402e7*/
   {
     do /*0x540332*/
@@ -235,12 +235,12 @@ void IPXGlobalConnClass::Send()
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
         Waypoint::InitInvalid(&v10); /*0x5402fd*/
-        v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
+                v6 = (unsigned int *)*((unsigned int *)this + 4);
         v8 = 12; /*0x54031c*/
         PacketQueue::ExtractEntry(v6, &((unsigned int *)(v10.__pad_0))[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
-      IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54032b*/
+            v4 = (unsigned int *)*((unsigned int *)this + 4);
       ++v3; /*0x54032e*/
     }
     while ( v3 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x540332*/
@@ -262,7 +262,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
   int v12; // [esp+10h] [ebp-410h] BYREF
   Waypoint v13; // [esp+14h] [ebp-40Ch] BYREF
 
-  IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54034b*/
+    v4 = (unsigned int *)*((unsigned int *)this + 4);
   v5 = 0; /*0x54034e*/
   v6 = 0; /*0x540350*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x540357*/
@@ -277,12 +277,12 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
       Waypoint::InitInvalid(&v13); /*0x540398*/
-      v9 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x5403b3*/
+            v9 = (unsigned int *)*((unsigned int *)this + 4);
       v11 = 12; /*0x5403b7*/
       PacketQueue::ExtractEntry(v9, &((unsigned int *)(v13.__pad_0))[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
-    IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x5403c6*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     ++v6; /*0x5403c9*/
   }
   while ( v6 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x5403cd*/
@@ -319,16 +319,16 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->u32_D0; /*0x540673*/
+    v3 = (void *)*(Block + 52);
   if ( v3 ) /*0x540681*/
   {
     RA2_OPDEL(v3); /*0x540684*/
-    this->u32_D0 = 0; /*0x54068c*/
+        *(Block + 52) = 0;
   }
-  if ( this->u32_CC ) /*0x540696*/
+    if ( *(Block + 51) )
   {
     RA2_OPDEL((void *)this->u32_CC); /*0x5406a1*/
-    this->u32_CC = 0; /*0x5406a9*/
+        *(Block + 51) = 0;
   }
   ConnectionClass::dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/

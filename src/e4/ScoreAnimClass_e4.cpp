@@ -35,11 +35,11 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 
   v3 = (void *)((unsigned int)((void *)this->field_C));
   *(unsigned int *)this->__pad_0 = (void*)&ScoreFontClass_vftable; /*0x6910a9*/
-  if ( v3 && this->q010 == 1 ) /*0x6910b7*/
+    if ( v3 && *((unsigned char *)Block + 16) == 1 )
   {
     RA2_OPDEL(v3); /*0x6910ba*/
-    this->field_C = 0; /*0x6910c2*/
-    this->q010 = 0; /*0x6910c5*/
+        *(Block + 3) = 0;
+        *((unsigned char *)Block + 16) = 0;
   }
   if ( !--dword_B0558C ) /*0x6910d3*/
   {

@@ -73,24 +73,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1: /*0x4fa3b0*/
     case 40: /*0x4fa3b0*/
       if ( aP3 ) /*0x4fa3c9*/
-        v21 = this->u8_53D3; /*0x4fa3d1*/
+                v21 = *((unsigned char *)this + 85836);
       else
         v21 = (int)(this->u8_53D2);
       break; /*0x4fa3d5*/
     case 2: /*0x4fa3b0*/
     case 3: /*0x4fa3b0*/
-      v21 = this->q53D0; /*0x4fa406*/
+            v21 = *((unsigned char *)this + 85824);
       break; /*0x4fa40a*/
     case 6: /*0x4fa3b0*/
     case 7: /*0x4fa3b0*/
       if ( v7 == 5 ) /*0x4fa3e6*/
-        v21 = this->q53D8; /*0x4fa3ee*/
+                v21 = *((unsigned char *)this + 85856);
       else
-        v21 = this->q53D4; /*0x4fa3fa*/
+                v21 = *((unsigned char *)this + 85840);
       break; /*0x4fa3f2*/
     case 15: /*0x4fa3b0*/
     case 16: /*0x4fa3b0*/
-      v21 = this->u8_53D1; /*0x4fa3bd*/
+            v21 = *((unsigned char *)this + 85828);
       break; /*0x4fa3c1*/
     default:
       v21 = 0; /*0x4fa40c*/
@@ -104,7 +104,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     if ( !a5 || !(*(int (**)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
     {
   LABEL_40:
-      this->Debug::Log(); /*0x4fa533*/
+            Debug::Log();
       return 3; /*0x4fa550*/
     }
     v24 = 1; /*0x4fa465*/
@@ -114,24 +114,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1: /*0x4fa47b*/
     case 40: /*0x4fa47b*/
       if ( aP3 ) /*0x4fa4b0*/
-        v10 = this->u32_53B8; /*0x4fa4b2*/
+                v10 = *((unsigned int *)this + 85728);
       else
-        v10 = this->u32_53B4; /*0x4fa4ba*/
+                v10 = *((unsigned int *)this + 85712);
       break; /*0x4fa4b8*/
     case 2: /*0x4fa47b*/
     case 3: /*0x4fa47b*/
-      v10 = this->u32_53AC; /*0x4fa4d7*/
+            v10 = *((unsigned int *)this + 85680);
       break; /*0x4fa4dd*/
     case 6: /*0x4fa47b*/
     case 7: /*0x4fa47b*/
       if ( v7 == 5 ) /*0x4fa4c5*/
-        v10 = this->u32_53CC; /*0x4fa4c7*/
+                v10 = *((unsigned int *)this + 85808);
       else
-        v10 = this->u32_53BC; /*0x4fa4cf*/
+                v10 = *((unsigned int *)this + 85744);
       break; /*0x4fa4cd*/
     case 15: /*0x4fa47b*/
     case 16: /*0x4fa47b*/
-      v10 = this->u32_53B0; /*0x4fa482*/
+            v10 = *((unsigned int *)this + 85696);
       break; /*0x4fa488*/
     default:
       v10 = 0; /*0x4fa4df*/
@@ -153,24 +153,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1: /*0x4fa564*/
     case 40: /*0x4fa564*/
       if ( aP3 ) /*0x4fa571*/
-        this->u32_53B8 = v10; /*0x4fa573*/
+                *((unsigned int *)this + 85728) = v10;
       else
-        this->u32_53B4 = v10; /*0x4fa57b*/
+                *((unsigned int *)this + 85712) = v10;
       break; /*0x4fa579*/
     case 2: /*0x4fa564*/
     case 3: /*0x4fa564*/
-      this->u32_53AC = v10; /*0x4fa5a2*/
+            *((unsigned int *)this + 85680) = v10;
       break; /*0x4fa5a2*/
     case 6: /*0x4fa564*/
     case 7: /*0x4fa564*/
       if ( v22 == 5 ) /*0x4fa590*/
-        this->u32_53CC = v10; /*0x4fa592*/
+                *((unsigned int *)this + 85808) = v10;
       else
-        this->u32_53BC = v10; /*0x4fa59a*/
+                *((unsigned int *)this + 85744) = v10;
       break; /*0x4fa598*/
     case 15: /*0x4fa564*/
     case 16: /*0x4fa564*/
-      this->u32_53B0 = v10; /*0x4fa583*/
+            *((unsigned int *)this + 85696) = v10;
       break; /*0x4fa589*/
     default:
       break;
@@ -189,15 +189,15 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
         {
           v16 = v10->isSuspended; /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
-          if ( !v16 && ((unsigned int *)(g_GameMode_Current))[0] && this->u8_1EC ) /*0x4fa63a*/
+                    if ( !v16 && MEMORY[0xA8B238] && *((unsigned char *)this + 1968) )
           {
-            v17 = (*(int (**)(unsigned int))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
+                        v17 = (*(int (**)(unsigned int))(**(unsigned int **)(v10 + 88) + 132))(*(unsigned int *)(v10 + 88));
             v18 = (int)(54 * ((int)dword_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (**)(int))(*(unsigned int *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
             if ( v21 ) /*0x4fa68d*/
-              v10->production = v18; /*0x4fa68f*/
+                            *(unsigned int *)(v10 + 36) = v18;
           }
           if ( HouseClass_Player == (int)((void *))this ) /*0x4fa698*/
             Sidebar::FindProductionType(v10, a1, aP2); /*0x4fa6aa*/
@@ -214,47 +214,47 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   }
   if ( (uint8_t)FactoryClass::DemandProduction(v9, (void *)this, a5) ) /*0x4fa5db*/
     goto LABEL_55; /*0x4fa5df*/
-  this->Debug::Log(); /*0x4fa6c4*/
+    Debug::Log();
   if ( v10->u32_50 || v10->q058 ) /*0x4fa6d9*/
     return 3; /*0x4fa807*/
-  this->Debug::Log(); /*0x4fa6ec*/
-  this->Debug::Log(); /*0x4fa6fc*/
-  this->Debug::Log(); /*0x4fa70a*/
+    Debug::Log();
+    Debug::Log();
+    Debug::Log();
   v19 = *(unsigned int *)&v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (**)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
-  this->Debug::Log(); /*0x4fa729*/
+    Debug::Log();
   v20 = *(unsigned int *)&v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (**)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
-  this->Debug::Log(); /*0x4fa748*/
-  this->Debug::Log(); /*0x4fa758*/
+    Debug::Log();
+    Debug::Log();
   (*(void (**)(int, int))(v10->NeedsSaveOrLink)(v10, 1); /*0x4fa76a*/
   switch ( v23 ) /*0x4fa782*/
   {
     case 0: /*0x4fa782*/
     case 39: /*0x4fa782*/
       if ( aP3 ) /*0x4fa78f*/
-        this->u32_53B8 = 0; /*0x4fa791*/
+                *((unsigned int *)this + 85728) = 0;
       else
-        this->u32_53B4 = 0; /*0x4fa7a6*/
+                *((unsigned int *)this + 85712) = 0;
       result = 3; /*0x4fa79a*/
       break; /*0x4fa7a3*/
     case 1: /*0x4fa782*/
     case 2: /*0x4fa782*/
-      this->u32_53AC = 0; /*0x4fa801*/
+            *((unsigned int *)this + 85680) = 0;
       return 3; /*0x4fa801*/
     case 5: /*0x4fa782*/
     case 6: /*0x4fa782*/
       if ( v22 == 5 ) /*0x4fa7d5*/
-        this->u32_53CC = 0; /*0x4fa7d7*/
+                *((unsigned int *)this + 85808) = 0;
       else
-        this->u32_53BC = 0; /*0x4fa7ec*/
+                *((unsigned int *)this + 85744) = 0;
       result = 3; /*0x4fa7e0*/
       break; /*0x4fa7e9*/
     case 14: /*0x4fa782*/
     case 15: /*0x4fa782*/
-      this->u32_53B0 = 0; /*0x4fa7bb*/
+            *((unsigned int *)this + 85696) = 0;
       result = 3; /*0x4fa7c4*/
       break; /*0x4fa7cd*/
     default:
@@ -277,13 +277,13 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
       goto LABEL_3;
     case 2: /*0x5007b7*/
     case 3: /*0x5007b7*/
-      this->u32_53D0 = a5; /*0x500807*/
+            *((unsigned int *)this + 85824) = a5;
       break; /*0x500807*/
     case 6: /*0x5007b7*/
     case 7: /*0x5007b7*/
       if ( a4 == 5 ) /*0x5007e5*/
       {
-        this->u32_53D8 = a5; /*0x5007ec*/
+                *((unsigned int *)this + 85856) = a5;
       }
       else
       {
@@ -293,13 +293,13 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
     case 16: /*0x5007b7*/
-      this->u32_53D1 = a5; /*0x5007be*/
+            *((unsigned int *)this + 85828) = a5;
   LABEL_3:
       result = a3; /*0x5007c4*/
       if ( a3 ) /*0x5007ca*/
-        this->u32_53D3 = a5; /*0x5007cc*/
+                *((unsigned int *)this + 85836) = a5;
       else
-        this->u32_53D2 = a5; /*0x5007d6*/
+                *((unsigned int *)this + 85832) = a5;
       break; /*0x5007d3*/
     default:
       return result;
@@ -354,10 +354,10 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   void *Block; // [esp+14h] [ebp-8h] BYREF
   int v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)this->__pad_14; /*0x636319*/
+    v2 = *(Block + 5);
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
-    v4 = (Array *)*((unsigned int *)this->Sidebar_field_0x8 + i); /*0x63632c*/
+        v4 = *(VectorClass **)(*(Block + 2) + 4 * i);
     Value = Array::FindValue(v4, *(unsigned int *)this->__pad_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
@@ -378,7 +378,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   }
   if ( v2 ) /*0x6363ad*/
   {
-    Block = *(void **)this->__pad_0; /*0x6363b1*/
+        Blocka = (void *)*Block;
     v8 = *((unsigned int *)Block + 135); /*0x6363b5*/
     Object_field_0x30 = *(void **)(v8 + 48); /*0x6363bb*/
     if ( (uint8_t)House::IsHumanPlayer((House *)v8) && dword_A83D4C ) /*0x6363ce*/
@@ -397,7 +397,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   if ( this ) /*0x63641f*/
   {
     if ( *(unsigned int *)this->__pad_0 ) /*0x636425*/
-      BuildingClass::SetType(*(BuildingClass **)this->__pad_0, 0); /*0x63642d*/
+            BuildingClass::SetPlanningToken((unsigned int *)*Block, 0);
     Block = this; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
@@ -409,10 +409,10 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     }
     v12 = *(unsigned int *)this->__pad_14; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
-      TeamClass::DestroyAllMembers(*((TeamClass **)this->Sidebar_field_0x8 + j), *(unsigned int **)this->__pad_0); /*0x63647a*/
+            TeamClass::DestroyAllMembers(*(unsigned int **)(*(Block + 2) + 4 * j), (TechnoClass *)*Block);
     if ( v12 ) /*0x63648a*/
     {
-      v17 = *(unsigned int *)this->__pad_0; /*0x63648e*/
+            v17 = (unsigned int *)*Block;
       LeaderIndex = TeamClass::GetLeaderIndex((TeamClass *)v17); /*0x636492*/
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
       VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&v17); /*0x6364a8*/
@@ -452,7 +452,7 @@ void Sidebar::RemoveItem()
   if ( a2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
-  this->Sidebar_field_0x10 = v4; /*0x63f04e*/
+    *((unsigned int *)this + 16) = v4;
   if ( a2 < (int)v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
@@ -486,9 +486,9 @@ ObjectClass * * Sidebar::Render(char a2)
   int v17; // [esp+8h] [ebp-1Ch]
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( (a2 || IDA_LOBYTE(this->field_150C)) && byte_884B8D ) /*0x63fb43*/
+    if ( (a2 || *((unsigned char *)this + 21552)) && MEMORY[0x884B8D] )
   {
-    IDA_LOBYTE(this->field_150C) = 0; /*0x63fb49*/
+        *((unsigned char *)this + 21552) = 0;
     g_TooltipActive = 1; /*0x63fb55*/
     if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
@@ -499,13 +499,13 @@ ObjectClass * * Sidebar::Render(char a2)
     v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
                   DSurface_Sidebar,
                   &NeedsSaveOrLink);
-    v6 = this->field_1530; /*0x63fb91*/
+        v6 = *((unsigned int *)this + 21696);
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
     v18[2] = v5[2]; /*0x63fba5*/
     v18[3] = v5[3]; /*0x63fbb1*/
-    v7 = *(unsigned int *)this->__pad_1534; /*0x63fbc6*/
-    v8 = *(unsigned int *)this->__pad_152C; /*0x63fbce*/
+        v7 = *((unsigned int *)this + 21712);
+        v8 = *((unsigned int *)this + 21680);
     if ( (dword_B0B504 + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
     {
       v9 = (dword_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
@@ -561,7 +561,7 @@ ObjectClass * * Sidebar::Render(char a2)
       v4 += 3; /*0x63fc82*/
       v11 = 1; /*0x63fc85*/
     }
-    v12 = *(unsigned int *)this->__pad_152C; /*0x63fc8a*/
+        v12 = *((unsigned int *)this + 21680);
     if ( v12 > 0 ) /*0x63fc92*/
     {
       if ( v11 < v12 ) /*0x63fc96*/
@@ -594,7 +594,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       v11 = 0; /*0x63fce6*/
     }
-    v13 = this->field_1530; /*0x63fce8*/
+        v13 = *((unsigned int *)this + 21696);
     if ( v13 > 0 ) /*0x63fcf0*/
     {
       if ( v11 < v13 ) /*0x63fcf4*/
@@ -627,7 +627,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       v11 = 0; /*0x63fd44*/
     }
-    v14 = *(unsigned int *)this->__pad_1534; /*0x63fd46*/
+        v14 = *((unsigned int *)this + 21712);
     if ( v14 > 0 && v11 < v14 ) /*0x63fd52*/
     {
       do /*0x63fda0*/
@@ -668,10 +668,10 @@ int Sidebar::ActivateTab(IUnknown * aP1)
   int result; // eax
 
   result = aP1; /*0x6a60a0*/
-  if ( aP1 == *(unsigned int *)((char *)&this->__pad_12934 + 9532) ) /*0x6a60ac*/
+    if ( aP1 == *(IUnknown **)((char *)this + 85616) )
   {
-    this->__pad_53A6 = 1; /*0x6a60b8*/
-    *(unsigned char *)(((char *)&this->qCD2 + 706) * aP1 + 5504) = 1; /*0x6a60c6*/
+        *((unsigned char *)this + 85656) = 1;
+        *(unsigned char *)((char *)this + 15952 * (unsigned int)aP1 + 5504) = 1;
     return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
@@ -697,7 +697,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !this->u32_53A5 || !byte_A8E9A0 || !stru_A8EB00.?[376] ) /*0x6a7109*/
+    if ( !*((unsigned int *)this + 85652) || !MEMORY[0xA8E9A0] || !MEMORY[0xA8ED5C] )
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
@@ -743,7 +743,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
           &v14,
           0,
           1);
-        this->u32_53A8 = 0; /*0x6a7315*/
+                *((unsigned int *)this + 85664) = 0;
       }
       dword_886F98 = dword_886F98; /*0x6a7332*/
       v17 = g_DSurface_ViewBounds; /*0x6a733e*/
@@ -830,7 +830,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       &v10,
       0,
       1);
-    this->u32_53A8 = 0; /*0x6a722f*/
+        *((unsigned int *)this + 85664) = 0;
   LABEL_24:
     byte_B0B519 = 1; /*0x6a7481*/
   }

@@ -44,22 +44,22 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x472a86*/
-  this->m_10 = 0; /*0x472a89*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x472a90*/
+    v2 = *(void **)((char *)this + 16);
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x472a96*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x472a9e*/
+        *((unsigned int *)this + 16) = 0;
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x472aa1*/
-  this->m_8 = 0; /*0x472aa4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 }
 // 0x472AD0
 namespace gamemd {
 void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 {
-  return *(unsigned int *, unsigned int a4)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472ada*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 }
 // 0x4770E0
@@ -242,7 +242,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
     if ( v3 != 3 ) /*0x47978e*/
     {
   LABEL_5:
-      this->Debug::Log(); /*0x479790*/
+            Debug::Log();
       return; /*0x4797a2*/
     }
     v4 = 0x80000000; /*0x4797a5*/
@@ -259,7 +259,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479822*/
   {
     GetLastError(); /*0x479824*/
-    this->Debug::Log(); /*0x47982c*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x479839*/
     if ( ++v6 >= 20 ) /*0x479843*/
       goto LABEL_18; /*0x479843*/
@@ -269,7 +269,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
     || !DeviceIoControl(FileA, 0x2D4808u, 0, 0, 0, 0, &BytesReturned, 0) )
   {
     GetLastError(); /*0x4798d4*/
-    this->Debug::Log(); /*0x4798dc*/
+        Debug::Log();
   }
   LABEL_18:
   CloseHandle(FileA); /*0x4798e4*/
@@ -297,7 +297,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479bd8*/
     {
   LABEL_3:
-      this->Debug::Log(); /*0x479bda*/
+            Debug::Log();
       return 0; /*0x479bee*/
     }
     v4 = 0x80000000; /*0x479bf1*/
@@ -314,7 +314,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479c70*/
   {
     GetLastError(); /*0x479c72*/
-    this->Debug::Log(); /*0x479c7e*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x479c8b*/
     if ( ++v6 >= 20 ) /*0x479c91*/
       goto LABEL_17; /*0x479c91*/
@@ -328,7 +328,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   else
   {
     GetLastError(); /*0x479d2e*/
-    this->Debug::Log(); /*0x479d3a*/
+        Debug::Log();
   }
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
@@ -356,7 +356,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479d94*/
     {
   LABEL_3:
-      this->Debug::Log(); /*0x479d96*/
+            Debug::Log();
       return 0; /*0x479dab*/
     }
     v4 = 0x80000000; /*0x479dae*/
@@ -373,7 +373,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479e2f*/
   {
     GetLastError(); /*0x479e32*/
-    this->Debug::Log(); /*0x479e3a*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x479e47*/
     if ( ++v6 >= 20 ) /*0x479e4d*/
       goto LABEL_13; /*0x479e4d*/
@@ -382,7 +382,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479e6e*/
   {
     GetLastError(); /*0x479e7f*/
-    this->Debug::Log(); /*0x479e87*/
+        Debug::Log();
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x479e8f*/
@@ -390,7 +390,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479ea6*/
       break; /*0x479eae*/
     GetLastError(); /*0x479eb1*/
-    this->Debug::Log(); /*0x479eb9*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x479ec6*/
   }
   CloseHandle(FileA); /*0x479ecf*/
@@ -418,7 +418,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479f24*/
     {
   LABEL_3:
-      this->Debug::Log(); /*0x479f26*/
+            Debug::Log();
       return 0; /*0x479f3b*/
     }
     v4 = 0x80000000; /*0x479f3e*/
@@ -435,7 +435,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479fbf*/
   {
     GetLastError(); /*0x479fc2*/
-    this->Debug::Log(); /*0x479fca*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x479fd7*/
     if ( ++v6 >= 20 ) /*0x479fdd*/
       goto LABEL_13; /*0x479fdd*/
@@ -444,7 +444,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479ffe*/
   {
     GetLastError(); /*0x47a00f*/
-    this->Debug::Log(); /*0x47a017*/
+        Debug::Log();
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x47a01f*/
@@ -452,7 +452,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x47a036*/
       break; /*0x47a03e*/
     GetLastError(); /*0x47a041*/
-    this->Debug::Log(); /*0x47a049*/
+        Debug::Log();
     Sleep(0x1F4u); /*0x47a056*/
   }
   CloseHandle(FileA); /*0x47a05f*/
@@ -473,12 +473,12 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   FileA = CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
   if ( !(uint8_t)CDROM::LockVolume((int)this, FileA, a2, 0, 0) ) /*0x47a0ba*/
   {
-    this->Debug::Log(); /*0x47a0cf*/
+        Debug::Log();
     return; /*0x47a0de*/
   }
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
-    this->Debug::Log(); /*0x47a0fa*/
+        Debug::Log();
     DriveControlCD(FileA, a2); /*0x47a105*/
     return; /*0x47a111*/
   }
@@ -489,9 +489,9 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   if ( !DeviceIoControl(FileA, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a14f*/
   {
     GetLastError(); /*0x47a160*/
-    this->Debug::Log(); /*0x47a16c*/
+        Debug::Log();
   LABEL_8:
-    this->Debug::Log(); /*0x47a17d*/
+        Debug::Log();
     goto LABEL_9; /*0x47a186*/
   }
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
@@ -529,7 +529,7 @@ void DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
     if ( result ) /*0x47a98b*/
       break; /*0x47a98b*/
     GetLastError(); /*0x47a98f*/
-    result = this->Debug::Log(); /*0x47a99b*/
+        Debug::Log();
   LABEL_5:
     IDA_LOBYTE(result) = 0; /*0x47a9ac*/
     if ( v4 == 8 ) /*0x47a9b1*/
@@ -1333,7 +1333,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-  this->m_0 = (int)&CampaignEndScoreClass_vftable; /*0x470c30*/
+    this->vfptr = &vt_CampaignEndScoreClass;
 }
 } // namespace gamemd
 
@@ -1794,27 +1794,27 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   int v7; // eax
 
   v3 = (CarryoverClass *)a2; /*0x473754*/
-  this->M4 = 0; /*0x47375a*/
-  this->M8 = 0; /*0x47375d*/
-  this->M12 = 0; /*0x473760*/
-  this->M20 = 0; /*0x473763*/
-  this->u32_16 = 0; /*0x473767*/
-  this->q018 = 0; /*0x47376d*/
-  this->M28 = -1; /*0x473770*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned short *)this + 10) = 0;
+    *((unsigned short *)this + 11) = 0;
+    *((unsigned int *)this + 24) = 0;
+    *((unsigned int *)this + 28) = -1;
   *this = (CarryoverClass)(void*)&CarryoverClass_vftable; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
     v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))(v3); /*0x473783*/
-    this->M12 = v4; /*0x473786*/
+        *((unsigned int *)this + 12) = v4;
     v5 = v4 - 1; /*0x473789*/
     if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
     {
       v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))(v3); /*0x4737a6*/
-      this->M16 = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
+            *((unsigned int *)this + 16) = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7);
     }
-    this->M28 = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
-    this->q018 = v3[27]; /*0x4737cd*/
-    this->M20 = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
+        *((unsigned int *)this + 28) = *(unsigned int *)(*(unsigned int *)(v3[135] + 52) + 184);
+        *((unsigned int *)this + 24) = v3[27];
+        *((unsigned int *)this + 20) = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*v3 + 440))(v3, &a2);
   }
   return this; /*0x4737e4*/
 }
@@ -2008,8 +2008,8 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v11 = -1009589776; /*0x4745b5*/
   *(unsigned int *)v6.__pad_0 = (void*)&SHAPipe_vftable; /*0x4745bd*/
   INIClass::WriteToString((int)&v6); /*0x4745c5*/
-  SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
-  IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
+    SHA1::ComputeThunk(&v6, (ObjectClass *)((char *)this + 260));
+    *((unsigned char *)this + 256) = 1;
   Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
     (char *)this,
@@ -2054,8 +2054,8 @@ int E4Recv_476E20::sub_476E20()
   v8 = -1009589776; /*0x476e64*/
   *(unsigned int *)v3.__pad_0 = (void*)&SHAPipe_vftable; /*0x476e6c*/
   INIClass::WriteToString((int)&v3); /*0x476e74*/
-  SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
-  IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
+    SHA1::ComputeThunk(v3, (char *)((char *)this + 260));
+    *((unsigned char *)this + 256) = 1;
 // 0x631c80
   return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
 }
@@ -2065,7 +2065,7 @@ int E4Recv_476E20::sub_476E20()
 namespace gamemd {
 void E4Recv_476EA0::sub_476EA0()
 {
-  IDA_LOBYTE(this->ambientSoundController[1]) = 0; /*0x476ea0*/
+    *((unsigned int *)this + 256) = 0;
 }
 } // namespace gamemd
 
@@ -2450,11 +2450,11 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
   char *v3; // eax
 
   BufferIOFileClass::Constructor(); /*0x47aa03*/
-  this->M84 = 0; /*0x47aa0c*/
-  *(unsigned int *)this->BufferIOFileClass = &off_7E1668; /*0x47aa10*/
+    *((unsigned int *)this + 336) = 0;
+    *(unsigned int *)this = &off_7E1668;
   v3 = String::GetOrEmpty_Alt((String *)a2); /*0x47aa16*/
   FileClass::OpenWithCDSearch(v3); /*0x47aa1e*/
-  return this->BufferIOFileClass; /*0x47aa25*/
+    return (CDFileClass *)this;
 }
 } // namespace gamemd
 

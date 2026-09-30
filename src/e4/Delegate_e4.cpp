@@ -97,7 +97,7 @@ void Delegate::Dispatch()
 {
   int v3; // ecx
 
-  v3 = this->m_count; /*0x631d10*/
+    v3 = (Pipe *)*((unsigned int *)this + 4);
   if ( v3 ) /*0x631d15*/
     return (*(int (**)(int, int, int))(v3->q010)(v3, aP1, aP2); /*0x631d23*/
   else
@@ -111,7 +111,7 @@ void Delegate::GetField()
   this->m_items = (unsigned int *)(0);
   this->m_count = (unsigned int *)(0);
   this->Delegate_field_08 = (unsigned int *)(0);
-  *(unsigned int *)&this->m_allocated = 0; /*0x6c95ee*/
+    *((unsigned int *)this + 12) = 0;
   return &this->m_items; /*0x6c95f1*/
 }
 } // namespace gamemd
@@ -122,7 +122,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
   int result; // eax
   void * v4;
 
-  if ( this->Straw_field_0x04 != (unsigned int)(aP1) ) /*0x6c989b*/
+    if ( (AbstractTypeClass *)*((unsigned int *)this + 4) != aP1 )
   {
     if ( aP1 ) /*0x6c989f*/
     {
@@ -136,7 +136,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
     result = (unsigned int)(this->Straw_field_0x04);
     if ( result ) /*0x6c98bb*/
       *(unsigned int *)(result + 8) = 0; /*0x6c98bd*/
-    this->Straw_field_0x04 = aP1; /*0x6c98c6*/
+        *((unsigned int *)this + 4) = aP1;
     if ( aP1 ) /*0x6c98c9*/
       aP1->vtable3 = this; /*0x6c98cb*/
   }
@@ -248,16 +248,16 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&GenericNode_vftable; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
-    Previous = this->Previous; /*0x52ae2f*/
+        v3 = *(Block + 1);
     if ( Previous ) /*0x52ae34*/
     {
-      v4 = *(unsigned int *)this->Blowfish; /*0x52ae36*/
+            v4 = *(Block + 2);
       if ( v4 ) /*0x52ae3b*/
       {
         v4->Previous = Previous; /*0x52ae3d*/
-        *(unsigned int *)(this->Previous + 8) = *(unsigned int *)this->Blowfish; /*0x52ae46*/
-        *(unsigned int *)this->Blowfish = 0; /*0x52ae49*/
-        this->Previous = 0; /*0x52ae4c*/
+                *(unsigned int *)(*(Block + 1))[1].__pad_0 = *(Block + 2);
+                *(Block + 2) = 0;
+                *(Block + 1) = 0;
       }
     }
   }
@@ -270,7 +270,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
 namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
-  Vector::Clear((int)&this->m_allocated); /*0x52ae76*/
+    Vector::Clear((int)&this->__pad_0[12]);
   Straw::Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     RA2_OPDEL(); /*0x52ae8a*/

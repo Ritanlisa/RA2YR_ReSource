@@ -29,7 +29,7 @@
 namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
-  return (!this->u32_FC || a2 != -2) && a2 < 4; /*0x5d5df2*/
+    return (!*((unsigned int *)this + 252) || a2 != -2) && a2 < 4;
 }
 }
 // 0x6B8CA0

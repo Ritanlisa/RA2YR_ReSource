@@ -75,6 +75,23 @@ struct AbstractClass {
     unsigned int COMStub_Release;
     unsigned int ProcessPower;
     unsigned int QueryInterface;
+    unsigned int q3D4;  // 0x3D4
+    unsigned int q090;  // 0x90
+    unsigned int q0C0;  // 0xC0
+    unsigned int q2E0;  // 0x2E0
+    unsigned int q2F0;  // 0x2F0
+    unsigned int q300;  // 0x300
+    unsigned int q310;  // 0x310
+    unsigned int qF50;  // 0xF50
+    unsigned int q1EE0;  // 0x1EE0
+    unsigned int q22F;  // 0x22F
+    unsigned int q235;  // 0x235
+    unsigned int q7E0;  // 0x7E0
+    unsigned int q614;  // 0x614
+    unsigned int q231;  // 0x231
+    unsigned int q008;  // 0x8
+    unsigned int q098;  // 0x98
+    unsigned int q0A0;  // 0xA0
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

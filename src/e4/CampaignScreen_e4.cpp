@@ -113,8 +113,8 @@ void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
     }
     if ( hWnd == (HWND)15 ) /*0x470d84*/
     {
-      this->Dialog::DrawBackground(); /*0x471343*/
-      this->Dialog::StopBink(); /*0x47134a*/
+            Dialog::DrawBackground(hWnd);
+            Dialog::StopBink(hWnd);
       return 0; /*0x47135b*/
     }
     if ( hWnd != (HWND)272 ) /*0x470d90*/

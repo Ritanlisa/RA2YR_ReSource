@@ -19,7 +19,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
-  Vector::Clear((int)&this->q00C6); /*0x6c689c*/
+    Vector::Clear((int)(Block + 9));
   GadgetClass::Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     RA2_OPDEL(); /*0x6c68b0*/

@@ -41,15 +41,15 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
   this->nextArrayIndex = (unsigned int)(0);
   this->AbstractClass = (unsigned int)(0);
-  *(unsigned int *)&this->q004 = 0; /*0x659403*/
-  IDA_LOBYTE(this->u32_8) = 0; /*0x659406*/
-  IDA_BYTE1(this->u32_8) = 1; /*0x659409*/
-  this->memberAtOffset12 = 0; /*0x65940c*/
-  this->uniqueId = aP1; /*0x65940f*/
-  this->referenceCount = 0; /*0x659412*/
-  IDA_LOBYTE(this->NeedsSaveOrLink) = 0; /*0x659415*/
-  this->u8_21 = 0; /*0x659418*/
-  this->u8_22 = 0; /*0x65941b*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned char *)this + 8) = 0;
+    *((unsigned char *)this + 9) = 1;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 16) = aP1;
+    *((unsigned int *)this + 28) = 0;
+    *((unsigned char *)this + 32) = 0;
+    *((unsigned char *)this + 33) = 0;
+    *((unsigned char *)this + 34) = 0;
   this-((unsigned int *)(>range))[0] = 0; /*0x65941e*/
   this-((unsigned int *)(>range))[1] = 0; /*0x659421*/
   this-((unsigned int *)(>data))[0] = 0; /*0x659424*/
@@ -63,11 +63,11 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   this-((unsigned int *)(>data))[8] = 0; /*0x65943c*/
   this-((unsigned int *)(>data))[9] = 0; /*0x65943f*/
   this-((unsigned int *)(>data))[10] = 1; /*0x659442*/
-  IDA_LOBYTE(this->data[11]) = 0; /*0x659445*/
+    *((unsigned char *)this + 88) = 0;
   this-((unsigned int *)(>data))[20] = 0; /*0x659448*/
-  IDA_LOBYTE(this->data[37]) = 0; /*0x65944b*/
-  IDA_BYTE1(this->data[37]) = 0; /*0x659451*/
-  IDA_BYTE2(this->data[37]) = 0; /*0x659457*/
+    *((unsigned char *)this + 192) = 0;
+    *((unsigned char *)this + 193) = 0;
+    *((unsigned char *)this + 194) = 0;
   return &this->AbstractClass; /*0x65945d*/
 }
 } // namespace ra2

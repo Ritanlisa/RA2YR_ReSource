@@ -1320,11 +1320,11 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractCla
     v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*((int (__stdcall **)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
-  v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
-  this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
-  this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
+    v10 = (unsigned int *)(*(int (__stdcall **)(char *))(*(unsigned int *)this + 172))(v14);
+    Coord::To_Screen(*(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9432], v10, (IUnknown *)((char *)this + 864));
+    v11 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + *((unsigned int *)this + 880);
+    *((unsigned int *)this + 864) += *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176);
+    *((unsigned int *)this + 880) = v11;
   if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
     if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/

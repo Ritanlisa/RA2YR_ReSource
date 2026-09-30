@@ -17,7 +17,7 @@ int NetworkAddress::Assign(void* a1, void* a2)
   char *m_Port; // ecx
 
   result = &this->m_IP; /*0x53ece4*/
-  m_Port = this->m_Port; /*0x53ece9*/
+    v5 = (char *)this + 4;
   *(unsigned int *)m_Port = *(unsigned int *)aP2; /*0x53ecec*/
   *((unsigned short *)m_Port + 2) = aP2->u32_4; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/

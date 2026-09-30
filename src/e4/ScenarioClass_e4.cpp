@@ -135,7 +135,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v6 = *(unsigned int *)(v4 + 24); /*0x5cc344*/
   if ( *(unsigned int *)(v4 + 16) != -1 ) /*0x5cc34a*/
   {
-    v7 = this->Timer::GetTicks() - *(unsigned int *)(v4 + 16); /*0x5cc354*/
+        v6 = Timer::GetTicks() - *(unsigned int *)(a1 + 16);
     if ( v7 >= v6 ) /*0x5cc359*/
       goto LABEL_6; /*0x5cc359*/
     v6 -= v7; /*0x5cc35b*/
@@ -152,7 +152,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   }
   LABEL_6:
   v8 = *(unsigned int *)(v5 + 36); /*0x5cc365*/
-  *(unsigned int *)(v5 + 16) = this->Timer::GetTicks(); /*0x5cc371*/
+    *(unsigned int *)(a1 + 16) = Timer::GetTicks();
   *(unsigned int *)(v5 + 20) = v30; /*0x5cc378*/
   v9 = *(unsigned int *)(v5 + 64); /*0x5cc37b*/
   *(unsigned int *)(v5 + 24) = v8; /*0x5cc381*/
@@ -316,49 +316,49 @@ TimerStruct * * ScenarioClass::Constructor()
   unsigned char *v11; // edi
 
   SeedInitRNG((ObjectClass *)&this->random[1], 0); /*0x6832cf*/
-  this->elapsedTimer[1] = this->Timer::GetTicks(); /*0x6832e5*/
-  this->pauseTimer[0] = 0; /*0x6832eb*/
-  this->pauseTimer[1] = this->Timer::GetTicks(); /*0x6832f6*/
-  *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
+    *((unsigned int *)this + 6224) = Timer::GetTicks();
+    *((unsigned int *)this + 6256) = 0;
+    *((unsigned int *)this + 6272) = Timer::GetTicks();
+    *((unsigned int *)this + 6304) = 0;
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
   this->missionTimer[2] = (gamemd::TechnoTypeClass *)(0);
   this->missionTimer[0] = (char)((gamemd::TechnoTypeClass *)(v2));
-  IDA_LOBYTE(this->missionTimer_text[0]) = 0; /*0x683313*/
+    *((unsigned char *)this + 18400) = 0;
   v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683319*/
-  this->shroudRegrowTimer[2] = 0; /*0x68331f*/
-  this->shroudRegrowTimer[0] = v3; /*0x683325*/
-  this->fogTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683331*/
-  this->fogTimer[2] = 0; /*0x683337*/
+    *((unsigned int *)this + 18560) = 0;
+    *((unsigned int *)this + 18528) = v3;
+    *((unsigned int *)this + 18576) = MEMORY[0xA8ED84];
+    *((unsigned int *)this + 18608) = 0;
   v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x68333d*/
-  this->iceTimer[2] = 0; /*0x683342*/
-  this->iceTimer[0] = v4; /*0x683348*/
-  this->ScenarioClass_field_timer_123c[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683354*/
-  this->ScenarioClass_field_timer_123c[2] = 0; /*0x68335a*/
+    *((unsigned int *)this + 18656) = 0;
+    *((unsigned int *)this + 18624) = v4;
+    *((unsigned int *)this + 18672) = MEMORY[0xA8ED84];
+    *((unsigned int *)this + 18704) = 0;
   v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683360*/
-  this->ambientTimer[2] = 0; /*0x683366*/
-  this->ambientTimer[0] = v5; /*0x68336c*/
-  this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683381*/
-  this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
+    *((unsigned int *)this + 18752) = 0;
+    *((unsigned int *)this + 18720) = v5;
+    *((unsigned int *)this + 54016) = MEMORY[0xA8ED84];
+    *((unsigned int *)this + 54048) = 0;
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
-  *(unsigned int *)&this->dropshipUnitCounts = 0; /*0x683397*/
-  this->dropshipCountsCount = 10; /*0x68339a*/
-  this->allowableUnits[0] = (int)&TypeList_TechnoTypeClass___vftable; /*0x68339d*/
+    *((unsigned int *)this + 54160) = 0;
+    *((unsigned int *)this + 54176) = 10;
+    *((unsigned int *)this + 54096) = &vt_TypeList_TechnoTypeClass;
   VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
-  this->ground = 10; /*0x6833b2*/
-  this->blue = 0; /*0x6833b5*/
-  this->ambientCurrent = (int)&TypeList_int_vftable; /*0x6833b8*/
+    *((unsigned int *)this + 54288) = 10;
+    *((unsigned int *)this + 54272) = 0;
+    *((unsigned int *)this + 54208) = &vt_TypeList_int;
   VectorClass::Construct((VectorClass *)&this->ionAmbient, 0, 0); /*0x6833c8*/
-  this->ionLevel = 10; /*0x6833cf*/
-  this->ionGround = 0; /*0x6833d2*/
-  this->ionAmbient = (int)&TypeList_int_vftable; /*0x6833d5*/
+    *((unsigned int *)this + 54400) = 10;
+    *((unsigned int *)this + 54384) = 0;
+    *((unsigned int *)this + 54320) = &vt_TypeList_int;
   ScenarioClass::InitTimer(); /*0x6833db*/
-  *(unsigned int *)&this->q3598 = 0; /*0x6833e2*/
-  this->isRandom = 0; /*0x6833e8*/
+    *((unsigned char *)this + 54880) = 0;
+    *((unsigned char *)this + 54004) = 0;
   ScenarioClass::ResetIntroFlags(); /*0x6833ee*/
-  this->techLevel = 1; /*0x6833f3*/
-  this->campaignIndex = -1; /*0x6833fd*/
-  IDA_LOBYTE(this->nextScenario[1]) = 0; /*0x683407*/
-  IDA_LOBYTE(this->altNextScenario[1]) = 0; /*0x68340a*/
+    *((unsigned int *)this + 18768) = 1;
+    *((unsigned int *)this + 54064) = -1;
+    *((unsigned char *)this + 16) = 0;
+    *((unsigned char *)this + 1056) = 0;
   waypoints = this->waypoints; /*0x683410*/
   v7 = 702; /*0x683416*/
   do /*0x683427*/
@@ -382,7 +382,7 @@ TimerStruct * * ScenarioClass::Constructor()
     if ( (unsigned int)v8 < 0x32 && *v9 ) /*0x6834e7*/
     {
       *v9 = 0; /*0x6834eb*/
-      this->variablesChanged = 1; /*0x6834ef*/
+            *((unsigned char *)this + 53928) = 1;
       HouseClass::UpdateAllTypes((HouseClass *)v8); /*0x6834f6*/
     }
     ++v8; /*0x6834fb*/
@@ -390,25 +390,25 @@ TimerStruct * * ScenarioClass::Constructor()
   }
   while ( v8 < 50 ); /*0x683502*/
   v10 = 0; /*0x683504*/
-  v11 = (char *)&this->localVariables[9] + 2; /*0x683506*/
+    v11 = (unsigned char *)((char *)this + 37576);
   do /*0x68352f*/
   {
     *(v11 - 40) = 0; /*0x68350f*/
     if ( (unsigned int)v10 < 0x64 && *v11 ) /*0x683514*/
     {
       *v11 = 0; /*0x683518*/
-      this->variablesChanged = 1; /*0x68351c*/
+            *((unsigned char *)this + 53928) = 1;
       TriggerActionQueue::ProcessAll((TriggerActionQueue *)v10); /*0x683523*/
     }
     ++v10; /*0x683528*/
     v11 += 41; /*0x683529*/
   }
   while ( v10 < 100 ); /*0x68352f*/
-  *(int *)((char *)&this->localVariables[1024] + 2) = 0; /*0x683534*/
-  *(int *)((char *)this->view1 + 2) = 0; /*0x68353c*/
-  *(int *)((char *)this->view2 + 2) = 0; /*0x683543*/
-  *(int *)((char *)this->view3 + 2) = 0; /*0x683549*/
-  return (int)this->nextScenario; /*0x683533*/
+    *((unsigned int *)this + 53816) = 0;
+    *((unsigned int *)this + 53832) = 0;
+    *((unsigned int *)this + 53848) = 0;
+    *((unsigned int *)this + 53864) = 0;
+    return this;
 }
 }
 // 0x683AB0
@@ -2385,14 +2385,14 @@ void ScenarioClass::sub_5D80B0()
   void *v2; // eax
 
   v2 = *(unsigned int *)&this->Items; /*0x5d80b6*/
-  *(unsigned int *)&this->q010 = 0; /*0x5d80b9*/
-  if ( v2 && this->IsAllocated ) /*0x5d80c0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x5d80c6*/
-    *(unsigned int *)&this->Items = 0; /*0x5d80ce*/
+        *((unsigned int *)this + 16) = 0;
   }
-  *(unsigned int *)&this->IsAllocated = 0; /*0x5d80d1*/
-  *(unsigned int *)&this->Capacity = 0; /*0x5d80d4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 

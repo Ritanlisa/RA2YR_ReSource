@@ -38,12 +38,12 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   CampaignClass * v3;
 
   AbstractTypeClass::Constructor(aP1); /*0x46cb68*/
-  this->AbstractClass = (void*)&CampaignClass_vftable; /*0x46cb70*/
+    *(unsigned int *)this = &CampaignClass::`vftable';
   this-((unsigned int *)(>scenario))[28] = -1; /*0x46cb76*/
-  this->description[28] = -1; /*0x46cb7c*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46cb82*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46cb89*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46cb90*/
+    *((unsigned int *)this + 2672) = -1;
+    *((unsigned int *)this + 16) = &CampaignClass::`vftable';
+    *((unsigned int *)this + 32) = &CampaignClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_CampaignClass;
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -55,8 +55,8 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
     v3 = (gamemd::CampaignClass *)((unsigned int)(dword_A83D08++));
     *((unsigned int *)(unsigned int)(dword_A83CFC)+ v3) = this; /*0x46cbe8*/
   }
-  IDA_LOBYTE(this->scenario[29]) = 0; /*0x46cbf7*/
-  wcscpy((wchar_t *)&this->description[29], &g_TypeClass_DefaultString); /*0x46cbfe*/
+    *((unsigned char *)this + 624) = 0;
+    wcscpy((wchar_t *)((char *)this + 2688), (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]);
   return (int)this; /*0x46cc08*/
 }
 }
@@ -169,20 +169,20 @@ AbstractClass * * CampaignClass::SaveProgress()
   int v35; // [esp+1A0h] [ebp-28h]
   char ((unsigned int *)(Buffer))[32]; // [esp+1A8h] [ebp-20h] BYREF
 
-  if ( !IDA_LOBYTE(this->scenario[17]) ) /*0x49c5ac*/
+    if ( !*((unsigned int *)this + 432) )
     return (unsigned int)(0);
-  if ( !IDA_LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
+    if ( !*this )
     return 0; /*0x49c5b7*/
-  p_referenceCount = &this->?; /*0x49c5c4*/
-  if ( !IDA_LOBYTE(this->?) ) /*0x49c5c1*/
+  p_referenceCount = &this->q070; /*0x49c5c4*/
+    if ( !*((unsigned int *)this + 112) )
     return 0; /*0x49c5c1*/
-  v3 = this->q044; /*0x49c5d4*/
+    v3 = *((unsigned int *)this + 17);
   if ( !IDA_LOBYTE(g_DDrawSurfaceManager.scenario[14]) ) /*0x49c5d9*/
     CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= g_DDrawSurfaceManager.scenario[13] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = ((unsigned int *)(g_DDrawSurfaceManager.scenario))[12] + 76 * v3; /*0x49c60d*/
-  if ( this-((unsigned int *)(>scenario))[6] == this->scenario[4] ) /*0x49c616*/
+    if ( *((unsigned int *)this + 16) == *((unsigned int *)this + 14) )
     return 1; /*0x49c61b*/
   CCFileClass::Construct(&v33, g_Str_File_coopsave_ini); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
@@ -236,7 +236,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   }
   ((unsigned int *)(g_IsWindowed))[v5] = 0; /*0x49c720*/
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
-  v13 = (char *)&this->?; /*0x49c743*/
+    v13 = (char *)this + 112;
   v14 = 0; /*0x49c745*/
   for ( i = *(unsigned char *)p_referenceCount; i; ++v13 )
   {
@@ -308,9 +308,9 @@ AbstractClass * * CampaignClass::SaveProgress()
   INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aBuilt1, this-((unsigned int *)(>scenario))[10], 0); /*0x49c9c1*/
   INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aBuilt2, this-((unsigned int *)(>scenario))[11], 0); /*0x49c9da*/
   INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aLost1, this-((unsigned int *)(>scenario))[12], 0); /*0x49c9f3*/
-  INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aLost2, this->scenario[13], 0); /*0x49ca0c*/
-  INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aScore1, this->scenario[14], 0); /*0x49ca25*/
-  INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aScore2, this->scenario[15], 0); /*0x49ca3e*/
+    INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], *((unsigned int *)this + 23), 0);
+    INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], *((unsigned int *)this + 24), 0);
+    INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], *((unsigned int *)this + 25), 0);
   INIClass::WriteDigest((INIClass *)&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset(&v30); /*0x49ca5d*/
   *(unsigned int *)v30.CDFileClass = (void*)&CCFileClass_vftable; /*0x49ca67*/
@@ -324,7 +324,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   Vector::Clear((int)v34); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
-  IDA_LOBYTE(this->scenario[17]) = 1; /*0x49cad2*/
+    *((unsigned int *)this + 432) = 1;
   return 1; /*0x49c618*/
 }
 }
@@ -401,11 +401,11 @@ CampaignClass * CampaignClass::DTOR(char a2)
   int v3; // eax
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&CampaignClass_vftable; /*0x46d096*/
-  *(void **)&this->vtable2 = (void*)&CampaignClass_vftable; /*0x46d09c*/
-  *(void **)&this->vtable3 = (void*)&CampaignClass_vftable; /*0x46d0a3*/
-  *(void **)&this->vtable4 = (void*)&CampaignClass_vftable; /*0x46d0aa*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
+    *Block = &CampaignClass::`vftable';
+    *(Block + 1) = &CampaignClass::`vftable';
+    *(Block + 2) = &CampaignClass::`vftable';
+    *(Block + 3) = &vt_CampaignClass;
+    AbstractClass::AnnounceExpiredPointer(Block, 1);
   v5 = this; /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
   if ( v3 != -1 && v3 < dword_A83D08 && v3 < --dword_A83D08 ) /*0x46d0e5*/
@@ -420,6 +420,6 @@ CampaignClass * CampaignClass::DTOR(char a2)
   AbstractTypeClass::Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
     RA2_OPDEL(); /*0x46d10e*/
-  return &this->AbstractClass; /*0x46d118*/
+    return (CampaignClass *)Block;
 }
 } // namespace gamemd

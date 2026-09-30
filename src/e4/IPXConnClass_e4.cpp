@@ -17,22 +17,22 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   int16_t v14; // [esp+Ch] [ebp-4h]
 
   IPXConnClass::initConnection(aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
-  Waypoint::InitInvalid((Waypoint *)((char *)&this->RemoteAddress6)); /*0x53f462*/
+    Waypoint::InitInvalid((unsigned char *)this + 76);
   *(unsigned int *)this->__pad_0 = (void*)&IPXConnClass_vftable; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
-    this->u32_4C = *a5; /*0x53f479*/
-    this->PacketsReceived = a5[1]; /*0x53f47e*/
-    this->u32_54 = a5[2]; /*0x53f484*/
+        *((unsigned int *)this + 19) = *a5;
+        *((unsigned int *)this + 20) = a5[1];
+        *((unsigned int *)this + 21) = a5[2];
   }
-  this->u32_64 = a7; /*0x53f494*/
+    *((unsigned int *)this + 25) = a7;
   wcscpy((wchar_t *)this + 52, Source); /*0x53f497*/
-  Network::CopyAddress((Network *)((char *)&this->RemoteAddress6), &aP8, (int)&v13); /*0x53f4ab*/
+    Network::CopyAddress((unsigned int *)this + 19, &aP8, (int)&v13);
   v13 = v13; /*0x53f4b0*/
   v14 = v14; /*0x53f4b4*/
-  this->Socket = 0; /*0x53f4bc*/
-  this->u32_58 = v13; /*0x53f4c4*/
-  this->u32_5C = v14; /*0x53f4c6*/
+    *((unsigned int *)this + 24) = 0;
+    *((unsigned int *)this + 22) = v10;
+    *((unsigned short *)this + 46) = v11;
   return this; /*0x53f4c3*/
 }
 } // namespace gamemd

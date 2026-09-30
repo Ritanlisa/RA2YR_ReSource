@@ -66,7 +66,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
       if ( v12 < (gamemd::Stream *)((uint16_t))*a5 && *a2 ) /*0x493a97*/
       {
         v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
-        *a1 = ((unsigned int)(this->ptr_8)& (*a1 >> 1)) + (this->ptr_8 & (*(unsigned (unsigned int)(short)*)(this->q004 + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
+                *a1 = (*((unsigned short *)this + 8) & (*a1 >> 1))
         *a5 = argC; /*0x493ac9*/
         v14 = g_ZBufferDescriptor; /*0x493acc*/
       }
@@ -133,7 +133,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = this->ptr_8 + (v11 << 9); /*0x493e25*/
+    result = *((unsigned int *)this + 8) + (v11 << 9);
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x493e35*/
@@ -143,7 +143,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(unsigned short *)(*(unsigned int *)&this->q004 + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
+                *a2 = *(unsigned short *)(*((unsigned int *)this + 4) + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7)));
         v14 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
@@ -161,7 +161,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493eca*/
+    return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
            this,
            a2,
            a3,
@@ -178,7 +178,7 @@ int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493efa*/
+    return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
            this,
            a2,
            a3,
@@ -194,7 +194,7 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493f2a*/
+    return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
            this,
            a2,
            a3,

@@ -144,9 +144,9 @@ void sub_5E2AC0()
   wchar_t *v4; // eax
   int v5; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( this->Dialog::GetCurrent() ) /*0x5e2ac4*/
+    if ( Dialog::GetCurrent() )
   {
-    Current = this->Dialog::GetCurrent(); /*0x5e2adc*/
+        Current = Dialog::GetCurrent();
     DlgItem = GetDlgItem(Current, 1343); /*0x5e2ae6*/
     if ( DlgItem ) /*0x5e2aea*/
     {

@@ -101,7 +101,7 @@ char TriggerClass::FindByEventType(char a1)
 namespace gamemd {
 void TriggerClass::GetValue()
 {
-  return this->u32_54; /*0x71fa33*/
+    return *((unsigned int *)this + 84);
 }
 }
 // 0x7264C0
@@ -114,26 +114,26 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
 
-  if ( !this->enabled || this->destroyed ) /*0x7264cf*/
+    if ( !*((unsigned char *)this + 272) || *((unsigned char *)this + 192) )
     return 0; /*0x7265b4*/
   v12 = 1; /*0x7264e2*/
   if ( a4 ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
   v7 = 0; /*0x7264f0*/
-  v8 = this->buildingType->FirstEvent; /*0x7264f2*/
+    v8 = *(unsigned int **)(*((unsigned int *)this + 144) + 172);
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
   {
-    if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
+        if ( (*((unsigned int *)this + 256) & (1 << v7)) != 0
       || (v11 = a6,
           Owner = HouseClass::FindOwner(*(HouseClass **)(this->buildingType->House + 180)),
           TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP2, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        *(unsigned int *)&this->house = TriggerClass::GetValue(v8); /*0x726561*/
+                *((unsigned int *)this + 176) = TriggerClass::GetValue(v8);
       if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
-        this->occuredEvents |= 1 << v7; /*0x726582*/
+                *((unsigned int *)this + 256) |= 1 << v7;
     }
     else
     {

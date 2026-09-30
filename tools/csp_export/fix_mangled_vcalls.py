@@ -109,7 +109,8 @@ def fix_line(line, stats):
 
 stats = Counter()
 files_changed = 0
-for p in glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp'):
+for p in (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
+          + glob.glob('src/system/gap2*.cpp')):
     lines = open(p, encoding='utf-8', errors='replace').read().split('\n')
     out = []
     changed = False

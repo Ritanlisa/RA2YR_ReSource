@@ -115,23 +115,23 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
       IDA_LOBYTE(v18) = 1; /*0x71ec2a*/
       return v18; /*0x71ec30*/
     case 27: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb62*/
+            ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 52), &a6);
       IDA_LOBYTE(v18) = a6; /*0x71eb67*/
       return v18; /*0x71eb72*/
     case 28: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb84*/
+            ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 52), &a6);
       IDA_LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71eb95*/
       return v18; /*0x71eb9b*/
     case 36: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebad*/
+            ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 52), &a6);
       IDA_LOBYTE(v18) = a6; /*0x71ebb2*/
       return v18; /*0x71ebbd*/
     case 37: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebcf*/
+            ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 52), &a6);
       IDA_LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71ebe0*/
       return v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
-      return (int)((unsigned int *)(dword_A8B230))[378].vtable1 <= this->TEventClass_field_34; /*0x71eb03*/
+            return *((unsigned int *)MEMORY[0xA8B230] + 3403) <= *((unsigned int *)this + 52);
     case 46: /*0x71e964*/
       IDA_LOBYTE(v18) = (int)((unsigned int *)(dword_A8B230))[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
       return v18; /*0x71eb25*/
@@ -144,7 +144,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
       a6 = -1; /*0x71e975*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      TEventClass_field_38 = this->TEventClass_field_38; /*0x71e982*/
+            v11 = (const char *)((char *)this + 56);
       v13 = stru_A8EB00.ObjectTypeClass[1] + 4 * v11; /*0x71e985*/
       while ( strcmp((const char *)(*(unsigned int *)v13 + 36), (const char *)TEventClass_field_38) ) /*0x71e9bb*/
       {
@@ -164,7 +164,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
         goto LABEL_139; /*0x71e9db*/
       v14 = 0; /*0x71e9eb*/
       v15 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v10); /*0x71e9ed*/
-      TEventClass_field_34 = this->TEventClass_field_34; /*0x71e9f5*/
+            v15 = *((unsigned int *)this + 52);
       v17 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71e9f8*/
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71e9fd*/
         goto LABEL_139; /*0x71e9fd*/
@@ -187,7 +187,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
       a6 = -1; /*0x71ea3a*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      v21 = this->TEventClass_field_38; /*0x71ea47*/
+            v20 = (const char *)((char *)this + 56);
       v22 = stru_A8EB00.ObjectTypeClass[1] + 4 * v20; /*0x71ea4a*/
       while ( strcmp((const char *)(*(unsigned int *)v22 + 36), (const char *)v21) ) /*0x71ea80*/
       {
@@ -275,18 +275,18 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
         case 59: /*0x71ecd6*/
           if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
           {
-            v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
+                        v51 = (void *)*((unsigned int *)this + 52);
             if ( v53 == (HouseClass *)-1 || HouseClass::FindOwner(v53) ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
-                v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
+                                v52 = (void *)*((unsigned int *)this + 52);
                 if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
                   || (v55 = (*(int (**)(int))(*(unsigned int *)a4 + 56))(a4),
                       v55 == *(unsigned int *)(HouseClass::FindOwner(v54) + 48)) )
                 {
                   *(unsigned char *)a6 = 1; /*0x71f1ff*/
-                  this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
+                                    *((unsigned int *)this + 84) = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4);
   LABEL_153:
                   IDA_LOBYTE(v18) = 1; /*0x71f20c*/
                   return v18; /*0x71f20f*/
@@ -302,7 +302,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
           {
             if ( a4 ) /*0x71ecef*/
             {
-              v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
+                            v28 = (void *)*((unsigned int *)this + 52);
               if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
               {
                 if ( HouseClass::FindOwner(v29) ) /*0x71ed01*/
@@ -310,7 +310,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
                   if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
                     v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34) /*0x71ed40*/
+                                        if ( *(unsigned int *)(v29 + 48) == *(unsigned int *)(HouseClass::FindOwner((void *)*((unsigned int *)this + 52)) + 48) )
                                                             + 48) )
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
@@ -389,17 +389,17 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
         switch ( TEventClass_field_2C ) /*0x71eea2*/
         {
           case 12: /*0x71eea2*/
-            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= (int)(this->TEventClass_field_34) ) /*0x71ef0e*/
+                        if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= *((unsigned int *)this + 52) )
               goto LABEL_122; /*0x71ef0e*/
             IDA_LOBYTE(v18) = 0; /*0x71ef17*/
             return v18; /*0x71ef1d*/
           case 15: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21640) >= (unsigned int)(this->TEventClass_field_34) ) /*0x71f04a*/
+                        if ( *(unsigned int *)(a3 + 21640) >= *((unsigned int *)this + 52) )
               goto LABEL_122; /*0x71f04a*/
             IDA_LOBYTE(v18) = 0; /*0x71f04f*/
             return v18; /*0x71f055*/
           case 16: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21556) >= (unsigned int)(this->TEventClass_field_34) ) /*0x71f063*/
+                        if ( *(unsigned int *)(a3 + 21556) >= *((unsigned int *)this + 52) )
               goto LABEL_122; /*0x71f063*/
             goto LABEL_139; /*0x71f063*/
           case 17: /*0x71eea2*/
@@ -432,19 +432,19 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
             v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 628) != (unsigned int)(this->TEventClass_field_34) ) /*0x71f00e*/
+                        if ( *(unsigned int *)(a3 + 628) != *((unsigned int *)this + 52) )
               goto LABEL_139; /*0x71f00e*/
             *(unsigned char *)a6 = 1; /*0x71f018*/
             goto LABEL_122; /*0x71f01b*/
           case 21: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 624) != (unsigned int)(this->TEventClass_field_34) ) /*0x71f028*/
+                        if ( *(unsigned int *)(a3 + 624) != *((unsigned int *)this + 52) )
               goto LABEL_139; /*0x71f028*/
             *(unsigned char *)a6 = 1; /*0x71f032*/
             goto LABEL_122; /*0x71f035*/
           case 22: /*0x71eea2*/
             v48 = *(unsigned int *)(a3 + 632); /*0x71f037*/
   LABEL_112:
-            if ( v48 != (int)(this->TEventClass_field_34) ) /*0x71eff4*/
+                        if ( v48 != *((unsigned int *)this + 52) )
               goto LABEL_139; /*0x71eff4*/
             *(unsigned char *)a6 = 1; /*0x71effe*/
             goto LABEL_122; /*0x71f001*/
@@ -456,17 +456,17 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
             auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
+                        if ( !DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *((unsigned int *)this + 52)) )
               goto LABEL_139; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
           case 52: /*0x71eea2*/
-            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= (int)(this->TEventClass_field_34) ) /*0x71ef2d*/
+                        if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= *((unsigned int *)this + 52) )
               goto LABEL_122; /*0x71ef2d*/
             IDA_LOBYTE(v18) = 0; /*0x71ef36*/
             return v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efd5*/
+                        if ( DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *((unsigned int *)this + 52)) )
               goto LABEL_139; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
@@ -476,7 +476,7 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
         while ( 1 ) /*0x71eebe*/
         {
           vtable0 = auxParticles1->ObjectClass; /*0x71eebe*/
-          if ( *((unsigned int *)auxParticles1->ObjectClass + 9) == this->TEventClass_field_30 /*0x71eecc*/
+                    if ( *(unsigned int *)(*(unsigned int *)v42 + 36) == *((unsigned int *)this + 48) && !*(unsigned int *)(v43 + 84) && *(unsigned char *)(v43 + 130) )
             && !vtable0[21]
             && *((unsigned char *)vtable0 + 130) )
           {
@@ -497,10 +497,10 @@ DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
         }
       }
   LABEL_122:
-      Owner = HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34); /*0x71f069*/
+            Owner = HouseClass::FindOwner((void *)*((unsigned int *)this + 52));
       if ( Owner ) /*0x71f075*/
       {
-        switch ( this->TEventClass_field_2C ) /*0x71f092*/
+                switch ( *((unsigned int *)this + 44) )
         {
           case 3: /*0x71f092*/
             if ( *(unsigned char *)(Owner + 580) ) /*0x71f0e1*/
@@ -693,10 +693,10 @@ int TEventClass::CheckConditions(int a2, int a3)
   if ( result == a2 ) /*0x71f809*/
   {
     result = result->TEventClass_field_28; /*0x71f80b*/
-    this->TEventClass_field_28 = result; /*0x71f80e*/
+        *((unsigned int *)this + 40) = result;
   }
-  if ( this->TEventClass_field_30 == (char [4])(a2) ) /*0x71f814*/
-    this->TEventClass_field_30 = 0; /*0x71f816*/
+    if ( *((unsigned int *)this + 48) == a2 )
+        *((unsigned int *)this + 48) = 0;
   return result; /*0x71f81d*/
 }
 }
@@ -709,11 +709,11 @@ void * TEventClass::Fire(char a2)
   int v5; // eax
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&TEventClass_vftable; /*0x71fa86*/
-  *(void **)&this->vtable2 = (void*)&TEventClass_vftable; /*0x71fa8c*/
-  *(void **)&this->vtable3 = (void*)&TEventClass_vftable; /*0x71fa93*/
-  *(void **)&this->vtable4 = (void*)&TEventClass_vftable; /*0x71fa9a*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x71faa1*/
+    *Block = &TEventClass::`vftable';
+    *(Block + 1) = &TEventClass::`vftable';
+    *(Block + 2) = &TEventClass::`vftable';
+    *(Block + 3) = &vt_TEventClass;
+    AbstractClass::AnnounceExpiredPointer(Block, 1);
   v7 = this; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -761,7 +761,7 @@ void * TEventClass::Fire(char a2)
   AbstractClass::DTOR(); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
     RA2_OPDEL(); /*0x71fb90*/
-  return &this->AbstractClass; /*0x71fb9a*/
+    return (TEventClass *)Block;
 }
 }
 // 0x71F820
@@ -774,21 +774,21 @@ int TEventClass::ProcessEvent(int a2)
   int v6; // eax
 
   AbstractClass::ProcessPower(); /*0x71f829*/
-  TEventClass_field_28 = this->TEventClass_field_28; /*0x71f82e*/
+    v3 = *((unsigned int *)this + 160);
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
     v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(TEventClass_field_28 + 4) + 16))(TEventClass_field_28 + 4); /*0x71f83c*/
     Power::TimerProcess(v4); /*0x71f842*/
   }
-  Power::TimerProcess(this->TEventClass_field_2C); /*0x71f84d*/
-  TEventClass_field_30 = this->TEventClass_field_30; /*0x71f852*/
+    Power::TimerProcess(*((unsigned int *)this + 176));
+    v5 = *((unsigned int *)this + 192);
   if ( TEventClass_field_30 ) /*0x71f857*/
   {
     v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
     Power::TimerProcess(v6); /*0x71f866*/
   }
 // 0x4a1d50
-  return Power::TimerProcess(this->TEventClass_field_34); /*0x71f876*/
+    return Power::TimerProcess(*((unsigned int *)this + 208));
 }
 } // namespace gamemd
 
@@ -865,6 +865,6 @@ int TEventClass::StubReturn48()
 namespace gamemd {
 int TEventClass::Stub()
 {
-  return this->eventType; /*0x71fa73*/
+    return *((unsigned int *)this + 36);
 }
 } // namespace gamemd

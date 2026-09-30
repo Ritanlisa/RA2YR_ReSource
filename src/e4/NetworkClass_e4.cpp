@@ -126,7 +126,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
     WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/
     v2 = g_hWnd; /*0x7b1c73*/
   }
-  result = *(&this->u32_64D80); /*0x7b1c79*/
+    result = *((unsigned int *)this + 258160);
   if ( result != -1 ) /*0x7b1c83*/
   {
     if ( v2 ) /*0x7b1c87*/

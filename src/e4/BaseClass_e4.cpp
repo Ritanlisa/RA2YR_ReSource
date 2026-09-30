@@ -170,7 +170,7 @@ int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
   if ( (*(int (__stdcall **)(int, BaseClass *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, a1, 120, 0) >= 0 ) /*0x42f089*/
   {
     v3 = *(unsigned int *)v2; /*0x42f092*/
-    a2 = a1->a2; /*0x42f09e*/
+        a2 = a1[5];
     if ( (*(int (__stdcall **)(int, int *, int, unsigned int))(v3 + 16))(v2, &a2, 4, 0) >= 0 ) /*0x42f0a7*/
     {
       v4 = 0; /*0x42f0b1*/

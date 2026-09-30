@@ -19,7 +19,7 @@ int Power::Update(int * a2, void *a4 = 0, void *a3 = 0, void *a1 = 0)
 {
   AbstractClass::ProcessPower(); /*0x43a5d9*/
 // 0x4a1d50
-  return Power::TimerProcess(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - this->q00C); /*0x43a5f0*/
+    return Power::TimerProcess((int)MEMORY[0xA8ED84] - *((unsigned int *)this + 48));
 }
 }
 // 0x67C6E0
@@ -283,8 +283,8 @@ unsigned int * Power::UpdateAll()
   v50 = v54; /*0x67ceca*/
   *(unsigned int *)this = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
-  this->q004 = v50; /*0x67ced5*/
-  this->q008 = v51; /*0x67cedb*/
+    *((unsigned int *)this + 4) = v50;
+    *((unsigned int *)this + 8) = v51;
   return this; /*0x67ced4*/
 }
 }
@@ -315,42 +315,42 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
   int v23; // edx
 
   Checksum::AddString(a2, (uint8_t *)(&this->u32_7E40)); /*0x68b952*/
-  Power::TimerProcess(this->u32_1434); /*0x68b960*/
-  Power::TimerProcess(this->u32_1438); /*0x68b96e*/
-  Power::TimerProcess(this->u32_143C); /*0x68b97c*/
-  Power::TimerProcess(this->u32_1440); /*0x68b98a*/
-  Power::TimerProcess(this->u32_1444); /*0x68b998*/
-  Power::TimerProcess(this->u32_1448); /*0x68b9a6*/
-  Power::TimerProcess(this->u32_144C); /*0x68b9b4*/
-  Power::TimerProcess(this->u32_1C74); /*0x68b9c2*/
-  Power::TimerProcess(this->u32_1C84); /*0x68b9d0*/
-  Power::TimerProcess(this->u32_1C70); /*0x68b9de*/
-  Checksummer::Add_double(this->u32_1C78, this->u32_1C7C); /*0x68b9f3*/
-  IDA_LOBYTE(v3) = this->u8_34BC; /*0x68b9f8*/
+    Power::TimerProcess(*((unsigned int *)this + 20688));
+    Power::TimerProcess(*((unsigned int *)this + 20704));
+    Power::TimerProcess(*((unsigned int *)this + 20720));
+    Power::TimerProcess(*((unsigned int *)this + 20736));
+    Power::TimerProcess(*((unsigned int *)this + 20752));
+    Power::TimerProcess(*((unsigned int *)this + 20768));
+    Power::TimerProcess(*((unsigned int *)this + 20784));
+    Power::TimerProcess(*((unsigned int *)this + 29136));
+    Power::TimerProcess(*((unsigned int *)this + 29200));
+    Power::TimerProcess(*((unsigned int *)this + 29120));
+    Checksummer::Add_double(*((unsigned int *)this + 29152), *((unsigned int *)this + 29168));
+    LOBYTE(v3) = *((unsigned char *)this + 54000);
   Power::FlagProcess((int *)a2, v3); /*0x68ba01*/
-  IDA_LOBYTE(v4) = this->u8_34AD; /*0x68ba06*/
+    LOBYTE(v4) = *((unsigned char *)this + 53940);
   Power::FlagProcess((int *)a2, v4); /*0x68ba0f*/
-  Power::TimerProcess(this->u32_1C80 / 100); /*0x68ba2e*/
-  Power::TimerProcess(this->u32_34A0); /*0x68ba3c*/
-  IDA_LOBYTE(v5) = this->u8_34AC; /*0x68ba41*/
+    Power::TimerProcess(*((unsigned int *)this + 29184) / 100);
+    Power::TimerProcess(*((unsigned int *)this + 53888));
+    LOBYTE(v5) = *((unsigned char *)this + 53936);
   Power::FlagProcess((int *)a2, v5); /*0x68ba4a*/
-  Power::TimerProcess(this->u32_34CC); /*0x68ba58*/
-  IDA_LOBYTE(v6) = this->u8_34AE; /*0x68ba5d*/
+    Power::TimerProcess(*((unsigned int *)this + 54064));
+    LOBYTE(v6) = *((unsigned char *)this + 53944);
   Power::FlagProcess((int *)a2, v6); /*0x68ba66*/
-  IDA_LOBYTE(v7) = this->u8_34AF; /*0x68ba6b*/
+    LOBYTE(v7) = *((unsigned char *)this + 53948);
   v8 = Power::FlagProcess((int *)a2, v7); /*0x68ba74*/
-  IDA_LOBYTE(v8) = this->u8_34B0; /*0x68ba79*/
+    LOBYTE(v8) = *((unsigned char *)this + 53952);
   Power::FlagProcess((int *)a2, v8); /*0x68ba82*/
-  IDA_LOBYTE(v9) = this->u8_34B2; /*0x68ba87*/
+    LOBYTE(v9) = *((unsigned char *)this + 53960);
   Power::FlagProcess((int *)a2, v9); /*0x68ba90*/
-  IDA_LOBYTE(v10) = this->u8_34B4; /*0x68ba95*/
+    LOBYTE(v10) = *((unsigned char *)this + 53968);
   v11 = Power::FlagProcess((int *)a2, v10); /*0x68ba9e*/
-  IDA_LOBYTE(v11) = this->u8_34B1; /*0x68baa3*/
+    LOBYTE(v11) = *((unsigned char *)this + 53956);
   Power::FlagProcess((int *)a2, v11); /*0x68baac*/
-  Power::TimerProcess(this->u32_1C84); /*0x68baba*/
-  Power::TimerProcess(this->u32_34D0); /*0x68bac8*/
-  v12 = this->u32_11E8; /*0x68bacd*/
-  v13 = this->u32_11F0; /*0x68bad3*/
+    Power::TimerProcess(*((unsigned int *)this + 29200));
+    Power::TimerProcess(*((unsigned int *)this + 54080));
+    v12 = *((unsigned int *)this + 18336);
+    v13 = *((unsigned int *)this + 18368);
   if ( v12 != -1 ) /*0x68badc*/
   {
     if ( (int)g_CurrentFrame - v12 >= v13 ) /*0x68bae8*/
@@ -359,8 +359,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v13 -= (int)g_CurrentFrame - v12; /*0x68baea*/
   }
   Power::TimerProcess(v13); /*0x68baf3*/
-  v14 = this->u32_1218; /*0x68baf8*/
-  v15 = this->u32_1220; /*0x68bafe*/
+    v14 = *((unsigned int *)this + 18528);
+    v15 = *((unsigned int *)this + 18560);
   if ( v14 != -1 ) /*0x68bb07*/
   {
     if ( (int)g_CurrentFrame - v14 >= v15 ) /*0x68bb13*/
@@ -369,8 +369,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v15 -= (int)g_CurrentFrame - v14; /*0x68bb15*/
   }
   Power::TimerProcess(v15); /*0x68bb1e*/
-  v16 = this->u32_1224; /*0x68bb23*/
-  v17 = this->u32_122C; /*0x68bb29*/
+    v16 = *((unsigned int *)this + 18576);
+    v17 = *((unsigned int *)this + 18608);
   if ( v16 != -1 ) /*0x68bb32*/
   {
     if ( (int)g_CurrentFrame - v16 >= v17 ) /*0x68bb3e*/
@@ -379,8 +379,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v17 -= (int)g_CurrentFrame - v16; /*0x68bb40*/
   }
   Power::TimerProcess(v17); /*0x68bb49*/
-  v18 = this->u32_1230; /*0x68bb4e*/
-  v19 = this->u32_1238; /*0x68bb54*/
+    v18 = *((unsigned int *)this + 18624);
+    v19 = *((unsigned int *)this + 18656);
   if ( v18 != -1 ) /*0x68bb5d*/
   {
     if ( (int)g_CurrentFrame - v18 >= v19 ) /*0x68bb69*/
@@ -389,8 +389,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v19 -= (int)g_CurrentFrame - v18; /*0x68bb6b*/
   }
   Power::TimerProcess(v19); /*0x68bb74*/
-  v20 = this->u32_123C; /*0x68bb79*/
-  v21 = this->u32_1244; /*0x68bb7f*/
+    v20 = *((unsigned int *)this + 18672);
+    v21 = *((unsigned int *)this + 18704);
   if ( v20 != -1 ) /*0x68bb88*/
   {
     if ( (int)g_CurrentFrame - v20 >= v21 ) /*0x68bb94*/
@@ -399,27 +399,27 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v21 -= (int)g_CurrentFrame - v20; /*0x68bb96*/
   }
   Power::TimerProcess(v21); /*0x68bb9f*/
-  v22 = this->u32_61C; /*0x68bbaa*/
-  if ( this->u32_614 != -1 ) /*0x68bbb3*/
-    v22 += this->Timer::GetTicks() - this->u32_614; /*0x68bbc6*/
+    v22 = *((unsigned int *)this + 6256);
+    if ( *((unsigned int *)this + 6224) != -1 )
+        v22 += Timer::GetTicks() - *((unsigned int *)this + 6224);
   Power::TimerProcess(v22); /*0x68bbcb*/
-  Power::TimerProcess(this->u32_60C); /*0x68bbd9*/
-  Power::TimerProcess(this->u32_610); /*0x68bbe7*/
-  Power::TimerProcess(this->u32_1258); /*0x68bbf5*/
-  Power::TimerProcess(this->u32_3540); /*0x68bc03*/
-  Power::TimerProcess(this->u32_3544); /*0x68bc11*/
-  IDA_LOBYTE(v23) = this->u8_34A4; /*0x68bc16*/
+    Power::TimerProcess(*((unsigned int *)this + 6192));
+    Power::TimerProcess(*((unsigned int *)this + 6208));
+    Power::TimerProcess(*((unsigned int *)this + 18784));
+    Power::TimerProcess(*((unsigned int *)this + 54528));
+    Power::TimerProcess(*((unsigned int *)this + 54544));
+    LOBYTE(v23) = *((unsigned char *)this + 53904);
   Power::FlagProcess((int *)a2, v23); /*0x68bc1f*/
-  Power::TimerProcess(this->u32_3548); /*0x68bc2d*/
-  Power::TimerProcess(this->u32_354C); /*0x68bc3b*/
-  Power::TimerProcess(this->u32_3550); /*0x68bc49*/
-  Power::TimerProcess(this->u32_3554); /*0x68bc57*/
-  Power::TimerProcess(this->u32_3558); /*0x68bc65*/
-  Power::TimerProcess(this->u32_355C); /*0x68bc73*/
-  Power::TimerProcess(this->u32_3528); /*0x68bc81*/
-  Power::TimerProcess(this->u32_352C); /*0x68bc8f*/
+    Power::TimerProcess(*((unsigned int *)this + 54560));
+    Power::TimerProcess(*((unsigned int *)this + 54576));
+    Power::TimerProcess(*((unsigned int *)this + 54592));
+    Power::TimerProcess(*((unsigned int *)this + 54608));
+    Power::TimerProcess(*((unsigned int *)this + 54624));
+    Power::TimerProcess(*((unsigned int *)this + 54640));
+    Power::TimerProcess(*((unsigned int *)this + 54432));
+    Power::TimerProcess(*((unsigned int *)this + 54448));
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_3530); /*0x68bca2*/
+    return Power::TimerProcess(*((unsigned int *)this + 54464));
 }
 }
 // 0x4A1C10
@@ -435,16 +435,16 @@ int Power::FinalizeDrain(int a2)
 
   Power_field_0x4 = (void *)((unsigned int)(this->Power_field_0x4));
   if ( !Power_field_0x4 ) /*0x4a1c15*/
-    this->a2 = 0; /*0x4a1c17*/
-  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
+        *(unsigned int *)&this->__pad_0[8] = 0;
+    this->__pad_0[v2 + 8] = a2;
   result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
   this->Power_field_0x4 = (void *)result; /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
     IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/
     for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
-      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1c42*/
-    a2 = (int)this->a2; /*0x4a1c50*/
+            this->__pad_0[i + 8] = this->__pad_0[8];
+        a2 = *(unsigned int *)&this->__pad_0[8];
     p_Power_field_0x8 = &a2; /*0x4a1c57*/
     v6 = ~this->Power_field_0x0; /*0x4a1c5b*/
     v7 = 4; /*0x4a1c5d*/
@@ -476,16 +476,16 @@ int Power::FlagProcess(int a2)
 
   Power_field_0x4 = (void *)((unsigned int)(this->Power_field_0x4));
   if ( !Power_field_0x4 ) /*0x4a1ca7*/
-    this->a2 = 0; /*0x4a1ca9*/
-  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = (unsigned char)a2 != 0; /*0x4a1cb7*/
+        *(unsigned int *)&this->__pad_0[8] = 0;
+    this->__pad_0[v2 + 8] = (unsigned char)a2 != 0;
   result = (int)this->Power_field_0x4 + 1; /*0x4a1cbf*/
   this->Power_field_0x4 = (void *)result; /*0x4a1cc1*/
   if ( result == 4 ) /*0x4a1cc7*/
   {
     IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1ccc*/
     for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
-      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1cda*/
-    a2 = (int)this->a2; /*0x4a1ce8*/
+            this->__pad_0[i + 8] = this->__pad_0[8];
+        a2 = *(unsigned int *)&this->__pad_0[8];
     p_Power_field_0x8 = &a2; /*0x4a1cef*/
     v6 = ~this->Power_field_0x0; /*0x4a1cf3*/
     v7 = 4; /*0x4a1cf5*/

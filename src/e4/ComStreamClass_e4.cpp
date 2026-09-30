@@ -49,7 +49,7 @@ int ComStreamClass::Write(int a1, int a2, int a3, int a4, int a5)
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  this->Debug::Log(); /*0x7a3da1*/
+    Debug::Log();
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -138,7 +138,7 @@ int ComStreamClass::Write(int a1, int a2, int a3, int a4, int a5)
     if ( !dword_B77DC8 ) /*0x7a403c*/
       CloseDialog(v16, 0); /*0x7a4042*/
   }
-  Current = (HWND)this->Dialog::GetCurrent(); /*0x7a4047*/
+    Current = Dialog::GetCurrent();
   v18 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v18 ) /*0x7a4058*/
     SetFocus(v18); /*0x7a405b*/
@@ -239,16 +239,16 @@ AbstractClass * * ComStreamClass::readData()
   int v12; // eax
   unsigned int *v13; // [esp+4h] [ebp-4h]
 
-  if ( IDA_LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7ae0e8*/
+    if ( *((unsigned char *)this + 20) != 1 )
   {
     ComStreamClass_field_0x08 = (unsigned int)(this->ComStreamClass_field_0x08);
     v3 = *(unsigned int **)this->__pad_0; /*0x7ae0f3*/
-    v4 = this->ComStreamClass_field_0x0C + 1; /*0x7ae0fc*/
-    this->ComStreamClass_field_0x08 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
+        v4 = *((unsigned int *)this + 12) + 1;
+        *((unsigned int *)this + 8) = 2 * v2;
     v13 = v3; /*0x7ae100*/
-    this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
+        *((unsigned int *)this + 12) = v4;
     v5 = (void *)RA2_OPNEW(8 * ComStreamClass_field_0x08); /*0x7ae113*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7ae118*/
+        v6 = 4 * *((unsigned int *)this + 8);
     *(unsigned int *)this->__pad_0 = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
@@ -262,7 +262,7 @@ AbstractClass * * ComStreamClass::readData()
         {
           do /*0x7ae161*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) /*0x7ae14b*/
+                        v10 = ((int (*)(int))*((unsigned int *)this + 24))(v9) & ((1 << *((unsigned int *)this + 12)) - 1);
                 & ((1 << this->ComStreamClass_field_0x0C) - 1);
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x7ae14f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x7ae155*/
@@ -299,8 +299,8 @@ void ComStreamClass::flushStream()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7aef55*/
-  if ( ComStreamClass_field_0x08 > this->ComStreamClass_field_0x30 && IDA_LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7aef67*/
+    v2 = *((unsigned int *)this + 8);
+    if ( v2 > *((unsigned int *)this + 48) && *((unsigned char *)this + 20) != 1 )
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     ComStreamClass_field_0x0C = (unsigned int)(this->ComStreamClass_field_0x0C);
@@ -322,7 +322,7 @@ void ComStreamClass::flushStream()
         {
           do /*0x7aefdd*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) /*0x7aefc7*/
+                        v10 = ((int (*)(int))*((unsigned int *)this + 24))(v9) & ((1 << *((unsigned int *)this + 12)) - 1);
                 & ((1 << this->ComStreamClass_field_0x0C) - 1);
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x7aefcb*/
             *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x7aefd1*/
@@ -351,7 +351,7 @@ unsigned int * ComStreamClass::seekToPosition()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->ComStreamClass_field_0x04); /*0x7b022f*/
+    ComPtr::Set(&stru_B77F58, *((unsigned int *)this + 4));
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
   ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
@@ -371,7 +371,7 @@ unsigned int * ComStreamClass::getStreamSize()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x08, this->ComStreamClass_field_0x04); /*0x7b02af*/
+    ComPtr::Set(&stru_B77F70, *((unsigned int *)this + 4));
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
   ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x10, v3[1]); /*0x7b02d7*/

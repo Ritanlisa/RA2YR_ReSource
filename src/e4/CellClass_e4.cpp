@@ -27,9 +27,9 @@
 namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
-  if ( !this-((unsigned int *)(>sensorsOfHouses))[10] && this->u32_2F4 ) /*0x544c8d*/
+    if ( !*((unsigned int *)this + 656) && *((unsigned char *)this + 3024) )
     MapClass::LoadFileData(); /*0x544c97*/
-  return this->q0A4 != 0; /*0x544ca9*/
+    return *((unsigned int *)this + 656) != 0;
 }
 }
 // 0x56EF50
@@ -1489,7 +1489,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   int v18; // [esp+Ch] [ebp-4h] BYREF
 
   v1 = (int16_t *)aP0; /*0x57ccf4*/
-  v2 = *(int16_t *)aP0 + (aP0->u32_2 << 9); /*0x57cd05*/
+    v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9);
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(g_Shroud_CellArray + 4 * v2)) == 0 ) /*0x57cd1b*/
   {
     g_Map_GlobalCellIndex = *(unsigned int *)aP0; /*0x57cd1f*/
@@ -1498,7 +1498,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   v4 = v3[17]; /*0x57cd29*/
   if ( v4 >= 205 && v4 <= 213 || v4 >= 223 && v4 <= 226 || v4 == 231 ) /*0x57cd4d*/
   {
-    v5 = aP0->u32_2; /*0x57cd56*/
+        v7 = HIWORD(aP0->field_0);
     IDA_LOWORD(aP0) = *(unsigned short *)aP0; /*0x57cd5a*/
     IDA_HIWORD(aP0) = v5 - 1; /*0x57cd65*/
     v6 = *((unsigned int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP0) + 17); /*0x57cd7d*/
@@ -1577,9 +1577,9 @@ int CellClass::GetOccupiedRatio()
 {
   int CellClass_field_6C; // esi
 
-  CellClass_field_6C = this->CellClass_field_6C; /*0x65b511*/
+    v1 = *((unsigned int *)this + 108);
   if ( CellClass_field_6C > 0 ) /*0x65b516*/
-    return this->CellClass_field_4C * this->unknown70 / CellClass_field_6C; /*0x65b524*/
+        return *((unsigned int *)this + 76) * *((unsigned int *)this + 112) / v1;
   else
     return 0; /*0x65b518*/
 }
@@ -1604,7 +1604,7 @@ int CellClass::StubReturn328()
 namespace gamemd {
 int CellClass::GetBridgeIndex()
 {
-  return (int)this->rubble; /*0x48ba83*/
+    return *((unsigned int *)this + 28);
 }
 } // namespace gamemd
 
@@ -1746,7 +1746,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
   unsigned int v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+1Ch] [ebp+4h]
 
-  v11 = aP0->ptr_24; /*0x5865fe*/
+    aP0a = (IUnknown *)aP0->field_24;
   v3 = IDA_HIWORD(v11); /*0x586602*/
   v4 = 1; /*0x586607*/
   v11 = v11; /*0x58660c*/

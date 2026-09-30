@@ -18,7 +18,7 @@ int AudioMixer::SetVolume()
   int result; // eax
 
   result = 1; /*0x406653*/
-  if ( (this->AudioMixer_field_10 & 1) == 0 || this->u32_4C ) /*0x40665c*/
+    if ( (*((unsigned char *)this + 64) & 1) == 0 || *((unsigned int *)this + 304) )
     return 0; /*0x406663*/
   return result; /*0x406665*/
 }
@@ -45,14 +45,14 @@ int AudioMixer::PlaySample()
   int v19; // eax
   int v20; // ecx
 
-  AudioMixer_field_08 = this->AudioMixer_field_08; /*0x4071c7*/
-  AudioMixer_field_04 = this->AudioMixer_field_04; /*0x4071ca*/
+    v2 = *((unsigned int *)this + 8);
+    v3 = *((unsigned int *)this + 4);
   v4 = AudioMixer_field_08 - AudioMixer_field_04; /*0x4071cf*/
   if ( AudioMixer_field_08 == AudioMixer_field_04 ) /*0x4071d1*/
     return 0; /*0x40729e*/
   if ( (this->AudioMixer_field_00 & 1) != 0 ) /*0x4071da*/
   {
-    this->AudioMixer_field_04 = AudioMixer_field_08; /*0x4071dc*/
+        *((unsigned int *)this + 4) = v2;
     AudioMixer_field_00 = this->AudioMixer_field_00; /*0x4071df*/
     IDA_LOBYTE(AudioMixer_field_00) = this->AudioMixer_field_00 | 2; /*0x4071e1*/
     this->AudioMixer_field_00 = AudioMixer_field_00; /*0x4071e3*/
@@ -60,53 +60,53 @@ int AudioMixer::PlaySample()
   }
   else
   {
-    v7 = this->Audio::Callback(); /*0x4071f2*/
-    v8 = this->u32_18; /*0x4071f7*/
-    v9 = this->u32_1C; /*0x4071fa*/
+        v7 = Audio::Callback();
+        v8 = *((unsigned int *)this + 24);
+        v9 = *((unsigned int *)this + 28);
     v7 = v7; /*0x4071fd*/
-    this->u32_18 = v7; /*0x4071ff*/
-    AudioMixer_field_14 = this->AudioMixer_field_14; /*0x407202*/
-    this->u32_1C = v15; /*0x407209*/
+        *((unsigned int *)this + 24) = v7;
+        v11 = *((unsigned int *)this + 20);
+        *((unsigned int *)this + 28) = v15;
     v14 = IDA___PAIR64__(v15, v7) - IDA___PAIR64__(v9, v8); /*0x407205*/
     v13 = (IDA___PAIR64__(v15, v7) - IDA___PAIR64__(v9, v8)) >> 32; /*0x407205*/
     AudioMixer_field_10 = v14; /*0x407205*/
-    if ( IDA___PAIR64__(v13, v14) > IDA___PAIR64__(AudioMixer_field_14, this->AudioMixer_field_10) ) /*0x40721b*/
-      AudioMixer_field_10 = this->AudioMixer_field_10; /*0x40721d*/
-    v16 = AudioMixer_field_10 * this->AudioMixer_field_0C; /*0x407226*/
+        if ( __PAIR64__(v13, v14) > __PAIR64__(v11, *((unsigned int *)this + 16)) )
+            v12 = *((unsigned int *)this + 16);
+        v16 = v12 * *((unsigned int *)this + 12);
     if ( v4 >= 0 ) /*0x40722b*/
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-        v20 = v16 + this->AudioMixer_field_04; /*0x407287*/
-        v19 = this->AudioMixer_field_00; /*0x407289*/
-        IDA_LOBYTE(v19) = this->AudioMixer_field_00 | 2; /*0x40728b*/
-        this->AudioMixer_field_04 = v20; /*0x40728d*/
+                v20 = v16 + *((unsigned int *)this + 4);
+                v19 = *this;
+                LOBYTE(v19) = *this | 2;
+                *((unsigned int *)this + 4) = v20;
       }
       else
       {
-        this->AudioMixer_field_04 += v4; /*0x407270*/
-        v19 = this->AudioMixer_field_00; /*0x407273*/
-        IDA_LOBYTE(v19) = this->AudioMixer_field_00 | 2; /*0x407275*/
+                *((unsigned int *)this + 4) += v4;
+                v19 = *this;
+                LOBYTE(v19) = *this | 2;
       }
-      this->AudioMixer_field_00 = v19; /*0x407277*/
+            *this = v19;
       return 1; /*0x40727a*/
     }
     else
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-        v18 = this->AudioMixer_field_04 - v16; /*0x407251*/
-        v17 = this->AudioMixer_field_00; /*0x407253*/
-        IDA_LOBYTE(v17) = this->AudioMixer_field_00 | 2; /*0x407255*/
-        this->AudioMixer_field_04 = v18; /*0x407257*/
+                v18 = *((unsigned int *)this + 4) - v16;
+                v17 = *this;
+                LOBYTE(v17) = *this | 2;
+                *((unsigned int *)this + 4) = v18;
       }
       else
       {
-        this->AudioMixer_field_04 += v4; /*0x40723a*/
-        v17 = this->AudioMixer_field_00; /*0x40723d*/
-        IDA_LOBYTE(v17) = this->AudioMixer_field_00 | 2; /*0x40723f*/
+                *((unsigned int *)this + 4) += v4;
+                v17 = *this;
+                LOBYTE(v17) = *this | 2;
       }
-      this->AudioMixer_field_00 = v17; /*0x407241*/
+            *this = v17;
       return 1; /*0x407244*/
     }
   }

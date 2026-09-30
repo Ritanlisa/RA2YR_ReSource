@@ -15,7 +15,7 @@
 namespace gamemd {
 unsigned int * VectorCursor::Release()
 {
-  ++this->q008; /*0x76f182*/
+    ++*((unsigned int *)this + 8);
   return this; /*0x76f185*/
 }
 } // namespace gamemd
@@ -23,7 +23,7 @@ unsigned int * VectorCursor::Release()
 namespace gamemd {
 unsigned int * VectorCursor::ddtor()
 {
-  --this->q008; /*0x76f192*/
+    --*((unsigned int *)this + 8);
   return this; /*0x76f195*/
 }
 } // namespace gamemd
@@ -31,7 +31,7 @@ unsigned int * VectorCursor::ddtor()
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
-  this->u32_C = 2; /*0x4f42d0*/
+    *((unsigned int *)this + 12) = 2;
 }
 }
 // 0x4F4BB0
@@ -44,7 +44,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
 
   if ( ((uint8_t)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
   {
-    v3 = this->u32_4; /*0x4f4bb9*/
+        v3 = *((unsigned int *)this + 4);
     if ( v3 >= 0 ) /*0x4f4bbe*/
     {
       if ( v3 <= 0 ) /*0x4f4bc5*/
@@ -55,17 +55,17 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
     {
       v4 = -1; /*0x4f4bc0*/
     }
-    this->u32_4 = v4 - v3; /*0x4f4bce*/
+        *((unsigned int *)this + 4) = v4 - v3;
   LABEL_7:
-    v5 = this->u32_8; /*0x4f4bd1*/
+        v5 = *((unsigned int *)this + 8);
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {
       if ( v5 > 0 ) /*0x4f4be3*/
-        this->u32_8 = 1 - v5; /*0x4f4bec*/
+                *((unsigned int *)this + 8) = 1 - v5;
     }
     else
     {
-      this->u32_8 = -1 - v5; /*0x4f4bdd*/
+            *((unsigned int *)this + 8) = -1 - v5;
     }
   }
 }

@@ -33,14 +33,14 @@ void LinkClass::Destruct()
   *(unsigned int *)this->__pad_0 = (void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
-  m_Prev = *(unsigned int *)&this->m_Prev; /*0x5565ba*/
+    v4 = *((unsigned int *)this + 8);
   if ( m_Prev ) /*0x5565c1*/
-    m_Prev->m_Next = this->m_Next; /*0x5565c6*/
-  m_Next = *(unsigned int *)&this->m_Next; /*0x5565c9*/
+        *(unsigned int *)(v4 + 4) = *((unsigned int *)this + 4);
+    v5 = *((unsigned int *)this + 4);
   if ( m_Next ) /*0x5565ce*/
-    m_Next->m_Prev = this->m_Prev; /*0x5565d3*/
-  *(unsigned int *)&this->m_Prev = 0; /*0x5565d8*/
-  *(unsigned int *)&this->m_Next = 0; /*0x5565db*/
+        *(unsigned int *)(v5 + 8) = *((unsigned int *)this + 8);
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 4) = 0;
   if ( Prev == this && (LinkClass *)result != this ) /*0x5565e2*/
     return (*(int (**)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/

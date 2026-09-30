@@ -20,17 +20,17 @@ void DDraw::ReleaseSurfaces()
   int v2; // eax
   int result; // eax
 
-  v2 = this->u32_74; /*0x4a3373*/
+    v2 = *((unsigned int *)this + 116);
   if ( v2 ) /*0x4a3378*/
   {
     (*(void (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4a337d*/
-    this->u32_74 = 0; /*0x4a3380*/
+        *((unsigned int *)this + 116) = 0;
   }
-  result = this->u32_70; /*0x4a3387*/
+    result = *((unsigned int *)this + 112);
   if ( result ) /*0x4a338c*/
   {
-    result = (*(int (__stdcall **)(unsigned int))(*(unsigned int *)result + 8))(this->u32_70); /*0x4a3391*/
-    this->u32_70 = 0; /*0x4a3394*/
+        result = (*(int (__stdcall **)(unsigned int))(*(unsigned int *)result + 8))(*((unsigned int *)this + 112));
+        *((unsigned int *)this + 112) = 0;
   }
   return result; /*0x4a339b*/
 }
@@ -39,7 +39,7 @@ void DDraw::ReleaseSurfaces()
 namespace gamemd {
 void DDraw::Init()
 {
-  this->q18000 = 0; /*0x4a3640*/
+    *((unsigned int *)this + 98304) = 0;
 }
 } // namespace gamemd
 // 0x4A3E40
@@ -200,25 +200,25 @@ int DDraw::HandleSuspend()
   IDA_LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 412)); /*0x5d2530*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 ) /*0x5d253b*/
   {
-    this->Debug::Log(); /*0x5d2546*/
-    for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
+        Debug::Log(aMsenginePausin);
+        for ( i = 0; i < *((unsigned int *)this + 40); ++i )
     {
-      v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
+            v4 = *(unsigned int *)(*((unsigned int *)this + 28) + 4 * i);
       (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !stru_A8EB00.?[412] ) /*0x5d2571*/
     {
-      this->Debug::Log(); /*0x5d257e*/
+            Debug::Log(aMsengineSleepi);
       Sleep(0x1F4u); /*0x5d258b*/
       MessageLoop(); /*0x5d258d*/
     }
-    this->Debug::Log(); /*0x5d25a0*/
-    result = this->u32_28; /*0x5d25a5*/
+        Debug::Log(aMsengineResumi);
+        v1 = *((unsigned int *)this + 40);
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {
-      v6 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d25b4*/
+            v6 = *(unsigned int *)(*((unsigned int *)this + 28) + 4 * j);
       (*(void (**)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
-      result = this->u32_28; /*0x5d25bc*/
+            v1 = *((unsigned int *)this + 40);
     }
   }
   return result; /*0x5d25c4*/

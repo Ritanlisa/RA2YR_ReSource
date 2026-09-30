@@ -16,13 +16,13 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   result = (gamemd::AbstractClass *)((void *)(aP1));
   this->q10C = (void *)(aP2);
   this->q110 = (void *)(a7);
-  *(unsigned int *)&this->q128 = aP5; /*0x4664dc*/
-  *(unsigned int *)&this->q0E0 = aP7; /*0x4664e6*/
-  *(unsigned int *)&this->q06C = aP4; /*0x4664f6*/
-  *(unsigned int *)&this->q0AC = aP1; /*0x4664fb*/
-  *(unsigned int *)&this->q0B0 = aP3; /*0x466501*/
-  *(unsigned int *)&this->q12C = 0; /*0x466507*/
-  this->u8_12D = *(unsigned char *)(aP1 + 758); /*0x466513*/
+    *((unsigned int *)this + 1184) = aP5;
+    *((unsigned char *)this + 896) = (unsigned char)aP7;
+    *((unsigned int *)this + 432) = aP4;
+    *((unsigned int *)this + 688) = aP1;
+    *((unsigned int *)this + 704) = aP3;
+    *((unsigned char *)this + 1200) = 0;
+    *((unsigned char *)this + 1204) = aP1[21].__pad_0[2];
   if ( aP1->qAA4 && aP3 ) /*0x466525*/
   {
     result = (unsigned int)(aP3->q21C->u32_16054);

@@ -68,17 +68,17 @@ int AsyncIO::WaitCompletion()
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
-  Ticks = this->Timer::GetTicks(); /*0x774bcf*/
-  v2 = this->u8_51; /*0x774bd3*/
+    Ticks = Timer::GetTicks();
+    v2 = *((unsigned char *)this + 324);
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
-    Ticks = this->Timer::GetTicks(); /*0x774bf4*/
+        Ticks = Timer::GetTicks();
     v10 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
-      if ( GetOverlappedResult(*(HANDLE *)(&this->q0242), (LPOVERLAPPED)(&this->u32_180), &NumberOfBytesTransferred, 0) /*0x774c29*/
+            if ( GetOverlappedResult(*(HANDLE *)((char *)this + 368), (LPOVERLAPPED)((char *)this + 240), &NumberOfBytesTransferred, 0)
         || GetLastError() != 996 )
       {
         break; /*0x774c29*/
@@ -86,16 +86,16 @@ int AsyncIO::WaitCompletion()
       v9 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = this->Timer::GetTicks() - Ticks; /*0x774c41*/
+                v4 = Timer::GetTicks() - Ticks;
         if ( v4 >= v9 ) /*0x774c47*/
           break; /*0x774c47*/
         v9 -= v4; /*0x774c49*/
       }
     }
     while ( v9 ); /*0x774c4d*/
-    this->u8_51 = 0; /*0x774c4f*/
+        *((unsigned char *)this + 324) = 0;
   }
-  return ResetEvent(*(HANDLE *)(&this->u32_1C6)); /*0x774c60*/
+    return ResetEvent(*(HANDLE *)((char *)this + 304));
 }
 } // namespace gamemd
 // 0x5BF500

@@ -11,10 +11,10 @@ namespace gamemd {
 unsigned int * Node_flat::Init()
 {
   *(unsigned int *)this->__pad_0 = 0; /*0x49ea14*/
-  this->Previous = 0; /*0x49ea16*/
-  *(unsigned int *)this->Blowfish = 0; /*0x49ea19*/
-  IDA_LOBYTE(this->CountFiles) = 0; /*0x49ea1c*/
-  this->FileSize = 0; /*0x49ea1f*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned char *)this + 12) = 0;
+    *((unsigned int *)this + 16) = 0;
   return this; /*0x49ea22*/
 }
 } // namespace gamemd

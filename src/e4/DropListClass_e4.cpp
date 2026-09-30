@@ -41,5 +41,5 @@ void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 // 0x4B55A0
 int DropListClass::COMStub()
 {
-  return this->q034; /*0x4b55a3*/
+    return *((unsigned int *)this + 52);
 }

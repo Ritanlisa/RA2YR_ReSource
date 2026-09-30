@@ -59,15 +59,15 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->abstractFlags = (int *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2)->level);
   this->u32_54 = (unsigned int)((int *)(-1));
   this->u32_58 = (unsigned int)((int *)(0));
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)&this->LastSight2), 0, 0); /*0x4d09e7*/
-  this->u32_5C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d09ec*/
-  this->referenceCount = 10; /*0x4d09f2*/
-  this->u32_6C = 0; /*0x4d09f9*/
-  this->q01D = 1; /*0x4d0a02*/
-  this->AbstractClass = (void*)&FoggedObjectClass_vftable; /*0x4d0a06*/
-  *(void **)&this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0a0c*/
-  *(void **)&this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0a13*/
-  *(unsigned short *)&this->qC = (void*)&FoggedObjectClass_vftable; /*0x4d0a1a*/
+    FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 368), 0, 0);
+    *((unsigned int *)this + 368) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord;
+    *((unsigned int *)this + 448) = 10;
+    *((unsigned int *)this + 432) = 0;
+    *((unsigned char *)this + 464) = 1;
+    *(unsigned int *)this = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 16) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 32) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_FoggedObjectClass;
   v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -118,16 +118,16 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
       v16 = v12; /*0x4d0ace*/
     }
   }
-  this->Count = v8; /*0x4d0aef*/
-  this->q011 = v15; /*0x4d0af1*/
-  this->IsInitialized = v14; /*0x4d0af4*/
-  this->IsAllocated = v16; /*0x4d0af7*/
-  v17 = this->q011; /*0x4d0b00*/
-  this->Count += *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[44]; /*0x4d0b0d*/
-  this->q011 = *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[45] + v17; /*0x4d0b1d*/
-  v18 = this->q011 - (unsigned int)DSurface_ViewBounds.field_4; /*0x4d0b33*/
-  this->Count -= DSurface_ViewBounds.field_0; /*0x4d0b35*/
-  this->q011 = v18; /*0x4d0b37*/
+    *((unsigned int *)this + 256) = v8;
+    *((unsigned int *)this + 272) = v15;
+    *((unsigned int *)this + 288) = v14;
+    *((unsigned int *)this + 304) = v16;
+    v17 = *((unsigned int *)this + 272);
+    *((unsigned int *)this + 256) += MEMORY[0x887324][44].__tail_0;
+    *((unsigned int *)this + 272) = (char *)MEMORY[0x887324][45].__tail_0 + v17;
+    v18 = *((unsigned int *)this + 272) - MEMORY[0x886FA4];
+    *((unsigned int *)this + 256) -= MEMORY[0x886FA0];
+    *((unsigned int *)this + 272) = v18;
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0b6f*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -139,9 +139,9 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     v19 = (gamemd::FoggedObjectClass *)((unsigned int)(g_FootClassConfig++));
     *((unsigned int *)(unsigned int)(dword_8B3D14)+ v19) = this; /*0x4d0b8b*/
   }
-  v20 = (int16_t)(this->u32_34 / 256); /*0x4d0bb4*/
+    v20 = (__int16)(*((unsigned int *)this + 208) / 256);
   v21 = dword_8B3CC8; /*0x4d0bcd*/
-  v22 = 74 * ((int16_t)(this->u32_38 / 256) - ((v20 + (int16_t)(this->u32_38 / 256)) << 9) - v20) /*0x4d0bd6*/
+    v22 = 74 * ((__int16)(*((unsigned int *)this + 224) / 256) - ((v20 + (__int16)(*((unsigned int *)this + 224) / 256)) << 9) - v20)
       - this->vtable4
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d0bdf*/
@@ -190,15 +190,15 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(int a1, int a2)
   this->u32_54 = (unsigned int)(a3);
   this->abstractFlags = (unsigned int)(level);
   this->u32_58 = (unsigned int)(a4);
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)&this->LastSight2), 0, 0); /*0x4d0c92*/
-  this->u32_5C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0c97*/
-  this->referenceCount = 10; /*0x4d0c9e*/
-  this->u32_6C = 0; /*0x4d0ca5*/
-  this->q01D = 1; /*0x4d0cae*/
-  this->AbstractClass = (void*)&FoggedObjectClass_vftable; /*0x4d0cb2*/
-  *(void **)&this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0cb8*/
-  *(void **)&this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0cbf*/
-  *(unsigned short *)&this->qC = (void*)&FoggedObjectClass_vftable; /*0x4d0cc6*/
+    FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 368), 0, 0);
+    *((unsigned int *)this + 368) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord;
+    *((unsigned int *)this + 448) = 10;
+    *((unsigned int *)this + 432) = 0;
+    *((unsigned char *)this + 464) = 1;
+    *(unsigned int *)this = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 16) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 32) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_FoggedObjectClass;
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -207,23 +207,23 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(int a1, int a2)
   v24 = v8; /*0x4d0ce2*/
   v9 = dword_8B3D68 * v6->level; /*0x4d0ced*/
   v24 = v9; /*0x4d0cf7*/
-  this->u32_34 = v23[0]; /*0x4d0cfd*/
-  this->u32_38 = v7; /*0x4d0d03*/
-  this->u32_3C = v9; /*0x4d0d06*/
+    *((unsigned int *)this + 208) = a1[0];
+    *((unsigned int *)this + 224) = v7;
+    *((unsigned int *)this + 240) = v9;
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v23, &v10); /*0x4d0d15*/
   v10 = v10 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v22 = v22; /*0x4d0d2a*/
-  this->Count = v10 - 30; /*0x4d0d36*/
+    *((unsigned int *)this + 256) = v21 - 30;
   v25 = 30; /*0x4d0d38*/
   v10 = v10; /*0x4d0d40*/
-  this->q011 = v22; /*0x4d0d44*/
+    *((unsigned int *)this + 272) = v11;
   v25 = v25; /*0x4d0d47*/
-  this->IsInitialized = 60; /*0x4d0d4b*/
-  this->IsAllocated = v25; /*0x4d0d4e*/
-  v13 = this->q011; /*0x4d0d61*/
-  this->Count += *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[44]; /*0x4d0d64*/
-  this->q011 = *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[45] + v13; /*0x4d0d73*/
+    *((unsigned int *)this + 288) = 60;
+    *((unsigned int *)this + 304) = v12;
+    v13 = *((unsigned int *)this + 272);
+    *((unsigned int *)this + 256) += *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176);
+    *((unsigned int *)this + 272) = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + v13;
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0dab*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -330,11 +330,11 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
   int v58; // [esp+68h] [ebp+8h]
 
   AbstractClass::Constructor(); /*0x4d0ef9*/
-  this->LastSight = -1; /*0x4d0f02*/
+    *((unsigned int *)this + 144) = -1;
   v4 = aP1[135]; /*0x4d0f0c*/
   this->Cell = (unsigned int)(0);
-  this->House = v4; /*0x4d0f19*/
-  this->vtable4 = 6; /*0x4d0f24*/
+    *((unsigned int *)this + 160) = v4;
+    *((unsigned int *)this + 192) = 6;
   this->u32_34 = (unsigned int)(aP1[39]);
   this->u32_38 = (unsigned int)(aP1[40]);
   this->u32_3C = (unsigned int)(aP1[41]);
@@ -344,23 +344,23 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
   v49[1] = (unsigned int)(v5);
   v50 = (unsigned int)(v6);
   v7 = (unsigned int)(this + 92);
-  this->abstractFlags = *((char *)Coord::To_Cell(&dword_87F7E8, v49) + 283); /*0x4d0f6a*/
-  this->u32_54 = -1; /*0x4d0f73*/
-  this->u32_58 = 0; /*0x4d0f7a*/
-  FoggedObject::DrawVector_Constructor((unsigned int *)(&this->LastSight2), 0, 0); /*0x4d0f81*/
-  this->u32_5C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0f8a*/
-  this->referenceCount = 10; /*0x4d0f90*/
-  this->u32_6C = 0; /*0x4d0f97*/
-  this->q01D = aP2; /*0x4d0fa2*/
+    *((unsigned int *)this + 320) = *((char *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v49) + 283);
+    *((unsigned int *)this + 336) = -1;
+    *((unsigned int *)this + 352) = 0;
+    FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 368), 0, 0);
+    *((unsigned int *)this + 368) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord;
+    *((unsigned int *)this + 448) = 10;
+    *((unsigned int *)this + 432) = 0;
+    *((unsigned char *)this + 464) = (unsigned char)aP2;
   *(unsigned int *)this = (void*)&FoggedObjectClass_vftable; /*0x4d0fa5*/
-  this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0fab*/
-  this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0fb2*/
-  this->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d0fb9*/
+    *((unsigned int *)this + 16) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 32) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_FoggedObjectClass;
   v8 = (unsigned int *)(*(int (**)(int *, char *))(*aP1 + 300))(aP1, v52); /*0x4d0fc5*/
-  this->Count = *v8; /*0x4d0fd2*/
-  this->q011 = v8[1]; /*0x4d0fd7*/
-  this->IsInitialized = v8[2]; /*0x4d0fdd*/
-  this->IsAllocated = v8[3]; /*0x4d0fe3*/
+    *((unsigned int *)this + 256) = *v8;
+    *((unsigned int *)this + 272) = v8[1];
+    *((unsigned int *)this + 288) = v8[2];
+    *((unsigned int *)this + 304) = v8[3];
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d101a*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -400,16 +400,16 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
   {
     IDA_LOBYTE(v53) = 1; /*0x4d1114*/
   }
-  v16 = this->u32_64; /*0x4d1119*/
-  if ( this->u32_6C < v16 /*0x4d113e*/
+    v16 = *((unsigned int *)this + 400);
+    if ( *((unsigned int *)this + 432) < v16
     || (this->u32_69 || !v16)
     && (v17 = this->referenceCount, v17 > 0)
     && (*(uint8_t (**)(int, int, unsigned int))(this->u32_64)(this + 92, v16 + v17, 0) )
   {
-    v18 = this->u32_6C; /*0x4d1145*/
-    this->u32_6C = v18 + 1; /*0x4d114b*/
+        v18 = *((unsigned int *)this + 432);
+        *((unsigned int *)this + 432) = v18 + 1;
     v53 = v53; /*0x4d1156*/
-    v20 = (int *)(this->nextArrayIndex + 16 * v18); /*0x4d115a*/
+        v20 = (unsigned int *)(*((unsigned int *)this + 384) + 16 * v18);
     *v20 = v13; /*0x4d1160*/
     v20[1] = v57; /*0x4d1162*/
     v20[2] = v53; /*0x4d1167*/
@@ -425,8 +425,8 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
     *(unsigned char *)(*v21 + 409) = 1; /*0x4d1189*/
     v56 = *(unsigned int *)(*v21 + 200); /*0x4d119a*/
     v22 = (int *)(*(int (**)(int, int *))(*(unsigned int *)*v21 + 296))(*v21, v55); /*0x4d11a3*/
-    v23 = (int *)(&this->nextArrayIndex4); /*0x4d11ac*/
-    if ( this->IsInitialized <= 0 || this->IsAllocated <= 0 ) /*0x4d11bc*/
+        v23 = (BuildingClass **)((char *)this + 256);
+        if ( *((int *)this + 288) <= 0 || *((int *)this + 304) <= 0 )
     {
       v32 = *v22; /*0x4d1266*/
       v33 = v22[1]; /*0x4d1268*/
@@ -441,10 +441,10 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
-          v25 = this->q011; /*0x4d11de*/
-          v26 = this->IsInitialized; /*0x4d11e1*/
+                    v25 = *((unsigned int *)this + 272);
+                    v26 = *((unsigned int *)this + 288);
           v50 = v26; /*0x4d11e4*/
-          v51 = this->IsAllocated; /*0x4d11eb*/
+                    v51 = *((unsigned int *)this + 304);
           v27 = *v22; /*0x4d11ef*/
           if ( v24 > *v22 ) /*0x4d11f3*/
           {
@@ -471,31 +471,31 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
           goto LABEL_41; /*0x4d1258*/
         }
       }
-      v22 = (int *)(&this->nextArrayIndex4); /*0x4d125a*/
+            v22 = (char *)this + 256;
       v32 = *v23; /*0x4d125c*/
-      v33 = this->q011; /*0x4d125e*/
-      v34 = this->IsInitialized; /*0x4d1261*/
+            v33 = *((unsigned int *)this + 272);
+            v34 = *((unsigned int *)this + 288);
     }
     v31 = v22[3]; /*0x4d126e*/
   LABEL_41:
     IDA_LOBYTE(v53) = 0; /*0x4d1271*/
-    this->Count = v32; /*0x4d1279*/
-    this->q011 = v33; /*0x4d127f*/
-    this->IsInitialized = v34; /*0x4d1282*/
-    this->IsAllocated = v31; /*0x4d1285*/
+        *((unsigned int *)this + 256) = v32;
+        *((unsigned int *)this + 272) = v33;
+        *((unsigned int *)this + 288) = v34;
+        *((unsigned int *)this + 304) = v31;
     v21 = v45; /*0x4d1288*/
-    v35 = this->u32_6C; /*0x4d1292*/
+        v35 = *((unsigned int *)this + 432);
     v36 = *(unsigned int *)(v56 + 692) + *(unsigned int *)(*v45 + 172); /*0x4d129d*/
-    v37 = this->u32_64; /*0x4d12a5*/
+        v37 = *((unsigned int *)this + 400);
     v54 = *(unsigned int *)(*v45 + 256); /*0x4d12a8*/
     if ( v35 < v37 /*0x4d12cb*/
       || (this->u32_69 || !v37)
       && (v38 = this->referenceCount, v38 > 0)
       && (*(uint8_t (**)(int, int, unsigned int))(this->u32_64)(this + 92, v37 + v38, 0) )
     {
-      v39 = this->u32_6C; /*0x4d12d2*/
-      this->u32_6C = v39 + 1; /*0x4d12dc*/
-      v40 = (unsigned int *)(this->nextArrayIndex + 16 * v39); /*0x4d12e5*/
+            v39 = *((unsigned int *)this + 432);
+            *((unsigned int *)this + 432) = v39 + 1;
+            v40 = (BuildingClass **)(*((unsigned int *)this + 384) + 16 * v39);
       v53 = v53; /*0x4d12e7*/
       *v40 = v56; /*0x4d12eb*/
       v54 = v54; /*0x4d12ed*/
@@ -510,9 +510,9 @@ AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater(this->Count, this->q011, this->IsInitialized, this->IsAllocated, 0); /*0x4d1338*/
-  this->Count += g_TacticalClass_Instance[44].__tail_0; /*0x4d134d*/
-  this->q011 += g_TacticalClass_Instance[45].__tail_0; /*0x4d135f*/
+    Cell::CreateCrater(*((unsigned int *)this + 256), *((unsigned int *)this + 272), *((unsigned int *)this + 288), *((unsigned int *)this + 304), 0);
+    *((unsigned int *)this + 256) += *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22548] + 176);
+    *((unsigned int *)this + 272) += *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22548] + 180);
   return this; /*0x4d1364*/
 }
 } // namespace gamemd
@@ -541,38 +541,38 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   unsigned int v22[2]; // [esp+10h] [ebp-10h] BYREF
 
   AbstractClass::Constructor(); /*0x4d1379*/
-  this->LastSight = -1; /*0x4d1384*/
-  this->House = 0; /*0x4d138b*/
-  this->Cell[0] = 0; /*0x4d1394*/
-  this->vtable4 = 36; /*0x4d1399*/
-  this->u32_34 = a2[39]; /*0x4d13a5*/
-  this->u32_38 = a2[40]; /*0x4d13aa*/
-  this->u32_3C = a2[41]; /*0x4d13b0*/
+    *((unsigned int *)this + 144) = -1;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned int *)this + 192) = 36;
+    *((unsigned int *)this + 208) = a2[39];
+    *((unsigned int *)this + 224) = a2[40];
+    *((unsigned int *)this + 240) = a2[41];
   v3 = a2[40]; /*0x4d13b5*/
   v4 = a2[41]; /*0x4d13b8*/
   v22[0] = a2[39]; /*0x4d13bb*/
   v22[1] = v3; /*0x4d13c9*/
   v4 = v4; /*0x4d13cd*/
-  this->abstractFlags = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v22)->level; /*0x4d13e4*/
-  this->u32_54 = -1; /*0x4d13e7*/
-  this->u32_58 = 0; /*0x4d13ee*/
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)&this->LastSight2), 0, 0); /*0x4d13f1*/
-  this->u32_5C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d13f6*/
-  this->referenceCount = 10; /*0x4d13fc*/
-  this->u32_6C = 0; /*0x4d1403*/
-  this->q01D = 1; /*0x4d140a*/
-  this->AbstractClass = (void*)&FoggedObjectClass_vftable; /*0x4d140e*/
-  *(void **)&this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d1414*/
-  *(void **)&this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d141b*/
-  *(unsigned short *)&this->qC = (void*)&FoggedObjectClass_vftable; /*0x4d1422*/
+    *((unsigned int *)this + 320) = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v22) + 283);
+    *((unsigned int *)this + 336) = -1;
+    *((unsigned int *)this + 352) = 0;
+    FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 368), 0, 0);
+    *((unsigned int *)this + 368) = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord;
+    *((unsigned int *)this + 448) = 10;
+    *((unsigned int *)this + 432) = 0;
+    *((unsigned char *)this + 464) = 1;
+    *(unsigned int *)this = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 16) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 32) = &FoggedObjectClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_FoggedObjectClass;
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
-  this->Count = *v5; /*0x4d143b*/
-  this->q011 = v5[1]; /*0x4d1440*/
-  this->IsInitialized = v5[2]; /*0x4d1446*/
-  this->IsAllocated = v5[3]; /*0x4d144c*/
-  v6 = this->q011; /*0x4d1460*/
-  this->Count += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d1463*/
-  this->q011 = *(unsigned int *)&g_TacticalClass_Instance[45] + v6; /*0x4d1473*/
+    *((unsigned int *)this + 256) = *v5;
+    *((unsigned int *)this + 272) = v5[1];
+    *((unsigned int *)this + 288) = v5[2];
+    *((unsigned int *)this + 304) = v5[3];
+    v6 = *((unsigned int *)this + 272);
+    *((unsigned int *)this + 256) += MEMORY[0x887324][44].__tail_0;
+    *((unsigned int *)this + 272) = (char *)MEMORY[0x887324][45].__tail_0 + v6;
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d14ab*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -584,8 +584,8 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
     v7 = g_FootClassConfig++; /*0x4d14b8*/
     *((unsigned int *)dword_8B3D14 + v7) = this; /*0x4d14c7*/
   }
-  v8 = this->u32_64; /*0x4d14ca*/
-  v9 = this->u32_6C; /*0x4d14cd*/
+    v8 = *((unsigned int *)this + 400);
+    v9 = *((unsigned int *)this + 432);
   v10 = a2[50]; /*0x4d14d0*/
   IDA_LOBYTE(v4) = 0; /*0x4d14da*/
   if ( v9 < v8 /*0x4d14fc*/
@@ -596,17 +596,17 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
          v8 + v11,
          0) )
   {
-    v12 = this->u32_6C; /*0x4d1503*/
-    this->u32_6C = v12 + 1; /*0x4d1509*/
-    v13 = (unsigned int *)(this->nextArrayIndex + 16 * v12); /*0x4d1514*/
+        v12 = *((unsigned int *)this + 432);
+        *((unsigned int *)this + 432) = v12 + 1;
+        v13 = (unsigned int *)(*((unsigned int *)this + 384) + 16 * v12);
     v14 = v4; /*0x4d1516*/
     *v13 = v10; /*0x4d151a*/
     v13[1] = 0; /*0x4d151c*/
     v13[2] = v14; /*0x4d151f*/
     v13[3] = 0; /*0x4d1524*/
   }
-  v15 = (int16_t)(this->u32_34 / 256); /*0x4d154d*/
-  v16 = 74 * ((int16_t)(this->u32_38 / 256) - ((v15 + (int16_t)(this->u32_38 / 256)) << 9) - v15) /*0x4d156f*/
+    v15 = (__int16)(*((unsigned int *)this + 208) / 256);
+    v16 = 74 * ((__int16)(*((unsigned int *)this + 224) / 256) - ((v15 + (__int16)(*((unsigned int *)this + 224) / 256)) << 9) - v15)
       - this->vtable4
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d1578*/
@@ -777,21 +777,21 @@ namespace gamemd {
 HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
   AbstractClass::ProcessPower(); /*0x4d2819*/
-  Power::TimerProcess(this->LastSight); /*0x4d2824*/
-  Power::TimerProcess(this->Cell); /*0x4d282f*/
-  Power::TimerProcess(this->q030); /*0x4d283a*/
-  Power::TimerProcess(this->q0D0); /*0x4d2845*/
-  Power::TimerProcess(this->q0E0); /*0x4d2850*/
-  Power::TimerProcess(this->q0F0); /*0x4d285b*/
-  Power::TimerProcess(this->q040); /*0x4d2866*/
-  Power::TimerProcess(this->q044); /*0x4d2871*/
-  Power::TimerProcess(this->__pad_048); /*0x4d287c*/
-  Power::TimerProcess(this->u32_4C); /*0x4d2887*/
-  Power::TimerProcess(this->q014); /*0x4d2892*/
-  Power::TimerProcess(this->u32_54); /*0x4d289d*/
-  Power::TimerProcess(this->u32_58); /*0x4d28a8*/
+    Power::TimerProcess(*((unsigned int *)this + 144));
+    Power::TimerProcess(*((unsigned int *)this + 176));
+    Power::TimerProcess(*((unsigned int *)this + 192));
+    Power::TimerProcess(*((unsigned int *)this + 208));
+    Power::TimerProcess(*((unsigned int *)this + 224));
+    Power::TimerProcess(*((unsigned int *)this + 240));
+    Power::TimerProcess(*((unsigned int *)this + 256));
+    Power::TimerProcess(*((unsigned int *)this + 272));
+    Power::TimerProcess(*((unsigned int *)this + 288));
+    Power::TimerProcess(*((unsigned int *)this + 304));
+    Power::TimerProcess(*((unsigned int *)this + 320));
+    Power::TimerProcess(*((unsigned int *)this + 336));
+    Power::TimerProcess(*((unsigned int *)this + 352));
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_6C); /*0x4d28b8*/
+    return Power::TimerProcess(*((unsigned int *)this + 432));
 }
 } // namespace gamemd
 // 0x4D28D0
@@ -799,8 +799,8 @@ namespace gamemd {
 unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * v3)
 {
 
-  IDA_LOWORD(v3) = this->u32_34 / 256; /*0x4d28e0*/
-  IDA_HIWORD(v3) = this->u32_38 / 256; /*0x4d28f4*/
+    LOWORD(v3) = *((unsigned int *)this + 52) / 256;
+    HIWORD(v3) = *((unsigned int *)this + 56) / 256;
   *v3 = v3; /*0x4d2901*/
   return v3; /*0x4d2904*/
 }
@@ -826,7 +826,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int v3, char * a3)
   if ( v3 ) /*0x4d2bce*/
   {
     v5 = a3; /*0x4d2bd4*/
-    IDA_LOBYTE(this->qC) = 0; /*0x4d2bd8*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( v3 - 1 >= 0 ) /*0x4d2c1a*/
@@ -872,12 +872,12 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int v3, char * a3)
         v5 = 0; /*0x4d2c11*/
       }
     }
-    IDA_LOBYTE(this->qC) = 1; /*0x4d2c33*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
-    if ( *(unsigned int *)&this->vtable2 ) /*0x4d2c3d*/
+        if ( *((unsigned int *)this + 1) )
     {
-      v11 = *(unsigned int *)&this->__pad_5[3]; /*0x4d2c42*/
+            v11 = *((unsigned int *)this + 2);
       if ( v3 < v11 ) /*0x4d2c47*/
         v11 = v3; /*0x4d2c49*/
       if ( v11 > 0 ) /*0x4d2c4d*/
@@ -885,7 +885,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int v3, char * a3)
         v12 = 0; /*0x4d2c4f*/
         do /*0x4d2c75*/
         {
-          v13 = (unsigned int *)(*(unsigned int *)&this->vtable2 + v12); /*0x4d2c56*/
+                    v13 = (unsigned int *)(*((unsigned int *)this + 1) + v12);
           v14 = &v5[v12]; /*0x4d2c58*/
           v12 += 16; /*0x4d2c5b*/
           --v11; /*0x4d2c5e*/
@@ -897,23 +897,23 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int v3, char * a3)
         while ( v11 ); /*0x4d2c75*/
         v3 = v3; /*0x4d2c77*/
       }
-      if ( IDA_BYTE1(this->qC) ) /*0x4d2c7d*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->vtable2); /*0x4d2c86*/
-        *(unsigned int *)&this->vtable2 = 0; /*0x4d2c8e*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->vtable2 = v5; /*0x4d2c99*/
-    *(unsigned int *)&this->__pad_5[3] = v3; /*0x4d2c9f*/
-    IDA_BYTE1(this->qC) = a3 == 0; /*0x4d2ca2*/
+        *((unsigned int *)this + 1) = v5;
+        *((unsigned int *)this + 2) = v3;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4d2cab*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v15 = *(unsigned int *)&this->__pad_5[3]; /*0x4d2cae*/
-  if ( v15 < *(unsigned int *)this->__tail_10 ) /*0x4d2cb6*/
-    *(unsigned int *)this->__tail_10 = v15; /*0x4d2cb8*/
+    v15 = *((unsigned int *)this + 2);
+    if ( v15 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v15;
   return 1; /*0x4d2cbb*/
 }
 } // namespace gamemd
@@ -925,11 +925,11 @@ int FoggedObjectClass::Read(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *(unsigned int *)this->__tail_10; /*0x4d2cd0*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x4d2cd5*/
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
-  for ( i = *(unsigned int **)&this->vtable2; *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2ce1*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2 || i[1] != a2[1]; i += 4 )
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/
@@ -945,11 +945,11 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  uniqueId = this->uniqueId; /*0x4e07b0*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x4e07b3*/
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
-  for ( i = (unsigned int *)this->vtable1; *i != *a2; ++i ) /*0x4e07be*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= uniqueId ) /*0x4e07cd*/
       return -1; /*0x4e07cd*/
@@ -1030,14 +1030,14 @@ char FoggedObjectClass::AddRef(int a2)
   unsigned int *v6; // ecx
   int v7; // edx
 
-  m_8 = *(unsigned int *)&this->vtable3; /*0x4d29bb*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
     v3 = 0; /*0x4d29c2*/
     if ( m_8 <= 0 ) /*0x4d29c6*/
       return 1; /*0x4d29f6*/
     v4 = *(unsigned int *)(a2 + 4); /*0x4d29c8*/
-    v5 = *(unsigned int **)&this->vtable2; /*0x4d29cb*/
+        v5 = (unsigned int *)*((unsigned int *)this + 4);
     v6 = (unsigned int *)(v4 + 4); /*0x4d29ce*/
     v7 = v4 - (unsigned int)v5; /*0x4d29d1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x4d29e3*/
@@ -1056,15 +1056,15 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->vtable2; /*0x4d2d63*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d66*/
-  if ( v3 && IDA_BYTE1(this->qC) ) /*0x4d2d70*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_FoggedObjectClass_DrawRecord;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4d2d78*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x4d2d80*/
+        *(Block + 1) = 0;
   }
-  IDA_BYTE1(this->qC) = 0; /*0x4d2d8b*/
-  *(unsigned int *)&this->__pad_5[3] = 0; /*0x4d2d91*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
     RA2_OPDEL(); /*0x4d2d9b*/
   return this; /*0x4d2da5*/
@@ -1075,15 +1075,15 @@ void FoggedObjectClass_42::ClearBuffer()
 {
   void *vtable1; // eax
 
-  vtable1 = (void *)this->vtable1; /*0x4e01f6*/
-  this->uniqueId = 0; /*0x4e01f9*/
-  if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x4e0200*/
+    v2 = *(void **)((char *)this + 16);
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(vtable1); /*0x4e0206*/
-    this->vtable1 = 0; /*0x4e020e*/
+        *((unsigned int *)this + 16) = 0;
   }
-  IDA_BYTE1(this->vtable3) = 0; /*0x4e0211*/
-  this->vtable2 = 0; /*0x4e0214*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -1091,8 +1091,8 @@ void FoggedObjectClass_42::ClearBuffer()
 namespace gamemd {
 unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
 {
-  if ( IDA_LOBYTE(this->vtable3) ) /*0x4e0220*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e0235*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4e0227*/
 }
@@ -1102,7 +1102,7 @@ unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
 namespace gamemd {
 int FoggedObjectClass_42::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->Items + 4 * a2); /*0x4e024a*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -1115,13 +1115,13 @@ char FoggedObjectClass_42::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->Capacity; /*0x4e0582*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4e058d*/
   {
     v3 = 0; /*0x4e058f*/
     if ( m_8 <= 0 ) /*0x4e0593*/
       return 1; /*0x4e05b3*/
-    v4 = *(unsigned int **)&this->Items; /*0x4e0595*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4e059b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4e05a4*/
     {
@@ -1145,30 +1145,30 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e05cc*/
   {
-    this->IsInitialized = 0; /*0x4e05d6*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4e05dc*/
       v4 = a3; /*0x4e05f2*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4e05ee*/
-    this->IsInitialized = 1; /*0x4e05f6*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x4e05fa*/
     {
-      if ( *(unsigned int *)&this->Items ) /*0x4e0605*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->Capacity; /*0x4e060c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x4e0611*/
           m_8 = a2; /*0x4e0613*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Items + 4 * i - 4) ) /*0x4e0619*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x4e061e*/
-        if ( this->IsAllocated ) /*0x4e062b*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->Items); /*0x4e0636*/
-          *(unsigned int *)&this->Items = 0; /*0x4e063e*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->Items = v4; /*0x4e0647*/
-      this->Capacity = a2; /*0x4e064f*/
-      this->IsAllocated = a3 == 0; /*0x4e0652*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x4e0658*/
     }
     else
@@ -1178,7 +1178,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVFootClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e0662*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x4e0668*/
   }
 }
@@ -1188,13 +1188,13 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void FoggedObjectClass_42::ddtor()
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4e067d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->Items); /*0x4e0683*/
-    *(unsigned int *)&this->Items = 0; /*0x4e068b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x4e068e*/
-  this->Capacity = 0; /*0x4e0691*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -1206,9 +1206,9 @@ int FoggedObjectClass_42::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->IsInitialized ) /*0x4e06a0*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x4e06a8*/
-  m_8 = this->Capacity; /*0x4e06ae*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x4e06b1*/
   if ( m_8 <= 0 ) /*0x4e06b5*/
     return -1; /*0x4e06cc*/
@@ -1225,8 +1225,8 @@ int FoggedObjectClass_42::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int FoggedObjectClass_42::Write(int a2)
 {
-  if ( this->IsInitialized ) /*0x4e06e0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->Items) >> 2; /*0x4e06f5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4e06e7*/
 }
@@ -1243,38 +1243,38 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e070c*/
   {
-    IDA_LOBYTE(this->vtable3) = 0; /*0x4e0712*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4e0718*/
       v4 = a3; /*0x4e072e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4e072a*/
-    IDA_LOBYTE(this->vtable3) = 1; /*0x4e0732*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x4e0736*/
       return 0; /*0x4e07aa*/
-    if ( this->vtable1 ) /*0x4e0738*/
+        if ( *((unsigned int *)this + 1) )
     {
-      vtable2 = this->vtable2; /*0x4e073f*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < vtable2 ) /*0x4e0744*/
         vtable2 = a2; /*0x4e0746*/
-      for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x4e0751*/
-      if ( IDA_BYTE1(this->vtable3) ) /*0x4e075e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL((void *)this->vtable1); /*0x4e0769*/
-        this->vtable1 = 0; /*0x4e0771*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    this->vtable1 = (int)v4; /*0x4e077a*/
-    this->vtable2 = a2; /*0x4e0782*/
-    IDA_BYTE1(this->vtable3) = a3 == 0; /*0x4e0785*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->vtable2; /*0x4e0791*/
-  if ( v7 < this->uniqueId ) /*0x4e0799*/
-    this->uniqueId = v7; /*0x4e079b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x4e079e*/
 }
 } // namespace gamemd
@@ -1285,15 +1285,15 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x4e0ce3*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FootClass___vftable; /*0x4e0ce6*/
-  if ( v3 && this->IsAllocated ) /*0x4e0cf0*/
+    v3 = (void *)*(Block + 1);
+    *Block = &vt_VectorClass_FootClass;
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4e0cf8*/
-    *(unsigned int *)&this->Items = 0; /*0x4e0d00*/
+        *(Block + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x4e0d0b*/
-  *(unsigned short *)&this->Capacity = 0; /*0x4e0d11*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
     RA2_OPDEL(); /*0x4e0d1b*/
   return this; /*0x4e0d25*/

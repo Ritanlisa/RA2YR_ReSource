@@ -735,14 +735,14 @@ void unknown::ddtor()
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x588ce6*/
-  this->m_10 = 0; /*0x588ce9*/
-  if ( v2 && this->IsAllocated ) /*0x588cf0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x588cf6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x588cfe*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x588d01*/
-  this->m_8 = 0; /*0x588d04*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 // 0x5896A0
 int  unknown::Read()
@@ -751,11 +751,11 @@ int  unknown::Read()
   int result; // eax
   unsigned short *i; // ecx
 
-  m_10 = this->m_10; /*0x5896a2*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x5896a5*/
   if ( m_10 <= 0 ) /*0x5896aa*/
     return -1; /*0x5896e1*/
-  for ( i = *(unsigned short **)&this->m_1[3]; *i != *this || i[1] != this[1] || i[2] != this[2] || i[3] != this[3]; i += 8 ) /*0x5896b0*/
+    for ( i = (unsigned short *)*((unsigned int *)this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 )
   {
     if ( ++result >= m_10 ) /*0x5896df*/
       return -1; /*0x5896df*/
@@ -1333,8 +1333,8 @@ int sub_5889F0(int a1, int a2)
 // 0x588D10
 unsigned int unknown::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x588d10*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x588d25*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 4;
   else
     return 0; /*0x588d17*/
 }
@@ -1343,7 +1343,7 @@ int unknown::Seek(int a2, int a3)
 {
   int v3; // edx
 
-  v3 = *(unsigned int *)&this->m_1[3] + 16 * a3; /*0x588d3a*/
+    v3 = *((unsigned int *)this + 4) + 16 * a3;
   *(unsigned int *)a2 = *(unsigned int *)v3; /*0x588d42*/
   *(unsigned int *)(a2 + 4) = *(unsigned int *)(v3 + 4); /*0x588d47*/
   *(unsigned char *)(a2 + 8) = *(unsigned char *)(v3 + 8); /*0x588d4d*/
@@ -1823,8 +1823,8 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
   }
   while ( !*v4 && !v4[1] ); /*0x58be88*/
   v5 = 80 * v3; /*0x58be8e*/
-  this->AbstractClass = *(void **)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x58be97*/
-  return &this->AbstractClass; /*0x58be8d*/
+    *this = *(unsigned int *)((char *)g_MapTileArray + v5);
+    return this;
 }
 } // namespace gamemd
 
@@ -1865,14 +1865,14 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
     {
       v8[0] = 0; /*0x58bf42*/
       v8[1] = 0; /*0x58bf47*/
-      this->AbstractClass = 0; /*0x58bf51*/
-      return &this->AbstractClass; /*0x58bf5c*/
+            *this = 0;
+            return this;
     }
     v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v8); /*0x58bf2d*/
   }
   while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58bf34*/
-  this->AbstractClass = *(void **)v8; /*0x58bf62*/
-  return &this->AbstractClass; /*0x58bf50*/
+    *this = v8;
+    return this;
 }
 } // namespace gamemd
 
@@ -2040,7 +2040,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
       *aP1 = 0; /*0x58c57e*/
       return aP1; /*0x58c584*/
     }
-    if ( (void *)*((unsigned int *)v2 + 14) == this->? && (*v2 || v2[1]) ) /*0x58c53a*/
+        if ( *((unsigned int *)v2 + 14) == *((unsigned int *)this + 8) && (*v2 || v2[1]) )
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
@@ -2129,7 +2129,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
   v7 = this; /*0x58d12e*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x58d134*/
   {
-    this->? = 0; /*0x58d1b3*/
+        *((unsigned int *)this + 12) = 0;
   }
   else
   {
@@ -2138,7 +2138,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
     v8 = g_MapCellWidth * g_MapCellWidth; /*0x58d143*/
     do /*0x58d1a4*/
     {
-      if ( *(void **)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == this->? ) /*0x58d153*/
+            if ( *(unsigned int *)((char *)g_MapTileArray + v5 + 56) == *((unsigned int *)this + 8) )
       {
         *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) = a2; /*0x58d155*/
         *(unsigned char *)(v5 + g_MissionQueueFrame.localVariables[163] + 75) = 0; /*0x58d15e*/
@@ -2154,7 +2154,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
       result = --v8; /*0x58d19f*/
     }
     while ( v8 ); /*0x58d1a4*/
-    this->M12 = 0; /*0x58d1a8*/
+        *((unsigned int *)this + 12) = 0;
   }
   return result; /*0x58d1ac*/
 }

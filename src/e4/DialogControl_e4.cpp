@@ -13,8 +13,8 @@ int DialogControl::Hide()
   int v1; // eax
 
   v1 = *(unsigned int *)this->__pad_0; /*0x4e1450*/
-  this->u32_1E = 0; /*0x4e1452*/
-  this->u32_1C = 1; /*0x4e1456*/
+    *((unsigned int *)this + 120) = 0;
+    *((unsigned int *)this + 112) = 1;
   return (*(int (**)(void))(v1 + 84))();
 }
 } // namespace gamemd
@@ -22,8 +22,8 @@ int DialogControl::Hide()
 namespace gamemd {
 void DialogControl::Show()
 {
-  this->u32_1E = 1; /*0x4e1462*/
-  this->u32_1C = 1; /*0x4e1465*/
+    *((unsigned int *)this + 120) = 1;
+    *((unsigned int *)this + 112) = 1;
   return (*(int (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this);
 }
 } // namespace gamemd
@@ -31,7 +31,7 @@ void DialogControl::Show()
 namespace gamemd {
 int DialogControl::IsHidden()
 {
-  return this->u32_1E == 0; /*0x4e147a*/
+    return *((unsigned int *)this + 120) == 0;
 }
 } // namespace gamemd
 // 0x623340
@@ -42,17 +42,17 @@ void DialogControl::Constructor()
   unsigned int *v3; // eax
 
   memset(0, 0x200u); /*0x62334d*/
-  this->u32_68 = 11; /*0x62334f*/
-  this->u32_64 = g_FogOfWarState; /*0x62335d*/
+    *((unsigned int *)this + 104) = 11;
+    *((unsigned int *)this + 100) = MEMORY[0x87F7E8][29498];
   v2 = (unsigned int *)RA2_OPNEW(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
-  *(void **)&this->q00F = v3; /*0x623379*/
-  this->u32_40 = 0; /*0x62337c*/
-  this->u32_5C = 0; /*0x62337f*/
-  this->u32_90 = -1; /*0x623382*/
+    *((unsigned int *)this + 60) = v3;
+    *((unsigned int *)this + 64) = 0;
+    *((unsigned int *)this + 92) = 0;
+    *((unsigned int *)this + 144) = -1;
   return this; /*0x62338e*/
 }
 } // namespace gamemd

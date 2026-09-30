@@ -17,7 +17,7 @@ LRESULT sub_5E23A0()
   HWND Current; // eax
   HWND DlgItem; // eax
 
-  Current = this->Dialog::GetCurrent(); /*0x5e23a0*/
+    Current = Dialog::GetCurrent();
   DlgItem = GetDlgItem(Current, 1439); /*0x5e23ab*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x5e23c1*/
 }
@@ -30,7 +30,7 @@ LRESULT sub_7A27D0()
   HWND Current; // eax
   HWND DlgItem; // eax
 
-  Current = this->Dialog::GetCurrent(); /*0x7a27d0*/
+    Current = Dialog::GetCurrent();
   DlgItem = GetDlgItem(Current, 1439); /*0x7a27db*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x7a27f1*/
 }

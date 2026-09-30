@@ -215,6 +215,6 @@ TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
   LocomotionClass::Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
     RA2_OPDEL(); /*0x72a220*/
-  return this->LocomotionClass; /*0x72a22a*/
+    return (TunnelLocomotionClass *)Block;
 }
 } // namespace gamemd

@@ -34,7 +34,7 @@ CampaignClass * RadarClass::Destruct()
   this->RadarClass_field_0x0 = (unsigned int)((gamemd::MapClass **)((void*)&RadarClass_vftable));
   AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
   TacticalClass::FreeResources(); /*0x652c19*/
-  p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
+    v2 = (char *)((char *)this + 5256);
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -51,24 +51,24 @@ CampaignClass * RadarClass::Destruct()
     p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x652c55*/
-  this->RadarClass_field_0x125C = (VectorClass *)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
-  if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
+    v5 = (void *)*((unsigned int *)this + 4704);
+    *((unsigned int *)this + 4700) = &vt_VectorClass_Point2D;
+    if ( v5 && *((unsigned char *)this + 4713) )
   {
     RA2_OPDEL(RadarClass_field_0x1260); /*0x652c72*/
-    this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
+        *((unsigned int *)this + 4704) = 0;
   }
   this-((unsigned int *)(>__pad_1264))[5] = (gamemd::CampaignClass *)(0);
-  *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
-  RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarClass_field_0x1224 = (VectorClass *)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
-  if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
+    *((unsigned int *)this + 4708) = 0;
+    v6 = (void *)*((unsigned int *)this + 4648);
+    *((unsigned int *)this + 4644) = &vt_VectorClass_Cell;
+    if ( v6 && *((unsigned char *)this + 4657) )
   {
     RA2_OPDEL(RadarClass_field_0x1228); /*0x652ca9*/
-    this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
+        *((unsigned int *)this + 4648) = 0;
   }
   this-((unsigned int *)(>__pad_122C))[5] = (gamemd::CampaignClass **)(0);
-  *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
+    *((unsigned int *)this + 4652) = 0;
   this->MapClass::Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
 }
@@ -360,7 +360,7 @@ unsigned int * RadarClass::initRadarSurface()
 {
   this->RadarClass_field_0x4 = (unsigned int)(0);
   this->RadarClass_field_0x8 = (unsigned int)(0);
-  *(unsigned int *)this->__pad_C = 2; /*0x4f422a*/
+    *((unsigned int *)this + 12) = 2;
   this->RadarClass_field_0x0 = &off_7EA6FC; /*0x4f4231*/
   return &this->RadarClass_field_0x0; /*0x4f4237*/
 }

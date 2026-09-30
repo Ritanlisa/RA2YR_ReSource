@@ -62,10 +62,10 @@ int sub_4116A0(unsigned int a1)
   v3 = 188 * v2 + 8943480; /*0x4116bd*/
   if ( (dword_8877A0[47 * v2] & 1) != 0 ) /*0x4116c4*/
   {
-    this->Debug::Log(); /*0x4116cf*/
+        Debug::Log();
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
-  v5 = this->Time::GetElapsedMS() - *((unsigned int *)&unk_887794 + 47 * v2); /*0x4116f2*/
+    v5 = Time::GetElapsedMS() - *((unsigned int *)&MEMORY[0x887794] + 47 * v2);
   v17 = *(unsigned int *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(unsigned int *)(v3 + 140); /*0x41170b*/
@@ -160,14 +160,14 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       result = sub_411B20((DWORD_PTR)dwUser, a3, a4); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
-      this->Debug::Log(); /*0x411874*/
+            Debug::Log();
       LockCount = dwUser[2].LockCount; /*0x411880*/
       v6 = 188 * LockCount + 8943480; /*0x411894*/
       if ( byte_887778[188 * LockCount] == 1 ) /*0x41189b*/
       {
         if ( dword_887804[47 * LockCount] ) /*0x4118a1*/
         {
-          this->Debug::Log(); /*0x4118b2*/
+                    Debug::Log();
           v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
           if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
@@ -182,16 +182,16 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
             LeaveCriticalSection((LPCRITICAL_SECTION)(v7 + 160)); /*0x411913*/
           }
         }
-        this->Debug::Log(); /*0x41191e*/
+                Debug::Log();
         timeKillEvent(*(unsigned int *)(v6 + 96)); /*0x41192a*/
         *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
-        this->Debug::Log(); /*0x411938*/
+                Debug::Log();
         timeEndPeriod(0x10u); /*0x411942*/
         *(unsigned char *)v6 = 0; /*0x41194d*/
-        this->Debug::Log(); /*0x411950*/
+                Debug::Log();
         DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
       }
-      this->Debug::Log(); /*0x41196a*/
+            Debug::Log();
       result = -1; /*0x411972*/
       break; /*0x411979*/
     case 4: /*0x411835*/
@@ -248,8 +248,8 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
         }
         else
         {
-          *(unsigned int *)(v13 + 28) = this->Time::GetElapsedMS() - *(unsigned int *)(v13 + 24); /*0x411a52*/
-          this->Debug::Log(); /*0x411a55*/
+                    *(unsigned int *)(v13 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v13 + 24);
+                    Debug::Log();
           v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
           IDA_LOBYTE(v14) = v14 & 0xFE; /*0x411a60*/
           *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
@@ -282,10 +282,10 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
   DirectSound = (gamemd::AbstractClass **)(this->Audio::GetDirectSound());
-  this->Debug::Log(); /*0x411b33*/
+    Debug::Log();
   GetCurrentThreadId(); /*0x411b3b*/
-  this->Debug::Log(); /*0x411b47*/
-  if ( !this->Audio::IsSoundEnabled() ) /*0x411b4f*/
+    Debug::Log();
+    if ( !Audio::IsSoundEnabled() )
     return -13; /*0x411b4f*/
   v3 = 0; /*0x411b5c*/
   v4 = byte_887778; /*0x411b5e*/
@@ -320,7 +320,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v11[0] = 96; /*0x411c1c*/
   DirectSound->lpVtbl->GetCaps(DirectSound, (LPDSCAPS)v11); /*0x411c28*/
   if ( (v11[1] & 0x20) != 0 ) /*0x411c30*/
-    this->Debug::Log(); /*0x411c3e*/
+        Debug::Log();
   else
     *(unsigned int *)(dwUser + 196) = 0; /*0x411c48*/
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
@@ -328,12 +328,12 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
   dword_88776C = (int (__cdecl *)(unsigned int))*((unsigned int *)aP1 + 2); /*0x411c6c*/
   dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
-  this->Debug::Log(); /*0x411c7b*/
+    Debug::Log();
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
     return -13; /*0x411cd5*/
-  this->Debug::Log(); /*0x411c97*/
+    Debug::Log();
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
-  this->Debug::Log(); /*0x411cb9*/
+    Debug::Log();
   return *((unsigned int *)v5 + 24) != 0 ? -1 : -13;
 }
 }
@@ -399,7 +399,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     *(unsigned int *)(v3 + 124) = v10; /*0x411f4a*/
     *(unsigned short *)(v3 + 122) = v9; /*0x411f4d*/
     *(unsigned int *)(v3 + 128) = v10 * v11; /*0x411f51*/
-    DirectSoundAudio = this->Audio::GetDirectSound(); /*0x411f57*/
+        DirectSoundAudio = Audio::GetDirectSound();
     DirectSoundAudio->lpVtbl->CreateSoundBuffer( /*0x411f63*/
       DirectSoundAudio,
       (LPCDSBUFFERDESC)(v3 + 100),
@@ -443,8 +443,8 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   }
   else
   {
-    *(unsigned int *)(v3 + 28) = this->Time::GetElapsedMS() - *(unsigned int *)(v3 + 24); /*0x411e5d*/
-    this->Debug::Log(); /*0x411e60*/
+        *(unsigned int *)(v3 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v3 + 24);
+        Debug::Log();
     v4 = *(unsigned int *)(v3 + 40); /*0x411e65*/
     IDA_LOBYTE(v4) = v4 & 0xFE; /*0x411e6b*/
     *(unsigned int *)(v3 + 40) = v4; /*0x411e6d*/
@@ -1086,8 +1086,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= this->M28 ) /*0x410e20*/
-            v9 = (int16_t *)((char *)v9 - (unsigned int)this->M32); /*0x410e22*/
+                    if ( (unsigned int)v9 >= *((unsigned int *)this + 28) )
+                        v9 = (__int16 *)((char *)v9 - *((unsigned int *)this + 32));
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/
@@ -1907,9 +1907,9 @@ void sub_41D2C0()
 namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
-  this->ambientSoundController[1] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
-  IDA_LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
-  IDA_BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
+    *((unsigned int *)this + 256) = MEMORY[0xA8ED84];
+    *((unsigned char *)this + 240) = 0;
+    *((unsigned char *)this + 244) = 0;
   return 0; /*0x41dd20*/
 }
 } // namespace gamemd
@@ -2055,7 +2055,7 @@ int sub_41E330()
 namespace gamemd {
 int E4Recv_41FD30::sub_41FD30(int a2)
 {
-  *(&this->u32_144) = a2; /*0x41fd34*/
+    *((unsigned int *)this + 216) = a2;
   return a2; /*0x41fd3a*/
 }
 } // namespace gamemd
@@ -2064,7 +2064,7 @@ int E4Recv_41FD30::sub_41FD30(int a2)
 namespace gamemd {
 int E4Recv_41FD40::sub_41FD40(int a2)
 {
-  *(&this->u32_145) = a2; /*0x41fd44*/
+    *((unsigned int *)this + 220) = a2;
   return a2; /*0x41fd4a*/
 }
 } // namespace gamemd
@@ -2073,7 +2073,7 @@ int E4Recv_41FD40::sub_41FD40(int a2)
 namespace gamemd {
 int E4Recv_41FD50::sub_41FD50(int a2)
 {
-  *(&this->u32_146) = a2; /*0x41fd54*/
+    *((unsigned int *)this + 224) = a2;
   return a2; /*0x41fd5a*/
 }
 } // namespace gamemd

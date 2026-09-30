@@ -79,8 +79,8 @@ void Rect::Set(const Rect& other)
 {
   this->X = aP1; /*0x42e41a*/
   this->Y = aP2; /*0x42e420*/
-  this->Width = aP3; /*0x42e427*/
-  this->Height = aP4; /*0x42e42a*/
+    *((unsigned int *)this + 8) = aP3;
+    *((unsigned int *)this + 12) = aP4;
   return &this->X; /*0x42e42d*/
 }
 } // namespace gamemd
@@ -90,8 +90,8 @@ void Rect::Construct(const Rect& other)
 {
   this->X = *aP1; /*0x45a138*/
   this->Y = aP1[1]; /*0x45a141*/
-  this->Width = aP2; /*0x45a148*/
-  this->Height = aP3; /*0x45a14b*/
+    *((unsigned int *)this + 8) = aP2;
+    *((unsigned int *)this + 12) = aP3;
   return &this->X; /*0x45a14e*/
 }
 } // namespace gamemd

@@ -176,7 +176,7 @@ TechnoTypeClass * Frame::Present()
             goto LABEL_51; /*0x4f49ff*/
           if ( dword_887368 ) /*0x4f4a09*/
           {
-            if ( (uint8_t)this->Frame::Init() ) /*0x4f4a0b*/
+                        if ( (unsigned __int8)Frame::Init() )
             {
               v13 = dword_87F7F0; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/
@@ -264,6 +264,6 @@ TechnoTypeClass * Frame::Present()
 namespace gamemd {
 TechnoTypeClass * Frame::Init()
 {
-  return this->q004 != 0; /*0x724c0a*/
+    return *((unsigned int *)this + 4) != 0;
 }
 } // namespace gamemd

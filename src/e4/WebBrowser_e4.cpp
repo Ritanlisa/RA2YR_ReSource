@@ -37,15 +37,15 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult) ) /*0x773628*/
     return (char *)(0);
   strcpy(ValueName, a2); /*0x77364f*/
-  if ( !this->q008 ) /*0x773653*/
+    if ( !*((unsigned int *)this + 32) )
     strcat(ValueName, asc_84968C); /*0x773684*/
   cbData = 512; /*0x7736b1*/
   v3 = RegQueryValueExA(phkResult, ValueName, 0, &Type, Data, &cbData); /*0x7736bf*/
   RegCloseKey(phkResult); /*0x7736c2*/
   if ( v3 ) /*0x7736ca*/
     return 0; /*0x7736ca*/
-  this->Debug::Log(); /*0x7736e5*/
-  if ( !this->q008 ) /*0x7736f2*/
+    Debug::Log();
+    if ( !*((unsigned int *)this + 32) )
     return (void *)(WebBrowser::OpenURL(Data));
   mbstowcs((wchar_t *)(&this->u32_42), (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
@@ -66,11 +66,11 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
          0,
          0) < 0 )
     return 0; /*0x773849*/
-  v6 = this->q008; /*0x77380a*/
+    v6 = *((unsigned int *)this + 32);
   if ( v6 ) /*0x77380f*/
   {
-    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 28))(this->q008); /*0x773814*/
-    this->u32_40C = 1; /*0x773817*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 28))(*((unsigned int *)this + 32));
+        *((unsigned char *)this + 4144) = 1;
   }
   return 1; /*0x77381e*/
 }
@@ -144,7 +144,7 @@ int WebBrowser::ShowDialog()
     {
       if ( (uint8_t)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
       {
-        while ( !this->Dialog::PumpMessages() && !dwNewLong ) /*0x774032*/
+                while ( !Dialog::PumpMessages() && !dwNewLong )
           ; /*0x774023*/
       }
       (*(void (__stdcall **)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
@@ -164,21 +164,21 @@ int WebBrowser::GoForward()
   char v4; // [esp+10h] [ebp+4h]
 
   *(unsigned int *)this->__pad_0 = (void*)&WebBrowser_vftable; /*0x7740a8*/
-  this->Debug::Log(); /*0x7740ae*/
-  if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
+    Debug::Log();
+    if ( this->field_8 )
   {
-    this->Debug::Log(); /*0x7740c2*/
-    (*(void (__stdcall **)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
+        Debug::Log();
+        (*(void (__stdcall **)(void *, WebBrowser *))(*(unsigned int *)this->field_8 + 24))(this->field_8, this);
       this->WebBrowser_field_0x8,
       this);
-    (*(void (__stdcall **)(void *))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
+        (*(void (__stdcall **)(void *))(*(unsigned int *)this->field_8 + 16))(this->field_8);
   }
   WebBrowser_field_0x8 = (void *)(this->WebBrowser_field_0x8);
   if ( WebBrowser_field_0x8 ) /*0x7740e2*/
-    (*(void (__stdcall **)(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
+        (*(void (__stdcall **)(void *))(*(unsigned int *)v2 + 8))(this->field_8);
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     RA2_OPDEL(); /*0x7740f2*/
-  return (int)this->__pad_0; /*0x7740fc*/
+    return (int)this->__pad_0;
 }
 }
 // 0x551630
@@ -369,7 +369,7 @@ int WebBrowser::Clone()
   wchar_t Dest[260]; // [esp+114h] [ebp-208h] BYREF
   int v9; // [esp+320h] [ebp+4h]
 
-  this->Debug::Log(); /*0x773bcc*/
+    Debug::Log();
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773bea*/
     return 0; /*0x773bea*/
   cbData = 260; /*0x773c13*/
@@ -396,7 +396,7 @@ int WebBrowser::Clone()
 namespace gamemd {
 int WebBrowser::Navigate()
 {
-  this->Debug::Log(); /*0x773d2a*/
+    Debug::Log();
   return 0; /*0x773d34*/
 }
 } // namespace gamemd
@@ -415,7 +415,7 @@ int WebBrowser::GoBack()
   wcstombs((char *)&v4[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
   String::Assign(&v2, (const char *)&v4[0].Flag_field_0x08); /*0x773d7a*/
-  this->Debug::Log(); /*0x773d8e*/
+    Debug::Log();
   LoadPlayerProfile(&v2.q4, (const char **)&v2); /*0x773d9e*/
   *(unsigned int *)v4[0].__pad_0 = 0; /*0x773da9*/
   IDA_LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/

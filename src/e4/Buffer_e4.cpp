@@ -67,58 +67,58 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   int v56; // [esp+20h] [ebp-4h]
   int v57; // [esp+2Ch] [ebp+8h]
 
-  v5 = this->u32_28; /*0x7bcb60*/
-  v52 = this->Buffer_field_10 / 2 % v5; /*0x7bcb72*/
-  if ( (int)abs32(a2) > v5 || (result = (char *)abs32(aP2), (int)result > this->u32_2C) ) /*0x7bcb8e*/
+    v5 = *((unsigned int *)this + 40);
+    v52 = *((unsigned int *)this + 16) / 2 % v5;
+    if ( (int)abs32(a2) > v5 || (result = (char *)abs32((int)aP2), (int)result > *((unsigned int *)this + 44)) )
   {
-    v50 = this->u32_2C; /*0x7bcf06*/
+        v50 = *((unsigned int *)this + 44);
     v53 = 0; /*0x7bcf0b*/
     v54 = 0; /*0x7bcf0f*/
     v56 = v50; /*0x7bcf17*/
-    Buffer_field_14 = this->Buffer_field_14; /*0x7bcf1b*/
+        v51 = *((unsigned int *)this + 20);
     v55 = v5; /*0x7bcf24*/
     result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)Buffer_field_14 + 20))( /*0x7bcf2f*/
                        Buffer_field_14,
                        &v53,
                        a4);
-    this->Buffer_field_24 = 0x8000; /*0x7bcf32*/
+        *((unsigned int *)this + 36) = 0x8000;
     return result; /*0x7bcf32*/
   }
-  v8 = a2 + this->Buffer_field_10 / 2 % v5; /*0x7bcb98*/
+    v8 = a2 + *((unsigned int *)this + 16) / 2 % v5;
   if ( a2 ) /*0x7bcb9c*/
   {
-    Buffer_field_18 = this->Buffer_field_18; /*0x7bcba5*/
-    v10 = this->Buffer_field_10 + 2 * a2; /*0x7bcba8*/
-    this->Buffer_field_10 = v10; /*0x7bcbab*/
+        v9 = *((unsigned int *)this + 24);
+        v10 = *((unsigned int *)this + 16) + 2 * a2;
+        *((unsigned int *)this + 16) = v10;
     v11 = Buffer_field_18 + v10; /*0x7bcbae*/
     if ( v11 < Buffer_field_18 ) /*0x7bcbb2*/
-      v11 += this->Buffer_field_20; /*0x7bcbb4*/
-    if ( v11 >= this->Buffer_field_1C ) /*0x7bcbba*/
-      v11 -= this->Buffer_field_20; /*0x7bcbbc*/
-    this->Buffer_field_10 = v11 - this->Buffer_field_18; /*0x7bcbc4*/
+            v11 += *((unsigned int *)this + 32);
+        if ( v11 >= *((unsigned int *)this + 28) )
+            v11 -= *((unsigned int *)this + 32);
+        *((unsigned int *)this + 16) = v11 - *((unsigned int *)this + 24);
     if ( a2 >= 0 ) /*0x7bcbc7*/
     {
       v53 = v52; /*0x7bcc6e*/
       if ( v8 < v5 ) /*0x7bcc64*/
       {
         v54 = 0; /*0x7bcccf*/
-        v23 = this->u32_2C; /*0x7bccd3*/
+                v23 = *((unsigned int *)this + 44);
         v55 = a2; /*0x7bccd6*/
-        v22 = this->Buffer_field_14; /*0x7bccda*/
+                v22 = *((unsigned int *)this + 20);
         v56 = v23; /*0x7bcce3*/
       }
       else
       {
-        v18 = this->u32_2C; /*0x7bcc72*/
+                v18 = *((unsigned int *)this + 44);
         v55 = v5 - v52; /*0x7bcc75*/
         v54 = 0; /*0x7bcc79*/
-        v19 = this->Buffer_field_14; /*0x7bcc7d*/
+                v19 = *((unsigned int *)this + 20);
         v56 = v18; /*0x7bcc82*/
         (*(void (**)(int, int *, unsigned int))(this->u32_28)(v19, &v53, a4); /*0x7bcc94*/
-        v20 = v8 - this->u32_28; /*0x7bcc9e*/
-        v21 = this->u32_2C; /*0x7bcca0*/
+                v20 = v8 - *((unsigned int *)this + 40);
+                v21 = *((unsigned int *)this + 44);
         v54 = 0; /*0x7bcca3*/
-        v22 = this->Buffer_field_14; /*0x7bcca7*/
+                v22 = *((unsigned int *)this + 20);
         v53 = 0; /*0x7bccaa*/
         v55 = v20; /*0x7bccae*/
         v56 = v21; /*0x7bccb2*/
@@ -129,9 +129,9 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     {
       v53 = v8; /*0x7bcc33*/
       v54 = 0; /*0x7bcc37*/
-      v56 = this->u32_2C; /*0x7bcc3e*/
+            v56 = *((unsigned int *)this + 44);
       v55 = -a2; /*0x7bcc46*/
-      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
+            result = (char *)(*(int (**)(unsigned int, int *, unsigned int))(*(unsigned int *)*((unsigned int *)this + 20) + 20))(
                          this->Buffer_field_14,
                          &v53,
                          a4);
@@ -140,16 +140,16 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     {
       v53 = 0; /*0x7bcbd5*/
       v55 = v52; /*0x7bcbdd*/
-      v12 = this->u32_2C; /*0x7bcbe1*/
+            v12 = *((unsigned int *)this + 44);
       v54 = 0; /*0x7bcbe4*/
-      v13 = this->Buffer_field_14; /*0x7bcbe8*/
+            v13 = *((unsigned int *)this + 20);
       v56 = v12; /*0x7bcbed*/
       (*(void (**)(int, int *, unsigned int))(this->u32_28)(v13, &v53, a4); /*0x7bcbff*/
-      v14 = this->u32_28; /*0x7bcc02*/
-      v15 = this->u32_2C; /*0x7bcc05*/
+            v14 = *((unsigned int *)this + 40);
+            v15 = *((unsigned int *)this + 44);
       v16 = v14 + v8; /*0x7bcc08*/
       v54 = 0; /*0x7bcc0e*/
-      v17 = this->Buffer_field_14; /*0x7bcc12*/
+            v17 = *((unsigned int *)this + 20);
       v55 = v14 - v16; /*0x7bcc15*/
       v53 = v16; /*0x7bcc19*/
       v56 = v15; /*0x7bcc1d*/
@@ -159,26 +159,26 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   if ( aP2 ) /*0x7bccf8*/
   {
     Buffer_field_10 = (int)(this->Buffer_field_10);
-    v25 = this->u32_28; /*0x7bcd01*/
-    this->Buffer_field_24 -= aP2; /*0x7bcd16*/
+        v25 = *((unsigned int *)this + 40);
+        *((unsigned int *)this + 36) -= (int)aP2;
     v26 = Buffer_field_10 + 2 * aP2 * v25; /*0x7bcd19*/
-    this->Buffer_field_10 = v26; /*0x7bcd1c*/
+        *((unsigned int *)this + 16) = v26;
     v27 = aP2 + Buffer_field_10 / 2 / v25; /*0x7bcd1f*/
-    v28 = this->Buffer_field_18; /*0x7bcd21*/
+        v28 = (unsigned __int16 *)*((unsigned int *)this + 24);
     v29 = v28 + v26; /*0x7bcd24*/
     v27 = v27; /*0x7bcd26*/
     if ( v29 < v28 ) /*0x7bcd2c*/
-      v29 += this->Buffer_field_20; /*0x7bcd2e*/
-    if ( v29 >= this->Buffer_field_1C ) /*0x7bcd34*/
-      v29 -= this->Buffer_field_20; /*0x7bcd36*/
+            v29 += *((unsigned int *)this + 32);
+        if ( v29 >= *((unsigned int *)this + 28) )
+            v29 -= *((unsigned int *)this + 32);
     v30 = v29 - v28; /*0x7bcd3f*/
-    this->Buffer_field_10 = v29 - v28; /*0x7bcd43*/
+        *((unsigned int *)this + 16) = v29 - (unsigned int)v28;
     if ( aP2 >= 0 ) /*0x7bcd46*/
     {
-      v44 = this->u32_2C; /*0x7bce1d*/
+            v44 = *((unsigned int *)this + 44);
       if ( v27 >= (gamemd::MouseClass *)(v44) ) /*0x7bce26*/
       {
-        v45 = 2 * this->u32_28 * v44 - Buffer_field_10; /*0x7bce34*/
+                v45 = 2 * *((unsigned int *)this + 40) * v44 - v24;
         IDA_LODWORD(v45) = v45 - IDA_HIDWORD(v45); /*0x7bce35*/
         v46 = (uint16_t *)(v28 + Buffer_field_10); /*0x7bce37*/
         v47 = (int)v45 >> 1; /*0x7bce3c*/
@@ -195,8 +195,8 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         }
         if ( (v47 & 1) != 0 && v48 ) /*0x7bce80*/
           *v48 = a4; /*0x7bce82*/
-        v37 = this->Buffer_field_18; /*0x7bce8b*/
-        v38 = this->Buffer_field_10 / 2; /*0x7bce90*/
+                v37 = (unsigned __int16 *)*((unsigned int *)this + 24);
+                v38 = *((unsigned int *)this + 16) / 2;
         if ( (v37 & 2) != 0 && v38 ) /*0x7bce99*/
         {
           *(unsigned short *)v37 = a4; /*0x7bce9b*/
@@ -266,10 +266,10 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
         *v33 = a4; /*0x7bcda4*/
-      v35 = this->Buffer_field_10; /*0x7bcdaa*/
-      v36 = 2 * this->u32_28 * this->u32_2C - v35; /*0x7bcdb5*/
+            v35 = *((unsigned int *)this + 16);
+            v36 = 2 * *((unsigned int *)this + 40) * *((unsigned int *)this + 44) - v35;
       IDA_LODWORD(v36) = v36 - IDA_HIDWORD(v36); /*0x7bcdb6*/
-      v37 = v35 + this->Buffer_field_18; /*0x7bcdbd*/
+            v37 = (unsigned __int16 *)(v35 + *((unsigned int *)this + 24));
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
       if ( (v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
       {
@@ -330,18 +330,18 @@ int Buffer::AllocateCodecFrameBuffers()
     goto LABEL_16; /*0x7c17bd*/
   v6 = 16 * v5; /*0x7c17cc*/
   v7 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(&this->Buffer_field_188))(this, 2, 0, 16 * v5); /*0x7c17d3*/
-  this->q744 = v7; /*0x7c17db*/
+    *((unsigned int *)this + 7440) = v7;
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
   (*(void (__cdecl **)(int, int, int, int))(&this->Buffer_field_188))(this, 4, v7, v6); /*0x7c17f5*/
-  this->q030 += v6; /*0x7c17ff*/
+    *((unsigned int *)this + 192) += v6;
   if ( (*(int (__cdecl **)(int, int, int *, int))(&this->Buffer_field_184))(this, 5, &v28, 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
   v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((IDA_HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
   IDA_LOBYTE(v8) = (IDA_HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
-  if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(&this->Buffer_field_184))(this, 5, this->q744, v8) ) /*0x7c186d*/
+    if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 256))(this, 5, *((unsigned int *)this + 7440), v8) )
     return -4; /*0x7c187a*/
   LABEL_16:
   v9 = *v3; /*0x7c1884*/
@@ -349,11 +349,11 @@ int Buffer::AllocateCodecFrameBuffers()
   if ( !v9 ) /*0x7c188c*/
     return -1; /*0x7c19de*/
   v10 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(&this->Buffer_field_188))(this, 2, 0, 12 * v9); /*0x7c189d*/
-  this->q748 = v10; /*0x7c18a5*/
+    *((unsigned int *)this + 7456) = v10;
   if ( v10 ) /*0x7c18ab*/
   {
     (*(void (__cdecl **)(int, int, int, unsigned int))(&this->Buffer_field_188))(this, 4, v10, 12 * v9); /*0x7c18bf*/
-    this->q030 += 12 * v9; /*0x7c18cc*/
+        *((unsigned int *)this + 192) += 12 * v9;
     v24 = 0; /*0x7c18cf*/
     v11 = 0; /*0x7c18d9*/
     v21 = 0; /*0x7c18db*/
@@ -361,9 +361,9 @@ int Buffer::AllocateCodecFrameBuffers()
     while ( 1 ) /*0x7c18ed*/
     {
       v12 = this->u32_88; /*0x7c18ed*/
-      v13 = this->q748; /*0x7c18f3*/
+            v13 = *((unsigned int *)this + 7456);
       v13 = v13; /*0x7c18fd*/
-      v23 = *(unsigned int *)(v21 + this->q744 + 4); /*0x7c1903*/
+            v23 = *(unsigned int *)(v21 + *((unsigned int *)this + 7440) + 4);
       if ( v12 > 0 ) /*0x7c1907*/
       {
         *(unsigned int *)(v11 + v13) = v12; /*0x7c1911*/
@@ -373,7 +373,7 @@ int Buffer::AllocateCodecFrameBuffers()
         if ( !v14 ) /*0x7c192f*/
           return -8; /*0x7c192f*/
         (*(void (__cdecl **)(int, int, int, int))(&this->Buffer_field_188))(this, 4, v14, 12 * v12); /*0x7c193a*/
-        this->q030 += 12 * v12; /*0x7c194d*/
+                *((unsigned int *)this + 192) += 12 * v12;
         v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
         v26 = (int *)(v22 + v13 + 8); /*0x7c1964*/
         *v26 = v14; /*0x7c1968*/
@@ -382,7 +382,7 @@ int Buffer::AllocateCodecFrameBuffers()
         if ( !v17 ) /*0x7c1974*/
           return -8; /*0x7c1974*/
         (*(void (__cdecl **)(int, int, int, unsigned int))(&this->Buffer_field_188))(this, 4, v17, v16); /*0x7c197f*/
-        this->q030 += v16; /*0x7c198c*/
+                *((unsigned int *)this + 192) += v16;
         v19 = 0; /*0x7c1991*/
         do /*0x7c19b1*/
         {
@@ -413,11 +413,11 @@ void Buffer::Init()
 {
   this->Buffer_field_00 = (unsigned int)(a2);
   this->Buffer_field_04 = (unsigned int)(aP2);
-  IDA_LOBYTE(this->Buffer_field_08) = 0; /*0x43ad12*/
+    *((unsigned char *)this + 8) = 0;
   if ( !a2 && aP2 > 0 ) /*0x43ad1a*/
   {
     this->Buffer_field_00 = (unsigned int)(RA2_OPNEW(aP2));
-    IDA_LOBYTE(this->Buffer_field_08) = 1; /*0x43ad27*/
+        *((unsigned char *)this + 8) = 1;
   }
   return &this->Buffer_field_00; /*0x43ad2d*/
 }
@@ -428,11 +428,11 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->Buffer_field_04; /*0x488033*/
-  if ( v3 && this->IsAllocated ) /*0x488040*/
+    v3 = (void *)*(Block + 1);
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x488048*/
-    this->Items = 0; /*0x488050*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
@@ -470,17 +470,17 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   Buffer_field_08 = (int *)(this->Buffer_field_08);
-  if ( Buffer_field_08 + 12 > (int *)((unsigned int))(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
+    if ( (unsigned int)&v4->__pad_0[12] > *((unsigned int *)this + 4) + *this )
     return 0; /*0x6c89f9*/
-  v15 = this->Buffer_field_08; /*0x6c89fd*/
-  this->Buffer_field_08 = Buffer_field_08 + 12; /*0x6c8a01*/
+    v15 = (AbstractClass *)*((unsigned int *)this + 8);
+    *((unsigned int *)this + 8) = &v4->__pad_0[12];
   if ( !Buffer_field_08 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(unsigned short *)Buffer_field_08 = *(unsigned short *)a3; /*0x6c8a19*/
   *(unsigned short *)(Buffer_field_08 + 2) = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
   *(unsigned short *)(Buffer_field_08 + 4) = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
   *(unsigned short *)(Buffer_field_08 + 6) = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
-  *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
+    *(unsigned int *)&v4->__pad_0[8] = *((unsigned int *)this + 8);
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
@@ -491,8 +491,8 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
     while ( 1 ) /*0x6c8a8a*/
     {
       v10 = Map_Append(v16, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
-      v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
-      if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
+            v11 = (char *)*((unsigned int *)this + 8);
+            if ( (unsigned int)&v11[v10] > *((unsigned int *)this + 4) + *this || (*((unsigned int *)this + 8) = &v11[v10], !v11) )
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
       {
         (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/

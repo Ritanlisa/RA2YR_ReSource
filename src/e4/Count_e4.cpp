@@ -20,7 +20,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   v1 = (int)(this->u32_1C - 1);
   this->u32_1C = (int)(v1);
   if ( v1 < 0 ) /*0x408e79*/
-    this->u32_1C = 0; /*0x408e7b*/
+        *((unsigned int *)this + 28) = 0;
   result = this->m_RefCount; /*0x408e82*/
   v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
   *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
@@ -119,7 +119,7 @@ int32_t Count::GetCountQueue()
 {
   int v1; // eax
 
-  v1 = this->u32_38; /*0x5f1ea0*/
+    v1 = *((unsigned int *)this + 56);
   if ( v1 ) /*0x5f1ea5*/
     return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
@@ -130,14 +130,14 @@ int32_t Count::GetCountQueue()
 namespace gamemd {
 int32_t Count::Get()
 {
-  return this->u32_4; /*0x76f083*/
+    return *((unsigned int *)this + 4);
 }
 } // namespace gamemd
 // 0x76F160
 namespace gamemd {
 int32_t Count::Release()
 {
-  ++this->u32_8; /*0x76f162*/
+    ++*((unsigned int *)this + 8);
   return this; /*0x76f165*/
 }
 } // namespace gamemd
@@ -145,7 +145,7 @@ int32_t Count::Release()
 namespace gamemd {
 int32_t Count::ddtor()
 {
-  --this->u32_8; /*0x76f172*/
+    --*((unsigned int *)this + 8);
   return this; /*0x76f175*/
 }
 } // namespace gamemd

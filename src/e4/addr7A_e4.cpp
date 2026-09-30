@@ -195,7 +195,7 @@ void WOL_RequestMatch(void * a1)
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/
-  this->Network::Init(); /*0x7a06c3*/
+    Network::Init();
   if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x7a06cf*/
     goto LABEL_17; /*0x7a06cf*/
   for ( i = 0; i < (int)stru_B76AC4.?; ++i ) /*0x7a06de*/
@@ -208,7 +208,7 @@ void WOL_RequestMatch(void * a1)
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
   memset(&v31[168], 0, 0x6Cu); /*0x7a074b*/
   v4 = -1; /*0x7a074d*/
-  this->Debug::Log(); /*0x7a0750*/
+    Debug::Log();
   v5 = 0; /*0x7a075e*/
   if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x7a0762*/
     goto LABEL_17; /*0x7a0762*/
@@ -414,7 +414,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
       if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
-    GameUI = (HWND)this->Dialog::FindGameUI(); /*0x7a0e2d*/
+        GameUI = (HWND)Dialog::FindGameUI();
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }
@@ -445,7 +445,7 @@ Coord * * WOL_ProcessPingRequests()
   result = g_NetworkLobbyState; /*0x7a1079*/
   if ( !g_NetworkLobbyState ) /*0x7a1080*/
   {
-    this->Debug::Log(); /*0x7a1098*/
+        Debug::Log();
     result = (char)stru_B76AC4.?; /*0x7a109d*/
     if ( stru_B76AC4.? ) /*0x7a10a7*/
     {
@@ -1365,7 +1365,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   result = (int)DSurface_Alternate; /*0x7af640*/
   if ( DSurface_Alternate ) /*0x7af64d*/
   {
-    referenceCount = this->M28; /*0x7af64f*/
+        v4 = *((unsigned int *)this + 28);
     if ( referenceCount ) /*0x7af654*/
     {
       v5 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)referenceCount + 120))(referenceCount, v7); /*0x7af65d*/

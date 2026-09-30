@@ -42,7 +42,7 @@ void TauntCommandClass::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *TauntCommandClass_field_00; // [esp-4h] [ebp-4h]
 
-  TauntCommandClass_field_00 = (const wchar_t *)this->TauntCommandClass_field_00; /*0x5362d5*/
+    v3 = *((unsigned int *)this + 4);
   StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
   swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
   return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x5362fd*/

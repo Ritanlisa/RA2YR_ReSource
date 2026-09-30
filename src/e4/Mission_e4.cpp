@@ -77,26 +77,26 @@ int Mission::ExecuteTechnoMissionAction()
           }
         }
   LABEL_20:
-        (*(void (**)(Mission *))(*(unsigned int *)this->__pad_0 + 248))(this); /*0x520ca9*/
+                (*(void (**)(unsigned int *))(*(char *)this + 992))(this);
         break; /*0x520cb3*/
       case 20: /*0x520b27*/
       case 21: /*0x520b27*/
       case 36: /*0x520b27*/
-        if ( *(unsigned int *)&this-((unsigned int *)(>__pad_C))[236] >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) /*0x520cd1*/
+                if ( *((unsigned int *)this + 248) >= *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 1728) + 3644) + 36 * v2 + 4) )
                                                          + 36 * v2
                                                          + 4) )
-          (*(void (**)(Mission *))(*(unsigned int *)this->__pad_0 + 248))(this); /*0x520cdb*/
+                    (*(void (**)(unsigned int *))(*(char *)this + 992))(this);
         break; /*0x520ce1*/
       case 27: /*0x520b27*/
-        (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0); /*0x520b38*/
+                (*(void (**)(unsigned int *, int, int, unsigned int))(*(char *)this + 5472))(this, 28, 1, 0);
         if ( !*(unsigned char *)(*(unsigned int *)&this-((unsigned int *)(>__pad_5B8))[264] + 3785) ) /*0x520b44*/
-          this->u8_2A4 = 1; /*0x520b4e*/
+                    *((unsigned char *)this + 676) = 1;
         Mission::GetMissionDelay(); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
         (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0); /*0x520b93*/
         if ( !*(unsigned char *)(*(unsigned int *)&this-((unsigned int *)(>__pad_5B8))[264] + 3785) ) /*0x520b9f*/
-          this->u8_2A4 = 0; /*0x520bad*/
+                    *((unsigned char *)this + 676) = 0;
         break; /*0x520bb4*/
       case 33: /*0x520b27*/
         break;
@@ -118,12 +118,12 @@ int Mission::ExecuteTechnoMissionAction()
             FacingClass::Set_SyncLog(&this-((unsigned int *)(>__pad_18C))[508], &v18); /*0x520d16*/
           }
         }
-        if ( !*(unsigned int *)&this->u32_674 ) /*0x520d1b*/
+                if ( !*((unsigned int *)this + 1652) )
           WinAPI::Wrapper(-2147467261); /*0x520d2a*/
-        if ( (*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)&this->u64_578 + 16))(*(unsigned int *)&this->u64_578) /*0x520d50*/
+                if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 1652) + 16))(*((unsigned int *)this + 1652))
           && *(double *)&this->u64_578 > 0.1 )
         {
-          if ( *(unsigned int *)&this->u8_6DB ) /*0x520d52*/
+                    if ( *((unsigned char *)this + 1755) )
             (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 6, 1, 0); /*0x520d66*/
           else
             (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 3, 1, 0); /*0x520d79*/
@@ -131,13 +131,13 @@ int Mission::ExecuteTechnoMissionAction()
         else
         {
           v11 = *(unsigned int *)&this-((unsigned int *)(>__pad_5B8))[268]; /*0x520d7e*/
-          if ( v11 != 40 && v11 != 41 || !*(unsigned int *)&this-((unsigned int *)(>__pad_18C))[264] || !*(unsigned int *)&this->__pad_18C[296] ) /*0x520d98*/
+                    if ( v11 != 40 && v11 != 41 || !*((unsigned int *)this + 660) || !*((unsigned int *)this + 692) )
             goto LABEL_44; /*0x520d98*/
-          if ( !*(unsigned int *)&this->u32_674 ) /*0x520da2*/
+                    if ( !*((unsigned int *)this + 1652) )
             WinAPI::Wrapper(-2147467261); /*0x520db1*/
-          if ( !(*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)&this-((unsigned int *)(>__pad_5B8))[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520dbf*/
+                    if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 1652) + 16))(*((unsigned int *)this + 1652)) )
           {
-            if ( *(unsigned int *)&this->u8_6DB ) /*0x520dc6*/
+                        if ( *((unsigned char *)this + 1755) )
               (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 41, 1, 0); /*0x520dda*/
             else
               (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 40, 1, 0); /*0x520df3*/
@@ -146,12 +146,12 @@ int Mission::ExecuteTechnoMissionAction()
           else
           {
   LABEL_44:
-            v12 = *(unsigned int *)&this->u32_6C4; /*0x520e02*/
+                        v12 = *((unsigned int *)this + 1732);
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
               (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0); /*0x520e24*/
             }
-            else if ( *(unsigned int *)&this->u8_6DB ) /*0x520e26*/
+                        else if ( *((unsigned char *)this + 1755) )
             {
               (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 2, 1, 0); /*0x520e3a*/
             }
@@ -165,10 +165,10 @@ int Mission::ExecuteTechnoMissionAction()
         break; /*0x520d6c*/
     }
   }
-  if ( *(unsigned int *)&this->u8_8D == 33 && !*(unsigned int *)&this->u8_8D ) /*0x520e5b*/
+    if ( *((unsigned int *)this + 1732) == 33 && !*((unsigned char *)this + 141) )
     (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0); /*0x520e6f*/
   v13 = 0; /*0x520e81*/
-  v14 = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>__pad_5B8))[264] + 3644) + 36 * *(unsigned int *)&this->__pad_5B8[268]; /*0x520e8c*/
+    v14 = *(unsigned int *)(*((unsigned int *)this + 1728) + 3644) + 36 * *((unsigned int *)this + 1732);
   result = *(unsigned int *)(v14 + 16); /*0x520e8f*/
   if ( result > 0 ) /*0x520e95*/
   {
@@ -227,11 +227,11 @@ char Mission::ProcessUnitMissionAI()
 
   if ( (*(int (**)(Mission *))(*(unsigned int *)this->__pad_0 + 388))(this) == 2 ) /*0x520f53*/
   {
-    if ( !*(unsigned int *)&this->u32_674 ) /*0x520f55*/
+        if ( !*((unsigned int *)this + 1652) )
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
-    if ( !(*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)&this-((unsigned int *)(>__pad_5B8))[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520f72*/
+        if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 1652) + 16))(*((unsigned int *)this + 1652)) )
     {
-      v2 = *(unsigned int *)&this->u32_5A4; /*0x520f79*/
+            v2 = *((unsigned int *)this + 1444);
       v3 = *(unsigned int *)this->__pad_0; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
@@ -244,7 +244,7 @@ char Mission::ProcessUnitMissionAI()
       }
     }
   }
-  v4 = *(unsigned int *)&this->u32_5A4; /*0x520faf*/
+    v4 = *((unsigned int *)this + 1444);
   if ( v4 ) /*0x520fb7*/
   {
     v5 = (unsigned int *)(*(int (**)(int, char *, Mission *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
@@ -262,12 +262,12 @@ char Mission::ProcessUnitMissionAI()
                  1),
           (*(int (**)(Mission *, int))(v6 + 428))(this, v7) != 7) )
     {
-      if ( !*(unsigned int *)&this->u32_674 ) /*0x521028*/
+            if ( !*((unsigned int *)this + 1652) )
         WinAPI::Wrapper(-2147467261); /*0x521037*/
-      if ( !(*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)&this->u8_418 + 16))(*(unsigned int *)&this->u8_418) /*0x521050*/
+            if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 1652) + 16))(*((unsigned int *)this + 1652))
         && !this->u8_418 )
       {
-        if ( *(unsigned int *)&this->u32_5A4 ) /*0x52105e*/
+                if ( *((unsigned int *)this + 1444) )
         {
           if ( this-((unsigned int *)(>__pad_18C))[585] ) /*0x52106c*/
           {
@@ -302,13 +302,13 @@ char Mission::ProcessUnitMissionAI()
       }
     }
   }
-  if ( !*(unsigned int *)&this->u32_674 ) /*0x521144*/
+    if ( !*((unsigned int *)this + 1652) )
     WinAPI::Wrapper(-2147467261); /*0x521153*/
-  if ( (*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)&this-((unsigned int *)(>__pad_5B8))[188] + 168))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x521161*/
+    if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 1652) + 168))(*((unsigned int *)this + 1652)) )
   {
-    if ( !*(unsigned char *)(*(unsigned int *)&this->u32_6C0 + 3476) ) /*0x521175*/
+        if ( !*(unsigned char *)(*((unsigned int *)this + 1728) + 3476) )
       goto LABEL_55; /*0x521175*/
-    v12 = *(int (__stdcall ****)(unsigned int, void *, int16_t *))&this->u32_674; /*0x521183*/
+        v12 = (int (__stdcall ***)(unsigned int, void *, int *))*((unsigned int *)this + 1652);
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
@@ -336,10 +336,10 @@ char Mission::ProcessUnitMissionAI()
       (*(void (__stdcall **)(int))(*(unsigned int *)v22 + 8))(v22); /*0x52121f*/
     if ( v16 ) /*0x521226*/
     {
-      IDA_LOBYTE(v17) = *(unsigned int *)&this->u8_68D; /*0x521228*/
+            LOBYTE(v17) = *((unsigned char *)this + 1677);
       if ( !(unsigned char)v17 ) /*0x521230*/
       {
-        if ( *(double *)&this->__pad_18C[1004] <= 0.8 ) /*0x521247*/
+                if ( *((double *)this + 175) <= 0.8 )
           IDA_LOBYTE(v17) = (*(char (**)(Mission *, int, unsigned int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))( /*0x52126b*/
                           this,
                           23,
@@ -372,7 +372,7 @@ char Mission::ProcessUnitMissionAI()
   }
   else
   {
-    v17 = *(unsigned int *)&this->u32_6C4; /*0x5212af*/
+        v17 = *((unsigned int *)this + 1732);
     switch ( v17 ) /*0x5212c2*/
     {
       case 3: /*0x5212c2*/
@@ -409,8 +409,8 @@ int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
   int (__stdcall **MouseClass_field_0x0)(int, int); // edx
 
-  MouseClass_field_0x0 = (int (__stdcall **)(int, int))this->MouseClass_field_0x0; /*0x5bda84*/
-  this->u32_5564 = aP1; /*0x5bda8d*/
+    v3 = *this;
+    *((unsigned int *)this + 21860) = a2;
   return MouseClass_field_0x0[19](aP1, aP2); /*0x5bda96*/
 }
 }
@@ -445,12 +445,12 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     {
       if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !*((unsigned char *)i + 1673) ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(unsigned int **)(&this->u32_100), &v19); /*0x6ed848*/
+                v7 = *SessionClass::GetEntry(*(unsigned int **)((char *)this + 160), (IUnknown *)&v16.__pad_0[12]);
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)(dword_8871E0))[1].?[1]; /*0x6ed867*/
         else
           v8 = ((unsigned int *)(dword_8871E0))[1].?[0]; /*0x6ed85a*/
-        if ( ObjectClass::DistanceTo(i, this->ptr_34) <= v8 ) /*0x6ed87a*/
+                if ( ObjectClass::DistanceTo(i, *(AbstractClass **)((char *)this + 208)) <= v8 )
         {
           *((unsigned char *)i + 1673) = 1; /*0x6ed8b2*/
         }
@@ -458,7 +458,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
         {
           (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed88e*/
           (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6ed89a*/
-          (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, this->ptr_34, 1); /*0x6ed8aa*/
+                    (*(void (**)(ObjectClass *, unsigned int, int))(*(unsigned int *)i->__pad_0 + 1152))(
         }
       }
       IDA_LOBYTE(v3) = *((unsigned char *)i + 144); /*0x6ed8b9*/
@@ -503,9 +503,9 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                 else
                 {
                   (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed97a*/
-                  (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, this->ptr_34, 1); /*0x6ed98a*/
+                                    (*(void (**)(ObjectClass *, unsigned int, int))(*(unsigned int *)i->__pad_0 + 1152))(
                   (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed998*/
-                  v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(&this->u32_142) + 72))( /*0x6ed9a8*/
+                                    v11 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 208) + 72))(
                                     this->ptr_34,
                                     v21);
                   IDA_LOWORD(v22) = *v11 / 256; /*0x6ed9bb*/
@@ -536,8 +536,8 @@ int Mission::GetMissionDelay()
   int *p_Mission_field_0x180; // esi
   int v4; // [esp+8h] [ebp-8h]
 
-  Mission_field_0x180 = this->Mission_field_0x180; /*0x70f770*/
-  result = this->Mission_field_0x188; /*0x70f779*/
+    v1 = *((unsigned int *)this + 384);
+    result = *((unsigned int *)this + 392);
   p_Mission_field_0x180 = &this->Mission_field_0x180; /*0x70f783*/
   if ( Mission_field_0x180 != -1 ) /*0x70f789*/
   {

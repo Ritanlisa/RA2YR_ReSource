@@ -14,7 +14,7 @@ int ColorScheme::Destructor()
   int result; // eax
   ColorScheme *v4; // [esp+4h] [ebp-4h] BYREF
 
-  if ( this->q304 ) /*0x68c8d4*/
+    if ( *((unsigned int *)this + 3088) )
     free((void *)this-((unsigned int *)(>data))[193]); /*0x68c8df*/
   v2 = (void (***)(unsigned int, int))this->u32_30C; /*0x68c8e7*/
   this-((unsigned int *)(>data))[193] = 0; /*0x68c8ed*/

@@ -48,11 +48,11 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   int v20; // eax
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  this->AbstractClass = (void*)&TagClass_vftable; /*0x6e4f69*/
+    *a1 = &TagClass::`vftable';
   *(void **)&this->vtable2 = (void*)&TagClass_vftable; /*0x6e4f6f*/
   *(void **)&this->vtable3 = (void*)&TagClass_vftable; /*0x6e4f76*/
   *(void **)&this->vtable4 = (void*)&TagClass_vftable; /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e4f84*/
+    AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2);
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 376)) ) /*0x6e4f9d*/
@@ -137,7 +137,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
             {
               if ( v11->House && TagClass::HasValidHouse((TagClass *)this->buildingType) ) /*0x6e5080*/
               {
-                Owner = HouseClass::FindOwner((HouseClass *)this->firstTrigger->buildingType->House->arrayIndex2); /*0x6e509b*/
+                                Owner = HouseClass::FindOwner(*(void **)(*(unsigned int *)(*((unsigned int *)a1[10] + 9) + 164) + 184));
                 v13 = *(unsigned int *)(Owner + 636); /*0x6e50a0*/
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
@@ -218,7 +218,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     }
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e5212*/
+    AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, v22);
   return this->AbstractClass::DTOR(); /*0x6e521e*/
 }
 }
@@ -228,7 +228,7 @@ void TagClass::HasValidHouse()
 {
   HouseClass *v1; // esi
 
-  v1 = (HouseClass *)this->firstTrigger; /*0x6e6221*/
+    v1 = (unsigned int *)*((unsigned int *)this + 160);
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -248,22 +248,22 @@ void TagClass::Unlink()
   int result; // eax
   TagTypeClass *buildingType; // ecx
 
-  this->firstTrigger[8].destroyed = 0; /*0x71ade9*/
-  this->firstTrigger[8].timer[1] = 0; /*0x71adf2*/
-  v2 = this->q011; /*0x71adf8*/
-  *(unsigned int *)&this->firstTrigger = 0; /*0x71adfd*/
+    *(unsigned char *)(*((unsigned int *)this + 40) + 624) = 0;
+    *(unsigned int *)(*((unsigned int *)this + 40) + 632) = 0;
+    v2 = *((unsigned int *)this + 68);
+    *((unsigned int *)this + 40) = 0;
   if ( v2 ) /*0x71ae00*/
   {
     if ( v2->occuredEvents == this ) /*0x71ae05*/
       v2->occuredEvents = 0; /*0x71ae07*/
-    TagClass::Unlink(*((TagClass **)&this->vtable27)); /*0x71ae0d*/
+        TagClass::Unlink(*((unsigned int *)this + 68));
   }
-  result = this->uniqueId; /*0x71ae12*/
+    result = *((unsigned int *)this + 64);
   if ( result ) /*0x71ae17*/
   {
     if ( result->enabled == this ) /*0x71ae1c*/
       result->enabled = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(*((TagClass **)&this->vtable26)); /*0x71ae24*/
+        result = TagClass::Unlink(*((unsigned int *)this + 64));
   }
   buildingType = (gamemd::TagTypeClass *)((gamemd::Coord **)(this->buildingType));
   this->q011 = (unsigned int)((gamemd::Coord **)(0));
@@ -282,15 +282,15 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
   TriggerClass *firstTrigger; // eax
   int result; // eax
 
-  if ( this->buildingType == (TagTypeClass *)a2 ) /*0x6e561a*/
-    *(unsigned int *)&this->buildingType = 0; /*0x6e561c*/
+    if ( *((unsigned int *)this + 144) == a2 )
+        *((unsigned int *)this + 144) = 0;
   firstTrigger = *(unsigned int *)&this->firstTrigger; /*0x6e5623*/
   if ( firstTrigger == (TriggerClass *)a2 ) /*0x6e5628*/
-    *(unsigned int *)&this->firstTrigger = firstTrigger->nextTrigger; /*0x6e562d*/
+        *((unsigned int *)this + 160) = v4->nextTrigger;
   result = (int)this->buildingType; /*0x6e5630*/
   if ( !result ) /*0x6e5635*/
   {
-    this->destroyed = 1; /*0x6e5637*/
+        *((unsigned char *)this + 208) = 1;
     result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e563b*/
     if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5675*/
       || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
@@ -332,15 +332,15 @@ int TagClass::ProcessTag(int * a2)
   int v5; // eax
 
   AbstractClass::ProcessPower(); /*0x6e56e9*/
-  v3 = (*((int (__stdcall **)(void **))*(unsigned short *)&this->buildingType->uniqueId + 4))(&this->buildingType->uniqueId); /*0x6e56f7*/
+    v3 = (*(int (__stdcall **)(int))(*(unsigned int *)(*((unsigned int *)this + 144) + 4) + 16))(*((unsigned int *)this + 144) + 4);
   Power::TimerProcess(v3); /*0x6e56fd*/
-  firstTrigger = *(unsigned int *)&this->firstTrigger; /*0x6e5702*/
+    v4 = *((unsigned int *)this + 160);
   if ( firstTrigger ) /*0x6e5707*/
   {
     v5 = (*((int (__stdcall **)(void **))*(unsigned short *)&firstTrigger->uniqueId + 4))(&firstTrigger->uniqueId); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
-  IDA_LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
+    LOBYTE(v4) = *((unsigned char *)this + 208);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, (int)firstTrigger); /*0x6e5726*/
 }
@@ -407,6 +407,6 @@ TagClass * TagClass::ProcessTrigger(char a2)
   TagClass::Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
     RA2_OPDEL(); /*0x6e58c0*/
-  return &this->AbstractClass; /*0x6e58ca*/
+    return (TagClass *)Block;
 }
 } // namespace gamemd

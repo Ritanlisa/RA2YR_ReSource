@@ -61,7 +61,7 @@ int E4Recv_5D0190::sub_5D0190(const char * a2)
   String::Assign((String *)&v6, a2); /*0x5d019e*/
   String::ToLower((String *)&v6); /*0x5d01a7*/
   v3 = 0; /*0x5d01af*/
-  if ( this->customSound <= 0 ) /*0x5d01b3*/
+    if ( (int)*((unsigned int *)this + 100) <= 0 )
   {
   LABEL_6:
     DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
@@ -70,7 +70,7 @@ int E4Recv_5D0190::sub_5D0190(const char * a2)
   while ( !(uint8_t)String::NotEquals(*(String **)(this-((unsigned int *)(>customSound_controller))[2] + 4 * v3), 0) ) /*0x5d01c4*/
   {
   LABEL_5:
-    if ( ++v3 >= this->customSound ) /*0x5d0200*/
+        if ( ++v3 >= *((unsigned int *)this + 100) )
       goto LABEL_6; /*0x5d0200*/
   }
   String::AssignFromPtr((String *)&a2, *(const char ***)(this-((unsigned int *)(>customSound_controller))[2] + 4 * v3)); /*0x5d01d1*/
@@ -95,7 +95,7 @@ char ** E4Recv_5D0240::sub_5D0240(char ** a2, char a3)
   int v5; // edi
   int v6; // ecx
 
-  customSound = this->customSound; /*0x5d0242*/
+    v3 = *((unsigned int *)this + 100);
   v4 = 0; /*0x5d0245*/
   if ( customSound <= 0 ) /*0x5d024a*/
   {
@@ -184,7 +184,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   attachedBomb = (gamemd::BombClass *)(this->attachedBomb);
   if ( this-((unsigned int *)(>ambientSoundController))[1] >= (int)attachedBomb ) /*0x5d260d*/
   {
-    if ( !IDA_BYTE1(this->ambientSoundController[0]) && attachedBomb ) /*0x5d2618*/
+        if ( !*((unsigned char *)this + 244) && v6 )
       return 0; /*0x5d2618*/
     v7 = this-((unsigned int *)(>ambientSoundController))[2]; /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
@@ -212,12 +212,12 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 
   if ( a2 ) /*0x5d265c*/
   {
-    if ( this->Audio::IsSoundEnabled() ) /*0x5d265e*/
+        if ( Audio::IsSoundEnabled() )
     {
       v4 = 0; /*0x5d266a*/
       if ( this-((unsigned int *)(>ambientSoundController))[1] > 0 ) /*0x5d266e*/
       {
-        while ( _strcmpi((char *)a2, **((char ***)&this->attachedTag->AbstractClass + v4)) ) /*0x5d2684*/
+                while ( _strcmpi(a2, **(const void ***)(*((unsigned int *)this + 52) + 4 * v4)) )
         {
           if ( ++v4 >= this-((unsigned int *)(>ambientSoundController))[1] ) /*0x5d268c*/
             return; /*0x5d268c*/
@@ -1011,10 +1011,10 @@ int E4Recv_5D9060::sub_5D9060(int a2)
   while ( 1 ) /*0x5d907b*/
   {
     v5 = v2 + this->M16; /*0x5d907b*/
-    this->M16 = v5; /*0x5d907f*/
+        *((unsigned int *)this + 16) = v5;
     v6 = v5; /*0x5d9087*/
     if ( v5 > 0xFFFF ) /*0x5d908a*/
-      *(unsigned short *)&this->M16 = 2048; /*0x5d908c*/
+            *((unsigned int *)this + 16) = 2048;
     if ( !*(unsigned int *)&stru_887598.isAliveFlag || *(unsigned int *)&dword_A8B238 != 4 ) /*0x5d90a4*/
       break; /*0x5d90a4*/
     if ( (*(uint8_t (__stdcall **)(unsigned short))(**(unsigned int **)&stru_887598.isAliveFlag + 104))(v5) ) /*0x5d90a9*/
@@ -2141,7 +2141,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->M8; /*0x5d30e2*/
+        v7 = *((unsigned int *)this + 8);
     while ( 1 ) /*0x5d30e9*/
     {
       for ( IDA_LOWORD(v6) = *v3; *v3; IDA_LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -2149,14 +2149,14 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         if ( (unsigned short)v6 == 10 ) /*0x5d30f5*/
           break; /*0x5d30f5*/
         ++v3; /*0x5d30fc*/
-        v6 = (*((int (**)(ObjectClass *, int))this->AbstractClass + 1))(this, v6); /*0x5d30ff*/
+                v6 = (*(int (**)(size_t *, size_t))(*(char *)this + 16))(this, v6);
         v4 += v6; /*0x5d3102*/
       }
       if ( v4 > v10 ) /*0x5d3110*/
         v10 = v4; /*0x5d3112*/
       if ( *v3 == 10 ) /*0x5d311a*/
       {
-        v6 = (int)this->M8; /*0x5d311c*/
+                v6 = *((unsigned int *)this + 8);
         ++v3; /*0x5d311f*/
         vtable2 += v6; /*0x5d3122*/
       }
@@ -2164,7 +2164,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->M4; /*0x5d312a*/
+        v8 = *((unsigned int *)this + 4);
     a3[3] = vtable2; /*0x5d3137*/
     a3[2] = &vtable1[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
@@ -2443,8 +2443,8 @@ int sub_5D7550(int a1)
 namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
-  this->AbstractClass = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7582*/
-  return &this->AbstractClass; /*0x5d7588*/
+    this->vfptr = &vt_MultiplayerGameMode_InitializerBase;
+    return &this->vfptr;
 }
 } // namespace gamemd
 
@@ -2768,11 +2768,11 @@ int sub_5D8F90()
 namespace gamemd {
 unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
-  this->AbstractClass = 0; /*0x5d8fb4*/
-  this->M4 = 0; /*0x5d8fb6*/
-  this->M8 = 0; /*0x5d8fb9*/
-  this->M12 = 0; /*0x5d8fbc*/
-  return &this->AbstractClass; /*0x5d8fbf*/
+    *this = 0;
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    return this;
 }
 } // namespace gamemd
 

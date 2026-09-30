@@ -111,7 +111,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
     {
       if ( !*v13 ) /*0x4514b3*/
       {
-        v14 = a1->Type; /*0x4514b8*/
+                v14 = *(unsigned int *)(a1 + 1312);
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
           if ( IDA_LOBYTE(v14->BuildingAnim[v12 + 12]) ) /*0x4514c9*/
@@ -125,10 +125,10 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
     while ( v12 <= 102 ); /*0x4514ea*/
     a1->? = 1; /*0x4514ec*/
   }
-  v15 = a1->Type; /*0x4514f9*/
+    v15 = *(unsigned int *)(a1 + 1312);
   if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x451505*/
   {
-    SuperWeaponToken = a1->SuperWeaponToken; /*0x45150b*/
+        v16 = *(unsigned int *)(a1 + 1532);
     v17 = SuperWeaponToken + 1; /*0x451511*/
     if ( SuperWeaponToken + 1 > 2 ) /*0x451517*/
       v17 = 0; /*0x451519*/
@@ -137,29 +137,29 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
       BuildingClass::ClearAnims(a1, 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
-        strcpy(v26, a1->Type->?); /*0x45156b*/
+                strcpy(a2, (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
         qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
         v19 = strlen(v26); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/
         BuildingClass::PlayAnim(a1, v18, v26, 9, 0, 0, 0); /*0x4515c6*/
-        a1->SuperWeaponToken = v17; /*0x4515cb*/
+                *(unsigned int *)(a1 + 1532) = v17;
       }
     }
-    ++a1->UpgradeLevel; /*0x4515db*/
+        ++*(unsigned char *)(a1 + 1794);
     return 1; /*0x4515e2*/
   }
   else
   {
-    UpgradeLevel = a1->UpgradeLevel; /*0x4515e9*/
+        v21 = *(unsigned char *)(a1 + 1794);
     if ( UpgradeLevel == *(unsigned int *)&v15-((unsigned int *)(>__pad_F70))[1392] ) /*0x4515fa*/
     {
       return 0; /*0x4515ff*/
     }
     else
     {
-      a1->UpgradeLevel = UpgradeLevel + 1; /*0x45160a*/
+            *(unsigned char *)(a1 + 1794) = v21 + 1;
       BuildingClass::GetHealthRatio(a1); /*0x451610*/
       _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x451615*/
       __asm /*0x45161a*/
@@ -168,11 +168,11 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
         fnstsw ax
       }
       v23 = (_EAX & 0x4100) != 0; /*0x451625*/
-      v24 = a1->UpgradeLevel - 1; /*0x451637*/
+            v23 = (IUnknown *)(*(char *)(a1 + 1794) - 1);
       if ( v23 ) /*0x45163c*/
-        v25 = &a1->Type->BuildingAnim[17 * v24 + 16]; /*0x451649*/
+                v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3932);
       else
-        v25 = &a1->Type->BuildingAnim[17 * v24 + 12]; /*0x45165d*/
+                v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3916);
       if ( v25 && *(unsigned char *)v25 ) /*0x451668*/
         BuildingClass::PlayAnim(a1, v23, v25, v24, v23, 0, 0); /*0x451676*/
       return 1; /*0x45167e*/
@@ -903,7 +903,7 @@ int E4Recv_4517D0::sub_4517D0()
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vtable0 + 172))(this, v16); /*0x4517e2*/
+    v2 = (int *)((int (*)(int **, unsigned int *))(*this)[43])(this, v16);
   v3 = 0; /*0x4517ea*/
   v13 = *v2; /*0x4517ec*/
   v14 = v2[1]; /*0x4517f3*/
@@ -1001,7 +1001,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v14; // [esp+24h] [ebp-8h]
   int v15; // [esp+28h] [ebp-4h]
 
-  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, &v9); /*0x4528b2*/
+    v3 = (int *)(*(int (**)(unsigned int *, int *))(*(char *)this + 288))(this, &v12);
   v5 = *v4; /*0x4528b5*/
   v6 = v4[1]; /*0x4528bb*/
   v7 = v4[2]; /*0x4528c0*/
@@ -1013,7 +1013,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   v15 = v7 - v10; /*0x4528ea*/
   Math::Sqrt((double)v9 * (double)v9 + (double)(v7 - v10) * (double)(v7 - v10) + (double)v14 * (double)v14); /*0x45290f*/
   IDA_LOWORD(v11) = Math::RoundToInt(v2); /*0x452917*/
-  return v11 <= *(unsigned int *)(this->u32_520 + 5900) << 8; /*0x452922*/
+    return (int)Math::RoundToInt(v10) <= *(unsigned int *)(*((unsigned int *)this + 1312) + 5900) << 8;
 }
 } // namespace gamemd
 
@@ -1100,8 +1100,8 @@ char E4Recv_457A10::sub_457A10()
   int v5; // [esp+Ch] [ebp-8h]
   int16_t v5[2]; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vtable0 + 440))(this, v5); /*0x457a2d*/
-  for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int **)&this->needsRedraw8) + 144))( /*0x457a42*/
+    v2 = *(unsigned int *)((int (*)(unsigned int **, int *))(*this)[110])(this, &v6);
+    for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int *)this + 1312) + 144))(*((unsigned int *)this + 1312), 0);
                        this->u32_520,
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )
   {
@@ -1284,10 +1284,10 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
   char *v6; // edx
 
   result = 3 * a2 + 963; /*0x45e8bc*/
-  v6 = (char *)&this->nextObject * a2; /*0x45e8c3*/
+    v6 = (char *)((char *)this + 12 * a2);
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
-  *((unsigned int *)&this->AbstractClass + result) = a5; /*0x45e8da*/
+    *(this + result) = a5;
   return result; /*0x45e8dd*/
 }
 } // namespace gamemd

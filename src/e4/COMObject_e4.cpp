@@ -18,7 +18,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !IDA_LOBYTE(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
+        a1 = (unsigned char *)(*(int (**)(unsigned char *))(*(unsigned int *)a1 + 4))(a1);
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -41,7 +41,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
   if ( memcmp(a2, &IID_IUnknown, 0x10u) && memcmp(a2, &unk_7EA6E8, 0x10u) ) /*0x4f427a*/
     return -2147467262; /*0x4f427f*/
   *a3 = a1; /*0x4f428c*/
-  (*(void (__stdcall **)(GScreenClass *))(a1->vfptr[0] + 4))(a1); /*0x4f4291*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1);
   return 0; /*0x4f424a*/
 }
 } // namespace gamemd
@@ -58,7 +58,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x55ab47*/
     return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
+    *a2 = (*(int (**)(int))(*(unsigned int *)a1 + 36))(a1) + 4;
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 }
@@ -80,7 +80,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
   int v3; // edx
   int v4; // esi
 
-  Owner = a1->Owner; /*0x55aca6*/
+    v2 = *(unsigned int **)(a1 + 8);
   v3 = Owner->vtable2; /*0x55acb3*/
   v4 = Owner->vtable3; /*0x55acb6*/
   *a2 = Owner->?[0]; /*0x55acbf*/
@@ -93,7 +93,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-  return (*(int (**)(int))(*(unsigned int *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
+    return (*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 1336))(*(unsigned int *)(a1 + 8));
 }
 } // namespace gamemd
 // 0x5F9970

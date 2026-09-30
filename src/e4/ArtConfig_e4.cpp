@@ -32,9 +32,9 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   int v13; // [esp+74h] [ebp-8h]
 
   v5 = (char **)(&this->u32_C2); /*0x76fc68*/
-  v6 = aP3[1] + this->u32_1C; /*0x76fc6b*/
-  v7 = *aP3 + this->u32_18; /*0x76fc72*/
-  CCFileClass::Construct2(v11, (char **)(&this->u32_C2)); /*0x76fc74*/
+    v6 = *(unsigned int *)aP3->__pad_4 + *((unsigned int *)this + 112);
+    v7 = aP3->field_0 + *((unsigned int *)this + 96);
+    CCFileClass::Construct2(v11, (char **)((char *)this + 128));
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
     v8 = (void *)((unsigned int)(RA2_OPNEW(0x4Cu)));
@@ -42,7 +42,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
       v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)((unsigned int)(aP1)+ 6), 1, 0, 0); /*0x76fcb6*/
     else
       v9 = 0; /*0x76fcbd*/
-    this->u32_28 = v9; /*0x76fcbf*/
+        *((unsigned int *)this + 160) = v9;
     (*(void (**)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
   }

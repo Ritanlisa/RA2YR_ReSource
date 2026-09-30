@@ -3349,35 +3349,35 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (Rules *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
+    (*(void (**)(unsigned int *))(*(char *)this + 48))(this);
   v3 = aP1[2]; /*0x67a581*/
-  *(unsigned int *)&this->u32_8 = v3; /*0x67a586*/
+    *((unsigned int *)this + 8) = v3;
   if ( !v3 ) /*0x67a589*/
   {
-    *(unsigned int *)&this->u32_4 = 0; /*0x67a5d6*/
-    this->u8_D = 0; /*0x67a5dd*/
+        *((unsigned int *)this + 4) = 0;
+        *((unsigned char *)this + 13) = 0;
   LABEL_8:
-    *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
-    this->u32_14 = aP1[5]; /*0x67a5ea*/
+        *((unsigned int *)this + 16) = aP1[1].vtable0;
+        *((unsigned int *)this + 20) = aP1[1].Items;
     return this; /*0x67a5ed*/
   }
   v4 = RA2_OPNEW(4 * v3); /*0x67a593*/
-  *(unsigned int *)&this->u32_4 = v4; /*0x67a59b*/
+    *((unsigned int *)this + 4) = v4;
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  v5 = *(unsigned int *)&this->u32_8; /*0x67a5a2*/
+    v5 = *((unsigned int *)this + 8);
   v6 = 0; /*0x67a5a5*/
-  this->u8_D = 1; /*0x67a5a9*/
+    *((unsigned char *)this + 13) = 1;
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(unsigned int *)(*(unsigned int *)&this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a5b8*/
+        *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v6) = *((unsigned int *)aP1->Items + v6);
     ++v6; /*0x67a5be*/
   }
   while ( v6 < *(unsigned int *)&this->u32_8 ); /*0x67a5c1*/
-  *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
-  this->u32_14 = aP1[5]; /*0x67a5cc*/
+    *((unsigned int *)this + 16) = aP1[1].vtable0;
+    *((unsigned int *)this + 20) = aP1[1].Items;
   return this; /*0x67a5d1*/
 }
 }
@@ -3391,7 +3391,7 @@ char * Rules::GetProductionTimeMult(CellStruct * aP1)
   result = (char *)aP1; /*0x5fb2e0*/
   if ( aP1 ) /*0x5fb2e6*/
   {
-    v3 = *(unsigned int *)this->__pad_0; /*0x5fb2e8*/
+        v3 = *this;
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/
     else

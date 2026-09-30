@@ -130,13 +130,13 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = (void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
-  *(unsigned int *)this->__pad_18 = &off_7F2D68; /*0x6a42c0*/
-  Piggybackee = this->Piggybackee; /*0x6a42c7*/
+    *(Block + 6) = (ILocomotion *)&off_7F2D68;
+    v3 = *(Block + 26);
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
   LocomotionClass::Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
     RA2_OPDEL(); /*0x6a42e3*/
-  return this->LocomotionClass; /*0x6a42ed*/
+    return (ShipLocomotionClass *)Block;
 }
 } // namespace gamemd

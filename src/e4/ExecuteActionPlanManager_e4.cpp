@@ -15,8 +15,8 @@ namespace gamemd {
 unsigned int * E4Recv_633AC0::sub_633AC0()
 {
   IDA_LOBYTE(this->AbstractClass) = 0; /*0x633ac2*/
-  this->estimatedHealth = 0; /*0x633ac5*/
-  this->isOnMap = (unsigned int)(-1); /*0x633acc*/
+    *((unsigned int *)this + 112) = 0;
+    *((unsigned int *)this + 116) = -1;
   return &this->AbstractClass; /*0x633ad3*/
 }
 } // namespace gamemd
@@ -27,9 +27,9 @@ int E4Recv_636EB0::sub_636EB0()
 {
   int v1; // eax
 
-  v1 = this->M20 - 1; /*0x636eb3*/
+    v1 = *((unsigned int *)this + 20) - 1;
   if ( v1 >= 0 ) /*0x636eb4*/
-    return *((unsigned int *)this->M8 + v1); /*0x636ebc*/
+        return *(unsigned int *)(*((unsigned int *)this + 8) + 4 * v1);
   else
     return 0; /*0x636eb6*/
 }

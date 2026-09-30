@@ -11,7 +11,7 @@
 namespace gamemd {
 int GameOption::GetField()
 {
-  return *(unsigned int *)this->field_18C; /*0x69acc8*/
+    return **((unsigned int *)this + 396);
 }
 } // namespace gamemd
 // 0x69ACD0
@@ -24,7 +24,7 @@ int GameOption::SetDescriptionWStr()
   if ( aP1 ) /*0x69acd9*/
   {
     result = wcsncpy((wchar_t *)this, aP1, 0x2Cu); /*0x69acdf*/
-    *(unsigned short *)&this->__pad_0[86] = 0; /*0x69ace7*/
+        *(Destination + 43) = 0;
   }
   else
   {
@@ -43,7 +43,7 @@ void * GameOption::SetDigest(CCINIClass * aP1)
   if ( aP1 ) /*0x69ad89*/
   {
     result = strncpy(&this->u32_570, aP1, 0x20u); /*0x69ad95*/
-    *(&this->u32_949) = 0; /*0x69ad9d*/
+        *((unsigned int *)this + 1516) = 0;
   }
   else
   {

@@ -16,8 +16,8 @@ namespace gamemd {
 int BufferIOFile::Constructor(char* a1, void* a2, void* a3)
 {
   BufferIOFileClass::Constructor(); /*0x47a9d3*/
-  IDA_LOBYTE(this->m_54) = 0; /*0x47a9df*/
-  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47a9e3*/
+    *((unsigned int *)this + 336) = 0;
+    *(unsigned int *)this = &off_7E1668;
   FileClass::OpenWithCDSearch(Source); /*0x47a9e9*/
   return this; /*0x47a9f0*/
 }
@@ -27,8 +27,8 @@ namespace gamemd {
 int BufferIOFile::Init(char* a1, void* a2, void* a3)
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
-  IDA_LOBYTE(this->m_54) = 0; /*0x47aa38*/
-  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa3c*/
+    *((unsigned int *)this + 336) = 0;
+    *(unsigned int *)this = &off_7E1668;
   return this; /*0x47aa44*/
 }
 }

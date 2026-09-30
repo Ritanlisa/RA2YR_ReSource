@@ -130,13 +130,13 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
-  *(unsigned int *)this->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
-  Piggybackee = this->Piggybackee; /*0x4b4d17*/
+    *(Block + 6) = (ILocomotion *)&off_7E7E8C;
+    v3 = *(Block + 26);
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
   LocomotionClass::Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
     RA2_OPDEL(); /*0x4b4d33*/
-  return this->LocomotionClass; /*0x4b4d3d*/
+    return (DriveLocomotionClass *)Block;
 }
 } // namespace gamemd

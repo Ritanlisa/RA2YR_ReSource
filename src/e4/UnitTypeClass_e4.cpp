@@ -68,46 +68,46 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   int v5; // ecx
 
   TechnoTypeClass::ReadINI(aP1, -1); /*0x7470de*/
-  this->ArrayIndex = -1; /*0x7470e3*/
-  this->qDFC = -1; /*0x7470eb*/
-  this->qE00 = 0; /*0x7470f1*/
-  this->qE04 = 0; /*0x7470f7*/
-  this->u32_E08 = 0; /*0x7470fd*/
-  this->Passive = 0; /*0x747103*/
-  this->qE0D = 0; /*0x747109*/
-  this->qE0E = 0; /*0x74710f*/
-  this->qE0F = 0; /*0x747115*/
-  this->UnitTypeClass_field_E10 = 0; /*0x74711b*/
-  this->qE11 = 0; /*0x747121*/
-  this->qE12 = 0; /*0x747127*/
-  this->qE13 = 0; /*0x74712d*/
-  this->IsTilter = 1; /*0x747136*/
-  this->qE15 = 0; /*0x74713d*/
-  this->qE16 = 0; /*0x747143*/
-  this->qE17 = 0; /*0x747149*/
-  this->SmallVisceroid = 0; /*0x74714f*/
-  this->qE19 = 0; /*0x747155*/
-  this->qE1A = 0; /*0x74715b*/
-  this->qE1B = 0; /*0x747161*/
-  this->qE1C = 0; /*0x747167*/
-  this->DeathFrames = 0; /*0x74716d*/
-  this->DeathFrameRate = 1; /*0x747173*/
-  this->StartStandFrame = -1; /*0x74717d*/
-  this->StartWalkFrame = -1; /*0x747183*/
-  this->StartFiringFrame = -1; /*0x747189*/
-  this->StartDeathFrame = -1; /*0x74718f*/
-  this->qE38 = -1; /*0x747195*/
-  this->qE3C = 8; /*0x74719b*/
-  this->AltImage = 0; /*0x7471a5*/
-  this->WalkFrames = 12; /*0x7471ab*/
-  this->qE5D = 0; /*0x7471b2*/
-  this->AltImageFile = 0; /*0x7471b8*/
+    *((unsigned int *)this + 14304) = -1;
+    *((unsigned int *)this + 14320) = -1;
+    *((unsigned int *)this + 14336) = 0;
+    *((unsigned int *)this + 14352) = 0;
+    *((unsigned int *)this + 14368) = 0;
+    *((unsigned char *)this + 14384) = 0;
+    *((unsigned char *)this + 14388) = 0;
+    *((unsigned char *)this + 14392) = 0;
+    *((unsigned char *)this + 14396) = 0;
+    *((unsigned char *)this + 14400) = 0;
+    *((unsigned char *)this + 14404) = 0;
+    *((unsigned char *)this + 14408) = 0;
+    *((unsigned char *)this + 14412) = 0;
+    *((unsigned char *)this + 14416) = 1;
+    *((unsigned char *)this + 14420) = 0;
+    *((unsigned char *)this + 14424) = 0;
+    *((unsigned char *)this + 14428) = 0;
+    *((unsigned char *)this + 14432) = 0;
+    *((unsigned char *)this + 14436) = 0;
+    *((unsigned char *)this + 14440) = 0;
+    *((unsigned char *)this + 14444) = 0;
+    *((unsigned int *)this + 14448) = 0;
+    *((unsigned int *)this + 14464) = 0;
+    *((unsigned int *)this + 14480) = 1;
+    *((unsigned int *)this + 14496) = -1;
+    *((unsigned int *)this + 14512) = -1;
+    *((unsigned int *)this + 14528) = -1;
+    *((unsigned int *)this + 14544) = -1;
+    *((unsigned int *)this + 14560) = -1;
+    *((unsigned int *)this + 14576) = 8;
+    *((unsigned int *)this + 14688) = 0;
+    *((unsigned char *)this + 14704) = 12;
+    *((unsigned char *)this + 14708) = 0;
+    *((unsigned char *)this + 14712) = 0;
   *(unsigned int *)this = (void*)&UnitTypeClass_vftable; /*0x7471bf*/
-  this->vtable2 = (void*)&UnitTypeClass_vftable; /*0x7471c5*/
-  this->vtable3 = (void*)&UnitTypeClass_vftable; /*0x7471cb*/
-  this->vtable4 = (void*)&UnitTypeClass_vftable; /*0x7471d2*/
+    *((unsigned int *)this + 16) = &UnitTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &UnitTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_UnitTypeClass;
   this->vtable2.GenerateUniqueID(); /*0x7471d9*/
-  this->RotCount = 32; /*0x7471de*/
+    *((unsigned int *)this + 7264) = 32;
   v3 = dword_A83CF0; /*0x7471e8*/
   if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
     || (byte_A83CED || !dword_A83CE8)
@@ -140,20 +140,20 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
         goto LABEL_11; /*0x747253*/
     }
   }
-  this->ArrayIndex = v5; /*0x747257*/
-  this->qE40 = -1; /*0x74725f*/
-  this->qE44 = -1; /*0x747267*/
-  this->qE48 = -1; /*0x74726d*/
-  this->qE4C = -1; /*0x747273*/
-  this->qE50 = -1; /*0x747279*/
-  this->qE54 = -1; /*0x74727f*/
-  this->u8_D35 = 0; /*0x747285*/
-  this->u8_D36 = 0; /*0x74728b*/
-  this->u8_D3B = 0; /*0x747291*/
-  this->SpawnRegenRate = 1; /*0x747297*/
-  this->DisableShadowCache = 0; /*0x74729e*/
-  this->DisableVoxelCache = 0; /*0x7472a4*/
-  this->u8_D2E = 1; /*0x7472aa*/
+    *((unsigned int *)this + 14304) = v5;
+    *((unsigned int *)this + 14592) = -1;
+    *((unsigned int *)this + 14608) = -1;
+    *((unsigned int *)this + 14624) = -1;
+    *((unsigned int *)this + 14640) = -1;
+    *((unsigned int *)this + 14656) = -1;
+    *((unsigned int *)this + 14672) = -1;
+    *((unsigned char *)this + 13524) = 0;
+    *((unsigned char *)this + 13528) = 0;
+    *((unsigned char *)this + 13548) = 0;
+    *((unsigned char *)this + 13536) = 1;
+    *((unsigned char *)this + 13916) = 0;
+    *((unsigned char *)this + 13912) = 0;
+    *((unsigned char *)this + 13496) = 1;
   return this; /*0x7472b1*/
 }
 // 0x7474B0
@@ -593,7 +593,7 @@ int *  UnitTypeClass::GetDimensions()
   int v2; // eax
   int v3; // ecx
 
-  v2 = this->MaxDimension - this->MaxDimension / 4; /*0x7475a3*/
+    v2 = *((unsigned int *)this + 492) - *((unsigned int *)this + 492) / 4;
   v3 = v2; /*0x7475a5*/
   if ( v2 >= 60 ) /*0x7475aa*/
   {
@@ -611,7 +611,7 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions()
   void *v1; // esi
 
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
-  this->TechnoTypeClass = (void *)256; /*0x7475e7*/
+    *a1 = 256;
   this->vtable2 = (void *)256; /*0x7475e9*/
   *(void **)&this->vtable3 = v1; /*0x7475ec*/
   return (unsigned int *)this; /*0x7475ef*/
@@ -667,24 +667,24 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   int v11; // eax
 
   BuildingTypeClass::ProcessPower(a2); /*0x747f79*/
-  Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
-  IDA_LOBYTE(v3) = this->Passive; /*0x747f8c*/
+    Power::TimerProcess(*((unsigned int *)this + 14320));
+    LOBYTE(v3) = *((unsigned char *)this + 14384);
   Power::FlagProcess((Power *)a2, v3); /*0x747f95*/
-  IDA_LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
+    LOBYTE(v4) = *((unsigned char *)this + 14388);
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x747fa3*/
-  IDA_LOBYTE(v5) = this->Harvester; /*0x747fa8*/
+    LOBYTE(v5) = *((unsigned char *)this + 14392);
   Power::FlagProcess((Power *)a2, v5); /*0x747fb1*/
-  IDA_LOBYTE(v6) = this->Weeder; /*0x747fb6*/
+    LOBYTE(v6) = *((unsigned char *)this + 14396);
   Power::FlagProcess((Power *)a2, v6); /*0x747fbf*/
-  IDA_LOBYTE(v7) = this->unknown_E10; /*0x747fc4*/
+    LOBYTE(v7) = *((unsigned char *)this + 14400);
   v8 = Power::FlagProcess((Power *)a2, v7); /*0x747fcd*/
-  IDA_LOBYTE(v8) = this->HasTurret; /*0x747fd2*/
+    LOBYTE(v8) = *((unsigned char *)this + 14404);
   Power::FlagProcess((Power *)a2, v8); /*0x747fdb*/
-  IDA_LOBYTE(v9) = this->IsTilter; /*0x747fe0*/
+    LOBYTE(v9) = *((unsigned char *)this + 14416);
   Power::FlagProcess((Power *)a2, v9); /*0x747fe9*/
-  IDA_LOBYTE(v10) = this->IsSimpleDeployer; /*0x747fee*/
+    LOBYTE(v10) = *((unsigned char *)this + 14412);
   v11 = Power::FlagProcess((Power *)a2, v10); /*0x747ff7*/
-  IDA_LOBYTE(v11) = this->UseTurretShadow; /*0x747ffc*/
+    LOBYTE(v11) = *((unsigned char *)this + 14420);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v11); /*0x74800a*/
 }
@@ -740,7 +740,7 @@ int UnitTypeClass::GetTypeIdentifier()
 // 0x748180
 int UnitTypeClass::GetAuxField()
 {
-  return this->ArrayIndex; /*0x748186*/
+    return *((unsigned int *)this + 3576);
 }
 // 0x748190
 UnitTypeClass * UnitTypeClass::ddtor(char a2)
@@ -752,9 +752,9 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
 
   v3 = (UnitTypeClass *)v2; /*0x748192*/
   v2->vtable0 = (void*)&UnitTypeClass_vftable; /*0x748196*/
-  v2->vtable1 = (void*)&UnitTypeClass_vftable; /*0x74819c*/
-  v2->vtable2 = (void*)&UnitTypeClass_vftable; /*0x7481a3*/
-  v2->vtable3 = (void*)&UnitTypeClass_vftable; /*0x7481aa*/
+    *(Block + 1) = &UnitTypeClass::`vftable';
+    *(Block + 2) = &UnitTypeClass::`vftable';
+    *(Block + 3) = &vt_UnitTypeClass;
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x7481b1*/
   v6 = v3; /*0x7481c6*/
   v4 = (*(int (**)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/

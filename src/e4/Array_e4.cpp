@@ -34,7 +34,7 @@ int Array::GetClamped(CheckListClass * aP1)
     v4 = (gamemd::CheckListClass *)((unsigned int)(result)- 1);
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
-    return *(unsigned int *)((unsigned int)(this->q038)+ 4 * v3); /*0x557ad8*/
+        return *(unsigned int *)(*((unsigned int *)this + 56) + 4 * (unsigned int)v3);
   }
   return (int)(result);
 }
@@ -53,7 +53,7 @@ int Array::FindValue(IUnknown * aP1)
   v4 = 0; /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-    for ( i = (unsigned int **)this->Array_field_0x4; **(unsigned int)(i) != (unsigned int)(aP1); ++i ) /*0x63429f*/
+        for ( i = (VectorClass *)*((unsigned int *)this + 4); **(IUnknown ***)i->vtable0 != aP1; i = (VectorClass *)((char *)i + 4) )
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/
@@ -71,7 +71,7 @@ int Array::RemoveAt()
   int result; // eax
   char *v4; // edx
 
-  Array_field_0x10 = (char *)this->Array_field_0x10; /*0x63e590*/
+    v2 = *((unsigned int *)this + 16);
   result = a2; /*0x63e593*/
   if ( a2 >= (int)Array_field_0x10 ) /*0x63e599*/
   {
@@ -86,7 +86,7 @@ int Array::RemoveAt()
       do /*0x63e5b4*/
       {
         ++result; /*0x63e5a7*/
-        *((unsigned int *)this->Array_field_0x4 + result - 1) = *((unsigned int *)this->Array_field_0x4 + result); /*0x63e5ab*/
+              *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v3);
       }
       while ( result < (int)this->Array_field_0x10 ); /*0x63e5b4*/
     }
@@ -99,7 +99,7 @@ int Array::RemoveAt()
 namespace gamemd {
 int Array::Get()
 {
-  return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
+    return *(unsigned int *)(*((unsigned int *)this + 228) + 4 * a2);
 }
 }
 // 0x65ADF0
@@ -111,7 +111,7 @@ int Array::ContainsValue()
   int v4; // edx
   int *Array_field_0xE4; // ecx
 
-  Array_field_0xE8 = this->Array_field_0xE8; /*0x65adf1*/
+    v2 = *((unsigned int *)this + 232);
   v4 = 0; /*0x65adf7*/
   if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
@@ -120,7 +120,7 @@ int Array::ContainsValue()
   }
   else
   {
-    Array_field_0xE4 = (int *)this->Array_field_0xE4; /*0x65adfe*/
+      for ( i = (IUnknown **)*((unsigned int *)this + 228); *i && *i != aP1; ++i )
     while ( 1 ) /*0x65ae08*/
     {
       result = *Array_field_0xE4; /*0x65ae08*/
@@ -144,7 +144,7 @@ int Array::Zero()
   Array *v2; // edx
 
   result = 0; /*0x7490d6*/
-  if ( (int)this->Array_field_0x800 > 0 ) /*0x7490da*/
+    if ( (int)*((unsigned int *)this + 2048) > 0 )
   {
     v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
@@ -165,7 +165,7 @@ void Array::ByteSwap()
   int v2; // ebx
   u_long *v3; // esi
 
-  if ( this->q201 && (v2 = 0, (int)this->Array_field_0x800 > 0) ) /*0x749169*/
+    if ( *((unsigned int *)this + 2052) && (v2 = 0, (int)*((unsigned int *)this + 2048) > 0) )
   {
     v3 = (u_long *)this; /*0x74916c*/
     do /*0x749184*/
@@ -175,11 +175,11 @@ void Array::ByteSwap()
       ++v3; /*0x74917f*/
     }
     while ( v2 < (int)this->Array_field_0x800 ); /*0x749184*/
-    this->q201 = 0; /*0x749186*/
+        *((unsigned int *)this + 2052) = 0;
   }
   else
   {
-    this->q201 = 0; /*0x749191*/
+        *((unsigned int *)this + 2052) = 0;
   }
 }
 }
@@ -187,10 +187,10 @@ void Array::ByteSwap()
 namespace gamemd {
 int Array::GetElement()
 {
-  if ( aP1 < 0 || aP1 >= (int)this->Array_field_0x38 ) /*0x76398b*/
+    if ( (int)aP1 < 0 || (int)aP1 >= *((unsigned int *)this + 56) )
     return 0; /*0x763999*/
   else
-    return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
+        return *((unsigned int *)this + 44) + 12 * (unsigned int)aP1;
 }
 }
 // 0x7ACD30
@@ -202,7 +202,7 @@ int Array::CleanupArrayWOL()
 
   for ( i = 0; i < *(unsigned int *)this->__pad_0; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
+        DeleteAndZero((void **)(*((unsigned int *)this + 8) + 4 * i));
     result = *(unsigned int *)this->__pad_0; /*0x7acd46*/
   }
   *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/
@@ -243,16 +243,16 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     v8 = (void *)RA2_OPNEW(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = v8; /*0x7ad7ec*/
-    v9 = *(const void **)this->__pad_8; /*0x7ad7f2*/
+        v9 = (CCINIClass *)*((unsigned int *)this + 8);
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
     RA2_OPDEL(*(void **)this->__pad_8); /*0x7ad81c*/
     v4 = v5; /*0x7ad825*/
-    *(unsigned int *)this->__pad_8 = v16; /*0x7ad82c*/
-    this->Array_field_0x4 = (void *)v7; /*0x7ad82f*/
+        *((unsigned int *)this + 8) = v16;
+        *((unsigned int *)this + 4) = v7;
   }
   v10 = *(unsigned int *)this->__pad_0; /*0x7ad832*/
-  if ( *(unsigned int *)this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
+    if ( *this >= *((unsigned int *)this + 4) )
   {
     v11 = (unsigned int)(2 * v10);
     if ( 2 * v10 < 10 ) /*0x7ad841*/
@@ -260,20 +260,20 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     v12 = (void *)RA2_OPNEW(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = v12; /*0x7ad871*/
-    v13 = *(const void **)this->__pad_8; /*0x7ad877*/
+        v13 = (CCINIClass *)*((unsigned int *)this + 8);
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
     RA2_OPDEL(*(void **)this->__pad_8); /*0x7ad8a1*/
     v4 = v5; /*0x7ad8aa*/
-    *(unsigned int *)this->__pad_8 = v17; /*0x7ad8b1*/
-    this->Array_field_0x4 = (void *)v11; /*0x7ad8b4*/
+        *((unsigned int *)this + 8) = v17;
+        *((unsigned int *)this + 4) = v11;
   }
   if ( v4 < *(unsigned int *)this->__pad_0 ) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/
       (void *)(*(unsigned int *)this->__pad_8 + 268 * (v4 + 1)),
       (const void *)(*(unsigned int *)this->__pad_8 + 268 * v4),
       268 * *(unsigned int *)this->__pad_0 - 268 * v4);
-  v14 = (void *)(*(unsigned int *)this->__pad_8 + 268 * v4); /*0x7ad907*/
+    v14 = (void *)(*((unsigned int *)this + 8) + 268 * v4);
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
@@ -338,7 +338,7 @@ int Array::Cleanup()
   result = this-((unsigned int *)(>Array_field_0x3C))[0]; /*0x49b723*/
   if ( result ) /*0x49b728*/
   {
-    for ( i = 0; i < (int)this->Array_field_0x40; ++i ) /*0x49b732*/
+        for ( i = 0; i < *((unsigned int *)this + 256); ++i )
     {
       if ( *(unsigned int *)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i) ) /*0x49b737*/
         RA2_OPDEL(*(void **)(this->Array_field_0x3C[0] + 4 * i)); /*0x49b73f*/
@@ -360,13 +360,13 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   IDA_LOBYTE(result) = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = *(&this->q0044); /*0x49d086*/
-  if ( v3 < 0 || v3 >= *(&this->q0046) ) /*0x49d094*/
+        v3 = *((unsigned int *)this + 224);
+    if ( v3 < 0 || v3 >= *((unsigned int *)this + 256) )
     v3 = -1; /*0x49d096*/
-  if ( this->q06C ) /*0x49d09a*/
+    if ( *((unsigned char *)this + 432) )
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(unsigned int *)(*(&this->q0045) + 4 * v3); /*0x49d0ad*/
+            *a2 = *(unsigned int *)(*((unsigned int *)this + 240) + 4 * v3);
     if ( *a2 ) /*0x49d0af*/
       IDA_LOBYTE(result) = 1; /*0x49d0b4*/
   }

@@ -24,11 +24,11 @@ int Type::CheckAmbiguity(int a2, char a3)
     v4 = *(char *)(a2 + 283); /*0x578560*/
     if ( *(unsigned char *)(a2 + 284) ) /*0x57855a*/
     {
-      if ( v3 + v5 < v4 + this->u32_F4 + 2 * this->u32_100 + 4 ) /*0x578582*/
+            if ( v3 + v5 < v4 + *((unsigned int *)this + 244) + 2 * *((unsigned int *)this + 256) + 4 )
         ++v4; /*0x578584*/
     }
   }
-  result = this->u32_F4; /*0x57858b*/
+    v6 = *((unsigned int *)this + 244);
   IDA_LOBYTE(result) = v3 + v5 > v4 + result + 2 * this->u32_100 /*0x5785e9*/
                 && v3 + v5 <= v4 + result + 2 * (this->u32_100 + this->u32_108) + 2
                 && (v7 = this->u32_FC, v5 - v3 < 2 * (v7 + this->u32_104) - result)

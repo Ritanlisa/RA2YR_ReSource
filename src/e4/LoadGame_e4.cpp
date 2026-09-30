@@ -76,7 +76,7 @@ int LoadGame::LoadTriggerEvents()
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+    if ( (*(int (__stdcall **)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0) < 0 )
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -93,7 +93,7 @@ int LoadGame::LoadTriggerEvents()
       {
         _65FB80 = 0; /*0x66091b*/
       }
-      if ( (*(int (__stdcall **)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660929*/
+            if ( (*(int (__stdcall **)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 )
              this,
              _65FB80,
              64,
@@ -108,7 +108,7 @@ int LoadGame::LoadTriggerEvents()
     }
     return 0; /*0x660929*/
   }
-  return (*(int (__stdcall **)(LoadGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x6608df*/
+    return (*(int (__stdcall **)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0;
            this,
            &word_B04D78,
            4,
@@ -123,18 +123,18 @@ void LoadGame::RemoveItem()
   int v3; // eax
   int v4; // edx
 
-  LoadGame_field_0x10 = this->LoadGame_field_0x10; /*0x660f10*/
+    v2 = *((unsigned int *)this + 16);
   v3 = a2; /*0x660f13*/
   if ( a2 >= LoadGame_field_0x10 ) /*0x660f19*/
     return 0; /*0x660f3c*/
   v4 = LoadGame_field_0x10 - 1; /*0x660f1b*/
-  this->LoadGame_field_0x10 = v4; /*0x660f1e*/
+    *((unsigned int *)this + 16) = v4;
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
     {
       ++v3; /*0x660f27*/
-      *(unsigned int *)(this->LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(this->LoadGame_field_0x04 + 4 * v3); /*0x660f2b*/
+            *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v3);
     }
     while ( v3 < this->LoadGame_field_0x10 ); /*0x660f34*/
   }
@@ -970,7 +970,7 @@ int LoadGame::LoadBlock300(int a2)
     if ( (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (__stdcall **)(int, LoadGame *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
-      this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
+            *((unsigned int *)this + 4) = -1;
       if ( v4 >= 0 ) /*0x69b5f0*/
         return 1; /*0x69b5ba*/
     }
@@ -1088,17 +1088,17 @@ int LoadGame::LoadMagicAndAudio()
   if ( g_InfantryDrawState ) /*0x753418*/
     Audio::Release(g_InfantryDrawState); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753430*/
+    result = (*(int (__stdcall **)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0);
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753455*/
+        result = (*(int (__stdcall **)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0);
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (__stdcall **)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x75347c*/
+                result = (*(int (__stdcall **)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v4, 12, 0);
                    this,
                    v4,
                    12,
@@ -1107,7 +1107,7 @@ int LoadGame::LoadMagicAndAudio()
         {
           if ( g_InfantryDrawState && v4[0] >= 0 && v4[0] < g_InfantrySelectState ) /*0x75349a*/
             Audio_Load(*((unsigned int *)g_InfantryRenderPool + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x7534bf*/
+                    result = (*(int (__stdcall **)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0);
                      this,
                      &v3,
                      4,

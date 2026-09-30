@@ -22,11 +22,11 @@ namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
   AbstractClass::ProcessPower(); /*0x420da9*/
-  Power::TimerProcess(this->u32_28); /*0x420db4*/
-  Power::TimerProcess(this->u32_2C); /*0x420dbf*/
-  Power::TimerProcess(this->vtable4); /*0x420dca*/
+    Power::TimerProcess(*((unsigned int *)this + 160));
+    Power::TimerProcess(*((unsigned int *)this + 176));
+    Power::TimerProcess(*((unsigned int *)this + 192));
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_34); /*0x420dda*/
+    return Power::TimerProcess(*((unsigned int *)this + 208));
 }
 } // namespace gamemd
 // 0x420E40
@@ -45,8 +45,8 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 
   a2 = a2; /*0x420e70*/
-  if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
-    this->u32_3C = 1; /*0x420e7b*/
+    if ( a2 == *((unsigned int *)this + 144) )
+        *((unsigned char *)this + 240) = 1;
 }
 } // namespace gamemd
 // 0x421730
@@ -58,9 +58,9 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)this->__pad_0 = (void*)&AlphaShapeClass_vftable; /*0x42173d*/
-  this->AlphaShapeClass_field_0x04 = (int)&AlphaShapeClass_vftable; /*0x421743*/
-  this->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass_vftable; /*0x42174a*/
-  this->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass_vftable; /*0x421751*/
+    *(Block + 1) = &AlphaShapeClass::`vftable';
+    *(Block + 2) = &AlphaShapeClass::`vftable';
+    *(Block + 3) = &vt_AlphaShapeClass;
   v6 = this; /*0x42175f*/
   v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
@@ -87,7 +87,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
       ++v4; /*0x4217cf*/
     }
   }
-  this->AbstractClass::DTOR(); /*0x4217e3*/
+    AbstractClass::DTOR(Block);
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     RA2_OPDEL(); /*0x4217f0*/
   return this; /*0x4217fa*/

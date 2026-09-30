@@ -57,7 +57,7 @@ void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5
   unsigned int v34[4]; // [esp+30h] [ebp-1Ch] BYREF
   char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
-  this->TextRenderer::GetInstance(); /*0x4b96c5*/
+    TextRenderer::GetInstance();
   swprintf(&word_8A0870, (const size_t)&aSD, Format, a2); /*0x4b96dc*/
   swprintf(&word_8A08C0, (const size_t)&aSD, Format, a1); /*0x4b96ed*/
   if ( a6 ) /*0x4b96f7*/
@@ -134,7 +134,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   result = a2; /*0x642c80*/
   if ( a2 == -1 && aP2 == (gamemd::ProgressScreenClass *)(-1) ) /*0x642c9a*/
   {
-    v19 = this->u32_61; /*0x642cb1*/
+        v20 = *((char *)this + 97);
     FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
     v9 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
@@ -172,18 +172,18 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     Viewport = Display::GetViewport(v21); /*0x642d8d*/
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
-    *(&this->u32_86) = v16 / 2; /*0x642dbb*/
-    *(&this->u32_87) = result; /*0x642dbe*/
+        *((unsigned int *)this + 26) = v15 / 2;
+        *((unsigned int *)this + 27) = v16 / 2;
   }
   else
   {
-    *(&this->u32_86) = a2; /*0x642dc4*/
-    *(&this->u32_87) = aP2; /*0x642dc7*/
+        *((unsigned int *)this + 26) = a2;
+        *((unsigned int *)this + 27) = aP2;
   }
   IDA_LOBYTE(result) = a6; /*0x642dd2*/
-  *(&this->u32_80) = aP3; /*0x642dd6*/
-  this->u32_70 = aP4; /*0x642dd9*/
-  this->u32_71 = a6; /*0x642ddc*/
+    *(unsigned int *)&this->__pad_4C[4] = aP3;
+    *((unsigned char *)this + 112) = (unsigned char)aP4;
+    *((unsigned char *)this + 113) = a6;
   return result; /*0x642ddf*/
 }
 }

@@ -42,7 +42,7 @@ int Event::Dispatch(void* a1, void* a2, void* a3)
   result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0aa*/
   if ( ((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x48d0b7*/
   {
-    this->Network::Dispatch(); /*0x48d0b9*/
+        Network::Dispatch();
     result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0be*/
   }
   if ( result == 1 ) /*0x48d0c6*/
@@ -93,10 +93,10 @@ void sub_5E2FA0()
   int result; // eax
   HWND Current; // esi
 
-  result = this->Dialog::GetCurrentType(); /*0x5e2fa2*/
+    result = Dialog::GetCurrentType();
   if ( result == 107 ) /*0x5e2faa*/
   {
-    Current = (HWND)this->Dialog::GetCurrent(); /*0x5e2fb7*/
+        Current = Dialog::GetCurrent();
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
     {
@@ -154,7 +154,7 @@ void sub_5E95E0()
   LABEL_13:
   if ( Game_PlayerCount - v4 <= v5 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
-  this->Debug::Log(); /*0x5e967f*/
+    Debug::Log();
   return 1; /*0x5e9689*/
 }
 }
@@ -208,7 +208,7 @@ void sub_796960()
       Event::Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
       Network::FormatAddress(&stru_A8BB1C, 0); /*0x796a4e*/
-      this->Debug::Log(); /*0x796a59*/
+            Debug::Log();
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
@@ -293,7 +293,7 @@ int sub_7A0F40()
       }
       while ( v1 < v10 ); /*0x7a102a*/
     }
-    this->Debug::Log(); /*0x7a103c*/
+        Debug::Log();
 // 0x5e3720
     return Network::SendOptionsGame(Source); /*0x7a1048*/
   }
@@ -329,7 +329,7 @@ void sub_786270()
     (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
-  this->Debug::Log(); /*0x786353*/
+    Debug::Log();
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],

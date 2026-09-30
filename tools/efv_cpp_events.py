@@ -450,7 +450,7 @@ def _looks_like_definition(toks, lparen_idx, n):
 # C++ leaf extractor (token walk -> canonical events)
 # ============================================================
 
-def make_cpp_leaf(class_name, locals_set, M, signals):
+def make_cpp_leaf(class_name, locals_set, M, signals, this_alias=None):
     """Return `leaf(fragment_text) -> list[event_str]` for a method of
     `class_name` whose visible locals are `locals_set`.
 
@@ -481,7 +481,7 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                     else read_global(val))
         return None  # "local" / unknown -> not an observable event
 
-    def _this_member_event(member_name, text, end_pos):
+    def _this_member_event(member_name, text, end_pos, lane=0):
         """Resolve a SYNTACTICALLY-CERTAIN `this->member_name` access (the caller has
         already established the `this->` prefix and that no `(` follows -> a value
         access, not a method call) to a member / global READ or WRITE event.
@@ -500,8 +500,9 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
         Never returns None (the access is always a member event of some shape)."""
         kind, val = member_resolver.resolve(member_name)
         if kind == "member":
-            return (write_member(val) if _is_write(text, end_pos)
-                    else read_member(val))
+            ev = (write_member(val + lane) if _is_write(text, end_pos)
+                  else read_member(val + lane))
+            return ev
         if kind == "global":
             return (write_global(val) if _is_write(text, end_pos)
                     else read_global(val))
@@ -570,12 +571,16 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
         # N*stride (stride: char=1, short=2, bare/dword=4, qword=8).
         # Symmetric with the IDA-side T8 regex family -- the corpus carries
         # these verbatim from pseudocode (this-demotion restore output).
-        if 'this' in text:
+        # G41: the demoted-this FIRST PARAM (`Block`) carries the same
+        # arithmetic (`*(Block + 1)`) -- the IDA-side dyn_* mirror.
+        recv_alt = ('(?:this|%s)' % re.escape(this_alias)
+                    if this_alias else 'this')
+        if 'this' in text or (this_alias and this_alias in text):
             for am in re.finditer(
                     r'\*\s*(?:\(\s*)?(?:(?:\(\s*)?(unsigned\s+char|_BYTE|'
                     r'unsigned\s+short|_WORD|unsigned\s+int|_DWORD|'
                     r'unsigned\s+long\s+long|_QWORD|unsigned|char|int|long)'
-                    r'\s*\*\s*\)?)?\s*this'
+                    r'\s*\*\s*\)?)?\s*' + recv_alt +
                     r'(?:\s*\+\s*(\d+)\s*\))?', text):
                 tname = am.group(1) or 'unsigned'
                 stride = 8 if ('long long' in tname or '_QWORD' in tname) else \
@@ -598,7 +603,7 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
             for am in re.finditer(
                     r'\*\s*\(\s*(?:unsigned\s+int|_DWORD|int|void|char|'
                     r'unsigned\s+char|_BYTE|long|unsigned\s+short|_WORD)\s*\**'
-                    r'\s*\)\s*this\s*->\s*(\w+)', text):
+                    r'\s*\)\s*' + recv_alt + r'\s*->\s*(\w+)', text):
                 after = text[am.end():am.end() + 4]
                 is_wr = bool(re.match(r'\s*=(?!=)', after))
                 kind, val = member_resolver.resolve(am.group(1))
@@ -633,7 +638,12 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                 continue
 
             # -- this->[~]Method(...)  /  this->Member ----------------------
-            if val == "this" and _is_op(toks[i + 1] if i + 1 < n else None, "->"):
+            # G41 this_alias: the corpus may carry the demoted this as the
+            # def's FIRST param (`Cls::M(_DWORD *Block, ...)` with the body
+            # using `Block->M`) -- the IDA-side dyn_named mirror. Treated
+            # identically to `this` (member namespace + vtable chain).
+            is_recv = val == "this" or (this_alias and val == this_alias)
+            if is_recv and _is_op(toks[i + 1] if i + 1 < n else None, "->"):
                 j = i + 2
                 # optional destructor tilde: this->~Dtor(...)
                 tilde = ""
@@ -671,7 +681,20 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                         # Resolver MISS here is an UNRESOLVED member, not a non-data
                         # identifier -> element-scoped wildcard + WARN + offset-TODO
                         # (never a silent drop -> no false-positive on faithful code).
-                        ev = _this_member_event(mtok.value, text, _tok_end(mtok))
+                        # G41: a wrapping lane macro (`IDA_BYTE1(this->M)`) selects
+                        # a byte WITHIN the member — the true address is off+lane.
+                        lane = 0
+                        lm = re.search(r'\bIDA_'
+                                       r'(LOBYTE|BYTE1|BYTE2|HIBYTE|BYTE3|'
+                                       r'LOWORD|HIWORD|WORD1|HIDWORD)\s*\(\s*$',
+                                       text[:t.pos])
+                        if lm:
+                            lane = {'LOBYTE': 0, 'BYTE1': 1, 'BYTE2': 2,
+                                    'HIBYTE': 3, 'BYTE3': 3, 'LOWORD': 0,
+                                    'HIWORD': 2, 'WORD1': 2,
+                                    'HIDWORD': 4}[lm.group(1)]
+                        ev = _this_member_event(mtok.value, text,
+                                                _tok_end(mtok), lane)
                         if ev is not None:
                             hits.append((t.pos, _tok_end(mtok), ev))
                     i = j + 1
@@ -817,7 +840,8 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
 # CFG event extraction (the public entry point)
 # ============================================================
 
-def extract_events_into(cfg, class_name, maps=None, signals=None):
+def extract_events_into(cfg, class_name, maps=None, signals=None,
+                        this_alias=None):
     """Replace every block's RAW C++ `ordered_events` (T12 markers + fragments)
     with the extracted CANONICAL events, in source order, IN PLACE.
 
@@ -843,7 +867,7 @@ def extract_events_into(cfg, class_name, maps=None, signals=None):
 
     for block in cfg:
         leaf = make_cpp_leaf(class_name, block_locals.get(block.id, set()),
-                             maps, signals)
+                             maps, signals, this_alias=this_alias)
         events = []
         for fragment in block.ordered_events:
             if _is_decl_marker(fragment):

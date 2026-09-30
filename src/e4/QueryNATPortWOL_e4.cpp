@@ -23,7 +23,7 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
       return &this->vtable0; /*0x7aecfe*/
     }
     this->Items = (unsigned int)((void *)RA2_OPNEW(4 * a2));
-    this->IsAllocated = 1; /*0x7aed10*/
+        *((unsigned char *)this + 13) = 1;
   }
   return &this->vtable0; /*0x7aecfd*/
 }

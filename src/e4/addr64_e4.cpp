@@ -54,8 +54,8 @@
 namespace gamemd {
 void ObjectClass::unknown_libname_27()
 {
-  this->AbstractClass = 0; /*0x6406e2*/
-  return &this->AbstractClass; /*0x6406e8*/
+    *this = 0;
+    return this;
 }
 }
 // 0x645B60
@@ -111,22 +111,22 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   vtable0 = (void *)(this->AbstractClass);
-  vtable1 = this->?; /*0x645d76*/
-  vtable2 = this->?; /*0x645d7d*/
-  vtable3 = this->?; /*0x645d88*/
+    v22 = *((unsigned int *)this + 1);
+    v23 = *((unsigned int *)this + 2);
+    v24 = *((unsigned int *)this + 3);
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
-  v5 = *(float *)&this->M12; /*0x645da3*/
+    v5 = *((unsigned int *)this + 12);
   v6 = *((unsigned int *)v4 + 1); /*0x645da6*/
   v25 = *(unsigned int *)v4; /*0x645da9*/
   v7 = *((unsigned int *)v4 + 2); /*0x645daf*/
   v26 = v6; /*0x645db2*/
   v27 = v7; /*0x645db7*/
   *(float *)&v20 = -v5; /*0x645dbe*/
-  v8 = *(float *)&this->M8; /*0x645dc1*/
+    v8 = *((unsigned int *)this + 8);
   v28 = *((unsigned int *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
-  *(float *)&v18 = -*(float *)&this->?; /*0x645dd4*/
+    *(float *)&v18 = -*((unsigned int *)this + 4);
   *(float *)&v17 = -*(float *)&this->AbstractClass; /*0x645de0*/
   v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
@@ -143,9 +143,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
-    *(float *)&this->M4 = -*(float *)&this->M4; /*0x645ea9*/
-    *(float *)&this->M8 = -*(float *)&this->M8; /*0x645eb1*/
-    *(float *)&this->M12 = -*(float *)&this->M12; /*0x645eb9*/
+        *((unsigned int *)this + 4) = -*((unsigned int *)this + 4);
+        *((unsigned int *)this + 8) = -*((unsigned int *)this + 8);
+        *((unsigned int *)this + 12) = -*((unsigned int *)this + 12);
   }
   return (float *)this; /*0x645ebe*/
 }
@@ -477,7 +477,7 @@ void RunNetworkGameLoop()
   int v33; // [esp+68h] [ebp-8h]
   int v34; // [esp+6Ch] [ebp-4h]
 
-  this->Debug::Log(); /*0x64835c*/
+    Debug::Log();
   if ( *(int *)&dword_A8B238 < 3 || *(int *)&dword_A8B238 > 4 ) /*0x648371*/
   {
     v13 = (gamemd::IPXManagerClass *)((void *)dword_A8EA74);
@@ -493,12 +493,12 @@ void RunNetworkGameLoop()
     v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0);
   }
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400; /*0x6483c1*/
-  Ticks = this->Timer::GetTicks(); /*0x6483d5*/
+    TicksTimer = Timer::GetTicks();
   v22 = 15; /*0x6483d9*/
-  v23 = this->Timer::GetTicks(); /*0x6483ea*/
+    v22 = Timer::GetTicks();
   v25 = 600; /*0x6483ee*/
-  v19 = this->Timer::GetTicks(); /*0x6483fb*/
-  this->Debug::Log(); /*0x648404*/
+    v18 = Timer::GetTicks();
+    Debug::Log();
   while ( 2 ) /*0x64840c*/
   {
     EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x64840c*/
@@ -510,30 +510,30 @@ void RunNetworkGameLoop()
         goto LABEL_11; /*0x64843b*/
       goto LABEL_10; /*0x64843b*/
     }
-    v5 = this->Timer::GetTicks() - Ticks; /*0x64842f*/
+        v4 = Timer::GetTicks() - TicksTimer;
     if ( v5 < v4 ) /*0x648435*/
     {
       v4 -= v5; /*0x648437*/
       goto LABEL_9; /*0x648437*/
     }
   LABEL_10:
-    v26 = this->Timer::GetTicks(); /*0x64843d*/
+        v25 = Timer::GetTicks();
     v28 = 15; /*0x648458*/
     Ticks = v26; /*0x64845c*/
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
-    this->Debug::Log(); /*0x648468*/
+        Debug::Log();
     SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64847e*/
   LABEL_11:
     (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
     v6 = v25; /*0x64848e*/
     if ( v23 != -1 ) /*0x648494*/
     {
-      v7 = this->Timer::GetTicks() - v23; /*0x64849f*/
+            v6 = Timer::GetTicks() - v22;
       if ( v7 >= v6 ) /*0x6484a5*/
       {
   LABEL_33:
-        this->Debug::Log(); /*0x648664*/
+                Debug::Log();
         return; /*0x648678*/
       }
       v6 -= v7; /*0x6484ab*/
@@ -558,12 +558,12 @@ void RunNetworkGameLoop()
             goto LABEL_23;
           case 4: /*0x648528*/
             (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648533*/
-            v29 = this->Timer::GetTicks(); /*0x648544*/
+                        v28 = Timer::GetTicks();
             Ticks = v29; /*0x648548*/
             v31 = 15; /*0x648550*/
             v22 = 15; /*0x648554*/
             v21 = v30; /*0x64855c*/
-            v32 = this->Timer::GetTicks(); /*0x64856e*/
+                        v31 = Timer::GetTicks();
             v34 = 600; /*0x648572*/
             v23 = v32; /*0x648576*/
             v24 = v33; /*0x64857a*/
@@ -581,7 +581,7 @@ void RunNetworkGameLoop()
       v9 = v8++; /*0x648589*/
     }
     while ( v9 < 64 ); /*0x64858f*/
-    this->Event::Dispatch(); /*0x648595*/
+        Event::Dispatch();
     if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v16, &v18, &v17); /*0x6485b7*/
@@ -605,14 +605,14 @@ void RunNetworkGameLoop()
     }
     if ( v10 + dword_A8B554 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
-      this->Debug::Log(); /*0x64863e*/
+            Debug::Log();
       v2 = v13; /*0x648643*/
       continue; /*0x64864a*/
     }
     break;
   }
-  this->Debug::Log(); /*0x64867f*/
-  this->Debug::Log(); /*0x648689*/
+    Debug::Log();
+    Debug::Log();
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/
@@ -1573,7 +1573,7 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
                                     * (((unsigned int)dword_A8ED84 + dword_A8B554 + a4 - 1)
                                      / dword_A8B554))
                         : (wchar_t *)((char *)dword_A8ED84 + a4);
-    a2->q008 = *((unsigned char *)dword_A83D4C + 48); /*0x649d49*/
+        *(unsigned char *)(a2 + 2) = *((unsigned char *)HouseClass_Player + 48);
     a2->q01C = *(unsigned int *)dword_AC51FC; /*0x649d57*/
     a2->q02C = a5; /*0x649d5a*/
     a2->q034 = a4; /*0x649d5e*/
@@ -3738,25 +3738,25 @@ void sub_6429A0()
 namespace gamemd {
 unsigned int * E4Recv_6429E0::sub_6429E0()
 {
-  this->ambientSoundController[3] = 0; /*0x6429e8*/
-  this->ambientSoundController[4] = 0; /*0x6429eb*/
-  this->customSound_controller[0] = 0; /*0x6429ee*/
-  this->customSound_controller[1] = 0; /*0x6429f1*/
-  IDA_LOBYTE(this->customSound_controller[2]) = 0; /*0x6429f4*/
-  this->customSound_controller[3] = 0; /*0x6429f7*/
-  IDA_LOBYTE(this->customSound_controller[4]) = 0; /*0x6429fa*/
-  IDA_BYTE1(this->customSound_controller[4]) = 0; /*0x6429fd*/
-  IDA_BYTE2(this->customSound_controller[4]) = 0; /*0x642a00*/
-  this->customSound = 0; /*0x642a03*/
-  *(unsigned int *)&this->bombVisible = 0; /*0x642a06*/
-  this->health = 0; /*0x642a09*/
-  this->spawnStatus = -1; /*0x642a0c*/
-  *(unsigned int *)&this->needsRedraw = -1; /*0x642a0f*/
-  IDA_LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
-  this->visibilityFlags = 0; /*0x642a20*/
-  this->AbstractClass = (void*)&ProgressScreenClass_vftable; /*0x642a23*/
+    this->field_48 = 0;
+    *(unsigned int *)this->__pad_4C = 0;
+    *(unsigned int *)&this->__pad_4C[4] = 0;
+    this->field_54 = 0;
+    *((unsigned char *)this + 88) = 0;
+    *((unsigned int *)this + 23) = 0;
+    *((unsigned char *)this + 96) = 0;
+    *((unsigned char *)this + 97) = 0;
+    *((unsigned char *)this + 98) = 0;
+    *((unsigned int *)this + 25) = 0;
+    *((unsigned int *)this + 26) = 0;
+    *((unsigned int *)this + 27) = 0;
+    *((unsigned int *)this + 30) = -1;
+    *((unsigned int *)this + 32) = -1;
+    *((unsigned char *)this + 112) = 0;
+    *((unsigned int *)this + 31) = 0;
+    *(unsigned int *)this->__pad_0 = &vt_ProgressScreenClass;
   memset(&this->?, 0, 0x40u); /*0x642a29*/
-  return &this->AbstractClass; /*0x642a2d*/
+    return this->__pad_0;
 }
 } // namespace gamemd
 
@@ -4314,10 +4314,10 @@ char * sub_645BA0(int a1)
 namespace gamemd {
 void E4Recv_645CD0::sub_645CD0(float a2)
 {
-  *(float *)&this->AbstractClass = a2 * *(float *)&this->AbstractClass; /*0x645cd6*/
-  *(float *)&this->M4 = a2 * *(float *)&this->M4; /*0x645cdf*/
-  *(float *)&this->M8 = a2 * *(float *)&this->M8; /*0x645ce9*/
-  *(float *)&this->M12 = a2 * *(float *)&this->M12; /*0x645cf3*/
+    *this = a2 * *this;
+    *((unsigned int *)this + 4) = a2 * *((unsigned int *)this + 4);
+    *((unsigned int *)this + 8) = a2 * *((unsigned int *)this + 8);
+    *((unsigned int *)this + 12) = a2 * *((unsigned int *)this + 12);
 }
 } // namespace gamemd
 
@@ -4696,13 +4696,13 @@ int sub_646C70()
 namespace gamemd {
 unsigned int * E4Recv_646D00::sub_646D00()
 {
-  this->AbstractClass = (void *)-1; /*0x646d04*/
-  this->M4 = 0; /*0x646d0a*/
-  this->M8 = 0; /*0x646d0d*/
-  this->M12 = 0; /*0x646d10*/
-  this->M16 = 0; /*0x646d13*/
-  this->M20 = 0; /*0x646d16*/
-  return &this->AbstractClass; /*0x646d19*/
+    *this = -1;
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 16) = 0;
+    *((unsigned int *)this + 20) = 0;
+    return this;
 }
 } // namespace gamemd
 

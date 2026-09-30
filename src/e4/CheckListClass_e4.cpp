@@ -44,7 +44,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       v22[1] = (int)(32);
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
-      Type = this->BuildingAnim::GetType(); /*0x48859c*/
+            Type = (wchar_t *)BuildingAnim::GetType();
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
@@ -83,16 +83,16 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
 // 0x4886B0
 int CheckListClass::COMStub()
 {
-  return this->q044; /*0x4886b3*/
+    return *((unsigned int *)this + 68);
 }
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
-  if ( this->IsReadOnly ) /*0x557e18*/
+    if ( *((unsigned char *)this + 336) )
   {
-    (*(void (**)(int, int))(this->q118 + 12))(&this->q118, a2); /*0x557e2c*/
-    (*(void (**)(int, int))(this->subList2 + 12))(&this->u32_2E0, a2); /*0x557e3c*/
-    (*(void (**)(int, int))(this->subList1 + 12))(&this->subList1, a2); /*0x557e46*/
+        (*(void (**)(int, int))(*((unsigned int *)this + 1120) + 12))((char *)this + 1120, a2);
+        (*(void (**)(int, int))(*((unsigned int *)this + 736) + 12))((char *)this + 736, a2);
+        (*(void (**)(int, int))(*((unsigned int *)this + 352) + 12))((char *)this + 352, a2);
   }
   return LinkedList::InsertAfter(a2); /*0x557e51*/
 }

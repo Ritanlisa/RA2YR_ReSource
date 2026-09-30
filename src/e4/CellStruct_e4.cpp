@@ -14,7 +14,7 @@ void* CellStruct::Add(void* aP1,  void* aP2)
   unsigned short *v5; // [esp+8h] [ebp+8h]
 
   v3 = IDA_LOWORD(this->field_0) + *aP2; /*0x42d51f*/
-  IDA_HIWORD(v5) = IDA_HIWORD(this->field_0) + aP2[1]; /*0x42d522*/
+    HIWORD(aP2a) = *((unsigned int *)this + 4) + HIWORD(aP2->field_0);
   IDA_LOWORD(v5) = v3; /*0x42d52b*/
   *v5 = v5; /*0x42d534*/
   return v5; /*0x42d536*/
@@ -28,7 +28,7 @@ unsigned int * CellStruct::Copy(void* aP1)
   void *v4; // ecx
 
   v3 = this->field_0; /*0x437f34*/
-  v4 = this->field_4; /*0x437f36*/
+    v4 = *((unsigned int *)this + 4);
   *(unsigned int *)aP1 = v3; /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
   return aP1; /*0x437f3e*/
@@ -38,7 +38,7 @@ unsigned int * CellStruct::Copy(void* aP1)
 namespace gamemd {
 BOOL CellStruct::Equals(unsigned short * a2)
 {
-  return IDA_LOWORD(this->field_0) == *a2 && IDA_HIWORD(this->field_0) == a2[1]; /*0x50e48b*/
+    return *this == *a2 && *((unsigned int *)this + 4) == a2[1];
 }
 }
 // 0x588C60
@@ -50,7 +50,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
   unsigned short *v6; // [esp+8h] [ebp+8h]
 
   v3 = this->field_0; /*0x588c60*/
-  v4 = IDA_HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
+    v4 = *((unsigned int *)this + 4) - HIWORD(aP2->field_0);
   IDA_LOWORD(v6) = v3 - *aP2; /*0x588c76*/
   IDA_HIWORD(v6) = v4; /*0x588c7b*/
   *v6 = v6; /*0x588c84*/

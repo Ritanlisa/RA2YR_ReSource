@@ -24,20 +24,20 @@ AnimFile * AnimFile::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&AnimFile_vftable; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
-    (*(void (**)(unsigned int))(**((unsigned int **)&this->q00C3) + 52))(this->u32_84); /*0x4272be*/
-    this->u32_89 = 0; /*0x4272c1*/
+        (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33));
+        *((unsigned char *)Block + 137) = 0;
   }
-  v4 = (void (***)(unsigned int, int))this->u32_E0C; /*0x4272c7*/
-  this->u32_84 = 0; /*0x4272cd*/
+    v4 = (void (***)(unsigned int, int))*((unsigned int *)Block + 899);
+    *((unsigned int *)Block + 33) = 0;
   if ( v4 ) /*0x4272d5*/
   {
     (**v4)(v4, 1); /*0x4272db*/
-    this->u32_E0C = 0; /*0x4272dd*/
+        *((unsigned int *)Block + 899) = 0;
   }
-  if ( this->u32_E10 ) /*0x4272e3*/
+    if ( *((unsigned int *)Block + 900) )
   {
     RA2_OPDEL(*((void **)this + 900)); /*0x4272ee*/
-    this->u32_E10 = 0; /*0x4272f6*/
+        *((unsigned int *)Block + 900) = 0;
   }
   this->u32_88 = (unsigned int)(0);
   *(unsigned int *)this->__pad_0 = (void*)&Animate_vftable; /*0x427308*/

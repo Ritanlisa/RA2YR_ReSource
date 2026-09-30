@@ -36,7 +36,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 
   v9 = (char *)((unsigned int)(Buffer));
   *(unsigned int *)this->__pad_0 = 0; /*0x4c4f0a*/
-  this->TaskForceClass_field_0x4 = 0; /*0x4c4f10*/
+    *((unsigned int *)this + 4) = 0;
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
   *(unsigned int *)this->__pad_0 = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
@@ -47,7 +47,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     {
       v8 = (unsigned int *)(TypeClass::FindByName(&v10));
       if ( v8 != -1 ) /*0x4c4f77*/
-        this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
+                *((unsigned int *)this + 4) = *((unsigned int *)MEMORY[0xA8B21C] + v8);
       return this; /*0x4c4f85*/
     }
     else
@@ -74,12 +74,12 @@ int TaskForceClass::Construct(char* a1)
   int v5; // ecx
 
   AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
-  this->TaskForceClass_field_0x98 = (AbstractClass *)-1; /*0x6e7e8f*/
+    *((unsigned int *)this + 152) = -1;
   this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e7e99*/
-  *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
+    *((unsigned int *)this + 160) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&TaskForceClass_vftable; /*0x6e7ead*/
-  this->TaskForceClass_field_0x4 = (int)&TaskForceClass_vftable; /*0x6e7eb3*/
-  *(unsigned int *)this->__pad_8 = (void*)&TaskForceClass_vftable; /*0x6e7eba*/
+    *((unsigned int *)this + 4) = &TaskForceClass::`vftable';
+    *((unsigned int *)this + 8) = &TaskForceClass::`vftable';
   *(unsigned int *)&this-((unsigned int *)(>__pad_8))[4] = (void*)&TaskForceClass_vftable; /*0x6e7ec1*/
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
@@ -175,8 +175,8 @@ void * TaskForceClass::ExecuteAction(char a2)
   TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)this->__pad_0 = (void*)&TaskForceClass_vftable; /*0x6e87f6*/
-  this->TaskForceClass_field_0x4 = (int)&TaskForceClass_vftable; /*0x6e87fc*/
-  *(unsigned int *)this->__pad_8 = (void*)&TaskForceClass_vftable; /*0x6e8803*/
+    *(Block + 1) = &TaskForceClass::`vftable';
+    *(Block + 2) = &TaskForceClass::`vftable';
   *(unsigned int *)&this-((unsigned int *)(>__pad_8))[4] = (void*)&TaskForceClass_vftable; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
@@ -190,7 +190,7 @@ void * TaskForceClass::ExecuteAction(char a2)
     }
     while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  this->AbstractTypeClass::Dtor(); /*0x6e8861*/
+    AbstractTypeClass::Dtor(Block);
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     RA2_OPDEL(); /*0x6e886e*/
   return (void **)this; /*0x6e8878*/
@@ -233,16 +233,16 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     {
       v4 = TaskForceClass::ParseUnitCountAndType(&v8, v8.__pad_28); /*0x6e8491*/
       v5 = this-((unsigned int *)(>TaskForceClass_field_0x9C))[0]; /*0x6e8496*/
-      *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
-      *((unsigned int *)&(unsigned int)(this->vtable3)* v5 + 42) = v4[1]; /*0x6e84a8*/
+            *(unsigned int *)((char *)this + 32 * (unsigned int)v5 + 164) = *v4;
+            *(unsigned int *)((char *)this + 32 * (unsigned int)v5 + 168) = v4[1];
       v6 = this-((unsigned int *)(>TaskForceClass_field_0x9C))[0]; /*0x6e84af*/
-      if ( *((unsigned int *)&(unsigned int)(this->vtable3)* v6 + 42) ) /*0x6e84b5*/
+            if ( *(unsigned int *)((char *)this + 32 * (unsigned int)v6 + 168) )
         this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = v6 + 1; /*0x6e84c1*/
     }
     ++v3; /*0x6e84c7*/
   }
   while ( v3 < 6 ); /*0x6e84cb*/
-  this->TaskForceClass_field_0x98 = (AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
+    *((unsigned int *)this + 608) = INIClass::ReadInt_Overwrite(
                                                        (bool *)aP1,
                                                        (uint8_t *)&this->TaskForceClass_field_0x24,
                                                        (uint8_t *)g_INI_Key_Group,
@@ -263,18 +263,18 @@ char TaskForceClass::GetUnitType(char * a2)
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
-  p_TaskForceClass_field_0xA4 = &this->TaskForceClass_field_0xA4; /*0x6e8529*/
+    v4 = (unsigned int *)((char *)this + 656);
   do /*0x6e857d*/
   {
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
     if ( v3 >= this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int *)a2, (int)&this->TaskForceClass_field_0x24, (uint8_t *)Buffer); /*0x6e8571*/
+            INIClass::ClearSection((int)a2, (char *)this + 144, (unsigned __int8 *)Buffer);
     }
     else
     {
       v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4));
-      INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
+            INIClass::SetString(a2, (unsigned __int8 *)((char *)this + 144), Buffer, v5);
     }
     ++v3; /*0x6e8576*/
     p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/
@@ -356,7 +356,7 @@ namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6e8759*/
-  Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
+    Power::TimerProcess(*((unsigned int *)this + 608));
 // 0x4a1d50
   return Power::TimerProcess(this-((unsigned int *)(>TaskForceClass_field_0x9C))[0]); /*0x6e877a*/
 }

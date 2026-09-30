@@ -149,7 +149,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
     {
       result = AudioQueue::GetNextAlt(v5); /*0x40374a*/
       v5 = (AudioQueue *)result; /*0x403752*/
-      if ( v3 == -1 || v6->u32_C == v3 ) /*0x403759*/
+            if ( a2 == -1 || *(unsigned int *)(v5 + 12) == a2 )
         result = Voice::Stop(v7); /*0x40375d*/
       v6 = (int)v5; /*0x403764*/
     }
@@ -226,50 +226,50 @@ int AudioQueue::Update()
   char *v8; // eax
   int v9; // eax
 
-  v2 = this->u32_3B4; /*0x77162a*/
-  if ( this->u32_3AC == -1 ) /*0x771633*/
+    v2 = *((unsigned int *)this + 3792);
+    if ( *((unsigned int *)this + 3760) == -1 )
   {
   LABEL_4:
     if ( v2 ) /*0x77164e*/
       return; /*0x77164e*/
     goto LABEL_5; /*0x77164e*/
   }
-  v3 = this->Timer::GetTicks() - this->u32_3AC; /*0x771640*/
+    v3 = Timer::GetTicks() - *((unsigned int *)this + 3760);
   if ( v3 < v2 ) /*0x771648*/
   {
     v2 -= v3; /*0x77164a*/
     goto LABEL_4; /*0x77164a*/
   }
   LABEL_5:
-  if ( this->q3D0 > 0 && !(uint8_t)this->Audio::IsPlaying() ) /*0x771662*/
+    if ( *((int *)this + 3904) > 0 && !(unsigned __int8)Audio::IsPlaying() )
   {
-    if ( !this->u8_3B8 ) /*0x77166f*/
+        if ( !*((unsigned char *)this + 3808) )
     {
       v4 = (gamemd::RandomStruct *)(this->q3D0);
       if ( v4 > 0 ) /*0x771681*/
       {
         v5 = (gamemd::RandomStruct *)((unsigned int)((unsigned int)(v4)- 1));
         v6 = (gamemd::RandomStruct *)((unsigned int)((gamemd::RandomStruct *)((unsigned int)(0))));
-        for ( this->q3D0 = v5; v6 < (gamemd::RandomStruct *)(this->q3D0); ++v6 ) /*0x77168e*/
+                for ( *((unsigned int *)this + 3904) = v5; v6 < *((unsigned int *)this + 3904); ++v6 )
           String::Reassign( /*0x77169e*/
             (char **)(this->u32_3C4 + 4 * v6),
             (const char **)(this->u32_3C4 + 4 * v6 + 4));
       }
-      v7 = this->u32_3BC; /*0x7716ae*/
+            v7 = *((unsigned int *)this + 3824);
       if ( v7 > 0 ) /*0x7716b6*/
-        this->u32_3BC = v7 - 1; /*0x7716b9*/
+                *((unsigned int *)this + 3824) = v7 - 1;
     }
-    if ( this->q3D0 <= 0 ) /*0x7716c7*/
+        if ( *((int *)this + 3904) <= 0 )
     {
-      this->u32_3BC = 0; /*0x7716f1*/
-      this->u8_3B8 = 1; /*0x7716fb*/
+            *((unsigned int *)this + 3824) = 0;
+            *((unsigned char *)this + 3808) = 1;
     }
     else
     {
-      v8 = String::GetOrEmpty(*(char ***)(&this->u32_1804)); /*0x7716d1*/
+            v8 = String::GetOrEmpty(*(char ***)((char *)this + 3856));
       v9 = VocClass::FindByName(v8); /*0x7716d8*/
       UpdateThemeManager(v9, -1, -1); /*0x7716e2*/
-      this->u8_3B8 = 0; /*0x7716e7*/
+            *((unsigned char *)this + 3808) = 0;
     }
   }
 }
@@ -287,7 +287,7 @@ int AudioQueue::Cleanup()
   int v8; // ecx
   int v9; // eax
 
-  while ( this->u32_30 ) /*0x7b1d16*/
+    while ( *((unsigned int *)this + 192) )
   {
     v2 = **(unsigned int **)(&this->u32_C6); /*0x7b1d1e*/
     if ( v2->q058 ) /*0x7b1d20*/
@@ -297,14 +297,14 @@ int AudioQueue::Cleanup()
     else
     {
       v2->u8_15 = 0; /*0x7b1d30*/
-      --this->q3F060; /*0x7b1d3a*/
+            --*((unsigned int *)this + 1032576);
     }
-    v3 = this->u32_30; /*0x7b1d40*/
+        v3 = *((unsigned int *)this + 192);
     if ( v3 > 0 ) /*0x7b1d45*/
     {
       v4 = v3 - 1; /*0x7b1d47*/
       v5 = 0; /*0x7b1d4a*/
-      for ( this->u32_30 = v4; /*0x7b1d51*/
+            for ( *((unsigned int *)this + 192) = v4;
             v5 < this->u32_30;
             *(unsigned int *)((unsigned int)((unsigned int)(this-)>ptr_24)+ 4 * v5 - 4) = *(unsigned int *)(this->ptr_24 + 4 * v5) )
       {
@@ -312,9 +312,9 @@ int AudioQueue::Cleanup()
       }
     }
   }
-  this->q3F060 = 0; /*0x7b1d6a*/
-  this->q3F054 = 0; /*0x7b1d70*/
-  while ( this->u32_48 ) /*0x7b1d76*/
+    *((unsigned int *)this + 1032576) = 0;
+    *((unsigned int *)this + 1032528) = 0;
+    while ( *((unsigned int *)this + 288) )
   {
     v6 = **(unsigned int **)(&this->u32_180); /*0x7b1d7e*/
     if ( v6->q058 ) /*0x7b1d80*/
@@ -324,14 +324,14 @@ int AudioQueue::Cleanup()
     else
     {
       v6->u8_15 = 0; /*0x7b1d90*/
-      --this->q3F064; /*0x7b1d9a*/
+            --*((unsigned int *)this + 1032592);
     }
-    v7 = this->u32_48; /*0x7b1da0*/
+        v7 = *((unsigned int *)this + 288);
     if ( v7 > 0 ) /*0x7b1da5*/
     {
       v8 = v7 - 1; /*0x7b1da7*/
       v9 = 0; /*0x7b1daa*/
-      for ( this->u32_48 = v8; /*0x7b1db1*/
+            for ( *((unsigned int *)this + 288) = v8;
             v9 < this->u32_48;
             *(unsigned int *)(this->u32_3C + 4 * v9 - 4) = *(unsigned int *)(this->u32_3C + 4 * v9) )
       {
@@ -339,8 +339,8 @@ int AudioQueue::Cleanup()
       }
     }
   }
-  this->q3F064 = 0; /*0x7b1dca*/
-  this->q3F058 = 0; /*0x7b1dd0*/
+    *((unsigned int *)this + 1032592) = 0;
+    *((unsigned int *)this + 1032544) = 0;
 }
 }
 // 0x7B20E0
@@ -356,7 +356,7 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
   result = 0; /*0x7b20e7*/
   if ( aP1 ) /*0x7b20ed*/
   {
-    if ( this->q3F064 == 128 ) /*0x7b219e*/
+        if ( *((unsigned int *)this + 258148) == 128 )
     {
       result = (unsigned char *)(operator new(0x2A0u));
       result[22] = 1; /*0x7b21af*/
@@ -370,15 +370,15 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
         v6 = (void *)((unsigned int)(this->q3F058));
         this->q3F058 = (unsigned int)((unsigned int)(v6)+ 1);
         if ( (unsigned int)(v6)+ 1 > 127 ) /*0x7b21cb*/
-          this->q3F058 = 0; /*0x7b21cd*/
-        if ( !*((unsigned char *)&(unsigned int)(this->u32_A80)* v6 + 172133) ) /*0x7b21e2*/
+                    *((unsigned int *)this + 258136) = 0;
+                if ( !*((unsigned char *)this + 672 * v6 + 172133) )
           break; /*0x7b21e2*/
         if ( ++v5 >= 128 ) /*0x7b21f2*/
           return result; /*0x7b21f2*/
       }
       result = &(unsigned int)(this->u32_2A0)* v6 + 43028; /*0x7b220b*/
-      *((unsigned char *)&(unsigned int)(this->u32_A80)* v6 + 172133) = 1; /*0x7b2212*/
-      ++this->q3F064; /*0x7b221c*/
+            *((unsigned char *)this + 672 * v6 + 172133) = 1;
+            ++*((unsigned int *)this + 258148);
     }
     if ( result ) /*0x7b2224*/
     {
@@ -388,7 +388,7 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
   }
   else
   {
-    if ( this->q3F060 == 128 ) /*0x7b20fd*/
+        if ( *((unsigned int *)this + 258144) == 128 )
     {
       result = (unsigned char *)(operator new(0x2A0u));
       result[22] = 1; /*0x7b210e*/
@@ -402,15 +402,15 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
         v4 = (void *)((unsigned int)(this->q3F054));
         this->q3F054 = (unsigned int)((unsigned int)(v4)+ 1);
         if ( (unsigned int)(v4)+ 1 > 127 ) /*0x7b212a*/
-          this->q3F054 = 0; /*0x7b212c*/
-        if ( !*((unsigned char *)&(unsigned int)(this->u32_A80)* v4 + 86117) ) /*0x7b2141*/
+                    *((unsigned int *)this + 258132) = 0;
+                if ( !*((unsigned char *)this + 672 * v4 + 86117) )
           break; /*0x7b2141*/
         if ( ++v3 >= 128 ) /*0x7b2151*/
           return result; /*0x7b2151*/
       }
       result = &(unsigned int)(this->u32_2A0)* v4 + 21524; /*0x7b2168*/
-      *((unsigned char *)&(unsigned int)(this->u32_A80)* v4 + 86117) = 1; /*0x7b216f*/
-      ++this->q3F060; /*0x7b217a*/
+            *((unsigned char *)this + 672 * v4 + 86117) = 1;
+            ++*((unsigned int *)this + 258144);
     }
     if ( result ) /*0x7b2182*/
     {
@@ -432,9 +432,9 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   int v12; // ecx
 
   EventQueue::Process(g_BinkMoviePlayer); /*0x7b22e9*/
-  if ( !this->u32_18 ) /*0x7b22ee*/
+    if ( !*((unsigned int *)this + 96) )
     return 0; /*0x7b22f5*/
-  v8 = **(unsigned int **)(&this->q0042); /*0x7b2304*/
+    v8 = **(unsigned int **)((char *)this + 48);
   qmemcpy(a2, (const void *)(v8 + 32), v8->uniqueId); /*0x7b2311*/
   v9 = *v9; /*0x7b231e*/
   if ( *v9 > 0x10 ) /*0x7b2323*/
@@ -443,12 +443,12 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   qmemcpy(a4, (const void *)v8, v9); /*0x7b2337*/
   *a6 = v8->u8_1A; /*0x7b234c*/
   *(unsigned int *)a3 = v8->uniqueId; /*0x7b2352*/
-  v10 = this->u32_18; /*0x7b2354*/
+    v10 = *((unsigned int *)this + 96);
   if ( v10 > 0 ) /*0x7b2359*/
   {
     v11 = v10 - 1; /*0x7b235b*/
     v12 = 0; /*0x7b235e*/
-    for ( this->u32_18 = v11; /*0x7b2365*/
+        for ( *((unsigned int *)this + 96) = v11;
           v12 < this->u32_18;
           *(unsigned int *)(this->u32_C + 4 * v12 - 4) = *(unsigned int *)(this->u32_C + 4 * v12) )
     {
@@ -462,7 +462,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   else
   {
     v8->u8_15 = 0; /*0x7b2391*/
-    --this->q3F05C; /*0x7b239d*/
+        --*((unsigned int *)this + 1032560);
   }
   return *(unsigned int *)a3; /*0x7b22f7*/
 }
@@ -494,8 +494,8 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   (*(void (**)(int, unsigned char *))(*(unsigned int *)this + 84))(this, v9);
   if ( aP5 ) /*0x7b241a*/
   {
-    v10 = this->q040; /*0x7b241c*/
-    if ( this->u32_48 < v10 /*0x7b2444*/
+        v10 = *((unsigned int *)this + 256);
+        if ( *((unsigned int *)this + 288) < v10
       || (this->u8_45 || !v10)
       && (v11 = this->u32_4C, v11 > 0)
       && (*(uint8_t (**)(int, int, unsigned int))(this->u32_38 + 8))(&this->u32_E0, v10 + v11, 0) )
@@ -505,12 +505,12 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       this->u32_48 = (unsigned int)(v12 + 1);
       *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7b2457*/
     }
-    v14 = this->u32_3F070; /*0x7b245a*/
+        v14 = *((unsigned int *)this + 1032640);
   }
   else
   {
-    v15 = this->u32_28; /*0x7b2462*/
-    if ( this->u32_30 < v15 /*0x7b248a*/
+        v15 = *((unsigned int *)this + 160);
+        if ( *((unsigned int *)this + 192) < v15
       || (this->u8_2D || !v15)
       && (v16 = this->q034, v16 > 0)
       && (*(uint8_t (**)(int, int, unsigned int))(this->q020 + 8))(&this->q080, v15 + v16, 0) )
@@ -520,7 +520,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       this->u32_30 = (unsigned int)(v17 + 1);
       *(unsigned int *)(v18 + 4 * v17) = v9; /*0x7b249d*/
     }
-    v14 = this->u32_3F06C; /*0x7b24a0*/
+        v14 = *((unsigned int *)this + 1032624);
   }
   v19 = (*(int (**)(int, int))(*(unsigned int *)this + 56))(this, v14);
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/

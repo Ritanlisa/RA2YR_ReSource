@@ -65,9 +65,9 @@ v2 = (LPVOID)(ppv);
       v6 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * i)); /*0x5e3953*/
       if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
-        this->Debug::Log(); /*0x5e3974*/
+                Debug::Log();
         Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
-        this->Event::Dispatch(); /*0x5e39a5*/
+                Event::Dispatch();
       }
       result = dword_A8DA84; /*0x5e39aa*/
     }

@@ -105,6 +105,25 @@ _IDA_VTABLE_INDIRECT = _re.compile(
 # G11: til-named member access `this->Name` (live/v4 rendering carries IDA til
 # member names directly in the pseudocode). Method calls `this->Name(` are
 # excluded (the dispatch patterns own them).
+# G41: byte/word-lane macros wrapping a member access (`BYTE1(this->M)`).
+# The lane selects a byte WITHIN the member — the true observed address is
+# member_off + lane_bytes. Both sides must add the lane or a faithful
+# `IDA_BYTE1(this->BufferSize)` translation mismatches IDA's `*(this + 41)`.
+_LANE_MACROS = {
+    'LOBYTE': 0, 'BYTE1': 1, 'BYTE2': 2, 'HIBYTE': 3, 'BYTE3': 3,
+    'LOWORD': 0, 'HIWORD': 2, 'WORD1': 2, 'HIDWORD': 4,
+    'SLODWORD': 0, 'SHIDWORD': 0, 'LODWORD': 0,
+}
+_LANE_PREFIX_RE = _re.compile(
+    r'\b(?:IDA_)?(LOBYTE|BYTE1|BYTE2|HIBYTE|BYTE3|LOWORD|HIWORD|WORD1|'
+    r'HIDWORD|SLODWORD|SHIDWORD|LODWORD)\s*\(\s*$')
+
+
+def _lane_before(text, pos):
+    m = _LANE_PREFIX_RE.search(text[:pos])
+    return _LANE_MACROS.get(m.group(1), 0) if m else 0
+
+
 _IDA_THIS_NAMED = _re.compile(r'\bthis->(\w+)')
 
 # G25: bare identifier that may name an hpp-annotated data global. The
@@ -331,6 +350,7 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None,
                 if mn2o is not None:
                     off = (mn2o.get(class_name) or {}).get(nm)
                 if off is not None:
+                    off += _lane_before(text, m.start())
                     ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
                 else:
                     ev = write_member_unresolved() if _is_write(text, m.end()) else read_member_unresolved()
@@ -345,6 +365,7 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None,
                 if mn2o is not None:
                     off = (mn2o.get(class_name) or {}).get(nm)
                 if off is not None:
+                    off += _lane_before(text, m.start())
                     ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
                 else:
                     ev = write_member_unresolved() if _is_write(text, m.end()) else read_member_unresolved()

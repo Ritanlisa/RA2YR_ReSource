@@ -23,8 +23,8 @@ namespace gamemd {
 unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
   this->m_Colors[0] = a2; /*0x4355ba*/
-  this->m_Colors[1] = a3; /*0x4355c0*/
-  this->m_Colors[2] = a4; /*0x4355c3*/
+    *((unsigned int *)this + 4) = a3;
+    *((unsigned int *)this + 8) = a4;
   return this->m_Colors; /*0x4355c6*/
 }
 }
@@ -271,7 +271,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
-  this->Debug::Log(); /*0x6425cb*/
+    Debug::Log();
   DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
 }
@@ -286,12 +286,12 @@ int Palette::CalcColorDistance(unsigned char * a2)
   v2 = IDA_LOBYTE(this->u32_8) - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *a2 - IDA_LOBYTE(this->m_Colors[0]); /*0x661364*/
-  v3 = IDA_BYTE1(this->m_Colors[0]) - a2[1]; /*0x661370*/
+    v3 = *((unsigned int *)this + 4) - a2[1];
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2[1] - IDA_BYTE1(this->m_Colors[0]); /*0x661374*/
-  v4 = IDA_BYTE2(this->m_Colors[0]) - a2[2]; /*0x661382*/
+        v3 = a2[1] - *((unsigned int *)this + 4);
+    v4 = *((unsigned int *)this + 8) - a2[2];
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2[2] - IDA_BYTE2(this->m_Colors[0]); /*0x661386*/
+        v4 = a2[2] - *((unsigned int *)this + 8);
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 }
 // 0x626200

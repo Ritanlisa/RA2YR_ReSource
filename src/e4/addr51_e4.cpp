@@ -43,11 +43,11 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   uint8_t vtable0; // bl
   unsigned int result; // eax
 
-  v3 = IDA_BYTE1(this->AbstractClass); /*0x517394*/
-  IDA_BYTE2(this->AbstractClass) += a2 * (a3[2] - IDA_BYTE2(this->AbstractClass)) / 256; /*0x517397*/
+    v3 = *((unsigned int *)this + 4);
+    *((unsigned int *)this + 8) += a2 * (a3[2] - *((unsigned int *)this + 8)) / 256;
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   vtable0 = (uint8_t)this->AbstractClass; /*0x5173ba*/
-  IDA_BYTE1(this->AbstractClass) = v4; /*0x5173bc*/
+    *((unsigned int *)this + 4) = v4;
   result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
   IDA_LOBYTE(result) = vtable0 + result; /*0x5173de*/
   IDA_LOBYTE(this->AbstractClass) = result; /*0x5173e1*/
@@ -65,12 +65,12 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
   v2 = IDA_LOBYTE(this->AbstractClass) - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
     v2 = *a2 - IDA_LOBYTE(this->AbstractClass); /*0x517404*/
-  v3 = IDA_BYTE1(this->AbstractClass) - a2[1]; /*0x517410*/
+    v3 = *((unsigned int *)this + 4) - a2[1];
   if ( v3 < 0 ) /*0x517412*/
-    v3 = a2[1] - IDA_BYTE1(this->AbstractClass); /*0x517414*/
-  v4 = IDA_BYTE2(this->AbstractClass) - a2[2]; /*0x517422*/
+        v3 = a2[1] - *((unsigned int *)this + 4);
+    v4 = *((unsigned int *)this + 8) - a2[2];
   if ( v4 < 0 ) /*0x517424*/
-    v4 = a2[2] - IDA_BYTE2(this->AbstractClass); /*0x517426*/
+        v4 = a2[2] - *((unsigned int *)this + 8);
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
 }
 }
@@ -635,12 +635,12 @@ int E4Recv_517110::sub_517110()
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( this->occupant != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1436) /*0x517138*/
+    if ( *((unsigned int *)this + 144) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1684]
     || this->owningHouseIndex != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440)
     || this->fallRate != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444) )
   {
-    v2 = this->occupant / 256; /*0x517161*/
-    v3 = this->owningHouseIndex / 256; /*0x517164*/
+        v2 = *((unsigned int *)this + 144) / 256;
+        v3 = *((unsigned int *)this + 160) / 256;
     v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->? + 440))(this->?, v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
@@ -693,7 +693,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  IDA_LOBYTE(this->M4) = 0; /*0x51779f*/
+    *((unsigned int *)this + 16) = 0;
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -702,7 +702,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = (void *)((unsigned int)(*(void **)v7));
-      IDA_LOBYTE(this->M4) = 1; /*0x51781d*/
+            *((unsigned int *)this + 16) = 1;
       this->AbstractClass = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/

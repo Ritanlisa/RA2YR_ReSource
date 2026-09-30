@@ -87,17 +87,17 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   WeaponTypeClass * v3;
 
   AbstractTypeClass::Constructor(aP1); /*0x771c7a*/
-  this->AmbientDamage = 0; /*0x771c87*/
-  this->Burst = 1; /*0x771c8d*/
-  this->Projectile = 0; /*0x771c97*/
-  this->Damage = 0; /*0x771c9d*/
-  *(unsigned int *)&this->Speed = 0; /*0x771ca3*/
-  this->Warhead = 0; /*0x771ca9*/
-  this->ROF = 0; /*0x771caf*/
-  this->Range = 0; /*0x771cb6*/
-  this->MinimumRange = 0; /*0x771cbf*/
+    *((unsigned int *)this + 152) = 0;
+    *((unsigned int *)this + 156) = 1;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned int *)this + 164) = 0;
+    *((unsigned int *)this + 168) = 0;
+    *((unsigned int *)this + 172) = 0;
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned int *)this + 180) = 0;
+    *((unsigned int *)this + 184) = 0;
   VectorClass::Construct((VectorClass *)this->Report, 0, 0); /*0x771cc5*/
-  *(unsigned short *)&this->abstractFlags = 10; /*0x771cca*/
+    *((unsigned int *)this + 208) = 10;
   this-((unsigned int *)(>Report))[4] = 0; /*0x771cd1*/
   this-((unsigned int *)(>Report))[0] = (int)&TypeList_int_vftable; /*0x771cd4*/
   VectorClass::Construct((VectorClass *)this->DownReport, 0, 0); /*0x771ce4*/
@@ -105,71 +105,71 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   this-((unsigned int *)(>DownReport))[4] = 0; /*0x771cf0*/
   this-((unsigned int *)(>DownReport))[0] = (int)&TypeList_int_vftable; /*0x771cf3*/
   AnimTypeVector::Constructor((AnimTypeVector *)this->Anim, 0, 0); /*0x771d03*/
-  *(unsigned short *)&this->abstractFlags = 10; /*0x771d08*/
+    *((unsigned int *)this + 264) = 10;
   this-((unsigned int *)(>Anim))[4] = 0; /*0x771d0f*/
   this-((unsigned int *)(>Anim))[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x771d12*/
-  *(unsigned int *)&this->OccupantAnim = 0; /*0x771d18*/
-  *(unsigned int *)&this->AssaultAnim = 0; /*0x771d1e*/
-  *(unsigned int *)&this->OpenToppedAnim = 0; /*0x771d24*/
-  *(unsigned int *)&this->AttachedParticleSystem = 0; /*0x771d2a*/
-  this->LaserInnerColor[0] = 0; /*0x771d30*/
-  this->LaserInnerColor[1] = 0; /*0x771d36*/
-  this->LaserInnerColor[2] = 0; /*0x771d3c*/
-  this->LaserOuterColor[0] = 0; /*0x771d42*/
-  this->LaserOuterColor[1] = 0; /*0x771d48*/
+    *((unsigned int *)this + 272) = 0;
+    *((unsigned int *)this + 276) = 0;
+    *((unsigned int *)this + 280) = 0;
+    *((unsigned int *)this + 284) = 0;
+    *((unsigned char *)this + 288) = 0;
+    *((unsigned char *)this + 289) = 0;
+    *((unsigned char *)this + 290) = 0;
+    *((unsigned char *)this + 291) = 0;
+    *((unsigned int *)this + 292) = 0;
   this->LaserOuterColor[2] = 0; /*0x771d4e*/
   this->LaserOuterSpread[0] = 0; /*0x771d54*/
   this->LaserOuterSpread[1] = 0; /*0x771d5a*/
-  this->LaserOuterSpread[2] = 0; /*0x771d60*/
+    *((unsigned int *)this + 296) = 0;
   this->UseFireParticles = 0; /*0x771d66*/
   this->UseSparkParticles = 0; /*0x771d6c*/
   this->OmniFire = 0; /*0x771d72*/
-  this->DistributedWeaponFire = 0; /*0x771d78*/
+    *((unsigned int *)this + 300) = 0;
   this->IsRailgun = 0; /*0x771d7e*/
   this->Lobber = 0; /*0x771d84*/
   this->Bright = 0; /*0x771d8a*/
-  this->IsSonic = 0; /*0x771d90*/
+    *((unsigned int *)this + 304) = 0x1000000;
   this->Spawner = 0; /*0x771d96*/
   this->LimboLaunch = 0; /*0x771d9c*/
   this->DecloakToFire = 1; /*0x771da2*/
-  this->CellRangefinding = 0; /*0x771da9*/
-  this->FireOnce = 0; /*0x771daf*/
-  this->NeverUse = 0; /*0x771db5*/
-  this->RevealOnFire = 1; /*0x771dbb*/
-  this->TerrainFire = 0; /*0x771dc2*/
-  this->SabotageCursor = 0; /*0x771dc8*/
-  this->MigAttackCursor = 0; /*0x771dce*/
-  this->DisguiseFireOnly = 0; /*0x771dd4*/
-  this->DisguiseFakeBlinkTime = 0; /*0x771dda*/
-  this->InfiniteMindControl = 0; /*0x771de0*/
-  this->FireWhileMoving = 1; /*0x771de6*/
-  this->DrainWeapon = 0; /*0x771ded*/
-  this->FireInTransport = 1; /*0x771df3*/
-  this->Suicide = 0; /*0x771dfa*/
-  this->TurboBoost = 0; /*0x771e00*/
-  this->Supress = 0; /*0x771e06*/
-  this->Camera = 0; /*0x771e0f*/
-  this->Charges = 0; /*0x771e16*/
-  this->IsLaser = 0; /*0x771e1c*/
-  this->DiskLaser = 0; /*0x771e22*/
-  this->IsLine = 0; /*0x771e28*/
-  this->IsBigLaser = 0; /*0x771e2e*/
-  this->IsHouseColor = 0; /*0x771e34*/
-  this->LaserDuration = 10; /*0x771e3a*/
-  this->IonSensitive = 0; /*0x771e41*/
-  this->AreaFire = 0; /*0x771e47*/
-  this->IsElectricBolt = 0; /*0x771e4d*/
-  this->DrawBoltAsLaser = 0; /*0x771e53*/
-  this->IsAlternateColor = 0; /*0x771e59*/
-  this->IsRadBeam = 0; /*0x771e5f*/
-  this->IsRadEruption = 0; /*0x771e65*/
-  this->RadLevel = 0; /*0x771e6b*/
-  this->IsMagBeam = 0; /*0x771e71*/
+    *((unsigned char *)this + 308) = 0;
+    *((unsigned char *)this + 309) = 0;
+    *((unsigned char *)this + 310) = 0;
+    *((unsigned char *)this + 311) = 1;
+    *((unsigned char *)this + 312) = 0;
+    *((unsigned char *)this + 313) = 0;
+    *((unsigned char *)this + 314) = 0;
+    *((unsigned char *)this + 315) = 0;
+    *((unsigned int *)this + 316) = 0;
+    *((unsigned char *)this + 320) = 0;
+    *((unsigned char *)this + 321) = 1;
+    *((unsigned char *)this + 322) = 0;
+    *((unsigned char *)this + 323) = 1;
+    *((unsigned char *)this + 324) = 0;
+    *((unsigned char *)this + 325) = 0;
+    *((unsigned char *)this + 326) = 0;
+    *((unsigned char *)this + 327) = 0;
+    *((unsigned char *)this + 328) = 0;
+    *((unsigned char *)this + 329) = 0;
+    *((unsigned char *)this + 330) = 0;
+    *((unsigned char *)this + 331) = 0;
+    *((unsigned char *)this + 332) = 0;
+    *((unsigned char *)this + 333) = 0;
+    *((unsigned char *)this + 334) = 10;
+    *((unsigned char *)this + 335) = 0;
+    *((unsigned char *)this + 336) = 0;
+    *((unsigned char *)this + 337) = 0;
+    *((unsigned char *)this + 338) = 0;
+    *((unsigned char *)this + 339) = 0;
+    *((unsigned char *)this + 340) = 0;
+    *((unsigned char *)this + 341) = 0;
+    *((unsigned int *)this + 344) = 0;
+    *((unsigned char *)this + 348) = 0;
   this->AbstractTypeClass = (void*)&WeaponTypeClass_vftable; /*0x771e77*/
-  this->? = (void*)&WeaponTypeClass_vftable; /*0x771e7d*/
-  *(void **)&this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771e83*/
-  *(void **)&this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771e8a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x771e91*/
+    *((unsigned int *)this + 4) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 8) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_WeaponTypeClass;
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vtable2); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
@@ -181,7 +181,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
     v3 = (gamemd::WeaponTypeClass *)((unsigned int)(g_WeaponTypePool++));
     *((unsigned int *)(unsigned int)(g_WeaponTypeConfig)+ v3) = this; /*0x771ee6*/
   }
-  return &this->AbstractTypeClass; /*0x771eeb*/
+    return this;
 }
 } // namespace gamemd
 // 0x771F50
@@ -194,13 +194,13 @@ int WeaponTypeClass::Destructor()
   void *v5; // eax
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->AbstractTypeClass = (void*)&WeaponTypeClass_vftable; /*0x771f57*/
-  *(void **)&this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771f5d*/
-  *(void **)&this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771f64*/
-  *(void **)&this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771f6b*/
+    *(unsigned int *)this = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 16) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_WeaponTypeClass;
   AbstractClass::AnnounceExpiredPointer(1); /*0x771f72*/
-  this->Projectile = 0; /*0x771f7d*/
-  this->Warhead = 0; /*0x771f83*/
+    *((unsigned int *)this + 640) = 0;
+    *((unsigned int *)this + 688) = 0;
   v7 = this; /*0x771f95*/
   v2 = ((int (__thiscall *)(WeaponTypeClass **, WeaponTypeClass **))WeaponTypeClass_Array->?)( /*0x771f99*/
          &WeaponTypeClass_Array,
@@ -214,34 +214,34 @@ int WeaponTypeClass::Destructor()
     }
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
-  v3 = (void *)*(unsigned int *)&this->Suicide; /*0x771fce*/
+    v3 = *(void **)((char *)this + 992);
   this-((unsigned int *)(>Anim))[0] = (int)&VectorClass_AnimTypeClass_const___vftable; /*0x771fd4*/
-  if ( v3 && IDA_BYTE1(*(unsigned int *)&this->IsHouseColor) ) /*0x771fe2*/
+    if ( v3 && *((unsigned char *)this + 1028) )
   {
     RA2_OPDEL(v3); /*0x771feb*/
-    *(unsigned int *)&this->Suicide = 0; /*0x771ff3*/
+        *((unsigned int *)this + 992) = 0;
   }
-  IDA_BYTE1(this->Anim[3]) = 0; /*0x771ff9*/
+    *((unsigned char *)this + 1028) = 0;
   this-((unsigned int *)(>Anim))[2] = 0; /*0x771fff*/
   v4 = (void *)this-((unsigned int *)(>DownReport))[1]; /*0x772005*/
   this-((unsigned int *)(>DownReport))[0] = (int)&VectorClass_int_vftable; /*0x77200b*/
-  if ( v4 && IDA_BYTE1(this->DownReport[3]) ) /*0x772019*/
+    if ( v4 && *((unsigned char *)this + 916) )
   {
     RA2_OPDEL(v4); /*0x772022*/
     this-((unsigned int *)(>DownReport))[1] = 0; /*0x77202a*/
   }
-  IDA_BYTE1(this->DownReport[3]) = 0; /*0x772030*/
+    *((unsigned char *)this + 916) = 0;
   this-((unsigned int *)(>DownReport))[2] = 0; /*0x772036*/
   v5 = (void *)this-((unsigned int *)(>Report))[1]; /*0x77203c*/
   this-((unsigned int *)(>Report))[0] = (int)&VectorClass_int_vftable; /*0x772042*/
-  if ( v5 && IDA_BYTE1(*(unsigned int *)&this->u8_C9) ) /*0x772050*/
+    if ( v5 && *((unsigned char *)this + 804) )
   {
     RA2_OPDEL(v5); /*0x772059*/
-    this->Anim = 0; /*0x772061*/
+        *((unsigned int *)this + 768) = 0;
   }
-  IDA_BYTE1(this->Report[3]) = 0; /*0x772069*/
+    *((unsigned char *)this + 804) = 0;
   this-((unsigned int *)(>Report))[2] = 0; /*0x77206f*/
-  return this->AbstractTypeClass::Dtor(); /*0x77207a*/
+    return AbstractTypeClass::Dtor((unsigned int *)this);
 }
 } // namespace gamemd
 // 0x772AE0
@@ -270,58 +270,58 @@ int WeaponTypeClass::ProcessPower(int * a2)
   int v22; // edx
 
   AbstractTypeClass::ProcessPower(a2); /*0x772ae9*/
-  Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
-  IDA_LOBYTE(v3) = this->IsSonic; /*0x772afc*/
+    Power::TimerProcess(*((unsigned int *)this + 608));
+    LOBYTE(v3) = *((unsigned char *)this + 1216);
   Power::FlagProcess((Power *)a2, v3); /*0x772b05*/
-  IDA_LOBYTE(v4) = this->TurboBoost; /*0x772b0a*/
+    LOBYTE(v4) = *((unsigned char *)this + 1300);
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x772b13*/
-  IDA_LOBYTE(v5) = this->Supress; /*0x772b18*/
+    LOBYTE(v5) = *((unsigned char *)this + 1304);
   Power::FlagProcess((Power *)a2, v5); /*0x772b21*/
-  IDA_LOBYTE(v6) = this->Camera; /*0x772b26*/
+    LOBYTE(v6) = *((unsigned char *)this + 1308);
   Power::FlagProcess((Power *)a2, v6); /*0x772b2f*/
-  IDA_LOBYTE(v7) = this->IsLaser; /*0x772b34*/
+    LOBYTE(v7) = *((unsigned char *)this + 1316);
   v8 = Power::FlagProcess((Power *)a2, v7); /*0x772b3d*/
-  IDA_LOBYTE(v8) = this->IsHouseColor; /*0x772b42*/
+    LOBYTE(v8) = *((unsigned char *)this + 1332);
   Power::FlagProcess((Power *)a2, v8); /*0x772b4b*/
-  Power::TimerProcess(this->Burst); /*0x772b59*/
-  Projectile = this->Projectile; /*0x772b5e*/
+    Power::TimerProcess(*((unsigned int *)this + 624));
+    v9 = *((unsigned int *)this + 640);
   if ( Projectile ) /*0x772b66*/
   {
     v10 = (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)&Projectile->ObjectTypeClass[4] + 16))(&Projectile->ObjectTypeClass[4]); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
-  Power::TimerProcess(this->Damage); /*0x772b83*/
-  Power::TimerProcess(this->Speed); /*0x772b91*/
-  Warhead = this->Warhead; /*0x772b96*/
+    Power::TimerProcess(*((unsigned int *)this + 656));
+    Power::TimerProcess(*((unsigned int *)this + 672));
+    v11 = *((unsigned int *)this + 688);
   if ( Warhead ) /*0x772b9e*/
   {
     v12 = (*((int (__stdcall **)(void **))Warhead->WarheadTypeClass_field_0x4 + 4))(&Warhead->WarheadTypeClass_field_0x4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
-  Power::TimerProcess(this->ROF); /*0x772bbb*/
-  Power::TimerProcess(this->Range); /*0x772bc9*/
+    Power::TimerProcess(*((unsigned int *)this + 704));
+    Power::TimerProcess(*((unsigned int *)this + 720));
   Power::TimerProcess(this-((unsigned int *)(>Report))[4]); /*0x772bd7*/
   Power::TimerProcess(this-((unsigned int *)(>DownReport))[4]); /*0x772be5*/
-  Power::TimerProcess(*(unsigned int *)&this->AreaFire); /*0x772bf3*/
-  IDA_LOBYTE(v13) = this->UseFireParticles; /*0x772bf8*/
+    Power::TimerProcess(*((unsigned int *)this + 1040));
+    LOBYTE(v13) = *((unsigned char *)this + 1188);
   v14 = Power::FlagProcess((Power *)a2, v13); /*0x772c01*/
-  IDA_LOBYTE(v14) = this->Lobber; /*0x772c06*/
+    LOBYTE(v14) = *((unsigned char *)this + 1208);
   Power::FlagProcess((Power *)a2, v14); /*0x772c0f*/
-  IDA_LOBYTE(v15) = this->LaserDuration; /*0x772c14*/
+    LOBYTE(v15) = *((unsigned char *)this + 1336);
   Power::FinalizeDrain((Power *)a2, v15); /*0x772c1d*/
-  IDA_LOBYTE(v16) = this->IsBigLaser; /*0x772c22*/
+    LOBYTE(v16) = *((unsigned char *)this + 1328);
   v17 = Power::FlagProcess((Power *)a2, v16); /*0x772c2b*/
-  IDA_LOBYTE(v17) = this->IsRailgun; /*0x772c30*/
+    LOBYTE(v17) = *((unsigned char *)this + 1204);
   Power::FlagProcess((Power *)a2, v17); /*0x772c39*/
-  IDA_LOBYTE(v18) = this->Charges; /*0x772c3e*/
+    LOBYTE(v18) = *((unsigned char *)this + 1312);
   Power::FlagProcess((Power *)a2, v18); /*0x772c47*/
-  IDA_LOBYTE(v19) = this->Bright; /*0x772c4c*/
+    LOBYTE(v19) = *((unsigned char *)this + 1212);
   v20 = Power::FlagProcess((Power *)a2, v19); /*0x772c55*/
-  IDA_LOBYTE(v20) = this->UseSparkParticles; /*0x772c5a*/
+    LOBYTE(v20) = *((unsigned char *)this + 1192);
   Power::FlagProcess((Power *)a2, v20); /*0x772c63*/
-  IDA_LOBYTE(v21) = this->OmniFire; /*0x772c68*/
+    LOBYTE(v21) = *((unsigned char *)this + 1196);
   Power::FlagProcess((Power *)a2, v21); /*0x772c71*/
-  IDA_LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
+    LOBYTE(v22) = *((unsigned char *)this + 1200);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v22); /*0x772c84*/
 }
@@ -437,8 +437,8 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   void *v6; // eax
 
   AbstractClass::AnnounceExpiredPointer(1); /*0x773112*/
-  *(&this->uniqueId0) = 0; /*0x77311d*/
-  *(&this->uniqueId3) = 0; /*0x773123*/
+    *(Block + 40) = 0;
+    *(Block + 43) = 0;
   v3 = (*(int (**)(WeaponTypeClass **, void ***))&WeaponTypeClass_Array->gap0[16])( /*0x773139*/
          &WeaponTypeClass_Array,
          &this);
@@ -451,30 +451,30 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
     }
     while ( v3 < g_WeaponTypePool ); /*0x77316c*/
   }
-  v4 = *(&this->nextArrayIndex2); /*0x77316e*/
-  if ( v4 && this->IsHouseColor ) /*0x773182*/
+    v4 = *(Block + 62);
+    if ( v4 && *((unsigned char *)Block + 257) )
   {
     RA2_OPDEL(v4); /*0x77318b*/
-    *(&this->nextArrayIndex2) = 0; /*0x773193*/
+        *(Block + 62) = 0;
   }
-  this->IsHouseColor = 0; /*0x773199*/
-  *(&this->nextArrayIndex3) = 0; /*0x77319f*/
-  v5 = *(&this->abstractFlags5); /*0x7731a5*/
-  if ( v5 && this->Spawner ) /*0x7731b9*/
+    *((unsigned char *)Block + 257) = 0;
+    *(Block + 63) = 0;
+    v5 = *(Block + 55);
+    if ( v5 && *((unsigned char *)Block + 229) )
   {
     RA2_OPDEL(v5); /*0x7731c2*/
-    *(&this->abstractFlags5) = 0; /*0x7731ca*/
+        *(Block + 55) = 0;
   }
-  this->Spawner = 0; /*0x7731d0*/
-  *(&this->abstractFlags6) = 0; /*0x7731d6*/
-  v6 = *(&this->uniqueId8); /*0x7731dc*/
-  if ( v6 && this->u8_C9 ) /*0x7731f0*/
+    *((unsigned char *)Block + 229) = 0;
+    *(Block + 56) = 0;
+    v6 = (DynamicVector *)*(Block + 48);
+    if ( v6 && *((unsigned char *)Block + 201) )
   {
     RA2_OPDEL(v6); /*0x7731f9*/
-    *(&this->uniqueId8) = 0; /*0x773201*/
+        *(Block + 48) = 0;
   }
-  this->u8_C9 = 0; /*0x773209*/
-  *(&this->uniqueId9) = 0; /*0x77320f*/
+    *((unsigned char *)Block + 201) = 0;
+    *(Block + 49) = 0;
   AbstractTypeClass::Dtor(); /*0x773215*/
   if ( (a2 & 1) != 0 ) /*0x77321f*/
     RA2_OPDEL(); /*0x773222*/
@@ -557,14 +557,14 @@ char  WeaponTypeClass::ReadVeteranData(char * a3, int a4, int * Block, int a6, s
 unsigned int *  WeaponTypeClass::loadWeaponProperties()
 {
   AbstractTypeClass::Init(this); /*0x771f08*/
-  *(unsigned int *)&this->Report = (int)&TypeList_int_vftable; /*0x771f12*/
-  this->DownReport[0] = (int)&TypeList_int_vftable; /*0x771f18*/
-  this->Anim[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x771f1e*/
-  this->AbstractTypeClass = (void*)&WeaponTypeClass_vftable; /*0x771f28*/
-  *(void **)&this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771f2e*/
-  *(void **)&this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771f35*/
-  *(void **)&this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771f3c*/
-  return &this->AbstractTypeClass; /*0x771f45*/
+    *((unsigned int *)this + 188) = &vt_TypeList_int;
+    *((unsigned int *)this + 216) = &vt_TypeList_int;
+    *((unsigned int *)this + 244) = &vt_TypeList_AnimTypeClass_const;
+    *this = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 4) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 8) = &WeaponTypeClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_WeaponTypeClass;
+    return this;
 }
 // 0x7729F0
 int WeaponTypeClass::CalculateSpeed()
@@ -572,14 +572,14 @@ int WeaponTypeClass::CalculateSpeed()
   int result; // eax
   double FiringDistance; // [esp+4h] [ebp-8h]
 
-  result = (int)this->Projectile; /*0x7729f6*/
+    result = *((unsigned int *)this + 160);
   if ( result && !*(unsigned int *)(result + 732) ) /*0x772a00*/
   {
     FiringDistance = (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5816); /*0x772a1e*/
     if ( *(unsigned char *)(result + 661) ) /*0x772a16*/
       FiringDistance = RulesClass::GetFiringDistance(); /*0x772a29*/
-    result = TechnoClass::ComputeScanRange((TechnoClass *)this->Range, FiringDistance); /*0x772a3d*/
-    *(unsigned int *)&this->Speed = result; /*0x772a42*/
+        result = TechnoClass::ComputeScanRange((void *)*((unsigned int *)this + 180), WeatherConBoltExplosion);
+        *((unsigned int *)this + 168) = result;
   }
   return result; /*0x772a48*/
 }

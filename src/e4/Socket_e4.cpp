@@ -24,13 +24,13 @@ int Socket::ConfigureBuffers(AnimClass * aP1)
 
   v2 = (unsigned int)(aP1);
   if ( aP1 == (gamemd::AnimClass *)(-1) ) /*0x7b2638*/
-    v2 = this->u32_3F06C; /*0x7b263a*/
+        v2 = (AnimClass *)*((unsigned int *)this + 258156);
   if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/
-  this->Debug::Log(); /*0x7b2667*/
+    Debug::Log();
   if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
-  result = this->Debug::Log(); /*0x7b26a6*/
+    Debug::Log();
   IDA_LOBYTE(result) = 1; /*0x7b26ae*/
   return result; /*0x7b26b0*/
 }

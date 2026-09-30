@@ -4036,7 +4036,7 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-  return (int)this->AbstractClass; /*0x600662*/
+    return *(ObjectClass **)this;
 }
 } // namespace gamemd
 

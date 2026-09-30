@@ -13,7 +13,7 @@ namespace gamemd {
 int Matrix3x4::Identity(void* a1, void* a2)
 {
   this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
-  *(unsigned int *)&this->q004 = 0; /*0x5ae869*/
+    *((unsigned int *)this + 4) = 0;
   this-((unsigned int *)(>m_Data))[2] = 0; /*0x5ae86c*/
   this-((unsigned int *)(>m_Data))[3] = 0; /*0x5ae86f*/
   this-((unsigned int *)(>m_Data))[4] = 0; /*0x5ae872*/
@@ -33,9 +33,9 @@ void Matrix3x4::Translate(ParticleSystemClass * aP1)
 {
   int result; // eax
 
-  *(unsigned int *)&this->q00C = (unsigned int)(aP1)* *(float *)this + this->q00C; /*0x5ae989*/
-  *(unsigned int *)&this->q01C = (unsigned int)(aP1)* this->q010 + this->q01C; /*0x5ae996*/
-  *(unsigned int *)&this->q02C = (unsigned int)(aP1)* this->q020 + this->q02C; /*0x5ae9a3*/
+    *((unsigned int *)this + 12) = *(float *)&aP1 * *this + *((unsigned int *)this + 12);
+    *((unsigned int *)this + 28) = *(float *)&aP1 * *((unsigned int *)this + 16) + *((unsigned int *)this + 28);
+    *((unsigned int *)this + 44) = *(float *)&aP1 * *((unsigned int *)this + 32) + *((unsigned int *)this + 44);
   return result; /*0x5ae9a6*/
 }
 } // namespace gamemd

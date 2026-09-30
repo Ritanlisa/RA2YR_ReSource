@@ -19,43 +19,43 @@ int VocClass::Release()
   int v5; // ebx
   RefCount **v6; // edi
 
-  if ( (this->Volume[0] & 1) == 0 ) /*0x4052f7*/
+    if ( (*((unsigned char *)this + 96) & 1) == 0 )
   {
-    pVoiceChannel = (VocClass **)this->pVoiceChannel; /*0x4052fd*/
+        v2 = *((unsigned int *)this + 704);
     if ( pVoiceChannel && this == pVoiceChannel[48] ) /*0x405311*/
     {
-      if ( (this->Volume[0] & 2) != 0 ) /*0x405317*/
+            if ( (*((unsigned char *)this + 96) & 2) != 0 )
         Voice::Stop(v1); /*0x405319*/
-      AudioStream::ReleaseChannel((AudioStream *)this->pVoiceChannel); /*0x405324*/
-      *((unsigned int *)this->pVoiceChannel + 48) = 0; /*0x40532f*/
-      *((unsigned int *)this->pVoiceChannel + 47) = 0; /*0x40533b*/
-      *((unsigned int *)this->pVoiceChannel + 45) = 0; /*0x405347*/
-      *((unsigned int *)this->pVoiceChannel + 46) = 0; /*0x405353*/
-      *((unsigned int *)this->pVoiceChannel + 36) = 0; /*0x40535f*/
-      *((unsigned int *)this->pVoiceChannel + 38) = 0; /*0x40536b*/
-      *((unsigned int *)this->pVoiceChannel + 39) = 0; /*0x405377*/
-      *(unsigned int *)&this->pVoiceChannel = 0; /*0x40537d*/
+            AudioStream::ReleaseChannel(*(unsigned int **)((char *)this + 704));
+            *(unsigned int *)(*((unsigned int *)this + 704) + 192) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 188) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 180) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 184) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 144) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 152) = 0;
+            *(unsigned int *)(*((unsigned int *)this + 704) + 156) = 0;
+            *((unsigned int *)this + 704) = 0;
     }
-    result = this->ActiveBufferCount; /*0x405383*/
+        result = *((unsigned int *)this + 672);
     v5 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-      v6 = (RefCount **)&this->Volume[4]; /*0x405390*/
+            v5 = (unsigned int **)((char *)this + 160);
       do /*0x4053a8*/
       {
         RefCount::Decrement(*v6); /*0x405395*/
         *v6 = 0; /*0x40539a*/
-        result = this->ActiveBufferCount; /*0x40539c*/
+                result = *((unsigned int *)this + 672);
         ++v5; /*0x4053a2*/
         ++v6; /*0x4053a3*/
       }
       while ( v5 < result ); /*0x4053a8*/
     }
-    this->ActiveBufferCount = 0; /*0x4053ab*/
-    this->Volume[1] = 4; /*0x4053b1*/
-    this->Attack = 0; /*0x4053b8*/
-    this->u32_278 = 0; /*0x4053be*/
-    this->Volume[0] |= 1u; /*0x4053ca*/
+        *((unsigned int *)this + 672) = 0;
+        *((unsigned int *)this + 112) = 4;
+        *((unsigned int *)this + 1248) = 0;
+        *((unsigned int *)this + 2528) = 0;
+        *((unsigned int *)this + 96) |= 1u;
   }
   return result; /*0x4053cf*/
 }

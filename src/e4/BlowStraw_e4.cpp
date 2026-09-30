@@ -48,8 +48,8 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   int v18; // eax
   int v19; // eax
 
-  v4 = *(&this->u32_8844); /*0x6d068b*/
-  v5 = *(&this->u32_8846); /*0x6d0691*/
+    v4 = *((unsigned int *)this + 21816);
+    v5 = *((unsigned int *)this + 21824);
   if ( v4 != -1 ) /*0x6d069a*/
   {
     if ( (int)g_CurrentFrame - v4 >= v5 ) /*0x6d06a6*/
@@ -59,7 +59,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   if ( v5 == 1 ) /*0x6d06ac*/
   {
     v6 = (int)(*this);
-    this->u8_5545 = 1; /*0x6d06b4*/
+        *((unsigned char *)this + 21829) = 1;
     this->vt_slot_56(0); /*0x6d06ba*/
   }
   LABEL_6:
@@ -76,7 +76,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
     if ( v9 == 33008 ) /*0x6d0842*/
     {
       PlayVocClass(g_RulesClass_Instance->DefaultChronoSound, 0x2000, 1.0, 0); /*0x6d0860*/
-      if ( this->u8_5544 ) /*0x6d0865*/
+            if ( *((unsigned char *)this + 21828) )
       {
         SidebarUpdateAll(); /*0x6d0875*/
         this->vt_slot_52(dword_B0CCB0); /*0x6d0883*/
@@ -88,11 +88,11 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
         }
         HashTable::Remove((int *)g_TacticalRender, 240); /*0x6d08b3*/
         v16 = *this; /*0x6d08b8*/
-        this->u8_5544 = 0; /*0x6d08c1*/
+                *((unsigned char *)this + 21828) = 0;
         this->vt_slot_48(dword_B0CC40); /*0x6d08c8*/
         PushCommandClass::Execute(dword_B0CC40, (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
         v17 = *this; /*0x6d08da*/
-        this->u8_5545 = 1; /*0x6d08e0*/
+                *((unsigned char *)this + 21829) = 1;
         this->vt_slot_56(0); /*0x6d08e6*/
       }
     }
@@ -101,14 +101,14 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
       if ( !MuteSWLaunches ) /*0x6d08fc*/
       {
         PlayVocClass(g_RulesClass_Instance->PlaceBeaconSound, 0x2000, 1.0, 0); /*0x6d091a*/
-        if ( !this->u8_5544 ) /*0x6d091f*/
+                if ( !*((unsigned char *)this + 21828) )
         {
           this->vt_slot_52(dword_B0CC40); /*0x6d0932*/
           HashTable::Remove((int *)g_TacticalRender, 241); /*0x6d0940*/
-          this->u8_5544 = 1; /*0x6d0947*/
-          this->CommandClass::BuildBar(); /*0x6d094d*/
+                    *((unsigned char *)this + 21828) = 1;
+                    CommandClass::BuildBar(this);
           v18 = *this; /*0x6d0952*/
-          this->u8_5545 = 1; /*0x6d0958*/
+                    *((unsigned char *)this + 21829) = 1;
           this->vt_slot_56(0); /*0x6d095e*/
         }
       }
@@ -182,7 +182,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
       }
     }
   }
-  this->CountdownTimer_1547.UpdateDisplay(0); /*0x6d099d*/
+    CountdownTimer::UpdateDisplay((char *)this + 21788, 0);
 // 0x6a7780
   return SidebarClass::UpdateStrips(aP1, a2); /*0x6d09af*/
 }

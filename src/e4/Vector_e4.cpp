@@ -16,7 +16,7 @@ void Vector::Math_Vector2D_Magnitude()
   double result; // st7
 
   result = (double)this->Vector_field_0x4; /*0x4c1b50*/
-  Math::Sqrt((double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0 + result * result); /*0x4c1b69*/
+    result = Math::Sqrt((double)*this * (double)*this + (double)*((unsigned int *)this + 4) * (double)*((unsigned int *)this + 4));
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }
@@ -28,13 +28,13 @@ void Vector::Cleanup(void *a1 = 0)
   int result; // eax
 
   result = *(unsigned int *)&this->q004; /*0x512d36*/
-  if ( result && this->u8_D ) /*0x512d3d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x512d43*/
-    *(unsigned int *)&this->q004 = 0; /*0x512d4b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->u8_D = 0; /*0x512d4e*/
-  *(unsigned int *)&this->q008 = 0; /*0x512d51*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
   return result; /*0x512d54*/
 }
 }
@@ -45,13 +45,13 @@ void Vector::Destructor(void *a1 = 0)
   int result; // eax
 
   result = *(unsigned int *)&this->q004; /*0x513106*/
-  if ( result && this->u8_D ) /*0x51310d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x513113*/
-    *(unsigned int *)&this->q004 = 0; /*0x51311b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->u8_D = 0; /*0x51311e*/
-  *(unsigned int *)&this->q008 = 0; /*0x513121*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
   return result; /*0x513124*/
 }
 }
@@ -61,15 +61,15 @@ void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
   int result; // eax
 
-  this->IsInitialized = a3 * this->q004 /*0x5ae8ab*/
+    *((unsigned int *)this + 12) = a3 * *((unsigned int *)this + 4) + a4 * *((unsigned int *)this + 8) + a2 * *this + *((unsigned int *)this + 12);
                        + a4 * this->q008
                        + a2 * *(float *)this
                        + this->IsInitialized;
-  this->u32_1C = a2 * this->q010 /*0x5ae8ca*/
+    *((unsigned int *)this + 28) = a2 * *((unsigned int *)this + 16) + a3 * *((unsigned int *)this + 20) + a4 * *((unsigned int *)this + 24) + *((unsigned int *)this + 28);
                        + a3 * this->u32_14
                        + a4 * this->u32_18
                        + this->u32_1C;
-  this->q00B = a2 * this->q008 /*0x5ae8e9*/
+    *((unsigned int *)this + 44) = a2 * *((unsigned int *)this + 32) + a3 * *((unsigned int *)this + 36) + a4 * *((unsigned int *)this + 40) + *((unsigned int *)this + 44);
                         + a3 * this->u32_24
                         + a4 * this->q00A
                         + this->q00B;
@@ -83,13 +83,13 @@ void Vector::Cleanup2()
   int result; // eax
 
   result = *(unsigned int *)&this->q004; /*0x67abe6*/
-  if ( result && this->u8_D ) /*0x67abed*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x67abf3*/
-    *(unsigned int *)&this->q004 = 0; /*0x67abfb*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->u8_D = 0; /*0x67abfe*/
-  *(unsigned int *)&this->q008 = 0; /*0x67ac01*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
   return result; /*0x67ac04*/
 }
 }
@@ -100,8 +100,8 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
   double v3; // st7
   double v5; // [esp+Ch] [ebp-8h]
 
-  v5 = Math::Sqrt(*this * *this + (unsigned int)(this->q004)* this->q004); /*0x41c307*/
-  v3 = Math::CalcAngle(this->q008, v5); /*0x41c31a*/
+    v5 = Math::Sqrt(*this * *this + *((unsigned int *)this + 4) * *((unsigned int *)this + 4));
+    v3 = Math::CalcAngle(*((unsigned int *)this + 8), v5);
   *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x41c338*/
   return a2; /*0x41c337*/
 }
@@ -113,12 +113,12 @@ void Vector::Clear(void *a1 = 0)
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this->q008; /*0x43ae53*/
+    if ( *((unsigned char *)this + 32) )
   if ( (unsigned char)result ) /*0x43ae58*/
     RA2_OPDEL(); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
-  *(unsigned int *)&this->q004 = 0; /*0x43ae6b*/
-  *(unsigned int *)&this->q008 = 0; /*0x43ae72*/
+    *((unsigned int *)this + 16) = 0;
+    *((unsigned char *)this + 32) = 0;
   return result; /*0x43ae76*/
 }
 } // namespace gamemd
@@ -131,7 +131,7 @@ int Vector::RemoveAt()
   AbstractClass * result;
   char *v4; // edx
 
-  Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
+    v2 = *((unsigned int *)this + 16);
   result = aP1; /*0x45ae13*/
   if ( aP1 >= (gamemd::AbstractClass *)((int))Vector_field_0x10 ) /*0x45ae19*/
   {
@@ -146,7 +146,7 @@ int Vector::RemoveAt()
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)(unsigned int)(this->Vector_field_0x4)+ result - 1) = *((unsigned int *)(unsigned int)(this-)>Vector_field_0x4 + result); /*0x45ae2b*/
+              *(unsigned int *)(*((unsigned int *)this + 4) + 4 * (unsigned int)v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 4) + 4 * (unsigned int)v3);
       }
       while ( result < (gamemd::AbstractClass *)((int))this->Vector_field_0x10 ); /*0x45ae34*/
     }
@@ -171,17 +171,17 @@ void Vector::ReallocDynamic(void *a1 = 0)
   v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+    for ( i = 0; i < *((unsigned int *)this + 16); *(unsigned int *)&v3[v5 + 4] = v6[1] )
   {
     v5 = 8 * i; /*0x4d2e79*/
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x4d2e82*/
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   RA2_OPDEL(); /*0x4d2e9b*/
-  v7 = a2 + v3->vtable3; /*0x4d2ea6*/
+    v7 = a2 + *((unsigned int *)this + 32);
   *(unsigned int *)v3 = v3; /*0x4d2ea8*/
-  v3->vtable3 = v7; /*0x4d2eaa*/
-  v3->uniqueId = 0; /*0x4d2ead*/
+    *((unsigned int *)this + 32) = v7;
+    *((unsigned int *)this + 64) = 0;
   return 1; /*0x4d2eb4*/
 }
 } // namespace gamemd
@@ -198,7 +198,7 @@ int Vector::Find(unsigned int * a2)
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4e055e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= (int)(v2) ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -210,7 +210,7 @@ int Vector::Find(unsigned int * a2)
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->q004 + 16); /*0x76f0bd*/
+    return *((unsigned int *)this + 8) < *(unsigned int *)(*((unsigned int *)this + 4) + 16);
 }
 } // namespace gamemd
 
@@ -224,7 +224,7 @@ char Vector::Grow()
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *(unsigned int *)this->__pad_0; /*0x7aeec4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
+    if ( *this < *((unsigned int *)this + 4) )
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -235,14 +235,14 @@ char Vector::Grow()
   }
   v5 = (void *)RA2_OPNEW(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
-  if ( this->Vector_field_0x8 ) /*0x7aef13*/
+    if ( *((unsigned int *)this + 8) )
   {
-    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+        qmemcpy(v5, (const void *)*((unsigned int *)this + 8), 4 * *this);
     v4 = v6; /*0x7aef31*/
   }
   RA2_OPDEL(this->Vector_field_0x8); /*0x7aef39*/
-  this->Vector_field_0x4 = (void *)v4; /*0x7aef41*/
-  this->Vector_field_0x8 = v5; /*0x7aef44*/
+    *((unsigned int *)this + 4) = v4;
+    *((unsigned int *)this + 8) = (int)v5;
   return 1; /*0x7aeecf*/
 }
 } // namespace gamemd

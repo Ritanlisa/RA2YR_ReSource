@@ -2479,12 +2479,12 @@ int E4Recv_578B70::sub_578B70(short * a2)
   unsigned int v12; // ecx
   int v13; // eax
 
-  v2 = *(&this->nextArrayIndex4); /*0x578b77*/
-  v3 = *(&this->nextArrayIndex3); /*0x578b80*/
-  v4 = v2 + *(&this->nextArrayIndex1) - v3; /*0x578b89*/
+    v2 = *((unsigned int *)this + 256);
+    v3 = *((unsigned int *)this + 252);
+    v4 = v2 + *((unsigned int *)this + 244) - v3;
   v5 = v2 + v3 + 1; /*0x578b8b*/
-  v6 = *(&this->nextArrayIndex5); /*0x578b8f*/
-  v7 = *(&this->nextArrayIndex6); /*0x578b95*/
+    v6 = *((unsigned int *)this + 260);
+    v7 = *((unsigned int *)this + 264);
   v8 = *a2; /*0x578bac*/
   v9 = a2[1]; /*0x578baf*/
   v10 = (v8 + v4 - ((2 * v6 - 1) % 3 != 0) - v5 - v9) / ((2 * v6 - 1) / 3); /*0x578bf4*/
@@ -2510,11 +2510,11 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * v9, int a3)
   int16_t v8; // [esp+12h] [ebp-Eh]
   int v9; // [esp+28h] [ebp+8h]
 
-  v3 = ((2 * this->u32_41 - 1) % 3 != 0) + (2 * this->u32_41 - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
-  v4 = this->q040; /*0x578ccc*/
-  v5 = ((2 * this->u32_108 - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * this->u32_108 - 1) / 3); /*0x578cd8*/
-  v6 = this->u32_FC; /*0x578cda*/
-  v8 = v4 + this->q03D - v6; /*0x578cf0*/
+    v3 = ((2 * *((unsigned int *)this + 260) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 260) - 1) / 3 * ((a3 - 1) % 3);
+    v4 = *((unsigned int *)this + 256);
+    v5 = ((2 * *((unsigned int *)this + 264) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 264) - 1) / 3);
+    v6 = *((unsigned int *)this + 252);
+    v8 = v4 + *((unsigned int *)this + 244) - v6;
   IDA_LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
   IDA_HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
   *v9 = v9; /*0x578d4b*/

@@ -257,7 +257,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v30 += v11->q01C + 3; /*0x5315bb*/
   TextRenderer::Printf((int)v32, v18, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
   Frame::Present(g_DSurface_Hidden, 10, (int)v4, v13, 0, v26, a3, a1); /*0x5315e4*/
-  qword_A8F788 = this->Audio::Callback() + 5000; /*0x5315f6*/
+    *(unsigned long long *)&dword_A8ED54[653] = v20 + 5000;
   if ( v4 ) /*0x531603*/
     RA2_OPDEL(v4); /*0x531606*/
   v19 = Block; /*0x53160e*/
@@ -303,8 +303,8 @@ char BulkData_Initialize()
   {
     return 0; /*0x5318a7*/
   }
-  this->Event::Dispatch(); /*0x5316f9*/
-  this->Event::Dispatch(); /*0x5316fe*/
+    Event::Dispatch();
+    Event::Dispatch();
   MouseClass::LoadTypeData((MouseClass *)&stru_87F5F0.__pad_58[416]); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
   BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
@@ -331,7 +331,7 @@ char BulkData_Initialize()
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
   {
   LABEL_11:
-    this->Debug::Log(); /*0x53178f*/
+        Debug::Log();
   LABEL_12:
     *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x53179c*/
     v9 = 0; /*0x5317a8*/
@@ -351,7 +351,7 @@ char BulkData_Initialize()
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
   {
   LABEL_16:
-    this->Debug::Log(); /*0x531805*/
+        Debug::Log();
     *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x531819*/
     v12 = 0; /*0x531821*/
     Vector::Clear((int)v11); /*0x531828*/

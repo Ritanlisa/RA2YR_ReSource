@@ -13,14 +13,14 @@ int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
 {
   int (__thiscall *result)(int); // eax
 
-  (*(void (**)(void))(this->u32_D4 + 40))(); /*0x4025b9*/
-  if ( (this->u8_A4 & 5) != 0 ) /*0x4025c3*/
-    (*(void (**)(int))(this->u32_D4 + 16))(this); /*0x4025cd*/
-  (*(void (**)(int))(this->u32_D4 + 44))(this); /*0x4025d8*/
-  result = *(int (**)(int))(&this->u32_488); /*0x4025db*/
+    (*(void (**)(void))(*((unsigned int *)this + 848) + 40))();
+    if ( (*((unsigned char *)this + 656) & 5) != 0 )
+        (*(void (**)(int))(*((unsigned int *)this + 848) + 16))(this);
+    (*(void (**)(int))(*((unsigned int *)this + 848) + 44))(this);
+    result = *(int (**)(int))((char *)this + 752);
   if ( result ) /*0x4025e3*/
     result = (int (__thiscall *)(int))result(this); /*0x4025e7*/
-  this->u32_168 = 0; /*0x4025e9*/
+    *((unsigned int *)this + 1440) = 0;
   return result; /*0x4025f3*/
 }
 } // namespace gamemd
@@ -31,21 +31,21 @@ int Voice::DetachChannel()
   int v2; // ecx
   int result; // eax
 
-  v2 = this->q02C; /*0x404146*/
+    v2 = *((unsigned int *)this + 704);
   if ( v2 && this == *(unsigned int *)(v2 + 192) ) /*0x404156*/
   {
-    if ( (this->u32_18 & 2) != 0 ) /*0x40415c*/
+        if ( (*((unsigned char *)this + 96) & 2) != 0 )
       Voice::Stop(v2); /*0x40415e*/
-    AudioStream::ReleaseChannel(this->q02C); /*0x404169*/
-    *(unsigned int *)(this->q02C + 192) = 0; /*0x404174*/
-    *(unsigned int *)(this->q02C + 188) = 0; /*0x404180*/
-    *(unsigned int *)(this->q02C + 180) = 0; /*0x40418c*/
-    *(unsigned int *)(this->q02C + 184) = 0; /*0x404198*/
-    *(unsigned int *)(this->q02C + 144) = 0; /*0x4041a4*/
-    *(unsigned int *)(this->q02C + 152) = 0; /*0x4041b0*/
-    result = this->q02C; /*0x4041b6*/
+        AudioStream::ReleaseChannel(*((unsigned int *)this + 704));
+        *(unsigned int *)(*((unsigned int *)this + 704) + 192) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 704) + 188) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 704) + 180) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 704) + 184) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 704) + 144) = 0;
+        *(unsigned int *)(*((unsigned int *)this + 704) + 152) = 0;
+        result = *((unsigned int *)this + 704);
     *(unsigned int *)(result + 156) = 0; /*0x4041bc*/
-    this->q02C = 0; /*0x4041c2*/
+        *((unsigned int *)this + 704) = 0;
   }
   return result; /*0x4041c8*/
 }

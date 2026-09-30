@@ -22,25 +22,25 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
   if ( !(unsigned char)result ) /*0x7af54b*/
   {
     v5 = 0; /*0x7af554*/
-    this->M28 = this->M28; /*0x7af556*/
+        *((unsigned int *)this + 28) = *((unsigned int *)this + 16);
     result = *a3; /*0x7af55d*/
     if ( *a3 >= 16 && result < 364 && (v6 = a3[1], v6 >= 20) && v6 < 136 /*0x7af5bc*/
       || result >= 130 && result < 300 && (v7 = a3[1], v7 >= 100) && v7 < 216
       || result >= 175 && result < 245 && (v8 = a3[1], v8 >= 216) && v8 < 262 )
     {
-      result = this->M20; /*0x7af60d*/
+            result = *((unsigned int *)this + 20);
       v5 = 2; /*0x7af610*/
-      this->M20 = result; /*0x7af615*/
+            *((unsigned int *)this + 28) = result;
     }
     else if ( result >= 252 && result < 466 && (v9 = a3[1], v9 >= 180) && v9 < 382 /*0x7af5fe*/
            || result >= 212 && result < 496 && (v10 = a3[1], v10 >= 262) && v10 < 422 )
     {
       v5 = 3; /*0x7af603*/
-      this->M28 = this->M28; /*0x7af608*/
+            *((unsigned int *)this + 28) = *((unsigned int *)this + 24);
     }
-    if ( this->? != (void *)v5 ) /*0x7af61b*/
+        if ( *((unsigned int *)this + 12) != v5 )
     {
-      *(void **)&this->M12 = (void *)v5; /*0x7af626*/
+            *((unsigned int *)this + 12) = v5;
       return InvalidateRect(hWnd, 0, 0); /*0x7af629*/
     }
   }

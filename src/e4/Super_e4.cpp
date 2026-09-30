@@ -12,9 +12,9 @@ int Super::GetDefaultTimer()
 {
   int result; // eax
 
-  result = (int)this->field_24; /*0x6cc260*/
+    result = *((unsigned int *)this + 36);
   if ( result == -1 ) /*0x6cc266*/
-    return *((unsigned int *)this->field_28 + 44); /*0x6cc26b*/
+        return *(unsigned int *)(*((unsigned int *)this + 40) + 176);
   return result; /*0x6cc271*/
 }
 }

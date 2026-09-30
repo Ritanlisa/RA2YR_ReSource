@@ -13,7 +13,7 @@ void E4Recv_74F620::sub_74F620()
 {
   int i; // eax
 
-  for ( i = 0; i <= (int)this->AbstractClass; *((unsigned int *)this->M8 + i - 1) = 0 ) /*0x74f626*/
+    for ( i = 0; i <= *(unsigned int *)this; *(unsigned int *)(*((unsigned int *)this + 2) + 4 * i - 4) = 0 )
     ++i; /*0x74f62b*/
   __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(); /*0x74f639*/
 }
@@ -32,7 +32,7 @@ char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
   if ( aP1 >= (gamemd::DynamicVector *)(uniqueId) ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
   v4 = uniqueId - 1; /*0x74f6fb*/
-  this->M16 = v4; /*0x74f6fe*/
+    *((unsigned int *)this + 16) = v4;
   if ( aP1 < (gamemd::DynamicVector *)(v4) ) /*0x74f701*/
   {
     do /*0x74f714*/

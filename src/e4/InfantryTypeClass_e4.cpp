@@ -34,55 +34,55 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char* a1)
   int i; // eax
 
   TechnoTypeClass::ReadINI(aP1, 0); /*0x5236ae*/
-  this->ArrayIndex = -1; /*0x5236b3*/
-  this->qDFC = 1; /*0x5236bd*/
-  this->qE00 = 7; /*0x5236c7*/
-  this->qE3C = 0; /*0x5236d1*/
-  this->qE40 = 0; /*0x5236d7*/
-  this->qE44 = 0; /*0x5236e3*/
-  this->qE48 = 0; /*0x5236ea*/
-  this->qE4C = 0; /*0x5236f3*/
+    *((unsigned int *)this + 14304) = -1;
+    *((unsigned int *)this + 14320) = 1;
+    *((unsigned int *)this + 14336) = 7;
+    *((unsigned int *)this + 14576) = 0;
+    *((unsigned int *)this + 14592) = 0;
+    *((unsigned int *)this + 14608) = 0;
+    *((unsigned int *)this + 14624) = 0;
+    *((unsigned int *)this + 14640) = 0;
   AnimTypeVector::Constructor((unsigned int *)(&this->q5B84), 0, 0); /*0x5236f9*/
-  this->qE60 = 0; /*0x523703*/
-  this->u32_E64 = 10; /*0x523706*/
-  *(void **)&this->qE50 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x523709*/
+    *((unsigned int *)this + 14720) = 0;
+    *((unsigned int *)this + 14736) = 10;
+    *((unsigned int *)this + 14656) = &vt_TypeList_AnimTypeClass_const;
   AnimTypeVector::Constructor((unsigned int *)(&this->q5C42), 0, 0); /*0x523719*/
-  this->u32_E80 = 10; /*0x52371e*/
-  this->u32_E7C = 0; /*0x523721*/
-  *(void **)&this->qE6C = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x523724*/
+    *((unsigned int *)this + 14848) = 10;
+    *((unsigned int *)this + 14832) = 0;
+    *((unsigned int *)this + 14768) = &vt_TypeList_AnimTypeClass_const;
   VectorClass::Construct((unsigned int *)(&this->u32_5D00), 0, 0); /*0x523734*/
-  this->u32_E9C = 10; /*0x523739*/
-  this->u32_E98 = 0; /*0x52373c*/
-  *(void **)&this->qE88 = (void*)&TypeList_int_vftable; /*0x52373f*/
-  this->qEA4 = -1; /*0x523748*/
-  this->qEA8 = -1; /*0x52374e*/
-  this->qEAC = 0; /*0x523754*/
-  this->qEAD = 0; /*0x52375a*/
-  this->qEAE = 0; /*0x523760*/
+    *((unsigned int *)this + 14960) = 10;
+    *((unsigned int *)this + 14944) = 0;
+    *((unsigned int *)this + 14880) = &vt_TypeList_int;
+    *((unsigned int *)this + 14992) = -1;
+    *((unsigned int *)this + 15008) = -1;
+    *((unsigned char *)this + 15024) = 0;
+    *((unsigned char *)this + 15028) = 0;
+    *((unsigned char *)this + 15032) = 0;
   this->qEB0 = (unsigned int)(0);
   this->qEB4 = (unsigned int)(0);
   this->qEB5 = (unsigned int)(0);
   this->HarvestRate = (unsigned int)(1);
   this->qEBC = (unsigned int)(0);
-  this->qEBD = 1; /*0x523788*/
-  this->qEBE = 0; /*0x52378f*/
-  this->qEBF = 0; /*0x523795*/
-  this->qEC0 = 0; /*0x52379b*/
-  this->qEC1 = 0; /*0x5237a1*/
-  this->qEC2 = 0; /*0x5237a7*/
-  this->qEC3 = 0; /*0x5237ad*/
-  this->qEC4 = 0; /*0x5237b6*/
-  this->qEC5 = 0; /*0x5237bc*/
-  this->qEC6 = 0; /*0x5237c3*/
+    *((unsigned char *)this + 15092) = 1;
+    *((unsigned char *)this + 15096) = 0;
+    *((unsigned char *)this + 15100) = 0;
+    *((unsigned char *)this + 15104) = 0;
+    *((unsigned char *)this + 15108) = 0;
+    *((unsigned char *)this + 15112) = 0;
+    *((unsigned char *)this + 15116) = 0;
+    *((unsigned char *)this + 15120) = 0;
+    *((unsigned char *)this + 15124) = 0;
+    *((unsigned char *)this + 15128) = 0;
   this->qEC7 = (unsigned int)(0);
   this->qEC8 = (unsigned int)(0);
   this->qEC9 = (unsigned int)(1);
   this->qECA = (unsigned int)(0);
   this->qECB = (unsigned int)(0);
   *(unsigned int *)this = (void*)&InfantryTypeClass_vftable; /*0x5237e8*/
-  this->vtable2 = (void*)&InfantryTypeClass_vftable; /*0x5237ee*/
-  this->vtable3 = (void*)&InfantryTypeClass_vftable; /*0x5237f4*/
-  this->vtable4 = (void*)&InfantryTypeClass_vftable; /*0x5237fb*/
+    *((unsigned int *)this + 16) = &InfantryTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &InfantryTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_InfantryTypeClass;
   this->vtable2.GenerateUniqueID(); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
@@ -124,33 +124,33 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char* a1)
   this->u32_E18 = (unsigned int)((void *)(0));
   this->u8_E1C = (unsigned char)((void *)(0));
   this->qE10 = (void *)((unsigned int)(0));
-  this->EliteOccupyWeapon = 0; /*0x5238b4*/
-  this->qE30 = 0; /*0x5238ba*/
-  this->u32_E24 = 0; /*0x5238c0*/
-  this->u32_E34 = 0; /*0x5238c3*/
-  this->u8_E38 = 0; /*0x5238c9*/
-  this->RotCount = 8; /*0x5238cf*/
-  this->u32_E28 = 0; /*0x5238d9*/
-  this->qC9B = 0; /*0x5238dc*/
-  this->q22D = 1; /*0x5238e2*/
-  this->Repairable = 0; /*0x5238e9*/
-  this->u32_E2C = 0; /*0x5238ef*/
-  this->Crewed = 0; /*0x5238f2*/
-  this->u8_D35 = 0; /*0x5238f8*/
-  this->u8_D36 = 0; /*0x5238fe*/
-  this->u8_D3B = 0; /*0x523904*/
-  this->SpawnRegenRate = 1; /*0x52390a*/
-  this->DisableShadowCache = 1; /*0x523911*/
-  this->DisableVoxelCache = 0; /*0x523918*/
-  this->u8_D2E = 0; /*0x52391e*/
+    *((unsigned int *)this + 14464) = 0;
+    *((unsigned int *)this + 14528) = 0;
+    *((unsigned int *)this + 14480) = 0;
+    *((unsigned int *)this + 14544) = 0;
+    *((unsigned char *)this + 14560) = 0;
+    *((unsigned int *)this + 7264) = 8;
+    *((unsigned int *)this + 14496) = 0;
+    *((unsigned char *)this + 12908) = 0;
+    *((unsigned char *)this + 2228) = 1;
+    *((unsigned char *)this + 13104) = 0;
+    *((unsigned int *)this + 14512) = 0;
+    *((unsigned char *)this + 13108) = 0;
+    *((unsigned char *)this + 13524) = 0;
+    *((unsigned char *)this + 13528) = 0;
+    *((unsigned char *)this + 13548) = 0;
+    *((unsigned char *)this + 13536) = 1;
+    *((unsigned char *)this + 13916) = 1;
+    *((unsigned char *)this + 13912) = 0;
+    *((unsigned char *)this + 13496) = 0;
   this->qE3C = RA2_OPNEW(0x5E8u); /*0x52392c*/
-  for ( i = 0; i < 1512; *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 20) = 0 ) /*0x523932*/
+    for ( i = 0; i < 1512; *(unsigned int *)(i + *((unsigned int *)this + 14576) - 20) = 0 )
   {
     i += 36; /*0x52393a*/
-    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 36) = 0; /*0x523942*/
-    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 32) = 0; /*0x52394c*/
-    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 28) = 0; /*0x523956*/
-    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 24) = -1; /*0x523960*/
+        *(unsigned int *)(i + *((unsigned int *)this + 14576) - 36) = 0;
+        *(unsigned int *)(i + *((unsigned int *)this + 14576) - 32) = 0;
+        *(unsigned int *)(i + *((unsigned int *)this + 14576) - 28) = 0;
+        *(unsigned int *)(i + *((unsigned int *)this + 14576) - 24) = -1;
   }
   return (gamemd::InfantryTypeClass **)(this);
 }
@@ -160,14 +160,14 @@ namespace gamemd {
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
   ((TechnoTypeClass *)(aP1))->Construct(); /*0x523988*/
-  *(unsigned int *)&this->qE50 = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523992*/
+    *((unsigned int *)this + 3664) = &vt_TypeList_AnimTypeClass_const;
   this-((unsigned int *)(>DeathAnims))[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523998*/
   this-((unsigned int *)(>VoiceComment))[0] = (int)&TypeList_int_vftable; /*0x52399e*/
-  this->TechnoTypeClass = (void*)&InfantryTypeClass_vftable; /*0x5239a8*/
-  *(void **)&this->vtable2 = (void*)&InfantryTypeClass_vftable; /*0x5239ae*/
-  *(void **)&this->vtable3 = (void*)&InfantryTypeClass_vftable; /*0x5239b5*/
-  *(void **)&this->vtable4 = (void*)&InfantryTypeClass_vftable; /*0x5239bc*/
-  return &this->TechnoTypeClass; /*0x5239c5*/
+    *this = &InfantryTypeClass::`vftable';
+    *((unsigned int *)this + 4) = &InfantryTypeClass::`vftable';
+    *((unsigned int *)this + 8) = &InfantryTypeClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_InfantryTypeClass;
+    return this;
 }
 } // namespace gamemd
 // 0x523B40
@@ -347,8 +347,8 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
                                             v45);
   TypeList::Copy((TypeList *)(v4 + 3720), INIClassIntList); /*0x5241b8*/
   v11 = INIClassIntList; /*0x5241bd*/
-  *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
-  *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
+    *((unsigned int *)this + 14944) = INIClassIntList[1].vtable0;
+    *((unsigned int *)this + 14960) = v10[1].Items;
   *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
   *(unsigned int *)v48.__pad_0 = (void*)&VectorClass_int_vftable; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
@@ -737,11 +737,11 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
   void *v6; // eax
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  this->TechnoTypeClass = (void*)&InfantryTypeClass_vftable; /*0x524d76*/
-  *(void **)&this->vtable2 = (void*)&InfantryTypeClass_vftable; /*0x524d7c*/
-  *(void **)&this->vtable3 = (void*)&InfantryTypeClass_vftable; /*0x524d83*/
-  *(void **)&this->vtable4 = (void*)&InfantryTypeClass_vftable; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer(&this->TechnoTypeClass, 1); /*0x524d91*/
+    *(unsigned int *)Block = &InfantryTypeClass::`vftable';
+    *(unsigned int *)(Block + 4) = &InfantryTypeClass::`vftable';
+    *(unsigned int *)(Block + 8) = &InfantryTypeClass::`vftable';
+    *(unsigned int *)(Block + 12) = &vt_InfantryTypeClass;
+    AbstractClass::AnnounceExpiredPointer((void **)Block, 1);
   v8 = this; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/
@@ -753,35 +753,35 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
     }
     while ( v3 < dword_A8E358 ); /*0x524ddd*/
   }
-  RA2_OPDEL((void *)this->Sequence[0]); /*0x524de7*/
-  this->Sequence[0] = 0; /*0x524df1*/
-  v4 = (void *)this->VoiceComment[1]; /*0x524df7*/
-  this->VoiceComment[0] = (int)&VectorClass_int_vftable; /*0x524dff*/
-  if ( v4 && IDA_BYTE1(this->VoiceComment_FlagByte) ) /*0x524e0b*/
+    OperatorDelete(*(void **)(Block + 3644));
+    *(unsigned int *)(Block + 3644) = 0;
+    v4 = *(void **)(Block + 3724);
+    *(unsigned int *)(Block + 3720) = &vt_VectorClass_int;
+    if ( v4 && *(unsigned char *)(Block + 3733) )
   {
     RA2_OPDEL(v4); /*0x524e14*/
-    *(unsigned int *)&this->VoiceComment_Items = 0; /*0x524e1c*/
+        *(unsigned int *)(Block + 3724) = 0;
   }
-  IDA_BYTE1(this->VoiceComment[3]) = 0; /*0x524e22*/
-  this->VoiceComment[2] = 0; /*0x524e28*/
-  v5 = (void *)this->DeathAnims[1]; /*0x524e2e*/
-  this->DeathAnims[0] = (int)&VectorClass_AnimTypeClass_const___vftable; /*0x524e34*/
-  if ( v5 && IDA_BYTE1(this->DeathAnims_FlagByte) ) /*0x524e42*/
+    *(unsigned char *)(Block + 3733) = 0;
+    *(unsigned int *)(Block + 3728) = 0;
+    v5 = *(void **)(Block + 3696);
+    *(unsigned int *)(Block + 3692) = &vt_VectorClass_AnimTypeClass_const;
+    if ( v5 && *(unsigned char *)(Block + 3705) )
   {
     RA2_OPDEL(v5); /*0x524e4b*/
-    *(unsigned int *)&this->DeathAnims_Items = 0; /*0x524e53*/
+        *(unsigned int *)(Block + 3696) = 0;
   }
-  IDA_BYTE1(this->DeathAnims[3]) = 0; /*0x524e59*/
-  this->DeathAnims[2] = 0; /*0x524e5f*/
-  v6 = (void *)this->DeadBodies[1]; /*0x524e65*/
-  this->DeadBodies[0] = (int)&VectorClass_AnimTypeClass_const___vftable; /*0x524e6b*/
-  if ( v6 && IDA_BYTE1(this->DeadBodies_FlagByte) ) /*0x524e79*/
+    *(unsigned char *)(Block + 3705) = 0;
+    *(unsigned int *)(Block + 3700) = 0;
+    v6 = *(void **)(Block + 3668);
+    *(unsigned int *)(Block + 3664) = &vt_VectorClass_AnimTypeClass_const;
+    if ( v6 && *(unsigned char *)(Block + 3677) )
   {
     RA2_OPDEL(v6); /*0x524e82*/
-    *(unsigned int *)&this->DeadBodies_Items = 0; /*0x524e8a*/
+        *(unsigned int *)(Block + 3668) = 0;
   }
-  IDA_BYTE1(this->DeadBodies[3]) = 0; /*0x524e92*/
-  this->DeadBodies[2] = 0; /*0x524e98*/
+    *(unsigned char *)(Block + 3677) = 0;
+    *(unsigned int *)(Block + 3672) = 0;
   TechnoTypeClass::DTOR(); /*0x524e9e*/
   if ( (a2 & 1) != 0 ) /*0x524eaa*/
     RA2_OPDEL(); /*0x524ead*/
@@ -797,36 +797,36 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 
   if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
+    (*(void (**)(unsigned int *))(*(char *)this + 48))(this);
   v3 = (void *)aP1[2]; /*0x524f31*/
-  *(void **)&this->vtable3 = v3; /*0x524f36*/
+    *((unsigned int *)this + 8) = v3;
   if ( !v3 ) /*0x524f39*/
   {
-    *(unsigned int *)&this->vtable2 = 0; /*0x524f86*/
-    IDA_BYTE1(this->vtable4) = 0; /*0x524f8d*/
+        *((unsigned int *)this + 4) = 0;
+        *((unsigned char *)this + 13) = 0;
   LABEL_8:
-    this->uniqueId = aP1[4]; /*0x524f91*/
-    this->abstractFlags = aP1[5]; /*0x524f9a*/
-    return &this->TechnoTypeClass; /*0x524f9d*/
+        *((unsigned int *)this + 16) = aP1->field_10;
+        *((unsigned int *)this + 20) = *(unsigned int *)aP1->__pad_14;
+        return this;
   }
   v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x524f43*/
-  *(void **)&this->vtable2 = v4; /*0x524f4b*/
+    *((unsigned int *)this + 4) = v4;
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  vtable2 = *(unsigned int *)&this->vtable3; /*0x524f52*/
+    v5 = *((unsigned int *)this + 8);
   v6 = 0; /*0x524f55*/
-  IDA_BYTE1(this->vtable4) = 1; /*0x524f59*/
+    *((unsigned char *)this + 13) = 1;
   if ( (int)vtable2 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
+        *(unsigned int *)(*((unsigned int *)this + 4) + 4 * v6) = *(unsigned int *)(*(unsigned int *)&aP1->field_1[3] + 4 * v6);
     ++v6; /*0x524f6e*/
   }
   while ( v6 < (int)this->? ); /*0x524f71*/
-  this->uniqueId = aP1[4]; /*0x524f76*/
-  this->abstractFlags = aP1[5]; /*0x524f7c*/
-  return &this->TechnoTypeClass; /*0x524f81*/
+    *((unsigned int *)this + 16) = aP1->field_10;
+    *((unsigned int *)this + 20) = *(unsigned int *)aP1->__pad_14;
+    return this;
 }
 // 0x772FA0
 WeaponTypeClass * * InfantryTypeClass::Find()
@@ -883,10 +883,10 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
   void *v1; // esi
 
   v1 = (void *)(2 * *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1768)); /*0x52476c*/
-  a1->TechnoTypeClass = (void *)85; /*0x524777*/
+    *a1 = 85;
   a1->vtable2 = (void *)85; /*0x524779*/
   *(void **)&a1->vtable3 = v1; /*0x52477c*/
-  return &a1->TechnoTypeClass; /*0x52477f*/
+    return a1;
 }
 // 0x524790
 int InfantryTypeClass::GetGameplayValue()
@@ -935,34 +935,34 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
 
   BuildingTypeClass::ProcessPower(a2); /*0x524849*/
-  Power::TimerProcess(this->Pip[0]); /*0x524857*/
+    Power::TimerProcess(*((unsigned int *)this + 14320));
   Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)this->Sequence[0], 1512); /*0x52486a*/
-  Power::TimerProcess(this->FireUp); /*0x524878*/
-  Power::TimerProcess(this->FireProne); /*0x524886*/
-  Power::TimerProcess(this->VoiceComment[4]); /*0x524894*/
-  Power::TimerProcess(this->DeadBodies[4]); /*0x5248a2*/
-  Power::TimerProcess(this->u32_E7C); /*0x5248b0*/
-  IDA_LOBYTE(v3) = this->Fearless; /*0x5248b5*/
+    Power::TimerProcess(*((unsigned int *)this + 14592));
+    Power::TimerProcess(*((unsigned int *)this + 14608));
+    Power::TimerProcess(*((unsigned int *)this + 14944));
+    Power::TimerProcess(*((unsigned int *)this + 14720));
+    Power::TimerProcess(*((unsigned int *)this + 14832));
+    LOBYTE(v3) = *((unsigned char *)this + 15088);
   Power::FlagProcess((Power *)a2, v3); /*0x5248be*/
-  IDA_LOBYTE(v4) = this->Crawls; /*0x5248c3*/
+    LOBYTE(v4) = *((unsigned char *)this + 15092);
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x5248cc*/
-  IDA_LOBYTE(v5) = this->Infiltrate; /*0x5248d1*/
+    LOBYTE(v5) = *((unsigned char *)this + 15096);
   Power::FlagProcess((Power *)a2, v5); /*0x5248da*/
-  IDA_LOBYTE(v6) = this->Fraidycat; /*0x5248df*/
+    LOBYTE(v6) = *((unsigned char *)this + 15100);
   Power::FlagProcess((Power *)a2, v6); /*0x5248e8*/
-  IDA_LOBYTE(v7) = this->TiberiumProof; /*0x5248ed*/
+    LOBYTE(v7) = *((unsigned char *)this + 15104);
   v8 = Power::FlagProcess((Power *)a2, v7); /*0x5248f6*/
-  IDA_LOBYTE(v8) = this->Civilian; /*0x5248fb*/
+    LOBYTE(v8) = *((unsigned char *)this + 15108);
   Power::FlagProcess((Power *)a2, v8); /*0x524904*/
-  IDA_LOBYTE(v9) = this->C4; /*0x524909*/
+    LOBYTE(v9) = *((unsigned char *)this + 15112);
   Power::FlagProcess((Power *)a2, v9); /*0x524912*/
-  IDA_LOBYTE(v10) = this->Engineer; /*0x524917*/
+    LOBYTE(v10) = *((unsigned char *)this + 15116);
   v11 = Power::FlagProcess((Power *)a2, v10); /*0x524920*/
-  IDA_LOBYTE(v11) = this->Agent; /*0x524925*/
+    LOBYTE(v11) = *((unsigned char *)this + 15120);
   Power::FlagProcess((Power *)a2, v11); /*0x52492e*/
-  IDA_LOBYTE(v12) = this->Thief; /*0x524933*/
+    LOBYTE(v12) = *((unsigned char *)this + 15124);
   Power::FlagProcess((Power *)a2, v12); /*0x52493c*/
-  IDA_LOBYTE(v13) = this->VehicleThief; /*0x524941*/
+    LOBYTE(v13) = *((unsigned char *)this + 15128);
 // 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v13); /*0x52494f*/
 }
@@ -990,5 +990,5 @@ int InfantryTypeClass::GetObjectSize()
 // 0x524D60
 int InfantryTypeClass::GetAuxField()
 {
-  return this->ArrayIndex; /*0x524d66*/
+    return *((unsigned int *)this + 3576);
 }

@@ -26,7 +26,7 @@ namespace gamemd {
 LONG COM::AddRef(int a1)
 {
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a95f*/
-  return InterlockedIncrement(&a1->RefCount); /*0x55a96b*/
+    return InterlockedIncrement((volatile LONG *)(a1 + 20));
 }
 } // namespace gamemd
 // 0x55A970
@@ -36,9 +36,9 @@ LONG COM::ReleaseRef(volatile LONG * a1)
   LONG v1; // esi
 
   --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a980*/
-  v1 = InterlockedDecrement(&a1->RefCount); /*0x55a98d*/
+    v1 = InterlockedDecrement(a1 + 5);
   if ( !v1 && a1 ) /*0x55a995*/
-    (*(void (**)(LocomotionClass *, int))(*(unsigned int *)a1->ILocomotion + 32))(a1, 1); /*0x55a99d*/
+        (*(void (**)(volatile LONG *, int))(*a1 + 32))(a1, 1);
   return v1; /*0x55a9a2*/
 }
 } // namespace gamemd

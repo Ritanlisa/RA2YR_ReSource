@@ -51,6 +51,6 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
   LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     RA2_OPDEL(); /*0x5b1b6d*/
-  return this->LocomotionClass; /*0x5b1b77*/
+    return (MechLocomotionClass *)Block;
 }
 } // namespace gamemd

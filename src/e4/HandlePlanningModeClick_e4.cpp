@@ -15,11 +15,11 @@ BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
   BOOL result; // eax
 
   result = 0; /*0x63db54*/
-  if ( *a2 >= (int)this->AbstractClass && *a2 < (int)((int)this->AbstractClass + (unsigned int)this->M8) ) /*0x63db36*/
+    if ( *a2 >= *this && *a2 < *this + *((unsigned int *)this + 8) )
   {
     v2 = (void *)((int)((void *)(a2[1])));
     vtable1 = (void *)(this->M4);
-    if ( v2 >= (void *)((int))vtable1 && v2 < (int)((int)vtable1 + (unsigned int)this->M12) ) /*0x63db49*/
+        if ( v2 >= v3 && v2 < v3 + *((unsigned int *)this + 12) )
       return 1; /*0x63db2b*/
   }
   return result; /*0x63db50*/

@@ -109,10 +109,10 @@ WaveClass * WaveClass::ddtor(char a2)
   int v3; // eax
   void *v4; // eax
 
-  this->ObjectClass = (void*)&WaveClass_vftable; /*0x763206*/
-  *(void **)&this->vtable2 = (void*)&WaveClass_vftable; /*0x76320c*/
-  *(void **)&this->vtable3 = (void*)&WaveClass_vftable; /*0x763213*/
-  *(void **)&this->vtable4 = &off_7F6BC8; /*0x76321a*/
+    *Block = &WaveClass::`vftable';
+    *(Block + 1) = &WaveClass::`vftable';
+    *(Block + 2) = &vt_WaveClass;
+    *(Block + 3) = &off_7F6BC8;
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &this); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
@@ -125,20 +125,20 @@ WaveClass * WaveClass::ddtor(char a2)
       ++v3; /*0x76325d*/
     }
   }
-  (*(void (**)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x76327e*/
-  v4 = (void *)this->u32_1F4; /*0x763281*/
-  this->WaveClass_field_128 = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
-  if ( v4 && this->u32_1FD ) /*0x76328e*/
+    (*((void (**)(void **))*(Block + 124) + 3))(Block + 124);
+    v4 = *(Block + 125);
+    *(Block + 124) = &vt_VectorClass_CellClass;
+    if ( v4 && *((unsigned char *)Block + 509) )
   {
     RA2_OPDEL(v4); /*0x763296*/
-    this->u32_1F4 = 0; /*0x76329e*/
+        *(Block + 125) = 0;
   }
-  this->u32_1FD = 0; /*0x7632a7*/
-  this->u32_1F8 = 0; /*0x7632ab*/
-  this->ObjectClass::Dtor(); /*0x7632b2*/
+    *((unsigned char *)Block + 509) = 0;
+    *(Block + 126) = 0;
+    ObjectClass::Dtor(Block);
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     RA2_OPDEL(); /*0x7632c1*/
-  return &this->ObjectClass; /*0x7632cb*/
+    return (WaveClass *)Block;
 }
 } // namespace gamemd
 
@@ -159,24 +159,24 @@ char WaveClass::DamageArea(ObjectClass * aP1)
   int v15; // [esp+14h] [ebp-8h]
   int v16; // [esp+18h] [ebp-4h] BYREF
 
-  v3 = *(&this->fallRate7); /*0x75f338*/
+    v3 = *((unsigned int *)this + 468);
   if ( v3 ) /*0x75f340*/
   {
     aP1 = aP1; /*0x75f346*/
     IDA_LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     IDA_HIWORD(aP1) = aP1[1] / 256; /*0x75f372*/
     v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x75f391*/
-    v6 = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*(&this->fallRate7) + 1016))(*(&this->fallRate7), 0); /*0x75f395*/
+        v6 = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*((unsigned int *)this + 468) + 1016))(*((unsigned int *)this + 468), 0);
     v7 = *(unsigned int *)v6; /*0x75f39b*/
     v15 = *(unsigned int *)(*(unsigned int *)v6 + 172); /*0x75f3a9*/
     v16 = *(unsigned int *)(*(unsigned int *)v6 + 152); /*0x75f3ad*/
-    if ( (v5[80] & 0x100) != 0 && *(&this->uniqueId7) >= dword_B725C8 * (*((char *)v5 + 283) + 4) ) /*0x75f3d5*/
+        if ( (*((unsigned int *)v5 + 80) & 0x100) != 0 && *((unsigned int *)this + 188) >= dword_B725C8 * (v5[283] + 4) )
       v8 = v5[58]; /*0x75f3d7*/
     else
       v8 = v5[57]; /*0x75f3df*/
     for ( ; v8; v8 = *(unsigned int *)(v8 + 48) ) /*0x75f3e7*/
     {
-      v9 = *(&this->fallRate7); /*0x75f3e9*/
+            v9 = *((unsigned int *)this + 468);
       if ( v8 != v9 && *(unsigned char *)(v8 + 144) && *(unsigned char *)(v8 + 116) && !*(unsigned char *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
         (*(void (**)(int, int *, unsigned int, int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v8 + 364))( /*0x75f42c*/
           v8,

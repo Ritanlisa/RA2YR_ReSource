@@ -27,31 +27,31 @@ void IsometricTileTypeClass::ProcessPower()
   int v6; // eax
 
   AbstractTypeClass::ProcessPower(a2); /*0x549b79*/
-  Power::TimerProcess(this->u32_294); /*0x549b87*/
-  Power::TimerProcess(this->u32_298); /*0x549b95*/
-  Power::TimerProcess(this->u32_29C); /*0x549ba3*/
-  Power::TimerProcess(this->u32_2A0); /*0x549bb1*/
-  Power::TimerProcess(this->u32_2B4); /*0x549bbf*/
-  v3 = this->u32_2BC; /*0x549bc4*/
+    Power::TimerProcess(*((unsigned int *)this + 2640));
+    Power::TimerProcess(*((unsigned int *)this + 2656));
+    Power::TimerProcess(*((unsigned int *)this + 2672));
+    Power::TimerProcess(*((unsigned int *)this + 2688));
+    Power::TimerProcess(*((unsigned int *)this + 2768));
+    v3 = *((unsigned int *)this + 2800);
   if ( v3 ) /*0x549bcc*/
   {
     v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
-  Power::TimerProcess(this->u32_2C0); /*0x549be9*/
-  Power::TimerProcess(this->u32_2C4); /*0x549bf7*/
-  Power::TimerProcess(this->u32_2D4); /*0x549c05*/
-  Power::TimerProcess(this->u32_2D8); /*0x549c13*/
-  Power::TimerProcess(this->u32_2DC); /*0x549c21*/
-  IDA_LOBYTE(v5) = this->u32_2E0; /*0x549c26*/
+    Power::TimerProcess(*((unsigned int *)this + 2816));
+    Power::TimerProcess(*((unsigned int *)this + 2832));
+    Power::TimerProcess(*((unsigned int *)this + 2896));
+    Power::TimerProcess(*((unsigned int *)this + 2912));
+    Power::TimerProcess(*((unsigned int *)this + 2928));
+    LOBYTE(v5) = *((unsigned char *)this + 2944);
   v6 = Power::FlagProcess((Power *)a2, v5); /*0x549c2f*/
-  IDA_LOBYTE(v6) = this->u32_2E1; /*0x549c34*/
+    LOBYTE(v6) = *((unsigned char *)this + 2948);
   Power::FlagProcess((Power *)a2, v6); /*0x549c3d*/
-  Power::TimerProcess(this->u32_2E4); /*0x549c4b*/
-  Power::TimerProcess(this->u32_2E8); /*0x549c59*/
-  Power::TimerProcess(this->u32_2EC); /*0x549c67*/
+    Power::TimerProcess(*((unsigned int *)this + 2960));
+    Power::TimerProcess(*((unsigned int *)this + 2976));
+    Power::TimerProcess(*((unsigned int *)this + 2992));
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_2F0); /*0x549c7a*/
+    return Power::TimerProcess(*((unsigned int *)this + 3008));
 }
 } // namespace gamemd
 // 0x549C80
@@ -100,11 +100,11 @@ void IsometricTileTypeClass::GetTileIndex()
 {
   int result; // eax
 
-  if ( this->u32_2BC == a2 ) /*0x549ddc*/
-    this->u32_2BC = 0; /*0x549dde*/
-  result = this->u32_2C8; /*0x549de8*/
+    if ( *((unsigned int *)this + 700) == a2 )
+        *((unsigned int *)this + 700) = 0;
+    result = *((unsigned int *)this + 712);
   if ( result != -1 && *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * result) == a2 ) /*0x549e02*/
-    this->u32_2C8 = -1; /*0x549e04*/
+        *((unsigned int *)this + 712) = -1;
   return result; /*0x549e0e*/
 }
 } // namespace gamemd
@@ -112,7 +112,7 @@ void IsometricTileTypeClass::GetTileIndex()
 namespace gamemd {
 int IsometricTileTypeClass::GetAuxField()
 {
-  return this->u32_294; /*0x54a166*/
+    return *((unsigned int *)this + 660);
 }
 } // namespace gamemd
 // 0x549D70
@@ -171,22 +171,22 @@ void IsometricTileTypeClass::ClearBuffer()
   void *v2; // eax
 
   v2 = *(void **)&this->vtable2; /*0x54a196*/
-  *(unsigned int *)&this->q010 = 0; /*0x54a199*/
-  if ( v2 && IDA_BYTE1(this->vtable4) ) /*0x54a1a0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x54a1a6*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x54a1ae*/
+        *((unsigned int *)this + 16) = 0;
   }
-  IDA_BYTE1(this->vtable4) = 0; /*0x54a1b1*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x54a1b4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 // 0x54A1C0
 namespace gamemd {
 unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
-  if ( IDA_LOBYTE(this->vtable4) ) /*0x54a1c0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->vtable2) >> 2; /*0x54a1d5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x54a1c7*/
 }
@@ -202,38 +202,38 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54a3dc*/
   {
-    IDA_LOBYTE(this->vtable4) = 0; /*0x54a3e2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x54a3fa*/
-    IDA_LOBYTE(this->vtable4) = 1; /*0x54a402*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
-    if ( *(unsigned int *)&this->vtable2 ) /*0x54a408*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = *(unsigned int *)&this->vtable3; /*0x54a40f*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x54a421*/
-      if ( IDA_BYTE1(this->vtable4) ) /*0x54a42e*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->vtable2); /*0x54a439*/
-        *(unsigned int *)&this->vtable2 = 0; /*0x54a441*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->vtable2 = v4; /*0x54a44a*/
-    *(unsigned int *)&this->vtable3 = a2; /*0x54a452*/
-    IDA_BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54a45e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = *(unsigned int *)&this->vtable3; /*0x54a461*/
-  if ( v7 < *(unsigned int *)&this->q010 ) /*0x54a469*/
-    *(unsigned int *)&this->q010 = v7; /*0x54a46b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x54a46e*/
 }
 } // namespace gamemd
@@ -245,11 +245,11 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x54a480*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x54a483*/
   if ( m_10 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
-  for ( i = *(unsigned int **)&this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x54a49d*/
       return -1; /*0x54a49d*/
@@ -265,13 +265,13 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
-  if ( v3 && IDA_BYTE1(this->vtable4) ) /*0x54a770*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x54a778*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x54a780*/
+        *(Block + 1) = 0;
   }
-  IDA_BYTE1(this->vtable4) = 0; /*0x54a78b*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x54a791*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     RA2_OPDEL(); /*0x54a79b*/
   return this; /*0x54a7a5*/
@@ -283,8 +283,8 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
   this->IsometricTileTypeClass_field_0x04 = (unsigned int)(0);
   this->IsometricTileTypeClass_field_0x08 = (unsigned int)(a2);
-  IDA_LOBYTE(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a861*/
-  IDA_BYTE1(this->IsometricTileTypeClass_field_0x0C) = 0; /*0x54a865*/
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_short___vftable; /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
@@ -294,7 +294,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       return (unsigned int *)(this->__pad_0);
     }
     this->IsometricTileTypeClass_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-    IDA_BYTE1(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a890*/
+        *((unsigned char *)this + 13) = 1;
   }
   return (unsigned int *)(this->__pad_0);
 }

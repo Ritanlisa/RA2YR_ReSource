@@ -10,8 +10,8 @@
 namespace gamemd {
 int Connection::GetSpeed()
 {
-  if ( this->Initialized && this->Active ) /*0x5422f7*/
-    return *(unsigned int *)(*(unsigned int *)((unsigned int)(this->q048)+ 4) + 56); /*0x542304*/
+    if ( *((unsigned char *)this + 16) && *((unsigned char *)this + 20) )
+        return *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 288) + 4) + 56);
   else
     return 0; /*0x542308*/
 }
@@ -22,7 +22,7 @@ int Connection::Close(void *a1 = 0)
 {
   int result; // eax
 
-  result = (int)this->Connection_field_0x48; /*0x543090*/
+    result = *((unsigned int *)this + 72);
   if ( result ) /*0x543095*/
     *(unsigned char *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/

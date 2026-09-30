@@ -42,7 +42,7 @@ void TextBuffer::Init(int32_t buffer)
     v2 += 4; /*0x5bccb8*/
   }
   while ( v1 < (gamemd::TextBuffer *)(25) ); /*0x5bccbe*/
-  this->q2734 = 1; /*0x5bccc8*/
+    *((unsigned int *)this + 40144) = 1;
 // 0x5bd490
   return Text::DrawRepeated(0, 0, 80, 25); /*0x5bccd4*/
 }

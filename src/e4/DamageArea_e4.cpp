@@ -600,7 +600,7 @@ int DamageArea::CheckOccupancyEligibility()
   v2 = (unsigned int *)this->u32_C; /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (**)(unsigned int))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
+        if ( (*(int (**)(unsigned int))(*v2 + 44))(*((unsigned int *)this + 48)) == 2 )
     {
       if ( (*(int (__stdcall **)(unsigned int *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
@@ -610,7 +610,7 @@ int DamageArea::CheckOccupancyEligibility()
       v2 = 0; /*0x4d019a*/
     }
   }
-  if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/
+    if ( *((unsigned char *)this + 324) || !*((unsigned char *)this + 368) )
     return 1; /*0x4d01c6*/
   if ( !v2 || !*(unsigned char *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
@@ -650,7 +650,7 @@ int DamageArea::CheckOccupancyEligibility()
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(unsigned int *)(this->u32_C + 764) ) /*0x4d0281*/
+        if ( !*(unsigned int *)(*((unsigned int *)this + 48) + 764) )
     {
   LABEL_24:
       if ( v4 ) /*0x4d028d*/
@@ -676,11 +676,11 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, short * a3)
   int v9; // ecx
   int v11; // [esp+20h] [ebp+8h]
 
-  v3 = this->q0F4; /*0x565668*/
-  v4 = this->q0FC; /*0x56566f*/
+    v3 = *((unsigned int *)this + 244);
+    v4 = *((unsigned int *)this + 252);
   v5 = a3[1]; /*0x565676*/
   v6 = *a3; /*0x56567b*/
-  v7 = this->q100; /*0x56567e*/
+    v7 = *((unsigned int *)this + 256);
   v8 = *a3; /*0x565684*/
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/

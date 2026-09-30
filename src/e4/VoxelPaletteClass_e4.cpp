@@ -29,17 +29,17 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v3 = 0; /*0x758a42*/
   if ( !(*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
-  if ( (*(int (**)(int, unsigned int *, int))(a2->q024)(a2, v9, 16) != 16 ) /*0x758a5c*/
+    if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)a2 + 36))(a2, v9, 16) != 16 )
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
   *(unsigned int *)this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
-  this->q020 = v4; /*0x758a70*/
-  v7 = this->u32_10; /*0x758a73*/
-  this->u32_4 = v5; /*0x758a76*/
-  this->u32_C = v6; /*0x758a79*/
-  if ( (*(int (**)(int, int, int))(a2->q024)(a2, v7, 768) != 768 /*0x758aaa*/
+    *((unsigned int *)this + 8) = v4;
+    v7 = *((unsigned int *)this + 16);
+    *((unsigned int *)this + 4) = v5;
+    *((unsigned int *)this + 12) = v6;
+    if ( (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, v7, 768) != 768
     || (*(int (**)(int, unsigned int, unsigned int))(a2->q024)(
          a2,
          this->u32_14,
@@ -48,7 +48,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   LABEL_5:
     v3 = 1; /*0x758aac*/
   }
-  (*(void (**)(int))(a2->q034)(a2); /*0x758ab5*/
+    (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2);
   return v3; /*0x758ab8*/
 }
 } // namespace gamemd

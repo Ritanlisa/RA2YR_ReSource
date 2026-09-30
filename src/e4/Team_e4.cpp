@@ -86,7 +86,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
   v6 = v4; /*0x561188*/
   v20 = v4; /*0x561191*/
   dwNewLong = -1; /*0x561195*/
-  this->Debug::Log(); /*0x56119d*/
+    Debug::Log();
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
   Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v13, v15, v17); /*0x5611c7*/
@@ -103,18 +103,18 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     v12 = a3; /*0x56122f*/
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x561234*/
     Dialog::Show(Dialog); /*0x56123c*/
-    Ticks = this->Timer::GetTicks(); /*0x56124a*/
+        Ticks = Timer::GetTicks();
     v23 = 600; /*0x561254*/
     while ( dwNewLong < 0 ) /*0x56125c*/
     {
-      if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x56126b*/
+            if ( Dialog::PumpMessages() == 1 )
         break; /*0x56126b*/
       IDA_LOBYTE(v9) = 0; /*0x56126d*/
       ScreenSaver::Process(v9, v12); /*0x56126f*/
       v10 = v23; /*0x561278*/
       if ( Ticks != -1 ) /*0x56127f*/
       {
-        v11 = this->Timer::GetTicks() - Ticks; /*0x56128a*/
+                v10 = Timer::GetTicks() - Ticks;
         if ( v11 >= v10 ) /*0x561290*/
           goto LABEL_9; /*0x561290*/
         v10 -= v11; /*0x561292*/
@@ -123,7 +123,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
       {
   LABEL_9:
         PostMessageA((HWND)Dialog, 0x111u, 0x6CAu, 0); /*0x561298*/
-        v24 = this->Timer::GetTicks(); /*0x5612b9*/
+                v21 = Timer::GetTicks();
         v26 = 300; /*0x5612bd*/
         Ticks = v24; /*0x5612c1*/
         v22 = v25; /*0x5612c5*/
@@ -134,13 +134,13 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     if ( dwNewLong == 1 ) /*0x5612e4*/
     {
   LABEL_13:
-      this->Debug::Log(); /*0x561331*/
+            Debug::Log();
       g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56133e*/
       return 1; /*0x561343*/
     }
     else
     {
-      this->Debug::Log(); /*0x5612f8*/
+            Debug::Log();
       ChangeVideoMode(stru_A8EB00.ObjectTypeClass[33], stru_A8EB00.ObjectTypeClass[34]); /*0x56130c*/
       g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56131b*/
       return 0; /*0x561317*/
@@ -322,25 +322,25 @@ Game * * E4Recv_634B20::sub_634B20()
   {
     do /*0x634bf7*/
     {
-      v3 = *(unsigned char **)(this->occupant + 4 * v2); /*0x634b48*/
+            v3 = *(unsigned char **)(*((unsigned int *)this + 36) + 4 * v2);
       qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       IDA_LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
-      this->Debug::Log(); /*0x634b7d*/
-      uniqueId = this->M16; /*0x634b82*/
+            Debug::Log();
+            v4 = *((unsigned int *)this + 16);
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
-        v6 = (unsigned int *)*((unsigned int *)this->? + v5); /*0x634b99*/
+                v6 = *(unsigned int **)(*((unsigned int *)this + 4) + 4 * v5);
         if ( v6[2] == (unsigned int)(v2) ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
           v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))(v7, v16); /*0x634bc3*/
-          this->Debug::Log(); /*0x634bd7*/
+                    Debug::Log();
           v5 = i; /*0x634bdc*/
           uniqueId = v14; /*0x634be0*/
         }
@@ -350,22 +350,22 @@ Game * * E4Recv_634B20::sub_634B20()
     }
     while ( v2 < (gamemd::ObjectClass *)((int))nextObject ); /*0x634bf7*/
   }
-  if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
+    if ( *((unsigned int *)this + 168) > 0 )
   {
-    qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
+        qmemcpy(v18, (char *)this + 56, 0x6Fu);
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
-    this->Debug::Log(); /*0x634c43*/
-    v8 = this->M16; /*0x634c48*/
+        Debug::Log();
+        v8 = *((unsigned int *)this + 16);
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = (unsigned char *)*((unsigned int *)this->M4 + v9); /*0x634c5b*/
+            v10 = *(unsigned char **)(*((unsigned int *)this + 4) + 4 * v9);
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/
         (*(int (**)(unsigned int))(**(unsigned int **)v10 + 136))(*(unsigned int *)v10); /*0x634c6b*/
         (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))(v11, v16); /*0x634c7f*/
-        this->Debug::Log(); /*0x634c9b*/
+                Debug::Log();
         v8 = j; /*0x634ca0*/
       }
     }
@@ -475,7 +475,7 @@ void sub_638B70(int * a1, int a2, char a3, char a4)
 namespace gamemd {
 int Team::GetMember(AbstractClass * aP1)
 {
-  return *((unsigned int *)(unsigned int)(this->field_E4)+ aP1); /*0x65ad3d*/
+    return *(unsigned int *)(*((unsigned int *)this + 228) + 4 * (unsigned int)aP1);
 }
 }
 // 0x65AE30

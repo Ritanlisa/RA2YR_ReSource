@@ -19,9 +19,9 @@ DynamicVector * MapFile::QueryInterface(char a2)
   int v7; // ecx
   int v8; // ebp
 
-  v3 = *(unsigned int *)&this->q004; /*0x69d523*/
+    v3 = *(Block + 1);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_Wstring_vftable; /*0x69d526*/
-  if ( v3 && this->IsAllocated ) /*0x69d530*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
     v5 = (void *)(v3 - 4); /*0x69d53f*/
@@ -39,10 +39,10 @@ DynamicVector * MapFile::QueryInterface(char a2)
       while ( v8 ); /*0x69d558*/
     }
     RA2_OPDEL(v5); /*0x69d55c*/
-    *(unsigned int *)&this->q004 = 0; /*0x69d566*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x69d577*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
     RA2_OPDEL(); /*0x69d581*/
   return this; /*0x69d58b*/
@@ -54,8 +54,8 @@ void MapFile::Constructor(int a1, void* a2, void* a3, void* a4, void* a5, void* 
 {
   this->MapFile_field_0x04 = (unsigned int)(0);
   this->MapFile_field_0x08 = (unsigned int)(a2);
-  IDA_LOBYTE(this->MapFile_field_0x0C) = 1; /*0x69d781*/
-  IDA_BYTE1(this->MapFile_field_0x0C) = 0; /*0x69d785*/
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_enum_DiskID_vftable; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
@@ -65,7 +65,7 @@ void MapFile::Constructor(int a1, void* a2, void* a3, void* a4, void* a5, void* 
       return (unsigned int *)(this->__pad_0);
     }
     this->MapFile_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-    IDA_BYTE1(this->MapFile_field_0x0C) = 1; /*0x69d7b0*/
+        *((unsigned char *)this + 13) = 1;
   }
   return (unsigned int *)(this->__pad_0);
 }

@@ -976,10 +976,10 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
   result = IDA_BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bce10*/
   if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bce1d*/
   {
-    v4 = this->u32_2724; /*0x5bce27*/
-    v5 = this->u32_2728; /*0x5bce2d*/
-    v6 = this->u32_2730; /*0x5bce34*/
-    v7 = this->u32_272C; /*0x5bce3b*/
+        v4 = *((unsigned int *)this + 10020);
+        v5 = *((unsigned int *)this + 10024);
+        v6 = *((unsigned int *)this + 10032);
+        v7 = *((unsigned int *)this + 10028);
     if ( a2 <= 0 ) /*0x5bce44*/
     {
       if ( a2 < 0 ) /*0x5bcef9*/
@@ -988,16 +988,16 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
         if ( v4 < v15 ) /*0x5bceff*/
         {
           v26 = v6 + v5 - 1; /*0x5bcf08*/
-          v16 = (char *)&this->customSound_controller * v4 + 5 * v4; /*0x5bcf0f*/
+                    v16 = (char *)this + 20 * v4 + 5 * v4;
           v17 = 500 - (unsigned int)this; /*0x5bcf1f*/
-          v18 = (ObjectClass *)((char *)&this->customSound_controller * v4 + 20 * v4 + 4 * v5 + 2000); /*0x5bcf23*/
+                    v18 = (char *)this + 80 * v4 + 5 * v4 + v5 + 500;
           v24 = v15 - v4; /*0x5bcf2a*/
           do /*0x5bcf6f*/
           {
             v26 = v26; /*0x5bcf2e*/
             if ( v26 > v5 ) /*0x5bcf34*/
             {
-              v20 = &this->AbstractClass + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
+                            v20 = this + (unsigned int)&v16[v17 + v26];
               do /*0x5bcf50*/
               {
                 --v20; /*0x5bcf41*/
@@ -1021,13 +1021,13 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
     else if ( v4 < v4 + v7 ) /*0x5bce53*/
     {
       v25 = v6 + v5 - 1; /*0x5bce5d*/
-      v8 = (char *)&this->customSound * v4; /*0x5bce67*/
+            v8 = (char *)this + 25 * v4;
       v9 = v5 + v6 + 25 * v4; /*0x5bce6c*/
       v10 = (char *)this + v9 - 1; /*0x5bce72*/
-      v11 = (char *)&this->uniqueId * v9 + 1996; /*0x5bce76*/
+            v11 = this + v9 + 499;
       v22 = v10; /*0x5bce7d*/
-      v23 = this->u32_272C; /*0x5bce97*/
-      v21 = (char *)&this->customSound_controller * v4 + 20 * v4 + 4 * v5 + 2000; /*0x5bce9b*/
+            v23 = *((unsigned int *)this + 10028);
+            v21 = (char *)this + 80 * v4 + 5 * v4 + v5 + 500;
       v12 = v25; /*0x5bce9f*/
       do /*0x5bcef5*/
       {
@@ -1647,7 +1647,7 @@ double * E4Recv_5B1D90::sub_5B1D90()
 
   *(unsigned int *)this = 0; /*0x5b1d9b*/
   v4 = 0; /*0x5b1da1*/
-  this->M4 = 1072693248; /*0x5b1da9*/
+    *((unsigned int *)this + 1) = 1072693248;
   v2 = sub_5CAF70((LONG *)&v4); /*0x5b1db5*/
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
@@ -2016,50 +2016,50 @@ void E4Recv_5B3F50::sub_5B3F50()
   GenericNode *v6; // ecx
   int v7; // eax
 
-  CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)this->Node = (void*)&MixFileClass_vftable; /*0x5b3f59*/
+    v2 = (void *)*((unsigned int *)this + 3);
+    *(unsigned int *)this = &vt_MixFileClass;
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
-  if ( this->MixFileClass_field_24 && IDA_BYTE2(this->FileSize) ) /*0x5b3f73*/
+    if ( *((unsigned int *)this + 9) && *((unsigned char *)this + 18) )
   {
     RA2_OPDEL((void *)this->MixFileClass_field_24); /*0x5b3f79*/
-    IDA_BYTE2(this->FileSize) = 0; /*0x5b3f81*/
+        *((unsigned char *)this + 18) = 0;
   }
-  v3 = *(void **)&this->__pad_1C[4]; /*0x5b3f84*/
-  this->MixFileClass_field_24 = 0; /*0x5b3f87*/
+    v3 = (void *)*((unsigned int *)this + 8);
+    *((unsigned int *)this + 9) = 0;
   if ( v3 ) /*0x5b3f8c*/
   {
     RA2_OPDEL(v3); /*0x5b3f8f*/
-    *(unsigned int *)&this->__pad_1C[4] = 0; /*0x5b3f97*/
+        *((unsigned int *)this + 8) = 0;
   }
   if ( this ) /*0x5b3f9c*/
   {
-    Previous = this->M4; /*0x5b3f9e*/
+        v4 = *((unsigned int *)this + 1);
     if ( Previous ) /*0x5b3fa3*/
     {
-      v5 = *(unsigned int *)&this->Blowfish; /*0x5b3fa5*/
+            v5 = *((unsigned int *)this + 2);
       if ( v5 ) /*0x5b3faa*/
       {
         *(unsigned int *)(v5 + 4) = Previous; /*0x5b3fac*/
-        *(unsigned int *)this->M8.__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fb5*/
-        *(unsigned int *)&this->Blowfish = 0; /*0x5b3fb8*/
-        this->M4 = 0; /*0x5b3fbb*/
+                *(unsigned int *)(*((unsigned int *)this + 1) + 8) = *((unsigned int *)this + 2);
+                *((unsigned int *)this + 2) = 0;
+                *((unsigned int *)this + 1) = 0;
       }
     }
   }
-  *(unsigned int *)this->Node = (void*)&GenericNode_vftable; /*0x5b3fc0*/
+    *(unsigned int *)this = &vt_GenericNode;
   if ( this ) /*0x5b3fc6*/
   {
-    v6 = this->M4; /*0x5b3fc8*/
+        v6 = *((unsigned int *)this + 1);
     if ( v6 ) /*0x5b3fcd*/
     {
-      v7 = *(unsigned int *)&this->Blowfish; /*0x5b3fcf*/
+            v7 = *((unsigned int *)this + 2);
       if ( v7 ) /*0x5b3fd4*/
       {
         *(unsigned int *)(v7 + 4) = v6; /*0x5b3fd6*/
-        *(unsigned int *)this->M8.__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fdf*/
-        *(unsigned int *)&this->Blowfish = 0; /*0x5b3fe2*/
-        this->M4 = 0; /*0x5b3fe5*/
+                *(unsigned int *)(*((unsigned int *)this + 1) + 8) = *((unsigned int *)this + 2);
+                *((unsigned int *)this + 2) = 0;
+                *((unsigned int *)this + 1) = 0;
       }
     }
   }
@@ -2109,10 +2109,10 @@ char ReturnTrue(AnimClass * aP0)
 namespace gamemd {
 void E4Recv_5B4400::sub_5B4400()
 {
-  if ( this->occupant && IDA_BYTE2(this->?) ) /*0x5b440d*/
+    if ( *((unsigned int *)this + 144) && *((unsigned char *)this + 72) )
     RA2_OPDEL((void *)this->occupant); /*0x5b4413*/
-  this->occupant = 0; /*0x5b441b*/
-  IDA_BYTE2(this->?) = 0; /*0x5b441e*/
+    *((unsigned int *)this + 144) = 0;
+    *((unsigned char *)this + 72) = 0;
 }
 } // namespace gamemd
 
@@ -2271,7 +2271,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
-  result = (int)GetDlgItem((HWND)this->AbstractClass, 1344); /*0x5b57ea*/
+    result = GetDlgItem(*this, 1344);
   v3 = (HWND)result; /*0x5b57ec*/
   if ( result ) /*0x5b57f0*/
   {
@@ -2296,7 +2296,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b58f5*/
+                    v8 = *this;
           Format = (wchar_t *)v4; /*0x5b58f6*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
@@ -2324,7 +2324,7 @@ char E4Recv_5B5960::sub_5B5960()
   HWND DlgItem; // eax
   HWND v3; // edi
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1639); /*0x5b596d*/
+    DlgItem = GetDlgItem(*(HWND *)this, 1639);
   v3 = DlgItem; /*0x5b5973*/
   if ( DlgItem ) /*0x5b5977*/
   {
@@ -2332,8 +2332,8 @@ char E4Recv_5B5960::sub_5B5960()
     if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b598e*/
     {
       dword_A8B3AC = SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0); /*0x5b599b*/
-      IDA_BYTE1(this->M8) = 1; /*0x5b59a2*/
-      IDA_LOBYTE(this->M9) = 1; /*0x5b59a5*/
+            *((unsigned char *)this + 36) = 1;
+            *((unsigned char *)this + 32) = 1;
       IDA_LOBYTE(DlgItem) = 1; /*0x5b59a0*/
     }
   }
@@ -2349,7 +2349,7 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
   HWND v4; // esi
   wchar_t lParam[22]; // [esp+8h] [ebp-2Ch] BYREF
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1473); /*0x5b5a5f*/
+    DlgItem = GetDlgItem(*(HWND *)this, 1473);
   v4 = DlgItem; /*0x5b5a65*/
   if ( DlgItem ) /*0x5b5a69*/
   {
@@ -2358,8 +2358,8 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
     if ( !a2 ) /*0x5b5a90*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b5a9f*/
     CopyWideToChar(unk_A8B380, (char *)lParam, -1); /*0x5b5aac*/
-    IDA_BYTE1(this->M8) = 1; /*0x5b5ab4*/
-    IDA_LOBYTE(this->M9) = 1; /*0x5b5ab7*/
+        *((unsigned char *)this + 36) = 1;
+        *((unsigned char *)this + 32) = 1;
     IDA_LOBYTE(DlgItem) = 1; /*0x5b5ab1*/
   }
   return (char)DlgItem; /*0x5b5aba*/
@@ -2392,7 +2392,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     v3 = CharToWideString(unk_A8B380); /*0x5b6e35*/
     v4 = dword_A8B394; /*0x5b6e3d*/
     Format = (wchar_t *)v3; /*0x5b6e49*/
-    DlgItem = GetDlgItem((HWND)this->AbstractClass, 1343); /*0x5b6e53*/
+        DlgItem = GetDlgItem(*this, 1343);
     if ( DlgItem ) /*0x5b6e57*/
     {
       if ( v4 >= 8 ) /*0x5b6e5b*/
@@ -2616,7 +2616,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
   memset(lParam, 0, sizeof(lParam)); /*0x5b9270*/
-  result = (int)GetDlgItem((HWND)this->AbstractClass, 1344); /*0x5b927a*/
+    result = GetDlgItem(*this, 1344);
   v3 = (HWND)result; /*0x5b927c*/
   if ( result ) /*0x5b9280*/
   {
@@ -2641,7 +2641,7 @@ HWND E4Recv_5B9250::sub_5B9250()
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b9385*/
+                    v8 = *this;
           Format = (wchar_t *)v4; /*0x5b9386*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
@@ -2669,7 +2669,7 @@ char E4Recv_5B93F0::sub_5B93F0()
   HWND DlgItem; // eax
   HWND v3; // esi
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1639); /*0x5b93fd*/
+    DlgItem = GetDlgItem(*(HWND *)this, 1639);
   v3 = DlgItem; /*0x5b9403*/
   if ( DlgItem ) /*0x5b9407*/
   {
@@ -2680,8 +2680,8 @@ char E4Recv_5B93F0::sub_5B93F0()
       if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b942e*/
       {
         dword_A8B3AC = (int)DlgItem; /*0x5b9430*/
-        IDA_BYTE1(this->M8) = 1; /*0x5b9437*/
-        IDA_LOBYTE(this->M9) = 1; /*0x5b943a*/
+                *((unsigned char *)this + 36) = 1;
+                *((unsigned char *)this + 32) = 1;
         IDA_LOBYTE(DlgItem) = 1; /*0x5b9435*/
       }
     }
@@ -2697,7 +2697,7 @@ unsigned int E4Recv_5B9450::sub_5B9450()
   unsigned int result; // eax
   HWND v3; // edi
 
-  result = (unsigned int)GetDlgItem((HWND)this->AbstractClass, 1029); /*0x5b945d*/
+    result = (unsigned int)GetDlgItem(*(HWND *)this, 1029);
   v3 = (HWND)result; /*0x5b9463*/
   if ( result ) /*0x5b9467*/
   {
@@ -2705,8 +2705,8 @@ unsigned int E4Recv_5B9450::sub_5B9450()
     if ( result != -1 ) /*0x5b947e*/
     {
       dword_A8B394 = result; /*0x5b9482*/
-      IDA_BYTE1(this->M8) = 1; /*0x5b9489*/
-      IDA_LOBYTE(this->M8) = 1; /*0x5b948c*/
+            *((unsigned char *)this + 36) = 1;
+            *((unsigned char *)this + 32) = 1;
       if ( result >= 8 ) /*0x5b948f*/
         return SendMessageA(v3, 0x498u, 0, (LPARAM)Math::InitDegToRad); /*0x5b94ba*/
       else
@@ -2725,7 +2725,7 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
   HWND v4; // esi
   wchar_t lParam[20]; // [esp+8h] [ebp-28h] BYREF
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1473); /*0x5b94cf*/
+    DlgItem = GetDlgItem(*(HWND *)this, 1473);
   v4 = DlgItem; /*0x5b94d5*/
   if ( DlgItem ) /*0x5b94d9*/
   {
@@ -2734,8 +2734,8 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
     if ( !a2 ) /*0x5b9500*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b950f*/
     strcpy(unk_A8B380, ToWideStringChar((char *)lParam)); /*0x5b9533*/
-    IDA_BYTE1(this->M8) = 1; /*0x5b953e*/
-    IDA_LOBYTE(this->M9) = 1; /*0x5b9541*/
+        *((unsigned char *)this + 36) = 1;
+        *((unsigned char *)this + 32) = 1;
     IDA_LOBYTE(DlgItem) = 1; /*0x5b9537*/
   }
   return (char)DlgItem; /*0x5b9545*/
@@ -2752,7 +2752,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 
   if ( a4 ) /*0x5baa91*/
   {
-    DlgItem = GetDlgItem((HWND)this->AbstractClass, 1343); /*0x5baaa1*/
+        DlgItem = GetDlgItem(*this, 1343);
     if ( DlgItem ) /*0x5baaa5*/
     {
       if ( a3 >= 8 ) /*0x5baab1*/
@@ -3137,14 +3137,14 @@ ObjectClass * E4Recv_5BCB90::sub_5BCB90(int a2)
   int v7; // edx
 
   v3 = 0; /*0x5bcb9c*/
-  this->u32_2718 = a2; /*0x5bcb9e*/
-  this->u32_271C = 0; /*0x5bcba4*/
-  this->u32_2720 = 0; /*0x5bcbaa*/
-  this->u32_2724 = 0; /*0x5bcbb0*/
-  this->u32_2728 = 0; /*0x5bcbb6*/
-  this->u32_272C = 80; /*0x5bcbbc*/
-  this->u32_2730 = 25; /*0x5bcbc6*/
-  v4 = &this->ToolTipText[232]; /*0x5bcbd0*/
+    *((unsigned int *)this + 40032) = a2;
+    *((unsigned int *)this + 40048) = 0;
+    *((unsigned int *)this + 40064) = 0;
+    *((unsigned int *)this + 40080) = 0;
+    *((unsigned int *)this + 40096) = 0;
+    *((unsigned int *)this + 40112) = 80;
+    *((unsigned int *)this + 40128) = 25;
+    v4 = (unsigned int *)((char *)this + 8000);
   do /*0x5bcbf5*/
   {
     v5 = (char *)this + v3; /*0x5bcbd6*/
@@ -3163,7 +3163,7 @@ ObjectClass * E4Recv_5BCB90::sub_5BCB90(int a2)
     v4 += 4; /*0x5bcbef*/
   }
   while ( v3 < 25 ); /*0x5bcbf5*/
-  this->u32_2734 = 1; /*0x5bcbff*/
+    *((unsigned char *)this + 40144) = 1;
   Text::DrawRepeated(0, 0, 80, 25); /*0x5bcc06*/
   return (int)this; /*0x5bcc0d*/
 }
@@ -3181,7 +3181,7 @@ void nullsub_174()
 namespace gamemd {
 int E4Recv_5BCC30::sub_5BCC30()
 {
-  return this->M10008; /*0x5bcc36*/
+    return *((unsigned int *)this + 10008);
 }
 } // namespace gamemd
 
@@ -3189,10 +3189,10 @@ int E4Recv_5BCC30::sub_5BCC30()
 namespace gamemd {
 int E4Recv_5BCC60::sub_5BCC60(int a2, int a3, int a4, int a5)
 {
-  *(&this->q3E85) = a2; /*0x5bcc68*/
-  *(&this->q3E86) = a3; /*0x5bcc72*/
-  *(&this->q3E87) = a4; /*0x5bcc7c*/
-  this->M10032 = a5; /*0x5bcc82*/
+    *((unsigned int *)this + 10020) = a2;
+    *((unsigned int *)this + 10024) = a3;
+    *((unsigned int *)this + 10028) = a4;
+    *((unsigned int *)this + 10032) = a5;
   return a4; /*0x5bcc88*/
 }
 } // namespace gamemd
@@ -3201,7 +3201,7 @@ int E4Recv_5BCC60::sub_5BCC60(int a2, int a3, int a4, int a5)
 namespace gamemd {
 char E4Recv_5BCCE0::sub_5BCCE0()
 {
-  return this->u32_2734; /*0x5bcce6*/
+    return *((unsigned int *)this + 40144);
 }
 } // namespace gamemd
 
@@ -3235,10 +3235,10 @@ char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
   result = IDA_BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bd2e0*/
   if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd2f0*/
   {
-    this->u32_271C = a3; /*0x5bd300*/
-    this->u32_2720 = a4; /*0x5bd306*/
+        *((unsigned int *)this + 10012) = a3;
+        *((unsigned int *)this + 10016) = a4;
     if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd313*/
-      this->u32_2710 = a5; /*0x5bd31c*/
+            *((unsigned int *)this + 10000) = a5;
     sprintf(Buffer, (const char *const)&stru_82BA00.NumberImpassableRows, aP1); /*0x5bd334*/
 // 0x5bd0d0
     return Debug::ScrollText(Buffer); /*0x5bd343*/
@@ -3251,11 +3251,11 @@ char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
 namespace gamemd {
 unsigned int * E4Recv_5BD560::sub_5BD560()
 {
-  IDA_LOBYTE(this->AbstractClass) = 0; /*0x5bd564*/
-  this->M4 = 0; /*0x5bd566*/
-  this->M8 = 0; /*0x5bd569*/
-  this->M12 = 0; /*0x5bd56c*/
-  return &this->AbstractClass; /*0x5bd56f*/
+    *(unsigned char *)this = 0;
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    return this;
 }
 } // namespace gamemd
 
@@ -3420,12 +3420,12 @@ namespace gamemd {
 unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
   SmallFunc_692290(); /*0x5bda43*/
-  this->MouseClass_field_0x0 = (void*)&MouseClass_vftable; /*0x5bda4a*/
+    *(unsigned int *)this = &MouseClass::`vftable';
   *((unsigned char *)this + 21852) = 0; /*0x5bda50*/
-  this->u32_5560 = 0; /*0x5bda56*/
-  this->u32_5564 = 0; /*0x5bda5c*/
-  this->u32_5568 = 0; /*0x5bda62*/
-  this->u32_5518 = (void*)&MouseClass_vftable; /*0x5bda68*/
+    *((unsigned int *)this + 5464) = 0;
+    *((unsigned int *)this + 5465) = 0;
+    *((unsigned int *)this + 5466) = 0;
+    *((unsigned int *)this + 5446) = &vt_MouseClass;
   return this; /*0x5bda74*/
 }
 } // namespace gamemd

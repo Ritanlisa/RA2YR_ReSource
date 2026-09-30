@@ -26,7 +26,7 @@ char File::IsReady(int a2, void *a1 = 0)
 {
   int result; // eax
 
-  if ( !IDA_BYTE1(this->BufferSize) ) /*0x431f10*/
+    if ( *((unsigned int *)this + 164) )
     return ((FileClass *)(0))->Open(); /*0x431f1e*/
   IDA_LOBYTE(result) = 1; /*0x431f17*/
   return result; /*0x431f19*/
@@ -228,9 +228,9 @@ char File::Dispatch(int a2, void *a1 = 0)
   uint16_t v4; // ax
   int v5; // eax
 
-  v2 = ntohs(*(unsigned short *)this->__pad_6); /*0x4cb928*/
+    v2 = ntohs(*((unsigned short *)this + 24));
   v3 = *(unsigned short *)&this-((unsigned int *)(>File_field_0x2))[2]; /*0x4cb92d*/
-  *(unsigned short *)this->__pad_6 = v2; /*0x4cb931*/
+    *((unsigned short *)this + 24) = v2;
   v4 = ntohs(v3); /*0x4cb936*/
   *(unsigned short *)&this-((unsigned int *)(>File_field_0x2))[2] = v4; /*0x4cb93b*/
   v5 = v4 - 3; /*0x4cb944*/
@@ -282,53 +282,53 @@ AbstractClass * * File::ParseFileHVA(int a2)
   int v14; // [esp+34h] [ebp-64h]
   unsigned char v15[48]; // [esp+38h] [ebp-60h] BYREF
 
-  if ( this->u32_C ) /*0x5bd5c9*/
+    if ( *((unsigned int *)this + 48) )
     RA2_OPDEL(*(void **)(&this->u32_42)); /*0x5bd5d3*/
   v3 = a2; /*0x5bd5db*/
-  this->u32_C = 0; /*0x5bd5e2*/
+    *((unsigned int *)this + 48) = 0;
   result = (*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x5bd5eb*/
   if ( result ) /*0x5bd5f0*/
   {
     (*(void (**)(int, unsigned char *, int))(*(unsigned int *)a2 + 36))(a2, v12, 24); /*0x5bd607*/
     v5 = *(void **)(&this->u32_42); /*0x5bd60a*/
     v13 = v13; /*0x5bd611*/
-    this->u32_4 = v14; /*0x5bd617*/
-    this->ptr_8 = v13; /*0x5bd61a*/
+        *((unsigned int *)this + 16) = v14;
+        *((unsigned int *)this + 32) = v6;
     if ( v5 ) /*0x5bd61d*/
       RA2_OPDEL(v5); /*0x5bd620*/
     v7 = RA2_OPNEW(48 * this->u32_4 * this->ptr_8); /*0x5bd636*/
     if ( !v7 ) /*0x5bd640*/
       v7 = 0; /*0x5bd649*/
-    *(void **)&this->u32_C = v7; /*0x5bd64d*/
+        *((unsigned int *)this + 48) = v7;
     if ( v7 ) /*0x5bd650*/
     {
-      (*(void (**)(int, int, int))(*(unsigned int *)a2 + 40))(a2, 16 * this->u32_4, 1); /*0x5bd675*/
+            (*(void (**)(int, int, int))(*(unsigned int *)a2 + 40))(a2, 16 * *((unsigned int *)this + 16), 1);
       v11 = 0; /*0x5bd67b*/
-      if ( this->ptr_8 ) /*0x5bd678*/
+            if ( *((unsigned int *)this + 32) )
       {
         while ( 1 ) /*0x5bd686*/
         {
           v8 = 0; /*0x5bd686*/
-          if ( this->u32_4 ) /*0x5bd683*/
+                    if ( *((unsigned int *)this + 16) )
             break; /*0x5bd683*/
   LABEL_14:
-          if ( (unsigned int)++v11 >= (unsigned int)(this->ptr_8) ) /*0x5bd6e8*/
+                    if ( (unsigned int)++v11 >= *((unsigned int *)this + 32) )
             goto LABEL_15; /*0x5bd6e8*/
         }
         while ( (*(int (**)(int, unsigned char *, int))(*(unsigned int *)v3 + 36))(v3, v15, 48) == 48 ) /*0x5bd69d*/
         {
           v9 = (const void *)Matrix::Copy12Float(v15); /*0x5bd6a8*/
-          v10 = (void *)(this->u32_C + 48 * (v8 + v11 * this->u32_4)); /*0x5bd6c7*/
+                    v10 = (void *)(*((unsigned int *)this + 48) + 48 * (v8 + v11 * *((unsigned int *)this + 16)));
           ++v8; /*0x5bd6c9*/
           qmemcpy(v10, v9, 0x30u); /*0x5bd6ca*/
           v3 = a2; /*0x5bd6cf*/
-          if ( v8 >= this->u32_4 ) /*0x5bd6d8*/
+                    if ( v8 >= *((unsigned int *)this + 16) )
             goto LABEL_14; /*0x5bd6d8*/
         }
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd704*/
-        if ( this->u32_C ) /*0x5bd707*/
+                if ( *((unsigned int *)this + 48) )
           RA2_OPDEL(*(void **)(&this->u32_42)); /*0x5bd70f*/
-        this->u32_C = 0; /*0x5bd719*/
+                *((unsigned int *)this + 48) = 0;
         return 0; /*0x5bd721*/
       }
       else
@@ -340,7 +340,7 @@ AbstractClass * * File::ParseFileHVA(int a2)
     }
     else
     {
-      this->u32_C = 0; /*0x5bd652*/
+            *((unsigned int *)this + 48) = 0;
       (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x5bd659*/
       return 0; /*0x5bd65f*/
     }
@@ -371,9 +371,9 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   *(unsigned short *)this->__pad_0 = *aP1; /*0x625b05*/
   *(unsigned short *)this->__pad_0 = ntohs(v3); /*0x625b11*/
   v4 = aP1[1]; /*0x625b17*/
-  *(unsigned short *)this->File_field_0x2 = v4; /*0x625b1a*/
+    *((unsigned int *)this + 4) = v4;
   v5 = aP1 + 2; /*0x625b1f*/
-  *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
+    *((unsigned int *)this + 4) = ntohs(v4);
   v6 = *(unsigned short *)this->__pad_0; /*0x625b2d*/
   *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2] = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
@@ -615,14 +615,14 @@ namespace gamemd {
 unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
 {
   this->u32_4 = 0; /*0x755cd9*/
-  *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x755cdb*/
-  *(unsigned int *)&this->__pad_6[2] = 0; /*0x755cde*/
-  *(unsigned int *)&this->__pad_6[6] = 0; /*0x755ce1*/
-  *(unsigned int *)&this->__pad_6[10] = 0; /*0x755ce4*/
-  *(unsigned int *)&this->__pad_6[14] = 0; /*0x755ce7*/
-  *(unsigned int *)&this->__pad_6[18] = 0; /*0x755cea*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 16) = 0;
+    *((unsigned int *)this + 20) = 0;
+    *((unsigned int *)this + 24) = 0;
   if ( !Voxel::SortDepth((int)this, aP1, aP2) ) /*0x755cf5*/
-    this->__pad_0[0] = 1; /*0x755cfe*/
+        *(unsigned char *)this = 1;
   return this; /*0x755d03*/
 }
 }
@@ -645,34 +645,34 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   int v18; // [esp+28h] [ebp-4h] BYREF
   void *v19; // [esp+30h] [ebp+4h]
 
-  this->q004 = 0; /*0x76ac9b*/
-  this->q030 = 0; /*0x76ac9e*/
-  this->q034 = 0; /*0x76aca1*/
-  *(&this->q0146) = 1; /*0x76aca4*/
-  *(&this->q0147) = 0; /*0x76aca8*/
-  this->q040 = 10; /*0x76acb2*/
-  this->q03C = 0; /*0x76acb9*/
+    *((unsigned int *)this + 1) = 0;
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 13) = 0;
+    *((unsigned int *)this + 224) = 1;
+    *((unsigned int *)this + 228) = 0;
+    *((unsigned int *)this + 16) = 10;
+    *((unsigned int *)this + 15) = 0;
   if ( operator new(0xCu) ) /*0x76acc4*/
     v3 = (unsigned int *)File::LoadPaletteData(aP1); /*0x76acdc*/
   else
     v3 = 0; /*0x76ace0*/
-  v4 = (int *)(&this->q0088); /*0x76ace6*/
+    v5 = (char *)this + 112;
   v12 = 0; /*0x76acf2*/
   v13 = 0; /*0x76acf6*/
   Size = 0; /*0x76acfa*/
   v15 = 0; /*0x76acfe*/
   v16 = 0; /*0x76ad02*/
   v18 = 0; /*0x76ad06*/
-  this->q008 = 0; /*0x76ad0a*/
-  this->q00C = 0; /*0x76ad0d*/
-  this->q010 = 0; /*0x76ad10*/
-  *(&this->q0080) = 0; /*0x76ad13*/
-  this->q018 = 0; /*0x76ad16*/
-  this->q01C = 0; /*0x76ad19*/
-  this->q020 = 0; /*0x76ad1b*/
-  this->q024 = 0; /*0x76ad1e*/
-  this->q028 = 0; /*0x76ad21*/
-  this->q044 = 0; /*0x76ad24*/
+    *((unsigned int *)this + 2) = 0;
+    *((unsigned int *)this + 3) = 0;
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned int *)this + 80) = 0;
+    *((unsigned int *)this + 6) = 0;
+    *((unsigned int *)this + 7) = 0;
+    *((unsigned int *)this + 8) = 0;
+    *((unsigned int *)this + 9) = 0;
+    *((unsigned int *)this + 10) = 0;
+    *((unsigned int *)this + 17) = 0;
   if ( HashTable::FindChunk(v3, aNack, 0, (unsigned int *)&v18) ) /*0x76ad27*/
   {
     if ( v3 ) /*0x76ad32*/
@@ -687,34 +687,34 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     if ( HashTable::FindString(v3, aTotk, (unsigned int *)&this->u32_1C) ) /*0x76ad45*/
     {
       v5 = *v4; /*0x76ad4e*/
-      *(&this->q01C2) = 1; /*0x76ad50*/
+            *((unsigned int *)this + 288) = 1;
       *v4 = ++v5; /*0x76ad55*/
-      this->q024 = v5; /*0x76ad59*/
+            *((unsigned int *)this + 9) = v6;
     }
     else
     {
-      *(&this->q01C2) = 0; /*0x76ad69*/
+            *((unsigned int *)this + 288) = 0;
       HashTable::FindString(v3, aCrtk, (unsigned int *)&this->ptr_24); /*0x76ad6c*/
-      ++this->q024; /*0x76ad7d*/
+            ++*((unsigned int *)this + 9);
       HashTable::FindString(v3, aCyln, (unsigned int *)&this->u32_1C); /*0x76ad80*/
       ++*v4; /*0x76ad85*/
     }
     HashTable::FindChunk(v3, aWurl, 0, &v16); /*0x76ad94*/
     HashTable::FindChunk(v3, aSdsc, 0, &Size); /*0x76ada6*/
     HashTable::FindChunk(v3, aLdsc, 0, &v15); /*0x76adb8*/
-    if ( !*(&this->q01C2) ) /*0x76adbd*/
+        if ( !*((unsigned int *)this + 288) )
       HashTable::FindChunk(v3, aMpvc, 0, &v12); /*0x76adcf*/
     HashTable::FindChunk(v3, aHsvc, 0, &v13); /*0x76ade1*/
     this->q008 = operator new(Size); /*0x76adf0*/
     v6 = operator new(v15); /*0x76adf8*/
     v16 = v16; /*0x76adfd*/
-    this->q00C = v6; /*0x76ae01*/
+        *((unsigned int *)this + 3) = eax12;
     v8 = operator new(v16); /*0x76ae05*/
     v13 = v13; /*0x76ae0a*/
-    this->q010 = v8; /*0x76ae0e*/
+        *((unsigned int *)this + 4) = eax12a;
     Block = operator new(v13); /*0x76ae17*/
     v19 = 0; /*0x76ae23*/
-    if ( !*(&this->q01C2) ) /*0x76ae1b*/
+        if ( !*((unsigned int *)this + 288) )
     {
       v19 = operator new(v12); /*0x76ae40*/
       memset(v19, 0, v12); /*0x76ae47*/
@@ -723,26 +723,26 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     memset(this->u32_C, 0, v15); /*0x76ae75*/
     memset(this->ptr_10, 0, v16); /*0x76ae8c*/
     memset(Block, 0, v13); /*0x76aea4*/
-    File::FindByPrefix(aCmid, (int)(&this->q0080)); /*0x76aeb8*/
+        File::FindByPrefix(PaletteData, aCmid, (char *)this + 80);
     HashTable::FindString(v3, aCyid, (unsigned int *)&this->ptr_18); /*0x76aec8*/
-    if ( *(&this->q01C2) ) /*0x76aecd*/
-      this->q028 = 0; /*0x76aed2*/
+        if ( *((unsigned int *)this + 288) )
+            *((unsigned int *)this + 10) = 0;
     else
-      HashTable::FindString(v3, aTicc, (unsigned int *)&this->q0040); /*0x76aee2*/
+            HashTable::FindString(PaletteData, aTicc, (IUnknown *)((char *)this + 160));
     HashTable::FindChunk(v3, aSdsc, this->q008, &Size); /*0x76aef7*/
     HashTable::FindChunk(v3, aLdsc, this->u32_C, &v15); /*0x76af0c*/
     HashTable::FindChunk(v3, aWurl, this->ptr_10, &v16); /*0x76af21*/
-    if ( !*(&this->q01C2) ) /*0x76af26*/
+        if ( !*((unsigned int *)this + 288) )
       HashTable::FindChunk(v3, aMpvc, v19, &v12); /*0x76af3c*/
     v10 = Block; /*0x76af41*/
     HashTable::FindChunk(v3, aHsvc, Block, &v13); /*0x76af52*/
-    if ( *(&this->q01C2) ) /*0x76af57*/
-      this->q020 = 30; /*0x76af6f*/
+        if ( *((unsigned int *)this + 288) )
+            *((unsigned int *)this + 8) = 30;
     else
       ParseWDTTerritories((int)v19, v12); /*0x76af68*/
     File::LoadWDTDecompress(v10, v13); /*0x76af7e*/
     RA2_OPDEL(v10); /*0x76af84*/
-    if ( !*(&this->q01C2) ) /*0x76af89*/
+        if ( !*((unsigned int *)this + 288) )
       RA2_OPDEL(v19); /*0x76af98*/
     if ( v3 ) /*0x76afa2*/
       goto LABEL_25; /*0x76afa2*/
@@ -767,22 +767,22 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
   int v15; // edx
   int v16; // [esp+Ch] [ebp+8h]
 
-  v4 = *(unsigned int *)&this->__pad_6[30]; /*0x76b0a7*/
-  if ( 4 * a3 < (unsigned int)(v4 * *(unsigned int *)&this->__pad_6[26]) ) /*0x76b0b5*/
+    v4 = *((unsigned int *)this + 36);
+    if ( 4 * a3 < v4 * *((unsigned int *)this + 32) )
     return 0; /*0x76b0ba*/
   this->u32_44 = RA2_OPNEW(4 * v4); /*0x76b0c7*/
-  for ( i = 0; i < *(unsigned int *)&this->__pad_6[30]; ++i ) /*0x76b0ca*/
+    for ( i = 0; i < *((unsigned int *)this + 36); ++i )
     *(unsigned int *)(this->u32_44 + 4 * i) = RA2_OPNEW(*(unsigned int *)&this->__pad_6[26]); /*0x76b0e5*/
   v7 = 0; /*0x76b0f3*/
   v8 = 0; /*0x76b0f5*/
   v9 = 0; /*0x76b0f7*/
   v16 = 0; /*0x76b0fb*/
-  if ( *(unsigned int *)&this->__pad_6[30] ) /*0x76b0f0*/
+    if ( *((unsigned int *)this + 36) )
   {
     while ( 1 ) /*0x76b10a*/
     {
       v10 = 0; /*0x76b10a*/
-      if ( *(unsigned int *)&this->ptr_10 ) /*0x76b107*/
+            if ( *((unsigned int *)this + 32) )
         break; /*0x76b107*/
   LABEL_18:
       if ( v8 ) /*0x76b15e*/
@@ -791,7 +791,7 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
         ++v7; /*0x76b162*/
         v16 = 0; /*0x76b163*/
       }
-      if ( (unsigned int)++v9 >= *(unsigned int *)&this->__pad_6[30] ) /*0x76b16d*/
+            if ( ++v9 >= *((unsigned int *)this + 36) )
         return 1; /*0x76b16d*/
     }
     while ( 1 ) /*0x76b110*/
@@ -815,7 +815,7 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
       }
       v14 = v13 >> 6; /*0x76b11e*/
   LABEL_15:
-      *(unsigned char *)(*(unsigned int *)(this->u32_44 + 4 * v9) + v10) = v14; /*0x76b136*/
+            *(unsigned char *)(*(unsigned int *)(*((unsigned int *)this + 68) + 4 * v9) + v10) = v14;
       v8 = ++v16; /*0x76b143*/
       if ( v16 == 4 ) /*0x76b14b*/
       {
@@ -823,7 +823,7 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
         ++v7; /*0x76b14f*/
         v16 = 0; /*0x76b150*/
       }
-      if ( (unsigned int)++v10 >= *(unsigned int *)&this->__pad_6[26] ) /*0x76b15a*/
+            if ( ++v10 >= *((unsigned int *)this + 32) )
         goto LABEL_18; /*0x76b15a*/
     }
     IDA_LOBYTE(v15) = *(unsigned char *)(v7 + aP1) >> 2; /*0x76b12b*/
@@ -887,86 +887,86 @@ int File::ParseAudioFileRIFF()
   int v51; // [esp+48h] [ebp-8h] BYREF
   unsigned int v52; // [esp+4Ch] [ebp-4h]
 
-  if ( (*(int (__cdecl **)(int, int, int *, int))&this->q100)(this, 5, &v51, 8) ) /*0x7c12c3*/
+    if ( (*(int (__cdecl **)(int, int, int *, int))((char *)this + 256))(this, 5, &v51, 8) )
     return -2; /*0x7c12d9*/
   if ( v51 != 1212368461 ) /*0x7c12e2*/
     return -4; /*0x7c12f0*/
-  v3 = (int *)&this->u32_1C80; /*0x7c12f5*/
+    v3 = (int *)((char *)this + 7296);
   v4 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((IDA_HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c131e*/
   IDA_LOBYTE(v4) = (IDA_HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
-  if ( (*(int (__cdecl **)(int, int, int, unsigned int))&this->q100)(this, 5, &this->u32_720, v4) ) /*0x7c1326*/
+    if ( (*(int (__cdecl **)(int, int, int, unsigned int))((char *)this + 256))(this, 5, (char *)this + 7296, v4) )
     return -4; /*0x7c133c*/
   v5 = *v3; /*0x7c133d*/
   if ( *v3 ) /*0x7c133d*/
   {
     v6 = 24 * v5; /*0x7c134c*/
-    v7 = (*(int (__cdecl **)(int, int, unsigned int, int))&this->q110)(this, 2, 0, 24 * v5); /*0x7c1354*/
-    *(unsigned int *)((char *)&this->q1C88 + 56) = v7; /*0x7c135c*/
+        v7 = (*(int (__cdecl **)(int, int, unsigned int, int))((char *)this + 272))(this, 2, 0, 24 * v5);
+        *((unsigned int *)this + 7360) = v7;
     if ( !v7 ) /*0x7c1362*/
       return -8; /*0x7c1370*/
-    (*(void (__cdecl **)(int, int, int, int))&this->q110)(this, 4, v7, v6); /*0x7c1376*/
-    *(unsigned int *)((char *)&this->__pad_09A + 38) += v6; /*0x7c1388*/
-    if ( (*(int (__cdecl **)(int, int, int *, int))&this->q100)(this, 5, &v51, 8) ) /*0x7c138b*/
+        (*(void (__cdecl **)(int, int, int, int))((char *)this + 272))(this, 4, v7, v6);
+        *((unsigned int *)this + 192) += v6;
+        if ( (*(int (__cdecl **)(int, int, int *, int))((char *)this + 256))(this, 5, &v51, 8) )
       return -2; /*0x7c13a1*/
     if ( v51 != 1145259597 ) /*0x7c13aa*/
       return -4; /*0x7c13b8*/
     v8 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((IDA_HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c13e0*/
     IDA_LOBYTE(v8) = (IDA_HIBYTE(v52) + 1) & 0xFE; /*0x7c13e1*/
-    if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))&this->q100)(this, 5, *(unsigned int *)((char *)&this->q1C88 + 56), v8) ) /*0x7c13ee*/
+        if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 256))(this, 5, *((unsigned int *)this + 7360), v8) )
       return -4; /*0x7c1404*/
   }
-  v9 = *(unsigned int *)((char *)&this->q1C88 + 8); /*0x7c1405*/
+    v9 = *((unsigned int *)this + 7312);
   if ( v9 ) /*0x7c140d*/
   {
     v10 = 16 * v9; /*0x7c1413*/
-    v11 = (*(int (__cdecl **)(int, int, unsigned int, int))&this->q110)(this, 2, 0, v10); /*0x7c141b*/
-    *(unsigned int *)((char *)&this->q1C88 + 72) = v11; /*0x7c1423*/
+        v11 = (*(int (__cdecl **)(int, int, unsigned int, int))((char *)this + 272))(this, 2, 0, v10);
+        *((unsigned int *)this + 7376) = v11;
     if ( !v11 ) /*0x7c1429*/
       return -8; /*0x7c1437*/
-    (*(void (__cdecl **)(int, int, int, int))&this->q110)(this, 4, v11, v10); /*0x7c143d*/
-    *(unsigned int *)((char *)&this->__pad_09A + 38) += v10; /*0x7c144f*/
-    if ( (*(int (__cdecl **)(int, int, int *, int))&this->q100)(this, 5, &v51, 8) ) /*0x7c1452*/
+        (*(void (__cdecl **)(int, int, int, int))((char *)this + 272))(this, 4, v11, v10);
+        *((unsigned int *)this + 192) += v10;
+        if ( (*(int (__cdecl **)(int, int, int *, int))((char *)this + 256))(this, 5, &v51, 8) )
       return -2; /*0x7c1468*/
     if ( v51 != 1413695053 ) /*0x7c1471*/
       return -4; /*0x7c147f*/
     v12 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((IDA_HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c14a7*/
     IDA_LOBYTE(v12) = (IDA_HIBYTE(v52) + 1) & 0xFE; /*0x7c14a8*/
-    if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))&this->q100)(this, 5, *(unsigned int *)((char *)&this->q1C88 + 72), v12) ) /*0x7c14b5*/
+        if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 256))(this, 5, *((unsigned int *)this + 7376), v12) )
       return -4; /*0x7c14cb*/
   }
-  v13 = *(unsigned int *)((char *)&this->q1C88 + 8); /*0x7c14cc*/
+    v13 = *((unsigned int *)this + 7312);
   v50 = v13; /*0x7c14d4*/
   if ( !v13 ) /*0x7c14d8*/
     return -1; /*0x7c1728*/
-  v14 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))&this->q110)(this, 2, 0, 12 * v13); /*0x7c14e9*/
-  *(unsigned int *)((char *)&this->q1C88 + 88) = v14; /*0x7c14f1*/
+    v14 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 272))(this, 2, 0, 12 * v13);
+    *((unsigned int *)this + 7392) = v14;
   if ( !v14 ) /*0x7c14f7*/
     return -8; /*0x7c14f7*/
-  (*(void (__cdecl **)(int, int, int, unsigned int))&this->q110)(this, 4, v14, 12 * v13); /*0x7c150b*/
-  *(unsigned int *)((char *)&this->__pad_09A + 38) += 12 * v13; /*0x7c1518*/
+    (*(void (__cdecl **)(int, int, int, unsigned int))((char *)this + 272))(this, 4, v14, 12 * v13);
+    *((unsigned int *)this + 192) += 12 * v13;
   v46 = 0; /*0x7c151b*/
   v15 = 0; /*0x7c1525*/
   v38 = 0; /*0x7c1527*/
   v40 = 0; /*0x7c152b*/
   while ( 2 ) /*0x7c152f*/
   {
-    v16 = *(unsigned int *)((char *)&this->q1C88 + 72); /*0x7c152f*/
-    v44 = *(unsigned int *)((char *)&this->q1C88 + 88); /*0x7c153b*/
+      while ( 2 )
+        v44 = *((unsigned int *)this + 7392);
     v17 = *(unsigned int *)(v15 + v16 + 4); /*0x7c153f*/
     v45 = *(unsigned int *)(v15 + v16 + 8); /*0x7c1549*/
     v48 = v17; /*0x7c154d*/
     if ( !v17 ) /*0x7c1551*/
       goto LABEL_53; /*0x7c1551*/
     v39 = 0; /*0x7c156a*/
-    v18 = *(unsigned int *)((char *)&this->q192C + 804); /*0x7c156e*/
-    v42 = this->u32_1C80; /*0x7c1575*/
+        v18 = *(unsigned __int16 *)((char *)this + 7248);
+        v42 = *((unsigned int *)this + 7296);
     v49 = (uint16_t)v18; /*0x7c1579*/
     v43 = 0; /*0x7c157d*/
-    v19 = (*(unsigned int *)((char *)&this->__pad_19A + 134) - 1) / v17 + 1; /*0x7c1589*/
+        v19 = (*((unsigned int *)this + 544) - 1) / v17 + 1;
     v37 = v19; /*0x7c158c*/
     if ( !(unsigned short)v18 ) /*0x7c1590*/
       goto LABEL_47; /*0x7c1590*/
-    v20 = (unsigned short *)(*(unsigned int *)((char *)&this->q192C + 836) + 2); /*0x7c1596*/
+        v20 = (unsigned short *)(*((unsigned int *)this + 7280) + 2);
     while ( 1 ) /*0x7c159d*/
     {
       v21 = -1; /*0x7c159d*/
@@ -978,8 +978,8 @@ int File::ParseAudioFileRIFF()
       if ( ++v43 >= v18 ) /*0x7c1630*/
         goto LABEL_47; /*0x7c1630*/
     }
-    v22 = *(unsigned int *)(v15 + *(unsigned int *)((char *)&this->q1C88 + 72)); /*0x7c15b2*/
-    v23 = *(unsigned int *)((char *)&this->q1C88 + 56); /*0x7c15b5*/
+        v22 = *(unsigned int *)(v15 + *((unsigned int *)this + 7376));
+        v23 = *(unsigned int **)((char *)this + 7360);
     v47 = v22; /*0x7c15bb*/
     do /*0x7c1600*/
     {
@@ -1027,21 +1027,21 @@ int File::ParseAudioFileRIFF()
   v27 = 12 * v19; /*0x7c1654*/
   *(unsigned int *)(v38 + v44) = v19; /*0x7c165c*/
   *(unsigned int *)(v38 + v44 + 4) = 0; /*0x7c1660*/
-  v28 = (*(int (__cdecl **)(int, int, unsigned int, int))&this->q110)(this, 2, 0, 12 * v19); /*0x7c1668*/
+    v28 = (*(int (__cdecl **)(int, int, unsigned int, int))((char *)this + 272))(this, 2, 0, 12 * v19);
   v29 = v28; /*0x7c166b*/
   if ( v28 ) /*0x7c1672*/
   {
-    (*(void (__cdecl **)(int, int, int, int))&this->q110)(this, 4, v28, v27); /*0x7c167d*/
-    *(unsigned int *)((char *)&this->__pad_09A + 38) += v27; /*0x7c1697*/
+        (*(void (__cdecl **)(int, int, int, int))((char *)this + 272))(this, 4, v28, v27);
+        *((unsigned int *)this + 192) += v27;
     v30 = v37 * ((v45 + 1) & 0xFFFFFFFE); /*0x7c169a*/
     v31 = (int *)(v38 + v44 + 8); /*0x7c16a0*/
     *v31 = v29; /*0x7c16a9*/
-    v32 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))&this->q110)(this, 2, 0, v30); /*0x7c16ac*/
+        v32 = (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 272))(this, 2, 0, v30);
     v33 = v32; /*0x7c16af*/
     if ( v32 ) /*0x7c16b6*/
     {
-      (*(void (__cdecl **)(int, int, int, unsigned int))&this->q110)(this, 4, v32, v30); /*0x7c16c1*/
-      *(unsigned int *)((char *)&this->__pad_09A + 38) += v30; /*0x7c16cc*/
+            (*(void (__cdecl **)(int, int, int, unsigned int))((char *)this + 272))(this, 4, v32, v30);
+            *((unsigned int *)this + 192) += v30;
       v34 = v37; /*0x7c16cf*/
       if ( v37 > 0 ) /*0x7c16d5*/
       {

@@ -528,7 +528,7 @@ void * LayerClass::Reveal(int a2)
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
-    *(unsigned char *)(*(&dword_A8022C->vtable0 + *(unsigned int *)(a2 + 48)) + 577) = 1; /*0x577db0*/
+        *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(a2 + 48)] + 577) = 1;
   if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
@@ -566,18 +566,18 @@ void * LayerClass::Reveal(int a2)
         v6 = *(int16_t *)(v4 + 38); /*0x577e7a*/
         if ( v5 != 7 ) /*0x577e81*/
           break; /*0x577e81*/
-        if ( v6 != this->u32_F4 + 5 ) /*0x577e8e*/
+                if ( v6 != *((unsigned int *)this + 244) + 5 )
           goto LABEL_21; /*0x577e8e*/
   LABEL_24:
         v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
-      if ( v5 == 13 && v6 == this->u32_F4 + 11 ) /*0x577ea2*/
+            if ( v5 == 13 && v6 == *((unsigned int *)this + 244) + 11 )
         goto LABEL_24; /*0x577ea2*/
   LABEL_21:
-      v7 = this->u32_F8; /*0x577ea4*/
-      if ( v5 == v7 + 13 && v6 == this->u32_F4 + v7 - 15 ) /*0x577ebd*/
+            v7 = *((unsigned int *)this + 248);
+            if ( v5 == v7 + 13 && v6 == *((unsigned int *)this + 244) + v7 - 15 )
         goto LABEL_24; /*0x577ebd*/
   LABEL_23:
       *(unsigned int *)(v4 + 304) = 0; /*0x577ebf*/
@@ -608,38 +608,38 @@ int LayerClass::CellIteratorNext()
   int v9; // edx
   int v10; // eax
 
-  v1 = this->u32_114; /*0x578290*/
-  v2 = (int *)this->u32_118; /*0x578297*/
+    v1 = *((unsigned int *)this + 276);
+    v2 = *((unsigned int *)this + 280);
   if ( v1 ) /*0x5782a0*/
   {
-    v3 = this->u32_110 - 1; /*0x5782af*/
-    ++this->u32_10C; /*0x5782b1*/
-    this->u32_114 = v1 - 1; /*0x5782b7*/
-    this->u32_110 = v3; /*0x5782c3*/
-    this->u32_118 = v2 - 511; /*0x5782c9*/
+        v3 = *((unsigned int *)this + 272) - 1;
+        ++*((unsigned int *)this + 268);
+        *((unsigned int *)this + 276) = v1 - 1;
+        *((unsigned int *)this + 272) = v3;
+        *((unsigned int *)this + 280) = v2 - 2044;
     return *v2; /*0x5782cf*/
   }
   else
   {
-    v5 = this->u32_110; /*0x5782d5*/
-    v6 = this->u32_10C; /*0x5782db*/
-    v7 = this->u32_F4; /*0x5782e1*/
-    this->u32_10C = v5; /*0x5782e8*/
-    this->u32_110 = v6; /*0x5782f2*/
+        v5 = *((unsigned int *)this + 272);
+        v6 = *((unsigned int *)this + 268);
+        v7 = *((unsigned int *)this + 244);
+        *((unsigned int *)this + 268) = v5;
+        *((unsigned int *)this + 272) = v6;
     if ( (((unsigned char)v5 - (unsigned char)v7 + (unsigned char)v6 - 1) & 1) != 0 ) /*0x5782ff*/
     {
       v8 = v7 - 1; /*0x578302*/
-      this->u32_110 = v6 + 1; /*0x578303*/
+            *((unsigned int *)this + 272) = v6 + 1;
     }
     else
     {
       v8 = v7 - 2; /*0x57830c*/
-      this->u32_10C = v5 + 1; /*0x57830f*/
+            *((unsigned int *)this + 268) = v5 + 1;
     }
-    v9 = this->u32_10C; /*0x57831b*/
-    v10 = this->u32_110 << 9; /*0x578321*/
-    this->u32_114 = v8; /*0x578324*/
-    this->u32_118 = this->u32_13C + 4 * (v9 + v10); /*0x578337*/
+        v9 = *((unsigned int *)this + 268);
+        v10 = *((unsigned int *)this + 272) << 9;
+        *((unsigned int *)this + 276) = v8;
+        *((unsigned int *)this + 280) = *((unsigned int *)this + 316) + 4 * (v9 + v10);
     return *v2; /*0x57833d*/
   }
 }
@@ -651,12 +651,12 @@ int LayerClass::CellIteratorReset()
   int v1; // eax
   int result; // eax
 
-  v1 = this->u32_F4; /*0x578350*/
-  this->u32_10C = 1; /*0x578356*/
-  this->u32_110 = v1; /*0x578360*/
-  this->u32_114 = v1 - 1; /*0x578369*/
-  result = (v1 << 11) + this->u32_13C + 4; /*0x578378*/
-  this->u32_118 = result; /*0x57837c*/
+    v1 = *((unsigned int *)this + 244);
+    *((unsigned int *)this + 268) = 1;
+    *((unsigned int *)this + 272) = v1;
+    *((unsigned int *)this + 276) = v1 - 1;
+    result = (v1 << 11) + *((unsigned int *)this + 316) + 4;
+    *((unsigned int *)this + 280) = result;
   return result; /*0x578382*/
 }
 }
@@ -684,11 +684,11 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
       v7 = &g_MissionQueueFrame.briefing[130]; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + this->u32_F4 + 2 * this->u32_100 + 4 ) /*0x5784ca*/
+        if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + *((unsigned int *)this + 244) + 2 * *((unsigned int *)this + 256) + 4 )
       ++v3; /*0x5784cc*/
   }
-  result = this->u32_F4; /*0x5784d3*/
-  IDA_LOBYTE(result) = v4 + v5 > v3 + result + 2 * this->u32_100 /*0x578531*/
+    v8 = *((unsigned int *)this + 244);
+    result = 0;
                 && v4 + v5 <= v3 + result + 2 * (this->u32_100 + this->u32_108) + 2
                 && (v9 = this->u32_FC, v5 - v4 < 2 * (v9 + this->u32_104) - result)
                 && (result -= 2 * v9, v4 - v5 < result);

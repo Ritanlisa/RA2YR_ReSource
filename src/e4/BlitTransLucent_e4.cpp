@@ -13,7 +13,7 @@
 namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (**)(_RLEBlitTransXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496167*/
+    return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))(
            this,
            a2,
            a3,
@@ -62,7 +62,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     if ( *a2++ ) /*0x49628f*/
     {
       --v17; /*0x4962b8*/
-      *result = *(unsigned short *)&this->q004 & (*result >> 1); /*0x4962b9*/
+            *result = *((unsigned short *)this + 4) & (*result >> 1);
       ++result; /*0x4962bc*/
     }
     else
@@ -163,7 +163,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     {
       result += 2; /*0x4961e4*/
       --v18; /*0x4961e7*/
-      *(unsigned short *)(result - 2) = *(unsigned short *)(this->ptr_8 + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
+            *(unsigned short *)(result - 2) = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(unsigned __int8 *)(v19 + v15));
     }
     else
     {

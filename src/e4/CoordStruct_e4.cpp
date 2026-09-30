@@ -16,7 +16,7 @@ unsigned int * CoordStruct::Set2(void* aP1,  AbstractClass * aP2)
   v4 = *aP1 << 8; /*0x642756*/
   this->Y = (aP1[1] << 8) + 128; /*0x642759*/
   this->Z = aP2; /*0x642766*/
-  this->vfptr = (void *)(v4 + 128); /*0x642769*/
-  return &this->vfptr; /*0x64276b*/
+    *this = v4 + 128;
+    return this;
 }
 }

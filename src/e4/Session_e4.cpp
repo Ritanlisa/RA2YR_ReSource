@@ -42,7 +42,7 @@ int Session::RemoveTeam(MSShapeAnim * aP1, void * a1, void * a2)
   if ( a2 ) /*0x5d1d87*/
   {
     v3 = (unsigned int)(&this->u32_18);
-    result = (*(int (**)(void *, void *))(this->u32_18 + 16))(&this->u32_18, &a2); /*0x5d1d96*/
+        result = (MSShapeAnim *)(*(int (**)(unsigned int *, MSShapeAnim **))(*((unsigned int *)this + 24) + 16))((char *)this + 24, &aP1);
     if ( result != -1 ) /*0x5d1d9c*/
     {
       result = (*(int (**)(void *, void *))(this->u32_16)(v3, &a2); /*0x5d1da7*/
@@ -103,7 +103,7 @@ int Session::PrepareGame()
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = this->Timer::GetTicks(); /*0x5e7774*/
+            result = Timer::GetTicks();
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
@@ -126,21 +126,21 @@ int Session::PrepareGame()
           v11 = 1800; /*0x5e77de*/
           if ( v17 != (void **)(-1) ) /*0x5e77e4*/
           {
-            result = this->Timer::GetTicks() - v17; /*0x5e77ef*/
+                        result = Timer::GetTicks() - v16;
             if ( result >= (void **)(1800) ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
           }
           if ( !v11 ) /*0x5e77fb*/
             break; /*0x5e77fb*/
-          this->Event::Dispatch(); /*0x5e77fd*/
+                    Event::Dispatch();
         }
         if ( v10 ) /*0x5e7812*/
           return result; /*0x5e7812*/
         v9 = 1800; /*0x5e778b*/
       }
     case 3: /*0x5e7521*/
-      if ( this->Dialog::GetCurrentType() != 189 /*0x5e7550*/
+            if ( Dialog::GetCurrentType() != 189
         || FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
       {
         goto LABEL_42; /*0x5e7557*/
@@ -159,7 +159,7 @@ int Session::PrepareGame()
       {
         strcpy(Str, byte_A8B8E0); /*0x5e765a*/
         _strupr(Str); /*0x5e7668*/
-        this->Debug::Log(); /*0x5e7677*/
+                Debug::Log();
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
@@ -240,11 +240,11 @@ int Session::PrepareGame()
     if ( v3 ) /*0x5e75cb*/
     {
       for ( result = Network::GetQueueCount(&unk_A8E9C0); result; result = Network::GetQueueCount(&unk_A8E9C0) ) /*0x5e75e0*/
-        this->Event::Dispatch(); /*0x5e75e6*/
+                Event::Dispatch();
       return result; /*0x5e75f7*/
     }
   LABEL_12:
-    this->Event::Dispatch(); /*0x5e75cd*/
+        Event::Dispatch();
   }
 }
 }
@@ -255,8 +255,8 @@ int Session::GetPlayerOption()
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( this->field_178 != (unsigned int)((void *))-2 ) /*0x69b70d*/
-    return (int)this->field_174; /*0x69b70f*/
+    if ( *((unsigned int *)this + 376) != -2 )
+        return *((unsigned int *)this + 372);
   return result; /*0x69b715*/
 }
 }
@@ -267,8 +267,8 @@ int Session::GetPlayerColor()
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( this->field_160 != (unsigned int)((void *))-2 ) /*0x69b72d*/
-    return (int)this->field_15C; /*0x69b72f*/
+    if ( *((unsigned int *)this + 352) != -2 )
+        return *((unsigned int *)this + 348);
   return result; /*0x69b735*/
 }
 }

@@ -23,8 +23,8 @@ void DeleteCommandClass_Undo()
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor()
 {
-  *(unsigned int *)this->CommandClass = (void*)&DeleteCommandClass_vftable; /*0x537f12*/
-  return this->CommandClass; /*0x537f18*/
+    *this = &vt_DeleteCommandClass;
+    return this;
 }
 // 0x537F20
 char * DeleteCommandClass::AddRef()
@@ -53,14 +53,14 @@ void DeleteCommandClass_28::ClearBuffer(void *a1 = 0)
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x53c4c6*/
-  this->q010 = 0; /*0x53c4c9*/
-  if ( v2 && this->IsAllocated ) /*0x53c4d0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x53c4d6*/
-    *(unsigned int *)&this->q004 = 0; /*0x53c4de*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x53c4e1*/
-  this->q008 = 0; /*0x53c4e4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -68,8 +68,8 @@ void DeleteCommandClass_28::ClearBuffer(void *a1 = 0)
 namespace gamemd {
 unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 {
-  if ( this->q00C ) /*0x53c4f0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x53c505*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x53c4f7*/
 }
@@ -79,7 +79,7 @@ unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 namespace gamemd {
 int DeleteCommandClass_28::Seek(int a2, void *a1 = 0)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x53c51a*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -92,13 +92,13 @@ char DeleteCommandClass_28::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x53c522*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x53c52d*/
   {
     v3 = 0; /*0x53c52f*/
     if ( m_8 <= 0 ) /*0x53c533*/
       return 1; /*0x53c553*/
-    v4 = *(unsigned int **)&this->q004; /*0x53c535*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x53c53b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x53c544*/
     {
@@ -122,30 +122,30 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c56c*/
   {
-    this->q00C = 0; /*0x53c576*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x53c58e*/
-    this->q00C = 1; /*0x53c596*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x53c59a*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x53c5a5*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x53c5ac*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x53c5b1*/
           m_8 = a2; /*0x53c5b3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x53c5b9*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x53c5be*/
-        if ( this->IsAllocated ) /*0x53c5cb*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x53c5d6*/
-          *(unsigned int *)&this->q004 = 0; /*0x53c5de*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x53c5e7*/
-      this->q008 = a2; /*0x53c5ef*/
-      this->IsAllocated = a3 == 0; /*0x53c5f2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x53c5f8*/
     }
     else
@@ -155,7 +155,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c602*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x53c608*/
   }
 }
@@ -165,13 +165,13 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void DeleteCommandClass_28::ddtor(void *a1 = 0)
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x53c61d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x53c623*/
-    *(unsigned int *)&this->q004 = 0; /*0x53c62b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x53c62e*/
-  this->q008 = 0; /*0x53c631*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -183,9 +183,9 @@ int DeleteCommandClass_28::Read(int a2, void *a1 = 0)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x53c640*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x53c648*/
-  m_8 = this->q008; /*0x53c64e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x53c651*/
   if ( m_8 <= 0 ) /*0x53c655*/
     return -1; /*0x53c66c*/
@@ -202,8 +202,8 @@ int DeleteCommandClass_28::Read(int a2, void *a1 = 0)
 namespace gamemd {
 unsigned int DeleteCommandClass_28::Write(int a2)
 {
-  if ( this->q00C ) /*0x53c680*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x53c695*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x53c687*/
 }
@@ -220,38 +220,38 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c6ac*/
   {
-    this->q00C = 0; /*0x53c6b2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x53c6ca*/
-    this->q00C = 1; /*0x53c6d2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x53c6d8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x53c6df*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x53c6e4*/
         m_8 = a2; /*0x53c6e6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x53c6ec*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x53c6f1*/
-      if ( this->IsAllocated ) /*0x53c6fe*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x53c709*/
-        *(unsigned int *)&this->q004 = 0; /*0x53c711*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x53c71a*/
-    this->q008 = a2; /*0x53c722*/
-    this->IsAllocated = a3 == 0; /*0x53c725*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c72e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x53c731*/
-  if ( v7 < this->q010 ) /*0x53c739*/
-    this->q010 = v7; /*0x53c73b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x53c73e*/
 }
 } // namespace gamemd
@@ -264,11 +264,11 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x53c750*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x53c753*/
   if ( m_10 <= 0 ) /*0x53c758*/
     return -1; /*0x53c76f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x53c75e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x53c76d*/
       return -1; /*0x53c76d*/
@@ -284,13 +284,13 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
-  if ( v3 && this->IsAllocated ) /*0x53c790*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x53c798*/
-    *(unsigned int *)&this->q004 = 0; /*0x53c7a0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x53c7b1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     RA2_OPDEL(); /*0x53c7bb*/
   return this; /*0x53c7c5*/
@@ -305,13 +305,13 @@ int DeleteCommandClass_28::Constructor(int a2, void *a1 = 0)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
-  if ( v3 && this->IsAllocated ) /*0x53c7e0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x53c7e8*/
-    *(unsigned int *)&this->q004 = 0; /*0x53c7f0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x53c801*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     RA2_OPDEL(); /*0x53c80b*/
   return this; /*0x53c815*/

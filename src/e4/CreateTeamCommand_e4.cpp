@@ -126,33 +126,33 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
       v4 = a3; /*0x5386ce*/
     else
       v4 = operator new(4 * a2); /*0x5386ca*/
-    this->q00C = 1; /*0x5386d2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
-    if ( this->q004 ) /*0x5386d8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      v5 = this->Capacity; /*0x5386df*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)((unsigned int)((unsigned int)(this)->q004)+ 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
-      if ( this->IsAllocated ) /*0x5386fe*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(this->q004); /*0x538709*/
-        *(unsigned int *)&this->q004 = 0; /*0x538711*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
     this->q004 = (void *)((unsigned int)(v4));
-    this->Capacity = a2; /*0x538722*/
-    this->IsAllocated = a3 == 0; /*0x538725*/
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
   v7 = (void *)((int)((void *)(this->Capacity)));
-  if ( v7 < this->q010 ) /*0x538739*/
-    *(void **)&this->q010 = v7; /*0x53873b*/
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x53873e*/
 }
 }
@@ -211,7 +211,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
-      v3 = this->u32_539C; /*0x6a6a18*/
+            v3 = *((unsigned int *)this + 21404);
     v4 = (CreateTeamCommand *)((char *)this + 3988 * v3 + 5444); /*0x6a6a2b*/
     if ( a2 ) /*0x6a6a38*/
     {
@@ -300,7 +300,7 @@ unsigned int * CreateTeamCommand::Construct(int a2)
 namespace gamemd {
 ObjectClass * CreateTeamCommand::AddRef()
 {
-  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCreate_%d", *(unsigned int *)&this->q004); /*0x535c2e*/
+    sprintf(&HouseClass_Player.__pad_5568[25344], &stru_826F84, (INIClass *)*((unsigned int *)this + 4));
   return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535c3b*/
 }
 } // namespace gamemd
@@ -312,7 +312,7 @@ wchar_t * CreateTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *(const wchar_t **)&this->q004; /*0x535c45*/
+    v3 = *((unsigned int *)this + 4);
   StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
   swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
   return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
@@ -334,7 +334,7 @@ wchar_t * CreateTeamCommand::Read()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *(const wchar_t **)&this->q004; /*0x535c95*/
+    v3 = *((unsigned int *)this + 4);
   StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
   swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
   return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
@@ -345,7 +345,7 @@ wchar_t * CreateTeamCommand::Read()
 namespace gamemd {
 void CreateTeamCommand::Undo(int a2)
 {
-  CreateTeamCommand::performAction_246(*(char **)&this->q004); /*0x535cc3*/
+    CreateTeamCommand::performAction_246(*((unsigned int *)this + 4));
 }
 } // namespace gamemd
 
@@ -612,7 +612,7 @@ CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 namespace gamemd {
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
-  *(unsigned int *)this->CommandClass = (void*)&CommandClass_vftable; /*0x536589*/
+    *(unsigned int *)this = &vt_CommandClass;
   if ( (a2 & 1) != 0 ) /*0x53658f*/
     RA2_OPDEL(); /*0x536592*/
   return (std::locale::facet *)this; /*0x53659c*/
@@ -2560,10 +2560,10 @@ unsigned int * CreateTeamCommand::performAction_234(char a2)
 namespace gamemd {
 ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
 {
-  *(unsigned int *)this->CommandClass = (void*)&CommandClass_vftable; /*0x538449*/
+    *Block = &vt_CommandClass;
   if ( (a2 & 1) != 0 ) /*0x53844f*/
     RA2_OPDEL(); /*0x538452*/
-  return this->CommandClass; /*0x53845c*/
+    return (ScreenCaptureCommandClass *)Block;
 }
 } // namespace gamemd
 
@@ -2571,10 +2571,10 @@ ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
 namespace gamemd {
 PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
 {
-  *(unsigned int *)this->CommandClass = (void*)&CommandClass_vftable; /*0x538469*/
+    *Block = &vt_CommandClass;
   if ( (a2 & 1) != 0 ) /*0x53846f*/
     RA2_OPDEL(); /*0x538472*/
-  return this->CommandClass; /*0x53847c*/
+    return (PageUserCommandClass *)Block;
 }
 } // namespace gamemd
 
@@ -2582,10 +2582,10 @@ PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
 namespace gamemd {
 CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
 {
-  *(unsigned int *)this->CommandClass = (void*)&CommandClass_vftable; /*0x538489*/
+    *Block = &vt_CommandClass;
   if ( (a2 & 1) != 0 ) /*0x53848f*/
     RA2_OPDEL(); /*0x538492*/
-  return this->CommandClass; /*0x53849c*/
+    return (CursorPositionCommandClass *)Block;
 }
 } // namespace gamemd
 
@@ -2593,10 +2593,10 @@ CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
 namespace gamemd {
 DeleteCommandClass * CreateTeamCommand::performAction_238(char a2)
 {
-  *(unsigned int *)this->CommandClass = (void*)&CommandClass_vftable; /*0x5384a9*/
+    *Block = &vt_CommandClass;
   if ( (a2 & 1) != 0 ) /*0x5384af*/
     RA2_OPDEL(); /*0x5384b2*/
-  return this->CommandClass; /*0x5384bc*/
+    return (DeleteCommandClass *)Block;
 }
 } // namespace gamemd
 
@@ -2607,14 +2607,14 @@ void CreateTeamCommand::performAction_239()
   void *v2; // eax
 
   v2 = *(unsigned int *)&this->q004; /*0x5384c6*/
-  *(unsigned int *)&this->q010 = 0; /*0x5384c9*/
-  if ( v2 && this->IsAllocated ) /*0x5384d0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x5384d6*/
-    *(unsigned int *)&this->q004 = 0; /*0x5384de*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x5384e1*/
-  this->Capacity = 0; /*0x5384e4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -2622,8 +2622,8 @@ void CreateTeamCommand::performAction_239()
 namespace gamemd {
 unsigned int CreateTeamCommand::performAction_240(int a2)
 {
-  if ( this->q00C ) /*0x5384f0*/
-    return (unsigned int)(a2 - this->q004) >> 2; /*0x538505*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x5384f7*/
 }
@@ -2635,7 +2635,7 @@ namespace gamemd {
   int result; // eax
   unsigned int *i; // ecx
 
-  DynamicVector *v2 = this->Items; /*0x538750*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x538753*/
   if ( v2 <= 0 ) /*0x538758*/
   {
@@ -2643,11 +2643,11 @@ namespace gamemd {
     int result; // eax
     unsigned int *i; // ecx
 
-    v2 = this->q010; /*0x538750*/
+      v2 = *((unsigned int *)this + 16);
     result = 0; /*0x538753*/
     if ( v2 <= 0 ) /*0x538758*/
       return -1; /*0x53876f*/
-    for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x53875e*/
+      for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
     {
       if ( ++result >= v2 ) /*0x53876d*/
         return -1; /*0x53876d*/
@@ -2671,15 +2671,15 @@ DynamicVector * CreateTeamCommand::performAction_244(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->q004; /*0x538ae3*/
+    v3 = (void *)*(Block + 1);
   *this = (void*)&VectorClass_CCINIClass___vftable; /*0x538ae6*/
-  if ( v3 && this->IsAllocated ) /*0x538af0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x538af8*/
-    *(unsigned int *)&this->q004 = 0; /*0x538b00*/
+        *(Block + 1) = 0;
   }
-  this->IsAllocated = 0; /*0x538b0b*/
-  this->Capacity = 0; /*0x538b11*/
+    *((unsigned char *)Block + 13) = 0;
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x538b18*/
     RA2_OPDEL(); /*0x538b1b*/
   return this; /*0x538b25*/

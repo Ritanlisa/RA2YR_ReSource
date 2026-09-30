@@ -23,8 +23,8 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
 {
   this->MultiplayerGameMode_field_0x04 = (unsigned int)(0);
   this->MultiplayerGameMode_field_0x08 = (unsigned int)(a2);
-  IDA_LOBYTE(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a01*/
-  IDA_BYTE1(this->MultiplayerGameMode_field_0x0C) = 0; /*0x5d8a05*/
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MultiplayerGameMode___vftable; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
@@ -34,7 +34,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
       return (unsigned int *)(this->__pad_0);
     }
     this->MultiplayerGameMode_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-    IDA_BYTE1(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a30*/
+        *((unsigned char *)this + 13) = 1;
   }
   return (unsigned int *)(this->__pad_0);
 }
@@ -49,14 +49,14 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   void *MultiplayerGameMode_field_0x0C; // eax
 
   v3 = (void *)((unsigned int)(0));
-  for ( *(unsigned int *)this->__pad_0 = (void*)&MultiplayerGameMode_vftable; v3 < (void *)(this->MultiplayerGameMode_field_0x18); ++v3 ) /*0x5d7f31*/
+    for ( *(unsigned int *)Block = &vt_MultiplayerGameMode; v3 < *((unsigned int *)Block + 6); ++v3 )
   {
-    v4 = *(void (****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
+        v4 = *(void (****)(unsigned int, int))(*((unsigned int *)Block + 3) + 4 * v3);
     if ( v4 ) /*0x5d7f3b*/
       (**v4)(v4, 1); /*0x5d7f41*/
   }
-  (*(void (**)(int *))(this->MultiplayerGameMode_field_0x08 + 12))(&this->MultiplayerGameMode_field_0x08); /*0x5d7f53*/
-  v5 = (void (***)(unsigned int, int))this->u32_38; /*0x5d7f56*/
+    (*(void (**)(char *))(*((unsigned int *)Block + 2) + 12))(Block + 8);
+    v5 = (void (***)(unsigned int, int))*((unsigned int *)Block + 14);
   if ( v5 ) /*0x5d7f5b*/
     (**v5)(v5, 1); /*0x5d7f61*/
   DeleteAndZero((ObjectClass *)((char *)&this->q0108)); /*0x5d7f66*/

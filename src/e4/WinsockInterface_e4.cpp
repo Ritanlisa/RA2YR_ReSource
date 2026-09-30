@@ -48,7 +48,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  v6 = ((char *)&this->q338 + 68); /*0x7702b8*/
+    v6 = (char *)this + 3568;
   v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
@@ -59,32 +59,32 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *(unsigned int *)&this->u32_3AC = this->Timer::GetTicks(); /*0x7702f6*/
-  *(unsigned int *)&this->u32_3B4 = 0; /*0x7702fc*/
-  *(unsigned int *)&this->u32_EE0 = 1; /*0x770305*/
-  this->u32_3BC = 0; /*0x77030c*/
+    *((unsigned int *)this + 235) = Timer::GetTicks();
+    *((unsigned int *)this + 237) = 0;
+    *((unsigned int *)this + 3808) = 1;
+    *((unsigned int *)this + 239) = 0;
   VectorClass::WstringConstructor((unsigned int *)&this->u32_3C0, 0, 0); /*0x770312*/
-  this->u32_3D4 = 10; /*0x77031d*/
-  this->u32_3D0 = 0; /*0x770324*/
-  *(unsigned int *)&this->u32_3D8 = 0; /*0x770327*/
-  this->Audio::GetEnabled(); /*0x77032d*/
+    *((unsigned int *)this + 245) = 10;
+    *((unsigned int *)this + 244) = 0;
+    *((unsigned int *)this + 246) = 0;
+    Audio::GetEnabled();
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
   String::Reassign((char **)this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   String::Assign((char **)&a2, aHistory); /*0x77035f*/
-  String::Reassign((char *)((char *)&this->q004 + 34), (const char **)&a2); /*0x77036f*/
+    String::Reassign((char **)this + 38, (const char **)&a2);
   DeleteAndZero((void **)&a2); /*0x770378*/
   String::Assign((char **)&a2, aStatus); /*0x770386*/
-  String::Reassign((char *)((char *)&this->q004 + 71), (const char **)&a2); /*0x770396*/
+    String::Reassign((char **)this + 75, (const char **)&a2);
   DeleteAndZero((void **)&a2); /*0x77039f*/
   String::Assign((char **)&a2, aTerritory); /*0x7703ad*/
-  String::Reassign((char *)((char *)&this->u32_60 + 16), (const char **)&a2); /*0x7703bd*/
+    String::Reassign((char **)this + 112, (const char **)&a2);
   DeleteAndZero((void **)&a2); /*0x7703c6*/
   String::Assign((char **)&a2, aGame); /*0x7703d4*/
-  String::Reassign((char *)((char *)&this->q092 + 3), (const char **)&a2); /*0x7703e4*/
+    String::Reassign((char **)this + 149, (const char **)&a2);
   DeleteAndZero((void **)&a2); /*0x7703ed*/
   String::Assign((char **)&a2, aEvacuate); /*0x7703fb*/
-  String::Reassign((char *)((char *)&this->u32_98 + 34), (const char **)&a2); /*0x77040b*/
+    String::Reassign((char **)this + 186, (const char **)&a2);
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 }
@@ -106,7 +106,7 @@ int WinsockInterface::Init()
   char v15; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(aWinsockinterfa_0); /*0x7b1df3*/
-  if ( this->u8_3F068 ) /*0x7b1df8*/
+    if ( *((unsigned char *)this + 258152) )
   {
     Debug::Log(aWinsockinterfa_1); /*0x7b1e0a*/
     return 1; /*0x7b1e12*/
@@ -122,7 +122,7 @@ int WinsockInterface::Init()
     v4 = (int)(*this);
     v5 = v3; /*0x7b1e5a*/
     v3 = v3; /*0x7b1e61*/
-    *(&this->u32_64D49) = -1; /*0x7b1e65*/
+        *((unsigned int *)this + 258156) = -1;
     this->vt_slot_20(); /*0x7b1e6f*/
     this->vt_slot_24(); /*0x7b1e76*/
     Debug::Log(aAboutToCallWsa); /*0x7b1e7e*/
@@ -145,7 +145,7 @@ int WinsockInterface::Init()
       else
       {
         Debug::Log("Winsock version is %d.%d\n", (uint8_t)v5->wVersion, IDA_HIBYTE(v5->wVersion)); /*0x7b1efa*/
-        this->ptr_4 = 546; /*0x7b1f0a*/
+                *((unsigned int *)this + 4) = 546;
         dwBufferLength = 4096; /*0x7b1f18*/
         v7 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v7 == -1 ) /*0x7b1f28*/
@@ -170,11 +170,11 @@ int WinsockInterface::Init()
             }
             while ( v7 ); /*0x7b1f63*/
             if ( v8 != 0x7FFFFFFF && v8 > 400 ) /*0x7b1f74*/
-              this->ptr_4 = v8; /*0x7b1f76*/
+                            *((unsigned int *)this + 4) = v7;
             v5 = v3; /*0x7b1f79*/
           }
         }
-        this->u8_3F068 = 1; /*0x7b1f7e*/
+                *((unsigned char *)this + 258152) = 1;
         RA2_OPDEL(v5); /*0x7b1f85*/
         return 1; /*0x7b1f8d*/
       }

@@ -35,6 +35,7 @@ struct E4Recv_6A04C0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
+    unsigned int q030;  // 0x30
 // --- flat members (END) ---
     char sub_6A04C0(void* aP1);  // 0x6A04C0
 };

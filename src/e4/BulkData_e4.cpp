@@ -42,6 +42,6 @@ void BulkData::InitMissionHashing()
     }
   }
   *(unsigned int *)&this->ptr_144 = (gamemd::AbstractClass *)(Time);
-  this->Debug::Log(); /*0x697b47*/
+    Debug::Log();
 }
 } // namespace gamemd

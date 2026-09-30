@@ -253,7 +253,7 @@ int Building::GetRenderType()
   int v1; // ecx
   char result; // al
 
-  v1 = *(&this->uniqueId0); /*0x772a90*/
+    v1 = *((unsigned int *)this + 160);
   result = 0; /*0x772a96*/
   if ( v1->eliteWeapon1 ) /*0x772a98*/
     result = 4; /*0x772aa2*/

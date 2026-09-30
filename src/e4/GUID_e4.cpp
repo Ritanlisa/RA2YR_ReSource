@@ -22,8 +22,8 @@ bool __fastcall GUID::Compare(const GUID& a, const GUID& b)
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
-    return this->Data4 == a2->vtable2 && *(unsigned short *)this == *(unsigned short *)a2; /*0x53ef1b*/
-  if ( (*this || this->Data4 || this->q020 || this->u32_C) /*0x53eed8*/
+        return *((unsigned int *)this + 1) == *(unsigned int *)(a2 + 4) && *(unsigned short *)this == *(unsigned short *)a2;
+    if ( (*this || *((unsigned int *)this + 4) || *((unsigned int *)this + 8) || *((unsigned int *)this + 12))
     && (*(unsigned char *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
   {
     v8 = (int)((unsigned short *)(3));

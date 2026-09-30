@@ -45,10 +45,10 @@ int InfantryClass::ScanTarget(int * a1)
   unsigned char v20[12]; // [esp+54h] [ebp-18h] BYREF
   unsigned char v21[12]; // [esp+60h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->TechnoClass + 33))(a1) + 912) /*0x4d4dde*/
+    if ( *(unsigned char *)((*(int (**)(int *))(*a1 + 132))(a1) + 912)
     && !(*((int (**)(FootClass *))a1->TechnoClass + 114))(a1) )
   {
-    vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
+        v2 = *a1;
     PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1, &v17, (int)a1); /*0x4d4df4*/
     v4 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], PlacementCellsAlt); /*0x4d4dff*/
     vtable0[288](a1, v4, 1); /*0x4d4e07*/
@@ -121,7 +121,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   int v14; // [esp+Ch] [ebp-10h] BYREF
   unsigned int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->TechnoClass + 33))(a1) + 1748) /*0x4d5392*/
+    if ( *(unsigned char *)((*((int (**)(#375 **))*a1 + 33))(a1) + 1748)
     || (v15[0] = a1->?[0],
         v2 = a1->TechnoClass,
         v15[1] = a1->?[1],
@@ -210,7 +210,7 @@ void* InfantryClass::Destruct()
   int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
   p_vtable1 = (AbstractClass *)&this->vtable1; /*0x517d9a*/
-  this->vtable0 = (void*)&InfantryClass_vftable; /*0x517d9d*/
+    a1->field_0 = (int)&InfantryClass::`vftable';
   this->vtable2 = (void*)&InfantryClass_vftable; /*0x517da3*/
   *(void **)&this->vtable3 = &off_7EB02C; /*0x517daa*/
   this->vtable1 = (void*)&InfantryClass_vftable; /*0x517db1*/
@@ -219,26 +219,26 @@ void* InfantryClass::Destruct()
     Type = *(unsigned int *)&this->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
-      if ( HouseClass::CanBuild(this->owner, (int)Type, 0, 0) == -1 ) /*0x517de3*/
-        this->owner->recheckTechTree = 1; /*0x517deb*/
-      team = (int *)this->team; /*0x517df2*/
+            if ( HouseClass::CanBuild((unsigned int *)a1->field_21C, (IUnknown *)v3, 0, 0) == -1 )
+                *(unsigned char *)(a1->field_21C + 508) = 1;
+            v5 = *(unsigned int *)&a1->__pad_524[176];
       if ( team ) /*0x517dfa*/
       {
         TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x517e00*/
-        this->team = 0; /*0x517e05*/
+                *(unsigned int *)&a1->__pad_524[176] = 0;
       }
-      slaveOwner = this->slaveOwner; /*0x517e0b*/
+            v6 = *(unsigned int **)&a1->__pad_2B8[36];
       if ( slaveOwner ) /*0x517e13*/
       {
         slaveManager = slaveOwner->slaveManager; /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)this); /*0x517e22*/
       }
-      HouseClass::DecrementUnitCount(this->owner, this); /*0x517e2e*/
-      if ( !this->locomotor[0] ) /*0x517e33*/
+            HouseClass::DecrementUnitCount((unsigned int *)a1->field_21C, (TechnoClass *)a1);
+            if ( !*(unsigned int *)&a1->__pad_524[336] )
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
       (*(void (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 172))(this->locomotor[0]); /*0x517e4e*/
-      this->unknown_int_6E8 = 2; /*0x517e56*/
+            *(unsigned int *)&a1->__pad_690[88] = 2;
       this->Crawling = 0; /*0x517e60*/
       this->SequenceAnim[0] = 0; /*0x517e66*/
       TechnoClass::CleanupDirection((FootClass *)this); /*0x517e6c*/
@@ -299,7 +299,7 @@ void* InfantryClass::Destruct()
       }
     }
   }
-  *(unsigned int *)&this->isAliveFlag = 0; /*0x517f83*/
+    a1->__pad_8C[4] = 0;
 // 0x4d3590
   return FootClass::Destruct((FootClass *)this); /*0x517f8e*/
 }

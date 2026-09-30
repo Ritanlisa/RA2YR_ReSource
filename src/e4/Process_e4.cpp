@@ -15,19 +15,19 @@ void Process::WaitForExit()
   const HANDLE *v3; // esi
   bool v5; // eax
 
-  v3 = &this->q01C; /*0x664614*/
-  this->Debug::Log(); /*0x66461d*/
+    v3 = (AnimClass *)&CONTAINING_RECORD(this, AnimClass, field_4)->__pad_18[8];
+    Debug::Log();
   if ( !*v3 ) /*0x664629*/
     return 1; /*0x664629*/
   if ( WaitForMultipleObjects(1u, v3, 0, dwMilliseconds) != 258 ) /*0x664644*/
   {
-    this->Debug::Log(); /*0x6646a7*/
+        Debug::Log();
     *v3 = 0; /*0x6646af*/
     return 1; /*0x6646b5*/
   }
   if ( !aP2 ) /*0x66464c*/
     return 0; /*0x66464e*/
-  this->Debug::Log(); /*0x66465a*/
+    Debug::Log();
   v5 = TerminateProcess(*v3, 0); /*0x664667*/
   if ( v5 ) /*0x664671*/
   {
@@ -37,7 +37,7 @@ void Process::WaitForExit()
   else
   {
     GetLastError(); /*0x664674*/
-    this->Debug::Log(); /*0x664680*/
+        Debug::Log();
     return 0; /*0x66468c*/
   }
 }

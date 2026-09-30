@@ -101,7 +101,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->u32_29 = (unsigned int *)(0);
   this->ConnectionPointClass_field_0x1C = (unsigned int *)((int)&DynamicVectorClass_tagCONNECTDATA_vftable);
   this->q00C = (unsigned int *)(10);
-  this->q00B = 0; /*0x4a08b7*/
+    *((unsigned int *)this + 44) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&ConnectionPointClass_vftable; /*0x4a08ba*/
   (*(void (__stdcall **)(int))(aP2->q004)(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
@@ -117,30 +117,30 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a128c*/
   {
-    this->q00C = 0; /*0x4a1296*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4a12ae*/
-    this->q00C = 1; /*0x4a12b6*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x4a12ba*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x4a12c5*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x4a12cc*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x4a12d1*/
           m_8 = a2; /*0x4a12d3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x4a12d9*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x4a12de*/
-        if ( this->IsAllocated ) /*0x4a12eb*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x4a12f6*/
-          *(unsigned int *)&this->q004 = 0; /*0x4a12fe*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x4a1307*/
-      this->q008 = a2; /*0x4a130f*/
-      this->IsAllocated = a3 == 0; /*0x4a1312*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x4a1318*/
     }
     else
@@ -150,7 +150,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a1322*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x4a1328*/
   }
 }
@@ -168,14 +168,14 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
   if ( !a2 || !updated ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
   updated = AbstractClass::updateAITimer(dword_A8B230); /*0x4a0661*/
-  if ( (**a2)(a2, (int)&this->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
+    if ( (**a2)(a2, a1 + 4, &v8) < 0 )
     return -2147220990; /*0x4a0675*/
   v4 = this->u32_24; /*0x4a0681*/
-  if ( this->q00B >= v4 ) /*0x4a068c*/
+    if ( *(unsigned int *)(a1 + 44) >= v4 )
   {
-    if ( !this->u32_29 && v4 ) /*0x4a0697*/
+        if ( !*(unsigned char *)(a1 + 41) && v4 )
       return -2147220991; /*0x4a0697*/
-    v5 = this->q00C; /*0x4a0699*/
+        v5 = *(unsigned int *)(a1 + 48);
     if ( v5 <= 0 /*0x4a06a9*/
       || !(*(uint8_t (**)(int *, int, unsigned int))(this->ConnectionPointClass_field_0x1C + 8))(
             &this->ConnectionPointClass_field_0x1C,
@@ -185,9 +185,9 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
       return -2147220991; /*0x4a06de*/
     }
   }
-  v6 = this->q00B; /*0x4a06b0*/
-  ConnectionPointClass_field_0x20 = this->ConnectionPointClass_field_0x20; /*0x4a06b3*/
-  this->q00B = v6 + 1; /*0x4a06ba*/
+    v6 = *(unsigned int *)(a1 + 44);
+    v7 = *(unsigned int *)(a1 + 32);
+    *(unsigned int *)(a1 + 44) = v6 + 1;
   *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6) = v8; /*0x4a06c1*/
   *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = updated; /*0x4a06c9*/
   *updated = updated; /*0x4a06d1*/
@@ -207,7 +207,7 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
   v3 = *((unsigned int *)a1 + 11); /*0x4a0707*/
   if ( v3 <= 0 ) /*0x4a070d*/
     return -2147220992; /*0x4a0725*/
-  for ( i = (unsigned int *)(a1->ConnectionPointClass_field_0x20 + 4); *i != a2; i += 2 ) /*0x4a0716*/
+    for ( i = (unsigned int *)(*(unsigned int *)(a1 + 32) + 4); *i != a2; i += 2 )
   {
     if ( ++v2 >= v3 ) /*0x4a0723*/
       return -2147220992; /*0x4a0723*/
@@ -222,7 +222,7 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
                                                                                 + 8 * v2
                                                                                 + 4) )
     {
-      ConnectionPointClass_field_0x20 = a1->ConnectionPointClass_field_0x20; /*0x4a073e*/
+            v8 = *(unsigned int *)(a1 + 32);
       ++v2; /*0x4a0741*/
       *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2 - 8) = *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2); /*0x4a0745*/
     }
@@ -233,7 +233,7 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
 namespace gamemd {
 int ConnectionPointClass_9::EnumConnections(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4a0f7a*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -246,13 +246,13 @@ char ConnectionPointClass_9::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x4a1242*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a124d*/
   {
     v3 = 0; /*0x4a124f*/
     if ( m_8 <= 0 ) /*0x4a1253*/
       return 1; /*0x4a1273*/
-    v4 = *(unsigned int **)&this->q004; /*0x4a1255*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a125b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a1264*/
     {
@@ -274,9 +274,9 @@ int ConnectionPointClass_9::Advise(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x4a1360*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x4a1368*/
-  m_8 = this->q008; /*0x4a136e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x4a1371*/
   if ( m_8 <= 0 ) /*0x4a1375*/
     return -1; /*0x4a138c*/
@@ -293,8 +293,8 @@ int ConnectionPointClass_9::Advise(unsigned int * a2)
 namespace gamemd {
 unsigned int ConnectionPointClass_9::Unadvise(int a2)
 {
-  if ( this->q00C ) /*0x4a13a0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x4a13b5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x4a13a7*/
 }
@@ -308,13 +308,13 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a14f6*/
-  if ( v3 && this->IsAllocated ) /*0x4a1500*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x4a1508*/
-    *(unsigned int *)&this->q004 = 0; /*0x4a1510*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x4a1521*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
     RA2_OPDEL(); /*0x4a152b*/
   return this; /*0x4a1535*/

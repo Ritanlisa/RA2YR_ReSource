@@ -40,11 +40,11 @@ int E4Recv_501750::sub_501750(int a2)
   result = byte_A8E9A0; /*0x501750*/
   if ( byte_A8E9A0 ) /*0x50175f*/
   {
-    v4 = this->M21412; /*0x501765*/
-    v5 = v4 < this->M21416; /*0x501777*/
-    this->M21412 = a2 + v4; /*0x50177e*/
+        v4 = *((unsigned int *)this + 21412);
+        v5 = v4 < *((unsigned int *)this + 21416);
+        *((unsigned int *)this + 21412) = a2 + v4;
     House_Notify(); /*0x501784*/
-    result = this->M21412 < this->M21416; /*0x50179d*/
+        result = *((unsigned int *)this + 21412) < *((unsigned int *)this + 21416);
     result = result; /*0x5017a2*/
     if ( !dword_A8E7AC && v5 != result ) /*0x5017ae*/
     {
@@ -254,7 +254,7 @@ int HouseClass::sub_5092F0(int a2)
   int v8[3]; // [esp+8h] [ebp-Ch] BYREF
 
   a2 = a2; /*0x5092f0*/
-  this->u32_54E4 |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
+    this->radarVisibleTo[0] |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184);
   if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x509321*/
   {
     for ( i = 0; i < dword_A8EC88; ++i ) /*0x509330*/
@@ -283,11 +283,11 @@ int E4Recv_5093C0::sub_5093C0(int a2)
   int result; // eax
   unsigned int *i; // edx
 
-  v2 = this->u32_5614; /*0x5093c2*/
+    v2 = *((unsigned int *)this + 22036);
   result = 0; /*0x5093c8*/
   if ( v2 > 0 ) /*0x5093cd*/
   {
-    for ( i = (unsigned int *)this->u32_5608; *i != a2; i += 2 ) /*0x5093d9*/
+        for ( i = (unsigned int *)*((unsigned int *)this + 22024); *i != a2; i += 2 )
     {
       if ( ++result >= v2 ) /*0x5093e5*/
         return result; /*0x5093e5*/
@@ -368,7 +368,7 @@ double E4Recv_50C160::sub_50C160()
 namespace gamemd {
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
-  this->M21752 = a2; /*0x50da44*/
+    *((unsigned int *)this + 21752) = a2;
   return a2; /*0x50da4a*/
 }
 } // namespace gamemd

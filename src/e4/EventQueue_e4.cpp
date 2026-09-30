@@ -15,10 +15,10 @@ void EventQueue::Process(void* bink_player)
 {
   void * v2;
 
-  if ( ((unsigned int)((unsigned int)(this)->q318)+ 1) % 256 != (unsigned int)(this->q314) ) /*0x54f01e*/
+    if ( (*((unsigned int *)this + 792) + 1) % 256 != *((unsigned int *)this + 788) )
     MessageLoop(); /*0x54f020*/
-  v2 = *(unsigned int *)&this->q314; /*0x54f025*/
-  if ( v2 == this->q318 ) /*0x54f033*/
+    v2 = *((unsigned int *)this + 788);
+    if ( v2 == *((unsigned int *)this + 792) )
     return 0; /*0x54f035*/
   else
     return *((unsigned short *)(unsigned int)(this)+ v2 + 138); /*0x54f03a*/
@@ -41,9 +41,9 @@ void EventQueue::Read()
 
   do /*0x54f086*/
   {
-    if ( (*(unsigned int *)&this->q318 + 1) % 256 != (unsigned int)(this->q314) ) /*0x54f06f*/
+        if ( (*((unsigned int *)this + 792) + 1) % 256 != *((unsigned int *)this + 788) )
       MessageLoop(); /*0x54f071*/
-    v2 = *(unsigned int *)&this->q314; /*0x54f076*/
+        v2 = *((unsigned int *)this + 788);
   }
   while ( v2 == *(unsigned int *)&this->q318 || !*((unsigned short *)(unsigned int)(this)+ v2 + 138) ); /*0x54f086*/
   do /*0x54f0b3*/
@@ -52,13 +52,13 @@ void EventQueue::Read()
       MessageLoop(); /*0x54f09c*/
   }
   while ( this->q314 == *(unsigned int *)&this->q318 || !(uint16_t)EventQueue::Check(this) ); /*0x54f0b3*/
-  v3 = *(unsigned int *)&this->q314; /*0x54f0bd*/
-  v4 = *(unsigned int *)&this->q318; /*0x54f0c3*/
+    v3 = *((unsigned int *)this + 788);
+    v4 = *((unsigned int *)this + 792);
   result = 0; /*0x54f0c9*/
   if ( v3 != (void *)(v4) ) /*0x54f0cd*/
   {
     result = *((unsigned short *)(unsigned int)(this)+ v3 + 138); /*0x54f0cf*/
-    *(unsigned int *)&this->q314 = ((unsigned int)(v3)+ 1) % 256; /*0x54f0e8*/
+        *((unsigned int *)this + 788) = (v3 + 1) % 256;
   }
   if ( (uint8_t)result == 1 || (uint8_t)result == 4 || (uint8_t)result == 2 ) /*0x54f106*/
   {
@@ -67,7 +67,7 @@ void EventQueue::Read()
     if ( v6 != (void *)(v4) ) /*0x54f112*/
     {
       v7 = *((unsigned short *)(unsigned int)(this)+ v6 + 138); /*0x54f114*/
-      *(unsigned int *)&this->q314 = ((unsigned int)(v6)+ 1) % 256; /*0x54f12d*/
+            *((unsigned int *)this + 788) = (v6 + 1) % 256;
     }
     v8 = (void *)(*(unsigned int *)&this->q314);
     v9 = 0; /*0x54f140*/
@@ -75,11 +75,11 @@ void EventQueue::Read()
     if ( v8 != (void *)(v4) ) /*0x54f146*/
     {
       v9 = *((unsigned short *)(unsigned int)(this)+ v8 + 138); /*0x54f148*/
-      *(unsigned int *)&this->q314 = ((unsigned int)(v8)+ 1) % 256; /*0x54f161*/
+            *((unsigned int *)this + 788) = (v8 + 1) % 256;
     }
-    this->u32_C = v7; /*0x54f16d*/
-    this->u32_4 = v9; /*0x54f171*/
-    *(unsigned int *)&this->u32_10 = v9; /*0x54f174*/
+        *((unsigned int *)this + 12) = v7;
+        *((unsigned int *)this + 4) = v9;
+        *((unsigned int *)this + 16) = v9;
   }
   else if ( (uint8_t)result == 10 ) /*0x54f17e*/
   {
@@ -88,9 +88,9 @@ void EventQueue::Read()
     if ( v10 != (void *)(v4) ) /*0x54f18a*/
     {
       v11 = *((unsigned short *)(unsigned int)(this)+ v10 + 138); /*0x54f18c*/
-      *(unsigned int *)&this->q314 = ((unsigned int)(v10)+ 1) % 256; /*0x54f1a5*/
+            *((unsigned int *)this + 788) = (v10 + 1) % 256;
     }
-    *(unsigned short *)&this->u16_8 = v11; /*0x54f1ab*/
+        *((unsigned short *)this + 4) = v11;
   }
   return result; /*0x54f177*/
 }
@@ -102,7 +102,7 @@ void EventQueue::Check()
   void * v1;
 
   v1 = (void *)((int)(this->q314));
-  if ( v1 == this->q318 ) /*0x54f65e*/
+    if ( v1 == *((unsigned int *)this + 792) )
     return 0; /*0x54f669*/
   else
     return *((unsigned short *)(unsigned int)(this)+ v1 + 138); /*0x54f660*/

@@ -255,14 +255,14 @@ AbstractClass * * HandleWOLForwardingError()
           case 0: /*0x79354a*/
             v6 = 1; /*0x793557*/
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79355c*/
-            this->Debug::Log(); /*0x793567*/
+                        Debug::Log();
             v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x793579*/
             StringCSF = GetStringCSF((wchar_t *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840); /*0x793589*/
             goto LABEL_19; /*0x793589*/
           case 1: /*0x79354a*/
             v6 = 1; /*0x793591*/
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x793596*/
-            this->Debug::Log(); /*0x7935a1*/
+                        Debug::Log();
             v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x7935b3*/
             StringCSF = GetStringCSF(aTxtTalkLocalPr, 0, g_Str_File_wonline_cpp, 18850); /*0x7935c3*/
   LABEL_19:
@@ -273,14 +273,14 @@ AbstractClass * * HandleWOLForwardingError()
             v6 = 1; /*0x7935ee*/
             if ( v7 == v3 ) /*0x7935f0*/
             {
-              this->Debug::Log(); /*0x7935f7*/
+                            Debug::Log();
               v12 = GetStringCSF(aTxtTalkForward, 0, g_Str_File_wonline_cpp, 18861); /*0x79361b*/
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
             {
               ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79362a*/
-              this->Debug::Log(); /*0x793635*/
+                            Debug::Log();
               v13 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x79364b*/
               v9 = GetStringCSF(aTxtTalkForward_0, 0, g_Str_File_wonline_cpp, 18864); /*0x793658*/
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
@@ -289,7 +289,7 @@ AbstractClass * * HandleWOLForwardingError()
             break; /*0x79361d*/
           case 3: /*0x79354a*/
             v6 = 1; /*0x793683*/
-            this->Debug::Log(); /*0x793685*/
+                        Debug::Log();
             v14 = GetStringCSF(aTxtTalkHostAbo, 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
             Dialog::ShowMessage(-1, (size_t)v14); /*0x7936aa*/
             break; /*0x7936aa*/
@@ -325,7 +325,7 @@ int sub_793B30(char a1, const char * a2)
     strcpy(v4, a2); /*0x793b68*/
   else
     v4[0] = 0; /*0x793b76*/
-  this->Debug::Log(); /*0x793b85*/
+    Debug::Log();
   return (*(int (__stdcall **)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
 }
@@ -435,14 +435,14 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   v70 = a2; /*0x793d2c*/
   v72 = aP0; /*0x793d34*/
   v4 = 0; /*0x793d3d*/
-  this->Timer::GetTicks(); /*0x793d38*/
-  this->Timer::GetTicks(); /*0x793d4b*/
+    Timer::GetTicks();
+    Timer::GetTicks();
   v56 = 1; /*0x793d5f*/
   v75[0] = 0; /*0x793d64*/
   Waypoint::InitInvalid(&v91); /*0x793d68*/
   v66 = 0; /*0x793d74*/
   v57 = 0; /*0x793d7f*/
-  this->Debug::Log(); /*0x793d84*/
+    Debug::Log();
   v62 = -1; /*0x793d93*/
   if ( dword_A8DA84 <= 0 ) /*0x793d9b*/
     goto LABEL_6; /*0x793d9b*/
@@ -460,9 +460,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   {
   LABEL_6:
     strcpy(&((unsigned int *)(v91.__pad_0))[12], "Z10"); /*0x793de5*/
-    this->Debug::Log(); /*0x793e0b*/
+        Debug::Log();
     (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, &((unsigned int *)(v91.__pad_0))[12]); /*0x793e23*/
-    this->Debug::Log(); /*0x793e2d*/
+        Debug::Log();
     return 0; /*0x793e41*/
   }
   v9 = (char *)&unk_A8E060; /*0x793e44*/
@@ -471,7 +471,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v10 = ToWideStringChar((char *)dword_A8DA90[v3]); /*0x793e55*/
     if ( !_strcmpi(v9, v10) ) /*0x793e66*/
     {
-      this->Debug::Log(); /*0x793e7a*/
+            Debug::Log();
       v56 = 0; /*0x793e82*/
       break; /*0x793e82*/
     }
@@ -482,7 +482,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   v11 = *(unsigned int *)&stru_A8DBC0.alignmentPadding69[4 * v3 + 3]; /*0x793e87*/
   if ( v56 && (!v11 || (v11 & 1) != 0) && (!(unsigned short)dword_ABFEC8 || (dword_ABFEC8 & 1) != 0) ) /*0x793eac*/
   {
-    this->Debug::Log(); /*0x793eb3*/
+        Debug::Log();
     v56 = 0; /*0x793ebb*/
   }
   v61 = 0; /*0x793ec2*/
@@ -491,16 +491,16 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   while ( 1 ) /*0x793ece*/
   {
     v12 = v62; /*0x793ece*/
-    this->Debug::Log(); /*0x793ed7*/
+        Debug::Log();
     Network_Connect_793BB0(v55); /*0x793edf*/
     if ( v56 ) /*0x793eea*/
     {
       v14 = 0; /*0x793f1d*/
       v15 = dword_ABFEC8; /*0x793f1f*/
-      this->Debug::Log(); /*0x793f2b*/
+            Debug::Log();
       if ( (v15 & 0x40) != 0 ) /*0x793f36*/
         goto LABEL_110; /*0x793f36*/
-      this->Debug::Log(); /*0x793f41*/
+            Debug::Log();
       v59 = 0; /*0x793f50*/
       if ( dword_A8E224 <= 0 ) /*0x793f54*/
         goto LABEL_110; /*0x793f54*/
@@ -516,7 +516,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         if ( (uint8_t)NetworkID::Compare(v84, v19) ) /*0x793f9a*/
         {
           v14 = ((unsigned int *)(dword_A8E184))[v17]; /*0x793fa3*/
-          this->Debug::Log(); /*0x793fb8*/
+                    Debug::Log();
         }
         ++v16; /*0x793fcb*/
         ++v59; /*0x793fd0*/
@@ -525,7 +525,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       if ( !v14 ) /*0x793fd9*/
       {
   LABEL_110:
-        this->Debug::Log(); /*0x793fe4*/
+                Debug::Log();
         v20 = 0; /*0x793ff1*/
         if ( dword_A8DA84 > 0 ) /*0x793ff5*/
         {
@@ -539,9 +539,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
               goto LABEL_34; /*0x794027*/
           }
           v23 = *(&dword_A8E2B2 + v20); /*0x79402b*/
-          this->Debug::Log(); /*0x794041*/
+                    Debug::Log();
           v14 = Network::ResolveNetworkAddress((Network *)&dword_ABFEC8, v23); /*0x794054*/
-          this->Debug::Log(); /*0x794061*/
+                    Debug::Log();
         }
       }
   LABEL_34:
@@ -561,7 +561,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           {
             qmemcpy(v94, "Z4", sizeof(v94)); /*0x7940c3*/
             sprintf(Buffer, "%d", v14); /*0x7940da*/
-            this->Debug::Log(); /*0x7940ed*/
+                        Debug::Log();
             (*(void (__stdcall **)(LPVOID, char *, char *))(*(unsigned int *)ppv + 56))(ppv, v26, v94); /*0x794106*/
           }
           owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79410d*/
@@ -578,7 +578,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     else
     {
       v13 = *(&dword_A8E2B2 + v62); /*0x793eec*/
-      this->Debug::Log(); /*0x793f02*/
+            Debug::Log();
       dword_A8E050[v3] = v13; /*0x793f0a*/
     }
     Ticks = Timer::GetTicks(); /*0x79413a*/

@@ -29,7 +29,7 @@ HWND E4Recv_696AE0::sub_696AE0()
   {
     if ( result ) /*0x696b15*/
     {
-      p_vtable2 = (char *)&this->?; /*0x696b21*/
+            v5 = (char *)((char *)this + 32);
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
       String::Trim(p_vtable2); /*0x696b43*/
@@ -60,7 +60,7 @@ HWND E4Recv_696AE0::sub_696AE0()
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
         SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        this->isInLogic = (unsigned int)(v6); /*0x696c2e*/
+                *((unsigned int *)this + 608) = v6;
         return (int)this; /*0x696c2a*/
       }
     }
@@ -107,7 +107,7 @@ HWND E4Recv_696C40::sub_696C40()
           --v4; /*0x696cd2*/
         SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
         result = SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        this->isInLogic = (unsigned int)(v4); /*0x696ce9*/
+                *((unsigned int *)this + 608) = v4;
       }
     }
   }

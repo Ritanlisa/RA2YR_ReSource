@@ -17,6 +17,6 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(char a2)
   MultiplayerGameMode::Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
     RA2_OPDEL(); /*0x5c61b6*/
-  return &this->MultiplayerManBattle_field_00; /*0x5c61c0*/
+    return (MultiplayerManBattle *)Block;
 }
 } // namespace gamemd

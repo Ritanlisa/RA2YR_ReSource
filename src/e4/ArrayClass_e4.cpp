@@ -23,10 +23,10 @@ int ArrayClass::GetAt_Wrap(int a2)
     v4 = (void *)(this->field_94);
     if ( (int)v4 < 0 ) /*0x636e79*/
       return 0; /*0x636e79*/
-    v3 = (int)v4 + (a2 - (int)v4) % *(unsigned int *)&this->u32_90; /*0x636e88*/
+        v3 = v4 + (a2 - v4) % *((unsigned int *)this + 144);
   }
   if ( v3 >= 0 && v3 < (int)v2 ) /*0x636e90*/
-    return *((unsigned int *)this->field_8 + v3); /*0x636e9a*/
+        return *(unsigned int *)(*((unsigned int *)this + 8) + 4 * v3);
   return 0; /*0x636e95*/
 }
 }

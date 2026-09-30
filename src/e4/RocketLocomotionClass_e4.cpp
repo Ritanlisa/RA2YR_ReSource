@@ -17,25 +17,25 @@ RocketLocomotionClass::RocketLocomotionClass()
   int v2; // ecx
 
   LocomotionClass::Init(); /*0x661ec3*/
-  this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
-  this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
-  this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
-  this->MissionTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661eee*/
-  this->MissionTimer[2] = 0; /*0x661ef1*/
-  this->MissionTimer[3] = 0; /*0x661ef4*/
+    *((unsigned int *)this + 96) = dword_B04E38;
+    *((unsigned int *)this + 112) = dword_B04E3C;
+    *((unsigned int *)this + 128) = dword_B04E40;
+    *((unsigned int *)this + 144) = MEMORY[0xA8ED84];
+    *((unsigned int *)this + 176) = 0;
+    *((unsigned int *)this + 192) = 0;
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
-  this->TrailerTimer[2] = 0; /*0x661efd*/
-  this->TrailerTimer[0] = v2; /*0x661f00*/
-  this->CurrentSpeed[0] = 0; /*0x661f03*/
-  this->MissionState = 0; /*0x661f06*/
-  this->CurrentSpeed[1] = 0; /*0x661f09*/
-  this->SpawnerIsElite = 0; /*0x661f0c*/
-  this->CurrentPitch = 0.0; /*0x661f0f*/
-  this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
-  this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = (void*)&RocketLocomotionClass_vftable; /*0x661f19*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&RocketLocomotionClass_vftable; /*0x661f1f*/
-  return (int)this->LocomotionClass; /*0x661f28*/
+    *((unsigned int *)this + 240) = 0;
+    *((unsigned int *)this + 208) = v2;
+    *((unsigned int *)this + 288) = 0;
+    *((unsigned int *)this + 256) = 0;
+    *((unsigned int *)this + 304) = 0;
+    *((unsigned char *)this + 324) = 0;
+    *((unsigned int *)this + 336) = 0;
+    *((unsigned int *)this + 352) = 0;
+    *((unsigned char *)this + 320) = 1;
+    *(unsigned int *)this = &RocketLocomotionClass::`vftable';
+    *((unsigned int *)this + 16) = &vt_RocketLocomotionClass;
+    return this;
 }
 // 0x6633D0
 int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
@@ -76,12 +76,12 @@ int RocketLocomotionClass::StubReturn96()
 // 0x6635C0
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 {
-  *(unsigned int *)this->LocomotionClass = (void*)&RocketLocomotionClass_vftable; /*0x6635c3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&RocketLocomotionClass_vftable; /*0x6635c9*/
+    *Block = &RocketLocomotionClass::`vftable';
+    *(Block + 1) = &vt_RocketLocomotionClass;
   LocomotionClass::Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     RA2_OPDEL(); /*0x6635dd*/
-  return this->LocomotionClass; /*0x6635e7*/
+    return (RocketLocomotionClass *)Block;
 }
 // 0x6647B0
 namespace gamemd {
@@ -90,14 +90,14 @@ void RocketLocomotionClass_17::ddtor(void *a1 = 0)
   void *v2; // eax
 
   v2 = *(void **)&this->q004; /*0x6647b6*/
-  this->q010 = 0; /*0x6647b9*/
-  if ( v2 && this->IsAllocated ) /*0x6647c0*/
+    *((unsigned int *)this + 64) = 0;
+    if ( v2 && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(v2); /*0x6647c6*/
-    *(unsigned int *)&this->q004 = 0; /*0x6647ce*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x6647d1*/
-  this->q008 = 0; /*0x6647d4*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -105,8 +105,8 @@ void RocketLocomotionClass_17::ddtor(void *a1 = 0)
 namespace gamemd {
 unsigned int RocketLocomotionClass_17::BeginMove(int a2)
 {
-  if ( this->q00C ) /*0x6647e0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x6647f5*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x6647e7*/
 }
@@ -116,7 +116,7 @@ unsigned int RocketLocomotionClass_17::BeginMove(int a2)
 namespace gamemd {
 int RocketLocomotionClass_17::UpdateMovement(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x66480a*/
+    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
 }
 } // namespace gamemd
 
@@ -129,13 +129,13 @@ char RocketLocomotionClass_17::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x664812*/
+    v2 = *((unsigned int *)this + 8);
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x66481d*/
   {
     v3 = 0; /*0x66481f*/
     if ( m_8 <= 0 ) /*0x664823*/
       return 1; /*0x664843*/
-    v4 = *(unsigned int **)&this->q004; /*0x664825*/
+        v4 = (unsigned int *)*((unsigned int *)this + 4);
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x66482b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x664834*/
     {
@@ -159,30 +159,30 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66485c*/
   {
-    this->q00C = 0; /*0x664866*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x66487e*/
-    this->q00C = 1; /*0x664886*/
+        *((unsigned char *)this + 12) = 1;
     if ( v4 ) /*0x66488a*/
     {
-      if ( *(unsigned int *)&this->q004 ) /*0x664895*/
+            if ( *((unsigned int *)this + 1) )
       {
-        m_8 = this->q008; /*0x66489c*/
+                v6 = *((unsigned int *)this + 2);
         if ( a2 < m_8 ) /*0x6648a1*/
           m_8 = a2; /*0x6648a3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x6648a9*/
+                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
           ++i; /*0x6648ae*/
-        if ( this->IsAllocated ) /*0x6648bb*/
+                if ( *((unsigned char *)this + 13) )
         {
           RA2_OPDEL(*(void **)&this->q004); /*0x6648c6*/
-          *(unsigned int *)&this->q004 = 0; /*0x6648ce*/
+                    *((unsigned int *)this + 1) = 0;
         }
       }
-      *(void **)&this->q004 = v4; /*0x6648d7*/
-      this->q008 = a2; /*0x6648df*/
-      this->IsAllocated = a3 == 0; /*0x6648e2*/
+            *((unsigned int *)this + 1) = v4;
+            *((unsigned int *)this + 2) = a2;
+            *((unsigned char *)this + 13) = a3 == 0;
       return 1; /*0x6648e8*/
     }
     else
@@ -192,7 +192,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6648f2*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x6648f8*/
   }
 }
@@ -202,13 +202,13 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 void RocketLocomotionClass_17::Destroy(void *a1 = 0)
 {
-  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x66490d*/
+    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
   {
     RA2_OPDEL(*(void **)&this->q004); /*0x664913*/
-    *(unsigned int *)&this->q004 = 0; /*0x66491b*/
+        *((unsigned int *)this + 16) = 0;
   }
-  this->IsAllocated = 0; /*0x66491e*/
-  this->q008 = 0; /*0x664921*/
+    *((unsigned char *)this + 52) = 0;
+    *((unsigned int *)this + 32) = 0;
 }
 } // namespace gamemd
 
@@ -220,9 +220,9 @@ int RocketLocomotionClass_17::IndexOf(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x664930*/
+    if ( !*((unsigned char *)this + 48) )
     return 0; /*0x664938*/
-  m_8 = this->q008; /*0x66493e*/
+    v3 = *((unsigned int *)this + 32);
   result = 0; /*0x664941*/
   if ( m_8 <= 0 ) /*0x664945*/
     return -1; /*0x66495c*/
@@ -239,8 +239,8 @@ int RocketLocomotionClass_17::IndexOf(unsigned int * a2)
 namespace gamemd {
 unsigned int RocketLocomotionClass_17::PointerToIndex(int a2)
 {
-  if ( this->q00C ) /*0x664970*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x664985*/
+    if ( *((unsigned char *)this + 48) )
+        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
   else
     return 0; /*0x664977*/
 }
@@ -257,38 +257,38 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66499c*/
   {
-    this->q00C = 0; /*0x6649a2*/
+        *((unsigned char *)this + 12) = 0;
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x6649ba*/
-    this->q00C = 1; /*0x6649c2*/
+        *((unsigned char *)this + 12) = 1;
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
-    if ( *(unsigned int *)&this->q004 ) /*0x6649c8*/
+        if ( *((unsigned int *)this + 1) )
     {
-      m_8 = this->q008; /*0x6649cf*/
+            v5 = *((unsigned int *)this + 2);
       if ( a2 < m_8 ) /*0x6649d4*/
         m_8 = a2; /*0x6649d6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x6649dc*/
+            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
         ++i; /*0x6649e1*/
-      if ( this->IsAllocated ) /*0x6649ee*/
+            if ( *((unsigned char *)this + 13) )
       {
         RA2_OPDEL(*(void **)&this->q004); /*0x6649f9*/
-        *(unsigned int *)&this->q004 = 0; /*0x664a01*/
+                *((unsigned int *)this + 1) = 0;
       }
     }
-    *(void **)&this->q004 = v4; /*0x664a0a*/
-    this->q008 = a2; /*0x664a12*/
-    this->IsAllocated = a3 == 0; /*0x664a15*/
+        *((unsigned int *)this + 1) = v4;
+        *((unsigned int *)this + 2) = a2;
+        *((unsigned char *)this + 13) = a3 == 0;
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x664a1e*/
+        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
-  v7 = this->q008; /*0x664a21*/
-  if ( v7 < this->q010 ) /*0x664a29*/
-    this->q010 = v7; /*0x664a2b*/
+    v7 = *((unsigned int *)this + 2);
+    if ( v7 < *((unsigned int *)this + 4) )
+        *((unsigned int *)this + 4) = v7;
   return 1; /*0x664a2e*/
 }
 } // namespace gamemd
@@ -301,11 +301,11 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x664a40*/
+    v2 = *((unsigned int *)this + 16);
   result = 0; /*0x664a43*/
   if ( m_10 <= 0 ) /*0x664a48*/
     return -1; /*0x664a5f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x664a4e*/
+    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
   {
     if ( ++result >= m_10 ) /*0x664a5d*/
       return -1; /*0x664a5d*/
@@ -321,13 +321,13 @@ void RocketLocomotionClass_17::Constructor(void *a1 = 0)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664a76*/
-  if ( v3 && this->IsAllocated ) /*0x664a80*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x664a88*/
-    *(unsigned int *)&this->q004 = 0; /*0x664a90*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x664aa1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
     RA2_OPDEL(); /*0x664aab*/
   return this; /*0x664ab5*/
@@ -342,13 +342,13 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664ac6*/
-  if ( v3 && this->IsAllocated ) /*0x664ad0*/
+    if ( v3 && *((unsigned char *)Block + 13) )
   {
     RA2_OPDEL(v3); /*0x664ad8*/
-    *(unsigned int *)&this->q004 = 0; /*0x664ae0*/
+        *(Block + 1) = 0;
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  *(unsigned short *)&this->q008 = 0; /*0x664af1*/
+    *(Block + 2) = 0;
   if ( (a2 & 1) != 0 ) /*0x664af8*/
     RA2_OPDEL(); /*0x664afb*/
   return this; /*0x664b05*/

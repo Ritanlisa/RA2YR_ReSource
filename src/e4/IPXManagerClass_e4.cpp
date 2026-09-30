@@ -16,20 +16,20 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
   int v4; // eax
   int result; // eax
 
-  v4 = *(&this->Initialized9); /*0x540d80*/
+    v4 = *((unsigned int *)this + 76);
   if ( v4 ) /*0x540d93*/
   {
     v4->q028 = a2; /*0x540d95*/
-    *(unsigned int *)(*(&this->Initialized9) + 44) = a3; /*0x540d9b*/
-    *(unsigned int *)(*(&this->Initialized9) + 48) = a4; /*0x540da1*/
+        *(unsigned int *)(*((unsigned int *)this + 76) + 44) = a3;
+        *(unsigned int *)(*((unsigned int *)this + 76) + 48) = a4;
   }
-  result = *(&this->q0080); /*0x540da4*/
+    result = *((unsigned int *)this + 80);
   if ( result ) /*0x540da9*/
   {
     *(unsigned int *)(result + 40) = a2; /*0x540dab*/
-    result = *(&this->q0080); /*0x540dae*/
+        result = *((unsigned int *)this + 80);
     *(unsigned int *)(result + 44) = a3; /*0x540db1*/
-    *(unsigned int *)(*(&this->q0080) + 48) = a4; /*0x540db7*/
+        *(unsigned int *)(*((unsigned int *)this + 80) + 48) = a4;
   }
   return result; /*0x540dba*/
 }
@@ -62,22 +62,22 @@ int IPXManagerClass::receivePacket(int a2)
   int result; // eax
   IPXManagerClass *v4; // esi
 
-  v2 = this->u32_44; /*0x541070*/
+    v2 = *((unsigned int *)this + 68);
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
   LABEL_5:
-    if ( a2 == this->u32_50 ) /*0x541091*/
+        if ( a2 == *((unsigned int *)this + 80) )
     {
       return -4; /*0x541095*/
     }
-    else if ( a2 == this->u32_4C ) /*0x5410a0*/
+        else if ( a2 == *((unsigned int *)this + 76) )
     {
       return -3; /*0x5410a4*/
     }
     else
     {
-      return (a2 != this->u32_48) - 2; /*0x5410b6*/
+            return (a2 != *((unsigned int *)this + 72)) - 2;
     }
   }
   else
@@ -107,15 +107,15 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
   void * v11;
   int v13; // [esp+10h] [ebp-4h]
 
-  if ( !this->Initialized ) /*0x5415f7*/
+    if ( !*((unsigned char *)this + 16) )
     return 0; /*0x5415f7*/
-  if ( !this->Active ) /*0x5415fe*/
+    if ( !*((unsigned char *)this + 20) )
     return 0; /*0x5415fe*/
-  v5 = this->q044; /*0x541605*/
+    v5 = *((unsigned int *)this + 272);
   if ( !v5 ) /*0x54160c*/
     return 0; /*0x54160c*/
-  if ( this->curConnIndex >= (unsigned int)(v5) ) /*0x541611*/
-    this->curConnIndex = 0; /*0x541613*/
+    if ( *((unsigned int *)this + 336) >= v5 )
+        *((unsigned int *)this + 336) = 0;
   v13 = 0; /*0x541618*/
   if ( v5 <= 0 ) /*0x54161c*/
     return 0; /*0x541661*/
@@ -129,7 +129,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     v11 = (void *)((unsigned int)(this->q044));
     this->curConnIndex = (unsigned int)(v8);
     if ( v8 >= v11 ) /*0x541647*/
-      this->curConnIndex = 0; /*0x541649*/
+            *((unsigned int *)this + 336) = 0;
     if ( v7 ) /*0x541652*/
       break; /*0x541652*/
     if ( ++v13 >= (int)(v11) ) /*0x54165f*/

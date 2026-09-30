@@ -14,12 +14,12 @@ int Techno::GetOwnerHouse()
 {
   int result; // eax
 
-  result = this->u32_C4; /*0x6f2073*/
+    result = *((unsigned int *)this + 784);
   if ( !result ) /*0x6f207b*/
   {
-    if ( BuildingType::IsSpecialType(*(void **)(&this->u32_500)) ) /*0x6f2083*/
+        if ( BuildingType::IsSpecialType(*(void **)((char *)this + 800)) )
 // 0x510ed0
-      return BuildingType::FindOwnerHouse(*(void **)(&this->u32_500)); /*0x6f2093*/
+            return BuildingType::FindOwnerHouse(*(void **)((char *)this + 800));
     else
       return 0; /*0x6f2098*/
   }

@@ -13,8 +13,8 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
   this->UnitTypeVector_field_0x04 = (unsigned int)(0);
   this->UnitTypeVector_field_0x08 = (unsigned int)(a2);
-  IDA_LOBYTE(this->UnitTypeVector_field_0x0C) = 1; /*0x513951*/
-  IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 0; /*0x513955*/
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
@@ -24,7 +24,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
       return (unsigned int *)(this);
     }
     this->UnitTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-    IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x513980*/
+        *((unsigned char *)this + 13) = 1;
   }
   return (unsigned int *)(this->__pad_0);
 }
@@ -35,8 +35,8 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
 {
   this->UnitTypeVector_field_0x04 = (unsigned int)(0);
   this->UnitTypeVector_field_0x08 = (unsigned int)(a2);
-  IDA_LOBYTE(this->UnitTypeVector_field_0x0C) = 1; /*0x5d8961*/
-  IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 0; /*0x5d8965*/
+    *((unsigned char *)this + 12) = 1;
+    *((unsigned char *)this + 13) = 0;
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_UnitTypeClass___vftable; /*0x5d8968*/
   if ( a2 ) /*0x5d896e*/
   {
@@ -46,7 +46,7 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
       return (unsigned int *)(this);
     }
     this->UnitTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-    IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x5d8990*/
+        *((unsigned char *)this + 13) = 1;
   }
   return (unsigned int *)(this->__pad_0);
 }

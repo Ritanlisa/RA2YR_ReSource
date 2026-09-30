@@ -586,7 +586,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   v95 = (unsigned int *)(-1);
   Terrain_field_0x14 = (unsigned int *)(this->Terrain_field_0x14);
   v3 = 0; /*0x56c52c*/
-  v4 = *(unsigned int *)this->__pad_68 + 4 * *(unsigned int *)&this-((unsigned int *)(>__pad_68))[4]; /*0x56c52e*/
+    v4 = *((unsigned int *)this + 104) + 4 * *((unsigned int *)this + 108);
   v100 = 0; /*0x56c531*/
   v101 = 0; /*0x56c535*/
   IDA_LOWORD(v102) = 1; /*0x56c539*/
@@ -1060,7 +1060,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
     if ( ((int)((IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12)) < 2 || v74) && v11 != dword_ABDE8C && v11 != (uint16_t)aP2 ) /*0x56cc34*/
     {
       v13 = (uint16_t)aP2 | ((uint16_t)v11 << 16); /*0x56cc46*/
-      v14 = **(unsigned int **)(&this->u32_80); /*0x56cc5a*/
+            v14 = **(unsigned int **)((char *)this + 80);
       v15 = *(unsigned int *)(v14 + 24 * (aP2 & 0xF | (16 * (v11 & 0xF))) + 16); /*0x56cc5c*/
       v16 = v14 + 24 * (aP2 & 0xF | (16 * (v11 & 0xF))); /*0x56cc60*/
       v17 = v15 - 1; /*0x56cc63*/
@@ -1117,7 +1117,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
     if ( ((int)((IDA_HIDWORD(v26) ^ v26) - IDA_HIDWORD(v26)) < 2 || v74) && v25 != dword_ABDE8C && v25 != (uint16_t)aP2 ) /*0x56cd4a*/
     {
       v27 = (uint16_t)aP2 | ((uint16_t)v25 << 16); /*0x56cd5c*/
-      v28 = **(unsigned int **)(&this->u32_80); /*0x56cd70*/
+            v28 = **(unsigned int **)((char *)this + 80);
       v29 = *(unsigned int *)(v28 + 24 * (aP2 & 0xF | (16 * (v25 & 0xF))) + 16); /*0x56cd72*/
       v30 = v28 + 24 * (aP2 & 0xF | (16 * (v25 & 0xF))); /*0x56cd76*/
       v31 = v29 - 1; /*0x56cd79*/
@@ -1156,7 +1156,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
   v83 = 0; /*0x56cdf6*/
   *aP3 = ((v8 - a1) >> 2) - 1; /*0x56cdff*/
   v38 = v8 - 4; /*0x56ce01*/
-  v39 = this->u32_F8 + this->u32_F4 + 1; /*0x56ce12*/
+    v39 = *((unsigned int *)this + 992) + *((unsigned int *)this + 976) + 1;
   v40 = 4 * v39 + 4; /*0x56ce16*/
   v39 *= 4; /*0x56ce1d*/
   v40 = v40; /*0x56ce20*/
@@ -1193,7 +1193,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
       if ( (int)((IDA_HIDWORD(v45) ^ v45) - IDA_HIDWORD(v45)) < 2 || v74 ) /*0x56cf0a*/
       {
         v46 = (uint16_t)aP2 | (v42 << 16); /*0x56cf16*/
-        v47 = **(unsigned int **)(&this->u32_80); /*0x56cf2a*/
+                v47 = **(unsigned int **)((char *)this + 80);
         v48 = *(unsigned int *)(v47 + 24 * (aP2 & 0xF | (16 * (v42 & 0xF))) + 16); /*0x56cf2c*/
         v49 = v47 + 24 * (aP2 & 0xF | (16 * (v42 & 0xF))); /*0x56cf30*/
         v50 = v48 - 1; /*0x56cf33*/
@@ -1257,7 +1257,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
           if ( (int)((IDA_HIDWORD(v62) ^ v62) - IDA_HIDWORD(v62)) < 2 || v74 ) /*0x56d05e*/
           {
             v63 = (uint16_t)aP2 | (v58 << 16); /*0x56d06a*/
-            v64 = **(unsigned int **)(&this->u32_80); /*0x56d07e*/
+                      v64 = **(unsigned int **)((char *)this + 80);
             v65 = *(unsigned int *)(v64 + 24 * (aP2 & 0xF | (16 * (v58 & 0xF))) + 16); /*0x56d080*/
             v66 = v64 + 24 * (aP2 & 0xF | (16 * (v58 & 0xF))); /*0x56d084*/
             v67 = v65 - 1; /*0x56d087*/
@@ -1551,7 +1551,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (int16_t)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*((unsigned int *)this->Terrain_field_0x13C + v34) ) /*0x570401*/
+            if ( !*(unsigned int *)(*((unsigned int *)this + 316) + 4 * v34) )
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -2020,7 +2020,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
     *(unsigned int *)v87 = v24; /*0x57386b*/
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v38 = *(unsigned int *)v87; /*0x573874*/
-    v39 = *(unsigned int *)&this->__pad_122[2]; /*0x57387f*/
+        v39 = *((unsigned int *)this + 292);
     v92.vtable0 = (void*)&DynamicVectorClass_Cell_vftable; /*0x573885*/
     v94 = 10; /*0x57388f*/
     v93 = 0; /*0x573897*/
@@ -2029,13 +2029,13 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       goto LABEL_141; /*0x5738a4*/
     while ( 1 ) /*0x5738aa*/
     {
-      if ( (int16_t)v38 > (int)this->Terrain_field_0x12C + v39 ) /*0x5738bb*/
+            if ( (__int16)v37 > v39 + *((unsigned int *)this + 300) )
         goto LABEL_141; /*0x5738bb*/
-      Terrain_field_0x128 = this->Terrain_field_0x128; /*0x5738ca*/
-      if ( v87[1] < (int)Terrain_field_0x128 || v87[1] > (int)Terrain_field_0x128 + *(unsigned int *)this->__pad_130 ) /*0x5738e6*/
+            v40 = *((unsigned int *)this + 296);
+            if ( v87[1] < v40 || v87[1] > v40 + *((unsigned int *)this + 304) )
         goto LABEL_141; /*0x5738e6*/
       v41 = (int16_t)v38 + (v87[1] << 9); /*0x5738ef*/
-      if ( *((unsigned int *)this->Terrain_field_0x13C + v41) ) /*0x5738fb*/
+            if ( *(unsigned int *)(*((unsigned int *)this + 316) + 4 * v41) )
       {
         if ( v41 < 0x40000 && (v42 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v41)) != 0 ) /*0x57391b*/
         {
@@ -2182,7 +2182,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
         }
       }
       v38 = *CellStruct::Add((CellStruct *)v87, &v86, (unsigned short *)(4 * (v37 & 7) + 9041544)); /*0x5739fb*/
-      v39 = *(unsigned int *)&this->__pad_122[2]; /*0x5739fd*/
+            v39 = *((unsigned int *)this + 292);
       *(unsigned int *)v87 = v38; /*0x573a03*/
       if ( (int16_t)v38 < v39 ) /*0x573a0c*/
         goto LABEL_141; /*0x573a0c*/
@@ -2416,7 +2416,7 @@ int Terrain::CreateCrater(IUnknown * aP1)
       return v10; /*0x576990*/
     }
     v24 = (int16_t)v21 + (IDA_SHIWORD(aP1) << 9); /*0x57699d*/
-    if ( !*((unsigned int *)this->Terrain_field_0x13C + v24) ) /*0x5769a9*/
+        if ( !*(unsigned int *)(*((unsigned int *)this + 316) + 4 * v24) )
       goto LABEL_49; /*0x5769a9*/
     if ( v24 < 0x40000 && (v25 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v24)) != 0 ) /*0x5769c5*/
     {
@@ -3147,7 +3147,7 @@ int Terrain::LookupByName()
   v2 = 0; /*0x71dd8d*/
   if ( dword_A8E328 <= 0 ) /*0x71dd91*/
     return -1; /*0x71ddb6*/
-  while ( _strcmpi(this->__pad_0, (char *)(*((unsigned int *)dword_A8E31C + v2) + 36)) ) /*0x71ddaa*/
+    while ( _strcmpi(this, (const void *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20584] + 4 * v2) + 36)) )
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71ddb4*/
       return -1; /*0x71ddb4*/

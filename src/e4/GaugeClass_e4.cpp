@@ -11,14 +11,14 @@
 namespace gamemd {
 int GaugeClass::Stub()
 {
-  return this->u32_D; /*0x4e30a3*/
+    return *((unsigned int *)this + 52);
 }
 } // namespace gamemd
 // 0x4E30B0
 namespace gamemd {
 int GaugeClass::Draw(int a2)
 {
-  this->u32_2D = a2 != 0; /*0x4e30b9*/
+    *((unsigned int *)this + 180) = a2 != 0;
   return a2 != 0; /*0x4e30bc*/
 }
 } // namespace gamemd

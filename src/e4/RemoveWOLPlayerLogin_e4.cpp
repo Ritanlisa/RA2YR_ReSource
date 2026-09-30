@@ -23,16 +23,16 @@ void E4Recv_7AE830::sub_7AE830()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  vtable2 = (unsigned int)this->M8; /*0x7ae835*/
-  if ( (ObjectClass *)vtable2 > (gamemd::ObjectClass *)(this->nextObject) && IDA_LOBYTE(this->?) != 1 ) /*0x7ae847*/
+    v2 = *((unsigned int *)this + 8);
+    if ( v2 > *((unsigned int *)this + 48) && *((unsigned char *)this + 20) != 1 )
   {
     vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
     vtable3 = (unsigned int)((char *)this->?);
     v13 = (int *)((unsigned int)((int *)this->AbstractClass));
-    *(void **)&this->M8 = (void *)(vtable2 >> 1); /*0x7ae85c*/
-    this->M12 = vtable3 - 1; /*0x7ae864*/
+        *((unsigned int *)this + 8) = v2 >> 1;
+        *((unsigned int *)this + 12) = v4 - 1;
     v5 = (void *)RA2_OPNEW(4 * (vtable2 >> 1)); /*0x7ae86f*/
-    v6 = 4 * (int)this->M8; /*0x7ae874*/
+        v6 = 4 * *((unsigned int *)this + 8);
     this->AbstractClass = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)vtable2 > 0 ) /*0x7ae88b*/
@@ -46,7 +46,7 @@ void E4Recv_7AE830::sub_7AE830()
         {
           do /*0x7ae8bd*/
           {
-            v10 = ((int (__thiscall *)(int))this->M12)(v9) & ((1 << (int)this->M12) - 1); /*0x7ae8a7*/
+                        v10 = ((int (*)(int))*((unsigned int *)this + 24))(v9) & ((1 << *((unsigned int *)this + 12)) - 1);
             v11 = *((unsigned int *)this->AbstractClass + v10); /*0x7ae8ab*/
             *((unsigned int *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/

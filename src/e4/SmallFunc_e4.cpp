@@ -181,18 +181,18 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 {
   int v2; // eax
 
-  this->LocomotionClass::Init(); /*0x5afef3*/
+    LocomotionClass::Init((unsigned int *)this);
   this-((unsigned int *)(>MovingDestination))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
   this-((unsigned int *)(>MovingDestination))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
   this-((unsigned int *)(>MovingDestination))[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
   this-((unsigned int *)(>HeadToCoord))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
   this-((unsigned int *)(>HeadToCoord))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
-  this->IsMoving = 0; /*0x5aff2e*/
-  *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5aff32*/
+    *((unsigned char *)this + 192) = 0;
+    *(unsigned int *)this = &MechLocomotionClass::`vftable';
   this-((unsigned int *)(>HeadToCoord))[2] = v2; /*0x5aff38*/
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
-  return (int)this->LocomotionClass; /*0x5aff44*/
+    return this;
 }
 } // namespace gamemd
 
@@ -293,7 +293,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-  this->LocomotionClass::Init(); /*0x728a03*/
+    LocomotionClass::Init((unsigned int *)this);
   this-((unsigned int *)(>CurrentState))[0] = 0; /*0x728a0d*/
   this-((unsigned int *)(>CurrentState))[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
   this-((unsigned int *)(>CurrentState))[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
@@ -301,9 +301,9 @@ int E4Recv_728A00::sub_728A00()
   this-((unsigned int *)(>CurrentState))[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
   this-((unsigned int *)(>CurrentState))[6] = 0; /*0x728a33*/
   this-((unsigned int *)(>CurrentState))[7] = 0; /*0x728a36*/
-  IDA_LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
-  *(unsigned int *)this->LocomotionClass = (void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
+    *((unsigned char *)this + 224) = 0;
+    *(unsigned int *)this = &TunnelLocomotionClass::`vftable';
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
-  return (int)this->LocomotionClass; /*0x728a4b*/
+    return this;
 }
 } // namespace gamemd

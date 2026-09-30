@@ -769,8 +769,8 @@ void sub_7331B0()
   {
     EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
     v3->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x7331e6*/
-    *(unsigned int *)&v3->__pad_10[4] = 10; /*0x7331ec*/
-    *(unsigned int *)v3->__pad_10 = 0; /*0x7331f3*/
+        *(unsigned int *)(v2 + 20) = 10;
+        *(unsigned int *)(v2 + 16) = 0;
   }
   else
   {
@@ -784,8 +784,8 @@ void sub_7331B0()
       v5 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v1); /*0x73320a*/
       if ( v5 && (*(unsigned char *)(v5 + 20) & 1) != 0 ) /*0x73321b*/
       {
-        EventClass_field_0x8 = v3->EventClass_field_0x8; /*0x73321d*/
-        if ( *(unsigned int *)v3->__pad_10 < (int)EventClass_field_0x8 /*0x733242*/
+                v5 = *(unsigned int *)(v2 + 8);
+                if ( *(unsigned int *)(v2 + 16) < v5
           || (IDA_BYTE1(v3->EventClass_field_0xC) || !EventClass_field_0x8)
           && (v7 = *(unsigned int *)&v3->__pad_10[4], v7 > 0)
           && (*(uint8_t (**)(EventClass *, int, unsigned int))(v3->EventClass_field_0x0 + 8))(
@@ -793,9 +793,9 @@ void sub_7331B0()
                (int)EventClass_field_0x8 + v7,
                0) )
         {
-          v8 = *(unsigned int *)v3->__pad_10; /*0x733249*/
-          EventClass_field_0x4 = v3->EventClass_field_0x4; /*0x73324c*/
-          *(unsigned int *)v3->__pad_10 = v8 + 1; /*0x733252*/
+                    v7 = *(unsigned int *)(v2 + 16);
+                    v8 = *(unsigned int *)(v2 + 4);
+                    *(unsigned int *)(v2 + 16) = v7 + 1;
           EventClass_field_0x4[v8] = v5; /*0x733255*/
         }
       }
@@ -805,7 +805,7 @@ void sub_7331B0()
     v1 = 0; /*0x73325d*/
   }
   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = v3; /*0x73325f*/
-  HeightMap = *(unsigned int *)v3->__pad_10; /*0x733265*/
+    HeightMap = *(unsigned int *)(v2 + 16);
   if ( !HeightMap ) /*0x73326a*/
   {
     if ( v3 ) /*0x733272*/
@@ -817,8 +817,8 @@ void sub_7331B0()
     {
       EventClass::resetEvent(v11, 0, 0); /*0x733296*/
       v12->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x73329b*/
-      *(unsigned int *)&v12->__pad_10[4] = 10; /*0x7332a1*/
-      *(unsigned int *)v12->__pad_10 = 0; /*0x7332a8*/
+            *(unsigned int *)(v11 + 20) = 10;
+            *(unsigned int *)(v11 + 16) = 0;
     }
     else
     {
@@ -2071,7 +2071,7 @@ char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, in
 namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
-  return (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this) != 6 /*0x7325f4*/
+    return (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 6
       && *(unsigned char *)((*((int (**)(ObjectClass *))this->AbstractClass + 33))(this) + 3516)
       && (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 79))(this);
 }
@@ -2454,18 +2454,18 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(TechnoClass *))(this->vtable0 + 388))(this) != 5 ) /*0x736c21*/
+    if ( (*(int (**)(unsigned int *))(*(char *)this + 1552))(this) != 5 )
     return 0; /*0x736c21*/
-  v4[0] = this->location[0]; /*0x736c2f*/
-  v4[1] = this->location[1]; /*0x736c3b*/
-  v4[2] = this->location[2]; /*0x736c42*/
-  if ( (uint8_t)Tactical::IsCellVisible((Tactical *)&dword_87F7E8, v4) || !this->isInPlayfield[0] ) /*0x736c54*/
+    v4[0] = *((unsigned int *)this + 156);
+    v4[1] = *((unsigned int *)this + 160);
+    v4[2] = *((unsigned int *)this + 164);
+    if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) || !*((unsigned char *)this + 981) )
     return 0; /*0x736c8a*/
-  v2 = this->u32_5D4; /*0x736c5e*/
+    v2 = *((unsigned int *)this + 1492);
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 928))(this); /*0x736c73*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 248))(this); /*0x736c7d*/
+    (*(void (**)(unsigned int *))(*(char *)this + 3712))(this);
+    (*(void (**)(unsigned int *))(*(char *)this + 992))(this);
   return 1; /*0x736c85*/
 }
 } // namespace gamemd

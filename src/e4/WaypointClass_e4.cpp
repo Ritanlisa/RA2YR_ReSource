@@ -61,16 +61,16 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
     if ( v4 >= 12 ) /*0x502229*/
     {
       v13 = this-((unsigned int *)(>padding_18))[113]; /*0x502233*/
-      if ( !this->padding_18[v13 + 114] ) /*0x502239*/
+            if ( !*(this + v13 + 132) )
       {
         v14 = RA2_OPNEW(0x40u); /*0x502246*/
         if ( v14 ) /*0x502250*/
           v15 = WaypointPathClass::Construct(v14, v13); /*0x502255*/
         else
           v15 = 0; /*0x50225c*/
-        this->padding_18[v13 + 114] = v15; /*0x50225e*/
+                *(this + v13 + 132) = v15;
       }
-      return WaypointClass_Find((ObjectClass *)this->padding_18[this-((unsigned int *)(>padding_18))[113] + 114], a2); /*0x502277*/
+            return WaypointClass_Find((unsigned int *)*(this + *((unsigned int *)this + 524) + 132), a2);
     }
   }
   while ( 1 ) /*0x5021cf*/

@@ -29,7 +29,7 @@ void sub_5DAF30()
   for ( i = 1; i < v1; ++i ) /*0x5daf8c*/
   {
     Network::SendMessage(&unk_A8E9C0.Socket, (int)v3, 455, 1, ((unsigned int *)(dword_A8DA78))[i] + 40, 0, 0); /*0x5dafb0*/
-    this->Event::Dispatch(); /*0x5dafb5*/
+        Event::Dispatch();
   }
 }
 } // namespace gamemd

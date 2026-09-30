@@ -30,8 +30,8 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
   int64_t v13; // [esp+14h] [ebp-8h]
 
-  a1->MovementSpeed[1] = a2; /*0x6a0323*/
-  a1->TrackNumber = 0; /*0x6a0326*/
+    *(unsigned int *)(a1 + 84) = a2;
+    *(unsigned int *)(a1 + 88) = 0;
   v4 = g_OverlayTypeConfig; /*0x6a032d*/
   if ( a3 != g_OverlayTypeConfig || a4 != qword_B077FC ) /*0x6a0340*/
   {
@@ -39,10 +39,10 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     v13 = a4; /*0x6a035f*/
     v6 = &a1->Dest[2]; /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || IDA___PAIR64__(a1->HeadToCoord[1], a1->HeadToCoord[0]) != qword_B077FC ) /*0x6a0375*/
+        if ( *v6 != MEMORY[0xB077F8] || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != MEMORY[0xB077FC] )
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
-      a1->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
+            *(unsigned int *)(a1 + 64) = MEMORY[0xB077FC];
       v7 = IDA_HIDWORD(qword_B077FC); /*0x6a0390*/
       v5[99] = 0; /*0x6a0396*/
       a1->HeadToCoord[1] = v7; /*0x6a039a*/
@@ -54,7 +54,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       v8 = (gamemd::CellClass *)((char)((gamemd::CellClass *)(v13)));
       v5[99] = (int)((gamemd::CellClass *)(1));
       *v6 = (int)((gamemd::CellClass *)(a3));
-      *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
+            *(unsigned long long *)(a1 + 64) = v8;
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
       v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
@@ -109,7 +109,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   unsigned int v25; // [esp+28h] [ebp-4h]
 
   v4 = a1; /*0x6a3f55*/
-  v5 = (int *)(*(int (__stdcall **)(ShipLocomotionClass *, unsigned int *))(*(unsigned int *)a1->LocomotionClass + 24))(a1, v21); /*0x6a3f62*/
+    v5 = (int *)(*(int (__stdcall **)(int, unsigned int *))(*(unsigned int *)a1 + 24))(a1, v21);
   v6 = *v5; /*0x6a3f65*/
   v7 = v5[1]; /*0x6a3f67*/
   v8 = v5[2]; /*0x6a3f70*/
@@ -274,13 +274,13 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = (void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
   *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
-  *(unsigned int *)this->__pad_18 = (void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
-  Piggybackee = this->Piggybackee; /*0x75cbf7*/
+    *(Block + 6) = (ILocomotion *)&vt_WalkLocomotionClass;
+    v3 = *(Block + 14);
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
   LocomotionClass::Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
     RA2_OPDEL(); /*0x75cc13*/
-  return this->LocomotionClass; /*0x75cc1d*/
+    return (WalkLocomotionClass *)Block;
 }
 } // namespace gamemd

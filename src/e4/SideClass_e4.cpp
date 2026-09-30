@@ -116,18 +116,18 @@ int SideClass::Construct(char* a1)
   int v3; // eax
 
   AbstractTypeClass::Constructor(aP1); /*0x6a4559*/
-  this->houseTypesCount = 0; /*0x6a4563*/
-  this->q028 = 0; /*0x6a4569*/
-  this->u32_A4 = 1; /*0x6a456f*/
-  this->u32_A5 = 0; /*0x6a4576*/
-  this->q02B = 10; /*0x6a457c*/
-  this->u32_A8 = 0; /*0x6a4586*/
-  this->houseTypes = (void*)&TypeList_int_vftable; /*0x6a458c*/
-  this->AbstractClass = (void*)&SideClass_vftable; /*0x6a4597*/
-  this->? = (void*)&SideClass_vftable; /*0x6a459d*/
-  *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a45a3*/
-  *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
+    *((unsigned int *)this + 156) = 0;
+    *((unsigned int *)this + 160) = 0;
+    *((unsigned char *)this + 164) = 1;
+    *((unsigned char *)this + 165) = 0;
+    *((unsigned int *)this + 172) = 10;
+    *((unsigned int *)this + 168) = 0;
+    *((unsigned int *)this + 152) = &vt_TypeList_int;
+    *this = &SideClass::`vftable';
+    *((unsigned int *)this + 4) = &SideClass::`vftable';
+    *((unsigned int *)this + 8) = &SideClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_SideClass;
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vtable2); /*0x6a45b1*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
     || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !FootClass_Array.?[1])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
@@ -139,7 +139,7 @@ int SideClass::Construct(char* a1)
     v3 = *((unsigned int *)((char *)&FootClass_Array + 0))++; /*0x6a45f7*/
     *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = this; /*0x6a4606*/
   }
-  return &this->AbstractClass; /*0x6a460b*/
+    return this;
 }
 }
 // 0x6A4710
@@ -148,7 +148,7 @@ int SideClass::GetCountry(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6a4719*/
 // 0x4a1d50
-  return Power::TimerProcess(this->u32_A8); /*0x6a472c*/
+    return Power::TimerProcess(*((unsigned int *)this + 672));
 }
 }
 // 0x6A4780
@@ -231,10 +231,10 @@ void * SideClass::Init(char a2)
   void *houseTypesCount; // eax
 
   this->AbstractClass = (unsigned int)((void*)&SideClass_vftable);
-  *(void **)&this->vtable2 = (void*)&SideClass_vftable; /*0x6a493c*/
-  *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a4943*/
-  *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6a4951*/
+    *(Block + 1) = &SideClass::`vftable';
+    *(Block + 2) = &SideClass::`vftable';
+    *(Block + 3) = &vt_SideClass;
+    AbstractClass::AnnounceExpiredPointer(Block, 1);
   v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &this); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {
@@ -246,19 +246,19 @@ void * SideClass::Init(char a2)
       ++v3; /*0x6a498d*/
     }
   }
-  houseTypesCount = (void *)this->houseTypesCount; /*0x6a499f*/
-  this->houseTypes = (void*)&VectorClass_int_vftable; /*0x6a49a5*/
-  if ( houseTypesCount && this->u32_A5 ) /*0x6a49b3*/
+    v4 = *(Block + 39);
+    *(Block + 38) = &vt_VectorClass_int;
+    if ( v4 && *((unsigned char *)Block + 165) )
   {
     RA2_OPDEL(houseTypesCount); /*0x6a49be*/
-    this->houseTypesCount = 0; /*0x6a49c6*/
+        *(Block + 39) = 0;
   }
-  this->u32_A5 = 0; /*0x6a49d2*/
-  this->q028 = 0; /*0x6a49d9*/
-  this->AbstractTypeClass::Dtor(); /*0x6a49e3*/
+    *((unsigned char *)Block + 165) = 0;
+    *(Block + 40) = 0;
+    AbstractTypeClass::Dtor(Block);
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     RA2_OPDEL(); /*0x6a49f0*/
-  return &this->AbstractClass; /*0x6a49fa*/
+    return (SideClass *)Block;
 }
 }
 // 0x49D9F0

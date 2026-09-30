@@ -58,26 +58,26 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
   int *v22; // eax
   int v23; // edx
 
-  if ( this->__pad_C[13] ) /*0x5d4213*/
+    if ( *((unsigned char *)this + 25) )
   {
-    (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_C[24] + 80))(*(unsigned int *)&this->__pad_C[24]); /*0x5d421f*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 36) + 80))(*((unsigned int *)this + 36));
     return 0; /*0x5d4222*/
   }
   else
   {
-    if ( this->__pad_C[14] ) /*0x5d4228*/
+        if ( *((unsigned char *)this + 26) )
     {
-      v8 = *(unsigned int *)this->__pad_0; /*0x5d4232*/
+            v8 = *this;
       for ( i = 0; v8; v8 = (*(int (**)(int))(*(unsigned int *)v8 + 4))(v8) ) /*0x5d4232*/
         ++i; /*0x5d423e*/
-      if ( this->__pad_C[13] && this->__pad_C[14] ) /*0x5d424d*/
+            if ( *((unsigned char *)this + 25) && *((unsigned char *)this + 26) )
         ++i; /*0x5d4254*/
-      if ( i + 1 > *(unsigned int *)this->__pad_C ) /*0x5d425b*/
+            if ( i + 1 > *((unsigned int *)this + 12) )
       {
-        v10 = *(unsigned int *)this->__pad_0; /*0x5d425d*/
-        *(unsigned int *)this->__pad_0 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 36))(*(unsigned int *)this->__pad_0); /*0x5d4266*/
+                v10 = *this;
+                *this = (*(int (**)(unsigned int))(*(unsigned int *)*(char *)this + 144))(*this);
         v11 = (unsigned short *)((char *)this + 5248); /*0x5d4268*/
-        v12 = &this->__pad_3D[651]; /*0x5d426e*/
+                v12 = (char *)this + 712;
         v13 = 14; /*0x5d4274*/
         do /*0x5d428d*/
         {
@@ -95,13 +95,13 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
     v14 = (wchar_t *)((int)(aP3));
     if ( !aP3 ) /*0x5d42a1*/
       v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
-    *(unsigned short *)&this->__pad_3D[635] = a5; /*0x5d42b1*/
-    memset(&this->__pad_C[28], 0, 0x144u); /*0x5d42c2*/
-    wcscpy((wchar_t *)&this->__pad_C[28], v14); /*0x5d42c5*/
-    *(unsigned short *)&this->__pad_3D[303] = 0; /*0x5d42cb*/
+        *((unsigned short *)this + 348) = a5;
+        memset((char *)this + 40, 0, 0x144u);
+        wcscpy((wchar_t *)this + 20, (const wchar_t *)v14);
+        *((unsigned short *)this + 182) = 0;
     v15 = wcslen(v14); /*0x5d42d4*/
-    *(unsigned int *)&this->__pad_3D[631] = v15; /*0x5d42db*/
-    *(unsigned int *)&this->__pad_3D[627] = v15; /*0x5d42e1*/
+        *((unsigned int *)this + 692) = v15;
+        *((unsigned int *)this + 688) = v15;
     v16 = RA2_OPNEW(0x4Cu); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
@@ -120,42 +120,42 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
       v18 = 0; /*0x5d4312*/
     }
     v19 = a6; /*0x5d4314*/
-    *(unsigned int *)&this->__pad_C[24] = v18; /*0x5d4318*/
+        *((unsigned int *)this + 36) = v18;
     if ( a6 <= 0 ) /*0x5d431d*/
-      v19 = *(unsigned int *)&this->__pad_3D[647]; /*0x5d431f*/
+            v19 = *((unsigned int *)this + 708);
     *(unsigned int *)(v18 + 56) = v19; /*0x5d4325*/
-    v20 = *(unsigned int *)&this->__pad_C[24]; /*0x5d4328*/
+        v20 = *((unsigned int *)this + 36);
     if ( v20 ) /*0x5d432d*/
     {
-      this->__pad_C[13] = 1; /*0x5d432f*/
+            *((unsigned char *)this + 25) = 1;
       (*(void (**)(int))(*(unsigned int *)v20 + 80))(v20); /*0x5d4335*/
     }
     else
     {
-      this->__pad_C[13] = 0; /*0x5d433a*/
+            *((unsigned char *)this + 25) = 0;
     }
     Network_Append(); /*0x5d433e*/
-    if ( this->__pad_C[14] ) /*0x5d4343*/
+        if ( *((unsigned char *)this + 26) )
     {
-      if ( this->__pad_C[13] ) /*0x5d434a*/
-        v21 = this->NetworkLobby_field_0x8[0] + *(unsigned int *)&this->__pad_C[8]; /*0x5d4357*/
+            if ( *((unsigned char *)this + 25) )
+                v21 = *((unsigned int *)this + 8) + *((unsigned int *)this + 20);
       else
-        v21 = this->NetworkLobby_field_0x8[0]; /*0x5d435b*/
-      v22 = *(int **)this->__pad_0; /*0x5d435e*/
-      if ( *(unsigned int *)this->__pad_0 ) /*0x5d435e*/
+                v21 = *((unsigned int *)this + 8);
+            v22 = (int *)*this;
+            v22 = (int *)*this;
       {
         do /*0x5d4373*/
         {
           v23 = *v22; /*0x5d4364*/
           v22[4] = v21; /*0x5d4368*/
           v22 = (int *)(*(int (**)(int *))(v23 + 4))(v22); /*0x5d436b*/
-          v21 += *(unsigned int *)&this->__pad_C[8]; /*0x5d436e*/
+                    v21 += *((unsigned int *)this + 20);
         }
         while ( v22 ); /*0x5d4373*/
       }
-      --*(unsigned int *)this->__pad_C; /*0x5d4375*/
+            --*((unsigned int *)this + 12);
     }
-    return *(unsigned int *)&this->__pad_C[24]; /*0x5d4378*/
+        return *((unsigned int *)this + 36);
   }
 }
 }
@@ -174,10 +174,10 @@ int NetworkLobby_UpdatePlayerList()
   LRESULT wParam; // [esp+0h] [ebp-A4h]
   wchar_t lParam[80]; // [esp+4h] [ebp-A0h] BYREF
 
-  result = this->Dialog::GetCurrentType(); /*0x5db9b6*/
+    result = Dialog::GetCurrentType();
   if ( result == 187 ) /*0x5db9c0*/
   {
-    Current = this->Dialog::GetCurrent(); /*0x5db9cf*/
+        Current = Dialog::GetCurrent();
     DlgItem = GetDlgItem(Current, 1353); /*0x5db9e3*/
     if ( (int)g_NetworkSetupConfig >= dword_A8DA6C ) /*0x5db9ec*/
     {
@@ -3009,7 +3009,7 @@ int NetworkLobby::AssignPlayerSlot()
 
   result = 0; /*0x5e9250*/
   v2 = dword_A8DA90; /*0x5e9252*/
-  while ( (*v2 != g_HouseClass_ObserverFlags || *(unsigned int *)&this->__pad_3D[46] == -1) /*0x5e926c*/
+    while ( (*v2 != MEMORY[0xAC119C] || *((unsigned int *)this + 428) == -1)
        && (*v2 != g_Lobby_MaxPlayers || *(unsigned int *)&this->__pad_3D[46] != -1) )
   {
     ++v2; /*0x5e926e*/

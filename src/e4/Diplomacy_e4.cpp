@@ -292,5 +292,5 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 // 0x656580
 char * Diplomacy::GetField(BuildingTypeClass * aP1)
 {
-  return &this->u32_60 * aP1->qEF0 + 4728; /*0x656595*/
+    return (char *)this + 96 * aP1->Foundation + 4728;
 }

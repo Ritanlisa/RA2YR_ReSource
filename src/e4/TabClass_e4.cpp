@@ -20,11 +20,11 @@ namespace gamemd {
 unsigned int * TabClass::initStripClass()
 {
   this->TabClass_field_0x0 = 0; /*0x4a2354*/
-  this->TabClass_field_0x4 = 0; /*0x4a2356*/
-  IDA_LOBYTE(this->TabClass_field_0x8[0]) = 0; /*0x4a2359*/
-  IDA_BYTE1(this->TabClass_field_0x8[0]) = 0; /*0x4a235c*/
-  IDA_BYTE2(this->TabClass_field_0x8[0]) = 0; /*0x4a235f*/
-  this->TabClass_field_0xC = 0; /*0x4a2362*/
+    *((unsigned int *)this + 4) = 0;
+    *((unsigned char *)this + 8) = 0;
+    *((unsigned char *)this + 9) = 0;
+    *((unsigned char *)this + 10) = 0;
+    *((unsigned int *)this + 12) = 0;
   return &this->TabClass_field_0x0; /*0x4a2365*/
 }
 } // namespace gamemd

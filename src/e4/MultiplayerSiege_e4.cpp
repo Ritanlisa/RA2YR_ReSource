@@ -26,7 +26,7 @@ void MultiplayerSiege::Read()
   char result; // al
   int v1; // ecx
 
-  result = this->PlayerClass::AssignPlayerIndex(); /*0x5ca680*/
+    result = PlayerClass::AssignPlayerIndex();
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
@@ -184,7 +184,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
-  this->Debug::Log(); /*0x5ca8d2*/
+    Debug::Log();
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   IDA_LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
@@ -193,8 +193,8 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     v10 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
-      this->Debug::Log(); /*0x5ca91c*/
-      v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
+            Debug::Log();
+            v11 = (int *)(*(int (**)(void *, char *, int, void ***, unsigned int *))(*(unsigned int *)this + 196))(
                      this,
                      &a2,
                      i,
@@ -363,6 +363,6 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
   MultiplayerGameMode::Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     RA2_OPDEL(); /*0x5cabe6*/
-  return &this->MultiplayerSiege_field_00; /*0x5cabf0*/
+    return (MultiplayerSiege *)Block;
 }
 } // namespace gamemd

@@ -20,27 +20,27 @@ RadSiteClass::RadSiteClass()
   RadSiteClass * v3;
 
   AbstractClass::Constructor(); /*0x65b1e3*/
-  this->LightSource = 0; /*0x65b1ea*/
-  this->RadLevelTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f3*/
-  this->RadLevelTimer[2] = 0; /*0x65b1f6*/
+    *((unsigned int *)this + 36) = 0;
+    *((unsigned int *)this + 40) = MEMORY[0xA8ED84];
+    *((unsigned int *)this + 48) = 0;
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f9*/
-  this->RadLightTimer[2] = 0; /*0x65b1ff*/
-  this->RadLightTimer[0] = v2; /*0x65b202*/
-  IDA_LOWORD(this->BaseCell[0]) = 0; /*0x65b205*/
-  IDA_HIWORD(this->BaseCell[0]) = 0; /*0x65b209*/
-  this->Spread = 0; /*0x65b20d*/
-  this->SpreadInLeptons = 0; /*0x65b210*/
-  this->RadLevel = 0; /*0x65b213*/
-  this->LevelSteps = 0; /*0x65b216*/
-  this->Intensity = 0; /*0x65b219*/
-  this->IntensitySteps = 0; /*0x65b21c*/
-  this->IntensityDecrement = 0; /*0x65b21f*/
-  this->RadDuration = 0; /*0x65b222*/
-  this->RadTimeLeft = 0; /*0x65b225*/
-  this->AbstractClass = (void*)&RadSiteClass_vftable; /*0x65b228*/
-  this->? = (void*)&RadSiteClass_vftable; /*0x65b22e*/
-  this->? = (void*)&RadSiteClass_vftable; /*0x65b235*/
-  this->? = (void*)&RadSiteClass_vftable; /*0x65b23c*/
+    *((unsigned int *)this + 60) = 0;
+    *((unsigned int *)this + 52) = v2;
+    *((unsigned short *)this + 32) = 0;
+    *((unsigned short *)this + 33) = 0;
+    *((unsigned int *)this + 68) = 0;
+    *((unsigned int *)this + 72) = 0;
+    *((unsigned int *)this + 76) = 0;
+    *((unsigned int *)this + 80) = 0;
+    *((unsigned int *)this + 84) = 0;
+    *((unsigned int *)this + 100) = 0;
+    *((unsigned int *)this + 104) = 0;
+    *((unsigned int *)this + 108) = 0;
+    *((unsigned int *)this + 112) = 0;
+    *this = &RadSiteClass::`vftable';
+    *((unsigned int *)this + 4) = &RadSiteClass::`vftable';
+    *((unsigned int *)this + 8) = &RadSiteClass::`vftable';
+    *((unsigned int *)this + 12) = &RadSiteClass::`vftable';
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -52,7 +52,7 @@ RadSiteClass::RadSiteClass()
     v3 = (unsigned int)(dword_B04BE0++);
     *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
-  return &this->AbstractClass; /*0x65b298*/
+    return this;
 }
 }
 // 0x65B3A0

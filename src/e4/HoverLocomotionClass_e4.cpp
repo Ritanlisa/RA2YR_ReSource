@@ -61,6 +61,6 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
   LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     RA2_OPDEL(); /*0x5172dd*/
-  return this->LocomotionClass; /*0x5172e7*/
+    return (HoverLocomotionClass *)Block;
 }
 } // namespace gamemd

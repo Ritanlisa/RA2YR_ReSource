@@ -22,18 +22,18 @@ void ThemeManager::ProcessCallback()
   uint64_t v3; // rax
   uint64_t v4; // kr00_8
 
-  v2 = this->Audio::Callback(); /*0x4080fa*/
-  IDA_LODWORD(v3) = this->u32_14; /*0x4080fc*/
+    v2 = Audio::Callback();
+    LODWORD(v3) = *((unsigned int *)this + 80);
   v4 = *(unsigned long long *)(v3 + 32) + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x408104*/
-  while ( (this->u8_C & 1) != 0 ) /*0x408107*/
+    while ( (*((unsigned char *)this + 48) & 1) != 0 )
   {
-    IDA_LODWORD(v3) = this->u32_14; /*0x40810d*/
+        LODWORD(v3) = *((unsigned int *)this + 80);
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    IDA_LODWORD(v3) = this->Audio::Callback(); /*0x40811a*/
+        LODWORD(v3) = Audio::Callback();
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    IDA_LOBYTE(v3) = this->Event::Dispatch(); /*0x408129*/
+        LOBYTE(v3) = Event::Dispatch();
   }
   return v3; /*0x408130*/
 }
@@ -47,15 +47,15 @@ void ThemeManager::Cleanup()
   int v4; // eax
   unsigned int *v5; // ecx
 
-  while ( this->q024 > 0 ) /*0x720778*/
+    while ( *((int *)this + 144) > 0 )
   {
     RA2_OPDEL(*(unsigned int *)(this->u32_18)); /*0x720780*/
-    v2 = this->q024; /*0x720785*/
+        v2 = *((unsigned int *)this + 144);
     if ( v2 > 0 ) /*0x72078d*/
     {
       v3 = v2 - 1; /*0x72078f*/
       v4 = 0; /*0x720792*/
-      for ( this->q024 = v3; /*0x720799*/
+            for ( *((unsigned int *)this + 144) = v3;
             v4 < this->q024;
             *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
       {
@@ -67,10 +67,10 @@ void ThemeManager::Cleanup()
   if ( v5 ) /*0x7207b9*/
   {
     ThemeClass::RequestBuffer(v5); /*0x7207bb*/
-    ThemeManager::ProcessCallback(this->u32_2C); /*0x7207c3*/
-    Audio::Release(*(unsigned int **)(&this->u32_104)); /*0x7207cb*/
+        ThemeManager::ProcessCallback(*((unsigned int *)this + 176));
+        Audio::Release(*(unsigned int **)((char *)this + 176));
     AudioSample::Destructor(*(void **)(&this->u32_104)); /*0x7207d3*/
-    this->u32_2C = 0; /*0x7207d8*/
+        *((unsigned int *)this + 176) = 0;
   }
 }
 } // namespace gamemd

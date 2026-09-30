@@ -24,9 +24,9 @@ AbstractClass * * sub_777420()
   HWND Current; // eax
   HWND v5; // eax
 
-  this->Debug::Log(); /*0x777425*/
+    Debug::Log();
   sub_407040(v1); /*0x77742d*/
-  this->Debug::Log(); /*0x77744b*/
+    Debug::Log();
   if ( stru_887598.lineTrailer && byte_B73560 == 1 && !stru_A8EB00.?[391] ) /*0x77746d*/
     (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 24))(); /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
@@ -75,12 +75,12 @@ AbstractClass * * sub_777420()
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   AsyncIO::Read(v2); /*0x777594*/
-  result = this->Dialog::GetCurrent(); /*0x777599*/
+    result = Dialog::GetCurrent();
   if ( result ) /*0x7775a1*/
   {
-    Current = (HWND)this->Dialog::GetCurrent(); /*0x7775a3*/
+        Current = Dialog::GetCurrent();
     SetActiveWindow(Current); /*0x7775a9*/
-    v5 = (HWND)this->Dialog::GetCurrent(); /*0x7775af*/
+        v4 = Dialog::GetCurrent();
     return (int)SetFocus(v5); /*0x7775b5*/
   }
   return result; /*0x7775bb*/
@@ -115,8 +115,8 @@ char * E4Recv_724000::sub_724000(int a2)
   v3 = (char *)(&this->u32_8D0);
   this->M4 = (unsigned int)(0);
   this->M8 = (unsigned int)(a2);
-  *(&this->M42) = 0; /*0x724016*/
-  this->M552 = 1000; /*0x724019*/
+    *((unsigned int *)this + 48) = 0;
+    *((unsigned int *)this + 138) = 1000;
   this->M560 = (char *)(10000);
   *((unsigned int *)v3 + 1) = 0; /*0x72402d*/
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
@@ -124,19 +124,19 @@ char * E4Recv_724000::sub_724000(int a2)
   v3[13] = 0; /*0x724037*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
-  this->M588 = 0; /*0x72404a*/
-  this->M592 = 0; /*0x724050*/
-  this->M596 = 0; /*0x724056*/
-  *(&this->u32_F00) = 0; /*0x72405c*/
-  this->M604 = 0; /*0x724062*/
+    *((unsigned int *)this + 147) = 0;
+    *((unsigned int *)this + 148) = 0;
+    *((unsigned int *)this + 149) = 0;
+    *((unsigned int *)this + 2400) = 0;
+    *((unsigned int *)this + 151) = 0;
   v4 = *(unsigned int *)v3; /*0x724068*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
   RA2_OPDEL(this->M588); /*0x72407a*/
-  this->M588 = 0; /*0x724082*/
-  this->M592 = 0; /*0x724088*/
-  this->M596 = 0; /*0x72408e*/
-  *(&this->u32_F00) = 0; /*0x724094*/
-  this->M604 = 0; /*0x72409a*/
+    *((unsigned int *)this + 147) = 0;
+    *((unsigned int *)this + 148) = 0;
+    *((unsigned int *)this + 149) = 0;
+    *((unsigned int *)this + 2400) = 0;
+    *((unsigned int *)this + 151) = 0;
   return this; /*0x7240a2*/
 }
 } // namespace gamemd

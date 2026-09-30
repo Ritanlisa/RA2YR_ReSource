@@ -49,7 +49,7 @@ int ThemeClass::ReadThemeEntry()
   INIClass::ResetSection(a2); /*0x72048a*/
   if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
-  v3 = (const char *)(&this->q0646); /*0x7204a6*/
+    v3 = (CCINIClass *)((char *)this + 1024);
   INIClass::GetString( /*0x7204bf*/
     a2,
     (uint8_t *)this,
@@ -59,15 +59,15 @@ int ThemeClass::ReadThemeEntry()
     256);
   while ( *v3 == 36 || *v3 == 35 ) /*0x7204cc*/
     ++v3; /*0x7204ce*/
-  strcpy((char *)(&this->q0646), v3); /*0x7204e9*/
+    strcpy((char *)((char *)this + 1024), v3->__pad_0);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x720501*/
                     (int)a2,
                     (uint8_t *)this,
                     (uint8_t *)g_INI_Key_Scenario,
                     this->u32_280);
-  v8 = this->u8_288; /*0x72050e*/
-  this->u32_280 = Int_Overwrite; /*0x720515*/
-  this->u8_288 = INIClass::ReadBool_Overwrite( /*0x720520*/
+    v8 = *((unsigned char *)this + 2592);
+    *((unsigned int *)this + 2560) = Int_Overwrite;
+    *((unsigned char *)this + 2592) = INIClass::ReadBool_Overwrite(
                              (int)a2,
                              (uint8_t *)this,
                              (uint8_t *)g_INI_Key_Normal,
@@ -77,14 +77,14 @@ int ThemeClass::ReadThemeEntry()
                      (uint8_t *)this,
                      (uint8_t *)aRepeat,
                      this->u8_289);
-  v6 = this->u32_28C; /*0x72053a*/
-  this->u8_289 = Bool_Overwrite; /*0x720540*/
-  this->u32_28C = HouseTypeClass::loadCountryData( /*0x720554*/
+    v6 = *((unsigned int *)this + 2608);
+    *((unsigned char *)this + 2596) = Bool_Overwrite;
+    *((unsigned int *)this + 2608) = HouseTypeClass::loadCountryData(
                               a2,
                               (uint8_t *)this,
                               (uint8_t *)g_INI_Key_Side,
                               v6);
-  if ( this->u8_288 ) /*0x72055a*/
+    if ( *((unsigned char *)this + 2592) )
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,
       (uint8_t *)this,
@@ -136,11 +136,11 @@ void * ThemeClass::InitializeThemes(char * a2)
       if ( !strlen(Destination) ) /*0x7205f7*/
         goto LABEL_10; /*0x7205f7*/
       v7 = 0; /*0x720606*/
-      if ( this->q024 <= 0 ) /*0x72060a*/
+            if ( *((int *)this + 144) <= 0 )
         goto LABEL_10; /*0x72060a*/
-      while ( _strcmpi(*(const void **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
+            while ( _strcmpi(*(const void **)(*((unsigned int *)this + 96) + 4 * v7), Destination) )
       {
-        if ( ++(int)(v7) >= (int)(this->q024) ) /*0x72062a*/
+                if ( ++v7 >= *((unsigned int *)this + 144) )
           goto LABEL_10; /*0x72062a*/
       }
       if ( v7 == -1 ) /*0x720631*/
@@ -161,21 +161,21 @@ void * ThemeClass::InitializeThemes(char * a2)
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
-        v10 = this->u32_1C; /*0x7206a9*/
-        if ( this->q024 < (void *)(v10) /*0x7206d1*/
+                v10 = *((unsigned int *)this + 112);
+                if ( *((unsigned int *)this + 144) < v10
           || (this->u8_21 || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && (*(uint8_t (**)(int, int, unsigned int))((unsigned int)(this->q014)+ 8))(&this->q014, v10 + v11, 0) )
         {
           v12 = (void *)(*(unsigned int *)&this->q024);
-          v13 = this->u32_18; /*0x7206db*/
-          *(unsigned int *)&this->q024 = (unsigned int)(v12)+ 1; /*0x7206e1*/
+                    v13 = *((unsigned int *)this + 96);
+                    *((unsigned int *)this + 144) = v12 + 1;
           *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
       else
       {
-        v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
+                v9 = *(char **)(*((unsigned int *)this + 96) + 4 * v7);
       }
       ThemeClass::ReadThemeEntry((int)v9, (uint8_t ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
@@ -184,17 +184,17 @@ void * ThemeClass::InitializeThemes(char * a2)
     }
     ++v5; /*0x720707*/
   }
-  result = this->Audio::GetEnabled(); /*0x720714*/
+    result = Audio::GetEnabled();
   if ( result ) /*0x72071b*/
   {
-    Enabled = this->Audio::GetEnabled(); /*0x720724*/
+        Enabled = Audio::GetEnabled();
     result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
-    *(void **)&this->ThemeClass_field_2C = result; /*0x720732*/
+        *((unsigned int *)this + 176) = result;
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
-      ((AudioQueue *)(this->ThemeClass_field_2C))->IsEmpty(g_MixerChannel_Theme); /*0x72074c*/
-      return (void *)((AudioQueue *)(this->ThemeClass_field_2C))->IsNotEmpty(g_MixerChannel_Stream); /*0x72075a*/
+            AudioQueue::IsEmpty(*((unsigned int *)this + 176), MEMORY[0x87E744]);
+            return (void *)AudioQueue::IsNotEmpty(*((unsigned int *)this + 176), MEMORY[0x87E754]);
     }
   }
   return result; /*0x72075f*/

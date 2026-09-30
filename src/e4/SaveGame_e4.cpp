@@ -1124,7 +1124,7 @@ int SaveGame::LoadVeinholeData()
   if ( (*(int (__stdcall **)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &uniqueId, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
-  v5 = *(unsigned int *)this->__pad_0; /*0x74ed9c*/
+    v5 = *this;
   v15 = v4; /*0x74eda3*/
   if ( (*(int (__stdcall **)(SaveGame *, int, int, unsigned int))(v5 + 16))( /*0x74edac*/
          this,
@@ -1138,7 +1138,7 @@ int SaveGame::LoadVeinholeData()
   {
     while ( 1 ) /*0x74edd6*/
     {
-      v7 = *(unsigned int *)this->__pad_0; /*0x74edd6*/
+          while ( 1 )
       v16 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ede5*/
       if ( (*(int (__stdcall **)(SaveGame *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
         || (*(int (__stdcall **)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
@@ -1162,12 +1162,12 @@ int SaveGame::LoadVeinholeData()
       v8 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ee62*/
       v9 = *(unsigned int *)(v8 + 176); /*0x74ee65*/
       v10 = *(unsigned int *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (__stdcall **)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
+            if ( (*(int (__stdcall **)(int *, int, int, unsigned int))(*(char *)this + 64))(this, v9, 4, 0) >= 0
         && (*(int (__stdcall **)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, v9 + 4, 4, 0) >= 0 )
       {
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
-          v12 = *(unsigned int *)this->__pad_0; /*0x74ee98*/
+                    v12 = *this;
           v17 = (*(unsigned int *)(*(unsigned int *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
           if ( (*(int (__stdcall **)(SaveGame *, int *, int, unsigned int))(v12 + 16))(this, &v17, 4, 0) < 0 ) /*0x74eeb5*/
             break; /*0x74eeb5*/
@@ -1235,7 +1235,7 @@ int SaveGame::SaveAudioQueueItems()
         v12[0] = v4; /*0x7516bf*/
       }
       v12[1] = *(unsigned int *)(i + 32); /*0x7516c8*/
-      v9 = *(unsigned int *)this->__pad_0; /*0x7516cf*/
+            v9 = *this;
       v12[2] = *(unsigned int *)(i + 36); /*0x7516d2*/
       v12[3] = *(unsigned int *)(i + 40); /*0x7516e1*/
       v2 = (*(int (__stdcall **)(SaveGame *, unsigned int *, int, unsigned int))(v9 + 16))(this, v12, 16, 0); /*0x7516e8*/
@@ -3034,9 +3034,9 @@ int SaveGame::VtableDispatch(int a2)
 {
   int result; // eax
 
-  result = (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[4], 4, 0); /*0x721023*/
+    result = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (int)(char *)this + 16, 4, 0);
   if ( result >= 0 ) /*0x721028*/
-    return (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->u32_10, 4, 0); /*0x721035*/
+        return (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (int)(char *)this + 32, 4, 0);
   return result; /*0x721038*/
 }
 } // namespace gamemd

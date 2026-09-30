@@ -32,20 +32,20 @@ int Mouse::SetBounds(void* aP1)
   int16_t v8; // cx
   unsigned short v9[4]; // [esp+8h] [ebp-8h] BYREF
 
-  result = this->u32_117C; /*0x4a8bf7*/
+    result = *((unsigned int *)this + 17904);
   if ( result ) /*0x4a8bff*/
   {
-    v4 = this->u32_1176 + this->u32_117A; /*0x4a8c16*/
-    v9[0] = this->u32_1174 + this->u32_1178; /*0x4a8c1f*/
+        v4 = *((unsigned short *)this + 17880) + *((unsigned short *)this + 17896);
+        v9 = *((unsigned short *)this + 17872) + *((unsigned short *)this + 17888);
     v9[1] = v4; /*0x4a8c24*/
     result = MapClass::SetCellFlagsAlongPath((MapClass *)this, v9, 0); /*0x4a8c38*/
   }
   aP1 = aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
-  this->u32_1178 = *(unsigned int *)&stru_8A0390.bombVisible; /*0x4a8c49*/
+    *((unsigned int *)this + 17888) = *(unsigned int *)&MEMORY[0x89F690].__pad_BC0[424];
   if ( v6 ) /*0x4a8c4f*/
   {
-    this->u32_117C = 0; /*0x4a8d1f*/
+        *((unsigned int *)this + 17904) = 0;
   }
   else
   {
@@ -55,16 +55,16 @@ int Mouse::SetBounds(void* aP1)
       atexit(nullsub_10); /*0x4a8c6e*/
     }
     qmemcpy(&stru_8A0390.onBridge, aP1, 0x1E0u); /*0x4a8c85*/
-    this->u32_117C = &stru_8A0390.onBridge; /*0x4a8c8f*/
+        *((unsigned int *)this + 17904) = &MEMORY[0x89F690].__pad_BC0[460];
     v7 = *CoordList::GetBounds(&aP1, (int16_t *)&stru_8A0390.onBridge); /*0x4a8c9e*/
     v9[0] = v7 - 1; /*0x4a8ca6*/
     v9[1] = IDA_HIWORD(v7) - 1; /*0x4a8cab*/
     IDA_LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
     IDA_HIWORD(aP1) = (int16_t)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8cd1*/
     v8 = (int16_t)aP1; /*0x4a8cd6*/
-    this->u32_1178 = aP1; /*0x4a8cda*/
-    IDA_LOWORD(v7) = this->u32_117A + this->u32_1176; /*0x4a8cee*/
-    IDA_LOWORD(aP1) = v8 + this->u32_1174; /*0x4a8cf8*/
+        *((unsigned int *)this + 17888) = aP1;
+        LOWORD(v7) = *((unsigned short *)this + 17896) + *((unsigned short *)this + 17880);
+        LOWORD(aP1) = v8 + *((unsigned short *)this + 17872);
     IDA_HIWORD(aP1) = v7; /*0x4a8cfd*/
 // 0x4a95a0
     return MapClass::SetCellFlagsAlongPath(&aP1, (unsigned short *)1); /*0x4a8d11*/
@@ -104,12 +104,12 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   {
     byte_ABF2DD = 1; /*0x5bdce4*/
     v6 = dword_82D030[7 * aP1]; /*0x5bdceb*/
-    Ticks = this->Timer::GetTicks(); /*0x5bdcf2*/
+      Ticks = (CoordStruct *)Timer::GetTicks();
     v8 = 0; /*0x5bdcfb*/
     dword_ABF2A0 = Ticks; /*0x5bdcfd*/
     v8 = v8; /*0x5bdd02*/
     v6 = v6; /*0x5bdd08*/
-    this->u32_5568 = 0; /*0x5bdd0e*/
+      *((unsigned int *)this + 87456) = 0;
     if ( !v5 || (v9 = ((unsigned int *)(dword_82D034))[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
       v9 = dword_82D028[7 * aP1]; /*0x5bdd20*/
     v10 = dword_82D03C[7 * aP1]; /*0x5bdd22*/
@@ -144,8 +144,8 @@ HWND Mouse::ReleaseCapture(void *a1 = 0)
 {
   int result; // eax
 
-  this->DisplayClass::ExitMode(); /*0x6938c3*/
-  this->u32_555A = 0; /*0x6938c8*/
+    DisplayClass::ExitMode();
+    *((unsigned int *)this + 87400) = 0;
   result = (int)GetCapture(); /*0x6938cf*/
   if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/
     return ReleaseCapture(); /*0x6938e0*/
@@ -189,7 +189,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     v20[4] = 1; /*0x7b9468*/
     Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
     v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
-    if ( aP1 == v13->Buffer_field_24 ) /*0x7b9488*/
+        if ( aP1 != (IUnknown *)*((unsigned int *)this + 36) )
     {
       v15 = (int)(0);
       v16 = (int)(0);

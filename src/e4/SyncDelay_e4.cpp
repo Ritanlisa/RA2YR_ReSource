@@ -48,7 +48,7 @@ void SyncDelay::Start()
   v1 = dwMilliseconds; /*0x55e171*/
   if ( dword_887348 != -1 ) /*0x55e179*/
   {
-    Ticks = this->Timer::GetTicks(); /*0x55e180*/
+        Ticks = Timer::GetTicks();
     v0 = dword_887348; /*0x55e185*/
     v3 = Ticks - dword_887348; /*0x55e18b*/
     if ( v3 >= v1 ) /*0x55e18f*/
@@ -71,7 +71,7 @@ void SyncDelay::Start()
       }
       if ( !v4 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
-      this->Event::Dispatch(); /*0x55e1f3*/
+            Event::Dispatch();
       if ( !g_MainGameState && g_DDraw_Active == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
   LABEL_23:
@@ -112,14 +112,14 @@ void SyncDelay::Start()
   v10 = dwMilliseconds; /*0x55e2b4*/
   if ( v0 != -1 ) /*0x55e2bc*/
   {
-    v11 = this->Timer::GetTicks() - dword_887348; /*0x55e2c8*/
+        v11 = Timer::GetTicks() - MEMORY[0x887348];
     if ( v11 >= v10 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v10 -= v11; /*0x55e2d2*/
   }
   if ( v10 ) /*0x55e2d6*/
   {
-    this->DDraw::WaitForIdle(); /*0x55e2d8*/
+        DDraw::WaitForIdle();
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/
@@ -128,7 +128,7 @@ void SyncDelay::Start()
         v13 = dwMilliseconds; /*0x55e2e9*/
         if ( dword_887348 != -1 ) /*0x55e2f1*/
         {
-          v14 = this->Timer::GetTicks(); /*0x55e2f8*/
+                    v14 = Timer::GetTicks();
           v12 = dword_887348; /*0x55e2fd*/
           v15 = v14 - dword_887348; /*0x55e303*/
           if ( v15 >= v13 ) /*0x55e307*/
@@ -143,7 +143,7 @@ void SyncDelay::Start()
   LABEL_37:
         Sleep(v16); /*0x55e336*/
       }
-      v17 = this->Timer::GetTicks() - dword_887348; /*0x55e323*/
+            v17 = Timer::GetTicks() - MEMORY[0x887348];
       if ( v17 >= v16 ) /*0x55e32b*/
       {
         v16 = 0; /*0x55e334*/
@@ -156,7 +156,7 @@ void SyncDelay::Start()
   if ( (byte_ABCD94 & 1) == 0 ) /*0x55e343*/
   {
     byte_ABCD94 |= 1u; /*0x55e34f*/
-    dword_ABCD88 = this->Timer::GetTicks(); /*0x55e35a*/
+        dword_ABCD88 = Timer::GetTicks();
     dword_ABCD90 = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/
   }
@@ -169,7 +169,7 @@ void SyncDelay::Start()
       return result; /*0x55e399*/
     goto LABEL_44; /*0x55e399*/
   }
-  result = this->Timer::GetTicks() - dword_ABCD88; /*0x55e38b*/
+    result = Timer::GetTicks() - dword_ABCD88;
   if ( result < v19 ) /*0x55e393*/
   {
     v19 -= result; /*0x55e395*/
@@ -186,7 +186,7 @@ void SyncDelay::Start()
     g_FrameCounter_Total = 0; /*0x55e3ce*/
     g_FrameCounter_Samples = 0; /*0x55e3d4*/
   }
-  result = this->Timer::GetTicks(); /*0x55e3de*/
+    result = Timer::GetTicks();
   dword_ABCD88 = result; /*0x55e3ec*/
   dword_ABCD8C = v24[2]; /*0x55e3f1*/
   dword_ABCD90 = 60; /*0x55e3f7*/
@@ -199,7 +199,7 @@ void SyncDelay::Check()
 {
   unsigned int *v2; // eax
 
-  v2 = (unsigned int *)this->q010; /*0x55f6c0*/
+    v2 = (unsigned int *)*((unsigned int *)this + 16);
   return v2 && *v2 == *a2; /*0x55f6d3*/
 }
 } // namespace gamemd

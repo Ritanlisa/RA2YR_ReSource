@@ -205,42 +205,42 @@ int Skirmish::ReadSettings(HWND hDlg)
   hDlga = GetDlgItem(hDlg, 1029); /*0x596ca2*/
   v4 = SendMessageA(hDlga, 0x147u, 0, 0); /*0x596ca6*/
   v5 = SendMessageA(hDlga, 0x150u, v4, 0); /*0x596cb3*/
-  this->q03C = v5; /*0x596cb9*/
+    *((unsigned int *)this + 60) = v5;
   if ( v18 != (void *)(v5) ) /*0x596cbe*/
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596cc0*/
-  v19 = this->u32_38; /*0x596cd0*/
+    v19 = *((unsigned int *)this + 56);
   hDlgb = GetDlgItem(hDlg, 1031); /*0x596ce2*/
   v16 = SendMessageA(hDlgb, 0x147u, 0, 0); /*0x596ce8*/
   v6 = SendMessageA(hDlgb, 0x150u, v16, 0); /*0x596cf3*/
-  this->u32_38 = v6; /*0x596cf9*/
+    *((unsigned int *)this + 56) = v7;
   if ( v19 != v6 ) /*0x596cfe*/
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d00*/
-  v20 = this->u32_40; /*0x596d10*/
+    v20 = *((unsigned int *)this + 64);
   hDlgc = GetDlgItem(hDlg, 1032); /*0x596d22*/
   v7 = SendMessageA(hDlgc, 0x147u, 0, 0); /*0x596d26*/
   v8 = SendMessageA(hDlgc, 0x150u, v7, 0); /*0x596d33*/
-  this->u32_40 = v8; /*0x596d39*/
+    *((unsigned int *)this + 64) = v9;
   if ( v20 != v8 ) /*0x596d3e*/
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d40*/
-  v21 = this->u32_48; /*0x596d50*/
+    v21 = *((unsigned int *)this + 72);
   hDlgd = GetDlgItem(hDlg, 1002); /*0x596d62*/
   v9 = SendMessageA(hDlgd, 0x147u, 0, 0); /*0x596d66*/
   v10 = SendMessageA(hDlgd, 0x150u, v9, 0); /*0x596d73*/
-  this->u32_48 = v10; /*0x596d79*/
+    *((unsigned int *)this + 72) = v11;
   if ( v21 != v10 ) /*0x596d7e*/
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d80*/
-  v22 = this->u32_64; /*0x596d90*/
+    v22 = *((unsigned int *)this + 100);
   hDlge = GetDlgItem(hDlg, 1030); /*0x596da2*/
   v17 = SendMessageA(hDlge, 0x147u, 0, 0); /*0x596da8*/
   v11 = SendMessageA(hDlge, 0x150u, v17, 0); /*0x596db3*/
-  this->u32_64 = v11; /*0x596db9*/
-  this->u32_68 = v11; /*0x596dbe*/
+    *((unsigned int *)this + 100) = v13;
+    *((unsigned int *)this + 104) = v13;
   if ( v22 != v11 ) /*0x596dc1*/
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596dc3*/
-  hDlgf = (HWND)this->u32_50; /*0x596dd3*/
+    hDlgf = *((unsigned int *)this + 80);
   DlgItem = GetDlgItem(hDlg, 1003); /*0x596dd7*/
   v13 = SendMessageA(DlgItem, 0x400u, 0, 0); /*0x596de3*/
-  this->u32_50 = v13; /*0x596de9*/
+    *((unsigned int *)this + 80) = v15;
   if ( hDlgf == (HWND)v13 ) /*0x596dee*/
   {
     if ( !g_MissionQueueFrame.globalVariables[88] ) /*0x596e00*/
@@ -251,7 +251,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   {
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596df0*/
   }
-  Skirmish::RandomizeSettings(this->q03C); /*0x596e08*/
+    Skirmish::RandomizeSettings(this, (ObjectClass *)*((unsigned int *)this + 60));
   v14 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596e0d*/
   if ( g_MissionQueueFrame.briefing[451] ) /*0x596e15*/
   {
@@ -272,22 +272,22 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
   int v4; // esi
   int result; // eax
 
-  this->u32_4C = Random::Range( /*0x597282*/
+    *((unsigned int *)this + 76) = Random::Range(
                              &Randomizer_Global,
                              *((unsigned int *)&stru_82ADA8.BounceAnim + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
   *(unsigned int *)&this->ptr_44 = (gamemd::TechnoTypeClass *)(Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], dword_82B120[aP1]));
-  this->ptr_60 = Random::Range( /*0x5972bc*/
+    *((unsigned int *)this + 96) = Random::Range(
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
                              *(&stru_82ADA8.RunningFrames + aP1));
-  this->u32_6C = Random::Range( /*0x5972d9*/
+    *((unsigned int *)this + 108) = Random::Range(
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 165],
                              stru_82ADA8.MaxXYVel[aP1]);
-  *(unsigned int *)&this->ptr_70 = (gamemd::TechnoTypeClass *)(Random::Range( /*0x5972f6*/ &Randomizer_Global, *(&stru_82ADA8.TranslucencyDetailLevel + aP1), stru_82ADA8.RandomRate[aP1 + 2]));
-  this->u32_54 = 20 * this->u32_40; /*0x59730b*/
-  this->u32_58 = Random::Range(&Randomizer_Global, 0, 100); /*0x597313*/
+    *((unsigned int *)this + 112) = Random::Range(
+    *((unsigned int *)this + 84) = 20 * *((unsigned int *)this + 64);
+    *((unsigned int *)this + 88) = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)0x64);
   v3 = *(unsigned int *)(g_MissionQueueFrame.briefingCsf[6] + 4 * aP1); /*0x597322*/
   v4 = *(unsigned int *)(g_MissionQueueFrame.percent + 4 * aP1); /*0x597325*/
   if ( v3 >= 0 ) /*0x59732a*/
@@ -310,9 +310,9 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
   }
   if ( v3 > v4 ) /*0x59734e*/
     v3 = v4; /*0x597350*/
-  this->u32_5C = Random::Range(&Randomizer_Global, v3, v4); /*0x59736a*/
+    *((unsigned int *)this + 92) = Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], (IUnknown *)v3, (IUnknown *)v4);
   result = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x59736d*/
-  this->ptr_74 = result; /*0x597372*/
+    *((unsigned int *)this + 116) = result;
   return result; /*0x597375*/
 }
 } // namespace gamemd

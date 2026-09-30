@@ -24,14 +24,14 @@ int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
   char v8; // [esp+50h] [ebp-4h]
 
   AbstractClass::Constructor(); /*0x410809*/
-  v3 = &this->q024; /*0x410812*/
-  this->q024 = 0; /*0x410817*/
-  this->UINameLabel = 0; /*0x41081a*/
-  this->Name = 0; /*0x41081e*/
+    v3 = (RandomStruct *)((char *)this + 144);
+    *((unsigned char *)this + 144) = 0;
+    *((unsigned char *)this + 244) = 0;
+    *((unsigned char *)this + 400) = 0;
   *(unsigned int *)this = (int)&AbstractTypeClass_vftable; /*0x410822*/
-  *(unsigned int *)&this->vtable2 = (int)&AbstractTypeClass_vftable; /*0x410829*/
-  *(unsigned int *)&this->vtable3 = (int)&AbstractTypeClass_vftable; /*0x410830*/
-  *(unsigned int *)&this->vtable4 = (int)&AbstractTypeClass_vftable; /*0x410837*/
+    *((unsigned int *)this + 16) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_AbstractTypeClass;
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -54,7 +54,7 @@ int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
   {
   LABEL_8:
     qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
-    this->zero_3C = Destination[24]; /*0x4108b7*/
+        *((unsigned char *)this + 240) = Destination[24];
   }
   LABEL_9:
   if ( this == (gamemd::AbstractTypeClass *)((int *))-36 ) /*0x4108ba*/
@@ -66,12 +66,12 @@ int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
     strncpy(Destination, (const char *)&this->q090, 0x30u); /*0x4108ca*/
     v8 = 0; /*0x4108d2*/
   }
-  if ( Destination != (char *)(&this->vtable35) ) /*0x4108e0*/
+    if ( Destination != (char *)((char *)this + 400) )
   {
-    qmemcpy(&this->Name, Destination, 0x30u); /*0x4108eb*/
-    this->q094 = v8; /*0x4108ed*/
+        qmemcpy((void *)((char *)this + 400), Destination, 0x30u);
+        *((unsigned char *)this + 592) = v8;
   }
-  *(&this->vtable34) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
+    *((unsigned int *)this + 384) = &stru_87C374.__pad_579C[23588];
   if ( dword_A8E978 < dword_A8E970 /*0x410929*/
     || (byte_A8E975 || !dword_A8E970)
     && dword_A8E97C > 0
@@ -93,10 +93,10 @@ int AbstractTypeClass::Dtor(char* a1, void* a2, void* a3, void* a4)
   int v2; // eax
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&AbstractTypeClass_vftable; /*0x4109cd*/
-  *(void **)&this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x4109d3*/
-  *(void **)&this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x4109da*/
-  *(void **)&this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x4109e1*/
+    *this = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 4) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 8) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_AbstractTypeClass;
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/
@@ -108,7 +108,7 @@ int AbstractTypeClass::Dtor(char* a1, void* a2, void* a3, void* a4)
     }
     while ( v2 < dword_A8E978 ); /*0x410a26*/
   }
-  return this->AbstractClass::DTOR(); /*0x410a2f*/
+    return AbstractClass::DTOR(this);
 }
 } // namespace gamemd
 // 0x410A60
@@ -123,7 +123,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24); /*0x410a7f*/
+    if ( !INIClass::BinarySearchSection((int)aP1, (INIClass *)((char *)this + 144)) )
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
@@ -193,10 +193,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
   int v3; // eax
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = (void*)&AbstractTypeClass_vftable; /*0x410c3d*/
-  *(void **)&this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x410c43*/
-  *(void **)&this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410c4a*/
-  *(void **)&this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410c51*/
+    *Block = &AbstractTypeClass::`vftable';
+    *(Block + 1) = &AbstractTypeClass::`vftable';
+    *(Block + 2) = &AbstractTypeClass::`vftable';
+    *(Block + 3) = &vt_AbstractTypeClass;
   v5 = this; /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/
@@ -208,10 +208,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
     }
     while ( v3 < dword_A8E978 ); /*0x410c96*/
   }
-  this->AbstractClass::DTOR(); /*0x410c9a*/
+    AbstractClass::DTOR(Block);
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     RA2_OPDEL(); /*0x410ca7*/
-  return &this->AbstractClass; /*0x410cb1*/
+    return (AbstractTypeClass *)Block;
 }
 } // namespace gamemd
 // 0x410960
@@ -221,15 +221,15 @@ int AbstractTypeClass::Init(char* a1, void* a2, void* a3, void* a4)
   void * v3;
 
   AbstractClass::InitVtables(aP1); /*0x410968*/
-  v3 = this->UINameLabel; /*0x41096d*/
+    v3 = *((unsigned char *)this + 244);
   *(unsigned int *)this = (void*)&AbstractTypeClass_vftable; /*0x410975*/
-  this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x41097b*/
-  this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410982*/
-  this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410989*/
+    *((unsigned int *)this + 16) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 32) = &AbstractTypeClass::`vftable';
+    *((unsigned int *)this + 48) = &vt_AbstractTypeClass;
   if ( v3 ) /*0x410990*/
-    this->UIName = GetStringCSF((wchar_t *)(&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
+        *((unsigned int *)this + 384) = GetStringCSF((wchar_t *)((char *)this + 244), 0, MEMORY[0x817830], 127);
   else
-    this->UIName = &g_TypeClass_DefaultString; /*0x4109a9*/
+        *((unsigned int *)this + 384) = &MEMORY[0x87F8E4].__pad_5568[10472];
   return this; /*0x4109a5*/
 }
 } // namespace gamemd
@@ -247,10 +247,10 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
   uint8_t *pad_24; // edi
 
   pad_24 = (uint8_t *)this->__pad_24; /*0x410b9b*/
-  INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
-  INIClass::SetString(aP1, pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
+    INIClass::ClearSection((int)aP1, (INIClass *)((char *)this + 144), 0);
+    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&stru_817828.fallRate, (INIClass *)((char *)this + 400));
   if ( this-((unsigned int *)(>UINameLabel))[0] ) /*0x410bb7*/
-    INIClass::SetString(aP1, pad_24, g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
+        INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&stru_817828.objectTypeFlags, (INIClass *)((char *)this + 244));
   return 1; /*0x410bcf*/
 }
 } // namespace gamemd

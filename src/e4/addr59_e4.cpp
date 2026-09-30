@@ -1254,10 +1254,10 @@ double sub_598000()
 namespace gamemd {
 unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 {
-  this->M8 = 0; /*0x5980a4*/
+    *((unsigned int *)this + 8) = 0;
   *(unsigned char *)this = 0; /*0x5980a7*/
-  this->M12 = 0; /*0x5980a9*/
-  *(unsigned int *)&this->M16 = a2; /*0x5980b0*/
+    *((unsigned int *)this + 12) = 0;
+    *((unsigned int *)this + 16) = a2;
   return this; /*0x5980b3*/
 }
 } // namespace gamemd

@@ -223,9 +223,9 @@ int WinMain::Constructor_VectorClass_Wstring_()
   int j; // esi
   int k; // esi
 
-  for ( i = 0; i < *(&this->u32_A84); ++i ) /*0x69a200*/
+    for ( i = 0; i < *((unsigned int *)this + 1696); ++i )
   {
-    v3 = *(unsigned int *)(*(&this->u32_A81) + 4 * i); /*0x69a208*/
+        v3 = *(unsigned int *)(*((unsigned int *)this + 1684) + 4 * i);
     if ( v3 ) /*0x69a20d*/
     {
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
@@ -240,16 +240,16 @@ int WinMain::Constructor_VectorClass_Wstring_()
       RA2_OPDEL((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (**)(unsigned int *))(*(&this->u32_A80) + 12))(&this->u32_A80); /*0x69a277*/
-  for ( j = 0; j < *(&this->u32_41C3); ++j ) /*0x69a284*/
+    (*(void (**)(unsigned int *))(*((unsigned int *)this + 1680) + 12))((char *)this + 1680);
+    for ( j = 0; j < *((unsigned int *)this + 10532); ++j )
     RA2_OPDEL(*(void **)(*(&this->u32_41C0) + 4 * j)); /*0x69a290*/
-  (*(void (**)(unsigned int *))(*(&this->u32_4189) + 12))(&this->u32_4189); /*0x69a2af*/
-  for ( k = 0; k < *(&this->u32_4187); ++k ) /*0x69a2bc*/
+    (*(void (**)(unsigned int *))(*((unsigned int *)this + 10516) + 12))((char *)this + 10516);
+    for ( k = 0; k < *((unsigned int *)this + 10508); ++k )
   {
-    if ( *(unsigned int *)(*(&this->u32_4184) + 4 * k) ) /*0x69a2c4*/
+        if ( *(unsigned int *)(*((unsigned int *)this + 10496) + 4 * k) )
       RA2_OPDEL(*(void **)(*(&this->u32_4184) + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (**)(unsigned int *))(*(&this->u32_4183) + 12))(&this->u32_4183); /*0x69a2ee*/
+    return (*(int (**)(unsigned int *))(*((unsigned int *)this + 10492) + 12))((char *)this + 10492);
 }
 // 0x734D30
 unsigned int * WinMain::ShutdownCleanup()
@@ -392,7 +392,7 @@ void* sub_7B84F0()
         {
           LastError = GetLastError(); /*0x7b8598*/
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
-          this->Debug::Log(); /*0x7b85b5*/
+                    Debug::Log();
           while ( !dword_B78140 ) /*0x7b85c4*/
             Sleep(0); /*0x7b85ce*/
           WaitForSingleObject(dword_B78154, 0x1388u); /*0x7b85e6*/

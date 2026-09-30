@@ -38,7 +38,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     }
     v6 = (int)(*(unsigned int **)i);
     v7 = 0; /*0x5023e8*/
-    if ( *(int *)(this->u32_878 > 0 ) /*0x5023ef*/
+        if ( *(int *)(*(unsigned int *)i + 56) > 0 )
       break; /*0x5023ef*/
   LABEL_12:
     v10 = ++v2; /*0x502437*/
@@ -51,7 +51,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     if ( (uint16_t)(*Element / 256) == *aP1 && (uint16_t)(Element[1] / 256) == aP1[1] ) /*0x502422*/
       return Element; /*0x502441*/
     v6 = *(unsigned int **)i; /*0x502424*/
-    if ( ++v7 >= *(unsigned int *)(this->u32_878 ) /*0x50242a*/
+        if ( (int)v7 >= *(unsigned int *)(*(unsigned int *)i + 56) )
     {
       v2 = (char *)(v10);
       goto LABEL_12; /*0x50242c*/
@@ -64,15 +64,15 @@ namespace gamemd {
 void * Waypoint::InitInvalid()
 {
   this->__pad_0[0] = -1; /*0x53ecb4*/
-  this->__pad_0[1] = -1; /*0x53ecb6*/
-  this->__pad_0[2] = -1; /*0x53ecb9*/
-  this->__pad_0[3] = -1; /*0x53ecbc*/
-  this->__pad_0[4] = -1; /*0x53ecbf*/
-  this->__pad_0[5] = -1; /*0x53ecc2*/
-  this->__pad_0[6] = -1; /*0x53ecc5*/
-  this->__pad_0[7] = -1; /*0x53ecc8*/
-  this->__pad_0[8] = -1; /*0x53eccb*/
-  this->__pad_0[9] = -1; /*0x53ecce*/
+    *((unsigned int *)this + 4) = -1;
+    *((unsigned int *)this + 8) = -1;
+    *((unsigned int *)this + 12) = -1;
+    *((unsigned int *)this + 16) = -1;
+    *((unsigned int *)this + 20) = -1;
+    *((unsigned int *)this + 24) = -1;
+    *((unsigned int *)this + 28) = -1;
+    *((unsigned int *)this + 32) = -1;
+    *((unsigned int *)this + 36) = -1;
   return this; /*0x53ecd1*/
 }
 }

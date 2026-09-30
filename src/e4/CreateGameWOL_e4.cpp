@@ -22,7 +22,7 @@ HWND sub_792EC0(int a1)
     if ( !dword_B77DC8 ) /*0x792ee1*/
       CloseDialog(v2, 0); /*0x792ee7*/
   }
-  Current = this->Dialog::GetCurrent(); /*0x792eec*/
+    Current = Dialog::GetCurrent();
   result = GetDlgItem(Current, 1344); /*0x792ef7*/
   if ( result ) /*0x792f00*/
     return SetFocus(result); /*0x792f03*/

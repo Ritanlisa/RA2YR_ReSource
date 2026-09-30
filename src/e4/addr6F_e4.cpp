@@ -280,7 +280,7 @@ v3 = (int)((void ***)(0));
       if ( v41 ) /*0x6f0e9b*/
       {
         v40->vtable2 = 0; /*0x6f0f70*/
-        v40->attachedTag = 0; /*0x6f0f73*/
+                *((unsigned char *)v40 + 13) = 0;
       }
       else
       {
@@ -290,7 +290,7 @@ v3 = (int)((void ***)(0));
         {
           v44 = v40->vtable3; /*0x6f0eb8*/
           v45 = 0; /*0x6f0ebb*/
-          v40->attachedTag = 1; /*0x6f0ebf*/
+                    *((unsigned char *)v40 + 13) = 1;
           if ( v44 > 0 ) /*0x6f0ec3*/
           {
             do /*0x6f0edc*/
@@ -830,7 +830,7 @@ void sub_6F2AD0()
 namespace gamemd {
 int sub_6F2AF0()
 {
-  dword_B0EA70 = this->Timer::GetTicks(); /*0x6f2aff*/
+    MEMORY[0xB0EA70] = Timer::GetTicks();
   dword_B0EA78 = 0; /*0x6f2b04*/
   return atexit(sub_6F2B20); /*0x6f2b14*/
 }

@@ -158,42 +158,42 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   int v5; // eax
 
   AbstractTypeClass::Constructor(aP1); /*0x7216ca*/
-  this->?[1] = -1717986918; /*0x7216dc*/
-  this->Spread = -1717986918; /*0x7216e7*/
-  *(unsigned int *)&this->? = -1; /*0x7216f1*/
-  this->?[0] = 0; /*0x7216fb*/
-  this->?[2] = 1069128089; /*0x721701*/
-  this->? = 0; /*0x721707*/
+    *((unsigned int *)this + 160) = -1717986918;
+    *((unsigned int *)this + 176) = -1717986918;
+    *((unsigned int *)this + 152) = -1;
+    *((unsigned int *)this + 156) = 0;
+    *((unsigned int *)this + 164) = 1069128089;
+    *((unsigned int *)this + 168) = 0;
   this-((unsigned int *)(>SpreadPercentage))[0] = 1069128089; /*0x72170d*/
   this-((unsigned int *)(>SpreadPercentage))[1] = 0; /*0x721713*/
-  this->Growth = 0; /*0x721719*/
+    *((unsigned int *)this + 188) = 0;
   this-((unsigned int *)(>GrowthPercentage))[0] = 0; /*0x72171f*/
   AnimTypeVector::Constructor((AnimTypeVector *)&this-((unsigned int *)(>GrowthPercentage))[1], 0, 0); /*0x721725*/
-  this->Image = (OverlayTypeClass *)10; /*0x72172a*/
+    *((unsigned int *)this + 216) = 10;
   this-((unsigned int *)(>Debris))[0] = 0; /*0x721731*/
   this-((unsigned int *)(>GrowthPercentage))[1] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x721734*/
-  this->NumImages = 0; /*0x72173a*/
-  *(unsigned int *)this->__pad_E4 = 0; /*0x721740*/
+    *((unsigned int *)this + 224) = 0;
+    *((unsigned int *)this + 228) = 0;
   *(unsigned int *)&this-((unsigned int *)(>__pad_E4))[4] = 0; /*0x721746*/
-  this->TiberiumClass_field_EC = 0; /*0x72174c*/
-  this->TiberiumClass_field_F0 = 0; /*0x721752*/
-  this->TiberiumClass_field_F4 = 0; /*0x721758*/
-  this->TiberiumClass_field_F8 = 0; /*0x72175e*/
-  this->TiberiumClass_field_FC = 0; /*0x721764*/
-  this->SpreadTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721770*/
-  this->SpreadTimer[2] = 0; /*0x721776*/
-  this->TiberiumClass_field_10C = 0; /*0x72177c*/
-  this->TiberiumClass_field_110 = 0; /*0x721782*/
-  this->TiberiumClass_field_114 = 0; /*0x721788*/
-  this->TiberiumClass_field_118 = 0; /*0x72178e*/
+    *((unsigned int *)this + 236) = 0;
+    *((unsigned int *)this + 240) = 0;
+    *((unsigned int *)this + 244) = 0;
+    *((unsigned int *)this + 248) = 0;
+    *((unsigned int *)this + 252) = 0;
+    *((unsigned int *)this + 256) = *(unsigned int *)&HouseClass_Player.__pad_5568[23248];
+    *((unsigned int *)this + 264) = 0;
+    *((unsigned int *)this + 268) = 0;
+    *((unsigned int *)this + 272) = 0;
+    *((unsigned int *)this + 276) = 0;
+    *((unsigned int *)this + 280) = 0;
   v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721794*/
-  this->GrowthTimer[2] = 0; /*0x72179a*/
-  this->GrowthTimer[0] = v3; /*0x7217a0*/
-  this->ObjectClass = (void*)&TiberiumClass_vftable; /*0x7217a6*/
-  this->? = (void*)&TiberiumClass_vftable; /*0x7217ac*/
-  this->? = (void*)&TiberiumClass_vftable; /*0x7217b3*/
-  this->? = (void*)&TiberiumClass_vftable; /*0x7217ba*/
-  *(unsigned int *)&this->? = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x7217c6*/
+    *((unsigned int *)this + 292) = 0;
+    *((unsigned int *)this + 284) = v3;
+    *this = &TiberiumClass::`vftable';
+    *((unsigned int *)this + 4) = &TiberiumClass::`vftable';
+    *((unsigned int *)this + 8) = &TiberiumClass::`vftable';
+    *((unsigned int *)this + 12) = &vt_TiberiumClass;
+    *((unsigned int *)this + 152) = *(unsigned int *)&stru_B05488.__pad_579C[18644];
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) /*0x7217fe*/
     || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) || !g_BuildingLoadQueue_Array.?[3])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
@@ -205,7 +205,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     v4 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))++; /*0x72180b*/
     *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * v4) = this; /*0x72181a*/
   }
-  (*(void (**)(int *))(this-((unsigned int *)(>GrowthPercentage))[1] + 12))(&this->GrowthPercentage[1]); /*0x721821*/
+    (*(void (**)(unsigned int *))(*((unsigned int *)this + 196) + 12))((char *)this + 196);
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x721857*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -217,7 +217,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     v5 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x721864*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v5) = this; /*0x721873*/
   }
-  return &this->ObjectClass; /*0x721878*/
+    return this;
 }
 }
 // 0x721A50
@@ -312,7 +312,7 @@ void TiberiumClass::LoadFromINI()
     case 0xFFFFFFFF: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      *(unsigned int *)((unsigned int)(a1)+ 224) = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[108]; /*0x721c69*/
+            *((unsigned int *)this + 896) = MEMORY[0xA83D84][1].sectionHead[1];
       *(unsigned int *)((unsigned int)(a1)+ 228) = 12; /*0x721c6f*/
       *(unsigned int *)((unsigned int)(a1)+ 232) = 12; /*0x721c75*/
       return 1; /*0x721c85*/
@@ -323,7 +323,7 @@ void TiberiumClass::LoadFromINI()
       *(unsigned int *)((unsigned int)(a1)+ 224) = g_BuildingTypeClass_Array->?; /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      *(unsigned int *)(a1 + 224) = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[408]; /*0x721cbb*/
+            *((unsigned int *)this + 896) = MEMORY[0xA83D84][4].unknown38;
   LABEL_18:
       *(unsigned int *)((unsigned int)(a1)+ 236) = 8; /*0x721cc1*/
       *(unsigned int *)(a1 + 228) = 12; /*0x721cd0*/
