@@ -27,6 +27,12 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x48B390
 namespace gamemd {

@@ -132,7 +132,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     }
     while ( v4 < MEMORY[0xB0E730] ); /*0x6e5d2e*/
   }
-  v10 = (int)(this);
+  v10 = (gamemd::TagTypeClass *)((int)(this));
   v7 = (*(int (**)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x6e5d44*/
   if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x6e5d5f*/
   {

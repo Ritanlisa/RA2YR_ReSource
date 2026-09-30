@@ -31,6 +31,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/Delegate_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {

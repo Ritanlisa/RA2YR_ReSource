@@ -43,6 +43,9 @@
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
 
 // 0x6B2430
 namespace gamemd {

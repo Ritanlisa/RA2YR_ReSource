@@ -27,6 +27,8 @@
 #include "e4/classes/VoxelRenderer_e4.hpp"
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x7586F0
 namespace gamemd {

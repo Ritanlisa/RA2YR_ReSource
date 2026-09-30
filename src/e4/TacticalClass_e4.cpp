@@ -31,6 +31,8 @@
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
 
 // 0x47F510
 namespace gamemd {
@@ -55,7 +57,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int v19; // [esp+20h] [ebp-8h] BYREF
 
   v4 = (int *)(*(unsigned char **)&MEMORY[0xA83D84]->__pad_0[4 * *((unsigned int *)this + 17)]);
-  v15 = 15 * *((char *)this + 283); /*0x47f534*/
+  v15 = (int *)(15 * *((char *)this + 283));
   v16 = (*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47f544*/
   v5 = BuildingClass::CalcDrawPos(this, (IUnknown *)&v19); /*0x47f54b*/
   v6 = *v5; /*0x47f554*/

@@ -17,6 +17,10 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/InfantryTypeVector_e4.hpp"
+#include "e4/classes/UnitTypeVector_e4.hpp"
 
 // 0x76FC50
 namespace gamemd {
@@ -48,7 +52,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     PriorityQueue::Add(aP1, *(MSAnim **)((char *)this + 40)); /*0x76fcd6*/
   }
   v11[0] = (unsigned int)(&vt_CCFileClass);
-  v13 = 0; /*0x76fce7*/
+  v13 = (unsigned int)(0);
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/

@@ -39,6 +39,8 @@
 #include "e4/classes/SmudgeTypeClass_e4.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {

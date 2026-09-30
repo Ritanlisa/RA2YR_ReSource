@@ -32,6 +32,11 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/PsyDom_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -64,7 +69,7 @@ void * Tactical::ConstructTacticalSurface()
   char *v26; // [esp+14h] [ebp-8h]
   int v27; // [esp+18h] [ebp-4h]
 
-  *(_DWORD *)this = (unsigned int *)(0);
+  *(unsigned int *)this = (unsigned int *)(0);
   *((unsigned char *)this + 1) = 0; /*0x42a6e2*/
   *((unsigned char *)this + 2) = 0; /*0x42a6e5*/
   *((unsigned char *)this + 3) = 1; /*0x42a6e8*/
@@ -98,7 +103,7 @@ void * Tactical::ConstructTacticalSurface()
   if ( v4 ) /*0x42a74d*/
   {
     v4[3] = (unsigned int)(0);
-    v4[4] = -1; /*0x42a757*/
+    v4[4] = (unsigned int)(-1);
     *v4 = 0; /*0x42a75e*/
     v4[1] = 0x10000; /*0x42a760*/
     v6 = __2_YAPAXI_Z(0x40004u); /*0x42a767*/
@@ -125,7 +130,7 @@ void * Tactical::ConstructTacticalSurface()
   if ( v9 ) /*0x42a79f*/
   {
     v9[3] = (unsigned int)(0);
-    v9[4] = -1; /*0x42a7a9*/
+    v9[4] = (unsigned int)(-1);
     *v9 = 0; /*0x42a7b0*/
     v9[1] = 10000; /*0x42a7b2*/
     v11 = __2_YAPAXI_Z(0x9C44u); /*0x42a7b9*/
@@ -187,8 +192,8 @@ void * Tactical::ConstructTacticalSurface()
     }
     while ( v18 <= *v19 ); /*0x42a859*/
   }
-  *v19 = (unsigned int *)(0);
-  v20 = (unsigned int *)*((unsigned int *)this + 26); /*0x42a85d*/
+  *v19 = (int)((unsigned int *)(0));
+  v20 = (char *)((unsigned int *)*((unsigned int *)this + 26));
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
@@ -381,9 +386,9 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   v21 = aP2->field_0 + *v9; /*0x48446b*/
   *v9 = v21; /*0x48446f*/
   aP5->field_0 = v21; /*0x484471*/
-  if ( !LightningStorm::IsActive() ) /*0x48447a*/
+  if ( !this->LightningStorm::IsActive() ) /*0x48447a*/
   {
-    if ( PsyDom::IsActive() ) /*0x4844c4*/
+    if ( this->PsyDom::IsActive() ) /*0x4844c4*/
     {
       *v9 += SHIBYTE(v8->field_118) * *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 13684) /*0x4844ec*/
            - *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 13708);
@@ -430,7 +435,7 @@ LABEL_21:
   *v9 = *v9 <= 0 ? 0 : *v9;
   *a4 = *a4 <= 0 ? 0 : *a4;
   result = aP5->field_0 <= 0 ? 0 : aP5->field_0;
-  aP5->field_0 = result; /*0x484615*/
+  aP5->field_0 = (gamemd::ScenarioClass **)(result);
   return result; /*0x48461a*/
 
 }

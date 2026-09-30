@@ -20,13 +20,14 @@
 #include "e4/classes/E4Recv_6C16D0_e4.hpp"
 #include "e4/classes/E4Recv_6C19D0_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Time_e4.hpp"
 
 // 0x531A00
 namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 
-  int result; // eax
+  INIClass ** result;
   unsigned int *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
@@ -42,7 +43,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = (gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4));
+  result = (int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4)));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
@@ -64,7 +65,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   sprintf(Buffer, MEMORY[0x826940], ModuleInternalVersion); /*0x531ac7*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
   v16[0] = 0; /*0x531aea*/
-  Time::FormatDate(v16); /*0x531af2*/
+  ((Time *)(v16))->FormatDate(); /*0x531af2*/
   v12 = (const char *)((String *)(Destination))->CopyConstant(); /*0x531b10*/
   v10 = (const char *)((String *)(v17))->FormatDword(); /*0x531b1d*/
   sprintf(Buffer, MEMORY[0x826920], v10, v12, v16); /*0x531b2d*/

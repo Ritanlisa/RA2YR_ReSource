@@ -23,6 +23,9 @@
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/E4Recv_4AF2A0_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/NetworkGameSetup_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -34,7 +37,7 @@ int Mouse::SetBounds(void* aP1)
   Tactical *v5; // esi
   bool v6; // zf
   int v7; // eax
-  int16_t v8; // cx
+  void * v8;
   int16_t v9; // [esp+8h] [ebp-8h] BYREF
   int16_t v10; // [esp+Ah] [ebp-6h]
 

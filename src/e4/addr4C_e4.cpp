@@ -47,6 +47,9 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/JumpjetLocomotion_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/Window_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -646,7 +649,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
   int v3; // edx
   unsigned int v5[4]; // [esp+4h] [ebp-10h] BYREF
 
-  TextRenderer::GetInstance(); /*0x4c3dd9*/
+  this->TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth(*this, 0); /*0x4c3de5*/
   v3 = *((char *)this + 2); /*0x4c3def*/
   v5[2] = g_abs_8A00A4; /*0x4c3df8*/

@@ -38,6 +38,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -138,6 +139,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       BuildingClass::ClearAnims(a1, 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
+    unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */

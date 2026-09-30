@@ -19,6 +19,10 @@
 #include "e4/classes/VoxelAnim_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x73C5F0
 namespace gamemd {

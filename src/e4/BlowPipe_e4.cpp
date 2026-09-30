@@ -619,8 +619,8 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63eda0*/
   {
     __3_YAXPAX_Z(v3); /*0x63eda8*/
@@ -642,8 +642,8 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63edf0*/
   {
     __3_YAXPAX_Z(v3); /*0x63edf8*/
@@ -665,8 +665,8 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_EventClass; /*0x63ee36*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_EventClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee40*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee48*/
@@ -688,8 +688,8 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_EventClass; /*0x63ee86*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_EventClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee90*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee98*/
@@ -711,8 +711,8 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningTokenClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ef30*/
   {
     __3_YAXPAX_Z(v3); /*0x63ef38*/

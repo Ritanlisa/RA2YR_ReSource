@@ -17,6 +17,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x60D320
 namespace gamemd {

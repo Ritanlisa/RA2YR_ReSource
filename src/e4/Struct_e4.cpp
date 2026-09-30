@@ -109,7 +109,7 @@ namespace gamemd {
 unsigned char * Struct::Zero3()
 {
 
-  *(_DWORD *)this = (unsigned char *)(0);
+  *(unsigned int *)this = (unsigned char *)(0);
   *((unsigned char *)this + 1) = 0; /*0x4b9bd6*/
   *((unsigned char *)this + 2) = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/

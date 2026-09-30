@@ -117,8 +117,8 @@ void* JumpjetLocomotionClass::Update2()
   float v76[12]; // [esp+E8h] [ebp-60h] BYREF
   char v77[48]; // [esp+118h] [ebp-30h] BYREF
 
-  v1 = (char *)((float *)this);
-  v60 = this; /*0x439b0b*/
+  v1 = (float *)((char *)((float *)this));
+  v60 = (char *)(this);
   v2 = *((double *)this + 2); /*0x439b17*/
   v3 = (float *)((unsigned char *)this + 24); /*0x439b1a*/
   v58 = v2; /*0x439b22*/
@@ -148,7 +148,7 @@ void* JumpjetLocomotionClass::Update2()
     }
   }
   v46 = (unsigned int *)(Math::RoundToInt(v3[2]));
-  v41 = Math::RoundToInt(v3[1]); /*0x439bad*/
+  v41 = (unsigned int *)(Math::RoundToInt(v3[1]));
   v12 = Math::RoundToInt(*v3); /*0x439bae*/
   Coord3D::Set(v70, v12, v41, v46); /*0x439bb8*/
   Vector3::AddAssign(v4); /*0x439bc0*/
@@ -287,7 +287,7 @@ LABEL_35:
     *((float *)v4 + 2) = v34; /*0x439fe4*/
     Coord::To_Cell(&MEMORY[0x87F7E8], v69); /*0x439ff1*/
     v35 = JumpjetLocomotionClass::AdjustClimbFacing(v70); /*0x439ff8*/
-    if ( v35 != -1 ) /*0x43a000*/
+    if ( v35 != (void *)(-1) ) /*0x43a000*/
     {
       qmemcpy(v74, (const void *)Locomotor_Update(v76, v35), sizeof(v74)); /*0x43a01f*/
       v36 = TransformMatrix3x4Point(v73, v74, (float *)v4); /*0x43a02c*/
@@ -300,8 +300,8 @@ LABEL_35:
       *((float *)v4 + 2) = v37 * *((float *)v4 + 2); /*0x43a05a*/
     }
   }
-  v1 = (void *)((float *)v60);
-  v17 = 1; /*0x43a061*/
+  v1 = (float *)((void *)((float *)v60));
+  v17 = (void *)(1);
 LABEL_43:
   v38 = QuaternionMathMultiply(v73, v1 + 12, v1 + 16); /*0x43a066*/
   Float4::Copy(v1 + 12, v70, v38); /*0x43a080*/
@@ -395,12 +395,12 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
     }
     else
     {
-      result = v19; /*0x484a59*/
+      result = (void *)(v19);
       if ( v14 == v15 ) /*0x484a38*/
         return v19 + 1; /*0x484a62*/
     }
   }
-  return result; /*0x484a47*/
+  return (void *)(result);
 
 }
 } // namespace gamemd
@@ -416,7 +416,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
   int v7; // [esp+10h] [ebp-14h]
   unsigned char v8[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v6 = 128; /*0x48508f*/
+  v6 = (int)(128);
   v7 = 128; /*0x485097*/
   inited = Isometric::InitTables((int)this, (IUnknown *)&v6); /*0x4850a3*/
   if ( MEMORY[0xA8D63C].__pad_1258[268] && (v3 = *((unsigned int *)this + 57)) != 0 ) /*0x4850b6*/
@@ -427,15 +427,14 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
       if ( !v3 ) /*0x4850c9*/
         goto LABEL_5; /*0x4850c9*/
     }
-    v5 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8); /*0x48510c*/
+    v5 = (gamemd::AbstractClass **)((int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8));
     v6 = *v5; /*0x485112*/
     v7 = v5[1]; /*0x48511a*/
     return v5[2] + inited; /*0x485121*/
   }
   else
   {
-LABEL_5:
-    v6 = 0; /*0x4850cb*/
+LABEL_5: v6 = (gamemd::AbstractClass **)(0);
     v7 = 0; /*0x4850de*/
     if ( Object::FindClosestObjectCell(this, (IUnknown *)&v6, 0, 0) ) /*0x4850e6*/
       inited += 85; /*0x4850ef*/

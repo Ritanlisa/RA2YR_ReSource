@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x691000
 namespace gamemd {
@@ -38,8 +39,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(unsigned int * Block, 
 
   void *v3; // eax
   char *v4; // eax
-
-  v3 = (unsigned int)((void *)*(Block + 3));
+v3 = (void *)((unsigned int)((void *)*(Block + 3)));
   *Block = &vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && *((unsigned char *)Block + 16) == 1 ) /*0x6910b7*/
   {

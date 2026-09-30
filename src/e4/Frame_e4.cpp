@@ -31,7 +31,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  void * v20;
+  unsigned int v20;
   int v21; // edi
   int v22; // ebx
   int v23; // eax
@@ -60,7 +60,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   int v47; // [esp+62h] [ebp-1Ch]
   int v48; // [esp+66h] [ebp-18h]
-  int v49; // [esp+6Ah] [ebp-14h]
+  void * v49;
   uint64_t Rect; // [esp+6Eh] [ebp-10h] BYREF
   int Rect_8; // [esp+76h] [ebp-8h]
   int v52; // [esp+8Eh] [ebp+10h]
@@ -136,8 +136,8 @@ LABEL_18:
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (int)(*(unsigned int *)(a8));
-          v21 = a8[1]; /*0x4f48fb*/
+          v20 = (void *)((int)(*(unsigned int *)(a8)));
+          v21 = (int)(a8[1]);
           v22 = a8[2]; /*0x4f48fe*/
           Rect_8 = a8[3]; /*0x4f4904*/
           v49 = v20; /*0x4f4910*/
@@ -145,7 +145,7 @@ LABEL_18:
           if ( MEMORY[0x87F7E8][7887] /*0x4f4934*/
             && (*(unsigned int *)(MEMORY[0x87F7E8][7887] + 192) || *(unsigned int *)(MEMORY[0x87F7E8][7887] + 196) != 1072693248) )
           {
-            v52 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4941*/
+            v52 = (void *)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1));
             v23 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
             v24 = (double)v52; /*0x4f494f*/
             v25 = MEMORY[0x87F7E8][7887]; /*0x4f4953*/

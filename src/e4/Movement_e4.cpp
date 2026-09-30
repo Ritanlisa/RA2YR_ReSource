@@ -17,6 +17,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Bounds_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
@@ -140,8 +141,8 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
       *(double *)v13->vtable0 = *(double *)v13->vtable0 / v17; /*0x5b2223*/
       *(double *)&v13-((unsigned int *)(>vtable0))[8] = *(double *)&v13->vtable0[8] / Math::ArcTan2(v72); /*0x5b2230*/
     }
-    v81 = (IUnknown *)((double *)((int16_t)v71 - 0x3FFF));
-    v18 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)); /*0x5b2252*/
+    v81 = (double *)((IUnknown *)((double *)((int16_t)v71 - 0x3FFF)));
+    v18 = (IUnknown *)(Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)));
     v19 = (int16_t)v71; /*0x5b2259*/
     *(double *)v13->vtable0 = v18 * *(double *)v13->vtable0; /*0x5b225e*/
     v81 = (double *)(v19 - 0x3FFF); /*0x5b2266*/
@@ -277,22 +278,18 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   }
   v59 = *(double *)&v48->uniqueId; /*0x5b2640*/
   *(unsigned long long *)aP1.__pad_0 = *(unsigned long long *)v48->vtable0; /*0x5b2645*/
-  ecx20 = *(unsigned int *)&v48->vtable0[12]; /*0x5b2657*/
-  *(unsigned int *)&aP1.__pad_0[8] = *(unsigned int *)&v48->vtable0[8]; /*0x5b265a*/
-  *(unsigned int *)&aP1.__pad_0[12] = ecx20; /*0x5b265e*/
+  ecx20 = *(unsigned int *)&v48-((unsigned int *)(>vtable0))[12]; /*0x5b2657*/
+  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *(unsigned int *)&v48->vtable0[8]; /*0x5b265a*/
+  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] = ecx20; /*0x5b265e*/
   edi20a = Math::RoundToInt(v59); /*0x5b266b*/
-  *(unsigned int *)&aP1.__pad_0[4] = Math::RoundToInt(v59); /*0x5b2672*/
+  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4] = Math::RoundToInt(v59); /*0x5b2672*/
   v62 = Math::RoundToInt(v59); /*0x5b2676*/
   v60 = Coord::Subtract( /*0x5b2695*/
           v82,
           (IUnknown *)(6 * edi20a),
-          (IUnknown *)(6 * *(unsigned int *)&aP1.__pad_0[4]),
+          (IUnknown *)(6 * *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4]),
           (IUnknown *)(6 * v62));
-  v61 = Coord::Subtract( /*0x5b26b9*/
-          v80,
-          (IUnknown *)(*v12 + v60->field_0),
-          (IUnknown *)(v12[1] + v60->field_4),
-          (IUnknown *)(v12[2] + v60->field_8));
+  v61 = (IUnknown *)(Coord::Subtract( /*0x5b26b9*/ v80, (IUnknown *)(*v12 + v60->field_0), (IUnknown *)(v12[1] + v60->field_4), (IUnknown *)(v12[2] + v60->field_8)));
   *(unsigned int *)aP1.__pad_0 = v61->field_0; /*0x5b26c0*/
   *(unsigned int *)&aP1.__pad_0[4] = v61->field_4; /*0x5b26cc*/
   *(unsigned int *)&aP1.__pad_0[8] = v61->field_8; /*0x5b26d8*/

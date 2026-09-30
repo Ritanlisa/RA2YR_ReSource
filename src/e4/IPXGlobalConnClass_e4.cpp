@@ -20,6 +20,12 @@
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/RadioClass_e4.hpp"
+#include "e4/classes/ConnectionClass_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/UDPInterfaceClass_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x540110
 namespace gamemd {
@@ -37,7 +43,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  v2 = (int)(this);
+  v2 = (gamemd::IPXGlobalConnClass *)((int)(this));
   this->Debug::Log(); /*0x540132*/
   v3 = *(unsigned int **)(v2 + 4); /*0x540137*/
   for ( i = 0; i < v3[14]; ++i ) /*0x540144*/
@@ -83,7 +89,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
 LABEL_14:
         PacketQueue::ReleaseEntry(*(unsigned int **)((char *)this + 4), 0, 0, i--, 0, 0); /*0x540226*/
       }
-      v2 = (int)(this);
+      v2 = (gamemd::IPXGlobalConnClass *)((int)(this));
     }
     v3 = *(unsigned int **)(v2 + 4); /*0x54027b*/
   }
@@ -112,7 +118,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   int v21; // [esp+30h] [ebp-4h]
 
   v7 = (unsigned char *)(this);
-  aP1_4 = this; /*0x5403fc*/
+  aP1_4 = (unsigned char *)(this);
   Waypoint::InitInvalid(&v18); /*0x540400*/
   v18.Socket = *a3; /*0x540413*/
   *(unsigned int *)&v18.Initialized = a3[1]; /*0x54041a*/
@@ -341,8 +347,8 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 52));
-  *Block = &vt_IPXGlobalConnClass; /*0x540679*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 52)));
+  *Block = (unsigned int)(&vt_IPXGlobalConnClass);
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/

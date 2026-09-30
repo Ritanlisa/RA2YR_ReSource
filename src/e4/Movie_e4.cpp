@@ -22,6 +22,9 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/MultiplayerManBattle_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -199,10 +202,10 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           {
             AudioTimer::DecrementAll(); /*0x5bf0d6*/
             ProcessAudioTimer(); /*0x5bf0db*/
-            Mixer::RequestAllBuffers(); /*0x5bf0e0*/
+            this->Mixer::RequestAllBuffers(); /*0x5bf0e0*/
             RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3892], 0x4000); /*0x5bf0f0*/
             RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3884], 0x4000); /*0x5bf100*/
-            AudioMixer::Pump(); /*0x5bf105*/
+            this->AudioMixer::Pump(); /*0x5bf105*/
             *((unsigned char *)&g_MatrixTransformState + 1356) = 0; /*0x5bf10a*/
           }
           MovieContext::Cleanup(v12); /*0x5bf112*/
@@ -261,10 +264,10 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
       {
         AudioTimer::DecrementAll(); /*0x5bee6f*/
         ProcessAudioTimer(); /*0x5bee74*/
-        Mixer::RequestAllBuffers(); /*0x5bee79*/
+        this->Mixer::RequestAllBuffers(); /*0x5bee79*/
         RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3892], 0x4000); /*0x5bee89*/
         RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3884], 0x4000); /*0x5bee99*/
-        AudioMixer::Pump(); /*0x5bee9e*/
+        this->AudioMixer::Pump(); /*0x5bee9e*/
         *((unsigned char *)&g_MatrixTransformState + 1356) = 0; /*0x5beea3*/
       }
       if ( (unsigned char)aP0 == 1 ) /*0x5beeb1*/

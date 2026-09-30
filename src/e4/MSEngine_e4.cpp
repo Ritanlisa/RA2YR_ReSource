@@ -21,6 +21,9 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp
@@ -61,14 +64,14 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           v10 = 0; /*0x5acd9f*/
           do /*0x5acdc3*/
           {
-            v11 = &v7[v10]; /*0x5acda4*/
+            v11 = (unsigned int)(&v7[v10]);
             v12 = (unsigned int *)(v10 + *((unsigned int *)this + 1)); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --v9; /*0x5acdac*/
-            *(unsigned int *)v11 = *v12; /*0x5acdaf*/
-            *((unsigned int *)v11 + 1) = v12[1]; /*0x5acdb4*/
-            *((unsigned int *)v11 + 2) = v12[2]; /*0x5acdba*/
-            *((unsigned int *)v11 + 3) = v12[3]; /*0x5acdc0*/
+            *(unsigned int *)v11 = *(unsigned int *)(v12); /*0x5acdaf*/
+            *((unsigned int *)v11 + 1) = ((unsigned int *)(v12))[1]; /*0x5acdb4*/
+            *((unsigned int *)v11 + 2) = ((unsigned int *)(v12))[2]; /*0x5acdba*/
+            *((unsigned int *)v11 + 3) = ((unsigned int *)(v12))[3]; /*0x5acdc0*/
           }
           while ( v9 ); /*0x5acdc3*/
           v5 = a3; /*0x5acdc5*/
@@ -102,6 +105,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
 
   int v3; // ebx
@@ -227,7 +231,7 @@ CampaignClass * MSEngine::Construct()
   char *v2; // ecx
   int v3; // edx
 
-  v2 = (unsigned int)((char *)((unsigned int *)this + 2));
+  v2 = (char *)((unsigned int)((char *)((unsigned int *)this + 2)));
   *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
   *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
@@ -525,8 +529,8 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TRect_int; /*0x5ad4d6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TRect_int);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad4e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad4e8*/
@@ -548,8 +552,8 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TRect_int; /*0x5ad526*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TRect_int);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/

@@ -39,7 +39,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *(_DWORD *)this = 0; /*0x4c4f0a*/
+  *(unsigned int *)this = 0; /*0x4c4f0a*/
   *((unsigned int *)this + 1) = 0; /*0x4c4f10*/
   sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/

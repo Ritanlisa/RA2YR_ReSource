@@ -15,6 +15,8 @@
 #include "e4/classes/E4Recv_7AE830_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/E4Recv_5E93F0_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5E8D40
 namespace gamemd {

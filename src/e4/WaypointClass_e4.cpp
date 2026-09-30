@@ -28,7 +28,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   int *Element; // eax
   int v10; // kr08_4
   int v11; // eax
-  char result; // al
+  WaypointPathClass ** result;
   unsigned int v13; // esi
   void *v14; // eax
   int v15; // eax
@@ -81,7 +81,7 @@ LABEL_13:
     v11 = Element[1] / 256; /*0x5021f2*/
     if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/
     {
-      result = (gamemd::WaypointPathClass **)(v16);
+      result = (char)((gamemd::WaypointPathClass **)(v16));
       if ( v16 != *((char *)this + 131) ) /*0x50220f*/
         return result; /*0x50227c*/
     }

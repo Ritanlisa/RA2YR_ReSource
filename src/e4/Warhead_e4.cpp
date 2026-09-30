@@ -32,6 +32,14 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/AirstrikeClass_e4.hpp"
+#include "e4/classes/E4Recv_487C80_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/Return_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
@@ -746,7 +754,7 @@ LABEL_158:
           }
           v87 = (TechnoTypeClass *)((char *)ppv[1] - (char *)v152);
           eax166 = *((unsigned int *)this + 74);
-          v88 = (TechnoClass *)&v139->__pad_0[1];
+          v88 = (TechnoClass *)&v139-((unsigned int *)(>__pad_0))[1];
           ppv[1] = (char *)ppv[1] - (int)v152;
           v139 = v88;
           if ( (int)v88 >= *(unsigned int *)(eax166 + 412) )

@@ -164,8 +164,8 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 3));
-  *Block = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short; /*0x49aa4b*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 3)));
+  *Block = (unsigned int)(&vt_RLEBlitTransZRemapXlatAlpha_unsigned_short);
   FractalNoise::Release(v3); /*0x49aa52*/
   *(Block + 3) = 0; /*0x49aa5b*/
   *Block = &vt_RLEBlitter; /*0x49aa64*/

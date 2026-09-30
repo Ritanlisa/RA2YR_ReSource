@@ -500,8 +500,8 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TechnoTypeClass; /*0x478686*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478690*/
   {
     __3_YAXPAX_Z(v3); /*0x478698*/
@@ -626,8 +626,8 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x5129f6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_InfantryTypeClass_const);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
     __3_YAXPAX_Z(v3); /*0x512a08*/

@@ -72,6 +72,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {

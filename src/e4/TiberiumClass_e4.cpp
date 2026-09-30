@@ -19,11 +19,16 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/DynamicVectorClass_flat_e4.hpp"
 
 // 0x5A0160
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v26 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
@@ -85,8 +90,8 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
         {
           v12 = (unsigned short *)(v10[1] + 4 * v31); /*0x5a01f3*/
           v13 = (unsigned short *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
-          v14 = *v13 + *v12; /*0x5a0205*/
-          LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
+          v14 = *(unsigned int *)(v13) + *v12; /*0x5a0205*/
+          LOWORD(v13) = v12[1] + ((unsigned int *)(v13))[1]; /*0x5a020c*/
           LOWORD(v32) = v14; /*0x5a0210*/
           HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
           v30 = v32; /*0x5a021e*/

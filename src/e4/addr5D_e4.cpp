@@ -51,6 +51,9 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/E4Recv_724200_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {
@@ -395,7 +398,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         v4 = 1; /*0x5d46dd*/
         *(unsigned int *)(aP0 + 688) = v18; /*0x5d46e4*/
         *(unsigned short *)(aP0 + 2 * v18 + 40) = 0; /*0x5d46ea*/
-        TextRenderer::GetInstance(); /*0x5d46f5*/
+        this->TextRenderer::GetInstance(); /*0x5d46f5*/
         if ( Text::MeasureWidth(aP0 + 40, 0) >= *(unsigned int *)(aP0 + 708) - 10 ) /*0x5d4711*/
         {
           v19 = *(unsigned int *)(aP0 + 688) - 1; /*0x5d4719*/

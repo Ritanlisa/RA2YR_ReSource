@@ -12,6 +12,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x654490
 namespace gamemd {
@@ -47,17 +48,17 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   *((unsigned int *)this + 1317) = (int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6); /*0x654533*/
   *((unsigned int *)this + 1316) = v6 - v5; /*0x65453e*/
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x654544*/
-  result = LayerClass::CellIteratorNext(this); /*0x65454b*/
+  result = ((LayerClass *)(this))->CellIteratorNext(); /*0x65454b*/
   v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = (gamemd::RadarClass **)(*(MouseClass **)(v9 + 36));
+      aP1 = (gamemd::MouseClass *)((gamemd::RadarClass **)(*(MouseClass **)(v9 + 36)));
       if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:
-      result = LayerClass::CellIteratorNext(this); /*0x65462c*/
+      result = ((LayerClass *)(this))->CellIteratorNext(); /*0x65462c*/
       v9 = result; /*0x654633*/
       if ( !result ) /*0x654637*/
         return result; /*0x654637*/

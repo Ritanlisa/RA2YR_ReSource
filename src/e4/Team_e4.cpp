@@ -55,6 +55,11 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/E4Recv_76C290_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x561180
 namespace gamemd {

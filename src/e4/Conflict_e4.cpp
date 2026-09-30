@@ -423,7 +423,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (unsigned int)((void (***)(unsigned int, int))*(Block + 1));
-  *Block = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x766fc6*/
+  *Block = (unsigned int)(&vt_VectorClass_rc_ptr_WorldDominationTour_GameOption);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
@@ -446,7 +446,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (unsigned int)((void (***)(unsigned int, int))*(Block + 1));
-  *Block = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x767086*/
+  *Block = (unsigned int)(&vt_VectorClass_rc_ptr_WorldDominationTour_GameOption);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/

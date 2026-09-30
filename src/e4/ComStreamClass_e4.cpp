@@ -17,6 +17,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ToolTipManager_e4.hpp"
 #include "e4/classes/Commands_e4.hpp"
+#include "e4/classes/E4Recv_77A9F0_e4.hpp"
 
 // 0x7A3D90
 namespace gamemd {

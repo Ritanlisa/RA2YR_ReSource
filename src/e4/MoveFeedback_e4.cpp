@@ -197,8 +197,8 @@ DynamicVector * MoveFeedback::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TechnoClass; /*0x40bcb6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TechnoClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
@@ -320,8 +320,8 @@ void MoveFeedback::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_CommandClass_const; /*0x40c166*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_CommandClass_const);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/

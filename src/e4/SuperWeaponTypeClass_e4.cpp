@@ -22,6 +22,11 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SuperWeapon_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/InfantryTypeVector_e4.hpp"
+#include "e4/classes/UnitTypeVector_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -173,7 +178,7 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray( /*0x4f670b
       return 1; /*0x4f674b*/
     if ( v37 && v11 >= v27 ) /*0x4f6756*/
       return 1; /*0x4f6761*/
-    return v32 && v11 >= (int)&v29->__pad_0[v27]; /*0x4f6772*/
+    return v32 && v11 >= (int)&v29-((unsigned int *)(>__pad_0))[v27]; /*0x4f6772*/
   }
   v30 = (unsigned int *)(HouseClass::FirstBuildableFromArray( /*0x4f678f*/ this, (AbstractClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2276)));
   v31 = (*(int (**)(unsigned int *, unsigned int *))(*v30 + 132))(v30, this); /*0x4f6799*/
@@ -189,7 +194,7 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray( /*0x4f670b
       return 1; /*0x4f67e9*/
     if ( v32 ) /*0x4f67f1*/
     {
-      if ( v11 < (int)&v29->__pad_0[v27] ) /*0x4f67f7*/
+      if ( v11 < (int)&v29-((unsigned int *)(>__pad_0))[v27] ) /*0x4f67f7*/
         return v11 >= v31; /*0x4f67fb*/
       return 1; /*0x4f681c*/
     }
@@ -275,7 +280,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   *((unsigned int *)this + 1) = &HouseTypeClass::`vftable'; /*0x511578*/
   *((unsigned int *)this + 2) = &HouseTypeClass::`vftable'; /*0x51157f*/
   *((unsigned int *)this + 3) = &vt_HouseTypeClass; /*0x511586*/
-  AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x51158d*/
+  ((AbstractClass *)((int)((unsigned char *)this + 4)))->GenerateUniqueID(); /*0x51158d*/
   *((unsigned char *)this + 416) = 0; /*0x511592*/
   v4 = g_SuperWeaponTypeArray; /*0x511598*/
   if ( g_SuperWeaponTypeArray < dword_A83CA0 /*0x5115d6*/
@@ -397,11 +402,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   }
   v5 = *((unsigned int *)this + 47); /*0x6cea86*/
   *((unsigned int *)this + 39) = v4; /*0x6cea8c*/
-  SWProperties = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
-                   aP1,
-                   (CCINIClass *)((char *)this + 36),
-                   (uint8_t *)&stru_817244.INIClass_field_2C,
-                   v5);
+    SWProperties = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/                    aP1,(unsigned char *)((CCINIClass *)((char *)this + 36)),                    (uint8_t *)&stru_817244.INIClass_field_2C,                    v5);
   aP3_4 = *((unsigned char *)this + 230); /*0x6ceaa8*/
   *((unsigned int *)this + 47) = SWProperties; /*0x6ceaaf*/
   *((unsigned char *)this + 230) = INIClass::ReadBool_Overwrite( /*0x6ceaba*/
@@ -498,11 +499,11 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   {
     v35 = 0; /*0x6cec42*/
     v21 = (char **)&stru_830620.__pad_579C[51204]; /*0x6cec46*/
-    while ( _strcmpi(*v21, &aP4.__pad_20[8]) ) /*0x6cec5d*/
+    while ( _strcmpi(*v21, &((unsigned int *)(aP4.__pad_20))[8]) ) /*0x6cec5d*/
     {
       ++v21; /*0x6cec63*/
       ++v35; /*0x6cec6d*/
-      if ( (int)v21 >= (int)&stru_830620.__pad_579C[51252] ) /*0x6cec71*/
+      if ( (int)v21 >= (int)&((unsigned int *)(stru_830620.__pad_579C))[51252] ) /*0x6cec71*/
         goto LABEL_18; /*0x6cec71*/
     }
     if ( v35 != -1 ) /*0x6cec7c*/

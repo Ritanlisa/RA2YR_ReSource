@@ -139,7 +139,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
         *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98af*/
       }
     }
-    v4 = (unsigned int)((AbstractTypeClass *)*((unsigned int *)this + 1));
+    v4 = (gamemd::AbstractTypeClass *)((unsigned int)((AbstractTypeClass *)*((unsigned int *)this + 1)));
     if ( v4 ) /*0x6c98bb*/
       *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98bd*/
     *((unsigned int *)this + 1) = aP1; /*0x6c98c6*/
@@ -267,7 +267,7 @@ GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
       v4 = *(Block + 2); /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
-        v4->Previous = (unsigned int)(v3);
+        v4->Previous = (gamemd::GenericNode *)((unsigned int)(v3));
         *(unsigned int *)(*(Block + 1))[1].__pad_0 = *(Block + 2); /*0x52ae46*/
         *(Block + 2) = 0; /*0x52ae49*/
         *(Block + 1) = 0; /*0x52ae4c*/

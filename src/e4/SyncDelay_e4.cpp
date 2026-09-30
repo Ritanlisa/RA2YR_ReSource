@@ -177,7 +177,7 @@ LABEL_43:
     goto LABEL_43; /*0x55e395*/
   }
 LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
-  v21 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF; /*0x55e3af*/
+  v21 = (unsigned int)((unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF);
   dword_ABCD44 = (wchar_t *)dword_ABCD40; /*0x55e3b5*/
   dword_ABCD40 = 0; /*0x55e3ba*/
   g_FrameCounter_Total = v20; /*0x55e3c0*/
@@ -187,7 +187,7 @@ LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
     g_FrameCounter_Total = 0; /*0x55e3ce*/
     g_FrameCounter_Samples = 0; /*0x55e3d4*/
   }
-  result = Timer::GetTicks(); /*0x55e3de*/
+  result = this->Timer::GetTicks(); /*0x55e3de*/
   dword_ABCD88 = result; /*0x55e3ec*/
   dword_ABCD8C = v24[2]; /*0x55e3f1*/
   dword_ABCD90 = 60; /*0x55e3f7*/

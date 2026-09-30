@@ -18,6 +18,7 @@
 #include "e4/classes/BlowPipe_23_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/E4Recv_438A60_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {
@@ -127,7 +128,7 @@ int BombClass::InitPool()
 {
 
   unk_89C66C = (unsigned char *)(0);
-  dword_89C670 = 0; /*0x43855c*/
+  dword_89C670 = (unsigned char *)(0);
   unk_89C674 = 1; /*0x438561*/
   unk_89C675 = 0; /*0x438568*/
   dword_89C668 = (int)&vt_DynamicVectorClass_BombClass; /*0x43856d*/

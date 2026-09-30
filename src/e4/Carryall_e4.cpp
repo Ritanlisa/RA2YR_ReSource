@@ -18,6 +18,9 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x416D50
 namespace gamemd {
@@ -108,8 +111,7 @@ LABEL_18:
         (*(void (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x416ea4*/
         ((void (*)(FootClass **, unsigned int, int))(*this)->audioController4[2])(this, 0, 1); /*0x416eb2*/
       }
-LABEL_5:
-      MissionControl = MissionClass::GetMissionControl(this); /*0x416d9d*/
+LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl(this));
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
       return v4 + Random::Range((unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
@@ -177,7 +179,7 @@ LABEL_44:
           this->Debug::Log(); /*0x41713f*/
           *((unsigned int *)this + 47) = (FootClass *)3; /*0x417147*/
         }
-        return 1; /*0x417151*/
+        return (gamemd::FootClass **)(1);
       }
       else
       {

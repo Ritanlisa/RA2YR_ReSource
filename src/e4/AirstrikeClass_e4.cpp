@@ -92,7 +92,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
       if ( result == 6 ) /*0x41d985*/
       {
         v12 = (int)(*a2);
-        a2[165] = this; /*0x41d994*/
+        a2[165] = (int)(this);
         (*(void (**)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
         *((unsigned char *)a2 + 1784) = *((unsigned char *)&MEMORY[0x8871E0][1].?[12] /*0x41d9b8*/
                                 + 2 * MEMORY[0x8871E0][1].?[10]
@@ -168,7 +168,7 @@ LABEL_6:
     if ( v9 ) /*0x41dac9*/
     {
       v11 = (unsigned int)(*v9);
-      v9[165] = this; /*0x41dad4*/
+      v9[165] = (unsigned int)(this);
       (*(void (**)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (**)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }

@@ -14,6 +14,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/SyncDelay_e4.hpp"
 
 // 0x6CF5A0
 namespace gamemd {

@@ -22,8 +22,8 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 7));
-  *Block = &vt_MSShapeAnim; /*0x5ceb86*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 7)));
+  *Block = (unsigned int)(&vt_MSShapeAnim);
   if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceb98*/

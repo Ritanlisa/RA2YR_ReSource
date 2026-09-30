@@ -16,7 +16,7 @@ int RawFileClass::Dtor()
   DWORD LastError; // eax
   int v4; // [esp-8h] [ebp-Ch]
 
-  *(_DWORD *)this = (int)&vt_RawFileClass; /*0x65ca03*/
+  *(unsigned int *)this = (int)&vt_RawFileClass; /*0x65ca03*/
   if ( (uint8_t)RawFileClass::Write() ) /*0x65ca09*/
   {
     if ( !CloseHandle((HANDLE)*((char *)this + 5)) ) /*0x65ca17*/
@@ -34,7 +34,7 @@ int RawFileClass::Dtor()
     *((char *)this + 6) = 0; /*0x65ca54*/
     *((unsigned char *)this + 32) = 0; /*0x65ca5b*/
   }
-  *(_DWORD *)this = (int)&vt_FileClass; /*0x65ca5f*/
+  *(unsigned int *)this = (int)&vt_FileClass; /*0x65ca5f*/
 
 }
 } // namespace gamemd

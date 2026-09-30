@@ -24,6 +24,11 @@
 #include "e4/classes/WaypointPathClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/RadSiteClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {

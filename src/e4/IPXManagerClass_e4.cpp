@@ -41,12 +41,12 @@ namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
 
-  int v2; // edx
+  unsigned int * v2;
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = (unsigned int *)(*((char *)this + 17));
-  result = 0; /*0x541043*/
+  v2 = (int)((unsigned int *)(*((char *)this + 17)));
+  result = (unsigned int *)(0);
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   for ( i = (char *)this + 10; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x54104f*/

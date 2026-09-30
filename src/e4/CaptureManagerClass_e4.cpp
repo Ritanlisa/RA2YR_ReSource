@@ -280,7 +280,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
   if ( !a2 ) /*0x471d4f*/
     return 0; /*0x471d54*/
   v5 = (*(unsigned char *)(a2 + 20) & 1) != 0 ? a2 : 0;
-  result = CaptureManagerClass::CanCapture(this, (unsigned int *)v5); /*0x471d6e*/
+  result = (char)(CaptureManagerClass::CanCapture(this, (unsigned int *)v5));
   if ( result )
   {
     if ( *((unsigned int *)this + 15) == 1 ) /*0x471d85*/

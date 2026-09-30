@@ -31,7 +31,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   int v5; // esi
   unsigned int *v6; // edi
   int v7; // ecx
-  int64_t v8; // kr00_8
+  unsigned int * v8;
   unsigned int *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
@@ -58,7 +58,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(MEMORY[0xB077FC], v4) /*0x6a03be*/
       || (LOBYTE(v4) = BYTE4(MEMORY[0xB077FC]), HIDWORD(a4) != HIDWORD(MEMORY[0xB077FC])) )
     {
-      v8 = (unsigned int *)(v13);
+      v8 = (int64_t)((unsigned int *)(v13));
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/
@@ -105,7 +105,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   int v11; // eax
   int v12; // ecx
   int *v13; // eax
-  int v14; // edx
+  int * v14;
   int *v15; // eax
   int v16; // ebx
   int v17; // ebp
@@ -144,7 +144,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
           if ( *(unsigned int *)(v4 + 88) < v12 ) /*0x6a3feb*/
           {
             v14 = (int *)(v13[1]);
-            v20[0] = *v13; /*0x6a3ff6*/
+            v20[0] = (int *)(*v13);
             v20[1] = v14; /*0x6a3fff*/
             v15 = WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
             v16 = *v15; /*0x6a4016*/

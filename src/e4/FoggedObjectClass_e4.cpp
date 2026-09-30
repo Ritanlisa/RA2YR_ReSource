@@ -206,7 +206,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *((unsigned int *)this + 2) = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
   *((unsigned int *)this + 3) = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = (char *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x4d0ccd*/
-  v7 = aP1->field_4; /*0x4d0cd4*/
+  v7 = (unsigned int)(aP1->field_4);
   v8 = aP1->field_8; /*0x4d0cd7*/
   a1[0] = aP1->field_0; /*0x4d0cda*/
   a1[1] = v7; /*0x4d0cde*/

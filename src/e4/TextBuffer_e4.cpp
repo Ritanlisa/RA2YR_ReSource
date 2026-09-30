@@ -18,13 +18,13 @@ namespace gamemd {
 void TextBuffer::Init()
 {
 
-  int v1; // edi
+  unsigned int * v1;
   unsigned int *v2; // ebx
   unsigned char *v3; // edx
   unsigned int *v4; // eax
   int v5; // esi
 
-  v1 = (unsigned int *)(0);
+  v1 = (int)((unsigned int *)(0));
   v2 = (unsigned char *)this + 2000; /*0x5bcc95*/
   do /*0x5bccbe*/
   {

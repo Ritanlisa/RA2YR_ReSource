@@ -25,6 +25,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/LoadGame_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x4791F0
 namespace gamemd {
@@ -35,7 +36,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
 
   CD *v4; // ecx
   CD *v5; // esi
-  unsigned int v6;
+  IUnknown * v6;
   unsigned int *v8; // eax
   unsigned int *v9; // eax
   INIClass *v10; // edi
@@ -59,10 +60,10 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   int v28; // [esp+CCh] [ebp-4h]
 
   v5 = v4; /*0x479201*/
-  Debug::Log(); /*0x479208*/
-  if ( *(unsigned int *)&v5[1] == -1 ) /*0x479216*/
+  this->Debug::Log(); /*0x479208*/
+  if ( *(unsigned int *)&((unsigned int *)(v5))[1] == -1 ) /*0x479216*/
   {
-    v6 = (IUnknown *)(dword_A83D14);
+    v6 = (unsigned int)((IUnknown *)(dword_A83D14));
     if ( dword_A83D14 == (unsigned int)((IUnknown *))-1 ) /*0x479220*/
       v6 = dword_A83D18; /*0x479222*/
     v5[1] = (CD)v6; /*0x479227*/
@@ -70,7 +71,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x479232*/
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13084] ) /*0x47923e*/
   {
-    Debug::Log(); /*0x479249*/
+    this->Debug::Log(); /*0x479249*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13084] ) /*0x479259*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13084])( /*0x47925f*/
         *(unsigned int *)&stru_87C374.__pad_579C[13084],
@@ -79,7 +80,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_14B0[3860] ) /*0x47926e*/
   {
-    Debug::Log(); /*0x479279*/
+    this->Debug::Log(); /*0x479279*/
     if ( *(unsigned int *)&stru_87C374.__pad_14B0[3860] ) /*0x479289*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_14B0[3860])( /*0x47928f*/
         *(unsigned int *)&stru_87C374.__pad_14B0[3860],
@@ -88,7 +89,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13004] ) /*0x47929e*/
   {
-    Debug::Log(); /*0x4792a9*/
+    this->Debug::Log(); /*0x4792a9*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13004] ) /*0x4792b9*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13004])( /*0x4792bf*/
         *(unsigned int *)&stru_87C374.__pad_579C[13004],
@@ -97,7 +98,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13000] ) /*0x4792ce*/
   {
-    Debug::Log(); /*0x4792d9*/
+    this->Debug::Log(); /*0x4792d9*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13000] ) /*0x4792e9*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13000])( /*0x4792ef*/
         *(unsigned int *)&stru_87C374.__pad_579C[13000],
@@ -106,7 +107,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13140] ) /*0x4792fe*/
   {
-    Debug::Log(); /*0x479309*/
+    this->Debug::Log(); /*0x479309*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13140] ) /*0x479319*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13140])( /*0x47931f*/
         *(unsigned int *)&stru_87C374.__pad_579C[13140],
@@ -115,7 +116,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13136] ) /*0x47932e*/
   {
-    Debug::Log(); /*0x479339*/
+    this->Debug::Log(); /*0x479339*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13136] ) /*0x479349*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13136])( /*0x47934f*/
         *(unsigned int *)&stru_87C374.__pad_579C[13136],
@@ -124,7 +125,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   }
   if ( *(unsigned int *)&stru_87C374.__pad_579C[13092] ) /*0x47935e*/
   {
-    Debug::Log(); /*0x479369*/
+    this->Debug::Log(); /*0x479369*/
     if ( *(unsigned int *)&stru_87C374.__pad_579C[13092] ) /*0x479379*/
       (***(void (****)(unsigned int, int))&stru_87C374.__pad_579C[13092])( /*0x47937f*/
         *(unsigned int *)&stru_87C374.__pad_579C[13092],
@@ -142,10 +143,10 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   else
     v9 = 0; /*0x4793bf*/
   *(unsigned int *)&stru_87C374.__pad_579C[13092] = v9; /*0x4793c1*/
-  Debug::Log(); /*0x4793cf*/
+  this->Debug::Log(); /*0x4793cf*/
   v10 = (INIClass *)&aP0-((unsigned int *)(>__pad_0))[1]; /*0x4793d4*/
   sprintf(Buffer.__pad_0, (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
-  Debug::Log(); /*0x4793f6*/
+  this->Debug::Log(); /*0x4793f6*/
   v11 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
     *(unsigned int *)&stru_87C374.__pad_579C[13136] = MixFileClass::FromFile( /*0x47941a*/
@@ -155,19 +156,19 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   else
     *(unsigned int *)&stru_87C374.__pad_579C[13136] = 0; /*0x479421*/
   sprintf(Buffer.__pad_0, &stru_81C2C4, v10); /*0x479432*/
-  Debug::Log(); /*0x479441*/
+  this->Debug::Log(); /*0x479441*/
   v12 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x479448*/
   if ( !v12 ) /*0x479452*/
   {
     *(unsigned int *)&stru_87C374.__pad_579C[13140] = 0; /*0x479489*/
 LABEL_61:
-    Debug::Log(); /*0x479664*/
+    this->Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
   *(unsigned int *)&stru_87C374.__pad_579C[13140] = MixFileClass::FromFile(v12, &Buffer, (int)&stru_87C374.__pad_579C[20080]); /*0x479467*/
   if ( !*(unsigned int *)&stru_87C374.__pad_579C[13140] ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
-  Debug::Log(); /*0x479496*/
+  this->Debug::Log(); /*0x479496*/
   v13 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
     *(unsigned int *)&stru_87C374.__pad_579C[13000] = MixFileClass::FromFile( /*0x4794ba*/
@@ -176,7 +177,7 @@ LABEL_61:
                                                   (int)&stru_87C374.__pad_579C[20080]);
   else
     *(unsigned int *)&stru_87C374.__pad_579C[13000] = 0; /*0x4794c1*/
-  Debug::Log(); /*0x4794cc*/
+  this->Debug::Log(); /*0x4794cc*/
   v14 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
   if ( !v14 ) /*0x4794dd*/
   {
@@ -198,7 +199,7 @@ LABEL_61:
   BufferIOFileClass::Dtor(v24); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
-    Debug::Log(); /*0x47956c*/
+    this->Debug::Log(); /*0x47956c*/
     v17 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
@@ -211,7 +212,7 @@ LABEL_61:
   }
   else
   {
-    Debug::Log(); /*0x479597*/
+    this->Debug::Log(); /*0x479597*/
     v18 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
@@ -235,7 +236,7 @@ LABEL_58:
   BufferIOFileClass::Dtor(&v23); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
-    Debug::Log(); /*0x479637*/
+    this->Debug::Log(); /*0x479637*/
     v21 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x47963e*/
     if ( v21 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
@@ -244,7 +245,7 @@ LABEL_63:
     goto LABEL_61; /*0x4796c5*/
   }
   sprintf(Buffer.__pad_0, &stru_81C200, v10); /*0x479691*/
-  Debug::Log(); /*0x4796a0*/
+  this->Debug::Log(); /*0x4796a0*/
   v21 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/

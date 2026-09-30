@@ -15,21 +15,23 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x5BF450
 namespace gamemd {
 void AsyncIO::Shutdown()
 {
 
-  int v0; // esi
+  unsigned int * v0;
   unsigned int i;
   void (***v2)(unsigned int, int); // ecx
   char result; // al
 
-  v0 = (unsigned int *)(0);
+  v0 = (int)((unsigned int *)(0));
   for ( i = AsyncIO_Instance; v0 < g_AsyncIOState; ++v0 ) /*0x5bf462*/
   {
-    v2 = (void (***)(unsigned int, int))i[v0]; /*0x5bf464*/
+    v2 = (void (***)(unsigned int, int))((unsigned int *)(i))[v0]; /*0x5bf464*/
     if ( v2 ) /*0x5bf469*/
     {
       (**v2)(v2, 1); /*0x5bf473*/
@@ -49,10 +51,10 @@ void AsyncIO::Shutdown()
   {
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
-    Mixer::RequestAllBuffers(); /*0x5bf4c5*/
+    this->Mixer::RequestAllBuffers(); /*0x5bf4c5*/
     RequestBufferMixer((unsigned int *)MEMORY[0x87E758], 0x4000); /*0x5bf4d5*/
     RequestBufferMixer((unsigned int *)MEMORY[0x87E750], 0x4000); /*0x5bf4e5*/
-    result = AudioMixer::Pump(); /*0x5bf4ea*/
+    result = this->AudioMixer::Pump(); /*0x5bf4ea*/
     MEMORY[0xABF35C] = 0; /*0x5bf4ef*/
   }
   return result; /*0x5bf4f5*/

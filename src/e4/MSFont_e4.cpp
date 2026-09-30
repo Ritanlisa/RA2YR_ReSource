@@ -17,6 +17,7 @@
 namespace gamemd {
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // ebp
   unsigned int *v5; // edi
@@ -442,7 +443,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   unsigned char (*)[4] v3;
 
   v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_HWND; /*0x5d56e6*/
+  *Block = (unsigned int)(&vt_VectorClass_HWND);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d56f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d56f8*/
@@ -465,7 +466,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   unsigned char (*)[4] v3;
 
   v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_HWND; /*0x5d5736*/
+  *Block = (unsigned int)(&vt_VectorClass_HWND);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d5740*/
   {
     __3_YAXPAX_Z(v3); /*0x5d5748*/
@@ -488,7 +489,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   unsigned char (*)[4] v3;
 
   v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
+  *Block = (unsigned int)(&vt_VectorClass_AcceleratorTracker);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d57e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d57e8*/

@@ -21,6 +21,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/KeyboardConfig_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {

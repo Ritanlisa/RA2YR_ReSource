@@ -162,7 +162,7 @@ LABEL_14:
   FullPath = 0; /*0x4327fc*/
   if ( (uint8_t)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
-    FileA = (unsigned int)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0));
+    FileA = (HANDLE)((unsigned int)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0)));
     *((unsigned int *)this + 10) = FileA; /*0x43282d*/
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {

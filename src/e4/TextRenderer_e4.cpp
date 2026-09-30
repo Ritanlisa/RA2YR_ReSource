@@ -22,6 +22,8 @@
 #include "e4/classes/ThemeManager_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/E4Recv_4AF2A0_e4.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {

@@ -22,6 +22,7 @@
 #include "e4/classes/COMClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/E4Recv_5E93F0_e4.hpp"
 
 // 0x7937B0
 namespace gamemd {
@@ -40,7 +41,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
   int v10; // eax
   int v11; // ebp
   unsigned int *v12; // edi
-  int v13; // ebx
+  char * v13;
   int *v14; // edi
   char *v15; // esi
   int v16; // eax
@@ -105,8 +106,8 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     {
       if ( v11 < v10 ) /*0x7938cb*/
       {
-        v13 = (char *)(*v12);
-        v14 = v12 + 1; /*0x7938d3*/
+        v13 = (int)((char *)(*v12));
+        v14 = (char *)(v12 + 1);
         v15 = (unsigned char *)this + 8 * v9; /*0x7938d6*/
         do /*0x793906*/
         {
@@ -432,7 +433,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     if ( *(unsigned int *)a3 ) /*0x7a572c*/
     {
       memset(MEMORY[0xB76E40], 0, 0x940u); /*0x7a576f*/
-      v9 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a577b*/
+      v9 = ((String *)((char **)&g_WebBrowser))->GetOrEmpty(); /*0x7a577b*/
       v10 = MEMORY[0xA8B3AC]; /*0x7a5788*/
       strcpy(MEMORY[0xB76E40], v9); /*0x7a5799*/
       MEMORY[0xB76E58][0] = v10; /*0x7a57a8*/

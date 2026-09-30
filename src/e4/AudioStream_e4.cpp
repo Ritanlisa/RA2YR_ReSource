@@ -20,6 +20,7 @@
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
 
 // 0x401910
 namespace gamemd {

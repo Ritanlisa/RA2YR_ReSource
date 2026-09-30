@@ -24,6 +24,7 @@
 #include "e4/classes/TabClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -39,7 +40,7 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
   int v14; // ebx
   int v15; // ebp
   int v16; // esi
-  int v18; // eax
+  DynamicVector * v18;
   int v19; // edi
   const char *v20; // edx
   char *v21; // ebp
@@ -98,7 +99,7 @@ LABEL_44:
     case 14: /*0x71e964*/
       if ( *((unsigned int *)MEMORY[0xA8B230] + 1146) == -1 ) /*0x71ebf6*/
         return (gamemd::DynamicVector *)(0);
-      v24 = *((unsigned int *)MEMORY[0xA8B230] + 1146); /*0x71ebfc*/
+      v24 = (gamemd::DynamicVector *)(*((unsigned int *)MEMORY[0xA8B230] + 1146));
       v25 = *((unsigned int *)MEMORY[0xA8B230] + 1148); /*0x71ec02*/
       if ( v24 == -1 ) /*0x71ec0b*/
         return !v25; /*0x71ec0b*/
@@ -183,7 +184,7 @@ LABEL_8:
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (gamemd::DynamicVector *)(v19);
+      v18 = (int)((gamemd::DynamicVector *)(v19));
 LABEL_22:
       if ( v18 >= MEMORY[0xA8EB10] || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
@@ -330,7 +331,7 @@ LABEL_22:
                     (double)(v37 - v32) * (double)(v37 - v32)
                   + (double)(v38 - v34) * (double)(v38 - v34)
                   + (double)(v36 - v33) * (double)(v36 - v33));
-            return (int)Math::RoundToInt(v39) <= 1280; /*0x71ee54*/
+            return (gamemd::DynamicVector *)((int)Math::RoundToInt(v39) <= 1280);
           }
           return 0; /*0x71edc6*/
       }
@@ -473,7 +474,7 @@ LABEL_122:
             return 1;
         }
       }
-      return 1;
+      return (gamemd::DynamicVector *)(1);
   }
 
 }

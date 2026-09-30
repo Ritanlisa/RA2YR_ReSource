@@ -79,7 +79,7 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
   *this = (unsigned int *)(&vt_MultiplayerManBattle);
-  return this; /*0x5c6180*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
@@ -97,7 +97,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
   *this = (unsigned int *)(&vt_Megawealth);
-  return this; /*0x5c9410*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
@@ -115,7 +115,7 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
   *this = (unsigned int *)(&vt_MultiplayerSiege);
-  return this; /*0x5ca660*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd

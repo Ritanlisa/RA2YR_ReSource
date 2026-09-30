@@ -63,7 +63,7 @@ int StreamClass::Set2(unsigned int * a2)
     {
       if ( *this ) /*0x45aec3*/
         (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45aecc*/
-      *(_DWORD *)this = 0; /*0x45aed1*/
+      *(unsigned int *)this = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
@@ -72,7 +72,7 @@ int StreamClass::Set2(unsigned int * a2)
     v6 = (int)(*this);
     if ( *this ) /*0x45aef7*/
     {
-      *(_DWORD *)this = 0; /*0x45aefd*/
+      *(unsigned int *)this = 0; /*0x45aefd*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
@@ -104,7 +104,7 @@ int StreamClass::Set(IUnknown * aP1)
     {
       if ( *this ) /*0x45af43*/
         (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45af4c*/
-      *(_DWORD *)this = 0; /*0x45af51*/
+      *(unsigned int *)this = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
@@ -113,7 +113,7 @@ int StreamClass::Set(IUnknown * aP1)
     v6 = (int)(*this);
     if ( *this ) /*0x45af77*/
     {
-      *(_DWORD *)this = 0; /*0x45af7d*/
+      *(unsigned int *)this = 0; /*0x45af7d*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/

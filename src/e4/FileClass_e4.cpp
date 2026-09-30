@@ -60,7 +60,7 @@ const char* FileClass::Open(int a2)
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = (int)(CreateFileA((LPCSTR)*((char *)this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0));
+    FileA = (HANDLE)((int)(CreateFileA((LPCSTR)*((char *)this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0)));
     *((char *)this + 5) = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/

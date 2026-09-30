@@ -23,6 +23,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x501750
 namespace gamemd {

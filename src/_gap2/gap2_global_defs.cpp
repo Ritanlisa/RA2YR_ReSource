@@ -4,6 +4,11 @@
 #include "_gap2/gap2_global_decls.hpp"
 #include "misc/super_weapon.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/PsyDom_e4.hpp"
 
 // forward declarations for data-global pointer types
 namespace gamemd { class HouseTypeClass; }
@@ -32,6 +37,9 @@ int IsNonNullPtr(int* ptr) {
 // 0x402F60
 namespace gamemd { 
 int Gap2Recv_402F60::ProcessAudioMixerFrame() {
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
@@ -80,12 +88,12 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     if ( !v7 || !(active = AudioChannel::IsActive(v7)) ) /*0x4030bd*/
       active = AudioChannel::IsActive((unsigned char *)((char *)this + 104)); /*0x4030c6*/
     v8 = *(int **)((char *)this + 248); /*0x4030ca*/
-    if ( v8 != (int *)((char *)this + 248) ) /*0x4030d8*/
+    if ( v8 != (unsigned int)((int *))((char *)this + 248) ) /*0x4030d8*/
     {
       do /*0x40317d*/
       {
-        v9 = (int *)*v8; /*0x4030de*/
-        if ( (v8[41] & 1) != 0 && v8[90] ) /*0x4030ee*/
+        v9 = (int *)*(unsigned int *)(v8); /*0x4030de*/
+        if ( (((unsigned int *)(v8))[41] & 1) != 0 && v8[90] ) /*0x4030ee*/
         {
           if ( (Audio::InitChannels((char *)v8 + 16), active) /*0x403158*/
             || AudioChannel::IsActive((unsigned char *)v8 + 16)
@@ -95,10 +103,10 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
             || (v13 = (unsigned char *, void * a1, void * a2, void * a3)v8[36]) != 0 && AudioChannel::IsActive(v13) )
           {
             ObjectClass::Cleanup(v8); /*0x403163*/
-            (*(void (**)(int *))(v8[53] + 32))(v8); /*0x403170*/
+            (*(void (**)(int *))(((unsigned int *)(v8))[53] + 32))(v8); /*0x403170*/
           }
         }
-        v8 = v9; /*0x403179*/
+        v8 = (unsigned int)(v9);
       }
       while ( v9 != (int *)((char *)this + 248) ); /*0x40317d*/
       v5 = (unsigned int *)((char *)this + 104); /*0x403183*/

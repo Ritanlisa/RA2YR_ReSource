@@ -51,6 +51,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x540C50
 namespace gamemd {
@@ -435,8 +436,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80420] = operator new(v10);
   signed int v11 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80420], v11);
-  unsigned int v148 =
-  FileClass::SetFileName(v149, (IUnknown *)Buffer);
+  unsigned int v148 = (unsigned int)(FileClass::SetFileName(v149, (IUnknown *)Buffer));
   v12 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80424] = operator new(v12);
   signed int v13 = CCFileClass::GetSize(v149);

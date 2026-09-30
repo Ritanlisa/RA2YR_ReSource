@@ -29,6 +29,7 @@
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x47D2B0
 namespace gamemd {

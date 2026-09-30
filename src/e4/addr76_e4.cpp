@@ -72,6 +72,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/E4Recv_7AF3D0_e4.hpp"
+#include "e4/classes/Techno_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {
@@ -213,8 +215,8 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   v16 = 0; /*0x764daf*/
   if ( File::IsReady(v34, 0) )
   {
-    v29[1] = (unsigned int)(0);
-    v29[2] = 0; /*0x764dcb*/
+    v29[1] = (void *)((unsigned int)(0));
+    v29[2] = (unsigned int)(0);
     GenericList::Constructor(v30); /*0x764dcf*/
     v30[0] = &vt_List_INIClass_INISection; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
@@ -257,7 +259,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
-  v34[0] = (gamemd::HashTable_flat **)(&off_7E1668);
+  v34[0] = (unsigned int)((gamemd::HashTable_flat **)(&off_7E1668));
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
 

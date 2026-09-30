@@ -40,6 +40,8 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/E4Recv_690400_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {

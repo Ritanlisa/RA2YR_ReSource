@@ -33,6 +33,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/BuildingLightClass_e4.hpp"
 
 // 0x44F820
 namespace gamemd {
@@ -69,7 +70,7 @@ int Scenario::ReadTeams()
   int v28; // eax
   TechnoClass *v29; // esi
   void *v30; // eax
-  int v31; // eax
+  void * v31;
   int v32; // edi
   int v33; // eax
   int v34; // edi
@@ -116,7 +117,7 @@ int Scenario::ReadTeams()
   int v76; // [esp+60h] [ebp-84h] BYREF
   INIClass String[2]; // [esp+64h] [ebp-80h] BYREF
 
-  v1 = (int)(this);
+  v1 = (gamemd::CCINIClass *)((int)(this));
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
   result = INIClass::GetKeyCount(v1->__pad_0, (INIClass *)aStructures); /*0x44f84a*/
@@ -216,7 +217,7 @@ int Scenario::ReadTeams()
                   v30 = (void *)((ObjectTypeClass *)(v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = ((TeamClass *)(v30))->FindOrCreate(); /*0x44fb3e*/
+                    v31 = (int)(((TeamClass *)(v30))->FindOrCreate());
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference(v29, v31); /*0x44fb4a*/
                   }

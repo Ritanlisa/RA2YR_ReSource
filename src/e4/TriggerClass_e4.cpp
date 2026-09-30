@@ -23,6 +23,8 @@
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
 
 // 0x610950
 namespace gamemd {
@@ -51,7 +53,7 @@ char TriggerClass::FindByEventType(char a1)
     if ( v2 ) /*0x610994*/
     {
       v4 = (unsigned int)(HIDWORD(MEMORY[0xAC1CB8]));
-      v3 = DWORD2(MEMORY[0xAC1CB8]); /*0x61099b*/
+      v3 = (unsigned int)(DWORD2(MEMORY[0xAC1CB8]));
       v2[1] = DWORD2(MEMORY[0xAC1CB8]); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/

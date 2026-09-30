@@ -58,7 +58,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   int v12; // eax
   int v13; // edx
   char *v14; // ebx
-  int v15; // eax
+  AbstractClass ** v15;
 
   v3 = a2; /*0x4784f2*/
   if ( a2 ) /*0x4784fe*/
@@ -145,7 +145,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4785c6*/
   }
-  v15 = (gamemd::AbstractClass **)(*((unsigned int *)this + 2));
+  v15 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2)));
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4785d1*/
     *((unsigned int *)this + 4) = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -820,8 +820,8 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_RGBClass; /*0x477ac6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_RGBClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x477ad8*/

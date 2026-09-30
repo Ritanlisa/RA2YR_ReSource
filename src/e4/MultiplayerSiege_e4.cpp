@@ -19,6 +19,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x5CA680
 namespace gamemd {
@@ -148,7 +150,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   void *Block; // [esp+24h] [ebp-14h]
   char v16; // [esp+2Dh] [ebp-Bh]
 
-  Multiplayer::FindStartPositions(&v14); /*0x5ca811*/
+  ((Multiplayer *)(&v14))->FindStartPositions(); /*0x5ca811*/
   v3 = 0; /*0x5ca81c*/
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
   if ( MEMORY[0xA8DA84] > 0 ) /*0x5ca836*/
@@ -166,7 +168,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= MEMORY[0xA8DA84] ) /*0x5ca84c*/
   {
     v5 = (void **)(Block);
-    v14 = &vt_VectorClass_Cell; /*0x5ca852*/
+    v14 = (void **)(&vt_VectorClass_Cell);
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -175,7 +177,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= HouseClass_Count ) /*0x5ca887*/
   {
     v5 = (void **)(Block);
-    v14 = &vt_VectorClass_Cell; /*0x5ca984*/
+    v14 = (void **)(&vt_VectorClass_Cell);
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
 LABEL_26:
@@ -186,12 +188,12 @@ LABEL_26:
   if ( *(unsigned char *)(v7[13] + 422) ) /*0x5ca899*/
   {
     v5 = (void **)(Block);
-    v14 = &vt_VectorClass_Cell; /*0x5ca8a7*/
+    v14 = (void **)(&vt_VectorClass_Cell);
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
-  Debug::Log(); /*0x5ca8d2*/
+  this->Debug::Log(); /*0x5ca8d2*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
@@ -200,7 +202,7 @@ LABEL_26:
     v10 = *(unsigned int **)&HouseClass_Array->__pad_0[4 * i]; /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
-      Debug::Log(); /*0x5ca91c*/
+      this->Debug::Log(); /*0x5ca91c*/
       v11 = (int *)(*(int (**)(void *, char *, int, void ***, unsigned int *))(*(unsigned int *)this + 196))( /*0x5ca939*/
                      this,
                      &a2,
@@ -210,7 +212,7 @@ LABEL_26:
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }
-  v14 = (gamemd::AbstractClass **)(&vt_VectorClass_Cell);
+  v14 = (void **)((gamemd::AbstractClass **)(&vt_VectorClass_Cell));
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/

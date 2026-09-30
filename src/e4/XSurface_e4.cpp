@@ -50,7 +50,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
   int v39; // [esp+18h] [ebp-8h]
   int v40; // [esp+1Ch] [ebp-4h]
   int v41; // [esp+24h] [ebp+4h]
-  int v42; // [esp+28h] [ebp+8h]
+  unsigned char * v42;
   unsigned char *v43; // [esp+34h] [ebp+14h]
 
   v7 = *a2; /*0x7ba8cd*/
@@ -76,7 +76,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 112))(this));
+  v42 = (int)((unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 112))(this)));
   v14 = (unsigned short *)(*(int (**)(void *, int, int))(*(unsigned int *)this + 92))(this, v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
@@ -665,7 +665,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   if ( a2 >= a6 && a2 < a6 + a8 && v12 >= a7 && v12 < a9 + a7 ) /*0x7bb39d*/
   {
     v58 = (int)(v12);
-    v13 = *this; /*0x7bb3a7*/
+    v13 = (int)(*this);
     v57 = a2; /*0x7bb3b1*/
     (*(void (**)(int *, int *, int))(v13 + 36))(this, &v57, a10); /*0x7bb3b5*/
   }
@@ -674,7 +674,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   if ( a2 >= a6 && a2 < a6 + a8 && v14 >= a7 && v14 < a9 + a7 ) /*0x7bb3e0*/
   {
     v58 = (int)(a3 - a5);
-    v15 = *this; /*0x7bb3ea*/
+    v15 = (int)(*this);
     v57 = a2; /*0x7bb3f4*/
     (*(void (**)(int *, int *, int))(v15 + 36))(this, &v57, a10); /*0x7bb3f8*/
   }
@@ -765,7 +765,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   if ( a2 - a4 >= v27 && a2 - a4 < v27 + a8 && v28 >= a7 && v28 < a9 + a7 ) /*0x7bb6da*/
   {
     v59 = (int)(a2 - a4);
-    v29 = *this; /*0x7bb6e9*/
+    v29 = (int)(*this);
     v60 = v28; /*0x7bb6f0*/
     (*(void (**)(int *, int *, int))(v29 + 36))(this, &v59, a10); /*0x7bb6f4*/
   }
@@ -848,8 +848,8 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
   unsigned char v14[16]; // [esp+2Ch] [ebp-20h] BYREF
   unsigned char v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  v6 = (void *)(a3);
-  v8 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)a3->__pad_0 + 120))(a3, v14); /*0x7bbbaa*/
+  v6 = (gamemd::XSurface *)((void *)(a3));
+  v8 = (void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)a3->__pad_0 + 120))(a3, v14));
   v9 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
   *(unsigned int *)aP1.__pad_0 = *a2; /*0x7bbbbd*/
   aP1.Width = (int)a2[1]; /*0x7bbbc4*/
@@ -866,24 +866,24 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
   {
     if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
     {
-      a4 = (gamemd::XSurface *)(&vt_BlitTrans_unsigned_char);
-      return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a4, 0, 3, 1000, 0); /*0x7bbc45*/
+      a4 = (void **)((gamemd::XSurface *)(&vt_BlitTrans_unsigned_char));
+      return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a4, 0, 3, 1000, 0));
     }
     else
     {
       a3 = (gamemd::XSurface *)((XSurface *)&vt_BlitTrans_unsigned_short);
-      return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
+      return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a3, 0, 3, 1000, 0));
     }
   }
   else if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc72*/
   {
-    a2 = (gamemd::XSurface *)(&vt_BlitPlain_unsigned_char);
-    return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
+    a2 = (void **)((gamemd::XSurface *)(&vt_BlitPlain_unsigned_char));
+    return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a2, 0, 3, 1000, 0));
   }
   else
   {
-    arg8 = (gamemd::XSurface *)(&vt_BlitPlain_unsigned_short);
-    return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
+    arg8 = (void **)((gamemd::XSurface *)(&vt_BlitPlain_unsigned_short));
+    return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0));
   }
 
 }
@@ -910,24 +910,24 @@ XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigne
   {
     if ( (*(int (**)(XSurface *))(*(unsigned int *)this->__pad_0 + 112))(this) == 1 ) /*0x7bbd65*/
     {
-      a4 = (gamemd::XSurface **)(&vt_BlitTrans_unsigned_char);
-      return BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a4, 0, 3, 1000, 0); /*0x7bbd7e*/
+      a4 = (void **)((gamemd::XSurface **)(&vt_BlitTrans_unsigned_char));
+      return (gamemd::XSurface **)(BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a4, 0, 3, 1000, 0));
     }
     else
     {
-      a3 = (gamemd::XSurface **)(&vt_BlitTrans_unsigned_short);
-      return BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbda8*/
+      a3 = (void **)((gamemd::XSurface **)(&vt_BlitTrans_unsigned_short));
+      return (gamemd::XSurface **)(BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a3, 0, 3, 1000, 0));
     }
   }
   else if ( (*(int (**)(XSurface *))(*(unsigned int *)this->__pad_0 + 112))(this) == 1 ) /*0x7bbdbe*/
   {
-    a4 = (gamemd::XSurface **)(&vt_BlitPlain_unsigned_char);
-    return BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a4, 0, 3, 1000, 0); /*0x7bbdd7*/
+    a4 = (void **)((gamemd::XSurface **)(&vt_BlitPlain_unsigned_char));
+    return (gamemd::XSurface **)(BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a4, 0, 3, 1000, 0));
   }
   else
   {
-    a3 = (gamemd::XSurface **)(&vt_BlitPlain_unsigned_short);
-    return BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
+    a3 = (void **)((gamemd::XSurface **)(&vt_BlitPlain_unsigned_short));
+    return (gamemd::XSurface **)(BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a3, 0, 3, 1000, 0));
   }
 
 }

@@ -17,15 +17,18 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/CComObject_CChatEventSink___ATL_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x41F2E0
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   CCINIClass *v2; // edi
-  int result; // eax
+  CCINIClass * result;
   CCINIClass *v5; // ebp
   CCINIClass *StringByIndex; // esi
   unsigned int *v7; // esi
@@ -64,7 +67,7 @@ LABEL_9:
         v9 = (unsigned int *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
-          v7 = AnimTypeClass::Construct2(v9, StringByIndex->__pad_0); /*0x41f391*/
+          v7 = (unsigned int)(AnimTypeClass::Construct2(v9, StringByIndex->__pad_0));
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
@@ -89,7 +92,7 @@ LABEL_13:
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0); /*0x41f3d7*/
+    result = (unsigned int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0));
     v10 = 0; /*0x41f3dc*/
     for ( i = result; (int)v10 < i; v10 = (CCINIClass *)((char *)v10 + 1) ) /*0x41f3e4*/
     {
@@ -201,7 +204,7 @@ CCINIClass::CCINIClass()
   int v4; // ebx
   int v5; // edi
   int v6; // edi
-  int v7; // edi
+  unsigned int * v7;
 
   result = (unsigned int *)(this);
   v2 = (unsigned int *)this + 4; /*0x535b36*/
@@ -231,7 +234,7 @@ CCINIClass::CCINIClass()
     }
   }
   v6 = (unsigned int)(v2[1]);
-  v3[2] = v2; /*0x535b89*/
+  v3[2] = (unsigned int)(v2);
   v3[1] = v6; /*0x535b8c*/
   v7 = v2[1]; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/

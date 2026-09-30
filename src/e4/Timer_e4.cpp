@@ -51,7 +51,7 @@ namespace gamemd {
 DWORD * Timer::Init( DWORD a2)
 {
 
-  *(_DWORD *)this = (DWORD *)(Timer::GetTicks());
+  *(unsigned int *)this = (DWORD *)(Timer::GetTicks());
   *((unsigned int *)this + 2) = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 

@@ -27,6 +27,10 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Float_e4.hpp"
+#include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x71A450
 namespace gamemd {
@@ -325,7 +329,7 @@ void TemporalClass::GetWarpPerStep( int a2)
   int v6; // eax
   int *v7; // eax
 
-  WarpPerStep = 0; /*0x71ab14*/
+  WarpPerStep = (unsigned int)(0);
   if ( *((unsigned int *)this + 17) && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   v4 = *((unsigned int *)this + 9); /*0x71ab30*/

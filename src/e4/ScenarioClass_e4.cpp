@@ -36,6 +36,12 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode_e4.hpp"
+#include "e4/classes/E4Recv_65C6D0_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/TriggerActionQueue_e4.hpp"
+#include "e4/classes/TypeList_flat_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
@@ -45,7 +51,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
   void *result; // eax
   unsigned int *v1; // ebx
   int v2; // edi
-  int v3; // eax
+  int * v3;
   int *v4; // esi
   int v5; // ecx
   int v6; // edx
@@ -60,7 +66,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
     if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58bb5c*/
     {
       v3 = (int *)(1104);
-      v4 = &dword_ABE328 - 1104; /*0x58bb6a*/
+      v4 = (int *)(&dword_ABE328 - 1104);
       v5 = 1136; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
       {
@@ -74,7 +80,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
           v6 = v4[v3]; /*0x58bb95*/
           v7 = v4[v3 + 1]; /*0x58bb98*/
         }
-        v1[v3] = (int *)(v6);
+        v1[v3] = (unsigned int)((int *)(v6));
         ++v2; /*0x58bbab*/
         ++v5; /*0x58bbac*/
         *(unsigned int *)((char *)MEMORY[0xA8B230] + v3 * 4 + 4) = v7; /*0x58bbaf*/
@@ -284,7 +290,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   void *Block; // [esp+8h] [ebp-14h]
   char v7; // [esp+11h] [ebp-Bh]
 
-  Multiplayer::FindStartPositions(&v5); /*0x5d6bec*/
+  ((Multiplayer *)(&v5))->FindStartPositions(); /*0x5d6bec*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5d6bfa*/
   {
     v2 = (unsigned int *)*((unsigned int *)HouseClass_Array + i); /*0x5d6c02*/
@@ -453,8 +459,8 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
       v3 = (AnimClass *)(*((unsigned int *)g_CampaignTypeArray + a3) + 156); /*0x683af8*/
   }
   *((unsigned int *)MEMORY[0xA8B230] + 3379) = a3; /*0x683b0a*/
-  Debug::Log(); /*0x683b10*/
-  Debug::Log(); /*0x683b21*/
+  this->Debug::Log(); /*0x683b10*/
+  this->Debug::Log(); /*0x683b21*/
   strcpy((char *)MEMORY[0xA8B230] + 4700, v3->field_0); /*0x683b47*/
   _strupr((char *)MEMORY[0xA8B230] + 4700); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/

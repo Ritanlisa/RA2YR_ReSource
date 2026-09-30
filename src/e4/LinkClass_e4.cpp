@@ -13,6 +13,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4E1480
 namespace gamemd {

@@ -176,8 +176,8 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TechnoTypeClass; /*0x477a76*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
   {
     __3_YAXPAX_Z(v3); /*0x477a88*/
@@ -360,8 +360,8 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_RGBClass; /*0x4786d6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_RGBClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4786e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4786e8*/
@@ -592,8 +592,8 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_TechnoTypeClass; /*0x4ba166*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba170*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba178*/
@@ -615,8 +615,8 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &off_7E8500; /*0x4ba206*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&off_7E8500);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba210*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba218*/
@@ -638,8 +638,8 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_CrossDissolveEffect; /*0x4ba2a6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_CrossDissolveEffect);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba2b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba2b8*/

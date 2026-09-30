@@ -25,6 +25,9 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/DynamicVectorClass_flat_e4.hpp"
+#include "e4/classes/TypeList_flat_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x48DCD0
 namespace gamemd {

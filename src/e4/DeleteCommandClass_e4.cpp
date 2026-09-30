@@ -314,8 +314,8 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_AnimClass_const; /*0x53c786*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_AnimClass_const);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
@@ -337,8 +337,8 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_AnimClass_const; /*0x53c7d6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_AnimClass_const);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/

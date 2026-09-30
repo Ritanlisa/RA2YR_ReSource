@@ -38,6 +38,8 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/Map_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -62,14 +64,14 @@ char sub_5F0070()
     Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
-            v1 += this->this->this->Timer::GetTicks() - g_abs_887338;
+            v1 += this->this->((Timer *)0)->GetTicks() - g_abs_887338;
     while ( 1 ) /*0x5f00e4*/
     {
       IDA_LOBYTE(v0) = dword_887338; /*0x5f00e4*/
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
-                v0 = this->this->this->Timer::GetTicks() - g_abs_887338;
+                v0 = this->this->((Timer *)0)->GetTicks() - g_abs_887338;
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
@@ -614,7 +616,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
   LABEL_5:
-    ObjectTypeClass::SetRTTI71(Buffer); /*0x5fe69f*/
+    ((ObjectTypeClass *)(Buffer))->SetRTTI71(); /*0x5fe69f*/
     *(unsigned int *)(v4 + 164) = SearchMIXFile(Buffer, 1); /*0x5fe6b3*/
     goto LABEL_14; /*0x5fe6b9*/
   }

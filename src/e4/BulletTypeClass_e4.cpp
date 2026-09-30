@@ -18,6 +18,7 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/Byte_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x465450
 namespace gamemd {
@@ -55,7 +56,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       if ( v3 ) /*0x4654a1*/
       {
         v3[3] = (unsigned int)(0);
-        v3[1] = v1 + 16; /*0x4654ab*/
+        v3[1] = (unsigned int)(v1 + 16);
         v3[2] = v1 + 16; /*0x4654b6*/
         *v3 = &XSurface_Vtable; /*0x4654b9*/
         v3[4] = 1; /*0x4654bf*/
@@ -194,8 +195,8 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
          dword_A83C88 + dword_A83C94,
          0) )
   {
-    v3 = (int)(g_BulletTypeInitState);
-    g_BulletTypeInitState = (BulletTypeClass *)((char *)g_BulletTypeInitState + 1); /*0x46bd75*/
+    v3 = (gamemd::BulletTypeClass *)((int)(g_BulletTypeInitState));
+    g_BulletTypeInitState = (int)((BulletTypeClass *)((char *)g_BulletTypeInitState + 1));
     *(unsigned int *)&dword_A83C84->__pad_0[4 * (unsigned int)v3] = this; /*0x46bd81*/
   }
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x46bdb8*/

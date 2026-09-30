@@ -29,6 +29,9 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {

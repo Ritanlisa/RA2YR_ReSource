@@ -98,7 +98,7 @@ LABEL_14:
   if ( v6 ) /*0x431c8e*/
   {
     v7 = (size_t)(0);
-    v11 = 0; /*0x431c9b*/
+    v11 = (size_t)(0);
     v10 = v6; /*0x431c9f*/
     if ( v6 > (int)*((unsigned int *)this + 13) ) /*0x431ca3*/
       v10 = *((unsigned int *)this + 13); /*0x431ca5*/
@@ -587,7 +587,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v69 = (char)(0);
   v59 = (char)(aP2[1]);
   v46 = (char)(0);
-  v47 = 0; /*0x437a74*/
+  v47 = (char)(0);
   v60 = aP2[2]; /*0x437a78*/
   v61 = aP2[3]; /*0x437a8d*/
   v18 = 24 * a9 + 8484624; /*0x437a9c*/

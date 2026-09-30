@@ -70,7 +70,7 @@ AbstractClass * HouseTypeClass::Dtor()
     }
     while ( v2 < g_SuperWeaponTypeArray ); /*0x51170e*/
   }
-  v3 = (unsigned int)(*(void **)((char *)this + 392));
+  v3 = (void *)((unsigned int)(*(void **)((char *)this + 392)));
   *((unsigned int *)this + 97) = &vt_VectorClass_AircraftTypeClass_const; /*0x51171a*/
   if ( v3 && *((unsigned char *)this + 401) ) /*0x511726*/
   {

@@ -23,6 +23,7 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {

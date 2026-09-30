@@ -23,6 +23,11 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/E4Recv_7B6280_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -260,13 +265,13 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   int v25; // [esp+1Ch] [ebp-4h]
 
   v3 = (gamemd::ObjectClass *)(aP2);
-  v4 = (ObjectClass *)a1; /*0x770559*/
+  v4 = (gamemd::ObjectClass *)((ObjectClass *)a1);
   v22 = this; /*0x77055f*/
   v5 = (ObjectClass *)&this-((unsigned int *)(>__pad_0))[4]; /*0x770563*/
   v24 = (ObjectClass *)6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
-    v6 = (gamemd::Animation *)(*(ObjectClass **)this->__pad_0);
+    v6 = (gamemd::ObjectClass *)((gamemd::Animation *)(*(ObjectClass **)this->__pad_0));
     ((String *)((char **)&aP2))->Assign(&stru_830620.__pad_579C[33740]); /*0x77057f*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 0, (ObjectClass *)&aP2); /*0x770590*/
     DeleteAndZero((void **)&aP2); /*0x770599*/
@@ -313,7 +318,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
       }
     }
     nextObject = (gamemd::ObjectClass *)(v22[5].nextObject);
-    objectTypeFlags = v22[5].objectTypeFlags; /*0x7706d3*/
+    objectTypeFlags = (gamemd::ObjectClass *)(v22[5].objectTypeFlags);
     v22[5].nextObject = (char *)nextObject + 1; /*0x7706d9*/
     *(unsigned int *)(objectTypeFlags + 4 * (unsigned int)nextObject) = v25; /*0x7706e0*/
   }
@@ -352,7 +357,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
       }
     }
     v20 = (unsigned int)(v22[5].ambientSoundController[3]);
-    v21 = v22[5].ambientSoundController[0]; /*0x7707f0*/
+    v21 = (unsigned int)(v22[5].ambientSoundController[0]);
     v22[5].ambientSoundController[3] = v20 + 1; /*0x7707f6*/
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/
   }

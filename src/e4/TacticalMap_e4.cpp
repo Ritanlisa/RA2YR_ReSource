@@ -24,6 +24,11 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "app/cmdline.hpp"
 #include "e4/classes/ColorStruct_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/PsyDom_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x484680
 namespace gamemd {
@@ -49,13 +54,13 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   v2 = *((unsigned short *)this + 132) + (int16_t)(1000 * *((unsigned short *)g_abs_A8B230 + 6806)) / 100; /*0x4846ab*/
   *((unsigned short *)this + 133) = v2; /*0x4846b2*/
   *((unsigned short *)this + 135) = v2; /*0x4846b9*/
-  if ( LightningStorm::IsActive() ) /*0x4846c0*/
+  if ( this->LightningStorm::IsActive() ) /*0x4846c0*/
   {
     v3 = *((char *)this + 283); /*0x4846cf*/
     *((unsigned short *)this + 133) += v3 * *((unsigned short *)g_abs_A8B230 + 6830) - *((unsigned short *)g_abs_A8B230 + 6828); /*0x4846ec*/
     v4 = (v3 + 4) * *((unsigned short *)g_abs_A8B230 + 6830) - *((unsigned short *)g_abs_A8B230 + 6828); /*0x484703*/
   }
-  else if ( PsyDom::IsActive() ) /*0x48470f*/
+  else if ( this->PsyDom::IsActive() ) /*0x48470f*/
   {
     v5 = *((char *)this + 283); /*0x48471e*/
     *((unsigned short *)this + 133) += v5 * *((unsigned short *)g_abs_A8B230 + 6856) - *((unsigned short *)g_abs_A8B230 + 6854); /*0x48473b*/
@@ -206,7 +211,7 @@ void TacticalMap::DrawCursor()
   {
     (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x5d49c8*/
     (*(void (**)(unsigned int, int))(*(unsigned int *)*((unsigned int *)this + 9) + 108))(*((unsigned int *)this + 9), 1); /*0x5d49d2*/
-    TextRenderer::GetInstance(); /*0x5d49db*/
+    this->TextRenderer::GetInstance(); /*0x5d49db*/
     v3 = Text::MeasureWidth(*(unsigned int *)(*((unsigned int *)this + 9) + 48), 0); /*0x5d49f8*/
     if ( *((unsigned short *)this + 348) /*0x5d4a1b*/
       && *((unsigned int *)this + 172) - *((unsigned int *)this + 173) < *((unsigned int *)this + 4) - 1

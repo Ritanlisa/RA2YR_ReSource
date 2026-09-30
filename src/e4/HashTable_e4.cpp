@@ -26,6 +26,7 @@
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
 
 // 0x624760
 namespace gamemd {

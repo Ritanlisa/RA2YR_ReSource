@@ -14,8 +14,8 @@ CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_int; /*0x49fce6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_int);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x49fcf0*/
   {
     __3_YAXPAX_Z(v3); /*0x49fcf8*/

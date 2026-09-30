@@ -18,6 +18,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 
 // 0x690A10
 namespace gamemd {
@@ -85,7 +87,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   *((unsigned int *)this + 3) = v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(v5, g_abs_83E6DC); /*0x690b32*/
+    ((CCFileClass *)(v5))->Construct(g_abs_83E6DC); /*0x690b32*/
     *((unsigned int *)this + 3) = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
     *((unsigned char *)this + 16) = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
@@ -223,7 +225,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
 {
   int *v8; // esi
   int v9; // ebp
-  int v10;
+  void * v10;
   int v11; // ebx
   int v12; // ebp
   int *Viewport; // eax
@@ -245,7 +247,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   unsigned int v30[2]; // [esp+24h] [ebp-BCh] BYREF
   int v31[2]; // [esp+2Ch] [ebp-B4h] BYREF
   unsigned int v32[2]; // [esp+34h] [ebp-ACh] BYREF
-  int v33; // [esp+3Ch] [ebp-A4h] BYREF
+  void * v33;
   void * v34;
   int v35; // [esp+44h] [ebp-9Ch]
   int v36; // [esp+48h] [ebp-98h]
@@ -318,9 +320,9 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v31[0] = (int)((void *)(v17));
       v19 = (void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
       v20 = (void *)((int)((void *)(*v8)));
-      v34 = (int)((void *)(v19));
-      v33 = (void *)(v31[0]);
-      v32[0] = v11; /*0x778414*/
+      v34 = (void *)((int)((void *)(v19)));
+      v33 = (int)((void *)(v31[0]));
+      v32[0] = (void *)(v11);
       v21 = *(unsigned int *)(a2); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
       v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))(v8, &v38, 0, 1); /*0x778421*/

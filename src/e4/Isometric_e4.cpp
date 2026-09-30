@@ -213,7 +213,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
       v6 = *(double *)&MEMORY[0x81C918][5 * *(uint8_t *)((char *)this + 284) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
-  return result; /*0x47bb54*/
+  return (gamemd::AbstractClass *)(result);
 
 }
 } // namespace gamemd

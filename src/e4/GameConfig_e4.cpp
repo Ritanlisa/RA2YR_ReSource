@@ -25,13 +25,14 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {
 char * GameConfig::ComputeCRC()
 {
 
-  unsigned int v0; // ebx
+  int * v0;
   int *v1; // ebp
   int v2; // edx
   unsigned int v3; // edi
@@ -43,7 +44,7 @@ char * GameConfig::ComputeCRC()
   int *v10; // [esp+10h] [ebp-104h]
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
-  v0 = (int *)(0);
+  v0 = (unsigned int)((int *)(0));
   qmemcpy(v11, &word_ABE050, sizeof(v11)); /*0x5e84ea*/
   v1 = &dword_ABE010; /*0x5e84ec*/
   v10 = &dword_ABE010; /*0x5e84fd*/
@@ -163,7 +164,7 @@ void GameConfig::Constructor()
     if ( v2 ) /*0x5d67d5*/
     {
       v2[1] = (unsigned int)(0);
-      v2[2] = 0; /*0x5d67e1*/
+      v2[2] = (unsigned int)(0);
       v2[5] = 0; /*0x5d67e6*/
       v2[6] = 0; /*0x5d67e9*/
       v2[4] = &vt_GenericNode; /*0x5d67ec*/
@@ -185,7 +186,7 @@ void GameConfig::Constructor()
     {
       v3 = 0; /*0x5d682f*/
     }
-    v1[14] = (unsigned int)((char *)v3);
+    v1[14] = (char *)((unsigned int)((char *)v3));
     CCFileClass::Construct2(v6, v1 + 11); /*0x5d683c*/
     if ( CCFileClass::Open(v6, 0) ) /*0x5d6846*/
       CCINIClass::Load(v1[14], (int)v6, 0, 0); /*0x5d685a*/

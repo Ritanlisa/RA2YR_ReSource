@@ -63,8 +63,8 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
   BOOL result; // eax
   bool v6; // al
   int v7; // esi
-  char * v8;
-  char * v9;
+  int v8;
+  int v9;
 
   result = 1; /*0x759fb7*/
   switch ( a2 ) /*0x759fc6*/
@@ -95,7 +95,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
-        v9 = (int)((char *)this + 4);
+        v9 = (char *)((int)((char *)this + 4));
         result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((char *)this + 4, a4, a3) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
@@ -106,7 +106,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       }
       else
       {
-        v8 = (int)((char *)this + 4);
+        v8 = (char *)((int)((char *)this + 4));
         result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((char *)this + 4, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
           result = (*(int (**)(int, int *, int))(*(unsigned int *)v8 + 36))(v8, &a4, 1) != 1; /*0x75a06c*/

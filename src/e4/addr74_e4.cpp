@@ -48,6 +48,8 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/BufferIOFile_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/E4Recv_5B3910_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -732,7 +734,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  v3 = (unsigned int)((char *)((unsigned int *)this + 3));
+  v3 = (char *)((unsigned int)((char *)((unsigned int *)this + 3)));
   *((unsigned int *)this + 4) = 0; /*0x74bc04*/
   *((unsigned int *)this + 5) = 0; /*0x74bc07*/
   *((unsigned char *)this + 24) = 1; /*0x74bc0a*/
@@ -751,7 +753,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *((unsigned int *)v3 + 1) = 0; /*0x74bc7f*/
     v3[13] = 0; /*0x74bc82*/
 LABEL_8:
-    *(_DWORD *)this = *(unsigned int *)a2; /*0x74bc85*/
+    *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
   v5 = (unsigned int)(__2_YAPAXI_Z(v4));
@@ -769,7 +771,7 @@ LABEL_8:
     ++v7; /*0x74bc69*/
   }
   while ( v7 < *((unsigned int *)v3 + 2) ); /*0x74bc6c*/
-  *(_DWORD *)this = *(unsigned int *)a2; /*0x74bc74*/
+  *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc74*/
   return this; /*0x74bc78*/
 
 }
@@ -803,7 +805,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     *((unsigned int *)this + 4) = 0; /*0x74bd2c*/
     *((unsigned char *)this + 25) = 0; /*0x74bd33*/
 LABEL_10:
-    *(_DWORD *)this = *(unsigned int *)a2; /*0x74bd37*/
+    *(unsigned int *)this = *(unsigned int *)a2; /*0x74bd37*/
     return this; /*0x74bd39*/
   }
   v5 = (unsigned int)(__2_YAPAXI_Z(v4));
@@ -821,7 +823,7 @@ LABEL_10:
     ++v7; /*0x74bd1a*/
   }
   while ( v7 < *((unsigned int *)this + 5) ); /*0x74bd1d*/
-  *(_DWORD *)this = *(unsigned int *)a2; /*0x74bd23*/
+  *(unsigned int *)this = *(unsigned int *)a2; /*0x74bd23*/
   return this; /*0x74bd25*/
 
 }
@@ -850,7 +852,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   {
     v5 = (unsigned int)(*this);
     v6 = (*(int (**)(unsigned int *, unsigned int, unsigned int))(*((char *)this + 3) + 8))((char *)this + 3, (a2 + 7) >> 3, 0); /*0x74bdf9*/
-    *(_DWORD *)this = a2; /*0x74be01*/
+    *(unsigned int *)this = a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
     if ( v6 && v5 < a2 ) /*0x74be0b*/
     {
@@ -887,7 +889,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
       *((char *)this + 2) = -1; /*0x74be75*/
     }
     v11 = *((char *)this + 3); /*0x74be78*/
-    *(_DWORD *)this = 0; /*0x74be7e*/
+    *(unsigned int *)this = 0; /*0x74be7e*/
     (*(void (**)(unsigned int *))(v11 + 12))((char *)this + 3); /*0x74be84*/
     return 1; /*0x74be89*/
   }
@@ -1010,8 +1012,8 @@ int InitializeVeinholeSystem(char a1)
   LABEL_18:
   if ( !v4 ) /*0x74e004*/
     dword_B1D2F0 = RA2_OPNEW(v2); /*0x74e00f*/
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e019*/
-  for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e019*/
+  for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
   memset(dword_B1D2F0, 0, v2); /*0x74e05c*/
   for ( m = dword_B1D2A0 - 1; m >= 0; --m ) /*0x74e06f*/
@@ -1022,14 +1024,14 @@ int InitializeVeinholeSystem(char a1)
     else
       ProcessVeinholeMonster(v16); /*0x74e08b*/
   }
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e098*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0a2*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e098*/
+  result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x74e0a2*/
   for ( n = result; result; n = result ) /*0x74e0ab*/
   {
     if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + Cell::PosToIndex((int16_t *)(n + 36))) ) /*0x74e0c5*/
       *(unsigned int *)(n + 68) = -1; /*0x74e0cb*/
     *(unsigned int *)(n + 320) &= ~0x8000u; /*0x74e0da*/
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0e5*/
+    result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x74e0e5*/
   }
   return result; /*0x74e0f0*/
 }

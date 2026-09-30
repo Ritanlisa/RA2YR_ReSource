@@ -34,8 +34,8 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_VeinholeMonsterClass; /*0x74f656*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_VeinholeMonsterClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
     __3_YAXPAX_Z(v3); /*0x74f668*/

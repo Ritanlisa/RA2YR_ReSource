@@ -22,6 +22,9 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
 
 // 0x629210
 namespace gamemd {

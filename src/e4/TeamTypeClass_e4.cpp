@@ -51,7 +51,7 @@ int TeamTypeClass::Construct()
   int v5; // eax
   int v7; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((#373 *)this); /*0x4c98b7*/
+  ((AbstractClass *)((#373 *)this))->Constructor(); /*0x4c98b7*/
   *((unsigned int *)this + 9) = 0; /*0x4c98be*/
   *((unsigned char *)this + 40) = 0; /*0x4c98c1*/
   v2 = MEMORY[0xA8ED84]; /*0x4c98c4*/
@@ -153,7 +153,7 @@ LABEL_6:
             v5 = dword_8B41D8,
             v6) )
       {
-        dword_8B41D8 = v5 + 1; /*0x691cf6*/
+        dword_8B41D8 = (unsigned int)(v5 + 1);
         *((unsigned int *)unk_8B41CC + v5) = v4; /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }

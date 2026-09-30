@@ -19,6 +19,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/RadarHashVector_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x652C00
 namespace gamemd {
@@ -28,10 +30,10 @@ CampaignClass * RadarClass::Destruct()
   char *v2; // esi
   int v3; // ebp
   void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
+  unsigned char (*)[4] v5;
+  unsigned char (*)[4] v6;
 
-  *this = &vt_RadarClass; /*0x652c0c*/
+  *this = (void *)(&vt_RadarClass);
   AudioFileClass::Release((unsigned int *)this + 1328); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
   v2 = (char *)((unsigned int *)this + 1314); /*0x652c1e*/
@@ -197,7 +199,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   char v37; // [esp+28h] [ebp+Ch]
   char aP3a; // [esp+2Ch] [ebp+10h]
 
-  v33 = TechnoTypeClass::GetByTypeAndIndex(a1, a2); /*0x6a8444*/
+  v33 = ((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2); /*0x6a8444*/
   v7 = TechnoTypeClass::GetByTypeAndIndex(a3, (int)aP3); /*0x6a844d*/
   v34 = v7; /*0x6a8451*/
   if ( !a3 ) /*0x6a8455*/

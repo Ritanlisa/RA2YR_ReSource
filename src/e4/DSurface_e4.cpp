@@ -357,7 +357,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( v22 == 2 && MEMORY[0x87F7E8][34170] == 11 && MEMORY[0x87F7E8][34171] == 3 ) /*0x4babd2*/
         {
           g_DDraw_PixelFormat = 2; /*0x4babd9*/
-          Debug::Log(); /*0x4babdf*/
+          this->Debug::Log(); /*0x4babdf*/
           return (unsigned int *)v5; /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
@@ -367,7 +367,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( MEMORY[0x87F7E8][34171] == 3 ) /*0x4bab72*/
         {
           g_DDraw_PixelFormat = 0; /*0x4bab7d*/
-          Debug::Log(); /*0x4bab87*/
+          this->Debug::Log(); /*0x4bab87*/
           return (unsigned int *)v5; /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
@@ -375,7 +375,7 @@ AbstractClass * * DSurface::CreatePrimary()
       if ( MEMORY[0x87F7E8][34170] != 11 || MEMORY[0x87F7E8][34171] != 2 ) /*0x4bac05*/
       {
 LABEL_60:
-        Debug::Log(); /*0x4bac11*/
+        this->Debug::Log(); /*0x4bac11*/
         return (unsigned int *)v5; /*0x4bac27*/
       }
     }

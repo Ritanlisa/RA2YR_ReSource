@@ -24,7 +24,7 @@ RadSiteClass::RadSiteClass()
   #72 *v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((int)this); /*0x65b1e3*/
+  ((AbstractClass *)((int)this))->Constructor(); /*0x65b1e3*/
   *((unsigned int *)this + 9) = 0; /*0x65b1ea*/
   *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
   *((unsigned int *)this + 12) = 0; /*0x65b1f6*/

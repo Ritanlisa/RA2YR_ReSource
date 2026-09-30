@@ -14,7 +14,7 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
 
   AbstractClass *result; // eax
 
-  result = (unsigned int)(aP1);
+  result = (gamemd::AbstractClass *)((unsigned int)(aP1));
   *((unsigned int *)this + 67) = aP2; /*0x4664c8*/
   *((unsigned int *)this + 68) = a7; /*0x4664d2*/
   *((unsigned int *)this + 74) = aP5; /*0x4664dc*/

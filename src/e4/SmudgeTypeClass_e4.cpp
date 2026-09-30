@@ -107,6 +107,7 @@ LABEL_11:
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v7; // ebx
   int v8; // edx

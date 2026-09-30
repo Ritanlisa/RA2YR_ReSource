@@ -104,7 +104,7 @@ MixFileClass * * MixFile::LoadAll()
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
   v0 = (unsigned int)(((CCFileClass *)(v69))->Construct(aConqmdMix));
-  v1 = (*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0); /*0x53048b*/
+  v1 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0));
   v69[0] = &CCFileClass::`vftable'; /*0x53048d*/
   v71 = 0; /*0x530491*/
   Vector::Clear((int)v70); /*0x530495*/

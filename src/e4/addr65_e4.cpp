@@ -45,6 +45,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/E4Recv_645B60_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/TabClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x650A90
 namespace gamemd {
@@ -756,7 +760,7 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
         {
           v6 = v2; /*0x65867a*/
 LABEL_6:
-          TabClass::DrawPower(hDlg, (void *)v2, (void *)v3); /*0x65868d*/
+          ((TabClass *)(hDlg))->DrawPower((void *)v2, (void *)v3); /*0x65868d*/
           goto LABEL_7; /*0x658692*/
         }
         if ( !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) ) /*0x658683*/
@@ -772,7 +776,7 @@ LABEL_7:
   }
   v4 = *(void **)HouseClass_Array->__pad_0; /*0x6586a4*/
   TabClass::DrawPower(hDlg, 0, *(void **)&HouseClass_Array->__pad_0[4 * v1]); /*0x6586b4*/
-  return TabClass::DrawPower(hDlg, (void *)v1, v4); /*0x6586c3*/
+  return ((TabClass *)(hDlg))->DrawPower((void *)v1, v4); /*0x6586c3*/
 
 }
 }
@@ -791,7 +795,7 @@ void sub_6586D0()
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
     Dialog::Show(Dialog); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !this->this->this->Dialog::PumpMessages() )
+        while ( !this->this->((Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/

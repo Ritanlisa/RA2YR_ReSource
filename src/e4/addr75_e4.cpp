@@ -63,6 +63,11 @@
 #include "e4/classes/E4Recv_7741C0_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/E4Recv_7AF3D0_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -345,7 +350,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
             }
             if ( g_InfantryDrawState ) /*0x752544*/
               Audio::Release(g_InfantryDrawState); /*0x752546*/
-            ThemeClass::ClearQueues(); /*0x75254b*/
+            this->ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
           v7 = AudioQueue::FindByData(v5); /*0x75255e*/
@@ -379,7 +384,7 @@ void ThemeClass_Update()
 
   if ( byte_A8ED64 ) /*0x752773*/
     return; /*0x752773*/
-    if ( !this->Audio::IsSoundEnabled() )
+    if ( !((Audio *)0)->IsSoundEnabled() )
     return; /*0x752779*/
   if ( !g_InfantryDrawState ) /*0x75278e*/
     return; /*0x75278e*/
@@ -582,7 +587,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
     v3 = MEMORY[0xB1D4B0]++; /*0x752d3b*/
     *((unsigned int *)MEMORY[0xB1D4A4] + v3) = this; /*0x752d4a*/
   }
-  return this; /*0x752d4d*/
+  return (int)(this);
 
 }
 }
@@ -606,12 +611,12 @@ int CCINIClass::InitFromINIEVA()
   unsigned int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = this; /*0x75300a*/
+  v1 = (char *)(this);
   v13 = (int)this; /*0x753011*/
   LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (uint8_t *)g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (unsigned int)(INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/

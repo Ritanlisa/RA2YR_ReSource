@@ -26,6 +26,9 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {

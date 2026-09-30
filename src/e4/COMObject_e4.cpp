@@ -9,6 +9,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/CStreamClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/IPersistStream_e4.hpp"
 
 // 0x4E1A00
 namespace gamemd {

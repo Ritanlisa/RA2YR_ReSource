@@ -289,8 +289,8 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_unsigned_short; /*0x54a766*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_unsigned_short);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/

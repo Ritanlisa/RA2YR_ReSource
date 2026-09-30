@@ -15,7 +15,7 @@ namespace gamemd {
 unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 {
 
-  signed int v2; // esi
+  char * v2;
   char *i; // ebx
   int v4; // eax
   WaypointPathClass *v5; // eax
@@ -24,8 +24,8 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   unsigned int *Element; // esi
   signed int v10; // [esp+10h] [ebp-4h]
 
-  v2 = (char *)(0);
-  v10 = 0; /*0x5023bb*/
+  v2 = (int)((char *)(0));
+  v10 = (char *)(0);
   for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
@@ -89,13 +89,13 @@ namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
 {
 
-  int v3; // ecx
+  int * v3;
   unsigned int *i; // edi
   int v6; // [esp+10h] [ebp-8h]
   int *v7; // [esp+14h] [ebp-4h]
 
   v3 = (int *)(0);
-  v7 = this; /*0x763a5b*/
+  v7 = (int *)(this);
   v6 = *((char *)this + 14); /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/

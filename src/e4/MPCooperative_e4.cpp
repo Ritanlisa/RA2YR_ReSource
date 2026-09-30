@@ -298,6 +298,7 @@ void MPCooperative::MPCooperative_validateMove( int a2, int a3, int a4, int a5, 
 namespace gamemd {
 int MPCooperative::ReadCoopSaveINI()
 {
+    unsigned int v10 = 0;  /* G37 hoist */
 
   char *v1; // edi
   char *v2; // ebx
@@ -406,7 +407,7 @@ int MPCooperative::ReadCoopSaveINI()
     i = v9[1]; /*0x49d2f9*/
     ++v10; /*0x49d2fc*/
   }
-  MEMORY[0x89ED18][v10] = 0; /*0x49d30c*/
+  MEMORY[0x89ED18][v10] = (unsigned int)(0);
   strcat(v23, MEMORY[0x89ED18]); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/

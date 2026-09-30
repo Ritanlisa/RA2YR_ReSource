@@ -26,6 +26,8 @@
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/E4Recv_65FB80_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x660840
 namespace gamemd {
@@ -34,7 +36,7 @@ int LoadGame::LoadTriggerEvents()
 
   int v1; // edx
   int v2; // edi
-  unsigned int v4;
+  unsigned int * v4;
   void *v5; // esi
   int v6; // eax
   int v7; // eax
@@ -51,10 +53,10 @@ int LoadGame::LoadTriggerEvents()
     v4 = (unsigned int *)(g_TriggerPool);
     do /*0x6608cb*/
     {
-      v5 = (void *)v4[v2]; /*0x66085e*/
+      v5 = (void *)((unsigned int *)(v4))[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = (unsigned int *)(v4[v2]);
+        v12 = (unsigned int *)(((unsigned int *)(v4))[v2]);
         v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
@@ -68,7 +70,7 @@ int LoadGame::LoadTriggerEvents()
         v7 = v2; /*0x6608a6*/
         for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
         {
-          v4[v7] = (unsigned int *)(v4[v7 + 1]);
+          ((unsigned int *)(v4))[v7] = (unsigned int *)(v4[v7 + 1]);
           v1 = g_TriggerEventState; /*0x6608b9*/
           v4 = g_TriggerPool; /*0x6608bf*/
         }

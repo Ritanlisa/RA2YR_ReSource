@@ -39,13 +39,14 @@
 #include "e4/classes/E4Recv_5D2650_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/E4Recv_5DBEC0_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {
 void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
   wchar_t *v3; // esi
-  wint_t * v4;
+  unsigned int v4;
   wint_t * v5;
   wchar_t *v6; // eax
   wint_t * v7;
@@ -61,7 +62,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)((wint_t *)((wchar_t *)(a1)))));
-  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))))))))))))))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/

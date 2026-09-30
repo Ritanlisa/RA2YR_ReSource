@@ -99,7 +99,7 @@ int WebBrowser::ShowDialog()
   int v14; // [esp+40h] [ebp-4h]
 
   v1 = (const char *)(this);
-  v9 = this; /*0x773e99*/
+  v9 = (const char *)(this);
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
@@ -122,7 +122,7 @@ int WebBrowser::ShowDialog()
     if ( v5 ) /*0x773f68*/
     {
       v7 = (unsigned int)(v5 + 2);
-      v5[1] = 1; /*0x773f71*/
+      v5[1] = (unsigned int)(1);
       v5[2] = 0; /*0x773f7d*/
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/

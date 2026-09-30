@@ -11,6 +11,8 @@
 #include "e4/classes/WebBrowser_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
 
 // 0x5D4B20
 namespace gamemd {
@@ -173,13 +175,13 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   }
   if ( !v5 ) /*0x7b7581*/
   {
-    v3 = (GameSetup *)this; /*0x7b7583*/
+    v3 = (gamemd::GameSetup *)((GameSetup *)this);
 LABEL_33:
     v16 = (CampaignScore *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
   v3 = (gamemd::AbstractClass **)((GameSetup *)this);
-  v16 = (CampaignScore *)v5; /*0x7b7592*/
+  v16 = (gamemd::AbstractClass **)((CampaignScore *)v5);
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
     __3_YAXPAX_Z(*(void **)v3->__pad_0); /*0x7b759b*/
@@ -312,7 +314,7 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
   if ( *a2 ) /*0x7b672e*/
   {
     v3 = (int)(wcslen(*a2));
-    v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x7b673f*/
+    v4 = (int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2));
     *this = v4; /*0x7b6744*/
     wcscpy(v4, *a2); /*0x7b674a*/
   }
@@ -356,7 +358,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
   size_t v5; // eax
   unsigned short *v6; // eax
 
-  v3 = (const wchar_t *)*this; /*0x7b68e8*/
+  v3 = (wchar_t *)((const wchar_t *)*this);
   if ( (*this || *a2) && (!v3 || !*a2 || wcscmp(v3, *a2)) ) /*0x7b68ff*/
   {
     v4 = (int)((wchar_t *)*a2);
@@ -392,7 +394,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
   if ( aP1 ) /*0x7b6aeb*/
   {
     v3 = (wchar_t **)((CampaignScore *)*this);
-    v4 = wcslen((const wchar_t *)aP1) + 1; /*0x7b6afb*/
+    v4 = (wchar_t **)(wcslen((const wchar_t *)aP1) + 1);
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen((const wchar_t *)v3); /*0x7b6b09*/
     v5 = (wchar_t *)__2_YAPAXI_Z(4 * v4); /*0x7b6b13*/
@@ -425,7 +427,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
     || (v2 = (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472], &MEMORY[0x87F8E4] != (MouseClass *)-32336) )
   {
     v4 = (wchar_t **)((CampaignScore *)*this);
-    v5 = wcslen(v2) + 1; /*0x7b6b86*/
+    v5 = (wchar_t **)(wcslen(v2) + 1);
     if ( v4 ) /*0x7b6b89*/
       v5 += wcslen((const wchar_t *)v4); /*0x7b6b94*/
     v6 = (wchar_t *)__2_YAPAXI_Z(4 * v5); /*0x7b6b9e*/
@@ -594,7 +596,7 @@ char WideString::RemoveChar(wchar_t a2)
   size_t v8; // eax
   wchar_t *v9; // edi
 
-  v3 = 0; /*0x7b6e24*/
+  v3 = (wchar_t *)(0);
   if ( !*this ) /*0x7b6e26*/
     return 0; /*0x7b6e2d*/
   v5 = wcslen(*this); /*0x7b6e3f*/

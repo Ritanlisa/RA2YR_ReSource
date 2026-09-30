@@ -21,6 +21,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Type_e4.hpp"
 
 // 0x568300
 namespace gamemd {
@@ -204,8 +205,8 @@ LABEL_23:
                 && ((unsigned char)aP13 || (v30[1].lastLayer & 0x100) == 0)
                 && (!a17 || MapClass::IsAreaFree(v17, v92, -1)) )
               {
-                v32 = (unsigned int)(v86);
-                v33 = (int16_t)v75; /*0x56deae*/
+                v32 = (char *)((unsigned int)(v86));
+                v33 = (unsigned int)((int16_t)v75);
                 v34 = v77; /*0x56deb2*/
                 *(unsigned int *)v86 = v75; /*0x56deb6*/
                 v86 = v32 + 4; /*0x56debb*/
@@ -244,7 +245,7 @@ LABEL_36:
           }
           v25 = v78; /*0x56df98*/
         }
-        g_Map_GlobalCellIndex = *(IUnknown **)&((unsigned int *)(aP1a.__pad_0))[8]; /*0x56df9c*/
+        g_Map_GlobalCellIndex = (int)(*(IUnknown **)&((unsigned int *)(aP1a.__pad_0))[8]);
         v39 = (ObjectClass *)g_CellClassArray; /*0x56dfa2*/
 LABEL_44:
         v91[1] = (int)v36; /*0x56dfa7*/
@@ -263,8 +264,8 @@ LABEL_44:
                 && ((unsigned char)aP13 || (v39[1].lastLayer & 0x100) == 0)
                 && (!a17 || MapClass::IsAreaFree(v17, v91, -1)) )
               {
-                v41 = (unsigned int)(v86);
-                v42 = (int16_t)v75; /*0x56e0c4*/
+                v41 = (char *)((unsigned int)(v86));
+                v42 = (unsigned int)((int16_t)v75);
                 v43 = v77; /*0x56e0c8*/
                 *(unsigned int *)v86 = v75; /*0x56e0cc*/
                 v86 = v41 + 4; /*0x56e0d1*/
@@ -273,7 +274,7 @@ LABEL_44:
                   || (*(unsigned int *)v89.__pad_0 = (v42 << 8) + 128,
                       *(unsigned int *)&((unsigned int *)(v89.__pad_0))[4] = (SHIWORD(v75) << 8) + 128,
                       *(unsigned int *)&((unsigned int *)(v89.__pad_0))[8] = 0,
-                      v44 = (TagClass **)Terrain::ClimbCheck((AbstractClass *)&((unsigned int *)(aP0a.__pad_0))[8], &v89),
+                      v44 = (TagClass **)((Terrain *)((AbstractClass *)&((unsigned int *)(aP0a.__pad_0))[8]))->ClimbCheck(&v89),
                       v75 == *v44) )
                 {
                   v76 = 1; /*0x56e13c*/
@@ -332,7 +333,7 @@ LABEL_67:
                 && (!a17 || MapClass::IsAreaFree(v17, v93, -1)) )
               {
                 v51 = (unsigned int)((int16_t)v75);
-                v52 = v77; /*0x56e307*/
+                v52 = (unsigned int)(v77);
                 *(unsigned int *)v46 = v75; /*0x56e312*/
                 v46 += 4; /*0x56e316*/
                 v77 = v52 + 1; /*0x56e31b*/
@@ -370,7 +371,7 @@ LABEL_80:
           v17 = v80; /*0x56e3db*/
         }
         g_Map_GlobalCellIndex = (unsigned int)((IUnknown *)v79);
-        v56 = (ObjectClass *)g_CellClassArray; /*0x56e3e5*/
+        v56 = (unsigned int)((ObjectClass *)g_CellClassArray);
 LABEL_86:
         v89.nextArrayIndex = (int16_t)(v78 + (unsigned short)v85); /*0x56e3ea*/
         v89.referenceCount = (int16_t)(v45 + (unsigned short)v81); /*0x56e3ff*/
@@ -389,15 +390,15 @@ LABEL_86:
                 && (!a17 || MapClass::IsAreaFree(v17, &v89.nextArrayIndex, -1)) )
               {
                 v58 = (unsigned int)((int16_t)v75);
-                v59 = v77; /*0x56e505*/
+                v59 = (unsigned int)(v77);
                 *(unsigned int *)v46 = v75; /*0x56e510*/
                 v46 += 4; /*0x56e514*/
                 v77 = v59 + 1; /*0x56e519*/
                 if ( (unsigned char)aP7 /*0x56e566*/
-                  || (*(unsigned int *)&aP1a.__pad_0[12] = (v58 << 8) + 128,
+                  || (*(unsigned int *)&((unsigned int *)(aP1a.__pad_0))[12] = (v58 << 8) + 128,
                       aP1a.uniqueId = (SHIWORD(v75) << 8) + 128,
                       aP1a.abstractFlags = 0,
-                      v60 = (TagClass **)Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a.__pad_0[12]),
+                      v60 = (TagClass **)Terrain::ClimbCheck(&aP1a, (AbstractClass *)&((unsigned int *)(aP1a.__pad_0))[12]),
                       v75 == *v60) )
                 {
                   v76 = 1; /*0x56e573*/
@@ -427,17 +428,17 @@ LABEL_123:
   v80 = 0; /*0x56e5c5*/
   v81 = 0; /*0x56e5c9*/
   v61 = v96; /*0x56e5da*/
-  v62 = &aP0a.__pad_0[12]; /*0x56e5e1*/
+  v62 = &((unsigned int *)(aP0a.__pad_0))[12]; /*0x56e5e1*/
   i = (Tactical *)v95; /*0x56e5e8*/
   v79 = (TagClass *)v77; /*0x56e5ec*/
   do /*0x56e67b*/
   {
     v63 = *(unsigned short *)v62; /*0x56e5f0*/
     v64 = *((unsigned short *)v62 + 1); /*0x56e5f3*/
-    *(unsigned int *)&aP1a.__pad_0[12] = (*(int16_t *)v62 << 8) + 128; /*0x56e60a*/
+    *(unsigned int *)&((unsigned int *)(aP1a.__pad_0))[12] = (*(int16_t *)v62 << 8) + 128; /*0x56e60a*/
     aP1a.uniqueId = ((int16_t)v64 << 8) + 128; /*0x56e622*/
     aP1a.abstractFlags = 0; /*0x56e626*/
-    v84 = (TagClass *)*Terrain::ClimbCheck(&aP1a, (AbstractClass *)&aP1a.__pad_0[12]); /*0x56e638*/
+    v84 = (TagClass *)*Terrain::ClimbCheck(&aP1a, (AbstractClass *)&((unsigned int *)(aP1a.__pad_0))[12]); /*0x56e638*/
     if ( v84 == (TagClass *)__PAIR32__(v64, v63) ) /*0x56e63c*/
     {
       v65 = (TagClass *)i; /*0x56e645*/
@@ -472,7 +473,7 @@ LABEL_123:
       v69 = v81; /*0x56e6f6*/
     v70 = 0; /*0x56e6f8*/
     *(unsigned int *)aP1a.__pad_0 = 0; /*0x56e6fa*/
-    *(unsigned int *)&aP1a.__pad_0[4] = 1090021888; /*0x56e704*/
+    *(unsigned int *)&((unsigned int *)(aP1a.__pad_0))[4] = 1090021888; /*0x56e704*/
     for ( i = (Tactical *)g_MapSeedState; v70 < (int)v69; ++v70 ) /*0x56e710*/
     {
       v71 = (TagClass **)&v95[v70]; /*0x56e718*/

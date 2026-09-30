@@ -15,6 +15,8 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x5F1950
 namespace gamemd {
@@ -141,7 +143,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
   void **v3; // edi
 
   v3 = (void **)(*(Block + 13));
-  *Block = &vt_NullModemClass; /*0x5f3657*/
+  *Block = (void **)(&vt_NullModemClass);
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
@@ -187,7 +189,7 @@ int NullModemClass::sendData()
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
-  Debug::Log(); /*0x77467d*/
+  this->Debug::Log(); /*0x77467d*/
   PurgeComm(*(HANDLE *)((char *)this + 92), 0xFu); /*0x77468b*/
   ResetEvent(*(HANDLE *)((char *)this + 56)); /*0x77469b*/
   ResetEvent(*(HANDLE *)((char *)this + 76)); /*0x7746a1*/
@@ -204,13 +206,13 @@ int NullModemClass::sendData()
     *((unsigned int *)&DCB + 2) = *((unsigned int *)&DCB + 2) & 0xFFFF88C0 | 0x1011; /*0x7746ec*/
     if ( !SetCommState(v2, &DCB) ) /*0x7746f0*/
     {
-      Debug::Log(); /*0x774700*/
+      this->Debug::Log(); /*0x774700*/
       return 0; /*0x774710*/
     }
   }
   else
   {
-    Debug::Log(); /*0x774717*/
+    this->Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)((char *)this + 92), &EvtMask); /*0x774728*/
   (*(void (**)(int, int))(*(unsigned int *)this + 16))(this, 1); /*0x774734*/
@@ -218,7 +220,7 @@ int NullModemClass::sendData()
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
-    Debug::Log(); /*0x77475b*/
+    this->Debug::Log(); /*0x77475b*/
   }
   if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774771*/
   {
@@ -248,7 +250,7 @@ int NullModemClass::receiveData()
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
-  Debug::Log(); /*0x7747cd*/
+  this->Debug::Log(); /*0x7747cd*/
   PurgeComm(*(HANDLE *)((char *)this + 92), 0xFu); /*0x7747db*/
   ResetEvent(*(HANDLE *)((char *)this + 56)); /*0x7747eb*/
   ResetEvent(*(HANDLE *)((char *)this + 76)); /*0x7747f1*/
@@ -256,11 +258,11 @@ int NullModemClass::receiveData()
   *((unsigned char *)this + 80) = 0; /*0x774800*/
   *((unsigned char *)this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
-    Debug::Log(); /*0x774816*/
+    this->Debug::Log(); /*0x774816*/
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
-    Debug::Log(); /*0x77483b*/
+    this->Debug::Log(); /*0x77483b*/
   }
   if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774851*/
   {

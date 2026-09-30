@@ -24,6 +24,9 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/SHA1_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x77E110
 namespace gamemd {

@@ -25,6 +25,7 @@
 #include "e4/classes/DiskLaserClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/E4Recv_5EE200_e4.hpp"
 
 // 0x49F740
 namespace gamemd {
@@ -50,6 +51,8 @@ void Dialog::MapDialogResource()
 namespace gamemd {
 int Dialog::InitializeGameSettings()
 {
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
 
@@ -298,7 +301,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
   Dialog::Show(MessageBox); /*0x5f29df*/
-  Debug::Log(); /*0x5f29e9*/
+  this->Debug::Log(); /*0x5f29e9*/
   (*(void (**)(int, int))(*(unsigned int *)dword_A8ED54[233459] + 8))(dword_A8ED54[233459], a3); /*0x5f2a01*/
   Debug::Log(); /*0x5f2a09*/
   (*(void (**)(int, int, char *, int, int))(*(unsigned int *)dword_A8ED54[233459] + 20))( /*0x5f2a24*/

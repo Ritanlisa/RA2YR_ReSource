@@ -15,6 +15,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/E4Recv_6810C0_e4.hpp"
 
 // 0x559D60
 namespace gamemd {
@@ -27,7 +28,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   char Saved; // bl
 
   v1 = (HWND)((*(int (**)(int))(*(unsigned int *)MEMORY[0x887640] + 40))(MEMORY[0x887640]));
-  StringCSF = GetStringCSF(aTxtLoading, 0, MEMORY[0x829F5C], 1052); /*0x559d83*/
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, MEMORY[0x829F5C], 1052));
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(int))(*(unsigned int *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/

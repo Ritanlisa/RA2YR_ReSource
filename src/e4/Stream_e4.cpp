@@ -17,6 +17,7 @@
 #include "e4/classes/E4Recv_7ACB90_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -29,8 +30,8 @@ int Stream::FlushAndReset()
   int v4; // eax
   int v5; // edi
 
-  v1 = (int)(this);
-  v2 = *this; /*0x439114*/
+  v1 = (unsigned int *)((int)(this));
+  v2 = (int)(*this);
   v3 = *((unsigned int *)this + 2); /*0x439116*/
   *((unsigned int *)this + 12) = 45; /*0x439119*/
   (*(void (**)(void))(v2 + 12))(); /*0x439120*/

@@ -334,7 +334,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (unsigned int)((void (***)(unsigned int, int))*(Block + 1));
-  *Block = &vt_VectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765b66*/
+  *Block = (unsigned int)(&vt_VectorClass_rc_ptr_WorldDominationTour_Conflict);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/

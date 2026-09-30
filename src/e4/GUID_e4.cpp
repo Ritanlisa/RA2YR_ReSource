@@ -17,7 +17,7 @@ bool __fastcall GUID::Compare( int a2)
   int v5; // ecx
   unsigned short *v6; // esi
   bool v7; // zf
-  int v8; // ecx
+  unsigned short * v8;
   unsigned short *v9; // edi
   unsigned short *v10; // esi
   bool v11; // zf
@@ -27,7 +27,7 @@ bool __fastcall GUID::Compare( int a2)
   if ( (*this || *((unsigned char *)this + 1) || *((unsigned char *)this + 2) || *((unsigned char *)this + 3)) /*0x53eed8*/
     && (*(unsigned char *)a2 || *(unsigned char *)(a2 + 1) || *(unsigned char *)(a2 + 2) || *(unsigned char *)(a2 + 3)) )
   {
-    v8 = (unsigned short *)(3);
+    v8 = (int)((unsigned short *)(3));
     v9 = (unsigned short *)(a2 + 4); /*0x53eefd*/
     v10 = (unsigned char *)this + 4; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/

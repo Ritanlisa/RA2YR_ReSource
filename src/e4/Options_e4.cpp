@@ -27,6 +27,10 @@
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/E4Recv_6810C0_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -65,7 +69,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   char v33[112]; // [esp+1B4h] [ebp-470h] BYREF
   CampaignScore Buffer[28]; // [esp+224h] [ebp-400h] BYREF
 
-  result = (int)(BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4));
+  result = (gamemd::CampaignScore **)((int)(BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4)));
   if ( !result ) /*0x4f11e3*/
   {
     if ( a2 != 273 ) /*0x4f11ef*/
@@ -266,7 +270,7 @@ LABEL_39:
     *WindowLongA = 1; /*0x4f16ab*/
     return 0; /*0x4f16b4*/
   }
-  return result; /*0x4f120d*/
+  return (int)(result);
 
 }
 }
@@ -441,7 +445,7 @@ int Options::DeleteAndZero()
   v2 = 0; /*0x6244e4*/
   if ( *this <= 0 ) /*0x6244e9*/
   {
-    *(_DWORD *)this = 0; /*0x62451b*/
+    *(unsigned int *)this = 0; /*0x62451b*/
   }
   else
   {
@@ -456,7 +460,7 @@ int Options::DeleteAndZero()
       v3 += 24; /*0x624509*/
     }
     while ( v2 < *this ); /*0x62450e*/
-    *this = 0; /*0x624511*/
+    *(_DWORD *)this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 
@@ -474,7 +478,7 @@ void Options::EnsureCapacity()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x6248a5*/
+  v2 = (int)(*this);
   v3 = *((char *)this + 1); /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
@@ -505,7 +509,7 @@ int Options::GrowBuffer()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x6253b4*/
+  v2 = (int)(*this);
   if ( *this < *((char *)this + 1) ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/

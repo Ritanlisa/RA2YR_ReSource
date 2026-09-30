@@ -27,6 +27,7 @@
 #include "e4/classes/ObjectVector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x483610
 namespace gamemd {
@@ -42,6 +43,7 @@ int ObjectClass::processPointerInvalid()
 namespace gamemd {
 int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
 {
+    unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v45 = 0;  /* G37 hoist */
 
   char result; // al
@@ -256,6 +258,7 @@ LABEL_52:
 namespace gamemd {
 int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */

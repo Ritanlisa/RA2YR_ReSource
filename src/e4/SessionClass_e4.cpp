@@ -30,6 +30,8 @@
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/Selection_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/E4Recv_5CF830_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -87,7 +89,7 @@ int SessionClass::initInternet()
   if ( v3 ) /*0x540e90*/
   {
     v4 = (char *)(MEMORY[0xA8DA78]);
-    v5 = *((unsigned int *)this + 5); /*0x540e9a*/
+    v5 = (char *)(*((unsigned int *)this + 5));
     v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
@@ -171,7 +173,7 @@ MixFileClass * SessionClass::Load()
       }
     }
   }
-  return result; /*0x552d5d*/
+  return (gamemd::MixFileClass *)(result);
 
 }
 } // namespace gamemd
@@ -197,10 +199,10 @@ MixFileClass * SessionClass::LoadGameSession( ObjectClass * aP1, CellStruct * aP
                  + 4 * *(unsigned int *)(*((unsigned int *)g_SuperWeaponTypeCount + aP1[42].ambientSoundController[0]) + 188));
   if ( !v4 ) /*0x5adf60*/
   {
-    Debug::Log(); /*0x5adf67*/
+    this->Debug::Log(); /*0x5adf67*/
     return 0; /*0x5adf78*/
   }
-  Debug::Log(); /*0x5adf84*/
+  this->Debug::Log(); /*0x5adf84*/
   String::Assign((char **)&v14, (const char *)(v4 + 36)); /*0x5adf91*/
   v6 = (char *)((unsigned int *)this + 20); /*0x5adf96*/
   v7 = SessionClass::LoadMapSelection(v6, (char **)&v14) == 0; /*0x5adfab*/
@@ -208,7 +210,7 @@ MixFileClass * SessionClass::LoadGameSession( ObjectClass * aP1, CellStruct * aP
   if ( v7 || (v8 = CampaignClass::Check(v6, *(unsigned short *)&aP1[79].onBridge)) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct(v6); /*0x5adfb9*/
-    Debug::Log(); /*0x5adfc3*/
+    this->Debug::Log(); /*0x5adfc3*/
     return 0; /*0x5adfd4*/
   }
   ScenarioClass::SetFileName(aP1->__pad_0, (ObjectClass *)&MEMORY[0x87F8E4].__pad_5568[20760]); /*0x5ae013*/
@@ -226,9 +228,9 @@ LABEL_14:
   }
   v11 = (ObjectClass *)StringTable::Find((MapSelect *)v6, *(const char ***)(v10 + 4 * v9)); /*0x5ae037*/
   String::AssignFromPtr((char **)&v14, (const char **)&v11->__pad_0[4]); /*0x5ae041*/
-  String::ToLower((const char **)&v14); /*0x5ae04a*/
+  ((String *)((const char **)&v14))->ToLower(); /*0x5ae04a*/
   String::AssignFromPtr((char **)&v13, (const char **)aP2); /*0x5ae058*/
-  String::ToLower((const char **)&v13); /*0x5ae061*/
+  ((String *)((const char **)&v13))->ToLower(); /*0x5ae061*/
   if ( !v11 || !String::Compare((const char **)&v14, (const char **)&v13) ) /*0x5ae073*/
   {
     DeleteAndZero(&v13); /*0x5ae080*/
@@ -300,7 +302,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
   ObjectClass v49; // [esp+30h] [ebp-ACh] BYREF
 
   v2 = (char *)(this);
-  v47 = this; /*0x5cef00*/
+  v47 = (char *)(this);
   CCFileClass::Construct3((int)&v49.ambientSoundController[1]); /*0x5cef04*/
   v3 = 0; /*0x5cef09*/
   *(unsigned int *)&v49.__pad_0[4] = 0; /*0x5cef0f*/

@@ -39,6 +39,10 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/E4Recv_7714B0_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/TimerClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
@@ -283,7 +287,7 @@ LABEL_162:
       {
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
         Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
-        ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)));
+        ecx134 = (unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v113;
         *(unsigned int *)(ecx134 + 4) = v128;
         *(unsigned int *)(ecx134 + 8) = GroundHeight;

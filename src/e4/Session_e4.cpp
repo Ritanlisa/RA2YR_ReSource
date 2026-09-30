@@ -27,6 +27,8 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
@@ -233,7 +235,7 @@ LABEL_44:
       {
         if ( IsRandMap::Sed2((int)MEMORY[0xA8B238]) ) /*0x5e78b7*/
         {
-          ScenarioClass::CopyStartPositions(); /*0x5e78f5*/
+          this->ScenarioClass::CopyStartPositions(); /*0x5e78f5*/
           return InvalidateRect(hWnd, 0, 0); /*0x5e78fa*/
         }
         else
@@ -252,7 +254,7 @@ LABEL_44:
     }
     else
     {
-      Flagged = GameSettings::FindFlagged(); /*0x5e75a4*/
+      Flagged = (int)(this->GameSettings::FindFlagged());
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/

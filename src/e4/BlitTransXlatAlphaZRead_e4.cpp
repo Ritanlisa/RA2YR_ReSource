@@ -430,8 +430,8 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 2));
-  *Block = &vt_BlitTransXlatAlphaZRead_unsigned_short; /*0x49a42b*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
+  *Block = (unsigned int)(&vt_BlitTransXlatAlphaZRead_unsigned_short);
   FractalNoise::Release(v3); /*0x49a432*/
   *(Block + 2) = 0; /*0x49a43b*/
   *Block = &vt_Blitter; /*0x49a444*/

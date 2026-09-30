@@ -25,6 +25,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/E4Recv_5E93F0_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x430980
 namespace gamemd {
@@ -117,7 +120,7 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 76],
         *(unsigned int *)&v14[4 * i + 108]);
       v8 = (int)(MEMORY[0xA8B2BC][i]);
-      v9 = MEMORY[0xA8B27C][i]; /*0x46d58f*/
+      v9 = (int)(MEMORY[0xA8B27C][i]);
       *(unsigned int *)&v14[4 * i + 140] = MEMORY[0xA8B29C][i]; /*0x46d596*/
       v10 = MEMORY[0xA8B2DC][i]; /*0x46d59d*/
       *(unsigned int *)&v14[4 * i + 172] = v8; /*0x46d5a4*/

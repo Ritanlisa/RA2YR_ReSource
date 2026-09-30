@@ -23,7 +23,7 @@ namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
 
-  int v1; // ebp
+  char * v1;
   int i; // edi
   unsigned int *v3; // esi
   int v4; // eax
@@ -34,8 +34,8 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = (char *)(0);
-  v9 = this; /*0x6b4de3*/
+  v1 = (int)((char *)(0));
+  v9 = (char *)(this);
   INIClass::ClearSection((int)this, (int)MEMORY[0x81732C], 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/

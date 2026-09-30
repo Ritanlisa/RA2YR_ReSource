@@ -30,6 +30,9 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/classes/Bounds_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {
@@ -231,7 +234,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     atexit(nullsub_167); /*0x56c32b*/
   }
   v5 = (int *)(&dword_ABD434);
-  v24 = &dword_ABD434; /*0x56c338*/
+  v24 = (int *)(&dword_ABD434);
   while ( 1 ) /*0x56c343*/
   {
     v6 = *(unsigned short *)v5; /*0x56c343*/
@@ -244,20 +247,20 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     v11 = v8 + v7; /*0x56c36a*/
     if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *((unsigned int *)this + 62) ) /*0x56c39c*/
     {
-      v12 = v8 + (v10 << 9); /*0x56c3a7*/
+      v12 = (unsigned int)(v8 + (v10 << 9));
       if ( v12 >= 0x40000 || (v13 = *(unsigned int **)(*((unsigned int *)this + 79) + 4 * v12)) == 0 ) /*0x56c3c1*/
       {
-        g_Map_GlobalCellIndex = (unsigned int *)(v23);
+        g_Map_GlobalCellIndex = (int)((unsigned int *)(v23));
         v13 = g_CellClassArray; /*0x56c3cc*/
       }
-      for ( i = (unsigned int *)v13[57]; i; i = (unsigned int *)i[12] ) /*0x56c3d1*/
+      for ( i = (unsigned int *)((unsigned int *)(v13))[57]; i; i = (unsigned int *)i[12] ) /*0x56c3d1*/
       {
         if ( (i[5] & 1) == 0 || *((unsigned char *)i + 1050) || i[136] != 2 ) /*0x56c3f6*/
         {
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (int *)((unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28));
-            v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = (int *)(Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]));
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
             v26[2] = v18[2]; /*0x56c490*/

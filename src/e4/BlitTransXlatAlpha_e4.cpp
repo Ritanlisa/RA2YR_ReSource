@@ -447,11 +447,12 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 namespace gamemd {
 BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block, char a2)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
 
   unsigned char (*)[4] v3;
 
   v3 = (unsigned int)((void *)*(Block + 2));
-  *Block = &vt_BlitTransXlatAlpha_unsigned_short; /*0x49a24b*/
+  *Block = (unsigned int)(&vt_BlitTransXlatAlpha_unsigned_short);
   FractalNoise::Release(v3); /*0x49a252*/
   *(Block + 2) = 0; /*0x49a25b*/
   *Block = &vt_Blitter; /*0x49a264*/

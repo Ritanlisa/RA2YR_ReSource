@@ -27,6 +27,8 @@
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/WalkLocomotionClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {

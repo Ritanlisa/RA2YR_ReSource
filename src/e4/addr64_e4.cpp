@@ -50,6 +50,9 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/E4Recv_655890_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/E4Recv_6BEC50_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {

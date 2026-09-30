@@ -491,7 +491,7 @@ Coord * * WOL_ProcessPingRequests()
               goto LABEL_15; /*0x7a115a*/
           }
         }
-        DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x7a1163*/
+        DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x7a1163*/
         if ( v6 == -1 ) /*0x7a116b*/
         {
           if ( (int)stru_B76AC4.? > 0 ) /*0x7a127f*/

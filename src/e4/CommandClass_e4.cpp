@@ -18,6 +18,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Commands_e4.hpp"
+#include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
+#include "e4/classes/TEventClass_e4.hpp"
 
 // 0x6D1200
 namespace gamemd {
@@ -217,7 +219,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     v5 = CommandClass::BinarySearchAction((char **)v4, (ObjectClass *)&aP1); /*0x7245b8*/
     if ( v5 ) /*0x7245bf*/
     {
-      v4->uniqueId = v5; /*0x7245c1*/
+      v4->uniqueId = (void *)(v5);
       return 0; /*0x7245ca*/
     }
   }

@@ -26,6 +26,12 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/Return_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {

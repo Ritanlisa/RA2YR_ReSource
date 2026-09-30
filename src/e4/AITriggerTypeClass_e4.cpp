@@ -29,6 +29,7 @@
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x41EC90
 namespace gamemd {
@@ -127,9 +128,9 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   int v6; // edi
   int v7; // eax
   bool result; // al
-  char v9; // [esp+7h] [ebp-1h]
+  DynamicVector ** v9;
 
-  v9 = (gamemd::DynamicVector **)(0);
+  v9 = (char)((gamemd::DynamicVector **)(0));
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
   v4 = *((unsigned int *)this + 54); /*0x41eea6*/
@@ -432,7 +433,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     v9 = *((unsigned int *)MEMORY[0xA8E34C] + ExitCellByName); /*0x41f793*/
     goto LABEL_26; /*0x41f796*/
   }
-  Index = BuildingTypeClass::FindIndex(v42); /*0x41f79c*/
+  Index = ((BuildingTypeClass *)(v42))->FindIndex(); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
     v12 = (unsigned int *)(g_UnitTypeCount2);
@@ -446,7 +447,7 @@ LABEL_25:
     v9 = *((unsigned int *)MEMORY[0xA8B21C] + v13); /*0x41f7c2*/
     goto LABEL_26; /*0x41f7c5*/
   }
-  Index = BuildingTypeClass::FindIndexByName(v42); /*0x41f7cb*/
+  Index = ((BuildingTypeClass *)(v42))->FindIndexByName(); /*0x41f7cb*/
   if ( Index != -1 ) /*0x41f7d3*/
   {
     v12 = (unsigned int *)(g_TriggerTypeCount);
@@ -562,7 +563,7 @@ LABEL_26:
     }
     *((unsigned int *)this + 44) = HouseClass::GetMaxBuildLevel(*(int **)(*((unsigned int *)this + 56) + 228)); /*0x41fadd*/
   }
-  return 1; /*0x41fab7*/
+  return (gamemd::ObjectClass **)(1);
 
 }
 } // namespace gamemd

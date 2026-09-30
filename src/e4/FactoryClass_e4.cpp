@@ -26,11 +26,15 @@
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Connection_e4.hpp"
+#include "e4/classes/E4Recv_426620_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
 int FactoryClass::UpdateProduction()
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
@@ -142,7 +146,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 
   int v5; // ecx
   int v6; // eax
-  char * v7;
+  int v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -651,7 +655,7 @@ namespace gamemd {
 int FactoryClass::ddtor(int a1, unsigned int * a2)
 {
 
-  if ( !a2 ) /*0x4ca236*/
+  if (!a2, unsigned int a3) /*0x4ca236*/
     return -2147467261; /*0x4ca238*/
   *a2 = 887937448; /*0x4ca246*/
   a2[1] = 298977968; /*0x4ca24e*/

@@ -24,6 +24,9 @@
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x600750
 namespace gamemd {

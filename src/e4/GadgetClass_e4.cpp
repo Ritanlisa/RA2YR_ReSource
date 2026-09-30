@@ -19,7 +19,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
 
   unsigned int *result; // eax
 
-  result = (gamemd::ControlClass)(this);
+  result = (unsigned int *)((gamemd::ControlClass)(this));
   *((unsigned int *)this + 4) = a3; /*0x4e12fb*/
   *((unsigned int *)this + 3) = a2; /*0x4e1302*/
   *((unsigned int *)this + 6) = a5; /*0x4e1309*/
@@ -152,7 +152,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
           goto LABEL_7; /*0x60ab12*/
       }
       v3 = (unsigned int *)(v4 + 1);
-      v15 = v4 + 1; /*0x60ab1d*/
+      v15 = (unsigned int *)(v4 + 1);
     }
   }
 LABEL_7:
@@ -298,7 +298,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
     if ( *(unsigned short *)String ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen(String));
-      v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
+      v4 = (unsigned int)((void *)__2_YAPAXI_Z(2 * v3 + 2));
       *((unsigned int *)this + 10) = v4; /*0x62359b*/
       wcscpy((#72 *)v4, String); /*0x62359e*/
     }

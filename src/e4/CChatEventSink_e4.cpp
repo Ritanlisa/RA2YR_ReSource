@@ -537,7 +537,7 @@ void CChatEventSink::EnsureCapacity(int a2)
     if ( v8 < v7 ) /*0x7aee3d*/
     {
       v9 = (unsigned int)(__2_YAPAXI_Z(4 * v8));
-      v10 = (const void *)*((unsigned int *)this + 2); /*0x7aee4c*/
+      v10 = (unsigned int)((const void *)*((unsigned int *)this + 2));
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
         qmemcpy(v9, v10, 4 * *(unsigned int *)this); /*0x7aee66*/

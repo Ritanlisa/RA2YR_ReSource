@@ -245,7 +245,7 @@ void* AnimTypeClass::GetWarhead(int a2)
         __3_YAXPAX_Z(*(void **)((char *)this + 164)); /*0x427b90*/
         *((unsigned char *)this + 168) = 0; /*0x427b98*/
       }
-      v4 = *((unsigned char *)this + 504); /*0x427b9f*/
+      v4 = (int)(*((unsigned char *)this + 504));
       v5 = (const char *)((char *)this + 504); /*0x427ba5*/
       *((unsigned int *)this + 41) = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
@@ -256,7 +256,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       *((unsigned int *)this + 41) = v3; /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
-        ObjectTypeClass::SetRTTI71(Buffer); /*0x427bfc*/
+        ((ObjectTypeClass *)(Buffer))->SetRTTI71(); /*0x427bfc*/
         v3 = SearchMIXFile(Buffer, 1); /*0x427c07*/
         *((unsigned int *)this + 41) = v3; /*0x427c0c*/
       }

@@ -21,6 +21,15 @@
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/InfantryTypeVector_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -45,7 +54,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
 {
 
   int FileClassToBuffer; // eax
-  int v10; // edx
+  MSShapeAnim * v10;
 
   *((unsigned int *)this + 2) = a4; /*0x5cbd2c*/
   *((unsigned int *)this + 1) = aP2; /*0x5cbd32*/
@@ -92,7 +101,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   MSShapeAnim *v17; // eax
   void *v21; // eax
   MSShapeAnim *v18; // edi
-  int v23; // eax
+  MSShapeAnim * v23;
   void (***v24)(unsigned int, int); // ecx
   int v25; // [esp+0h] [ebp-14Ch]
   int *v26; // [esp+4h] [ebp-148h]
@@ -120,7 +129,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   void *v48; // [esp+60h] [ebp-ECh]
   int v49; // [esp+64h] [ebp-E8h]
   char v50; // [esp+69h] [ebp-E3h]
-  MSShapeAnim *v51; // [esp+6Ch] [ebp-E0h]
+  ObjectClass * v51;
   int v52; // [esp+70h] [ebp-DCh]
   unsigned int v53[22]; // [esp+74h] [ebp-D8h] BYREF
   unsigned char v54[12]; // [esp+CCh] [ebp-80h] BYREF
@@ -134,14 +143,14 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   VectorCursor::Construct(&v28, v8 + 44, 0); /*0x76d4f0*/
   while ( ((uint8_t (*)(void ***))v28[1])(&v28) ) /*0x76d4fd*/
   {
-    v9 = (unsigned int *)FileClass::SetState((unsigned int *)(*(unsigned int *)(v29 + 4) + 8 * v30)); /*0x76d512*/
+    v9 = (int *)((unsigned int *)FileClass::SetState((unsigned int *)(*(unsigned int *)(v29 + 4) + 8 * v30)));
     v10 = (MSShapeAnim *)WDTObject::GetAndClearFlag(v9); /*0x76d519*/
     if ( v10 ) /*0x76d520*/
       Session::RemoveTeam((unsigned int *)this, v10); /*0x76d525*/
     ((void (*)(void ***))v28[2])(&v28); /*0x76d532*/
   }
   v26 = (void **)(a2);
-  v25 = a3; /*0x76d545*/
+  v25 = (void **)(a3);
   Trigger::checkCondition(&v47, 0, 0); /*0x76d54c*/
   v47 = &vt_DynamicVectorClass_MSAnim; /*0x76d561*/
   v52 = 10; /*0x76d565*/
@@ -195,13 +204,13 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             && ((uint8_t (*)(void ***, int, unsigned int))v47[2])(&v47, v52 + v49, 0) )
           {
             v17 = (unsigned int)(v51);
-            v51 = (MSShapeAnim *)((char *)v51 + 1); /*0x76d729*/
+            v51 = (unsigned int)((MSShapeAnim *)((char *)v51 + 1));
             *((unsigned int *)v48 + (unsigned int)v17) = v5; /*0x76d731*/
           }
           v5 = 0; /*0x76d734*/
         }
         v53[0] = (unsigned int)(&vt_CCFileClass);
-        v55 = 0; /*0x76d745*/
+        v55 = (unsigned int)(0);
         Vector::Clear((int)v54); /*0x76d74c*/
         v53[0] = &off_7E1668; /*0x76d755*/
         BufferIOFileClass::Dtor(v53); /*0x76d75d*/
@@ -242,7 +251,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     ((void (*)(void ***))v31[2])(&v31); /*0x76d86c*/
   }
   v35 = (void **)(&v47);
-  v36 = 0; /*0x76d897*/
+  v36 = (void **)(0);
   v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d89b*/
   var110 = &v41; /*0x76d89f*/
   v33 = 0; /*0x76d8a3*/

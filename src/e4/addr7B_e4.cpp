@@ -772,7 +772,7 @@ namespace gamemd {
 AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 
-  int v5; // esi
+  const wchar_t * v5;
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
   const wchar_t *v9; // eax
@@ -789,8 +789,8 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   unsigned short *v20; // eax
   int v21; // [esp+10h] [ebp+4h]
 
-  v5 = (const wchar_t *)(a2);
-  v6 = *this; /*0x7b7c0b*/
+  v5 = (int)((const wchar_t *)(a2));
+  v6 = (const wchar_t *)(*this);
   if ( *this ) /*0x7b7c0b*/
     v6 = (const wchar_t *)wcslen(*this); /*0x7b7c12*/
   if ( a2 >= (int)v6 ) /*0x7b7c1c*/

@@ -93,7 +93,7 @@ Coord * * BuildingLight::CalculateShading()
         a1[3] = *(unsigned int *)&stru_87C374.__pad_579C[21660]; /*0x5ff8f0*/
         v6 = stru_830620.__pad_14B0[v5 + 6844]; /*0x5ff8ff*/
         v52[1] = (BYTE)(v47[1] - 64);
-        v37 = *(Tactical **)&stru_87C374.__pad_579C[22532]; /*0x5ff912*/
+        v37 = (BYTE)(*(Tactical **)&stru_87C374.__pad_579C[22532]);
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
         a1[2] = *(unsigned int *)&stru_87C374.__pad_579C[21656]; /*0x5ff925*/

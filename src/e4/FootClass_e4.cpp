@@ -25,6 +25,7 @@
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -174,8 +175,8 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   int v31; // [esp+70h] [ebp-Ch] BYREF
   int v32; // [esp+78h] [ebp-4h]
 
-  v6 = (int *)(ppv);
-  v30 = a1; /*0x71000d*/
+  v6 = (unsigned int *)((int *)(ppv));
+  v30 = (int *)(a1);
   if ( ppv )
   {
     v7 = (unsigned int *)((unsigned int *)(ppv))[180]; /*0x710017*/
@@ -256,7 +257,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         WinAPI::Wrapper(v19); /*0x710224*/
       if ( !ppv ) /*0x71022f*/
         WinAPI::Wrapper(-2147467261); /*0x710236*/
-      (*(void (**)(unsigned int *, unsigned int *))(*ppv + 12))(ppv, v6); /*0x710243*/
+      (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)(ppv) + 12))(ppv, v6); /*0x710243*/
       v29 = 0; /*0x71024a*/
       if ( ppv ) /*0x710250*/
       {
@@ -278,7 +279,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, unsigned int))(*(unsigned int *)v28 + 12))(v28, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( (unsigned int *)*v10 != ppv ) /*0x7102e3*/
+        if ( (unsigned int *)*v10 != (unsigned int *)(ppv) ) /*0x7102e3*/
         {
           *v10 = ppv; /*0x7102e7*/
           SuperClass::SetFieldX(v6 + 413); /*0x7102e9*/

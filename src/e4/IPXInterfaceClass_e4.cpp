@@ -22,6 +22,9 @@
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/Socket_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x7B0D90
 namespace gamemd {
@@ -112,6 +115,7 @@ namespace gamemd {
 AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
     unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 
   CCINIClass *v7; // esi
@@ -120,7 +124,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   int v10; // eax
   SOCKET v11; // eax
   int v12; // eax
-  int v13; // ecx
+  u_short * v13;
   u_short *v14; // edi
   int *v15; // esi
   bool v16; // zf
@@ -230,8 +234,8 @@ LABEL_6:
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(unsigned int *)to.sa_data == *((unsigned int *)this + 64703) ) /*0x7b15ef*/
   {
-    v13 = (gamemd::u_short *)(3);
-    v14 = (unsigned int *)this + 129411; /*0x7b15f6*/
+    v13 = (int)((gamemd::u_short *)(3));
+    v14 = (gamemd::u_short *)((unsigned int *)this + 129411);
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
     do /*0x7b1602*/
@@ -395,7 +399,7 @@ AbstractClass * * IPXInterfaceClass::Receive()
   v2 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, -1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(*((unsigned int *)this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    v4 = *((unsigned int *)this + 64540); /*0x7b1bfc*/
+    v4 = (gamemd::AbstractClass **)(*((unsigned int *)this + 64540));
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, v4); /*0x7b1c0e*/

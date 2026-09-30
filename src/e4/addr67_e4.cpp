@@ -34,6 +34,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/RAMFileClass_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TabClass_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {

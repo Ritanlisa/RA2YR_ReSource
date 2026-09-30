@@ -33,6 +33,8 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
 
 // 0x6D1130
 namespace gamemd {

@@ -16,6 +16,14 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/COMObject_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/IPersistStream_e4.hpp"
+#include "e4/classes/InfantryTypeVector_e4.hpp"
 
 // 0x6FC0B0
 namespace gamemd {
@@ -127,7 +135,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   }
   v12 = *(unsigned int *)(*(int (**)(unsigned int *, int))(*a0 + 1016))(a0, a4); /*0x6fc32b*/
   v38 = v12; /*0x6fc32f*/
-  if ( !v12 || *(unsigned char *)(v12 + 335) && HouseClass::IonSensitivesShouldBeOffline() ) /*0x6fc349*/
+  if ( !v12 || *(unsigned char *)(v12 + 335) && this->HouseClass::IonSensitivesShouldBeOffline() ) /*0x6fc349*/
     return 6; /*0x6fc350*/
   if ( *(unsigned char *)(v12 + 322) ) /*0x6fc356*/
   {

@@ -29,6 +29,13 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/E4Recv_6E0270_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/E4Recv_6F2780_e4.hpp"
+#include "e4/classes/IsometricTileTypeClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {

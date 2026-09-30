@@ -102,12 +102,12 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
             v35[1] = v12; /*0x425dc6*/
             v13 = (VectorClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v35); /*0x425dcb*/
             v14 = v13; /*0x425dd0*/
-            if ( *(unsigned int *)&v13[14].IsInitialized == 2 /*0x425e18*/
-              && ((int)v13[20].vtable0 & 0x100) == 0
+            if ( *(unsigned int *)&((unsigned int *)(v13))[14].IsInitialized == 2 /*0x425e18*/
+              && ((int)((unsigned int *)(v13))[20].vtable0 & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v13, 6u) + 80) & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v14, 0) + 80) & 0x100) == 0 )
             {
-              if ( v14[2].Items == v38 ) /*0x425e27*/
+              if ( ((unsigned int *)(v14))[2].Items == v38 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
@@ -171,8 +171,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       HIWORD(v37) = HIWORD(v38); /*0x425f62*/
       if ( BuildingClass::IsCellPlaceable(this, (int16_t *)&v37) ) /*0x425f78*/
       {
-        aP1->field_0 = (gamemd::AnimClass **)((v21 << 8) + 128);
-        aP1->field_4 = (void *)((v30 << 8) + 128); /*0x425fa2*/
+        aP1->field_0 = (unsigned int)((gamemd::AnimClass **)((v21 << 8) + 128));
+        aP1->field_4 = (gamemd::AnimClass **)((void *)((v30 << 8) + 128));
         aP1->field_8 = 0; /*0x425fa7*/
         return &aP1->field_0; /*0x425fb0*/
       }
@@ -180,8 +180,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       LOWORD(v37) = (unsigned short)v38; /*0x425fbd*/
       if ( BuildingClass::IsCellPlaceable(this, (int16_t *)&v37) ) /*0x425fd3*/
       {
-        aP1->field_0 = (gamemd::AnimClass **)((v7 << 8) + 128);
-        aP1->field_4 = (void *)((v22 << 8) + 128); /*0x425ffa*/
+        aP1->field_0 = (unsigned int)((gamemd::AnimClass **)((v7 << 8) + 128));
+        aP1->field_4 = (gamemd::AnimClass **)((void *)((v22 << 8) + 128));
         aP1->field_8 = 0; /*0x425ffd*/
         return &aP1->field_0; /*0x426006*/
       }
@@ -189,7 +189,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   }
   if ( dword_89A150 ) /*0x426011*/
   {
-LABEL_39: aP1->field_0 = (gamemd::AnimClass **)(unk_89A178);
+LABEL_39: aP1->field_0 = (unsigned int)((gamemd::AnimClass **)(unk_89A178));
     *(unsigned long long *)&aP1->field_4 = qword_89A17C; /*0x4260a3*/
     return &aP1->field_0; /*0x4260b5*/
   }
@@ -209,7 +209,7 @@ LABEL_39: aP1->field_0 = (gamemd::AnimClass **)(unk_89A178);
       goto LABEL_39; /*0x42608e*/
   }
   v24 = (gamemd::AnimClass **)(SHIWORD(v32));
-  v23 = ((int16_t)v32 << 8) + 128; /*0x4260c5*/
+  v23 = (gamemd::AnimClass **)(((int16_t)v32 << 8) + 128);
 LABEL_41:
   aP1->field_0 = v23; /*0x4260cb*/
   aP1->field_4 = (void *)((v24 << 8) + 128); /*0x4260dd*/

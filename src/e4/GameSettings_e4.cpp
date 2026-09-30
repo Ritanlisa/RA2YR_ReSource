@@ -21,6 +21,8 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
@@ -282,7 +284,7 @@ void GameSettings::Read()
                    (uint8_t *)g_INI_Key_Audio,
                    (uint8_t *)aSoundlatency,
                    *((unsigned short *)this + 36));
-  Debug::Log(); /*0x5fac7e*/
+  this->Debug::Log(); /*0x5fac7e*/
   v27 = INIClass::ReadInt_Overwrite( /*0x5fac9c*/
           (int)&g_abs_87F7E8[7734],
           (uint8_t *)g_INI_Key_Network,

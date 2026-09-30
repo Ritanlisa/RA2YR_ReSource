@@ -28,6 +28,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -388,7 +390,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   if ( *((unsigned char *)this + 413) ) /*0x422fec*/
     return; /*0x422fec*/
   v20 = (CoordStruct *)*((unsigned int *)this + 50); /*0x422ffa*/
-  if ( v20[60].Y > *(int *)&HouseClass_Player.__pad_5568[22724] || *((unsigned char *)this + 409) && LOBYTE(v20[73].Z) ) /*0x42301e*/
+  if ( ((unsigned int *)(v20))[60].Y > *(int *)&HouseClass_Player.__pad_5568[22724] || *((unsigned char *)this + 409) && LOBYTE(v20[73].Z) ) /*0x42301e*/
     return; /*0x42301e*/
   v103 = (ConvertClass *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 432))(this); /*0x423035*/
   if ( !v103 ) /*0x423039*/

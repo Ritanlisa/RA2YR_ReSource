@@ -281,7 +281,7 @@ LABEL_11:
   else
   {
     v7 = (unsigned int *)(g_TriggerTypeCount);
-    while ( *(unsigned int)(v7) != this ) /*0x45e350*/
+    while ( *(unsigned int *)((unsigned int))(v7) != this ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++v7; /*0x45e353*/
@@ -457,13 +457,13 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   {
     __3_YAXPAX_Z(*(void **)a1[149].__pad_0); /*0x45e653*/
     *(unsigned int *)a1[149].__pad_0 = 0; /*0x45e65b*/
-    a1[149].__pad_0[4] = 0; /*0x45e661*/
+    a1[((unsigned int *)(149].__pad_0))[4] = 0; /*0x45e661*/
   }
-  if ( a1[149].__pad_0[12] && *(unsigned int *)&a1[149].__pad_0[8] ) /*0x45e66f*/
+  if ( a1[((unsigned int *)(149].__pad_0))[12] && *(unsigned int *)&a1[149].__pad_0[8] ) /*0x45e66f*/
   {
-    __3_YAXPAX_Z(*(void **)&a1[149].__pad_0[8]); /*0x45e67a*/
-    *(unsigned int *)&a1[149].__pad_0[8] = 0; /*0x45e682*/
-    a1[149].__pad_0[12] = 0; /*0x45e688*/
+    __3_YAXPAX_Z(*(void **)&a1[((unsigned int *)(149].__pad_0))[8]); /*0x45e67a*/
+    *(unsigned int *)&a1[((unsigned int *)(149].__pad_0))[8] = 0; /*0x45e682*/
+    a1[((unsigned int *)(149].__pad_0))[12] = 0; /*0x45e688*/
   }
   if ( LOBYTE(a1[149].abstractFlags) && a1[149].uniqueId ) /*0x45e696*/
   {

@@ -19,6 +19,8 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/Socket_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x402AF0
 namespace gamemd {
@@ -438,7 +440,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
 {
 
   int v8; // eax
-  unsigned int a5;
+  unsigned int * a5;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx

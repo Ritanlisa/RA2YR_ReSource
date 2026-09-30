@@ -33,6 +33,12 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/E4Recv_425670_e4.hpp"
+#include "e4/classes/COMObject_e4.hpp"
+#include "e4/classes/E4Recv_5B3910_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/IPersistStream_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {

@@ -58,6 +58,9 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/TeamTypeClass_28_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x6E0250
 namespace gamemd {
@@ -576,8 +579,8 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = (int *)((TechnoClass *)*((char *)this + 21));
-  v4 = -1; /*0x6efc79*/
+  v3 = (gamemd::TechnoClass *)((int *)((TechnoClass *)*((char *)this + 21)));
+  v4 = (int *)(-1);
   v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
@@ -755,7 +758,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = (int *)(MEMORY[0x8871E0]->?[5]);
-  WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e07b5*/
+  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)));
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -771,7 +774,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0803*/
+  v5 = (int *)(MEMORY[0x8871E0]->?[5]);
   WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
@@ -788,7 +791,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0863*/
+  v5 = (int *)(MEMORY[0x8871E0]->?[5]);
   WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/

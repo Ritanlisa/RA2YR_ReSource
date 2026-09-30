@@ -86,7 +86,7 @@ void Lobby::UpdatePlayerLabels()
   int v4; // eax
   int v5; // eax
   int v6; // ebp
-  HWND v7; // ebx
+  Lobby * v7;
   HWND DlgItem; // esi
   wchar_t *v9; // ebx
   wchar_t *v10; // ebp
@@ -120,7 +120,7 @@ void Lobby::UpdatePlayerLabels()
   void *v38; // [esp+Ch] [ebp-8h] BYREF
   Lobby * hDlg;
 
-  hDlg = (HWND)(this);
+  hDlg = (gamemd::Lobby *)((HWND)(this));
   if ( MEMORY[0xA8B23C] /*0x5eb07a*/
     && !(*(uint8_t (**)(int))(*(unsigned int *)MEMORY[0xA8B23C] + 64))(MEMORY[0xA8B23C])
     || (v33 = 1, this->Network::IsMultiplayerActive()) )
@@ -242,7 +242,7 @@ LABEL_26:
     {
       v6 = 1041; /*0x5eb1f7*/
     }
-    v7 = hDlg; /*0x5eb259*/
+    v7 = (HWND)(hDlg);
     DlgItem = GetDlgItem(hDlg, v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
@@ -330,7 +330,7 @@ LABEL_79:
               {
                 v17 &= ~1u; /*0x5eb497*/
               }
-              else if ( Network::IsMultiplayerActive() ) /*0x5eb49c*/
+              else if ( this->Network::IsMultiplayerActive() ) /*0x5eb49c*/
               {
                 v17 = 2; /*0x5eb4a5*/
               }

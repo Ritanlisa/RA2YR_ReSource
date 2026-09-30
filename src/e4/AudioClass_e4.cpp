@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x7228B0
 namespace gamemd {
@@ -24,7 +25,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   int16_t *v7; // ecx
   int v8; // eax
   unsigned int *v9; // ebp
-  unsigned int v10; // ebx
+  int * v10;
   unsigned int v11; // edx
   unsigned int v12; // edi
   int v13; // ecx
@@ -57,8 +58,8 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
       && (uint8_t)BuildingClass::IsTiberiumSiloEligible(j) )
     {
       v7 = (unsigned int)((int16_t *)(j + 9));
-      v17 = (int16_t *)(j + 9); /*0x72294d*/
-      (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60)] = j[9]; /*0x722953*/
+      v17 = (unsigned int)((int16_t *)(j + 9));
+      (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60)] = ((unsigned int *)(j))[9]; /*0x722953*/
       (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60) + 1] = 0; /*0x722962*/
       v8 = (int)*((unsigned int *)this + 60); /*0x72296a*/
       v9 = *((unsigned int *)this + 61); /*0x722976*/

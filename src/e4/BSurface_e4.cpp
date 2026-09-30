@@ -38,7 +38,7 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   v7 = a4; /*0x410ce9*/
   v8 = a5; /*0x410cef*/
   *((unsigned int *)this + 11) = a5; /*0x410cf3*/
-  *(_DWORD *)this = v6; /*0x410cf8*/
+  *(unsigned int *)this = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
   *((unsigned int *)this + 10) = v7; /*0x410cfe*/
   *((unsigned int *)this + 1) = v9; /*0x410d01*/
@@ -243,7 +243,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   v7 = a4; /*0x7bc979*/
   v8 = a5; /*0x7bc97f*/
   *((unsigned int *)this + 11) = a5; /*0x7bc983*/
-  *(_DWORD *)this = v6; /*0x7bc988*/
+  *(unsigned int *)this = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/
   *((unsigned int *)this + 10) = v7; /*0x7bc98e*/
   *((unsigned int *)this + 1) = v9; /*0x7bc991*/

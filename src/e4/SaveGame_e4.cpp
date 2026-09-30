@@ -130,7 +130,7 @@ void SaveGame::Start(LPSTREAM pStm)
   int v3; // ebx
   int v4; // eax
   int v5; // ebx
-  char result; // al
+  bool (__thiscall SaveGame::* )(void) result;
   int v7; // ecx
   int v8; // ebx
   int v9; // eax
@@ -841,7 +841,7 @@ void SaveGame::Start(LPSTREAM pStm)
   result = SaveGame::LoadVeinholeData((int *)pStm->__pad_0);
   if ( result )
   {
-    result = SaveGame::SaveTriggerEvents((int *)pStm->__pad_0);
+    result = (char)(SaveGame::SaveTriggerEvents((int *)pStm->__pad_0));
     if ( result )
     {
       if ( SaveGame_Start_680AF0(pStm, (int)&dword_89E0F0) >= 0 )

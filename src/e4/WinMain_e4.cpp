@@ -93,11 +93,13 @@
 #include "e4/classes/Winsock_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
+    unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v4 = 0;  /* G37 hoist */

@@ -15,6 +15,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
 
 // 0x466380
 namespace gamemd {
@@ -77,7 +79,7 @@ BulletClass::BulletClass()
 namespace gamemd {
 BulletClass * * BulletClass::Dtor()
 {
-    unsigned int v5 = 0;  /* G37 hoist */
+    BulletClass * v5 = 0;
 
   int v2; // eax
   int v3; // eax
@@ -90,7 +92,7 @@ BulletClass * * BulletClass::Dtor()
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((unsigned char *)this + 344) ) /*0x466586*/
   {
-    v5 = this; /*0x4665a0*/
+    v5 = (unsigned int)(this);
     v2 = (*(int (**)(int *, #374 **))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v5); /*0x4665a4*/
     if ( v2 != -1 && v2 < MEMORY[0xB0F5C8] && v2 < --MEMORY[0xB0F5C8] ) /*0x4665bf*/
     {

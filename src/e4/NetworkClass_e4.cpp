@@ -29,6 +29,7 @@ namespace gamemd {
 void NetworkClass::ExecutePlanningModeCmd()
 {
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   char v1; // al
   wchar_t *StringCSF; // eax

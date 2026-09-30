@@ -24,6 +24,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x6F2040
 namespace gamemd {

@@ -45,7 +45,7 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   ObjectClass *v3; // ecx
   unsigned int v4; // eax
   unsigned int *v5; // eax
-  unsigned int v6;
+  unsigned int * v6;
   uint8_t v7; // al
   int v8; // edx
   int v9; // eax
@@ -72,18 +72,18 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   void *v30; // eax
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (unsigned int)(aP1);
-  v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0; /*0x56ef77*/
+  v2 = (IUnknown *)((unsigned int)(aP1));
+  v3 = (unsigned int)((ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0);
   aP1 = (IUnknown *)v3; /*0x56ef79*/
   *(unsigned int *)v32 = v3; /*0x56ef7d*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x56ef8c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v4)) != 0 ) /*0x56efa2*/
   {
-    v6 = v5; /*0x56efa4*/
+    v6 = (unsigned int)(v5);
   }
   else
   {
-    g_Map_GlobalCellIndex = (unsigned int *)((IUnknown *)v3);
+    g_Map_GlobalCellIndex = (int)((unsigned int *)((IUnknown *)v3));
     v6 = g_CellClassArray; /*0x56efae*/
   }
   if ( *((char *)v6 + 320) < 0 ) /*0x56efba*/
@@ -98,11 +98,11 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       ((CellClass *)((IUnknown *)v32))->UpdateVariant3(v2); /*0x56efd2*/
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56efdd*/
       *((unsigned char *)v6 + 286) = 0; /*0x56efe5*/
-      v6[17] = -1; /*0x56eff2*/
+      ((unsigned int *)(v6))[17] = -1; /*0x56eff2*/
       BuildingClass::AddUpgrade((int)&stru_87C374.__pad_14B0[8132], (IUnknown *)(v6 + 9)); /*0x56eff9*/
     }
   }
-  v9 = v6[14] - g_TerrainBridgeIndex + 1; /*0x56f018*/
+  v9 = ((unsigned int *)(v6))[14] - g_TerrainBridgeIndex + 1; /*0x56f018*/
   if ( v9 == dword_ABC1E8 || v9 == unk_AA0E38 ) /*0x56f027*/
   {
     LOBYTE(v9) = ((Cell *)((IUnknown *)v32))->UpdateTileType((IUnknown *)1, 0); /*0x56f2d7*/
@@ -130,8 +130,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v12 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f0b0*/
+        v12 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f0b5*/
       LOWORD(aP1) = v32[0] - 1; /*0x56f0c6*/
@@ -143,8 +143,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v15 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f0fe*/
+        v15 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f103*/
       LOWORD(aP1) = v32[0] - 1; /*0x56f114*/
@@ -156,8 +156,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v18 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f14c*/
+        v18 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f151*/
       HIWORD(aP1) = v32[1]; /*0x56f15e*/
@@ -168,8 +168,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       LOWORD(aP1) = v32[0] - 1; /*0x56f16f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v22)) == 0 ) /*0x56f188*/
       {
-        v23 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f193*/
+        v23 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
     }
     else
@@ -182,8 +182,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v26 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f20e*/
+        v26 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f214*/
       aP1 = (IUnknown *)(*(unsigned int *)v32 - 0x10000); /*0x56f227*/
@@ -194,8 +194,8 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v29 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f25a*/
+        v29 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f25f*/
       aP1 = (IUnknown *)(*(unsigned int *)v32 + 0x10000); /*0x56f277*/
@@ -223,7 +223,7 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   ObjectClass *v3; // ecx
   unsigned int v4; // eax
   unsigned int *v5; // eax
-  unsigned int v6;
+  unsigned int * v6;
   uint8_t v7; // al
   int v8; // edx
   int v9; // eax
@@ -250,18 +250,18 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   void *v30; // eax
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (unsigned int)(aP1);
-  v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0; /*0x56f317*/
+  v2 = (IUnknown *)((unsigned int)(aP1));
+  v3 = (unsigned int)((ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0);
   aP1 = (IUnknown *)v3; /*0x56f319*/
   *(unsigned int *)v32 = v3; /*0x56f31d*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x56f32c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v4)) != 0 ) /*0x56f342*/
   {
-    v6 = v5; /*0x56f344*/
+    v6 = (unsigned int)(v5);
   }
   else
   {
-    g_Map_GlobalCellIndex = (unsigned int *)((IUnknown *)v3);
+    g_Map_GlobalCellIndex = (int)((unsigned int *)((IUnknown *)v3));
     v6 = g_CellClassArray; /*0x56f34e*/
   }
   if ( *((char *)v6 + 320) < 0 ) /*0x56f35a*/
@@ -276,11 +276,11 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       ((CellClass *)((IUnknown *)v32))->UpdateVariant4(v2); /*0x56f372*/
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56f37d*/
       *((unsigned char *)v6 + 286) = 0; /*0x56f385*/
-      v6[17] = -1; /*0x56f392*/
+      ((unsigned int *)(v6))[17] = -1; /*0x56f392*/
       BuildingClass::AddUpgrade((int)&stru_87C374.__pad_14B0[8132], (IUnknown *)(v6 + 9)); /*0x56f399*/
     }
   }
-  v9 = v6[14] - g_TerrainBridgeIndex + 1; /*0x56f3b8*/
+  v9 = ((unsigned int *)(v6))[14] - g_TerrainBridgeIndex + 1; /*0x56f3b8*/
   if ( v9 == dword_ABC2B4 || v9 == (int)(unk_AA1130) ) /*0x56f3c7*/
   {
     LOBYTE(v9) = ((Cell *)((IUnknown *)v32))->UpdateTileType((IUnknown *)1, 0); /*0x56f677*/
@@ -308,8 +308,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v12 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f450*/
+        v12 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f455*/
       LOWORD(aP1) = v32[0] - 1; /*0x56f466*/
@@ -321,8 +321,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v15 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f49e*/
+        v15 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f4a3*/
       LOWORD(aP1) = v32[0] - 1; /*0x56f4b4*/
@@ -334,8 +334,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v18 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f4ec*/
+        v18 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f4f1*/
       HIWORD(aP1) = v32[1]; /*0x56f4fe*/
@@ -346,8 +346,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       LOWORD(aP1) = v32[0] - 1; /*0x56f50f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v22)) == 0 ) /*0x56f528*/
       {
-        v23 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f533*/
+        v23 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
     }
     else
@@ -360,8 +360,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v26 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f5ae*/
+        v26 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f5b4*/
       aP1 = (IUnknown *)(*(unsigned int *)v32 - 0x10000); /*0x56f5c7*/
@@ -372,8 +372,8 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v29 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56f5fa*/
+        v29 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
       aP1 = (IUnknown *)(*(unsigned int *)v32 + 0x10000); /*0x56f617*/
@@ -401,7 +401,7 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   ObjectClass *v3; // ecx
   unsigned int v4; // eax
   unsigned int *v5; // eax
-  unsigned int v6;
+  unsigned int * v6;
   uint8_t v7; // al
   int v8; // edx
   int v9; // eax
@@ -427,18 +427,18 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   char *v29; // eax
   int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (unsigned int)(aP1);
-  v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0; /*0x56f8d7*/
+  v2 = (IUnknown *)((unsigned int)(aP1));
+  v3 = (unsigned int)((ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0);
   aP1 = (IUnknown *)v3; /*0x56f8d9*/
   *(unsigned int *)v31 = v3; /*0x56f8dd*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x56f8ec*/
   if ( v4 < 0x40000 && (v5 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v4)) != 0 ) /*0x56f902*/
   {
-    v6 = v5; /*0x56f904*/
+    v6 = (unsigned int)(v5);
   }
   else
   {
-    g_Map_GlobalCellIndex = (unsigned int *)((IUnknown *)v3);
+    g_Map_GlobalCellIndex = (int)((unsigned int *)((IUnknown *)v3));
     v6 = g_CellClassArray; /*0x56f90e*/
   }
   if ( *((char *)v6 + 320) < 0 ) /*0x56f91a*/
@@ -455,12 +455,12 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
         ((CellClass *)((IUnknown *)v31))->UpdateTerrain(v2); /*0x56f936*/
         SetCellClassOccupancyFlags((int)v6, v8, 6u, 0); /*0x56f941*/
         *((unsigned char *)v6 + 286) = 0; /*0x56f949*/
-        v6[17] = -1; /*0x56f956*/
+        ((unsigned int *)(v6))[17] = -1; /*0x56f956*/
         BuildingClass::AddUpgrade((int)&stru_87C374.__pad_14B0[8132], (IUnknown *)(v6 + 9)); /*0x56f95d*/
       }
     }
   }
-  v9 = v6[14] - g_TerrainBridgeIndex + 1; /*0x56f97c*/
+  v9 = ((unsigned int *)(v6))[14] - g_TerrainBridgeIndex + 1; /*0x56f97c*/
   if ( v9 == dword_ABC1D0 || v9 == (int)(unk_AA1540) ) /*0x56f98b*/
   {
     LOBYTE(v9) = ((Cell *)((IUnknown *)v31))->UpdateTileType((IUnknown *)1, 0); /*0x56fc66*/
@@ -489,8 +489,8 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v24 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56fb71*/
+        v24 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v24); /*0x56fb76*/
       aP1 = *(IUnknown **)v31; /*0x56fb88*/

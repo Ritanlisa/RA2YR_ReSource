@@ -21,6 +21,13 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/IsometricTileTypeClass_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x419B00
 namespace gamemd {
@@ -71,7 +78,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   while ( 1 ) /*0x419bea*/
   {
     v10 = (void **)*((unsigned int *)MEMORY[0x8B3DC4] + v9); /*0x419bea*/
-    if ( v10 && (!v16 || *((unsigned int *)this + 361) != (unsigned int)(v10)) && (a3 || v10 != this) && !*((unsigned char *)v10 + 129) && *((unsigned char *)v10 + 116) ) /*0x419c1d*/
+    if ( v10 && (!v16 || *((unsigned int *)this + 361) != (unsigned int)(v10)) && (a3 || v10 != (void **)(this)) && !*((unsigned char *)v10 + 129) && *((unsigned char *)v10 + 116) ) /*0x419c1d*/
     {
       v11 = (unsigned short *)(*((int (**)(void **, unsigned int *))*v10 + 110))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/

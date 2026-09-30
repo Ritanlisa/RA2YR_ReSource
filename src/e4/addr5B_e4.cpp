@@ -67,6 +67,7 @@
 #include "e4/classes/E4Recv_5D2650_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -156,7 +157,7 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  unsigned int * v4;
+  unsigned int v4;
   int v5; // ecx
   bool v6; // cc
   unsigned int *v8; // eax
