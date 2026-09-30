@@ -63,7 +63,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   *((unsigned int *)this + 45) = 0; /*0x436c06*/
   if ( aP1 == (CCINIClass *)3 ) /*0x436c0c*/
   {
-    v4 = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*(unsigned int *)this + 440))(this, &nextArrayIndex); /*0x436c21*/
+    v4 = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*(unsigned int **)this + 440))(this, &nextArrayIndex); /*0x436c21*/
     v5 = (ObjectClass *)v3->FollowingObject; /*0x436c23*/
     v25 = v4; /*0x436c29*/
     v19 = (TechnoClass *)&unk_98967F; /*0x436c2d*/

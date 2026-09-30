@@ -27,7 +27,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   if ( *((unsigned int *)this + 22) ) /*0x473ae3*/
   {
     v4 = *this; /*0x473aeb*/
-    v5 = (*(int (**)(unsigned int *))(*(unsigned int *)this + 4))(this); /*0x473aed*/
+    v5 = (*(int (**)(unsigned int *))(*(unsigned int **)this + 4))(this); /*0x473aed*/
     (*(void (**)(unsigned int *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
   return FileClass::BufferedWriter(this, aP1, nNumberOfBytesToWrite); /*0x473b0c*/
@@ -56,7 +56,7 @@ const char* FileClass::Open(const char* pFileName)
 
   if ( !*((char *)this + 6) ) /*0x65cbf4*/
     return 0; /*0x65cbff*/
-  if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65cc06*/
+  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65cc06*/
     return 1; /*0x65cc0b*/
   if ( !pFileName ) /*0x65cc17*/
   {
@@ -71,7 +71,7 @@ const char* FileClass::Open(const char* pFileName)
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
-  if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65cc26*/
+  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65cc26*/
   {
     if ( CloseHandle((HANDLE)*((char *)this + 5)) ) /*0x65cc31*/
     {
@@ -110,9 +110,9 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   v4 = 0; /*0x65cce7*/
   NumberOfBytesRead = 0; /*0x65cce9*/
   v14 = 0; /*0x65cced*/
-  if ( !(*(unsigned __int8 (**)(unsigned int *))(*(unsigned int *)this + 24))(this) ) /*0x65ccf3*/
+  if ( !(*(unsigned __int8 (**)(unsigned int *))(*(unsigned int **)this + 24))(this) ) /*0x65ccf3*/
   {
-    result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 28))(this, 1); /*0x65cd00*/
+    result = (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 28))(this, 1); /*0x65cd00*/
     if ( !result ) /*0x65cd05*/
       return result; /*0x65cd05*/
     v14 = 1; /*0x65cd0f*/
@@ -123,7 +123,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   }
   else
   {
-    v6 = (*(int (**)(unsigned int *, unsigned int, int))(*(unsigned int *)this + 40))(this, 0, 1); /*0x65cd27*/
+    v6 = (*(int (**)(unsigned int *, unsigned int, int))(*(unsigned int **)this + 40))(this, 0, 1); /*0x65cd27*/
     v7 = aP2; /*0x65cd2d*/
     if ( (int)aP2 >= *((unsigned int *)this + 4) - v6 ) /*0x65cd35*/
       v7 = (AbstractClass *)(*((unsigned int *)this + 4) - v6); /*0x65cd37*/
@@ -158,7 +158,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   NumberOfBytesRead = v4; /*0x65cda7*/
   byte_B04BEC = 0; /*0x65cdb1*/
   if ( v14 ) /*0x65cdb9*/
-    (*(void (**)(unsigned int *))(*(unsigned int *)this + 52))(this); /*0x65cdbf*/
+    (*(void (**)(unsigned int *))(*(unsigned int **)this + 52))(this); /*0x65cdbf*/
   return NumberOfBytesRead; /*0x65cd07*/
 
 }
@@ -216,7 +216,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
         v7 = v4; /*0x65cf39*/
       v6 = *((char *)this + 3) + v7; /*0x65cf3b*/
     }
-    if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65cf48*/
+    if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65cf48*/
     {
       if ( v5 ) /*0x65cf6b*/
       {
@@ -241,7 +241,7 @@ LABEL_20:
         result = v8 - v11; /*0x65cfab*/
         if ( result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
-        if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65cfb3*/
+        if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65cfb3*/
         {
           v13 = SetFilePointer((HANDLE)*((char *)this + 5), v11, 0, 0); /*0x65cfd4*/
           if ( v13 != -1 ) /*0x65cfd9*/
@@ -254,7 +254,7 @@ LABEL_27:
             if ( result > v16 ) /*0x65cffb*/
             {
               v17 = v16 + v11; /*0x65cfff*/
-              if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65d003*/
+              if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65d003*/
               {
                 v18 = SetFilePointer((HANDLE)*((char *)this + 5), v17, 0, 0); /*0x65d030*/
                 if ( v18 == -1 ) /*0x65d035*/
@@ -269,7 +269,7 @@ LABEL_27:
               }
               else
               {
-                (*(void (**)(int *, int, unsigned int, unsigned int))(*(char *)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65d016*/
+                (*(void (**)(int *, int, unsigned int, unsigned int))(*(unsigned int **)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65d016*/
                 return -*((char *)this + 3); /*0x65d021*/
               }
             }
@@ -282,7 +282,7 @@ LABEL_27:
         }
         else
         {
-          (*(void (**)(int *, int, unsigned int, unsigned int))(*(char *)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65cfc6*/
+          (*(void (**)(int *, int, unsigned int, unsigned int))(*(unsigned int **)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65cfc6*/
         }
         v13 = 0; /*0x65cfef*/
         goto LABEL_26; /*0x65cfef*/
@@ -294,13 +294,13 @@ LABEL_27:
     }
     else
     {
-      (*(void (**)(int *, int, unsigned int, unsigned int))(*(char *)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65cf61*/
+      (*(void (**)(int *, int, unsigned int, unsigned int))(*(unsigned int **)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65cf61*/
     }
     v8 = 0; /*0x65cfa6*/
     goto LABEL_20; /*0x65cfa6*/
   }
   v21 = dwMoveMethod; /*0x65d059*/
-  if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65d05f*/
+  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65d05f*/
   {
     if ( dwMoveMethod ) /*0x65d081*/
     {
@@ -329,7 +329,7 @@ LABEL_27:
   }
   else
   {
-    (*(void (**)(int *, int, unsigned int, unsigned int))(*(char *)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65d072*/
+    (*(void (**)(int *, int, unsigned int, unsigned int))(*(unsigned int **)this + 64))(this, 9, 0, *((char *)this + 6)); /*0x65d072*/
     return 0; /*0x65d076*/
   }
   return result; /*0x65d020*/
@@ -341,12 +341,12 @@ namespace gamemd {
 int FileClass::Close()
 {
 
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 52))(this); /*0x65d155*/
-  if ( !(*(int (**)(unsigned int *, int))(*(unsigned int *)this + 28))(this, 2) ) /*0x65d15e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 52))(this); /*0x65d155*/
+  if ( !(*(int (**)(unsigned int *, int))(*(unsigned int **)this + 28))(this, 2) ) /*0x65d15e*/
     return 0; /*0x65d184*/
   if ( *((unsigned int *)this + 4) != -1 ) /*0x65d169*/
-    (*(void (**)(unsigned int *, unsigned int, unsigned int))(*(unsigned int *)this + 40))(this, 0, 0); /*0x65d173*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 52))(this); /*0x65d17a*/
+    (*(void (**)(unsigned int *, unsigned int, unsigned int))(*(unsigned int **)this + 40))(this, 0, 0); /*0x65d173*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 52))(this); /*0x65d17a*/
   return 1; /*0x65d182*/
 
 }

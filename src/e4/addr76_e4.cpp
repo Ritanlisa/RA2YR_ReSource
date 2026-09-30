@@ -957,7 +957,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   v2 = a2; /*0x76b7b1*/
   if ( this == a2 ) /*0x76b7bc*/
     return this; /*0x76b7bc*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x76b7c4*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
   *((unsigned int *)this + 2) = v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
@@ -1860,7 +1860,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
   void *v14; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = (*((int (**)(const char **, int))*(unsigned int *)this + 5))(this, a3); /*0x76732d*/
+  v5 = (*((int (**)(const char **, int))*(unsigned int **)this + 5))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
   ConcatStringAlloc((char **)&a3, (unsigned int *)this + 4, v6); /*0x767343*/
   DeleteAndZero(&v14); /*0x76734c*/

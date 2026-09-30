@@ -657,7 +657,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   unsigned short *v64; // [esp+70h] [ebp+10h]
   unsigned short *v65; // [esp+70h] [ebp+10h]
 
-  v54 = (*(int (__fastcall **)(int *))(*(char *)this + 116))(this) >> 1; /*0x7bb374*/
+  v54 = (*(int (__fastcall **)(int *))(*(unsigned int **)this + 116))(this) >> 1; /*0x7bb374*/
   v12 = a3 + a5; /*0x7bb378*/
   v63 = a3 + a5; /*0x7bb37d*/
   if ( a2 >= a6 && a2 < a6 + a8 && v12 >= a7 && v12 < a9 + a7 ) /*0x7bb39d*/
@@ -683,7 +683,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   v48 = 0; /*0x7bb41d*/
   v46 = 2 * v17; /*0x7bb425*/
   v18 = a4 * a4 / 4 - v17; /*0x7bb438*/
-  v19 = (*(int (**)(int *, unsigned int, unsigned int))(*(char *)this + 92))(this, 0, 0); /*0x7bb449*/
+  v19 = (*(int (**)(int *, unsigned int, unsigned int))(*(unsigned int **)this + 92))(this, 0, 0); /*0x7bb449*/
   v50 = a2; /*0x7bb44f*/
   v20 = v54 * v63; /*0x7bb453*/
   v64 = (unsigned short *)(v19 + 2 * (v54 * v63 + a2)); /*0x7bb45c*/
@@ -755,7 +755,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
       {
         v59 = a2 + a4; /*0x7bb699*/
         v60 = a3; /*0x7bb6a1*/
-        (*(void (**)(int *, int *, int))(*(char *)this + 36))(this, &v59, a10); /*0x7bb6ad*/
+        (*(void (**)(int *, int *, int))(*(unsigned int **)this + 36))(this, &v59, a10); /*0x7bb6ad*/
       }
       v27 = a6; /*0x7bb6b0*/
     }
@@ -828,7 +828,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
     if ( v33 >= a6 && v33 < a6 + a8 && v40 >= v37 && v40 < a9 + v37 ) /*0x7bb8ec*/
       *v45 = a10; /*0x7bb8fb*/
   }
-  return (*(int (**)(int *))(*(char *)this + 96))(this); /*0x7bb90c*/
+  return (*(int (**)(int *))(*(unsigned int **)this + 96))(this); /*0x7bb90c*/
 
 }
 } // namespace gamemd

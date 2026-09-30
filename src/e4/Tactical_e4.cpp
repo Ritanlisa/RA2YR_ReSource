@@ -607,7 +607,7 @@ namespace gamemd {
 void * Tactical::GetCellData()
 {
 
-  return (char *)g_MapTileArray + 80 * *(unsigned short *)this + 80 * unk_89C2DC * *((unsigned short *)this + 1); /*0x58c2be*/
+  return (char *)g_MapTileArray + 80 * *(unsigned int **)this + 80 * unk_89C2DC * *((unsigned short *)this + 1); /*0x58c2be*/
 
 }
 }

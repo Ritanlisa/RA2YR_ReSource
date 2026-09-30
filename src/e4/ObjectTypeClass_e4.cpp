@@ -1033,7 +1033,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *((unsigned int *)this + 444); /*0x7120bf*/
   if ( *((unsigned char *)HouseClass_Player + 703) ) /*0x71204c*/
   {
-    if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 44))(this) == 16 ) /*0x712060*/
+    if ( (*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) == 16 ) /*0x712060*/
     {
       result = *((unsigned int *)this + 452); /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -1046,8 +1046,8 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !*((unsigned char *)v1 + 704)
-    || (*(int (**)(unsigned int *))(*(unsigned int *)this + 44))(this) != 40
-    && ((*(int (**)(unsigned int *))(*(unsigned int *)this + 44))(this) != 7 || !*((unsigned int *)this + 258)) )
+    || (*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) != 40
+    && ((*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) != 7 || !*((unsigned int *)this + 258)) )
   {
     return *((unsigned int *)this + 444); /*0x7120a1*/
   }
@@ -5084,7 +5084,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x717c0e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x717c0e*/
   v3 = a2[2]; /*0x717c11*/
   *((unsigned int *)this + 2) = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/

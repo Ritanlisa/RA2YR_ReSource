@@ -3995,7 +3995,7 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x42d846*/
       return 0; /*0x42d846*/
     v4 = *((unsigned int *)this + 5); /*0x42d848*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x42d858*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x42d858*/
       return 0; /*0x42d85f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x42d865*/

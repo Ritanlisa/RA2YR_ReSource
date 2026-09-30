@@ -254,7 +254,7 @@ LABEL_7:
   Radar::UpdateReveal(0, 0); /*0x577d63*/
   *((unsigned char *)HouseClass_Player + 576) = 0; /*0x577d72*/
   FogOfWar::Render((int **)&MEMORY[0x87F7E8]); /*0x577d79*/
-  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 56))(this, 2); /*0x577d88*/
+  return (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 56))(this, 2); /*0x577d88*/
 
 }
 }

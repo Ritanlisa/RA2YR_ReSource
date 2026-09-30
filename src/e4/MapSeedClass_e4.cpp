@@ -464,7 +464,7 @@ void MapSeedClass::ValidateRectBounds()
           {
 LABEL_24:
             v8 = *this; /*0x5a785b*/
-            if ( *this >= *(char *)this + 3 ) /*0x5a7862*/
+            if ( *this >= *(unsigned int **)this + 3 ) /*0x5a7862*/
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/
             {
@@ -474,7 +474,7 @@ LABEL_24:
               v10 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x5a7883*/
               if ( !CellClass::InBounds(v10) && !Cell::IsEmpty(v10) && !CellClass::InMapDataRange(v10) ) /*0x5a789d*/
                 break; /*0x5a789d*/
-              if ( ++v8 >= *(char *)this + 3 ) /*0x5a78ae*/
+              if ( ++v8 >= *(unsigned int **)this + 3 ) /*0x5a78ae*/
                 return 1; /*0x5a78ae*/
             }
           }
@@ -498,7 +498,7 @@ LABEL_23:
               if ( (v7 < g_CellTileTypeCache || v7 > g_CellTileTypeCache + 1) && !Value::InRange(v6) ) /*0x5a783d*/
                 break; /*0x5a783d*/
               v2 = *this; /*0x5a7846*/
-              if ( ++v5 >= *(char *)this + 3 ) /*0x5a784e*/
+              if ( ++v5 >= *(unsigned int **)this + 3 ) /*0x5a784e*/
                 goto LABEL_23; /*0x5a784e*/
             }
           }

@@ -1067,10 +1067,10 @@ int Warhead::ApplyPostDamageEffects()
       v76 = 3; /*0x46a340*/
     }
   }
-  result = (*(int (**)(int *))(*(char *)this + 444))(this); /*0x46a3da*/
+  result = (*(int (**)(int *))(*(unsigned int **)this + 444))(this); /*0x46a3da*/
   if ( *(unsigned int *)(result + 228) ) /*0x46a3e0*/
   {
-    v11 = (*(int (**)(int *))(*(char *)this + 444))(this); /*0x46a3f2*/
+    v11 = (*(int (**)(int *))(*(unsigned int **)this + 444))(this); /*0x46a3f2*/
     result = (*(int (**)(unsigned int))(**(unsigned int **)(v11 + 228) + 44))(*(unsigned int *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
@@ -1236,7 +1236,7 @@ int Warhead::ApplyPostDamageEffects()
         v81 = (unsigned short *)(v76 - v16); /*0x46a93e*/
         do /*0x46adc7*/
         {
-          v76 = *(unsigned int *)(*(int (**)(int *, double *))(*(char *)this + 440))(this, &v88); /*0x46a962*/
+          v76 = *(unsigned int *)(*(int (**)(int *, double *))(*(unsigned int **)this + 440))(this, &v88); /*0x46a962*/
           v46 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a966*/
           LOWORD(v76) = v46 + v76; /*0x46a971*/
           v47 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a980*/

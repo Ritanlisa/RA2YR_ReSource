@@ -388,13 +388,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
   int v4; // eax
   u_int v5; // eax
 
-  v2 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 56))(this, -1); /*0x7b1bc9*/
+  v2 = (*(int (**)(SOCKET *, int))(*(unsigned int **)this + 56))(this, -1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(*((unsigned int *)this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
     v4 = *((unsigned int *)this + 64540); /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
-    v5 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 56))(this, v4); /*0x7b1c0e*/
+    v5 = (*(int (**)(SOCKET *, int))(*(unsigned int **)this + 56))(this, v4); /*0x7b1c0e*/
     if ( WSAAsyncSelect(*((unsigned int *)this + 64540), g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }

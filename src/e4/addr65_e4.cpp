@@ -724,7 +724,7 @@ namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
 
-  return *(unsigned int *)this + 251 * *((unsigned int *)this + 1); /*0x6558a3*/
+  return *(unsigned int **)this + 251 * *((unsigned int *)this + 1); /*0x6558a3*/
 
 }
 }

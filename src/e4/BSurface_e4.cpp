@@ -311,7 +311,7 @@ namespace gamemd {
 int BSurface::GetPitch()
 {
 
-  return *((unsigned int *)this + 4) * (*(int (**)(unsigned int *))(*(unsigned int *)this + 124))(this); /*0x41164c*/
+  return *((unsigned int *)this + 4) * (*(int (**)(unsigned int *))(*(unsigned int **)this + 124))(this); /*0x41164c*/
 
 }
 } // namespace gamemd

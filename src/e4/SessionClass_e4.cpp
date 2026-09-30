@@ -583,7 +583,7 @@ int SessionClass::Destruct()
       __3_YAXPAX_Z(v10); /*0x5cf694*/
     }
   }
-  return (*(int (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x5cf6ab*/
+  return (*(int (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x5cf6ab*/
 
 }
 } // namespace gamemd

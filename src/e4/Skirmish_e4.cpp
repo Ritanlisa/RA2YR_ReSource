@@ -402,7 +402,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
       &left,
       0);
     v12 = **(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9412]; /*0x64086c*/
-    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(*(unsigned int *)*(unsigned int *)this + 120))(*this, v27, 0, 0); /*0x640875*/
+    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(*(unsigned int *)*(unsigned int **)this + 120))(*this, v27, 0, 0); /*0x640875*/
     (*(void (**)(unsigned int, int *, unsigned int, int))(v12 + 8))( /*0x640887*/
       *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9412],
       &v34,

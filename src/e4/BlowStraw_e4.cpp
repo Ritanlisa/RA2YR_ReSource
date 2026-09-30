@@ -81,7 +81,7 @@ LABEL_6:
       if ( *((unsigned char *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
-        (*(void (**)(int *, char *))(*(char *)this + 52))(this, &MEMORY[0xB077F8].__pad_5498[32]); /*0x6d0883*/
+        (*(void (**)(int *, char *))(*(unsigned int **)this + 52))(this, &MEMORY[0xB077F8].__pad_5498[32]); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
@@ -105,7 +105,7 @@ LABEL_6:
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
-          (*(void (**)(int *, char *))(*(char *)this + 52))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d0932*/
+          (*(void (**)(int *, char *))(*(unsigned int **)this + 52))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d0932*/
           HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/

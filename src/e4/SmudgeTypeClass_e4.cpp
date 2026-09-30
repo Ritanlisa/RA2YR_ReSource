@@ -116,7 +116,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*(int (**)(unsigned int *))(*(unsigned int *)this + 156))(this); /*0x6b55ff*/
+  v7 = (*(int (**)(unsigned int *))(*(unsigned int **)this + 156))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/

@@ -2558,7 +2558,7 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 
   if ( !*((unsigned int *)this + 1) ) /*0x624934*/
     return 0; /*0x62493c*/
-  v4 = *(unsigned int **)(*(unsigned int *)this + 4 * (((int (*)(unsigned int *))*((unsigned int *)this + 6))(a2) & ((1 << *((unsigned int *)this + 3)) - 1))); /*0x62495a*/
+  v4 = *(unsigned int **)(*(unsigned int **)this + 4 * (((int (*)(unsigned int *))*((unsigned int *)this + 6))(a2) & ((1 << *((unsigned int *)this + 3)) - 1))); /*0x62495a*/
   if ( !v4 ) /*0x62495f*/
     return 0; /*0x624962*/
   while ( *v4 != *a2 ) /*0x62496c*/
@@ -2614,8 +2614,8 @@ AbstractClass * * Dialog::GrowBuffer()
           do /*0x624c61*/
           {
             v10 = ((int (*)(int))*((unsigned int *)this + 6))(v9) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x624c4b*/
-            v11 = *(unsigned int *)(*(unsigned int *)this + 4 * v10); /*0x624c4f*/
-            *(unsigned int *)(*(unsigned int *)this + 4 * v10) = v9; /*0x624c55*/
+            v11 = *(unsigned int *)(*(unsigned int **)this + 4 * v10); /*0x624c4f*/
+            *(unsigned int *)(*(unsigned int **)this + 4 * v10) = v9; /*0x624c55*/
             v12 = *(unsigned int *)(v9 + 8); /*0x624c57*/
             *(unsigned int *)(v9 + 8) = v11; /*0x624c5a*/
             v9 = v12; /*0x624c5d*/

@@ -765,7 +765,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x524f2e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x524f2e*/
   v3 = aP1->field_8; /*0x524f31*/
   *((unsigned int *)this + 2) = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/

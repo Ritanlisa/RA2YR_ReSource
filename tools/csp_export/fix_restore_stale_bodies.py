@@ -135,7 +135,8 @@ def first_param(params):
 
 
 _BARE_THIS_DEREF = re.compile(r'\*\s*\(\s*this\s*\+\s*(\d+)\s*\)')
-_BARE_THIS_PLUS = re.compile(r'(?<!\*\))\bthis\s*\+\s*(\d+)\b')
+_VT_THIS_WALK = re.compile(r'\*\s*this\s*\+\s*(\d+)\b')
+_BARE_THIS_PLUS = re.compile(r'(?<!\*)(?<!\*\))\bthis\s*\+\s*(\d+)\b')
 # element type of the enclosing def's this (byte-typed this = x1 scale,
 # dword = x4). The extractor reads the SAME scale from the cast, so the
 # cast-inline form `*((ELEM *)this + N)` is event-exact for either.
@@ -160,6 +161,8 @@ def this_elem_of(pseudo):
 
 
 def scale_this_arith(stmt, elem='unsigned int'):
+    stmt = _VT_THIS_WALK.sub(
+        lambda m: '*(unsigned int **)this + %d' % int(m.group(1)), stmt)
     stmt = _BARE_THIS_DEREF.sub(
         lambda m: '*((%s *)this + %d)' % (elem, int(m.group(1))), stmt)
     stmt = _BARE_THIS_PLUS.sub(

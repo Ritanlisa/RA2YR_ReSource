@@ -2882,15 +2882,15 @@ char E4Recv_520260::sub_520260()
     *(unsigned char *)(v2 + 130) = 1; /*0x52027a*/
   if ( *((unsigned int *)this + 373) ) /*0x520281*/
     return 0; /*0x520281*/
-  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 388))(this) != 5 ) /*0x520298*/
+  if ( (*(int (**)(unsigned int *))(*(unsigned int **)this + 388))(this) != 5 ) /*0x520298*/
     return 0; /*0x520298*/
   v4[0] = *((unsigned int *)this + 39); /*0x5202a6*/
   v4[1] = *((unsigned int *)this + 40); /*0x5202b2*/
   v4[2] = *((unsigned int *)this + 41); /*0x5202b9*/
   if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) ) /*0x5202c2*/
     return 0; /*0x5202e6*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 928))(this); /*0x5202cf*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 248))(this); /*0x5202d9*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 928))(this); /*0x5202cf*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 248))(this); /*0x5202d9*/
   return 1; /*0x5202e1*/
 
 }

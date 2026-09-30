@@ -387,7 +387,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
     }
     *this = v6; /*0x641e57*/
     (*(void (**)(char *, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x641e5f*/
-    (*(void (**)(char *, unsigned int *, unsigned int, int))(*(unsigned int *)*(unsigned int *)this + 4))(*this, v3, 0, 1); /*0x641e6b*/
+    (*(void (**)(char *, unsigned int *, unsigned int, int))(*(unsigned int *)*(unsigned int **)this + 4))(*this, v3, 0, 1); /*0x641e6b*/
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
     v9[0] = &vt_CCFileClass; /*0x641e7a*/
     v11 = 0; /*0x641e82*/

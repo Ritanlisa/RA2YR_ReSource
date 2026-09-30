@@ -169,7 +169,7 @@ void ParticleTypeClass::EnsureCapacity(void* a1)
 
   if ( this == a1 ) /*0x4788ec*/
     return this; /*0x4788ec*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x4788f4*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x4788f4*/
   v3 = a1[2]; /*0x4788f7*/
   *((unsigned int *)this + 2) = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/

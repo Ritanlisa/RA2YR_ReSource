@@ -2506,7 +2506,7 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 388))(this) != 5 ) /*0x736c21*/
+  if ( (*(int (**)(unsigned int *))(*(unsigned int **)this + 388))(this) != 5 ) /*0x736c21*/
     return 0; /*0x736c21*/
   v4[0] = *((unsigned int *)this + 39); /*0x736c2f*/
   v4[1] = *((unsigned int *)this + 40); /*0x736c3b*/
@@ -2516,8 +2516,8 @@ char E4Recv_736C10::sub_736C10()
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 928))(this); /*0x736c73*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 248))(this); /*0x736c7d*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 928))(this); /*0x736c73*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 248))(this); /*0x736c7d*/
   return 1; /*0x736c85*/
 
 }

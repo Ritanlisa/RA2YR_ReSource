@@ -1315,14 +1315,14 @@ int Game::validateScenario(unsigned int * a2)
     {
       v5 = a2; /*0x680faf*/
       if ( *this ) /*0x680fac*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x680fba*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x680fba*/
       *this = v5; /*0x680fbd*/
       return v3; /*0x680fc0*/
     }
     else
     {
       if ( *this ) /*0x680f93*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x680f9c*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x680f9c*/
       *this = 0; /*0x680fa1*/
       return v3; /*0x680f9f*/
     }

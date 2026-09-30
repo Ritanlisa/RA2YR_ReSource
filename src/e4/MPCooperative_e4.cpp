@@ -880,7 +880,7 @@ int MPCooperative::InitSession()
   if ( MEMORY[0xA8B8D8] <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
-    (*(void (**)(int *))(*(char *)this + 16))(this); /*0x5c1d5d*/
+    (*(void (**)(int *))(*(unsigned int **)this + 16))(this); /*0x5c1d5d*/
     return -1; /*0x5c1d6f*/
   }
   while ( _strnicmp((const char *)(*(unsigned int *)(MEMORY[0xA8B8CC] + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
@@ -2361,7 +2361,7 @@ AbstractClass * * MPCooperative::ProcessChat()
   {
     if ( MEMORY[0xA8DA84] == 2 ) /*0x5c415e*/
       String::AssignWideToChar(v5, *(char **)MEMORY[0xA8DA78], *(char **)(MEMORY[0xA8DA78] + 4)); /*0x5c416c*/
-    (*(void (**)(LRESULT *))(*(unsigned int *)this + 96))(this); /*0x5c4175*/
+    (*(void (**)(LRESULT *))(*(unsigned int **)this + 96))(this); /*0x5c4175*/
     LOBYTE(v2) = MPCooperative::ReadCoopSaveINI(*((unsigned int *)this + 16)); /*0x5c417b*/
     if ( (unsigned char)v2 ) /*0x5c4182*/
     {

@@ -291,7 +291,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_19:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 144))(this, &v32, aP2); /*0x4a9a0d*/
+          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int **)this + 144))(this, &v32, aP2); /*0x4a9a0d*/
           goto LABEL_30; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->__pad_11C[4] ) /*0x4a9aeb*/
@@ -337,7 +337,7 @@ LABEL_30:
         if ( v22 != -2 && (v14->field_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_34:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 144))(this, &v32, aP2); /*0x4a9b4a*/
+          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int **)this + 144))(this, &v32, aP2); /*0x4a9b4a*/
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->__pad_11C[5] ) /*0x4a9c28*/
@@ -451,7 +451,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
         if ( eax10 != -2 && (v13->field_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_12:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 152))(this, &v22, aP2); /*0x4a9ef2*/
+          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int **)this + 152))(this, &v22, aP2); /*0x4a9ef2*/
           continue; /*0x4a9f07*/
         }
         if ( eax10 >= 0 && eax10 != v13->__pad_11C[5] ) /*0x4a9fd2*/
@@ -565,7 +565,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
         if ( eax10 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_12:
-          (*(void (**)(unsigned int *, int *, IUnknown *))(*(unsigned int *)this + 156))(this, &v22, aP2); /*0x4aa162*/
+          (*(void (**)(unsigned int *, int *, IUnknown *))(*(unsigned int **)this + 156))(this, &v22, aP2); /*0x4aa162*/
           continue; /*0x4aa177*/
         }
         if ( eax10 >= 0 && eax10 != v14->__pad_11C[4] ) /*0x4aa23e*/
@@ -638,7 +638,7 @@ void * DisplayClass::Draw(int a2)
   unsigned char v18[12]; // [esp+1Ch] [ebp-18h] BYREF
   int v19[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  if ( a2 < 500 || a2 > 900 || (*(unsigned __int8 (**)(unsigned int *))(*(unsigned int *)this + 104))(this) ) /*0x4ae513*/
+  if ( a2 < 500 || a2 > 900 || (*(unsigned __int8 (**)(unsigned int *))(*(unsigned int **)this + 104))(this) ) /*0x4ae513*/
     return 0; /*0x4ae513*/
   v3 = MEMORY[0x886FA0]; /*0x4ae524*/
   v4 = MEMORY[0x886FA4]; /*0x4ae531*/
@@ -750,7 +750,7 @@ int DisplayClass::InsertPriorityText(int a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
     v4 = *((unsigned int *)this + 5); /*0x551aa8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x551ab8*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x551ab8*/
       return 0; /*0x551abf*/
   }
   for ( i = 0; i < *((unsigned int *)this + 4); ++i ) /*0x551ad2*/

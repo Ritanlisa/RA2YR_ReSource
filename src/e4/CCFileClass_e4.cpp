@@ -71,7 +71,7 @@ void CCFileClass::GetFileSize()
   result = *((char *)this + 4); /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 24))(this) ) /*0x65d0e0*/
+    if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize((HANDLE)*((char *)this + 5), 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
@@ -85,10 +85,10 @@ void CCFileClass::GetFileSize()
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (**)(int *, int))(*(char *)this + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(int *, int))(*(unsigned int **)this + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**)(int *))(*(char *)this + 44))(this); /*0x65d130*/
-      (*(void (**)(int *))(*(char *)this + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(int *))(*(unsigned int **)this + 44))(this); /*0x65d130*/
+      (*(void (**)(int *))(*(unsigned int **)this + 52))(this); /*0x65d136*/
     }
     result = FileSize - *((char *)this + 3); /*0x65d13e*/
     *((char *)this + 4) = result; /*0x65d140*/

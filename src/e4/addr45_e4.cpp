@@ -1006,7 +1006,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v13; // [esp+24h] [ebp-8h]
   int v14; // [esp+28h] [ebp-4h]
 
-  v3 = (int *)(*(int (**)(unsigned int *, int *))(*(unsigned int *)this + 72))(this, &v12); /*0x4528b2*/
+  v3 = (int *)(*(int (**)(unsigned int *, int *))(*(unsigned int **)this + 72))(this, &v12); /*0x4528b2*/
   v4 = *v3; /*0x4528b5*/
   v5 = v3[1]; /*0x4528bb*/
   v6 = v3[2]; /*0x4528c0*/

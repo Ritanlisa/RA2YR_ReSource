@@ -887,7 +887,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = (unsigned int *)this + 64704; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      v4 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 56))(this, -1); /*0x7b38b8*/
+      v4 = (*(int (**)(SOCKET *, int))(*(unsigned int **)this + 56))(this, -1); /*0x7b38b8*/
       if ( WSAAsyncSelect(*v3, g_hWnd, v4, 3) == -1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
@@ -911,7 +911,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
 {
 
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
-  return (*(int (**)(SOCKET *))(*(unsigned int *)this + 112))(this); /*0x7b390f*/
+  return (*(int (**)(SOCKET *))(*(unsigned int **)this + 112))(this); /*0x7b390f*/
 
 }
 // 0x7B3920

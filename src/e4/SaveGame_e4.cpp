@@ -105,18 +105,18 @@ int SaveGame::SaveTriggerEvents()
   v4 = 0; /*0x6607fb*/
   if ( v5 > 0 ) /*0x6607ff*/
   {
-    while ( (*(int (**)(int *, unsigned int, int, unsigned int))(*(char *)this + 16))( /*0x660817*/
+    while ( (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))( /*0x660817*/
               this,
               *((unsigned int *)g_TriggerPool + v4),
               64,
               0) >= 0 )
     {
       if ( ++v4 >= v5 ) /*0x660820*/
-        return (*(int (**)(int *, __int16 *, int, unsigned int))(*(char *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
+        return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int **)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
     }
     return 0; /*0x660817*/
   }
-  return (*(int (**)(int *, __int16 *, int, unsigned int))(*(char *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
+  return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int **)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 
 }
 }
@@ -965,13 +965,13 @@ int SaveGame::LoadMainGameState()
   int v9; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
 
-  result = (*(int (**)(int *, int *, int, unsigned int))(*(char *)this + 16))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f7f1*/
+  result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (**)(int *, #375 **, int, unsigned int))(*(char *)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
+    result = (*(int (**)(int *, #375 **, int, unsigned int))(*(unsigned int **)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
     if ( result >= 0 )
     {
-      result = (*(int (**)(int *, wchar_t **, int, unsigned int))(*(char *)this + 16))(this, &MEMORY[0xA8ED84], 4, 0); /*0x67f81f*/
+      result = (*(int (**)(int *, wchar_t **, int, unsigned int))(*(unsigned int **)this + 16))(this, &MEMORY[0xA8ED84], 4, 0); /*0x67f81f*/
       if ( result >= 0 )
       {
         v3 = *this; /*0x67f82f*/
@@ -983,7 +983,7 @@ int SaveGame::LoadMainGameState()
           if ( (int)v10 <= 0 )
           {
 LABEL_8:
-            result = (*(int (**)(int *, float *, int, unsigned int))(*(char *)this + 16))(this, MEMORY[0x89EA40], 432, 0); /*0x67f879*/
+            result = (*(int (**)(int *, float *, int, unsigned int))(*(unsigned int **)this + 16))(this, MEMORY[0x89EA40], 432, 0); /*0x67f879*/
             if ( result >= 0 )
             {
               SuperWeaponClass::LoadFromSaveStream(this); /*0x67f895*/
@@ -1005,42 +1005,42 @@ LABEL_13:
                     if ( (int)v10 <= 0 )
                     {
 LABEL_17:
-                      result = (*(int (**)(int *, int *, int, unsigned int))(*(char *)this + 16))( /*0x67f93a*/
+                      result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f93a*/
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(int *, int *, int, unsigned int))(*(char *)this + 16))( /*0x67f959*/
+                        result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f959*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(int *, double *, int, unsigned int))(*(char *)this + 16))( /*0x67f96f*/
+                          result = (*(int (**)(int *, double *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f96f*/
                                      this,
                                      MEMORY[0x89EC28],
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(int *, char *, int, unsigned int))(*(char *)this + 16))( /*0x67f982*/
+                            result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f982*/
                                        this,
                                        MEMORY[0x89ECC0],
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(int *, void *, int, unsigned int))(*(char *)this + 16))( /*0x67f998*/
+                              result = (*(int (**)(int *, void *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f998*/
                                          this,
                                          &MEMORY[0xA8E3A8],
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v9 = (*(int (**)(int *, int *, int, unsigned int))(*(char *)this + 16))( /*0x67f9ab*/
+                                v9 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f9ab*/
                                        this,
                                        &MEMORY[0xB07784],
                                        4,
@@ -1056,7 +1056,7 @@ LABEL_17:
                     {
                       while ( 1 ) /*0x67f926*/
                       {
-                        result = (*(int (**)(int *, char *, int, unsigned int))(*(char *)this + 16))( /*0x67f926*/
+                        result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f926*/
                                    this,
                                    (char *)unk_8B41AC + 4 * v8,
                                    4,
@@ -1073,7 +1073,7 @@ LABEL_17:
                 {
                   while ( 1 ) /*0x67f8d6*/
                   {
-                    result = (*(int (**)(int *, char *, int, unsigned int))(*(char *)this + 16))( /*0x67f8d6*/
+                    result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f8d6*/
                                this,
                                (char *)MEMORY[0x8B40CC] + 4 * v6,
                                4,
@@ -1091,7 +1091,7 @@ LABEL_17:
           {
             while ( 1 ) /*0x67f865*/
             {
-              result = (*(int (**)(int *, char *, int, unsigned int))(*(char *)this + 16))( /*0x67f865*/
+              result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f865*/
                          this,
                          (char *)MEMORY[0xA8ECBC] + 4 * v4,
                          4,
@@ -1149,17 +1149,17 @@ int SaveGame::LoadVeinholeData()
       v7 = *this; /*0x74edd6*/
       v16 = *((unsigned int *)MEMORY[0xB1D294] + v6); /*0x74ede5*/
       if ( (*(int (**)(int *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(char *)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
              this,
              *((unsigned int *)MEMORY[0xB1D294] + v6),
              264,
              0) < 0
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(char *)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
              this,
              *(unsigned int *)(*((unsigned int *)MEMORY[0xB1D294] + v6) + 196),
              v4,
              0) < 0
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(char *)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
              this,
              *(unsigned int *)(*((unsigned int *)MEMORY[0xB1D294] + v6) + 180),
              8 * MEMORY[0x8871E0]->AircraftFogReveal,
@@ -1170,8 +1170,8 @@ int SaveGame::LoadVeinholeData()
       v8 = *((unsigned int *)MEMORY[0xB1D294] + v6); /*0x74ee62*/
       v9 = *(unsigned int *)(v8 + 176); /*0x74ee65*/
       v10 = *(unsigned int *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (**)(int *, int, int, unsigned int))(*(char *)this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
-        && (*(int (**)(int *, int, int, unsigned int))(*(char *)this + 16))(this, v9 + 4, 4, 0) >= 0 )
+      if ( (*(int (**)(int *, int, int, unsigned int))(*(unsigned int **)this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
+        && (*(int (**)(int *, int, int, unsigned int))(*(unsigned int **)this + 16))(this, v9 + 4, 4, 0) >= 0 )
       {
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
@@ -1210,7 +1210,7 @@ int SaveGame::SaveAudioQueueItems()
   unsigned int v12[4]; // [esp+14h] [ebp-10h] BYREF
 
   v11 = SaveGame::CountLinkedList(MEMORY[0xB1D320]); /*0x751637*/
-  v2 = (*(int (**)(int *, int *, int, unsigned int))(*(char *)this + 16))(this, &v11, 4, 0); /*0x751647*/
+  v2 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
     for ( i = (int *)AudioQueue::GetNext(MEMORY[0xB1D320]); i; i = (int *)AudioQueue::GetNextAlt(i) )

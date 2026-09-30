@@ -24,7 +24,7 @@ void SlaveManagerClass::Check()
   int result; // eax
 
   if ( *((unsigned int *)this + 43) != 10 ) /*0x522d07*/
-    return (*(int (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 488))(this, 10, 0); /*0x522d0f*/
+    return (*(int (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 488))(this, 10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 
 }

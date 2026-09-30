@@ -48,8 +48,8 @@ void E4Recv_7AE830::sub_7AE830()
           do /*0x7ae8bd*/
           {
             v10 = ((int (*)(int))*((unsigned int *)this + 6))(v9) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7ae8a7*/
-            v11 = *(unsigned int *)(*(unsigned int *)this + 4 * v10); /*0x7ae8ab*/
-            *(unsigned int *)(*(unsigned int *)this + 4 * v10) = v9; /*0x7ae8b1*/
+            v11 = *(unsigned int *)(*(unsigned int **)this + 4 * v10); /*0x7ae8ab*/
+            *(unsigned int *)(*(unsigned int **)this + 4 * v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/
             *(unsigned int *)(v9 + 8) = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/

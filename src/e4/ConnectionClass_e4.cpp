@@ -254,7 +254,7 @@ LABEL_40:
         Debug::Log(); /*0x48c2c6*/
         v24 = MEMORY[0xA8EA0C]; /*0x48c2cb*/
         LOBYTE(v24) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c2d7*/
-        (*(void (**)(unsigned int *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 36))( /*0x48c2ea*/
+        (*(void (**)(unsigned int *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int **)this + 36))( /*0x48c2ea*/
           this,
           &v25,
           14,
@@ -456,7 +456,7 @@ int ConnectionClass::serviceSendQueue()
         v11 = MEMORY[0xA8EA0C]; /*0x48c4bd*/
         LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         LOBYTE(v11) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c4cb*/
-        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(char *)this + 36))( /*0x48c4e2*/
+        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int **)this + 36))( /*0x48c4e2*/
           this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),

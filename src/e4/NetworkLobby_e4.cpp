@@ -76,7 +76,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
       if ( i + 1 > *((unsigned int *)this + 3) ) /*0x5d425b*/
       {
         v10 = *this; /*0x5d425d*/
-        *this = (*(int (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 36))(*this); /*0x5d4266*/
+        *this = (*(int (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 36))(*this); /*0x5d4266*/
         v11 = (unsigned int *)this + 1312; /*0x5d4268*/
         v12 = (unsigned int *)this + 178; /*0x5d426e*/
         v13 = 14; /*0x5d4274*/

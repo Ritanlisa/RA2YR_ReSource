@@ -27,7 +27,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
     v4 = *((unsigned int *)this + 5); /*0x512f38*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x512f55*/

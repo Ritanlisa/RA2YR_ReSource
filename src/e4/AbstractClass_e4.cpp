@@ -88,7 +88,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     if ( *((unsigned int *)this + 4) < v8 /*0x438fb4*/
       || (*((unsigned char *)this + 13) || !v8)
       && (v9 = *((unsigned int *)this + 5), v9 > 0)
-      && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v8 + v9, 0) )
+      && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v8 + v9, 0) )
     {
       v10 = *((unsigned int *)this + 4); /*0x438fbb*/
       v11 = *((unsigned int *)this + 1); /*0x438fbe*/

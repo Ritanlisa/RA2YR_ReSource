@@ -8260,7 +8260,7 @@ char VectorClass_flat::AppendCopy(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x4a7ff6*/
       return 0; /*0x4a7ff6*/
     v4 = *((unsigned int *)this + 5); /*0x4a7ff8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x4a8008*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x4a8008*/
       return 0; /*0x4a800f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x4a8015*/
@@ -21274,7 +21274,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
     if ( !*((unsigned char *)this + 13) && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
     v5 = *((unsigned int *)this + 5); /*0x50eb88*/
-    if ( v5 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v4 + v5, 0) ) /*0x50eb98*/
+    if ( v5 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v4 + v5, 0) ) /*0x50eb98*/
       return 0; /*0x50eb9f*/
   }
   v7 = *((unsigned int *)this + 4); /*0x50eba5*/
@@ -23374,7 +23374,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512faa*/
     return this; /*0x512faa*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x512fae*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x512fae*/
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x512fb1*/
   *((unsigned int *)this + 2) = v3; /*0x512fb6*/
   if ( !v3 ) /*0x512fb9*/
@@ -23416,7 +23416,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = *((unsigned int *)this + 5); /*0x513308*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int **)this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
       return 0; /*0x51331f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x513325*/
@@ -25650,7 +25650,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1)
   result = aP1; /*0x55bae0*/
   if ( aP1->isInLogic ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(int *, ObjectClass **))(*(char *)this + 16))(this, &aP1); /*0x55bafa*/
+    v4 = (*(int (**)(int *, ObjectClass **))(*(unsigned int **)this + 16))(this, &aP1); /*0x55bafa*/
     if ( v4 != -1 ) /*0x55bb00*/
     {
       v5 = *((char *)this + 4); /*0x55bb02*/
@@ -27368,7 +27368,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 
   if ( this == a2 ) /*0x58ad1c*/
     return this; /*0x58ad1c*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x58ad20*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x58ad20*/
   v3 = a2[2]; /*0x58ad23*/
   *((unsigned int *)this + 2) = v3; /*0x58ad2a*/
   if ( !v3 ) /*0x58ad2d*/
@@ -31421,7 +31421,7 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x630266*/
       return 0; /*0x630266*/
     v4 = *((unsigned int *)this + 5); /*0x630268*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x630278*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x630278*/
       return 0; /*0x63027f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x630285*/
@@ -31904,7 +31904,7 @@ char VectorClass_flat::Append(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x63e556*/
       return 0; /*0x63e556*/
     v4 = *((unsigned int *)this + 5); /*0x63e558*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
       return 0; /*0x63e56f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x63e575*/
@@ -31922,7 +31922,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, IUnknown *))(*(char *)this + 16))(this, aP1); /*0x63e90c*/
+  v3 = (*(int (**)(int *, IUnknown *))(*(unsigned int **)this + 16))(this, aP1); /*0x63e90c*/
   if ( v3 == -1 ) /*0x63e912*/
     return 0; /*0x63e912*/
   v4 = *((char *)this + 4); /*0x63e914*/
@@ -33185,7 +33185,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67aa8a*/
     return this; /*0x67aa8a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x67aa8e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x67aa8e*/
   v3 = aP1->field_8; /*0x67aa91*/
   *((unsigned int *)this + 2) = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
@@ -33223,7 +33223,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67ae0a*/
     return this; /*0x67ae0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x67ae0e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x67ae0e*/
   v3 = aP1->headNode[1]; /*0x67ae11*/
   *((unsigned int *)this + 2) = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
@@ -33316,7 +33316,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = *((unsigned int *)this + 5); /*0x691178*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x691188*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x691188*/
       return 0; /*0x69118f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x691195*/
@@ -36608,7 +36608,7 @@ char VectorClass_flat::RemoveAt(int a2)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, int))(*(char *)this + 16))(this, a2); /*0x6ce2dc*/
+  v3 = (*(int (**)(int *, int))(*(unsigned int **)this + 16))(this, a2); /*0x6ce2dc*/
   if ( v3 == -1 ) /*0x6ce2e2*/
     return 0; /*0x6ce2e2*/
   v4 = *((char *)this + 4); /*0x6ce2e4*/

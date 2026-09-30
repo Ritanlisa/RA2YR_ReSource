@@ -4330,7 +4330,7 @@ int MapClass::ProcessVisibilityFlags()
     }
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x4acb9c*/
-  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 56))(this, 1); /*0x4acbaa*/
+  return (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 56))(this, 1); /*0x4acbaa*/
 
 }
 // 0x4ACBC0

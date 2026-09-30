@@ -329,7 +329,15 @@ def _locals_per_block(cfg):
 _MEMBER_PREFIX_OPS = frozenset({".", "->", "::"})
 
 
+_CRT_MANGLED_RE = re.compile(r'^__\d+_')
+
+
 def _strict_resolve_call(name, M):
+    # G41: CRT operator new/delete mangled names (`__3_YAXPAX_Z`) resolve
+    # on the C++ side only -- the IDA-side extractor leaves them event-less.
+    # Symmetry: memory operators observe nothing domain-visible.
+    if _CRT_MANGLED_RE.match(name):
+        return None
     """Object-expression method call resolution (issue #3/#12): emit an event
     ONLY when the bare method name is UNAMBIGUOUS. Unlike the shared
     `_resolve_call` (which min-picks among multiple same-name candidates --
@@ -556,13 +564,19 @@ def make_cpp_leaf(class_name, locals_set, M, signals, this_alias=None):
             if c2 < 0:
                 continue
             cm = re.search(
-                r'\(\s*(?:unsigned\s+int|_DWORD|unsigned)\s*\*\s*\)\s*'
+                r'\(\s*(unsigned\s+int|_DWORD|unsigned)\s*(\*+)\s*\)\s*'
                 r'(?:this|this\s*->\s*\w+)'
                 r'\s*\+\s*(\d+)\s*\)\s*$', text[i0 + 2:c1])
             if not cm:
                 continue
+            # single-star cast `*(unsigned int *)this + N`: N is BYTE
+            # arithmetic on the vtable address (slot N/4). Double-star
+            # `*(unsigned int **)this + N`: N is ELEMENT arithmetic on the
+            # vtable pointer (slot N) = 4N bytes -- mirrors the IDA-side
+            # _IDA_VTABLE pointer-type scaling.
+            _scale = 4 if len(cm.group(2)) > 1 else 1
             covered.append((i0, c2 + 1,
-                            call_virtual(int(cm.group(1)))))
+                            call_virtual(int(cm.group(3)) * _scale)))
         if covered:
             hits.extend(covered)
 
@@ -575,13 +589,18 @@ def make_cpp_leaf(class_name, locals_set, M, signals, this_alias=None):
         # arithmetic (`*(Block + 1)`) -- the IDA-side dyn_* mirror.
         recv_alt = ('(?:this|%s)' % re.escape(this_alias)
                     if this_alias else 'this')
+        # G41: alias receivers only event WITH explicit `+ N` (mirrors the
+        # IDA-side dyn_* family, which requires the arithmetic form);
+        # a bare `*ALIAS = vtable` observes only the RHS global read.
+        recv_req_n = bool(this_alias)
         if 'this' in text or (this_alias and this_alias in text):
             for am in re.finditer(
                     r'\*\s*(?:\(\s*)?(?:(?:\(\s*)?(unsigned\s+char|_BYTE|'
                     r'unsigned\s+short|_WORD|unsigned\s+int|_DWORD|'
                     r'unsigned\s+long\s+long|_QWORD|unsigned|char|int|long)'
                     r'\s*\*\s*\)?)?\s*' + recv_alt +
-                    r'(?:\s*\+\s*(\d+)\s*\))?', text):
+                    (r'(?:\s*\+\s*(\d+)\s*\))?' if not recv_req_n
+                     else r'\s*\+\s*(\d+)\s*\)'), text):
                 tname = am.group(1) or 'unsigned'
                 stride = 8 if ('long long' in tname or '_QWORD' in tname) else \
                     (4 if ('int' in tname or '_DWORD' in tname

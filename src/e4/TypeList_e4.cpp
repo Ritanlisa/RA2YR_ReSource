@@ -527,7 +527,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
 
   if ( this == a2 ) /*0x47872a*/
     return this; /*0x47872a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 12))(this); /*0x47872e*/
+  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x47872e*/
   v3 = a2[2]; /*0x478731*/
   *((unsigned int *)this + 2) = v3; /*0x478736*/
   if ( !v3 ) /*0x478739*/
@@ -1078,7 +1078,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a11a*/
   {
-    (*(void (**)(int *))(*(char *)this + 12))(this); /*0x67a11e*/
+    (*(void (**)(int *))(*(unsigned int **)this + 12))(this); /*0x67a11e*/
     v3 = aP1->Capacity; /*0x67a121*/
     *((char *)this + 2) = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
@@ -1124,7 +1124,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a29a*/
   {
-    (*(void (**)(int *))(*(char *)this + 12))(this); /*0x67a29e*/
+    (*(void (**)(int *))(*(unsigned int **)this + 12))(this); /*0x67a29e*/
     v3 = aP1->headNode[1]; /*0x67a2a1*/
     *((char *)this + 2) = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
@@ -2115,7 +2115,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *((unsigned int *)this + 5); /*0x717ce8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x717cf8*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x717cf8*/
       return 0; /*0x717cff*/
   }
   v6 = *((unsigned int *)this + 4); /*0x717d05*/

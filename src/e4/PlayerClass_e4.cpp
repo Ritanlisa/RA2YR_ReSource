@@ -14,7 +14,7 @@ int PlayerClass::SetHouse(int a2)
 
   char result; // al
 
-  result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 4))(this, a2); /*0x5d8cbb*/
+  result = (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
     *(unsigned int *)(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * a2) + 107) = *((unsigned int *)this + 2); /*0x5d8cd5*/

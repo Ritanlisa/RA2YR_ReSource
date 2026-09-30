@@ -1680,12 +1680,12 @@ int ObjectClass::resetObjectState(SidebarClass * aP1)
   if ( (unsigned char)aP1 ) /*0x652e60*/
   {
     (*(void (**)(unsigned int *))(v3 + 48))(MEMORY[0xB04978]); /*0x652e62*/
-    return (*(int (**)(int *, unsigned int *))(*(char *)this + 48))(this, MEMORY[0xB04910]); /*0x652e6e*/
+    return (*(int (**)(int *, unsigned int *))(*(unsigned int **)this + 48))(this, MEMORY[0xB04910]); /*0x652e6e*/
   }
   else
   {
     (*(void (**)(unsigned int *))(v3 + 52))(MEMORY[0xB04978]); /*0x652e75*/
-    return (*(int (**)(int *, unsigned int *))(*(char *)this + 52))(this, MEMORY[0xB04910]); /*0x652e81*/
+    return (*(int (**)(int *, unsigned int *))(*(unsigned int **)this + 52))(this, MEMORY[0xB04910]); /*0x652e81*/
   }
 
 }

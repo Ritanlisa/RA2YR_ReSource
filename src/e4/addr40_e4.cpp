@@ -2134,7 +2134,7 @@ int E4Recv_409100::sub_409100()
   v3 = *((char *)this + 5) + 1; /*0x40910f*/
   if ( *((char *)this + 5) == 1 ) /*0x409113*/
     v3 = 0; /*0x409115*/
-  v4 = (v3 << 6) + *(char *)this + 24; /*0x40911e*/
+  v4 = (v3 << 6) + *(unsigned int **)this + 24; /*0x40911e*/
   *((char *)this + 14) += v1; /*0x409127*/
   *(unsigned int *)(v4 + 52) += v1; /*0x40912f*/
   v5 = (unsigned int *)*((char *)this + 10); /*0x409132*/

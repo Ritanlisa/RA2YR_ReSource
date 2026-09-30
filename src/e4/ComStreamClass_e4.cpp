@@ -263,8 +263,8 @@ AbstractClass * * ComStreamClass::readData()
           do /*0x7ae161*/
           {
             v10 = ((int (*)(int))*((unsigned int *)this + 6))(v9) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7ae14b*/
-            v11 = *(unsigned int *)(*(unsigned int *)this + 4 * v10); /*0x7ae14f*/
-            *(unsigned int *)(*(unsigned int *)this + 4 * v10) = v9; /*0x7ae155*/
+            v11 = *(unsigned int *)(*(unsigned int **)this + 4 * v10); /*0x7ae14f*/
+            *(unsigned int *)(*(unsigned int **)this + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7ae157*/
             *(unsigned int *)(v9 + 72) = v11; /*0x7ae15a*/
             v9 = v12; /*0x7ae15d*/
@@ -324,8 +324,8 @@ void ComStreamClass::flushStream()
           do /*0x7aefdd*/
           {
             v10 = ((int (*)(int))*((unsigned int *)this + 6))(v9) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7aefc7*/
-            v11 = *(unsigned int *)(*(unsigned int *)this + 4 * v10); /*0x7aefcb*/
-            *(unsigned int *)(*(unsigned int *)this + 4 * v10) = v9; /*0x7aefd1*/
+            v11 = *(unsigned int *)(*(unsigned int **)this + 4 * v10); /*0x7aefcb*/
+            *(unsigned int *)(*(unsigned int **)this + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7aefd3*/
             *(unsigned int *)(v9 + 72) = v11; /*0x7aefd6*/
             v9 = v12; /*0x7aefd9*/

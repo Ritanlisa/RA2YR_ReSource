@@ -470,7 +470,7 @@ int DSurface::RestoreIfLost()
       *((char *)this + 3) = 0; /*0x4bb058*/
       (*(void (**)(int *, unsigned int, unsigned int))(v5 + 92))(this, 0, 0); /*0x4bb05b*/
       ++*((char *)this + 3); /*0x4bb064*/
-      (*(void (**)(int *))(*(char *)this + 96))(this); /*0x4bb069*/
+      (*(void (**)(int *))(*(unsigned int **)this + 96))(this); /*0x4bb069*/
       *((char *)this + 3) = v4; /*0x4bb06c*/
     }
   }
@@ -565,7 +565,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     || (*(unsigned __int8 (**)(unsigned int *))(*a3 + 108))(a3) == 1
     || (unsigned char)a7 == 1
     || (v11 = (*(int (**)(unsigned int *))(*a3 + 112))(a3),
-        v12 = (*(int (**)(int *))(*(char *)this + 112))(this) == v11,
+        v12 = (*(int (**)(int *))(*(unsigned int **)this + 112))(this) == v11,
         v10 = (void **)a3,
         !v12) )
   {
@@ -601,7 +601,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
       *((char *)this + 3) = 0; /*0x4bb25d*/
       (*(void (**)(int *, unsigned int, unsigned int))(v15 + 92))(this, 0, 0); /*0x4bb264*/
       ++*((char *)this + 3); /*0x4bb26d*/
-      (*(void (**)(int *))(*(char *)this + 96))(this); /*0x4bb273*/
+      (*(void (**)(int *))(*(unsigned int **)this + 96))(this); /*0x4bb273*/
       *((char *)this + 3) = (int)v47; /*0x4bb27a*/
     }
   }
@@ -772,7 +772,7 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   if ( *((char *)this + 7) && *(int *)(a2 + 8) > 0 && *(int *)(a2 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
-      || (*(unsigned __int8 (**)(int *))(*(char *)this + 108))(this)
+      || (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 108))(this)
       || (*(int (**)(unsigned int, int))(*(unsigned int *)*((char *)this + 7) + 52))(*((char *)this + 7), 1) )
     {
       return XSurface::FillRectEx(aP1, a2, aP3); /*0x4bb81d*/
@@ -792,11 +792,11 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
           *((char *)this + 3) = 0; /*0x4bb6db*/
           (*(void (**)(int *, unsigned int, unsigned int))(v7 + 92))(this, 0, 0); /*0x4bb6de*/
           ++*((char *)this + 3); /*0x4bb6e7*/
-          (*(void (**)(int *))(*(char *)this + 96))(this); /*0x4bb6ec*/
+          (*(void (**)(int *))(*(unsigned int **)this + 96))(this); /*0x4bb6ec*/
           *((char *)this + 3) = v6; /*0x4bb6ef*/
         }
 LABEL_15:
-        v8 = (*(int (**)(int *, char *))(*(char *)this + 120))(this, v19); /*0x4bb6f2*/
+        v8 = (*(int (**)(int *, char *))(*(unsigned int **)this + 120))(this, v19); /*0x4bb6f2*/
         v9 = (unsigned int *)ClipRectIntersection(v8, 0, 0); /*0x4bb710*/
         v18[0] = *v9; /*0x4bb719*/
         v18[1] = v9[1]; /*0x4bb722*/
@@ -5020,7 +5020,7 @@ int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
 
   v7 = *this; /*0x4bb098*/
   v8 = (*(int (**)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*(int (**)(int *, unsigned char *, int, int, int))(*(char *)this + 120))(this, v12, a5, a3, v8); /*0x4bb0b9*/
+  v9 = (*(int (**)(int *, unsigned char *, int, int, int))(*(unsigned int **)this + 120))(this, v12, a5, a3, v8); /*0x4bb0b9*/
   return (*(int (**)(int *, int))(v7 + 12))(this, v9); /*0x4bb0c2*/
 
 }

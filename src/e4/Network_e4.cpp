@@ -1018,7 +1018,7 @@ AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, C
   Debug::Log(); /*0x540c7e*/
   Debug::Log(); /*0x540c8e*/
   if ( (unsigned char)aP4 ) /*0x540c9c*/
-    (*(void (**)(int *, unsigned int, unsigned int, unsigned int))(*(char *)this + 56))(this, *((char *)this + 22), *((char *)this + 23), *((char *)this + 24)); /*0x540cae*/
+    (*(void (**)(int *, unsigned int, unsigned int, unsigned int))(*(unsigned int **)this + 56))(this, *((char *)this + 22), *((char *)this + 23), *((char *)this + 24)); /*0x540cae*/
   v6 = 0; /*0x540cb4*/
   if ( *((char *)this + 17) > 0 ) /*0x540cb8*/
   {
@@ -1674,9 +1674,9 @@ LABEL_60:
             *v35 = *(unsigned int *)aP2.__pad_0; /*0x542117*/
             v35[1] = *(unsigned int *)&aP2.field_1[3]; /*0x54211d*/
             v35[2] = aP2.field_8; /*0x542124*/
-            if ( (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 24))(this, v44) != -1 ) /*0x542131*/
+            if ( (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 24))(this, v44) != -1 ) /*0x542131*/
             {
-              v36 = (unsigned int *)(*(this + (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 24))(this, v30) + 10) + 76); /*0x542143*/
+              v36 = (unsigned int *)(*(this + (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 24))(this, v30) + 10) + 76); /*0x542143*/
               *v36 = *(unsigned int *)aP2.__pad_0; /*0x542146*/
               v36[1] = *(unsigned int *)&aP2.field_1[3]; /*0x54214c*/
               v36[2] = aP2.field_8; /*0x542153*/

@@ -139,7 +139,7 @@ void TacticalMap::Redraw()
   {
     TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 1); /*0x4f44f4*/
-    (*(void (**)(unsigned int *, bool))(*(unsigned int *)this + 64))(this, v7); /*0x4f4502*/
+    (*(void (**)(unsigned int *, bool))(*(unsigned int **)this + 64))(this, v7); /*0x4f4502*/
     TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 2); /*0x4f4515*/
   }
   if ( MEMORY[0xB0B519] && !MEMORY[0xA8ED6B] ) /*0x4f452b*/
@@ -159,7 +159,7 @@ void TacticalMap::Redraw()
     DrawHUD(v4); /*0x4f457e*/
   }
   (*(void (**)(int, int, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x88731C], 0); /*0x4f4593*/
-  result = (*(int (**)(unsigned int *))(*(unsigned int *)this + 68))(this); /*0x4f459a*/
+  result = (*(int (**)(unsigned int *))(*(unsigned int **)this + 68))(this); /*0x4f459a*/
   MEMORY[0x887314] = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 
@@ -224,7 +224,7 @@ void TacticalMap::DrawCursor()
     result = (*(int (**)(int))(*(unsigned int *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x5d4a89*/
   }
   if ( *this ) /*0x5d4a8d*/
-    return (*(int (**)(unsigned int, int))(*(unsigned int *)*(unsigned int *)this + 44))(*this, 1); /*0x5d4a98*/
+    return (*(int (**)(unsigned int, int))(*(unsigned int *)*(unsigned int **)this + 44))(*this, 1); /*0x5d4a98*/
   return result; /*0x5d4a8f*/
 
 }

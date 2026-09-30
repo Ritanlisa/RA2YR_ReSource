@@ -1036,7 +1036,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   int result; // eax
   int *v5; // edx
 
-  result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 24))(this, a2); /*0x54228c*/
+  result = (*(int (**)(unsigned int *, int))(*(unsigned int **)this + 24))(this, a2); /*0x54228c*/
   if ( result != -1 && result < *((unsigned int *)this + 17) ) /*0x542297*/
   {
     v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/

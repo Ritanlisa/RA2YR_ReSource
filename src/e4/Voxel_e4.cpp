@@ -2392,7 +2392,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *((unsigned int *)this + 45) = v9; /*0x761b27*/
   *((unsigned int *)this + 46) = v59; /*0x761b2d*/
   *((unsigned int *)this + 47) = v60; /*0x761b34*/
-  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)this + 436))(this, (unsigned int *)this + 45); /*0x761b3b*/
+  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int **)this + 436))(this, (unsigned int *)this + 45); /*0x761b3b*/
   v12 = v61; /*0x761b41*/
   v13 = v62; /*0x761b45*/
   *((unsigned int *)this + 82) = 6; /*0x761b55*/
@@ -2701,7 +2701,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   *((unsigned int *)this + 45) = a1; /*0x7625bb*/
   *((unsigned int *)this + 46) = v57; /*0x7625c1*/
   *((unsigned int *)this + 47) = v58; /*0x7625c8*/
-  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)this + 436))(this, (unsigned int *)this + 45); /*0x7625cf*/
+  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int **)this + 436))(this, (unsigned int *)this + 45); /*0x7625cf*/
   v10 = var94; /*0x7625d5*/
   v11 = v59; /*0x7625d9*/
   *((unsigned int *)this + 82) = 4; /*0x7625e3*/
@@ -3114,7 +3114,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x763346*/
       return 0; /*0x763346*/
     v4 = *((unsigned int *)this + 5); /*0x763348*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 8))(this, v3 + v4, 0) ) /*0x763358*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x763358*/
       return 0; /*0x76335f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x763365*/

@@ -2156,7 +2156,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         if ( (unsigned short)v6 == 10 ) /*0x5d30f5*/
           break; /*0x5d30f5*/
         ++v3; /*0x5d30fc*/
-        v6 = (*(int (**)(size_t *, size_t))(*(unsigned int *)this + 4))(this, v6); /*0x5d30ff*/
+        v6 = (*(int (**)(size_t *, size_t))(*(unsigned int **)this + 4))(this, v6); /*0x5d30ff*/
         v4 += v6; /*0x5d3102*/
       }
       if ( v4 > v10 ) /*0x5d3110*/

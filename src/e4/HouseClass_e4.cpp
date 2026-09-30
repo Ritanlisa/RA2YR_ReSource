@@ -4024,7 +4024,7 @@ int HouseClass::SetPrimaryFactory(int a2)
   if ( a2 == -1 || *((unsigned int *)this + 435) != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
   *((unsigned int *)this + 435) = a2; /*0x740e02*/
-  (*(void (**)(unsigned int *, int))(*(unsigned int *)this + 292))(this, 2); /*0x740e0c*/
+  (*(void (**)(unsigned int *, int))(*(unsigned int **)this + 292))(this, 2); /*0x740e0c*/
   return 1; /*0x740e14*/
 
 }
@@ -4534,7 +4534,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
     while ( v6 < MEMORY[0xA8EAF8] ); /*0x4fb99b*/
   }
   if ( this ) /*0x4fb99f*/
-    return (unsigned int *)(*(int (**)(unsigned int *, int))(*(unsigned int *)this + 32))(this, 1); /*0x4fb9a7*/
+    return (unsigned int *)(*(int (**)(unsigned int *, int))(*(unsigned int **)this + 32))(this, 1); /*0x4fb9a7*/
   return result; /*0x4fb9aa*/
 
 }

@@ -184,7 +184,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       Event::Dispatch(); /*0x5d2437*/
-      (*(void (**)(int *))(*(char *)this + 8))(this); /*0x5d2440*/
+      (*(void (**)(int *))(*(unsigned int **)this + 8))(this); /*0x5d2440*/
       DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d2451*/
       GameClass::loadScenarioFiles(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d245f*/

@@ -237,7 +237,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
       if ( *((unsigned int *)this + 997 * v3 + 1378) ) /*0x6a6a3a*/
       {
         --*((unsigned int *)this + 997 * v3 + 1379); /*0x6a6a4b*/
-        (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 56))(this, 0); /*0x6a6a50*/
+        (*(void (**)(unsigned int *, unsigned int))(*(unsigned int **)this + 56))(this, 0); /*0x6a6a50*/
         return 1; /*0x6a6a57*/
       }
       return 0; /*0x6a6a3f*/
@@ -255,7 +255,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     {
 LABEL_13:
       ++v4[18]; /*0x6a6ad4*/
-      (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 56))(this, 0); /*0x6a6adf*/
+      (*(void (**)(unsigned int *, unsigned int))(*(unsigned int **)this + 56))(this, 0); /*0x6a6adf*/
       return 1; /*0x6a6ae6*/
     }
   }

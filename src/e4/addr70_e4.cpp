@@ -949,7 +949,7 @@ int E4Recv_7011A0::sub_7011A0()
   double v14; // [esp+1Ch] [ebp-14h]
   unsigned char v15[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*(unsigned __int8 (**)(int *))(*(char *)this + 84))(this) ) /*0x7011a9*/
+  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 84))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
   v3 = MEMORY[0x8871E0][1].?[11]; /*0x7011bd*/
   if ( !v3 ) /*0x7011c5*/

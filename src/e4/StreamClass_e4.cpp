@@ -55,14 +55,14 @@ int StreamClass::Set2(unsigned int * a2)
     {
       v5 = a2; /*0x45aedf*/
       if ( *this ) /*0x45aedc*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x45aeea*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45aeea*/
       *this = v5; /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
     {
       if ( *this ) /*0x45aec3*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x45aecc*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45aecc*/
       *this = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
@@ -96,14 +96,14 @@ int StreamClass::Set(void* a1)
     {
       v5 = a1; /*0x45af5f*/
       if ( *this ) /*0x45af5c*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x45af6a*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45af6a*/
       *this = v5; /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
     {
       if ( *this ) /*0x45af43*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 8))(*this); /*0x45af4c*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45af4c*/
       *this = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
