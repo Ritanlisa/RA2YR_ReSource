@@ -1205,6 +1205,9 @@ def canonicalize_branch_polarity(cfg):
     return cfg
 
 
+_IDA_CFG_PSEUDO = {}  # id(cfg) -> pseudocode text (G38 vfptr-artifact rule)
+
+
 def _build_ida_cfg_events(efv, ida_decompiled, this_type, M, class_name=None):
     cfg = efv["ida_cfg"].build_ida_cfg(ida_decompiled)
     cfg = efv["normalize"].normalize(cfg)
@@ -1224,6 +1227,29 @@ def _build_ida_cfg_events(efv, ida_decompiled, this_type, M, class_name=None):
         efv["ida_events"].extract_events_into(cfg, this_type, maps=M)
     cfg = efv["normalize"].normalize(cfg)
     canonicalize_branch_polarity(cfg)
+    # G38: CALL(vfptr+slot) metadata artifacts. IDA renders a function's own
+    # vtable-slot identity as a virtual-call event even when the pseudocode
+    # body contains NO call syntax at all (0x4011B0: `return *a1 + 36*a2;`
+    # -> block events ['RET','CALL(vfptr+36)']). Strip them at the source so
+    # the guard, STEP3(0) and the structural bijection all see a clean CFG.
+    # Fail-closed: only strips when the body has no call syntax anywhere.
+    try:
+        core = ida_decompiled or ''
+        bidx = core.find('{')
+        if bidx >= 0:
+            core = core[bidx:]
+        core = _COMMENT_STRIP_RE.sub('', core)
+        if core and not re.search(r'\w+\s*\(', core) and \
+           not re.search(r'\(\s*\*+\s*\w*\)?\s*\(', core):
+            for bid in list(cfg.blocks.keys()):
+                blk = cfg.blocks.get(bid)
+                if blk is None:
+                    continue
+                if any(ev.startswith('CALL(vfptr+') for ev in blk.ordered_events):
+                    blk.ordered_events = [ev for ev in blk.ordered_events
+                                          if not ev.startswith('CALL(vfptr+')]
+    except Exception:
+        pass  # fail-closed: any surprise keeps events intact
     return cfg
 
 
@@ -1308,6 +1334,37 @@ def _is_trivial_single_return(cpp_text):
     return st.startswith("return") and len(st) > 6
 
 
+_PARAM_DEREF_RE = re.compile(r'\*\s*\w+|\w+\s*\[|\w+\s*->|\w+\.\w')
+
+
+def _ida_events_are_param_derefs(ida_events, cpp_text):
+    """True 当 IDA 侧事件全部可由体的参数/局部解引用或元数据伪影解释。
+
+    G38 判别（0x4011B0 铁证）：`return *a1 + 36 * a2;` 忠实体，C++ 提取器
+    不把参数解引用计为事件（事件词汇只含 member/global），IDA 侧却渲染
+    READ 事件 → W1.2 守卫把正确体误判为平凡存根。第二形态（实测）：
+    IDA 事件为 CALL(vfptr+N) 而伪码本体无任何调用语法 —— vtable 槽位
+    元数据伪影。规则：CALL 事件仅在伪码体存在调用语法（`(` 前有标识符
+    或间接调用形态）时拥有否决权；WRITE 事件恒有否决权。
+    """
+    body = _COMMENT_STRIP_RE.sub('', cpp_text)
+    # strip signature: body starts after the first top-level '{'
+    bidx = body.find('{')
+    if bidx >= 0:
+        body = body[bidx:]
+    has_call_syntax = bool(re.search(r'\w+\s*\(', body)) or \
+        bool(re.search(r'\(\s*\*+\s*\w*\)?\s*\(', body))
+    for ev in ida_events:
+        if ev.startswith('CALL('):
+            # vfptr+slot metadata artifacts carry no call-site in the body
+            if 'vfptr+' in ev and not has_call_syntax:
+                continue
+            return False
+        if ev.startswith('WRITE('):
+            return False
+    return True
+
+
 def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
                   get_callee=None, element_exempt=STEP3_0_ELEMENT_EXEMPT):
     nec = efv["necessary"]
@@ -1324,6 +1381,22 @@ def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
         pass
     ida_ops = nec.collect_external_ops(ida_cfg)
     exempt = set(element_exempt) if element_exempt else set()
+    # G38: CALL(vfptr+slot) metadata artifacts -- IDA renders the function's
+    # own vtable slot as a virtual-call event even when the pseudocode body
+    # has no call syntax at all (0x4011B0: `return *a1 + 36*a2;`).
+    # Symmetric exemption: drop such events when the pseudocode body carries
+    # no call syntax. Cache text unavailable -> keep the event (fail-closed).
+    vf_art = {ev for ev in ida_ops if ev.startswith('CALL(vfptr+')}
+    if vf_art:
+        pseudo = _IDA_CFG_PSEUDO.get(id(ida_cfg), '')
+        core = pseudo
+        bidx = core.find('{')
+        if bidx >= 0:
+            core = core[bidx:]
+        core = _COMMENT_STRIP_RE.sub('', core)
+        if core and not re.search(r'\w+\s*\(', core) and \
+           not re.search(r'\(\s*\*+\s*\w*\)?\s*\(', core):
+            exempt |= vf_art
     missing = sorted((ida_ops - cpp_ops) - exempt)
     missing = nec.apply_member_wildcard_exemption(
         missing, nec.count_member_write_wildcards(cpp_cfg))
@@ -1626,14 +1699,25 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     if guard_ida:
         guard_cpp = _collect_rwcall_events(cpp_cfg)
         if not guard_cpp and _is_trivial_single_return(cpp_text):
-            if verbose:
-                print("  GUARD      : trivial-stub-mismatch "
-                      "({} IDA event(s) vs trivial return body)"
-                      .format(len(guard_ida)), file=sys.stderr)
-            return False, {"reject": False,
-                           "reason": "trivial-stub-mismatch: trivial single-return "
-                                     "body (0 cpp events) vs {} IDA-side event(s) "
-                                     "(W1.2 Plan A guard)".format(len(guard_ida))}
+            # G38 symmetry amendment (0x4011B0): a faithful pointer-deref
+            # body (`return *a1 + ...;`) produces 0 extractor events while
+            # IDA renders the same access as READ. If the IDA events carry
+            # NO CALL/WRITE (events the extractor could only mirror), a
+            # pure-READ mismatch may be a param deref, not a stub.
+            if _ida_events_are_param_derefs(guard_ida, cpp_text):
+                if verbose:
+                    print("  GUARD      : param-deref symmetry -- pure-READ "
+                          "IDA events vs deref-bearing return body, no veto"
+                          .format(len(guard_ida)), file=sys.stderr)
+            else:
+                if verbose:
+                    print("  GUARD      : trivial-stub-mismatch "
+                          "({} IDA event(s) vs trivial return body)"
+                          .format(len(guard_ida)), file=sys.stderr)
+                return False, {"reject": False,
+                               "reason": "trivial-stub-mismatch: trivial single-return "
+                                         "body (0 cpp events) vs {} IDA-side event(s) "
+                                         "(W1.2 Plan A guard)".format(len(guard_ida))}
 
     if verbose:
         print("  C++ source : {}:{}".format(body["file"], body["start_line"] + 1),
