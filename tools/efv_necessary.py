@@ -182,8 +182,43 @@ def missing_external_ops(ida_cfg, cpp_cfg, element_exempt=None):
     ida_ops = collect_external_ops(ida_cfg)
     cpp_ops = collect_external_ops(cpp_cfg)
     missing = sorted((ida_ops - cpp_ops) - exempt)
-    return apply_member_wildcard_exemption(
+    missing = apply_member_wildcard_exemption(
         missing, count_member_write_wildcards(cpp_cfg))
+    return _ida_wildcard_member_exemption(missing, cpp_ops)
+
+
+_IDA_MEMBER_WILDCARDS = ("WRITE(member,?)", "READ(member,?)",
+                         "WRITE(global,?)", "READ(global,?)")
+
+
+def _ida_wildcard_member_exemption(missing, cpp_ops):
+    """G41.19: an IDA-side UNRESOLVED member/global event (`WRITE(member,?)` —
+    the typed 09-28 export renders member names the tables don't carry, e.g.
+    `this->m_1` on a mangled-template this) is SATISFIED by any C++-side
+    RESOLVED event of the same verb — the corpus resolving the access is the
+    stronger claim. Count-based (min of wildcard occurrences vs resolved
+    occurrences) so this can never excuse a MISSING access outright."""
+    if not missing:
+        return missing
+    out = list(missing)
+    for wc in _IDA_MEMBER_WILDCARDS:
+        n_wc = out.count(wc)
+        if not n_wc:
+            continue
+        verb = wc.split('(')[0]
+        n_resolved = sum(1 for op in cpp_ops
+                         if op.startswith(verb + '(') and op != wc)
+        take = min(n_wc, n_resolved)
+        if take:
+            removed = 0
+            keep = []
+            for op in out:
+                if op == wc and removed < take:
+                    removed += 1
+                    continue
+                keep.append(op)
+            out = keep
+    return out
 
 
 def step3_0_holds(ida_cfg, cpp_cfg, element_exempt=None):

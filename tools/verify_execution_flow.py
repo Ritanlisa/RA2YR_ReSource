@@ -1443,6 +1443,10 @@ def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
     missing = sorted((ida_ops - cpp_ops) - exempt)
     missing = nec.apply_member_wildcard_exemption(
         missing, nec.count_member_write_wildcards(cpp_cfg))
+    # G41.19: IDA-side unresolved member/global events (`WRITE(member,?)` —
+    # the typed export renders names the tables don't carry) are satisfied by
+    # any C++-side RESOLVED event of the same verb, count-based.
+    missing = nec._ida_wildcard_member_exemption(missing, cpp_ops)
     return (not missing), missing
 
 
