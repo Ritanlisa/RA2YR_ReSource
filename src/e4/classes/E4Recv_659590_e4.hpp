@@ -16,6 +16,6 @@ struct E4Recv_659590 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char sub_659590(unsigned int * a2,  unsigned int * a3,  short a4);    // 0x659590
+    char  sub_659590(unsigned int * a2, unsigned int * a3, __int16 a4);  // 0x659590
 };
 } // namespace gamemd

@@ -418,9 +418,9 @@ void WarheadTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 106) = &vt_TypeList_int; /*0x75d0a7*/
   *((unsigned int *)this + 113) = 0; /*0x75d0ae*/
   *((unsigned int *)this + 114) = 0; /*0x75d0b4*/
-  *(unsigned int *)this = &WarheadTypeClass::`vftable'; /*0x75d0ba*/
-  *((unsigned int *)this + 1) = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
-  *((unsigned int *)this + 2) = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
+  *(unsigned int *)this = &vt_WarheadTypeClass; /*0x75d0ba*/
+  *((unsigned int *)this + 1) = &vt_WarheadTypeClass; /*0x75d0c1*/
+  *((unsigned int *)this + 2) = &vt_WarheadTypeClass; /*0x75d0c7*/
   *((unsigned int *)this + 3) = &vt_WarheadTypeClass; /*0x75d0ce*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x75d0d5*/
   (*(void (**)(int))(*((unsigned int *)this + 99) + 12))((char *)this + 396); /*0x75d0de*/
@@ -560,9 +560,9 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       v2[65] = &vt_TypeList_AnimTypeClass_const; /*0x75e120*/
       WarheadTypeClass::checkImmunity(v3, (int)&a1); /*0x75e12d*/
       WarheadTypeClass::calculateDamage(v2 + 106, (int)&a1); /*0x75e139*/
-      *v2 = &WarheadTypeClass::`vftable'; /*0x75e13e*/
-      v2[1] = &WarheadTypeClass::`vftable'; /*0x75e144*/
-      v2[2] = &WarheadTypeClass::`vftable'; /*0x75e14b*/
+      *v2 = &vt_WarheadTypeClass; /*0x75e13e*/
+      v2[1] = &vt_WarheadTypeClass; /*0x75e144*/
+      v2[2] = &vt_WarheadTypeClass; /*0x75e14b*/
       v2[3] = &vt_WarheadTypeClass; /*0x75e152*/
     }
     if ( v2 != (unsigned int *)-260 ) /*0x75e161*/
@@ -713,9 +713,9 @@ CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
   void *v7; // eax
   void **v9; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &WarheadTypeClass::`vftable'; /*0x75e516*/
-  *(Block + 1) = &WarheadTypeClass::`vftable'; /*0x75e51c*/
-  *(Block + 2) = &WarheadTypeClass::`vftable'; /*0x75e523*/
+  *Block = &vt_WarheadTypeClass; /*0x75e516*/
+  *(Block + 1) = &vt_WarheadTypeClass; /*0x75e51c*/
+  *(Block + 2) = &vt_WarheadTypeClass; /*0x75e523*/
   *(Block + 3) = &vt_WarheadTypeClass; /*0x75e52a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x75e531*/
   v9 = Block; /*0x75e546*/

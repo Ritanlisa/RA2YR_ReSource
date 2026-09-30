@@ -65,6 +65,6 @@ struct E4Recv_764B90 {
     unsigned int q018;
     unsigned int M4;
 // --- flat members (END) ---
-    char * WDT_Campaign_Constructor(const char ** a2,  int a3);    // 0x764B90
+    char *  WDT_Campaign_Constructor(void * a2, int a3);  // 0x764B90
 };
 } // namespace gamemd

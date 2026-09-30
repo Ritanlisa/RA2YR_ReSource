@@ -271,9 +271,9 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&ParticleSystemTypeClass::`vftable');
-  *(Block + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
-  *(Block + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
+  *Block = (void *)(&vt_ParticleSystemTypeClass);
+  *(Block + 1) = &vt_ParticleSystemTypeClass; /*0x64496c*/
+  *(Block + 2) = &vt_ParticleSystemTypeClass; /*0x644973*/
   *(Block + 3) = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x644981*/
   v5 = Block; /*0x644996*/
@@ -358,9 +358,9 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ((ObjectTypeClass *)((IUnknown *)aP0))->LoadCleanup((ObjectTypeClass *)aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ((ObjectTypeClass *)(aP0))->Construct((ObjectTypeClass *)&aP1); /*0x6447ff*/
-    *(unsigned int *)aP0->__pad_0 = &ParticleSystemTypeClass::`vftable'; /*0x644804*/
-    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
-    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
+    *(unsigned int *)aP0->__pad_0 = &vt_ParticleSystemTypeClass; /*0x644804*/
+    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_ParticleSystemTypeClass; /*0x64480a*/
+    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_ParticleSystemTypeClass; /*0x644811*/
     *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_ParticleSystemTypeClass; /*0x644818*/
   }
   return 0; /*0x644821*/

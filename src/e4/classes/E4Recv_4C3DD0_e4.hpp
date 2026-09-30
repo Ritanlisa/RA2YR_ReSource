@@ -10,6 +10,6 @@ struct E4Recv_4C3DD0 {
     unsigned int M8;  // 0x8
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    int sub_4C3DD0(int a2);  // 0x4C3DD0
+    int  sub_4C3DD0(int a2);  // 0x4C3DD0
 };
 } // namespace gamemd

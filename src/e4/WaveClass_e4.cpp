@@ -53,8 +53,8 @@ int WaveClass::LoadWaveData(int a2, int a3)
       *(unsigned int *)(v4 + 424) = 0; /*0x75f68c*/
       FrameSnapshot::Init((unsigned short *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((unsigned int *)(v4 + 496), 0, 0); /*0x75f69f*/
-      *(unsigned int *)v4 = &WaveClass::`vftable'; /*0x75f6a4*/
-      *(unsigned int *)(v4 + 4) = &WaveClass::`vftable'; /*0x75f6aa*/
+      *(unsigned int *)v4 = &vt_WaveClass; /*0x75f6a4*/
+      *(unsigned int *)(v4 + 4) = &vt_WaveClass; /*0x75f6aa*/
       *(unsigned int *)(v4 + 8) = &vt_WaveClass; /*0x75f6b1*/
       *(unsigned int *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
     }
@@ -115,8 +115,8 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&WaveClass::`vftable');
-  *(Block + 1) = &WaveClass::`vftable'; /*0x76320c*/
+  *Block = (void *)(&vt_WaveClass);
+  *(Block + 1) = &vt_WaveClass; /*0x76320c*/
   *(Block + 2) = &vt_WaveClass; /*0x763213*/
   *(Block + 3) = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x763221*/

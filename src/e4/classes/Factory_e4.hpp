@@ -26,7 +26,7 @@ struct Factory {
     unsigned int __pad_0;
     unsigned int field_8;
 // --- flat members (END) ---
-    int GetLinkedIndex(void * aP1);  // 0x663D60
+    int  GetLinkedIndex(void * aP1);  // 0x663D60
     int FindExitCellByName();  // 0x523C90
     int IdleHandler();  // 0x731CD0
 };

@@ -151,7 +151,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v10[2] = 0; /*0x474217*/
   v10[3] = a2; /*0x47421b*/
   v11 = 0; /*0x47421f*/
-  v10[0] = &FileStraw::`vftable'; /*0x474223*/
+  v10[0] = &vt_FileStraw; /*0x474223*/
   File = INIClass::LoadFile(this, (int)v10, a4); /*0x474230*/
   *((unsigned char *)this + 64) = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
@@ -175,7 +175,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
-  v12[0] = (int)&SHAPipe::`vftable'; /*0x4742c5*/
+  v12[0] = (int)&vt_SHAPipe; /*0x4742c5*/
   INIClass::WriteToString(this, (int)v12); /*0x4742cd*/
   SHA1::ComputeThunk(v12, (unsigned char *)this + 65); /*0x4742da*/
   *((unsigned char *)this + 64) = 1; /*0x4742e3*/
@@ -211,11 +211,11 @@ CCINIClass::CCINIClass()
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
   v2[2] = 0; /*0x535b45*/
-  *v2 = &GenericNode::`vftable'; /*0x535b48*/
+  *v2 = &vt_GenericNode; /*0x535b48*/
   v3[1] = 0; /*0x535b4e*/
   v3[2] = 0; /*0x535b51*/
-  *v3 = &GenericNode::`vftable'; /*0x535b54*/
-  result[3] = &GenericList::`vftable'; /*0x535b5d*/
+  *v3 = &vt_GenericNode; /*0x535b54*/
+  result[3] = &vt_GenericList; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
     v4 = v3[1]; /*0x535b66*/

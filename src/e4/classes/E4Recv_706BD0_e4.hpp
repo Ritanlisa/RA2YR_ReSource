@@ -13,6 +13,6 @@ struct E4Recv_706BD0 {
 // --- flat members (END) ---
     int Vf132(int,  ...);    // G6 vtable slot dispatch
     int Vf136(int,  ...);    // G6 vtable slot dispatch
-    int QueueTechnoVoiceLine(void * aP1,  void * aP2,  void * aP3,  void * aP4,  void * aP5,  void * aP6,  void * aP7,  void * aP8,  void * aP9,  void * aP10,  void * aP11);    // 0x706BD0
+    int  QueueTechnoVoiceLine(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6, void * aP7, void * aP8, void * aP9, void * aP10, void * aP11);  // 0x706BD0
 };
 } // namespace gamemd

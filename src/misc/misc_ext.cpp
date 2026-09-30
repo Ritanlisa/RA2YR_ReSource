@@ -13432,7 +13432,7 @@ void CChatEventSink::HandleLobbyPlayerUpdate(int a1, int a2, int a3, int a4)
   return 0; /*0x7a83a6*/
 }
 // 0x7a9970
-void CChatEventSink::HandleUserSearch(void * this, int a2, void * a3)
+void CChatEventSink::HandleUserSearch( int a2, void * a3)
 {
 }
 

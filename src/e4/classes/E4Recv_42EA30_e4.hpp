@@ -19,6 +19,6 @@ struct E4Recv_42EA30 {
     unsigned int q5510;  // 0x5510
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    int sub_42EA30(unsigned int * a2);  // 0x42EA30
+    int  sub_42EA30(unsigned int * a2);  // 0x42EA30
 };
 } // namespace gamemd

@@ -280,9 +280,9 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ObjectClass::Init(aP1, (AbstractClass *)&aP1a); /*0x62d7bf*/
-      *(unsigned int *)aP1->__pad_0 = &ParticleClass::`vftable'; /*0x62d7c4*/
-      *(unsigned int *)&aP1->__pad_0[4] = &ParticleClass::`vftable'; /*0x62d7ca*/
-      *(unsigned int *)&aP1->__pad_0[8] = &ParticleClass::`vftable'; /*0x62d7d1*/
+      *(unsigned int *)aP1->__pad_0 = &vt_ParticleClass; /*0x62d7c4*/
+      *(unsigned int *)&aP1->__pad_0[4] = &vt_ParticleClass; /*0x62d7ca*/
+      *(unsigned int *)&aP1->__pad_0[8] = &vt_ParticleClass; /*0x62d7d1*/
       *(unsigned int *)&aP1->__pad_0[12] = &vt_ParticleClass; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x62d7eb*/

@@ -4478,8 +4478,8 @@ HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
   if ( a1 ) /*0x54b76a*/
   {
     a1[37] = 0; /*0x54b76c*/
-    *a1 = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b776*/
-    a1[1] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b77c*/
+    *a1 = (int)&vt_JumpjetLocomotionClass; /*0x54b776*/
+    a1[1] = (int)&vt_JumpjetLocomotionClass; /*0x54b77c*/
     a1[6] = (int)&vt_JumpjetLocomotionClass; /*0x54b783*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x54b796*/
@@ -4840,8 +4840,8 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char
 
   int v3; // eax
 
-  *Block = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa3*/
-  *(Block + 1) = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa9*/
+  *Block = (int)&vt_JumpjetLocomotionClass; /*0x54dfa3*/
+  *(Block + 1) = (int)&vt_JumpjetLocomotionClass; /*0x54dfa9*/
   *(Block + 6) = (int)&vt_JumpjetLocomotionClass; /*0x54dfb0*/
   v3 = *(Block + 37); /*0x54dfb7*/
   if ( v3 ) /*0x54dfbf*/
@@ -6267,14 +6267,14 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
     return v3; /*0x719cb6*/
   if ( a1 ) /*0x719cba*/
   {
-    *a1 = (int)&LocomotionClass::`vftable'; /*0x719cbc*/
+    *a1 = (int)&vt_LocomotionClass; /*0x719cbc*/
     a1[1] = (int)&vt_LocomotionClass; /*0x719cc2*/
     v4 = g_abs_A8ED84; /*0x719cc9*/
     a1[17] = 0; /*0x719cce*/
     a1[15] = (int)v4; /*0x719cd5*/
     a1[18] = 0; /*0x719cd8*/
-    *a1 = (int)&TeleportLocomotionClass::`vftable'; /*0x719cdf*/
-    a1[1] = (int)&TeleportLocomotionClass::`vftable'; /*0x719ce5*/
+    *a1 = (int)&vt_TeleportLocomotionClass; /*0x719cdf*/
+    a1[1] = (int)&vt_TeleportLocomotionClass; /*0x719ce5*/
     a1[6] = (int)&vt_TeleportLocomotionClass; /*0x719cec*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x719cff*/

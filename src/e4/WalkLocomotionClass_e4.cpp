@@ -196,8 +196,8 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x75c69a*/
   {
     a1[14] = 0; /*0x75c69c*/
-    *a1 = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a3*/
-    a1[1] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a9*/
+    *a1 = (int)&vt_WalkLocomotionClass; /*0x75c6a3*/
+    a1[1] = (int)&vt_WalkLocomotionClass; /*0x75c6a9*/
     a1[6] = (int)&vt_WalkLocomotionClass; /*0x75c6b0*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
@@ -285,8 +285,8 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(Block + 1) = (ILocomotion *)&WalkLocomotionClass::`vftable'; /*0x75cbe9*/
+  *Block = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbe3*/
+  *(Block + 1) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbe9*/
   *(Block + 6) = (ILocomotion *)&vt_WalkLocomotionClass; /*0x75cbf0*/
   v3 = *(Block + 14); /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/

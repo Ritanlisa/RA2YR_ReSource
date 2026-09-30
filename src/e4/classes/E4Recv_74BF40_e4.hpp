@@ -14,6 +14,6 @@ struct E4Recv_74BF40 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    void sub_74BF40(unsigned int a2);  // 0x74BF40
+    void  sub_74BF40(unsigned int a2);  // 0x74BF40
 };
 } // namespace gamemd

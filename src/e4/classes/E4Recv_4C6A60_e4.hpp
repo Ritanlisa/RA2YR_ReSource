@@ -15,6 +15,6 @@ struct E4Recv_4C6A60 {
     unsigned int M19;  // 0x13
     unsigned int M21;  // 0x21
 // --- flat members (END) ---
-    char * sub_4C6A60(int a2,  char a3,  int a4,  int a5,  unsigned short * a6);    // 0x4C6A60
+    char *  sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short * a6);  // 0x4C6A60
 };
 } // namespace gamemd

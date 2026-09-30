@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -200,10 +202,10 @@ struct JumpjetLocomotion {
     unsigned int v22;
     unsigned int q00C;
 // --- flat members (END) ---
-    char MoveTo(void * aP1, int aP3);  // 0x4B0AD0
-    char ProcessCollision(char a2);  // 0x4B0F20
-    char Update(unsigned char * a2, int a3, int a4);  // 0x4B2630
-    unsigned int * TransformCoords(void * aP1, void * aP2, void * aP3);  // 0x4B4780
+    char  MoveTo(void * aP1, int aP3);  // 0x4B0AD0
+    char  ProcessCollision(char a2);  // 0x4B0F20
+    char  Update(unsigned char * a2, int a3, int a4);  // 0x4B2630
+    unsigned int *  TransformCoords(void * aP1, void * aP2, void * aP3);  // 0x4B4780
     char Land();  // 0x54CA90
     int UpdateFacing();  // 0x54D0F0
 };

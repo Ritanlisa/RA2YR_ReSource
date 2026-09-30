@@ -20,8 +20,8 @@ struct WebBrowser {
     unsigned int Dialog;
     unsigned int field_8;
 // --- flat members (END) ---
-    char LoadURLFromRegistry(void * a2);  // 0x773600
-    HWNDShowDialog();  // 0x773E90
+    char  LoadURLFromRegistry(void * a2);  // 0x773600
+    HWND ShowDialog();  // 0x773E90
     int GoForward();  // 0x7740A0
     bool OpenURL();  // 0x551630
     int QueryInterface();  // 0x773A40

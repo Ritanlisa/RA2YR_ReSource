@@ -341,11 +341,11 @@ INIClass::INIClass()
   result[2] = 0; /*0x535aaf*/
   v2[1] = 0; /*0x535ab2*/
   v2[2] = 0; /*0x535ab5*/
-  *v2 = &GenericNode::`vftable'; /*0x535ab8*/
+  *v2 = &vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &GenericNode::`vftable'; /*0x535ac4*/
-  result[3] = &GenericList::`vftable'; /*0x535acd*/
+  result[7] = &vt_GenericNode; /*0x535ac4*/
+  result[3] = &vt_GenericList; /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -375,7 +375,7 @@ INIClass::INIClass()
   *((unsigned char *)result + 52) = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
-  *result = &INIClass::`vftable'; /*0x535b27*/
+  *result = &vt_INIClass; /*0x535b27*/
   return result; /*0x535b22*/
 
 }

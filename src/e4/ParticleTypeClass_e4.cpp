@@ -608,9 +608,9 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       ObjectTypeClass::Construct((unsigned int *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor((unsigned int *)(v3 + 696), 0, 0); /*0x645698*/
       *(unsigned int *)(v3 + 696) = &vt_TypeList_RGBClass; /*0x64569d*/
-      *(unsigned int *)v3 = &ParticleTypeClass::`vftable'; /*0x6456a3*/
-      *(unsigned int *)(v3 + 4) = &ParticleTypeClass::`vftable'; /*0x6456a9*/
-      *(unsigned int *)(v3 + 8) = &ParticleTypeClass::`vftable'; /*0x6456b0*/
+      *(unsigned int *)v3 = &vt_ParticleTypeClass; /*0x6456a3*/
+      *(unsigned int *)(v3 + 4) = &vt_ParticleTypeClass; /*0x6456a9*/
+      *(unsigned int *)(v3 + 8) = &vt_ParticleTypeClass; /*0x6456b0*/
       *(unsigned int *)(v3 + 12) = &vt_ParticleTypeClass; /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v3 + 740)); /*0x6456ca*/
@@ -685,9 +685,9 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   void *v5; // eax
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ParticleTypeClass::`vftable'; /*0x645956*/
-  *(Block + 1) = &ParticleTypeClass::`vftable'; /*0x64595c*/
-  *(Block + 2) = &ParticleTypeClass::`vftable'; /*0x645963*/
+  *Block = &vt_ParticleTypeClass; /*0x645956*/
+  *(Block + 1) = &vt_ParticleTypeClass; /*0x64595c*/
+  *(Block + 2) = &vt_ParticleTypeClass; /*0x645963*/
   *(Block + 3) = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x645971*/
   v7 = Block; /*0x645986*/

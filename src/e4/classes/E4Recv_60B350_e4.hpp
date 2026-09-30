@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_60B350 {
     void* vfptr;  // minimal E2 declaration
-    BOOL UI_Get_60B350();  // 0x60B350
+    BOOL  UI_Get_60B350(HWND hWnd);  // 0x60B350
 };
 } // namespace gamemd

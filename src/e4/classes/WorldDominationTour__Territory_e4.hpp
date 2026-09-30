@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -45,6 +47,6 @@ struct WorldDominationTour__Territory {
     void * q5684;  // 0x5684
     void * q6408;  // 0x6408
 // --- flat members (END) ---
-    char * Constructor(int aP1,  unsigned int * a2,  void * aP3,  const char ** a4,  void * aP5);    // 0x76F970
+    char *  Constructor(int aP1, unsigned int * a2, void * aP3, void * a4, void * aP5);  // 0x76F970
 };
 } // namespace gamemd

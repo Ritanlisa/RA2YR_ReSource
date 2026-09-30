@@ -39,9 +39,9 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
   *((unsigned int *)this + 12) = g_abs_A8ED84; /*0x43a372*/
-  *(unsigned int *)this = &NeuronClass::`vftable'; /*0x43a375*/
-  *((unsigned int *)this + 1) = &NeuronClass::`vftable'; /*0x43a37b*/
-  *((unsigned int *)this + 2) = &NeuronClass::`vftable'; /*0x43a382*/
+  *(unsigned int *)this = &vt_NeuronClass; /*0x43a375*/
+  *((unsigned int *)this + 1) = &vt_NeuronClass; /*0x43a37b*/
+  *((unsigned int *)this + 2) = &vt_NeuronClass; /*0x43a382*/
   *((unsigned int *)this + 3) = &vt_NeuronClass; /*0x43a389*/
   if ( g_abs_B0F5E8 < g_abs_B0F5E0 /*0x43a3c5*/
     || (g_abs_B0F5E5 || !g_abs_B0F5E0)
@@ -76,9 +76,9 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &NeuronClass::`vftable'; /*0x43a9cd*/
-  *(Block + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
-  *(Block + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
+  *Block = &vt_NeuronClass; /*0x43a9cd*/
+  *(Block + 1) = &vt_NeuronClass; /*0x43a9d3*/
+  *(Block + 2) = &vt_NeuronClass; /*0x43a9da*/
   *(Block + 3) = &vt_NeuronClass; /*0x43a9e1*/
   v6 = Block; /*0x43a9ef*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x43a9f3*/

@@ -29,6 +29,6 @@ struct E4Recv_771850 {
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_771850(int a2);  // 0x771850
+    unsigned int *  sub_771850(int a2);  // 0x771850
 };
 } // namespace gamemd

@@ -23,6 +23,6 @@ struct E4Recv_663DB0 {
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    bool LaunchMultiplayerHost(unsigned char * a2);  // 0x663DB0
+    bool  LaunchMultiplayerHost(unsigned __int8 * a2);  // 0x663DB0
 };
 } // namespace gamemd

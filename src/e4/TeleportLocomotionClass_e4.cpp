@@ -34,8 +34,8 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   *((unsigned int *)this + 17) = 0; /*0x718055*/
   *((unsigned int *)this + 15) = v2; /*0x718058*/
   *((unsigned int *)this + 18) = 0; /*0x71805b*/
-  *(unsigned int *)this = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
-  *((unsigned int *)this + 1) = &TeleportLocomotionClass::`vftable'; /*0x718064*/
+  *(unsigned int *)this = &vt_TeleportLocomotionClass; /*0x71805e*/
+  *((unsigned int *)this + 1) = &vt_TeleportLocomotionClass; /*0x718064*/
   *((unsigned int *)this + 6) = &vt_TeleportLocomotionClass; /*0x71806b*/
   return this; /*0x718074*/
 

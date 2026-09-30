@@ -36,9 +36,9 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
-  *(unsigned int *)this = &DiskLaserClass::`vftable'; /*0x4a7a3a*/
-  *((unsigned int *)this + 1) = &DiskLaserClass::`vftable'; /*0x4a7a40*/
-  *((unsigned int *)this + 2) = &DiskLaserClass::`vftable'; /*0x4a7a47*/
+  *(unsigned int *)this = &vt_DiskLaserClass; /*0x4a7a3a*/
+  *((unsigned int *)this + 1) = &vt_DiskLaserClass; /*0x4a7a40*/
+  *((unsigned int *)this + 2) = &vt_DiskLaserClass; /*0x4a7a47*/
   *((unsigned int *)this + 3) = &vt_DiskLaserClass; /*0x4a7a4e*/
   *((unsigned int *)this + 9) = 0; /*0x4a7a55*/
   *((unsigned int *)this + 10) = 0; /*0x4a7a58*/
@@ -68,9 +68,9 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
-  *(Block + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
-  *(Block + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
+  *Block = &vt_DiskLaserClass; /*0x4a7c9d*/
+  *(Block + 1) = &vt_DiskLaserClass; /*0x4a7ca3*/
+  *(Block + 2) = &vt_DiskLaserClass; /*0x4a7caa*/
   *(Block + 3) = &vt_DiskLaserClass; /*0x4a7cb1*/
   v5 = Block; /*0x4a7cbf*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_8A0208 + 16))(&g_abs_8A0208, &v5); /*0x4a7cc3*/
@@ -101,9 +101,9 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP0); /*0x4a7bb2*/
-      *(unsigned int *)aP0->__pad_0 = &DiskLaserClass::`vftable'; /*0x4a7bb7*/
-      *(unsigned int *)&aP0->__pad_0[4] = &DiskLaserClass::`vftable'; /*0x4a7bbd*/
-      *(unsigned int *)&aP0->__pad_0[8] = &DiskLaserClass::`vftable'; /*0x4a7bc4*/
+      *(unsigned int *)aP0->__pad_0 = &vt_DiskLaserClass; /*0x4a7bb7*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_DiskLaserClass; /*0x4a7bbd*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_DiskLaserClass; /*0x4a7bc4*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_DiskLaserClass; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x4a7bdb*/

@@ -10,6 +10,6 @@ struct E4Recv_759830 {
     unsigned int M476;  // 0x1DC
     unsigned int q4418;  // 0x4418
 // --- flat members (END) ---
-    int sub_759830(int a2);  // 0x759830
+    int  sub_759830(int a2);  // 0x759830
 };
 } // namespace gamemd

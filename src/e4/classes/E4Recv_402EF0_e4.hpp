@@ -22,6 +22,6 @@ struct E4Recv_402EF0 {
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void sub_402EF0();  // 0x402EF0
+    void  sub_402EF0(int * Block);  // 0x402EF0
 };
 } // namespace gamemd

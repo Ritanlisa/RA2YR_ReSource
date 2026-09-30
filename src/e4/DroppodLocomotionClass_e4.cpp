@@ -232,8 +232,8 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1[11] = 0; /*0x4b625c*/
-    *a1 = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    a1[1] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6269*/
+    *a1 = (int)&vt_DropPodLocomotionClass; /*0x4b6263*/
+    a1[1] = (int)&vt_DropPodLocomotionClass; /*0x4b6269*/
     a1[6] = (int)&vt_DropPodLocomotionClass; /*0x4b6270*/
   }
   v2->__pad_0->Read(v2, &pStm, 1, 0); /*0x4b6283*/
@@ -319,8 +319,8 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Bloc
 
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(Block + 1) = (ILocomotion *)&DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
+  *Block = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b66f3*/
+  *(Block + 1) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b66f9*/
   *(Block + 6) = (ILocomotion *)&vt_DropPodLocomotionClass; /*0x4b6700*/
   v3 = *(Block + 11); /*0x4b6707*/
   if ( v3 ) /*0x4b670c*/

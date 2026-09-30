@@ -61,6 +61,6 @@ struct E4Recv_752CB0 {
     unsigned int fallRate;
     unsigned int owningHouseIndex;
 // --- flat members (END) ---
-    int sub_752CB0(const char * a2);  // 0x752CB0
+    int  sub_752CB0(void * a2);  // 0x752CB0
 };
 } // namespace gamemd

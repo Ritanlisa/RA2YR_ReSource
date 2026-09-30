@@ -81,9 +81,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)this + 773) = 1; /*0x5448b5*/
   *((unsigned char *)this + 774) = 0; /*0x5448bc*/
   *((unsigned int *)this + 194) = 0; /*0x5448c2*/
-  *this = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
-  *((unsigned int *)this + 1) = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
-  *((unsigned int *)this + 2) = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
+  *this = &vt_IsometricTileTypeClass; /*0x5448c8*/
+  *((unsigned int *)this + 1) = &vt_IsometricTileTypeClass; /*0x5448cf*/
+  *((unsigned int *)this + 2) = &vt_IsometricTileTypeClass; /*0x5448d6*/
   *((unsigned int *)this + 3) = &vt_IsometricTileTypeClass; /*0x5448dd*/
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x544917*/
     || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
@@ -158,9 +158,9 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   *((unsigned char *)this + 691) = 0; /*0x71dae5*/
   *((unsigned char *)this + 692) = 0; /*0x71daeb*/
   *((unsigned int *)this + 174) = 0; /*0x71daf1*/
-  *this = &TerrainTypeClass::`vftable'; /*0x71daf7*/
-  *((unsigned int *)this + 1) = &TerrainTypeClass::`vftable'; /*0x71dafd*/
-  *((unsigned int *)this + 2) = &TerrainTypeClass::`vftable'; /*0x71db03*/
+  *this = &vt_TerrainTypeClass; /*0x71daf7*/
+  *((unsigned int *)this + 1) = &vt_TerrainTypeClass; /*0x71dafd*/
+  *((unsigned int *)this + 2) = &vt_TerrainTypeClass; /*0x71db03*/
   *((unsigned int *)this + 3) = &vt_TerrainTypeClass; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x71db11*/
   *((unsigned char *)this + 560) = 0; /*0x71db18*/
@@ -355,7 +355,7 @@ LABEL_6:
 
 }
 // 0x71E360
-TerrainTypeClass * TerrainTypeClass::ddtor(void ** this, void * a2, char a3)
+TerrainTypeClass * TerrainTypeClass::ddtor( void * a2, char a3)
 {
 
   CCINIClass *v3; // eax
@@ -363,9 +363,9 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void ** this, void * a2, char a3)
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (CCINIClass *)*(this + 41); /*0x71e364*/
-  *this = &TerrainTypeClass::`vftable'; /*0x71e36a*/
-  *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71e372*/
-  *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71e379*/
+  *this = &vt_TerrainTypeClass; /*0x71e36a*/
+  *(this + 1) = &vt_TerrainTypeClass; /*0x71e372*/
+  *(this + 2) = &vt_TerrainTypeClass; /*0x71e379*/
   *(this + 3) = &vt_TerrainTypeClass; /*0x71e380*/
   if ( v3 ) /*0x71e387*/
   {
@@ -508,9 +508,9 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP0); /*0x71e1ef*/
-      *(unsigned int *)aP0->__pad_0 = &TerrainTypeClass::`vftable'; /*0x71e1f4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TerrainTypeClass::`vftable'; /*0x71e1fa*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TerrainTypeClass::`vftable'; /*0x71e201*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TerrainTypeClass; /*0x71e1f4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TerrainTypeClass; /*0x71e1fa*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TerrainTypeClass; /*0x71e201*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TerrainTypeClass; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x71e211*/

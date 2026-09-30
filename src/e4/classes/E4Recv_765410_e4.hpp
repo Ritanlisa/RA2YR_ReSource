@@ -15,6 +15,6 @@ struct E4Recv_765410 {
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
 // --- flat members (END) ---
-    char * Team_Start_765410(void * aP1);  // 0x765410
+    char *  Team_Start_765410(void * aP1);  // 0x765410
 };
 } // namespace gamemd

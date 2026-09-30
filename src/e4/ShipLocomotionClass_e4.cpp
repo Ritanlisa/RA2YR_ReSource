@@ -32,7 +32,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1[26] = 0; /*0x69eeac*/
-    *a1 = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb3*/
+    *a1 = (int)&vt_ShipLocomotionClass; /*0x69eeb3*/
     a1[1] = (int)&vt_ShipLocomotionClass; /*0x69eeb9*/
     a1[6] = (int)&off_7F2D68; /*0x69eec0*/
   }
@@ -136,7 +136,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&ShipLocomotionClass::`vftable'; /*0x6a42b3*/
+  *Block = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b3*/
   *(Block + 1) = (ILocomotion *)&vt_ShipLocomotionClass; /*0x6a42b9*/
   *(Block + 6) = (ILocomotion *)&off_7F2D68; /*0x6a42c0*/
   v3 = *(Block + 26); /*0x6a42c7*/

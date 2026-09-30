@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -26,6 +28,6 @@ struct E4Recv_5BCB90 {
     unsigned int q4004;  // 0x4004
     unsigned int q4008;  // 0x4008
 // --- flat members (END) ---
-    ObjectClass * sub_5BCB90(int a2);  // 0x5BCB90
+    ObjectClass *  sub_5BCB90(int a2);  // 0x5BCB90
 };
 } // namespace gamemd

@@ -252,9 +252,9 @@ int BuildingTypeClass::ConstructFull(char * Source)
   *((unsigned int *)this + 1505) = &vt_VectorClass_TPoint3D_int; /*0x45e2ab*/
   *((unsigned int *)this + 1506) = RA2_OPNEW(0xCu); /*0x45e2ba*/
   *((unsigned char *)this + 6033) = 1; /*0x45e2c6*/
-  *(unsigned int *)this = &BuildingTypeClass::`vftable'; /*0x45e2cd*/
-  *((unsigned int *)this + 1) = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
-  *((unsigned int *)this + 2) = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
+  *(unsigned int *)this = &vt_BuildingTypeClass; /*0x45e2cd*/
+  *((unsigned int *)this + 1) = &vt_BuildingTypeClass; /*0x45e2d3*/
+  *((unsigned int *)this + 2) = &vt_BuildingTypeClass; /*0x45e2d9*/
   *((unsigned int *)this + 3) = &vt_BuildingTypeClass; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x45e2e8*/
   v4 = g_TriggerClassCount; /*0x45e2ed*/
@@ -406,9 +406,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   *((unsigned char *)this + 6032) = 1; /*0x45e541*/
   *((unsigned char *)this + 6033) = 0; /*0x45e548*/
   *((unsigned int *)this + 1505) = &vt_VectorClass_TPoint3D_int; /*0x45e54e*/
-  *this = &BuildingTypeClass::`vftable'; /*0x45e558*/
-  *((unsigned int *)this + 1) = &BuildingTypeClass::`vftable'; /*0x45e55e*/
-  *((unsigned int *)this + 2) = &BuildingTypeClass::`vftable'; /*0x45e565*/
+  *this = &vt_BuildingTypeClass; /*0x45e558*/
+  *((unsigned int *)this + 1) = &vt_BuildingTypeClass; /*0x45e55e*/
+  *((unsigned int *)this + 2) = &vt_BuildingTypeClass; /*0x45e565*/
   *((unsigned int *)this + 3) = &vt_BuildingTypeClass; /*0x45e56c*/
   return this; /*0x45e575*/
 
@@ -425,9 +425,9 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   nextArrayIndex = (unsigned int)(a1[99].nextArrayIndex);
-  *(unsigned int *)a1->__pad_0 = &BuildingTypeClass::`vftable'; /*0x45e58d*/
-  *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[4] = &BuildingTypeClass::`vftable'; /*0x45e595*/
-  *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[8] = &BuildingTypeClass::`vftable'; /*0x45e59c*/
+  *(unsigned int *)a1->__pad_0 = &vt_BuildingTypeClass; /*0x45e58d*/
+  *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[4] = &vt_BuildingTypeClass; /*0x45e595*/
+  *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[8] = &vt_BuildingTypeClass; /*0x45e59c*/
   *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[12] = &vt_BuildingTypeClass; /*0x45e5a3*/
   if ( nextArrayIndex && a1[99].abstractFlags ) /*0x45e5ac*/
   {
@@ -499,7 +499,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
 } // namespace gamemd
 // 0x45E970
 namespace gamemd {
-AbstractClass * * BuildingTypeClass::LoadRepairAnimations(void * this)
+AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 {
 
   ObjectTypeClass *v1; // ecx
@@ -1720,9 +1720,9 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   *((unsigned char *)this + 783) = 0; /*0x644ce2*/
   *((unsigned int *)this + 196) = -1; /*0x644ce8*/
   *((unsigned int *)this + 197) = -1; /*0x644cee*/
-  *this = &ParticleTypeClass::`vftable'; /*0x644cf4*/
-  *((unsigned int *)this + 1) = &ParticleTypeClass::`vftable'; /*0x644cfa*/
-  *((unsigned int *)this + 2) = &ParticleTypeClass::`vftable'; /*0x644d01*/
+  *this = &vt_ParticleTypeClass; /*0x644cf4*/
+  *((unsigned int *)this + 1) = &vt_ParticleTypeClass; /*0x644cfa*/
+  *((unsigned int *)this + 2) = &vt_ParticleTypeClass; /*0x644d01*/
   *((unsigned int *)this + 3) = &vt_ParticleTypeClass; /*0x644d08*/
   if ( (int)g_abs_A83DA8 < g_abs_A83DA0 /*0x644d43*/
     || (g_abs_A83DA5 || !g_abs_A83DA0)

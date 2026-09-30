@@ -1,6 +1,8 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -21,7 +23,7 @@ struct GameConfig {
     unsigned int __pad_0;
 // --- flat members (END) ---
      void * Constructor(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x5D67B0
-    static int BuildChecksum(void * aP1);  // 0x77E7A0
+    static int  BuildChecksum(char * Buffer);  // 0x77E7A0
     char * ComputeCRC();
     int ComputeHash();
 };

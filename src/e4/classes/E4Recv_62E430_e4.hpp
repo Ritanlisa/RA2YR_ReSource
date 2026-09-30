@@ -13,6 +13,6 @@ struct E4Recv_62E430 {
     unsigned int q1030;  // 0x1030
     unsigned int q4144;  // 0x4144
 // --- flat members (END) ---
-    int CreateFireAtSW(int aP1,  void* aP2);    // 0x62E430
+    int  CreateFireAtSW(int aP1, void * aP2);  // 0x62E430
 };
 } // namespace gamemd

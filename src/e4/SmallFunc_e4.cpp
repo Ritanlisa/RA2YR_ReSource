@@ -190,7 +190,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   *((unsigned int *)this + 10) = g_abs_ABEE14; /*0x5aff26*/
   v2 = g_abs_ABEE18; /*0x5aff29*/
   *((unsigned char *)this + 48) = 0; /*0x5aff2e*/
-  *(unsigned int *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
+  *(unsigned int *)this = &vt_MechLocomotionClass; /*0x5aff32*/
   *((unsigned int *)this + 11) = v2; /*0x5aff38*/
   *((unsigned int *)this + 1) = &vt_MechLocomotionClass; /*0x5aff3b*/
   return this; /*0x5aff44*/
@@ -305,7 +305,7 @@ int E4Recv_728A00::sub_728A00()
   *((unsigned int *)this + 12) = 0; /*0x728a33*/
   *((unsigned int *)this + 13) = 0; /*0x728a36*/
   *((unsigned char *)this + 56) = 0; /*0x728a39*/
-  *(unsigned int *)this = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
+  *(unsigned int *)this = &vt_TunnelLocomotionClass; /*0x728a3c*/
   *((unsigned int *)this + 1) = &vt_TunnelLocomotionClass; /*0x728a42*/
   return this; /*0x728a4b*/
 

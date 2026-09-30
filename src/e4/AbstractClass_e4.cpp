@@ -51,9 +51,9 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       *(unsigned int *)&v5[2].__pad_0[12] = 0; /*0x438ecb*/
-      *(unsigned int *)v5->__pad_0 = &BombClass::`vftable'; /*0x438ece*/
-      *(unsigned int *)&v5->__pad_0[4] = &BombClass::`vftable'; /*0x438ed4*/
-      *(unsigned int *)&v5->__pad_0[8] = &BombClass::`vftable'; /*0x438edb*/
+      *(unsigned int *)v5->__pad_0 = &vt_BombClass; /*0x438ece*/
+      *(unsigned int *)&v5->__pad_0[4] = &vt_BombClass; /*0x438ed4*/
+      *(unsigned int *)&v5->__pad_0[8] = &vt_BombClass; /*0x438edb*/
       *(unsigned int *)&v5->__pad_0[12] = &vt_BombClass; /*0x438ee2*/
       *(unsigned int *)&v5[1].__pad_0[4] = 0; /*0x438ee9*/
       *(unsigned int *)&v5[1].__pad_0[8] = 0; /*0x438eec*/
@@ -717,9 +717,9 @@ namespace gamemd {
 void AbstractClass::DTOR()
 {
 
-  *this = &AbstractClass::`vftable'; /*0x4101f0*/
-  *((unsigned int *)this + 1) = &AbstractClass::`vftable'; /*0x4101f6*/
-  *((unsigned int *)this + 2) = &AbstractClass::`vftable'; /*0x4101fd*/
+  *this = &vt_AbstractClass; /*0x4101f0*/
+  *((unsigned int *)this + 1) = &vt_AbstractClass; /*0x4101f6*/
+  *((unsigned int *)this + 2) = &vt_AbstractClass; /*0x4101fd*/
   *((unsigned int *)this + 3) = &vt_AbstractClass; /*0x410204*/
 
 }
@@ -1654,9 +1654,9 @@ namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
 {
 
-  *Block = &MissionClass::`vftable'; /*0x5b3a63*/
-  *(Block + 1) = &MissionClass::`vftable'; /*0x5b3a69*/
-  *(Block + 2) = &MissionClass::`vftable'; /*0x5b3a70*/
+  *Block = &vt_MissionClass; /*0x5b3a63*/
+  *(Block + 1) = &vt_MissionClass; /*0x5b3a69*/
+  *(Block + 2) = &vt_MissionClass; /*0x5b3a70*/
   *(Block + 3) = &vt_MissionClass; /*0x5b3a77*/
   ObjectClass::Dtor(Block); /*0x5b3a7e*/
   if ( (Block & 1) != 0 ) /*0x5b3a88*/

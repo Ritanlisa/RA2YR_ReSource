@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -18,6 +19,6 @@ struct VectorClass_Scenario3 {
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
 // --- flat members (END) ---
-    char ResizeAndCopy(int a2,  unsigned int * a3);    // 0x5D8590
+    char  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8590
 };
 } // namespace gamemd

@@ -28,13 +28,13 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
   *(this + 13) = 2; /*0x55478f*/
   *(this + 14) = a2; /*0x554796*/
   *((unsigned char *)this + 72) = 0; /*0x55479c*/
-  *this = &LightSourceClass::`vftable'; /*0x5547a0*/
+  *this = &vt_LightSourceClass; /*0x5547a0*/
   *(this + 15) = a3; /*0x5547a6*/
   *(this + 17) = a5; /*0x5547ad*/
-  *(this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
+  *(this + 1) = &vt_LightSourceClass; /*0x5547b0*/
   *(this + 16) = a4; /*0x5547b7*/
-  *(this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
-  *(this + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
+  *(this + 2) = &vt_LightSourceClass; /*0x5547ba*/
+  *(this + 3) = &vt_LightSourceClass; /*0x5547c1*/
   if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5547fd*/
     || (g_abs_ABCA1D || !g_abs_ABCA18)
     && g_abs_ABCA24 > 0
@@ -69,10 +69,10 @@ void LightSourceClass::Constructor()
   *(unsigned int *)(this + 68) = 0; /*0x554860*/
   *(unsigned char *)(this + 72) = 0; /*0x554863*/
   *(unsigned int *)(this + 64) = v2; /*0x554866*/
-  *(unsigned int *)this = &LightSourceClass::`vftable'; /*0x554869*/
-  *(unsigned int *)(this + 4) = &LightSourceClass::`vftable'; /*0x55486f*/
-  *(unsigned int *)(this + 8) = &LightSourceClass::`vftable'; /*0x554876*/
-  *(unsigned int *)(this + 12) = &LightSourceClass::`vftable'; /*0x55487d*/
+  *(unsigned int *)this = &vt_LightSourceClass; /*0x554869*/
+  *(unsigned int *)(this + 4) = &vt_LightSourceClass; /*0x55486f*/
+  *(unsigned int *)(this + 8) = &vt_LightSourceClass; /*0x554876*/
+  *(unsigned int *)(this + 12) = &vt_LightSourceClass; /*0x55487d*/
   if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5548b6*/
     || (g_abs_ABCA1D || !g_abs_ABCA18)
     && g_abs_ABCA24 > 0
@@ -125,9 +125,9 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x5550df*/
-      *(unsigned int *)aP0->__pad_0 = &LightSourceClass::`vftable'; /*0x5550e4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &LightSourceClass::`vftable'; /*0x5550ea*/
-      *(unsigned int *)&aP0->__pad_0[8] = &LightSourceClass::`vftable'; /*0x5550f1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_LightSourceClass; /*0x5550e4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_LightSourceClass; /*0x5550ea*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_LightSourceClass; /*0x5550f1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_LightSourceClass; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
@@ -176,9 +176,9 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &LightSourceClass::`vftable'; /*0x555156*/
-  *(Block + 1) = &LightSourceClass::`vftable'; /*0x55515c*/
-  *(Block + 2) = &LightSourceClass::`vftable'; /*0x555163*/
+  *Block = &vt_LightSourceClass; /*0x555156*/
+  *(Block + 1) = &vt_LightSourceClass; /*0x55515c*/
+  *(Block + 2) = &vt_LightSourceClass; /*0x555163*/
   *(Block + 3) = &vt_LightSourceClass; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x555171*/
   v5 = Block; /*0x555186*/

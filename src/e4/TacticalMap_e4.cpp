@@ -276,10 +276,10 @@ void TacticalMap::Construct()
   *((unsigned int *)this + 873) = ((int (*)(int))Timer::GetTicks)((char *)this + 3496); /*0x6d1d35*/
   *((unsigned int *)this + 875) = 0; /*0x6d1d3b*/
   *((unsigned int *)this + 876) = 0; /*0x6d1d4e*/
-  *(unsigned int *)this = &Tactical::`vftable'; /*0x6d1d54*/
-  *((unsigned int *)this + 1) = &Tactical::`vftable'; /*0x6d1d5a*/
-  *((unsigned int *)this + 2) = &Tactical::`vftable'; /*0x6d1d61*/
-  *((unsigned int *)this + 3) = &Tactical::`vftable'; /*0x6d1d68*/
+  *(unsigned int *)this = &vt_Tactical; /*0x6d1d54*/
+  *((unsigned int *)this + 1) = &vt_Tactical; /*0x6d1d5a*/
+  *((unsigned int *)this + 2) = &vt_Tactical; /*0x6d1d61*/
+  *((unsigned int *)this + 3) = &vt_Tactical; /*0x6d1d68*/
   memset((void *)((char *)this + 228), 0, 0xC80u); /*0x6d1d6f*/
   *((unsigned short *)this + 18) = 0; /*0x6d1d77*/
   *((unsigned int *)this + 41) = -1; /*0x6d1d7d*/

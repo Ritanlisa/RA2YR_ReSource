@@ -31,7 +31,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1,  ObjectClass * aP2,  vo
   *((unsigned char *)this + 56) = (unsigned char)aP12; /*0x779700*/
   WideString::AssignFromPtr((wchar_t **)this + 15, (const wchar_t **)aP14); /*0x779703*/
   WideString::AssignFromPtr((wchar_t **)this + 16, (const wchar_t **)aP13); /*0x779710*/
-  *(unsigned int *)this = &PlayerProfile::`vftable'; /*0x779715*/
+  *(unsigned int *)this = &vt_PlayerProfile; /*0x779715*/
   return this; /*0x77971d*/
 
 }

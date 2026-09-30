@@ -36,10 +36,10 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   *((unsigned int *)this + 14) = 10; /*0x4717f6*/
   *((unsigned int *)this + 13) = 0; /*0x4717fd*/
   *((unsigned int *)this + 18) = a2; /*0x471800*/
-  *(unsigned int *)this = &CaptureManagerClass::`vftable'; /*0x471807*/
-  *((unsigned int *)this + 1) = &CaptureManagerClass::`vftable'; /*0x47180d*/
-  *((unsigned int *)this + 2) = &CaptureManagerClass::`vftable'; /*0x471814*/
-  *((unsigned int *)this + 3) = &CaptureManagerClass::`vftable'; /*0x47181b*/
+  *(unsigned int *)this = &vt_CaptureManagerClass; /*0x471807*/
+  *((unsigned int *)this + 1) = &vt_CaptureManagerClass; /*0x47180d*/
+  *((unsigned int *)this + 2) = &vt_CaptureManagerClass; /*0x471814*/
+  *((unsigned int *)this + 3) = &vt_CaptureManagerClass; /*0x47181b*/
   *((unsigned int *)this + 15) = a3; /*0x471822*/
   *((unsigned char *)this + 64) = a4; /*0x471825*/
   *((unsigned char *)this + 65) = 0; /*0x471828*/
@@ -818,9 +818,9 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)(v3 + 36) = &vt_DynamicVectorClass_ControlNode; /*0x47275c*/
       *(unsigned int *)(v3 + 56) = 10; /*0x472762*/
       *(unsigned int *)(v3 + 52) = 0; /*0x472769*/
-      *(unsigned int *)v3 = &CaptureManagerClass::`vftable'; /*0x47276c*/
-      *(unsigned int *)(v3 + 4) = &CaptureManagerClass::`vftable'; /*0x472773*/
-      *(unsigned int *)(v3 + 8) = &CaptureManagerClass::`vftable'; /*0x47277a*/
+      *(unsigned int *)v3 = &vt_CaptureManagerClass; /*0x47276c*/
+      *(unsigned int *)(v3 + 4) = &vt_CaptureManagerClass; /*0x472773*/
+      *(unsigned int *)(v3 + 8) = &vt_CaptureManagerClass; /*0x47277a*/
       *(unsigned int *)(v3 + 12) = &vt_CaptureManagerClass; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v3 + 72)); /*0x472791*/
@@ -1051,9 +1051,9 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   void *v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &CaptureManagerClass::`vftable'; /*0x4729cd*/
-  *(Block + 1) = &CaptureManagerClass::`vftable'; /*0x4729d3*/
-  *(Block + 2) = &CaptureManagerClass::`vftable'; /*0x4729da*/
+  *Block = &vt_CaptureManagerClass; /*0x4729cd*/
+  *(Block + 1) = &vt_CaptureManagerClass; /*0x4729d3*/
+  *(Block + 2) = &vt_CaptureManagerClass; /*0x4729da*/
   *(Block + 3) = &vt_CaptureManagerClass; /*0x4729e1*/
   v6 = Block; /*0x4729ef*/
   v3 = (*(int (**)(int *, unsigned int **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/

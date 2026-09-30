@@ -113,6 +113,6 @@ struct E4Recv_4B53E0 {
     unsigned int q6038;  // 0x6038
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_4B53E0(int a2);  // 0x4B53E0
+    int  sub_4B53E0(int a2);  // 0x4B53E0
 };
 } // namespace gamemd

@@ -9,6 +9,6 @@ struct MixFile {
     void* vfptr;  // minimal E2 declaration
     bool LoadAll();  // 0x530460
     char LoadSide();  // 0x534FA0
-    unsigned int * Load(void * aP1);  // 0x627590
+    unsigned int *  Load(void * aP1);  // 0x627590
 };
 } // namespace gamemd

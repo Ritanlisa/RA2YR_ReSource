@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -147,8 +149,8 @@ struct VoxelAnimType {
     unsigned int u32_106;
     unsigned int u32_5205;
 // --- flat members (END) ---
-    char LoadSection(void * a2, int a3);  // 0x5F7A90
-    char LoadBarrel(void * a2, int a3);  // 0x5F7DB0
+    char  LoadSection(void * a2, int a3);  // 0x5F7A90
+    char  LoadBarrel(void * a2, int a3);  // 0x5F7DB0
     int LoadAnim();  // 0x5F8110
 };
 } // namespace gamemd

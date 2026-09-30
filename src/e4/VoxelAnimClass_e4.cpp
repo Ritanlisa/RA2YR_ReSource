@@ -105,9 +105,9 @@ int VoxelAnimClass::CleanupMembers()
   int v4; // eax
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
-  *((unsigned int *)this + 1) = &VoxelAnimClass::`vftable'; /*0x7499fc*/
-  *((unsigned int *)this + 2) = &VoxelAnimClass::`vftable'; /*0x749a03*/
+  *(unsigned int *)this = &vt_VoxelAnimClass; /*0x7499f6*/
+  *((unsigned int *)this + 1) = &vt_VoxelAnimClass; /*0x7499fc*/
+  *((unsigned int *)this + 2) = &vt_VoxelAnimClass; /*0x749a03*/
   *((unsigned int *)this + 3) = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
@@ -312,9 +312,9 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x74a989*/
     {
       ObjectClass::Init(aP1, (AbstractClass *)&aP1a); /*0x74a992*/
-      *(unsigned int *)aP1->__pad_0 = &VoxelAnimClass::`vftable'; /*0x74a997*/
-      *(unsigned int *)&aP1->__pad_0[4] = &VoxelAnimClass::`vftable'; /*0x74a99d*/
-      *(unsigned int *)&aP1->__pad_0[8] = &VoxelAnimClass::`vftable'; /*0x74a9a4*/
+      *(unsigned int *)aP1->__pad_0 = &vt_VoxelAnimClass; /*0x74a997*/
+      *(unsigned int *)&aP1->__pad_0[4] = &vt_VoxelAnimClass; /*0x74a99d*/
+      *(unsigned int *)&aP1->__pad_0[8] = &vt_VoxelAnimClass; /*0x74a9a4*/
       *(unsigned int *)&aP1->__pad_0[12] = &vt_VoxelAnimClass; /*0x74a9ab*/
     }
     AudioController::Init(&aP1[1].bombVisible); /*0x74a9b8*/
@@ -390,8 +390,8 @@ int VoxelAnimClass::Reset()
   *((unsigned char *)this + 53) = 0; /*0x75aad6*/
   *((unsigned char *)this + 54) = 0; /*0x75aad9*/
   *((unsigned int *)this + 14) = 0; /*0x75aadc*/
-  *(unsigned int *)this = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
-  *((unsigned int *)this + 1) = &WalkLocomotionClass::`vftable'; /*0x75aae5*/
+  *(unsigned int *)this = &vt_WalkLocomotionClass; /*0x75aadf*/
+  *((unsigned int *)this + 1) = &vt_WalkLocomotionClass; /*0x75aae5*/
   *((unsigned int *)this + 6) = &vt_WalkLocomotionClass; /*0x75aaec*/
   return this; /*0x75aaf5*/
 
@@ -431,8 +431,8 @@ int VoxelAnimClass::Constructor()
   *((unsigned int *)this + 124) = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
   *((unsigned int *)this + 129) = 10; /*0x75ec9a*/
   *((unsigned int *)this + 128) = 0; /*0x75eca4*/
-  *(unsigned int *)this = &WaveClass::`vftable'; /*0x75ecaa*/
-  *((unsigned int *)this + 1) = &WaveClass::`vftable'; /*0x75ecb0*/
+  *(unsigned int *)this = &vt_WaveClass; /*0x75ecaa*/
+  *((unsigned int *)this + 1) = &vt_WaveClass; /*0x75ecb0*/
   *((unsigned int *)this + 2) = &vt_WaveClass; /*0x75ecb7*/
   *((unsigned int *)this + 3) = &off_7F6BC8; /*0x75ecbe*/
   if ( g_abs_A8EC48 < g_abs_A8EC40 /*0x75ecfb*/

@@ -77,15 +77,15 @@ struct Math {
     unsigned int u32_41;
 // --- flat members (END) ---
     void Hypotenuse2D();  // 0x41C350
-    double Sin(double a1);  // 0x4CAD50
-    float * BuildRotationMatrix(float * a2, float a3, void *a1 = 0);    // 0x5AE750
-    int DistSq2D(void * aP1);  // 0x5F6560
-    unsigned int * QuaternionSlerp(unsigned int * a1,  float * a2,  float * a3,  float a4);    // 0x646590
-    double ArcTan(double a1);  // 0x4CADE0
+    double  Sin(double a1);  // 0x4CAD50
+    float *  BuildRotationMatrix(float * a2, float a3);  // 0x5AE750
+    int  DistSq2D(void * aP1);  // 0x5F6560
+    unsigned int *  QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
+    double  ArcTan(double a1);  // 0x4CADE0
     void InitArcTan();  // 0x473650
-    double ArcTan2_Table(double a1);  // 0x4CADB0
-    void* Sub16(void * aP1,  void* aP2);    // 0x5B2950
-    bool Abs16Cmp(void* aP1,  void* aP2);    // 0x5B2990
+    double  ArcTan2_Table(double a1);  // 0x4CADB0
+    void*  Sub16(void * aP1, void * aP2);  // 0x5B2950
+    bool  Abs16Cmp(void * aP1, void * aP2);  // 0x5B2990
     static double ArcTan2(...);  // C2597 interim stub
     static double CalcAngle(...);  // C2597 interim stub
     static double InitDegToRad(...);  // C2597 interim stub

@@ -101,7 +101,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
   int v7; // eax
 
   v4 = *((unsigned int *)Block + 2); /*0x4a3116*/
-  *(unsigned int *)Block = &CStreamClass::`vftable'; /*0x4a3119*/
+  *(unsigned int *)Block = &vt_CStreamClass; /*0x4a3119*/
   *((unsigned int *)Block + 1) = &vt_CStreamClass; /*0x4a3121*/
   if ( v4 ) /*0x4a3128*/
   {

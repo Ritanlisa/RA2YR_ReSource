@@ -227,9 +227,9 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   *((unsigned int *)this + 162) = 0; /*0x5f723d*/
   *((unsigned char *)this + 652) = 0; /*0x5f7243*/
   *((unsigned int *)this + 164) = 0; /*0x5f7249*/
-  *(unsigned int *)this = &ObjectTypeClass::`vftable'; /*0x5f7251*/
-  *((unsigned int *)this + 1) = &ObjectTypeClass::`vftable'; /*0x5f7258*/
-  *((unsigned int *)this + 2) = &ObjectTypeClass::`vftable'; /*0x5f725f*/
+  *(unsigned int *)this = &vt_ObjectTypeClass; /*0x5f7251*/
+  *((unsigned int *)this + 1) = &vt_ObjectTypeClass; /*0x5f7258*/
+  *((unsigned int *)this + 2) = &vt_ObjectTypeClass; /*0x5f725f*/
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f7266*/
   if ( (char *)this + 36 != (char *)this + 504 ) /*0x5f726d*/
     qmemcpy((void *)((char *)this + 504), (const void *)((char *)this + 36), 0x19u); /*0x5f7274*/
@@ -315,9 +315,9 @@ BulletTypeClass * ObjectTypeClass::Construct( ObjectTypeClass * aP1)
   *(this + 162) = 0; /*0x5f73c7*/
   *((unsigned char *)this + 652) = 0; /*0x5f73cd*/
   *(this + 164) = 0; /*0x5f73d3*/
-  *this = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
-  *(this + 1) = &ObjectTypeClass::`vftable'; /*0x5f73df*/
-  *(this + 2) = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
+  *this = &vt_ObjectTypeClass; /*0x5f73d9*/
+  *(this + 1) = &vt_ObjectTypeClass; /*0x5f73df*/
+  *(this + 2) = &vt_ObjectTypeClass; /*0x5f73e6*/
   *(this + 3) = &vt_ObjectTypeClass; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 
@@ -335,9 +335,9 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int v6; // ebx
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
-  *((unsigned int *)this + 1) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
-  *((unsigned int *)this + 2) = &ObjectTypeClass::`vftable'; /*0x5f7418*/
+  *(unsigned int *)this = &vt_ObjectTypeClass; /*0x5f740b*/
+  *((unsigned int *)this + 1) = &vt_ObjectTypeClass; /*0x5f7411*/
+  *((unsigned int *)this + 2) = &vt_ObjectTypeClass; /*0x5f7418*/
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (**)(int *, int *))(g_abs_AC1418 + 16))(&g_abs_AC1418, &v8); /*0x5f7435*/

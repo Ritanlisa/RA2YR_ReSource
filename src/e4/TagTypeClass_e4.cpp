@@ -33,9 +33,9 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
-  *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
-  *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
-  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
+  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5b8e*/
+  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5b95*/
+  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5b9c*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
@@ -92,9 +92,9 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   int v8; // eax
   TagTypeClass * v10;
 
-  *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
-  *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5cad*/
-  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5cb4*/
+  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5ca7*/
+  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5cad*/
+  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5cb4*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
   v2 = *(unsigned int **)((char *)this + 160); /*0x6e5cc7*/
@@ -339,9 +339,9 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6e642f*/
-      *(unsigned int *)aP0->__pad_0 = &TagTypeClass::`vftable'; /*0x6e6434*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TagTypeClass::`vftable'; /*0x6e643a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TagTypeClass::`vftable'; /*0x6e6441*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TagTypeClass; /*0x6e6434*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TagTypeClass; /*0x6e643a*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TagTypeClass; /*0x6e6441*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TagTypeClass; /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking( /*0x6e645b*/

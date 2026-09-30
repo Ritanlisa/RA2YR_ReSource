@@ -19,6 +19,6 @@ struct E4Recv_5AD9F0 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_5AD9F0(int a2,  int a3);    // 0x5AD9F0
+    unsigned int *  sub_5AD9F0(int a2, int a3);  // 0x5AD9F0
 };
 } // namespace gamemd

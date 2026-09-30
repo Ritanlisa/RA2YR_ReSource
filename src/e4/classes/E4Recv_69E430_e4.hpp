@@ -38,6 +38,6 @@ struct E4Recv_69E430 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void* LoadSHPFile(char * Source);  // 0x69E430
+    void*  LoadSHPFile(void * lpBuffer, char * Source);  // 0x69E430
 };
 } // namespace gamemd

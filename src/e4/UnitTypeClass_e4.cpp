@@ -106,9 +106,9 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   *((unsigned char *)this + 3676) = 12; /*0x7471ab*/
   *((unsigned char *)this + 3677) = 0; /*0x7471b2*/
   *((unsigned char *)this + 3678) = 0; /*0x7471b8*/
-  *(unsigned int *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
-  *((unsigned int *)this + 1) = &UnitTypeClass::`vftable'; /*0x7471c5*/
-  *((unsigned int *)this + 2) = &UnitTypeClass::`vftable'; /*0x7471cb*/
+  *(unsigned int *)this = &vt_UnitTypeClass; /*0x7471bf*/
+  *((unsigned int *)this + 1) = &vt_UnitTypeClass; /*0x7471c5*/
+  *((unsigned int *)this + 2) = &vt_UnitTypeClass; /*0x7471cb*/
   *((unsigned int *)this + 3) = &vt_UnitTypeClass; /*0x7471d2*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x7471d9*/
   *((unsigned int *)this + 454) = 32; /*0x7471de*/
@@ -714,9 +714,9 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct(a1, (int)&v3); /*0x748038*/
-      *(unsigned int *)a1 = &UnitTypeClass::`vftable'; /*0x74803d*/
-      *(unsigned int *)(a1 + 4) = &UnitTypeClass::`vftable'; /*0x748043*/
-      *(unsigned int *)(a1 + 8) = &UnitTypeClass::`vftable'; /*0x74804a*/
+      *(unsigned int *)a1 = &vt_UnitTypeClass; /*0x74803d*/
+      *(unsigned int *)(a1 + 4) = &vt_UnitTypeClass; /*0x748043*/
+      *(unsigned int *)(a1 + 8) = &vt_UnitTypeClass; /*0x74804a*/
       *(unsigned int *)(a1 + 12) = &vt_UnitTypeClass; /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
@@ -772,9 +772,9 @@ UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &UnitTypeClass::`vftable'; /*0x748196*/
-  *(Block + 1) = &UnitTypeClass::`vftable'; /*0x74819c*/
-  *(Block + 2) = &UnitTypeClass::`vftable'; /*0x7481a3*/
+  *Block = &vt_UnitTypeClass; /*0x748196*/
+  *(Block + 1) = &vt_UnitTypeClass; /*0x74819c*/
+  *(Block + 2) = &vt_UnitTypeClass; /*0x7481a3*/
   *(Block + 3) = &vt_UnitTypeClass; /*0x7481aa*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x7481b1*/
   v5 = Block; /*0x7481c6*/

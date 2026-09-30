@@ -692,10 +692,10 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     if ( v2 ) /*0x41b4d3*/
     {
       FootClass::PostLoadInit(v2, (int)&a0); /*0x41b4dc*/
-      *(unsigned int *)v2->__pad_0 = &AircraftClass::`vftable'; /*0x41b4e1*/
-      *v3 = &AircraftClass::`vftable'; /*0x41b4e7*/
-      *(unsigned int *)&v2->__pad_0[8] = &AircraftClass::`vftable'; /*0x41b4ed*/
-      *(unsigned int *)&v2->__pad_0[12] = &AircraftClass::`vftable'; /*0x41b4f4*/
+      *(unsigned int *)v2->__pad_0 = &vt_AircraftClass; /*0x41b4e1*/
+      *v3 = &vt_AircraftClass; /*0x41b4e7*/
+      *(unsigned int *)&v2->__pad_0[8] = &vt_AircraftClass; /*0x41b4ed*/
+      *(unsigned int *)&v2->__pad_0[12] = &vt_AircraftClass; /*0x41b4f4*/
       *(unsigned int *)v2[1].__pad_0 = &vt_AircraftClass; /*0x41b4fb*/
     }
     v11 = v2->locomotor[0]; /*0x41b506*/

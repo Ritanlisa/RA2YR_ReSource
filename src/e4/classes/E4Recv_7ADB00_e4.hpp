@@ -11,6 +11,6 @@ struct E4Recv_7ADB00 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     int Vf0(int,  ...);    // G6 vtable slot dispatch
-    char sub_7ADB00(unsigned int * a2,  int a3);    // 0x7ADB00
+    char  sub_7ADB00(unsigned int * a2, int a3);  // 0x7ADB00
 };
 } // namespace gamemd

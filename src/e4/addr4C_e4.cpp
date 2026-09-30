@@ -3500,7 +3500,7 @@ namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
 
-  *this = &FlyLocomotionClass::`vftable'; /*0x4cca70*/
+  *this = &vt_FlyLocomotionClass; /*0x4cca70*/
   *((unsigned int *)this + 1) = &vt_FlyLocomotionClass; /*0x4cca76*/
   LocomotionClass::Construct(this); /*0x4cca7d*/
 

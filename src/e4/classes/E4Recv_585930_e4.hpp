@@ -17,6 +17,6 @@ struct E4Recv_585930 {
     unsigned int q5128;  // 0x5128
     unsigned int q5138;  // 0x5138
 // --- flat members (END) ---
-    void FloodFillConnectedCells(void * aP1,  int a3);    // 0x585930
+    void  FloodFillConnectedCells(void * aP1, int a3);  // 0x585930
 };
 } // namespace gamemd

@@ -35,9 +35,9 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   *((unsigned int *)this + 83) = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
   *((unsigned int *)this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
   *((unsigned int *)this + 97) = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
-  *this = &HouseTypeClass::`vftable'; /*0x51167b*/
-  *((unsigned int *)this + 1) = &HouseTypeClass::`vftable'; /*0x511681*/
-  *((unsigned int *)this + 2) = &HouseTypeClass::`vftable'; /*0x511688*/
+  *this = &vt_HouseTypeClass; /*0x51167b*/
+  *((unsigned int *)this + 1) = &vt_HouseTypeClass; /*0x511681*/
+  *((unsigned int *)this + 2) = &vt_HouseTypeClass; /*0x511688*/
   *((unsigned int *)this + 3) = &vt_HouseTypeClass; /*0x51168f*/
   return this; /*0x511698*/
 
@@ -54,9 +54,9 @@ AbstractClass * HouseTypeClass::Dtor()
   void *v5; // eax
   int v7; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &HouseTypeClass::`vftable'; /*0x5116a7*/
-  *((unsigned int *)this + 1) = &HouseTypeClass::`vftable'; /*0x5116ad*/
-  *((unsigned int *)this + 2) = &HouseTypeClass::`vftable'; /*0x5116b4*/
+  *(unsigned int *)this = &vt_HouseTypeClass; /*0x5116a7*/
+  *((unsigned int *)this + 1) = &vt_HouseTypeClass; /*0x5116ad*/
+  *((unsigned int *)this + 2) = &vt_HouseTypeClass; /*0x5116b4*/
   *((unsigned int *)this + 3) = &vt_HouseTypeClass; /*0x5116bb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x5116c2*/
   v7 = this; /*0x5116d7*/
@@ -1009,9 +1009,9 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
   void *v6; // eax
   void **v8; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &HouseTypeClass::`vftable'; /*0x512766*/
-  *(Block + 1) = &HouseTypeClass::`vftable'; /*0x51276c*/
-  *(Block + 2) = &HouseTypeClass::`vftable'; /*0x512773*/
+  *Block = &vt_HouseTypeClass; /*0x512766*/
+  *(Block + 1) = &vt_HouseTypeClass; /*0x51276c*/
+  *(Block + 2) = &vt_HouseTypeClass; /*0x512773*/
   *(Block + 3) = &vt_HouseTypeClass; /*0x51277a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x512781*/
   v8 = Block; /*0x512796*/

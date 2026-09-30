@@ -462,9 +462,9 @@ namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
 
-  *this = &Tactical::`vftable'; /*0x6d1e80*/
-  *((unsigned int *)this + 1) = &Tactical::`vftable'; /*0x6d1e86*/
-  *((unsigned int *)this + 2) = &Tactical::`vftable'; /*0x6d1e8d*/
+  *this = &vt_Tactical; /*0x6d1e80*/
+  *((unsigned int *)this + 1) = &vt_Tactical; /*0x6d1e86*/
+  *((unsigned int *)this + 2) = &vt_Tactical; /*0x6d1e8d*/
   *((unsigned int *)this + 3) = &vt_Tactical; /*0x6d1e94*/
   g_abs_887324 = 0; /*0x6d1e9b*/
   AbstractClass::DTOR(this); /*0x6d1ea5*/

@@ -1,5 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
+#include "e4/classes/Iostream_init_e4.hpp"
+
+
 
 #include "e4/classes/_fwd_e4.hpp"
 

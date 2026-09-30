@@ -26,6 +26,6 @@ struct E4Recv_594870 {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    void PlaceRandomWaypoints(int a2);  // 0x594870
+    void  PlaceRandomWaypoints(int a2);  // 0x594870
 };
 } // namespace gamemd

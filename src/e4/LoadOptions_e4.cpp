@@ -207,7 +207,7 @@ LoadOptions * LoadOptions::QueryInterface(char * Block, char a2)
   void *v4; // eax
 
   v3 = 0; /*0x55a0d4*/
-  for ( *(unsigned int *)Block = &LoadOptionsClass::`vftable'; v3 < *((unsigned int *)Block + 12); ++v3 ) /*0x55a0e1*/
+  for ( *(unsigned int *)Block = &vt_LoadOptionsClass; v3 < *((unsigned int *)Block + 12); ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(*((unsigned int *)Block + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(char *))(*((unsigned int *)Block + 8) + 12))(Block + 32); /*0x55a102*/
   v4 = (void *)*((unsigned int *)Block + 9); /*0x55a105*/

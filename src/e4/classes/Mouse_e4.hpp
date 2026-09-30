@@ -1,13 +1,14 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
 struct Mouse {
-    unsigned int GetKeyState;
-    unsigned int IsButtonDown;
-    unsigned int ReleaseCapture;
+    // dup-member: unsigned int GetKeyState;
+    // dup-member: unsigned int IsButtonDown;
+    // dup-member: unsigned int ReleaseCapture;
     unsigned int DisplayClass;
     unsigned int Timer;
     unsigned int __pad_5;
@@ -33,12 +34,12 @@ struct Mouse {
     unsigned int u32_5560;
     unsigned int u32_5568;
     void* vfptr;  // minimal E2 declaration
-    int SetBounds(void * aP1);  // 0x4A8BF0
-    char SetCursor(void * aP1, void * aP2);  // 0x5BDC80
-    HWNDReleaseCapture(unsigned char * this);  // 0x6938C0
-    AbstractClass * * DrawCursor(void * aP1, void * aP2, int a4);  // 0x7B93F0
-    SHORTGetKeyState(uint8_t vKey);  // 0x53EC90
-    BOOLIsButtonDown(uint8_t a1);  // 0x54F5C0
-    HWNDHideWindow();  // 0x5BC400
+    int  SetBounds(void * aP1);  // 0x4A8BF0
+    char  SetCursor(void * aP1, void * aP2);  // 0x5BDC80
+    HWND ReleaseCapture();  // 0x6938C0
+    AbstractClass * *  DrawCursor(void * aP1, void * aP2, int a4);  // 0x7B93F0
+    SHORT  GetKeyState(unsigned __int8 vKey);  // 0x53EC90
+    BOOL  IsButtonDown(unsigned __int8 a1);  // 0x54F5C0
+    HWND HideWindow();  // 0x5BC400
 };
 } // namespace gamemd

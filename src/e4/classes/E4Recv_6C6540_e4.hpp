@@ -32,6 +32,6 @@ struct E4Recv_6C6540 {
     unsigned int q6408;  // 0x6408
     unsigned int q010;  // 0x10
 // --- flat members (END) ---
-    unsigned int * sub_6C6540(int a2, void * String, int a4, int aP1, void * aP5, int aP3, int aP4);  // 0x6C6540
+    unsigned int *  sub_6C6540(int a2, void * String, int a4, int aP1, void * aP5, int aP3, int aP4);  // 0x6C6540
 };
 } // namespace gamemd

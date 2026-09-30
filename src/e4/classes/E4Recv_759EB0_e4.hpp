@@ -13,6 +13,6 @@ struct E4Recv_759EB0 {
     unsigned int q1298;  // 0x1298
     unsigned int q4760;  // 0x4760
 // --- flat members (END) ---
-    bool sub_759EB0(int a2,  unsigned int a3,  unsigned int a4,  int a5,  int a6);    // 0x759EB0
+    bool  sub_759EB0(int a2, unsigned int a3, unsigned int a4, int a5, int a6);  // 0x759EB0
 };
 } // namespace gamemd

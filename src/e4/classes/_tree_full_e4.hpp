@@ -2,6 +2,9 @@
 // (gen_tree_full_e4.py) — namespace-isolated C2027 fix,
 // zero tree dependencies. Bodies access these via e4 TUs only.
 #pragma once
+#include "_gap2/gap2_global_decls.hpp"
+
+
 
 #include "e4/classes/_fwd_e4.hpp"
 

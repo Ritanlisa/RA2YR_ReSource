@@ -13,6 +13,6 @@ struct E4Recv_5E23D0 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    char sub_5E23D0(int a2);  // 0x5E23D0
+    char  sub_5E23D0(int a2);  // 0x5E23D0
 };
 } // namespace gamemd

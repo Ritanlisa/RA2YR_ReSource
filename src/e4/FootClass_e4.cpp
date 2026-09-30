@@ -40,9 +40,9 @@ AbstractClass * FootClass::Destruct()
   void *v11; // [esp+8h] [ebp-4h] BYREF
 
   v2 = *((unsigned int *)this + 373); /*0x4d3597*/
-  *(unsigned int *)this = &FootClass::`vftable'; /*0x4d359d*/
-  *((unsigned int *)this + 1) = &FootClass::`vftable'; /*0x4d35a5*/
-  *((unsigned int *)this + 2) = &FootClass::`vftable'; /*0x4d35ac*/
+  *(unsigned int *)this = &vt_FootClass; /*0x4d359d*/
+  *((unsigned int *)this + 1) = &vt_FootClass; /*0x4d35a5*/
+  *((unsigned int *)this + 2) = &vt_FootClass; /*0x4d35ac*/
   *((unsigned int *)this + 3) = &vt_FootClass; /*0x4d35b3*/
   if ( v2 && g_abs_A8D63C ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/

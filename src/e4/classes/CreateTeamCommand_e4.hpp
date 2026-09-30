@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -67,50 +69,50 @@ struct CreateTeamCommand {
     unsigned int * performAction_148();  // 0x537350
     unsigned int * performAction_153();  // 0x537440
     unsigned int * performAction_158();  // 0x537530
-    char performAction_241(int a2, unsigned int * a3);  // 0x5386A0
-    rc_ptr_base * performAction_243(void * Block, char a2);  // 0x538A20
-    char performAction_245(char a2, int a3);  // 0x6A6A00
+    char  performAction_241(int a2, unsigned int * a3);  // 0x5386A0
+    rc_ptr_base *  performAction_243(void * Block, char a2);  // 0x538A20
+    char  performAction_245(char a2, int a3);  // 0x6A6A00
     void performAction_246();  // 0x731060
-    unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x535C00
+    unsigned int *  Construct(int a2);  // 0x535C00
     ObjectClass * AddRef();  // 0x535C20
-    CreateTeamCommand * performAction_0(char a2);  // 0x535CD0
-    CommandClass * performAction_1(char a2);  // 0x535D00
-    SelectTeamCommand * performAction_22(char a2);  // 0x536090
-    AddTeamCommand * performAction_23(char a2);  // 0x536180
-    CenterTeamCommand * performAction_24(char a2);  // 0x536270
-    TauntCommandClass * performAction_25(char a2);  // 0x536580
-    void* performAction_214(char a2);  // 0x5381A0
-    void* performAction_215(unsigned int * Block, char a2);  // 0x5381C0
-    void* performAction_219(unsigned int * Block, char a2);  // 0x538240
-    void* performAction_220(unsigned int * Block, char a2);  // 0x538260
-    void* performAction_221(unsigned int * Block, char a2);  // 0x538280
-    void* performAction_223(unsigned int * Block, char a2);  // 0x5382C0
-    ScreenCaptureCommandClass * performAction_235(unsigned int * Block, char a2);  // 0x538440
-    PageUserCommandClass * performAction_236(unsigned int * Block, char a2);  // 0x538460
-    CursorPositionCommandClass * performAction_237(unsigned int * Block, char a2);  // 0x538480
-    DeleteCommandClass * performAction_238(unsigned int * Block, char a2);  // 0x5384A0
+    CreateTeamCommand *  performAction_0(char a2);  // 0x535CD0
+    CommandClass *  performAction_1(char a2);  // 0x535D00
+    SelectTeamCommand *  performAction_22(char a2);  // 0x536090
+    AddTeamCommand *  performAction_23(char a2);  // 0x536180
+    CenterTeamCommand *  performAction_24(char a2);  // 0x536270
+    TauntCommandClass *  performAction_25(char a2);  // 0x536580
+    void*  performAction_214(char a2);  // 0x5381A0
+    void*  performAction_215(unsigned int * Block, char a2);  // 0x5381C0
+    void*  performAction_219(unsigned int * Block, char a2);  // 0x538240
+    void*  performAction_220(unsigned int * Block, char a2);  // 0x538260
+    void*  performAction_221(unsigned int * Block, char a2);  // 0x538280
+    void*  performAction_223(unsigned int * Block, char a2);  // 0x5382C0
+    ScreenCaptureCommandClass *  performAction_235(unsigned int * Block, char a2);  // 0x538440
+    PageUserCommandClass *  performAction_236(unsigned int * Block, char a2);  // 0x538460
+    CursorPositionCommandClass *  performAction_237(unsigned int * Block, char a2);  // 0x538480
+    DeleteCommandClass *  performAction_238(unsigned int * Block, char a2);  // 0x5384A0
     void performAction_239();  // 0x5384C0
-    int performAction_242(unsigned int * a2);  // 0x538750
-    DynamicVector * performAction_244(unsigned int * Block, char a2);  // 0x538AE0
-    unsigned int * performAction_216(unsigned int * Block, char a2);  // 0x5381E0
-    unsigned int * performAction_217(unsigned int * Block, char a2);  // 0x538200
-    unsigned int * performAction_218(unsigned int * Block, char a2);  // 0x538220
-    unsigned int * performAction_222(unsigned int * Block, char a2);  // 0x5382A0
-    unsigned int * performAction_224(unsigned int * Block, char a2);  // 0x5382E0
-    unsigned int * performAction_225(unsigned int * Block, char a2);  // 0x538300
-    unsigned int * performAction_226(unsigned int * Block, char a2);  // 0x538320
-    unsigned int * performAction_227(unsigned int * Block, char a2);  // 0x538340
-    unsigned int * performAction_228(unsigned int * Block, char a2);  // 0x538360
-    unsigned int * performAction_229(unsigned int * Block, char a2);  // 0x538380
-    unsigned int * performAction_230(unsigned int * Block, char a2);  // 0x5383A0
-    unsigned int * performAction_231(unsigned int * Block, char a2);  // 0x5383C0
-    unsigned int * performAction_232(unsigned int * Block, char a2);  // 0x5383E0
-    unsigned int * performAction_233(unsigned int * Block, char a2);  // 0x538400
-    unsigned int * performAction_234(unsigned int * Block, char a2);  // 0x538420
+    int  performAction_242(unsigned int * a2);  // 0x538750
+    DynamicVector *  performAction_244(unsigned int * Block, char a2);  // 0x538AE0
+    unsigned int *  performAction_216(unsigned int * Block, char a2);  // 0x5381E0
+    unsigned int *  performAction_217(unsigned int * Block, char a2);  // 0x538200
+    unsigned int *  performAction_218(unsigned int * Block, char a2);  // 0x538220
+    unsigned int *  performAction_222(unsigned int * Block, char a2);  // 0x5382A0
+    unsigned int *  performAction_224(unsigned int * Block, char a2);  // 0x5382E0
+    unsigned int *  performAction_225(unsigned int * Block, char a2);  // 0x538300
+    unsigned int *  performAction_226(unsigned int * Block, char a2);  // 0x538320
+    unsigned int *  performAction_227(unsigned int * Block, char a2);  // 0x538340
+    unsigned int *  performAction_228(unsigned int * Block, char a2);  // 0x538360
+    unsigned int *  performAction_229(unsigned int * Block, char a2);  // 0x538380
+    unsigned int *  performAction_230(unsigned int * Block, char a2);  // 0x5383A0
+    unsigned int *  performAction_231(unsigned int * Block, char a2);  // 0x5383C0
+    unsigned int *  performAction_232(unsigned int * Block, char a2);  // 0x5383E0
+    unsigned int *  performAction_233(unsigned int * Block, char a2);  // 0x538400
+    unsigned int *  performAction_234(unsigned int * Block, char a2);  // 0x538420
     wchar_t * Release();  // 0x535C40
     wchar_t * ddtor();  // 0x535C70
     wchar_t * Read();  // 0x535C90
-    void Undo(int a2);  // 0x535CC0
+    void  Undo(int a2);  // 0x535CC0
     char * performAction_2();  // 0x535D20
     wchar_t * performAction_3();  // 0x535D30
     wchar_t * performAction_4();  // 0x535D50
@@ -196,7 +198,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_115();  // 0x536FC0
     wchar_t * performAction_116();  // 0x536FE0
     wchar_t * performAction_117();  // 0x537000
-    char performAction_118(int a1);  // 0x537020
+    char  performAction_118(int a1);  // 0x537020
     wchar_t * performAction_120();  // 0x537040
     wchar_t * performAction_121();  // 0x537060
     wchar_t * performAction_122();  // 0x537080
@@ -254,24 +256,24 @@ struct CreateTeamCommand {
     wchar_t * performAction_194();  // 0x537E90
     wchar_t * performAction_195();  // 0x537EB0
     wchar_t * performAction_196();  // 0x537ED0
-    bool performAction_197(int a1);  // 0x537EF0
-    std::locale::facet * performAction_198(char a2);  // 0x537FA0
-    std::locale::facet * performAction_199(char a2);  // 0x537FC0
-    std::locale::facet * performAction_200(char a2);  // 0x537FE0
-    std::locale::facet * performAction_201(char a2);  // 0x538000
-    std::locale::facet * performAction_202(char a2);  // 0x538020
-    std::locale::facet * performAction_203(char a2);  // 0x538040
-    std::locale::facet * performAction_204(char a2);  // 0x538060
-    std::locale::facet * performAction_205(char a2);  // 0x538080
-    std::locale::facet * performAction_206(char a2);  // 0x5380A0
-    std::locale::facet * performAction_207(char a2);  // 0x5380C0
-    std::locale::facet * performAction_208(char a2);  // 0x5380E0
-    std::locale::facet * performAction_209(char a2);  // 0x538100
-    std::locale::facet * performAction_210(char a2);  // 0x538120
-    std::locale::facet * performAction_211(char a2);  // 0x538140
-    std::locale::facet * performAction_212(char a2);  // 0x538160
-    std::locale::facet * performAction_213(char a2);  // 0x538180
-    unsigned int performAction_240(int a2);  // 0x5384F0
+    bool  performAction_197(int a1);  // 0x537EF0
+    std::locale::facet *  performAction_198(char a2);  // 0x537FA0
+    std::locale::facet *  performAction_199(char a2);  // 0x537FC0
+    std::locale::facet *  performAction_200(char a2);  // 0x537FE0
+    std::locale::facet *  performAction_201(char a2);  // 0x538000
+    std::locale::facet *  performAction_202(char a2);  // 0x538020
+    std::locale::facet *  performAction_203(char a2);  // 0x538040
+    std::locale::facet *  performAction_204(char a2);  // 0x538060
+    std::locale::facet *  performAction_205(char a2);  // 0x538080
+    std::locale::facet *  performAction_206(char a2);  // 0x5380A0
+    std::locale::facet *  performAction_207(char a2);  // 0x5380C0
+    std::locale::facet *  performAction_208(char a2);  // 0x5380E0
+    std::locale::facet *  performAction_209(char a2);  // 0x538100
+    std::locale::facet *  performAction_210(char a2);  // 0x538120
+    std::locale::facet *  performAction_211(char a2);  // 0x538140
+    std::locale::facet *  performAction_212(char a2);  // 0x538160
+    std::locale::facet *  performAction_213(char a2);  // 0x538180
+    unsigned int  performAction_240(int a2);  // 0x5384F0
     char * performAction_12();  // 0x535EA0
     char * performAction_17();  // 0x535F30
     char * performAction_31();  // 0x5366A0
@@ -308,7 +310,7 @@ struct CreateTeamCommand {
     char * performAction_188();  // 0x537AB0
     const wchar_t * performAction_189();  // 0x537AC0
     wchar_t * performAction_190();  // 0x537AD0
-    char Stub(int a1);  // 0x535BD0
-    char Do(int a1);  // 0x535BF0
+    char  Stub(int a1);  // 0x535BD0
+    char  Do(int a1);  // 0x535BF0
 };
 } // namespace gamemd

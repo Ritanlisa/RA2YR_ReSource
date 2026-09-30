@@ -13,6 +13,6 @@ struct E4Recv_4F3C40 {
     unsigned char q100;  // 0x100
     unsigned char q598;  // 0x598
 // --- flat members (END) ---
-    unsigned int * sub_4F3C40(int a2,  const char ** a3);    // 0x4F3C40
+    unsigned int *  sub_4F3C40(int a2, void * a3);  // 0x4F3C40
 };
 } // namespace gamemd

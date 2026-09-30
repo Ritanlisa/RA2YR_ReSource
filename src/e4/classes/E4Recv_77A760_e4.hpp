@@ -13,6 +13,6 @@ struct E4Recv_77A760 {
     unsigned int q308;  // 0x308
     unsigned int q1910;  // 0x1910
 // --- flat members (END) ---
-    char sub_77A760(char a2);  // 0x77A760
+    char  sub_77A760(char a2);  // 0x77A760
 };
 } // namespace gamemd

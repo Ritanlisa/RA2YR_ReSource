@@ -11,6 +11,6 @@ struct E4Recv_6810D0 {
     unsigned int q780;  // 0x780
     unsigned int q1920;  // 0x1920
 // --- flat members (END) ---
-    wchar_t * sub_6810D0(wchar_t * Source);  // 0x6810D0
+    wchar_t *  sub_6810D0(void * Source);  // 0x6810D0
 };
 } // namespace gamemd

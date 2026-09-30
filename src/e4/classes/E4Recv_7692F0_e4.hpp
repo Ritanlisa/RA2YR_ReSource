@@ -22,6 +22,6 @@ struct E4Recv_7692F0 {
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int ConstructWDTSelection_Create_76EEB0_Create(void * aP1,  unsigned int * a2);    // 0x7692F0
+    int  ConstructWDTSelection_Create_76EEB0_Create(void * aP1, unsigned int * a2);  // 0x7692F0
 };
 } // namespace gamemd

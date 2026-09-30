@@ -3,8 +3,10 @@
 // `using CellStruct = Vector2D<short>` etc. Include math.hpp to use them.
 // This header only adds types that math.hpp does NOT define.
 #pragma once
+#include "e4/classes/_fwd_e4.hpp"
 
-#include "core/math.hpp"
+
+
 
 namespace gamemd {
 

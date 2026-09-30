@@ -18,8 +18,8 @@ struct ParticleSystemClass_32_ {
     unsigned int m_10;
     unsigned int m_8;
 // --- flat members (END) ---
-    char ResizeDataArray(int a2,  unsigned int * a3);    // 0x4EB8A0
-    int FindElementByValue(unsigned int * a2);  // 0x4EB950
-    unsigned int GetElementIndex(int a2);  // 0x4E8870
+    char  ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0
+    int  FindElementByValue(unsigned int * a2);  // 0x4EB950
+    unsigned int  GetElementIndex(int a2);  // 0x4E8870
 };
 } // namespace gamemd

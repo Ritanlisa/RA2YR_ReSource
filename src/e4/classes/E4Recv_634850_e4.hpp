@@ -14,6 +14,6 @@ struct E4Recv_634850 {
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    unsigned int * sub_634850(unsigned int * a2);  // 0x634850
+    unsigned int *  sub_634850(unsigned int * a2);  // 0x634850
 };
 } // namespace gamemd

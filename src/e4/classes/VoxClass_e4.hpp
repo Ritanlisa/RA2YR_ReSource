@@ -19,7 +19,7 @@ struct VoxClass {
     char Type[4];  // 0x4C
     char voiceIndex[4];  // 0x50
 // --- flat members (END) ---
-    void FindAndPlay(void * this, int a2, int a3);
+    void FindAndPlay(int a2, int a3);
 };
 
 } // namespace gamemd

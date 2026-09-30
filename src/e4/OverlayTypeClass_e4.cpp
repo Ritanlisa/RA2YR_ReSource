@@ -54,9 +54,9 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   *((unsigned char *)this + 694) = 0; /*0x5fe2de*/
   *((unsigned char *)this + 695) = 0; /*0x5fe2e4*/
   *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
-  *this = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
-  *((unsigned int *)this + 1) = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
-  *((unsigned int *)this + 2) = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
+  *this = &vt_OverlayTypeClass; /*0x5fe2f1*/
+  *((unsigned int *)this + 1) = &vt_OverlayTypeClass; /*0x5fe2f7*/
+  *((unsigned int *)this + 2) = &vt_OverlayTypeClass; /*0x5fe2fd*/
   *((unsigned int *)this + 3) = &vt_OverlayTypeClass; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x5fe30b*/
   *((unsigned char *)this + 559) = 1; /*0x5fe310*/
@@ -283,9 +283,9 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((unsigned int *)a1, (int)&v3); /*0x5feb1c*/
-      *(unsigned int *)a1 = &OverlayTypeClass::`vftable'; /*0x5feb21*/
-      *(unsigned int *)(a1 + 4) = &OverlayTypeClass::`vftable'; /*0x5feb27*/
-      *(unsigned int *)(a1 + 8) = &OverlayTypeClass::`vftable'; /*0x5feb2e*/
+      *(unsigned int *)a1 = &vt_OverlayTypeClass; /*0x5feb21*/
+      *(unsigned int *)(a1 + 4) = &vt_OverlayTypeClass; /*0x5feb27*/
+      *(unsigned int *)(a1 + 8) = &vt_OverlayTypeClass; /*0x5feb2e*/
       *(unsigned int *)(a1 + 12) = &vt_OverlayTypeClass; /*0x5feb35*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
@@ -397,9 +397,9 @@ unsigned int *  OverlayTypeClass::Construct( ObjectClass * aP1)
   *(this + 193) = 0; /*0x644177*/
   *(this + 194) = 0; /*0x64417d*/
   *((unsigned char *)this + 780) = 0; /*0x644196*/
-  *this = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
-  *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
-  *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
+  *this = &vt_ParticleSystemTypeClass; /*0x64419c*/
+  *(this + 1) = &vt_ParticleSystemTypeClass; /*0x6441a2*/
+  *(this + 2) = &vt_ParticleSystemTypeClass; /*0x6441a8*/
   *(this + 3) = &vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
   if ( (int)g_abs_A83D78 < g_abs_A83D70 /*0x6441ef*/
@@ -642,9 +642,9 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &OverlayTypeClass::`vftable'; /*0x5fef36*/
-  *(Block + 1) = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
-  *(Block + 2) = &OverlayTypeClass::`vftable'; /*0x5fef43*/
+  *Block = &vt_OverlayTypeClass; /*0x5fef36*/
+  *(Block + 1) = &vt_OverlayTypeClass; /*0x5fef3c*/
+  *(Block + 2) = &vt_OverlayTypeClass; /*0x5fef43*/
   *(Block + 3) = &vt_OverlayTypeClass; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fef51*/
   v5 = Block; /*0x5fef66*/

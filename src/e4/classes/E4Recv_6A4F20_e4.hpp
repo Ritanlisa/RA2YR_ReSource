@@ -11,6 +11,6 @@ struct E4Recv_6A4F20 {
     unsigned int M5416;  // 0x1528
     unsigned int q5408;  // 0x5408
 // --- flat members (END) ---
-    int sub_6A4F20(int a2);  // 0x6A4F20
+    int  sub_6A4F20(int a2);  // 0x6A4F20
 };
 } // namespace gamemd

@@ -19,6 +19,6 @@ struct E4Recv_645D60 {
     unsigned int q6408;  // 0x6408
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    float * sub_645D60(float * a2);  // 0x645D60
+    float *  sub_645D60(float * a2);  // 0x645D60
 };
 } // namespace gamemd

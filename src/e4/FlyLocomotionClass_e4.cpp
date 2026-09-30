@@ -44,8 +44,8 @@ int FlyLocomotionClass::LocomotionClass()
   *((unsigned int *)this + 21) = 0; /*0x4cca03*/
   *((unsigned int *)this + 22) = 0; /*0x4cca06*/
   *((unsigned char *)this + 92) = 0; /*0x4cca09*/
-  *(unsigned int *)this = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *((unsigned int *)this + 1) = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
+  *(unsigned int *)this = &vt_FlyLocomotionClass; /*0x4cca0c*/
+  *((unsigned int *)this + 1) = &vt_FlyLocomotionClass; /*0x4cca12*/
   *((unsigned int *)this + 12) = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 
@@ -211,7 +211,7 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *a1 = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
+      *a1 = (int)&vt_FlyLocomotionClass; /*0x4cfcd8*/
       a1[1] = (int)&vt_FlyLocomotionClass; /*0x4cfcde*/
     }
   }
@@ -233,7 +233,7 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
+  *Block = &vt_FlyLocomotionClass; /*0x4d03a3*/
   *(Block + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
   LocomotionClass::Construct(Block); /*0x4d03b0*/
   if ( (Block & 1) != 0 ) /*0x4d03ba*/

@@ -12,8 +12,8 @@ struct _com_error {
     unsigned int q008;
     unsigned int q00C;
     void* vfptr;  // minimal E2 declaration
-    unsigned int * sub_7DCE0E(int a2);  // 0x7DCE0E
+    unsigned int *  sub_7DCE0E(int a2);  // 0x7DCE0E
     HLOCAL sub_7DCE3B();  // 0x7DCE3B
-    unsigned int * ThrowErrorCOM_Helper(int a2, int a3, char a4);  // 0x7DCDC0
+    unsigned int *  ThrowErrorCOM_Helper(int a2, int a3, char a4);  // 0x7DCDC0
 };
 } // namespace gamemd

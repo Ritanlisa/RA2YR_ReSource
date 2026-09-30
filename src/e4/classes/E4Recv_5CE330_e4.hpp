@@ -11,6 +11,6 @@ struct E4Recv_5CE330 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    int sub_5CE330(const wchar_t ** a2);  // 0x5CE330
+    int  sub_5CE330(void * a2);  // 0x5CE330
 };
 } // namespace gamemd

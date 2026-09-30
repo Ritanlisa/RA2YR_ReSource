@@ -18,9 +18,9 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
 
   ObjectClass::ctor(this); /*0x543786*/
   *((unsigned int *)this + 43) = *(IsometricTileClass *)(*(unsigned int *)&HouseClass_Player.__pad_5568[23160] + 4 * (unsigned int)aP1); /*0x54379c*/
-  *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
-  *((unsigned int *)this + 1) = &IsometricTileClass::`vftable'; /*0x5437a8*/
-  *((unsigned int *)this + 2) = &IsometricTileClass::`vftable'; /*0x5437af*/
+  *this = (IsometricTileClass)&vt_IsometricTileClass; /*0x5437a2*/
+  *((unsigned int *)this + 1) = &vt_IsometricTileClass; /*0x5437a8*/
+  *((unsigned int *)this + 2) = &vt_IsometricTileClass; /*0x5437af*/
   *((unsigned int *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
   if ( *(unsigned short *)aP2->__tail_0 != unk_AA06D0 || *(unsigned short *)&aP2->__tail_0[2] != unk_AA06D2 ) /*0x5437d4*/
   {

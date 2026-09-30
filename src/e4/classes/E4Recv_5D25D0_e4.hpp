@@ -50,6 +50,6 @@ struct E4Recv_5D25D0 {
     unsigned int attachedBomb;
     unsigned int attachedTag;
 // --- flat members (END) ---
-    char sub_5D25D0(char * Source,  int a3);    // 0x5D25D0
+    char  sub_5D25D0(char * Source, int a3);  // 0x5D25D0
 };
 } // namespace gamemd

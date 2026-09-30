@@ -12,6 +12,6 @@ struct E4Recv_5D9060 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    short sub_5D9060(int a2);  // 0x5D9060
+    short  sub_5D9060(int a2);  // 0x5D9060
 };
 } // namespace gamemd

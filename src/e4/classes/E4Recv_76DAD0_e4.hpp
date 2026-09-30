@@ -27,6 +27,6 @@ struct E4Recv_76DAD0 {
     unsigned int q4420;  // 0x4420
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    bool TerritorySelectWDT(void * aP1);  // 0x76DAD0
+    bool  TerritorySelectWDT(void * aP1);  // 0x76DAD0
 };
 } // namespace gamemd

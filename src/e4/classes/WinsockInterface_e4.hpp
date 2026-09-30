@@ -62,7 +62,7 @@ struct WinsockInterface {
     unsigned int Audio;
     unsigned int Timer;
 // --- flat members (END) ---
-    char * ProcessPacket(int a2);  // 0x770270
+    char *  ProcessPacket(int a2);  // 0x770270
     char Init();  // 0x7B1DE0
 };
 } // namespace gamemd

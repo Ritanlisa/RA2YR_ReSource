@@ -74,10 +74,10 @@ int TeamTypeClass::Construct()
   *((unsigned int *)this + 26) = -1; /*0x4c990d*/
   *((unsigned int *)this + 27) = 0; /*0x4c9914*/
   *((unsigned char *)this + 112) = 0; /*0x4c9917*/
-  *(unsigned int *)this = &FactoryClass::`vftable'; /*0x4c991a*/
-  *((unsigned int *)this + 1) = &FactoryClass::`vftable'; /*0x4c9920*/
-  *((unsigned int *)this + 2) = &FactoryClass::`vftable'; /*0x4c9926*/
-  *((unsigned int *)this + 3) = &FactoryClass::`vftable'; /*0x4c992d*/
+  *(unsigned int *)this = &vt_FactoryClass; /*0x4c991a*/
+  *((unsigned int *)this + 1) = &vt_FactoryClass; /*0x4c9920*/
+  *((unsigned int *)this + 2) = &vt_FactoryClass; /*0x4c9926*/
+  *((unsigned int *)this + 3) = &vt_FactoryClass; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x4c9934*/
   if ( g_abs_A83E40 < g_abs_A83E38 /*0x4c996d*/
     || (g_abs_A83E3D || !g_abs_A83E38)
@@ -137,9 +137,9 @@ LABEL_6:
       AbstractTypeClass::Constructor((int)v3, Source); /*0x691c7c*/
       v4[2].sectionCount = 0; /*0x691c81*/
       *(unsigned int *)v4[2].__pad_20 = 0; /*0x691c8b*/
-      *(unsigned int *)v4->__pad_0 = &ScriptTypeClass::`vftable'; /*0x691c95*/
-      v4->headNode[0] = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
-      v4->headNode[1] = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
+      *(unsigned int *)v4->__pad_0 = &vt_ScriptTypeClass; /*0x691c95*/
+      v4->headNode[0] = (int)&vt_ScriptTypeClass; /*0x691c9b*/
+      v4->headNode[1] = (int)&vt_ScriptTypeClass; /*0x691ca2*/
       v4->headNode[2] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
@@ -933,9 +933,9 @@ TeamTypeClass * TeamTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TeamTypeClass::`vftable'; /*0x6f20d6*/
-  *(Block + 1) = &TeamTypeClass::`vftable'; /*0x6f20dc*/
-  *(Block + 2) = &TeamTypeClass::`vftable'; /*0x6f20e3*/
+  *Block = &vt_TeamTypeClass; /*0x6f20d6*/
+  *(Block + 1) = &vt_TeamTypeClass; /*0x6f20dc*/
+  *(Block + 2) = &vt_TeamTypeClass; /*0x6f20e3*/
   *(Block + 3) = &vt_TeamTypeClass; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6f20f1*/
   v6 = Block; /*0x6f2106*/
@@ -1296,9 +1296,9 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6f1bcf*/
-      *(unsigned int *)aP0->__pad_0 = &TeamTypeClass::`vftable'; /*0x6f1bd4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TeamTypeClass::`vftable'; /*0x6f1bda*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TeamTypeClass::`vftable'; /*0x6f1be1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TeamTypeClass; /*0x6f1bd4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TeamTypeClass; /*0x6f1bda*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TeamTypeClass; /*0x6f1be1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TeamTypeClass; /*0x6f1be8*/
     }
     ObjectPtr::RegisterForTracking( /*0x6f1bfb*/

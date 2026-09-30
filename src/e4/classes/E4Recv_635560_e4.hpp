@@ -9,6 +9,6 @@ struct E4Recv_635560 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-    int sub_635560(int a2);  // 0x635560
+    int  sub_635560(int a2);  // 0x635560
 };
 } // namespace gamemd

@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -166,24 +168,24 @@ struct Voxel {
     char BuildIndexTable();  // 0x748220
     float * RenderFrame();  // 0x754510
     int Projection_Setup();  // 0x754CB0
-    AbstractClass * * SortDepth(void * aP1, int a3);  // 0x755DB0
-    int ProcessColor(unsigned int * a2, float * a3);  // 0x756590
-    void* DrawHelper(void * aP1);  // 0x75C240
-    int BlendShadowColor(int a2, void * aP2, int arg8, unsigned short * a4);  // 0x75EDF0
+    AbstractClass * *  SortDepth(void * aP1, int a3);  // 0x755DB0
+    int  ProcessColor(unsigned int * a2, float * a3);  // 0x756590
+    void*  DrawHelper(void * aP1);  // 0x75C240
+    int  BlendShadowColor(int a2, void * aP2, int arg8, unsigned short * a4);  // 0x75EDF0
     int loadSectionData();  // 0x75F140
-    char renderSection(void * aP1);  // 0x75F4C0
-    void ShadowCalc(void * aP1, int * a2);  // 0x75FA90
-    int BlendColor(int a2, void * aP2, int arg8, unsigned short * a4);  // 0x760190
-    void FaceDraw(unsigned int * a1, void * aP2);  // 0x7609E0
+    char  renderSection(void * aP1);  // 0x75F4C0
+    void  ShadowCalc(void * aP1, int * a2);  // 0x75FA90
+    int  BlendColor(int a2, void * aP2, int arg8, unsigned short * a4);  // 0x760190
+    void  FaceDraw(unsigned int * a1, void * aP2);  // 0x7609E0
     void FaceBlit();  // 0x7610F0
-    int SectionProject(int * a2, int a3);  // 0x761640
-    int LightRender(void * a2, int a3);  // 0x762070
+    int  SectionProject(int * a2, int a3);  // 0x761640
+    int  LightRender(void * a2, int a3);  // 0x762070
     int TransformMatrix();  // 0x762AF0
-    char freeSectionMemory(unsigned int * a2);  // 0x763330
-    int FacePixelBuffer(int * a1);  // 0x7DF9C0
-    int FacePixelBufferEx(int a1);  // 0x7DFAE0
-    int FacePixelBuffer3(int * a1);  // 0x7DFC00
-    int SetProjectionAngle(float a1);  // 0x754C00
+    char  freeSectionMemory(unsigned int * a2);  // 0x763330
+    int  FacePixelBuffer(int * a1);  // 0x7DF9C0
+    int  FacePixelBufferEx(int a1);  // 0x7DFAE0
+    int  FacePixelBuffer3(int * a1);  // 0x7DFC00
+    int  SetProjectionAngle(float a1);  // 0x754C00
     int InitDistanceTable();  // 0x75F020
 };
 } // namespace gamemd

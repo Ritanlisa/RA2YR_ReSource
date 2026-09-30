@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_7B7740 {
     void* vfptr;  // minimal E2 declaration
-    wchar_t ** sub_7B7740(wchar_t ** a2);  // 0x7B7740
+    wchar_t **  sub_7B7740(void * a2);  // 0x7B7740
 };
 } // namespace gamemd

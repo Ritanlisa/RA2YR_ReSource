@@ -425,7 +425,7 @@ void* BufferIOFileClass::Constructor() {
   *((unsigned int *)this + 18) = 0; /*0x431b6f*/
   *((unsigned int *)this + 19) = 0; /*0x431b72*/
   *((unsigned int *)this + 20) = 0; /*0x431b75*/
-  *(unsigned int *)this = &BufferIOFileClass::`vftable'; /*0x431b78*/
+  *(unsigned int *)this = &vt_BufferIOFileClass; /*0x431b78*/
   return this; /*0x431b7e*/
 
 }
@@ -437,7 +437,7 @@ int BufferIOFileClass::Dtor() {
   void *v2; // eax
 
   v2 = (void *)*((unsigned int *)this + 12); /*0x431b86*/
-  *this = &BufferIOFileClass::`vftable'; /*0x431b89*/
+  *this = &vt_BufferIOFileClass; /*0x431b89*/
   if ( v2 ) /*0x431b91*/
   {
     if ( *((unsigned char *)this + 36) ) /*0x431b93*/
@@ -1107,7 +1107,7 @@ void* CCFileClass::Construct(char * Source) {
   BufferIOFile::Init(this); /*0x4739f3*/
   Buffer::Init((unsigned int *)this + 22, 0, 0); /*0x4739ff*/
   *((unsigned int *)this + 25) = 0; /*0x473a0b*/
-  *this = &CCFileClass::`vftable'; /*0x473a12*/
+  *this = &vt_CCFileClass; /*0x473a12*/
   *((unsigned int *)this + 26) = 0; /*0x473a18*/
   FileClass::OpenWithCDSearch(this, Source); /*0x473a1f*/
   return this; /*0x473a26*/
@@ -1153,7 +1153,7 @@ int CCFileClass::Destru_vt16(int a2, int a3, int a4) {
 
   result = *((unsigned char *)this + 4); /*0x473ab0*/
   if ( !result ) /*0x473ab8*/
-    return CD::`vftable'(dword_81C1D0); /*0x473acc*/
+    return vt_CD(dword_81C1D0); /*0x473acc*/
   return result; /*0x473ad2*/
 
 }
@@ -1439,7 +1439,7 @@ int INIClass::WriteDigest(CCINIClass * aP1, char a3) {
   v6.headNode[0] = 0; /*0x474451*/
   v6.headNode[1] = 0; /*0x474455*/
   IDA_LOBYTE(v6.sectionHead[0]) = 0; /*0x474459*/
-  *(unsigned int *)v6.__pad_0 = &FilePipe::`vftable'; /*0x47445d*/
+  *(unsigned int *)v6.__pad_0 = &vt_FilePipe; /*0x47445d*/
   if ( a3 ) /*0x474465*/
   {
     INIClass::ClearSection((int)this, &g_INI_Key_Digest, 0); /*0x474482*/
@@ -2668,10 +2668,10 @@ void CellClass::DTOR() {
   int v4; // eax
 
   v2 = (void (***)(unsigned int, int))*((unsigned int *)this + 10); /*0x47bb66*/
-  *this = &CellClass::`vftable'; /*0x47bb69*/
-  *((unsigned int *)this + 1) = &CellClass::`vftable'; /*0x47bb71*/
-  *((unsigned int *)this + 2) = &CellClass::`vftable'; /*0x47bb78*/
-  *((unsigned int *)this + 3) = &CellClass::`vftable'; /*0x47bb7f*/
+  *this = &vt_CellClass; /*0x47bb69*/
+  *((unsigned int *)this + 1) = &vt_CellClass; /*0x47bb71*/
+  *((unsigned int *)this + 2) = &vt_CellClass; /*0x47bb78*/
+  *((unsigned int *)this + 3) = &vt_CellClass; /*0x47bb7f*/
   if ( v2 ) /*0x47bb86*/
   {
     (**v2)(v2, 1); /*0x47bb8c*/
@@ -2766,10 +2766,10 @@ void* CellClass::Construct() {
   *((unsigned char *)this + 312) = 0; /*0x47bd4a*/
   *((unsigned int *)this + 79) = 0; /*0x47bd50*/
   *((unsigned int *)this + 80) = v3 & 0xFF800000; /*0x47bd56*/
-  *this = &CellClass::`vftable'; /*0x47bd5c*/
-  *((unsigned int *)this + 1) = &CellClass::`vftable'; /*0x47bd62*/
-  *((unsigned int *)this + 2) = &CellClass::`vftable'; /*0x47bd68*/
-  *((unsigned int *)this + 3) = &CellClass::`vftable'; /*0x47bd79*/
+  *this = &vt_CellClass; /*0x47bd5c*/
+  *((unsigned int *)this + 1) = &vt_CellClass; /*0x47bd62*/
+  *((unsigned int *)this + 2) = &vt_CellClass; /*0x47bd68*/
+  *((unsigned int *)this + 3) = &vt_CellClass; /*0x47bd79*/
   memset((unsigned int *)this + 31, 0, 0x30u); /*0x47bd80*/
   memset((unsigned int *)this + 43, 0, 0x30u); /*0x47bd8d*/
   AbstractClass::GenerateUniqueID((unsigned int *)this + 1); /*0x47bd90*/
@@ -3766,10 +3766,10 @@ int CellClass::SaveLoad_Prefix() {
       AbstractClass::InitVtables(v21, (int)&v23); /*0x483a19*/
       v21[13] = 0; /*0x483a1e*/
       v21[19] = 0; /*0x483a21*/
-      *v21 = &CellClass::`vftable'; /*0x483a24*/
-      v21[1] = &CellClass::`vftable'; /*0x483a2a*/
-      v21[2] = &CellClass::`vftable'; /*0x483a31*/
-      v21[3] = &CellClass::`vftable'; /*0x483a38*/
+      *v21 = &vt_CellClass; /*0x483a24*/
+      v21[1] = &vt_CellClass; /*0x483a2a*/
+      v21[2] = &vt_CellClass; /*0x483a31*/
+      v21[3] = &vt_CellClass; /*0x483a38*/
     }
     if ( !v21[10] ) /*0x483a42*/
       goto LABEL_20; /*0x483a42*/
@@ -7222,7 +7222,7 @@ void* RadarClass::RenderSpySatellite() {
   *((unsigned int *)this + 1142) = 0; /*0x4a881e*/
   *((unsigned int *)this + 1143) = 0; /*0x4a8824*/
   *((unsigned int *)this + 1144) = 0; /*0x4a882a*/
-  *this = &DisplayClass::`vftable'; /*0x4a8830*/
+  *this = &vt_DisplayClass; /*0x4a8830*/
   g_abs_8A072C = 0; /*0x4a8836*/
   g_abs_8A03FC = 0; /*0x4a883b*/
   g_abs_8A0418 = 0; /*0x4a8840*/
@@ -9275,7 +9275,7 @@ int INIClass::LoadFile(CCINIClass * aP1, INIClass * aP2) {
   INIClass::loadFile(v95, (AbstractClass *)0x1000); /*0x525ab5*/
   v95[3] = 0; /*0x525ac6*/
   v97 = 0; /*0x525aca*/
-  v94[0] = (int)&CacheStraw::`vftable'; /*0x525ace*/
+  v94[0] = (int)&vt_CacheStraw; /*0x525ace*/
   Delegate::Set(v94, (AbstractTypeClass *)aP1); /*0x525ad6*/
   do /*0x525b9d*/
   {
@@ -9810,7 +9810,7 @@ int INIClass::SaveToPipe(int a2) {
   v4[2] = 0; /*0x526433*/
   v5 = 0; /*0x526437*/
   v4[3] = a2; /*0x526441*/
-  v4[0] = &FilePipe::`vftable'; /*0x526445*/
+  v4[0] = &vt_FilePipe; /*0x526445*/
   v2 = INIClass::WriteToString(this, (int)v4); /*0x526456*/
   FilePipe::Destructor(v4); /*0x526458*/
   return v2; /*0x52645f*/
@@ -10172,7 +10172,7 @@ int INIClass::ReadBase64Data(uint8_t * Block, ObjectClass * aP2, ObjectClass * a
   aP1.nextArrayIndex = 0; /*0x526ee7*/
   *(unsigned int *)aP1.__pad_0 = &vt_BufferStraw; /*0x526ef0*/
   memset(&aP1.NeedsSaveOrLink, 0, 16); /*0x526ef8*/
-  aP1.referenceCount = (int)&Base64Straw::`vftable'; /*0x526f08*/
+  aP1.referenceCount = (int)&vt_Base64Straw; /*0x526f08*/
   Delegate::Set(&aP1.referenceCount, &aP1); /*0x526f10*/
   v5 = (INIClass *)1; /*0x526f21*/
   v6 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1.__pad_24[20], 70); /*0x526f26*/
@@ -10233,7 +10233,7 @@ int INIClass::GetBase64Data( char * a2, int a3, size_t Size) {
   v26[2] = 0; /*0x526ff3*/
   v26[3] = 1; /*0x526ff7*/
   v26[4] = 0; /*0x526fff*/
-  v26[0] = (int)&Base64Pipe::`vftable'; /*0x527003*/
+  v26[0] = (int)&vt_Base64Pipe; /*0x527003*/
   v27[1] = 0; /*0x52700b*/
   v27[2] = 0; /*0x52700f*/
   Buffer::Init(v28, a3, Size); /*0x52701b*/
@@ -22275,8 +22275,8 @@ void* MixFileClass::FromFile(MixFileClass * aP1, int a3) {
   *((unsigned int *)this + 8) = 0; /*0x5b3c4c*/
   *((unsigned int *)this + 9) = 0; /*0x5b3c4f*/
   *this = &vt_MixFileClass; /*0x5b3c52*/
-  v20 = &CD::`vftable'; /*0x5b3c5d*/
-  if ( !(uint8_t)CD::`vftable'(dword_81C1D0) ) /*0x5b3c66*/
+  v20 = &vt_CD; /*0x5b3c5d*/
+  if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x5b3c66*/
   {
     GameClass::Shutdown(); /*0x5b3c70*/
     ExitProgram((void *)1); /*0x5b3c7a*/
@@ -24761,7 +24761,7 @@ int RadarClass::Create() {
   *((unsigned int *)this + 1356) = 0; /*0x63f70a*/
   *((unsigned int *)this + 1357) = 0; /*0x63f710*/
   *((unsigned char *)this + 5432) = 0; /*0x63f716*/
-  *(unsigned int *)this = &PowerClass::`vftable'; /*0x63f71c*/
+  *(unsigned int *)this = &vt_PowerClass; /*0x63f71c*/
   return this; /*0x63f724*/
 
 }

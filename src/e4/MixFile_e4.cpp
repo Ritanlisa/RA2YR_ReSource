@@ -104,7 +104,7 @@ MixFileClass * * MixFile::LoadAll()
 
   v0 = (unsigned int)(((CCFileClass *)(v69))->Construct(aConqmdMix));
   v1 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0));
-  v69[0] = &CCFileClass::`vftable'; /*0x53048d*/
+  v69[0] = &vt_CCFileClass; /*0x53048d*/
   v71 = 0; /*0x530491*/
   Vector::Clear((int)v70); /*0x530495*/
   v69[0] = &off_7E1668; /*0x5304a3*/
@@ -154,7 +154,7 @@ MixFileClass * * MixFile::LoadAll()
     g_abs_87F7E8[5519] = 0; /*0x5305f1*/
   v10 = ((CCFileClass *)(v69))->Construct(aConquerMix); /*0x530600*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))(v10, 0); /*0x530611*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530613*/
+  v69[0] = &vt_CCFileClass; /*0x530613*/
   v71 = 0; /*0x530617*/
   Vector::Clear((int)v70); /*0x53061b*/
   v69[0] = &off_7E1668; /*0x530624*/
@@ -172,7 +172,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x53067f*/
   v13 = CCFileClass::Construct(v69, aCameomdMix); /*0x530689*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x53069a*/
-  v69[0] = &CCFileClass::`vftable'; /*0x53069c*/
+  v69[0] = &vt_CCFileClass; /*0x53069c*/
   v71 = 0; /*0x5306a0*/
   Vector::Clear((int)v70); /*0x5306a4*/
   v69[0] = &off_7E1668; /*0x5306ad*/
@@ -190,7 +190,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x530708*/
   v16 = CCFileClass::Construct(v69, aCameoMix); /*0x530712*/
   v17 = (*(int (**)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x530723*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530725*/
+  v69[0] = &vt_CCFileClass; /*0x530725*/
   v71 = 0; /*0x530729*/
   Vector::Clear((int)v70); /*0x53072d*/
   v69[0] = &off_7E1668; /*0x530736*/
@@ -286,7 +286,7 @@ LABEL_60:
     sprintf(Buffer, "MAPSMD%02d.MIX", v19); /*0x530a3c*/
     v28 = CCFileClass::Construct(v69, Buffer); /*0x530a50*/
     v29 = (*(int (**)(unsigned int *, unsigned int))(*v28 + 20))(v28, 0); /*0x530a61*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530a63*/
+    v69[0] = &vt_CCFileClass; /*0x530a63*/
     v71 = 0; /*0x530a67*/
     Vector::Clear((int)v70); /*0x530a6b*/
     v69[0] = &off_7E1668; /*0x530a74*/
@@ -303,7 +303,7 @@ LABEL_60:
     sprintf(Buffer, "MAPS%02d.MIX", v19); /*0x530ad4*/
     v31 = CCFileClass::Construct(v69, Buffer); /*0x530ae8*/
     v32 = (*(int (**)(unsigned int *, unsigned int))(*v31 + 20))(v31, 0); /*0x530af9*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530afb*/
+    v69[0] = &vt_CCFileClass; /*0x530afb*/
     v71 = 0; /*0x530aff*/
     Vector::Clear((int)v70); /*0x530b03*/
     v69[0] = &off_7E1668; /*0x530b0c*/
@@ -323,7 +323,7 @@ LABEL_85:
     return 0; /*0x530b75*/
   v34 = CCFileClass::Construct(v69, g_Str_File_MULTIMD_MIX); /*0x530b7f*/
   v35 = (*(int (**)(unsigned int *, unsigned int))(*v34 + 20))(v34, 0); /*0x530b95*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530b97*/
+  v69[0] = &vt_CCFileClass; /*0x530b97*/
   v71 = 0; /*0x530b9b*/
   Vector::Clear((int)v70); /*0x530b9f*/
   v69[0] = &off_7E1668; /*0x530bad*/
@@ -341,7 +341,7 @@ LABEL_85:
     return 0; /*0x530c08*/
   v37 = CCFileClass::Construct(v69, g_Str_File_THEMEMD_MIX); /*0x530c12*/
   v38 = (*(int (**)(unsigned int *, unsigned int))(*v37 + 20))(v37, 0); /*0x530c23*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530c25*/
+  v69[0] = &vt_CCFileClass; /*0x530c25*/
   v71 = 0; /*0x530c29*/
   Vector::Clear((int)v70); /*0x530c2d*/
   v69[0] = &off_7E1668; /*0x530c36*/
@@ -360,7 +360,7 @@ LABEL_85:
   {
     v40 = CCFileClass::Construct(v69, g_Str_File_THEME_MIX); /*0x530c80*/
     v41 = (*(int (**)(unsigned int *, unsigned int))(*v40 + 20))(v40, 0); /*0x530c91*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530c93*/
+    v69[0] = &vt_CCFileClass; /*0x530c93*/
     v71 = 0; /*0x530c97*/
     Vector::Clear((int)v70); /*0x530c9b*/
     v69[0] = &off_7E1668; /*0x530ca4*/
@@ -485,7 +485,7 @@ LABEL_100:
   sprintf(Buffer, "MOVMD%02d.MIX", v72); /*0x531186*/
   v64 = CCFileClass::Construct(v69, Buffer); /*0x53119a*/
   v65 = (*(int (**)(unsigned int *, unsigned int))(*v64 + 20))(v64, 0); /*0x5311ab*/
-  v69[0] = &CCFileClass::`vftable'; /*0x5311ad*/
+  v69[0] = &vt_CCFileClass; /*0x5311ad*/
   v71 = 0; /*0x5311b5*/
   Vector::Clear((int)v70); /*0x5311b9*/
   v69[0] = &off_7E1668; /*0x5311c2*/
@@ -500,7 +500,7 @@ LABEL_100:
   sprintf(Buffer, "MOVIES%02d.MIX", v63); /*0x5311f1*/
   v67 = CCFileClass::Construct(v69, Buffer); /*0x531205*/
   v68 = (*(int (**)(unsigned int *, unsigned int))(*v67 + 20))(v67, 0); /*0x531216*/
-  v69[0] = &CCFileClass::`vftable'; /*0x531218*/
+  v69[0] = &vt_CCFileClass; /*0x531218*/
   v71 = 0; /*0x531220*/
   Vector::Clear((int)v70); /*0x531224*/
   v69[0] = &off_7E1668; /*0x53122d*/

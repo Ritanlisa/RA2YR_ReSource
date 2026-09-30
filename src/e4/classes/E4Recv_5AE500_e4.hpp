@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -12,6 +13,6 @@ struct E4Recv_5AE500 {
     AudioController * q1634;  // 0x1634
     AudioController * q5684;  // 0x5684
 // --- flat members (END) ---
-    char sub_5AE500(const char ** a2);  // 0x5AE500
+    char  sub_5AE500(void * a2);  // 0x5AE500
 };
 } // namespace gamemd

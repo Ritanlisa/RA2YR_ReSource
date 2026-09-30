@@ -209,10 +209,10 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   int a2[2]; // [esp+Ch] [ebp-8h] BYREF
 
   edi1 = (AbstractClass *)&a1->field_4; /*0x517d9a*/
-  a1->field_0 = (int)&InfantryClass::`vftable'; /*0x517d9d*/
+  a1->field_0 = (int)&vt_InfantryClass; /*0x517d9d*/
   a1->field_8 = (int)&vt_InfantryClass; /*0x517da3*/
   a1->field_C = (int)&off_7EB02C; /*0x517daa*/
-  a1->field_4 = (int)&InfantryClass::`vftable'; /*0x517db1*/
+  a1->field_4 = (int)&vt_InfantryClass; /*0x517db1*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x517dbe*/
   {
     v3 = *(InfantryTypeClass **)&a1->__pad_690[48]; /*0x517dc4*/

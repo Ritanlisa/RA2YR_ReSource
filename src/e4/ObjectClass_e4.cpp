@@ -1022,9 +1022,9 @@ ObjectClass * * ObjectClass::Dtor()
   unsigned int *v9; // [esp+10h] [ebp-4h] BYREF
 
   v2 = (BombClass *)*((unsigned int *)this + 14); /*0x5f3b84*/
-  *this = &ObjectClass::`vftable'; /*0x5f3b87*/
-  *((unsigned int *)this + 1) = &ObjectClass::`vftable'; /*0x5f3b8f*/
-  *((unsigned int *)this + 2) = &ObjectClass::`vftable'; /*0x5f3b96*/
+  *this = &vt_ObjectClass; /*0x5f3b87*/
+  *((unsigned int *)this + 1) = &vt_ObjectClass; /*0x5f3b8f*/
+  *((unsigned int *)this + 2) = &vt_ObjectClass; /*0x5f3b96*/
   *((unsigned int *)this + 3) = &vt_ObjectClass; /*0x5f3b9d*/
   if ( v2 ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs((int)v2); /*0x5f3ba6*/

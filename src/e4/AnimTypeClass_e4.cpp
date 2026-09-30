@@ -53,10 +53,10 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
   *((unsigned int *)this + 56) = 0; /*0x41e3ef*/
   *((unsigned int *)this + 65) = 0; /*0x41e3f5*/
   *((unsigned int *)this + 66) = 0; /*0x41e3fb*/
-  *this = &AITriggerTypeClass::`vftable'; /*0x41e401*/
-  *((unsigned int *)this + 1) = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  *((unsigned int *)this + 2) = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
-  *((unsigned int *)this + 3) = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  *this = &vt_AITriggerTypeClass; /*0x41e401*/
+  *((unsigned int *)this + 1) = &vt_AITriggerTypeClass; /*0x41e407*/
+  *((unsigned int *)this + 2) = &vt_AITriggerTypeClass; /*0x41e40e*/
+  *((unsigned int *)this + 3) = &vt_AITriggerTypeClass; /*0x41e415*/
   memset((unsigned int *)this + 57, 0, 0x20u); /*0x41e41c*/
   if ( g_abs_A8B210 < g_abs_A8B208 /*0x41e452*/
     || (g_abs_A8B20D || !g_abs_A8B208)
@@ -161,9 +161,9 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   *((unsigned char *)this + 882) = 0; /*0x42771e*/
   *((unsigned char *)this + 883) = 0; /*0x427724*/
   *((unsigned char *)this + 884) = 1; /*0x42772a*/
-  *this = &AnimTypeClass::`vftable'; /*0x427731*/
-  *((unsigned int *)this + 1) = &AnimTypeClass::`vftable'; /*0x427737*/
-  *((unsigned int *)this + 2) = &AnimTypeClass::`vftable'; /*0x42773d*/
+  *this = &vt_AnimTypeClass; /*0x427731*/
+  *((unsigned int *)this + 1) = &vt_AnimTypeClass; /*0x427737*/
+  *((unsigned int *)this + 2) = &vt_AnimTypeClass; /*0x42773d*/
   *((unsigned int *)this + 3) = &vt_AnimTypeClass; /*0x427744*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x42774b*/
   *((unsigned char *)this + 564) = 1; /*0x427750*/
@@ -934,9 +934,9 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((unsigned int *)a1, (int)&v3); /*0x42882c*/
-      *(unsigned int *)a1 = &AnimTypeClass::`vftable'; /*0x428831*/
-      *(unsigned int *)(a1 + 4) = &AnimTypeClass::`vftable'; /*0x428837*/
-      *(unsigned int *)(a1 + 8) = &AnimTypeClass::`vftable'; /*0x42883e*/
+      *(unsigned int *)a1 = &vt_AnimTypeClass; /*0x428831*/
+      *(unsigned int *)(a1 + 4) = &vt_AnimTypeClass; /*0x428837*/
+      *(unsigned int *)(a1 + 8) = &vt_AnimTypeClass; /*0x42883e*/
       *(unsigned int *)(a1 + 12) = &vt_AnimTypeClass; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
@@ -1137,9 +1137,9 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AnimTypeClass::`vftable'; /*0x428ead*/
-  *(Block + 1) = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  *(Block + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
+  *Block = &vt_AnimTypeClass; /*0x428ead*/
+  *(Block + 1) = &vt_AnimTypeClass; /*0x428eb3*/
+  *(Block + 2) = &vt_AnimTypeClass; /*0x428eba*/
   *(Block + 3) = &vt_AnimTypeClass; /*0x428ec1*/
   v6 = Block; /*0x428ecf*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x428ed3*/

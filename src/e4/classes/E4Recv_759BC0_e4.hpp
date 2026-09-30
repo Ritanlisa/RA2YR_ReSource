@@ -19,6 +19,6 @@ struct E4Recv_759BC0 {
     unsigned int q4744;  // 0x4744
     unsigned int q4760;  // 0x4760
 // --- flat members (END) ---
-    unsigned int sub_759BC0(signed int a2);  // 0x759BC0
+    unsigned int  sub_759BC0(signed int a2);  // 0x759BC0
 };
 } // namespace gamemd

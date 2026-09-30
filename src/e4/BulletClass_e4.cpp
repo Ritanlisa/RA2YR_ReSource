@@ -46,9 +46,9 @@ BulletClass::BulletClass()
   *((unsigned short *)this + 167) = -1; /*0x46640e*/
   *((unsigned int *)this + 85) = 0; /*0x466419*/
   *((unsigned char *)this + 344) = 0; /*0x46641f*/
-  *(unsigned int *)this = &BulletClass::`vftable'; /*0x466425*/
-  *((unsigned int *)this + 1) = &BulletClass::`vftable'; /*0x46642b*/
-  *((unsigned int *)this + 2) = &BulletClass::`vftable'; /*0x466431*/
+  *(unsigned int *)this = &vt_BulletClass; /*0x466425*/
+  *((unsigned int *)this + 1) = &vt_BulletClass; /*0x46642b*/
+  *((unsigned int *)this + 2) = &vt_BulletClass; /*0x466431*/
   *((unsigned int *)this + 3) = &vt_BulletClass; /*0x466438*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x46643f*/
   *((unsigned int *)this + 77) = 0; /*0x466444*/
@@ -82,9 +82,9 @@ BulletClass * * BulletClass::Dtor()
   int v3; // eax
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &BulletClass::`vftable'; /*0x466566*/
-  *((unsigned int *)this + 1) = &BulletClass::`vftable'; /*0x46656c*/
-  *((unsigned int *)this + 2) = &BulletClass::`vftable'; /*0x466573*/
+  *(unsigned int *)this = &vt_BulletClass; /*0x466566*/
+  *((unsigned int *)this + 1) = &vt_BulletClass; /*0x46656c*/
+  *((unsigned int *)this + 2) = &vt_BulletClass; /*0x466573*/
   *((unsigned int *)this + 3) = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((unsigned char *)this + 344) ) /*0x466586*/

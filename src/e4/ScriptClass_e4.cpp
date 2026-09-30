@@ -37,9 +37,9 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x69164f*/
-      *(unsigned int *)aP0->__pad_0 = &ScriptClass::`vftable'; /*0x691654*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &ScriptClass::`vftable'; /*0x69165a*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &ScriptClass::`vftable'; /*0x691661*/
+      *(unsigned int *)aP0->__pad_0 = &vt_ScriptClass; /*0x691654*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_ScriptClass; /*0x69165a*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_ScriptClass; /*0x691661*/
       *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_ScriptClass; /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x691678*/

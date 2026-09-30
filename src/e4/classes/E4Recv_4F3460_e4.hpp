@@ -50,6 +50,6 @@ struct E4Recv_4F3460 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_4F3460(int aP1,  void* aP2,  unsigned int * a3,  void* aP4,  const char ** a5,  void* aP6,  const char ** a7,  void* aP8,  const char ** a9);    // 0x4F3460
+    int  sub_4F3460(int aP1, void * aP2, unsigned int * a3, void * aP4, void * a5, void * aP6, void * a7, void * aP8, void * a9);  // 0x4F3460
 };
 } // namespace gamemd

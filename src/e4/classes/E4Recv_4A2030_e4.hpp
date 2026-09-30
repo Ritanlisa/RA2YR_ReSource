@@ -11,6 +11,6 @@ struct E4Recv_4A2030 {
     unsigned int q054;  // 0x54
     unsigned int q084;  // 0x84
 // --- flat members (END) ---
-    int sub_4A2030(void* aP1,  int aP2);    // 0x4A2030
+    int  sub_4A2030(void * aP1, int aP2);  // 0x4A2030
 };
 } // namespace gamemd

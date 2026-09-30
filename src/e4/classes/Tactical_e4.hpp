@@ -1,6 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -603,28 +605,28 @@ struct Tactical {
     unsigned int field_24;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0
-    int * CreateTacticalLightSurface(int * a2,  int * a1,  void * aP2,  int * a3,  int * a4,  void * aP5);    // 0x484050
-    ScenarioClass * * CalculateTacticalLighting(int * a1,  void * aP2,  int * a3,  int * a4,  void * aP5,  int * a6,  long long a8);    // 0x484180
-    unsigned int * MouseMove(void * aP1,  void * aP2);    // 0x4A91B0
-    bool IsCellVisible(void * aP1);  // 0x568350
+    int *  CreateTacticalLightSurface(int * a2, int * a1, void * aP2, int * a3, int * a4, void * aP5);  // 0x484050
+    ScenarioClass * *  CalculateTacticalLighting(int * a1, void * aP2, int * a3, int * a4, void * aP5, int * a6, __int64 a8);  // 0x484180
+    unsigned int *  MouseMove(void * aP1, void * aP2);  // 0x4A91B0
+    bool  IsCellVisible(void * aP1);  // 0x568350
     char * GetCellData(void *a1 = 0);  // 0x58C2A0
-    char MouseOver(void * aP0,  void * aP1,  void * aP2,  void * aP3,  void * aP4,  void * aP5);    // 0x692300
-    char HandleTacticalMouseInput(int _28,  unsigned int * a2,  int a4,  void * aP4);    // 0x6930A0
+    char  MouseOver(void * aP0, void * aP1, void * aP2, void * aP3, void * aP4, void * aP5);  // 0x692300
+    char  HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, void * aP4);  // 0x6930A0
     int UpdateUIVisibility(void *a1 = 0);  // 0x6A6610
-    void DisplayTacticalOverlayText(wchar_t * String);  // 0x6D4E20
-    unsigned int SetTacticalPosition(void * aP1);  // 0x6D6070
-    unsigned int * PixelToCell(void * aP1,  void * aP2);    // 0x6D6590
-    int AddCellToDrawList(void * aP1);  // 0x6DA7D0
+    void  DisplayTacticalOverlayText(void * String);  // 0x6D4E20
+    unsigned int  SetTacticalPosition(void * aP1);  // 0x6D6070
+    unsigned int *  PixelToCell(void * aP1, void * aP2);  // 0x6D6590
+    int  AddCellToDrawList(void * aP1);  // 0x6DA7D0
     int DrawTacticalConnectorLines();  // 0x6DB210
-    char DrawOverlay(int * a1,  void * aP2,  int a4,  int a5);    // 0x6DBB60
-    Tactical * UpdateView(char a2);  // 0x6DC470
-    char * SetCellTransform(int a2, void* aP2, int a4, void* aP4, int a6, int a7, void *a1 = 0);    // 0x4A35F0
-    int Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x6E4970
-    char SelectObject(int a2);  // 0x4F4450
-    int * ScrollMap(void * aP0,  int a2);    // 0x6DA560
-    int InitMap(int a1,  int a2);    // 0x6DBD20
-    int UpdateMapView(void * aP0,  int * a1,  int aP2);    // 0x6DBE00
-    int ddtor(int a1,  unsigned int * a2);    // 0x6DBCE0
+    char  DrawOverlay(int * a1, void * aP2, int a4, int a5);  // 0x6DBB60
+    Tactical *  UpdateView(unsigned int * Block, char a2);  // 0x6DC470
+    char *  SetCellTransform(int a2, void * aP2, int a4, void * aP4, int a6, int a7);  // 0x4A35F0
+    int  Init(unsigned int * a2);  // 0x6E4970
+    char  SelectObject(int a2);  // 0x4F4450
+    int *  ScrollMap(void * aP0, int a2);  // 0x6DA560
+    int  InitMap(int a1, int a2);  // 0x6DBD20
+    int  UpdateMapView(void * aP0, int * a1, int aP2);  // 0x6DBE00
+    int  ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460
 };

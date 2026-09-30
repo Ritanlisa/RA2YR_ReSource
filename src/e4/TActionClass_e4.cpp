@@ -860,9 +860,9 @@ TActionClass::TActionClass()
   *((unsigned int *)this + 12) = 0; /*0x71e6b8*/
   *((unsigned char *)this + 56) = 0; /*0x71e6bb*/
   *((unsigned int *)this + 21) = 0; /*0x71e6be*/
-  *(unsigned int *)this = &TEventClass::`vftable'; /*0x71e6c1*/
-  *((unsigned int *)this + 1) = &TEventClass::`vftable'; /*0x71e6c7*/
-  *((unsigned int *)this + 2) = &TEventClass::`vftable'; /*0x71e6ce*/
+  *(unsigned int *)this = &vt_TEventClass; /*0x71e6c1*/
+  *((unsigned int *)this + 1) = &vt_TEventClass; /*0x71e6c7*/
+  *((unsigned int *)this + 2) = &vt_TEventClass; /*0x71e6ce*/
   *((unsigned int *)this + 3) = &vt_TEventClass; /*0x71e6d5*/
   v2 = g_abs_B0F1B0; /*0x71e6dc*/
   if ( g_abs_B0F1B0 < g_abs_B0F1A8 /*0x71e71a*/
@@ -1698,9 +1698,9 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x6e3dcf*/
-      *(unsigned int *)aP0->__pad_0 = &TActionClass::`vftable'; /*0x6e3dd4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TActionClass::`vftable'; /*0x6e3dda*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TActionClass::`vftable'; /*0x6e3de1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TActionClass; /*0x6e3dd4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TActionClass; /*0x6e3dda*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TActionClass; /*0x6e3de1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TActionClass; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking( /*0x6e3df8*/

@@ -20,6 +20,6 @@ struct E4Recv_4B69E0 {
     unsigned int q5170;  // 0x5170
     unsigned int owningHouseIndex;
 // --- flat members (END) ---
-    char sub_4B69E0(int a2);  // 0x4B69E0
+    char  sub_4B69E0(int a2);  // 0x4B69E0
 };
 } // namespace gamemd

@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -78,21 +79,21 @@ struct Timer {
     unsigned int __pad_0;
     unsigned int __pad_6;
     unsigned int m_18;
-    unsigned int DisableHighPrecision;
+    // dup-member: unsigned int DisableHighPrecision;
     unsigned int ReadTSC;
 // --- flat members (END) ---
-    DynamicVector * Start(void * aP1);  // 0x46B640
-    char StartDouble(double a2);  // 0x4A5240
-    DWORD * Init(int a2);  // 0x4F1B00
+    DynamicVector *  Start(void * aP1);  // 0x46B640
+    char  StartDouble(double a2);  // 0x4A5240
+    DWORD *  Init(DWORD a2);  // 0x4F1B00
     int GetRemainingMs();  // 0x4F1B20
-    HWNDPumpMessages(int * this);  // 0x54F720
+    HWND PumpMessages();  // 0x54F720
     double GetHighPrecision();  // 0x5B1E40
     int GetElapsed();  // 0x5F1390
     void * EnableHighPrecision();  // 0x5D5870
-    MMRESULTDisableHighPrecision();  // 0x5D5880
+    MMRESULT DisableHighPrecision();  // 0x5D5880
     int UpdateDelta();  // 0x6C8820
-    DWORDGetTicks();  // 0x6C8C40
-    char SetFlag(char a2);  // 0x7500B0
-    unsigned long longReadTSC(unsigned int * a1);  // 0x7C6064
+    DWORD GetTicks();  // 0x6C8C40
+    char  SetFlag(char a2);  // 0x7500B0
+    unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064
 };
 } // namespace gamemd

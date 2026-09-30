@@ -315,9 +315,9 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)(v3 + 64) = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ca2b7*/
       *(unsigned int *)(v3 + 84) = 10; /*0x4ca2bd*/
       *(unsigned int *)(v3 + 80) = 0; /*0x4ca2c4*/
-      *(unsigned int *)v3 = &FactoryClass::`vftable'; /*0x4ca2c7*/
-      *(unsigned int *)(v3 + 4) = &FactoryClass::`vftable'; /*0x4ca2cd*/
-      *(unsigned int *)(v3 + 8) = &FactoryClass::`vftable'; /*0x4ca2d4*/
+      *(unsigned int *)v3 = &vt_FactoryClass; /*0x4ca2c7*/
+      *(unsigned int *)(v3 + 4) = &vt_FactoryClass; /*0x4ca2cd*/
+      *(unsigned int *)(v3 + 8) = &vt_FactoryClass; /*0x4ca2d4*/
       *(unsigned int *)(v3 + 12) = &vt_FactoryClass; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
@@ -544,9 +544,9 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   void *v5; // eax
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &FactoryClass::`vftable'; /*0x4ca776*/
-  *(Block + 1) = &FactoryClass::`vftable'; /*0x4ca77c*/
-  *(Block + 2) = &FactoryClass::`vftable'; /*0x4ca783*/
+  *Block = &vt_FactoryClass; /*0x4ca776*/
+  *(Block + 1) = &vt_FactoryClass; /*0x4ca77c*/
+  *(Block + 2) = &vt_FactoryClass; /*0x4ca783*/
   *(Block + 3) = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/

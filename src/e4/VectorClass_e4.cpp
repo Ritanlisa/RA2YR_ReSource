@@ -603,7 +603,7 @@ unsigned int * VectorClass_K_8::Constructor()
   *((unsigned int *)this + 6) = RA2_OPNEW(0x10000u); /*0x4a2843*/
   *((unsigned int *)this + 7) = RA2_OPNEW(0x10000u); /*0x4a2850*/
   *((unsigned int *)this + 8) = RA2_OPNEW(0x10000u); /*0x4a285b*/
-  *this = &CStreamClass::`vftable'; /*0x4a285e*/
+  *this = &vt_CStreamClass; /*0x4a285e*/
   *((unsigned int *)this + 1) = &vt_CStreamClass; /*0x4a2864*/
   *((unsigned int *)this + 9) = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/

@@ -1,6 +1,7 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -51,7 +52,7 @@ struct CCFileClass {
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(void* filename);  // init file object with name
-     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x478EB1 ctor (data-member artifact removed G34)
+     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
 };
 
 } // namespace gamemd

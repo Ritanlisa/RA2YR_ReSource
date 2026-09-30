@@ -52,6 +52,6 @@ struct E4Recv_4C2FC0 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
-    int * sub_4C2FC0(void * aP1,  void* aP2,  int a4,  void * aP4,  void* aP5,  void* aP6,  void* aP7,  int a9,  int a10);    // 0x4C2FC0
+    int *  sub_4C2FC0(void * aP1, void * aP2, int a4, void * aP4, void * aP5, void * aP6, void * aP7, int a9, int a10);  // 0x4C2FC0
 };
 } // namespace gamemd

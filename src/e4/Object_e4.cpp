@@ -394,10 +394,10 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
 
   ObjectClass::ctor(this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
-  *(unsigned int *)this = &OverlayClass::`vftable'; /*0x5fc38f*/
+  *(unsigned int *)this = &vt_OverlayClass; /*0x5fc38f*/
   *((unsigned int *)this + 43) = v5; /*0x5fc395*/
-  *((unsigned int *)this + 2) = &OverlayClass::`vftable'; /*0x5fc39f*/
-  *((unsigned int *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
+  *((unsigned int *)this + 2) = &vt_OverlayClass; /*0x5fc39f*/
+  *((unsigned int *)this + 1) = &vt_OverlayClass; /*0x5fc3a6*/
   *((unsigned int *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
@@ -642,9 +642,9 @@ void * Object::DrawObject(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &OverlayClass::`vftable'; /*0x5fdf76*/
-  *(Block + 1) = &OverlayClass::`vftable'; /*0x5fdf7c*/
-  *(Block + 2) = &OverlayClass::`vftable'; /*0x5fdf83*/
+  *Block = &vt_OverlayClass; /*0x5fdf76*/
+  *(Block + 1) = &vt_OverlayClass; /*0x5fdf7c*/
+  *(Block + 2) = &vt_OverlayClass; /*0x5fdf83*/
   *(Block + 3) = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fdf91*/
   v5 = Block; /*0x5fdfa6*/
@@ -1712,9 +1712,9 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x5fd909*/
     {
       ObjectClass::Init(aP1, (AbstractClass *)&aP1a); /*0x5fd912*/
-      *(unsigned int *)aP1->__pad_0 = &OverlayClass::`vftable'; /*0x5fd917*/
-      *(unsigned int *)&aP1->__pad_0[4] = &OverlayClass::`vftable'; /*0x5fd91d*/
-      *(unsigned int *)&aP1->__pad_0[8] = &OverlayClass::`vftable'; /*0x5fd924*/
+      *(unsigned int *)aP1->__pad_0 = &vt_OverlayClass; /*0x5fd917*/
+      *(unsigned int *)&aP1->__pad_0[4] = &vt_OverlayClass; /*0x5fd91d*/
+      *(unsigned int *)&aP1->__pad_0[8] = &vt_OverlayClass; /*0x5fd924*/
       *(unsigned int *)&aP1->__pad_0[12] = &vt_OverlayClass; /*0x5fd92b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x5fd93e*/

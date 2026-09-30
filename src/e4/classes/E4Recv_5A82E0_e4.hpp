@@ -12,6 +12,6 @@ struct E4Recv_5A82E0 {
     unsigned int q308;  // 0x308
     unsigned int q1910;  // 0x1910
 // --- flat members (END) ---
-    void MapSeed_PlaceBuildingsScatter(short * a2);  // 0x5A82E0
+    void  MapSeed_PlaceBuildingsScatter(__int16 * a2);  // 0x5A82E0
 };
 } // namespace gamemd

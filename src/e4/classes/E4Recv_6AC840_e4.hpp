@@ -12,6 +12,6 @@ struct E4Recv_6AC840 {
     unsigned int M4558;  // 0x11CE
     unsigned int q4558;  // 0x4558
 // --- flat members (END) ---
-    char * sub_6AC840(int a2);  // 0x6AC840
+    char *  sub_6AC840(int a2);  // 0x6AC840
 };
 } // namespace gamemd

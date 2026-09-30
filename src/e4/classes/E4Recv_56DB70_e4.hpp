@@ -13,6 +13,6 @@ struct E4Recv_56DB70 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char InvalidateTileRegionMap(void* aP1);  // 0x56DB70
+    char  InvalidateTileRegionMap(void * aP1);  // 0x56DB70
 };
 } // namespace gamemd

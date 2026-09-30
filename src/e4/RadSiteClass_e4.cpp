@@ -41,10 +41,10 @@ RadSiteClass::RadSiteClass()
   *((unsigned int *)this + 26) = 0; /*0x65b21f*/
   *((unsigned int *)this + 27) = 0; /*0x65b222*/
   *((unsigned int *)this + 28) = 0; /*0x65b225*/
-  *this = &RadSiteClass::`vftable'; /*0x65b228*/
-  *((unsigned int *)this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
-  *((unsigned int *)this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
-  *((unsigned int *)this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
+  *this = &vt_RadSiteClass; /*0x65b228*/
+  *((unsigned int *)this + 1) = &vt_RadSiteClass; /*0x65b22e*/
+  *((unsigned int *)this + 2) = &vt_RadSiteClass; /*0x65b235*/
+  *((unsigned int *)this + 3) = &vt_RadSiteClass; /*0x65b23c*/
   if ( g_abs_B04BE0 < g_abs_B04BD8 /*0x65b277*/
     || (g_abs_B04BDD || !g_abs_B04BD8)
     && g_abs_B04BE4 > 0
@@ -99,9 +99,9 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] = v3; /*0x65b404*/
       aP0[1].uniqueId = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x65b40c*/
       aP0[1].nextArrayIndex = 0; /*0x65b40f*/
-      *(unsigned int *)aP0->__pad_0 = &RadSiteClass::`vftable'; /*0x65b416*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
-      *(unsigned int *)&aP0->__pad_0[8] = &RadSiteClass::`vftable'; /*0x65b423*/
+      *(unsigned int *)aP0->__pad_0 = &vt_RadSiteClass; /*0x65b416*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_RadSiteClass; /*0x65b41c*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_RadSiteClass; /*0x65b423*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x65b43a*/

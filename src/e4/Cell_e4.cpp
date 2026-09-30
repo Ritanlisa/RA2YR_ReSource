@@ -97,7 +97,7 @@ int Cell::PosToIndex()
 }
 // 0x43B4C0
 namespace gamemd {
-int Cell::CanPlaceBuilding(void * this, unsigned int * a2)
+int Cell::CanPlaceBuilding( unsigned int * a2)
 {
 
   int v2; // esi

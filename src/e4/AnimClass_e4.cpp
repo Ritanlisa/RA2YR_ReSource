@@ -29,7 +29,7 @@
 
 // 0x4228E0
 namespace gamemd {
-void AnimClass::Destruct(void * this, void * a2)
+void AnimClass::Destruct( void * a2)
 {
 
   unsigned char *v3; // ebp
@@ -45,8 +45,8 @@ void AnimClass::Destruct(void * this, void * a2)
   unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
   IDA_LOBYTE(this) = 1; /*0x4228e3*/
-  *(unsigned int *)this = &AnimClass::`vftable'; /*0x4228eb*/
-  *((unsigned int *)this + 1) = &AnimClass::`vftable'; /*0x4228f1*/
+  *(unsigned int *)this = &vt_AnimClass; /*0x4228eb*/
+  *((unsigned int *)this + 1) = &vt_AnimClass; /*0x4228f1*/
   *((unsigned int *)this + 2) = &vt_AnimClass; /*0x4228f8*/
   *((unsigned int *)this + 3) = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, this); /*0x422906*/

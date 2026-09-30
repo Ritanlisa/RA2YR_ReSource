@@ -478,7 +478,7 @@ LABEL_13:
   }
 LABEL_14:
   v8 = ++g_abs_A8DAB4; /*0x683bce*/
-  if ( !(uint8_t)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
     if ( g_abs_A8B238[0] == 4 ) /*0x683d3c*/

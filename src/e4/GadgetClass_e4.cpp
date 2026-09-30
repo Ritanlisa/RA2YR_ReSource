@@ -30,7 +30,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
   *((unsigned char *)this + 30) = 0; /*0x4e1322*/
   *((unsigned char *)this + 29) = a7; /*0x4e1327*/
   *(this + 8) = a6; /*0x4e132a*/
-  *this = &GadgetClass::`vftable'; /*0x4e132d*/
+  *this = &vt_GadgetClass; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
     *(this + 8) = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
@@ -45,7 +45,7 @@ ControlClass GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *this = &GadgetClass::`vftable'; /*0x4e1390*/
+  *this = &vt_GadgetClass; /*0x4e1390*/
   v1 = g_abs_8B3E90; /*0x4e1396*/
   if ( this == (unsigned int *)g_abs_8B3E90 ) /*0x4e139f*/
   {

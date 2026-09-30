@@ -18,6 +18,6 @@ struct E4Recv_7AE180 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
-    bool sub_7AE180(const char ** a2,  unsigned int * a3);    // 0x7AE180
+    bool  sub_7AE180(void * a2, unsigned int * a3);  // 0x7AE180
 };
 } // namespace gamemd

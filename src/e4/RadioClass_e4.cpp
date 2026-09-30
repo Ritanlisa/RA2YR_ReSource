@@ -26,9 +26,9 @@ void RadioClass::Release()
   *(this + 56) = &vt_VectorClass_TechnoClass; /*0x65a77c*/
   *(this + 57) = RA2_OPNEW(4u); /*0x65a78b*/
   *((unsigned char *)this + 237) = 1; /*0x65a791*/
-  *this = &RadioClass::`vftable'; /*0x65a798*/
-  *(this + 1) = &RadioClass::`vftable'; /*0x65a79e*/
-  *(this + 2) = &RadioClass::`vftable'; /*0x65a7a5*/
+  *this = &vt_RadioClass; /*0x65a798*/
+  *(this + 1) = &vt_RadioClass; /*0x65a79e*/
+  *(this + 2) = &vt_RadioClass; /*0x65a7a5*/
   *(this + 3) = &vt_RadioClass; /*0x65a7ac*/
   *(unsigned int *)*(this + 57) = 0; /*0x65a7be*/
   *(this + 53) = 0; /*0x65a7c4*/

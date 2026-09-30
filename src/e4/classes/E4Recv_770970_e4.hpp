@@ -11,6 +11,6 @@ struct E4Recv_770970 {
     unsigned int q328;  // 0x328
     unsigned int q808;  // 0x808
 // --- flat members (END) ---
-    char sub_770970(int a2,  int a3,  void ** a4);    // 0x770970
+    char  sub_770970(int a2, int a3, void ** a4);  // 0x770970
 };
 } // namespace gamemd

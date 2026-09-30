@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -26,6 +27,6 @@ struct VectorClass_Ptr {
     unsigned int m_C;
     unsigned int __tail_10;
 // --- flat members (END) ---
-    char ResizeAndCopy(int a2,  unsigned int * a3);    // 0x5AD010
+    char  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
 };
 } // namespace gamemd

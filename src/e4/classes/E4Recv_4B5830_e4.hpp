@@ -12,6 +12,6 @@ struct E4Recv_4B5830 {
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
     int Vf12(int,  ...);    // G6 vtable slot dispatch
-    unsigned int * sub_4B5830(unsigned int * a2);  // 0x4B5830
+    unsigned int *  sub_4B5830(unsigned int * a2);  // 0x4B5830
 };
 } // namespace gamemd

@@ -17,6 +17,6 @@ struct E4Recv_6DA9D0 {
     unsigned int q2180;  // 0x2180
     unsigned int q2304;  // 0x2304
 // --- flat members (END) ---
-    char * RenderSelectionBeacons(int a2);  // 0x6DA9D0
+    char *  RenderSelectionBeacons(int a2);  // 0x6DA9D0
 };
 } // namespace gamemd

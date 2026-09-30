@@ -15,6 +15,6 @@ struct E4Recv_70DE20 {
     unsigned int q804;  // 0x804
     unsigned int q1634;  // 0x1634
 // --- flat members (END) ---
-    int sub_70DE20(int a2);  // 0x70DE20
+    int  sub_70DE20(int a2);  // 0x70DE20
 };
 } // namespace gamemd

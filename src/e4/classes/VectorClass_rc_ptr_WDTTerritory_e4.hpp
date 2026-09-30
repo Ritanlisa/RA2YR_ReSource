@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -13,13 +14,13 @@ struct VectorClass_rc_ptr_WDTTerritory {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    char Release(int a2,  unsigned int * a3);    // 0x76B8C0
-    unsigned int * loc_76B6C0(char a2);  // 0x76B6C0
-    unsigned int * Clear(unsigned int * a2,  int a3);    // 0x76B760
-    char AddRef(int a2);  // 0x76B870
+    char  Release(int a2, unsigned int * a3);  // 0x76B8C0
+    unsigned int *  loc_76B6C0(void * aP1, int a3);  // 0x76B6C0
+    unsigned int *  Clear(unsigned int * a2, int a3);  // 0x76B760
+    char  AddRef(int a2);  // 0x76B870
     int ddtor(void *a1 = 0);  // 0x76B9E0
-    int GetSize(int a2);  // 0x76BA10
-    unsigned int GetCapacity(int a2);  // 0x76BA50
-    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x76BBC0
+    int  GetSize(int a2);  // 0x76BA10
+    unsigned int  GetCapacity(int a2);  // 0x76BA50
+    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x76BBC0
 };
 } // namespace gamemd

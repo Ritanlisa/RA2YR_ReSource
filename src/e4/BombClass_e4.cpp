@@ -28,9 +28,9 @@ int BombClass::AbstractClass()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   *((unsigned int *)this + 21) = 0; /*0x4385de*/
-  *(unsigned int *)this = &BombClass::`vftable'; /*0x4385e1*/
-  *((unsigned int *)this + 1) = &BombClass::`vftable'; /*0x4385e7*/
-  *((unsigned int *)this + 2) = &BombClass::`vftable'; /*0x4385ee*/
+  *(unsigned int *)this = &vt_BombClass; /*0x4385e1*/
+  *((unsigned int *)this + 1) = &vt_BombClass; /*0x4385e7*/
+  *((unsigned int *)this + 2) = &vt_BombClass; /*0x4385ee*/
   *((unsigned int *)this + 3) = &vt_BombClass; /*0x4385f5*/
   *((unsigned int *)this + 10) = 0; /*0x4385fc*/
   *((unsigned int *)this + 11) = 0; /*0x4385ff*/
@@ -177,9 +177,9 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x438b62*/
-      *(unsigned int *)aP0->__pad_0 = &BombClass::`vftable'; /*0x438b67*/
-      *(unsigned int *)&aP0->__pad_0[4] = &BombClass::`vftable'; /*0x438b6d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &BombClass::`vftable'; /*0x438b74*/
+      *(unsigned int *)aP0->__pad_0 = &vt_BombClass; /*0x438b67*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_BombClass; /*0x438b6d*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_BombClass; /*0x438b74*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_BombClass; /*0x438b7b*/
     }
     AudioController::Init(&aP0[1].nextArrayIndex); /*0x438b85*/
@@ -215,9 +215,9 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&BombClass::`vftable');
-  *(Block + 1) = &BombClass::`vftable'; /*0x4393fd*/
-  *(Block + 2) = &BombClass::`vftable'; /*0x439404*/
+  *Block = (unsigned int)(&vt_BombClass);
+  *(Block + 1) = &vt_BombClass; /*0x4393fd*/
+  *(Block + 2) = &vt_BombClass; /*0x439404*/
   *(Block + 3) = &vt_BombClass; /*0x43940b*/
   AudioFileClass::Release(Block + 15); /*0x439412*/
   v5 = Block; /*0x439427*/

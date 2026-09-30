@@ -41,6 +41,6 @@ struct E4Recv_5581A0 {
     unsigned int q5494;  // 0x5494
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    int sub_5581A0(void * aP1);  // 0x5581A0
+    int  sub_5581A0(void * aP1);  // 0x5581A0
 };
 } // namespace gamemd

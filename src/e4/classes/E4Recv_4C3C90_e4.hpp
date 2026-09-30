@@ -18,6 +18,6 @@ struct E4Recv_4C3C90 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    wchar_t ** sub_4C3C90(wchar_t * a2,  wchar_t * a3,  wchar_t * String,  wchar_t * a5);    // 0x4C3C90
+    wchar_t **  sub_4C3C90(void * a2, void * a3, void * String, void * a5);  // 0x4C3C90
 };
 } // namespace gamemd

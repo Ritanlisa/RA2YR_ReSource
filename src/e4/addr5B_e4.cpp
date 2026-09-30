@@ -3466,7 +3466,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
 
   SmallFunc_692290((int)this); /*0x5bda43*/
-  *(unsigned int *)this = &MouseClass::`vftable'; /*0x5bda4a*/
+  *(unsigned int *)this = &vt_MouseClass; /*0x5bda4a*/
   *((unsigned char *)this + 21852) = 0; /*0x5bda50*/
   *((unsigned int *)this + 5464) = 0; /*0x5bda56*/
   *((unsigned int *)this + 5465) = 0; /*0x5bda5c*/

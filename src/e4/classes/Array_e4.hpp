@@ -77,21 +77,21 @@ struct Array {
     unsigned int q0046;
     unsigned int q230;  // 0x230
 // --- flat members (END) ---
-    int GetClamped(void * aP1);  // 0x557AC0
-    int FindValue(void * aP1);  // 0x634290
-    char RemoveAt(int a2);  // 0x63E590
-    int Get(int a2);  // 0x65AD40
-    char ContainsValue(void * aP1);  // 0x65ADF0
+    int  GetClamped(void * aP1);  // 0x557AC0
+    int  FindValue(void * aP1);  // 0x634290
+    char  RemoveAt(int a2);  // 0x63E590
+    int  Get(int a2);  // 0x65AD40
+    char  ContainsValue(void * aP1);  // 0x65ADF0
     int Zero();  // 0x7490D0
     void ByteSwap();  // 0x749150
-    int GetElement(void * aP1);  // 0x763980
+    int  GetElement(void * aP1);  // 0x763980
     int CleanupArrayWOL();  // 0x7ACD30
-    char InsertElement(void * a1, void * aP2);  // 0x7AD790
+    char  InsertElement(void * a1, void * aP2);  // 0x7AD790
     int ForEach(int a1, int a2, int a3, void * a4);
     int ForEachReverse(void * aP0, int a2, int a3, void * a4);
     void Cleanup();  // 0x49B720
-    char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
-    void RemoveItemByValue(void * aP0, int a2);  // 0x55B880
+    char  GetElementAt(unsigned int * a2, int a3);  // 0x49D070
+    void  RemoveItemByValue(void * aP0, int a2);  // 0x55B880
     static double Contains(...);  // C2597 interim stub
 };
 } // namespace gamemd

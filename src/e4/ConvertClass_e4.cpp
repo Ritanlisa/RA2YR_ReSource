@@ -140,7 +140,7 @@ unsigned int * ConvertClass::Construct(char * a2, char * a3, int a4, int a5, cha
   *((char *)this + 93) = 0; /*0x48e929*/
   *((char *)this + 94) = 0; /*0x48e92f*/
   *((char *)this + 95) = 0; /*0x48e935*/
-  *this = (int)&ConvertClass::`vftable'; /*0x48e93b*/
+  *this = (int)&vt_ConvertClass; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *((char *)this + 91) = 1; /*0x48e943*/
   if ( *((char *)this + 1) == 1 ) /*0x48e94f*/

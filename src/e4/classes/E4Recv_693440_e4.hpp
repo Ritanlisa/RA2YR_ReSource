@@ -14,6 +14,6 @@ struct E4Recv_693440 {
     unsigned int M21848;  // 0x5558
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
-    char Map_EdgeScroll(unsigned int * a2);  // 0x693440
+    char  Map_EdgeScroll(unsigned int * a2);  // 0x693440
 };
 } // namespace gamemd

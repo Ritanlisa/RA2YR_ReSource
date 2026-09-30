@@ -20,6 +20,6 @@ struct E4Recv_49D390 {
     unsigned int q5170;  // 0x5170
     unsigned int q5494;  // 0x5494
 // --- flat members (END) ---
-    char LoadCoopCampaignSave(void* aP1);  // 0x49D390
+    char  LoadCoopCampaignSave(void * aP1);  // 0x49D390
 };
 } // namespace gamemd

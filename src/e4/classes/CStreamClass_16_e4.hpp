@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -16,12 +17,12 @@ struct CStreamClass_16 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int Seek(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4A4B20
-    char AddRef(int a2);  // 0x4A4B30
-    char Release(int a2, unsigned int * a3);  // 0x4A4B70
+    int  Seek(int a2);  // 0x4A4B20
+    char  AddRef(int a2);  // 0x4A4B30
+    char  Release(int a2, unsigned int * a3);  // 0x4A4B70
     void ddtor();  // 0x4A4C20
-    int Read(int a1, int a2, int a3, int a4, int a5);  // 0x4A4C50
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4A4D90
-    unsigned int Write(int a1, int a2, int a3);  // 0x4A4C90
+    int  Read(unsigned int * a2);  // 0x4A4C50
+    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4A4D90
+    unsigned int  Write(int a2);  // 0x4A4C90
 };
 } // namespace gamemd

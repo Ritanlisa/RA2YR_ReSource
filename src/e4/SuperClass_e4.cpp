@@ -94,9 +94,9 @@ void SuperClass::Constructor()
   *((unsigned char *)this + 111) = 0; /*0x6caf07*/
   *((unsigned char *)this + 112) = 0; /*0x6caf0a*/
   *((unsigned int *)this + 31) = -1; /*0x6caf0d*/
-  *(unsigned int *)this = &SuperClass::`vftable'; /*0x6caf10*/
-  *((unsigned int *)this + 1) = &SuperClass::`vftable'; /*0x6caf16*/
-  *((unsigned int *)this + 2) = &SuperClass::`vftable'; /*0x6caf1d*/
+  *(unsigned int *)this = &vt_SuperClass; /*0x6caf10*/
+  *((unsigned int *)this + 1) = &vt_SuperClass; /*0x6caf16*/
+  *((unsigned int *)this + 2) = &vt_SuperClass; /*0x6caf1d*/
   *((unsigned int *)this + 3) = &vt_SuperClass; /*0x6caf24*/
   *((unsigned int *)this + 15) = &g_abs_887734; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
@@ -146,9 +146,9 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
   *(unsigned char *)(this + 111) = 0; /*0x6cafea*/
   *(unsigned char *)(this + 112) = 0; /*0x6cafed*/
   *(unsigned int *)(this + 116) = -100; /*0x6caff0*/
-  *(unsigned int *)this = &SuperClass::`vftable'; /*0x6caff7*/
-  *(unsigned int *)(this + 4) = &SuperClass::`vftable'; /*0x6caffd*/
-  *(unsigned int *)(this + 8) = &SuperClass::`vftable'; /*0x6cb003*/
+  *(unsigned int *)this = &vt_SuperClass; /*0x6caff7*/
+  *(unsigned int *)(this + 4) = &vt_SuperClass; /*0x6caffd*/
+  *(unsigned int *)(this + 8) = &vt_SuperClass; /*0x6cb003*/
   *(unsigned int *)(this + 12) = &vt_SuperClass; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(this + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
@@ -203,9 +203,9 @@ SuperClass * * SuperClass::CleanupMembers()
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = *((unsigned int *)this + 26); /*0x6cb124*/
-  *(unsigned int *)this = &SuperClass::`vftable'; /*0x6cb127*/
-  *((unsigned int *)this + 1) = &SuperClass::`vftable'; /*0x6cb12f*/
-  *((unsigned int *)this + 2) = &SuperClass::`vftable'; /*0x6cb136*/
+  *(unsigned int *)this = &vt_SuperClass; /*0x6cb127*/
+  *((unsigned int *)this + 1) = &vt_SuperClass; /*0x6cb12f*/
+  *((unsigned int *)this + 2) = &vt_SuperClass; /*0x6cb136*/
   *((unsigned int *)this + 3) = &vt_SuperClass; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
@@ -2425,9 +2425,9 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       AbstractClass::Constructor(aP0); /*0x6cdf0e*/
-      *(unsigned int *)aP0->__pad_0 = &SuperClass::`vftable'; /*0x6cdf13*/
-      *(unsigned int *)&aP0->__pad_0[4] = &SuperClass::`vftable'; /*0x6cdf19*/
-      *(unsigned int *)&aP0->__pad_0[8] = &SuperClass::`vftable'; /*0x6cdf20*/
+      *(unsigned int *)aP0->__pad_0 = &vt_SuperClass; /*0x6cdf13*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_SuperClass; /*0x6cdf19*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_SuperClass; /*0x6cdf20*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_SuperClass; /*0x6cdf27*/
     }
     if ( aP0[2].NeedsSaveOrLink /*0x6cdf70*/

@@ -34,7 +34,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   *((unsigned int *)this + 21) = 0; /*0x661f0f*/
   *((unsigned int *)this + 22) = 0; /*0x661f12*/
   *((unsigned char *)this + 80) = 1; /*0x661f15*/
-  *(unsigned int *)this = &RocketLocomotionClass::`vftable'; /*0x661f19*/
+  *(unsigned int *)this = &vt_RocketLocomotionClass; /*0x661f19*/
   *((unsigned int *)this + 1) = &vt_RocketLocomotionClass; /*0x661f1f*/
   return this; /*0x661f28*/
 
@@ -64,12 +64,12 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
+      *a1 = (int)&vt_LocomotionClass; /*0x663428*/
       a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
       v3 = g_abs_A8ED84; /*0x663435*/
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
-      *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
+      *a1 = (int)&vt_RocketLocomotionClass; /*0x663445*/
       a1[1] = (int)&vt_RocketLocomotionClass; /*0x66344b*/
     }
   }
@@ -87,7 +87,7 @@ int RocketLocomotionClass::StubReturn96()
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
+  *Block = &vt_RocketLocomotionClass; /*0x6635c3*/
   *(Block + 1) = &vt_RocketLocomotionClass; /*0x6635c9*/
   LocomotionClass::Construct(Block); /*0x6635d0*/
   if ( (Block & 1) != 0 ) /*0x6635da*/

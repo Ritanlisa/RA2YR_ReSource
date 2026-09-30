@@ -51,9 +51,9 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   unsigned int v23[4]; // [esp+10h] [ebp-10h] BYREF
 
   IDA_LOBYTE(a2) = 1; /*0x6e4f63*/
-  *a1 = &TagClass::`vftable'; /*0x6e4f69*/
-  a1[1] = &TagClass::`vftable'; /*0x6e4f6f*/
-  a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
+  *a1 = &vt_TagClass; /*0x6e4f69*/
+  a1[1] = &vt_TagClass; /*0x6e4f6f*/
+  a1[2] = &vt_TagClass; /*0x6e4f76*/
   a1[3] = &vt_TagClass; /*0x6e4f7d*/
   ((AbstractClass *)((AbstractClass *)a1))->AnnounceExpiredPointer(a2); /*0x6e4f84*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4f90*/
@@ -379,9 +379,9 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x6e574f*/
-      *(unsigned int *)aP0->__pad_0 = &TagClass::`vftable'; /*0x6e5754*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &TagClass::`vftable'; /*0x6e575a*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &TagClass::`vftable'; /*0x6e5761*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TagClass; /*0x6e5754*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_TagClass; /*0x6e575a*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_TagClass; /*0x6e5761*/
       *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TagClass; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6e5778*/

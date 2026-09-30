@@ -1,6 +1,8 @@
 // GENERATED template-collision flat carrier (mechanical).
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -23,7 +25,7 @@ TypeList_flat * QueryInterface(unsigned int * Block, char a2);
 char AddRef(int a2);
 char PushBack(void * aP1);
 char Release(int a2, unsigned int * a3);
-int * CopyAircraft(void * aP1);ctorClass_flat * aP1);
+int * CopyAircraft(void * aP1);
 int * CopyInfantry(void * aP1);
 int Clear(int a2);
 int GetSize(unsigned int * a2);

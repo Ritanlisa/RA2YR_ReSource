@@ -49,9 +49,9 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   *((unsigned char *)this + 3596) = 0; /*0x41c8ee*/
   *((unsigned char *)this + 3597) = 0; /*0x41c8f4*/
   *((unsigned char *)this + 3598) = 0; /*0x41c8fa*/
-  *(unsigned int *)this = &AircraftTypeClass::`vftable'; /*0x41c900*/
-  *((unsigned int *)this + 1) = &AircraftTypeClass::`vftable'; /*0x41c906*/
-  *((unsigned int *)this + 2) = &AircraftTypeClass::`vftable'; /*0x41c90c*/
+  *(unsigned int *)this = &vt_AircraftTypeClass; /*0x41c900*/
+  *((unsigned int *)this + 1) = &vt_AircraftTypeClass; /*0x41c906*/
+  *((unsigned int *)this + 2) = &vt_AircraftTypeClass; /*0x41c90c*/
   *((unsigned int *)this + 3) = &vt_AircraftTypeClass; /*0x41c913*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x41c91a*/
   v3 = g_abs_A8B228; /*0x41c91f*/
@@ -189,9 +189,9 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
-  *(Block + 1) = &AircraftTypeClass::`vftable'; /*0x41cfec*/
-  *(Block + 2) = &AircraftTypeClass::`vftable'; /*0x41cff3*/
+  *Block = &vt_AircraftTypeClass; /*0x41cfe6*/
+  *(Block + 1) = &vt_AircraftTypeClass; /*0x41cfec*/
+  *(Block + 2) = &vt_AircraftTypeClass; /*0x41cff3*/
   *(Block + 3) = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x41d001*/
   v5 = Block; /*0x41d016*/
@@ -288,9 +288,9 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP0); /*0x41ce3f*/
-      *(unsigned int *)aP0->__pad_0 = &AircraftTypeClass::`vftable'; /*0x41ce44*/
-      *(unsigned int *)&aP0->__pad_0[4] = &AircraftTypeClass::`vftable'; /*0x41ce4a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &AircraftTypeClass::`vftable'; /*0x41ce51*/
+      *(unsigned int *)aP0->__pad_0 = &vt_AircraftTypeClass; /*0x41ce44*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_AircraftTypeClass; /*0x41ce4a*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_AircraftTypeClass; /*0x41ce51*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass; /*0x41ce58*/
     }
     ObjectPtr::RegisterForTracking( /*0x41ce6b*/

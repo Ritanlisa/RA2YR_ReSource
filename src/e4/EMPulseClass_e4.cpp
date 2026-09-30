@@ -28,15 +28,15 @@ int EMPulseClass::StubReturn55()
 } // namespace gamemd
 // 0x4C5AC0
 namespace gamemd {
-EMPulseClass * EMPulseClass::CopyTo(void * this, void * a2, char a3)
+EMPulseClass * EMPulseClass::CopyTo( void * a2, char a3)
 {
 
   int v4; // eax
   AbstractClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = &EMPulseClass::`vftable'; /*0x4c5ac4*/
-  *(unsigned int *)&this->__pad_0[4] = &EMPulseClass::`vftable'; /*0x4c5aca*/
-  *(unsigned int *)&this->__pad_0[8] = &EMPulseClass::`vftable'; /*0x4c5ad1*/
+  *(unsigned int *)this->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
+  *(unsigned int *)&this->__pad_0[4] = &vt_EMPulseClass; /*0x4c5aca*/
+  *(unsigned int *)&this->__pad_0[8] = &vt_EMPulseClass; /*0x4c5ad1*/
   *(unsigned int *)&this->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius((int)this); /*0x4c5ae8*/

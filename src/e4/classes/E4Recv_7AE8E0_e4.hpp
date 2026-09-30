@@ -18,6 +18,6 @@ struct E4Recv_7AE8E0 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
-    bool GameOptionsScreenWOL_Helper_7AE8E0(void * aP1,  unsigned int * a2);    // 0x7AE8E0
+    bool  GameOptionsScreenWOL_Helper_7AE8E0(void * aP1, unsigned int * a2);  // 0x7AE8E0
 };
 } // namespace gamemd

@@ -1,6 +1,7 @@
 // GENERATED template-collision flat carrier (mechanical).
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -30,7 +31,7 @@ LinkClass * * Append(int a2);
 LinkClass * * InsertAfter(int a2);
 int * Next();
 int Contains(void * aP1);
-int Init();t Prepend(int a2);igned int * Attach(int a2);
+int Init();
 unsigned int * FindNext();
 unsigned int * FindPrev();
 void * MoveNode(void * a2);

@@ -148,9 +148,9 @@ int SideClass::Construct(CCINIClass * aP1)
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
   *((unsigned int *)this + 38) = &vt_TypeList_int; /*0x6a458c*/
-  *this = &SideClass::`vftable'; /*0x6a4597*/
-  *((unsigned int *)this + 1) = &SideClass::`vftable'; /*0x6a459d*/
-  *((unsigned int *)this + 2) = &SideClass::`vftable'; /*0x6a45a3*/
+  *this = &vt_SideClass; /*0x6a4597*/
+  *((unsigned int *)this + 1) = &vt_SideClass; /*0x6a459d*/
+  *((unsigned int *)this + 2) = &vt_SideClass; /*0x6a45a3*/
   *((unsigned int *)this + 3) = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x6a45b1*/
   if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
@@ -208,9 +208,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2[1].abstractFlags = 10; /*0x6a47cb*/
       v2[1].uniqueId = 0; /*0x6a47d1*/
       *(unsigned int *)v2[1].__pad_0 = &vt_TypeList_int; /*0x6a47d7*/
-      *(unsigned int *)v2->__pad_0 = &SideClass::`vftable'; /*0x6a47e1*/
-      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[4] = &SideClass::`vftable'; /*0x6a47e7*/
-      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[8] = &SideClass::`vftable'; /*0x6a47ee*/
+      *(unsigned int *)v2->__pad_0 = &vt_SideClass; /*0x6a47e1*/
+      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[4] = &vt_SideClass; /*0x6a47e7*/
+      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[8] = &vt_SideClass; /*0x6a47ee*/
       *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[12] = &vt_SideClass; /*0x6a47f5*/
     }
     v5 = v2 + 1; /*0x6a47fc*/
@@ -267,9 +267,9 @@ void * SideClass::Init(void ** Block, char a2)
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&SideClass::`vftable');
-  *(Block + 1) = &SideClass::`vftable'; /*0x6a493c*/
-  *(Block + 2) = &SideClass::`vftable'; /*0x6a4943*/
+  *Block = (void *)(&vt_SideClass);
+  *(Block + 1) = &vt_SideClass; /*0x6a493c*/
+  *(Block + 2) = &vt_SideClass; /*0x6a4943*/
   *(Block + 3) = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/

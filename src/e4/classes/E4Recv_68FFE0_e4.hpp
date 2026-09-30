@@ -16,6 +16,6 @@ struct E4Recv_68FFE0 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    signed int Render_Render_68FFE0(int a2,  void * aP2);    // 0x68FFE0
+    signed int  Render_Render_68FFE0(int a2, void * aP2);  // 0x68FFE0
 };
 } // namespace gamemd

@@ -65,9 +65,9 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 28) = 10; /*0x4d09f2*/
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
-  *((unsigned int *)this + 1) = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
-  *((unsigned int *)this + 2) = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
+  *(unsigned int *)this = &vt_FoggedObjectClass; /*0x4d0a06*/
+  *((unsigned int *)this + 1) = &vt_FoggedObjectClass; /*0x4d0a0c*/
+  *((unsigned int *)this + 2) = &vt_FoggedObjectClass; /*0x4d0a13*/
   *((unsigned int *)this + 3) = &vt_FoggedObjectClass; /*0x4d0a1a*/
   v5 = Coord::To_Cell(&g_abs_87F7E8, a2); /*0x4d0a2a*/
   PlacementRectBuildingClass = BuildingClass::GetPlacementRect((int)v5, v25); /*0x4d0a3b*/
@@ -201,9 +201,9 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *(unsigned int *)(this + 112) = 10; /*0x4d0c9e*/
   *(unsigned int *)(this + 108) = 0; /*0x4d0ca5*/
   *(unsigned char *)(this + 116) = 1; /*0x4d0cae*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
-  *(unsigned int *)(this + 4) = &FoggedObjectClass::`vftable'; /*0x4d0cb8*/
-  *(unsigned int *)(this + 8) = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
+  *(unsigned int *)this = &vt_FoggedObjectClass; /*0x4d0cb2*/
+  *(unsigned int *)(this + 4) = &vt_FoggedObjectClass; /*0x4d0cb8*/
+  *(unsigned int *)(this + 8) = &vt_FoggedObjectClass; /*0x4d0cbf*/
   *(unsigned int *)(this + 12) = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = (char *)Coord::To_Cell(&g_abs_87F7E8, aP1); /*0x4d0ccd*/
   v7 = aP1->field_4; /*0x4d0cd4*/
@@ -364,9 +364,9 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *((unsigned int *)this + 28) = 10; /*0x4d0f90*/
   *((unsigned int *)this + 27) = 0; /*0x4d0f97*/
   *((unsigned char *)this + 116) = (unsigned char)aP2; /*0x4d0fa2*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
-  *((unsigned int *)this + 1) = &FoggedObjectClass::`vftable'; /*0x4d0fab*/
-  *((unsigned int *)this + 2) = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
+  *(unsigned int *)this = &vt_FoggedObjectClass; /*0x4d0fa5*/
+  *((unsigned int *)this + 1) = &vt_FoggedObjectClass; /*0x4d0fab*/
+  *((unsigned int *)this + 2) = &vt_FoggedObjectClass; /*0x4d0fb2*/
   *((unsigned int *)this + 3) = &vt_FoggedObjectClass; /*0x4d0fb9*/
   v8 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(*(unsigned int *)aP1->__pad_0 + 300))(aP1, v52); /*0x4d0fc5*/
   *((unsigned int *)this + 16) = *v8; /*0x4d0fd2*/
@@ -576,9 +576,9 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 28) = 10; /*0x4d13fc*/
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d140e*/
-  *((unsigned int *)this + 1) = &FoggedObjectClass::`vftable'; /*0x4d1414*/
-  *((unsigned int *)this + 2) = &FoggedObjectClass::`vftable'; /*0x4d141b*/
+  *(unsigned int *)this = &vt_FoggedObjectClass; /*0x4d140e*/
+  *((unsigned int *)this + 1) = &vt_FoggedObjectClass; /*0x4d1414*/
+  *((unsigned int *)this + 2) = &vt_FoggedObjectClass; /*0x4d141b*/
   *((unsigned int *)this + 3) = &vt_FoggedObjectClass; /*0x4d1422*/
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
@@ -693,9 +693,9 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     v3[23] = (int)&vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d254c*/
     v3[28] = 10; /*0x4d2552*/
     v3[27] = 0; /*0x4d2559*/
-    *v3 = (int)&FoggedObjectClass::`vftable'; /*0x4d255c*/
-    v3[1] = (int)&FoggedObjectClass::`vftable'; /*0x4d2562*/
-    v3[2] = (int)&FoggedObjectClass::`vftable'; /*0x4d2569*/
+    *v3 = (int)&vt_FoggedObjectClass; /*0x4d255c*/
+    v3[1] = (int)&vt_FoggedObjectClass; /*0x4d2562*/
+    v3[2] = (int)&vt_FoggedObjectClass; /*0x4d2569*/
     v3[3] = (int)&vt_FoggedObjectClass; /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v3 + 10); /*0x4d2580*/

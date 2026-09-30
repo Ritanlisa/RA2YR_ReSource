@@ -19,6 +19,6 @@ struct E4Recv_765C90 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_765C90(int a2,  unsigned int * a3);    // 0x765C90
+    unsigned int *  sub_765C90(int a2, unsigned int * a3);  // 0x765C90
 };
 } // namespace gamemd

@@ -81,9 +81,9 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
   *((unsigned char *)this + 3785) = 1; /*0x5237d5*/
   *((unsigned char *)this + 3786) = 0; /*0x5237dc*/
   *((unsigned char *)this + 3787) = 0; /*0x5237e2*/
-  *(unsigned int *)this = &InfantryTypeClass::`vftable'; /*0x5237e8*/
-  *((unsigned int *)this + 1) = &InfantryTypeClass::`vftable'; /*0x5237ee*/
-  *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
+  *(unsigned int *)this = &vt_InfantryTypeClass; /*0x5237e8*/
+  *((unsigned int *)this + 1) = &vt_InfantryTypeClass; /*0x5237ee*/
+  *((unsigned int *)this + 2) = &vt_InfantryTypeClass; /*0x5237f4*/
   *((unsigned int *)this + 3) = &vt_InfantryTypeClass; /*0x5237fb*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
   v3 = *(InfantryTypeClass **)&g_abs_A8D63C; /*0x523807*/
@@ -167,9 +167,9 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
   *((unsigned int *)this + 916) = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
   *((unsigned int *)this + 923) = &vt_TypeList_AnimTypeClass_const; /*0x523998*/
   *((unsigned int *)this + 930) = &vt_TypeList_int; /*0x52399e*/
-  *this = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  *((unsigned int *)this + 1) = &InfantryTypeClass::`vftable'; /*0x5239ae*/
-  *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5239b5*/
+  *this = &vt_InfantryTypeClass; /*0x5239a8*/
+  *((unsigned int *)this + 1) = &vt_InfantryTypeClass; /*0x5239ae*/
+  *((unsigned int *)this + 2) = &vt_InfantryTypeClass; /*0x5239b5*/
   *((unsigned int *)this + 3) = &vt_InfantryTypeClass; /*0x5239bc*/
   return this; /*0x5239c5*/
 
@@ -703,9 +703,9 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   int v8; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block = &InfantryTypeClass::`vftable'; /*0x524d76*/
-  *(unsigned int *)(Block + 4) = &InfantryTypeClass::`vftable'; /*0x524d7c*/
-  *(unsigned int *)(Block + 8) = &InfantryTypeClass::`vftable'; /*0x524d83*/
+  *(unsigned int *)Block = &vt_InfantryTypeClass; /*0x524d76*/
+  *(unsigned int *)(Block + 4) = &vt_InfantryTypeClass; /*0x524d7c*/
+  *(unsigned int *)(Block + 8) = &vt_InfantryTypeClass; /*0x524d83*/
   *(unsigned int *)(Block + 12) = &vt_InfantryTypeClass; /*0x524d8a*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/

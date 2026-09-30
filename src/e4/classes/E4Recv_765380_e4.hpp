@@ -9,6 +9,6 @@ struct E4Recv_765380 {
     unsigned int u32_60;  // 0x60
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
-    unsigned int * sub_765380(unsigned int * a2, int a3);  // 0x765380
+    unsigned int *  sub_765380(unsigned int * a2, int a3);  // 0x765380
 };
 } // namespace gamemd

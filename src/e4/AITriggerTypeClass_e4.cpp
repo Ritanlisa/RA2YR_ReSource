@@ -659,9 +659,9 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
-  *(Block + 1) = &AITriggerTypeClass::`vftable'; /*0x420003*/
-  *(Block + 2) = &AITriggerTypeClass::`vftable'; /*0x42000a*/
+  *Block = &vt_AITriggerTypeClass; /*0x41fffd*/
+  *(Block + 1) = &vt_AITriggerTypeClass; /*0x420003*/
+  *(Block + 2) = &vt_AITriggerTypeClass; /*0x42000a*/
   *(Block + 3) = &vt_AITriggerTypeClass; /*0x420011*/
   v5 = Block; /*0x42001f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8B200 + 16))(&g_abs_A8B200, &v5); /*0x420023*/

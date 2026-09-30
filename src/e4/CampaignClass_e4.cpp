@@ -39,11 +39,11 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   int v3; // eax
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x46cb68*/
-  *(unsigned int *)this = &CampaignClass::`vftable'; /*0x46cb70*/
+  *(unsigned int *)this = &vt_CampaignClass; /*0x46cb70*/
   *((unsigned int *)this + 38) = -1; /*0x46cb76*/
   *((unsigned int *)this + 167) = -1; /*0x46cb7c*/
-  *((unsigned int *)this + 1) = &CampaignClass::`vftable'; /*0x46cb82*/
-  *((unsigned int *)this + 2) = &CampaignClass::`vftable'; /*0x46cb89*/
+  *((unsigned int *)this + 1) = &vt_CampaignClass; /*0x46cb82*/
+  *((unsigned int *)this + 2) = &vt_CampaignClass; /*0x46cb89*/
   *((unsigned int *)this + 3) = &vt_CampaignClass; /*0x46cb90*/
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
@@ -105,9 +105,9 @@ LABEL_7:
         AbstractTypeClass::Constructor((int)v6, (AbstractClass *)Source); /*0x46ceb5*/
         v6[2].sectionHead[2] = -1; /*0x46ceba*/
         v6[10].sectionCount = -1; /*0x46cec0*/
-        *(unsigned int *)v6->__pad_0 = &CampaignClass::`vftable'; /*0x46cec6*/
-        v6->headNode[0] = (int)&CampaignClass::`vftable'; /*0x46cecc*/
-        v6->headNode[1] = (int)&CampaignClass::`vftable'; /*0x46ced3*/
+        *(unsigned int *)v6->__pad_0 = &vt_CampaignClass; /*0x46cec6*/
+        v6->headNode[0] = (int)&vt_CampaignClass; /*0x46cecc*/
+        v6->headNode[1] = (int)&vt_CampaignClass; /*0x46ced3*/
         v6->headNode[2] = (int)&vt_CampaignClass; /*0x46ceda*/
         if ( g_UnitTypeInitState < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
@@ -370,9 +370,9 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x46d01f*/
-      *(unsigned int *)aP0->__pad_0 = &CampaignClass::`vftable'; /*0x46d024*/
-      *(unsigned int *)&aP0->__pad_0[4] = &CampaignClass::`vftable'; /*0x46d02a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &CampaignClass::`vftable'; /*0x46d031*/
+      *(unsigned int *)aP0->__pad_0 = &vt_CampaignClass; /*0x46d024*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_CampaignClass; /*0x46d02a*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_CampaignClass; /*0x46d031*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_CampaignClass; /*0x46d038*/
     }
     return 0; /*0x46d03f*/
@@ -425,9 +425,9 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &CampaignClass::`vftable'; /*0x46d096*/
-  *(Block + 1) = &CampaignClass::`vftable'; /*0x46d09c*/
-  *(Block + 2) = &CampaignClass::`vftable'; /*0x46d0a3*/
+  *Block = &vt_CampaignClass; /*0x46d096*/
+  *(Block + 1) = &vt_CampaignClass; /*0x46d09c*/
+  *(Block + 2) = &vt_CampaignClass; /*0x46d0a3*/
   *(Block + 3) = &vt_CampaignClass; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x46d0b1*/
   v5 = Block; /*0x46d0c6*/

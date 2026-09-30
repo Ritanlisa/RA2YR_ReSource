@@ -3644,9 +3644,9 @@ int Gap2Recv_471890::SmallFunc_471890() {
   *((unsigned int *)this + 9) = &vt_DynamicVectorClass_ControlNode; /*0x4718ab*/
   *((unsigned int *)this + 14) = 10; /*0x4718b2*/
   *((unsigned int *)this + 13) = 0; /*0x4718b9*/
-  *(unsigned int *)this = &CaptureManagerClass::`vftable'; /*0x4718bc*/
-  *((unsigned int *)this + 1) = &CaptureManagerClass::`vftable'; /*0x4718c2*/
-  *((unsigned int *)this + 2) = &CaptureManagerClass::`vftable'; /*0x4718c9*/
+  *(unsigned int *)this = &vt_CaptureManagerClass; /*0x4718bc*/
+  *((unsigned int *)this + 1) = &vt_CaptureManagerClass; /*0x4718c2*/
+  *((unsigned int *)this + 2) = &vt_CaptureManagerClass; /*0x4718c9*/
   *((unsigned int *)this + 3) = &vt_CaptureManagerClass; /*0x4718d0*/
   *((unsigned int *)this + 18) = 0; /*0x4718d7*/
   *((unsigned int *)this + 15) = 1; /*0x4718da*/
@@ -4450,8 +4450,8 @@ int Gap2Recv_4B5AB0::SmallFunc_4B5AB0() {
   *((unsigned int *)this + 9) = g_abs_8A0824; /*0x4b5ace*/
   *((unsigned int *)this + 10) = g_abs_8A0828; /*0x4b5ad7*/
   *((unsigned int *)this + 11) = 0; /*0x4b5ada*/
-  *(unsigned int *)this = &DropPodLocomotionClass::`vftable'; /*0x4b5add*/
-  *((unsigned int *)this + 1) = &DropPodLocomotionClass::`vftable'; /*0x4b5ae3*/
+  *(unsigned int *)this = &vt_DropPodLocomotionClass; /*0x4b5add*/
+  *((unsigned int *)this + 1) = &vt_DropPodLocomotionClass; /*0x4b5ae3*/
   *((unsigned int *)this + 6) = &vt_DropPodLocomotionClass; /*0x4b5aea*/
   return this; /*0x4b5af3*/
 
@@ -4465,13 +4465,13 @@ int Gap2Recv_4C5370::Helper_4C5370() {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4c5373*/
   v2 = g_abs_8A3838; /*0x4c5378*/
-  *(unsigned int *)this = &EMPulseClass::`vftable'; /*0x4c537d*/
+  *(unsigned int *)this = &vt_EMPulseClass; /*0x4c537d*/
   *((unsigned int *)this + 9) = v2; /*0x4c5383*/
   *((unsigned int *)this + 10) = 0; /*0x4c5388*/
   *((unsigned int *)this + 11) = 0; /*0x4c538b*/
   *((unsigned int *)this + 12) = 0; /*0x4c538e*/
-  *((unsigned int *)this + 1) = &EMPulseClass::`vftable'; /*0x4c5391*/
-  *((unsigned int *)this + 2) = &EMPulseClass::`vftable'; /*0x4c5398*/
+  *((unsigned int *)this + 1) = &vt_EMPulseClass; /*0x4c5391*/
+  *((unsigned int *)this + 2) = &vt_EMPulseClass; /*0x4c5398*/
   *((unsigned int *)this + 3) = &vt_EMPulseClass; /*0x4c539f*/
   return this; /*0x4c53a8*/
 
@@ -19516,9 +19516,9 @@ void* Gap2Recv_65A7E0::Helper_65A7E0(TechnoClass * aP1) {
 
   ObjectClass::Init(this, (AbstractClass *)aP1); /*0x65a7e8*/
   *((unsigned int *)this + 56) = &vt_VectorClass_TechnoClass; /*0x65a7ed*/
-  *this = &RadioClass::`vftable'; /*0x65a7f7*/
-  *((unsigned int *)this + 1) = &RadioClass::`vftable'; /*0x65a7fd*/
-  *((unsigned int *)this + 2) = &RadioClass::`vftable'; /*0x65a804*/
+  *this = &vt_RadioClass; /*0x65a7f7*/
+  *((unsigned int *)this + 1) = &vt_RadioClass; /*0x65a7fd*/
+  *((unsigned int *)this + 2) = &vt_RadioClass; /*0x65a804*/
   *((unsigned int *)this + 3) = &vt_RadioClass; /*0x65a80b*/
   return this; /*0x65a814*/
 
@@ -23097,8 +23097,8 @@ int Gap2Recv_692290::SmallFunc_692290() {
   *((unsigned char *)this + 21848) = 0; /*0x6922b2*/
   *((unsigned char *)this + 21850) = 0; /*0x6922b8*/
   *((unsigned char *)this + 21849) = 1; /*0x6922be*/
-  *(unsigned int *)this = &ScrollClass::`vftable'; /*0x6922c5*/
-  *((unsigned int *)this + 5446) = &ScrollClass::`vftable'; /*0x6922cb*/
+  *(unsigned int *)this = &vt_ScrollClass; /*0x6922c5*/
+  *((unsigned int *)this + 5446) = &vt_ScrollClass; /*0x6922cb*/
   return this; /*0x6922d7*/
 
 }
@@ -24315,7 +24315,7 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   AudioController::Init((unsigned int *)((char *)this + 5312)); /*0x6a4f7e*/
   *((unsigned int *)this + 1352) = Timer::GetTicks(); /*0x6a4f8e*/
   *((unsigned int *)this + 1354) = 0; /*0x6a4f94*/
-  *(unsigned int *)this = &PowerClass::`vftable'; /*0x6a4f9a*/
+  *(unsigned int *)this = &vt_PowerClass; /*0x6a4f9a*/
   v5 = (char *)this + 5444; /*0x6a4fa0*/
   v6 = 4; /*0x6a4fa6*/
   do /*0x6a4fdf*/
@@ -24331,7 +24331,7 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
     --v6; /*0x6a4fde*/
   }
   while ( v6 ); /*0x6a4fdf*/
-  *(unsigned int *)this = &SidebarClass::`vftable'; /*0x6a4fe1*/
+  *(unsigned int *)this = &vt_SidebarClass; /*0x6a4fe1*/
   return this; /*0x6a4fe9*/
 
 }
@@ -24366,7 +24366,7 @@ char* Gap2Recv_6AC840::System_Init_6AC840(int a2) {
   *((unsigned char *)this + 4556) = 0; /*0x6ac84f*/
   *((unsigned char *)this + 4557) = 0; /*0x6ac855*/
   *((unsigned char *)this + 4558) = 0; /*0x6ac85b*/
-  *(unsigned int *)this = &DisplayClass::`vftable'; /*0x6ac861*/
+  *(unsigned int *)this = &vt_DisplayClass; /*0x6ac861*/
   return this; /*0x6ac869*/
 
 }
@@ -25674,9 +25674,9 @@ void* Gap2Recv_6D1E30::SmallFunc_6D1E30(AbstractClass * aP1) {
   AbstractClass::InitVtables(this, (int)aP1); /*0x6d1e38*/
   *((unsigned int *)this + 873) = Timer::GetTicks(); /*0x6d1e48*/
   *((unsigned int *)this + 875) = 0; /*0x6d1e4e*/
-  *this = &Tactical::`vftable'; /*0x6d1e58*/
-  *((unsigned int *)this + 1) = &Tactical::`vftable'; /*0x6d1e5e*/
-  *((unsigned int *)this + 2) = &Tactical::`vftable'; /*0x6d1e65*/
+  *this = &vt_Tactical; /*0x6d1e58*/
+  *((unsigned int *)this + 1) = &vt_Tactical; /*0x6d1e5e*/
+  *((unsigned int *)this + 2) = &vt_Tactical; /*0x6d1e65*/
   *((unsigned int *)this + 3) = &vt_Tactical; /*0x6d1e6c*/
   return this; /*0x6d1e75*/
 
@@ -32393,7 +32393,7 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   *((unsigned int *)this + 2) = a2; /*0x766a1f*/
   *((unsigned int *)this + 3) = v6; /*0x766a26*/
   this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x766a2d*/
-  *(unsigned int *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x766a34*/
+  *(unsigned int *)this->__pad_0 = &WorldDominationTour::vt_GameOption; /*0x766a34*/
   *((unsigned int *)this + 4) = arg4; /*0x766a3a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a3); /*0x766a3d*/
   *(unsigned int *)this->__pad_0 = &WorldDominationTour::ValueGameOption<unsigned char>::`vftable'; /*0x766a46*/
@@ -32448,11 +32448,11 @@ void* Gap2Recv_767820::ConstructorWDTFlagOption_Create(int arg0, void * a2, int 
   *((unsigned int *)this + 2) = arg0; /*0x76782f*/
   *((unsigned int *)this + 3) = v8; /*0x767836*/
   this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x76783d*/
-  *(unsigned int *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x767844*/
+  *(unsigned int *)this->__pad_0 = &WorldDominationTour::vt_GameOption; /*0x767844*/
   *((unsigned int *)this + 4) = v6; /*0x76784a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
   String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
-  *(unsigned int *)this->__pad_0 = &WorldDominationTour::FlagGameOption::`vftable'; /*0x767863*/
+  *(unsigned int *)this->__pad_0 = &WorldDominationTour::vt_FlagGameOption; /*0x767863*/
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/
   return this; /*0x767879*/
@@ -32493,7 +32493,7 @@ void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3
   *((unsigned int *)this + 47) = &DynamicVectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76808f*/
   *((unsigned int *)this + 52) = 10; /*0x768099*/
   *((unsigned int *)this + 51) = 0; /*0x76809f*/
-  *(unsigned int *)this = &WorldDominationTour::Map::`vftable'; /*0x7680a5*/
+  *(unsigned int *)this = &WorldDominationTour::vt_Map; /*0x7680a5*/
   return this; /*0x7680ad*/
 
 }
@@ -33019,7 +33019,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
     v8 = aWdtDefaultlong; /*0x76bf72*/
   v9 = GetStringCSF(v8, 0, aDRa2mdpostWdtp, 21); /*0x76bf77*/
   WideString::Assign((wchar_t **)this + 5, v9); /*0x76bf80*/
-  *(unsigned int *)this = &WorldDominationTour::CampaignProperties::`vftable'; /*0x76bf85*/
+  *(unsigned int *)this = &WorldDominationTour::vt_CampaignProperties; /*0x76bf85*/
   return this; /*0x76bf8d*/
 
 }
@@ -33103,7 +33103,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   this->field_494 = (int)&DynamicVectorClass<MSSfxEntry *>::`vftable'; /*0x76c3c1*/
   *(unsigned int *)&this->__pad_498[16] = 10; /*0x76c3c8*/
   *(unsigned int *)&this->__pad_498[12] = 0; /*0x76c3cf*/
-  this->field_0 = (int)&WorldDominationTour::Selection::`vftable'; /*0x76c3d2*/
+  this->field_0 = (int)&WorldDominationTour::vt_Selection; /*0x76c3d2*/
   this->field_4AC = (uint16_t)Property::Set( /*0x76c448*/
                                         aP0,
                                         (AbstractClass *)((*((uint8_t *)&(&g_MatrixTransformState)[227] + 4) >> g_abs_89F690 << g_abs_89F690)
@@ -33202,7 +33202,7 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
   int v17; // [esp+20h] [ebp-8h]
   int v18; // [esp+24h] [ebp-4h]
 
-  this->field_0 = (int)&WorldDominationTour::Selection::`vftable'; /*0x76c6e9*/
+  this->field_0 = (int)&WorldDominationTour::vt_Selection; /*0x76c6e9*/
   (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[23344] + 12))(*(unsigned int *)&stru_87C374.__pad_579C[23344]); /*0x76c6f7*/
   Theme::QueueSong((int)&g_BuildingTypeClass_Count, (IUnknown *)0xFFFFFFFD); /*0x76c701*/
   (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[22528] + 24))( /*0x76c710*/
@@ -34524,7 +34524,7 @@ void* ReferenceCounted::LoadAccountInfoWOL_Load( ReferenceCounted * aP1, ObjectC
   *((unsigned char *)this + 56) = (unsigned char)aP12; /*0x779700*/
   WideString::AssignFromPtr((wchar_t **)this + 15, (const wchar_t **)aP14); /*0x779703*/
   WideString::AssignFromPtr((wchar_t **)this + 16, (const wchar_t **)aP13); /*0x779710*/
-  *(unsigned int *)this = &PlayerProfile::`vftable'; /*0x779715*/
+  *(unsigned int *)this = &vt_PlayerProfile; /*0x779715*/
   return this; /*0x77971d*/
 
 }

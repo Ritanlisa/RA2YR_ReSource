@@ -610,9 +610,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   int v5; // eax
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  *Block = &TEventClass::`vftable'; /*0x71fa86*/
-  *(Block + 1) = &TEventClass::`vftable'; /*0x71fa8c*/
-  *(Block + 2) = &TEventClass::`vftable'; /*0x71fa93*/
+  *Block = &vt_TEventClass; /*0x71fa86*/
+  *(Block + 1) = &vt_TEventClass; /*0x71fa8c*/
+  *(Block + 2) = &vt_TEventClass; /*0x71fa93*/
   *(Block + 3) = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
@@ -713,9 +713,9 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x71f8df*/
-      *(unsigned int *)aP0->__pad_0 = &TEventClass::`vftable'; /*0x71f8e4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TEventClass::`vftable'; /*0x71f8ea*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TEventClass::`vftable'; /*0x71f8f1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TEventClass; /*0x71f8e4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TEventClass; /*0x71f8ea*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TEventClass; /*0x71f8f1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TEventClass; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking( /*0x71f908*/

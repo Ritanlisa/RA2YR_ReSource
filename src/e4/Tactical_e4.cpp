@@ -2062,9 +2062,9 @@ namespace gamemd {
 Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 {
 
-  *Block = &Tactical::`vftable'; /*0x6dc473*/
-  *(Block + 1) = &Tactical::`vftable'; /*0x6dc479*/
-  *(Block + 2) = &Tactical::`vftable'; /*0x6dc480*/
+  *Block = &vt_Tactical; /*0x6dc473*/
+  *(Block + 1) = &vt_Tactical; /*0x6dc479*/
+  *(Block + 2) = &vt_Tactical; /*0x6dc480*/
   *(Block + 3) = &vt_Tactical; /*0x6dc487*/
   g_abs_887324 = 0; /*0x6dc48e*/
   AbstractClass::DTOR(Block); /*0x6dc498*/

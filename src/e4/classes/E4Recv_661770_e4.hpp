@@ -16,6 +16,6 @@ struct E4Recv_661770 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void * SHA1TickRNG(void* aP1);  // 0x661770
+    SHA1  TickRNG(void * aP1);  // 0x661770
 };
 } // namespace gamemd

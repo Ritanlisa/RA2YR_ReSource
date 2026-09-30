@@ -11,6 +11,6 @@ struct E4Recv_496D10 {
     unsigned int M4;  // 0x4
     unsigned int u16_8;  // 0x8
 // --- flat members (END) ---
-    int sub_496D10(int arg0,  unsigned char * a2,  void * aP3,  int a5,  int a6,  unsigned int a7,  int a8,  int a9,  int arg20,  char * a10);    // 0x496D10
+    int  sub_496D10(int arg0, unsigned __int8 * a2, void * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10);  // 0x496D10
 };
 } // namespace gamemd

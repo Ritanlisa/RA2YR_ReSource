@@ -15,6 +15,6 @@ struct E4Recv_7AF640 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    int sub_7AF640(int a2);  // 0x7AF640
+    int  sub_7AF640(int a2);  // 0x7AF640
 };
 } // namespace gamemd

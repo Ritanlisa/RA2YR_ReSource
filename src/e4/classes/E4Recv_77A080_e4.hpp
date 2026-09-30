@@ -53,6 +53,6 @@ struct E4Recv_77A080 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void SaveProfileWOL(void * aP1);  // 0x77A080
+    void  SaveProfileWOL(void * aP1);  // 0x77A080
 };
 } // namespace gamemd

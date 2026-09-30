@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -117,16 +118,16 @@ struct Scenario {
     int CopyLocalScenarioData();  // 0x4C6180
     int ProcessSidebarUnits();  // 0x50D610
     int ComputeDisplayPosition();  // 0x552B10
-    unsigned int * ComputeDialogPos(unsigned int * a2);  // 0x552BE0
+    unsigned int *  ComputeDialogPos(unsigned int * a2);  // 0x552BE0
     void Update();  // 0x55AFB0
-    char LoadOrReloadOptions(void * aP1);  // 0x597A10
+    char  LoadOrReloadOptions(void * aP1);  // 0x597A10
     int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
-    HWNDClearScreen();  // 0x684240
+    HWND ClearScreen();  // 0x684240
     char LoadWithProgress();  // 0x684620
-    int FindBuildingTypeByName(unsigned __int8 * a1, unsigned __int8 * a2, void * aP3);  // 0x4758F0
+    int  FindBuildingTypeByName(unsigned __int8 * a1, unsigned __int8 * a2, void * aP3);  // 0x4758F0
     void * ResetDisplayArrays();  // 0x5C9700
-    int SetDword32(int a2);  // 0x642B10
-    int SetDword30(int a2);  // 0x642DF0
+    int  SetDword32(int a2);  // 0x642B10
+    int  SetDword30(int a2);  // 0x642DF0
 };
 } // namespace gamemd

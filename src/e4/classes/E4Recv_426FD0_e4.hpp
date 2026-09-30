@@ -47,6 +47,6 @@ struct E4Recv_426FD0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned short sub_426FD0(int a2);  // 0x426FD0
+    unsigned short  sub_426FD0(int a2);  // 0x426FD0
 };
 } // namespace gamemd

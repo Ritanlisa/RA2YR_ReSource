@@ -12,6 +12,6 @@ struct E4Recv_6E0490 {
     unsigned int q324;  // 0x324
     unsigned int q804;  // 0x804
 // --- flat members (END) ---
-    char PlayWaypointEffect(int a2,  int a3,  int a4,  void* aP4);    // 0x6E0490
+    char  PlayWaypointEffect(int a2, int a3, int a4, void * aP4);  // 0x6E0490
 };
 } // namespace gamemd

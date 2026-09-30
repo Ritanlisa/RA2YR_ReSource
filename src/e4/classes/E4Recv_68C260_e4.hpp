@@ -23,6 +23,6 @@ struct E4Recv_68C260 {
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
     int Vf8(int,  ...);    // G6 vtable slot dispatch
-    char DynamicVector_PushBack(void * aP1);  // 0x68C260
+    char  DynamicVector_PushBack(void * aP1);  // 0x68C260
 };
 } // namespace gamemd

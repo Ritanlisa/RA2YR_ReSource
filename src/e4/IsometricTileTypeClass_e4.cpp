@@ -82,9 +82,9 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       a1[169] = (int)&vt_DynamicVectorClass_unsigned_short; /*0x549cee*/
       a1[174] = 10; /*0x549cf4*/
       a1[173] = 0; /*0x549cfb*/
-      *a1 = (int)&IsometricTileTypeClass::`vftable'; /*0x549d02*/
-      a1[1] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d08*/
-      a1[2] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d0f*/
+      *a1 = (int)&vt_IsometricTileTypeClass; /*0x549d02*/
+      a1[1] = (int)&vt_IsometricTileTypeClass; /*0x549d08*/
+      a1[2] = (int)&vt_IsometricTileTypeClass; /*0x549d0f*/
       a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, a1 + 175); /*0x549d2a*/

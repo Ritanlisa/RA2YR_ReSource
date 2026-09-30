@@ -50,7 +50,7 @@ int LocomotionClass::Initialize()
   *((unsigned char *)this + 100) = 0; /*0x4af5b8*/
   *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
   *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
-  *(unsigned int *)this = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
+  *(unsigned int *)this = &vt_DriveLocomotionClass; /*0x4af5c2*/
   *((unsigned int *)this + 1) = &vt_DriveLocomotionClass; /*0x4af5c8*/
   *((unsigned int *)this + 6) = &off_7E7E8C; /*0x4af5cf*/
   return this; /*0x4af5d8*/
@@ -155,7 +155,7 @@ int LocomotionClass::ProcessData()
   *((unsigned char *)this + 104) = 0; /*0x513c88*/
   *((unsigned int *)this + 27) = 0; /*0x513c8b*/
   *((unsigned char *)this + 112) = 0; /*0x513c8e*/
-  *(unsigned int *)this = &HoverLocomotionClass::`vftable'; /*0x513c91*/
+  *(unsigned int *)this = &vt_HoverLocomotionClass; /*0x513c91*/
   *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513c97*/
   return this; /*0x513ca0*/
 
@@ -187,8 +187,8 @@ int LocomotionClass::Update()
   *((unsigned char *)this + 144) = 0; /*0x54aca5*/
   *((unsigned char *)this + 145) = 0; /*0x54acab*/
   *((unsigned int *)this + 37) = 0; /*0x54acb5*/
-  *(unsigned int *)this = &JumpjetLocomotionClass::`vftable'; /*0x54acc3*/
-  *((unsigned int *)this + 1) = &JumpjetLocomotionClass::`vftable'; /*0x54acc9*/
+  *(unsigned int *)this = &vt_JumpjetLocomotionClass; /*0x54acc3*/
+  *((unsigned int *)this + 1) = &vt_JumpjetLocomotionClass; /*0x54acc9*/
   *((unsigned int *)this + 6) = &vt_JumpjetLocomotionClass; /*0x54acd0*/
   IDA_LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update((char *)((char *)this + 84), &v4); /*0x54acdc*/
@@ -208,7 +208,7 @@ int LocomotionClass::Init()
   *((unsigned char *)this + 16) = 1; /*0x55a6cc*/
   *((unsigned char *)this + 17) = 1; /*0x55a6cf*/
   *((unsigned int *)this + 5) = 0; /*0x55a6d2*/
-  *this = &LocomotionClass::`vftable'; /*0x55a6d5*/
+  *this = &vt_LocomotionClass; /*0x55a6d5*/
   *((unsigned int *)this + 1) = &vt_LocomotionClass; /*0x55a6db*/
   return this; /*0x55a6e2*/
 
@@ -219,7 +219,7 @@ namespace gamemd {
 void LocomotionClass::Construct()
 {
 
-  *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
+  *this = &vt_LocomotionClass; /*0x55a6f0*/
   *((unsigned int *)this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
   *((unsigned int *)this + 3) = 0; /*0x55a6fd*/
 

@@ -16,6 +16,6 @@ struct E4Recv_726920 {
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
 // --- flat members (END) ---
-    int sub_726920(int a2);  // 0x726920
+    int  sub_726920(int a2);  // 0x726920
 };
 } // namespace gamemd

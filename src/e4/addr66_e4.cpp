@@ -1311,7 +1311,7 @@ namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
 
-  *this = &RocketLocomotionClass::`vftable'; /*0x661f30*/
+  *this = &vt_RocketLocomotionClass; /*0x661f30*/
   *((unsigned int *)this + 1) = &vt_RocketLocomotionClass; /*0x661f36*/
   LocomotionClass::Construct(this); /*0x661f3d*/
 

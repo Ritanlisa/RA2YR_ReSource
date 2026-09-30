@@ -17,6 +17,6 @@ struct E4Recv_558810 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    bool ShowSaveLoadDialog(void* aP1);  // 0x558810
+    bool  ShowSaveLoadDialog(void * aP1);  // 0x558810
 };
 } // namespace gamemd

@@ -37,9 +37,9 @@ void ParasiteClass::Constructor()
   v2 = g_abs_A8ED84; /*0x629225*/
   *((unsigned int *)this + 16) = 0; /*0x62922b*/
   *((unsigned int *)this + 14) = v2; /*0x62922e*/
-  *(unsigned int *)this = &ParasiteClass::`vftable'; /*0x629231*/
-  *((unsigned int *)this + 1) = &ParasiteClass::`vftable'; /*0x629237*/
-  *((unsigned int *)this + 2) = &ParasiteClass::`vftable'; /*0x62923e*/
+  *(unsigned int *)this = &vt_ParasiteClass; /*0x629231*/
+  *((unsigned int *)this + 1) = &vt_ParasiteClass; /*0x629237*/
+  *((unsigned int *)this + 2) = &vt_ParasiteClass; /*0x62923e*/
   *((unsigned int *)this + 3) = &vt_ParasiteClass; /*0x629245*/
   if ( g_abs_AC4920 < g_abs_AC4918 /*0x62927e*/
     || (g_abs_AC491D || !g_abs_AC4918)
@@ -71,9 +71,9 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   *((unsigned int *)this + 13) = 0; /*0x6292c9*/
   *((unsigned int *)this + 14) = *(unsigned int *)&g_abs_A8D63C; /*0x6292d2*/
   *((unsigned int *)this + 16) = 0; /*0x6292d5*/
-  *(unsigned int *)this = &ParasiteClass::`vftable'; /*0x6292d8*/
-  *((unsigned int *)this + 1) = &ParasiteClass::`vftable'; /*0x6292de*/
-  *((unsigned int *)this + 2) = &ParasiteClass::`vftable'; /*0x6292e5*/
+  *(unsigned int *)this = &vt_ParasiteClass; /*0x6292d8*/
+  *((unsigned int *)this + 1) = &vt_ParasiteClass; /*0x6292de*/
+  *((unsigned int *)this + 2) = &vt_ParasiteClass; /*0x6292e5*/
   *((unsigned int *)this + 3) = &vt_ParasiteClass; /*0x6292ec*/
   *((unsigned int *)this + 9) = aP1; /*0x6292f3*/
   *((unsigned int *)this + 10) = 0; /*0x6292f6*/
@@ -732,9 +732,9 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   v3 = *((unsigned int *)Block + 17); /*0x62af77*/
-  *(unsigned int *)Block->__pad_0 = &ParasiteClass::`vftable'; /*0x62af7a*/
-  *(unsigned int *)&Block->__pad_0[4] = &ParasiteClass::`vftable'; /*0x62af82*/
-  *(unsigned int *)&Block->__pad_0[8] = &ParasiteClass::`vftable'; /*0x62af89*/
+  *(unsigned int *)Block->__pad_0 = &vt_ParasiteClass; /*0x62af7a*/
+  *(unsigned int *)&Block->__pad_0[4] = &vt_ParasiteClass; /*0x62af82*/
+  *(unsigned int *)&Block->__pad_0[8] = &vt_ParasiteClass; /*0x62af89*/
   *(unsigned int *)&Block->__pad_0[12] = &vt_ParasiteClass; /*0x62af90*/
   *((unsigned int *)Block + 19) = 0; /*0x62af97*/
   *((unsigned int *)Block + 20) = 0; /*0x62af9a*/
@@ -1112,9 +1112,9 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       a0[11] = (int)v4; /*0x6295e8*/
       a0[14] = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x6295f0*/
       a0[16] = 0; /*0x6295f3*/
-      *a0 = (int)&ParasiteClass::`vftable'; /*0x6295fa*/
-      a0[1] = (int)&ParasiteClass::`vftable'; /*0x629600*/
-      a0[2] = (int)&ParasiteClass::`vftable'; /*0x629607*/
+      *a0 = (int)&vt_ParasiteClass; /*0x6295fa*/
+      a0[1] = (int)&vt_ParasiteClass; /*0x629600*/
+      a0[2] = (int)&vt_ParasiteClass; /*0x629607*/
       a0[3] = (int)&vt_ParasiteClass; /*0x62960e*/
     }
     if ( a0[17] /*0x629657*/

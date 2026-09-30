@@ -270,9 +270,9 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   *((unsigned char *)this + 422) = 0; /*0x51155f*/
   *((unsigned char *)this + 423) = 1; /*0x511565*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/
-  *(unsigned int *)this = &HouseTypeClass::`vftable'; /*0x511572*/
-  *((unsigned int *)this + 1) = &HouseTypeClass::`vftable'; /*0x511578*/
-  *((unsigned int *)this + 2) = &HouseTypeClass::`vftable'; /*0x51157f*/
+  *(unsigned int *)this = &vt_HouseTypeClass; /*0x511572*/
+  *((unsigned int *)this + 1) = &vt_HouseTypeClass; /*0x511578*/
+  *((unsigned int *)this + 2) = &vt_HouseTypeClass; /*0x51157f*/
   *((unsigned int *)this + 3) = &vt_HouseTypeClass; /*0x511586*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x51158d*/
   *((unsigned char *)this + 416) = 0; /*0x511592*/
@@ -648,9 +648,9 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(unsigned int * Block, char a
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
-  *(Block + 1) = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
-  *(Block + 2) = &SuperWeaponTypeClass::`vftable'; /*0x6ceffa*/
+  *Block = &vt_SuperWeaponTypeClass; /*0x6cefed*/
+  *(Block + 1) = &vt_SuperWeaponTypeClass; /*0x6ceff3*/
+  *(Block + 2) = &vt_SuperWeaponTypeClass; /*0x6ceffa*/
   *(Block + 3) = &vt_SuperWeaponTypeClass; /*0x6cf001*/
   v5 = Block; /*0x6cf00f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8E330 + 16))(&g_abs_A8E330, &v5); /*0x6cf013*/
@@ -804,9 +804,9 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
   *((unsigned char *)this + 245) = 0; /*0x6ce654*/
   *((unsigned int *)this + 62) = 0; /*0x6ce65a*/
   *((unsigned int *)this + 63) = 0; /*0x6ce660*/
-  *(unsigned int *)this = &SuperWeaponTypeClass::`vftable'; /*0x6ce666*/
-  *((unsigned int *)this + 1) = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
-  *((unsigned int *)this + 2) = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
+  *(unsigned int *)this = &vt_SuperWeaponTypeClass; /*0x6ce666*/
+  *((unsigned int *)this + 1) = &vt_SuperWeaponTypeClass; /*0x6ce66d*/
+  *((unsigned int *)this + 2) = &vt_SuperWeaponTypeClass; /*0x6ce673*/
   *((unsigned int *)this + 3) = &vt_SuperWeaponTypeClass; /*0x6ce67a*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x6ce681*/
   *((unsigned int *)this + 38) = *(unsigned int *)&g_abs_A8D63C; /*0x6ce68c*/
@@ -861,9 +861,9 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init(a1, (int)&v4); /*0x6ce82c*/
       *(unsigned int *)(a1 + 184) = 0; /*0x6ce831*/
-      *(unsigned int *)a1 = &SuperWeaponTypeClass::`vftable'; /*0x6ce83b*/
-      *(unsigned int *)(a1 + 4) = &SuperWeaponTypeClass::`vftable'; /*0x6ce841*/
-      *(unsigned int *)(a1 + 8) = &SuperWeaponTypeClass::`vftable'; /*0x6ce848*/
+      *(unsigned int *)a1 = &vt_SuperWeaponTypeClass; /*0x6ce83b*/
+      *(unsigned int *)(a1 + 4) = &vt_SuperWeaponTypeClass; /*0x6ce841*/
+      *(unsigned int *)(a1 + 8) = &vt_SuperWeaponTypeClass; /*0x6ce848*/
       *(unsigned int *)(a1 + 12) = &vt_SuperWeaponTypeClass; /*0x6ce84f*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 156)); /*0x6ce862*/

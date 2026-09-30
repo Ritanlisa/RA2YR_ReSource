@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -15,6 +16,6 @@ struct VectorClass_ReestablishPtr {
     unsigned char q054;  // 0x54
     unsigned char q084;  // 0x84
 // --- flat members (END) ---
-    unsigned int * Construct(void * aP1,  void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);    // 0x45AE50
+    unsigned int *  Construct(void * aP1, void * aP2);  // 0x45AE50
 };
 } // namespace gamemd

@@ -620,7 +620,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
 
-  *this = &HoverLocomotionClass::`vftable'; /*0x513d00*/
+  *this = &vt_HoverLocomotionClass; /*0x513d00*/
   *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct(this); /*0x513d0d*/
 

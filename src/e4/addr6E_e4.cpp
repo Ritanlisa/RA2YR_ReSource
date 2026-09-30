@@ -1653,17 +1653,17 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   *((unsigned int *)this + 6) = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   *((unsigned int *)this + 7) = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   *((unsigned char *)this + 32) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
-  *this = &AbstractClass::`vftable'; /*0x6e803f*/
-  *((unsigned int *)this + 1) = &AbstractClass::`vftable'; /*0x6e8045*/
-  *((unsigned int *)this + 2) = &AbstractClass::`vftable'; /*0x6e804c*/
+  *this = &vt_AbstractClass; /*0x6e803f*/
+  *((unsigned int *)this + 1) = &vt_AbstractClass; /*0x6e8045*/
+  *((unsigned int *)this + 2) = &vt_AbstractClass; /*0x6e804c*/
   *((unsigned int *)this + 3) = &vt_AbstractClass; /*0x6e8053*/
   qmemcpy((unsigned int *)this + 9, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   qmemcpy((char *)this + 61, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   *((unsigned int *)this + 24) = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   qmemcpy((unsigned int *)this + 25, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
-  *this = &TaskForceClass::`vftable'; /*0x6e807e*/
-  *((unsigned int *)this + 1) = &TaskForceClass::`vftable'; /*0x6e8084*/
-  *((unsigned int *)this + 2) = &TaskForceClass::`vftable'; /*0x6e808b*/
+  *this = &vt_TaskForceClass; /*0x6e807e*/
+  *((unsigned int *)this + 1) = &vt_TaskForceClass; /*0x6e8084*/
+  *((unsigned int *)this + 2) = &vt_TaskForceClass; /*0x6e808b*/
   *((unsigned int *)this + 3) = &vt_TaskForceClass; /*0x6e8092*/
   v3 = (unsigned int *)this + 41; /*0x6e809f*/
   result[38] = *(unsigned int *)(a2 + 152); /*0x6e80a5*/

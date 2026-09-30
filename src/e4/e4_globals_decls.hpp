@@ -14763,3 +14763,21 @@ extern int DataGlobal_B04988;  // data: 0xb04988
 extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
+extern unsigned char vt_Base64Pipe[4];  // data: 0x7EB774
+extern unsigned char vt_Base64Straw[4];  // data: 0x7EB764
+extern unsigned char vt_BufferIOFileClass[4];  // data: 0x7E3A2C
+extern unsigned char vt_CD[4];  // data: 0x7E4C30
+extern unsigned char vt_CacheStraw[4];  // data: 0x7EB754
+extern unsigned char vt_CampaignProperties[4];
+extern unsigned char vt_CellClass[4];  // data: 0x7E4EC0
+extern unsigned char vt_DisplayClass[4];  // data: 0x7E6114
+extern unsigned char vt_FilePipe[4];  // data: 0x7E4DA0
+extern unsigned char vt_FlagGameOption[4];
+extern unsigned char vt_GameOption[4];
+extern unsigned char vt_HouseClass[4];  // data: 0x7EA7F4
+extern unsigned char vt_Map[4];
+extern unsigned char vt_PlayerProfile[4];  // data: 0x7F74F4
+extern unsigned char vt_PowerClass[4];  // data: 0x7EFF54
+extern unsigned char vt_ScrollClass[4];  // data: 0x7F108C
+extern unsigned char vt_Selection[4];
+extern unsigned char vt_SidebarClass[4];  // data: 0x7F3058

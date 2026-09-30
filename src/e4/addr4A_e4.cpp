@@ -3238,7 +3238,7 @@ void E4Recv_4A2880::sub_4A2880()
   ULONG v6; // [esp+0h] [ebp-8h]
 
   v2 = *((unsigned int *)this + 2); /*0x4a2886*/
-  *(unsigned int *)this = &CStreamClass::`vftable'; /*0x4a2889*/
+  *(unsigned int *)this = &vt_CStreamClass; /*0x4a2889*/
   *((unsigned int *)this + 1) = &vt_CStreamClass; /*0x4a2891*/
   if ( v2 ) /*0x4a2898*/
   {

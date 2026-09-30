@@ -137,9 +137,9 @@ BuildingLightClass * BuildingLightClass::SDDTOR(#374 * Block, char a2)
   int v3; // eax
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block = &BuildingLightClass::`vftable'; /*0x4370c4*/
-  *((unsigned int *)Block + 1) = &BuildingLightClass::`vftable'; /*0x4370ca*/
-  *((unsigned int *)Block + 2) = &BuildingLightClass::`vftable'; /*0x4370d1*/
+  *(unsigned int *)Block = &vt_BuildingLightClass; /*0x4370c4*/
+  *((unsigned int *)Block + 1) = &vt_BuildingLightClass; /*0x4370ca*/
+  *((unsigned int *)Block + 2) = &vt_BuildingLightClass; /*0x4370d1*/
   *((unsigned int *)Block + 3) = &vt_BuildingLightClass; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
     VectorClass::RemoveItem((int *)&g_abs_87F778, (ObjectClass *)Block); /*0x4370ee*/

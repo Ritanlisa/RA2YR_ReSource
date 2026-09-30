@@ -88,9 +88,9 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   *((unsigned int *)this + 22) = 0; /*0x6af1df*/
   *((unsigned int *)this + 9) = aP1; /*0x6af1e2*/
   *((unsigned int *)this + 10) = a3; /*0x6af1e9*/
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
+  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af1f2*/
+  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af1f8*/
+  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af1ff*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af206*/
   *((unsigned int *)this + 11) = a4; /*0x6af20d*/
   *((unsigned int *)this + 12) = a5; /*0x6af210*/
@@ -178,9 +178,9 @@ void SlaveManagerClass::Constructor()
   *((unsigned int *)this + 18) = 0; /*0x6af38c*/
   *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6af395*/
   *((unsigned int *)this + 22) = 0; /*0x6af398*/
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af39b*/
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af3a1*/
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
+  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af39b*/
+  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af3a1*/
+  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af3a8*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af3af*/
   *((unsigned int *)this + 9) = 0; /*0x6af3b6*/
   *((unsigned int *)this + 10) = 0; /*0x6af3b9*/
@@ -219,9 +219,9 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   void *v5; // eax
   int v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af4a5*/
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af4b2*/
+  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af4a5*/
+  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af4ab*/
+  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af4b2*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af4b9*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6af4c4*/
   {
@@ -824,10 +824,10 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       v3[19] = 10; /*0x6b11b6*/
       v3[18] = 0; /*0x6b11bd*/
       Timer::Start(v3 + 20, 0); /*0x6b11c0*/
-      *v3 = &SlaveManagerClass::`vftable'; /*0x6b11c5*/
-      v3[1] = &SlaveManagerClass::`vftable'; /*0x6b11cb*/
+      *v3 = &vt_SlaveManagerClass; /*0x6b11c5*/
+      v3[1] = &vt_SlaveManagerClass; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
-      v3[2] = &SlaveManagerClass::`vftable'; /*0x6b11d6*/
+      v3[2] = &vt_SlaveManagerClass; /*0x6b11d6*/
       v3[3] = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/

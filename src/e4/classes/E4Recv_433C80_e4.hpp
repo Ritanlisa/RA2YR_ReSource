@@ -28,6 +28,6 @@ struct E4Recv_433C80 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    short sub_433C80(short a2);  // 0x433C80
+    short  sub_433C80(__int16 a2);  // 0x433C80
 };
 } // namespace gamemd

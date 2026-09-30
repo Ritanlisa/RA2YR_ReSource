@@ -36,6 +36,6 @@ struct E4Recv_5AEE50 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_5AEE50(float a2);  // 0x5AEE50
+    int  sub_5AEE50(float a2);  // 0x5AEE50
 };
 } // namespace gamemd

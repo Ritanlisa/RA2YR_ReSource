@@ -30,7 +30,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4af79a*/
   {
     a1[26] = 0; /*0x4af79c*/
-    *a1 = (int)&DriveLocomotionClass::`vftable'; /*0x4af7a3*/
+    *a1 = (int)&vt_DriveLocomotionClass; /*0x4af7a3*/
     a1[1] = (int)&vt_DriveLocomotionClass; /*0x4af7a9*/
     a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
   }
@@ -134,7 +134,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
 
   ILocomotion *v3; // eax
 
-  *Block = (ILocomotion *)&DriveLocomotionClass::`vftable'; /*0x4b4d03*/
+  *Block = (ILocomotion *)&vt_DriveLocomotionClass; /*0x4b4d03*/
   *(Block + 1) = (ILocomotion *)&vt_DriveLocomotionClass; /*0x4b4d09*/
   *(Block + 6) = (ILocomotion *)&off_7E7E8C; /*0x4b4d10*/
   v3 = *(Block + 26); /*0x4b4d17*/

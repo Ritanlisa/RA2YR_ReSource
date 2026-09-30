@@ -10,6 +10,6 @@ struct E4Recv_6810A0 {
     unsigned int M524;  // 0x20C
     unsigned int q524;  // 0x524
 // --- flat members (END) ---
-    wchar_t * sub_6810A0(wchar_t * Source);  // 0x6810A0
+    wchar_t *  sub_6810A0(void * Source);  // 0x6810A0
 };
 } // namespace gamemd

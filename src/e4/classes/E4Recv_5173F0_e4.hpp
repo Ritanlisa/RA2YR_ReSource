@@ -13,6 +13,6 @@ struct E4Recv_5173F0 {
     unsigned int u32_8;  // 0x8
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    int sub_5173F0(unsigned char * a2);  // 0x5173F0
+    int  sub_5173F0(unsigned __int8 * a2);  // 0x5173F0
 };
 } // namespace gamemd

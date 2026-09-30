@@ -252,9 +252,9 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
 
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
-*Block = (unsigned int)(&AirstrikeClass::`vftable');
-  *(Block + 1) = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  *(Block + 2) = &AirstrikeClass::`vftable'; /*0x41dd6a*/
+*Block = (unsigned int)(&vt_AirstrikeClass);
+  *(Block + 1) = &vt_AirstrikeClass; /*0x41dd63*/
+  *(Block + 2) = &vt_AirstrikeClass; /*0x41dd6a*/
   *(Block + 3) = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = Block; /*0x41dd7f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_889FB8 + 16))(&g_abs_889FB8, &v5); /*0x41dd83*/
@@ -357,10 +357,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((#373 *)this); /*0x41d384*/
-  *(unsigned int *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
-  *((unsigned int *)this + 1) = &AirstrikeClass::`vftable'; /*0x41d38f*/
-  *((unsigned int *)this + 2) = &AirstrikeClass::`vftable'; /*0x41d396*/
-  *((unsigned int *)this + 3) = &AirstrikeClass::`vftable'; /*0x41d39d*/
+  *(unsigned int *)this = &vt_AirstrikeClass; /*0x41d389*/
+  *((unsigned int *)this + 1) = &vt_AirstrikeClass; /*0x41d38f*/
+  *((unsigned int *)this + 2) = &vt_AirstrikeClass; /*0x41d396*/
+  *((unsigned int *)this + 3) = &vt_AirstrikeClass; /*0x41d39d*/
   if ( g_abs_889FC8 < g_abs_889FC0 /*0x41d3d9*/
     || (g_abs_889FC5 || !g_abs_889FC0)
     && g_abs_889FCC > 0
@@ -422,9 +422,9 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x41d712*/
-      *(unsigned int *)aP0->__pad_0 = &AirstrikeClass::`vftable'; /*0x41d717*/
-      *(unsigned int *)&aP0->__pad_0[4] = &AirstrikeClass::`vftable'; /*0x41d71d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &AirstrikeClass::`vftable'; /*0x41d724*/
+      *(unsigned int *)aP0->__pad_0 = &vt_AirstrikeClass; /*0x41d717*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_AirstrikeClass; /*0x41d71d*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_AirstrikeClass; /*0x41d724*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_AirstrikeClass; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking( /*0x41d73b*/

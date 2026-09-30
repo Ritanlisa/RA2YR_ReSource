@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -31,17 +32,17 @@ struct File {
     unsigned int q030;
     unsigned int q034;
 // --- flat members (END) ---
-    char IsReady(int a2);  // 0x431F10
-    unsigned int * LoadFont(char * Source);  // 0x433990
+    char  IsReady(int a2);  // 0x431F10
+    unsigned int *  LoadFont(char * Source);  // 0x433990
     short Dispatch();  // 0x4CB920
-    unsigned int * LoadFileHVA(int a2);  // 0x5BD570
-    AbstractClass * * ParseFileHVA(int a2);  // 0x5BD5C0
-    u_short * LoadPaletteData(void * aP1);  // 0x625AF0
-    bool FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
-    int ParseCSFString(char * Source);  // 0x734990
-    unsigned int * LoadFileVXL(int a2, int a3);  // 0x755CD0
-    WDTState * LoadWDT(void * aP1);  // 0x76AC90
-    char LoadWDTDecompress(void * aP1, int a3);  // 0x76B0A0
+    unsigned int *  LoadFileHVA(int a2);  // 0x5BD570
+    AbstractClass * *  ParseFileHVA(int a2);  // 0x5BD5C0
+    u_short *  LoadPaletteData(void * aP1);  // 0x625AF0
+    bool  FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
+    int  ParseCSFString(char * Source);  // 0x734990
+    unsigned int *  LoadFileVXL(int a2, int a3);  // 0x755CD0
+    WDTState *  LoadWDT(void * aP1);  // 0x76AC90
+    char  LoadWDTDecompress(void * aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
 };
 } // namespace gamemd

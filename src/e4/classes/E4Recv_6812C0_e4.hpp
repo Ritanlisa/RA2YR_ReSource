@@ -11,6 +11,6 @@ struct E4Recv_6812C0 {
     unsigned int q1008;  // 0x1008
     unsigned int q4104;  // 0x4104
 // --- flat members (END) ---
-    int Map_Save_6812C0(void* aP1);  // 0x6812C0
+    int  Map_Save_6812C0(void * aP1);  // 0x6812C0
 };
 } // namespace gamemd

@@ -20,6 +20,6 @@ struct E4Recv_6D3290 {
     unsigned int q2180;  // 0x2180
     unsigned int q2304;  // 0x2304
 // --- flat members (END) ---
-    int DrawBuildingAnimFrame(void * aP1,  int * a2,  char a4);    // 0x6D3290
+    int  DrawBuildingAnimFrame(void * aP1, int * a2, char a4);  // 0x6D3290
 };
 } // namespace gamemd

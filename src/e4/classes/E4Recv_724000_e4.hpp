@@ -58,6 +58,6 @@ struct E4Recv_724000 {
     unsigned int u32_F00;
     unsigned int M560;
 // --- flat members (END) ---
-    char * sub_724000(int a2);  // 0x724000
+    char *  sub_724000(int a2);  // 0x724000
 };
 } // namespace gamemd

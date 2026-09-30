@@ -1,6 +1,8 @@
 // GENERATED template-collision flat carrier (mechanical).
 #pragma once
 
+
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {

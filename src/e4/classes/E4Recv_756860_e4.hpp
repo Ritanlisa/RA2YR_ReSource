@@ -19,6 +19,6 @@ struct E4Recv_756860 {
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    int InitializeTileAudioOcclusion(int a2,  float * a3);    // 0x756860
+    int  InitializeTileAudioOcclusion(int a2, float * a3);  // 0x756860
 };
 } // namespace gamemd

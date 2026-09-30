@@ -14,6 +14,6 @@ struct E4Recv_759880 {
     unsigned int q4744;  // 0x4744
     unsigned int q4760;  // 0x4760
 // --- flat members (END) ---
-    bool sub_759880(int a2,  int a3,  int a4);    // 0x759880
+    bool  sub_759880(int a2, int a3, int a4);  // 0x759880
 };
 } // namespace gamemd

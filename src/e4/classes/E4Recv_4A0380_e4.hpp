@@ -45,6 +45,6 @@ struct E4Recv_4A0380 {
     unsigned int __pad_0;
     unsigned int M28;
 // --- flat members (END) ---
-    unsigned int * sub_4A0380(unsigned int * a2);  // 0x4A0380
+    unsigned int *  sub_4A0380(unsigned int * a2);  // 0x4A0380
 };
 } // namespace gamemd

@@ -32,6 +32,6 @@ struct E4Recv_697F10 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int ReadGameSettingsINI(void * aP1,  int a1,  unsigned int * a3,  unsigned int * a4);    // 0x697F10
+    int  ReadGameSettingsINI(void * aP1, int a1, unsigned int * a3, unsigned int * a4);  // 0x697F10
 };
 } // namespace gamemd

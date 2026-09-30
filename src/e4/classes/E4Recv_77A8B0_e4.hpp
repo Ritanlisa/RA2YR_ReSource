@@ -12,6 +12,6 @@ struct E4Recv_77A8B0 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    int sub_77A8B0(int a2);  // 0x77A8B0
+    int  sub_77A8B0(int a2);  // 0x77A8B0
 };
 } // namespace gamemd

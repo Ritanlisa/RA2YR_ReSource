@@ -18,6 +18,6 @@ struct E4Recv_664750 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char sub_664750(char a2);  // 0x664750
+    char  sub_664750(char a2);  // 0x664750
 };
 } // namespace gamemd

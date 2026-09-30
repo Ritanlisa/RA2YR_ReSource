@@ -33,7 +33,7 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *a1 = (int)&MechLocomotionClass::`vftable'; /*0x5b19b8*/
+      *a1 = (int)&vt_MechLocomotionClass; /*0x5b19b8*/
       a1[1] = (int)&vt_MechLocomotionClass; /*0x5b19be*/
     }
   }
@@ -55,7 +55,7 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&MechLocomotionClass::`vftable');
+  *Block = (unsigned int)(&vt_MechLocomotionClass);
   *(Block + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
   LocomotionClass::Construct(Block); /*0x5b1b60*/
   if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5b1b6a*/

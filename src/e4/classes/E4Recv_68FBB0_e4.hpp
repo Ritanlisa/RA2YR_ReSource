@@ -50,6 +50,6 @@ struct E4Recv_68FBB0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int RenderScoreTypeText(int a2,  int a3,  void * aP3);    // 0x68FBB0
+    int  RenderScoreTypeText(int a2, int a3, void * aP3);  // 0x68FBB0
 };
 } // namespace gamemd

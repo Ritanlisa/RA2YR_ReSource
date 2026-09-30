@@ -56,10 +56,10 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
   *((unsigned char *)this + 672) = 0; /*0x6b528d*/
   *((unsigned char *)this + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  *((unsigned int *)this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  *((unsigned int *)this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  *((unsigned int *)this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  *(unsigned int *)this = &vt_SmudgeTypeClass; /*0x6b529b*/
+  *((unsigned int *)this + 1) = &vt_SmudgeTypeClass; /*0x6b52a1*/
+  *((unsigned int *)this + 2) = &vt_SmudgeTypeClass; /*0x6b52a7*/
+  *((unsigned int *)this + 3) = &vt_SmudgeTypeClass; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
   *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
   *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
@@ -183,7 +183,7 @@ int SmudgeTypeClass::GetSize( uint8_t *** aP1)
 
 }
 // 0x6B6160
-SmudgeTypeClass *  SmudgeTypeClass::ddtor(void ** this, void * a2, char a3)
+SmudgeTypeClass *  SmudgeTypeClass::ddtor( void * a2, char a3)
 {
 
   CCINIClass *v3; // eax
@@ -191,9 +191,9 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void ** this, void * a2, char a3)
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (CCINIClass *)*(this + 41); /*0x6b6164*/
-  *this = &SmudgeTypeClass::`vftable'; /*0x6b616a*/
-  *(this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b6172*/
-  *(this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b6179*/
+  *this = &vt_SmudgeTypeClass; /*0x6b616a*/
+  *(this + 1) = &vt_SmudgeTypeClass; /*0x6b6172*/
+  *(this + 2) = &vt_SmudgeTypeClass; /*0x6b6179*/
   *(this + 3) = &vt_SmudgeTypeClass; /*0x6b6180*/
   if ( v3 ) /*0x6b6187*/
   {
@@ -288,9 +288,9 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP0); /*0x6b586f*/
-      *(unsigned int *)aP0->__pad_0 = &SmudgeTypeClass::`vftable'; /*0x6b5874*/
-      *(unsigned int *)&aP0->__pad_0[4] = &SmudgeTypeClass::`vftable'; /*0x6b587a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &SmudgeTypeClass::`vftable'; /*0x6b5881*/
+      *(unsigned int *)aP0->__pad_0 = &vt_SmudgeTypeClass; /*0x6b5874*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_SmudgeTypeClass; /*0x6b587a*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_SmudgeTypeClass; /*0x6b5881*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_SmudgeTypeClass; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x6b5891*/

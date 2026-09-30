@@ -67,10 +67,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   *((unsigned int *)this + 190) = 0; /*0x74ae59*/
   *((unsigned int *)this + 191) = 0; /*0x74ae5f*/
   *((unsigned char *)this + 768) = 0; /*0x74ae65*/
-  *this = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
-  *((unsigned int *)this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
-  *((unsigned int *)this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
-  *((unsigned int *)this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  *this = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
+  *((unsigned int *)this + 1) = &vt_VoxelAnimTypeClass; /*0x74ae71*/
+  *((unsigned int *)this + 2) = &vt_VoxelAnimTypeClass; /*0x74ae77*/
+  *((unsigned int *)this + 3) = &vt_VoxelAnimTypeClass; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x74ae85*/
   *((unsigned char *)this + 561) = 0; /*0x74ae8c*/
   *((unsigned char *)this + 564) = 1; /*0x74ae92*/
@@ -418,7 +418,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
     else
       FileVXL = 0; /*0x74b5d5*/
     *((unsigned int *)this + 44) = FileVXL; /*0x74b5db*/
-    *(unsigned int *)Destination = &CCFileClass::`vftable'; /*0x74b5e1*/
+    *(unsigned int *)Destination = &vt_CCFileClass; /*0x74b5e1*/
     v55 = 0; /*0x74b5e9*/
     Vector::Clear((int)v54); /*0x74b5f1*/
     *(unsigned int *)Destination = &off_7E1668; /*0x74b5fa*/
@@ -475,9 +475,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
-  *(Block + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
-  *(Block + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
+  *Block = &vt_VoxelAnimTypeClass; /*0x74ba36*/
+  *(Block + 1) = &vt_VoxelAnimTypeClass; /*0x74ba3c*/
+  *(Block + 2) = &vt_VoxelAnimTypeClass; /*0x74ba43*/
   *(Block + 3) = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x74ba51*/
   v6 = Block; /*0x74ba66*/
@@ -544,9 +544,9 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x74b833*/
-      *(unsigned int *)aP0->__pad_0 = &VoxelAnimTypeClass::`vftable'; /*0x74b838*/
-      *(unsigned int *)&aP0->__pad_0[4] = &VoxelAnimTypeClass::`vftable'; /*0x74b83e*/
-      *(unsigned int *)&aP0->__pad_0[8] = &VoxelAnimTypeClass::`vftable'; /*0x74b845*/
+      *(unsigned int *)aP0->__pad_0 = &vt_VoxelAnimTypeClass; /*0x74b838*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_VoxelAnimTypeClass; /*0x74b83e*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_VoxelAnimTypeClass; /*0x74b845*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_VoxelAnimTypeClass; /*0x74b84c*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)aP0[1].Name); /*0x74b85f*/

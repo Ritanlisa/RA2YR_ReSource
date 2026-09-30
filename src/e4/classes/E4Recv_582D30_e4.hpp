@@ -15,6 +15,6 @@ struct E4Recv_582D30 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int SmallFunc_582D30(int a2);  // 0x582D30
+    int  SmallFunc_582D30(int a2);  // 0x582D30
 };
 } // namespace gamemd

@@ -298,8 +298,8 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   *((unsigned int *)this + 325) = 0; /*0x6f311e*/
   *((unsigned int *)this + 326) = 0; /*0x6f3124*/
   *((unsigned int *)this + 327) = 0; /*0x6f312a*/
-  *this = &TechnoClass::`vftable'; /*0x6f3130*/
-  *((unsigned int *)this + 1) = &TechnoClass::`vftable'; /*0x6f3136*/
+  *this = &vt_TechnoClass; /*0x6f3130*/
+  *((unsigned int *)this + 1) = &vt_TechnoClass; /*0x6f3136*/
   *((unsigned int *)this + 2) = &vt_TechnoClass; /*0x6f313d*/
   *((unsigned int *)this + 3) = &off_7F4934; /*0x6f314a*/
   AudioController::Init((unsigned int *)this + 290); /*0x6f3151*/
@@ -529,8 +529,8 @@ int TechnoClass::DTOR()
   int v17; // [esp+18h] [ebp-4h] BYREF
 
   v2 = *((unsigned int *)this + 325); /*0x6f4507*/
-  *(unsigned int *)this = &TechnoClass::`vftable'; /*0x6f450d*/
-  *((unsigned int *)this + 1) = &TechnoClass::`vftable'; /*0x6f4515*/
+  *(unsigned int *)this = &vt_TechnoClass; /*0x6f450d*/
+  *((unsigned int *)this + 1) = &vt_TechnoClass; /*0x6f4515*/
   *((unsigned int *)this + 2) = &vt_TechnoClass; /*0x6f451c*/
   *((unsigned int *)this + 3) = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
@@ -621,9 +621,9 @@ int TechnoClass::DTOR()
   *((unsigned char *)this + 1101) = 0; /*0x6f4710*/
   *((unsigned int *)this + 274) = 0; /*0x6f4716*/
   nullsub_69((char *)this + 336); /*0x6f471c*/
-  *(unsigned int *)this = &RadioClass::`vftable'; /*0x6f4721*/
-  *((unsigned int *)this + 1) = &RadioClass::`vftable'; /*0x6f4727*/
-  *((unsigned int *)this + 2) = &RadioClass::`vftable'; /*0x6f472e*/
+  *(unsigned int *)this = &vt_RadioClass; /*0x6f4721*/
+  *((unsigned int *)this + 1) = &vt_RadioClass; /*0x6f4727*/
+  *((unsigned int *)this + 2) = &vt_RadioClass; /*0x6f472e*/
   *((unsigned int *)this + 3) = &vt_RadioClass; /*0x6f4735*/
   v15 = *((unsigned int *)this + 57); /*0x6f473c*/
   *((unsigned int *)this + 56) = &vt_VectorClass_TechnoClass; /*0x6f4742*/
@@ -634,9 +634,9 @@ int TechnoClass::DTOR()
   }
   *((unsigned char *)this + 237) = 0; /*0x6f4767*/
   *((unsigned int *)this + 58) = 0; /*0x6f476d*/
-  *(unsigned int *)this = &MissionClass::`vftable'; /*0x6f4775*/
-  *((unsigned int *)this + 1) = &MissionClass::`vftable'; /*0x6f477b*/
-  *((unsigned int *)this + 2) = &MissionClass::`vftable'; /*0x6f4782*/
+  *(unsigned int *)this = &vt_MissionClass; /*0x6f4775*/
+  *((unsigned int *)this + 1) = &vt_MissionClass; /*0x6f477b*/
+  *((unsigned int *)this + 2) = &vt_MissionClass; /*0x6f4782*/
   *((unsigned int *)this + 3) = &vt_MissionClass; /*0x6f4789*/
   return ObjectClass::Dtor((unsigned int *)this); /*0x6f4795*/
 

@@ -23,6 +23,6 @@ struct E4Recv_486D90 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_486D90(char a2);  // 0x486D90
+    int  sub_486D90(char a2);  // 0x486D90
 };
 } // namespace gamemd

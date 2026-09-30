@@ -1191,7 +1191,7 @@ LABEL_14:
 }
 // 0x6E8DE0
 namespace gamemd {
-void TeamClass::Destructor(void ** this, void * a2)
+void TeamClass::Destructor( void * a2)
 {
 
   int edi1; // edi
@@ -1209,9 +1209,9 @@ void TeamClass::Destructor(void ** this, void * a2)
   void **v15; // [esp+10h] [ebp-4h] BYREF
 
   edi1 = 0; /*0x6e8de5*/
-  *this = &TeamClass::`vftable'; /*0x6e8de7*/
-  *(this + 1) = &TeamClass::`vftable'; /*0x6e8ded*/
-  *(this + 2) = &TeamClass::`vftable'; /*0x6e8df4*/
+  *this = &vt_TeamClass; /*0x6e8de7*/
+  *(this + 1) = &vt_TeamClass; /*0x6e8ded*/
+  *(this + 2) = &vt_TeamClass; /*0x6e8df4*/
   for ( *(this + 3) = &vt_TeamClass; edi1 < *(int *)&HouseClass_Player.__pad_5568[8028]; ++edi1 ) /*0x6e8e09*/
   {
     ecx2 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8016] + 4 * edi1); /*0x6e8e10*/
@@ -3724,9 +3724,9 @@ int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x6ec473*/
       __4type_info_AAEAAV0_ABV0__Z(&aP0[2].referenceCount, (int)&aP1); /*0x6ec480*/
-      *(unsigned int *)aP0->__pad_0 = &TeamClass::`vftable'; /*0x6ec485*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TeamClass::`vftable'; /*0x6ec48b*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TeamClass::`vftable'; /*0x6ec492*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TeamClass; /*0x6ec485*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TeamClass; /*0x6ec48b*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TeamClass; /*0x6ec492*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TeamClass; /*0x6ec499*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6ec4a9*/

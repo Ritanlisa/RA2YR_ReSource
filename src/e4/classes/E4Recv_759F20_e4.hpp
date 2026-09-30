@@ -10,6 +10,6 @@ struct E4Recv_759F20 {
     unsigned int M1296;  // 0x510
     unsigned int q4758;  // 0x4758
 // --- flat members (END) ---
-    int sub_759F20(int a2);  // 0x759F20
+    int  sub_759F20(int a2);  // 0x759F20
 };
 } // namespace gamemd

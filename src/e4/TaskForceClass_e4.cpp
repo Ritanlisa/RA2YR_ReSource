@@ -80,9 +80,9 @@ int TaskForceClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 38) = -1; /*0x6e7e8f*/
   *((unsigned int *)this + 39) = 0; /*0x6e7e99*/
   *((unsigned int *)this + 40) = 0; /*0x6e7ea3*/
-  *this = &TaskForceClass::`vftable'; /*0x6e7ead*/
-  *((unsigned int *)this + 1) = &TaskForceClass::`vftable'; /*0x6e7eb3*/
-  *((unsigned int *)this + 2) = &TaskForceClass::`vftable'; /*0x6e7eba*/
+  *this = &vt_TaskForceClass; /*0x6e7ead*/
+  *((unsigned int *)this + 1) = &vt_TaskForceClass; /*0x6e7eb3*/
+  *((unsigned int *)this + 2) = &vt_TaskForceClass; /*0x6e7eba*/
   *((unsigned int *)this + 3) = &vt_TaskForceClass; /*0x6e7ec1*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
     || (HouseClass_Player.__pad_5568[22057] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22052])
@@ -191,9 +191,9 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&TaskForceClass::`vftable');
-  *(Block + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
-  *(Block + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
+  *Block = (void *)(&vt_TaskForceClass);
+  *(Block + 1) = &vt_TaskForceClass; /*0x6e87fc*/
+  *(Block + 2) = &vt_TaskForceClass; /*0x6e8803*/
   *(Block + 3) = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
@@ -341,9 +341,9 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->__pad_0 = &TaskForceClass::`vftable'; /*0x6e86c4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TaskForceClass::`vftable'; /*0x6e86ca*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TaskForceClass::`vftable'; /*0x6e86d1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TaskForceClass; /*0x6e86c4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TaskForceClass; /*0x6e86ca*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TaskForceClass; /*0x6e86d1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TaskForceClass; /*0x6e86d8*/
     }
     v3 = (MouseClass *)&aP0[1].uniqueId; /*0x6e86e0*/

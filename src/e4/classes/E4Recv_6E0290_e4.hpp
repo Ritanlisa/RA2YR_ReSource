@@ -19,6 +19,6 @@ struct E4Recv_6E0290 {
     unsigned int q1910;  // 0x1910
     unsigned int isAliveFlag;
 // --- flat members (END) ---
-    char sub_6E0290(int a2,  int a3,  int a4,  int a5);    // 0x6E0290
+    char  sub_6E0290(int a2, int a3, int a4, int a5);  // 0x6E0290
 };
 } // namespace gamemd

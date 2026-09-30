@@ -41,7 +41,7 @@ struct BufferIOFileClass {
     int Destruct(void *a1 = 0);
     void StubReturnFalse(int a1, int a2, int a3);
      double Constructor(...);  // C2597 interim stub
-     void Dtor(void * self);  // 0x478F43 destructor thunk (G34 supply)
+     void Dtor(void * self);
 };
 
 } // namespace gamemd

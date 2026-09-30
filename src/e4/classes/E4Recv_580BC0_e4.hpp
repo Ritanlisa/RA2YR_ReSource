@@ -17,6 +17,6 @@ struct E4Recv_580BC0 {
     unsigned int q5128;  // 0x5128
     unsigned int q5138;  // 0x5138
 // --- flat members (END) ---
-    unsigned int * FindMapSpawnCell(void * aP1);  // 0x580BC0
+    unsigned int *  FindMapSpawnCell(void * aP1);  // 0x580BC0
 };
 } // namespace gamemd

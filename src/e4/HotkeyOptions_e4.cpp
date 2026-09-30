@@ -400,7 +400,7 @@ LABEL_16:
         FileClass::Delete((#56 *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/
         ((void (*)(int, int, unsigned int, unsigned int))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fba41*/
-        v79[0] = &CCFileClass::`vftable'; /*0x5fba4b*/
+        v79[0] = &vt_CCFileClass; /*0x5fba4b*/
         v86 = 0; /*0x5fba53*/
         Vector::Clear((int)v85); /*0x5fba5e*/
         v79[0] = &off_7E1668; /*0x5fba67*/

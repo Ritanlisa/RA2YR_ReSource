@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_76B790 {
     void* vfptr;  // minimal E2 declaration
-    void* ParseWDTTerritories_Parse_76B790(int a2);  // 0x76B790
+    void*  ParseWDTTerritories_Parse_76B790(int a2);  // 0x76B790
 };
 } // namespace gamemd

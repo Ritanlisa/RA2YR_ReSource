@@ -40,10 +40,10 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = (unsigned int)(SwizzleManager::SaveLoad((int *)a1, a2));
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(unsigned int *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
+    *(unsigned int *)a1 = &vt_LocomotionClass; /*0x5170ce*/
     *(unsigned int *)(a1 + 4) = &vt_LocomotionClass; /*0x5170d4*/
     FrameSnapshot::Init((unsigned short *)(a1 + 48)); /*0x5170db*/
-    *(unsigned int *)a1 = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
+    *(unsigned int *)a1 = &vt_HoverLocomotionClass; /*0x5170e0*/
     *(unsigned int *)(a1 + 4) = &vt_HoverLocomotionClass; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
@@ -63,7 +63,7 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-*Block = (unsigned int)(&HoverLocomotionClass::`vftable');
+*Block = (unsigned int)(&vt_HoverLocomotionClass);
   *(Block + 1) = &vt_HoverLocomotionClass; /*0x5172c9*/
   LocomotionClass::Construct(Block); /*0x5172d0*/
   if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5172da*/

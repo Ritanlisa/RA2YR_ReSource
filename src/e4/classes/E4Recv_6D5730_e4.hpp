@@ -17,6 +17,6 @@ struct E4Recv_6D5730 {
     unsigned int q2180;  // 0x2180
     unsigned int q2304;  // 0x2304
 // --- flat members (END) ---
-    int RenderBridgeRadarBlips(void * aP1,  void * aP2);    // 0x6D5730
+    int  RenderBridgeRadarBlips(void * aP1, void * aP2);  // 0x6D5730
 };
 } // namespace gamemd

@@ -39,9 +39,9 @@ void TemporalClass::Constructor()
   v2 = g_abs_A8ED84; /*0x71a458*/
   *((unsigned int *)this + 13) = 0; /*0x71a45d*/
   *((unsigned int *)this + 11) = v2; /*0x71a464*/
-  *(unsigned int *)this = &TemporalClass::`vftable'; /*0x71a467*/
-  *((unsigned int *)this + 1) = &TemporalClass::`vftable'; /*0x71a46d*/
-  *((unsigned int *)this + 2) = &TemporalClass::`vftable'; /*0x71a474*/
+  *(unsigned int *)this = &vt_TemporalClass; /*0x71a467*/
+  *((unsigned int *)this + 1) = &vt_TemporalClass; /*0x71a46d*/
+  *((unsigned int *)this + 2) = &vt_TemporalClass; /*0x71a474*/
   *((unsigned int *)this + 3) = &vt_TemporalClass; /*0x71a47b*/
   if ( g_abs_B0EC70 < g_abs_B0EC68 /*0x71a4b7*/
     || (g_abs_B0EC6D || !g_abs_B0EC68)
@@ -70,9 +70,9 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a4e7*/
   *((unsigned int *)this + 11) = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x71a4fb*/
   *((unsigned int *)this + 13) = 0; /*0x71a4fe*/
-  *this = &TemporalClass::`vftable'; /*0x71a501*/
-  *((unsigned int *)this + 1) = &TemporalClass::`vftable'; /*0x71a507*/
-  *((unsigned int *)this + 2) = &TemporalClass::`vftable'; /*0x71a50e*/
+  *this = &vt_TemporalClass; /*0x71a501*/
+  *((unsigned int *)this + 1) = &vt_TemporalClass; /*0x71a507*/
+  *((unsigned int *)this + 2) = &vt_TemporalClass; /*0x71a50e*/
   *((unsigned int *)this + 3) = &vt_TemporalClass; /*0x71a515*/
   *((unsigned int *)this + 9) = aP1; /*0x71a51c*/
   *((unsigned int *)this + 10) = 0; /*0x71a51f*/
@@ -345,9 +345,9 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TemporalClass::`vftable'; /*0x71b1bd*/
-  *(Block + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
-  *(Block + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
+  *Block = &vt_TemporalClass; /*0x71b1bd*/
+  *(Block + 1) = &vt_TemporalClass; /*0x71b1c3*/
+  *(Block + 2) = &vt_TemporalClass; /*0x71b1ca*/
   *(Block + 3) = &vt_TemporalClass; /*0x71b1d1*/
   v5 = Block; /*0x71b1df*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0EC60 + 16))(&g_abs_B0EC60, &v5); /*0x71b1e3*/
@@ -391,9 +391,9 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x71a682*/
-      *(unsigned int *)aP0->__pad_0 = &TemporalClass::`vftable'; /*0x71a687*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TemporalClass::`vftable'; /*0x71a68d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TemporalClass::`vftable'; /*0x71a694*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TemporalClass; /*0x71a687*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_TemporalClass; /*0x71a68d*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_TemporalClass; /*0x71a694*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_TemporalClass; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x71a6ab*/

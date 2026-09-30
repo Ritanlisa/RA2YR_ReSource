@@ -67,9 +67,9 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&AlphaShapeClass::`vftable');
-  *(Block + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
-  *(Block + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
+  *Block = (unsigned int)(&vt_AlphaShapeClass);
+  *(Block + 1) = &vt_AlphaShapeClass; /*0x421743*/
+  *(Block + 2) = &vt_AlphaShapeClass; /*0x42174a*/
   *(Block + 3) = &vt_AlphaShapeClass; /*0x421751*/
   v6 = Block; /*0x42175f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_88A0F0 + 16))(&g_abs_88A0F0, &v6); /*0x421763*/
@@ -113,9 +113,9 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->__pad_0 = &AlphaShapeClass::`vftable'; /*0x420e07*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &AlphaShapeClass::`vftable'; /*0x420e0d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &AlphaShapeClass::`vftable'; /*0x420e14*/
+      *(unsigned int *)aP0->__pad_0 = &vt_AlphaShapeClass; /*0x420e07*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_AlphaShapeClass; /*0x420e0d*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_AlphaShapeClass; /*0x420e14*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_AlphaShapeClass; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x420e2b*/

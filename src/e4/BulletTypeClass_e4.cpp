@@ -171,9 +171,9 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   *((unsigned char *)this + 757) = 0; /*0x46bcd4*/
   *((unsigned char *)this + 758) = 0; /*0x46bcda*/
   *((unsigned char *)this + 759) = 0; /*0x46bce0*/
-  *(unsigned int *)this = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  *((unsigned int *)this + 1) = &BulletTypeClass::`vftable'; /*0x46bcec*/
-  *((unsigned int *)this + 2) = &BulletTypeClass::`vftable'; /*0x46bcf2*/
+  *(unsigned int *)this = &vt_BulletTypeClass; /*0x46bce6*/
+  *((unsigned int *)this + 1) = &vt_BulletTypeClass; /*0x46bcec*/
+  *((unsigned int *)this + 2) = &vt_BulletTypeClass; /*0x46bcf2*/
   *((unsigned int *)this + 3) = &vt_BulletTypeClass; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
@@ -558,9 +558,9 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &BulletTypeClass::`vftable'; /*0x46c896*/
-  *(Block + 1) = &BulletTypeClass::`vftable'; /*0x46c89c*/
-  *(Block + 2) = &BulletTypeClass::`vftable'; /*0x46c8a3*/
+  *Block = &vt_BulletTypeClass; /*0x46c896*/
+  *(Block + 1) = &vt_BulletTypeClass; /*0x46c89c*/
+  *(Block + 2) = &vt_BulletTypeClass; /*0x46c8a3*/
   *(Block + 3) = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x46c8b1*/
   v6 = Block; /*0x46c8c6*/
@@ -858,9 +858,9 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46c6b6*/
     {
       ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x46c6bf*/
-      *(unsigned int *)aP0->__pad_0 = &BulletTypeClass::`vftable'; /*0x46c6c4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &BulletTypeClass::`vftable'; /*0x46c6ca*/
-      *(unsigned int *)&aP0->__pad_0[8] = &BulletTypeClass::`vftable'; /*0x46c6d1*/
+      *(unsigned int *)aP0->__pad_0 = &vt_BulletTypeClass; /*0x46c6c4*/
+      *(unsigned int *)&aP0->__pad_0[4] = &vt_BulletTypeClass; /*0x46c6ca*/
+      *(unsigned int *)&aP0->__pad_0[8] = &vt_BulletTypeClass; /*0x46c6d1*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x46c6e1*/

@@ -557,13 +557,13 @@ int HouseClass::Construct( int a2)
   *(this + 22571) = 0; /*0x4f5dba*/
   *(this + 22572) = 0; /*0x4f5dc0*/
   *(this + 22573) = 0; /*0x4f5dc6*/
-  *this = (int)&HouseClass::`vftable'; /*0x4f5dcc*/
-  *(this + 1) = (int)&HouseClass::`vftable'; /*0x4f5dd3*/
-  *(this + 2) = (int)&HouseClass::`vftable'; /*0x4f5dda*/
-  *(this + 3) = (int)&HouseClass::`vftable'; /*0x4f5de1*/
-  *(this + 9) = (int)&HouseClass::`vftable'; /*0x4f5de8*/
-  *(this + 10) = (int)&HouseClass::`vftable'; /*0x4f5def*/
-  *(this + 11) = (int)&HouseClass::`vftable'; /*0x4f5dfb*/
+  *this = (int)&vt_HouseClass; /*0x4f5dcc*/
+  *(this + 1) = (int)&vt_HouseClass; /*0x4f5dd3*/
+  *(this + 2) = (int)&vt_HouseClass; /*0x4f5dda*/
+  *(this + 3) = (int)&vt_HouseClass; /*0x4f5de1*/
+  *(this + 9) = (int)&vt_HouseClass; /*0x4f5de8*/
+  *(this + 10) = (int)&vt_HouseClass; /*0x4f5def*/
+  *(this + 11) = (int)&vt_HouseClass; /*0x4f5dfb*/
   if ( &g_INI_DefaultBuffer ) /*0x4f5e04*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x1Fu); /*0x4f5e18*/

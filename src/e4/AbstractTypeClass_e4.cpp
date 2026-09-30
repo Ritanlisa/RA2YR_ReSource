@@ -29,9 +29,9 @@ int AbstractTypeClass::Constructor( AbstractClass * aP1)
   *(unsigned char *)(this + 36) = 0; /*0x410817*/
   *(unsigned char *)(this + 61) = 0; /*0x41081a*/
   *(unsigned char *)(this + 100) = 0; /*0x41081e*/
-  *(unsigned int *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
-  *(unsigned int *)(this + 4) = &AbstractTypeClass::`vftable'; /*0x410829*/
-  *(unsigned int *)(this + 8) = &AbstractTypeClass::`vftable'; /*0x410830*/
+  *(unsigned int *)this = &vt_AbstractTypeClass; /*0x410822*/
+  *(unsigned int *)(this + 4) = &vt_AbstractTypeClass; /*0x410829*/
+  *(unsigned int *)(this + 8) = &vt_AbstractTypeClass; /*0x410830*/
   *(unsigned int *)(this + 12) = &vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
@@ -96,9 +96,9 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   unsigned int *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
-  *(this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  *(this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  *this = &vt_AbstractTypeClass; /*0x4109cd*/
+  *(this + 1) = &vt_AbstractTypeClass; /*0x4109d3*/
+  *(this + 2) = &vt_AbstractTypeClass; /*0x4109da*/
   *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v4); /*0x4109f3*/
@@ -186,9 +186,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&AbstractTypeClass::`vftable');
-  *(Block + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
-  *(Block + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
+  *Block = (unsigned int)(&vt_AbstractTypeClass);
+  *(Block + 1) = &vt_AbstractTypeClass; /*0x410c43*/
+  *(Block + 2) = &vt_AbstractTypeClass; /*0x410c4a*/
   *(Block + 3) = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = Block; /*0x410c5f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v5); /*0x410c63*/
@@ -217,9 +217,9 @@ int AbstractTypeClass::Init( AbstractTypeClass * aP1)
 
   AbstractClass::InitVtables((unsigned int *)this, (int)aP1); /*0x410968*/
   v3 = *(unsigned char *)(this + 61); /*0x41096d*/
-  *(unsigned int *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
-  *(unsigned int *)(this + 4) = &AbstractTypeClass::`vftable'; /*0x41097b*/
-  *(unsigned int *)(this + 8) = &AbstractTypeClass::`vftable'; /*0x410982*/
+  *(unsigned int *)this = &vt_AbstractTypeClass; /*0x410975*/
+  *(unsigned int *)(this + 4) = &vt_AbstractTypeClass; /*0x41097b*/
+  *(unsigned int *)(this + 8) = &vt_AbstractTypeClass; /*0x410982*/
   *(unsigned int *)(this + 12) = &vt_AbstractTypeClass; /*0x410989*/
   if ( v3 ) /*0x410990*/
     *(unsigned int *)(this + 96) = GetStringCSF((wchar_t *)(this + 61), 0, g_abs_817830, 127); /*0x4109a0*/

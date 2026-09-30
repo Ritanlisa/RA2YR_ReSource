@@ -91,6 +91,8 @@ def cache_params_sig(sig_head):
         if not pm:
             return None, None
         name = pm.group(1)
+        if name == 'this':
+            continue          # literal `this` is never a legal param name
         ptype = tok[:tok.rfind(name)].strip()
         for tm, rep in TOKEN_MAP:
             ptype = tm.sub(rep, ptype)

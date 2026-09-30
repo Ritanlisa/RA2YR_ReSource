@@ -32,6 +32,6 @@ struct E4Recv_7BCA50 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_7BCA50(int a2,  int a3,  int a4,  int a5,  int a6);    // 0x7BCA50
+    int  sub_7BCA50(int a2, int a3, int a4, int a5, int a6);  // 0x7BCA50
 };
 } // namespace gamemd

@@ -112,15 +112,15 @@ struct Sidebar {
     unsigned int field_1530;
     unsigned int Debug;
 // --- flat members (END) ---
-    int StartSidebarProduction(void * a1, void * aP2, void * aP3, char a5);  // 0x4FA350
-    int Dispatch(void * aP1, char a3, int a4, char a5);  // 0x5007A0
+    int  StartSidebarProduction(void * a1, void * aP2, void * aP3, char a5);  // 0x4FA350
+    int  Dispatch(void * aP1, char a3, int a4, char a5);  // 0x5007A0
     int ScrollSidebarSkipGame();  // 0x533F50
-    void CancelSidebarProductionQueue(int * Block);  // 0x636310
-    char RemoveItem(int a2);  // 0x63F040
-    int Render(char a2);  // 0x63FB20
-    int ActivateTab(void * aP1);  // 0x6A60A0
-    void FlushSidebarTooltip(char a2);  // 0x6A70E0
-    char FindProductionType(void * aP1, void * aP2, int a4);  // 0x6A6140
+    void  CancelSidebarProductionQueue(int * Block);  // 0x636310
+    char  RemoveItem(int a2);  // 0x63F040
+    int  Render(char a2);  // 0x63FB20
+    int  ActivateTab(void * aP1);  // 0x6A60A0
+    void  FlushSidebarTooltip(char a2);  // 0x6A70E0
+    char  FindProductionType(void * aP1, void * aP2, int a4);  // 0x6A6140
     static double UpdateProductionDisplay(...);  // C2597 interim stub
 };
 } // namespace gamemd

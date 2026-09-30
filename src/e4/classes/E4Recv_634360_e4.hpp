@@ -13,6 +13,6 @@ struct E4Recv_634360 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    BOOL sub_634360(int a2);  // 0x634360
+    BOOL  sub_634360(int a2);  // 0x634360
 };
 } // namespace gamemd

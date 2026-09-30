@@ -165,9 +165,9 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   *((unsigned char *)this + 245) = 1; /*0x6f07eb*/
   *((unsigned char *)this + 246) = 0; /*0x6f07f1*/
   *((unsigned char *)this + 247) = 0; /*0x6f07f7*/
-  *this = &TeamTypeClass::`vftable'; /*0x6f07fd*/
-  *((unsigned int *)this + 1) = &TeamTypeClass::`vftable'; /*0x6f0803*/
-  *((unsigned int *)this + 2) = &TeamTypeClass::`vftable'; /*0x6f080a*/
+  *this = &vt_TeamTypeClass; /*0x6f07fd*/
+  *((unsigned int *)this + 1) = &vt_TeamTypeClass; /*0x6f0803*/
+  *((unsigned int *)this + 2) = &vt_TeamTypeClass; /*0x6f080a*/
   *((unsigned int *)this + 3) = &vt_TeamTypeClass; /*0x6f0811*/
   v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f0818*/
   if ( *(int *)&HouseClass_Player.__pad_5568[23036] < *(int *)&HouseClass_Player.__pad_5568[23028] /*0x6f0857*/
@@ -667,9 +667,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   *((unsigned int *)this + 882) = 10; /*0x711674*/
   *((unsigned int *)this + 883) = 0; /*0x71167a*/
   *((unsigned int *)this + 892) = 0; /*0x711680*/
-  *(unsigned int *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
-  *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x71168c*/
-  *((unsigned int *)this + 2) = &TechnoTypeClass::`vftable'; /*0x711693*/
+  *(unsigned int *)this = &vt_TechnoTypeClass; /*0x711686*/
+  *((unsigned int *)this + 1) = &vt_TechnoTypeClass; /*0x71168c*/
+  *((unsigned int *)this + 2) = &vt_TechnoTypeClass; /*0x711693*/
   *((unsigned int *)this + 3) = &vt_TechnoTypeClass; /*0x71169a*/
   *((unsigned char *)this + 3536) = 0; /*0x7116a7*/
   *((unsigned char *)this + 564) = 1; /*0x7116ad*/
@@ -823,9 +823,9 @@ void TechnoTypeClass::Construct(ObjectTypeClass * aP1)
   *((unsigned int *)this + 816) = 1; /*0x711a3a*/
   *((unsigned int *)this + 817) = 1; /*0x711a40*/
   *((unsigned char *)this + 3272) = 0; /*0x711a46*/
-  *(unsigned int *)this = &TechnoTypeClass::`vftable'; /*0x711a4c*/
-  *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x711a52*/
-  *((unsigned int *)this + 2) = &TechnoTypeClass::`vftable'; /*0x711a59*/
+  *(unsigned int *)this = &vt_TechnoTypeClass; /*0x711a4c*/
+  *((unsigned int *)this + 1) = &vt_TechnoTypeClass; /*0x711a52*/
+  *((unsigned int *)this + 2) = &vt_TechnoTypeClass; /*0x711a59*/
   *((unsigned int *)this + 3) = &vt_TechnoTypeClass; /*0x711a60*/
   v3 = *(unsigned int *)&g_abs_A8D63C; /*0x711a67*/
   v4 = 0; /*0x711a6c*/
@@ -883,9 +883,9 @@ int TechnoTypeClass::DTOR()
   int v17; // [esp+8h] [ebp-4h] BYREF
 
   v2 = *((unsigned char *)this + 1780); /*0x711ae7*/
-  *(unsigned int *)this = &TechnoTypeClass::`vftable'; /*0x711aed*/
-  *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x711af5*/
-  *((unsigned int *)this + 2) = &TechnoTypeClass::`vftable'; /*0x711afc*/
+  *(unsigned int *)this = &vt_TechnoTypeClass; /*0x711aed*/
+  *((unsigned int *)this + 1) = &vt_TechnoTypeClass; /*0x711af5*/
+  *((unsigned int *)this + 2) = &vt_TechnoTypeClass; /*0x711afc*/
   *((unsigned int *)this + 3) = &vt_TechnoTypeClass; /*0x711b03*/
   if ( v2 && *((unsigned int *)this + 444) ) /*0x711b0c*/
   {

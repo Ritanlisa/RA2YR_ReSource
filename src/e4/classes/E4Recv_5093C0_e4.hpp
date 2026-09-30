@@ -14,6 +14,6 @@ struct E4Recv_5093C0 {
     unsigned int u32_5608;
     unsigned int u32_5614;
 // --- flat members (END) ---
-    int sub_5093C0(int a2);  // 0x5093C0
+    int  sub_5093C0(int a2);  // 0x5093C0
 };
 } // namespace gamemd

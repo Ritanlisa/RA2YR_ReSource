@@ -21,6 +21,6 @@ struct E4Recv_42CCD0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    void sub_42CCD0(int a2);  // 0x42CCD0
+    void  sub_42CCD0(int a2);  // 0x42CCD0
 };
 } // namespace gamemd

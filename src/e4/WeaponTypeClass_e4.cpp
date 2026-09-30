@@ -156,9 +156,9 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   *((unsigned char *)this + 341) = 0; /*0x771e65*/
   *((unsigned int *)this + 86) = 0; /*0x771e6b*/
   *((unsigned char *)this + 348) = 0; /*0x771e71*/
-  *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
-  *((unsigned int *)this + 1) = &WeaponTypeClass::`vftable'; /*0x771e7d*/
-  *((unsigned int *)this + 2) = &WeaponTypeClass::`vftable'; /*0x771e83*/
+  *this = &vt_WeaponTypeClass; /*0x771e77*/
+  *((unsigned int *)this + 1) = &vt_WeaponTypeClass; /*0x771e7d*/
+  *((unsigned int *)this + 2) = &vt_WeaponTypeClass; /*0x771e83*/
   *((unsigned int *)this + 3) = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x771e91*/
   if ( *(int *)&stru_87C374.__pad_579C[23144] < *(int *)&stru_87C374.__pad_579C[23136] /*0x771eca*/
@@ -187,9 +187,9 @@ int WeaponTypeClass::Destructor()
   void *v5; // eax
   int v7; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
-  *((unsigned int *)this + 1) = &WeaponTypeClass::`vftable'; /*0x771f5d*/
-  *((unsigned int *)this + 2) = &WeaponTypeClass::`vftable'; /*0x771f64*/
+  *(unsigned int *)this = &vt_WeaponTypeClass; /*0x771f57*/
+  *((unsigned int *)this + 1) = &vt_WeaponTypeClass; /*0x771f5d*/
+  *((unsigned int *)this + 2) = &vt_WeaponTypeClass; /*0x771f64*/
   *((unsigned int *)this + 3) = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x771f72*/
   *((unsigned int *)this + 40) = 0; /*0x771f7d*/
@@ -431,9 +431,9 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   DynamicVector *v6; // eax
   WeaponTypeClass *v8; // [esp+8h] [ebp-4h] BYREF
 
-  *Block = &WeaponTypeClass::`vftable'; /*0x7730f7*/
-  *(Block + 1) = &WeaponTypeClass::`vftable'; /*0x7730fd*/
-  *(Block + 2) = &WeaponTypeClass::`vftable'; /*0x773104*/
+  *Block = &vt_WeaponTypeClass; /*0x7730f7*/
+  *(Block + 1) = &vt_WeaponTypeClass; /*0x7730fd*/
+  *(Block + 2) = &vt_WeaponTypeClass; /*0x773104*/
   *(Block + 3) = &vt_WeaponTypeClass; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x773112*/
   *(Block + 40) = 0; /*0x77311d*/
@@ -567,9 +567,9 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties( AbstractTypeClass * aP1)
   *(this + 47) = &vt_TypeList_int; /*0x771f12*/
   *(this + 54) = &vt_TypeList_int; /*0x771f18*/
   *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771f1e*/
-  *this = &WeaponTypeClass::`vftable'; /*0x771f28*/
-  *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771f2e*/
-  *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771f35*/
+  *this = &vt_WeaponTypeClass; /*0x771f28*/
+  *(this + 1) = &vt_WeaponTypeClass; /*0x771f2e*/
+  *(this + 2) = &vt_WeaponTypeClass; /*0x771f35*/
   *(this + 3) = &vt_WeaponTypeClass; /*0x771f3c*/
   return this; /*0x771f45*/
 

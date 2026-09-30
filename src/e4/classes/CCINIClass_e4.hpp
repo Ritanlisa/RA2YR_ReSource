@@ -1,6 +1,7 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -41,7 +42,7 @@ struct CCINIClass {
 // --- flat members (END) ---
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
     void* WriteHouses();
-    // dup-decl removed: // dup-decl removed: MultiplayerGameMode * * Load(int a2, char a3, char a4);
+    // dup-decl removed: // dup-decl removed: // dup-decl removed: MultiplayerGameMode * * Load(int a2, char a3, char a4);
     int GetDB();
     int InitFromINIEVA();
     int ReadTypeList(char * a1, void * a2);

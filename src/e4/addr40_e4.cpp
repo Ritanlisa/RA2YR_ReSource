@@ -1360,7 +1360,7 @@ LABEL_11:
     g_abs_87E73C = (char *)g_abs_87E728 + 104; /*0x406c4c*/
     v3 = CCFileClass::Construct(v9, aAudiomdMix); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
-    v9[0] = &CCFileClass::`vftable'; /*0x406c67*/
+    v9[0] = &vt_CCFileClass; /*0x406c67*/
     v11 = 0; /*0x406c6f*/
     Vector::Clear((int)v10); /*0x406c76*/
     v9[0] = &off_7E1668; /*0x406c7f*/

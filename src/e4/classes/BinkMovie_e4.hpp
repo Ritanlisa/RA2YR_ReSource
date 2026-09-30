@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -44,28 +45,28 @@ struct BinkMovie {
     unsigned int Audio;
     unsigned int Debug;
 // --- flat members (END) ---
-    unsigned int * Close(char * FullPath);  // 0x432690
-    unsigned int * Open(char * FullPath, int a3);  // 0x4326C0
+    unsigned int *  Close(char * FullPath);  // 0x432690
+    unsigned int *  Open(char * FullPath, int a3);  // 0x4326C0
     int Stop();  // 0x432700
-    AbstractClass * * InitFromFile(void * FullPath);  // 0x432750
-    int Pause(unsigned __int8 a2);  // 0x432C30
-    BOOLIsAtEnd(unsigned int * this);  // 0x432C50
+    AbstractClass * *  InitFromFile(void * FullPath);  // 0x432750
+    int  Pause(unsigned __int8 a2);  // 0x432C30
+    // dup-decl removed: BOOL IsAtEnd();  // 0x432C50
     int Play();  // 0x432C70
-    int RenderLoop(void * aP1, int a3, int a4);  // 0x432E40
+    int  RenderLoop(void * aP1, int a3, int a4);  // 0x432E40
     bool RenderFrameToSurface();  // 0x433040
-    unsigned int * RenderSingleFrame(void * aP1, int a3, int a4, char a5);  // 0x4331F0
-    unsigned int * BlitToTarget(void * aP1);  // 0x433270
-    int AdjustSurfaceFormat(void * aP1);  // 0x433330
+    unsigned int *  RenderSingleFrame(void * aP1, int a3, int a4, char a5);  // 0x4331F0
+    unsigned int *  BlitToTarget(void * aP1);  // 0x433270
+    int  AdjustSurfaceFormat(void * aP1);  // 0x433330
     void Cleanup();  // 0x5C01F0
-    int HandleKeyboard(int a1, int a2);  // 0x6033F0
-    int WndProc(int hWnd, int Msg, int wParam, int lParam);  // 0x6153E0
+    int  HandleKeyboard(int a1, HWND a2);  // 0x6033F0
+    int  WndProc(HWND hWnd, UINT Msg, int wParam, int lParam);  // 0x6153E0
     void Destroy();  // 0x6C9930
     int FreeSurfaceTracker();  // 0x6C9AE0
-    char InitKeyframeTracking(char * Source);  // 0x6C9B40
-    int CheckKeyframeTransition(void * aP1);  // 0x6C9C60
-    void ProcessKeyframe(void * aP1);  // 0x6C9D40
-    unsigned int * VtableDispatch(int a2);  // 0x6C9EC0
-    int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
+    char  InitKeyframeTracking(char * Source);  // 0x6C9B40
+    int  CheckKeyframeTransition(void * aP1);  // 0x6C9C60
+    void  ProcessKeyframe(void * aP1);  // 0x6C9D40
+    unsigned int *  VtableDispatch(int a2);  // 0x6C9EC0
+    int *  CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
     void IsAtEnd();  // def-aligned
 };
 } // namespace gamemd

@@ -198,9 +198,9 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
   *((unsigned int *)this + 73) = 0; /*0x72179a*/
   *((unsigned int *)this + 71) = v3; /*0x7217a0*/
-  *this = &TiberiumClass::`vftable'; /*0x7217a6*/
-  *((unsigned int *)this + 1) = &TiberiumClass::`vftable'; /*0x7217ac*/
-  *((unsigned int *)this + 2) = &TiberiumClass::`vftable'; /*0x7217b3*/
+  *this = &vt_TiberiumClass; /*0x7217a6*/
+  *((unsigned int *)this + 1) = &vt_TiberiumClass; /*0x7217ac*/
+  *((unsigned int *)this + 2) = &vt_TiberiumClass; /*0x7217b3*/
   *((unsigned int *)this + 3) = &vt_TiberiumClass; /*0x7217ba*/
   *((unsigned int *)this + 38) = *(unsigned int *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
   if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
@@ -455,9 +455,9 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       *(unsigned int *)(v2 + 196) = &vt_TypeList_AnimTypeClass_const; /*0x721fb0*/
       Timer::Start((unsigned int *)(v2 + 256), 0); /*0x721fb6*/
       Timer::Start((unsigned int *)(v2 + 284), 0); /*0x721fc2*/
-      *(unsigned int *)v2 = &TiberiumClass::`vftable'; /*0x721fc7*/
-      *(unsigned int *)(v2 + 4) = &TiberiumClass::`vftable'; /*0x721fcd*/
-      *(unsigned int *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
+      *(unsigned int *)v2 = &vt_TiberiumClass; /*0x721fc7*/
+      *(unsigned int *)(v2 + 4) = &vt_TiberiumClass; /*0x721fcd*/
+      *(unsigned int *)(v2 + 8) = &vt_TiberiumClass; /*0x721fd4*/
       *(unsigned int *)(v2 + 12) = &vt_TiberiumClass; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v2 + 224)); /*0x721fee*/

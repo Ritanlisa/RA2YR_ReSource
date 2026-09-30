@@ -43,10 +43,10 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   *((unsigned int *)this + 25) = 0; /*0x6b6cdc*/
   *((unsigned int *)this + 10) = a3; /*0x6b6cdf*/
   *((unsigned int *)this + 9) = a2; /*0x6b6ce6*/
-  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6cef*/
-  *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
-  *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
-  *((unsigned int *)this + 3) = &SpawnManagerClass::`vftable'; /*0x6b6d03*/
+  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b6cef*/
+  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b6cf5*/
+  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b6cfc*/
+  *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b6d03*/
   *((unsigned int *)this + 11) = a4; /*0x6b6d0a*/
   *((unsigned int *)this + 12) = a5; /*0x6b6d0d*/
   *((unsigned int *)this + 13) = a6; /*0x6b6d10*/
@@ -129,9 +129,9 @@ void* SpawnManagerClass::Constructor()
   *((unsigned int *)this + 22) = 0; /*0x6b6ed7*/
   *((unsigned int *)this + 23) = g_abs_A8ED84; /*0x6b6ee0*/
   *((unsigned int *)this + 25) = 0; /*0x6b6ee3*/
-  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
-  *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
-  *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
+  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b6ee6*/
+  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b6eec*/
+  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b6ef3*/
   *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b6efa*/
   *((unsigned int *)this + 9) = 0; /*0x6b6f01*/
   *((unsigned int *)this + 10) = 0; /*0x6b6f04*/
@@ -172,9 +172,9 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   void *v5; // eax
   int v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b7015*/
-  *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b701b*/
-  *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b7022*/
+  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b7015*/
+  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b701b*/
+  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b7022*/
   *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b7029*/
   if ( g_abs_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update((unsigned int *)this); /*0x6b7039*/
@@ -388,9 +388,9 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *(unsigned int *)&v2[2].__pad_0[8] = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x6b7f51*/
       v2[2].uniqueId = 0; /*0x6b7f57*/
       Timer::Start(&v2[2].abstractFlags, 0); /*0x6b7f5a*/
-      *(unsigned int *)v2->__pad_0 = &SpawnManagerClass::`vftable'; /*0x6b7f5f*/
-      *(unsigned int *)&v2->__pad_0[4] = &SpawnManagerClass::`vftable'; /*0x6b7f65*/
-      *(unsigned int *)&v2->__pad_0[8] = &SpawnManagerClass::`vftable'; /*0x6b7f6c*/
+      *(unsigned int *)v2->__pad_0 = &vt_SpawnManagerClass; /*0x6b7f5f*/
+      *(unsigned int *)&v2->__pad_0[4] = &vt_SpawnManagerClass; /*0x6b7f65*/
+      *(unsigned int *)&v2->__pad_0[8] = &vt_SpawnManagerClass; /*0x6b7f6c*/
       *(unsigned int *)&v2->__pad_0[12] = &vt_SpawnManagerClass; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(AbstractClass *, int *, int, unsigned int))(*(unsigned int *)v3->__pad_0 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/

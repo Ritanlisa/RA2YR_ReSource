@@ -1,6 +1,7 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
 
+
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
@@ -20,16 +21,16 @@ struct DeleteCommandClass_28 {
     unsigned int m_C;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x53C4C0
-    int Seek(int a2);  // 0x53C510
-    char AddRef();  // 0x53C520
-    char Release();  // 0x53C560
+    int  Seek(int a2);  // 0x53C510
+    char  AddRef(int a2);  // 0x53C520
+    char  Release(int a2, unsigned int * a3);  // 0x53C560
     void ddtor();  // 0x53C610
-    int Read();  // 0x53C640
-    char SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
-    int FindItem(unsigned int * a2);  // 0x53C750
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x53C780
-    DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x53C7D0
-    unsigned int PointerToIndex(int a2);  // 0x53C4F0
-    unsigned int Write(int a2);  // 0x53C680
+    int  Read(unsigned int * a2);  // 0x53C640
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
+    int  FindItem(unsigned int * a2);  // 0x53C750
+    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x53C780
+    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x53C7D0
+    unsigned int  PointerToIndex(int a2);  // 0x53C4F0
+    unsigned int  Write(int a2);  // 0x53C680
 };
 } // namespace gamemd

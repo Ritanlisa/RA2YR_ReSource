@@ -20,6 +20,6 @@ struct E4Recv_63DB20 {
     unsigned int AbstractClass;
     unsigned int sub_63DB20;
 // --- flat members (END) ---
-    BOOLsub_63DB20(unsigned int * a2);  // 0x63DB20
+         BOOLsub_63DB20(unsigned int * a2);  // 0x63DB20
 };
 } // namespace gamemd

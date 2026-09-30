@@ -14,6 +14,6 @@ struct E4Recv_764FC0 {
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    bool sub_764FC0(int a2);  // 0x764FC0
+    bool  sub_764FC0(int a2);  // 0x764FC0
 };
 } // namespace gamemd

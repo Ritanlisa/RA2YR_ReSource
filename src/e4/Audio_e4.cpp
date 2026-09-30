@@ -646,7 +646,7 @@ int Audio::LoadWAVFiles()
               *(float *)(IDA_HIDWORD(v6) + 644) = (float)(int)v6; /*0x7208ec*/
             }
           }
-          v10[0] = (int)&CCFileClass::`vftable'; /*0x7208f9*/
+          v10[0] = (int)&vt_CCFileClass; /*0x7208f9*/
           v12 = 0; /*0x720901*/
           Vector::Clear((int)v11); /*0x72090c*/
           v10[0] = (int)&off_7E1668; /*0x720915*/

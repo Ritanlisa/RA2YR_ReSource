@@ -9,6 +9,6 @@ struct E4Recv_6345A0 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-    unsigned int * sub_6345A0(unsigned int * a2);  // 0x6345A0
+    unsigned int *  sub_6345A0(unsigned int * a2);  // 0x6345A0
 };
 } // namespace gamemd

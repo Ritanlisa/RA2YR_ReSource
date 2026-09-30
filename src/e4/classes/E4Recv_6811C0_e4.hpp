@@ -9,6 +9,6 @@ struct E4Recv_6811C0 {
     unsigned int vfptr;  // 0x0
     unsigned int M983;  // 0x3D7
 // --- flat members (END) ---
-    char * sub_6811C0(char * Source);  // 0x6811C0
+    char *  sub_6811C0(char * Source);  // 0x6811C0
 };
 } // namespace gamemd
