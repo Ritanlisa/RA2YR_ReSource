@@ -115,7 +115,7 @@ int KeyboardConfig::LoadINI()
 } // namespace gamemd
 // 0x538B80
 namespace gamemd {
-AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
+AbstractClass * KeyboardConfig::ReleaseBuffer()
 {
   char *v3; // edi
   int i; // ecx

@@ -25,7 +25,7 @@
 
 // 0x7B0D90
 namespace gamemd {
-unsigned int * IPXInterfaceClass::Construct()
+int IPXInterfaceClass::Construct()
 {
   IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
   this->Socket = (int)&IPXInterfaceClass_vftable; /*0x7b0da4*/
@@ -39,7 +39,7 @@ unsigned int * IPXInterfaceClass::Construct()
 } // namespace gamemd
 // 0x7B0DD0
 namespace gamemd {
-AbstractClass * * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
+int IPXInterfaceClass::initSocket()
 {
     unsigned int v4 = 0;  /* G37 hoist */
   SOCKET v4; // esi
@@ -356,7 +356,7 @@ void * IPXInterfaceClass::bindSocket()
 } // namespace gamemd
 // 0x7B1B80
 namespace gamemd {
-AnimClass * * IPXInterfaceClass::AddRef()
+int IPXInterfaceClass::AddRef()
 {
   int result; // eax
 

@@ -29,7 +29,7 @@
 
 // 0x46C790
 namespace gamemd {
-BulletTypeClass * * ObjectTypeClass::FindOrCreate()
+BulletTypeClass * ObjectTypeClass::FindOrCreate()
 {
   int v2; // esi
   BulletTypeClass *v3; // eax

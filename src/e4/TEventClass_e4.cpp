@@ -27,7 +27,7 @@
 
 // 0x71E940
 namespace gamemd {
-DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
+DynamicVector * TEventClass::Execute(int a1, int a2, int a3, void* a4, int a5)
 {
   double v7; // st7
   int TEventClass_field_2C; // ecx

@@ -44,7 +44,7 @@ int Timer::StartDouble(double a2)
 }
 // 0x4F1B00
 namespace gamemd {
-void * Timer::Init(DWORD a2)
+DWORD * Timer::Init(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = a2; /*0x4f1b11*/
@@ -53,7 +53,7 @@ void * Timer::Init(DWORD a2)
 }
 // 0x4F1B20
 namespace gamemd {
-int Timer::GetRemainingMs()
+DWORD * Timer::GetRemainingMs(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   int v1; // edi
   int v2; // ecx
@@ -70,7 +70,7 @@ int Timer::GetRemainingMs()
 }
 // 0x54F720
 namespace gamemd {
-int Timer::PumpMessages()
+DWORD * Timer::PumpMessages(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   int v2; // eax
   int result; // eax

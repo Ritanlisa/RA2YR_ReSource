@@ -23,14 +23,14 @@
 
 // 0x4A60D0
 namespace gamemd {
-void * TextRenderer::GetInstance()
+void * TextRenderer::GetInstance(void *a1 = 0)
 {
   return (void *)(g_FogOfWarState);
 }
 }
 // 0x4B96A0
 namespace gamemd {
-void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * a4, void * a5, void * a9)
+void * TextRenderer::RenderCentered(void *a1 = 0)
 {
   void * v11;
   void * v12;

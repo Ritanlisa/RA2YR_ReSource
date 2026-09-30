@@ -19,7 +19,7 @@
 
 // 0x5B20F0
 namespace gamemd {
-long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9, void * a2, void * a4, void * a5, void * a6)
+void Movement::CalcVelocity(void* a1, double a2, void* a3, void* a4, void* a5)
 {
   unsigned int * v11;
   unsigned int v13; // edi

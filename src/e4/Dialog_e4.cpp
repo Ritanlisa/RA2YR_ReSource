@@ -238,7 +238,7 @@ int Dialog::GetMode3()
 }
 // 0x5EE350
 namespace gamemd {
-int Dialog::RefreshDialogsGame()
+void Dialog::RefreshDialogsGame()
 {
   ObjectClass *v1; // eax
   ObjectClass *v2; // eax

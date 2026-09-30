@@ -192,7 +192,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
 }
 // 0x5DAC00
 namespace gamemd {
-int WideString::Hash()
+int WideString::Hash(void *a1 = 0)
 {
   unsigned int v1; // esi
   wchar_t *v2; // edi
@@ -219,7 +219,7 @@ int WideString::Hash()
 
 // 0x727D60
 namespace gamemd {
-wchar_t * WideString::Trim()
+int WideString::Trim(void *a1 = 0)
 {
   uint16_t v2; // ax
   int v4; // eax
@@ -264,7 +264,7 @@ wchar_t * WideString::Trim()
 
 // 0x7B66D0
 namespace gamemd {
-wchar_t ** WideString::Assign(CampaignScore * aP1)
+int WideString::Assign(void *a1 = 0)
 {
   int v3; // eax
   unsigned short *v4; // eax
@@ -285,7 +285,7 @@ wchar_t ** WideString::Assign(CampaignScore * aP1)
 
 // 0x7B6720
 namespace gamemd {
-wchar_t ** WideString::AssignFromPtr(const wchar_t ** a2)
+int WideString::AssignFromPtr(void *a1 = 0)
 {
   int v3; // eax
   wchar_t *v4; // eax
@@ -327,7 +327,7 @@ void ** WideString::Assign_Alt(wchar_t * String)
 
 // 0x7B68E0
 namespace gamemd {
-void ** WideString::Reassign_Alt(const wchar_t ** a2)
+int WideString::Reassign_Alt(void *a1 = 0)
 {
   const wchar_t *v3; // eax
   wchar_t *v4; // edi
@@ -587,7 +587,7 @@ char WideString::RemoveChar(wchar_t a2)
 
 // 0x7B7100
 namespace gamemd {
-CampaignScore * WideString::GetOrEmpty()
+int WideString::GetOrEmpty(void *a1 = 0)
 {
   wchar_t *result; // eax
 
@@ -600,7 +600,7 @@ CampaignScore * WideString::GetOrEmpty()
 
 // 0x7B7140
 namespace gamemd {
-CampaignScore * WideString::GetOrEmpty_Alt()
+int WideString::GetOrEmpty_Alt(void *a1 = 0)
 {
   wchar_t *result; // eax
 
@@ -627,7 +627,7 @@ wchar_t WideString::GetChar(ObjectClass * aP1)
 
 // 0x7B71B0
 namespace gamemd {
-const wchar_t * WideString::Length()
+int WideString::Length(void *a1 = 0)
 {
   const wchar_t *result; // eax
 

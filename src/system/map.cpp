@@ -276,7 +276,7 @@ bool MapClass::CoordinatesLegal(const CellStruct& cell) const
 }
 
 // 0x5880a0
-CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* start, const CoordStruct* end, const HouseClass* house) const
+CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const
 {
   int v4; // ebx
   int v5; // edi
@@ -726,7 +726,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   return result; /*0x567d88*/
 }
 // 0x567da0
-void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8, void * a1, void * a2, void * a3, void * a4, void * a5)
+CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr)
 {
   int v5; // eax
   int v6; // ecx

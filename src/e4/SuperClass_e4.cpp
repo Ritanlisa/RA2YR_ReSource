@@ -71,7 +71,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 }
 // 0x6CAEC0
 namespace gamemd {
-int SuperClass::Constructor()
+void SuperClass::Constructor()
 {
   SuperClass * v2;
 
@@ -115,7 +115,7 @@ int SuperClass::Constructor()
 }
 // 0x6CAF90
 namespace gamemd {
-int SuperClass::Construct(int a2, CCINIClass * aP2)
+void SuperClass::Construct()
 {
   SuperClass * v5;
   SuperClass * v6;

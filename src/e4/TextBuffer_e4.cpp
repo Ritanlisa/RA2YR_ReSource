@@ -14,7 +14,7 @@
 
 // 0x5BCC90
 namespace gamemd {
-int TextBuffer::Init()
+void TextBuffer::Init(int32_t buffer)
 {
   TextBuffer * v1;
   TextBuffer *v2; // ebx

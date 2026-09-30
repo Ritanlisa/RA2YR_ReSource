@@ -9,7 +9,7 @@
 
 // 0x4810A0
 namespace gamemd {
-int Input::OffsetToDirection()
+int Input::OffsetToDirection(void* a1, void* a2, void* a3)
 {
   double v1; // st7
   int v2; // edi

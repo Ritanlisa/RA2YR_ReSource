@@ -24,7 +24,7 @@
 
 // 0x7937B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
+int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1 = 0)
 {
   int v1; // edi
   wchar_t **v3; // esi

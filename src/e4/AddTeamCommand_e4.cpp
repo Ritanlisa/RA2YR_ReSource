@@ -9,7 +9,7 @@
 
 // 0x5360B0
 namespace gamemd {
-unsigned int * AddTeamCommand::Construct(int a2)
+void AddTeamCommand::Construct()
 {
   this->AddTeamCommand_field_00 = (unsigned int *)(a2);
   *(unsigned int *)this->CommandClass = (void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
@@ -18,7 +18,7 @@ unsigned int * AddTeamCommand::Construct(int a2)
 } // namespace gamemd
 // 0x5360D0
 namespace gamemd {
-void * AddTeamCommand::AddRef()
+void AddTeamCommand::AddRef()
 {
   sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamAddSelect_%d", *(unsigned int *)&this-((unsigned int *)(>m_1))[3]); /*0x5360de*/
   return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5360eb*/
@@ -26,7 +26,7 @@ void * AddTeamCommand::AddRef()
 } // namespace gamemd
 // 0x5360F0
 namespace gamemd {
-void * AddTeamCommand::Release()
+void AddTeamCommand::Release()
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
@@ -39,7 +39,7 @@ void * AddTeamCommand::Release()
 } // namespace gamemd
 // 0x536120
 namespace gamemd {
-wchar_t * AddTeamCommand::ddtor()
+void AddTeamCommand::ddtor()
 {
   return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
 }

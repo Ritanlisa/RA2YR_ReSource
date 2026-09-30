@@ -165,7 +165,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 }
 // 0x4F54A0
 namespace gamemd {
-void HouseClass::Construct(CCINIClass * aP1)
+int HouseClass::Construct()
 {
 // (v3 export truncated pseudocode — commented out; live version via get_context)
 // int __thiscall HouseClass::Construct(int this, CCINIClass *aP1)
@@ -225,7 +225,7 @@ void HouseClass::Construct(CCINIClass * aP1)
 
 // 0x4F9A50
 namespace gamemd {
-int HouseClass::IsAlliedWith(IUnknown * aP1)
+int HouseClass::IsAlliedWith()
 {
   int result; // eax
   int relatedTagsCount; // ecx
@@ -255,7 +255,7 @@ int HouseClass::IsAlliedWith(IUnknown * aP1)
 }
 // 0x4FBE40
 namespace gamemd {
-int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
+int HouseClass::IsCellOccupied()
 {
   char v4; // bl
   int result; // eax

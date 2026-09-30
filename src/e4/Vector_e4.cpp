@@ -23,7 +23,7 @@ void Vector::Math_Vector2D_Magnitude()
 }
 // 0x512D30
 namespace gamemd {
-void Vector::Cleanup()
+void Vector::Cleanup(void *a1 = 0)
 {
   int result; // eax
 
@@ -40,7 +40,7 @@ void Vector::Cleanup()
 }
 // 0x513100
 namespace gamemd {
-void Vector::Destructor()
+void Vector::Destructor(void *a1 = 0)
 {
   int result; // eax
 
@@ -109,7 +109,7 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
 
 // 0x43AE50
 namespace gamemd {
-void Vector::Clear()
+void Vector::Clear(void *a1 = 0)
 {
   int result; // eax
 
@@ -125,7 +125,7 @@ void Vector::Clear()
 
 // 0x45AE10
 namespace gamemd {
-char Vector::RemoveAt(AbstractClass * aP1)
+void Vector::RemoveAt(void *a1 = 0)
 {
   char *Vector_field_0x10; // edx
   AbstractClass * result;
@@ -158,7 +158,7 @@ char Vector::RemoveAt(AbstractClass * aP1)
 
 // 0x4D2E40
 namespace gamemd {
-char Vector::ReallocDynamic(int a2)
+void Vector::ReallocDynamic(void *a1 = 0)
 {
   char *v3; // edi
   int i; // ecx

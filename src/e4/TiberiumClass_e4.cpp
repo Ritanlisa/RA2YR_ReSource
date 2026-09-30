@@ -222,7 +222,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 }
 // 0x721A50
 namespace gamemd {
-int TiberiumClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
+void TiberiumClass::LoadFromINI()
 {
   int Int_Overwrite; // eax
   void * v5;

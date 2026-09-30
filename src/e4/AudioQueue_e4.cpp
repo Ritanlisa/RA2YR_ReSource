@@ -160,7 +160,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
 }
 // 0x752680
 namespace gamemd {
-void * AudioQueue::FindByData()
+int AudioQueue::FindByData()
 {
   int *result; // eax
   AudioQueue *v3; // esi
@@ -215,7 +215,7 @@ void * AudioQueue::FindByData()
 }
 // 0x771620
 namespace gamemd {
-RandomStruct * * AudioQueue::Update()
+int AudioQueue::Update()
 {
   signed int v2; // edi
   signed int v3; // eax
@@ -276,7 +276,7 @@ RandomStruct * * AudioQueue::Update()
 }
 // 0x7B1D10
 namespace gamemd {
-CampaignClass * * AudioQueue::Cleanup()
+int AudioQueue::Cleanup()
 {
   int v2; // eax
   int v3; // eax

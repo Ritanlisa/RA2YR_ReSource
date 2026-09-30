@@ -43,7 +43,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 }
 // 0x5116A0
 namespace gamemd {
-AbstractClass * * HouseTypeClass::Dtor()
+AbstractClass * HouseTypeClass::Dtor()
 {
   int v2; // eax
   void *v3; // eax
@@ -99,7 +99,7 @@ AbstractClass * * HouseTypeClass::Dtor()
 }
 // 0x511850
 namespace gamemd {
-void* HouseTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
+AbstractClass * HouseTypeClass::LoadFromINI()
 {
   int v3; // ecx
   HouseTypeClass *v4; // esi

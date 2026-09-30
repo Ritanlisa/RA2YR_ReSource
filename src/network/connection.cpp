@@ -25,7 +25,7 @@ ConnectionClass::ConnectionClass() noexcept
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 // 0x48b410
-void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+int ConnectionClass::queueSendPacket(void* a1, void* a2, void* a3)
 {
   int PlayerIndex; // eax
   int v8; // esi
@@ -110,7 +110,7 @@ int ConnectionClass::connect()
   return 1; /*0x48c5e9*/
 }
 // 0x48be60
-bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+bool IPXConnClass::initConnection()
 {
     unsigned int v10 = 0;  /* G37 hoist */
   CommBufferClass *v10; // eax
@@ -130,7 +130,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
   return a1; /*0x48bec7*/
 }
 // 0x69bc20
-bool IPXConnClass::closeConnection(void * a1, void * a2)
+bool IPXConnClass::closeConnection()
 {
   int v2; // eax
   unsigned int *i; // esi
@@ -146,7 +146,7 @@ bool IPXConnClass::closeConnection(void * a1, void * a2)
   return *((unsigned short *)a1 + v2 + 6205); /*0x69bc48*/
 }
 // 0x53f5d0
-bool IPXConnClass::send(const uint8_t* data, int32_t length, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+bool IPXConnClass::send()
 {
   return (*(int (__stdcall **)(int, int, int, unsigned int, int, unsigned int))(((unsigned int)(this->PacketsSent0))))( /*0x53f5ec*/
            a2,
@@ -157,7 +157,7 @@ bool IPXConnClass::send(const uint8_t* data, int32_t length, void * a1, void * a
            0);
 }
 // 0x53f650
-int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+bool IPXConnClass::receive()
 {
   int v9; // edi
   int v10; // ebp
@@ -269,7 +269,7 @@ IPXManagerClass::IPXManagerClass() noexcept
 }
 
 // 0x542fe0
-void IPXManagerClass::Init(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
+void IPXManagerClass::Init(int a1, int a2, int a3, int a4, int a5)
 {
   int result; // eax
 

@@ -110,7 +110,7 @@ int Voxel::BuildIndexTable()
 }
 // 0x754510
 namespace gamemd {
-AbstractClass * * Voxel::RenderFrame()
+AbstractClass * Voxel::RenderFrame()
 {
   int v1; // edi
   char *v2; // esi

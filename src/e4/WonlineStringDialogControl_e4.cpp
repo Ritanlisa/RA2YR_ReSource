@@ -75,7 +75,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
 }
 // 0x7AC970
 namespace gamemd {
-void WonlineStringDialogControl_12::ClearBuffer()
+void WonlineStringDialogControl_12::ClearBuffer(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -104,7 +104,7 @@ unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 
 // 0x7AC9C0
 namespace gamemd {
-int WonlineStringDialogControl_12::Seek(int a2)
+void WonlineStringDialogControl_12::Seek(void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x7ac9ca*/
 }
@@ -190,7 +190,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 
 // 0x7AD180
 namespace gamemd {
-void WonlineStringDialogControl_12::ddtor()
+void WonlineStringDialogControl_12::ddtor(void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x7ad18d*/
   {
@@ -204,7 +204,7 @@ void WonlineStringDialogControl_12::ddtor()
 
 // 0x7AD1B0
 namespace gamemd {
-int WonlineStringDialogControl_12::Read(unsigned int * a2)
+void WonlineStringDialogControl_12::Read(void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx

@@ -8,7 +8,7 @@
 
 // 0x4F4C20
 namespace gamemd {
-unsigned char * Byte::Zero()
+void Byte::Zero(void* ptr, int32_t count)
 {
   IDA_LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
   return this; /*0x4f4c25*/

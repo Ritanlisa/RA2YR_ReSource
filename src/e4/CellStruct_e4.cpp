@@ -8,7 +8,7 @@
 
 // 0x42D510
 namespace gamemd {
-IUnknown * CellStruct::Add(IUnknown * v5, IUnknown * aP2)
+void* CellStruct::Add(void* aP1,  void* aP2)
 {
   int16_t v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
@@ -22,7 +22,7 @@ IUnknown * CellStruct::Add(IUnknown * v5, IUnknown * aP2)
 }
 // 0x437F30
 namespace gamemd {
-unsigned int * CellStruct::Copy(IUnknown * aP1)
+void* CellStruct::Copy(void* aP1,  void* aP2)
 {
   int v3; // edx
   void *v4; // ecx
@@ -43,7 +43,7 @@ BOOL CellStruct::Equals(unsigned short * a2)
 }
 // 0x588C60
 namespace gamemd {
-IUnknown * CellStruct::Sub(IUnknown * v6, IUnknown * aP2)
+void* CellStruct::Sub(void* aP1,  void* aP2)
 {
   int16_t v3; // dx
   int16_t v4; // cx
@@ -59,7 +59,7 @@ IUnknown * CellStruct::Sub(IUnknown * v6, IUnknown * aP2)
 }
 // 0x42D470
 namespace gamemd {
-unsigned short * CellStruct::Set(short a2, short a3)
+void* CellStruct::Set(void* aP1,  void* aP2)
 {
   IDA_LOWORD(this->field_0) = a2; /*0x42d47c*/
   IDA_HIWORD(this->field_0) = a3; /*0x42d47f*/

@@ -18,7 +18,7 @@
 
 // 0x401910
 namespace gamemd {
-int AudioStream::ReleaseSubsystem()
+void AudioStream::ReleaseSubsystem()
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -35,14 +35,14 @@ int AudioStream::ReleaseSubsystem()
 }
 // 0x4026B0
 namespace gamemd {
-int AudioStream::Stop()
+void AudioStream::Stop()
 {
   return (*(int (**)(void))(this-((unsigned int *)(>AudioStream_field_0xD4))[0] + 44))();
 }
 }
 // 0x4026F0
 namespace gamemd {
-int AudioStream::ReleaseChannel()
+void AudioStream::ReleaseChannel()
 {
   (*(void (**)(void))(this-((unsigned int *)(>AudioStream_field_0xD4))[0] + 40))(); /*0x4026f9*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[8] &= ~0x10u; /*0x402705*/

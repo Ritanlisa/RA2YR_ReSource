@@ -132,7 +132,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-AbstractClass * * BuildingClass::Construct(void * a1, void * a2, void * a3)
+AbstractClass * BuildingClass::Construct(bool a1)
 {
   int16_t v6; // cx
   int v7; // eax

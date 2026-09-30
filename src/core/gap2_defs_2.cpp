@@ -137,7 +137,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
 }
 // 0x4A1470
 namespace gamemd { 
-int EnumConnectionPointsClass::FindItem(int * a2) {
+int EnumConnectionPointsClass::FindItem(void* a1) {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx

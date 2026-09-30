@@ -67,7 +67,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 }
 // 0x6E7E80
 namespace gamemd {
-unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
+int TaskForceClass::Construct(char* a1)
 {
   TaskForceClass * v3;
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
@@ -198,7 +198,7 @@ void * TaskForceClass::ExecuteAction(char a2)
 }
 // 0x4C4F90
 namespace gamemd {
-ObjectClass * TaskForceClass::Check()
+int TaskForceClass::Check(char* a1)
 {
   sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->__pad_0, (const char *)(this->TaskForceClass_field_0x4 + 36)); /*0x4c4fa4*/
   return byte_8A37A0; /*0x4c4fb1*/

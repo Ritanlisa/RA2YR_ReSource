@@ -196,7 +196,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
 
 // 0x471C90
 namespace gamemd {
-int CaptureManagerClass::CanCapture(unsigned int * a2)
+void CaptureManagerClass::CanCapture(void* a1)
 {
   int v3; // edi
   int v4; // ebp
@@ -230,7 +230,7 @@ int CaptureManagerClass::CanCapture(unsigned int * a2)
 
 // 0x471D40
 namespace gamemd {
-void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
+void CaptureManagerClass::CaptureUnit(void* a1)
 {
   char result; // al
   unsigned int *v5; // esi
@@ -366,7 +366,7 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
 
 // 0x471FF0
 namespace gamemd {
-AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5, void * a1, void * a3, void * a4, void * a6)
+void CaptureManagerClass::FreeUnit(void* a1)
 {
   CaptureManagerClass *v6; // ecx
   int i; // ebx
@@ -543,7 +543,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 
 // 0x4723B0
 namespace gamemd {
-AbstractClass * * CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
+void CaptureManagerClass::DecideUnitFate(void* a1)
 {
   int v3; // edi
   unsigned int *v5; // ecx

@@ -34,7 +34,7 @@ int CellClass::EnsureFileLoaded()
 }
 // 0x56EF50
 namespace gamemd {
-HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant3(int a1, int a2)
 {
   IUnknown * v2;
   IUnknown * v3;
@@ -200,7 +200,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56F2F0
 namespace gamemd {
-HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant4(int a1, int a2)
 {
   IUnknown * v2;
   IUnknown * v3;
@@ -366,7 +366,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56F8B0
 namespace gamemd {
-HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateTerrain(int a1, int a2)
 {
   IUnknown * v2;
   IUnknown * v3;
@@ -533,7 +533,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56FC80
 namespace gamemd {
-HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateTileVariant2(int a1, int a2)
 {
   IUnknown * v2;
   IUnknown * v3;
@@ -700,7 +700,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x572440
 namespace gamemd {
-HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant7(int a1, int a2)
 {
   IUnknown * v2;
   IUnknown * v3;
@@ -866,7 +866,7 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x5727E0
 namespace gamemd {
-HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant8(int a1, int a2)
 {
   IUnknown * v2;
   int v3; // ecx

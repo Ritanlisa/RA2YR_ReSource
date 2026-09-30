@@ -152,7 +152,7 @@ int LocomotionClass::ProcessData()
 } // namespace gamemd
 // 0x54AC40
 namespace gamemd {
-int LocomotionClass::Update()
+int LocomotionClass::Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0)
 {
   int v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
@@ -189,7 +189,7 @@ int LocomotionClass::Update()
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
-unsigned int * LocomotionClass::Init()
+int LocomotionClass::Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0)
 {
   this->Owner = (unsigned int)((gamemd::FootClass *)((unsigned int *)(0)));
   this->LinkedTo = (gamemd::FootClass *)((unsigned int *)(0));

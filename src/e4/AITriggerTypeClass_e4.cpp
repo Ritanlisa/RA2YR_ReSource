@@ -678,7 +678,7 @@ int AITriggerTypeClass::GetObjectSize()
 } // namespace gamemd
 // 0x420370
 namespace gamemd {
-void AITriggerTypeClass_40::ClearBuffer()
+void AITriggerTypeClass_40::ClearBuffer(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -707,7 +707,7 @@ unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 
 // 0x4203C0
 namespace gamemd {
-int AITriggerTypeClass_40::Seek(int a2)
+void AITriggerTypeClass_40::Seek(void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4203ca*/
 }
@@ -793,7 +793,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
 // 0x4204C0
 namespace gamemd {
-void AITriggerTypeClass_40::ddtor()
+void AITriggerTypeClass_40::ddtor(void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4204cd*/
   {

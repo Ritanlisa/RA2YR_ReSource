@@ -22,7 +22,7 @@
 
 // 0x4B0AD0
 namespace gamemd {
-AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
+AbstractClass * JumpjetLocomotion::MoveTo(void* a1)
 {
   unsigned int *v3; // edx
   int v5; // eax
@@ -117,7 +117,7 @@ AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 }
 // 0x4B0F20
 namespace gamemd {
-int JumpjetLocomotion::ProcessCollision(char a2)
+AbstractClass * JumpjetLocomotion::ProcessCollision(void* a1)
 {
     unsigned int v4 = 0;  /* G37 hoist */
   MouseClass *v13; // ecx

@@ -70,7 +70,7 @@ void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 }
 // 0x5BD5A0
 namespace gamemd {
-void String::Release()
+int String::Release()
 {
   if ( this->u32_C ) /*0x5bd5a3*/
     RA2_OPDEL(this->u32_C); /*0x5bd5ab*/

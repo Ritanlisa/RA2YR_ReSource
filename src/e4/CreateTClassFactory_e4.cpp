@@ -85,7 +85,7 @@
 
 // 0x6BF8D0
 namespace gamemd {
-int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3)
+int E4Recv_6BF8D0::CreateTClassFactory_CellClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -103,7 +103,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3
 
 // 0x6BFA50
 namespace gamemd {
-int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(void * a1, void * a2, void * a3)
+int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -121,7 +121,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(void * a1, void * a2, void *
 
 // 0x6BFBD0
 namespace gamemd {
-int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass(void * a1, void * a2, void * a3)
+int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -139,7 +139,7 @@ int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass(void * a1, void * a2, vo
 
 // 0x6BFD50
 namespace gamemd {
-int E4Recv_6BFD50::CreateTClassFactory_SideClass(void * a1, void * a2, void * a3)
+int E4Recv_6BFD50::CreateTClassFactory_SideClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -157,7 +157,7 @@ int E4Recv_6BFD50::CreateTClassFactory_SideClass(void * a1, void * a2, void * a3
 
 // 0x6BFED0
 namespace gamemd {
-int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass(void * a1, void * a2, void * a3)
+int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -175,7 +175,7 @@ int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass(void * a1, void * a2, void 
 
 // 0x6C01D0
 namespace gamemd {
-int E4Recv_6C01D0::CreateTClassFactory_CampaignClass(void * a1, void * a2, void * a3)
+int E4Recv_6C01D0::CreateTClassFactory_CampaignClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -193,7 +193,7 @@ int E4Recv_6C01D0::CreateTClassFactory_CampaignClass(void * a1, void * a2, void 
 
 // 0x6C0350
 namespace gamemd {
-int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -211,7 +211,7 @@ int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass(void * a1, void * a2, 
 
 // 0x6C04D0
 namespace gamemd {
-int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass(void * a1, void * a2, void * a3)
+int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -229,7 +229,7 @@ int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass(void * a1, void * a2, v
 
 // 0x6C0650
 namespace gamemd {
-int E4Recv_6C0650::CreateTClassFactory_TemporalClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0650::CreateTClassFactory_TemporalClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -247,7 +247,7 @@ int E4Recv_6C0650::CreateTClassFactory_TemporalClass(void * a1, void * a2, void 
 
 // 0x6C07D0
 namespace gamemd {
-int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -265,7 +265,7 @@ int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass(void * a1, void * a2, void
 
 // 0x6C0950
 namespace gamemd {
-int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -283,7 +283,7 @@ int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass(void * a1, void * a2, v
 
 // 0x6C0AD0
 namespace gamemd {
-int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -301,7 +301,7 @@ int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass(void * a1, void * a2, v
 
 // 0x6C0C50
 namespace gamemd {
-int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -319,7 +319,7 @@ int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass(void * a1, void * a2,
 
 // 0x6C0DD0
 namespace gamemd {
-int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -337,7 +337,7 @@ int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass(void * a1, void * a2, void
 
 // 0x6C0F50
 namespace gamemd {
-int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass(void * a1, void * a2, void * a3)
+int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -355,7 +355,7 @@ int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass(void * a1, void * a2, void 
 
 // 0x6C10D0
 namespace gamemd {
-int E4Recv_6C10D0::CreateTClassFactory_BombClass(void * a1, void * a2, void * a3)
+int E4Recv_6C10D0::CreateTClassFactory_BombClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -373,7 +373,7 @@ int E4Recv_6C10D0::CreateTClassFactory_BombClass(void * a1, void * a2, void * a3
 
 // 0x6C1250
 namespace gamemd {
-int E4Recv_6C1250::CreateTClassFactory_RadSiteClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1250::CreateTClassFactory_RadSiteClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -391,7 +391,7 @@ int E4Recv_6C1250::CreateTClassFactory_RadSiteClass(void * a1, void * a2, void *
 
 // 0x6C13D0
 namespace gamemd {
-int E4Recv_6C13D0::CreateTClassFactory_TEventClass(void * a1, void * a2, void * a3)
+int E4Recv_6C13D0::CreateTClassFactory_TEventClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -409,7 +409,7 @@ int E4Recv_6C13D0::CreateTClassFactory_TEventClass(void * a1, void * a2, void * 
 
 // 0x6C1550
 namespace gamemd {
-int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -427,7 +427,7 @@ int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass(void * a1, void * a2, 
 
 // 0x6C16D0
 namespace gamemd {
-int E4Recv_6C16D0::CreateTClassFactory_VoxelAnimClass(void * a1, void * a2, void * a3)
+int E4Recv_6C16D0::CreateTClassFactory_VoxelAnimClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -445,7 +445,7 @@ int E4Recv_6C16D0::CreateTClassFactory_VoxelAnimClass(void * a1, void * a2, void
 
 // 0x6C1850
 namespace gamemd {
-int E4Recv_6C1850::CreateTClassFactory_TActionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1850::CreateTClassFactory_TActionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -463,7 +463,7 @@ int E4Recv_6C1850::CreateTClassFactory_TActionClass(void * a1, void * a2, void *
 
 // 0x6C19D0
 namespace gamemd {
-int E4Recv_6C19D0::CreateTClassFactory_TriggerClass(void * a1, void * a2, void * a3)
+int E4Recv_6C19D0::CreateTClassFactory_TriggerClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -481,7 +481,7 @@ int E4Recv_6C19D0::CreateTClassFactory_TriggerClass(void * a1, void * a2, void *
 
 // 0x6C1B50
 namespace gamemd {
-int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -499,7 +499,7 @@ int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass(void * a1, void * a2, vo
 
 // 0x6C1CD0
 namespace gamemd {
-int E4Recv_6C1CD0::CreateTClassFactory_ScriptClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1CD0::CreateTClassFactory_ScriptClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -517,7 +517,7 @@ int E4Recv_6C1CD0::CreateTClassFactory_ScriptClass(void * a1, void * a2, void * 
 
 // 0x6C1E50
 namespace gamemd {
-int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -535,7 +535,7 @@ int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass(void * a1, void * a2, voi
 
 // 0x6C1FD0
 namespace gamemd {
-int E4Recv_6C1FD0::CreateTClassFactory_TagClass(void * a1, void * a2, void * a3)
+int E4Recv_6C1FD0::CreateTClassFactory_TagClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -553,7 +553,7 @@ int E4Recv_6C1FD0::CreateTClassFactory_TagClass(void * a1, void * a2, void * a3)
 
 // 0x6C2150
 namespace gamemd {
-int E4Recv_6C2150::CreateTClassFactory_TagTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2150::CreateTClassFactory_TagTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -571,7 +571,7 @@ int E4Recv_6C2150::CreateTClassFactory_TagTypeClass(void * a1, void * a2, void *
 
 // 0x6C22D0
 namespace gamemd {
-int E4Recv_6C22D0::CreateTClassFactory_TeamClass(void * a1, void * a2, void * a3)
+int E4Recv_6C22D0::CreateTClassFactory_TeamClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -589,7 +589,7 @@ int E4Recv_6C22D0::CreateTClassFactory_TeamClass(void * a1, void * a2, void * a3
 
 // 0x6C2450
 namespace gamemd {
-int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -607,7 +607,7 @@ int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass(void * a1, void * a2, void 
 
 // 0x6C25D0
 namespace gamemd {
-int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass(void * a1, void * a2, void * a3)
+int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -625,7 +625,7 @@ int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass(void * a1, void * a2, void
 
 // 0x6C2750
 namespace gamemd {
-int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -643,7 +643,7 @@ int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass(void * a1, void * a2, void 
 
 // 0x6C28D0
 namespace gamemd {
-int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -661,7 +661,7 @@ int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass(void * a1, void * a2, v
 
 // 0x6C2A50
 namespace gamemd {
-int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -679,7 +679,7 @@ int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass(void * a1, void * a2, v
 
 // 0x6C2BD0
 namespace gamemd {
-int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -697,7 +697,7 @@ int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass(void * a1, void * a2, v
 
 // 0x6C2D50
 namespace gamemd {
-int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -715,7 +715,7 @@ int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass(void * a1, void * a2, voi
 
 // 0x6C2ED0
 namespace gamemd {
-int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -733,7 +733,7 @@ int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass(void * a1, void * 
 
 // 0x6C3050
 namespace gamemd {
-int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -751,7 +751,7 @@ int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass(void * a1, void * a2, vo
 
 // 0x6C31D0
 namespace gamemd {
-int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -769,7 +769,7 @@ int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass(void * a1, void * a2, voi
 
 // 0x6C3350
 namespace gamemd {
-int E4Recv_6C3350::CreateTClassFactory_UnitClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3350::CreateTClassFactory_UnitClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -787,7 +787,7 @@ int E4Recv_6C3350::CreateTClassFactory_UnitClass(void * a1, void * a2, void * a3
 
 // 0x6C34D0
 namespace gamemd {
-int E4Recv_6C34D0::CreateTClassFactory_BuildingClass(void * a1, void * a2, void * a3)
+int E4Recv_6C34D0::CreateTClassFactory_BuildingClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -805,7 +805,7 @@ int E4Recv_6C34D0::CreateTClassFactory_BuildingClass(void * a1, void * a2, void 
 
 // 0x6C3650
 namespace gamemd {
-int E4Recv_6C3650::CreateTClassFactory_AircraftClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3650::CreateTClassFactory_AircraftClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -823,7 +823,7 @@ int E4Recv_6C3650::CreateTClassFactory_AircraftClass(void * a1, void * a2, void 
 
 // 0x6C37D0
 namespace gamemd {
-int E4Recv_6C37D0::CreateTClassFactory_InfantryClass(void * a1, void * a2, void * a3)
+int E4Recv_6C37D0::CreateTClassFactory_InfantryClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -841,7 +841,7 @@ int E4Recv_6C37D0::CreateTClassFactory_InfantryClass(void * a1, void * a2, void 
 
 // 0x6C3950
 namespace gamemd {
-int E4Recv_6C3950::CreateTClassFactory_AnimClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3950::CreateTClassFactory_AnimClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -859,7 +859,7 @@ int E4Recv_6C3950::CreateTClassFactory_AnimClass(void * a1, void * a2, void * a3
 
 // 0x6C3AD0
 namespace gamemd {
-int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -877,7 +877,7 @@ int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass(void * a1, void * a2, void 
 
 // 0x6C3C50
 namespace gamemd {
-int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -895,7 +895,7 @@ int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass(void * a1, void * a2, void
 
 // 0x6C3DD0
 namespace gamemd {
-int E4Recv_6C3DD0::CreateTClassFactory_HouseClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3DD0::CreateTClassFactory_HouseClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -913,7 +913,7 @@ int E4Recv_6C3DD0::CreateTClassFactory_HouseClass(void * a1, void * a2, void * a
 
 // 0x6C3F50
 namespace gamemd {
-int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -931,7 +931,7 @@ int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass(void * a1, void * a2
 
 // 0x6C40D0
 namespace gamemd {
-int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -949,7 +949,7 @@ int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass(void * a1, void * 
 
 // 0x6C4250
 namespace gamemd {
-int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -967,7 +967,7 @@ int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass(void * a1, void * a2
 
 // 0x6C43D0
 namespace gamemd {
-int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -985,7 +985,7 @@ int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass(void * a1, void * a
 
 // 0x6C4550
 namespace gamemd {
-int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 

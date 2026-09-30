@@ -9,7 +9,7 @@
 
 // 0x53DDA0
 namespace gamemd {
-int Explosion::RemoveItem(int a2)
+void Explosion::RemoveItem()
 {
   int v2; // edx
   int v4; // edx

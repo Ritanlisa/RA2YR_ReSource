@@ -18,7 +18,7 @@
 
 // 0x763730
 namespace gamemd {
-int WaypointPathClass::Init()
+void WaypointPathClass::Init()
 {
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
@@ -60,7 +60,7 @@ int WaypointPathClass::Init()
 }
 // 0x763810
 namespace gamemd {
-int WaypointPathClass::Construct(WaypointClass * aP1)
+void WaypointPathClass::Construct()
 {
   WaypointPathClass * v3;
 
@@ -184,7 +184,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
+void WaypointPathClass::computePath()
 {
   unsigned int *v4; // eax
   int v5; // ecx

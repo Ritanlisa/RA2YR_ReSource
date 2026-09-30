@@ -21,7 +21,7 @@
 
 // 0x6E5B60
 namespace gamemd {
-AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
+AbstractTypeClass * TagTypeClass::Construct(char* a1)
 {
   int v3; // eax
   int v4; // eax
@@ -227,7 +227,7 @@ v3 = (void *)(this->q0A0);
 }
 // 0x6E6310
 namespace gamemd {
-AbstractTypeClass * * TagTypeClass::FindOrCreate()
+AbstractTypeClass * TagTypeClass::FindOrCreate(char* a1)
 {
   int v2; // esi
   char *v3; // eax

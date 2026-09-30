@@ -8,7 +8,7 @@
 
 // 0x4F3FD0
 namespace gamemd {
-VectorCursor * GraphicMenuAnimItem::Constructor(char a2)
+VectorCursor * GraphicMenuAnimItem::Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0)
 {
   *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_unsigned_int_DynamicVectorClass_unsigned_int_vftable; /*0x4f3fd9*/
   if ( (a2 & 1) != 0 ) /*0x4f3fdf*/

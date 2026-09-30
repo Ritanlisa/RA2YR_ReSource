@@ -95,7 +95,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 }
 // 0x4C66C0
 namespace gamemd {
-void * EventClass::AddEvent(int a2, unsigned char a3)
+int EventClass::AddEvent(char* a1)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
   if ( a2 < 0 ) /*0x4c66ea*/
@@ -116,7 +116,7 @@ void * EventClass::AddEvent(int a2, unsigned char a3)
 }
 // 0x4C6720
 namespace gamemd {
-void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
+int EventClass::Add2(char* a1)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c673c*/
   if ( aP1 < 0 ) /*0x4c674a*/
@@ -138,7 +138,7 @@ void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
 }
 // 0x4C6970
 namespace gamemd {
-void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
+int EventClass::AddEventEx(char* a1)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c698c*/
   if ( aP1 < 0 ) /*0x4c699a*/
@@ -162,7 +162,7 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
 }
 // 0x4C6AE0
 namespace gamemd {
-void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
+int EventClass::Init(char* a1)
 {
   this->Debug::Log(); /*0x4c6afc*/
   if ( aP1 < 0 ) /*0x4c6b0a*/

@@ -58,7 +58,7 @@ void Player::BuildListString()
 } // namespace gamemd
 // 0x5E8BF0
 namespace gamemd {
-wchar_t * Player::FindByName()
+void Player::FindByName()
 {
   int v3; // ebp
   int v4; // esi
@@ -95,7 +95,7 @@ wchar_t * Player::FindByName()
 } // namespace gamemd
 // 0x5E9440
 namespace gamemd {
-BOOL Player::IsObserver()
+void Player::IsObserver()
 {
   return this /*0x5e9461*/
       && (this == (Player *)g_Lobby_PlayerTeam

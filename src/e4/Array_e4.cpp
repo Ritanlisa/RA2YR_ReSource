@@ -65,7 +65,7 @@ int Array::FindValue(IUnknown * aP1)
 }
 // 0x63E590
 namespace gamemd {
-int Array::RemoveAt(int a2)
+int Array::RemoveAt()
 {
   char *Array_field_0x10; // edx
   int result; // eax
@@ -97,14 +97,14 @@ int Array::RemoveAt(int a2)
 }
 // 0x65AD40
 namespace gamemd {
-int Array::Get(int a2)
+int Array::Get()
 {
   return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
 }
 }
 // 0x65ADF0
 namespace gamemd {
-int Array::ContainsValue(IUnknown * aP1)
+int Array::ContainsValue()
 {
   int result; // eax
   void *Array_field_0xE8; // esi
@@ -185,7 +185,7 @@ void Array::ByteSwap()
 }
 // 0x763980
 namespace gamemd {
-int Array::GetElement(CampaignScore * aP1)
+int Array::GetElement()
 {
   if ( aP1 < 0 || aP1 >= (int)this->Array_field_0x38 ) /*0x76398b*/
     return 0; /*0x763999*/
@@ -330,7 +330,7 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4
 
 // 0x49B720
 namespace gamemd {
-void Array::Cleanup()
+int Array::Cleanup()
 {
   int result; // eax
   int i; // edi

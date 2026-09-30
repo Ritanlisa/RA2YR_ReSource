@@ -113,7 +113,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 }
 // 0x5BED40
 namespace gamemd {
-void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7, void * a1, void * a3, void * a4, void * a8)
+int Movie::Play(void* a1, void* a2, void* a3, void* a4)
 {
   char *v8; // eax
   int v9; // edi
@@ -283,7 +283,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 }
 // 0x7209D0
 namespace gamemd {
-AbstractClass * * Movie::Update()
+int Movie::Update(void* a1, void* a2, void* a3, void* a4)
 {
   void *IsSoundEnabled; // eax
   AudioSample *v3; // ecx

@@ -102,7 +102,7 @@ int LightningStorm::IsActive()
 }
 // 0x53A140
 namespace gamemd {
-AnimClass * * LightningStorm::Strike(IUnknown * aP0)
+void LightningStorm::Strike(const CellStruct& cell)
 {
   unsigned int *v1; // esi
   int v2; // eax

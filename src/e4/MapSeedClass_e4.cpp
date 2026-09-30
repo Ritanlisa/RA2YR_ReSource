@@ -400,7 +400,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 } // namespace gamemd
 // 0x5A76E0
 namespace gamemd {
-int MapSeedClass::ValidateRectBounds()
+void MapSeedClass::ValidateRectBounds()
 {
   int v2; // ecx
   int MapSeedClass_field_0x04; // edi

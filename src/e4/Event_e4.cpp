@@ -29,7 +29,7 @@
 
 // 0x48D080
 namespace gamemd {
-int Event::Dispatch()
+int Event::Dispatch(void* a1, void* a2, void* a3)
 {
   int result; // eax
   unsigned char v1[4]; // [esp+10h] [ebp-100h] BYREF

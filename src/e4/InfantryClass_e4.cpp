@@ -191,7 +191,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 }
 // 0x517D90
 namespace gamemd {
-void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
+void* InfantryClass::Destruct()
 {
   AbstractClass *p_vtable1; // edi
   InfantryTypeClass *Type; // eax

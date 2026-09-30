@@ -13,7 +13,7 @@
 
 // 0x48B2A0
 namespace gamemd {
-int Struct::ClearAllMemberFlags()
+void Struct::ClearAllMemberFlags()
 {
   int v1; // eax
   int v2; // esi

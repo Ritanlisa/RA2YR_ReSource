@@ -36,7 +36,7 @@
 
 // 0x4E0A00
 namespace gamemd {
-unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
+unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
 {
   unsigned int *v4; // eax
   int v5; // ecx

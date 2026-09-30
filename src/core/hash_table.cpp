@@ -79,7 +79,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
   }
 }
 // 0x69d9e0
-int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
+void SHA1::Compute(uint8_t digest[20])
 {
   int v3; // edx
   int v4; // ebx
@@ -131,7 +131,7 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   return 20; /*0x69db1e*/
 }
 // 0x69db30
-void SHA1::Transform(void * a1, void * a2)
+void SHA1::Transform(uint8_t digest[20])
 {
   int *v2; // ecx
   int v3; // esi

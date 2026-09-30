@@ -115,7 +115,7 @@ int Count::SetupAllCountriesLobby()
 } // namespace gamemd
 // 0x5F1EA0
 namespace gamemd {
-int Count::GetCountQueue()
+int32_t Count::GetCountQueue()
 {
   int v1; // eax
 
@@ -128,14 +128,14 @@ int Count::GetCountQueue()
 } // namespace gamemd
 // 0x76F080
 namespace gamemd {
-int Count::Get()
+int32_t Count::Get()
 {
   return this->u32_4; /*0x76f083*/
 }
 } // namespace gamemd
 // 0x76F160
 namespace gamemd {
-unsigned int * Count::Release()
+int32_t Count::Release()
 {
   ++this->u32_8; /*0x76f162*/
   return this; /*0x76f165*/
@@ -143,7 +143,7 @@ unsigned int * Count::Release()
 } // namespace gamemd
 // 0x76F170
 namespace gamemd {
-unsigned int * Count::ddtor()
+int32_t Count::ddtor()
 {
   --this->u32_8; /*0x76f172*/
   return this; /*0x76f175*/

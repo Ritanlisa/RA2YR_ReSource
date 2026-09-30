@@ -16,7 +16,7 @@ int GameOption::GetField()
 } // namespace gamemd
 // 0x69ACD0
 namespace gamemd {
-void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
+int GameOption::SetDescriptionWStr()
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax

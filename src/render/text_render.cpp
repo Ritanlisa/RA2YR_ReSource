@@ -59,7 +59,7 @@ bool TextRenderer::Init(int max_width, int max_height)
     return true;
 }
 
-void TextRenderer::Shutdown(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)
+void * TextRenderer::Shutdown(void *a1 = 0)
 {
     if (m_old_bmp) { SelectObject(m_hdc, m_old_bmp); m_old_bmp = nullptr; }
     if (m_bmp)     { DeleteObject(m_bmp); m_bmp = nullptr; }

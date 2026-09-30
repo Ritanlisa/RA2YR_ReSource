@@ -17,7 +17,7 @@
 
 // 0x48B750
 namespace gamemd {
-int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
+int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
 {
   int v6; // edx
   signed int v8; // ebx
@@ -78,7 +78,7 @@ int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void 
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {
-unsigned int ConnectionClass::initQueue(unsigned int a2)
+int ConnectionClass::initQueue(void* a1, void* a2, void* a3)
 {
   int v2; // eax
   unsigned int v3; // esi

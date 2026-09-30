@@ -31,14 +31,14 @@ int ThemeClass::RequestBuffer()
 } // namespace gamemd
 // 0x408140
 namespace gamemd {
-long long ThemeClass::GetValue()
+int ThemeClass::GetValue()
 {
   return *(unsigned long long *)&this-((unsigned int *)(>m_Name))[6]; /*0x408146*/
 }
 } // namespace gamemd
 // 0x720480
 namespace gamemd {
-int ThemeClass::ReadThemeEntry(unsigned char *** a2)
+int ThemeClass::ReadThemeEntry()
 {
   const char *v3; // edi
   int Int_Overwrite; // eax

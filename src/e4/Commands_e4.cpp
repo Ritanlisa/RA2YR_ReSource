@@ -16,21 +16,21 @@
 
 // 0x537A50
 namespace gamemd {
-char * Commands::AddRef()
+int32_t Commands::AddRef()
 {
   return (char *)(aMultiplayerdeb);
 }
 } // namespace gamemd
 // 0x537A60
 namespace gamemd {
-const wchar_t * Commands::ddtor()
+int32_t Commands::ddtor()
 {
   return (const wchar_t *)(g_INI_Key_De);
 }
 } // namespace gamemd
 // 0x537A70
 namespace gamemd {
-char ** Commands::Release()
+int32_t Commands::Release()
 {
   return (char **)(&off_8278C0);
 }
@@ -44,7 +44,7 @@ void ** Commands::StubReturn8550640()
 } // namespace gamemd
 // 0x537A90
 namespace gamemd {
-char Commands::Execute()
+int32_t Commands::Execute()
 {
   char result; // al
 

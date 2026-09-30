@@ -124,14 +124,14 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 }
 // 0x765700
 namespace gamemd {
-int Campaign_WorldDominationTour_24::AddRef()
+BOOL Campaign_WorldDominationTour_24::AddRef(void *a1 = 0)
 {
   return this->u32_8 < *(unsigned int *)(*(unsigned int *)&this->u32_4 + 16); /*0x76570d*/
 }
 }
 // 0x765B40
 namespace gamemd {
-unsigned int * Campaign_WorldDominationTour_24::Release()
+BOOL Campaign_WorldDominationTour_24::Release(void *a1 = 0)
 {
   ++this->u32_8; /*0x765b42*/
   return this; /*0x765b45*/
@@ -139,7 +139,7 @@ unsigned int * Campaign_WorldDominationTour_24::Release()
 }
 // 0x765B50
 namespace gamemd {
-unsigned int * Campaign_WorldDominationTour_24::ddtor()
+BOOL Campaign_WorldDominationTour_24::ddtor(void *a1 = 0)
 {
   --this->u32_8; /*0x765b52*/
   return this; /*0x765b55*/
@@ -265,7 +265,7 @@ char Campaign_WorldDominationTour_16::AddRef(int a2)
 
 // 0x765960
 namespace gamemd {
-int Campaign_WorldDominationTour_16::ddtor()
+int Campaign_WorldDominationTour_16::ddtor(void *a1 = 0)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -284,7 +284,7 @@ int Campaign_WorldDominationTour_16::ddtor()
 
 // 0x765990
 namespace gamemd {
-int Campaign_WorldDominationTour_16::Read(int a2)
+int Campaign_WorldDominationTour_16::Read(void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx

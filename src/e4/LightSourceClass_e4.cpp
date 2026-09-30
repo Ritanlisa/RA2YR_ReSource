@@ -15,7 +15,7 @@
 
 // 0x554760
 namespace gamemd {
-unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP3, int a5, int a6, int a7, TintStruct * aP7, int a9)
+void LightSourceClass::Construct(void* a1, void* a2, void* a3, void* a4, int a5, int a6, int a7)
 {
   int v10; // eax
 
@@ -50,7 +50,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
 } // namespace gamemd
 // 0x554830
 namespace gamemd {
-int LightSourceClass::Constructor()
+void LightSourceClass::Constructor(void* a1, void* a2, void* a3, void* a4, int a5, int a6, int a7)
 {
   int v2; // edx
   int v3; // eax

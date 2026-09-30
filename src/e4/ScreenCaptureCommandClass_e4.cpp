@@ -9,7 +9,7 @@
 
 // 0x537B40
 namespace gamemd {
-unsigned int * ScreenCaptureCommandClass::Constructor()
+void ScreenCaptureCommandClass::Constructor()
 {
   *(unsigned int *)this->CommandClass = (void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
   return this->CommandClass; /*0x537b48*/
@@ -17,28 +17,28 @@ unsigned int * ScreenCaptureCommandClass::Constructor()
 } // namespace gamemd
 // 0x537B50
 namespace gamemd {
-char * ScreenCaptureCommandClass::AddRef()
+void ScreenCaptureCommandClass::AddRef()
 {
   return (char *)(aScreencapture);
 }
 } // namespace gamemd
 // 0x537B60
 namespace gamemd {
-wchar_t * ScreenCaptureCommandClass::ddtor()
+void ScreenCaptureCommandClass::ddtor()
 {
   return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
 }
 } // namespace gamemd
 // 0x537B80
 namespace gamemd {
-wchar_t * ScreenCaptureCommandClass::Release()
+void ScreenCaptureCommandClass::Release()
 {
   return GetStringCSF(aTxtScrncap, 0, g_Str_File_Init_CPP, 8072); /*0x537b96*/
 }
 } // namespace gamemd
 // 0x537BA0
 namespace gamemd {
-wchar_t * ScreenCaptureCommandClass::Execute()
+void ScreenCaptureCommandClass::Execute()
 {
   return GetStringCSF(aTxtScrncapDesc, 0, g_Str_File_Init_CPP, 8073); /*0x537bb6*/
 }

@@ -15,7 +15,7 @@
 
 // 0x410800
 namespace gamemd {
-int AbstractTypeClass::Constructor(AbstractClass * aP1)
+int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
 {
   char *v3; // ebx
   AbstractTypeClass * v4;
@@ -88,7 +88,7 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {
-int AbstractTypeClass::Dtor()
+int AbstractTypeClass::Dtor(char* a1, void* a2, void* a3, void* a4)
 {
   int v2; // eax
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
@@ -216,7 +216,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 } // namespace gamemd
 // 0x410960
 namespace gamemd {
-int AbstractTypeClass::Init(AbstractTypeClass * aP1)
+int AbstractTypeClass::Init(char* a1, void* a2, void* a3, void* a4)
 {
   void * v3;
 
@@ -256,7 +256,7 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 } // namespace gamemd
 // 0x410BE0
 namespace gamemd {
-int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
+int AbstractTypeClass::ProcessPower(char* a1, void* a2, void* a3, void* a4)
 {
   AbstractClass::ProcessPower(); /*0x410be9*/
   Checksum::AddString((Checksum *)aP1, (uint8_t *)this->__pad_24); /*0x410bf4*/

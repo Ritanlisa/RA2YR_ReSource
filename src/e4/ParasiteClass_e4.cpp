@@ -25,7 +25,7 @@
 
 // 0x629210
 namespace gamemd {
-int ParasiteClass::Constructor()
+void ParasiteClass::Constructor()
 {
   int v2; // ecx
   int v3; // eax

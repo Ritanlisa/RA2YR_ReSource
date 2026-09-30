@@ -32,7 +32,7 @@
 
 // 0x47C3D0
 namespace gamemd {
-int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int Object::FindClosestObjectCell(void* a1, int a2)
 {
   double v4; // st7
   int v5; // edi
@@ -127,7 +127,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
 }
 // 0x4F9A90
 namespace gamemd {
-int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
+int Object::IsAlliedWithObjectHouse(void* a1, int a2)
 {
   int result; // eax
 
@@ -406,7 +406,7 @@ void sub_5902C0(int a1)
 }
 // 0x5FC380
 namespace gamemd {
-void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
+int Object::SpawnAtCell(void* a1, int a2)
 {
   IUnknown * v5;
   int v6; // eax

@@ -244,7 +244,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
 }
 // 0x5C60D0
 namespace gamemd {
-int E4Recv_5C60D0::ShowConfirmDialog(void * a1, void * a2)
+BOOL E4Recv_5C60D0::ShowConfirmDialog()
 {
   wchar_t *v3; // eax
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]

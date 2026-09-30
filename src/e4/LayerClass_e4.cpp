@@ -24,7 +24,7 @@
 
 // 0x568300
 namespace gamemd {
-int LayerClass::CoordinatesLegal(IUnknown * aP1)
+int LayerClass::CoordinatesLegal(void* a1, void* a2, int a3, void* a4)
 {
   int v2; // edx
   int v3; // esi
@@ -43,7 +43,7 @@ v2 = (int)(this->u32_F4);
 }
 // 0x56DC20
 namespace gamemd {
-unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17)
+int LayerClass::Pathfinding_Find(void* a1, void* a2, int a3, void* a4)
 {
     unsigned int v82 = 0;  /* G37 hoist */
     unsigned int v81 = 0;  /* G37 hoist */

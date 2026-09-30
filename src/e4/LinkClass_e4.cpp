@@ -15,7 +15,7 @@
 
 // 0x4E1480
 namespace gamemd {
-int LinkClass::Destroy()
+void LinkClass::Destroy()
 {
   (*(void (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
   return LinkedList::RemoveNode(); /*0x4e148f*/
@@ -23,7 +23,7 @@ int LinkClass::Destroy()
 } // namespace gamemd
 // 0x5565A0
 namespace gamemd {
-int LinkClass::Destruct()
+void LinkClass::Destruct()
 {
   LinkClass *Prev; // edi
   int result; // eax

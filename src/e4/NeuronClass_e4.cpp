@@ -114,7 +114,7 @@ void * NeuronClass::Reset(char a2)
 }
 // 0x43AB20
 namespace gamemd {
-int NeuronClass_25::Update(int a2)
+int NeuronClass_25::Update(int a2, void *a4 = 0, void *a3 = 0, void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x43ab2a*/
 }
@@ -200,7 +200,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 
 // 0x43AC20
 namespace gamemd {
-void NeuronClass_25::ddtor()
+int NeuronClass_25::ddtor(int a2, void *a4 = 0, void *a3 = 0, void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x43ac2d*/
   {

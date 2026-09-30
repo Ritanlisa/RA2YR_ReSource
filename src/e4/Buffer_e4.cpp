@@ -409,7 +409,7 @@ int Buffer::AllocateCodecFrameBuffers()
 } // namespace gamemd
 // 0x43AD00
 namespace gamemd {
-unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
+void Buffer::Init()
 {
   this->Buffer_field_00 = (unsigned int)(a2);
   this->Buffer_field_04 = (unsigned int)(aP2);

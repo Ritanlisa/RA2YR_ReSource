@@ -26,7 +26,7 @@
 
 // 0x5236A0
 namespace gamemd {
-InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
+InfantryTypeClass * InfantryTypeClass::Constructor(char* a1)
 {
   int v3; // eax
   bool v4; // zf

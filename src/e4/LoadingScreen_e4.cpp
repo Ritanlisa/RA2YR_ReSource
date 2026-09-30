@@ -237,7 +237,7 @@ int LoadingScreen::ReleaseAnimObjects()
 } // namespace gamemd
 // 0x72CF40
 namespace gamemd {
-char LoadingScreen::Init()
+char LoadingScreen::Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   char result; // al
 
@@ -289,7 +289,7 @@ char LoadingScreen::FreeResources3()
 } // namespace gamemd
 // 0x72F140
 namespace gamemd {
-void LoadingScreen::CleanupObjects()
+char LoadingScreen::CleanupObjects(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1048] ) /*0x72f14a*/
   {
@@ -331,7 +331,7 @@ void LoadingScreen::CleanupObjects()
 } // namespace gamemd
 // 0x730400
 namespace gamemd {
-int LoadingScreen::FreeResources()
+char LoadingScreen::FreeResources(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
 {
   int result; // eax
 

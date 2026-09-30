@@ -32,7 +32,7 @@
 
 // 0x480180
 namespace gamemd {
-AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
+AbstractClass * * DSurface::Process(void* aP1, int * a2)
 {
   TerrainClass::GenerateTexture( /*0x4801de*/
     *(unsigned int **)dword_A8ED2C,
@@ -57,7 +57,7 @@ AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
+AbstractClass * * DSurface::Construct(void* aP1, int * a2)
 {
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
@@ -116,7 +116,7 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
 } // namespace gamemd
 // 0x4BA6B0
 namespace gamemd {
-int DSurface::Destroy()
+AbstractClass * * DSurface::Destroy(void* aP1, int * a2)
 {
   char DSurface_field_0x18; // al
   int v3; // eax
@@ -149,7 +149,7 @@ int DSurface::Destroy()
 } // namespace gamemd
 // 0x4BA770
 namespace gamemd {
-unsigned int * DSurface::CreatePrimary()
+AbstractClass * * DSurface::CreatePrimary(void* aP1, int * a2)
 {
   char v1; // bl
   void * v2;

@@ -136,7 +136,7 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 } // namespace gamemd
 // 0x75F540
 namespace gamemd {
-unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
+int Color::RGBFromFloat(void* a1, float a2)
 {
   double v3; // st7
   int v5; // eax

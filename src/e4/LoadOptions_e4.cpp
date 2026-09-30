@@ -163,7 +163,7 @@ wchar_t * LoadOptions::Write()
 
 // 0x55A070
 namespace gamemd {
-wchar_t * LoadOptions::Seek()
+void LoadOptions::Seek()
 {
   return GetStringCSF(aGuiSavemission, 0, g_Str_File_LoadDlg_CPP, 1222); /*0x55a086*/
 }
@@ -171,7 +171,7 @@ wchar_t * LoadOptions::Seek()
 
 // 0x55A090
 namespace gamemd {
-wchar_t * LoadOptions::Open()
+void LoadOptions::Open()
 {
   return GetStringCSF(aGuiDeletemissi, 0, g_Str_File_LoadDlg_CPP, 1228); /*0x55a0a6*/
 }
@@ -179,7 +179,7 @@ wchar_t * LoadOptions::Open()
 
 // 0x55A0B0
 namespace gamemd {
-wchar_t * LoadOptions::Close()
+void LoadOptions::Close()
 {
   return GetStringCSF(aTxtGameWasSave, 0, g_Str_File_LoadDlg_CPP, 1234); /*0x55a0c6*/
 }
@@ -370,7 +370,7 @@ DynamicVector * LoadOptions::vt00(char a2)
 
 // 0x681100
 namespace gamemd {
-char * LoadOptions::GetData()
+void LoadOptions::GetData()
 {
   return (char *)(&this->u32_420);
 }

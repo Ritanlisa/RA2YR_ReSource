@@ -19,7 +19,7 @@
 
 // 0x549B70
 namespace gamemd {
-int IsometricTileTypeClass::ProcessPower(int * a2)
+void IsometricTileTypeClass::ProcessPower()
 {
   int v3; // eax
   int v4; // eax

@@ -9,7 +9,7 @@
 
 // 0x5D2770
 namespace gamemd {
-int CampaignProperties_WorldDominationTour_22::Seek(int a2)
+int CampaignProperties_WorldDominationTour_22::Seek(int a2, void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x5d277a*/
 }
@@ -17,7 +17,7 @@ int CampaignProperties_WorldDominationTour_22::Seek(int a2)
 
 // 0x5D2900
 namespace gamemd {
-int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2)
+int CampaignProperties_WorldDominationTour_22::Read(int a2, void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx
@@ -72,7 +72,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
 
 // 0x76F0F0
 namespace gamemd {
-BOOL CampaignProperties_WorldDominationTour_22::AddRef()
+int CampaignProperties_WorldDominationTour_22::AddRef(int a2, void *a1 = 0)
 {
   return this->q008 < *(unsigned int *)(*(unsigned int *)&this->q004 + 16); /*0x76f0fd*/
 }
@@ -80,7 +80,7 @@ BOOL CampaignProperties_WorldDominationTour_22::AddRef()
 
 // 0x76F1A0
 namespace gamemd {
-unsigned int * CampaignProperties_WorldDominationTour_22::Release()
+int CampaignProperties_WorldDominationTour_22::Release(int a2, void *a1 = 0)
 {
   ++this->q008; /*0x76f1a2*/
   return this; /*0x76f1a5*/
@@ -89,7 +89,7 @@ unsigned int * CampaignProperties_WorldDominationTour_22::Release()
 
 // 0x76F1B0
 namespace gamemd {
-unsigned int * CampaignProperties_WorldDominationTour_22::ddtor()
+int CampaignProperties_WorldDominationTour_22::ddtor(int a2, void *a1 = 0)
 {
   --this->q008; /*0x76f1b2*/
   return this; /*0x76f1b5*/

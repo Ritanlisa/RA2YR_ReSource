@@ -94,7 +94,7 @@ v3 = (int *)(this->tempPath);
 } // namespace gamemd
 // 0x433060
 namespace gamemd {
-unsigned int * BinkMovieHandle::CopyFrameToSurface()
+void BinkMovieHandle::CopyFrameToSurface()
 {
   DSurface *width; // edi
   int v3; // ebx

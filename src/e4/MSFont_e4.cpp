@@ -126,7 +126,7 @@ MSFont * MSFont::QueryInterface(char a2)
 }
 // 0x5D5080
 namespace gamemd {
-void MSFont_18::ClearBuffer()
+void MSFont_18::ClearBuffer(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -163,7 +163,7 @@ int MSFont_18::GetSize(int a2)
 
 // 0x5D50E0
 namespace gamemd {
-void MSFont_18::Destroy()
+void MSFont_18::Destroy(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -270,7 +270,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 
 // 0x5D5240
 namespace gamemd {
-void MSFont_18::ddtor()
+void MSFont_18::ddtor(void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x5d524d*/
   {

@@ -40,7 +40,7 @@ unsigned int * BinkMovie::Close(char * FullPath)
 }
 // 0x4326C0
 namespace gamemd {
-unsigned int * BinkMovie::Open(char * FullPath, int a3)
+void BinkMovie::Open(char* a1)
 {
   this->BinkMovie_field_0xC = (unsigned int *)((void *)a3);
   this-((unsigned int *)(>__pad_0))[0] = (unsigned int *)(0);
@@ -55,7 +55,7 @@ unsigned int * BinkMovie::Open(char * FullPath, int a3)
 }
 // 0x432700
 namespace gamemd {
-int BinkMovie::Stop()
+void BinkMovie::Stop(char* a1)
 {
   void *BinkMovie_field_0x20; // edi
   int result; // eax
@@ -268,7 +268,7 @@ int BinkMovie::Pause(unsigned char a2)
 }
 // 0x432C50
 namespace gamemd {
-int BinkMovie::IsAtEnd()
+void BinkMovie::IsAtEnd(char* a1)
 {
   unsigned int *tempPath; // eax
   void *v2; // edx
@@ -279,7 +279,7 @@ tempPath = (unsigned int *)(this->tempPath);
 }
 // 0x432C70
 namespace gamemd {
-AbstractClass * * BinkMovie::Play()
+void BinkMovie::Play(char* a1)
 {
   void (__stdcall *v3)(HWND, LPPOINT); // ebp
   int BinkMovie_field_0x4; // eax

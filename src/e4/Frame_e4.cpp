@@ -14,7 +14,7 @@
 
 // 0x4F4780
 namespace gamemd {
-TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)
+TechnoTypeClass * Frame::Present()
 {
   int *v9; // eax
   int result; // eax
@@ -262,7 +262,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
 } // namespace gamemd
 // 0x724C00
 namespace gamemd {
-int Frame::Init()
+TechnoTypeClass * Frame::Init()
 {
   return this->q004 != 0; /*0x724c0a*/
 }

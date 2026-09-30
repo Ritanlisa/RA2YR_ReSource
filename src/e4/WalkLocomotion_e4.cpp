@@ -123,7 +123,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 }
 // 0x6A05F0
 namespace gamemd {
-int WalkLocomotion::ProcessCollision(char a2)
+void WalkLocomotion::ProcessCollision()
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx

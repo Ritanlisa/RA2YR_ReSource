@@ -15,7 +15,7 @@
 
 // 0x4A2CD0
 namespace gamemd {
-ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
+int CStreamClass::CopyStreamToBuffer()
 {
   IStream *v4; // ebp
   size_t v5; // edi
@@ -255,7 +255,7 @@ LONG CStreamClass::IStreamRelease(int a1)
 }
 // 0x4A4B20
 namespace gamemd {
-int CStreamClass_16::Seek(int a2)
+int CStreamClass_16::Seek(int a2, void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4a4b2a*/
 }
@@ -341,7 +341,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4A4C20
 namespace gamemd {
-void CStreamClass_16::ddtor()
+int CStreamClass_16::ddtor(int a2, void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4a4c2d*/
   {
@@ -355,7 +355,7 @@ void CStreamClass_16::ddtor()
 
 // 0x4A4C50
 namespace gamemd {
-int CStreamClass_16::Read(unsigned int * a2)
+int CStreamClass_16::Read(int a2, void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx

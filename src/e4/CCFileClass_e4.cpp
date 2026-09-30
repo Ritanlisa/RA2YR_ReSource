@@ -13,7 +13,7 @@
 
 // 0x4325C0
 namespace gamemd {
-AudioController * * CCFileClass::Close()
+AudioController * * CCFileClass::Close(void *a1 = 0)
 {
     unsigned int v3 = 0;  /* G37 hoist */
   char result; // al

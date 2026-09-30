@@ -278,7 +278,7 @@ void sub_5A1E50(short * a1, int a2, int a3, int a4)
 }
 // 0x5ADD10
 namespace gamemd {
-int E4Recv_5ADD10::Map_Delete(void * a1, void * a2)
+int E4Recv_5ADD10::Map_Delete()
 {
   bool v2; // bl
   int *v3; // eax

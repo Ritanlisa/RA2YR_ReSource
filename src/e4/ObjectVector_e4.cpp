@@ -9,7 +9,7 @@
 
 // 0x4D0440
 namespace gamemd {
-unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
+int ObjectVector::Construct(void* a1, void* a2, void* a3)
 {
   this->ObjectVector_field_0x04 = 0; /*0x4d044b*/
   this->ObjectVector_field_0x08 = aP1; /*0x4d044e*/

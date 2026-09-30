@@ -9,7 +9,7 @@
 
 // 0x642740
 namespace gamemd {
-unsigned int * CoordStruct::Set2(IUnknown * aP1, AbstractClass * aP2)
+unsigned int * CoordStruct::Set2(void* aP1,  AbstractClass * aP2)
 {
   int v4; // edx
 

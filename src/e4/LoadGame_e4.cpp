@@ -117,7 +117,7 @@ int LoadGame::LoadTriggerEvents()
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-int LoadGame::RemoveItem(int a2)
+void LoadGame::RemoveItem()
 {
   int LoadGame_field_0x10; // edx
   int v3; // eax
@@ -143,7 +143,7 @@ int LoadGame::RemoveItem(int a2)
 } // namespace gamemd
 // 0x67E730
 namespace gamemd {
-int LoadGame::Start()
+void LoadGame::Start()
 {
   char result; // al
   int *Viewport; // edx

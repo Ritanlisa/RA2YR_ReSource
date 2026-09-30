@@ -22,7 +22,7 @@
 
 // 0x652C00
 namespace gamemd {
-CampaignClass * * RadarClass::Destruct()
+CampaignClass * RadarClass::Destruct()
 {
   MapClass **p_RadarClass_field_0x1488; // esi
   int v3; // ebp

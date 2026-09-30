@@ -10,7 +10,7 @@
 
 // 0x53EE70
 namespace gamemd {
-bool GUID::Compare(int a2)
+bool __fastcall GUID::Compare(const GUID& a, const GUID& b)
 {
   unsigned short *v4; // edi
   int v5; // ecx

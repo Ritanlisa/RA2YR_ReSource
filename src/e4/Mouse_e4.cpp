@@ -23,7 +23,7 @@
 
 // 0x4A8BF0
 namespace gamemd {
-Tactical * * Mouse::SetBounds(IUnknown * aP1)
+int Mouse::SetBounds(void* aP1)
 {
   int result; // eax
   int16_t v4; // cx

@@ -161,7 +161,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 } // namespace gamemd
 // 0x4D0C40
 namespace gamemd {
-AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
+AbstractClass * FoggedObjectClass::InitTerrainFog(int a1, int a2)
 {
   int level; // eax
   CellClass *v6; // eax
@@ -276,7 +276,7 @@ AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int 
 } // namespace gamemd
 // 0x4D0EF0
 namespace gamemd {
-int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
+AbstractClass * FoggedObjectClass::Constructor(int a1, int a2)
 {
   int v4; // eax
   int v5; // ecx

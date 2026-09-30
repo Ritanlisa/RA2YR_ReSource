@@ -19,7 +19,7 @@
 
 // 0x7A3D90
 namespace gamemd {
-int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
+int ComStreamClass::Write(int a1, int a2, int a3, int a4, int a5)
 {
     unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
@@ -147,7 +147,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
 } // namespace gamemd
 // 0x7AC820
 namespace gamemd {
-int ComStreamClass::Release()
+int ComStreamClass::Release(int a1, int a2, int a3, int a4, int a5)
 {
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
@@ -166,7 +166,7 @@ int ComStreamClass::Release()
 } // namespace gamemd
 // 0x7AC870
 namespace gamemd {
-int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
+int ComStreamClass::QueryInterface(int a1, int a2, int a3, int a4, int a5)
 {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */

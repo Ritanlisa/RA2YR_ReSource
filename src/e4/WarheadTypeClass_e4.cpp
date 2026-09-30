@@ -323,7 +323,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage()
 } // namespace gamemd
 // 0x75CEC0
 namespace gamemd {
-int WarheadTypeClass::Construct(ObjectClass * aP1)
+void WarheadTypeClass::Construct(char* a1)
 {
   WarheadTypeClass * v3;
   WarheadTypeClass * v4;

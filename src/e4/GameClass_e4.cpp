@@ -34,7 +34,7 @@
 
 // 0x437FD0
 namespace gamemd {
-int GameClass::initGameMode(int a2, int a3)
+void GameClass::initGameMode(int a1)
 {
   if ( !*(unsigned int *)this->__pad_0 ) /*0x437fd3*/
     WinAPI::Wrapper(-2147467261); /*0x437fdd*/
@@ -43,7 +43,7 @@ int GameClass::initGameMode(int a2, int a3)
 }
 // 0x4381D0
 namespace gamemd {
-unsigned int * GameClass::processFrame(int a2, int a3)
+void GameClass::processFrame(int a1)
 {
   unsigned int *result; // eax
   ObjectClass *v5; // eax
@@ -253,7 +253,7 @@ int GameClass::FindOpenSlot()
 }
 // 0x631D30
 namespace gamemd {
-int GameClass::GetRelatedObject()
+void GameClass::GetRelatedObject(int a1)
 {
   int v1; // ecx
 

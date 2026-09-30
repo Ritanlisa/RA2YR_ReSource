@@ -8,7 +8,7 @@
 
 // 0x537E70
 namespace gamemd {
-unsigned int * CursorPositionCommandClass::Constructor()
+void CursorPositionCommandClass::Constructor()
 {
   *(unsigned int *)this->CommandClass = (void*)&CursorPositionCommandClass_vftable; /*0x537e72*/
   return this->CommandClass; /*0x537e78*/

@@ -224,7 +224,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
 }
 // 0x6E6220
 namespace gamemd {
-int TagClass::HasValidHouse()
+void TagClass::HasValidHouse()
 {
   HouseClass *v1; // esi
 
@@ -242,7 +242,7 @@ int TagClass::HasValidHouse()
 }
 // 0x71ADE0
 namespace gamemd {
-Coord * * TagClass::Unlink()
+void TagClass::Unlink()
 {
   int v2; // eax
   int result; // eax

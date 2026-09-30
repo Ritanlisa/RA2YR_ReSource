@@ -15,7 +15,7 @@
 
 // 0x4A3370
 namespace gamemd {
-int DDraw::ReleaseSurfaces()
+void DDraw::ReleaseSurfaces()
 {
   int v2; // eax
   int result; // eax

@@ -16,7 +16,7 @@
 
 // 0x55E160
 namespace gamemd {
-signed int SyncDelay::Start()
+void SyncDelay::Start()
 {
   int v0; // ecx
   signed int v1; // esi
@@ -195,7 +195,7 @@ signed int SyncDelay::Start()
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {
-int SyncDelay::Check(unsigned int * a2)
+void SyncDelay::Check()
 {
   unsigned int *v2; // eax
 

@@ -8,7 +8,7 @@
 
 // 0x401F90
 namespace gamemd {
-int RefCount::Decrement()
+int32_t RefCount::Decrement()
 {
   int result; // eax
 

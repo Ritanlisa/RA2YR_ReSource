@@ -8,7 +8,7 @@
 
 // 0x75A790
 namespace gamemd {
-char AnimSystem::Init()
+void AnimSystem::Init()
 {
   int i; // edx
   int v1; // eax

@@ -13,7 +13,7 @@
 
 // 0x5BD0D0
 namespace gamemd {
-int Debug::ScrollText(CellStruct * aP1)
+void Debug::ScrollText(char* a1)
 {
   char result; // al
   int v4; // eax

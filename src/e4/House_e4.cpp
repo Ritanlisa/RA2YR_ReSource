@@ -30,7 +30,7 @@
 
 // 0x47D2B0
 namespace gamemd {
-void House::AnnounceUpgrade(IUnknown * aP1)
+int House::AnnounceUpgrade()
 {
   int result; // eax
   int16_t *v4; // edi

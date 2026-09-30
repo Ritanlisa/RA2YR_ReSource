@@ -5,7 +5,7 @@ namespace gamemd
 {
 
 // 0x41e500
-void AITriggerTypeClass::GetClassIdentifier(void * a1, void * a2)
+void AITriggerTypeClass::GetClassIdentifier(int a1)
 {
   if ( !a2 ) /*0x41e506*/
     return -2147467261; /*0x41e508*/
@@ -16,7 +16,7 @@ void AITriggerTypeClass::GetClassIdentifier(void * a1, void * a2)
   return 0; /*0x41e50d*/
 }
 // 0x41e540
-void AITriggerTypeClass::LoadTypeData(void * a1, void * a2, void * a3)
+void AITriggerTypeClass::LoadTypeData(int a1)
 {
   int result; // eax
 
@@ -39,7 +39,7 @@ void AITriggerTypeClass::LoadTypeData(void * a1, void * a2, void * a3)
   return result; /*0x41e5b4*/
 }
 // 0x41e5c0
-void AITriggerTypeClass::SaveToINI(void * a1, void * a2, void * a3)
+void AITriggerTypeClass::SaveToINI(int a1)
 {
   int result; // eax
 
@@ -49,7 +49,7 @@ void AITriggerTypeClass::SaveToINI(void * a1, void * a2, void * a3)
   return result; /*0x41e5da*/
 }
 // 0x41e5e0
-void AITriggerTypeClass::ProcessPower(void * a1, void * a2)
+void AITriggerTypeClass::ProcessPower(int a1)
 {
   int v3; // ecx
   int v4; // edx

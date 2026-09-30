@@ -257,7 +257,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 }
 // 0x558840
 namespace gamemd {
-int Options::PrepareSaveLoadDlg()
+void Options::PrepareSaveLoadDlg()
 {
   this->field_4 = (unsigned int)((void *)3);
   this->field_C = 0; /*0x558847*/
@@ -442,7 +442,7 @@ int Options::DeleteAndZero()
 }
 // 0x6248A0
 namespace gamemd {
-int Options::EnsureCapacity()
+void Options::EnsureCapacity()
 {
   int v2; // eax
   int v3; // ecx

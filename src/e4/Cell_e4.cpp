@@ -85,7 +85,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 }
 // 0x42B1C0
 namespace gamemd {
-int Cell::PosToIndex()
+int Cell::PosToIndex(void* a1, void* a2, void* a3)
 {
   return ((SLOWORD(this->Cell_field_0x0) - IDA_SHIWORD(this->Cell_field_0x0) + *(unsigned int *)&stru_87F5F0.__pad_58[660] - 1) >> 1) /*0x42b1e3*/
        + *(unsigned int *)&stru_87F5F0.__pad_58[660]
@@ -148,7 +148,7 @@ int Cell::CanPlaceBuilding(unsigned int * a2)
 }
 // 0x481670
 namespace gamemd {
-AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4)
+int Cell::ApplyDamage(void* a1, void* a2, void* a3)
 {
   unsigned int *v6; // esi
   float *v7; // eax
@@ -257,7 +257,7 @@ AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * a
 }
 // 0x481810
 namespace gamemd {
-void * Cell::GetNeighbourContent(unsigned int a2)
+int Cell::GetNeighbourContent(void* a1, void* a2, void* a3)
 {
   void *result; // eax
   int16_t v3; // ax

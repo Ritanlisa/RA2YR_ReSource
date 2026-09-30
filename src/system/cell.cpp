@@ -193,7 +193,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // Draws the cell at a given screen position.
 // 55 bytes: thin wrapper around DrawDispatch.
 // 0x48e5a0
-int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, void * a1, void * a2, void * a3) const
+int CellClass::Draw(int a1, int a2) const
 {
   int v5; // eax
   int v6; // ecx

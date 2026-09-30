@@ -103,7 +103,7 @@ int Theme::Stop(ObjectClass * aP1)
 } // namespace gamemd
 // 0x720FD0
 namespace gamemd {
-int Theme::IsPlaying()
+void Theme::IsPlaying()
 {
   AudioSample *v2; // ecx
 

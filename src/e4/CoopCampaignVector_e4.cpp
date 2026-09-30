@@ -41,7 +41,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 } // namespace gamemd
 // 0x5C5A80
 namespace gamemd {
-unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
+void CoopCampaignVector::Construct(void* a1)
 {
   this->CoopCampaignVector_field_0x04 = (unsigned int)(0);
   this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);

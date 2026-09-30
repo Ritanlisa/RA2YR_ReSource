@@ -13,7 +13,7 @@
 
 // 0x47A9D0
 namespace gamemd {
-void * BufferIOFile::Constructor(char * Source)
+int BufferIOFile::Constructor(char* a1, void* a2, void* a3)
 {
   BufferIOFileClass::Constructor(); /*0x47a9d3*/
   IDA_LOBYTE(this->m_54) = 0; /*0x47a9df*/
@@ -24,7 +24,7 @@ void * BufferIOFile::Constructor(char * Source)
 }
 // 0x47AA30
 namespace gamemd {
-unsigned char * BufferIOFile::Init()
+int BufferIOFile::Init(char* a1, void* a2, void* a3)
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
   IDA_LOBYTE(this->m_54) = 0; /*0x47aa38*/

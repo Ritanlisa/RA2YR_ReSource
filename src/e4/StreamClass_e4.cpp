@@ -73,7 +73,7 @@ int StreamClass::Set2(unsigned int * a2)
 } // namespace gamemd
 // 0x45AF20
 namespace gamemd {
-int StreamClass::Set(IUnknown * aP1)
+int StreamClass::Set(void* a1)
 {
   int v3; // edi
   unsigned int *v5; // ebx

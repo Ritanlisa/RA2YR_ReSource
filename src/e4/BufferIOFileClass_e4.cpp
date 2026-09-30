@@ -9,7 +9,7 @@
 
 // 0x535A60
 namespace gamemd {
-int BufferIOFileClass::Destruct()
+void BufferIOFileClass::Destruct()
 {
   *(unsigned int *)this->RawFileClass = &off_7E1668; /*0x535a60*/
   return BufferIOFileClass::Dtor();

@@ -197,7 +197,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
 }
 // 0x766800
 namespace gamemd {
-int Conflict_WorldDominationTour_12_::ReleaseBuffer()
+int Conflict_WorldDominationTour_12_::ReleaseBuffer(void *a1 = 0, void *a2 = 0)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -216,14 +216,14 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
 }
 // 0x766920
 namespace gamemd {
-int Conflict_WorldDominationTour_26::AddRef()
+BOOL Conflict_WorldDominationTour_26::AddRef(void *a1 = 0)
 {
   return this->RefCount < *(unsigned int *)(*(unsigned int *)&this->u32_4 + 16); /*0x76692d*/
 }
 }
 // 0x766FA0
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_26::Release()
+BOOL Conflict_WorldDominationTour_26::Release(void *a1 = 0)
 {
   ++this->RefCount; /*0x766fa2*/
   return this; /*0x766fa5*/
@@ -231,7 +231,7 @@ unsigned int * Conflict_WorldDominationTour_26::Release()
 }
 // 0x766FB0
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_26::ddtor()
+BOOL Conflict_WorldDominationTour_26::ddtor(void *a1 = 0)
 {
   --this->RefCount; /*0x766fb2*/
   return this; /*0x766fb5*/
@@ -316,7 +316,7 @@ char Conflict_WorldDominationTour_12::AddRef(int a2)
 
 // 0x766D30
 namespace gamemd {
-int Conflict_WorldDominationTour_12::ddtor()
+int Conflict_WorldDominationTour_12::ddtor(void *a1 = 0)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -335,7 +335,7 @@ int Conflict_WorldDominationTour_12::ddtor()
 
 // 0x766D60
 namespace gamemd {
-int Conflict_WorldDominationTour_12::Read(int a2)
+int Conflict_WorldDominationTour_12::Read(void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx
@@ -430,7 +430,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
 
 // 0x7670D0
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
+int Conflict_WorldDominationTour_12::Constructor_3(void *a1 = 0)
 {
   ComPtr::Constructor(); /*0x7670d3*/
   *(unsigned int *)this = (Conflict_WorldDominationTour)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7670d8*/

@@ -197,7 +197,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 }
 // 0x5113F0
 namespace gamemd {
-unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
+int SuperWeaponTypeClass::Construct(char* a1)
 {
   BuildingTypeClass *v3; // ebx
   unsigned int v4;

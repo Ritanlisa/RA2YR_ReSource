@@ -9,7 +9,7 @@
 
 // 0x487F40
 namespace gamemd {
-int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
+void Rect::Union(const Rect& other)
 {
   LONG *v3; // edx
   struct tagRECT *v4; // ecx
@@ -75,7 +75,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {
-IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
+void Rect::Set(const Rect& other)
 {
   this->X = aP1; /*0x42e41a*/
   this->Y = aP2; /*0x42e420*/
@@ -86,7 +86,7 @@ IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * 
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
-AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
+void Rect::Construct(const Rect& other)
 {
   this->X = *aP1; /*0x45a138*/
   this->Y = aP1[1]; /*0x45a141*/

@@ -187,7 +187,7 @@ unsigned int MSPCXAnim_42::GetCount_0(int a2)
 
 // 0x5D06D0
 namespace gamemd {
-void MSPCXAnim_26::ddtor()
+void MSPCXAnim_26::ddtor(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -717,7 +717,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
 
 // 0x5D12F0
 namespace gamemd {
-void MSPCXAnim_42::ddtor()
+void MSPCXAnim_42::ddtor(void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x5d12fd*/
   {

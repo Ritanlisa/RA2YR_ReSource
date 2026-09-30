@@ -109,3 +109,5 @@ inline unsigned char __CF__(int) { return 0; }
 // trap loudly rather than silently continuing.
 #define JUMPOUT(x) do { (void)(x); __debugbreak(); } while (0)
 #endif
+
+#include "core/missing_globals_compat.h"

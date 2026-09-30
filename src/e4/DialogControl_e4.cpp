@@ -20,7 +20,7 @@ int DialogControl::Hide()
 } // namespace gamemd
 // 0x4E1460
 namespace gamemd {
-int DialogControl::Show()
+void DialogControl::Show()
 {
   this->u32_1E = 1; /*0x4e1462*/
   this->u32_1C = 1; /*0x4e1465*/
@@ -36,7 +36,7 @@ int DialogControl::IsHidden()
 } // namespace gamemd
 // 0x623340
 namespace gamemd {
-unsigned int * DialogControl::Constructor()
+void DialogControl::Constructor()
 {
   unsigned int *v2; // eax
   unsigned int *v3; // eax

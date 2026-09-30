@@ -22,7 +22,7 @@
 
 // 0x431F10
 namespace gamemd {
-int File::IsReady(int a2)
+char File::IsReady(int a2, void *a1 = 0)
 {
   int result; // eax
 
@@ -34,7 +34,7 @@ int File::IsReady(int a2)
 }
 // 0x433990
 namespace gamemd {
-unsigned int * File::LoadFont()
+char File::LoadFont(int a2, void *a1 = 0)
 {
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
@@ -221,7 +221,7 @@ unsigned int * File::LoadFont()
 }
 // 0x4CB920
 namespace gamemd {
-File * * File::Dispatch()
+char File::Dispatch(int a2, void *a1 = 0)
 {
   int16_t v2; // ax
   u_short v3; // cx

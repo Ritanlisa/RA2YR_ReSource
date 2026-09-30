@@ -24,7 +24,7 @@
 
 // 0x5FA620
 namespace gamemd {
-AbstractClass * * GameSettings::Read()
+void GameSettings::Read()
 {
   int v2; // eax
   unsigned int v3;

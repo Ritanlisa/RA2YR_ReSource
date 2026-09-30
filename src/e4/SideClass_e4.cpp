@@ -111,7 +111,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 }
 // 0x6A4550
 namespace gamemd {
-unsigned int * SideClass::Construct(CCINIClass * aP1)
+int SideClass::Construct(char* a1)
 {
   int v3; // eax
 

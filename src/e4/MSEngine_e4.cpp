@@ -169,7 +169,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 }
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * * MSEngine::Destructor()
+CampaignClass * MSEngine::Destructor()
 {
   void *v2; // eax
   void *v3; // eax
@@ -208,7 +208,7 @@ CampaignClass * * MSEngine::Destructor()
 }
 // 0x5D1AA0
 namespace gamemd {
-unsigned int * MSEngine::Construct()
+CampaignClass * MSEngine::Construct()
 {
   void **p_MSEngine_field_0x8; // ecx
   void (**v3)(void **, int, unsigned int); // edx
@@ -244,7 +244,7 @@ unsigned int * MSEngine::Construct()
 }
 // 0x5D1B30
 namespace gamemd {
-void MSEngine::Destruct()
+CampaignClass * MSEngine::Destruct()
 {
   int v2; // ebp
   int v3; // eax
@@ -334,7 +334,7 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
 }
 // 0x5AC520
 namespace gamemd {
-void MSEngine::ClearBuffer()
+CampaignClass * MSEngine::ClearBuffer()
 {
   void *v2; // eax
 
@@ -412,7 +412,7 @@ char MSEngine::AddRef(int a2)
 
 // 0x5ACE20
 namespace gamemd {
-void MSEngine::ddtor()
+CampaignClass * MSEngine::ddtor()
 {
   if ( *(unsigned int *)&this->IsAllocated && IDA_BYTE1(this->m_C) ) /*0x5ace2d*/
   {
@@ -426,7 +426,7 @@ void MSEngine::ddtor()
 
 // 0x5ACE50
 namespace gamemd {
-int MSEngine::Init(unsigned int * a2)
+CampaignClass * MSEngine::Init()
 {
   int result; // eax
   int m_8; // esi
@@ -501,7 +501,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
 
 // 0x5AD520
 namespace gamemd {
-DynamicVector * MSEngine::Constructor(char a2)
+CampaignClass * MSEngine::Constructor()
 {
   void *v3; // eax
 

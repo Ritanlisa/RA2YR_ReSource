@@ -93,7 +93,7 @@ void E4Recv_771890::sub_771890()
 }
 // 0x7741C0
 namespace gamemd {
-int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
+HKEY E4Recv_7741C0::FindRegistrySubKey()
 {
   unsigned char * v4;
   unsigned char *v5; // esi

@@ -317,7 +317,7 @@ int FogOfWar::RenderCell()
 } // namespace gamemd
 // 0x6562D0
 namespace gamemd {
-AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
+AbstractClass * FogOfWar::RevealCell(void* a1)
 {
   int v3; // edx
   int v4; // eax

@@ -13,7 +13,7 @@
 
 // 0x5361A0
 namespace gamemd {
-unsigned int * CenterTeamCommand::Construct(int a2)
+void CenterTeamCommand::Construct()
 {
   this->CenterTeamCommand_field_00 = (unsigned int *)(a2);
   *(unsigned int *)this->CommandClass = (void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
@@ -22,7 +22,7 @@ unsigned int * CenterTeamCommand::Construct(int a2)
 } // namespace gamemd
 // 0x5361C0
 namespace gamemd {
-void * CenterTeamCommand::AddRef()
+void CenterTeamCommand::AddRef()
 {
   sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCenter_%d", *(unsigned int *)&this-((unsigned int *)(>m_1))[3]); /*0x5361ce*/
   return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5361db*/
@@ -30,7 +30,7 @@ void * CenterTeamCommand::AddRef()
 } // namespace gamemd
 // 0x5361E0
 namespace gamemd {
-void * CenterTeamCommand::Release()
+void CenterTeamCommand::Release()
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

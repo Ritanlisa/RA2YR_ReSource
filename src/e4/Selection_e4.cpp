@@ -22,7 +22,7 @@ void Selection::SetCurrent()
 } // namespace gamemd
 // 0x732D00
 namespace gamemd {
-char Selection::GetFlag()
+bool Selection::GetFlag()
 {
   return byte_B0FE65; /*0x732d05*/
 }

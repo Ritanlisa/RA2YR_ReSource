@@ -20,7 +20,7 @@
 
 // 0x690A10
 namespace gamemd {
-unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
+void ScoreScreen::LoadScoreFont()
 {
   void *v3; // eax
   CCFileClass v5; // [esp+8h] [ebp-6Ch] BYREF
@@ -98,7 +98,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 } // namespace gamemd
 // 0x690F30
 namespace gamemd {
-unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
+void ScoreScreen::Constructor()
 {
   this->ScoreScreen_field_0x08 = (unsigned int *)(a3);
   this->ScoreScreen_field_0x04 = (unsigned int *)(aP1);

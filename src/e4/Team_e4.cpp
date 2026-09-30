@@ -480,7 +480,7 @@ int Team::GetMember(AbstractClass * aP1)
 }
 // 0x65AE30
 namespace gamemd {
-int Team::AllMembersValid()
+int Team::AllMembersValid(void* a1)
 {
   void *v1; // edx
   int result; // eax

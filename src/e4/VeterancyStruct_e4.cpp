@@ -16,7 +16,7 @@ BOOL VeterancyStruct::IsVeteran()
 
 // 0x750010
 namespace gamemd {
-BOOL VeterancyStruct::IsElite()
+bool VeterancyStruct::IsElite()
 {
   return *(float *)this >= 2.0; /*0x750024*/
 }

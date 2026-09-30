@@ -59,7 +59,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {
-int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
+void TechnoTypeClass::Dispatch(void* a1)
 {
   double result; // st7
 
@@ -760,7 +760,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
+void TechnoTypeClass::Construct(void* a1)
 {
   int v3; // eax
   int v4; // ecx

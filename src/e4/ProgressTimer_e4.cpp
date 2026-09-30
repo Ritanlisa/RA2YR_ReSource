@@ -8,7 +8,7 @@
 
 // 0x4C93D0
 namespace gamemd {
-unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
+void* ProgressTimer::GetValue(int a1)
 {
   int16_t ProgressTimer_field_0x14; // bx
   void *ProgressTimer_field_0x8; // esi

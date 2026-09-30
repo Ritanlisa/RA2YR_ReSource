@@ -113,7 +113,7 @@ int SessionClass::initInternet()
 } // namespace gamemd
 // 0x552CC0
 namespace gamemd {
-unsigned int * SessionClass::Load()
+MixFileClass * SessionClass::Load()
 {
   unsigned int *v2; // eax
   unsigned int *result; // eax
@@ -169,7 +169,7 @@ unsigned int * SessionClass::Load()
 } // namespace gamemd
 // 0x5ADF20
 namespace gamemd {
-int SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
+MixFileClass * SessionClass::LoadGameSession()
 {
   int v4; // esi
   unsigned int *v6; // edi

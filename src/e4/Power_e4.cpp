@@ -15,7 +15,7 @@
 
 // 0x43A5D0
 namespace gamemd {
-int Power::Update(int * a2)
+int Power::Update(int * a2, void *a4 = 0, void *a3 = 0, void *a1 = 0)
 {
   AbstractClass::ProcessPower(); /*0x43a5d9*/
 // 0x4a1d50

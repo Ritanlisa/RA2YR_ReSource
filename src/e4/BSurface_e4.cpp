@@ -16,7 +16,7 @@
 
 // 0x410CE0
 namespace gamemd {
-unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
+void BSurface::Construct(int a1, int a2, int a3)
 {
   void * v10;
   int v11; // eax
@@ -80,7 +80,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
 }
 // 0x7B8C60
 namespace gamemd {
-int BSurface::CreateTripleBuffer()
+void BSurface::CreateTripleBuffer(int a1, int a2, int a3)
 {
   int v2; // ecx
   void (***v3)(unsigned int, int); // ecx

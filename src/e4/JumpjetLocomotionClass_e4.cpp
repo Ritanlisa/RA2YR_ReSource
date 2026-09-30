@@ -34,7 +34,7 @@
 
 // 0x439B00
 namespace gamemd {
-void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
+void* JumpjetLocomotionClass::Update2(void* a1, void* a2, void* a3)
 {
     unsigned int v58 = 0;  /* G37 hoist */
     unsigned int v58 = 0;  /* G37 hoist */
@@ -323,14 +323,14 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
 } // namespace gamemd
 // 0x43A130
 namespace gamemd {
-void JumpjetLocomotionClass::ComputeVectorLengthMetric_0()
+void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0(void* a1, void* a2, void* a3)
 {
   Math::Sqrt(*this * *this + (unsigned int)(this->vtable2)* (unsigned int)(this->vtable2)+ (unsigned int)(this->Owner)* this->Owner); /*0x43a154*/
 }
 } // namespace gamemd
 // 0x4848B0
 namespace gamemd {
-int JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2)
+void* JumpjetLocomotionClass::AdjustClimbFacing(void* a1, void* a2, void* a3)
 {
   unsigned int *v2; // ebx
   int smudgeTypeIndex; // ebp

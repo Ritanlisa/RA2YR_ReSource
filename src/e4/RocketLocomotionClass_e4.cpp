@@ -85,7 +85,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 }
 // 0x6647B0
 namespace gamemd {
-void RocketLocomotionClass_17::ddtor()
+void RocketLocomotionClass_17::ddtor(void *a1 = 0)
 {
   void *v2; // eax
 
@@ -200,7 +200,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
 // 0x664900
 namespace gamemd {
-void RocketLocomotionClass_17::Destroy()
+void RocketLocomotionClass_17::Destroy(void *a1 = 0)
 {
   if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x66490d*/
   {
@@ -315,7 +315,7 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
 }
 // 0x664A70
 namespace gamemd {
-VectorClass_flat * RocketLocomotionClass_17::Constructor(char a2)
+void RocketLocomotionClass_17::Constructor(void *a1 = 0)
 {
   void *v3; // eax
 

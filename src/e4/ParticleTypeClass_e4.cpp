@@ -150,7 +150,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 }
 // 0x4788E0
 namespace gamemd {
-unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
+void ParticleTypeClass::EnsureCapacity(void* a1)
 {
   void * v3;
   char *v4; // eax

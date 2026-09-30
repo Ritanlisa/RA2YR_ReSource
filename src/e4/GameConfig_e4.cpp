@@ -138,7 +138,7 @@ int GameConfig::ComputeHash()
 
 // 0x5D67B0
 namespace gamemd {
-void * GameConfig::Constructor(GameConfig * aP1)
+void GameConfig::Constructor()
 {
   GameConfig *v1; // edi
   void * v2;

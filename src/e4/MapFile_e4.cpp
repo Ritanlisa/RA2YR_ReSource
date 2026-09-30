@@ -50,7 +50,7 @@ DynamicVector * MapFile::QueryInterface(char a2)
 } // namespace gamemd
 // 0x69D770
 namespace gamemd {
-unsigned int * MapFile::Constructor(int a2, int a3)
+void MapFile::Constructor(int a1, void* a2, void* a3, void* a4, void* a5, void* a6)
 {
   this->MapFile_field_0x04 = (unsigned int)(0);
   this->MapFile_field_0x08 = (unsigned int)(a2);

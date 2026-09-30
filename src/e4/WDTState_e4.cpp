@@ -104,7 +104,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 }
 // 0x76B710
 namespace gamemd {
-int WDTState_4::ddtor()
+int WDTState_4::ddtor(void *a1 = 0)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -135,7 +135,7 @@ unsigned int WDTState_4::Write(int a2)
 
 // 0x76BB90
 namespace gamemd {
-int WDTState_4::Read(int a2)
+int WDTState_4::Read(void *a1 = 0)
 {
   int m_10; // edx
   int result; // eax
@@ -176,7 +176,7 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 
 // 0x76BC60
 namespace gamemd {
-unsigned int * WDTState_4::Constructor()
+int WDTState_4::Constructor(void *a1 = 0)
 {
   ComPtr::Constructor(); /*0x76bc63*/
   *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/

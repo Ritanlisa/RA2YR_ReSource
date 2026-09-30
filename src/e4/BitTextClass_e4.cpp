@@ -62,7 +62,7 @@ v3 = (void *)((unsigned int)((tagRECT *)((unsigned int)((struct tagRECT *)(&this
 } // namespace gamemd
 // 0x434AD0
 namespace gamemd {
-unsigned int * BitTextClass::LoadFont()
+void BitTextClass::LoadFont()
 {
   void * v2;
 

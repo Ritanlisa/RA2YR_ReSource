@@ -14,7 +14,7 @@
 
 // 0x4E12F0
 namespace gamemd {
-void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
+ControlClass GadgetClass::Construct(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
 {
   unsigned int *result; // eax
 
@@ -37,7 +37,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
 }
 // 0x4E1390
 namespace gamemd {
-GadgetClass * * GadgetClass::Dtor()
+ControlClass GadgetClass::Dtor(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
 {
   ShpButtonClass *v1; // eax
   int v2; // eax
@@ -63,7 +63,7 @@ GadgetClass * * GadgetClass::Dtor()
 }
 // 0x557920
 namespace gamemd {
-int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
+ControlClass GadgetClass::DrawBuildingPlacement(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
 {
   int ListClass_field_0x14; // ecx
   int ListClass_field_0x10; // eax
@@ -295,7 +295,7 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 }
 // 0x723EA0
 namespace gamemd {
-int GadgetClass::Show()
+ControlClass GadgetClass::Show(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
 {
   int v1; // eax
 
