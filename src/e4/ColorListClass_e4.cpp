@@ -38,13 +38,13 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((char *)this + 91) = a2; /*0x557f4c*/
-    int ColorListClass::Clear(ListClass *this, unsigned int a2)
+    (*(void (**)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this);
     if ( *((char *)this + 91) < *((char *)this + 92) ) /*0x557f67*/
-      int ColorListClass::Clear(ListClass *this, unsigned int a2)
+      if ( *((unsigned int *)this + 91) < *((unsigned int *)this + 92) ) (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, *((unsigned int *)this + 91));;
     v4 = *((char *)this + 20); /*0x557f74*/
     result = *((char *)this + 91); /*0x557f7d*/
     if ( result >= v4 + *((char *)this + 92) ) /*0x557f87*/
-      int ColorListClass::Clear(ListClass *this, unsigned int a2)
+      if ( result >= v4 + *((unsigned int *)this + 92) ) return (*(int (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))(this, result - v4 + 1);;
   }
   return result; /*0x557f97*/
 

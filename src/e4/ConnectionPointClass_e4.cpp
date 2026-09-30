@@ -155,7 +155,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char ConnectionPointClass_9::Release(_VectorClass_PAUIConnectionPoint *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x4a1328*/
   }
 

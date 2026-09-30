@@ -184,7 +184,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       this->Event::Dispatch(); /*0x5d2437*/
-      int GameClass::FrameLoop(GameClass *this, int a2)
+      (*(void (**)(GameClass *))(*(unsigned int *)this->__pad_0 + 8))(this);;
       this->DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(this, *(ObjectClass **)&g_abs_87F8E4); /*0x5d2451*/
       GameClass::loadScenarioFiles(this, *(ObjectClass **)&g_abs_87F8E4); /*0x5d245f*/

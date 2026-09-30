@@ -12,6 +12,7 @@
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x623FC0
 namespace gamemd {

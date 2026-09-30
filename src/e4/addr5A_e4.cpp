@@ -451,7 +451,7 @@ void GenerateTerrainHeightMapInternal()
   int result; // eax
   int *i; // edi
   unsigned int * v2;
-  unsigned int v3;
+  unsigned int * v3;
   unsigned int * v4;
   unsigned int * v5;
   unsigned int * v6;

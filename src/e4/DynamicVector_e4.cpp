@@ -22,7 +22,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
-  unsigned int *DynamicVector::Copy(DynamicVector *this, unsigned int *a2)
+  (*(void (**)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   v3 = aP1->Capacity; /*0x5ac441*/
   *((unsigned int *)this + 2) = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/

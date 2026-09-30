@@ -31,6 +31,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   signed int v5; // ebx
   char *result; // eax

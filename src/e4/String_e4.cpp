@@ -318,7 +318,7 @@ LABEL_33: v20 = (const char *)(&g_abs_889F64);
     goto LABEL_35; /*0x7b59ba*/
   }
   v3 = (void **)((gamemd::AbstractClass **)((void **)this));
-  v20 = (gamemd::AbstractClass **)(v4);
+  v20 = (const char *)((gamemd::AbstractClass **)(v4));
 LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
     RA2_OPDEL(*v3); /*0x7b59c9*/
@@ -358,10 +358,10 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   ObjectClass *v18; // esi
   size_t v19; // ecx
   unsigned char *v20; // eax
-  int v21; // [esp+14h] [ebp+4h]
+  AbstractClass ** v21;
   char *Str; // [esp+18h] [ebp+8h]
 
-  v4 = (int)((gamemd::AbstractClass **)(a2));
+  v4 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a2)));
   if ( a2 < 0 ) /*0x7b5f1c*/
     return -1; /*0x7b5f21*/
   while ( 1 )
@@ -375,7 +375,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     v8 = strlen(*this); /*0x7b5f6e*/
   else
     v8 = 0; /*0x7b5f61*/
-  if ( v4 >= v8 ) /*0x7b5f71*/
+  if ( v4 >= (gamemd::AbstractClass **)(v8) ) /*0x7b5f71*/
     return -1; /*0x7b5f76*/
   v21 = v4; /*0x7b5f7d*/
   while ( 1 )

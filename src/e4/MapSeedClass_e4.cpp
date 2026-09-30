@@ -668,7 +668,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char MapSeedClass_18::Release(_VectorClass_PAU_WIN32_FIND_DATAA *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAU_WIN32_FIND_DATAA *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x5acb48*/
   }
 
@@ -765,7 +765,7 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char MapSeedClass_18::SetCapacity(_DynamicVectorClass_PAU_WIN32_FIND_DATAA *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAU_WIN32_FIND_DATAA *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5acc71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5acc79*/

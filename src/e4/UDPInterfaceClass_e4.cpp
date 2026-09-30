@@ -36,8 +36,8 @@ int UDPInterfaceClass::connect()
   result = *((unsigned char *)this + 258152); /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
   {
-    char UDPInterfaceClass::connect(UDPInterfaceClass *this)
-    char UDPInterfaceClass::connect(UDPInterfaceClass *this)
+    (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this);;
+    (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this);;
     result = WSACleanup(); /*0x7b1b69*/
     *((unsigned char *)this + 258152) = 0; /*0x7b1b6e*/
   }
@@ -633,7 +633,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    char UDPInterfaceClass::flush(_DynamicVectorClass_PAE *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x7b4531*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7b4539*/
@@ -887,7 +887,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = (unsigned int *)this + 64704; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      int UDPInterfaceClass_Destru::Receive(UDPInterfaceClass *this)
+      v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))(this, -1);
       if ( WSAAsyncSelect(*v3, g_hWnd, v4, 3) == -1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/

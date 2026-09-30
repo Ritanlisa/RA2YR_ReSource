@@ -32,9 +32,9 @@ namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
 
-  unsigned int v1;
+  unsigned int * v1;
   int v2; // edi
-  unsigned int v4;
+  unsigned int * v4;
   void *v5; // esi
   unsigned int * v6;
   int v7; // eax
@@ -77,7 +77,7 @@ int LoadGame::LoadTriggerEvents()
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  bool LoadGame::LoadTriggerEvents(LoadGame *this)
+  } if ( (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) return 0;
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -97,7 +97,7 @@ int LoadGame::LoadTriggerEvents()
       ( this, _65FB80, 64, 0)
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        bool LoadGame::LoadTriggerEvents(LoadGame *this)
+        // glued-defhead: bool LoadGame::LoadTriggerEvents(LoadGame *this)
     }
     return 0; /*0x660929*/
   }
@@ -1146,10 +1146,10 @@ int LoadGame::LoadMagicAndAudio()
   if ( g_abs_B1D4CC ) /*0x753418*/
     Audio::Release(g_abs_B1D4CC); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  int LoadGame::LoadMagicAndAudio(LoadGame *this)
+  result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0);
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    int LoadGame::LoadMagicAndAudio(LoadGame *this)
+    result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0);
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/

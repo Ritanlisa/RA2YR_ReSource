@@ -175,6 +175,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v5; // eax
   char *v6; // eax
@@ -218,7 +219,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   v6 = (char *)Coord::To_Cell(&g_abs_87F7E8, aP1); /*0x4d0ccd*/
   v7 = (unsigned int)(aP1->field_4);
   v8 = (unsigned int)(aP1->field_8);
-  this[0] = aP1->field_0; /*0x4d0cda*/
+  this[0] = (unsigned int)(aP1->field_0);
   this[1] = v7; /*0x4d0cde*/
   v24 = v8; /*0x4d0ce2*/
   v9 = *(unsigned int *)&g_abs_89F690 * v6[283]; /*0x4d0ced*/
@@ -261,13 +262,13 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     goto LABEL_15; /*0x4d0e1a*/
   if ( *(unsigned int *)&g_abs_89F690 ) /*0x4d0e22*/
   {
-    v16 = (int)((gamemd::AbstractClass *)(*(unsigned int *)&g_abs_89F690));
+    v16 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(*(unsigned int *)&g_abs_89F690)));
     if ( *(int *)&g_abs_89F690 < 0 ) /*0x4d0e2f*/
       return (FoggedObjectClass *)this; /*0x4d0e2f*/
   }
   else
   {
-    v16 = 10; /*0x4d0e24*/
+    v16 = (gamemd::AbstractClass *)(10);
   }
   v17 = (AbstractClass *)RA2_OPNEW(8 * (v16 + *(unsigned int *)&g_abs_89F690)); /*0x4d0e44*/
   if ( v17 ) /*0x4d0e4b*/
@@ -414,7 +415,7 @@ LABEL_11:
     ++*(unsigned int *)&stru_89E138.__pad_579C[66544]; /*0x4d10ce*/
   }
   aP1->IsFogged = (unsigned char *)(1);
-  ProductionFrame = BuildingClass::GetProductionFrame((int *)aP1->__pad_0); /*0x4d10dc*/
+  ProductionFrame = (unsigned char *)(BuildingClass::GetProductionFrame((int *)aP1->__pad_0));
   Type = aP1->Type; /*0x4d10e1*/
   aP2a = (FoggedObjectClass *)ProductionFrame; /*0x4d10e7*/
   if ( Type[5823] && ((LaserFenceFrame = aP1->LaserFenceFrame, LaserFenceFrame == 12) || LaserFenceFrame == 8) /*0x4d1112*/
@@ -933,7 +934,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   }
   else
   {
-    char FoggedObjectClass::ResizeArray( _DynamicVectorClass_UDrawRecord_FoggedObjectClass *this, int a2, char *a3)
+    (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v15 = *((unsigned int *)this + 2); /*0x4d2cae*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4d2cb6*/
@@ -1230,7 +1231,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char FoggedObjectClass_42::Release(_VectorClass_PAVFootClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVFootClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x4e0668*/
   }
 
@@ -1330,7 +1331,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char FoggedObjectClass_42::SetCapacity(FoggedObjectClass *this, int a2, unsigned int *a3)
+    (*(void (**)(FoggedObjectClass *))(this->vtable0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x4e0791*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e0799*/

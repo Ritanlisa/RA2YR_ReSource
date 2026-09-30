@@ -257,7 +257,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
   IUnknown *v13; // ecx
   IUnknown *v14; // eax
   int v15; // ecx
-  int v16; // eax
+  int * v16;
   int * v17;
   unsigned int *v18; // ebp
   int v19; // ecx
@@ -316,7 +316,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
              0) )
       {
         v16 = (int *)(*((unsigned int *)this + 13));
-        v17 = *((unsigned int *)this + 10); /*0x471e22*/
+        v17 = (int *)(*((unsigned int *)this + 10));
         *((unsigned int *)this + 13) = v16 + 1; /*0x471e28*/
         *(unsigned int *)(v17 + 4 * v16) = v12; /*0x471e2b*/
       }
@@ -1175,7 +1175,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char CaptureManagerClass::SetCapacity(_VectorClass_PAUControlNode *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAUControlNode *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x472c28*/
   }
 
@@ -1275,7 +1275,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char CaptureManagerClass::Release(_DynamicVectorClass_PAUControlNode *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAUControlNode *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x472d51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x472d59*/

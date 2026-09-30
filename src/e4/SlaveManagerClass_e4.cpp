@@ -24,7 +24,7 @@ void SlaveManagerClass::Check()
   int result; // eax
 
   if ( *((unsigned int *)this + 43) != 10 ) /*0x522d07*/
-    int SlaveManagerClass::Check(SlaveManagerClass *this)
+    // eax if ( *((unsigned int *)this + 43) != 10 ) return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 10, 0);;
   return result; /*0x522d15*/
 
 }
@@ -1134,7 +1134,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char SlaveManagerClass_25::Release( _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x6b1681*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b1689*/

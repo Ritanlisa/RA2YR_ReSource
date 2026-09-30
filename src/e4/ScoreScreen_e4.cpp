@@ -223,7 +223,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
 {
   int *v8; // esi
   int v9; // ebp
-  int v10;
+  void * v10;
   int v11; // ebx
   int v12; // ebp
   int *Viewport; // eax
@@ -246,7 +246,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   int v31[2]; // [esp+2Ch] [ebp-B4h] BYREF
   unsigned int v32[2]; // [esp+34h] [ebp-ACh] BYREF
   int v33; // [esp+3Ch] [ebp-A4h] BYREF
-  int v34; // [esp+40h] [ebp-A0h]
+  void * v34;
   int v35; // [esp+44h] [ebp-9Ch]
   int v36; // [esp+48h] [ebp-98h]
   int v37[2]; // [esp+4Ch] [ebp-94h] BYREF
@@ -317,13 +317,13 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v18 = (void *)((int)((void *)(*v8)));
       v31[0] = (int)((void *)(v17));
       v19 = (void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
-      v20 = (int)((void *)(*v8));
-      v34 = (void *)(v19);
-      v33 = v31[0]; /*0x77840e*/
+      v20 = (void *)((int)((void *)(*v8)));
+      v34 = (int)((void *)(v19));
+      v33 = (void *)(v31[0]);
       v32[0] = v11; /*0x778414*/
       v21 = *(unsigned int *)(a2); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
-      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))(v20 + 120))(v8, &v38, 0, 1); /*0x778421*/
+      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))(v8, &v38, 0, 1); /*0x778421*/
       v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
       v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))(a2, &retaddr, v32, v8, v23); /*0x778447*/
       (*(void (**)(int *, int))((unsigned int)(v21)+ 12))(a2, v24); /*0x77844d*/

@@ -128,7 +128,7 @@ int BombClass::InitPool()
 
   unk_89C66C = (unsigned char *)(0);
   dword_89C670 = (unsigned char *)(0);
-  unk_89C674 = 1; /*0x438561*/
+  unk_89C674 = (unsigned char *)(1);
   unk_89C675 = 0; /*0x438568*/
   dword_89C668 = (int)&vt_DynamicVectorClass_BombClass; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/

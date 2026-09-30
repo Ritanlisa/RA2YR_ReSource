@@ -281,7 +281,7 @@ namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
 
-  unsigned int * v0;
+  unsigned int v0;
   int v1; // esi
   int v2; // ecx
   int v3; // edx

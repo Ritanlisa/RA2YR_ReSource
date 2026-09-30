@@ -358,7 +358,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   char **v21; // edi
   char **v22; // edi
   BuildingTypeClass *v23; // edi
-  unsigned int v24;
+  BuildingTypeClass * v24;
   char v25; // cl
   char v26; // al
   double v27; // st7
@@ -536,11 +536,11 @@ LABEL_25:
          &v40,
          128) )
   {
-    v24 = (gamemd::BuildingTypeClass *)(BuildingTypeClass::FindOrCreate(v40.__pad_0));
+    v24 = (unsigned int)((gamemd::BuildingTypeClass *)(BuildingTypeClass::FindOrCreate(v40.__pad_0)));
   }
   else
   {
-    v24 = v23; /*0x6ced26*/
+    v24 = (unsigned int)(v23);
   }
   v25 = *((unsigned char *)this + 229); /*0x6ced28*/
   *((unsigned int *)this + 50) = v24; /*0x6ced2e*/

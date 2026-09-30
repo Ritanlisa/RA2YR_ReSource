@@ -81,7 +81,7 @@ LABEL_6:
       if ( *((unsigned char *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
-        int BlowStraw_29::Seek(TabClass *this, int *a2, unsigned int *a3)
+        (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CCB0);
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
@@ -105,7 +105,7 @@ LABEL_6:
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 404), 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
-          int BlowStraw_29::Seek(TabClass *this, int *a2, unsigned int *a3)
+          (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40);;
           HashTable::Remove(*(int **)&g_abs_87F8E4, 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/

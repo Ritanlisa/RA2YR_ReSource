@@ -1249,7 +1249,7 @@ LABEL_39:
                 {
                   while ( 1 ) /*0x67fb3b*/
                   {
-                    int Game::SerializeGameSaveState(Game *this)
+                    result = (*(int (__stdcall **)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, &v14, 4, 0);
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
                     if ( g_abs_8B40D8 < g_abs_8B40D0 /*0x67fb7d*/
@@ -1274,7 +1274,7 @@ LABEL_39:
           {
             while ( 1 ) /*0x67fa57*/
             {
-              int Game::SerializeGameSaveState(Game *this)
+              result = (*(int (__stdcall **)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, &v14, 4, 0);
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
               if ( (int)g_abs_A8ECC8 < g_abs_A8ECC0 /*0x67fa99*/

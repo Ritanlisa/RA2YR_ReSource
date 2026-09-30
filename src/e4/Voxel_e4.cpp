@@ -2392,7 +2392,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *((unsigned int *)this + 45) = v9; /*0x761b27*/
   *((unsigned int *)this + 46) = v59; /*0x761b2d*/
   *((unsigned int *)this + 47) = v60; /*0x761b34*/
-  int Voxel::SectionProject(Voxel *this, int *a2, int a3)
+  (*(void (**)(Voxel *, char *))(*(unsigned int *)this->__pad_0 + 436))(this, &this->__pad_A0[20]);;
   v12 = v61; /*0x761b41*/
   v13 = v62; /*0x761b45*/
   *((unsigned int *)this + 82) = 6; /*0x761b55*/
@@ -2701,7 +2701,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   *((unsigned int *)this + 45) = a1; /*0x7625bb*/
   *((unsigned int *)this + 46) = v57; /*0x7625c1*/
   *((unsigned int *)this + 47) = v58; /*0x7625c8*/
-  int Voxel::LightRender(Voxel *this, int *a2, int a3)
+  (*(void (**)(Voxel *, char *))(*(unsigned int *)this->__pad_0 + 436))(this, &this->__pad_A0[20]);;
   v10 = var94; /*0x7625d5*/
   v11 = v59; /*0x7625d9*/
   *((unsigned int *)this + 82) = 4; /*0x7625e3*/
@@ -3034,7 +3034,7 @@ LABEL_22:
       v57 = *(double *)((char *)this + 320) + 0.050000001; /*0x7630ca*/
       *(double *)((char *)this + 320) = v57; /*0x7630d6*/
       if ( !v59 ) /*0x7630e1*/
-        void Voxel::TransformMatrix(int this)
+        // glued-defhead: void Voxel::TransformMatrix(int this)
       v60 = Math::RoundToInt(v57); /*0x76311c*/
       v61 = Math::RoundToInt(v57); /*0x76312a*/
       v62 = *((unsigned int *)this + 83); /*0x76312f*/
@@ -3082,7 +3082,7 @@ LABEL_22:
   v33 = *(double *)((char *)this + 320) + 0.050000001; /*0x762e8e*/
   *(double *)((char *)this + 320) = v33; /*0x762e9a*/
   if ( !v35 ) /*0x762ea5*/
-    void Voxel::TransformMatrix(int this)
+    // glued-defhead: void Voxel::TransformMatrix(int this)
   v37 = Math::RoundToInt(v33); /*0x762ee0*/
   v38 = Math::RoundToInt(v33); /*0x762eee*/
   v39 = *((unsigned int *)this + 83); /*0x762ef3*/

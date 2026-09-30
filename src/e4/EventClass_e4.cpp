@@ -1045,7 +1045,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   int result; // eax
   int *v5; // edx
 
-  int EventClass::deserializeEvent(EventClass *this, int a2, unsigned int *a3)
+  // edx result = (*(int (**)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2);
   if ( result != -1 && result < *((unsigned int *)this + 17) ) /*0x542297*/
   {
     v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/
@@ -1264,7 +1264,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   }
   else
   {
-    char EventClass::processEvent(_VectorClass_PAVBombClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x40b7e8*/
   }
 
@@ -1310,7 +1310,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   }
   else
   {
-    char EventClass::validateEvent(_DynamicVectorClass_PAVBombClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x40b911*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40b919*/
@@ -1364,7 +1364,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   }
   else
   {
-    char EventClass::dispatchEvent(_VectorClass_PAVTechnoClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x40ba48*/
   }
 
@@ -1410,7 +1410,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3)
   }
   else
   {
-    char EventClass::checkCondition(_DynamicVectorClass_PAVTechnoClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x40bb71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40bb79*/
@@ -1560,7 +1560,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   }
   else
   {
-    char EventClass::clearEvents(_DynamicVectorClass_PAVLightConvertClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x40c4a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40c4a9*/

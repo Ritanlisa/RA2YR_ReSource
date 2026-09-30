@@ -264,7 +264,7 @@ void * LinkedList_flat::MoveNode(void * a2)
   if ( a2 != this ) /*0x55660a*/
   {
     void *LinkedList::MoveNode(LinkedList *this, void *a2)
-    void *LinkedList::MoveNode(LinkedList *this, void *a2)
+    (*(void (**)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))(this, a2);;
   }
   return this; /*0x55661b*/
 
@@ -298,9 +298,9 @@ namespace gamemd {
 LinkClass * * LinkedList_flat::InsertAfter(int a2)
 {
 
-  int v3; // eax
+  LinkClass * v3;
 
-  int LinkedList::InsertAfter(LinkClass *this, int a2)
+  v3 = (int)(*(LinkClass **)(a2 + 4));
   v3 = *(unsigned int *)(a2 + 4); /*0x5566ac*/
   *(unsigned int *)(a2 + 4) = this; /*0x5566af*/
   *((unsigned int *)this + 2) = a2; /*0x5566b4*/
@@ -316,9 +316,9 @@ namespace gamemd {
 unsigned int * LinkedList_flat::Attach(int a2)
 {
 
-  int v3; // eax
+  LinkClass * v3;
 
-  unsigned int *LinkedList::Attach(LinkClass *this, int a2)
+  v3 = (int)((LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 24))(a2));
   v3 = (*(int (**)(int))(*(unsigned int *)a2 + 24))(a2); /*0x5566de*/
   *(unsigned int *)(v3 + 8) = this; /*0x5566e1*/
   *((unsigned int *)this + 1) = v3; /*0x5566e4*/
@@ -332,11 +332,11 @@ namespace gamemd {
 LinkClass * * LinkedList_flat::Append(int a2)
 {
 
-  int v3; // eax
+  LinkClass * v3;
   int v4; // eax
 
-  int LinkedList::Append(LinkClass *this, int a2)
-  v3 = (*(int (**)(int))(*(unsigned int *)a2 + 28))(a2); /*0x55670e*/
+  v3 = (int)((LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 28))(a2));
+  v3 = (unsigned int)((*(int (**)(int))(*(unsigned int *)a2 + 28))(a2));
   *(unsigned int *)(v3 + 4) = this; /*0x556711*/
   *((unsigned int *)this + 2) = v3; /*0x556714*/
   v4 = *this; /*0x556717*/
@@ -355,8 +355,8 @@ int LinkedList_flat::RemoveNode()
   int v4; // edx
   int v5; // edx
 
-  int LinkedList::RemoveNode(LinkClass *this)
-  int LinkedList::RemoveNode(LinkClass *this)
+  v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this);;
+  v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this);;
   v4 = *((unsigned int *)this + 2); /*0x556743*/
   if ( v4 ) /*0x55674a*/
     *(unsigned int *)(v4 + 4) = *((unsigned int *)this + 1); /*0x55674f*/

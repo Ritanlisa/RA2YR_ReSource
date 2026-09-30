@@ -130,7 +130,7 @@ int WinsockInterface::Init()
     v11 = v3; /*0x7b1e61*/
     *((unsigned int *)this + 64539) = -1; /*0x7b1e65*/
     (*(void (**)(unsigned int *))(v4 + 20))(this); /*0x7b1e6f*/
-    int WinsockInterface::Init(WinsockInterface *this)
+    (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this);;
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(257, v5) ) /*0x7b1e8c*/
     {

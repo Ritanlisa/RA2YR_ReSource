@@ -1115,7 +1115,7 @@ int AnimTypeClass::GetDamage()
       v10[0] = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor(v10); /*0x428d87*/
     }
-    int AnimTypeClass::GetDamage(AnimTypeClass *this)
+    (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId);;
     v6 = *((unsigned int *)this + 41); /*0x428da2*/
     v7[0] = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/

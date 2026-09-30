@@ -342,14 +342,14 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
   int v16; // esi
   int v17; // esi
   int v18; // eax
-  int v19; // [esp+10h] [ebp-10h]
+  void * v19;
   int16_t v20; // [esp+14h] [ebp-Ch] BYREF
   int16_t v21; // [esp+16h] [ebp-Ah]
   int v22; // [esp+18h] [ebp-8h]
 
   v2 = (unsigned int *)((int)(a2));
   v4 = (int)(*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, a2) + 9));
-  v5 = *(this + 18); /*0x4848cb*/
+  v5 = (int)(*(this + 18));
   v6 = *(this + 19); /*0x4848cf*/
   v22 = v4; /*0x4848d3*/
   v7 = v6 - IDA_SHIWORD(v4); /*0x4848de*/
@@ -394,7 +394,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
     }
     else
     {
-      result = (int)((void *)(v19));
+      result = (void *)((int)((void *)(v19)));
       if ( v14 == v15 ) /*0x484a38*/
         return v19 + 1; /*0x484a62*/
     }
@@ -5012,7 +5012,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char JumpjetLocomotionClass_26::Release(_VectorClass_PAUKamikazeControl *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x54e9d8*/
   }
 
@@ -5112,7 +5112,7 @@ char JumpjetLocomotionClass_26::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char JumpjetLocomotionClass_26::SetCapacity( _DynamicVectorClass_PAUKamikazeControl *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x54eb01*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x54eb09*/

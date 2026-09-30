@@ -14,7 +14,7 @@ int PlayerClass::SetHouse(int a2)
 
   char result; // al
 
-  char PlayerClass::SetHouse(MultiplayerTeam *this, int a2)
+  // al result = (*(int (**)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2);
   if ( result ) /*0x5d8cc0*/
   {
     *(unsigned int *)(*(unsigned int *)(g_abs_A8DA78 + 4 * a2) + 107) = *((unsigned int *)this + 2); /*0x5d8cd5*/

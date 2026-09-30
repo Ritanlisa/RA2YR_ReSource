@@ -79,7 +79,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_42::AllocCopyData_8B(_DynamicVectorClass_VPoint2D *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_VPoint2D *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v10 = *((unsigned int *)this + 2); /*0x5d0a77*/
   if ( v10 < *((unsigned int *)this + 4) ) /*0x5d0a7f*/
@@ -383,7 +383,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_42::AllocCopyData_4B(_DynamicVectorClass_PAVMSTextEntry *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVMSTextEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5d0cf1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d0cf9*/
@@ -454,7 +454,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_42::AllocCopyData_4B_0(_DynamicVectorClass_PAVMapSelection *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVMapSelection *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5d0f51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d0f59*/
@@ -562,7 +562,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_26::AllocCopyData_4B(_VectorClass_PAVMapStage *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVMapStage *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x5d1088*/
   }
 
@@ -662,7 +662,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_26::Release(_DynamicVectorClass_PAVMapStage *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVMapStage *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5d11b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d11b9*/
@@ -770,7 +770,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_42::Release(_VectorClass_PAVMSAnimEntry *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVMSAnimEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x5d12e8*/
   }
 
@@ -870,7 +870,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_26::AllocCopyData_4B_0(_DynamicVectorClass_PAVMSAnimEntry *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVMSAnimEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5d1411*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d1419*/
@@ -942,7 +942,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
   }
   else
   {
-    char MSPCXAnim_26::AllocCopyData_4B_1(_DynamicVectorClass_PAVMSSfxEntry *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5d1671*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d1679*/

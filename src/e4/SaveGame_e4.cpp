@@ -113,7 +113,7 @@ int SaveGame::SaveTriggerEvents()
               0) >= 0 )
     {
       if ( ++v4 >= v5 ) /*0x660820*/
-        bool SaveGame::SaveTriggerEvents(SaveGame *this)
+        if ( (*(int (__stdcall **)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &LoadGame_field_0x10, 4, 0) < 0 ) return 0;;
     }
     return 0; /*0x660817*/
   }
@@ -964,7 +964,7 @@ int SaveGame::LoadMainGameState()
   int v7; // edx
   int v8; // edi
   int v9; // eax
-  unsigned int v10;
+  wchar_t * v10;
 
   ( this, &(unsigned int *)((char *)&stru_A8EB00 + 404), 4, 0)
   if ( result >= 0 )
@@ -976,7 +976,7 @@ int SaveGame::LoadMainGameState()
       if ( result >= 0 )
       {
         v3 = (wchar_t *)(*this);
-        v10 = g_abs_A8ECC8; /*0x67f83b*/
+        v10 = (unsigned int)(g_abs_A8ECC8);
         result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v3 + 16))(this, &v10, 4, 0); /*0x67f83f*/
         if ( result >= 0 )
         {
@@ -997,7 +997,7 @@ LABEL_8:
                 if ( (int)v10 <= 0 )
                 {
 LABEL_13: v7 = (int)(*this);
-                  v10 = (wchar_t *)dword_8B41B8; /*0x67f8fc*/
+                  v10 = (unsigned int)((wchar_t *)dword_8B41B8);
                   result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v7 + 16))(this, &v10, 4, 0); /*0x67f900*/
                   if ( result >= 0 )
                   {
@@ -1132,10 +1132,10 @@ int SaveGame::LoadVeinholeData()
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
   v2 = (int)(*this);
-  v13 = g_abs_B1D2A0; /*0x74ed7a*/
+  v13 = (int)(g_abs_B1D2A0);
   if ( (*(int (**)(int *, int *, int, unsigned int))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
-  v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
+  v4 = this->Object::ComputeAllocationSize(); /*0x74ed9a*/
   v5 = *this; /*0x74ed9c*/
   v15 = v4; /*0x74eda3*/
   if ( (*(int (**)(int *, void *, int, unsigned int))(v5 + 16))(this, g_abs_B1D2F0, v4, 0) < 0 ) /*0x74edac*/
@@ -1224,7 +1224,7 @@ int SaveGame::SaveAudioQueueItems()
         if ( SampleName )
         {
           v4 = 0; /*0x751683*/
-          if ( g_abs_B1D388 <= 0 )
+          if ( g_abs_B1D388 <= (unsigned char [1])(0) )
           {
 LABEL_11:
             v4 = -1; /*0x7516bc*/

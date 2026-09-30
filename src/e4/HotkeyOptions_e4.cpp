@@ -68,7 +68,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int v43; // eax
   int m; // esi
   char *v45; // eax
-  ObjectClass ** v46;
+  int v46;
   int v47; // eax
   int v48; // eax
   int16_t v49; // ax
@@ -146,7 +146,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   }
   if ( a2 == 1126 ) /*0x5fb372*/
   {
-    v46 = (int)((gamemd::ObjectClass **)(((int (*)(int, int))GetDlgItem)(hWnd, 1224)));
+    v46 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(((int (*)(int, int))GetDlgItem)(hWnd, 1224))));
     v47 = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v46, 392, 0, 0); /*0x5fbad6*/
     if ( v47 == -1 ) /*0x5fbadb*/
       return 1; /*0x5fbadb*/

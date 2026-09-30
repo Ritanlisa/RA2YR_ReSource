@@ -27,7 +27,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x766c13*/
   if ( !a2 ) /*0x766c1d*/
   {
-    char Conflict_WorldDominationTour_12::Release( _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x766d23*/
   }
   *((unsigned char *)this + 12) = 0; /*0x766c27*/

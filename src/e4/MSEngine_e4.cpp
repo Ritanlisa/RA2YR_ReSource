@@ -22,6 +22,9 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
@@ -114,7 +117,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    char MSEngine::Release(_VectorClass_V_TRect_H *this, int a2, char *a3)
+    (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x5ace0b*/
   }
 
@@ -124,6 +127,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
@@ -195,7 +199,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   else
   {
-    char MSEngine::SetCapacity(_DynamicVectorClass_V_TRect_H *this, int a2, char *a3)
+    (*(void (**)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v12 = *((unsigned int *)this + 2); /*0x5acf9a*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x5acfa2*/

@@ -143,7 +143,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  unsigned int v10;
+  HouseClass * v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax

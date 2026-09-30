@@ -31,6 +31,8 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/E4Recv_6E0290_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6D1130
 namespace gamemd {

@@ -41,7 +41,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   int v20; // ebx
   int v21; // eax
   int v22; // edx
-  int v23; // ebx
+  char * v23;
   char * v24;
   char * v25;
   RadarClass *v26; // ecx
@@ -194,20 +194,20 @@ LABEL_41:
     (*(void (**)(RadarClass *, int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, v17); /*0x65604d*/
   }
 LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
-  v23 = (char *)(*((unsigned int *)this + 1320));
+  v23 = (int)((char *)(*((unsigned int *)this + 1320)));
   v24 = (char *)this + 4620; /*0x6560a0*/
   v25 = v22 + aP1->field_0; /*0x6560a6*/
   v26 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x6560a8*/
   if ( *(int *)(v24 + 8) <= 0 || *(int *)(v24 + 12) <= 0 ) /*0x6560be*/
   {
-    v27 = v22 + aP1->field_0; /*0x656125*/
+    v27 = (char *)(v22 + aP1->field_0);
     v29 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x656127*/
     result = (IUnknown *)1; /*0x656129*/
     v33 = 1; /*0x65612b*/
   }
   else
   {
-    v27 = *(unsigned int *)v24; /*0x6560c2*/
+    v27 = (char *)(*(unsigned int *)v24);
     v28 = *(unsigned int *)v24 <= (unsigned int)(v25); /*0x6560c5*/
     v29 = *(RadarClass **)(v24 + 4); /*0x6560c7*/
     v30 = *(IUnknown **)(v24 + 8); /*0x6560ca*/
@@ -215,7 +215,7 @@ LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
     v39 = *(IUnknown **)(v24 + 12); /*0x6560d4*/
     if ( !v28 ) /*0x6560d8*/
     {
-      v30 = (int)((IUnknown *)((char *)v30 + v27 - v25));
+      v30 = (int)((IUnknown *)((char *)(unsigned int)(v30)+ v27 - v25));
       v27 = v25; /*0x6560de*/
       GroundHeight = v30; /*0x6560e0*/
     }
@@ -225,7 +225,7 @@ LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
       v29 = v26; /*0x6560f0*/
       v39 = v31; /*0x6560f2*/
     }
-    if ( (int)v30 + v27 < (int)(v25) + 1 ) /*0x6560fd*/
+    if ( (int)v30 + v27 < (char *)((int))(v25) + 1 ) /*0x6560fd*/
       GroundHeight = (IUnknown *)(v25 - v27 + 2); /*0x656104*/
     v32 = v39; /*0x656108*/
     if ( (int)v29 + (int)v39 < (int)&v26->field_0 + 1 ) /*0x656114*/

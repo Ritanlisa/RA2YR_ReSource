@@ -88,7 +88,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     dword_81C9F0 = (uint64_t)(0);
     dword_81C9F4 = (uint64_t)(-1074790400);
     dword_81C9F8 = (uint64_t)(0);
-    dword_81C9FC = -1074790400; /*0x47b60d*/
+    dword_81C9FC = (uint64_t)(-1074790400);
     qword_81CA00 = g_abs_89E720; /*0x47b617*/
     qword_81CA08 = g_abs_89E720; /*0x47b627*/
     qword_81CA30 = g_abs_89E720; /*0x47b63c*/
@@ -148,7 +148,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     dbl_81CB20 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
     dbl_81CB40 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
     dbl_81CB48 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
-    dbl_81CB70 = *(double *)&g_abs_89E720 + *(double *)&g_abs_89E720; /*0x47b885*/
+    dbl_81CB70 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
     qword_81CB18 = g_abs_89E720; /*0x47b89b*/
     dbl_81CB98 = *(double *)&g_abs_89E720 * 0.5; /*0x47b8ab*/
     dbl_81CBA0 = *(double *)&g_abs_89E720 * 0.5; /*0x47b8b1*/

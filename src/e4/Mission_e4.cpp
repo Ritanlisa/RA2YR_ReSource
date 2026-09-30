@@ -77,34 +77,34 @@ LABEL_19:
           }
         }
 LABEL_20:
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        LABEL_20: (*(void (**)(Mission *))(*(unsigned int *)this->__pad_0 + 248))(this);;
         break; /*0x520cb3*/
       case 20: /*0x520b27*/
       case 21: /*0x520b27*/
       case 36: /*0x520b27*/
         if ( *((unsigned int *)this + 62) >= *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 36 * v2 + 4) ) /*0x520cd1*/
-          int Mission::ExecuteTechnoMissionAction(Mission *this)
+          case 20: case 21: case 36: if ( *(unsigned int *)&this-((unsigned int *)(>__pad_C))[236] >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) + 36 * v2 + 4) ) (*(void (**)(Mission *))(*(unsigned int *)this->__pad_0 + 248))(this);;
         break; /*0x520ce1*/
       case 27: /*0x520b27*/
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        case 27: (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0);
         if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3785) ) /*0x520b44*/
           *((unsigned char *)this + 676) = 1; /*0x520b4e*/
         Mission::GetMissionDelay(this); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        case 31: (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0);
         if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3785) ) /*0x520b9f*/
           *((unsigned char *)this + 676) = 0; /*0x520bad*/
         break; /*0x520bb4*/
       case 33: /*0x520b27*/
         break;
       case 34: /*0x520b27*/
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        case 34: (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 35, 1, 0);
         break; /*0x520bc1*/
       case 38: /*0x520b27*/
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        case 34: (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 35, 1, 0);;
           goto LABEL_51; /*0x520b6e*/
-        int Mission::ExecuteTechnoMissionAction(Mission *this)
+        (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 38, 1, 0);;
         break; /*0x520b84*/
       default:
         if ( v2 != -1 ) /*0x520ce9*/
@@ -138,7 +138,7 @@ LABEL_20:
             if ( *((unsigned char *)this + 1755) ) /*0x520dc6*/
               int Mission::ExecuteTechnoMissionAction(Mission *this)
             else
-              int Mission::ExecuteTechnoMissionAction(Mission *this)
+              else (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 40, 1, 0);;
             *((unsigned char *)this + 1677) = 0; /*0x520de0*/
           }
           else
@@ -147,7 +147,7 @@ LABEL_44:
             v12 = *((unsigned int *)this + 433); /*0x520e02*/
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
-              int Mission::ExecuteTechnoMissionAction(Mission *this)
+              (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0);
             }
             else if ( *((unsigned char *)this + 1755) ) /*0x520e26*/
             {
@@ -164,7 +164,7 @@ LABEL_51:
     }
   }
   if ( *((unsigned int *)this + 433) == 33 && !*((unsigned char *)this + 141) ) /*0x520e5b*/
-    int Mission::ExecuteTechnoMissionAction(Mission *this)
+    if ( *(unsigned int *)&this-((unsigned int *)(>__pad_5B8))[268] == 33 && !this->__pad_C[129] ) (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0);;
   v13 = 0; /*0x520e81*/
   v14 = *(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 36 * *((unsigned int *)this + 433); /*0x520e8c*/
   result = *(unsigned int *)(v14 + 16); /*0x520e8f*/

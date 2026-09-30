@@ -506,7 +506,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v4 = g_abs_886FA4 + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = g_abs_886FA0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = v4; /*0x5fe5c8*/
-  void OverlayTypeClass::GetLandType(OverlayTypeClass *this, unsigned int *a2, int *a3, unsigned int a4)
+  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this);
   DrawToSurfaceSHP(g_abs_887314, g_abs_87F6B8, v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5fe606*/
 
 }
@@ -584,7 +584,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   int16_t v11; // [esp+4h] [ebp-4h]
 
-  int OverlayTypeClass::GetRadarColor(OverlayTypeClass *this, int a2, unsigned int a3)
+  // [esp+4h] [ebp-4h] v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this);
   if ( v4 || (v5 = *((char *)this + 167)) != 0 && (v4 = (char **)(*(int (**)(int))(*(unsigned int *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
   {
     v6 = *((char *)this + 165); /*0x5fed2e*/

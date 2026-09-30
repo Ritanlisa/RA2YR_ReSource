@@ -634,11 +634,11 @@ LABEL_79:
       if ( *(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 132))(*(unsigned int *)(this + 12)) + 3220) )
       {
         v70 = *(MouseClass **)(this + 12);
-        if ( !v70->__pad_1D4[1276] )
+        if ( !v70-((unsigned int *)(>__pad_1D4))[1276] )
         {
-          if ( v70->__pad_74[24]
-            || (aP3.attachedBomb = *(void **)&v70->__pad_74[40],
-                aP3.ambientSoundController[0] = *(unsigned int *)&v70->__pad_74[44],
+          if ( v70-((unsigned int *)(>__pad_74))[24]
+            || (aP3.attachedBomb = *(void **)&v70-((unsigned int *)(>__pad_74))[40],
+                aP3.ambientSoundController[0] = *(unsigned int *)&v70-((unsigned int *)(>__pad_74))[44],
                 v71 = *(TechnoClass **)&v70->__pad_74[48],
                 aP3.parachute = *(void **)&v70->__pad_74[40],
                 *(unsigned int *)&aP3.onBridge = *(unsigned int *)&v70->__pad_74[44],

@@ -113,7 +113,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   }
   else
   {
-    char MSFrameAnim::setFrameRate( _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v12 = *((unsigned int *)this + 2); /*0x76a0dc*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x76a0e4*/

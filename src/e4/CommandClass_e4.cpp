@@ -69,11 +69,11 @@ int CommandClass::BuildBar()
   do /*0x6d1224*/
   {
     (*(void (**)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    int CommandClass::BuildBar(CommandClass *this)
+    (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)this + 48))(this, v2);;
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&g_abs_B0CB20 ); /*0x6d1224*/
-  int CommandClass::BuildBar(CommandClass *this)
+  (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, &stru_B0CCB0);;
   v3 = g_abs_B0CB78[g_abs_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {

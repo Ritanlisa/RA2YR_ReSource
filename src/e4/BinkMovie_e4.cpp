@@ -1485,7 +1485,7 @@ int BinkMovie::FreeSurfaceTracker()
         result = *this; /*0x6c9b0e*/
         ++v3; /*0x6c9b10*/
       }
-      int BinkMovie::FreeSurfaceTracker(BinkMovie *this)
+      // glued-defhead: int BinkMovie::FreeSurfaceTracker(BinkMovie *this)
     }
     if ( *this ) /*0x6c9b17*/
       result = (**(int (***)(int, int))*this)(*this, 1); /*0x6c9b22*/
@@ -1591,7 +1591,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
       v3 = *this; /*0x6c9cab*/
       v5 = *((unsigned int *)this + 1); /*0x6c9cad*/
     }
-    int BinkMovie::CheckKeyframeTransition(BinkMovie *this, unsigned int a2)
+    // glued-defhead: int BinkMovie::CheckKeyframeTransition(BinkMovie *this, unsigned int a2)
   }
   v9 = (unsigned int *)*((unsigned int *)this + 2); /*0x6c9cb5*/
   if ( v9 ) /*0x6c9cba*/

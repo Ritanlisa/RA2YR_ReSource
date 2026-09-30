@@ -163,7 +163,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
   }
   else
   {
-    char CreateTeamCommand::sub_5386A0(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x538731*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x538739*/
@@ -237,7 +237,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
       if ( *((unsigned int *)this + 997 * v3 + 1378) ) /*0x6a6a3a*/
       {
         --*((unsigned int *)this + 997 * v3 + 1379); /*0x6a6a4b*/
-        char CreateTeamCommand::performAction_245(CreateTeamCommand *this, char a2, int a3)
+        (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0);;
         return 1; /*0x6a6a57*/
       }
       return 0; /*0x6a6a3f*/
@@ -255,7 +255,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     {
 LABEL_13:
       ++v4[18]; /*0x6a6ad4*/
-      char CreateTeamCommand::performAction_245(CreateTeamCommand *this, char a2, int a3)
+      (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0);;
       return 1; /*0x6a6ae6*/
     }
   }

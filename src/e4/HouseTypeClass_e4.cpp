@@ -695,7 +695,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x51337a*/
     return this; /*0x51337a*/
-  unsigned int *HouseTypeClass::readBaseDefense(HouseTypeClass *this, unsigned int *a2)
+  (*((void (**)(HouseTypeClass *))this->AbstractClass + 3))(this);;
   v3 = aP1->Capacity; /*0x513381*/
   *((unsigned int *)this + 2) = v3; /*0x513386*/
   if ( !v3 ) /*0x513389*/
@@ -1244,7 +1244,7 @@ unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512bda*/
     return this; /*0x512bda*/
-  unsigned int *HouseTypeClass::readStartInfantry(HouseTypeClass *this, unsigned int *a2)
+  (*((void (**)(HouseTypeClass *))this->AbstractClass + 3))(this);;
   v3 = *(unsigned int *)&aP1->vtable0[8]; /*0x512be1*/
   *((unsigned int *)this + 2) = v3; /*0x512be6*/
   if ( !v3 ) /*0x512be9*/
@@ -1343,7 +1343,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char HouseTypeClass_36::Release(_DynamicVectorClass_PBVUnitTypeClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PBVUnitTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5132d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5132d9*/
@@ -1450,7 +1450,7 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char HouseTypeClass_36::SetCapacity(_VectorClass_PBVAircraftTypeClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PBVAircraftTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x5134c8*/
   }
 
@@ -1564,7 +1564,7 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char HouseTypeClass_28::Release(_DynamicVectorClass_PBVAircraftTypeClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PBVAircraftTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5136a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5136a9*/

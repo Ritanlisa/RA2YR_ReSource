@@ -41,7 +41,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    char Campaign_WorldDominationTour_16::Release( _VectorClass_V_rc_ptr_VConflict_WorldDominationTour *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x765953*/
   }
   *((unsigned char *)this + 12) = 0; /*0x765857*/

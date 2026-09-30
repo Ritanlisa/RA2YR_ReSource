@@ -319,8 +319,8 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     *a1 = (int)((gamemd::ScenarioClass **)(0x10000));
     aP2->field_0 = (gamemd::ScenarioClass **)(0);
     *a3 = (int)((gamemd::ScenarioClass **)(1000));
-    *a4 = (gamemd::ScenarioClass **)(1000);
-    aP5->field_0 = 1000; /*0x484656*/
+    *a4 = (int)((gamemd::ScenarioClass **)(1000));
+    aP5->field_0 = (gamemd::ScenarioClass **)(1000);
     *a6 = 1000; /*0x484660*/
     *(unsigned int *)a8 = 1000; /*0x484666*/
     *(unsigned int *)IDA_HIDWORD(a8) = 1000; /*0x48466c*/
@@ -1139,7 +1139,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
               case 0x215: /*0x69311f*/
                 IDA_LOBYTE(v5) = (unsigned char)g_hWnd; /*0x6933ea*/
                 if ( (ObjectClass *)aP4->field_0 != g_hWnd && *((unsigned char *)this + 21850) == 1 ) /*0x6933fc*/
-                  char Tactical::HandleTacticalMouseInput(Tactical *this, int a2, unsigned int *a3, int a4, HWND a5)
+                  if ( *(HWND *)a5 != g_hWnd && *((unsigned char *)this + 21850) == 1 ) LOBYTE(v5) = (*(char (**)(Tactical *))(*(unsigned int *)this->__pad_0 + 140))(this);
                 break; /*0x693402*/
               default:
                 return v5;
@@ -1910,7 +1910,7 @@ char Tactical::SelectObject(int a2)
 
   char result; // al
 
-  int Tactical::SelectObject(GScreenClass *this, int a2)
+  // eax result = (*(int (**)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2);
   if ( result ) /*0x4f445d*/
   {
     g_abs_A8EF54 = (*(int (**)(int))(*(unsigned int *)a2 + 36))(a2); /*0x4f446a*/
@@ -2195,7 +2195,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char Tactical_42::Release(_VectorClass_PAVTActionClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVTActionClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x6e4938*/
   }
 
@@ -2295,7 +2295,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char Tactical_42::SetCapacity(Tactical *this, int a2, unsigned int *a3)
+    (*(void (**)(Tactical *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x6e4a61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6e4a69*/

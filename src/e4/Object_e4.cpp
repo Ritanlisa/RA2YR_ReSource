@@ -707,7 +707,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
   {
     result = (int)(a2);
     v4 = (int)(g_abs_AC4948);
-    v5 = a2; /*0x62ac4a*/
+    v5 = (int)(a2);
 LABEL_39:
     *v5 = v4; /*0x62af27*/
     v5[1] = g_abs_AC494C; /*0x62af31*/
@@ -731,7 +731,7 @@ LABEL_39:
           v16 = 0; /*0x62adaa*/
         if ( (v17 < 205 || v17 > 230) && v16 ) /*0x62adbc*/
         {
-          result = a2; /*0x62adbe*/
+          result = (int)(a2);
           v4 = g_abs_AC4948; /*0x62adc2*/
           v5 = a2; /*0x62adc8*/
           goto LABEL_39; /*0x62adca*/

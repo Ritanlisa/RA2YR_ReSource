@@ -677,7 +677,7 @@ Coord * * TechnoClass::RegisterKill()
   int v28; // [esp+14h] [ebp+4h]
 
   v27 = 0; /*0x702d46*/
-  int TechnoClass::RegisterKill(TechnoClass *this)
+  v3 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v2 + 132))(v2, this->owner);
   v3 = (*(int (**)(int, unsigned int))(*(unsigned int *)v2 + 132))(v2, *((unsigned int *)this + 135)); /*0x702d6b*/
   if ( *((unsigned char *)this + 144) ) /*0x702d6d*/
   {
@@ -770,7 +770,7 @@ Coord * * TechnoClass::RegisterKill()
       *(unsigned int *)(*((unsigned int *)this + 135) + 21644) = (*(int (**)(int))(*(unsigned int *)v28 + 56))(v28); /*0x703003*/
       *(unsigned int *)(*(unsigned int *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
-    int TechnoClass::RegisterKill(TechnoClass *this)
+    } result = (*((int (**)(TechnoClass *))this->RadioClass + 11))(this) - 1;
     switch ( result ) /*0x70302e*/
     {
       case 0: /*0x70302e*/
@@ -796,7 +796,7 @@ LABEL_55:
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
-          int TechnoClass::RegisterKill(TechnoClass *this)
+          // glued-defhead: int TechnoClass::RegisterKill(TechnoClass *this)
             HouseClass::IncrementStat( /*0x703198*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 13144),
               *(unsigned int *)(*((unsigned int *)this + 433) + 3576));
@@ -819,7 +819,7 @@ LABEL_67:
           result = RadarClass::SetFlag(&g_abs_87F7E8, 0); /*0x7031ec*/
         break; /*0x7031f3*/
       case 5: /*0x70302e*/
-        int TechnoClass::RegisterKill(TechnoClass *this)
+        case 5: result = (*((int (**)(TechnoClass *))this->RadioClass + 33))(this);
         if ( !*(unsigned char *)(result + 562) ) /*0x70303f*/
         {
           if ( *((unsigned int *)this + 335) != -1 ) /*0x703054*/
@@ -2004,7 +2004,7 @@ char TechnoClass::ScanAdjacentCells()
   int v15; // [esp+1Ch] [ebp-8h] BYREF
   int v16; // [esp+20h] [ebp-4h] BYREF
 
-  char TechnoClass::ScanAdjacentCells(TechnoClass *this)
+  // [esp+20h] [ebp-4h] BYREF *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, int16_t *))this->RadioClass + 110))(this, v16);;
   v2 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v12); /*0x703ced*/
   if ( !v2 || *((unsigned char *)this + 140) ) /*0x703cf7*/
     return 0; /*0x703cf7*/

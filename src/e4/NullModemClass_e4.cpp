@@ -213,8 +213,8 @@ int NullModemClass::sendData()
     this->Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)((char *)this + 92), &EvtMask); /*0x774728*/
-  char NullModemClass::sendData(NullModemClass *this)
-  char NullModemClass::sendData(NullModemClass *this)
+  (*(void (**)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this);
+  (*(void (**)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this);
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/

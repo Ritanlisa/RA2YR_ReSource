@@ -230,7 +230,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  int Math::DistSq2D(Math *this, unsigned int *a2)
+  // [esp+Ch] [ebp-4h] v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6);;
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/

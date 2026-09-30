@@ -517,13 +517,13 @@ LABEL_21:
       Movie::PlayWrapper((int)Bool, (int)v3, v8, 1, 1, 1); /*0x683cbd*/
     }
   }
-  v22[0] = &vt_CCFileClass; /*0x683cc9*/
+  v22[0] = (unsigned int)(&vt_CCFileClass);
   v24 = 0; /*0x683cd1*/
   Vector::Clear((int)v23); /*0x683cd8*/
   v22[0] = &off_7E1668; /*0x683ce1*/
   BufferIOFileClass::Dtor(v22); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass(v16); /*0x683cf2*/
-  Debug::Log(); /*0x683cfd*/
+  this->Debug::Log(); /*0x683cfd*/
   v10 = StringList::Find(&g_BuildingTypeClass_Count, aLoading); /*0x683d0f*/
   ThemeClass::Play(&g_BuildingTypeClass_Count, v10); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v3) ) /*0x683d21*/

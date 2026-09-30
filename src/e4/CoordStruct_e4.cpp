@@ -18,7 +18,7 @@ unsigned int * CoordStruct::Set2(void* aP1,  AbstractClass * aP2)
   v4 = (unsigned int *)(IDA_SLOWORD(aP1->field_0) << 8);
   *((unsigned int *)this + 1) = (IDA_SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
   *((unsigned int *)this + 2) = aP2; /*0x642766*/
-  *(_DWORD *)this = v4 + 128; /*0x642769*/
+  *(unsigned int *)this = v4 + 128; /*0x642769*/
   return this; /*0x64276b*/
 
 }

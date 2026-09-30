@@ -1291,10 +1291,10 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   if ( (a2 & 4) != 0 ) /*0x557b1e*/
   {
     if ( a4 == (unsigned int *)this + 22 ) /*0x557b25*/
-      char CheckListClass::vt_19(ListClass *this, char a2, int a3, unsigned int *a4)
+      if ( a4 == (unsigned int *)((char *)this + 88) ) (*(void (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 196))(this, 1);;
     result = (unsigned char)this - 72; /*0x557b31*/
     if ( a4 == (unsigned int *)this + 46 ) /*0x557b39*/
-      char CheckListClass::vt_19(ListClass *this, char a2, int a3, unsigned int *a4)
+      if ( a4 == (unsigned int *)((char *)this + 184) ) result = (*(int (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 196))(this, 0);
   }
   if ( a4 == (unsigned int *)this + 70 ) /*0x557b4f*/
   {

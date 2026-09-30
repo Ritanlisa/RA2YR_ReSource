@@ -463,7 +463,7 @@ Coord * * WOL_ProcessPingRequests()
         if ( (int)stru_B76AC4.? > 0 ) /*0x7a10da*/
           String::Reassign(&v13, (const char **)stru_B76AC4.?); /*0x7a10e7*/
         ((String *)(&v13))->GetOrEmpty(); /*0x7a10f0*/
-        this->Debug::Log(); /*0x7a10fb*/
+        ((Debug *)0)->Log(); /*0x7a10fb*/
         v3 = ((String *)(&v13))->GetOrEmpty(); /*0x7a1107*/
         String::Assign((String *)&((unsigned int *)(v13.m_3))[1], v3); /*0x7a1111*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1116*/
@@ -481,7 +481,7 @@ Coord * * WOL_ProcessPingRequests()
           {
             if ( v7 >= 0 && v6 < owningHouseIndex ) /*0x7a112b*/
               v5 = (char *)g_WOL_UserList.nextObject + v7; /*0x7a1132*/
-            v8 = String::GetOrEmpty_Alt((String *)&v13.q4); /*0x7a113d*/
+            v8 = ((String *)((String *)&v13.q4))->GetOrEmpty_Alt(); /*0x7a113d*/
             if ( !_strcmpi(v8, v5 + 36) ) /*0x7a1143*/
               break; /*0x7a1143*/
             owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a114f*/

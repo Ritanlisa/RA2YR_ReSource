@@ -291,7 +291,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_19:
-          char DisplayClass::UpdateCellPassability(DisplayClass *this, int16_t *a2, int a3)
+          LABEL_20: (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, a3);;
           goto LABEL_30; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->__pad_11C[4] ) /*0x4a9aeb*/
@@ -337,7 +337,7 @@ LABEL_30:
         if ( v22 != -2 && (v14->field_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_34:
-          char DisplayClass::UpdateCellPassability(DisplayClass *this, int16_t *a2, int a3)
+          LABEL_36: (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, a3);;
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->__pad_11C[5] ) /*0x4a9c28*/
@@ -451,7 +451,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
         if ( eax10 != -2 && (v13->field_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_12:
-          char DisplayClass::ProcessCellReveal(DisplayClass *this, int16_t *a2, int a3)
+          LABEL_13: (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 38))(this, v22, a3);;
           continue; /*0x4a9f07*/
         }
         if ( eax10 >= 0 && eax10 != v13->__pad_11C[5] ) /*0x4a9fd2*/
@@ -565,7 +565,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
         if ( eax10 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_12:
-          bool DisplayClass::RevealFogCell(DisplayClass *this, int16_t *a2, int a3)
+          LABEL_13: (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 39))(this, v22, a3);;
           continue; /*0x4aa177*/
         }
         if ( eax10 >= 0 && eax10 != v14->__pad_11C[4] ) /*0x4aa23e*/
@@ -723,7 +723,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
     if ( !*((unsigned char *)this + 13) && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
     v6 = *((unsigned int *)this + 5); /*0x5519e4*/
-    bool DisplayClass::sub_5519B0(int this, int a2, char a3)
+    if ( v6 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)this + 8))(this, v5 + v6, 0) ) return 0;
       return 0; /*0x551a04*/
   }
   v7 = *((unsigned int *)this + 4); /*0x551a0a*/

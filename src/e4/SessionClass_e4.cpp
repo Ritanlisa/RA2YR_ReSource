@@ -126,7 +126,7 @@ MixFileClass * SessionClass::Load()
   unsigned int *v4; // eax
   void *PlayerSide; // eax
   int v6; // esi
-  char * v7;
+  unsigned int v7;
 
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(g_abs_8298D0), (v2 = RA2_OPNEW(0x28u)) == 0)
@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))))))));
+            v7 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0])))))))));
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/
@@ -2693,7 +2693,7 @@ char SessionClass::addPlayer(int a2, unsigned int * a3)
   }
   else
   {
-    char SessionClass::addPlayer(_VectorClass_W4DiskID *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_W4DiskID *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x69c7f8*/
   }
 
@@ -2781,7 +2781,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char SessionClass::Release(_TypeList_W4DiskID *this, int a2, unsigned int *a3)
+    (*(void (**)(_TypeList_W4DiskID *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x69c921*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69c929*/

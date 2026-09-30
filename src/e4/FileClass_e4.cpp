@@ -27,7 +27,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   if ( *((unsigned int *)this + 22) ) /*0x473ae3*/
   {
     v4 = (int)(*this);
-    int FileClass::Write(CCFileClass *this, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite)
+    (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))(this, 13, 0, v5);
     (*(void (**)(unsigned int *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
   return FileClass::BufferedWriter(this, aP1, nNumberOfBytesToWrite); /*0x473b0c*/
@@ -56,7 +56,7 @@ const char* FileClass::Open(int a2)
 
   if ( !*((char *)this + 6) ) /*0x65cbf4*/
     return 0; /*0x65cbff*/
-  int FileClass::Open(RawFileClass *this, int a2)
+  } result = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this);
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
@@ -112,7 +112,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   v14 = 0; /*0x65cced*/
   int FileClass::Read(RawFileClass *this, char *lpBuffer, signed int nNumberOfBytesToRead)
   {
-    int FileClass::Read(RawFileClass *this, char *lpBuffer, signed int nNumberOfBytesToRead)
+    result = (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1);
     if ( !result ) /*0x65cd05*/
       return result; /*0x65cd05*/
     v14 = 1; /*0x65cd0f*/
@@ -123,7 +123,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   }
   else
   {
-    int FileClass::Read(RawFileClass *this, char *lpBuffer, signed int nNumberOfBytesToRead)
+    v6 = (*(int (**)(RawFileClass *, unsigned int, int))(*(unsigned int *)this->FileClass + 40))(this, 0, 1);;
     v7 = aP2; /*0x65cd2d*/
     if ( (int)aP2 >= *((unsigned int *)this + 4) - v6 ) /*0x65cd35*/
       v7 = (AbstractClass *)(*((unsigned int *)this + 4) - v6); /*0x65cd37*/
@@ -158,7 +158,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   NumberOfBytesRead = v4; /*0x65cda7*/
   byte_B04BEC = 0; /*0x65cdb1*/
   if ( v14 ) /*0x65cdb9*/
-    int FileClass::Read(RawFileClass *this, char *lpBuffer, signed int nNumberOfBytesToRead)
+    if ( v14 ) (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this);;
   return NumberOfBytesRead; /*0x65cd07*/
 
 }
@@ -341,12 +341,12 @@ namespace gamemd {
 int FileClass::Close()
 {
 
-  int FileClass::Close(RawFileClass *this)
-  int FileClass::Close(RawFileClass *this)
+  if ( !(*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 2) ) return 0;
+  if ( !(*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 2) ) return 0;
     return 0; /*0x65d184*/
   if ( *((unsigned int *)this + 4) != -1 ) /*0x65d169*/
-    int FileClass::Close(RawFileClass *this)
-  int FileClass::Close(RawFileClass *this)
+    (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this);;
+  (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this);;
   return 1; /*0x65d182*/
 
 }

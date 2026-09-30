@@ -449,7 +449,7 @@ void Cell::IsShore()
   int v1; // eax
 
   v1 = *((char *)this + 14); /*0x4867b0*/
-  return v1 == (int)(unk_AA0E18) || v1 >= (int)(unk_AA0748) && v1 < unk_AA0748 + 16; /*0x4867d0*/
+  return v1 == (int)(unk_AA0E18) || v1 >= (int)(unk_AA0748) && v1 < (int)(unk_AA0748) + 16; /*0x4867d0*/
 
 }
 }
@@ -707,13 +707,13 @@ Coord * * Cell::IsValidDestination(short * a2)
         return 0; /*0x4dcf19*/
     }
   }
-  bool Cell::IsValidDestination(Cell *this, int16_t *a2)
+  v8 = (unsigned int *)(*(int (**)(Cell *, unsigned int *, unsigned int))(this->Cell_field_0x0 + 76))(this, v16, 0);;
   IDA_LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   v9 = *(unsigned int *)this; /*0x4dcf5b*/
   IDA_HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
   v14 = v17; /*0x4dcf69*/
   v10 = (*(int (**)(unsigned char *))(v9 + 188))(this); /*0x4dcf6f*/
-  bool Cell::IsValidDestination(Cell *this, int16_t *a2)
+  v11 = (*(int (**)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10);
   if ( !MapSeed::CheckTileMatch(&g_abs_87F7E8, (int16_t *)&v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj(&g_abs_87F7E8, a2); /*0x4dcfa1*/
@@ -785,12 +785,12 @@ int Cell::SetRadar(IUnknown * aP1)
   v18[2] = 1; /*0x56d499*/
   v18[6] = -1; /*0x56d4a1*/
   v5 = v4 + 4 * v2; /*0x56d4a9*/
-  v6 = g_abs_87F8E0 + g_abs_87F8DC + 1; /*0x56d4b7*/
+  v6 = (unsigned int)(g_abs_87F8E0)+ g_abs_87F8DC + 1; /*0x56d4b7*/
   v18[4] = v6; /*0x56d4bd*/
   v18[0] = -v6; /*0x56d4c3*/
-  v18[1] = -(g_abs_87F8E0 + g_abs_87F8DC); /*0x56d4ce*/
-  v18[3] = g_abs_87F8E0 + g_abs_87F8DC + 2; /*0x56d4d5*/
-  v18[5] = g_abs_87F8E0 + g_abs_87F8DC; /*0x56d4dc*/
+  v18[1] = -((unsigned int)(g_abs_87F8E0)+ g_abs_87F8DC); /*0x56d4ce*/
+  v18[3] = (unsigned int)(g_abs_87F8E0)+ g_abs_87F8DC + 2; /*0x56d4d5*/
+  v18[5] = (unsigned int)(g_abs_87F8E0)+ g_abs_87F8DC; /*0x56d4dc*/
   v7 = -1 - v6; /*0x56d4e3*/
   result = *(unsigned char *)v5; /*0x56d4e5*/
   v9 = *(unsigned char *)v5 == 7; /*0x56d4e8*/

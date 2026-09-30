@@ -599,7 +599,7 @@ LABEL_16:
     byte_B77E27 = 1; /*0x7a7df1*/
     this->Network::SyncPlayerList(); /*0x7a7df8*/
     g_NetworkLobbyState = 2; /*0x7a7e03*/
-    Debug::Log(); /*0x7a7e0f*/
+    this->Debug::Log(); /*0x7a7e0f*/
     v14 = 0; /*0x7a7e1d*/
     if ( (int)g_WOL_State > 0 ) /*0x7a7e21*/
     {

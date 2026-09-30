@@ -114,6 +114,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 
   CCINIClass *v7; // esi
@@ -149,7 +150,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
       if ( IDA_HIWORD(fromlen) ) /*0x7b140c*/
       {
 LABEL_6:
-        int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
+        LABEL_6: (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539));;
         return 0; /*0x7b1429*/
       }
       if ( *((unsigned int *)this + 12) ) /*0x7b142c*/
@@ -209,7 +210,7 @@ LABEL_6:
   }
   if ( IDA_HIWORD(fromlen) ) /*0x7b153f*/
   {
-    int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
+    (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539));;
     return 0; /*0x7b155c*/
   }
   v11 = *((unsigned int *)this + 64539); /*0x7b1577*/
@@ -220,7 +221,7 @@ LABEL_6:
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
     {
-      int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
+      (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539));;
       return 0; /*0x7b15bc*/
     }
     return 0; /*0x7b159e*/
@@ -394,13 +395,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
   AbstractClass ** v4;
   u_int v5; // eax
 
-  char IPXInterfaceClass::Receive(WinsockInterfaceClass *this)
+  // [esp+0h] [ebp-4h] v2 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, -1);
   if ( WSAAsyncSelect(*((unsigned int *)this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    v4 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 64540)));
-    if ( v4 == -1 ) /*0x7b1c05*/
+    v4 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 64540))));
+    if ( v4 == (gamemd::AbstractClass **)(-1) ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
-    char IPXInterfaceClass::Receive(WinsockInterfaceClass *this)
+    v5 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v4);
     if ( WSAAsyncSelect(*((unsigned int *)this + 64540), g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }
@@ -513,7 +514,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((unsigned int *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
   v5[2].Socket = a3; /*0x7b250e*/
-  int16_t IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
+  (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5);;
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (unsigned char)aP3 ) /*0x7b2523*/
   {
@@ -545,7 +546,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     }
     v10 = *((unsigned int *)this + 64539); /*0x7b25a9*/
   }
-  int16_t IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
+  v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v10);;
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(g_abs_87F770); /*0x7b25d4*/
 

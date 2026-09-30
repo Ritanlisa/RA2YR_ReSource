@@ -1965,7 +1965,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    char HouseClass::vt_02_(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
     return 1; /*0x4e92e8*/
   }
 
@@ -2015,7 +2015,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-    char ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x4e9ec8*/
   }
 

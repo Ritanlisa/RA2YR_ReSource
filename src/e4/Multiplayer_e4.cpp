@@ -225,7 +225,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  unsigned int *Multiplayer::CopyDataArray(Multiplayer *this, unsigned int *a2)
+  (*(void (**)(Multiplayer *))(*(unsigned int *)this + 12))(this);;
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x68c2c2*/
   *((unsigned int *)this + 2) = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/

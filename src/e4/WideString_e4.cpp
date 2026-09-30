@@ -177,7 +177,7 @@ LABEL_33:
     goto LABEL_35; /*0x7b758c*/
   }
   v3 = (gamemd::GameSetup *)((gamemd::AbstractClass **)((GameSetup *)this));
-  v16 = (gamemd::AbstractClass **)((CampaignScore *)v5);
+  v16 = (gamemd::CampaignScore *)((gamemd::AbstractClass **)((CampaignScore *)v5));
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
     RA2_OPDEL(*(void **)v3->__pad_0); /*0x7b759b*/

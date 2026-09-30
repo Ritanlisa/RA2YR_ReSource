@@ -140,7 +140,7 @@ void TacticalMap::Redraw()
   {
     ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 0); /*0x4f44df*/
     ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 1); /*0x4f44f4*/
-    int TacticalMap::Redraw(GScreenClass *this)
+    (*(void (**)(GScreenClass *, bool))(this-((unsigned int *)(>vfptr))[0] + 64))(this, v7);;
     ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 2); /*0x4f4515*/
   }
   if ( g_abs_B0B519 && !g_abs_A8ED6B ) /*0x4f452b*/
@@ -160,7 +160,7 @@ void TacticalMap::Redraw()
     DrawHUD(v4); /*0x4f457e*/
   }
   (*(void (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 60))(g_abs_887640, g_abs_88731C, 0); /*0x4f4593*/
-  int TacticalMap::Redraw(GScreenClass *this)
+  result = (*(int (**)(GScreenClass *))(this-((unsigned int *)(>vfptr))[0] + 68))(this);;
   g_abs_887314 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 
@@ -428,7 +428,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       v25 = *(unsigned int *)Coords->__pad_0; /*0x6d2d3b*/
       v26 = *(unsigned int *)&Coords->__pad_0[4]; /*0x6d2d47*/
       v27 = 0; /*0x6d2d59*/
-      v20 = Coord::To_ScreenRaw((int *)aP1.__pad_0, &v25); /*0x6d2d61*/
+      v20 = ((Coord *)((int *)aP1.__pad_0))->To_ScreenRaw(&v25); /*0x6d2d61*/
       v21 = v20[1] - *((unsigned int *)this + 45); /*0x6d2d81*/
       v28 = (ObjectClass *)(*v20 - *((unsigned int *)this + 44) + *(unsigned int *)&g_abs_87F8E4 - 30); /*0x6d2d8d*/
       v29 = *(unsigned int *)&g_abs_87F8E4 + v21 - 15; /*0x6d2d9c*/
@@ -557,7 +557,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render( int a2)
   char v107[12]; // [esp+FCh] [ebp-18h] BYREF
   char v108[12]; // [esp+108h] [ebp-Ch] BYREF
 
-  v2 = g_abs_886FA8; /*0x6d8db7*/
+  v2 = (int)(g_abs_886FA8);
   v3 = *(unsigned int *)(this + 176); /*0x6d8dc4*/
   v4 = *(unsigned int *)(this + 180); /*0x6d8dd5*/
   v77 = v3 + g_abs_886FA8 / 2; /*0x6d8ddb*/

@@ -38,6 +38,8 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */

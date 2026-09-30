@@ -1140,7 +1140,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   unsigned int *v18; // eax
   unsigned int *v19; // ecx
   unsigned int v20; // eax
-  unsigned int *v21; // eax
+  unsigned int v21;
   unsigned int v22; // eax
   unsigned int *v23; // eax
   IUnknown * v24;
@@ -1252,8 +1252,8 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v13 = (int)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x572f08*/
+        v13 = (unsigned int *)((int)(g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v13); /*0x572f0d*/
       aP1 = (IUnknown *)(*(unsigned int *)v31 - 0x10000); /*0x572f22*/
@@ -1265,7 +1265,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       else
       {
         v16 = (unsigned int *)(g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x572f55*/
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v16); /*0x572f5a*/
       IDA_LOWORD(aP1) = v31[0] + 1; /*0x572f6b*/
@@ -1277,7 +1277,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v19 = g_CellClassArray; /*0x572f9e*/
+        v19 = (int)(g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x572fa3*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x572fa8*/
@@ -1285,7 +1285,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       v20 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x572fcb*/
       if ( v20 >= 0x40000 || (v21 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v20)) == 0 ) /*0x572fe1*/
       {
-        g_Map_GlobalCellIndex = aP1; /*0x572fe7*/
+        g_Map_GlobalCellIndex = (unsigned int *)(aP1);
         v21 = g_CellClassArray; /*0x572fec*/
       }
       IDA_LOBYTE(v9) = Cell::SetTileType( /*0x573017*/
@@ -1335,7 +1335,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   char *v29; // eax
   int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x573176*/
+  v2 = (unsigned int)(aP1);
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((uint8_t)aP1 & 7) + 9041544))->field_0; /*0x573197*/
   aP1 = (IUnknown *)v3; /*0x573199*/
   *(unsigned int *)v31 = v3; /*0x57319d*/
@@ -1346,7 +1346,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = (IUnknown *)v3; /*0x5731c8*/
+    g_Map_GlobalCellIndex = (int)((IUnknown *)v3);
     v6 = g_CellClassArray; /*0x5731ce*/
   }
   if ( *((char *)v6 + 320) < 0 ) /*0x5731da*/

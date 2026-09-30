@@ -177,7 +177,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v24; // [esp-10h] [ebp-C0h]
   int v25; // [esp+Ch] [ebp-A4h] BYREF
   unsigned int v26;
-  unsigned int v27;
+  unsigned char * v27;
   int v28; // [esp+18h] [ebp-98h] BYREF
   int v29; // [esp+1Ch] [ebp-94h] BYREF
   int v30; // [esp+20h] [ebp-90h] BYREF
@@ -528,7 +528,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
-  int VoxelAnimClass::DrawVoxelFrame(VoxelAnimClass *this, int a2, int a3, int a4)
+  // [esp+4h] [ebp-Ch] BYREF v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7);
   if ( (*((unsigned char *)Coord::To_Cell(&g_abs_87F7E8, v5) + 300) & 0x10) != 0 ) /*0x749b44*/
     *((unsigned char *)this + 128) = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect(this); /*0x749b60*/

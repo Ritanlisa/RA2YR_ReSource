@@ -169,7 +169,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 
   if ( this == (gamemd::ParticleTypeClass *)(a2) ) /*0x4788ec*/
     return this; /*0x4788ec*/
-  unsigned int *ParticleTypeClass::EnsureCapacity(ParticleTypeClass *this, unsigned int *a2)
+  (*((void (**)(ParticleTypeClass *))this->ArrayIndex + 3))(this);;
   v3 = a2[2]; /*0x4788f7*/
   *((unsigned int *)this + 2) = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/

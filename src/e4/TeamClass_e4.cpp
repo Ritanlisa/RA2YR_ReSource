@@ -2127,7 +2127,7 @@ LABEL_14:
     }
   }
   if ( this ) /*0x6ea4d6*/
-    char TeamClass::UpdateReadinessState(TeamClass *this)
+    if ( this ) (*((void (**)(TeamClass *, int))this->AbstractClass + 8))(this, 1);;
   return 0; /*0x6ea47c*/
 
 }

@@ -2185,7 +2185,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 
   if ( this != a2 ) /*0x67a21a*/
   {
-    int *RulesClass::readSuperWeaponTypes(RulesClass *this, int *a2)
+    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this);;
     v3 = a2[2]; /*0x67a221*/
     *((char *)this + 2) = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
@@ -2231,7 +2231,7 @@ void * RulesClass::readBuildingTypes(int * a2)
 
   if ( this != a2 ) /*0x67a31a*/
   {
-    int *RulesClass::readBuildingTypes(RulesClass *this, int *a2)
+    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this);;
     v3 = a2[2]; /*0x67a321*/
     *((char *)this + 2) = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/

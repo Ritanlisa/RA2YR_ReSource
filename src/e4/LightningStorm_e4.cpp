@@ -134,7 +134,7 @@ void LightningStorm::Strike(IUnknown * aP0)
                          + 4
                          * ((unsigned int)Random::State((unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536))
                           % *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 716)));
-    v6 = (unsigned int)((void **)RA2_OPNEW(0x1C8u));
+    v6 = (void **)((unsigned int)((void **)RA2_OPNEW(0x1C8u)));
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x53a23c*/
     else
@@ -147,7 +147,7 @@ void LightningStorm::Strike(IUnknown * aP0)
            dword_A9FA68 + dword_A9FA74,
            0) )
     {
-      v8 = (unsigned int)((AnimClass *)dword_A9FA70++);
+      v8 = (gamemd::AnimClass *)((unsigned int)((AnimClass *)dword_A9FA70++));
       *((unsigned int *)unk_A9FA64 + (unsigned int)v8) = v7; /*0x53a294*/
     }
     result = (unsigned int)(dword_A9F9D8);
@@ -182,7 +182,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v9; // edi
   unsigned char * v10;
   void **v11; // eax
-  unsigned int v12;
+  RulesClass * v12;
   unsigned int v13; // eax
   int Climb; // ebp
   void *WarheadVersusMultiplier; // ebx
@@ -214,7 +214,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v34[2] = v6; /*0x53a33b*/
   v7 = *(void **)(g_abs_8871E0->? /*0x53a363*/
                 + 4 * ((unsigned int)Random::State((unsigned int *)g_abs_A8B230 + 134) % g_abs_8871E0->?));
-  v8 = (unsigned char *)((void **)RA2_OPNEW(0x1C8u));
+  v8 = (void **)((unsigned char *)((void **)RA2_OPNEW(0x1C8u)));
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
@@ -225,7 +225,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     && (*(uint8_t (**)(int *, int, unsigned int))(unk_A9FA18 + 8))(&unk_A9FA18, unk_A9FA2C + unk_A9FA20, 0) )
   {
     v10 = (unsigned int)(unk_A9FA28++);
-    *((unsigned int *)unk_A9FA1C + v10) = v9; /*0x53a3e4*/
+    *((unsigned int *)(unsigned int)(unk_A9FA1C)+ v10) = v9; /*0x53a3e4*/
   }
   v27 = v3[9]; /*0x53a40f*/
   v28 = *((char *)v3 + 283); /*0x53a413*/
@@ -235,7 +235,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v33 = v11; /*0x53a445*/
   if ( v31 != (gamemd::RulesClass *)(unk_A9FA30) || __PAIR64__((unsigned int)v11, (IDA_SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
-    v12 = (gamemd::RulesClass *)((unsigned int)((gamemd::RulesClass *)(g_abs_8871E0)));
+    v12 = (unsigned int)((gamemd::RulesClass *)((unsigned int)((gamemd::RulesClass *)(g_abs_8871E0))));
     if ( g_abs_8871E0->? > 0 ) /*0x53a46c*/
     {
       v13 = (gamemd::RulesClass *)(Random::State((unsigned int *)g_abs_A8B230 + 134));

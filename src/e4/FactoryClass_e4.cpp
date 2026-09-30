@@ -820,7 +820,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char FactoryClass_33::Release(_VectorClass_PBVTechnoTypeClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x4ca9d8*/
   }
 

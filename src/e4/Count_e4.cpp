@@ -23,8 +23,8 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   if ( v1 < 0 ) /*0x408e79*/
     *((unsigned int *)this + 7) = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  int Count::DecrementRefCountsAudio(Count *this)
-  int Count::DecrementRefCountsAudio(Count *this)
+  // glued-defhead: int Count::DecrementRefCountsAudio(Count *this)
+  // glued-defhead: int Count::DecrementRefCountsAudio(Count *this)
   if ( v3 < 0 ) /*0x408e93*/
   {
     result = (int)(*this);

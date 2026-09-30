@@ -55,7 +55,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   TechnoClass *v25; // ebp
   int j; // edi
 
-  void Animation::UpdateBuildingAnimations(Animation *this)
+  // edi v2 = (*(uint8_t (**)(Animation *))(*(unsigned int *)this + 848))(this) == 0;;
   v3 = *((char *)this + 328); /*0x4549bf*/
   v4 = *(unsigned int *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -81,7 +81,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !*((unsigned char *)this + 617) ) /*0x454a4b*/
-      void Animation::UpdateBuildingAnimations(Animation *this)
+      if ( v5[3281] && !*((unsigned char *)this + 617) ) (*(void (**)(Animation *))(*(unsigned int *)this + 1044))(this);;
     v7 = *((char *)this + 328); /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates((int)this); /*0x454a7b*/
@@ -138,7 +138,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     if ( *((unsigned char *)this + 617) ) /*0x454b9b*/
     {
-      void Animation::UpdateBuildingAnimations(Animation *this)
+      (*(void (**)(Animation *))(*(unsigned int *)this + 1048))(this);
       if ( *((unsigned char *)this + 616) ) /*0x454baf*/
       {
         v17 = (int)(*((char *)this + 135));

@@ -71,6 +71,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {
@@ -93,7 +94,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   int v7; // ecx
   unsigned int v8; // ebp
   unsigned int *v9; // ebp
-  int v10; // eax
+  unsigned char (*)[4] v10;
   int v11; // eax
   int v12; // ecx
   int v13; // eax

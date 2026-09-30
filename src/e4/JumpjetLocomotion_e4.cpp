@@ -945,7 +945,7 @@ LABEL_107:
                   {
                     IDA_LOBYTE(aP4) = 0;
                   }
-                  v120 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)((char *)this + 64));
+                  v120 = (unsigned int *)(Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)((char *)this + 64)));
                   Cell::ApplyDamage(v120, (IUnknown *)&g_abs_89F690, 1, 1, aP4);
                   break;
                 default:
@@ -964,8 +964,8 @@ LABEL_107:
   }
   v124 = *(MouseClass **)((char *)this + 12);
   v126 = (unsigned int *)((char *)this + 64);
-  v127 = *(unsigned int *)&v124->__pad_74[40];
-  v128 = *(unsigned int *)&v124->__pad_74[44];
+  v127 = *(unsigned int *)&v124-((unsigned int *)(>__pad_74))[40];
+  v128 = *(unsigned int *)&v124-((unsigned int *)(>__pad_74))[44];
   v195 = *(TechnoClass **)&v124->__pad_74[48];
   v188 = (IUnknown *)(abs32(*((unsigned int *)this + 17) - v128) + abs32(*((unsigned int *)this + 16) - v127));
   v129 = Math::RoundToInt((1.0 - (double)(int)v188 * 0.09090909090909091) * 7.0);

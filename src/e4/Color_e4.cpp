@@ -153,7 +153,7 @@ int Color::RGBFromFloat(IUnknown * aP1, float a3)
 
   v3 = (int)(1.0 - a3);
   v5 = (int)(Math::RoundToInt(v3));
-  v8 = Math::RoundToInt(v3); /*0x75f582*/
+  v8 = (int)(Math::RoundToInt(v3));
   v6 = Math::RoundToInt(v3); /*0x75f591*/
   *(unsigned int *)this = v5; /*0x75f59e*/
   *((unsigned int *)this + 1) = v8; /*0x75f5a0*/

@@ -74,6 +74,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
     unsigned int v15 = 0;  /* G37 hoist */
     unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v15 = 0;  /* G37 hoist */
@@ -901,7 +902,7 @@ int MPCooperative::InitSession()
   if ( g_abs_A8B8D8 <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
-    int MPCooperative::InitSession(MPCooperative *this)
+    LABEL_10: (*((void (**)(MPCooperative *))this->MPCooperative_field_0x0 + 4))(this);;
     return -1; /*0x5c1d6f*/
   }
   while ( _strnicmp((const char *)(*(unsigned int *)(g_abs_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
@@ -2382,7 +2383,7 @@ AbstractClass * * MPCooperative::ProcessChat()
   {
     if ( g_abs_A8DA84 == 2 ) /*0x5c415e*/
       String::AssignWideToChar(v5, *(char **)g_abs_A8DA78, *(char **)(g_abs_A8DA78 + 4)); /*0x5c416c*/
-    char MPCooperative::ProcessChat(MPCooperative *this)
+    (*((void (**)(MPCooperative *))this->MPCooperative_field_0x0 + 24))(this);;
     IDA_LOBYTE(v2) = MPCooperative::ReadCoopSaveINI(*((unsigned int *)this + 16)); /*0x5c417b*/
     if ( (unsigned char)v2 ) /*0x5c4182*/
     {
@@ -3288,7 +3289,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char MPCooperative::_vt02(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
     return 1; /*0x5c5218*/
   }
 
@@ -3388,7 +3389,7 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
   }
   else
   {
-    char MPCooperative::sub_5C52B0(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5c5341*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5c5349*/
@@ -3464,7 +3465,7 @@ char MPCooperative::processTeamChat(int a2, unsigned int * a3)
   }
   else
   {
-    char MPCooperative::sub_5C53D0(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
     return 1; /*0x5c5478*/
   }
 
@@ -3564,7 +3565,7 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
   }
   else
   {
-    char MPCooperative::sub_5C5770(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5c5801*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5c5809*/

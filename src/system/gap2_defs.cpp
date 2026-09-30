@@ -463,7 +463,7 @@ int CCFileClass::SetName(IUnknown * aP1) {
   int CCFileClass::SetName(BufferIOFileClass *this, char *Source)
   {
     ( Source, (const char *)(*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this))
-      int CCFileClass::SetName(BufferIOFileClass *this, char *Source)
+      if ( !strcmp( Source, (const char *)(*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this)) ) return (*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this);;
     BufferIO::Flush((int)this); /*0x431ee6*/
     *((unsigned char *)this + 39) = 0; /*0x431eeb*/
   }
@@ -484,7 +484,7 @@ bool BufferIOFileClass::Read() {
 namespace gamemd { 
 bool BufferIOFileClass::Write( int a2, CDFileClass * aP1) {
 
-  BOOL BufferIOFileClass::Write(BufferIOFileClass *this, int a2, const CHAR *a3)
+  (*(void (**)(BufferIOFileClass *, int))(*(unsigned int *)&this->FileClass + 8))(this, a2);;
   return BufferIOFileClass::Open((int)this, aP1); /*0x431f6b*/
 
 }
@@ -759,7 +759,7 @@ int FileClass::BufferedReader( BufferIOFileClass * aP1, DWORD nNumberOfBytesToRe
   v15 = 0; /*0x4322ea*/
   if ( *(unsigned int *)(this + 44) == 2 ) /*0x4322ee*/
   {
-    int FileClass::BufferedReader(CCFileClass *this, char *lpBuffer, DWORD nNumberOfBytesToRead)
+    (*(void (**)(CCFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)&this->FileClass + 64))(this, 13, 0, 0);
     goto LABEL_27; /*0x432477*/
   }
   v4 = (BlowStraw *)nNumberOfBytesToRead; /*0x4322f4*/
@@ -796,7 +796,7 @@ LABEL_27:
           this,
           *(unsigned int *)(this + 48),
           *(unsigned int *)(this + 52));
-        int FileClass::BufferedReader(CCFileClass *this, char *lpBuffer, DWORD nNumberOfBytesToRead)
+        (*(void (**)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))(this, this->FileID, 0);;
         *(unsigned char *)(this + 41) = 1; /*0x43236c*/
       }
       else
@@ -835,7 +835,7 @@ LABEL_27:
             this,
             *(unsigned int *)(this + 48),
             *(unsigned int *)(this + 52));
-          int FileClass::BufferedReader(CCFileClass *this, char *lpBuffer, DWORD nNumberOfBytesToRead)
+          (*(void (**)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))(this, this->FileID, 0);;
           *(unsigned char *)(this + 41) = 1; /*0x43243a*/
         }
         else
@@ -854,7 +854,7 @@ LABEL_27:
   v12 = (DWORD)v15; /*0x432467*/
 LABEL_29:
   if ( v16 ) /*0x43249a*/
-    int FileClass::BufferedReader(CCFileClass *this, char *lpBuffer, DWORD nNumberOfBytesToRead)
+    LABEL_29: if ( v16 ) (*(void (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 52))(this);;
   return v12; /*0x4324a5*/
 
 }
@@ -983,7 +983,7 @@ bool CellClass::Get(unsigned int * a2) {
   int v13; // [esp+20h] [ebp-8h]
   int v14; // [esp+24h] [ebp-4h]
 
-  bool CellClass::Get(CellClass *this, unsigned int *a2)
+  // [esp+24h] [ebp-4h] v4 = (int *)(*(int (**)(CellClass *, int *))(this->mapCoords[0] + 72))(this, &v13);;
   v4 = *v3; /*0x452955*/
   v5 = v3[1]; /*0x45295f*/
   v6 = v3[2]; /*0x452963*/
@@ -1029,7 +1029,7 @@ int TacticalClass::initTacticalMap(int * a2, int * a3) {
     }
     else
     {
-      char TacticalClass::initTacticalMap(TacticalClass *this, int *a2, int *a3)
+      v4 = (*((int (**)(TacticalClass *))this->AbstractClass + 39))(this);;
       *a2 = v4; /*0x45f1f7*/
       if ( v4 ) /*0x45f1f9*/
       {
@@ -1272,7 +1272,7 @@ int FileClass::Load(CDFileClass * aP1) {
   int v11; // [esp+14h] [ebp-8h] BYREF
   int v12; // [esp+18h] [ebp-4h] BYREF
 
-  BOOL FileClass::Load(CCFileClass *this, const CHAR *a2)
+  // [esp+18h] [ebp-4h] BYREF (*(void (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 52))(this);
   if ( ((uint8_t)aP1 & 2) != 0 || File::IsReady(this, 0) ) /*0x473d2d*/
     return FileClass::OpenFileBufferIO(this, aP1); /*0x473e40*/
   v3 = *this; /*0x473d44*/
@@ -1292,7 +1292,7 @@ int FileClass::Load(CDFileClass * aP1) {
   }
   ( this, *(unsigned int *)(v11 + 12), 1)
   {
-    BOOL FileClass::Load(CCFileClass *this, const CHAR *a2)
+    v5 = (const char *)(*(int (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 4))(this);;
     v5 = (CCINIClass *)_strdup(eax7a); /*0x473daa*/
     v7 = *this; /*0x473dac*/
     *((unsigned char *)this + 84) = 1; /*0x473db1*/
@@ -1300,7 +1300,7 @@ int FileClass::Load(CDFileClass * aP1) {
     *((unsigned char *)this + 84) = 0; /*0x473dbd*/
     FileClass::GetFileSizeOp(this, 0, (CCFileClass *)0xFFFFFFFF); /*0x473dc0*/
     FileClass::GetFileSizeOp(this, v12, (CCFileClass *)Size); /*0x473dd1*/
-    BOOL FileClass::Load(CCFileClass *this, const CHAR *a2)
+    (*(void (**)(CCFileClass *, unsigned int, unsigned int))(*(unsigned int *)&this->FileClass + 40))(this, 0, 0);;
     free(v5); /*0x473de0*/
     return 1; /*0x473de8*/
   }
@@ -2449,7 +2449,7 @@ void* INIClass::writeSection(unsigned int * a2) {
 
   if ( this == a2 ) /*0x4787ea*/
     return this; /*0x4787ea*/
-  unsigned int *INIClass::writeSection(INIClass *this, unsigned int *a2)
+  (*(void (**)(INIClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   v3 = a2[2]; /*0x4787f1*/
   *((unsigned int *)this + 2) = v3; /*0x4787f6*/
   if ( !v3 ) /*0x4787f9*/
@@ -2568,7 +2568,7 @@ int FileClass::OpenWithCDSearch(IUnknown * aP1) {
 
   CCFileClass::SetName(this, aP1); /*0x47ae21*/
   if ( *((unsigned char *)this + 84) || !g_abs_89E410 || File::IsReady(this, 0) ) /*0x47ae42*/
-    int FileClass::OpenWithCDSearch(CDFileClass *this, char *Source)
+    if ( *((unsigned char *)this + 84) || !CmdLine_NoCD || (uint8_t)File::IsReady((BufferIOFileClass *)this, 0) ) return (*(int (**)(CDFileClass *))(*(unsigned int *)this->BufferIOFileClass + 4))(this);;
   v3 = (const char *)g_abs_89E410; /*0x47ae4f*/
   if ( g_abs_89E410 ) /*0x47ae57*/
   {
@@ -2599,7 +2599,7 @@ int CCFileClass::Reopen(char * Source, CDFileClass * aP1) {
 
   CCFileClass::Close(this); /*0x47af15*/
   if ( !Source ) /*0x47af20*/
-    int CCFileClass::Reopen(CDFileClass *this, char *Source, CHAR *a3)
+    if ( !Source ) (*(void (**)(CDFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)&this->FileClass + 64))(this, 2, 0, 0);
   if ( *((unsigned char *)this + 84) || aP1 == (CDFileClass *)2 ) /*0x47af3b*/
   {
     CCFileClass::SetName(this, (IUnknown *)Source); /*0x47af56*/
@@ -2607,7 +2607,7 @@ int CCFileClass::Reopen(char * Source, CDFileClass * aP1) {
   }
   else
   {
-    int CCFileClass::Reopen(CDFileClass *this, char *Source, CHAR *a3)
+    (*(void (**)(CDFileClass *, char *))(*(unsigned int *)&this->FileClass + 8))(this, Source);;
     return BufferIOFileClass::Open((int)this, aP1); /*0x47af48*/
   }
 
@@ -4345,7 +4345,7 @@ int CellClass::CheckProperty() {
   if ( (*((unsigned int *)this + 80) & 0x100) != 0 ) /*0x48689d*/
   {
     v1 = g_abs_89E7B4; /*0x4868a1*/
-    int CellClass::CheckProperty(CellClass *this)
+    v2 = (int *)(*(int (**)(CellClass *, unsigned char *))(this->mapCoords[0] + 72))(this, v8);;
     v3 = *v2; /*0x4868b0*/
     v4 = v2[1]; /*0x4868b2*/
     v5 = v1 + v2[2]; /*0x4868b8*/
@@ -4356,7 +4356,7 @@ int CellClass::CheckProperty() {
   }
   else
   {
-    int CellClass::CheckProperty(CellClass *this)
+    v7 = (unsigned int *)(*(int (**)(CellClass *, unsigned char *))(this->mapCoords[0] + 72))(this, v8);;
     *v9 = *v7; /*0x4868e6*/
     v9[1] = v7[1]; /*0x4868eb*/
     v9[2] = v7[2]; /*0x4868f2*/
@@ -7174,7 +7174,7 @@ LABEL_26:
       goto LABEL_30; /*0x4a8384*/
     }
   }
-  char CD::CheckDiscPresence(CD *this, int a2)
+  while ( (*(uint8_t (**)(CD *, int))(*(unsigned int *)this + 4))(this, v2) );;
   return 0; /*0x4a83a3*/
 
 }
@@ -7666,19 +7666,19 @@ int TacticalClass::DispatchMode(MouseClass * aP1) {
     *((char *)this + 1131) = -1; /*0x4aad5f*/
     v4 = Mouse::SetBounds((int)this, 0); /*0x4aad69*/
     IDA_LOBYTE(v4) = g_abs_87F8E4; /*0x4aad6e*/
-    int TacticalClass::DispatchMode(DisplayClass *this, int a2)
+    return (*((int (**)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, v4);
   }
   else if ( *((unsigned char *)this + 4528) ) /*0x4aad82*/
   {
     BuildingClass::TogglePower2(this, 0); /*0x4aad90*/
     IDA_LOBYTE(v6) = g_abs_87F8E4; /*0x4aad95*/
-    int TacticalClass::DispatchMode(DisplayClass *this, int a2)
+    return (*((int (**)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, v6);
   }
   else if ( *((unsigned char *)this + 4529) ) /*0x4aada9*/
   {
     BuildingClass::TogglePower(this, 0); /*0x4aadb7*/
     IDA_LOBYTE(v7) = g_abs_87F8E4; /*0x4aadbc*/
-    int TacticalClass::DispatchMode(DisplayClass *this, int a2)
+    return (*((int (**)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, v7);
   }
   else if ( *((unsigned char *)this + 4530) ) /*0x4aadd0*/
   {
@@ -8002,7 +8002,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
       case 65: /*0x4ab37b*/
         goto LABEL_85;
       case 50: /*0x4ab37b*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 50: (*((void (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 60, a6);
         break; /*0x4ab3d5*/
       case 57: /*0x4ab37b*/
         goto LABEL_59;
@@ -8037,22 +8037,22 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
     {
       case 0: /*0x4ab453*/
 LABEL_55:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 0: LABEL_55: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 18, a6);;
         break; /*0x4ab446*/
       case 1: /*0x4ab453*/
       case 53: /*0x4ab453*/
 LABEL_73:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 1: case 53: LABEL_73: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 19, a6);;
         break; /*0x4ab5ca*/
       case 2: /*0x4ab453*/
       case 8: /*0x4ab453*/
       case 10: /*0x4ab453*/
       case 34: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 2: case 8: case 10: case 34: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 25, a6);;
         break; /*0x4ab56a*/
       case 3: /*0x4ab453*/
       case 51: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 3: case 51: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 27, a6);;
         break; /*0x4ab59a*/
       case 4: /*0x4ab453*/
         if ( !v56 /*0x4ab51b*/
@@ -8066,41 +8066,41 @@ LABEL_73:
         {
           goto LABEL_68; /*0x4ab523*/
         }
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 20, a6);;
         break; /*0x4ab53a*/
       case 5: /*0x4ab453*/
 LABEL_68:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 5: LABEL_68: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 21, a6);;
         break; /*0x4ab552*/
       case 6: /*0x4ab453*/
       case 7: /*0x4ab453*/
       case 60: /*0x4ab453*/
 LABEL_61:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 6: case 7: case 60: LABEL_61: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 17, a6);;
         break; /*0x4ab4cf*/
       case 9: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 9: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 34, a6);;
         break; /*0x4ab612*/
       case 11: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 11: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 30, a6);;
         break; /*0x4ab642*/
       case 12: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 12: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 31, a6);;
         break; /*0x4ab62a*/
       case 13: /*0x4ab453*/
 LABEL_70:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 13: LABEL_70: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 32, a6);;
         break; /*0x4ab582*/
       case 14: /*0x4ab453*/
       case 31: /*0x4ab453*/
 LABEL_48:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 14: case 31: LABEL_48: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 35, a6);;
         break; /*0x4ab3cb*/
       case 15: /*0x4ab453*/
       case 54: /*0x4ab453*/
       case 55: /*0x4ab453*/
       case 63: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 15: case 54: case 55: case 63: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 52, a6);;
         break; /*0x4ab5e2*/
       case 16: /*0x4ab453*/
       case 26: /*0x4ab453*/
@@ -8116,11 +8116,11 @@ LABEL_48:
       case 49: /*0x4ab453*/
       case 50: /*0x4ab453*/
 LABEL_57:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 16: case 26: case 32: case 33: case 41: case 42: case 43: case 44: case 45: case 46: case 48: case 49: case 50: LABEL_57: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 60, a6);;
         break; /*0x4ab46f*/
       case 19: /*0x4ab453*/
 LABEL_79:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 19: LABEL_79: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 53, a6);;
         break; /*0x4ab65a*/
       case 25: /*0x4ab453*/
 LABEL_47:
@@ -8132,43 +8132,43 @@ LABEL_47:
       case 27: /*0x4ab453*/
         return result;
       case 28: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 28: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 33, a6);;
         break; /*0x4ab4b7*/
       case 29: /*0x4ab453*/
 LABEL_58:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 29: LABEL_58: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 28, a6);;
         break; /*0x4ab487*/
       case 30: /*0x4ab453*/
 LABEL_46:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 30: LABEL_46: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 26, a6);;
         break; /*0x4ab397*/
       case 36: /*0x4ab453*/
 LABEL_80:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 36: LABEL_80: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 57, a6);;
         break; /*0x4ab672*/
       case 37: /*0x4ab453*/
 LABEL_83:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 37: LABEL_83: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 50, a6);;
         break; /*0x4ab6ba*/
       case 38: /*0x4ab453*/
       case 39: /*0x4ab453*/
 LABEL_84:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 38: case 39: LABEL_84: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 58, a6);;
         break; /*0x4ab6d2*/
       case 40: /*0x4ab453*/
       case 64: /*0x4ab453*/
 LABEL_85:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 40: case 64: LABEL_85: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 47, a6);;
         break; /*0x4ab6ea*/
       case 52: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 52: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 38, a6);;
         break; /*0x4ab5b2*/
       case 56: /*0x4ab453*/
 LABEL_59:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 56: LABEL_59: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 59, a6);;
         break; /*0x4ab49f*/
       case 59: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 59: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 78, a6);;
         break; /*0x4ab762*/
       case 61: /*0x4ab453*/
       case 62: /*0x4ab453*/
@@ -8180,34 +8180,34 @@ LABEL_91:
         break; /*0x4ab77e*/
       case 65: /*0x4ab453*/
 LABEL_86:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 65: LABEL_86: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 83, a6);;
         break; /*0x4ab702*/
       case 66: /*0x4ab453*/
 LABEL_87:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 66: LABEL_87: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 85, a6);;
         break; /*0x4ab71a*/
       case 67: /*0x4ab453*/
 LABEL_88:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 67: LABEL_88: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 81, a6);;
         break; /*0x4ab732*/
       case 68: /*0x4ab453*/
 LABEL_81:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 68: LABEL_81: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 79, a6);;
         break; /*0x4ab68a*/
       case 69: /*0x4ab453*/
 LABEL_82:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 69: LABEL_82: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 80, a6);;
         break; /*0x4ab6a2*/
       case 70: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 70: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 82, a6);;
         break; /*0x4ab5fa*/
       case 71: /*0x4ab453*/
 LABEL_89:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        case 71: LABEL_89: result = (*((int (**)(DisplayClass *, int, int))this->DisplayClass_field_0x0 + 18))(this, 84, a6);;
         break; /*0x4ab74a*/
       default:
 LABEL_92:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
+        default: LABEL_92: result = (*((int (**)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, a6);;
         break; /*0x4ab796*/
     }
   }
@@ -8243,7 +8243,7 @@ int TacticalClass::SetObserverMode(int a2) {
     v3 = *((unsigned int *)this + 1130); /*0x4ac84f*/
     if ( !v3 ) /*0x4ac857*/
     {
-      int TacticalClass::SetObserverMode(TacticalClass *this, int a2)
+      (*((void (**)(TacticalClass *, unsigned int, unsigned int))this->AbstractClass + 18))(this, 0, 0);;
       *((unsigned char *)this + 4528) = 0; /*0x4ac866*/
       *((unsigned char *)this + 4529) = 0; /*0x4ac86d*/
       *((unsigned char *)this + 4531) = 0; /*0x4ac874*/
@@ -8433,7 +8433,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
                                 (INIClass *)&g_abs_81FFE4,
                                 (uint8_t *)&unk_818658,
                                 0);
-  void ScenarioClass::LoadMapData(DisplayClass *this, uint8_t ***a2)
+  (*((void (**)(DisplayClass *, int))this->DisplayClass_field_0x0 + 6))(this, dword_A8B230[130].uniqueId);;
   Multiplayer::ShowProgress(&g_abs_A8B238, 63); /*0x4ad011*/
   Event::Dispatch(); /*0x4ad016*/
   v9 = g_abs_A8B230->random[0]; /*0x4ad026*/
@@ -12757,7 +12757,7 @@ int CellClass::GetTerrainFlag(int a2) {
   int v3; // ecx
   int v4; // eax
 
-  int CellClass::GetTerrainFlag(CellClass *this, int a2)
+  // glued-defhead: int CellClass::GetTerrainFlag(CellClass *this, int a2)
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x547213*/
     return (*(unsigned int *)(v3 + 36) >> 2) & 1; /*0x54721b*/
   else
@@ -22580,7 +22580,7 @@ int TacticalClass::ReallocVector(int a2, unsigned int * a3) {
   }
   else
   {
-    char TacticalClass::ReallocVector(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x5c0ce1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5c0ce9*/
@@ -24704,7 +24704,7 @@ int FactoryClass::RemoveItemAt(VectorClass * aP1) {
   int v4; // ecx
   int v5; // ecx
 
-  int FactoryClass::RemoveItemAt(FactoryClass *this, int a2)
+  // glued-defhead: int FactoryClass::RemoveItemAt(FactoryClass *this, int a2)
   if ( v3 == -1 ) /*0x63dfe2*/
     return 0; /*0x63dfe2*/
   v4 = *((char *)this + 4); /*0x63dfe4*/
@@ -24970,7 +24970,7 @@ int RadarClass::Destru_vt53() {
   int result; // eax
 
   Debug::Log(); /*0x652e99*/
-  int RadarClass::Destru_vt53(RadarClass *this)
+  (*((void (**)(RadarClass *))this->RadarClass_field_0x0 + 50))(this);
   if ( *((unsigned int *)g_abs_A8B230 + 3374) ) /*0x652eb1*/
   {
     *((unsigned int *)this + 1148) = 16; /*0x652f13*/

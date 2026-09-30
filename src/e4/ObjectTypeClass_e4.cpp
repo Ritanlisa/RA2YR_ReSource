@@ -395,7 +395,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   do /*0x5f7575*/
   {
     v5 -= 2; /*0x5f756a*/
-    ObjectTypeClass::ReleaseWaveAndString(v5); /*0x5f756f*/
+    ((ObjectTypeClass *)(v5))->ReleaseWaveAndString(); /*0x5f756f*/
     --v6; /*0x5f7574*/
   }
   while ( v6 ); /*0x5f7575*/
@@ -864,7 +864,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
           *((unsigned char *)this + 566));
   *((unsigned char *)this + 566) = v25; /*0x5f9634*/
-  char ObjectTypeClass::LoadFromINI(ObjectTypeClass *this, uint8_t ***a2)
+  if ( !v25 && (*((int (**)(ObjectTypeClass *))this->AbstractTypeClass + 11))(this) != 5 ) ObjectTypeClass::Load2DArt((char *)this);
     ObjectTypeClass::Load2DArt(this); /*0x5f964d*/
   if ( *((unsigned char *)this + 531) ) /*0x5f9652*/
   {
@@ -5085,7 +5085,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
-  unsigned int *ObjectTypeClass::loadTypeMember_5717C00(ObjectTypeClass *this, unsigned int *a2)
+  (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this);;
   v3 = a2[2]; /*0x717c11*/
   *((unsigned int *)this + 2) = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/

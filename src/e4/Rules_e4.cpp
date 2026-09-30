@@ -1593,6 +1593,7 @@ int Rules::ReadMiscINI()
     unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
       v181 = BuildingDamageSound;
     }
     this->BuildingDamageSound = v181;
@@ -3418,7 +3419,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  unsigned int *Rules::CopyDataArray(Rules *this, unsigned int *a2)
+  (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   v3 = aP1->Capacity; /*0x67a581*/
   *((unsigned int *)this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/

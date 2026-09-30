@@ -282,7 +282,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char MoveFeedback::SetCapacity(_DynamicVectorClass_PBVCommandClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x40c0c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40c0c9*/

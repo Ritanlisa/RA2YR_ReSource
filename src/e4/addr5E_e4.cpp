@@ -45,7 +45,7 @@ namespace gamemd {
 void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
   wchar_t *v3; // esi
-  wint_t * v4;
+  unsigned int v4;
   wint_t * v5;
   wchar_t *v6; // eax
   wint_t * v7;
@@ -60,8 +60,8 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   int v18; // [esp+24h] [ebp-14h] BYREF
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
-  v3 = (wint_t *)((wchar_t *)((wint_t *)((wchar_t *)(a1))));
-  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))))))))))))));
+  v3 = (wchar_t *)((wint_t *)((wchar_t *)((wint_t *)((wchar_t *)(a1)))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/

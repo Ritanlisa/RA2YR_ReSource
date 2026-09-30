@@ -164,7 +164,7 @@ LABEL_12:
     }
   }
   v9 = (int *)((gamemd::VoxelStruct **)((int *)&unk_B7882C));
-LABEL_14: v10 = (gamemd::VoxelStruct **)(*v9);
+LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
   if ( v10 ) /*0x526a0a*/
     return *(unsigned int *)(v10 + 48); /*0x526a14*/
   return 0; /*0x526a0f*/

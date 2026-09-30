@@ -188,7 +188,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
   v4 = (*(int (**)(int *, int *))(g_abs_B0B880 + 16))(&g_abs_B0B880, &v6); /*0x6b7087*/
-  if ( v4 != -1 && v4 < (int)(g_abs_B0B890) && v4 < --g_abs_B0B890 ) /*0x6b70a3*/
+  if ( v4 != -1 && v4 < (int)(g_abs_B0B890) && v4 < (int)(--g_abs_B0B890) ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
     {
@@ -197,7 +197,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
     }
     while ( v4 < (int)(g_abs_B0B890) ); /*0x6b70bb*/
   }
-  v5 = (unsigned int)(*(void **)((char *)this + 60));
+  v5 = (void *)((unsigned int)(*(void **)((char *)this + 60)));
   *((unsigned int *)this + 14) = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6b70ca*/
   {
@@ -699,7 +699,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char SpawnManagerClass_25::Release( _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x6b8491*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b8499*/

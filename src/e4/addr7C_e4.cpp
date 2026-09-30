@@ -55,7 +55,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   uint16_t *v24; // edx
   int v25; // ecx
   DSurface * v26;
-  DSurface * result;
+  unsigned int result;
   int v28; // edi
   DSurface * v29;
   bool v30; // cc
@@ -231,7 +231,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
     {
       v26 = (gamemd::DSurface *)(v38);
-      result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1))))))))))))))))))));
+      result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1)))))))))))))))))))));
       *(unsigned int *)(a1 + 384) = v38; /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
       if ( v39 ) /*0x7c0a7b*/
@@ -326,7 +326,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             result = -6,
             v36) )
       {
-        result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33))))))))))))))));
+        result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)))))))))))))))));
       }
       goto LABEL_82; /*0x7c0bc4*/
     }

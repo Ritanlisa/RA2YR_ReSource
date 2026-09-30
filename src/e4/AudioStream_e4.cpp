@@ -19,6 +19,7 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x401910
 namespace gamemd {
@@ -570,6 +571,7 @@ int AudioStream::ReadSamples(const void * a2)
 namespace gamemd {
 MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
+    unsigned int v78 = 0;  /* G37 hoist */
 
   int *v8; // eax
   IUnknown **v9; // eax
@@ -665,7 +667,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
-  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8)
+  v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v78);;
   v9 = (IUnknown **)ClipRectIntersection(&v74, &aP1->field_0, v8, 0, 0); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v82 = *v9; /*0x4beafe*/
@@ -722,6 +724,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   }
   if ( aP1a != v20 || v79 != v21 ) /*0x4bec77*/
   {
+    unsigned int v101 = 0;  /* G37 hoist */
     v75 = v79 - v77; /*0x4bec8d*/
     v74 = (unsigned short *)((char *)aP1a - (char *)v76); /*0x4bec97*/
     v76 = (MouseClass *)((char *)v20 - (char *)v76); /*0x4bec9b*/
@@ -735,8 +738,8 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     else
       aP2a = (IUnknown *)(v15 - v27); /*0x4becf1*/
   }
-  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8)
-  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8)
+  v101 = (*(int (**)(AudioStream *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v80, v81);
+  v101 = (*(int (**)(AudioStream *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v80, v81);
   if ( !*(unsigned int *)&g_abs_87F8E4 ) /*0x4bed2e*/
     return 0; /*0x4bed2e*/
   v28 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4); /*0x4bed38*/
@@ -764,7 +767,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   v70 = (char *)v80 - (char *)aP1a; /*0x4bee0c*/
   v95 = v81 - v79; /*0x4bee19*/
   aP2b = (IUnknown *)((char *)aP3a - (char *)aP2a); /*0x4bee2b*/
-  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8)
+  v37 = (*(int (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 116))(this);;
   v64 = v35; /*0x4bee3c*/
   if ( v95 < 0 ) /*0x4bee42*/
   {
@@ -1020,7 +1023,7 @@ LABEL_43:
     }
   }
 LABEL_52:
-  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8)
+  LABEL_52: (*(void (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 96))(this);;
   return 1; /*0x4bf13b*/
 
 }

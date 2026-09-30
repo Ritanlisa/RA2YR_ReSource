@@ -1054,7 +1054,7 @@ LABEL_13:
   Block = v9; /*0x7247b2*/
   if ( v10 == v9 && v10 ) /*0x7247ba*/
   {
-    void HashTable::Remove(HashTable *this, int a2)
+    (*(void (**)(HashTable *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->HashTable_field_0x18);;
     v9 = Block; /*0x7247c8*/
   }
   v11 = (int *)v9; /*0x7247cd*/

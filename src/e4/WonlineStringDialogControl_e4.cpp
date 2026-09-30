@@ -194,7 +194,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char WonlineStringDialogControl_12::Release(_VectorClass_PAUtConnInfoStruct *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAUtConnInfoStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x7ad178*/
   }
 
@@ -294,7 +294,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char WonlineStringDialogControl_12::SetCapacity( _DynamicVectorClass_PAUtConnInfoStruct *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAUtConnInfoStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x7ad2a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7ad2a9*/

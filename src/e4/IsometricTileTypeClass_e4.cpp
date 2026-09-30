@@ -251,7 +251,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    char IsometricTileTypeClass::SetCapacity(_DynamicVectorClass_PAG *this, int a2, unsigned int *a3)
+    (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this);;
   }
   v7 = *((unsigned int *)this + 2); /*0x54a461*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x54a469*/

@@ -3422,7 +3422,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
-    int MapClass::AllocateCellDataBuffer(void *this, int a2, char *a3)
+    result = (*(int (**)(void *))(*(unsigned int *)this + 12))(this);;
     return 1; /*0x589498*/
   }
   v5 = a3; /*0x589385*/
@@ -3538,7 +3538,7 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
   v3 = a2; /*0x589a67*/
   if ( !a2 ) /*0x589a6f*/
   {
-    char MapClass::sub_589A60(void *this, int a2, int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     goto LABEL_28; /*0x589ba0*/
   }
   *((unsigned char *)this + 12) = 0; /*0x589a79*/
@@ -4797,7 +4797,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
   }
   else
   {
-    char MapClass::InitCellVe_vt02(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
     return 1; /*0x589d88*/
   }
 

@@ -1512,7 +1512,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x769e33*/
   if ( !a2 ) /*0x769e3d*/
   {
-    char Map_WorldDominationTour_20::Release( _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x769f43*/
   }
   *((unsigned char *)this + 12) = 0; /*0x769e47*/
@@ -1737,7 +1737,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   }
   else
   {
-    char Map_WorldDominationTour_43::Release(_VectorClass_VCentroid_WorldDominationTour *this, int a2, char *a3)
+    (*(void (**)(_VectorClass_VCentroid_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x76a4e3*/
   }
 
@@ -2675,7 +2675,7 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char Map_WorldDominationTour_28::Release( _VectorClass_PAUAnimationPalette_Map_WorldDominationTour *this, int a2, unsigned int *a3)
+    (*(void (**)(_VectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
     return 1; /*0x76a218*/
   }
 
