@@ -958,19 +958,19 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
 }
 }
 // 0x4D24A0
-int  FoggedObjectClass::SaveToINI(int * a1, int aP2)
+int   FoggedObjectClass::SaveToINI(int aP2)
 {
   int result; // eax
   int v4; // edx
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((int *)this, a1, aP2); /*0x4d24b3*/
+  result = AbstractClass::SaveLoad_Prefix((int *)this, this, aP2); /*0x4d24b3*/
   if ( result >= 0 ) /*0x4d24ba*/
   {
-    v4 = *a1; /*0x4d24bf*/
+    v4 = *this; /*0x4d24bf*/
     aP2 = *((unsigned int *)this + 27); /*0x4d24cb*/
-    result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x4d24cf*/
+    result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(this, &aP2, 4, 0); /*0x4d24cf*/
     if ( result >= 0 ) /*0x4d24d4*/
     {
       v5 = 0; /*0x4d24da*/
@@ -979,7 +979,7 @@ int  FoggedObjectClass::SaveToINI(int * a1, int aP2)
         v6 = 0; /*0x4d24e0*/
         do /*0x4d2500*/
         {
-          if ( (*(int (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, v6 + *((unsigned int *)this + 24), 16, 0) < 0 ) /*0x4d24f4*/
+          if ( (*(int (__stdcall **)(int *, int, int, unsigned int))(*this + 16))(this, v6 + *((unsigned int *)this + 24), 16, 0) < 0 ) /*0x4d24f4*/
             break; /*0x4d24f4*/
           ++v5; /*0x4d24fa*/
           v6 += 16; /*0x4d24fb*/

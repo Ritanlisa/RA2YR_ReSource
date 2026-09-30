@@ -310,7 +310,7 @@ TypeList_flat * TypeList_flat::QueryInterface(char a2)
   return this; /*0x4779d5*/
 }
 // 0x477F10
-int  TypeList_flat::GetSize()
+int TypeList_flat::GetSize(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
@@ -320,7 +320,7 @@ int  TypeList_flat::GetSize()
   result = 0; /*0x477f13*/
   if ( m_10 <= 0 ) /*0x477f18*/
     return -1; /*0x477f2f*/
-  for ( i = *(unsigned int **)&this->u32_4; *i != *this; ++i ) /*0x477f1e*/
+  for ( i = *(unsigned int **)&this->u32_4; *i != *a2; ++i ) /*0x477f1e*/
   {
     if ( ++result >= m_10 ) /*0x477f2d*/
       return -1; /*0x477f2d*/
@@ -797,7 +797,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   return &this->DynamicVectorClass; /*0x5137c2*/
 }
 // 0x5255F0
-unsigned int *  TypeList_flat::AnimTypeCopy()
+unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
 {
   int v3; // eax
   void *v4; // eax
@@ -809,10 +809,10 @@ unsigned int *  TypeList_flat::AnimTypeCopy()
   *(unsigned char *)&this->u32_C = 1; /*0x525603*/
   this->u32_D = 0; /*0x525607*/
   this->DynamicVectorClass = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52560a*/
-  if ( this != (TypeList *)this ) /*0x525610*/
+  if ( this != (TypeList *)aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt(); /*0x525612*/
-    v3 = this[2]; /*0x525618*/
+    v3 = aP1[2]; /*0x525618*/
     this->u32_8 = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
@@ -827,7 +827,7 @@ unsigned int *  TypeList_flat::AnimTypeCopy()
         {
           do /*0x525654*/
           {
-            *((unsigned int *)this->? + v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x52564b*/
+            *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x52564b*/
             ++v6; /*0x525651*/
           }
           while ( v6 < this->? ); /*0x525654*/
@@ -840,8 +840,8 @@ unsigned int *  TypeList_flat::AnimTypeCopy()
       this->u32_D = 0; /*0x52565b*/
     }
   }
-  this->u32_10 = this[4]; /*0x525661*/
-  this->u32_14 = this[5]; /*0x525667*/
+  this->u32_10 = aP1[4]; /*0x525661*/
+  this->u32_14 = aP1[5]; /*0x525667*/
   this->DynamicVectorClass = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x52566a*/
   return &this->DynamicVectorClass; /*0x525672*/
 }
@@ -987,17 +987,17 @@ int *  TypeList_flat::CopyFull()
   return (int *)this; /*0x67a104*/
 }
 // 0x67A110
-int *  TypeList_flat::CopyAircraft()
+int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 {
   int v3; // eax
   void *v4; // eax
   int Capacity; // ecx
   int v6; // eax
 
-  if ( this != (TypeList *)this ) /*0x67a11a*/
+  if ( this != (TypeList *)aP1 ) /*0x67a11a*/
   {
     (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a11e*/
-    v3 = this[2]; /*0x67a121*/
+    v3 = aP1[2]; /*0x67a121*/
     this->u32_8 = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
     {
@@ -1012,7 +1012,7 @@ int *  TypeList_flat::CopyAircraft()
         {
           do /*0x67a161*/
           {
-            *((unsigned int *)this->? + v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a158*/
+            *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a158*/
             ++v6; /*0x67a15e*/
           }
           while ( v6 < this->? ); /*0x67a161*/
@@ -1025,23 +1025,23 @@ int *  TypeList_flat::CopyAircraft()
       *(unsigned char *)&this->u32_D = 0; /*0x67a16c*/
     }
   }
-  this->u32_10 = this[4]; /*0x67a173*/
-  this->u32_14 = this[5]; /*0x67a179*/
-  this->unknown_18 = this[6]; /*0x67a17f*/
+  this->u32_10 = aP1[4]; /*0x67a173*/
+  this->u32_14 = aP1[5]; /*0x67a179*/
+  this->unknown_18 = aP1[6]; /*0x67a17f*/
   return (int *)this; /*0x67a184*/
 }
 // 0x67A290
-int *  TypeList_flat::CopyInfantry()
+int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 {
   int v3; // eax
   void *v4; // eax
   int Capacity; // ecx
   int v6; // eax
 
-  if ( this != (TypeList *)this ) /*0x67a29a*/
+  if ( this != (TypeList *)aP1 ) /*0x67a29a*/
   {
     (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a29e*/
-    v3 = this[2]; /*0x67a2a1*/
+    v3 = aP1[2]; /*0x67a2a1*/
     this->u32_8 = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
     {
@@ -1056,7 +1056,7 @@ int *  TypeList_flat::CopyInfantry()
         {
           do /*0x67a2e1*/
           {
-            *((unsigned int *)this->? + v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a2d8*/
+            *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a2d8*/
             ++v6; /*0x67a2de*/
           }
           while ( v6 < this->? ); /*0x67a2e1*/
@@ -1069,9 +1069,9 @@ int *  TypeList_flat::CopyInfantry()
       *(unsigned char *)&this->u32_D = 0; /*0x67a2ec*/
     }
   }
-  this->u32_10 = this[4]; /*0x67a2f3*/
-  this->u32_14 = this[5]; /*0x67a2f9*/
-  this->unknown_18 = this[6]; /*0x67a2ff*/
+  this->u32_10 = aP1[4]; /*0x67a2f3*/
+  this->u32_14 = aP1[5]; /*0x67a2f9*/
+  this->unknown_18 = aP1[6]; /*0x67a2ff*/
   return (int *)this; /*0x67a304*/
 }
 // 0x67A390
@@ -1545,7 +1545,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
 }
 // 0x67B150
 namespace gamemd {
-int  TypeList_VoxelAnim::TypeList_vt04()
+int TypeList_VoxelAnim::TypeList_vt04(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
@@ -1555,7 +1555,7 @@ int  TypeList_VoxelAnim::TypeList_vt04()
   result = 0; /*0x67b153*/
   if ( m_10 <= 0 ) /*0x67b158*/
     return -1; /*0x67b16f*/
-  for ( i = *(unsigned int **)&this->Items; *i != *this; ++i ) /*0x67b15e*/
+  for ( i = *(unsigned int **)&this->Items; *i != *a2; ++i ) /*0x67b15e*/
   {
     if ( ++result >= m_10 ) /*0x67b16d*/
       return -1; /*0x67b16d*/
@@ -1938,7 +1938,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
   return &this->DynamicVectorClass; /*0x717cc9*/
 }
 // 0x717CD0
-char  TypeList_flat::PushBack()
+char TypeList_flat::PushBack(VectorClass_flat * aP1)
 {
   int Capacity; // ecx
   int CapacityIncrement; // eax
@@ -1963,6 +1963,6 @@ char  TypeList_flat::PushBack()
   Count = this->u32_10; /*0x717d05*/
   Items = this->u32_4; /*0x717d08*/
   this->u32_10 = Count + 1; /*0x717d0e*/
-  Items[Count] = *this; /*0x717d18*/
+  Items[Count] = *aP1; /*0x717d18*/
   return 1; /*0x717d01*/
 }

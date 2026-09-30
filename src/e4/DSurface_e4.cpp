@@ -4196,7 +4196,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
   return a6; /*0x4c077f*/
 }
 // 0x4C0E30
-MouseClass * *  DSurface::DrawStippledRect(unsigned int * a2, short a4, DSurface * aP4)
+MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
 {
   int *v6; // eax
   int v7; // ecx
@@ -4273,8 +4273,8 @@ MouseClass * *  DSurface::DrawStippledRect(unsigned int * a2, short a4, DSurface
   v68 = v6[1]; /*0x4c0e61*/
   v69 = v6[2]; /*0x4c0e68*/
   v70 = v6[3]; /*0x4c0e73*/
-  v7 = v68 + this[1]; /*0x4c0e7e*/
-  v63 = v67 + *this; /*0x4c0e80*/
+  v7 = v68 + a1[1]; /*0x4c0e7e*/
+  v63 = v67 + *a1; /*0x4c0e80*/
   v64 = v7; /*0x4c0e84*/
   v8 = v67 + *a2; /*0x4c0e93*/
   v66 = v68 + a2[1]; /*0x4c0e95*/

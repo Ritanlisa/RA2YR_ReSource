@@ -1321,7 +1321,7 @@ int Gap2Recv_421350::RenderAlphaShapes() {
 }
 // 0x429830
 namespace gamemd { 
-double  Gap2Recv_429830::ComputeMovementWeight(void* a3, char a4, int a5, int a6) {
+double Gap2Recv_429830::ComputeMovementWeight(void* a2, void* a3, char a4, int a5, int a6) {
   int v7; // ebx
   bool v8; // zf
   int v9; // edi
@@ -1346,7 +1346,7 @@ double  Gap2Recv_429830::ComputeMovementWeight(void* a3, char a4, int a5, int a6
   v7 = *a3; /*0x429843*/
   v8 = a5 == 2; /*0x429845*/
   v28 = flt_81870C[a5]; /*0x429854*/
-  v25 = *this; /*0x429858*/
+  v25 = *a2; /*0x429858*/
   if ( v8 ) /*0x42985c*/
   {
     if ( a4 ) /*0x429868*/
@@ -25347,7 +25347,7 @@ int Gap2Recv_6D3290::DrawBuildingAnimFrame(void* a2, void* a3, char a4) {
 }
 // 0x6D3470
 namespace gamemd { 
-int  Gap2Recv_6D3470::DrawBuildingShadow(void* a3, char a4) {
+int Gap2Recv_6D3470::DrawBuildingShadow(void* a2, void* a3, char a4) {
   CellStruct *v5; // ecx
   int v6; // ebp
   char *v7; // edi
@@ -25375,8 +25375,8 @@ int  Gap2Recv_6D3470::DrawBuildingShadow(void* a3, char a4) {
     TacticalClass::DrawBuildings((TacticalClass *)v5); /*0x6d34b1*/
     goto LABEL_9; /*0x6d34b1*/
   }
-  if ( this[2] > 0 && this[3] > 0 ) /*0x6d3498*/
-    TacticalClass::DrawBuildings((TacticalClass *)this); /*0x6d349a*/
+  if ( a2[2] > 0 && a2[3] > 0 ) /*0x6d3498*/
+    TacticalClass::DrawBuildings((TacticalClass *)a2); /*0x6d349a*/
   v5 = (CellStruct *)a3; /*0x6d349f*/
   if ( a3[2] > 0 && a3[3] > 0 ) /*0x6d34af*/
     goto LABEL_8; /*0x6d34af*/

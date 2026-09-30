@@ -23,6 +23,23 @@ import re
 import sys
 from collections import Counter
 
+
+
+def _pcount(s):
+    s = s.strip()
+    if not s:
+        return 0
+    d = 0
+    c = 1
+    for ch in s:
+        if ch in '(<[':
+            d += 1
+        elif ch in ')>]':
+            d -= 1
+        elif ch == ',' and d == 0:
+            c += 1
+    return c
+
 APPLY = '--apply' in sys.argv
 ANCHOR = re.compile(r'/\*0x([0-9a-fA-F]+)\*/')
 
@@ -69,8 +86,19 @@ for p in glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp'):
         if addr is None:
             continue
         pseudo = load_pseudo(func_start_for(addr))
-        if '__thiscall' not in pseudo.split('\n', 1)[0]:
+        head = pseudo.split('\n', 1)[0]
+        if '__thiscall' not in head:
             continue  # only thiscall originals demote this
+        # G40 guard (AnimTypeCopy lesson): demote ONLY when the corpus def
+        # still carries the this as first param. C == T (original total incl.
+        # this) -> safe; C == T-1 -> already dropped, first param is REAL.
+        hm = re.search(r"\((.*)\)", head)
+        pm = re.search(r"\(([^)]*)\)\s*\{?\s*$", line.rstrip('\r\n'))
+        if hm and pm:
+            T = _pcount(hm.group(1))
+            C = _pcount(pm.group(1))
+            if C != T:
+                continue
         # body span via brace matching from this line
         d = 0
         end = None

@@ -207,14 +207,14 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
   return (void **)this; /*0x41d068*/
 }
 // 0x41CB20
-AircraftClass *  AircraftTypeClass::ConstructAircraft()
+AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
   int v2; // edi
   int v4; // eax
 
   v4 = RA2_OPNEW(0x6D8u); /*0x41cb28*/
   if ( v4 ) /*0x41cb32*/
-    return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, this); /*0x41cb3c*/
+    return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, ppv); /*0x41cb3c*/
   else
     return 0; /*0x41cb45*/
 }

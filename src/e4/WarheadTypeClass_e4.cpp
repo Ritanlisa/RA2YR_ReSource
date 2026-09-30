@@ -1212,7 +1212,7 @@ char WarheadTypeClass::AddRef(int a2)
   return 0; /*0x5250fe*/
 }
 // 0x525400
-int  WarheadTypeClass::Init()
+int WarheadTypeClass::Init(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
@@ -1222,7 +1222,7 @@ int  WarheadTypeClass::Init()
   result = 0; /*0x525403*/
   if ( m_10 <= 0 ) /*0x525408*/
     return -1; /*0x52541f*/
-  for ( i = *(unsigned int **)&this->vtable2; *i != *this; ++i ) /*0x52540e*/
+  for ( i = *(unsigned int **)&this->vtable2; *i != *a2; ++i ) /*0x52540e*/
   {
     if ( ++result >= m_10 ) /*0x52541d*/
       return -1; /*0x52541d*/

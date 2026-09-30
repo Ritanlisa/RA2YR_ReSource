@@ -111,7 +111,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   }
 }
 // 0x6B55F0
-void  SmudgeTypeClass::vt_entry_A0(int * a3, int a4, int a5, short * a6)
+void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
   int v7; // ebx
   int v8; // edx
@@ -125,8 +125,8 @@ void  SmudgeTypeClass::vt_entry_A0(int * a3, int a4, int a5, short * a6)
   v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
-    v8 = this[1]; /*0x6b5614*/
-    v13 = *this; /*0x6b5619*/
+    v8 = a2[1]; /*0x6b5614*/
+    v13 = *a2; /*0x6b5619*/
     v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
@@ -254,17 +254,17 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     return 0; /*0x6b55e7*/
 }
 // 0x6B57F0
-int  SmudgeTypeClass::PowerDrainUpdate()
+int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower(this); /*0x6b57f9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   IDA_LOBYTE(v3) = this->Crater; /*0x6b580c*/
-  Power::FlagProcess((Power *)this, v3); /*0x6b5815*/
+  Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/
   IDA_LOBYTE(v4) = this->Burn; /*0x6b581a*/
-  Power::FlagProcess((Power *)this, v4); /*0x6b5823*/
+  Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
 // 0x4a1d50
   return Power::TimerProcess(this->Height); /*0x6b5844*/

@@ -2965,7 +2965,7 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 }
 }
 // 0x4AF610
-int  JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a2)
+int   JumpjetLocomotionClass::LoadLocomotionFromStream()
 {
   unsigned int *v2; // ebp
   char *pad_50; // eax
@@ -2975,8 +2975,8 @@ int  JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a2)
   JumpjetLocomotionClass *v8; // eax
   JumpjetLocomotionClass *v9; // edi
 
-  v2 = a2; /*0x4af611*/
-  if ( !a2 ) /*0x4af618*/
+  v2 = this; /*0x4af611*/
+  if ( !this ) /*0x4af618*/
     return -2147467261; /*0x4af621*/
   pad_50 = this->__pad_50; /*0x4af62b*/
   if ( *(unsigned int *)this->__pad_50 ) /*0x4af628*/
@@ -2996,7 +2996,7 @@ int  JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a2)
   }
   else
   {
-    a2 = 0; /*0x4af692*/
+    this = 0; /*0x4af692*/
     if ( this == (JumpjetLocomotionClass *)24 ) /*0x4af69c*/
       return -2147467259; /*0x4af69c*/
     v7 = (**((int (__stdcall ***)(char *, void *, JumpjetLocomotionClass **))this - 6))( /*0x4af6ad*/
@@ -3006,23 +3006,23 @@ int  JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a2)
     if ( v7 >= 0 ) /*0x4af6b1*/
     {
       v9 = this; /*0x4af6c5*/
-      ComPtr::Release_Alt((ComPtr *)&a2); /*0x4af6cd*/
+      ComPtr::Release_Alt((ComPtr *)&this); /*0x4af6cd*/
       v8 = v9; /*0x4af6d2*/
-      a2 = v9->LocomotionClass; /*0x4af6d5*/
+      this = v9->LocomotionClass; /*0x4af6d5*/
     }
     else
     {
-      ComPtr::Release_Alt((ComPtr *)&a2); /*0x4af6b7*/
+      ComPtr::Release_Alt((ComPtr *)&this); /*0x4af6b7*/
       v8 = 0; /*0x4af6bc*/
-      a2 = 0; /*0x4af6be*/
+      this = 0; /*0x4af6be*/
     }
     if ( v7 < 0 && v7 != -2147467262 ) /*0x4af6e3*/
       WinAPI::Wrapper(v7); /*0x4af6e6*/
     if ( !v8 ) /*0x4af6f1*/
       return -2147467259; /*0x4af6fa*/
     v6 = (*(int (__stdcall **)(JumpjetLocomotionClass *, unsigned int *))(v8->LocomotionClass[0] + 12))(v8, v2); /*0x4af704*/
-    if ( a2 ) /*0x4af70c*/
-      (*(void (__stdcall **)(unsigned int *))(*a2 + 8))(a2); /*0x4af711*/
+    if ( this ) /*0x4af70c*/
+      (*(void (__stdcall **)(unsigned int *))(*this + 8))(this); /*0x4af711*/
   }
   return v6; /*0x4af61a*/
 }
@@ -5757,7 +5757,7 @@ int JumpjetLocomotionClass::ShortFunc_718090()
   return result; /*0x71809e*/
 }
 // 0x7180A0
-unsigned int *  JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * a2)
+unsigned int *   JumpjetLocomotionClass::GetCoordinateConditional()
 {
   unsigned int *result; // eax
   int TurnRate; // ecx
@@ -5766,7 +5766,7 @@ unsigned int *  JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * 
 
   if ( (*(uint8_t (__stdcall **)(JumpjetLocomotionClass *))(this->LocomotionClass[0] + 16))(this) ) /*0x7180a9*/
   {
-    result = a2; /*0x7180b0*/
+    result = this; /*0x7180b0*/
     TurnRate = this->TurnRate; /*0x7180b4*/
     Speed = this->Speed; /*0x7180b7*/
     Climb = this->Climb; /*0x7180ba*/
@@ -5776,11 +5776,11 @@ unsigned int *  JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * 
     TurnRate = this->Owner->?[0]; /*0x7180d7*/
     Speed = this->vtable2->?[1]; /*0x7180d9*/
     Climb = *(float *)&this->Owner->?[2]; /*0x7180dc*/
-    result = a2; /*0x7180df*/
+    result = this; /*0x7180df*/
   }
-  *a2 = TurnRate; /*0x7180bf*/
-  a2[1] = Speed; /*0x7180c1*/
-  *((float *)a2 + 2) = Climb; /*0x7180c4*/
+  *this = TurnRate; /*0x7180bf*/
+  this[1] = Speed; /*0x7180c1*/
+  *((float *)this + 2) = Climb; /*0x7180c4*/
   return result; /*0x7180c7*/
 }
 // 0x718100

@@ -2648,7 +2648,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
   return 1; /*0x69c92e*/
 }
 // 0x69C940
-int  SessionClass::Read()
+int SessionClass::Read(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
@@ -2658,7 +2658,7 @@ int  SessionClass::Read()
   result = 0; /*0x69c943*/
   if ( m_10 <= 0 ) /*0x69c948*/
     return -1; /*0x69c95f*/
-  for ( i = *(unsigned int **)&this->MPGameMode; *i != *this; ++i ) /*0x69c94e*/
+  for ( i = *(unsigned int **)&this->MPGameMode; *i != *a2; ++i ) /*0x69c94e*/
   {
     if ( ++result >= m_10 ) /*0x69c95d*/
       return -1; /*0x69c95d*/

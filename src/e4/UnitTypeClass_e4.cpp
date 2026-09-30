@@ -158,7 +158,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
 }
 // 0x7474B0
 namespace gamemd {
-void  UnitTypeClass::UnitTypeClass_CreateUnit()
+void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
 {
   int *v4; // eax
   int *v5; // esi
@@ -173,12 +173,12 @@ void  UnitTypeClass::UnitTypeClass_CreateUnit()
   v4 = (int *)((char)((int *)RA2_OPNEW(0x8E8u)));
   if ( !v4 ) /*0x7474c5*/
     return 0; /*0x7474c5*/
-  v5 = (int *)UnitClass::Construct(v4, (int)this, this); /*0x7474d8*/
+  v5 = (int *)UnitClass::Construct(v4, (int)this, a2); /*0x7474d8*/
   if ( !v5 ) /*0x7474dc*/
     return 0; /*0x747554*/
-  IDA_LOWORD(this) = 0; /*0x7474e4*/
+  IDA_LOWORD(a2) = 0; /*0x7474e4*/
   v6 = Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink); /*0x7474f1*/
-  v7 = (unsigned int)this; /*0x7474f6*/
+  v7 = (unsigned int)a2; /*0x7474f6*/
   IDA_LOBYTE(v8) = 0; /*0x7474fa*/
   IDA_HIBYTE(v8) = v6; /*0x7474fc*/
   IDA_BYTE1(v7) = 0; /*0x7474fe*/

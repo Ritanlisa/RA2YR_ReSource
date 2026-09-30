@@ -481,7 +481,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   return this; /*0x77322c*/
 }
 // 0x475B70
-char  WeaponTypeClass::ReadTrajectoryData(char * a2, int a4)
+char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4)
 {
   int v4; // eax
   int v5; // edx
@@ -517,7 +517,7 @@ char  WeaponTypeClass::ReadTrajectoryData(char * a2, int a4)
     while ( v5 < v4 ); /*0x475c3a*/
   }
 // 0x528660
-  return INIClass::SetString(this, a2, Source); /*0x475c61*/
+  return INIClass::SetString(aP1, a2, Source); /*0x475c61*/
 }
 // 0x475C70
 char  WeaponTypeClass::ReadVeteranData(char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)

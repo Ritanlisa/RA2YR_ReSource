@@ -2073,17 +2073,17 @@ void *  RulesClass::readAircraftTypes()
   return &this->DetailMinFrameRateNormal; /*0x67a204*/
 }
 // 0x67A210
-void *  RulesClass::readSuperWeaponTypes()
+void * RulesClass::readSuperWeaponTypes(int * a2)
 {
   int v3; // eax
   int v4; // eax
   int DetailBufferZoneWidth; // ecx
   int v6; // eax
 
-  if ( this != (RulesClass *)this ) /*0x67a21a*/
+  if ( this != (RulesClass *)a2 ) /*0x67a21a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
-    v3 = this[2]; /*0x67a221*/
+    v3 = a2[2]; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
@@ -2098,7 +2098,7 @@ void *  RulesClass::readSuperWeaponTypes()
         {
           do /*0x67a261*/
           {
-            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a258*/
+            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x67a258*/
             ++v6; /*0x67a25e*/
           }
           while ( v6 < this->DetailBufferZoneWidth ); /*0x67a261*/
@@ -2111,23 +2111,23 @@ void *  RulesClass::readSuperWeaponTypes()
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a26c*/
     }
   }
-  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)this[4]; /*0x67a273*/
-  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)this[5]; /*0x67a279*/
-  this->AttackingAircraftSightRange = this[6]; /*0x67a27f*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a273*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a279*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 }
 // 0x67A310
-void *  RulesClass::readBuildingTypes()
+void * RulesClass::readBuildingTypes(int * a2)
 {
   int v3; // eax
   int v4; // eax
   int DetailBufferZoneWidth; // ecx
   int v6; // eax
 
-  if ( this != (RulesClass *)this ) /*0x67a31a*/
+  if ( this != (RulesClass *)a2 ) /*0x67a31a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
-    v3 = this[2]; /*0x67a321*/
+    v3 = a2[2]; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
@@ -2142,7 +2142,7 @@ void *  RulesClass::readBuildingTypes()
         {
           do /*0x67a361*/
           {
-            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a358*/
+            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x67a358*/
             ++v6; /*0x67a35e*/
           }
           while ( v6 < this->DetailBufferZoneWidth ); /*0x67a361*/
@@ -2155,9 +2155,9 @@ void *  RulesClass::readBuildingTypes()
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a36c*/
     }
   }
-  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)this[4]; /*0x67a373*/
-  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)this[5]; /*0x67a379*/
-  this->AttackingAircraftSightRange = this[6]; /*0x67a37f*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a379*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
   return &this->DetailMinFrameRateNormal; /*0x67a384*/
 }
 // 0x67A8B0
@@ -2328,9 +2328,9 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   return &this->DetailMinFrameRateNormal; /*0x67c45d*/
 }
 // 0x6614F0
-int  RulesClass::readGeneralSection()
+int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
 {
-  return (*(int (__stdcall **)(int, RulesClass *, int, unsigned int))(this->uniqueId)(this, this, 3, 0); /*0x6614ff*/
+  return (*(int (__stdcall **)(int, RulesClass *, int, unsigned int))(aP1->uniqueId)(aP1, this, 3, 0); /*0x6614ff*/
 }
 // 0x661510
 int RulesClass::readCombatDamage(int a2)

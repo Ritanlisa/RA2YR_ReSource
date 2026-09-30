@@ -1306,13 +1306,13 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
 }
 // 0x558810
 namespace gamemd {
-int  E4Recv_558810::ShowSaveLoadDialog()
+int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
 {
   char *p_referenceCount; // eax
 
-  p_referenceCount = this; /*0x558810*/
+  p_referenceCount = aP1; /*0x558810*/
   this->M4 = 2; /*0x558814*/
-  if ( !this ) /*0x55881d*/
+  if ( !aP1 ) /*0x55881d*/
     p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
   *(void **)&this->M12 = p_referenceCount; /*0x558829*/
 // 0x558dd0

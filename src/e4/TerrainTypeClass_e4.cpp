@@ -203,7 +203,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   return &this->ObjectTypeClass; /*0x71dbc2*/
 }
 // 0x71DEA0
-int  TerrainTypeClass::LoadFromINI()
+int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
   char Bool_Overwrite; // al
   char v4; // al
@@ -226,8 +226,8 @@ int  TerrainTypeClass::LoadFromINI()
   unsigned char v22[4]; // [esp+18h] [ebp-204h] BYREF
   char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection(this); /*0x71deb3*/
-  if ( !ObjectTypeClass::LoadFromINI((char *)this, this) ) /*0x71debb*/
+  INIClass::ResetSection(aP1); /*0x71deb3*/
+  if ( !ObjectTypeClass::LoadFromINI((char *)this, aP1) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
   if ( this->Strength == -1 ) /*0x71decf*/
     this->Strength = g_RulesClass_Instance->Normal[17]; /*0x71dedc*/
@@ -263,7 +263,7 @@ int  TerrainTypeClass::LoadFromINI()
     *(unsigned int *)&this->q29E = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
   }
   Coord = INIClass::GetCoord( /*0x71e00c*/
-            this,
+            aP1,
             (int)v22,
             (uint8_t *)(&this->vtable46),
             (uint8_t *)aRadarcolor,

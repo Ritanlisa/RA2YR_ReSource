@@ -921,7 +921,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
   return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
 }
 // 0x7B3920
-void  UDPInterfaceClass_Destru::Reset(short a3)
+void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 {
   int v4; // edi
   int16_t v5; // bp
@@ -942,7 +942,7 @@ void  UDPInterfaceClass_Destru::Reset(short a3)
       {
         if ( v5 == *v8 ) /*0x7b3952*/
         {
-          if ( *this == *v7 ) /*0x7b3958*/
+          if ( *a2 == *v7 ) /*0x7b3958*/
             return; /*0x7b3958*/
           v5 = a3; /*0x7b395a*/
         }
@@ -953,7 +953,7 @@ void  UDPInterfaceClass_Destru::Reset(short a3)
       while ( v6 < v4 ); /*0x7b3967*/
     }
     Debug::Log(); /*0x7b398d*/
-    *(this + this->q3F568 + 64859) = *this; /*0x7b399d*/
+    *(this + this->q3F568 + 64859) = *a2; /*0x7b399d*/
     *((unsigned short *)this + (this->q3F568)++ + 129750) = v5; /*0x7b39aa*/
   }
 }

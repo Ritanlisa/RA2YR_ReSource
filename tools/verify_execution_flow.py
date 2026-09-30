@@ -2037,6 +2037,9 @@ def main():
     p.add_argument("--save-ida", action="store_true", help="fetch IDA pseudocode to cache")
     p.add_argument("--no-ida", action="store_true",
                    help="(--auto) offline soft mode: skip uncached completed functions")
+    p.add_argument("--all", action="store_true",
+                   help="whole-universe pool: completed + every function "
+                        "with an ida_cache snapshot")
     p.add_argument("--fetch-cache", action="store_true",
                    help="pre-fill IDA cache for ALL completed=true functions")
     p.add_argument("--verbose", "-v", action="store_true")
@@ -2077,6 +2080,22 @@ def main():
 
     if args.auto:
         completed = _collect_completed_functions(M)
+        if args.all:
+            # G40 whole-universe mode: every function with an ida_cache
+            # snapshot joins the pool (completed + non-completed alike)
+            import os as _os
+            cache_dir = IDA_CACHE_DIR
+            seen = {a for a, _n in completed}
+            for fn in _os.listdir(cache_dir):
+                m = re.match(r'func_0x([0-9A-Fa-f]+)\.json', fn)
+                if not m:
+                    continue
+                a = int(m.group(1), 16)
+                if a in seen:
+                    continue
+                seen.add(a)
+                nm = M.addr_to_name.get(a)
+                completed.append((a, nm))
         if not completed:
             print("No completed=true functions to verify.", file=sys.stderr)
             sys.exit(0)
