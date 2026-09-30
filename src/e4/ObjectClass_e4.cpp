@@ -274,6 +274,7 @@ int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, un
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
 
   unsigned int *v5; // esi
   int v6; // eax

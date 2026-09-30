@@ -9,6 +9,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/MainMenu_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4E1D00
 namespace gamemd {

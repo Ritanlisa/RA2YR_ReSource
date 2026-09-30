@@ -17,6 +17,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x773600
 namespace gamemd {

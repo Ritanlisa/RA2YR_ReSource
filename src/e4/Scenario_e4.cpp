@@ -32,6 +32,7 @@
 #include "e4/classes/ScoreAnimClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x44F820
 namespace gamemd {
@@ -87,7 +88,7 @@ int Scenario::ReadTeams()
   CCINIClass *v47; // ebx
   AbstractClass *v48; // edi
   void * v49;
-  BuildingClass *v50; // eax
+  BuildingClass * v50;
   int v51; // edx
   unsigned int *Value; // eax
   int v53; // esi
@@ -402,7 +403,7 @@ int Scenario::ProcessSidebarUnits()
   int i; // [esp+Ch] [ebp-8h]
   char v12[4]; // [esp+10h] [ebp-4h] BYREF
 
-  result = (unsigned char *)((int)(g_abs_A8EC88 - 1));
+  result = (int)((unsigned char *)((int)(g_abs_A8EC88 - 1)));
   for ( i = g_abs_A8EC88 - 1; i >= 0; --i ) /*0x50d622*/
   {
     v3 = (unsigned int *)*((unsigned int *)(unsigned int)(g_abs_A8EC7C)+ result); /*0x50d631*/
@@ -439,7 +440,7 @@ Game * * Scenario::ComputeDisplayPosition()
   int v1; // ebp
   int v2; // edi
   int v3; // eax
-  int v4; // ebx
+  unsigned char * v4;
   int v5; // eax
   int v6; // eax
   int v7; // esi
@@ -465,7 +466,7 @@ Game * * Scenario::ComputeDisplayPosition()
   }
   else
   {
-    v3 = 480; /*0x552b3f*/
+    v3 = (int)(480);
     if ( g_abs_8A00A4 != (unsigned char [1])(640) ) /*0x552b44*/
       v3 = 600; /*0x552b46*/
     v4 = v3 - 80; /*0x552b4b*/
@@ -512,7 +513,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
     v6 = Copy8Bytes(&v11, (char *)this + 7); /*0x552c3b*/
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
-    result = a2; /*0x552c54*/
+    result = a2; /*(unsigned char [1])(0x552c54)*/
     if ( g_abs_8A00A4 == 640 ) /*0x552c52*/
     {
       v9 = v7 + 12; /*0x552c58*/
@@ -530,7 +531,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   {
     v2 = *((char *)this + 11); /*0x552bf8*/
     v3 = *((char *)this + 12); /*0x552bff*/
-    result = a2; /*0x552c02*/
+    result = a2; /*(unsigned char [1])(0x552c02)*/
     if ( g_abs_8A00A4 == 640 ) /*0x552bfd*/
       v5 = v2 + 84; /*0x552c06*/
     else

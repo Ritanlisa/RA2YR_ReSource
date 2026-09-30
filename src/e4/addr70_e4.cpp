@@ -145,9 +145,9 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v33,
       v19);
   }
-  v20 = (unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green));
-  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))));
-  v36 = (unsigned int)((int *)((unsigned int)((int *)(-2))));
+  v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
+  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))));
+  v36 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
@@ -221,7 +221,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   void * v20;
   int v21; // [esp+18h] [ebp-88h] BYREF
   int v22; // [esp+1Ch] [ebp-84h]
-  void * v23;
+  unsigned int v23;
   int v24; // [esp+24h] [ebp-7Ch] BYREF
   int v25; // [esp+28h] [ebp-78h]
   int16_t v26; // [esp+2Ch] [ebp-74h] BYREF
@@ -342,7 +342,7 @@ namespace gamemd {
 void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, const void * a5, int a6, int * a7, unsigned int a8, int a9, int a10, int a11)
 {
   int v12; // eax
-  unsigned int v13;
+  unsigned int * v13;
   unsigned int *v14; // edi
   unsigned int v15; // ebx
   float *v16; // eax
@@ -409,7 +409,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v16 = (float *)(MultiplyMatrix3x4(v53, (float *)stru_887430.m_Data, v50));
       TransformVoxelVertex(v13, v15++, 0, v16); /*0x706fda*/
     }
-    while ( v15 < v13[1] ); /*0x706fe5*/
+    while ( v15 < ((unsigned int *)(v13))[1] ); /*0x706fe5*/
   }
   v17 = Voxel::RenderFrame(v49); /*0x706fef*/
   v18 = *a1; /*0x706ff4*/

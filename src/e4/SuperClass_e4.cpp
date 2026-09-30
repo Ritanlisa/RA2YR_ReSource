@@ -266,7 +266,7 @@ SuperClass * * SuperClass::CleanupMembers()
       ++v8; /*0x6cb2bf*/
       *((unsigned int *)g_abs_B0F6CC + v8 - 1) = *((unsigned int *)g_abs_B0F6CC + v8); /*0x6cb2c3*/
     }
-    while ( v8 < g_abs_B0F6D8 ); /*0x6cb2cf*/
+    while ( v8 < (int)(g_abs_B0F6D8) ); /*0x6cb2cf*/
   }
   AbstractClass::DTOR((unsigned int *)this); /*0x6cb2d3*/
 

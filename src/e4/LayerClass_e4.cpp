@@ -534,7 +534,7 @@ LABEL_8:
     g_abs_87F8F8 = g_abs_87F8DC; /*0x577e3a*/
     g_abs_87F8F4 = 1; /*0x577e42*/
     g_abs_87F8FC = g_abs_87F8DC - 1; /*0x577e4b*/
-    g_abs_87F900 = (g_abs_87F8DC << 11) + g_abs_87F924 + 4; /*0x577e5a*/
+    g_abs_87F900 = ((unsigned int)(g_abs_87F8DC)<< 11) + g_abs_87F924 + 4; /*0x577e5a*/
     v4 = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
@@ -567,7 +567,7 @@ LABEL_23:
       goto LABEL_24; /*0x577ee3*/
     }
 LABEL_25:
-    Radar::UpdateReveal(0, 0); /*0x577efc*/
+    ((Radar *)(0))->UpdateReveal(0); /*0x577efc*/
     FogOfWar::Render((int **)&g_abs_87F7E8); /*0x577f0d*/
     return (void *)MapClass::MarkForRedraw(&g_abs_87F7E8, 2); /*0x577f19*/
   }

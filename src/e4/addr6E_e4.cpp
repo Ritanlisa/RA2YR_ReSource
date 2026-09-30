@@ -826,7 +826,7 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 
   int v6; // edi
   int v7; // esi
-  unsigned int v8;
+  unsigned int * v8;
   int v9; // ecx
 
   if ( *((unsigned int *)this + 19) ) /*0x6e2a55*/
@@ -838,9 +838,9 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
       v8 = (unsigned int *)(g_abs_B0E724);
       do /*0x6e2a91*/
       {
-        if ( *(unsigned int *)(v8[v7] + 36) == *((unsigned int *)this + 19) ) /*0x6e2a78*/
+        if ( *(unsigned int *)(((unsigned int *)(v8))[v7] + 36) == *((unsigned int *)this + 19) ) /*0x6e2a78*/
         {
-          v9 = v8[v7]; /*0x6e2a7a*/
+          v9 = ((unsigned int *)(v8))[v7]; /*0x6e2a7a*/
           if ( v9 ) /*0x6e2a7f*/
           {
             (*(void (**)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x6e2a85*/
@@ -879,7 +879,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   int v9; // [esp+Ch] [ebp-8h]
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e360b*/
+  v6 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e360b*/
   GroundHeight = 0; /*0x6e360f*/
   v9 = (SHIWORD(v6) << 8) + 128; /*0x6e3630*/
   v8 = ((int16_t)v6 << 8) + 128; /*0x6e363a*/

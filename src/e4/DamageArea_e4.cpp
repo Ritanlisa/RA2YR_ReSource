@@ -25,6 +25,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {

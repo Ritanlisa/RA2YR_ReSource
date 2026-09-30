@@ -210,6 +210,7 @@ int ProcessGameResults(char a1)
     unsigned int v23 = 0;  /* G37 hoist */
     unsigned int v23 = 0;  /* G37 hoist */
     unsigned int v23 = 0;  /* G37 hoist */
+    unsigned int v23 = 0;  /* G37 hoist */
     unsigned int v35 = 0;  /* G37 hoist */
     unsigned int v32 = 0;  /* G37 hoist */
     unsigned int v29 = 0;  /* G37 hoist */

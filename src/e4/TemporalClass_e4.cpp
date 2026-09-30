@@ -400,7 +400,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking( /*0x71a6b9*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
+      (MouseClass *)&aP0[((unsigned int *)(1].__pad_0))[4]);
     ObjectPtr::RegisterForTracking( /*0x71a6c7*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
       (MouseClass *)&aP0[1].referenceCount);

@@ -121,7 +121,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   unsigned int v22; // [esp+44h] [ebp+4h]
-v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0)))))))));
+v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0)))))))))));
   v19 = 0; /*0x415b29*/
   v5 = dword_817A58; /*0x415b2d*/
   do /*0x415bab*/
@@ -375,7 +375,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   if ( *((unsigned char *)this + 980) ) /*0x419777*/
     return 0; /*0x419777*/
   v10 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 72))(a2, v11); /*0x41978a*/
-  if ( !Cell::IsPassable(v10) ) /*0x419793*/
+  if ( !((Cell *)(v10))->IsPassable() ) /*0x419793*/
     return 0; /*0x4197ac*/
   else
     return 7; /*0x41979e*/

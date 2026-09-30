@@ -314,7 +314,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (unsigned int)(v37 - v41);
-            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/

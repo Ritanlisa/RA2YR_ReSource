@@ -525,7 +525,7 @@ LABEL_37:
   if ( v30 <= 7 )
     goto LABEL_141;
   v45 = (char *)(12 * *(unsigned int *)(this + 88) + 8333888);
-  v46 = (unsigned int)((char *)(*(unsigned char *)(this + 96)));
+  v46 = (char *)((unsigned int)((char *)(*(unsigned char *)(this + 96))));
   *(unsigned int *)&aP3.bombVisible = v45;
   if ( v46 )
     v47 = (char *)((unsigned int)(v45[1]));

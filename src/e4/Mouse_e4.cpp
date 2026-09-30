@@ -21,6 +21,8 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/MovementAI_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {

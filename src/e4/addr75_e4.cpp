@@ -579,7 +579,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          (unsigned int)(g_abs_B1D4A8)+ g_abs_B1D4B4,
          0) )
   {
-    v3 = g_abs_B1D4B0++; /*0x752d3b*/
+    v3 = (int)(g_abs_B1D4B0++);
     *((unsigned int *)g_abs_B1D4A4 + v3) = this; /*0x752d4a*/
   }
   return this; /*0x752d4d*/

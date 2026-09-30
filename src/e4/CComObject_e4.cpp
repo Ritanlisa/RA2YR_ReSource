@@ -578,7 +578,7 @@ LABEL_16:
       v10 = (HWND)Dialog::FindByHandle((void *)0x117); /*0x7a7ce0*/
       CloseDialog(v10, 0); /*0x7a7ce9*/
     }
-    v11 = (HWND)Dialog::FindByHandle((void *)0xCF); /*0x7a7cf3*/
+    v11 = (unsigned int)((HWND)Dialog::FindByHandle((void *)0xCF));
     CloseDialog(v11, 0); /*0x7a7cfc*/
     dword_B779D4 = a5; /*0x7a7d14*/
     *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
@@ -586,7 +586,7 @@ LABEL_16:
     *(unsigned int *)dword_B779C4 = dword_B76B24; /*0x7a7d31*/
     if ( g_abs_A8B238[0] == 4 && (dword_B76B30 & 0x100) != 0 ) /*0x7a7d47*/
       *(unsigned int *)dword_B779C4 = 2; /*0x7a7d49*/
-    v12 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a7d59*/
+    v12 = ((String *)((char **)&g_WebBrowser))->GetOrEmpty(); /*0x7a7d59*/
     v13 = g_WOL_State; /*0x7a7d66*/
     strcpy(byte_B77830, v12); /*0x7a7d77*/
     if ( v13 > 0 && g_WOL_ConnectionFlags ) /*0x7a7d8b*/

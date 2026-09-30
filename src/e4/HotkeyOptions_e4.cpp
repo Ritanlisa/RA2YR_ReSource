@@ -540,12 +540,12 @@ LABEL_85: v40 = (int *)(v33 + 1);
   if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fb828*/
   {
     qsort((void *)dword_87F5D8[42], v32, 8, CompareFuncInt); /*0x5fb839*/
-    dword_87F5D8[46] = 0; /*0x5fb841*/
+    ((unsigned int *)(dword_87F5D8))[46] = 0; /*0x5fb841*/
     IDA_LOBYTE(((unsigned int *)(dword_87F5D8))[45]) = 1; /*0x5fb84b*/
   }
-  v37 = dword_87F5D8[43]; /*0x5fb852*/
-  v38 = (unsigned int *)dword_87F5D8[42]; /*0x5fb858*/
-  if ( dword_87F5D8[43] <= 0 ) /*0x5fb860*/
+  v37 = ((unsigned int *)(dword_87F5D8))[43]; /*0x5fb852*/
+  v38 = (unsigned int *)((unsigned int *)(dword_87F5D8))[42]; /*0x5fb858*/
+  if ( ((unsigned int *)(dword_87F5D8))[43] <= 0 ) /*0x5fb860*/
     goto LABEL_79; /*0x5fb860*/
   while ( 1 ) /*0x5fb869*/
   {
@@ -566,11 +566,10 @@ LABEL_78:
   }
   if ( v33 ) /*0x5fb8cd*/
   {
-    dword_87F5D8[46] = &v38[2 * (v37 / 2)]; /*0x5fb8cf*/
+    ((unsigned int *)(dword_87F5D8))[46] = &v38[2 * (v37 / 2)]; /*0x5fb8cf*/
     goto LABEL_85; /*0x5fb8cf*/
   }
-LABEL_79:
-  v40 = &dword_A8ED54[239290]; /*0x5fb887*/
+LABEL_79: v40 = (unsigned int *)(&dword_A8ED54[239290]);
 LABEL_80:
   v41 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)*v40 + 8))(*v40); /*0x5fb88c*/
   if ( !v41 ) /*0x5fb897*/

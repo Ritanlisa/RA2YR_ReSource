@@ -324,7 +324,7 @@ LABEL_34:
         WinModemClass::WriteSerial(&Buffer, 2); /*0x5f2c99*/
       }
 LABEL_35:
-      Debug::Log(); /*0x5f2c9e*/
+      this->Debug::Log(); /*0x5f2c9e*/
       goto LABEL_36; /*0x5f2ca3*/
     }
     IDA_LOBYTE(v12) = 0; /*0x5f2a88*/

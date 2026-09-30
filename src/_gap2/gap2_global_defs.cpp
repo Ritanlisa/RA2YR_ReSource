@@ -52,6 +52,10 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 

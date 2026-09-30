@@ -54,8 +54,8 @@ RadSiteClass::RadSiteClass()
          (unsigned int)(g_abs_B04BD8)+ g_abs_B04BE4,
          0) )
   {
-    v3 = (int)((unsigned int)(g_abs_B04BE0++));
-    *((unsigned int *)g_abs_B04BD4 + v3) = this; /*0x65b293*/
+    v3 = (gamemd::RadSiteClass *)((int)((unsigned int)(g_abs_B04BE0++)));
+    *((unsigned int *)(unsigned int)(g_abs_B04BD4)+ v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
 

@@ -14,8 +14,6 @@ double AudioNode::Release(...) { return 0; }
 double BuildingLightQueue::RemoveEntry(...) { return 0; }
 double CampaignScore::CampaignScore_field_0x18(...) { return 0; }
 double CampaignScore::__pad_0(...) { return 0; }
-double Checksum::AddString(...) { return 0; }
-double ControlClass::CtorFromData(...) { return 0; }
 double Coord3D::Set(...) { return 0; }
 double DeleteAndZero::DeleteAndZero_field_0x04(...) { return 0; }
 double FileFind::Next(...) { return 0; }
@@ -31,8 +29,6 @@ double IDXContainer::LoadSample(...) { return 0; }
 double ListClass::ListClass_field_0x0C(...) { return 0; }
 double MSChoiceClass::LoadFromINI(...) { return 0; }
 double MSShapeAnim::__pad_0(...) { return 0; }
-double Matrix3x3::ApplyCol0(...) { return 0; }
-double Matrix3x3::RotateX(...) { return 0; }
 double ModemGame::__pad_0(...) { return 0; }
 double ObjectClass::AbstractClass(...) { return 0; }
 double ObjectClass::DistanceTo(...) { return 0; }
@@ -50,7 +46,6 @@ double SquadClass::ProcessMove(...) { return 0; }
 double Straw::__pad_0(...) { return 0; }
 double TaskManager::Update(...) { return 0; }
 double TileNode::Cleanup(...) { return 0; }
-double TimerPool::AllocSlot(...) { return 0; }
 double Triple::Set(...) { return 0; }
 double WDTObject::GetAndClearFlag(...) { return 0; }
 double WTFMode::ResetUnitFlags(...) { return 0; }

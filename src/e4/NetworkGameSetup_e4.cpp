@@ -51,6 +51,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
+    double (__cdecl *)(...) v6 = 0;
 
   char *v3; // eax
   unsigned int v4; // edi

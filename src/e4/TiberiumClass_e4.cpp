@@ -24,6 +24,8 @@
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */

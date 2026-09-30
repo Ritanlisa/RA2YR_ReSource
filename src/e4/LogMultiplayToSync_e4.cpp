@@ -24,7 +24,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   char *v9; // eax
-  char * v10;
+  unsigned int v10;
   char *Name; // eax
   unsigned int v12; // eax
   int i; // edi
@@ -79,7 +79,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
 
   a2 = (unsigned char *)((int)(a2));
   v3 = (gamemd::CellStruct *)(*((unsigned int *)HouseClass_Player + 12));
-  v56 = a1; /*0x65170c*/
+  v56 = (unsigned int)(a1);
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/

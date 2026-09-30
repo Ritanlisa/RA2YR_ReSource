@@ -435,7 +435,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
       (MouseClass *)&aP0[((unsigned int *)(2].__pad_0))[8]);
     ObjectPtr::RegisterForTracking( /*0x41d757*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[2].__pad_0[12]);
+      (MouseClass *)&aP0[((unsigned int *)(2].__pad_0))[12]);
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[2].uniqueId); /*0x41d765*/
     ObjectPtr::RegisterForTracking( /*0x41d773*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
@@ -451,7 +451,7 @@ namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x41d794*/
+  return ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x41d794*/
 
 }
 } // namespace gamemd

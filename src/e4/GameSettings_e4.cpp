@@ -155,7 +155,7 @@ void GameSettings::Read()
                              (uint8_t *)g_INI_Key_Video,
                              (uint8_t *)g_INI_Key_ScreenHeight,
                              v6);
-  Debug::Log(); /*0x5fa8ea*/
+  this->Debug::Log(); /*0x5fa8ea*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fa905*/
                      &g_abs_87F7E8[7734],
                      (uint8_t *)g_INI_Key_Video,

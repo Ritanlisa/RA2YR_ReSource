@@ -364,11 +364,11 @@ LABEL_9:
         Array::RemoveAt(&g_MatrixTransformState + 6050, v15); /*0x6341f5*/
       Team_Destroy((int *)&g_MatrixTransformState + 5960, (VectorClass *)&Block); /*0x634204*/
       Team_Destroy((int *)&g_MatrixTransformState + 6018, (VectorClass *)&Block); /*0x634213*/
-      if ( *(&g_MatrixTransformState + 6063) == (CoordStruct *)Block ) /*0x634224*/
+      if ( *(&g_MatrixTransformState + 6063) == (int)((CoordStruct *))Block ) /*0x634224*/
         *(&g_MatrixTransformState + 6063) = 0; /*0x634226*/
-      if ( *(&g_MatrixTransformState + 6026) == (CoordStruct *)Block ) /*0x634232*/
+      if ( *(&g_MatrixTransformState + 6026) == (int)((CoordStruct *))Block ) /*0x634232*/
         *(&g_MatrixTransformState + 6026) = 0; /*0x634234*/
-      if ( *(&g_MatrixTransformState + 6008) == (CoordStruct *)Block ) /*0x634240*/
+      if ( *(&g_MatrixTransformState + 6008) == (int)((CoordStruct *))Block ) /*0x634240*/
         *(&g_MatrixTransformState + 6008) = 0; /*0x634242*/
       *(Block + 8) = &vt_VectorClass_PlanningBranchClass; /*0x63424b*/
       VectorClass::Cleanup2((int)(Block + 8)); /*0x634251*/

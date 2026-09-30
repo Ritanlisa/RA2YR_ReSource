@@ -1961,8 +1961,8 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
     if ( v14 <= 1 ) /*0x5c85d1*/
       return -2; /*0x5c85e2*/
   }
-  v16 = (unsigned int *)(&a3[v6 - 4]);
-  v17 = a5; /*0x5c85ed*/
+  v16 = (char *)((unsigned int *)(&a3[v6 - 4]));
+  v17 = (unsigned int *)(a5);
   v18 = (char *)&aP1[v6 / 4u - 1]; /*0x5c85ef*/
   v19 = v16; /*0x5c85f3*/
   if ( *(unsigned int *)v18 < *(unsigned int *)v16 ) /*0x5c85f9*/

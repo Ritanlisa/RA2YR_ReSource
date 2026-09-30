@@ -979,7 +979,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x420683*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_AlphaLightingRemapClass; /*0x420686*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x420690*/
   {
@@ -988,7 +988,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
   }
   *((unsigned char *)Block + 13) = 0; /*0x4206ab*/
   *(Block + 2) = 0; /*0x4206b1*/
-  if ( (Block & 1) != 0 ) /*0x4206b8*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4206b8*/
     RA2_OPDEL(Block); /*0x4206bb*/
   return (DynamicVector *)Block; /*0x4206c5*/
 

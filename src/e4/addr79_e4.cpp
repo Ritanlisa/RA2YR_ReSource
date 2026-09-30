@@ -497,10 +497,10 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     {
       v14 = 0; /*0x793f1d*/
       v15 = dword_ABFEC8; /*0x793f1f*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       if ( (v15 & 0x40) != 0 ) /*0x793f36*/
         goto LABEL_110; /*0x793f36*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v59 = 0; /*0x793f50*/
       if ( dword_A8E224 <= 0 ) /*0x793f54*/
         goto LABEL_110; /*0x793f54*/
@@ -516,7 +516,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         if ( (uint8_t)NetworkID::Compare(v84, v19) ) /*0x793f9a*/
         {
           v14 = ((unsigned int *)(dword_A8E184))[v17]; /*0x793fa3*/
-                    this->Debug::Log();
+                    ((Debug *)0)->Log();
         }
         ++v16; /*0x793fcb*/
         ++v59; /*0x793fd0*/
@@ -525,7 +525,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       if ( !v14 ) /*0x793fd9*/
       {
   LABEL_110:
-                this->Debug::Log();
+                ((Debug *)0)->Log();
         v20 = 0; /*0x793ff1*/
         if ( dword_A8DA84 > 0 ) /*0x793ff5*/
         {
@@ -539,9 +539,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
               goto LABEL_34; /*0x794027*/
           }
           v23 = *(&dword_A8E2B2 + v20); /*0x79402b*/
-                    this->Debug::Log();
+                    ((Debug *)0)->Log();
           v14 = Network::ResolveNetworkAddress((Network *)&dword_ABFEC8, v23); /*0x794054*/
-                    this->Debug::Log();
+                    ((Debug *)0)->Log();
         }
       }
   LABEL_34:
@@ -561,7 +561,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           {
             qmemcpy(v94, "Z4", sizeof(v94)); /*0x7940c3*/
             sprintf(Buffer, "%d", v14); /*0x7940da*/
-                        this->Debug::Log();
+                        ((Debug *)0)->Log();
             (*(void (__stdcall **)(LPVOID, char *, char *))(*(unsigned int *)ppv + 56))(ppv, v26, v94); /*0x794106*/
           }
           owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79410d*/
@@ -578,10 +578,10 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     else
     {
       v13 = *(&dword_A8E2B2 + v62); /*0x793eec*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       dword_A8E050[v3] = v13; /*0x793f0a*/
     }
-    Ticks = this->Timer::GetTicks(); /*0x79413a*/
+    Ticks = ((Timer *)0)->GetTicks(); /*0x79413a*/
     v63 = Ticks; /*0x794141*/
     v30 = 360; /*0x79414c*/
     IDA_HIWORD(v31) = IDA_HIWORD(v61); /*0x794155*/
@@ -589,7 +589,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v65 = 360; /*0x794162*/
     if ( v61 > 0 ) /*0x794166*/
     {
-      v31 = this->Timer::GetTicks(); /*0x79416f*/
+      v31 = ((Timer *)0)->GetTicks(); /*0x79416f*/
       v29 = v82; /*0x794174*/
       v30 = 240; /*0x79417b*/
       v81 = v31; /*0x794180*/
@@ -602,7 +602,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     {
       if ( v63 != -1 ) /*0x7941a3*/
       {
-        v31 = Timer::GetTicks() - v63; /*0x7941ae*/
+        v31 = ((Timer *)0)->GetTicks() - v63; /*0x7941ae*/
         if ( v31 >= v30 ) /*0x7941b4*/
           break; /*0x7941b4*/
         v30 -= v31; /*0x7941b6*/
@@ -625,9 +625,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v71 = v31; /*0x7941fe*/
     if ( (unsigned short)v31 ) /*0x794202*/
     {
-      Debug::Log(); /*0x79420e*/
+      this->Debug::Log(); /*0x79420e*/
       *(&dword_A8E2B2 + v12) = dword_A8E050[v3]; /*0x79421e*/
-      Network::SetPort((Network *)(dword_A8DA78[v12] + 40), dword_A8E050[v3]); /*0x79423b*/
+      Network::SetPort((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40), dword_A8E050[v3]); /*0x79423b*/
       Network::SetPort((Network *)(dword_A8DA90[v3] + 40), dword_A8E050[v3]); /*0x794253*/
       memset(v98, 0, sizeof(v98)); /*0x794266*/
       v99 = 0; /*0x794268*/

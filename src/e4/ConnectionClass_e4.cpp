@@ -147,7 +147,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     *(unsigned char *)(*((unsigned int *)this + 8) + 2) = 1; /*0x48bf7c*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = *((unsigned int *)this + 15); /*0x48bf86*/
   }
-  if ( g_abs_A8B238 == (CellStruct *)4 && g_abs_A8D63C ) /*0x48bf99*/
+  if ( g_abs_A8B238 == (unsigned char [1])((CellStruct *))4 && g_abs_A8D63C ) /*0x48bf99*/
     *(unsigned char *)(*((unsigned int *)this + 8) + 3) = (unsigned char)aP4; /*0x48bfa2*/
   if ( *((unsigned int *)this + 7) < (int)aP2 ) /*0x48bfae*/
   {

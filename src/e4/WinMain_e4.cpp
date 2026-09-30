@@ -92,6 +92,7 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Winsock_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
@@ -120,7 +121,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   dword_ABF230 = (unsigned int)(aP0);
   dword_ABF234 = (unsigned int)(a2);
   byte_ABF238 = (unsigned int *)(a3);
-  v20 = 0; /*0x5bc1a1*/
+  v20 = (unsigned int *)(0);
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
@@ -220,7 +221,7 @@ int WinMain::Constructor_VectorClass_Wstring_()
 
   int i; // ebp
   int v3; // esi
-  void *v4; // eax
+  unsigned char (*)[4] v4;
   int j; // esi
   int k; // esi
 

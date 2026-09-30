@@ -150,6 +150,8 @@ int SideClass::Construct(CCINIClass * aP1)
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 

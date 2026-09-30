@@ -355,7 +355,7 @@ void TacticalClass::InterpolateView()
 {
 
   wchar_t *v0; // ebp
-  unsigned int v1;
+  wchar_t * v1;
   wchar_t * v2;
   wchar_t * v3;
   unsigned int v4;
@@ -380,19 +380,19 @@ void TacticalClass::InterpolateView()
   int v23; // [esp+20h] [ebp-28h]
   wchar_t * v24;
   unsigned int v25;
-  wchar_t * v26;
+  unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   v0 = (wchar_t *)(g_abs_A8ECC8);
   if ( (int)g_abs_A8ECC8 > 0 ) /*0x4ae29f*/
   {
-    v1 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
-    v2 = (unsigned int)((wchar_t *)((int)((wchar_t *)(0))));
-    v3 = (wchar_t *)((int)((wchar_t *)(0)));
-    v18 = (unsigned int)((wchar_t *)((unsigned int)(0)));
-    v19 = (wchar_t *)((int)((wchar_t *)(0)));
-    v20 = (wchar_t *)((int)((wchar_t *)(0)));
+    v1 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
+    v2 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
+    v3 = (unsigned int)((wchar_t *)((int)((wchar_t *)(0))));
+    v18 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)(0)))));
+    v19 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v20 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
     v4 = (unsigned int)(g_abs_A8ECBC);
     v16 = (wchar_t *)(g_abs_A8ECC8);
     do /*0x4ae2fc*/

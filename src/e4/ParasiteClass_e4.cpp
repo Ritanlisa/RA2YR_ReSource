@@ -341,16 +341,16 @@ LABEL_20:
           }
           if ( *((unsigned char *)this + 84) ) /*0x629ca1*/
           {
-            v43[0] = this; /*0x629cb8*/
+            v43[0] = (unsigned int)(this);
             v30 = (*(int (**)(int *, unsigned int *))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, v43); /*0x629cbc*/
-            if ( v30 != -1 && v30 < g_abs_B0F5C8 && v30 < --g_abs_B0F5C8 ) /*0x629cd7*/
+            if ( v30 != -1 && v30 < (int)(g_abs_B0F5C8) && v30 < --g_abs_B0F5C8 ) /*0x629cd7*/
             {
               do /*0x629cef*/
               {
                 ++v30; /*0x629cdf*/
                 *((unsigned int *)g_abs_B0F5BC + v30 - 1) = *((unsigned int *)g_abs_B0F5BC + v30); /*0x629ce3*/
               }
-              while ( v30 < g_abs_B0F5C8 ); /*0x629cef*/
+              while ( v30 < (int)(g_abs_B0F5C8) ); /*0x629cef*/
             }
             *((unsigned char *)this + 84) = 0; /*0x629cf1*/
           }

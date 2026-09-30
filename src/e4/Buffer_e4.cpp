@@ -10,11 +10,13 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BufferIOFile_e4.hpp"
 
 // 0x7BCB50
 namespace gamemd {
 void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */

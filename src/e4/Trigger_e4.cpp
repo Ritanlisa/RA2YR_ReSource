@@ -20,6 +20,7 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -193,8 +194,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             && v52 > 0
             && ((uint8_t (*)(void ***, int, unsigned int))v47[2])(&v47, v52 + v49, 0) )
           {
-            v17 = (gamemd::MSShapeAnim *)((unsigned int)(v51));
-            v51 = (unsigned int)((gamemd::MSShapeAnim *)((unsigned int)((MSShapeAnim *)((char *)v51 + 1))));
+            v17 = (gamemd::MSShapeAnim *)((gamemd::ObjectClass *)((gamemd::MSShapeAnim *)((unsigned int)(v51))));
+            v51 = (gamemd::ObjectClass *)((unsigned int)((gamemd::MSShapeAnim *)((unsigned int)((MSShapeAnim *)((char *)v51 + 1)))));
             *((unsigned int *)v48 + (unsigned int)v17) = v5; /*0x76d731*/
           }
           v5 = 0; /*0x76d734*/
@@ -229,7 +230,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           && (int)v39 > 0
           && ((uint8_t (*)(void ***, char *, unsigned int))v41[2])(&v41, &v39->__pad_0[v43], 0) )
         {
-          v23 = (unsigned int)(v45++);
+          v23 = (unsigned int)((unsigned int)(v45)++);
           *((unsigned int *)Block + v23) = v18; /*0x76d837*/
         }
       }

@@ -20,6 +20,7 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {
@@ -57,7 +58,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(g_abs_B077FC, v4) /*0x6a03be*/
       || (IDA_LOBYTE(v4) = BYTE4(g_abs_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(g_abs_B077FC)) )
     {
-      v8 = (int64_t)((unsigned int *)(v13));
+      v8 = (unsigned int *)((int64_t)((unsigned int *)(v13)));
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/

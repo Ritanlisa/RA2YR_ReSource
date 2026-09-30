@@ -851,9 +851,9 @@ LABEL_107:
                   v181 = 0;
                   v104 = 4 * *v103;
                   v190 = (IUnknown *)(v104 * 4);
-                  *((unsigned int *)this + 23) = dword_7E7A30[v104] - 1;
+                  *((unsigned int *)this + 23) = ((unsigned int *)(dword_7E7A30))[v104] - 1;
                   v105 = *v94 == *(unsigned int *)&g_abs_89F690;
-                  aP3_100 = dword_7E7A28[v104];
+                  aP3_100 = ((unsigned int *)(dword_7E7A28))[v104];
                   if ( !v105
                     || *((unsigned int *)this + 17) != *(unsigned int *)&g_abs_89F690
                     || *((unsigned int *)this + 18) != *(unsigned int *)&g_abs_89F690 )

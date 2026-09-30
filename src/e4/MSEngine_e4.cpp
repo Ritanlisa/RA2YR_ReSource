@@ -124,6 +124,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp

@@ -115,8 +115,17 @@ names |= {n for n in mtab
 # C2904). Tree PLAIN classes stay: e4 member decls reference them, and
 # fwd-then-full is legal (_tree_full defines them; tree TUs no longer see
 # _fwd since the e4_protos/_tree_full /FI unhooks — r47 verified).
+# G41.8: e4's OWN flat struct definitions override tree alias exclusions —
+# e4 TUs never include core/math.hpp, so a math `using X =` alias must not
+# suppress the fwd of e4's struct X (CoordStruct: 1,142 C2065).
+e4_own_structs = set()
+for p in sorted(E4C.glob('*_e4.hpp')):
+    e4_own_structs |= set(re.findall(
+        r'^[ \t]*struct\s+([A-Za-z_]\w*)\s*\{',
+        p.read_text(encoding='utf-8', errors='replace'), re.M))
 names = {n for n in names
-         if not n.isupper() and n not in tree_special}
+         if not n.isupper()
+         and (n not in tree_special or n in e4_own_structs)}
 
 lines = ['// GENERATED fwd declarations for the e4 universe (gen_e4_fwd.py).',
          '// Included ONLY from e4-universe TUs (never via the /FI chain).',

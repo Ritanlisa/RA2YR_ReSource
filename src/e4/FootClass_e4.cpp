@@ -305,7 +305,7 @@ v6 = (unsigned int *)(ppv);
         }
       }
       if ( ppv ) /*0x7103e1*/
-        (*(void (**)(unsigned int *))(*ppv + 8))(ppv); /*0x7103e6*/
+        (*(void (**)(unsigned int *))(*(unsigned int *)(ppv) + 8))(ppv); /*0x7103e6*/
       if ( v28 ) /*0x7103ef*/
         (*(void (**)(int))(*(unsigned int *)v28 + 8))(v28); /*0x7103f4*/
     }

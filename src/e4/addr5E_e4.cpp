@@ -60,7 +60,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)(a1)));
-  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
@@ -442,7 +442,7 @@ char Game_CheckSettingsChanged(char a1, char a2)
       byte_AC11BE = (unsigned char)(g_abs_A8B263);
       byte_AC11BF = (unsigned char)(g_abs_A8B264);
       byte_AC11C0 = (unsigned char)(dword_A8B320);
-      byte_AC11C1 = g_abs_A8B261; /*0x5e34e5*/
+      byte_AC11C1 = (unsigned char)(g_abs_A8B261);
       wcscpy(&word_AC10F0, (const wchar_t *)&dword_A8B320 + 1); /*0x5e34eb*/
       strcpy(byte_AC0D00, &byte_A8BAE2); /*0x5e350f*/
       dword_8316E8 = dword_A8BB04; /*0x5e3536*/

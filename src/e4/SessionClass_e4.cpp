@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = (unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))));
+            v7 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))))));
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/
@@ -389,7 +389,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
           *((unsigned int *)v2 + 8) = v21; /*0x5cf219*/
         }
         String::Tokenize((const char **)&v44, (int)v20, g_abs_817F70, (void **)&a3); /*0x5cf22b*/
-        if ( String::Length((const char **)&a3) ) /*0x5cf234*/
+        if ( ((String *)((const char **)&a3))->Length() ) /*0x5cf234*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf241*/
           *((unsigned int *)v2 + 9) = v22; /*0x5cf246*/

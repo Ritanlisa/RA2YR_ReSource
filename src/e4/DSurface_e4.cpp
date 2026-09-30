@@ -153,7 +153,7 @@ AbstractClass * * DSurface::CreatePrimary()
   void * v2;
   void * v3;
   void *v4; // edi
-  int v5;
+  void * v5;
   unsigned int *v6; // esi
   int v7; // eax
   int v8; // eax

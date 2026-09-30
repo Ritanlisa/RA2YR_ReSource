@@ -447,7 +447,7 @@ Coord * * WOL_ProcessPingRequests()
   result = g_NetworkLobbyState; /*0x7a1079*/
   if ( !g_NetworkLobbyState ) /*0x7a1080*/
   {
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     result = (char)stru_B76AC4.?; /*0x7a109d*/
     if ( stru_B76AC4.? ) /*0x7a10a7*/
     {
@@ -462,7 +462,7 @@ Coord * * WOL_ProcessPingRequests()
         unknown_libname_73(&v13); /*0x7a10ce*/
         if ( (int)stru_B76AC4.? > 0 ) /*0x7a10da*/
           String::Reassign(&v13, (const char **)stru_B76AC4.?); /*0x7a10e7*/
-        String::GetOrEmpty(&v13); /*0x7a10f0*/
+        ((String *)(&v13))->GetOrEmpty(); /*0x7a10f0*/
         Debug::Log(); /*0x7a10fb*/
         v3 = String::GetOrEmpty(&v13); /*0x7a1107*/
         String::Assign((String *)&v13.m_3[1], v3); /*0x7a1111*/

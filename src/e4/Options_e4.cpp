@@ -602,7 +602,7 @@ LABEL_12:
     DeleteAndZero::Alt(*((void ***)Block + 16)); /*0x6255c4*/
     RA2_OPDEL(v6); /*0x6255ca*/
   }
-  if ( (Block & 1) != 0 ) /*0x6255d9*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6255d9*/
     RA2_OPDEL(Block); /*0x6255dc*/
   return Block; /*0x6255e6*/
 

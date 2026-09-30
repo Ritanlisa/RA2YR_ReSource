@@ -21,7 +21,7 @@ namespace gamemd {
 int LoadingScreen::GetColorScheme()
 {
 
-  if ( (g_abs_A8B238 == (CellStruct *)3 || g_abs_A8B238 == (CellStruct *)4) /*0x642b7a*/
+  if ( (g_abs_A8B238 == (unsigned char [1])((CellStruct *))3 || g_abs_A8B238 == (CellStruct *)4) /*0x642b7a*/
     && *(unsigned int *)(**(unsigned int **)&g_abs_A8D63C + 107) == -1 )
   {
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1); /*0x642b86*/
@@ -192,8 +192,8 @@ void * * LoadingScreen::LoadSHPs()
   g_abs_B0FA70 = (void **)(LoadFileSHP(g_abs_844D18, (bool *)&g_abs_B0FCA6));
   g_abs_B0FAFC = (void **)(LoadFileSHP(g_abs_844D1C, (bool *)&g_abs_B0FCA7));
   g_abs_B0FA00 = (void **)(LoadFileSHP(g_abs_844D20, (bool *)&g_abs_B0FCA8));
-  g_abs_B0FA8C = LoadFileSHP(g_abs_844D24, (bool *)&g_abs_B0FCA9); /*0x72fb52*/
-  g_abs_B0FA48 = LoadFileSHP(g_abs_844D28, (bool *)&g_abs_B0FCAA); /*0x72fb67*/
+  g_abs_B0FA8C = (void **)(LoadFileSHP(g_abs_844D24, (bool *)&g_abs_B0FCA9));
+  g_abs_B0FA48 = (void **)(LoadFileSHP(g_abs_844D28, (bool *)&g_abs_B0FCAA));
   g_abs_B0FA3C = LoadFileSHP(g_abs_844D2C, (bool *)&g_abs_B0FCAB); /*0x72fb7c*/
   g_abs_B0FA90 = LoadFileSHP(g_abs_844D30, (bool *)&g_abs_B0FCAC); /*0x72fb91*/
   g_abs_B0FAA8 = LoadFileSHP(g_abs_844D34, (bool *)&g_abs_B0FCAD); /*0x72fba6*/

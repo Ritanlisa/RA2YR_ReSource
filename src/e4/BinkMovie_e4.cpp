@@ -22,6 +22,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/BlitTransLucent25Alpha_ushort_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
 
 // 0x432690
 namespace gamemd {

@@ -15,6 +15,7 @@
 #include "e4/classes/RadBeam_e4.hpp"
 #include "e4/classes/Progress_e4.hpp"
 #include "e4/classes/E4Recv_7AECD0_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x53B080
 namespace gamemd {
@@ -62,7 +63,7 @@ void PsyDom::Fire()
   void *Block; // [esp+50h] [ebp-14h]
   int v37; // [esp+54h] [ebp-10h]
   int v38; // [esp+58h] [ebp-Ch]
-  AnimClass *v39; // [esp+5Ch] [ebp-8h]
+  IUnknown * v39;
   int v40; // [esp+60h] [ebp-4h]
 
   v0 = (unsigned int *)RA2_OPNEW(0x14u); /*0x53b08e*/
@@ -159,7 +160,7 @@ void PsyDom::Fire()
             && ((uint8_t (*)(void ***, int, unsigned int))v35[2])(&v35, v40 + v37, 0) )
           {
             v23 = (gamemd::AnimClass *)((unsigned int)(v39));
-            v39 = (gamemd::AnimClass *)((unsigned int)((AnimClass *)((char *)v39 + 1)));
+            v39 = (IUnknown *)((unsigned int)((gamemd::AnimClass *)((unsigned int)((AnimClass *)((char *)v39 + 1)))));
             *((unsigned int *)Block + (unsigned int)v23) = i; /*0x53b361*/
           }
         }

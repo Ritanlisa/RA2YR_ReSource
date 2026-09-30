@@ -19,6 +19,8 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {

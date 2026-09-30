@@ -1445,7 +1445,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
   int v4; // eax
   int v5; // eax
   int v6; // edx
-  int *v7; // ecx
+  unsigned int v7;
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
@@ -1483,7 +1483,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       v4 = v5 + 7; /*0x4e5779*/
       break;
   }
-  v6 = 0; /*0x4e577d*/
+  v6 = (int *)(0);
   v7 = dword_8B3F38; /*0x4e577f*/
   while ( *v7 != v4 ) /*0x4e5786*/
   {

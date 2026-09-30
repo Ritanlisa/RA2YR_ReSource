@@ -39,7 +39,7 @@ void __sbh_heap_check()
   int *v8; // esi
   int v9; // ecx
   int v10; // edi
-  int v11; // eax
+  unsigned int v11;
   unsigned int *v12; // eax
   int *v13; // esi
   unsigned int v14; // eax
@@ -115,8 +115,8 @@ void __sbh_heap_check()
               }
               else
               {
-                v11 = (unsigned int *)((v9 >> 4) - 1);
-                if ( v11 > 63 ) /*0x7d049f*/
+                v11 = (int)((unsigned int *)((v9 >> 4) - 1));
+                if ( v11 > (unsigned int *)(63) ) /*0x7d049f*/
                   v11 = 63; /*0x7d04a3*/
                 ++v21[v11]; /*0x7d04a4*/
               }

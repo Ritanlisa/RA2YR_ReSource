@@ -245,7 +245,7 @@ void * SidebarClass::LoadAssets()
     (**(void (***)(int, int))g_abs_87F6D0)(g_abs_87F6D0, 1); /*0x6a5a6b*/
     g_abs_87F6D0 = 0; /*0x6a5a6d*/
   }
-  v8 = RA2_OPNEW(0x188u); /*0x6a5a78*/
+  v8 = (unsigned int *)(RA2_OPNEW(0x188u));
   if ( v8 ) /*0x6a5a82*/
     g_abs_87F6D0 = (int)ConvertClass::Construct(v8, (int)v13, (int)v13, g_abs_887308, 1, 0); /*0x6a5aa5*/
   else

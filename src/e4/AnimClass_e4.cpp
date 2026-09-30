@@ -27,6 +27,7 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -318,7 +319,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = (ConvertClass *)(*(unsigned int *)a2->__pad_0 + 2 * (v7 + 8)); /*0x422d30*/
     aP0 = (IUnknown *)(*(unsigned int *)a2->__pad_0 - 2 * (v7 + 8)); /*0x422d3c*/
     aP10 = v10; /*0x422d40*/
-    v11 = *(unsigned int *)&a2->field_2[2]; /*0x422d47*/
+    v11 = *(unsigned int *)&a2-((unsigned int *)(>field_2))[2]; /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = (ConvertClass *)(v11 - (v7 + 8)); /*0x422d51*/
     aP4 = (CoordStruct *)((v8 - v7) << 8); /*0x422d5e*/
@@ -364,7 +365,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v16 = (IUnknown *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 1856))(this); /*0x422e2d*/
     v17 = *(unsigned short *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 4) /*0x422e87*/
         + *(unsigned short *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 36)
-        - *(unsigned short *)&a2->field_2[2]
+        - *(unsigned short *)&a2-((unsigned int *)(>field_2))[2]
         - *(unsigned short *)&stru_87C374.__pad_579C[21652]
         + *((unsigned int *)this + 64)
         + *(unsigned int *)(*((unsigned int *)this + 50) + 836)

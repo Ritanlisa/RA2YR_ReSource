@@ -377,7 +377,7 @@ LABEL_85:
   }
   g_abs_87E738 = 0; /*0x530ce1*/
 LABEL_100:
-  Debug::Log_0(); /*0x530ce7*/
+  this->Debug::Log_0(); /*0x530ce7*/
   IDA_LOBYTE(g_abs_87F7E8[539939]) = 1; /*0x530cf9*/
   Audio::LoadWAVFiles(&g_abs_87F7E8[528714]); /*0x530d00*/
   if ( IDA_LOBYTE(g_abs_87F7E8[31470]) == 1 ) /*0x530d0c*/

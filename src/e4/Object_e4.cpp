@@ -662,7 +662,7 @@ void * Object::DrawObject(void ** Block, char a2)
     ObjectClass::Undeploy((void *)Block); /*0x5fdfea*/
   *(Block + 43) = 0; /*0x5fdff1*/
   ObjectClass::Dtor(Block); /*0x5fdffb*/
-  if ( (Block & 1) != 0 ) /*0x5fe005*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5fe005*/
     RA2_OPDEL(Block); /*0x5fe008*/
   return (OverlayClass *)Block; /*0x5fe012*/
 
@@ -705,7 +705,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
 
   if ( !*((unsigned int *)this + 10) ) /*0x62ac39*/
   {
-    result = a2; /*0x62ac40*/
+    result = (int)(a2);
     v4 = g_abs_AC4948; /*0x62ac44*/
     v5 = a2; /*0x62ac4a*/
 LABEL_39:

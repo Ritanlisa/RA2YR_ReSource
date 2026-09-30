@@ -255,7 +255,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
          (char *)*(&g_MatrixTransformState + 2436) + (unsigned int)*(&g_MatrixTransformState + 2439),
          0) )
   {
-    v7 = (int)*(&g_MatrixTransformState + 2438); /*0x5f72fb*/
+    v7 = (gamemd::CoordStruct *)((int)*(&g_MatrixTransformState + 2438));
     *(&g_MatrixTransformState + 2438) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2438) + 1); /*0x5f72fe*/
     *(&(*(&g_MatrixTransformState + 2435))->X + v7) = this; /*0x5f730a*/
   }

@@ -585,7 +585,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   {
     aP2.Z += *(unsigned int *)&g_abs_B077F8; /*0x6e242d*/
   }
-  v6 = *((char *)this + 36); /*0x6e2431*/
+  v6 = (unsigned int *)(*((char *)this + 36));
   v7 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4 * v6); /*0x6e2440*/
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
   v9 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&aP2); /*0x6e244f*/

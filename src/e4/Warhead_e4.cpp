@@ -31,6 +31,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {

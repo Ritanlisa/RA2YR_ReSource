@@ -129,7 +129,7 @@ class Menu
 {
 public:
     // IDA 0x48B2A0 area
-    static void Reset();  // 0x4C6140
+     void Reset();  // 0x4C6140
 
     static int32_t  s_MenuState;    // 0x00
 };

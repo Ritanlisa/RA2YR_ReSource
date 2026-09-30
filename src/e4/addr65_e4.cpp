@@ -44,6 +44,7 @@
 #include "e4/classes/E4Recv_645D60_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/E4Recv_645B60_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x650A90
 namespace gamemd {

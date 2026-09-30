@@ -151,6 +151,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
                 strcpy(a2, (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
         qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/

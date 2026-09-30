@@ -264,9 +264,9 @@ LABEL_48:
             v41 = 0; /*0x47da66*/
           v18 = (int)v55; /*0x47da6c*/
           v42 = *(unsigned int *)&v55->__pad_2B8[32]; /*0x47da6e*/
-          v41->__pad_194[2] = 1; /*0x47da74*/
+          v41-((unsigned int *)(>__pad_194))[2] = 1; /*0x47da74*/
           v41->field_100 = v42; /*0x47da7b*/
-          v41->__pad_194[3] = 1; /*0x47da81*/
+          v41-((unsigned int *)(>__pad_194))[3] = 1; /*0x47da81*/
           *(unsigned int *)(this + 320) |= 0x20000u; /*0x47da88*/
         }
         if ( *(unsigned char *)(v18 + 737) ) /*0x47da92*/

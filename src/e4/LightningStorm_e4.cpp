@@ -180,7 +180,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v9; // edi
   int v10; // eax
   void **v11; // eax
-  unsigned int v12;
+  RulesClass * v12;
   unsigned int v13; // eax
   int Climb; // ebp
   void *WarheadVersusMultiplier; // ebx
@@ -233,14 +233,14 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v33 = v11; /*0x53a445*/
   if ( v31 != unk_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
-    v12 = (gamemd::RulesClass *)(g_abs_8871E0);
+    v12 = (unsigned int)((gamemd::RulesClass *)(g_abs_8871E0));
     if ( g_abs_8871E0->? > 0 ) /*0x53a46c*/
     {
       v13 = (gamemd::RulesClass *)(Random::State((unsigned int *)g_abs_A8B230 + 134));
       StartAudioControllerAt(*(unsigned int *)(g_abs_8871E0->?[1] + 4 * (v13 % g_abs_8871E0->?)), (int)&v31, 0); /*0x53a49e*/
       v12 = g_abs_8871E0; /*0x53a4a3*/
     }
-    Climb = v12[1].?; /*0x53a4ae*/
+    Climb = ((unsigned int *)(v12))[1].?; /*0x53a4ae*/
     WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, IDA_HIDWORD(v12[1].?), v3[59], &v31); /*0x53a4c7*/
     v16 = (void **)RA2_OPNEW(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/
