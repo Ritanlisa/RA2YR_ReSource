@@ -1781,6 +1781,50 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     _consolidate_rets(ida_cfg)
     _consolidate_rets(cpp_cfg)
 
+    # G39: advisory-chain collapse. A block whose events are ALL advisory
+    # (READ / READ(member,?) wildcards -- never gating) and that has exactly
+    # one successor is flow-transparent: its only content is observations,
+    # and its single edge can be spliced out. Mechanical regeneration splits
+    # loop conditions into such pass-through blocks (C++ `while` rendering)
+    # where IDA merged them -> spurious bijection failures (GetSize family).
+    # Applied SYMMETRICALLY to both CFGs -- an IDA-side advisory chain
+    # collapses the same way.
+    def _collapse_advisory_chains(cfg):
+        GATING = ('CALL(', 'WRITE(')
+        changed = True
+        while changed:
+            changed = False
+            for bid in list(cfg.blocks.keys()):
+                if bid == cfg.entry_id:
+                    continue
+                blk = cfg.blocks.get(bid)
+                if blk is None:
+                    continue
+                evs = blk.ordered_events or []
+                if not evs:
+                    continue  # empty pass-through handled by normalize
+                if any(ev.startswith(GATING) for ev in evs):
+                    continue
+                succs = list(blk.successors or [])
+                if len(succs) != 1:
+                    continue
+                s = succs[0]
+                tgt = s[0] if isinstance(s, tuple) else s
+                if tgt == bid or tgt not in cfg.blocks:
+                    continue
+                # splice: predecessors of bid now point to tgt
+                for ob in cfg.blocks.values():
+                    ob.successors = [
+                        ((tgt, x[1]) if (isinstance(x, tuple) and x[0] == bid)
+                         else (tgt if x == bid else x))
+                        for x in (ob.successors or [])]
+                del cfg.blocks[bid]
+                changed = True
+                break
+
+    _collapse_advisory_chains(ida_cfg)
+    _collapse_advisory_chains(cpp_cfg)
+
     structural_crashed = False
     structural_indeterminate = False
     try:
