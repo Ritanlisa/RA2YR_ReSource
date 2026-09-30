@@ -254,7 +254,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     {
   LABEL_22:
       this->Debug::Log(); /*0x7b3b8b*/
-      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3b99*/
+      /*0x7b3b8b*/
+      (*(void (**)(char *, SOCKET))(*(unsigned int *)this + 36))(this, v6);
       return 0; /*0x7b3ba5*/
     }
     fromlen = 16; /*0x7b3ee4*/
@@ -262,7 +263,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     v26 = v26; /*0x7b3ef1*/
     if ( v26 == -1 ) /*0x7b3ef6*/
     {
-      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3efe*/
+      (*(void (**)(char *, SOCKET))(*(unsigned int *)this + 36))(this, v6);
       return 0; /*0x7b3f0a*/
     }
     if ( v26 ) /*0x7b3f0f*/
@@ -294,7 +295,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
       *((unsigned char *)v13 + 23) = v39; /*0x7b3fa0*/
       *((unsigned char *)v13 + 24) = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 8, &this->u32_FC1E0, v26 - 4); /*0x7b3fab*/
-      if ( !(*(uint8_t (**)(char *, unsigned int *))(((unsigned int)(this->q0208))))(this, v13) ) /*0x7b3fb9*/
+      /*0x7b3fab*/
+      if ( !(*(unsigned __int8 (**)(char *, unsigned int *))(*(unsigned int *)this + 88))(this, v13) );
       {
         ((unsigned int *)(v13))[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
         ntohs(*(u_short *)netshort.sa_data); /*0x7b3fd4*/
@@ -423,7 +425,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     {
       WSAGetLastError(); /*0x7b3d8b*/
       Debug::Log(); /*0x7b3d96*/
-      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, sa); /*0x7b3da4*/
+      /*0x7b3d96*/
+      (*(void (**)(char *, SOCKET))(*(unsigned int *)this + 36))(this, sa);
       return 0; /*0x7b3db0*/
     }
   }

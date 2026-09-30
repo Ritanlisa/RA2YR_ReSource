@@ -95,6 +95,7 @@ Public API:
 """
 
 import os
+import re
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
@@ -515,9 +516,61 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
         toks = tokenize(text)
         n = len(toks)
         hits = []  # (start_pos, end_pos, event)
+
+        # G39: raw vtable calls `(*SIG(*(unsigned int *)this + N))(args)`.
+        # The mechanical corpus carries these verbatim (restored from IDA
+        # pseudocode); IDA renders the same construct as CALL(vfptr+N).
+        # Paren-matched (regex dies on the nested fn-ptr signature), this-
+        # receiver only -- byte offset N goes straight into call_virtual.
+        covered = []
+        for m in re.finditer(r'\(\s*\*\s*\(', text):
+            i0 = m.start()
+            d = 0
+            c1 = -1
+            for j in range(i0, min(len(text), i0 + 600)):
+                if text[j] == '(':
+                    d += 1
+                elif text[j] == ')':
+                    d -= 1
+                    if d == 0:
+                        c1 = j
+                        break
+            if c1 < 0 or '**' not in text[i0:c1]:
+                continue
+            j = c1 + 1
+            while j < len(text) and text[j] in ' \t':
+                j += 1
+            if j >= len(text) or text[j] != '(':
+                continue
+            d = 0
+            c2 = -1
+            for k2 in range(j, min(len(text), j + 400)):
+                if text[k2] == '(':
+                    d += 1
+                elif text[k2] == ')':
+                    d -= 1
+                    if d == 0:
+                        c2 = k2
+                        break
+            if c2 < 0:
+                continue
+            cm = re.search(
+                r'\(\s*(?:unsigned\s+int|_DWORD|unsigned)\s*\*\s*\)\s*this'
+                r'\s*\+\s*(\d+)\s*\)\s*$', text[i0 + 2:c1])
+            if not cm:
+                continue
+            covered.append((i0, c2 + 1,
+                            call_virtual(int(cm.group(1)))))
+        if covered:
+            hits.extend(covered)
         i = 0
         while i < n:
             t = toks[i]
+
+            # inside a raw-vcall span: the pre-pass already emitted it
+            if covered and any(s <= t.pos < e for s, e, _ev in covered):
+                i += 1
+                continue
 
             # -- non-identifier tokens carry no event on their own -----------
             if t.kind != KIND_IDENT:

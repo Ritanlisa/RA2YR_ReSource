@@ -593,7 +593,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (**)(char *))(((unsigned int)(this->uniqueId4))))(this) != 30 /*0x5f9241*/
+  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 30;
     && (*(int (**)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
   {
     v7 = (gamemd::AbstractClass **)((int)(SearchMIXFile(&Source, 0)));

@@ -29,7 +29,9 @@ int ToolTipManager::ddtor(char a2)
     ToolTipClass::initString(); /*0x724b8b*/
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (**)(ToolTipManager *, int *))(((unsigned int)(this->IsVisible)) + 16))( /*0x724b9f*/
+    /*0x724b90*/
+  if ( result ) /*0x724b95*/
+    return (*(int (**)(int, int))(*(unsigned int *)this + 16))(this, this + 24);
              this,
              &this->DisplayTimer[1]);
   return result; /*0x724ba2*/

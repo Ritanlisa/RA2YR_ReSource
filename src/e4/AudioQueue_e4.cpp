@@ -490,7 +490,8 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   v9[24] = a7; /*0x7b23f8*/
   qmemcpy(v9, a3, a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
-  (*(void (**)(int, unsigned char *))(((unsigned int)(this->q0204))))(this, v9); /*0x7b2411*/
+  /*0x7b2409*/
+  (*(void (**)(int, unsigned char *))(*(unsigned int *)this + 84))(this, v9);
   if ( aP5 ) /*0x7b241a*/
   {
     v10 = this->q040; /*0x7b241c*/
@@ -521,7 +522,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     }
     v14 = this->u32_3F06C; /*0x7b24a0*/
   }
-  v19 = (*(int (**)(int, int))(((unsigned int)(this->u32_146))))(this, v14); /*0x7b24af*/
+  v19 = (*(int (**)(int, int))(*(unsigned int *)this + 56))(this, v14);
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
 // 0x54f000
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b24ca*/

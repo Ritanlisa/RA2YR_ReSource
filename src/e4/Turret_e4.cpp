@@ -56,10 +56,12 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
-  v2 = (*(int (**)(void *))(((unsigned int)(this->u32_104))))(this); /*0x5f8cec*/
+  // [esp+24Ch] [ebp-104h] BYREF
+
+  v2 = (*(int (**)(void *))(*(unsigned int *)this + 44))(this);
   if ( v2 == 40 ) /*0x5f8cf2*/
   {
-    v2 = (*(int (**)(void *))(((unsigned int)(this->q03C6))))(this); /*0x5f8cfc*/
+    v2 = (*(int (**)(void *))(*(unsigned int *)this + 156))(this);
     if ( v2 ) /*0x5f8d04*/
     {
       IDA_LOBYTE(v2) = this->u8_CA1; /*0x5f8d0a*/

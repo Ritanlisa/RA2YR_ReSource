@@ -369,9 +369,9 @@ int VoxelAnimType::LoadAnim()
   {
     v50 = 1; /*0x5f8272*/
   }
-  if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8287*/
+  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || *(this + 3233) );
   {
-    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 /*0x5f8657*/
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40;
       || !(uint8_t)HouseClass::HasPower((HouseClass *)this)
       || *(&this->u32_5205) )
     {
@@ -557,9 +557,10 @@ int VoxelAnimType::LoadAnim()
     }
   }
   LABEL_93:
-  if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8850*/
+  LABEL_93:
+  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || *(this + 3233) );
   {
-    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8873*/
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40;
       && (uint8_t)HouseClass::HasPower((HouseClass *)this)
       && !*(&this->u32_5205) )
     {
@@ -651,7 +652,7 @@ int VoxelAnimType::LoadAnim()
       RA2_OPDEL(v43); /*0x5f8a9c*/
       this->u32_B4 = 0; /*0x5f8aa4*/
     }
-    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8ac1*/
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40;
       && (uint8_t)HouseClass::HasPower((HouseClass *)this)
       && !*(&this->u32_5205) )
     {

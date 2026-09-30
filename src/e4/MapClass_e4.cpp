@@ -3424,7 +3424,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x589492*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x589498*/
   }
   v5 = a3; /*0x589385*/
@@ -4747,7 +4747,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x589d82*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x589d88*/
   }
 }

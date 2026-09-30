@@ -148,7 +148,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->q0042))))(this); /*0x53872e*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
   v7 = (void *)((int)((void *)(this->Capacity)));
   if ( v7 < this->q010 ) /*0x538739*/

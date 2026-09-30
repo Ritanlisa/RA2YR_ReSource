@@ -3245,7 +3245,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x5c5212*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x5c5218*/
   }
 }
@@ -3337,7 +3337,7 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x5c533e*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
   v7 = *(unsigned int *)&this->q008; /*0x5c5341*/
   if ( v7 < this->q010 ) /*0x5c5349*/
@@ -3409,7 +3409,7 @@ char MPCooperative::processTeamChat(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x5c5472*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x5c5478*/
   }
 }
@@ -3501,7 +3501,7 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x5c57fe*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
   v7 = *(unsigned int *)&this->q008; /*0x5c5801*/
   if ( v7 < this->q010 ) /*0x5c5809*/

@@ -16969,11 +16969,13 @@ char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
     }
     if ( !v7[144] ) /*0x62fbaf*/
   LABEL_13:
-      (*(void (**)(char *))(((unsigned int)(this->q0188))))(this); /*0x62fbbd*/
+      if ( !LOBYTE(v7[12].X) ) /*0x62fbaf*/
+LABEL_13:
+      (*(void (**)(char *))(*(unsigned int *)this + 248))(this);
   }
   else
   {
-    (*(void (**)(char *))(((unsigned int)(this->q0188))))(this); /*0x62fbc9*/
+    (*(void (**)(char *))(*(unsigned int *)this + 248))(this);
   }
   IDA_LOBYTE(v22) = *(&this->q0188); /*0x62fbcf*/
   if ( !(unsigned char)v22 ) /*0x62fbd7*/
@@ -28030,21 +28032,24 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) {
     return 0; /*0x708899*/
   if ( TechnoClass::GetValue((unsigned int *)this, -1) <= 0 ) /*0x7088b2*/
     return 0; /*0x7088b2*/
-  if ( !(*(uint8_t (**)(int))(((unsigned int)(this->q1104))))(this) ) /*0x7088bc*/
+  /*0x7088b2*/
+  if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)this + 684))(this) );
     return 0; /*0x7088bc*/
-  v4 = (*(int (**)(int))(((unsigned int)(this->attachedTag2))))(this); /*0x7088d9*/
-  v5 = (*(int (**)(int, int *))(((unsigned int)(this->q1280))))(this, a2); /*0x7088e1*/
+  /*0x7088bc*/
+  v5 = (*(int (**)(int))(*(unsigned int *)this + 132))(this);
+  /*0x7088d9*/
+  v6 = (*(int (**)(int, TechnoClass *))(*(unsigned int *)this + 740))(this, aP1);
   v6 = (*(int (**)(int, int *, int))(*(unsigned int *)&this->q17C6))(this, a2, v5); /*0x7088ed*/
   if ( v6 == 5 || v6 == 6 ) /*0x7088ff*/
     return 0; /*0x7088ff*/
   if ( (uint8_t)House::IsCurrentPlayer(*(void **)(&this->u32_D80)) /*0x708923*/
     && (*(int (**)(int *))(*a2 + 44))(a2) == 6 )
   {
-    if ( (*(int (**)(int))(((unsigned int)(this->uniqueId4))))(this) == 15 && *(unsigned char *)(v4 + 3778) ) /*0x708935*/
+    if ( (*(int (**)(int))(*(unsigned int *)this + 44))(this) == 15 && *(unsigned char *)(v5 + 3778) );
       return 0; /*0x708935*/
     if ( Audio::IsMediumVolume((float *)(&this->hasParachute6)) || Audio::IsLoud((float *)(&this->hasParachute6)) ) /*0x708956*/
     {
-      v7 = (*(int (**)(int))(((unsigned int)(this->attachedTag2))))(this); /*0x70896b*/
+      v8 = (*(int (**)(int))(*(unsigned int *)this + 132))(this);
       if ( Audio::IsMediumVolume((float *)(&this->hasParachute6)) ) /*0x70896d*/
       {
         if ( *(unsigned char *)(v7 + 682) ) /*0x708976*/
@@ -28056,7 +28061,7 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) {
   }
   if ( (uint8_t)House::IsCurrentPlayer(*(void **)(&this->u32_D80)) ) /*0x7089b5*/
   {
-    if ( (*(int (**)(int))(((unsigned int)(this->uniqueId4))))(this) == 1 ) /*0x7089c8*/
+    if ( (*(int (**)(int))(*(unsigned int *)this + 44))(this) == 1 );
     {
       v8 = this->type->DeploysInto; /*0x7089d0*/
       if ( v8 ) /*0x7089d8*/

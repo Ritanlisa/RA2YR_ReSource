@@ -255,7 +255,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
     _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x71dfad*/
     *(unsigned int *)&this->Image = SearchMIXFile(Buffer, 0); /*0x71dfc0*/
   }
-  v9 = (char **)(*(int (**)(int))(((unsigned int)(this->zero_3C6))))(this); /*0x71dfca*/
+  v9 = (char **)(*(int (**)(int))(*(unsigned int *)this + 156))(this);
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)v22, 0); /*0x71dfdd*/

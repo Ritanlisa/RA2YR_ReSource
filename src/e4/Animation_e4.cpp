@@ -51,7 +51,9 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v27; // ebp
   int j; // edi
 
-  v2 = (*(uint8_t (**)(Animation *))(((unsigned int)(this->q0548))))(this) == 0; /*0x4549bd*/
+  // edi
+
+  v2 = (*(unsigned __int8 (**)(int *))(*this + 848))(this) == 0;
   v3 = this->u32_520; /*0x4549bf*/
   v4 = *(unsigned int *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -77,7 +79,8 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !this->u8_269 ) /*0x454a4b*/
-      (*(void (**)(Animation *))(((unsigned int)(this->u32_1A04))))(this); /*0x454a59*/
+      if ( v5[3281] && !*((unsigned char *)this + 617) ) /*0x454a4b*/
+      (*(void (**)(int *))(*this + 1044))(this);
     v7 = this->u32_520; /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates(); /*0x454a7b*/
@@ -139,7 +142,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     if ( this->u8_269 ) /*0x454b9b*/
     {
-      (*(void (**)(Animation *))(((unsigned int)(this->u32_1A08))))(this); /*0x454ba9*/
+      (*(void (**)(int *))(*this + 1048))(this);
       if ( this->u8_268 ) /*0x454baf*/
       {
         v17 = this->u32_21C; /*0x454bb9*/

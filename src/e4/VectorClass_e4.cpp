@@ -2029,7 +2029,7 @@ char VectorClass_flat::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x40b264*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
     return 1; /*0x40b26a*/
   }
 }
@@ -5116,7 +5116,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(((unsigned int)(this->Items2))))(this); /*0x42f908*/
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
   }
   v8 = this->q008; /*0x42f90b*/
   if ( v8 < this->q010 ) /*0x42f913*/

@@ -253,7 +253,8 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   *((unsigned int *)v18 + 4) = v12 - 4; /*0x7b1646*/
   *((unsigned int *)v18 + 7) = this->q3F074; /*0x7b1651*/
   qmemcpy(v18 + 32, &this->u32_7E0F0, v12 - 4); /*0x7b1657*/
-  if ( (*(uint8_t (**)(u_short *, unsigned char *))(((unsigned int)(this->q0208))))(this, v18) ) /*0x7b1665*/
+  /*0x7b1657*/
+  if ( (*(unsigned __int8 (**)(u_short *, CCINIClass *))(*(unsigned int *)this + 88))(this, v18) );
   {
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *(unsigned int *)&this->Count; /*0x7b16d5*/
@@ -496,7 +497,8 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   v5 = AudioQueue::AllocBuffer((unsigned int *)this, aP3); /*0x7b24f4*/
   qmemcpy(v5 + 32, a1, a3); /*0x7b2505*/
   *((unsigned int *)v5 + 4) = a3; /*0x7b250e*/
-  (*(void (**)(int, unsigned char *))(((unsigned int)(this->u32_204))))(this, v5); /*0x7b2516*/
+  /*0x7b250e*/
+  (*(void (**)(int, UDPInterfaceClass *))(*(unsigned int *)this + 84))(this, v5);
   v5[20] = 1; /*0x7b251d*/
   if ( aP3 ) /*0x7b2523*/
   {
@@ -528,7 +530,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     }
     v10 = this->q3F06C; /*0x7b25a9*/
   }
-  v15 = (*(int (**)(int, int))(((unsigned int)(this->u32_146))))(this, v10); /*0x7b25b9*/
+  v15 = (*(int (**)(int, int))(*(unsigned int *)this + 56))(this, v10);
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
 // 0x54f000
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b25d4*/

@@ -434,7 +434,8 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     }
   LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(int, int, char *, int, int))(((unsigned int)(this->q0080))))(this, v11, Str, 80, a8); /*0x7752e6*/
+    /*0x7752cf*/
+    (*(void (**)(int, int, char *, int, int))(*(unsigned int *)this + 20))(this, v11, Str, 80, a8);
     if ( !strcmp(Str, a0) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/

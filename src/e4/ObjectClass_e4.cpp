@@ -1108,7 +1108,9 @@ int ObjectClass::GetBoundsRect()
   unsigned int v38[4]; // [esp+3Ch] [ebp-10h] BYREF
   unsigned int *v39; // [esp+50h] [ebp+4h]
 
-  v2 = (unsigned int *)(*(int (__stdcall **)(int *))(((unsigned int)(this->q0442))))(&v32); /*0x5f4887*/
+  // [esp+50h] [ebp+4h]
+
+  v2 = (unsigned int *)(*(int (__stdcall **)(int *))(*(unsigned int *)this + 172))(&v32);
   Coord::To_Screen(g_TacticalClass_Instance, v2, v31); /*0x5f4894*/
   v3 = (*(int (**)(void *))(*(unsigned int *)&this->ptr_346))(this); /*0x5f489d*/
   v4 = (int16_t *)(*(int (**)(int))(*(unsigned int *)v3 + 156))(v3); /*0x5f48ad*/
@@ -1121,7 +1123,8 @@ int ObjectClass::GetBoundsRect()
     return (int)v39; /*0x5f48e1*/
   }
   v6 = 0; /*0x5f48ea*/
-  if ( (*(int (**)(void *))(((unsigned int)(this->q0104))))(this) == 6 && this->q520->FirestormWall ) /*0x5f48fa*/
+  /*0x5f48ea*/
+  if ( (*(int (**)(#374 *))(*(unsigned int *)this + 44))(this) == 6 && *(unsigned char *)(*((unsigned int *)this + 328) + 5824) );
     v6 = 15; /*0x5f4904*/
   FoundationSize = Building::GetFoundationSize(&v32, v6); /*0x5f4911*/
   v8 = *FoundationSize; /*0x5f4916*/
@@ -1176,7 +1179,8 @@ int ObjectClass::GetBoundsRect()
   }
   v34 = v9; /*0x5f49f7*/
   v35 = v17; /*0x5f49fb*/
-  if ( (*(int (**)(void *))(((unsigned int)(this->q0104))))(this) != 6 || !this->q520->BibShape ) /*0x5f4a17*/
+  /*0x5f49fb*/
+  if ( (*(int (**)(#374 *))(*(unsigned int *)this + 44))(this) != 6 || !*(unsigned int *)(*((unsigned int *)this + 328) + 5400) );
   {
     v9 = v34; /*0x5f4ac5*/
     v26 = v35; /*0x5f4ac9*/

@@ -67,11 +67,13 @@ int CommandClass::BuildBar()
   do /*0x6d1224*/
   {
     (*(void (**)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (**)(void *, int *))(((unsigned int)(this->q0108))))(this, v2); /*0x6d1218*/
+    /*0x6d1210*/
+    (*(void (**)(void *, int *))(*(unsigned int *)this + 48))(this, v2);
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
-  (*(void (**)(void *, unsigned int *))(((unsigned int)(this->q0108))))(this, dword_B0CCB0); /*0x6d122f*/
+  /*0x6d1224*/
+  (*(void (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CCB0]);
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {

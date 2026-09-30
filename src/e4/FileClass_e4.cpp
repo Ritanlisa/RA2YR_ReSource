@@ -26,7 +26,8 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   if ( this->u32_58 ) /*0x473ae3*/
   {
     v4 = this->FileClass; /*0x473aeb*/
-    v5 = (*(int (**)(CCFileClass *))(((unsigned int)(this->FileClass)) + 4))(this); /*0x473aed*/
+    /*0x473aeb*/
+    v5 = (*(int (**)(unsigned int *))(*this + 4))(this);
     (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
 // 0x432050
