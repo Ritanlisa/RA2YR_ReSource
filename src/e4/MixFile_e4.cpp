@@ -21,6 +21,7 @@
 #include "app/cmdline.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x530460
 namespace gamemd {
@@ -37,34 +38,34 @@ MixFileClass * * MixFile::LoadAll()
   unsigned int *v8; // eax
   unsigned int *v9; // eax
   unsigned int *v10; // eax
-  char v11; // bl
+  unsigned char (*)[4] v11;
   unsigned int *v12; // eax
   unsigned int *v13; // eax
-  char v14; // bl
+  unsigned char (*)[4] v14;
   unsigned int *v15; // eax
   unsigned int *v16; // eax
-  char v17; // bl
+  unsigned char (*)[4] v17;
   unsigned int *v18; // eax
   int v19; // esi
   unsigned int *v20; // eax
   unsigned int *v21; // eax
   unsigned int *v22; // esi
-  int v23; // eax
+  unsigned int * v23;
   unsigned int *v24; // eax
   unsigned int *v25; // eax
   unsigned int *v26; // esi
-  int v27; // eax
+  unsigned int * v27;
   unsigned int *v28; // eax
-  char v29; // bl
+  unsigned char (*)[4] v29;
   unsigned int *v30; // eax
   unsigned int *v31; // eax
-  char v32; // bl
+  unsigned char (*)[4] v32;
   unsigned int *v33; // eax
   unsigned int *v34; // eax
-  char v35; // bl
+  unsigned char (*)[4] v35;
   unsigned int *v36; // eax
   unsigned int *v37; // eax
-  char v38; // bl
+  unsigned char (*)[4] v38;
   unsigned int *v39; // eax
   unsigned int *v40; // eax
   char v41; // bl
@@ -133,10 +134,10 @@ MixFileClass * * MixFile::LoadAll()
     (**(void (***)(unsigned int, int))g_abs_87F7E8[5515])(g_abs_87F7E8[5515], 1); /*0x53054d*/
   v6 = (unsigned int *)RA2_OPNEW(40); /*0x530551*/
   if ( v6 ) /*0x53055b*/
-    v7 = MixFileClass::FromFile(v6, aGenericMix, (int)&g_abs_87F7E8[7270]); /*0x530569*/
+    v7 = (unsigned int)(MixFileClass::FromFile(v6, aGenericMix, (int)&g_abs_87F7E8[7270]));
   else
     v7 = 0; /*0x530570*/
-  g_abs_87F7E8[5515] = v7; /*0x530575*/
+  g_abs_87F7E8[5515] = (unsigned int)(v7);
   ReturnTrue(0); /*0x53057a*/
   if ( g_abs_87F7E8[5520] ) /*0x530587*/
     (**(void (***)(unsigned int, int))g_abs_87F7E8[5520])(g_abs_87F7E8[5520], 1); /*0x53058d*/

@@ -238,7 +238,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
   TimerStruct *v7; // edx
   unsigned int *v8; // eax
 
-  Object::Unlink((void *)this); /*0x65aacf*/
+  ((Object *)((void *)this))->Unlink(); /*0x65aacf*/
   result = *(BaseClass **)((char *)this + 232); /*0x65aad4*/
   for ( i = 0; i < (int)result; ++i ) /*0x65aade*/
   {

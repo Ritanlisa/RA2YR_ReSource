@@ -466,7 +466,7 @@ namespace gamemd {
 int Conflict_WorldDominationTour_12::Constructor_3()
 {
 
-  ComPtr::Constructor(this); /*0x7670d3*/
+  ((ComPtr *)(this))->Constructor(); /*0x7670d3*/
   *this = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x7670d8*/
   return this; /*0x7670e0*/
 

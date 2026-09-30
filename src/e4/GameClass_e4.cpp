@@ -430,7 +430,7 @@ int GameClass::initPlayerData(const char ** a2)
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !String::Compare(a2, (const char **)(*((char *)this + 106) + 4 * v5)) ) /*0x69ae50*/
+  while ( !((String *)(a2))->Compare((const char **)(*((char *)this + 106) + 4 * v5)) ) /*0x69ae50*/
   {
     if ( ++v5 >= *((char *)this + 109) ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
@@ -457,9 +457,9 @@ ObjectClass * * GameClass::Shutdown()
   {
     do /*0x6bec9b*/
       MessageLoop(); /*0x6bec87*/
-    while ( g_abs_A8EDD8 == 1 && g_hWnd ); /*0x6bec9b*/
+    while ( g_abs_A8EDD8 == (unsigned char [1])(1) && g_hWnd ); /*0x6bec9b*/
   }
-  if ( g_abs_840A74 != -1 ) /*0x6beca5*/
+  if ( g_abs_840A74 != (unsigned char [1])(-1) ) /*0x6beca5*/
   {
     RevokeActiveObject(g_abs_840A74, 0); /*0x6becaa*/
     g_abs_840A74 = -1; /*0x6becb0*/

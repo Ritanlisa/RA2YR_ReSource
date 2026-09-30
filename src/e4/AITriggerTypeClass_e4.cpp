@@ -979,8 +979,8 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_AlphaLightingRemapClass; /*0x420686*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_AlphaLightingRemapClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x420690*/
   {
     RA2_OPDEL(v3); /*0x420698*/

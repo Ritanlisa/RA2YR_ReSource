@@ -110,7 +110,7 @@ void NullModemClass::GetAddress( int a2)
 
   int v2; // eax
 
-  v2 = *(this + 14); /*0x5f3610*/
+  v2 = (int)(*(this + 14));
   if ( v2 ) /*0x5f3615*/
     return *(unsigned int *)(*(unsigned int *)(v2 + 4) + 40); /*0x5f361a*/
   else

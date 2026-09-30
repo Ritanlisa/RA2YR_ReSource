@@ -423,7 +423,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     if ( ((unsigned int)(v10)& 8) != 0 ) /*0x57a658*/
     {
       v52[0] = (unsigned int)(aP2->outBuffer);
-      v22 = (unsigned int)(SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 1) << 9));
+      v22 = (unsigned int)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 1) << 9));
       if ( v22 >= (int *)(0x40000) || (v23 = *(int **)(dword_87F924 + 4 * v22)) == 0 ) /*0x57a695*/
       {
         dword_ABDC74 = v52[0] - 0x10000; /*0x57a69b*/
@@ -431,7 +431,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       }
       v24 = (unsigned int)(Cell::GetTerrainMask(aP0, v23, 0));
       v52[0] = (unsigned int)(aP2->outBuffer);
-      v25 = SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 2) << 9); /*0x57a6d2*/
+      v25 = IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 2) << 9); /*0x57a6d2*/
       if ( v25 >= (int *)(0x40000) || (v26 = *(int **)(dword_87F924 + 4 * v25)) == 0 ) /*0x57a6e8*/
       {
         dword_ABDC74 = v52[0] - 0x20000; /*0x57a6ee*/
@@ -445,7 +445,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     if ( v10 < 0 ) /*0x57a717*/
     {
       v52[0] = (unsigned int)(aP2->outBuffer);
-      v28 = (unsigned int)(SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 1) << 9));
+      v28 = (unsigned int)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 1) << 9));
       if ( v28 >= (int *)(0x40000) || (v29 = *(int **)(dword_87F924 + 4 * v28)) == 0 ) /*0x57a754*/
       {
         dword_ABDC74 = v52[0] + 0x10000; /*0x57a75a*/
@@ -453,7 +453,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       }
       v30 = (unsigned int)(Cell::GetTerrainMask(aP0, v29, 0));
       v52[0] = aP2->outBuffer; /*0x57a773*/
-      v31 = SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 2) << 9); /*0x57a791*/
+      v31 = IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 2) << 9); /*0x57a791*/
       if ( v31 >= (int *)(0x40000) || (v32 = *(int **)(dword_87F924 + 4 * v31)) == 0 ) /*0x57a7a7*/
       {
         dword_ABDC74 = v52[0] + 0x20000; /*0x57a7ad*/
@@ -488,8 +488,8 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         v52[0] = v41; /*0x57a87f*/
         v42 = IDA_SHIWORD(v41) + (int16_t)v41; /*0x57a88b*/
         if ( v42 > dword_ABED04 /*0x57a8b0*/
-          && SLOWORD(v52[0]) - IDA_SHIWORD(v52[0]) < dword_ABED04
-          && IDA_SHIWORD(v52[0]) - SLOWORD(v52[0]) < dword_ABED04
+          && IDA_SLOWORD(v52[0]) - IDA_SHIWORD(v52[0]) < dword_ABED04
+          && IDA_SHIWORD(v52[0]) - IDA_SLOWORD(v52[0]) < dword_ABED04
           && v42 <= dword_ABED08 )
         {
           v52[0] = v41; /*0x57a8b6*/

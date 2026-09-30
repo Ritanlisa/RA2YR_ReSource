@@ -71,7 +71,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   *((unsigned int *)this + 1) = &vt_VoxelAnimTypeClass; /*0x74ae71*/
   *((unsigned int *)this + 2) = &vt_VoxelAnimTypeClass; /*0x74ae77*/
   *((unsigned int *)this + 3) = &vt_VoxelAnimTypeClass; /*0x74ae7e*/
-  AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x74ae85*/
+  ((AbstractClass *)((int)((unsigned int *)this + 1)))->GenerateUniqueID(); /*0x74ae85*/
   *((unsigned char *)this + 561) = 0; /*0x74ae8c*/
   *((unsigned char *)this + 564) = 1; /*0x74ae92*/
   *((unsigned char *)this + 559) = 1; /*0x74ae98*/
@@ -399,11 +399,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   else
   {
     _makepath(Buffer, 0, 0, (const char *)((char *)this + 504), g_Str_File__VXL); /*0x74b584*/
-    CCFileClass::Construct(Destination, Buffer); /*0x74b598*/
+    ((CCFileClass *)(Destination))->Construct(Buffer); /*0x74b598*/
     v36 = *(void **)((char *)this + 176); /*0x74b59d*/
     if ( v36 ) /*0x74b5a5*/
     {
-      WaveClass::Destroy(*((unsigned int *)this + 44)); /*0x74b5a9*/
+      ((WaveClass *)(*((unsigned int *)this + 44)))->Destroy(); /*0x74b5a9*/
       RA2_OPDEL(v36); /*0x74b5af*/
     }
     v37 = (unsigned int *)RA2_OPNEW(28); /*0x74b5b9*/
@@ -416,7 +416,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
     v55 = 0; /*0x74b5e9*/
     Vector::Clear((int)v54); /*0x74b5f1*/
     *(unsigned int *)Destination = &off_7E1668; /*0x74b5fa*/
-    BufferIOFileClass::Dtor(Destination); /*0x74b602*/
+    ((BufferIOFileClass *)(Destination))->Dtor(); /*0x74b602*/
   }
   return 1; /*0x74b4f2*/
 

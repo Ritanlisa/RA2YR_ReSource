@@ -67,8 +67,8 @@ LABEL_17:
     v10 = *((unsigned int *)this + 1316); /*0x654594*/
     v11 = *((unsigned int *)this + 1318); /*0x65459a*/
     aP1 = *(MouseClass **)(v9 + 36); /*0x6545a0*/
-    v12 = (int16_t)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
-    v13 = (int16_t)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
+    v12 = (int16_t)aP1 + v10 - IDA_SHIWORD(aP1); /*0x6545b0*/
+    v13 = (int16_t)aP1 + IDA_SHIWORD(aP1) - v11; /*0x6545b2*/
     v14 = 2; /*0x6545b7*/
     if ( v12 == -1 ) /*0x6545bc*/
     {

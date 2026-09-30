@@ -370,7 +370,7 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301)
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5307) )
             {
-              result = EventClass::Add2(v2, (int)dword_A83D4C->Object_field_0x30, 3u, (int)result); /*0x73199c*/
+              result = (char *)(EventClass::Add2(v2, (int)dword_A83D4C->Object_field_0x30, 3u, (int)result));
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, result, 0x6Fu); /*0x7319c9*/

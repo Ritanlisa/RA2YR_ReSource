@@ -31597,7 +31597,7 @@ void VeinholeMonsterClass::Constructor( IUnknown * aP1)
     }
     v21 = Object::ComputeAllocationSize(); /*0x74c890*/
     this->u32_C4 = RA2_OPNEW(v21); /*0x74c89b*/
-    v22 = (SLOWORD(a2->v24) << 8) + 128; /*0x74c8bc*/
+    v22 = (IDA_SLOWORD(a2->v24) << 8) + 128; /*0x74c8bc*/
     v32 = (IDA_SHIWORD(a2->v24) << 8) + 128; /*0x74c8c1*/
     v22 = v22; /*0x74c8cb*/
     GroundHeight = 0; /*0x74c8cf*/

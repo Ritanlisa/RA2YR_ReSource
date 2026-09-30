@@ -513,7 +513,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   int v9; // [esp+10h] [ebp-204h]
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
-  v2 = v1; /*0x45e97a*/
+  v2 = (unsigned char *)(v1);
   ProcessDataCCFileClass(); /*0x45e97c*/
   unk_89DDC4 = SearchMIXFile(aPoweroffShp, 0); /*0x45e994*/
   aP2 = SearchMIXFile(aWrenchShp, 0); /*0x45e99e*/
@@ -2055,8 +2055,8 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   }
   if ( IDA_LOWORD(aP1->field_0) == IDA_LOWORD(aP2->field_0) && IDA_HIWORD(aP1->field_0) == IDA_HIWORD(aP2->field_0) ) /*0x746050*/
     return 0; /*0x746059*/
-  v4 = abs32(SHIWORD(aP2->field_0) - SHIWORD(aP1->field_0)); /*0x74606b*/
-  v5 = abs32(SLOWORD(aP2->field_0) - SLOWORD(aP1->field_0)); /*0x746078*/
+  v4 = abs32(IDA_SHIWORD(aP2->field_0) - IDA_SHIWORD(aP1->field_0)); /*0x74606b*/
+  v5 = abs32(IDA_SLOWORD(aP2->field_0) - IDA_SLOWORD(aP1->field_0)); /*0x746078*/
   if ( v5 <= v4 ) /*0x74607c*/
     v5 = v4; /*0x74607e*/
   if ( v5 == 1 ) /*0x746083*/

@@ -188,7 +188,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 
   v6 = *(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
-  v8[1] = (SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
+  v8[1] = (IDA_SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
   v8[0] = ((int16_t)v6 << 8) + 128; /*0x6e27da*/
   GroundHeight = Cell::GetGroundHeight(v8); /*0x6e27e3*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v6) + 80) & 0x100) != 0 /*0x6e2819*/
@@ -239,12 +239,12 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   unsigned int *v5; // eax
   int v7; // [esp+0h] [ebp-10h] BYREF
   unsigned int * v8;
-  int v9; // [esp+8h] [ebp-8h]
+  unsigned int * v9;
   unsigned int * GroundHeight;
 
   v7 = (unsigned int *)(*(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)));
   GroundHeight = (int)((unsigned int *)(0));
-  v9 = (unsigned int *)((SHIWORD(v7) << 8) + 128);
+  v9 = (int)((unsigned int *)((IDA_SHIWORD(v7) << 8) + 128));
   v8 = (int)((unsigned int *)(((int16_t)v7 << 8) + 128));
   GroundHeight = (unsigned int *)(Cell::GetGroundHeight(&v8));
   v5 = (unsigned int *)(RA2_OPNEW(0x14u));
@@ -578,7 +578,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
 
   v3 = (gamemd::TechnoClass *)((int *)((TechnoClass *)*((char *)this + 21)));
   v4 = (unsigned int)((int *)(-1));
-  v17 = this; /*0x6efc7f*/
+  v17 = (int *)(this);
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 132))(v3) + 1532); /*0x6efc91*/
@@ -826,7 +826,7 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 
   int v6; // edi
   int v7; // esi
-  unsigned int * v8;
+  unsigned int v8;
   int v9; // ecx
 
   if ( *((unsigned int *)this + 19) ) /*0x6e2a55*/
@@ -881,7 +881,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
 
   v6 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e360b*/
   GroundHeight = 0; /*0x6e360f*/
-  v9 = (SHIWORD(v6) << 8) + 128; /*0x6e3630*/
+  v9 = (IDA_SHIWORD(v6) << 8) + 128; /*0x6e3630*/
   v8 = ((int16_t)v6 << 8) + 128; /*0x6e363a*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v6) + 80) & 0x100) != 0 ) /*0x6e365f*/

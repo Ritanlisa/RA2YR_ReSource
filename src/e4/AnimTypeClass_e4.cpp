@@ -69,7 +69,7 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
     v3 = (int)(g_abs_A8B210++);
     *((unsigned int *)g_abs_A8B204 + v3) = this; /*0x41e46e*/
   }
-  return this; /*0x41e473*/
+  return (unsigned int *)(this);
 
 }
 }
@@ -165,7 +165,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   *((unsigned int *)this + 1) = &vt_AnimTypeClass; /*0x427737*/
   *((unsigned int *)this + 2) = &vt_AnimTypeClass; /*0x42773d*/
   *((unsigned int *)this + 3) = &vt_AnimTypeClass; /*0x427744*/
-  AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x42774b*/
+  ((AbstractClass *)((int)((unsigned int *)this + 1)))->GenerateUniqueID(); /*0x42774b*/
   *((unsigned char *)this + 564) = 1; /*0x427750*/
   *((unsigned char *)this + 559) = 1; /*0x427757*/
   *((unsigned char *)this + 560) = 0; /*0x42775e*/
@@ -181,7 +181,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
          *(unsigned int *)&g_abs_89F690 + *(unsigned int *)&g_abs_89F690,
          0) )
   {
-    v3 = (AnimTypeClass *)(*(unsigned int *)&g_abs_89F690)++; /*0x4277bd*/
+    v3 = (unsigned int)((AnimTypeClass *)(*(unsigned int *)&g_abs_89F690)++);
     *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * (unsigned int)v3) = this; /*0x4277cc*/
   }
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x427803*/
@@ -245,7 +245,7 @@ void* AnimTypeClass::GetWarhead(int a2)
         RA2_OPDEL(*(void **)((char *)this + 164)); /*0x427b90*/
         *((unsigned char *)this + 168) = 0; /*0x427b98*/
       }
-      v4 = *((unsigned char *)this + 504); /*0x427b9f*/
+      v4 = (int)(*((unsigned char *)this + 504));
       v5 = (const char *)((char *)this + 504); /*0x427ba5*/
       *((unsigned int *)this + 41) = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
@@ -256,7 +256,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       *((unsigned int *)this + 41) = v3; /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
-        ObjectTypeClass::SetRTTI71(Buffer); /*0x427bfc*/
+        ((ObjectTypeClass *)(Buffer))->SetRTTI71(); /*0x427bfc*/
         v3 = SearchMIXFile(Buffer, 1); /*0x427c07*/
         *((unsigned int *)this + 41) = v3; /*0x427c0c*/
       }
@@ -282,7 +282,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     *((unsigned int *)this + 168) = -1; /*0x427c7a*/
     IDA_LOBYTE(v3) = -1; /*0x427c71*/
   }
-  return v3; /*0x427c80*/
+  return (void *)(v3);
 
 }
 }
@@ -527,7 +527,7 @@ int AnimTypeClass::LoadFromINI( uint8_t *** a2)
          Source,
          128) )
   {
-    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&g_abs_89F690);
+    v9 = globalHelper_028F70(((unsigned int *)(Source))[0].__pad_0, (int)&g_abs_89F690);
   }
   else
   {

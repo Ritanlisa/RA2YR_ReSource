@@ -334,7 +334,7 @@ LABEL_10:
               if ( IsSoundEnabled == -2 ) /*0x720a4b*/
               {
                 *(unsigned int *)(this + 8) = Movie::SelectNextBuildableType(this, *(AnimClass **)(this + 4)); /*0x720a5e*/
-                Debug::Log(); /*0x720a61*/
+                this->Debug::Log(); /*0x720a61*/
               }
               IDA_LOBYTE(IsSoundEnabled) = ThemeClass::Play((int *)this, *(Movie **)(this + 8)); /*0x720a6f*/
               *(unsigned int *)(this + 8) = -2; /*0x720a74*/

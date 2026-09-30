@@ -46,6 +46,8 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/BufferIOFile_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -990,7 +992,7 @@ int InitializeVeinholeSystem(char a1)
       }
       else
       {
-        v7 = 0; /*0x74df84*/
+        v7 = (unsigned int)(0);
       }
       *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 176) = v7; /*0x74df90*/
       *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 196) = RA2_OPNEW(v2); /*0x74dfa9*/

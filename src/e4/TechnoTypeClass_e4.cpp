@@ -736,24 +736,24 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   memset((unsigned char *)this + 2068, 0xFFu, 0x48u); /*0x71178e*/
   if ( g_abs_B0F680 < g_abs_B0F678 /*0x7117c3*/
     || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > 0
+    && g_abs_B0F684 > (unsigned char [1])(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
          &g_abs_B0F670,
-         g_abs_B0F684 + g_abs_B0F678,
+         (unsigned int)(g_abs_B0F684)+ g_abs_B0F678,
          0) )
   {
-    v15 = g_abs_B0F680++; /*0x7117d0*/
+    v15 = (unsigned int)(g_abs_B0F680++);
     *((unsigned int *)g_abs_B0F674 + v15) = this; /*0x7117df*/
   }
   if ( g_abs_A8EB10 < g_abs_A8EB08 /*0x711816*/
     || (g_abs_A8EB0D || !g_abs_A8EB08)
-    && g_abs_A8EB14 > 0
+    && g_abs_A8EB14 > (unsigned char [1])(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EB00 + 8))(
          &g_abs_A8EB00,
-         g_abs_A8EB14 + g_abs_A8EB08,
+         (unsigned int)(g_abs_A8EB14)+ g_abs_A8EB08,
          0) )
   {
-    v16 = g_abs_A8EB10++; /*0x711823*/
+    v16 = (unsigned int)(g_abs_A8EB10++);
     *((unsigned int *)g_abs_A8EB04 + v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/

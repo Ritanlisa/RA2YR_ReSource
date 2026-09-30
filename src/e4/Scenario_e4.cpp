@@ -238,7 +238,7 @@ int Scenario::ReadTeams()
                   v36 = *(unsigned int *)v29->__pad_0; /*0x44fbd5*/
                   v64 = (CCINIClass *)(((int16_t)v59 << 8) + 128); /*0x44fbd7*/
                   v74[0] = v64; /*0x44fbdb*/
-                  v60 = (CCINIClass *)((SHIWORD(v59) << 8) + 128); /*0x44fbe5*/
+                  v60 = (CCINIClass *)((IDA_SHIWORD(v59) << 8) + 128); /*0x44fbe5*/
                   v74[1] = v60; /*0x44fbe9*/
                   if ( (*(uint8_t (**)(TechnoClass *, unsigned int *, int))(v36 + 216))(v29, v74, v67) ) /*0x44fbf9*/
                   {
@@ -441,10 +441,10 @@ Game * * Scenario::ComputeDisplayPosition()
   int v2; // edi
   int v3; // eax
   unsigned char * v4;
-  int v5; // eax
+  unsigned char * v5;
   int v6; // eax
   int v7; // esi
-  int result; // eax
+  unsigned char * result;
   int v9; // ebx
   int v10; // eax
 

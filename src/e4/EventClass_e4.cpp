@@ -25,6 +25,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x48B390
 namespace gamemd {

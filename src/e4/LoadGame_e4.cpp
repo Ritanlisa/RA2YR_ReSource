@@ -32,9 +32,9 @@ namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
 
-  unsigned int v1;
+  unsigned int * v1;
   int v2; // edi
-  unsigned int v4;
+  unsigned int * v4;
   void *v5; // esi
   unsigned int * v6;
   int v7; // eax

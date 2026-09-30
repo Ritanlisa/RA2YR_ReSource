@@ -96,7 +96,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a028f*/
                                *((unsigned int *)this + 3),
                                aP1);
-                return v5; /*0x6a029c*/
+                return (gamemd::AbstractClass **)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
@@ -127,7 +127,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                      v3);
     }
   }
-  return v5; /*0x6a0295*/
+  return (gamemd::AbstractClass **)(v5);
 
 }
 }
@@ -195,7 +195,7 @@ void WalkLocomotion::ProcessCollision( char a2)
   int *v60; // eax
   int v61; // edi
   MouseClass *v62; // ecx
-  int v63; // kr28_4
+  unsigned int v63;
   int v64; // eax
   int v65; // edi
   IUnknown *v66; // esi
@@ -469,7 +469,7 @@ LABEL_37:
     {
       v34 = *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v33);
       aP4 = *(ObjectClass **)(v34 + 40);
-      v35 = SHIWORD(aP4) << 8;
+      v35 = IDA_SHIWORD(aP4) << 8;
       *v31 = ((int16_t)aP4 << 8) + 128;
       v36 = *(MouseClass **)(this + 12);
       *(unsigned int *)(this + 68) = v35 + 128;
@@ -496,7 +496,7 @@ LABEL_37:
       GroundHeight = Cell::GetGroundHeight(&aP3.nextArrayIndex);
       aP4 = *(ObjectClass **)(v34 + 40);
       v43 = *(unsigned int *)(v34 + 448);
-      aP3.referenceCount = (void *)((SHIWORD(aP4) << 8) + 128);
+      aP3.referenceCount = (void *)((IDA_SHIWORD(aP4) << 8) + 128);
       aP3.nextArrayIndex = (void *)(((int16_t)aP4 << 8) + 128);
       aP3.NeedsSaveOrLink = 0;
       *(unsigned int *)(*(unsigned int *)(this + 12) + 1392) = GroundHeight
@@ -593,24 +593,20 @@ LABEL_37:
                                                    &varD0);
     }
     aP3.abstractFlags = (int *)(*(unsigned int *)(*(unsigned int *)&aP3.__pad_0[8] + 12 * *(unsigned int *)(this + 92) + 8));
-    v60 = WalkLocomotion::TransformCoords(
-            (unsigned int *)this,
-            (ObjectClass *)&aP3.lastLayer,
-            (IUnknown *)&aP3.health,
-            (ObjectClass *)&aP3.abstractFlags);
+    v60 = (int *)(WalkLocomotion::TransformCoords( (unsigned int *)this, (ObjectClass *)&aP3.lastLayer, (IUnknown *)&aP3.health, (ObjectClass *)&aP3.abstractFlags));
     v61 = v60[1];
-    aP3.nextArrayIndex = *v60;
+    aP3.nextArrayIndex = (void *)(*v60);
     aP3.NeedsSaveOrLink = 0;
     v62 = *(MouseClass **)(this + 12);
-    aP3.referenceCount = v61;
+    aP3.referenceCount = (void *)(v61);
     v63 = v61;
     v64 = *(unsigned int *)&v62->__pad_74[40];
     v65 = *(unsigned int *)&v62->__pad_74[44];
     *(unsigned short *)&aP3.isOnMap = aP3.nextArrayIndex / 256;
     v187 = v65;
-    v188 = *(unsigned int *)&v62->__pad_74[48];
-    *(unsigned short *)&aP3.alignmentPadding75[1] = v63 / 256;
-    aP3.nextObject = *(void **)&aP3.isOnMap;
+    v188 = *(unsigned int *)&v62-((unsigned int *)(>__pad_74))[48];
+    *(unsigned short *)&((unsigned int *)(aP3.alignmentPadding75))[1] = v63 / 256;
+    aP3.nextObject = (gamemd::ObjectClass *)(*(void **)&aP3.isOnMap);
     if ( *(unsigned short *)&aP3.isOnMap != (uint16_t)(v64 / 256)
       || (uint16_t)(v63 / 256) != (uint16_t)(v187 / 256) )
     {
@@ -1568,7 +1564,7 @@ LABEL_31:
           v220 = 0;
           v221 = 0;
           IDA_LODWORD(v216) = ((int16_t)a4 << 8) + 128;
-          IDA_HIDWORD(v216) = (SHIWORD(a4) << 8) + 128;
+          IDA_HIDWORD(v216) = (IDA_SHIWORD(a4) << 8) + 128;
           GroundHeight = Cell::GetGroundHeight(&v216);
           ClosestObject = Object::FindClosestObjectCell(v41, &v220, v43 > GroundHeight + 2 * g_abs_B07838, 0);
           if ( ClosestObject )
@@ -1742,7 +1738,7 @@ LABEL_31:
       v66 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v218);
       v67 = (unsigned int *)(*((unsigned int *)this + 3) + 156);
       IDA_LODWORD(v216) = ((int16_t)v218 << 8) + 128;
-      IDA_HIDWORD(v216) = (SHIWORD(v218) << 8) + 128;
+      IDA_HIDWORD(v216) = (IDA_SHIWORD(v218) << 8) + 128;
       v217 = 0;
       v226 = (unsigned int *)*v67;
       v227 = (wchar_t *)v67[1];

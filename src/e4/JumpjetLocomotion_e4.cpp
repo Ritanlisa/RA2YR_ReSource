@@ -90,7 +90,7 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
                 IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)(this + 12) + 244))( /*0x4b0bbf*/
                                *(unsigned int *)(this + 12),
                                aP1);
-                return v5; /*0x4b0bcc*/
+                return (gamemd::AbstractClass *)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
@@ -121,7 +121,7 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
                      v3);
     }
   }
-  return v5; /*0x4b0bc5*/
+  return (gamemd::AbstractClass *)(v5);
 
 }
 }
@@ -509,7 +509,7 @@ LABEL_37:
     {
       v34 = *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v33);
       aP4 = *(IUnknown **)(v34 + 40);
-      v35 = SHIWORD(aP4) << 8;
+      v35 = IDA_SHIWORD(aP4) << 8;
       *v31 = ((int16_t)aP4 << 8) + 128;
       v36 = *(MouseClass **)((char *)this + 12);
       *((unsigned int *)this + 17) = v35 + 128;
@@ -536,7 +536,7 @@ LABEL_37:
       GroundHeight = Cell::GetGroundHeight(&aP3_36);
       aP4 = *(IUnknown **)(v34 + 40);
       v43 = *(unsigned int *)(v34 + 448);
-      aP3_40 = (SHIWORD(aP4) << 8) + 128;
+      aP3_40 = (IDA_SHIWORD(aP4) << 8) + 128;
       aP3_36 = ((int16_t)aP4 << 8) + 128;
       aP3_44 = 0;
       *(unsigned int *)(*((unsigned int *)this + 3) + 1392) = GroundHeight + (Cell::GetGroundHeight(&aP3_36) - GroundHeight) / v43;
@@ -869,7 +869,7 @@ LABEL_107:
                   (*(void (**)(MouseClass *, int))(v107->field_0 + 396))(v107, 2);
                   v108 = *(MouseClass **)((char *)this + 12);
                   *((unsigned char *)this + 99) = 0;
-                  if ( !v108->__pad_74[28] || v108->__pad_74[13] || v108->__pad_74[25] )
+                  if ( !v108-((unsigned int *)(>__pad_74))[28] || v108-((unsigned int *)(>__pad_74))[13] || v108->__pad_74[25] )
                     return 0;
                   v109 = *(unsigned int *)&g_abs_89F690;
                   if ( *v94 != *(unsigned int *)&g_abs_89F690
@@ -896,7 +896,7 @@ LABEL_107:
                     *v94 = v111;
                     *((unsigned int *)this + 17) = v112;
                     *((unsigned int *)this + 18) = v113;
-                    v114 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)v185);
+                    v114 = (unsigned int *)(Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)v185));
                     if ( !CrateClass::ProcessPickup(v114, v179) || *(unsigned char *)(*((unsigned int *)this + 3) + 129) )
                     {
                       if ( *(unsigned char *)(*((unsigned int *)this + 3) + 144) )
@@ -1617,7 +1617,7 @@ LABEL_31:
           v220 = 0;
           v221 = 0;
           IDA_LODWORD(v216) = ((int16_t)a4 << 8) + 128;
-          IDA_HIDWORD(v216) = (SHIWORD(a4) << 8) + 128;
+          IDA_HIDWORD(v216) = (IDA_SHIWORD(a4) << 8) + 128;
           GroundHeight = Cell::GetGroundHeight(&v216);
           ClosestObject = Object::FindClosestObjectCell(v41, &v220, v43 > GroundHeight + 2 * g_abs_8A07D0, 0);
           if ( ClosestObject )
@@ -1791,7 +1791,7 @@ LABEL_31:
       v66 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v218);
       v67 = (unsigned int *)(*((unsigned int *)this + 3) + 156);
       IDA_LODWORD(v216) = ((int16_t)v218 << 8) + 128;
-      IDA_HIDWORD(v216) = (SHIWORD(v218) << 8) + 128;
+      IDA_HIDWORD(v216) = (IDA_SHIWORD(v218) << 8) + 128;
       v217 = 0;
       v226 = (unsigned int *)*v67;
       v227 = (wchar_t *)v67[1];

@@ -36,7 +36,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   unsigned int v5; // edi
   ObjectClass *v6; // eax
   ObjectClass ** v7;
-  int ecx7; // ecx
+  ObjectClass ** ecx7;
   int eax7; // eax
   ObjectClass *v8; // eax
   ObjectClass *v9; // ecx
@@ -65,8 +65,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     *((unsigned int *)this + 14) = 0; /*0x52687e*/
     *((unsigned char *)this + 52) = 1; /*0x526881*/
   }
-  v7 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11)));
-  ecx7 = (gamemd::ObjectClass **)(*((unsigned int *)this + 10));
+  v7 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
+  ecx7 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10)));
   v17[0] = (int)(v5);
   eax7 = (int)(System_Search(ecx7, v7, (int *)v17));
   if ( !eax7 ) /*0x52689b*/
@@ -163,7 +163,7 @@ LABEL_12:
       goto LABEL_14; /*0x5269ff*/
     }
   }
-  v9 = (int *)&unk_B7882C; /*0x526a01*/
+  v9 = (gamemd::VoxelStruct **)((int *)&unk_B7882C);
 LABEL_14:
   v10 = *v9; /*0x526a06*/
   if ( v10 ) /*0x526a0a*/
@@ -434,17 +434,17 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
   v3 = (CCINIClass *)((unsigned char *)this + 40); /*0x526d02*/
   v4 = (CCINIClass *)Checksummer::Add_Buffer(v10, (uint8_t *)aP1, (IUnknown *)strlen(aP1->__pad_0)); /*0x526d05*/
   aP1 = v4; /*0x526d07*/
-  if ( !v3->headNode[0] ) /*0x526d0b*/
+  if ( !v3-((unsigned int *)(>headNode))[0] ) /*0x526d0b*/
     return 0; /*0x526d10*/
   if ( !SortedArray::CheckCache(v3, &aP1) ) /*0x526d19*/
   {
     v5 = SortedArray::BinarySearch((char **)v3, (CCINIClass *)&aP1); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
-    v3->sectionHead[0] = v5; /*0x526d32*/
+    v3-((unsigned int *)(>sectionHead))[0] = v5; /*0x526d32*/
   }
   aP1 = v4; /*0x526d3c*/
-  v6 = *(unsigned int *)SortedArray::FindValue((int)v3, (INIClass *)&aP1); /*0x526d45*/
+  v6 = *(unsigned int *)((SortedArray *)((int)v3))->FindValue((INIClass *)&aP1); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
     v7 = aP2; /*0x526d4b*/
@@ -476,8 +476,8 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
   uint8_t *eax1a; // eax
   ObjectClass *v5; // [esp-8h] [ebp-Ch]
 
-  v5 = (ObjectClass *)String::GetOrEmpty_Alt((char **)aP2); /*0x527905*/
-  eax1a = (uint8_t *)String::GetOrEmpty_Alt((char **)aP1); /*0x527906*/
+  v5 = (ObjectClass *)((String *)((char **)aP2))->GetOrEmpty_Alt(); /*0x527905*/
+  eax1a = (uint8_t *)((String *)((char **)aP1))->GetOrEmpty_Alt(); /*0x527906*/
   return INIClass::ReadInt_Overwrite((int)this, eax1a, (CCINIClass *)v5, aP3); /*0x527913*/
 
 }
@@ -492,8 +492,8 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
   INIClass *v6; // ebx
   char Buffer[56]; // [esp+Ch] [ebp-38h] BYREF
 
-  v5 = (INIClass *)String::GetOrEmpty_Alt(a3); /*0x529835*/
-  v6 = (INIClass *)String::GetOrEmpty_Alt(a2); /*0x52983c*/
+  v5 = (INIClass *)((String *)(a3))->GetOrEmpty_Alt(); /*0x529835*/
+  v6 = (INIClass *)((String *)(a2))->GetOrEmpty_Alt(); /*0x52983c*/
   sprintf(Buffer, g_INI_Key_Digest.__pad_20, *a4, a4[1]); /*0x529853*/
   return INIClass::SetString(this, v6, v5, (INIClass *)Buffer); /*0x529869*/
 

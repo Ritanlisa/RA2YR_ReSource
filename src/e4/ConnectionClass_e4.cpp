@@ -90,7 +90,7 @@ int ConnectionClass::initQueue( unsigned int a2)
   unsigned int v6; // eax
   unsigned int result; // eax
 
-  v2 = *(this + 6); /*0x48ba10*/
+  v2 = (int)(*(this + 6));
   if ( v2 == 256 ) /*0x48ba1c*/
   {
     v3 = a2 - *(this + 7) + *(this + 5); /*0x48ba2c*/

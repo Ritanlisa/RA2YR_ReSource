@@ -324,7 +324,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
     *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x54a88d*/
     *((unsigned char *)this + 13) = 1; /*0x54a890*/
   }
-  return this; /*0x54a87d*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd

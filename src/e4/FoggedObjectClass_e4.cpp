@@ -173,6 +173,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v5; // eax
   char *v6; // eax
@@ -214,7 +215,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *(unsigned int *)(this + 8) = &vt_FoggedObjectClass; /*0x4d0cbf*/
   *(unsigned int *)(this + 12) = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = (char *)Coord::To_Cell(&g_abs_87F7E8, aP1); /*0x4d0ccd*/
-  v7 = aP1->field_4; /*0x4d0cd4*/
+  v7 = (unsigned int)(aP1->field_4);
   v8 = aP1->field_8; /*0x4d0cd7*/
   this[0] = aP1->field_0; /*0x4d0cda*/
   this[1] = v7; /*0x4d0cde*/
@@ -259,7 +260,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     goto LABEL_15; /*0x4d0e1a*/
   if ( *(unsigned int *)&g_abs_89F690 ) /*0x4d0e22*/
   {
-    v16 = *(unsigned int *)&g_abs_89F690; /*0x4d0e2b*/
+    v16 = (gamemd::AbstractClass *)(*(unsigned int *)&g_abs_89F690);
     if ( *(int *)&g_abs_89F690 < 0 ) /*0x4d0e2f*/
       return (FoggedObjectClass *)this; /*0x4d0e2f*/
   }
@@ -285,7 +286,7 @@ LABEL_15:
     g_abs_89F690 = 0; /*0x4d0ed5*/
     ++*(unsigned int *)&g_abs_89F690; /*0x4d0edc*/
   }
-  return (FoggedObjectClass *)this; /*0x4d0ee3*/
+  return (gamemd::AbstractClass *)((FoggedObjectClass *)this);
 
 }
 } // namespace gamemd
@@ -411,7 +412,7 @@ LABEL_11:
     stru_89E138.__pad_579C[66552] = 0; /*0x4d10c7*/
     ++*(unsigned int *)&stru_89E138.__pad_579C[66544]; /*0x4d10ce*/
   }
-  aP1->IsFogged = 1; /*0x4d10d5*/
+  aP1->IsFogged = (unsigned char *)(1);
   ProductionFrame = BuildingClass::GetProductionFrame((int *)aP1->__pad_0); /*0x4d10dc*/
   Type = aP1->Type; /*0x4d10e1*/
   aP2a = (FoggedObjectClass *)ProductionFrame; /*0x4d10e7*/
@@ -435,7 +436,7 @@ LABEL_11:
     v20[2] = v19; /*0x4d1167*/
     v20[3] = 0; /*0x4d116a*/
   }
-  Anims = aP1->Anims; /*0x4d116d*/
+  Anims = (int *)(aP1->Anims);
   v46 = 21; /*0x4d1173*/
   v45 = aP1->Anims; /*0x4d117b*/
   do /*0x4d130a*/
@@ -718,7 +719,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
 LABEL_14:
     v17 = *(unsigned int *)(*(int (**)(int *, int *))(*v3 + 96))(v3, &v17); /*0x4d2665*/
-    v12 = 74 * (SHIWORD(v17) - (((int16_t)v17 + SHIWORD(v17)) << 9) - (int16_t)v17) - v3[12] + 0x7FFFFFFF; /*0x4d26a1*/
+    v12 = 74 * (IDA_SHIWORD(v17) - (((int16_t)v17 + IDA_SHIWORD(v17)) << 9) - (int16_t)v17) - v3[12] + 0x7FFFFFFF; /*0x4d26a1*/
     if ( (int)(g_abs_8B3CC4 + 1) <= g_abs_8B3CC8 ) /*0x4d26aa*/
     {
 LABEL_22:

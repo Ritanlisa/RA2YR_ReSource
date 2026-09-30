@@ -223,7 +223,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
 {
   int *v8; // esi
   int v9; // ebp
-  int v10;
+  void * v10;
   int v11; // ebx
   int v12; // ebp
   int *Viewport; // eax
@@ -233,7 +233,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   void * v17;
   void * v18;
   int v19; // eax
-  int v20; // edx
+  void * v20;
   void * v21;
   int v22; // eax
   int v23; // eax
@@ -317,8 +317,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v18 = (void *)((int)((void *)(*v8)));
       v31[0] = (int)((void *)(v17));
       v19 = (void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
-      v20 = (void *)(*v8);
-      v34 = v19; /*0x778404*/
+      v20 = (int)((void *)(*v8));
+      v34 = (void *)(v19);
       v33 = v31[0]; /*0x77840e*/
       v32[0] = v11; /*0x778414*/
       v21 = *(unsigned int *)(a2); /*0x778418*/

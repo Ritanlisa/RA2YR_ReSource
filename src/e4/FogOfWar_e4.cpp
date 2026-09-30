@@ -43,7 +43,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   int v22; // edx
   int v23; // ebx
   int v24; // esi
-  int v25; // eax
+  char * v25;
   RadarClass *v26; // ecx
   int v27; // edx
   bool v28; // cc
@@ -193,8 +193,7 @@ LABEL_37:
 LABEL_41:
     (*(void (**)(RadarClass *, int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, v17); /*0x65604d*/
   }
-LABEL_45:
-  v22 = *((unsigned int *)this + 1319); /*0x65608f*/
+LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
   v23 = *((unsigned int *)this + 1320); /*0x656095*/
   v24 = (char *)this + 4620; /*0x6560a0*/
   v25 = v22 + aP1->field_0; /*0x6560a6*/
@@ -274,10 +273,10 @@ int FogOfWar::RenderCell()
   v3 = (*(int (**)(int))(*(unsigned int *)v2 + 128))(v2); /*0x65616f*/
   v4 = v3 * (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2); /*0x65617b*/
   v5 = *(char **)((char *)this + 4724); /*0x65617f*/
-  IDA_HIDWORD(v4) = (((BYTE4(v4) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
+  IDA_HIDWORD(v4) = (((IDA_BYTE4(v4) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
   memset(v5, 0, 4 * (IDA_HIDWORD(v4) >> 2)); /*0x656194*/
   v6 = &v5[4 * (IDA_HIDWORD(v4) >> 2)]; /*0x656194*/
-  v7 = BYTE4(v4) & 3; /*0x656198*/
+  v7 = IDA_BYTE4(v4) & 3; /*0x656198*/
   v8 = 0; /*0x65619b*/
   memset(v6, 0, v7); /*0x65619d*/
   v23 = 0; /*0x65619f*/
@@ -438,7 +437,7 @@ bool FogOfWar_Get(IUnknown * aP0)
   int v2; // ecx
   unsigned int v3; // eax
   unsigned int v4;
-  unsigned int NeighbourContent;
+  unsigned int * NeighbourContent;
   unsigned int v6; // eax
   int16_t v8; // [esp+4h] [ebp-8h]
   int16_t v9; // [esp+4h] [ebp-8h]

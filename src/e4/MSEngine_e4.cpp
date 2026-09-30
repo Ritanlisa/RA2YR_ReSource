@@ -19,6 +19,9 @@ namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
     unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
@@ -121,6 +124,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
@@ -249,7 +253,7 @@ CampaignClass * MSEngine::Construct()
   char *v2; // ecx
   int v3; // edx
 
-  v2 = (unsigned int)((char *)((unsigned int *)this + 2));
+  v2 = (char *)((unsigned int)((char *)((unsigned int *)this + 2)));
   *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
   *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/

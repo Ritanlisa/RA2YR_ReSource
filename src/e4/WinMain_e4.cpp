@@ -98,6 +98,7 @@
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
+    unsigned int v4 = 0;  /* G37 hoist */
   unsigned int v3;
   unsigned int *v4; // eax
   unsigned char *v5; // esi
@@ -115,7 +116,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   int v17; // esi
   uint8_t result; // al
   unsigned int v19;
-  unsigned int v20;
+  unsigned int * v20;
 
   v3 = (unsigned int)(dword_ABF168);
   dword_ABF230 = (unsigned int)(aP0);
@@ -389,7 +390,7 @@ void* sub_7B84F0()
       dword_B78148 = (unsigned int)(16);
       dword_B7814C = (unsigned int)(0);
       dword_B7813C = (unsigned int)(0);
-      result = (unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158));
+      result = (HANDLE)((unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158)));
       dword_B78154 = (unsigned int)(result);
       if ( result ) /*0x7b856f*/
       {

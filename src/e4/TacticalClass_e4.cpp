@@ -48,7 +48,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   uint8_t v12; // cl
   char v13; // al
   int *v14; // ecx
-  int v15; // [esp+10h] [ebp-18h]
+  int * v15;
   int v16; // [esp+14h] [ebp-14h]
   int v17; // [esp+18h] [ebp-10h] BYREF
   int v18; // [esp+1Ch] [ebp-Ch]
@@ -356,8 +356,8 @@ void TacticalClass::InterpolateView()
 
   wchar_t *v0; // ebp
   wchar_t * v1;
-  wchar_t * v2;
-  wchar_t * v3;
+  unsigned int v2;
+  unsigned int v3;
   unsigned int v4;
   unsigned int *v5; // edx
   int v6; // ebx
@@ -373,14 +373,14 @@ void TacticalClass::InterpolateView()
   wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   wchar_t * v18;
-  unsigned int v19;
-  unsigned int v20;
+  wchar_t * v19;
+  wchar_t * v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
   wchar_t * v24;
-  unsigned int v25;
-  unsigned int v26;
+  wchar_t * v25;
+  wchar_t * v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
@@ -388,11 +388,11 @@ void TacticalClass::InterpolateView()
   if ( (int)g_abs_A8ECC8 > 0 ) /*0x4ae29f*/
   {
     v1 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
-    v2 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
-    v3 = (unsigned int)((wchar_t *)((int)((wchar_t *)(0))));
-    v18 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)(0)))));
-    v19 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
-    v20 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v2 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
+    v3 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v18 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)(0))))));
+    v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
+    v20 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
     v4 = (unsigned int)(g_abs_A8ECBC);
     v16 = (wchar_t *)(g_abs_A8ECC8);
     do /*0x4ae2fc*/
@@ -1064,7 +1064,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
                 Coord::Subtract( /*0x6d6f98*/
                   v55,
                   (IUnknown *)(((((int16_t)v31 << 8) + 128) / 256) << 8),
-                  (IUnknown *)((((SHIWORD(v31) << 8) + 128) / 256) << 8),
+                  (IUnknown *)((((IDA_SHIWORD(v31) << 8) + 128) / 256) << 8),
                   0);
                 a1 = v55[0]; /*0x6d6fb2*/
                 var74 = v55[1]; /*0x6d6fb6*/
@@ -1127,7 +1127,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
                 {
                   v44 = 0; /*0x6d715f*/
                   a1 = ((((int16_t)v31 << 8) + 128) / 256) << 8; /*0x6d717b*/
-                  var74 = (((SHIWORD(v31) << 8) + 128) / 256) << 8; /*0x6d717f*/
+                  var74 = (((IDA_SHIWORD(v31) << 8) + 128) / 256) << 8; /*0x6d717f*/
                   Coord::To_Screen((unsigned int *)this, &a1, (IUnknown *)var90); /*0x6d7183*/
                   var90[0] -= 30; /*0x6d719b*/
                   TacticalClass::DrawBuildingPlacement(v28, (IUnknown *)var90, a2); /*0x6d719f*/

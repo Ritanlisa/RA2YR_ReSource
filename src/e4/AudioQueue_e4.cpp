@@ -687,7 +687,7 @@ int AudioQueue::HaltVoices()
   int result; // eax
   int *i; // esi
 
-  result = g_abs_87E81C; /*0x4081a0*/
+  result = (int)(g_abs_87E81C);
   if ( g_abs_87E81C ) /*0x4081a8*/
   {
     result = AudioQueue::GetNext(g_abs_87E810); /*0x4081af*/
@@ -737,7 +737,7 @@ int AudioQueue::ReleaseBuffers()
   int *i; // esi
   int v2; // eax
 
-  result = g_abs_87E81C; /*0x408270*/
+  result = (int)(g_abs_87E81C);
   if ( g_abs_87E81C ) /*0x408278*/
   {
     result = AudioQueue::GetNext(g_abs_87E810); /*0x40827f*/

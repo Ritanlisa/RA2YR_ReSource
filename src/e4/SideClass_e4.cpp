@@ -152,6 +152,7 @@ int SideClass::Construct(CCINIClass * aP1)
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 
@@ -179,7 +180,7 @@ int SideClass::Construct(CCINIClass * aP1)
     v3 = (*(unsigned int *)stru_89E138.__pad_15FF8)++; /*0x6a45f7*/
     *(unsigned int *)(*(unsigned int *)&stru_89E138.__pad_579C[67664] + 4 * v3) = this; /*0x6a4606*/
   }
-  return this; /*0x6a460b*/
+  return (int)(this);
 
 }
 }

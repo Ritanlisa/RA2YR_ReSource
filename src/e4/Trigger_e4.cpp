@@ -230,8 +230,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           && (int)v39 > 0
           && ((uint8_t (*)(void ***, char *, unsigned int))v41[2])(&v41, &v39->__pad_0[v43], 0) )
         {
-          v23 = (unsigned int)((unsigned int)(v45)++);
-          *((unsigned int *)Block + v23) = v18; /*0x76d837*/
+          v23 = (gamemd::MSShapeAnim *)((unsigned int)((unsigned int)(v45)++));
+          *((unsigned int *)(unsigned int)(Block)+ v23) = v18; /*0x76d837*/
         }
       }
       v56[0] = (unsigned int)(&vt_CCFileClass);
@@ -283,7 +283,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           }
           DeleteAndZero((int)&v37); /*0x76d9d7*/
           PriorityQueue::Add((Selection_WorldDominationTour *)this, (MSAnim *)v35[1][v36]); /*0x76d9ed*/
-          MSEngine::ProcessEvents((unsigned int *)this, (MSVQAnim *)v35[1][v36], 300000); /*0x76da08*/
+          ((MSEngine *)((unsigned int *)this))->ProcessEvents((MSVQAnim *)v35[1][v36], 300000); /*0x76da08*/
         }
         ((void (*)(void ***))v34[2])(&v34); /*0x76da15*/
       }

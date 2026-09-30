@@ -44,7 +44,7 @@ void LinkClass::Destruct()
     *(unsigned int *)(v5 + 8) = *((unsigned int *)this + 2); /*0x5565d3*/
   *((unsigned int *)this + 2) = 0; /*0x5565d8*/
   *((unsigned int *)this + 1) = 0; /*0x5565db*/
-  if ( Prev == this && (unsigned int *)result != this ) /*0x5565e2*/
+  if ( Prev == (unsigned int *)(this) && (unsigned int *)((unsigned int *))result != this ) /*0x5565e2*/
     return (*(int (**)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
 

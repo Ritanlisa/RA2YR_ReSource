@@ -12,6 +12,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {

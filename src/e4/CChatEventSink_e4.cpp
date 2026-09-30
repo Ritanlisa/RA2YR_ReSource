@@ -536,7 +536,7 @@ void CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = RA2_OPNEW(4 * v8); /*0x7aee47*/
+      v9 = (unsigned int)(RA2_OPNEW(4 * v8));
       v10 = (const void *)*((unsigned int *)this + 2); /*0x7aee4c*/
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
@@ -586,7 +586,7 @@ char CChatEventSink::EncodeString(char a2)
     v10 = v9; /*0x7b5e9a*/
   if ( *this ) /*0x7b5e9c*/
     RA2_OPDEL((void *)*this); /*0x7b5ea3*/
-  *this = 0; /*0x7b5ead*/
+  *(_DWORD *)this = 0; /*0x7b5ead*/
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else

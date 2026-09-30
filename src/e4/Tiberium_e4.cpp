@@ -342,7 +342,7 @@ LABEL_50:
             goto LABEL_45;
         }
         if ( v30 )
-          v38 = v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)];
+          v38 = v30[20 * IDA_SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)];
         else
 LABEL_42:
           v38 = -1;
@@ -350,7 +350,7 @@ LABEL_42:
         {
 LABEL_45:
           if ( v30 )
-            v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)] = v81[194];
+            v30[20 * IDA_SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)] = v81[194];
           v99[0] = v31;
           v99[1] = v34;
           v39 = CellCoord::To_CellObj(&g_abs_87F7E8, v99);
@@ -550,7 +550,7 @@ LABEL_151:
     for ( j = LayerClass::CellIteratorNext(&g_abs_87F7E8); j; j = LayerClass::CellIteratorNext(&g_abs_87F7E8) )
     {
       v79 = *(unsigned int *)(j + 36);
-      v69 = (char *)g_MapTileArray + 80 * (int16_t)v79 + 80 * unk_89C2DC * SHIWORD(v79);
+      v69 = (char *)g_MapTileArray + 80 * (int16_t)v79 + 80 * unk_89C2DC * IDA_SHIWORD(v79);
       if ( *((MouseClass **)v69 + 14) == v67 )
       {
         *((unsigned int *)v69 + 14) = 0;
@@ -567,7 +567,7 @@ LABEL_151:
       for ( k = LayerClass::CellIteratorNext(&g_abs_87F7E8); k; k = LayerClass::CellIteratorNext(&g_abs_87F7E8) )
       {
         v79 = *(unsigned int *)(k + 36);
-        v72 = (char *)g_MapTileArray + 80 * (int16_t)v79 + 80 * unk_89C2DC * SHIWORD(v79);
+        v72 = (char *)g_MapTileArray + 80 * (int16_t)v79 + 80 * unk_89C2DC * IDA_SHIWORD(v79);
         if ( *((unsigned int *)v72 + 14) == v70 )
         {
           *((unsigned int *)v72 + 14) = 0;
@@ -587,7 +587,7 @@ LABEL_151:
     v62 = *(unsigned int *)(m + 36);
     v79 = v62;
     if ( g_MapTileArray )
-      v63 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v62 + 20 * unk_89C2DC * SHIWORD(v79) + 14);
+      v63 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v62 + 20 * unk_89C2DC * IDA_SHIWORD(v79) + 14);
     else
       v63 = -1;
     if ( (MouseClass *)v63 != v60 )
@@ -1029,7 +1029,7 @@ LABEL_6:
           v43 = *(MouseClass **)(j + 36);
           v120 = v43;
           if ( g_MapTileArray )
-            v44 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v43 + 20 * unk_89C2DC * SHIWORD(v120) + 14);
+            v44 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v43 + 20 * unk_89C2DC * IDA_SHIWORD(v120) + 14);
           else
             v44 = -1;
           if ( (MouseClass *)v44 == v41 )
@@ -1146,13 +1146,13 @@ LABEL_6:
               v108[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v121) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v121 + 20 * unk_89C2DC * SHIWORD(v121) + 14) = v98[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v121 + 20 * unk_89C2DC * IDA_SHIWORD(v121) + 14) = v98[194];
               v107 = g_MapCellHeight_Value;
             }
-            v109 = SHIWORD(v118) + (int16_t)v118;
+            v109 = IDA_SHIWORD(v118) + (int16_t)v118;
             if ( v109 > v107
-              && (int16_t)v118 - SHIWORD(v118) < v107
-              && SHIWORD(v118) - (int16_t)v118 < v107
+              && (int16_t)v118 - IDA_SHIWORD(v118) < v107
+              && IDA_SHIWORD(v118) - (int16_t)v118 < v107
               && v109 <= g_MapCellCount )
             {
               *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 14) = 0xFFFF;
@@ -1160,7 +1160,7 @@ LABEL_6:
               v110[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v98[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v98[194];
             }
             v111 = 0;
             if ( v129 > 0 )
@@ -1246,7 +1246,7 @@ LABEL_6:
               v59[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124[194];
               v56 = g_MapCellHeight_Value;
               v55 = v119[1];
             }
@@ -1347,13 +1347,13 @@ LABEL_6:
               v91[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v121) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v121 + 20 * unk_89C2DC * SHIWORD(v121) + 14) = v85[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v121 + 20 * unk_89C2DC * IDA_SHIWORD(v121) + 14) = v85[194];
               v88 = g_MapCellHeight_Value;
             }
-            v92 = SHIWORD(v118) + (int16_t)v118;
+            v92 = IDA_SHIWORD(v118) + (int16_t)v118;
             if ( v92 > v88
-              && (int16_t)v118 - SHIWORD(v118) < v88
-              && SHIWORD(v118) - (int16_t)v118 < v88
+              && (int16_t)v118 - IDA_SHIWORD(v118) < v88
+              && IDA_SHIWORD(v118) - (int16_t)v118 < v88
               && v92 <= g_MapCellCount )
             {
               *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 14) = 0xFFFF;
@@ -1361,7 +1361,7 @@ LABEL_6:
               v93[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v85[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v85[194];
             }
             v94 = 0;
             if ( v129 > 0 )
@@ -1465,7 +1465,7 @@ LABEL_6:
               v77[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * SHIWORD(v118) + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124[194];
               v76 = g_MapCellHeight_Value;
               v73 = v119[1];
             }

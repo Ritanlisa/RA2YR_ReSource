@@ -35,6 +35,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Trigger_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
@@ -334,7 +335,7 @@ TimerStruct * * ScenarioClass::Constructor()
   *((unsigned int *)this + 1158) = v3; /*0x683325*/
   *((unsigned int *)this + 1161) = g_abs_A8ED84; /*0x683331*/
   *((unsigned int *)this + 1163) = 0; /*0x683337*/
-  v4 = g_abs_A8ED84; /*0x68333d*/
+  v4 = (unsigned int)(g_abs_A8ED84);
   *((unsigned int *)this + 1166) = 0; /*0x683342*/
   *((unsigned int *)this + 1164) = v4; /*0x683348*/
   *((unsigned int *)this + 1167) = g_abs_A8ED84; /*0x683354*/
@@ -452,7 +453,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
       v3 = (AnimClass *)(*((unsigned int *)g_CampaignTypeArray + a3) + 156); /*0x683af8*/
   }
   *((unsigned int *)g_abs_A8B230 + 3379) = a3; /*0x683b0a*/
-  Debug::Log(); /*0x683b10*/
+  this->Debug::Log(); /*0x683b10*/
   Debug::Log(); /*0x683b21*/
   strcpy((char *)g_abs_A8B230 + 4700, v3->field_0); /*0x683b47*/
   _strupr((char *)g_abs_A8B230 + 4700); /*0x683b5d*/
@@ -476,8 +477,7 @@ LABEL_13:
       SetSoundWarning(Field); /*0x683bc9*/
     }
   }
-LABEL_14:
-  v8 = ++g_abs_A8DAB4; /*0x683bce*/
+LABEL_14: v8 = (int)(++g_abs_A8DAB4);
   if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:

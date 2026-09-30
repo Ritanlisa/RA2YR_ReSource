@@ -1124,7 +1124,7 @@ LABEL_22:
         {
           IDA_LOWORD(v39) = v44[0] - v46 + IDA_LOWORD(aP1b->field_0); /*0x567765*/
           IDA_HIWORD(v39) = v44[1] - v47 + IDA_HIWORD(aP1b->field_0); /*0x56776a*/
-          v30 = (int16_t)v39 + (SHIWORD(v39) << 9); /*0x567778*/
+          v30 = (int16_t)v39 + (IDA_SHIWORD(v39) << 9); /*0x567778*/
           if ( v30 >= 0x40000 || (v31 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v30)) == 0 ) /*0x56778e*/
           {
             v31 = g_CellClassArray; /*0x567794*/
@@ -1245,7 +1245,7 @@ void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
   {
     IDA_LOWORD(v35) = IDA_LOWORD(aP1->field_0) + *v5; /*0x56845b*/
     IDA_HIWORD(v35) = IDA_HIWORD(aP1->field_0) + v5[1]; /*0x568463*/
-    v6 = (SHIWORD(v35) << 9) + (int16_t)v35; /*0x56846e*/
+    v6 = (IDA_SHIWORD(v35) << 9) + (int16_t)v35; /*0x56846e*/
     if ( v6 >= 0 && v6 < v40 && (v7 = *(unsigned int *)&v3->__pad_11F[29], *(unsigned int *)(v7 + 4 * v6)) ) /*0x568489*/
     {
       if ( v6 >= 0x40000 ) /*0x56849e*/
@@ -1359,7 +1359,7 @@ LABEL_17:
         {
           IDA_LOWORD(v33) = *(unsigned short *)(i + v25 + 5668) + aP1->field_0; /*0x5686df*/
           IDA_HIWORD(v33) = *(unsigned short *)(i + v25 + 5672) + IDA_HIWORD(aP1->field_0); /*0x5686e4*/
-          v26 = (int16_t)v33 + (SHIWORD(v33) << 9); /*0x5686ef*/
+          v26 = (int16_t)v33 + (IDA_SHIWORD(v33) << 9); /*0x5686ef*/
           if ( v26 >= 0 && v26 < v40 ) /*0x5686f9*/
           {
             v27 = *((unsigned int *)this + 79); /*0x5686ff*/
@@ -1383,7 +1383,7 @@ LABEL_17:
         {
           IDA_LOWORD(v34) = *(unsigned short *)(i + v29 + 5732) + aP1->field_0; /*0x568776*/
           IDA_HIWORD(v34) = *(unsigned short *)(i + v29 + 5736) + IDA_HIWORD(aP1->field_0); /*0x56877b*/
-          v30 = (int16_t)v34 + (SHIWORD(v34) << 9); /*0x568786*/
+          v30 = (int16_t)v34 + (IDA_SHIWORD(v34) << 9); /*0x568786*/
           if ( v30 >= 0 && v30 < v40 ) /*0x568790*/
           {
             v31 = *((unsigned int *)this + 79); /*0x568796*/
@@ -1473,7 +1473,7 @@ void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
   {
     IDA_LOWORD(v32) = IDA_LOWORD(aP1->field_0) + *v5; /*0x56888b*/
     IDA_HIWORD(v32) = IDA_HIWORD(aP1->field_0) + v5[1]; /*0x568893*/
-    esi7 = (SHIWORD(v32) << 9) + (int16_t)v32; /*0x56889e*/
+    esi7 = (IDA_SHIWORD(v32) << 9) + (int16_t)v32; /*0x56889e*/
     if ( esi7 >= 0 && esi7 < v38 && (v7 = *(unsigned int *)&v3->__pad_11F[29], *(unsigned int *)(v7 + 4 * esi7)) ) /*0x5688b9*/
     {
       if ( esi7 >= 0x40000 ) /*0x5688ce*/
@@ -1691,7 +1691,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
         {
           IDA_HIWORD(v21) = *(unsigned short *)(j + 38); /*0x568d01*/
           IDA_LOWORD(v21) = k + *((unsigned int *)this + 73); /*0x568d09*/
-          v12 = (int16_t)v21 + (SHIWORD(v21) << 9); /*0x568d14*/
+          v12 = (int16_t)v21 + (IDA_SHIWORD(v21) << 9); /*0x568d14*/
           if ( v12 >= 0x40000 || (v13 = *(unsigned int **)(g_abs_87F924 + 4 * v12)) == 0 ) /*0x568d2a*/
           {
             g_Map_GlobalCellIndex = v21; /*0x568d30*/
@@ -1706,7 +1706,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
         {
           IDA_LOWORD(v22) = *(unsigned short *)(j + 36); /*0x568d7b*/
           IDA_HIWORD(v22) = m + *((unsigned int *)this + 74); /*0x568d80*/
-          v15 = (int16_t)v22 + (SHIWORD(v22) << 9); /*0x568d8e*/
+          v15 = (int16_t)v22 + (IDA_SHIWORD(v22) << 9); /*0x568d8e*/
           if ( v15 >= 0x40000 || (v16 = *(unsigned int **)(g_abs_87F924 + 4 * v15)) == 0 ) /*0x568da4*/
           {
             g_Map_GlobalCellIndex = v22; /*0x568daa*/
@@ -1769,10 +1769,10 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1)
           v6 = *(TagClass **)(v5 + 36); /*0x56b44a*/
           Src = (int)v6; /*0x56b451*/
           v7 = *((char *)this + 61); /*0x56b45a*/
-          Src = SHIWORD(v6) + (int16_t)v6; /*0x56b468*/
+          Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56b468*/
           if ( Src > v7 /*0x56b49b*/
-            && (int16_t)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (int16_t)v6 < v7
+            && (int16_t)v6 - IDA_SHIWORD(v6) < v7
+            && IDA_SHIWORD(v6) - (int16_t)v6 < v7
             && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = (int)v6; /*0x56b4a8*/
@@ -1826,7 +1826,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   v5 = (IUnknown *)this; /*0x56d23d*/
   if ( (unsigned char)aP3 )
   {
-    v6 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9); /*0x56d255*/
+    v6 = IDA_SLOWORD(aP1->field_0) + (IDA_SHIWORD(aP1->field_0) << 9); /*0x56d255*/
     if ( v6 >= 0x40000 || (v7 = *(unsigned int **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v6)) == 0 ) /*0x56d26b*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x56d26f*/
@@ -1844,7 +1844,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
       }
       else
       {
-        v10 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9); /*0x56d2bd*/
+        v10 = IDA_SLOWORD(aP1->field_0) + (IDA_SHIWORD(aP1->field_0) << 9); /*0x56d2bd*/
         if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v10)) != 0 ) /*0x56d2d3*/
         {
           NeighbourContent = v11; /*0x56d2d5*/
@@ -1868,7 +1868,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
       }
     }
   }
-  v14 = SLOWORD(v4->field_0) + SHIWORD(v4->field_0) * (v5->field_F8 + *(unsigned int *)&v5->__pad_EC[8] + 1); /*0x56d359*/
+  v14 = IDA_SLOWORD(v4->field_0) + IDA_SHIWORD(v4->field_0) * (v5->field_F8 + *(unsigned int *)&v5->__pad_EC[8] + 1); /*0x56d359*/
   if ( v14 >= 0 ) /*0x56d35b*/
   {
     v16 = *(unsigned int *)&v5->__pad_68[4]; /*0x56d370*/
@@ -2125,7 +2125,7 @@ LABEL_11:
   {
     IDA_HIWORD(aP6a) = v11 + IDA_HIWORD(aP0->field_0); /*0x56e7f5*/
     IDA_LOWORD(aP6a) = v9 + IDA_LOWORD(aP0->field_0); /*0x56e7fa*/
-    v12 = (int16_t)aP6a + (SHIWORD(aP6a) << 9); /*0x56e808*/
+    v12 = (int16_t)aP6a + (IDA_SHIWORD(aP6a) << 9); /*0x56e808*/
     if ( v12 < 0x40000 && (v13 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v12)) != 0 ) /*0x56e81e*/
     {
       v14 = v13; /*0x56e820*/
@@ -2170,7 +2170,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
 
   v2 = aP0; /*0x574784*/
   v3 = v1; /*0x574789*/
-  v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x574795*/
+  v4 = IDA_SLOWORD(aP0->field_0) + (IDA_SHIWORD(aP0->field_0) << 9); /*0x574795*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v4)) == 0 ) /*0x5747ab*/
   {
     g_Map_GlobalCellIndex = (IUnknown *)aP0->field_0; /*0x5747af*/
@@ -2408,7 +2408,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown aP1)
       v26 = v22 + *v16; /*0x574de3*/
       IDA_HIWORD(v66) = v21 + v16[1]; /*0x574de9*/
       IDA_LOWORD(v66) = v26; /*0x574dee*/
-      v27 = v26 + (SHIWORD(v66) << 9); /*0x574df9*/
+      v27 = v26 + (IDA_SHIWORD(v66) << 9); /*0x574df9*/
       if ( v27 < 0x40000 && (v28 = *(unsigned int **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v27)) != 0 ) /*0x574e0f*/
       {
         v11 = v28; /*0x574e11*/
@@ -2455,8 +2455,8 @@ LABEL_34:
         IDA_HIWORD(aP1.field_0) = v33; /*0x574ec7*/
         IDA_LOWORD(v32) = aP1.field_0; /*0x574ecc*/
         v34 = v33 << 9; /*0x574ed0*/
-        v18 = SLOWORD(aP1.field_0) + v34 < 0; /*0x574ed3*/
-        v35 = SLOWORD(aP1.field_0) + v34; /*0x574ed3*/
+        v18 = IDA_SLOWORD(aP1.field_0) + v34 < 0; /*0x574ed3*/
+        v35 = IDA_SLOWORD(aP1.field_0) + v34; /*0x574ed3*/
         v67 = (CCINIClass *)aP1.field_0; /*0x574ed5*/
         if ( v18 || v35 >= 0x40000 || (v36 = *(unsigned int **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v35)) == 0 ) /*0x574eef*/
         {
@@ -2492,9 +2492,9 @@ LABEL_34:
         if ( (int16_t)v40 > v41 + *(unsigned int *)&v2->__pad_11C[16] ) /*0x574fc4*/
           break; /*0x574fc4*/
         v42 = *(unsigned int *)&v2->__pad_11C[12]; /*0x574fcf*/
-        if ( SHIWORD(v62) < v42 || SHIWORD(v62) > v42 + v2->field_130 ) /*0x574fe7*/
+        if ( IDA_SHIWORD(v62) < v42 || IDA_SHIWORD(v62) > v42 + v2->field_130 ) /*0x574fe7*/
           break; /*0x574fe7*/
-        v43 = (int16_t)v40 + (SHIWORD(v62) << 9); /*0x574ff6*/
+        v43 = (int16_t)v40 + (IDA_SHIWORD(v62) << 9); /*0x574ff6*/
         if ( *(unsigned int *)(*(unsigned int *)&v2->__pad_134[8] + 4 * v43) ) /*0x574ff8*/
         {
           if ( v43 < 0x40000 && (v44 = *(ObjectClass **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v43)) != 0 ) /*0x575014*/
@@ -2522,7 +2522,7 @@ LABEL_34:
               IDA_LOWORD(v67) = v50; /*0x5750d3*/
               v51 = v50; /*0x5750dc*/
               aP1.field_0 = (int)v67; /*0x5750e1*/
-              v52 = v50 + (SHIWORD(v67) << 9); /*0x5750e8*/
+              v52 = v50 + (IDA_SHIWORD(v67) << 9); /*0x5750e8*/
               if ( v52 < 0x40000 && (v53 = *(unsigned int **)(*(unsigned int *)&g_abs_87F8E4 + 4 * v52)) != 0 ) /*0x5750fe*/
               {
                 ebx68 = v53; /*0x575100*/
@@ -2539,7 +2539,7 @@ LABEL_34:
               if ( v51 > v56 + *(unsigned int *)&this->__pad_11C[16] ) /*0x57512b*/
                 goto LABEL_79; /*0x57512b*/
               v57 = *(unsigned int *)&this->__pad_11C[12]; /*0x575135*/
-              if ( SHIWORD(v67) < v57 || SHIWORD(v67) > v57 + this->field_130 ) /*0x57514d*/
+              if ( IDA_SHIWORD(v67) < v57 || IDA_SHIWORD(v67) > v57 + this->field_130 ) /*0x57514d*/
                 goto LABEL_79; /*0x57514d*/
               v58 = ebx68[14] - g_TerrainBridgeIndex + 1; /*0x57515b*/
               if ( globalHelper_074600(v58, v48, (int)ebx68) ) /*0x575160*/
@@ -2580,7 +2580,7 @@ LABEL_79:
         v40 = (ObjectClass *)aP1.field_0; /*0x575071*/
         v62 = (ObjectClass *)aP1.field_0; /*0x575077*/
       }
-      while ( SLOWORD(aP1.field_0) >= v41 ); /*0x574fbd*/
+      while ( IDA_SLOWORD(aP1.field_0) >= v41 ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph(v2); /*0x5751e6*/
     v69 = &vt_VectorClass_Cell; /*0x5751f1*/
@@ -2848,7 +2848,7 @@ unsigned int * MapClass::SpiralSearch()
     if ( v4 + v3 > v2 + 2 * (*((unsigned int *)this + 66) + *((unsigned int *)this + 64)) + 12 ) /*0x578805*/
       return 0; /*0x578805*/
   }
-  v12 = (int16_t)v13 + (SHIWORD(v13) << 9); /*0x578820*/
+  v12 = (int16_t)v13 + (IDA_SHIWORD(v13) << 9); /*0x578820*/
   if ( v12 >= 0x40000 || (result = *(unsigned int **)(*((unsigned int *)this + 79) + 4 * v12)) == 0 ) /*0x578836*/
   {
     g_Map_GlobalCellIndex = v13; /*0x57883f*/
@@ -3834,7 +3834,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
     for ( i = LayerClass::CellIteratorNext(&g_abs_87F7E8); i; i = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x5a044e*/
     {
       v35 = *(unsigned int *)(i + 36); /*0x5a0453*/
-      *((unsigned int *)g_MapTileArray + 20 * (int16_t)v35 + 20 * unk_89C2DC * SHIWORD(v35) + 15) = 0; /*0x5a0478*/
+      *((unsigned int *)g_MapTileArray + 20 * (int16_t)v35 + 20 * unk_89C2DC * IDA_SHIWORD(v35) + 15) = 0; /*0x5a0478*/
     }
   }
   v30 = 0; /*0x5a048b*/
@@ -3847,7 +3847,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         v9 = *(unsigned int *)(v6[1] + 4 * j); /*0x5a04a6*/
         v31 = v9; /*0x5a04a9*/
         if ( g_MapTileArray ) /*0x5a04ad*/
-          *((unsigned int *)g_MapTileArray + 20 * (int16_t)v9 + 20 * unk_89C2DC * SHIWORD(v31) + 14) = a4; /*0x5a04ca*/
+          *((unsigned int *)g_MapTileArray + 20 * (int16_t)v9 + 20 * unk_89C2DC * IDA_SHIWORD(v31) + 14) = a4; /*0x5a04ca*/
         v10 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v31); /*0x5a04d8*/
         *((unsigned int *)v10 + 14) = 0; /*0x5a04dd*/
         v10[282] = 0; /*0x5a04e0*/
@@ -4119,7 +4119,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
           {
             v36[2] = 0.0; /*0x6d8417*/
             IDA_LODWORD(v36[0]) = ((((int16_t)a3 << 8) + 128) / 256) << 8; /*0x6d8433*/
-            IDA_LODWORD(v36[1]) = (((SHIWORD(a3) << 8) + 128) / 256) << 8; /*0x6d8437*/
+            IDA_LODWORD(v36[1]) = (((IDA_SHIWORD(a3) << 8) + 128) / 256) << 8; /*0x6d8437*/
             v17 = Coord::To_ScreenRaw((int *)&v30, v36); /*0x6d843b*/
             v27 = *v17; /*0x6d8442*/
             v18 = *((unsigned int *)this + 45); /*0x6d8446*/
@@ -4457,7 +4457,7 @@ int MapClass::IsCellPassable(int a1, int a2)
   unsigned int v2; // eax
   unsigned int *v3; // eax
 
-  v2 = (int16_t)a2 + (SHIWORD(a2) << 9); /*0x5656ed*/
+  v2 = (int16_t)a2 + (IDA_SHIWORD(a2) << 9); /*0x5656ed*/
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(*(unsigned int *)(a1 + 316) + 4 * v2)) == 0 ) /*0x565707*/
   {
     v3 = &g_CellClassArray; /*0x56570d*/
@@ -4543,13 +4543,13 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
         NeighbourContent = (MapClass *)Cell::GetNeighbourContent(v4, v6); /*0x57a3b3*/
         v9 = *(IUnknown **)&NeighbourContent->__pad_18[12]; /*0x57a3b5*/
         aP3 = v9; /*0x57a3ba*/
-        result = SHIWORD(v9); /*0x57a3c1*/
-        v10 = SHIWORD(v9) + (int16_t)v9; /*0x57a3c6*/
+        result = IDA_SHIWORD(v9); /*0x57a3c1*/
+        v10 = IDA_SHIWORD(v9) + (int16_t)v9; /*0x57a3c6*/
         if ( v10 > g_MapCellHeight_Value ) /*0x57a3cf*/
         {
-          if ( (int16_t)aP3 - SHIWORD(aP3) < g_MapCellHeight_Value ) /*0x57a3db*/
+          if ( (int16_t)aP3 - IDA_SHIWORD(aP3) < g_MapCellHeight_Value ) /*0x57a3db*/
           {
-            result = SHIWORD(aP3) - (int16_t)aP3; /*0x57a3dd*/
+            result = IDA_SHIWORD(aP3) - (int16_t)aP3; /*0x57a3dd*/
             if ( result < g_MapCellHeight_Value && v10 <= g_MapCellCount ) /*0x57a3ef*/
             {
               aP3 = v9; /*0x57a3f5*/
@@ -4592,7 +4592,7 @@ int  MapClass::TriggerEVA(IUnknown * aP0)
       result = Math::RoundToInt(v3); /*0x57b7fe*/
       if ( (int16_t)result <= 5 ) /*0x57b807*/
       {
-        v5 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x57b813*/
+        v5 = IDA_SLOWORD(aP0->field_0) + (IDA_SHIWORD(aP0->field_0) << 9); /*0x57b813*/
         if ( v5 < 0x40000 && (result = *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v5)) != 0 ) /*0x57b829*/
         {
           v6 = (unsigned int *)result; /*0x57b82b*/

@@ -56,7 +56,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   IDA_HIWORD(v18) = v6 / 256; /*0x4cc184*/
   v26 = v18; /*0x4cc18d*/
   v7 = abs32((int16_t)v21 - (int16_t)v18); /*0x4cc1aa*/
-  v8 = abs32(SHIWORD(v21) - SHIWORD(v18)); /*0x4cc1af*/
+  v8 = abs32(IDA_SHIWORD(v21) - IDA_SHIWORD(v18)); /*0x4cc1af*/
   if ( v7 <= v8 ) /*0x4cc1b3*/
     v7 = v8; /*0x4cc1b5*/
   v9 = v6 - aP0->field_4; /*0x4cc1bf*/

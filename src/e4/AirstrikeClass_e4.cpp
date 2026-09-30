@@ -281,7 +281,7 @@ namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
 
-  unsigned int * v0;
+  unsigned int v0;
   int v1; // esi
   int v2; // ecx
   int v3; // edx
@@ -291,7 +291,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
   IDA_LOBYTE(v0) = unk_89A134; /*0x420e90*/
   if ( !unk_89A134 ) /*0x420e98*/
   {
-    unk_89A134 = 1; /*0x420e9a*/
+    unk_89A134 = (unsigned char *)(1);
     v1 = 0; /*0x420ea1*/
     while ( 1 ) /*0x420ec6*/
     {

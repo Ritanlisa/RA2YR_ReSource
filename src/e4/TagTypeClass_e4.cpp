@@ -38,7 +38,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5b95*/
   *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5b9c*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
-  if ( this == (char *)-36 ) /*0x6e5baa*/
+  if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
   }
@@ -47,7 +47,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
     strncpy(Destination, (unsigned char *)this + 36, 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != (unsigned char *)this + 100 ) /*0x6e5bd0*/
+  if ( Destination != (char [48])((unsigned char *))this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
@@ -61,7 +61,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
          *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
          0) )
   {
-    v3 = (AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++; /*0x6e5c2b*/
+    v3 = (unsigned int)((AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++);
     *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
   }
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c71*/
@@ -75,7 +75,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
     v4 = (*(unsigned int *)&g_abs_B077F8)++; /*0x6e5c7e*/
     *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v4) = this; /*0x6e5c8d*/
   }
-  return this; /*0x6e5c92*/
+  return (gamemd::AbstractTypeClass *)(this);
 
 }
 }
@@ -87,7 +87,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v2; // ecx
   unsigned int *v3; // esi
   int v4; // esi
-  unsigned int v5;
+  unsigned int * v5;
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax

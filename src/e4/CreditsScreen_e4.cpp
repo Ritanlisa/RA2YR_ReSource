@@ -92,7 +92,7 @@ namespace gamemd {
 void CreditsScreen::Init()
 {
 
-  *this = 0; /*0x4a3c00*/
+  *(_DWORD *)this = 0; /*0x4a3c00*/
 
 }
 } // namespace gamemd

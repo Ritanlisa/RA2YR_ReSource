@@ -28,7 +28,7 @@ AudioController * * CCFileClass::Close()
   {
     if ( *((unsigned int *)this + 20) ) /*0x4325d6*/
     {
-      v3 = *(unsigned int *)this; /*0x4325dd*/
+      v3 = (gamemd::AudioController **)(*(unsigned int *)this);
       *((unsigned char *)this + 41) = 0; /*0x4325e1*/
       result = (*(int (**)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
       *((unsigned char *)this + 41) = 1; /*0x4325e8*/
@@ -53,7 +53,7 @@ void CCFileClass::Destruct()
   *((unsigned int *)this + 25) = 0; /*0x535a7c*/
   Vector::Clear((int)((unsigned int *)this + 22)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
-  return BufferIOFileClass::Dtor(this); /*0x535a95*/
+  return ((BufferIOFileClass *)(this))->Dtor(); /*0x535a95*/
 
 }
 } // namespace gamemd
@@ -74,10 +74,10 @@ void CCFileClass::GetFileSize()
   {
     if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)*((char *)this + 5), 0); /*0x65d0f2*/
+      FileSize = (DWORD)(GetFileSize((HANDLE)*((char *)this + 5), 0));
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = *this; /*0x65d0fd*/
+        v4 = (int)(*this);
         v6 = *((char *)this + 6); /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (**)(int *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/

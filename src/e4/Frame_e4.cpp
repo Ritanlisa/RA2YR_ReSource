@@ -247,7 +247,7 @@ LABEL_51:
                            0);
                 }
               }
-              return result; /*0x4f4ba1*/
+              return (gamemd::TechnoTypeClass *)(result);
             }
             v13 = g_abs_87F7E8[2]; /*0x4f4a1e*/
           }
@@ -265,7 +265,7 @@ LABEL_51:
       goto LABEL_13; /*0x4f485a*/
     }
   }
-  return result; /*0x4f4ba4*/
+  return (gamemd::TechnoTypeClass *)(result);
 
 }
 } // namespace gamemd
@@ -274,7 +274,7 @@ namespace gamemd {
 TechnoTypeClass * Frame::Init()
 {
 
-  return *((unsigned int *)this + 1) != 0; /*0x724c0a*/
+  return (gamemd::TechnoTypeClass *)(*((unsigned int *)this + 1) != 0);
 
 }
 } // namespace gamemd

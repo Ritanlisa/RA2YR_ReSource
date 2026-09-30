@@ -507,10 +507,10 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
           v7 = *((char *)this + 61); /*0x56afa9*/
-          Src = SHIWORD(v6) + (int16_t)v6; /*0x56afb7*/
+          Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
-            && (int16_t)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (int16_t)v6 < v7
+            && (int16_t)v6 - IDA_SHIWORD(v6) < v7
+            && IDA_SHIWORD(v6) - (int16_t)v6 < v7
             && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56aff7*/
@@ -587,10 +587,10 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
           v7 = *((char *)this + 61); /*0x56b2ba*/
-          Src = SHIWORD(v6) + (int16_t)v6; /*0x56b2c8*/
+          Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
-            && (int16_t)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (int16_t)v6 < v7
+            && (int16_t)v6 - IDA_SHIWORD(v6) < v7
+            && IDA_SHIWORD(v6) - (int16_t)v6 < v7
             && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56b308*/
@@ -954,8 +954,8 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
         v7 = *((unsigned int *)this + 61); /*0x56b131*/
         IDA_HIWORD(a2) = IDA_HIWORD(v6); /*0x56b137*/
         v8 = (int16_t)v6; /*0x56b13b*/
-        v9 = SHIWORD(v6); /*0x56b13e*/
-        a2 = (int *)(SHIWORD(a2) + v8); /*0x56b148*/
+        v9 = IDA_SHIWORD(v6); /*0x56b13e*/
+        a2 = (int *)(IDA_SHIWORD(a2) + v8); /*0x56b148*/
         if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] ) /*0x56b17b*/
         {
           a2 = *(int **)(v5 + 36); /*0x56b18b*/

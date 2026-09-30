@@ -1306,14 +1306,14 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
                                                                                                 * abs32(a2 - *((unsigned int *)this + 51) - (unsigned int)aP2)]];
   IDA_LODWORD(v5) = (IDA_HIDWORD(v5) ^ v5) - IDA_HIDWORD(v5); /*0x75ee47*/
   v6 = *(unsigned int *)&g_AsyncMovieState.__pad_71C[4 * v5 + 836]; /*0x75ee50*/
-  WORD2(v5) = a4[*(this + (unsigned int)v5 + 130)]; /*0x75ee57*/
+  IDA_WORD2(v5) = a4[*(this + (unsigned int)v5 + 130)]; /*0x75ee57*/
   v7 = ((v6 /*0x75eeb8*/
-       * (uint8_t)((uint8_t)(WORD2(v5) >> g_abs_89F690) << g_abs_89F690)) >> 8)
-     + (uint8_t)((uint8_t)(WORD2(v5) >> g_abs_89F690) << g_abs_89F690);
+       * (uint8_t)((uint8_t)(IDA_WORD2(v5) >> g_abs_89F690) << g_abs_89F690)) >> 8)
+     + (uint8_t)((uint8_t)(IDA_WORD2(v5) >> g_abs_89F690) << g_abs_89F690);
   v8 = ((v6 /*0x75eec6*/
-       * (uint8_t)((uint8_t)(WORD2(v5) >> g_abs_89F690) << g_abs_89F690)) >> 8)
-     + (uint8_t)((uint8_t)(WORD2(v5) >> g_abs_89F690) << g_abs_89F690);
-  v9 = (uint8_t)((uint8_t)(WORD2(v5) >> g_abs_89F690) << g_abs_89F690); /*0x75eec8*/
+       * (uint8_t)((uint8_t)(IDA_WORD2(v5) >> g_abs_89F690) << g_abs_89F690)) >> 8)
+     + (uint8_t)((uint8_t)(IDA_WORD2(v5) >> g_abs_89F690) << g_abs_89F690);
+  v9 = (uint8_t)((uint8_t)(IDA_WORD2(v5) >> g_abs_89F690) << g_abs_89F690); /*0x75eec8*/
   if ( v8 > 255 ) /*0x75eed3*/
     v8 = 255; /*0x75eed5*/
   v10 = 255; /*0x75eee0*/

@@ -10,6 +10,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x7BA8C0
 namespace gamemd {
@@ -64,7 +65,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
   }
   else
   {
-    v7 = *a3; /*0x7ba8ed*/
+    v7 = (int)(*a3);
     v8 = *a3; /*0x7ba8ef*/
     v9 = a3[1]; /*0x7ba8f3*/
     v40 = a3[1]; /*0x7ba8f8*/
@@ -865,23 +866,23 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
   {
     if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
     {
-      arg8 = (void **)(&vt_BlitTrans_unsigned_char);
+      arg8 = (gamemd::XSurface *)((void **)(&vt_BlitTrans_unsigned_char));
       return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbc45*/
     }
     else
     {
-      a3 = (XSurface *)&vt_BlitTrans_unsigned_short; /*0x7bbc5c*/
+      a3 = (gamemd::XSurface *)((XSurface *)&vt_BlitTrans_unsigned_short);
       return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
     }
   }
   else if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc72*/
   {
-    a2 = (void **)(&vt_BlitPlain_unsigned_char);
+    a2 = (gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_char));
     return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
   }
   else
   {
-    arg8 = (void **)(&vt_BlitPlain_unsigned_short);
+    arg8 = (gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_short));
     return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
   }
 

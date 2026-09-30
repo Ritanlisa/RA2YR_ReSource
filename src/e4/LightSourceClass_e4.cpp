@@ -20,7 +20,7 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
 
   int v10; // eax
 
-  AbstractClass::Constructor((int)this); /*0x554763*/
+  ((AbstractClass *)((int)this))->Constructor(); /*0x554763*/
   *(this + 10) = a7; /*0x554774*/
   *(this + 9) = a6; /*0x554777*/
   *(this + 11) = a8; /*0x55477e*/
@@ -58,7 +58,7 @@ void LightSourceClass::Constructor()
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((void *)this); /*0x554833*/
+  ((AbstractClass *)((void *)this))->Constructor(); /*0x554833*/
   *(unsigned int *)(this + 36) = 0; /*0x55483d*/
   *(unsigned int *)(this + 40) = 0; /*0x554840*/
   *(unsigned int *)(this + 44) = 0; /*0x554843*/

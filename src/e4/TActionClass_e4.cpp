@@ -371,7 +371,7 @@ LABEL_13:
       return result->vtable0; /*0x6ac6af*/
     v7 = 1; /*0x6ac6b1*/
   }
-  v8 = 997 * v7; /*0x6ac6e3*/
+  v8 = (unsigned int *)(997 * v7);
   v9 = 0; /*0x6ac6e6*/
   v10 = this + v8 + 1361; /*0x6ac6e8*/
   v11 = v10 + 22; /*0x6ac6ef*/
@@ -481,7 +481,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     }
     while ( v14 < *(int *)&g_abs_A8D63C ); /*0x6e0c89*/
   }
-  return v6; /*0x6e0ba6*/
+  return (gamemd::AbstractClass **)(v6);
 
 }
 }
@@ -497,7 +497,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
 
   v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v8, *((char *)this + 17)); /*0x6e1cdb*/
   aP2.Z = 0; /*0x6e1cdf*/
-  aP2.Y = (SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
+  aP2.Y = (IDA_SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
   aP2.X = ((int16_t)v7 << 8) + 128; /*0x6e1d0a*/
   aP2.Z = Cell::GetGroundHeight(&aP2); /*0x6e1d13*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v7) + 80) & 0x100) != 0 /*0x6e1d49*/
@@ -534,7 +534,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
 
   v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v9, *((char *)this + 17)); /*0x6e22ae*/
   aP2.Z = 0; /*0x6e22b2*/
-  aP2.Y = (SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
+  aP2.Y = (IDA_SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
   aP2.X = ((int16_t)v8 << 8) + 128; /*0x6e22dd*/
   aP2.Z = Cell::GetGroundHeight(&aP2); /*0x6e22e6*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v8) + 80) & 0x100) != 0 /*0x6e231c*/
@@ -564,7 +564,7 @@ namespace gamemd {
 AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 
-  int v6; // edi
+  unsigned int * v6;
   int v7; // esi
   int v8; // ebx
   unsigned int *v9; // eax
@@ -577,7 +577,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
 
   v14 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v15, *((char *)this + 17)); /*0x6e23b1*/
   aP2.Z = 0; /*0x6e23b5*/
-  aP2.Y = (SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
+  aP2.Y = (IDA_SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
   aP2.X = ((int16_t)v14 << 8) + 128; /*0x6e23e0*/
   aP2.Z = Cell::GetGroundHeight(&aP2); /*0x6e23e9*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v14) + 80) & 0x100) != 0 /*0x6e241f*/
@@ -585,7 +585,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   {
     aP2.Z += *(unsigned int *)&g_abs_B077F8; /*0x6e242d*/
   }
-  v6 = (unsigned int *)(*((char *)this + 36));
+  v6 = (int)((unsigned int *)(*((char *)this + 36)));
   v7 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4 * v6); /*0x6e2440*/
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
   v9 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&aP2); /*0x6e244f*/
@@ -643,7 +643,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
 
   v17 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v19, *((char *)this + 17)); /*0x6e2c60*/
   GroundHeight = 0; /*0x6e2c64*/
-  v21 = (SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
+  v21 = (IDA_SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
   v20 = ((int16_t)v17 << 8) + 128; /*0x6e2c8f*/
   GroundHeight = Cell::GetGroundHeight(&v20); /*0x6e2c98*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v17) + 80) & 0x100) != 0 /*0x6e2cce*/
@@ -1371,7 +1371,7 @@ char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 
   v8 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v9, *((char *)this + 17)); /*0x6e253e*/
   GroundHeight = 0; /*0x6e2542*/
-  v10[1] = (SHIWORD(v8) << 8) + 128; /*0x6e2563*/
+  v10[1] = (IDA_SHIWORD(v8) << 8) + 128; /*0x6e2563*/
   v10[0] = ((int16_t)v8 << 8) + 128; /*0x6e256d*/
   GroundHeight = Cell::GetGroundHeight(v10); /*0x6e2576*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v8) + 80) & 0x100) != 0 /*0x6e25ac*/
@@ -1622,7 +1622,7 @@ char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, Abstrac
 
   v15 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v16, *((char *)this + 17)); /*0x6e3433*/
   GroundHeight = 0; /*0x6e3437*/
-  v20 = (SHIWORD(v15) << 8) + 128; /*0x6e3458*/
+  v20 = (IDA_SHIWORD(v15) << 8) + 128; /*0x6e3458*/
   v19 = ((int16_t)v15 << 8) + 128; /*0x6e3462*/
   GroundHeight = Cell::GetGroundHeight(&v19); /*0x6e346b*/
   if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v15) + 80) & 0x100) != 0 ) /*0x6e3487*/

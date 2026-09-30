@@ -354,7 +354,7 @@ unsigned int * ComStreamClass::seekToPosition()
   unsigned int v5[2]; // [esp+4h] [ebp-10h] BYREF
   unsigned int v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F58, *((char *)this + 1)); /*0x7b022f*/
+  ((ComPtr *)(&stru_B77F58))->Set(*((char *)this + 1)); /*0x7b022f*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
@@ -375,10 +375,10 @@ unsigned int * ComStreamClass::getStreamSize()
   unsigned int v5[2]; // [esp+4h] [ebp-10h] BYREF
   unsigned int v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F70, *((char *)this + 1)); /*0x7b02af*/
+  ((ComPtr *)(&stru_B77F70))->Set(*((char *)this + 1)); /*0x7b02af*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
-  ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/
+  ((ComPtr *)(&stru_B77F78))->Set(v3[1]); /*0x7b02d7*/
   v5[0] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7b02e0*/
   ComPtr::Release(v5); /*0x7b02e8*/
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b02f1*/

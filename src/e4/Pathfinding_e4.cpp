@@ -161,7 +161,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   for ( i = LayerClass::CellIteratorNext(&g_abs_87F7E8); i; i = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x5a5417*/
   {
     v80 = *(int *)(i + 36); /*0x5a541c*/
-    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v80 + 20 * unk_89C2DC * SHIWORD(v80) + 15) = 0; /*0x5a5441*/
+    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v80 + 20 * unk_89C2DC * IDA_SHIWORD(v80) + 15) = 0; /*0x5a5441*/
   }
   v13 = a1; /*0x5a544e*/
   *v4 = *(unsigned int *)a1; /*0x5a5454*/
@@ -243,18 +243,18 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       {
         v80 = *CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)); /*0x5a55ef*/
         v73 = v80; /*0x5a55f3*/
-        v31 = SHIWORD(v80) + (int16_t)v80; /*0x5a55ff*/
+        v31 = IDA_SHIWORD(v80) + (int16_t)v80; /*0x5a55ff*/
         if ( v31 > g_MapCellHeight_Value /*0x5a5626*/
-          && (int16_t)v80 - SHIWORD(v80) < g_MapCellHeight_Value
-          && SHIWORD(v80) - (int16_t)v80 < g_MapCellHeight_Value
+          && (int16_t)v80 - IDA_SHIWORD(v80) < g_MapCellHeight_Value
+          && IDA_SHIWORD(v80) - (int16_t)v80 < g_MapCellHeight_Value
           && v31 <= g_MapCellCount )
         {
           v32 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v73); /*0x5a563b*/
           if ( Cell::IsEmpty(v32) && v32[17] == -1 ) /*0x5a5650*/
           {
-            v33 = SHIWORD(v73); /*0x5a5656*/
+            v33 = IDA_SHIWORD(v73); /*0x5a5656*/
             v34 = (int16_t)v73; /*0x5a5667*/
-            v35 = (char *)g_MapTileArray + 80 * (int16_t)v73 + 80 * SHIWORD(v73) * unk_89C2DC; /*0x5a5678*/
+            v35 = (char *)g_MapTileArray + 80 * (int16_t)v73 + 80 * IDA_SHIWORD(v73) * unk_89C2DC; /*0x5a5678*/
             if ( *((unsigned int *)v35 + 15) != 1 && !v35[69] ) /*0x5a5684*/
             {
               v36 = a1; /*0x5a568f*/
@@ -265,7 +265,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
               if ( v80 <= (int)((IDA_HIDWORD(v38) ^ v38) - IDA_HIDWORD(v38)) ) /*0x5a56b5*/
                 v80 = (IDA_HIDWORD(v38) ^ v38) - IDA_HIDWORD(v38); /*0x5a56b7*/
               v83 = (unsigned int)Random::State(&g_Randomizer); /*0x5a56c5*/
-              v39 = SHIWORD(v73); /*0x5a56d5*/
+              v39 = IDA_SHIWORD(v73); /*0x5a56d5*/
               v40 = (int16_t)v73; /*0x5a56e0*/
               v41 = (double)v80; /*0x5a56eb*/
               v42 = v30; /*0x5a56ef*/
@@ -366,10 +366,10 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         {
           IDA_LODWORD(v81[0]) = *CellStruct::Add(&a1, &v82, (unsigned short *)(4 * (v56 & 7) + 9041544)); /*0x5a5897*/
           v80 = IDA_SLODWORD(v81[0]); /*0x5a589b*/
-          v58 = SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
+          v58 = SWORD1(v81[0]) + IDA_SLOWORD(v81[0]); /*0x5a58a7*/
           if ( v58 > g_MapCellHeight_Value /*0x5a58dd*/
-            && SLOWORD(v81[0]) - SWORD1(v81[0]) < g_MapCellHeight_Value
-            && SWORD1(v81[0]) - SLOWORD(v81[0]) < g_MapCellHeight_Value
+            && IDA_SLOWORD(v81[0]) - SWORD1(v81[0]) < g_MapCellHeight_Value
+            && SWORD1(v81[0]) - IDA_SLOWORD(v81[0]) < g_MapCellHeight_Value
             && v58 <= g_MapCellCount
             && *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v80) + 14) != dword_ABC2B0 )
           {

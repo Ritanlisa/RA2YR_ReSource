@@ -121,14 +121,14 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   v10 = g_abs_82D03C[7 * (unsigned int)aP1]; /*0x5bdd22*/
   X_high = 0; /*0x5bdd25*/
   if ( v10 == 12345 ) /*0x5bdd31*/
-    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
+    X_high = IDA_SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
   if ( v10 == 54321 ) /*0x5bdd50*/
-    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
+    X_high = IDA_SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
   v12 = g_abs_82D040[7 * (unsigned int)aP1]; /*0x5bdd56*/
   if ( v12 == 12345 ) /*0x5bdd5f*/
-    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
+    Y_low = IDA_SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
   if ( v12 == 54321 ) /*0x5bdd72*/
-    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
+    Y_low = IDA_SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
   v14 = (CoordStruct *)Y_low; /*0x5bdd7c*/
   v13 = X_high; /*0x5bdd87*/
   (*(void (**)(unsigned int, int *, unsigned int, int))(**(unsigned int **)&g_abs_87F8E4 + 4))( /*0x5bdd93*/

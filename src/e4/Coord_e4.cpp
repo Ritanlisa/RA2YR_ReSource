@@ -41,8 +41,8 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
     v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
-  if ( SHIWORD(aP2) >= 0 ) /*0x4138f2*/
-    v5 = SHIWORD(aP2); /*0x4138f8*/
+  if ( IDA_SHIWORD(aP2) >= 0 ) /*0x4138f2*/
+    v5 = IDA_SHIWORD(aP2); /*0x4138f8*/
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
@@ -57,8 +57,8 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
     v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
-  if ( SHIWORD(aP3) >= 0 ) /*0x41396b*/
-    v11 = SHIWORD(aP3); /*0x413971*/
+  if ( IDA_SHIWORD(aP3) >= 0 ) /*0x41396b*/
+    v11 = IDA_SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
   v12 = v10 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413975*/

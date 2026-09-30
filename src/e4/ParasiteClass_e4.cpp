@@ -31,7 +31,7 @@ void ParasiteClass::Constructor()
   unsigned int v2;
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x629213*/
   *((unsigned int *)this + 11) = g_abs_A8ED84; /*0x62921f*/
   *((unsigned int *)this + 13) = 0; /*0x629222*/
   v2 = g_abs_A8ED84; /*0x629225*/
@@ -343,7 +343,7 @@ LABEL_20:
           {
             v43[0] = (unsigned int)(this);
             v30 = (*(int (**)(int *, unsigned int *))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, v43); /*0x629cbc*/
-            if ( v30 != -1 && v30 < (int)(g_abs_B0F5C8) && v30 < --g_abs_B0F5C8 ) /*0x629cd7*/
+            if ( v30 != -1 && v30 < (int)(g_abs_B0F5C8) && v30 < (int)(--g_abs_B0F5C8) ) /*0x629cd7*/
             {
               do /*0x629cef*/
               {

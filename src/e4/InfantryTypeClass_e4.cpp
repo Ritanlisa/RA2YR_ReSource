@@ -110,7 +110,7 @@ LABEL_11:
   else
   {
     v6 = *(CCINIClass **)&g_abs_A8D63C; /*0x523862*/
-    while ( *(unsigned int *)v6->__pad_0 != this ) /*0x52386a*/
+    while ( *(unsigned int *)v6->__pad_0 != (unsigned int)(this) ) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
       v6 = (CCINIClass *)((char *)v6 + 4); /*0x52386d*/
@@ -179,8 +179,10 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 namespace gamemd {
 int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
-  int v4; // eax
+  void * v4;
   InfantryClass *v5; // esi
   int v6; // eax
   unsigned int *v7; // eax
@@ -191,13 +193,13 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v13[3]; // [esp+10h] [ebp-18h] BYREF
   int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v4 = RA2_OPNEW(0x6F0u); /*0x523b4b*/
+  v4 = (int)(RA2_OPNEW(0x6F0u));
   if ( v4 ) /*0x523b55*/
   {
     v5 = (InfantryClass *)InfantryClass::Construct(v4, this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = a2[1] << 8; /*0x523b85*/
+      v6 = (unsigned int *)(a2[1] << 8);
       v12[0] = (*a2 << 8) + 128; /*0x523b93*/
       v12[1] = v6 + 128; /*0x523b9b*/
       v12[2] = 0; /*0x523bb1*/
@@ -225,6 +227,8 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 namespace gamemd {
 int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
 {
+    unsigned int v52 = 0;  /* G37 hoist */
+    unsigned int v45 = 0;  /* G37 hoist */
 
   int PipIdx; // eax
   WeaponTypeClass *v5; // ebx

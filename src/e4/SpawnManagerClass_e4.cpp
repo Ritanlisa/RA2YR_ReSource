@@ -120,7 +120,7 @@ void* SpawnManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+10h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6b6eb6*/
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
   *((unsigned int *)this + 19) = 10; /*0x6b6ec1*/
@@ -170,7 +170,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   int v3; // ebp
   int v4; // eax
   void *v5; // eax
-  int v6; // [esp+8h] [ebp-4h] BYREF
+  SpawnManagerClass * v6;
 
   *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b7015*/
   *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b701b*/
@@ -183,21 +183,21 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6b7047*/
       RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
   }
-  v3 = *((unsigned int *)this + 16); /*0x6b7063*/
+  v3 = (int)(*((unsigned int *)this + 16));
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6b7066*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
   v4 = (*(int (**)(int *, int *))(g_abs_B0B880 + 16))(&g_abs_B0B880, &v6); /*0x6b7087*/
-  if ( v4 != -1 && v4 < g_abs_B0B890 && v4 < --g_abs_B0B890 ) /*0x6b70a3*/
+  if ( v4 != -1 && v4 < (int)(g_abs_B0B890) && v4 < --g_abs_B0B890 ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
     {
       ++v4; /*0x6b70ab*/
       *((unsigned int *)g_abs_B0B884 + v4 - 1) = *((unsigned int *)g_abs_B0B884 + v4); /*0x6b70af*/
     }
-    while ( v4 < g_abs_B0B890 ); /*0x6b70bb*/
+    while ( v4 < (int)(g_abs_B0B890) ); /*0x6b70bb*/
   }
-  v5 = *(void **)((char *)this + 60); /*0x6b70bd*/
+  v5 = (unsigned int)(*(void **)((char *)this + 60));
   *((unsigned int *)this + 14) = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6b70ca*/
   {

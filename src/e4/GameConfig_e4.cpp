@@ -155,7 +155,7 @@ void GameConfig::Constructor()
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  v1 = this; /*0x5d67b5*/
+  v1 = (char **)(this);
   if ( !*((unsigned int *)this + 14) ) /*0x5d67bd*/
   {
     v2 = (unsigned int *)(RA2_OPNEW(0x58u));

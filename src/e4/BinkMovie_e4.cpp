@@ -412,7 +412,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
   {
     if ( !v6 ) /*0x432eb8*/
     {
-      Debug::Log(); /*0x432ebf*/
+      this->Debug::Log(); /*0x432ebf*/
       v8 = *((unsigned int *)this + 1); /*0x432ec4*/
       *((unsigned char *)this + 44) = 1; /*0x432eca*/
       BinkPause(v8, 0); /*0x432ed1*/
@@ -436,7 +436,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
   }
   else if ( v6 == 1 ) /*0x432e8e*/
   {
-    Debug::Log(); /*0x432e99*/
+    this->Debug::Log(); /*0x432e99*/
     v7 = *((unsigned int *)this + 1); /*0x432e9e*/
     *((unsigned char *)this + 44) = 0; /*0x432ea4*/
     BinkPause(v7, 1); /*0x432eab*/

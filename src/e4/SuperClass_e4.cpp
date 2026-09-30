@@ -75,7 +75,7 @@ void SuperClass::Constructor()
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6caec3*/
   *((unsigned int *)this + 9) = -1; /*0x6caecd*/
   *((unsigned int *)this + 10) = 0; /*0x6caed0*/
   *((unsigned int *)this + 11) = 0; /*0x6caed3*/
@@ -107,7 +107,7 @@ void SuperClass::Constructor()
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v2 = dword_A83CC8++; /*0x6caf71*/
+    v2 = (unsigned int)(dword_A83CC8++);
     *((unsigned int *)dword_A83CBC + v2) = this; /*0x6caf80*/
   }
   return this; /*0x6caf85*/
@@ -124,7 +124,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6caf94*/
   *(unsigned int *)(this + 40) = a2; /*0x6cafa4*/
   *(unsigned int *)(this + 36) = -1; /*0x6cafa7*/
   *(unsigned int *)(this + 44) = aP2; /*0x6cafaa*/
@@ -326,13 +326,13 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       && !*(unsigned char *)(*(unsigned int *)(*((unsigned int *)this + 11) + 52) + 422)
       && (g_abs_A83D60 < g_abs_A83D58
        || (g_abs_A83D5D || !g_abs_A83D58)
-       && g_abs_A83D64 > 0
+       && g_abs_A83D64 > (unsigned char [1])(0)
        && ((uint8_t (*)(DynamicVector **, int, unsigned int))g_abs_A83D50->field_8)(
             &g_abs_A83D50,
-            g_abs_A83D58 + g_abs_A83D64,
+            (unsigned int)(g_abs_A83D58)+ g_abs_A83D64,
             0)) )
     {
-      v8 = g_abs_A83D60++; /*0x6cb62c*/
+      v8 = (int)(g_abs_A83D60++);
       *(unsigned int *)&g_abs_A83D54->__pad_0[4 * v8] = this; /*0x6cb63b*/
     }
     v9 = *((unsigned int *)this + 10); /*0x6cb63e*/
@@ -433,21 +433,21 @@ int SuperClass::Lose()
   int v1; // eax
   unsigned char *v3; // [esp+0h] [ebp-4h] BYREF
 
-  v3 = this; /*0x6cb7b0*/
+  v3 = (unsigned char *)(this);
   if ( !*((unsigned char *)this + 109) ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
   *((unsigned char *)this + 111) = 0; /*0x6cb7ba*/
   *((unsigned char *)this + 109) = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   v1 = (*(int (**)(int *, unsigned char **))(g_abs_A83D50 + 16))(&g_abs_A83D50, &v3); /*0x6cb7d4*/
-  if ( v1 != -1 && v1 < g_abs_A83D60 && v1 < --g_abs_A83D60 ) /*0x6cb7ef*/
+  if ( v1 != -1 && v1 < (int)(g_abs_A83D60) && v1 < --g_abs_A83D60 ) /*0x6cb7ef*/
   {
     do /*0x6cb807*/
     {
       ++v1; /*0x6cb7f7*/
       *((unsigned int *)g_abs_A83D54 + v1 - 1) = *((unsigned int *)g_abs_A83D54 + v1); /*0x6cb7fb*/
     }
-    while ( v1 < g_abs_A83D60 ); /*0x6cb807*/
+    while ( v1 < (int)(g_abs_A83D60) ); /*0x6cb807*/
   }
   return 1; /*0x6cb80c*/
 
@@ -1072,7 +1072,7 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
           var1C8 = *(SuperClass **)aP3;
           GroundHeight = 0;
           a1 = (IUnknown *)(((int16_t)var1C8 << 8) + 128);
-          v175 = (SHIWORD(var1C8) << 8) + 128;
+          v175 = (IDA_SHIWORD(var1C8) << 8) + 128;
           GroundHeight = (IUnknown *)Cell::GetGroundHeight((IUnknown *)&a1);
           if ( (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&var1C8) + 80) & 0x100) != 0 )
             GroundHeight = (IUnknown *)((char *)GroundHeight + *(unsigned int *)&stru_B05488.__pad_579C[5208]);
@@ -1148,7 +1148,7 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
               GroundHeight = 0;
               IDA_LODWORD(v183) = *(unsigned int *)aP3;
               v175 = (SWORD1(v183) << 8) + 128;
-              a1 = (IUnknown *)((SLOWORD(v183) << 8) + 128);
+              a1 = (IUnknown *)((IDA_SLOWORD(v183) << 8) + 128);
               GroundHeight = (IUnknown *)Cell::GetGroundHeight((IUnknown *)&a1);
               v189 = GroundHeight;
               v169 = (IUnknown *)v168->field_0;

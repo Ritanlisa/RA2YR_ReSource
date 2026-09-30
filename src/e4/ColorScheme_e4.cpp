@@ -13,7 +13,7 @@ int ColorScheme::Destructor()
 
   void (***v2)(unsigned int, int); // ecx
   int result; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
+  ColorScheme * v4;
 
   if ( *((unsigned int *)this + 193) ) /*0x68c8d4*/
     free(*(void **)((char *)this + 772)); /*0x68c8df*/

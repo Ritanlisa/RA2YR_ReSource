@@ -82,7 +82,7 @@ class WOL
 {
 public:
     // IDA 0x48B2A0 area
-    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x76EFE0
+     HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x76EFE0
 
     int32_t     WOL_field_00;       // 0x00
 };
@@ -125,7 +125,7 @@ class MultiplayerManBattle
 {
 public:
     // IDA 0x48B2A0 area
-    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x5C61A0
+     HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x5C61A0
 
     int32_t     MultiplayerManBattle_field_00;       // 0x00
 };

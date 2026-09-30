@@ -359,10 +359,10 @@ AbstractClass * * SlaveManager_InitGrid()
           v17 = g_MissionQueueFrame.localVariables[160]; /*0x6b2c97*/
           v38 = v16; /*0x6b2c9c*/
           v18 = (int16_t)(IDA_HIWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2ca3*/
-          v19 = v18 + SLOWORD(v40.MapSeed_field_0x10); /*0x6b2ca6*/
+          v19 = v18 + IDA_SLOWORD(v40.MapSeed_field_0x10); /*0x6b2ca6*/
           if ( v19 > g_MissionQueueFrame.localVariables[160] /*0x6b2ccd*/
-            && SLOWORD(v40.MapSeed_field_0x10) - v18 < g_MissionQueueFrame.localVariables[160]
-            && v18 - SLOWORD(v40.MapSeed_field_0x10) < g_MissionQueueFrame.localVariables[160]
+            && IDA_SLOWORD(v40.MapSeed_field_0x10) - v18 < g_MissionQueueFrame.localVariables[160]
+            && v18 - IDA_SLOWORD(v40.MapSeed_field_0x10) < g_MissionQueueFrame.localVariables[160]
             && v19 <= g_MissionQueueFrame.localVariables[161] )
           {
             v35 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2cdc*/

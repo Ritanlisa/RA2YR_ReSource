@@ -261,7 +261,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
 
   v3 = (gamemd::ObjectClass *)(aP2);
   v4 = (gamemd::ObjectClass *)((ObjectClass *)a1);
-  v22 = this; /*0x77055f*/
+  v22 = (gamemd::ObjectClass *)(this);
   v5 = (ObjectClass *)&this-((unsigned int *)(>__pad_0))[4]; /*0x770563*/
   v24 = (ObjectClass *)6; /*0x770566*/
   while ( 1 ) /*0x770574*/

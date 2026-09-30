@@ -246,7 +246,7 @@ public:
     // IDA 0x48B2A0 area
      void RevealArea(const CellStruct& cell, int32_t radius, HouseClass* house);  // 0x655C50
     // IDA 0x48B2A0 area
-    static void RenderCell(const CellStruct& cell);  // 0x656150
+     void RenderCell(const CellStruct& cell);  // 0x656150
     // IDA 0x48B2A0 area
      void RevealCell(const CellStruct& cell, HouseClass* house);  // 0x6562D0
     // IDA 0x48B2A0 area

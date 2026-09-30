@@ -582,7 +582,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
     v3 = (int)(g_abs_B1D4B0++);
     *((unsigned int *)g_abs_B1D4A4 + v3) = this; /*0x752d4a*/
   }
-  return this; /*0x752d4d*/
+  return (int)(this);
 
 }
 }
@@ -606,12 +606,12 @@ int CCINIClass::InitFromINIEVA()
   unsigned int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = this; /*0x75300a*/
+  v1 = (char *)(this);
   v13 = (int)this; /*0x753011*/
   IDA_LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (uint8_t *)g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (unsigned int)(INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
@@ -639,8 +639,7 @@ int CCINIClass::InitFromINIEVA()
         }
         if ( v6 == -1 ) /*0x7530b7*/
         {
-LABEL_10:
-          v7 = RA2_OPNEW(84); /*0x7530bd*/
+LABEL_10: v7 = (int)(RA2_OPNEW(84));
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/

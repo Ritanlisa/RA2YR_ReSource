@@ -13,7 +13,7 @@ namespace gamemd {
 int Matrix3x4::Identity()
 {
 
-  *this = 1065353216; /*0x5ae867*/
+  *(_DWORD *)this = 1065353216; /*0x5ae867*/
   *(this + 1) = 0; /*0x5ae869*/
   *(this + 2) = 0; /*0x5ae86c*/
   *(this + 3) = 0; /*0x5ae86f*/

@@ -625,7 +625,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v71 = v31; /*0x7941fe*/
     if ( (unsigned short)v31 ) /*0x794202*/
     {
-      this->Debug::Log(); /*0x79420e*/
+      ((Debug *)0)->Log(); /*0x79420e*/
       *(&dword_A8E2B2 + v12) = dword_A8E050[v3]; /*0x79421e*/
       Network::SetPort((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40), dword_A8E050[v3]); /*0x79423b*/
       Network::SetPort((Network *)(dword_A8DA90[v3] + 40), dword_A8E050[v3]); /*0x794253*/
@@ -636,14 +636,14 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       strcpy((char *)&v98[1], String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684])); /*0x79429d*/
       if ( (dword_ABFEC8 & 8) != 0 && (stru_A8DBC0.alignmentPadding69[4 * v3 + 3] & 8) == 0 ) /*0x7942b7*/
       {
-        Debug::Log(); /*0x7942be*/
+        this->Debug::Log(); /*0x7942be*/
         v33 = 240; /*0x7942cf*/
-        v73 = Timer::GetTicks(); /*0x7942d4*/
+        v73 = this->Timer::GetTicks(); /*0x7942d4*/
         for ( i = 240; ; v33 = i ) /*0x7942d8*/
         {
           if ( v73 != -1 ) /*0x7942e1*/
           {
-            v35 = Timer::GetTicks() - v73; /*0x7942ec*/
+            v35 = this->Timer::GetTicks() - v73; /*0x7942ec*/
             if ( v35 >= v33 ) /*0x7942f2*/
               break; /*0x7942f2*/
             v33 -= v35; /*0x7942f4*/
@@ -654,12 +654,12 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
       }
       ToWideStringChar((char *)dword_A8DA90[v3]); /*0x794305*/
-      Debug::Log(); /*0x794322*/
-      v36 = Timer::GetTicks(); /*0x794331*/
+      this->Debug::Log(); /*0x794322*/
+      v36 = this->Timer::GetTicks(); /*0x794331*/
       v88 = 360; /*0x794342*/
       v87 = v36; /*0x794351*/
       v64 = v36; /*0x794358*/
-      v79 = Timer::GetTicks(); /*0x794365*/
+      v79 = this->Timer::GetTicks(); /*0x794365*/
       v67 = v79; /*0x794369*/
       v37 = 0; /*0x794371*/
       v80 = 0; /*0x794373*/
@@ -668,15 +668,15 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         v38 = v37; /*0x794383*/
         if ( v67 == -1 ) /*0x794388*/
           break; /*0x794388*/
-        v39 = Timer::GetTicks() - v67; /*0x794393*/
+        v39 = this->Timer::GetTicks() - v67; /*0x794393*/
         if ( v39 < v38 ) /*0x794399*/
         {
           v40 = v38 - v39; /*0x79439b*/
           goto LABEL_68; /*0x79439d*/
         }
   LABEL_69:
-        Debug::Log(); /*0x7943a5*/
-        Network::SendToPlayer((int)&unk_A8E9C0, (int)v98, 47, 0, (wchar_t *)dword_A8DA90[v3]); /*0x7943d3*/
+        this->Debug::Log(); /*0x7943a5*/
+        ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)v98, 47, 0, (wchar_t *)dword_A8DA90[v3]); /*0x7943d3*/
         v41 = Timer::GetTicks(); /*0x7943dc*/
         v37 = 30; /*0x7943e5*/
         v75[1] = v41; /*0x7943ea*/

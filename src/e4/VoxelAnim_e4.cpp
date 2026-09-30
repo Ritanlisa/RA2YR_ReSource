@@ -620,7 +620,7 @@ LABEL_32:
       IDA_LODWORD(v154) = v38;
       IDA_LODWORD(v155) = v38[10];
       v39 = SWORD1(v155) << 8;
-      *v3 = (SLOWORD(v155) << 8) + 128;
+      *v3 = (IDA_SLOWORD(v155) << 8) + 128;
       v40 = *((unsigned int *)this + 3);
       *((unsigned int *)this + 11) = v39 + 128;
       *((unsigned int *)this + 12) = 0;
@@ -636,7 +636,7 @@ LABEL_32:
       IDA_LOWORD(a2) = IDA_LOWORD(g_abs_89F688[v43]) + (unsigned short)v41;
       IDA_HIWORD(a2) = IDA_HIWORD(v41) + IDA_HIWORD(g_abs_89F688[v43]);
       v44 = ((int16_t)v41 << 8) + 128;
-      v45 = (SHIWORD(v41) << 8) + 128;
+      v45 = (IDA_SHIWORD(v41) << 8) + 128;
       CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&a2);
       v46 = (unsigned int *)CellClass::GetCoords(&v160);
       v47 = *v46 - v44;
@@ -662,7 +662,7 @@ LABEL_32:
       v57 = *(unsigned int *)(IDA_LODWORD(v154) + 448);
       a2 = *(unsigned int **)(IDA_LODWORD(v154) + 40);
       v157 = ((int16_t)a2 << 8) + 128;
-      v158 = (SHIWORD(a2) << 8) + 128;
+      v158 = (IDA_SHIWORD(a2) << 8) + 128;
       v9 = GroundHeight + (Cell::GetGroundHeight(&v157) - GroundHeight) / v57;
       *(unsigned int *)(*((unsigned int *)this + 3) + 1392) = v9;
       return v9;

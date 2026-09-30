@@ -239,7 +239,7 @@ void TacticalMap::Construct()
   float v4; // [esp+0h] [ebp-10h]
   float v5; // [esp+0h] [ebp-10h]
 
-  AbstractClass::Constructor((void *)this); /*0x6d1c25*/
+  ((AbstractClass *)((void *)this))->Constructor(); /*0x6d1c25*/
   *((unsigned int *)this + 42) = -1; /*0x6d1c2c*/
   *((unsigned char *)this + 172) = 0; /*0x6d1c36*/
   *((unsigned char *)this + 173) = 0; /*0x6d1c3c*/
@@ -353,12 +353,12 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
         v7 = 20 * v6; /*0x6d2b93*/
         do /*0x6d2cfd*/
         {
-          *(unsigned int *)&aP1.__pad_0[8] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7); /*0x6d2ba2*/
-          *(unsigned int *)&aP1.__pad_0[12] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 4); /*0x6d2ba9*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7); /*0x6d2ba2*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 4); /*0x6d2ba9*/
           aP1.uniqueId = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 8); /*0x6d2bb0*/
           aP1.abstractFlags = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 12); /*0x6d2bbd*/
-          *(unsigned int *)&aP1.__pad_0[8] += aP2; /*0x6d2bc7*/
-          *(unsigned int *)&aP1.__pad_0[12] += a4; /*0x6d2bd0*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] += aP2; /*0x6d2bc7*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] += a4; /*0x6d2bd0*/
           v26 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2bda*/
           v29 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2bde*/
           v25 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2be7*/
@@ -368,25 +368,25 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v8 = (IUnknown *)Coord2D::Sub(&v28, &aP1, (IUnknown *)&v25); /*0x6d2c05*/
           v9 = Rect::Construct(v32, v8, v22, v23); /*0x6d2c0f*/
           aP1.nextArrayIndex = *(unsigned int *)v9->__pad_0; /*0x6d2c18*/
-          aP1.referenceCount = *(unsigned int *)&v9->__pad_0[4]; /*0x6d2c21*/
-          aP1.NeedsSaveOrLink = *(void **)&v9->__pad_0[8]; /*0x6d2c28*/
-          v31 = *(unsigned int *)&v9->__pad_0[12]; /*0x6d2c37*/
-          v10 = ClipRectIntersection(v33, &aP1.nextArrayIndex, (int *)&aP1.__pad_0[8], 0, 0); /*0x6d2c40*/
-          *(unsigned int *)&aP1.__pad_0[8] = *v10; /*0x6d2c49*/
-          *(unsigned int *)&aP1.__pad_0[12] = v10[1]; /*0x6d2c50*/
+          aP1.referenceCount = *(unsigned int *)&v9-((unsigned int *)(>__pad_0))[4]; /*0x6d2c21*/
+          aP1.NeedsSaveOrLink = *(void **)&v9-((unsigned int *)(>__pad_0))[8]; /*0x6d2c28*/
+          v31 = *(unsigned int *)&v9-((unsigned int *)(>__pad_0))[12]; /*0x6d2c37*/
+          v10 = ClipRectIntersection(v33, &aP1.nextArrayIndex, (int *)&((unsigned int *)(aP1.__pad_0))[8], 0, 0); /*0x6d2c40*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *v10; /*0x6d2c49*/
+          *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] = v10[1]; /*0x6d2c50*/
           aP1.uniqueId = v10[2]; /*0x6d2c57*/
           aP1.abstractFlags = v10[3]; /*0x6d2c64*/
           v11 = (unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7); /*0x6d2c68*/
-          *v11 = *(unsigned int *)&aP1.__pad_0[8]; /*0x6d2c6b*/
-          v11[1] = *(unsigned int *)&aP1.__pad_0[12]; /*0x6d2c72*/
+          *v11 = *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8]; /*0x6d2c6b*/
+          v11[1] = *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12]; /*0x6d2c72*/
           v11[2] = aP1.uniqueId; /*0x6d2c79*/
           v11[3] = aP1.abstractFlags; /*0x6d2c80*/
           if ( aP1.uniqueId > 0 && aP1.abstractFlags > 0 ) /*0x6d2c91*/
           {
             TacticalMap::FillScanlinesOpaque( /*0x6d2cee*/
               *(int *)&g_abs_87F8E4,
-              *(int *)&aP1.__pad_0[8],
-              *(int *)&aP1.__pad_0[12],
+              *(int *)&((unsigned int *)(aP1.__pad_0))[8],
+              *(int *)&((unsigned int *)(aP1.__pad_0))[12],
               aP1.uniqueId,
               aP1.abstractFlags);
           }
@@ -775,7 +775,7 @@ LABEL_53:
             v56 = v55[1]; /*0x6d9494*/
             v57 = (int)*v55; /*0x6d9497*/
             v96 = v56; /*0x6d949e*/
-            v58 = (BYTE4(v57) + (int)v57) >> 8; /*0x6d94a9*/
+            v58 = (IDA_BYTE4(v57) + (int)v57) >> 8; /*0x6d94a9*/
             v59 = ZCoordToScreenY(v54[2]); /*0x6d94ac*/
             v89 = v58; /*0x6d94be*/
             v90 = v96 / 256 - v59; /*0x6d94c9*/
@@ -1196,7 +1196,7 @@ LABEL_53:
             v56 = v55[1]; /*0x6d9494*/
             v57 = (int)*v55; /*0x6d9497*/
             v96 = v56; /*0x6d949e*/
-            v58 = (BYTE4(v57) + (int)v57) >> 8; /*0x6d94a9*/
+            v58 = (IDA_BYTE4(v57) + (int)v57) >> 8; /*0x6d94a9*/
             v59 = ZCoordToScreenY(v54[2]); /*0x6d94ac*/
             v89 = v58; /*0x6d94be*/
             v90 = v96 / 256 - v59; /*0x6d94c9*/

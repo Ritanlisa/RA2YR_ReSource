@@ -357,7 +357,7 @@ int VoxelAnimType::LoadAnim()
       Matrix::Scale(*((unsigned int **)this + 45), *(float *)(Info + 12)); /*0x5f823e*/
     }
     v51[0] = (unsigned int)(&vt_CCFileClass);
-    v53 = 0; /*0x5f8256*/
+    v53 = (unsigned int)(0);
     Vector::Clear((int)v52); /*0x5f825a*/
     v51[0] = &off_7E1668; /*0x5f8263*/
     ((BufferIOFileClass *)(v51))->Dtor(); /*0x5f826b*/
@@ -374,7 +374,7 @@ int VoxelAnimType::LoadAnim()
     {
       sprintf(Filename, g_abs_832ABC, v2); /*0x5f86a4*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f86c0*/
-      CCFileClass::Construct(v51, Buffer); /*0x5f86d4*/
+      ((CCFileClass *)(v51))->Construct(Buffer); /*0x5f86d4*/
       if ( CCFileClass::Open(v51, 0) ) /*0x5f86de*/
       {
         v26 = (WaveClass *)*((unsigned int *)this + 46); /*0x5f86eb*/

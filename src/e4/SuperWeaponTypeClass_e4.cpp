@@ -275,7 +275,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   *((unsigned int *)this + 1) = &vt_HouseTypeClass; /*0x511578*/
   *((unsigned int *)this + 2) = &vt_HouseTypeClass; /*0x51157f*/
   *((unsigned int *)this + 3) = &vt_HouseTypeClass; /*0x511586*/
-  AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x51158d*/
+  ((AbstractClass *)((int)((unsigned char *)this + 4)))->GenerateUniqueID(); /*0x51158d*/
   *((unsigned char *)this + 416) = 0; /*0x511592*/
   v4 = g_SuperWeaponTypeArray; /*0x511598*/
   if ( g_SuperWeaponTypeArray < dword_A83CA0 /*0x5115d6*/
@@ -288,7 +288,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         v4 = g_SuperWeaponTypeArray,
         !v5) )
   {
-    g_SuperWeaponTypeArray = v4 + 1; /*0x5115db*/
+    g_SuperWeaponTypeArray = (unsigned int)(v4 + 1);
     *((unsigned int *)g_SuperWeaponTypeCount + v4) = this; /*0x5115e5*/
     v4 = g_SuperWeaponTypeArray; /*0x5115e8*/
   }
@@ -358,7 +358,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   char **v21; // edi
   char **v22; // edi
   BuildingTypeClass *v23; // edi
-  BuildingTypeClass *v24; // eax
+  unsigned int v24;
   char v25; // cl
   char v26; // al
   double v27; // st7
@@ -397,11 +397,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   }
   v5 = *((unsigned int *)this + 47); /*0x6cea86*/
   *((unsigned int *)this + 39) = v4; /*0x6cea8c*/
-  SWProperties = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
-                   aP1,
-                   (CCINIClass *)((char *)this + 36),
-                   (uint8_t *)&stru_817244.INIClass_field_2C,
-                   v5);
+    SWProperties = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/                    aP1,(unsigned char *)((CCINIClass *)((char *)this + 36)),                    (uint8_t *)&stru_817244.INIClass_field_2C,                    v5);
   aP3_4 = *((unsigned char *)this + 230); /*0x6ceaa8*/
   *((unsigned int *)this + 47) = SWProperties; /*0x6ceaaf*/
   *((unsigned char *)this + 230) = INIClass::ReadBool_Overwrite( /*0x6ceaba*/
@@ -540,7 +536,7 @@ LABEL_25:
          &v40,
          128) )
   {
-    v24 = BuildingTypeClass::FindOrCreate(v40.__pad_0); /*0x6ced1f*/
+    v24 = (gamemd::BuildingTypeClass *)(BuildingTypeClass::FindOrCreate(v40.__pad_0));
   }
   else
   {

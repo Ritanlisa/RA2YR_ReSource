@@ -185,7 +185,7 @@ LABEL_34:
     v24 = *((unsigned int *)this + 3);
     v108 = *(double *)(v24 + 156);
     v109 = *(unsigned int *)(v24 + 164);
-    v25 = *ProgressTimer::GetValue((unsigned short *)(v24 + 904), &v106);
+    v25 = (int)(*(unsigned int *)(ProgressTimer)::GetValue((unsigned short *)(v24 + 904), &v106));
     IDA_LODWORD(v101) = (*(int (**)(int))(*(unsigned int *)v4 + 132))((char *)this + 4);
     if ( IDA_SLODWORD(v101) > 0 )
     {

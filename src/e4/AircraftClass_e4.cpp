@@ -76,8 +76,8 @@ AircraftTypeClass * AircraftClass::Update()
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((unsigned short *)this + 452, *(ObjectClass **)(this[433] + 1820)); /*0x413fd2*/
-    BuildingTypeClass::GetPowerOutput((unsigned short *)this + 464, *(ObjectClass **)(this[433] + 1820)); /*0x414001*/
+    ((BuildingTypeClass *)((unsigned short *)this + 452))->GetPowerOutput(*(ObjectClass **)(this[433] + 1820)); /*0x413fd2*/
+    ((BuildingTypeClass *)((unsigned short *)this + 464))->GetPowerOutput(*(ObjectClass **)(this[433] + 1820)); /*0x414001*/
     Value = (DirStruct *)ProgressTimer::GetValue((unsigned short *)this + 452, (IUnknown *)v18); /*0x41400d*/
     FacingClass::Set_SyncLog((FacingClass *)((char *)this + 232), Value); /*0x414015*/
     v11 = *this; /*0x414020*/
@@ -92,7 +92,7 @@ LABEL_9:
     this[27] = (int)result; /*0x414057*/
     this[28] = (int)result; /*0x41405a*/
   }
-  v15 = (HouseClass *)this[135]; /*0x41405d*/
+  v15 = (gamemd::AircraftTypeClass *)((HouseClass *)this[135]);
   if ( v15 ) /*0x414065*/
     return (unsigned int *)BuildingClass::PowerUpdate(v15, (TechnoClass *)this); /*0x414068*/
   return result; /*0x41406d*/
@@ -116,12 +116,12 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   int v14; // eax
   int v15; // esi
   void *v16; // eax
-  unsigned int v18;
+  int * v18;
   int v19; // [esp+2Ch] [ebp-14h]
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   unsigned int v22; // [esp+44h] [ebp+4h]
-v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0)))))))))));
+v18 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0))))))))))));
   v19 = 0; /*0x415b29*/
   v5 = dword_817A58; /*0x415b2d*/
   do /*0x415bab*/
@@ -232,7 +232,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
   int v17; // eax
   char v18[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v3 = a3; /*0x417cc5*/
+  v3 = (gamemd::AircraftTypeClass *)(a3);
   v4 = aP1; /*0x417ccb*/
   result = InfantryClass::GetCursorOverObject(this, aP1, (char)a3); /*0x417cd3*/
   v7 = result; /*0x417cd8*/
@@ -330,7 +330,7 @@ LABEL_36:
     {
       if ( !(*(int (**)(IUnknown *, int))(v4->field_0 + 208))(v4, 1) ) /*0x417f17*/
       {
-        v17 = (*(int (**)(IUnknown *, int))(v4->field_0 + 204))(v4, 1); /*0x417f27*/
+        v17 = (gamemd::AircraftTypeClass *)((*(int (**)(IUnknown *, int))(v4->field_0 + 204))(v4, 1));
         if ( (*(int (**)(int))(*(unsigned int *)v17 + 44))(v17) == 21 ) /*0x417f37*/
           return 1; /*0x417f47*/
       }
@@ -338,9 +338,9 @@ LABEL_36:
   }
   else if ( v7 == 5 && *(unsigned char *)((*(int (**)(IUnknown *))(v4->field_0 + 136))(v4) + 563) ) /*0x417f59*/
   {
-    return 2; /*0x417f63*/
+    return (gamemd::AircraftTypeClass *)(2);
   }
-  return v7; /*0x417cdf*/
+  return (gamemd::AircraftTypeClass *)(v7);
 
 }
 }

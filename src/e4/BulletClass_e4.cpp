@@ -81,7 +81,7 @@ BulletClass * * BulletClass::Dtor()
 
   int v2; // eax
   int v3; // eax
-  void *v5; // [esp+4h] [ebp-4h] BYREF
+  BulletClass * v5;
 
   *(unsigned int *)this = &vt_BulletClass; /*0x466566*/
   *((unsigned int *)this + 1) = &vt_BulletClass; /*0x46656c*/
@@ -90,7 +90,7 @@ BulletClass * * BulletClass::Dtor()
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( *((unsigned char *)this + 344) ) /*0x466586*/
   {
-    v5 = this; /*0x4665a0*/
+    v5 = (unsigned int)(this);
     v2 = (*(int (**)(int *, void **))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v5); /*0x4665a4*/
     if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_B0F5C8) && v2 < --g_abs_B0F5C8 ) /*0x4665bf*/
     {
@@ -127,13 +127,13 @@ namespace gamemd {
 int * BulletClass::CalculateSpreadAngle(int a1)
 {
 
-  if ( (unk_89DE10 & 1) == 0 ) /*0x46666b*/
+  if ( ((unsigned int)(unk_89DE10)& 1) == 0 ) /*0x46666b*/
   {
-    unk_89DE10 |= 1u; /*0x466689*/
+    (unsigned int)(unk_89DE10)|= 1u; /*0x466689*/
     unk_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return &unk_89DDF4; /*0x4666a2*/
+  return (int *)(&unk_89DDF4);
 
 }
 } // namespace gamemd

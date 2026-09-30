@@ -626,7 +626,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5129f3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x5129f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
@@ -635,7 +635,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
   }
   *((unsigned char *)Block + 13) = 0; /*0x512a1b*/
   *(Block + 2) = 0; /*0x512a21*/
-  if ( (Block & 1) != 0 ) /*0x512a28*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x512a28*/
     RA2_OPDEL(Block); /*0x512a2b*/
   return (TypeList *)Block; /*0x512a35*/
 
@@ -680,7 +680,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x512e23*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x512e26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512e30*/
   {
@@ -689,7 +689,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2)
   }
   *((unsigned char *)Block + 13) = 0; /*0x512e4b*/
   *(Block + 2) = 0; /*0x512e51*/
-  if ( (Block & 1) != 0 ) /*0x512e58*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x512e58*/
     RA2_OPDEL(Block); /*0x512e5b*/
   return (DynamicVector *)Block; /*0x512e65*/
 

@@ -78,7 +78,7 @@ int ThemeClass::ReadThemeEntry( uint8_t *** a2)
                      *(unsigned char *)(this + 649));
   v6 = *(unsigned int *)(this + 652); /*0x72053a*/
   *(unsigned char *)(this + 649) = Bool_Overwrite; /*0x720540*/
-    *(unsigned int *)(this + 652) = HouseTypeClass::loadCountryData((unsigned char *)(/*0x720554*/                               a2),                               (uint8_t *)this,                               (uint8_t *)&stru_8172FC.unknown38,                               v6);
+    *(unsigned int *)(this + 652) = ((HouseTypeClass *)((unsigned char *)(/*0x720554*/                               a2)))->loadCountryData((uint8_t *)this, (uint8_t *)&stru_8172FC.unknown38, v6);
   if ( *(unsigned char *)(this + 648) ) /*0x72055a*/
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,

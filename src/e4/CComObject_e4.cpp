@@ -578,7 +578,7 @@ LABEL_16:
       v10 = (HWND)Dialog::FindByHandle((void *)0x117); /*0x7a7ce0*/
       CloseDialog(v10, 0); /*0x7a7ce9*/
     }
-    v11 = (unsigned int)((HWND)Dialog::FindByHandle((void *)0xCF));
+    v11 = (HWND)((unsigned int)((HWND)Dialog::FindByHandle((void *)0xCF)));
     CloseDialog(v11, 0); /*0x7a7cfc*/
     dword_B779D4 = a5; /*0x7a7d14*/
     *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
@@ -592,12 +592,12 @@ LABEL_16:
     if ( v13 > 0 && g_WOL_ConnectionFlags ) /*0x7a7d8b*/
       strcpy(byte_B779E0, (const char *)g_WOL_ConnectionFlags + 36); /*0x7a7da7*/
     *(unsigned int *)dword_B77788 = time(0); /*0x7a7dbc*/
-    Debug::Log(); /*0x7a7dc1*/
+    this->Debug::Log(); /*0x7a7dc1*/
     if ( a3 ) /*0x7a7dd2*/
       dword_B77DD4 = (uint8_t)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
     byte_B77E26 = 0; /*0x7a7dea*/
     byte_B77E27 = 1; /*0x7a7df1*/
-    Network::SyncPlayerList(); /*0x7a7df8*/
+    this->Network::SyncPlayerList(); /*0x7a7df8*/
     g_NetworkLobbyState = 2; /*0x7a7e03*/
     Debug::Log(); /*0x7a7e0f*/
     v14 = 0; /*0x7a7e1d*/

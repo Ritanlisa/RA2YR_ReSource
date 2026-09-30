@@ -86,7 +86,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     dword_81C9E8 = (uint64_t)(0);
     dword_81C9EC = (uint64_t)(0);
     dword_81C9F0 = (uint64_t)(0);
-    dword_81C9F4 = -1074790400; /*0x47b5f9*/
+    dword_81C9F4 = (uint64_t)(-1074790400);
     dword_81C9F8 = 0; /*0x47b603*/
     dword_81C9FC = -1074790400; /*0x47b60d*/
     qword_81CA00 = g_abs_89E720; /*0x47b617*/
@@ -146,7 +146,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     dword_81CB04 = (uint64_t)(0);
     dword_81CB08 = (uint64_t)(0);
     dbl_81CB20 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
-    dbl_81CB40 = *(double *)&g_abs_89E720 + *(double *)&g_abs_89E720; /*0x47b879*/
+    dbl_81CB40 = (uint64_t)(*(double *)&g_abs_89E720 + *(double *)&g_abs_89E720);
     dbl_81CB48 = *(double *)&g_abs_89E720 + *(double *)&g_abs_89E720; /*0x47b87f*/
     dbl_81CB70 = *(double *)&g_abs_89E720 + *(double *)&g_abs_89E720; /*0x47b885*/
     qword_81CB18 = g_abs_89E720; /*0x47b89b*/
@@ -213,7 +213,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
       v6 = *(double *)&g_abs_81C918[5 * *(uint8_t *)(this + 284) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
-  return result; /*0x47bb54*/
+  return (gamemd::AbstractClass *)(result);
 
 }
 } // namespace gamemd

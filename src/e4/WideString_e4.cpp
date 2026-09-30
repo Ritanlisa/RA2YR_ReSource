@@ -176,7 +176,7 @@ LABEL_33:
     v16 = (CampaignScore *)&g_abs_87F8E4; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (GameSetup *)this; /*0x7b758e*/
+  v3 = (gamemd::AbstractClass **)((GameSetup *)this);
   v16 = (CampaignScore *)v5; /*0x7b7592*/
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
@@ -314,7 +314,7 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
     *this = v4; /*0x7b6744*/
     wcscpy(v4, *a2); /*0x7b674a*/
   }
-  return this; /*0x7b6754*/
+  return (int)(this);
 
 }
 } // namespace gamemd
@@ -373,7 +373,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
     if ( v4 ) /*0x7b6954*/
       wcscpy((wchar_t *)*this, v4); /*0x7b695a*/
   }
-  return this; /*0x7b6964*/
+  return (int)(this);
 
 }
 } // namespace gamemd
@@ -613,7 +613,7 @@ v3 = (wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(0)))));
     RA2_OPDEL((void *)*this); /*0x7b6eaa*/
     *this = v9; /*0x7b6eb2*/
   }
-  return v3; /*0x7b6e2c*/
+  return (char)(v3);
 
 }
 } // namespace gamemd
@@ -668,7 +668,7 @@ int WideString::Length()
 
   const wchar_t *result; // eax
 
-  result = *this; /*0x7b71b0*/
+  result = (const wchar_t *)(*this);
   if ( *this ) /*0x7b71b0*/
     return (const wchar_t *)wcslen(*this); /*0x7b71b8*/
   return result; /*0x7b71b6*/

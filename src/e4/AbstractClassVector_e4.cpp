@@ -64,7 +64,7 @@ int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
     *(this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x4e0ebd*/
     *((unsigned char *)this + 13) = 1; /*0x4e0ec0*/
   }
-  return this; /*0x4e0ead*/
+  return (int)(this);
 
 }
 } // namespace gamemd

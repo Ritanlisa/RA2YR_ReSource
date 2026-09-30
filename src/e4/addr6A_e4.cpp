@@ -770,16 +770,16 @@ int TechnoClass::ProcessDeployAction()
                                          1);
           *(unsigned int *)v28 = *BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v31, v27); /*0x6b0100*/
           v15 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
-          v16 = SHIWORD(v15->field_0); /*0x6b0109*/
-          v29 = SLOWORD(v15->field_0); /*0x6b011b*/
+          v16 = IDA_SHIWORD(v15->field_0); /*0x6b0109*/
+          v29 = IDA_SLOWORD(v15->field_0); /*0x6b011b*/
           v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
           v19 = (int16_t *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 440))( /*0x6b014d*/
                              *((unsigned int *)this + 9),
                              v33);
           v20 = CellStruct::Sub(v19, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b015f*/
-          v21 = SLOWORD(v20->field_0); /*0x6b0168*/
-          v29 = SHIWORD(v20->field_0); /*0x6b016b*/
+          v21 = IDA_SLOWORD(v20->field_0); /*0x6b0168*/
+          v29 = IDA_SHIWORD(v20->field_0); /*0x6b016b*/
           v22 = (double)v29; /*0x6b0172*/
           v29 = v21; /*0x6b0176*/
           v23 = Math::Sqrt((double)v21 * (double)v21 + v22 * v22); /*0x6b018f*/

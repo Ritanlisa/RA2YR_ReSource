@@ -73,6 +73,7 @@ namespace gamemd {
 int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
     unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v15 = 0;  /* G37 hoist */

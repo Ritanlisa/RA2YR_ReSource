@@ -2330,8 +2330,8 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   if ( *v7 != *(unsigned short *)&g_abs_B077F8 || v7[1] != *(unsigned short *)&g_abs_B077F8 ) /*0x6eaaef*/
   {
     WaypointCoords = (CellClass *)TechnoClass::GetWaypointCoords((unsigned int *)v2->buildingType, &v35); /*0x6eaaf9*/
-    v9 = (SLOWORD(WaypointCoords->mapCoords[0]) << 8) + 128; /*0x6eab0b*/
-    eax6 = (SHIWORD(WaypointCoords->mapCoords[0]) << 8) + 128; /*0x6eab11*/
+    v9 = (IDA_SLOWORD(WaypointCoords->mapCoords[0]) << 8) + 128; /*0x6eab0b*/
+    eax6 = (IDA_SHIWORD(WaypointCoords->mapCoords[0]) << 8) + 128; /*0x6eab11*/
     v36 = v9; /*0x6eab18*/
     v37 = eax6; /*0x6eab1c*/
     v38 = 0; /*0x6eab20*/

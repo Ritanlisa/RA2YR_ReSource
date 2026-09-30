@@ -42,7 +42,7 @@ int Mixer::ReleaseChannel()
         AudioFile::GetCallback(v3[44]); /*0x4060bb*/
         v3[6] |= 0x60u; /*0x4060c6*/
         result = AudioStream::Stop(v3[44]); /*0x4060cf*/
-        *this = 0; /*0x4060d4*/
+        *(_DWORD *)this = 0; /*0x4060d4*/
         *(this + 2) = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
       }
@@ -51,7 +51,7 @@ int Mixer::ReleaseChannel()
       v3[6] = result; /*0x4060e2*/
     }
   }
-  *this = 0; /*0x4060e5*/
+  *(_DWORD *)this = 0; /*0x4060e5*/
 LABEL_14:
   *(this + 2) = 0; /*0x4060e7*/
   return result; /*0x4060d9*/

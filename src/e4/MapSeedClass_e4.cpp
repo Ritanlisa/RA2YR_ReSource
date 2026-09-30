@@ -124,7 +124,7 @@ LABEL_11:
           }
           v9 = (short)(*(unsigned short *)&v23.__pad_0[12]);
           uniqueId = v23.uniqueId; /*0x5a5ce2*/
-          for ( i = 0; i < SLOWORD(v23.uniqueId) - *(int16_t *)&v23.__pad_0[12] - 1; ++i ) /*0x5a5cf3*/
+          for ( i = 0; i < IDA_SLOWORD(v23.uniqueId) - *(int16_t *)&v23.__pad_0[12] - 1; ++i ) /*0x5a5cf3*/
           {
             IDA_LOWORD(v23.NeedsSaveOrLink) = i + 1; /*0x5a5cfa*/
             IDA_LOWORD(v23.nextArrayIndex) = v9 + i + 1; /*0x5a5d0a*/
@@ -134,7 +134,7 @@ LABEL_11:
             v9 = *(unsigned short *)&v23.__pad_0[12]; /*0x5a5d2d*/
             uniqueId = v23.uniqueId; /*0x5a5d31*/
           }
-          v23.customSound_controller[1] = (char)(SHIWORD(v23.uniqueId));
+          v23.customSound_controller[1] = (char)(IDA_SHIWORD(v23.uniqueId));
           v23.customSound_controller[0] = (char)(uniqueId);
           v23.customSound_controller[2] = 4; /*0x5a5d5a*/
           v23.customSound_controller[3] = 3; /*0x5a5d62*/
@@ -187,14 +187,14 @@ LABEL_18:
       v23.uniqueId = (void *)(v5);
       if ( v5 /*0x5a5ea1*/
         && ((IDA_LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], *(unsigned short *)&v23.__pad_0[4]) || *(unsigned short *)&v23.__pad_0[6])
-        && (IDA_LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], SHIWORD(v5) - *(int16_t *)&v23.__pad_0[6] >= 6) )
+        && (IDA_LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], IDA_SHIWORD(v5) - *(int16_t *)&v23.__pad_0[6] >= 6) )
       {
         IDA_LOWORD(v5) = a1[1]; /*0x5a5ea7*/
         v22 = 0; /*0x5a5eac*/
         v14 = 1; /*0x5a5eb4*/
         v21 = 0; /*0x5a5eb6*/
         v23.__pad_0[11] = 0; /*0x5a5ebb*/
-        if ( a1[1] < SHIWORD(v5) ) /*0x5a5ec0*/
+        if ( a1[1] < IDA_SHIWORD(v5) ) /*0x5a5ec0*/
         {
           while ( 1 ) /*0x5a5ec6*/
           {
@@ -242,8 +242,8 @@ LABEL_18:
                 }
                 if ( ((MapSeedClass *)((int *)&v23.isInLogic))->ValidateRectBounds() ) /*0x5a61c0*/
                 {
-                  uniqueId_high = SHIWORD(v23.uniqueId); /*0x5a61cd*/
-                  if ( SHIWORD(v23.uniqueId) - a1[1] < 4 ) /*0x5a61de*/
+                  uniqueId_high = IDA_SHIWORD(v23.uniqueId); /*0x5a61cd*/
+                  if ( IDA_SHIWORD(v23.uniqueId) - a1[1] < 4 ) /*0x5a61de*/
                   {
                     IDA_LOWORD(v5) = PlaceMapSeedClassBuildings( /*0x5a63e7*/
                                    (ObjectClass *)((char *)g_CellTileTypeCache->headNode + 3),
@@ -320,7 +320,7 @@ LABEL_18:
             v30[0] = a1[0]; /*0x5a5f18*/
             v30[1] = (int16_t)v5 - 3; /*0x5a5f1f*/
             v30[3] = 4; /*0x5a5f26*/
-            if ( SHIWORD(v23.uniqueId) - (int16_t)v5 < 2 ) /*0x5a5f2d*/
+            if ( IDA_SHIWORD(v23.uniqueId) - (int16_t)v5 < 2 ) /*0x5a5f2d*/
               goto LABEL_73; /*0x5a5f2d*/
             if ( !v14 ) /*0x5a5f35*/
               goto LABEL_79; /*0x5a5f35*/
@@ -363,7 +363,7 @@ LABEL_79:
 LABEL_38:
             v14 = 0; /*0x5a5fda*/
             IDA_LOWORD(v5) = ++a1[1]; /*0x5a5fe1*/
-            if ( a1[1] >= SHIWORD(v23.uniqueId) ) /*0x5a5fed*/
+            if ( a1[1] >= IDA_SHIWORD(v23.uniqueId) ) /*0x5a5fed*/
             {
               if ( v21 ) /*0x5a63f7*/
               {

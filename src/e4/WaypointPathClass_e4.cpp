@@ -44,7 +44,7 @@ void WaypointPathClass::Init()
          dword_B72610 + dword_B7261C,
          0) )
   {
-    v2 = dword_B72618++; /*0x7637b9*/
+    v2 = (unsigned int)(dword_B72618++);
     *((unsigned int *)dword_B7260C + v2) = this; /*0x7637c8*/
   }
   return this; /*0x7637cd*/

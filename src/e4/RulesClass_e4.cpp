@@ -1152,7 +1152,7 @@ RulesClass::RulesClass()
   IDA_LODWORD(this->?) = 1000;
   IDA_HIDWORD(this->?) = 1000;
   IDA_LODWORD(this->?) = 256;
-  BYTE4(this->?) = 1;
+  IDA_BYTE4(this->?) = 1;
   IDA_LODWORD(this->?) = 0;
   IDA_HIDWORD(this->?) = 10;
   this->? = 60;
@@ -1178,7 +1178,7 @@ RulesClass::RulesClass()
   IDA_LODWORD(this->?) = 500;
   IDA_HIDWORD(this->?) = 500;
   IDA_LODWORD(this->?) = 128;
-  BYTE4(this->?) = 0;
+  IDA_BYTE4(this->?) = 0;
   this->?[0] = 0;
   v6 = 16;
   do

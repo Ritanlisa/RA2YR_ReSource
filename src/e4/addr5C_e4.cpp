@@ -1874,7 +1874,7 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
   int v14; // ecx
   int v15; // edi
   char *v16; // ebx
-  int v17; // ecx
+  unsigned int * v17;
   char *v18; // edi
   unsigned int *v19; // eax
   int v20; // edi
@@ -1962,7 +1962,7 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
       return -2; /*0x5c85e2*/
   }
   v16 = (char *)((unsigned int *)(&a3[v6 - 4]));
-  v17 = (unsigned int *)(a5);
+  v17 = (int)((unsigned int *)(a5));
   v18 = (char *)&aP1[v6 / 4u - 1]; /*0x5c85ef*/
   v19 = v16; /*0x5c85f3*/
   if ( *(unsigned int *)v18 < *(unsigned int *)v16 ) /*0x5c85f9*/

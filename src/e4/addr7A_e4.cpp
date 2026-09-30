@@ -463,9 +463,9 @@ Coord * * WOL_ProcessPingRequests()
         if ( (int)stru_B76AC4.? > 0 ) /*0x7a10da*/
           String::Reassign(&v13, (const char **)stru_B76AC4.?); /*0x7a10e7*/
         ((String *)(&v13))->GetOrEmpty(); /*0x7a10f0*/
-        Debug::Log(); /*0x7a10fb*/
-        v3 = String::GetOrEmpty(&v13); /*0x7a1107*/
-        String::Assign((String *)&v13.m_3[1], v3); /*0x7a1111*/
+        this->Debug::Log(); /*0x7a10fb*/
+        v3 = ((String *)(&v13))->GetOrEmpty(); /*0x7a1107*/
+        String::Assign((String *)&((unsigned int *)(v13.m_3))[1], v3); /*0x7a1111*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1116*/
         v5 = 0; /*0x7a111b*/
         v6 = 0; /*0x7a111d*/

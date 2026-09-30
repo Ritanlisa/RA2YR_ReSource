@@ -36,7 +36,7 @@ int GadgetGrid::InsertItem(int a2)
   else
     v5 = 0; /*0x4134cf*/
   if ( v16 >= 0 ) /*0x4134df*/
-    v6 = SHIWORD(v16); /*0x4134e5*/
+    v6 = IDA_SHIWORD(v16); /*0x4134e5*/
   else
     v6 = 0; /*0x4134e1*/
   v7 = v5 / ((unsigned int)(g_abs_87F914)/ 20); /*0x413504*/

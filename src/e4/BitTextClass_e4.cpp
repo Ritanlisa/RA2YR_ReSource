@@ -70,7 +70,7 @@ void BitTextClass::LoadFont()
 
   void * v2;
 
-  *this = (int)(&vt_BitText);
+  *(_DWORD *)this = (int)(&vt_BitText);
   v2 = RA2_OPNEW(68); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {

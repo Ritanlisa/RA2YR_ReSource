@@ -318,7 +318,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   {
     *a1 = (int)((gamemd::ScenarioClass **)(0x10000));
     aP2->field_0 = (gamemd::ScenarioClass **)(0);
-    *a3 = 1000; /*0x484642*/
+    *a3 = (gamemd::ScenarioClass **)(1000);
     *a4 = 1000; /*0x48464c*/
     aP5->field_0 = 1000; /*0x484656*/
     *a6 = 1000; /*0x484660*/
@@ -340,7 +340,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     {
       v28 = v8->field_24; /*0x4842b5*/
       v12 = ((int16_t)v28 << 8) + 128; /*0x4842cc*/
-      v13 = (SHIWORD(v28) << 8) + 128; /*0x4842ce*/
+      v13 = (IDA_SHIWORD(v28) << 8) + 128; /*0x4842ce*/
       v33[0] = 128; /*0x4842d0*/
       v33[1] = 128; /*0x4842d4*/
       Isometric::InitTables((int)v8, (IUnknown *)v33); /*0x4842dd*/
@@ -504,7 +504,7 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
                      v31);
       v29 = *v12; /*0x4a9237*/
       v30 = v12[1]; /*0x4a924d*/
-      v13 = (MouseClass *)*TacticalClass::PixelToCellCheck(&v28, &v29); /*0x4a9256*/
+      v13 = (MouseClass *)*(unsigned int *)(TacticalClass)::PixelToCellCheck(&v28, &v29); /*0x4a9256*/
       v28 = v13; /*0x4a925f*/
       if ( v13 == *(MouseClass **)&g_abs_89F690 ) /*0x4a9263*/
         goto LABEL_11; /*0x4a9263*/
@@ -518,7 +518,7 @@ LABEL_11:
   {
     if ( !g_abs_A8D63C ) /*0x4a92e3*/
     {
-      v19 = IDA_HIWORD(aP2) + *((unsigned short *)this + 2237); /*0x4a92f3*/
+      v19 = (unsigned short *)(IDA_HIWORD(aP2) + *((unsigned short *)this + 2237));
       IDA_LOWORD(v28) = (unsigned short)v3 + *((unsigned short *)this + 2236); /*0x4a92fb*/
       IDA_HIWORD(v28) = v19; /*0x4a9301*/
       v20 = UI_Move(&v29, &v28, (int)v16); /*0x4a931e*/
@@ -954,13 +954,13 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   v15->field_8 = (void *)v13[2]; /*0x6923f6*/
   if ( !*(unsigned int *)&stru_87C374.__pad_579C[22548] || !Tactical::IsCellVisible(&stru_87C374.__pad_14B0[8132], v14) ) /*0x69240c*/
     return 0; /*0x6925ff*/
-  v16 = SHIWORD(v7->field_0) << 8; /*0x69242d*/
-  v40[0] = (SLOWORD(v7->field_0) << 8) + 128; /*0x692430*/
+  v16 = IDA_SHIWORD(v7->field_0) << 8; /*0x69242d*/
+  v40[0] = (IDA_SLOWORD(v7->field_0) << 8) + 128; /*0x692430*/
   v40[1] = v16 + 128; /*0x692440*/
   v40[2] = 0; /*0x692444*/
   GroundHeight = Cell::GetGroundHeight((IUnknown *)v40); /*0x69244c*/
-  v18 = SHIWORD(v7->field_0); /*0x692454*/
-  v19 = (MouseClass *)((SLOWORD(v7->field_0) << 8) + 128); /*0x69245b*/
+  v18 = IDA_SHIWORD(v7->field_0); /*0x692454*/
+  v19 = (MouseClass *)((IDA_SLOWORD(v7->field_0) << 8) + 128); /*0x69245b*/
   v39 = GroundHeight; /*0x692461*/
   v37 = (IUnknown *)v19; /*0x692465*/
   v38 = (IUnknown *)((v18 << 8) + 128); /*0x69247c*/
@@ -1059,7 +1059,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
               case 0x201: /*0x69311f*/
                 aP4 = (MouseClass *)aP4->field_0; /*0x693138*/
                 v12 = (int16_t)aP4 - *(unsigned int *)&g_abs_87F8E4; /*0x693148*/
-                v13 = SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x693150*/
+                v13 = IDA_SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x693150*/
                 IDA_LOBYTE(v5) = Tactical::MouseOver(&v12, &v10, v14, &a2, (bool *)&aP4, (bool *)&aP2); /*0x693170*/
                 if ( (unsigned char)v5 ) /*0x693177*/
                 {
@@ -1077,7 +1077,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
               case 0x202: /*0x69311f*/
                 aP4 = (MouseClass *)aP4->field_0; /*0x69320b*/
                 v12 = (int16_t)aP4 - *(unsigned int *)&g_abs_87F8E4; /*0x69321b*/
-                v13 = SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x693221*/
+                v13 = IDA_SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x693221*/
                 IDA_LOBYTE(v5) = ScriptAction::HitTest(v12, v13); /*0x693225*/
                 if ( !(unsigned char)v5 && *((unsigned char *)this + 21850) ) /*0x693232*/
                 {
@@ -1091,7 +1091,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
               case 0x204: /*0x69311f*/
                 aP4 = (MouseClass *)aP4->field_0; /*0x6932b6*/
                 v12 = (int16_t)aP4 - *(unsigned int *)&g_abs_87F8E4; /*0x6932c6*/
-                v13 = SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x6932cc*/
+                v13 = IDA_SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4; /*0x6932cc*/
                 IDA_LOBYTE(v5) = UI_Handle(v12, v13); /*0x6932d0*/
                 if ( !*((unsigned char *)this + 21850) ) /*0x6932d5*/
                 {
@@ -1115,7 +1115,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 aP4 = (MouseClass *)aP4->field_0; /*0x693378*/
                 IDA_LOBYTE(v5) = UI_Handle_63AB00( /*0x69338a*/
                                (int16_t)aP4 - *(unsigned int *)&g_abs_87F8E4,
-                               SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4);
+                               IDA_SHIWORD(aP4) - *(unsigned int *)&g_abs_87F8E4);
                 if ( *((unsigned char *)this + 21850) ) /*0x69338f*/
                 {
                   if ( g_abs_87F8E4 ) /*0x69339d*/
@@ -1455,8 +1455,8 @@ unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
       {
         v30 = 0; /*0x6d6890*/
       }
-      v20 = SLOWORD(v16[2].Items); /*0x6d6899*/
-      v21 = SHIWORD(v16[2].Items) << 8; /*0x6d68a8*/
+      v20 = IDA_SLOWORD(v16[2].Items); /*0x6d6899*/
+      v21 = IDA_SHIWORD(v16[2].Items) << 8; /*0x6d68a8*/
       v50[2] = 0.0; /*0x6d68ab*/
       IDA_LODWORD(v50[1]) = v21; /*0x6d68b2*/
       IDA_LODWORD(v50[0]) = v20 << 8; /*0x6d68ca*/
@@ -1835,7 +1835,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   v16 = v15[1]; /*0x6dbbe1*/
   v17 = (int)*v15; /*0x6dbbe4*/
   v30 = v16; /*0x6dbbeb*/
-  v18 = (BYTE4(v17) + (int)v17) >> 8; /*0x6dbbf6*/
+  v18 = (IDA_BYTE4(v17) + (int)v17) >> 8; /*0x6dbbf6*/
   v19 = ZCoordToScreenY(*(unsigned int *)&aP2->vtable0[8]); /*0x6dbbf9*/
   v31[0] = v18; /*0x6dbc0b*/
   v20 = v18 - *((unsigned int *)this + 44); /*0x6dbc22*/

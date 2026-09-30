@@ -183,19 +183,19 @@ int RandomMap::GenerateTerrain()
       if ( v4 - 1 < v4 ) /*0x58c8c1*/
         v57 = v4 - 1; /*0x58c8c7*/
       v5 = v46; /*0x58c8f4*/
-      *((unsigned int *)g_MapTileArray + 20 * (int16_t)v44 + 20 * unk_89C2DC * SHIWORD(v44) + 15) = v46; /*0x58c906*/
+      *((unsigned int *)g_MapTileArray + 20 * (int16_t)v44 + 20 * unk_89C2DC * IDA_SHIWORD(v44) + 15) = v46; /*0x58c906*/
       if ( g_MapTileArray ) /*0x58c912*/
-        *((unsigned int *)g_MapTileArray + 20 * (int16_t)v44 + 20 * unk_89C2DC * SHIWORD(v44) + 14) = v5; /*0x58c92d*/
+        *((unsigned int *)g_MapTileArray + 20 * (int16_t)v44 + 20 * unk_89C2DC * IDA_SHIWORD(v44) + 14) = v5; /*0x58c92d*/
       for ( i = 0; i < 8; ++i ) /*0x58c931*/
       {
         IDA_LODWORD(v51) = *CellStruct::Add(&v44, &v52, (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
         v45 = IDA_LODWORD(v51); /*0x58c95a*/
         v7 = g_MapCellHeight_Value; /*0x58c968*/
-        v8 = (char *)g_MapTileArray + 80 * SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58c97d*/
-        v9 = SWORD1(v51) + SLOWORD(v51); /*0x58c97f*/
+        v8 = (char *)g_MapTileArray + 80 * IDA_SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58c97d*/
+        v9 = SWORD1(v51) + IDA_SLOWORD(v51); /*0x58c97f*/
         if ( v9 > g_MapCellHeight_Value /*0x58c9bf*/
-          && SLOWORD(v51) - SWORD1(v51) < g_MapCellHeight_Value
-          && SWORD1(v51) - SLOWORD(v51) < g_MapCellHeight_Value
+          && IDA_SLOWORD(v51) - SWORD1(v51) < g_MapCellHeight_Value
+          && SWORD1(v51) - IDA_SLOWORD(v51) < g_MapCellHeight_Value
           && v9 <= g_MapCellCount
           && *((unsigned int *)v8 + 14) == -1
           && *((unsigned int *)v8 + 15) != v46 )
@@ -247,18 +247,18 @@ int RandomMap::GenerateTerrain()
       IDA_LOWORD(v48) = v29 - 1; /*0x58ccb8*/
       v30 = v29 - 1; /*0x58ccbd*/
       v31 = (int16_t)(v29 - 1); /*0x58ccc1*/
-      v32 = SHIWORD(v29) + v31; /*0x58cccb*/
+      v32 = IDA_SHIWORD(v29) + v31; /*0x58cccb*/
       if ( v32 <= v7 || v31 - SWORD1(v51) >= v7 || SWORD1(v51) - v31 >= v7 || v32 > g_MapCellCount ) /*0x58cce6*/
       {
         IDA_LODWORD(v52) = v29; /*0x58cce8*/
         v48 = v29 - 0x10000; /*0x58ccf6*/
         v30 = v29; /*0x58ccfb*/
       }
-      v33 = v30 + SHIWORD(v48); /*0x58cd0b*/
-      if ( v33 > v7 && v30 - SHIWORD(v48) < v7 && SHIWORD(v48) - v30 < v7 && v33 <= g_MapCellCount ) /*0x58cd34*/
+      v33 = v30 + IDA_SHIWORD(v48); /*0x58cd0b*/
+      if ( v33 > v7 && v30 - IDA_SHIWORD(v48) < v7 && IDA_SHIWORD(v48) - v30 < v7 && v33 <= g_MapCellCount ) /*0x58cd34*/
       {
         if ( g_MapTileArray ) /*0x58cd44*/
-          v34 = *((unsigned int *)g_MapTileArray + 20 * v30 + 20 * unk_89C2DC * SHIWORD(v48) + 14); /*0x58cd5a*/
+          v34 = *((unsigned int *)g_MapTileArray + 20 * v30 + 20 * unk_89C2DC * IDA_SHIWORD(v48) + 14); /*0x58cd5a*/
         else
           v34 = -1; /*0x58cd46*/
         v35 = *((char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v48) + 283); /*0x58cd6d*/
@@ -270,7 +270,7 @@ int RandomMap::GenerateTerrain()
           do /*0x58cdef*/
           {
             IDA_LODWORD(v51) = *(unsigned int *)(Bit + 36); /*0x58cd97*/
-            v38 = (char *)g_MapTileArray + 80 * SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58cdb8*/
+            v38 = (char *)g_MapTileArray + 80 * IDA_SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58cdb8*/
             if ( *((unsigned int *)v38 + 14) == v37 ) /*0x58cdbd*/
             {
               *((unsigned int *)v38 + 14) = v34; /*0x58cdbf*/
@@ -307,11 +307,11 @@ int RandomMap::GenerateTerrain()
     {
       IDA_LODWORD(v51) = *CellStruct::Add(&v46, &v52, (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
       v48 = IDA_LODWORD(v51); /*0x58cb55*/
-      v21 = SWORD1(v51) + SLOWORD(v51); /*0x58cb61*/
+      v21 = SWORD1(v51) + IDA_SLOWORD(v51); /*0x58cb61*/
       if ( v21 > g_MapCellHeight_Value ) /*0x58cb66*/
       {
-        if ( SLOWORD(v51) - SWORD1(v51) < g_MapCellHeight_Value /*0x58cb7c*/
-          && SWORD1(v51) - SLOWORD(v51) < g_MapCellHeight_Value
+        if ( IDA_SLOWORD(v51) - SWORD1(v51) < g_MapCellHeight_Value /*0x58cb7c*/
+          && SWORD1(v51) - IDA_SLOWORD(v51) < g_MapCellHeight_Value
           && v21 <= g_MapCellCount )
         {
           v22 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v48); /*0x58cb91*/
@@ -327,7 +327,7 @@ int RandomMap::GenerateTerrain()
                     j = LayerClass::CellIteratorNext(&g_abs_87F7E8) )
               {
                 IDA_LODWORD(v51) = *(unsigned int *)(j + 36); /*0x58cc17*/
-                v26 = (char *)g_MapTileArray + 80 * SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58cc32*/
+                v26 = (char *)g_MapTileArray + 80 * IDA_SLOWORD(v51) + 80 * unk_89C2DC * SWORD1(v51); /*0x58cc32*/
                 if ( !*((unsigned int *)v26 + 14) ) /*0x58cc34*/
                 {
                   *((unsigned int *)v26 + 14) = -1; /*0x58cc39*/
@@ -459,7 +459,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
         v9 = *(unsigned int *)(result + 4 * i); /*0x58d221*/
         if ( g_MapTileArray ) /*0x58d228*/
         {
-          result = 80 * ((int16_t)v9 + unk_89C2DC * SHIWORD(v9)); /*0x58d242*/
+          result = 80 * ((int16_t)v9 + unk_89C2DC * IDA_SHIWORD(v9)); /*0x58d242*/
           *(unsigned int *)((char *)g_MapTileArray + result + 56) = a3; /*0x58d245*/
         }
       }
@@ -602,7 +602,7 @@ unsigned int * RandomMap::TerrainAlloc()
   {
     v5 = Bit[9]; /*0x58d478*/
     if ( g_MapTileArray ) /*0x58d481*/
-      v6 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v5 + 20 * unk_89C2DC * SHIWORD(v5) + 14); /*0x58d49f*/
+      v6 = *((unsigned int *)g_MapTileArray + 20 * (int16_t)v5 + 20 * unk_89C2DC * IDA_SHIWORD(v5) + 14); /*0x58d49f*/
     else
       v6 = -1; /*0x58d483*/
     if ( v6 == *((unsigned int *)this + 2) )
@@ -611,15 +611,15 @@ unsigned int * RandomMap::TerrainAlloc()
       for ( i = 0; i < 8; ++i )
       {
         v19 = *((unsigned int *)Cell::GetNeighbourContent(Bit, i) + 9); /*0x58d4c8*/
-        v8 = SHIWORD(v19) + (int16_t)v19; /*0x58d4d4*/
+        v8 = IDA_SHIWORD(v19) + (int16_t)v19; /*0x58d4d4*/
         if ( v8 > g_MapCellHeight_Value )
         {
-          if ( (int16_t)v19 - SHIWORD(v19) < g_MapCellHeight_Value
-            && SHIWORD(v19) - (int16_t)v19 < g_MapCellHeight_Value
+          if ( (int16_t)v19 - IDA_SHIWORD(v19) < g_MapCellHeight_Value
+            && IDA_SHIWORD(v19) - (int16_t)v19 < g_MapCellHeight_Value
             && v8 <= g_MapCellCount )
           {
             v9 = g_MapTileArray
-               ? *((unsigned int *)g_MapTileArray + 20 * (int16_t)v19 + 20 * unk_89C2DC * SHIWORD(v19) + 14)
+               ? *((unsigned int *)g_MapTileArray + 20 * (int16_t)v19 + 20 * unk_89C2DC * IDA_SHIWORD(v19) + 14)
                : -1;
             if ( v9 != *((unsigned int *)this + 2) ) /*0x58d51c*/
               v16 = 1; /*0x58d51e*/
@@ -724,7 +724,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
             v12 = (char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v24); /*0x58e838*/
             if ( v12[283] == v26[4] ) /*0x58e84b*/
             {
-              v13 = (char *)g_MapTileArray + 80 * (int16_t)v24 + 80 * unk_89C2DC * SHIWORD(v24); /*0x58e870*/
+              v13 = (char *)g_MapTileArray + 80 * (int16_t)v24 + 80 * unk_89C2DC * IDA_SHIWORD(v24); /*0x58e870*/
               v14 = *((unsigned int *)v13 + 14); /*0x58e872*/
               if ( v14 == -1 /*0x58e8a9*/
                 && ((v15 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v24), Cell::IsEmpty(v15))
@@ -854,13 +854,13 @@ LABEL_12:
       v12 = k & 7; /*0x58eaa3*/
       IDA_LOWORD(v17) = v10 + IDA_LOWORD(g_abs_89F688[v12]); /*0x58eabf*/
       IDA_HIWORD(v17) = IDA_HIWORD(v10) + IDA_HIWORD(g_abs_89F688[v12]); /*0x58eac4*/
-      v13 = SHIWORD(v17) + (int16_t)v17; /*0x58eacf*/
+      v13 = IDA_SHIWORD(v17) + (int16_t)v17; /*0x58eacf*/
       if ( v13 > g_MapCellHeight_Value /*0x58eafc*/
-        && (int16_t)v17 - SHIWORD(v17) < g_MapCellHeight_Value
-        && SHIWORD(v17) - (int16_t)v17 < g_MapCellHeight_Value
+        && (int16_t)v17 - IDA_SHIWORD(v17) < g_MapCellHeight_Value
+        && IDA_SHIWORD(v17) - (int16_t)v17 < g_MapCellHeight_Value
         && v13 <= g_MapCellCount )
       {
-        v14 = (char *)g_MapTileArray + 80 * (int16_t)v17 + 80 * unk_89C2DC * SHIWORD(v17); /*0x58eb13*/
+        v14 = (char *)g_MapTileArray + 80 * (int16_t)v17 + 80 * unk_89C2DC * IDA_SHIWORD(v17); /*0x58eb13*/
         if ( *((unsigned int *)v14 + 14) == -1 ) /*0x58eb19*/
         {
           if ( v14[75] ) /*0x58eb1b*/
@@ -1188,7 +1188,7 @@ void* RandomMap::PlaceBuildings(int a2, int a3)
     IDA_LODWORD(v58) = *((unsigned int *)g_MapTileArray + 20 * v9);
     v76 = SWORD1(v58);
     v80 = SWORD1(v58);
-    v75 = SLOWORD(v58) - 1;
+    v75 = IDA_SLOWORD(v58) - 1;
     v79 = v75;
     v84 = SWORD1(v58) - 1;
     v85 = 1;
@@ -1198,9 +1198,9 @@ void* RandomMap::PlaceBuildings(int a2, int a3)
     v78 = 1;
     v81 = 3;
     v82 = 1;
-    v83 = SLOWORD(v58);
+    v83 = IDA_SLOWORD(v58);
     v86 = 3;
-    v71 = SLOWORD(v58);
+    v71 = IDA_SLOWORD(v58);
     v74 = 3;
     v50 = 1;
     v49 = 1;
@@ -3844,7 +3844,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
     for ( jj = LayerClass::CellIteratorNext(&g_abs_87F7E8); jj; jj = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x59924f*/
     {
       v36 = *(unsigned int **)(jj + 36); /*0x59925a*/
-      v28 = (char *)g_MapTileArray + 80 * (int16_t)v36 + 80 * unk_89C2DC * SHIWORD(v36); /*0x59927b*/
+      v28 = (char *)g_MapTileArray + 80 * (int16_t)v36 + 80 * unk_89C2DC * IDA_SHIWORD(v36); /*0x59927b*/
       v28[10] = 1202590843; /*0x599283*/
       v28[11] = 1064598241; /*0x599286*/
       v28[8] = -755914244; /*0x599295*/
@@ -4457,7 +4457,7 @@ LABEL_153:
   for ( ii = LayerClass::CellIteratorNext(&g_abs_87F7E8); ii; ii = LayerClass::CellIteratorNext(&g_abs_87F7E8) )
   {
     IDA_LODWORD(v73[0]) = *(unsigned int *)(ii + 36);
-    *((unsigned int *)g_MapTileArray + 20 * SLOWORD(v73[0]) + 20 * unk_89C2DC * SWORD1(v73[0])) = IDA_LODWORD(v73[0]);
+    *((unsigned int *)g_MapTileArray + 20 * IDA_SLOWORD(v73[0]) + 20 * unk_89C2DC * SWORD1(v73[0])) = IDA_LODWORD(v73[0]);
     *(unsigned char *)(ii + 283) = v50[195].__tail_0[0];
   }
   if ( *((unsigned char *)g_abs_A8B230 + 13720) )
@@ -4879,7 +4879,7 @@ void RandomMap::FillTerrainProgressively()
         }
       }
       aP3 = (MapResourceClass)(int16_t)v11; /*0x59b1e2*/
-      v18 = SHIWORD(v11); /*0x59b1e6*/
+      v18 = IDA_SHIWORD(v11); /*0x59b1e6*/
       if ( v19 >= v20 ) /*0x59b1ef*/
         break; /*0x59b1ef*/
       v1 = v15; /*0x59b0d2*/
@@ -5066,7 +5066,7 @@ int RandomMap::PlaceTerrainFeatures()
           IDA_LOWORD(v3) = v33; /*0x59b684*/
         }
         v36 = (int16_t)v20; /*0x59b69a*/
-        v37 = SHIWORD(v20); /*0x59b69e*/
+        v37 = IDA_SHIWORD(v20); /*0x59b69e*/
       }
       while ( v39 < v38 ); /*0x59b6a7*/
     }
@@ -5363,11 +5363,11 @@ LABEL_27:
     }
     IDA_LODWORD(v90) = (int16_t)v78; /*0x59be9a*/
     v27 = *(MapResourceClass **)v12->__pad_0; /*0x59be9e*/
-    IDA_LODWORD(v90) = SHIWORD(v78); /*0x59bea4*/
+    IDA_LODWORD(v90) = IDA_SHIWORD(v78); /*0x59bea4*/
     v28 = 0; /*0x59beaa*/
     v94 = (double)(int16_t)v78; /*0x59beae*/
     v81 = 0; /*0x59beb6*/
-    v95 = (double)SHIWORD(v78); /*0x59beba*/
+    v95 = (double)IDA_SHIWORD(v78); /*0x59beba*/
     if ( (int)v27 >= 0 ) /*0x59bebe*/
     {
       do /*0x59becc*/
@@ -5382,7 +5382,7 @@ LABEL_27:
     var70 = 1; /*0x59bed8*/
     *v29 = (MapResourceClass)v78; /*0x59bee0*/
     v29[1] = 0; /*0x59bee2*/
-    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v78 + 20 * unk_89C2DC * SHIWORD(v78) + 15) = *((char *)this + 194); /*0x59bf0d*/
+    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v78 + 20 * unk_89C2DC * IDA_SHIWORD(v78) + 15) = *((char *)this + 194); /*0x59bf0d*/
     v30 = *(unsigned int *)v12->__pad_0 + 1; /*0x59bf16*/
     IDA_LODWORD(v90) = v29[1]; /*0x59bf19*/
     v31 = v30 >> 1; /*0x59bf20*/
@@ -5466,7 +5466,7 @@ LABEL_27:
               }
               else
               {
-                IDA_LODWORD(v89) = (SHIWORD(v79) - v50) * (SHIWORD(v79) - v50) /*0x59c1d7*/
+                IDA_LODWORD(v89) = (IDA_SHIWORD(v79) - v50) * (IDA_SHIWORD(v79) - v50) /*0x59c1d7*/
                              + ((int16_t)v79 - (int16_t)v86) * ((int16_t)v79 - (int16_t)v86);
                 v93 = Math::Sqrt((double)(int)v89); /*0x59c1e7*/
                 *(unsigned long long *)&v98 = (unsigned int)Random::State(&g_Randomizer); /*0x59c1f8*/
@@ -5602,7 +5602,7 @@ LABEL_27:
       for ( j = LayerClass::CellIteratorNext(&g_abs_87F7E8); j; j = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x59c4ae*/
       {
         IDA_LODWORD(v93) = *(unsigned int *)(j + 36); /*0x59c4b3*/
-        v75 = (char *)g_MapTileArray + 80 * SLOWORD(v93) + 80 * unk_89C2DC * SWORD1(v93); /*0x59c4d4*/
+        v75 = (char *)g_MapTileArray + 80 * IDA_SLOWORD(v93) + 80 * unk_89C2DC * SWORD1(v93); /*0x59c4d4*/
         if ( *((unsigned int *)v75 + 14) == edi97 ) /*0x59c4d9*/
         {
           *((unsigned int *)v75 + 14) = 0; /*0x59c4db*/
@@ -5770,7 +5770,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
     v8 = IDA_HIWORD(v7); /*0x5a0780*/
     if ( !v7 ) /*0x5a0788*/
       goto LABEL_33; /*0x5a0788*/
-    v9 = v6 ? v6[20 * (int16_t)v7 + 14 + 20 * v5 * SHIWORD(v7)] : -1;
+    v9 = v6 ? v6[20 * (int16_t)v7 + 14 + 20 * v5 * IDA_SHIWORD(v7)] : -1;
     if ( v9 != a2 ) /*0x5a07b5*/
       goto LABEL_33; /*0x5a07b5*/
     v10 = 0; /*0x5a07bb*/
@@ -5996,7 +5996,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
   for ( i = LayerClass::CellIteratorNext(&g_abs_87F7E8); i; i = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x5a0a19*/
   {
     v90 = *(unsigned int *)(i + 36); /*0x5a0a1e*/
-    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v90 + 20 * unk_89C2DC * SHIWORD(v90) + 15) = 0; /*0x5a0a43*/
+    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v90 + 20 * unk_89C2DC * IDA_SHIWORD(v90) + 15) = 0; /*0x5a0a43*/
   }
   v17 = (MouseClass *)RandomMap::CellListAlloc(v89, (int)aP1); /*0x5a0a58*/
   v18 = (int)v17->field_10; /*0x5a0a5d*/
@@ -6010,7 +6010,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
     {
       v20 = (MouseClass *)*v15; /*0x5a0a83*/
       v88 = *((unsigned int *)v84->field_4 + v86); /*0x5a0a88*/
-      v21 = SHIWORD(v88); /*0x5a0a8c*/
+      v21 = IDA_SHIWORD(v88); /*0x5a0a8c*/
       v22 = (int16_t)v88; /*0x5a0a91*/
       if ( (int16_t)v88 >= (int)v20 ) /*0x5a0a96*/
       {
@@ -6018,7 +6018,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
           goto LABEL_48; /*0x5a0aa3*/
         v15 = aP3; /*0x5a0aa9*/
         v23 = aP3[1]; /*0x5a0aac*/
-        if ( SHIWORD(v88) >= *(int *)&v23 ) /*0x5a0ab1*/
+        if ( IDA_SHIWORD(v88) >= *(int *)&v23 ) /*0x5a0ab1*/
           break; /*0x5a0ab1*/
       }
 LABEL_49:
@@ -6028,7 +6028,7 @@ LABEL_49:
         goto LABEL_51; /*0x5a0c2e*/
       }
     }
-    if ( SHIWORD(v88) < *(unsigned int *)&v23 + *(unsigned int *)&aP3[3] ) /*0x5a0abe*/
+    if ( IDA_SHIWORD(v88) < *(unsigned int *)&v23 + *(unsigned int *)&aP3[3] ) /*0x5a0abe*/
     {
       *v19 = (MapResourceClass)v88; /*0x5a0ac8*/
       v24 = (MapResourceClass *)(v22 - *a4); /*0x5a0ad2*/
@@ -6156,10 +6156,10 @@ LABEL_51:
     {
       IDA_LODWORD(v91) = CellStruct::Add(v38, (IUnknown *)&v93, (IUnknown *)(4 * (v43 & 7) + 9041544))->field_0; /*0x5a0dad*/
       v84 = (MouseClass *)IDA_LODWORD(v91); /*0x5a0db1*/
-      v44 = SWORD1(v91) + SLOWORD(v91); /*0x5a0dbd*/
+      v44 = SWORD1(v91) + IDA_SLOWORD(v91); /*0x5a0dbd*/
       if ( v44 <= g_MapCellHeight_Value /*0x5a0de6*/
-        || SLOWORD(v91) - SWORD1(v91) >= g_MapCellHeight_Value
-        || SWORD1(v91) - SLOWORD(v91) >= g_MapCellHeight_Value
+        || IDA_SLOWORD(v91) - SWORD1(v91) >= g_MapCellHeight_Value
+        || SWORD1(v91) - IDA_SLOWORD(v91) >= g_MapCellHeight_Value
         || v44 > g_MapCellCount )
       {
         goto LABEL_108; /*0x5a0de6*/
@@ -6167,10 +6167,10 @@ LABEL_51:
       v45 = g_MapTileArray; /*0x5a0dec*/
       if ( !g_MapTileArray ) /*0x5a0df4*/
         goto LABEL_105; /*0x5a0df4*/
-      v46 = (char *)g_MapTileArray + 80 * SLOWORD(v91) + 80 * unk_89C2DC * SWORD1(v91); /*0x5a0e0b*/
-      if ( !*((unsigned int *)v46 + 14) && *((MouseClass **)v46 + 15) != aP1 && SLOWORD(v91) >= *(int *)aP3 ) /*0x5a0e2d*/
+      v46 = (char *)g_MapTileArray + 80 * IDA_SLOWORD(v91) + 80 * unk_89C2DC * SWORD1(v91); /*0x5a0e0b*/
+      if ( !*((unsigned int *)v46 + 14) && *((MouseClass **)v46 + 15) != aP1 && IDA_SLOWORD(v91) >= *(int *)aP3 ) /*0x5a0e2d*/
       {
-        if ( SLOWORD(v91) < *(unsigned int *)aP3 + *(unsigned int *)&aP3[2] ) /*0x5a0e3a*/
+        if ( IDA_SLOWORD(v91) < *(unsigned int *)aP3 + *(unsigned int *)&aP3[2] ) /*0x5a0e3a*/
         {
           v47 = aP3[1]; /*0x5a0e40*/
           if ( SWORD1(v91) >= *(int *)&v47 && SWORD1(v91) < *(unsigned int *)&v47 + *(unsigned int *)&aP3[3] ) /*0x5a0e52*/
@@ -6181,7 +6181,7 @@ LABEL_51:
               v49 = v89; /*0x5a0e76*/
               v50 = (int16_t)v84; /*0x5a0e7a*/
               *v89 = (MapResourceClass)v84; /*0x5a0e81*/
-              v52 = SHIWORD(v84) - a4[1]; /*0x5a0e94*/
+              v52 = IDA_SHIWORD(v84) - a4[1]; /*0x5a0e94*/
               v89 = (MapResourceClass *)(v50 - *a4); /*0x5a0e98*/
               v51 = v89; /*0x5a0e92*/
               IDA_LODWORD(v91) = v52; /*0x5a0e9c*/
@@ -6207,7 +6207,7 @@ LABEL_51:
               if ( v54 > 3.141592653589793 ) /*0x5a0f01*/
                 v91 = 6.283185307179586 - v54; /*0x5a0f0b*/
               v95 = (unsigned int)Random::State(&g_Randomizer); /*0x5a0f1b*/
-              v57 = SHIWORD(v84); /*0x5a0f2b*/
+              v57 = IDA_SHIWORD(v84); /*0x5a0f2b*/
               v58 = (int16_t)v84; /*0x5a0f48*/
               *(float *)&v49[1] = v91 * 1.5 + (double)v95 * 2.328306437080797e-10 * 2.0; /*0x5a0f4f*/
               *((unsigned int *)g_MapTileArray + 20 * v58 + 20 * unk_89C2DC * v57 + 15) = aP1; /*0x5a0f6a*/
@@ -6252,7 +6252,7 @@ LABEL_51:
       }
       if ( v45 ) /*0x5a0ff8*/
       {
-        v66 = v45[20 * (int16_t)v84 + 14 + 20 * unk_89C2DC * SHIWORD(v84)]; /*0x5a1013*/
+        v66 = v45[20 * (int16_t)v84 + 14 + 20 * unk_89C2DC * IDA_SHIWORD(v84)]; /*0x5a1013*/
         if ( !v66 ) /*0x5a1019*/
           goto LABEL_108; /*0x5a1019*/
       }
@@ -6502,7 +6502,7 @@ int RandomMap::PlaceRandomMapTiberium()
             {
               v16 = *(unsigned int *)(*(unsigned int *)(v13 + 4) + 4 * v14); /*0x5a24ee*/
               v17 = Math::Sqrt((double)(((int16_t)v16 - v10) * ((int16_t)v16 - v10) /*0x5a2518*/
-                                      + (SHIWORD(v16) - v15) * (SHIWORD(v16) - v15)));
+                                      + (IDA_SHIWORD(v16) - v15) * (IDA_SHIWORD(v16) - v15)));
               if ( v17 < (double)v48 ) /*0x5a252d*/
               {
                 v48 = Math::RoundToInt(v17); /*0x5a2534*/
@@ -6560,13 +6560,13 @@ int RandomMap::PlaceRandomMapTiberium()
               v27 = 0; /*0x5a269d*/
               if ( *(int *)(*v6 + 16) > 0 ) /*0x5a26a8*/
               {
-                v28 = SHIWORD(v26); /*0x5a26aa*/
+                v28 = IDA_SHIWORD(v26); /*0x5a26aa*/
                 v29 = (int16_t)v26; /*0x5a26af*/
                 do /*0x5a26fa*/
                 {
                   v30 = *(unsigned int *)(*(unsigned int *)(v25 + 4) + 4 * v27); /*0x5a26b8*/
                   v31 = Math::Sqrt((double)(((int16_t)v30 - v29) * ((int16_t)v30 - v29) /*0x5a26e2*/
-                                          + (SHIWORD(v30) - v28) * (SHIWORD(v30) - v28)));
+                                          + (IDA_SHIWORD(v30) - v28) * (IDA_SHIWORD(v30) - v28)));
                   v25 = *v6; /*0x5a26e7*/
                   v32 = *(unsigned int *)(*v6 + 16); /*0x5a26f0*/
                   ++v27; /*0x5a26f3*/
@@ -6712,7 +6712,7 @@ VectorClass_flat * * RandomMap::PlaceResources()
   for ( i = LayerClass::CellIteratorNext(&g_abs_87F7E8); i; i = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x5a3b0b*/
   {
     IDA_LODWORD(v39) = *(unsigned int *)(i + 36); /*0x5a3b10*/
-    *((unsigned int *)g_MapTileArray + 20 * SLOWORD(v39) + 20 * unk_89C2DC * SWORD1(v39) + 15) = 0; /*0x5a3b35*/
+    *((unsigned int *)g_MapTileArray + 20 * IDA_SLOWORD(v39) + 20 * unk_89C2DC * SWORD1(v39) + 15) = 0; /*0x5a3b35*/
   }
   LayerClass::CellIteratorReset(&g_abs_87F7E8); /*0x5a3b47*/
   Bit = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x5a3b56*/
@@ -6739,7 +6739,7 @@ VectorClass_flat * * RandomMap::PlaceResources()
     do /*0x5a3f0a*/
     {
       IDA_LODWORD(v39) = *(unsigned int *)(Bit + 36); /*0x5a3bf9*/
-      v4 = (double *)((char *)g_MapTileArray + 80 * SLOWORD(v39) + 80 * unk_89C2DC * SWORD1(v39)); /*0x5a3c16*/
+      v4 = (double *)((char *)g_MapTileArray + 80 * IDA_SLOWORD(v39) + 80 * unk_89C2DC * SWORD1(v39)); /*0x5a3c16*/
       if ( Cell::IsEmpty((unsigned int *)Bit) /*0x5a3c47*/
         && !*(unsigned char *)(Bit + 284)
         && *(unsigned int *)(Bit + 68) == -1
@@ -6747,7 +6747,7 @@ VectorClass_flat * * RandomMap::PlaceResources()
         && !*((unsigned char *)v4 + 69) )
       {
         IDA_LODWORD(v39) = *(unsigned int *)(Bit + 36); /*0x5a3c58*/
-        v5 = SLOWORD(v39) + (SWORD1(v39) << 9); /*0x5a3c67*/
+        v5 = IDA_SLOWORD(v39) + (SWORD1(v39) << 9); /*0x5a3c67*/
         v45 = (unsigned int)Random::State(&g_Randomizer); /*0x5a3c6e*/
         if ( (double)v45 * 2.328306437080797e-10 >= v4[3] ) /*0x5a3c88*/
         {
@@ -6991,7 +6991,7 @@ int RandomMap::GenerateRandomMapTerrain()
   for ( i = LayerClass::CellIteratorNext(&g_abs_87F7E8); i; i = LayerClass::CellIteratorNext(&g_abs_87F7E8) ) /*0x5a42ab*/
   {
     v21 = *(unsigned int *)(i + 36); /*0x5a42b0*/
-    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v21 + 20 * unk_89C2DC * SHIWORD(v21) + 15) = 0; /*0x5a42d5*/
+    *((unsigned int *)g_MapTileArray + 20 * (int16_t)v21 + 20 * unk_89C2DC * IDA_SHIWORD(v21) + 15) = 0; /*0x5a42d5*/
   }
   LayerClass::CellIteratorReset(&g_abs_87F7E8); /*0x5a42e7*/
   BitLCW = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x5a42f6*/
@@ -7000,7 +7000,7 @@ int RandomMap::GenerateRandomMapTerrain()
     do /*0x5a43e6*/
     {
       v21 = *(unsigned int *)(BitLCW + 36); /*0x5a4309*/
-      v4 = (double *)((char *)g_MapTileArray + 80 * (int16_t)v21 + 80 * unk_89C2DC * SHIWORD(v21)); /*0x5a4326*/
+      v4 = (double *)((char *)g_MapTileArray + 80 * (int16_t)v21 + 80 * unk_89C2DC * IDA_SHIWORD(v21)); /*0x5a4326*/
       if ( Cell::IsEmpty((unsigned int *)BitLCW) && !*(unsigned char *)(BitLCW + 284) && !*((unsigned char *)v4 + 69) ) /*0x5a4341*/
       {
         v21 = *(unsigned int *)(BitLCW + 36); /*0x5a4352*/
@@ -7015,7 +7015,7 @@ int RandomMap::GenerateRandomMapTerrain()
           }
           while ( v24 > 60.0 ); /*0x5a43ba*/
           v5 = Math::RoundToInt(v24); /*0x5a43c2*/
-          FloodFillPathfinding(BitLCW, dword_ABC2B8, v5, (int16_t)v21 + (SHIWORD(v21) << 9), 0); /*0x5a43d3*/
+          FloodFillPathfinding(BitLCW, dword_ABC2B8, v5, (int16_t)v21 + (IDA_SHIWORD(v21) << 9), 0); /*0x5a43d3*/
         }
       }
       BitLCW = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x5a43e2*/

@@ -399,7 +399,7 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
   *((unsigned int *)this + 2) = &vt_OverlayClass; /*0x5fc39f*/
   *((unsigned int *)this + 1) = &vt_OverlayClass; /*0x5fc3a6*/
   *((unsigned int *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
+  ((AbstractClass *)((int)this + 4))->GenerateUniqueID(); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
     || (HouseClass_Player.__pad_5568[22953] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22948])
     && *(int *)&HouseClass_Player.__pad_5568[22960] > 0
@@ -414,15 +414,15 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
   if ( (CoordStruct *)aP2->field_0 != *(&g_MatrixTransformState + 2502) ) /*0x5fc41c*/
   {
     *(unsigned int *)&stru_830620.__pad_14B0[6380] = aP3; /*0x5fc43b*/
-    v7 = SHIWORD(aP2->field_0); /*0x5fc444*/
-    IDA_LOWORD(aP1) = ((SLOWORD(aP2->field_0) << 8) + 128) / 256; /*0x5fc469*/
+    v7 = IDA_SHIWORD(aP2->field_0); /*0x5fc444*/
+    IDA_LOWORD(aP1) = ((IDA_SLOWORD(aP2->field_0) << 8) + 128) / 256; /*0x5fc469*/
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
       ObjectClass::Deploy((void *)this); /*0x5fc4b1*/
     *(unsigned int *)&stru_830620.__pad_14B0[6380] = -1; /*0x5fc4b6*/
   }
-  return (OverlayClass *)this; /*0x5fc4c2*/
+  return (int)((OverlayClass *)this);
 
 }
 }
@@ -706,7 +706,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
   if ( !*((unsigned int *)this + 10) ) /*0x62ac39*/
   {
     result = (int)(a2);
-    v4 = g_abs_AC4948; /*0x62ac44*/
+    v4 = (int)(g_abs_AC4948);
     v5 = a2; /*0x62ac4a*/
 LABEL_39:
     *v5 = v4; /*0x62af27*/

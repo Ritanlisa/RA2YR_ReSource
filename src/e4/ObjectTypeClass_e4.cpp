@@ -341,14 +341,14 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (**)(int *, int *))(g_abs_AC1418 + 16))(&g_abs_AC1418, &v8); /*0x5f7435*/
-  if ( v2 != -1 && v2 < g_abs_AC1428 && v2 < --g_abs_AC1428 ) /*0x5f7450*/
+  if ( v2 != -1 && v2 < (int)(g_abs_AC1428) && v2 < --g_abs_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
     {
       ++v2; /*0x5f7458*/
       *((unsigned int *)g_abs_AC141C + v2 - 1) = *((unsigned int *)g_abs_AC141C + v2); /*0x5f745c*/
     }
-    while ( v2 < g_abs_AC1428 ); /*0x5f7468*/
+    while ( v2 < (int)(g_abs_AC1428) ); /*0x5f7468*/
   }
   if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f7476*/
   {
@@ -386,7 +386,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   do /*0x5f755d*/
   {
     v3 -= 2; /*0x5f7552*/
-    ObjectTypeClass::ReleaseWaveAndString(v3); /*0x5f7557*/
+    ((ObjectTypeClass *)(v3))->ReleaseWaveAndString(); /*0x5f7557*/
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
@@ -5697,7 +5697,7 @@ int ObjectTypeClass::ReadDestroyAnim()
       if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
         v5 = *(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
-        sprintf(Buffer, g_abs_817F6C, (int16_t)v5 + 1000 * SHIWORD(v5)); /*0x71cc09*/
+        sprintf(Buffer, g_abs_817F6C, (int16_t)v5 + 1000 * IDA_SHIWORD(v5)); /*0x71cc09*/
         INIClass::SetString(this, (INIClass *)aTerrain, (INIClass *)Buffer, (INIClass *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }
     }

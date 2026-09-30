@@ -236,7 +236,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
         v19 = String::Assign((char **)v25, g_INI_Key_LastDay); /*0x764e79*/
         String::Concat((const char **)v19, (char **)&v24, RegionString); /*0x764e80*/
         DeleteAndZero(v25); /*0x764e89*/
-        v20 = INIClass::ReadInt((char **)this + 18, (char **)&v24, 0); /*0x764e9d*/
+        v20 = ((INIClass *)((char **)this + 18))->ReadInt((char **)&v24, 0); /*0x764e9d*/
         *v18 = v20 < 0 ? 0 : v20;
         DeleteAndZero((void **)&v24); /*0x764eb3*/
         ++v16; /*0x764eb8*/

@@ -353,7 +353,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
 
   v3 = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
   *this = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
-  *this = ntohs(v3); /*0x625b11*/
+  *this = (gamemd::File **)(ntohs(v3));
   v4 = *(unsigned short *)&aP1->__pad_0[2]; /*0x625b17*/
   *((unsigned int *)this + 1) = v4; /*0x625b1a*/
   v5 = &aP1->__pad_0[4]; /*0x625b1f*/
@@ -386,7 +386,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
       break; /*0x625be4*/
     v5 = (char *)aP1a; /*0x625b4a*/
   }
-  return result; /*0x625bec*/
+  return (gamemd::File **)(result);
 
 }
 }
@@ -465,13 +465,13 @@ LABEL_42:
       v2 = Size; /*0x734a38*/
       if ( Size ) /*0x734a3e*/
       {
-        CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734a4a*/
+        ((CCFileClass *)(v23))->Read(unk_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
-      v3 = (char *)dword_B1CF74; /*0x734a53*/
+      v3 = (unsigned char *)((char *)dword_B1CF74);
       unk_B1BF38[v2] = 0; /*0x734a59*/
       strcpy(&v3[v1], unk_B1BF38); /*0x734a7b*/
-      if ( (int)Size > unk_B1CF58 ) /*0x734a90*/
+      if ( (int)Size > (int)(unk_B1CF58) ) /*0x734a90*/
         unk_B1CF58 = Size; /*0x734a92*/
       v4 = v19; /*0x734a9d*/
       v22 = 0; /*0x734aa1*/
@@ -554,7 +554,7 @@ LABEL_31:
             v15 = Size; /*0x734c06*/
             if ( Size ) /*0x734c0c*/
             {
-              CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734c18*/
+              ((CCFileClass *)(v23))->Read(unk_B1BF38, Size); /*0x734c18*/
               v15 = Size; /*0x734c1d*/
             }
             unk_B1BF38[v15] = 0; /*0x734c23*/
@@ -615,9 +615,9 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   u_short *PaletteData; // ebp
   char *v5; // edi
   int v6; // eax
-  int eax12; // eax
+  void * eax12;
   IUnknown *v7; // ecx
-  int eax12a; // eax
+  void * eax12a;
   IUnknown *v9; // edx
   CCINIClass *v10; // edi
   IUnknown *v12; // [esp+10h] [ebp-1Ch] BYREF

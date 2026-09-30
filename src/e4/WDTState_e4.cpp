@@ -190,7 +190,7 @@ namespace gamemd {
 int WDTState_4::Constructor()
 {
 
-  ComPtr::Constructor(this); /*0x76bc63*/
+  ((ComPtr *)(this))->Constructor(); /*0x76bc63*/
   *this = &vt_rc_ptr_WDTTerritory; /*0x76bc68*/
   return this; /*0x76bc70*/
 

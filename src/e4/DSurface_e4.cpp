@@ -66,7 +66,7 @@ AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass
   ObjectClass *v7; // edi
   IUnknown *v8; // eax
 
-  v6 = this + 28; /*0x4ba5b0*/
+  v6 = (unsigned int)(this + 28);
   *((unsigned int *)this + 1) = aP1; /*0x4ba5b5*/
   *((unsigned int *)this + 2) = aP2; /*0x4ba5b8*/
   *((unsigned int *)this + 3) = 0; /*0x4ba5bb*/
@@ -105,7 +105,7 @@ AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass
       *(this + 25) = (*(unsigned int *)v8->__pad_68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
-  return this; /*0x4ba69a*/
+  return (gamemd::AbstractClass *)(this);
 
 }
 } // namespace gamemd
@@ -153,7 +153,7 @@ AbstractClass * * DSurface::CreatePrimary()
   void * v2;
   void * v3;
   void *v4; // edi
-  void * v5;
+  int v5;
   unsigned int *v6; // esi
   int v7; // eax
   int v8; // eax
@@ -356,7 +356,7 @@ AbstractClass * * DSurface::CreatePrimary()
       {
         if ( v22 == 2 && g_abs_87F7E8[34170] == 11 && g_abs_87F7E8[34171] == 3 ) /*0x4babd2*/
         {
-          g_DDraw_PixelFormat = 2; /*0x4babd9*/
+          g_DDraw_PixelFormat = (gamemd::AbstractClass **)(2);
           this->this->this->Debug::Log(); /*0x4babdf*/
           return (unsigned int *)v5; /*0x4babf0*/
         }
@@ -366,7 +366,7 @@ AbstractClass * * DSurface::CreatePrimary()
       {
         if ( g_abs_87F7E8[34171] == 3 ) /*0x4bab72*/
         {
-          g_DDraw_PixelFormat = 0; /*0x4bab7d*/
+          g_DDraw_PixelFormat = (gamemd::AbstractClass **)(0);
           this->this->this->Debug::Log(); /*0x4bab87*/
           return (unsigned int *)v5; /*0x4bab98*/
         }
@@ -728,7 +728,7 @@ LABEL_71:
   v70 = v39; /*0x4bb51a*/
   if ( IntersectSurfaceRects((IUnknown *)&v52, (int)&v67, (XSurface *)&v59, (int)&v63) ) /*0x4bb521*/
   {
-    v56[0] = v67 + v52; /*0x4bb544*/
+    v56[0] = (unsigned int)(v67 + v52);
     v56[1] = (char *)v68 + v53; /*0x4bb552*/
     v58 = (char *)v68 + v55 + v53; /*0x4bb56e*/
     v57 = v52 + v67 + v54; /*0x4bb576*/

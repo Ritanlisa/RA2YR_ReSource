@@ -9,6 +9,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SHA1_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
 
 // 0x7784A0
 namespace gamemd {

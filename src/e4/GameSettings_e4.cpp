@@ -164,18 +164,18 @@ void GameSettings::Read()
   *((unsigned char *)this + 52) = Bool_Overwrite; /*0x5fa90c*/
   v8 = Bool_Overwrite == 1 && IDA_BYTE2(g_abs_87F7E8[34177]) == 1; /*0x5fa919*/
   *((unsigned char *)this + 52) = v8; /*0x5fa91f*/
-  Debug::Log(); /*0x5fa936*/
+  this->Debug::Log(); /*0x5fa936*/
   *((unsigned char *)this + 53) = INIClass::ReadBool_Overwrite( /*0x5fa956*/
                             &g_abs_87F7E8[7734],
                             (uint8_t *)g_INI_Key_Video,
                             (uint8_t *)aAllowhiresmode,
                             *((unsigned char *)this + 53));
-  Debug::Log(); /*0x5fa96d*/
+  this->Debug::Log(); /*0x5fa96d*/
   IDA_HIBYTE(dword_A8ED54[3]) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                               &g_abs_87F7E8[7734],
                               (uint8_t *)g_INI_Key_Video,
                               (uint8_t *)aAllowmodetoggl,
-                              SHIBYTE(dword_A8ED54[3]));
+                              SHIBYTE(((unsigned int *)(dword_A8ED54))[3]));
   v9 = INIClass::ReadBool_Overwrite( /*0x5fa9a8*/
          &g_abs_87F7E8[7734],
          (uint8_t *)g_INI_Key_Video,
@@ -193,7 +193,7 @@ void GameSettings::Read()
   *((float *)this + 14) = Double_Overwrite; /*0x5fa9e2*/
   v12 = Math::RoundToInt(Double_Overwrite * 16384.0); /*0x5fa9eb*/
   EndBufferMixer(g_abs_87E748, v12); /*0x5fa9f8*/
-  Debug::Log(); /*0x5faa0b*/
+  this->Debug::Log(); /*0x5faa0b*/
   v13 = INIClass::ReadDouble_Overwrite( /*0x5faa28*/
           (int)&g_abs_87F7E8[7734],
           (uint8_t *)g_INI_Key_Audio,
@@ -206,7 +206,7 @@ void GameSettings::Read()
   ThemeClass::GetField(v14); /*0x5faa52*/
   v15 = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5faa60*/
   EndBufferMixer(g_abs_87E740, v15); /*0x5faa6d*/
-  Debug::Log(); /*0x5faa80*/
+  this->Debug::Log(); /*0x5faa80*/
   v16 = INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
           (int)&g_abs_87F7E8[7734],
           (uint8_t *)g_INI_Key_Audio,
@@ -219,7 +219,7 @@ void GameSettings::Read()
   EndBufferMixer(g_abs_87E744, v17); /*0x5faacd*/
   v18 = Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5faadb*/
   TechnoTypeClass::CheckFlag(&g_abs_87F7E8[528714], v18); /*0x5faae6*/
-  Debug::Log(); /*0x5faaf9*/
+  this->Debug::Log(); /*0x5faaf9*/
   v19 = INIClass::ReadBool_Overwrite( /*0x5fab14*/
           &g_abs_87F7E8[7734],
           (uint8_t *)g_INI_Key_Audio,
@@ -227,7 +227,7 @@ void GameSettings::Read()
           *((unsigned char *)this + 68));
   *((unsigned char *)this + 68) = v19; /*0x5fab19*/
   IDA_LOBYTE(g_abs_87F7E8[528718]) = v19; /*0x5fab1c*/
-  Debug::Log(); /*0x5fab38*/
+  this->Debug::Log(); /*0x5fab38*/
   v20 = INIClass::ReadBool_Overwrite( /*0x5fab53*/
           &g_abs_87F7E8[7734],
           (uint8_t *)g_INI_Key_Audio,
@@ -235,7 +235,7 @@ void GameSettings::Read()
           *((unsigned char *)this + 70));
   *((unsigned char *)this + 70) = v20; /*0x5fab58*/
   IDA_BYTE2(g_abs_87F7E8[528718]) = v20; /*0x5fab5b*/
-  Debug::Log(); /*0x5fab77*/
+  this->Debug::Log(); /*0x5fab77*/
   *((unsigned char *)this + 69) = INIClass::ReadBool_Overwrite( /*0x5fabb8*/
                             &g_abs_87F7E8[7734],
                             (uint8_t *)g_INI_Key_Audio,

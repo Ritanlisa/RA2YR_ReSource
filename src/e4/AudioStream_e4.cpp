@@ -452,7 +452,7 @@ int AudioStream::ReadSamples(const void * a2)
 
   unsigned int *v2; // ebx
   int v3; // edx
-  unsigned int v5;
+  unsigned int * v5;
   unsigned short *v6; // ebx
   unsigned int v7; // edi
   int v8; // ebp

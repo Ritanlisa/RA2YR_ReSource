@@ -113,6 +113,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
 {
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 
   CCINIClass *v7; // esi
@@ -390,13 +391,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
     unsigned int v5 = 0;  /* G37 hoist */
 
   u_int v2; // eax
-  int v4; // eax
+  AbstractClass ** v4;
   u_int v5; // eax
 
   v2 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, -1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(*((unsigned int *)this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    v4 = (gamemd::AbstractClass **)(*((unsigned int *)this + 64540));
+    v4 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 64540)));
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, v4); /*0x7b1c0e*/
@@ -461,7 +462,7 @@ unsigned char * IPXInterfaceClass::processPacket()
   result = 0; /*0x7b2249*/
   if ( *((unsigned int *)this + 64535) == 128 ) /*0x7b2253*/
   {
-    result = RA2_OPNEW(0x2A0u); /*0x7b225a*/
+    result = (unsigned char *)(RA2_OPNEW(0x2A0u));
     result[22] = 1; /*0x7b2264*/
     result[21] = 1; /*0x7b2267*/
   }

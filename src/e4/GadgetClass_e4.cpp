@@ -19,7 +19,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
 
   unsigned int *result; // eax
 
-  result = this; /*0x4e12f4*/
+  result = (gamemd::ControlClass)(this);
   *(this + 4) = a3; /*0x4e12fb*/
   *(this + 3) = a2; /*0x4e1302*/
   *(this + 6) = a5; /*0x4e1309*/

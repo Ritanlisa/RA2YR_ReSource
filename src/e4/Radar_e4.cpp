@@ -292,11 +292,11 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   IUnknown *aP5a; // [esp+88h] [ebp+14h]
 
   v6 = aP1; /*0x5824a5*/
-  v98 = SHIWORD(aP1->field_4); /*0x5824b3*/
+  v98 = IDA_SHIWORD(aP1->field_4); /*0x5824b3*/
   v7 = aP1; /*0x5824be*/
   v8 = aP1; /*0x5824c0*/
-  v9 = SLOWORD(aP5->field_0); /*0x5824c6*/
-  aP5a = (IUnknown *)SHIWORD(aP5->field_0); /*0x5824cd*/
+  v9 = IDA_SLOWORD(aP5->field_0); /*0x5824c6*/
+  aP5a = (IUnknown *)IDA_SHIWORD(aP5->field_0); /*0x5824cd*/
   v112 = 0; /*0x5824d4*/
   IDA_LOBYTE(v113) = 0; /*0x5824dc*/
   v10 = aP4->field_0; /*0x5824e4*/
@@ -384,7 +384,7 @@ LABEL_14:
     }
   }
   v30 = IDA_LOBYTE(v6->field_8); /*0x5826a9*/
-  if ( SHIWORD(v6->field_4) == v98 ) /*0x5826ae*/
+  if ( IDA_SHIWORD(v6->field_4) == v98 ) /*0x5826ae*/
   {
     do /*0x5826f5*/
     {
@@ -398,7 +398,7 @@ LABEL_14:
       v8 = (IUnknown *)((char *)v8 + 10); /*0x5826e7*/
       ++v94; /*0x5826eb*/
     }
-    while ( SHIWORD(v8->field_4) == v98 ); /*0x5826f5*/
+    while ( IDA_SHIWORD(v8->field_4) == v98 ); /*0x5826f5*/
   }
   v90 = *((int16_t *)&v8->field_0 + (unsigned int)aP2); /*0x582701*/
   if ( v90 > 0 ) /*0x582705*/
@@ -555,7 +555,7 @@ LABEL_65:
         }
       }
     }
-    else if ( SHIWORD(v47->field_4) == v98 ) /*0x582943*/
+    else if ( IDA_SHIWORD(v47->field_4) == v98 ) /*0x582943*/
     {
       v53 = *(uint8_t *)(v52 + 8) - IDA_LOBYTE(v47->field_8); /*0x582957*/
       if ( (int)((IDA_HIDWORD(v53) ^ v53) - IDA_HIDWORD(v53)) < 2 ) /*0x58295f*/
@@ -665,7 +665,7 @@ LABEL_102:
         aP1a = (IUnknown *)((char *)aP1a + 10); /*0x582d0a*/
         v68 = aP1a; /*0x582d0e*/
       }
-      else if ( SHIWORD(v68->field_4) == v98 /*0x582ba7*/
+      else if ( IDA_SHIWORD(v68->field_4) == v98 /*0x582ba7*/
              && (v73 = IDA_LOBYTE(v68->field_8) - *(uint8_t *)(v71 + 8),
                  (int)((IDA_HIDWORD(v73) ^ v73) - IDA_HIDWORD(v73)) < 2) )
       {
@@ -831,9 +831,9 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
     for ( aP2 = 2; ; --aP2 ) /*0x584577*/
     {
       v3 = aP2; /*0x58457f*/
-      v4 = SLOWORD(aP1->field_0); /*0x584594*/
+      v4 = IDA_SLOWORD(aP1->field_0); /*0x584594*/
       v106 = 1 << (aP2 + 1); /*0x584599*/
-      v5 = SHIWORD(aP1->field_0); /*0x5845a0*/
+      v5 = IDA_SHIWORD(aP1->field_0); /*0x5845a0*/
       v107 = v106; /*0x5845a6*/
       v104 = (IUnknown *)(v4 - v4 % v106); /*0x5845af*/
       v105 = (CCINIClass *)(v5 - v5 % v106); /*0x5845b9*/
@@ -1001,14 +1001,14 @@ LABEL_73:
         do /*0x584b53*/
         {
           v45 = (IUnknown *)(v2->field_54 + v44); /*0x584adc*/
-          v46 = SLOWORD(v45->field_0); /*0x584adf*/
+          v46 = IDA_SLOWORD(v45->field_0); /*0x584adf*/
           if ( v46 >= (int)v11 /*0x584b1e*/
             && v46 < (int)v11 + v9
-            && (v47 = SHIWORD(v45->field_0), v47 >= (int)v10)
+            && (v47 = IDA_SHIWORD(v45->field_0), v47 >= (int)v10)
             && v47 < (int)&v10->__pad_0[v107]
-            || (v48 = SLOWORD(v45->field_4), v48 >= (int)v11)
+            || (v48 = IDA_SLOWORD(v45->field_4), v48 >= (int)v11)
             && v48 < (int)v11 + v9
-            && (v49 = SHIWORD(v45->field_4), v49 >= (int)v10)
+            && (v49 = IDA_SHIWORD(v45->field_4), v49 >= (int)v10)
             && v49 < (int)&v10->__pad_0[v107] )
           {
             if ( IDA_LOBYTE(v45->field_8) ) /*0x584b20*/
@@ -1094,8 +1094,8 @@ LABEL_73:
       v112 = 0; /*0x584cbc*/
       if ( v68 ) /*0x584cc4*/
       {
-        v69 = SHIWORD(aP1->field_0); /*0x584ce3*/
-        v70 = (IUnknown *)(SLOWORD(aP1->field_0) - SLOWORD(aP1->field_0) % 8); /*0x584ce9*/
+        v69 = IDA_SHIWORD(aP1->field_0); /*0x584ce3*/
+        v70 = (IUnknown *)(IDA_SLOWORD(aP1->field_0) - IDA_SLOWORD(aP1->field_0) % 8); /*0x584ce9*/
         v104 = v70; /*0x584cf2*/
         v71 = (IUnknown *)(v69 - v69 % 8); /*0x584cfd*/
         v92 = v71; /*0x584cff*/
@@ -1485,10 +1485,10 @@ MapClass * * Radar::RenderMinimap()
   v5 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, v4); /*0x656f59*/
   v6 = *((unsigned int *)this + 1316); /*0x656f61*/
   v91 = v5[9]; /*0x656f67*/
-  v7 = SHIWORD(v91); /*0x656f71*/
+  v7 = IDA_SHIWORD(v91); /*0x656f71*/
   v8 = (int16_t)v91; /*0x656f76*/
   v9 = (int *)((char *)this + 5276); /*0x656f7b*/
-  v10 = (int16_t)v91 + v6 - SHIWORD(v91); /*0x656f81*/
+  v10 = (int16_t)v91 + v6 - IDA_SHIWORD(v91); /*0x656f81*/
   v91 = *((int *)this + 1319); /*0x656f83*/
   v88 = v10; /*0x656f87*/
   *(unsigned int *)v96 = v8; /*0x656f8b*/

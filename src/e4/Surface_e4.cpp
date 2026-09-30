@@ -477,14 +477,14 @@ int Surface::RenderRadar()
       v35 = *(unsigned int *)(*((unsigned int *)this + 1162) + 4 * v4); /*0x65528b*/
       if ( !LayerClass::IsWithinUsableArea(this, (IUnknown *)&v35, (TechnoClass *)1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
-      v5 = (int16_t)v35 + *((unsigned int *)this + 1316) - SHIWORD(v35); /*0x6552b8*/
+      v5 = (int16_t)v35 + *((unsigned int *)this + 1316) - IDA_SHIWORD(v35); /*0x6552b8*/
       v6 = 2; /*0x6552bf*/
       if ( v5 == -1 ) /*0x6552c4*/
         break; /*0x6552c4*/
       if ( v5 == 2 * *((unsigned int *)this + 65) - 1 ) /*0x6552d6*/
         goto LABEL_6; /*0x6552d6*/
 LABEL_7:
-      v40 = (int16_t)v35 + SHIWORD(v35) - *((unsigned int *)this + 1318); /*0x6552dd*/
+      v40 = (int16_t)v35 + IDA_SHIWORD(v35) - *((unsigned int *)this + 1318); /*0x6552dd*/
       v41 = v6; /*0x6552e8*/
       v7 = (RadarClass *)*((unsigned int *)this + 1168); /*0x6552ec*/
       v42 = 1; /*0x6552f2*/

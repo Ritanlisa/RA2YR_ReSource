@@ -97,7 +97,7 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   unsigned int *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &vt_AbstractTypeClass; /*0x4109cd*/
+  *this = (unsigned int *)(&vt_AbstractTypeClass);
   *(this + 1) = &vt_AbstractTypeClass; /*0x4109d3*/
   *(this + 2) = &vt_AbstractTypeClass; /*0x4109da*/
   *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/

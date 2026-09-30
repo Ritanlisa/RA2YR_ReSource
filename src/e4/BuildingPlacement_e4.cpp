@@ -441,23 +441,23 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     {
       v10 = *(unsigned int *)(*(unsigned int *)(v4 + 4) + 4 * v33); /*0x595025*/
       if ( v9 ) /*0x59502c*/
-        v39 = v9[20 * (int16_t)v10 + 14 + 20 * unk_89C2DC * SHIWORD(v10)]; /*0x595053*/
+        v39 = v9[20 * (int16_t)v10 + 14 + 20 * unk_89C2DC * IDA_SHIWORD(v10)]; /*0x595053*/
       else
         v39 = -1; /*0x59502e*/
       v11 = v33 + 1; /*0x59505b*/
       if ( v33 + 1 < v8 )
       {
         v43 = (int16_t)v10; /*0x595072*/
-        v45 = SHIWORD(v10); /*0x595076*/
+        v45 = IDA_SHIWORD(v10); /*0x595076*/
         do
         {
           v37 = *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v11); /*0x59508b*/
           if ( v9 ) /*0x59509d*/
-            v12 = v9[20 * (int16_t)v37 + 14 + 20 * unk_89C2DC * SHIWORD(v37)]; /*0x5950b3*/
+            v12 = v9[20 * (int16_t)v37 + 14 + 20 * unk_89C2DC * IDA_SHIWORD(v37)]; /*0x5950b3*/
           else
             v12 = -1; /*0x59509f*/
           v13 = Math::Sqrt((double)((v43 - (int16_t)v37) * (v43 - (int16_t)v37)
-                                  + (v45 - SHIWORD(v37)) * (v45 - SHIWORD(v37))))
+                                  + (v45 - IDA_SHIWORD(v37)) * (v45 - IDA_SHIWORD(v37))))
               + (double)(v39 != v12 ? 0x14 : 0);
           if ( v11 && v13 > v49 ) /*0x5950fd*/
           {
@@ -520,7 +520,7 @@ LABEL_38:
           {
             v25 = *(unsigned int *)(*(unsigned int *)(v4 + 4) + 4 * v34); /*0x595244*/
             if ( v9 ) /*0x595250*/
-              v42 = v9[20 * (int16_t)v25 + 14 + 20 * unk_89C2DC * SHIWORD(v25)]; /*0x595275*/
+              v42 = v9[20 * (int16_t)v25 + 14 + 20 * unk_89C2DC * IDA_SHIWORD(v25)]; /*0x595275*/
             else
               v42 = -1; /*0x595252*/
             v26 = 0; /*0x595279*/
@@ -528,16 +528,16 @@ LABEL_38:
             if ( v19 > 0 )
             {
               v47 = (int16_t)v25; /*0x595299*/
-              v44 = SHIWORD(v25); /*0x59529d*/
+              v44 = IDA_SHIWORD(v25); /*0x59529d*/
               do
               {
                 v46 = *(unsigned int *)(v35[1] + 4 * v26); /*0x5952b3*/
                 if ( v9 ) /*0x5952c5*/
-                  v27 = v9[20 * (int16_t)v46 + 14 + 20 * unk_89C2DC * SHIWORD(v46)]; /*0x5952db*/
+                  v27 = v9[20 * (int16_t)v46 + 14 + 20 * unk_89C2DC * IDA_SHIWORD(v46)]; /*0x5952db*/
                 else
                   v27 = -1; /*0x5952c7*/
                 v28 = Math::Sqrt((double)((v47 - (int16_t)v46) * (v47 - (int16_t)v46)
-                                        + (v44 - SHIWORD(v46)) * (v44 - SHIWORD(v46))))
+                                        + (v44 - IDA_SHIWORD(v46)) * (v44 - IDA_SHIWORD(v46))))
                     + (double)(v42 != v27 ? 0x14 : 0);
                 if ( v28 < v38 ) /*0x595321*/
                   v38 = v28; /*0x595323*/

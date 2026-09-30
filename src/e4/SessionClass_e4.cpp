@@ -126,7 +126,7 @@ MixFileClass * SessionClass::Load()
   unsigned int *v4; // eax
   void *PlayerSide; // eax
   int v6; // esi
-  char * v7;
+  unsigned int v7;
 
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(g_abs_8298D0), (v2 = RA2_OPNEW(0x28u)) == 0)
@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))))));
+            v7 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0])))))));
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/
@@ -170,7 +170,7 @@ MixFileClass * SessionClass::Load()
       }
     }
   }
-  return result; /*0x552d5d*/
+  return (gamemd::MixFileClass *)(result);
 
 }
 } // namespace gamemd
@@ -234,7 +234,7 @@ LABEL_14:
     DeleteAndZero(&v14); /*0x5ae089*/
     goto LABEL_14; /*0x5ae089*/
   }
-  v12 = (ObjectClass *)String::GetOrEmpty_Alt((char **)&v11->__pad_0[4]); /*0x5ae09b*/
+  v12 = (gamemd::MixFileClass *)((ObjectClass *)String::GetOrEmpty_Alt((char **)&v11->__pad_0[4]));
   ScenarioClass::SetFileName(aP1->__pad_0, v12); /*0x5ae0a7*/
   *(unsigned short *)&aP1[79].onBridge = Network_Load(v6, v11); /*0x5ae0b8*/
   DeleteAndZero(&v13); /*0x5ae0bf*/

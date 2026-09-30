@@ -21,6 +21,8 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {
@@ -256,7 +258,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
   IUnknown *v14; // eax
   int v15; // ecx
   int v16; // eax
-  int v17; // edx
+  int * v17;
   unsigned int *v18; // ebp
   int v19; // ecx
   int v20; // eax

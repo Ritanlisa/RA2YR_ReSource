@@ -152,7 +152,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   unsigned int v26;
   uint8_t *v27; // esi
   char *v28; // ebp
-  int * v29;
+  unsigned int v29;
   int * v30;
   uint8_t v31; // cl
   char v32; // cl
@@ -163,7 +163,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int * v37;
   int v38; // [esp+8h] [ebp-C8h]
   int v39; // [esp+8h] [ebp-C8h]
-  unsigned int v40;
+  int * v40;
   int * v41;
   int * v42;
   int * v43;
@@ -314,7 +314,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (unsigned int)(v37 - v41);
-            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))));
+            v29 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40)))))))))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/

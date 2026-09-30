@@ -21,6 +21,7 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/MSOverlayAnim_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {

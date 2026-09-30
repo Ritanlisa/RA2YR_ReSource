@@ -36,7 +36,7 @@ void TemporalClass::Constructor()
   unsigned int v2;
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a453*/
   v2 = g_abs_A8ED84; /*0x71a458*/
   *((unsigned int *)this + 13) = 0; /*0x71a45d*/
   *((unsigned int *)this + 11) = v2; /*0x71a464*/

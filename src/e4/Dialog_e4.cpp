@@ -345,7 +345,7 @@ LABEL_35:
     }
     _strupr(Source); /*0x5f2ac4*/
     if ( strlen(Source) ) /*0x5f2acd*/
-      Debug::Log(); /*0x5f2ae6*/
+      this->Debug::Log(); /*0x5f2ae6*/
     if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
     {
       memset(&dword_A8ED54[51533], 0, 0x50u); /*0x5f2b12*/

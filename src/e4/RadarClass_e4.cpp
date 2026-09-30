@@ -69,7 +69,7 @@ CampaignClass * RadarClass::Destruct()
   }
   *((unsigned char *)this + 4657) = 0; /*0x652cb9*/
   *((unsigned int *)this + 1163) = 0; /*0x652cbf*/
-  return MapClass::Destruct(this); /*0x652cca*/
+  return ((MapClass *)(this))->Destruct(); /*0x652cca*/
 
 }
 }

@@ -59,7 +59,7 @@ int AudioMixer::PlaySample()
     *((unsigned int *)this + 1) = v2; /*0x4071dc*/
     v5 = *this; /*0x4071df*/
     IDA_LOBYTE(v5) = *this | 2; /*0x4071e1*/
-    *this = v5; /*0x4071e3*/
+    *(_DWORD *)this = v5; /*0x4071e3*/
     return 1; /*0x4071e6*/
   }
   else
@@ -81,7 +81,7 @@ int AudioMixer::PlaySample()
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-        v20 = v16 + *((unsigned int *)this + 1); /*0x407287*/
+        v20 = (int)(v16 + *((unsigned int *)this + 1));
         v19 = *this; /*0x407289*/
         IDA_LOBYTE(v19) = *this | 2; /*0x40728b*/
         *((unsigned int *)this + 1) = v20; /*0x40728d*/
@@ -92,14 +92,14 @@ int AudioMixer::PlaySample()
         v19 = *this; /*0x407273*/
         IDA_LOBYTE(v19) = *this | 2; /*0x407275*/
       }
-      *this = v19; /*0x407277*/
+      *(_DWORD *)this = v19; /*0x407277*/
       return 1; /*0x40727a*/
     }
     else
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-        v18 = *((unsigned int *)this + 1) - v16; /*0x407251*/
+        v18 = (int)(*((unsigned int *)this + 1) - v16);
         v17 = *this; /*0x407253*/
         IDA_LOBYTE(v17) = *this | 2; /*0x407255*/
         *((unsigned int *)this + 1) = v18; /*0x407257*/
@@ -110,7 +110,7 @@ int AudioMixer::PlaySample()
         v17 = *this; /*0x40723d*/
         IDA_LOBYTE(v17) = *this | 2; /*0x40723f*/
       }
-      *this = v17; /*0x407241*/
+      *(_DWORD *)this = v17; /*0x407241*/
       return 1; /*0x407244*/
     }
   }

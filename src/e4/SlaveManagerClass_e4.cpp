@@ -168,7 +168,7 @@ void SlaveManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af366*/
   *((unsigned int *)this + 15) = 0; /*0x6af371*/
   *((unsigned int *)this + 16) = 0; /*0x6af374*/
   *((unsigned char *)this + 68) = 1; /*0x6af377*/

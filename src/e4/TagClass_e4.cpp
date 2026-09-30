@@ -266,14 +266,14 @@ void TagClass::Unlink()
   *((char *)this + 10) = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
-    if ( *(int **)(v2 + 64) == this ) /*0x71ae05*/
+    if ( *(int **)(v2 + 64) == (int *)(this) ) /*0x71ae05*/
       *(unsigned int *)(v2 + 64) = 0; /*0x71ae07*/
     TagClass::Unlink(*((char *)this + 17)); /*0x71ae0d*/
   }
   result = *((char *)this + 16); /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
-    if ( *(int **)(result + 68) == this ) /*0x71ae1c*/
+    if ( *(int **)(result + 68) == (int *)(this) ) /*0x71ae1c*/
       *(unsigned int *)(result + 68) = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*((char *)this + 16)); /*0x71ae24*/
   }

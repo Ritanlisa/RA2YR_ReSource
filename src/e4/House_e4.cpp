@@ -235,9 +235,9 @@ LABEL_48:
           && *(unsigned int *)(v18 + 712) != -1
           && *(unsigned int *)(v18 + 724) == *(uint8_t *)(this + 282) )
         {
-          v34 = SLOWORD(v3->field_0); /*0x47d9d0*/
+          v34 = IDA_SLOWORD(v3->field_0); /*0x47d9d0*/
           v35 = *(int16_t *)(this + 38); /*0x47d9d3*/
-          v61 = g_abs_89E7C0 * *(char *)(this + 283); /*0x47d9e1*/
+          v61 = (unsigned int)(g_abs_89E7C0)* *(char *)(this + 283); /*0x47d9e1*/
           v36 = Matrix3x4::TransformCell( /*0x47da03*/
                   *(float **)&g_abs_87F8E4,
                   (AbstractClass *)v62,
@@ -274,7 +274,7 @@ LABEL_48:
           inited = (IUnknown **)InitCoordinateOffsetsMap(v18); /*0x47daa7*/
           if ( inited ) /*0x47daab*/
           {
-            while ( (*(unsigned short *)inited != 0x7FFF || *((unsigned short *)inited + 1) != 0x7FFF) && *inited != g_abs_89E748 ) /*0x47dacf*/
+            while ( (*(unsigned short *)inited != 0x7FFF || *((unsigned short *)inited + 1) != 0x7FFF) && *inited != (IUnknown *)(g_abs_89E748) ) /*0x47dacf*/
             {
               IDA_LOWORD(aP1) = IDA_LOWORD(v3->field_0) + *(unsigned short *)inited; /*0x47dae6*/
               IDA_HIWORD(aP1) = *((unsigned short *)inited + 1) + *(unsigned short *)(this + 38); /*0x47daf3*/
@@ -430,7 +430,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
   v23 = 0; /*0x47fbbc*/
   if ( v4[681] ) /*0x47fbc0*/
   {
-    BuildingByTiberiumType = FindBuildingByTiberiumType(v3); /*0x47fbce*/
+    BuildingByTiberiumType = (int)(FindBuildingByTiberiumType(v3));
     if ( BuildingByTiberiumType == -1 ) /*0x47fbd6*/
       goto LABEL_12; /*0x47fbd6*/
     v6 = *(unsigned int **)(*(unsigned int *)&g_abs_B077F8 + 4 * BuildingByTiberiumType); /*0x47fbe2*/
@@ -480,12 +480,12 @@ LABEL_13:
     aP1->field_C = 0; /*0x47fd59*/
     return &aP1->field_0; /*0x47fd63*/
   }
-  House::Constructor(v23); /*0x47fd66*/
+  ((House *)(v23))->Constructor(); /*0x47fd66*/
   if ( v4[682] ) /*0x47fd6b*/
     a2 = 0; /*0x47fd75*/
   v16 = v25 - *((int16_t *)v23 + 1) / 2; /*0x47fd93*/
   v17 = v26 - *((int16_t *)v23 + 2) / 2; /*0x47fd9f*/
-  FoundationSize = Building::GetFoundationSize(a1, a2); /*0x47fda7*/
+  FoundationSize = ((Building *)(a1))->GetFoundationSize(a2); /*0x47fda7*/
   v19 = v16 + *FoundationSize; /*0x47fdb1*/
   v20 = v17 + FoundationSize[1]; /*0x47fdb7*/
   v21 = FoundationSize[2]; /*0x47fdb9*/
@@ -562,7 +562,7 @@ LABEL_5:
     && *(unsigned int *)&HouseClass_Player.__pad_5568[8068]
     && !*(unsigned char *)(*((unsigned int *)this + 13) + 422) )
   {
-    v5 = CellStruct::Equals((unsigned short *)((char *)this + 21652), &HouseClass_Player.__pad_5568[23780])
+    v5 = ((CellStruct *)((unsigned short *)((char *)this + 21652)))->Equals(&HouseClass_Player.__pad_5568[23780])
        ? *(CellStruct **)((char *)this + 21648)
        : *(CellStruct **)((char *)this + 21652);
     v34 = v5; /*0x4fd58b*/
@@ -590,10 +590,10 @@ LABEL_5:
               IDA_HIDWORD(v8) = v10->relatedTagsCapacity; /*0x4fd616*/
               if ( !*(unsigned char *)(IDA_HIDWORD(v8) + 422) && !v10->defeated )
               {
-                v11 = CellStruct::Equals((unsigned short *)((char *)this + 21652), &HouseClass_Player.__pad_5568[23780])
+                v11 = ((CellStruct *)((unsigned short *)((char *)this + 21652)))->Equals(&HouseClass_Player.__pad_5568[23780])
                     ? *(CellStruct **)((char *)this + 21648)
                     : *(CellStruct **)((char *)this + 21652);
-                v35[0] = v11; /*0x4fd660*/
+                v35[0] = (unsigned int)(v11);
                 if ( CellStruct::Equals(v35, &HouseClass_Player.__pad_5568[23780]) ) /*0x4fd664*/
                 {
                   v12 = *(unsigned int *)&HouseClass_Player.__pad_5568[23876]; /*0x4fd66d*/

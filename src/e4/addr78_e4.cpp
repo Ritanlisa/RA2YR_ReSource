@@ -57,6 +57,7 @@ void WOL_ResetSystem()
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */

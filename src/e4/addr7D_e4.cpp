@@ -116,7 +116,7 @@ void __sbh_heap_check()
               else
               {
                 v11 = (int)((unsigned int *)((v9 >> 4) - 1));
-                if ( v11 > (unsigned int *)(63) ) /*0x7d049f*/
+                if ( v11 > (unsigned int)((unsigned int *))(63) ) /*0x7d049f*/
                   v11 = 63; /*0x7d04a3*/
                 ++v21[v11]; /*0x7d04a4*/
               }

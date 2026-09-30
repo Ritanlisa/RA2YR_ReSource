@@ -396,10 +396,10 @@ int Cell::IsGroundTypeRange()
   if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x4865e2*/
     return 1; /*0x4865e4*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14 /*0x48663a*/
-      || v1 >= unk_AA073C && v1 < unk_AA073C + 4
+      || v1 >= (int)(unk_AA073C) && v1 < unk_AA073C + 4
       || v1 >= dword_ABB110 && v1 < dword_ABB110 + 4
-      || v1 >= unk_AA1050 && v1 < unk_AA1050 + 4
-      || v1 >= unk_AA10A0 && v1 < unk_AA10A0 + 4;
+      || v1 >= (int)(unk_AA1050) && v1 < unk_AA1050 + 4
+      || v1 >= (int)(unk_AA10A0) && v1 < unk_AA10A0 + 4;
 
 }
 }
@@ -449,7 +449,7 @@ void Cell::IsShore()
   int v1; // eax
 
   v1 = *((char *)this + 14); /*0x4867b0*/
-  return v1 == unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
+  return v1 == (int)(unk_AA0E18) || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
 
 }
 }
@@ -570,7 +570,7 @@ LABEL_10:
   }
 LABEL_12:
   aP1 = *(IUnknown **)((char *)this + 36); /*0x487aaa*/
-  ((Coord *)(v17))->Subtract((IUnknown *)(((int16_t)aP1 << 8) + 128), (IUnknown *)((SHIWORD(aP1) << 8) + 128), 0); /*0x487ad0*/
+  ((Coord *)(v17))->Subtract((IUnknown *)(((int16_t)aP1 << 8) + 128), (IUnknown *)((IDA_SHIWORD(aP1) << 8) + 128), 0); /*0x487ad0*/
   v16[0] = 128; /*0x487adc*/
   v16[1] = 128; /*0x487ae0*/
   v7 = (AbstractClass *)Isometric::InitTables(this, (IUnknown *)v16); /*0x487ae9*/
@@ -733,7 +733,7 @@ namespace gamemd {
 int Cell::Exists(MouseClass * aP1)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 79) + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
+  return *(unsigned int *)(*((unsigned int *)this + 79) + 4 * (IDA_SLOWORD(aP1->field_0) + (IDA_SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
 
 }
 }
@@ -742,7 +742,7 @@ namespace gamemd {
 int Cell::CoordToIndex(IUnknown * aP1)
 {
 
-  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (*((unsigned int *)this + 62) + *((unsigned int *)this + 61) + 1); /*0x56d450*/
+  return IDA_SLOWORD(aP1->field_0) + IDA_SHIWORD(aP1->field_0) * (*((unsigned int *)this + 62) + *((unsigned int *)this + 61) + 1); /*0x56d450*/
 
 }
 }
@@ -770,7 +770,7 @@ int Cell::SetRadar(IUnknown * aP1)
   unsigned int v18[8]; // [esp+14h] [ebp-20h] BYREF
   IUnknown *aP1a; // [esp+38h] [ebp+4h]
 
-  v2 = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (*((char *)this + 62) + *((char *)this + 61) + 1); /*0x56d484*/
+  v2 = IDA_SLOWORD(aP1->field_0) + IDA_SHIWORD(aP1->field_0) * (*((char *)this + 62) + *((char *)this + 61) + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
     v3 = *((char *)this + 27); /*0x56d48c*/
@@ -859,7 +859,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
   unsigned int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
   IUnknown *aP0a; // [esp+2Ch] [ebp+4h]
 
-  v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x56e9a9*/
+  v4 = IDA_SLOWORD(aP0->field_0) + (IDA_SHIWORD(aP0->field_0) << 9); /*0x56e9a9*/
   if ( v4 < 0x40000 && (v5 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v4)) != 0 ) /*0x56e9bf*/
   {
     v6 = v5; /*0x56e9c1*/
@@ -881,8 +881,8 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
                    *((uint8_t *)v6 + 282));
     if ( !(unsigned char)v7 ) /*0x56ea11*/
       return (char)v7; /*0x56ea11*/
-    v8 = SHIWORD(aP0->field_0) << 8; /*0x56ea2a*/
-    a1[0] = (SLOWORD(aP0->field_0) << 8) + 128; /*0x56ea2d*/
+    v8 = IDA_SHIWORD(aP0->field_0) << 8; /*0x56ea2a*/
+    a1[0] = (IDA_SLOWORD(aP0->field_0) << 8) + 128; /*0x56ea2d*/
     a1[1] = v8 + 128; /*0x56ea3b*/
     a1[2] = 0; /*0x56ea47*/
     Coord::To_Screen(*(unsigned int **)&stru_87C374.__pad_579C[22548], a1, (IUnknown *)&v20); /*0x56ea4f*/
@@ -908,7 +908,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
       IDA_LOWORD(v14) = IDA_LOWORD(aP0->field_0) + *(unsigned short *)&stru_89E138.__pad_14B0[4 * v14 + 160]; /*0x56eb05*/
       IDA_HIWORD(a3) = IDA_HIWORD(aP0->field_0) + *(unsigned short *)(v15 + 2); /*0x56eb08*/
       IDA_LOWORD(a3) = v14; /*0x56eb0d*/
-      v16 = SHIWORD(a3) << 9; /*0x56eb1c*/
+      v16 = IDA_SHIWORD(a3) << 9; /*0x56eb1c*/
       v17 = (int16_t)v14 + v16 < 0; /*0x56eb1f*/
       v18 = (int16_t)v14 + v16; /*0x56eb1f*/
       aP1 = (IUnknown *)a3; /*0x56eb21*/
@@ -954,7 +954,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
   unsigned int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v5 = aP0; /*0x56eb87*/
-  v6 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x56eb99*/
+  v6 = IDA_SLOWORD(aP0->field_0) + (IDA_SHIWORD(aP0->field_0) << 9); /*0x56eb99*/
   if ( v6 < 0x40000 && (v7 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v6)) != 0 ) /*0x56ebaf*/
   {
     v8 = v7; /*0x56ebb1*/
@@ -972,8 +972,8 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
   }
   else
   {
-    v11 = SHIWORD(aP0->field_0); /*0x56ebd4*/
-    a1[0] = (SLOWORD(aP0->field_0) << 8) + 128; /*0x56ebe5*/
+    v11 = IDA_SHIWORD(aP0->field_0); /*0x56ebd4*/
+    a1[0] = (IDA_SLOWORD(aP0->field_0) << 8) + 128; /*0x56ebe5*/
     a1[1] = (v11 << 8) + 128; /*0x56ebfe*/
     a1[2] = 0; /*0x56ec02*/
     Coord::To_Screen(*(unsigned int **)&stru_87C374.__pad_579C[22548], a1, (IUnknown *)&v21); /*0x56ec0a*/
@@ -1029,7 +1029,7 @@ int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
   unsigned int *v3; // eax
   int v4; // esi
 
-  v2 = SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9); /*0x578ade*/
+  v2 = IDA_SLOWORD(aP1->field_0) + (IDA_SHIWORD(aP1->field_0) << 9); /*0x578ade*/
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v2)) == 0 ) /*0x578af4*/
   {
     g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x578af8*/
@@ -1109,10 +1109,10 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   v35 = aP0->field_11B[0]; /*0x579b89*/
   aP0 = *(MouseClass **)&aP0->__pad_18[12]; /*0x579b8d*/
   *(unsigned int *)v44 = aP0; /*0x579b91*/
-  if ( SHIWORD(aP0) + (int16_t)aP0 <= *(int *)&stru_87C374.__pad_14B0[8376] /*0x579bdf*/
-    || (int16_t)aP0 - SHIWORD(aP0) >= *(int *)&stru_87C374.__pad_14B0[8376]
-    || SHIWORD(aP0) - (int16_t)aP0 >= *(int *)&stru_87C374.__pad_14B0[8376]
-    || SHIWORD(aP0) + (int16_t)aP0 > *(unsigned int *)&stru_87C374.__pad_14B0[8376]
+  if ( IDA_SHIWORD(aP0) + (int16_t)aP0 <= *(int *)&stru_87C374.__pad_14B0[8376] /*0x579bdf*/
+    || (int16_t)aP0 - IDA_SHIWORD(aP0) >= *(int *)&stru_87C374.__pad_14B0[8376]
+    || IDA_SHIWORD(aP0) - (int16_t)aP0 >= *(int *)&stru_87C374.__pad_14B0[8376]
+    || IDA_SHIWORD(aP0) + (int16_t)aP0 > *(unsigned int *)&stru_87C374.__pad_14B0[8376]
                                    + 2 * *(unsigned int *)&stru_87C374.__pad_14B0[8380]
     || !Tactical::GetCellData(v44)[74] )
   {
@@ -1342,10 +1342,10 @@ int Cell::GetTerrainMask(IUnknown * aP1, int a3)
   v5 = aP1->field_24; /*0x57b224*/
   v30 = dword_AA0738 + 14; /*0x57b239*/
   aP1a = Cell::IsValidHeight(&aP1->field_0); /*0x57b248*/
-  v6 = SHIWORD(v5) + (int16_t)v5; /*0x57b254*/
+  v6 = IDA_SHIWORD(v5) + (int16_t)v5; /*0x57b254*/
   if ( v6 <= g_MapCellHeight_Value /*0x57b271*/
-    || (int16_t)v5 - SHIWORD(v5) >= g_MapCellHeight_Value
-    || SHIWORD(v5) - (int16_t)v5 >= g_MapCellHeight_Value
+    || (int16_t)v5 - IDA_SHIWORD(v5) >= g_MapCellHeight_Value
+    || IDA_SHIWORD(v5) - (int16_t)v5 >= g_MapCellHeight_Value
     || v6 > g_MapCellCount )
   {
     return 0; /*0x57b27c*/
@@ -1371,7 +1371,7 @@ int Cell::GetTerrainMask(IUnknown * aP1, int a3)
   if ( result < 0 ) /*0x57b2e4*/
   {
     v10 = *((unsigned int *)this + 79); /*0x57b2f1*/
-    v11 = (int16_t)v5 + (SHIWORD(v5) << 9); /*0x57b2f7*/
+    v11 = (int16_t)v5 + (IDA_SHIWORD(v5) << 9); /*0x57b2f7*/
     v12 = *(int **)(v10 + 4 * v11 - 2052); /*0x57b2f9*/
     v13 = (unsigned int *)(v10 + 4 * v11 - 2052); /*0x57b300*/
     if ( v12 && Cell::IsValidHeight(v12) ) /*0x57b30b*/
@@ -1852,7 +1852,7 @@ namespace gamemd {
 int Cell::PosToLinearIndex(IUnknown * aP0)
 {
 
-  return SLOWORD(aP0->field_0) / 4 + 130 * (SHIWORD(aP0->field_0) / 4) + 131; /*0x56bc7c*/
+  return IDA_SLOWORD(aP0->field_0) / 4 + 130 * (IDA_SHIWORD(aP0->field_0) / 4) + 131; /*0x56bc7c*/
 
 }
 } // namespace gamemd
@@ -1918,7 +1918,7 @@ bool Cell::IsPassable(IUnknown * aP0)
     v2 = v1 / 2 + 1; /*0x5863b0*/
     IDA_HIWORD(aP0a) = aP0->field_4 / 256 - v2; /*0x5863b5*/
     IDA_LOWORD(aP0a) = v9 - v2; /*0x5863ba*/
-    v3 = (int16_t)(v9 - v2) + (SHIWORD(aP0a) << 9); /*0x5863c8*/
+    v3 = (int16_t)(v9 - v2) + (IDA_SHIWORD(aP0a) << 9); /*0x5863c8*/
     if ( v3 < 0x40000 && (v4 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v3)) != 0 ) /*0x5863de*/
     {
       v5 = v4; /*0x5863e0*/
@@ -1937,7 +1937,7 @@ bool Cell::IsPassable(IUnknown * aP0)
     v10 = aP0->field_0 / 256; /*0x58641a*/
     IDA_HIWORD(aP0b) = aP0->field_4 / 256 - v1 / 2; /*0x586441*/
     IDA_LOWORD(aP0b) = v10 - v1 / 2; /*0x586446*/
-    v7 = (int16_t)aP0b + (SHIWORD(aP0b) << 9); /*0x586454*/
+    v7 = (int16_t)aP0b + (IDA_SHIWORD(aP0b) << 9); /*0x586454*/
     if ( v7 >= 0x40000 || (NeighbourContent = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v7)) == 0 ) /*0x58646a*/
     {
       g_Map_GlobalCellIndex = aP0b; /*0x586470*/

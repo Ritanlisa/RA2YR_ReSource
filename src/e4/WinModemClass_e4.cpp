@@ -193,7 +193,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   int v6; // ebx
   WinModemClass *v7; // edi
   int (*WinModemClass_field_0x2C)(void); // eax
-  unsigned int result;
+  WinModemClass ** result;
   int Bytes; // eax
   int v11; // esi
   int v12; // eax
@@ -221,7 +221,7 @@ LABEL_2:
     WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
     if ( WinModemClass_field_0x2C ) /*0x774d68*/
     {
-      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(WinModemClass_field_0x2C())))))))))));
+      result = (unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(WinModemClass_field_0x2C()))))))))))));
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -372,7 +372,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   signed int v20; // esi
   signed int v21; // eax
   size_t v22; // eax
-  unsigned int v24;
+  AbstractClass ** v24;
   int i; // [esp+10h] [ebp-108h] BYREF
   ObjectClass *Ticks; // [esp+14h] [ebp-104h]
   int v27; // [esp+1Ch] [ebp-FCh]
@@ -468,7 +468,7 @@ LABEL_21:
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))))))))));
+      v24 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count))))))))))));
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/

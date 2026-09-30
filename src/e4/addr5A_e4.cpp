@@ -53,6 +53,7 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -474,7 +475,7 @@ void GenerateTerrainHeightMapInternal()
     if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
     {
       v2 = (int)((unsigned int *)(dword_ABED04));
-      v3 = 0; /*0x5a342a*/
+      v3 = (unsigned int *)(0);
       while ( 1 ) /*0x5a3431*/
       {
         v4 = (int)((unsigned int *)(v3 & 7));
@@ -896,7 +897,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   *v7 = *(float *)(aP0 + 36); /*0x5a4c23*/
   v7[1] = 0.0; /*0x5a4c25*/
   v44 = *(float *)(aP0 + 36); /*0x5a4c2b*/
-  *((unsigned int *)dword_ABED10 + 20 * SLOWORD(v44) + 20 * g_MapCellWidth * IDA_SHIWORD(v44) + 15) = a4; /*0x5a4c4f*/
+  *((unsigned int *)dword_ABED10 + 20 * IDA_SLOWORD(v44) + 20 * g_MapCellWidth * IDA_SHIWORD(v44) + 15) = a4; /*0x5a4c4f*/
   v15 = *v9 + 1; /*0x5a4c58*/
   v44 = v7[1]; /*0x5a4c5b*/
   v16 = v15 >> 1; /*0x5a4c62*/

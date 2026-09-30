@@ -36,6 +36,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/DropListClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {

@@ -120,7 +120,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     {
       IDA_LOWORD(v71) = (unsigned short)v79; /*0x5b2197*/
     }
-    else if ( SLOWORD(Math::Sub16(&v79, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b21b5*/
+    else if ( IDA_SLOWORD(Math::Sub16(&v79, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b21b5*/
     {
       IDA_LOWORD(v71) = *(unsigned short *)a1 + (unsigned short)v71; /*0x5b21c4*/
     }
@@ -232,7 +232,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   {
     IDA_LOWORD(v79) = IDA_LOWORD(v80[0]); /*0x5b2523*/
   }
-  else if ( SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)&v81, (IUnknown *)&v79)->field_0) >= 0 ) /*0x5b2541*/
+  else if ( IDA_SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)&v81, (IUnknown *)&v79)->field_0) >= 0 ) /*0x5b2541*/
   {
     IDA_LOWORD(v79) = *(unsigned short *)a1 + (unsigned short)v79; /*0x5b2550*/
   }
@@ -258,7 +258,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   IDA_LOWORD(v81) = Math::RoundToInt((v58 - 1.570796326794897) * -10430.06004058427); /*0x5b25ec*/
   v71 = (BuildingTypeClass *)v81; /*0x5b25fa*/
   if ( IDA_LOBYTE(a3)
-    || !BYTE4(a3) && IDA_SLODWORD(v82[0]) <= ((unsigned char)aP3 != 0 ? 6 : 3) << 8
+    || !IDA_BYTE4(a3) && IDA_SLODWORD(v82[0]) <= ((unsigned char)aP3 != 0 ? 6 : 3) << 8
     || (uint8_t)(((*a1 >> 7) + 1) >> 1) <= 1u )
   {
     if ( !(unsigned char)aP4 ) /*0x5b28a1*/
@@ -288,7 +288,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   if ( (*((unsigned int *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1) + 80) & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += (int)*(&g_MatrixTransformState + 77); /*0x5b26fd*/
   v66 = (int)v83[0] / 256; /*0x5b2713*/
-  if ( BYTE4(a3) || (unsigned char)aP3 ) /*0x5b271f*/
+  if ( IDA_BYTE4(a3) || (unsigned char)aP3 ) /*0x5b271f*/
   {
     v66 = 10; /*0x5b272d*/
   }
@@ -329,7 +329,7 @@ LABEL_33:
         {
           IDA_LOWORD(v71) = (unsigned short)v81; /*0x5b2837*/
         }
-        else if ( SLOWORD(Math::Sub16(&v81, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b2858*/
+        else if ( IDA_SLOWORD(Math::Sub16(&v81, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b2858*/
         {
           IDA_LOWORD(v71) = IDA_LOWORD(v80[0]) + (unsigned short)v71; /*0x5b286b*/
         }
@@ -348,7 +348,7 @@ LABEL_33:
       {
         IDA_LOWORD(v71) = IDA_LOWORD(v80[0]); /*0x5b27b0*/
       }
-      else if ( SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b27d1*/
+      else if ( IDA_SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b27d1*/
       {
         IDA_LOWORD(v71) = (unsigned short)v81 + (unsigned short)v71; /*0x5b27e7*/
       }
@@ -360,7 +360,7 @@ LABEL_33:
   }
 LABEL_48:
   Movement::UpdateLocomotion((double *)v48->vtable0, (IUnknown *)&v71); /*0x5b28e5*/
-  if ( BYTE4(a3) ) /*0x5b28f6*/
+  if ( IDA_BYTE4(a3) ) /*0x5b28f6*/
     aP1.NeedsSaveOrLink = 0; /*0x5b28f8*/
   else
     aP1.NeedsSaveOrLink = (void *)((int)aP1.NeedsSaveOrLink / 4); /*0x5b290f*/

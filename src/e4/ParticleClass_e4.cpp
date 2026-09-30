@@ -274,7 +274,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 
   int result; // eax
 
-  result = BuildingClass::SaveLoad_Register((void *)this); /*0x62d7ab*/
+  result = ((BuildingClass *)((void *)this))->SaveLoad_Register(); /*0x62d7ab*/
   if ( result >= 0 ) /*0x62d7b2*/
   {
     if ( aP1 ) /*0x62d7b6*/

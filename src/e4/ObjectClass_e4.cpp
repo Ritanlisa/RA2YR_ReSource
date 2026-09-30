@@ -108,8 +108,8 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
     case 62: /*0x4d7de0*/
       if ( g_MoveFeedback ) /*0x4d7ebc*/
       {
-        v16 = SHIWORD(v7->field_0) << 8; /*0x4d7ed6*/
-        v45.X = (SLOWORD(v7->field_0) << 8) + 128; /*0x4d7ed9*/
+        v16 = IDA_SHIWORD(v7->field_0) << 8; /*0x4d7ed6*/
+        v45.X = (IDA_SLOWORD(v7->field_0) << 8) + 128; /*0x4d7ed9*/
         v45.Y = v16 + 128; /*0x4d7ee9*/
         v45.Z = 0; /*0x4d7eed*/
         v45.Z = Cell::GetGroundHeight((IUnknown *)&v45); /*0x4d7efe*/
@@ -688,9 +688,9 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
                         a2,
                         0);
   IsWithinUsableArea = LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)v7, (TechnoClass *)1); /*0x4de1f8*/
-  v10 = SLOWORD(v7->field_0); /*0x4de1fd*/
+  v10 = IDA_SLOWORD(v7->field_0); /*0x4de1fd*/
   IDA_LOBYTE(aP1) = IsWithinUsableArea; /*0x4de200*/
-  v11 = (SHIWORD(v7->field_0) << 8) + 128; /*0x4de218*/
+  v11 = (IDA_SHIWORD(v7->field_0) << 8) + 128; /*0x4de218*/
   v40[0] = (v10 << 8) + 128; /*0x4de223*/
   v40[1] = v11; /*0x4de227*/
   GroundHeight = 0; /*0x4de22b*/
@@ -727,9 +727,9 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
     IDA_LOBYTE(a4) = 1; /*0x4de335*/
   }
   v18 = (*(int (**)(FootClass *, unsigned int))(*(unsigned int *)esi1->__pad_0 + 188))(esi1, 0); /*0x4de33f*/
-  v19 = SHIWORD(v7->field_0); /*0x4de345*/
+  v19 = IDA_SHIWORD(v7->field_0); /*0x4de345*/
   IDA_LOBYTE(aP3) = v18; /*0x4de349*/
-  v20 = SLOWORD(v7->field_0); /*0x4de34f*/
+  v20 = IDA_SLOWORD(v7->field_0); /*0x4de34f*/
   v43 = 0; /*0x4de35b*/
   v42[1] = (v19 << 8) + 128; /*0x4de35f*/
   v42[0] = (v20 << 8) + 128; /*0x4de375*/

@@ -36,6 +36,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
@@ -45,15 +46,15 @@ int TeamTypeClass::Construct()
     unsigned int v2 = 0;  /* G37 hoist */
 
   void *v2; // eax
-  int v3; // eax
+  TeamTypeClass * v3;
   void *v4; // eax
-  int v5; // eax
+  TeamTypeClass * v5;
   int v7; // [esp+Ch] [ebp-8h]
 
   ((AbstractClass *)((void *)this))->Constructor(); /*0x4c98b7*/
   *((unsigned int *)this + 9) = 0; /*0x4c98be*/
   *((unsigned char *)this + 40) = 0; /*0x4c98c1*/
-  v2 = g_abs_A8ED84; /*0x4c98c4*/
+  v2 = (unsigned int)(g_abs_A8ED84);
   *((unsigned int *)this + 13) = 0; /*0x4c98c9*/
   *((unsigned int *)this + 11) = v2; /*0x4c98cc*/
   *((unsigned int *)this + 14) = 0; /*0x4c98d4*/

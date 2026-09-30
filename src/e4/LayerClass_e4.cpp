@@ -31,9 +31,9 @@ int LayerClass::CoordinatesLegal( IUnknown * aP1)
   int v3; // esi
   int v4; // eax
 
-  v2 = *(this + 61); /*0x568304*/
-  v3 = SLOWORD(aP1->field_0); /*0x56830c*/
-  v4 = SHIWORD(aP1->field_0); /*0x56830f*/
+  v2 = (int)(*(this + 61));
+  v3 = IDA_SLOWORD(aP1->field_0); /*0x56830c*/
+  v4 = IDA_SHIWORD(aP1->field_0); /*0x56830f*/
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x568337*/
 
 }
@@ -124,8 +124,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   unsigned int v96[24]; // [esp+194h] [ebp-60h] BYREF
 
   v17 = aP0; /*0x56dc27*/
-  v18 = (Tactical *)SLOWORD(aP3->field_0); /*0x56dc33*/
-  v19 = (IUnknown *)SHIWORD(aP3->field_0); /*0x56dc36*/
+  v18 = (Tactical *)IDA_SLOWORD(aP3->field_0); /*0x56dc33*/
+  v19 = (IUnknown *)IDA_SHIWORD(aP3->field_0); /*0x56dc36*/
   v80 = aP0; /*0x56dc49*/
   v77 = 0; /*0x56dc4d*/
   v85 = v18; /*0x56dc51*/
@@ -142,7 +142,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   v83 = *((char *)v21 + 283); /*0x56dc99*/
   if ( (unsigned char)aP7 ) /*0x56dca6*/
   {
-    v22 = SLOWORD(aP3->field_0) + (SHIWORD(aP3->field_0) << 9); /*0x56dcb2*/
+    v22 = IDA_SLOWORD(aP3->field_0) + (IDA_SHIWORD(aP3->field_0) << 9); /*0x56dcb2*/
     if ( v22 >= 0x40000 || (v23 = *(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_14B0[8448] + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
       v23 = (unsigned int *)(g_CellClassArray);
@@ -212,7 +212,7 @@ LABEL_23:
                 v77 = v34 + 1; /*0x56dec9*/
                 if ( (unsigned char)aP7 /*0x56df18*/
                   || (aP1a.nextArrayIndex = (v33 << 8) + 128,
-                      aP1a.referenceCount = (SHIWORD(v75) << 8) + 128,
+                      aP1a.referenceCount = (IDA_SHIWORD(v75) << 8) + 128,
                       aP1a.NeedsSaveOrLink = 0,
                       v35 = (TagClass **)((Terrain *)(&aP0a))->ClimbCheck((AbstractClass *)&aP1a.nextArrayIndex),
                       v75 == *v35) )
@@ -271,7 +271,7 @@ LABEL_44:
                 v77 = v43 + 1; /*0x56e0df*/
                 if ( (unsigned char)aP7 /*0x56e12f*/
                   || (*(unsigned int *)v89.__pad_0 = (v42 << 8) + 128,
-                      *(unsigned int *)&((unsigned int *)(v89.__pad_0))[4] = (SHIWORD(v75) << 8) + 128,
+                      *(unsigned int *)&((unsigned int *)(v89.__pad_0))[4] = (IDA_SHIWORD(v75) << 8) + 128,
                       *(unsigned int *)&((unsigned int *)(v89.__pad_0))[8] = 0,
                       v44 = (TagClass **)((Terrain *)((AbstractClass *)&((unsigned int *)(aP0a.__pad_0))[8]))->ClimbCheck(&v89),
                       v75 == *v44) )
@@ -338,7 +338,7 @@ LABEL_67:
                 v77 = v52 + 1; /*0x56e31b*/
                 if ( (unsigned char)aP7 /*0x56e371*/
                   || (*(unsigned int *)&((unsigned int *)(v89.__pad_0))[12] = (v51 << 8) + 128,
-                      v89.uniqueId = (SHIWORD(v75) << 8) + 128,
+                      v89.uniqueId = (IDA_SHIWORD(v75) << 8) + 128,
                       v89.abstractFlags = 0,
                       v53 = (TagClass **)Terrain::ClimbCheck(
                                            (AbstractClass *)&((unsigned int *)(aP0a.__pad_0))[4],
@@ -394,7 +394,7 @@ LABEL_86: v89.nextArrayIndex = (unsigned int)((int16_t)(v78 + (unsigned short)v8
                 v77 = v59 + 1; /*0x56e519*/
                 if ( (unsigned char)aP7 /*0x56e566*/
                   || (*(unsigned int *)&((unsigned int *)(aP1a.__pad_0))[12] = (v58 << 8) + 128,
-                      aP1a.uniqueId = (SHIWORD(v75) << 8) + 128,
+                      aP1a.uniqueId = (IDA_SHIWORD(v75) << 8) + 128,
                       aP1a.abstractFlags = 0,
                       v60 = (TagClass **)((Terrain *)(&aP1a))->ClimbCheck((AbstractClass *)&((unsigned int *)(aP1a.__pad_0))[12]),
                       v75 == *v60) )
@@ -478,9 +478,9 @@ LABEL_123:
       if ( !v80 ) /*0x56e71f*/
         v71 = (TagClass **)&v96[v70]; /*0x56e721*/
       v72 = *v71; /*0x56e728*/
-      v73 = (BuildingTypeClass *)((int16_t)*v71 - SLOWORD(aP14->field_0)); /*0x56e73c*/
+      v73 = (BuildingTypeClass *)((int16_t)*v71 - IDA_SLOWORD(aP14->field_0)); /*0x56e73c*/
       v79 = (TagClass *)((unsigned int)v73 * (unsigned int)v73 /*0x56e751*/
-                       + (SHIWORD(v72) - SHIWORD(aP14->field_0)) * (SHIWORD(v72) - SHIWORD(aP14->field_0)));
+                       + (IDA_SHIWORD(v72) - IDA_SHIWORD(aP14->field_0)) * (IDA_SHIWORD(v72) - IDA_SHIWORD(aP14->field_0)));
       v74 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v79)); /*0x56e75c*/
       if ( v74 < *(double *)aP1a.__pad_0 ) /*0x56e76d*/
       {
@@ -660,8 +660,8 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   bool result; // al
 
   v3 = 0; /*0x57846b*/
-  v4 = SHIWORD(aP1->field_0); /*0x57846d*/
-  v5 = SLOWORD(aP1->field_0); /*0x578472*/
+  v4 = IDA_SHIWORD(aP1->field_0); /*0x57846d*/
+  v5 = IDA_SLOWORD(aP1->field_0); /*0x578472*/
   if ( (unsigned char)aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
@@ -810,9 +810,9 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     v89 = v7;
     v95 = (v7 << 8) + 128;
     v104 = v95;
-    v93 = SHIWORD(v99);
+    v93 = IDA_SHIWORD(v99);
     v106 = 0;
-    v96 = (SHIWORD(v99) << 8) + 128;
+    v96 = (IDA_SHIWORD(v99) << 8) + 128;
     v105 = v96;
     (*(void (**)(unsigned char *, int *))(*(unsigned int *)v8 + 436))(v8, &v104);
     v9 = *(unsigned int *)v8;
@@ -856,7 +856,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
             if ( *(unsigned int *)(v92 + 4 * (v16 + v5 * v15) + 16) && LayerClass::IsWithinUsableArea(v13, (int16_t *)&a3, 1) )
             {
               *(unsigned short *)(v13[28] + 10 * CellToTileIndexMap(v13, (int16_t *)&a3)) = 0;
-              v17 = (int16_t)a3 + (SHIWORD(a3) << 9);
+              v17 = (int16_t)a3 + (IDA_SHIWORD(a3) << 9);
               if ( v17 >= 0x40000 || (v18 = *(unsigned int **)(g_abs_87F924 + 4 * v17)) == 0 )
               {
                 g_Map_GlobalCellIndex = a3;
@@ -909,7 +909,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
           a3 = (int)v94;
           if ( *(unsigned int *)(v92 + 4 * (v24 + j * v23) + 16) && LayerClass::IsWithinUsableArea(v13, (int16_t *)&a3, 1) )
           {
-            v25 = (int16_t)a3 + (SHIWORD(a3) << 9);
+            v25 = (int16_t)a3 + (IDA_SHIWORD(a3) << 9);
             if ( v25 >= 0x40000 || (v26 = *(unsigned int **)(g_abs_87F924 + 4 * v25)) == 0 )
             {
               g_Map_GlobalCellIndex = a3;
@@ -1088,7 +1088,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
               v56 = 0;
             }
             *(unsigned short *)(v51[28] + 10 * v56) = 0;
-            v58 = (int16_t)v92 + (SHIWORD(v92) << 9);
+            v58 = (int16_t)v92 + (IDA_SHIWORD(v92) << 9);
             if ( v58 >= 0x40000 || (v59 = *(unsigned int **)(g_abs_87F924 + 4 * v58)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;
@@ -1148,7 +1148,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
           v92 = v96;
           if ( *(unsigned int *)(v90 + 4 * (v67 + n * v66) + 16) && LayerClass::IsWithinUsableArea(v51, (int16_t *)&v92, 1) )
           {
-            v68 = (int16_t)v92 + (SHIWORD(v92) << 9);
+            v68 = (int16_t)v92 + (IDA_SHIWORD(v92) << 9);
             if ( v68 >= 0x40000 || (v69 = *(unsigned int **)(g_abs_87F924 + 4 * v68)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;

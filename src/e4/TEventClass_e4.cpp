@@ -78,7 +78,7 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
   unsigned int v55[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned char v56[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v8 = *(this + 11); /*0x71e94d*/
+  v8 = (int)(*(this + 11));
   switch ( v8 ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
@@ -639,7 +639,7 @@ void * TEventClass::Fire(void ** Block, char a2)
   }
   v7 = Block; /*0x71fb48*/
   v5 = (*(int (**)(int *, void ***))(g_abs_B0F1A0 + 16))(&g_abs_B0F1A0, &v7); /*0x71fb4c*/
-  if ( v5 != -1 && v5 < (int)(g_abs_B0F1B0) && v5 < --g_abs_B0F1B0 ) /*0x71fb67*/
+  if ( v5 != -1 && v5 < (int)(g_abs_B0F1B0) && v5 < (int)(--g_abs_B0F1B0) ) /*0x71fb67*/
   {
     do /*0x71fb7f*/
     {

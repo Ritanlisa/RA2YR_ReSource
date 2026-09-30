@@ -444,7 +444,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
             v35 = v34 + 156;
             v141 = *(double *)v35;
             IDA_LODWORD(v142) = *(unsigned int *)(v35 + 8);
-            v36 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v141);
+            v36 = (unsigned int *)(Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v141));
             if ( Cell::IsBridge(v36) == (unsigned int *)Member )
               v143 = 1;
           }
@@ -602,14 +602,8 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       v63 = (TechnoClass *)*((unsigned int *)this + 44);
       focus = 0;
       if ( v63 )
-        focus = v63->focus;
-      Instance = PlaySoundEffectAt(
-                   aP1,
-                   (*((unsigned int *)this + 27) * *((unsigned int *)this + 84)) >> 8,
-                   v63,
-                   *((unsigned int *)this + 74),
-                   1,
-                   (int)focus);
+        focus = (void *)(v63->focus);
+      Instance = (int)(PlaySoundEffectAt( aP1, (*((unsigned int *)this + 27) * *((unsigned int *)this + 84)) >> 8, v63, *((unsigned int *)this + 74), 1, (int)focus));
       v66 = *((unsigned char *)this + 144);
       v144 = Instance;
       if ( !v66 )
@@ -1152,7 +1146,7 @@ int Warhead::ApplyPostDamageEffects()
                       }
                       Function::Method_41C430(&v73); /*0x46a693*/
                       v88 = v35; /*0x46a69d*/
-                      IDA_LODWORD(v77) = SLOWORD(v87) - 0x3FFF; /*0x46a6a7*/
+                      IDA_LODWORD(v77) = IDA_SLOWORD(v87) - 0x3FFF; /*0x46a6a7*/
                       v77 = (double)IDA_SLODWORD(v77) * -0.00009587672516830327; /*0x46a6b5*/
                       v73 = Math::ArcTan2(v77) * v35; /*0x46a6d6*/
                       v36 = -(Math::SinCos(v77) * v88); /*0x46a6ea*/

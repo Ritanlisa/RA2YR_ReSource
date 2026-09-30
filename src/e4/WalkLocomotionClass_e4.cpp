@@ -56,7 +56,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       v4 = g_abs_B077F8; /*0x6a039d*/
     }
     if ( __PAIR64__(a4, a3) != __PAIR64__(g_abs_B077FC, v4) /*0x6a03be*/
-      || (IDA_LOBYTE(v4) = BYTE4(g_abs_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(g_abs_B077FC)) )
+      || (IDA_LOBYTE(v4) = IDA_BYTE4(g_abs_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(g_abs_B077FC)) )
     {
       v8 = (unsigned int *)((int64_t)((unsigned int *)(v13)));
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
