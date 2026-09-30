@@ -555,7 +555,8 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
             if c2 < 0:
                 continue
             cm = re.search(
-                r'\(\s*(?:unsigned\s+int|_DWORD|unsigned)\s*\*\s*\)\s*this'
+                r'\(\s*(?:unsigned\s+int|_DWORD|unsigned)\s*\*\s*\)\s*'
+                r'(?:this|this\s*->\s*\w+)'
                 r'\s*\+\s*(\d+)\s*\)\s*$', text[i0 + 2:c1])
             if not cm:
                 continue

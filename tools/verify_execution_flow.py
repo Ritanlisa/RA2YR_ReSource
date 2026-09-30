@@ -618,6 +618,13 @@ def _is_write(text, end):
             i += 1
         while i < n and text[i] == " ":
             i += 1
+    # G40: skip macro/cast-wrapper closers (`IDA_LOBYTE(this->M) = 0`):
+    # consecutive `)` right after the member can only close wrappers opened
+    # before it; an `=` after them is an assignment THROUGH the wrapper.
+    while i < n and text[i] == ")":
+        i += 1
+        while i < n and text[i] == " ":
+            i += 1
     if text[i:i + 2] == "->" or (i < n and text[i] == "."):
         return False
     if i < n and text[i] == "=":
