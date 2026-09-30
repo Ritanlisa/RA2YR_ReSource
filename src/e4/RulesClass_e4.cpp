@@ -2029,17 +2029,17 @@ void RulesClass::readVehicleTypes()
   this->DetailBufferZoneWidth = 0; /*0x67a087*/
 }
 // 0x67A190
-void * RulesClass::readAircraftTypes(int * a2)
+void *  RulesClass::readAircraftTypes()
 {
   int v3; // eax
   int v4; // eax
   int DetailBufferZoneWidth; // ecx
   int v6; // eax
 
-  if ( this != (RulesClass *)a2 ) /*0x67a19a*/
+  if ( this != (RulesClass *)this ) /*0x67a19a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a19e*/
-    v3 = a2[2]; /*0x67a1a1*/
+    v3 = this[2]; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
@@ -2054,7 +2054,7 @@ void * RulesClass::readAircraftTypes(int * a2)
         {
           do /*0x67a1e1*/
           {
-            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x67a1d8*/
+            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a1d8*/
             ++v6; /*0x67a1de*/
           }
           while ( v6 < this->DetailBufferZoneWidth ); /*0x67a1e1*/
@@ -2067,23 +2067,23 @@ void * RulesClass::readAircraftTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a1ec*/
     }
   }
-  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a1f3*/
-  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a1f9*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)this[4]; /*0x67a1f3*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)this[5]; /*0x67a1f9*/
+  this->AttackingAircraftSightRange = this[6]; /*0x67a1ff*/
   return &this->DetailMinFrameRateNormal; /*0x67a204*/
 }
 // 0x67A210
-void * RulesClass::readSuperWeaponTypes(int * a2)
+void *  RulesClass::readSuperWeaponTypes()
 {
   int v3; // eax
   int v4; // eax
   int DetailBufferZoneWidth; // ecx
   int v6; // eax
 
-  if ( this != (RulesClass *)a2 ) /*0x67a21a*/
+  if ( this != (RulesClass *)this ) /*0x67a21a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
-    v3 = a2[2]; /*0x67a221*/
+    v3 = this[2]; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
@@ -2098,7 +2098,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
         {
           do /*0x67a261*/
           {
-            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x67a258*/
+            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a258*/
             ++v6; /*0x67a25e*/
           }
           while ( v6 < this->DetailBufferZoneWidth ); /*0x67a261*/
@@ -2111,23 +2111,23 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a26c*/
     }
   }
-  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a273*/
-  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a279*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)this[4]; /*0x67a273*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)this[5]; /*0x67a279*/
+  this->AttackingAircraftSightRange = this[6]; /*0x67a27f*/
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 }
 // 0x67A310
-void * RulesClass::readBuildingTypes(int * a2)
+void *  RulesClass::readBuildingTypes()
 {
   int v3; // eax
   int v4; // eax
   int DetailBufferZoneWidth; // ecx
   int v6; // eax
 
-  if ( this != (RulesClass *)a2 ) /*0x67a31a*/
+  if ( this != (RulesClass *)this ) /*0x67a31a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
-    v3 = a2[2]; /*0x67a321*/
+    v3 = this[2]; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
@@ -2142,7 +2142,7 @@ void * RulesClass::readBuildingTypes(int * a2)
         {
           do /*0x67a361*/
           {
-            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x67a358*/
+            *(unsigned int *)(this->DetailMinFrameRateMovie + 4 * v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x67a358*/
             ++v6; /*0x67a35e*/
           }
           while ( v6 < this->DetailBufferZoneWidth ); /*0x67a361*/
@@ -2155,9 +2155,9 @@ void * RulesClass::readBuildingTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a36c*/
     }
   }
-  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
-  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a379*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)this[4]; /*0x67a373*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)this[5]; /*0x67a379*/
+  this->AttackingAircraftSightRange = this[6]; /*0x67a37f*/
   return &this->DetailMinFrameRateNormal; /*0x67a384*/
 }
 // 0x67A8B0
@@ -2173,7 +2173,7 @@ unsigned int * RulesClass::readParticles()
   return &this->DetailMinFrameRateNormal; /*0x67a8d1*/
 }
 // 0x67B480
-int RulesClass::readAI(unsigned int * a2)
+int  RulesClass::readAI()
 {
   int DetailBufferZoneWidth; // ecx
   int result; // eax
@@ -2193,7 +2193,7 @@ int RulesClass::readAI(unsigned int * a2)
     result = (int)this->LargeVisceroid; /*0x67b4b5*/
     DetailMinFrameRateMovie = this->DetailMinFrameRateMovie; /*0x67b4b8*/
     *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)(result + 1); /*0x67b4be*/
-    *(unsigned int *)(DetailMinFrameRateMovie + 4 * result) = *a2; /*0x67b4c8*/
+    *(unsigned int *)(DetailMinFrameRateMovie + 4 * result) = *this; /*0x67b4c8*/
     IDA_LOBYTE(result) = 1; /*0x67b4cb*/
   }
   else
@@ -2328,9 +2328,9 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   return &this->DetailMinFrameRateNormal; /*0x67c45d*/
 }
 // 0x6614F0
-int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
+int  RulesClass::readGeneralSection()
 {
-  return (*(int (__stdcall **)(int, RulesClass *, int, unsigned int))(aP1->uniqueId)(aP1, this, 3, 0); /*0x6614ff*/
+  return (*(int (__stdcall **)(int, RulesClass *, int, unsigned int))(this->uniqueId)(this, this, 3, 0); /*0x6614ff*/
 }
 // 0x661510
 int RulesClass::readCombatDamage(int a2)
@@ -2539,20 +2539,20 @@ int RulesClass::ReadSidesList()
   return KeyCount > 0; /*0x67264c*/
 }
 // 0x67A3C0
-int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
+int  RulesClass::readTerrainTypes()
 {
   int v3; // ecx
   int result; // eax
   int i; // esi
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a3cc*/
+  v3 = *this; /*0x67a3cc*/
   LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a3d9*/
-  aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a3dd*/
+  this->IsClean(&LargeVisceroid, 4, 0); /*0x67a3dd*/
   result = (int)LargeVisceroid; /*0x67a3e0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a3e8*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*this + 16))(this, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
     result = (int)LargeVisceroid; /*0x67a3fb*/
   }
   return result; /*0x67a404*/
@@ -2568,20 +2568,20 @@ int RulesClass::readOverlayTypes()
   return (int)this->LargeVisceroid; /*0x67a7c3*/
 }
 // 0x67A7D0
-int RulesClass::readAnimations(TechnoTypeClass * aP1)
+int  RulesClass::readAnimations()
 {
   int v3; // ecx
   int result; // eax
   int i; // esi
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a7dc*/
+  v3 = *this; /*0x67a7dc*/
   LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a7e9*/
-  aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a7ed*/
+  this->IsClean(&LargeVisceroid, 4, 0); /*0x67a7ed*/
   result = (int)LargeVisceroid; /*0x67a7f0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a7f8*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*this + 16))(this, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
     result = (int)LargeVisceroid; /*0x67a80b*/
   }
   return result; /*0x67a814*/
@@ -2592,20 +2592,20 @@ int RulesClass::readWarheads()
   return (int)this->LargeVisceroid; /*0x67a8a3*/
 }
 // 0x67A8E0
-int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
+int  RulesClass::readParticleSystems()
 {
   int v3; // ecx
   int result; // eax
   int i; // esi
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a8ec*/
+  v3 = *this; /*0x67a8ec*/
   LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a8f9*/
-  aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a8fd*/
+  this->IsClean(&LargeVisceroid, 4, 0); /*0x67a8fd*/
   result = (int)LargeVisceroid; /*0x67a900*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a908*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*this + 16))(this, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
     result = (int)LargeVisceroid; /*0x67a91b*/
   }
   return result; /*0x67a924*/

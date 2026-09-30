@@ -745,7 +745,7 @@ void unknown::ddtor()
   this->m_8 = 0; /*0x588d04*/
 }
 // 0x5896A0
-int unknown::Read(unsigned short * a2)
+int  unknown::Read()
 {
   int m_10; // esi
   int result; // eax
@@ -755,7 +755,7 @@ int unknown::Read(unsigned short * a2)
   result = 0; /*0x5896a5*/
   if ( m_10 <= 0 ) /*0x5896aa*/
     return -1; /*0x5896e1*/
-  for ( i = *(unsigned short **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5896b0*/
+  for ( i = *(unsigned short **)&this->m_1[3]; *i != *this || i[1] != this[1] || i[2] != this[2] || i[3] != this[3]; i += 8 ) /*0x5896b0*/
   {
     if ( ++result >= m_10 ) /*0x5896df*/
       return -1; /*0x5896df*/

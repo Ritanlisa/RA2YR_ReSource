@@ -788,25 +788,25 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
   return (int)this; /*0x524eb7*/
 }
 // 0x524F20
-unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
+unsigned int *  InfantryTypeClass::CopyDataArray()
 {
   void *v3; // eax
   void *v4; // eax
   void *vtable2; // ecx
   int v6; // eax
 
-  if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
+  if ( this == (InfantryTypeClass *)this ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
   (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
-  v3 = (void *)aP1[2]; /*0x524f31*/
+  v3 = (void *)this[2]; /*0x524f31*/
   *(void **)&this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
     *(unsigned int *)&this->vtable2 = 0; /*0x524f86*/
     IDA_BYTE1(this->vtable4) = 0; /*0x524f8d*/
   LABEL_8:
-    this->uniqueId = aP1[4]; /*0x524f91*/
-    this->abstractFlags = aP1[5]; /*0x524f9a*/
+    this->uniqueId = this[4]; /*0x524f91*/
+    this->abstractFlags = this[5]; /*0x524f9a*/
     return &this->TechnoTypeClass; /*0x524f9d*/
   }
   v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x524f43*/
@@ -820,12 +820,12 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
+    *((unsigned int *)this->? + v6) = *(unsigned int *)(this[1] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
   while ( v6 < (int)this->? ); /*0x524f71*/
-  this->uniqueId = aP1[4]; /*0x524f76*/
-  this->abstractFlags = aP1[5]; /*0x524f7c*/
+  this->uniqueId = this[4]; /*0x524f76*/
+  this->abstractFlags = this[5]; /*0x524f7c*/
   return &this->TechnoTypeClass; /*0x524f81*/
 }
 // 0x772FA0
@@ -854,14 +854,14 @@ WeaponTypeClass * * InfantryTypeClass::Find()
   return (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + v2); /*0x77300f*/
 }
 // 0x523B10
-InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
+InfantryClass *  InfantryTypeClass::ConstructInfantry()
 {
   int v2; // edi
   int v4; // eax
 
   v4 = RA2_OPNEW(0x6F0u); /*0x523b18*/
   if ( v4 ) /*0x523b22*/
-    return (InfantryClass *)InfantryClass::Construct(v4, v2, (int)this, ppv); /*0x523b2c*/
+    return (InfantryClass *)InfantryClass::Construct(v4, v2, (int)this, this); /*0x523b2c*/
   else
     return 0; /*0x523b35*/
 }

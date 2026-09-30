@@ -111,7 +111,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   }
 }
 // 0x6B55F0
-void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
+void  SmudgeTypeClass::vt_entry_A0(int * a3, int a4, int a5, short * a6)
 {
   int v7; // ebx
   int v8; // edx
@@ -125,8 +125,8 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
-    v8 = a2[1]; /*0x6b5614*/
-    v13 = *a2; /*0x6b5619*/
+    v8 = this[1]; /*0x6b5614*/
+    v13 = *this; /*0x6b5619*/
     v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
@@ -184,7 +184,7 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
   return result; /*0x6b57cd*/
 }
 // 0x6B6160
-SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
+SmudgeTypeClass *  SmudgeTypeClass::ddtor(char a3, void * a1)
 {
   SHPStruct *Image; // eax
   int v4; // eax
@@ -216,7 +216,7 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
     }
   }
   ObjectTypeClass::Destruct(); /*0x6b61f0*/
-  if ( (a2 & 1) != 0 ) /*0x6b61fa*/
+  if ( (this & 1) != 0 ) /*0x6b61fa*/
     RA2_OPDEL(); /*0x6b61fd*/
   return &this->ObjectTypeClass; /*0x6b6207*/
 }
@@ -254,39 +254,39 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     return 0; /*0x6b55e7*/
 }
 // 0x6B57F0
-int SmudgeTypeClass::PowerDrainUpdate(int * a2)
+int  SmudgeTypeClass::PowerDrainUpdate()
 {
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower(a2); /*0x6b57f9*/
+  AbstractTypeClass::ProcessPower(this); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   IDA_LOBYTE(v3) = this->Crater; /*0x6b580c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/
+  Power::FlagProcess((Power *)this, v3); /*0x6b5815*/
   IDA_LOBYTE(v4) = this->Burn; /*0x6b581a*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
+  Power::FlagProcess((Power *)this, v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
 // 0x4a1d50
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 }
 // 0x6B5850
-int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
+int  SmudgeTypeClass::LoadTypeData(int aP1)
 {
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
-    if ( aP0 ) /*0x6b5866*/
+    if ( this ) /*0x6b5866*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      aP0->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
-      *(void **)&aP0->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
-      *(void **)&aP0->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
-      *(void **)&aP0->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
+      ObjectTypeClass::Construct((ObjectTypeClass *)this, (int)&aP1); /*0x6b586f*/
+      this->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
+      *(void **)&this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      *(void **)&this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      *(void **)&this->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/
+    VoxelAnimType::LoadAnim((char *)this); /*0x6b5891*/
+    ObjectTypeClass::Load2DArt((char *)this); /*0x6b5898*/
     return 0; /*0x6b589d*/
   }
   return result; /*0x6b589f*/

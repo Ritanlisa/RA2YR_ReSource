@@ -87,24 +87,24 @@ void * DiskLaserClass::CopyTo(char a2)
   return this; /*0x4a7d11*/
 }
 // 0x4A7B90
-int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
+int  DiskLaserClass::Write(int aP1)
 {
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x4a7ba1*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this, aP1); /*0x4a7ba1*/
   if ( Prefix_0 >= 0 ) /*0x4a7ba5*/
   {
-    if ( aP0 ) /*0x4a7ba9*/
+    if ( this ) /*0x4a7ba9*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x4a7bb2*/
-      *(unsigned int *)aP0->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
-      aP0->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7bbd*/
-      aP0->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7bc4*/
-      aP0->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7bcb*/
+      AbstractClass::InitVtables((AbstractClass *)this, (int)&aP1); /*0x4a7bb2*/
+      *(unsigned int *)this->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
+      this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7bbd*/
+      this->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7bc4*/
+      this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7bcb*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x24); /*0x4a7bdb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 11); /*0x4a7bf7*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DiskLaserClass_field_0x24); /*0x4a7bdb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->DiskLaserClass_field_0x28); /*0x4a7be9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 11); /*0x4a7bf7*/
   }
   return Prefix_0; /*0x4a7bfe*/
 }

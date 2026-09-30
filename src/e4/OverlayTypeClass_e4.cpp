@@ -99,7 +99,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   }
 }
 // 0x5FE770
-AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+AnimTypeClass * *  OverlayTypeClass::LoadFromINI()
 {
   AnimTypeClass *INIString; // eax
   int v4; // ecx
@@ -129,43 +129,43 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x5fe783*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x5fe78b*/
+  INIClass::ResetSection((INIClass *)this); /*0x5fe783*/
+  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, this) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
-                                 (OverlayTypeClass *)aP1,
+                                 (OverlayTypeClass *)this,
                                  (uint8_t *)this->?,
                                  aLand,
                                  (unsigned int)this->CellAnim);
   v4 = *(unsigned int *)&this->Wall; /*0x5fe7b1*/
   *(void **)&this->CellAnim = INIString; /*0x5fe7b7*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)this->?, aStrength, v4); /*0x5fe7c6*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, (uint8_t *)this->?, aStrength, v4); /*0x5fe7c6*/
   NoUseTileLandType = this->NoUseTileLandType; /*0x5fe7d3*/
   *(unsigned int *)&this->Wall = Int_Overwrite; /*0x5fe7da*/
   this->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
-                              (int *)aP1,
+                              (int *)this,
                               (uint8_t *)*(unsigned int *)&this->NoUseTileLandType,
                               g_INI_Key_Wall,
                               NoUseTileLandType);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fe7fa*/
-                     (int *)aP1,
+                     (int *)this,
                      (uint8_t *)this->?,
                      (uint8_t *)g_INI_Key_Tiberium,
                      this->IsVeinholeMonster);
   IsVeins = this->IsVeins; /*0x5fe7ff*/
   this->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
-  v8 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aCrate, IsVeins); /*0x5fe814*/
+  v8 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aCrate, IsVeins); /*0x5fe814*/
   ImageLoaded = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
-  this->ImageLoaded = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)*(unsigned int *)&this->q2AB, aCratetrigger, ImageLoaded); /*0x5fe833*/
-  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aExplodes, this->IsRubble); /*0x5fe848*/
+  this->ImageLoaded = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)*(unsigned int *)&this->q2AB, aCratetrigger, ImageLoaded); /*0x5fe833*/
+  v9 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aExplodes, this->IsRubble); /*0x5fe848*/
   v10 = this->RadarColor[0]; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
-  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aOverrides, v10); /*0x5fe862*/
+  v11 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aOverrides, v10); /*0x5fe862*/
   DamageLevels = this->DamageLevels; /*0x5fe867*/
   this->RadarColor[0] = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
-         (INIClass *)aP1,
+         (INIClass *)this,
          (uint8_t *)this->?,
          aCellanim,
          &g_INI_DefaultBuffer,
@@ -197,7 +197,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
     *(unsigned int *)&this->Image = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x5fe92d*/
   }
   Coord = INIClass::GetCoord( /*0x5fe947*/
-            (INIClass *)aP1,
+            (INIClass *)this,
             (int)&v28,
             (uint8_t *)this->?,
             aRadarcolor,
@@ -205,22 +205,22 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   *(unsigned short *)&this->__tail_2B5[1] = *(unsigned short *)Coord; /*0x5fe94f*/
   Explodes = this->Explodes; /*0x5fe95e*/
   this->u32_2B8 = *(unsigned char *)(Coord + 2); /*0x5fe965*/
-  v16 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aNousetilelandt, Explodes); /*0x5fe968*/
+  v16 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aNousetilelandt, Explodes); /*0x5fe968*/
   ChainReaction = this->ChainReaction; /*0x5fe96d*/
   this->Explodes = v16; /*0x5fe973*/
-  v18 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aIsveinholemons, ChainReaction); /*0x5fe982*/
+  v18 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aIsveinholemons, ChainReaction); /*0x5fe982*/
   Overrides = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
-  this->Overrides = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)*(unsigned int *)&this->q2AE, aIsveins, Overrides); /*0x5fe9a1*/
-  v19 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aChainreaction, this->IsARock); /*0x5fe9b6*/
+  this->Overrides = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)*(unsigned int *)&this->q2AE, aIsveins, Overrides); /*0x5fe9a1*/
+  v19 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aChainreaction, this->IsARock); /*0x5fe9b6*/
   v20 = this->RadarColor[1]; /*0x5fe9bb*/
   this->IsARock = v19; /*0x5fe9c1*/
-  v21 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aDrawflat, v20); /*0x5fe9d0*/
+  v21 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)this->?, aDrawflat, v20); /*0x5fe9d0*/
   v27 = this->__tail_2B5[0]; /*0x5fe9dd*/
   this->RadarColor[1] = v21; /*0x5fe9e4*/
-  this->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)*(unsigned int *)&this->tail_2B5, aIsarock, v27); /*0x5fe9ef*/
+  this->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)*(unsigned int *)&this->tail_2B5, aIsarock, v27); /*0x5fe9ef*/
   this->RadarColor[2] = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
-                          (int *)aP1,
+                          (int *)this,
                           (uint8_t *)this->q2B4,
                           aIsrubble,
                           this->RadarColor[2]);
@@ -302,11 +302,11 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   return result; /*0x5feeed*/
 }
 // 0x6440A0
-unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
+unsigned int *  OverlayTypeClass::Construct()
 {
   void *v3; // eax
 
-  ObjectTypeClass::ConstructFull(aP1); /*0x6440a9*/
+  ObjectTypeClass::ConstructFull(this); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
   *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
   this->u32_2B8 = -1; /*0x6440bf*/
@@ -361,13 +361,13 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   return &this->ObjectTypeClass; /*0x644217*/
 }
 // 0x4754B0
-int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
+int  OverlayTypeClass::ReadINIString(unsigned char * a2, AnimTypeClass * aP3)
 {
   char *v5; // eax
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = sub_48DFD0(aP3); /*0x4754cd*/
-  if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x4754e5*/
+  if ( INIClass::GetString((INIClass *)this, this, a2, v5, Destination, 128) ) /*0x4754e5*/
 // 0x48df80
     return OverlayTypeClass::LookupByName((OverlayTypeClass *)Destination); /*0x4754f2*/
   else
@@ -426,14 +426,14 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
     return 0; /*0x5fe597*/
 }
 // 0x5FE5A0
-void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
+void  OverlayTypeClass::GetLandType(int * a3, unsigned int a4)
 {
   char *v4; // edx
   int v5; // eax
   int v6[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
-  v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
+  v4 = (char *)DSurface_ViewBounds.field_4 + this[1] + 15; /*0x5fe5c1*/
+  v6[0] = DSurface_ViewBounds.field_0 + *this + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
   v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
@@ -489,11 +489,11 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   return Power::FlagProcess((Power *)a2, v7); /*0x5feadc*/
 }
 // 0x5FEC10
-int OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
+int  OverlayTypeClass::SaveLoad_Prefix_0(ObjectTypeClass * aP1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x5fec1f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)this, aP1, aP2); /*0x5fec1f*/
   if ( result >= 0 ) /*0x5fec26*/
     return 0; /*0x5fec28*/
   return result; /*0x5fec2a*/

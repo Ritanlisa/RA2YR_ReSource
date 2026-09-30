@@ -563,6 +563,32 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                             call_virtual(int(cm.group(1)))))
         if covered:
             hits.extend(covered)
+
+        # G39: raw this-arithmetic accesses `*(this + N)` /
+        # `*((T *)this + N)` READ|WRITE -> member event at byte offset
+        # N*stride (stride: char=1, short=2, bare/dword=4, qword=8).
+        # Symmetric with the IDA-side T8 regex family -- the corpus carries
+        # these verbatim from pseudocode (this-demotion restore output).
+        if 'this' in text:
+            for am in re.finditer(
+                    r'\*\s*(?:\(\s*)?(?:(?:\(\s*)?(unsigned\s+char|_BYTE|'
+                    r'unsigned\s+short|_WORD|unsigned\s+int|_DWORD|'
+                    r'unsigned\s+long\s+long|_QWORD|unsigned|char|int|long)'
+                    r'\s*\*\s*\)?)?\s*this'
+                    r'(?:\s*\+\s*(\d+)\s*\))?', text):
+                tname = am.group(1) or 'unsigned'
+                stride = 8 if ('long long' in tname or '_QWORD' in tname) else \
+                    (4 if ('int' in tname or '_DWORD' in tname
+                            or tname in ('unsigned', 'long'))
+                      else (2 if ('short' in tname or '_WORD' in tname) else 1))
+                off = (int(am.group(2)) * stride) if am.group(2) else 0
+                tail = text[am.end():]
+                # for `*(this + N)` the closing paren is part of the match;
+                # for `*this` the write check looks right after
+                after = tail[:4]
+                is_wr = bool(re.match(r'\s*=(?!=)', after))
+                hits.append((am.start(), am.end(),
+                             write_member(off) if is_wr else read_member(off)))
         i = 0
         while i < n:
             t = toks[i]

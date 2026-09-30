@@ -606,7 +606,7 @@ int Surface::RenderRadar()
   *(unsigned int *)v29[1].__pad_0 = v38; /*0x655551*/
 }
 // 0x6BA3E0
-int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
+int  Surface::TileBlit(ObjectClass * aP1, int a3, int a4, int a5)
 {
   int v5; // ebx
   int result; // eax
@@ -644,8 +644,8 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
       v22 = *(unsigned int *)(v8 + 8); /*0x6ba470*/
       v23 = *(unsigned int *)(v8 + 12); /*0x6ba480*/
       (*(void (**)(int, unsigned int *))(*(unsigned int *)aP1 + 120))(aP1, v25); /*0x6ba484*/
-      v10 = aP0[2]; /*0x6ba48f*/
-      v11 = aP0[3]; /*0x6ba492*/
+      v10 = this[2]; /*0x6ba48f*/
+      v11 = this[3]; /*0x6ba492*/
       v19 = (v22 - v10) / 2 <= 0 ? 0 : (v22 - v10) / 2;
       v12 = 0; /*0x6ba4bf*/
       v16 = 0; /*0x6ba4c3*/
@@ -659,12 +659,12 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
           if ( v10 > 0 ) /*0x6ba4ee*/
           {
             v14 = v19 + a4; /*0x6ba506*/
-            v15 = result + 2 * (*aP0 + v17 * (aP0[1] + v12)); /*0x6ba50d*/
+            v15 = result + 2 * (*this + v17 * (this[1] + v12)); /*0x6ba50d*/
             do /*0x6ba537*/
             {
               v15 += 2; /*0x6ba512*/
               *(unsigned short *)(v15 - 2) = *(unsigned short *)(v21 + 2 * (v18 * (v13 % v23) + v14 % v22)); /*0x6ba528*/
-              v10 = aP0[2]; /*0x6ba52c*/
+              v10 = this[2]; /*0x6ba52c*/
               ++v14; /*0x6ba530*/
               v26 = (unsigned int *)((char *)v26 + 1); /*0x6ba533*/
             }
@@ -678,7 +678,7 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
           v16 = v12; /*0x6ba550*/
           ++v13; /*0x6ba554*/
         }
-        while ( v12 < aP0[3] ); /*0x6ba558*/
+        while ( v12 < this[3] ); /*0x6ba558*/
       }
       (*(void (**)(int))(v7->q060)(v7); /*0x6ba562*/
       result = (*(int (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6ba569*/
@@ -1233,7 +1233,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   Vector::Clear((int)v40); /*0x70773f*/
 }
 // 0x7602E0
-void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
+void  Surface::RenderToSurfaceVoxel(int * a3)
 {
   int *v4; // edi
   int v5; // eax
@@ -1329,8 +1329,8 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
     v77 = v5 + 3; /*0x76032f*/
     v79 = *a3 + 3; /*0x760340*/
     v69 = *a3 + a3[2] - 3; /*0x760348*/
-    v6 = a2[1] - this->WaveClass_field_17C; /*0x760359*/
-    v57 = *a2 - this->WaveClass_field_178; /*0x760367*/
+    v6 = this[1] - this->WaveClass_field_17C; /*0x760359*/
+    v57 = *this - this->WaveClass_field_178; /*0x760367*/
     v6 = v6; /*0x76036b*/
     ProcessVoxelVertexData((unsigned int *)(&this->WaveClass_field_12C8), (int *)(&this->WaveClass_field_1506)); /*0x76036f*/
     if ( this->q1A8 ) /*0x760374*/
@@ -2039,18 +2039,18 @@ int Surface::CommitSurfaceBuffersAudio()
   return -1; /*0x7bd6a3*/
 }
 // 0x411510
-unsigned int * Surface::GetRect(unsigned int * a2)
+unsigned int *  Surface::GetRect()
 {
   int Width; // edi
   int Height; // ecx
 
   Width = this->Width; /*0x411517*/
   Height = this->Height; /*0x41151a*/
-  *a2 = 0; /*0x411523*/
-  a2[1] = 0; /*0x411525*/
-  a2[2] = Width; /*0x411528*/
-  a2[3] = Height; /*0x41152d*/
-  return a2; /*0x41152b*/
+  *this = 0; /*0x411523*/
+  this[1] = 0; /*0x411525*/
+  this[2] = Width; /*0x411528*/
+  this[3] = Height; /*0x41152d*/
+  return this; /*0x41152b*/
 }
 // 0x411540
 int Surface::GetWidth()
@@ -2123,9 +2123,9 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
   return result; /*0x4a4822*/
 }
 // 0x4AEC60
-unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
+unsigned int *  Surface::Construct(IUnknown * aP2)
 {
-  this->Width = aP1; /*0x4aec6a*/
+  this->Width = this; /*0x4aec6a*/
   this->Height = aP2; /*0x4aec6d*/
   *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4aec70*/
   return this; /*0x4aec76*/

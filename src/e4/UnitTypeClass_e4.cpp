@@ -158,7 +158,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
 }
 // 0x7474B0
 namespace gamemd {
-void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
+void  UnitTypeClass::UnitTypeClass_CreateUnit()
 {
   int *v4; // eax
   int *v5; // esi
@@ -173,12 +173,12 @@ void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
   v4 = (int *)((char)((int *)RA2_OPNEW(0x8E8u)));
   if ( !v4 ) /*0x7474c5*/
     return 0; /*0x7474c5*/
-  v5 = (int *)UnitClass::Construct(v4, (int)this, a2); /*0x7474d8*/
+  v5 = (int *)UnitClass::Construct(v4, (int)this, this); /*0x7474d8*/
   if ( !v5 ) /*0x7474dc*/
     return 0; /*0x747554*/
-  IDA_LOWORD(a2) = 0; /*0x7474e4*/
+  IDA_LOWORD(this) = 0; /*0x7474e4*/
   v6 = Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink); /*0x7474f1*/
-  v7 = (unsigned int)a2; /*0x7474f6*/
+  v7 = (unsigned int)this; /*0x7474f6*/
   IDA_LOBYTE(v8) = 0; /*0x7474fa*/
   IDA_HIBYTE(v8) = v6; /*0x7474fc*/
   IDA_BYTE1(v7) = 0; /*0x7474fe*/
@@ -588,7 +588,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
   return *(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * v2); /*0x74b9cf*/
 }
 // 0x747590
-int * UnitTypeClass::GetDimensions(int * a2)
+int *  UnitTypeClass::GetDimensions()
 {
   int v2; // eax
   int v3; // ecx
@@ -600,21 +600,21 @@ int * UnitTypeClass::GetDimensions(int * a2)
     v3 = 60; /*0x7475ac*/
     v2 = 60; /*0x7475b6*/
   }
-  *a2 = v3; /*0x7475c2*/
-  a2[1] = v3; /*0x7475c4*/
-  a2[2] = v2; /*0x7475c7*/
-  return a2; /*0x7475cd*/
+  *this = v3; /*0x7475c2*/
+  this[1] = v3; /*0x7475c4*/
+  this[2] = v2; /*0x7475c7*/
+  return this; /*0x7475cd*/
 }
 // 0x7475D0
-unsigned int * UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
+unsigned int *  UnitTypeClass::GetDefaultDimensions()
 {
   void *v1; // esi
 
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
-  a1->TechnoTypeClass = (void *)256; /*0x7475e7*/
-  a1->vtable2 = (void *)256; /*0x7475e9*/
-  *(void **)&a1->vtable3 = v1; /*0x7475ec*/
-  return (unsigned int *)a1; /*0x7475ef*/
+  this->TechnoTypeClass = (void *)256; /*0x7475e7*/
+  this->vtable2 = (void *)256; /*0x7475e9*/
+  *(void **)&this->vtable3 = v1; /*0x7475ec*/
+  return (unsigned int *)this; /*0x7475ef*/
 }
 // 0x747EB0
 unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)

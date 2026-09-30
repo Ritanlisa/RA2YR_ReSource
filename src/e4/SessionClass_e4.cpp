@@ -1352,7 +1352,7 @@ int SessionClass::CreateConnections()
   return 1; /*0x697b95*/
 }
 // 0x697E70
-int SessionClass::IsValidHouse(void * a2)
+int  SessionClass::IsValidHouse()
 {
   void *v2; // edi
   int v3; // eax
@@ -1360,8 +1360,8 @@ int SessionClass::IsValidHouse(void * a2)
   HouseClass *i; // edx
   void *v7; // eax
 
-  v2 = a2; /*0x697e73*/
-  if ( !a2 ) /*0x697e79*/
+  v2 = this; /*0x697e73*/
+  if ( !this ) /*0x697e79*/
     v2 = HouseClass_Player; /*0x697e7b*/
   if ( g_GameMode_Current[0] != 4 || !v2 ) /*0x697e8c*/
     goto LABEL_9; /*0x697e8c*/
@@ -1725,7 +1725,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   return HashTable::DestroyHashTableINIClass(&v60); /*0x69a1e0*/
 }
 // 0x69A980
-ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
+ObjectClass * *  SessionClass::ParseGameInfo(CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
   SessionClass *v8; // esi
   int *p_Side2; // ebx
@@ -1752,7 +1752,7 @@ ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, 
   p_Side2[4] = 0; /*0x69a9b0*/
   *p_Side2 = (int)&TypeList_enum_DiskID_vftable; /*0x69a9b7*/
   VectorClass::WstringConstructor((VectorClass *)&v8->SkirmishPreferences[6], 0, 0); /*0x69a9bd*/
-  v11 = Source; /*0x69a9c2*/
+  v11 = this; /*0x69a9c2*/
   v8->SkirmishPreferences[6] = (int)&DynamicVectorClass_Wstring_vftable; /*0x69a9c6*/
   v8->SkirmishPreferences[11] = 10; /*0x69a9cf*/
   v8->SkirmishPreferences[10] = 0; /*0x69a9d2*/
@@ -1806,13 +1806,13 @@ ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, 
   }
   if ( a5 ) /*0x69ab14*/
   {
-    String::Assign((String *)&Source, a5); /*0x69ab1f*/
-    if ( String::Length((String *)&Source) ) /*0x69ab28*/
+    String::Assign((String *)&this, a5); /*0x69ab1f*/
+    if ( String::Length((String *)&this) ) /*0x69ab28*/
     {
       unknown_libname_73(&aP4); /*0x69ab39*/
-      for ( i = String::Tokenize((String *)&Source, 0, Str, (void **)&aP4); /*0x69ab58*/
+      for ( i = String::Tokenize((String *)&this, 0, Str, (void **)&aP4); /*0x69ab58*/
             i != -1;
-            i = String::Tokenize((String *)&Source, i, Str, (void **)&aP4) )
+            i = String::Tokenize((String *)&this, i, Str, (void **)&aP4) )
       {
         String::Assign((String *)&aP2, asc_830A14); /*0x69ab67*/
         String::TrimLeft((String *)&aP4, (const char **)&aP2); /*0x69ab75*/
@@ -1835,7 +1835,7 @@ ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, 
       }
       DeleteAndZero((ObjectClass *)&aP4); /*0x69ac11*/
     }
-    DeleteAndZero((ObjectClass *)&Source); /*0x69ac1a*/
+    DeleteAndZero((ObjectClass *)&this); /*0x69ac1a*/
   }
   return (wchar_t *)v8; /*0x69ac21*/
 }
@@ -2576,7 +2576,7 @@ void SessionClass::removePlayer()
   this->SessionClass_field_08 = 0; /*0x69c821*/
 }
 // 0x69C830
-int SessionClass::findPlayer(unsigned int * a2)
+int  SessionClass::findPlayer()
 {
   int result; // eax
   int m_8; // edx
@@ -2588,7 +2588,7 @@ int SessionClass::findPlayer(unsigned int * a2)
   result = 0; /*0x69c841*/
   if ( m_8 <= 0 ) /*0x69c845*/
     return -1; /*0x69c85c*/
-  for ( i = *(unsigned int **)&this->MPGameMode; *i != *a2; ++i ) /*0x69c84b*/
+  for ( i = *(unsigned int **)&this->MPGameMode; *i != *this; ++i ) /*0x69c84b*/
   {
     if ( ++result >= m_8 ) /*0x69c85a*/
       return -1; /*0x69c85a*/
@@ -2648,7 +2648,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
   return 1; /*0x69c92e*/
 }
 // 0x69C940
-int SessionClass::Read(unsigned int * a2)
+int  SessionClass::Read()
 {
   int m_10; // edx
   int result; // eax
@@ -2658,7 +2658,7 @@ int SessionClass::Read(unsigned int * a2)
   result = 0; /*0x69c943*/
   if ( m_10 <= 0 ) /*0x69c948*/
     return -1; /*0x69c95f*/
-  for ( i = *(unsigned int **)&this->MPGameMode; *i != *a2; ++i ) /*0x69c94e*/
+  for ( i = *(unsigned int **)&this->MPGameMode; *i != *this; ++i ) /*0x69c94e*/
   {
     if ( ++result >= m_10 ) /*0x69c95d*/
       return -1; /*0x69c95d*/

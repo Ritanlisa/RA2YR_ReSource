@@ -1539,20 +1539,20 @@ unsigned int * TechnoTypeClass::Constructor()
   return this->ObjectTypeClass; /*0x717b11*/
 }
 // 0x717B20
-int TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
+int  TechnoTypeClass::SaveLoadDataArray()
 {
   int v3; // ecx
   int result; // eax
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x717b2c*/
+  v3 = *this; /*0x717b2c*/
   v6 = this->ObjectTypeClass[4]; /*0x717b39*/
-  (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x717b3d*/
+  (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(this, &v6, 4, 0); /*0x717b3d*/
   result = v6; /*0x717b40*/
   for ( i = 0; i < v6; ++i ) /*0x717b48*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->ObjectTypeClass[1] + 4 * i, 4, 0); /*0x717b58*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*this + 16))(this, this->ObjectTypeClass[1] + 4 * i, 4, 0); /*0x717b58*/
     result = v6; /*0x717b5b*/
   }
   return result; /*0x717b64*/

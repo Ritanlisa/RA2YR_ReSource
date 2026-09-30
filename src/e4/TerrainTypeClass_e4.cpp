@@ -203,7 +203,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   return &this->ObjectTypeClass; /*0x71dbc2*/
 }
 // 0x71DEA0
-int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
+int  TerrainTypeClass::LoadFromINI()
 {
   char Bool_Overwrite; // al
   char v4; // al
@@ -226,8 +226,8 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
   unsigned char v22[4]; // [esp+18h] [ebp-204h] BYREF
   char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection(aP1); /*0x71deb3*/
-  if ( !ObjectTypeClass::LoadFromINI((char *)this, aP1) ) /*0x71debb*/
+  INIClass::ResetSection(this); /*0x71deb3*/
+  if ( !ObjectTypeClass::LoadFromINI((char *)this, this) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
   if ( this->Strength == -1 ) /*0x71decf*/
     this->Strength = g_RulesClass_Instance->Normal[17]; /*0x71dedc*/
@@ -263,7 +263,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
     *(unsigned int *)&this->q29E = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
   }
   Coord = INIClass::GetCoord( /*0x71e00c*/
-            aP1,
+            this,
             (int)v22,
             (uint8_t *)(&this->vtable46),
             (uint8_t *)aRadarcolor,
@@ -375,13 +375,13 @@ int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * v10, 
   return 1; /*0x540021*/
 }
 // 0x71DDD0
-bool TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
+bool  TerrainTypeClass::GetHeight(int a3)
 {
   TerrainClass *v4; // eax
 
   v4 = (TerrainClass *)RA2_OPNEW(0xE0u); /*0x71ddd8*/
 // 0x71bb90
-  return v4 && TerrainClass::Construct(v4, this, aP2); /*0x71ddf7*/
+  return v4 && TerrainClass::Construct(v4, this, this); /*0x71ddf7*/
 }
 // 0x71DE10
 TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
@@ -396,7 +396,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
     return 0; /*0x71de35*/
 }
 // 0x71E0D0
-unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
+unsigned int *  TerrainTypeClass::GetWidth(int * a2)
 {
   int GroundHeight; // eax
   void *v3; // ecx
@@ -411,10 +411,10 @@ unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
   v3 = (void *)v7; /*0x71e0fa*/
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
-  a1->ObjectTypeClass = v5; /*0x71e11e*/
-  *(void **)&a1->vtable2 = v6; /*0x71e124*/
-  *(void **)&a1->vtable3 = v3; /*0x71e128*/
-  return &a1->ObjectTypeClass; /*0x71e12b*/
+  this->ObjectTypeClass = v5; /*0x71e11e*/
+  *(void **)&this->vtable2 = v6; /*0x71e124*/
+  *(void **)&this->vtable3 = v3; /*0x71e128*/
+  return &this->ObjectTypeClass; /*0x71e12b*/
 }
 // 0x71E140
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
@@ -440,24 +440,24 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   return Checksummer::Add_float((Checksummer *)a2, IDA_LODWORD(this->AnimationProbability)); /*0x71e1be*/
 }
 // 0x71E1D0
-int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+int  TerrainTypeClass::SaveLoad_Prefix(int aP1)
 {
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x71e1db*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)this, aP1); /*0x71e1db*/
   if ( result >= 0 ) /*0x71e1e2*/
   {
-    if ( aP0 ) /*0x71e1e6*/
+    if ( this ) /*0x71e1e6*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      aP0->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
-      *(void **)&aP0->vtable2 = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
-      *(void **)&aP0->vtable3 = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
-      *(void **)&aP0->vtable4 = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
+      ObjectTypeClass::Construct((ObjectTypeClass *)this, (int)&aP1); /*0x71e1ef*/
+      this->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
+      *(void **)&this->vtable2 = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
+      *(void **)&this->vtable3 = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
+      *(void **)&this->vtable4 = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/
-    aP0->FoundationData = (CellStruct *)(40 * aP0->Foundation + 11595200); /*0x71e22d*/
+    VoxelAnimType::LoadAnim((char *)this); /*0x71e211*/
+    ObjectTypeClass::Load2DArt((char *)this); /*0x71e218*/
+    this->FoundationData = (CellStruct *)(40 * this->Foundation + 11595200); /*0x71e22d*/
     return 0; /*0x71e233*/
   }
   return result; /*0x71e235*/

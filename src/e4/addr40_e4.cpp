@@ -7034,12 +7034,12 @@ GenericNode * GenericNode::sub_40E390(char a2)
 }
 // 0x40E4A0
 namespace gamemd {
-ObjectClass * ObjectClass::sub_40E4A0(void ** Block, char a2)
+ObjectClass *  ObjectClass::sub_40E4A0(char a2)
 {
-  HashTable::DestroyHashTableINIClass((INIClass *)Block); /*0x40e4a3*/
+  HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x40e4a3*/
   if ( (a2 & 1) != 0 ) /*0x40e4ad*/
-    RA2_OPDEL(Block); /*0x40e4b0*/
-  return &Block->AbstractClass; /*0x40e4ba*/
+    RA2_OPDEL(this); /*0x40e4b0*/
+  return &this->AbstractClass; /*0x40e4ba*/
 }
 } // namespace gamemd
 

@@ -191,9 +191,9 @@ void GameConfig::Constructor()
 }
 }
 // 0x77E7A0
-int GameConfig::BuildChecksum(void * aP1)
+int  GameConfig::BuildChecksum()
 {
-  (void)aP1;
+  (void)this;
   int v2; // ecx
   int *v3; // eax
   int v4; // esi

@@ -1031,7 +1031,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 }
 // 0x65C3A0
 namespace gamemd {
-AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
+AbstractClass * *  RAMFileClass::nullsub_0_3(signed int Size)
 {
   signed int v4; // edi
   char v5; // bl
@@ -1039,7 +1039,7 @@ AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 
   if ( !this->RAMFileClass_field_0x8 ) /*0x65c3a6*/
     return 0; /*0x65c3a6*/
-  if ( !a1 ) /*0x65c3b3*/
+  if ( !this ) /*0x65c3b3*/
     return 0; /*0x65c3b3*/
   v4 = Size; /*0x65c3b5*/
   if ( !Size ) /*0x65c3bb*/
@@ -1057,7 +1057,7 @@ AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
   v6 = this->u32_14; /*0x65c3db*/
   if ( Size >= (int)this->RAMFileClass_field_0x10 - v6 ) /*0x65c3e5*/
     v4 = (signed int)this->RAMFileClass_field_0x10 - v6; /*0x65c3e7*/
-  memcpy(a1, (char *)this->RAMFileClass_field_0x8 + v6, v4); /*0x65c3f1*/
+  memcpy(this, (char *)this->RAMFileClass_field_0x8 + v6, v4); /*0x65c3f1*/
   this->u32_14 += v4; /*0x65c400*/
   if ( v5 ) /*0x65c403*/
     (*(void (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 52))(this); /*0x65c409*/

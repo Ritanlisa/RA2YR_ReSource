@@ -1216,7 +1216,7 @@ void DynamicVectorClass_flat::Destroy_Alt()
 }
 // 0x5251F0
 namespace gamemd {
-int DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
+int  DynamicVectorClass_AnimType::GetSize()
 {
   int result; // eax
   int m_8; // edx
@@ -1228,7 +1228,7 @@ int DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
   result = 0; /*0x525201*/
   if ( m_8 <= 0 ) /*0x525205*/
     return -1; /*0x52521c*/
-  for ( i = *(unsigned int **)&this->Items; *i != *a2; ++i ) /*0x52520b*/
+  for ( i = *(unsigned int **)&this->Items; *i != *this; ++i ) /*0x52520b*/
   {
     if ( ++result >= m_8 ) /*0x52521a*/
       return -1; /*0x52521a*/

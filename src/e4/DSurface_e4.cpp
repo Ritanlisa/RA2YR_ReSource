@@ -4196,7 +4196,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
   return a6; /*0x4c077f*/
 }
 // 0x4C0E30
-MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
+MouseClass * *  DSurface::DrawStippledRect(unsigned int * a2, short a4, DSurface * aP4)
 {
   int *v6; // eax
   int v7; // ecx
@@ -4273,8 +4273,8 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   v68 = v6[1]; /*0x4c0e61*/
   v69 = v6[2]; /*0x4c0e68*/
   v70 = v6[3]; /*0x4c0e73*/
-  v7 = v68 + a1[1]; /*0x4c0e7e*/
-  v63 = v67 + *a1; /*0x4c0e80*/
+  v7 = v68 + this[1]; /*0x4c0e7e*/
+  v63 = v67 + *this; /*0x4c0e80*/
   v64 = v7; /*0x4c0e84*/
   v8 = v67 + *a2; /*0x4c0e93*/
   v66 = v68 + a2[1]; /*0x4c0e95*/
@@ -4661,7 +4661,7 @@ void * DSurface::loc_4C1AC0(char a2)
 }
 
 // 0x5D1E70
-ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
+ObjectClass * *  DSurface::RenderToSurface()
 {
   int *v3; // eax
   int v4; // edx
@@ -4690,7 +4690,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   if ( g_LoadScreenFlag == 1 ) /*0x5d1e83*/
   {
     g_LoadScreenFlag = 0; /*0x5d1e89*/
-    (*(void (**)(int *, unsigned int))(*aP1 + 24))(aP1, 0); /*0x5d1e96*/
+    (*(void (**)(int *, unsigned int))(*this + 24))(this, 0); /*0x5d1e96*/
     v3 = (int *)(*(int (**)(DSurface *, unsigned char *))(DSurface_Alternate->DSurface_field_0x0 + 120))( /*0x5d1ea6*/
                   DSurface_Alternate,
                   v25);
@@ -4698,13 +4698,13 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
     v22 = v3[1]; /*0x5d1eb2*/
     v23 = v3[2]; /*0x5d1eb9*/
     v4 = v3[3]; /*0x5d1ebf*/
-    v5 = *aP1; /*0x5d1ec2*/
+    v5 = *this; /*0x5d1ec2*/
     v24 = v4; /*0x5d1ec4*/
-    v6 = (*(int (**)(int *))(v5 + 124))(aP1); /*0x5d1ec8*/
-    v7 = *aP1; /*0x5d1ed6*/
+    v6 = (*(int (**)(int *))(v5 + 124))(this); /*0x5d1ec8*/
+    v7 = *this; /*0x5d1ed6*/
     v21 = (v6 - v23) / 2; /*0x5d1eda*/
-    v8 = (*(int (**)(int *))(v7 + 128))(aP1); /*0x5d1ede*/
-    v9 = *aP1; /*0x5d1ee8*/
+    v8 = (*(int (**)(int *))(v7 + 128))(this); /*0x5d1ede*/
+    v9 = *this; /*0x5d1ee8*/
     v22 = (v8 - v24) / 2; /*0x5d1ef9*/
     v10 = (*(int (__stdcall **)(unsigned char *, DSurface *, int *, unsigned int, int))(DSurface_Alternate->DSurface_field_0x0 + 120))( /*0x5d1f0c*/
             v25,
@@ -4712,22 +4712,22 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
             &v21,
             0,
             1);
-    (*(void (**)(int *, int))(v9 + 8))(aP1, v10); /*0x5d1f12*/
+    (*(void (**)(int *, int))(v9 + 8))(this, v10); /*0x5d1f12*/
     for ( i = 0; i < this->DSurface_field_0x28; ++i ) /*0x5d1f1c*/
     {
       v12 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * i); /*0x5d1f24*/
-      (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v12 + 20))(v12, aP1, 0); /*0x5d1f29*/
+      (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v12 + 20))(v12, this, 0); /*0x5d1f29*/
     }
     this->DSurface_field_0x4 = 0; /*0x5d1f38*/
-    v13 = (int *)(*(int (**)(int *, unsigned char *))(*aP1 + 120))(aP1, v25); /*0x5d1f44*/
+    v13 = (int *)(*(int (**)(int *, unsigned char *))(*this + 120))(this, v25); /*0x5d1f44*/
     Surface::CopyRect(v13); /*0x5d1f4a*/
-    (*(void (**)(DSurface *, int *))(this->DSurface_field_0x0 + 4))(this, aP1); /*0x5d1f54*/
+    (*(void (**)(DSurface *, int *))(this->DSurface_field_0x0 + 4))(this, this); /*0x5d1f54*/
   }
   result = this->DSurface_field_0x28; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
   {
     v16 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * j); /*0x5d1f63*/
-    if ( (*(uint8_t (**)(int, int *, int *))(*(unsigned int *)v16 + 16))(v16, aP1, &v21) == 1 ) /*0x5d1f73*/
+    if ( (*(uint8_t (**)(int, int *, int *))(*(unsigned int *)v16 + 16))(v16, this, &v21) == 1 ) /*0x5d1f73*/
     {
       v17 = *(void (****)(unsigned int, int))(this->DSurface_field_0x1C + 4 * j); /*0x5d1f78*/
       if ( v17 ) /*0x5d1f7d*/
@@ -4751,7 +4751,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   return result; /*0x5d1fbe*/
 }
 // 0x621B80
-int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
+int  DSurface::FillRectWithColor(ObjectClass * aP1, short a3, unsigned char a4)
 {
   int *v4; // esi
   int v5; // ebp
@@ -4776,7 +4776,7 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
   int v25; // [esp+20h] [ebp-14h]
   int v27; // [esp+30h] [ebp-4h]
 
-  v4 = a0; /*0x621b85*/
+  v4 = this; /*0x621b85*/
   v5 = aP1; /*0x621b87*/
   result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x621b9c*/
   v25 = result; /*0x621ba1*/
@@ -4818,12 +4818,12 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
             v15 = a3; /*0x621c8c*/
             g_GameScreenFlags = v12; /*0x621ca0*/
             v19 = g_GameScreenConfig * (uint16_t)(v16 & g_CreditsScreenState); /*0x621cb1*/
-            v4 = a0; /*0x621cb8*/
+            v4 = this; /*0x621cb8*/
             v13 = v20 + 1; /*0x621cbe*/
             *v20++ = ((v19 + v12 * (unsigned int)(uint16_t)(a3 & g_CreditsScreenState)) >> 8) /*0x621cca*/
                    | IDA_HIWORD(g_ScreenSaverState) & (v18 >> 8)
                    | v17;
-            if ( ++v21 >= a0[2] + *a0 ) /*0x621ce0*/
+            if ( ++v21 >= this[2] + *this ) /*0x621ce0*/
               break; /*0x621ce0*/
             v12 = a4; /*0x621c27*/
             v14 = 255 - a4; /*0x621c2b*/

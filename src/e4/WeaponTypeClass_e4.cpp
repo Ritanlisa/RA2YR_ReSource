@@ -481,7 +481,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   return this; /*0x77322c*/
 }
 // 0x475B70
-char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4)
+char  WeaponTypeClass::ReadTrajectoryData(char * a2, int a4)
 {
   int v4; // eax
   int v5; // edx
@@ -517,10 +517,10 @@ char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a
     while ( v5 < v4 ); /*0x475c3a*/
   }
 // 0x528660
-  return INIClass::SetString(aP1, a2, Source); /*0x475c61*/
+  return INIClass::SetString(this, a2, Source); /*0x475c61*/
 }
 // 0x475C70
-char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)
+char  WeaponTypeClass::ReadVeteranData(char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)
 {
   int *v10; // ebx
   int v11; // ebp
@@ -548,15 +548,15 @@ char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int
     }
     while ( v11 ); /*0x475d17*/
   }
-  v13 = INIClass::SetString((char *)this, a2, a3, Source); /*0x475d39*/
+  v13 = INIClass::SetString((char *)this, this, a3, Source); /*0x475d39*/
   if ( Block && IDA_HIBYTE(a7) ) /*0x475d4f*/
     RA2_OPDEL(Block); /*0x475d52*/
   return v13; /*0x475d5c*/
 }
 // 0x771F00
-unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
+unsigned int *  WeaponTypeClass::loadWeaponProperties()
 {
-  AbstractTypeClass::Init(aP1); /*0x771f08*/
+  AbstractTypeClass::Init(this); /*0x771f08*/
   *(unsigned int *)&this->Report = (int)&TypeList_int_vftable; /*0x771f12*/
   this->DownReport[0] = (int)&TypeList_int_vftable; /*0x771f18*/
   this->Anim[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x771f1e*/
