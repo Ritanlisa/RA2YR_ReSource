@@ -54,6 +54,8 @@
 #include "e4/classes/E4Recv_4964D0_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/E4Recv_4965B0_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x4A0190
 namespace gamemd {
@@ -659,7 +661,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 }
 // 0x4A3C30
 namespace gamemd {
-void Palette_Fade(const void * a1, signed int a2, void (*a3)(void) a3)
+void Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
 {
   int result; // eax
   unsigned char *v6; // eax

@@ -11,7 +11,7 @@ namespace gamemd {
 LPDIRECTDRAW7 g_lpDirectDraw7 = nullptr;
 
 // IDA: 0xA8ED80 -- g_DDraw_Active
-bool g_DDraw_Active = false;
+int g_DDraw_Active = 0;
 
 // IDA: 0x8A00A4 -- g_DisplayWidth
 int g_DisplayWidth = 0;

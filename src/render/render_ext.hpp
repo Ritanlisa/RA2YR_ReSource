@@ -662,7 +662,7 @@ public:
 class BlitTransXlatAlphaZRead_ushort
 {
 public:
-    virtual ~ddtor() = default;  // 0x494D20
+    virtual ~BlitTransXlatAlphaZRead_ushort() = default;  // 0x494D20
 
     virtual void Blit_ZRead_AlphaBlend(); // 0x494590
     virtual void CallBlit0(); // 0x494600

@@ -91,11 +91,10 @@ struct Array {
     int GetElement(CampaignScore * aP1, void *a2_1);  // 0x763980
     int CleanupArrayWOL(void *a1_1);  // 0x7ACD30
     AbstractClass * * InsertElement(const void * a1, ObjectClass * aP2, void *a3_1);  // 0x7AD790
-    int ForEach(int a1, int a2, int a3, int (* a4)(int) a4);
-    int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int) a4);
+    int ForEach(int a1, int a2, int a3, int (* a4)(int));
+    int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
     int Cleanup(void *a1_1);  // 0x49B720
     char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
     void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
-    static double Contains(...);  // C2597 interim stub
 };
 } // namespace gamemd

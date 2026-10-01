@@ -38,6 +38,8 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
 #include "e4/classes/E4Recv_583AD0_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
+#include "e4/classes/TileNode_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {
@@ -745,7 +747,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
 }
 // 0x595FB0
 namespace gamemd {
-unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
+unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
 {
   unsigned int *WDTTerritoryClass; // eax
   char *v5; // esi

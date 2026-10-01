@@ -326,7 +326,7 @@ void Dialog_Close(HWND a1, int a2)
 }
 // 0x7759E0
 namespace gamemd {
-void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void) a2, int a3, char a4, char a5)
+void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4, char a5)
 {
   int v7; // eax
   TechnoTypeClass *v8; // ecx
@@ -545,7 +545,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
   {
     if ( !SendMessageA(hWnd, 0x4C9u, (WPARAM)a2, a3[15]) ) /*0x77625b*/
       return 0; /*0x77626a*/
-    *(&qword_B730A0 + 1) = (unsigned __int64)((HWND)a3[15]); /*0x77627a*/
+    *(&qword_B730A0 + 1) = (uint64_t)((HWND)a3[15]); /*0x77627a*/
     SendMessageA(a2, 0x110Bu, 9u, 0); /*0x776280*/
     himl = (int)((HIMAGELIST)SendMessageA(a2, 0x1112u, 0, a3[15])); /*0x776294*/
     lParam[0] = a3[15]; /*0x7762a5*/
@@ -558,7 +558,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
     ImageList_DragEnter(hWnd, 0, 0); /*0x7762e8*/
     SetTimer(hWnd, 1u, 1u, 0); /*0x7762f5*/
     byte_B7309C = 1; /*0x7762fb*/
-    qword_B730A0 = (unsigned __int64)(a2); /*0x776302*/
+    qword_B730A0 = (uint64_t)(a2); /*0x776302*/
   }
   return byte_B7309C; /*0x776261*/
 }

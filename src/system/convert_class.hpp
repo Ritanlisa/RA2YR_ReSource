@@ -28,7 +28,7 @@ public:
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
     RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;
 
-    virtual ~ddtor();  // 0x491430
+    virtual ~ConvertClass();  // 0x491430
 
     ConvertClass(
         BytePalette const& palette,

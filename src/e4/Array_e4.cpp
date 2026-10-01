@@ -295,7 +295,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2, void 
 }
 // 0x4068F0
 namespace gamemd {
-int Array::ForEach(int a1, int a2, int a3, int (* a4)(int) a4)
+int Array::ForEach(int a1, int a2, int a3, int (* a4)(int))
 {
 
   int result; // eax
@@ -320,7 +320,7 @@ int Array::ForEach(int a1, int a2, int a3, int (* a4)(int) a4)
 
 // 0x40AFD0
 namespace gamemd {
-int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int) a4)
+int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int))
 {
 
   char *v4; // esi

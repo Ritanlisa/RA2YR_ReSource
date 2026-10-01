@@ -224,7 +224,7 @@ namespace gamemd {
         int ApplyChronoScreenColorShift();
     };
     struct Gap2Recv_53FA90 {
-        int * Network_Init_53FA90(int, int, int16_t, int16_t_2);
+        int * Network_Init_53FA90(int, int, int16_t, int16_t);
     };
     struct Gap2Recv_5402B0 {
         int Network_Init_5402B0();

@@ -10,6 +10,12 @@ namespace gamemd {
 class CCFileClass;      // src/system/cc_file.hpp
 class CCINIClass;       // src/misc/rules.hpp (fwd)
 class INIClass;
+// cross-domain app/e4 globals referenced by InitGame translation
+extern void* g_BinkMoviePlayer;        // data: 0x87f770 (def: globals.cpp)
+extern bool g_Is16BitMode;             // 0x8175B0 (decl: app/cmdline.hpp)
+extern bool byte_89E3A0;               // 0x89E3A0 (-CD flag)
+extern uint32_t g_Audio_MixerEnabled;  // 0x840A70
+
 class ConvertClass;     // src/system/convert_class.hpp
 class WWMouseClass;     // src/ui/mouse.hpp
 

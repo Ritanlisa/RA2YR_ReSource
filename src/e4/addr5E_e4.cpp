@@ -191,7 +191,7 @@ void sub_5E2AC0()
 }
 // 0x5E2CD0
 namespace gamemd {
-void ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)() a3, char a4)
+void ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)(), char a4)
 {
   wchar_t *v4; // ebp
   int v6; // edi

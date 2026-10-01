@@ -286,9 +286,9 @@ protected:
 
 // CSP: BSurface matched via T3
 class BSurface : public XSurface
-    int GetWidth(int, ...); // vtable slot +124
 {
 public:
+    int GetWidth(int, ...); // vtable slot +124
     BSurface(int width, int height, int bytes_per_pixel) noexcept;
 
     // design: virtual function, no binary implementation matched in IDA
