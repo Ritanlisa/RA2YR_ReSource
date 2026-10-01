@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_479740 {
     unsigned int Debug;
     void* vfptr;  // minimal E2 declaration

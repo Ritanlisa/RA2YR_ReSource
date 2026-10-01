@@ -8,6 +8,7 @@ namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct INIClass;  // fix_fwd_type_supply
 struct Dialog {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

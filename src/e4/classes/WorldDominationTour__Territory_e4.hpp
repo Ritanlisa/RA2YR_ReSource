@@ -8,6 +8,7 @@
 namespace gamemd {
 struct CampaignScore;  // fix_fwd_type_supply
 struct ReferenceCounted;  // fix_fwd_type_supply
+struct SessionClass;  // fix_fwd_type_supply
 struct WorldDominationTour__Territory {
 // --- flat members (BEGIN) ---
     void * ptr_4;  // 0x4

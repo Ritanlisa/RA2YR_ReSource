@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct BlitTransLucent25;  // fix_fwd_type_supply
 struct E4Recv_499FC0 {
     void* vfptr;  // minimal E2 declaration
     BlitTransLucent25 * ___Gfacet_locale_std__UAEPAXI_Z_29(char a2);  // 0x499FC0

@@ -8,6 +8,7 @@
 namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct ControlClass;  // fix_fwd_type_supply
 struct String {
 // --- flat members (BEGIN) ---
     unsigned int q4;  // 0x4

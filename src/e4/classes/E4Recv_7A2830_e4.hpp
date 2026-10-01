@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Coord;  // fix_fwd_type_supply
 struct E4Recv_7A2830 {
     void* vfptr;  // minimal E2 declaration
     Coord * * sub_7A2830();  // 0x7A2830

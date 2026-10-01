@@ -772,22 +772,22 @@ LABEL_99:
   }
 
 }
-  if ( dword_ABCD44 < (CampaignScore *)PingPongBuffer::GetWriteOffset() && *(int *)(*((unsigned int *)this + 50) + 724) > 1 ) /*0x422fe6*/
-    return; /*0x422fe6*/
-  if ( *((unsigned char *)this + 413) ) /*0x422fec*/
-    return; /*0x422fec*/
-  v20 = (CoordStruct *)*((unsigned int *)this + 50); /*0x422ffa*/
-  if ( v20[60].Y > *(int *)&HouseClass_Player.__pad_5568[22724] || *((unsigned char *)this + 409) && IDA_LOBYTE(v20[73].Z) ) /*0x42301e*/
-    return; /*0x42301e*/
-  } *(float *)&v103 = COERCE_FLOAT((*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 27))(this));
-  if ( !v103 ) /*0x423039*/
-    return; /*0x423039*/
-  v21 = (CoordStruct *)*((unsigned int *)this + 50); /*0x42303f*/
-  v22 = *((unsigned int *)this + 100); /*0x42304b*/
-  v90 = (CoordStruct *)*((unsigned int *)this + 43); /*0x423051*/
-  aP4 = (CoordStruct *)((char *)v90 + v21[57].Z); /*0x42305d*/
-  if ( *((unsigned char *)this + 281) ) /*0x423061*/
-  {
+//DUPDEF   if ( dword_ABCD44 < (CampaignScore *)PingPongBuffer::GetWriteOffset() && *(int *)(*((unsigned int *)this + 50) + 724) > 1 ) /*0x422fe6*/
+//DUPDEF     return; /*0x422fe6*/
+//DUPDEF   if ( *((unsigned char *)this + 413) ) /*0x422fec*/
+//DUPDEF     return; /*0x422fec*/
+//DUPDEF   v20 = (CoordStruct *)*((unsigned int *)this + 50); /*0x422ffa*/
+//DUPDEF   if ( v20[60].Y > *(int *)&HouseClass_Player.__pad_5568[22724] || *((unsigned char *)this + 409) && IDA_LOBYTE(v20[73].Z) ) /*0x42301e*/
+//DUPDEF     return; /*0x42301e*/
+//DUPDEF   } *(float *)&v103 = COERCE_FLOAT((*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 27))(this));
+//DUPDEF   if ( !v103 ) /*0x423039*/
+//DUPDEF     return; /*0x423039*/
+//DUPDEF   v21 = (CoordStruct *)*((unsigned int *)this + 50); /*0x42303f*/
+//DUPDEF   v22 = *((unsigned int *)this + 100); /*0x42304b*/
+//DUPDEF   v90 = (CoordStruct *)*((unsigned int *)this + 43); /*0x423051*/
+//DUPDEF   aP4 = (CoordStruct *)((char *)v90 + v21[57].Z); /*0x42305d*/
+//DUPDEF   if ( *((unsigned char *)this + 281) ) /*0x423061*/
+//DUPDEF   {
     if ( IDA_LOBYTE(v21[72].Z) ) /*0x42306b*/
       v22 |= 6u; /*0x423075*/
     else
@@ -1034,11 +1034,11 @@ LABEL_99:
   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
   aP0 = v94; /*0x423615*/
   v61 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x42361a*/
-  if ( CellClass::QuickPassable(v61) ) /*0x423621*/
-  {
-    *(float *)&v41 = 0.0; /*0x42362a*/
-    *(float *)&aP2 = 0.0; /*0x42362c*/
-  }
+//DUPDEF   if ( CellClass::QuickPassable(v61) ) /*0x423621*/
+//DUPDEF   {
+//DUPDEF     *(float *)&v41 = 0.0; /*0x42362a*/
+//DUPDEF     *(float *)&aP2 = 0.0; /*0x42362c*/
+//DUPDEF   }
   v62 = (CoordStruct *)*((unsigned int *)this + 50); /*0x423630*/
   if ( IDA_HIBYTE(v62[71].Y) ) /*0x423636*/
   {

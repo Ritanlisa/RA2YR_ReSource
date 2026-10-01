@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct SkirmishDialog;  // fix_fwd_type_supply
 struct E4Recv_5E7160 {
     void* vfptr;  // minimal E2 declaration
     SkirmishDialog * * HandleMultiplayerMapSelection();  // 0x5E7160

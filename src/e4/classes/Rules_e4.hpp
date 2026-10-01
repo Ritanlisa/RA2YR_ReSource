@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct Color;  // fix_fwd_type_supply
+struct IUnknown;  // fix_fwd_type_supply
 struct Rules {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4

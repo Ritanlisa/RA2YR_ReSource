@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Coord;  // fix_fwd_type_supply
 struct BuildingLight {
 // --- flat members (BEGIN) ---
     unsigned int u32_C;  // 0xC

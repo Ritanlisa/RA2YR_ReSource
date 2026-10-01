@@ -19,6 +19,7 @@ struct HouseClass;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
+struct MouseClass;  // fix_fwd_type_supply
 struct Tactical {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

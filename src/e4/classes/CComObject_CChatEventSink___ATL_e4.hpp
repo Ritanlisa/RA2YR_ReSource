@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct Coord;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignScore;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
 struct CComObject_CChatEventSink___ATL {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

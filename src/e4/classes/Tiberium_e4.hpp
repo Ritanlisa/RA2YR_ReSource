@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct Tiberium {
 // --- flat members (BEGIN) ---
     void* q038;  // 0x38

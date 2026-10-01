@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

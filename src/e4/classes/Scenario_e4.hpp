@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct IPXInterfaceClass;  // fix_fwd_type_supply
+struct Game;  // fix_fwd_type_supply
 struct Scenario {
 // --- flat members (BEGIN) ---
     IPXInterfaceClass* q000;  // 0x0

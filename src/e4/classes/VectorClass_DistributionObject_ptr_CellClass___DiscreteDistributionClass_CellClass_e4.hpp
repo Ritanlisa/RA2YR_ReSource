@@ -7,6 +7,7 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

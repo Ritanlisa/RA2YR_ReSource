@@ -8,6 +8,8 @@
 namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct CellStruct;  // fix_fwd_type_supply
+struct DynamicVectorClass_flat;  // fix_fwd_type_supply
 struct Voxel {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

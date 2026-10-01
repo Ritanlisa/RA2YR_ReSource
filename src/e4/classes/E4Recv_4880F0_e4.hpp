@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct AbstractClass;  // fix_fwd_type_supply
+struct ConvertClass;  // fix_fwd_type_supply
 struct E4Recv_4880F0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

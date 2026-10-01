@@ -10,6 +10,8 @@ struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 struct CellStruct;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
 struct Cell {
 // --- flat members (BEGIN) ---
     Cell* q000;  // 0x0

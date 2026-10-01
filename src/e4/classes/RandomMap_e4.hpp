@@ -8,6 +8,10 @@ namespace gamemd {
 struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
+struct MapClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct WeaponStruct;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct RandomMap {
 // --- flat members (BEGIN) ---
     void* q000;  // 0x0

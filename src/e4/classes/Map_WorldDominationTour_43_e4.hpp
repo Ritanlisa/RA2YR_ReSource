@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 struct Map_WorldDominationTour_43 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

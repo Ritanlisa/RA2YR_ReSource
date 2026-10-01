@@ -13,6 +13,11 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct Surface;  // fix_fwd_type_supply
 struct FileClass;  // fix_fwd_type_supply
+struct Blitter;  // fix_fwd_type_supply
+struct BlitPlainXlat;  // fix_fwd_type_supply
+struct BlitTransXlat;  // fix_fwd_type_supply
+struct RLEBlitter;  // fix_fwd_type_supply
+struct GScreenClass;  // fix_fwd_type_supply
 struct AbstractClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

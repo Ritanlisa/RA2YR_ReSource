@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MSAnim;  // fix_fwd_type_supply
 struct E4Recv_4F3460 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

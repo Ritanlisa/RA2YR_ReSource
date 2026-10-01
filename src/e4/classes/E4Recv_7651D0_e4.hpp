@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct AudioController;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_7651D0 {
 // --- flat members (BEGIN) ---
     AudioController * ptr_48;  // 0x48

@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct RLEBlitTransXlat;  // fix_fwd_type_supply
 struct E4Recv_499D80 {
     void* vfptr;  // minimal E2 declaration
     RLEBlitTransXlat * ___Gfacet_locale_std__UAEPAXI_Z_11(char a2);  // 0x499D80

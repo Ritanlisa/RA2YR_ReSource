@@ -6,6 +6,7 @@
 
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 struct WDTState_4 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
