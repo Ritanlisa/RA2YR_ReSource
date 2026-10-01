@@ -34,6 +34,8 @@ struct DropListClass {
     unsigned char q050;  // 0x50
 // --- flat members (END) ---
     int COMStub();
+    unsigned int q0446;  // 0x446
+    unsigned int u32_BC;  // 0xBC
 };
 
 } // namespace gamemd

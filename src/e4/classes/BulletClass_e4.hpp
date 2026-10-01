@@ -211,6 +211,7 @@ struct BulletClass {
     ConnectionPointClass* q1E8;  // 0x1E8
     unsigned char q1EC;  // 0x1EC
     unsigned int q200;  // 0x200
+    unsigned int q01C2;  // 0x1C2
     int q202;  // 0x202
     unsigned int q204;  // 0x204
     unsigned char q206;  // 0x206
@@ -415,6 +416,7 @@ struct BulletClass {
     int PowerDrainProcess(int a1, unsigned int * a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int16_t LoseTarget();  // 0x468430
+    unsigned int q0A43;  // 0xA43
 };
 
 } // namespace gamemd

@@ -34,6 +34,13 @@ struct BaseClass {
 // --- flat members (END) ---
     int LoadArrayFields(unsigned int * a1, int a2);
     int LoadBaseNodeClass(VectorClass_flat * aP0, int a2);
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_68;  // 0x68
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_5C;  // 0x5C
+    unsigned int u32_54;  // 0x54
+    unsigned int u32_52;  // 0x52
 };
 
 } // namespace gamemd

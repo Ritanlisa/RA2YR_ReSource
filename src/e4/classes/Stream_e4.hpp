@@ -58,6 +58,10 @@ struct Stream {
     void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
     static double CopyFromTemplate(...);  // C2597 interim stub
     int WriteBlock(int a2, int a3, int a4);  // 0x5f1bf0
+    BlowStraw * u32_58;  // 0x58
+    unsigned char u32_54;  // 0x54
+    void * u32_3C;  // 0x3C
+    unsigned int u32_38;  // 0x38
 };
 
 } // namespace gamemd

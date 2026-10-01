@@ -87,6 +87,12 @@ struct AITriggerTypeClass {
     int IronCurtainCharged(int a1, int a2);
     int RegisterFailure();
     int RegisterSuccess();
+    unsigned char q0148;  // 0x148
+    unsigned int q0147;  // 0x147
+    unsigned char q0144;  // 0x144
+    unsigned char q0E8;  // 0xE8
+    unsigned int q0E4;  // 0xE4
+    unsigned char q09C;  // 0x9C
 };
 
 } // namespace gamemd

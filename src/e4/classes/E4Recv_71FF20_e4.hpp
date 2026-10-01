@@ -33,5 +33,6 @@ struct E4Recv_71FF20 {
     CampaignScore * q1910;  // 0x1910
 // --- flat members (END) ---
     int sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9);  // 0x71FF20
+    CampaignScore * field_38;  // 0x38
 };
 } // namespace gamemd

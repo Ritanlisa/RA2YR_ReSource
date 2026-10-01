@@ -584,6 +584,8 @@ struct TechnoClass {
     int IsMission27to30();  // 0x522510
     char GetTypeFlag();  // 0x5224e0
     int CalculateDamage();  // 0x663030
+    int32_t u32_608;  // 0x608
+    ProgressTimer q0584;  // 0x584
 };
 
 } // namespace gamemd

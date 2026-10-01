@@ -94,5 +94,6 @@ struct Options {
     HWND InitDialogControls(HWND hDlg);  // 0x4F1720
     int DialogProc(CCINIClass hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460
+    void* field_10;  // 0x10
 };
 } // namespace gamemd

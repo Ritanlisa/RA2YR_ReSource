@@ -46,6 +46,8 @@ struct CheckListClass {
     void StubReturn();
     void StubReturnFalse(int a1, int a2, int a3);
     void StubReturnVoid();
+    unsigned int u32_174;  // 0x174
+    unsigned int u32_16C;  // 0x16C
 };
 
 } // namespace gamemd

@@ -33,6 +33,12 @@ struct ColorStruct {
     unsigned char *__pad_0;  // 0x0
 // --- flat members (END) ---
     int SetRGB(uint8_t a2, uint8_t a3, uint8_t a4);
+    void* field_54;  // 0x54
+    void* field_50;  // 0x50
+    void* field_34;  // 0x34
+    void* field_30;  // 0x30
+    void* field_14;  // 0x14
+    void* field_10;  // 0x10
 };
 
 } // namespace gamemd
