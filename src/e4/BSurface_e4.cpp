@@ -122,7 +122,7 @@ void BSurface::CreateTripleBuffer(void *a1_1)
     {
       v3 = *(void (****)(unsigned int, int))((char *)this + 68); /*0x7b8c9c*/
       if ( v3 ) /*0x7b8ca1*/
-        (**v3)(v3, 1); /*0x7b8ca7*/
+        (**v        ((unsigned int)(**v3))(v3, 1); 
       *((unsigned int *)this + 17) = 0; /*0x7b8ca9*/
     }
     v4 = *((unsigned int *)this + 22); /*0x7b8cac*/
@@ -132,7 +132,7 @@ void BSurface::CreateTripleBuffer(void *a1_1)
     {
       v5 = *(void (****)(unsigned int, int))((char *)this + 88); /*0x7b8cd9*/
       if ( v5 ) /*0x7b8cde*/
-        (**v5)(v5, 1); /*0x7b8ce4*/
+        (**v        ((unsigned int)(**v5))(v5, 1); 
       *((unsigned int *)this + 22) = 0; /*0x7b8ce6*/
     }
     v6 = *((unsigned int *)this + 27); /*0x7b8ce9*/
@@ -142,7 +142,7 @@ void BSurface::CreateTripleBuffer(void *a1_1)
     {
       v7 = *(void (****)(unsigned int, int))((char *)this + 108); /*0x7b8d16*/
       if ( v7 ) /*0x7b8d1b*/
-        (**v7)(v7, 1); /*0x7b8d21*/
+        (**v        ((unsigned int)(**v7))(v7, 1); 
       *((unsigned int *)this + 27) = 0; /*0x7b8d23*/
     }
     if ( *((unsigned int *)this + 9) ) /*0x7b8d26*/

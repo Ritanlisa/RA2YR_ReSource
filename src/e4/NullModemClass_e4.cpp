@@ -109,7 +109,7 @@ int NullModemClass::CheckStatus()
 } // namespace gamemd
 // 0x5F3610
 namespace gamemd {
-void NullModemClass::GetAddress(int a2, void *a2, void *a3, void *a4)
+void NullModemClass::GetAddress(int a2, void *a2_2, void *a3, void *a4)
 {
 
   int v2; // eax

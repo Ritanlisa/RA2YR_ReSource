@@ -186,7 +186,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-void WaypointPathClass::computePath(int a2, unsigned int * a3, void *a3)
+void WaypointPathClass::computePath(int a2, unsigned int * a3, void *a3_2)
 {
 
   unsigned int *v4; // eax

@@ -26,10 +26,10 @@ int AlphaShapeClass::SD_vt13(int a2)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x420da9*/
-  Power::TimerProcess(*((unsigned int *)this + 10)); /*0x420db4*/
-  Power::TimerProcess(*((unsigned int *)this + 11)); /*0x420dbf*/
-  Power::TimerProcess(*((unsigned int *)this + 12)); /*0x420dca*/
-  return Power::TimerProcess(*((unsigned int *)this + 13)); /*0x420dda*/
+  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 10))); 
+  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 11))); 
+  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 12))); 
+  return Pow  return Power::TimerProcess((void *)(*((unsigned int *)this + 13))); 
 
 }
 } // namespace gamemd
@@ -40,7 +40,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int Prefix; // eax
 
-  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x420e4f*/
+  Prefix = A  Prefix = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); 
   return Prefix >= 0 ? 0 : Prefix;
 
 }
@@ -73,7 +73,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
   Block->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   Block->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
   v6 = (gamemd::AlphaShapeClass *)(Block); /*0x42175f*/
-  v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
+  v3 = (*(in  v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/
@@ -112,7 +112,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x420df1*/
+  Prefix_0 =  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x420df5*/
   {
     if ( aP0 ) /*0x420df9*/

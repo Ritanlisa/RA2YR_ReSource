@@ -517,7 +517,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
 } // namespace gamemd
 
 // 0x478720
-unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2)
+unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
 {
 
   int v3; // eax

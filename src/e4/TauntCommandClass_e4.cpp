@@ -22,7 +22,7 @@
 
 // 0x536290
 namespace gamemd {
-void TauntCommandClass::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
+void TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->TauntCommandClass_field_00 = a2; /*0x536296*/

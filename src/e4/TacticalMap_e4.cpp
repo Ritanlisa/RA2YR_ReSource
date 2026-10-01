@@ -1017,7 +1017,7 @@ int TacticalMap::DrawOccupiedRegion()
 
 }
 // 0x7BCFB0
-unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5)
+unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5_2)
 {
 
   TacticalMap *v5; // edi

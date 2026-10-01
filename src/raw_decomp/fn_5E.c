@@ -22948,7 +22948,7 @@ ObjectClass *__usercall Network::ModemConnectionDialog@<eax>(_DWORD *a1@<ebp>, i
   if ( !*(_DWORD *)&HouseClass_Player.__pad_5568[18444] /*0x5ef571*/
     || *(_DWORD *)&HouseClass_Player.__pad_5568[18448] == -1
     || *(_DWORD *)&HouseClass_Player.__pad_5568[18452] == -1
-    || Modem::OpenPort(&HouseClass_Player.__pad_5568[22460], (Modem *)&HouseClass_Player.__pad_5568[18444]) )
+    || Modem::OpenPort(&HouseClass_Player.__pad_5568[22460], (Modem *)&HouseClass_Player.__pad_5568_2[18444]) )
   {
     v4 = 1618; /*0x5ef57a*/
     dwNewLong = 1618; /*0x5ef57f*/

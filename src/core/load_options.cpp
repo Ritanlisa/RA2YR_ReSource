@@ -77,7 +77,7 @@ void LoadOptions::Construct() {
 }
 
 // 0x558740
-const char * LoadOptions::GetExtension() {
+const char ** LoadOptions::GetExtension() {
   char *p_is_active; // ecx
   int v3; // eax
 
@@ -112,7 +112,7 @@ void LoadOptions::Cleanup() {
   int result; // eax
 
   v2 = (unsigned int)(0);
-  for ( this->extension = (void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
+  for ( this->extension = (const char *)(void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
     RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
   p_is_active = (char *)(&this->is_active); /*0x5587c0*/
@@ -126,7 +126,7 @@ void LoadOptions::Cleanup() {
   }
   p_is_active[13] = 0; /*0x5587e6*/
   *((unsigned int *)p_is_active + 2) = 0; /*0x5587e9*/
-  return result; /*0x5587ec*/
+  return; /*0x5587ec*/
 }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {

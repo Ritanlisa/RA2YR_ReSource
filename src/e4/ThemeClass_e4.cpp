@@ -43,7 +43,7 @@ int ThemeClass::GetValue(void *a1, void *a2)
 } // namespace gamemd
 // 0x720480
 namespace gamemd {
-int ThemeClass::ReadThemeEntry(uint8_t *** a2, void *a2)
+int ThemeClass::ReadThemeEntry(uint8_t *** a2, void *a2_2)
 {
 
   const char *v3; // edi

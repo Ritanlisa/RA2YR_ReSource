@@ -354,7 +354,7 @@ void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0(void *a1)
 } // namespace gamemd
 // 0x4848B0
 namespace gamemd {
-void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2, void *a2)
+void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2, void *a2_2)
 {
 
   unsigned int *v2; // ebx

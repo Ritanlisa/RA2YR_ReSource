@@ -157,7 +157,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 }
 // 0x4788E0
 namespace gamemd {
-void ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2)
+void ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
 {
 
   int v3; // edi
@@ -590,7 +590,7 @@ LABEL_17:
 }
 // 0x6454E0
 namespace gamemd {
-int ParticleTypeClass::ProcessPower(int * a2, void *a2)
+int ParticleTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // ecx
@@ -794,7 +794,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
 
 // 0x645A70
 namespace gamemd {
-unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3)
+unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2)
 {
 
   unsigned char *v4; // eax
@@ -901,7 +901,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
 
 // 0x4785F0
 namespace gamemd {
-int ParticleTypeClass::Init(unsigned char * a2, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int ParticleTypeClass::Init(unsigned char * a2, void *a2_2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   int m_10; // esi

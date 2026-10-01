@@ -215,7 +215,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
 
 // 0x471C90
 namespace gamemd {
-void CaptureManagerClass::CanCapture(unsigned int * a2, void *a2)
+void CaptureManagerClass::CanCapture(unsigned int * a2, void *a2_2)
 {
 
   int v3; // edi

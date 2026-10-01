@@ -176,7 +176,7 @@ void Array::ByteSwap()
     v3 = (u_long *)this; /*0x74916c*/
     do /*0x749184*/
     {
-      *v3 = ntohl(*v3); /*0x749176*/
+      *v3 =       *v3 = ntohl((void *)(*v3)); 
       ++v2; /*0x74917e*/
       ++v3; /*0x74917f*/
     }
@@ -407,7 +407,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
+    if ( (*(    if ((int)((*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44)) 
     {
       v2 = (unsigned int *)(dword_8B40D8);
       v3 = 0; /*0x55b89b*/

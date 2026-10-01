@@ -215,7 +215,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3
 } // namespace gamemd
 // 0x46BEE0
 namespace gamemd {
-WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2)
+WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2)
 {
 
   int v3; // ecx
@@ -545,7 +545,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2)
 } // namespace gamemd
 // 0x46C560
 namespace gamemd {
-int BulletTypeClass::ProcessPower(int * a2, void *a2)
+int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // eax

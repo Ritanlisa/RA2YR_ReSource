@@ -6497,7 +6497,7 @@ int ParticleSystemClass::Update() {
 }
 // 0x62FE90
 namespace gamemd { 
-int ParticleSystemClass::UpdateSystem(int a1, int a1) {
+int ParticleSystemClass::UpdateSystem(int a1, int a1_2) {
   int v4; // edx
   int v5; // eax
   char *Owner; // ecx
@@ -6537,7 +6537,7 @@ int ParticleSystemClass::UpdateSystem(int a1, int a1) {
 }
 // 0x62FF20
 namespace gamemd { 
-int ParticleSystemClass::Write(int a1, void* a1) {
+int ParticleSystemClass::Write(int a1, void* a1_2) {
   int *v3; // ebp
   int v4; // edi
   int result; // eax

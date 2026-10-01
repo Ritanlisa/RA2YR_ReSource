@@ -749,7 +749,7 @@ void unknown::ddtor(void *a1)
 
 }
 // 0x5896A0
-int  unknown::Read(unsigned short * a2, void *a2)
+int  unknown::Read(unsigned short * a2, void *a2_2)
 {
 
   int m_10; // esi
@@ -1347,7 +1347,7 @@ unsigned int unknown::Write(int a2)
 
 }
 // 0x588D30
-int unknown::Seek(int a2, int a3, void *a3)
+int unknown::Seek(int a2, int a3, void *a3_2)
 {
 
   int v3; // edx

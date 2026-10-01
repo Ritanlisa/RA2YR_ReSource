@@ -748,7 +748,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
 
 }
 // 0x477DB0
-unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3, void *a4, void *a5, void *a6)
+unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6)
 {
 
   *(unsigned int *)&((unsigned int *)this)[3] = 0; /*0x477db9*/

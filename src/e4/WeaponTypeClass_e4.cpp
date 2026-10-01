@@ -252,7 +252,7 @@ int WeaponTypeClass::Destructor(void *a1)
 } // namespace gamemd
 // 0x772AE0
 namespace gamemd {
-int WeaponTypeClass::ProcessPower(int * a2, void *a2)
+int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // ecx

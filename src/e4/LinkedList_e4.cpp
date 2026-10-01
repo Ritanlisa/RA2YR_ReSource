@@ -299,7 +299,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
 } // namespace gamemd
 // 0x556700
 namespace gamemd {
-LinkClass * * LinkedList_flat::Append(int a2, void *a2)
+LinkClass * * LinkedList_flat::Append(int a2, void *a2_2)
 {
 
   LinkClass *v3; // eax

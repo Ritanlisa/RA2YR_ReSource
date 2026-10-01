@@ -459,7 +459,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
 } // namespace gamemd
 // 0x75DEC0
 namespace gamemd {
-void* WarheadTypeClass::ProcessPower(int * a2, void *a2)
+void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // eax
@@ -1245,7 +1245,7 @@ char WarheadTypeClass::AddRef(int a2)
 
 }
 // 0x525400
-int WarheadTypeClass::Init(unsigned int * a2, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int WarheadTypeClass::Init(unsigned int * a2, void *a2_2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   int m_10; // edx

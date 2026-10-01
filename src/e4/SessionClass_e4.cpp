@@ -932,7 +932,7 @@ int SessionClass::SetPlayerOption(SkirmishDialog * aP1, void *a2)
 } // namespace gamemd
 // 0x696FC0
 namespace gamemd {
-int SessionClass::SetPlayerColor(int a2, void *a2)
+int SessionClass::SetPlayerColor(int a2, void *a2_2)
 {
 
   int result; // eax
@@ -2558,7 +2558,7 @@ unsigned int SessionClass::Write(int a2)
 
 }
 // 0x69C4F0
-int SessionClass::Seek(int a2, void *a2, void *a3)
+int SessionClass::Seek(int a2, void *a2_2, void *a3)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c4fa*/
@@ -2752,7 +2752,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
 
 }
 // 0x69C940
-int SessionClass::Read(unsigned int * a2, void *a2)
+int SessionClass::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx

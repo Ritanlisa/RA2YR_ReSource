@@ -10,7 +10,7 @@
 
 // 0x5360B0
 namespace gamemd {
-void AddTeamCommand::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
+void AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
@@ -24,7 +24,7 @@ namespace gamemd {
 void AddTeamCommand::AddRef(void *a1)
 {
 
-  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x5360de*/
+  sprintf(&(  sprintf((char *const )(&(unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
   return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5360eb*/
 
 }
@@ -49,7 +49,7 @@ namespace gamemd {
 void AddTeamCommand::ddtor()
 {
 
-  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
+  return Get  return GetStringCSF((const wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6328); 
 
 }
 } // namespace gamemd

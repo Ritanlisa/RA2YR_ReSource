@@ -41,7 +41,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   v6 = aP3[1] + *((unsigned int *)this + 7); /*0x76fc6b*/
   v7 = *aP3 + *((unsigned int *)this + 6); /*0x76fc72*/
   CCFileClass::Construct2(v11, (char **)((char *)this + 32)); /*0x76fc74*/
-  if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
+  if ( CCFil  if ((int)(CCFileClass::Open(v11, 0))) 
   {
     v8 = (void *)((unsigned int)(__2_YAPAXI_Z(0x4Cu)));
     if ( v8 ) /*0x76fc94*/
@@ -54,7 +54,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   }
   v11[0] = (unsigned int)(&vt_CCFileClass);
   v13 = (unsigned int)(0);
-  Vector::Clear((int)v12); /*0x76fcef*/
+  Vector::Cl  Vector::Clear((void *)((int)v12)); 
   v11[0] = (unsigned int)(&off_7E1668); /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 

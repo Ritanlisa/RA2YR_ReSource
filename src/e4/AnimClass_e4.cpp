@@ -38,7 +38,7 @@
 
 // 0x4228E0
 namespace gamemd {
-void AnimClass::Destruct(void * a2, void *a2)
+void AnimClass::Destruct(void * a2, void *a2_2)
 {
 
   unsigned char *AnimClass_field_0xCC; // ebp
@@ -93,7 +93,7 @@ void AnimClass::Destruct(void * a2, void *a2)
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
-      RemoveTarget((int)a2); /*0x4229ca*/
+      Remove      RemoveTarget((gamemd::IUnknown *)((int)a2)); 
   }
   v12 = (gamemd::AnimClass *)(a2);
   v7 = (*(int (**)(int *, AnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x4229e3*/
@@ -347,8 +347,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         - 2;
     *(float *)&v104 = (double)(uint16_t)(v17 + v9) * 0.000015259022; /*0x422eab*/
     *(float *)&v103 = (double)(uint16_t)(v17 - v9) * 0.000015259022; /*0x422eb9*/
-    ColorStruct::SetRGB(&v110, v100[0], v13, v15); /*0x422ebd*/
-    ColorStruct::SetRGB(&v111, v100[0], v13, v15); /*0x422ecc*/
+    ColorStr    ColorStruct::SetRGB((unsigned char)(&v110), v100[0], v13, v15); 
+    ColorStr    ColorStruct::SetRGB((unsigned char)(&v111), v100[0], v13, v15); 
     *(float *)&v88 = (float)v102; /*0x422ede*/
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
@@ -508,14 +508,14 @@ LABEL_77:
 LABEL_78:
   if ( this->__pad_194[0] ) /*0x423358*/
   {
-    v34 = ZCoordToScreenY(*(int *)v101); /*0x423373*/
+    v34 = ZC    v34 = ZCoordToScreenY((gamemd::IUnknown *)(*(int *)v101)); 
     v35 = (int)(*a2); /*0x423384*/
     v36 = *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     *(unsigned int *)v101 = v35; /*0x4233a2*/
     v38 = AnimClass_field_0x0[116](this); /*0x4233a6*/
-    v39 = ZCoordToScreenY(v38); /*0x4233ae*/
+    v39 = ZC    v39 = ZCoordToScreenY((gamemd::IUnknown *)(v38)); 
     DrawToSurfaceSHP( /*0x4233e9*/
       (int)g_DSurface_Hidden_2,
       v105[0],
@@ -642,7 +642,7 @@ LABEL_99:
   v62 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x423630*/
   if ( v62[2].__pad_C[207] ) /*0x423636*/
   {
-    FoundationSize = Building::GetFoundationSize(&v108, 0); /*0x42364f*/
+    Foundati    FoundationSize = Building::GetFoundationSize((unsigned int *)(&v108), 0); 
     v64 = (int)(*a2); /*0x423657*/
     v65 = a2[1]; /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
@@ -655,7 +655,7 @@ LABEL_99:
     v68 = v66[116](this); /*0x42367e*/
     v69 = this->AnimClass_field_0x100 /*0x4236a1*/
         + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
-        - ZCoordToScreenY(v68)
+        - ZCoordToScreenY((gamemd::IUnknown *)(v68))
         - 50;
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x4236a4*/
     do /*0x423719*/
@@ -699,7 +699,7 @@ LABEL_99:
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x42379b*/
     v80 = this->AnimClass_field_0x100 /*0x42379e*/
         + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
-        - ZCoordToScreenY(v73)
+        - ZCoordToScreenY((gamemd::IUnknown *)(v73))
         - 3;
     DrawToSurfaceSHP( /*0x4237a9*/
       (int)g_DSurface_Hidden_2,

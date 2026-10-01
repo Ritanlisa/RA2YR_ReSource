@@ -18,7 +18,7 @@
 
 // 0x432AB0
 namespace gamemd {
-int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3)
+int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3_2)
 {
 
   int *v3; // eax
@@ -117,12 +117,12 @@ void BinkMovieHandle::CopyFrameToSurface(void *a1)
   width = (DSurface *)this->width; /*0x43306e*/
   if ( width == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x433073*/
   {
-    GetClientRect(g_hWnd, &Rect); /*0x433085*/
-    ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x433096*/
+    GetClien    GetClientRect((HWND)(g_hWnd), &Rect); 
+    ClientTo    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
     v3 = Rect.left + this->height; /*0x4330a7*/
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
-    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, (int)width); /*0x4330b4*/
+    BinkMovi    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
     v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
@@ -137,7 +137,7 @@ LABEL_6:
   {
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
-    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, this->width); /*0x43310d*/
+    BinkMovi    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), this->width); 
     v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
@@ -147,13 +147,13 @@ LABEL_6:
       goto LABEL_6; /*0x433155*/
     }
   }
-  return BinkMovie::BlitToTarget((BinkMovie *)this, (int)width); /*0x43316a*/
+  return Bin  return BinkMovie::BlitToTarget((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
 
 }
 } // namespace gamemd
 // 0x432BD0
 namespace gamemd {
-void BinkMovieHandle::Check(int a2, void *a2, void *a3)
+void BinkMovieHandle::Check(int a2, void *a2_2, void *a3)
 {
 
   int result; // eax
@@ -217,13 +217,13 @@ namespace gamemd {
 int BinkMovieHandle::Pause(int a2, int a3)
 {
 
-  return BinkMovieHandle::RenderFrameClipped(this->height, a2, a3); /*0x5c05b2*/
+  return Bin  return BinkMovieHandle::RenderFrameClipped(this->height, a2,(void *)(a3)); 
 
 }
 } // namespace gamemd
 // 0x5C05C0
 namespace gamemd {
-int BinkMovieHandle::RenderLoop(int a2, void *a2, void *a3, void *a4)
+int BinkMovieHandle::RenderLoop(int a2, void *a2_2, void *a3, void *a4)
 {
 
   return COMStub_432C10((WeaponTypeClass *)this->height, a2); /*0x5c05cd*/
@@ -232,7 +232,7 @@ int BinkMovieHandle::RenderLoop(int a2, void *a2, void *a3, void *a4)
 } // namespace gamemd
 // 0x5C05D0
 namespace gamemd {
-int BinkMovieHandle::AdjustSurfaceFormat(int a2, void *a2)
+int BinkMovieHandle::AdjustSurfaceFormat(int a2, void *a2_2)
 {
 
   return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2); /*0x5c05dd*/

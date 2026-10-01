@@ -77,12 +77,12 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
           if ( v7 >= v9 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        Power::ChangedHouse((Power *)v3 + 21, 1); /*0x413fcd*/
+        Powe        Power::ChangedHouse((char)((Power *)v3 + 21), 1); 
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), *(unsigned int *)(v3[433] + 1820)); /*0x413fd2*/
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), *(unsigned int *)(v3[433] + 1820)); /*0x414001*/
+    Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226)), *(unsigned int *)(v3[433] + 1820)); 
+    Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232)), *(unsigned int *)(v3[433] + 1820)); 
     Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
     FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
@@ -219,7 +219,7 @@ void AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void
 }
 // 0x417CC0
 namespace gamemd {
-AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3)
+AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3_2)
 {
 
   int *v3; // ebp
@@ -272,7 +272,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
     HIWORD(a3) = v9[1] / 256; /*0x417db7*/
     vtable0 = (int (**)(AircraftClass *, int **, unsigned int, int *))this->FootClass; /*0x417dc0*/
     aP1 = a3; /*0x417dc4*/
-    v7 = vtable0[28](this, &aP1, 0, v3); /*0x417dcb*/
+    v7 = vta    v7 = vtable0[28](this,(int **)(&aP1), 0, v3); 
   }
 LABEL_18:
   if ( v7 == 4 ) /*0x417dd0*/

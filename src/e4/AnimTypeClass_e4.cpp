@@ -84,7 +84,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   int v5; // eax
   AnimTypeClass **v6; // ecx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x42753a*/
+  ObjectType  ObjectTypeClass::ConstructFull((gamemd::AbstractClass *)((int *)this), aP1); 
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
@@ -166,7 +166,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427737*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42773d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427744*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x42774b*/
+  AbstractCl  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); 
   ((unsigned int *)this)[0] = 1; /*0x427750*/
   ((unsigned int *)this)[0] = 1; /*0x427757*/
   ((unsigned int *)this)[0] = 0; /*0x42775e*/
@@ -178,7 +178,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 5))) || !((unsigned int *)&FootClass_Array)[4])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 8))(
-         &(unsigned int *)((char *)&FootClass_Array + 2),
+         &((int *)(unsigned int *))((char *)&FootClass_Array + 2),
          *((unsigned int *)((char *)&FootClass_Array + 4)) + *((unsigned int *)((char *)&FootClass_Array + 1)),
          0) )
   {
@@ -243,7 +243,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     {
       if ( ((unsigned int *)this)[0] && ((unsigned int *)this)[0] ) /*0x427b85*/
       {
-        __3_YAXPAX_Z(((unsigned int *)this)[0]); /*0x427b90*/
+        __3_        __3_YAXPAX_Z((void *)(((unsigned int *)this)[0])); 
         ((unsigned int *)this)[0] = 0; /*0x427b98*/
       }
       v4 = ((unsigned int *)this)[0]; /*0x427b9f*/
@@ -251,14 +251,14 @@ void* AnimTypeClass::GetWarhead(int a2)
       ((unsigned int *)this)[0] = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         ImageFile = (const char *)((unsigned int *)this)[0]; /*0x427bb9*/
-      _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
+      _makep      _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); 
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
-      v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427be9*/
+      v3 = (      v3 = (SHPStruct *)SearchMIXFile(Buffer,(IUnknown *)(1)); 
       ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
-        v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427c07*/
+        v3 =        v3 = (SHPStruct *)SearchMIXFile(Buffer,(IUnknown *)(1)); 
         ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427c0c*/
       }
     }
@@ -289,7 +289,7 @@ void* AnimTypeClass::GetWarhead(int a2)
 }
 // 0x427D00
 namespace gamemd {
-int AnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2)
+int AnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 {
 
   int v3; // ecx
@@ -347,7 +347,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x428814*/
+  result = O  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1), a2); 
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
@@ -402,47 +402,47 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
   int v14; // ecx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
-  Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
+  AbstractTy  AbstractTypeClass::ProcessPower((gamemd::AbstractClass *)((AbstractTypeClass *)this), a2); 
+  Power::Tim  Power::TimerProcess((void *)(this->Layer[0])); 
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
-  Power::FlagProcess((Power *)a2, v3); /*0x4289f5*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v3); 
   LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x428a03*/
+  v5 = Power  v5 = Power::FlagProcess((int)((Power *)a2), v4); 
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
-  Power::FlagProcess((Power *)a2, v5); /*0x428a11*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v5); 
   LOBYTE(v6) = this->Scorch; /*0x428a16*/
-  Power::FlagProcess((Power *)a2, v6); /*0x428a1f*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v6); 
   LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x428a2d*/
+  v8 = Power  v8 = Power::FlagProcess((int)((Power *)a2), v7); 
   LOBYTE(v8) = this->Crater; /*0x428a32*/
-  Power::FlagProcess((Power *)a2, v8); /*0x428a3b*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v8); 
   LOBYTE(v9) = this->Sticky; /*0x428a40*/
-  Power::FlagProcess((Power *)a2, v9); /*0x428a49*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v9); 
   LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Power::FlagProcess((Power *)a2, v10); /*0x428a57*/
+  v11 = Powe  v11 = Power::FlagProcess((int)((Power *)a2), v10); 
   LOBYTE(v11) = this->Reverse; /*0x428a5c*/
-  Power::FlagProcess((Power *)a2, v11); /*0x428a65*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v11); 
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
-  Power::FlagProcess((Power *)a2, v12); /*0x428a73*/
-  Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v12); 
+  Power::Tim  Power::TimerProcess((void *)(this->MiddleFrameWidth)); 
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
-  Power::FlagProcess((Power *)a2, v13); /*0x428aa4*/
-  Power::TimerProcess(this->Rate); /*0x428ab2*/
-  Power::TimerProcess(this->Start); /*0x428ac0*/
-  Power::TimerProcess(this->LoopStart); /*0x428ace*/
-  Power::TimerProcess(this->LoopEnd); /*0x428adc*/
-  Power::TimerProcess(this->End); /*0x428aea*/
-  Power::TimerProcess(this->Report); /*0x428af8*/
-  Power::TimerProcess(this->StopSound); /*0x428b06*/
-  Power::TimerProcess(this->NumParticles); /*0x428b14*/
-  Power::TimerProcess(this->DetailLevel); /*0x428b22*/
-  Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
-  Power::TimerProcess(this->RandomLoopDelay[0]); /*0x428b3e*/
-  Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
-  Power::TimerProcess(this->Translucency); /*0x428b5a*/
+  Power::Fla  Power::FlagProcess((int)((Power *)a2), v13); 
+  Power::Tim  Power::TimerProcess((void *)(this->Rate)); 
+  Power::Tim  Power::TimerProcess((void *)(this->Start)); 
+  Power::Tim  Power::TimerProcess((void *)(this->LoopStart)); 
+  Power::Tim  Power::TimerProcess((void *)(this->LoopEnd)); 
+  Power::Tim  Power::TimerProcess((void *)(this->End)); 
+  Power::Tim  Power::TimerProcess((void *)(this->Report)); 
+  Power::Tim  Power::TimerProcess((void *)(this->StopSound)); 
+  Power::Tim  Power::TimerProcess((void *)(this->NumParticles)); 
+  Power::Tim  Power::TimerProcess((void *)(this->DetailLevel)); 
+  Power::Tim  Power::TimerProcess((void *)(this->TranslucencyDetailLevel)); 
+  Power::Tim  Power::TimerProcess((void *)(this->RandomLoopDelay[0])); 
+  Power::Tim  Power::TimerProcess((void *)(this->RandomLoopDelay[1])); 
+  Power::Tim  Power::TimerProcess((void *)(this->Translucency)); 
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Power::FlagProcess((Power *)a2, v14); /*0x428b6d*/
+  return Pow  return Power::FlagProcess((int)((Power *)a2), v14); 
 
 }
 }
@@ -454,7 +454,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate(AbstractClass * Source)
   int v2; // esi
   AnimTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x428b9c*/
+  if ( !_str  if ((const char *)(!_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source))) 
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) <= 0 ) /*0x428bb1*/

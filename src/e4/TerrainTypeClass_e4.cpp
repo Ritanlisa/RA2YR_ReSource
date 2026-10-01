@@ -40,7 +40,7 @@
 
 // 0x5447C0
 namespace gamemd {
-unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6)
+unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2)
 {
 
   int v7; // eax
@@ -460,7 +460,7 @@ bool  TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
 
 }
 // 0x71DE10
-TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2, void *a3, void *a4)
+TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void *a4)
 {
 
   TerrainClass *v3; // eax

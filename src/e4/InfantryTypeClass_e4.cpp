@@ -227,7 +227,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 } // namespace gamemd
 // 0x5240A0
 namespace gamemd {
-int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2)
+int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 {
 
   int v3; // ecx

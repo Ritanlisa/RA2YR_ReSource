@@ -131,7 +131,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     v14 = *((unsigned int *)this + 135); /*0x454b24*/
     *((unsigned char *)this + 1634) = 0; /*0x454b2a*/
-    HouseClass::LostPoweredCenter(v14, *(unsigned int *)(v3 + 1036)); /*0x454b38*/
+    HouseCla    HouseClass::LostPoweredCenter(v14,(void *)(*(unsigned int *)(v3 + 1036))); 
   }
   v15 = (CaptureManager *)*((unsigned int *)this + 175); /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
@@ -278,13 +278,13 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   while ( 1 ) /*0x770574*/
   {
     v6 = *(void **)this; /*0x770574*/
-    String::Assign((String *)&aP2, off_83E188); /*0x77057f*/
+    String::    String::Assign((const char *)((String *)&aP2), off_83E188); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 0, (char **)&aP2); /*0x770590*/
     DeleteAndZero((ObjectClass *)&aP2); /*0x770599*/
-    String::Assign((String *)&a1, g_INI_Key_Lose); /*0x7705a7*/
+    String::    String::Assign((const char *)((String *)&a1), g_INI_Key_Lose); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
     DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
-    String::Assign(&v23, aDraw); /*0x7705cf*/
+    String::    String::Assign((const char *)(&v23), aDraw); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
     DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
     v5 = (INIClass *)((char *)v5 + 148); /*0x7705f2*/
@@ -292,11 +292,11 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
       break; /*0x7705fd*/
     this = v22; /*0x770570*/
   }
-  String::Assign(&v23, aStartup); /*0x77060c*/
+  String::As  String::Assign((const char *)(&v23), aStartup); 
   v7 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77061c*/
-  ConcatStringAlloc((char **)&((unsigned int *)(v23.m_3))[1], (const char **)v7, (char **)&v23); /*0x770627*/
+  ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
   unknown_libname_73(&a1); /*0x770630*/
-  String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
+  String::As  String::Assign((const char *)((String *)&aP2), &g_INI_DefaultBuffer); 
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
@@ -331,11 +331,11 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v23.m_3))[1]); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
-  String::Assign(&v23, aTerritoryselec); /*0x77072b*/
+  String::As  String::Assign((const char *)(&v23), aTerritoryselec); 
   v14 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77073b*/
-  ConcatStringAlloc((char **)&((unsigned int *)(v23.m_3))[1], (const char **)v14, (char **)&v23); /*0x770746*/
+  ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
   unknown_libname_73(&a1); /*0x77074f*/
-  String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/
+  String::As  String::Assign((const char *)((String *)&aP2), &g_INI_DefaultBuffer); 
   INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/

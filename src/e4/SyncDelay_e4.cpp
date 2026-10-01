@@ -202,7 +202,7 @@ LABEL_44:
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {
-void SyncDelay::Check(unsigned int * a2, void *a2, void *a3)
+void SyncDelay::Check(unsigned int * a2, void *a2_2, void *a3)
 {
 
   unsigned int *v2; // eax

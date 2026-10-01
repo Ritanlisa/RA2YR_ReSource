@@ -227,10 +227,10 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     p_vtable0 = &v6->vtable0; /*0x4fba45*/
     v12 = (*(int (**)(int, void ***, int))(v11 + 16))(v7 + 80, &p_vtable0, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
-      Vector::RemoveAt((Vector *)(v7 + 80), v12); /*0x4fba54*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 80)), v12); 
     v13 = *(unsigned int *)(v7 + 128); /*0x4fba59*/
     a4 = &v6->vtable0; /*0x4fba6c*/
-    v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128, &a4); /*0x4fba70*/
+    v14 = (*    v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128,(void ***)(&a4)); 
     if ( v14 != -1 ) /*0x4fba76*/
     {
       v15 = *(unsigned int *)(v7 + 144); /*0x4fba78*/
@@ -247,12 +247,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v17 = *(unsigned int *)(v7 + 152); /*0x4fba99*/
     a4 = &v6->vtable0; /*0x4fbaa9*/
-    v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152, &a4); /*0x4fbab0*/
+    v18 = (*    v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152,(void ***)(&a4)); 
     if ( v18 != -1 ) /*0x4fbab6*/
-      Vector::RemoveAt((Vector *)(v7 + 152), v18); /*0x4fbabb*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 152)), v18); 
     v19 = *(unsigned int *)(v7 + 176); /*0x4fbac0*/
     a4 = &v6->vtable0; /*0x4fbad3*/
-    v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176, &a4); /*0x4fbad7*/
+    v20 = (*    v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176,(void ***)(&a4)); 
     if ( v20 != -1 ) /*0x4fbadd*/
     {
       v21 = *(unsigned int *)(v7 + 192); /*0x4fbadf*/
@@ -269,12 +269,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v23 = *(unsigned int *)(v7 + 200); /*0x4fbb00*/
     a4 = &v6->vtable0; /*0x4fbb10*/
-    v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200, &a4); /*0x4fbb17*/
+    v24 = (*    v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200,(void ***)(&a4)); 
     if ( v24 != -1 ) /*0x4fbb1d*/
-      Vector::RemoveAt((Vector *)(v7 + 200), v24); /*0x4fbb22*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 200)), v24); 
     v25 = *(unsigned int *)(v7 + 224); /*0x4fbb27*/
     a4 = &v6->vtable0; /*0x4fbb3a*/
-    v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224, &a4); /*0x4fbb3e*/
+    v26 = (*    v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224,(void ***)(&a4)); 
     if ( v26 != -1 ) /*0x4fbb44*/
     {
       v27 = *(unsigned int *)(v7 + 240); /*0x4fbb46*/
@@ -291,17 +291,17 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v29 = *(unsigned int *)(v7 + 248); /*0x4fbb67*/
     a4 = &v6->vtable0; /*0x4fbb77*/
-    v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248, &a4); /*0x4fbb7e*/
+    v30 = (*    v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248,(void ***)(&a4)); 
     if ( v30 != -1 ) /*0x4fbb84*/
-      Vector::RemoveAt((Vector *)(v7 + 248), v30); /*0x4fbb89*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 248)), v30); 
     v31 = *(unsigned int *)(v7 + 272); /*0x4fbb8e*/
     a4 = &v6->vtable0; /*0x4fbba1*/
-    v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272, &a4); /*0x4fbba5*/
+    v32 = (*    v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272,(void ***)(&a4)); 
     if ( v32 != -1 ) /*0x4fbbab*/
-      Vector::RemoveAt((Vector *)(v7 + 272), v32); /*0x4fbbb0*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 272)), v32); 
     v33 = *(unsigned int *)(v7 + 296); /*0x4fbbb5*/
     a4 = &v6->vtable0; /*0x4fbbc8*/
-    v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296, &a4); /*0x4fbbcc*/
+    v34 = (*    v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296,(void ***)(&a4)); 
     if ( v34 != -1 ) /*0x4fbbd2*/
     {
       v35 = *(unsigned int *)(v7 + 312); /*0x4fbbd4*/
@@ -318,12 +318,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v37 = *(unsigned int *)(v7 + 320); /*0x4fbbf5*/
     a4 = &v6->vtable0; /*0x4fbc05*/
-    v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320, &a4); /*0x4fbc0c*/
+    v38 = (*    v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320,(void ***)(&a4)); 
     if ( v38 != -1 ) /*0x4fbc12*/
-      Vector::RemoveAt((Vector *)(v7 + 320), v38); /*0x4fbc17*/
+      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 320)), v38); 
     v39 = *(unsigned int *)(v7 + 104); /*0x4fbc1c*/
     a4 = &v6->vtable0; /*0x4fbc29*/
-    v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104, &a4); /*0x4fbc2d*/
+    v40 = (*    v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104,(void ***)(&a4)); 
     if ( v40 != -1 ) /*0x4fbc33*/
     {
       v41 = *(unsigned int *)(v7 + 120); /*0x4fbc35*/
@@ -394,8 +394,8 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
-      GetClientRect(g_hWnd, &Rect); /*0x5c0419*/
-      ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c042b*/
+      GetCli      GetClientRect((HWND)(g_hWnd), &Rect); 
+      Client      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
       v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0446*/
       v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0449*/
       v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c044b*/

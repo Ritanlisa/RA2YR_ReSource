@@ -939,7 +939,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 } // namespace gamemd
 // 0x4A9700
 namespace gamemd {
-void DisplayClass::Update(PowerClass * aP1, int a3, void *a3, void *a4)
+void DisplayClass::Update(PowerClass * aP1, int a3, void *a3_2, void *a4)
 {
 
   VectorCursor_uint_DynamicVectorClass_uint____13::Count((int *)this, aP1, a3); /*0x4a970a*/

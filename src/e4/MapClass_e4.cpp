@@ -963,7 +963,7 @@ unsigned int * MapClass::InitAllCells()
 } // namespace gamemd
 // 0x5673A0
 namespace gamemd {
-int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9)
+int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9_2)
 {
 
   double v9; // st7
@@ -3388,7 +3388,7 @@ int MapClass::LoadTerrainData(MapClass * aP1)
 
 }
 // 0x586780
-int  MapClass::IsAreaFree(int * a2, int a3, void *a3)
+int  MapClass::IsAreaFree(int * a2, int a3, void *a3_2)
 {
 
   int v4; // eax
@@ -4519,7 +4519,7 @@ int MapClass::GetScrollMode()
 
 }
 // 0x4F42F0
-int MapClass::MarkForRedraw(int a2, void *a2)
+int MapClass::MarkForRedraw(int a2, void *a2_2)
 {
 
   int result; // eax

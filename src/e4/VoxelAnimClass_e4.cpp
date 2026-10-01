@@ -1002,7 +1002,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
 }
 // 0x4399E0
 namespace gamemd {
-float * VoxelAnimClass::QuaternionToMatrix(float * a2, void *a2)
+float * VoxelAnimClass::QuaternionToMatrix(float * a2, void *a2_2)
 {
 
   float *v2; // esi

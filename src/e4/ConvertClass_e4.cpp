@@ -13,7 +13,7 @@
 
 // 0x48E740
 namespace gamemd {
-unsigned int * ConvertClass::Construct(char * a2, char * a3, int a4, int a5, char a6, void *a6)
+unsigned int * ConvertClass::Construct(char * a2, char * a3, int a4, int a5, char a6, void *a6_2)
 {
 
   int v7; // eax

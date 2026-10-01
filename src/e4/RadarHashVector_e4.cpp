@@ -211,7 +211,7 @@ void RadarHashVector::ddtor()
 } // namespace gamemd
 // 0x658AA0
 namespace gamemd {
-int RadarHashVector::Read(unsigned int * a2, void *a2)
+int RadarHashVector::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

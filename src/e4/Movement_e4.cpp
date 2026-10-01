@@ -488,7 +488,7 @@ LABEL_49:
 } // namespace gamemd
 // 0x5B2930
 namespace gamemd {
-unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3, void *a3)
+unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3, void *a3_2)
 {
 
   LOWORD(a3) = LOWORD(this->Movement_field_00) + *a3; /*0x5b293e*/

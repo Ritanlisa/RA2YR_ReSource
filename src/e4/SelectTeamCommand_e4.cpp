@@ -9,7 +9,7 @@
 
 // 0x535FC0
 namespace gamemd {
-void SelectTeamCommand::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
+void SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/

@@ -36,7 +36,7 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1, void *a2, void *a3)
   *((char *)this + 3) = (int)&vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
-    strncpy(Destination, aP1, 0x18u); /*0x410895*/
+    strncpy(    strncpy(Destination,(const char *)(aP1), 0x18u); 
     Destination[24] = 0; /*0x4108a3*/
     if ( Destination == v3 ) /*0x4108a8*/
       goto LABEL_9; /*0x4108a8*/
@@ -129,7 +129,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = (int)(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); /*0x410a7f*/
+  result = (  result = ((gamemd::INIClass *)(int))(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); 
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
@@ -249,7 +249,7 @@ namespace gamemd {
 BOOL AbstractTypeClass::NameEquals(void * a2)
 {
 
-  return _strcmpi(a2, (const void *)((char *)this + 36)) == 0; /*0x410a56*/
+  return _st  return _strcmpi((const char *)(a2), (const void *)((char *)this + 36)) == 0; 
 
 }
 } // namespace gamemd

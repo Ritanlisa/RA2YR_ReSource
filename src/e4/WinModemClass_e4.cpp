@@ -521,7 +521,7 @@ int WinModemClass::HangUp(int a2)
 } // namespace gamemd
 // 0x7754D0
 namespace gamemd {
-int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5)
+int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5_2)
 {
 
   int result; // eax

@@ -216,7 +216,7 @@ LABEL_6:
 }
 // 0x6EF5F0
 namespace gamemd {
-int TeamTypeClass::Check(int a2, void *a2, void *a3)
+int TeamTypeClass::Check(int a2, void *a2_2, void *a3)
 {
 
   int result; // eax

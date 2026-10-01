@@ -2132,7 +2132,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x41C500
 namespace gamemd {
-char BuildingTypeClass::Enqueue(int a2, void *a2)
+char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 {
 
   char *v3; // edi

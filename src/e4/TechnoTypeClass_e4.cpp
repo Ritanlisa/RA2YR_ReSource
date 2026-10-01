@@ -222,7 +222,7 @@ LABEL_11:
 } // namespace gamemd
 // 0x710AF0
 namespace gamemd {
-void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3)
+void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
 {
 
   unsigned int *v4; // eax
@@ -1608,7 +1608,7 @@ VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 
 }
 // 0x717DB0
-char TechnoTypeClass::RemoveItem(int a2, void *a2)
+char TechnoTypeClass::RemoveItem(int a2, void *a2_2)
 {
 
   int v2; // edx

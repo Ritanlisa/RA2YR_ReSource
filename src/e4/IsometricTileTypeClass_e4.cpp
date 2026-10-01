@@ -21,7 +21,7 @@
 
 // 0x549B70
 namespace gamemd {
-void IsometricTileTypeClass::ProcessPower(int * a2, void *a2)
+void IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // eax
@@ -101,7 +101,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 } // namespace gamemd
 // 0x549DD0
 namespace gamemd {
-void IsometricTileTypeClass::GetTileIndex(int a2, int a3, void *a3, void *a4)
+void IsometricTileTypeClass::GetTileIndex(int a2, int a3, void *a3_2, void *a4)
 {
 
   int result; // eax
@@ -308,7 +308,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 } // namespace gamemd
 // 0x54A850
 namespace gamemd {
-unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3, void *a3)
+unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3, void *a3_2)
 {
 
   this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/

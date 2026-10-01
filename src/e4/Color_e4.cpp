@@ -11,7 +11,7 @@
 
 // 0x517440
 namespace gamemd {
-int Color::ConvertToRGB(int a2, void *a2)
+int Color::ConvertToRGB(int a2, void *a2_2)
 {
 
   int v2; // esi

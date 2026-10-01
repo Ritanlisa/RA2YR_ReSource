@@ -344,7 +344,7 @@ LABEL_10:
 
 // 0x71AB10
 namespace gamemd {
-void TemporalClass::GetWarpPerStep(int a2, void *a2)
+void TemporalClass::GetWarpPerStep(int a2, void *a2_2)
 {
 
   int WarpPerStep; // ebx

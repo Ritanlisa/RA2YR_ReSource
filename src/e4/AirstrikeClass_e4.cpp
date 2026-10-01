@@ -29,7 +29,7 @@
 
 // 0x41D860
 namespace gamemd {
-int AirstrikeClass::SpawnAircraft(int * a2, void *a2)
+int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
 {
 
   int v3; // eax
@@ -84,7 +84,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2)
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
-      result = StartAudioControllerAt(((unsigned int *)dword_8871E0)[0], (int)v18, 0); /*0x41d96b*/
+      result      result = StartAudioControllerAt((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0]), (int)v18, 0); 
     }
     *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/
@@ -115,7 +115,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2)
 
 // 0x41DA20
 namespace gamemd {
-int AirstrikeClass::ReassignTarget(int a2, void *a2)
+int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
 {
 
   int v3; // ecx
@@ -256,7 +256,7 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
   v5 = (gamemd::AirstrikeClass *)(Block); /*0x41dd7f*/
-  v3 = (*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
+  v3 = (*(in  v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -415,7 +415,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x41d701*/
+  Prefix_0 =  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x41d705*/
   {
     if ( aP0 ) /*0x41d709*/
@@ -442,7 +442,7 @@ namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x41d794*/
+  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); 
 
 }
 } // namespace gamemd
@@ -474,7 +474,7 @@ char AirstrikeClass::StartMission(int * a2)
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(int a1,a2) ; /*0x41d83c*/
   if ( a2 != *(int **)((char *)a1 + 80) ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget(a1, (int)a2); /*0x41d84a*/
+    return A    return AirstrikeClass::ReassignTarget(a1,(void *)((int)a2)); 
   return result; /*0x41d841*/
 
 }

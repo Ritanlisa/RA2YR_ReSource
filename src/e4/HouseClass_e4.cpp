@@ -174,7 +174,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 }
 // 0x4F54A0
 namespace gamemd {
-int HouseClass::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
+int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // edx
@@ -2670,7 +2670,7 @@ int HouseClass::GetUnitSelfHealStep()
 }
 // 0x50E0E0
 namespace gamemd {
-void HouseClass::LostPoweredCenter(int a2, void *a2)
+void HouseClass::LostPoweredCenter(int a2, void *a2_2)
 {
 
   int v3; // eax
@@ -2724,7 +2724,7 @@ LABEL_16:
 }
 // 0x5471B0
 namespace gamemd {
-int HouseClass::GetCameoTypeIndex(int a2, void *a2)
+int HouseClass::GetCameoTypeIndex(int a2, void *a2_2)
 {
 
   unsigned int *v2; // eax
@@ -3730,7 +3730,7 @@ char HouseClass::ReshroudMap()
 
 // 0x50E1B0
 namespace gamemd {
-BOOL HouseClass::GainedPoweredCenter(int a2, void *a2)
+BOOL HouseClass::GainedPoweredCenter(int a2, void *a2_2)
 {
 
   return this->poweredUnitCenters > 0; /*0x50e1bd*/

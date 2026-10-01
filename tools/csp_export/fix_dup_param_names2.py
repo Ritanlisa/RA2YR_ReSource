@@ -45,7 +45,7 @@ def dedupe_params(seg):
 
 
 n = 0
-for p in sorted(ROOT.glob('src/**/*.hp*')):
+for p in sorted(ROOT.glob('src/**/*.c*')):
     if 'build' in p.parts or not p.is_file():
         continue
     try:
@@ -56,6 +56,13 @@ for p in sorted(ROOT.glob('src/**/*.hp*')):
     for i, l in enumerate(lines):
         s = l.strip()
         if not s or '(' not in s or ' operator' in s:
+            continue
+        if '::' not in s.split('(')[0]:
+            continue  # cpp: only def heads carry Class:: qual
+        if s.endswith(';') or '=' in s.split('(')[0]:
+            continue  # statements/calls end in ; — only def heads pass
+        if not (s.endswith('{') or s.endswith(')')
+                or (i + 1 < len(lines) and lines[i + 1].strip().startswith('{'))):
             continue
         o = s.index('(')
         depth = 0
@@ -68,7 +75,7 @@ for p in sorted(ROOT.glob('src/**/*.hp*')):
                 if depth == 0:
                     close = j
                     break
-        if close < 0 or ';' not in s[close:]:
+        if close < 0:
             continue
         seg = s[o + 1:close]
         if '(' in seg or '=' in seg and 'default' in seg:

@@ -11,7 +11,7 @@
 
 // 0x4E0440
 namespace gamemd {
-int AbstractClassVector::Read(unsigned int * a2, void *a2)
+int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

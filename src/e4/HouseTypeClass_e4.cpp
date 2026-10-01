@@ -549,7 +549,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
 }
 // 0x512170
 namespace gamemd {
-AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2)
+AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
   int v3; // edx

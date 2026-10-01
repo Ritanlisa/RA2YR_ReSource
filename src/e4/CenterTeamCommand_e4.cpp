@@ -13,7 +13,7 @@
 
 // 0x5361A0
 namespace gamemd {
-void CenterTeamCommand::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
+void CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/

@@ -7137,7 +7137,7 @@ int VectorClass_flat::GetAt_Copy(int a2)
 
 }
 // 0x477BE0
-unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3, void *a4, void *a5, void *a6)
+unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6)
 {
 
   this->Items = 0; /*0x477beb*/
@@ -36729,7 +36729,7 @@ VectorClass_flat * VectorClass_ptr_SubTitle::QueryInterface(unsigned int * Block
 } // namespace gamemd
 
 // 0x6CE2D0
-char VectorClass_flat::RemoveAt(int a2, void *a2)
+char VectorClass_flat::RemoveAt(int a2, void *a2_2)
 {
 
   int result; // eax

@@ -10,7 +10,7 @@
 
 // 0x53EE70
 namespace gamemd {
-bool __fastcall GUID::Compare(int a2, void *a2)
+bool __fastcall GUID::Compare(int a2, void *a2_2)
 {
 
   int result; // eax

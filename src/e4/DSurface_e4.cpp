@@ -59,7 +59,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a5, void *a6)
+AbstractClass * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a5_2, void *a6)
 {
 
   unsigned int *v6; // ebp
@@ -390,7 +390,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x4BAC60
 namespace gamemd {
-unsigned int * DSurface::CreateBackBuffer(int a2, void *a2)
+unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_2)
 {
 
   void *v3; // edi
@@ -727,7 +727,7 @@ LABEL_71:
 } // namespace gamemd
 // 0x4BB620
 namespace gamemd {
-void* DSurface::FillRectEx(int a2, int a3, int a4, void *a4)
+void* DSurface::FillRectEx(int a2, int a3, int a4, void *a4_2)
 {
 
   int v5; // eax
@@ -4465,7 +4465,7 @@ long long DSurface::ConstructFromHandle()
 
 }
 // 0x4BB080
-int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6, void *a6)
+int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6, void *a6_2)
 {
 
   int (**DSurface_field_0x0)(DSurface *, int); // ebx

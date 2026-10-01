@@ -944,7 +944,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 } // namespace gamemd
 // 0x4D2CD0
 namespace gamemd {
-int FoggedObjectClass::Read(unsigned int * a2, void *a2)
+int FoggedObjectClass::Read(unsigned int * a2, void *a2_2)
 {
 
   int v2; // edx

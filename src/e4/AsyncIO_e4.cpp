@@ -35,14 +35,14 @@ void AsyncIO::Shutdown(void *a1)
     v3 = (void (***)(unsigned int, int))((unsigned int *)(i))[v1]; /*0x5bf464*/
     if ( v3 ) /*0x5bf469*/
     {
-      (**v3)(v3, 1); /*0x5bf473*/
+      (**v3)      ((unsigned int)(**v3))(v3, 1); 
       i = AsyncIO_Instance; /*0x5bf475*/
     }
   }
   g_AsyncIOState = 0; /*0x5bf487*/
   if ( i && byte_B45B65 ) /*0x5bf495*/
   {
-    __3_YAXPAX_Z(i); /*0x5bf498*/
+    __3_YAXP    __3_YAXPAX_Z((void *)(i)); 
     AsyncIO_Instance = 0; /*0x5bf4a0*/
   }
   result = g_MissionQueueFrame.localVariables[566]; /*0x5bf4a6*/
@@ -53,8 +53,8 @@ void AsyncIO::Shutdown(void *a1)
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
     this->Mixer::RequestAllBuffers(); /*0x5bf4c5*/
-    RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf4d5*/
-    RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf4e5*/
+    RequestB    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); 
+    RequestB    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x4000); 
     result = this->AudioMixer::Pump(); /*0x5bf4ea*/
     LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
   }
