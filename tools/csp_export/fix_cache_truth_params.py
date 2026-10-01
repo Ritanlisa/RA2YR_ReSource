@@ -39,6 +39,10 @@ CC_KW = {'__thiscall', '__stdcall', '__cdecl', '__fastcall'}
 USER_CC_RE = re.compile(r'__(?:userpurge|usercall)(?:@<[^>]*>)?\s*')
 
 
+def strip_defaults(p):
+    return re.sub(r'\s*=\s*[^,]*$', '', p).strip()
+
+
 def cache_params(addr):
     """(list_of_cache_param_types including 'this', ret) or None."""
     cp = CACHE / ('func_0x%X.json' % addr)
@@ -96,6 +100,40 @@ def retype_param(plist, idx, newtype):
     return plist[:idx] + [newtype + ' ' + p[nm.start():]] + plist[idx + 1:]
 
 
+_DEF_HEAD_MEMO = {}
+
+
+def find_def_head_cpp(callee, short):
+    """Param-list text of the callee's DEF head (first match with a `{`),
+    or None. Memoized per callee."""
+    if callee in _DEF_HEAD_MEMO:
+        return _DEF_HEAD_MEMO[callee]
+    got = None
+    pat = re.compile(
+        r'^\s*(?:virtual\s+|static\s+)*'
+        r'(?:[A-Za-z_][\w:<>,\s\*&\(\)]*?[\s\*&])?'
+        r'(?:[A-Za-z_]\w*::)*~?' + re.escape(short) +
+        r'\s*\((.*)\)\s*(?:const\s*)?(?:noexcept\b[^{;]*)?\{?\s*$')
+    for cpp in (ROOT / 'src').rglob('*.cpp'):
+        if '_generated' in str(cpp):
+            continue
+        try:
+            text = cpp.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            continue
+        if short not in text:
+            continue
+        for cl in text.split('\n'):
+            mm = pat.match(cl)
+            if mm:
+                got = mm.group(1)
+                break
+        if got is not None:
+            break
+    _DEF_HEAD_MEMO[callee] = got
+    return got
+
+
 def main():
     c2664 = []
     seen = set()
@@ -132,7 +170,7 @@ def main():
     # callees) the decl's hpp also declares the class -- CRT names like
     # strcat otherwise collide with unrelated project decls.
     decl_hits = {}
-    for hp in (ROOT / 'src').rglob('*.hpp'):
+    for hp in list((ROOT / 'src').rglob('*.hpp')) + list((ROOT / 'src').rglob('*.h')):
         if any(x in str(hp) for x in ('_generated', 'csp_canon', '_gap2')):
             continue
         try:
@@ -153,19 +191,69 @@ def main():
             if short not in short_to_decl:
                 continue
             am = re.search(r'//\s*(?:IDA\s+)?0x([0-9A-Fa-f]{5,8})', hl)
+            ptail = dm0 and noc[noc.index('(') + 1:noc.rindex(')')]
             if am:
                 decl_hits.setdefault(short, []).append(
-                    (str(hp), k, int(am.group(1), 16), htext))
+                    (str(hp), k, int(am.group(1), 16), htext, ptail))
+            else:
+                # un-annotated decl (e4_protos.h style): still a hit, with
+                # the address resolved from signals later
+                decl_hits.setdefault(short, []).append(
+                    (str(hp), k, None, htext, ptail))
+
+    # signals fallback for un-annotated decls
+    SIG = {}
+    sigp = ROOT / 'signals.json'
+    if sigp.exists():
+        try:
+            SIG = json.load(open(sigp, encoding='utf-8')).get('_by_name', {})
+        except (OSError, json.JSONDecodeError):
+            SIG = {}
+
+    def _sig_addr(name):
+        e = SIG.get(name)
+        if not e:
+            return None
+        for a, kind in (e.get('symbols') or {}).items():
+            if kind == 'function':
+                return int(a, 16)
+        return None
+
     for short, hits in decl_hits.items():
-        if len(hits) != 1:
-            continue          # ambiguous or repeated: leave unresolved
-        hp, k, addr, htext = hits[0]
-        callee = next(c for c, _ in c2664 if c.split('::')[-1] == short)
-        if '::' in callee:
+        if not hits:
+            continue
+        callee = next((c for c, _ in c2664 if c.split('::')[-1] == short),
+                      None)
+        if callee is None:
+            continue
+        dcount = None
+        dh = find_def_head_cpp(callee, short)
+        if dh is not None:
+            dcount = len(split_params(dh))
+        chosen = None
+        if len(hits) == 1:
+            chosen = hits[0]
+        elif dcount is not None:
+            # disambiguate overloads by param count == def count
+            cand = [h for h in hits
+                    if len(split_params(strip_defaults(h[4]))) == dcount]
+            if len(cand) == 1:
+                chosen = cand[0]
+        if chosen is None:
+            continue
+        hp, k, addr, htext, _ptail = chosen
+        if callee.count('::') >= 2:
+            # qualified Cls::Method (ns::Cls::Method) -- verify the decl's
+            # hpp declares the class. A 2-part gamemd::Fn name is
+            # namespace::free-function: no class context to check.
             cls = callee.split('::')[-2]
             if not re.search(r'\b(?:class|struct)\s+' + re.escape(cls) +
                              r'\b', htext):
                 continue      # the decl's hpp does not declare the class
+        if addr is None:
+            addr = _sig_addr(short) or _sig_addr(callee)
+            if addr is None:
+                continue
         short_to_decl[short] = (hp, k, addr)
 
     edits = {}
@@ -207,21 +295,25 @@ def main():
         if not re.match(r'^void\s*\*\s*(?:[A-Za-z_]\w*)?$', old_t):
             n_skip += 1
             continue
-        # positional mapping is ambiguous for member defs (this may or may
-        # not be materialized as param 1): accept cache[N-1] (this at 0)
-        # or cache[N] (this implicit), skip when both apply and disagree
-        cand = []
-        if n - 1 < len(types) and types[n - 1] != '...':
-            cand.append(types[n - 1])
-        if n < len(types) and types[n] != '...':
-            cand.append(types[n])
-        if not cand:
+        # G41.43 positional disambiguation via the DEF's param count:
+        #   len(def) == len(cache)   -> this materialized: decl[i] ~ cache[i]
+        #   len(def) == len(cache)-1 -> implicit this:    decl[i] ~ cache[i+1]
+        # The failing arg N (1-based over the decl) -> decl idx N-1.
+        def_head = find_def_head_cpp(callee, short)
+        if def_head is None:
             n_skip += 1
             continue
-        if len(set(cand)) > 1:
+        dcount = len(split_params(def_head))
+        cache_idx = None
+        if dcount == len(types):
+            cache_idx = n - 1
+        elif dcount == len(types) - 1:
+            cache_idx = n
+        if cache_idx is None or cache_idx >= len(types) or \
+                types[cache_idx] == '...':
             n_skip += 1
             continue
-        newt = cand[0]
+        newt = types[cache_idx]
         newpl = retype_param(plist, n - 1, newt)
         newl = (dm.group(1) + (dm.group(2) or '') + dm.group(3) +
                 '(' + ', '.join(newpl) + ')' + (dm.group(5) or '') + ';')

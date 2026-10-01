@@ -671,7 +671,7 @@ extern void unknown_libname_74(void *a1 = 0);
 extern void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12);
 extern void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8);
 extern void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong);
-extern void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7);
+extern void* DrawTacticalLaserLine(int a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7);
 extern wchar_t * sub_4E4F30(void *a1 = 0);
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2);

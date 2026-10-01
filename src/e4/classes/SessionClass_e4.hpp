@@ -676,7 +676,7 @@ struct SessionClass {
     int GetOption(void *a1);
     int GetOption2(void *a1);
     int GetPlayerColor(void *a1);
-    int GetPlayerSide(void *a1);
+    int GetPlayerSide(int a1);
     int  IsValidHouse(void * a2);
     MixFileClass * LoadGameSession(ObjectClass * aP1, CellStruct * aP2);
     int Read(unsigned int * a2, void *a2_2);
