@@ -901,6 +901,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
     unsigned int *__pad_0;  // supplied (C2039)
     unsigned int *q01C;  // supplied (C2039)
+    unsigned int *__pad_31;  // supplied (C2039)
+    unsigned int *m_2D;  // supplied (C2039)
 };
 // 1 methods in IDA
 class CRC32
@@ -1002,6 +1004,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_1;  // supplied (C2039)
     unsigned int *m_10;  // supplied (C2039)
     unsigned int *m_8;  // supplied (C2039)
+    unsigned int *m_C;  // supplied (C2039)
 };
 // 6 methods in IDA
 class EnumConnectionsClass

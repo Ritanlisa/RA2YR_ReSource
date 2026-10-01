@@ -32,5 +32,7 @@ struct AITriggerTypeClass_40 {
     unsigned int Write(int a2);  // 0x420530
     unsigned int *m_1;  // supplied (C2039)
     unsigned int *m_10;  // supplied (C2039)
+    unsigned int *m_8;  // supplied (C2039)
+    unsigned int *m_C;  // supplied (C2039)
 };
 } // namespace gamemd

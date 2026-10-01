@@ -51,7 +51,7 @@ if SUPPLY and LOG:
     MEM = re.compile(r'error C2039: ' + QT + r'([^"' + Q + r']+)' + QT +
                      r': 不是 ' + QT + r'?([^"' + Q + r']*)' + QT + r'?' +
                      r'\s*的成员')
-    GEN = re.compile(r'^(m_\d+|__pad_[0-9A-Fa-f]+|[A-Za-z]\w*_field_0x[0-9A-Fa-f]+|q[0-9A-F]{3}|u8?_[0-9A-F]+|u32_[0-9A-F]+|p[0-9A-F]{2,})$')
+    GEN = re.compile(r'^(m_[0-9A-Fa-f]+|__pad_[0-9A-Fa-f]+|[A-Za-z]\w*_field_0x[0-9A-Fa-f]+|q[0-9A-F]{3}|u8?_[0-9A-F]+|u32_[0-9A-F]+|p[0-9A-F]{2,})$')
     want = {}
     LN = re.compile(r'D:[^:]*RA2YR_ReSource[\\/](src[\\/][^(]+)[\\/]?[(](\d+),')
     for ln in Path(LOG).read_text(encoding='utf-8', errors='replace').splitlines():
