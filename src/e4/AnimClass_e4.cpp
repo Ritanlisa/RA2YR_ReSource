@@ -96,7 +96,7 @@ void AnimClass::Destruct(void * a2, void *a2_2)
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (uint8_t)((ObjectClass *)((ObjectClass *)a2))->Undeploy() ) /*0x4229bb*/
-      Remove      RemoveTarget((int)((gamemd::IUnknown *)((int)a2))); 
+      RemoveTarget((int)((gamemd::IUnknown *)((int)a2))); 
   }
   v12 = (gamemd::AnimClass *)(a2);
   v7 = (*(int (**)(int *, AnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x4229e3*/
@@ -645,7 +645,7 @@ LABEL_99:
   v62 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x423630*/
   if ( v62[2].__pad_C[207] ) /*0x423636*/
   {
-    Foundati    FoundationSize = Building::GetFoundationSize((unsigned int *)(&v108), 0); 
+    FoundationSize = Building::GetFoundationSize((unsigned int *)(&v108), 0); 
     v64 = (int)(*a2); /*0x423657*/
     v65 = (int)(a2[1]); /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/

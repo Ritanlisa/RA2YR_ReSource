@@ -78,12 +78,12 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
           if ( v7 >= v9 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        Powe        Power::ChangedHouse((char)((Power *)v3 + 21), 1); 
+        Power::ChangedHouse((char)((Power *)v3 + 21), 1); 
       }
     }
 LABEL_9:
-    Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226)), *(unsigned int *)(v3[433] + 1820)); 
-    Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232)), *(unsigned int *)(v3[433] + 1820)); 
+    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226)), *(unsigned int *)(v3[433] + 1820)); 
+    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232)), *(unsigned int *)(v3[433] + 1820)); 
     Value = ((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue(&v18); /*0x41400d*/
     FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/

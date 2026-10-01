@@ -48,7 +48,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
       aP0->baseNodeCount = (int)&vt_DynamicVectorClass; /*0x42ee6a*/
       aP0->cells24Capacity = 10; /*0x42ee70*/
       aP0->cells24Count = 0; /*0x42ee77*/
-      Dynami      DynamicVector::Constructor_Cell((gamemd::ObjectClass *)((DynamicVector *)&aP0->cells38Count), 0, 0); 
+      DynamicVector::Constructor_Cell((gamemd::ObjectClass *)((DynamicVector *)&aP0->cells38Count), 0, 0); 
       DynamicVector::Constructor_Cell((DynamicVector *)&aP0->unknown54[3], 0, 0); /*0x42ee8a*/
       aP0->baseNodes = (unsigned int)((BaseNodeClass *)&vt_BaseClass); /*0x42ee8f*/
     }

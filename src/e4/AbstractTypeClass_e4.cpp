@@ -37,7 +37,7 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1, void *a2, void *a3)
   *((char *)this + 3) = (int)&vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
-    strncpy(    strncpy(Destination,(const char *)(aP1), 0x18u); 
+    strncpy(Destination,(const char *)(aP1), 0x18u); 
     Destination[24] = 0; /*0x4108a3*/
     if ( Destination == v3 ) /*0x4108a8*/
       goto LABEL_9; /*0x4108a8*/

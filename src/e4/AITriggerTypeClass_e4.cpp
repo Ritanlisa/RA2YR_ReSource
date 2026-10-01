@@ -73,15 +73,15 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
         v9 =        v9 = ((DynamicVector *)((DynamicVector *)(v6 + 21900)))->GetOrGrow((int)((void *)(v8))); 
         goto LABEL_12; /*0x41ed73*/
       case 7: /*0x41ed21*/
-        v10         v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21840)))->GetOrGrow((int)((void *)(v8))); 
+        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21840)))->GetOrGrow((int)((void *)(v8))); 
         v3 = this; /*0x41ed37*/
         break; /*0x41ed3b*/
       case 16: /*0x41ed21*/
-        v10         v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21880)))->GetOrGrow((int)((void *)(v8))); 
+        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21880)))->GetOrGrow((int)((void *)(v8))); 
         v3 = this; /*0x41ed61*/
         break; /*0x41ed65*/
       case 40: /*0x41ed21*/
-        v10         v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21860)))->GetOrGrow((int)((void *)(v8))); 
+        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21860)))->GetOrGrow((int)((void *)(v8))); 
         v3 = this; /*0x41ed4c*/
         break; /*0x41ed50*/
       default:
@@ -486,7 +486,7 @@ LABEL_26:
       }
       if ( v16 >= 0x20 ) /*0x41f85c*/
         break; /*0x41f85c*/
-      *((uns      *((unsigned char *)this + v16 + 228) = globalHelper_0C9DBD((int)v44,(gamemd::CCINIClass *)((int)&v45), 16); 
+      *((unsigned char *)this + v16 + 228) = globalHelper_0C9DBD((int)v44,(gamemd::CCINIClass *)((int)&v45), 16); 
       ++v16; /*0x41f87b*/
     }
     while ( *v18 ); /*0x41f876*/

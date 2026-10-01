@@ -131,7 +131,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     v14 = *((unsigned int *)this + 135); /*0x454b24*/
     *((unsigned char *)this + 1634) = 0; /*0x454b2a*/
-    HouseCla    HouseClass::LostPoweredCenter(v14,(void *)(*(unsigned int *)(v3 + 1036))); 
+    HouseClass::LostPoweredCenter(v14,(void *)(*(unsigned int *)(v3 + 1036))); 
   }
   v15 = (CaptureManager *)*((unsigned int *)this + 175); /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
@@ -294,7 +294,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   }
   String::As  ((String *)((const char *)(&v23)))->Assign(aStartup); 
   v7 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77061c*/
-  ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
+  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
   unknown_libname_73(&a1); /*0x770630*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
   ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
@@ -333,7 +333,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   String::As  ((String *)((const char *)(&v23)))->Assign(aTerritoryselec); 
   v14 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77073b*/
-  ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
+  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
   unknown_libname_73(&a1); /*0x77074f*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
   ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/

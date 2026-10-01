@@ -236,7 +236,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     p_vtable0 = &v6->vtable0; /*0x4fba45*/
     v12 = (*(int (**)(int, void ***, int))(v11 + 16))(v7 + 80, &p_vtable0, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 80)), v12); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 80)), v12); 
     v13 = *(unsigned int *)(v7 + 128); /*0x4fba59*/
     a4 = &v6->vtable0; /*0x4fba6c*/
     v14 = (*    v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128,(void ***)(&a4)); 
@@ -258,7 +258,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     a4 = &v6->vtable0; /*0x4fbaa9*/
     v18 = (*    v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152,(void ***)(&a4)); 
     if ( v18 != -1 ) /*0x4fbab6*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 152)), v18); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 152)), v18); 
     v19 = *(unsigned int *)(v7 + 176); /*0x4fbac0*/
     a4 = &v6->vtable0; /*0x4fbad3*/
     v20 = (*    v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176,(void ***)(&a4)); 
@@ -280,7 +280,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     a4 = &v6->vtable0; /*0x4fbb10*/
     v24 = (*    v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200,(void ***)(&a4)); 
     if ( v24 != -1 ) /*0x4fbb1d*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 200)), v24); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 200)), v24); 
     v25 = *(unsigned int *)(v7 + 224); /*0x4fbb27*/
     a4 = &v6->vtable0; /*0x4fbb3a*/
     v26 = (*    v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224,(void ***)(&a4)); 
@@ -302,12 +302,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     a4 = &v6->vtable0; /*0x4fbb77*/
     v30 = (*    v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248,(void ***)(&a4)); 
     if ( v30 != -1 ) /*0x4fbb84*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 248)), v30); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 248)), v30); 
     v31 = *(unsigned int *)(v7 + 272); /*0x4fbb8e*/
     a4 = &v6->vtable0; /*0x4fbba1*/
     v32 = (*    v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272,(void ***)(&a4)); 
     if ( v32 != -1 ) /*0x4fbbab*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 272)), v32); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 272)), v32); 
     v33 = *(unsigned int *)(v7 + 296); /*0x4fbbb5*/
     a4 = &v6->vtable0; /*0x4fbbc8*/
     v34 = (*    v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296,(void ***)(&a4)); 
@@ -329,7 +329,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     a4 = &v6->vtable0; /*0x4fbc05*/
     v38 = (*    v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320,(void ***)(&a4)); 
     if ( v38 != -1 ) /*0x4fbc12*/
-      Vector      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 320)), v38); 
+      Vector::RemoveAt((gamemd::AbstractClass *)((Vector *)(v7 + 320)), v38); 
     v39 = *(unsigned int *)(v7 + 104); /*0x4fbc1c*/
     a4 = &v6->vtable0; /*0x4fbc29*/
     v40 = (*    v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104,(void ***)(&a4)); 
@@ -403,8 +403,8 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
-      GetCli      GetClientRect((HWND)(g_hWnd), &Rect); 
-      Client      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
+      GetClientRect((HWND)(g_hWnd), &Rect); 
+      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
       v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0446*/
       v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0449*/
       v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c044b*/

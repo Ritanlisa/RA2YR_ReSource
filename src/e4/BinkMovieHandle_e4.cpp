@@ -117,12 +117,12 @@ _DWORD * BinkMovieHandle::CopyFrameToSurface(void *a1)
   width = (DSurface *)this->width; /*0x43306e*/
   if ( width == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x433073*/
   {
-    GetClien    GetClientRect((HWND)(g_hWnd), &Rect); 
-    ClientTo    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
+    GetClientRect((HWND)(g_hWnd), &Rect); 
+    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
     v3 = Rect.left + this->height; /*0x4330a7*/
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
-    BinkMovi    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
+    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
     v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
@@ -137,7 +137,7 @@ LABEL_6:
   {
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
-    BinkMovi    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), this->width); 
+    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), this->width); 
     v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {

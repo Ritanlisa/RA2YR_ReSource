@@ -38,7 +38,7 @@ unsigned int * BinkMovie::Close(char * FullPath, void *a2_1)
   *((unsigned char *)this + 45) = 0; /*0x4326a0*/
   *((unsigned int *)this + 10) = -1; /*0x4326a8*/
   *((unsigned char *)this + 44) = 1; /*0x4326af*/
-  BinkMovie:  BinkMovie::InitFromFile((LPCSTR *)((int)this), (LPCSTR *)FullPath); 
+  BinkMovie::InitFromFile((LPCSTR *)((int)this), (LPCSTR *)FullPath); 
   return this->__pad_0; /*0x4326ba*/
 
 }
@@ -55,7 +55,7 @@ _DWORD * BinkMovie::Open(char *FullPath, int a3)
   *((unsigned int *)this + 10) = -1; /*0x4326db*/
   *((unsigned char *)this + 44) = 1; /*0x4326e2*/
   *((unsigned char *)this + 45) = 0; /*0x4326e6*/
-  BinkMovie:  BinkMovie::InitFromFile((LPCSTR *)((int)this), (LPCSTR *)FullPath); 
+  BinkMovie::InitFromFile((LPCSTR *)((int)this), (LPCSTR *)FullPath); 
   return this->__pad_0; /*0x4326f0*/
 
 }
@@ -129,7 +129,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   v4 = *(void **)((char *)this + 32); /*0x43275b*/
   if ( v4 ) /*0x432760*/
   {
-    BinkMovi    BinkMovie::FreeSurfaceTracker((void *)(*((unsigned int *)this + 8))); 
+    BinkMovie::FreeSurfaceTracker((void *)(*((unsigned int *)this + 8))); 
     __3_YAXPAX_Z(v4); /*0x43276a*/
     *((unsigned int *)this + 8) = 0; /*0x432772*/
   }
@@ -202,7 +202,7 @@ LABEL_15:
       else
       {
         *((unsigned int *)this + 3) = g_DSurface_Primary; /*0x43290d*/
-        GetC        GetClientRect((HWND)(g_hWnd), &Rect); 
+        GetClientRect((HWND)(g_hWnd), &Rect); 
         v16 = (Rect.right - Rect.left - v17) / 2; /*0x432936*/
         v21 = Rect.bottom - Rect.top; /*0x432938*/
       }
@@ -340,22 +340,22 @@ void BinkMovie::Play(void *a1_1)
         BinkMovie_field_0xC = (DSurface *)this->BinkMovie_field_0xC; /*0x432d32*/
         if ( BinkMovie_field_0xC == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x432d3d*/
         {
-          Ge          GetClientRect((HWND)(g_hWnd), &Rect); 
-          v3          v3((HWND)(g_hWnd), (LPPOINT)&Rect); 
+          GetClientRect((HWND)(g_hWnd), &Rect); 
+          v3((HWND)(g_hWnd), (LPPOINT)&Rect); 
           BinkMovie::RenderLoop( /*0x432d74*/
             (bool *)this->__pad_0,
             this->BinkMovie_field_0xC,
             Rect.left + this->BinkMovie_field_0x10,
             Rect.top + this->BinkMovie_field_0x14);
         }
-        else        else if ( ((gamemd::DSurface *)(uint8_t))BinkMovie::RenderLoop( 
+        else if ( ((gamemd::DSurface *)(uint8_t))BinkMovie::RenderLoop( 
                                      (bool *)this->__pad_0,
                                      (int)BinkMovie_field_0xC,
                                      this->BinkMovie_field_0x10,
                                      this->BinkMovie_field_0x14) )
         {
-          Ge          GetClientRect((HWND)(g_hWnd), &v12); 
-          v3          v3((HWND)(g_hWnd), (LPPOINT)&v12); 
+          GetClientRect((HWND)(g_hWnd), &v12); 
+          v3((HWND)(g_hWnd), (LPPOINT)&v12); 
           BinkMovie_field_0x10 = this->BinkMovie_field_0x10; /*0x432db4*/
           BinkMovie_field_0x14 = this->BinkMovie_field_0x14; /*0x432db6*/
           v10[2] = *(unsigned int *)this->__pad_18; /*0x432dbc*/
@@ -429,8 +429,8 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       v9 = (DSurface *)*((unsigned int *)this + 3); /*0x432ed7*/
       if ( v9 == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x432ee2*/
       {
-        GetC        GetClientRect((HWND)(g_hWnd), &Rect); 
-        Clie        ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
+        GetClientRect((HWND)(g_hWnd), &Rect); 
+        ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
         BinkMovie::RenderSingleFrame( /*0x432f22*/
           (BinkMovie *)this,
           *((unsigned int *)this + 3),
@@ -463,13 +463,13 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       {
         v13 = BinkMovie::CheckKeyframeTransition(v12, *((unsigned int *)this + 9) * *(unsigned int *)(*((unsigned int *)this + 1) + 12)); /*0x432f85*/
         if ( v13 ) /*0x432f89*/
-          Bi          BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), aP1); 
+          BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), aP1); 
       }
       v19 =       v19 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
       if ( v19 ) /*0x432fa4*/
       {
-        v14         v14 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
-        v15         v15 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 128)))(aP1); 
+        v14 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
+        v15 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 128)))(aP1); 
         v16 = *((unsigned int *)this + 2); /*0x432fb9*/
         if ( v13 ) /*0x432fbe*/
           v16 |= 0x80000000; /*0x432fc0*/
@@ -509,7 +509,7 @@ unsigned int * BinkMovie::RenderSingleFrame(DSurface * aP1, int a3, int a4, char
   unsigned int BinkMovie_field_0x8; // ecx
 
   if ( a5 ) /*0x4331ff*/
-    BinkMovi    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)(this), aP1); 
+    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)(this), aP1); 
   v6 = (*(in  v6 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
   if ( v6 ) /*0x433218*/
   {

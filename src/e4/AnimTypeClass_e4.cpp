@@ -167,7 +167,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427737*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42773d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427744*/
-  AbstractCl  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); 
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); 
   ((unsigned int *)this)[0] = 1; /*0x427750*/
   ((unsigned int *)this)[0] = 1; /*0x427757*/
   ((unsigned int *)this)[0] = 0; /*0x42775e*/
@@ -244,7 +244,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     {
       if ( ((unsigned int *)this)[0] && ((unsigned int *)this)[0] ) /*0x427b85*/
       {
-        __3_        __3_YAXPAX_Z((void *)(((unsigned int *)this)[0])); 
+        __3_YAXPAX_Z((void *)(((unsigned int *)this)[0])); 
         ((unsigned int *)this)[0] = 0; /*0x427b98*/
       }
       v4 = ((unsigned int *)this)[0]; /*0x427b9f*/
@@ -252,7 +252,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       ((unsigned int *)this)[0] = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         ImageFile = (const char *)((unsigned int *)this)[0]; /*0x427bb9*/
-      _makep      _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); 
+      _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); 
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = (      v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
       ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
@@ -434,14 +434,14 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess((int)((void *)(this->LoopStart))); 
   Power::TimerProcess((int)((void *)(this->LoopEnd))); 
   Power::TimerProcess((int)((void *)(this->End))); 
-  Power::Tim  Power::TimerProcess((void *)(this->Report)); 
-  Power::Tim  Power::TimerProcess((void *)(this->StopSound)); 
-  Power::Tim  Power::TimerProcess((void *)(this->NumParticles)); 
-  Power::Tim  Power::TimerProcess((void *)(this->DetailLevel)); 
-  Power::Tim  Power::TimerProcess((void *)(this->TranslucencyDetailLevel)); 
-  Power::Tim  Power::TimerProcess((void *)(this->RandomLoopDelay[0])); 
-  Power::Tim  Power::TimerProcess((void *)(this->RandomLoopDelay[1])); 
-  Power::Tim  Power::TimerProcess((void *)(this->Translucency)); 
+  Power::TimerProcess((void *)(this->Report)); 
+  Power::TimerProcess((void *)(this->StopSound)); 
+  Power::TimerProcess((void *)(this->NumParticles)); 
+  Power::TimerProcess((void *)(this->DetailLevel)); 
+  Power::TimerProcess((void *)(this->TranslucencyDetailLevel)); 
+  Power::TimerProcess((void *)(this->RandomLoopDelay[0])); 
+  Power::TimerProcess((void *)(this->RandomLoopDelay[1])); 
+  Power::TimerProcess((void *)(this->Translucency)); 
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Pow  return ((Power *)((int)((Power *)a2)))->FlagProcess(v14); 
 
