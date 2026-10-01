@@ -360,6 +360,8 @@ unsigned char * Palette::ConvertIndices(int a2)
 // 0x72B820
 int Palette::LoadFile(char * Source)
 {
+dword_B0FBA0 = 0; /*0x72b833*/
+dword_B0FB9C = 0; /*0x72b84f*/
 
   if ( dword_B0FBA0 ) /*0x72b82b*/
   {

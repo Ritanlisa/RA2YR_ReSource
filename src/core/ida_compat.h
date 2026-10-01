@@ -22,6 +22,23 @@
 
 #include "ida_vtables.h"   // GENERATED vtable externs (gen_vtable_symbols.py)
 
+// IDA pseudocode register pseudo-variables (_EAX.._ESP): untyped slots
+// that hold EITHER integers or pointers across a function body (the G31
+// re-decompilation era emits them undeclared). Modeled as a slot class so
+// every assignment/arith/cast shape in verbatim bodies compiles as-is.
+struct IdaRegVar {
+    unsigned long v;
+    IdaRegVar() : v(0) {}
+    IdaRegVar& operator=(unsigned long x) { v = x; return *this; }
+    template <class T> IdaRegVar& operator=(T* p) { v = (unsigned long)p; return *this; }
+    operator unsigned long() const { return v; }
+};
+inline unsigned long operator+(const IdaRegVar& r, long d) { return r.v + d; }
+inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }
+inline unsigned long operator-(const IdaRegVar& r, long d) { return r.v - d; }
+inline unsigned long operator-(long d, const IdaRegVar& r) { return d - r.v; }
+static IdaRegVar _EAX, _EBX, _ECX, _EDX, _ESI, _EDI, _EBP, _ESP;
+
 // IDA primitive spellings used in casts throughout pseudocode
 typedef unsigned int _DWORD;
 typedef unsigned short _WORD;

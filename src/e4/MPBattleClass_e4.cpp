@@ -97,6 +97,7 @@ int MPBattleClass::vt_entry_18()
 // 0x5CACF0
 long long MPBattleClass::isValidMap()
 {
+dword_ABFAF8 = result; /*0x5cad1b*/
 
   double v0; // st7
   int64_t result; // rax
@@ -110,6 +111,7 @@ long long MPBattleClass::isValidMap()
 // 0x5CAD30
 void MPBattleClass::needsHouseSelection()
 {
+dbl_ABFAB0 = Math::ArcTan((double)dword_ABFAF8 * 0.00390625); /*0x5cad47*/
 
   dbl_ABFAB0 = Math::ArcTan((double)dword_ABFAF8 * 0.00390625); /*0x5cad47*/
 
@@ -117,6 +119,7 @@ void MPBattleClass::needsHouseSelection()
 // 0x5CAD60
 void MPBattleClass::validatePlayer()
 {
+dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
 
   dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
 
@@ -124,6 +127,7 @@ void MPBattleClass::validatePlayer()
 // 0x5CAD90
 long long MPBattleClass::startGame()
 {
+dword_ABFAEC = result; /*0x5cadb0*/
 
   int64_t result; // rax
 
@@ -135,6 +139,8 @@ long long MPBattleClass::startGame()
 // 0x5CADC0
 int MPBattleClass::stopGame()
 {
+word_ABFA98 = 0; /*0x5cadc2*/
+word_ABFA9A = 0; /*0x5cadc8*/
 
   word_ABFA98 = 0; /*0x5cadc2*/
   word_ABFA9A = 0; /*0x5cadc8*/
@@ -144,6 +150,9 @@ int MPBattleClass::stopGame()
 // 0x5CADD0
 int MPBattleClass::areTeamChangesAllowed()
 {
+dword_ABFAB8 = 0; /*0x5cadd2*/
+dword_ABFABC = 0; /*0x5cadd7*/
+dword_ABFAC0 = 0; /*0x5caddc*/
 
   dword_ABFAB8 = 0; /*0x5cadd2*/
   dword_ABFABC = 0; /*0x5cadd7*/
@@ -154,6 +163,9 @@ int MPBattleClass::areTeamChangesAllowed()
 // 0x5CADF0
 int MPBattleClass::isHouseAllyChangeAllowed()
 {
+dword_ABFAE8 = 0; /*0x5cadf5*/
+dword_ABFAE0 = 128; /*0x5cadff*/
+dword_ABFAE4 = 128; /*0x5cae04*/
 
   dword_ABFAE8 = 0; /*0x5cadf5*/
   dword_ABFAE0 = 128; /*0x5cadff*/
@@ -164,6 +176,7 @@ int MPBattleClass::isHouseAllyChangeAllowed()
 // 0x5CB190
 void MPBattleClass::onPlayerConnect()
 {
+dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
 
   long double v0; // st7
 
@@ -174,6 +187,7 @@ void MPBattleClass::onPlayerConnect()
 // 0x5CB1C0
 void MPBattleClass::onPlayerDisconnect()
 {
+dbl_ABFB78 = dbl_ABFB28 / 60.0; /*0x5cb1cc*/
 
   dbl_ABFB78 = dbl_ABFB28 / 60.0; /*0x5cb1cc*/
 
@@ -181,6 +195,7 @@ void MPBattleClass::onPlayerDisconnect()
 // 0x5CB1E0
 void MPBattleClass::getMaximumPlayers()
 {
+dbl_ABFB60 = 1.0 / dbl_ABFB78; /*0x5cb1ec*/
 
   dbl_ABFB60 = 1.0 / dbl_ABFB78; /*0x5cb1ec*/
 
@@ -188,6 +203,7 @@ void MPBattleClass::getMaximumPlayers()
 // 0x5CB200
 void MPBattleClass::getMinimumPlayers()
 {
+dbl_ABFB58 = 0.0174532925199433 * 45.0; /*0x5cb20c*/
 
   dbl_ABFB58 = 0.0174532925199433 * 45.0; /*0x5cb20c*/
 
@@ -195,6 +211,7 @@ void MPBattleClass::getMinimumPlayers()
 // 0x5CB220
 void MPBattleClass::getAlliesLimit()
 {
+dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
 
   dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
 
@@ -202,6 +219,7 @@ void MPBattleClass::getAlliesLimit()
 // 0x5CB260
 long long MPBattleClass::canAllyWith()
 {
+dword_ABFB80 = result; /*0x5cb28b*/
 
   double v0; // st7
   int64_t result; // rax
@@ -215,6 +233,7 @@ long long MPBattleClass::canAllyWith()
 // 0x5CB2D0
 void MPBattleClass::onGameBegin()
 {
+dbl_ABFB50 = Math::ArcTan((double)(2 * dword_ABFB80) / dbl_ABFB28); /*0x5cb2f2*/
 
   dbl_ABFB50 = Math::ArcTan((double)(2 * dword_ABFB80) / dbl_ABFB28); /*0x5cb2f2*/
 
@@ -222,6 +241,10 @@ void MPBattleClass::onGameBegin()
 // 0x5CB380
 int MPBattleClass::isAIAllowed()
 {
+dword_ABFB10 = 0; /*0x5cb382*/
+dword_ABFB14 = 0; /*0x5cb387*/
+dword_ABFB18 = 0; /*0x5cb38c*/
+dword_ABFB1C = 0; /*0x5cb391*/
 
   dword_ABFB10 = 0; /*0x5cb382*/
   dword_ABFB14 = 0; /*0x5cb387*/
@@ -242,6 +265,10 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
 // 0x5CB570
 int MPBattleClass::isTeamsAllowed()
 {
+dword_ABFB88 = 0; /*0x5cb572*/
+dword_ABFB8C = 0; /*0x5cb577*/
+dword_ABFB90 = 0; /*0x5cb57c*/
+dword_ABFB94 = 0; /*0x5cb581*/
 
   dword_ABFB88 = 0; /*0x5cb572*/
   dword_ABFB8C = 0; /*0x5cb577*/
@@ -253,6 +280,10 @@ int MPBattleClass::isTeamsAllowed()
 // 0x5CEDB0
 int MPBattleClass::firstValidMapIndex()
 {
+dword_ABFBB0 = 0; /*0x5cedb2*/
+dword_ABFBB4 = 0; /*0x5cedb7*/
+dword_ABFBB8 = 0; /*0x5cedbc*/
+dword_ABFBBC = 0; /*0x5cedc1*/
 
   dword_ABFBB0 = 0; /*0x5cedb2*/
   dword_ABFBB4 = 0; /*0x5cedb7*/
@@ -264,6 +295,10 @@ int MPBattleClass::firstValidMapIndex()
 // 0x5D1A80
 int MPBattleClass::populateTeamDropdown()
 {
+dword_ABFBC0 = 0; /*0x5d1a82*/
+dword_ABFBC4 = 0; /*0x5d1a87*/
+dword_ABFBC8 = 0; /*0x5d1a8c*/
+dword_ABFBCC = 0; /*0x5d1a91*/
 
   dword_ABFBC0 = 0; /*0x5d1a82*/
   dword_ABFBC4 = 0; /*0x5d1a87*/

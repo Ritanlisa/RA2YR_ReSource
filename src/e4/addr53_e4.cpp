@@ -135,6 +135,7 @@ MixFileClass * * sub_530000()
 namespace gamemd {
 void ShowLoadingScreen(void * a1, void * a2, void * a3)
 {
+  wchar_t *v20; // eax
   int16_t *v3; // esi
   char *v4; // ebp
   int i; // edx

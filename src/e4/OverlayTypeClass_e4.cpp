@@ -410,6 +410,7 @@ int OverlayTypeClass::LookupByName()
 // 0x5FE4C0
 int * OverlayTypeClass::GetTile(int a1)
 {
+dword_AC1644 = 2147450879; /*0x5fe504*/
 
   if ( (byte_AC15E8 & 1) == 0 ) /*0x5fe4cb*/
   {

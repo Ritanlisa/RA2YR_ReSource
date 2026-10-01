@@ -268,6 +268,7 @@ int WinMain::Constructor_VectorClass_Wstring_()
 // 0x734D30
 unsigned int * WinMain::ShutdownCleanup()
 {
+dword_B1CF74 = 0; /*0x734df7*/
 
   void **i; // eax
   void **v2; // ecx

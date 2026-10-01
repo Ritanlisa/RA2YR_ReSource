@@ -25,6 +25,7 @@ void PowerClass_Stub()
 // 0x63F7E0
 void PowerClass::checkLowPower()
 {
+byte_AC4E78 = 0; /*0x63f7fc*/
 
   RadarClass::Destru_vt50(); /*0x63f7e0*/
   if ( byte_AC4E78 ) /*0x63f7ec*/

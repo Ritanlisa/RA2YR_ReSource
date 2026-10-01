@@ -587,6 +587,7 @@ int Screen::TransitionLoop(int a2)
 // 0x690360
 int Screen::CleanupTransitionObjects()
 {
+byte_B05584 = 0; /*0x69036b*/
 
   int result; // eax
   int i; // edi
