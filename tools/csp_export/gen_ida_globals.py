@@ -89,9 +89,26 @@ for p in sorted(SRC.rglob('*.cpp')):
 # skipped entirely — declaring it here is fine (extern), but defining it in
 # ida_globals.cpp would be LNK2005.
 defined = set()
+def_types = {}   # name -> concrete type from a real cpp definition
+_CXX_KW = {
+    'return', 'else', 'if', 'while', 'for', 'switch', 'case', 'break',
+    'continue', 'goto', 'delete', 'sizeof', 'new', 'throw', 'using',
+    'namespace', 'typedef', 'do', 'else', 'try', 'catch', 'return',
+}
+
+
+def _type_ok(ty):
+    return ty.split()[0] not in _CXX_KW
+
+
 DEFINITION = re.compile(
-    r'^\s*(?:unsigned \w+|void\s*\*|float|double|long long|\w+)'
-    r'\s+(\w+)\s*=\s*[^;]', re.M)
+    r'^\s*((?:unsigned\s+)?\w+(?:\s*\*+)*)\s+(\w+)\s*=\s*[^;]', re.M)
+# file-local statics are also definitions (default-initialized, no `=`);
+# their concrete type is authoritative over gtype()'s void* default --
+# an `extern void* g_running` colliding with `static bool g_running`
+# in the app TUs is a C2040 face (game_loop.cpp, G41.40).
+STATIC_DEF = re.compile(
+    r'^\s*static\s+((?:unsigned\s+)?\w+(?:\s*\*+)*)\s+(\w+)\s*[;\[=]', re.M)
 for p in sorted(SRC.rglob('*.cpp')):
     if '_generated' in str(p) or 'csp_canon' in str(p) \
             or p.name == 'ida_globals.cpp':
@@ -102,26 +119,88 @@ for p in sorted(SRC.rglob('*.cpp')):
         continue
     txt = re.sub(r'//[^\n]*', ' ', txt)
     txt = re.sub(r'/\*.*?\*/', ' ', txt, flags=re.S)
-    defined |= set(DEFINITION.findall(txt))
+    for m in DEFINITION.finditer(txt):
+        defined.add(m.group(2))
+        if _type_ok(m.group(1)):
+            def_types.setdefault(m.group(2), m.group(1).strip())
+    for m in STATIC_DEF.finditer(txt):
+        defined.add(m.group(2))
+        if _type_ok(m.group(1)):
+            def_types.setdefault(m.group(2), m.group(1).strip())
+
+_PRIMITIVE_TYPES = {
+    'bool', 'int', 'unsigned int', 'char', 'unsigned char', 'short',
+    'unsigned short', 'long', 'unsigned long', 'long long',
+    'unsigned long long', 'float', 'double', 'void', 'wchar_t',
+    'unsigned', 'signed int', 'signed char',
+}
+
+
+def _is_primitive(ty):
+    base = ty.replace('*', '').strip()
+    return base in _PRIMITIVE_TYPES
+
+
+# names referenced by the e4/_gap2 corpus need cross-universe visibility
+_e4_used = set()
+for _p in list((SRC / 'e4').rglob('*.cpp')) + list((SRC / '_gap2').rglob('*.cpp')):
+    try:
+        _e4_used |= set(LABEL.findall(
+            _p.read_text(encoding='latin-1', errors='replace')))
+    except OSError:
+        continue
+
+
+def _needs_sys_include(ty):
+    """Map a def type to a system include ida_globals.h must carry."""
+    t = ty.replace('*', '').strip()
+    if t.startswith(('LPDIRECTDRAW', 'DIRECTDRAW', 'DDSCAPS', 'DDPIXEL',
+                     'DDSURFACE', 'LPDDS', 'DDCOLORKEY')):
+        return '<ddraw.h>'
+    return None
+
 
 new = sorted(used - declared)
 # names already DEFINED in a cpp (e.g. core/globals.cpp) still need the
 # extern declaration for OTHER TUs — but must not get a second definition
 # here (LNK2005). Split: declare all `new`; define only the cpp-undefined.
+# non-primitive def types split by cross-universe need:
+#   - primitive            -> emit extern with the def type
+#   - non-primitive + e4   -> emit extern with the def type + sys include
+#   - non-primitive, no e4 -> drop (its host cpp/header owns it)
+sys_includes = set()
+drop = set()
+for n in new:
+    ty = def_types.get(n)
+    if ty is None or _is_primitive(ty):
+        continue
+    if n in _e4_used:
+        inc = _needs_sys_include(ty)
+        if inc:
+            sys_includes.add(inc)
+        else:
+            drop.add(n)   # type not satisfiable here; host owns it
+    else:
+        drop.add(n)
+new = [n for n in new if n not in drop]
 defined_new = sorted(n for n in new if n in defined)
 undef_new = sorted(n for n in new if n not in defined)
 hdr = ['// GENERATED bare-global externs (gen_ida_globals.py).',
        '// Interim: zero-filled definitions, see ida_globals.cpp.',
        '#pragma once', '',
        '#ifndef GAMEMD_XMMWORD_T', '#define GAMEMD_XMMWORD_T',
-       'typedef unsigned char xmmword_t[16];', '#endif', '',
-       'namespace gamemd {', '']
+       'typedef unsigned char xmmword_t[16];', '#endif', '']
+for inc in sorted(sys_includes):
+    hdr.append('#include %s' % inc)
+if sys_includes:
+    hdr.append('')
+hdr += ['namespace gamemd {', '']
 cpp = ['// GENERATED bare-global definitions (gen_ida_globals.py).',
        '// INTERIM FIDELITY GAP: zero images; real .data contents are a',
        '// later pipeline stage.',
        '#include "ida_globals.h"', '', 'namespace gamemd {', '']
 for n in new:
-    ty = gtype(n)
+    ty = def_types.get(n) or gtype(n)
     hdr.append('extern %s %s;' % (ty, n))
 for n in undef_new:
     ty = gtype(n)

@@ -1147,7 +1147,9 @@ def make_callee_cfg_provider(efv, M, signals):
             if not cls and name and "::" in name:
                 cls = name.split("::")[0]
             cpp_text = "".join(body["lines"])
-            if efv["reject"].check_rejectable(cpp_text) is None:
+            # G41.40: allow_goto (see verify_single_function) -- callee bodies
+            # from the mechanical corpus carry goto; the T12 builder parses it.
+            if efv["reject"].check_rejectable(cpp_text, allow_goto=True) is None:
                 try:
                     result = _build_cpp_cfg_events(efv, cpp_text, cls, M, signals)
                 except Exception:
@@ -1714,7 +1716,14 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     cpp_text = "".join(body["lines"])
 
     # ---- reject gate: token-based lambda/asm/goto check ----
-    reason = efv["reject"].check_rejectable(cpp_text)
+    # G41.40: allow_goto=True -- the C++ CFG builder (T12) parses goto into
+    # blocks+edges with the SAME logic as the IDA side (T7), so a goto-bearing
+    # body can be compared faithfully. The no-goto QUALITY rule stays enforced
+    # by the compile-side Clang gate (clang_ast_checker.check_goto_statements);
+    # this reject was redundant there and blocked honest CFG comparison of the
+    # mechanical (cache-verbatim) corpus. lambda/asm remain rejected (the
+    # builder genuinely cannot parse those).
+    reason = efv["reject"].check_rejectable(cpp_text, allow_goto=True)
     if reason is not None:
         if verbose:
             print("  C++ source : {}:{}".format(body["file"], body["start_line"] + 1),
@@ -1723,18 +1732,11 @@ def verify_single_function(ida_addr, func_name, display_name, M,
         return False, {"reject": True, "reason": reason.message}
 
     # ---- ADDITIONAL AST-based goto check (Clang GotoStmt) ----
-    # The token-based lexer check above is authoritative for lambda/asm;
-    # goto is verified by BOTH the lexer AND the AST to eliminate false
-    # negatives (e.g., goto in preprocessor expansions or template
-    # instantiations that the lexer might miss).
-    has_goto, goto_detail = check_goto_ast(cpp_text)
-    if has_goto:
-        reject_msg = f"AST-confirmed goto statement ({goto_detail}) -- please rewrite using structured control flow"
-        if verbose:
-            print("  C++ source : {}:{}".format(body["file"], body["start_line"] + 1),
-                  file=sys.stderr)
-            print("  REJECT (AST): {}".format(reject_msg), file=sys.stderr)
-        return False, {"reject": True, "reason": reject_msg}
+    # G41.40: RETIRED from the verify path (see allow_goto above): the verdict
+    # now derives from the CFG comparison, which handles goto edges natively
+    # on both sides. check_goto_ast() is kept for external callers; it is no
+    # longer consulted here (it also cost one Clang temp-file parse per
+    # function on every sweep).
 
     # ---- C++ side ----
     cpp_cfg = _build_cpp_cfg_events(efv, cpp_text, class_name, M, signals)

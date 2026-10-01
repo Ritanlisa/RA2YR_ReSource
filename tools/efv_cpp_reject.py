@@ -165,14 +165,23 @@ def _make_reason(desc, pos, value):
 # Public entry point
 # ============================================================
 
-def check_rejectable(cpp_text_or_tokens):
+def check_rejectable(cpp_text_or_tokens, allow_goto=False):
     """Return a RejectReason if the input uses an AVOIDABLE C++ construct the
     offset-based event model cannot verify (lambda / goto / inline asm), else None.
 
     `cpp_text_or_tokens` may be:
-        * a `str`  -- the C++ source; it is tokenized via T10's `tokenize()`.
-        * a `list`/iterable of `efv_cpp_lex.Token` -- used as-is (NOT re-tokenized).
-        * `None`   -- treated as nothing to check -> None.
+      * a `str`     -- the C++ source; it is tokenized via T10's `tokenize()`.
+      * a `list`/iterable of `efv_cpp_lex.Token` -- used as-is (NOT re-tokenized).
+      * `None`   -- treated as nothing to check -> None.
+
+    G41.40 `allow_goto`: the exec-flow pipeline sets it True for its main
+    verify path. The C++-side CFG builder (T12) shares its AST/goto->edges
+    logic with the IDA side (T7), so a body that still carries goto CAN be
+    CFG-compared faithfully; the reject was redundant there with the
+    compile-side Clang gate (`clang_ast_checker.check_goto_statements`),
+    which remains the authoritative no-goto quality enforcement. The
+    default (False) preserves the historical contract for all other
+    callers/tests.
 
     Detection is purely token-driven (T10 contract): a `KIND_LAMBDA` marker, an
     `IDENT "goto"`, or an `IDENT` whose value is an MSVC inline-asm keyword.
@@ -196,7 +205,7 @@ def check_rejectable(cpp_text_or_tokens):
         # goto / inline-asm -> keywords arrive as IDENT (distinguish by value)
         if kind == KIND_IDENT:
             value = tok.value
-            if value == "goto":
+            if value == "goto" and not allow_goto:
                 return _make_reason(_DESC_GOTO, tok.pos, tok.value)
             if value in _INLINE_ASM_KEYWORDS:
                 return _make_reason(_DESC_ASM, tok.pos, tok.value)
