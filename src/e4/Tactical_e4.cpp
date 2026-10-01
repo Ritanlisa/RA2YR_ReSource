@@ -992,7 +992,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
     if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x6924af*/
     {
       v23 = ((Coord *)(&dword_87F7E8))->To_Cell(&v34); /*0x6924bb*/
-      result = (int)Cell::IsBridge(v23); /*0x6924c2*/
+      result = (int)((Cell *)(v23))->IsBridge(); /*0x6924c2*/
       if ( result ) /*0x6924c9*/
       {
         *v8 = *(unsigned char *)(result + 1767); /*0x6924d1*/

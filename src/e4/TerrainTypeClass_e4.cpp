@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/INIClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -285,16 +286,16 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
     v15 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aIsanimated, IsAnimated); /*0x71e02d*/
     AnimationRate = this->AnimationRate; /*0x71e03a*/
     this->IsAnimated = v15; /*0x71e041*/
-    Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aAnimationrate, AnimationRate); /*0x71e047*/
+    Int_Overwrite = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0], aAnimationrate, AnimationRate); /*0x71e047*/
     AnimationProbability = this->AnimationProbability; /*0x71e04c*/
     this->AnimationRate = Int_Overwrite; /*0x71e057*/
     INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)((unsigned int *)this)[0], aAnimationproba, AnimationProbability); /*0x71e066*/
     TemperateOccupationBits = this->TemperateOccupationBits; /*0x71e06b*/
     this->AnimationProbability = v2; /*0x71e073*/
-    v19 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aTemperateoccup, TemperateOccupationBits); /*0x71e080*/
+    v19 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0], aTemperateoccup, TemperateOccupationBits); /*0x71e080*/
     SnowOccupationBits = this->SnowOccupationBits; /*0x71e085*/
     this->TemperateOccupationBits = v19; /*0x71e08b*/
-    result = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
+    result = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0], aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
     this->SnowOccupationBits = result; /*0x71e0a0*/
     LOBYTE(result) = 1; /*0x71e0a8*/
   }

@@ -254,7 +254,7 @@ LABEL_162:
       {
         int v94 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[44448] + 4 * v93);
         if ( *(unsigned int *)(v94 + 36) == *(unsigned int *)((unsigned int)(a1)+ 80) )
-          BuildingClass::ExecuteTriggers(v94, 0, *(TriggerClass **)&stru_B05488[37368]);
+          ((BuildingClass *)(v94))->ExecuteTriggers(0, *(TriggerClass **)&stru_B05488[37368]);
         ++v93;
       }
       while ( v93 < *(int *)&((unsigned int *)(HouseClass_Player))[44460] );
@@ -263,7 +263,7 @@ LABEL_162:
       if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) != -1 )
         return 1;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
-      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
+      ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x18:
       v54 = (TerrainTypeClass *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
@@ -272,7 +272,7 @@ LABEL_162:
       *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
       *(unsigned int *)v54->__pad_0 = -1;
-      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
+      ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x19:
       int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
@@ -283,7 +283,7 @@ LABEL_162:
       *(unsigned int *)(v58 + 4) = v132;
   int v133; // [esp+2Ch] [ebp-224h]
       *(unsigned int *)(v58 + 8) = v133;
-      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
+      ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x1A:
       if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
@@ -294,7 +294,7 @@ LABEL_162:
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
         *(unsigned int *)(ecx134 + 4) = (unsigned int)(v128);
         *(unsigned int *)(ecx134 + 8) = (unsigned int)(GroundHeight);
-        ObjectClass::PreDraw(&stru_87C374[13428]);
+        ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       }
       else
       {
@@ -303,7 +303,7 @@ LABEL_162:
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
         *(unsigned int *)(v59 + 4) = v132;
         *(unsigned int *)(v59 + 8) = v133;
-        ObjectClass::PreDraw(&stru_87C374[13428]);
+        ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       }
       return 1;
     case 0x1B:
@@ -322,13 +322,13 @@ LABEL_162:
       ScriptAction::CopyStringField(Destination,(char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
       ScriptAction::CopyStructField((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600), v137, Destination);
-      ObjectClass::PreDraw(&stru_87C374[13428]);
+      ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       return 1;
     case 0x1C:
-      ScenarioClass::SetGlobalToByID(*(unsigned char **)&HouseClass_Player[29924], *(unsigned int *)(a1 + 144), 1);
+      ((ScenarioClass *)(*(unsigned char **)&HouseClass_Player[29924]))->SetGlobalToByID(*(unsigned int *)(a1 + 144), 1);
       return 1;
     case 0x1D:
-      ScenarioClass::SetGlobalToByID(*(unsigned char **)&HouseClass_Player[29924], *(unsigned int *)(a1 + 144), 0);
+      ((ScenarioClass *)(*(unsigned char **)&HouseClass_Player[29924]))->SetGlobalToByID(*(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x1E:
       if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
@@ -343,12 +343,12 @@ LABEL_162:
         int v53 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 160);
         v133 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 164);
         v52 = *(IUnknown **)((CellStruct *)(&v130))->Set((int)v50 / 256, v53 / 256);
-        HouseClass::SetMapSeed(aP1, v52);
+        ((HouseClass *)(aP1))->SetMapSeed(v52);
         aP1[620].NeedsSaveOrLink = v52;
       }
       if ( !*(unsigned int *)&aP1[619].__pad_0[8] )
       {
-        HouseClass::SetPrimaryTechBuilding((int)aP1);
+        ((HouseClass *)((int)aP1))->SetPrimaryTechBuilding();
         return 1;
       }
       return 1;
@@ -429,7 +429,7 @@ LABEL_157:
       *(unsigned int *)&stru_87C374[17948] = 0;
       *(unsigned int *)&stru_87C374[17952] = -1;
       Mouse::SetBounds((int)&stru_87C374[13428], 0);
-      BuildingClass::TogglePower2(&stru_87C374[13428], 0);
+      ((BuildingClass *)(&stru_87C374[13428]))->TogglePower2(0);
       BuildingClass::TogglePower(&stru_87C374[13428], 0);
       stru_87C374[17958] = 0;
       stru_87C374[17959] = 0;
@@ -1010,7 +1010,7 @@ LABEL_60:
   char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
         ScriptAction::CopyStructField((void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600), v139, v137);
       }
-      ObjectClass::PreDraw(&stru_87C374[13428]);
+      ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       return 1;
     case 0x68:
       void * v107 = *(void **)(a1 + 48);
@@ -1200,7 +1200,7 @@ LABEL_290:
     if ( ++v116 >= *(int *)&HouseClass_Player[44548] )
       return 0;
   }
-  BuildingClass::UnloadUnits((BuildingTypeClass **)v117, 0, 0);
+  ((BuildingClass *)((BuildingTypeClass **)v117))->UnloadUnits(0, 0);
   return 1;
 }
 

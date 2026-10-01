@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/AnimTypeVector_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
@@ -34,7 +36,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
   int Int_Overwrite; // eax
   int result; // eax
 
-  Int_Overwrite = (void *)(INIClass::ReadInt_Overwrite((bool *)this, a2, a3, -1));
+  Int_Overwrite = (void *)(((INIClass *)((bool *)this))->ReadInt_Overwrite(a2, a3, -1));
   if ( Int_Overwrite == -1 ) /*0x474824*/
     return a4; /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/

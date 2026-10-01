@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/WinModemClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
@@ -2881,11 +2882,11 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                       *((unsigned int *)this + 1313));
     v4 = *((unsigned int *)this + 1314); /*0x671efc*/
     *((unsigned int *)this + 1313) = Int_Overwrite; /*0x671f02*/
-    v5 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxmoney, v4); /*0x671f16*/
+    v5 = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aMaxmoney, v4); /*0x671f16*/
     v6 = *((unsigned int *)this + 1315); /*0x671f1b*/
     *((unsigned int *)this + 1314) = v5; /*0x671f21*/
-    *((unsigned int *)this + 1315) = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMoneyincrement, v6); /*0x671f3b*/
-    v7 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMinunitcount, *((unsigned int *)this + 1316)); /*0x671f56*/
+    *((unsigned int *)this + 1315) = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aMoneyincrement, v6); /*0x671f3b*/
+    v7 = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aMinunitcount, *((unsigned int *)this + 1316)); /*0x671f56*/
     v8 = *((unsigned int *)this + 1317); /*0x671f5b*/
     *((unsigned int *)this + 1316) = v7; /*0x671f61*/
     v9 = INIClass::ReadInt_Overwrite( /*0x671f75*/
@@ -2895,7 +2896,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
            v8);
     v10 = *((unsigned int *)this + 1318); /*0x671f7a*/
     *((unsigned int *)this + 1317) = v9; /*0x671f80*/
-    *((unsigned int *)this + 1318) = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxunitcount, v10); /*0x671f9a*/
+    *((unsigned int *)this + 1318) = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aMaxunitcount, v10); /*0x671f9a*/
     v11 = INIClass::ReadInt_Overwrite( /*0x671fb5*/
             v37,
             (uint8_t *)aMultiplayerdia,
@@ -2910,8 +2911,8 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
             v12);
     v14 = *((unsigned int *)this + 1321); /*0x671fd9*/
     *((unsigned int *)this + 1320) = v13; /*0x671fdf*/
-    *((unsigned int *)this + 1321) = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
-    v15 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAiplayers, *((unsigned int *)this + 1322)); /*0x672014*/
+    *((unsigned int *)this + 1321) = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
+    v15 = ((INIClass *)(v37))->ReadInt_Overwrite((uint8_t *)aMultiplayerdia, aAiplayers, *((unsigned int *)this + 1322)); /*0x672014*/
     v16 = *((unsigned char *)this + 5292); /*0x672019*/
     *((unsigned int *)this + 1322) = v15; /*0x67201f*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBridgedestruct, v16); /*0x672033*/

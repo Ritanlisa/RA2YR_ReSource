@@ -98,6 +98,9 @@ struct FactoryClass {
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
     static double AbandonProduction(...);  // C2597 interim stub
+    int ClearObjects();  // 0x635120
+    wchar_t * ResetProductionTimers();  // 0x6b0c80
+    unsigned int * CompleteItem();  // 0x71abc0
 };
 
 } // namespace gamemd

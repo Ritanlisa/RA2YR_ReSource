@@ -305,7 +305,7 @@ int Warhead::ProcessDamageArea()
   v34 = v20[2]; /*0x65b776*/
   if ( v21 ) /*0x65b77a*/
   {
-    TacticalClass::UpdateScrollTarget(v21, v8, v26, v13, v17, 0); /*0x65b7e8*/
+    ((TacticalClass *)(v21))->UpdateScrollTarget(v8, v26, v13, v17, 0); /*0x65b7e8*/
     return RadSiteClass::Radiate((int)this); /*0x65b7ef*/
   }
   else

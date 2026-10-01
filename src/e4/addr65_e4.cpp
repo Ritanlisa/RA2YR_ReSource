@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/FileStraw_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_652CD0_e4.hpp"
 #include "e4/classes/E4Recv_6547C0_e4.hpp"
@@ -1434,7 +1435,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
       NeighbourContent = v17; /*0x65da41*/
       if ( v18 != -1 ) /*0x65da43*/
         NeighbourContent = (Cell *)((Cell *)(v17))->GetNeighbourContent(v18); /*0x65da48*/
-      v20 = (ObjectClass *)Cell::IsBridge(NeighbourContent); /*0x65da4f*/
+      v20 = (ObjectClass *)((Cell *)(NeighbourContent))->IsBridge(); /*0x65da4f*/
       v20 = v20; /*0x65da54*/
       if ( v20 && v20->health > 0 && ProcessDataCellClass(v20) ) /*0x65da63*/
         v16 = v20; /*0x65da6c*/
@@ -1457,7 +1458,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
           goto LABEL_39; /*0x65daa0*/
         if ( v26 <= 2 ) /*0x65daa5*/
         {
-          CellClass::AddObject((CellClass *)&v16[1].bombVisible, v22); /*0x65dadd*/
+          ((CellClass *)((CellClass *)&v16[1].bombVisible))->AddObject(v22); /*0x65dadd*/
           (*(void (**)(unsigned int *))(*v22 + 284))(v22); /*0x65dae6*/
           (*((void (**)(ObjectClass *, int, unsigned int))v16->AbstractClass + 122))(v16, 16, 0); /*0x65daf4*/
           ++v23; /*0x65dafa*/
@@ -1556,7 +1557,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   if ( v40 ) /*0x65dce0*/
   {
     *(unsigned char *)(v31 + 1737) = 1; /*0x65dce9*/
-    CellClass::AddObject((CellClass *)(v31 + 276), v10); /*0x65dcf0*/
+    ((CellClass *)((CellClass *)(v31 + 276)))->AddObject(v10); /*0x65dcf0*/
     (*(void (**)(int))(*(unsigned int *)v31 + 492))(v31); /*0x65dcf9*/
     v3 = (int)v47; /*0x65dcff*/
   LABEL_49:
@@ -1971,7 +1972,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
             if ( v20 ) /*0x65e7e2*/
             {
               (*(void (**)(int))(*(unsigned int *)v20 + 212))(v20); /*0x65e7e8*/
-              CellClass::AddObject((CellClass *)(v13 + 276), v21); /*0x65e7f5*/
+              ((CellClass *)((CellClass *)(v13 + 276)))->AddObject(v21); /*0x65e7f5*/
             }
             --v19; /*0x65e7fa*/
           }
@@ -2108,7 +2109,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
             if ( v22 ) /*0x65ea37*/
             {
               (*(void (**)(int))(*(unsigned int *)v22 + 212))(v22); /*0x65ea3d*/
-              CellClass::AddObject((CellClass *)(v14 + 276), v23); /*0x65ea4a*/
+              ((CellClass *)((CellClass *)(v14 + 276)))->AddObject(v23); /*0x65ea4a*/
             }
             --v29; /*0x65ea54*/
           }

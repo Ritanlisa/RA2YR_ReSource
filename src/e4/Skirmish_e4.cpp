@@ -1,5 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
@@ -628,7 +632,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
             v10 = GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae589*/
-            v11 = (wchar_t *)GameSetup::GetColorTooltip(v10); /*0x6ae590*/
+            v11 = (wchar_t *)((GameSetup *)(v10))->GetColorTooltip(); /*0x6ae590*/
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/
           }
@@ -805,7 +809,7 @@ AbstractClass * * Skirmish::SetupGame(SkirmishDialog * hWnd, int a2)
   }
   SkirmishDialog::FillComboBoxes((SkirmishDialog *)hWnd); /*0x6ae872*/
   InitGameDropdownColors(v51); /*0x6ae877*/
-  Lobby::FillPlayerFactions((Lobby *)hWnd); /*0x6ae87e*/
+  ((Lobby *)((Lobby *)hWnd))->FillPlayerFactions(); /*0x6ae87e*/
   _cfltcvt_init(); /*0x6ae883*/
   Lobby::InvalidateFactionCombos((Lobby *)hWnd); /*0x6ae88a*/
   GDlg::LoadLetterStrings(); /*0x6ae88f*/

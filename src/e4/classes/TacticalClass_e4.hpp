@@ -330,6 +330,11 @@ struct TacticalClass {
     static double PixelToCellCheck(...);  // C2597 interim stub
     static double SetView(...);  // C2597 interim stub
     static double initTacticalMap(...);  // C2597 interim stub
+    int SetCameraPosition(int a2, int a3, int a4);  // 0x540d10
+    char UpdateScrollTarget(int a2, int a3, int a4, int a5, char a6);  // 0x554aa0
+    int Initialize();  // 0x4ae450
+    int ResetScrollBounds();  // 0x6da160
+    int ScrollView(char a2);  // 0x554af0
 };
 
 } // namespace gamemd

@@ -25,6 +25,7 @@ struct GameSetup {
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();
     static double FormatToString(...);  // C2597 interim stub
+    wchar_t * GetColorTooltip();  // 0x4e42a0
 };
 
 } // namespace gamemd

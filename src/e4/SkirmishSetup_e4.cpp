@@ -1,5 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Network_e4.hpp"

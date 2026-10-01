@@ -151,7 +151,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
     FileFind::Close(v3); /*0x5f3663*/
     __3_YAXPAX_Z(v3); /*0x5f3669*/
   }
-  ObjectClass::FreeResources((ObjectClass *)Block); /*0x5f3673*/
+  ((ObjectClass *)((ObjectClass *)Block))->FreeResources(); /*0x5f3673*/
   if ( *((unsigned int *)Block + 16) != -1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
@@ -161,7 +161,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
     *((unsigned int *)Block + 16) = -1; /*0x5f36ad*/
-    ObjectClass::FreeResources((ObjectClass *)Block); /*0x5f36b0*/
+    ((ObjectClass *)((ObjectClass *)Block))->FreeResources(); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {

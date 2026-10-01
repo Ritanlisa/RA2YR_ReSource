@@ -366,9 +366,9 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v77[1] = 0;
   v77[2] = 0;
   unsigned int v78[3]; // [esp+48h] [ebp-9C8h] BYREF
-  GenericNode::Constructor(v78);
+  ((GenericNode *)(v78))->Constructor();
   unsigned int v79[6]; // [esp+54h] [ebp-9BCh] BYREF
-  GenericNode::Constructor(v79);
+  ((GenericNode *)(v79))->Constructor();
   LinkedList_flat::Prepend(v78, (int)v79);
   v77[3] = (uint8_t **)&vt_List_INIClass_INISection;
   memset(&v79[3], 0, 12);
@@ -1125,13 +1125,13 @@ LABEL_26:
                 {
                   v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))(v42);
                   sprintf(aP2[0], DataGlobal_00829184, v35);
-                  v3[179] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[179]);
+                  v3[179] = ((INIClass *)((int)v77))->ReadInt_Overwrite((uint8_t *)&aP4, &aP2, (INIClass *)v3[179]);
                   sprintf(aP2[0], DataGlobal_00829174, v35);
-                  v3[180] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[180]);
+                  v3[180] = ((INIClass *)((int)v77))->ReadInt_Overwrite((uint8_t *)&aP4, &aP2, (INIClass *)v3[180]);
                   sprintf(aP2[0], DataGlobal_00829160, v35);
-                  v3[181] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[181]);
+                  v3[181] = ((INIClass *)((int)v77))->ReadInt_Overwrite((uint8_t *)&aP4, &aP2, (INIClass *)v3[181]);
                   sprintf(aP2[0], stru_829150, v35);
-                  v3[182] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[182]);
+                  v3[182] = ((INIClass *)((int)v77))->ReadInt_Overwrite((uint8_t *)&aP4, &aP2, (INIClass *)v3[182]);
                 }
               }
             }
@@ -1311,7 +1311,7 @@ LABEL_207:
             }
             while ( v48 < *((unsigned int *)v44 + 1) * *(unsigned int *)v44 );
           }
-          TerrainClass::InitTheatre(v3);
+          ((TerrainClass *)(v3))->InitTheatre();
 LABEL_217:
           v65 = (MapClass *)((char *)v65 + 1);
         }

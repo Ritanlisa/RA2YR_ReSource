@@ -1,4 +1,6 @@
 #include "structure/unit.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellCoord_e4.hpp"
 #include "structure/globals_structure.hpp"
 
 #include <cstring>

@@ -763,7 +763,7 @@ void PostLoadInitScenario()
     if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
     {
       v12 = TeamClass::FindOrCreate(v7); /*0x684e44*/
-      Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)); /*0x684e5b*/
+      Owner = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)))->FindOwner(); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
         v14 = *(unsigned int *)(Owner + 64); /*0x684e64*/
@@ -791,7 +791,7 @@ void PostLoadInitScenario()
       v20 = (TagClass *)*((unsigned int *)dword_B0E784 + v19); /*0x684ec8*/
       if ( TagClass::HasValidHouse(v20) ) /*0x684ecd*/
       {
-        v21 = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(v20[2].defaultCoords[0] + 164) + 180)); /*0x684ee8*/
+        v21 = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(v20[2].defaultCoords[0] + 164) + 180)))->FindOwner(); /*0x684ee8*/
         ++*(unsigned int *)(v21 + 636); /*0x684eed*/
       }
       ++v19; /*0x684ef8*/
@@ -988,7 +988,7 @@ void ScenarioClass_Reset()
     {
       *((unsigned char *)g_ScenarioClass_Instance + j + 7344) = 0; /*0x68536e*/
       v8[13482] = 1; /*0x685377*/
-      HouseClass::UpdateAllTypes(v6); /*0x68537e*/
+      ((HouseClass *)(v6))->UpdateAllTypes(); /*0x68537e*/
     }
     ++v6; /*0x685386*/
   }
@@ -1703,7 +1703,7 @@ void GenerateScenarioUnits()
           v26 = *((unsigned int *)v81 + v25); /*0x688a21*/
           v58 = v26; /*0x688a24*/
         }
-        HouseClass::SetMapSeed(ppv, v26); /*0x688b25*/
+        ((HouseClass *)(ppv))->SetMapSeed(v26); /*0x688b25*/
         if ( g_abs_A8B258 ) /*0x688b31*/
         {
           v39 = RA2_OPNEW(0x8E8u); /*0x688b41*/

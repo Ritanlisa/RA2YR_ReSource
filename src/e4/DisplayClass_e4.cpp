@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Hash_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -62,7 +63,7 @@ int DisplayClass::UpdateDisplayTimer()
 }
 } // namespace gamemd
 // 0x487690
-namespace gamemd {
+int DisplayClass::AdvanceFrameCounter()
 int DisplayClass::AdvanceFrameCounter()
 {
 
@@ -354,7 +355,7 @@ LABEL_36:
   if ( v30 ) /*0x4a9c55*/
     CellClass::SpiralFindClosest((int)v5, aP2, v39); /*0x4a9c67*/
   if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4a9c88*/
-    CellClass::UpdateZone(v5); /*0x4a9c8c*/
+    ((CellClass *)(v5))->UpdateZone(); /*0x4a9c8c*/
   return v30; /*0x4a9c91*/
 
 }
@@ -468,7 +469,7 @@ LABEL_13:
   if ( v29 ) /*0x4a9fff*/
     CellClass::SpiralFindClosest((int)v5, aP2, v28); /*0x4aa011*/
   if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4aa032*/
-    CellClass::UpdateZone(v5); /*0x4aa036*/
+    ((CellClass *)(v5))->UpdateZone(); /*0x4aa036*/
   return v29; /*0x4aa03b*/
 
 }
@@ -694,7 +695,7 @@ void * DisplayClass::Draw(int a2)
   if ( !v9 ) /*0x4ae67a*/
   {
     v12 = (CellClass *)CellCoord::To_CellObj((CellCoord *)this, v16); /*0x4ae683*/
-    return (wchar_t *)CellClass::GetUIName(v12); /*0x4ae68a*/
+    return (wchar_t *)((CellClass *)(v12))->GetUIName(); /*0x4ae68a*/
   }
   return result; /*0x4ae5b9*/
 
@@ -706,7 +707,7 @@ int DisplayClass::ExitMode()
 {
 
   if ( g_TacticalClass_Instance ) /*0x4aeadb*/
-    TacticalClass::ResetScrollBounds((TacticalClass *)g_TacticalClass_Instance); /*0x4aeadd*/
+    ((TacticalClass *)((TacticalClass *)g_TacticalClass_Instance))->ResetScrollBounds(); /*0x4aeadd*/
   this->__pad_11B4[27] = 0; /*0x4aeae2*/
   LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4aeae9*/
   *((unsigned int *)((char *)&stru_A8EB00 + 441)) = 1; /*0x4aeaf0*/

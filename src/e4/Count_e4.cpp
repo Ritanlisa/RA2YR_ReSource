@@ -120,7 +120,7 @@ int Count::SetupAllCountriesLobby()
 } // namespace gamemd
 // 0x5F1EA0
 namespace gamemd {
-int32_t Count::GetCountQueue(void *a1)
+int32_t Count::GetCountQueue()
 {
 
   int v1; // eax

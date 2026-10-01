@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -226,7 +227,7 @@ void ParasiteClass::DeploySquad()
             v14 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6298f5*/
             if ( v14 ) /*0x6298ff*/
             {
-              v15 = AnimClass::ctor(v14, v13, &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
+              v15 = ((AnimClass *)(v14))->ctor(v13, &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
               if ( v15 ) /*0x62991a*/
               {
                 _ESI[1].AbstractClass = v15; /*0x62991c*/
@@ -258,7 +259,7 @@ void ParasiteClass::DeploySquad()
           _ESI[1] = (void *)(3 - (v17 != 0)); /*0x6299ba*/
           _ESI[1] = 0; /*0x6299bd*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
-          FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
+          ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
       case 2u: /*0x6298bc*/
@@ -428,7 +429,7 @@ LABEL_20:
             _ESI[1] = (void *)(3 - (v36 != 0)); /*0x629d69*/
             _ESI[1] = 0; /*0x629d6c*/
             BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
-            FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
+            ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x629d90*/
           }
           else
           {
@@ -617,7 +618,7 @@ LABEL_8:
       {
         v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x62a144*/
         if ( v17 ) /*0x62a14e*/
-          AnimClass::ctor(v17, v16, &v31, 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
+          ((AnimClass *)(v17))->ctor(v16, &v31, 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
       }
     }
     v18 = -(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) != 0); /*0x62a189*/
@@ -724,7 +725,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
       v17 = v11[41]; /*0x62aa75*/
-      MapClass::RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], &v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
+      ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->RevealArea2(&v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
       if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 1196))(*((unsigned int *)this + 9)) ) /*0x62aa9b*/
       {
         (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 36) + 968))(*((unsigned int *)this + 9), 0); /*0x62aaab*/
@@ -746,7 +747,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 } // namespace ra2
 
 // 0x62AB40
-namespace gamemd {
+int ParasiteClass::CanExistOnVictimCell()
 int ParasiteClass::CanExistOnVictimCell()
 {
 
@@ -771,7 +772,7 @@ int ParasiteClass::CanExistOnVictimCell()
     if ( (*(int (**)(int))(*(unsigned int *)creationFrame + 44))(creationFrame) == 1 ) /*0x62ab86*/
     {
       v5 = (CellClass *)(*(int (**)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28); /*0x62ab8f*/
-      if ( CellClass::FindInfantry(v5, 0) ) /*0x62ab97*/
+      if ( ((CellClass *)(v5))->FindInfantry(0) ) /*0x62ab97*/
         return 0; /*0x62aba4*/
     }
   }
@@ -789,7 +790,7 @@ int ParasiteClass::CanExistOnVictimCell()
   }
 LABEL_20:
   v9 = (Cell *)(*(int (**)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28); /*0x62ac14*/
-  return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
+  return ((Cell *)(v9))->IsBridge() == 0; /*0x62ab4b*/
 
 }
 } // namespace ra2
@@ -1022,7 +1023,7 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
     v18 = (double)GroundHeight; /*0x62bfb7*/
     if ( v66 >= v18 && v66 - 150.0 < v18 ) /*0x62bfdb*/
     {
-      v19 = Cell::IsBridge(v17); /*0x62bfe4*/
+      v19 = ((Cell *)(v17))->IsBridge(); /*0x62bfe4*/
       if ( v19 || (uint8_t)BuildingPlacement::ValidateType(v17, -1, -1) ) /*0x62bff0*/
       {
         v56 = 1; /*0x62c001*/

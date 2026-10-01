@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SessionClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Mission_e4.hpp"
@@ -82,7 +83,7 @@ int Mission::ExecuteTechnoMissionAction()
             v6 = &v20; /*0x520c96*/
 LABEL_19:
             v9 = (int *)(*(int (**)(Mission *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
-            AnimClass::ctor(v4, v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
+            ((AnimClass *)(v4))->ctor(v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
           }
         }
 LABEL_20:
@@ -466,7 +467,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
           v8 = ((unsigned int *)&dword_8871E0[1])[0]; /*0x6ed85a*/
-        if ( ObjectClass::DistanceTo(i, *((unsigned int *)this + 13)) <= v8 ) /*0x6ed87a*/
+        if ( ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= v8 ) /*0x6ed87a*/
         {
           *((unsigned char *)i + 1673) = 1; /*0x6ed8b2*/
         }
@@ -494,7 +495,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   || ((v9 = *SessionClass::GetEntry(*(unsigned int **)((char *)this + 40), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
-                      ObjectClass::DistanceTo(i, *((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )
+                      ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )
                 {
                   v3 = i[173]; /*0x6eda11*/
                   if ( !v3 ) /*0x6eda19*/

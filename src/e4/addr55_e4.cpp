@@ -1220,7 +1220,7 @@ int E4Recv_557380::sub_557380(int a2)
 
   int v3; // eax
 
-  ControlClass::CtorFromData((unsigned int *)this, a2); /*0x55738b*/
+  ((ControlClass *)((unsigned int *)this))->CtorFromData(a2); /*0x55738b*/
   *((unsigned int *)this + 11) = *(unsigned int *)(a2 + 44); /*0x557396*/
   *((unsigned int *)this + 12) = *(unsigned int *)(a2 + 48); /*0x55739f*/
   *((unsigned int *)this + 14) = 0; /*0x5573a7*/
@@ -1235,7 +1235,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 19) = *(unsigned int *)(a2 + 76); /*0x5573d7*/
   *((unsigned int *)this + 20) = *(unsigned int *)(a2 + 80); /*0x5573dd*/
   *((unsigned char *)this + 84) = *(unsigned char *)(a2 + 84); /*0x5573e9*/
-  ControlClass::CtorFromData((unsigned int *)((char *)this + 88), a2 + 88); /*0x5573ec*/
+  ((ControlClass *)((unsigned int *)((char *)this + 88)))->CtorFromData(a2 + 88); /*0x5573ec*/
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x5573fa*/
   *((unsigned char *)this + 133) = *(unsigned char *)(a2 + 133); /*0x557400*/
   *((unsigned int *)this + 34) = *(unsigned int *)(a2 + 136); /*0x557406*/
@@ -1253,7 +1253,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 44) = *(unsigned int *)(a2 + 176); /*0x55744f*/
   *((unsigned char *)this + 180) = *(unsigned char *)(a2 + 180); /*0x55745b*/
   *((unsigned int *)this + 22) = &vt_ShapeButtonClass; /*0x557460*/
-  ControlClass::CtorFromData((unsigned int *)((char *)this + 184), a2 + 184); /*0x557466*/
+  ((ControlClass *)((unsigned int *)((char *)this + 184)))->CtorFromData(a2 + 184); /*0x557466*/
   *((unsigned char *)this + 228) = *(unsigned char *)(a2 + 228); /*0x55746e*/
   *((unsigned char *)this + 229) = *(unsigned char *)(a2 + 229); /*0x557474*/
   *((unsigned int *)this + 58) = *(unsigned int *)(a2 + 232); /*0x55747a*/
@@ -4067,7 +4067,7 @@ namespace gamemd {
 int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 {
 
-  ControlClass::CtorFromData((unsigned int *)this, aP1); /*0x5581a9*/
+  ((ControlClass *)((unsigned int *)this))->CtorFromData(aP1); /*0x5581a9*/
   *((unsigned char *)this + 44) = *(unsigned char *)(aP1 + 44); /*0x5581b1*/
   *((unsigned char *)this + 45) = *(unsigned char *)(aP1 + 45); /*0x5581b7*/
   *((unsigned char *)this + 46) = *(unsigned char *)(aP1 + 46); /*0x5581bd*/

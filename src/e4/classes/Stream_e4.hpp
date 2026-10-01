@@ -57,6 +57,7 @@ struct Stream {
     int WriteIntArray(TechnoTypeClass * aP1);
     void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
     static double CopyFromTemplate(...);  // C2597 interim stub
+    int WriteBlock(int a2, int a3, int a4);  // 0x5f1bf0
 };
 
 } // namespace gamemd

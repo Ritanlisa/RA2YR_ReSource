@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -359,7 +360,7 @@ LABEL_60:
               {
 LABEL_63:
                 *(unsigned int *)v54.__pad_0 = &vt_VectorClass; /*0x58cc85*/
-                Buffer::Cleanup(&v54); /*0x58cc91*/
+                ((Buffer *)(&v54))->Cleanup(); /*0x58cc91*/
                 return 0; /*0x58cc9f*/
               }
               break; /*0x58cc7f*/
@@ -400,7 +401,7 @@ LABEL_84:
     while ( v44 ); /*0x58ce71*/
   }
   *(unsigned int *)v54.__pad_0 = &vt_VectorClass; /*0x58ce77*/
-  Buffer::Cleanup(&v54); /*0x58ce7f*/
+  ((Buffer *)(&v54))->Cleanup(); /*0x58ce7f*/
   return v41; /*0x58cc98*/
 
 }
@@ -2467,8 +2468,8 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   CCFileClass::Construct(&v5, v2); /*0x597dbd*/
   v4.headNode[0] = 0; /*0x597dc6*/
   v4.headNode[1] = 0; /*0x597dca*/
-  GenericNode::Constructor((GenericNode *)v4.sectionHead); /*0x597dce*/
-  GenericNode::Constructor((GenericNode *)&v4.sectionCount); /*0x597dd7*/
+  ((GenericNode *)((GenericNode *)v4.sectionHead))->Constructor(); /*0x597dce*/
+  ((GenericNode *)((GenericNode *)&v4.sectionCount))->Constructor(); /*0x597dd7*/
   LinkedList::Prepend((LinkedList *)v4.sectionHead, (int)&v4.sectionCount); /*0x597ded*/
   v4.headNode[2] = (int)&vt_List; /*0x597dfc*/
   memset(&v4.__pad_20[8], 0, 13); /*0x597e04*/

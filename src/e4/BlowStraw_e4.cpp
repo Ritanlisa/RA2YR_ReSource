@@ -193,7 +193,7 @@ LABEL_6:
     }
   }
   CountdownTimer::UpdateDisplay((CountdownTimer *)this + 5447, 0); /*0x6d099d*/
-  return SidebarClass::UpdateStrips((SidebarClass *)this, aP1, a2); /*0x6d09af*/
+  return ((SidebarClass *)((SidebarClass *)this))->UpdateStrips(aP1, a2); /*0x6d09af*/
 
 }
 }
@@ -300,7 +300,7 @@ namespace gamemd {
 int BlowStraw_29_::Stub()
 {
 
-  return ObjectClass::processDamage((SidebarClass *)this);
+  return ((ObjectClass *)((SidebarClass *)this))->processDamage();
 
 }
 } // namespace gamemd

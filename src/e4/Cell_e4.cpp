@@ -162,7 +162,7 @@ LABEL_6:
 }
 // 0x481670
 namespace gamemd {
-int Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4)
+int Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
 {
 
   AbstractClass *Cell_field_0xE4; // esi
@@ -752,7 +752,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   *(unsigned int *)v14 = (unsigned int)(v17); /*0x4dcf69*/
   v10 = (*(int (**)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
   v11 = (*(int (**)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10); /*0x4dcf7a*/
-  if ( !MapSeed::CheckTileMatch((MapSeed *)&stru_87F5F0.__pad_58[416], v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
+  if ( !((MapSeed *)((MapSeed *)&stru_87F5F0.__pad_58[416]))->CheckTileMatch(v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x4dcfa1*/
   return v12[59] == 5 /*0x4dcfc7*/
@@ -1526,7 +1526,7 @@ LABEL_15:
         break; /*0x6b6005*/
       if ( !a3 ) /*0x6b600d*/
       {
-        result = (int)Cell::IsBridge((Cell *)v7); /*0x6b6011*/
+        result = (int)((Cell *)((Cell *)v7))->IsBridge(); /*0x6b6011*/
         if ( result ) /*0x6b6018*/
           break; /*0x6b6018*/
       }

@@ -1165,7 +1165,7 @@ void ExecutePlanningQueue()
     do /*0x637438*/
     {
       v21 = *((unsigned int *)dword_AC4C9C + v20); /*0x637400*/
-      FactoryClass::ClearObjects((FactoryClass *)v21); /*0x637405*/
+      ((FactoryClass *)((FactoryClass *)v21))->ClearObjects(); /*0x637405*/
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
         ScriptAction::PlaceObject(v21, *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
@@ -1279,7 +1279,7 @@ AbstractClass * * sub_637920()
     while ( 1 ) /*0x63793f*/
     {
       v3 = *(unsigned int *)(*(unsigned int *)&stru_AC4B30.__pad_EC[128] + 4 * v2); /*0x63793f*/
-      FactoryClass::ClearObjects((FactoryClass *)v3); /*0x637944*/
+      ((FactoryClass *)((FactoryClass *)v3))->ClearObjects(); /*0x637944*/
       v4 = *(unsigned int *)(v3 + 16); /*0x637949*/
       if ( v4 > 0 ) /*0x63794e*/
       {

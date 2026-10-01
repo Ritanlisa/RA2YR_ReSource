@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4F2280_e4.hpp"
 #include "e4/classes/E4Recv_4F2300_e4.hpp"
@@ -500,7 +501,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   int v24; // [esp+46h] [ebp-8h]
 
   v2 = String::GetOrEmpty((String *)((char *)this + 80)); /*0x4f230c*/
-  v3 = StringList::Find((StringList *)&unk_A83D10, v2); /*0x4f2317*/
+  v3 = ((StringList *)((StringList *)&unk_A83D10))->Find(v2); /*0x4f2317*/
   ThemeClass::Play((ThemeClass *)&unk_A83D10, v3); /*0x4f2322*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x4f2331*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x4f233e*/
@@ -684,7 +685,7 @@ void ParseINIAnimGadgetDefinition()
   unknown_libname_73(&v19); /*0x4f2cba*/
   ((String *)(&v21))->Assign(&g_INI_DefaultBuffer); /*0x4f2cc8*/
   ((String *)(&v20))->Assign(g_INI_Key_Image); /*0x4f2cd6*/
-  INIClass::ReadString(a2, Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
@@ -692,7 +693,7 @@ void ParseINIAnimGadgetDefinition()
     unknown_libname_73(&v19.q4); /*0x4f2d29*/
     ((String *)(&v20))->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
     ((String *)(&v21))->Assign(g_INI_Key_Palette); /*0x4f2d45*/
-    INIClass::ReadString(a2, Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
+    ((INIClass *)(a2))->ReadString(Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( String::Length((String *)&v19.q4) ) /*0x4f2d77*/
@@ -827,29 +828,29 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   unknown_libname_73(&v19); /*0x4f3271*/
   ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f327f*/
   ((String *)((String *)&a4))->Assign(g_INI_Key_Image); /*0x4f328d*/
-  INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v21); /*0x4f32a4*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&a4, (char **)&v22, (int)&v21); /*0x4f32a4*/
   DeleteAndZero(&a4); /*0x4f32ad*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f32b6*/
   ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f32c4*/
   ((String *)((String *)&a4))->Assign(aHighlighted); /*0x4f32d2*/
-  INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v20); /*0x4f32e9*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&a4, (char **)&v22, (int)&v20); /*0x4f32e9*/
   DeleteAndZero(&a4); /*0x4f32f2*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f32fb*/
   ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f3309*/
   ((String *)((String *)&a4))->Assign(aDisabled); /*0x4f3317*/
-  INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v19); /*0x4f332e*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&a4, (char **)&v22, (int)&v19); /*0x4f332e*/
   DeleteAndZero(&a4); /*0x4f3337*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f3340*/
   unknown_libname_73(&v18); /*0x4f3349*/
   ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f3357*/
   ((String *)((String *)&a4))->Assign(aHighlightsound); /*0x4f3365*/
-  INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v18); /*0x4f337c*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&a4, (char **)&v22, (int)&v18); /*0x4f337c*/
   DeleteAndZero(&a4); /*0x4f3385*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f338e*/
   unknown_libname_73(&v17); /*0x4f3397*/
   ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f33a5*/
   ((String *)((String *)&a4))->Assign(aSelectvq); /*0x4f33b3*/
-  INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v17); /*0x4f33ca*/
+  ((INIClass *)(a2))->ReadString(Source, (char **)&a4, (char **)&v22, (int)&v17); /*0x4f33ca*/
   DeleteAndZero(&a4); /*0x4f33d3*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f33dc*/
   v16 = RA2_OPNEW(0x38u); /*0x4f33e3*/
@@ -988,7 +989,7 @@ void sub_4F38B0()
   unknown_libname_73(&v13); /*0x4f38c6*/
   ((String *)(&v15))->Assign(&g_INI_DefaultBuffer); /*0x4f38d4*/
   ((String *)(&v14))->Assign(g_INI_Key_Type); /*0x4f38e2*/
-  INIClass::ReadString(a2, Source, &v14, &v15, (int)&v13); /*0x4f38f9*/
+  ((INIClass *)(a2))->ReadString(Source, &v14, &v15, (int)&v13); /*0x4f38f9*/
   DeleteAndZero((void **)&v14); /*0x4f3902*/
   DeleteAndZero((void **)&v15); /*0x4f390b*/
   v6 = 0; /*0x4f3914*/
@@ -1012,7 +1013,7 @@ void sub_4F38B0()
     unknown_libname_73(&a4); /*0x4f398e*/
     ((String *)(&v15))->Assign(&g_INI_DefaultBuffer); /*0x4f399c*/
     ((String *)(&a3))->Assign(aSelectsound); /*0x4f39aa*/
-    v8 = INIClass::ReadString(a2, Source, &a3, &v15, (int)&a4) > 0; /*0x4f39cc*/
+    v8 = ((INIClass *)(a2))->ReadString(Source, &a3, &v15, (int)&a4) > 0; /*0x4f39cc*/
     DeleteAndZero((void **)&a3); /*0x4f39cf*/
     DeleteAndZero((void **)&v15); /*0x4f39d8*/
     if ( v8 ) /*0x4f39df*/
@@ -1078,7 +1079,7 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
   unknown_libname_73(&v9); /*0x4f3bc0*/
   ((String *)((String *)&v10.q4))->Assign(&g_INI_DefaultBuffer); /*0x4f3bce*/
   ((String *)(&v10))->Assign(aKeys); /*0x4f3bdc*/
-  INIClass::ReadString(edx0, a1, (char **)&v10, (char **)&v10.q4, (int)&v9); /*0x4f3bf3*/
+  ((INIClass *)(edx0))->ReadString(a1, (char **)&v10, (char **)&v10.q4, (int)&v9); /*0x4f3bf3*/
   DeleteAndZero((ObjectClass *)&v10); /*0x4f3bfc*/
   DeleteAndZero((ObjectClass *)&v10.m_3[1]); /*0x4f3c05*/
   v7 = (ObjectClass *)RA2_OPNEW(0x28u); /*0x4f3c0c*/
@@ -1497,7 +1498,7 @@ int sub_4F1B80()
     v6.sectionHead[1] = 0; /*0x4f1be7*/
     v6.sectionHead[2] = 0; /*0x4f1beb*/
     v6.sectionHead[0] = (int)&GenericNode_vftable; /*0x4f1bef*/
-    GenericNode::Constructor((GenericNode *)&v6.sectionCount); /*0x4f1bf7*/
+    ((GenericNode *)((GenericNode *)&v6.sectionCount))->Constructor(); /*0x4f1bf7*/
     LinkedList::Prepend((LinkedList *)v6.sectionHead, (int)&v6.sectionCount); /*0x4f1c0d*/
     v6.headNode[2] = (int)&List_INIClass_INISection___vftable; /*0x4f1c16*/
     memset(&v6.__pad_20[8], 0, 13); /*0x4f1c24*/

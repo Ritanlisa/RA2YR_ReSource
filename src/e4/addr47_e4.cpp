@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_470C30_e4.hpp"
 #include "e4/classes/E4Recv_473750_e4.hpp"

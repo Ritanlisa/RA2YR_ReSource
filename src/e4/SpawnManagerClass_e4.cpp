@@ -178,7 +178,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   *((unsigned int *)this + 2) = (unsigned int)(&vt_SpawnManagerClass); /*0x6b7022*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_SpawnManagerClass); /*0x6b7029*/
   if ( byte_A8E9A0 ) /*0x6b7037*/
-    TaskManager::Update(this); /*0x6b7039*/
+    ((TaskManager *)(this))->Update(); /*0x6b7039*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6b7042*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6b7047*/

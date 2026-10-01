@@ -177,5 +177,6 @@ struct Cell {
     int DecodeFlags();  // 0x56CB80
     int GetGroundHeight(unsigned int * a1);  // 0x578080
     bool IsPassable(IUnknown * aP0);  // 0x586360
+    unsigned int * IsBridge();  // 0x47c520
 };
 } // namespace gamemd

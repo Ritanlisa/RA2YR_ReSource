@@ -28,7 +28,7 @@ __int16 EventQueue::Process()
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {
-void EventQueue::Read(void *a1, void *a2)
+void EventQueue::Read()
 {
 
   int v2; // eax

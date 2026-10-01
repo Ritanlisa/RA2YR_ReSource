@@ -100,7 +100,7 @@ wchar_t * Player::FindByName(wchar_t * String2)
 } // namespace gamemd
 // 0x5E9440
 namespace gamemd {
-int Player::IsObserver(void *a1)
+int Player::IsObserver()
 {
 
   return this /*0x5e9461*/

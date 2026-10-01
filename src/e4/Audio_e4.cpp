@@ -738,8 +738,8 @@ int Audio::InitFromINI()
       }
       while ( v6 ); /*0x751256*/
     }
-    dword_8464C4 = INIClass::ReadInt_Overwrite((bool *)v4, g_INI_Key_Defaults, aLimit, dword_8464C4); /*0x751270*/
-    dword_8464C0 = INIClass::ReadInt_Overwrite((bool *)v4, g_INI_Key_Defaults, g_INI_Key_Range, dword_8464C0); /*0x75128c*/
+    dword_8464C4 = ((INIClass *)((bool *)v4))->ReadInt_Overwrite(g_INI_Key_Defaults, aLimit, dword_8464C4); /*0x751270*/
+    dword_8464C0 = ((INIClass *)((bool *)v4))->ReadInt_Overwrite(g_INI_Key_Defaults, g_INI_Key_Range, dword_8464C0); /*0x75128c*/
   }
   LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)v4, g_INI_Key_SoundList) != 0; /*0x75129f*/
   if ( (unsigned char)KeyCount )

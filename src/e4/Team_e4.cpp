@@ -1,5 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ScoreText_e4.hpp"
+#include "e4/classes/BuildingLoadQueue_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_597430_e4.hpp"
@@ -611,10 +615,10 @@ bool Team_Start_76ED10(void * a1, void * a2)
       v6 = (void **)(0);
     }
     v9 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76ee7d*/
-    ComPtr::Release(&v9); /*0x76ee85*/
+    ((ComPtr *)(&v9))->Release(); /*0x76ee85*/
   }
   v11 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ee8e*/
-  ComPtr::Release(&v11); /*0x76ee96*/
+  ((ComPtr *)(&v11))->Release(); /*0x76ee96*/
   SelectionInitializeWOL((int, unsigned int a1, unsigned int a2)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
 }

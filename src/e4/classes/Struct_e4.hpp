@@ -46,6 +46,7 @@ struct Struct {
     unsigned char * Zero3();
     unsigned int * InitTriple256(unsigned int * a1);
     static double Zero25(...);  // C2597 interim stub
+    wchar_t ** WideStringCopy(int a2);  // 0x6247d0
 };
 
 } // namespace gamemd

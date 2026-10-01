@@ -1773,7 +1773,7 @@ namespace gamemd {
 void sub_7B0130()
 {
   dword_B77F58 = (int)&rc_ptr_WDTState_vftable; /*0x7b0130*/
-  ComPtr::Release(&dword_B77F58); /*0x7b013f*/
+  ((ComPtr *)(&dword_B77F58))->Release(); /*0x7b013f*/
 }
 } // namespace gamemd
 
@@ -1792,7 +1792,7 @@ namespace gamemd {
 void sub_7B0170()
 {
   dword_B77F70 = (int)&rc_ptr_WDTState_vftable; /*0x7b0170*/
-  ComPtr::Release(&dword_B77F70); /*0x7b017f*/
+  ((ComPtr *)(&dword_B77F70))->Release(); /*0x7b017f*/
 }
 } // namespace gamemd
 
@@ -1811,7 +1811,7 @@ namespace gamemd {
 void sub_7B01B0()
 {
   stru_B77F68 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01b0*/
-  ComPtr::Release(&stru_B77F68); /*0x7b01bf*/
+  ((ComPtr *)(&stru_B77F68))->Release(); /*0x7b01bf*/
 }
 } // namespace gamemd
 
@@ -1830,7 +1830,7 @@ namespace gamemd {
 void sub_7B01F0()
 {
   dword_B77F78 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01f0*/
-  ComPtr::Release(&dword_B77F78); /*0x7b01ff*/
+  ((ComPtr *)(&dword_B77F78))->Release(); /*0x7b01ff*/
 }
 } // namespace gamemd
 
@@ -1879,7 +1879,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
     v6[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b0410*/
-    ComPtr::Release((ComPtr *)v6); /*0x7b0418*/
+    ((ComPtr *)((ComPtr *)v6))->Release(); /*0x7b0418*/
   }
   return a1; /*0x7b041f*/
 }

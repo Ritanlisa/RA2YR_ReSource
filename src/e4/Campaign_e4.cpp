@@ -215,7 +215,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
-  ComPtr::Release((ComPtr *)Block); /*0x765719*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(Block); /*0x765726*/
   return Block; /*0x765730*/
@@ -229,7 +229,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, ch
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/
-  ComPtr::Release((ComPtr *)Block); /*0x765749*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(Block); /*0x765756*/
   return Block; /*0x765760*/

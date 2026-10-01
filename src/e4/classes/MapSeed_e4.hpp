@@ -32,6 +32,7 @@ struct MapSeed {
     int CheckName(void *a1);
     int IsCellInBounds(void *a1);
     int ValidateName(int a2);
+    bool CheckTileMatch(int16_t *a2, int16_t *a3, int a4, char a5, char a6, char a7);  // 0x56d100
 };
 
 } // namespace gamemd

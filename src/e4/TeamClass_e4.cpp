@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -222,7 +223,7 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
           v18[0] = v16[39]; /*0x62a421*/
           v18[1] = v16[40]; /*0x62a428*/
           v18[2] = v16[41]; /*0x62a42f*/
-          result = MapClass::RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], v18, v16[152] - 3, v16[152] + 3, 0); /*0x62a44b*/
+          result = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->RevealArea2(v18, v16[152] - 3, v16[152] + 3, 0); /*0x62a44b*/
           *(unsigned int *)this->__pad_28 = 0; /*0x62a450*/
         }
         return result; /*0x62a459*/
@@ -356,7 +357,7 @@ LABEL_9:
     __3_YAXPAX_Z(Block); /*0x6341b1*/
     if ( !((unsigned int *)Block)[0] && Block ) /*0x6341c6*/
     {
-      FactoryClass::ClearObjects((FactoryClass *)Block); /*0x6341ce*/
+      ((FactoryClass *)((FactoryClass *)Block))->ClearObjects(); /*0x6341ce*/
       aP1 = &Block->AbstractClass; /*0x6341e3*/
       v15 = (*(int (**)(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x6341e7*/
               &stru_AC4B30.__pad_EC[124],
@@ -649,7 +650,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       __3_YAXPAX_Z(Block); /*0x6361e2*/
       if ( !*(unsigned int *)(v4 + 16) && v4 ) /*0x6361f3*/
       {
-        FactoryClass::ClearObjects((FactoryClass *)v4); /*0x6361f7*/
+        ((FactoryClass *)((FactoryClass *)v4))->ClearObjects(); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
         *(unsigned int *)(v4 + 32) = &vt_VectorClass; /*0x636206*/
         VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
@@ -1045,7 +1046,7 @@ LABEL_4:
     __3_YAXPAX_Z(Block); /*0x636c60*/
     if ( !*(unsigned int *)(v8 + 16) && v8 ) /*0x636c71*/
     {
-      FactoryClass::ClearObjects((FactoryClass *)v8); /*0x636c75*/
+      ((FactoryClass *)((FactoryClass *)v8))->ClearObjects(); /*0x636c75*/
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
       *(unsigned int *)(v8 + 32) = &vt_VectorClass; /*0x636c84*/
       VectorClass::Cleanup2(v8 + 32); /*0x636c8a*/
@@ -1143,7 +1144,7 @@ int TeamClass::Update_0(int aP1, int aP2, int aP3, char aP4, int aP5)
         v10 = *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28; /*0x6e5420*/
         if ( !v10 ) /*0x6e5429*/
         {
-          BuildingClass::ExecuteTriggers((int)currentScript, aP2, aP3); /*0x6e546d*/
+          ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e546d*/
           result = TeamClass::AddToBuildQueue(currentScript); /*0x6e5474*/
           v7 = 1; /*0x6e5479*/
           v13 = 1; /*0x6e547b*/
@@ -1156,14 +1157,14 @@ LABEL_14:
         {
           if ( !--result ) /*0x6e542f*/
           {
-            result = BuildingClass::ExecuteTriggers((int)currentScript, aP2, aP3); /*0x6e5439*/
+            result = ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e5439*/
             v7 = 1; /*0x6e543e*/
           }
           continue; /*0x6e5440*/
         }
         if ( this->owner != (HouseClass *)1 ) /*0x6e5446*/
           goto LABEL_14; /*0x6e5446*/
-        BuildingClass::ExecuteTriggers((int)currentScript, aP2, aP3); /*0x6e5450*/
+        ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e5450*/
         result = TeamClass::AddToBuildQueue(currentScript); /*0x6e5457*/
         v13 = 1; /*0x6e545c*/
         v7 = 1; /*0x6e5461*/
@@ -2142,7 +2143,7 @@ LABEL_72:
         v15 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5920); /*0x6eb676*/
       else
         v15 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5916); /*0x6eb668*/
-      if ( ObjectClass::DistanceTo((ObjectClass *)v12, (int)this->spawnCell->mapCoords) <= v15 ) /*0x6eb68d*/
+      if ( ((ObjectClass *)((ObjectClass *)v12))->DistanceTo((int)this->spawnCell->mapCoords) <= v15 ) /*0x6eb68d*/
       {
         v12->isTeamLeader = 1; /*0x6eb6c5*/
       }
@@ -2253,7 +2254,7 @@ AbstractClass * * TeamClass::UpdateMembers()
               v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5920); /*0x6ebb80*/
             else
               v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5916); /*0x6ebb73*/
-            if ( ObjectClass::DistanceTo((ObjectClass *)firstUnit, (int)this->spawnCell->mapCoords) <= v5 ) /*0x6ebb93*/
+            if ( ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)this->spawnCell->mapCoords) <= v5 ) /*0x6ebb93*/
             {
               firstUnit->isTeamLeader = 1; /*0x6ebc8d*/
             }
@@ -2291,7 +2292,7 @@ AbstractClass * * TeamClass::UpdateMembers()
           if ( (*((uint8_t (**)(FootClass *))firstUnit->TechnoClass + 21))(firstUnit) ) /*0x6ebcac*/
             v13 *= 2; /*0x6ebcba*/
           v12 = 1; /*0x6ebcc4*/
-          v14 = ObjectClass::DistanceTo((ObjectClass *)firstUnit, (int)this->focus); /*0x6ebcd2*/
+          v14 = ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)this->focus); /*0x6ebcd2*/
           if ( v14 <= v13 /*0x6ebcfc*/
             && ((*((int (**)(FootClass *))firstUnit->TechnoClass + 114))(firstUnit) >= 0
              || *ScriptClass::GetNextAction(this->currentScript, v17) == 3) )
@@ -2364,7 +2365,7 @@ LABEL_80:
         {
           if ( !firstUnit->movementDestination ) /*0x6ebd61*/
             goto LABEL_87; /*0x6ebd61*/
-          if ( ObjectClass::DistanceTo((ObjectClass *)firstUnit, (int)firstUnit->movementDestination) <= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x6ebd7f*/
+          if ( ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)firstUnit->movementDestination) <= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x6ebd7f*/
           {
             if ( !firstUnit->locomotor[0] ) /*0x6ebd85*/
               WinAPI::Wrapper(-2147467261); /*0x6ebd94*/

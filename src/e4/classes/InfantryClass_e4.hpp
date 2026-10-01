@@ -693,6 +693,7 @@ struct InfantryClass {
     static double IsInBounds(...);  // C2597 interim stub
      double Construct(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
+    void * FindNearbyCell(int a2);  // 0x418e20
 };
 
 } // namespace gamemd

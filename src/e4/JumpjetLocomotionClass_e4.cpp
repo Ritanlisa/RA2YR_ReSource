@@ -202,7 +202,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
     v19 = (double)GroundHeight; /*0x439c89*/
     if ( v19 <= v4[2] && v4[2] - 150.0 < v19 ) /*0x439ca9*/
     {
-      v20 = Cell::IsBridge(v18); /*0x439cad*/
+      v20 = ((Cell *)(v18))->IsBridge(); /*0x439cad*/
       v72[0] = (Triple)v20; /*0x439cb4*/
       if ( !v20 ) /*0x439cb8*/
       {
@@ -658,7 +658,7 @@ LABEL_51:
   ((Matrix3x4 *)(v57.m_Data))->Translate(v44); /*0x4b013b*/
   v45 = (float)v50; /*0x4b014c*/
   Matrix3x3::ApplyCol0(v57.m_Data, v45); /*0x4b014f*/
-  Matrix3x3::RotateX(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x4b0165*/
+  ((Matrix3x3 *)(v57.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x4b0165*/
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x4b017b*/
   if ( a3 ) /*0x4b0185*/
     *a3 = -1; /*0x4b0187*/
@@ -1309,7 +1309,7 @@ LABEL_21:
       else
       {
         v8 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a1); /*0x4cd10f*/
-        ClosestPlacementCell = InfantryClass::FindNearbyCell((InfantryClass *)v6, (int)v8); /*0x4cd117*/
+        ClosestPlacementCell = ((InfantryClass *)((InfantryClass *)v6))->FindNearbyCell((int)v8); /*0x4cd117*/
       }
       return (*((char (**)(FootClass *, void *, int))((unsigned int *)v1)[0]->TechnoClass + 288))( /*0x4cd0f7*/
                ((unsigned int *)v1)[0],
@@ -1454,7 +1454,7 @@ void * JumpjetLocomotionClass::ComputeRotationMatrix(int a1, float * a2, signed 
     Owner = ((unsigned int *)v4)[0]; /*0x4cf6a0*/
     if ( ((unsigned int *)Owner)[0] ) /*0x4cf6a3*/
     {
-      Matrix3x3::RotateX(v15.m_Data, *(float *)&((unsigned int *)Owner)[0]); /*0x4cf6b8*/
+      ((Matrix3x3 *)(v15.m_Data))->RotateX(*(float *)&((unsigned int *)Owner)[0]); /*0x4cf6b8*/
       if ( *(double *)&v4->DestinationCoords[1] <= *(double *)((*((int (**)(FootClass *))((unsigned int *)v4)[0]->TechnoClass /*0x4cf6d6*/
                                                                 + 33))(((unsigned int *)v4)[0])
                                                              + 936) )
@@ -1510,7 +1510,7 @@ void * JumpjetLocomotionClass::ComputeRotationMatrix(int a1, float * a2, signed 
           v8 = -*(double *)((*((int (**)(FootClass *))((unsigned int *)v4)[0]->TechnoClass + 33))(((unsigned int *)v4)[0]) + 928); /*0x4cf7fa*/
         }
         v14 = v8; /*0x4cf801*/
-        Matrix3x3::RotateX(v15.m_Data, v14); /*0x4cf804*/
+        ((Matrix3x3 *)(v15.m_Data))->RotateX(v14); /*0x4cf804*/
       }
     }
   }
@@ -1634,17 +1634,17 @@ unsigned int * JumpjetLocomotionClass::SetMovementTarget(int a1, int a2, int a3,
             p_HoverLocomotionClass_field_bool_70[2].MovementAI_field_10 = 0; /*0x514f2d*/
             p_HoverLocomotionClass_field_bool_70[2].MovementAI_field_14 = 1072693248; /*0x514f34*/
             (*(void (**)(int, unsigned int, int))(*(unsigned int *)m_State + 1348))(m_State, 0, 1072693248); /*0x514f44*/
-            result = (unsigned int *)MovementAI::StepFootClass(p_HoverLocomotionClass_field_bool_70, 0); /*0x514f4e*/
+            result = (unsigned int *)((MovementAI *)(p_HoverLocomotionClass_field_bool_70))->StepFootClass(0); /*0x514f4e*/
             if ( v18 ) /*0x514f55*/
-              return (unsigned int *)MovementAI::MainFootClass(p_HoverLocomotionClass_field_bool_70, 1); /*0x514f5b*/
+              return (unsigned int *)((MovementAI *)(p_HoverLocomotionClass_field_bool_70))->MainFootClass(1); /*0x514f5b*/
           }
         }
         else
         {
           (*((void (**)(FootClass *, unsigned int, int))((unsigned int *)v6)[0]->TechnoClass + 337))(((unsigned int *)v6)[0], 0, 1072693248); /*0x514e7c*/
           v12 = (MovementAI *)&v6[-1].HoverLocomotionClass_field_bool_70; /*0x514e82*/
-          MovementAI::StepFootClass(v12, 0); /*0x514e89*/
-          return (unsigned int *)MovementAI::MainFootClass(v12, 1); /*0x514e92*/
+          ((MovementAI *)(v12))->StepFootClass(0); /*0x514e89*/
+          return (unsigned int *)((MovementAI *)(v12))->MainFootClass(1); /*0x514e92*/
         }
       }
     }
@@ -2241,7 +2241,7 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
     ((Matrix3x4 *)(v31.m_Data))->Translate(v21); /*0x54de72*/
     v22 = (float)v26; /*0x54de80*/
     Matrix3x3::ApplyCol0(v31.m_Data, v22); /*0x54de83*/
-    Matrix3x3::RotateX(v31.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x54de96*/
+    ((Matrix3x3 *)(v31.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x54de96*/
     Matrix3D::RotateZ(v31.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x54dea9*/
     Transform = Turret::GetTransform((LocomotionClass *)a1, v35, a3); /*0x54deb8*/
     Transform::Copy(v33, Transform); /*0x54dec5*/
@@ -2584,7 +2584,7 @@ LABEL_51:
   ((Matrix3x4 *)(v57.m_Data))->Translate(v44); /*0x69f84b*/
   v45 = (float)v50; /*0x69f85c*/
   Matrix3x3::ApplyCol0(v57.m_Data, v45); /*0x69f85f*/
-  Matrix3x3::RotateX(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x69f875*/
+  ((Matrix3x3 *)(v57.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x69f875*/
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x69f88b*/
   if ( a3 ) /*0x69f895*/
     *a3 = -1; /*0x69f897*/
@@ -4332,7 +4332,7 @@ char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
   v12[1] = location[1]; /*0x516d04*/
   v13 = location[2]; /*0x516d0b*/
   v4 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v12); /*0x516d14*/
-  v5 = Cell::IsBridge((Cell *)v4); /*0x516d1b*/
+  v5 = ((Cell *)((Cell *)v4))->IsBridge(); /*0x516d1b*/
   if ( v5 && *(unsigned char *)(v5[328] + 5821) ) /*0x516d2e*/
   {
     v6 = v5 + 39; /*0x516d41*/

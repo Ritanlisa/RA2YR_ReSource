@@ -80,6 +80,10 @@ struct INIClass {
     static double ReadTokenizedPair(...);  // C2597 interim stub
     static double SaveToPipe(...);  // C2597 interim stub
     static double WriteToString(...);  // C2597 interim stub
+    char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
+    int SetInt(uint8_t *Block, char *a3, int a4, int a5);  // 0x5275c0
+    int ReadString(char **a2, char **a3, char **a4, int a5);  // 0x528c00
+    int ReadInt_Overwrite(uint8_t *a2, uint8_t *a3, int a4);  // 0x5276d0
 };
 
 } // namespace gamemd

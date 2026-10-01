@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Flag_e4.hpp"
+#include "e4/classes/OwnerDrawControl_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
@@ -48,7 +51,7 @@ Coord * * sub_77E110()
     v2 = dword_A83D14; /*0x77e17d*/
     if ( dword_A83D14 == -1 ) /*0x77e186*/
       v2 = dword_A83D18; /*0x77e188*/
-    v1 = StringList::Find((StringList *)&unk_A83D10, g_INI_Key_INTRO); /*0x77e198*/
+    v1 = ((StringList *)((StringList *)&unk_A83D10))->Find(g_INI_Key_INTRO); /*0x77e198*/
     if ( v2 == v1 ) /*0x77e1a0*/
     {
   LABEL_5:
@@ -107,7 +110,7 @@ void sub_785EA0()
       {
         if ( IDA_LOBYTE(stru_B765EC.lineTrailer) ) /*0x785f2d*/
           break; /*0x785f2d*/
-        HashMap::Shrink((HashMap *)&stru_B765EC.lastLayer); /*0x785f34*/
+        ((HashMap *)((HashMap *)&stru_B765EC.lastLayer))->Shrink(); /*0x785f34*/
       }
       while ( stru_B765EC.location[0] > (unsigned int)dword_B766B0 ); /*0x785f46*/
     }
@@ -206,7 +209,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   RunWOLMainLoop_Read_Read(); /*0x798e9f*/
   if ( (uint8_t)Flag::IsNot2(&v12) ) /*0x798ea8*/
   {
-    SimpleDialogControl::Constructor((SimpleDialogControl *)&v12.Flag_field_0x08); /*0x798eb5*/
+    ((SimpleDialogControl *)((SimpleDialogControl *)&v12.Flag_field_0x08))->Constructor(); /*0x798eb5*/
     v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798ece*/
     RunDialog( /*0x798ed2*/
       0x10Eu,
@@ -219,7 +222,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   }
   else
   {
-    SimpleDialogControl::Constructor((SimpleDialogControl *)&v13); /*0x798f04*/
+    ((SimpleDialogControl *)((SimpleDialogControl *)&v13))->Constructor(); /*0x798f04*/
     v13 = (OwnerDrawControl)&off_7F7624; /*0x798f1d*/
     RunDialog(0x11Cu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)&v13); /*0x798f21*/
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798f26*/
@@ -362,7 +365,7 @@ int sub_799D30()
           v12);
       }
       System_Init_72C9C0(); /*0x799e4a*/
-      SimpleDialogControl::Constructor((SimpleDialogControl *)&v13.DeleteAndZero_field_0x04); /*0x799e53*/
+      ((SimpleDialogControl *)((SimpleDialogControl *)&v13.DeleteAndZero_field_0x04))->Constructor(); /*0x799e53*/
       v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e6c*/
       RunDialog( /*0x799e70*/
         0x114u,
@@ -390,7 +393,7 @@ void sub_7A2970()
   {
     if ( MapSeed::CheckName((const char **)&stru_B76AC4) ) /*0x7a2991*/
     {
-      SimpleDialogControl::Constructor(v0); /*0x7a299e*/
+      ((SimpleDialogControl *)(v0))->Constructor(); /*0x7a299e*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/
       RunDialog(0x122u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29c3*/

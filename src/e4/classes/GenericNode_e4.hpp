@@ -12,6 +12,7 @@ struct GenericNode {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     GenericNode * sub_40E390(char a2);
+    unsigned int * Constructor();  // 0x40e320
 };
 
 } // namespace gamemd

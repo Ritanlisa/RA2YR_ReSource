@@ -17,6 +17,7 @@ struct Palette {
     int FindClosestColor(int a2, void *a2_2);
     int LoadFile();
     unsigned char * ConvertIndices(int a2);
+    unsigned char * SixBitTo16Bit(char a2, char a3, char a4);  // 0x4355b0
 };
 
 } // namespace gamemd

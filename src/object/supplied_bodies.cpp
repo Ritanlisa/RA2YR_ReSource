@@ -1,6 +1,7 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/game_loop.hpp"
+#include "e4/classes/Queue_e4.hpp"
 #include "core/stream_ext.hpp"
 #include "core/utility_ext.hpp"
 #include "core/vector.hpp"

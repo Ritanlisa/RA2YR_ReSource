@@ -1,4 +1,5 @@
 #include "system/tactical.hpp"
+#include "e4/classes/Building_e4.hpp"
 #include "system/cell.hpp"
 #include "system/map.hpp"
 #include "object/object.hpp"

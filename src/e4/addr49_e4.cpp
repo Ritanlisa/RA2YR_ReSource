@@ -6518,8 +6518,8 @@ int sub_49B390()
 {
   dword_89F51C = 0; /*0x49b398*/
   dword_89F520 = 0; /*0x49b39e*/
-  GenericNode::Constructor(unk_89F528); /*0x49b3a4*/
-  GenericNode::Constructor(stru_89F534); /*0x49b3ae*/
+  ((GenericNode *)(unk_89F528))->Constructor(); /*0x49b3a4*/
+  ((GenericNode *)(stru_89F534))->Constructor(); /*0x49b3ae*/
   dword_89F524 = (int)&GenericList_vftable; /*0x49b3bd*/
   LinkedList::Prepend(unk_89F528, (int)stru_89F534); /*0x49b3c7*/
   dword_89F524 = (int)&List_INIClass_INISection___vftable; /*0x49b3d1*/

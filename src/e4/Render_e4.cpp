@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Text_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/E4Recv_626120_e4.hpp"
@@ -1396,7 +1397,7 @@ void sub_53D850()
   }
   result = dword_AA0128; /*0x53d8b6*/
   for ( i = dword_AA0128 - 1; i >= 0; --i ) /*0x53d8c0*/
-    result = ZBuffer::RenderSprite(*((ZBuffer **)dword_AA011C + i)); /*0x53d8cb*/
+    result = ((ZBuffer *)(*((ZBuffer **)dword_AA011C + i)))->RenderSprite(); /*0x53d8cb*/
   return result; /*0x53d8d3*/
 }
 }

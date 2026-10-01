@@ -178,6 +178,16 @@ struct CellClass {
     static double InMapDataRange(...);  // C2597 interim stub
     static double AttachObject(...);  // C2597 interim stub
     static double ReduceTiberium(...);  // C2597 interim stub
+    int DrawWithFlags(int a2, unsigned int *a3, int a4);  // 0x557830
+    int DamageAllObjects();  // 0x483480
+    int IsActiveOrNext();  // 0x486900
+    unsigned int * FindInfantry(char a2);  // 0x47c550
+    const wchar_t * GetUIName();  // 0x484ff0
+    void AddObject(unsigned int *a2);  // 0x4733a0
+    unsigned int * FindBuilding(char a2);  // 0x47eba0
+    int QuickPassable();  // 0x487950
+    int IsPassable(int a2, int a3, int a4);  // 0x47c620
+    unsigned int * UpdateZone();  // 0x486bf0
 };
 
 } // namespace gamemd

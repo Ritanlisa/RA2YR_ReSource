@@ -576,6 +576,14 @@ struct TechnoClass {
      double GetValue(...);  // C2597 interim stub
     static double CreateFireEffect(...);  // C2597 interim stub
     static double CreateRadarBlip(...);  // C2597 interim stub
+    bool ProcessTarget(int a2);  // 0x50cad0
+    int CleanupAll(int a2);  // 0x707cb0
+    int IsOwnedByHuman();  // 0x732580
+    int CalcFlashAlpha(int a2);  // 0x70e4b0
+    int CleanupDirection();  // 0x4db260
+    int IsMission27to30();  // 0x522510
+    char GetTypeFlag();  // 0x5224e0
+    int CalculateDamage();  // 0x663030
 };
 
 } // namespace gamemd

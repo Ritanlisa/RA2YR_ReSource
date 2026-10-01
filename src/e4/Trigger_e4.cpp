@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
@@ -45,7 +47,7 @@ int Trigger::EnableOnce(char aP1)
   if ( !(unsigned char)result ) /*0x554a65*/
   {
     LOBYTE(this->Trigger_field_0x48) = 1; /*0x554a6b*/
-    return TacticalClass::ScrollView((TacticalClass *)this, aP1); /*0x554a70*/
+    return ((TacticalClass *)((TacticalClass *)this))->ScrollView(aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/
 
@@ -117,7 +119,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
 
   inited = 0; /*0x76d4da*/
   v7 = Count::Get((Count *)(this + 1112)); /*0x76d4e3*/
-  VectorCursor::Construct(&v25, v7 + 44, 0); /*0x76d4f0*/
+  ((VectorCursor *)(&v25))->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d4fd*/
   {
     v8 = (WDTObject *)FileClass::SetState((FileClass *)(*(unsigned int *)(v25.VectorCursor_field_0x04 + 4) /*0x76d512*/
@@ -137,7 +139,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   ((unsigned int *)&v28)[0] = (int)&vt_DynamicVectorClass; /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d589*/
-  VectorCursor::Construct((VectorCursor *)&v25.VectorCursor_field_0x0C, v10 + 44, 0); /*0x76d58d*/
+  ((VectorCursor *)((VectorCursor *)&v25.VectorCursor_field_0x0C))->Construct(v10 + 44, 0); /*0x76d58d*/
   while ( (*(uint8_t (**)(int *))(v25.VectorCursor_field_0x0C + 4))(&v25.VectorCursor_field_0x0C) )
   {
     v11 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4) + 8); /*0x76d5bc*/
@@ -215,7 +217,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                           1,
                           512)
             : 0;
-        MSAnim::SetField(v21, *(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
+        ((MSAnim *)(v21))->SetField(*(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
         MSAnim::GetField(v21, 0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
         Trigger::executeActions( /*0x76d7f0*/

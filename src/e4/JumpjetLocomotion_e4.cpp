@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/GadgetGrid_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/JumpjetLocomotion_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -847,7 +848,7 @@ LABEL_50:
   }
   if ( v57 ) /*0x54d537*/
   {
-    ObjectClass::SetAnim(*(ObjectClass **)this->__pad_C, v59); /*0x54d541*/
+    ((ObjectClass *)(*(ObjectClass **)this->__pad_C))->SetAnim(v59); /*0x54d541*/
     if ( v55 ) /*0x54d54c*/
       (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 0); /*0x54d554*/
   }
@@ -885,7 +886,7 @@ LABEL_50:
        && *(unsigned int *)&this->__pad_48[8] == 2
        && (v51 = *(unsigned int *)this->__pad_C, *(unsigned int *)(v51 + 692))) )
     {
-      v53 = ObjectClass::CalcTargetFacing((ObjectClass *)v51, (int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
+      v53 = ((ObjectClass *)((ObjectClass *)v51))->CalcTargetFacing((int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
       FacingClass::Set_SyncLog(&this->__pad_48[12], v53); /*0x54d679*/
     }
     else

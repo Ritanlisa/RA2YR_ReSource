@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DisplayClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
@@ -420,7 +422,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e0b89*/
       Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0b94*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0b9b*/
+      Field11 = ((HouseClass *)(v5))->FindOwner(); /*0x6e0b9b*/
   }
   v8 = Field11; /*0x6e0ba0*/
   if ( !Field11 ) /*0x6e0ba4*/
@@ -597,7 +599,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
     if ( v11 ) /*0x6e2484*/
     {
       v12 = (void *)Return::HRESULT_Fail(v16, v17, GroundHeight); /*0x6e24a1*/
-      AnimClass::ctor(v11, WarheadVersusMultiplier, &v16, 0, 1, (void *)0x2600, v12, 0); /*0x6e24b8*/
+      ((AnimClass *)(v11))->ctor(WarheadVersusMultiplier, &v16, 0, 1, (void *)0x2600, v12, 0); /*0x6e24b8*/
     }
   }
   CreateSmokeEffectAt(v8, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), v16, v17, GroundHeight, 0, 0); /*0x6e24ea*/
@@ -667,7 +669,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
       v15 = String; /*0x6e2dc6*/
       if ( v13 ) /*0x6e2dc8*/
         v15 = v19; /*0x6e2dca*/
-      AnimClass::ctor(v12, *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v15), v23, 0, 1, (void *)0x600, 0, 0); /*0x6e2dec*/
+      ((AnimClass *)(v12))->ctor(*(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v15), v23, 0, 1, (void *)0x600, 0, 0); /*0x6e2dec*/
     }
     --v18; /*0x6e2df6*/
   }
@@ -977,7 +979,7 @@ char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnkno
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e0ac6*/
       Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0ad1*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0ad8*/
+      Field11 = ((HouseClass *)(v5))->FindOwner(); /*0x6e0ad8*/
   }
   v7 = Field11; /*0x6e0add*/
   if ( !Field11 ) /*0x6e0ae1*/
@@ -1032,7 +1034,7 @@ char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IU
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e0cc5*/
       Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0cd0*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0cd7*/
+      Field11 = ((HouseClass *)(v5))->FindOwner(); /*0x6e0cd7*/
   }
   if ( !Field11 ) /*0x6e0cde*/
     return 0; /*0x6e0cde*/
@@ -1064,7 +1066,7 @@ char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e0d25*/
       Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0d30*/
     else
-      Field11 = HouseClass::FindOwner(v5); /*0x6e0d37*/
+      Field11 = ((HouseClass *)(v5))->FindOwner(); /*0x6e0d37*/
   }
   if ( !Field11 ) /*0x6e0d3e*/
     return 0; /*0x6e0d3e*/
@@ -1248,8 +1250,8 @@ char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4
   v9[1] = v11 / 256; /*0x6e19d6*/
   if ( v9[0] == *(unsigned short *)dword_B0E680 && (uint16_t)(v11 / 256) == *(unsigned short *)&dword_B0E680[2] /*0x6e1a14*/
     || (v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9),
-        (Infantry = (ObjectClass *)Cell::IsBridge(v6)) == 0)
-    && (Infantry = (ObjectClass *)CellClass::FindInfantry((CellClass *)v6, 0)) == 0 )
+        (Infantry = (ObjectClass *)((Cell *)(v6))->IsBridge()) == 0)
+    && (Infantry = (ObjectClass *)((CellClass *)((CellClass *)v6))->FindInfantry(0)) == 0 )
   {
     globalHelper_050F40(&v10, 1); /*0x6e1a31*/
     return 1; /*0x6e1a36*/
@@ -1486,7 +1488,7 @@ char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, I
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e31a5*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e31b0*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e31b7*/
+      Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e31b7*/
   }
   if ( !Field11 ) /*0x6e31be*/
     return 0; /*0x6e31be*/
@@ -1518,7 +1520,7 @@ char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnkn
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3205*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e3210*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e3217*/
+      Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e3217*/
   }
   if ( !Field11 ) /*0x6e321e*/
     return 0; /*0x6e321e*/
@@ -1550,7 +1552,7 @@ char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnk
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3265*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e3270*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e3277*/
+      Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e3277*/
   }
   if ( !Field11 ) /*0x6e327e*/
     return 0; /*0x6e327e*/
@@ -1582,7 +1584,7 @@ char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUn
     if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e32c5*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e32d0*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e32d7*/
+      Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e32d7*/
   }
   if ( !Field11 ) /*0x6e32de*/
     return 0; /*0x6e32de*/
@@ -1996,7 +1998,7 @@ int TActionClass::executeAirstrikeAction()
 {
 
   LOBYTE(this->TActionClass_field_44) = 1; /*0x7268f0*/
-  return BuildingClass::ProcessUpgradeEffects((BuildingClass *)this);
+  return ((BuildingClass *)((BuildingClass *)this))->ProcessUpgradeEffects();
 
 }
 } // namespace gamemd

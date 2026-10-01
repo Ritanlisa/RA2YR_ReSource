@@ -3,6 +3,7 @@
 // IDA address annotations refer to the original gamemd.exe binary.
 
 #include <windows.h>
+#include "e4/classes/Checksummer_e4.hpp"
 #include <cstdint>
 #include <cstring>
 

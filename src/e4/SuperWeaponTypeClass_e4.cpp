@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/VocClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
@@ -415,7 +416,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
                      *(unsigned char *)(_EBP + 231));
   v11 = *(unsigned int *)(_EBP + 232); /*0x6cead4*/
   *(unsigned char *)(_EBP + 231) = Bool_Overwrite; /*0x6ceada*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)(_EBP + 36), aFlashsidebarta, v11); /*0x6ceae9*/
+  Int_Overwrite = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)(_EBP + 36), aFlashsidebarta, v11); /*0x6ceae9*/
   v36 = *(unsigned char *)(_EBP + 236); /*0x6ceaf6*/
   *(unsigned int *)(_EBP + 232) = Int_Overwrite; /*0x6ceafd*/
   *(unsigned char *)(_EBP + 236) = INIClass::ReadBool_Overwrite( /*0x6ceb08*/

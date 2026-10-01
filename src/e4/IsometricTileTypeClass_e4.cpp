@@ -92,7 +92,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&stru_87F5F0.__pad_58[96]; *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[84] + 4 * j - 4) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
-    TerrainClass::InitTheatre((TerrainClass *)a1); /*0x549d56*/
+    ((TerrainClass *)((TerrainClass *)a1))->InitTheatre(); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
   return (gamemd::AbstractClass **)(result);

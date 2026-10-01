@@ -1121,7 +1121,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.fallRate = 0; /*0x778ac7*/
     v17.nextObject = 0; /*0x778acb*/
     v17.owningHouseIndex = (int)&GenericNode_vftable; /*0x778acf*/
-    GenericNode::Constructor((GenericNode *)&v17.attachedTag); /*0x778ad7*/
+    ((GenericNode *)((GenericNode *)&v17.attachedTag))->Constructor(); /*0x778ad7*/
     LinkedList::Prepend((LinkedList *)&v17.owningHouseIndex, (int)&v17.attachedTag); /*0x778aed*/
     v17.occupant = (int)&List_INIClass_INISection___vftable; /*0x778af9*/
     memset(&v17.ambientSoundController[1], 0, 13); /*0x778b07*/
@@ -1137,7 +1137,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     {
       unknown_libname_73(&((char *)&v17)); /*0x778ba4*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Server); /*0x778bb2*/
-      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778bcf*/
+      ((INIClass *)((INIClass *)&((char *)&v17)))->ReadString((char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778bcf*/
       DeleteAndZero(&v17); /*0x778bd8*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Locale); /*0x778be6*/
       Int = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, 0); /*0x778c03*/
@@ -1171,13 +1171,13 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       unknown_libname_73(&((char *)&v17)); /*0x778d9d*/
       unknown_libname_74(&((char *)&v17)); /*0x778da6*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_UpdateTime); /*0x778db4*/
-      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778dd1*/
+      ((INIClass *)((INIClass *)&((char *)&v17)))->ReadString((char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778dd1*/
       DeleteAndZero(&v17); /*0x778dda*/
       LocalizeWOLDateString((char **)&((char *)&v17), (void **)&((char *)&v17)); /*0x778de7*/
       DeleteAndZero::Alt2((DeleteAndZero *)&((char *)&v17)); /*0x778df0*/
       unknown_libname_74(&((char *)&v17)); /*0x778df9*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_UpdateDate); /*0x778e07*/
-      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778e24*/
+      ((INIClass *)((INIClass *)&((char *)&v17)))->ReadString((char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778e24*/
       DeleteAndZero(&v17); /*0x778e2d*/
       v12 = String::GetOrEmpty_Alt((String *)&((char *)&v17)); /*0x778e36*/
       v13 = CharToWideString(v12); /*0x778e3d*/
@@ -1546,7 +1546,7 @@ int RunWOLMainLoop(char a1)
   v2 = dword_A83D14; /*0x77b2d7*/
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
     v2 = dword_A83D18; /*0x77b2e2*/
-  if ( v2 == StringList::Find((StringList *)&unk_A83D10, g_INI_Key_INTRO) ) /*0x77b2f9*/
+  if ( v2 == ((StringList *)((StringList *)&unk_A83D10))->Find(g_INI_Key_INTRO) ) /*0x77b2f9*/
     Theme::QueueSong((int)&unk_A83D10, -3); /*0x77b302*/
   ReadWOLAccountINI(); /*0x77b307*/
   v3 = byte_A83D22; /*0x77b30c*/
@@ -3362,7 +3362,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   ConcatStringAlloc((char **)&v17.m_3[1], (const char **)v6, v16); /*0x770869*/
   unknown_libname_73(&v17); /*0x770872*/
   ((String *)((String *)&aP4))->Assign(&g_INI_DefaultBuffer); /*0x770880*/
-  INIClass::ReadString((INIClass *)a1, a2, (char **)&v17.m_3[1], (char **)&aP4, (int)&v17); /*0x77089d*/
+  ((INIClass *)((INIClass *)a1))->ReadString(a2, (char **)&v17.m_3[1], (char **)&aP4, (int)&v17); /*0x77089d*/
   DeleteAndZero((ObjectClass *)&aP4); /*0x7708a6*/
   v7 = *((unsigned int *)this + 6 * a4 + 223); /*0x7708b2*/
   v8 = (char *)this + 24 * a4 + 892; /*0x7708b9*/
@@ -4512,7 +4512,7 @@ bool sub_7768F0(HWND hWnd, LPARAM a2)
       {
         wsprintfA(ClassName, "LV%d", j); /*0x776a12*/
         v7 = SendMessageA(hWnd, 0x101Du, j, 0); /*0x776a24*/
-        Int_Overwrite = INIClass::ReadInt_Overwrite(a2, v5, (uint8_t *)ClassName, v7); /*0x776a31*/
+        Int_Overwrite = ((INIClass *)(a2))->ReadInt_Overwrite(v5, (uint8_t *)ClassName, v7); /*0x776a31*/
         if ( Int_Overwrite < 0x3E8 ) /*0x776a3b*/
           SendMessageA(hWnd, 0x101Eu, j, (uint16_t)Int_Overwrite); /*0x776a4a*/
       }
@@ -4535,8 +4535,8 @@ void SaveWOLLobbySettings(unsigned char * a1, HWND a2, LPARAM lParam)
   if ( a2 ) /*0x776a7b*/
   {
     GetWindowRect(a2, &Rect); /*0x776a89*/
-    Int_Overwrite = INIClass::ReadInt_Overwrite(lParam, a1, (uint8_t *)asc_84968C, Rect.left); /*0x776aa7*/
-    v6 = INIClass::ReadInt_Overwrite(lParam, a1, (uint8_t *)aY, Rect.top); /*0x776ab9*/
+    Int_Overwrite = ((INIClass *)(lParam))->ReadInt_Overwrite(a1, (uint8_t *)asc_84968C, Rect.left); /*0x776aa7*/
+    v6 = ((INIClass *)(lParam))->ReadInt_Overwrite(a1, (uint8_t *)aY, Rect.top); /*0x776ab9*/
     SystemMetrics = GetSystemMetrics(0); /*0x776abd*/
     if ( Int_Overwrite + Rect.right - Rect.left > SystemMetrics ) /*0x776ad1*/
       Int_Overwrite = Rect.left + SystemMetrics - Rect.right; /*0x776ad9*/
@@ -4596,7 +4596,7 @@ bool SaveWOLUISettings(HWND hWnd, char * a2)
         wsprintfA(v9, "LV%d", j); /*0x776c89*/
         v6 = SendMessageA(hWnd, 0x101Du, j, 0); /*0x776c9b*/
         if ( v6 < 0x3E8 ) /*0x776ca2*/
-          INIClass::SetInt(a2, v4, v9, v6, 0); /*0x776cb4*/
+          ((INIClass *)(a2))->SetInt(v4, v9, v6, 0); /*0x776cb4*/
       }
     }
   }
@@ -4614,8 +4614,8 @@ bool sub_776CD0(INIClass * Block, HWND hWndParent, char * lParam)
   if ( hWndParent ) /*0x776cdb*/
   {
     GetWindowRect(hWndParent, &Rect); /*0x776ce4*/
-    INIClass::SetInt(lParam, Block, asc_84968C, Rect.left, 0); /*0x776cfd*/
-    INIClass::SetInt(lParam, Block, aY, Rect.top, 0); /*0x776d11*/
+    ((INIClass *)(lParam))->SetInt(Block, asc_84968C, Rect.left, 0); /*0x776cfd*/
+    ((INIClass *)(lParam))->SetInt(Block, aY, Rect.top, 0); /*0x776d11*/
     dword_B73098 = Block; /*0x776d16*/
     return EnumChildWindows(hWndParent, (WNDENUMPROC)SaveWOLUISettings, (LPARAM)lParam); /*0x776d23*/
   }
@@ -6481,7 +6481,7 @@ namespace gamemd {
 void sub_77D140()
 {
   stru_B75E48 = (int)&rc_ptr_PlayerProfile_vftable; /*0x77d140*/
-  ComPtr::Release(&stru_B75E48); /*0x77d14f*/
+  ((ComPtr *)(&stru_B75E48))->Release(); /*0x77d14f*/
 }
 } // namespace gamemd
 
@@ -6762,13 +6762,13 @@ void sub_77DFD0()
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
   RawFileClass::Construct(v0, (int)aRa2mdIni); /*0x77dfdc*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aAllowpage, dword_B76234, 0); /*0x77dff8*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aAllowfind, dword_B779F0, 0); /*0x77e015*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aLangfilter, dword_B779BC, 0); /*0x77e032*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aLobmusic, dword_B7690C, 0); /*0x77e04e*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aShowall, dword_B77784, 0); /*0x77e06b*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aDisplayasian, dword_B779DC, 0); /*0x77e088*/
-  INIClass::SetInt((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aDisplaylatin, dword_B779C0, 0); /*0x77e0a4*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aAllowpage, dword_B76234, 0); /*0x77dff8*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aAllowfind, dword_B779F0, 0); /*0x77e015*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aLangfilter, dword_B779BC, 0); /*0x77e032*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aLobmusic, dword_B7690C, 0); /*0x77e04e*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aShowall, dword_B77784, 0); /*0x77e06b*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aDisplayasian, dword_B779DC, 0); /*0x77e088*/
+  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aDisplaylatin, dword_B779C0, 0); /*0x77e0a4*/
   INIClass::SetBool((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aDisplaybuddies, byte_B76AF0); /*0x77e0bf*/
   INIClass::SetBool((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aDisplayclan, byte_B73AD0); /*0x77e0da*/
   INIClass::WriteDigest(&dword_8870C0, (int)v0, 0); /*0x77e0eb*/

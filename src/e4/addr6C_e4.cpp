@@ -513,7 +513,7 @@ LABEL_95:
       SaveProfileWOL(v265, &g_WebBrowser);
     }
     v264.vfptr = &vt_rc_ptr_PlayerProfile;
-    ComPtr::Release(&v264);
+    ((ComPtr *)(&v264))->Release();
   }
   unsigned int v79 = 0;
   if ( aP2 )
@@ -606,7 +606,7 @@ LABEL_135:
   v281 = 0;
   v272 = (const CHAR *)&vt_RawFileClass;
   FileClass::SetName(&v272, Filename);
-  FileClass::Open2(&v272, (const CHAR *)1);
+  ((FileClass *)(&v272))->Open2((const CHAR *)1);
   if ( hFile != (HANDLE)-1 && GetFileTime(hFile, 0, 0, &LastWriteTime) )
   {
     LastWriteTime.dwLowDateTime = htonl(LastWriteTime.dwLowDateTime);
@@ -1476,7 +1476,7 @@ void DlgProcScoreScreen()
     swprintf(lParam, (const size_t)&g_Str_Fmt_PctD, v22); /*0x6c9338*/
     v30 = GetDlgItem(hWnd, 1782); /*0x6c9346*/
     v19(v30, 0x4B2u, 0, (LPARAM)lParam); /*0x6c9355*/
-    v31 = StringList::Find(&unk_A83D10, g_INI_Key_SCORE); /*0x6c9361*/
+    v31 = ((StringList *)(&unk_A83D10))->Find(g_INI_Key_SCORE); /*0x6c9361*/
     ThemeClass::Play(&unk_A83D10, v31); /*0x6c936c*/
     return 0; /*0x6c9374*/
   }
@@ -1968,7 +1968,7 @@ rc_ptr * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)
 {
 
   *(unsigned int *)Block = &vt_rc_ptr; /*0x6c8843*/
-  ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     __3_YAXPAX_Z(Block); /*0x6c8856*/
   return Block; /*0x6c8860*/

@@ -793,7 +793,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           v21 = *((unsigned int *)v2 + 3); /*0x6a00f2*/
           if ( *(unsigned int *)(v21 + 1432) ) /*0x6a00f5*/
           {
-            FootClass::ClearPathIndex((FootClass *)v21); /*0x6a010d*/
+            ((FootClass *)((FootClass *)v21))->ClearPathIndex(); /*0x6a010d*/
             if ( (*(uint8_t (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x6a011a*/
                    *((unsigned int *)v2 + 3),
                    0,
@@ -825,7 +825,7 @@ LABEL_20:
         return 0; /*0x69fd79*/
       }
     }
-    FootClass::ClearPathIndex(v9); /*0x69fe00*/
+    ((FootClass *)(v9))->ClearPathIndex(); /*0x69fe00*/
     (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*((unsigned int *)v2 + 3), 0, 1); /*0x69fe0d*/
     return 0; /*0x69fe1c*/
   }

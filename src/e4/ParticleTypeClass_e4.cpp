@@ -372,7 +372,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v48 = aWindeffect; /*0x6450be*/
   p_ParticleTypeClass_field_0x24 = (uint8_t *)&this->ParticleTypeClass_field_0x24; /*0x6450c3*/
   this->ParticleTypeClass_field_0x2F4 = v14; /*0x6450c4*/
-  v15 = INIClass::ReadInt_Overwrite((bool *)aP1, p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6450ca*/
+  v15 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite(p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6450ca*/
   v16 = *(float *)this->__pad_2FC; /*0x6450cf*/
   this->ParticleTypeClass_field_0x2F8 = v15; /*0x6450da*/
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)&this->ParticleTypeClass_field_0x24, aVelocity, v16); /*0x6450e9*/
@@ -503,7 +503,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   LOBYTE(v33) = *(unsigned char *)(v33 + 2); /*0x6452f0*/
   p_ParticleTypeClass_field_0x24 = (uint8_t *)&this->ParticleTypeClass_field_0x24; /*0x6452f3*/
   this->__pad_2D8[1] = v33; /*0x6452f6*/
-  v35 = INIClass::ReadInt_Overwrite((bool *)aP1, p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6452f9*/
+  v35 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite(p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6452f9*/
   ParticleTypeClass_field_0x2F8 = 32; /*0x645302*/
   v48 = (uint8_t *)Source; /*0x645304*/
   p_ParticleTypeClass_field_0x24 = 0; /*0x645305*/

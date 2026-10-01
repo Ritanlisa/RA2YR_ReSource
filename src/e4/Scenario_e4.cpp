@@ -1499,7 +1499,7 @@ void Scenario_EndGameFlow()
         v26 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x685d18*/
       else
         v26 = 60; /*0x685d07*/
-      TacticalClass::SetCameraPosition(&unk_A8E9C0, v26, -1, 600); /*0x685d27*/
+      ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(v26, -1, 600); /*0x685d27*/
     }
     else if ( *(unsigned int *)&dword_A8B238 == 4 && !dword_A8B570 ) /*0x685d3a*/
     {
@@ -1735,7 +1735,7 @@ void Scenario_EndGame()
           v25 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x686339*/
         else
           v25 = 60; /*0x686328*/
-        TacticalClass::SetCameraPosition(&unk_A8E9C0, v25, -1, 600); /*0x686348*/
+        ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(v25, -1, 600); /*0x686348*/
       }
       else if ( *(unsigned int *)&dword_A8B238 == 4 && !dword_A8B570 ) /*0x68635a*/
       {
@@ -1774,7 +1774,7 @@ int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCI
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
-    return StringList::Find((StringList *)&unk_A83D10, Destination); /*0x475925*/
+    return ((StringList *)((StringList *)&unk_A83D10))->Find(Destination); /*0x475925*/
   else
     return aP3; /*0x475933*/
 

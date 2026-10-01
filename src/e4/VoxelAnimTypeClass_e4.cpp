@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/INIEntry_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/File_e4.hpp"
@@ -265,7 +268,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v56 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebodydata, 0); /*0x74b25d*/
   v55 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aShareturretdat, 0); /*0x74b270*/
   v54 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebarreldat, 0); /*0x74b27f*/
-  v23 = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)(v4 + 36), aVoxelindex, *(unsigned int *)(v4 + 664)); /*0x74b28c*/
+  v23 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), aVoxelindex, *(unsigned int *)(v4 + 664)); /*0x74b28c*/
   v24 = *(unsigned int *)(v4 + 732); /*0x74b291*/
   *(unsigned int *)(v4 + 664) = v23; /*0x74b297*/
   v47 = v24; /*0x74b2b4*/
@@ -343,10 +346,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v30 = v51; /*0x74b3ce*/
   }
   *(unsigned int *)(v4 + 748) = (unsigned int)(v30); /*0x74b3d2*/
-  v31 = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)(v4 + 36), g_INI_Key_Damage, *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
+  v31 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), g_INI_Key_Damage, *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
   v32 = *(unsigned int *)(v4 + 756); /*0x74b3ec*/
   *(unsigned int *)(v4 + 752) = v31; /*0x74b3f2*/
-  v33 = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)(v4 + 36), aDamageradius, v32); /*0x74b401*/
+  v33 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), aDamageradius, v32); /*0x74b401*/
   v34 = *(unsigned int *)(v4 + 760); /*0x74b406*/
   *(unsigned int *)(v4 + 756) = v33; /*0x74b40c*/
   v52 = v34; /*0x74b429*/

@@ -39,7 +39,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   v11[2] = v7[2]; /*0x43b61d*/
   v8 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x43b621*/
   if ( v8 ) /*0x43b62b*/
-    v9 = AnimClass::ctor(v8, v6, v11, 0, 1, (void *)0x600, 0, 0); /*0x43b647*/
+    v9 = ((AnimClass *)(v8))->ctor(v6, v11, 0, 1, (void *)0x600, 0, 0); /*0x43b647*/
   else
     v9 = 0; /*0x43b64b*/
   BuildingClass::SetField95((BuildingClass *)v9, arg0); /*0x43b654*/
@@ -2457,7 +2457,7 @@ LABEL_32:
               {
 LABEL_33:
                 v9 = (*(int (**)(int *, int *))(this->supers[0] + 16))(this->supers, &v12); /*0x509aca*/
-                SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v9, (int)&v11); /*0x509acd*/
+                ((SuperWeapon *)((SuperWeapon *)this))->FireSuperWeaponHouseClass(v9, (int)&v11); /*0x509acd*/
               }
               break; /*0x509acd*/
             }
@@ -2538,7 +2538,7 @@ void HouseClass_RespawnStartingBuildings()
     {
       v9 = v7 + 2; /*0x50d355*/
       v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v7 + 2); /*0x50d35e*/
-      v11 = Cell::IsBridge(v10); /*0x50d365*/
+      v11 = ((Cell *)(v10))->IsBridge(); /*0x50d365*/
       if ( v11 && (v12 = v11[328], v12 == v8) && v11[135] == v4 )
       {
         v13 = *v11; /*0x50d386*/
@@ -3069,13 +3069,13 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
       while ( v8 < 16 ); /*0x5eea63*/
       if ( v6 ) /*0x5eea67*/
       {
-        HouseClass::SetMapSeed(v5, *((unsigned int *)Block + v7)); /*0x5eead6*/
+        ((HouseClass *)(v5))->SetMapSeed(*((unsigned int *)Block + v7)); /*0x5eead6*/
       }
       else
       {
         Debug::Log(); /*0x5eea73*/
         started = AssignRandomMapStartPositions(&v14, i, (int)v18, (int)v17, 1); /*0x5eea8d*/
-        HouseClass::SetMapSeed(v5, *started); /*0x5eea97*/
+        ((HouseClass *)(v5))->SetMapSeed(*started); /*0x5eea97*/
         HouseClass::GetCurrentOption(v5, &v15); /*0x5eeaa3*/
         HouseClass::GetCurrentOption(v5, &v16); /*0x5eeab4*/
         Debug::Log(); /*0x5eeac2*/
@@ -3093,7 +3093,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
       {
         Debug::Log(); /*0x5eeb1f*/
         v13 = AssignRandomMapStartPositions(&v16, v11, (int)v18, (int)v17, 0); /*0x5eeb39*/
-        HouseClass::SetMapSeed(v12, *v13); /*0x5eeb43*/
+        ((HouseClass *)(v12))->SetMapSeed(*v13); /*0x5eeb43*/
         HouseClass::GetCurrentOption(v12, &v15); /*0x5eeb4f*/
         HouseClass::GetCurrentOption(v12, &v14); /*0x5eeb60*/
         Debug::Log(); /*0x5eeb6e*/
@@ -3806,7 +3806,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
 
 // 0x6ABC60
 namespace gamemd {
-int HouseClass::GetStatus(IUnknown * aP1)
+int HouseClass::GetStatus(int aP1)
 {
 
   int v2; // edx

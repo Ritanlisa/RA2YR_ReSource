@@ -6,6 +6,7 @@ namespace gamemd {
 struct Matrix3x3 {
     int Matrix3x3:: Multiply(float * a2);
     int Matrix3x3:: TransformPoint(float * a2, float * a3);
+    int RotateX(float a2);  // 0x5aef60
 };
 
 } // namespace gamemd

@@ -1,4 +1,8 @@
 #include "network/connection.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/GUID_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
 #include <cstring>
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"

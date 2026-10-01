@@ -285,7 +285,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
-  ComPtr::Release((ComPtr *)Block); /*0x766969*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(Block); /*0x766976*/
   return Block; /*0x766980*/
@@ -299,7 +299,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(unsigned int * Block, ch
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
-  ComPtr::Release((ComPtr *)Block); /*0x766999*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(Block); /*0x7669a6*/
   return Block; /*0x7669b0*/

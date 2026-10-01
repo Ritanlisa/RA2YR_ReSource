@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6F03F0_e4.hpp"
 #include "e4/classes/E4Recv_6FD800_e4.hpp"
@@ -179,7 +180,7 @@ v3 = (void ***)((int)((void ***)(0)));
         while ( 1 ) /*0x6f0c44*/
         {
           v19 = *((unsigned int *)dword_A8B204 + v17); /*0x6f0c44*/
-          if ( !v19 || TriggerClass::EvaluateCondition(v19, (unsigned int *)a2, v54, v18) != 1 ) /*0x6f0c5f*/
+          if ( !v19 || ((TriggerClass *)(v19))->EvaluateCondition((unsigned int *)a2, v54, v18) != 1 ) /*0x6f0c5f*/
             goto LABEL_34; /*0x6f0c5f*/
           v20 = Math::RoundToInt(*(double *)(v19 + 184)); /*0x6f0c6c*/
           if ( v20 == 5000 ) /*0x6f0c78*/

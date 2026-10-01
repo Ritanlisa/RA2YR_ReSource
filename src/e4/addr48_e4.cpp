@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CellClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CommBufferClass_e4.hpp"
 #include "e4/classes/E4Recv_483710_e4.hpp"
@@ -841,7 +842,7 @@ LABEL_203:
   }
   else
   {
-    BuildingClass::CreatePlacementCrater((char *)v71);
+    ((BuildingClass *)((char *)v71))->CreatePlacementCrater();
     v71->field_44 = -1;
     ((House *)((int)v71))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
     Cell::SetRadar((int *)&stru_87C374[13428], (IUnknown *)&v71->field_24);

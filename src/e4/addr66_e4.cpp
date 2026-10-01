@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/GadgetGrid_e4.hpp"
+#include "e4/classes/FacingClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_660050_e4.hpp"
 #include "e4/classes/E4Recv_660AD0_e4.hpp"
@@ -493,7 +495,7 @@ LABEL_63:
     case 4:
       if ( (*(int (**)(ObjectClass *))(*(unsigned int *)v1->__pad_0 + 456))(v1) <= 0 )
       {
-        TechnoClass::CalculateDamage(a1 - 4);
+        ((TechnoClass *)(a1 - 4))->CalculateDamage();
         return 0;
       }
       *(double *)(a1 + 68) = *(float *)(v4 + 24) + *(double *)(a1 + 68);
@@ -682,7 +684,7 @@ LABEL_119:
               v110);
         }
         if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
-          TechnoClass::CalculateDamage(a1 - 4);
+          ((TechnoClass *)(a1 - 4))->CalculateDamage();
       }
       return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:

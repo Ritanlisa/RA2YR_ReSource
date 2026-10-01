@@ -461,7 +461,7 @@ LABEL_55:
       }
       if ( (*(int (**)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
       {
-        if ( (uint8_t)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
+        if ( (uint8_t)((CellClass *)((CellClass *)aP3))->IsActiveOrNext() ) /*0x70cc05*/
         {
           v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
           if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/
@@ -483,7 +483,7 @@ LABEL_55:
     }
   }
   v26 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v49); /*0x70cae2*/
-  if ( (uint8_t)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
+  if ( (uint8_t)((CellClass *)(v26))->IsActiveOrNext() ) /*0x70cae9*/
   {
     v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/

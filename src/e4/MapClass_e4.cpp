@@ -400,7 +400,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
 } // namespace gamemd
 // 0x4AEB30
 namespace gamemd {
-int MapClass::SetScrollMode(MouseClass * aP1)
+int MapClass::SetScrollMode(int aP1)
 {
 
   int result; // eax
@@ -546,7 +546,7 @@ ObjectClass * * MapClass::LoadFileData(void *a1)
     }
     while ( v5 < *(unsigned int *)&this->__pad_298[80] * *(unsigned int *)&this->__pad_298[76] ); /*0x5470cb*/
   }
-  TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
+  ((TerrainClass *)((TerrainClass *)this))->InitTheatre(); /*0x5470cf*/
   *(unsigned int *)v12.CDFileClass = &vt_CCFileClass; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   ((Vector *)((int)v13))->Clear(); /*0x5470e8*/
@@ -567,7 +567,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
   if ( (unsigned char)result ) /*0x554a85*/
   {
     *((unsigned char *)this + 72) = 0; /*0x554a8b*/
-    return TacticalClass::ScrollView((unsigned int *)this, aP1); /*0x554a90*/
+    return ((TacticalClass *)((unsigned int *)this))->ScrollView(aP1); /*0x554a90*/
   }
   return result; /*0x554a95*/
 
@@ -1208,7 +1208,7 @@ LABEL_54:
       }
     }
   }
-  return MapClass::RevealArea2(int a1,&v51,0,aP2 + 3,0) ; /*0x5678cf*/
+  return ((MapClass *)(int a1))->RevealArea2(&v51, 0, aP2 + 3, 0) ; /*0x5678cf*/
 
 }
 } // namespace gamemd
@@ -1790,7 +1790,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
 
   v2 = this; /*0x56b3f5*/
   LZOPipe::Constructor((LZOPipe *)&v18, 0, 0x2000); /*0x56b406*/
-  Pipe::SetDelegate(&v18, aP1); /*0x56b414*/
+  ((Pipe *)(&v18))->SetDelegate(aP1); /*0x56b414*/
   v3 = 0; /*0x56b41f*/
   v4 = 0; /*0x56b421*/
   v19 = 0; /*0x56b425*/
@@ -3441,7 +3441,7 @@ LABEL_20:
     {
       v12 = v11; /*0x5867ff*/
     }
-    result = (int)CellClass::FindInfantry((CellClass *)v12, 0); /*0x586816*/
+    result = (int)((CellClass *)((CellClass *)v12))->FindInfantry(0); /*0x586816*/
     if ( result ) /*0x58681d*/
       break; /*0x58681d*/
     result = v14; /*0x58681f*/
@@ -3455,7 +3455,7 @@ LABEL_20:
     result = *((uint8_t *)v12 + 284); /*0x58683a*/
     if ( (unsigned char)result ) /*0x586842*/
       break; /*0x586842*/
-    result = (int)Cell::IsBridge((Cell *)v12); /*0x586846*/
+    result = (int)((Cell *)((Cell *)v12))->IsBridge(); /*0x586846*/
     if ( result ) /*0x58684d*/
       break; /*0x58684d*/
     if ( ++v6 >= a2[3] + a2[1] ) /*0x58685a*/
@@ -3775,7 +3775,7 @@ int MapClass::Cleanup(int a1, int a2)
       if ( v6 != -1 ) /*0x594787*/
         Vector4::EraseAt(&dword_ABDF90, v6); /*0x59478f*/
       v5[10] = &vt_VectorClass; /*0x594797*/
-      Buffer::Cleanup((int)(v5 + 10)); /*0x59479d*/
+      ((Buffer *)((int)(v5 + 10)))->Cleanup(); /*0x59479d*/
       __3_YAXPAX_Z(v5); /*0x5947a3*/
     }
   }

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/MapClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -221,7 +222,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
           if ( (*(int (**)(unsigned int))(*v20 + 44))(*(unsigned int *)(v19 + 1444)) == 6 ) /*0x718dcb*/
           {
             v21 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP0));
-            if ( Cell::IsBridge((Cell *)v21) == v20 ) /*0x718de1*/
+            if ( ((Cell *)((Cell *)v21))->IsBridge() == v20 ) /*0x718de1*/
               IDA_LOBYTE(a5) = 1; /*0x718de3*/
           }
         }

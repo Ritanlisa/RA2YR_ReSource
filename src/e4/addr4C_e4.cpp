@@ -985,10 +985,10 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   IDA_LOWORD(v56) = IDA_SLODWORD(a4) / 256; /*0x4cf08c*/
   IDA_HIWORD(v56) = a5 / 256; /*0x4cf09f*/
   v13 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v56); /*0x4cf0ac*/
-  v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
+  v14 = ((Cell *)(v13))->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
-    if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
+    if ( ((Array *)(*v6))->Contains((int)v14) ) /*0x4cf0d9*/
     {
       v18 = (int *)(*(int (**)(unsigned int *, int *, int *))(*v14 + 168))(v14, v63, *v6); /*0x4cf142*/
       v11 = *v18; /*0x4cf148*/
@@ -1001,7 +1001,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       v56 = *v6; /*0x4cf0e6*/
       if ( v56 && (*(int (**)(int *))(*v15 + 44))(v15) == 2 ) /*0x4cf0f4*/
       {
-        NearbyCell = InfantryClass::FindNearbyCell(v56, (int)v14); /*0x4cf0fb*/
+        NearbyCell = ((InfantryClass *)(v56))->FindNearbyCell((int)v14); /*0x4cf0fb*/
         if ( NearbyCell ) /*0x4cf102*/
         {
           v17 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)NearbyCell + 72))(NearbyCell, v63); /*0x4cf125*/
@@ -1085,7 +1085,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     if ( !v55 ) /*0x4cf2e2*/
     {
   LABEL_43:
-      v37 = ObjectClass::CalcTargetFacing(*v6, (int *)&a4, (*v6)[173]); /*0x4cf304*/
+      v37 = ((ObjectClass *)(*v6))->CalcTargetFacing((int *)&a4, (*v6)[173]); /*0x4cf304*/
   LABEL_51:
       FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/

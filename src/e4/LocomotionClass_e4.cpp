@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/FacingClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -99,8 +100,8 @@ int LocomotionClass::CheckBridgeBlock()
     if ( vtable1 == 2 /*0x4cfacc*/
       && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1], *(unsigned char *)(vtable1 + 3597))
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
-          v5 = Cell::IsBridge(v4),
-          LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
+          v5 = ((Cell *)(v4))->IsBridge(),
+          LOBYTE(vtable1) = ((Array *)((Array *)this->LinkedTo))->Contains((int)v5),
           !(unsigned char)vtable1) )
     {
       LOBYTE(vtable1) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/

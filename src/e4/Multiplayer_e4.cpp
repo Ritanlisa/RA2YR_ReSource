@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Progress_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
@@ -300,7 +302,7 @@ void Multiplayer::ShowProgress(int a2)
           LOWORD(v10) = Math::RoundToInt(v3); /*0x69b0b5*/
           *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
           LOBYTE(v16[6]) = dword_A8DB30; /*0x69b0d5*/
-          Stream::WriteBlock((int *)&unk_A8EA70, (int)v16, 250, 0); /*0x69b0d9*/
+          ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v16, 250, 0); /*0x69b0d9*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
           while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
           {

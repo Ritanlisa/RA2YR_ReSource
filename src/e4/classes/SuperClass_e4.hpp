@@ -723,6 +723,7 @@ struct SuperClass {
     void Launch(int ecx0, int a2, short * aP3, char a4);
     void ResetRechargeTime();
     wchar_t * NameReadiness();
+    int SetFieldX();  // 0x6ce270
 };
 
 } // namespace gamemd

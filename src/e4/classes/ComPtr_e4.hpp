@@ -25,6 +25,7 @@ struct ComPtr {
      double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub
      double Set(...);  // C2597 interim stub
+    unsigned int * Release();  // 0x65d460
 };
 
 } // namespace gamemd

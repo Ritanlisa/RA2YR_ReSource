@@ -47,7 +47,7 @@ int RadioClass::ProcessCmd()
 
   if ( !((unsigned int *)this)[0] ) /*0x65aa83*/
     (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
-  return ObjectClass::Undeploy((ObjectClass *)this); /*0x65aa9e*/
+  return ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x65aa9e*/
 
 }
 } // namespace ra2
@@ -87,7 +87,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 
 // 0x65AB80
 namespace gamemd {
-int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
+int RadioClass::LoadState(int aP1, int aP2)
 {
 
   ObjectClass * v3;

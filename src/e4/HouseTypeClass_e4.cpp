@@ -1231,7 +1231,7 @@ VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2,
 
 // 0x512BD0
 namespace gamemd {
-unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
+unsigned int * HouseTypeClass::readStartInfantry(unsigned int *aP1)
 {
 
   void *v3; // eax

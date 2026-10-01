@@ -32,6 +32,8 @@ struct IPXManagerClass {
     int send(int a2);
     int sendPacket(int a2, int a3, int a4);
     void StubReturnFalse(int a1, int a2);
+    int destroyConnection();  // 0x540d60
+    unsigned int * createConnection();  // 0x540d40
 };
 
 } // namespace gamemd

@@ -699,6 +699,8 @@ struct FootClass {
     static double AssignDestination(...);  // C2597 interim stub
     static double RemoveFromPointerArray(...);  // C2597 interim stub
     static double MissionMoveCarryallLand(...);  // C2597 interim stub
+    int CreateWakes(int a2, int a3, int a4);  // 0x629e90
+    int ClearPathIndex();  // 0x4df0d0
 };
 
 } // namespace gamemd

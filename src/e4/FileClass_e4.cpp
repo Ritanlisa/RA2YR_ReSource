@@ -80,7 +80,7 @@ const char* FileClass::Open(int a2)
     v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc7e*/
     goto LABEL_12; /*0x65cc7e*/
   }
-  FileClass::Open2(this, (const CHAR *)1); /*0x65cc1d*/
+  ((FileClass *)(this))->Open2((const CHAR *)1); /*0x65cc1d*/
   result = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc26*/
   if ( (unsigned char)result ) /*0x65cc2b*/
   {

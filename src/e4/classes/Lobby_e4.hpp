@@ -23,6 +23,7 @@ struct Lobby {
     void SetupPlayerWidgets(HWND hDlg);
     void UpdatePlayerLabels();
     static double InvalidateFactionCombos(...);  // C2597 interim stub
+    int FillPlayerFactions();  // 0x4e4820
 };
 
 } // namespace gamemd

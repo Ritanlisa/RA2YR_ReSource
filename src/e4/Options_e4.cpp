@@ -303,7 +303,7 @@ AbstractClass * * Options::Screen_Save()
     if ( stru_A8EB00.ObjectTypeClass[30] != v3 ) /*0x55fad9*/
     {
       stru_A8EB00.ObjectTypeClass[30] = v3; /*0x55fae0*/
-      TacticalClass::Initialize((TacticalClass *)&stru_87F5F0.__pad_58[416]); /*0x55fae5*/
+      ((TacticalClass *)((TacticalClass *)&stru_87F5F0.__pad_58[416]))->Initialize(); /*0x55fae5*/
     }
   }
   v4 = GetDlgItem((HWND)this, 1295); /*0x55faf0*/
@@ -397,7 +397,7 @@ char Options::Screen_Dialog()
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
-      ScenarioClass::LoadNetworkConfig(&dword_A8B238); /*0x55fd31*/
+      ((ScenarioClass *)(&dword_A8B238))->LoadNetworkConfig(); /*0x55fd31*/
       v3 = (HWND)CreateDialog(0); /*0x55fd42*/
       v4 = v3; /*0x55fd47*/
       if ( v3 ) /*0x55fd4b*/
@@ -418,7 +418,7 @@ char Options::Screen_Dialog()
       break; /*0x55fd1c*/
     ShowHotkeyOptionsDialog((void *)(dword_A8EB60)); /*0x55fd1e*/
   }
-  ScenarioClass::SaveGameOptions(dword_A8EB60); /*0x55fd8e*/
+  ((ScenarioClass *)(dword_A8EB60))->SaveGameOptions(); /*0x55fd8e*/
   byte_A8E9A0 = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
 
@@ -687,7 +687,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
         memcpy((char *)v5[2] + 24 * v13 + 24, (char *)v5[2] + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
       v14 = (Struct *)((char *)v5[2] + 24 * v13); /*0x625721*/
       if ( v14 ) /*0x625726*/
-        Struct::WideStringCopy(v14, (int)&v18); /*0x62572d*/
+        ((Struct *)(v14))->WideStringCopy((int)&v18); /*0x62572d*/
       ++v10; /*0x625739*/
       *v5 = (char *)*v5 + 1; /*0x62573a*/
       v11 = v16 + 24; /*0x625740*/

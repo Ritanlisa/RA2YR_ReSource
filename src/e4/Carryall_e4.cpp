@@ -98,7 +98,7 @@ LABEL_4:
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 7); /*0x416ec3*/
 LABEL_18:
         Carryall_field_00 = (int)(this->Carryall_field_00); /*0x416ec9*/
-        NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, *((unsigned int *)this + 361)); /*0x416ed6*/
+        NearbyCell = ((InfantryClass *)((InfantryClass *)this))->FindNearbyCell(*((unsigned int *)this + 361)); /*0x416ed6*/
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
@@ -221,7 +221,7 @@ LABEL_44:
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v27)->flags[0]) & 1; /*0x41722f*/
         v23 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28)); /*0x417236*/
-        Building = CellClass::FindBuilding(v23, v26); /*0x417242*/
+        Building = ((CellClass *)(v23))->FindBuilding(v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)
           && (this->Debug::Log(), (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
@@ -230,7 +230,7 @@ LABEL_44:
           (*(void (**)(unsigned char *))(*(unsigned int *)Building + 212))(Building); /*0x417283*/
           Building[140] = 0; /*0x417290*/
           Building[1060] = 1; /*0x417297*/
-          CellClass::AddObject((CellClass *)((unsigned int *)this + 69), Building); /*0x41729e*/
+          ((CellClass *)((CellClass *)((unsigned int *)this + 69)))->AddObject(Building); /*0x41729e*/
         }
         else
         {

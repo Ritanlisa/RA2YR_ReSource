@@ -468,7 +468,7 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 
   v7 = (uint8_t *)String::GetOrEmpty_Alt(aP2); /*0x527905*/
   v5 = (uint8_t *)String::GetOrEmpty_Alt(aP1); /*0x527906*/
-  return INIClass::ReadInt_Overwrite(int a1,v5,v7,aP3) ; /*0x527913*/
+  return ((INIClass *)(int a1))->ReadInt_Overwrite(v5, v7, aP3) ; /*0x527913*/
 
 }
 } // namespace gamemd

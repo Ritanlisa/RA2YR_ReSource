@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/VocClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6CEE60_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -745,7 +746,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
   this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (uint8_t *)((unsigned int *)this)[0], g_INI_Key_Armor, v29); /*0x5f94cd*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aStrength, this->Strength); /*0x5f94e2*/
+  Int_Overwrite = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0], aStrength, this->Strength); /*0x5f94e2*/
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
   v17 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aImmune, Immune); /*0x5f94fc*/

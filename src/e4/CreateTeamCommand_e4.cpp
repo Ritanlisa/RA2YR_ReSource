@@ -188,7 +188,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x538a3e*/
         *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x538a43*/
-        ComPtr::Release(v5); /*0x538a49*/
+        ((ComPtr *)(v5))->Release(); /*0x538a49*/
         --v7; /*0x538a4e*/
       }
       while ( v7 ); /*0x538a4f*/
@@ -200,7 +200,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
   else
   {
     *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x538a6a*/
-    ComPtr::Release((ComPtr *)Block); /*0x538a70*/
+    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x538a70*/
     if ( (a2 & 1) != 0 ) /*0x538a78*/
       __3_YAXPAX_Z(Block); /*0x538a7b*/
     return Block->__pad_0; /*0x538a83*/
@@ -753,7 +753,7 @@ unsigned char * CreateTeamCommand::performAction_30()
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536617*/
   TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536625*/
-  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536631*/
+  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536631*/
   BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x53663d*/
   if ( dword_A8ECC8 ) /*0x536649*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536650*/
@@ -1201,7 +1201,7 @@ unsigned char * CreateTeamCommand::performAction_69()
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536a87*/
   TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536a95*/
-  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536aa1*/
+  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536aa1*/
   BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x536aad*/
   if ( dword_A8ECC8 ) /*0x536ab9*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536ac0*/

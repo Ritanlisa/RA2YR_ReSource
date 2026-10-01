@@ -199,7 +199,7 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
   if ( Block->Activated ) /*0x5551bf*/
   {
     Block->Activated = 0; /*0x5551ca*/
-    TacticalClass::ScrollView((TacticalClass *)Block, 0); /*0x5551ce*/
+    ((TacticalClass *)((TacticalClass *)Block))->ScrollView(0); /*0x5551ce*/
   }
   AbstractClass::DTOR((AbstractClass *)Block); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/

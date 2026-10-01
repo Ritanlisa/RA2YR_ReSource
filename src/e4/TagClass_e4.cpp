@@ -139,7 +139,7 @@ LABEL_22:
             {
               if ( v11->House && TagClass::HasValidHouse((TagClass *)a1->buildingType) ) /*0x6e5080*/
               {
-                Owner = HouseClass::FindOwner((HouseClass *)a1->firstTrigger->buildingType->House->arrayIndex2); /*0x6e509b*/
+                Owner = ((HouseClass *)((HouseClass *)a1->firstTrigger->buildingType->House->arrayIndex2))->FindOwner(); /*0x6e509b*/
                 v13 = *(unsigned int *)(Owner + 636); /*0x6e50a0*/
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/

@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ActionQueue_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6E0080_e4.hpp"
 #include "e4/classes/E4Recv_6E0250_e4.hpp"
@@ -228,7 +230,7 @@ void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
     if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e30e5*/
       Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e30f0*/
     else
-      Field11 = HouseClass::FindOwner(v7); /*0x6e30f7*/
+      Field11 = ((HouseClass *)(v7))->FindOwner(); /*0x6e30f7*/
   }
   if ( !Field11 ) /*0x6e30fe*/
     return 0; /*0x6e30fe*/
@@ -322,7 +324,7 @@ char sub_6E4090(int a1, int a2, int a3, int a4)
     if ( ++v4 >= dword_A8EB50 ) /*0x6e40e1*/
       return 0; /*0x6e40e1*/
   }
-  BuildingClass::UnloadUnits((int *)v5, 0, 0); /*0x6e40f2*/
+  ((BuildingClass *)((int *)v5))->UnloadUnits(0, 0); /*0x6e40f2*/
   return 1; /*0x6e40e3*/
 }
 }
@@ -636,7 +638,7 @@ LABEL_16:
       HIWORD(v21) = v14[1] / 256; /*0x6efd9a*/
       v15 = *(unsigned int *)(v11 + 40); /*0x6efda3*/
       v20 = v21; /*0x6efda6*/
-      SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)owner, *(unsigned int *)(v15 + 180), (int)&v20); /*0x6efdb4*/
+      ((SuperWeapon *)((SuperWeapon *)owner))->FireSuperWeaponHouseClass(*(unsigned int *)(v15 + 180), (int)&v20); /*0x6efdb4*/
       *(unsigned char *)(v13 + 128) = 1; /*0x6efdba*/
       return; /*0x6efdc6*/
     }

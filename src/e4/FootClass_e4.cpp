@@ -181,7 +181,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   {
     v7 = *(TaskManager **)((unsigned int)(a1)+ 720); /*0x710017*/
     if ( v7 ) /*0x71001f*/
-      TaskManager::Update(v7); /*0x710021*/
+      ((TaskManager *)(v7))->Update(); /*0x710021*/
     v8 = (unsigned int *)v6[421]; /*0x710026*/
     if ( v8 && v8[423] && *(unsigned char *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 3278) ) /*0x710042*/
       BuildingClass::Deploy(v27, v4, v5); /*0x710058*/
@@ -265,7 +265,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
           WinAPI::Wrapper(v20); /*0x71026c*/
       }
-      COMObject::SwapReference((COMObject *)&v28.m_Data, v28.m_Position); /*0x71027a*/
+      ((COMObject *)((COMObject *)&v28.m_Data))->SwapReference(v28.m_Position); /*0x71027a*/
       if ( v28.m_Position ) /*0x710285*/
         (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))(v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
@@ -282,7 +282,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( *v10 != a1 ) /*0x7102e3*/
         {
           *v10 = (int)(a1); /*0x7102e7*/
-          SuperClass::SetFieldX((SuperClass *)(v6 + 413)); /*0x7102e9*/
+          ((SuperClass *)((SuperClass *)(v6 + 413)))->SetFieldX(); /*0x7102e9*/
           if ( v22 ) /*0x7102f0*/
             (*(void (**)(int))(*(unsigned int *)v22 + 8))(v22); /*0x7102f6*/
         }

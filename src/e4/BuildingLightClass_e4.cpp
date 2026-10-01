@@ -24,7 +24,7 @@
 
 // 0x436BE0
 namespace gamemd {
-unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1, void *a2)
+unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
 {
 
   double v2; // st7
@@ -144,7 +144,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370ca*/
   Block->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
   Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
-  if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
+  if ( (uint8_t)((ObjectClass *)(Block))->Undeploy() ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)Block); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
   v3 = (*(int ((int *)(**))(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
@@ -157,7 +157,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(Block); /*0x43713e*/
+  ((ObjectClass *)(Block))->Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
     __3_YAXPAX_Z(Block); /*0x43714b*/
   return Block; /*0x437155*/

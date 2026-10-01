@@ -1919,6 +1919,19 @@ struct HouseClass {
     static double ShouldDisableCameo(...);  // C2597 interim stub
     static double UpdateProduction(...);  // C2597 interim stub
     static double GetPowerRatio(...);  // C2597 interim stub
+    bool FindType24();  // 0x726fb0
+    int HasType26Building();  // 0x726f50
+    int HasType25Building();  // 0x726f80
+    int AddPower(int a2);  // 0x4f9950
+    int HasPower();  // 0x717880
+    char AIBuildBase();  // 0x50a5c0
+    void SetPrimaryTechBuilding();  // 0x50c210
+    int UpdateAllTypes();  // 0x6e57f0
+    int DecrementUnitCount(unsigned char *a2);  // 0x4ff550
+    int CanBuild(int a2, char a3, char a4);  // 0x4f7870
+    int CalculateCostMultipliers();  // 0x50bf60
+    int FindOwner();  // 0x502d30
+    int SetMapSeed(int a2);  // 0x50e000
 };
 
 } // namespace gamemd

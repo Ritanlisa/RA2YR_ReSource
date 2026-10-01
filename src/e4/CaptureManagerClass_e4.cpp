@@ -613,9 +613,9 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
   }
   v6 = *(FactoryClass **)(aP1 + 628); /*0x4723e4*/
   if ( v6 && v6->production[1] ) /*0x4723ee*/
-    FactoryClass::CompleteItem(v6); /*0x4723f3*/
+    ((FactoryClass *)(v6))->CompleteItem(); /*0x4723f3*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)aP1 + 132))(aP1) + 1508) ) /*0x472402*/
-    CCINIClass::IterateNodes((CCINIClass *)aP1, 0); /*0x47240f*/
+    ((CCINIClass *)((CCINIClass *)aP1))->IterateNodes(0); /*0x47240f*/
   v7 = *(unsigned int *)(aP1 + 540); /*0x472417*/
   v8 = *(unsigned int *)(this->overloadCount + 540); /*0x472422*/
   v29 = v7 != v8; /*0x47242c*/

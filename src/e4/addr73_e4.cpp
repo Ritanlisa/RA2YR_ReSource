@@ -112,10 +112,10 @@ AbstractClass * * ProcessSelectionExperience()
             v9 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 15 ? (TechnoClass *)v8 : 0;
             v10 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 1 ? (TechnoClass *)v8 : 0;
             if ( (!v9 /*0x730d06*/
-               || !TechnoClass::GetTypeFlag(v9)
+               || !((TechnoClass *)(v9))->GetTypeFlag()
                || !v12
                || !v13
-               || !(uint8_t)TechnoClass::IsMission27to30(v9))
+               || !(uint8_t)((TechnoClass *)(v9))->IsMission27to30())
               && (!v10 || !*(unsigned char *)(v10[1].ironTintTimer[2] + 3603) || !v12 || !v13 || !Event_Process_746D90(v10)) )
             {
               if ( (*(uint8_t (**)(unsigned char *, int))(*(unsigned int *)v8 + 884))(v8, 9) ) /*0x730d15*/
@@ -141,7 +141,7 @@ AbstractClass * * ProcessSelectionExperience()
 // 0x5224e0
           && TechnoClass::GetTypeFlag() )
         {
-          if ( !(uint8_t)TechnoClass::IsMission27to30(this) ) /*0x730bbc*/
+          if ( !(uint8_t)((TechnoClass *)(this))->IsMission27to30() ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
           IDA_LOBYTE(v1) = v13; /*0x730bbe*/
           v12 = 1; /*0x730bc2*/
@@ -455,7 +455,7 @@ void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
     v4 = *(unsigned int *)&dword_A8B238
        ? House::IsHumanPlayer(*(House **)(a1 + 540))
        : *(unsigned char *)(*(unsigned int *)(a1 + 540) + 493);
-    if ( v4 && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)a1, a2) ) /*0x7327ad*/
+    if ( v4 && (uint8_t)((ObjectClass *)((ObjectClass *)a1))->StepCleanup(a2) ) /*0x7327ad*/
       return 1; /*0x732782*/
   }
   return result; /*0x7327b6*/
@@ -520,7 +520,7 @@ void SelectAllOfType()
       do /*0x7329f3*/
       {
         v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v2); /*0x7329d7*/
-        if ( (uint8_t)TechnoClass::IsOwnedByHuman(v23) ) /*0x7329db*/
+        if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x7329db*/
           ((DynamicVector *)((DynamicVector *)v4))->AddItem(&v23); /*0x7329eb*/
         ++v2; /*0x7329f0*/
       }
@@ -550,7 +550,7 @@ void SelectAllOfType()
       if ( SelectAllOfType_Helper((ObjectClass *)CoordDataMap) ) /*0x732a4b*/
       {
         v23 = CoordDataMap; /*0x732a58*/
-        if ( (uint8_t)TechnoClass::IsOwnedByHuman(CoordDataMap) ) /*0x732a5c*/
+        if ( (uint8_t)((TechnoClass *)(CoordDataMap))->IsOwnedByHuman() ) /*0x732a5c*/
           ((DynamicVector *)((DynamicVector *)v8))->AddItem(&v23); /*0x732a6c*/
       }
     }
@@ -589,7 +589,7 @@ void SelectAllOfType()
     for ( j = 0; j < v15; ++j ) /*0x732af5*/
     {
       v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * j); /*0x732b01*/
-      if ( (uint8_t)TechnoClass::IsOwnedByHuman(v23) ) /*0x732b05*/
+      if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x732b05*/
         ((DynamicVector *)(v6))->AddItem(&v23); /*0x732b15*/
     }
   }
@@ -2101,7 +2101,7 @@ char IDTechnoClassMatches(void * a1, int a2)
   v4 = 0; /*0x732c39*/
   if ( v3 <= 0 ) /*0x732c3f*/
     return 0; /*0x732c8a*/
-  while ( !(uint8_t)ObjectClass::StepCleanup(a1, *(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
+  while ( !(uint8_t)((ObjectClass *)(a1))->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
        || !(*((uint8_t (**)(ObjectClass *))a1->AbstractClass + 79))(a1)
        && (!a1
         || (*((int (**)(ObjectClass *))a1->AbstractClass + 11))(a1) != 6

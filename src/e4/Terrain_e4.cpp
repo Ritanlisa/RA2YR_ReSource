@@ -348,7 +348,7 @@ LABEL_44:
   if ( i == 30 ) /*0x569473*/
   {
     *(unsigned int *)v81.__pad_0 = &vt_VectorClass; /*0x569479*/
-    Buffer::Cleanup(&v81); /*0x569481*/
+    ((Buffer *)(&v81))->Cleanup(); /*0x569481*/
   }
   else
   {
@@ -453,7 +453,7 @@ LABEL_44:
     if ( v63 ) /*0x569706*/
       Terrain::ConnectivityGraph(this); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
-      LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v81); /*0x569722*/
+      ((LayerClass *)((LayerClass *)this))->Update_Pathfinding_2((int)&v81); /*0x569722*/
     *(unsigned int *)v81.__pad_0 = &vt_VectorClass; /*0x56972b*/
     if ( *(unsigned int *)&v81.m_1[3] ) /*0x569735*/
     {
@@ -1690,7 +1690,7 @@ LABEL_137:
               Terrain::ConnectivityGraph(v53); /*0x570a8e*/
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
-              LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
+              ((LayerClass *)((LayerClass *)this))->Update_Pathfinding_2((int)&v86); /*0x570aa4*/
             v86.vtable0 = &vt_VectorClass; /*0x570aad*/
             if ( v86.Items ) /*0x570ab7*/
             {
@@ -2269,7 +2269,7 @@ LABEL_139:
             Terrain::ConnectivityGraph(v47); /*0x573fb1*/
 LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
-            LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
+            ((LayerClass *)((LayerClass *)this))->Update_Pathfinding_2((int)&v92); /*0x573fc7*/
           v92.vtable0 = &vt_VectorClass; /*0x573fd0*/
           if ( v92.Items ) /*0x573fda*/
           {

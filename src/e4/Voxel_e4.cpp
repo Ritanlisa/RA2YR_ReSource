@@ -457,10 +457,10 @@ int Voxel::Projection_Setup()
   Matrix3x4::Identity(&stru_B442A0); /*0x755314*/
   Matrix3x4::Identity(&stru_B442D0); /*0x75531e*/
   v29 = 0; /*0x755323*/
-  Int4::Set2(&stru_B44458, 0, 0, 0, 1065353216); /*0x755332*/
-  Int4::Set2(&stru_B44468, 0, 0, 0, 1065353216); /*0x755344*/
-  Int4::Set2(&stru_B44478, 0, 0, 0, 1065353216); /*0x755356*/
-  Int4::Set2(&stru_B44488, 0, 0, 0, 1065353216); /*0x755368*/
+  ((Int4 *)(&stru_B44458))->Set2(0, 0, 0, 1065353216); /*0x755332*/
+  ((Int4 *)(&stru_B44468))->Set2(0, 0, 0, 1065353216); /*0x755344*/
+  ((Int4 *)(&stru_B44478))->Set2(0, 0, 0, 1065353216); /*0x755356*/
+  ((Int4 *)(&stru_B44488))->Set2(0, 0, 0, 1065353216); /*0x755368*/
   v65 = 0.0; /*0x75536d*/
   do /*0x755459*/
   {
@@ -510,7 +510,7 @@ int Voxel::Projection_Setup()
   qmemcpy(&unk_B45428, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x7555fb*/
   qmemcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
   qmemcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
-  Int4::Set2(&stru_B43188, 0, 0, 0, 1065353216); /*0x755646*/
+  ((Int4 *)(&stru_B43188))->Set2(0, 0, 0, 1065353216); /*0x755646*/
   v36 = FromQuaternionAxisAngle(v58, v69, v11); /*0x755657*/
   Float4::Copy(flt_B43198, v57, v36); /*0x755667*/
   v37 = FromQuaternionAxisAngle(v58, v68, v11); /*0x755678*/
@@ -547,13 +547,13 @@ int Voxel::Projection_Setup()
   Matrix3x4::Identity(&stru_B454E8); /*0x755861*/
   Matrix3x4::Identity(&stru_B45518); /*0x75586b*/
   Matrix3x4::Identity(&stru_B45548); /*0x755875*/
-  Int4::Set2(&stru_B43298, 0, 0, 0, 1065353216); /*0x75588a*/
-  Int4::Set2(&stru_B432A8, 0, 0, 0, 1065353216); /*0x75589f*/
-  Int4::Set2(&stru_B432B8, 0, 0, 0, 1065353216); /*0x7558b4*/
-  Int4::Set2(&stru_B432C8, 0, 0, 0, 1065353216); /*0x7558c9*/
+  ((Int4 *)(&stru_B43298))->Set2(0, 0, 0, 1065353216); /*0x75588a*/
+  ((Int4 *)(&stru_B432A8))->Set2(0, 0, 0, 1065353216); /*0x75589f*/
+  ((Int4 *)(&stru_B432B8))->Set2(0, 0, 0, 1065353216); /*0x7558b4*/
+  ((Int4 *)(&stru_B432C8))->Set2(0, 0, 0, 1065353216); /*0x7558c9*/
   Matrix3x4::Identity(&stru_B44318); /*0x7558d3*/
   v55 = -dbl_B43F00; /*0x7558e6*/
-  Matrix3x3::RotateX(stru_B44318.m_Data, v55); /*0x7558e9*/
+  ((Matrix3x3 *)(stru_B44318.m_Data))->RotateX(v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
   Matrix2D::Rotate(stru_B44318.m_Data, v56); /*0x7558ff*/
   v52 = &stru_B450B8; /*0x755904*/
@@ -1207,7 +1207,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         if ( (*(int (**)(unsigned int))(*v16 + 44))(*(unsigned int *)(v15 + 1444)) == 6 ) /*0x75c417*/
         {
           v17 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x75c41f*/
-          if ( Cell::IsBridge((Cell *)v17) == v16 ) /*0x75c42d*/
+          if ( ((Cell *)((Cell *)v17))->IsBridge() == v16 ) /*0x75c42d*/
             v39 = 1; /*0x75c42f*/
         }
       }

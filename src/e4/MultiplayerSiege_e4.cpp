@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
@@ -196,7 +198,7 @@ LABEL_26:
   this->Debug::Log(); /*0x5ca8d2*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
-  HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
+  ((HouseClass *)(v7))->SetMapSeed(v8); /*0x5ca8e8*/
   for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5ca8f6*/
   {
     v10 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5ca8fe*/
@@ -209,7 +211,7 @@ LABEL_26:
                      i,
                      v14,
                      v13);
-      HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
+      ((HouseClass *)(v10))->SetMapSeed(*v11); /*0x5ca944*/
     }
   }
   *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca957*/

@@ -1155,6 +1155,7 @@ struct MouseClass {
      double DrawCursor(...);  // C2597 interim stub
     static double CalcConfiningRect(...);  // C2597 interim stub
      double Construct(...);  // C2597 interim stub
+    void * LoadTypeData();  // 0x5bdf30
 };
 
 } // namespace gamemd

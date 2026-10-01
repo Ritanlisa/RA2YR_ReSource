@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BulkData_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_538C40_e4.hpp"
 #include "e4/classes/E4Recv_538CC0_e4.hpp"
@@ -306,7 +308,7 @@ char BulkData_Initialize()
   }
     Event::Dispatch();
     Event::Dispatch();
-  MouseClass::LoadTypeData((MouseClass *)&stru_87F5F0.__pad_58[416]); /*0x531708*/
+  ((MouseClass *)((MouseClass *)&stru_87F5F0.__pad_58[416]))->LoadTypeData(); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
   BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
   FileSystem::InitPipShapes(); /*0x531721*/

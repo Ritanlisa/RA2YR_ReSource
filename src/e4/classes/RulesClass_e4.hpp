@@ -1148,6 +1148,8 @@ struct RulesClass {
     void* readAudioVisual();
      double SaveLoad_Prefix(...);  // C2597 interim stub
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub
+    int ReadDataList();  // 0x672440
+    int LoadCountries();  // 0x6722f0
 };
 
 } // namespace gamemd

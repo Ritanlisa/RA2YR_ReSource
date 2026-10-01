@@ -136,7 +136,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
       fmul ds:dbl_7E2810
       fstp qword ptr [esp+98h+var_50]
     }
-    Vector3::Magnitude((int *)_ESI); /*0x5b21f2*/
+    ((Vector3 *)((int *)_ESI))->Magnitude(); /*0x5b21f2*/
     __asm /*0x5b21f7*/
     {
       fstp qword ptr [esp+98h+var_64.field_4]
@@ -331,7 +331,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   {
     LOWORD(v86) = v86 - *aP4; /*0x5b2546*/
   }
-  Vector2::NormalizeNonZero((int *)_ESI); /*0x5b2557*/
+  ((Vector2 *)((int *)_ESI))->NormalizeNonZero(); /*0x5b2557*/
   Function::41C430((double *)_ESI); /*0x5b255e*/
   __asm { fstp qword ptr [esp+98h+var_88.field_8] } /*0x5b2568*/
   *(unsigned int *)v88.__pad_0 = (int16_t)v86 - 0x3FFF; /*0x5b2575*/

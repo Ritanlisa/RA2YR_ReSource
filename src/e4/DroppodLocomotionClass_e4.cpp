@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Function_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DroppodLocomotionClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -109,7 +110,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
         if ( v21 ) /*0x4b5ee6*/
         {
           Index = AnimTypeClass::FindIndex(&stru_820320); /*0x4b5eed*/
-          AnimClass::ctor(v21, *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
+          ((AnimClass *)(v21))->ctor(*(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
       if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 3) ) /*0x4b5f1f*/
@@ -132,7 +133,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           {
             v32 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v34[0]), v34[1], v35); /*0x4b5ffe*/
             WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(2 * v20[41], v20[43], 0,(gamemd::BulletClass *)(v34)); /*0x4b6020*/
-            AnimClass::ctor(v28, WarheadVersusMultiplier, v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
+            ((AnimClass *)(v28))->ctor(WarheadVersusMultiplier, v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
           }
         }
       }
@@ -218,7 +219,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
                         0,
                         &v36);
-        AnimClass::ctor(v14, v15, &v36, 0, 1, (void *)0x2600, v31, 0); /*0x4b5d92*/
+        ((AnimClass *)(v14))->ctor(v15, &v36, 0, 1, (void *)0x2600, v31, 0); /*0x4b5d92*/
         (*(void (**)(char *))(*(unsigned int *)v12 + 8))((char *)a1 - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/
       }

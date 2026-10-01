@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
@@ -22,7 +23,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x597730
-namespace gamemd {
+int MapSeed::ValidateName(int a2)
 int MapSeed::ValidateName(int a2)
 {
 
@@ -231,7 +232,7 @@ LABEL_33:
       if ( *(int *)&stru_B76900.needsRedraw > 0 ) /*0x79c83e*/
       {
         ((String *)((String *)&g_WindowManager.__pad_14[16]))->Reassign((const char **)stru_B76900.parachute); /*0x79c84b*/
-        DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x79c857*/
+        ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x79c857*/
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/

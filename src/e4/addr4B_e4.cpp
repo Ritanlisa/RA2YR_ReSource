@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Rect_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4B0DF0_e4.hpp"
 #include "e4/classes/E4Recv_4B4E10_e4.hpp"
@@ -182,7 +183,7 @@ void JumpjetLocomotionClass_Process(int a1)
           v27 = *((unsigned int *)v2 + 3); /*0x4b0a29*/
           if ( *(unsigned int *)(v27 + 1432) ) /*0x4b0a2c*/
           {
-            FootClass::ClearPathIndex((FootClass *)v27); /*0x4b0a44*/
+            ((FootClass *)((FootClass *)v27))->ClearPathIndex(); /*0x4b0a44*/
             if ( (*(uint8_t (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x4b0a51*/
                    *((unsigned int *)v2 + 3),
                    0,
@@ -214,7 +215,7 @@ void JumpjetLocomotionClass_Process(int a1)
         return 0; /*0x4b06d2*/
       }
     }
-    FootClass::ClearPathIndex(v15); /*0x4b0756*/
+    ((FootClass *)(v15))->ClearPathIndex(); /*0x4b0756*/
     (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*((unsigned int *)v2 + 3), 0, 1); /*0x4b0763*/
     return 0; /*0x4b0772*/
   }
@@ -740,7 +741,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
 
   int v3; // eax
 
-  ControlClass::CtorFromData((ControlClass *)this, a2); /*0x4b53eb*/
+  ((ControlClass *)((ControlClass *)this))->CtorFromData(a2); /*0x4b53eb*/
   *((unsigned int *)this + 11) = *(EditClass *)(a2 + 44); /*0x4b53f6*/
   *((unsigned int *)this + 12) = *(EditClass *)(a2 + 48); /*0x4b53fc*/
   *((unsigned int *)this + 13) = *(EditClass *)(a2 + 52); /*0x4b5402*/
@@ -751,7 +752,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   *this = (EditClass)&vt_EditClass; /*0x4b541d*/
   *((unsigned char *)this + 72) = *(unsigned char *)(a2 + 72); /*0x4b5429*/
   *((unsigned int *)this + 19) = *(EditClass *)(a2 + 76); /*0x4b5432*/
-  ControlClass::CtorFromData((ControlClass *)this + 5, a2 + 80); /*0x4b5435*/
+  ((ControlClass *)((ControlClass *)this + 5))->CtorFromData(a2 + 80); /*0x4b5435*/
   *((unsigned char *)this + 124) = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   *((unsigned char *)this + 125) = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   *((unsigned int *)this + 32) = *(EditClass *)(a2 + 128); /*0x4b544f*/

@@ -567,7 +567,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (unsigned int *)(v20);
           v8 = (unsigned int *)(unk_ABDC50);
         }
-        v5 = (int)Cell::IsBridge(v8); /*0x588604*/
+        v5 = (int)((Cell *)(v8))->IsBridge(); /*0x588604*/
         if ( v5 ) /*0x58860b*/
         {
           if ( *(unsigned char *)(*(unsigned int *)(v5 + 1312) + 5824) ) /*0x588613*/
@@ -587,7 +587,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (unsigned int *)(v20);
           v11 = unk_ABDC50; /*0x58864d*/
         }
-        IDA_LOBYTE(v5) = CellClass::IsPassable((int)v11, aP2->u32_67C, aP2, aP1); /*0x58865f*/
+        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C, aP2, aP1); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
           IDA_LOBYTE(v5) = ++v18; /*0x588674*/
@@ -699,7 +699,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
         dword_ABDC74 = v17; /*0x588854*/
         v12 = unk_ABDC50; /*0x58885a*/
       }
-      if ( CellClass::IsPassable((int)v12, v3[415], (int)v3, aP1) ) /*0x58886e*/
+      if ( ((CellClass *)((int)v12))->IsPassable(v3[415], (int)v3, aP1) ) /*0x58886e*/
       {
         if ( ++v16 < v5 ) /*0x588886*/
           continue; /*0x588886*/

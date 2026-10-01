@@ -60,7 +60,7 @@ int ThemeClass::ReadThemeEntry(uint8_t *** a2, void *a2_2)
   while ( *v3 == 36 || *v3 == 35 ) /*0x7204cc*/
     ++v3; /*0x7204ce*/
   strcpy((char *)((char *)this + 256), v3); /*0x7204e9*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)this, aScenario, *((unsigned int *)this + 160)); /*0x720501*/
+  Int_Overwrite = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)this, aScenario, *((unsigned int *)this + 160)); /*0x720501*/
   v8 = *((unsigned char *)this + 648); /*0x72050e*/
   *((unsigned int *)this + 160) = Int_Overwrite; /*0x720515*/
   *((unsigned char *)this + 648) = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this, g_INI_Key_Normal, v8); /*0x720520*/

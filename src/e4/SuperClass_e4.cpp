@@ -58,7 +58,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
     v8[2] = v5[2] + 750; /*0x53aec0*/
     v6 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x53aec4*/
     if ( v6 ) /*0x53aece*/
-      PsyDom_Anim = (int)AnimClass::ctor(v6, v3, v8, 0, 1, (void *)0x600, 0, 0); /*0x53aeea*/
+      PsyDom_Anim = (int)((AnimClass *)(v6))->ctor(v3, v8, 0, 1, (void *)0x600, 0, 0); /*0x53aeea*/
     else
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
@@ -1030,7 +1030,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
 
 // 0x6CB4D0
 namespace gamemd {
-char SuperClass::SetOnHold(CoordStruct * aP1, void *a2)
+char SuperClass::SetOnHold(char aP1)
 {
 
   int result; // eax

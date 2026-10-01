@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/AbstractClassVector_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
@@ -118,7 +119,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
         }
         v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4d7f66*/
         if ( v17 ) /*0x4d7f70*/
-          aP4 = AnimClass::ctor(v17, (void *)dword_8871E0->Normal[6], v43, 0, 1, (void *)0x600, 0, 0); /*0x4d7f98*/
+          aP4 = ((AnimClass *)(v17))->ctor((void *)dword_8871E0->Normal[6], v43, 0, 1, (void *)0x600, 0, 0); /*0x4d7f98*/
         else
           aP4 = 0; /*0x4d7f9e*/
         if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x4d7fb6*/
@@ -170,7 +171,7 @@ LABEL_52:
       return 1; /*0x4d817f*/
     case 5: /*0x4d7de0*/
     case 63: /*0x4d7de0*/
-      v22 = ObjectClass::processDeath((ObjectClass *)v7); /*0x4d80b3*/
+      v22 = ((ObjectClass *)((ObjectClass *)v7))->processDeath(); /*0x4d80b3*/
       if ( !v22 || *(unsigned char *)(v22 + 256) || *(int *)(v22 + 108) <= 0 ) /*0x4d80cb*/
       {
         v23 = this->vtable0; /*0x4d80e9*/
@@ -407,7 +408,7 @@ LABEL_16:
           {
 LABEL_28:
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db550*/
-            ObjectClass::updateStateFlags((int *)(aP0 + 1652)); /*0x4db55a*/
+            ((ObjectClass *)((int *)(aP0 + 1652)))->updateStateFlags(); /*0x4db55a*/
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db566*/
             OleLoadFromStream(v4, &IID_ILocomotion, (LPVOID *)(aP0 + 1652)); /*0x4db568*/
             *(unsigned int *)(aP0 + 1440) = 0; /*0x4db574*/
@@ -866,7 +867,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     ((Matrix3x4 *)(v37.m_Data))->Translate(v27); /*0x5141f5*/
     v28 = (float)v30; /*0x514203*/
     Matrix3x3::ApplyCol0(v37.m_Data, v28); /*0x514206*/
-    Matrix3x3::RotateX(v37.m_Data, *(float *)(a1->vtable2 + 808)); /*0x514219*/
+    ((Matrix3x3 *)(v37.m_Data))->RotateX(*(float *)(a1->vtable2 + 808)); /*0x514219*/
     Matrix3D::RotateZ(v37.m_Data, *(float *)(a1->vtable2 + 812)); /*0x51422c*/
     Transform = Turret::GetTransform((LocomotionClass *)a1, v40, a3); /*0x51423b*/
     Transform::Copy(v38, Transform); /*0x514245*/
@@ -2163,7 +2164,7 @@ void ObjectClass::ObjectClass_GetTypeVt41_2()
 }
 }
 // 0x74CD60
-namespace gamemd {
+int ObjectClass::processDeath()
 int ObjectClass::processDeath()
 {
 
@@ -2259,7 +2260,7 @@ int ObjectClass::GetMember09()
 } // namespace gamemd
 
 // 0x4E02C0
-namespace gamemd {
+int ObjectClass::updateStateFlags()
 int ObjectClass::updateStateFlags()
 {
 
@@ -2419,7 +2420,7 @@ int ObjectClass::CreateInstance()
 
   char v3; // [esp+8h] [ebp+4h]
 
-  ObjectClass::Dtor(this); /*0x5f6dc3*/
+  ((ObjectClass *)(this))->Dtor(); /*0x5f6dc3*/
   if ( (v3 & 1) != 0 ) /*0x5f6dcd*/
     __3_YAXPAX_Z(this); /*0x5f6dd0*/
   return (int)this; /*0x5f6dda*/
@@ -2451,7 +2452,7 @@ int ObjectClass::GetMember01()
 } // namespace gamemd
 
 // 0x6A5000
-namespace gamemd {
+int ObjectClass::processDamage()
 int ObjectClass::processDamage()
 {
 
@@ -2510,7 +2511,7 @@ int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
     return 0; /*0x6e4608*/
   if ( BuildingType::IsSpecialType(aP1) ) /*0x6e4610*/
     return BuildingType::FindOwnerHouse(aP1); /*0x6e461b*/
-  return HouseClass::FindOwner(aP1); /*0x6e45ea*/
+  return ((HouseClass *)(aP1))->FindOwner(); /*0x6e45ea*/
 
 }
 } // namespace gamemd
@@ -2736,7 +2737,7 @@ LABEL_51:
                               (DynamicStringArray *)&stru_B76900.needsRedraw,
                               (char **)&g_WindowManager.__pad_14[16],
                               0) )
-        DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x7a2ddf*/
+        ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x7a2ddf*/
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
       memset(&v22[116], 0, 0x6Cu); /*0x7a2dfe*/
       strcpy(&v22[152], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x7a2e31*/

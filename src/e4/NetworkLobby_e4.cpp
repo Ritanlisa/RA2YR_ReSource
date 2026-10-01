@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkLobby_e4.hpp"
@@ -349,7 +352,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           Dialog::RestoreParent((Dialog *)hDlg); /*0x5dec61*/
           SkirmishDialog::FillComboBoxes((SkirmishDialog *)hDlg); /*0x5dec68*/
           InitGameDropdownColors(v31); /*0x5dec6d*/
-          Lobby::FillPlayerFactions((Lobby *)hDlg); /*0x5dec74*/
+          ((Lobby *)((Lobby *)hDlg))->FillPlayerFactions(); /*0x5dec74*/
           SetupSkirmishDialogPlayerSlot(hDlg, (int)dword_A8DA8C); /*0x5dec81*/
           MapSkirmishDialogPlayerToControl(hDlg, (int)dword_A8DA8C); /*0x5dec8e*/
           _cfltcvt_init(); /*0x5dec93*/
@@ -372,7 +375,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
             ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerColor(-2); /*0x5ded37*/
             ((SessionClass *)((int *)dword_A8DA90[0]))->SetOption(-2); /*0x5ded44*/
             SessionClass::SetOption2((int *)dword_A8DA90[0], -2); /*0x5ded51*/
-            Lobby::FillPlayerFactions((Lobby *)hDlg); /*0x5ded58*/
+            ((Lobby *)((Lobby *)hDlg))->FillPlayerFactions(); /*0x5ded58*/
           }
           SetupSkirmishPlayerSlots(hDlg, 0, (HWND)1); /*0x5ded63*/
           SetupMultiplayerLobbyScreen(hDlg, (void *)0xFFFFFFFF, *(int *)&stru_A8B250.__pad_0[4]); /*0x5ded73*/
@@ -427,7 +430,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
         if ( StartCombo::IDToIndex((StartCombo *)DlgCtrlID) != -1 ) /*0x5def6d*/
         {
           ComboBoxSelectedRaw = (GameSetup *)GetComboBoxSelectedRaw(hDlg, (int)DlgCtrlID, *(unsigned int *)(lParam + 4)); /*0x5def77*/
-          DifficultyString = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5def7e*/
+          DifficultyString = ((GameSetup *)(ComboBoxSelectedRaw))->GetColorTooltip(); /*0x5def7e*/
 LABEL_132:
           ((WideString *)((void **)(lParam + 8)))->Assign_Alt(DifficultyString); /*0x5defb4*/
         }

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
@@ -151,7 +152,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   }
   *((unsigned char *)Block + 509) = 0; /*0x7632a7*/
   *((unsigned int *)Block + 126) = 0; /*0x7632ab*/
-  ObjectClass::Dtor((ObjectClass *)Block); /*0x7632b2*/
+  ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(Block); /*0x7632c1*/
   return &Block->ObjectClass; /*0x7632cb*/
@@ -222,7 +223,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       if ( *(unsigned char *)(v12 + 680) ) /*0x75f464*/
         BuildingClass::SellEffects((int)v6, *(unsigned int *)(v8 + 152)); /*0x75f477*/
     }
-    LOBYTE(Owner) = CellClass::IsActiveOrNext((CellClass *)v6); /*0x75f47e*/
+    LOBYTE(Owner) = ((CellClass *)((CellClass *)v6))->IsActiveOrNext(); /*0x75f47e*/
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
       v13 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x75f497*/

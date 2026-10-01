@@ -249,7 +249,7 @@ void WOL_RequestMatch(void * a1)
     PlayerProfile = (unsigned int)(LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&g_WindowManager.__pad_EC[684]));
     ComPtr::Set((ComPtr *)&v31[24], (int)((unsigned int *)PlayerProfile)[0]); /*0x7a084f*/
     *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x7a0858*/
-    ComPtr::Release((ComPtr *)&v31[16]); /*0x7a085c*/
+    ((ComPtr *)((ComPtr *)&v31[16]))->Release(); /*0x7a085c*/
   }
   else
   {
@@ -282,11 +282,11 @@ void WOL_RequestMatch(void * a1)
         g_WOL_GameProcessState = (unsigned int)(-1);
         g_WOL_GameListPool = (unsigned int)(time(0));
         *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7a091f*/
-        ComPtr::Release((ComPtr *)&v31[16]); /*0x7a0923*/
+        ((ComPtr *)((ComPtr *)&v31[16]))->Release(); /*0x7a0923*/
         DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a092c*/
         DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0935*/
         *(unsigned int *)&v31[24] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x7a093e*/
-        ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0946*/
+        ((ComPtr *)((ComPtr *)&v31[24]))->Release(); /*0x7a0946*/
         return 0; /*0x7a0957*/
       }
       ((String *)((String *)&v31[8]))->Assign_Alt(aWds1); /*0x7a0961*/
@@ -303,7 +303,7 @@ void WOL_RequestMatch(void * a1)
   ((String *)((String *)&v31[8]))->Append2(v11); /*0x7a09a9*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
   *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7a09bb*/
-  ComPtr::Release((ComPtr *)&v31[16]); /*0x7a09bf*/
+  ((ComPtr *)((ComPtr *)&v31[16]))->Release(); /*0x7a09bf*/
   LABEL_35:
   StringCSF = GetStringCSF(aWolRequestingm, 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
   Dialog::ShowMessage(16744576, (size_t)StringCSF); /*0x7a09e6*/
@@ -394,7 +394,7 @@ void WOL_RequestMatch(void * a1)
   DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a0ce8*/
   DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0cf1*/
   *(unsigned int *)&v31[24] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x7a0cfa*/
-  ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0cfe*/
+  ((ComPtr *)((ComPtr *)&v31[24]))->Release(); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 }
 }
@@ -537,7 +537,7 @@ Coord * * WOL_ProcessPingRequests()
           if ( (int)((char *)&stru_B76AC4) > 0 ) /*0x7a1204*/
           {
             ((String *)(&v13))->Reassign((const char **)((char *)&stru_B76AC4)); /*0x7a1210*/
-            DynamicArray::Remove((DynamicArray *)&((char *)&stru_B76AC4), 0); /*0x7a121c*/
+            ((DynamicArray *)((DynamicArray *)&((char *)&stru_B76AC4)))->Remove(0); /*0x7a121c*/
           }
   LABEL_36:
           String::GetOrEmpty(&v13); /*0x7a12fb*/
@@ -554,7 +554,7 @@ Coord * * WOL_ProcessPingRequests()
       if ( (int)((char *)&stru_B76AC4) > 0 ) /*0x7a1246*/
       {
         ((String *)(&v13))->Reassign((const char **)((char *)&stru_B76AC4)); /*0x7a1253*/
-        DynamicArray::Remove((DynamicArray *)&((char *)&stru_B76AC4), 0); /*0x7a125f*/
+        ((DynamicArray *)((DynamicArray *)&((char *)&stru_B76AC4)))->Remove(0); /*0x7a125f*/
       }
       goto LABEL_36; /*0x7a125f*/
     }
@@ -1238,7 +1238,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
                               (DynamicStringArray *)&stru_B76900.needsRedraw,
                               (char **)&g_WindowManager.__pad_14[16],
                               0) )
-        DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x7a2ddf*/
+        ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x7a2ddf*/
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
       memset(&v22[116], 0, 0x6Cu); /*0x7a2dfe*/
       strcpy(&v22[152], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x7a2e31*/
@@ -1329,7 +1329,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       v11 = GetStringCSF(aTxtDownloading, 0, g_Str_File_wonline_cpp, 5526); /*0x7a4d64*/
       swprintf(String, (const size_t)v11, v10, v17); /*0x7a4d72*/
       ((WideString *)((wchar_t **)&v18))->Assign(String); /*0x7a4d86*/
-      SimpleDialogControl::Constructor(v20); /*0x7a4d8f*/
+      ((SimpleDialogControl *)(v20))->Constructor(); /*0x7a4d8f*/
       v20[0] = (unsigned int)&off_7F7624; /*0x7a4da0*/
       v12 = (HWND)CreateDialog(0xD3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_78DA30, 0); /*0x7a4dad*/
       v13 = GetDlgItem(v12, 1479); /*0x7a4dbf*/
@@ -1533,7 +1533,7 @@ AbstractClass * * sub_7AF970()
   int v14; // [esp+90h] [ebp-8h]
 
   Screen::Capture(1, 0, v2, a2); /*0x7af97c*/
-  SimpleDialogControl::Constructor((SimpleDialogControl *)&v6); /*0x7af985*/
+  ((SimpleDialogControl *)((SimpleDialogControl *)&v6))->Constructor(); /*0x7af985*/
   v7 = 0; /*0x7af995*/
   v8 = 0; /*0x7af999*/
   v9 = 0; /*0x7af99d*/
@@ -1618,7 +1618,7 @@ int StartWDTCampaign()
     }
     stru_A8EB00.ObjectTypeClass[33] = 640; /*0x7afc32*/
     stru_A8EB00.ObjectTypeClass[34] = 480; /*0x7afc38*/
-    ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]); /*0x7afc42*/
+    ((ScenarioClass *)((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]))->SaveGameOptions(); /*0x7afc42*/
     DeleteAndZero::Alt(&v19); /*0x7afc4b*/
   }
   v6 = 0; /*0x7afc52*/
@@ -1710,7 +1710,7 @@ int StartWDTCampaign()
           if ( !v20 ) /*0x7aff1e*/
           {
             v19.DeleteAndZero_field_0x08 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0030*/
-            ComPtr::Release((ComPtr *)&v19.DeleteAndZero_field_0x08); /*0x7b0034*/
+            ((ComPtr *)((ComPtr *)&v19.DeleteAndZero_field_0x08))->Release(); /*0x7b0034*/
             return 0; /*0x7b0045*/
           }
           Team_Start_765410((int)v20, dword_B77F94); /*0x7aff2b*/
@@ -1722,7 +1722,7 @@ int StartWDTCampaign()
             if ( v23.ComPtr_field_0x04 && !Team_Start_764FA0((ObjectClass *)v23.ComPtr_field_0x04) ) /*0x7aff61*/
               Team_Start_76ECD0((int)&v23, dword_B77F98); /*0x7aff74*/
             *(unsigned int *)v23.__pad_0 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff7d*/
-            ComPtr::Release(&v23); /*0x7aff81*/
+            ((ComPtr *)(&v23))->Release(); /*0x7aff81*/
           }
           dword_A8B3AC = dword_B77F94 == (char *)3; /*0x7aff9a*/
           if ( Team_Start_76ED10((int)&v19.DeleteAndZero_field_0x08, dword_B77F98) ) /*0x7affa4*/
@@ -1736,7 +1736,7 @@ int StartWDTCampaign()
             v16 = 1; /*0x7affc4*/
           }
           v19.DeleteAndZero_field_0x08 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7affcd*/
-          ComPtr::Release((ComPtr *)&v19.DeleteAndZero_field_0x08); /*0x7affd1*/
+          ((ComPtr *)((ComPtr *)&v19.DeleteAndZero_field_0x08))->Release(); /*0x7affd1*/
   LABEL_25:
           if ( !v16 ) /*0x7afe43*/
             goto LABEL_40; /*0x7afe43*/

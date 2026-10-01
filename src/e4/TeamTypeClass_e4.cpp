@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/INIClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TeamTypeClass_28_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -352,7 +353,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   else if ( v5 != (HouseClass *)-1 ) /*0x6f1103*/
   {
-    *((unsigned int *)this + 49) = HouseClass::FindOwner(v5); /*0x6f110c*/
+    *((unsigned int *)this + 49) = ((HouseClass *)(v5))->FindOwner(); /*0x6f110c*/
     *((unsigned int *)this + 50) = -1; /*0x6f1112*/
   }
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
@@ -737,8 +738,8 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
     (char *)&(unsigned int *)((char *)&g_INI_Key_TRUCKA + 2),
     *((unsigned int *)this + 46),
     0);
-  INIClass::SetInt(aP1, (uint8_t *)&this->TeamTypeClass_field_24, g_INI_Key_TechLevel, *((unsigned int *)this + 51), 0); /*0x6f1727*/
-  INIClass::SetInt(aP1, (uint8_t *)&this->TeamTypeClass_field_24, g_INI_Key_Group, *((unsigned int *)this + 39), 0); /*0x6f173d*/
+  ((INIClass *)(aP1))->SetInt((uint8_t *)&this->TeamTypeClass_field_24, g_INI_Key_TechLevel, *((unsigned int *)this + 51), 0); /*0x6f1727*/
+  ((INIClass *)(aP1))->SetInt((uint8_t *)&this->TeamTypeClass_field_24, g_INI_Key_Group, *((unsigned int *)this + 39), 0); /*0x6f173d*/
   INIClass::SetBool( /*0x6f1751*/
     aP1,
     (uint8_t *)&this->TeamTypeClass_field_24,

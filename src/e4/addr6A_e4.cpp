@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ComPtr_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6A04C0_e4.hpp"
@@ -519,8 +520,8 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
 
   v10 = v3; /*0x6ae2cc*/
   dwNewLong = -1; /*0x6ae2ce*/
-  RulesClass::LoadCountries(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2d6*/
-  RulesClass::ReadDataList(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2e8*/
+  ((RulesClass *)(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]))->LoadCountries(); /*0x6ae2d6*/
+  ((RulesClass *)(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]))->ReadDataList(); /*0x6ae2e8*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
     (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
       *((unsigned int *)dword_A83C9C + i),
@@ -634,7 +635,7 @@ int TechnoClass::ProcessDeployAction()
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
         if ( v3 == dword_B0B5B8 /*0x6afe57*/
-          || (v3 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v32, v3),
+          || (v3 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2(&v32, v3),
               *(unsigned int *)v29 = v3,
               v3 == dword_B0B5B8) )
         {
@@ -753,7 +754,7 @@ int TechnoClass::ProcessDeployAction()
                                         &v31,
                                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
                                         1);
-          v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
+          v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2(&v33, *(int *)v29); /*0x6b0100*/
           v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
           v17 = *((int16_t *)v16 + 1); /*0x6b0109*/
           v18 = *(int16_t *)v16; /*0x6b010d*/

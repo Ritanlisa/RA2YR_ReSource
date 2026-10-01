@@ -13,7 +13,7 @@
 
 // 0x476EB0
 namespace gamemd {
-int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned char * a2)
+int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
 {
 
   int ExitCellByName; // eax

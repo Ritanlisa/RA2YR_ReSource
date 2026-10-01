@@ -106,7 +106,7 @@ int Vector::Cleanup2()
 }
 // 0x41C2E0
 namespace gamemd {
-unsigned short * Vector::ToFacingMath(unsigned short * a2)
+unsigned short * Vector::ToFacingMath(unsigned short *a2)
 {
 
   int v2; // ecx

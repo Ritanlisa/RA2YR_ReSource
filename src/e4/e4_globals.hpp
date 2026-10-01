@@ -14783,3 +14783,48 @@ extern int DataGlobal_B04988;  // data: 0xb04988
 extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
+
+// G41.46 C2065 data supply: vtable/raw-data globals the
+// cache-typed bodies reference but the globals generator missed.
+extern unsigned char vt_TypeList[4];
+extern unsigned char vt_rc_ptr[4];
+extern unsigned int stru_A8EB00;  // data: 0xA8EB00
+extern unsigned char vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr[4];
+extern unsigned char vt_InitializerBase[4];
+extern unsigned char vt_VectorClassrc_ptr[4];
+extern unsigned char vt_VectorClassTRect[4];
+extern unsigned char vt_VectorClassHashObject[4];
+extern unsigned char vt_VectorCursorMSAnimDynamicVectorClass[4];
+extern unsigned char vt_BlitTrans[4];
+extern unsigned char vt_BlitPlain[4];
+extern unsigned char vt_VectorClassTPoint3D[4];
+extern unsigned char vt_List[4];
+extern unsigned int stru_887598;  // data: 0x887598
+extern int g_DDraw_AllowStretchBlits;
+extern int g_DDraw_Initialized;
+extern unsigned char vt_BlitTransLucent25Alpha[4];
+extern unsigned char vt_BlitTransLucent25AlphaZReadWrite[4];
+extern unsigned char vt_BlitTransXlatAlphaZRead[4];
+extern unsigned char vt_BlitTransXlatAlpha[4];
+extern unsigned int stru_A8D600;  // data: 0xA8D600
+extern unsigned char vt_GameOption[4];
+extern unsigned char vt_FlagGameOption[4];
+extern unsigned int unk_7E989C;  // data: 0x7E989C
+extern unsigned int unk_7E9A7C;  // data: 0x7E9A7C
+extern unsigned char vt_DynamicVectorClassrc_ptr[4];
+extern unsigned char vt_VectorCursorunsignedintDynamicVectorClass[4];
+extern unsigned int off_826960;  // data: 0x826960
+extern unsigned int off_81DA28;  // data: 0x81DA28
+extern unsigned int off_81DA58;  // data: 0x81DA58
+extern unsigned int stru_87F5F0;  // data: 0x87F5F0
+extern unsigned char vt_RLEBlitTransZRemapXlatAlpha[4];
+extern unsigned char vt_DynamicVectorClassHashObject[4];
+extern unsigned int unk_7E9ADC;  // data: 0x7E9ADC
+extern unsigned int stru_82BA00;  // data: 0x82BA00
+extern unsigned int off_7E1BC6;  // data: 0x7E1BC6
+extern unsigned char vt_VectorCursorMSSfxEntryDynamicVectorClass[4];
+extern unsigned int stru_A8B250;  // data: 0xA8B250
+extern unsigned char vt_INISection[4];
+extern unsigned char vt_ATLCComObject[4];
+extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];
+extern unsigned char vt_DynamicVectorClassDiscreteDistributionClassDistributionObject[4];

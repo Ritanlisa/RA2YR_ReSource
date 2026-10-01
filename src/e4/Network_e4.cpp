@@ -1106,7 +1106,7 @@ int Network::sendData(AnimClass * aP1)
 }
 // 0x540F90
 namespace gamemd {
-int Network::GetSendCount(void *a1_1)
+int Network::GetSendCount()
 {
 
   return *((unsigned int *)this + 17); /*0x540f93*/
@@ -1115,7 +1115,7 @@ int Network::GetSendCount(void *a1_1)
 }
 // 0x540FA0
 namespace gamemd {
-int Network::GetConnectionSpeed(CellStruct * aP1)
+int Network::GetConnectionSpeed(int aP1)
 {
 
   if ( aP1 < 0 || aP1 >= *((unsigned int *)this + 17) ) /*0x540fab*/
@@ -3303,7 +3303,7 @@ AbstractClass * * Network_ModemConnectionDialog()
     v70[0] = 100; /*0x5efab9*/
     *(int *)((char *)&v70[36] + 2) = Timer::GetElapsed((Timer *)&stru_88732C.__pad_6[6]); /*0x5efacc*/
     IDA_LOBYTE(v70[6]) = (uint8_t)&v77; /*0x5efae7*/
-    Stream::WriteBlock((int *)&unk_A8EA70, (int)v70, 250, 1); /*0x5efaee*/
+    ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v70, 250, 1); /*0x5efaee*/
     Elapsed = Timer::GetElapsed((Timer *)&stru_88732C.__pad_6[6]); /*0x5efb02*/
     if ( (unsigned int)(Timer::GetElapsed((Timer *)&stru_88732C.__pad_6[6]) - Elapsed) < 0x50 ) /*0x5efb0e*/
     {
@@ -5054,7 +5054,7 @@ int Network::SendSettingsRequest()
   memset(v3, 0, sizeof(v3)); /*0x5b5eba*/
   v4 = 0; /*0x5b5ec8*/
   v3[0] = 116; /*0x5b5ecf*/
-  return Stream::WriteBlock((int *)&unk_A8EA70, (int)v3, 250, 1); /*0x5b5edd*/
+  return ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v3, 250, 1); /*0x5b5edd*/
 
 }
 } // namespace gamemd

@@ -49,7 +49,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
     {
       v7 = *((ProgressTimer *)((ProgressTimer *)a1->secondaryFacing))->GetValue(&a5); /*0x41aa2e*/
       if ( (*(int (**)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
-        || abs16(v7 - *(unsigned short *)ObjectClass::CalcTargetFacing((ObjectClass *)a1, (int *)&a5, (int)a3)) <= 0x800u )
+        || abs16(v7 - *(unsigned short *)((ObjectClass *)((ObjectClass *)a1))->CalcTargetFacing((int *)&a5, (int)a3)) <= 0x800u )
       {
         return 0; /*0x41aa77*/
       }
@@ -658,7 +658,7 @@ int TechnoClass::DTOR()
   *((unsigned int *)this + 1) = &vt_MissionClass; /*0x6f477b*/
   *((unsigned int *)this + 2) = &vt_MissionClass; /*0x6f4782*/
   *((unsigned int *)this + 3) = &vt_MissionClass; /*0x6f4789*/
-  return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
+  return ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x6f4795*/
 
 }
 } // namespace gamemd
@@ -1114,7 +1114,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   HIWORD(v36) = v13[1] / 256; /*0x73b17e*/
   *(unsigned int *)v38 = v36; /*0x73b18b*/
   v14 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v38); /*0x73b190*/
-  if ( (uint8_t)CellClass::QuickPassable(v14) ) /*0x73b197*/
+  if ( (uint8_t)((CellClass *)(v14))->QuickPassable() ) /*0x73b197*/
     aP8 = 0; /*0x73b1a0*/
   v15 = 0; /*0x73b1ae*/
   if ( *(unsigned char *)(v12[433] + 3606) ) /*0x73b1b0*/

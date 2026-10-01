@@ -172,7 +172,7 @@ void GameConfig::Constructor(void *a1_1, void *a2_1, void *a3_1)
       *(unsigned int *)(v2 + 20) = 0; /*0x5d67e6*/
       *(unsigned int *)(v2 + 24) = 0; /*0x5d67e9*/
       *(unsigned int *)(v2 + 16) = (unsigned int)(&vt_GenericNode); /*0x5d67ec*/
-      GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
+      ((GenericNode *)((GenericNode *)(v2 + 28)))->Constructor(); /*0x5d67f2*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_GenericList); /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
       v1 = this; /*0x5d6806*/

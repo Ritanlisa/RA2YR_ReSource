@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct MessageListClass {
     int MessageListClass:: AddMessage(void * Source, int a3, void * a4, int a5, int a6, int a7, char a8);
+    int clearMessages(int a2, int a3, int a4, int a5, int a6);  // 0x72a440
 };
 
 } // namespace gamemd

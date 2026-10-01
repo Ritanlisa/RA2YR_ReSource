@@ -264,7 +264,7 @@ rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
 
   *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x769d93*/
-  ComPtr::Release((ComPtr *)Block); /*0x769d99*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     __3_YAXPAX_Z(Block); /*0x769da6*/
   return Block->__pad_0; /*0x769db0*/

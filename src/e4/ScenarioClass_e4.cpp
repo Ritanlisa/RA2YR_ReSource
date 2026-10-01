@@ -300,7 +300,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       startingAllies = v2->startingAllies; /*0x5d6c12*/
       if ( startingAllies != -2 ) /*0x5d6c1b*/
       {
-        HouseClass::SetMapSeed(v2, *((unsigned int *)Block + startingAllies)); /*0x5d6c25*/
+        ((HouseClass *)(v2))->SetMapSeed(*((unsigned int *)Block + startingAllies)); /*0x5d6c25*/
         *(&((unsigned int *)(dword_A8B230))[124].uniqueId + startingAllies) = i; /*0x5d6c2f*/
       }
     }
@@ -396,7 +396,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
     {
       *v9 = 0; /*0x6834eb*/
       this->variablesChanged = 1; /*0x6834ef*/
-      HouseClass::UpdateAllTypes((HouseClass *)v8); /*0x6834f6*/
+      ((HouseClass *)((HouseClass *)v8))->UpdateAllTypes(); /*0x6834f6*/
     }
     ++v8; /*0x6834fb*/
     v9 += 41; /*0x6834fc*/
@@ -527,7 +527,7 @@ LABEL_21:
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
-  v11 = StringList::Find((StringList *)&unk_A83D10, &((char *)&stru_82BA00)); /*0x683d0f*/
+  v11 = ((StringList *)((StringList *)&unk_A83D10))->Find(&((char *)&stru_82BA00)); /*0x683d0f*/
   ThemeClass::Play((ThemeClass *)&unk_A83D10, v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
@@ -1032,7 +1032,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
           v25 = g_ScenarioClass_Instance;
         }
       }
-      RulesClass::LoadCountries(*(RulesClass **)&DataGlobal_87F8E4[30972]);
+      ((RulesClass *)(*(RulesClass **)&DataGlobal_87F8E4[30972]))->LoadCountries();
       RulesClass::LoadFromINI(*(RulesClass **)&DataGlobal_87F8E4[30972]);
       for ( j = 0; j < g_SuperWeaponTypeArray; ++j )
         (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)g_SuperWeaponTypeCount + j) + 100))(

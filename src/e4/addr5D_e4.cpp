@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CCFileClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5D0190_e4.hpp"
@@ -651,7 +652,7 @@ char sub_5D6000(HWND hWnd, int a2)
   bool v8; // [esp+13h] [ebp-9h]
   int i; // [esp+14h] [ebp-8h]
 
-  ListBox::Clear(hWnd); /*0x5d600d*/
+  ((ListBox *)(hWnd))->Clear(); /*0x5d600d*/
   v8 = ((unsigned int *)(dword_A8B238))[0] == 5; /*0x5d6020*/
   v3 = 0; /*0x5d6027*/
   for ( i = 0; ; v3 = i ) /*0x5d6029*/
@@ -737,7 +738,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
       {
         while ( 1 ) /*0x5d766b*/
         {
-          INIClass::GetStringByIndexEx((INIClass *)&v19.bombVisible, (char **)&((char *)&v19), v2, v19.owningHouseIndex); /*0x5d766b*/
+          ((INIClass *)((INIClass *)&v19.bombVisible))->GetStringByIndexEx((char **)&((char *)&v19), v2, v19.owningHouseIndex); /*0x5d766b*/
           __1_Timevec_std__QAE_XZ((const char **)&((char *)&v19)); /*0x5d7674*/
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
@@ -1713,7 +1714,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
         if ( 8 * LobbyStatus < 120 ) /*0x5dd9d8*/
           v5 = 120; /*0x5dd9da*/
         Network::SetConnectionParams(&unk_A8E9C0, LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
-        TacticalClass::SetCameraPosition(&unk_A8E9C0, 60, -1, 600); /*0x5dd9fd*/
+        ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(60, -1, 600); /*0x5dd9fd*/
         return 1; /*0x5dda0c*/
       }
     }

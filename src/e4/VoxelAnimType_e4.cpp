@@ -379,7 +379,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
   if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 40 || *((unsigned char *)this + 3233) ) /*0x5f8287*/
   {
     if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 40 /*0x5f8657*/
-      || !(uint8_t)HouseClass::HasPower((HouseClass *)this)
+      || !(uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       || *((unsigned char *)this + 3285) )
     {
       sprintf(Filename, "%sTUR", v2); /*0x5f86a4*/
@@ -567,7 +567,7 @@ LABEL_93:
   if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || *((unsigned char *)this + 3233) ) /*0x5f8850*/
   {
     if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 /*0x5f8873*/
-      && (uint8_t)HouseClass::HasPower((HouseClass *)this)
+      && (uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       && !*((unsigned char *)this + 3285) )
     {
       v33 = *((unsigned int *)this + 514); /*0x5f887b*/
@@ -659,7 +659,7 @@ LABEL_123:
       *((unsigned int *)this + 45) = 0; /*0x5f8aa4*/
     }
     if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 /*0x5f8ac1*/
-      && (uint8_t)HouseClass::HasPower((HouseClass *)this)
+      && (uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       && !*((unsigned char *)this + 3285) )
     {
       ObjectTypeClass::CleanupWeapons(this); /*0x5f8acb*/

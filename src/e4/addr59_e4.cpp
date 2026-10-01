@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_592AF0_e4.hpp"
 #include "e4/classes/E4Recv_593030_e4.hpp"
@@ -82,7 +84,7 @@ void PlaceCabhutMap(FootClass * aP0)
       goto LABEL_7; /*0x59051a*/
   }
   v7 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x59053c*/
-  Owner = HouseClass::FindOwner(v7); /*0x59054d*/
+  Owner = ((HouseClass *)(v7))->FindOwner(); /*0x59054d*/
   IndexByName = ((BuildingTypeClass *)(stru_82BA00))->FindIndexByName(); /*0x590559*/
   v10 = RA2_OPNEW(0x720u); /*0x59055b*/
   if ( v10 ) /*0x590565*/
@@ -775,7 +777,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.ComPtr_field_0x08, *(int *)dword_A8B240); /*0x595ff1*/
     ComPtr::Set(&v17, WDTTerritoryClass[1]); /*0x595ffe*/
     v17.ComPtr_field_0x08 = (int)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
-    ComPtr::Release((ComPtr *)&v17.ComPtr_field_0x08); /*0x59600b*/
+    ((ComPtr *)((ComPtr *)&v17.ComPtr_field_0x08))->Release(); /*0x59600b*/
   }
   if ( v17.ComPtr_field_0x04 ) /*0x596016*/
     g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
@@ -874,7 +876,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
 // 0x65d460
-  return ComPtr::Release(&v17); /*0x5962f5*/
+  return ((ComPtr *)(&v17))->Release(); /*0x5962f5*/
 }
 }
 // 0x59A8F0

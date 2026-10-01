@@ -766,6 +766,18 @@ struct BuildingClass {
     static double GetType(...);  // C2597 interim stub
     static double GetSHPFrame(...);  // C2597 interim stub
     static double UpdateFloatPosition(...);  // C2597 interim stub
+    int CreatePlacementCrater();  // 0x486e70
+    void UnloadUnits(char a2, char a3);  // 0x457de0
+    unsigned int * FindPlacementCells2(unsigned int *a2, int a3);  // 0x6b0300
+    int ExecuteTriggers(int a2, char a3);  // 0x7265c0
+    int UpdateDamageAnim();  // 0x459470
+    void RemoveLimpet();  // 0x4593a0
+    void AnimateUnloadUnits(int a2);  // 0x4585c0
+    void UpdateAnimationSlots();  // 0x4547c0
+    void ProcessAnimationStates();  // 0x4545d0
+    char ValidatePath(unsigned short *a2, int a3);  // 0x716150
+    int TogglePower2(int a2);  // 0x4ac8c0
+    int ProcessUpgradeEffects();  // 0x726400
 };
 
 } // namespace gamemd

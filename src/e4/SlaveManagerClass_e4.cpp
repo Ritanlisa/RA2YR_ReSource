@@ -715,7 +715,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
 }
 // 0x6B0A20
 namespace gamemd {
-int SlaveManagerClass::LostSlave(ObjectClass * aP1)
+int SlaveManagerClass::LostSlave(int aP1)
 {
 
   int result; // eax

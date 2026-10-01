@@ -1,5 +1,6 @@
 // CCFileClass -- IDA-based class for file access (MIX pool search + disk fallback)
 #include "system/cc_file.hpp"
+#include "e4/classes/Buffer_e4.hpp"
 #include "system/mix_file.hpp"
 #include "system/file_system.hpp"
 #include "core/logging.hpp"

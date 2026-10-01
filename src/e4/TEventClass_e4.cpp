@@ -278,14 +278,14 @@ LABEL_22:
           if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
           {
             v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
-            if ( v53 == (HouseClass *)-1 || HouseClass::FindOwner(v53) ) /*0x71f1c9*/
+            if ( v53 == (HouseClass *)-1 || ((HouseClass *)(v53))->FindOwner() ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
                 v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
                 if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
                   || (v55 = (*(int (**)(int))(*(unsigned int *)a4 + 56))(a4),
-                      v55 == *(unsigned int *)(HouseClass::FindOwner(v54) + 48)) )
+                      v55 == *(unsigned int *)(((HouseClass *)(v54))->FindOwner() + 48)) )
                 {
                   *(unsigned char *)a6 = 1; /*0x71f1ff*/
                   this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
@@ -307,12 +307,12 @@ LABEL_139:
               v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
               if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
               {
-                if ( HouseClass::FindOwner(v29) ) /*0x71ed01*/
+                if ( ((HouseClass *)(v29))->FindOwner() ) /*0x71ed01*/
                 {
                   if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
                     v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34) /*0x71ed40*/
+                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(((HouseClass *)((HouseClass *)this->TEventClass_field_34))->FindOwner() /*0x71ed40*/
                                                             + 48) )
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
@@ -499,7 +499,7 @@ LABEL_91:
         }
       }
 LABEL_122:
-      Owner = HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34); /*0x71f069*/
+      Owner = ((HouseClass *)((HouseClass *)this->TEventClass_field_34))->FindOwner(); /*0x71f069*/
       if ( Owner ) /*0x71f075*/
       {
         switch ( this->TEventClass_field_2C ) /*0x71f092*/

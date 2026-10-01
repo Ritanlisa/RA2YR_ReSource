@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
@@ -546,7 +549,7 @@ LABEL_151:
                 *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * (unsigned int)v50) = v48;
               }
             }
-            Player::RandomAssign(&HouseClass_Player[29932]);
+            ((Player *)(&HouseClass_Player[29932]))->RandomAssign();
             v51 = GetDlgItem((HWND)hWnd, 1321);
             if ( v51 )
             {

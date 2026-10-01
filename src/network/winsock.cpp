@@ -1,4 +1,5 @@
 #include "network/winsock.hpp"
+#include "e4/classes/Socket_e4.hpp"
 #include "core/logging.hpp"
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <winsock2.h>

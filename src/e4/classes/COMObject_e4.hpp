@@ -59,6 +59,7 @@ struct COMObject {
     unsigned int *q01C;  // supplied (C2039)
     unsigned int *__pad_31;  // supplied (C2039)
     unsigned int *m_2D;  // supplied (C2039)
+    int * SwapReference(int a2);  // 0x5233a0
 };
 
 } // namespace gamemd

@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_520260_e4.hpp"
@@ -410,7 +412,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     v10 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init(v27, 0)); /*0x529ee2*/
     v11 = vtable2 + 11; /*0x529ef5*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
-    if ( (uint8_t)SortedArray::Find(v11, (int *)&a4) ) /*0x529f02*/
+    if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x529f02*/
     {
       v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x529f1a*/
       if ( v12 ) /*0x529f1e*/
@@ -501,7 +503,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     v10 = (Checksummer *)KeyValuePair::Init((KeyValuePair *)&v21.buffer, 0); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
     v11 = vtable2 + 11; /*0x52a17a*/
-    if ( (uint8_t)SortedArray::Find(v11, (int *)&a4) ) /*0x52a184*/
+    if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x52a184*/
     {
       v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x52a199*/
       if ( v12 ) /*0x52a19d*/
@@ -604,7 +606,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     v10 = (Checksummer *)KeyValuePair::Init(v29, 0); /*0x52a362*/
     v11 = vtable2 + 11; /*0x52a375*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x52a37b*/
-    if ( (uint8_t)SortedArray::Find(v11, (int *)&a4) ) /*0x52a382*/
+    if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x52a382*/
     {
       v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x52a39a*/
       if ( v12 ) /*0x52a39e*/
@@ -942,7 +944,7 @@ LABEL_3:
   do
   {
   unsigned char v85[4]; // [esp+24h] [ebp-2F1Ch] BYREF
-    v20 = (ObjectClass *)Palette::SixBitTo16Bit(v85, *(v22 - 1), *v22, v22[1]);
+    v20 = (ObjectClass *)((Palette *)(v85))->SixBitTo16Bit(*(v22 - 1), *v22, v22[1]);
     ecx26 = &stru_87C374[22428][3 * (v21 % 256) + 19312];
     v22 += 3;
     ++v21;
@@ -1811,7 +1813,7 @@ void MenuSelect()
   LONG v62[23]; // [esp+6Ah] [ebp-BCh] BYREF
   LONG v63[24]; // [esp+C6h] [ebp-60h] BYREF
 
-  v0 = (Movie *)StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO);
+  v0 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
   ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v0);
 LABEL_2:
   int v1 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
@@ -1948,7 +1950,7 @@ LABEL_32:
     if ( esi12 == 7 )
       goto LABEL_35;
 LABEL_34:
-    eax34 = (Movie *)StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO);
+    eax34 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
     ThemeClass::Play((int *)&g_BuildingTypeClass_Count, eax34);
 LABEL_35:
     Event::Dispatch();
@@ -2005,7 +2007,7 @@ LABEL_40:
         else
         {
           esi12 = 7;
-          ScenarioClass::SaveGameOptions((int)&HouseClass_Player[44564]);
+          ((ScenarioClass *)((int)&HouseClass_Player[44564]))->SaveGameOptions();
         }
         goto LABEL_134;
       case 7:
@@ -2263,7 +2265,7 @@ LABEL_189:
                 int v48 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2;
               else
                 v48 = 60;
-              TacticalClass::SetCameraPosition(&HouseClass_Player[44148], v48, -1, 600);
+              ((TacticalClass *)(&HouseClass_Player[44148]))->SetCameraPosition(v48, -1, 600);
             }
             else if ( *(unsigned int *)&HouseClass_Player[29932] == 4
                    && !*(unsigned int *)&HouseClass_Player[30756] )
@@ -2362,14 +2364,14 @@ LABEL_134:
       case 15:
         esi12 = 4;
         CreditsPower::Display(0, j, 4);
-        v17 = (IUnknown *)StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO);
+        v17 = (IUnknown *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
         Theme::QueueSong((int)&g_BuildingTypeClass_Count, v17);
         Screen::Capture(1, 0, 0, -1);
         goto LABEL_134;
       case 16:
       case 17:
 LABEL_81:
-        ScenarioClass::LoadNetworkConfig((int)&HouseClass_Player[29932]);
+        ((ScenarioClass *)((int)&HouseClass_Player[29932]))->LoadNetworkConfig();
         for ( j = 0; j < g_SuperWeaponTypeArray; ++j )
           (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)g_SuperWeaponTypeCount + j) + 100))(
             *((unsigned int *)g_SuperWeaponTypeCount + j),
@@ -2434,7 +2436,7 @@ LABEL_116:
                   v32 += 4;
                 }
                 while ( (int)v32 < (int)g_PlayerHouseFlags_End );
-                ScenarioClass::LoadNetworkConfig((int)&HouseClass_Player[29932]);
+                ((ScenarioClass *)((int)&HouseClass_Player[29932]))->LoadNetworkConfig();
                 if ( *(unsigned int *)&stru_87C374[45748] )
                 {
                   (***(void (****)(unsigned int, int))&stru_87C374[45748])(
@@ -2499,7 +2501,7 @@ LABEL_116:
                 *(unsigned int *)&stru_87C374[45748] = 0;
                 esi12 = 18;
                 *(unsigned int *)&HouseClass_Player[29932] = 0;
-                v31 = (Movie *)StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO);
+                v31 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
                 ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v31);
                 goto LABEL_116;
               case -1:

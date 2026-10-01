@@ -62,8 +62,8 @@ char sub_5F0070()
     v5 = 0; /*0x5f0096*/
     v6 = 0; /*0x5f0098*/
     v4[0] = 19; /*0x5f00a5*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00aa*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00bd*/
+    ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v4, 111, 0); /*0x5f00aa*/
+    ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
             v1 += this->this->((Timer *)0)->GetTicks() - g_abs_887338;
@@ -112,7 +112,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         String[0] = 0; /*0x5f01b6*/
         if ( a2 == -1 ) /*0x5f01bd*/
         {
-          ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f0227*/
+          ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f0227*/
         }
         else if ( a2 ) /*0x5f01c1*/
         {
@@ -154,7 +154,7 @@ char HandlePlayerDisconnection(int a1, int a2)
           }
         }
   LABEL_20:
-        HouseClass::AIBuildBase((void *)v3); /*0x5f0318*/
+        ((HouseClass *)((void *)v3))->AIBuildBase(); /*0x5f0318*/
         result = --dword_A8B54C; /*0x5f0324*/
         if ( dword_A8B54C == 1 ) /*0x5f032f*/
         {

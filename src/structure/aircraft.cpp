@@ -1,4 +1,6 @@
 #include "structure/aircraft.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 #include <cstring>
 #include <cmath>

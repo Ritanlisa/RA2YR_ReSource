@@ -502,7 +502,7 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
             v17 = v6[53] - 1; /*0x424e3f*/
             v19 = v10; /*0x424e42*/
             v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v17); /*0x424e46*/
-            v13 = AnimClass::ctor(v7, *(void **)(v6[50] + 4 * v12), &v18, 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
+            v13 = ((AnimClass *)(v7))->ctor(*(void **)(v6[50] + 4 * v12), &v18, 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
           }
           else
           {

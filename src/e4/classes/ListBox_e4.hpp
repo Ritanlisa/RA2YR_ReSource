@@ -18,6 +18,7 @@ struct ListBox {
     unsigned int u32_1E;  // 0x1E
 // --- flat members (END) ---
     unsigned int EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam);
+    int Clear();  // 0x623840
 };
 
 } // namespace gamemd

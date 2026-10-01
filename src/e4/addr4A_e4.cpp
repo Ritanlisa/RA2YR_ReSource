@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4A02B0_e4.hpp"
 #include "e4/classes/E4Recv_4A0380_e4.hpp"
@@ -1900,7 +1902,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
             || (int16_t)v13 >= v23 + FoundationHeight )
           {
             v14 = CellCoord::To_CellObj(&dword_87F7E8, v19); /*0x4a8fc5*/
-            v15 = Cell::IsBridge(v14); /*0x4a8fcc*/
+            v15 = ((Cell *)(v14))->IsBridge(); /*0x4a8fcc*/
             v16 = v15; /*0x4a8fd1*/
             if ( v15 ) /*0x4a8fd5*/
             {

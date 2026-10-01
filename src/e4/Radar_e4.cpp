@@ -148,7 +148,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
         v7 = *(unsigned int *)(v5 + 608); /*0x4addf8*/
         v10[1] = *(unsigned int *)(v5 + 160); /*0x4ade04*/
         v10[2] = *(unsigned int *)(v5 + 164); /*0x4ade18*/
-        result = MapClass::RevealArea2(&dword_87F7E8, v10, 0, v7 + 3, 0); /*0x4ade1c*/
+        result = ((MapClass *)(&dword_87F7E8))->RevealArea2(v10, 0, v7 + 3, 0); /*0x4ade1c*/
       }
       else if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4ade4c*/
              && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v5 + 132))(v5) + 1518)
@@ -165,7 +165,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
         v8 = *(unsigned int *)(v5 + 608) + 3; /*0x4ade85*/
         v11[1] = *(unsigned int *)(v5 + 160); /*0x4ade88*/
         v11[2] = *(unsigned int *)(v5 + 164); /*0x4ade9c*/
-        result = MapClass::RevealArea2(&dword_87F7E8, v11, 0, v8, 0); /*0x4adea0*/
+        result = ((MapClass *)(&dword_87F7E8))->RevealArea2(v11, 0, v8, 0); /*0x4adea0*/
       }
       else
       {
@@ -185,7 +185,7 @@ LABEL_20:
     v6 = *(unsigned int *)(v5 + 608) + 3; /*0x4add69*/
     v9[1] = *(unsigned int *)(v5 + 160); /*0x4add6c*/
     v9[2] = *(unsigned int *)(v5 + 164); /*0x4add78*/
-    MapClass::RevealArea2(&dword_87F7E8, v9, 0, v6, 0); /*0x4add84*/
+    ((MapClass *)(&dword_87F7E8))->RevealArea2(v9, 0, v6, 0); /*0x4add84*/
     result = (*(int (**)(int))(*(unsigned int *)v5 + 132))(v5); /*0x4add8d*/
     if ( !*(unsigned char *)(result + 3281) ) /*0x4add93*/
       goto LABEL_20; /*0x4add9b*/

@@ -39,7 +39,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
 }
 // 0x4E1390
 namespace gamemd {
-ControlClass GadgetClass::Dtor(void *a1)
+ControlClass GadgetClass::Dtor()
 {
 
   ShpButtonClass *v1; // eax

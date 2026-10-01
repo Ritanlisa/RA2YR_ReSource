@@ -10,7 +10,7 @@
 
 // 0x552060
 namespace gamemd {
-int LCWPipe::Dtor(void *a1)
+int LCWPipe::Dtor()
 {
 
   void *v2; // eax

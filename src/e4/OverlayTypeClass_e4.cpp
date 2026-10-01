@@ -144,7 +144,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                                  (unsigned int)this->CellAnim);
   v4 = *(unsigned int *)&this->Wall; /*0x5fe7b1*/
   this->CellAnim = INIString; /*0x5fe7b7*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aStrength, v4); /*0x5fe7c6*/
+  Int_Overwrite = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0], aStrength, v4); /*0x5fe7c6*/
   NoUseTileLandType = this->NoUseTileLandType; /*0x5fe7d3*/
   *(unsigned int *)&this->Wall = Int_Overwrite; /*0x5fe7da*/
   this->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/

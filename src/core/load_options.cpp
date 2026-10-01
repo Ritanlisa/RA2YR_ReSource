@@ -1,4 +1,5 @@
 #include "core/load_options.hpp"
+#include "e4/classes/SaveLoadDialog_e4.hpp"
 #include "core/logging.hpp"
 #include <windows.h>
 #include <cstdio>

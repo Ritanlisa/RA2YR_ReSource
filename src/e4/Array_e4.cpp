@@ -14,7 +14,7 @@
 
 // 0x557AC0
 namespace gamemd {
-int Array::GetClamped(CheckListClass * aP1)
+int Array::GetClamped(int aP1)
 {
 
   int result; // eax
@@ -36,7 +36,7 @@ int Array::GetClamped(CheckListClass * aP1)
 }
 // 0x634290
 namespace gamemd {
-int Array::FindValue(IUnknown * aP1)
+int Array::FindValue(int aP1)
 {
 
   void *Array_field_0x10; // esi

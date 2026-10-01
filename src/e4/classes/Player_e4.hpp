@@ -13,6 +13,7 @@ struct Player {
     void IsObserver(void *a1);
     void BuildListString(wchar_t * Destination);
     void FindByName(wchar_t * String2);
+    void RandomAssign();  // 0x69b8c0
 };
 
 } // namespace gamemd

@@ -630,6 +630,7 @@ struct SidebarClass {
     int select();
     void * LoadAssets();
     void CreateScrollButtons();
+    int UpdateStrips(int *a2, unsigned int *a3);  // 0x6a7780
 };
 
 } // namespace gamemd

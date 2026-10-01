@@ -1,4 +1,5 @@
 #include "system/map.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "system/cell.hpp"
 
 #include <cstring>

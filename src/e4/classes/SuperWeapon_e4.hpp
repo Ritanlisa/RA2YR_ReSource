@@ -134,6 +134,7 @@ struct SuperWeapon {
     void* q6120;  // 0x6120
 // --- flat members (END) ---
     int GetField10();
+    char FireSuperWeaponHouseClass(int a2, int a3);  // 0x4fae50
 };
 
 } // namespace gamemd

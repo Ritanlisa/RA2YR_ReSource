@@ -374,6 +374,7 @@ struct ControlClass {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    unsigned int * CtorFromData(int a2);  // 0x48e570
 };
 
 struct Coord2D {
@@ -17798,6 +17799,7 @@ struct HashMap {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    int Shrink();  // 0x7ae460
 };
 
 struct IDXContainer {
@@ -17878,6 +17880,7 @@ struct MSAnim {
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    int SetField(unsigned int a2);  // 0x5cb860
 };
 
 struct MSChoiceClass {
@@ -18077,6 +18080,19 @@ struct ObjectClass {
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
+    int updateStateFlags();  // 0x4e02c0
+    int processDeath();  // 0x74cd60
+    int SetAnim(int a2);  // 0x5f6060
+    int GetSizeMax();  // 0x4103e0
+    int processDamage();  // 0x6a5000
+    int DistanceTo(int a2);  // 0x5f6360
+    int * CalcTargetFacing(int *a2, int a3);  // 0x5f3db0
+    unsigned int * ctor();  // 0x5f3900
+    int StepCleanup(void *a2);  // 0x5f3e50
+    int FreeResources();  // 0x5f1960
+    int Dtor();  // 0x5f3b80
+    int Undeploy();  // 0x5f4d30
+    int PreDraw();  // 0x6d0f00
 };
 
 struct ObjectPtr {
@@ -18242,6 +18258,7 @@ struct ShroudClass {
 struct SimpleDialogControl {
     void* vfptr;
     unsigned char q000;  // 0x0
+    unsigned int * Constructor();  // 0x624110
 };
 
 struct SlaveControlVector {
@@ -18274,6 +18291,7 @@ struct Straw {
 struct StringList {
     void* vfptr;
     unsigned char q000;  // 0x0
+    int Find(const char *a2);  // 0x721210
 };
 
 struct StringTable {
@@ -18328,6 +18346,7 @@ struct Targeting {
 struct TaskManager {
     void* vfptr;
     unsigned char q000;  // 0x0
+    int Update();  // 0x6b7100
 };
 
 struct TechnoTypeVector {
@@ -18411,6 +18430,7 @@ struct Vector2 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    int NormalizeNonZero();  // 0x41c460
 };
 
 struct Vector3 {
@@ -18499,6 +18519,7 @@ struct WorldDominationTour {
 struct ZBuffer {
     void* vfptr;
     unsigned char q000;  // 0x0
+    char RenderSprite();  // 0x53d580
 };
 
 struct _com_error {

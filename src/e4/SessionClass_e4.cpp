@@ -326,7 +326,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   {
     ((String *)((String *)&v43))->Assign(0); /*0x5cefa2*/
     v42 = FromStringInt((IUnknown *)((char **)&((char *)&v43)), v4); /*0x5cefbc*/
-    v5 = INIClass::ReadString((INIClass *)&((char *)&v43), a1, v42, (char **)&v43, (int)&((char *)&v43)) == 0; /*0x5cefd4*/
+    v5 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, v42, (char **)&v43, (int)&((char *)&v43)) == 0; /*0x5cefd4*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cefd7*/
     DeleteAndZero(&v43); /*0x5cefe0*/
     if ( v5 ) /*0x5cefe7*/
@@ -362,14 +362,14 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   {
     ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf0e0*/
     ((String *)((String *)&v43))->Assign((const char *)(aAnims)); /*0x5cf0ee*/
-    v13 = INIClass::ReadString((INIClass *)&((char *)&v43), a1, (char **)&v43, (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf119*/
+    v13 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, (char **)&v43, (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf119*/
     DeleteAndZero(&v43); /*0x5cf11c*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf125*/
     if ( v13 ) /*0x5cf12c*/
     {
       ((String *)((String *)&v43))->Assign(0); /*0x5cf137*/
       ((String *)((String *)&((char *)&v43)))->Assign(aTextrect); /*0x5cf145*/
-      v14 = INIClass::ReadString((INIClass *)&((char *)&v43), (char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf16d*/
+      v14 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf16d*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf170*/
       DeleteAndZero(&v43); /*0x5cf179*/
       if ( v14 ) /*0x5cf180*/
@@ -403,7 +403,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       }
       ((String *)((String *)&v43))->Assign(0); /*0x5cf259*/
       ((String *)((String *)&((char *)&v43)))->Assign(g_INI_Key_Palette); /*0x5cf267*/
-      v22 = INIClass::ReadString((INIClass *)&((char *)&v43), (char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf28f*/
+      v22 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf28f*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf292*/
       DeleteAndZero(&v43); /*0x5cf29b*/
       if ( v22 ) /*0x5cf2a2*/
@@ -413,7 +413,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       {
         ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf2bc*/
         v24 = FromStringInt((char **)&v43, v23); /*0x5cf2d1*/
-        v25 = INIClass::ReadString((INIClass *)&((char *)&v43), (char **)&((char *)&v43), v24, (char **)&((char *)&v43), (int)&((char *)&v43)) == 0; /*0x5cf2eb*/
+        v25 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), v24, (char **)&((char *)&v43), (int)&((char *)&v43)) == 0; /*0x5cf2eb*/
         DeleteAndZero(&v43); /*0x5cf2ee*/
         DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf2f7*/
         if ( v25 ) /*0x5cf2fe*/
@@ -449,7 +449,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       unknown_libname_73(&v43); /*0x5cf3f4*/
       ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf3fe*/
       ((String *)((String *)&((char *)&v43)))->Assign(aSounds); /*0x5cf40c*/
-      v33 = INIClass::ReadString((INIClass *)&((char *)&v43), a1, (char **)&((char *)&v43), (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf437*/
+      v33 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, (char **)&((char *)&v43), (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf437*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf43a*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf443*/
       if ( v33 ) /*0x5cf44a*/
@@ -459,7 +459,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
         {
           do /*0x5cf585*/
           {
-            StringByIndex = INIClass::GetStringByIndexEx((INIClass *)&((char *)&v43), (char **)&((char *)&v43), (char **)&((char *)&v43), (int)v3); /*0x5cf479*/
+            StringByIndex = ((INIClass *)((INIClass *)&((char *)&v43)))->GetStringByIndexEx((char **)&((char *)&v43), (char **)&((char *)&v43), (int)v3); /*0x5cf479*/
             ((String *)((String *)&v43))->Reassign((const char **)StringByIndex); /*0x5cf483*/
             DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf48c*/
             if ( (uint8_t)String::NotEquals((String *)&v43, 0) ) /*0x5cf497*/
@@ -542,7 +542,7 @@ LABEL_17:
 } // namespace gamemd
 // 0x5CF5F0
 namespace gamemd {
-int SessionClass::Destruct(void *a1, void *a2)
+int SessionClass::Destruct()
 {
 
   int i; // ebx
@@ -820,7 +820,7 @@ LABEL_15:
 } // namespace gamemd
 // 0x691500
 namespace gamemd {
-unsigned int * SessionClass::GetEntry(IUnknown * aP1)
+unsigned int * SessionClass::GetEntry(unsigned int *aP1)
 {
 
   int v2; // edx
@@ -976,7 +976,7 @@ int SessionClass::SetOption(int aP1)
 } // namespace gamemd
 // 0x697020
 namespace gamemd {
-int SessionClass::SetOption2(SessionClass * aP1)
+int SessionClass::SetOption2(int aP1)
 {
 
   int result; // eax
@@ -1912,7 +1912,7 @@ ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Sourc
 
 }
 // 0x69B7E0
-int SessionClass::AssignColor(int a2, MPCooperative * aP2)
+int SessionClass::AssignColor(int a2, char aP2)
 {
 
   int result; // eax
@@ -2487,7 +2487,7 @@ unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
 
 }
 // 0x69B760
-int SessionClass::AssignSide(int a2, MPCooperative * aP2)
+int SessionClass::AssignSide(int a2, char aP2)
 {
 
   int result; // eax

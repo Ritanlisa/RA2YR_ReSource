@@ -1902,7 +1902,7 @@ void unknown_libname_18()
     FileFind::Close(); /*0x5f1663*/
     RA2_OPDEL(v0); /*0x5f1669*/
   }
-  ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f1673*/
+  ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f1673*/
   if ( unk_A8EAB0 != -1 ) /*0x5f1680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f168a*/
@@ -1912,7 +1912,7 @@ void unknown_libname_18()
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f169f*/
     g_ClipboardBuffer = 0; /*0x5f16a1*/
     unk_A8EAB0 = -1; /*0x5f16ad*/
-    ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f16b0*/
+    ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f16b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f16bd*/
   {

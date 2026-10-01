@@ -32,6 +32,7 @@ struct SortedArray {
     int FindPair(int * a2);
     static double CheckCache(...);  // C2597 interim stub
      double FindValue(...);  // C2597 interim stub
+    int Find(int *a2);  // 0x52b170
 };
 
 } // namespace gamemd

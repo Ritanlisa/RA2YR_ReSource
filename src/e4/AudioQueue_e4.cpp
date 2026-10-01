@@ -648,7 +648,7 @@ int AudioQueue::GetNext(void *a1_1)
 
 // 0x4073E0
 namespace gamemd {
-int AudioQueue::GetNextAlt(void *a1_1)
+int AudioQueue::GetNextAlt()
 {
 
   int result; // eax

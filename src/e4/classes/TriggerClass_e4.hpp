@@ -54,6 +54,7 @@ struct TriggerClass {
     int StubReturn72();
     int ddtor(int a1, unsigned int * a2);
     static double NotifyLocalChanged(...);  // C2597 interim stub
+    char EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4);  // 0x41e720
 };
 
 } // namespace gamemd

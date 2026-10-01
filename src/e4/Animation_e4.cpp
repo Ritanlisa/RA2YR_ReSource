@@ -89,7 +89,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       (*(void (**)(Animation *))(*(unsigned int *)this + 1044))(this); /*0x454a59*/
     v7 = *((unsigned int *)this + 328); /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
-      BuildingClass::ProcessAnimationStates((BuildingClass *)this); /*0x454a7b*/
+      ((BuildingClass *)((BuildingClass *)this))->ProcessAnimationStates(); /*0x454a7b*/
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5492) ) /*0x454a86*/
     {
       BuildingClass::ClearAnims((BuildingClass *)this, 19); /*0x454a98*/
@@ -163,7 +163,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   }
   v19 = *((unsigned int *)this + 328); /*0x454bf1*/
   if ( *(unsigned char *)(v19 + 5491) && *(int *)(v19 + 3812) > 0 ) /*0x454c09*/
-    BuildingClass::UpdateAnimationSlots((BuildingClass *)this); /*0x454c0d*/
+    ((BuildingClass *)((BuildingClass *)this))->UpdateAnimationSlots(); /*0x454c0d*/
   if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5492) ) /*0x454c18*/
   {
     v20 = *((unsigned int *)this + 135); /*0x454c26*/
@@ -297,7 +297,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
   unknown_libname_73(&a1); /*0x770630*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
-  INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
+  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
@@ -336,7 +336,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   ConcatStri  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
   unknown_libname_73(&a1); /*0x77074f*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
-  INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
+  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/

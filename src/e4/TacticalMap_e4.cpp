@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Matrix2D_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -303,7 +305,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(unsigned int *)&this->__pad_34[112] = -1; /*0x6d1d7d*/
   Matrix3x4::Identity((Matrix3x4 *)&this->Tactical_field_0xDB4); /*0x6d1d87*/
   v3 = dbl_B0CD88; /*0x6d1d95*/
-  Matrix3x3::RotateX((int *)&this->Tactical_field_0xDB4, v3); /*0x6d1d98*/
+  ((Matrix3x3 *)((int *)&this->Tactical_field_0xDB4))->RotateX(v3); /*0x6d1d98*/
   v4 = dbl_B0CE98; /*0x6d1da6*/
   Matrix2D::Rotate((int *)&this->Tactical_field_0xDB4, v4); /*0x6d1da9*/
   v5 = 60.0 / dbl_B0CD78; /*0x6d1dbb*/

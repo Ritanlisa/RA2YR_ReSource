@@ -119,7 +119,7 @@ void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, w
 }
 // 0x642C80
 namespace gamemd {
-int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
+int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
 {
 
   int result; // eax

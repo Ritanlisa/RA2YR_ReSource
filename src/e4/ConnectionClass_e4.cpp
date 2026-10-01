@@ -116,7 +116,7 @@ int ConnectionClass::initQueue(unsigned int a2)
 } // namespace gamemd
 // 0x48BEE0
 namespace gamemd {
-void ConnectionClass::dtor(void *a1)
+void ConnectionClass::dtor()
 {
 
   void *v2; // eax

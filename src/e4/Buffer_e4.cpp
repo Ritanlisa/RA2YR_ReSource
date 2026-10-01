@@ -420,7 +420,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x43AD00
 namespace gamemd {
-_DWORD * Buffer::Init(int a2, AbstractClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+_DWORD * Buffer::Init(int a2, int aP2)
 {
 
   this->Buffer_field_00 = (unsigned int)(a2);

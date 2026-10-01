@@ -869,7 +869,7 @@ void sub_501A20()
 }
 // 0x50B6F0
 namespace gamemd {
-int House::IsHumanPlayer(void *a1_1)
+int House::IsHumanPlayer()
 {
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x50b6f7*/

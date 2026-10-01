@@ -143,7 +143,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
   if ( *((unsigned char *)this + 5891) ) /*0x464ac0*/
     return 1; /*0x464aca*/
   else
-    return BuildingClass::ValidatePath((TechnoTypeClass *)this, a2, a3); /*0x464ad9*/
+    return ((BuildingClass *)((TechnoTypeClass *)this))->ValidatePath(a2, a3); /*0x464ad9*/
 
 }
 } // namespace gamemd
@@ -338,7 +338,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
         }
       }
     }
-    HouseClass::CalculateCostMultipliers((float *)v7); /*0x4fbc58*/
+    ((HouseClass *)((float *)v7))->CalculateCostMultipliers(); /*0x4fbc58*/
   }
   result = (void ***)(v7 + 528); /*0x4fbc5d*/
   v44 = 12; /*0x4fbc63*/
@@ -1426,7 +1426,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 
 // 0x4CA160
 namespace gamemd {
-int AbstractClass::GetType(void *a1_1, void *a2_1)
+int AbstractClass::GetType()
 {
 
   return *((unsigned int *)this + 22); /*0x4ca163*/
@@ -1661,7 +1661,7 @@ MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
   Block->vtable1 = &vt_MissionClass; /*0x5b3a69*/
   Block->vtable2 = &vt_MissionClass; /*0x5b3a70*/
   Block->vtable3 = &vt_MissionClass; /*0x5b3a77*/
-  ObjectClass::Dtor((ObjectClass *)Block); /*0x5b3a7e*/
+  ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     __3_YAXPAX_Z(Block); /*0x5b3a8b*/
   return &Block->vtable0; /*0x5b3a95*/

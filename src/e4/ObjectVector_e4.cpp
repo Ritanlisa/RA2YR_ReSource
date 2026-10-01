@@ -10,7 +10,7 @@
 
 // 0x4D0440
 namespace gamemd {
-int ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
+int ObjectVector::Construct(int aP1, int aP2)
 {
 
   this->ObjectVector_field_0x04 = (unsigned int)(0);

@@ -1,4 +1,7 @@
 #include "misc_ext.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/AnimFile_e4.hpp"
 

@@ -1673,7 +1673,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
                               (const char **)&g_WindowManager.__pad_EC[684]);
             ComPtr::Set(&v14, (int)((unsigned int *)PlayerProfile)[0]); /*0x7aba45*/
             v14.ComPtr_field_0x20 = (int)&vt_rc_ptr; /*0x7aba4e*/
-            ComPtr::Release((ComPtr *)&v14.ComPtr_field_0x20); /*0x7aba52*/
+            ((ComPtr *)((ComPtr *)&v14.ComPtr_field_0x20))->Release(); /*0x7aba52*/
           }
           else
           {
@@ -1685,7 +1685,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
           Debug::Log(); /*0x7abaa0*/
           v12 = 1; /*0x7abaac*/
           *(unsigned int *)v14.__pad_0 = &vt_rc_ptr; /*0x7abab1*/
-          ComPtr::Release(&v14); /*0x7abab5*/
+          ((ComPtr *)(&v14))->Release(); /*0x7abab5*/
         }
         v4 = *(unsigned int *)(v4 + 32); /*0x7ababa*/
         DeleteAndZero((ObjectClass *)&a2); /*0x7abac1*/
@@ -1756,7 +1756,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
           --g_WOL_ConnectionPool.HashMap_field_0x04; /*0x7abc1d*/
           if ( v8 <= dbl_B76550 ) /*0x7abc27*/
 LABEL_18:
-            HashMap::Shrink(&g_WOL_ConnectionPool); /*0x7abc7e*/
+            ((HashMap *)(&g_WOL_ConnectionPool))->Shrink(); /*0x7abc7e*/
         }
         else
         {
@@ -1888,7 +1888,7 @@ LABEL_19:
           if ( a3 > dbl_B766A0 ) /*0x7abeb7*/
             goto LABEL_21; /*0x7abeb7*/
         }
-        HashMap::Shrink((HashMap *)&stru_B765EC.lastLayer); /*0x7abebe*/
+        ((HashMap *)((HashMap *)&stru_B765EC.lastLayer))->Shrink(); /*0x7abebe*/
 LABEL_21:
         v12 = *(unsigned int *)(LODWORD(v4) + 104); /*0x7abec3*/
         v13 = (String *)__2_YAPAXI_Z(0xCu); /*0x7abec8*/
@@ -1996,7 +1996,7 @@ LABEL_18:
           if ( *(float *)&v16 > dbl_B766A0 ) /*0x7ac143*/
             goto LABEL_20; /*0x7ac143*/
         }
-        HashMap::Shrink((HashMap *)&stru_B765EC.lastLayer); /*0x7ac14a*/
+        ((HashMap *)((HashMap *)&stru_B765EC.lastLayer))->Shrink(); /*0x7ac14a*/
       }
     }
   }
@@ -2108,7 +2108,7 @@ LABEL_19:
                                 (DynamicStringArray *)&stru_B76900.needsRedraw,
                                 (char **)&g_WindowManager.__pad_14[16],
                                 0) )
-          DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x7ac38f*/
+          ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x7ac38f*/
         *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7ac39b*/
         memset(v16, 0, sizeof(v16)); /*0x7ac3ab*/
         strcpy(&v16[36], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x7ac3d8*/

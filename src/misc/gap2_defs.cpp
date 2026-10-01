@@ -3,6 +3,10 @@
 // Symbols genuinely exist (NOT #if 0). Declarations live in the class hpp
 // bodies with `// 0xADDR` after the semicolon. Bodies return a safe default.
 #include <cstdint>
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/CrateClass_e4.hpp"
+#include "e4/classes/CellCoord_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 // neutralise Win32 macros that collide with IDA method names
 #ifdef _WIN32
 #include <windows.h>

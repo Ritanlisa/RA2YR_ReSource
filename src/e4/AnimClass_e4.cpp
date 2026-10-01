@@ -92,7 +92,7 @@ void AnimClass::Destruct(void * a2, void *a2_2)
       v6 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13));
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
-    if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
+    if ( (uint8_t)((ObjectClass *)((ObjectClass *)a2))->Undeploy() ) /*0x4229bb*/
       Remove      RemoveTarget((int)((gamemd::IUnknown *)((int)a2))); 
   }
   v12 = (gamemd::AnimClass *)(a2);
@@ -151,7 +151,7 @@ void AnimClass::Destruct(void * a2, void *a2_2)
       while ( v10 < dword_A8E9B8 ); /*0x422b0c*/
     }
   }
-  return ObjectClass::Dtor((ObjectClass *)a2); /*0x422abd*/
+  return ((ObjectClass *)((ObjectClass *)a2))->Dtor(); /*0x422abd*/
 
 }
 }
@@ -271,7 +271,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 
   if ( byte_8A0DF0 /*0x422ccb*/
     && g_ZBufferDescriptor
-    && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.__pad_16D[31]) )
+    && (uint8_t)((ObjectClass *)((ObjectClass *)this))->StepCleanup(&g_INI_Key_Civilian.__pad_16D[31]) )
   {
     AnimClass_field_0xB4 = (IUnknown *)(this->AnimClass_field_0xB4);
     AnimClass_field_0xC0 = (IUnknown *)((unsigned int)((IUnknown *)(this->AnimClass_field_0xC0)));
@@ -541,7 +541,7 @@ LABEL_78:
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x42340b*/
   v43 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v42)); /*0x423414*/
-  v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
+  v44 = ((Cell *)((Cell *)v43))->IsBridge(); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
     goto LABEL_99; /*0x423426*/
@@ -634,7 +634,7 @@ LABEL_99:
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
   v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v101); /*0x42361a*/
-  if ( (uint8_t)CellClass::QuickPassable(v61) ) /*0x423621*/
+  if ( (uint8_t)((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
     *(float *)v100 = 0.0; /*0x42362c*/
@@ -941,7 +941,7 @@ LABEL_78:
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108);;
   v43 = ((Coord *)(&stru_87C374.__pad_14B0[8132]))->To_Cell(v42); /*0x423414*/
-  v44 = (CoordStruct *)Cell::IsBridge(v43); /*0x42341b*/
+  v44 = (CoordStruct *)((Cell *)(v43))->IsBridge(); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
     goto LABEL_99; /*0x423426*/
@@ -1034,7 +1034,7 @@ LABEL_99:
   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
   aP0 = v94; /*0x423615*/
   v61 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x42361a*/
-//DUPDEF   if ( CellClass::QuickPassable(v61) ) /*0x423621*/
+//DUPDEF   if ( ((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
 //DUPDEF   {
 //DUPDEF     *(float *)&v41 = 0.0; /*0x42362a*/
 //DUPDEF     *(float *)&aP2 = 0.0; /*0x42362c*/

@@ -1,4 +1,5 @@
 #include "system/cell.hpp"
+#include "e4/classes/House_e4.hpp"
 #include "object/object.hpp"
 #include "object/techno.hpp"
 

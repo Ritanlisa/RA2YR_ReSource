@@ -1,4 +1,5 @@
 #include "system/mix_file.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 #include "system/cc_file.hpp"
 #include "system/mix_blowfish.hpp"
 #include "core/vector.hpp"

@@ -1032,7 +1032,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
           else if ( (*((int (**)(BuildingClass *))v2->TechnoClass + 11))(v2) == 6 /*0x501501*/
                  && (*((int (**)(BuildingClass *))v2->TechnoClass + 258))(v2) > 0 )
           {
-            BuildingClass::UnloadUnits(v2, 1, 0); /*0x501509*/
+            ((BuildingClass *)(v2))->UnloadUnits(1, 0); /*0x501509*/
           }
         }
       }
@@ -40301,7 +40301,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a
       v77 = *((unsigned int *)this + 8); /*0x76b68c*/
       v79 = &vt_rc_ptr; /*0x76b68f*/
       *((unsigned int *)this + 8) = v77 + 1; /*0x76b698*/
-      ComPtr::Release(&v79); /*0x76b69f*/
+      ((ComPtr *)(&v79))->Release(); /*0x76b69f*/
       if ( v5 >= a3 ) /*0x76b6a8*/
         return 1; /*0x76b6b1*/
       v3 = a3; /*0x76b1b1*/

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ParasiteClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_588960_e4.hpp"
 #include "e4/classes/E4Recv_5A99B0_e4.hpp"
@@ -423,7 +424,7 @@ void sub_5902C0(int a1)
 }
 }
 // 0x5FC380
-namespace gamemd {
+int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)
 int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 {
 
@@ -432,7 +433,7 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
   int v7; // ecx
   CellClass *v8; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
+  ((ObjectClass *)((ObjectClass *)this))->ctor(); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_OverlayClass); /*0x5fc38f*/
   this->Object_field_0xAC = (unsigned char)(v5); /*0x5fc395*/
@@ -458,7 +459,7 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
     LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP1); /*0x5fc497*/
-    if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
+    if ( !((CellClass *)(v8))->FindInfantry(0) ) /*0x5fc4a0*/
       ObjectClass::Deploy((ObjectClass *)this); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
   }
@@ -700,9 +701,9 @@ void * Object::DrawObject(void ** Block, char a2)
     }
   }
   if ( byte_A8E9A0 ) /*0x5fdfe6*/
-    ObjectClass::Undeploy((ObjectClass *)Block); /*0x5fdfea*/
+    ((ObjectClass *)((ObjectClass *)Block))->Undeploy(); /*0x5fdfea*/
   Block->Type = 0; /*0x5fdff1*/
-  ObjectClass::Dtor((ObjectClass *)Block); /*0x5fdffb*/
+  ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
     __3_YAXPAX_Z(Block); /*0x5fe008*/
   return &Block->ObjectClass; /*0x5fe012*/
@@ -1739,7 +1740,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   LOWORD(aP1) = *aP1 / 256; /*0x5fd290*/
   HIWORD(aP1) = v3[1] / 256; /*0x5fd2a4*/
   v5 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x5fd2b1*/
-  if ( CellClass::FindInfantry(v5, 0) ) /*0x5fd2ba*/
+  if ( ((CellClass *)(v5))->FindInfantry(0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else
     return ObjectClass::Deploy((ObjectClass *)this); /*0x5fd2d2*/

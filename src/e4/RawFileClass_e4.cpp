@@ -9,7 +9,7 @@
 
 // 0x65CA00
 namespace gamemd {
-int RawFileClass::Dtor(void *a1)
+int RawFileClass::Dtor()
 {
     unsigned int v3 = 0;  /* G37 hoist */
 

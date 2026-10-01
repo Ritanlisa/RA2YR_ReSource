@@ -1,5 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Matrix2D_e4.hpp"
+#include "e4/classes/Matrix_e4.hpp"
+#include "e4/classes/VoxelSection_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/String_e4.hpp"

@@ -7005,7 +7005,7 @@ int sub_40DFB0()
   dword_887194 = 0; /*0x40dfc4*/
   dword_887198 = 0; /*0x40dfca*/
   dword_887190 = (int)&GenericNode_vftable; /*0x40dfd0*/
-  GenericNode::Constructor(stru_88719C); /*0x40dfda*/
+  ((GenericNode *)(stru_88719C))->Constructor(); /*0x40dfda*/
   dword_88718C = (int)&GenericList_vftable; /*0x40dfe9*/
   LinkedList::Prepend(&dword_887190, (int)stru_88719C); /*0x40dff3*/
   dword_88718C = (int)&List_INIClass_INISection___vftable; /*0x40dffd*/
@@ -7038,7 +7038,7 @@ int sub_40E060()
   dword_88721C = 0; /*0x40e074*/
   dword_887220 = 0; /*0x40e07a*/
   dword_887218 = (int)&GenericNode_vftable; /*0x40e080*/
-  GenericNode::Constructor(stru_887224); /*0x40e08a*/
+  ((GenericNode *)(stru_887224))->Constructor(); /*0x40e08a*/
   dword_887214 = (int)&GenericList_vftable; /*0x40e099*/
   LinkedList::Prepend(&dword_887218, (int)stru_887224); /*0x40e0a3*/
   dword_887214 = (int)&List_INIClass_INISection___vftable; /*0x40e0ad*/
@@ -7071,7 +7071,7 @@ int sub_40E110()
   dword_88713C = 0; /*0x40e124*/
   dword_887140 = 0; /*0x40e12a*/
   dword_887138 = (int)&GenericNode_vftable; /*0x40e130*/
-  GenericNode::Constructor(stru_887144); /*0x40e13a*/
+  ((GenericNode *)(stru_887144))->Constructor(); /*0x40e13a*/
   dword_887134 = (int)&GenericList_vftable; /*0x40e149*/
   LinkedList::Prepend(&dword_887138, (int)stru_887144); /*0x40e153*/
   dword_887134 = (int)&List_INIClass_INISection___vftable; /*0x40e15d*/
@@ -7104,7 +7104,7 @@ int sub_40E1C0()
   dword_88706C = 0; /*0x40e1d4*/
   dword_887070 = 0; /*0x40e1da*/
   dword_887068 = (int)&GenericNode_vftable; /*0x40e1e0*/
-  GenericNode::Constructor(unk_887074); /*0x40e1ea*/
+  ((GenericNode *)(unk_887074))->Constructor(); /*0x40e1ea*/
   dword_887064 = (int)&GenericList_vftable; /*0x40e1f9*/
   LinkedList::Prepend(&dword_887068, (int)unk_887074); /*0x40e203*/
   dword_887064 = (int)&List_INIClass_INISection___vftable; /*0x40e20d*/
@@ -7137,7 +7137,7 @@ int sub_40E270()
   dword_8870D4 = 0; /*0x40e284*/
   dword_8870D8 = 0; /*0x40e28a*/
   dword_8870D0 = (int)&GenericNode_vftable; /*0x40e290*/
-  GenericNode::Constructor(stru_8870DC); /*0x40e29a*/
+  ((GenericNode *)(stru_8870DC))->Constructor(); /*0x40e29a*/
   dword_8870CC = (int)&GenericList_vftable; /*0x40e2a9*/
   LinkedList::Prepend(&dword_8870D0, (int)stru_8870DC); /*0x40e2b3*/
   dword_8870CC = (int)&List_INIClass_INISection___vftable; /*0x40e2bd*/

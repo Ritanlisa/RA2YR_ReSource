@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CoopCampaignVector_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -509,7 +511,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     &this->MPCooperative_field_0x324,
     v18,
     0);
-  CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &aP4); /*0x5c15b3*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&aP4); /*0x5c15b3*/
   for ( aP6 = 0; aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
     v19 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c15c6*/
@@ -687,7 +689,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     &this->MPCooperative_field_0x324,
     v5,
     0);
-  CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &v15); /*0x5c18fa*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v15); /*0x5c18fa*/
   for ( j = 0; j < v15; ++j ) /*0x5c1907*/
   {
     v8 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c190b*/
@@ -873,7 +875,7 @@ int MPCooperative::InitSession()
   v2 = 0; /*0x5c1ccd*/
   v6 = 0; /*0x5c1cd5*/
   String2 = 0; /*0x5c1cd9*/
-  CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &v6); /*0x5c1cdd*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v6); /*0x5c1cdd*/
   if ( !v6 ) /*0x5c1ce6*/
     return -1; /*0x5c1ce6*/
   if ( !this->MPCooperative_field_0x40 ) /*0x5c1ce8*/
@@ -928,7 +930,7 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
 
   if ( !this->MPCooperative_field_0x40 ) /*0x5c1dc8*/
     return 0; /*0x5c1dd7*/
-  CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &v19); /*0x5c1de2*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v19); /*0x5c1de2*/
   v3 = MPCooperative_Helper(); /*0x5c1dec*/
   if ( v3 < v19 ) /*0x5c1df4*/
   {
@@ -1754,7 +1756,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
       while ( v7 < 16 ); /*0x5c2f7e*/
       if ( v4 ) /*0x5c2f82*/
       {
-        HouseClass::SetMapSeed(v6, *((unsigned int *)Block + v5)); /*0x5c3073*/
+        ((HouseClass *)(v6))->SetMapSeed(*((unsigned int *)Block + v5)); /*0x5c3073*/
       }
       else
       {
@@ -1793,7 +1795,7 @@ LABEL_17:
           ((SessionClass *)((*v14)->GameMode))->GetOption(); /*0x5c3023*/
         }
         Debug::Log(); /*0x5c3053*/
-        HouseClass::SetMapSeed(thisa, *((unsigned int *)Block + v9)); /*0x5c3067*/
+        ((HouseClass *)(thisa))->SetMapSeed(*((unsigned int *)Block + v9)); /*0x5c3067*/
       }
     }
   }
@@ -2167,7 +2169,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   }
   if ( !*(unsigned int *)&v4->__pad_328[12] ) /*0x5c3bb5*/
   {
-    CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &v24); /*0x5c3bcd*/
+    ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v24); /*0x5c3bcd*/
     for ( i = 0; i < v24; ++i ) /*0x5c3bda*/
     {
       v11 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c3be4*/
@@ -3054,7 +3056,7 @@ void MPCooperative::Clone(HWND hDlg)
     for ( i = 0; (int)i < v3; i = (ObjectClass *)((char *)i + 1) ) /*0x5c2658*/
     {
       ResourceID2CSF = GetResourceID2CSF(i); /*0x5c265c*/
-      MovieClass::ReadConfig((MovieClass *)this, hDlg, ResourceID2CSF); /*0x5c2665*/
+      ((MovieClass *)((MovieClass *)this))->ReadConfig(hDlg, ResourceID2CSF); /*0x5c2665*/
     }
     CampaignCoop::Setup((CampaignCoop *)this, hDlg, 1); /*0x5c2674*/
   }

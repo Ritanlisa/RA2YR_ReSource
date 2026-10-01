@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -1032,7 +1033,7 @@ LABEL_13:
                             HouseClass_Player.field_0)
                       || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
   bool v74; // [esp+10h] [ebp-47Ah]
-                          v74 = HouseClass::CanBuild(HouseClass_Player.field_0, (IUnknown *)v86, 0, 0) == -1,
+                          v74 = ((HouseClass *)(HouseClass_Player.field_0))->CanBuild((IUnknown *)v86, 0, 0) == -1,
                           ShouldDisableCameo = HouseClass::ShouldDisableCameo(HouseClass_Player.field_0, v86),
                           v74)
                       || ShouldDisableCameo )

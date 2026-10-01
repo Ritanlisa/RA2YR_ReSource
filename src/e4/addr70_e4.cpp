@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/AbstractClassVector_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7011A0_e4.hpp"
 #include "e4/classes/E4Recv_706BD0_e4.hpp"
@@ -967,7 +969,7 @@ int E4Recv_7011A0::sub_7011A0()
   HIWORD(v10) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
   v7 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11); /*0x701234*/
-  ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&stru_87F5F0.__pad_58[416]); /*0x701236*/
+  ((ScenarioClass *)((ScenarioClass *)&stru_87F5F0.__pad_58[416]))->CalcMinShroudLevel(); /*0x701236*/
   v8 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) * v7[283]; /*0x70127d*/
   LOWORD(v9) = Math::RoundToInt(v1); /*0x70127f*/
   Math::Sqrt((double)(v8 * v8 + (v9 << 8) * (v9 << 8))); /*0x7012a1*/

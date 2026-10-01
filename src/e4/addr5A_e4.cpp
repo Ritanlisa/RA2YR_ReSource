@@ -1136,7 +1136,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
     v8 = v45; /*0x5a65d1*/
   }
   v11 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a6626*/
-  Owner = HouseClass::FindOwner(v11); /*0x5a6634*/
+  Owner = ((HouseClass *)(v11))->FindOwner(); /*0x5a6634*/
   if ( v6 > 0 )
   {
     while ( v29 < 2 * v6 && v44 > 1 )
@@ -1273,7 +1273,7 @@ void PlaceRandomNeutralUnits(int a1)
   unsigned int v28[3]; // [esp+54h] [ebp-Ch] BYREF
 
   v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a692c*/
-  Owner = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a6938*/
+  Owner = (IUnknown *)((HouseClass *)(v1))->FindOwner(); /*0x5a6938*/
   v22 = Owner; /*0x5a693c*/
   do /*0x5a696e*/
   {
@@ -2181,7 +2181,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
   unsigned int v31[3]; // [esp+50h] [ebp-Ch] BYREF
 
   v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a872c*/
-  OwnerHouseClass = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a8738*/
+  OwnerHouseClass = (IUnknown *)((HouseClass *)(v1))->FindOwner(); /*0x5a8738*/
   v26 = OwnerHouseClass; /*0x5a873c*/
   do /*0x5a876e*/
   {

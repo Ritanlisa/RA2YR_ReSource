@@ -1,6 +1,7 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/utility_ext.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 #include "core/vector.hpp"
 #include "house/house.hpp"
 #include "misc/audio.hpp"

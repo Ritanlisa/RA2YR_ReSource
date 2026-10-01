@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -136,7 +137,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
     this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
   }
   if ( byte_A8E9A0 ) /*0x749a82*/
-    ObjectClass::Undeploy((ObjectClass *)this); /*0x749a86*/
+    ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x749a86*/
   Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x114); /*0x749a95*/
   Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x128); /*0x749aa2*/
   AudioFileClass::Release((AudioFileClass *)&this->VoxelAnimClass_field_0x114); /*0x749aa9*/
@@ -157,7 +158,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
     }
   }
   this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
-  return ObjectClass::Dtor((ObjectClass *)this); /*0x749b11*/
+  return ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x749b11*/
 
 }
 }
@@ -497,7 +498,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
           LOWORD(v25) = Math::RoundToInt(v24); /*0x74a187*/
           v26 = (void **)v1->VoxelAnimClass_field_0x104; /*0x74a18c*/
           v99 = v25; /*0x74a19a*/
-          AnimClass::ctor(v20, v26[186], &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
+          ((AnimClass *)(v20))->ctor(v26[186], &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
         v27 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1b4*/
         v28 = v27[188]; /*0x74a1c9*/
@@ -782,7 +783,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
         v98 = v64; /*0x74a76e*/
         LOWORD(v66) = Math::RoundToInt(v65 * 0.01924500897298839 + 0.5); /*0x74a77e*/
         v99 = v66; /*0x74a783*/
-        AnimClass::ctor(v61, *((void **)v1->VoxelAnimClass_field_0x104 + 187), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
+        ((AnimClass *)(v61))->ctor(*((void **)v1->VoxelAnimClass_field_0x104 + 187), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
       }
     }
   }
@@ -816,7 +817,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
           v71 = *(unsigned int *)&v1->__pad_98[12]; /*0x74a856*/
           v100[1] = v70; /*0x74a85b*/
           v100[2] = v71; /*0x74a85f*/
-          AnimClass::ctor(v69, *((void **)v1->VoxelAnimClass_field_0x104 + 185), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
+          ((AnimClass *)(v69))->ctor(*((void **)v1->VoxelAnimClass_field_0x104 + 185), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
         }
       }
       v72 = (unsigned int *)Coord::GetCoords(&v105, v86); /*0x74a88b*/
@@ -952,7 +953,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   int v2; // eax
   Voxel *v4; // [esp+0h] [ebp-8h]
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x75ebe4*/
+  ((ObjectClass *)((ObjectClass *)this))->ctor(); /*0x75ebe4*/
   this->__pad_12C[0] = 1; /*0x75ebeb*/
   *(unsigned int *)&this->__pad_12C[12] = 0; /*0x75ebf2*/
   this->VoxelAnimClass_field_0x140 = 0; /*0x75ebf8*/

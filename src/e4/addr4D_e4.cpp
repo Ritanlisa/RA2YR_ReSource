@@ -98,7 +98,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   if ( aP0->q030 == 6 ) /*0x4d17d0*/
   {
     v10 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v17); /*0x4d17dc*/
-    v11 = Cell::IsBridge(v10); /*0x4d17e3*/
+    v11 = ((Cell *)(v10))->IsBridge(); /*0x4d17e3*/
     if ( v11 ) /*0x4d17ea*/
     {
       *((unsigned char *)v11 + 1767) = 0; /*0x4d17ec*/
@@ -689,7 +689,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
     v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x4d5010*/
-    v5 = Cell::IsBridge(v4); /*0x4d5017*/
+    v5 = ((Cell *)(v4))->IsBridge(); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
     {

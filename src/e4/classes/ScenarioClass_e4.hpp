@@ -554,6 +554,10 @@ struct ScenarioClass {
     static double UpdateLighting(...);  // C2597 interim stub
     static double CheckExists(...);  // C2597 interim stub
     static double InitTimer(...);  // C2597 interim stub
+    int CalcMinShroudLevel();  // 0x588990
+    int LoadNetworkConfig();  // 0x6980c0
+    char SetGlobalToByID(unsigned int a2, char a3);  // 0x689670
+    int SaveGameOptions();  // 0x5fad10
 };
 
 } // namespace gamemd

@@ -19,6 +19,7 @@ struct ArtConfig {
     unsigned int u32_C2;
 // --- flat members (END) ---
     int validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3);
+    unsigned int * loadConfig(char **a2, int a3, int a4, int *a5, char a6);  // 0x5cc760
 };
 
 } // namespace gamemd

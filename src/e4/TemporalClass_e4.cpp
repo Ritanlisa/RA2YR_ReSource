@@ -188,7 +188,7 @@ void ** TemporalClass::ProcessTimeWarp()
     LOWORD(v13) = Math::RoundToInt(v1); /*0x71a827*/
     if ( v13 > *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3936) << 8 )
     {
-      return (void **)FactoryClass::CompleteItem((FactoryClass *)this); /*0x71a841*/
+      return (void **)((FactoryClass *)((FactoryClass *)this))->CompleteItem(); /*0x71a841*/
     }
     else
     {
@@ -259,7 +259,7 @@ LABEL_10:
             if ( v28 ) /*0x71a993*/
             {
               if ( (*(int (**)(unsigned int))(*(unsigned int *)v28 + 1032))(*(unsigned int *)this->__pad_28) > 0 ) /*0x71a9a2*/
-                BuildingClass::AnimateUnloadUnits((BuildingClass *)v28, 0); /*0x71a9a7*/
+                ((BuildingClass *)((BuildingClass *)v28))->AnimateUnloadUnits(0); /*0x71a9a7*/
               if ( !dword_A8E7AC && *(unsigned int *)(v28 + 280) ) /*0x71a9b4*/
               {
                 do /*0x71a9d6*/
@@ -286,7 +286,7 @@ LABEL_10:
                     : 0;
               else
                 v32 = 0; /*0x71a9fd*/
-              BuildingClass::RemoveLimpet(v32); /*0x71aa15*/
+              ((BuildingClass *)(v32))->RemoveLimpet(); /*0x71aa15*/
             }
             v33 = *(TechnoClass **)(*(unsigned int *)this->__pad_28 + 728); /*0x71aa1d*/
             if ( v33 ) /*0x71aa25*/
@@ -309,7 +309,7 @@ LABEL_10:
               v36 = (*(int (**)(unsigned int))(*(unsigned int *)v35 + 44))(*(unsigned int *)(v34 + 740)) == 6
                   ? (BuildingClass *)v35
                   : 0;
-              BuildingClass::UpdateDamageAnim(v36); /*0x71aa90*/
+              ((BuildingClass *)(v36))->UpdateDamageAnim(); /*0x71aa90*/
             }
             v37 = *(TechnoClass **)(*(unsigned int *)this->__pad_28 + 728); /*0x71aa98*/
             if ( v37 ) /*0x71aaa0*/
@@ -498,7 +498,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
           v4 = ((Coord *)(&dword_87F7E8))->To_Cell(v5); /*0x71aef8*/
-          if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
+          if ( ((Cell *)(v4))->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }
       }

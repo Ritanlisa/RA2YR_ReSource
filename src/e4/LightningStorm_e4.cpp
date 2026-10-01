@@ -136,7 +136,7 @@ void LightningStorm::Strike(IUnknown * aP0)
     v5 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a213*/
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
-      v7 = AnimClass::ctor(v6, v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
+      v7 = ((AnimClass *)(v6))->ctor(v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
     else
       v7 = 0; /*0x53a240*/
     if ( dword_A9FA70 < dword_A9FA68 /*0x53a278*/
@@ -215,7 +215,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v7 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a363*/
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
   if ( v8 ) /*0x53a370*/
-    v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
+    v9 = ((AnimClass *)(v8))->ctor(v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
     v9 = 0; /*0x53a390*/
   if ( dword_A9FA28 < dword_A9FA20 /*0x53a3c8*/
@@ -250,10 +250,10 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     if ( v16 ) /*0x53a4da*/
     {
       v17 = (void *)Return::HRESULT_Fail(v31, v32, (int)v33); /*0x53a4f7*/
-      AnimClass::ctor(v16, WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
+      ((AnimClass *)(v16))->ctor(WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
     }
     v25 = 0; /*0x53a515*/
-    v18 = Cell::IsBridge(v3); /*0x53a51f*/
+    v18 = ((Cell *)(v3))->IsBridge(); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
     v30 = 0; /*0x53a528*/
     ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
@@ -279,7 +279,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     }
     CreateSmokeEffectAt(Climb, HIDWORD(dword_8871E0[1]), v31, v32, (int)v33, 0, 0); /*0x53a581*/
     PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(dword_8871E0[1]), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
-    if ( v18 == Cell::IsBridge(v3) /*0x53a607*/
+    if ( v18 == ((Cell *)(v3))->IsBridge() /*0x53a607*/
       && (v29 = 0, v30 = 0, v20 == Object::FindClosestObjectCell(v3, &v29, 0, 0))
       && *((char *)v3 + 283) == v28 )
     {

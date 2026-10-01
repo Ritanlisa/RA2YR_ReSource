@@ -423,7 +423,7 @@ char Movie::GetSectionID(unsigned int * a2)
 
 // 0x49BCC0
 namespace gamemd {
-char Movie::GetState(CCINIClass * aP1)
+char Movie::GetState(unsigned int *aP1)
 {
 
   int result; // eax

@@ -16,7 +16,7 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
 
   int v4; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x543786*/
+  ((ObjectClass *)((ObjectClass *)this))->ctor(); /*0x543786*/
   *((unsigned int *)this + 43) = *(IsometricTileClass *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * aP1); /*0x54379c*/
   *this = (IsometricTileClass)&vt_IsometricTileClass; /*0x5437a2*/
   *((unsigned int *)this + 1) = &vt_IsometricTileClass; /*0x5437a8*/

@@ -313,7 +313,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
       v3 = (unsigned int)(FindWDTTerritoryClass(v17, *(unsigned int *)dword_A8B240));
       ((ComPtr *)(&wParam))->Set(v3->q010); /*0x5e307f*/
       v17[0] = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x5e3088*/
-      ComPtr::Release(v17); /*0x5e308c*/
+      ((ComPtr *)(v17))->Release(); /*0x5e308c*/
     }
     if ( v16 ) /*0x5e3097*/
     {
@@ -362,7 +362,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
       1u,
       *((uint16_t *)dword_8871E0 + 2632) | (*((uint16_t *)dword_8871E0 + 2636) << 16));
     wParam = (WPARAM)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e31ca*/
-    ComPtr::Release(&wParam); /*0x5e31d2*/
+    ((ComPtr *)(&wParam))->Release(); /*0x5e31d2*/
   }
   SendDlgItemMessageA(hDlg, 1321, 0x405u, 1u, 6 - v12); /*0x5e31f1*/
   SendDlgItemMessageA(hDlg, 1026, 0x405u, 1u, lParam); /*0x5e3205*/
@@ -2469,8 +2469,8 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
   CCFileClass::Construct(v10, Source); /*0x5e657a*/
   v4[1] = 0; /*0x5e6583*/
   v4[2] = 0; /*0x5e6587*/
-  GenericNode::Constructor(v5); /*0x5e658b*/
-  GenericNode::Constructor(v6); /*0x5e6594*/
+  ((GenericNode *)(v5))->Constructor(); /*0x5e658b*/
+  ((GenericNode *)(v6))->Constructor(); /*0x5e6594*/
   LinkedList::Prepend(v5, (int)v6); /*0x5e65aa*/
   v4[3] = (void*)&List_INIClass_INISection___vftable; /*0x5e65b9*/
   memset(&v6[3], 0, 12); /*0x5e65c1*/

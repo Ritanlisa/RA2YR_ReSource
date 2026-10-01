@@ -20,6 +20,7 @@ struct LayerClass {
     void * Reveal(int a2);
     void* DestroyCliff(int * a1, int a2, int a3);
     static double Save(...);  // C2597 interim stub
+    void Update_Pathfinding_2(int a2);  // 0x586990
 };
 
 } // namespace gamemd

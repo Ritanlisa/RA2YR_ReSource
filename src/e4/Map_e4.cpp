@@ -1614,7 +1614,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76a62e*/
         *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x76a633*/
-        ComPtr::Release(v5); /*0x76a639*/
+        ((ComPtr *)(v5))->Release(); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
       while ( v7 ); /*0x76a63f*/
@@ -1626,7 +1626,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
   else
   {
     *Block = (Map_WorldDominationTour)&vt_rc_ptr; /*0x76a65a*/
-    ComPtr::Release((ComPtr *)Block); /*0x76a660*/
+    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
       __3_YAXPAX_Z(Block); /*0x76a66b*/
     return (ComPtr *)Block; /*0x76a673*/

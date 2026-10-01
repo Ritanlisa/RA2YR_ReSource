@@ -1,5 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ModemGame_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5B1D90_e4.hpp"
@@ -400,7 +404,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
                     strcpy((char *)&v18[1],(const char *)(unk_A8B380)); /*0x5b4d11*/
                     IDA_LOBYTE(v18[6]) = dword_A8B394; /*0x5b4d26*/
                     wcscpy((wchar_t *)((char *)&v18[6] + 1), lParam); /*0x5b4d2a*/
-                    Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4d43*/
+                    ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v18, 250, 1); /*0x5b4d43*/
                     Stream::ReadPacket((int)&unk_A8EA70); /*0x5b4d4d*/
                     v9 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5b4d57*/
                     UI_Setup((wchar_t *)v9, dword_A8B394, (int)lParam); /*0x5b4d6e*/
@@ -438,7 +442,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
           memset(v18, 0, sizeof(v18)); /*0x5b4c13*/
           v19 = 0; /*0x5b4c1e*/
           v18[0] = 116; /*0x5b4c26*/
-          Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4c2e*/
+          ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v18, 250, 1); /*0x5b4c2e*/
           return 0; /*0x5b4c3f*/
         }
         return 0; /*0x5b4ed1*/
@@ -637,7 +641,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     memset(v20, 0, sizeof(v20)); /*0x5bb2e2*/
     v21 = 0; /*0x5bb2e4*/
     v20[0] = 117; /*0x5bb2fa*/
-    Stream::WriteBlock(&unk_A8EA70.vtable0, (int)v20, 250, 1); /*0x5bb305*/
+    ((Stream *)(&unk_A8EA70.vtable0))->WriteBlock((int)v20, 250, 1); /*0x5bb305*/
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
@@ -689,16 +693,16 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     v16 = 0; /*0x5bb463*/
     *(unsigned int *)v15.__pad_0 = (void*)&BufferPipe_vftable; /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
-    Pipe::SetDelegate(&v19, (int)&v15); /*0x5bb47d*/
+    ((Pipe *)(&v19))->SetDelegate((int)&v15); /*0x5bb47d*/
     v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer); /*0x5bb499*/
     v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)FileClass::Open((RawFileClass *)v18, 0) ) /*0x5bb4c1*/
       FileClass::Delete((RawFileClass *)v18); /*0x5bb4ce*/
-    FileClass::Open2((RawFileClass *)v18, (const CHAR *)2); /*0x5bb4d9*/
-    FileClass::Write2((RawFileClass *)v18, &Buffer, 4u); /*0x5bb4e9*/
-    FileClass::Write2((RawFileClass *)v18, v6, v8); /*0x5bb4f4*/
+    ((FileClass *)((RawFileClass *)v18))->Open2((const CHAR *)2); /*0x5bb4d9*/
+    ((FileClass *)((RawFileClass *)v18))->Write2(&Buffer, 4u); /*0x5bb4e9*/
+    ((FileClass *)((RawFileClass *)v18))->Write2(v6, v8); /*0x5bb4f4*/
     FileClass::CloseHandle((RawFileClass *)v18); /*0x5bb4fd*/
     RA2_OPDEL(v6); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
@@ -2314,7 +2318,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           strcpy((char *)&v11[1], unk_A8B380); /*0x5b589d*/
           LOBYTE(v11[6]) = dword_A8B394; /*0x5b58b2*/
           wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b58b6*/
-          Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5b58cf*/
+          ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v11, 250, 1); /*0x5b58cf*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
@@ -2415,7 +2419,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     strcpy((char *)&v8[1], unk_A8B380); /*0x5b6df4*/
     LOBYTE(v8[6]) = dword_A8B394; /*0x5b6e04*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5b6e08*/
-    Stream::WriteBlock((int *)&unk_A8EA70, (int)v8, 250, 1); /*0x5b6e21*/
+    ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v8, 250, 1); /*0x5b6e21*/
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5b6e2b*/
     v3 = CharToWideString(unk_A8B380); /*0x5b6e35*/
     v4 = dword_A8B394; /*0x5b6e3d*/
@@ -2456,7 +2460,7 @@ HWND sub_5B6F30()
   IDA_LOBYTE(v7[6]) = dword_A8DB30; /*0x5b6f58*/
   v7[0] = 102; /*0x5b6f67*/
   IDA_BYTE1(v7[7]) = dword_A8B394; /*0x5b6f6f*/
-  Stream::WriteBlock((int)&unk_A8EA70, (int)v7, 250, 1); /*0x5b6f73*/
+  ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v7, 250, 1); /*0x5b6f73*/
   StringCSF = GetStringCSF(aTxtSigningOff, 0, aDRa2mdpostMode, 1683); /*0x5b6f8b*/
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b6f94*/
   v2 = MessageBox; /*0x5b6f99*/
@@ -2667,7 +2671,7 @@ HWND E4Recv_5B9250::sub_5B9250()
           strcpy((char *)&v11[1], unk_A8B380); /*0x5b932d*/
           LOBYTE(v11[6]) = dword_A8B394; /*0x5b9342*/
           wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b9346*/
-          Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5b935f*/
+          ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v11, 250, 1); /*0x5b935f*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
@@ -2826,7 +2830,7 @@ HWND sub_5BAB00()
   IDA_LOBYTE(v7[6]) = dword_A8DB30; /*0x5bab28*/
   v7[0] = 102; /*0x5bab37*/
   IDA_BYTE1(v7[7]) = dword_A8B394; /*0x5bab3f*/
-  Stream::WriteBlock((int)&unk_A8EA70, (int)v7, 250, 1); /*0x5bab43*/
+  ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v7, 250, 1); /*0x5bab43*/
   StringCSF = GetStringCSF(aTxtSigningOff, 0, aDRa2mdpostMode_0, 2398); /*0x5bab5b*/
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5bab64*/
   v2 = MessageBox; /*0x5bab69*/

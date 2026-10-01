@@ -253,7 +253,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x6e267f*/
-  BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e268a*/
+  ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x6e268a*/
   BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e2695*/
   stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
   stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
@@ -285,7 +285,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
     if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
       Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e3150*/
     else
-      Field11 = HouseClass::FindOwner(v7); /*0x6e3157*/
+      Field11 = ((HouseClass *)(v7))->FindOwner(); /*0x6e3157*/
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/

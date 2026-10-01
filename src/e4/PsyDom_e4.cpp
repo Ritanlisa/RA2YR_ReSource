@@ -86,7 +86,7 @@ void PsyDom::Fire()
   v33[2] = v7[2]; /*0x53b117*/
   v8 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x53b11b*/
   if ( v8 ) /*0x53b125*/
-    PsyDom_Anim = (int)AnimClass::ctor(v8, v5, v33, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
+    PsyDom_Anim = (int)((AnimClass *)(v8))->ctor(v5, v33, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
     PsyDom_Anim = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/

@@ -1,4 +1,6 @@
 #include "ui/sidebar.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/Hash_e4.hpp"
 
 #include <cstring>
 #include "e4/e4_globals_decls.hpp"

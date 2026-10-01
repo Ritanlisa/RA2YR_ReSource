@@ -163,7 +163,7 @@ int WinModemClass::ReadBytes(void ()() a1, WinModemClass * aP1, WinModemClass * 
 } // namespace gamemd
 // 0x774C70
 namespace gamemd {
-int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2, void *a3)
+int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 {
 
   int result; // eax

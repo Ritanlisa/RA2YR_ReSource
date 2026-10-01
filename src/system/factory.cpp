@@ -1,4 +1,5 @@
 #include "system/factory.hpp"
+#include "e4/classes/House_e4.hpp"
 
 namespace gamemd
 {

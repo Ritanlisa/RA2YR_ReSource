@@ -41,7 +41,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
 } // namespace gamemd
 // 0x69AD80
 namespace gamemd {
-void * GameOption::SetDigest(CCINIClass * aP1)
+void * GameOption::SetDigest(char *aP1)
 {
 
   char *result; // eax

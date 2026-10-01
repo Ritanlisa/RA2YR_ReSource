@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_690400_e4.hpp"
 #include "e4/classes/E4Recv_690530_e4.hpp"
@@ -183,7 +185,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     memset(v41, 0, sizeof(v41)); /*0x693cd4*/
     v42 = 0; /*0x693ce5*/
     v41[0] = 110; /*0x693ce7*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v41, 250, 1); /*0x693cef*/
+    ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v41, 250, 1); /*0x693cef*/
     while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x693d00*/
     {
       v8 = 3600; /*0x693d06*/
@@ -326,7 +328,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     memset(v41, 0, sizeof(v41)); /*0x6940b8*/
     v42 = 0; /*0x6940ba*/
     v41[0] = 113; /*0x6940cb*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v41, 250, 1); /*0x6940d3*/
+    ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v41, 250, 1); /*0x6940d3*/
     while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x6940e4*/
     {
       v26 = 3600; /*0x6940ea*/
@@ -451,7 +453,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
-  FileClass::Open2((RawFileClass *)v43, (const CHAR *)2); /*0x694213*/
+  ((FileClass *)((RawFileClass *)v43))->Open2((const CHAR *)2); /*0x694213*/
   v7 = a2 / 0xC0; /*0x69422c*/
   v25 = a2 / 0xC0; /*0x69422f*/
   if ( a2 % 0xC0 ) /*0x69422a*/
@@ -478,8 +480,8 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
   {
-    IPXManagerClass::createConnection(&unk_A8E9C0); /*0x69434a*/
-    TacticalClass::SetCameraPosition(&unk_A8E9C0, 120, -1, 1200); /*0x69435d*/
+    ((IPXManagerClass *)(&unk_A8E9C0))->createConnection(); /*0x69434a*/
+    ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(120, -1, 1200); /*0x69435d*/
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
     v11 = 3600; /*0x694371*/
@@ -581,8 +583,8 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 100.0, NAN); /*0x694675*/
   LABEL_54:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6946b4*/
-    IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x6946bb*/
-  FileClass::Write2((RawFileClass *)v43, lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
+    ((IPXManagerClass *)(&unk_A8E9C0))->destroyConnection(); /*0x6946bb*/
+  ((FileClass *)((RawFileClass *)v43))->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
   RA2_OPDEL((void *)lpBuffer); /*0x6946d8*/
   RA2_OPDEL(Block); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
@@ -771,7 +773,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   *(unsigned int *)v58 = 111; /*0x694a1d*/
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
-  Stream::WriteBlock((int *)&unk_A8EA70, (int)v58, 250, 1); /*0x694a4f*/
+  ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v58, 250, 1); /*0x694a4f*/
   while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
@@ -871,8 +873,8 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   Timer::GetTicks(); /*0x694d03*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694d20*/
   {
-    IPXManagerClass::createConnection(&unk_A8E9C0); /*0x694d27*/
-    TacticalClass::SetCameraPosition(&unk_A8E9C0, 240, -1, 1200); /*0x694d3d*/
+    ((IPXManagerClass *)(&unk_A8E9C0))->createConnection(); /*0x694d27*/
+    ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(240, -1, 1200); /*0x694d3d*/
   }
   if ( v29 == 3 || (v30 = 10800, v29 != 4) ) /*0x694d4f*/
     v30 = 3600; /*0x694d51*/
@@ -928,7 +930,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
           if ( v45 != -1 ) /*0x69504f*/
             Timer::GetTicks(); /*0x695055*/
           Debug::Log(); /*0x695072*/
-          Stream::WriteBlock((int *)&unk_A8EA70, (int)&v57.__pad_0[12], 220, 1); /*0x69508e*/
+          ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)&v57.__pad_0[12], 220, 1); /*0x69508e*/
         }
         ++v27; /*0x69509e*/
         v48 += 100; /*0x6950a4*/
@@ -1011,7 +1013,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 100.0, NAN); /*0x69513f*/
   LABEL_116:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
-    IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x695183*/
+    ((IPXManagerClass *)(&unk_A8E9C0))->destroyConnection(); /*0x695183*/
   Debug::Log(); /*0x69519c*/
   *(unsigned int *)v54.CDFileClass = (void*)&CCFileClass_vftable; /*0x6951ab*/
   v56 = 0; /*0x6951b3*/

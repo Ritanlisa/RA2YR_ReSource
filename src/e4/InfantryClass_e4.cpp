@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
@@ -145,7 +147,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
       {
         slaveManager = (FactoryClass *)((unsigned int *)a1)[0]; /*0x4d553d*/
         if ( slaveManager ) /*0x4d5545*/
-          FactoryClass::ResetProductionTimers(slaveManager); /*0x4d5547*/
+          ((FactoryClass *)(slaveManager))->ResetProductionTimers(); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d554c*/
         v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v13); /*0x4d555a*/
         vtable0[288](a1, v9, 1); /*0x4d5562*/
@@ -226,7 +228,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     Type = a1->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
-      if ( HouseClass::CanBuild(((unsigned int *)a1)[0], (int)Type, 0, 0) == -1 ) /*0x517de3*/
+      if ( ((HouseClass *)(((unsigned int *)a1)[0]))->CanBuild((int)Type, 0, 0) == -1 ) /*0x517de3*/
         ((unsigned int *)a1)[0]->recheckTechTree = 1; /*0x517deb*/
       team = (int *)((unsigned int *)a1)[0]; /*0x517df2*/
       if ( team ) /*0x517dfa*/
@@ -241,14 +243,14 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
       }
-      HouseClass::DecrementUnitCount(((unsigned int *)a1)[0], a1); /*0x517e2e*/
+      ((HouseClass *)(((unsigned int *)a1)[0]))->DecrementUnitCount(a1); /*0x517e2e*/
       if ( !((unsigned int *)a1)[0] ) /*0x517e33*/
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
       (*(void (**)(int))(*(unsigned int *)((unsigned int *)a1)[0] + 172))(((unsigned int *)a1)[0]); /*0x517e4e*/
       a1->unknown_int_6E8 = 2; /*0x517e56*/
       a1->Crawling = 0; /*0x517e60*/
       a1->SequenceAnim[0] = 0; /*0x517e66*/
-      TechnoClass::CleanupDirection((FootClass *)a1); /*0x517e6c*/
+      ((TechnoClass *)((FootClass *)a1))->CleanupDirection(); /*0x517e6c*/
     }
   }
   AbstractClass::AnnounceExpiredPointer(&a1->FootClass, 1); /*0x517e75*/

@@ -204,7 +204,7 @@ void AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void
                        * ((unsigned int)Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink)
                         % *(unsigned int *)(aP0->Type + 1852)));
         v15 = (int *)(*(int (**)(AircraftClass *, unsigned char *))(aP0->vtable0 + 164))(aP0, v18); /*0x41667b*/
-        AnimClass::ctor(v13, v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
+        ((AnimClass *)(v13))->ctor(v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
       }
     }
     if ( !(*(uint8_t (**)(AircraftClass *, int))(aP0->vtable0 + 988))(aP0, a5) ) /*0x416694*/
@@ -321,7 +321,7 @@ LABEL_36:
     if ( a3 != (IUnknown *)((int *))g_AircraftStatusFlag ) /*0x417eae*/
     {
       v15 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3); /*0x417ecc*/
-      v16 = Cell::IsBridge(v15); /*0x417ed3*/
+      v16 = ((Cell *)(v15))->IsBridge(); /*0x417ed3*/
       if ( v16 ) /*0x417eda*/
       {
         if ( *(unsigned char *)(v16[328] + 5821) ) /*0x417ee6*/
@@ -464,7 +464,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
         goto LABEL_35; /*0x41ac57*/
       if ( (uint8_t)Array::ContainsValue(v10, (int)a1) ) /*0x41ac5c*/
       {
-        if ( (uint8_t)Array::Contains(v11, (int)a1) ) /*0x41ac72*/
+        if ( (uint8_t)((Array *)(v11))->Contains((int)a1) ) /*0x41ac72*/
           goto LABEL_35; /*0x41ac72*/
         v6 = (*((int (**)(FootClass *, int))a1->vtable0 + 157))(a1, 14); /*0x41ac81*/
         if ( v6 == 1 ) /*0x41ac8a*/

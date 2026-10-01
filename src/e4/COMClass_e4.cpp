@@ -40,7 +40,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
         *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x767033*/
-        ComPtr::Release(v5); /*0x767039*/
+        ((ComPtr *)(v5))->Release(); /*0x767039*/
         --v7; /*0x76703e*/
       }
       while ( v7 ); /*0x76703f*/
@@ -52,7 +52,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   else
   {
     *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x76705a*/
-    ComPtr::Release((ComPtr *)Block); /*0x767060*/
+    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       __3_YAXPAX_Z(Block); /*0x76706b*/
     return Block->__pad_0; /*0x767073*/

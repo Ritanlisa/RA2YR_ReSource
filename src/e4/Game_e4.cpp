@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
@@ -704,7 +707,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                  | (16
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
                                    & 1));
-  Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5ba91d*/
+  ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v11, 250, 1); /*0x5ba91d*/
   *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   ((Vector *)((int)v14))->Clear(); /*0x5ba93f*/
@@ -1849,7 +1852,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
       if ( dword_B777A0 - 1 >= 0 && v7 < dword_B777A0 ) /*0x77fb57*/
       {
         ((String *)(&v31))->Reassign((const char **)dword_B777A8 + v7); /*0x77fb67*/
-        DynamicArray::Remove((DynamicArray *)&dword_B777A0, v7); /*0x77fb72*/
+        ((DynamicArray *)((DynamicArray *)&dword_B777A0))->Remove(v7); /*0x77fb72*/
       }
       v8 = String::GetOrEmpty(&v31); /*0x77fb80*/
       if ( strlen(v8) > 9 ) /*0x77fb91*/

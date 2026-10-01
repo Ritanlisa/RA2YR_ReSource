@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/LCWPipe_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5654E0_e4.hpp"
 #include "e4/classes/E4Recv_565610_e4.hpp"
@@ -491,8 +492,8 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 
   v2 = (gamemd::ObjectClass *)(this); /*0x56af45*/
   v3 = 0; /*0x56af47*/
-  LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
-  Pipe::SetDelegate(&v17, a2); /*0x56af65*/
+  ((LCWPipe *)((LCWPipe *)&v17))->Constructor(0, 0x2000); /*0x56af57*/
+  ((Pipe *)(&v17))->SetDelegate(a2); /*0x56af65*/
   v4 = 0; /*0x56af70*/
   v18 = 0; /*0x56af74*/
   if ( v2[1].lastLayer > 0 ) /*0x56af78*/
@@ -571,7 +572,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
 
   v2 = this; /*0x56b255*/
   LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
-  Pipe::SetDelegate(&v17, a2); /*0x56b274*/
+  ((Pipe *)(&v17))->SetDelegate(a2); /*0x56b274*/
   v3 = 0; /*0x56b27f*/
   v4 = 0; /*0x56b281*/
   v18 = 0; /*0x56b285*/
@@ -883,8 +884,8 @@ int E4Recv_56AE40::sub_56AE40(int a2)
   Pipe v14[2]; // [esp+Ch] [ebp-28h] BYREF
 
   v3 = 0; /*0x56ae48*/
-  LCWPipe::Constructor((LCWPipe *)v14, 0, 0x2000); /*0x56ae54*/
-  Pipe::SetDelegate(v14, a2); /*0x56ae62*/
+  ((LCWPipe *)((LCWPipe *)v14))->Constructor(0, 0x2000); /*0x56ae54*/
+  ((Pipe *)(v14))->SetDelegate(a2); /*0x56ae62*/
   for ( i = 0; i < *((unsigned int *)this + 80); ++i ) /*0x56ae71*/
   {
     v5 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * i); /*0x56ae7b*/
