@@ -714,8 +714,8 @@ char * String::Trim(void *a1_1)
 
   if ( this ) /*0x727cf5*/
   {
-    v2 = *this; /*0x727cf7*/
-    v3 = this; /*0x727cfc*/
+    v2 = (char)(*this); /*0x727cf7*/
+    v3 = (const char *)(this); /*0x727cfc*/
     if ( *this ) /*0x727cf7*/
     {
       do /*0x727d0a*/
@@ -778,7 +778,7 @@ char ** String::Assign(const char *a2)
   else
     v3 = 1; /*0x7b4650*/
   v4 = (unsigned char *)__2_YAPAXI_Z(v3); /*0x7b4656*/
-  *(unsigned int *)this->__pad_0 = v4; /*0x7b465e*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v4); /*0x7b465e*/
   *v4 = 0; /*0x7b4662*/
   if ( a2 ) /*0x7b4665*/
     strcpy(*(char **)this->__pad_0, a2); /*0x7b467d*/
@@ -798,7 +798,7 @@ char ** String::AssignFromPtr(const char **a2)
   if ( *a2 ) /*0x7b469f*/
   {
     v3 = (char *)__2_YAPAXI_Z(strlen(*a2) + 1); /*0x7b46b4*/
-    *(unsigned int *)this->__pad_0 = v3; /*0x7b46b9*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v3); /*0x7b46b9*/
     strcpy(v3, *a2); /*0x7b46d1*/
   }
   return (char **)this; /*0x7b46da*/
@@ -916,7 +916,7 @@ void ** String::Assign_Alt(const char *aP1)
   else
     v3 = 1; /*0x7b48ff*/
   v4 = (unsigned char *)__2_YAPAXI_Z(v3); /*0x7b4905*/
-  *(unsigned int *)this->__pad_0 = v4; /*0x7b490d*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v4); /*0x7b490d*/
   *v4 = 0; /*0x7b4911*/
   if ( aP1 ) /*0x7b4914*/
     strcpy(*(char **)this->__pad_0, aP1); /*0x7b492c*/
@@ -940,7 +940,7 @@ char ** String::Reassign(const char **aP1)
   {
     v4 = (char *)*aP1; /*0x7b4994*/
     if ( !*aP1 ) /*0x7b4994*/
-      v4 = &g_INI_DefaultBuffer; /*0x7b499a*/
+      v4 = (char *)(&g_INI_DefaultBuffer); /*0x7b499a*/
     if ( v3 ) /*0x7b49a1*/
       __3_YAXPAX_Z(v3); /*0x7b49a4*/
     *(unsigned int *)this->__pad_0 = 0; /*0x7b49ae*/
@@ -949,7 +949,7 @@ char ** String::Reassign(const char **aP1)
     else
       v5 = 1; /*0x7b49c4*/
     v6 = (unsigned char *)__2_YAPAXI_Z(v5); /*0x7b49ca*/
-    *(unsigned int *)this->__pad_0 = v6; /*0x7b49d2*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v6); /*0x7b49d2*/
     *v6 = 0; /*0x7b49d7*/
     if ( v4 ) /*0x7b49da*/
       strcpy(*(char **)this->__pad_0, v4); /*0x7b49f3*/
@@ -979,7 +979,7 @@ const char ** String::Append(const char *aP1)
     if ( *(unsigned int *)this->__pad_0 ) /*0x7b4c3b*/
       v6 = strlen(*(const char **)this->__pad_0) + v4; /*0x7b4c52*/
     v7 = (char *)__2_YAPAXI_Z(v6); /*0x7b4c55*/
-    *(unsigned int *)this->__pad_0 = v7; /*0x7b4c61*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v7); /*0x7b4c61*/
     if ( v5 ) /*0x7b4c64*/
     {
       strcpy(v7, v5); /*0x7b4c7c*/
@@ -1019,8 +1019,8 @@ const char ** String::Append2(char **aP1)
   }
   else
   {
-    v4 = &g_INI_DefaultBuffer; /*0x7b4cdf*/
-    v10 = &g_INI_DefaultBuffer; /*0x7b4ce4*/
+    v4 = (const char *)(&g_INI_DefaultBuffer); /*0x7b4cdf*/
+    v10 = (char *)(&g_INI_DefaultBuffer); /*0x7b4ce4*/
   }
   if ( v4 ) /*0x7b4cf2*/
   {
@@ -1030,7 +1030,7 @@ const char ** String::Append2(char **aP1)
     if ( *(unsigned int *)this->__pad_0 ) /*0x7b4d02*/
       v7 = strlen(*(const char **)this->__pad_0) + v5; /*0x7b4d19*/
     v8 = (char *)__2_YAPAXI_Z(v7); /*0x7b4d1c*/
-    *(unsigned int *)this->__pad_0 = v8; /*0x7b4d28*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v8); /*0x7b4d28*/
     if ( v6 ) /*0x7b4d2b*/
     {
       strcpy(v8, v6); /*0x7b4d43*/
@@ -1125,16 +1125,16 @@ char ** String::Concat(char ** a1, IUnknown * aP2, void *a3_1)
     v4 = (char *)__2_YAPAXI_Z(strlen(*(const char **)this->__pad_0) + 1); /*0x7b4eef*/
     strcpy(v4, *(const char **)this->__pad_0); /*0x7b4f08*/
   }
-  v5 = *aP2; /*0x7b4f15*/
+  v5 = (char *)(*aP2); /*0x7b4f15*/
   if ( *aP2 ) /*0x7b4f15*/
   {
-    v13 = *aP2; /*0x7b4f26*/
+    v13 = (char *)(*aP2); /*0x7b4f26*/
     v6 = v5; /*0x7b4f2a*/
   }
   else
   {
-    v6 = &g_INI_DefaultBuffer; /*0x7b4f1b*/
-    v13 = &g_INI_DefaultBuffer; /*0x7b4f20*/
+    v6 = (const char *)(&g_INI_DefaultBuffer); /*0x7b4f1b*/
+    v13 = (char *)(&g_INI_DefaultBuffer); /*0x7b4f20*/
   }
   if ( v6 ) /*0x7b4f2e*/
   {
@@ -1182,10 +1182,10 @@ char String::Erase(MPCooperative * aP1, int a3, void *a3_2)
   int result; // eax
   char *v8; // [esp+14h] [ebp+4h]
 
-  v4 = aP1; /*0x7b502d*/
+  v4 = (int)(aP1); /*0x7b502d*/
   v5 = a3; /*0x7b5031*/
   v6 = strlen(*(const char **)this->__pad_0) + 1; /*0x7b5035*/
-  result = a3 + aP1; /*0x7b503a*/
+  result = (int)(a3 + aP1); /*0x7b503a*/
   if ( a3 + aP1 > (int)(v6 - 1) ) /*0x7b503f*/
     v4 = v6 - 1 - a3; /*0x7b5043*/
   if ( v4 < 0 ) /*0x7b5047*/
@@ -1202,7 +1202,7 @@ char String::Erase(MPCooperative * aP1, int a3, void *a3_2)
     strcpy(v8, *(const char **)this->__pad_0); /*0x7b5092*/
     strcat(v8, (const char *)(a3 + v4 + *(unsigned int *)this->__pad_0)); /*0x7b50c1*/
     __3_YAXPAX_Z(*(void **)this->__pad_0); /*0x7b50cd*/
-    *(unsigned int *)this->__pad_0 = v8; /*0x7b50d9*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v8); /*0x7b50d9*/
     LOBYTE(result) = 1; /*0x7b50db*/
   }
   else
@@ -1243,14 +1243,14 @@ void String::TrimRight(ObjectClass * aP1)
     {
       v6 = (char *)*aP1; /*0x7b5258*/
       if ( !*aP1 ) /*0x7b5258*/
-        v6 = &g_INI_DefaultBuffer; /*0x7b525e*/
+        v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b525e*/
       if ( !strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + v5)) ) /*0x7b526c*/
         break; /*0x7b5276*/
     }
     while ( v5-- ); /*0x7b527d*/
   }
   v8 = v5 + 1; /*0x7b5282*/
-  v9 = &g_INI_DefaultBuffer; /*0x7b5285*/
+  v9 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5285*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b527f*/
     v9 = *(const char **)this->__pad_0; /*0x7b528c*/
   v10 = (char *)__2_YAPAXI_Z(v8 + 1); /*0x7b5292*/
@@ -1259,7 +1259,7 @@ void String::TrimRight(ObjectClass * aP1)
   if ( v9 ) /*0x7b52a1*/
     strncpy(v10, v9, v8); /*0x7b52a6*/
   v11[v8] = 0; /*0x7b52ae*/
-  v12 = &g_INI_DefaultBuffer; /*0x7b52b2*/
+  v12 = (const char *)(&g_INI_DefaultBuffer); /*0x7b52b2*/
   if ( v11 ) /*0x7b52b9*/
     v12 = v11; /*0x7b52bb*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b52bd*/
@@ -1270,7 +1270,7 @@ void String::TrimRight(ObjectClass * aP1)
   else
     v13 = 1; /*0x7b52e5*/
   v14 = (unsigned char *)__2_YAPAXI_Z(v13); /*0x7b52eb*/
-  *(unsigned int *)this->__pad_0 = v14; /*0x7b52f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v14); /*0x7b52f3*/
   *v14 = 0; /*0x7b52f8*/
   if ( v12 ) /*0x7b52fb*/
     strcpy(*(char **)this->__pad_0, v12); /*0x7b5314*/
@@ -1325,7 +1325,7 @@ char String::Assign_Bool(const char *a2)
     v3 = strlen(a2) + 1; /*0x7b5a69*/
   else
     v3 = 1; /*0x7b5a6f*/
-  result = __2_YAPAXI_Z(v3); /*0x7b5a75*/
+  result = (int)(__2_YAPAXI_Z(v3)); /*0x7b5a75*/
   *(unsigned int *)this->__pad_0 = result; /*0x7b5a7d*/
   *(unsigned char *)result = 0; /*0x7b5a81*/
   if ( a2 ) /*0x7b5a84*/
@@ -1414,14 +1414,14 @@ char String::CopyTruncated(size_t Count)
 
   v3 = *(const char **)this->__pad_0; /*0x7b5d75*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b5d75*/
-    v3 = &g_INI_DefaultBuffer; /*0x7b5d7c*/
+    v3 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5d7c*/
   v4 = (char *)__2_YAPAXI_Z(Count + 1); /*0x7b5d89*/
   v5 = v4; /*0x7b5d8e*/
   *v4 = 0; /*0x7b5d95*/
   if ( v3 ) /*0x7b5d99*/
     strncpy(v4, v3, Count); /*0x7b5d9e*/
   v5[Count] = 0; /*0x7b5da8*/
-  v6 = &g_INI_DefaultBuffer; /*0x7b5dac*/
+  v6 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5dac*/
   if ( v5 ) /*0x7b5db1*/
     v6 = v5; /*0x7b5db3*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b5db5*/
@@ -1432,7 +1432,7 @@ char String::CopyTruncated(size_t Count)
   else
     v7 = 1; /*0x7b5ddb*/
   v8 = (unsigned char *)__2_YAPAXI_Z(v7); /*0x7b5de1*/
-  *(unsigned int *)this->__pad_0 = v8; /*0x7b5de9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v8); /*0x7b5de9*/
   *v8 = 0; /*0x7b5ded*/
   if ( v6 ) /*0x7b5df0*/
     strcpy(*(char **)this->__pad_0, v6); /*0x7b5e08*/
@@ -1457,14 +1457,14 @@ char String::TruncateTo(size_t Count)
 
   v3 = *(const wchar_t **)this->__pad_0; /*0x7b78d5*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b78d5*/
-    v3 = &g_TypeClass_DefaultString; /*0x7b78db*/
+    v3 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b78db*/
   v4 = (wchar_t *)__2_YAPAXI_Z(2 * Count + 2); /*0x7b78ea*/
   v5 = v4; /*0x7b78ef*/
   *v4 = 0; /*0x7b78f6*/
   if ( v3 ) /*0x7b78fb*/
     wcsncpy(v4, v3, Count); /*0x7b7900*/
   v5[Count] = 0; /*0x7b7908*/
-  v6 = &g_TypeClass_DefaultString; /*0x7b7911*/
+  v6 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7911*/
   if ( v5 ) /*0x7b7916*/
     v6 = v5; /*0x7b7918*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b791a*/
@@ -1475,7 +1475,7 @@ char String::TruncateTo(size_t Count)
   else
     v7 = 1; /*0x7b793f*/
   v8 = (unsigned short *)__2_YAPAXI_Z(2 * v7); /*0x7b7948*/
-  *(unsigned int *)this->__pad_0 = v8; /*0x7b7950*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v8); /*0x7b7950*/
   *v8 = 0; /*0x7b7954*/
   if ( v6 ) /*0x7b7959*/
     wcscpy(*(wchar_t **)this->__pad_0, v6); /*0x7b795f*/

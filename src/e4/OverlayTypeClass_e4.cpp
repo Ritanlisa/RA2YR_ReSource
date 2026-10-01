@@ -396,7 +396,7 @@ int OverlayTypeClass::LookupByName()
   if ( !_strcmpi(g_Str__none_, (char *)this) || !this ) /*0x48df99*/
     return -1; /*0x48dfbe*/
   v2 = 0; /*0x48df9b*/
-  v3 = off_81DA28; /*0x48df9d*/
+  v3 = (char **)(off_81DA28); /*0x48df9d*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48dfb0*/
   {
     ++v3; /*0x48dfb2*/

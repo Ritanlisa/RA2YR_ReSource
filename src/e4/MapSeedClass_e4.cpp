@@ -83,7 +83,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int v56[4]; // [esp+114h] [ebp-14h] BYREF
   char v57[4]; // [esp+124h] [ebp-4h] BYREF
 
-  v33[1] = this; /*0x5a5b6a*/
+  v33[1] = (unsigned int)(this); /*0x5a5b6a*/
   v2 = (int *)(globalHelper_0A7640((unsigned int *)(v50), aP1)); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v38 = *v2; /*0x5a5b75*/
@@ -651,7 +651,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x5acb1e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x5acb27*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5acb27*/
       this->m_8 = a2; /*0x5acb2f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5acb32*/
       return 1; /*0x5acb38*/
@@ -754,7 +754,7 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5acc51*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5acc5a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5acc5a*/
     this->m_8 = a2; /*0x5acc62*/
     BYTE1(this->m_C) = a3 == 0; /*0x5acc65*/
   }

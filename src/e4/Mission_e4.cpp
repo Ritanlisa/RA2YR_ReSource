@@ -18,6 +18,8 @@
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {

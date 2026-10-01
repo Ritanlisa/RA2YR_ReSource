@@ -6,6 +6,7 @@
 
 #include <cstring>
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 namespace ra2 {
 namespace game {

@@ -26,6 +26,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x663D60
 namespace gamemd {

@@ -676,24 +676,24 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
   int v5; // esi
   unsigned int *v6; // edi
 
-  v4 = RA2_OPNEW(0x10u); /*0x765f69*/
+  v4 = (int)(RA2_OPNEW(0x10u)); /*0x765f69*/
   v5 = v4; /*0x765f6e*/
   if ( v4 ) /*0x765f75*/
   {
     v6 = (unsigned int *)(v4 + 8); /*0x765f78*/
     *(unsigned int *)(v4 + 4) = 0; /*0x765f7d*/
-    *(unsigned int *)v4 = (void*)&ReferenceCounted_vftable; /*0x765f84*/
+    *(unsigned int *)v4 = (unsigned int)((void*)&ReferenceCounted_vftable); /*0x765f84*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
-    *v6 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x765f8f*/
+    *v6 = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x765f8f*/
     ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x765f9b*/
-    *(unsigned int *)v5 = (void*)&WorldDominationTour_Conflict_vftable; /*0x765fa0*/
+    *(unsigned int *)v5 = (unsigned int)((void*)&WorldDominationTour_Conflict_vftable); /*0x765fa0*/
   }
   else
   {
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  *(unsigned int *)a1->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765fb4*/
+  *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Conflict_vftable); /*0x765fb4*/
   ComPtr::Set(a1, v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -707,17 +707,17 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
   int v5; // esi
   unsigned int *v6; // edi
 
-  v4 = RA2_OPNEW(0x10u); /*0x767b09*/
+  v4 = (int)(RA2_OPNEW(0x10u)); /*0x767b09*/
   v5 = v4; /*0x767b0e*/
   if ( v4 ) /*0x767b15*/
   {
     v6 = (unsigned int *)(v4 + 8); /*0x767b18*/
     *(unsigned int *)(v4 + 4) = 0; /*0x767b1d*/
-    *(unsigned int *)v4 = (void*)&ReferenceCounted_vftable; /*0x767b24*/
+    *(unsigned int *)v4 = (unsigned int)((void*)&ReferenceCounted_vftable); /*0x767b24*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
-    *v6 = (void*)&rc_ptr_WDTState_vftable; /*0x767b2f*/
+    *v6 = (unsigned int)((void*)&rc_ptr_WDTState_vftable); /*0x767b2f*/
     ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x767b3b*/
-    *(unsigned int *)v5 = (void*)&WorldDominationTour_History_vftable; /*0x767b40*/
+    *(unsigned int *)v5 = (unsigned int)((void*)&WorldDominationTour_History_vftable); /*0x767b40*/
   }
   else
   {

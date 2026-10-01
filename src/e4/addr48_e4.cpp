@@ -44,6 +44,8 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_4A3270_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4880F0
 namespace gamemd {
@@ -228,7 +230,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v120 = (TechnoClass *)aP1;
   aP2 = (CoordStruct *)aP0;
   sub_48B070(&v117, 0, 0);
-  var94 = 10;
+  var94 = (gamemd::ObjectClass *)(10);
   v121 = 0;
   if ( !aP1 || (**(unsigned char **)&((unsigned int *)(HouseClass_Player))[29924] & 0x20) != 0 || (v8 = aP3) == 0 )
   {

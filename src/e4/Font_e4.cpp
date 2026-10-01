@@ -28,6 +28,7 @@
 #include "e4/classes/Field_e4.hpp"
 #include "e4/classes/FontClass_e4.hpp"
 #include "e4/classes/FontRenderer_e4.hpp"
+#include "e4/classes/Palette_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -106,7 +107,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   uint8_t v58; // [esp+3Ah] [ebp-6h]
   int16_t v59; // [esp+58h] [ebp+18h]
 
-  v11 = (int)((unsigned short *)(0));
+  v11 = (uint16_t *)((int)((unsigned short *)(0)));
   if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
   {
     FontRenderer::InitContext((unsigned int *)aP0, (int *)aP1); /*0x434cf8*/
@@ -116,7 +117,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     v15 = *(uint16_t *)(aP0 + 36); /*0x434d13*/
     HIWORD(v16) = HIWORD(aP2); /*0x434d17*/
     v17 = 0; /*0x434d19*/
-    v51 = 0; /*0x434d1b*/
+    v51 = (unsigned short)(0); /*0x434d1b*/
     LOWORD(v16) = (unsigned short)(*aP2); /*0x434d1f*/
     v54 = 0; /*0x434d22*/
     v52 = 0; /*0x434d29*/

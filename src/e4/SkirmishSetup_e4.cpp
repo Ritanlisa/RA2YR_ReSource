@@ -37,6 +37,12 @@
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/Event_Dispatch_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/GameConfig_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {

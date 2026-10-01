@@ -725,7 +725,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   }
   else
   {
-    mapCoords = v4->mapCoords; /*0x47e2d5*/
+    mapCoords = (unsigned int *)(v4->mapCoords); /*0x47e2d5*/
   }
   v26 = mapCoords[80]; /*0x47e321*/
   IDA_BYTE1(v26) &= ~0x10u; /*0x47e327*/
@@ -937,7 +937,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   }
   else
   {
-    mapCoords = v4->mapCoords; /*0x47e705*/
+    mapCoords = (unsigned int *)(v4->mapCoords); /*0x47e705*/
   }
   v26 = mapCoords[80]; /*0x47e751*/
   IDA_BYTE1(v26) &= ~0x10u; /*0x47e757*/
@@ -1037,8 +1037,8 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
   if ( !byte_89E7C5 ) /*0x47efed*/
   {
     byte_89E7C5 = 1; /*0x47eff6*/
-    dword_89E794 = SearchMIXFile(aShroudShp, 0); /*0x47f009*/
-    dword_89E790 = SearchMIXFile(aFogShp, 0); /*0x47f013*/
+    dword_89E794 = (unsigned int)(SearchMIXFile(aShroudShp, 0)); /*0x47f009*/
+    dword_89E790 = (unsigned int)(SearchMIXFile(aFogShp, 0)); /*0x47f013*/
   }
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x47f022*/
     v33 = (char **)dword_89E790; /*0x47f02a*/

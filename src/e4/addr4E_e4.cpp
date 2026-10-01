@@ -1300,7 +1300,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
   LRESULT v18; // [esp+10h] [ebp-8h]
   HWND hWnd; // [esp+14h] [ebp-4h]
 
-  v4 = aP0; /*0x4e5487*/
+  v4 = (gamemd::SessionClass *)(aP0); /*0x4e5487*/
   hWnd = GetDlgItem(aP0, nIDDlgItem); /*0x4e5498*/
   v16 = !ShowWindow(hWnd, 0); /*0x4e54a4*/
   switch ( nIDDlgItem ) /*0x4e54af*/
@@ -1353,7 +1353,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
       v10 = SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
       if ( v10 == a3 ) /*0x4e5580*/
         break; /*0x4e5580*/
-      v4 = aP0; /*0x4e5586*/
+      v4 = (gamemd::SessionClass *)(aP0); /*0x4e5586*/
       if ( (int)++v9 >= v18 ) /*0x4e558d*/
         goto LABEL_44; /*0x4e558d*/
     }
@@ -1389,7 +1389,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
       }
       dword_8B3F38[3 * v10] = v11; /*0x4e5627*/
     }
-    v4 = aP0; /*0x4e562e*/
+    v4 = (gamemd::SessionClass *)(aP0); /*0x4e562e*/
   }
   LABEL_44:
   if ( !v16 ) /*0x4e563a*/

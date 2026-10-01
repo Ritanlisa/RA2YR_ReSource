@@ -27,6 +27,8 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/NetworkGameSetup_e4.hpp"
 #include "e4/classes/CoordList_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {

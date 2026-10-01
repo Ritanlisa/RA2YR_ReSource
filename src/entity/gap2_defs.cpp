@@ -24,6 +24,8 @@
 #include "entity/tube.hpp"
 #include "entity/wave.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Vector3_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x415EE0
 namespace gamemd { 
@@ -126,7 +128,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         *v8 = Math::ArcTan2(-0.00009587672516830327) * *v8; /*0x416019*/
         v8[1] = Math::ArcTan2(-0.00009587672516830327) * v8[1]; /*0x41602d*/
-        v13 = Math::SinCos(-0.00009587672516830327) * v54; /*0x416035*/
+        v13 = (unsigned int *)(Math::SinCos(-0.00009587672516830327) * v54); /*0x416035*/
         v8[2] = v13; /*0x416047*/
         Value = ProgressTimer::GetValue((unsigned short *)&this->q740, v53); /*0x416051*/
         Vector2::NormalizeNonZero(v8); /*0x416053*/

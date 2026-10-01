@@ -37,6 +37,7 @@
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {

@@ -197,7 +197,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
             v16 = &g_MissionQueueFrame.briefing[130]; /*0x569036*/
           }
           *((unsigned char *)v16 + 283) += 4; /*0x569049*/
-          v17 = *CellStruct::Add((CellStruct *)v77, &v72, &g_DDrawSurfaceManager.scenario[82]); /*0x56905d*/
+          v17 = (int)(*CellStruct::Add((CellStruct *)v77, &v72, &g_DDrawSurfaceManager.scenario[82])); /*0x56905d*/
           *(unsigned int *)v71 = v17; /*0x56905f*/
           v18 = (int16_t)v17 + (SHIWORD(v17) << 9); /*0x56906e*/
           if ( v18 >= 0x40000 || (v19 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v18)) == 0 ) /*0x569084*/
@@ -206,7 +206,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
             v19 = &g_MissionQueueFrame.briefing[130]; /*0x56908c*/
           }
           *((unsigned char *)v19 + 283) += 4; /*0x56909f*/
-          v20 = *CellStruct::Add((CellStruct *)v77, &v73, &g_DDrawSurfaceManager.scenario[86]); /*0x5690b3*/
+          v20 = (int)(*CellStruct::Add((CellStruct *)v77, &v73, &g_DDrawSurfaceManager.scenario[86])); /*0x5690b3*/
           *(unsigned int *)v71 = v20; /*0x5690b5*/
           v21 = (int16_t)v20 + (SHIWORD(v20) << 9); /*0x5690c4*/
           if ( v21 >= 0x40000 || (v22 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v21)) == 0 ) /*0x5690da*/
@@ -247,14 +247,14 @@ LABEL_41:
           }
         }
         Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x5693de*/
-        *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88]); /*0x5693fc*/
+        *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88])); /*0x5693fc*/
         v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569401*/
 LABEL_86:
         v63 |= v40; /*0x569468*/
         break; /*0x569468*/
       }
       Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x5693ac*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88]); /*0x5693ca*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88])); /*0x5693ca*/
 LABEL_85:
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569460*/
       goto LABEL_86; /*0x569463*/
@@ -264,14 +264,14 @@ LABEL_85:
     if ( v13 == dword_ABC1D0 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691a5*/
     {
       Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x56940e*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82]); /*0x56942c*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82])); /*0x56942c*/
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569431*/
       goto LABEL_86; /*0x569431*/
     }
     if ( v13 == dword_AA1540 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691ba*/
     {
       Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x56943e*/
-      *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82]); /*0x56945c*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82])); /*0x56945c*/
       goto LABEL_85; /*0x56945c*/
     }
     if ( v13 != v8 && v13 != v8 + 3 && v13 != v8 + 4 && v13 != v8 + 2 && v13 != v8 + 1 || *((unsigned char *)v64 + 282) != 2 ) /*0x5691e7*/
@@ -292,7 +292,7 @@ LABEL_85:
       v29 = &g_MissionQueueFrame.briefing[130]; /*0x569259*/
     }
     *((unsigned char *)v29 + 283) += 4; /*0x56926c*/
-    v30 = *CellStruct::Add((CellStruct *)v77, &v74, &g_DDrawSurfaceManager.scenario[84]); /*0x569280*/
+    v30 = (int)(*CellStruct::Add((CellStruct *)v77, &v74, &g_DDrawSurfaceManager.scenario[84])); /*0x569280*/
     *(unsigned int *)v71 = v30; /*0x569282*/
     v31 = (int16_t)v30 + (SHIWORD(v30) << 9); /*0x569291*/
     if ( v31 >= 0x40000 || (v32 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v31)) == 0 ) /*0x5692a7*/
@@ -301,7 +301,7 @@ LABEL_85:
       v32 = &g_MissionQueueFrame.briefing[130]; /*0x5692af*/
     }
     *((unsigned char *)v32 + 283) += 4; /*0x5692c2*/
-    v33 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88]); /*0x5692d6*/
+    v33 = (int)(*CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88])); /*0x5692d6*/
     *(unsigned int *)v71 = v33; /*0x5692d8*/
     v34 = (int16_t)v33 + (SHIWORD(v33) << 9); /*0x5692e7*/
     if ( v34 >= 0x40000 || (v35 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v34)) == 0 ) /*0x5692fd*/

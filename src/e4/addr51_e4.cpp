@@ -23,6 +23,9 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/MovementAI_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x5108F0
 namespace gamemd {

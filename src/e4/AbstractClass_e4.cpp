@@ -24,6 +24,14 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/AircraftClass_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 struct Type;  // fix_tu_missing_types
 
 // 0x438E70

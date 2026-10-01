@@ -313,8 +313,8 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(v1 + 9), &v75); /*0x550b91*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(v1 + 12), (int *)&v74); /*0x550ba2*/
-  v4 = v1[15] - ZCoordToScreenY((int)(v1[11])) - 2; /*0x550bb7*/
-  v5 = -2 - ZCoordToScreenY((int)(v1[14])); /*0x550bc4*/
+  v4 = (int)(v1[15] - ZCoordToScreenY((int)(v1[11])) - 2); /*0x550bb7*/
+  v5 = (int)(-2 - ZCoordToScreenY((int)(v1[14]))); /*0x550bc4*/
   v66 = v5; /*0x550bc6*/
   if ( (unsigned int)dword_ABCD44 < PingPongBuffer::GetWriteOffset() || (v53 = 1, !dword_A8EB78) ) /*0x550be3*/
     v53 = 0; /*0x550be5*/

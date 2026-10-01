@@ -17,6 +17,8 @@
 #include "type/techno_type.hpp"
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
+#include "e4/classes/Sidebar_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
 
 // 0x4AEBD0
 namespace gamemd {

@@ -237,7 +237,7 @@ int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP
 
   if ( !aP1 || !a2 ) /*0x6cf49e*/
     return -2147467261; /*0x6cf4a7*/
-  *a2 = aP1; /*0x6cf4a0*/
+  *a2 = (unsigned int)(aP1); /*0x6cf4a0*/
   return 0; /*0x6cf4a4*/
 
 }

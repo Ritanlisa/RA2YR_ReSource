@@ -78,6 +78,7 @@
 #include "e4/classes/VectorClass_ptr_FactoryClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_FoggedObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_GlobalPacketType_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_HouseClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_HouseTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_InfantryClass_e4.hpp"
@@ -349,7 +350,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x42f78d*/
       this->m_8 = a2; /*0x42f795*/
-      BYTE1(this->m_C) = a3 == 0; /*0x42f798*/
+      BYTE1(this->m_C) = (gamemd::AbstractClass **)(a3 == 0); /*0x42f798*/
       return 1; /*0x42f79e*/
     }
     else
@@ -459,7 +460,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       }
       *(unsigned int *)&this->m_1[3] = v6; /*0x4e091a*/
       this->m_8 = a2; /*0x4e0922*/
-      BYTE1(this->m_C) = v4 == 0; /*0x4e0925*/
+      BYTE1(this->m_C) = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
       return 1; /*0x4e092b*/
     }
     else
@@ -584,7 +585,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   }
   v16 = this->m_8; /*0x4e0c0e*/
   if ( v16 < this->m_10 ) /*0x4e0c16*/
-    this->m_10 = v16; /*0x4e0c18*/
+    this->m_10 = (gamemd::AbstractClass **)(v16); /*0x4e0c18*/
   return 1; /*0x4e0c1b*/
 
 }
@@ -598,10 +599,10 @@ unsigned int * VectorClass_K_8::Constructor(void *a1_1, void *a2_1, void *a3_1, 
   this->CStreamClass_field_0x0C = 0; /*0x4a282d*/
   LOBYTE(this->CStreamClass_field_0x10) = 0; /*0x4a2830*/
   BYTE1(this->CStreamClass_field_0x10) = 0; /*0x4a2833*/
-  this->CStreamClass_field_0x14 = 0; /*0x4a2836*/
-  this->CStreamClass_field_0x18 = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
-  this->CStreamClass_field_0x1C = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
-  this->CStreamClass_field_0x20 = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
+  this->CStreamClass_field_0x14 = (unsigned int)(0); /*0x4a2836*/
+  this->CStreamClass_field_0x18 = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a2843*/
+  this->CStreamClass_field_0x1C = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a2850*/
+  this->CStreamClass_field_0x20 = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a285b*/
   *(unsigned int *)this->__pad_0 = &vt_CStreamClass; /*0x4a285e*/
   this->CStreamClass_field_0x04 = (int)&vt_CStreamClass; /*0x4a2864*/
   this->CStreamClass_field_0x24 = 0xFFFF; /*0x4a286b*/
@@ -652,7 +653,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   v7 = *(unsigned int *)&this->__pad_5[3]; /*0x5ad0a1*/
   if ( v7 < *(unsigned int *)this->__tail_10 ) /*0x5ad0a9*/
-    *(unsigned int *)this->__tail_10 = v7; /*0x5ad0ab*/
+    *(unsigned int *)this->__tail_10 = (gamemd::AbstractClass **)(v7); /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
 
 }
@@ -676,7 +677,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   this->Count = 0; /*0x4a0c37*/
   this->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   this->__tail_18[0] = 1; /*0x4a0c3d*/
-  this->__tail_18[1] = 0; /*0x4a0c41*/
+  this->__tail_18[1] = (unsigned int)(0); /*0x4a0c41*/
   *(unsigned int *)&this->IsInitialized = &vt_VectorClass; /*0x4a0c44*/
   if ( &this->IsInitialized != (char *)aP1 ) /*0x4a0c4a*/
   {
@@ -709,9 +710,9 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
       p_IsInitialized[13] = 0; /*0x4a0c97*/
     }
   }
-  *((unsigned int *)p_IsInitialized + 4) = aP1[4]; /*0x4a0c9d*/
-  *((unsigned int *)p_IsInitialized + 5) = aP1[5]; /*0x4a0ca3*/
-  *(unsigned int *)p_IsInitialized = &vt_DynamicVectorClass; /*0x4a0ca6*/
+  *((unsigned int *)p_IsInitialized + 4) = (unsigned int)(aP1[4]); /*0x4a0c9d*/
+  *((unsigned int *)p_IsInitialized + 5) = (unsigned int)(aP1[5]); /*0x4a0ca3*/
+  *(unsigned int *)p_IsInitialized = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0ca6*/
   *(unsigned int *)this->__pad_0 = &vt_EnumConnectionPointsClass; /*0x4a0cac*/
   for ( i = 0; i < *(unsigned int *)&this->__tail_18[4]; ++i ) /*0x4a0cb9*/
   {

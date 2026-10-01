@@ -27,6 +27,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/E4Recv_5EE200_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x49F740
 namespace gamemd {
@@ -216,7 +217,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
           break; /*0x5d3637*/
         if ( !byte_A8E9A0 ) /*0x5d3640*/
         {
-          LOBYTE(v16) = 0; /*0x5d3642*/
+          LOBYTE(v16) = (gamemd::Process)(0); /*0x5d3642*/
           ScreenSaver::Process(v16, v18); /*0x5d3644*/
         }
       }
@@ -339,7 +340,7 @@ LABEL_35:
       this->Debug::Log(); /*0x5f2c9e*/
       goto LABEL_36; /*0x5f2ca3*/
     }
-    LOBYTE(v12) = 0; /*0x5f2a88*/
+    LOBYTE(v12) = (gamemd::Process)(0); /*0x5f2a88*/
     ScreenSaver::Process(v12, v15); /*0x5f2a8a*/
     memset(Source, 0, sizeof(Source)); /*0x5f2a9c*/
     v11 = (*(int (**)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/

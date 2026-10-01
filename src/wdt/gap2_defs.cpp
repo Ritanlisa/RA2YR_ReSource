@@ -12,6 +12,9 @@
 #endif
 #include "object/abstract.hpp"
 #include "wdt/wdt.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
+#include "e4/classes/MovieClass_e4.hpp"
 
 // 0x4104C0
 namespace gamemd { namespace wdt { 

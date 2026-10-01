@@ -64,6 +64,7 @@
 #include "e4/classes/E4Recv_517110_e4.hpp"
 #include "e4/classes/E4Recv_5176D0_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
 
 // 0x522100
 namespace gamemd {
@@ -492,14 +493,14 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
       ((unsigned int *)this)[0] = 0; /*0x52a2bc*/
       goto LABEL_11; /*0x52a2bf*/
     }
-    v7 = a4; /*0x52a2a8*/
-    ((unsigned int *)this)[0] = vtable2; /*0x52a2ac*/
+    v7 = (unsigned int)(a4); /*0x52a2a8*/
+    ((unsigned int *)this)[0] = (unsigned int)(vtable2); /*0x52a2ac*/
     ((unsigned int *)this)[0] = v6; /*0x52a2af*/
   }
   if ( vtable2 ) /*0x52a155*/
   {
     v9 = strlen((const char *)LODWORD(v7)) + 1; /*0x52a15e*/
-    v18 = (uint8_t *)LODWORD(v7); /*0x52a164*/
+    v18 = (gamemd::Checksummer *)((uint8_t *)LODWORD(v7)); /*0x52a164*/
     v10 = (Checksummer *)KeyValuePair::Init((KeyValuePair *)&v21.buffer, 0); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
     v11 = vtable2 + 11; /*0x52a17a*/

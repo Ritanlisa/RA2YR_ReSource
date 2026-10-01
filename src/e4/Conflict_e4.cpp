@@ -42,7 +42,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ((ComPtr *)(v6))->Constructor(); /*0x766c88*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x766c8d*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766c8d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -67,7 +67,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ((ComPtr *)(v6))->Constructor(); /*0x766c58*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x766c5d*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766c5d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -132,7 +132,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ((ComPtr *)(v8))->Constructor(); /*0x766e36*/
-          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x766e3b*/
+          *(unsigned int *)v8->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766e3b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -272,7 +272,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x76685d*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x766862*/
-  *a2 = &vt_rc_ptr; /*0x766867*/
+  *a2 = (unsigned int)(&vt_rc_ptr); /*0x766867*/
   ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x766873*/
   return a2; /*0x76687a*/
 

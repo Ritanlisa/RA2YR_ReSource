@@ -200,7 +200,7 @@ void sub_6269A0()
       {
         v7 = 0; /*0x626a30*/
       }
-      *(unsigned int *)&v3[8] = v7; /*0x626a34*/
+      *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
       v8 = (DynamicVectorArray *)RA2_OPNEW(0x10u); /*0x626a37*/
       if ( v8 ) /*0x626a41*/
         *(unsigned int *)&v3[12] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626a53*/
@@ -470,7 +470,7 @@ char sub_72C9C0()
   if ( !byte_B0FCF1 ) /*0x72c9c7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/
-      dword_B0FA60 = LoadFileSHP((gamemd::ConvertClass *)(off_844D7C), (bool *)&byte_B0FCF0); /*0x72c9e5*/
+      dword_B0FA60 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D7C), (bool *)&byte_B0FCF0)); /*0x72c9e5*/
     result = LoadPaletteSimple(off_844D80, &dword_B0FCF4, &dword_B0FCF8); /*0x72c9fa*/
     byte_B0FCF1 = 1; /*0x72c9ff*/
   }

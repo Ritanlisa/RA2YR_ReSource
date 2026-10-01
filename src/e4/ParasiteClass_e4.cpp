@@ -26,6 +26,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x629210
 namespace gamemd {
@@ -247,7 +249,7 @@ void ParasiteClass::DeploySquad()
           }
         }
         _ESI[1] = (void *)1; /*0x629974*/
-        _ESI[1] = 0; /*0x62997b*/
+        _ESI[1] = (gamemd::BuildingClass *)(0); /*0x62997b*/
         _ESI[1] = 0; /*0x62997e*/
         BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629981*/
         goto LABEL_47; /*0x629986*/
@@ -256,7 +258,7 @@ void ParasiteClass::DeploySquad()
         {
           v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           _ESI[1] = 0; /*0x6299b7*/
-          _ESI[1] = (void *)(3 - (v17 != 0)); /*0x6299ba*/
+          _ESI[1] = (gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           _ESI[1] = 0; /*0x6299bd*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
           ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x6299e1*/

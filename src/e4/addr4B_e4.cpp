@@ -33,6 +33,10 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/Coord2D_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {

@@ -150,7 +150,7 @@ void sub_5E2AC0()
 
     if ( ((Dialog *)0)->GetCurrent() )
   {
-        Current = ((Dialog *)0)->GetCurrent();
+        Current = (HWND)(((Dialog *)0)->GetCurrent());
     DlgItem = GetDlgItem(Current, 1343); /*0x5e2ae6*/
     if ( DlgItem ) /*0x5e2aea*/
     {

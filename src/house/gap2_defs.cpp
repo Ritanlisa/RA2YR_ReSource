@@ -178,15 +178,15 @@ int BaseClass::Release(int a1, void* a2) {
   v3 = a1; /*0x42f4f2*/
   if ( a1 ) /*0x42f4fd*/
   {
-    v5 = a2; /*0x42f503*/
+    v5 = (char *)(a2); /*0x42f503*/
     IDA_LOBYTE(this->m_C) = 0; /*0x42f507*/
     if ( a2 ) /*0x42f50d*/
     {
-      v7 = a2; /*0x42f533*/
+      v7 = (char *)(a2); /*0x42f533*/
     }
     else
     {
-      v6 = RA2_OPNEW(16 * a1); /*0x42f515*/
+      v6 = (int)(RA2_OPNEW(16 * a1)); /*0x42f515*/
       if ( v6 ) /*0x42f51f*/
         v7 = (char *)v6; /*0x42f524*/
       else
@@ -216,7 +216,7 @@ int BaseClass::Release(int a1, void* a2) {
         }
         while ( m_8 ); /*0x42f57d*/
         v3 = a1; /*0x42f57f*/
-        v5 = a2; /*0x42f583*/
+        v5 = (char *)(a2); /*0x42f583*/
       }
       if ( IDA_BYTE1(this->m_C) ) /*0x42f587*/
       {
@@ -297,7 +297,7 @@ void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
       this->mapCoords[0] = a2; /*0x42fc6d*/
       return &this->buildingTypeIndex; /*0x42fc78*/
     }
-    v5 = RA2_OPNEW(16 * a1); /*0x42fc81*/
+    v5 = (int)(RA2_OPNEW(16 * a1)); /*0x42fc81*/
     if ( v5 ) /*0x42fc8b*/
     {
       this->mapCoords[0] = v5; /*0x42fc8e*/

@@ -22,6 +22,7 @@
 #include "e4/classes/FileStraw_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x41F2E0
 namespace gamemd {
@@ -240,7 +241,7 @@ CCINIClass::CCINIClass()
   v7 = (unsigned int)(sectionHead[1]);
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
-  sectionHead[1] = (int)p_sectionCount; /*0x535b99*/
+  sectionHead[1] = (unsigned int)((int)p_sectionCount); /*0x535b99*/
   result[3] = &vt_List; /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/

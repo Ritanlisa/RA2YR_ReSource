@@ -24,6 +24,10 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {
@@ -358,7 +362,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       v25 = v23[1]; /*0x471f06*/
       v26 = v22 + v23[2]; /*0x471f11*/
       v32 = v24; /*0x471f13*/
-      v33 = v25; /*0x471f17*/
+      v33 = (gamemd::BuildingClass *)(v25); /*0x471f17*/
       v34 = v26; /*0x471f1b*/
       v27 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x471f1f*/
       if ( v27 ) /*0x471f29*/

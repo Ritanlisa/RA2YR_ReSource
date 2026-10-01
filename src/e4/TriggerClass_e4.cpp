@@ -27,6 +27,7 @@
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x610950
 namespace gamemd {

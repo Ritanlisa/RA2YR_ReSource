@@ -29,6 +29,7 @@
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/AircraftTypeVector_e4.hpp"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -263,15 +264,15 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   *((unsigned int *)this + 82) = 1065353216; /*0x5114f6*/
   ((InfantryTypeVector *)((InfantryTypeVector *)((char *)this + 332)))->Construct2(0, 0); /*0x5114fc*/
   *((unsigned int *)this + 88) = 10; /*0x511501*/
-  *((unsigned int *)this + 87) = 0; /*0x511508*/
+  *((unsigned int *)this + 87) = (unsigned int)(0); /*0x511508*/
   *((unsigned int *)this + 83) = &vt_TypeList; /*0x51150b*/
   ((UnitTypeVector *)((UnitTypeVector *)((char *)this + 360)))->ConstructUnitTypeVectorClass(0, 0); /*0x51151b*/
   *((unsigned int *)this + 95) = 10; /*0x511520*/
-  *((unsigned int *)this + 94) = 0; /*0x511527*/
+  *((unsigned int *)this + 94) = (unsigned int)(0); /*0x511527*/
   *((unsigned int *)this + 90) = &vt_TypeList; /*0x51152a*/
   AircraftTypeVector::Constructor((AircraftTypeVector *)this + 97, 0, 0); /*0x51153a*/
   *((unsigned int *)this + 102) = 10; /*0x511542*/
-  *((unsigned int *)this + 101) = 0; /*0x511549*/
+  *((unsigned int *)this + 101) = (unsigned int)(0); /*0x511549*/
   *((unsigned int *)this + 97) = &vt_TypeList; /*0x51154c*/
   *((unsigned int *)this + 105) = 16777281; /*0x511552*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/

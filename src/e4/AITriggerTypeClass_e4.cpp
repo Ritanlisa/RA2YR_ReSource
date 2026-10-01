@@ -31,6 +31,8 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TypeClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 
 // 0x41EC90
 namespace gamemd {

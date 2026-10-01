@@ -11,6 +11,7 @@
 #include "structure/building.hpp"
 #include "team/team.hpp"
 #include "ui/message_list.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x42F490
 namespace gamemd {

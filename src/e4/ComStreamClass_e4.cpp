@@ -119,7 +119,7 @@ LABEL_14:
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v22[0].vtable1 = (int)&vt_rc_ptr; /*0x7a3fd1*/
+  v22[0].vtable1 = (void *)((int)&vt_rc_ptr); /*0x7a3fd1*/
   ((ComPtr *)((ComPtr *)&v22[0].vtable1))->Release(); /*0x7a3fdd*/
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/

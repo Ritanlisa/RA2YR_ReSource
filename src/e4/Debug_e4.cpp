@@ -47,7 +47,7 @@ void Debug::ScrollText(CellStruct * aP1)
     if ( v5 < v7 ) /*0x5bd133*/
     {
       v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
-      v9 = &aP1[-v5]; /*0x5bd15c*/
+      v9 = (const char *)(&aP1[-v5]); /*0x5bd15c*/
       v11 = (unsigned int *)((char *)this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {

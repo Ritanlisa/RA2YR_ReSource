@@ -15,6 +15,7 @@
 #include "core/math.hpp"
 #include "core/utility_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
 struct GadgetClass;  // fix_tu_missing_types
 struct ShpButtonClass;  // fix_tu_missing_types
 
@@ -32,8 +33,8 @@ int Rect::SetRedraw(int a1) {
   }
   else
   {
-    result = this->u32_1C; /*0x48bab9*/
-    this->u32_18 = 1; /*0x48babc*/
+    result = (unsigned int *)(this->u32_1C); /*0x48bab9*/
+    this->u32_18 = (unsigned int *)(1); /*0x48babc*/
     this->u32_14 = result; /*0x48bac3*/
   }
   this->Width = result; /*0x48bab3*/
@@ -45,7 +46,7 @@ namespace gamemd {
 void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4a0e63*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]); /*0x4a0e63*/
   *(unsigned int *)this->__pad_0 = (void *)&VectorClass_IConnectionPoint___vftable; /*0x4a0e66*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a0e70*/
   {
@@ -144,7 +145,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a1431*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4a143a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int *)(v4); /*0x4a143a*/
     this->m_8 = a2; /*0x4a1442*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a1445*/
   }
@@ -184,7 +185,7 @@ int COMObject::ActivateThunk(int a1, int a2, int a3) {
 
   if ( !a1 ) /*0x4e1536*/
     return 0; /*0x4e154a*/
-  v4 = *(unsigned int *)this->__pad_0; /*0x4e1538*/
+  v4 = (unsigned int *)(*(unsigned int *)this->__pad_0); /*0x4e1538*/
   this->q01C = 1; /*0x4e153b*/
   (*(void (**)(int))(v4 + 120))(a1); /*0x4e153f*/
   return 1; /*0x4e1547*/

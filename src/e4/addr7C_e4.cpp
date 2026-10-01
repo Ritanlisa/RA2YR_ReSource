@@ -915,7 +915,7 @@ int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int
   result = -1; /*0x7c34b6*/
   if ( aP1 >= (gamemd::DSurface *)(v5) ) /*0x7c34bb*/
     return -23; /*0x7c34bb*/
-  v7 = aP2; /*0x7c34c1*/
+  v7 = (gamemd::DSurface *)(aP2); /*0x7c34c1*/
   if ( aP2 >= (gamemd::DSurface *)(v5) ) /*0x7c34c7*/
     return -23; /*0x7c34c7*/
   if ( aP1 >= aP2 ) /*0x7c34cf*/
@@ -946,7 +946,7 @@ int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int
         else
         {
           *(unsigned int *)(a1 + 312) = aP2; /*0x7c3524*/
-          v7 = *(unsigned int *)(a1 + 300); /*0x7c352a*/
+          v7 = (gamemd::DSurface *)(*(unsigned int *)(a1 + 300)); /*0x7c352a*/
         }
       }
     }
@@ -958,7 +958,7 @@ int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int
   *(unsigned int *)(a1 + 296) = aP1; /*0x7c3555*/
   if ( v8 == 1 )
   {
-    *(unsigned int *)(a1 + 304) = v7; /*0x7c355e*/
+    *(unsigned int *)(a1 + 304) = (unsigned int)(v7); /*0x7c355e*/
     *(unsigned int *)(a1 + 308) = v9; /*0x7c3565*/
   }
   else
@@ -966,8 +966,8 @@ int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int
     *(unsigned int *)(a1 + 292) = v9; /*0x7c3573*/
     if ( v8 == 2 )
     {
-      *(unsigned int *)(a1 + 300) = v7; /*0x7c357d*/
-      *(unsigned int *)(a1 + 284) = v7; /*0x7c3583*/
+      *(unsigned int *)(a1 + 300) = (unsigned int)(v7); /*0x7c357d*/
+      *(unsigned int *)(a1 + 284) = (unsigned int)(v7); /*0x7c3583*/
       return ProcessAudioStreamBuffer(a1, aP1, 0) < 0 ? -23 : -1;
     }
   }
@@ -1404,7 +1404,7 @@ unsigned int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned 
             }
             v52 = *v49; /*0x7c4681*/
             v47 = v49 + 1; /*0x7c4683*/
-            v53 = v8 + 1; /*0x7c4688*/
+            v53 = (unsigned int *)(v8 + 1); /*0x7c4688*/
             if ( v32 ) /*0x7c468b*/
             {
               v54 = v32; /*0x7c468d*/

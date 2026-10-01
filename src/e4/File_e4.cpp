@@ -357,7 +357,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
   int v15; // [esp+8h] [ebp-8h]
   u_short *v17; // [esp+14h] [ebp+4h]
 
-  v3 = (gamemd::File **)(*aP1);
+  v3 = (gamemd::u_short)((gamemd::File **)(*aP1));
   *(unsigned short *)this->__pad_0 = (unsigned short)(*aP1); /*0x625b05*/
   *(unsigned short *)this->__pad_0 = ntohs((void *)(v3)); /*0x625b11*/
   v4 = (gamemd::u_short)(aP1[1]); /*0x625b17*/
@@ -649,7 +649,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   *((unsigned int *)this + 13) = 0; /*0x76aca1*/
   *((unsigned char *)this + 56) = 1; /*0x76aca4*/
   *((unsigned char *)this + 57) = 0; /*0x76aca8*/
-  *((unsigned int *)this + 11) = &vt_DynamicVectorClassrc_ptr; /*0x76acab*/
+  *((unsigned int *)this + 11) = (unsigned int)(&vt_DynamicVectorClassrc_ptr); /*0x76acab*/
   *((unsigned int *)this + 16) = 10; /*0x76acb2*/
   *((unsigned int *)this + 15) = 0; /*0x76acb9*/
   *(unsigned int *)this = (unsigned int)(&vt_WDTState); /*0x76acbe*/
@@ -707,11 +707,11 @@ LABEL_25:
     if ( !*((unsigned char *)this + 72) ) /*0x76adbd*/
       HashTable::FindChunk((HashTable *)PaletteData, aMpvc, 0, &v13); /*0x76adcf*/
     HashTable::FindChunk((HashTable *)PaletteData, aHsvc, 0, &v14); /*0x76ade1*/
-    *((unsigned int *)this + 2) = __2_YAPAXI_Z(Size); /*0x76adf0*/
-    v7 = __2_YAPAXI_Z(v16); /*0x76adf8*/
+    *((unsigned int *)this + 2) = (unsigned int)(__2_YAPAXI_Z(Size)); /*0x76adf0*/
+    v7 = (int)(__2_YAPAXI_Z(v16)); /*0x76adf8*/
     v8 = v17; /*0x76adfd*/
     *((unsigned int *)this + 3) = v7; /*0x76ae01*/
-    v9 = __2_YAPAXI_Z(v8); /*0x76ae05*/
+    v9 = (int)(__2_YAPAXI_Z(v8)); /*0x76ae05*/
     v10 = v14; /*0x76ae0a*/
     *((unsigned int *)this + 4) = v9; /*0x76ae0e*/
     Block = (void *)__2_YAPAXI_Z(v10); /*0x76ae17*/
@@ -774,9 +774,9 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
   v4 = *(unsigned int *)&this->__pad_6[30]; /*0x76b0a7*/
   if ( 4 * a3 < (unsigned int)(v4 * *(unsigned int *)&this->__pad_6[26]) ) /*0x76b0b5*/
     return 0; /*0x76b0ba*/
-  *((unsigned int *)this + 17) = __2_YAPAXI_Z(4 * v4); /*0x76b0c7*/
+  *((unsigned int *)this + 17) = (unsigned int)(__2_YAPAXI_Z(4 * v4)); /*0x76b0c7*/
   for ( i = 0; i < *(unsigned int *)&this->__pad_6[30]; ++i ) /*0x76b0ca*/
-    *(unsigned int *)(*((unsigned int *)this + 17) + 4 * i) = __2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[26]); /*0x76b0e5*/
+    *(unsigned int *)(*((unsigned int *)this + 17) + 4 * i) = (unsigned int)(__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[26])); /*0x76b0e5*/
   v7 = 0; /*0x76b0f3*/
   v8 = 0; /*0x76b0f5*/
   v9 = 0; /*0x76b0f7*/

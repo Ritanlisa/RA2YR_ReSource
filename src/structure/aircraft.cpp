@@ -5,6 +5,7 @@
 #include <cstring>
 #include <cmath>
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 namespace gamemd {
 
@@ -218,7 +219,7 @@ LABEL_14:
             goto LABEL_54;
           bool v35 = ((unsigned char *)(this) + 0x0BF);
           bool v36 = v35 == 0;
-          bool v37 = v35 < 0;
+          bool v37 = (int)(v35 < 0);
           int v38 = (int)(*this);
           this->AircraftClass_field_bool_6D2 = 1;
           this->missionStatus = !v37 && !v36 ? 1 : 10;
@@ -282,7 +283,7 @@ LABEL_54:
             int v45 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
             this->FireWeapon(((unsigned char *)(this) + 0x2B4), v45);
             v105 = (int)(((unsigned char *)(this) + 0x027));
-            v106 = this->owningHouseIndex;
+            v106 = (int)(this->owningHouseIndex);
             int v107 = ((unsigned char *)(this) + 0x029);
             unsigned int * v46 = (unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord();
             unsigned int * v47 = Coord::To_Cell(DataGlobal_87F7E8, v46);
@@ -349,12 +350,12 @@ LABEL_54:
             goto LABEL_91;
         }
         int v51 = *this;
-        int v94 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+        int v94 = (int)(this->SelectWeapon(((unsigned char *)(this) + 0x2B4)));
         int v89 = ((unsigned char *)(this) + 0x2B4);
         this->FireWeapon();
-        v100 = ((unsigned char *)(this) + 0x027);
+        v100 = (int)(((unsigned char *)(this) + 0x027));
         int v52 = ((unsigned char *)(this) + 0x2B4);
-        v101[0] = this->owningHouseIndex;
+        v101[0] = (unsigned int)(this->owningHouseIndex);
         v101[1] = ((unsigned char *)(this) + 0x029);
   unsigned int *v53; // eax
         v53 = (unsigned int *)(*(int (**)(int, unsigned char *, int *, int, unsigned int, unsigned int))(*(unsigned int *)v52 + 72))(

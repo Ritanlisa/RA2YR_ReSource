@@ -32,9 +32,9 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x511658*/
-  this->veteranInfantry[0] = (int)&vt_TypeList; /*0x51165d*/
-  *(unsigned int *)&this->prefix = &vt_TypeList; /*0x511667*/
-  *(unsigned int *)&this->__pad_16D[23] = &vt_TypeList; /*0x511671*/
+  this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
+  *(unsigned int *)&this->prefix = (unsigned int)(&vt_TypeList); /*0x511667*/
+  *(unsigned int *)&this->__pad_16D[23] = (unsigned int)(&vt_TypeList); /*0x511671*/
   this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511681*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511688*/

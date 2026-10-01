@@ -32,6 +32,7 @@
 #include "e4/classes/E4Recv_5E93F0_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/BuildingLightQueue_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x430980
 namespace gamemd {
@@ -492,7 +493,7 @@ int Game::MakeScreenshot(int a1)
         {
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
-          v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x537d3b*/
+          v8 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0)); /*0x537d3b*/
           *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           ((Vector *)((int)v20))->Clear(); /*0x537d4f*/

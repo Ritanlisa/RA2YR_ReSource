@@ -13,6 +13,7 @@
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x65A750
 namespace gamemd {
@@ -116,7 +117,7 @@ int RadioClass::LoadState(int aP1, int aP2)
     if ( result >= 0 ) /*0x65abd1*/
     {
       (*(void ((int)(**))(int, int, unsigned int))(*(unsigned int *)v6 + 8))(v3 + 224, aP2, 0); /*0x65abde*/
-      v7 = 0; /*0x65abe1*/
+      v7 = (gamemd::ObjectClass *)(0); /*0x65abe1*/
       v8 = aP2; /*0x65abe3*/
       if ( aP2 <= 0 ) /*0x65abe9*/
       {
@@ -139,7 +140,7 @@ LABEL_8:
           result = (unsigned int)((*(int ((int)(**))(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP1, 4, 0));
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
-          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)(aP1); /*0x65ac08*/
+          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (gamemd::ObjectClass *)((unsigned int)(aP1)); /*0x65ac08*/
           v8 = aP2; /*0x65ac0b*/
           if ( ++(int)(v7) >= (int)(aP2) ) /*0x65ac12*/
             goto LABEL_8; /*0x65ac12*/

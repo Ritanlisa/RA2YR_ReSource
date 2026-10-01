@@ -59,15 +59,15 @@ namespace ra2::game {
 int * AudioController::Constructor() {
     int v2; // ebx
 
-    v2 = RA2_OPNEW(0x1C0u); /*0x402055*/
+    v2 = (int)(RA2_OPNEW(0x1C0u)); /*0x402055*/
     memset((void *)v2, 0, 0x1C0u); /*0x402060*/
     DListNode::InitEmpty((DListNode *)v2); /*0x402067*/
     *(unsigned int *)(v2 + 168) = 0; /*0x40206e*/
     *(unsigned int *)(v2 + 164) = 0; /*0x402074*/
     AudioMixer::Init((AudioMixer *)(v2 + 216)); /*0x402080*/
-    *(unsigned int *)(v2 + 348) = AudioController::AdvanceQueue; /*0x402085*/
-    *(unsigned int *)(v2 + 352) = AudioController::UpdatePlayback; /*0x40208f*/
-    *(unsigned int *)(v2 + 356) = AudioController::CleanupStream; /*0x402099*/
+    *(unsigned int *)(v2 + 348) = (unsigned int)(AudioController::AdvanceQueue); /*0x402085*/
+    *(unsigned int *)(v2 + 352) = (unsigned int)(AudioController::UpdatePlayback); /*0x40208f*/
+    *(unsigned int *)(v2 + 356) = (unsigned int)(AudioController::CleanupStream); /*0x402099*/
     *(unsigned int *)(v2 + 176) = 0; /*0x4020a3*/
     *(unsigned int *)(v2 + 180) = 0; /*0x4020a9*/
     *(unsigned int *)(v2 + 184) = 0; /*0x4020af*/
@@ -83,7 +83,7 @@ int * AudioController::Constructor() {
     *(unsigned int *)(v2 + 156) = 0; /*0x4020f4*/
     AudioMixer::Init((AudioMixer *)(v2 + 16)); /*0x4020fa*/
     *(unsigned int *)(v2 + 360) = 0; /*0x402103*/
-    *(unsigned int *)(v2 + 172) = this; /*0x402109*/
+    *(unsigned int *)(v2 + 172) = (unsigned int)(this); /*0x402109*/
     *(unsigned int *)(v2 + 212) = *((unsigned int *)this + 116); /*0x402115*/
     qmemcpy((void *)(v2 + 380), (char *)this + 68, 0x20u); /*0x402129*/
     *(unsigned int *)(v2 + 412) = 0; /*0x40212b*/

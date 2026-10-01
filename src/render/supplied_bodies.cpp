@@ -23,6 +23,7 @@
 #include "type/anim_type.hpp"
 #include "type/unit_type.hpp"
 #include "ui/ui_ext.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x40D250
 namespace gamemd {

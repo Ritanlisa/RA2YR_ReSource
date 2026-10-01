@@ -29,6 +29,7 @@
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x710860
 namespace gamemd {

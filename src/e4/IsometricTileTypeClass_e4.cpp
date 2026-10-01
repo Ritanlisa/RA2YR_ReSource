@@ -18,6 +18,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
 
 // 0x549B70
 namespace gamemd {

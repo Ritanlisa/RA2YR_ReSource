@@ -32,6 +32,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/PreviewClass_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {

@@ -27,6 +27,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/OverlayTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x474810
 namespace gamemd {
@@ -41,7 +43,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
     return a4; /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
     Int_Overwrite = 100; /*0x474832*/
-  result = ((Int_Overwrite <= 0 ? 0 : Int_Overwrite) << 8) / 100;
+  result = (void *)(((Int_Overwrite <= 0 ? 0 : Int_Overwrite) << 8) / 100);
   if ( result >= 255 ) /*0x47485c*/
     return 255; /*0x47485e*/
   return result; /*0x47482a*/
@@ -351,7 +353,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   *((unsigned int *)this + 63) = 1072693248; /*0x75ceeb*/
   *((unsigned int *)this + 64) = 0; /*0x75cef8*/
   AnimTypeVector::Constructor((unsigned int *)((char *)this + 260), 0, 0); /*0x75cefe*/
-  *((unsigned int *)this + 69) = 0; /*0x75cf08*/
+  *((unsigned int *)this + 69) = (unsigned int)(0); /*0x75cf08*/
   *((unsigned int *)this + 70) = 10; /*0x75cf0b*/
   *((unsigned int *)this + 65) = &vt_TypeList; /*0x75cf0e*/
   *((unsigned int *)this + 72) = 0; /*0x75cf14*/
@@ -411,14 +413,14 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   *((unsigned int *)this + 101) = 0; /*0x75d07d*/
   *((unsigned char *)this + 408) = 1; /*0x75d080*/
   *((unsigned char *)this + 409) = 0; /*0x75d083*/
-  *((unsigned int *)this + 104) = 10; /*0x75d086*/
+  *((unsigned int *)this + 104) = (unsigned int)(10); /*0x75d086*/
   *((unsigned int *)this + 103) = 0; /*0x75d089*/
   *((unsigned int *)this + 99) = &vt_TypeList; /*0x75d08c*/
   *((unsigned char *)this + 436) = 1; /*0x75d092*/
   *((unsigned int *)this + 107) = 0; /*0x75d098*/
   *((unsigned int *)this + 108) = 0; /*0x75d09b*/
   *((unsigned char *)this + 437) = 0; /*0x75d09e*/
-  *((unsigned int *)this + 111) = 10; /*0x75d0a1*/
+  *((unsigned int *)this + 111) = (unsigned int)(10); /*0x75d0a1*/
   *((unsigned int *)this + 110) = 0; /*0x75d0a4*/
   *((unsigned int *)this + 106) = &vt_TypeList; /*0x75d0a7*/
   *((unsigned int *)this + 113) = 0; /*0x75d0ae*/
@@ -565,8 +567,8 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       *(unsigned int *)v2->__pad_104 = &vt_TypeList; /*0x75e120*/
       WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&a1); /*0x75e12d*/
       WarheadTypeClass::calculateDamage((WarheadTypeClass *)&v2->__pad_1A0[8], (int)&a1); /*0x75e139*/
-      v2->Deform = &vt_WarheadTypeClass; /*0x75e13e*/
-      v2->WarheadTypeClass_field_0x4 = &vt_WarheadTypeClass; /*0x75e144*/
+      v2->Deform = (unsigned int)(&vt_WarheadTypeClass); /*0x75e13e*/
+      v2->WarheadTypeClass_field_0x4 = (unsigned int)(&vt_WarheadTypeClass); /*0x75e144*/
       v2->WarheadTypeClass_field_0x8 = &vt_WarheadTypeClass; /*0x75e14b*/
       v2->WarheadTypeClass_field_0xC = &vt_WarheadTypeClass; /*0x75e152*/
     }

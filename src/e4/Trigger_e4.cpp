@@ -35,6 +35,9 @@
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
 #include "e4/classes/WDTObject_e4.hpp"
+#include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -78,7 +81,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *(unsigned int *)&this->__pad_30[20] = (unsigned int)(aP7); /*0x5cbd84*/
-  *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
+  *(unsigned int *)this->__pad_30 = (gamemd::MSShapeAnim **)(v10); /*0x5cbd87*/
   *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_MSFadeAnim); /*0x5cbd8d*/
   return this; /*0x5cbd95*/
@@ -241,7 +244,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   p_owningHouseIndex = (int *)(&v28.owningHouseIndex); /*0x76d88b*/
   v27 = 0; /*0x76d897*/
-  v25.VectorCursor_field_0x18 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d89b*/
+  v25.VectorCursor_field_0x18 = (unsigned int)((int)&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d89b*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&((char *)&v28)); /*0x76d89f*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d8a3*/
   ((unsigned int *)&v28)[0] = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d8a7*/
@@ -332,7 +335,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
 {
 
   this->Trigger_field_0x4 = 0; /*0x76f1cb*/
-  *(unsigned int *)this->__pad_8 = aP1; /*0x76f1ce*/
+  *(unsigned int *)this->__pad_8 = (unsigned int)(aP1); /*0x76f1ce*/
   this->__pad_8[4] = 1; /*0x76f1d1*/
   this->__pad_8[5] = 0; /*0x76f1d5*/
   *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x76f1d8*/
@@ -340,7 +343,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x76f1e8*/
+      this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2); /*0x76f1e8*/
       return this->__pad_0; /*0x76f1ee*/
     }
     this->Trigger_field_0x4 = (MSAnim *)__2_YAPAXI_Z(4 * aP1); /*0x76f1fd*/

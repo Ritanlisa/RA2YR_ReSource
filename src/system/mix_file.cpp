@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include "core/reverse_marker.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 namespace gamemd
 {

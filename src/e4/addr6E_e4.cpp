@@ -65,6 +65,8 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/ActionQueue_e4.hpp"
 #include "e4/classes/Property_e4.hpp"
+#include "e4/classes/SuperWeapon_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6E0250
 namespace gamemd {

@@ -35,7 +35,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   *((unsigned int *)this + 2) = 0; /*0x4338c3*/
   SetRect((LPRECT)((char *)this + 48), 0, 0, 0, 0); /*0x4338c6*/
   *((unsigned int *)this + 11) = 1; /*0x4338d0*/
-  Font = ((File *)(Source))->LoadFont(); /*0x4338d3*/
+  Font = (unsigned int *)(((File *)(Source))->LoadFont()); /*0x4338d3*/
   *((unsigned int *)this + 1) = (unsigned int)(Font); /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {

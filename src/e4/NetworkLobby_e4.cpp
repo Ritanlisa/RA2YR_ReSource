@@ -39,6 +39,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/NetworkClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

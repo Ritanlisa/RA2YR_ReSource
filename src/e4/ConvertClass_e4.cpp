@@ -11,6 +11,9 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "core/ddraw_init.hpp"
+#include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/Palette_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x48E740
 namespace gamemd {
@@ -137,7 +140,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   *(unsigned int *)&this->__pad_6[354] = 0; /*0x48e917*/
   *(unsigned int *)&this->__pad_6[358] = v7; /*0x48e91d*/
   this->ConvertClass_field_0x170 = 0; /*0x48e923*/
-  *(unsigned int *)this->__pad_174 = 0; /*0x48e929*/
+  *(unsigned int *)this->__pad_174 = (unsigned int)(0); /*0x48e929*/
   this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
   *((unsigned int *)this + 95) = 0; /*0x48e935*/
   *(unsigned int *)this->__pad_0 = &vt_ConvertClass; /*0x48e93b*/
@@ -162,7 +165,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = (CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 8); /*0x48e9eb*/
-    this->ConvertClass_field_0x170 = v14; /*0x48e9f0*/
+    this->ConvertClass_field_0x170 = (unsigned int)(v14); /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(unsigned int *)&this->__pad_6[358]; /*0x48e9f8*/
     *(unsigned int *)this->__pad_174 = (char *)v15 + 256 * ((v16 - 1) >> 1); /*0x48ea10*/
@@ -205,7 +208,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   }
   else
   {
-    v24 = (CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 9); /*0x48eb1c*/
+    v24 = (unsigned int)((CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 9)); /*0x48eb1c*/
     v25 = *(unsigned int *)&this->__pad_6[358]; /*0x48eb21*/
     this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
     *(unsigned int *)this->__pad_174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/

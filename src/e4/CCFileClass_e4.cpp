@@ -17,6 +17,7 @@
 #include "e4/classes/UDPInterfaceClass_e4.hpp"
 #include "e4/classes/BTree_e4.hpp"
 #include "e4/classes/BufferIO_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {
@@ -40,13 +41,13 @@ AudioController * * CCFileClass::Close(void *a1, void *a2)
       result = (*(int ((gamemd::CCFileClass *)(**))(CCFileClass *))(*(unsigned int *)&v3 + 52))(a1); /*0x4325e5*/
       BYTE1(a1->BufferSize) = 1; /*0x4325e8*/
       BYTE2(a1->BufferOffset) = 0; /*0x4325ec*/
-      BYTE1(a1->BufferOffset) = 0; /*0x4325f0*/
+      BYTE1(a1->BufferOffset) = (gamemd::AudioController **)(0); /*0x4325f0*/
       return result; /*0x4325f5*/
     }
     result = FileClass::CloseHandle(a1); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
-  BYTE1(this->BufferOffset) = 0; /*0x432601*/
+  BYTE1(this->BufferOffset) = (gamemd::AudioController **)(0); /*0x432601*/
   return result; /*0x4325f4*/
 
 }

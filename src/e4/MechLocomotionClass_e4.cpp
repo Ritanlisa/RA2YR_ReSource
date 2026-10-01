@@ -7,6 +7,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Menu_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x5B1960
 namespace gamemd {

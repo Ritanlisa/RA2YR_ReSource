@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5AE860
 namespace gamemd {
@@ -79,7 +80,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
     *aP1 = v5; /*0x6d23e5*/
     aP1[1] = v6; /*0x6d23e7*/
-    aP1[2] = 0; /*0x6d23ec*/
+    aP1[2] = (unsigned int *)(0); /*0x6d23ec*/
     return aP1; /*0x6d23ea*/
   }
 

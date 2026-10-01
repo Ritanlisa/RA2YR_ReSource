@@ -359,7 +359,7 @@ INIClass::INIClass()
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(v3); /*0x535b06*/
   sectionHead[1] = (int)v3; /*0x535b09*/
-  result[3] = &vt_List; /*0x535b0c*/
+  result[3] = (unsigned int)(&vt_List); /*0x535b0c*/
   result[10] = 0; /*0x535b13*/
   result[11] = 0; /*0x535b16*/
   result[12] = 0; /*0x535b19*/

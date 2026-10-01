@@ -16,6 +16,12 @@
 #include <cstring>
 #include <limits>
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/COMObject_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 namespace gamemd
 {
@@ -361,9 +367,9 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
           v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
           v11 = (int)(*content); /*0x47ea18*/
-          v17 = 0; /*0x47ea1b*/
-          v15 = (v9 << 8) + 128; /*0x47ea2e*/
-          v16 = (v10 << 8) + 128; /*0x47ea3c*/
+          v17 = (int)(0); /*0x47ea1b*/
+          v15 = (int)((v9 << 8) + 128); /*0x47ea2e*/
+          v16 = (int)((v10 << 8) + 128); /*0x47ea3c*/
         }
         else
         {
@@ -393,9 +399,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( !content ) /*0x47ea9d*/
     return; /*0x47ea9d*/
   if ( on_bridge ) /*0x47eaa9*/
-    v4 = *(unsigned int **)(this + 232); /*0x47eaab*/
+    v4 = (unsigned int)(*(unsigned int **)(this + 232)); /*0x47eaab*/
   else
-    v4 = *(unsigned int **)(this + 228); /*0x47eab3*/
+    v4 = (unsigned int)(*(unsigned int **)(this + 228)); /*0x47eab3*/
   if ( v4 == (unsigned int *)(content) ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
@@ -429,9 +435,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
       v6 = *(int16_t *)(this + 36); /*0x47eb21*/
       v7 = *(int16_t *)(this + 38); /*0x47eb25*/
       v8 = (int)(*content); /*0x47eb29*/
-      v11 = 0; /*0x47eb2b*/
-      v9 = (v6 << 8) + 128; /*0x47eb3c*/
-      v10 = (v7 << 8) + 128; /*0x47eb50*/
+      v11 = (int)(0); /*0x47eb2b*/
+      v9 = (int)((v6 << 8) + 128); /*0x47eb3c*/
+      v10 = (int)((v7 << 8) + 128); /*0x47eb50*/
     }
     else
     {

@@ -26,6 +26,7 @@
 #include "system/scenario.hpp"
 #include "system/tactical.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x0 (lnk)
 namespace gamemd { unsigned int Randomizer::Random() { return 0; } }
@@ -267,7 +268,7 @@ int CellClass::ClearOccupancyGrid() {
       --k; /*0x42a616*/
       *((unsigned int *)&this->((unsigned int *)attachedTag)[0] + k) = 0; /*0x42a617*/
     }
-    v7 = &stru_87F5F0.__pad_58[456] - (char *)this; /*0x42a62a*/
+    v7 = (int *)(&stru_87F5F0.__pad_58[456] - (char *)this); /*0x42a62a*/
     p_CellClass_field_4C = &this->CellClass_field_4C; /*0x42a62d*/
     v15 = 3; /*0x42a634*/
     do /*0x42a67d*/
@@ -330,8 +331,8 @@ int CellClass::setOverlayType(int a2) {
   g_MapCellWidth = *(unsigned int *)(a2 + 12) + *(unsigned int *)(a2 + 8) + 1; /*0x42ac60*/
   v3 = 4 * g_MapCellWidth * g_MapCellWidth; /*0x42ac68*/
   this->rubble = (BuildingTypeClass *)__2_YAPAXI_Z(v3); /*0x42ac76*/
-  this->attachedTag = (TagClass *)__2_YAPAXI_Z(v3); /*0x42ac7f*/
-  this->smudgeTypeIndex = __2_YAPAXI_Z(v3); /*0x42ac88*/
+  this->attachedTag = (int)((TagClass *)__2_YAPAXI_Z(v3)); /*0x42ac7f*/
+  this->smudgeTypeIndex = (int)(__2_YAPAXI_Z(v3)); /*0x42ac88*/
   this->overlayTypeIndex = __2_YAPAXI_Z(v3); /*0x42ac90*/
   dword_89A304[0] = -g_MapCellWidth; /*0x42aca1*/
   dword_89A310 = g_MapCellWidth + 1; /*0x42acac*/
@@ -404,7 +405,7 @@ void* BufferIOFileClass::Constructor() {
 
   LOBYTE(this->FilePointer) = 0; /*0x431b27*/
   this->FileSize = 1; /*0x431b2a*/
-  this->Handle = 0; /*0x431b31*/
+  this->Handle = (const char *)(0); /*0x431b31*/
   this->FileName = -1; /*0x431b34*/
   *(unsigned int *)this->FileTimeDateLo = -1; /*0x431b37*/
   *(unsigned int *)this->FileNameAllocated = 0; /*0x431b3a*/
@@ -423,7 +424,7 @@ void* BufferIOFileClass::Constructor() {
   this->TotalBytesRead = -1; /*0x431b6c*/
   this->TotalBytesWritten = 0; /*0x431b6f*/
   this->FileID = 0; /*0x431b72*/
-  this->MixFileIndex = 0; /*0x431b75*/
+  this->MixFileIndex = (gamemd::FileClass)(0); /*0x431b75*/
   this->FileClass = (FileClass)&vt_BufferIOFileClass; /*0x431b78*/
   return &this->FileClass; /*0x431b7e*/
 
@@ -435,7 +436,7 @@ int BufferIOFileClass::Dtor() {
 
   void *FileBaseOffset; // eax
 
-  FileBaseOffset = (void *)this->FileBaseOffset; /*0x431b86*/
+  FileBaseOffset = (gamemd::FileClass)((void *)this->FileBaseOffset); /*0x431b86*/
   this->FileClass = (FileClass)&vt_BufferIOFileClass; /*0x431b89*/
   if ( FileBaseOffset ) /*0x431b91*/
   {

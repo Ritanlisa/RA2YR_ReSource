@@ -84,7 +84,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
-      result      result = StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])), (int)v18, 0); 
+      result      result = (int)(StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])), (int)v18, 0)); 
     }
     *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/

@@ -62,6 +62,8 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/ListBox_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {
@@ -378,7 +380,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(aP0 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0))));
+    *a2 = (gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0)))));
     (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }
@@ -424,7 +426,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
             *(unsigned short *)(aP0 + 2 * v20 + 40) = v12; /*0x5d476e*/
             v21 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d4779*/
             *(unsigned int *)(aP0 + 688) = v21; /*0x5d477a*/
-            *(unsigned short *)(aP0 + 2 * v21 + 40) = 0; /*0x5d4780*/
+            *(unsigned short *)(aP0 + 2 * v21 + 40) = (gamemd::CampaignScore **)(0); /*0x5d4780*/
             *a2 = 0; /*0x5d4788*/
             return 4; /*0x5d478d*/
           }

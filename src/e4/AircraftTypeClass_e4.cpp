@@ -201,7 +201,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
   *(unsigned int *)&Block->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
   *(unsigned int *)&Block->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x41d001*/
-  v5 = Block; /*0x41d016*/
+  v5 = (AircraftTypeClass *)(Block); /*0x41d016*/
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {

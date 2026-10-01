@@ -10,6 +10,10 @@
 #include "e4/e4_globals_decls.hpp"
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 namespace gamemd
 {
@@ -328,7 +332,7 @@ int IPXManagerClass::processPacket()
     this->q050 = 0; /*0x540a39*/
   }
   result = this->q044; /*0x540a3c*/
-  v7 = 0; /*0x540a3f*/
+  v7 = (unsigned int)(0); /*0x540a3f*/
   if ( result <= 0 ) /*0x540a43*/
   {
     this->q044 = 0; /*0x540a70*/

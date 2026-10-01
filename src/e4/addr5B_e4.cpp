@@ -75,6 +75,7 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/classes/ModemGame_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {

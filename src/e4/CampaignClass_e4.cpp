@@ -31,6 +31,7 @@
 #include "e4/classes/Campaign_WorldDominationTour_16_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x46CB60
 namespace gamemd {

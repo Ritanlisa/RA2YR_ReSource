@@ -492,7 +492,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   if ( Buffer_field_08 + 12 > (unsigned int)(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = this->Buffer_field_08; /*0x6c89fd*/
-  this->Buffer_field_08 = Buffer_field_08 + 12; /*0x6c8a01*/
+  this->Buffer_field_08 = (unsigned int)(Buffer_field_08 + 12); /*0x6c8a01*/
   if ( !Buffer_field_08 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(unsigned short *)Buffer_field_08 = *(unsigned short *)a3; /*0x6c8a19*/

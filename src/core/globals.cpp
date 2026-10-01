@@ -18,7 +18,7 @@ namespace gamemd {
 using ra2::game::ObjectClass;
 
 DynamicVectorClass<ObjectClass*> g_current_objects;
-DynamicVectorClass<ObjectClass*>& CurrentObjects = g_current_objects;
+DynamicVectorClass<ObjectClass*>& CurrentObjects = (gamemd::DynamicVectorClass<ra2::game::ObjectClass *> &)(g_current_objects);
 
 // ============================================================
 // Command line globals (ParseCommandLine @ 0x52F620)
@@ -58,7 +58,7 @@ int RestartNetworkSession(int mode) {
 {
   int result; // eax
 
-  result = DataGlobal_B1CF84;
+  result = (int)(DataGlobal_B1CF84);
   if ( (void *)DataGlobal_B1CF84 != this )
   {
     WinMain::ShutdownCleanup();
@@ -90,7 +90,7 @@ int ToggleNetworkSession(int enable) {
 {
   int result; // eax
 
-  result = DataGlobal_B1CF60;
+  result = (int)(DataGlobal_B1CF60);
   if ( (void *)DataGlobal_B1CF60 != this )
   {
     WinMain::ShutdownCleanup();
@@ -181,10 +181,10 @@ void FindGameDirectoryCD(const char* path) {
           if ( AlwaysFindYRCD(dword_89E414, 120) <= -1 ) /*0x47ac5c*/
             continue; /*0x47ac5c*/
           Str1[0] = dword_89E414 + 65; /*0x47ac6d*/
-          v6 = RA2_OPNEW(8u); /*0x47ac7a*/
-          v6[1] = _strdup(Str1); /*0x47ac82*/
+          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47ac7a*/
+          v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ac82*/
           *v6 = 0; /*0x47ac85*/
-          v7 = CmdLine_NoCD; /*0x47ac8b*/
+          v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ac8b*/
           if ( CmdLine_NoCD ) /*0x47ac96*/
           {
             v8 = *(unsigned int **)CmdLine_NoCD; /*0x47aca0*/
@@ -198,20 +198,20 @@ void FindGameDirectoryCD(const char* path) {
               while ( v8 ); /*0x47acac*/
             }
     LABEL_24:
-            *v7 = v6; /*0x47ad0c*/
+            *v7 = (unsigned int)(v6); /*0x47ad0c*/
             continue; /*0x47ad0c*/
           }
-          CmdLine_NoCD = v6; /*0x47ac98*/
+          CmdLine_NoCD = (int)(v6); /*0x47ac98*/
         }
         else
         {
           if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD(Str1[0] - 65, 120) != 2 ) /*0x47acc9*/
             continue; /*0x47acc9*/
           v1 = 1; /*0x47accd*/
-          v6 = RA2_OPNEW(8u); /*0x47acd4*/
-          v6[1] = _strdup(Str1); /*0x47ace0*/
+          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47acd4*/
+          v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ace0*/
           *v6 = 0; /*0x47ace3*/
-          v7 = CmdLine_NoCD; /*0x47ace9*/
+          v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ace9*/
           if ( CmdLine_NoCD ) /*0x47acf4*/
           {
             v9 = *(unsigned int **)CmdLine_NoCD; /*0x47acfe*/
@@ -226,7 +226,7 @@ void FindGameDirectoryCD(const char* path) {
             }
             goto LABEL_24; /*0x47ad0a*/
           }
-          CmdLine_NoCD = v6; /*0x47acf6*/
+          CmdLine_NoCD = (int)(v6); /*0x47acf6*/
         }
       }
     }
@@ -252,7 +252,7 @@ void FindGameDirectoryCD(const char* path) {
           continue;
         Str1[0] = IDA_LOBYTE(DataGlobal_87F7E8[31499]) + 65;
         v6 = (unsigned int *)RA2_OPNEW(8);
-        v6[1] = _strdup(Str1);
+        v6[1] = (unsigned int)(_strdup(Str1));
         *v6 = 0;
         v7 = (unsigned int *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
@@ -268,10 +268,10 @@ void FindGameDirectoryCD(const char* path) {
             while ( v8 );
           }
 LABEL_24:
-          *v7 = v6;
+          *v7 = (unsigned int)(v6);
           continue;
         }
-        DataGlobal_87F7E8[31498] = v6;
+        DataGlobal_87F7E8[31498] = (unsigned char)(v6);
       }
       else
       {
@@ -279,7 +279,7 @@ LABEL_24:
           continue;
         v1 = 1;
         v6 = (unsigned int *)RA2_OPNEW(8);
-        v6[1] = _strdup(Str1);
+        v6[1] = (unsigned int)(_strdup(Str1));
         *v6 = 0;
         v7 = (unsigned int *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
@@ -296,7 +296,7 @@ LABEL_24:
           }
           goto LABEL_24;
         }
-        DataGlobal_87F7E8[31498] = v6;
+        DataGlobal_87F7E8[31498] = (unsigned char)(v6);
       }
     }
   }

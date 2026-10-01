@@ -135,10 +135,10 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
   int v8; // edx
 
   this->RadarHashVector_field_0x04 = 0; /*0x658ded*/
-  this->RadarHashVector_field_0x08 = aP1; /*0x658df0*/
+  this->RadarHashVector_field_0x08 = (unsigned int)(aP1); /*0x658df0*/
   LOBYTE(this->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
   BYTE1(this->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClassHashObject; /*0x658dfa*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClassHashObject); /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
     if ( aP2 ) /*0x658e08*/
@@ -157,7 +157,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
         }
         while ( v5 ); /*0x658e21*/
       }
-      this->RadarHashVector_field_0x04 = aP2; /*0x658e23*/
+      this->RadarHashVector_field_0x04 = (unsigned int)(aP2); /*0x658e23*/
     }
     else
     {
@@ -187,7 +187,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       BYTE1(this->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClassHashObject; /*0x658e5e*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClassHashObject); /*0x658e5e*/
   this->RadarHashVector_field_0x14 = 10; /*0x658e64*/
   this->RadarHashVector_field_0x10 = 0; /*0x658e6b*/
   return this->__pad_0; /*0x658e70*/
@@ -295,7 +295,7 @@ char * RadarHashVector::Destructor(unsigned int * Block, char a2)
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
-        *(unsigned int *)v7 = &vt_VectorClassHashObject; /*0x658c8a*/
+        *(unsigned int *)v7 = (unsigned int)(&vt_VectorClassHashObject); /*0x658c8a*/
         if ( v9 && v7[13] ) /*0x658c92*/
         {
           __3_YAXPAX_Z(v9); /*0x658c98*/

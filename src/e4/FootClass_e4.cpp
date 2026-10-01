@@ -30,6 +30,10 @@
 #include "e4/classes/FontClass_e4.hpp"
 #include "e4/classes/IPersistStream_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -94,7 +98,7 @@ AbstractClass * FootClass::Destruct(void *a1, void *a2)
   if ( v9 && this->__pad_58C[9] ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
-    *(unsigned int *)this->__pad_58C = 0; /*0x4d36ed*/
+    *(unsigned int *)this->__pad_58C = (gamemd::AbstractClass *)(0); /*0x4d36ed*/
   }
   this->__pad_58C[9] = 0; /*0x4d36f5*/
   *(unsigned int *)&this->__pad_58C[4] = 0; /*0x4d36fb*/

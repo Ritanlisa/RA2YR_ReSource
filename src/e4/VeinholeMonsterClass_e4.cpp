@@ -14,6 +14,8 @@
 #include "e4/classes/VectorClass_Ptr_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/VectorClass_e_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x5862C0
 namespace gamemd {

@@ -29,6 +29,8 @@
 #include "e4/classes/E4Recv_4E0A00_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {

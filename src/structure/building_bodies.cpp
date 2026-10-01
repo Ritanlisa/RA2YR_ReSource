@@ -10,6 +10,8 @@
 #include "e4/e4_globals_decls.hpp"
 #include "core/globals_core.hpp"
 #include "structure/globals_structure.hpp"
+#include "e4/classes/unknown_e4.hpp"
+#include "e4/classes/Sidebar_e4.hpp"
 
 namespace gamemd {
 namespace Math {
@@ -95,7 +97,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
       }
       v10 = *(unsigned char **)(*(unsigned int *)(ownerHouse->supersCount + 4 * i) + 40); /*0x50b078*/
       if ( v10[231] && !SWAllowed ) /*0x50b099*/
-        v16 = 0; /*0x50b09b*/
+        v16 = (int)(0); /*0x50b09b*/
       v11 = ownerHouse->powerOutput; /*0x50b0a0*/
       v12 = ownerHouse->powerDrain; /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)ownerHouse->powerOutput / (double)ownerHouse->powerDrain < 1.0) ) /*0x50b0d3*/

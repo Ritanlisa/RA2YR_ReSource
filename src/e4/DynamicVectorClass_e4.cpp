@@ -398,7 +398,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         *(unsigned int *)&this->m_1[3] = 0; /*0x628cb5*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v16; /*0x628cc2*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v16); /*0x628cc2*/
     this->m_8 = v3; /*0x628cce*/
     BYTE1(this->m_C) = a2 == 0; /*0x628cd1*/
   }

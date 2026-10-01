@@ -19,6 +19,7 @@
 #include "ui/command_ext.hpp"
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
 
 // 0x49EF10
 namespace gamemd {
@@ -45,7 +46,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2) {
     int v9; // [esp+70h] [ebp-8h]
 
     NullGuard::Call((GraphicMenuItem *)this, (int)a2); /*0x4f37ad*/
-    v3 = (char **)((char *)this + 52); /*0x4f37b2*/
+    v3 = (unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
     v4 = CCFileClass::Construct2(&v7, v3); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
     *(unsigned int *)v7.CDFileClass = &CCFileClass::`vftable'; /*0x4f37ce*/

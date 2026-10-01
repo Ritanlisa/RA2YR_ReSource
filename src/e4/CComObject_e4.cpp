@@ -25,6 +25,9 @@
 #include "e4/classes/E4Recv_5E93F0_e4.hpp"
 #include "e4/classes/ChatEvent_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x7937B0
 namespace gamemd {

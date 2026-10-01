@@ -23,6 +23,9 @@
 #include "e4/classes/Techno_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {

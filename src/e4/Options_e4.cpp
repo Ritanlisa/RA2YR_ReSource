@@ -35,6 +35,9 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/OptionQueue_e4.hpp"
 #include "e4/classes/SaveLoadDialog_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -347,7 +350,7 @@ AbstractClass * * Options::Screen_Save()
   result = (int)GetDlgItem((HWND)this, 1334); /*0x55fc47*/
   if ( result ) /*0x55fc4b*/
   {
-    v15 = (double)SendMessageA((HWND)result, 0x400u, 0, 0) * 0.1; /*0x55fc6f*/
+    v15 = (gamemd::AbstractClass **)((double)SendMessageA((HWND)result, 0x400u, 0, 0) * 0.1); /*0x55fc6f*/
     return Audio::SetVoiceVolume(&stru_A8EB00.ObjectTypeClass[24], v15, 0); /*0x55fc72*/
   }
   return result; /*0x55fc77*/
@@ -628,9 +631,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   int v20; // [esp+28h] [ebp-8h]
   int v21; // [esp+2Ch] [ebp-4h]
 
-  v2 = aP1; /*0x6255f5*/
-  v3 = (int *)this; /*0x6255fb*/
-  v4 = 0; /*0x625600*/
+  v2 = (unsigned int)(aP1); /*0x6255f5*/
+  v3 = (void **)((int *)this); /*0x6255fb*/
+  v4 = (void *)(0); /*0x625600*/
   *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
   v5 = &this->field_8; /*0x625607*/
   this->field_4 = (void *)aP1[1]; /*0x62560a*/

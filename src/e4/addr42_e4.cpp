@@ -50,6 +50,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
 
 // 0x420140
 namespace gamemd {
@@ -735,7 +736,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         this->animation[5] = Map_InvalidCoord_Y; /*0x425bb4*/
         v40 = Map_InvalidCoord_Z; /*0x425bb7*/
         BYTE2(this->ironCurtainTimer[2]) = 1; /*0x425bbd*/
-        this->animation[6] = v40; /*0x425bc4*/
+        this->animation[6] = (wchar_t *)(v40); /*0x425bc4*/
         v41 = dword_A8ED84; /*0x425bc7*/
         this->missionStartTime = 1; /*0x425bd7*/
         this->queuedMission = (int)v41; /*0x425bdd*/

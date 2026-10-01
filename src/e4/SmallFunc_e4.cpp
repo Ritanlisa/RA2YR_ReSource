@@ -39,6 +39,9 @@
 #include "e4/classes/Cliff_e4.hpp"
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6F19B0
 namespace gamemd {

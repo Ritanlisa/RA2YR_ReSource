@@ -4,6 +4,7 @@
 
 #include <utility>
 #include <algorithm>
+#include "e4/classes/CellStruct_e4.hpp"
 
 namespace gamemd
 {

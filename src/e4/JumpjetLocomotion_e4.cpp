@@ -26,6 +26,7 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/Targeting_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {
@@ -898,7 +899,7 @@ LABEL_50:
   if ( v55 ) /*0x54d69d*/
     return (*(int (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54d6a6*/
   result = *(unsigned int *)this->__pad_C; /*0x54d6b4*/
-  *(unsigned char *)(result + 116) = v58; /*0x54d6bd*/
+  *(unsigned char *)(result + 116) = (void *)(v58); /*0x54d6bd*/
   return result; /*0x54d6ac*/
 
 }

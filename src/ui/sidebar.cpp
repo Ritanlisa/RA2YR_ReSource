@@ -7,6 +7,9 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/DialogControl_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 
 namespace gamemd
 {
@@ -64,13 +67,13 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   {
     case 15:
     case 16:
-      v24 = 2; /*0x6a63af*/
+      v24 = (gamemd::AbstractType)(2); /*0x6a63af*/
       break;
     case 1:
     case 40:
     case 2:
     case 3:
-      v24 = 3; /*0x6a63a5*/
+      v24 = (gamemd::AbstractType)(3); /*0x6a63a5*/
       break;
     case 6:
     case 7:

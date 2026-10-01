@@ -27,6 +27,8 @@
 #include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/UDPInterfaceClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/WaveClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x5F8CE0
 namespace gamemd {
@@ -106,10 +108,10 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               FileHVA = 0; /*0x5f8e48*/
             v9 = (VoxelSection *)*((unsigned int *)this + 46); /*0x5f8e4a*/
             *((unsigned int *)this + 47) = (unsigned int)(FileHVA); /*0x5f8e52*/
-            Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
+            Info = (unsigned int)(VoxelSection::GetInfo(v9, 0, 0)); /*0x5f8e58*/
             Matrix::Scale(*((Matrix **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8e70*/
-            v22 = 0; /*0x5f8e78*/
+            v22 = (unsigned int)(0); /*0x5f8e78*/
             ((Vector *)((int)v21))->Clear(); /*0x5f8e7c*/
             *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8e85*/
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8e8d*/
@@ -150,22 +152,22 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               v16 = 0; /*0x5f8fb2*/
             v17 = (VoxelSection *)*((unsigned int *)this + 48); /*0x5f8fb4*/
             *((unsigned int *)this + 49) = (unsigned int)(v16); /*0x5f8fbc*/
-            v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
+            v18 = (unsigned int)(VoxelSection::GetInfo(v17, 0, 0)); /*0x5f8fc2*/
             Matrix::Scale(*((Matrix **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8fda*/
-            v22 = 0; /*0x5f8fe2*/
+            v22 = (unsigned int)(0); /*0x5f8fe2*/
             ((Vector *)((int)v21))->Clear(); /*0x5f8fe6*/
             *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8fef*/
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8ff7*/
           }
         }
         *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x5f9008*/
-        v25 = 0; /*0x5f900c*/
+        v25 = (unsigned int)(0); /*0x5f900c*/
         ((Vector *)((int)v24))->Clear(); /*0x5f9013*/
-        *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x5f9021*/
+        *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f9021*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x5f9025*/
         *(unsigned int *)v26.CDFileClass = &vt_CCFileClass; /*0x5f9031*/
-        v28 = 0; /*0x5f9038*/
+        v28 = (unsigned int)(0); /*0x5f9038*/
         ((Vector *)((int)v27))->Clear(); /*0x5f903f*/
         *(unsigned int *)v26.CDFileClass = &off_7E1668; /*0x5f904b*/
         LOBYTE(v2) = BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x5f9052*/

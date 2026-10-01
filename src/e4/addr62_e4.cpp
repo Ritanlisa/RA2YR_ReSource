@@ -56,6 +56,7 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "e4/classes/Font_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -734,13 +735,13 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
-    a7 = (int *)DSurface_Alternate; /*0x6211f9*/
-  v12 = (unsigned int *)(*aP2); /*0x621234*/
+    a7 = (unsigned int *)((int *)DSurface_Alternate); /*0x6211f9*/
+  v12 = (int)((unsigned int *)(*aP2)); /*0x621234*/
   v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
-  yTopa = (int)(aP2[1]);
+  yTopa = (unsigned int *)((int)(aP2[1]));
   v14 = (unsigned int *)(aP2[2]);
   v20 = (unsigned int *)(v14);
   if ( !a1 ) /*0x62126b*/
@@ -955,7 +956,7 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
   v35[2] = (unsigned int)((gamemd::AbstractClass **)(v3[2]));
   v35[3] = (unsigned int)((gamemd::AbstractClass **)(v3[3]));
   v35[1] = (unsigned int)((gamemd::AbstractClass **)(v20 - v28.top));
-  v35[0] = (unsigned int)((gamemd::AbstractClass **)(v21 - v28.left));
+  v35[0] = (int)((unsigned int)((gamemd::AbstractClass **)(v21 - v28.left)));
   return (gamemd::AbstractClass **)((*(int (**)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, v3, v7, v35, 0, 1));
 }
 }

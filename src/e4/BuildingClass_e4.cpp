@@ -31,6 +31,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -180,7 +181,7 @@ LABEL_36:
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
-            v1->LightSource = 0; /*0x454174*/
+            v1->LightSource = (void *)(0); /*0x454174*/
             return v32; /*0x454170*/
           }
           else

@@ -698,7 +698,7 @@ short WideString::Reassign(wchar_t * String, void *a2_1)
   else
     v3 = 1; /*0x7b762d*/
   v4 = (unsigned short *)__2_YAPAXI_Z(2 * v3); /*0x7b7635*/
-  *(unsigned int *)this = v4; /*0x7b763d*/
+  *(unsigned int *)this = (unsigned int)(v4); /*0x7b763d*/
   *v4 = 0; /*0x7b7641*/
   if ( String ) /*0x7b7646*/
     wcscpy(*(wchar_t **)this, String); /*0x7b764c*/

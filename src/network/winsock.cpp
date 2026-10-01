@@ -4,6 +4,9 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <winsock2.h>
 #include <cstring>
+#include "e4/classes/WinsockInterface_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 #pragma comment(lib, "ws2_32.lib")
 

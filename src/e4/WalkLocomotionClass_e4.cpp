@@ -25,6 +25,8 @@
 #include "e4/classes/Function_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {

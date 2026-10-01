@@ -28,6 +28,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
 
 // 0x46C790
 namespace gamemd {
@@ -309,9 +310,9 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->AbstractTypeClass = &vt_ObjectTypeClass; /*0x5f73d9*/
-  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73df*/
-  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73e6*/
+  this->AbstractTypeClass = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73d9*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73df*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73e6*/
   ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
@@ -329,10 +330,10 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
   int v6; // ebx
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &vt_ObjectTypeClass; /*0x5f740b*/
-  *((unsigned int *)this + 1) = &vt_ObjectTypeClass; /*0x5f7411*/
-  *((unsigned int *)this + 2) = &vt_ObjectTypeClass; /*0x5f7418*/
-  *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
+  *(unsigned int *)this = (unsigned int)(&vt_ObjectTypeClass); /*0x5f740b*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_ObjectTypeClass); /*0x5f7411*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_ObjectTypeClass); /*0x5f7418*/
+  *((unsigned int *)this + 3) = (int)(&vt_ObjectTypeClass); /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int ((int *)(**))(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/

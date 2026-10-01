@@ -14,6 +14,9 @@
 #include <cstring>
 #include <cmath>
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 namespace gamemd
 {
@@ -427,8 +430,8 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v32 = v6; /*0x6d78b1*/
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
-          v7 = (*(int ((int *)(**))(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
-          v8 = (int)(((unsigned char *)(this) + 0x0B0)); /*0x6d78d0*/
+          v7 = (int)((*(int ((int *)(**))(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
+          v8 = (const gamemd::RectangleStruct *)((int)(((unsigned char *)(this) + 0x0B0))); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = ((unsigned char *)(this) + 0x02D); /*0x6d78e2*/
           v10 = v8 + *(const gamemd::RectangleStruct *)(viewRect); /*0x6d78ee*/
@@ -460,7 +463,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
             ++v19; /*0x6d79d6*/
             IDA_LOWORD(v39) = v21; /*0x6d79d7*/
             v19 = v19; /*0x6d79de*/
-            IDA_HIWORD(v39) = v19 / 2; /*0x6d79e7*/
+            IDA_HIWORD(v39) = (unsigned int)(v19 / 2); /*0x6d79e7*/
             IDA_LOWORD(v45) = v42 + v21; /*0x6d79fa*/
             IDA_HIWORD(v45) = IDA_HIWORD(v39) + IDA_HIWORD(v42); /*0x6d7a05*/
             *(unsigned int *)v45 = v45; /*0x6d7a10*/

@@ -21,6 +21,8 @@
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/ColorListClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x40D280
 namespace gamemd {
@@ -68,7 +70,7 @@ int MouseClass::selectCursor(int a2, int * a3) {
 
   if ( a2 ) /*0x40d72c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x40d732*/
+    IDA_LOBYTE(this->m_C) = (unsigned int *)(0); /*0x40d732*/
     if ( a3 ) /*0x40d738*/
       v4 = a3; /*0x40d74e*/
     else

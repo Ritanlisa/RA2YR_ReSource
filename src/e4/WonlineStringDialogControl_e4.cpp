@@ -505,7 +505,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    *(unsigned int *)Block = &vt_ATLCComObject; /*0x7ad663*/
+    *(unsigned int *)Block = (unsigned int)(&vt_ATLCComObject); /*0x7ad663*/
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

@@ -14,6 +14,7 @@
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/WalkLocomotionClass_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
 
 // 0x7B9040
 namespace gamemd {

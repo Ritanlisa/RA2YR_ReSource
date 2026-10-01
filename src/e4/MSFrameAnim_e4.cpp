@@ -55,7 +55,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x76a05b*/
+          *(unsigned int *)v8->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -418,7 +418,7 @@ unsigned int * MSFrameAnim::drawFrame(void *a1_1)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76a7c3*/
-  *(unsigned int *)this->__pad_0 = &vt_rc_ptr; /*0x76a7c8*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76a7c8*/
   return this->__pad_0; /*0x76a7d0*/
 
 }

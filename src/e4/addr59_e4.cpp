@@ -42,6 +42,8 @@
 #include "e4/classes/E4Recv_583AD0_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/TileNode_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/GameConfig_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {

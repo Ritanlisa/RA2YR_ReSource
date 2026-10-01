@@ -35,6 +35,7 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/Viewport_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x7049C0
 namespace gamemd {
@@ -725,7 +726,7 @@ void UpdateTimedStateMachine(int * a1)
     switch ( a1[112] ) /*0x70e97d*/
     {
       case 0: /*0x70e97d*/
-        a1[112] = 1; /*0x70e988*/
+        a1[112] = (unsigned int *)(1); /*0x70e988*/
         v2 = a1 + 109; /*0x70e997*/
         *v2 = dword_A8ED84; /*0x70e9a3*/
         v2[1] = v21; /*0x70e9a5*/
@@ -832,7 +833,7 @@ void UpdateTimedStateMachine(int * a1)
       case 6: /*0x70e97d*/
         if ( Timeout::GetRemaining(a1 + 106) <= 30 ) /*0x70eb96*/
         {
-          a1[112] = 7; /*0x70eb9c*/
+          a1[112] = (unsigned int *)(7); /*0x70eb9c*/
           v14 = a1 + 109; /*0x70ebab*/
           *v14 = dword_A8ED84; /*0x70ebb7*/
           v14[1] = v21; /*0x70ebbd*/
@@ -917,7 +918,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
     dword_B0EB38 = a1; /*0x70f13a*/
     v3 = *((unsigned int *)dword_8871E0 + 1536); /*0x70f140*/
     Ticks = Timer::GetTicks(); /*0x70f14a*/
-    dword_B0EA74 = v9; /*0x70f161*/
+    dword_B0EA74 = (void *)(v9); /*0x70f161*/
     v7 = dword_A83D4C; /*0x70f169*/
     dword_B0EA70 = Ticks; /*0x70f16e*/
     dword_B0EA78 = v3; /*0x70f173*/
@@ -1007,8 +1008,8 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = (ObjectClass *)((char *)this + 384); /*0x70f74c*/
-  v2->AbstractClass = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f752*/
-  ((unsigned int *)v2)[0] = (void *)v4; /*0x70f758*/
+  v2->AbstractClass = (unsigned int)(*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x70f752*/
+  ((unsigned int *)v2)[0] = (unsigned int)((void *)v4); /*0x70f758*/
   ((unsigned int *)v2)[0] = (void *)a2; /*0x70f75b*/
   return v4; /*0x70f75e*/
 

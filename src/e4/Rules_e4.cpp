@@ -28,6 +28,7 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x6691E0
 namespace gamemd {

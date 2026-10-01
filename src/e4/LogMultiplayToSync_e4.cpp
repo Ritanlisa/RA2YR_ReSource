@@ -13,6 +13,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Time_e4.hpp"
 
 // 0x6516F0
 namespace gamemd {
@@ -95,7 +96,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf(v5, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     Time::FormatDate(v62); /*0x6517cb*/
-    v52 = ((String *)(Destination))->CopyConstant(); /*0x6517f2*/
+    v52 = (char *)(((String *)(Destination))->CopyConstant()); /*0x6517f2*/
     v9 = ((String *)(v64))->FormatDword(); /*0x6517f3*/
     fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = (char *)((int)((char *)(5)));

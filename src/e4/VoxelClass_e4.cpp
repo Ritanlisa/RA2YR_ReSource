@@ -27,6 +27,7 @@
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/Matrix2D_e4.hpp"
 #include "e4/classes/Matrix3x3_e4.hpp"
+#include "e4/classes/Transform_e4.hpp"
 
 // 0x73C5F0
 namespace gamemd {

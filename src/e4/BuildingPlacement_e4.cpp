@@ -35,6 +35,9 @@
 #include "e4/classes/BulkData_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4FB840
 namespace gamemd {
@@ -71,7 +74,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
   v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], v7); /*0x4fb8df*/
-  v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
+  v8 = (void *)((unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2)); /*0x4fb8ed*/
   ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
@@ -145,7 +148,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     {
       if ( (uint8_t)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
       {
-        v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
+        v7 = (void *)(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7)); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
         NeighbourContent = ((Cell *)(v8))->GetNeighbourContent(v7); /*0x54c5ea*/
@@ -166,7 +169,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))(v14, 0); /*0x54c63b*/
         *(unsigned char *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
         v16 = *((unsigned int *)this + 11); /*0x54c648*/
-        *((unsigned int *)this + 20) = 2; /*0x54c64b*/
+        *((unsigned int *)this + 20) = (gamemd::VectorClass_flat **)(2); /*0x54c64b*/
         *((unsigned int *)this + 32) = v16; /*0x54c652*/
       }
       return (char)v12; /*0x54c61d*/

@@ -12,6 +12,7 @@
 #include "e4/classes/LightConvertClass_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x554760
 namespace gamemd {

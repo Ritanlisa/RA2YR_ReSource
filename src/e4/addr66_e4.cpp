@@ -54,6 +54,10 @@
 #include "e4/classes/AircraftTypeClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_6A6AF0_e4.hpp"
+#include "e4/classes/BulletClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6613A0
 namespace gamemd {

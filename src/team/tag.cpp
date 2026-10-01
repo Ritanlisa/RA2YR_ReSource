@@ -2,6 +2,7 @@
 #include "team/trigger.hpp"
 
 #include <cstring>
+#include "e4/classes/HouseClass_e4.hpp"
 
 namespace gamemd
 {
@@ -199,7 +200,7 @@ int TagClass::Destroy()
 int TagClass::AddTrigger(TriggerClass* trigger)
 {
   trigger->nextTrigger = *(&this->vtable20); /*0x6e55c7*/
-  *(&this->vtable20) = trigger; /*0x6e55ca*/
+  *(&this->vtable20) = (int)(trigger); /*0x6e55ca*/
   return trigger; /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)

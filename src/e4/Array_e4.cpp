@@ -243,7 +243,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
   v5 = *(unsigned int *)this->__pad_0; /*0x7ad799*/
   if ( aP2 > (gamemd::ObjectClass *)(v5) ) /*0x7ad79e*/
   {
-    aP2 = (gamemd::ObjectClass *)(v5);
+    aP2 = (int)((gamemd::ObjectClass *)(v5));
     v4 = (gamemd::ObjectClass *)(v5);
   }
   Array_field_0x4 = (void *)(this->Array_field_0x4);
@@ -259,7 +259,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad81c*/
-    v4 = aP2; /*0x7ad825*/
+    v4 = (gamemd::ObjectClass *)(aP2); /*0x7ad825*/
     *(unsigned int *)this->__pad_8 = (unsigned int)(v16); /*0x7ad82c*/
     this->Array_field_0x4 = (unsigned int)((void *)v7); /*0x7ad82f*/
   }
@@ -276,7 +276,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad8a1*/
-    v4 = aP2; /*0x7ad8aa*/
+    v4 = (gamemd::ObjectClass *)(aP2); /*0x7ad8aa*/
     *(unsigned int *)this->__pad_8 = (unsigned int)(v17); /*0x7ad8b1*/
     this->Array_field_0x4 = (unsigned int)((void *)v11); /*0x7ad8b4*/
   }

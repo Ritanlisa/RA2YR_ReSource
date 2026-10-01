@@ -37,6 +37,9 @@
 #include "e4/classes/MSChoiceClass_e4.hpp"
 #include "e4/classes/PaletteManager_e4.hpp"
 #include "e4/classes/StringTable_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {

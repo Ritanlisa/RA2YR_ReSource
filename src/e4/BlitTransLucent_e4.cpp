@@ -280,7 +280,7 @@ namespace gamemd {
 RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a769*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     __3_YAXPAX_Z(this); /*0x49a772*/
   return (std::locale::facet *)this; /*0x49a77c*/

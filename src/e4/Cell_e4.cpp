@@ -28,6 +28,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x419B00
 namespace gamemd {

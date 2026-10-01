@@ -58,6 +58,7 @@
 #include "e4/classes/Int4_e4.hpp"
 #include "e4/classes/Multiplay_e4.hpp"
 #include "e4/classes/SyncDelayClass_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {

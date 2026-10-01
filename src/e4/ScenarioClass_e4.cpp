@@ -43,6 +43,7 @@
 #include "e4/classes/TriggerActionQueue_e4.hpp"
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/GameOption_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
@@ -354,7 +355,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
-  this->dropshipCountsCount = 10; /*0x68339a*/
+  this->dropshipCountsCount = (gamemd::TechnoTypeClass *)(10); /*0x68339a*/
   this->allowableUnits[0] = (int)&vt_TypeList; /*0x68339d*/
   VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/

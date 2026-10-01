@@ -34,13 +34,13 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = __2_YAPAXI_Z(16 * aP1); /*0x4d2e07*/
+    v8 = (int)(__2_YAPAXI_Z(16 * aP1)); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/
       {
         v9 = (int)(v8 + 8);
-        v10 = aP1; /*0x4d2e1d*/
+        v10 = (IUnknown *)(aP1); /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
           *(unsigned int *)(v9 - 8) = 0; /*0x4d2e1e*/
@@ -61,7 +61,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
     v5 = (IUnknown *)((int)(aP2 + 8));
-    v6 = aP1; /*0x4d2de4*/
+    v6 = (IUnknown *)(aP1); /*0x4d2de4*/
     do /*0x4d2df4*/
     {
       *(unsigned int *)(v5 - 8) = 0; /*0x4d2de5*/

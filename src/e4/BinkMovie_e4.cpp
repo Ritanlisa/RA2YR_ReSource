@@ -24,6 +24,7 @@
 #include "e4/classes/BlitTransLucent25Alpha_ushort_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
 
 // 0x432690
 namespace gamemd {
@@ -260,7 +261,7 @@ LABEL_40:
     *((unsigned int *)this + 5) = (unsigned int)(v22); /*0x432a2c*/
     *((unsigned int *)this + 6) = v27; /*0x432a2f*/
     *((unsigned int *)this + 7) = bottom; /*0x432a32*/
-    *((unsigned int *)this + 2) = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
+    *((unsigned int *)this + 2) = (gamemd::AbstractClass **)(BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28))); /*0x432a44*/
     return 1; /*0x432a4a*/
   }
   else

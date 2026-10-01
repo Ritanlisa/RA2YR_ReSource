@@ -40,6 +40,9 @@
 #include "e4/classes/Return_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/LightSourceClass_e4.hpp"
+#include "e4/classes/RadSiteClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {

@@ -187,7 +187,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
       do /*0x538a4f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x538a3e*/
-        *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x538a43*/
+        *(unsigned int *)v5->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x538a43*/
         ((ComPtr *)(v5))->Release(); /*0x538a49*/
         --v7; /*0x538a4e*/
       }
@@ -199,7 +199,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x538a6a*/
+    *(unsigned int *)Block->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x538a6a*/
     ((ComPtr *)((ComPtr *)Block))->Release(); /*0x538a70*/
     if ( (a2 & 1) != 0 ) /*0x538a78*/
       __3_YAXPAX_Z(Block); /*0x538a7b*/

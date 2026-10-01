@@ -33,6 +33,9 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Conditions_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x71A450
 namespace gamemd {
@@ -376,8 +379,8 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   int v3; // eax
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/
-  ((unsigned int *)Block)[0] = &vt_TemporalClass; /*0x71b1c3*/
+  Block->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71b1bd*/
+  ((unsigned int *)Block)[0] = (gamemd::TemporalClass *)(&vt_TemporalClass); /*0x71b1c3*/
   ((unsigned int *)Block)[0] = &vt_TemporalClass; /*0x71b1ca*/
   ((unsigned int *)Block)[0] = &vt_TemporalClass; /*0x71b1d1*/
   v5 = Block; /*0x71b1df*/
@@ -425,7 +428,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->AbstractClass = &vt_TemporalClass; /*0x71a687*/
+      aP0->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71a687*/
       ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a68d*/
       ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a694*/
       ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a69b*/

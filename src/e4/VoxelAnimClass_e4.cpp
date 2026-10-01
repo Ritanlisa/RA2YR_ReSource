@@ -26,6 +26,9 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {
@@ -583,7 +586,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
       if ( v33[720] ) /*0x74a250*/
       {
         v34 = (int *)Coord::GetCoords(&v101, v86); /*0x74a269*/
-        v97 = *v34; /*0x74a270*/
+        v97 = (unsigned int *)(*v34); /*0x74a270*/
         v98 = v34[1]; /*0x74a277*/
         v99 = v34[2]; /*0x74a27e*/
         v35 = v1->VoxelAnimClass_field_0x104; /*0x74a282*/

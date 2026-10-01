@@ -89,7 +89,7 @@ int WTFMode::ResetUnitFlags() {
           }
           while ( dword_889FC8 ); /*0x41dc0c*/
         }
-        v6[165] = v7; /*0x41dc10*/
+        v6[165] = (unsigned int)(v7); /*0x41dc10*/
         if ( !v7 && byte_A8E9A0 ) /*0x41dc1e*/
           IDA_LOBYTE(v1) = (*(int (**)(unsigned int *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
         if ( (WTFMode *)v6[165] == this ) /*0x41dc32*/
@@ -165,7 +165,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
   {
     IDA_LOBYTE(this->m_C) = 0; /*0x4a4cc2*/
     if ( a2 ) /*0x4a4cc8*/
-      v4 = a2; /*0x4a4cde*/
+      v4 = (unsigned int *)(a2); /*0x4a4cde*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4a4cda*/
     IDA_LOBYTE(this->m_C) = 1; /*0x4a4ce2*/

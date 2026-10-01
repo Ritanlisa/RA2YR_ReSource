@@ -19,6 +19,7 @@
 #include "e4/classes/Font_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x4D0980
 namespace gamemd {
@@ -342,16 +343,16 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   int v58; // [esp+68h] [ebp+8h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0ef9*/
-  *((unsigned int *)this + 9) = -1; /*0x4d0f02*/
+  *((unsigned int *)this + 9) = (int)(-1); /*0x4d0f02*/
   v4 = (int)(aP1[135]); /*0x4d0f0c*/
   *((unsigned int *)this + 11) = 0; /*0x4d0f12*/
   *((unsigned int *)this + 10) = v4; /*0x4d0f19*/
-  *((unsigned int *)this + 12) = 6; /*0x4d0f24*/
+  *((unsigned int *)this + 12) = (unsigned int)(6); /*0x4d0f24*/
   *((unsigned int *)this + 13) = (unsigned int)(aP1[39]); /*0x4d0f2f*/
   *((unsigned int *)this + 14) = (unsigned int)(aP1[40]); /*0x4d0f34*/
-  *((unsigned int *)this + 15) = (unsigned int)(aP1[41]); /*0x4d0f3a*/
-  v5 = (int)(aP1[40]); /*0x4d0f3f*/
-  v49[0] = (unsigned int)(aP1[39]); /*0x4d0f42*/
+  *((unsigned int *)this + 15) = (int)((unsigned int)(aP1[41])); /*0x4d0f3a*/
+  v5 = (unsigned int)((int)(aP1[40])); /*0x4d0f3f*/
+  v49[0] = (int)((unsigned int)(aP1[39])); /*0x4d0f42*/
   v6 = (int)(aP1[41]); /*0x4d0f46*/
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
@@ -404,9 +405,9 @@ LABEL_11:
     ++g_MissionState; /*0x4d10ce*/
   }
   *((unsigned char *)aP1 + 1767) = 1; /*0x4d10d5*/
-  ProductionFrame = BuildingClass::GetProductionFrame(aP1); /*0x4d10dc*/
+  ProductionFrame = (int)(BuildingClass::GetProductionFrame(aP1)); /*0x4d10dc*/
   v13 = (int)(aP1[328]); /*0x4d10e1*/
-  v57 = ProductionFrame; /*0x4d10e7*/
+  v57 = (int)(ProductionFrame); /*0x4d10e7*/
   if ( *(unsigned char *)(v13 + 5823) && ((v14 = aP1[390], v14 == 12) || v14 == 8) /*0x4d1112*/
     || (v15 = *(unsigned char *)(v13 + 5824), LOBYTE(v53) = 0, v15) )
   {
@@ -719,7 +720,7 @@ LABEL_14:
     if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d26aa*/
     {
 LABEL_22:
-      *((unsigned int *)g_MissionPool + 2 * g_MissionState) = v12; /*0x4d2745*/
+      *((unsigned int *)g_MissionPool + 2 * g_MissionState) = (unsigned int)(v12); /*0x4d2745*/
       *((unsigned int *)g_MissionPool + 2 * g_MissionState + 1) = v3; /*0x4d275f*/
       byte_8B3CCC = 0; /*0x4d2769*/
       ++g_MissionState; /*0x4d2770*/
@@ -764,7 +765,7 @@ LABEL_22:
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
-    vtable1 = v3[2]; /*0x4d25de*/
+    vtable1 = (int)(v3[2]); /*0x4d25de*/
     if ( (int)v3[2] < (int)vtable1 /*0x4d2605*/
       || (BYTE1(v3[2]) || !vtable1)
       && (uniqueId = v3[2], uniqueId > 0)

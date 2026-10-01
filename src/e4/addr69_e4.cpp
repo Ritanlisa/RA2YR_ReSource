@@ -76,6 +76,11 @@
 #include "e4/classes/ProgressAnim_e4.hpp"
 #include "e4/classes/SHPClass_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -393,7 +398,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v28 ) /*0x69413f*/
     goto LABEL_78; /*0x69413f*/
-  v30 = ReceiveNetworkFile((int)(a1), v36, a2, a3); /*0x694173*/
+  v30 = (gamemd::CampaignClass **)(ReceiveNetworkFile((int)(a1), v36, a2, a3)); /*0x694173*/
   v31 = g_Str_true; /*0x694175*/
   if ( !v30 ) /*0x69417c*/
     v31 = g_Str_false; /*0x69417e*/

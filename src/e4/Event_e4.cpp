@@ -99,7 +99,7 @@ void sub_5E2FA0()
     result = ((Dialog *)0)->GetCurrentType();
   if ( result == 107 ) /*0x5e2faa*/
   {
-        Current = ((Dialog *)0)->GetCurrent();
+        Current = (HWND)(((Dialog *)0)->GetCurrent());
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
     {

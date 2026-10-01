@@ -543,9 +543,9 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   unsigned int v39[2]; // [esp+14h] [ebp-Ch] BYREF
   int v40; // [esp+1Ch] [ebp-4h] BYREF
 
-  v39[1] = a1; /*0x57ad00*/
+  v39[1] = (unsigned int)(a1); /*0x57ad00*/
   v7 = Range_RandomInt(0, 5u); /*0x57ad04*/
-  v8 = a4; /*0x57ad09*/
+  v8 = (int)(a4); /*0x57ad09*/
   v9 = v7; /*0x57ad0d*/
   if ( a4 == 2 ) /*0x57ad12*/
     TerrainMask = ((Cell *)(a1))->GetTerrainMask(&a3->Cell_field_0x0, 1); /*0x57ad1b*/

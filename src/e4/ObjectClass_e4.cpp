@@ -30,6 +30,7 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
 
 // 0x483610
 namespace gamemd {

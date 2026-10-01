@@ -193,7 +193,7 @@ LABEL_24:
   *(unsigned int *)&v2[4] = 0; /*0x688651*/
   *(unsigned int *)&v2[8] = 0; /*0x688654*/
   v2[13] = 0; /*0x688657*/
-  v2[12] = (Multiplayer)1; /*0x68865f*/
+  v2[12] = (gamemd::Multiplayer)((Multiplayer)1); /*0x68865f*/
   *(unsigned int *)v2 = (unsigned int)(&vt_VectorClass); /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
   *(unsigned int *)v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x68866e*/

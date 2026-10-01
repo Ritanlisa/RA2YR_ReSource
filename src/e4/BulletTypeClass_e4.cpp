@@ -19,6 +19,8 @@
 #include "e4/classes/Byte_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x465450
 namespace gamemd {

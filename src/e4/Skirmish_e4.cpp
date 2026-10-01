@@ -38,6 +38,9 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x46F600
 namespace gamemd {
@@ -322,7 +325,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
   }
   if ( v3 > v4 ) /*0x59734e*/
     v3 = v4; /*0x597350*/
-  *((unsigned int *)this + 23) = Random::Range(&Randomizer_Global, v3, v4); /*0x59736a*/
+  *((unsigned int *)this + 23) = (gamemd::TechnoTypeClass **)(Random::Range(&Randomizer_Global, v3, v4)); /*0x59736a*/
   result = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x59736d*/
   *((unsigned int *)this + 29) = result; /*0x597372*/
   return result; /*0x597375*/
@@ -631,7 +634,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
         {
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
-            v10 = GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae589*/
+            v10 = (gamemd::ReferenceCounted **)(GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4))); /*0x6ae589*/
             v11 = (wchar_t *)((GameSetup *)(v10))->GetColorTooltip(); /*0x6ae590*/
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/

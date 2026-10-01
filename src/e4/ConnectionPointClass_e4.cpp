@@ -96,7 +96,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->ConnectionPointClass_field_0x08 = a1[1]; /*0x4a0881*/
   this->ConnectionPointClass_field_0x0C = a1[2]; /*0x4a0887*/
   this->ConnectionPointClass_field_0x10 = a1[3]; /*0x4a088d*/
-  this->ConnectionPointClass_field_0x18 = aP2; /*0x4a0896*/
+  this->ConnectionPointClass_field_0x18 = (unsigned int)(aP2); /*0x4a0896*/
   this->ConnectionPointClass_field_0x14 = 0; /*0x4a0899*/
   this->ConnectionPointClass_field_0x20 = 0; /*0x4a089c*/
   *((unsigned int *)this + 9) = 0; /*0x4a089f*/
@@ -105,7 +105,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->ConnectionPointClass_field_0x1C = (int)&vt_DynamicVectorClass; /*0x4a08a9*/
   *((unsigned int *)this + 12) = 10; /*0x4a08b0*/
   *((unsigned int *)this + 11) = 0; /*0x4a08b7*/
-  *(unsigned int *)this->__pad_0 = &vt_ConnectionPointClass; /*0x4a08ba*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionPointClass); /*0x4a08ba*/
   (*(void ((int)(**))(int))(*(unsigned int *)aP2 + 4))(aP2); /*0x4a08c3*/
   return this->__pad_0; /*0x4a08c8*/
 

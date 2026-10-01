@@ -58,8 +58,8 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->SnowOccupationBits = 0; /*0x5447fe*/
   this->WaterBound = 1; /*0x544804*/
   this->SpawnsTiberium = 0; /*0x54480b*/
-  LODWORD(this->AnimationProbability) = &vt_DynamicVectorClass; /*0x544811*/
-  this->FoundationData = (CellStruct *)10; /*0x54481b*/
+  LODWORD(this->AnimationProbability) = (unsigned int)(&vt_DynamicVectorClass); /*0x544811*/
+  this->FoundationData = (unsigned int)((CellStruct *)10); /*0x54481b*/
   *(unsigned int *)&this->IsVeinhole = 0; /*0x544825*/
   *((unsigned int *)this + 179) = 0; /*0x544830*/
   *((unsigned int *)this + 176) = -1; /*0x544836*/
@@ -83,9 +83,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)this + 774) = 0; /*0x5448bc*/
   *((unsigned int *)this + 194) = 0; /*0x5448c2*/
   this->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
-  ((unsigned int *)this)[0] = &vt_IsometricTileTypeClass; /*0x5448cf*/
-  ((unsigned int *)this)[0] = &vt_IsometricTileTypeClass; /*0x5448d6*/
-  ((unsigned int *)this)[0] = &vt_IsometricTileTypeClass; /*0x5448dd*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448cf*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448d6*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448dd*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -107,7 +107,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
           0)) )
   {
     v8 = (*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))++; /*0x54497d*/
-    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) = this; /*0x54498c*/
+    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) = (unsigned int)(this); /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
   {

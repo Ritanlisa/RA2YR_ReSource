@@ -12,6 +12,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/DropListClass_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x4AF780
 namespace gamemd {

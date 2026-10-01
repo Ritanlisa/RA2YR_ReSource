@@ -63,6 +63,8 @@
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/PriorityQueue_e4.hpp"
+#include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/classes/MSVQAnim_e4.hpp"
 
 // 0x4F10E0
 namespace gamemd {

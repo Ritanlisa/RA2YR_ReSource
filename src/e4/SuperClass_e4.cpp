@@ -482,14 +482,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   {
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     *((unsigned int *)this + 26) = 0; /*0x6cb846*/
-    v8[0] = this; /*0x6cb859*/
+    v8[0] = (unsigned int)(this); /*0x6cb859*/
     v4 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb870*/
   {
-    v8[0] = this; /*0x6cb885*/
+    v8[0] = (unsigned int)(this); /*0x6cb885*/
     v5 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5); /*0x6cb897*/

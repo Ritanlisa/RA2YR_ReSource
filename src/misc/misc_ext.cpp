@@ -4,6 +4,9 @@
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/AnimFile_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 namespace gamemd
 {

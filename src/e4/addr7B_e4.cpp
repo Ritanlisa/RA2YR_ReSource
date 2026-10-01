@@ -60,6 +60,8 @@
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/WinsockInterfaceClass_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
 
 // 0x7B0310
 namespace gamemd {
@@ -372,7 +374,7 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   }
   while ( 1 ) /*0x7b0807*/
   {
-    v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50)));
+    v52 = (gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50))));
     if ( !v52 ) /*0x7b080b*/
       return 1; /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
@@ -592,7 +594,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( this->AbstractClass ) /*0x7b60ea*/
     v6 = strlen((const char *)this->AbstractClass); /*0x7b60ff*/
   else
-    v6 = 0; /*0x7b60f2*/
+    v6 = (gamemd::AbstractClass **)(0); /*0x7b60f2*/
   if ( a2 >= v6 ) /*0x7b6102*/
     return -1; /*0x7b6107*/
   while ( 1 )
@@ -793,7 +795,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v5 = (void *)((int)((void *)(a2)));
   vtable0 = (void *)(this->AbstractClass);
   if ( this->AbstractClass ) /*0x7b7c0b*/
-    vtable0 = (void *)wcslen((const wchar_t *)this->AbstractClass); /*0x7b7c12*/
+    vtable0 = (gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass)); /*0x7b7c12*/
   if ( a2 >= (int)vtable0 ) /*0x7b7c1c*/
     return -1; /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/

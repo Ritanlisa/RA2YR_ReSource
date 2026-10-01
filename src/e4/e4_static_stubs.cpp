@@ -27,6 +27,7 @@ double rc_ptr_base::__pad_0(...) { return 0; }
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Network_e4.hpp"
 
 namespace gamemd {
 

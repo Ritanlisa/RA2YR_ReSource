@@ -16,6 +16,7 @@
 #include "structure/infantry.hpp"
 #include "structure/unit.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x517CC0
 namespace gamemd { 
@@ -100,7 +101,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   this->AircraftClass_field_bool_6D2 = 0; /*0x413d6d*/
   this->AircraftClass_field_char_6D3 = 5; /*0x413d74*/
   this->AircraftClass_field_bool_6D4 = 1; /*0x413d7b*/
-  this->AircraftClass_field_bool_6D5 = 1; /*0x413d81*/
+  this->AircraftClass_field_bool_6D5 = (unsigned int)(1); /*0x413d81*/
   *(unsigned int *)this = (void *)&AircraftClass_vftable; /*0x413d87*/
   this->vtable2 = (void *)&AircraftClass_vftable; /*0x413d8d*/
   this->vtable3 = (void *)&AircraftClass_vftable; /*0x413d94*/
@@ -111,7 +112,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   if ( v4 ) /*0x413db9*/
   {
     v5 = (unsigned int *)(&this->airstrike2); /*0x413dbb*/
-    v6 = (const IID *)(v4 + 844); /*0x413dc1*/
+    v6 = (int)((const IID *)(v4 + 844)); /*0x413dc1*/
     v7 = this->locomotor; /*0x413dc7*/
     if ( v7 ) /*0x413dcb*/
       (*(void ((unsigned int)(**))(unsigned int))(*(unsigned int *)v7 + 8))(this->locomotor); /*0x413dd0*/
@@ -134,7 +135,7 @@ int AircraftClass::Construct(int a1, void* a2) {
          dword_A8E398 + dword_A8E3A4,
          0) )
   {
-    v8 = g_AircraftClassCount++; /*0x413e76*/
+    v8 = (unsigned int)(g_AircraftClassCount++); /*0x413e76*/
     *((unsigned int *)dword_A8E394 + v8) = this; /*0x413e85*/
   }
   a2 = (IUnknown *)this->vtable2.GetVtable3(); /*0x413e94*/
@@ -163,7 +164,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     g_BuildingLoadQueue_Capacity += v9; /*0x413f25*/
     g_BuildingLoadQueue_Active = 0; /*0x413f2a*/
   LABEL_25:
-    *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count) = a2; /*0x413f34*/
+    *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count) = (unsigned int)(a2); /*0x413f34*/
     *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count + 1) = this; /*0x413f52*/
     g_BuildingLoadQueue_Dirty = 0; /*0x413f5c*/
     ++g_BuildingLoadQueue_Count; /*0x413f63*/
@@ -247,7 +248,7 @@ void* BuildingLightClass::CTOR(int a1) {
     v36 = a1->location; /*0x435934*/
     v37 = a1->q0A0; /*0x435940*/
     v30 = g_RulesClass_Instance->BuildPower[1]; /*0x43594d*/
-    v38 = a1->q0A4; /*0x435951*/
+    v38 = (unsigned int *)(a1->q0A4); /*0x435951*/
     Value = ProgressTimer::GetValue((unsigned short *)(a1 + 904), (unsigned int *)&v34 + 1); /*0x435967*/
     v38 = v38; /*0x43597d*/
     v6 = (double)(*(int16_t *)Value - 0x3FFF) * -0.00009587672516830327; /*0x435998*/

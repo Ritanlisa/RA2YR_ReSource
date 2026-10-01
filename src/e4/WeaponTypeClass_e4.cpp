@@ -25,6 +25,8 @@
 #include "e4/classes/WaypointPathClass_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x512680
 namespace gamemd {
@@ -167,9 +169,9 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   this->IsRadBeam = 0; /*0x771e5f*/
   this->IsRadEruption = 0; /*0x771e65*/
   this->RadLevel = 0; /*0x771e6b*/
-  this->IsMagBeam = 0; /*0x771e71*/
-  this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771e77*/
-  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e7d*/
+  this->IsMagBeam = (unsigned int)(0); /*0x771e71*/
+  this->AbstractTypeClass = (unsigned int)(&vt_WeaponTypeClass); /*0x771e77*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e7d*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e83*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x771e91*/
@@ -199,8 +201,8 @@ int WeaponTypeClass::Destructor(void *a1)
   void *v5; // eax
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
-  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f5d*/
+  this->AbstractTypeClass = (unsigned int)(&vt_WeaponTypeClass); /*0x771f57*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f5d*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f64*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x771f72*/

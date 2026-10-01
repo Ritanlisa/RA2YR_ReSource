@@ -23,6 +23,9 @@
 #include "e4/classes/Map_e4.hpp"
 #include "e4/classes/Type_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4D4DC0
 namespace gamemd {

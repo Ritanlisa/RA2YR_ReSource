@@ -33,6 +33,7 @@
 #include "team/team.hpp"
 #include "type/anim_type.hpp"
 #include "type/techno_type.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x41C170
 namespace gamemd {

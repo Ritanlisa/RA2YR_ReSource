@@ -51,6 +51,9 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/Diplomacy_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x650A90
 namespace gamemd {
@@ -458,7 +461,7 @@ int Trigger_AllocateLog(int a1)
       v82 = v62;
     }
     while ( (int)v61 < (int)&DataGlobal_8A03E8 );
-    int v70 = 0;
+    int v70 = (int)(0);
     int v71 = (int)(0);
     v83[204] = (int)(v15);
     for ( result = DataGlobal_87F788; v71 < (int)(DataGlobal_87F788); ++v71 )
@@ -1130,7 +1133,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z((void *)(this->RAMFileClass_field_0x8)); /*0x65c5b8*/
-    this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
+    this->RAMFileClass_field_0x8 = (unsigned int)(0); /*0x65c5c0*/
     *((unsigned char *)this + 29) = 0; /*0x65c5c7*/
   }
   *(unsigned int *)this->__pad_0 = &vt_FileClass; /*0x65c5cf*/
@@ -1176,8 +1179,8 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 
   result = aP1; /*0x65c913*/
   v5 = a3; /*0x65c919*/
-  v6 = aP1; /*0x65c91e*/
-  v7 = aP1 == a3; /*0x65c920*/
+  v6 = (gamemd::ObjectClass *)(aP1); /*0x65c91e*/
+  v7 = (int)(aP1 == a3); /*0x65c920*/
   v8 = aP1 <= a3; /*0x65c920*/
   v19 = this; /*0x65c922*/
   v23 = aP1; /*0x65c926*/

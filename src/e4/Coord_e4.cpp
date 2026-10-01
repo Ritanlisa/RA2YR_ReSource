@@ -72,7 +72,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
   v16 = v13 + 4 * result; /*0x413995*/
   if ( v9 != v16 ) /*0x41399a*/
   {
-    v17 = (unsigned char *)this + 24 * v9; /*0x4139ae*/
+    v17 = (char *)((unsigned char *)this + 24 * v9); /*0x4139ae*/
     v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
@@ -88,7 +88,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
         }
       }
     }
-    v21 = (unsigned char *)this + 24 * v16; /*0x4139e4*/
+    v21 = (char *)((unsigned char *)this + 24 * v16); /*0x4139e4*/
     result = *((unsigned int *)v21 + 2); /*0x4139e7*/
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
@@ -127,7 +127,7 @@ void * Coord::Subtract(int aP1, int aP2, int aP3)
 
   *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
   *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
-  this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
+  this->Coord_field_0x8 = (unsigned int)((void *)aP3); /*0x41c243*/
   return this->__pad_0; /*0x41c246*/
 
 }

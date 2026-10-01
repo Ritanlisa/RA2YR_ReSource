@@ -45,6 +45,11 @@
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/Hash_e4.hpp"
 #include "e4/classes/TabCameoListClass_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {

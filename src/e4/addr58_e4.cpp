@@ -40,6 +40,7 @@
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {
@@ -572,7 +573,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         {
           if ( *(unsigned char *)(*(unsigned int *)(v5 + 1312) + 5824) ) /*0x588613*/
           {
-            v9 = (gamemd::VectorClass_flat *)(*(unsigned int *)(v5 + 540));
+            v9 = (unsigned char)((gamemd::VectorClass_flat *)(*(unsigned int *)(v5 + 540)));
             IDA_LOBYTE(v5) = aP1; /*0x588623*/
             if ( v9 == aP1 ) /*0x588629*/
               break; /*0x588629*/
@@ -651,7 +652,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   int v22; // [esp+20h] [ebp-10h]
   unsigned int v23[3]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = aP2; /*0x588754*/
+  v3 = (int)(aP2); /*0x588754*/
   result = aP2[917]; /*0x588758*/
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/
@@ -659,9 +660,9 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   IDA_LOBYTE(result) = 0; /*0x58876b*/
   for ( i = 0; i < 8; i += 2 ) /*0x58876f*/
   {
-    v5 = v3[366] >> 8; /*0x58877d*/
+    v5 = (int)(v3[366] >> 8); /*0x58877d*/
     v6 = *aP0; /*0x588780*/
-    v19 = v5; /*0x588782*/
+    v19 = (int)(v5); /*0x588782*/
     v18 = *aP0; /*0x588788*/
     v16 = 0; /*0x58878c*/
     if ( v5 <= 0 ) /*0x588794*/
@@ -676,7 +677,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
       IDA_LOWORD(v6) = v17; /*0x5887d0*/
       if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5887e8*/
       {
-        dword_ABDC74 = v17; /*0x5887ea*/
+        dword_ABDC74 = (unsigned int *)(v17); /*0x5887ea*/
         v9 = unk_ABDC50; /*0x5887f0*/
       }
       v10 = v9[17]; /*0x5887f5*/
@@ -686,7 +687,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
       {
         if ( v8 >= 0x40000 || (v11 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x58881f*/
         {
-          dword_ABDC74 = v17; /*0x588821*/
+          dword_ABDC74 = (unsigned int *)(v17); /*0x588821*/
           v11 = unk_ABDC50; /*0x588827*/
         }
         if ( *(unsigned int *)(aP1 + 48) == v11[20] ) /*0x588836*/
@@ -696,7 +697,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   LABEL_15:
       if ( v8 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x588852*/
       {
-        dword_ABDC74 = v17; /*0x588854*/
+        dword_ABDC74 = (unsigned int *)(v17); /*0x588854*/
         v12 = unk_ABDC50; /*0x58885a*/
       }
       if ( ((CellClass *)((int)v12))->IsPassable(v3[415], (int)v3, aP1) ) /*0x58886e*/

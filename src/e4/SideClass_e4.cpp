@@ -15,6 +15,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Shroud_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x679A10
 namespace gamemd {

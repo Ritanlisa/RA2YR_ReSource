@@ -38,7 +38,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ((ComPtr *)(v8))->Constructor(); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -190,7 +190,7 @@ int WDTState_4::Constructor(void *a1_1, void *a2_1, void *a3_1)
 {
 
   ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76bc63*/
-  *(unsigned int *)this->__pad_0 = &vt_rc_ptr; /*0x76bc68*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

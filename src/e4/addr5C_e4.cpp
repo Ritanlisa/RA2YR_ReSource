@@ -522,7 +522,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
       result = 0; /*0x5c67b6*/
       if ( aP2 ) /*0x5c67bd*/
       {
-        v6 = aP2; /*0x5c67bf*/
+        v6 = (gamemd::Buffer *)(aP2); /*0x5c67bf*/
         do /*0x5c67cc*/
         {
           v7 = (gamemd::Buffer *)((int)((gamemd::Buffer *)((int)((gamemd::Buffer *)(*v5)))));
@@ -537,7 +537,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
     {
       result = (gamemd::Buffer *)((unsigned int)((gamemd::Buffer *)(a2 / 32)));
       v11 = a2 % 32; /*0x5c6842*/
-      v12 = aP2; /*0x5c6843*/
+      v12 = (gamemd::Buffer *)(aP2); /*0x5c6843*/
       v13 = &a0[aP2 - 1]; /*0x5c684a*/
       if ( result < (gamemd::Buffer *)((unsigned int))(aP2) - 1 ) /*0x5c6850*/
       {
@@ -551,7 +551,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
           --v21; /*0x5c688f*/
         }
         while ( !v16 ); /*0x5c6893*/
-        v12 = aP2; /*0x5c6895*/
+        v12 = (gamemd::Buffer *)(aP2); /*0x5c6895*/
       }
       if ( result < (gamemd::Buffer *)((unsigned int))(v12) ) /*0x5c689b*/
       {
@@ -579,7 +579,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
         v10 = (v8 >> v20) | (v9 << v4); /*0x5c6811*/
         v8 = ~(0xFFFFFFFF >> v4) & v9; /*0x5c6813*/
         *(v5 - 1) = v10; /*0x5c6815*/
-        result = aP2 - 1; /*0x5c681c*/
+        result = (gamemd::Buffer *)(aP2 - 1); /*0x5c681c*/
       }
     }
   }
@@ -1434,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)(v39) != 0 && !v36)));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)(v39) != 0 && !v36))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/

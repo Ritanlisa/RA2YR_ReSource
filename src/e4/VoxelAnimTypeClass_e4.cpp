@@ -31,6 +31,10 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {

@@ -17,6 +17,8 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Value_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/OverlayTypeClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6B4DD0
 namespace gamemd {

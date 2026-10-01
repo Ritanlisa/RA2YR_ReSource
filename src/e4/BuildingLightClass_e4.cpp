@@ -21,6 +21,7 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
 
 // 0x436BE0
 namespace gamemd {
@@ -69,7 +70,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
     FollowingObject = v4->FollowingObject; /*0x436c23*/
     v25 = v5; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
-    v22 = 0; /*0x436c3b*/
+    v22 = (gamemd::Object *)(0); /*0x436c3b*/
     nextArrayIndex = (gamemd::Object *)((Object *)FollowingObject[3]); /*0x436c3f*/
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/

@@ -7,6 +7,7 @@
 
 #include <cstring>
 #include "core/reverse_marker.hpp"
+#include "e4/classes/File_e4.hpp"
 
 namespace gamemd
 {

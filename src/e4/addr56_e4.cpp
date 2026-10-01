@@ -528,7 +528,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
           }
         }
       }
-      v2 = this; /*0x56b076*/
+      v2 = (gamemd::ObjectClass *)(this); /*0x56b076*/
       v4 = v18 + 1; /*0x56b07e*/
       v18 = v4; /*0x56b085*/
     }

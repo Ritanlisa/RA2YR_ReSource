@@ -40,6 +40,9 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x730A90
 namespace gamemd {
@@ -75,7 +78,7 @@ AbstractClass * * ProcessSelectionExperience()
   char v14; // [esp+13h] [ebp-5h]
   unsigned int v15;
 
-  IDA_LOBYTE(v1) = (unsigned char)dword_A8ECC8; /*0x730af3*/
+  IDA_LOBYTE(v1) = (gamemd::AbstractClass **)((unsigned char)dword_A8ECC8); /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)dword_A8ECC8 <= 0 ) /*0x730b03*/
     return v1; /*0x730b03*/

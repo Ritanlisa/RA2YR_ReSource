@@ -22,6 +22,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/SyncDelay_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
+#include "e4/classes/FileSystem_e4.hpp"
 
 // 0x411580
 namespace gamemd {
@@ -85,7 +86,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1, void *a2)
   int *v49; // [esp+40h] [ebp+4h]
   unsigned int v50; // [esp+40h] [ebp+4h]
 
-  result = this->__pad_0; /*0x5d1fdc*/
+  result = (int)(this->__pad_0); /*0x5d1fdc*/
   v4 = (int)(aP1[2]); /*0x5d1fde*/
   v37 = v4; /*0x5d1fe8*/
   if ( v4 <= 0 ) /*0x5d1fec*/
@@ -112,7 +113,7 @@ LABEL_18:
       {
         v23 = (int)(*aP1); /*0x5d218b*/
         v42 = (int)(*aP1); /*0x5d2191*/
-        v43 = *aP1 + v37; /*0x5d219b*/
+        v43 = (int)(*aP1 + v37); /*0x5d219b*/
         v38 = (int)(aP1[1]); /*0x5d21a3*/
         v40 = v39 + v38; /*0x5d21a9*/
         LockCount = (int *)this->LockCount; /*0x5d21b1*/
@@ -159,7 +160,7 @@ LABEL_18:
     }
     else
     {
-      v11 = (int *)(result[3] + 16 * Width); /*0x5d208a*/
+      v11 = (int)((int *)(result[3] + 16 * Width)); /*0x5d208a*/
       *v11 = (int)(*aP1); /*0x5d208d*/
       v11[1] = (int)(aP1[1]); /*0x5d2093*/
       v11[2] = (int)(aP1[2]); /*0x5d2099*/
@@ -1048,7 +1049,7 @@ LABEL_21:
       }
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
-        v62 = v29; /*0x6ba9b4*/
+        v62 = (int16_t *)(v29); /*0x6ba9b4*/
         v52 = v30; /*0x6ba9b8*/
         v32 = (unsigned short *)(v70 + 2 * v31); /*0x6ba9bc*/
         v60 = v74 - v55 - v10; /*0x6ba9bf*/

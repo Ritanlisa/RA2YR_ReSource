@@ -104,7 +104,7 @@ int AbstractClass::ProcessPower() {
   Power *v4; // [esp+Ch] [ebp+4h]
 
   Power::TimerProcess(this->uniqueId); /*0x41041e*/
-  IDA_LOBYTE(v2) = this->NeedsSaveOrLink; /*0x410423*/
+  IDA_LOBYTE(v2) = (unsigned char)(this->NeedsSaveOrLink); /*0x410423*/
 // 0x4a1ca0
   return Power::FlagProcess(v4, v2); /*0x41042e*/
 }
@@ -201,7 +201,7 @@ int TechnoClass::SmokeUpdate() {
       *(&this->lastTarget6) = 0; /*0x414bd4*/
       break; /*0x414bd4*/
   }
-  v2 = this->temporalTargetingMe; /*0x414bdb*/
+  v2 = (int)(this->temporalTargetingMe); /*0x414bdb*/
   if ( v2 ) /*0x414be3*/
     (*(void (**)(int))(v2->q05C)(v2); /*0x414be7*/
   if ( ((*(uint8_t (**)(char *))(*(unsigned int *)&this->missionQueued8))(this) /*0x414c11*/
@@ -213,7 +213,7 @@ int TechnoClass::SmokeUpdate() {
       v3 = (void **)RA2_OPNEW(0x1C8u); /*0x414c2c*/
       if ( v3 ) /*0x414c36*/
       {
-        v29 = this->location; /*0x414c4b*/
+        v29 = (int)(this->location); /*0x414c4b*/
         v30 = this->locationY; /*0x414c54*/
         v31 = this->locationZ; /*0x414c60*/
         AnimClass::ctor(v3, *((void **)g_RulesClass_Instance + 209), (int)&v29, 0, 1, (void *)0x600, 0, 0); /*0x414c73*/
@@ -243,7 +243,7 @@ int TechnoClass::SmokeUpdate() {
     }
     else
     {
-      v5 = this->target; /*0x414d2c*/
+      v5 = (int)(this->target); /*0x414d2c*/
       if ( v5 ) /*0x414d34*/
       {
         if ( (*(uint8_t (**)(int))(*(unsigned int *)v5 + 84))(v5) /*0x414d8b*/
@@ -262,7 +262,7 @@ int TechnoClass::SmokeUpdate() {
       {
         if ( *(&this->q1843) ) /*0x414db6*/
         {
-          v29 = this->location; /*0x414dce*/
+          v29 = (int)(this->location); /*0x414dce*/
           v32 = v29; /*0x414dd2*/
           v8 = *(unsigned int *)this; /*0x414dd9*/
           v30 = this->locationY; /*0x414ddb*/

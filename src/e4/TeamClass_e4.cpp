@@ -34,6 +34,12 @@
 #include "e4/classes/E4Recv_634B20_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4D9E70
 namespace gamemd {
@@ -522,7 +528,7 @@ int TeamClass::GetMember(void *a1, void *a2)
     {
       do /*0x635c56*/
       {
-        v6 = *((unsigned int *)((unsigned int *)this)[0] + v5); /*0x635c36*/
+        v6 = (gamemd::HouseClass *)(*((unsigned int *)((unsigned int *)this)[0] + v5)); /*0x635c36*/
         if ( *(unsigned char *)(v6 + 12) ) /*0x635c39*/
         {
           v4 = *(BuildingClass **)v6; /*0x635c40*/

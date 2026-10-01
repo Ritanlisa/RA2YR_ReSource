@@ -35,6 +35,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
 #include "e4/classes/INISectionList_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x49B660
 namespace gamemd {
@@ -65,7 +67,7 @@ int MPCooperative::processTurn(char * a2, char * a3)
   *((unsigned int *)this + 22) = 0; /*0x49b6fd*/
   *((unsigned int *)this + 23) = 0; /*0x49b700*/
   *((unsigned int *)this + 26) = 0; /*0x49b703*/
-  *((unsigned int *)this + 24) = 0; /*0x49b706*/
+  *((unsigned int *)this + 24) = (int)(0); /*0x49b706*/
   *((unsigned int *)this + 25) = 0; /*0x49b709*/
   return this; /*0x49b6d2*/
 
@@ -483,7 +485,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   p_MPCooperative_field_0x324 = &this->MPCooperative_field_0x324; /*0x5c1521*/
   CoopCampaignVector::Construct((CoopCampaignVector *)&this->MPCooperative_field_0x324, 0, 0); /*0x5c152b*/
   this->MPCooperative_field_0x324 = (int)&vt_DynamicVectorClass; /*0x5c1530*/
-  *(unsigned int *)&this->__pad_328[16] = 10; /*0x5c1536*/
+  *(unsigned int *)&this->__pad_328[16] = (unsigned int)(10); /*0x5c1536*/
   *(unsigned int *)&this->__pad_328[12] = 0; /*0x5c153d*/
   this->MPCooperative_field_0x0 = &vt_MPCooperative; /*0x5c1540*/
   this->MPCooperative_field_0x40 = 0; /*0x5c1546*/
@@ -514,7 +516,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&aP4); /*0x5c15b3*/
   for ( aP6 = 0; aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
-    v19 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c15c6*/
+    v19 = (gamemd::Init)((MissionClass *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
     if ( v19 ) /*0x5c15d0*/
       v20 = MissionClass::Init(v19); /*0x5c15d9*/
     else
@@ -536,7 +538,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
       }
     }
     v23 = *(unsigned int *)&this->__pad_328[12]; /*0x5c1616*/
-    v24 = *(unsigned int *)this->__pad_328; /*0x5c1619*/
+    v24 = (unsigned int)(*(unsigned int *)this->__pad_328); /*0x5c1619*/
     *(unsigned int *)&this->__pad_328[12] = v23 + 1; /*0x5c161f*/
     *(unsigned int *)(v24 + 4 * v23) = v20; /*0x5c1622*/
   }

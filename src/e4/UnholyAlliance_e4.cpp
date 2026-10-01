@@ -17,6 +17,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
 
 // 0x5CB440
 namespace gamemd {

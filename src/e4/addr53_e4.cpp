@@ -52,6 +52,8 @@
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/FileSystem_e4.hpp"
 
 // 0x530000
 namespace gamemd {
@@ -363,12 +365,12 @@ char BulkData_Initialize()
     goto LABEL_12; /*0x53183e*/
   }
   *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x531852*/
-  v12 = 0; /*0x53185a*/
+  v12 = (unsigned int)(0); /*0x53185a*/
   ((Vector *)((int)v11))->Clear(); /*0x531861*/
-  *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x53186a*/
+  *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x53186a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
   *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x53187b*/
-  v9 = 0; /*0x531883*/
+  v9 = (unsigned int)(0); /*0x531883*/
   ((Vector *)((int)v8))->Clear(); /*0x531887*/
   *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x531890*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/

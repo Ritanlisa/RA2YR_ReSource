@@ -11,6 +11,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x48E620
 namespace gamemd {

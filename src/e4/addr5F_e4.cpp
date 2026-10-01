@@ -42,6 +42,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -227,7 +228,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
         goto LABEL_36; /*0x5f310a*/
       goto LABEL_35; /*0x5f310a*/
     }
-    IDA_LOBYTE(v10) = 0; /*0x5f2db1*/
+    IDA_LOBYTE(v10) = (gamemd::Process)(0); /*0x5f2db1*/
     ScreenSaver::Process(v10, v18); /*0x5f2db3*/
     memset(Source, 0, 0xF0u); /*0x5f2dc3*/
     v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))(

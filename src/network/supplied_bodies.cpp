@@ -22,6 +22,7 @@
 #include "system/ini_class.hpp"
 #include "type/object_type.hpp"
 #include "ui/command_ext.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x48C650
 namespace gamemd {

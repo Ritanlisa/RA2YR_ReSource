@@ -147,7 +147,7 @@ void sub_647040()
     return 0; /*0x647056*/
   if ( dword_A83D4C->__pad_140[182] ) /*0x647060*/
     return 0; /*0x647060*/
-  v1 = EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0xCu); /*0x647074*/
+  v1 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0xCu)); /*0x647074*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x6470a1*/
@@ -170,7 +170,7 @@ void sub_6470F0()
     return 0; /*0x647106*/
   if ( dword_A83D4C->__pad_140[182] ) /*0x647110*/
     return 0; /*0x647110*/
-  v1 = EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x22u); /*0x647124*/
+  v1 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x22u)); /*0x647124*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x647151*/
@@ -285,7 +285,7 @@ void * sub_730F30()
     result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730f51*/
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x730f5a*/
     {
-      v2 = EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x2Du); /*0x730f6c*/
+      v2 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x2Du)); /*0x730f6c*/
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v2, 0x6Fu); /*0x730f99*/

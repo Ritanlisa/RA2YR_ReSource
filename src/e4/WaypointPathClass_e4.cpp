@@ -15,6 +15,7 @@
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x763730
 namespace gamemd {

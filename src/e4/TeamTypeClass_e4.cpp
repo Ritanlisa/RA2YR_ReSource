@@ -38,6 +38,9 @@
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/TagTypeClass_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
@@ -496,7 +499,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   else
   {
-    v27 = v26; /*0x6f1355*/
+    v27 = (unsigned int)(v26); /*0x6f1355*/
   }
   v28 = *((unsigned int *)this + 39); /*0x6f1357*/
   *((unsigned int *)this + 52) = v27; /*0x6f135d*/

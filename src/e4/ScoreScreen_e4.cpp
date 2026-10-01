@@ -24,6 +24,9 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x690A10
 namespace gamemd {

@@ -15,6 +15,7 @@
 #include "e4/classes/FoggedObject_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4CC9A0
 namespace gamemd {

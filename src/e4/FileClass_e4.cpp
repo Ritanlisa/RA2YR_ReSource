@@ -16,6 +16,7 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x473AE0
 namespace gamemd {

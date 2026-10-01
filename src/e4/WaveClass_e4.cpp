@@ -32,6 +32,7 @@
 #include "e4/classes/RadSiteClass_e4.hpp"
 #include "e4/classes/FrameSnapshot_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -58,7 +59,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
     {
       ObjectClass::Init((ObjectClass *)v4, (int)&a3); /*0x75f67b*/
       *(unsigned int *)(v4 + 332) = 0; /*0x75f680*/
-      *(unsigned int *)(v4 + 424) = 0; /*0x75f68c*/
+      *(unsigned int *)(v4 + 424) = (gamemd::Init)(0); /*0x75f68c*/
       FrameSnapshot::Init((FrameSnapshot *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((WaveClass *)(v4 + 496), 0, 0); /*0x75f69f*/
       *(unsigned int *)v4 = (unsigned int)(&vt_WaveClass); /*0x75f6a4*/

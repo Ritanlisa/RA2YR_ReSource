@@ -58,6 +58,8 @@
 #include "e4/classes/E4Recv_4965B0_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x4A0190
 namespace gamemd {
@@ -605,9 +607,9 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       {
   LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
         *(unsigned int *)v8.CDFileClass = (void*)&CCFileClass_vftable; /*0x4a3938*/
-        v9[3] = 0; /*0x4a3940*/
+        v9[3] = (unsigned int)(0); /*0x4a3940*/
         ((Vector *)((int)v9))->Clear(); /*0x4a3948*/
-        *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x4a3951*/
+        *(unsigned int *)v8.CDFileClass = (gamemd::AbstractClass **)(&off_7E1668); /*0x4a3951*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
       }
@@ -649,7 +651,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         v8[0] = (unsigned int)((gamemd::AbstractClass **)((void*)&CCFileClass_vftable));
         v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
         ((Vector *)((int)v9))->Clear(); /*0x4a39ef*/
-        v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
+        v8[0] = (gamemd::AbstractClass **)((unsigned int)&off_7E1668); /*0x4a39f8*/
         BufferIOFileClass::Dtor(v8); /*0x4a3a00*/
         return (int)v5; /*0x4a3a05*/
       }

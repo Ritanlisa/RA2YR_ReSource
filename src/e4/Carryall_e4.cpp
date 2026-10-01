@@ -22,6 +22,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
 
 // 0x416D50
 namespace gamemd {
@@ -127,7 +128,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
           *v12,
           v12[1],
           v12[2]);
-        *((unsigned int *)this + 47) = 2; /*0x416f8c*/
+        *((unsigned int *)this + 47) = (gamemd::FootClass **)(2); /*0x416f8c*/
         return 1; /*0x416f96*/
       }
       else
@@ -142,7 +143,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
         && ((Team *)((Team *)this))->GetMember(0) != *((unsigned int *)this + 361) )
       {
         this->Debug::Log(); /*0x416fce*/
-        *((unsigned int *)this + 47) = 0; /*0x416fd6*/
+        *((unsigned int *)this + 47) = (gamemd::FootClass **)(0); /*0x416fd6*/
         return 1; /*0x416fe8*/
       }
       v14 = *((unsigned int *)this + 361); /*0x416fe9*/
@@ -152,7 +153,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
               this,
               *((unsigned int *)this + 361)) )
       {
-        *((unsigned int *)this + 47) = 0; /*0x417012*/
+        *((unsigned int *)this + 47) = (gamemd::FootClass **)(0); /*0x417012*/
         return 1; /*0x417024*/
       }
       if ( !*((unsigned int *)this + 413) ) /*0x417025*/
@@ -220,7 +221,7 @@ LABEL_44:
         v28[1] = *((unsigned int *)this + 40); /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v27)->flags[0]) & 1; /*0x41722f*/
-        v23 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28)); /*0x417236*/
+        v23 = (unsigned char *)((gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28))); /*0x417236*/
         Building = ((CellClass *)(v23))->FindBuilding(v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)

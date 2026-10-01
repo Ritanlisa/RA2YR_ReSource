@@ -28,6 +28,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BulletClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -247,7 +249,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   *((unsigned int *)this + 1504) = 1; /*0x45e28a*/
   *((unsigned int *)this + 1506) = 0; /*0x45e292*/
   *((unsigned int *)this + 1507) = 1; /*0x45e298*/
-  *((unsigned char *)this + 6032) = 1; /*0x45e29e*/
+  *((unsigned char *)this + 6032) = (unsigned int)(1); /*0x45e29e*/
   *((unsigned char *)this + 6033) = 0; /*0x45e2a5*/
   *((unsigned int *)this + 1505) = &vt_VectorClassTPoint3D; /*0x45e2ab*/
   *((unsigned int *)this + 1506) = (unsigned int)(__2_YAPAXI_Z(0xCu)); /*0x45e2ba*/
@@ -388,7 +390,7 @@ LABEL_11:
   *((unsigned char *)this + 3387) = 0; /*0x45e4ea*/
   *((unsigned char *)this + 3384) = 0; /*0x45e4f0*/
   *((unsigned char *)this + 3479) = 0; /*0x45e4f6*/
-  *((unsigned char *)this + 3478) = 0; /*0x45e4fc*/
+  *((unsigned char *)this + 3478) = (int)(0); /*0x45e4fc*/
   *((unsigned char *)this + 3374) = 0; /*0x45e502*/
   return this; /*0x45e508*/
 
@@ -403,7 +405,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   this->Buildup[0] = 0; /*0x45e52f*/
   *(unsigned int *)&this->__pad_1714[116] = 0; /*0x45e535*/
   *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
-  this->__pad_1714[124] = 1; /*0x45e541*/
+  this->__pad_1714[124] = (unsigned int)(1); /*0x45e541*/
   this->__pad_1714[125] = 0; /*0x45e548*/
   *(unsigned int *)&this->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e54e*/
   this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
@@ -699,7 +701,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       {
         __3_YAXPAX_Z(*(void **)((char *)this + 5348)); /*0x45f3c7*/
         *((unsigned int *)this + 1337) = 0; /*0x45f3cf*/
-        *v7 = 0; /*0x45f3d5*/
+        *v7 = (unsigned int)(0); /*0x45f3d5*/
       }
       *((unsigned int *)this + 1337) = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5352)); /*0x45f3e2*/
     }
@@ -731,7 +733,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       {
         __3_YAXPAX_Z(*(void **)((char *)this + 5372)); /*0x45f49f*/
         *((unsigned int *)this + 1343) = 0; /*0x45f4a7*/
-        *v9 = 0; /*0x45f4ad*/
+        *v9 = (unsigned int)(0); /*0x45f4ad*/
       }
       *((unsigned int *)this + 1343) = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5352)); /*0x45f4be*/
     }
@@ -782,7 +784,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       {
         __3_YAXPAX_Z(*(void **)((char *)this + 5356)); /*0x45f5ff*/
         *((unsigned int *)this + 1339) = 0; /*0x45f607*/
-        *v12 = 0; /*0x45f60d*/
+        *v12 = (unsigned int)(0); /*0x45f60d*/
       }
       *((unsigned int *)this + 1339) = SearchMIXFile(Source, 0); /*0x45f61a*/
     }

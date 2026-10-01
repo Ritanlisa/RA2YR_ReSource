@@ -35,6 +35,9 @@
 #include "e4/classes/StructTable_e4.hpp"
 #include "e4/classes/AnimSystem_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {

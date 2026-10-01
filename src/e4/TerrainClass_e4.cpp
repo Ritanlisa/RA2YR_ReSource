@@ -46,6 +46,9 @@
 #include "e4/classes/CDTimerClass_e4.hpp"
 #include "e4/classes/Conditions_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
