@@ -858,6 +858,9 @@ class WCHAR;
 // G41.46: fwd for supply-proto types (in-place visibility)
 class FILE;
 
+
+// G41.48 class fwd supply (visibility-corrected rerun)
+class DSurface_ViewBounds;
 } // namespace gamemd
 
 // G41.47 flattened free-function protos
