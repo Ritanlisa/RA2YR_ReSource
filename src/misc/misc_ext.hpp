@@ -2603,7 +2603,7 @@ public:
 class LCWPipe
 {
 public:
-    virtual int ~LCWPipe() = default;
+    virtual ~LCWPipe() = default;  // 0x552060
 
     virtual int Constructor(); // 0x551FF0
     virtual void Destructor(); // 0x552060
@@ -5326,7 +5326,7 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     bool ReadSerial();  // 0x774980 -- WinModemClass::ReadSerial
     int ReadBytes(int a1, int a2);  // 0x774b30 -- WinModemClass::ReadBytes
-    int WriteSerial(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);
+    int WriteSerial(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x774c70 -- WinModemClass::WriteSerial
     int LoadTypeData(int a1, int a2, int a3, int a4);  // 0x774cd0 -- WinModemClass::LoadTypeData
     int SaveToINI();  // 0x774f50 -- WinModemClass::SaveToINI
     int Dial(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x775110 -- WinModemClass::Dial

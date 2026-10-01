@@ -153,7 +153,7 @@ class Color
 {
 public:
     // IDA 0x48B2A0 area
-    int ConvertToRGB(int a2);
+    int ConvertToRGB(int a2);  // 0x517440
     // IDA 0x48B2A0 area
     static uint32_t Lerp2(uint32_t a, uint32_t b, float t);  // 0x661020
     // IDA 0x48B2A0 area

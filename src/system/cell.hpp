@@ -468,7 +468,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int IsPassableOffset();  // 0x4870d0 -- Cell::IsPassableOffset
     int SearchEnemies(int a1);  // 0x487a10 -- Cell::SearchEnemies
     int GetTraversability();  // 0x487cb0 -- Cell::GetTraversability
-    int GetSlopeIndex(int this);
+    int GetSlopeIndex(int a2);
     bool IsBridge2();  // 0x487df0 -- Cell::IsBridge2
     bool IsValidDestination(int a1);  // 0x4dce80 -- Cell::IsValidDestination
     bool Exists(int a1);  // 0x5657e0 -- Cell::Exists

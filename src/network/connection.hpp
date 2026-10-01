@@ -22,7 +22,7 @@ public:
     virtual ULONG   __stdcall AddRef();
     virtual ULONG   __stdcall Release();
 
-    virtual void ~ConnectionClass();
+    virtual ~ConnectionClass();  // 0x48BEE0
 
     virtual bool  Open();
     virtual void  Close();

@@ -155,7 +155,7 @@ struct Cell {
     int HasOccupierBit(char a2);
     int SearchEnemies(IUnknown * aP1);  // 0x487A10
     long long GetTraversability();  // 0x487CB0
-    int GetSlopeIndex(int this);
+    int GetSlopeIndex(int a2);  // 0x487D50
     int IsBridge2();  // 0x487DF0
     Coord * * IsValidDestination(short * a2);  // 0x4DCE80
     int Exists(MouseClass * aP1);  // 0x5657E0

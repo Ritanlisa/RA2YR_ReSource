@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
-LN = re.compile(r'D:[^:]*RA2YR_ReSource[\\/](src[\\/][^(]+)[\\/]?[(](\d+),\d+[)]: error C2440')
+LN = re.compile(r'D:[^:]*RA2YR_ReSource[\\/](src[\\/][^(]+)[\\/]?[(](\d+)(?:,(\d+))?[)]: error C2440')
 PAIR = re.compile(r'无法从“([^”]*)”转换为“([^”]*)”')
 CASTABLE_SRC = re.compile(r'^(?:[a-z_ ][\w: ]*\*+|unsigned |signed |int|char|short|long|__int64|unsigned int|unsigned char|unsigned short|unsigned long|void \*.*|)$')
 BAD = re.compile(r'double|float|^void$|_T[=>]|模板')

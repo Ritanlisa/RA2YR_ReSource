@@ -256,7 +256,7 @@ public:
     // IDA 0x48B2A0 area
     static void SetupAllCountriesLobby();  // 0x46F6D0
     // IDA 0x48B2A0 area
-     int GetCountQueue();
+     int GetCountQueue();  // 0x5F1EA0
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void IncrementRefCount();
@@ -464,7 +464,7 @@ public:
     // IDA 0x48B2A0 area
      void BuildListString();  // 0x5E8DC0
     // IDA 0x48B2A0 area
-     int IsObserver();
+     int IsObserver();  // 0x5E9440
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static int32_t GetCount();
@@ -568,7 +568,7 @@ class Process
 {
 public:
     // IDA 0x54F000 area
-     bool WaitForExit(DWORD dwMilliseconds, char a3);
+     bool WaitForExit(DWORD dwMilliseconds, char a3);  // 0x664610
 
     int32_t     Process_field_00;       // 0x00
 };
