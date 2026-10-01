@@ -21,6 +21,6 @@ struct E4Recv_623730 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    unsigned int *  sub_623730(unsigned int * a2);  // 0x623730
+    unsigned int * sub_623730(unsigned int * a2);  // 0x623730
 };
 } // namespace gamemd

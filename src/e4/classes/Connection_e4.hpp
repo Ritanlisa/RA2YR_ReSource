@@ -21,6 +21,6 @@ struct Connection {
     unsigned int Initialized;
 // --- flat members (END) ---
     int GetSpeed();  // 0x5422F0
-    int Close(void *a1 = 0, void *a2 = 0);  // 0x543090
+    int Close(void *a1_1, void *a2_1);  // 0x543090
 };
 } // namespace gamemd

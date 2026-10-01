@@ -8,6 +8,8 @@
 namespace gamemd {
 struct Game {
 // --- flat members (BEGIN) ---
+struct ObjectClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
     ObjectClass* q000;  // 0x0
     AbstractClass * ptr_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
@@ -111,33 +113,33 @@ struct Game {
     unsigned int Settings;
     unsigned int Timer;
 // --- flat members (END) ---
-    void initScenario(void *a1 = 0);  // 0x430980
+    void initScenario(void *a1_1);  // 0x430980
     int SendCampaignOptions();  // 0x46D4A0
-    int DestroyAllObjects();  // 0x534450
-    int  MakeScreenshot(int a1);  // 0x537BC0
-    char  StartModemMultiplayer(char a2);  // 0x5B7090
-    int BuildGameSetupPacket();  // 0x5BA660
+    AbstractClass * * DestroyAllObjects();  // 0x534450
+    int MakeScreenshot(int a1);  // 0x537BC0
+    HashTable_flat * * StartModemMultiplayer(char a2);  // 0x5B7090
+    AbstractClass * * BuildGameSetupPacket();  // 0x5BA660
     int GetMultiplayerScoreScreenBar();  // 0x5CA110
-    void  BuildGameSettingsPacket(char * Buffer);  // 0x5DBB60
+    void BuildGameSettingsPacket(char * Buffer);  // 0x5DBB60
     unsigned char ManageGameSpeed();  // 0x6579E0
-    unsigned int *  LockMutex(void * aP1, void * aP2);  // 0x67C3A0
-    char LoadSaved(void *a1 = 0);  // 0x67E440
-    int SerializeGameSaveState();  // 0x67F9C0
-    int  validateScenario(unsigned int * a2, void *a1 = 0);  // 0x680F70
-    void  EncodeGameSetupState(char * Buffer);  // 0x77E430
-    char ProcessIdle(void *a1 = 0);  // 0x77F900
-    char SetupWOLTournament();  // 0x7A2330
+    unsigned int * LockMutex(IUnknown * aP1, IUnknown * aP2);  // 0x67C3A0
+    int LoadSaved(void *a1_1);  // 0x67E440
+    CellStruct * * SerializeGameSaveState();  // 0x67F9C0
+    int validateScenario(unsigned int * a2, void *a2_2);  // 0x680F70
+    void EncodeGameSetupState(char * Buffer);  // 0x77E430
+    Coord * * ProcessIdle(void *a1_1);  // 0x77F900
+    AbstractClass * * SetupWOLTournament();  // 0x7A2330
     char LoadMultiplayerScoreAssets();  // 0x72D730
     int CreateAIPlayer();  // 0x796DE0
     int CreateAIPlayer_Potato();  // 0x796ED0
     void * shutdownGame();  // 0x72D830
     int CheckForGameCD();  // 0x4790A0
-    int loadCampaignData(void *a1 = 0);  // 0x550000
-    void processStartup(void *a1 = 0);  // 0x5B56F0
+    int loadCampaignData(void *a1_1);  // 0x550000
+    void processStartup(void *a1_1);  // 0x5B56F0
     char ResetFlags();  // 0x5E8B40
     int ResetReadyStates();  // 0x5E9850
-    int readIniSettings(void *a1 = 0);  // 0x67FDE0
-    char InitializeToolTipColor(void *a1 = 0);  // 0x72F440
+    int readIniSettings(void *a1_1);  // 0x67FDE0
+    char InitializeToolTipColor(void *a1_1);  // 0x72F440
     char Stub3(IUnknown * aP0);  // 0x5865E0
 };
 } // namespace gamemd

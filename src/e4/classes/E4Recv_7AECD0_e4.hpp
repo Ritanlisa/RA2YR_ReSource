@@ -24,6 +24,6 @@ struct E4Recv_7AECD0 {
     unsigned int Items;
     unsigned int vtable0;
 // --- flat members (END) ---
-    unsigned int *  sub_7AECD0(int a2, int a3);  // 0x7AECD0
+    unsigned int * sub_7AECD0(int a2, int a3);  // 0x7AECD0
 };
 } // namespace gamemd

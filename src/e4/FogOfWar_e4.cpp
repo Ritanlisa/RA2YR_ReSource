@@ -417,7 +417,7 @@ int FogOfWar::Render()
            1);
     v5 = (*(int (**)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, *((unsigned int *)this + 1160), v4); /*0x657d21*/
     (*(void (**)(unsigned int, int))(v3 + 8))(*((unsigned int *)this + 1159), v5); /*0x657d2b*/
-    return FogOfWar::RenderCell(this); /*0x657d30*/
+    return FogOfWar::RenderCell(int a1) ; /*0x657d30*/
   }
   return result; /*0x657d35*/
 

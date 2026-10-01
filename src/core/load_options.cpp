@@ -51,18 +51,8 @@ static HWND CreateMessageBox(LPARAM text, int, int) {
 }
 
 // Global externs referenced in decompilations
-extern int g_FramePresent_State;
-extern int g_BounceClassInit;  // data: 0xa8ed5c
 extern int GameMode_Current[];
-extern int WWMouseClass_Instance;
-extern int g_CommandExecState;  // data: 0xa8b3ac
-extern const char g_GameSetupBuffer[];  // data: 0xa8b380
-extern int dword_83D560;
-extern int ScenarioClass_Instance;
-extern int HouseClass_Player;  // data: 0xa83d4c
 extern int MapClass_Instance;
-extern int g_UIManager;  // data: 0xac4f58
-extern int SwizzleManagerClass_Instance;  // data: 0xb0c110
 
 // ============================================================================
 // LoadOptions implementation
@@ -84,7 +74,7 @@ void LoadOptions::Construct() {
 }
 
 // 0x558740
-LoadOptions::LoadOptions() {
+const char * LoadOptions::GetExtension() {
   char *p_is_active; // ecx
   int v3; // eax
 
@@ -93,14 +83,14 @@ LoadOptions::LoadOptions() {
   *((unsigned int *)p_is_active + 2) = 0; /*0x55874b*/
   p_is_active[12] = 1; /*0x55874e*/
   p_is_active[13] = 0; /*0x558752*/
-  *(unsigned int *)p_is_active = (unsigned int)(&(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable); /*0x558755*/
+  *(unsigned int *)p_is_active = (unsigned int)((void *)&DynamicVectorClass_FileEntryClass___vftable); /*0x558755*/
   *((unsigned int *)p_is_active + 5) = 10; /*0x55875b*/
   *((unsigned int *)p_is_active + 4) = 0; /*0x558762*/
   *(unsigned int *)((unsigned char *)(this) + 0x4) = 0; /*0x558765*/
   this->field_0C = 0; /*0x558768*/
   this->field_14 = 0; /*0x55876b*/
   v3 = *(unsigned int *)p_is_active; /*0x55876e*/
-  this->extension = (const char *)(&(void*)(void*)&LoadOptionsClass_vftable); /*0x558770*/
+  this->extension = (const char *)((void *)&LoadOptionsClass_vftable); /*0x558770*/
   *(unsigned int *)&((unsigned char *)(this) + 0x4)[4] = (unsigned int)(&off_829EA0); /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
   (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x558784*/
@@ -119,13 +109,13 @@ void LoadOptions::Cleanup() {
   int result; // eax
 
   v2 = (unsigned int)(0);
-  for ( this->extension = &(void*)(void*)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
+  for ( this->extension = (void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
     RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
   p_is_active = (char *)(&this->is_active); /*0x5587c0*/
   (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
   result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
-  *(unsigned int *)p_is_active = (unsigned int)(&(void*)(void*)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
+  *(unsigned int *)p_is_active = (unsigned int)((void *)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
   {
     RA2_OPDEL((void *)result); /*0x5587db*/

@@ -13,6 +13,7 @@ struct Selection {
     bool m_Flag;  // 0x4
     unsigned char pad_05;  // 0x5
 // --- flat members (END) ---
+struct ObjectClass;  // fix_fwd_type_supply
     bool GetFlag(void *a1);
     int ClearGlobals();
     void SetCurrent();

@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Terrain {
 // --- flat members (BEGIN) ---
+struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
@@ -69,17 +70,17 @@ struct Terrain {
     unsigned int *__pad_44;
     unsigned int __pad_68;
 // --- flat members (END) ---
-    int  GetTileIndex(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x48B720
-    int  GetTileType(void * aP1, void *a1 = 0);  // 0x48B9E0
-    void  PlaceCliffs(int a2, int a3, void * aP3);  // 0x568E40
-    int ConnectivityGraph(void *a1 = 0);  // 0x56C510
-    int  FloodFillConnectivity(uint8_t * a1, void * aP2, void * aP3, void *a2 = 0);  // 0x56CB90
-    void  ProcessCellModification(void * aP1);  // 0x570050
-    void  RecursiveModify(void * aP1);  // 0x573540
-    char  CreateCrater(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x576770
-    VectorClass_flat * *  SelectTileType(void * aP0, void * aP1);  // 0x579620
-    void  PlaceTiberiumTrees(void * aP0, int a2, int a3, char a4);  // 0x5A28C0
-    unsigned int *  ClimbCheck(void * aP0, void * aP1);  // 0x6D6410
+    int GetTileIndex(int a2, void *a2_2, void *a3_1, void *a4_1);  // 0x48B720
+    int GetTileType(AnimClass * aP1, void *a2_1);  // 0x48B9E0
+    AbstractClass * * PlaceCliffs(int a2, int a3, IUnknown * aP3);  // 0x568E40
+    AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
+    int FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3, void *a4_1);  // 0x56CB90
+    AbstractClass * * ProcessCellModification(IUnknown * aP1);  // 0x570050
+    AbstractClass * * RecursiveModify(IUnknown * aP1);  // 0x573540
+    int CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x576770
+    VectorClass_flat * * SelectTileType(Random * aP0, IUnknown * aP1);  // 0x579620
+    void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
+    unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName();  // 0x71DD80
 };
 } // namespace gamemd

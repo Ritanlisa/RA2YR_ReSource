@@ -39,6 +39,6 @@ struct E4Recv_528220 {
     unsigned int fallRate;
     unsigned int owningHouseIndex;
 // --- flat members (END) ---
-    int  sub_528220(uint8_t * a2, uint8_t * a3, int a4);  // 0x528220
+    int sub_528220(unsigned char * a2, unsigned char * a3, int a4);  // 0x528220
 };
 } // namespace gamemd

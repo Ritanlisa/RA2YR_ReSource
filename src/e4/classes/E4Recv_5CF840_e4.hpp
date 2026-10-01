@@ -18,6 +18,6 @@ struct E4Recv_5CF840 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    const char **  sub_5CF840(void * aP1);  // 0x5CF840
+    const char ** sub_5CF840(MapSelect * aP1);  // 0x5CF840
 };
 } // namespace gamemd

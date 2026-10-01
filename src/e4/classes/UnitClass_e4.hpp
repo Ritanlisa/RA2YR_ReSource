@@ -9,6 +9,25 @@ namespace gamemd {
 
 struct UnitClass {
 // --- flat members (BEGIN) ---
+struct ObjectClass;  // fix_fwd_type_supply
+struct TagClass;  // fix_fwd_type_supply
+struct BombClass;  // fix_fwd_type_supply
+struct AnimClass;  // fix_fwd_type_supply
+struct LineTrail;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct HouseClass;  // fix_fwd_type_supply
+struct SpawnManagerClass;  // fix_fwd_type_supply
+struct SlaveManagerClass;  // fix_fwd_type_supply
+struct ParticleSystemClass;  // fix_fwd_type_supply
+struct TeamClass;  // fix_fwd_type_supply
+struct RadBeam;  // fix_fwd_type_supply
+struct ObjectTypeClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct ILocomotion;  // fix_fwd_type_supply
+struct LocomotionClass;  // fix_fwd_type_supply
+struct UnitTypeClass;  // fix_fwd_type_supply
+struct EBolt;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

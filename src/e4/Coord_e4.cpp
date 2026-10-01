@@ -122,7 +122,7 @@ unsigned int * Coord::ToCell(IUnknown * aP1)
 }
 // 0x41C230
 namespace gamemd {
-void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1)
 {
 
   *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
@@ -134,7 +134,7 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 }
 // 0x41C380
 namespace gamemd {
-int Coord::Length()
+int Coord::Length(void *a1_1)
 {
 
   double Coord_field_0x8; // st7
@@ -155,7 +155,7 @@ int Coord::Length()
 }
 // 0x4399A0
 namespace gamemd {
-unsigned int * Coord::GetCoords(int * outCoords)
+unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 {
 
   int v2; // ecx
@@ -181,7 +181,7 @@ unsigned int * Coord::GetCoords(int * outCoords)
 }
 // 0x43A0D0
 namespace gamemd {
-void * Coord::Scale(IUnknown * aP1)
+void * Coord::Scale(IUnknown * aP1, void *a2_1)
 {
 
   float *v2; // ecx
@@ -195,7 +195,7 @@ void * Coord::Scale(IUnknown * aP1)
 }
 // 0x565730
 namespace gamemd {
-void * Coord::To_Cell(IUnknown * aP1)
+void * Coord::To_Cell(IUnknown * aP1, void *a2_1)
 {
 
   int v2; // eax
@@ -220,7 +220,7 @@ void * Coord::To_Cell(IUnknown * aP1)
 }
 // 0x5AC370
 namespace gamemd {
-int Coord::Compare2D(unsigned short * a2)
+int Coord::Compare2D(unsigned short * a2, void *a2_2)
 {
 
   return *(unsigned short *)this->__pad_0 != *a2 || *(unsigned short *)this->Coord_field_0x2 != a2[1]; /*0x5ac388*/
@@ -266,7 +266,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 }
 // 0x6D2140
 namespace gamemd {
-AbstractClass * * Coord::To_Screen(unsigned int * a2, int * a3)
+AbstractClass * * Coord::To_Screen(unsigned int * a2, int * a3, void *a3_2)
 {
 
   int v4; // edi

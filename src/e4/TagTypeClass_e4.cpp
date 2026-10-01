@@ -158,7 +158,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return AbstractTypeClass::Dtor(this); /*0x6e5dc9*/
+  return AbstractTypeClass::Dtor(int a1) ; /*0x6e5dc9*/
 
 }
 }

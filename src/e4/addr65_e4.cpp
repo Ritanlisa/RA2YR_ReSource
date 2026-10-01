@@ -1029,7 +1029,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 }
 // 0x65C3A0
 namespace gamemd {
-AbstractClass * *  RAMFileClass::nullsub_0_3( void * a1, signed int Size)
+AbstractClass * *  RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 
   signed int v4; // edi

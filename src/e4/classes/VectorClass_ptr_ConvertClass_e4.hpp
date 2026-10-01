@@ -19,19 +19,22 @@ struct VectorClass_ptr_ConvertClass {
     unsigned char q018;  // 0x18
     void* q01C;  // 0x1C
 // --- flat members (END) ---
-    ConvertClass *  Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
-    void MarkDirty(void *a1 = 0);  // 0x4E1960
-    void Destroy(void *a1 = 0);  // 0x491390
-    unsigned int  GetItemIndex(int a2);  // 0x4913C0
-    int  Get(int a2, void *a1 = 0);  // 0x4913E0
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x49AE80
-    char  Release(int a2, unsigned int * a3);  // 0x49AEC0
-    void Remove(void *a1 = 0);  // 0x49AF70
-    int  GetSize(unsigned int * a2);  // 0x49AFA0
-    unsigned int  GetCapacity(int a2);  // 0x49AFE0
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x49B000
-    int  FindItemIndex(unsigned int * a2);  // 0x49B0B0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x49B0E0
-    DynamicVector *  Constructor_VectorClass_ConvertClass___(unsigned int * Block, char a2);  // 0x49B130
+struct ConvertClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    void * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
+    void MarkDirty(void *a1_1);  // 0x4E1960
+    void Destroy(void *a1_1);  // 0x491390
+    unsigned int GetItemIndex(int a2);  // 0x4913C0
+    int Get(int a2, void *a2_2);  // 0x4913E0
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x49AE80
+    char Release(int a2, unsigned int * a3);  // 0x49AEC0
+    void Remove(void *a1_1);  // 0x49AF70
+    int GetSize(unsigned int * a2);  // 0x49AFA0
+    unsigned int GetCapacity(int a2);  // 0x49AFE0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x49B000
+    int FindItemIndex(unsigned int * a2);  // 0x49B0B0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x49B0E0
+    DynamicVector * Constructor_VectorClass_ConvertClass___(unsigned int * Block, char a2);  // 0x49B130
 };
 } // namespace gamemd

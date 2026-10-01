@@ -4,6 +4,7 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+struct ObjectClass;  // fix_fwd_type_supply
 
 namespace gamemd {
 struct E4Recv_644850 {

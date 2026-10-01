@@ -10,6 +10,6 @@ struct E4Recv_4F2770 {
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
 // --- flat members (END) ---
-    int  sub_4F2770(int a2);  // 0x4F2770
+    int sub_4F2770(int a2);  // 0x4F2770
 };
 } // namespace gamemd

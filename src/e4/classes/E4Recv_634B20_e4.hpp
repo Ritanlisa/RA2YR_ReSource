@@ -39,6 +39,6 @@ struct E4Recv_634B20 {
     unsigned int occupant;
     unsigned int Debug;
 // --- flat members (END) ---
-    void sub_634B20();  // 0x634B20
+    Game * * sub_634B20();  // 0x634B20
 };
 } // namespace gamemd

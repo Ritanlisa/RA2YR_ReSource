@@ -22,6 +22,6 @@ struct E4Recv_431930 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_431930(int a2);  // 0x431930
+    int sub_431930(int a2);  // 0x431930
 };
 } // namespace gamemd

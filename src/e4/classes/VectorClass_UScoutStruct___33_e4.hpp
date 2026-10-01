@@ -20,9 +20,11 @@ struct VectorClass_UScoutStruct___33 {
     AbstractClass * q130;  // 0x130
     AbstractClass * q304;  // 0x304
 // --- flat members (END) ---
-    void ddtor(void *a1 = 0);  // 0x50E4A0
-    unsigned int  GetCapacity(int a2);  // 0x50E4D0
-    int  GetSize(unsigned int * a2);  // 0x50EB40
-    DynamicVector *  QueryInterface(unsigned int * Block, char a2);  // 0x510040
+struct AbstractClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    void ddtor(void *a1_1);  // 0x50E4A0
+    unsigned int GetCapacity(int a2);  // 0x50E4D0
+    int GetSize(unsigned int * a2);  // 0x50EB40
+    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x510040
 };
 } // namespace gamemd

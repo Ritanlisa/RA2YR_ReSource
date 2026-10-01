@@ -28,6 +28,7 @@ struct MechLocomotionClass {
     unsigned int q033;  // 0x33
     unsigned int LocomotionClass;
 // --- flat members (END) ---
+struct ILocomotion;  // fix_fwd_type_supply
     MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int * a1, int * a2);
     int StubReturn52();

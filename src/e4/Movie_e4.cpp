@@ -299,7 +299,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 }
 // 0x7209D0
 namespace gamemd {
-int Movie::Update()
+int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
 {
 
   void *IsSoundEnabled; // eax

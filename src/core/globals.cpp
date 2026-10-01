@@ -47,7 +47,6 @@ int  g_DDraw_Initialized   = 0;   // 0x89F978 (window mode flag)
 bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
 
 // 0xA8ED80 -- g_DDraw_Active (defined in ddraw_init.cpp, declared here for core access)
-extern bool g_DDraw_Active;  // data: 0xa8ed80
 
 // ============================================================
 // Stub functions (TODO: full IDA translation)

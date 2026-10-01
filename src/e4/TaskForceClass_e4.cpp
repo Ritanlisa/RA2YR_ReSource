@@ -28,7 +28,7 @@
 
 // 0x4C4EF0
 namespace gamemd {
-unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
+unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer, void *a2_1)
 {
 
   int ExitCellByName; // eax
@@ -73,7 +73,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 }
 // 0x6E7E80
 namespace gamemd {
-int TaskForceClass::Construct(ObjectClass * aP1)
+int TaskForceClass::Construct(ObjectClass * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
 
   int v3; // eax
@@ -209,7 +209,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 }
 // 0x4C4F90
 namespace gamemd {
-int TaskForceClass::Check()
+int TaskForceClass::Check(void *a1_1, void *a2_1, void *a3_1)
 {
 
   sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->__pad_0, (const char *)(this->TaskForceClass_field_0x4 + 36)); /*0x4c4fa4*/

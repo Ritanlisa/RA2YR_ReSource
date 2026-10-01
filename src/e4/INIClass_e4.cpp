@@ -468,7 +468,7 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 
   v7 = (uint8_t *)String::GetOrEmpty_Alt(aP2); /*0x527905*/
   v5 = (uint8_t *)String::GetOrEmpty_Alt(aP1); /*0x527906*/
-  return INIClass::ReadInt_Overwrite(this, v5, v7, aP3); /*0x527913*/
+  return INIClass::ReadInt_Overwrite(int a1,v5,v7,aP3) ; /*0x527913*/
 
 }
 } // namespace gamemd
@@ -485,7 +485,7 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
   v5 = String::GetOrEmpty_Alt(a3); /*0x529835*/
   v6 = (uint8_t *)String::GetOrEmpty_Alt(a2); /*0x52983c*/
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x529853*/
-  return INIClass::SetString(this, v6, v5, Buffer); /*0x529869*/
+  return INIClass::SetString(int a1,v6,v5,Buffer) ; /*0x529869*/
 
 }
 } // namespace gamemd

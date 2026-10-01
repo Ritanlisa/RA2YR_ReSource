@@ -31,6 +31,6 @@ struct E4Recv_6EF450 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char  sub_6EF450(int a2, int a3);  // 0x6EF450
+    char sub_6EF450(int a2, int a3);  // 0x6EF450
 };
 } // namespace gamemd

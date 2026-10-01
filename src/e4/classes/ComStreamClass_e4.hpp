@@ -33,6 +33,7 @@ struct ComStreamClass {
     unsigned int *__pad_0;
     unsigned int Debug;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * readData();
     LONG AddRef(void *a1);
     int QueryInterface();

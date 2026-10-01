@@ -23,6 +23,7 @@ struct BitTextClass {
     unsigned int u32_40;
     unsigned int u32_41;
 // --- flat members (END) ---
+struct CampaignClass;  // fix_fwd_type_supply
     int ParseFontData(char * Source, void *a2);
     void LoadFont();
 };

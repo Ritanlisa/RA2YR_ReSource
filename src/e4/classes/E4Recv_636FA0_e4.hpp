@@ -25,6 +25,6 @@ struct E4Recv_636FA0 {
     unsigned int q1910;  // 0x1910
     unsigned int q2084;  // 0x2084
 // --- flat members (END) ---
-    int  sub_636FA0(int a2, int a3);  // 0x636FA0
+    int sub_636FA0(int a2, int a3);  // 0x636FA0
 };
 } // namespace gamemd

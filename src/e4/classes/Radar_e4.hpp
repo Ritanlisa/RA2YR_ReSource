@@ -62,14 +62,14 @@ struct Radar {
     unsigned int __pad_64;
     unsigned int *__pad_34;
 // --- flat members (END) ---
-    int  FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
-    void  UpdateReveal(char a1, void * aP1);  // 0x4ADCD0
-    bool IsRadarTargetEligible();  // 0x5090F0
-    void*  ProcessSubzone(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5);  // 0x5824A0
-    void  Update(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x584550
-    int *  CopyDataArray(int * a2);  // 0x58ABD0
+    int FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
+    void UpdateReveal(char a1, IUnknown * aP1);  // 0x4ADCD0
+    int IsRadarTargetEligible();  // 0x5090F0
+    void* ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5);  // 0x5824A0
+    AbstractClass * * Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1);  // 0x584550
+    void * CopyDataArray(int * a2);  // 0x58ABD0
     int PixelIndex();  // 0x6558B0
-    char RenderMinimap();  // 0x656EC0
-    int  ScanWaypoints(void * aP0, void * aP1, int aP3_4);  // 0x692610
+    MapClass * * RenderMinimap();  // 0x656EC0
+    AbstractClass * * ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4);  // 0x692610
 };
 } // namespace gamemd

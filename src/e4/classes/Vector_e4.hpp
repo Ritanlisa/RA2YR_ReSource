@@ -28,15 +28,15 @@ struct Vector {
     // dup-member: unsigned int HasCapacity;
     unsigned int Math_Vector2D_Magnitude;
 // --- flat members (END) ---
-    void Cleanup(void *a1 = 0);  // 0x512D30
-    void Destructor(void *a1 = 0);  // 0x513100
-    void  MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
+    void Cleanup(void *a1_1);  // 0x512D30
+    void Destructor(void *a1_1);  // 0x513100
+    void MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
     void Cleanup2();  // 0x67ABE0
-    unsigned short *  ToFacingMath(unsigned short * a2);  // 0x41C2E0
-    void Clear(void *a1 = 0);  // 0x43AE50
-    int RemoveAt(AbstractClass * aP1, void *a1 = 0);  // 0x45AE10
-    char  ReallocDynamic(int a2, void *a1 = 0);  // 0x4D2E40
-    int  Find(unsigned int * a2);  // 0x4E0550
+    unsigned short * ToFacingMath(unsigned short * a2);  // 0x41C2E0
+    void Clear(void *a1_1);  // 0x43AE50
+    int RemoveAt(AbstractClass * aP1, void *a2_1);  // 0x45AE10
+    void ReallocDynamic(int a2, void *a2_2);  // 0x4D2E40
+    int Find(unsigned int * a2);  // 0x4E0550
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
     static double TwoDMagnitudeMath(...);  // C2597 interim stub

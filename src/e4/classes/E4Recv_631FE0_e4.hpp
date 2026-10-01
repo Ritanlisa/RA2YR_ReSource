@@ -9,6 +9,6 @@ struct E4Recv_631FE0 {
     unsigned int u32_400;  // 0x400
     unsigned int q1024;  // 0x1024
 // --- flat members (END) ---
-    int  sub_631FE0(unsigned char * a2);  // 0x631FE0
+    int sub_631FE0(unsigned char * a2);  // 0x631FE0
 };
 } // namespace gamemd

@@ -13,7 +13,7 @@
 
 // 0x47A9D0
 namespace gamemd {
-int BufferIOFile::Constructor( char * Source)
+int BufferIOFile::Constructor(char * Source, void *a2_1, void *a3_1)
 {
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47a9d3*/
@@ -26,7 +26,7 @@ int BufferIOFile::Constructor( char * Source)
 }
 // 0x47AA30
 namespace gamemd {
-int BufferIOFile::Init()
+int BufferIOFile::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa33*/

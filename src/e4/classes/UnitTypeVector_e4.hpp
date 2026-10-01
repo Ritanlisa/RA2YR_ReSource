@@ -21,6 +21,7 @@ struct UnitTypeVector {
     unsigned int UnitTypeVector_field_0x0C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned int * Construct2(int a2, int a3, void *a3);
     unsigned int * ConstructUnitTypeVectorClass(int a2, int a3, void *a3);
 };

@@ -9,6 +9,6 @@ struct E4Recv_5595F0 {
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    int  sub_5595F0(char * Buffer);  // 0x5595F0
+    int sub_5595F0(char * Buffer);  // 0x5595F0
 };
 } // namespace gamemd

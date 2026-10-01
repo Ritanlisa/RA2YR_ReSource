@@ -20,6 +20,7 @@ struct Turret {
     unsigned int u32_C84;
     unsigned char u8_CA1;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * LoadVoxelTurretAndBarrel();
     float * GetTransform(signed int a1, float * a2, unsigned int * a3);
 };

@@ -35,7 +35,7 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam( MSShapeAnim * aP1)
+int Session::RemoveTeam(MSShapeAnim * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -271,7 +271,7 @@ int Session::GetPlayerOption()
 }
 // 0x69B720
 namespace gamemd {
-int Session::GetPlayerColor()
+int Session::GetPlayerColor(void *a1_1)
 {
 
   int result; // eax

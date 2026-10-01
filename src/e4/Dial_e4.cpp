@@ -10,7 +10,7 @@
 
 // 0x4A7D20
 namespace gamemd {
-void Dial8Class_48::ClearBuffer()
+void Dial8Class_48::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -43,7 +43,7 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 
 // 0x4A7D70
 namespace gamemd {
-int Dial8Class_48::Seek( int a2)
+int Dial8Class_48::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a7d7a*/
@@ -151,7 +151,7 @@ void Dial8Class_48::ddtor()
 
 // 0x4A7EA0
 namespace gamemd {
-int Dial8Class_48::Read( unsigned int * a2)
+int Dial8Class_48::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

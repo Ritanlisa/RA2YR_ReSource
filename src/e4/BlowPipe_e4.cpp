@@ -46,7 +46,7 @@ unsigned int BlowPipe_31::Write(int a2)
 
 // 0x63DC70
 namespace gamemd {
-int BlowPipe_31::Seek( int a2)
+int BlowPipe_31::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x63dc7a*/
@@ -56,7 +56,7 @@ int BlowPipe_31::Seek( int a2)
 
 // 0x63DC80
 namespace gamemd {
-void BlowPipe_23::Clear()
+void BlowPipe_23::Clear(void *a1_1)
 {
 
   void *v2; // eax
@@ -89,7 +89,7 @@ unsigned int BlowPipe_23::GetCount(int a2)
 
 // 0x63DCD0
 namespace gamemd {
-int BlowPipe_23::Seek( int a2)
+int BlowPipe_23::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x63dcda*/
@@ -317,7 +317,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
 // 0x63E620
 namespace gamemd {
-int BlowPipe_31::Read( unsigned int * a2)
+int BlowPipe_31::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -437,7 +437,7 @@ void BlowPipe_23::ddtor()
 
 // 0x63E770
 namespace gamemd {
-int BlowPipe_23::Read( unsigned int * a2)
+int BlowPipe_23::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

@@ -18,8 +18,8 @@ struct VectorCursor_uint_DynamicVectorClass_uint____13 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     void Remove();  // 0x4F42D0
-    void  Count(int a2, int a3);  // 0x4F4BB0
-    void Add(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x4F42A0
-    void Get(void *a1 = 0, void *a2 = 0);  // 0x4F42E0
+    void Count(int a2, int a3);  // 0x4F4BB0
+    void Add(void *a1_1, void *a2_1, void *a3_1);  // 0x4F42A0
+    void Get(void *a1_1, void *a2_1);  // 0x4F42E0
 };
 } // namespace gamemd

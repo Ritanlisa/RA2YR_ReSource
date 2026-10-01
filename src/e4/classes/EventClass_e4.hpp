@@ -7,6 +7,10 @@
 namespace gamemd {
 struct EventClass {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass* q000;  // 0x0
     unsigned int u32_3;  // 0x3
     void* q004;  // 0x4
@@ -97,31 +101,31 @@ struct EventClass {
     unsigned char EventClass_field_0x38;  // 0x38
     unsigned char *__pad_58;  // 0x58
 // --- flat members (END) ---
-    int serializeEvent(void *a1 = 0);  // 0x48B390
-    int  SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
+    int serializeEvent(void *a1_1);  // 0x48B390
+    int SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
     void * Add(AbstractClass * aP1, unsigned char a3, int a4, char a5);  // 0x4C65E0
-    char *  AddEvent(int a2, uint8_t a3, void *a1 = 0);  // 0x4C66C0
-    int Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a1 = 0);  // 0x4C6720
+    int AddEvent(int a2, uint8_t a3, void *a3_2);  // 0x4C66C0
+    int Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1);  // 0x4C6720
     int AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5);  // 0x4C6970
-    int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a1 = 0, void *a2 = 0);  // 0x4C6AE0
-    void ProcessEvent();  // 0x4C6CB0
-    int  deserializeEvent(int a2, void * aP2);  // 0x542280
-    char  Enqueue(uint16_t a2, char a3);  // 0x54F200
+    int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1);  // 0x4C6AE0
+    AbstractClass * * ProcessEvent();  // 0x4C6CB0
+    int deserializeEvent(int a2, IUnknown * aP2);  // 0x542280
+    int Enqueue(unsigned short a2, char a3);  // 0x54F200
     int CheckFlag();  // 0x5F19C0
-    int validateEventType();  // 0x664440
-    SHORT  GetKeyStateSafe(uint8_t nVirtKey);  // 0x53EC70
+    AbstractClass * * validateEventType();  // 0x664440
+    SHORT GetKeyStateSafe(unsigned char nVirtKey);  // 0x53EC70
     void initEvent();  // 0x40B6A0
-    char  processEvent(int a2, unsigned int * a3);  // 0x40B740
-    char  validateEvent(int a2, unsigned int * a3);  // 0x40B880
-    char  dispatchEvent(int a2, unsigned int * a3);  // 0x40B9A0
-    char  checkCondition(int a2, unsigned int * a3, void *a1 = 0);  // 0x40BAE0
-    DynamicVector *  executeAction(unsigned int * Block, char a2);  // 0x40BC10
-    unsigned int *  resetEvent(void * aP1, void * aP2, void *a1 = 0);  // 0x40BD00
-    VectorClass_flat *  queueEvent(unsigned int * Block, char a2);  // 0x40C110
-    char  clearEvents(int a2, unsigned int * a3);  // 0x40C410
+    char processEvent(int a2, unsigned int * a3);  // 0x40B740
+    char validateEvent(int a2, unsigned int * a3);  // 0x40B880
+    char dispatchEvent(int a2, unsigned int * a3);  // 0x40B9A0
+    char checkCondition(int a2, unsigned int * a3, void *a3_2);  // 0x40BAE0
+    DynamicVector * executeAction(unsigned int * Block, char a2);  // 0x40BC10
+    unsigned int * resetEvent(BuildingClass * aP1, BuildingClass * aP2, void *a3_1);  // 0x40BD00
+    VectorClass_flat * queueEvent(unsigned int * Block, char a2);  // 0x40C110
+    char clearEvents(int a2, unsigned int * a3);  // 0x40C410
     void finalizeEvent();  // 0x40BE10
-    unsigned int  dequeueEvent(int a2);  // 0x40C260
+    unsigned int dequeueEvent(int a2);  // 0x40C260
     void getEventCount();  // 0x40C590
-    int  GetState(int a1);  // 0x5F3440
+    int GetState(int a1);  // 0x5F3440
 };
 } // namespace gamemd

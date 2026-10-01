@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_5EE200 {
     void* vfptr;  // minimal E2 declaration
-    void  UpdateObserveButtonWOL(HWND hDlg);  // 0x5EE200
+    void UpdateObserveButtonWOL(HWND hDlg);  // 0x5EE200
 };
 } // namespace gamemd

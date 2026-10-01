@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Coord {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -58,18 +59,18 @@ struct Coord {
     unsigned int u32_14A4;
     unsigned int u32_14A8;
 // --- flat members (END) ---
-    int  ToGridIndex(void * aP1, void * aP2, void * aP3);  // 0x4138C0
-    unsigned int *  ToCell(void * aP1);  // 0x413A30
-    void*  Subtract(void * aP1, void * aP2, void * aP3, void *a1 = 0);  // 0x41C230
-    double Length(void *a1 = 0);  // 0x41C380
-    unsigned int *  GetCoords(int * outCoords, void *a1 = 0);  // 0x4399A0
-    float *  Scale(void * aP1, void *a1 = 0);  // 0x43A0D0
-    void *  To_Cell(void * aP1, void *a1 = 0);  // 0x565730
-    int  Compare2D(unsigned short * a2, void *a1 = 0);  // 0x5AC370
-    int *  WorldToScreen(void * aP1, void * aP2, char a4);  // 0x6557F0
-    AbstractClass * *  To_Screen(unsigned int * a2, int * a3, void *a1 = 0);  // 0x6D2140
-    int *  Divide(int * a2, int a3);  // 0x710700
-    int *  To_ScreenRaw(void * aP0, void * aP1);  // 0x6D1F10
+    int ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorClass_flat * aP3);  // 0x4138C0
+    unsigned int * ToCell(IUnknown * aP1);  // 0x413A30
+    void * Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1);  // 0x41C230
+    int Length(void *a1_1);  // 0x41C380
+    unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0
+    void * Scale(IUnknown * aP1, void *a2_1);  // 0x43A0D0
+    void * To_Cell(IUnknown * aP1, void *a2_1);  // 0x565730
+    int Compare2D(unsigned short * a2, void *a2_2);  // 0x5AC370
+    void * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
+    AbstractClass * * To_Screen(unsigned int * a2, int * a3, void *a3_2);  // 0x6D2140
+    void * Divide(int * a2, int a3);  // 0x710700
+    int * To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1);  // 0x6D1F10
     long long ScaleToScreenY();  // 0x6D2120
 };
 } // namespace gamemd

@@ -17,12 +17,13 @@ struct CStreamClass_16 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x4A4B20
-    char  AddRef(int a2);  // 0x4A4B30
-    char  Release(int a2, unsigned int * a3);  // 0x4A4B70
-    void ddtor();  // 0x4A4C20
-    int  Read(unsigned int * a2, void *a1 = 0);  // 0x4A4C50
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4A4D90
-    unsigned int  Write(int a2);  // 0x4A4C90
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Seek(int a2, void *a2_2, void *a3_1);  // 0x4A4B20
+    char AddRef(int a2);  // 0x4A4B30
+    char Release(int a2, unsigned int * a3);  // 0x4A4B70
+    int ddtor();  // 0x4A4C20
+    int Read(unsigned int * a2, void *a2_2);  // 0x4A4C50
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4A4D90
+    unsigned int Write(int a2);  // 0x4A4C90
 };
 } // namespace gamemd

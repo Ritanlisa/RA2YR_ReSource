@@ -23,6 +23,6 @@ struct E4Recv_74BDC0 {
     unsigned int q6408;  // 0x6408
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    int  sub_74BDC0(unsigned int a2);  // 0x74BDC0
+    int sub_74BDC0(unsigned int a2);  // 0x74BDC0
 };
 } // namespace gamemd

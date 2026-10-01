@@ -8,6 +8,11 @@ namespace gamemd {
 
 struct HouseTypeClass {
 // --- flat members (BEGIN) ---
+struct InfantryTypeClass;  // fix_fwd_type_supply
+struct UnitTypeClass;  // fix_fwd_type_supply
+struct AircraftTypeClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct AbstractTypeClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

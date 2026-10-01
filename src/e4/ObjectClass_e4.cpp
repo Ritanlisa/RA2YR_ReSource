@@ -922,7 +922,7 @@ namespace gamemd {
 void ObjectClass::ObjectClass_GetTypeVt41_0()
 {
 
-  return ObjectClass::GetTypeVt41(this);
+  return ObjectClass::GetTypeVt41(int a1) ;
 
 }
 }
@@ -1058,7 +1058,7 @@ ObjectClass * * ObjectClass::Dtor()
   }
   if ( this->isInLogic[0] ) /*0x5f3d65*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x5f3d75*/
-  return AbstractClass::DTOR(this); /*0x5f3d81*/
+  return AbstractClass::DTOR(int a1) ; /*0x5f3d81*/
 
 }
 } // namespace ra2
@@ -2158,7 +2158,7 @@ namespace gamemd {
 void ObjectClass::ObjectClass_GetTypeVt41_2()
 {
 
-  return ObjectClass::GetTypeVt41(this);
+  return ObjectClass::GetTypeVt41(int a1) ;
 
 }
 }

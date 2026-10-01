@@ -115,7 +115,7 @@ LABEL_17:
 }
 // 0x754510
 namespace gamemd {
-AbstractClass * Voxel::RenderFrame()
+AbstractClass * Voxel::RenderFrame(void *a1_1)
 {
 
   int v1; // edi
@@ -576,7 +576,7 @@ int Voxel::Projection_Setup()
 }
 // 0x755DB0
 namespace gamemd {
-AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
+AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
 {
 
   unsigned int v4; // edi
@@ -1011,7 +1011,7 @@ LABEL_70:
 }
 // 0x756590
 namespace gamemd {
-int Voxel::ProcessColor(unsigned int * a2, float * a3)
+int Voxel::ProcessColor(unsigned int * a2, float * a3, void *a3_2)
 {
 
   int v4; // ebx

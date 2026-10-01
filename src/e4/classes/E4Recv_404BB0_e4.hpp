@@ -47,6 +47,6 @@ struct E4Recv_404BB0 {
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_404BB0();  // 0x404BB0
+    TechnoTypeClass * * sub_404BB0();  // 0x404BB0
 };
 } // namespace gamemd

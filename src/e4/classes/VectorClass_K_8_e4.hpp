@@ -46,11 +46,11 @@ struct VectorClass_K_8 {
     unsigned int *__pad_0;
     unsigned int CStreamClass_field_0x24;
 // --- flat members (END) ---
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x4A2820
-    int  QueryInterface(int a1, void * a2, unsigned int * a3);  // 0x6BEE50
-    LONG  AddRef(int a1);  // 0x6BEEC0
-    LONG  Release(void * Block);  // 0x6BEEE0
-    int  ddtor(int a1, int a2, int a3, unsigned int * a4);  // 0x6BEF10
-    int  GetSize(int a1, int a2);  // 0x6BEF90
+    unsigned int * Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x4A2820
+    int QueryInterface(int a1, const void * a2, unsigned int * a3);  // 0x6BEE50
+    LONG AddRef(int a1);  // 0x6BEEC0
+    LONG Release(volatile LONG * Block);  // 0x6BEEE0
+    int ddtor(int a1, int a2, int a3, unsigned int * a4);  // 0x6BEF10
+    int GetSize(int a1, int a2);  // 0x6BEF90
 };
 } // namespace gamemd

@@ -25,6 +25,7 @@ struct MapFile {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
+struct DynamicVector;  // fix_fwd_type_supply
     DynamicVector * QueryInterface(unsigned int * Block, char a2);
     void Constructor(int a2, int a3, void *a3);
 };

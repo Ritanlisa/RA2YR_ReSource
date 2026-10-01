@@ -284,7 +284,7 @@ LONG CStreamClass::IStreamRelease(int a1)
 }
 // 0x4A4B20
 namespace gamemd {
-int CStreamClass_16::Seek( int a2)
+int CStreamClass_16::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a4b2a*/
@@ -392,7 +392,7 @@ int CStreamClass_16::ddtor()
 
 // 0x4A4C50
 namespace gamemd {
-int CStreamClass_16::Read( unsigned int * a2)
+int CStreamClass_16::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

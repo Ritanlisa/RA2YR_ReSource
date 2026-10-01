@@ -730,7 +730,7 @@ LABEL_102:
 }
 // 0x584550
 namespace gamemd {
-AbstractClass * * Radar::Update(IUnknown * aP1)
+AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1)
 {
 
   Radar *v2; // ebx

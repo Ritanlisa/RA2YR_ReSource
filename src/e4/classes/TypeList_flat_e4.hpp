@@ -17,6 +17,8 @@ struct TypeList_flat {
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
 // --- flat members (END) ---
+struct CCINIClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();
 CCINIClass * VoxelAnimConstructor();

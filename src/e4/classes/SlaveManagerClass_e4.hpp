@@ -8,6 +8,7 @@ namespace gamemd {
 
 struct SlaveManagerClass {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

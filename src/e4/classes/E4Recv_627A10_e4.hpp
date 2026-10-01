@@ -16,6 +16,6 @@ struct E4Recv_627A10 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int *  sub_627A10(void * aP1);  // 0x627A10
+    unsigned int * sub_627A10(ObjectClass * aP1);  // 0x627A10
 };
 } // namespace gamemd

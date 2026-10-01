@@ -32,6 +32,6 @@ struct E4Recv_5AF120 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void  sub_5AF120(float a2, float a3);  // 0x5AF120
+    void sub_5AF120(float a2, float a3);  // 0x5AF120
 };
 } // namespace gamemd

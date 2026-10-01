@@ -9,6 +9,9 @@ namespace gamemd {
 
 struct LightConvertClass {
 // --- flat members (BEGIN) ---
+struct ConvertClass;  // fix_fwd_type_supply
+struct MapClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8

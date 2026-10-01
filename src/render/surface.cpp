@@ -10,7 +10,6 @@
 
 // g_ZBufferDescriptor (IDA: 0x887644) — Z-buffer descriptor pointer
 // Null in standalone build (no DDraw Z-buffer available)
-extern void* g_ZBufferDescriptor;  // data: 0x887644
 
 // StreamClass::ReadAndSeek (IDA: 0x4114B0)
 // Returns WORD* buffer into visible surface stipple/Z space at (x, y).
@@ -1346,10 +1345,10 @@ int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
   return result; /*0x4baefe*/
 }
 // 0x4baf20
-BOOL __thiscall DSurface::CheckBltStatus(unsigned int **this)
+BOOL __thiscall DSurface::CheckBltStatus(unsigned int **a1) 
 {
-  return (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))( /*0x4baf30*/
-           this->DSurface_field_0x1C[0],
+  return (*(int (**)(int, int))(*(unsigned int *)a1->DSurface_field_0x1C[0] + 52))( /*0x4baf30*/
+           a1->DSurface_field_0x1C[0],
            1) == 0;
 }
 /* ASM:

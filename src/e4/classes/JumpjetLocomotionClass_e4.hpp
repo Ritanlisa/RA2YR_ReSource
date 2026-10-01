@@ -8,6 +8,12 @@ namespace gamemd {
 
 struct JumpjetLocomotionClass {
 // --- flat members (BEGIN) ---
+struct ILocomotion;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct BuildingClass;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct TeleportLocomotionClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* Owner;  // 0x8

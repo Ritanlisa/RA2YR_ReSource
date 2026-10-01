@@ -33,7 +33,7 @@
 
 // 0x47D2B0
 namespace gamemd {
-int House::AnnounceUpgrade( IUnknown * aP1)
+int House::AnnounceUpgrade(IUnknown * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -869,7 +869,7 @@ void sub_501A20()
 }
 // 0x50B6F0
 namespace gamemd {
-int House::IsHumanPlayer()
+int House::IsHumanPlayer(void *a1_1)
 {
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x50b6f7*/
@@ -880,7 +880,7 @@ int House::IsHumanPlayer()
 }
 // 0x50B730
 namespace gamemd {
-int House::IsCurrentPlayer()
+int House::IsCurrentPlayer(void *a1_1)
 {
 
   int result; // eax
@@ -1137,7 +1137,7 @@ LABEL_24:
 }
 // 0x544BE0
 namespace gamemd {
-int House::LookupObject(int a2)
+int House::LookupObject(int a2, void *a2_2)
 {
 
   unsigned int *v2; // eax
@@ -1153,7 +1153,7 @@ int House::LookupObject(int a2)
 }
 // 0x544C20
 namespace gamemd {
-int House::LoadMapFileData(int a2, char a3)
+int House::LoadMapFileData(int a2, char a3, void *a3_2)
 {
 
   unsigned int *v4; // eax
@@ -1167,7 +1167,7 @@ int House::LoadMapFileData(int a2, char a3)
 }
 // 0x69E090
 namespace gamemd {
-void House::Constructor()
+void House::Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   void *v2; // eax

@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_4AF2A0 {
     void* vfptr;  // minimal E2 declaration
-    char BlitterDrawSHP();  // 0x4AF2A0
+    int BlitterDrawSHP();  // 0x4AF2A0
 };
 } // namespace gamemd

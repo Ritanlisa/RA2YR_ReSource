@@ -15,16 +15,18 @@ struct VectorClass_UtagCONNECTDATA {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     DynamicVector *  Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2);  // 0x4A0E10
-    void Destroy(void *a1 = 0);  // 0x4A0EB0
-    unsigned int  GetItemIndex(int a2);  // 0x4A0EE0
-    unsigned int *  Clear(unsigned int * a2, int a3);  // 0x4A0F00
-    char  AddRef(int a2);  // 0x4A0F80
-    char  Release(int a2, unsigned int * a3);  // 0x4A0FE0
+    void Destroy(void *a1_1);  // 0x4A0EB0
+    unsigned int GetItemIndex(int a2);  // 0x4A0EE0
+    unsigned int * Clear(unsigned int * a2, int a3);  // 0x4A0F00
+    char AddRef(int a2);  // 0x4A0F80
+    char Release(int a2, unsigned int * a3);  // 0x4A0FE0
     int  GetSize(unsigned int * a2);  // 0x4A10D0
-    unsigned int  GetCapacity(int a2);  // 0x4A1120
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x4A1140
-    int  FindItemIndex(unsigned int * a2);  // 0x4A1200
+    unsigned int GetCapacity(int a2);  // 0x4A1120
+    char SetCapacity(int a2, unsigned int * a3);  // 0x4A1140
+    int FindItemIndex(unsigned int * a2);  // 0x4A1200
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4A14A0
 };
 } // namespace gamemd

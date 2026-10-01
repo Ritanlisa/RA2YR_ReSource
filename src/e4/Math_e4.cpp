@@ -33,7 +33,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 }
 // 0x41C350
 namespace gamemd {
-void Math::Hypotenuse2D()
+void Math::Hypotenuse2D(void *a1_1)
 {
 
   return Math::Sqrt(*(double *)this * *(double *)this + *((double *)this + 1) * *((double *)this + 1)); /*0x41c36e*/
@@ -182,7 +182,7 @@ void Math_CalcAngle(void * a1, void * a2)
 }
 // 0x5AE750
 namespace gamemd {
-void Math::BuildRotationMatrix( float * a2, float a3)
+void Math::BuildRotationMatrix(float * a2, float a3, void *a3_2)
 {
 
   double v3; // kr00_8

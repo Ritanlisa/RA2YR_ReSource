@@ -46,7 +46,7 @@ int ParticleSystemClass_16::Write(int a2)
 }
 // 0x4E82F0
 namespace gamemd {
-void ParticleSystemClass_32::ClearBuffer()
+void ParticleSystemClass_32::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -142,7 +142,7 @@ void ParticleSystemClass::initParticleArray()
 
 // 0x4E87E0
 namespace gamemd {
-void ParticleSystemClass_32::Destroy()
+void ParticleSystemClass_32::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -185,7 +185,7 @@ int ParticleSystemClass_32::Write(int a2)
 
 // 0x4E8840
 namespace gamemd {
-void ParticleSystemClass_32::ReleaseBuffer()
+void ParticleSystemClass_32::ReleaseBuffer(void *a1_1, void *a2_1)
 {
 
   void *v2; // eax
@@ -371,7 +371,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4EB350
 namespace gamemd {
-void ParticleSystemClass_16::ddtor()
+void ParticleSystemClass_16::ddtor(void *a1_1, void *a2_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb35d*/
@@ -387,7 +387,7 @@ void ParticleSystemClass_16::ddtor()
 
 // 0x4EB380
 namespace gamemd {
-int ParticleSystemClass_16::Init(unsigned int * a2)
+int ParticleSystemClass_16::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax
@@ -412,7 +412,7 @@ int ParticleSystemClass_16::Init(unsigned int * a2)
 
 // 0x4EB3C0
 namespace gamemd {
-unsigned int ParticleSystemClass_16::Read(int a2)
+unsigned int ParticleSystemClass_16::Read(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4eb3c0*/
@@ -507,7 +507,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
 
 // 0x4EB5B0
 namespace gamemd {
-void ParticleSystemClass_32::ddtor()
+void ParticleSystemClass_32::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb5bd*/
@@ -523,7 +523,7 @@ void ParticleSystemClass_32::ddtor()
 
 // 0x4EB5E0
 namespace gamemd {
-int ParticleSystemClass_32::Init(unsigned int * a2)
+int ParticleSystemClass_32::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax
@@ -548,7 +548,7 @@ int ParticleSystemClass_32::Init(unsigned int * a2)
 
 // 0x4EB620
 namespace gamemd {
-unsigned int ParticleSystemClass_32::Read(int a2)
+unsigned int ParticleSystemClass_32::Read(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4eb620*/

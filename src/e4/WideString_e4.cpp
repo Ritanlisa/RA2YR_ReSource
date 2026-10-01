@@ -281,7 +281,7 @@ int WideString::Trim(wchar_t * Source)
 
 // 0x7B66D0
 namespace gamemd {
-int WideString::Assign( CampaignScore * aP1)
+int WideString::Assign(CampaignScore * aP1, void *a2_1)
 {
 
   int v3; // eax
@@ -304,7 +304,7 @@ int WideString::Assign( CampaignScore * aP1)
 
 // 0x7B6720
 namespace gamemd {
-int WideString::AssignFromPtr( const wchar_t ** a2)
+int WideString::AssignFromPtr(const wchar_t ** a2, void *a2_2)
 {
 
   int v3; // eax
@@ -325,7 +325,7 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
 
 // 0x7B6880
 namespace gamemd {
-void ** WideString::Assign_Alt(wchar_t * String)
+void ** WideString::Assign_Alt(wchar_t * String, void *a2_1)
 {
 
   int v3; // eax
@@ -350,7 +350,7 @@ void ** WideString::Assign_Alt(wchar_t * String)
 
 // 0x7B68E0
 namespace gamemd {
-int WideString::Reassign_Alt(const wchar_t ** a2)
+int WideString::Reassign_Alt(const wchar_t ** a2, void *a2_2)
 {
 
   const wchar_t *v3; // eax
@@ -384,7 +384,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
 
 // 0x7B6AE0
 namespace gamemd {
-wchar_t ** WideString::Append2(CampaignScore * aP1)
+wchar_t ** WideString::Append2(CampaignScore * aP1, void *a2_1)
 {
 
   wchar_t *v3; // esi
@@ -414,7 +414,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
 
 // 0x7B6B60
 namespace gamemd {
-wchar_t ** WideString::Append(CampaignScore * aP1)
+wchar_t ** WideString::Append(CampaignScore * aP1, void *a2_1)
 {
 
   wchar_t *v2; // ebp
@@ -548,7 +548,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
 
 // 0x7B6D90
 namespace gamemd {
-short WideString::Erase(int a2, int a3)
+short WideString::Erase(int a2, int a3, void *a3_2)
 {
 
   int v4; // eax
@@ -623,7 +623,7 @@ v3 = (char)((wchar_t *)(0));
 
 // 0x7B7100
 namespace gamemd {
-int WideString::GetOrEmpty()
+int WideString::GetOrEmpty(void *a1_1)
 {
 
   wchar_t *result; // eax
@@ -638,7 +638,7 @@ int WideString::GetOrEmpty()
 
 // 0x7B7140
 namespace gamemd {
-int WideString::GetOrEmpty_Alt()
+int WideString::GetOrEmpty_Alt(void *a1_1)
 {
 
   wchar_t *result; // eax
@@ -669,7 +669,7 @@ wchar_t WideString::GetChar(ObjectClass * aP1)
 
 // 0x7B71B0
 namespace gamemd {
-int WideString::Length()
+int WideString::Length(void *a1_1)
 {
 
   const wchar_t *result; // eax
@@ -684,7 +684,7 @@ int WideString::Length()
 
 // 0x7B7600
 namespace gamemd {
-short WideString::Reassign(wchar_t * String)
+short WideString::Reassign(wchar_t * String, void *a2_1)
 {
 
   int v3; // eax

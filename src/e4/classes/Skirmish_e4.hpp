@@ -9,6 +9,10 @@ namespace gamemd {
 
 struct Skirmish {
 // --- flat members (BEGIN) ---
+struct TechnoTypeClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct ReferenceCounted;  // fix_fwd_type_supply
     unsigned int u32_38;  // 0x38
     unsigned int q3C;  // 0x3C
     unsigned int u32_40;  // 0x40

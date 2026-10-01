@@ -318,7 +318,7 @@ LABEL_5:
 }
 // 0x48D1E0
 namespace gamemd {
-int Network::Dispatch()
+int Network::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int v1; // esi
@@ -777,7 +777,7 @@ int Network::SendOffer()
 }
 // 0x52F3F0
 namespace gamemd {
-AbstractClass * * Network::Init()
+AbstractClass * * Network::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int v0; // ecx
@@ -867,7 +867,7 @@ AbstractClass * * Network::Init()
 }
 // 0x53ED60
 namespace gamemd {
-int Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3)
+int Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3, void *a4_1)
 {
 
   int16_t result; // ax
@@ -890,7 +890,7 @@ int Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a
 }
 // 0x53EDA0
 namespace gamemd {
-void * Network::CopyAddress(unsigned int * a2, int a3)
+void * Network::CopyAddress(unsigned int * a2, int a3, void *a3_2)
 {
 
   char *result; // eax
@@ -906,7 +906,7 @@ void * Network::CopyAddress(unsigned int * a2, int a3)
 }
 // 0x53EE00
 namespace gamemd {
-int Network::IsBroadcastAddr()
+int Network::IsBroadcastAddr(void *a1_1)
 {
 
   if ( dword_828140 == 1 ) /*0x53ee0a*/
@@ -1007,7 +1007,7 @@ int sub_53F830(int a1, int a2)
 }
 // 0x540C60
 namespace gamemd {
-AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
+AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4, void *a5_1)
 {
 
   int v6; // ecx
@@ -1106,7 +1106,7 @@ int Network::sendData(AnimClass * aP1)
 }
 // 0x540F90
 namespace gamemd {
-int Network::GetSendCount()
+int Network::GetSendCount(void *a1_1)
 {
 
   return *((unsigned int *)this + 17); /*0x540f93*/
@@ -1201,7 +1201,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 }
 // 0x541260
 namespace gamemd {
-AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
+AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2, void *a5_1)
 {
 
   int v6; // esi
@@ -1255,7 +1255,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
 }
 // 0x541370
 namespace gamemd {
-int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
+int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5, void *a5_2)
 {
 
   if ( LOBYTE(this->Network_field_0x4) && BYTE1(this->Network_field_0x4) ) /*0x541377*/
@@ -1351,7 +1351,7 @@ int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
 }
 // 0x541820
 namespace gamemd {
-void * Network::ReceiveLoop()
+void * Network::ReceiveLoop(void *a1_1)
 {
 
   void *Network_field_0xC; // ebx
@@ -1830,7 +1830,7 @@ LABEL_92:
 }
 // 0x5422D0
 namespace gamemd {
-int Network::GetQueueCount()
+int Network::GetQueueCount(void *a1_1)
 {
 
   if ( this->Initialized && this->Active ) /*0x5422d7*/
@@ -2728,7 +2728,7 @@ LABEL_152:
 }
 // 0x5DA0B0
 namespace gamemd {
-unsigned short Network::ResolveNetworkAddress(unsigned short a2)
+unsigned short Network::ResolveNetworkAddress(unsigned short a2, void *a2_2)
 {
 
   unsigned int result; // eax
@@ -3564,7 +3564,7 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     if ( v22 ) /*0x643d2b*/
       return SendMessageA(v22, 0xFu, 0, 0); /*0x643d34*/
     else
-      return LoadScreen::Render(this, v4, (int)&savedregs, aP3); /*0x643d4b*/
+      return LoadScreen::Render(int a1,v4,(int) &savedregs, aP3); /*0x643d4b*/
   }
   return result; /*0x643d3a*/
 
@@ -3612,7 +3612,7 @@ int Network::AddFrameEvent()
 }
 // 0x6475F0
 namespace gamemd {
-AbstractClass * * Network::QueueProcessingLoop()
+AbstractClass * * Network::QueueProcessingLoop(void *a1_1)
 {
 
   int v1; // eax
@@ -3667,7 +3667,7 @@ AbstractClass * * Network::QueueProcessingLoop()
 
 // 0x64AC90
 namespace gamemd {
-int Network::syncGameState()
+int Network::syncGameState(void *a1_1)
 {
 
   int v2; // ebx
@@ -4145,7 +4145,7 @@ AbstractClass * * Network::RecordEvent(long long a1, int a2, int a3, int a4, int
 }
 // 0x6523A0
 namespace gamemd {
-int Network::SendUnreachable()
+int Network::SendUnreachable(void *a1_1)
 {
 
   int result; // eax
@@ -4434,7 +4434,7 @@ void * Network::reconnect(DynamicVector * aP1, short a3)
 }
 // 0x69B540
 namespace gamemd {
-unsigned int * Network::processGameEvent()
+unsigned int * Network::processGameEvent(void *a1_1)
 {
 
   unsigned int *result; // eax
@@ -4456,7 +4456,7 @@ unsigned int * Network::processGameEvent()
 }
 // 0x792F10
 namespace gamemd {
-AbstractClass * * Network::SyncPlayerList()
+AbstractClass * * Network::SyncPlayerList(void *a1_1)
 {
 
   int owningHouseIndex; // eax
@@ -4899,7 +4899,7 @@ int Network::CopyAddress_Small(IPXManagerClass * aP1)
 
 // 0x53F0E0
 namespace gamemd {
-char * Network::FormatAddress(IUnknown * aP1)
+char * Network::FormatAddress(IUnknown * aP1, void *a2_1)
 {
 
   unsigned int *p_Network_field_0x0; // edx
@@ -4939,7 +4939,7 @@ char * Network::FormatAddress(IUnknown * aP1)
 
 // 0x53F200
 namespace gamemd {
-short Network::SetPort(IPXManagerClass * aP1)
+short Network::SetPort(IPXManagerClass * aP1, void *a2_1)
 {
 
   int16_t result; // ax

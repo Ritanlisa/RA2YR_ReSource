@@ -10,6 +10,6 @@ struct E4Recv_4202F0 {
     unsigned int u32_2000;  // 0x2000
     unsigned int u32_3330;  // 0x3330
 // --- flat members (END) ---
-    unsigned int *  sub_4202F0(int a2);  // 0x4202F0
+    unsigned int * sub_4202F0(int a2);  // 0x4202F0
 };
 } // namespace gamemd

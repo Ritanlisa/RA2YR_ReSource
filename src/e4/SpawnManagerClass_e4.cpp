@@ -552,7 +552,7 @@ SpawnManagerClass * SpawnManagerClass::ProcessEvent(void * Block, char a2)
 
 // 0x6B8160
 namespace gamemd {
-void SpawnManagerClass_25::ddtor()
+void SpawnManagerClass_25::ddtor(void *a1_1, void *a2_1)
 {
 
   void *v2; // eax

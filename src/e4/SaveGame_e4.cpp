@@ -146,7 +146,7 @@ int SaveGame::SaveTriggerEvents()
 }
 // 0x67D300
 namespace gamemd {
-void SaveGame::Start(LPSTREAM pStm)
+void SaveGame::Start(LPSTREAM pStm, void *a2_1)
 {
 
   int v2; // ecx
@@ -549,7 +549,7 @@ LABEL_11:
 }
 // 0x4073B0
 namespace gamemd {
-int SaveGame::CountLinkedList()
+int SaveGame::CountLinkedList(void *a1_1)
 {
 
   SaveGame *v1; // edx

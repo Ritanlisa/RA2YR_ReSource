@@ -20,17 +20,19 @@ struct Dial8Class_48 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    void ClearBuffer(void *a1 = 0);  // 0x4A7D20
-    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x4A7D70
-    char  AddRef(int a2);  // 0x4A7D80
-    char  Release(int a2, unsigned int * a3);  // 0x4A7DC0
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    void ClearBuffer(void *a1_1);  // 0x4A7D20
+    int Seek(int a2, void *a2_2, void *a3_1);  // 0x4A7D70
+    char AddRef(int a2);  // 0x4A7D80
+    char Release(int a2, unsigned int * a3);  // 0x4A7DC0
     void ddtor();  // 0x4A7E70
-    int  Read(unsigned int * a2, void *a1 = 0);  // 0x4A7EA0
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x4A7F00
-    int  FindItem(unsigned int * a2);  // 0x4A7FB0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4A8030
-    DynamicVector *  Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2);  // 0x4A8080
-    unsigned int  PointerToIndex(int a2);  // 0x4A7D50
-    unsigned int  Write(int a2);  // 0x4A7EE0
+    int Read(unsigned int * a2, void *a2_2);  // 0x4A7EA0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x4A7F00
+    int FindItem(unsigned int * a2);  // 0x4A7FB0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4A8030
+    DynamicVector * Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2);  // 0x4A8080
+    unsigned int PointerToIndex(int a2);  // 0x4A7D50
+    unsigned int Write(int a2);  // 0x4A7EE0
 };
 } // namespace gamemd

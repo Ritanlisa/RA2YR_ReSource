@@ -12,6 +12,6 @@ struct E4Recv_425670 {
     int Vf248(int,  ...);    // G6 vtable slot dispatch
     int Vf456(int,  ...);    // G6 vtable slot dispatch
     int Vf72(int,  ...);    // G6 vtable slot dispatch
-    bool ConstructionPositionTracker();  // 0x425670
+    int ConstructionPositionTracker();  // 0x425670
 };
 } // namespace gamemd

@@ -11,6 +11,6 @@ struct E4Recv_70F740 {
     unsigned int q900;  // 0x900
     unsigned int q2304;  // 0x2304
 // --- flat members (END) ---
-    int  sub_70F740(int a2);  // 0x70F740
+    int sub_70F740(int a2);  // 0x70F740
 };
 } // namespace gamemd

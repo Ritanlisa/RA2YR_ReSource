@@ -124,7 +124,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 }
 // 0x767ED0
 namespace gamemd {
-char MSFrameAnim::Load(int a1, int * a2)
+char MSFrameAnim::Load(int a1, int * a2, void *a3_1, void *a4_1)
 {
 
   if ( byte_8487BC ) /*0x767ed7*/
@@ -414,7 +414,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
 
 // 0x76A7C0
 namespace gamemd {
-unsigned int * MSFrameAnim::drawFrame()
+unsigned int * MSFrameAnim::drawFrame(void *a1_1)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76a7c3*/

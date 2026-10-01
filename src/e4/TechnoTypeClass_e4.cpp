@@ -1027,7 +1027,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 801) = 0; /*0x711e5f*/
   *((unsigned int *)this + 199) = 0; /*0x711e65*/
-  return ObjectTypeClass::Destruct(this); /*0x711e70*/
+  return ObjectTypeClass::Destruct(int a1) ; /*0x711e70*/
 
 }
 } // namespace gamemd
@@ -1524,7 +1524,7 @@ namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
 
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(int a1) ;
 
 }
 }
@@ -1638,7 +1638,7 @@ namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
 
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(int a1) ;
 
 }
 }

@@ -27,6 +27,6 @@ struct E4Recv_69F210 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_69F210(int a2);  // 0x69F210
+    int sub_69F210(int a2);  // 0x69F210
 };
 } // namespace gamemd

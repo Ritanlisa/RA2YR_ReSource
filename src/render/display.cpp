@@ -7,9 +7,6 @@
 namespace gamemd
 {
 
-extern HWND  g_hWnd;  // data: 0xb73550  // main window handle
-extern int   g_ScrollOffsetX;  // dword_87F7EC -- horizontal scroll
-extern int   g_ScrollOffsetY;  // dword_87F7F0 -- vertical scroll
 
 DisplayClass::DisplayClass() noexcept
     : CurrentFoundation_CenterCell{}

@@ -13,6 +13,7 @@ struct E4Recv_5A95B0 {
     unsigned int q060;  // 0x60
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
+struct CCINIClass;  // fix_fwd_type_supply
     CCINIClass * PlaceRandomAIBuildings();  // 0x5A95B0
 };
 } // namespace gamemd

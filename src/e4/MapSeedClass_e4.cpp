@@ -546,7 +546,7 @@ MapSeedClass * MapSeedClass::QueryInterface(unsigned int * Block, char a2)
 } // namespace gamemd
 // 0x5AC4C0
 namespace gamemd {
-void MapSeedClass_18::ClearBuffer()
+void MapSeedClass_18::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax

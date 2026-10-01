@@ -450,7 +450,7 @@ int BufferIOFileClass::Dtor() {
   HIBYTE(this->BufferOffset) = 0; /*0x431baf*/
   LOBYTE(this->BufferSize) = 0; /*0x431bb2*/
   BYTE1(this->BufferSize) = 0; /*0x431bb5*/
-  return RawFileClass::Dtor(this); /*0x431bbd*/
+  return RawFileClass::Dtor(int a1) ; /*0x431bbd*/
 
 }
 }
@@ -572,7 +572,7 @@ LABEL_19:
       this->TotalBytesWritten = 0; /*0x432020*/
     goto LABEL_19; /*0x432020*/
   }
-  return FileClass::Open2(this, aP1); /*0x432039*/
+  return FileClass::Open2(int a1,aP1) ; /*0x432039*/
 
 }
 }
@@ -894,12 +894,12 @@ int BufferIOFileClass::SeekInternal( LONG lDistanceToMove, DWORD dwMoveMethod) {
   char v15; // [esp+Bh] [ebp-1h]
 
   if ( !BYTE1(this->BufferSize) ) /*0x4324b7*/
-    return FileClass::Seek(this, lDistanceToMove, dwMoveMethod); /*0x43258f*/
+    return FileClass::Seek(int a1,lDistanceToMove,dwMoveMethod) ; /*0x43258f*/
   v15 = 0; /*0x4324c4*/
   if ( dwMoveMethod ) /*0x4324ca*/
   {
     if ( dwMoveMethod == 2 ) /*0x4324cf*/
-      this->FileID = this->TotalBytesWritten; /*0x4324d4*/
+      a1->FileID = a1->TotalBytesWritten; /*0x4324d4*/
   }
   else
   {
@@ -1295,20 +1295,20 @@ int FileClass::Load(CDFileClass * aP1) {
 
   (*(void (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 52))(this); /*0x473d1a*/
   if ( ((uint8_t)aP1 & 2) != 0 || (uint8_t)File::IsReady(this, 0) ) /*0x473d2d*/
-    return FileClass::OpenFileBufferIO(this, aP1); /*0x473e40*/
-  v3 = this->FileClass; /*0x473d44*/
+    return FileClass::OpenFileBufferIO(int a1,aP1) ; /*0x473e40*/
+  v3 = a1->FileClass; /*0x473d44*/
   v11 = 0; /*0x473d4d*/
   v10 = 0; /*0x473d51*/
   Size = 0; /*0x473d55*/
   v12 = 0; /*0x473d59*/
-  v4 = (const char *)(*(int (**)(CCFileClass *))(*(unsigned int *)&v3 + 4))(this); /*0x473d61*/
+  v4 = (const char *)(*(int (**)(CCFileClass *))(*(unsigned int *)&v3 + 4))(a1); /*0x473d61*/
   if ( !LookupFileInfoCache(v4, &v10, &v11, &v12, &Size) ) /*0x473d68*/
-    return FileClass::OpenFileBufferIO(this, aP1); /*0x473e2b*/
+    return FileClass::OpenFileBufferIO(a1, aP1); /*0x473e2b*/
   if ( v10 || !v11 ) /*0x473d87*/
   {
-    if ( this != (CCFileClass *)-88 ) /*0x473e06*/
-      Buffer::Init((Buffer *)((char *)this + 88), v10, Size); /*0x473e0e*/
-    *((unsigned int *)this + 25) = 0; /*0x473e13*/
+    if ( a1 != (CCFileClass *)-88 ) /*0x473e06*/
+      Buffer::Init((Buffer *)((char *)a1 + 88), v10, Size); /*0x473e0e*/
+    *((unsigned int *)a1 + 25) = 0; /*0x473e13*/
     return 1; /*0x473e18*/
   }
   else if ( (*(int (**)(CCFileClass *, unsigned int, int))(*(unsigned int *)&this->FileClass + 32))( /*0x473d93*/
@@ -1686,9 +1686,9 @@ namespace gamemd {
 int INIClass::SetStringByIndex(INIClass * aP1, char * a2, CCINIClass * aP3) {
 
   if ( aP3 < dword_ABF3A0 ) /*0x47582c*/
-    return INIClass::SetString(this, aP1, a2, *((char **)dword_ABF394 + aP3)); /*0x475859*/
+    return INIClass::SetString(int a1,aP1,a2,*((char **) dword_ABF394 + aP3)); /*0x475859*/
   else
-    return INIClass::SetString(this, aP1, a2, g_Str__none_); /*0x47583d*/
+    return INIClass::SetString(a1, aP1, a2, g_Str__none_); /*0x47583d*/
 
 }
 }
@@ -1712,7 +1712,7 @@ int ScenarioClass::loadMapData(CCINIClass * aP1, char * a2, int aP1a) {
   char *v5; // eax
 
   v5 = (char *)ScenarioClass::processEndgame(aP1a); /*0x47595d*/
-  return INIClass::SetString(this, aP1, a2, v5); /*0x475974*/
+  return INIClass::SetString(int a1,aP1,a2,v5) ; /*0x475974*/
 
 }
 }
@@ -1836,7 +1836,7 @@ int ScenarioClass::SaveIntListToINI(INIClass * aP1, char * a2, CCINIClass * aP3)
     sprintf(Buffer, "%d", *(unsigned int *)(*(unsigned int *)(aP3 + 4) + 4 * i)); /*0x475fb2*/
     strcat(Source, Buffer); /*0x475fde*/
   }
-  return INIClass::SetString(this, aP1, a2, Source); /*0x476012*/
+  return INIClass::SetString(int a1,aP1,a2,Source) ; /*0x476012*/
 
 }
 }
@@ -2120,7 +2120,7 @@ int ScenarioClass::SaveTypeNameListToINI(INIClass * aP1, char * a2, int a4) {
     }
     while ( v5 ); /*0x476792*/
   }
-  return INIClass::SetString(this, aP1, a2, Source); /*0x4767b5*/
+  return INIClass::SetString(int a1,aP1,a2,Source) ; /*0x4767b5*/
 
 }
 }
@@ -2501,7 +2501,7 @@ int CD::AlwaysAvailable(int a2) {
   if ( byte_89E3A0 == 1 ) /*0x4790f5*/
     return 1; /*0x4790f7*/
   *((unsigned int *)this + 1) = -1; /*0x4790fd*/
-  return CD::CheckDiscPresence(this, a2); /*0x4790eb*/
+  return CD::CheckDiscPresence(int a1,a2) ; /*0x4790eb*/
 
 }
 }
@@ -7044,7 +7044,7 @@ void* INIClass::ClearContents() {
     *((unsigned int *)this + 22) = 0; /*0x49e71c*/
     *((unsigned char *)this + 96) = 0; /*0x49e71f*/
   }
-  return HashTable::DestroyHashTableINIClass(this); /*0x49e72b*/
+  return HashTable::DestroyHashTableINIClass(int a1) ; /*0x49e72b*/
 
 }
 }
@@ -10512,7 +10512,7 @@ int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int aP4) {
       v9 = g_Str_Trace; /*0x527680*/
     sprintf(Buffer, v9, a4); /*0x527686*/
   }
-  return INIClass::SetString(this, v7, v6, Buffer); /*0x5276c4*/
+  return INIClass::SetString(int a1,v7,v6,Buffer) ; /*0x5276c4*/
 
 }
 }
@@ -10796,7 +10796,7 @@ int INIClass::SetRect(INIClass * aP1, char * a2, CCINIClass * aP3) {
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d,%d,%d", *aP3, aP3[1], aP3[2], aP3[3]); /*0x527c33*/
-  return INIClass::SetString(this, aP1, a2, Buffer); /*0x527c51*/
+  return INIClass::SetString(int a1,aP1,a2,Buffer) ; /*0x527c51*/
 
 }
 }
@@ -11456,7 +11456,7 @@ int INIClass::SetStringOrEmpty(char ** a1, char ** a2, ObjectClass * aP3) {
   v8 = String::GetOrEmpty_Alt(aP3); /*0x5289f0*/
   v7 = String::GetOrEmpty_Alt(a2); /*0x5289fa*/
   v5 = (uint8_t *)String::GetOrEmpty_Alt(a1); /*0x5289fb*/
-  return INIClass::SetString(this, v5, v7, v8); /*0x528a08*/
+  return INIClass::SetString(int a1,v5,v7,v8) ; /*0x528a08*/
 
 }
 }
@@ -11977,9 +11977,9 @@ namespace gamemd {
 int INIClass::SetBool(INIClass * aP1, char * a2, INIClass * aP3) {
 
   if ( aP3 ) /*0x529566*/
-    return INIClass::SetString(this, aP1, a2, off_825BF8); /*0x529577*/
+    return INIClass::SetString(int a1,aP1,a2,off_825BF8) ; /*0x529577*/
   else
-    return INIClass::SetString(this, aP1, a2, g_Str_no); /*0x52958e*/
+    return INIClass::SetString(a1, aP1, a2, g_Str_no); /*0x52958e*/
 
 }
 }
@@ -11993,9 +11993,9 @@ int INIClass::ReadBool3(char ** a1, char ** a2, ObjectClass * aP3) {
   v5 = String::GetOrEmpty_Alt(a2); /*0x5295b1*/
   v6 = (uint8_t *)String::GetOrEmpty_Alt(a1); /*0x5295b3*/
   if ( aP3 ) /*0x5295be*/
-    return INIClass::SetString(this, v6, v5, off_825BF8); /*0x5295c9*/
+    return INIClass::SetString(int a1,v6,v5,off_825BF8) ; /*0x5295c9*/
   else
-    return INIClass::SetString(this, v6, v5, g_Str_no); /*0x5295dc*/
+    return INIClass::SetString(a1, v6, v5, g_Str_no); /*0x5295dc*/
 
 }
 }
@@ -12142,7 +12142,7 @@ int INIEntry::Write2Integers(uint8_t * Block, char * a2, CCINIClass * aP3) {
   char Buffer[56]; // [esp+4h] [ebp-38h] BYREF
 
   sprintf(Buffer, "%d,%d", *aP3, aP3[1]); /*0x5297fb*/
-  return INIClass::SetString(this, Block, a2, Buffer); /*0x529819*/
+  return INIClass::SetString(int a1,Block,a2,Buffer) ; /*0x529819*/
 
 }
 }
@@ -12604,7 +12604,7 @@ int INIClass::SaveTimeField(uint8_t * Block, char * a2, CCINIClass * aP3) {
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
   sprintf(Buffer, "%02d:%02d:%02d", aP3 / 60 / 60 / 60, aP3 / 60 / 60 % 60, aP3 / 60 % 60); /*0x52a9ab*/
-  return INIClass::SetString(this, Block, a2, Buffer); /*0x52a9c9*/
+  return INIClass::SetString(int a1,Block,a2,Buffer) ; /*0x52a9c9*/
 
 }
 }
@@ -16099,11 +16099,11 @@ int CellClass::ApplyTerrainModTile(MouseClass * aP1) {
         v12 = *(unsigned short *)(v2 + 2); /*0x574add*/
         LOWORD(aP1) = *(unsigned short *)v2; /*0x574ae1*/
         HIWORD(aP1) = v12 - 1; /*0x574aec*/
-        return CellClass::ApplyTerrainMod2(this, &aP1); /*0x574afc*/
+        return CellClass::ApplyTerrainMod2(int a1,&aP1) ; /*0x574afc*/
       }
       else
       {
-        return CellClass::ApplyTerrainMod2(this, (unsigned int *)v2); /*0x574acd*/
+        return CellClass::ApplyTerrainMod2(int a1,(unsigned int *) v2); /*0x574acd*/
       }
     }
     else
@@ -16111,7 +16111,7 @@ int CellClass::ApplyTerrainModTile(MouseClass * aP1) {
       v9 = *(unsigned short *)(v2 + 2) + 1; /*0x574a65*/
       LOWORD(aP1) = *(unsigned short *)v2; /*0x574a67*/
       HIWORD(aP1) = v9; /*0x574a6c*/
-      return CellClass::ApplyTerrainMod2(this, &aP1); /*0x574a80*/
+      return CellClass::ApplyTerrainMod2(int a1,&aP1) ; /*0x574a80*/
     }
   }
   else if ( result >= 214 && result <= 222 || result >= 227 && result <= 230 || result == 232 ) /*0x574b2a*/
@@ -16130,11 +16130,11 @@ int CellClass::ApplyTerrainModTile(MouseClass * aP1) {
       {
         aP1 = 1; /*0x574bf3*/
         v18 = *CellStruct::Sub((CellStruct *)v2, &v19, &aP1); /*0x574c0c*/
-        return CellClass::ApplyTerrainMod(this, &v18); /*0x574c13*/
+        return CellClass::ApplyTerrainMod(int a1,&v18) ; /*0x574c13*/
       }
       else
       {
-        return CellClass::ApplyTerrainMod(this, (unsigned int *)v2); /*0x574bda*/
+        return CellClass::ApplyTerrainMod(int a1,(unsigned int *) v2); /*0x574bda*/
       }
     }
     else
@@ -16142,7 +16142,7 @@ int CellClass::ApplyTerrainModTile(MouseClass * aP1) {
       v15 = *(unsigned short *)v2 + 1; /*0x574b72*/
       HIWORD(aP1) = *(unsigned short *)(v2 + 2); /*0x574b74*/
       LOWORD(aP1) = v15; /*0x574b79*/
-      return CellClass::ApplyTerrainMod(this, &aP1); /*0x574b8d*/
+      return CellClass::ApplyTerrainMod(int a1,&aP1) ; /*0x574b8d*/
     }
   }
   return result; /*0x574a85*/
@@ -30490,7 +30490,7 @@ LABEL_63:
   }
   if ( *(unsigned char *)(*((unsigned int *)this + 433) + 1508) )
     TechnoClass::ExitedOpenTopped(v19);
-  if ( *(unsigned char *)(*((unsigned int *)this + 433) + 1508) && (void *)*((unsigned int *)this + 135) != v19->focus )
+  if ( *(unsigned char *)(*((unsigned int *)this + 433) + 1508) &(void *)&*((unsigned int *)this + 135) != v19->focus )
     (*(void (**)(TechnoClass *, unsigned int))(*(unsigned int *)v19->__pad_0 + 968))(v19, 0);
   v41 = *(unsigned int *)v19->__pad_0;
   *(unsigned int *)&v19->__pad_115[7] = 0;

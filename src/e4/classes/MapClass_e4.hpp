@@ -9,6 +9,21 @@ namespace gamemd {
 
 struct MapClass {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct HouseClass;  // fix_fwd_type_supply
+struct AbstractTypeClass;  // fix_fwd_type_supply
+struct ParticleSystemClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct AudioController;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct BombClass;  // fix_fwd_type_supply
+struct INIClass;  // fix_fwd_type_supply
+struct TechnoTypeClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

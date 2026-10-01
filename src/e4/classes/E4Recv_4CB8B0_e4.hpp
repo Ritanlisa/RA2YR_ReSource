@@ -12,6 +12,7 @@ struct E4Recv_4CB8B0 {
     unsigned int M6;  // 0x6
     AbstractClass * ptr_8;  // 0x8
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     u_short sub_4CB8B0();  // 0x4CB8B0
 };
 } // namespace gamemd

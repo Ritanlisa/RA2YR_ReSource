@@ -415,7 +415,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
 }
 // 0x42D540
 namespace gamemd {
-void DynamicVectorClass_uint::ddtor()
+void DynamicVectorClass_uint::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -675,7 +675,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
 
 // 0x42DB60
 namespace gamemd {
-DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, char a2)
+DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -776,7 +776,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3, void
 }
 // 0x49E950
 namespace gamemd {
-void DynamicVectorClass_PAD::ddtor()
+void DynamicVectorClass_PAD::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -796,7 +796,7 @@ void DynamicVectorClass_PAD::ddtor()
 
 // 0x49E980
 namespace gamemd {
-unsigned int DynamicVectorClass_PAD::Get(int a2)
+unsigned int DynamicVectorClass_PAD::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x49e980*/
@@ -852,7 +852,7 @@ unsigned int DynamicVectorClass_PAD::GetCount(int a2)
 
 // 0x49EA00
 namespace gamemd {
-int DynamicVectorClass_PAD_16::Get(int a2)
+int DynamicVectorClass_PAD_16::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x49ea0a*/
@@ -964,7 +964,7 @@ int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
 }
 // 0x49EB50
 namespace gamemd {
-char DynamicVectorClass_PAD_16::Add(int a2)
+char DynamicVectorClass_PAD_16::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -1046,7 +1046,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
 
 // 0x49EC40
 namespace gamemd {
-void DynamicVectorClass_PAD_16::Remove()
+void DynamicVectorClass_PAD_16::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x49ec4d*/
@@ -1172,7 +1172,7 @@ int DynamicVectorClass_PAD::FindItemIndex(unsigned int * a2)
 
 // 0x49EE10
 namespace gamemd {
-DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2)
+DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1258,7 +1258,7 @@ void DynamicVectorClass_flat::Destroy(void *a1)
 }
 // 0x525010
 namespace gamemd {
-VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a2)
+VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1298,7 +1298,7 @@ void DynamicVectorClass_flat::Destroy_Alt()
 }
 // 0x5251F0
 namespace gamemd {
-int  DynamicVectorClass_AnimType::GetSize( unsigned int * a2)
+int  DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -1363,7 +1363,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
 }
 // 0x5252B0
 namespace gamemd {
-DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(unsigned int * Block, char a2)
+DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1399,7 +1399,7 @@ unsigned int DynamicVectorClass_SubzoneConn::Remove(int a2)
 
 // 0x5890B0
 namespace gamemd {
-DynamicVector * DynamicVectorClass_SubzoneConn::Add(unsigned int * Block, char a2)
+DynamicVector * DynamicVectorClass_SubzoneConn::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1472,7 +1472,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
 }
 // 0x5C5070
 namespace gamemd {
-void DynamicVectorClass_ptr_NodeNameType::ddtor()
+void DynamicVectorClass_ptr_NodeNameType::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -1492,7 +1492,7 @@ void DynamicVectorClass_ptr_NodeNameType::ddtor()
 
 // 0x5C50A0
 namespace gamemd {
-unsigned int DynamicVectorClass_ptr_NodeNameType::Get(int a2)
+unsigned int DynamicVectorClass_ptr_NodeNameType::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5c50a0*/
@@ -1618,7 +1618,7 @@ int DynamicVectorClass_ptr_NodeNameType::GetSize(unsigned int * a2)
 
 // 0x5C58F0
 namespace gamemd {
-DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(unsigned int * Block, char a2)
+DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1885,7 +1885,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
 // 0x628690
 namespace gamemd {
-char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(unsigned int * Block, char a2)
+char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -1971,7 +1971,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
 // 0x628800
 namespace gamemd {
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor()
+void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -1991,7 +1991,7 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor()
 
 // 0x628830
 namespace gamemd {
-unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Get(int a2)
+unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x628830*/
@@ -2048,7 +2048,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetSize(int a2)
 
 // 0x67C060
 namespace gamemd {
-DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(unsigned int * Block, char a2)
+DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax

@@ -1208,7 +1208,7 @@ LABEL_54:
       }
     }
   }
-  return MapClass::RevealArea2(this, &v51, 0, aP2 + 3, 0); /*0x5678cf*/
+  return MapClass::RevealArea2(int a1,&v51,0,aP2 + 3,0) ; /*0x5678cf*/
 
 }
 } // namespace gamemd
@@ -2244,11 +2244,11 @@ int MapClass::TransitionCliff(MouseClass * aP0)
         v12 = *(unsigned short *)(v2 + 2); /*0x57488b*/
         LOWORD(aP0) = *(unsigned short *)v2; /*0x57488f*/
         HIWORD(aP0) = v12 - 1; /*0x57489a*/
-        return CellClass::ApplyCliffMod2(this, &aP0); /*0x5748aa*/
+        return CellClass::ApplyCliffMod2(int a1,&aP0) ; /*0x5748aa*/
       }
       else
       {
-        return CellClass::ApplyCliffMod2(this, (unsigned int *)v2); /*0x57487b*/
+        return CellClass::ApplyCliffMod2(int a1,(unsigned int *) v2); /*0x57487b*/
       }
     }
     else
@@ -2256,7 +2256,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       v9 = *(unsigned short *)(v2 + 2) + 1; /*0x574817*/
       LOWORD(aP0) = *(unsigned short *)v2; /*0x574819*/
       HIWORD(aP0) = v9; /*0x57481e*/
-      return CellClass::ApplyCliffMod2(this, &aP0); /*0x574832*/
+      return CellClass::ApplyCliffMod2(int a1,&aP0) ; /*0x574832*/
     }
   }
   else if ( result >= 83 && result <= 91 || result >= 96 && result <= 99 || result == 101 ) /*0x5748ce*/
@@ -2275,11 +2275,11 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       {
         aP0 = 1; /*0x57498f*/
         v18 = *CellStruct::Sub((CellStruct *)v2, &v19, &aP0); /*0x5749a8*/
-        return CellClass::ApplyCliffMod(this, &v18); /*0x5749af*/
+        return CellClass::ApplyCliffMod(int a1,&v18) ; /*0x5749af*/
       }
       else
       {
-        return CellClass::ApplyCliffMod(this, (unsigned int *)v2); /*0x574976*/
+        return CellClass::ApplyCliffMod(int a1,(unsigned int *) v2); /*0x574976*/
       }
     }
     else
@@ -2287,7 +2287,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       v15 = *(unsigned short *)v2 + 1; /*0x574912*/
       HIWORD(aP0) = *(unsigned short *)(v2 + 2); /*0x574914*/
       LOWORD(aP0) = v15; /*0x574919*/
-      return CellClass::ApplyCliffMod(this, &aP0); /*0x57492d*/
+      return CellClass::ApplyCliffMod(int a1,&aP0) ; /*0x57492d*/
     }
   }
   return result; /*0x574837*/
@@ -3413,7 +3413,7 @@ int  MapClass::IsAreaFree(int * a2, int a3, void *a3)
   v5 = a2[2] + *a2; /*0x5867b4*/
   v16 = (int *)v4; /*0x5867b6*/
   if ( v4 >= v5 ) /*0x5867bc*/
-    return MapClass::IsRectInBounds(this, a2, 1); /*0x586874*/
+    return MapClass::IsRectInBounds(int a1,a2,1) ; /*0x586874*/
   while ( 1 ) /*0x5867c2*/
   {
     v6 = a2[1]; /*0x5867c2*/
@@ -3422,7 +3422,7 @@ int  MapClass::IsAreaFree(int * a2, int a3, void *a3)
 LABEL_20:
     v16 = (int *)++v4; /*0x58686a*/
     if ( v4 >= a2[2] + *a2 ) /*0x58686e*/
-      return MapClass::IsRectInBounds(this, a2, 1); /*0x58686e*/
+      return MapClass::IsRectInBounds(a1, a2, 1); /*0x58686e*/
   }
   LOWORD(v17) = v4; /*0x5867d4*/
   v7 = (int16_t)v4; /*0x5867d9*/
@@ -4331,7 +4331,7 @@ char MapClass::isCellAccessible(int a2)
 char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
 {
 
-  return INIClass::SetString(this, aP1, a2, &Theater_Array[112 * a4]); /*0x4758e6*/
+  return INIClass::SetString(int a1,aP1,a2,&Theater_Array[112 * a4]) ; /*0x4758e6*/
 
 }
 // 0x48DC90

@@ -6,24 +6,6 @@
 #include <cstddef>
 
 // IDA-named globals referenced (extern stubs)
-extern unsigned char byte_8A03E0;
-extern unsigned char byte_B048A8;
-extern unsigned char byte_B07BB0;
-extern unsigned char byte_B07BB1;
-extern unsigned char byte_B0B328;
-extern unsigned char byte_B0C1AC;
-extern int dword_8A06F8;
-extern int dword_B04910;
-extern int dword_B04978;
-extern int dword_B04A10;
-extern int dword_B07DC8;
-extern int dword_B07DF8;
-extern int dword_B07E58;
-extern int dword_B0B300;
-extern int dword_B0B3A0;
-extern int dword_B0CB20;
-extern int dword_B0CC40;
-extern int dword_B0CCB0;
 
 namespace gamemd {
 

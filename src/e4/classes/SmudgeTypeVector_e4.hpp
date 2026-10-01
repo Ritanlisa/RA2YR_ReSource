@@ -20,6 +20,7 @@ struct SmudgeTypeVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
+struct VectorClass_flat;  // fix_fwd_type_supply
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
 };
 

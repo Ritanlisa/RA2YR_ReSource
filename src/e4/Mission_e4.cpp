@@ -417,7 +417,7 @@ LABEL_55:
 }
 // 0x5BDA80
 namespace gamemd {
-int Mission::SetAndCall(int a2, int a3)
+int Mission::SetAndCall(int a2, int a3, void *a3_2)
 {
 
   int (**MouseClass_field_0x0)(int, int); // edx
@@ -546,7 +546,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 }
 // 0x70F770
 namespace gamemd {
-int Mission::GetMissionDelay()
+int Mission::GetMissionDelay(void *a1_1)
 {
 
   int Mission_field_0x180; // edx

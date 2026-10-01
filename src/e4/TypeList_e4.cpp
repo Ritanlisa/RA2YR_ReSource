@@ -188,7 +188,7 @@ unsigned int TypeList_Particle::GetCapacity(int a2)
 
 // 0x45A300
 namespace gamemd {
-char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
+char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void *a3_2)
 {
 
   unsigned int *v4; // edi
@@ -259,7 +259,7 @@ int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
 }
 // 0x45A9C0
 namespace gamemd {
-VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2)
+VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -495,7 +495,7 @@ unsigned int TypeList_TechnoType::GetIndex(int a2)
 
 // 0x478680
 namespace gamemd {
-VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
+VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -621,7 +621,7 @@ int TypeList_Infantry::Clear(int a2)
 
 // 0x5129F0
 namespace gamemd {
-TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
+TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -675,7 +675,7 @@ char TypeList_Infantry::AddRef(int a2)
 
 // 0x512E20
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2)
+DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -770,7 +770,7 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
 
 // 0x5131F0
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2)
+DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -932,7 +932,7 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
 }
 // 0x5AC650
 namespace gamemd {
-TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2)
+TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1175,7 +1175,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
 }
 // 0x67A410
 namespace gamemd {
-void TypeList_VoxelAnim::ddtor()
+void TypeList_VoxelAnim::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -1343,7 +1343,7 @@ int TypeList_cptr_TerrainTypeClass::SaveToINI(int a2)
 
 // 0x67A990
 namespace gamemd {
-TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2)
+TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1389,7 +1389,7 @@ TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(unsigned int * Block, char a2)
 
 // 0x67AA30
 namespace gamemd {
-TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a2)
+TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1909,7 +1909,7 @@ int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
 
 // 0x67C010
 namespace gamemd {
-VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2)
+VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1932,7 +1932,7 @@ VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2
 
 // 0x67C100
 namespace gamemd {
-DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2)
+DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1955,7 +1955,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2)
 
 // 0x67C150
 namespace gamemd {
-VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2)
+VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax

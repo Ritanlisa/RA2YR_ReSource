@@ -60,7 +60,7 @@ wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 }
 // 0x53C4C0
 namespace gamemd {
-void DeleteCommandClass_28::ClearBuffer()
+void DeleteCommandClass_28::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -93,7 +93,7 @@ unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 
 // 0x53C510
 namespace gamemd {
-int DeleteCommandClass_28::Seek( int a2)
+int DeleteCommandClass_28::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x53c51a*/
@@ -201,7 +201,7 @@ void DeleteCommandClass_28::ddtor()
 
 // 0x53C640
 namespace gamemd {
-int DeleteCommandClass_28::Read( unsigned int * a2)
+int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax
@@ -333,7 +333,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
 // 0x53C7D0
 namespace gamemd {
-int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
+int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax

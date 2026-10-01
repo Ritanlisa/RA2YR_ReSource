@@ -11,7 +11,7 @@
 
 // 0x779690
 namespace gamemd {
-void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1,  ObjectClass * aP2,  void* aP3,  void* aP4,  int a6,  ObjectClass * aP6,  void* aP7,  void* aP8,  void* aP9,  void* aP10,  void* aP11,  void* aP12,  void* aP13,  void* aP14)
+void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void* aP3, void* aP4, int a6, ObjectClass * aP6, void* aP7, void* aP8, void* aP9, void* aP10, void* aP11, void* aP12, void* aP13, void* aP14)
 {
 
   *((unsigned int *)this + 1) = 0; /*0x779695*/

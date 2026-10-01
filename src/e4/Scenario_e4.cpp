@@ -549,7 +549,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 }
 // 0x55AFB0
 namespace gamemd {
-void Scenario::Update()
+void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
 {
 
   int v1; // eax
@@ -979,7 +979,7 @@ void Scenario::SetByte96()
 }
 // 0x684240
 namespace gamemd {
-int Scenario::ClearScreen()
+int Scenario::ClearScreen(void *a1_1)
 {
 
   int result; // eax

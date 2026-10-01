@@ -26,6 +26,7 @@ struct Techno {
     unsigned int q5684;  // 0x5684
     unsigned int u32_500;
 // --- flat members (END) ---
+struct BuildingTypeClass;  // fix_fwd_type_supply
     int GetOwnerHouse();  // 0x6F2070
     BuildingTypeClass * StartInvulnerability(BuildingTypeClass * aP1);  // 0x70E360
 };

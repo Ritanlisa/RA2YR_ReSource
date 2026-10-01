@@ -9,6 +9,8 @@ namespace gamemd {
 
 struct Shroud {
 // --- flat members (BEGIN) ---
+struct MapClass;  // fix_fwd_type_supply
+struct RadarClass;  // fix_fwd_type_supply
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q054;  // 0x54

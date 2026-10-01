@@ -8,6 +8,9 @@
 namespace gamemd {
 struct VoxelAnimType {
 // --- flat members (BEGIN) ---
+struct SomeVoxelCache;  // fix_fwd_type_supply
+struct INIClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned int u32_8;  // 0x8
     unsigned int u32_10;  // 0x10
     unsigned int u32_30;  // 0x30
@@ -149,8 +152,8 @@ struct VoxelAnimType {
     unsigned int u32_106;
     unsigned int u32_5205;
 // --- flat members (END) ---
-    AbstractClass * * LoadSection(const char * a2, int a3, void *a1 = 0);  // 0x5F7A90
+    AbstractClass * * LoadSection(const char * a2, int a3, void *a3_2);  // 0x5F7A90
     AbstractClass * * LoadBarrel(const char * a2, int a3);  // 0x5F7DB0
-    int LoadAnim(void *a1 = 0);  // 0x5F8110
+    int LoadAnim(void *a1_1);  // 0x5F8110
 };
 } // namespace gamemd

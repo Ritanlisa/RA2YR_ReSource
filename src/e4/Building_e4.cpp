@@ -24,7 +24,7 @@
 
 // 0x425D10
 namespace gamemd {
-AnimClass * * Building::ComputePosition(AnimClass * aP1)
+AnimClass * * Building::ComputePosition(AnimClass * aP1, void *a2_1)
 {
 
   double v2; // st7

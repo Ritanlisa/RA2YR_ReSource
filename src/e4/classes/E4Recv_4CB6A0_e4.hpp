@@ -21,6 +21,7 @@ struct E4Recv_4CB6A0 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    ObjectClass *  sub_4CB6A0(char * Destination, void * aP1, int a3);  // 0x4CB6A0
+struct ObjectClass;  // fix_fwd_type_supply
+    void * sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3);  // 0x4CB6A0
 };
 } // namespace gamemd

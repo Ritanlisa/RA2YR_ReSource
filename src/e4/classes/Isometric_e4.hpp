@@ -17,6 +17,7 @@ struct Isometric {
     unsigned char q644;  // 0x644
     unsigned char q1604;  // 0x1604
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * InitTables(IUnknown * aP1, void *a2);
 };
 

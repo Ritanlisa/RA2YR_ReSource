@@ -23,6 +23,6 @@ struct E4Recv_42D830 {
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
     int Vf8(int,  ...);    // G6 vtable slot dispatch
-    char  sub_42D830(unsigned int * a2);  // 0x42D830
+    char sub_42D830(unsigned int * a2);  // 0x42D830
 };
 } // namespace gamemd

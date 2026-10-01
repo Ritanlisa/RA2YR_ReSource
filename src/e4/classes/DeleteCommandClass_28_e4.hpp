@@ -20,17 +20,19 @@ struct DeleteCommandClass_28 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    void ClearBuffer(void *a1 = 0);  // 0x53C4C0
-    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x53C510
-    char  AddRef(int a2);  // 0x53C520
-    char  Release(int a2, unsigned int * a3);  // 0x53C560
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    void ClearBuffer(void *a1_1);  // 0x53C4C0
+    int Seek(int a2, void *a2_2, void *a3_1);  // 0x53C510
+    char AddRef(int a2);  // 0x53C520
+    char Release(int a2, unsigned int * a3);  // 0x53C560
     void ddtor();  // 0x53C610
-    int  Read(unsigned int * a2, void *a1 = 0);  // 0x53C640
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
-    int  FindItem(unsigned int * a2);  // 0x53C750
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x53C780
-    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x53C7D0
-    unsigned int  PointerToIndex(int a2);  // 0x53C4F0
-    unsigned int  Write(int a2);  // 0x53C680
+    int Read(unsigned int * a2, void *a2_2);  // 0x53C640
+    char SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
+    int FindItem(unsigned int * a2);  // 0x53C750
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x53C780
+    int Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x53C7D0
+    unsigned int PointerToIndex(int a2);  // 0x53C4F0
+    unsigned int Write(int a2);  // 0x53C680
 };
 } // namespace gamemd

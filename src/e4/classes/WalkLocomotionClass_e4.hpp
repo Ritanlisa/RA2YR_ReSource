@@ -35,6 +35,8 @@ struct WalkLocomotionClass {
     unsigned int Piggybackee;
     unsigned int *__pad_18;
 // --- flat members (END) ---
+struct ILocomotion;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
     WalkLocomotionClass * ProcessMove(char a2);

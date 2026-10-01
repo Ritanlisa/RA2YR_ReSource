@@ -21,6 +21,6 @@ struct DroppodLocomotionClass {
     unsigned int UpdateMovement;
     unsigned int ddtor;
 // --- flat members (END) ---
-    char  ILoco_Process(int a1);  // 0x4B5B70
+    int ILoco_Process(int a1);  // 0x4B5B70
 };
 } // namespace gamemd

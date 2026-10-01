@@ -52,6 +52,6 @@ struct E4Recv_40A090 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_40A090();  // 0x40A090
+    AudioController * * sub_40A090();  // 0x40A090
 };
 } // namespace gamemd

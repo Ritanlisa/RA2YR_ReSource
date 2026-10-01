@@ -18,6 +18,7 @@ struct E4Recv_76E090 {
     unsigned int q4384;  // 0x4384
     unsigned int q5494;  // 0x5494
 // --- flat members (END) ---
+struct ObjectClass;  // fix_fwd_type_supply
     unsigned int * sub_76E090();  // 0x76E090
 };
 } // namespace gamemd

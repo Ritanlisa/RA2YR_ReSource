@@ -8,6 +8,7 @@ namespace gamemd {
 
 struct CCFileClass {
 // --- flat members (BEGIN) ---
+struct AudioController;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* FilePointer;  // 0x4
     int FileSize;  // 0x8

@@ -14,13 +14,14 @@ struct VectorClass_USubzoneTrackingStruct {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Clear(int a2, int a3);  // 0x588E10
-    char  AddRef(int a2);  // 0x5896F0
-    char  Release(int a2, int * a3);  // 0x589740
-    void ddtor(void *a1 = 0);  // 0x589960
-    int  GetSize(int a2);  // 0x5899E0
-    unsigned int  GetCapacity(int a2);  // 0x589A30
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x58A470
-    unsigned int *  SetCapacity(unsigned int * a2);  // 0x58AD10
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Clear(int a2, int a3);  // 0x588E10
+    char AddRef(int a2);  // 0x5896F0
+    char Release(int a2, int * a3);  // 0x589740
+    void ddtor(void *a1_1);  // 0x589960
+    int GetSize(int a2);  // 0x5899E0
+    unsigned int GetCapacity(int a2);  // 0x589A30
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x58A470
+    unsigned int * SetCapacity(unsigned int * a2);  // 0x58AD10
 };
 } // namespace gamemd

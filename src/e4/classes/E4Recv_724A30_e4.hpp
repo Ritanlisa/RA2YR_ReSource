@@ -18,6 +18,6 @@ struct E4Recv_724A30 {
     unsigned int q1910;  // 0x1910
     unsigned int q5128;  // 0x5128
 // --- flat members (END) ---
-    int  sub_724A30(int * a2);  // 0x724A30
+    int sub_724A30(int * a2);  // 0x724A30
 };
 } // namespace gamemd

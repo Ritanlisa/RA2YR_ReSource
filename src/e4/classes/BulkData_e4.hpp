@@ -13,6 +13,7 @@ struct BulkData {
     unsigned int Debug;
     unsigned int SessionClass;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     void InitMissionHashing();
 };
 

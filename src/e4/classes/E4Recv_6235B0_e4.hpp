@@ -14,6 +14,6 @@ struct E4Recv_6235B0 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    void  sub_6235B0(void * Format);  // 0x6235B0
+    void sub_6235B0(wchar_t * Format);  // 0x6235B0
 };
 } // namespace gamemd

@@ -38,7 +38,7 @@
 
 // 0x437FD0
 namespace gamemd {
-void GameClass::initGameMode( int a2, int a3)
+void GameClass::initGameMode(int a2, int a3)
 {
 
   if ( !*(unsigned int *)this->__pad_0 ) /*0x437fd3*/
@@ -49,7 +49,7 @@ void GameClass::initGameMode( int a2, int a3)
 }
 // 0x4381D0
 namespace gamemd {
-void GameClass::processFrame( int a2, int a3)
+void GameClass::processFrame(int a2, int a3)
 {
 
   unsigned int *result; // eax
@@ -75,7 +75,7 @@ void GameClass::processFrame( int a2, int a3)
 }
 // 0x438300
 namespace gamemd {
-unsigned int * GameClass::updateUI(int a2, int a3)
+unsigned int * GameClass::updateUI(int a2, int a3, void *a3_2)
 {
 
   unsigned int *result; // eax
@@ -101,7 +101,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
 }
 // 0x5D2260
 namespace gamemd {
-int GameClass::loadScenarioFiles(ObjectClass * aP1)
+int GameClass::loadScenarioFiles(ObjectClass * aP1, void *a2_1)
 {
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
@@ -173,7 +173,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
 }
 // 0x5D2410
 namespace gamemd {
-int GameClass::FrameLoop(int a2)
+int GameClass::FrameLoop(int a2, void *a2_2)
 {
 
   int v3; // eax
@@ -272,7 +272,7 @@ LABEL_8:
 }
 // 0x631D30
 namespace gamemd {
-void GameClass::GetRelatedObject()
+void GameClass::GetRelatedObject(void *a1_1)
 {
 
   int Pipe_field_0x04; // ecx
@@ -430,7 +430,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
 }
 // 0x69AE10
 namespace gamemd {
-int GameClass::initPlayerData(const char ** a2)
+int GameClass::initPlayerData(const char ** a2, void *a2_2)
 {
 
   int v3; // eax
@@ -453,7 +453,7 @@ int GameClass::initPlayerData(const char ** a2)
 }
 // 0x6BEC60
 namespace gamemd {
-ObjectClass * * GameClass::Shutdown()
+ObjectClass * * GameClass::Shutdown(void *a1_1)
 {
 
   int v1; // eax

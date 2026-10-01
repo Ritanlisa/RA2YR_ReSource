@@ -16,6 +16,7 @@ struct ColorScheme {
     unsigned int q308;  // 0x308
     unsigned int u32_30C;  // 0x30C
 // --- flat members (END) ---
+struct AbstractTypeClass;  // fix_fwd_type_supply
     int Destructor(void *a1);
 };
 

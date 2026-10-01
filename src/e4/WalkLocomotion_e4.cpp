@@ -32,7 +32,7 @@
 
 // 0x6A01A0
 namespace gamemd {
-AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
+AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
 {
 
   unsigned int *v3; // edx
@@ -129,7 +129,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 }
 // 0x6A05F0
 namespace gamemd {
-void WalkLocomotion::ProcessCollision( char a2)
+void WalkLocomotion::ProcessCollision(char a2, void *a2_2)
 {
 
   int v4; // eax
@@ -185,7 +185,7 @@ void WalkLocomotion::ProcessCollision( char a2)
 
 // 0x6A1C80
 namespace gamemd {
-int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
+int WalkLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 {
 
   int v5; // ecx
@@ -238,7 +238,7 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
 
 // 0x6A3DB0
 namespace gamemd {
-unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3)
+unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1)
 {
 
   int v4; // eax

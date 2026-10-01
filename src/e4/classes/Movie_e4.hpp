@@ -7,6 +7,8 @@
 namespace gamemd {
 struct Movie {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
     AbstractClass* q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -76,9 +78,9 @@ struct Movie {
     AbstractClass * * SetupScreen(CCINIClass * aP1);  // 0x49CAF0
     CampaignClass * * GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0
     int Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7);  // 0x5BED40
-    char Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x7209D0
-    unsigned int  SelectNextBuildableType(void * aP1);  // 0x720A80
-    char  GetSectionID(unsigned int * a2);  // 0x49BC80
-    char  GetState(void * aP1);  // 0x49BCC0
+    int Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);  // 0x7209D0
+    unsigned int SelectNextBuildableType(AnimClass * aP1);  // 0x720A80
+    char GetSectionID(unsigned int * a2);  // 0x49BC80
+    char GetState(CCINIClass * aP1);  // 0x49BCC0
 };
 } // namespace gamemd

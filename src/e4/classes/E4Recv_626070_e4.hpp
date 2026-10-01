@@ -8,6 +8,6 @@ struct E4Recv_626070 {
 // --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8
 // --- flat members (END) ---
-    void *  sub_626070(void * a2);  // 0x626070
+    void * sub_626070(const void * a2);  // 0x626070
 };
 } // namespace gamemd

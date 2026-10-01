@@ -5028,7 +5028,7 @@ LONG JumpjetLocomotionClass::SmallStub_54E040(int a1)
 }
 // 0x54E890
 namespace gamemd {
-void JumpjetLocomotionClass_26::ClearBuffer()
+void JumpjetLocomotionClass_26::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -5061,7 +5061,7 @@ unsigned int JumpjetLocomotionClass_26::PointerToIndex(int a2)
 
 // 0x54E8E0
 namespace gamemd {
-int JumpjetLocomotionClass_26::Seek(int a2)
+int JumpjetLocomotionClass_26::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x54e8ea*/
@@ -5168,7 +5168,7 @@ void JumpjetLocomotionClass_26::ddtor()
 
 // 0x54EA10
 namespace gamemd {
-int JumpjetLocomotionClass_26::Read(unsigned int * a2)
+int JumpjetLocomotionClass_26::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

@@ -202,7 +202,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
 }
 // 0x766800
 namespace gamemd {
-int Conflict_WorldDominationTour_12_::ReleaseBuffer()
+int Conflict_WorldDominationTour_12_::ReleaseBuffer(void *a1_1, void *a2_1)
 {
 
   int (***v2)(unsigned int, int); // ecx
@@ -223,7 +223,7 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
 }
 // 0x766920
 namespace gamemd {
-BOOL Conflict_WorldDominationTour_26::AddRef()
+BOOL Conflict_WorldDominationTour_26::AddRef(void *a1_1)
 {
 
   return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76692d*/
@@ -232,7 +232,7 @@ BOOL Conflict_WorldDominationTour_26::AddRef()
 }
 // 0x766FA0
 namespace gamemd {
-BOOL Conflict_WorldDominationTour_26::Release()
+BOOL Conflict_WorldDominationTour_26::Release(void *a1_1)
 {
 
   ++*((unsigned int *)this + 2); /*0x766fa2*/
@@ -265,7 +265,7 @@ unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
 
 // 0x766850
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
+unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, void *a3_2)
 {
 
   int v3; // edi
@@ -281,7 +281,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
 
 // 0x766960
 namespace gamemd {
-rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char a2)
+rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
@@ -295,7 +295,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char
 
 // 0x766990
 namespace gamemd {
-rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(unsigned int * Block, char a2)
+rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
@@ -360,7 +360,7 @@ int Conflict_WorldDominationTour_12::ddtor()
 
 // 0x766D60
 namespace gamemd {
-int Conflict_WorldDominationTour_12::Read(int a2)
+int Conflict_WorldDominationTour_12::Read(int a2, void *a2_2)
 {
 
   int result; // eax
@@ -465,7 +465,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
 
 // 0x7670D0
 namespace gamemd {
-int Conflict_WorldDominationTour_12::Constructor_3()
+int Conflict_WorldDominationTour_12::Constructor_3(void *a1_1)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x7670d3*/

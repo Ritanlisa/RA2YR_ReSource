@@ -7,6 +7,7 @@
 namespace gamemd {
 struct E4Recv_426ED0 {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_18;  // 0x18
@@ -48,6 +49,6 @@ struct E4Recv_426ED0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_426ED0(int a2);  // 0x426ED0
+    AbstractClass * * sub_426ED0(int a2);  // 0x426ED0
 };
 } // namespace gamemd

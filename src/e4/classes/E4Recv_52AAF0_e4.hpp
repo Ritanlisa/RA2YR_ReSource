@@ -22,6 +22,7 @@ struct E4Recv_52AAF0 {
     AbstractClass * q304;  // 0x304
     AbstractClass * q774;  // 0x774
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     void sub_52AAF0();  // 0x52AAF0
 };
 } // namespace gamemd

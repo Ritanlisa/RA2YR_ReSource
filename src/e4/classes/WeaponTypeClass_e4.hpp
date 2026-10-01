@@ -9,6 +9,12 @@ namespace gamemd {
 
 struct WeaponTypeClass {
 // --- flat members (BEGIN) ---
+struct ObjectClass;  // fix_fwd_type_supply
+struct WarheadTypeClass;  // fix_fwd_type_supply
+struct AnimTypeClass;  // fix_fwd_type_supply
+struct ParticleSystemTypeClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct Color;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

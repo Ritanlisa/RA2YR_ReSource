@@ -13,6 +13,6 @@ struct E4Recv_71FA40 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_71FA40(int a2);  // 0x71FA40
+    int sub_71FA40(int a2);  // 0x71FA40
 };
 } // namespace gamemd

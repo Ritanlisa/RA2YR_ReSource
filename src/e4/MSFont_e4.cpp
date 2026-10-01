@@ -131,7 +131,7 @@ MSFont * MSFont::QueryInterface(void * Block, char a2)
 }
 // 0x5D5080
 namespace gamemd {
-void MSFont_18::ClearBuffer()
+void MSFont_18::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -174,7 +174,7 @@ int MSFont_18::GetSize(int a2)
 
 // 0x5D50E0
 namespace gamemd {
-void MSFont_18::Destroy()
+void MSFont_18::Destroy(void *a1_1)
 {
 
   void *v2; // eax

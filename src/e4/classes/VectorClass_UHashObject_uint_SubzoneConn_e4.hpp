@@ -14,12 +14,13 @@ struct VectorClass_UHashObject_uint_SubzoneConn {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Clear(int a2, int a3);  // 0x589030
-    char  AddRef(int a2);  // 0x58A260
-    char  Release(int a2, char * a3);  // 0x58A8F0
-    void ddtor(void *a1 = 0);  // 0x58A9F0
-    int  GetSize(unsigned int * a2);  // 0x58AA20
-    unsigned int  GetCapacity(int a2);  // 0x58AA60
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x58AB80
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Clear(int a2, int a3);  // 0x589030
+    char AddRef(int a2);  // 0x58A260
+    char Release(int a2, char * a3);  // 0x58A8F0
+    void ddtor(void *a1_1);  // 0x58A9F0
+    int GetSize(unsigned int * a2);  // 0x58AA20
+    unsigned int GetCapacity(int a2);  // 0x58AA60
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x58AB80
 };
 } // namespace gamemd

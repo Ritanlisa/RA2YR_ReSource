@@ -19,10 +19,11 @@ struct TypeList_cptr_ParticleSystemTypeClass {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
+struct TypeList_flat;  // fix_fwd_type_supply
     void GetClassIdentifier();  // 0x459F90
-    unsigned int  LoadTypeData(int a2);  // 0x459FC0
-    char  Add(int a2, unsigned int * a3, void *a1 = 0);  // 0x45A300
-    int  Remove(unsigned int * a2);  // 0x45A3B0
-    TypeList_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x717B70
+    unsigned int LoadTypeData(int a2);  // 0x459FC0
+    char Add(int a2, unsigned int * a3, void *a3_2);  // 0x45A300
+    int Remove(unsigned int * a2);  // 0x45A3B0
+    TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x717B70
 };
 } // namespace gamemd

@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_5E7160 {
     void* vfptr;  // minimal E2 declaration
-    char HandleMultiplayerMapSelection();  // 0x5E7160
+    SkirmishDialog * * HandleMultiplayerMapSelection();  // 0x5E7160
 };
 } // namespace gamemd

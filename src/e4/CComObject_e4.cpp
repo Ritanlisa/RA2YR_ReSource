@@ -28,7 +28,7 @@
 
 // 0x7937B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
+int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
 {
 
   int v1; // edi
@@ -2145,7 +2145,7 @@ LABEL_21:
 }
 // 0x7AC6B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::Release()
+int CComObject_CChatEventSink___ATL::Release(void *a1_1)
 {
 
   LONG v1; // ebx
@@ -2217,7 +2217,7 @@ LABEL_17:
 }
 // 0x7AE5B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1)
+int CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1, void *a2_1, void *a3_1)
 {
 
   return (*(int (**)(int))((char *)this + 24))(aP1) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7ae5c4*/
@@ -2650,7 +2650,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 
 // 0x7AC690
 namespace gamemd {
-LONG CComObject_CChatEventSink___ATL::AddRef()
+LONG CComObject_CChatEventSink___ATL::AddRef(void *a1_1)
 {
 
   int v2; // [esp+4h] [ebp+4h]

@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Mission {
 // --- flat members (BEGIN) ---
+struct ScriptClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -220,8 +221,8 @@ struct Mission {
 // --- flat members (END) ---
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40
-    int  SetAndCall(int a2, int a3, void *a1 = 0);  // 0x5BDA80
+    int SetAndCall(int a2, int a3, void *a3_2);  // 0x5BDA80
     char AssignTeamMemberMissions(ScriptClass * aP1, int a3);  // 0x6ED7E0
-    int GetMissionDelay(void *a1 = 0);  // 0x70F770
+    int GetMissionDelay(void *a1_1);  // 0x70F770
 };
 } // namespace gamemd

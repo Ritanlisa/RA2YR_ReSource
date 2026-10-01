@@ -191,7 +191,7 @@ int WebBrowser::GoForward()
 }
 // 0x551630
 namespace gamemd {
-bool WebBrowser::OpenURL()
+bool WebBrowser::OpenURL(void *a1_1)
 {
 
   HANDLE FileA; // esi
@@ -249,7 +249,7 @@ int WebBrowser::QueryInterface()
 
 // 0x773AA0
 namespace gamemd {
-int WebBrowser::AddRef()
+int WebBrowser::AddRef(void *a1_1)
 {
 
   int v1; // ecx
@@ -264,7 +264,7 @@ int WebBrowser::AddRef()
 
 // 0x773AB0
 namespace gamemd {
-int WebBrowser::Release()
+int WebBrowser::Release(void *a1_1)
 {
 
   int result; // eax

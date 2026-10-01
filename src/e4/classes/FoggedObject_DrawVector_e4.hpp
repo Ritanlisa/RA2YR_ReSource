@@ -15,6 +15,7 @@ struct FoggedObject_DrawVector {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
 // --- flat members (END) ---
+struct VectorClass_flat;  // fix_fwd_type_supply
     VectorClass_flat * QueryInterface(char a2);
 };
 

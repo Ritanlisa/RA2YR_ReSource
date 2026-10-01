@@ -15,22 +15,25 @@ struct VectorClass_ptr_IsometricTileClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector *  Constructor_VectorClass_IsometricTileClass___(unsigned int * Block, char a2);  // 0x40CB30
-    LogicClass *  Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2);  // 0x40CC20
-    void Destroy(void *a1 = 0);  // 0x40C820
-    unsigned int  GetItemIndex(int a2);  // 0x40C850
-    int  Get(int a2, void *a1 = 0);  // 0x40C870
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40C880
-    char  Release(int a2, unsigned int * a3);  // 0x40C8C0
-    void Remove(void *a1 = 0);  // 0x40C970
-    int  GetSize(unsigned int * a2);  // 0x40C9A0
-    unsigned int  GetCapacity(int a2);  // 0x40C9E0
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x40CA00
-    int  FindItemIndex(unsigned int * a2);  // 0x40CAB0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x40CAE0
+struct DynamicVector;  // fix_fwd_type_supply
+struct LogicClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+    DynamicVector * Constructor_VectorClass_IsometricTileClass___(unsigned int * Block, char a2);  // 0x40CB30
+    LogicClass * Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2);  // 0x40CC20
+    void Destroy(void *a1_1);  // 0x40C820
+    unsigned int GetItemIndex(int a2);  // 0x40C850
+    int Get(int a2, void *a2_2);  // 0x40C870
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x40C880
+    char Release(int a2, unsigned int * a3);  // 0x40C8C0
+    void Remove(void *a1_1);  // 0x40C970
+    int GetSize(unsigned int * a2);  // 0x40C9A0
+    unsigned int GetCapacity(int a2);  // 0x40C9E0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x40CA00
+    int FindItemIndex(unsigned int * a2);  // 0x40CAB0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x40CAE0
     int GetItem();  // 0x40CC00
     void TryFreeAndClear();  // 0x40CC70
-    unsigned int  GetPtrOffset(int a2);  // 0x40CCA0
-    int  FindValue(unsigned int * a2);  // 0x40CF00
+    unsigned int GetPtrOffset(int a2);  // 0x40CCA0
+    int FindValue(unsigned int * a2);  // 0x40CF00
 };
 } // namespace gamemd

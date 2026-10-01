@@ -7,6 +7,8 @@
 namespace gamemd {
 struct Waypoint {
 // --- flat members (BEGIN) ---
+struct IPXManagerClass;  // fix_fwd_type_supply
+struct CHAR;  // fix_fwd_type_supply
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     bool q00B;  // 0xB
@@ -53,8 +55,8 @@ struct Waypoint {
     unsigned int field_38;
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0
-    IPXManagerClass * InitInvalid(void *a1 = 0);  // 0x53ECB0
-    char  FindCell(unsigned int * a2);  // 0x763A50
-    CHAR *  To_String(void * aP0);  // 0x763610
+    void * InitInvalid(void *a1_1);  // 0x53ECB0
+    int FindCell(unsigned int * a2);  // 0x763A50
+    CHAR * To_String(CCINIClass * aP0);  // 0x763610
 };
 } // namespace gamemd

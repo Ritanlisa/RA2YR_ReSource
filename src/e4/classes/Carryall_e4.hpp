@@ -22,6 +22,7 @@ struct Carryall {
     unsigned int audioController4;
     unsigned int audioController7;
 // --- flat members (END) ---
+struct FootClass;  // fix_fwd_type_supply
     FootClass * * MissionStateMachine();
 };
 

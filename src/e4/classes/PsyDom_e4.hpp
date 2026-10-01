@@ -14,6 +14,7 @@ struct PsyDom {
     void* q804;  // 0x804
     void* q6294;  // 0x6294
 // --- flat members (END) ---
+struct AnimClass;  // fix_fwd_type_supply
     AnimClass * * Update(void *a1, void *a2, void *a3, void *a4);
     bool IsActive();
     void Fire();

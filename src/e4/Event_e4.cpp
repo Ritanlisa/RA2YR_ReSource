@@ -30,7 +30,7 @@
 
 // 0x48D080
 namespace gamemd {
-int Event::Dispatch()
+int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int result; // eax
@@ -429,7 +429,7 @@ char Event_Dispatch::Return0()
 }
 // 0x601360
 namespace gamemd {
-bool Event::IsValidActionType()
+bool Event::IsValidActionType(void *a1_1)
 {
 
   int result; // eax

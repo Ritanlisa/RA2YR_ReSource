@@ -1244,10 +1244,10 @@ int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
       ObjectClass::Init((ObjectClass *)a1, (int)&a2); /*0x46ae97*/
       Timer::Start((Timer *)(a1 + 46), 0); /*0x46aea6*/
       Timer::Start((Timer *)(a1 + 49), 0); /*0x46aeb0*/
-      *a1 = (int)&(void*)(void*)&BulletClass_vftable; /*0x46aeb5*/
-      a1[1] = (int)&(void*)(void*)&BulletClass_vftable; /*0x46aebb*/
-      a1[2] = (int)&(void*)(void*)&BulletClass_vftable; /*0x46aec2*/
-      a1[3] = (int)&(void*)(void*)&BulletClass_vftable; /*0x46aec9*/
+      *a1 = (int)(void *)&BulletClass_vftable; /*0x46aeb5*/
+      a1[1] = (int)(void *)&BulletClass_vftable; /*0x46aebb*/
+      a1[2] = (int)(void *)&BulletClass_vftable; /*0x46aec2*/
+      a1[3] = (int)(void *)&BulletClass_vftable; /*0x46aec9*/
     }
     if ( a1[85] /*0x46af17*/
       && (((unsigned int *)&g_BuildingLoadQueue_Array)[1] < ((char *)&g_BuildingLoadQueue_Array)
@@ -1709,7 +1709,7 @@ void* ParticleSystemClass::QueryInterface(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4ef853*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x4ef856*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_ParticleClass___vftable; /*0x4ef856*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4ef860*/
   {
     RA2_OPDEL(v3); /*0x4ef868*/
@@ -1728,7 +1728,7 @@ void* ParticleSystemClass::finalizeParticles(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4efda3*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_SmudgeClass___vftable; /*0x4efda6*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_SmudgeClass___vftable; /*0x4efda6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4efdb0*/
   {
     RA2_OPDEL(v3); /*0x4efdb8*/
@@ -4266,7 +4266,7 @@ void TerrainClass::ProcessSlope(void* a1) {
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574369*/
     v40 = *(int16_t **)v63; /*0x57436e*/
     occupationFlags = v2->occupationFlags; /*0x574372*/
-    v69.vtable0 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x57437d*/
+    v69.vtable0 = (void *)&DynamicVectorClass_Cell_vftable; /*0x57437d*/
     v71 = 10; /*0x574385*/
     v70 = 0; /*0x57438d*/
     if ( v63[0] >= occupationFlags ) /*0x574395*/
@@ -4365,7 +4365,7 @@ void TerrainClass::ProcessSlope(void* a1) {
       while ( (int16_t)a1 >= occupationFlags ); /*0x5743a1*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5745ca*/
-    v69.vtable0 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5745d5*/
+    v69.vtable0 = (void *)&VectorClass_Cell_vftable; /*0x5745d5*/
     if ( v69.Items ) /*0x5745df*/
     {
       if ( v69.IsAllocated ) /*0x5745e7*/
@@ -5111,7 +5111,7 @@ int OverlayClass::WriteINI() {
   v21[2] = 0; /*0x5fd700*/
   Buffer::Init(v22, v6, v5); /*0x5fd70c*/
   v22[3] = 0; /*0x5fd715*/
-  v21[0] = (int)&(void*)(void*)&BufferPipe_vftable; /*0x5fd71f*/
+  v21[0] = (int)(void *)&BufferPipe_vftable; /*0x5fd71f*/
   LCWPipe::Constructor(v26, 0, 0x2000); /*0x5fd727*/
   Pipe::SetDelegate(v26, (int)v21); /*0x5fd735*/
   do /*0x5fd776*/
@@ -5141,10 +5141,10 @@ int OverlayClass::WriteINI() {
   v14 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0); /*0x5fd7eb*/
   v23[1] = 0; /*0x5fd7f2*/
   v23[2] = 0; /*0x5fd7f8*/
-  v23[0] = (int)&(void*)(void*)&Pipe_vftable; /*0x5fd7fc*/
+  v23[0] = (int)(void *)&Pipe_vftable; /*0x5fd7fc*/
   Buffer::Init(v24, v14, v13); /*0x5fd804*/
   v24[3] = 0; /*0x5fd80d*/
-  v23[0] = (int)&(void*)(void*)&BufferPipe_vftable; /*0x5fd817*/
+  v23[0] = (int)(void *)&BufferPipe_vftable; /*0x5fd817*/
   LCWPipe::Constructor(v25, 0, 0x2000); /*0x5fd81f*/
   Pipe::SetDelegate(v25, (int)v23); /*0x5fd82d*/
   do /*0x5fd870*/
@@ -5265,10 +5265,10 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   this->Translucency = v13[756]; /*0x62b754*/
   this->q130 = 0; /*0x62b75b*/
   this->q4C4 = 0; /*0x62b761*/
-  *(unsigned int *)this = &(void*)(void*)&ParticleClass_vftable; /*0x62b767*/
-  this->vtable2 = &(void*)(void*)&ParticleClass_vftable; /*0x62b76d*/
-  this->vtable3 = &(void*)(void*)&ParticleClass_vftable; /*0x62b773*/
-  this->vtable4 = &(void*)(void*)&ParticleClass_vftable; /*0x62b77a*/
+  *(unsigned int *)this = (void *)&ParticleClass_vftable; /*0x62b767*/
+  this->vtable2 = (void *)&ParticleClass_vftable; /*0x62b76d*/
+  this->vtable3 = (void *)&ParticleClass_vftable; /*0x62b773*/
+  this->vtable4 = (void *)&ParticleClass_vftable; /*0x62b77a*/
   this->vtable2.GenerateUniqueID(); /*0x62b781*/
   if ( dword_A83DD8 < dword_A83DD0 /*0x62b7b9*/
     || (byte_A83DD5 || !dword_A83DD0)
@@ -5639,10 +5639,10 @@ void* ParticleClass::UpdateParticle(int a1) {
   int v4; // eax
   ParticleClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&ParticleClass_vftable; /*0x62d9a4*/
-  *(unsigned int *)&this->ParticleClass_field_0x2[2] = &(void*)(void*)&ParticleClass_vftable; /*0x62d9aa*/
-  this->ParticleClass_field_0x8[0] = (int)&(void*)(void*)&ParticleClass_vftable; /*0x62d9b1*/
-  this->ParticleClass_field_0xC = &(void*)(void*)&ParticleClass_vftable; /*0x62d9b8*/
+  *(unsigned int *)this->__pad_0 = (void *)&ParticleClass_vftable; /*0x62d9a4*/
+  *(unsigned int *)&this->ParticleClass_field_0x2[2] = (void *)&ParticleClass_vftable; /*0x62d9aa*/
+  this->ParticleClass_field_0x8[0] = (int)(void *)&ParticleClass_vftable; /*0x62d9b1*/
+  this->ParticleClass_field_0xC = (void *)&ParticleClass_vftable; /*0x62d9b8*/
   ObjectClass::Undeploy((ObjectClass *)this); /*0x62d9bf*/
   IDA_LOBYTE(v3) = 1; /*0x62d9c4*/
   AbstractClass::AnnounceExpiredPointer((void **)this, v3); /*0x62d9c8*/
@@ -5697,7 +5697,7 @@ int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a
   *(&this->uniqueId9) = 0; /*0x62dc8b*/
   this->q0C8 = 1; /*0x62dc8e*/
   this->q0C9 = 0; /*0x62dc92*/
-  *(&this->uniqueId7) = (int)&(void*)(void*)&DynamicVectorClass_ParticleClass___vftable; /*0x62dc95*/
+  *(&this->uniqueId7) = (int)(void *)&DynamicVectorClass_ParticleClass___vftable; /*0x62dc95*/
   *(&this->abstractFlags2) = 10; /*0x62dc9b*/
   *(&this->abstractFlags1) = 0; /*0x62dca2*/
   *(&this->abstractFlags3) = dword_AC4A58; /*0x62dcad*/
@@ -5714,9 +5714,9 @@ int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a
   this->q0F8 = 0; /*0x62dd04*/
   this->ParticleSystemClass_field_bool_F9 = 0; /*0x62dd0a*/
   *(&this->nextArrayIndex3) = 0; /*0x62dd10*/
-  *this = (int)&(void*)(void*)&ParticleSystemClass_vftable; /*0x62dd16*/
-  this->vtable2 = (int)&(void*)(void*)&ParticleSystemClass_vftable; /*0x62dd1c*/
-  this->vtable3 = (int)&(void*)(void*)&ParticleSystemClass_vftable; /*0x62dd22*/
+  *this = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd16*/
+  this->vtable2 = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd1c*/
+  this->vtable3 = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd22*/
   this->vtable4 = (int)&off_7EFB70; /*0x62dd29*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x62dd30*/
   if ( g_GameCleanupState < dword_A80210 /*0x62dd6a*/
@@ -5805,7 +5805,7 @@ int ParticleClass::ProcessCreation() {
   this->TargetCoords[1] = 0; /*0x62df40*/
   IDA_LOBYTE(this->TargetCoords[2]) = 1; /*0x62df43*/
   IDA_BYTE1(this->TargetCoords[2]) = 0; /*0x62df47*/
-  this->Particles[0] = (int)&(void*)(void*)&DynamicVectorClass_ParticleClass___vftable; /*0x62df4a*/
+  this->Particles[0] = (int)(void *)&DynamicVectorClass_ParticleClass___vftable; /*0x62df4a*/
   this->Target = (void *)10; /*0x62df50*/
   this->Owner = 0; /*0x62df57*/
   this->SpawnFrames = dword_AC4A58; /*0x62df60*/
@@ -5821,9 +5821,9 @@ int ParticleClass::ProcessCreation() {
   *(unsigned int *)&this->__pad_E5[15] = 0; /*0x62df94*/
   this->__pad_E5[19] = 0; /*0x62df9a*/
   this->ParticleSystemClass_field_bool_F9 = 0; /*0x62dfa0*/
-  this->ObjectClass = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62dfa6*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62dfac*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62dfb3*/
+  this->ObjectClass = (void *)&ParticleSystemClass_vftable; /*0x62dfa6*/
+  ((unsigned int *)this)[0] = (void *)&ParticleSystemClass_vftable; /*0x62dfac*/
+  ((unsigned int *)this)[0] = (void *)&ParticleSystemClass_vftable; /*0x62dfb3*/
   ((unsigned int *)this)[0] = &off_7EFB70; /*0x62dfba*/
   (*(void (**)(void))(v3 + 12))(); /*0x62dfc1*/
   if ( g_GameCleanupState < dword_A80210 /*0x62dff8*/
@@ -6559,12 +6559,12 @@ int ParticleSystemClass::Write(int a1, void* a1) {
     {
       ObjectClass::Init((ObjectClass *)v4, (int)&a1); /*0x62ff49*/
       ParticleSystemClass::resetSystemState((ParticleSystemClass *)(v4 + 188), 0, 0); /*0x62ff58*/
-      *(unsigned int *)(v4 + 188) = &(void*)(void*)&DynamicVectorClass_ParticleClass___vftable; /*0x62ff5d*/
+      *(unsigned int *)(v4 + 188) = (void *)&DynamicVectorClass_ParticleClass___vftable; /*0x62ff5d*/
       *(unsigned int *)(v4 + 208) = 10; /*0x62ff63*/
       *(unsigned int *)(v4 + 204) = 0; /*0x62ff6a*/
-      *(unsigned int *)v4 = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62ff6d*/
-      *(unsigned int *)(v4 + 4) = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62ff73*/
-      *(unsigned int *)(v4 + 8) = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62ff7a*/
+      *(unsigned int *)v4 = (void *)&ParticleSystemClass_vftable; /*0x62ff6d*/
+      *(unsigned int *)(v4 + 4) = (void *)&ParticleSystemClass_vftable; /*0x62ff73*/
+      *(unsigned int *)(v4 + 8) = (void *)&ParticleSystemClass_vftable; /*0x62ff7a*/
       *(unsigned int *)(v4 + 12) = &off_7EFB70; /*0x62ff81*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x62ff94*/
@@ -6665,7 +6665,7 @@ void* ParticleSystemClass::resetSystemState(int a1, int a2) {
   ((unsigned int *)this)[0] = (void *)a1; /*0x6302ae*/
   IDA_LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6302b1*/
   IDA_BYTE1(((unsigned int *)this)[0]) = 0; /*0x6302b5*/
-  this->ObjectClass = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x6302b8*/
+  this->ObjectClass = (void *)&VectorClass_ParticleClass___vftable; /*0x6302b8*/
   if ( a1 ) /*0x6302be*/
   {
     if ( a2 ) /*0x6302c6*/
@@ -6688,10 +6688,10 @@ void RadSiteClass::Constructor() {
   int v5; // eax
   RadSiteClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &(void*)(void*)&RadSiteClass_vftable; /*0x65b2fc*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b303*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b30a*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b311*/
+  this->AbstractClass = (void *)&RadSiteClass_vftable; /*0x65b2fc*/
+  ((unsigned int *)this)[0] = (void *)&RadSiteClass_vftable; /*0x65b303*/
+  ((unsigned int *)this)[0] = (void *)&RadSiteClass_vftable; /*0x65b30a*/
+  ((unsigned int *)this)[0] = (void *)&RadSiteClass_vftable; /*0x65b311*/
   v2 = (TerrainClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this->BaseCell); /*0x65b318*/
   TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
   IDA_LOBYTE(v3) = 1; /*0x65b326*/
@@ -6886,9 +6886,9 @@ int TerrainClass::CleanupMembers() {
   int v13[2]; // [esp+8h] [ebp-8h] BYREF
 
   v2 = (AbstractClass *)(this + 4); /*0x71b7b9*/
-  *(unsigned int *)this = &(void*)(void*)&TerrainClass_vftable; /*0x71b7bc*/
-  this->vtable3 = &(void*)(void*)&TerrainClass_vftable; /*0x71b7c2*/
-  this->vtable4 = &(void*)(void*)&TerrainClass_vftable; /*0x71b7c9*/
+  *(unsigned int *)this = (void *)&TerrainClass_vftable; /*0x71b7bc*/
+  this->vtable3 = (void *)&TerrainClass_vftable; /*0x71b7c2*/
+  this->vtable4 = (void *)&TerrainClass_vftable; /*0x71b7c9*/
   this->vtable2 = &off_7F5200; /*0x71b7d0*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x71b7d6*/
   v13[0] = this; /*0x71b7eb*/
@@ -7073,10 +7073,10 @@ void* TerrainClass::Construct(void* a1, void* a2) {
   this->TerrainClass_field_rect_D0[1] = 0; /*0x71bbec*/
   this->TerrainClass_field_rect_D0[2] = 0; /*0x71bbf2*/
   this->TerrainClass_field_rect_D0[3] = 0; /*0x71bbf8*/
-  this->ObjectClass = &(void*)(void*)&TerrainClass_vftable; /*0x71bbff*/
+  this->ObjectClass = (void *)&TerrainClass_vftable; /*0x71bbff*/
   ((unsigned int *)this)[0] = &off_7F5200; /*0x71bc05*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TerrainClass_vftable; /*0x71bc0b*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TerrainClass_vftable; /*0x71bc12*/
+  ((unsigned int *)this)[0] = (void *)&TerrainClass_vftable; /*0x71bc0b*/
+  ((unsigned int *)this)[0] = (void *)&TerrainClass_vftable; /*0x71bc12*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x71bc19*/
   ((unsigned int *)this)[0] = *(unsigned int *)(*(unsigned int *)&this->__pad_C0[8] + 160); /*0x71bc2e*/
   if ( *(unsigned int *)a2 != ((unsigned int *)&g_BuildingLoadQueue_Array)[4] ) /*0x71bc3b*/
@@ -7861,10 +7861,10 @@ int TiberiumClass::CleanupMembers() {
   void *v10; // [esp-8h] [ebp-18h]
   int v11; // [esp+Ch] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &(void*)(void*)&TiberiumClass_vftable; /*0x721888*/
-  this->vtable2 = &(void*)(void*)&TiberiumClass_vftable; /*0x72188e*/
-  this->vtable3 = &(void*)(void*)&TiberiumClass_vftable; /*0x721895*/
-  this->vtable4 = &(void*)(void*)&TiberiumClass_vftable; /*0x72189c*/
+  *(unsigned int *)this = (void *)&TiberiumClass_vftable; /*0x721888*/
+  this->vtable2 = (void *)&TiberiumClass_vftable; /*0x72188e*/
+  this->vtable3 = (void *)&TiberiumClass_vftable; /*0x721895*/
+  this->vtable4 = (void *)&TiberiumClass_vftable; /*0x72189c*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x7218a3*/
   v11 = this; /*0x7218b8*/
   v2 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x7218bc*/
@@ -7932,7 +7932,7 @@ int TiberiumClass::CleanupMembers() {
   }
   this->q10C = 0; /*0x7219fb*/
   v8 = *(void **)(&this->customSound_controller0); /*0x721a01*/
-  this->q0C4 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x721a09*/
+  this->q0C4 = (void *)&VectorClass_AnimTypeClass_const___vftable; /*0x721a09*/
   if ( v8 && this->q0D1 ) /*0x721a15*/
   {
     RA2_OPDEL(v8); /*0x721a1e*/
@@ -8019,10 +8019,10 @@ void* TubeClass::Construct(void* a1, int a2) {
   ((unsigned int *)this)[0] = *(unsigned int *)a1; /*0x727fec*/
   ((unsigned int *)this)[0] = a2; /*0x727ff0*/
   this->estimatedHealth = 0; /*0x727ff3*/
-  this->ObjectClass = &(void*)(void*)&TubeClass_vftable; /*0x727ffd*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x728003*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x728009*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x728010*/
+  this->ObjectClass = (void *)&TubeClass_vftable; /*0x727ffd*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x728003*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x728009*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x728010*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x728017*/
   memset(&((unsigned int *)this)[0], 0xFFu, 0x190u); /*0x728027*/
   if ( ((unsigned int *)&FootClass_Array)[0] < ((unsigned int *)&FootClass_Array)[4] /*0x72805f*/
@@ -8094,10 +8094,10 @@ void* TubeClass::ProcessEvent(int a1) {
   int v6; // eax
   TubeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  this->ObjectClass = &(void*)(void*)&TubeClass_vftable; /*0x728716*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x72871c*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x728723*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&TubeClass_vftable; /*0x72872a*/
+  this->ObjectClass = (void *)&TubeClass_vftable; /*0x728716*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x72871c*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x728723*/
+  ((unsigned int *)this)[0] = (void *)&TubeClass_vftable; /*0x72872a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x728731*/
   v3 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&((unsigned int *)this)[0]); /*0x72873f*/
   if ( v3 ) /*0x728746*/
@@ -8247,15 +8247,15 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
   this->u32_1F8 = 5; /*0x75e9e7*/
   this->u32_1FC = 1; /*0x75e9f1*/
   this->u32_1FD = 0; /*0x75e9f8*/
-  this->WaveClass_field_128 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x75e9fe*/
+  this->WaveClass_field_128 = (void *)&VectorClass_CellClass___vftable; /*0x75e9fe*/
   this->u32_1F4 = RA2_OPNEW(0x14u); /*0x75ea18*/
   this->u32_1FD = 1; /*0x75ea1e*/
-  this->WaveClass_field_128 = &(void*)(void*)&DynamicVectorClass_CellClass___vftable; /*0x75ea25*/
+  this->WaveClass_field_128 = (void *)&DynamicVectorClass_CellClass___vftable; /*0x75ea25*/
   this->WaveClass_field_12D = 10; /*0x75ea2f*/
   this->WaveClass_field_12C = 0; /*0x75ea39*/
-  this->ObjectClass = &(void*)(void*)&WaveClass_vftable; /*0x75ea3f*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&WaveClass_vftable; /*0x75ea45*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&WaveClass_vftable; /*0x75ea4b*/
+  this->ObjectClass = (void *)&WaveClass_vftable; /*0x75ea3f*/
+  ((unsigned int *)this)[0] = (void *)&WaveClass_vftable; /*0x75ea45*/
+  ((unsigned int *)this)[0] = (void *)&WaveClass_vftable; /*0x75ea4b*/
   ((unsigned int *)this)[0] = &off_7F6BC8; /*0x75ea52*/
   v8 = a1[1] - a2[1]; /*0x75ea66*/
   Math::Sqrt((double)((*a1 - *a2) * (*a1 - *a2) + v8 * v8)); /*0x75ea7e*/
@@ -8315,9 +8315,9 @@ int WaveClass::Destructor() {
   int v2; // eax
   void *v3; // eax
 
-  this->vtable0 = &(void*)(void*)&WaveClass_vftable; /*0x75ed37*/
-  this->vtable1 = &(void*)(void*)&WaveClass_vftable; /*0x75ed3d*/
-  this->vtable2 = &(void*)(void*)&WaveClass_vftable; /*0x75ed44*/
+  this->vtable0 = (void *)&WaveClass_vftable; /*0x75ed37*/
+  this->vtable1 = (void *)&WaveClass_vftable; /*0x75ed3d*/
+  this->vtable2 = (void *)&WaveClass_vftable; /*0x75ed44*/
   this->vtable3 = &off_7F6BC8; /*0x75ed4b*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x75ed52*/
   v2 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.gapE4[84] + 16))( /*0x75ed6b*/
@@ -8336,7 +8336,7 @@ int WaveClass::Destructor() {
   }
   (*(void (**)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x75edae*/
   v3 = (void *)this->u32_1F4; /*0x75edb1*/
-  this->WaveClass_field_128 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x75edb4*/
+  this->WaveClass_field_128 = (void *)&VectorClass_CellClass___vftable; /*0x75edb4*/
   if ( v3 && this->u32_1FD ) /*0x75edbe*/
   {
     RA2_OPDEL(v3); /*0x75edc6*/

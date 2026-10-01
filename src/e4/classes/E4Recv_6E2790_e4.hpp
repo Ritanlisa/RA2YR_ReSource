@@ -17,6 +17,6 @@ struct E4Recv_6E2790 {
     unsigned int q5444;  // 0x5444
     unsigned int ambientSoundController;
 // --- flat members (END) ---
-    char  sub_6E2790(int a2, int a3, int a4, int a5);  // 0x6E2790
+    int sub_6E2790(int a2, int a3, int a4, int a5);  // 0x6E2790
 };
 } // namespace gamemd

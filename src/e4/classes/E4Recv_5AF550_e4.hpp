@@ -46,6 +46,6 @@ struct E4Recv_5AF550 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void  sub_5AF550(float * a2, float * a3, void * a4);  // 0x5AF550
+    void sub_5AF550(float * a2, float * a3, AbstractClass * a4);  // 0x5AF550
 };
 } // namespace gamemd

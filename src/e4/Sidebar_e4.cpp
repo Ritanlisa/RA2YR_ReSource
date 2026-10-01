@@ -30,7 +30,7 @@
 
 // 0x4FA350
 namespace gamemd {
-AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
+AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5, void *a5_2)
 {
 
   HouseClass *v6; // ebx
@@ -268,7 +268,7 @@ LABEL_55:
 }
 // 0x5007A0
 namespace gamemd {
-int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
+int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
 {
 
   char result; // al
@@ -450,7 +450,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
 }
 // 0x63F040
 namespace gamemd {
-void Sidebar::RemoveItem( int a2)
+void Sidebar::RemoveItem(int a2, void *a2_2)
 {
 
   char *Sidebar_field_0x10; // edx
@@ -478,7 +478,7 @@ void Sidebar::RemoveItem( int a2)
 }
 // 0x63FB20
 namespace gamemd {
-ObjectClass * * Sidebar::Render(char a2)
+ObjectClass * * Sidebar::Render(char a2, void *a2_2)
 {
 
   int v3; // ebx
@@ -676,7 +676,7 @@ ObjectClass * * Sidebar::Render(char a2)
 }
 // 0x6A60A0
 namespace gamemd {
-int Sidebar::ActivateTab(IUnknown * aP1)
+int Sidebar::ActivateTab(IUnknown * aP1, void *a2_1)
 {
 
   int v2; // esi
@@ -695,7 +695,7 @@ int Sidebar::ActivateTab(IUnknown * aP1)
 }
 // 0x6A70E0
 namespace gamemd {
-AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
+AbstractClass * * Sidebar::FlushSidebarTooltip(char a2, void *a2_2)
 {
 
   int v3; // esi
@@ -1661,7 +1661,7 @@ LABEL_121:
 
 // 0x6A6140
 namespace gamemd {
-char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
+char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2)
 {
 
   int v5; // eax

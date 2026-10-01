@@ -31,6 +31,7 @@ struct ThemeClass {
     unsigned char u8_289;
     unsigned int Audio;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     int ClearQueues();
     int ReadThemeEntry(uint8_t *** a2, void *a2);
     int RequestBuffer(void *a1);

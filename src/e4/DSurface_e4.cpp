@@ -3900,7 +3900,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a2, unsigned int * a3, 
 
 }
 // 0x4C1AC0
-void * DSurface::loc_4C1AC0(std::codecvt_base * this)
+void * DSurface::loc_4C1AC0(std::codecvt_base *a1) 
 {
 
   return 1; /*0x4c1ab2*/

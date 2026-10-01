@@ -31,6 +31,7 @@ struct E4Recv_71FF20 {
     unsigned int q1634;  // 0x1634
     CampaignScore * q1910;  // 0x1910
 // --- flat members (END) ---
-    int  sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, void * aP9);  // 0x71FF20
+struct CampaignScore;  // fix_fwd_type_supply
+    int sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9);  // 0x71FF20
 };
 } // namespace gamemd

@@ -80,7 +80,7 @@ LABEL_17:
 }
 // 0x7AC970
 namespace gamemd {
-void WonlineStringDialogControl_12::ClearBuffer()
+void WonlineStringDialogControl_12::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -113,7 +113,7 @@ unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 
 // 0x7AC9C0
 namespace gamemd {
-int WonlineStringDialogControl_12::Seek( int a2)
+int WonlineStringDialogControl_12::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7ac9ca*/
@@ -221,7 +221,7 @@ void WonlineStringDialogControl_12::ddtor()
 
 // 0x7AD1B0
 namespace gamemd {
-int WonlineStringDialogControl_12::Read( unsigned int * a2)
+int WonlineStringDialogControl_12::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

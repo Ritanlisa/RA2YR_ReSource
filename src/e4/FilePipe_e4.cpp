@@ -157,7 +157,7 @@ unsigned int FilePipe_30::Write(int a2)
 
 // 0x477960
 namespace gamemd {
-int FilePipe_38::Seek(int a2, int a3)
+int FilePipe_38::Seek(int a2, int a3, void *a3_2)
 {
 
   int v3; // ecx
@@ -244,7 +244,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 
 // 0x4781F0
 namespace gamemd {
-int FilePipe_30::Read( unsigned int * a2)
+int FilePipe_30::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -318,7 +318,7 @@ void FilePipe_38::ddtor()
 
 // 0x478470
 namespace gamemd {
-int FilePipe_38::Read( unsigned char * a2)
+int FilePipe_38::Read(unsigned char * a2, void *a2_2)
 {
 
   int result; // eax
@@ -379,7 +379,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 
 // 0x4B9BE0
 namespace gamemd {
-void FilePipe_30::Clear()
+void FilePipe_30::Clear(void *a1_1)
 {
 
   void *v2; // eax

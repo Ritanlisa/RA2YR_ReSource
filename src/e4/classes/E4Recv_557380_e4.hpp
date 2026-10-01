@@ -187,6 +187,6 @@ struct E4Recv_557380 {
     unsigned int q0484;
     unsigned int q088;
 // --- flat members (END) ---
-    int  sub_557380(int a2);  // 0x557380
+    int sub_557380(int a2);  // 0x557380
 };
 } // namespace gamemd

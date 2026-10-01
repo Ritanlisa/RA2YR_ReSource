@@ -14,12 +14,13 @@ struct VectorClass_Building {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    char  Release(int a2, unsigned int * a3);  // 0x4E94A0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4EF580
-    int  Count(int a2);  // 0x4E8340
-    char  Get(int a2, void *a1 = 0);  // 0x4E9460
-    void Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x4E9550
-    int  GetSize(unsigned int * a2);  // 0x4E9580
-    unsigned int  GetCapacity(int a2);  // 0x4E95C0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    char Release(int a2, unsigned int * a3);  // 0x4E94A0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EF580
+    int Count(int a2);  // 0x4E8340
+    char Get(int a2, void *a2_2);  // 0x4E9460
+    void Set(void *a1_1, void *a2_1, void *a3_1);  // 0x4E9550
+    int GetSize(unsigned int * a2);  // 0x4E9580
+    unsigned int GetCapacity(int a2);  // 0x4E95C0
 };
 } // namespace gamemd

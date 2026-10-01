@@ -8,6 +8,7 @@ namespace gamemd {
 
 struct ConvertClass {
 // --- flat members (BEGIN) ---
+struct CampaignClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8

@@ -36,7 +36,7 @@
 
 // 0x554A60
 namespace gamemd {
-int Trigger::EnableOnce(AbstractClass * aP1)
+int Trigger::EnableOnce(AbstractClass * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -53,7 +53,7 @@ int Trigger::EnableOnce(AbstractClass * aP1)
 }
 // 0x5CBD20
 namespace gamemd {
-MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
+MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7, void *a8_1)
 {
 
   int FileClassToBuffer; // eax
@@ -314,7 +314,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
 }
 // 0x76F090
 namespace gamemd {
-unsigned int * Trigger::processTrigger(int a2, int a3)
+unsigned int * Trigger::processTrigger(int a2, int a3, void *a3_2)
 {
 
   this->Trigger_field_0x4 = (MSAnim *)a2; /*0x76f09a*/
@@ -326,7 +326,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 }
 // 0x76F1C0
 namespace gamemd {
-unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
+unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2, void *a3_1)
 {
 
   this->Trigger_field_0x4 = 0; /*0x76f1cb*/
@@ -350,7 +350,7 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 }
 // 0x76FF20
 namespace gamemd {
-int Trigger::executeActions(int a2)
+int Trigger::executeActions(int a2, void *a2_2)
 {
 
   this->Trigger_field_0x2C = (void *)a2; /*0x76ff24*/

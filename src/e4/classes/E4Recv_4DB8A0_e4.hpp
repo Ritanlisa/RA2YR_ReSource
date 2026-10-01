@@ -13,6 +13,6 @@ struct E4Recv_4DB8A0 {
     unsigned int q854;  // 0x854
     unsigned int q5714;  // 0x5714
 // --- flat members (END) ---
-    LPVOID sub_4DB8A0();  // 0x4DB8A0
+    int sub_4DB8A0();  // 0x4DB8A0
 };
 } // namespace gamemd

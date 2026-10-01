@@ -43,7 +43,7 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4a0e63*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0e66*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_IConnectionPoint___vftable; /*0x4a0e66*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a0e70*/
   {
     RA2_OPDEL(v3); /*0x4a0e78*/
@@ -795,7 +795,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( HeightMap ) /*0x732627*/
     {
       IDA_LOBYTE(HeightMap) = (uint8_t)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
-      v2->EventClass_field_0x0 = (int)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732632*/
+      v2->EventClass_field_0x0 = (int)(void *)&DynamicVectorClass_TechnoClass___vftable; /*0x732632*/
       *(unsigned int *)&v2->__pad_10[4] = 10; /*0x732638*/
       *(unsigned int *)v2->__pad_10 = 0; /*0x73263f*/
     }
@@ -840,7 +840,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( v8 ) /*0x7326ba*/
     {
       EventClass::resetEvent(v8, 0, 0); /*0x7326c2*/
-      v2->EventClass_field_0x0 = (int)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7326c7*/
+      v2->EventClass_field_0x0 = (int)(void *)&DynamicVectorClass_TechnoClass___vftable; /*0x7326c7*/
       *(unsigned int *)&v2->__pad_10[4] = 10; /*0x7326cd*/
       *(unsigned int *)v2->__pad_10 = 0; /*0x7326d4*/
     }
@@ -879,7 +879,7 @@ int PlayerClass::UpdateAIUnits() {
 // 0x765790
 namespace gamemd { 
 void* COMClass::invokeMethod(int a2) {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x765793*/
+  *(unsigned int *)this->__pad_0 = (void *)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x765793*/
   ComPtr::Release((ComPtr *)this); /*0x765799*/
   if ( (a2 & 1) != 0 ) /*0x7657a3*/
     RA2_OPDEL(this); /*0x7657a6*/
@@ -889,7 +889,7 @@ void* COMClass::invokeMethod(int a2) {
 // 0x7657C0
 namespace gamemd { 
 void* COMClass::getTypeInfo(int a2) {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x7657c3*/
+  *(unsigned int *)this->__pad_0 = (void *)&rc_ptr_WorldDominationTour_State_vftable; /*0x7657c3*/
   ComPtr::Release((ComPtr *)this); /*0x7657c9*/
   if ( (a2 & 1) != 0 ) /*0x7657d3*/
     RA2_OPDEL(this); /*0x7657d6*/
@@ -924,7 +924,7 @@ int COMClass::registerObject(int a1, void* a2) {
         do /*0x765a75*/
         {
           ComPtr::Constructor(v8); /*0x765a66*/
-          *(unsigned int *)v8->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765a6b*/
+          *(unsigned int *)v8->__pad_0 = (void *)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765a6b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x765a71*/
           --v9; /*0x765a74*/
         }
@@ -1012,7 +1012,7 @@ int COMClass::unregisterObject(int a2) {
 // 0x7669C0
 namespace gamemd { 
 void* COMClass::connectPoint(int a2) {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x7669c3*/
+  *(unsigned int *)this->__pad_0 = (void *)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x7669c3*/
   ComPtr::Release((ComPtr *)this); /*0x7669c9*/
   if ( (a2 & 1) != 0 ) /*0x7669d3*/
     RA2_OPDEL(this); /*0x7669d6*/
@@ -1093,8 +1093,8 @@ int COMClass::unlockServer(int a2) {
 // 0x76F060
 namespace gamemd { 
 void* ComPtr::Territory_Dtor() {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f060*/
-  return ComPtr::Release(this);
+  *(unsigned int *)this->__pad_0 = (void *)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f060*/
+  return ComPtr::Release(int a1) ;
 }
 }
 // 0x7AE5D0

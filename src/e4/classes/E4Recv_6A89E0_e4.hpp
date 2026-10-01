@@ -29,6 +29,6 @@ struct E4Recv_6A89E0 {
     unsigned int ambientSoundController;
     unsigned int customSound_controller;
 // --- flat members (END) ---
-    char  sub_6A89E0(char a2);  // 0x6A89E0
+    int sub_6A89E0(char a2);  // 0x6A89E0
 };
 } // namespace gamemd

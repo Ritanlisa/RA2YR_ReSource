@@ -23,6 +23,7 @@ struct VectorClass_Scenario {
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
 // --- flat members (END) ---
-    char  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8470
+struct AbstractClass;  // fix_fwd_type_supply
+    AbstractClass * * ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8470
 };
 } // namespace gamemd

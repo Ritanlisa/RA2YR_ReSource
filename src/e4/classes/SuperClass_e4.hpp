@@ -9,6 +9,21 @@ namespace gamemd {
 
 struct SuperClass {
 // --- flat members (BEGIN) ---
+struct HouseClass;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct AnimClass;  // fix_fwd_type_supply
+struct InfantryClass;  // fix_fwd_type_supply
+struct AbstractTypeClass;  // fix_fwd_type_supply
+struct ConnectionPointClass;  // fix_fwd_type_supply
+struct FacingStruct;  // fix_fwd_type_supply
+struct ParticleSystemClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct Tactical;  // fix_fwd_type_supply
+struct ObjectTypeClass;  // fix_fwd_type_supply
+struct WeaponTypeClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

@@ -10,6 +10,10 @@ namespace gamemd {
 
 struct DSurface {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
+struct MouseClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -299,7 +303,7 @@ struct DSurface {
     long long ConstructFromHandle();
     unsigned int * CreateBackBuffer(int a2, void *a2);
     AbstractClass * * CreatePrimary(void *a1);
-    void * loc_4C1AC0(std::codecvt_base * this);
+    void * loc_4C1AC0(std::codecvt_base *a1);
     void BlitStretch(int a1, int a2, int a3);
     void* DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8);
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);

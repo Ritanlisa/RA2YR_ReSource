@@ -31,7 +31,7 @@
 
 // 0x48B720
 namespace gamemd {
-int Terrain::GetTileIndex(int a2)
+int Terrain::GetTileIndex(int a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   return (*((unsigned int *)this->Terrain_field_0x24 + 9 * *((unsigned int *)this->Terrain_field_0x30 + a2)) & 1) != 0
@@ -42,7 +42,7 @@ int Terrain::GetTileIndex(int a2)
 }
 // 0x48B9E0
 namespace gamemd {
-int Terrain::GetTileType(AnimClass * aP1)
+int Terrain::GetTileType(AnimClass * aP1, void *a2_1)
 {
 
   return (*((unsigned int *)this->Terrain_field_0x34 + 6 * *((unsigned int *)this->Terrain_field_0x40 + aP1)) & 1) != 0
@@ -466,7 +466,7 @@ LABEL_44:
 }
 // 0x56C510
 namespace gamemd {
-AbstractClass * * Terrain::ConnectivityGraph()
+AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
 {
 
   Terrain *v1; // ebp
@@ -945,7 +945,7 @@ LABEL_48:
 }
 // 0x56CB90
 namespace gamemd {
-int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
+int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3, void *a4_1)
 {
 
   uint8_t *v4; // ebx
@@ -2287,7 +2287,7 @@ LABEL_141:
 }
 // 0x576770
 namespace gamemd {
-int Terrain::CreateCrater(IUnknown * aP1)
+int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   unsigned short *v2; // edi

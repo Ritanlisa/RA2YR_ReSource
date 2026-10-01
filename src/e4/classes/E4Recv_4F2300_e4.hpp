@@ -23,6 +23,6 @@ struct E4Recv_4F2300 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int ProcessGraphicMenu();  // 0x4F2300
+    ObjectClass * * ProcessGraphicMenu();  // 0x4F2300
 };
 } // namespace gamemd

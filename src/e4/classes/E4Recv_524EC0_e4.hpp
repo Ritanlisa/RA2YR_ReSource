@@ -5,6 +5,7 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+struct Iostream_init;  // fix_fwd_type_supply
 
 namespace gamemd {
 struct E4Recv_524EC0 {

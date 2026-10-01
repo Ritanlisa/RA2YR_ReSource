@@ -9,6 +9,16 @@ namespace gamemd {
 
 struct RulesClass {
 // --- flat members (BEGIN) ---
+struct UnitTypeClass;  // fix_fwd_type_supply
+struct AnimTypeClass;  // fix_fwd_type_supply
+struct ParticleSystemTypeClass;  // fix_fwd_type_supply
+struct WeaponTypeClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct InfantryTypeClass;  // fix_fwd_type_supply
+struct WarheadTypeClass;  // fix_fwd_type_supply
+struct BulletTypeClass;  // fix_fwd_type_supply
+struct SHPStruct;  // fix_fwd_type_supply
+struct INIClass;  // fix_fwd_type_supply
     unsigned int DetailMinFrameRateNormal;  // 0x0
     void *q4;  // 0x4
     unsigned int DetailBufferZoneWidth;  // 0x8

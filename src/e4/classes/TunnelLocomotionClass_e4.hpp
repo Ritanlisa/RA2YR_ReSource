@@ -8,6 +8,9 @@ namespace gamemd {
 
 struct TunnelLocomotionClass {
 // --- flat members (BEGIN) ---
+struct ILocomotion;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct State;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     unsigned int Owner;  // 0x8

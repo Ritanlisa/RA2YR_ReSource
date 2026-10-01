@@ -16,6 +16,6 @@ struct E4Recv_41FD50 {
     unsigned int q224;  // 0x224
     unsigned int q548;  // 0x548
 // --- flat members (END) ---
-    int  sub_41FD50(int a2);  // 0x41FD50
+    int sub_41FD50(int a2);  // 0x41FD50
 };
 } // namespace gamemd

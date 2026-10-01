@@ -44,9 +44,6 @@ int   g_TriggerClassCount = 0;             // 0xA83C78
 // (declared in ida_globals.h; zero-init matches nullptr)
 int   g_GameModeOptions = 0;               // 0xA8EB60
 int   g_LoadScreenFlag = 0;                // 0x8A00A0
-extern int   dword_81C1D0;              // 0x81C1D0 -- CD availability (globals.cpp)
-extern int   dword_A8E950;              // 0xA8E950 -- CD drive count (globals.cpp)
-extern void* dword_A8E8E8;              // 0xA8E8E8 -- CD drive letters
 
 // Palette buffers (IDA addresses)
 static uint8_t byte_886380[768];           // 0x886380 -- UNITSNO palette
@@ -62,10 +59,6 @@ static int    dword_B43184 = 1;            // 0xB43184
 static int    dword_B43180 = 0;            // 0xB43180
 
 // Extern globals
-extern bool g_Is16BitMode;               // 0x8175B0
-extern bool byte_89E3A0;                  // 0x89E3A0
-extern bool g_DDraw_Active;               // 0xA8ED80
-extern uint32_t g_Audio_MixerEnabled;    // 0x840A70 (defined in globals.cpp)
 
 // Extern palette globals (defined here, used by InitGame)
 extern void* DSurface_Primary;            // 0x887308 (defined in ddraw_init.cpp)
@@ -82,12 +75,8 @@ void* FileSystem_GRFXTXT_PAL = nullptr;    // 0xA8F790
 void* FileSystem_GRFXTXT_Convert = nullptr; // 0xA8F798
 void* FileSystem_GRFXTXT_SHP = nullptr;    // 0xA8F794
 // Extern from other modules
-extern void* WWMouseClass_Instance;       // 0x887640 (globals.cpp)
-extern void* g_BinkMoviePlayer;           // 0x87F770 (globals.cpp)
-extern void* TacticalClass_Instance;      // 0x887324 (globals.cpp)
 
 // CCINIClass vtable (IDA 0x7E1AF4)
-extern const void* CCINIClass_Vtable;
 
 // ============================================================
 // IDA: init_stubs.cpp -- all InitGame dependency stubs

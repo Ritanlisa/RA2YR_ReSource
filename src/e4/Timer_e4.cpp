@@ -12,7 +12,7 @@
 
 // 0x46B640
 namespace gamemd {
-void * Timer::Start(DynamicVector * aP1)
+void * Timer::Start(DynamicVector * aP1, void *a2_1)
 {
 
   *(unsigned int *)this->__pad_0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
@@ -48,7 +48,7 @@ int Timer::StartDouble(double a2)
 }
 // 0x4F1B00
 namespace gamemd {
-DWORD * Timer::Init( DWORD a2)
+DWORD * Timer::Init(DWORD a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
@@ -59,7 +59,7 @@ DWORD * Timer::Init( DWORD a2)
 }
 // 0x4F1B20
 namespace gamemd {
-int Timer::GetRemainingMs()
+int Timer::GetRemainingMs(void *a1_1)
 {
 
   int v1; // edi
@@ -78,7 +78,7 @@ int Timer::GetRemainingMs()
 }
 // 0x54F720
 namespace gamemd {
-DWORD * Timer::PumpMessages()
+DWORD * Timer::PumpMessages(void *a1_1)
 {
 
   int v2; // eax
@@ -104,7 +104,7 @@ DWORD * Timer::PumpMessages()
 }
 // 0x5B1E40
 namespace gamemd {
-int Timer::GetHighPrecision()
+int Timer::GetHighPrecision(void *a1_1)
 {
 
   int result; // eax

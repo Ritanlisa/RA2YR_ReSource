@@ -24,7 +24,7 @@
 
 // 0x431F10
 namespace gamemd {
-char File::IsReady( int a2)
+char File::IsReady(int a2, void *a2_2)
 {
 
   int result; // eax
@@ -201,7 +201,7 @@ LABEL_24:
 }
 // 0x4CB920
 namespace gamemd {
-char File::Dispatch()
+char File::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int16_t v2; // ax
@@ -236,7 +236,7 @@ char File::Dispatch()
 }
 // 0x5BD570
 namespace gamemd {
-unsigned int * File::LoadFileHVA(int a2)
+unsigned int * File::LoadFileHVA(int a2, void *a2_2)
 {
 
   this->__pad_0[0] = (unsigned int)((unsigned int *)(0));
@@ -251,7 +251,7 @@ unsigned int * File::LoadFileHVA(int a2)
 }
 // 0x5BD5C0
 namespace gamemd {
-AbstractClass * * File::ParseFileHVA(int a2)
+AbstractClass * * File::ParseFileHVA(int a2, void *a2_2)
 {
 
   int v3; // esi
@@ -337,7 +337,7 @@ LABEL_15:
 }
 // 0x625AF0
 namespace gamemd {
-File * * File::LoadPaletteData(ObjectClass * aP1)
+File * * File::LoadPaletteData(ObjectClass * aP1, void *a2_1)
 {
 
   u_short v3; // cx
@@ -603,7 +603,7 @@ LABEL_43:
 }
 // 0x755CD0
 namespace gamemd {
-unsigned int * File::LoadFileVXL(int a2, int a3)
+unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_2)
 {
 
   this->__pad_0[0] = 0; /*0x755cd9*/
@@ -837,7 +837,7 @@ LABEL_15:
 }
 // 0x7C12B0
 namespace gamemd {
-int File::ParseAudioFileRIFF()
+int File::ParseAudioFileRIFF(void *a1_1)
 {
 
   File *v3; // edi

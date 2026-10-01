@@ -36,7 +36,7 @@
 
 // 0x48B390
 namespace gamemd {
-int EventClass::serializeEvent()
+int EventClass::serializeEvent(void *a1_1)
 {
 
   int result; // eax
@@ -112,7 +112,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 }
 // 0x4C66C0
 namespace gamemd {
-int EventClass::AddEvent( int a2, uint8_t a3)
+int EventClass::AddEvent(int a2, uint8_t a3, void *a3_2)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
@@ -135,7 +135,7 @@ int EventClass::AddEvent( int a2, uint8_t a3)
 }
 // 0x4C6720
 namespace gamemd {
-int EventClass::Add2( AnimClass * aP1, uint8_t a3, IUnknown * aP3)
+int EventClass::Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c673c*/
@@ -159,7 +159,7 @@ int EventClass::Add2( AnimClass * aP1, uint8_t a3, IUnknown * aP3)
 }
 // 0x4C6970
 namespace gamemd {
-int EventClass::AddEventEx( SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
+int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c698c*/
@@ -185,7 +185,7 @@ int EventClass::AddEventEx( SelectClass_StripClass_SidebarClass * aP1, uint8_t a
 }
 // 0x4C6AE0
 namespace gamemd {
-int EventClass::Init( IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
+int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1)
 {
 
   this->Debug::Log(); /*0x4c6afc*/
@@ -604,7 +604,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
 
 // 0x40BAE0
 namespace gamemd {
-char EventClass::checkCondition(int a2, unsigned int * a3)
+char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
 {
 
   unsigned int *v4; // edi
@@ -676,7 +676,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
 // 0x40BD00
 namespace gamemd {
-unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
+unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2, void *a3_1)
 {
 
   this->EventClass_field_0x4 = 0; /*0x40bd0b*/

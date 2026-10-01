@@ -38,7 +38,7 @@ struct FileEntryClass {
 // CSP: LoadOptions matched via T1+T3
 class LoadOptions {
 public:
-    LoadOptions(); // 0x558740
+    const char * GetExtension(); // 0x558740
     ~LoadOptions();
 
     // --- Lifecycle ---

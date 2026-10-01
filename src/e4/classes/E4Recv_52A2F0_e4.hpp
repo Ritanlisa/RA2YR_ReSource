@@ -10,6 +10,6 @@ struct E4Recv_52A2F0 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    float *  sub_52A2F0(float * a2, float Source, char ** a4, float * a5);  // 0x52A2F0
+    Color * * sub_52A2F0(float * a2, float Source, char ** a4, float * a5);  // 0x52A2F0
 };
 } // namespace gamemd

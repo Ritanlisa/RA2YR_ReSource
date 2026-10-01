@@ -27,6 +27,7 @@ struct VectorClass_Ptr {
     unsigned int m_C;
     unsigned int __tail_10;
 // --- flat members (END) ---
-    char  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
+struct AbstractClass;  // fix_fwd_type_supply
+    AbstractClass * * ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
 };
 } // namespace gamemd

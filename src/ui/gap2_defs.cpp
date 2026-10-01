@@ -127,7 +127,7 @@ void* MouseClass::applyCursorSettings(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40d853*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_MixFileClass___vftable; /*0x40d856*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_MixFileClass___vftable; /*0x40d856*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40d860*/
   {
     RA2_OPDEL(v3); /*0x40d868*/
@@ -273,7 +273,7 @@ namespace gamemd {
 void* CheckListClass::QueryInterface(int a2) {
   void *Clamped; // edi
 
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&CheckListClass_vftable; /*0x4886e3*/
+  *(unsigned int *)this->__pad_0 = (void *)&CheckListClass_vftable; /*0x4886e3*/
   while ( this->CheckListClass_field_0x44 ) /*0x4886e9*/
   {
     Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
@@ -428,7 +428,7 @@ int DropListClass::ScrollDown(int a1) {
 // 0x4B55F0
 namespace gamemd { 
 void* DropListClass::QueryInterface(int a2) {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&DropListClass_vftable; /*0x4b55f9*/
+  *(unsigned int *)this->__pad_0 = (void *)&DropListClass_vftable; /*0x4b55f9*/
   ListClass::Destruct((ListClass *)((char *)&this->q0446)); /*0x4b55ff*/
   ShapeButtonClass::Destructor((int)&this->DropListClass_field_0x50); /*0x4b5607*/
   DropListClass::Constructor(this); /*0x4b560e*/
@@ -440,7 +440,7 @@ void* DropListClass::QueryInterface(int a2) {
 // 0x4C30B0
 namespace gamemd { 
 int DropListClass::Constructor() {
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&EditClass_vftable; /*0x4c30b3*/
+  *(unsigned int *)this->__pad_0 = (void *)&EditClass_vftable; /*0x4c30b3*/
   if ( COMObject::IsPrimaryInstance((GadgetClass *)this) ) /*0x4c30b9*/
     COMObject::DeactivateGlobal((ShpButtonClass *)this); /*0x4c30c4*/
 // 0x4e1390
@@ -1044,7 +1044,7 @@ void* CheckListClass::toggleItem(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5571c3*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_LineTrail___vftable; /*0x5571c6*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_LineTrail___vftable; /*0x5571c6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5571d0*/
   {
     RA2_OPDEL(v3); /*0x5571d8*/
@@ -1350,7 +1350,7 @@ void* ListClass::Destru_vt00(int a2) {
   void *v5; // eax
 
   v3 = this->Enabled; /*0x558066*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&ListClass_vftable; /*0x558069*/
+  *(unsigned int *)this->__pad_0 = (void *)&ListClass_vftable; /*0x558069*/
   if ( v3 ) /*0x558071*/
   {
     v4 = this->u32_118; /*0x55807c*/
@@ -1365,7 +1365,7 @@ void* ListClass::Destru_vt00(int a2) {
   ShapeButtonClass::Destructor((int)this + 184); /*0x5580c3*/
   ShapeButtonClass::Destructor((int)&this->u32_88); /*0x5580cb*/
   v5 = (void *)this->u32_38; /*0x5580d0*/
-  this->u32_D = &(void*)(void*)&VectorClass_unsigned_short_const___vftable; /*0x5580d3*/
+  this->u32_D = (void *)&VectorClass_unsigned_short_const___vftable; /*0x5580d3*/
   if ( v5 && this->u32_41 ) /*0x5580de*/
   {
     RA2_OPDEL(v5); /*0x5580e4*/
@@ -1385,7 +1385,7 @@ void* CheckListClass::drawList(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x558133*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_unsigned_short_const___vftable; /*0x558136*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_unsigned_short_const___vftable; /*0x558136*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x558140*/
   {
     RA2_OPDEL(v3); /*0x558148*/
@@ -1702,8 +1702,8 @@ int MouseClass::LoadGameAssets() {
         if ( this ) /*0x5be09f*/
         {
           MouseClass::drawCursor(&v72); /*0x5be0a8*/
-          *this = (int)&(void*)(void*)&MouseClass_vftable; /*0x5be0ad*/
-          *(&this->q8806) = (int)&(void*)(void*)&MouseClass_vftable; /*0x5be0b4*/
+          *this = (int)(void *)&MouseClass_vftable; /*0x5be0ad*/
+          *(&this->q8806) = (int)(void *)&MouseClass_vftable; /*0x5be0b4*/
         }
         v14 = &this->u32_15A8; /*0x5be0be*/
         v74 = 4; /*0x5be0c4*/
@@ -1842,7 +1842,7 @@ int MouseClass::LoadGameAssets() {
               do /*0x5be2ff*/
               {
                 SubzoneHashVector::Construct(0, 0); /*0x5be2e2*/
-                *v40 = &(void*)(void*)&DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x5be2e7*/
+                *v40 = (void *)&DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x5be2e7*/
                 v40[5] = 10; /*0x5be2ed*/
                 v40[4] = 0; /*0x5be2f4*/
                 v40 += 6; /*0x5be2fb*/
@@ -2265,9 +2265,9 @@ int MouseClass::DrawCursor() {
 namespace gamemd { 
 void* MouseClass::drawCursor(int a1) {
   UI_Init((int)this, a1); /*0x5be9b8*/
-  this->u32_5518 = &(void*)(void*)&INoticeSink_vftable; /*0x5be9bd*/
-  this->MouseClass_field_0x0 = &(void*)(void*)&TabClass_vftable; /*0x5be9c7*/
-  this->u32_5518 = &(void*)(void*)&TabClass_vftable; /*0x5be9cd*/
+  this->u32_5518 = (void *)&INoticeSink_vftable; /*0x5be9bd*/
+  this->MouseClass_field_0x0 = (void *)&TabClass_vftable; /*0x5be9c7*/
+  this->u32_5518 = (void *)&TabClass_vftable; /*0x5be9cd*/
   return &this->MouseClass_field_0x0; /*0x5be9d9*/
 }
 }
@@ -2280,7 +2280,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
   this->MouseClass_field_0x8 = (void *)a2; /*0x5bea41*/
   IDA_LOBYTE(this->MouseClass_field_0xC) = 1; /*0x5bea44*/
   IDA_BYTE1(this->MouseClass_field_0xC) = 0; /*0x5bea48*/
-  this->MouseClass_field_0x0 = &(void*)(void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x5bea4c*/
+  this->MouseClass_field_0x0 = (void *)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x5bea4c*/
   if ( a2 ) /*0x5bea52*/
   {
     if ( a3 ) /*0x5bea5a*/
@@ -2296,7 +2296,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
       IDA_BYTE1(this->MouseClass_field_0xC) = 1; /*0x5bea86*/
     }
   }
-  this->MouseClass_field_0x0 = &(void*)(void*)&DynamicVectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x5bea8a*/
+  this->MouseClass_field_0x0 = (void *)&DynamicVectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x5bea8a*/
   this->MouseClass_field_0x14 = 10; /*0x5bea90*/
   this->MouseClass_field_0x10 = 0; /*0x5bea97*/
   return &this->MouseClass_field_0x0; /*0x5beaa0*/
@@ -3283,7 +3283,7 @@ int SidebarClass::Load(int a1) {
       if ( this != (RadarClass *)-4700 ) /*0x6568ee*/
       {
         VectorClass::PointConstructor((VectorClass *)&this->RadarClass_field_0x125C, 0, 0); /*0x6568f4*/
-        *p_RadarClass_field_0x125C = (VectorClass *)&(void*)(void*)&DynamicVectorClass_Point2D_vftable; /*0x6568f9*/
+        *p_RadarClass_field_0x125C = (VectorClass *)(void *)&DynamicVectorClass_Point2D_vftable; /*0x6568f9*/
         *(unsigned int *)&this->__pad_1264[12] = 10; /*0x6568ff*/
         *(unsigned int *)&this->__pad_1264[8] = 0; /*0x656906*/
       }
@@ -3298,7 +3298,7 @@ int SidebarClass::Load(int a1) {
           if ( this != (RadarClass *)-4644 ) /*0x65699e*/
           {
             VectorClass::CellConstructor((VectorClass *)&this->RadarClass_field_0x1224, 0, 0); /*0x6569a4*/
-            *p_RadarClass_field_0x1224 = (VectorClass *)&(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x6569a9*/
+            *p_RadarClass_field_0x1224 = (VectorClass *)(void *)&DynamicVectorClass_Cell_vftable; /*0x6569a9*/
             *(unsigned int *)&this->__pad_122C[12] = 10; /*0x6569af*/
             *(unsigned int *)&this->__pad_122C[8] = 0; /*0x6569b6*/
           }
@@ -3317,7 +3317,7 @@ int SidebarClass::Load(int a1) {
                 *(unsigned int *)v18 = 0; /*0x656a39*/
                 v18[4] = 1; /*0x656a3b*/
                 v18[5] = 0; /*0x656a3e*/
-                *((unsigned int *)v18 - 2) = &(void*)(void*)&DynamicVectorClass_Point2D_vftable; /*0x656a41*/
+                *((unsigned int *)v18 - 2) = (void *)&DynamicVectorClass_Point2D_vftable; /*0x656a41*/
                 *((unsigned int *)v18 + 3) = 10; /*0x656a48*/
                 *((unsigned int *)v18 + 2) = 0; /*0x656a4f*/
               }
@@ -3783,7 +3783,7 @@ void* TabClass::initTabData() {
   this->u32_14EA0 = 0; /*0x6a4ecd*/
   this->u32_15450 = 0; /*0x6a4ed3*/
   this->u32_15454 = 0; /*0x6a4ed9*/
-  *(unsigned int *)this = &(void*)(void*)&SidebarClass_vftable; /*0x6a4edf*/
+  *(unsigned int *)this = (void *)&SidebarClass_vftable; /*0x6a4edf*/
   v4 = &this->q1544; /*0x6a4ee5*/
   v5 = 4; /*0x6a4eeb*/
   do /*0x6a4f07*/
@@ -6199,18 +6199,18 @@ void* TabClass::Constructor() {
   int v35; // eax
 
   TabClass::initTabData((char *)this); /*0x6cfe2b*/
-  this->u32_5518 = &(void*)(void*)&INoticeSink_vftable; /*0x6cfe3c*/
+  this->u32_5518 = (void *)&INoticeSink_vftable; /*0x6cfe3c*/
   TabClass::initStripClass((TabClass *)((char *)this + 21788)); /*0x6cfe42*/
   this->u32_552C = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6cfe4e*/
   this->u32_5534 = 0; /*0x6cfe54*/
   v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6cfe5a*/
   this->u32_5540 = 0; /*0x6cfe60*/
   this->u32_5538 = v2; /*0x6cfe66*/
-  this->u32_5518 = &(void*)(void*)&TabClass_vftable; /*0x6cfe6e*/
+  this->u32_5518 = (void *)&TabClass_vftable; /*0x6cfe6e*/
   this->u32_5544 = 1; /*0x6cfe74*/
   this->u32_5545 = 1; /*0x6cfe7a*/
   this->u32_5546 = 1; /*0x6cfe80*/
-  this->TabClass_field_0x0 = &(void*)(void*)&TabClass_vftable; /*0x6cfe86*/
+  this->TabClass_field_0x0 = (void *)&TabClass_vftable; /*0x6cfe86*/
   v3 = 0; /*0x6cfe8c*/
   v4 = (const char **)off_8427D0; /*0x6cfe8e*/
   while ( strcmp(*v4, aAttackmove) ) /*0x6cfec5*/
@@ -7057,7 +7057,7 @@ void* ToolTipClass::compareString(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x724ef3*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724ef6*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_ToolTip_const___vftable; /*0x724ef6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x724f00*/
   {
     RA2_OPDEL(v3); /*0x724f08*/
@@ -7085,7 +7085,7 @@ int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
   this->u32_41 = 0; /*0x72a485*/
   this->u32_44 = 0; /*0x72a488*/
   this->u32_48 = 0; /*0x72a48b*/
-  *(unsigned int *)this = &(void*)(void*)&TextLabelClass_vftable; /*0x72a48e*/
+  *(unsigned int *)this = (void *)&TextLabelClass_vftable; /*0x72a48e*/
   return this; /*0x72a496*/
 }
 }
@@ -7314,7 +7314,7 @@ void* MouseClass::Construct(int a1, int a2) {
 
   pad_2C = this->__pad_2C; /*0x7b8742*/
   *(unsigned int *)&this->__pad_18[12] = a1; /*0x7b8745*/
-  this->MouseClass_field_0x0 = &(void*)(void*)&Mouse_vftable; /*0x7b8748*/
+  this->MouseClass_field_0x0 = (void *)&Mouse_vftable; /*0x7b8748*/
   this->MouseClass_field_0x4 = 0; /*0x7b874e*/
   this->MouseClass_field_0x8 = 0; /*0x7b8751*/
   this->MouseClass_field_0xC = (void *)-1; /*0x7b8754*/
@@ -7356,7 +7356,7 @@ void* MouseClass::Construct(int a1, int a2) {
   *(unsigned int *)&this->__pad_74[28] = -1; /*0x7b8841*/
   *(unsigned int *)&this->__pad_74[32] = 0; /*0x7b8847*/
   *(unsigned int *)&this->__pad_74[24] = v9; /*0x7b884d*/
-  this->MouseClass_field_0x0 = &(void*)(void*)&WWMouseClass_vftable; /*0x7b8850*/
+  this->MouseClass_field_0x0 = (void *)&WWMouseClass_vftable; /*0x7b8850*/
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8867*/
     Debug::Log(); /*0x7b8878*/
   MouseClass::CalcConfiningRect(this); /*0x7b8882*/
@@ -7378,7 +7378,7 @@ int WWMouseClass::loadCursorImages() {
   int (__thiscall ***WWMouseClass_field_0x58)(unsigned int, int); // ecx
   MouseClass *WWMouseClass_field_0x6C; // ecx
 
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&WWMouseClass_vftable; /*0x7b88d9*/
+  *(unsigned int *)this->__pad_0 = (void *)&WWMouseClass_vftable; /*0x7b88d9*/
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b88f0*/
     Debug::Log(); /*0x7b8901*/
   if ( dword_B78164 == this ) /*0x7b8912*/
@@ -7404,7 +7404,7 @@ int WWMouseClass::loadCursorImages() {
                1);
     this->WWMouseClass_field_0x6C = 0; /*0x7b8954*/
   }
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&Mouse_vftable; /*0x7b8957*/
+  *(unsigned int *)this->__pad_0 = (void *)&Mouse_vftable; /*0x7b8957*/
   return result; /*0x7b895d*/
 }
 }

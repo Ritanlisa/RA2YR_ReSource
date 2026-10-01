@@ -20,16 +20,18 @@ struct MapSeedClass_18 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ClearBuffer(void *a1 = 0);  // 0x5AC4C0
-    int  GetCell(int a2);  // 0x5AC510
-    char  AddRef(int a2);  // 0x5ACA60
-    char  Release(int a2, unsigned int * a3);  // 0x5ACAA0
-    bool ddtor();  // 0x5ACB50
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x5ACBE0
-    int  FindItem(unsigned int * a2);  // 0x5ACC90
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x5AD430
-    DynamicVector *  Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2);  // 0x5AD480
-    unsigned int  PointerToIndex(int a2);  // 0x5AC4F0
-    unsigned int  Generate(int a2);  // 0x5ACBC0
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    void ClearBuffer(void *a1_1);  // 0x5AC4C0
+    int GetCell(int a2);  // 0x5AC510
+    char AddRef(int a2);  // 0x5ACA60
+    char Release(int a2, unsigned int * a3);  // 0x5ACAA0
+    void ddtor();  // 0x5ACB50
+    char SetCapacity(int a2, unsigned int * a3);  // 0x5ACBE0
+    int FindItem(unsigned int * a2);  // 0x5ACC90
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5AD430
+    DynamicVector * Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2);  // 0x5AD480
+    unsigned int PointerToIndex(int a2);  // 0x5AC4F0
+    unsigned int Generate(int a2);  // 0x5ACBC0
 };
 } // namespace gamemd

@@ -15,16 +15,18 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    char  Release(int a2, int * a3);  // 0x4E0840
-    char  SetCapacity(int a2, int * a3);  // 0x4E0B10
-    char  AddRef(int a2);  // 0x4E07E0
-    int  FindItemIndex(unsigned int * a2);  // 0x4E0CA0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4E0D80
-    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x4E0E20
-    unsigned int *  Clear(unsigned int * a2, int a3);  // 0x4E0250
-    unsigned int  GetCapacity(int a2);  // 0x4E09E0
-    void Destroy(void *a1 = 0);  // 0x4E0AB0
-    unsigned int  GetItemIndex(int a2);  // 0x4E0AF0
-    void ddtor(void *a1 = 0);  // 0x4E0950
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+    AbstractClass * * Release(int a2, int * a3);  // 0x4E0840
+    AbstractClass * * SetCapacity(int a2, int * a3);  // 0x4E0B10
+    char AddRef(int a2);  // 0x4E07E0
+    int FindItemIndex(unsigned int * a2);  // 0x4E0CA0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4E0D80
+    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x4E0E20
+    unsigned int * Clear(unsigned int * a2, int a3);  // 0x4E0250
+    unsigned int GetCapacity(int a2);  // 0x4E09E0
+    void Destroy(void *a1_1);  // 0x4E0AB0
+    unsigned int GetItemIndex(int a2);  // 0x4E0AF0
+    void ddtor(void *a1_1);  // 0x4E0950
 };
 } // namespace gamemd

@@ -1447,7 +1447,7 @@ int TeamTypeClass::GetObjectSize()
 
 // 0x6F21B0
 namespace gamemd {
-void TeamTypeClass_28::ClearBuffer()
+void TeamTypeClass_28::ClearBuffer(void *a1_1)
 {
 
   int v2; // eax
@@ -1480,7 +1480,7 @@ unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 
 // 0x6F2210
 namespace gamemd {
-unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
+unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3, void *a3_2)
 {
 
   int v3; // eax
@@ -1535,7 +1535,7 @@ char TeamTypeClass_28::AddRef(int a2)
 
 // 0x6F2400
 namespace gamemd {
-void TeamTypeClass_28::ddtor()
+void TeamTypeClass_28::ddtor(void *a1_1, void *a2_1)
 {
 
   int v2; // eax
@@ -1554,7 +1554,7 @@ void TeamTypeClass_28::ddtor()
 
 // 0x6F2440
 namespace gamemd {
-int TeamTypeClass_28::Read(unsigned int * a2)
+int TeamTypeClass_28::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax
@@ -1637,7 +1637,7 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
 
 // 0x6F2720
 namespace gamemd {
-DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2)
+DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax

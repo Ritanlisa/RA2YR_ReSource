@@ -17,6 +17,6 @@ struct E4Recv_58D120 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_58D120(int a2, int a3);  // 0x58D120
+    int sub_58D120(int a2, int a3);  // 0x58D120
 };
 } // namespace gamemd

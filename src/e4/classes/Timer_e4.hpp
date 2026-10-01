@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Timer {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -82,18 +83,18 @@ struct Timer {
     // dup-member: unsigned int DisableHighPrecision;
     unsigned int ReadTSC;
 // --- flat members (END) ---
-    void * Start(DynamicVector * aP1, void *a1 = 0);  // 0x46B640
-    char  StartDouble(double a2);  // 0x4A5240
-    DWORD *  Init(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x4F1B00
-    int GetRemainingMs(void *a1 = 0);  // 0x4F1B20
-    HWND PumpMessages(void *a1 = 0);  // 0x54F720
-    double GetHighPrecision(void *a1 = 0);  // 0x5B1E40
+    void * Start(DynamicVector * aP1, void *a2_1);  // 0x46B640
+    int StartDouble(double a2);  // 0x4A5240
+    DWORD * Init(DWORD a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x4F1B00
+    int GetRemainingMs(void *a1_1);  // 0x4F1B20
+    DWORD * PumpMessages(void *a1_1);  // 0x54F720
+    int GetHighPrecision(void *a1_1);  // 0x5B1E40
     int GetElapsed();  // 0x5F1390
     void * EnableHighPrecision();  // 0x5D5870
     MMRESULT DisableHighPrecision();  // 0x5D5880
     int UpdateDelta();  // 0x6C8820
     DWORD GetTicks();  // 0x6C8C40
-    char  SetFlag(char a2);  // 0x7500B0
+    char SetFlag(char a2);  // 0x7500B0
     unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064
 };
 } // namespace gamemd

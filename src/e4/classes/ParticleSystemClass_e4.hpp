@@ -8,6 +8,9 @@ namespace gamemd {
 
 struct ParticleSystemClass {
 // --- flat members (BEGIN) ---
+struct ParticleSystemTypeClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

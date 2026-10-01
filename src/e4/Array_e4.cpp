@@ -62,7 +62,7 @@ int Array::FindValue(IUnknown * aP1)
 }
 // 0x63E590
 namespace gamemd {
-int Array::RemoveAt( int a2)
+int Array::RemoveAt(int a2, void *a2_2)
 {
 
   char *Array_field_0x10; // edx
@@ -96,7 +96,7 @@ int Array::RemoveAt( int a2)
 }
 // 0x65AD40
 namespace gamemd {
-int Array::Get( int a2)
+int Array::Get(int a2, void *a2_2)
 {
 
   return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
@@ -105,7 +105,7 @@ int Array::Get( int a2)
 }
 // 0x65ADF0
 namespace gamemd {
-int Array::ContainsValue( IUnknown * aP1)
+int Array::ContainsValue(IUnknown * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -141,7 +141,7 @@ LABEL_6:
 }
 // 0x7490D0
 namespace gamemd {
-int Array::Zero()
+int Array::Zero(void *a1_1)
 {
 
   int result; // eax
@@ -192,7 +192,7 @@ void Array::ByteSwap()
 }
 // 0x763980
 namespace gamemd {
-int Array::GetElement( CampaignScore * aP1)
+int Array::GetElement(CampaignScore * aP1, void *a2_1)
 {
 
   if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)((int))this->Array_field_0x38 ) /*0x76398b*/
@@ -204,7 +204,7 @@ int Array::GetElement( CampaignScore * aP1)
 }
 // 0x7ACD30
 namespace gamemd {
-int Array::CleanupArrayWOL()
+int Array::CleanupArrayWOL(void *a1_1)
 {
 
   int i; // edi
@@ -222,7 +222,7 @@ int Array::CleanupArrayWOL()
 }
 // 0x7AD790
 namespace gamemd {
-AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
+AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2, void *a3_1)
 {
 
   ObjectClass * v4;
@@ -347,7 +347,7 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int) a4)
 
 // 0x49B720
 namespace gamemd {
-int Array::Cleanup()
+int Array::Cleanup(void *a1_1)
 {
 
   int result; // eax

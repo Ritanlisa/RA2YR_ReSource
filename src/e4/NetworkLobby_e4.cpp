@@ -2143,7 +2143,7 @@ int NetworkLobby::InitLobbyDropdowns(SessionClass * hDlg)
 }
 // 0x5EA2A0
 namespace gamemd {
-void * NetworkLobby::Dispatch()
+void * NetworkLobby::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int i; // esi

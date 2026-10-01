@@ -29,6 +29,6 @@ struct E4Recv_758AD0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int  sub_758AD0(int * a2);  // 0x758AD0
+    AbstractClass * * sub_758AD0(int * a2);  // 0x758AD0
 };
 } // namespace gamemd

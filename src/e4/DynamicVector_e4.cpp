@@ -12,7 +12,7 @@
 
 // 0x5AC430
 namespace gamemd {
-unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
+unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
 {
 
   int v3; // eax
@@ -57,7 +57,7 @@ LABEL_8:
 }
 // 0x413A70
 namespace gamemd {
-char DynamicVector::AddItem(VectorClass_flat * aP1)
+char DynamicVector::AddItem(VectorClass_flat * aP1, void *a2_1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -92,7 +92,7 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
 
 // 0x42F670
 namespace gamemd {
-unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2)
+unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1)
 {
 
   int v4; // eax
@@ -127,7 +127,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 
 // 0x45ADD0
 namespace gamemd {
-char DynamicVector::RemoveItem(IUnknown * aP1)
+char DynamicVector::RemoveItem(IUnknown * aP1, void *a2_1)
 {
 
   char *DynamicVector_field_0x10; // edx
@@ -163,7 +163,7 @@ char DynamicVector::RemoveItem(IUnknown * aP1)
 
 // 0x477EC0
 namespace gamemd {
-char DynamicVector::Add_Alt(VectorClass_flat * aP1)
+char DynamicVector::Add_Alt(VectorClass_flat * aP1, void *a2_1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -198,7 +198,7 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
 
 // 0x49FAE0
 namespace gamemd {
-int DynamicVector::GetOrGrow(DynamicVector * aP1)
+int DynamicVector::GetOrGrow(DynamicVector * aP1, void *a2_1)
 {
 
   int DynamicVector_field_0x8; // edi
@@ -362,7 +362,7 @@ char DynamicVector::GrowCapacity()
 
 // 0x67A520
 namespace gamemd {
-int DynamicVector::Read(TechnoTypeClass * aP1)
+int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
 {
 
   int v3; // ecx
@@ -448,7 +448,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 
 // 0x67AD80
 namespace gamemd {
-char DynamicVector::Add2(VectorClass_flat * aP1)
+char DynamicVector::Add2(VectorClass_flat * aP1, void *a2_1, void *a3_1, void *a4_1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -483,7 +483,7 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
 
 // 0x67C360
 namespace gamemd {
-char DynamicVector::RemoveAt(int a2)
+char DynamicVector::RemoveAt(int a2, void *a2_2)
 {
 
   char *DynamicVector_field_0x10; // edx
@@ -543,7 +543,7 @@ char DynamicVector::RemoveAt2(int a2)
 
 // 0x6C6400
 namespace gamemd {
-char DynamicVector::Add(DynamicVector * aP1)
+char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -607,7 +607,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 
 // 0x7AF000
 namespace gamemd {
-char DynamicVector::EnsureCapacity()
+char DynamicVector::EnsureCapacity(void *a1_1, void *a2_1)
 {
 
   int result; // eax

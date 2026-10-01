@@ -3268,7 +3268,7 @@ namespace gamemd {
 int MPCooperative::j__do_always_noconv_codecvt_base_std__MBE_NXZ_17()
 {
 
-  return ScenarioClass::processAI(this);
+  return ScenarioClass::processAI(int a1) ;
 
 }
 } // namespace gamemd

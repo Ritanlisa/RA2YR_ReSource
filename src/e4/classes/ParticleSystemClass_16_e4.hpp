@@ -17,12 +17,13 @@ struct ParticleSystemClass_16 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    int  Write(int a2);  // 0x4E87D0
-    char  AddRef(int a2);  // 0x4EB260
-    char  Release(int a2, unsigned int * a3);  // 0x4EB2A0
-    void ddtor(int a2, int a3);  // 0x4EB350
-    int  Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x4EB380
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4EFD50
-    unsigned int  Read(int a2, void *a1 = 0);  // 0x4EB3C0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Write(int a2);  // 0x4E87D0
+    char AddRef(int a2);  // 0x4EB260
+    char Release(int a2, unsigned int * a3);  // 0x4EB2A0
+    void ddtor(void *a1_1, void *a2_1);  // 0x4EB350
+    int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x4EB380
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EFD50
+    unsigned int Read(int a2, void *a2_2);  // 0x4EB3C0
 };
 } // namespace gamemd

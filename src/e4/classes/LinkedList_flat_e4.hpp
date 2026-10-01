@@ -26,6 +26,8 @@ struct LinkedList_flat {
     unsigned int Debug;
     unsigned int PushFront;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct LinkClass;  // fix_fwd_type_supply
 AbstractClass * * LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4);
 LinkClass * * Append(int a2, void *a2);
 LinkClass * * InsertAfter(int a2);

@@ -32,7 +32,7 @@
 
 // 0x430980
 namespace gamemd {
-void Game::initScenario()
+void Game::initScenario(void *a1_1)
 {
 
   Game *v2; // esi
@@ -1091,7 +1091,7 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
 }
 // 0x67E440
 namespace gamemd {
-int Game::LoadSaved()
+int Game::LoadSaved(void *a1_1)
 {
 
   int COM; // eax
@@ -1429,7 +1429,7 @@ LABEL_39:
 }
 // 0x680F70
 namespace gamemd {
-int Game::validateScenario(unsigned int * a2)
+int Game::validateScenario(unsigned int * a2, void *a2_2)
 {
 
   int v3; // edi
@@ -1739,7 +1739,7 @@ LABEL_16:
 }
 // 0x77F900
 namespace gamemd {
-Coord * * Game::ProcessIdle()
+Coord * * Game::ProcessIdle(void *a1_1)
 {
 
   signed int v1; // ebx
@@ -2225,7 +2225,7 @@ void * sub_53AB50()
 
 // 0x550000
 namespace gamemd {
-int Game::loadCampaignData()
+int Game::loadCampaignData(void *a1_1)
 {
 
   int result; // eax
@@ -2327,7 +2327,7 @@ char Game::Stub3(IUnknown * aP0)
 
 // 0x5B56F0
 namespace gamemd {
-void Game::processStartup()
+void Game::processStartup(void *a1_1)
 {
 
   HWND DlgItem; // eax
@@ -2442,7 +2442,7 @@ int Game::ResetReadyStates()
 
 // 0x67FDE0
 namespace gamemd {
-int Game::readIniSettings()
+int Game::readIniSettings(void *a1_1)
 {
 
   int result; // eax
@@ -2530,7 +2530,7 @@ void * Game::shutdownGame()
 
 // 0x72F440
 namespace gamemd {
-char Game::InitializeToolTipColor()
+char Game::InitializeToolTipColor(void *a1_1)
 {
 
   char result; // al

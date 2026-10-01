@@ -137,7 +137,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
 }
 // 0x403730
 namespace gamemd {
-int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2), void *a2, void *a2_1)( int)
+int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2), void *a2, void *a2_1, void *a2_1, void *a2_2)( int)
 {
 
   int v1; // edx
@@ -170,7 +170,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
 }
 // 0x752680
 namespace gamemd {
-int AudioQueue::FindByData()
+int AudioQueue::FindByData(void *a1_1)
 {
 
   int *result; // eax
@@ -228,7 +228,7 @@ LABEL_10:
 }
 // 0x771620
 namespace gamemd {
-int AudioQueue::Update()
+int AudioQueue::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
 {
 
   int v2; // edi
@@ -291,7 +291,7 @@ LABEL_5:
 }
 // 0x7B1D10
 namespace gamemd {
-int AudioQueue::Cleanup()
+int AudioQueue::Cleanup(void *a1_1)
 {
 
   int v2; // eax
@@ -362,7 +362,7 @@ int AudioQueue::Cleanup()
 }
 // 0x7B20E0
 namespace gamemd {
-unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
+unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1, void *a2_1)
 {
 
   unsigned char *result; // eax
@@ -628,7 +628,7 @@ int AudioQueue::DeactivateAllMatching(int a1, int a2)
 
 // 0x4073C0
 namespace gamemd {
-int AudioQueue::GetNext()
+int AudioQueue::GetNext(void *a1_1)
 {
 
   int result; // eax
@@ -648,7 +648,7 @@ int AudioQueue::GetNext()
 
 // 0x4073E0
 namespace gamemd {
-int AudioQueue::GetNextAlt()
+int AudioQueue::GetNextAlt(void *a1_1)
 {
 
   int result; // eax

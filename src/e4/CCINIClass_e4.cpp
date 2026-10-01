@@ -133,7 +133,7 @@ int CCINIClass::GetDB()
 }
 // 0x4741F0
 namespace gamemd {
-MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
+MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_2)
 {
 
   int File; // ebp

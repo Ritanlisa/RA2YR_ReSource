@@ -8,6 +8,9 @@ namespace gamemd {
 
 struct CCINIClass {
 // --- flat members (BEGIN) ---
+struct AITriggerTypeClass;  // fix_fwd_type_supply
+struct IUnknown;  // fix_fwd_type_supply
+struct MultiplayerGameMode;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -47,7 +50,7 @@ struct CCINIClass {
     int InitFromINIEVA();
     int ReadTypeList(char * a1, CCINIClass * a2);
 CCINIClass();
-     int Load(int a2, char a3, char a4, void *a1 = 0);  // load INI from file
+     MultiplayerGameMode * * Load(int a2, char a3, char a4, void *a4_2);  // load INI from file
 };
 
 } // namespace gamemd

@@ -71,12 +71,12 @@ struct Power {
     unsigned int Timer;
     unsigned char Power_field_0x8;  // 0x8
 // --- flat members (END) ---
-    int  Update(int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x43A5D0
+    int Update(int * a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0
-    void*  ComputeHousePowerChecksum(unsigned int * a2, void *a1 = 0);  // 0x68B940
-    int  FinalizeDrain(int a2, void *a1 = 0);  // 0x4A1C10
-    int  FlagProcess(int a2, void *a1 = 0);  // 0x4A1CA0
-    int TimerProcess(void *a1 = 0);  // 0x4A1D50
-    char  ChangedHouse(char a2, void *a1 = 0);  // 0x750090
+    void* ComputeHousePowerChecksum(unsigned int * a2, void *a2_2);  // 0x68B940
+    int FinalizeDrain(int a2, void *a2_2);  // 0x4A1C10
+    int FlagProcess(int a2, void *a2_2);  // 0x4A1CA0
+    int TimerProcess(void *a1_1);  // 0x4A1D50
+    char ChangedHouse(char a2, void *a2_2);  // 0x750090
 };
 } // namespace gamemd

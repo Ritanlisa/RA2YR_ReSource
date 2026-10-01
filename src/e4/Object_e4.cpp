@@ -38,7 +38,7 @@
 
 // 0x47C3D0
 namespace gamemd {
-int Object::FindClosestObjectCell( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1)
 {
 
   double v4; // st7
@@ -137,7 +137,7 @@ LABEL_5:
 }
 // 0x4F9A90
 namespace gamemd {
-int Object::IsAlliedWithObjectHouse( IUnknown * aP1)
+int Object::IsAlliedWithObjectHouse(IUnknown * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -424,7 +424,7 @@ void sub_5902C0(int a1)
 }
 // 0x5FC380
 namespace gamemd {
-int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
+int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 {
 
   IUnknown * v5;
@@ -711,7 +711,7 @@ void * Object::DrawObject(void ** Block, char a2)
 }
 // 0x62AC30
 namespace gamemd {
-void* * Object::CalculateObjectPlacementPosition(int * a2)
+void* * Object::CalculateObjectPlacementPosition(int * a2, void *a2_2)
 {
 
   int *result; // eax
@@ -1660,7 +1660,7 @@ int Object::ComputeAllocationSize()
 
 // 0x53E420
 namespace gamemd {
-void ** Object::RemoveObjectArray()
+void ** Object::RemoveObjectArray(void *a1_1)
 {
 
   void **result; // eax
@@ -1694,7 +1694,7 @@ void ** Object::RemoveObjectArray()
 
 // 0x5F5230
 namespace gamemd {
-int Object::Unlink()
+int Object::Unlink(void *a1_1)
 {
 
   int result; // eax

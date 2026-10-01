@@ -3049,11 +3049,11 @@ int AircraftClass::Destruct()
   AircraftClass *v16; // [esp+10h] [ebp-4h] BYREF
 
   p_vtable1 = (AbstractClass *)&((unsigned int *)this)[0]; /*0x414087*/
-  this->FootClass = &(void*)(void*)&AircraftClass_vftable; /*0x41408a*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&AircraftClass_vftable; /*0x414090*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&AircraftClass_vftable; /*0x414097*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&AircraftClass_vftable; /*0x41409e*/
-  *(unsigned int *)this->__pad_6C0 = &(void*)(void*)&AircraftClass_vftable; /*0x4140a4*/
+  this->FootClass = (void *)&AircraftClass_vftable; /*0x41408a*/
+  ((unsigned int *)this)[0] = (void *)&AircraftClass_vftable; /*0x414090*/
+  ((unsigned int *)this)[0] = (void *)&AircraftClass_vftable; /*0x414097*/
+  ((unsigned int *)this)[0] = (void *)&AircraftClass_vftable; /*0x41409e*/
+  *(unsigned int *)this->__pad_6C0 = (void *)&AircraftClass_vftable; /*0x4140a4*/
   if ( byte_A8E9A0 ) /*0x4140b5*/
   {
     Type = this->Type; /*0x4140b7*/
@@ -3165,10 +3165,10 @@ int AircraftClass::IsHeightAboveThreshold()
   v1 = this->Type; /*0x41b929*/
   if ( v1 != IDA_LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b93d*/
 // 0x4de620
-    return ObjectClass::IsHeightAboveThreshold_0(this); /*0x41b941*/
-  if ( !this->locomotor ) /*0x41b948*/
+    return ObjectClass::IsHeightAboveThreshold_0(int a1) ; /*0x41b941*/
+  if ( !a1->locomotor ) /*0x41b948*/
     WinAPI::Wrapper(-2147467261); /*0x41b957*/
-  return (*(uint8_t (**)(unsigned int))(**((unsigned int **)&this->q0A43) + 128))(this->locomotor) != 0; /*0x41b946*/
+  return (*(uint8_t (**)(unsigned int))(**((unsigned int **)&a1->q0A43) + 128))(a1->locomotor) != 0; /*0x41b946*/
 }
 // IDA: 0x41B980 (IsBelowScreen, 82B)
 int AircraftClass::IsBelowScreen()

@@ -21,7 +21,7 @@ struct FileClass {
     char Stub(int a1);
     int Close(void *a1, void *a2);
     int GetState(void *a1);
-    int Open(RawFileClass *this, int a2, void *a3);
+    int Open(RawFileClass *a1, int a2, void *a3);
     int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod, void *a3);
     const char* SetFileName(IUnknown * aP1, void *a2);

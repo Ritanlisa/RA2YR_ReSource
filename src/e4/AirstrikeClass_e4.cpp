@@ -472,9 +472,9 @@ char AirstrikeClass::StartMission(int * a2)
 
   result = (char)a2; /*0x41d835*/
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
-    return AirstrikeClass::SpawnAircraft(this, a2); /*0x41d83c*/
-  if ( a2 != *(int **)((char *)this + 80) ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget(this, (int)a2); /*0x41d84a*/
+    return AirstrikeClass::SpawnAircraft(int a1,a2) ; /*0x41d83c*/
+  if ( a2 != *(int **)((char *)a1 + 80) ) /*0x41d847*/
+    return AirstrikeClass::ReassignTarget(a1, (int)a2); /*0x41d84a*/
   return result; /*0x41d841*/
 
 }

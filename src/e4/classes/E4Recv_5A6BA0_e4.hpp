@@ -10,6 +10,6 @@ struct E4Recv_5A6BA0 {
     unsigned int M2;  // 0x2
     unsigned int u32_4;  // 0x4
 // --- flat members (END) ---
-    char sub_5A6BA0();  // 0x5A6BA0
+    int sub_5A6BA0();  // 0x5A6BA0
 };
 } // namespace gamemd

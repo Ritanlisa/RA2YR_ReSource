@@ -14,6 +14,6 @@ struct E4Recv_659530 {
     unsigned int q5684;  // 0x5684
     unsigned int customSound_controller;
 // --- flat members (END) ---
-    int  sub_659530(int a2);  // 0x659530
+    int sub_659530(int a2);  // 0x659530
 };
 } // namespace gamemd

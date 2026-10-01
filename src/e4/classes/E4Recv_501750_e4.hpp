@@ -13,6 +13,6 @@ struct E4Recv_501750 {
     unsigned int M21416;  // 0x53A8
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    char  sub_501750(int a2);  // 0x501750
+    int sub_501750(int a2);  // 0x501750
 };
 } // namespace gamemd

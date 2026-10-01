@@ -95,7 +95,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 }
 // 0x7B1DE0
 namespace gamemd {
-int WinsockInterface::Init()
+int WinsockInterface::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax

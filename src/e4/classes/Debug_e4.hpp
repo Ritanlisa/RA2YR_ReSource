@@ -17,10 +17,10 @@ struct Debug {
     void* q0A0;  // 0xA0
     unsigned int Debug_field_0xA0;
 // --- flat members (END) ---
-    char  ScrollText(void * aP1);  // 0x5BD0D0
-    int AccumFlags(void *a1 = 0);  // 0x6E61F0
+    void ScrollText(CellStruct * aP1);  // 0x5BD0D0
+    void AccumFlags(void *a1_1);  // 0x6E61F0
     char Printf();  // 0x5BD1F0
-    void Log(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x4068E0
-    void Log_0(void *a1 = 0, void *a2 = 0);  // 0x4A4AC0
+    void Log(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1);  // 0x4068E0
+    void Log_0(void *a1_1, void *a2_1);  // 0x4A4AC0
 };
 } // namespace gamemd

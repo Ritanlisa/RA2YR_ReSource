@@ -27,7 +27,7 @@
 
 // 0x401910
 namespace gamemd {
-void AudioStream::ReleaseSubsystem()
+void AudioStream::ReleaseSubsystem(void *a1_1)
 {
 
   int (***v2)(unsigned int, int); // ecx
@@ -46,7 +46,7 @@ void AudioStream::ReleaseSubsystem()
 }
 // 0x4026B0
 namespace gamemd {
-void AudioStream::Stop()
+void AudioStream::Stop(void *a1_1, void *a2_1)
 {
 
   return (*(int (**)(void))(this->AudioStream_field_0xD4[0] + 44))();
@@ -55,7 +55,7 @@ void AudioStream::Stop()
 }
 // 0x4026F0
 namespace gamemd {
-void AudioStream::ReleaseChannel()
+void AudioStream::ReleaseChannel(void *a1_1)
 {
 
   (*(void (**)(void))(this->AudioStream_field_0xD4[0] + 40))(); /*0x4026f9*/
@@ -99,7 +99,7 @@ void AudioStream::DestroyAll(void * Block)
 }
 // 0x403820
 namespace gamemd {
-int AudioStream::Reset()
+int AudioStream::Reset(void *a1_1, void *a2_1)
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x403822*/
@@ -203,7 +203,7 @@ int AudioStream::SetupPlayback()
 }
 // 0x4047B0
 namespace gamemd {
-int AudioStream::SelectRandom()
+int AudioStream::SelectRandom(void *a1_1)
 {
 
   unsigned int *v2; // ecx
@@ -400,7 +400,7 @@ int AudioStream::SetPlaybackCallback()
 }
 // 0x407A60
 namespace gamemd {
-int AudioStream::ProcessCallback()
+int AudioStream::ProcessCallback(void *a1_1)
 {
 
   int v1; // esi
@@ -423,7 +423,7 @@ int AudioStream::ProcessCallback()
 }
 // 0x4084E0
 namespace gamemd {
-void AudioStream::InitNodeFields()
+void AudioStream::InitNodeFields(void *a1_1)
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x4084e2*/
@@ -445,7 +445,7 @@ int AudioStream::GetChannel()
 }
 // 0x409310
 namespace gamemd {
-int AudioStream::ReadStreamAndReturn()
+int AudioStream::ReadStreamAndReturn(void *a1_1)
 {
 
   ReadAudioStream((int *)this->__pad_0, 0); /*0x409315*/
@@ -455,7 +455,7 @@ int AudioStream::ReadStreamAndReturn()
 }
 // 0x4A33A0
 namespace gamemd {
-int AudioStream::ReadSamples(const void * a2)
+int AudioStream::ReadSamples(const void * a2, void *a2_2)
 {
 
   AudioStream *v2; // ebx
@@ -1034,7 +1034,7 @@ LABEL_52:
 }
 // 0x7BD270
 namespace gamemd {
-int AudioStream::SetFlag4C()
+int AudioStream::SetFlag4C(void *a1_1)
 {
 
   int result; // eax
@@ -1049,7 +1049,7 @@ int AudioStream::SetFlag4C()
 }
 // 0x7BD2D0
 namespace gamemd {
-int AudioStream::CalcReadPos()
+int AudioStream::CalcReadPos(void *a1_1)
 {
 
   int v2; // ebp
@@ -1363,7 +1363,7 @@ int AudioStream::ProcessStream()
 }
 // 0x7C3960
 namespace gamemd {
-unsigned int AudioStream::GetPosition()
+unsigned int AudioStream::GetPosition(void *a1_1)
 {
 
   return (unsigned int)(60 * ((int (*)(AudioStream *))this->AudioStream_field_0x50)(this)) /*0x7c3982*/
@@ -1423,7 +1423,7 @@ int AudioStream::CheckFormatChanged(int a1, const void * a2)
 
 // 0x4028B0
 namespace gamemd {
-int AudioStream::InitListAndCounters()
+int AudioStream::InitListAndCounters(void *a1_1)
 {
 
   unsigned int *AudioStream_field_0xAC; // esi
@@ -1529,7 +1529,7 @@ int AudioStream::UpdateCountdowners()
 
 // 0x407860
 namespace gamemd {
-char * AudioStream::Constructor(unsigned long long a2)
+char * AudioStream::Constructor(unsigned long long a2, void *a2_2, void *a3_1)
 {
 
   int v3; // esi

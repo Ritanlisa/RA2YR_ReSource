@@ -80,7 +80,7 @@ LABEL_7:
 }
 // 0x4F42A0
 namespace gamemd {
-void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
+void VectorCursor_uint_DynamicVectorClass_uint____13::Add(void *a1_1, void *a2_1, void *a3_1)
 {
 
   dword_A8EF54 = 0; /*0x4f42a0*/
@@ -90,7 +90,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 
 // 0x4F42E0
 namespace gamemd {
-void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
+void VectorCursor_uint_DynamicVectorClass_uint____13::Get(void *a1_1, void *a2_1)
 {
 
   dword_A8EF54 = 0; /*0x4f42e0*/

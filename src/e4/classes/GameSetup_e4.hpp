@@ -21,6 +21,7 @@ struct GameSetup {
     unsigned int FormatToString;
     unsigned int q0104;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();
     static double FormatToString(...);  // C2597 interim stub

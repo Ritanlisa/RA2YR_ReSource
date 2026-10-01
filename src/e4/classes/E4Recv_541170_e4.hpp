@@ -29,6 +29,6 @@ struct E4Recv_541170 {
     unsigned int location;
     unsigned int Debug;
 // --- flat members (END) ---
-    int  sub_541170(int a2, int a3, int a4, int a5);  // 0x541170
+    AbstractClass * * sub_541170(int a2, int a3, int a4, int a5);  // 0x541170
 };
 } // namespace gamemd

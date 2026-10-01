@@ -9,6 +9,12 @@
 namespace gamemd {
 struct House {
 // --- flat members (BEGIN) ---
+struct HouseClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct ProgressTimer;  // fix_fwd_type_supply
+struct ParticleSystemClass;  // fix_fwd_type_supply
+struct AnimClass;  // fix_fwd_type_supply
+struct TimerStruct;  // fix_fwd_type_supply
     HouseClass* q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -172,15 +178,15 @@ struct House {
     void* q520;  // 0x520
     unsigned int *__pad_3D7;
 // --- flat members (END) ---
-    int AnnounceUpgrade(IUnknown * aP1, void *a1 = 0);  // 0x47D2B0
-    unsigned int *  GetStartCoords(void * aP1);  // 0x47FB90
+    int AnnounceUpgrade(IUnknown * aP1, void *a2_1);  // 0x47D2B0
+    unsigned int * GetStartCoords(IUnknown * aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
-    int IsHumanPlayer(void *a1 = 0);  // 0x50B6F0
-    int IsCurrentPlayer(void *a1 = 0);  // 0x50B730
-    int  ChooseHouseEnemy(void * aP1);  // 0x50DB00
-    int  LookupObject(int a2, void *a1 = 0);  // 0x544BE0
-    int  LoadMapFileData(int a2, char a3, void *a1 = 0);  // 0x544C20
-    void Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x69E090
-    int  PowerBeginUpdate(void * aP1);  // 0x70C270
+    int IsHumanPlayer(void *a1_1);  // 0x50B6F0
+    int IsCurrentPlayer(void *a1_1);  // 0x50B730
+    AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
+    int LookupObject(int a2, void *a2_2);  // 0x544BE0
+    int LoadMapFileData(int a2, char a3, void *a3_2);  // 0x544C20
+    void Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x69E090
+    int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };
 } // namespace gamemd

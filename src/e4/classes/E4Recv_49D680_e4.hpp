@@ -68,6 +68,6 @@ struct E4Recv_49D680 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char SerializeCampaignOptions();  // 0x49D680
+    AbstractClass * * SerializeCampaignOptions();  // 0x49D680
 };
 } // namespace gamemd

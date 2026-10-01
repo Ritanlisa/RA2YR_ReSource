@@ -50,6 +50,6 @@ struct E4Recv_42A900 {
     unsigned int q6260;  // 0x6260
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void sub_42A900();  // 0x42A900
+    AbstractClass * * sub_42A900();  // 0x42A900
 };
 } // namespace gamemd

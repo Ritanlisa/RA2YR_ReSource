@@ -26,6 +26,6 @@ struct E4Recv_75A120 {
     unsigned int q5444;  // 0x5444
     unsigned int q5494;  // 0x5494
 // --- flat members (END) ---
-    BOOL  sub_75A120(int a2, int * a3, int a4);  // 0x75A120
+    int sub_75A120(int a2, int * a3, int a4);  // 0x75A120
 };
 } // namespace gamemd

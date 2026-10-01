@@ -9,6 +9,14 @@ namespace gamemd {
 
 struct WarheadTypeClass {
 // --- flat members (BEGIN) ---
+struct ParticleTypeClass;  // fix_fwd_type_supply
+struct AnimClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct CCINIClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct ParticleSystemTypeClass;  // fix_fwd_type_supply
+struct TypeList_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

@@ -100,11 +100,11 @@ int AircraftClass::Construct(int a1, void* a2) {
   this->AircraftClass_field_char_6D3 = 5; /*0x413d74*/
   this->AircraftClass_field_bool_6D4 = 1; /*0x413d7b*/
   this->AircraftClass_field_bool_6D5 = 1; /*0x413d81*/
-  *(unsigned int *)this = &(void*)(void*)&AircraftClass_vftable; /*0x413d87*/
-  this->vtable2 = &(void*)(void*)&AircraftClass_vftable; /*0x413d8d*/
-  this->vtable3 = &(void*)(void*)&AircraftClass_vftable; /*0x413d94*/
-  this->vtable4 = &(void*)(void*)&AircraftClass_vftable; /*0x413d9b*/
-  this->vtable5 = &(void*)(void*)&AircraftClass_vftable; /*0x413da2*/
+  *(unsigned int *)this = (void *)&AircraftClass_vftable; /*0x413d87*/
+  this->vtable2 = (void *)&AircraftClass_vftable; /*0x413d8d*/
+  this->vtable3 = (void *)&AircraftClass_vftable; /*0x413d94*/
+  this->vtable4 = (void *)&AircraftClass_vftable; /*0x413d9b*/
+  this->vtable5 = (void *)&AircraftClass_vftable; /*0x413da2*/
   this->vtable2.GenerateUniqueID(); /*0x413dac*/
   v4 = this->Type; /*0x413db1*/
   if ( v4 ) /*0x413db9*/
@@ -226,10 +226,10 @@ void* BuildingLightClass::CTOR(int a1) {
   *(&this->abstractFlags5) = 0; /*0x43589d*/
   *(&this->abstractFlags6) = 0; /*0x4358a3*/
   *(&this->abstractFlags7) = a1; /*0x4358a9*/
-  *this = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4358af*/
-  this->vtable2 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4358b5*/
-  this->vtable3 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4358bc*/
-  this->vtable4 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4358c3*/
+  *this = (int)(void *)&BuildingLightClass_vftable; /*0x4358af*/
+  this->vtable2 = (int)(void *)&BuildingLightClass_vftable; /*0x4358b5*/
+  this->vtable3 = (int)(void *)&BuildingLightClass_vftable; /*0x4358bc*/
+  this->vtable4 = (int)(void *)&BuildingLightClass_vftable; /*0x4358c3*/
   if ( dword_8B41A0 < dword_8B4198 /*0x435900*/
     || (byte_8B419D || !dword_8B4198)
     && dword_8B41A4 > 0
@@ -1058,10 +1058,10 @@ int BuildingLightClass::SD_vt05(void* a1, int a2) {
     if ( a1 ) /*0x436969*/
     {
       ObjectClass::Init((ObjectClass *)a1, (int)&a2); /*0x436972*/
-      *a1 = &(void*)(void*)&BuildingLightClass_vftable; /*0x436977*/
-      a1[1] = &(void*)(void*)&BuildingLightClass_vftable; /*0x43697d*/
-      a1[2] = &(void*)(void*)&BuildingLightClass_vftable; /*0x436984*/
-      a1[3] = &(void*)(void*)&BuildingLightClass_vftable; /*0x43698b*/
+      *a1 = (void *)&BuildingLightClass_vftable; /*0x436977*/
+      a1[1] = (void *)&BuildingLightClass_vftable; /*0x43697d*/
+      a1[2] = (void *)&BuildingLightClass_vftable; /*0x436984*/
+      a1[3] = (void *)&BuildingLightClass_vftable; /*0x43698b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 57); /*0x43699e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 56); /*0x4369af*/
@@ -1184,14 +1184,14 @@ void* BuildingClass::ctor(int a1) {
   this->FiringOccupantIndex = 0; /*0x43b6c9*/
   IDA_LOBYTE(this->Audio7[0]) = 1; /*0x43b6cf*/
   IDA_BYTE1(this->Audio7[0]) = 0; /*0x43b6d5*/
-  this->Overpowerers[0] = (int)&(void*)(void*)&DynamicVectorClass_InfantryClass___vftable; /*0x43b6db*/
+  this->Overpowerers[0] = (int)(void *)&DynamicVectorClass_InfantryClass___vftable; /*0x43b6db*/
   this->Audio7[2] = 10; /*0x43b6e5*/
   this->Audio7[1] = 0; /*0x43b6eb*/
   this->Audio7[4] = 0; /*0x43b6f1*/
   this->Audio8[0] = 0; /*0x43b6f7*/
   IDA_LOBYTE(this->Audio8[1]) = 1; /*0x43b6fd*/
   IDA_BYTE1(this->Audio8[1]) = 0; /*0x43b703*/
-  this->Audio7[3] = (int)&(void*)(void*)&DynamicVectorClass_InfantryClass___vftable; /*0x43b709*/
+  this->Audio7[3] = (int)(void *)&DynamicVectorClass_InfantryClass___vftable; /*0x43b709*/
   this->Audio8[3] = 10; /*0x43b713*/
   this->Audio8[2] = 0; /*0x43b719*/
   this->TechnoClass = &BuildingClass_Vtable; /*0x43b71f*/
@@ -2052,9 +2052,9 @@ int InfantryClass::Construct(int a1, void* a2) {
   this->InfantryClass_field_6E0 = 0; /*0x517ab6*/
   this->ShouldDeploy = 0; /*0x517abc*/
   this->waterState = 2; /*0x517ac2*/
-  *(unsigned int *)this = &(void*)(void*)&InfantryClass_vftable; /*0x517acc*/
-  this->vtable2 = &(void*)(void*)&InfantryClass_vftable; /*0x517ad2*/
-  this->vtable3 = &(void*)(void*)&InfantryClass_vftable; /*0x517ad8*/
+  *(unsigned int *)this = (void *)&InfantryClass_vftable; /*0x517acc*/
+  this->vtable2 = (void *)&InfantryClass_vftable; /*0x517ad2*/
+  this->vtable3 = (void *)&InfantryClass_vftable; /*0x517ad8*/
   this->vtable4 = &off_7EB02C; /*0x517adf*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 4)); /*0x517ae6*/
   if ( *(int *)&stru_A83D50.__pad_80[40] < *(int *)&stru_A83D50.__pad_80[32] /*0x517b1e*/
@@ -4826,9 +4826,9 @@ int UnitClass::Construct() {
   *((unsigned char *)this + 1761) = 0; /*0x735428*/
   *((unsigned char *)this + 1762) = 0; /*0x73542e*/
   *(this + 441) = 0; /*0x735434*/
-  *this = (int)&(void*)(void*)&UnitClass_vftable; /*0x73543a*/
-  *(this + 1) = (int)&(void*)(void*)&UnitClass_vftable; /*0x735440*/
-  *(this + 2) = (int)&(void*)(void*)&UnitClass_vftable; /*0x735446*/
+  *this = (int)(void *)&UnitClass_vftable; /*0x73543a*/
+  *(this + 1) = (int)(void *)&UnitClass_vftable; /*0x735440*/
+  *(this + 2) = (int)(void *)&UnitClass_vftable; /*0x735446*/
   *(this + 3) = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x735454*/
   if ( ((unsigned int *)&FootClass_Array)[2] < ((unsigned int *)&FootClass_Array)[0] /*0x73548f*/

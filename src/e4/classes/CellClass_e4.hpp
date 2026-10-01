@@ -9,6 +9,14 @@ namespace gamemd {
 
 struct CellClass {
 // --- flat members (BEGIN) ---
+struct LightConvertClass;  // fix_fwd_type_supply
+struct TagClass;  // fix_fwd_type_supply
+struct BuildingTypeClass;  // fix_fwd_type_supply
+struct Coord;  // fix_fwd_type_supply
+struct FootClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct RadSiteClass;  // fix_fwd_type_supply
+struct HouseClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

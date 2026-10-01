@@ -226,7 +226,7 @@ void * Tactical::ConstructTacticalSurface()
 }
 // 0x484050
 namespace gamemd {
-void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5)
+void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, void *a7_1)
 {
 
   unsigned int *v7; // eax
@@ -284,7 +284,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
 }
 // 0x484180
 namespace gamemd {
-ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
+ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8, void *a8_2)
 {
 
   double v8; // st7
@@ -453,7 +453,7 @@ LABEL_21:
 }
 // 0x4A91B0
 namespace gamemd {
-unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
+unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2, void *a3_1)
 {
 
   unsigned int *v3; // ebp
@@ -625,7 +625,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
 }
 // 0x58C2A0
 namespace gamemd {
-void * Tactical::GetCellData()
+void * Tactical::GetCellData(void *a1_1)
 {
 
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
@@ -1059,7 +1059,7 @@ LABEL_39:
 }
 // 0x6930A0
 namespace gamemd {
-MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
+MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4, void *a5_1)
 {
 
   int v5; // eax
@@ -1190,7 +1190,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
 }
 // 0x6A6610
 namespace gamemd {
-int Tactical::UpdateUIVisibility()
+int Tactical::UpdateUIVisibility(void *a1_1)
 {
 
   int v1; // eax
@@ -1333,7 +1333,7 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
 }
 // 0x6D6070
 namespace gamemd {
-unsigned int Tactical::SetTacticalPosition(IUnknown * aP1)
+unsigned int Tactical::SetTacticalPosition(IUnknown * aP1, void *a2_1)
 {
 
   int v3; // esi
@@ -1369,7 +1369,7 @@ unsigned int Tactical::SetTacticalPosition(IUnknown * aP1)
 }
 // 0x6D6590
 namespace gamemd {
-unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
+unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2, void *a3_1)
 {
 
   int v3; // eax
@@ -1555,7 +1555,7 @@ unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
 }
 // 0x6DA7D0
 namespace gamemd {
-int Tactical::AddCellToDrawList(IUnknown * aP1)
+int Tactical::AddCellToDrawList(IUnknown * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -1933,7 +1933,7 @@ int Tactical_42::FindItem(unsigned int * a2)
 }
 // 0x4A35F0
 namespace gamemd {
-char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7)
+char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7, void *a7_2)
 {
 
   char *result; // eax
@@ -1952,7 +1952,7 @@ char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct
 
 // 0x4F4450
 namespace gamemd {
-char Tactical::SelectObject(int a2)
+char Tactical::SelectObject(int a2, void *a2_2)
 {
 
   int result; // eax
@@ -2127,7 +2127,7 @@ Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 
 // 0x6E47F0
 namespace gamemd {
-void Tactical_42::ClearBuffer()
+void Tactical_42::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -2252,7 +2252,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
 
 // 0x6E4940
 namespace gamemd {
-void Tactical_42::ddtor()
+void Tactical_42::ddtor(void *a1_1, void *a2_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6e494d*/
@@ -2268,7 +2268,7 @@ void Tactical_42::ddtor()
 
 // 0x6E4970
 namespace gamemd {
-int Tactical::Init(unsigned int * a2)
+int Tactical::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax

@@ -37,7 +37,7 @@
 
 // 0x6D0680
 namespace gamemd {
-int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
+int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2, void *a3_1)
 {
 
   int v4; // edx

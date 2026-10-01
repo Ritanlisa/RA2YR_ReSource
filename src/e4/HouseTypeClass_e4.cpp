@@ -1059,7 +1059,7 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
 
 // 0x512900
 namespace gamemd {
-void HouseTypeClass_36::ddtor()
+void HouseTypeClass_36::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -1092,7 +1092,7 @@ unsigned int HouseTypeClass_36::Write(int a2)
 
 // 0x512950
 namespace gamemd {
-int HouseTypeClass_36::Seek(int a2)
+int HouseTypeClass_36::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x51295a*/
@@ -1152,7 +1152,7 @@ unsigned int HouseTypeClass_28::Write(int a2)
 
 // 0x5129E0
 namespace gamemd {
-int HouseTypeClass_28::Seek(int a2)
+int HouseTypeClass_28::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5129ea*/
@@ -1208,7 +1208,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 
 // 0x512B80
 namespace gamemd {
-VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2)
+VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -1352,7 +1352,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 
 // 0x513340
 namespace gamemd {
-int HouseTypeClass_36::Read(unsigned int * a2)
+int HouseTypeClass_36::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -1607,7 +1607,7 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * aP1)
 
 // 0x513710
 namespace gamemd {
-int HouseTypeClass_28::Read(unsigned int * a2)
+int HouseTypeClass_28::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx

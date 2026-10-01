@@ -6,6 +6,7 @@
 namespace gamemd {
 struct Math {
 // --- flat members (BEGIN) ---
+struct IUnknown;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC
@@ -77,13 +78,13 @@ struct Math {
     unsigned int u32_41;
 // --- flat members (END) ---
     void Hypotenuse2D();  // 0x41C350
-    double  Sin(double a1);  // 0x4CAD50
-    float *  BuildRotationMatrix(float * a2, float a3, void *a1 = 0);  // 0x5AE750
+    int Sin(double a1);  // 0x4CAD50
+    void BuildRotationMatrix(float * a2, float a3, void *a3_2);  // 0x5AE750
     int DistSq2D(TechnoClass * aP1);  // 0x5F6560
-    unsigned int *  QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
-    double  ArcTan(double a1);  // 0x4CADE0
+    unsigned int * QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
+    double ArcTan(double a1);  // 0x4CADE0
     void InitArcTan();  // 0x473650
-    double  ArcTan2_Table(double a1);  // 0x4CADB0
+    double ArcTan2_Table(double a1);  // 0x4CADB0
     IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);  // 0x5B2950
     bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);  // 0x5B2990
     static double ArcTan2(...);  // C2597 interim stub
@@ -93,10 +94,10 @@ struct Math {
     static double RoundToInt(...);  // C2597/C2039 interim stub
     static double Sqrt(...);  // C2597/C2039 interim stub
     static double Cos(...);  // C2597/C2039 interim stub
-    static double ArcTan(...);  // interim stub
+    double ArcTan(double a1);  // interim stub
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
-    static double Hypotenuse2D(...);  // interim stub
-    static double Sin(...);  // interim stub
+    void Hypotenuse2D(void *a1_1);  // interim stub
+    int Sin(double a1);  // interim stub
 };
 } // namespace gamemd

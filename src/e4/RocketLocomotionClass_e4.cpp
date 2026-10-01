@@ -221,7 +221,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
 // 0x664900
 namespace gamemd {
-void RocketLocomotionClass_17::Destroy()
+void RocketLocomotionClass_17::Destroy(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x66490d*/
@@ -346,7 +346,7 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
 }
 // 0x664A70
 namespace gamemd {
-void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
+void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax

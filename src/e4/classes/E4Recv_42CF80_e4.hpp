@@ -31,6 +31,6 @@ struct E4Recv_42CF80 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void  sub_42CF80(int a2, void * aP2);  // 0x42CF80
+    void sub_42CF80(int a2, IUnknown * aP2);  // 0x42CF80
 };
 } // namespace gamemd

@@ -16,6 +16,7 @@ struct E4Recv_43ADF0 {
     unsigned int q128;  // 0x128
     unsigned int q1634;  // 0x1634
 // --- flat members (END) ---
-    ObjectClass *  sub_43ADF0(unsigned int * a1);  // 0x43ADF0
+struct ObjectClass;  // fix_fwd_type_supply
+    ObjectClass * sub_43ADF0(unsigned int * a1);  // 0x43ADF0
 };
 } // namespace gamemd

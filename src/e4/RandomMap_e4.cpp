@@ -33,7 +33,7 @@
 
 // 0x486790
 namespace gamemd {
-int RandomMap::Check()
+int RandomMap::Check(void *a1_1, void *a2_1, void *a3_1)
 {
 
   int v1; // eax
@@ -45,7 +45,7 @@ int RandomMap::Check()
 }
 // 0x58BF70
 namespace gamemd {
-unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
+unsigned int * RandomMap::TerrainTileDataConstructor(int a2, void *a2_2)
 {
 
   Cell *v3; // eax
@@ -101,7 +101,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
 }
 // 0x58C800
 namespace gamemd {
-int RandomMap::GenerateTerrain()
+int RandomMap::GenerateTerrain(void *a1_1)
 {
 
   int v2; // esi
@@ -575,7 +575,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
 }
 // 0x58D410
 namespace gamemd {
-unsigned int * RandomMap::TerrainAlloc()
+unsigned int * RandomMap::TerrainAlloc(void *a1_1)
 {
 
   VectorClass *v1; // eax
@@ -671,7 +671,7 @@ unsigned int * RandomMap::TerrainAlloc()
 }
 // 0x58E740
 namespace gamemd {
-RandomMap * * RandomMap::CollectTerrainCells(int a2)
+RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
 {
 
   VectorClass *v2; // eax
@@ -806,7 +806,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
 }
 // 0x58E9B0
 namespace gamemd {
-AbstractClass * * RandomMap::PlaceRandomMapTerrain()
+AbstractClass * * RandomMap::PlaceRandomMapTerrain(void *a1_1)
 {
 
   unsigned int *v1; // esi
@@ -1010,7 +1010,7 @@ void* RandomMap::CollectBorderCells()
   }
   for ( i = 0; i < g_MissionQueueFrame.localVariables[164]; ++i ) /*0x58f201*/
   {
-    if ( Block[i] && (void *)i != v1->RandomMap_field_0x8 ) /*0x58f210*/
+    if ( Block[i] &(void *)&i != v1->RandomMap_field_0x8 ) /*0x58f210*/
     {
       v18 = *(unsigned int *)&v1->RandomMap_field_0x2[2]; /*0x58f212*/
       v19 = *(unsigned int *)(v18 + 8); /*0x58f215*/
@@ -1680,7 +1680,7 @@ LABEL_64:
             LOWORD(aP3) = v37 - 1; /*0x590f97*/
             HIWORD(a1) = v38 - 4; /*0x590f9c*/
             HIWORD(aP3) = v38 + 4; /*0x590fb1*/
-            return RandomMap::CheckPlacementArea(this, (int16_t *)&a1, (int16_t *)&aP3, a2); /*0x590fbb*/
+            return RandomMap::CheckPlacementArea(int a1,(int16_t *) &a1, (int16_t *)&aP3, a2); /*0x590fbb*/
           }
         }
       }
@@ -4286,7 +4286,7 @@ int RandomMap::GrowTiberium()
 }
 // 0x5A0700
 namespace gamemd {
-unsigned int * RandomMap::CellListAlloc(int a2)
+unsigned int * RandomMap::CellListAlloc(int a2, void *a2_2)
 {
 
   VectorClass *v3; // eax
@@ -6876,7 +6876,7 @@ unsigned int RandomMap::Write(int a2)
 
 // 0x42F470
 namespace gamemd {
-unsigned int * RandomMap::Seek(unsigned int * a2, int a3)
+unsigned int * RandomMap::Seek(unsigned int * a2, int a3, void *a3_2)
 {
 
   *a2 = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a3); /*0x42f47e*/
@@ -6923,7 +6923,7 @@ char RandomMap::AddRef(int a2)
 
 // 0x42F930
 namespace gamemd {
-int RandomMap::Read(unsigned short * a2)
+int RandomMap::Read(unsigned short * a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -7056,7 +7056,7 @@ unsigned int * RandomMap::Constructor_VectorClass_Cell_(unsigned int * Block, ch
 
 // 0x5AD820
 namespace gamemd {
-unsigned int * RandomMap::Constructor(int a2, int a3)
+unsigned int * RandomMap::Constructor(int a2, int a3, void *a3_2)
 {
 
   *(unsigned int *)&this->RandomMap_field_0x2[2] = 0; /*0x5ad82b*/
@@ -7081,7 +7081,7 @@ unsigned int * RandomMap::Constructor(int a2, int a3)
 
 // 0x5ADA40
 namespace gamemd {
-unsigned int * RandomMap::Constructor_0(int a2, int a3)
+unsigned int * RandomMap::Constructor_0(int a2, int a3, void *a3_2)
 {
 
   int v5; // eax

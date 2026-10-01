@@ -15,17 +15,18 @@ struct FoggedObjectClass_42 {
     unsigned char q00E;  // 0xE
     int Count;  // 0x10
 // --- flat members (END) ---
-    int  FindItem(unsigned int * a2);  // 0x4E07B0
-    unsigned int *  loc_4E0D30(unsigned int * Block, char a2);  // 0x4E0D30
-    void ClearBuffer(void *a1 = 0);  // 0x4E01F0
-    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x4E0240
-    char  AddRef(int a2);  // 0x4E0580
-    char  Release(int a2, unsigned int * a3);  // 0x4E05C0
-    void ddtor(void * Block, char a2);  // 0x4E0670
-    int  Read(unsigned int * a2, void *a1 = 0);  // 0x4E06A0
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x4E0700
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4E0CE0
-    unsigned int  PointerToIndex(int a2);  // 0x4E0220
-    unsigned int  Write(int a2);  // 0x4E06E0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int FindItem(unsigned int * a2);  // 0x4E07B0
+    unsigned int * loc_4E0D30(unsigned int * Block, char a2);  // 0x4E0D30
+    void ClearBuffer(void *a1_1);  // 0x4E01F0
+    int Seek(int a2, void *a2_2, void *a3_1);  // 0x4E0240
+    char AddRef(int a2);  // 0x4E0580
+    char Release(int a2, unsigned int * a3);  // 0x4E05C0
+    void ddtor(void *a1_1, void *a2_1);  // 0x4E0670
+    int Read(unsigned int * a2, void *a2_2);  // 0x4E06A0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x4E0700
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4E0CE0
+    unsigned int PointerToIndex(int a2);  // 0x4E0220
+    unsigned int Write(int a2);  // 0x4E06E0
 };
 } // namespace gamemd

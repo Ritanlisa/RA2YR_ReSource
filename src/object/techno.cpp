@@ -3849,7 +3849,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
     *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
   occupant = (void *)((unsigned int *)this)[0]; /*0x633dfb*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  ((unsigned int *)this)[0] = (void *)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( occupant && IDA_BYTE1(((unsigned int *)this)[0]) ) /*0x633e09*/
   {
     RA2_OPDEL(occupant); /*0x633e0f*/
@@ -3858,7 +3858,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   IDA_BYTE1(((unsigned int *)this)[0]) = 0; /*0x633e1a*/
   ((unsigned int *)this)[0] = 0; /*0x633e1d*/
   vtable1 = ((unsigned int *)this)[0]; /*0x633e20*/
-  this->RadioClass = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  this->RadioClass = (void *)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( vtable1 && IDA_BYTE1(((unsigned int *)this)[0]) ) /*0x633e2d*/
   {
     RA2_OPDEL(vtable1); /*0x633e33*/
@@ -3874,7 +3874,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
     *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
   occupant = (void *)this->occupant; /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  this->NeedsSaveOrLink = (void *)&(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
   {
     RA2_OPDEL(occupant); /*0x633e0f*/
@@ -3883,7 +3883,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   vtable1 = this->vtable1; /*0x633e20*/
-  this->vtable0 = &(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  this->vtable0 = (void *)&(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
   {
     RA2_OPDEL(vtable1); /*0x633e33*/
@@ -3899,7 +3899,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
     *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
   occupant = (void *)this->occupant; /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  this->NeedsSaveOrLink = (void *)&(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
   {
     RA2_OPDEL(occupant); /*0x633e0f*/
@@ -3908,7 +3908,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   vtable1 = this->vtable1; /*0x633e20*/
-  this->vtable0 = &(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  this->vtable0 = (void *)&(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
   {
     RA2_OPDEL(vtable1); /*0x633e33*/
@@ -3924,7 +3924,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( g_ScriptActionPool == v7 ) /*0x633df3*/
     g_ScriptActionPool = 0; /*0x633df5*/
   v5 = *(void **)(&this->vtable46); /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  this->NeedsSaveOrLink = (void *)&(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( v5 && this->queuedMission ) /*0x633e09*/
   {
     RA2_OPDEL(v5); /*0x633e0f*/
@@ -3933,7 +3933,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   this->queuedMission = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   v6 = this->vtable2; /*0x633e20*/
-  *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  *(unsigned int *)this = (void *)&(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( v6 && this->attachedTag ) /*0x633e2d*/
   {
     RA2_OPDEL(v6); /*0x633e33*/
@@ -3949,7 +3949,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( g_ScriptActionPool == v7 ) /*0x633df3*/
     g_ScriptActionPool = 0; /*0x633df5*/
   v5 = *(void **)(&this->vtable46); /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  this->NeedsSaveOrLink = (void *)&(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( v5 && this->queuedMission ) /*0x633e09*/
   {
     RA2_OPDEL(v5); /*0x633e0f*/
@@ -3958,7 +3958,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   this->queuedMission = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   v6 = this->vtable2; /*0x633e20*/
-  *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  *(unsigned int *)this = (void *)&(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( v6 && this->attachedTag ) /*0x633e2d*/
   {
     RA2_OPDEL(v6); /*0x633e33*/

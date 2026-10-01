@@ -26,7 +26,7 @@
 
 // 0x432690
 namespace gamemd {
-unsigned int * BinkMovie::Close(char * FullPath)
+unsigned int * BinkMovie::Close(char * FullPath, void *a2_1)
 {
 
   this->__pad_0[0] = (unsigned int)((unsigned int *)(0));
@@ -43,7 +43,7 @@ unsigned int * BinkMovie::Close(char * FullPath)
 }
 // 0x4326C0
 namespace gamemd {
-void BinkMovie::Open( char * FullPath, int a3)
+void BinkMovie::Open(char * FullPath, int a3, void *a3_2)
 {
 
   this->BinkMovie_field_0xC = (unsigned int)((void *)a3);
@@ -60,7 +60,7 @@ void BinkMovie::Open( char * FullPath, int a3)
 }
 // 0x432700
 namespace gamemd {
-void BinkMovie::Stop()
+void BinkMovie::Stop(void *a1_1, void *a2_1)
 {
 
   void *BinkMovie_field_0x20; // edi
@@ -90,7 +90,7 @@ void BinkMovie::Stop()
 }
 // 0x432750
 namespace gamemd {
-AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
+AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
 {
 
   int v3; // ebp
@@ -282,7 +282,7 @@ int BinkMovie::Pause(unsigned char a2)
 }
 // 0x432C50
 namespace gamemd {
-void BinkMovie::IsAtEnd()
+void BinkMovie::IsAtEnd(void *a1_1)
 {
 
   unsigned int *tempPath; // eax
@@ -296,7 +296,7 @@ void BinkMovie::IsAtEnd()
 }
 // 0x432C70
 namespace gamemd {
-void BinkMovie::Play()
+void BinkMovie::Play(void *a1_1)
 {
 
   void (*v3)(HWND, LPPOINT); // ebp
@@ -391,7 +391,7 @@ void BinkMovie::Play()
 }
 // 0x432E40
 namespace gamemd {
-int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
+int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4, void *a4_2)
 {
 
   int v5; // eax
@@ -489,7 +489,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
 }
 // 0x433040
 namespace gamemd {
-int BinkMovie::RenderFrameToSurface()
+int BinkMovie::RenderFrameToSurface(void *a1_1)
 {
 
   return BinkMovie::RenderLoop((bool *)this->MovieHandle, this->width, this->height, this->currentFrame); /*0x433051*/
@@ -525,7 +525,7 @@ unsigned int * BinkMovie::RenderSingleFrame(DSurface * aP1, int a3, int a4, char
 }
 // 0x433270
 namespace gamemd {
-unsigned int * BinkMovie::BlitToTarget(DSurface * aP1)
+unsigned int * BinkMovie::BlitToTarget(DSurface * aP1, void *a2_1)
 {
 
   unsigned int *result; // eax
@@ -581,7 +581,7 @@ unsigned int * BinkMovie::BlitToTarget(DSurface * aP1)
 }
 // 0x433330
 namespace gamemd {
-int BinkMovie::AdjustSurfaceFormat(DSurface * aP1)
+int BinkMovie::AdjustSurfaceFormat(DSurface * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -630,7 +630,7 @@ int BinkMovie::AdjustSurfaceFormat(DSurface * aP1)
 }
 // 0x5C01F0
 namespace gamemd {
-void BinkMovie::Cleanup()
+void BinkMovie::Cleanup(void *a1_1)
 {
 
   DSurface *v2; // ecx
@@ -796,7 +796,7 @@ AbstractClass * * BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lPa
 
 // 0x6C9930
 namespace gamemd {
-void BinkMovie::Destroy()
+void BinkMovie::Destroy(void *a1_1)
 {
 
   if ( this->BinkMovie_field_0x14[0] ) /*0x6c9930*/
@@ -806,7 +806,7 @@ void BinkMovie::Destroy()
 }
 // 0x6C9AE0
 namespace gamemd {
-int BinkMovie::FreeSurfaceTracker()
+int BinkMovie::FreeSurfaceTracker(void *a1_1)
 {
 
   int result; // eax

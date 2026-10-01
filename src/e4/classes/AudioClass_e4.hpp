@@ -36,6 +36,6 @@ struct AudioClass {
     unsigned int q6408;  // 0x6408
     unsigned int Object;
 // --- flat members (END) ---
-    int ProcessEvent();  // 0x7228B0
+    BuildingTypeClass * * ProcessEvent();  // 0x7228B0
 };
 } // namespace gamemd

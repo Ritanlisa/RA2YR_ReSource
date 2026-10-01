@@ -1055,7 +1055,7 @@ SlaveManagerClass * SlaveManagerClass::ProcessOrders(void * Block, char a2)
 
 // 0x6B13B0
 namespace gamemd {
-void SlaveManagerClass_25::ddtor()
+void SlaveManagerClass_25::ddtor(void *a1_1, void *a2_1)
 {
 
   void *v2; // eax
@@ -1088,7 +1088,7 @@ unsigned int SlaveManagerClass_25::Write(int a2)
 
 // 0x6B1400
 namespace gamemd {
-int SlaveManagerClass_25::Seek(int a2)
+int SlaveManagerClass_25::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b140a*/
@@ -1178,7 +1178,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
 
 // 0x6B16A0
 namespace gamemd {
-int SlaveManagerClass_25::Read(unsigned int * a2)
+int SlaveManagerClass_25::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx

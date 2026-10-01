@@ -28,7 +28,7 @@
 
 // 0x663D60
 namespace gamemd {
-int Factory::GetLinkedIndex(DynamicVector * aP1)
+int Factory::GetLinkedIndex(DynamicVector * aP1, void *a2_1)
 {
 
   int result; // eax
@@ -395,7 +395,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
 }
 // 0x523C90
 namespace gamemd {
-int Factory::FindExitCellByName()
+int Factory::FindExitCellByName(void *a1_1)
 {
 
   int v2; // esi

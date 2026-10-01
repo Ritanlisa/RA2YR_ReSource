@@ -653,7 +653,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 }
 // 0x5C18A0
 namespace gamemd {
-int MPCooperative::Read()
+int MPCooperative::Read(void *a1_1, void *a2_1)
 {
 
   int i; // edi
@@ -904,7 +904,7 @@ LABEL_10:
 }
 // 0x5C1DC0
 namespace gamemd {
-CampaignClass * * MPCooperative::Seek()
+CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
 {
 
   char result; // al
@@ -3099,7 +3099,7 @@ char MPCooperative::StubReturnFalse()
 
 // 0x5C3F30
 namespace gamemd {
-int MPCooperative::Cleanup()
+int MPCooperative::Cleanup(void *a1_1)
 {
 
   HWND GameUI; // eax

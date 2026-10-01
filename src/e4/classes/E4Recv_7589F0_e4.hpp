@@ -12,6 +12,6 @@ struct E4Recv_7589F0 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    BOOL  sub_7589F0(int a2);  // 0x7589F0
+    BOOL sub_7589F0(int a2);  // 0x7589F0
 };
 } // namespace gamemd

@@ -16,6 +16,6 @@ struct E4Recv_6A74A0 {
     unsigned int u32_85C1;
     unsigned int Tactical;
 // --- flat members (END) ---
-    int  sub_6A74A0(int a2);  // 0x6A74A0
+    int sub_6A74A0(int a2);  // 0x6A74A0
 };
 } // namespace gamemd

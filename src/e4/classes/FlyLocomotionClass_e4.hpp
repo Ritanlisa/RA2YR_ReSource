@@ -9,6 +9,8 @@ namespace gamemd {
 
 struct FlyLocomotionClass {
 // --- flat members (BEGIN) ---
+struct TechnoClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* Owner;  // 0x8

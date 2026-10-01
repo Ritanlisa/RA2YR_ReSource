@@ -1319,7 +1319,7 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
 }
 // 0x558810
 namespace gamemd {
-int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
+int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
 {
 
   char *p_referenceCount; // eax

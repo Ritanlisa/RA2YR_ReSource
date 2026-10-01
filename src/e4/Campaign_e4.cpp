@@ -123,7 +123,7 @@ LABEL_14:
 }
 // 0x765700
 namespace gamemd {
-BOOL Campaign_WorldDominationTour_24::AddRef()
+BOOL Campaign_WorldDominationTour_24::AddRef(void *a1_1)
 {
 
   return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76570d*/
@@ -132,7 +132,7 @@ BOOL Campaign_WorldDominationTour_24::AddRef()
 }
 // 0x765B40
 namespace gamemd {
-BOOL Campaign_WorldDominationTour_24::Release()
+BOOL Campaign_WorldDominationTour_24::Release(void *a1_1)
 {
 
   ++*((unsigned int *)this + 2); /*0x765b42*/
@@ -195,7 +195,7 @@ LONG Campaign::Screen(char a1)
 }
 // 0x7656D0
 namespace gamemd {
-unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
+unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, void *a3_2)
 {
 
   int v3; // edi
@@ -211,7 +211,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 
 // 0x765710
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
@@ -225,7 +225,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char
 
 // 0x765740
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/
@@ -303,7 +303,7 @@ int Campaign_WorldDominationTour_16::ddtor()
 
 // 0x765990
 namespace gamemd {
-int Campaign_WorldDominationTour_16::Read(int a2)
+int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2)
 {
 
   int result; // eax

@@ -460,7 +460,7 @@ int Options::DeleteAndZero()
 }
 // 0x6248A0
 namespace gamemd {
-void Options::EnsureCapacity()
+void Options::EnsureCapacity(void *a1_1, void *a2_1)
 {
 
   void * v2;
@@ -792,7 +792,7 @@ HWND Options::InitDialogControls(HWND hDlg)
 
 // 0x5FA4A0
 namespace gamemd {
-void Options::SetScoreVolume(float volume, int pad)
+void Options::SetScoreVolume(float volume, int pad, void *a3_1)
 {
 
   double v4; // st7
@@ -815,7 +815,7 @@ void Options::SetScoreVolume(float volume, int pad)
 
 // 0x5FA510
 namespace gamemd {
-void Options::SetSoundVolume(float volume, int pad)
+void Options::SetSoundVolume(float volume, int pad, void *a3_1)
 {
 
   double v3; // st7
@@ -837,7 +837,7 @@ void Options::SetSoundVolume(float volume, int pad)
 
 // 0x5FA590
 namespace gamemd {
-void Options::SetVoiceVolume(float volume, int pad)
+void Options::SetVoiceVolume(float volume, int pad, void *a3_1)
 {
 
   double v4; // st7

@@ -17,11 +17,12 @@ struct ConnectionPointClass_9 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    char  Release(int a2, unsigned int * a3);  // 0x4A1280
-    int  EnumConnections(int a2);  // 0x4A0F70
-    char  AddRef(int a2);  // 0x4A1240
-    int  Advise(unsigned int * a2);  // 0x4A1360
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4A14F0
-    unsigned int  Unadvise(int a2);  // 0x4A13A0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    AbstractClass * * Release(int a2, unsigned int * a3);  // 0x4A1280
+    int EnumConnections(int a2);  // 0x4A0F70
+    char AddRef(int a2);  // 0x4A1240
+    int Advise(unsigned int * a2);  // 0x4A1360
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4A14F0
+    unsigned int Unadvise(int a2);  // 0x4A13A0
 };
 } // namespace gamemd

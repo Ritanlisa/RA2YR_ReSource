@@ -8,6 +8,13 @@
 namespace gamemd {
 struct AbstractClass {
 // --- flat members (BEGIN) ---
+struct MissionClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct IsometricTileClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct Surface;  // fix_fwd_type_supply
+struct FileClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -96,17 +103,17 @@ struct AbstractClass {
     unsigned int ProcessPower;
     unsigned int QueryInterface;
 // --- flat members (END) ---
-    void  Initialize(void * aP1, void * aP2);  // 0x438E70
-    unsigned int *  checkVisibility(char a2);  // 0x5D7FD0
-    unsigned int *  updateVisibilityState(char a2);  // 0x5D8030
-    unsigned int *  processFogReveal(char a2);  // 0x5D8050
-    unsigned int *  checkShroudState(char a2);  // 0x5D8070
-    unsigned int *  updateShroudMap(char a2);  // 0x5D8090
-    void  ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    AbstractClass * *  AnnounceExpiredPointer(void * aP0, void * aP1);  // 0x7258D0
+    void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
+    unsigned int * checkVisibility(char a2);  // 0x5D7FD0
+    unsigned int * updateVisibilityState(char a2);  // 0x5D8030
+    unsigned int * processFogReveal(char a2);  // 0x5D8050
+    unsigned int * checkShroudState(char a2);  // 0x5D8070
+    unsigned int * updateShroudMap(char a2);  // 0x5D8090
+    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
+    AbstractClass * * AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
     int getMapCoords();  // 0x426A80
-    void DTOR(void *a1 = 0);  // 0x4101F0
-    MissionClass *  getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
+    void DTOR(void *a1_1);  // 0x4101F0
+    MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
     DynamicVector *  resetScriptState(unsigned int * Block, char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
     unsigned int  setMissionState(int a2);  // 0x4D2960
@@ -189,22 +196,22 @@ struct AbstractClass {
     int  processSpecialEffect(unsigned int * a2);  // 0x764420
     int finalizeDestruction(void *a1 = 0);  // 0x7C35C0
     ObjectClass *  Render_Render_660730(void * a2);  // 0x660730
-    Surface *  getObjectValue(char a2);  // 0x4115D0
-    void*  getTileIndex(char a2);  // 0x499CC0
-    void*  setTileIndex(char a2);  // 0x499CE0
-    void*  getOverlayType(char a2);  // 0x499D00
-    void*  clearOverlayFlags(char a2);  // 0x499DA0
-    void*  getHouseHandle(char a2);  // 0x4F4C00
-    FileClass *  processAITrigger(unsigned int * Block, char a2);  // 0x65C610
+    Surface * getObjectValue(char a2);  // 0x4115D0
+    Blitter * getTileIndex(char a2);  // 0x499CC0
+    BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
+    BlitTransXlat * getOverlayType(char a2);  // 0x499D00
+    RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
+    GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
+    FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
     int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     unsigned int updateLayer();  // 0x425520
-    int GetType(int16_t * a2, int a3);  // 0x4CA160
+    int GetType(void *a1_1, void *a2_1);  // 0x4CA160
     int checkPassability();  // 0x50E370
     void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
-    int  GetVtable3(void * aP0);  // 0x410220
-    int  GenerateUniqueID(int a1);  // 0x410230
+    int GetVtable3(AbstractClass * aP0);  // 0x410220
+    int GenerateUniqueID(int a1);  // 0x410230
     int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
@@ -231,23 +238,23 @@ struct AbstractClass {
     int COMStub_Return0_118();  // 0x4264F0
     int COMStub_Return0_119();  // 0x426500
     int getCoordCenter2();  // 0x426510
-    std::locale::facet *  setMapCoords(char a2);  // 0x427270
+    std::locale::facet * setMapCoords(char a2);  // 0x427270
     int COMStub_Return0_190();  // 0x459DC0
     int COMStub_Return0_205();  // 0x459DE0
     int COMStub_Return0_270();  // 0x459E60
-    std::locale::facet *  setOverlayFlags(char a2);  // 0x499D20
-    unsigned int  queueMission(int a2);  // 0x4E01C0
-    int  saveToStream(int a1, void * a2, unsigned int * a3);  // 0x510A20
-    int  loadFromStream(int a1);  // 0x510A30
-    int  computeSize(int a1);  // 0x510A40
-    int  COMStub_6(void * aP0, int * a1, int aP2);  // 0x5439F0
+    std::locale::facet * setOverlayFlags(char a2);  // 0x499D20
+    unsigned int queueMission(int a2);  // 0x4E01C0
+    int saveToStream(int a1, const void * a2, unsigned int * a3);  // 0x510A20
+    int loadFromStream(int a1);  // 0x510A30
+    int computeSize(int a1);  // 0x510A40
+    int COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5439F0
     char validatePathNode();  // 0x5C02E0
-    unsigned int *  processRevealArea(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D81F0
-    unsigned int *  computeRevealRadius(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8230
-    unsigned int *  applyRevealToCell(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8270
-    unsigned int *  checkRevealCell(void * a1, void * a2, void * a3, void * a4, int a5, int a6);  // 0x5D82B0
+    unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D81F0
+    unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8230
+    unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
+    unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
-    int COMStub_Return0_38(void *a1 = 0);  // 0x5F42C0
+    int COMStub_Return0_38(void *a1_1);  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
     int COMStub_Return0_40();  // 0x5F42E0
     int COMStub_Return0_56();  // 0x5F42F0
@@ -262,19 +269,19 @@ struct AbstractClass {
     int COMStub_Return0_93();  // 0x5F43A0
     int COMStub_Return0_104();  // 0x5F4400
     int COMStub_Return0_105();  // 0x5F6B50
-    int  SaveLoad_PrefixWrapper(void * aP0, void * aP1, void * aP2);  // 0x5F9950
+    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5F9950
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
-    int  compareType(int a1);  // 0x487E50
-    char  Stub1INoticeSink(int a1, int a2);  // 0x410580
-    void  COM_Stub_Return0(int a1);  // 0x410590
+    int compareType(int a1);  // 0x487E50
+    char Stub1INoticeSink(int a1, int a2);  // 0x410580
+    void COM_Stub_Return0(int a1);  // 0x410590
     int COMStub_26();  // 0x4263A0
     int COMStub_107();  // 0x4264C0
     int COMStub_Return0_121();  // 0x426520
     int getAltitude();  // 0x426580
     char releaseRef();  // 0x465910
     char finalRelease();  // 0x465920
-    void  COMStub_Return0_69(void * aP0, void * aP1);  // 0x4DB250
+    void COMStub_Return0_69(Tactical * aP0, AbstractClass * aP1);  // 0x4DB250
     int COMStub_Return0_34();  // 0x4E0130
     char getCurrentMission();  // 0x4E0140
     int computeMovementCost();  // 0x50E360
@@ -298,7 +305,7 @@ struct AbstractClass {
     int processStateUpdate();  // 0x5F43E0
     int COMStub_Return0_33();  // 0x5F6BC0
     char updateTeamState();  // 0x65C320
-    int  updateTargetTracking(int a1);  // 0x6CE1F0
+    int updateTargetTracking(int a1);  // 0x6CE1F0
     char processWeaponFire();  // 0x711E80
     int checkBuildingPlacement();  // 0x74F330
     int computeDistanceSquared();  // 0x410490

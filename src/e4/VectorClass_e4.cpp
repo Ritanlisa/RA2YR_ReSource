@@ -591,7 +591,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
 }
 // 0x4A2820
 namespace gamemd {
-unsigned int * VectorClass_K_8::Constructor()
+unsigned int * VectorClass_K_8::Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   this->CStreamClass_field_0x08 = 0; /*0x4a282a*/
@@ -659,7 +659,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 }
 // 0x4A0C20
 namespace gamemd {
-unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumConnectionPointsClass * aP1)
+unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumConnectionPointsClass * aP1, void *a2_1, void *a3_1)
 {
 
   char *p_IsInitialized; // esi
@@ -1289,7 +1289,7 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
 }
 // 0x4E1960
 namespace gamemd {
-void VectorClass_ptr_ConvertClass::MarkDirty()
+void VectorClass_ptr_ConvertClass::MarkDirty(void *a1_1)
 {
 
   int result; // eax
@@ -2166,7 +2166,7 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char 
 }
 // 0x40B690
 namespace gamemd {
-int VectorClass_ptr_BombClass::Get(int a2)
+int VectorClass_ptr_BombClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40b69a*/
@@ -2176,7 +2176,7 @@ int VectorClass_ptr_BombClass::Get(int a2)
 
 // 0x40B700
 namespace gamemd {
-char VectorClass_ptr_BombClass::Add(int a2)
+char VectorClass_ptr_BombClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -2207,7 +2207,7 @@ char VectorClass_ptr_BombClass::Add(int a2)
 
 // 0x40B7F0
 namespace gamemd {
-void VectorClass_ptr_BombClass::Remove()
+void VectorClass_ptr_BombClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40b7fd*/
@@ -2261,7 +2261,7 @@ unsigned int VectorClass_ptr_BombClass::GetCapacity(int a2)
 
 // 0x40BA50
 namespace gamemd {
-void VectorClass_Techno::ddtor()
+void VectorClass_Techno::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40ba5d*/
@@ -2507,7 +2507,7 @@ unsigned int VectorClass_cptr_CommandClass::GetCapacity(int a2)
 
 // 0x40C230
 namespace gamemd {
-void VectorClass_ptr_LightConvertClass::Destroy()
+void VectorClass_ptr_LightConvertClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -2527,7 +2527,7 @@ void VectorClass_ptr_LightConvertClass::Destroy()
 
 // 0x40C280
 namespace gamemd {
-int VectorClass_ptr_LightConvertClass::Get(int a2)
+int VectorClass_ptr_LightConvertClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40c28a*/
@@ -2537,7 +2537,7 @@ int VectorClass_ptr_LightConvertClass::Get(int a2)
 
 // 0x40C290
 namespace gamemd {
-char VectorClass_ptr_LightConvertClass::Add(int a2)
+char VectorClass_ptr_LightConvertClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -2619,7 +2619,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
 
 // 0x40C380
 namespace gamemd {
-void VectorClass_ptr_LightConvertClass::Remove()
+void VectorClass_ptr_LightConvertClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40c38d*/
@@ -2742,7 +2742,7 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
 
 // 0x40C820
 namespace gamemd {
-void VectorClass_ptr_IsometricTileClass::Destroy()
+void VectorClass_ptr_IsometricTileClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -2775,7 +2775,7 @@ unsigned int VectorClass_ptr_IsometricTileClass::GetItemIndex(int a2)
 
 // 0x40C870
 namespace gamemd {
-int VectorClass_ptr_IsometricTileClass::Get(int a2)
+int VectorClass_ptr_IsometricTileClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40c87a*/
@@ -2785,7 +2785,7 @@ int VectorClass_ptr_IsometricTileClass::Get(int a2)
 
 // 0x40C880
 namespace gamemd {
-char VectorClass_ptr_IsometricTileClass::Add(int a2)
+char VectorClass_ptr_IsometricTileClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -2867,7 +2867,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
 
 // 0x40C970
 namespace gamemd {
-void VectorClass_ptr_IsometricTileClass::Remove()
+void VectorClass_ptr_IsometricTileClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40c97d*/
@@ -3135,7 +3135,7 @@ int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
 
 // 0x40D590
 namespace gamemd {
-int VectorClass_ptr_MixFileClass::Get(int a2)
+int VectorClass_ptr_MixFileClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40d59a*/
@@ -3145,7 +3145,7 @@ int VectorClass_ptr_MixFileClass::Get(int a2)
 
 // 0x40D5A0
 namespace gamemd {
-char VectorClass_ptr_MixFileClass::Add(int a2)
+char VectorClass_ptr_MixFileClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -3227,7 +3227,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
 
 // 0x40D690
 namespace gamemd {
-void VectorClass_ptr_MixFileClass::Remove()
+void VectorClass_ptr_MixFileClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40d69d*/
@@ -3304,7 +3304,7 @@ VectorClass_flat * VectorClass_ptr_MixFileClass::QueryInterface(unsigned int * B
 
 // 0x40E7F0
 namespace gamemd {
-void VectorClass_ptr_ScriptClass::Destroy()
+void VectorClass_ptr_ScriptClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -3337,7 +3337,7 @@ unsigned int VectorClass_ptr_ScriptClass::GetItemIndex(int a2)
 
 // 0x40E840
 namespace gamemd {
-int VectorClass_ptr_ScriptClass::Get(int a2)
+int VectorClass_ptr_ScriptClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40e84a*/
@@ -3347,7 +3347,7 @@ int VectorClass_ptr_ScriptClass::Get(int a2)
 
 // 0x40E850
 namespace gamemd {
-char VectorClass_ptr_ScriptClass::Add(int a2)
+char VectorClass_ptr_ScriptClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -3429,7 +3429,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
 
 // 0x40E940
 namespace gamemd {
-void VectorClass_ptr_ScriptClass::Remove()
+void VectorClass_ptr_ScriptClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40e94d*/
@@ -3601,7 +3601,7 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
 
 // 0x40EEC0
 namespace gamemd {
-void VectorClass_ptr_VoxelAnimClass::Destroy()
+void VectorClass_ptr_VoxelAnimClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -3634,7 +3634,7 @@ unsigned int VectorClass_ptr_VoxelAnimClass::GetItemIndex(int a2)
 
 // 0x40EF10
 namespace gamemd {
-int VectorClass_ptr_VoxelAnimClass::Get(int a2)
+int VectorClass_ptr_VoxelAnimClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40ef1a*/
@@ -3644,7 +3644,7 @@ int VectorClass_ptr_VoxelAnimClass::Get(int a2)
 
 // 0x40EF20
 namespace gamemd {
-char VectorClass_ptr_VoxelAnimClass::Add(int a2)
+char VectorClass_ptr_VoxelAnimClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -3726,7 +3726,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
 
 // 0x40F010
 namespace gamemd {
-void VectorClass_ptr_VoxelAnimClass::Remove()
+void VectorClass_ptr_VoxelAnimClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40f01d*/
@@ -3898,7 +3898,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
 
 // 0x40F5E0
 namespace gamemd {
-void VectorClass_ptr_WarheadTypeClass::Destroy()
+void VectorClass_ptr_WarheadTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -3931,7 +3931,7 @@ unsigned int VectorClass_ptr_WarheadTypeClass::GetItemIndex(int a2)
 
 // 0x40F630
 namespace gamemd {
-int VectorClass_ptr_WarheadTypeClass::Get(int a2)
+int VectorClass_ptr_WarheadTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40f63a*/
@@ -3941,7 +3941,7 @@ int VectorClass_ptr_WarheadTypeClass::Get(int a2)
 
 // 0x40F640
 namespace gamemd {
-char VectorClass_ptr_WarheadTypeClass::Add(int a2)
+char VectorClass_ptr_WarheadTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -4023,7 +4023,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x40F730
 namespace gamemd {
-void VectorClass_ptr_WarheadTypeClass::Remove()
+void VectorClass_ptr_WarheadTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40f73d*/
@@ -4195,7 +4195,7 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
 
 // 0x40FBB0
 namespace gamemd {
-void VectorClass_ptr_WeaponTypeClass::Destroy()
+void VectorClass_ptr_WeaponTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -4228,7 +4228,7 @@ unsigned int VectorClass_ptr_WeaponTypeClass::GetItemIndex(int a2)
 
 // 0x40FC00
 namespace gamemd {
-int VectorClass_ptr_WeaponTypeClass::Get(int a2)
+int VectorClass_ptr_WeaponTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40fc0a*/
@@ -4238,7 +4238,7 @@ int VectorClass_ptr_WeaponTypeClass::Get(int a2)
 
 // 0x40FC10
 namespace gamemd {
-char VectorClass_ptr_WeaponTypeClass::Add(int a2)
+char VectorClass_ptr_WeaponTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -4320,7 +4320,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x40FD00
 namespace gamemd {
-void VectorClass_ptr_WeaponTypeClass::Remove()
+void VectorClass_ptr_WeaponTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x40fd0d*/
@@ -4492,7 +4492,7 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
 
 // 0x41DDE0
 namespace gamemd {
-void VectorClass_ptr_AirstrikeClass::Destroy()
+void VectorClass_ptr_AirstrikeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -4525,7 +4525,7 @@ unsigned int VectorClass_ptr_AirstrikeClass::GetItemIndex(int a2)
 
 // 0x41DE30
 namespace gamemd {
-int VectorClass_ptr_AirstrikeClass::Get(int a2)
+int VectorClass_ptr_AirstrikeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x41de3a*/
@@ -4535,7 +4535,7 @@ int VectorClass_ptr_AirstrikeClass::Get(int a2)
 
 // 0x41DE40
 namespace gamemd {
-char VectorClass_ptr_AirstrikeClass::Add(int a2)
+char VectorClass_ptr_AirstrikeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -4617,7 +4617,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
 
 // 0x41DF30
 namespace gamemd {
-void VectorClass_ptr_AirstrikeClass::Remove()
+void VectorClass_ptr_AirstrikeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x41df3d*/
@@ -4789,7 +4789,7 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
 
 // 0x421800
 namespace gamemd {
-void VectorClass_ptr_AlphaShapeClass::Destroy()
+void VectorClass_ptr_AlphaShapeClass::Destroy(void *a1_1)
 {
 
   void *Items; // eax
@@ -4822,7 +4822,7 @@ unsigned int VectorClass_ptr_AlphaShapeClass::GetItemIndex(int a2)
 
 // 0x421850
 namespace gamemd {
-int VectorClass_ptr_AlphaShapeClass::Get(int a2)
+int VectorClass_ptr_AlphaShapeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x42185a*/
@@ -4832,7 +4832,7 @@ int VectorClass_ptr_AlphaShapeClass::Get(int a2)
 
 // 0x421860
 namespace gamemd {
-char VectorClass_ptr_AlphaShapeClass::Add(int a2)
+char VectorClass_ptr_AlphaShapeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -4914,7 +4914,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
 
 // 0x421950
 namespace gamemd {
-void VectorClass_ptr_AlphaShapeClass::Remove()
+void VectorClass_ptr_AlphaShapeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x42195d*/
@@ -5086,7 +5086,7 @@ unsigned int * VectorClass_ptr_AlphaShapeClass::loc_421B10(unsigned int * Block,
 
 // 0x42D5A0
 namespace gamemd {
-void VectorClass_ushort::Destroy()
+void VectorClass_ushort::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -5211,7 +5211,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
 
 // 0x42D9A0
 namespace gamemd {
-void VectorClass_ushort::ddtor()
+void VectorClass_ushort::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x42d9ad*/
@@ -5252,7 +5252,7 @@ int VectorClass_ushort::GetSize(unsigned short * a2)
 
 // 0x42DA10
 namespace gamemd {
-unsigned int VectorClass_ushort::Get(int a2)
+unsigned int VectorClass_ushort::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x42da10*/
@@ -5337,7 +5337,7 @@ int VectorClass_ushort::FindItemIndex(unsigned short * a2)
 
 // 0x42DBB0
 namespace gamemd {
-VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2)
+VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -5360,7 +5360,7 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2)
 
 // 0x42DC00
 namespace gamemd {
-DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -5530,7 +5530,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
 }
 // 0x45A070
 namespace gamemd {
-void VectorClass_ptr_FoggedObjectClass::Destroy()
+void VectorClass_ptr_FoggedObjectClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -5563,7 +5563,7 @@ unsigned int VectorClass_ptr_FoggedObjectClass::GetItemIndex(int a2)
 
 // 0x45A0C0
 namespace gamemd {
-int VectorClass_ptr_FoggedObjectClass::Get(int a2)
+int VectorClass_ptr_FoggedObjectClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x45a0ca*/
@@ -5573,7 +5573,7 @@ int VectorClass_ptr_FoggedObjectClass::Get(int a2)
 
 // 0x45A0D0
 namespace gamemd {
-void VectorClass_ptr_Reestablish::Destroy()
+void VectorClass_ptr_Reestablish::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -5629,7 +5629,7 @@ void VectorClass_flat::Cleanup(void *a1)
 }
 // 0x45A4D0
 namespace gamemd {
-void VectorClass_ptr_InfantryClass::Remove()
+void VectorClass_ptr_InfantryClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && this->m_D[0] ) /*0x45a4dd*/
@@ -5645,7 +5645,7 @@ void VectorClass_ptr_InfantryClass::Remove()
 
 // 0x45A640
 namespace gamemd {
-char VectorClass_ptr_FoggedObjectClass::Add(int a2)
+char VectorClass_ptr_FoggedObjectClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -5830,7 +5830,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
 
 // 0x45A850
 namespace gamemd {
-void VectorClass_ptr_Reestablish::ddtor()
+void VectorClass_ptr_Reestablish::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x45a85d*/
@@ -5871,7 +5871,7 @@ int VectorClass_ptr_Reestablish::GetSize(unsigned int * a2)
 
 // 0x45A8C0
 namespace gamemd {
-unsigned int VectorClass_ptr_Reestablish::Get(int a2)
+unsigned int VectorClass_ptr_Reestablish::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x45a8c0*/
@@ -5956,7 +5956,7 @@ int VectorClass_ptr_Reestablish::FindItemIndex(unsigned int * a2)
 
 // 0x45AA10
 namespace gamemd {
-DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -6076,7 +6076,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
 
 // 0x45AC00
 namespace gamemd {
-void VectorClass_ptr_FoggedObjectClass::Remove()
+void VectorClass_ptr_FoggedObjectClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x45ac0d*/
@@ -6153,7 +6153,7 @@ VectorClass_flat * VectorClass_ptr_FoggedObjectClass::QueryInterface(unsigned in
 
 // 0x45ACE0
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -6221,7 +6221,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
 }
 // 0x45AE50
 namespace gamemd {
-unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, BuildingClass * aP2)
+unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
 
   *(unsigned int *)&this->m_1[3] = 0; /*0x45ae5b*/
@@ -6379,7 +6379,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
 
 // 0x465F50
 namespace gamemd {
-void VectorClass_TPoint3D_int::ddtor()
+void VectorClass_TPoint3D_int::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x465f5d*/
@@ -6456,7 +6456,7 @@ VectorClass_flat * VectorClass_TPoint3D_int::QueryInterface(unsigned int * Block
 
 // 0x46B5E0
 namespace gamemd {
-void VectorClass_ptr_BulletClass::Destroy()
+void VectorClass_ptr_BulletClass::Destroy(void *a1_1)
 {
 
   void *Items; // eax
@@ -6489,7 +6489,7 @@ unsigned int VectorClass_ptr_BulletClass::GetItemIndex(int a2)
 
 // 0x46B630
 namespace gamemd {
-int VectorClass_ptr_BulletClass::Get(int a2)
+int VectorClass_ptr_BulletClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x46b63a*/
@@ -6499,7 +6499,7 @@ int VectorClass_ptr_BulletClass::Get(int a2)
 
 // 0x46B660
 namespace gamemd {
-char VectorClass_ptr_BulletClass::Add(int a2)
+char VectorClass_ptr_BulletClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -6581,7 +6581,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
 
 // 0x46B750
 namespace gamemd {
-void VectorClass_ptr_BulletClass::Remove()
+void VectorClass_ptr_BulletClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x46b75d*/
@@ -6773,7 +6773,7 @@ LONG VectorClass_ptr_BulletClass::GetItem_0(int a1)
 
 // 0x472AE0
 namespace gamemd {
-void VectorClass_ptr_CaptureManagerClass::Destroy()
+void VectorClass_ptr_CaptureManagerClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -6806,7 +6806,7 @@ unsigned int VectorClass_ptr_CaptureManagerClass::GetItemIndex(int a2)
 
 // 0x472B30
 namespace gamemd {
-int VectorClass_ptr_CaptureManagerClass::Get(int a2)
+int VectorClass_ptr_CaptureManagerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472b3a*/
@@ -6816,7 +6816,7 @@ int VectorClass_ptr_CaptureManagerClass::Get(int a2)
 
 // 0x472DA0
 namespace gamemd {
-char VectorClass_ptr_CaptureManagerClass::Add(int a2)
+char VectorClass_ptr_CaptureManagerClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -6898,7 +6898,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
 
 // 0x472E90
 namespace gamemd {
-void VectorClass_ptr_CaptureManagerClass::Remove()
+void VectorClass_ptr_CaptureManagerClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x472e9d*/
@@ -7323,7 +7323,7 @@ VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
 }
 // 0x48AD10
 namespace gamemd {
-void VectorClass_ptr_DamageGroup::Destroy()
+void VectorClass_ptr_DamageGroup::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -7448,7 +7448,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
 
 // 0x48AE60
 namespace gamemd {
-void VectorClass_ptr_DamageGroup::ddtor()
+void VectorClass_ptr_DamageGroup::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x48ae6d*/
@@ -7489,7 +7489,7 @@ int VectorClass_ptr_DamageGroup::GetSize(unsigned int * a2)
 
 // 0x48AED0
 namespace gamemd {
-unsigned int VectorClass_ptr_DamageGroup::Get(int a2)
+unsigned int VectorClass_ptr_DamageGroup::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x48aed0*/
@@ -7574,7 +7574,7 @@ int VectorClass_ptr_DamageGroup::FindItemIndex(unsigned int * a2)
 
 // 0x48AFD0
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_DamageGroup::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_ptr_DamageGroup::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -7620,7 +7620,7 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
 
 // 0x491390
 namespace gamemd {
-void VectorClass_ptr_ConvertClass::Destroy()
+void VectorClass_ptr_ConvertClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -7653,7 +7653,7 @@ unsigned int VectorClass_ptr_ConvertClass::GetItemIndex(int a2)
 
 // 0x4913E0
 namespace gamemd {
-int VectorClass_ptr_ConvertClass::Get(int a2)
+int VectorClass_ptr_ConvertClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4913ea*/
@@ -7663,7 +7663,7 @@ int VectorClass_ptr_ConvertClass::Get(int a2)
 
 // 0x49AE80
 namespace gamemd {
-char VectorClass_ptr_ConvertClass::Add(int a2)
+char VectorClass_ptr_ConvertClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -7745,7 +7745,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
 
 // 0x49AF70
 namespace gamemd {
-void VectorClass_ptr_ConvertClass::Remove()
+void VectorClass_ptr_ConvertClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x49af7d*/
@@ -7947,7 +7947,7 @@ DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECT
 
 // 0x4A0EB0
 namespace gamemd {
-void VectorClass_UtagCONNECTDATA::Destroy()
+void VectorClass_UtagCONNECTDATA::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -8109,7 +8109,7 @@ void VectorClass_flat::ClearAndFree2()
 }
 // 0x4A10D0
 namespace gamemd {
-int  VectorClass_UtagCONNECTDATA::GetSize( unsigned int * a2)
+int  VectorClass_UtagCONNECTDATA::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -8403,7 +8403,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
 
 // 0x4B9D90
 namespace gamemd {
-void VectorClass_ptr_CrossDissolveEffect::Destroy()
+void VectorClass_ptr_CrossDissolveEffect::Destroy(void *a1_1)
 {
 
   if ( this->Items && this->IsAllocated ) /*0x4b9d9d*/
@@ -8539,7 +8539,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
 
 // 0x4B9FF0
 namespace gamemd {
-void VectorClass_ptr_CrossDissolveEffect::ddtor()
+void VectorClass_ptr_CrossDissolveEffect::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4b9ffd*/
@@ -8580,7 +8580,7 @@ int VectorClass_ptr_CrossDissolveEffect::GetSize(unsigned int * a2)
 
 // 0x4BA060
 namespace gamemd {
-unsigned int VectorClass_ptr_CrossDissolveEffect::Get(int a2)
+unsigned int VectorClass_ptr_CrossDissolveEffect::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4ba060*/
@@ -8616,7 +8616,7 @@ unsigned int * VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0(unsigned int * Bl
 
 // 0x4BA250
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_CrossDissolveEffect::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_ptr_CrossDissolveEffect::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -8639,7 +8639,7 @@ VectorClass_flat * VectorClass_ptr_CrossDissolveEffect::Add(unsigned int * Block
 
 // 0x4C2C40
 namespace gamemd {
-void VectorClass_ptr_EBolt::Destroy()
+void VectorClass_ptr_EBolt::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -8672,7 +8672,7 @@ unsigned int VectorClass_ptr_EBolt::GetItemIndex(int a2)
 
 // 0x4C2C90
 namespace gamemd {
-int VectorClass_ptr_EBolt::Get(int a2)
+int VectorClass_ptr_EBolt::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4c2c9a*/
@@ -8682,7 +8682,7 @@ int VectorClass_ptr_EBolt::Get(int a2)
 
 // 0x4C2CA0
 namespace gamemd {
-char VectorClass_ptr_EBolt::Add(int a2)
+char VectorClass_ptr_EBolt::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -8764,7 +8764,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
 
 // 0x4C2D90
 namespace gamemd {
-void VectorClass_ptr_EBolt::Remove()
+void VectorClass_ptr_EBolt::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4c2d9d*/
@@ -8936,7 +8936,7 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
 
 // 0x4C49A0
 namespace gamemd {
-void VectorClass_ptr_EgoClass::Destroy()
+void VectorClass_ptr_EgoClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -8969,7 +8969,7 @@ unsigned int VectorClass_ptr_EgoClass::GetItemIndex(int a2)
 
 // 0x4C49F0
 namespace gamemd {
-int VectorClass_ptr_EgoClass::Get(int a2)
+int VectorClass_ptr_EgoClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4c49fa*/
@@ -8979,7 +8979,7 @@ int VectorClass_ptr_EgoClass::Get(int a2)
 
 // 0x4C4A00
 namespace gamemd {
-char VectorClass_ptr_EgoClass::Add(int a2)
+char VectorClass_ptr_EgoClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -9061,7 +9061,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
 
 // 0x4C4AF0
 namespace gamemd {
-void VectorClass_ptr_EgoClass::Remove()
+void VectorClass_ptr_EgoClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4c4afd*/
@@ -9233,7 +9233,7 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
 
 // 0x4C5B60
 namespace gamemd {
-void VectorClass_ptr_EMPulseClass::Destroy()
+void VectorClass_ptr_EMPulseClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -9266,7 +9266,7 @@ unsigned int VectorClass_ptr_EMPulseClass::GetItemIndex(int a2)
 
 // 0x4C5BB0
 namespace gamemd {
-int VectorClass_ptr_EMPulseClass::Get(int a2)
+int VectorClass_ptr_EMPulseClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4c5bba*/
@@ -9276,7 +9276,7 @@ int VectorClass_ptr_EMPulseClass::Get(int a2)
 
 // 0x4C5BC0
 namespace gamemd {
-char VectorClass_ptr_EMPulseClass::Add(int a2)
+char VectorClass_ptr_EMPulseClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -9358,7 +9358,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
 
 // 0x4C5CB0
 namespace gamemd {
-void VectorClass_ptr_EMPulseClass::Remove()
+void VectorClass_ptr_EMPulseClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4c5cbd*/
@@ -9585,7 +9585,7 @@ char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
 
 // 0x4E0950
 namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::ddtor()
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::ddtor(void *a1_1)
 {
 
   int v2; // eax
@@ -9641,7 +9641,7 @@ unsigned int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribution
 
 // 0x4E0AB0
 namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy()
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy(void *a1_1)
 {
 
   int v2; // eax
@@ -9719,7 +9719,7 @@ VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistri
 
 // 0x4E0E20
 namespace gamemd {
-DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -9752,7 +9752,7 @@ int VectorClass_Building::Count(int a2)
 
 // 0x4E8350
 namespace gamemd {
-void VectorClass_ptr_SuperClass::Destroy()
+void VectorClass_ptr_SuperClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -9785,7 +9785,7 @@ unsigned int VectorClass_ptr_SuperClass::GetItemIndex(int a2)
 
 // 0x4E83A0
 namespace gamemd {
-int VectorClass_ptr_SuperClass::Get(int a2)
+int VectorClass_ptr_SuperClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e83aa*/
@@ -9795,7 +9795,7 @@ int VectorClass_ptr_SuperClass::Get(int a2)
 
 // 0x4E83B0
 namespace gamemd {
-void VectorClass_ptr_AITriggerTypeClass::Destroy()
+void VectorClass_ptr_AITriggerTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -9828,7 +9828,7 @@ unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex(int a2)
 
 // 0x4E8400
 namespace gamemd {
-int VectorClass_ptr_AITriggerTypeClass::Get(int a2)
+int VectorClass_ptr_AITriggerTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e840a*/
@@ -9838,7 +9838,7 @@ int VectorClass_ptr_AITriggerTypeClass::Get(int a2)
 
 // 0x4E8410
 namespace gamemd {
-void VectorClass_ptr_BuildingLightClass::Destroy()
+void VectorClass_ptr_BuildingLightClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -9871,7 +9871,7 @@ unsigned int VectorClass_ptr_BuildingLightClass::GetItemIndex(int a2)
 
 // 0x4E8460
 namespace gamemd {
-int VectorClass_ptr_BuildingLightClass::Get(int a2)
+int VectorClass_ptr_BuildingLightClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e846a*/
@@ -9881,7 +9881,7 @@ int VectorClass_ptr_BuildingLightClass::Get(int a2)
 
 // 0x4E84D0
 namespace gamemd {
-void VectorClass_ptr_TeamClass::Destroy()
+void VectorClass_ptr_TeamClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -9914,7 +9914,7 @@ unsigned int VectorClass_ptr_TeamClass::GetItemIndex(int a2)
 
 // 0x4E8520
 namespace gamemd {
-int VectorClass_ptr_TeamClass::Get(int a2)
+int VectorClass_ptr_TeamClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e852a*/
@@ -9967,7 +9967,7 @@ unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8590
 namespace gamemd {
-int VectorClass_ptr_TriggerClass::Get(int a2)
+int VectorClass_ptr_TriggerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e859a*/
@@ -10010,7 +10010,7 @@ unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1(int a2)
 
 // 0x4E85F0
 namespace gamemd {
-int VectorClass_ptr_TriggerTypeClass::Get(int a2)
+int VectorClass_ptr_TriggerTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e85fa*/
@@ -10020,7 +10020,7 @@ int VectorClass_ptr_TriggerTypeClass::Get(int a2)
 
 // 0x4E8600
 namespace gamemd {
-void VectorClass_ptr_TubeClass::Destroy()
+void VectorClass_ptr_TubeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10053,7 +10053,7 @@ unsigned int VectorClass_ptr_TubeClass::GetItemIndex(int a2)
 
 // 0x4E8650
 namespace gamemd {
-int VectorClass_ptr_TubeClass::Get(int a2)
+int VectorClass_ptr_TubeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e865a*/
@@ -10096,7 +10096,7 @@ unsigned int VectorClass_ptr_BuildingLightClass::GetItemIndex_0(int a2)
 
 // 0x4E86B0
 namespace gamemd {
-int VectorClass_ptr_ParticleSystemClass::Get(int a2)
+int VectorClass_ptr_ParticleSystemClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e86ba*/
@@ -10139,7 +10139,7 @@ unsigned int VectorClass_ptr_TubeClass::GetItemIndex_0(int a2)
 
 // 0x4E8710
 namespace gamemd {
-int VectorClass_ptr_WaveClass::Get(int a2)
+int VectorClass_ptr_WaveClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e871a*/
@@ -10182,7 +10182,7 @@ unsigned int VectorClass_ptr_TubeClass::GetItemIndex_1(int a2)
 
 // 0x4E8770
 namespace gamemd {
-int VectorClass_ptr_OverlayClass::Get(int a2)
+int VectorClass_ptr_OverlayClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e877a*/
@@ -10192,7 +10192,7 @@ int VectorClass_ptr_OverlayClass::Get(int a2)
 
 // 0x4E8890
 namespace gamemd {
-int VectorClass_ptr_AircraftClass::Get(int a2)
+int VectorClass_ptr_AircraftClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e889a*/
@@ -10202,7 +10202,7 @@ int VectorClass_ptr_AircraftClass::Get(int a2)
 
 // 0x4E88A0
 namespace gamemd {
-void VectorClass_ptr_UnitClass::Destroy()
+void VectorClass_ptr_UnitClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10235,7 +10235,7 @@ unsigned int VectorClass_ptr_UnitClass::GetItemIndex(int a2)
 
 // 0x4E88F0
 namespace gamemd {
-int VectorClass_ptr_UnitClass::Get(int a2)
+int VectorClass_ptr_UnitClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e88fa*/
@@ -10278,7 +10278,7 @@ unsigned int VectorClass_ptr_UnitClass::GetItemIndex_0(int a2)
 
 // 0x4E8950
 namespace gamemd {
-int VectorClass_ptr_HouseClass::Get(int a2)
+int VectorClass_ptr_HouseClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e895a*/
@@ -10364,7 +10364,7 @@ unsigned int VectorClass_ptr_TeamClass::GetItemIndex_1(int a2)
 
 // 0x4E8A10
 namespace gamemd {
-int VectorClass_ptr_FactoryClass::Get(int a2)
+int VectorClass_ptr_FactoryClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8a1a*/
@@ -10374,7 +10374,7 @@ int VectorClass_ptr_FactoryClass::Get(int a2)
 
 // 0x4E8A20
 namespace gamemd {
-void VectorClass_ptr_CampaignClass::Destroy()
+void VectorClass_ptr_CampaignClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10407,7 +10407,7 @@ unsigned int VectorClass_ptr_CampaignClass::GetItemIndex(int a2)
 
 // 0x4E8A70
 namespace gamemd {
-int VectorClass_ptr_CampaignClass::Get(int a2)
+int VectorClass_ptr_CampaignClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8a7a*/
@@ -10450,7 +10450,7 @@ unsigned int VectorClass_ptr_CampaignClass::GetItemIndex_0(int a2)
 
 // 0x4E8AD0
 namespace gamemd {
-int VectorClass_ptr_SideClass::Get(int a2)
+int VectorClass_ptr_SideClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8ada*/
@@ -10460,7 +10460,7 @@ int VectorClass_ptr_SideClass::Get(int a2)
 
 // 0x4E8AE0
 namespace gamemd {
-void VectorClass_ptr_HouseTypeClass::Destroy()
+void VectorClass_ptr_HouseTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10493,7 +10493,7 @@ unsigned int VectorClass_ptr_HouseTypeClass::GetItemIndex(int a2)
 
 // 0x4E8B30
 namespace gamemd {
-int VectorClass_ptr_HouseTypeClass::Get(int a2)
+int VectorClass_ptr_HouseTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8b3a*/
@@ -10536,7 +10536,7 @@ unsigned int VectorClass_ptr_HouseTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8B90
 namespace gamemd {
-int VectorClass_ptr_TaskForceClass::Get(int a2)
+int VectorClass_ptr_TaskForceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8b9a*/
@@ -10579,7 +10579,7 @@ unsigned int VectorClass_ptr_HouseTypeClass::GetItemIndex_1(int a2)
 
 // 0x4E8BF0
 namespace gamemd {
-int VectorClass_ptr_TeamTypeClass::Get(int a2)
+int VectorClass_ptr_TeamTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8bfa*/
@@ -10589,7 +10589,7 @@ int VectorClass_ptr_TeamTypeClass::Get(int a2)
 
 // 0x4E8C00
 namespace gamemd {
-void VectorClass_ptr_ScriptTypeClass::Destroy()
+void VectorClass_ptr_ScriptTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10622,7 +10622,7 @@ unsigned int VectorClass_ptr_ScriptTypeClass::GetItemIndex(int a2)
 
 // 0x4E8C50
 namespace gamemd {
-int VectorClass_ptr_ScriptTypeClass::Get(int a2)
+int VectorClass_ptr_ScriptTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8c5a*/
@@ -10665,7 +10665,7 @@ unsigned int VectorClass_ptr_ScriptTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8CB0
 namespace gamemd {
-int VectorClass_ptr_OverlayTypeClass::Get(int a2)
+int VectorClass_ptr_OverlayTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8cba*/
@@ -10675,7 +10675,7 @@ int VectorClass_ptr_OverlayTypeClass::Get(int a2)
 
 // 0x4E8CC0
 namespace gamemd {
-void VectorClass_ptr_SmudgeTypeClass::Destroy()
+void VectorClass_ptr_SmudgeTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10708,7 +10708,7 @@ unsigned int VectorClass_ptr_SmudgeTypeClass::GetItemIndex(int a2)
 
 // 0x4E8D10
 namespace gamemd {
-int VectorClass_ptr_SmudgeTypeClass::Get(int a2)
+int VectorClass_ptr_SmudgeTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8d1a*/
@@ -10751,7 +10751,7 @@ unsigned int VectorClass_ptr_SmudgeTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8D70
 namespace gamemd {
-int VectorClass_ptr_TerrainTypeClass::Get(int a2)
+int VectorClass_ptr_TerrainTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8d7a*/
@@ -10804,7 +10804,7 @@ int VectorClass_ptr_BuildingTypeClass::SaveToINI(int a2)
 
 // 0x4E8DE0
 namespace gamemd {
-void VectorClass_ptr_AircraftTypeClass::Destroy()
+void VectorClass_ptr_AircraftTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10837,7 +10837,7 @@ unsigned int VectorClass_ptr_AircraftTypeClass::GetItemIndex(int a2)
 
 // 0x4E8E30
 namespace gamemd {
-int VectorClass_ptr_AircraftTypeClass::Get(int a2)
+int VectorClass_ptr_AircraftTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8e3a*/
@@ -10880,7 +10880,7 @@ unsigned int VectorClass_ptr_AircraftTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8E90
 namespace gamemd {
-int VectorClass_ptr_UnitTypeClass::Get(int a2)
+int VectorClass_ptr_UnitTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8e9a*/
@@ -10890,7 +10890,7 @@ int VectorClass_ptr_UnitTypeClass::Get(int a2)
 
 // 0x4E8EA0
 namespace gamemd {
-void VectorClass_ptr_AnimTypeClass::Destroy()
+void VectorClass_ptr_AnimTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -10923,7 +10923,7 @@ unsigned int VectorClass_ptr_AnimTypeClass::GetItemIndex(int a2)
 
 // 0x4E8EF0
 namespace gamemd {
-int VectorClass_ptr_AnimTypeClass::Get(int a2)
+int VectorClass_ptr_AnimTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8efa*/
@@ -10966,7 +10966,7 @@ unsigned int VectorClass_ptr_AnimTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E8F50
 namespace gamemd {
-int VectorClass_ptr_InfantryTypeClass::Get(int a2)
+int VectorClass_ptr_InfantryTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8f5a*/
@@ -11009,7 +11009,7 @@ unsigned int VectorClass_ptr_AnimTypeClass::GetItemIndex_1(int a2)
 
 // 0x4E8FB0
 namespace gamemd {
-int VectorClass_ptr_BulletTypeClass::Get(int a2)
+int VectorClass_ptr_BulletTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8fba*/
@@ -11019,7 +11019,7 @@ int VectorClass_ptr_BulletTypeClass::Get(int a2)
 
 // 0x4E8FC0
 namespace gamemd {
-void VectorClass_ptr_VoxelAnimTypeClass::Destroy()
+void VectorClass_ptr_VoxelAnimTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -11052,7 +11052,7 @@ unsigned int VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex(int a2)
 
 // 0x4E9010
 namespace gamemd {
-int VectorClass_ptr_VoxelAnimTypeClass::Get(int a2)
+int VectorClass_ptr_VoxelAnimTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e901a*/
@@ -11095,7 +11095,7 @@ unsigned int VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E9070
 namespace gamemd {
-int VectorClass_ptr_IsometricTileTypeClass::Get(int a2)
+int VectorClass_ptr_IsometricTileTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e907a*/
@@ -11105,7 +11105,7 @@ int VectorClass_ptr_IsometricTileTypeClass::Get(int a2)
 
 // 0x4E9080
 namespace gamemd {
-void VectorClass_ptr_ParticleTypeClass::Destroy()
+void VectorClass_ptr_ParticleTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -11138,7 +11138,7 @@ unsigned int VectorClass_ptr_ParticleTypeClass::GetItemIndex(int a2)
 
 // 0x4E90D0
 namespace gamemd {
-int VectorClass_ptr_ParticleTypeClass::Get(int a2)
+int VectorClass_ptr_ParticleTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e90da*/
@@ -11181,7 +11181,7 @@ unsigned int VectorClass_ptr_ParticleTypeClass::GetItemIndex_0(int a2)
 
 // 0x4E9130
 namespace gamemd {
-int VectorClass_ptr_ParticleSystemTypeClass::Get(int a2)
+int VectorClass_ptr_ParticleSystemTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e913a*/
@@ -11224,7 +11224,7 @@ unsigned int VectorClass_ptr_ParticleTypeClass::GetItemIndex_1(int a2)
 
 // 0x4E9190
 namespace gamemd {
-int VectorClass_ptr_SuperWeaponTypeClass::Get(int a2)
+int VectorClass_ptr_SuperWeaponTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e919a*/
@@ -11267,7 +11267,7 @@ unsigned int VectorClass_ptr_SuperClass::GetItemIndex_0(int a2)
 
 // 0x4E91F0
 namespace gamemd {
-int VectorClass_ptr_AbstractTypeClass::Get(int a2)
+int VectorClass_ptr_AbstractTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e91fa*/
@@ -11277,7 +11277,7 @@ int VectorClass_ptr_AbstractTypeClass::Get(int a2)
 
 // 0x4E9460
 namespace gamemd {
-char VectorClass_Building::Get(int a2)
+char VectorClass_Building::Get(int a2, void *a2_2)
 {
 
   int m_8; // esi
@@ -11359,7 +11359,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
 
 // 0x4E9550
 namespace gamemd {
-void VectorClass_Building::Set()
+void VectorClass_Building::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e955d*/
@@ -11413,7 +11413,7 @@ unsigned int VectorClass_Building::GetCapacity(int a2)
 
 // 0x4E96C0
 namespace gamemd {
-char VectorClass_ptr_SuperClass::Add(int a2)
+char VectorClass_ptr_SuperClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -11495,7 +11495,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
 
 // 0x4E97B0
 namespace gamemd {
-void VectorClass_ptr_SuperClass::Remove()
+void VectorClass_ptr_SuperClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e97bd*/
@@ -11572,7 +11572,7 @@ int VectorClass_ptr_SuperClass::FindItemIndex(unsigned int * a2)
 
 // 0x4E9920
 namespace gamemd {
-char VectorClass_ptr_AITriggerTypeClass::Add(int a2)
+char VectorClass_ptr_AITriggerTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -11654,7 +11654,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4E9A10
 namespace gamemd {
-void VectorClass_ptr_AITriggerTypeClass::Remove()
+void VectorClass_ptr_AITriggerTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e9a1d*/
@@ -11780,7 +11780,7 @@ int VectorClass_ptr_AITriggerTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4E9B80
 namespace gamemd {
-char VectorClass_ptr_BuildingLightClass::Add(int a2)
+char VectorClass_ptr_BuildingLightClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -11862,7 +11862,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
 
 // 0x4E9C70
 namespace gamemd {
-void VectorClass_ptr_BuildingLightClass::Remove()
+void VectorClass_ptr_BuildingLightClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e9c7d*/
@@ -11988,7 +11988,7 @@ int VectorClass_ptr_BuildingLightClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EA040
 namespace gamemd {
-char VectorClass_ptr_TeamClass::Add(int a2)
+char VectorClass_ptr_TeamClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -12070,7 +12070,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
 
 // 0x4EA130
 namespace gamemd {
-void VectorClass_ptr_TeamClass::Remove()
+void VectorClass_ptr_TeamClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ea13d*/
@@ -12278,7 +12278,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
 
 // 0x4EA390
 namespace gamemd {
-void VectorClass_ptr_ThemeControl::ddtor()
+void VectorClass_ptr_ThemeControl::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ea39d*/
@@ -12319,7 +12319,7 @@ int VectorClass_ptr_ThemeControl::GetSize(unsigned int * a2)
 
 // 0x4EA400
 namespace gamemd {
-unsigned int VectorClass_ptr_ThemeControl::Get(int a2)
+unsigned int VectorClass_ptr_ThemeControl::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4ea400*/
@@ -12332,7 +12332,7 @@ unsigned int VectorClass_ptr_ThemeControl::Get(int a2)
 
 // 0x4EA420
 namespace gamemd {
-char VectorClass_ptr_TriggerClass::Add(int a2)
+char VectorClass_ptr_TriggerClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -12414,7 +12414,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
 
 // 0x4EA510
 namespace gamemd {
-void VectorClass_ptr_TriggerClass::Remove()
+void VectorClass_ptr_TriggerClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ea51d*/
@@ -12540,7 +12540,7 @@ int VectorClass_ptr_AITriggerTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EA680
 namespace gamemd {
-char VectorClass_ptr_TriggerTypeClass::Add(int a2)
+char VectorClass_ptr_TriggerTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -12622,7 +12622,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EA770
 namespace gamemd {
-void VectorClass_ptr_TriggerTypeClass::Remove()
+void VectorClass_ptr_TriggerTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ea77d*/
@@ -12748,7 +12748,7 @@ int VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EA8E0
 namespace gamemd {
-char VectorClass_ptr_TubeClass::Add(int a2)
+char VectorClass_ptr_TubeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -12830,7 +12830,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EA9D0
 namespace gamemd {
-void VectorClass_ptr_TubeClass::Remove()
+void VectorClass_ptr_TubeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ea9dd*/
@@ -12956,7 +12956,7 @@ int VectorClass_ptr_TubeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EAB40
 namespace gamemd {
-char VectorClass_ptr_ParticleSystemClass::Add(int a2)
+char VectorClass_ptr_ParticleSystemClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -13038,7 +13038,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
 
 // 0x4EAC30
 namespace gamemd {
-void VectorClass_ptr_ParticleSystemClass::Remove()
+void VectorClass_ptr_ParticleSystemClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eac3d*/
@@ -13164,7 +13164,7 @@ int VectorClass_ptr_BuildingLightClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EADA0
 namespace gamemd {
-char VectorClass_ptr_WaveClass::Add(int a2)
+char VectorClass_ptr_WaveClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -13246,7 +13246,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
 
 // 0x4EAE90
 namespace gamemd {
-void VectorClass_ptr_WaveClass::Remove()
+void VectorClass_ptr_WaveClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eae9d*/
@@ -13372,7 +13372,7 @@ int VectorClass_ptr_TubeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EB000
 namespace gamemd {
-char VectorClass_ptr_OverlayClass::Add(int a2)
+char VectorClass_ptr_OverlayClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -13454,7 +13454,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
 
 // 0x4EB0F0
 namespace gamemd {
-void VectorClass_ptr_OverlayClass::Remove()
+void VectorClass_ptr_OverlayClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb0fd*/
@@ -13580,7 +13580,7 @@ int VectorClass_ptr_TubeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EB720
 namespace gamemd {
-char VectorClass_ptr_AircraftClass::Add(int a2)
+char VectorClass_ptr_AircraftClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -13662,7 +13662,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
 
 // 0x4EB810
 namespace gamemd {
-void VectorClass_ptr_AircraftClass::Remove()
+void VectorClass_ptr_AircraftClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb81d*/
@@ -13716,7 +13716,7 @@ unsigned int VectorClass_ptr_AircraftClass::GetCapacity(int a2)
 
 // 0x4EB980
 namespace gamemd {
-char VectorClass_ptr_UnitClass::Add(int a2)
+char VectorClass_ptr_UnitClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -13798,7 +13798,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
 
 // 0x4EBA70
 namespace gamemd {
-void VectorClass_ptr_UnitClass::Remove()
+void VectorClass_ptr_UnitClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eba7d*/
@@ -13924,7 +13924,7 @@ int VectorClass_ptr_UnitClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EBBE0
 namespace gamemd {
-char VectorClass_ptr_HouseClass::Add(int a2)
+char VectorClass_ptr_HouseClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -14006,7 +14006,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
 
 // 0x4EBCD0
 namespace gamemd {
-void VectorClass_ptr_HouseClass::Remove()
+void VectorClass_ptr_HouseClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ebcdd*/
@@ -14132,7 +14132,7 @@ int VectorClass_ptr_UnitClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EBE40
 namespace gamemd {
-char VectorClass_ptr_AnimClass::Add(int a2)
+char VectorClass_ptr_AnimClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -14214,7 +14214,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
 
 // 0x4EBF30
 namespace gamemd {
-void VectorClass_ptr_AnimClass::Remove()
+void VectorClass_ptr_AnimClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ebf3d*/
@@ -14337,7 +14337,7 @@ int VectorClass_ptr_TeamClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EC0A0
 namespace gamemd {
-char VectorClass_ptr_FactoryClass::Add(int a2)
+char VectorClass_ptr_FactoryClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -14419,7 +14419,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
 
 // 0x4EC190
 namespace gamemd {
-void VectorClass_ptr_FactoryClass::Remove()
+void VectorClass_ptr_FactoryClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ec19d*/
@@ -14545,7 +14545,7 @@ int VectorClass_ptr_TeamClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EC300
 namespace gamemd {
-char VectorClass_ptr_CampaignClass::Add(int a2)
+char VectorClass_ptr_CampaignClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -14627,7 +14627,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
 
 // 0x4EC3F0
 namespace gamemd {
-void VectorClass_ptr_CampaignClass::Remove()
+void VectorClass_ptr_CampaignClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ec3fd*/
@@ -14753,7 +14753,7 @@ int VectorClass_ptr_CampaignClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EC560
 namespace gamemd {
-char VectorClass_ptr_SideClass::Add(int a2)
+char VectorClass_ptr_SideClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -14835,7 +14835,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
 
 // 0x4EC650
 namespace gamemd {
-void VectorClass_ptr_SideClass::Remove()
+void VectorClass_ptr_SideClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ec65d*/
@@ -14961,7 +14961,7 @@ int VectorClass_ptr_CampaignClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EC7C0
 namespace gamemd {
-char VectorClass_ptr_HouseTypeClass::Add(int a2)
+char VectorClass_ptr_HouseTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -15043,7 +15043,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EC8B0
 namespace gamemd {
-void VectorClass_ptr_HouseTypeClass::Remove()
+void VectorClass_ptr_HouseTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ec8bd*/
@@ -15169,7 +15169,7 @@ int VectorClass_ptr_HouseTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4ECA20
 namespace gamemd {
-char VectorClass_ptr_TaskForceClass::Add(int a2)
+char VectorClass_ptr_TaskForceClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -15251,7 +15251,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
 
 // 0x4ECB10
 namespace gamemd {
-void VectorClass_ptr_TaskForceClass::Remove()
+void VectorClass_ptr_TaskForceClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ecb1d*/
@@ -15377,7 +15377,7 @@ int VectorClass_ptr_HouseTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4ECC80
 namespace gamemd {
-char VectorClass_ptr_TeamTypeClass::Add(int a2)
+char VectorClass_ptr_TeamTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -15459,7 +15459,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4ECD70
 namespace gamemd {
-void VectorClass_ptr_TeamTypeClass::Remove()
+void VectorClass_ptr_TeamTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ecd7d*/
@@ -15585,7 +15585,7 @@ int VectorClass_ptr_HouseTypeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4ECEE0
 namespace gamemd {
-char VectorClass_ptr_ScriptTypeClass::Add(int a2)
+char VectorClass_ptr_ScriptTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -15667,7 +15667,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4ECFD0
 namespace gamemd {
-void VectorClass_ptr_ScriptTypeClass::Remove()
+void VectorClass_ptr_ScriptTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ecfdd*/
@@ -15793,7 +15793,7 @@ int VectorClass_ptr_ScriptTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4ED140
 namespace gamemd {
-char VectorClass_ptr_OverlayTypeClass::Add(int a2)
+char VectorClass_ptr_OverlayTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -15875,7 +15875,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4ED230
 namespace gamemd {
-void VectorClass_ptr_OverlayTypeClass::Remove()
+void VectorClass_ptr_OverlayTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ed23d*/
@@ -16001,7 +16001,7 @@ int VectorClass_ptr_ScriptTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4ED3A0
 namespace gamemd {
-char VectorClass_ptr_SmudgeTypeClass::Add(int a2)
+char VectorClass_ptr_SmudgeTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -16083,7 +16083,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4ED490
 namespace gamemd {
-void VectorClass_ptr_SmudgeTypeClass::Remove()
+void VectorClass_ptr_SmudgeTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ed49d*/
@@ -16209,7 +16209,7 @@ int VectorClass_ptr_SmudgeTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4ED600
 namespace gamemd {
-char VectorClass_ptr_TerrainTypeClass::Add(int a2)
+char VectorClass_ptr_TerrainTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -16291,7 +16291,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4ED6F0
 namespace gamemd {
-void VectorClass_ptr_TerrainTypeClass::Remove()
+void VectorClass_ptr_TerrainTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ed6fd*/
@@ -16417,7 +16417,7 @@ int VectorClass_ptr_SmudgeTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4ED860
 namespace gamemd {
-char VectorClass_ptr_BuildingTypeClass::Add(int a2)
+char VectorClass_ptr_BuildingTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -16512,7 +16512,7 @@ void VectorClass_flat::Cleanup4()
 }
 // 0x4ED980
 namespace gamemd {
-int  VectorClass_ptr_BuildingTypeClass::GetSize( unsigned int * a2)
+int  VectorClass_ptr_BuildingTypeClass::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -16622,7 +16622,7 @@ int VectorClass_ptr_SmudgeTypeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EDAC0
 namespace gamemd {
-char VectorClass_ptr_AircraftTypeClass::Add(int a2)
+char VectorClass_ptr_AircraftTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -16704,7 +16704,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EDBB0
 namespace gamemd {
-void VectorClass_ptr_AircraftTypeClass::Remove()
+void VectorClass_ptr_AircraftTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4edbbd*/
@@ -16830,7 +16830,7 @@ int VectorClass_ptr_AircraftTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EDD20
 namespace gamemd {
-char VectorClass_ptr_UnitTypeClass::Add(int a2)
+char VectorClass_ptr_UnitTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -16912,7 +16912,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EDE10
 namespace gamemd {
-void VectorClass_ptr_UnitTypeClass::Remove()
+void VectorClass_ptr_UnitTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ede1d*/
@@ -17038,7 +17038,7 @@ int VectorClass_ptr_AircraftTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EDF80
 namespace gamemd {
-char VectorClass_ptr_AnimTypeClass::Add(int a2)
+char VectorClass_ptr_AnimTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -17120,7 +17120,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EE070
 namespace gamemd {
-void VectorClass_ptr_AnimTypeClass::Remove()
+void VectorClass_ptr_AnimTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ee07d*/
@@ -17246,7 +17246,7 @@ int VectorClass_ptr_AnimTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EE1E0
 namespace gamemd {
-char VectorClass_ptr_InfantryTypeClass::Add(int a2)
+char VectorClass_ptr_InfantryTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -17328,7 +17328,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EE2D0
 namespace gamemd {
-void VectorClass_ptr_InfantryTypeClass::Remove()
+void VectorClass_ptr_InfantryTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ee2dd*/
@@ -17454,7 +17454,7 @@ int VectorClass_ptr_AnimTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EE440
 namespace gamemd {
-char VectorClass_ptr_BulletTypeClass::Add(int a2)
+char VectorClass_ptr_BulletTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -17536,7 +17536,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EE530
 namespace gamemd {
-void VectorClass_ptr_BulletTypeClass::Remove()
+void VectorClass_ptr_BulletTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ee53d*/
@@ -17662,7 +17662,7 @@ int VectorClass_ptr_AnimTypeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EE6A0
 namespace gamemd {
-char VectorClass_ptr_VoxelAnimTypeClass::Add(int a2)
+char VectorClass_ptr_VoxelAnimTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -17744,7 +17744,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EE790
 namespace gamemd {
-void VectorClass_ptr_VoxelAnimTypeClass::Remove()
+void VectorClass_ptr_VoxelAnimTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ee79d*/
@@ -17870,7 +17870,7 @@ int VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EE900
 namespace gamemd {
-char VectorClass_ptr_IsometricTileTypeClass::Add(int a2)
+char VectorClass_ptr_IsometricTileTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -17952,7 +17952,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EE9F0
 namespace gamemd {
-void VectorClass_ptr_IsometricTileTypeClass::Remove()
+void VectorClass_ptr_IsometricTileTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ee9fd*/
@@ -18078,7 +18078,7 @@ int VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EEB60
 namespace gamemd {
-char VectorClass_ptr_ParticleTypeClass::Add(int a2)
+char VectorClass_ptr_ParticleTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -18160,7 +18160,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EEC50
 namespace gamemd {
-void VectorClass_ptr_ParticleTypeClass::Remove()
+void VectorClass_ptr_ParticleTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eec5d*/
@@ -18286,7 +18286,7 @@ int VectorClass_ptr_ParticleTypeClass::FindItemIndex(unsigned int * a2)
 
 // 0x4EEDC0
 namespace gamemd {
-char VectorClass_ptr_ParticleSystemTypeClass::Add(int a2)
+char VectorClass_ptr_ParticleSystemTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -18368,7 +18368,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EEEB0
 namespace gamemd {
-void VectorClass_ptr_ParticleSystemTypeClass::Remove()
+void VectorClass_ptr_ParticleSystemTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eeebd*/
@@ -18494,7 +18494,7 @@ int VectorClass_ptr_ParticleTypeClass::FindItemIndex_0(unsigned int * a2)
 
 // 0x4EF020
 namespace gamemd {
-char VectorClass_ptr_SuperWeaponTypeClass::Add(int a2)
+char VectorClass_ptr_SuperWeaponTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -18576,7 +18576,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EF110
 namespace gamemd {
-void VectorClass_ptr_SuperWeaponTypeClass::Remove()
+void VectorClass_ptr_SuperWeaponTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ef11d*/
@@ -18702,7 +18702,7 @@ int VectorClass_ptr_ParticleTypeClass::FindItemIndex_1(unsigned int * a2)
 
 // 0x4EF280
 namespace gamemd {
-char VectorClass_ptr_AbstractTypeClass::Add(int a2)
+char VectorClass_ptr_AbstractTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -18784,7 +18784,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x4EF370
 namespace gamemd {
-void VectorClass_ptr_AbstractTypeClass::Remove()
+void VectorClass_ptr_AbstractTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ef37d*/
@@ -19117,7 +19117,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
 
 // 0x4EF940
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_ThemeControl::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_ptr_ThemeControl::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -20774,7 +20774,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int 
 
 // 0x50E4A0
 namespace gamemd {
-void VectorClass_UScoutStruct___33::ddtor()
+void VectorClass_UScoutStruct___33::ddtor(void *a1_1)
 {
 
   void *v2; // eax
@@ -20817,7 +20817,7 @@ int VectorClass_BuildingType::Count(int a2)
 
 // 0x50E500
 namespace gamemd {
-void VectorClass_UAngerStruct::Destroy()
+void VectorClass_UAngerStruct::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -20964,7 +20964,7 @@ unsigned int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1(int 
 
 // 0x50E690
 namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Get(int a2)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e69a*/
@@ -20974,7 +20974,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Get(int a2)
 
 // 0x50E6A0
 namespace gamemd {
-void VectorClass_BuildingType::Destroy()
+void VectorClass_BuildingType::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -21007,7 +21007,7 @@ unsigned int VectorClass_BuildingType::GetItemIndex(int a2)
 
 // 0x50E6F0
 namespace gamemd {
-int VectorClass_BuildingType::GetElement(int a2)
+int VectorClass_BuildingType::GetElement(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e6fa*/
@@ -21017,7 +21017,7 @@ int VectorClass_BuildingType::GetElement(int a2)
 
 // 0x50E700
 namespace gamemd {
-void VectorClass__N::Destroy()
+void VectorClass__N::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -21060,7 +21060,7 @@ char VectorClass__N::Clear(int a2)
 
 // 0x50E760
 namespace gamemd {
-void VectorClass__N_18::Destroy()
+void VectorClass__N_18::Destroy(void *a1_1)
 {
 
   int v2; // eax
@@ -21112,7 +21112,7 @@ unsigned int * VectorClass__N_18::Clear(unsigned int * a2, int a3)
 
 // 0x50E7E0
 namespace gamemd {
-TypeList_flat * VectorClass_BuildingType::Constructor(unsigned int * Block, char a2)
+TypeList_flat * VectorClass_BuildingType::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -21135,7 +21135,7 @@ TypeList_flat * VectorClass_BuildingType::Constructor(unsigned int * Block, char
 
 // 0x50E8C0
 namespace gamemd {
-DynamicVector * VectorClass__N_18::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass__N_18::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -21189,7 +21189,7 @@ char VectorClass_BuildingType::AddRef(int a2)
 
 // 0x50E950
 namespace gamemd {
-char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
+char VectorClass_BuildingType::Set(int a2, unsigned int * a3, void *a3_2)
 {
 
   unsigned int *v4; // edi
@@ -21422,7 +21422,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
 
 // 0x50ED10
 namespace gamemd {
-void VectorClass_UAngerStruct___16::ddtor()
+void VectorClass_UAngerStruct___16::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x50ed1d*/
@@ -21693,7 +21693,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
 
 // 0x50EFD0
 namespace gamemd {
-void VectorClass_UAngerStruct::ddtor()
+void VectorClass_UAngerStruct::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x50efdd*/
@@ -22022,7 +22022,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
 
 // 0x50F300
 namespace gamemd {
-void VectorClass_UScoutStruct::ddtor()
+void VectorClass_UScoutStruct::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x50f30d*/
@@ -22076,7 +22076,7 @@ unsigned int VectorClass_UScoutStruct::GetCapacity(int a2)
 
 // 0x50F4E0
 namespace gamemd {
-char VectorClass_ptr_BuildChoiceClass_int_ouseClass::Add(int a2)
+char VectorClass_ptr_BuildChoiceClass_int_ouseClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -22107,7 +22107,7 @@ char VectorClass_ptr_BuildChoiceClass_int_ouseClass::Add(int a2)
 
 // 0x50F5D0
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Remove()
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x50f5dd*/
@@ -22279,7 +22279,7 @@ void VectorClass_flat::ClearAndFree3()
 }
 // 0x50F860
 namespace gamemd {
-int  VectorClass_BuildingType::FindItemIndex( unsigned int * a2)
+int  VectorClass_BuildingType::FindItemIndex(unsigned int * a2)
 {
 
   int result; // eax
@@ -22465,7 +22465,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
 
 // 0x50FA90
 namespace gamemd {
-void VectorClass__N::ddtor()
+void VectorClass__N::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x50fa9d*/
@@ -22507,7 +22507,7 @@ int VectorClass__N::GetSize(unsigned char * a2)
 
 // 0x50FB00
 namespace gamemd {
-int VectorClass__N::Get(int a2)
+int VectorClass__N::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x50fb00*/
@@ -22740,7 +22740,7 @@ char VectorClass__N_18::Remove(int a2, int * a3)
 
 // 0x50FD70
 namespace gamemd {
-void VectorClass__N_18::ddtor()
+void VectorClass__N_18::ddtor(void *a1_1)
 {
 
   int v2; // eax
@@ -22784,7 +22784,7 @@ int VectorClass__N_18::GetSize(unsigned int * a2)
 
 // 0x50FE00
 namespace gamemd {
-unsigned int VectorClass__N_18::Get(int a2)
+unsigned int VectorClass__N_18::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x50fe00*/
@@ -23004,7 +23004,7 @@ VectorClass_flat * VectorClass_UAngerStruct___16::QueryInterface(unsigned int * 
 
 // 0x5100E0
 namespace gamemd {
-DynamicVector * VectorClass_UAngerStruct::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_UAngerStruct::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -23142,7 +23142,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
 
 // 0x510310
 namespace gamemd {
-VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -23165,7 +23165,7 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
 
 // 0x510360
 namespace gamemd {
-VectorClass_flat * VectorClass__N::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass__N::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -23211,7 +23211,7 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
 
 // 0x510400
 namespace gamemd {
-VectorClass_flat * VectorClass__N_18::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass__N_18::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -23234,7 +23234,7 @@ VectorClass_flat * VectorClass__N_18::Add(unsigned int * Block, char a2)
 
 // 0x5104A0
 namespace gamemd {
-DynamicVector * VectorClass__N_18::Constructor_0(unsigned int * Block, char a2)
+DynamicVector * VectorClass__N_18::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -23623,7 +23623,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
 
 // 0x538610
 namespace gamemd {
-void VectorClass_ptr_CCINIClass::ddtor()
+void VectorClass_ptr_CCINIClass::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x53861d*/
@@ -23664,7 +23664,7 @@ int VectorClass_ptr_CCINIClass::GetSize(unsigned int * a2)
 
 // 0x538680
 namespace gamemd {
-unsigned int VectorClass_ptr_CCINIClass::Get(int a2)
+unsigned int VectorClass_ptr_CCINIClass::Get(int a2, void *a2_2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x538680*/
@@ -23677,7 +23677,7 @@ unsigned int VectorClass_ptr_CCINIClass::Get(int a2)
 
 // 0x538A90
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_CCINIClass::Add(unsigned int * Block, char a2)
+VectorClass_flat * VectorClass_ptr_CCINIClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -23700,7 +23700,7 @@ VectorClass_flat * VectorClass_ptr_CCINIClass::Add(unsigned int * Block, char a2
 
 // 0x53DA40
 namespace gamemd {
-void VectorClass_ptr_IonBlastClass::Destroy()
+void VectorClass_ptr_IonBlastClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -23733,7 +23733,7 @@ unsigned int VectorClass_ptr_IonBlastClass::GetItemIndex(int a2)
 
 // 0x53DA90
 namespace gamemd {
-int VectorClass_ptr_IonBlastClass::Get(int a2)
+int VectorClass_ptr_IonBlastClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x53da9a*/
@@ -23743,7 +23743,7 @@ int VectorClass_ptr_IonBlastClass::Get(int a2)
 
 // 0x53DAA0
 namespace gamemd {
-char VectorClass_ptr_IonBlastClass::Add(int a2)
+char VectorClass_ptr_IonBlastClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -23825,7 +23825,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
 
 // 0x53DB90
 namespace gamemd {
-void VectorClass_ptr_IonBlastClass::Remove()
+void VectorClass_ptr_IonBlastClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x53db9d*/
@@ -24007,7 +24007,7 @@ int VectorClass_PAG::Count(int a2)
 
 // 0x54A1F0
 namespace gamemd {
-void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Destroy()
+void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -24040,7 +24040,7 @@ unsigned int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::GetItemI
 
 // 0x54A240
 namespace gamemd {
-int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Get(int a2)
+int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x54a24a*/
@@ -24050,7 +24050,7 @@ int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Get(int a2)
 
 // 0x54A250
 namespace gamemd {
-char VectorClass_PAG::Get(int a2)
+char VectorClass_PAG::Get(int a2, void *a2_2)
 {
 
   int m_8; // esi
@@ -24132,7 +24132,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
 
 // 0x54A340
 namespace gamemd {
-void VectorClass_PAG::Set()
+void VectorClass_PAG::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x54a34d*/
@@ -24186,7 +24186,7 @@ unsigned int VectorClass_PAG::GetCapacity(int a2)
 
 // 0x54A4B0
 namespace gamemd {
-char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Add(int a2)
+char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -24268,7 +24268,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
 
 // 0x54A5A0
 namespace gamemd {
-void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Remove()
+void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x54a5ad*/
@@ -24441,7 +24441,7 @@ VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Qu
 
 // 0x54A800
 namespace gamemd {
-DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -24464,7 +24464,7 @@ DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Const
 
 // 0x5512D0
 namespace gamemd {
-void VectorClass_ptr_LaserDrawClass::Destroy()
+void VectorClass_ptr_LaserDrawClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -24497,7 +24497,7 @@ unsigned int VectorClass_ptr_LaserDrawClass::GetItemIndex(int a2)
 
 // 0x551320
 namespace gamemd {
-int VectorClass_ptr_LaserDrawClass::Get(int a2)
+int VectorClass_ptr_LaserDrawClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55132a*/
@@ -24507,7 +24507,7 @@ int VectorClass_ptr_LaserDrawClass::Get(int a2)
 
 // 0x551330
 namespace gamemd {
-char VectorClass_ptr_LaserDrawClass::Add(int a2)
+char VectorClass_ptr_LaserDrawClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -24589,7 +24589,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
 
 // 0x551420
 namespace gamemd {
-void VectorClass_ptr_LaserDrawClass::Remove()
+void VectorClass_ptr_LaserDrawClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x55142d*/
@@ -24761,7 +24761,7 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
 
 // 0x555200
 namespace gamemd {
-void VectorClass_ptr_LightSourceClass::Destroy()
+void VectorClass_ptr_LightSourceClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -24794,7 +24794,7 @@ unsigned int VectorClass_ptr_LightSourceClass::GetItemIndex(int a2)
 
 // 0x555250
 namespace gamemd {
-int VectorClass_ptr_LightSourceClass::Get(int a2)
+int VectorClass_ptr_LightSourceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55525a*/
@@ -24837,7 +24837,7 @@ unsigned int VectorClass_ptr_LightSourceClass::GetItemIndex_0(int a2)
 
 // 0x5552B0
 namespace gamemd {
-int VectorClass_ptr_PendingCellClass_LightSourceClass::Get(int a2)
+int VectorClass_ptr_PendingCellClass_LightSourceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5552ba*/
@@ -24847,7 +24847,7 @@ int VectorClass_ptr_PendingCellClass_LightSourceClass::Get(int a2)
 
 // 0x5552C0
 namespace gamemd {
-char VectorClass_ptr_LightSourceClass::Add(int a2)
+char VectorClass_ptr_LightSourceClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -24929,7 +24929,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
 
 // 0x5553B0
 namespace gamemd {
-void VectorClass_ptr_LightSourceClass::Remove()
+void VectorClass_ptr_LightSourceClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5553bd*/
@@ -25055,7 +25055,7 @@ int VectorClass_ptr_LightSourceClass::FindItemIndex(unsigned int * a2)
 
 // 0x555520
 namespace gamemd {
-char VectorClass_ptr_PendingCellClass_LightSourceClass::Add(int a2)
+char VectorClass_ptr_PendingCellClass_LightSourceClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -25137,7 +25137,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
 
 // 0x555610
 namespace gamemd {
-void VectorClass_ptr_PendingCellClass_LightSourceClass::Remove()
+void VectorClass_ptr_PendingCellClass_LightSourceClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x55561d*/
@@ -25332,7 +25332,7 @@ VectorClass_flat * VectorClass_ptr_PendingCellClass_LightSourceClass::QueryInter
 
 // 0x555870
 namespace gamemd {
-DynamicVector * VectorClass_ptr_LightSourceClass::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_ptr_LightSourceClass::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -25355,7 +25355,7 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor(unsigned int * Blo
 
 // 0x556F00
 namespace gamemd {
-int VectorClass_ptr_LineTrail::Get(int a2)
+int VectorClass_ptr_LineTrail::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x556f0a*/
@@ -25365,7 +25365,7 @@ int VectorClass_ptr_LineTrail::Get(int a2)
 
 // 0x556F10
 namespace gamemd {
-char VectorClass_ptr_LineTrail::Add(int a2)
+char VectorClass_ptr_LineTrail::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -25447,7 +25447,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
 
 // 0x557000
 namespace gamemd {
-void VectorClass_ptr_LineTrail::Remove()
+void VectorClass_ptr_LineTrail::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x55700d*/
@@ -25534,7 +25534,7 @@ int VectorClass_PBG::Count(int a2)
 
 // 0x558240
 namespace gamemd {
-char VectorClass_PBG::Get(int a2)
+char VectorClass_PBG::Get(int a2, void *a2_2)
 {
 
   int m_8; // esi
@@ -25616,7 +25616,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
 
 // 0x558330
 namespace gamemd {
-void VectorClass_PBG::Set()
+void VectorClass_PBG::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x55833d*/
@@ -25825,7 +25825,7 @@ int VectorClass_USubzoneTrackingStruct::Clear(int a2, int a3)
 
 // 0x588F00
 namespace gamemd {
-void VectorClass_W4PassabilityType::Destroy()
+void VectorClass_W4PassabilityType::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -26183,7 +26183,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
 
 // 0x589960
 namespace gamemd {
-void VectorClass_USubzoneTrackingStruct::ddtor()
+void VectorClass_USubzoneTrackingStruct::ddtor(void *a1_1)
 {
 
   int v2; // ecx
@@ -26358,7 +26358,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
 
 // 0x589FA0
 namespace gamemd {
-void VectorClass_W4PassabilityType::ddtor()
+void VectorClass_W4PassabilityType::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x589fad*/
@@ -26831,7 +26831,7 @@ VectorClass_flat * VectorClass_USubzoneTrackingStruct::QueryInterface(unsigned i
 
 // 0x58A630
 namespace gamemd {
-char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
+char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -26968,7 +26968,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
 
 // 0x58A7B0
 namespace gamemd {
-void VectorClass_UHashObject_uint_uint::ddtor()
+void VectorClass_UHashObject_uint_uint::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x58a7bd*/
@@ -27022,7 +27022,7 @@ unsigned int VectorClass_UHashObject_uint_uint::GetCapacity(int a2)
 
 // 0x58A840
 namespace gamemd {
-char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a2)
+char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
   int v3; // eax
@@ -27197,7 +27197,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
 
 // 0x58A9F0
 namespace gamemd {
-void VectorClass_UHashObject_uint_SubzoneConn::ddtor()
+void VectorClass_UHashObject_uint_SubzoneConn::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x58a9fd*/
@@ -27475,7 +27475,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 
 // 0x5AC3A0
 namespace gamemd {
-void VectorClass_ptr_MapRegionClass::Destroy()
+void VectorClass_ptr_MapRegionClass::Destroy(void *a1_1)
 {
 
   void *Items; // eax
@@ -27508,7 +27508,7 @@ unsigned int VectorClass_ptr_MapRegionClass::GetItemIndex(int a2)
 
 // 0x5AC3F0
 namespace gamemd {
-int VectorClass_ptr_MapRegionClass::Get(int a2)
+int VectorClass_ptr_MapRegionClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5ac3fa*/
@@ -27518,7 +27518,7 @@ int VectorClass_ptr_MapRegionClass::Get(int a2)
 
 // 0x5AC5F0
 namespace gamemd {
-void VectorClass_N::Destroy()
+void VectorClass_N::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -27561,7 +27561,7 @@ double VectorClass_N::Clear(int a2)
 
 // 0x5AC6A0
 namespace gamemd {
-char VectorClass_ptr_MapRegionClass::Add(int a2)
+char VectorClass_ptr_MapRegionClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -27643,7 +27643,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
 
 // 0x5AC790
 namespace gamemd {
-void VectorClass_ptr_MapRegionClass::Remove()
+void VectorClass_ptr_MapRegionClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5ac79d*/
@@ -27864,7 +27864,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
 
 // 0x5AD1F0
 namespace gamemd {
-void VectorClass_N::ddtor()
+void VectorClass_N::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5ad1fd*/
@@ -28110,7 +28110,7 @@ unsigned int * VectorClass_Point2D::Count(unsigned int * a2, int a3)
 
 // 0x5D0660
 namespace gamemd {
-int VectorClass_ptr_MSTextEntry::Get(int a2)
+int VectorClass_ptr_MSTextEntry::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d066a*/
@@ -28120,7 +28120,7 @@ int VectorClass_ptr_MSTextEntry::Get(int a2)
 
 // 0x5D06C0
 namespace gamemd {
-int VectorClass_ptr_MapSelection::Get(int a2)
+int VectorClass_ptr_MapSelection::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d06ca*/
@@ -28130,7 +28130,7 @@ int VectorClass_ptr_MapSelection::Get(int a2)
 
 // 0x5D07E0
 namespace gamemd {
-int VectorClass_ptr_MSSfxEntry::Get(int a2)
+int VectorClass_ptr_MSSfxEntry::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d07ea*/
@@ -28140,7 +28140,7 @@ int VectorClass_ptr_MSSfxEntry::Get(int a2)
 
 // 0x5D07F0
 namespace gamemd {
-char VectorClass_Point2D::Get(int a2)
+char VectorClass_Point2D::Get(int a2, void *a2_2)
 {
 
   int m_8; // edi
@@ -28250,7 +28250,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
 
 // 0x5D0920
 namespace gamemd {
-void VectorClass_Point2D::Set()
+void VectorClass_Point2D::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d092d*/
@@ -28304,7 +28304,7 @@ unsigned int VectorClass_Point2D::GetCapacity(int a2)
 
 // 0x5D0AE0
 namespace gamemd {
-char VectorClass_ptr_MSTextEntry::Add(int a2)
+char VectorClass_ptr_MSTextEntry::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -28386,7 +28386,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
 
 // 0x5D0BD0
 namespace gamemd {
-void VectorClass_ptr_MSTextEntry::Remove()
+void VectorClass_ptr_MSTextEntry::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d0bdd*/
@@ -28440,7 +28440,7 @@ unsigned int VectorClass_ptr_MSTextEntry::GetCapacity(int a2)
 
 // 0x5D0D40
 namespace gamemd {
-char VectorClass_ptr_MapSelection::Add(int a2)
+char VectorClass_ptr_MapSelection::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -28522,7 +28522,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
 
 // 0x5D0E30
 namespace gamemd {
-void VectorClass_ptr_MapSelection::Remove()
+void VectorClass_ptr_MapSelection::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d0e3d*/
@@ -28576,7 +28576,7 @@ unsigned int VectorClass_ptr_MapSelection::GetCapacity(int a2)
 
 // 0x5D1460
 namespace gamemd {
-char VectorClass_ptr_MSSfxEntry::Add(int a2)
+char VectorClass_ptr_MSSfxEntry::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -28658,7 +28658,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
 
 // 0x5D1550
 namespace gamemd {
-void VectorClass_ptr_MSSfxEntry::Remove()
+void VectorClass_ptr_MSSfxEntry::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d155d*/
@@ -28804,7 +28804,7 @@ VectorClass_flat * VectorClass_ptr_MSSfxEntry::QueryInterface(unsigned int * Blo
 
 // 0x5D2720
 namespace gamemd {
-void VectorClass_ptr_MSSfx::Destroy()
+void VectorClass_ptr_MSSfx::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -28837,7 +28837,7 @@ unsigned int VectorClass_ptr_MSSfx::GetItemIndex(int a2)
 
 // 0x5D2780
 namespace gamemd {
-void VectorClass_Point2D::Destroy()
+void VectorClass_Point2D::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -28870,7 +28870,7 @@ unsigned int VectorClass_Point2D::GetItemIndex(int a2)
 
 // 0x5D27D0
 namespace gamemd {
-int VectorClass_ptr_MSSfx::Get(int a2)
+int VectorClass_ptr_MSSfx::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d27da*/
@@ -29050,7 +29050,7 @@ int VectorClass_ptr_MSSfx::FindItemIndex_0(unsigned int * a2)
 
 // 0x5D2A40
 namespace gamemd {
-char VectorClass_ptr_MSSfx::Add(int a2)
+char VectorClass_ptr_MSSfx::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -29132,7 +29132,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
 
 // 0x5D2B30
 namespace gamemd {
-void VectorClass_ptr_MSSfx::Remove()
+void VectorClass_ptr_MSSfx::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d2b3d*/
@@ -29487,7 +29487,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
 
 // 0x5D5500
 namespace gamemd {
-void VectorClass_UAcceleratorTracker::ddtor()
+void VectorClass_UAcceleratorTracker::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d550d*/
@@ -29564,7 +29564,7 @@ VectorClass_flat * VectorClass_UAcceleratorTracker::QueryInterface(unsigned int 
 
 // 0x5D8100
 namespace gamemd {
-int VectorClass_ptr_MultiplayerTeam::Get(int a2)
+int VectorClass_ptr_MultiplayerTeam::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d810a*/
@@ -29574,7 +29574,7 @@ int VectorClass_ptr_MultiplayerTeam::Get(int a2)
 
 // 0x5D82F0
 namespace gamemd {
-char VectorClass_ptr_MultiplayerTeam::Add(int a2)
+char VectorClass_ptr_MultiplayerTeam::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -29656,7 +29656,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
 
 // 0x5D83E0
 namespace gamemd {
-void VectorClass_ptr_MultiplayerTeam::Remove()
+void VectorClass_ptr_MultiplayerTeam::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5d83ed*/
@@ -29746,7 +29746,7 @@ VectorClass_flat *  VectorClass_ptr_MultiplayerTeam::QueryInterface(unsigned int
 
 // 0x5EEBB0
 namespace gamemd {
-void VectorClass_cptr_MultiMission::Destroy()
+void VectorClass_cptr_MultiMission::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -29884,7 +29884,7 @@ void VectorClass_flat::Cleanup3()
 }
 // 0x5EED30
 namespace gamemd {
-int  VectorClass_cptr_MultiMission::GetSize( unsigned int * a2)
+int  VectorClass_cptr_MultiMission::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -30017,7 +30017,7 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
 
 // 0x5EEF10
 namespace gamemd {
-DynamicVector * VectorClass_cptr_MultiMission::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_cptr_MultiMission::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -30097,7 +30097,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 
 // 0x5F9B00
 namespace gamemd {
-void VectorClass_ptr_ObjectTypeClass::Destroy()
+void VectorClass_ptr_ObjectTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -30130,7 +30130,7 @@ unsigned int VectorClass_ptr_ObjectTypeClass::GetItemIndex(int a2)
 
 // 0x5F9B50
 namespace gamemd {
-int VectorClass_ptr_ObjectTypeClass::Get(int a2)
+int VectorClass_ptr_ObjectTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5f9b5a*/
@@ -30140,7 +30140,7 @@ int VectorClass_ptr_ObjectTypeClass::Get(int a2)
 
 // 0x5F9B80
 namespace gamemd {
-char VectorClass_ptr_ObjectTypeClass::Add(int a2)
+char VectorClass_ptr_ObjectTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -30222,7 +30222,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x5F9C70
 namespace gamemd {
-void VectorClass_ptr_ObjectTypeClass::Remove()
+void VectorClass_ptr_ObjectTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5f9c7d*/
@@ -30424,7 +30424,7 @@ unsigned int VectorClass_ptr_SpotLightClass::GetItemIndex(int a2)
 
 // 0x600010
 namespace gamemd {
-int VectorClass_ptr_SpotLightClass::Get(int a2)
+int VectorClass_ptr_SpotLightClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x60001a*/
@@ -30434,7 +30434,7 @@ int VectorClass_ptr_SpotLightClass::Get(int a2)
 
 // 0x600020
 namespace gamemd {
-char VectorClass_ptr_SpotLightClass::Add(int a2)
+char VectorClass_ptr_SpotLightClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -30516,7 +30516,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
 
 // 0x600110
 namespace gamemd {
-void VectorClass_ptr_SpotLightClass::Remove()
+void VectorClass_ptr_SpotLightClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x60011d*/
@@ -30688,7 +30688,7 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
 
 // 0x627D70
 namespace gamemd {
-int VectorClass_ptr_ColorScheme::Get(int a2)
+int VectorClass_ptr_ColorScheme::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x627d7a*/
@@ -30698,7 +30698,7 @@ int VectorClass_ptr_ColorScheme::Get(int a2)
 
 // 0x627E10
 namespace gamemd {
-char VectorClass_ptr_ColorScheme::Add(int a2)
+char VectorClass_ptr_ColorScheme::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -30780,7 +30780,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
 
 // 0x627F00
 namespace gamemd {
-void VectorClass_ptr_ColorScheme::Remove()
+void VectorClass_ptr_ColorScheme::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x627f0d*/
@@ -30947,7 +30947,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
 
 // 0x6283E0
 namespace gamemd {
-void VectorClass_ptr_ColorScheme::Destroy()
+void VectorClass_ptr_ColorScheme::Destroy(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6283ed*/
@@ -31141,7 +31141,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
 }
 // 0x628E80
 namespace gamemd {
-VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(unsigned int * Block, char a2)
+VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -31164,7 +31164,7 @@ VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(unsigned int * Bloc
 
 // 0x62B070
 namespace gamemd {
-void VectorClass_ptr_ParasiteClass::Destroy()
+void VectorClass_ptr_ParasiteClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -31197,7 +31197,7 @@ unsigned int VectorClass_ptr_ParasiteClass::GetItemIndex(int a2)
 
 // 0x62B0C0
 namespace gamemd {
-int VectorClass_ptr_ParasiteClass::Get(int a2)
+int VectorClass_ptr_ParasiteClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x62b0ca*/
@@ -31207,7 +31207,7 @@ int VectorClass_ptr_ParasiteClass::Get(int a2)
 
 // 0x62B0D0
 namespace gamemd {
-char VectorClass_ptr_ParasiteClass::Add(int a2)
+char VectorClass_ptr_ParasiteClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -31289,7 +31289,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
 
 // 0x62B1C0
 namespace gamemd {
-void VectorClass_ptr_ParasiteClass::Remove()
+void VectorClass_ptr_ParasiteClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x62b1cd*/
@@ -31493,7 +31493,7 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
 }
 // 0x63DB60
 namespace gamemd {
-void VectorClass_ptr_PlanningMemberClass::Destroy()
+void VectorClass_ptr_PlanningMemberClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -31526,7 +31526,7 @@ unsigned int VectorClass_ptr_PlanningMemberClass::GetItemIndex(int a2)
 
 // 0x63DBB0
 namespace gamemd {
-int VectorClass_ptr_PlanningMemberClass::Get(int a2)
+int VectorClass_ptr_PlanningMemberClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x63dbba*/
@@ -31579,7 +31579,7 @@ int VectorClass_ptr_PlanningBranchClass::Clear(int a2)
 
 // 0x63DD30
 namespace gamemd {
-int VectorClass_ptr_PlanningTokenClass::Get(int a2)
+int VectorClass_ptr_PlanningTokenClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x63dd3a*/
@@ -31589,7 +31589,7 @@ int VectorClass_ptr_PlanningTokenClass::Get(int a2)
 
 // 0x63DD40
 namespace gamemd {
-char VectorClass_ptr_PlanningMemberClass::Add(int a2)
+char VectorClass_ptr_PlanningMemberClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -31671,7 +31671,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
 
 // 0x63DE30
 namespace gamemd {
-void VectorClass_ptr_PlanningMemberClass::Remove()
+void VectorClass_ptr_PlanningMemberClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x63de3d*/
@@ -31797,7 +31797,7 @@ int VectorClass_ptr_PlanningMemberClass::FindItemIndex(unsigned int * a2)
 
 // 0x63E050
 namespace gamemd {
-char VectorClass_ptr_PlanningBranchClass::Add(int a2)
+char VectorClass_ptr_PlanningBranchClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -31845,7 +31845,7 @@ void VectorClass_flat::Cleanup2()
 }
 // 0x63E170
 namespace gamemd {
-int  VectorClass_ptr_PlanningBranchClass::GetSize( unsigned int * a2)
+int  VectorClass_ptr_PlanningBranchClass::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -32014,7 +32014,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
 }
 // 0x63E950
 namespace gamemd {
-char VectorClass_ptr_PlanningTokenClass::Add(int a2)
+char VectorClass_ptr_PlanningTokenClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -32096,7 +32096,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
 
 // 0x63EA40
 namespace gamemd {
-void VectorClass_ptr_PlanningTokenClass::Remove()
+void VectorClass_ptr_PlanningTokenClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x63ea4d*/
@@ -32296,7 +32296,7 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
 }
 // 0x65A1E0
 namespace gamemd {
-void VectorClass_ptr_RadBeam::Destroy()
+void VectorClass_ptr_RadBeam::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -32329,7 +32329,7 @@ unsigned int VectorClass_ptr_RadBeam::GetItemIndex(int a2)
 
 // 0x65A230
 namespace gamemd {
-int VectorClass_ptr_RadBeam::Get(int a2)
+int VectorClass_ptr_RadBeam::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x65a23a*/
@@ -32339,7 +32339,7 @@ int VectorClass_ptr_RadBeam::Get(int a2)
 
 // 0x65A240
 namespace gamemd {
-char VectorClass_ptr_RadBeam::Add(int a2)
+char VectorClass_ptr_RadBeam::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -32421,7 +32421,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
 
 // 0x65A330
 namespace gamemd {
-void VectorClass_ptr_RadBeam::Remove()
+void VectorClass_ptr_RadBeam::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x65a33d*/
@@ -32593,7 +32593,7 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
 
 // 0x65BEF0
 namespace gamemd {
-void VectorClass_ptr_RadSiteClass::Destroy()
+void VectorClass_ptr_RadSiteClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -32626,7 +32626,7 @@ unsigned int VectorClass_ptr_RadSiteClass::GetItemIndex(int a2)
 
 // 0x65BF40
 namespace gamemd {
-int VectorClass_ptr_RadSiteClass::Get(int a2)
+int VectorClass_ptr_RadSiteClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x65bf4a*/
@@ -32636,7 +32636,7 @@ int VectorClass_ptr_RadSiteClass::Get(int a2)
 
 // 0x65BF50
 namespace gamemd {
-char VectorClass_ptr_RadSiteClass::Add(int a2)
+char VectorClass_ptr_RadSiteClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -32718,7 +32718,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
 
 // 0x65C040
 namespace gamemd {
-void VectorClass_ptr_RadSiteClass::Remove()
+void VectorClass_ptr_RadSiteClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x65c04d*/
@@ -32890,7 +32890,7 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
 
 // 0x660C80
 namespace gamemd {
-void VectorClass_ptr_RadarEventClass::Destroy()
+void VectorClass_ptr_RadarEventClass::Destroy(void *a1_1)
 {
 
   void *Items; // eax
@@ -32923,7 +32923,7 @@ unsigned int VectorClass_ptr_RadarEventClass::GetItemIndex(int a2)
 
 // 0x660CD0
 namespace gamemd {
-int VectorClass_ptr_RadarEventClass::Get(int a2)
+int VectorClass_ptr_RadarEventClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x660cda*/
@@ -32933,7 +32933,7 @@ int VectorClass_ptr_RadarEventClass::Get(int a2)
 
 // 0x660CE0
 namespace gamemd {
-char VectorClass_ptr_RadarEventClass::Add(int a2)
+char VectorClass_ptr_RadarEventClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -33015,7 +33015,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
 
 // 0x660DD0
 namespace gamemd {
-void VectorClass_ptr_RadarEventClass::Remove()
+void VectorClass_ptr_RadarEventClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x660ddd*/
@@ -33404,7 +33404,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
 }
 // 0x69C580
 namespace gamemd {
-char **  VectorClass_Wstring::Clear( char ** a2, int a3)
+char **  VectorClass_Wstring::Clear(char ** a2, int a3)
 {
 
   String::AssignFromPtr((String *)a2, (const char **)(*(unsigned int *)&this->m_1[3] + 4 * a3)); /*0x69c592*/
@@ -33415,7 +33415,7 @@ char **  VectorClass_Wstring::Clear( char ** a2, int a3)
 
 // 0x69C5A0
 namespace gamemd {
-void VectorClass_ptr_GlobalPacketType::Destroy()
+void VectorClass_ptr_GlobalPacketType::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -33448,7 +33448,7 @@ unsigned int VectorClass_ptr_GlobalPacketType::GetItemIndex(int a2)
 
 // 0x69C5F0
 namespace gamemd {
-int VectorClass_ptr_MultiMission::Get(int a2)
+int VectorClass_ptr_MultiMission::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c5fa*/
@@ -33491,7 +33491,7 @@ unsigned int VectorClass_ptr_GlobalPacketType::GetItemIndex_0(int a2)
 
 // 0x69C650
 namespace gamemd {
-int VectorClass_ptr_GlobalPacketType::Get(int a2)
+int VectorClass_ptr_GlobalPacketType::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c65a*/
@@ -33534,7 +33534,7 @@ unsigned int VectorClass_ptr_GlobalPacketType::GetItemIndex_1(int a2)
 
 // 0x69C6B0
 namespace gamemd {
-int VectorClass_ptr_PhoneEntryClass::Get(int a2)
+int VectorClass_ptr_PhoneEntryClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c6ba*/
@@ -33692,7 +33692,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
 
 // 0x69CB00
 namespace gamemd {
-void VectorClass_Wstring::ddtor()
+void VectorClass_Wstring::ddtor(void *a1_1)
 {
 
   int v2; // eax
@@ -33766,7 +33766,7 @@ unsigned int VectorClass_Wstring::GetCapacity(int a2)
 
 // 0x69CD40
 namespace gamemd {
-char VectorClass_ptr_MultiMission::Add(int a2)
+char VectorClass_ptr_MultiMission::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -33848,7 +33848,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
 
 // 0x69CE30
 namespace gamemd {
-void VectorClass_ptr_MultiMission::Remove()
+void VectorClass_ptr_MultiMission::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x69ce3d*/
@@ -33974,7 +33974,7 @@ int VectorClass_ptr_GlobalPacketType::FindItemIndex(unsigned int * a2)
 
 // 0x69CFA0
 namespace gamemd {
-char VectorClass_ptr_GlobalPacketType::Add(int a2)
+char VectorClass_ptr_GlobalPacketType::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -34056,7 +34056,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
 
 // 0x69D090
 namespace gamemd {
-void VectorClass_ptr_GlobalPacketType::Remove()
+void VectorClass_ptr_GlobalPacketType::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x69d09d*/
@@ -34182,7 +34182,7 @@ int VectorClass_ptr_GlobalPacketType::FindItemIndex_0(unsigned int * a2)
 
 // 0x69D200
 namespace gamemd {
-char VectorClass_ptr_PhoneEntryClass::Add(int a2)
+char VectorClass_ptr_PhoneEntryClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -34264,7 +34264,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
 
 // 0x69D2F0
 namespace gamemd {
-void VectorClass_ptr_PhoneEntryClass::Remove()
+void VectorClass_ptr_PhoneEntryClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x69d2fd*/
@@ -34641,7 +34641,7 @@ int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
 }
 // 0x6B1410
 namespace gamemd {
-void VectorClass_ptr_SlaveManagerClass::Destroy()
+void VectorClass_ptr_SlaveManagerClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -34674,7 +34674,7 @@ unsigned int VectorClass_ptr_SlaveManagerClass::GetItemIndex(int a2)
 
 // 0x6B1460
 namespace gamemd {
-int VectorClass_ptr_SlaveManagerClass::Get(int a2)
+int VectorClass_ptr_SlaveManagerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b146a*/
@@ -34684,7 +34684,7 @@ int VectorClass_ptr_SlaveManagerClass::Get(int a2)
 
 // 0x6B16D0
 namespace gamemd {
-char VectorClass_ptr_SlaveManagerClass::Add(int a2)
+char VectorClass_ptr_SlaveManagerClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -34766,7 +34766,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
 
 // 0x6B17C0
 namespace gamemd {
-void VectorClass_ptr_SlaveManagerClass::Remove()
+void VectorClass_ptr_SlaveManagerClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6b17cd*/
@@ -34938,7 +34938,7 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
 
 // 0x6B43B0
 namespace gamemd {
-void VectorClass_UUndoInfoStruct::Destroy()
+void VectorClass_UUndoInfoStruct::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -35023,7 +35023,7 @@ char VectorClass_UUndoInfoStruct::AddRef(int a2)
 
 // 0x6B45A0
 namespace gamemd {
-void VectorClass_UUndoInfoStruct::ddtor()
+void VectorClass_UUndoInfoStruct::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6b45ad*/
@@ -35146,7 +35146,7 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
 
 // 0x6B81C0
 namespace gamemd {
-void VectorClass_ptr_SpawnManagerClass::Destroy()
+void VectorClass_ptr_SpawnManagerClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -35179,7 +35179,7 @@ unsigned int VectorClass_ptr_SpawnManagerClass::GetItemIndex(int a2)
 
 // 0x6B8210
 namespace gamemd {
-int VectorClass_ptr_SpawnManagerClass::Get(int a2)
+int VectorClass_ptr_SpawnManagerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b821a*/
@@ -35189,7 +35189,7 @@ int VectorClass_ptr_SpawnManagerClass::Get(int a2)
 
 // 0x6B84E0
 namespace gamemd {
-char VectorClass_ptr_SpawnManagerClass::Add(int a2)
+char VectorClass_ptr_SpawnManagerClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -35271,7 +35271,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
 
 // 0x6B85D0
 namespace gamemd {
-void VectorClass_ptr_SpawnManagerClass::Remove()
+void VectorClass_ptr_SpawnManagerClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6b85dd*/
@@ -35443,7 +35443,7 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
 
 // 0x6BED50
 namespace gamemd {
-void VectorClass_K::Destroy()
+void VectorClass_K::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -36261,7 +36261,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
 
 // 0x6C62C0
 namespace gamemd {
-void VectorClass_K::ddtor()
+void VectorClass_K::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6c62cd*/
@@ -36410,7 +36410,7 @@ VectorClass_flat * VectorClass_K::QueryInterface(unsigned int * Block, char a2)
 
 // 0x6C64D0
 namespace gamemd {
-DynamicVector * VectorClass_K::Constructor(unsigned int * Block, char a2)
+DynamicVector * VectorClass_K::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -36433,7 +36433,7 @@ DynamicVector * VectorClass_K::Constructor(unsigned int * Block, char a2)
 
 // 0x6CA7C0
 namespace gamemd {
-void VectorClass_ptr_SubTitle::Destroy()
+void VectorClass_ptr_SubTitle::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -36466,7 +36466,7 @@ unsigned int VectorClass_ptr_SubTitle::GetItemIndex(int a2)
 
 // 0x6CA810
 namespace gamemd {
-int VectorClass_ptr_SubTitle::Get(int a2)
+int VectorClass_ptr_SubTitle::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6ca81a*/
@@ -36476,7 +36476,7 @@ int VectorClass_ptr_SubTitle::Get(int a2)
 
 // 0x6CA820
 namespace gamemd {
-char VectorClass_ptr_SubTitle::Add(int a2)
+char VectorClass_ptr_SubTitle::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -36653,7 +36653,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
 
 // 0x6CAAC0
 namespace gamemd {
-void VectorClass_ptr_SubTitle::Remove()
+void VectorClass_ptr_SubTitle::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6caacd*/
@@ -36757,7 +36757,7 @@ char VectorClass_flat::RemoveAt(int a2, void *a2)
 }
 // 0x6DC4E0
 namespace gamemd {
-void VectorClass_UDirtyAreaStruct::Destroy()
+void VectorClass_UDirtyAreaStruct::Destroy(void *a1_1)
 {
 
   void *Items; // eax
@@ -37010,7 +37010,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
 
 // 0x6DC780
 namespace gamemd {
-void VectorClass_UDirtyAreaStruct::ddtor()
+void VectorClass_UDirtyAreaStruct::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6dc78d*/
@@ -37181,7 +37181,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
 
 // 0x6DCAC0
 namespace gamemd {
-void VectorClass_UDirtyAreaStruct___16::ddtor()
+void VectorClass_UDirtyAreaStruct___16::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6dcacd*/
@@ -37399,7 +37399,7 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
 
 // 0x6E64E0
 namespace gamemd {
-void VectorClass_ptr_TagTypeClass::Destroy()
+void VectorClass_ptr_TagTypeClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -37432,7 +37432,7 @@ unsigned int VectorClass_ptr_TagTypeClass::GetItemIndex(int a2)
 
 // 0x6E6530
 namespace gamemd {
-int VectorClass_ptr_TagTypeClass::Get(int a2)
+int VectorClass_ptr_TagTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6e653a*/
@@ -37442,7 +37442,7 @@ int VectorClass_ptr_TagTypeClass::Get(int a2)
 
 // 0x6E6540
 namespace gamemd {
-char VectorClass_ptr_TagTypeClass::Add(int a2)
+char VectorClass_ptr_TagTypeClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -37524,7 +37524,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
 
 // 0x6E6630
 namespace gamemd {
-void VectorClass_ptr_TagTypeClass::Remove()
+void VectorClass_ptr_TagTypeClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6e663d*/
@@ -37747,7 +37747,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
 }
 // 0x71B240
 namespace gamemd {
-void VectorClass_ptr_TemporalClass::Destroy()
+void VectorClass_ptr_TemporalClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -37780,7 +37780,7 @@ unsigned int VectorClass_ptr_TemporalClass::GetItemIndex(int a2)
 
 // 0x71B290
 namespace gamemd {
-int VectorClass_ptr_TemporalClass::Get(int a2)
+int VectorClass_ptr_TemporalClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x71b29a*/
@@ -37790,7 +37790,7 @@ int VectorClass_ptr_TemporalClass::Get(int a2)
 
 // 0x71B2A0
 namespace gamemd {
-char VectorClass_ptr_TemporalClass::Add(int a2)
+char VectorClass_ptr_TemporalClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -37872,7 +37872,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
 
 // 0x71B390
 namespace gamemd {
-void VectorClass_ptr_TemporalClass::Remove()
+void VectorClass_ptr_TemporalClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x71b39d*/
@@ -38044,7 +38044,7 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
 
 // 0x71FBA0
 namespace gamemd {
-void VectorClass_ptr_TEventClass::Destroy()
+void VectorClass_ptr_TEventClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -38077,7 +38077,7 @@ unsigned int VectorClass_ptr_TEventClass::GetItemIndex(int a2)
 
 // 0x71FBF0
 namespace gamemd {
-int VectorClass_ptr_TEventClass::Get(int a2)
+int VectorClass_ptr_TEventClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x71fbfa*/
@@ -38087,7 +38087,7 @@ int VectorClass_ptr_TEventClass::Get(int a2)
 
 // 0x71FC00
 namespace gamemd {
-char VectorClass_ptr_TEventClass::Add(int a2)
+char VectorClass_ptr_TEventClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -38169,7 +38169,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
 
 // 0x71FCF0
 namespace gamemd {
-void VectorClass_ptr_TEventClass::Remove()
+void VectorClass_ptr_TEventClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x71fcfd*/
@@ -38341,7 +38341,7 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
 
 // 0x7212B0
 namespace gamemd {
-void VectorClass_ptr_ThemeControl::Destroy()
+void VectorClass_ptr_ThemeControl::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -38469,7 +38469,7 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
 
 // 0x723730
 namespace gamemd {
-void VectorClass_ptr_TiberiumClass::Destroy()
+void VectorClass_ptr_TiberiumClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -38502,7 +38502,7 @@ unsigned int VectorClass_ptr_TiberiumClass::GetItemIndex(int a2)
 
 // 0x723780
 namespace gamemd {
-int VectorClass_ptr_TiberiumClass::Get(int a2)
+int VectorClass_ptr_TiberiumClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x72378a*/
@@ -38512,7 +38512,7 @@ int VectorClass_ptr_TiberiumClass::Get(int a2)
 
 // 0x723790
 namespace gamemd {
-char VectorClass_ptr_TiberiumClass::Add(int a2)
+char VectorClass_ptr_TiberiumClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -38594,7 +38594,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
 
 // 0x723880
 namespace gamemd {
-void VectorClass_ptr_TiberiumClass::Remove()
+void VectorClass_ptr_TiberiumClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x72388d*/
@@ -38875,7 +38875,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
 
 // 0x74C0E0
 namespace gamemd {
-void VectorClass_E::ddtor()
+void VectorClass_E::ddtor(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x74c0ed*/
@@ -38930,7 +38930,7 @@ int VectorClass_E::GetCapacity(int a2)
 
 // 0x7518D0
 namespace gamemd {
-void VectorClass_ptr_VocClass::Destroy()
+void VectorClass_ptr_VocClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -38963,7 +38963,7 @@ unsigned int VectorClass_ptr_VocClass::GetItemIndex(int a2)
 
 // 0x751920
 namespace gamemd {
-int VectorClass_ptr_VocClass::Get(int a2)
+int VectorClass_ptr_VocClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x75192a*/
@@ -38973,7 +38973,7 @@ int VectorClass_ptr_VocClass::Get(int a2)
 
 // 0x751930
 namespace gamemd {
-char VectorClass_ptr_VocClass::Add(int a2)
+char VectorClass_ptr_VocClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -39055,7 +39055,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
 
 // 0x751A20
 namespace gamemd {
-void VectorClass_ptr_VocClass::Remove()
+void VectorClass_ptr_VocClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x751a2d*/
@@ -39227,7 +39227,7 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
 
 // 0x7536A0
 namespace gamemd {
-int VectorClass_ptr_VoxClass::Get(int a2)
+int VectorClass_ptr_VoxClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7536aa*/
@@ -39237,7 +39237,7 @@ int VectorClass_ptr_VoxClass::Get(int a2)
 
 // 0x7536B0
 namespace gamemd {
-char VectorClass_ptr_VoxClass::Add(int a2)
+char VectorClass_ptr_VoxClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -39319,7 +39319,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
 
 // 0x7537A0
 namespace gamemd {
-void VectorClass_ptr_VoxClass::Remove()
+void VectorClass_ptr_VoxClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x7537ad*/
@@ -39396,7 +39396,7 @@ VectorClass_flat * VectorClass_ptr_VoxClass::QueryInterface(unsigned int * Block
 
 // 0x75A430
 namespace gamemd {
-void VectorClass_ptr_MovieHandle::Destroy()
+void VectorClass_ptr_MovieHandle::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -39429,7 +39429,7 @@ unsigned int VectorClass_ptr_MovieHandle::GetItemIndex(int a2)
 
 // 0x75A480
 namespace gamemd {
-int VectorClass_ptr_MovieHandle::Get(int a2)
+int VectorClass_ptr_MovieHandle::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x75a48a*/
@@ -39439,7 +39439,7 @@ int VectorClass_ptr_MovieHandle::Get(int a2)
 
 // 0x75A490
 namespace gamemd {
-char VectorClass_ptr_MovieHandle::Add(int a2)
+char VectorClass_ptr_MovieHandle::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -39521,7 +39521,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
 
 // 0x75A580
 namespace gamemd {
-void VectorClass_ptr_MovieHandle::Remove()
+void VectorClass_ptr_MovieHandle::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x75a58d*/
@@ -39693,7 +39693,7 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
 
 // 0x763F90
 namespace gamemd {
-void VectorClass_ptr_WaypointPathClass::Destroy()
+void VectorClass_ptr_WaypointPathClass::Destroy(void *a1_1)
 {
 
   void *v2; // eax
@@ -39726,7 +39726,7 @@ unsigned int VectorClass_ptr_WaypointPathClass::GetItemIndex(int a2)
 
 // 0x763FE0
 namespace gamemd {
-int VectorClass_ptr_WaypointPathClass::Get(int a2)
+int VectorClass_ptr_WaypointPathClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x763fea*/
@@ -39736,7 +39736,7 @@ int VectorClass_ptr_WaypointPathClass::Get(int a2)
 
 // 0x764460
 namespace gamemd {
-char VectorClass_ptr_WaypointPathClass::Add(int a2)
+char VectorClass_ptr_WaypointPathClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -39818,7 +39818,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
 
 // 0x764550
 namespace gamemd {
-void VectorClass_ptr_WaypointPathClass::Remove()
+void VectorClass_ptr_WaypointPathClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x76455d*/
@@ -39990,7 +39990,7 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
 
 // 0x76B6C0
 namespace gamemd {
-unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0( WDTState * aP1, int a3)
+unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a3)
 {
 
   int v3; // eax
@@ -40360,7 +40360,7 @@ char VectorClass_rc_ptr_WDTTerritory::AddRef(int a2)
 
 // 0x76B9E0
 namespace gamemd {
-int VectorClass_rc_ptr_WDTTerritory::ddtor()
+int VectorClass_rc_ptr_WDTTerritory::ddtor(void *a1_1)
 {
 
   int (***v2)(unsigned int, int); // ecx
@@ -40487,7 +40487,7 @@ char VectorClass_flat::Shrink()
 }
 // 0x7B2890
 namespace gamemd {
-int VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get(int a2)
+int VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7b289a*/
@@ -40497,7 +40497,7 @@ int VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get(int a2)
 
 // 0x7B28A0
 namespace gamemd {
-char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Add(int a2)
+char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Add(int a2, void *a2_2, void *a3_1)
 {
 
   int m_8; // esi
@@ -40579,7 +40579,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
 
 // 0x7B2990
 namespace gamemd {
-void VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Remove()
+void VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Remove(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x7b299d*/
@@ -40666,7 +40666,7 @@ int VectorClass_PAE::Count(int a2)
 
 // 0x7B4320
 namespace gamemd {
-char VectorClass_PAE::Get(int a2)
+char VectorClass_PAE::Get(int a2, void *a2_2)
 {
 
   int m_8; // esi
@@ -40748,7 +40748,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
 
 // 0x7B4410
 namespace gamemd {
-void VectorClass_PAE::Set()
+void VectorClass_PAE::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x7b441d*/

@@ -29,7 +29,7 @@
 
 // 0x49F740
 namespace gamemd {
-void Dialog::MapDialogResource()
+void Dialog::MapDialogResource(void *a1_1)
 {
 
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
@@ -249,7 +249,7 @@ int Dialog::GetMode3()
 }
 // 0x5EE350
 namespace gamemd {
-void Dialog::RefreshDialogsGame()
+void Dialog::RefreshDialogsGame(void *a1_1)
 {
 
   ObjectClass *v1; // eax
@@ -706,7 +706,7 @@ LABEL_208:
 }
 // 0x607FD0
 namespace gamemd {
-int Dialog::StopBink()
+int Dialog::StopBink(void *a1_1)
 {
 
   int result; // eax
@@ -751,7 +751,7 @@ int Dialog::StopBink()
 }
 // 0x608070
 namespace gamemd {
-AbstractClass * * Dialog::IdleProcess()
+AbstractClass * * Dialog::IdleProcess(void *a1_1, void *a2_1)
 {
 
   HWND v2; // ecx
@@ -2081,7 +2081,7 @@ AbstractClass * * Dialog_TabControlPaint()
 }
 // 0x6213A0
 namespace gamemd {
-AbstractClass * * Dialog::Resize()
+AbstractClass * * Dialog::Resize(void *a1_1, void *a2_1, void *a3_1)
 {
 
   LONG result; // eax
@@ -2444,7 +2444,7 @@ LABEL_72:
 }
 // 0x622720
 namespace gamemd {
-int Dialog::Destroy()
+int Dialog::Destroy(void *a1_1)
 {
 
   int result; // eax
@@ -2627,7 +2627,7 @@ AbstractClass * * Dialog::GrowBuffer()
 }
 // 0x624CA0
 namespace gamemd {
-AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block)
+AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block, void *a3_1)
 {
 
   int v4; // eax
@@ -2999,7 +2999,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
 }
 // 0x775940
 namespace gamemd {
-int Dialog::FindByHandle()
+int Dialog::FindByHandle(void *a1_1)
 {
 
   int v1; // eax
@@ -3037,7 +3037,7 @@ int Dialog::GetCurrentType()
 }
 // 0x4E4EC0
 namespace gamemd {
-int Dialog::SideIDToIndex()
+int Dialog::SideIDToIndex(void *a1_1)
 {
 
   int v2; // eax
@@ -3202,7 +3202,7 @@ HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignSco
 
 // 0x5E2F60
 namespace gamemd {
-LRESULT Dialog::ShowPlayerName()
+LRESULT Dialog::ShowPlayerName(void *a1_1)
 {
 
   HWND DlgItem; // eax
@@ -3267,7 +3267,7 @@ unsigned int Dialog::CheckButtonState()
 
 // 0x602AE0
 namespace gamemd {
-BOOL Dialog::IsSpecialTemplate()
+BOOL Dialog::IsSpecialTemplate(void *a1_1)
 {
 
   return this == (Dialog *)293 /*0x602b7a*/
@@ -3365,7 +3365,7 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
 
 // 0x622800
 namespace gamemd {
-HWND Dialog::Show()
+HWND Dialog::Show(void *a1_1, void *a2_1)
 {
 
   ShowWindow((HWND)this, 1); /*0x622806*/
@@ -3377,7 +3377,7 @@ HWND Dialog::Show()
 
 // 0x623120
 namespace gamemd {
-char Dialog::PumpMessages()
+char Dialog::PumpMessages(void *a1_1)
 {
 
   int result; // eax
@@ -3404,7 +3404,7 @@ char Dialog::PumpMessages()
 
 // 0x7759B0
 namespace gamemd {
-int Dialog::FindByPtr()
+int Dialog::FindByPtr(void *a1_1)
 {
 
   int v1; // eax
@@ -3425,7 +3425,7 @@ int Dialog::FindByPtr()
 
 // 0x775BA0
 namespace gamemd {
-BOOL Dialog::GetField()
+BOOL Dialog::GetField(void *a1_1, void *a2_1)
 {
 
   EnumChildWindows((HWND)this, DialogClass::Reposition, 1); /*0x775bab*/
@@ -3436,7 +3436,7 @@ BOOL Dialog::GetField()
 
 // 0x777060
 namespace gamemd {
-HWND Dialog::RestoreParent()
+HWND Dialog::RestoreParent(void *a1_1)
 {
 
   int result; // eax

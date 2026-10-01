@@ -79,7 +79,7 @@ void Debug::ScrollText(CellStruct * aP1)
 }
 // 0x6E61F0
 namespace gamemd {
-void Debug::AccumFlags()
+void Debug::AccumFlags(void *a1_1)
 {
 
   TriggerTypeClass *Debug_field_0xA0; // esi
@@ -98,7 +98,7 @@ void Debug::AccumFlags()
 }
 // 0x4068E0
 namespace gamemd {
-void Debug::Log()
+void Debug::Log(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1)
 {
 
   int result; // eax
@@ -110,7 +110,7 @@ void Debug::Log()
 
 // 0x4A4AC0
 namespace gamemd {
-void Debug::Log_0()
+void Debug::Log_0(void *a1_1, void *a2_1)
 {
 
   ; /*0x4a4ac0*/

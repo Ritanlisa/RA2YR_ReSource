@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Rules {
 // --- flat members (BEGIN) ---
+struct Color;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char u8_D;  // 0xD
@@ -97,8 +98,8 @@ struct Rules {
     unsigned int ZoomInFactor;
 // --- flat members (END) ---
     int ReadMiscINI();  // 0x6691E0
-    int ReadCombatINI();  // 0x66BBB0
-    unsigned int *  CopyDataArray(void * aP1);  // 0x67A570
-    char *  GetProductionTimeMult(void * aP1);  // 0x5FB2E0
+    IUnknown * * ReadCombatINI();  // 0x66BBB0
+    unsigned int * CopyDataArray(VectorClass_flat * aP1);  // 0x67A570
+    char * GetProductionTimeMult(CellStruct * aP1);  // 0x5FB2E0
 };
 } // namespace gamemd

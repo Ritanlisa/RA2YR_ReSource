@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_49A0E0 {
     void* vfptr;  // minimal E2 declaration
-    std::locale::facet *  ___Gfacet_locale_std__UAEPAXI_Z_38(char a2);  // 0x49A0E0
+    std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_38(char a2);  // 0x49A0E0
 };
 } // namespace gamemd

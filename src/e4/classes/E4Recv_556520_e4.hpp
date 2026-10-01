@@ -3,10 +3,11 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+struct LightConvertClass;  // fix_fwd_type_supply
 
 namespace gamemd {
 struct E4Recv_556520 {
     void* vfptr;  // minimal E2 declaration
-    LightConvertClass *  sub_556520(unsigned int * Block, char a2);  // 0x556520
+    LightConvertClass * sub_556520(unsigned int * Block, char a2);  // 0x556520
 };
 } // namespace gamemd

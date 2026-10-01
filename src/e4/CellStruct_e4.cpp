@@ -8,7 +8,7 @@
 
 // 0x42D510
 namespace gamemd {
-void* CellStruct::Add(void* aP1,  void* aP2)
+void* CellStruct::Add(void* aP1, void* aP2, void *a3_1)
 {
 
   void * v3;
@@ -24,7 +24,7 @@ void* CellStruct::Add(void* aP1,  void* aP2)
 }
 // 0x437F30
 namespace gamemd {
-unsigned int * CellStruct::Copy(void* aP1)
+unsigned int * CellStruct::Copy(void* aP1, void *a2_1)
 {
 
   unsigned int * v3;
@@ -40,7 +40,7 @@ unsigned int * CellStruct::Copy(void* aP1)
 }
 // 0x50E470
 namespace gamemd {
-BOOL CellStruct::Equals(unsigned short * a2)
+BOOL CellStruct::Equals(unsigned short * a2, void *a2_2)
 {
 
   return LOWORD(this->field_0) == *a2 && HIWORD(this->field_0) == a2[1]; /*0x50e48b*/
@@ -49,7 +49,7 @@ BOOL CellStruct::Equals(unsigned short * a2)
 }
 // 0x588C60
 namespace gamemd {
-void* CellStruct::Sub(void* aP1,  void* aP2)
+void* CellStruct::Sub(void* aP1, void* aP2)
 {
 
   int16_t v3; // dx
@@ -67,7 +67,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
 }
 // 0x42D470
 namespace gamemd {
-unsigned int * CellStruct::Set( int16_t a2, int16_t a3)
+unsigned int * CellStruct::Set(int16_t a2, int16_t a3, void *a3_2)
 {
 
   LOWORD(this->field_0) = a2; /*0x42d47c*/

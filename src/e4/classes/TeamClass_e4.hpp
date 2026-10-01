@@ -9,6 +9,15 @@ namespace gamemd {
 
 struct TeamClass {
 // --- flat members (BEGIN) ---
+struct TeamTypeClass;  // fix_fwd_type_supply
+struct ScriptClass;  // fix_fwd_type_supply
+struct HouseClass;  // fix_fwd_type_supply
+struct CellClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct FootClass;  // fix_fwd_type_supply
+struct TagClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

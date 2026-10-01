@@ -8,6 +8,7 @@ namespace gamemd {
 
 struct Voice {
 // --- flat members (BEGIN) ---
+struct BufferIOFileClass;  // fix_fwd_type_supply
     unsigned int u32_C;  // 0xC
     unsigned int u32_18;  // 0x18
     unsigned char q024;  // 0x24
@@ -42,7 +43,7 @@ struct Voice {
     unsigned int q2148;  // 0x2148
 // --- flat members (END) ---
     int DetachChannel();
-    int Stop(__thiscall *__thiscall Voice_Stop(), void *a2)( int, void *a2 = 0);
+    int Stop(__thiscall *__thiscall Voice_Stop(), void *a2, void *a2_1, void *a2_1)( int, void *a2_1 = 0);
 };
 
 } // namespace gamemd

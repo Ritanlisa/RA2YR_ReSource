@@ -17,7 +17,7 @@
 
 // 0x43A5D0
 namespace gamemd {
-int Power::Update( int * a2)
+int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x43a5d9*/
@@ -289,7 +289,7 @@ unsigned int * Power::UpdateAll()
 }
 // 0x68B940
 namespace gamemd {
-void* Power::ComputeHousePowerChecksum(unsigned int * a2)
+void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
 {
 
   int v3; // ecx
@@ -424,7 +424,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 }
 // 0x4A1C10
 namespace gamemd {
-int Power::FinalizeDrain(int a2)
+int Power::FinalizeDrain(int a2, void *a2_2)
 {
 
   void *Power_field_0x4; // eax
@@ -467,7 +467,7 @@ int Power::FinalizeDrain(int a2)
 
 // 0x4A1CA0
 namespace gamemd {
-int Power::FlagProcess(int a2)
+int Power::FlagProcess(int a2, void *a2_2)
 {
 
   void *Power_field_0x4; // eax
@@ -510,7 +510,7 @@ int Power::FlagProcess(int a2)
 
 // 0x4A1D50
 namespace gamemd {
-int Power::TimerProcess()
+int Power::TimerProcess(void *a1_1)
 {
 
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/
@@ -520,7 +520,7 @@ int Power::TimerProcess()
 
 // 0x750090
 namespace gamemd {
-char Power::ChangedHouse(char a2)
+char Power::ChangedHouse(char a2, void *a2_2)
 {
 
   int result; // eax

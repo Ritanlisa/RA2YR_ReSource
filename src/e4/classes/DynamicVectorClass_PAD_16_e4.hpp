@@ -15,12 +15,13 @@ struct DynamicVectorClass_PAD_16 {
     unsigned char q00E;  // 0xE
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    int  Get(int a2, void *a1 = 0);  // 0x49EA00
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x49EB50
-    char  Release(int a2, unsigned int * a3);  // 0x49EB90
-    void Remove(void *a1 = 0);  // 0x49EC40
-    int  GetSize(unsigned int * a2);  // 0x49EC70
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x49EFF0
-    unsigned int  GetCapacity(int a2);  // 0x49ECB0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Get(int a2, void *a2_2);  // 0x49EA00
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x49EB50
+    char Release(int a2, unsigned int * a3);  // 0x49EB90
+    void Remove(void *a1_1);  // 0x49EC40
+    int GetSize(unsigned int * a2);  // 0x49EC70
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x49EFF0
+    unsigned int GetCapacity(int a2);  // 0x49ECB0
 };
 } // namespace gamemd

@@ -26,9 +26,9 @@ ROOT = Path(__file__).resolve().parents[2]
 APPLY = '--apply' in sys.argv
 
 DEF_RE = re.compile(
-    r'^([A-Za-z_][\w:<>,\s\*&]*?[\s\*])((?:[A-Za-z_]\w*::)+~?[A-Za-z_]\w*)\(([^;{}]*)\)\s*(\{)?$')
+    r'^([A-Za-z_][\w:<>,\s\*&]*?[\s\*])((?:[A-Za-z_]\w*::)+~?[A-Za-z_]\w*)\(([^;{}]*)\)\s*(\{)?\s*(?://.*)?$')
 DECL_RE = re.compile(
-    r'^(\s*)([A-Za-z_][\w:<>,\s\*&]*?[\s\*])~?([A-Za-z_]\w*)\(([^;{}]*)\)\s*;$')
+    r'^(\s*)([A-Za-z_][\w:<>,\s\*&]*?[\s\*])~?([A-Za-z_]\w*)\(([^;{}]*)\)\s*;(\s*(?://.*)?)$')
 
 
 def split_params(ps):
@@ -94,6 +94,7 @@ def main():
                 continue
             # unify: decl := def params + defaulted fillers to cparams count
             taken = {param_name(x) for x in dparams if param_name(x)}
+            taken |= {param_name(x) for x in cparams if param_name(x)}
 
             def filler(j, default):
                 base = 'a%d' % (j + 1)
@@ -111,8 +112,8 @@ def main():
                         for j in range(len(dparams), len(cparams))]
             new_decl_ps = dparams + fill_decl
             # decl ret type := def ret type (C2556 return-mismatch family)
-            lines[i] = '%s%s%s(%s);' % (dm.group(1), ddm.group(1), dm.group(3),
-                                        ', '.join(new_decl_ps))
+            lines[i] = '%s%s%s(%s);%s' % (dm.group(1), ddm.group(1), dm.group(3),
+                                          ', '.join(new_decl_ps), dm.group(5) or '')
             n_decl += 1
             changed = True
             # extend the def in its file (deferred write below)

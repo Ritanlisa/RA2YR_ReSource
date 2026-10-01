@@ -27,6 +27,7 @@ struct MapSeed {
     unsigned char MapSeed_field_0x1C;  // 0x1C
     unsigned char MapSeed_field_0x20;  // 0x20
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * InsertName();
     int CheckName(void *a1);
     int IsCellInBounds(void *a1);

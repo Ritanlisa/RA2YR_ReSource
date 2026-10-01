@@ -33,6 +33,8 @@ struct CChatEventSink {
     unsigned int u32_84;
     unsigned int Debug;
 // --- flat members (END) ---
+struct Coord;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     Coord * * HandleChatChannelList(int a1, int a2, const char * a3);
     ObjectClass * DeleteAndZero(char a2);
     char EncodeString(char a2, void *a2);

@@ -20,6 +20,6 @@ struct E4Recv_430590 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char  sub_430590(int a2, int a3, int a4, int a5);  // 0x430590
+    char sub_430590(int a2, int a3, int a4, int a5);  // 0x430590
 };
 } // namespace gamemd

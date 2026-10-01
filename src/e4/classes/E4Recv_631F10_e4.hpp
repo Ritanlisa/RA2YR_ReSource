@@ -17,6 +17,6 @@ struct E4Recv_631F10 {
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    int  sub_631F10(int a2, int a3);  // 0x631F10
+    int sub_631F10(int a2, int a3);  // 0x631F10
 };
 } // namespace gamemd

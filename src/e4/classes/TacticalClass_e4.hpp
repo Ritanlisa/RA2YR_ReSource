@@ -9,6 +9,7 @@ namespace gamemd {
 
 struct TacticalClass {
 // --- flat members (BEGIN) ---
+struct CellClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

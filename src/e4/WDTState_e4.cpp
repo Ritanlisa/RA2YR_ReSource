@@ -141,7 +141,7 @@ unsigned int WDTState_4::Write(int a2)
 
 // 0x76BB90
 namespace gamemd {
-int WDTState_4::Read( int a2)
+int WDTState_4::Read(int a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -186,7 +186,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 
 // 0x76BC60
 namespace gamemd {
-int WDTState_4::Constructor()
+int WDTState_4::Constructor(void *a1_1, void *a2_1, void *a3_1)
 {
 
   ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76bc63*/

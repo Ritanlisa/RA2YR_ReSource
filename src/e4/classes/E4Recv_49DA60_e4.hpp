@@ -22,6 +22,7 @@ struct E4Recv_49DA60 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
+struct ObjectClass;  // fix_fwd_type_supply
     unsigned int * sub_49DA60();  // 0x49DA60
 };
 } // namespace gamemd

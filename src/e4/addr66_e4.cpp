@@ -821,7 +821,7 @@ LABEL_47:
 
 // 0x663DB0
 namespace gamemd {
-AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
+AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void *a2_2)
 {
 
   uint8_t *v4; // eax

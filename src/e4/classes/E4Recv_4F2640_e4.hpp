@@ -16,6 +16,7 @@ struct E4Recv_4F2640 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     int sub_4F2640();
 };
 } // namespace gamemd

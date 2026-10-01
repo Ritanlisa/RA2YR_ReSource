@@ -34,6 +34,6 @@ struct E4Recv_74BBF0 {
     unsigned int M8;
     unsigned int M4;
 // --- flat members (END) ---
-    unsigned int *  sub_74BBF0(int a2);  // 0x74BBF0
+    unsigned int * sub_74BBF0(int a2);  // 0x74BBF0
 };
 } // namespace gamemd

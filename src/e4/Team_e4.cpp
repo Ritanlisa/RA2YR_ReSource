@@ -488,7 +488,7 @@ void sub_638B70(int * a1, int a2, char a3, char a4)
 }
 // 0x65AD30
 namespace gamemd {
-int Team::GetMember(AbstractClass * aP1)
+int Team::GetMember(AbstractClass * aP1, void *a2_1)
 {
 
   return *((unsigned int *)(unsigned int)(this->field_E4)+ aP1); /*0x65ad3d*/
@@ -497,7 +497,7 @@ int Team::GetMember(AbstractClass * aP1)
 }
 // 0x65AE30
 namespace gamemd {
-int Team::AllMembersValid()
+int Team::AllMembersValid(void *a1_1)
 {
 
   void *v1; // edx

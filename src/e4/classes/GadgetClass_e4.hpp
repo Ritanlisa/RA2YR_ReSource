@@ -27,6 +27,7 @@ struct GadgetClass {
     unsigned char ListClass_field_0x14;  // 0x14
     unsigned char ListClass_field_0x18;  // 0x18
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM a2);
     AbstractClass * * SetTooltip(void * String);
     ControlClass Dtor(void *a1);

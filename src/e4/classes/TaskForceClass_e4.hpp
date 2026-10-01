@@ -8,6 +8,11 @@
 namespace gamemd {
 struct TaskForceClass {
 // --- flat members (BEGIN) ---
+struct INIClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct ObjectTypeClass;  // fix_fwd_type_supply
+struct CCINIClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -75,17 +80,17 @@ struct TaskForceClass {
     unsigned int *__pad_8;
     unsigned int *__pad_A0;
 // --- flat members (END) ---
-    unsigned int *  ParseUnitCountAndType(char * Buffer, void *a1 = 0);  // 0x4C4EF0
-    int Construct(ObjectClass * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x6E7E80
-    CCINIClass *  LoadFromINI(char * a1, int a2);  // 0x6E8220
-    TaskForceClass *  ExecuteAction(void ** Block, char a2);  // 0x6E87F0
-    int  LoadTaskForce(void * aP0, int aP1);  // 0x6E86A0
-    char  GetUnitCount(uint8_t *** aP1);  // 0x6E8420
-    char  GetUnitType(char * a2);  // 0x6E8510
-    int  LoadTask(int * a2);  // 0x6E8750
-    ObjectClass * Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x4C4F90
-    int  SaveTaskForce(void * aP0, int * a1, int aP2);  // 0x6E8680
-    int  ddtor(int a1, unsigned int * a2);  // 0x6E8710
+    unsigned int * ParseUnitCountAndType(char * Buffer, void *a2_1);  // 0x4C4EF0
+    int Construct(ObjectClass * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x6E7E80
+    AbstractClass * * LoadFromINI(char * a1, int a2);  // 0x6E8220
+    void * ExecuteAction(void ** Block, char a2);  // 0x6E87F0
+    int LoadTaskForce(AbstractTypeClass * aP0, int aP1);  // 0x6E86A0
+    char GetUnitCount(unsigned char *** aP1);  // 0x6E8420
+    char GetUnitType(char * a2);  // 0x6E8510
+    int LoadTask(int * a2);  // 0x6E8750
+    int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x4C4F90
+    int SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6E8680
+    int ddtor(int a1, unsigned int * a2);  // 0x6E8710
     int StubReturn33();  // 0x6E87D0
     int StubReturn212();  // 0x6E87E0
 };

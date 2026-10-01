@@ -6,7 +6,6 @@
 #include <cstddef>
 
 // IDA-named globals referenced (extern stubs)
-extern int dword_B1D4D8;
 
 namespace gamemd {
 

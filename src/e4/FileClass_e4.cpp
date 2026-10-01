@@ -31,7 +31,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
     v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
-  return FileClass::BufferedWriter(this, (char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/
+  return FileClass::BufferedWriter(int a1,(char *) aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 
 }
 } // namespace gamemd
@@ -117,19 +117,19 @@ LABEL_14:
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
-  int FileClass::Open(RawFileClass *this, int a2, void *a3)
+  int FileClass::Open(RawFileClass *a1, int a2, void *a3) 
   {
-    if ( CloseHandle((HANDLE)*((char *)this + 5)) ) /*0x65cc31*/
+    if ( CloseHandle((HANDLE)*((char *)a1 + 5)) ) /*0x65cc31*/
     {
 LABEL_13:
-      *((char *)this + 5) = -1; /*0x65cc8d*/
+      *((char *)a1 + 5) = -1; /*0x65cc8d*/
       return 1; /*0x65cc8d*/
     }
-    v4 = (int)(*this);
-    v7 = *((char *)this + 6); /*0x65cc40*/
+    v4 = (int)(*a1);
+    v7 = *((char *)a1 + 6); /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
-    (*(void (**)(int *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v7); /*0x65cc8a*/
+    (*(void (**)(int *, DWORD, unsigned int, int))(v4 + 64))(a1, LastError, 0, v7); /*0x65cc8a*/
     goto LABEL_13; /*0x65cc8a*/
   }
   return 1; /*0x65cbfb*/

@@ -8,6 +8,8 @@
 namespace gamemd {
 struct WorldDominationTour__Territory {
 // --- flat members (BEGIN) ---
+struct CampaignScore;  // fix_fwd_type_supply
+struct ReferenceCounted;  // fix_fwd_type_supply
     void * ptr_4;  // 0x4
     CampaignScore * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -47,6 +49,6 @@ struct WorldDominationTour__Territory {
     void * q5684;  // 0x5684
     void * q6408;  // 0x6408
 // --- flat members (END) ---
-    char *  Constructor(int aP1, unsigned int * a2, void * aP3, void * a4, void * aP5);  // 0x76F970
+    SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);  // 0x76F970
 };
 } // namespace gamemd

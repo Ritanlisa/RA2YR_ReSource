@@ -8,6 +8,11 @@ namespace gamemd {
 
 struct ScenarioClass {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct CampaignScore;  // fix_fwd_type_supply
+struct TechnoTypeClass;  // fix_fwd_type_supply
+struct TimerStruct;  // fix_fwd_type_supply
     char nextScenario;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8

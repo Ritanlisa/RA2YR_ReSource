@@ -3055,7 +3055,7 @@ namespace gamemd {
 int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 {
 
-  return AbstractClass::processWeaponFire(this);
+  return AbstractClass::processWeaponFire(int a1) ;
 
 }
 } // namespace gamemd

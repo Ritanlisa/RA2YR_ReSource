@@ -40,7 +40,7 @@
 
 // 0x402720
 namespace gamemd {
-int Audio::GetChannelStatus()
+int Audio::GetChannelStatus(void *a1_1)
 {
 
   int v3; // edi
@@ -238,7 +238,7 @@ LABEL_10:
 }
 // 0x4070B0
 namespace gamemd {
-int Audio::WaitForCallback()
+int Audio::WaitForCallback(void *a1_1)
 {
 
   int v2; // ebx
@@ -266,7 +266,7 @@ int Audio::WaitForCallback()
 }
 // 0x407F40
 namespace gamemd {
-void Audio::Release()
+void Audio::Release(void *a1_1)
 {
 
   int result; // eax
@@ -289,7 +289,7 @@ void Audio::Release()
 }
 // 0x408070
 namespace gamemd {
-int Audio::IsSoundPlaying()
+int Audio::IsSoundPlaying(void *a1_1)
 {
 
   return this->Audio_field_0xC[0] & 1; /*0x408076*/
@@ -307,7 +307,7 @@ int Audio::CalcRate(int a2, int a3)
 }
 // 0x409320
 namespace gamemd {
-int Audio::GetSampleSize()
+int Audio::GetSampleSize(void *a1_1)
 {
 
   return (char *)this->Audio_field_0x34 - (char *)this->Audio_field_0x38; /*0x409328*/
@@ -438,7 +438,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 }
 // 0x5D5820
 namespace gamemd {
-char ** Audio::SetSoundFileName(char * Source, int a3)
+char ** Audio::SetSoundFileName(char * Source, int a3, void *a3_2)
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x5d5825*/
@@ -607,7 +607,7 @@ void sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** 
 }
 // 0x7207F0
 namespace gamemd {
-int Audio::LoadWAVFiles()
+int Audio::LoadWAVFiles(void *a1_1)
 {
 
   int IsSoundEnabled; // eax
@@ -908,7 +908,7 @@ void sub_752590(int a1, int a2, int a3)
 }
 // 0x7BD130
 namespace gamemd {
-unsigned int Audio::GetSamplePosition(MouseClass * aP1, MouseClass * aP2)
+unsigned int Audio::GetSamplePosition(MouseClass * aP1, MouseClass * aP2, void *a3_1)
 {
 
   int v4; // edi
@@ -2457,7 +2457,7 @@ int sub_7C3860(int a1, int a2)
 }
 // 0x401080
 namespace gamemd {
-int Audio::InitChannels()
+int Audio::InitChannels(void *a1_1)
 {
 
   ((void (*)(void))AudioMixer::PlaySample)(); /*0x401083*/
@@ -2485,7 +2485,7 @@ int Audio::FlushChannel(unsigned int ** Block)
 
 // 0x406D40
 namespace gamemd {
-void Audio::Shutdown()
+void Audio::Shutdown(void *a1_1)
 {
 
   ObjectClass *v1; // ebx
@@ -2548,7 +2548,7 @@ void * Audio::GetEnabled()
 
 // 0x407070
 namespace gamemd {
-int Audio::GetFlag()
+int Audio::GetFlag(void *a1_1)
 {
 
   return RequestBufferMixer((unsigned int *)this, 0);
@@ -2658,8 +2658,8 @@ int Audio::IsPlaying()
   if ( !g_InfantryDrawState ) /*0x7529ed*/
     return 0; /*0x752a2d*/
   if ( !Audio::IsSoundPlaying(g_InfantryDrawState) /*0x752a17*/
-    && (void *)dword_B1D3CC == &stru_B1D3C8
-    && (void *)dword_B1D3F4 == &stru_B1D3F0
+    &(void *)&dword_B1D3CC == &stru_B1D3C8
+    &(void *)&dword_B1D3F4 == &stru_B1D3F0
     && !dword_B1D4B8 )
   {
     v0 = stru_B1D450; /*0x752a19*/

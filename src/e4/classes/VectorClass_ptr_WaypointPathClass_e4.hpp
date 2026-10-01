@@ -15,17 +15,19 @@ struct VectorClass_ptr_WaypointPathClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector *  Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2);  // 0x764710
-    void Destroy(void *a1 = 0);  // 0x763F90
-    unsigned int  GetItemIndex(int a2);  // 0x763FC0
-    int  Get(int a2, void *a1 = 0);  // 0x763FE0
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x764460
-    char  Release(int a2, unsigned int * a3);  // 0x7644A0
-    void Remove(void *a1 = 0);  // 0x764550
-    int  GetSize(unsigned int * a2);  // 0x764580
-    unsigned int  GetCapacity(int a2);  // 0x7645C0
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x7645E0
-    int  FindItemIndex(unsigned int * a2);  // 0x764690
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x7646C0
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+    DynamicVector * Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2);  // 0x764710
+    void Destroy(void *a1_1);  // 0x763F90
+    unsigned int GetItemIndex(int a2);  // 0x763FC0
+    int Get(int a2, void *a2_2);  // 0x763FE0
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x764460
+    char Release(int a2, unsigned int * a3);  // 0x7644A0
+    void Remove(void *a1_1);  // 0x764550
+    int GetSize(unsigned int * a2);  // 0x764580
+    unsigned int GetCapacity(int a2);  // 0x7645C0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x7645E0
+    int FindItemIndex(unsigned int * a2);  // 0x764690
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x7646C0
 };
 } // namespace gamemd

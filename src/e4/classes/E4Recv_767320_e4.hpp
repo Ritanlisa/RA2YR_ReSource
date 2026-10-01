@@ -13,6 +13,6 @@ struct E4Recv_767320 {
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
     int Vf20(int,  ...);    // G6 vtable slot dispatch
-    wchar_t **  sub_767320(void * a2, int a3, void * a4);  // 0x767320
+    wchar_t ** sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4);  // 0x767320
 };
 } // namespace gamemd

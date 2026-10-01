@@ -764,7 +764,7 @@ int FactoryClass::StubReturn116()
 
 // 0x4CA8E0
 namespace gamemd {
-int FactoryClass_33::Seek(int a2)
+int FactoryClass_33::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4ca8ea*/
@@ -872,7 +872,7 @@ void FactoryClass_33::ddtor()
 
 // 0x4CAA10
 namespace gamemd {
-int FactoryClass_33::Read(unsigned int * a2)
+int FactoryClass_33::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

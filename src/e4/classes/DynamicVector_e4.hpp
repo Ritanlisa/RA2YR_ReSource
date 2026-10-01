@@ -33,24 +33,26 @@ struct DynamicVector {
     unsigned int *__pad_20;
     unsigned int *__pad_C;
 // --- flat members (END) ---
-    unsigned int *  Copy(void * aP1, void *a1 = 0);  // 0x5AC430
-    char  AddItem(void * aP1, void *a1 = 0);  // 0x413A70
-    unsigned int *  Constructor_Cell(void * aP1, void * aP2, void *a1 = 0);  // 0x42F670
-    char  RemoveItem(void * aP1, void *a1 = 0);  // 0x45ADD0
-    char  Add_Alt(void * aP1, void *a1 = 0);  // 0x477EC0
-    int  GetOrGrow(void * aP1, void *a1 = 0);  // 0x49FAE0
-    char  Add_Alt4(void * aP1);  // 0x5253B0
-    char  Add_Alt2(void * aP1);  // 0x538780
-    char  Add_Alt3(void * aP1);  // 0x5AD7D0
+struct AbstractClass;  // fix_fwd_type_supply
+struct BufferIOFileClass;  // fix_fwd_type_supply
+    unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
+    char AddItem(VectorClass_flat * aP1, void *a2_1);  // 0x413A70
+    unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x42F670
+    char RemoveItem(IUnknown * aP1, void *a2_1);  // 0x45ADD0
+    char Add_Alt(VectorClass_flat * aP1, void *a2_1);  // 0x477EC0
+    int GetOrGrow(DynamicVector * aP1, void *a2_1);  // 0x49FAE0
+    char Add_Alt4(VectorClass_flat * aP1);  // 0x5253B0
+    char Add_Alt2(DynamicVector * aP1);  // 0x538780
+    char Add_Alt3(VectorClass_flat * aP1);  // 0x5AD7D0
     char GrowCapacity();  // 0x624810
-    int  Read(void * aP1, void *a1 = 0);  // 0x67A520
-    int  Read_Alt(void * aP1);  // 0x67A6E0
-    unsigned int *  Constructor_VoxelAnim(int a2, int a3);  // 0x67AC70
-    char  Add2(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x67AD80
-    char  RemoveAt(int a2, void *a1 = 0);  // 0x67C360
-    char  RemoveAt2(int a2);  // 0x67C3F0
-    char  Add(void * aP1, void *a1 = 0, void *a2 = 0);  // 0x6C6400
-    unsigned int *  Constructor_Techno(int a2, int a3);  // 0x7342D0
-    char EnsureCapacity(void *a1 = 0, void *a2 = 0);  // 0x7AF000
+    int Read(TechnoTypeClass * aP1, void *a2_1);  // 0x67A520
+    int Read_Alt(TechnoTypeClass * aP1);  // 0x67A6E0
+    unsigned int * Constructor_VoxelAnim(int a2, int a3);  // 0x67AC70
+    char Add2(VectorClass_flat * aP1, void *a2_1, void *a3_1, void *a4_1);  // 0x67AD80
+    char RemoveAt(int a2, void *a2_2);  // 0x67C360
+    char RemoveAt2(int a2);  // 0x67C3F0
+    char Add(DynamicVector * aP1, void *a2_1, void *a3_1);  // 0x6C6400
+    unsigned int * Constructor_Techno(int a2, int a3);  // 0x7342D0
+    char EnsureCapacity(void *a1_1, void *a2_1);  // 0x7AF000
 };
 } // namespace gamemd

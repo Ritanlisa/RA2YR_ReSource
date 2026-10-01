@@ -31,6 +31,7 @@ struct BaseClass {
     unsigned int q048;  // 0x48
     HouseClass* owner;  // 0x4C
 // --- flat members (END) ---
+struct HouseClass;  // fix_fwd_type_supply
     int LoadArrayFields(unsigned int * a1, int a2);
     int LoadBaseNodeClass(VectorClass_flat * aP0, int a2);
 };

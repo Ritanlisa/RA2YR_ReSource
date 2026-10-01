@@ -14,12 +14,13 @@ struct VectorClass_E {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x74BFA0
-    char  Release(signed int Size, char * a3);  // 0x74C030
-    void ddtor(void *a1 = 0);  // 0x74C0E0
-    char  Clear(int a2);  // 0x74BF90
-    char  AddRef(int a2);  // 0x74BFF0
-    int  GetSize(unsigned char * a2);  // 0x74C110
-    int  GetCapacity(int a2);  // 0x74C150
+struct VectorClass_flat;  // fix_fwd_type_supply
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x74BFA0
+    char Release(signed int Size, char * a3);  // 0x74C030
+    void ddtor(void *a1_1);  // 0x74C0E0
+    char Clear(int a2);  // 0x74BF90
+    char AddRef(int a2);  // 0x74BFF0
+    int GetSize(unsigned char * a2);  // 0x74C110
+    int GetCapacity(int a2);  // 0x74C150
 };
 } // namespace gamemd

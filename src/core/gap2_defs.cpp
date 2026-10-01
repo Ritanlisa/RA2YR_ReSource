@@ -222,7 +222,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
+  *(unsigned int *)this->__pad_0 = (void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a4df0*/
   {
     RA2_OPDEL(v3); /*0x4a4df8*/
@@ -474,7 +474,7 @@ void* StreamWrapper::QueryInterface(int a2) {
   void (__thiscall ***v5)(unsigned int, int); // ecx
 
   v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
-  *(unsigned int *)this->__pad_0 = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
+  *(unsigned int *)this->__pad_0 = (void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
     (**v3)(v3, 1); /*0x7b0454*/
   v4 = (void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/

@@ -14,6 +14,6 @@ struct E4Recv_549830 {
     unsigned int q2100;  // 0x2100
 // --- flat members (END) ---
     int Vf156(int,  ...);    // G6 vtable slot dispatch
-    char  sub_549830(int a2, void ** a3, int a4, int a5);  // 0x549830
+    int sub_549830(int a2, void ** a3, int a4, int a5);  // 0x549830
 };
 } // namespace gamemd

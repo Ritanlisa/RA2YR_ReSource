@@ -15,22 +15,24 @@ struct VectorClass_ptr_AircraftTypeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector *  Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2);  // 0x4F0840
-    DynamicVector *  Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2);  // 0x4F08E0
-    void Destroy(void *a1 = 0);  // 0x4E8DE0
-    unsigned int  GetItemIndex(int a2);  // 0x4E8E10
-    int  Get(int a2, void *a1 = 0);  // 0x4E8E30
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+    DynamicVector * Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2);  // 0x4F0840
+    DynamicVector * Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2);  // 0x4F08E0
+    void Destroy(void *a1_1);  // 0x4E8DE0
+    unsigned int GetItemIndex(int a2);  // 0x4E8E10
+    int Get(int a2, void *a2_2);  // 0x4E8E30
     void Destroy_0();  // 0x4E8E40
-    unsigned int  GetItemIndex_0(int a2);  // 0x4E8E70
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EDAC0
-    char  Release(int a2, unsigned int * a3);  // 0x4EDB00
-    void Remove(void *a1 = 0);  // 0x4EDBB0
-    int  GetSize(unsigned int * a2);  // 0x4EDBE0
-    unsigned int  LoadTypeData(int a2);  // 0x4EDC20
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x4EDC40
-    int  FindItemIndex(unsigned int * a2);  // 0x4EDCF0
-    char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EDEA0
-    int  FindItemIndex_0(unsigned int * a2);  // 0x4EDF50
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4F07F0
+    unsigned int GetItemIndex_0(int a2);  // 0x4E8E70
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x4EDAC0
+    char Release(int a2, unsigned int * a3);  // 0x4EDB00
+    void Remove(void *a1_1);  // 0x4EDBB0
+    int GetSize(unsigned int * a2);  // 0x4EDBE0
+    unsigned int LoadTypeData(int a2);  // 0x4EDC20
+    char SetCapacity(int a2, unsigned int * a3);  // 0x4EDC40
+    int FindItemIndex(unsigned int * a2);  // 0x4EDCF0
+    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EDEA0
+    int FindItemIndex_0(unsigned int * a2);  // 0x4EDF50
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F07F0
 };
 } // namespace gamemd

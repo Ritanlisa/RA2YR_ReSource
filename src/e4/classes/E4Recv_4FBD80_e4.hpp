@@ -14,6 +14,6 @@ struct E4Recv_4FBD80 {
     unsigned int M22100;  // 0x5654
     unsigned int M22104;  // 0x5658
 // --- flat members (END) ---
-    int  sub_4FBD80(int a2, int a3);  // 0x4FBD80
+    AbstractClass * * sub_4FBD80(int a2, int a3);  // 0x4FBD80
 };
 } // namespace gamemd

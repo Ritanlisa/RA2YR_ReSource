@@ -7,6 +7,7 @@
 namespace gamemd {
 struct E4Recv_4B4E10 {
 // --- flat members (BEGIN) ---
+struct DropListClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     unsigned int M24;  // 0x18
     unsigned int u32_20;  // 0x20
@@ -54,6 +55,6 @@ struct E4Recv_4B4E10 {
     unsigned int q6038;  // 0x6038
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    DropListClass *  sub_4B4E10(void * aP1, void * String, int a4, void * aP4, void * aP5, void * aP6, void * aP7, int a9, void * a10, int a11);  // 0x4B4E10
+    DropListClass * sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11);  // 0x4B4E10
 };
 } // namespace gamemd

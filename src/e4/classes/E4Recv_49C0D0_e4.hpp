@@ -78,6 +78,6 @@ struct E4Recv_49C0D0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char CampaignClass_LoadCoopSave();  // 0x49C0D0
+    AbstractClass * * CampaignClass_LoadCoopSave();  // 0x49C0D0
 };
 } // namespace gamemd

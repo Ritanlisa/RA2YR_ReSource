@@ -271,7 +271,7 @@ int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
 }
 // 0x6CF4F0
 namespace gamemd {
-void SwizzleManagerClass_19::ClearBuffer()
+void SwizzleManagerClass_19::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -366,7 +366,7 @@ void SwizzleManagerClass_19::ddtor()
 
 // 0x6CF6C0
 namespace gamemd {
-int SwizzleManagerClass_19::Init( unsigned int * a2)
+int SwizzleManagerClass_19::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax
@@ -391,7 +391,7 @@ int SwizzleManagerClass_19::Init( unsigned int * a2)
 
 // 0x6CF700
 namespace gamemd {
-unsigned int SwizzleManagerClass_19::Add(int a2)
+unsigned int SwizzleManagerClass_19::Add(int a2, void *a2_2, void *a3_1)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x6cf700*/

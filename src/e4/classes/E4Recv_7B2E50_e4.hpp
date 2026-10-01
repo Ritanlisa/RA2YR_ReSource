@@ -21,6 +21,6 @@ struct E4Recv_7B2E50 {
     unsigned int UDPInterfaceClass;
     unsigned int q020;  // 0x20
 // --- flat members (END) ---
-    void sub_7B2E50();  // 0x7B2E50
+    CampaignClass * * sub_7B2E50();  // 0x7B2E50
 };
 } // namespace gamemd

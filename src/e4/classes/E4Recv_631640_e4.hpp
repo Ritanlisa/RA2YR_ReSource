@@ -10,6 +10,6 @@ struct E4Recv_631640 {
     unsigned int M8;  // 0x8
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    void sub_631640();  // 0x631640
+    AbstractClass * * sub_631640();  // 0x631640
 };
 } // namespace gamemd

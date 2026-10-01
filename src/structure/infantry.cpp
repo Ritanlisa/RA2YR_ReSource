@@ -1541,10 +1541,10 @@ int InfantryTypeClass::DTOR()
   void *v4; // eax
   void *v5; // eax
 
-  this->FootClass = &(void*)(void*)&InfantryTypeClass_vftable; /*0x5239d7*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&InfantryTypeClass_vftable; /*0x5239dd*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&InfantryTypeClass_vftable; /*0x5239e4*/
-  ((unsigned int *)this)[0] = &(void*)(void*)&InfantryTypeClass_vftable; /*0x5239eb*/
+  this->FootClass = (void *)&InfantryTypeClass_vftable; /*0x5239d7*/
+  ((unsigned int *)this)[0] = (void *)&InfantryTypeClass_vftable; /*0x5239dd*/
+  ((unsigned int *)this)[0] = (void *)&InfantryTypeClass_vftable; /*0x5239e4*/
+  ((unsigned int *)this)[0] = (void *)&InfantryTypeClass_vftable; /*0x5239eb*/
   AbstractClass::AnnounceExpiredPointer(&this->FootClass, 1); /*0x5239f2*/
   v2 = (*(int (**)(unsigned int *, InfantryClass **))(dword_A8E348 + 16))(&dword_A8E348, &this); /*0x523a0b*/
   if ( v2 != -1 && v2 < dword_A8E358 && v2 < --dword_A8E358 ) /*0x523a26*/
@@ -1559,7 +1559,7 @@ int InfantryTypeClass::DTOR()
   RA2_OPDEL(*((void **)&this->q16C1)); /*0x523a47*/
   this->qE3C = 0; /*0x523a51*/
   v3 = (void *)this->VoiceComment_Items; /*0x523a57*/
-  this->qE88 = &(void*)(void*)&VectorClass_int_vftable; /*0x523a5f*/
+  this->qE88 = (void *)&VectorClass_int_vftable; /*0x523a5f*/
   if ( v3 && this->VoiceComment_FlagByte ) /*0x523a6b*/
   {
     RA2_OPDEL(v3); /*0x523a74*/
@@ -1568,7 +1568,7 @@ int InfantryTypeClass::DTOR()
   this->VoiceComment_FlagByte = 0; /*0x523a82*/
   this->VoiceComment_Capacity = 0; /*0x523a88*/
   v4 = (void *)this->DeathAnims_Items; /*0x523a8e*/
-  this->qE6C = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x523a94*/
+  this->qE6C = (void *)&VectorClass_AnimTypeClass_const___vftable; /*0x523a94*/
   if ( v4 && this->DeathAnims_FlagByte ) /*0x523aa2*/
   {
     RA2_OPDEL(v4); /*0x523aab*/
@@ -1577,7 +1577,7 @@ int InfantryTypeClass::DTOR()
   this->DeathAnims_FlagByte = 0; /*0x523ab9*/
   this->DeathAnims_Capacity = 0; /*0x523abf*/
   v5 = (void *)this->DeadBodies_Items; /*0x523ac5*/
-  this->qE50 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x523acb*/
+  this->qE50 = (void *)&VectorClass_AnimTypeClass_const___vftable; /*0x523acb*/
   if ( v5 && this->DeadBodies_FlagByte ) /*0x523ad9*/
   {
     RA2_OPDEL(v5); /*0x523ae2*/
@@ -2211,7 +2211,7 @@ int InfantryClass::CalcMoveTarget()
   {
     ObjectVector::Construct(&v86, 0, 0); /*0x51b7ee*/
     ObjectVector_field_0x14 = 10; /*0x51b7f3*/
-    *(unsigned int *)v86.__pad_0 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x51b7fa*/
+    *(unsigned int *)v86.__pad_0 = (void *)&DynamicVectorClass_ObjectClass___vftable; /*0x51b7fa*/
     v86.ObjectVector_field_0x14 = 10; /*0x51b802*/
     v86.ObjectVector_field_0x10 = 0; /*0x51b809*/
     if ( ObjectPlacement_field_0x04 ) /*0x51b810*/
@@ -2262,7 +2262,7 @@ int InfantryClass::CalcMoveTarget()
     }
     (*((void (**)(InfantryClass *, unsigned int, unsigned int))this->FootClass + 337))(this, 0, 0); /*0x51b8fc*/
     result = v86.ObjectVector_field_0x04; /*0x51b902*/
-    *(unsigned int *)v86.__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x51b906*/
+    *(unsigned int *)v86.__pad_0 = (void *)&VectorClass_ObjectClass___vftable; /*0x51b906*/
     if ( v86.ObjectVector_field_0x04 && IDA_BYTE1(v86.ObjectVector_field_0x0C) ) /*0x51b91f*/
       RA2_OPDEL((void *)v86.ObjectVector_field_0x04); /*0x51b926*/
   }
@@ -5332,9 +5332,9 @@ int InfantryClass::LoadFromStream()
     if ( v2 ) /*0x521a03*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&this); /*0x521a0c*/
-      v2->FootClass = &(void*)(void*)&InfantryClass_vftable; /*0x521a11*/
-      *p_vtable1 = &(void*)(void*)&InfantryClass_vftable; /*0x521a17*/
-      ((unsigned int *)v2)[0] = &(void*)(void*)&InfantryClass_vftable; /*0x521a1d*/
+      v2->FootClass = (void *)&InfantryClass_vftable; /*0x521a11*/
+      *p_vtable1 = (void *)&InfantryClass_vftable; /*0x521a17*/
+      ((unsigned int *)v2)[0] = (void *)&InfantryClass_vftable; /*0x521a1d*/
       ((unsigned int *)v2)[0] = &off_7EB02C; /*0x521a24*/
     }
     v11 = ((unsigned int *)v2)[0]; /*0x521a2c*/

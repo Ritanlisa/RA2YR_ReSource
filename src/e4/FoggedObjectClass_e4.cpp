@@ -1114,7 +1114,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
 }
 // 0x4E01F0
 namespace gamemd {
-void FoggedObjectClass_42::ClearBuffer()
+void FoggedObjectClass_42::ClearBuffer(void *a1_1)
 {
 
   void *vtable1; // eax
@@ -1147,7 +1147,7 @@ unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
 
 // 0x4E0240
 namespace gamemd {
-int FoggedObjectClass_42::Seek(int a2)
+int FoggedObjectClass_42::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e024a*/
@@ -1239,7 +1239,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
 // 0x4E0670
 namespace gamemd {
-void FoggedObjectClass_42::ddtor()
+void FoggedObjectClass_42::ddtor(void *a1_1, void *a2_1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e067d*/
@@ -1255,7 +1255,7 @@ void FoggedObjectClass_42::ddtor()
 
 // 0x4E06A0
 namespace gamemd {
-int FoggedObjectClass_42::Read(unsigned int * a2)
+int FoggedObjectClass_42::Read(unsigned int * a2, void *a2_2)
 {
 
   int result; // eax

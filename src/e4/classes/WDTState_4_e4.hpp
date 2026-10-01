@@ -19,11 +19,12 @@ struct WDTState_4 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    char  Release(int a2, unsigned int * a3);  // 0x76BA70
+struct DynamicVector;  // fix_fwd_type_supply
+    AbstractClass * * Release(int a2, unsigned int * a3);  // 0x76BA70
     int ddtor();  // 0x76B710
-    int  Read(int a2, void *a1 = 0);  // 0x76BB90
-    DynamicVector *  QueryInterface(unsigned int * Block, char a2);  // 0x76BC10
-    unsigned int  Write(int a2);  // 0x76B740
-    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x76BC60
+    int Read(int a2, void *a2_2);  // 0x76BB90
+    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x76BC10
+    unsigned int Write(int a2);  // 0x76B740
+    int Constructor(void *a1_1, void *a2_1, void *a3_1);  // 0x76BC60
 };
 } // namespace gamemd

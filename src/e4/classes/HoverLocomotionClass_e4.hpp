@@ -8,6 +8,8 @@ namespace gamemd {
 
 struct HoverLocomotionClass {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct ILocomotion;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     unsigned char q008;  // 0x8

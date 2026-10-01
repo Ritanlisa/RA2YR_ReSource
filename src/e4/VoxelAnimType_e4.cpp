@@ -27,7 +27,7 @@
 
 // 0x5F7A90
 namespace gamemd {
-AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
+AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3, void *a3_2)
 {
 
   void *v4; // ebp
@@ -260,7 +260,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
 }
 // 0x5F8110
 namespace gamemd {
-int VoxelAnimType::LoadAnim()
+int VoxelAnimType::LoadAnim(void *a1_1)
 {
 
   const char *v2; // ebp

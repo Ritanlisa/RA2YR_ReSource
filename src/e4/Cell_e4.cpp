@@ -95,7 +95,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 }
 // 0x42B1C0
 namespace gamemd {
-int Cell::PosToIndex()
+int Cell::PosToIndex(void *a1_1)
 {
 
   return ((SLOWORD(this->Cell_field_0x0) - SHIWORD(this->Cell_field_0x0) + *(unsigned int *)&stru_87F5F0.__pad_58[660] - 1) >> 1) /*0x42b1e3*/
@@ -106,7 +106,7 @@ int Cell::PosToIndex()
 }
 // 0x43B4C0
 namespace gamemd {
-int Cell::CanPlaceBuilding( unsigned int * a2)
+int Cell::CanPlaceBuilding(unsigned int * a2)
 {
 
   int v2; // esi
@@ -162,7 +162,7 @@ LABEL_6:
 }
 // 0x481670
 namespace gamemd {
-int Cell::ApplyDamage( IUnknown * aP1, int a3, int a4, IUnknown * aP4)
+int Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4)
 {
 
   AbstractClass *Cell_field_0xE4; // esi
@@ -274,7 +274,7 @@ LABEL_25:
 }
 // 0x481810
 namespace gamemd {
-int Cell::GetNeighbourContent( unsigned int a2)
+int Cell::GetNeighbourContent(unsigned int a2, void *a2_2)
 {
 
   void *result; // eax
@@ -296,7 +296,7 @@ int Cell::GetNeighbourContent( unsigned int a2)
 }
 // 0x4834A0
 namespace gamemd {
-int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7)
+int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, void *a8_1)
 {
 
   int result; // eax
@@ -394,7 +394,7 @@ LABEL_39:
 }
 // 0x485060
 namespace gamemd {
-int Cell::IsValidHeight()
+int Cell::IsValidHeight(void *a1_1)
 {
 
   int Cell_field_0x38; // eax
@@ -406,7 +406,7 @@ int Cell::IsValidHeight()
 }
 // 0x486380
 namespace gamemd {
-void Cell::IsEmpty()
+void Cell::IsEmpty(void *a1_1)
 {
 
   int result; // eax
@@ -419,7 +419,7 @@ void Cell::IsEmpty()
 }
 // 0x4865D0
 namespace gamemd {
-int Cell::IsGroundTypeRange()
+int Cell::IsGroundTypeRange(void *a1_1)
 {
 
   int result; // eax
@@ -437,7 +437,7 @@ int Cell::IsGroundTypeRange()
 }
 // 0x486750
 namespace gamemd {
-int Cell::IsInRange()
+int Cell::IsInRange(void *a1_1)
 {
 
   int result; // eax
@@ -451,7 +451,7 @@ int Cell::IsInRange()
 }
 // 0x486770
 namespace gamemd {
-int Cell::IsInRange2()
+int Cell::IsInRange2(void *a1_1)
 {
 
   int result; // eax
@@ -465,7 +465,7 @@ int Cell::IsInRange2()
 }
 // 0x4867B0
 namespace gamemd {
-void Cell::IsShore()
+void Cell::IsShore(void *a1_1)
 {
 
   int result; // eax
@@ -478,7 +478,7 @@ void Cell::IsShore()
 }
 // 0x486FF0
 namespace gamemd {
-int Cell::IsBuildableAdvanced()
+int Cell::IsBuildableAdvanced(void *a1_1)
 {
 
   int result; // eax
@@ -687,7 +687,7 @@ long long Cell::GetTraversability()
 }
 // 0x487D50
 namespace gamemd {
-int Cell::GetSlopeIndex()
+int Cell::GetSlopeIndex(void *a1_1)
 {
 
   return *((char *)this + 283) + 4 * ((*((unsigned int *)this + 80) >> 7) & 1); /*0x487d66*/
@@ -1343,7 +1343,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
 }
 // 0x57B210
 namespace gamemd {
-int Cell::GetTerrainMask(IUnknown * aP1, int a3)
+int Cell::GetTerrainMask(IUnknown * aP1, int a3, void *a3_2)
 {
 
   int v3; // ebx
@@ -1465,7 +1465,7 @@ int Cell::GetTerrainMask(IUnknown * aP1, int a3)
 }
 // 0x5A9940
 namespace gamemd {
-void * Cell::Clear()
+void * Cell::Clear(void *a1_1)
 {
 
   this->Cell_field_0x0 = 0; /*0x5a9942*/
@@ -1549,7 +1549,7 @@ LABEL_15:
 }
 // 0x6D2790
 namespace gamemd {
-void* Cell::CreateCrater(IUnknown aP2)
+void* Cell::CreateCrater(IUnknown aP2, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int v5; // ecx
@@ -2031,7 +2031,7 @@ LABEL_13:
 
 // 0x68BD00
 namespace gamemd {
-unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
+unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3, void *a3_2)
 {
 
   unsigned int *v3; // esi

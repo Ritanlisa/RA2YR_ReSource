@@ -21,6 +21,7 @@ struct NetworkGameSetup {
     unsigned int NetworkGameSetup_field_0x08;
     unsigned int *__pad_0;
 // --- flat members (END) ---
+struct ObjectClass;  // fix_fwd_type_supply
     int ReadRulesUnknown();
     unsigned int * DeleteComPtr(unsigned int * Block, char a2);
     void SendGameSetupPacket(wchar_t * Source);

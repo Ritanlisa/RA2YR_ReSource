@@ -717,7 +717,7 @@ int AbstractClass::initVtableBase()
 
 // 0x4101F0
 namespace gamemd {
-void AbstractClass::DTOR()
+void AbstractClass::DTOR(void *a1_1)
 {
 
   int result; // eax
@@ -1425,7 +1425,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 
 // 0x4CA160
 namespace gamemd {
-int AbstractClass::GetType()
+int AbstractClass::GetType(void *a1_1, void *a2_1)
 {
 
   return *((unsigned int *)this + 22); /*0x4ca163*/
@@ -1807,7 +1807,7 @@ int AbstractClass::COMStub_Return0_37()
 
 // 0x5F42C0
 namespace gamemd {
-int AbstractClass::COMStub_Return0_38()
+int AbstractClass::COMStub_Return0_38(void *a1_1)
 {
 
   int result; // eax

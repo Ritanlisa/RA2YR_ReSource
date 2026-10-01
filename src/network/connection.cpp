@@ -117,7 +117,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
 
   IDA_LOWORD(a1->PhoneNumber[3]) = a5; /*0x48be73*/
   a1->PhoneNumber[4] = a6; /*0x48be7b*/
-  *(unsigned int *)((unsigned char *)(a1) + 0x0) = (unsigned int)(&(void*)(void*)&ConnectionClass_vftable); /*0x48be83*/
+  *(unsigned int *)((unsigned char *)(a1) + 0x0) = (unsigned int)((void *)&ConnectionClass_vftable); /*0x48be83*/
   a1->PhoneNumber[1] = (unsigned int)(a4)+ 14; /*0x48be89*/
   a1->PhoneNumber[5] = a7; /*0x48be8c*/
   a1->PhoneNumber[6] = a8; /*0x48be8f*/
@@ -299,7 +299,7 @@ void IPXManagerClass::processPacket()
   unsigned int *v8; // edi
 
   v2 = (unsigned int)(((unsigned char *)(this) + 0x014));
-  *(unsigned int *)this = &(void*)(void*)&IPXManagerClass_vftable; /*0x5409fa*/
+  *(unsigned int *)this = (void *)&IPXManagerClass_vftable; /*0x5409fa*/
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(); /*0x540a04*/
@@ -328,7 +328,7 @@ void IPXManagerClass::processPacket()
   if ( result <= 0 ) /*0x540a43*/
   {
     this->q044 = 0; /*0x540a70*/
-    *(unsigned int *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a73*/
+    *(unsigned int *)this = (void *)&ConnManClass_vftable; /*0x540a73*/
   }
   else
   {
@@ -344,7 +344,7 @@ void IPXManagerClass::processPacket()
     }
     while ( v7 < result ); /*0x540a60*/
     this->q044 = 0; /*0x540a62*/
-    *(unsigned int *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a65*/
+    *(unsigned int *)this = (void *)&ConnManClass_vftable; /*0x540a65*/
   }
   return result; /*0x540a6c*/
 }

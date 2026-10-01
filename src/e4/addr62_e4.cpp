@@ -961,7 +961,7 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 }
 // 0x6223C0
 namespace gamemd {
-unsigned int * E4Recv_6223C0::DestroyDialog()
+unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
 {
 
   unsigned int *result; // eax

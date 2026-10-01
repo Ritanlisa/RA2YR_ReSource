@@ -11,6 +11,6 @@ struct E4Recv_5942F0 {
     unsigned char q130;  // 0x130
     unsigned char q304;  // 0x304
 // --- flat members (END) ---
-    int  sub_5942F0(int * a2);  // 0x5942F0
+    int sub_5942F0(int * a2);  // 0x5942F0
 };
 } // namespace gamemd

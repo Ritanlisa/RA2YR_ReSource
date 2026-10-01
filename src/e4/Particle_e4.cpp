@@ -9,7 +9,7 @@
 
 // 0x4664C0
 namespace gamemd {
-int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7)
+int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7, void *a8_1)
 {
 
   AbstractClass * result;

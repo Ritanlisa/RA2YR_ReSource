@@ -28,6 +28,7 @@ struct E4Recv_5BCB90 {
     unsigned int q4004;  // 0x4004
     unsigned int q4008;  // 0x4008
 // --- flat members (END) ---
-    ObjectClass *  sub_5BCB90(int a2);  // 0x5BCB90
+struct ObjectClass;  // fix_fwd_type_supply
+    ObjectClass * sub_5BCB90(int a2);  // 0x5BCB90
 };
 } // namespace gamemd

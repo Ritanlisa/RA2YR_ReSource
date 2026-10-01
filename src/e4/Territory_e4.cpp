@@ -101,7 +101,7 @@ void Territory_WorldDominationTour_8::Write(int a2, int a3)
 }
 // 0x7719D0
 namespace gamemd {
-void Territory_WorldDominationTour_8::Close(int a2)
+void Territory_WorldDominationTour_8::Close(int a2, void *a2_2)
 {
 
   AudioQueue::Update((AudioQueue *)this->field_1C); /*0x7719d3*/
@@ -123,7 +123,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Bl
 }
 // 0x771990
 namespace gamemd {
-unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
+unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1, void *a2_1, void *a3_1)
 {
 
   int v2; // [esp+0h] [ebp-10h]
@@ -142,7 +142,7 @@ unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
 
 // 0x7719C0
 namespace gamemd {
-unsigned int * Territory_WorldDominationTour_8::Open()
+unsigned int * Territory_WorldDominationTour_8::Open(void *a1_1, void *a2_1, void *a3_1)
 {
 
   return (uint8_t)this->Audio::IsPlaying() == 0; /*0x7719ca*/

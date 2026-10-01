@@ -14,6 +14,6 @@ struct E4Recv_5BCC60 {
     unsigned int M10028;  // 0x272C
     unsigned int M10032;  // 0x2730
 // --- flat members (END) ---
-    int  sub_5BCC60(int a2, int a3, int a4, int a5);  // 0x5BCC60
+    int sub_5BCC60(int a2, int a3, int a4, int a5);  // 0x5BCC60
 };
 } // namespace gamemd

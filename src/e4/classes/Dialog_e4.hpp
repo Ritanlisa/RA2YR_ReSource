@@ -7,6 +7,9 @@
 namespace gamemd {
 struct Dialog {
 // --- flat members (BEGIN) ---
+struct AnimClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
@@ -77,48 +80,48 @@ struct Dialog {
     unsigned int *__pad_10;
     unsigned int Debug;
 // --- flat members (END) ---
-    void MapDialogResource(void *a1 = 0);  // 0x49F740
+    void MapDialogResource(void *a1_1);  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0
     int ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6, void * a1, void * a3, void * a4, void * a5);  // 0x5D3490
     int GetModeNeg2();  // 0x5D5DC0
     int GetMode3();  // 0x5D5DD0
-    HWND RefreshDialogsGame(void *a1 = 0);  // 0x5EE350
-    int  RunModemDialing(int a2, int a3, char a4);  // 0x5F2950
-    BOOL  MapControlToAction(int hWnd, int a2);  // 0x606800
-    char StopBink(void *a1 = 0);  // 0x607FD0
-    char IdleProcess(void *a1 = 0, void *a2 = 0);  // 0x608070
-    BOOL  HandleTabKey(int hWnd, int a2);  // 0x60A330
-    BOOL  DispatchEvent(int hWnd, int a2);  // 0x60A5B0
-    AbstractClass * *  InitWindow(int a1, int a2);  // 0x60F760
-    AbstractClass * *  InitializeControls(void * hWnd, void * a2);  // 0x60F9A0
-    int DestroyDialogSystem();  // 0x610360
-    LONG Resize(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x6213A0
-    void  DrawBackground(HWND hWnd);  // 0x621E90
-    HWND Destroy(void *a1 = 0);  // 0x622720
-    void CleanupTree();  // 0x6233A0
-    char  UpdateControlState(unsigned int * a2, unsigned int * a3);  // 0x624930
-    void GrowBuffer();  // 0x624BE0
-    char  BindGadgetData(int * a2, char * Block, void *a1 = 0);  // 0x624CA0
-    int ReadMultiplayerDialogSettings();  // 0x671EA0
-    int FindByHandle(void *a1 = 0);  // 0x775940
-    HWND GetCurrent();  // 0x775B10
+    void RefreshDialogsGame(void *a1_1);  // 0x5EE350
+    int RunModemDialing(int a2, int a3, char a4);  // 0x5F2950
+    AbstractClass * * MapControlToAction(HWND hWnd, LPARAM a2);  // 0x606800
+    int StopBink(void *a1_1);  // 0x607FD0
+    AbstractClass * * IdleProcess(void *a1_1, void *a2_1);  // 0x608070
+    int HandleTabKey(HWND hWnd, LPARAM a2);  // 0x60A330
+    AbstractClass * * DispatchEvent(HWND hWnd, LPARAM a2);  // 0x60A5B0
+    AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760
+    AbstractClass * * InitializeControls(HWND hWnd, LPARAM a2);  // 0x60F9A0
+    AbstractClass * * DestroyDialogSystem();  // 0x610360
+    AbstractClass * * Resize(void *a1_1, void *a2_1, void *a3_1);  // 0x6213A0
+    AbstractClass * * DrawBackground(HWND hWnd);  // 0x621E90
+    int Destroy(void *a1_1);  // 0x622720
+    CampaignClass * * CleanupTree();  // 0x6233A0
+    int UpdateControlState(unsigned int * a2, unsigned int * a3);  // 0x624930
+    AbstractClass * * GrowBuffer();  // 0x624BE0
+    AbstractClass * * BindGadgetData(int * a2, char * Block, void *a3_1);  // 0x624CA0
+    INIClass * * ReadMultiplayerDialogSettings();  // 0x671EA0
+    int FindByHandle(void *a1_1);  // 0x775940
+    int GetCurrent();  // 0x775B10
     int GetCurrentType();  // 0x775B20
-    BOOL GetField(void *a1 = 0, void *a2 = 0);  // 0x775BA0
-    int SideIDToIndex(void *a1 = 0);  // 0x4E4EC0
+    BOOL GetField(void *a1_1, void *a2_1);  // 0x775BA0
+    int SideIDToIndex(void *a1_1);  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
-    HWND ShowStatusText(void * aP0,  void* aP1,  void* aP2);    // 0x5E2790
-    LRESULT ShowPlayerName(void *a1 = 0);  // 0x5E2F60
+    HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);    // 0x5E2790
+    LRESULT ShowPlayerName(void *a1_1);  // 0x5E2F60
     int MapPlayerIDToIndex();  // 0x5E9950
     unsigned int CheckButtonState();  // 0x5F3450
-    BOOL IsSpecialTemplate(void *a1 = 0);  // 0x602AE0
+    BOOL IsSpecialTemplate(void *a1_1);  // 0x602AE0
     BOOL EnumAndCleanup();  // 0x60AAA0
-    BOOL  SubclassEditControl(int hWnd, int a2);  // 0x60F320
-    HWND Show(void *a1 = 0, void *a2 = 0);  // 0x622800
-    char PumpMessages(void *a1 = 0);  // 0x623120
-    int FindByPtr(void *a1 = 0);  // 0x7759B0
-    HWND RestoreParent(void *a1 = 0);  // 0x777060
+    BOOL SubclassEditControl(HWND hWnd, LPARAM a2);  // 0x60F320
+    HWND Show(void *a1_1, void *a2_1);  // 0x622800
+    char PumpMessages(void *a1_1);  // 0x623120
+    int FindByPtr(void *a1_1);  // 0x7759B0
+    HWND RestoreParent(void *a1_1);  // 0x777060
     char UpdateGameUI();  // 0x77D820
     HWND CloseAll();  // 0x799D10
 };

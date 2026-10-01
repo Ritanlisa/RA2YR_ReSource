@@ -20,7 +20,9 @@ struct CommBufferClass {
     AbstractClass * ptr_30;  // 0x30
     CampaignClass* q034;  // 0x34
 // --- flat members (END) ---
-    CommBufferClass *  sub_48B0E0(int a2, int a3, int Size, int a5);  // 0x48B0E0
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+    AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);  // 0x48B0E0
     void sub_48B1F0();  // 0x48B1F0
 };
 } // namespace gamemd

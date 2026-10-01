@@ -674,7 +674,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
 
 // 0x5D11D0
 namespace gamemd {
-int MSPCXAnim_26::Load(unsigned int * a2)
+int MSPCXAnim_26::Load(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   int m_10; // edx
@@ -795,7 +795,7 @@ void MSPCXAnim_42::ddtor()
 
 // 0x5D1320
 namespace gamemd {
-int MSPCXAnim_42::Load(unsigned int * a2)
+int MSPCXAnim_42::Load(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   int result; // eax

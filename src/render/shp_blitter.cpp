@@ -7,8 +7,6 @@ namespace gamemd
 {
 
 // External globals (will be defined in their respective init files)
-extern void* g_ZBufferDescriptor;  // data: 0x887644
-extern void* g_VisibleSurfaceDescriptor;  // data: 0x87e8a4
 
 static inline int ClampLines(int src_h, int dst_h)
 {

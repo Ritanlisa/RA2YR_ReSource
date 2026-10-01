@@ -67,6 +67,6 @@ struct E4Recv_49CCF0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char  sub_49CCF0(int a2, int a3, void * Block, int a5, int16_t a6, int a7, int a8, char * a9, char * a10);  // 0x49CCF0
+    AbstractClass * * sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10);  // 0x49CCF0
 };
 } // namespace gamemd

@@ -4,10 +4,11 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+struct ObjectClass;  // fix_fwd_type_supply
 
 namespace gamemd {
 struct E4Recv_7D2F22 {
     void* vfptr;  // minimal E2 declaration
-    ObjectClass *  __4exception_QAEAAV0_ABV0__Z(void * a2);  // 0x7D2F22
+    ObjectClass * __4exception_QAEAAV0_ABV0__Z(struct exception * a2);  // 0x7D2F22
 };
 } // namespace gamemd

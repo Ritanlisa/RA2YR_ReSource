@@ -177,7 +177,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 }
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * MSEngine::Destructor()
+CampaignClass * MSEngine::Destructor(void *a1_1)
 {
 
   void *v2; // eax
@@ -218,7 +218,7 @@ CampaignClass * MSEngine::Destructor()
 }
 // 0x5D1AA0
 namespace gamemd {
-CampaignClass * MSEngine::Construct()
+CampaignClass * MSEngine::Construct(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
 
   void **p_MSEngine_field_0x8; // ecx
@@ -256,7 +256,7 @@ CampaignClass * MSEngine::Construct()
 }
 // 0x5D1B30
 namespace gamemd {
-CampaignClass * MSEngine::Destruct()
+CampaignClass * MSEngine::Destruct(void *a1_1, void *a2_1)
 {
 
   int v2; // ebp
@@ -329,7 +329,7 @@ CampaignClass * MSEngine::Destruct()
 }
 // 0x5D1DF0
 namespace gamemd {
-int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
+int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3, void *a3_2)
 {
 
   int v4; // ebx
@@ -355,7 +355,7 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
 }
 // 0x5AC520
 namespace gamemd {
-CampaignClass * MSEngine::ClearBuffer()
+CampaignClass * MSEngine::ClearBuffer(void *a1_1)
 {
 
   void *v2; // eax
@@ -457,7 +457,7 @@ CampaignClass * MSEngine::ddtor()
 
 // 0x5ACE50
 namespace gamemd {
-CampaignClass * MSEngine::Init( unsigned int * a2)
+CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
 
   int result; // eax
@@ -540,7 +540,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 
 // 0x5AD520
 namespace gamemd {
-CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
+CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax
@@ -563,7 +563,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
 
 // 0x5D5850
 namespace gamemd {
-void MSEngine::DestroyData()
+void MSEngine::DestroyData(void *a1_1)
 {
 
   if ( *(unsigned int *)this->__pad_0 ) /*0x5d5850*/

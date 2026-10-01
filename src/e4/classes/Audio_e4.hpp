@@ -8,6 +8,7 @@
 namespace gamemd {
 struct Audio {
 // --- flat members (BEGIN) ---
+struct ObjectClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int q008;  // 0x8
@@ -80,28 +81,28 @@ struct Audio {
     unsigned int u32_C4;
     unsigned int Event;
 // --- flat members (END) ---
-    int GetChannelStatus(void *a1 = 0);  // 0x402720
+    int GetChannelStatus(void *a1_1);  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80
     int UpdatePlaybackPosition();  // 0x4054A0
-    ObjectClass *  ProcessMixerOutput(char * Source);  // 0x4063B0
-    BOOL  ApplyFormatFlags(int * a1, char * a2);  // 0x406870
-    int WaitForCallback(void *a1 = 0);  // 0x4070B0
-    void Release(void *a1 = 0);  // 0x407F40
-    int IsSoundPlaying(void *a1 = 0);  // 0x408070
-    int  CalcRate(int a2, int a3);  // 0x408540
-    int GetSampleSize(void *a1 = 0);  // 0x409320
-    int  ParseVolume(void * a1, void * aP2);  // 0x5D0470
-    char **  SetSoundFileName(char * Source, int a3, void *a1 = 0);  // 0x5D5820
-    char LoadWAVFiles(void *a1 = 0);  // 0x7207F0
-    char InitFromINI();  // 0x7510D0
+    void * ProcessMixerOutput(char * Source);  // 0x4063B0
+    int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
+    int WaitForCallback(void *a1_1);  // 0x4070B0
+    void Release(void *a1_1);  // 0x407F40
+    int IsSoundPlaying(void *a1_1);  // 0x408070
+    int CalcRate(int a2, int a3);  // 0x408540
+    int GetSampleSize(void *a1_1);  // 0x409320
+    ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
+    char ** SetSoundFileName(char * Source, int a3, void *a3_2);  // 0x5D5820
+    int LoadWAVFiles(void *a1_1);  // 0x7207F0
+    int InitFromINI();  // 0x7510D0
     void * LoadSoundINI();  // 0x7513F0
-    unsigned int  GetSamplePosition(void * aP1, void * aP2, void *a1 = 0);  // 0x7BD130
-    int InitChannels(void *a1 = 0);  // 0x401080
-    int  FlushChannel(unsigned int ** Block);  // 0x404DD0
-    void Shutdown(void *a1 = 0);  // 0x406D40
+    unsigned int GetSamplePosition(MouseClass * aP1, MouseClass * aP2, void *a3_1);  // 0x7BD130
+    int InitChannels(void *a1_1);  // 0x401080
+    int FlushChannel(unsigned int ** Block);  // 0x404DD0
+    void Shutdown(void *a1_1);  // 0x406D40
     BOOL IsSoundEnabled();  // 0x407000
     void * GetEnabled();  // 0x407010
-    int GetFlag(void *a1 = 0);  // 0x407070
+    int GetFlag(void *a1_1);  // 0x407070
     int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     int IsPlaying();  // 0x7529E0

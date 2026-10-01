@@ -14,12 +14,13 @@ struct VectorClass_ptr_MultiMission {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Get(int a2, void *a1 = 0);  // 0x69C5F0
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x69CD40
-    char  Release(int a2, unsigned int * a3);  // 0x69CD80
-    void Remove(void *a1 = 0);  // 0x69CE30
-    int  GetSize(unsigned int * a2);  // 0x69CE60
-    unsigned int  GetCapacity(int a2);  // 0x69CEA0
-    VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x69D590
+struct VectorClass_flat;  // fix_fwd_type_supply
+    int Get(int a2, void *a2_2);  // 0x69C5F0
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x69CD40
+    char Release(int a2, unsigned int * a3);  // 0x69CD80
+    void Remove(void *a1_1);  // 0x69CE30
+    int GetSize(unsigned int * a2);  // 0x69CE60
+    unsigned int GetCapacity(int a2);  // 0x69CEA0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x69D590
 };
 } // namespace gamemd

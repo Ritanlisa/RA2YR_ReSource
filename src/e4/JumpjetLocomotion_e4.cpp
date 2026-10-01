@@ -28,7 +28,7 @@
 
 // 0x4B0AD0
 namespace gamemd {
-AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
+AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
 {
 
   unsigned int *v3; // edx
@@ -125,7 +125,7 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
 }
 // 0x4B0F20
 namespace gamemd {
-AbstractClass * JumpjetLocomotion::ProcessCollision(char a2)
+AbstractClass * JumpjetLocomotion::ProcessCollision(char a2, void *a2_2)
 {
 
   int v4; // eax
@@ -181,7 +181,7 @@ AbstractClass * JumpjetLocomotion::ProcessCollision(char a2)
 
 // 0x4B2630
 namespace gamemd {
-int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
+int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 {
 
   int v5; // ecx
@@ -234,7 +234,7 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
 
 // 0x4B4780
 namespace gamemd {
-unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3)
+unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1)
 {
 
   int v4; // eax

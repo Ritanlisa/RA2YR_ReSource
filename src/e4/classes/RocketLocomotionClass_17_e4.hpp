@@ -20,17 +20,19 @@ struct RocketLocomotionClass_17 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x6647B0
-    int  UpdateMovement(int a2);  // 0x664800
-    char  AddRef(int a2);  // 0x664810
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x664850
-    void Destroy(void *a1 = 0);  // 0x664900
-    int  IndexOf(unsigned int * a2);  // 0x664930
-    char  Release(int a2, unsigned int * a3);  // 0x664990
-    int  Launch(unsigned int * a2);  // 0x664A40
-    VectorClass_flat *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x664A70
-    DynamicVector *  QueryInterface(unsigned int * Block, char a2);  // 0x664AC0
-    unsigned int  BeginMove(int a2);  // 0x6647E0
-    unsigned int  PointerToIndex(int a2);  // 0x664970
+    int UpdateMovement(int a2);  // 0x664800
+    char AddRef(int a2);  // 0x664810
+    char SetCapacity(int a2, unsigned int * a3);  // 0x664850
+    void Destroy(void *a1_1);  // 0x664900
+    int IndexOf(unsigned int * a2);  // 0x664930
+    char Release(int a2, unsigned int * a3);  // 0x664990
+    int Launch(unsigned int * a2);  // 0x664A40
+    void Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x664A70
+    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x664AC0
+    unsigned int BeginMove(int a2);  // 0x6647E0
+    unsigned int PointerToIndex(int a2);  // 0x664970
 };
 } // namespace gamemd

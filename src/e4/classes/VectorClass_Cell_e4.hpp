@@ -17,9 +17,10 @@ struct VectorClass_Cell {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    char  Release(int a2, unsigned int * a3);  // 0x42F6F0
+struct VectorClass_flat;  // fix_fwd_type_supply
+    AbstractClass * * Release(int a2, unsigned int * a3);  // 0x42F6F0
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x42FBA0
-    int  GetSize(unsigned short * a2);  // 0x42F7F0
-    unsigned int  GetCapacity(int a2);  // 0x42F840
+    int GetSize(unsigned short * a2);  // 0x42F7F0
+    unsigned int GetCapacity(int a2);  // 0x42F840
 };
 } // namespace gamemd

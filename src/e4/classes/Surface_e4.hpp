@@ -15,6 +15,8 @@ struct Surface {
     unsigned int LockCount;
     unsigned int q00C;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
     AbstractClass * * LoadToSurfaceSHP(char * Source, void *a2);
     LPDIRECTDRAW CreateSurfacePalette();
     TechnoClass * * BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6);

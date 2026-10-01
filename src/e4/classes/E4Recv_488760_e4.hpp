@@ -7,6 +7,7 @@
 namespace gamemd {
 struct E4Recv_488760 {
 // --- flat members (BEGIN) ---
+struct ColorListClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     unsigned int q040;  // 0x40
     unsigned int q054;  // 0x54
@@ -46,6 +47,6 @@ struct E4Recv_488760 {
     unsigned int q2328;  // 0x2328
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    ColorListClass *  sub_488760(void * aP1, int a3, int a4, void * aP4, int a6, void * aP6, void * aP7, int a9);  // 0x488760
+    ColorListClass * sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);  // 0x488760
 };
 } // namespace gamemd

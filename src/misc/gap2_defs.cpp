@@ -6691,7 +6691,7 @@ int RulesClass::ReadDataList() {
              &v24,
              (uint8_t *)aSides,
              (uint8_t *)StringByIndex,
-             &(void*)(void*)&TypeList_int_vftable,
+             (void *)&TypeList_int_vftable,
              (void *)v16.IntVector_field_0x04,
              v17,
              v18,
@@ -6704,7 +6704,7 @@ int RulesClass::ReadDataList() {
       v8 = Block; /*0x672527*/
       v9 = Block == 0; /*0x67252e*/
       v6[44] = v7[6]; /*0x672530*/
-      v24 = &(void*)(void*)&VectorClass_int_vftable; /*0x672533*/
+      v24 = (void *)&VectorClass_int_vftable; /*0x672533*/
       if ( !v9 && v27 ) /*0x672543*/
       {
         RA2_OPDEL(v8); /*0x672546*/

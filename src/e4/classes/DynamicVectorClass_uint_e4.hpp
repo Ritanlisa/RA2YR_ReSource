@@ -8,6 +8,10 @@
 namespace gamemd {
 struct DynamicVectorClass_uint {
 // --- flat members (BEGIN) ---
+struct BufferIOFileClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
@@ -49,16 +53,16 @@ struct DynamicVectorClass_uint {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ddtor(void *a1 = 0);  // 0x42D540
-    int  Clear(int a2);  // 0x42D590
-    char  AddRef(int a2);  // 0x42D600
-    char  SetCapacity(int a2, unsigned int * a3);  // 0x42D640
+    void ddtor(void *a1_1);  // 0x42D540
+    int Clear(int a2);  // 0x42D590
+    char AddRef(int a2);  // 0x42D600
+    char SetCapacity(int a2, unsigned int * a3);  // 0x42D640
     void Clear_0();  // 0x42D6F0
-    int  FindItemIndex(unsigned int * a2);  // 0x42D720
-    char  Remove(int a2, unsigned int * a3);  // 0x42D780
-    int  GetSize(unsigned int * a2);  // 0x42D880
-    VectorClass_flat *  Destructor(unsigned int * Block, char a2);  // 0x42DB10
-    DynamicVectorClass_uint *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x42DB60
-    unsigned int  GetCapacity(int a2);  // 0x42D760
+    int FindItemIndex(unsigned int * a2);  // 0x42D720
+    char Remove(int a2, unsigned int * a3);  // 0x42D780
+    int GetSize(unsigned int * a2);  // 0x42D880
+    VectorClass_flat * Destructor(unsigned int * Block, char a2);  // 0x42DB10
+    DynamicVectorClass_uint * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DB60
+    unsigned int GetCapacity(int a2);  // 0x42D760
 };
 } // namespace gamemd

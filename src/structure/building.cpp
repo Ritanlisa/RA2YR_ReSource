@@ -21,7 +21,6 @@
 #include <cstring>
 #include "e4/e4_globals_decls.hpp"
 
-extern gamemd::SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
 
 // TacticalMap globals from render/globals_render.hpp
 
@@ -197,14 +196,14 @@ AbstractClass * BuildingClass::Construct(bool a1, void * a2, void * a3)
   this->FiringOccupantIndex = 0; /*0x43b8b7*/
   this->Audio7 = 1; /*0x43b8bd*/
   this->q679 = 0; /*0x43b8c4*/
-  this->Overpowerers = &(void*)(void*)&DynamicVectorClass_InfantryClass___vftable; /*0x43b8ca*/
+  this->Overpowerers = (void *)&DynamicVectorClass_InfantryClass___vftable; /*0x43b8ca*/
   this->q680 = 10; /*0x43b8d0*/
   this->q67C = 0; /*0x43b8d6*/
   this->locomotorSource = 0; /*0x43b8dc*/
   this->Audio8 = 0; /*0x43b8e2*/
   this->q690 = 1; /*0x43b8e8*/
   this->u32_691 = 0; /*0x43b8ef*/
-  this->q684 = &(void*)(void*)&DynamicVectorClass_InfantryClass___vftable; /*0x43b8f5*/
+  this->q684 = (void *)&DynamicVectorClass_InfantryClass___vftable; /*0x43b8f5*/
   this->q698 = 10; /*0x43b8fb*/
   this->q694 = 0; /*0x43b901*/
   this->q69C = 0; /*0x43b907*/
@@ -533,7 +532,7 @@ int BuildingClass::Dtor()
   (*(void (**)(int *))(this->Audio7[3] + 12))(&this->Audio7[3]); /*0x43c05f*/
   (*(void (**)(int *, int, unsigned int))(this->Audio7[3] + 8))(&this->Audio7[3], v26, 0); /*0x43c069*/
   v27 = (void *)this->Audio7[4]; /*0x43c06c*/
-  this->Audio7[3] = (int)&(void*)(void*)&VectorClass_InfantryClass___vftable; /*0x43c073*/
+  this->Audio7[3] = (int)(void *)&VectorClass_InfantryClass___vftable; /*0x43c073*/
   if ( v27 && IDA_BYTE1(this->Audio8[1]) ) /*0x43c07b*/
   {
     RA2_OPDEL(v27); /*0x43c083*/
@@ -542,7 +541,7 @@ int BuildingClass::Dtor()
   IDA_BYTE1(this->Audio8[1]) = 0; /*0x43c08e*/
   this->Audio8[0] = 0; /*0x43c092*/
   v28 = (void *)this->Occupants[0]; /*0x43c095*/
-  this->Overpowerers[0] = (int)&(void*)(void*)&VectorClass_InfantryClass___vftable; /*0x43c098*/
+  this->Overpowerers[0] = (int)(void *)&VectorClass_InfantryClass___vftable; /*0x43c098*/
   if ( v28 && IDA_BYTE1(this->Audio7[0]) ) /*0x43c0a3*/
   {
     RA2_OPDEL(v28); /*0x43c0ab*/
@@ -9306,7 +9305,7 @@ void BuildingClass::ProcessStructureAbandoned() {}
       || this->Type->BuildingTypeClass_field_ED8 != 7 )
     {
 // 0x707d20
-      return TechnoClass::GetCrew(this); /*0x44eb55*/
+      return TechnoClass::GetCrew(int a1) ; /*0x44eb55*/
     }
     else
     {
@@ -11773,7 +11772,7 @@ void BuildingClass::CreateFoggedObjects() {}
           *(unsigned int *)(v17 + 8) = 0; /*0x457bf3*/
           *(unsigned char *)(v17 + 12) = 1; /*0x457bf6*/
           *(unsigned char *)(v17 + 13) = 0; /*0x457bfa*/
-          *(unsigned int *)v17 = &(void*)(void*)&DynamicVectorClass_FoggedObjectClass___vftable; /*0x457bfd*/
+          *(unsigned int *)v17 = (void *)&DynamicVectorClass_FoggedObjectClass___vftable; /*0x457bfd*/
           *(unsigned int *)(v17 + 20) = 10; /*0x457c03*/
           *(unsigned int *)(v17 + 16) = 0; /*0x457c0a*/
         }
@@ -12451,11 +12450,11 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
 
 // IDA 0x449410: get bounding size extension
 // 0x449410
-int __thiscall BuildingClass::GetBoundingSizeExt(void *this)
+int __thiscall BuildingClass::GetBoundingSizeExt(void *a1) 
 {
-  return (this->Type->TurretAnimIsVoxel != 0 ? 0x20 : 0)
-       - (this->Type->Gate != 0 ? 0x10 : 0)
-       + ObjectClass::GetBoundingSize((ObjectClass *)this);
+  return (a1->Type->TurretAnimIsVoxel != 0 ? 0x20 : 0)
+       - (a1->Type->Gate != 0 ? 0x10 : 0)
+       + ObjectClass::GetBoundingSize((ObjectClass *)a1);
 }
 /* ASM:
 push    esi
@@ -13304,7 +13303,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         BuildingClass::EjectCrew(this, (unsigned char *)this->C4AppliedBy); /*0x4400d4*/
         (*(void (**)(BuildingClass *))(this->vtable0 + 248))(this); /*0x4400dd*/
 // 0x441f60
-        return BuildingClass::AfterDestruction(this); /*0x4400f1*/
+        return BuildingClass::AfterDestruction(int a1) ; /*0x4400f1*/
       }
       result -= (int)dword_A8ED84 - v34; /*0x4400b7*/
     }
@@ -13312,8 +13311,8 @@ void BuildingClass::ProcessSpreadEffect() {}
       return result; /*0x4400bb*/
     goto LABEL_98; /*0x4400bb*/
   }
-  BuildingClass::UpdatePrism(this); /*0x4400f4*/
-  if ( this->Type->Overpowerable ) /*0x4400ff*/
+  BuildingClass::UpdatePrism(a1); /*0x4400f4*/
+  if ( a1->Type->Overpowerable ) /*0x4400ff*/
   {
     for ( i = this->Audio7[1] - 1; i >= 0; --i ) /*0x440114*/
     {
@@ -13756,7 +13755,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x4400d4*/
         (*((void (**)(BuildingClass *))this->vtable0 + 62))(this); /*0x4400dd*/
 // 0x441f60
-        return BuildingClass::AfterDestruction(this); /*0x4400f1*/
+        return BuildingClass::AfterDestruction(int a1) ; /*0x4400f1*/
       }
       result -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v34; /*0x4400b7*/
     }
@@ -13764,8 +13763,8 @@ void BuildingClass::ProcessSpreadEffect() {}
       return result; /*0x4400bb*/
     goto LABEL_98; /*0x4400bb*/
   }
-  BuildingClass::UpdatePrism(this); /*0x4400f4*/
-  if ( this->Type->Overpowerable ) /*0x4400ff*/
+  BuildingClass::UpdatePrism(a1); /*0x4400f4*/
+  if ( a1->Type->Overpowerable ) /*0x4400ff*/
   {
     for ( i = this->Audio7[1] - 1; i >= 0; --i ) /*0x440114*/
     {
@@ -14209,7 +14208,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x4400d4*/
         (*((void (**)(BuildingClass *))this->vtable0 + 62))(this); /*0x4400dd*/
 // 0x441f60
-        return BuildingClass::AfterDestruction(this); /*0x4400f1*/
+        return BuildingClass::AfterDestruction(int a1) ; /*0x4400f1*/
       }
       result -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v34; /*0x4400b7*/
     }
@@ -14217,8 +14216,8 @@ void BuildingClass::ProcessSpreadEffect() {}
       return result; /*0x4400bb*/
     goto LABEL_98; /*0x4400bb*/
   }
-  BuildingClass::UpdatePrism(this); /*0x4400f4*/
-  if ( this->Type->Overpowerable ) /*0x4400ff*/
+  BuildingClass::UpdatePrism(a1); /*0x4400f4*/
+  if ( a1->Type->Overpowerable ) /*0x4400ff*/
   {
     for ( i = this->Audio7[1] - 1; i >= 0; --i ) /*0x440114*/
     {
@@ -14649,7 +14648,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         BuildingClass::EjectCrew((int *)this, *((unsigned char **)&this->hasParachute6)); /*0x4400d4*/
         (*(void (**)(void *))(*(unsigned int *)&this->q0608))(this); /*0x4400dd*/
 // 0x441f60
-        return BuildingClass::AfterDestruction(this); /*0x4400f1*/
+        return BuildingClass::AfterDestruction(int a1) ; /*0x4400f1*/
       }
       result -= (int)g_CurrentFrame - v33; /*0x4400b7*/
     }
@@ -14657,8 +14656,8 @@ void BuildingClass::ProcessSpreadEffect() {}
       return result; /*0x4400bb*/
     goto LABEL_98; /*0x4400bb*/
   }
-  BuildingClass::UpdatePrism((int *)this); /*0x4400f4*/
-  if ( this->Type->Overpowerable ) /*0x4400ff*/
+  BuildingClass::UpdatePrism((int *)a1); /*0x4400f4*/
+  if ( a1->Type->Overpowerable ) /*0x4400ff*/
   {
     for ( i = this->v36 - 1; i >= 0; --i ) /*0x440114*/
     {

@@ -9,6 +9,9 @@ namespace gamemd {
 
 struct LoadOptions {
 // --- flat members (BEGIN) ---
+struct FileEntryClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8

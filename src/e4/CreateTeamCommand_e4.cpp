@@ -257,7 +257,7 @@ LABEL_13:
 }
 // 0x731060
 namespace gamemd {
-void CreateTeamCommand::performAction_246()
+void CreateTeamCommand::performAction_246(void *a1_1)
 {
 
   int v1; // ebx
@@ -306,7 +306,7 @@ char CreateTeamCommand::Do(int a1)
 
 // 0x535C00
 namespace gamemd {
-unsigned int * CreateTeamCommand::Construct(int a2)
+unsigned int * CreateTeamCommand::Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
 
   this->CreateTeamCommand_field_0x4 = (void *)a2; /*0x535c06*/
@@ -318,7 +318,7 @@ unsigned int * CreateTeamCommand::Construct(int a2)
 
 // 0x535C20
 namespace gamemd {
-ObjectClass * CreateTeamCommand::AddRef()
+ObjectClass * CreateTeamCommand::AddRef(void *a1_1)
 {
 
   sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCreate_%d", *(unsigned int *)&this->m_1[3]); /*0x535c2e*/
@@ -329,7 +329,7 @@ ObjectClass * CreateTeamCommand::AddRef()
 
 // 0x535C40
 namespace gamemd {
-wchar_t * CreateTeamCommand::Release()
+wchar_t * CreateTeamCommand::Release(void *a1_1)
 {
 
   wchar_t *StringCSF; // eax
@@ -355,7 +355,7 @@ wchar_t * CreateTeamCommand::ddtor()
 
 // 0x535C90
 namespace gamemd {
-wchar_t * CreateTeamCommand::Read()
+wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1)
 {
 
   wchar_t *StringCSF; // eax

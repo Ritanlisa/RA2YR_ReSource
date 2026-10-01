@@ -8,13 +8,13 @@
 
 // 0x4F3FD0
 namespace gamemd {
-VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet * this, char a2, void *a3, void *a4, void *a5)
+VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5) 
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_VectorCursorunsignedintDynamicVectorClass; /*0x4f3fd9*/
+  *(unsigned int *)a1->__pad_0 = &vt_VectorCursorunsignedintDynamicVectorClass; /*0x4f3fd9*/
   if ( (a2 & 1) != 0 ) /*0x4f3fdf*/
-    __3_YAXPAX_Z(this); /*0x4f3fe2*/
-  return (std::locale::facet *)this; /*0x4f3fec*/
+    __3_YAXPAX_Z(a1); /*0x4f3fe2*/
+  return (std::locale::facet *)a1; /*0x4f3fec*/
 
 }
 } // namespace gamemd

@@ -16,6 +16,6 @@ struct E4Recv_43A770 {
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    int  sub_43A770(unsigned int * a2, int a3);  // 0x43A770
+    int sub_43A770(unsigned int * a2, int a3);  // 0x43A770
 };
 } // namespace gamemd

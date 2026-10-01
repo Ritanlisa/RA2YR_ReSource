@@ -3,6 +3,7 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+struct Selection_WorldDominationTour;  // fix_fwd_type_supply
 
 namespace gamemd {
 struct E4Recv_7AF3D0 {

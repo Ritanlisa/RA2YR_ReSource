@@ -18,6 +18,6 @@ struct E4Recv_433CE0 {
     unsigned int q774;  // 0x774
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    char  sub_433CE0(char a2);  // 0x433CE0
+    char sub_433CE0(char a2);  // 0x433CE0
 };
 } // namespace gamemd

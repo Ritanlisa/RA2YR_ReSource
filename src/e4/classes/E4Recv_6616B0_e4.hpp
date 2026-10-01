@@ -30,6 +30,7 @@ struct E4Recv_6616B0 {
     BlowStraw * q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
+struct BlowStraw;  // fix_fwd_type_supply
     unsigned int * sub_6616B0();  // 0x6616B0
 };
 } // namespace gamemd

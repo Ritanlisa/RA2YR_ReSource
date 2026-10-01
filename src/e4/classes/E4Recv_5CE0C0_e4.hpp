@@ -7,6 +7,7 @@
 namespace gamemd {
 struct E4Recv_5CE0C0 {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
@@ -72,6 +73,6 @@ struct E4Recv_5CE0C0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char  sub_5CE0C0(int a2, unsigned int * a3);  // 0x5CE0C0
+    int sub_5CE0C0(int a2, unsigned int * a3);  // 0x5CE0C0
 };
 } // namespace gamemd

@@ -8,6 +8,8 @@
 namespace gamemd {
 struct WalkLocomotion {
 // --- flat members (BEGIN) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -175,9 +177,9 @@ struct WalkLocomotion {
     unsigned int u32_184;
     unsigned int q140;
 // --- flat members (END) ---
-    AbstractClass * * MoveTo(IUnknown * aP1, int aP3, void *a1 = 0);  // 0x6A01A0
-    char  ProcessCollision(char a2, void *a1 = 0);  // 0x6A05F0
-    char  Update(unsigned char * a2, int a3, int a4, void *a1 = 0);  // 0x6A1C80
-    unsigned int *  TransformCoords(void * aP1, void * aP2, void * aP3, void *a1 = 0);  // 0x6A3DB0
+    AbstractClass * * MoveTo(IUnknown * aP1, int aP3, void *a3_1);  // 0x6A01A0
+    void ProcessCollision(char a2, void *a2_2);  // 0x6A05F0
+    int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x6A1C80
+    unsigned int * TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1);  // 0x6A3DB0
 };
 } // namespace gamemd

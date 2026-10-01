@@ -121,7 +121,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
 }
 // 0x43AB20
 namespace gamemd {
-int NeuronClass_25::Update( int a2)
+int NeuronClass_25::Update(int a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x43ab2a*/

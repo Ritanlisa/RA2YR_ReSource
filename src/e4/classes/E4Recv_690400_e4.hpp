@@ -10,6 +10,6 @@ struct E4Recv_690400 {
     unsigned int M4;  // 0x4
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    int sub_690400();  // 0x690400
+    AbstractClass * * sub_690400();  // 0x690400
 };
 } // namespace gamemd

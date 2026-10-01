@@ -9,6 +9,11 @@ namespace gamemd {
 
 struct TriggerTypeClass {
 // --- flat members (BEGIN) ---
+struct ObjectClass;  // fix_fwd_type_supply
+struct HouseTypeClass;  // fix_fwd_type_supply
+struct TEventClass;  // fix_fwd_type_supply
+struct TActionClass;  // fix_fwd_type_supply
+struct TechnoClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

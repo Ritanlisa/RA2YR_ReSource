@@ -9,6 +9,16 @@ namespace gamemd {
 
 struct ParticleTypeClass {
 // --- flat members (BEGIN) ---
+struct AnimClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
+struct OverlayTypeClass;  // fix_fwd_type_supply
+struct AbstractTypeClass;  // fix_fwd_type_supply
+struct ConnectionPointClass;  // fix_fwd_type_supply
+struct SomeVoxelCache;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct Color;  // fix_fwd_type_supply
+struct TypeList_flat;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

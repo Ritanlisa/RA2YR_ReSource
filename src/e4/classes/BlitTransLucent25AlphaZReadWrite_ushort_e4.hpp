@@ -27,6 +27,8 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     unsigned int m_4;
     unsigned int m_8;
 // --- flat members (END) ---
+struct AbstractClass;  // fix_fwd_type_supply
+struct RLEBlitTransXlat;  // fix_fwd_type_supply
     BlitTransLucent25AlphaZReadWrite_ushort * Blit(unsigned int * Block, char a2);
     RLEBlitTransXlat * Constructor_RLEBlitter(char a2);
     int Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);

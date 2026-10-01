@@ -138,7 +138,7 @@ bool __stdcall LocomotionClass::Process() { return true; }
   this->q064 = 0; /*0x69ecc8*/
   this->u32_65 = 1; /*0x69eccb*/
   this->q068 = 0; /*0x69eccf*/
-  *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
-  this->vtable2 = &(void*)(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
+  *(unsigned int *)this = (void *)&(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
+  this->vtable2 = (void *)&(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
   this->ptr_18 = &off_7F2D68; /*0x69ecdf*/
   return this; /*0x69ece8*/
