@@ -110,7 +110,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2), a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3), &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -225,7 +225,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
     v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
-    *(unsigned int *)v17.__pad_0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
+    *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bb6c*/
     for ( i = strtok((char *)&v17.InfantryTypeVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
@@ -251,7 +251,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned int *)aP0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
     *(unsigned int *)aP0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bc05*/
-    *(unsigned int *)v17.__pad_0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc0b*/
+    *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bc0b*/
     InfantryTypeVector_field_0x14 = v17.InfantryTypeVector_field_0x14; /*0x67bc17*/
     *(unsigned int *)(aP0 + 16) = v17.InfantryTypeVector_field_0x10; /*0x67bc1b*/
     InfantryTypeVector_field_0x04 = (void *)v17.InfantryTypeVector_field_0x04; /*0x67bc1e*/
@@ -349,7 +349,7 @@ int ArtINI_Load()
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
   ((CCFileClass *)(v1))->Construct(aArtmdIni); /*0x679efa*/
   CCINIClass::Load((int)(&dword_887180), (int)v1, 0, 0); /*0x679f0d*/
-  v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
+  v1[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   ((Vector *)((int)v2))->Clear(); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
@@ -364,7 +364,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
@@ -378,7 +378,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
 // 0x41cef0
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else

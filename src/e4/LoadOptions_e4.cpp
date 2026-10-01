@@ -32,7 +32,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   const CHAR *lpMultiByteStr; // [esp+10h] [ebp+4h]
 
   v1 = (wchar_t *)((*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640));
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoading), 0, g_Str_File_LoadDlg_CPP, 1052));
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoading), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1052));
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
@@ -61,7 +61,7 @@ char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
   Dialog *MessageBox; // esi
   char v4; // bl
   wchar_t *Sourcea; // [esp+10h] [ebp+8h]
-StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0, g_Str_File_LoadDlg_CPP, 1107));
+StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1107));
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
@@ -169,7 +169,7 @@ namespace gamemd {
 wchar_t * LoadOptions::Write()
 {
 
-  return GetStringCSF((wchar_t *)(aGuiLoadmission), 0, g_Str_File_LoadDlg_CPP, 1216); /*0x55a066*/
+  return GetStringCSF((wchar_t *)(aGuiLoadmission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1216); /*0x55a066*/
 
 }
 } // namespace gamemd
@@ -179,7 +179,7 @@ namespace gamemd {
 void LoadOptions::Seek(void *a1, void *a2, void *a3)
 {
 
-  return GetStringCSF((wchar_t *)(aGuiSavemission), 0, g_Str_File_LoadDlg_CPP, 1222); /*0x55a086*/
+  return GetStringCSF((wchar_t *)(aGuiSavemission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1222); /*0x55a086*/
 
 }
 } // namespace gamemd
@@ -189,7 +189,7 @@ namespace gamemd {
 void LoadOptions::Open(void *a1, void *a2, void *a3)
 {
 
-  return GetStringCSF((wchar_t *)(aGuiDeletemissi), 0, g_Str_File_LoadDlg_CPP, 1228); /*0x55a0a6*/
+  return GetStringCSF((wchar_t *)(aGuiDeletemissi), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1228); /*0x55a0a6*/
 
 }
 } // namespace gamemd
@@ -199,7 +199,7 @@ namespace gamemd {
 void LoadOptions::Close(void *a1, void *a2)
 {
 
-  return GetStringCSF((wchar_t *)(aTxtGameWasSave), 0, g_Str_File_LoadDlg_CPP, 1234); /*0x55a0c6*/
+  return GetStringCSF((wchar_t *)(aTxtGameWasSave), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1234); /*0x55a0c6*/
 
 }
 } // namespace gamemd

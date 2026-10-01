@@ -23,8 +23,8 @@ char sub_72B8E0()
   if ( !byte_B0FD5D ) /*0x72b8e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72b8f3*/
-      dword_B0FB54 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DC4), (bool *)&byte_B0FD5C)); /*0x72b905*/
-    result = LoadPaletteSimple(off_844DC8, &dword_B0FD60, &dword_B0FD64); /*0x72b91a*/
+      dword_B0FB54 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DC4),(gamemd::ConvertClass *)((bool *)&byte_B0FD5C))); /*0x72b905*/
+    result = LoadPaletteSimple((char *)(off_844DC8), &dword_B0FD60, &dword_B0FD64); /*0x72b91a*/
     byte_B0FD5D = 1; /*0x72b91f*/
   }
   return result; /*0x72b926*/

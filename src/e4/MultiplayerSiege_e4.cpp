@@ -77,7 +77,7 @@ int MultiplayerSiege::Write(void ** a1)
     v4 = 0; /*0x5ca6f3*/
     if ( dword_A8DA84 <= 0 ) /*0x5ca6f7*/
     {
-LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0, g_Str_File_MPSiege_cpp, 65));
+LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0,(const char *)(g_Str_File_MPSiege_cpp), 65));
       ((WideString *)((void **)a1))->Assign_Alt(StringCSF); /*0x5ca73a*/
       return 0; /*0x5ca742*/
     }
@@ -94,7 +94,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0, g_
           {
             if ( v7 != 1 ) /*0x5ca70d*/
             {
-              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpIllegalteam), 0, g_Str_File_MPSiege_cpp, 60));
+              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpIllegalteam), 0,(const char *)(g_Str_File_MPSiege_cpp), 60));
               ((WideString *)((void **)a1))->Assign_Alt(v9); /*0x5ca75e*/
               return 0; /*0x5ca769*/
             }
@@ -104,7 +104,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0, g_
           {
             if ( v2 ) /*0x5ca714*/
             {
-              v10 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpOnlyonebesei), 0, g_Str_File_MPSiege_cpp, 51));
+              v10 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpOnlyonebesei), 0,(const char *)(g_Str_File_MPSiege_cpp), 51));
               ((WideString *)((void **)a1))->Assign_Alt(v10); /*0x5ca782*/
               return 0; /*0x5ca78d*/
             }
@@ -123,7 +123,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0, g_
       }
       else
       {
-        v11 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNoattackers), 0, g_Str_File_MPSiege_cpp, 70));
+        v11 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNoattackers), 0,(const char *)(g_Str_File_MPSiege_cpp), 70));
         ((WideString *)((void **)a1))->Assign_Alt(v11); /*0x5ca7ab*/
         return 0; /*0x5ca7b3*/
       }

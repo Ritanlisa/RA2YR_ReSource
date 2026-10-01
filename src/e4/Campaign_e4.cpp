@@ -62,7 +62,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x7658bd*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -87,7 +87,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76588d*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -103,7 +103,7 @@ LABEL_14:
   if ( *(unsigned int *)&this->m_1[3] ) /*0x7658e1*/
   {
     if ( a2 >= this->m_8 ) /*0x7658ed*/
-      m_8 = this->m_8; /*0x7658ef*/
+      m_8 = (int)(this->m_8); /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
       ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x765902*/
     if ( BYTE1(this->m_C) ) /*0x76590c*/
@@ -115,7 +115,7 @@ LABEL_14:
     }
     m_8 = a2; /*0x765927*/
   }
-  *(unsigned int *)&this->m_1[3] = v8; /*0x765936*/
+  *(unsigned int *)&this->m_1[3] = (unsigned int)(v8); /*0x765936*/
   this->m_8 = m_8; /*0x765939*/
   BYTE1(this->m_C) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
@@ -203,7 +203,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, 
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor((ComPtr *)a2); /*0x7656e2*/
-  *a2 = &vt_rc_ptr; /*0x7656e7*/
+  *a2 = (unsigned int)(&vt_rc_ptr); /*0x7656e7*/
   ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x7656f3*/
   return a2; /*0x7656fa*/
 
@@ -261,7 +261,7 @@ char Campaign_WorldDominationTour_16::AddRef(int a2)
   unsigned int *v4; // ecx
   unsigned int *i; // eax
 
-  m_8 = this->m_8; /*0x7657f6*/
+  m_8 = (int)(this->m_8); /*0x7657f6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x7657ff*/
   {
     v3 = 0; /*0x765801*/
@@ -313,7 +313,7 @@ int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2)
 
   if ( !LOBYTE(this->m_C) ) /*0x765990*/
     return 0; /*0x765998*/
-  m_8 = this->m_8; /*0x76599e*/
+  m_8 = (int)(this->m_8); /*0x76599e*/
   result = 0; /*0x7659a1*/
   if ( m_8 <= 0 ) /*0x7659a5*/
     return -1; /*0x7659c0*/

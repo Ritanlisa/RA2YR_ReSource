@@ -212,7 +212,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     v44 = 0; /*0x693c02*/
     v45 = 0; /*0x693c04*/
     v43[0] = 16; /*0x693c05*/
-    CopyWideToChar(&v43[1], *(char **)dword_A8DA78, -1); /*0x693c19*/
+    CopyWideToChar((unsigned char *)(&v43[1]), *(char **)dword_A8DA78, -1); /*0x693c19*/
     if ( dword_A8B238 == 3 ) /*0x693c25*/
     {
       Network::SendMessage((int)unk_A8E9C0, (int)v43, 455, 1, (int)&stru_A8BB1C, 0, 0); /*0x693c42*/
@@ -398,7 +398,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v28 ) /*0x69413f*/
     goto LABEL_78; /*0x69413f*/
-  v30 = (gamemd::CampaignClass **)(ReceiveNetworkFile((int)(a1), v36, a2, a3)); /*0x694173*/
+  v30 = (char)((gamemd::CampaignClass **)(ReceiveNetworkFile((int)(a1), v36, a2, a3))); /*0x694173*/
   v31 = g_Str_true; /*0x694175*/
   if ( !v30 ) /*0x69417c*/
     v31 = g_Str_false; /*0x69417e*/
@@ -548,7 +548,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v29 = 487; /*0x6943c2*/
   if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/
-  v13 = NetworkID::Compare(v42, (int)&stru_A8BB1C); /*0x6943e0*/
+  v13 = (gamemd::Compare)(NetworkID::Compare(v42, (int)&stru_A8BB1C)); /*0x6943e0*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6943ec*/
   {
     Flagged = GameSettings::FindFlagged(); /*0x6943ee*/
@@ -558,7 +558,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     goto LABEL_43; /*0x694415*/
   if ( !v13 ) /*0x69441d*/
     goto LABEL_43; /*0x69441d*/
-  v15 = (char *)Block + *((uint16_t *)v6 + 12); /*0x69442d*/
+  v15 = (unsigned char *)((char *)Block + *((uint16_t *)v6 + 12)); /*0x69442d*/
   if ( *v15 ) /*0x69442f*/
     goto LABEL_43; /*0x694432*/
   v16 = v26; /*0x694438*/
@@ -694,7 +694,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     v60 = 17; /*0x69484f*/
     strcpy(v63, Source); /*0x69485d*/
     v62 = Size; /*0x69486c*/
-    strcpy(v61, ToWideStringChar((char *)*dword_A8DA78)); /*0x694897*/
+    strcpy(v61, ToWideStringChar((gamemd::IUnknown *)((char *)*dword_A8DA78))); /*0x694897*/
     if ( a3 ) /*0x6948a9*/
     {
       v8 = 1; /*0x6948b0*/

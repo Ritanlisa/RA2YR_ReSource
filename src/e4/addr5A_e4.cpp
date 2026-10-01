@@ -527,7 +527,7 @@ void GenerateTerrainHeightMapInternal()
         v14 = v12 + (int16_t)v18; /*0x5a3563*/
         if ( v14 > v9 && (int16_t)v18 - v13 < v9 && v13 - (int16_t)v18 < v9 && v14 <= dword_ABED08 ) /*0x5a357e*/
         {
-          v15 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16); /*0x5a358a*/
+          v15 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16)); /*0x5a358a*/
           if ( Cell::IsEmpty(v15) ) /*0x5a3591*/
           {
             *((unsigned char *)dword_ABED10 + 80 * (int16_t)v16 + 80 * g_MapCellWidth * IDA_SHIWORD(v16) + 69) = 1; /*0x5a35ca*/

@@ -674,7 +674,7 @@ bool String::Equals(ObjectClass * aP1, void *a2_1)
 
   int result; // eax
 
-  result = strcmp((const char *)(this), aP1); /*0x4f4cf0*/
+  result = strcmp((const char *)(this),(const char *)(aP1)); /*0x4f4cf0*/
   if ( !result ) /*0x4f4d0a*/
     return 1; /*0x4f4d0c*/
   LOBYTE(result) = 0; /*0x4f4d29*/
@@ -1491,7 +1491,7 @@ namespace gamemd {
 int String::Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4)
 {
 
-  return String_Helper_7CCA34(aP0, a2, a3, a4, 0); /*0x7cca33*/
+  return String_Helper_7CCA34((uint8_t *)(aP0), a2, a3, a4, 0); /*0x7cca33*/
 
 }
 } // namespace gamemd

@@ -647,7 +647,7 @@ LABEL_99:
   {
     Foundati    FoundationSize = Building::GetFoundationSize((unsigned int *)(&v108), 0); 
     v64 = (int)(*a2); /*0x423657*/
-    v65 = a2[1]; /*0x423659*/
+    v65 = (int)(a2[1]); /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
     v66 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x423663*/
     v108 = v64; /*0x423667*/
@@ -693,8 +693,8 @@ LABEL_99:
   else if ( v62[2].__pad_C[221] ) /*0x423728*/
   {
     v109 = *(unsigned int *)&v62[2].__pad_C[184]; /*0x42373c*/
-    v71 = a2[1]; /*0x423742*/
-    *(unsigned int *)v101 = *a2; /*0x42374c*/
+    v71 = (int)(a2[1]); /*0x423742*/
+    *(unsigned int *)v101 = (unsigned int)(*a2); /*0x42374c*/
     v82 = v106; /*0x423756*/
     v72 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42375e*/
     v102 = v109 + v71; /*0x423766*/
@@ -702,7 +702,7 @@ LABEL_99:
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x42379b*/
     v80 = this->AnimClass_field_0x100 /*0x42379e*/
         + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
-        - ZCoordToScreenY((gamemd::IUnknown *)(v73))
+        - ZCoordToScreenY((int)((gamemd::IUnknown *)(v73)))
         - 3;
     DrawToSurfaceSHP( /*0x4237a9*/
       (int)g_DSurface_Hidden_2,
@@ -724,7 +724,7 @@ LABEL_99:
   }
   else
   {
-    v74 = *a2; /*0x4237b9*/
+    v74 = (int)(*a2); /*0x4237b9*/
     v102 = *(unsigned int *)&v62[2].__pad_C[184] + a2[1]; /*0x4237bb*/
     *(unsigned int *)v101 = v74; /*0x4237cb*/
     v83 = v106; /*0x4237d2*/

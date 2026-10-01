@@ -88,7 +88,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   this->BulletClass_field_0x4 = (unsigned int)(&vt_BulletClass); /*0x46656c*/
   this->BulletClass_field_0x8 = (unsigned int)(&vt_BulletClass); /*0x466573*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_BulletClass); /*0x46657a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x466581*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this),(gamemd::AbstractClass *)(1)); /*0x466581*/
   if ( this->__pad_158[0] ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
@@ -149,7 +149,7 @@ namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); /*0x46afc4*/
 
 }
 } // namespace gamemd

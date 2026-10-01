@@ -310,7 +310,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v27 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b349*/
+    v27 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b349*/
   }
   else
   {
@@ -327,7 +327,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v29 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b388*/
+    v29 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b388*/
   }
   else
   {
@@ -343,7 +343,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v30 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b3c7*/
+    v30 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b3c7*/
   }
   else
   {
@@ -365,7 +365,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v35 = WarheadTypeClass::FindOrCreate((char *)&Destination); /*0x74b43a*/
+    v35 = WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)((char *)&Destination)); /*0x74b43a*/
   }
   else
   {
@@ -381,7 +381,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v36 = BuildingTypeClass::LoadOrGet((char *)&Destination); /*0x74b479*/
+    v36 = (unsigned int *)(BuildingTypeClass::LoadOrGet((char *)&Destination)); /*0x74b479*/
   }
   else
   {
@@ -433,7 +433,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
       FileVXL = ((File *)(v41))->LoadFileVXL((int)&Destination, 0); /*0x74b5ce*/
     else
       FileVXL = 0; /*0x74b5d5*/
-    *(unsigned int *)(v4 + 176) = FileVXL; /*0x74b5db*/
+    *(unsigned int *)(v4 + 176) = (unsigned int)(FileVXL); /*0x74b5db*/
     Destination.Header[0] = (int)&vt_CCFileClass; /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
     ((Vector *)((int)&Destination.MinDelay))->Clear(); /*0x74b5f1*/

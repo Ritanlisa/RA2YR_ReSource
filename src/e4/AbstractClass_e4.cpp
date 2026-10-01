@@ -100,7 +100,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
            0) )
     {
       uniqueId = this->uniqueId; /*0x438fbb*/
-      vtable1 = this->vtable1; /*0x438fbe*/
+      vtable1 = (unsigned int *)(this->vtable1); /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
       vtable1[uniqueId] = (unsigned int)(v5); /*0x438fc7*/
     }
@@ -109,9 +109,9 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       if ( (uint8_t)House::IsHumanPlayer(*((House **)aP1 + 135)) ) /*0x438fe6*/
       {
-        v12[0] = aP2[39]; /*0x438ffc*/
-        v12[1] = aP2[40]; /*0x439007*/
-        v12[2] = aP2[41]; /*0x439013*/
+        v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
+        v12[1] = (unsigned int)(aP2[40]); /*0x439007*/
+        v12[2] = (unsigned int)(aP2[41]); /*0x439013*/
         StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 528), v12, 0); /*0x43901d*/
       }
     }
@@ -399,7 +399,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c03ea*/
-    Frame::Present((int)DSurface_Alternate, v3, a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
+    Frame::Present((void *)((int)DSurface_Alternate), v3, a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
@@ -430,7 +430,7 @@ namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7fd9*/
+  this->vtable0 = (unsigned int)(&MultiplayerGameMode::vt_InitializerBase); /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     __3_YAXPAX_Z(this); /*0x5d7fe2*/
   return &this->vtable0; /*0x5d7fec*/
@@ -442,7 +442,7 @@ namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8039*/
+  this->vtable0 = (unsigned int)(&MultiplayerGameMode::vt_InitializerBase); /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     __3_YAXPAX_Z(this); /*0x5d8042*/
   return &this->vtable0; /*0x5d804c*/
@@ -454,7 +454,7 @@ namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8059*/
+  this->vtable0 = (unsigned int)(&MultiplayerGameMode::vt_InitializerBase); /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     __3_YAXPAX_Z(this); /*0x5d8062*/
   return &this->vtable0; /*0x5d806c*/
@@ -466,7 +466,7 @@ namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8079*/
+  this->vtable0 = (unsigned int)(&MultiplayerGameMode::vt_InitializerBase); /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     __3_YAXPAX_Z(this); /*0x5d8082*/
   return &this->vtable0; /*0x5d808c*/
@@ -478,7 +478,7 @@ namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8099*/
+  this->vtable0 = (unsigned int)(&MultiplayerGameMode::vt_InitializerBase); /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
   return &this->vtable0; /*0x5d80ac*/

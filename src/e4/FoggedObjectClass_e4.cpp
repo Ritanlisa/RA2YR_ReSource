@@ -350,9 +350,9 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *((unsigned int *)this + 12) = (unsigned int)(6); /*0x4d0f24*/
   *((unsigned int *)this + 13) = (unsigned int)(aP1[39]); /*0x4d0f2f*/
   *((unsigned int *)this + 14) = (unsigned int)(aP1[40]); /*0x4d0f34*/
-  *((unsigned int *)this + 15) = (int)((unsigned int)(aP1[41])); /*0x4d0f3a*/
-  v5 = (unsigned int)((int)(aP1[40])); /*0x4d0f3f*/
-  v49[0] = (int)((unsigned int)(aP1[39])); /*0x4d0f42*/
+  *((unsigned int *)this + 15) = (unsigned int)((int)((unsigned int)(aP1[41]))); /*0x4d0f3a*/
+  v5 = (int)((unsigned int)((int)(aP1[40]))); /*0x4d0f3f*/
+  v49[0] = (unsigned int)((int)((unsigned int)(aP1[39]))); /*0x4d0f42*/
   v6 = (int)(aP1[41]); /*0x4d0f46*/
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
@@ -687,7 +687,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 
   v2 = (int *)a2; /*0x4d2514*/
   v3 = (gamemd::FoggedObjectClass *)(a1); /*0x4d251b*/
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), a2); /*0x4d2521*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1),(gamemd::AbstractClass *)(a2)); /*0x4d2521*/
   if ( result < 0 ) /*0x4d252a*/
     return result; /*0x4d252a*/
   if ( v3 ) /*0x4d2532*/
@@ -721,7 +721,7 @@ LABEL_14:
     {
 LABEL_22:
       *((unsigned int *)g_MissionPool + 2 * g_MissionState) = (unsigned int)(v12); /*0x4d2745*/
-      *((unsigned int *)g_MissionPool + 2 * g_MissionState + 1) = v3; /*0x4d275f*/
+      *((unsigned int *)g_MissionPool + 2 * g_MissionState + 1) = (unsigned int)(v3); /*0x4d275f*/
       byte_8B3CCC = 0; /*0x4d2769*/
       ++g_MissionState; /*0x4d2770*/
       return a2; /*0x4d2770*/
@@ -743,11 +743,11 @@ LABEL_22:
       --v17; /*0x4d26f0*/
       for ( i = 0; i < (int)g_MissionState; v14[2 * i - 1] = v16[1] ) /*0x4d26f8*/
       {
-        v16 = (char *)g_MissionPool + 8 * i++; /*0x4d2700*/
+        v16 = (unsigned int *)((char *)g_MissionPool + 8 * i++); /*0x4d2700*/
         v14[2 * i - 2] = *v16; /*0x4d2706*/
       }
       __3_YAXPAX_Z((void *)(g_MissionPool)); /*0x4d2721*/
-      g_MissionPool = v14; /*0x4d2730*/
+      g_MissionPool = (int)(v14); /*0x4d2730*/
       dword_8B3CC8 += v13; /*0x4d2736*/
       dword_8B3CD0 = 0; /*0x4d273b*/
       goto LABEL_22; /*0x4d273b*/
@@ -774,7 +774,7 @@ LABEL_22:
            (int)vtable1 + uniqueId,
            0) )
     {
-      vtable3 = v3[2]; /*0x4d260c*/
+      vtable3 = (void *)(v3[2]); /*0x4d260c*/
       v10 = v18; /*0x4d260f*/
       v3[2] = (char *)vtable3 + 1; /*0x4d2616*/
       v11 = (char *)v3[2].AbstractClass + 16 * (unsigned int)vtable3; /*0x4d261f*/

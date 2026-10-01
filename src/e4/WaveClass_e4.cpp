@@ -247,7 +247,7 @@ int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
   int result; // eax
   int i; // ebx
 
-  AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, a3); /*0x75f7e2*/
+  AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1),(gamemd::ObjectTypeClass *)(a2), a3); /*0x75f7e2*/
   v3 = *a2; /*0x75f7ed*/
   a3 = *((unsigned int *)a1 + 128); /*0x75f7f9*/
   result = (*(int (**)(int *, int *, int, unsigned int))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/

@@ -374,7 +374,7 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   }
   while ( 1 ) /*0x7b0807*/
   {
-    v52 = (gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50))));
+    v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50)))));
     if ( !v52 ) /*0x7b080b*/
       return 1; /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
@@ -594,7 +594,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( this->AbstractClass ) /*0x7b60ea*/
     v6 = strlen((const char *)this->AbstractClass); /*0x7b60ff*/
   else
-    v6 = (gamemd::AbstractClass **)(0); /*0x7b60f2*/
+    v6 = (int)((gamemd::AbstractClass **)(0)); /*0x7b60f2*/
   if ( a2 >= v6 ) /*0x7b6102*/
     return -1; /*0x7b6107*/
   while ( 1 )
@@ -962,7 +962,7 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   int *v21; // eax
   unsigned int v23[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  v5 = aP2[2]; /*0x7bbe2c*/
+  v5 = (int)(aP2[2]); /*0x7bbe2c*/
   if ( aP0[2] == v5 && aP0[3] == aP2[3] ) /*0x7bbe40*/
   {
     if ( *aP0 < 0 ) /*0x7bbe4a*/
@@ -1000,16 +1000,16 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     if ( *aP2 < 0 ) /*0x7bbeda*/
     {
       *aP0 -= *aP2; /*0x7bbee0*/
-      v14 = *aP2; /*0x7bbee2*/
+      v14 = (int)(*aP2); /*0x7bbee2*/
       aP2[2] += *aP2; /*0x7bbee9*/
       aP0[2] += v14; /*0x7bbef1*/
       *aP2 = 0; /*0x7bbef4*/
     }
-    v15 = aP2[1]; /*0x7bbefa*/
+    v15 = (int)(aP2[1]); /*0x7bbefa*/
     if ( v15 < 0 ) /*0x7bbeff*/
     {
       aP0[1] -= v15; /*0x7bbf06*/
-      v16 = aP2[1]; /*0x7bbf09*/
+      v16 = (int)(aP2[1]); /*0x7bbf09*/
       aP2[3] += v16; /*0x7bbf11*/
       aP0[3] += v16; /*0x7bbf19*/
       aP2[1] = 0; /*0x7bbf1c*/
@@ -1030,7 +1030,7 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   }
   else
   {
-    v20 = ClipRectIntersection((RectangleStruct *)(v23), aP0, (int *)a2, 0, 0); /*0x7bbf71*/
+    v20 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP0), (int *)a2, 0, 0)); /*0x7bbf71*/
     *aP0 = *v20; /*0x7bbf7e*/
     aP0[1] = v20[1]; /*0x7bbf83*/
     aP0[2] = v20[2]; /*0x7bbf89*/

@@ -251,7 +251,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   *((unsigned int *)this + 1507) = 1; /*0x45e298*/
   *((unsigned char *)this + 6032) = (unsigned int)(1); /*0x45e29e*/
   *((unsigned char *)this + 6033) = 0; /*0x45e2a5*/
-  *((unsigned int *)this + 1505) = &vt_VectorClassTPoint3D; /*0x45e2ab*/
+  *((unsigned int *)this + 1505) = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e2ab*/
   *((unsigned int *)this + 1506) = (unsigned int)(__2_YAPAXI_Z(0xCu)); /*0x45e2ba*/
   *((unsigned char *)this + 6033) = 1; /*0x45e2c6*/
   *(unsigned int *)this = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2cd*/
@@ -407,7 +407,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
   this->__pad_1714[124] = (unsigned int)(1); /*0x45e541*/
   this->__pad_1714[125] = 0; /*0x45e548*/
-  *(unsigned int *)&this->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e54e*/
+  *(unsigned int *)&this->__pad_1714[112] = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e54e*/
   this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e55e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e565*/
@@ -692,8 +692,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1337) = 0; /*0x45f392*/
       *v7 = 0; /*0x45f398*/
     }
-    FileSHP = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5352)); /*0x45f3a0*/
-    *((unsigned int *)this + 1337) = FileSHP; /*0x45f3a7*/
+    FileSHP = LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352))); /*0x45f3a0*/
+    *((unsigned int *)this + 1337) = (unsigned int)(FileSHP); /*0x45f3a7*/
     if ( !FileSHP ) /*0x45f3ad*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f3b3*/
@@ -703,7 +703,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1337) = 0; /*0x45f3cf*/
         *v7 = (unsigned int)(0); /*0x45f3d5*/
       }
-      *((unsigned int *)this + 1337) = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5352)); /*0x45f3e2*/
+      *((unsigned int *)this + 1337) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f3e2*/
     }
   }
   INIClass::GetString( /*0x45f405*/
@@ -724,8 +724,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1343) = 0; /*0x45f46a*/
       *v9 = 0; /*0x45f470*/
     }
-    v10 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5376)); /*0x45f478*/
-    *((unsigned int *)this + 1343) = v10; /*0x45f47f*/
+    v10 = LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5376))); /*0x45f478*/
+    *((unsigned int *)this + 1343) = (unsigned int)(v10); /*0x45f47f*/
     if ( !v10 ) /*0x45f485*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f48b*/
@@ -735,7 +735,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1343) = 0; /*0x45f4a7*/
         *v9 = (unsigned int)(0); /*0x45f4ad*/
       }
-      *((unsigned int *)this + 1343) = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5352)); /*0x45f4be*/
+      *((unsigned int *)this + 1343) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f4be*/
     }
   }
   INIClass::GetString( /*0x45f4e1*/
@@ -749,12 +749,12 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f507*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f51a*/
-    v11 = SearchMIXFile(Source, 0); /*0x45f525*/
+    v11 = (int)(SearchMIXFile(Source, 0)); /*0x45f525*/
     *((unsigned int *)this + 1347) = v11; /*0x45f52c*/
     if ( !v11 ) /*0x45f532*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f538*/
-      *((unsigned int *)this + 1347) = SearchMIXFile(Source, 0); /*0x45f548*/
+      *((unsigned int *)this + 1347) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f548*/
     }
   }
   INIClass::GetString( /*0x45f565*/
@@ -775,8 +775,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1339) = 0; /*0x45f5ca*/
       *v12 = 0; /*0x45f5d0*/
     }
-    v13 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5360)); /*0x45f5d8*/
-    *((unsigned int *)this + 1339) = v13; /*0x45f5df*/
+    v13 = LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5360))); /*0x45f5d8*/
+    *((unsigned int *)this + 1339) = (unsigned int)(v13); /*0x45f5df*/
     if ( !v13 ) /*0x45f5e5*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f5eb*/
@@ -786,7 +786,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1339) = 0; /*0x45f607*/
         *v12 = (unsigned int)(0); /*0x45f60d*/
       }
-      *((unsigned int *)this + 1339) = SearchMIXFile(Source, 0); /*0x45f61a*/
+      *((unsigned int *)this + 1339) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f61a*/
     }
   }
   v14 = (unsigned char *)((char *)this + 5368); /*0x45f626*/
@@ -807,8 +807,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f68e*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f6a1*/
-    v15 = LoadFileSHP(Source, (bool *)((char *)this + 5368)); /*0x45f6ac*/
-    *((unsigned int *)this + 1341) = v15; /*0x45f6b3*/
+    v15 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5368)); /*0x45f6ac*/
+    *((unsigned int *)this + 1341) = (unsigned int)(v15); /*0x45f6b3*/
     if ( !v15 ) /*0x45f6b9*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f6bf*/
@@ -818,7 +818,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1341) = 0; /*0x45f6db*/
         *v14 = 0; /*0x45f6e1*/
       }
-      *((unsigned int *)this + 1341) = SearchMIXFile(Source, 0); /*0x45f6ee*/
+      *((unsigned int *)this + 1341) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f6ee*/
     }
   }
   INIClass::GetString( /*0x45f711*/
@@ -830,7 +830,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     64);
   if ( strlen(Filename) ) /*0x45f71a*/
   {
-    _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f73b*/
+    _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f73b*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f74e*/
     v16 = (unsigned char *)((char *)this + 5384); /*0x45f759*/
     if ( *((unsigned char *)this + 5384) && *((unsigned int *)this + 1345) ) /*0x45f763*/
@@ -839,8 +839,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1345) = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
-    v17 = LoadFileSHP(Source, (bool *)((char *)this + 5384)); /*0x45f784*/
-    *((unsigned int *)this + 1345) = v17; /*0x45f78b*/
+    v17 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5384)); /*0x45f784*/
+    *((unsigned int *)this + 1345) = (unsigned int)(v17); /*0x45f78b*/
     if ( !v17 ) /*0x45f791*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f797*/
@@ -850,7 +850,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1345) = 0; /*0x45f7b3*/
         *v16 = 0; /*0x45f7b9*/
       }
-      *((unsigned int *)this + 1345) = SearchMIXFile(Source, 0); /*0x45f7c6*/
+      *((unsigned int *)this + 1345) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f7c6*/
     }
   }
   INIClass::GetString( /*0x45f7e9*/
@@ -862,14 +862,14 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     64);
   if ( strlen(Filename) ) /*0x45f7f2*/
   {
-    _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f80f*/
+    _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f80f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f822*/
-    v18 = SearchMIXFile(Source, 0); /*0x45f82d*/
+    v18 = (int)(SearchMIXFile(Source, 0)); /*0x45f82d*/
     *((unsigned int *)this + 1348) = v18; /*0x45f834*/
     if ( !v18 ) /*0x45f83a*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f840*/
-      *((unsigned int *)this + 1348) = SearchMIXFile(Source, 0); /*0x45f850*/
+      *((unsigned int *)this + 1348) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f850*/
     }
   }
   INIClass::GetString( /*0x45f86d*/

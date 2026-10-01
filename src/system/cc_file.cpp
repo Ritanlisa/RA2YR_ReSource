@@ -54,7 +54,7 @@ int CCFileClass::Open(const char* pFileName)
       }
       else
       {
-        result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
+        result = File::IsReady((int)((BufferIOFileClass *)this), 0); /*0x473ca2*/
         if ( (unsigned char)result ) /*0x473ca9*/
         {
           this->u32_68 = 1; /*0x473cab*/

@@ -169,7 +169,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
         Debug::Log();
-    sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
+    sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
       MouseClass::CalcConfiningRect((MouseClass *)stru_887598.lineTrailer); /*0x5610dd*/
@@ -570,7 +570,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   Pipe v17; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56b255*/
+  v2 = (gamemd::ObjectClass *)(this); /*0x56b255*/
   LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
   ((Pipe *)(&v17))->SetDelegate(a2); /*0x56b274*/
   v3 = 0; /*0x56b27f*/

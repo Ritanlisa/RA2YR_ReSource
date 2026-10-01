@@ -404,7 +404,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v14; // ecx
 
   AbstractTy  ((AbstractTypeClass *)((gamemd::AbstractClass *)((AbstractTypeClass *)this)))->ProcessPower(a2); 
-  Power::TimerProcess((void *)(this->Layer[0])); 
+  Power::TimerProcess((int)((void *)(this->Layer[0]))); 
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v3); 
   LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
@@ -425,15 +425,15 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v11); 
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v12); 
-  Power::TimerProcess((void *)(this->MiddleFrameWidth)); 
+  Power::TimerProcess((int)((void *)(this->MiddleFrameWidth))); 
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v13); 
-  Power::TimerProcess((void *)(this->Rate)); 
-  Power::TimerProcess((void *)(this->Start)); 
-  Power::TimerProcess((void *)(this->LoopStart)); 
-  Power::TimerProcess((void *)(this->LoopEnd)); 
-  Power::TimerProcess((void *)(this->End)); 
+  Power::TimerProcess((int)((void *)(this->Rate))); 
+  Power::TimerProcess((int)((void *)(this->Start))); 
+  Power::TimerProcess((int)((void *)(this->LoopStart))); 
+  Power::TimerProcess((int)((void *)(this->LoopEnd))); 
+  Power::TimerProcess((int)((void *)(this->End))); 
   Power::Tim  Power::TimerProcess((void *)(this->Report)); 
   Power::Tim  Power::TimerProcess((void *)(this->StopSound)); 
   Power::Tim  Power::TimerProcess((void *)(this->NumParticles)); 

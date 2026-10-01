@@ -130,7 +130,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v8[1] = Math::ArcTan2(-0.00009587672516830327) * v8[1]; /*0x41602d*/
         v13 = (unsigned int *)(Math::SinCos(-0.00009587672516830327) * v54); /*0x416035*/
         v8[2] = v13; /*0x416047*/
-        Value = ProgressTimer::GetValue((unsigned short *)&this->q740, v53); /*0x416051*/
+        Value = (unsigned int *)(ProgressTimer::GetValue((unsigned short *)&this->q740, v53)); /*0x416051*/
         Vector2::NormalizeNonZero(v8); /*0x416053*/
         Function::41C430(v8); /*0x41605a*/
         v15 = *(int16_t *)Value; /*0x41605f*/
@@ -148,7 +148,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
       {
         v18 = (unsigned int *)(*(int (**)(void *, unsigned char *))(((unsigned int)(this->q01C2))))(this, v53); /*0x4160dd*/
         v19 = (unsigned int *)(*(int (**)(int, double *))(v5->q048)(v5, &v56); /*0x4160e6*/
-        v20 = Coord::Subtract(&v57[1], *v19 - *v18, v19[1] - v18[1], v19[2] - v18[2]); /*0x416106*/
+        v20 = (unsigned int *)(Coord::Subtract(&v57[1], *v19 - *v18, v19[1] - v18[1], v19[2] - v18[2])); /*0x416106*/
         IDA_LODWORD(v54) = *v20; /*0x41610d*/
         v21 = v20[1]; /*0x416111*/
         v22 = v20[2]; /*0x416118*/

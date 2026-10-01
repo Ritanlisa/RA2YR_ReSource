@@ -63,7 +63,7 @@ unsigned int * CreateTeamCommand::performAction_148()
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x5373a6*/
   result = (unsigned int *)dword_880990; /*0x5373ab*/
   if ( dword_880990 ) /*0x5373b2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5373c3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5373c3*/
   return result; /*0x5373c8*/
 
 }
@@ -87,7 +87,7 @@ unsigned int * CreateTeamCommand::performAction_153()
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537496*/
   result = (unsigned int *)dword_880990; /*0x53749b*/
   if ( dword_880990 ) /*0x5374a2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5374b3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5374b3*/
   return result; /*0x5374b8*/
 
 }
@@ -111,7 +111,7 @@ unsigned int * CreateTeamCommand::performAction_158()
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537586*/
   result = (unsigned int *)dword_880990; /*0x53758b*/
   if ( dword_880990 ) /*0x537592*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5375a3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5375a3*/
   return result; /*0x5375a8*/
 
 }

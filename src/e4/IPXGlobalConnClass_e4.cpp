@@ -313,7 +313,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
 
-  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this), a1, aP2, aP3, aP4); /*0x540629*/
+  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this),(gamemd::AnimClass *)(a1), aP2, aP3, aP4); /*0x540629*/
 
 }
 } // namespace gamemd

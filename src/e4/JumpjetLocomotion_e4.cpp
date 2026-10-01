@@ -360,7 +360,7 @@ void* JumpjetLocomotion::Land()
   {
     LOWORD(v9) = Math::RoundToInt((double)v53 - *(float *)&this->__pad_C[28]); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
-    v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(v50) + 11520; /*0x54cb2a*/
+    v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue((unsigned int *)(v50)) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->__pad_48[12], v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x54cb5e*/
@@ -584,7 +584,7 @@ LABEL_74:
       v42 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v41 + 444))(v41); /*0x54d05f*/
       CellClass::AttachObject(v42, 0); /*0x54d067*/
     }
-    GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, *(unsigned int *)this->__pad_C); /*0x54d075*/
+    GadgetGrid::RemoveItem((int)((GadgetGrid *)&g_CellClassManager), *(unsigned int *)this->__pad_C); /*0x54d075*/
     v43 = *(unsigned int *)this->__pad_C; /*0x54d07a*/
     *(unsigned int *)this->__pad_78 = 0; /*0x54d07d*/
     *(unsigned int *)&this->__pad_48[8] = 6; /*0x54d083*/
@@ -859,7 +859,7 @@ LABEL_50:
   v41 = v40[2]; /*0x54d572*/
   LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
-  v61 = (double)(*(int16_t *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
+  v61 = (double)(*(int16_t *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue((unsigned int *)(&v59)) - 0x3FFF) /*0x54d5a2*/
       * -0.00009587672516830327;
   v43 = HIDWORD(v61); /*0x54d5aa*/
   v44 = LODWORD(v61); /*0x54d5ae*/
@@ -892,14 +892,14 @@ LABEL_50:
     }
     else
     {
-      Value = ((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v61); /*0x54d68b*/
+      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v61)); /*0x54d68b*/
       FacingClass::Set_SyncLog((char *)(*(unsigned int *)this->__pad_C + 904), Value); /*0x54d692*/
     }
   }
   if ( v55 ) /*0x54d69d*/
     return (*(int (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54d6a6*/
   result = *(unsigned int *)this->__pad_C; /*0x54d6b4*/
-  *(unsigned char *)(result + 116) = (void *)(v58); /*0x54d6bd*/
+  *(unsigned char *)(result + 116) = (unsigned char)((void *)(v58)); /*0x54d6bd*/
   return result; /*0x54d6ac*/
 
 }

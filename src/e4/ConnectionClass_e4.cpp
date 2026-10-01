@@ -211,7 +211,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       PlayerIndex = (int)(this->PlayerIndex);
       if ( *(unsigned int *)(PlayerIndex + 8) - *(unsigned int *)(PlayerIndex + 56) > 1 ) /*0x48c0e9*/
       {
-        if ( ConnectionClass::allocPacketSlot((ModemConnectionClass *)PlayerIndex,(int)((const void *)a2), a3, 0, 0) ) /*0x48c115*/
+        if ( ConnectionClass::allocPacketSlot((ModemConnectionClass *)PlayerIndex,(int)((const void *)a2),(const void *)(a3), 0, 0) ) /*0x48c115*/
         {
           v11 = this->PhoneNumber[7] + 1; /*0x48c14b*/
           this->PhoneNumber[7] = v11; /*0x48c14c*/
@@ -281,7 +281,7 @@ LABEL_40:
       }
       v18 = (int)(this->PlayerIndex);
       if ( (*(unsigned int *)(v18 + 8) - *(unsigned int *)(v18 + 56) > 1 || *(unsigned int *)(a2 + 4) == this->PhoneNumber[11] + 1) /*0x48c216*/
-        && ConnectionClass::allocPacketSlot((ModemConnectionClass *)v18,(int)((const void *)a2), a3, 0, 0) )
+        && ConnectionClass::allocPacketSlot((ModemConnectionClass *)v18,(int)((const void *)a2),(const void *)(a3), 0, 0) )
       {
         v19 = this->PhoneNumber[11] + 1; /*0x48c23f*/
         ++this->PhoneNumber[8]; /*0x48c240*/

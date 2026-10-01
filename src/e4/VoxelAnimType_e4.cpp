@@ -325,7 +325,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
 
   v2 = (const char *)((unsigned char *)this + 504); /*0x5f811e*/
   v50 = 0; /*0x5f8134*/
-  _makepath(Buffer, 0, 0,(const char *)((unsigned char *)this + 504), g_Str_File__VXL); /*0x5f8138*/
+  _makepath(Buffer, 0, 0,(const char *)((unsigned char *)this + 504),(const char *)(g_Str_File__VXL)); /*0x5f8138*/
   CCFileClass::Construct(&v58, Buffer); /*0x5f814f*/
   if ( (uint8_t)CCFileClass::Open((int)(&v58), 0) ) /*0x5f815c*/
   {
@@ -564,9 +564,9 @@ LABEL_92:
     }
   }
 LABEL_93:
-  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || *((unsigned char *)this + 3233) ) /*0x5f8850*/
+  if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 40 || *((unsigned char *)this + 3233) ) /*0x5f8850*/
   {
-    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 /*0x5f8873*/
+    if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) == 40 /*0x5f8873*/
       && (uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       && !*((unsigned char *)this + 3285) )
     {
@@ -585,9 +585,9 @@ LABEL_93:
     else
     {
       sprintf(Filename, "%sBARL", (unsigned char *)this + 504); /*0x5f88c0*/
-      _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f88dc*/
+      _makepath(Buffer, 0, 0, Filename,(const char *)(g_Str_File__VXL)); /*0x5f88dc*/
       CCFileClass::Construct(&v51, Buffer); /*0x5f88f0*/
-      if ( (uint8_t)CCFileClass::Open(&v51, 0) ) /*0x5f88fa*/
+      if ( (uint8_t)CCFileClass::Open((int)(&v51), 0) ) /*0x5f88fa*/
       {
         v35 = (void *)*((unsigned int *)this + 48); /*0x5f8907*/
         if ( v35 ) /*0x5f890f*/
@@ -600,11 +600,11 @@ LABEL_93:
           v37 = ((File *)(v36))->LoadFileVXL((int)&v51, 0); /*0x5f8937*/
         else
           v37 = 0; /*0x5f893e*/
-        *((unsigned int *)this + 48) = v37; /*0x5f8942*/
+        *((unsigned int *)this + 48) = (unsigned int)(v37); /*0x5f8942*/
         if ( !v37 || *(unsigned char *)v37 ) /*0x5f894a*/
           v50 = 1; /*0x5f894e*/
         sprintf(Filename, "%sBARL", (unsigned char *)this + 504); /*0x5f8961*/
-        _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f897d*/
+        _makepath(Buffer, 0, 0, Filename,(const char *)(g_Str_File__HVA)); /*0x5f897d*/
         CCFileClass::Construct(&v54, Buffer); /*0x5f8994*/
         v38 = (void *)*((unsigned int *)this + 49); /*0x5f8999*/
         if ( v38 ) /*0x5f89a1*/
@@ -617,7 +617,7 @@ LABEL_93:
           v40 = ((File *)(v39))->LoadFileHVA((int)&v54); /*0x5f89cb*/
         else
           v40 = 0; /*0x5f89d2*/
-        *((unsigned int *)this + 49) = v40; /*0x5f89d6*/
+        *((unsigned int *)this + 49) = (unsigned int)(v40); /*0x5f89d6*/
         if ( !v40 || *(unsigned char *)v40 ) /*0x5f89de*/
         {
           v50 = 1; /*0x5f8a00*/

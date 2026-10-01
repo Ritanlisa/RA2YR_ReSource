@@ -263,7 +263,7 @@ LABEL_6:
       return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
-  while ( _strcmpi((const char *)((const void *)(*((unsigned int *)dword_B0E784 + v2) + 36)), Source) ) /*0x6e635a*/
+  while ( _strcmpi((const char *)((const void *)(*((unsigned int *)dword_B0E784 + v2) + 36)),(const char *)(Source)) ) /*0x6e635a*/
   {
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
@@ -342,7 +342,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x6e641b*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0),(gamemd::AbstractClass *)(aP1)); /*0x6e641b*/
   if ( result >= 0 ) /*0x6e6422*/
   {
     if ( aP0 ) /*0x6e6426*/
@@ -368,7 +368,7 @@ int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6e647f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x6e647f*/
   if ( result >= 0 ) /*0x6e6486*/
     return 0; /*0x6e6488*/
   return result; /*0x6e648a*/

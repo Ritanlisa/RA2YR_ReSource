@@ -336,10 +336,10 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
       switch ( a2 ) /*0x7a52ce*/
       {
         case -2147221404: /*0x7a52ce*/
-          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoginUsed), 0, g_Str_File_wonline_cpp, 5737)); /*0x7a52e6*/
+          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoginUsed), 0,(const char *)(g_Str_File_wonline_cpp), 5737)); /*0x7a52e6*/
           break; /*0x7a52e6*/
         case -2147221403: /*0x7a52ce*/
-          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_BADPASS), 0, g_Str_File_wonline_cpp, 5742)); /*0x7a531f*/
+          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_BADPASS), 0,(const char *)(g_Str_File_wonline_cpp), 5742)); /*0x7a531f*/
           break; /*0x7a532a*/
         case -2147221390: /*0x7a52ce*/
           StringCSF = GetStringCSF((wchar_t *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5747); /*0x7a5357*/
@@ -370,7 +370,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   }
   if ( a2 ) /*0x7a53ff*/
   {
-LABEL_19: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANT_CONNECT), 0, g_Str_File_wonline_cpp, 5779));
+LABEL_19: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANT_CONNECT), 0,(const char *)(g_Str_File_wonline_cpp), 5779));
 LABEL_20:
     wcscpy((wchar_t *)(&word_B77AD0), StringCSF); /*0x7a5417*/
     SetEvent(Handles, unsigned int a1018); /*0x7a542c*/
@@ -447,8 +447,8 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     else
     {
       v14 = (char *)((wchar_t *)(CharToWideString(a3 + 52)));
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtCreatedChan), 0, g_Str_File_wonline_cpp, 5835));
-      Dialog::ShowMessage((gamemd::ObjectClass *)(-1), (size_t)StringCSF, v14); /*0x7a5759*/
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtCreatedChan), 0,(const char *)(g_Str_File_wonline_cpp), 5835));
+      Dialog::ShowMessage((gamemd::ObjectClass *)(-1),(gamemd::CampaignScore *)((size_t)StringCSF), v14); /*0x7a5759*/
     }
     qmemcpy(&stru_B76AC4.ambientSoundController[4], a3, 0x10Cu); /*0x7a57d8*/
     dword_B77E4C = 1; /*0x7a57e0*/
@@ -475,7 +475,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   }
   else
   {
-    v3 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtChancreateF), 0, g_Str_File_wonline_cpp, 5825));
+    v3 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtChancreateF), 0,(const char *)(g_Str_File_wonline_cpp), 5825));
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/
@@ -695,7 +695,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   {
     CharStringToWide((wchar_t **)&v23, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a7f93*/
     v10 = WideString::GetOrEmpty((wchar_t **)&v23); /*0x7a7f9c*/
-    v11 = (int *)Player::FindByName((Player *)v10); /*0x7a7fa3*/
+    v11 = (int *)Player::FindByName((wchar_t *)((Player *)v10)); /*0x7a7fa3*/
     v12 = (SessionClass *)v11; /*0x7a7fa8*/
     if ( v11 /*0x7a7fed*/
       && ((SessionClass *)(v11))->GetPlayerSide() >= 0
@@ -721,11 +721,11 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     }
     if ( Timer::GetTicks() - dword_B78608 > 900 ) /*0x7a806e*/
     {
-      v15 = g_UIControlState; /*0x7a8070*/
+      v15 = (gamemd::Skirmish *)(g_UIControlState); /*0x7a8070*/
       if ( (!g_UIControlState || !*(unsigned int *)g_UIControlState) && !byte_B77E2C ) /*0x7a8085*/
       {
         if ( !byte_A8B8E0[0] /*0x7a80a8*/
-          || (LOBYTE(v15) = dword_A8BB08, FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, (int)v15, 0)) )
+          || (LOBYTE(v15) = dword_A8BB08, FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, (int)v15, 0)) )
         {
           dword_B78608 = Timer::GetTicks(); /*0x7a80d2*/
           dword_B7860C = v23.DeleteAndZero_field_0x04; /*0x7a80d7*/
@@ -740,7 +740,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     if ( !(uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x7a80e2*/
     {
       LOBYTE(v16) = dword_A8BB08; /*0x7a80ef*/
-      if ( !FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
+      if ( !FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
         || (RawFileClass::Construct((RawFileClass *)Buffer, (int)byte_A8B8E0),
             v17 = (uint8_t)FileClass::Open((RawFileClass *)Buffer, 0) != 0,
             RawFileClass::Dtor((RawFileClass *)Buffer),

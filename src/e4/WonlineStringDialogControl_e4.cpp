@@ -426,7 +426,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   }
   else
   {
-    v6 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtBytesWTime), 0, g_Str_File_wonline_cpp, 5167));
+    v6 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtBytesWTime), 0,(const char *)(g_Str_File_wonline_cpp), 5167));
     swprintf(Buffer, (const size_t)v6, (const wchar_t *const)a3, a4, v12); /*0x7ad4ed*/
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
@@ -456,12 +456,12 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
   Buffer[0] = 0; /*0x7ad58d*/
   if ( v8 == 2 ) /*0x7ad597*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtConnecting), 0, g_Str_File_wonline_cpp, 5191));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtConnecting), 0,(const char *)(g_Str_File_wonline_cpp), 5191));
     swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
   }
   else if ( v8 == 4 ) /*0x7ad59c*/
   {
-    v5 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtFindingPatc), 0, g_Str_File_wonline_cpp, 5195)); /*0x7ad5b4*/
+    v5 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtFindingPatc), 0,(const char *)(g_Str_File_wonline_cpp), 5195)); /*0x7ad5b4*/
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
   Current = (HWND)Dialog::GetCurrent(); /*0x7ad5e5*/

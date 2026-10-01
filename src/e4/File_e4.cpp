@@ -615,7 +615,7 @@ unsigned int * File::LoadFileVXL(int a2, int a3)
   *(unsigned int *)&this->__pad_6[10] = 0; /*0x755ce4*/
   *(unsigned int *)&this->__pad_6[14] = 0; /*0x755ce7*/
   *(unsigned int *)&this->__pad_6[18] = 0; /*0x755cea*/
-  if ( !Voxel::SortDepth((gamemd::ObjectClass *)((int)this), a2, a3) ) /*0x755cf5*/
+  if ( !Voxel::SortDepth((gamemd::ObjectClass *)((int)this), a2,(void *)(a3)) ) /*0x755cf5*/
     this->__pad_0[0] = 1; /*0x755cfe*/
   return this->__pad_0; /*0x755d03*/
 
@@ -897,7 +897,7 @@ int File::ParseAudioFileRIFF(void *a1_1)
     return -2; /*0x7c12d9*/
   if ( v51 != 1212368461 ) /*0x7c12e2*/
     return -4; /*0x7c12f0*/
-  v3 = (unsigned int *)this + 38; /*0x7c12f5*/
+  v3 = (gamemd::File *)((unsigned int *)this + 38); /*0x7c12f5*/
   v4 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c131e*/
   LOBYTE(v4) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
   if ( (*((int (**)(File *, int, File *, unsigned int))(unsigned int *)this + 16))(this, 5, (unsigned int *)this + 38, v4) ) /*0x7c1326*/

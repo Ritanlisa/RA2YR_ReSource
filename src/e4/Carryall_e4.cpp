@@ -103,7 +103,7 @@ LABEL_18:
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
-          TeamClass::SelectMember((gamemd::AbstractClass *)(v10), *((unsigned int *)this + 361)); /*0x416ef5*/
+          TeamClass::SelectMember((gamemd::AbstractClass *)(v10),(void *)(*((unsigned int *)this + 361))); /*0x416ef5*/
         *((unsigned int *)this + 47) = 1; /*0x416eff*/
         ((Debug *)this)->Log(); /*0x416f09*/
       }
@@ -128,7 +128,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
           *v12,
           v12[1],
           v12[2]);
-        *((unsigned int *)this + 47) = (gamemd::FootClass **)(2); /*0x416f8c*/
+        *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(2)); /*0x416f8c*/
         return 1; /*0x416f96*/
       }
       else
@@ -143,7 +143,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
         && ((Team *)((Team *)this))->GetMember(0) != *((unsigned int *)this + 361) )
       {
         ((Debug *)this)->Log(); /*0x416fce*/
-        *((unsigned int *)this + 47) = (gamemd::FootClass **)(0); /*0x416fd6*/
+        *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(0)); /*0x416fd6*/
         return 1; /*0x416fe8*/
       }
       v14 = *((unsigned int *)this + 361); /*0x416fe9*/
@@ -153,7 +153,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
               this,
               *((unsigned int *)this + 361)) )
       {
-        *((unsigned int *)this + 47) = (gamemd::FootClass **)(0); /*0x417012*/
+        *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(0)); /*0x417012*/
         return 1; /*0x417024*/
       }
       if ( !*((unsigned int *)this + 413) ) /*0x417025*/
@@ -222,7 +222,7 @@ LABEL_44:
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v27)->flags[0]) & 1; /*0x41722f*/
         v23 = (unsigned char *)((gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28))); /*0x417236*/
-        Building = ((CellClass *)(v23))->FindBuilding(v26); /*0x417242*/
+        Building = (unsigned char *)(((CellClass *)(v23))->FindBuilding(v26)); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)
           && (((Debug *)this)->Log(), (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
@@ -231,7 +231,7 @@ LABEL_44:
           (*(void (**)(unsigned char *))(*(unsigned int *)Building + 212))(Building); /*0x417283*/
           Building[140] = 0; /*0x417290*/
           Building[1060] = 1; /*0x417297*/
-          ((CellClass *)((CellClass *)((unsigned int *)this + 69)))->AddObject(Building); /*0x41729e*/
+          ((CellClass *)((CellClass *)((unsigned int *)this + 69)))->AddObject((unsigned int *)(Building)); /*0x41729e*/
         }
         else
         {

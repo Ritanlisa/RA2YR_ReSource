@@ -18,7 +18,7 @@ namespace gamemd {
 using ra2::game::ObjectClass;
 
 DynamicVectorClass<ObjectClass*> g_current_objects;
-DynamicVectorClass<ObjectClass*>& CurrentObjects = (gamemd::DynamicVectorClass<ra2::game::ObjectClass *> &)(g_current_objects);
+DynamicVectorClass<ObjectClass*>& CurrentObjects = (gamemd::DynamicVectorClass<gamemd::ObjectClass *> &)((gamemd::DynamicVectorClass<ra2::game::ObjectClass *> &)(g_current_objects));
 
 // ============================================================
 // Command line globals (ParseCommandLine @ 0x52F620)

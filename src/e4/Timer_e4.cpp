@@ -112,7 +112,7 @@ int Timer::GetHighPrecision(void *a1_1)
   int64_t v4; // [esp+8h] [ebp-8h]
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
-    GetVersionString(&dword_82C24C, unk_ABEED4, 0, 0); /*0x5b1e5e*/
+    GetVersionString(&dword_82C24C,(unsigned char *)(unk_ABEED4), 0, 0); /*0x5b1e5e*/
   if ( !*this && *((char *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return timeGetTime(); /*0x5b1eba*/
   result = Timer::ReadTSC(&v3); /*0x5b1e7f*/

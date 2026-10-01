@@ -640,7 +640,7 @@ int TechnoClass::ProcessDeployAction()
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
         if ( v3 == dword_B0B5B8 /*0x6afe57*/
-          || (v3 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2(&v32, v3),
+          || (v3 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2((unsigned int *)(&v32), v3),
               *(unsigned int *)v29 = v3,
               v3 == dword_B0B5B8) )
         {

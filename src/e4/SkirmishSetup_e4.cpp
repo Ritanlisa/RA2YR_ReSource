@@ -510,7 +510,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   }
   else if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e85a4*/
   {
-    v1 = (CCFileClass *)Game::ProcessIdle; /*0x5e85a6*/
+    v1 = (gamemd::CCFileClass *)((CCFileClass *)Game::ProcessIdle); /*0x5e85a6*/
   }
   else if ( *(unsigned int *)&dword_A8B238 == 1 /*0x5e85ba*/
          || (v1 = (CCFileClass *)Event_Dispatch::Return0, *(unsigned int *)&dword_A8B238 == 2) )
@@ -534,7 +534,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   else
     v5 = 0; /*0x5e8618*/
   g_UIControlState = (int)(v5); /*0x5e8621*/
-  ((Surface *)((Surface *)v5))->LoadToSurfaceSHP(ExistingFileName); /*0x5e8626*/
+  ((Surface *)((Surface *)v5))->LoadToSurfaceSHP((char *)(ExistingFileName)); /*0x5e8626*/
   v6 = 0; /*0x5e8630*/
   if ( dword_A8B8D8 <= 0 ) /*0x5e8634*/
   {
@@ -542,7 +542,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v7 = GameConfig::ComputeCRC(); /*0x5e8655*/
     v8 = (SessionClass *)RA2_OPNEW(0x1BCu); /*0x5e8662*/
     if ( v8 ) /*0x5e866c*/
-      v9 = SessionClass::ParseGameInfo(v8, aRandmapSed, &unk_ABE050, v7, 1, 0, 2, 4); /*0x5e8688*/
+      v9 = (wchar_t *)(SessionClass::ParseGameInfo(v8, aRandmapSed, &unk_ABE050, v7, 1, 0, 2, 4)); /*0x5e8688*/
     else
       v9 = 0; /*0x5e868c*/
     if ( dword_A8B8D8 < dword_A8B8D0 /*0x5e86c5*/
@@ -566,7 +566,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       if ( ++v6 >= dword_A8B8D8 ) /*0x5e8653*/
         goto LABEL_18; /*0x5e8653*/
     }
-    GameOption::SetDescriptionWStr(*(GameOption **)(dword_A8B8CC + 4 * v6), &unk_ABE050); /*0x5e8701*/
+    GameOption::SetDescriptionWStr((wchar_t *)(*(GameOption **)(dword_A8B8CC + 4 * v6)), &unk_ABE050); /*0x5e8701*/
     v11 = (char **)(dword_A8B8CC + 4 * v6); /*0x5e870b*/
     v12 = GameConfig::ComputeCRC(); /*0x5e870e*/
     GameOption::SetDigest(*v11, v12); /*0x5e8716*/

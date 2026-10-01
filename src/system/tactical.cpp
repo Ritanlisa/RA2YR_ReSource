@@ -431,10 +431,10 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
           v7 = (int)((*(int ((int *)(**))(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
-          v8 = (const gamemd::RectangleStruct *)((int)(((unsigned char *)(this) + 0x0B0))); /*0x6d78d0*/
+          v8 = (int)((const gamemd::RectangleStruct *)((int)(((unsigned char *)(this) + 0x0B0)))); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
-          v9 = ((unsigned char *)(this) + 0x02D); /*0x6d78e2*/
-          v10 = v8 + *(const gamemd::RectangleStruct *)(viewRect); /*0x6d78ee*/
+          v9 = (int)(((unsigned char *)(this) + 0x02D)); /*0x6d78e2*/
+          v10 = (const gamemd::RectangleStruct *)(v8 + *(const gamemd::RectangleStruct *)(viewRect)); /*0x6d78ee*/
           v11 = viewRect[1]; /*0x6d78f0*/
           v42 = v10 - DSurface_ViewBounds; /*0x6d78f5*/
           v43 = v11 + v9 - dword_886FA4; /*0x6d7905*/
@@ -466,7 +466,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
             IDA_HIWORD(v39) = (unsigned int)(v19 / 2); /*0x6d79e7*/
             IDA_LOWORD(v45) = v42 + v21; /*0x6d79fa*/
             IDA_HIWORD(v45) = IDA_HIWORD(v39) + IDA_HIWORD(v42); /*0x6d7a05*/
-            *(unsigned int *)v45 = v45; /*0x6d7a10*/
+            *(unsigned int *)v45 = (unsigned int)(v45); /*0x6d7a10*/
             if ( v20 > 0 ) /*0x6d7a14*/
             {
               v20 = v20; /*0x6d7a1a*/
@@ -494,7 +494,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                       v26 = (unsigned int *)(RA2_OPNEW(0x3Cu));
                       if ( v26 ) /*0x6d7ab9*/
                       {
-                        v24 = (unsigned int)(TacticalClass::saveConfig(v26, v25));
+                        v24 = (unsigned int *)((unsigned int)(TacticalClass::saveConfig(v26, v25)));
                         v22[63] = (unsigned int)(v24);
                       }
                       else

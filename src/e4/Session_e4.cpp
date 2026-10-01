@@ -106,7 +106,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
   {
     case 1: /*0x5e7521*/
     case 2: /*0x5e7521*/
-      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e774c*/
+      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) ) /*0x5e774c*/
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
@@ -162,9 +162,9 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       if ( !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
-      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e7630*/
+      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) ) /*0x5e7630*/
       {
-        strcpy((char *)(Str), byte_A8B8E0); /*0x5e765a*/
+        strcpy((char *)(Str),(const char *)(byte_A8B8E0)); /*0x5e765a*/
         _strupr((char *)(Str)); /*0x5e7668*/
         ((Debug *)this)->Log(); /*0x5e7677*/
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
@@ -238,7 +238,7 @@ LABEL_44:
     }
     else
     {
-      Flagged = (int)(((GameSettings *)this)->FindFlagged());
+      Flagged = (char *)((int)(((GameSettings *)this)->FindFlagged()));
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
@@ -307,7 +307,7 @@ int Session::StartGame(HWND hWnd)
   else
     v4 = 0; /*0x5ed3bd*/
   g_UIControlState = (int)(v4); /*0x5ed3c6*/
-  ((Surface *)((Surface *)v4))->LoadToSurfaceSHP(ExistingFileName); /*0x5ed3cb*/
+  ((Surface *)((Surface *)v4))->LoadToSurfaceSHP((char *)(ExistingFileName)); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
     Session::PrepareGame(hWnd); /*0x5ed3dd*/
   return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/

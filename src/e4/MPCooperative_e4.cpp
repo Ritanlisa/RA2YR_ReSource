@@ -446,7 +446,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
   AbstractClass::updateAnimationState((AbstractClass *)&this->MPCooperative_field_0x58, 0, 0); /*0x5c14a0*/
-  this->MPCooperative_field_0x58 = &vt_DynamicVectorClass; /*0x5c14a5*/
+  this->MPCooperative_field_0x58 = (unsigned int)(&vt_DynamicVectorClass); /*0x5c14a5*/
   this->MPCooperative_field_0x6C = (void *)10; /*0x5c14ab*/
   this->MPCooperative_field_0x68 = 0; /*0x5c14b2*/
   p_MPCooperative_field_0xC4 = &this->MPCooperative_field_0xC4; /*0x5c14b5*/
@@ -487,7 +487,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   this->MPCooperative_field_0x324 = (int)&vt_DynamicVectorClass; /*0x5c1530*/
   *(unsigned int *)&this->__pad_328[16] = (unsigned int)(10); /*0x5c1536*/
   *(unsigned int *)&this->__pad_328[12] = 0; /*0x5c153d*/
-  this->MPCooperative_field_0x0 = &vt_MPCooperative; /*0x5c1540*/
+  this->MPCooperative_field_0x0 = (unsigned int)(&vt_MPCooperative); /*0x5c1540*/
   this->MPCooperative_field_0x40 = 0; /*0x5c1546*/
   this->MPCooperative_field_0x44 = 0; /*0x5c1549*/
   this->MPCooperative_field_0x33C = 0; /*0x5c154c*/
@@ -513,7 +513,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     &this->MPCooperative_field_0x324,
     v18,
     0);
-  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&aP4); /*0x5c15b3*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
   for ( aP6 = 0; aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
     v19 = (gamemd::Init)((MissionClass *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
@@ -540,7 +540,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     v23 = *(unsigned int *)&this->__pad_328[12]; /*0x5c1616*/
     v24 = (unsigned int)(*(unsigned int *)this->__pad_328); /*0x5c1619*/
     *(unsigned int *)&this->__pad_328[12] = v23 + 1; /*0x5c161f*/
-    *(unsigned int *)(v24 + 4 * v23) = v20; /*0x5c1622*/
+    *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v20); /*0x5c1622*/
   }
   return &this->MPCooperative_field_0x0; /*0x5c1638*/
 
@@ -569,7 +569,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 
   v3 = v2; /*0x5c1643*/
   MultiplayerGameMode_field_0x08 = (Array *)v2[2].MultiplayerGameMode_field_0x08; /*0x5c1647*/
-  *(unsigned int *)v2->__pad_0 = (void*)&MPCooperative_vftable; /*0x5c164a*/
+  *(unsigned int *)v2->__pad_0 = (unsigned int)((void*)&MPCooperative_vftable); /*0x5c164a*/
   if ( MultiplayerGameMode_field_0x08 ) /*0x5c1652*/
   {
     Array::Cleanup(MultiplayerGameMode_field_0x08); /*0x5c1656*/
@@ -591,8 +591,8 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     a2);
   for ( j = v3[3].MultiplayerGameMode_field_0x14 - 1; j >= 0; --j ) /*0x5c16a6*/
     RA2_OPDEL(*(void **)(v3[3].MultiplayerGameMode_field_0x08 + 4 * j)); /*0x5c16af*/
-  (*(void (**)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 12))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16c3*/
-  (*(void (**)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 8))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16ce*/
+  (*(void ((int *)(**))(int *))(v3[3].MultiplayerGameMode_field_0x04 + 12))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16c3*/
+  (*(void ((int *)(**))(int *))(v3[3].MultiplayerGameMode_field_0x04 + 8))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16ce*/
   v9 = (void (***)(unsigned int, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
   if ( v9 ) /*0x5c16d6*/
   {
@@ -609,7 +609,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   }
   IDA_BYTE1(v3[29].MultiplayerGameMode_field_0x04) = 0; /*0x5c1702*/
   *(unsigned int *)v3[29].__pad_0 = 0; /*0x5c1705*/
-  p_MultiplayerGameMode_field_0x14 = &v3[28].MultiplayerGameMode_field_0x14; /*0x5c1708*/
+  p_MultiplayerGameMode_field_0x14 = (int *)(&v3[28].MultiplayerGameMode_field_0x14); /*0x5c1708*/
   v12 = 8; /*0x5c170e*/
   do /*0x5c173b*/
   {
@@ -626,7 +626,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     p_MultiplayerGameMode_field_0x14[2] = 0; /*0x5c1738*/
   }
   while ( v12 ); /*0x5c173b*/
-  p_MultiplayerGameMode_field_0x18 = &v3[21].MultiplayerGameMode_field_0x18; /*0x5c173d*/
+  p_MultiplayerGameMode_field_0x18 = (int *)(&v3[21].MultiplayerGameMode_field_0x18); /*0x5c173d*/
   v15 = 8; /*0x5c1743*/
   do /*0x5c1770*/
   {

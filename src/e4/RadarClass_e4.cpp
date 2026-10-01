@@ -153,7 +153,7 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
       v15 = v19[0]; /*0x654777*/
       v18 = (*(int (**)(int))(*(unsigned int *)v19[0] + 128))(v19[0]); /*0x654789*/
       v16 = (*(int (**)(int))(v15->u32_7C)(v15); /*0x65478e*/
-      v17 = DSurface::Construct(v14, v16, v18, 1, 0); /*0x654794*/
+      v17 = (char *)(DSurface::Construct(v14, v16, v18, 1, 0)); /*0x654794*/
     }
     else
     {

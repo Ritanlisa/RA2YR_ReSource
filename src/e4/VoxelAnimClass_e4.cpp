@@ -283,7 +283,7 @@ LABEL_6:
         globalHelper_053C80(v7, 0, 0, v40, (float *)&stru_887460.Buffer_field_10); /*0x749da3*/
         Viewport::Clear(v26); /*0x749da8*/
         v9 = MultiplyMatrix3x4(v41, (float *)stru_887430.m_Data, v40); /*0x749dbe*/
-        TransformVoxelVertex((gamemd::VoxelSection *)(v7), *((unsigned int *)this->VoxelAnimClass_field_0x104 + 166), 0, v9); /*0x749dd4*/
+        TransformVoxelVertex((gamemd::VoxelSection *)(v7),(gamemd::VoxelSection *)(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 166)), 0, v9); /*0x749dd4*/
         InitializeAudioOcclusion((IUnknown *)(v39), &v31, &v30); /*0x749de6*/
         v10 = 10240; /*0x749df1*/
         if ( *((unsigned char *)this->VoxelAnimClass_field_0x104 + 661) ) /*0x749df6*/
@@ -461,7 +461,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
   if ( VoxelAnimClass_field_0x104[183] != -1 ) /*0x749f4a*/
   {
     v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))this->VoxelAnimClass_field_0x0 + 18))(this, &v101); /*0x749f5b*/
-    StartAudioController((gamemd::AudioMixer *)(v3), (int **)&v1->VoxelAnimClass_field_0x114); /*0x749f62*/
+    StartAudioController((gamemd::AudioMixer *)(v3),(gamemd::AudioSource *)((int **)&v1->VoxelAnimClass_field_0x114)); /*0x749f62*/
   }
   if ( v1->__pad_110[0] ) /*0x749f67*/
     return (*((int (**)(VoxelAnimClass *))v1->VoxelAnimClass_field_0x0 + 62))(v1); /*0x749f82*/
@@ -579,17 +579,17 @@ void VoxelAnimClass::VoxelAnimClass_Update()
     }
     if ( !v88 || v87 ) /*0x74a238*/
     {
-      v33 = v1->VoxelAnimClass_field_0x104; /*0x74a23e*/
+      v33 = (unsigned char *)(v1->VoxelAnimClass_field_0x104); /*0x74a23e*/
       v108 = 0; /*0x74a244*/
       v109 = 0; /*0x74a248*/
       v110 = 0; /*0x74a24c*/
       if ( v33[720] ) /*0x74a250*/
       {
         v34 = (int *)Coord::GetCoords(&v101, v86); /*0x74a269*/
-        v97 = (unsigned int *)(*v34); /*0x74a270*/
+        v97 = (int)((unsigned int *)(*v34)); /*0x74a270*/
         v98 = v34[1]; /*0x74a277*/
         v99 = v34[2]; /*0x74a27e*/
-        v35 = v1->VoxelAnimClass_field_0x104; /*0x74a282*/
+        v35 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a282*/
         if ( v35[181] ) /*0x74a288*/
         {
           v36 = v35[182]; /*0x74a290*/
@@ -631,7 +631,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
               v44 = *(CellClass **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * FindBuildingByTiberiumType(127)); /*0x74a3b2*/
               if ( v43[284] ) /*0x74a3b8*/
               {
-                v94 = __2_YAPAXI_Z(0xB0u); /*0x74a3ca*/
+                v94 = (int)(__2_YAPAXI_Z(0xB0u)); /*0x74a3ca*/
                 if ( v94 ) /*0x74a3d0*/
                 {
                   v93 = *((unsigned int *)v43 + 9); /*0x74a3e8*/
@@ -647,7 +647,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
               }
               else
               {
-                v94 = __2_YAPAXI_Z(0xB0u); /*0x74a431*/
+                v94 = (int)(__2_YAPAXI_Z(0xB0u)); /*0x74a431*/
                 if ( v94 ) /*0x74a437*/
                 {
                   v95 = *((unsigned int *)v43 + 9); /*0x74a44b*/

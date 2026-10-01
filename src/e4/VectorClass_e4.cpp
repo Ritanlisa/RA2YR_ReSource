@@ -350,7 +350,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x42f78d*/
       this->m_8 = a2; /*0x42f795*/
-      BYTE1(this->m_C) = (gamemd::AbstractClass **)(a3 == 0); /*0x42f798*/
+      BYTE1(this->m_C) = (unsigned char)((gamemd::AbstractClass **)(a3 == 0)); /*0x42f798*/
       return 1; /*0x42f79e*/
     }
     else
@@ -434,7 +434,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x4e08c1*/
       {
-        m_8 = this->m_8; /*0x4e08c8*/
+        m_8 = (int)(this->m_8); /*0x4e08c8*/
         if ( a2 < m_8 ) /*0x4e08cd*/
           m_8 = a2; /*0x4e08cf*/
         v13 = 0; /*0x4e08d1*/
@@ -458,7 +458,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
           *(unsigned int *)&this->m_1[3] = 0; /*0x4e0911*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v6; /*0x4e091a*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e091a*/
       this->m_8 = a2; /*0x4e0922*/
       BYTE1(this->m_C) = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
       return 1; /*0x4e092b*/
@@ -546,7 +546,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       return 0; /*0x4e0c27*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4e0b8d*/
     {
-      m_8 = this->m_8; /*0x4e0b94*/
+      m_8 = (int)(this->m_8); /*0x4e0b94*/
       if ( a2 < m_8 ) /*0x4e0b99*/
         m_8 = a2; /*0x4e0b9b*/
       v12 = 0; /*0x4e0b9d*/
@@ -575,7 +575,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         *(unsigned int *)&this->m_1[3] = 0; /*0x4e0bee*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x4e0bf7*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e0bf7*/
     this->m_8 = a2; /*0x4e0bff*/
     BYTE1(this->m_C) = v4 == 0; /*0x4e0c02*/
   }
@@ -583,7 +583,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   {
     (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e0c0b*/
   }
-  v16 = this->m_8; /*0x4e0c0e*/
+  v16 = (int)(this->m_8); /*0x4e0c0e*/
   if ( v16 < this->m_10 ) /*0x4e0c16*/
     this->m_10 = (gamemd::AbstractClass **)(v16); /*0x4e0c18*/
   return 1; /*0x4e0c1b*/
@@ -603,7 +603,7 @@ unsigned int * VectorClass_K_8::Constructor(void *a1_1, void *a2_1, void *a3_1, 
   this->CStreamClass_field_0x18 = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a2843*/
   this->CStreamClass_field_0x1C = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a2850*/
   this->CStreamClass_field_0x20 = (unsigned int)(__2_YAPAXI_Z(0x10000u)); /*0x4a285b*/
-  *(unsigned int *)this->__pad_0 = &vt_CStreamClass; /*0x4a285e*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CStreamClass); /*0x4a285e*/
   this->CStreamClass_field_0x04 = (int)&vt_CStreamClass; /*0x4a2864*/
   this->CStreamClass_field_0x24 = 0xFFFF; /*0x4a286b*/
   return this->__pad_0; /*0x4a2874*/
@@ -653,7 +653,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   v7 = *(unsigned int *)&this->__pad_5[3]; /*0x5ad0a1*/
   if ( v7 < *(unsigned int *)this->__tail_10 ) /*0x5ad0a9*/
-    *(unsigned int *)this->__tail_10 = (gamemd::AbstractClass **)(v7); /*0x5ad0ab*/
+    *(unsigned int *)this->__tail_10 = (unsigned int)((gamemd::AbstractClass **)(v7)); /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
 
 }
@@ -671,22 +671,22 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   int i; // esi
   int v10; // [esp-4h] [ebp-14h]
 
-  p_IsInitialized = &this->IsInitialized; /*0x4a0c2c*/
+  p_IsInitialized = (char *)(&this->IsInitialized); /*0x4a0c2c*/
   this->Items = 0; /*0x4a0c2f*/
   this->Capacity = 0; /*0x4a0c32*/
   this->Count = 0; /*0x4a0c37*/
   this->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   this->__tail_18[0] = 1; /*0x4a0c3d*/
   this->__tail_18[1] = (unsigned int)(0); /*0x4a0c41*/
-  *(unsigned int *)&this->IsInitialized = &vt_VectorClass; /*0x4a0c44*/
+  *(unsigned int *)&this->IsInitialized = (unsigned int)(&vt_VectorClass); /*0x4a0c44*/
   if ( &this->IsInitialized != (char *)aP1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)&this->IsInitialized); /*0x4a0c4e*/
-    v4 = aP1[2]; /*0x4a0c54*/
+    v4 = (int)(aP1[2]); /*0x4a0c54*/
     *((unsigned int *)p_IsInitialized + 2) = v4; /*0x4a0c59*/
     if ( v4 ) /*0x4a0c5c*/
     {
-      v5 = __2_YAPAXI_Z(4 * v4); /*0x4a0c62*/
+      v5 = (int)(__2_YAPAXI_Z(4 * v4)); /*0x4a0c62*/
       *((unsigned int *)p_IsInitialized + 1) = v5; /*0x4a0c6c*/
       if ( v5 ) /*0x4a0c6f*/
       {
@@ -713,7 +713,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   *((unsigned int *)p_IsInitialized + 4) = (unsigned int)(aP1[4]); /*0x4a0c9d*/
   *((unsigned int *)p_IsInitialized + 5) = (unsigned int)(aP1[5]); /*0x4a0ca3*/
   *(unsigned int *)p_IsInitialized = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0ca6*/
-  *(unsigned int *)this->__pad_0 = &vt_EnumConnectionPointsClass; /*0x4a0cac*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_EnumConnectionPointsClass); /*0x4a0cac*/
   for ( i = 0; i < *(unsigned int *)&this->__tail_18[4]; ++i ) /*0x4a0cb9*/
   {
     v10 = *((unsigned int *)this->Count + i); /*0x4a0cc1*/

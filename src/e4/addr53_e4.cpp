@@ -228,9 +228,9 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v9 = v3[2]; /*0x5313cf*/
     v32[0] = (Rect.right - Rect.left - v3[1]) / 2; /*0x5313d5*/
     v32[1] = (Rect.bottom - Rect.top - v9) / 2; /*0x5313e5*/
-    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0, v32, v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
+    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0,(gamemd::ConvertClass *)(v32), v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
-  v10 = (int)(GetStringCSF((wchar_t *)(aTxtCopyright), (int)g_Str_File_Init_CPP, 4930));
+  v10 = (int)(GetStringCSF((wchar_t *)(aTxtCopyright),(unsigned int *)((int)g_Str_File_Init_CPP), 4930));
   v11 = (int)(TextRenderer::GetInstance((void *)(22)));
   v29 = 0; /*0x53143e*/
   v30 = v37 - 40; /*0x531444*/
@@ -239,8 +239,8 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v12 = (int)(Text_MeasureWidth(v10, 0, unsigned int a2));
     v29 = (int)(v36 - v12 - 10);
   }
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
-  v13 = (int)(GetStringCSF((wchar_t *)(aGuiWwbrand), (int)g_Str_File_Init_CPP, 4941)); /*0x53149e*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10,(gamemd::ObjectClass *)(g_DSurface_Hidden), (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
+  v13 = (int)(GetStringCSF((wchar_t *)(aGuiWwbrand),(unsigned int *)((int)g_Str_File_Init_CPP), 4941)); /*0x53149e*/
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
   {
@@ -248,20 +248,20 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v29 = (size_t)(v36 - v15 - 10);
     v30 += v11->q01C + 3; /*0x5314ca*/
   }
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v13, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
-  v16 = (size_t)(GetStringCSF((wchar_t *)(aGuiLoadingex), (int)g_Str_File_Init_CPP, 4951)); /*0x531507*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v13,(gamemd::ObjectClass *)(g_DSurface_Hidden), (int)v35, (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
+  v16 = (size_t)(GetStringCSF((wchar_t *)(aGuiLoadingex),(unsigned int *)((int)g_Str_File_Init_CPP), 4951)); /*0x531507*/
   v29 = 10; /*0x53152c*/
   v30 = 10; /*0x531530*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v16, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v16,(gamemd::ObjectClass *)(g_DSurface_Hidden), (int)v35, (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
   v17 = GetStringCSF(aGuiTrademarkto, (int)g_Str_File_Init_CPP, 4958); /*0x53154d*/
   v29 = 10; /*0x531556*/
   v30 = v37 - 40; /*0x531565*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v17, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v24); /*0x531581*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v17,(gamemd::ObjectClass *)(g_DSurface_Hidden), (int)v35, (int)&v29, 0xFFFF, 0, 22, v24); /*0x531581*/
   v18 = GetStringCSF(aGuiTrademarkbo, (int)g_Str_File_Init_CPP, 4965); /*0x53159a*/
   v29 = 10; /*0x53159f*/
   v30 += v11->q01C + 3; /*0x5315bb*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v18, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
-  Frame::Present(g_DSurface_Hidden, 10, (int)v4, v13, 0, v26, a3, a1); /*0x5315e4*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v18,(gamemd::ObjectClass *)(g_DSurface_Hidden), (int)v35, (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
+  Frame::Present((void *)(g_DSurface_Hidden), 10, (int)v4, v13, 0, v26, a3, a1); /*0x5315e4*/
     *(unsigned long long *)&dword_A8ED54[653] = v20 + 5000;
   if ( v4 ) /*0x531603*/
     RA2_OPDEL(v4); /*0x531606*/
@@ -364,15 +364,15 @@ char BulkData_Initialize()
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x531852*/
-  v12 = (unsigned int)(0); /*0x53185a*/
+  *(unsigned int *)v10.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x531852*/
+  v12 = (void **)((unsigned int)(0)); /*0x53185a*/
   ((Vector *)((int)v11))->Clear(); /*0x531861*/
   *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x53186a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
-  *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x53187b*/
-  v9 = (unsigned int)(0); /*0x531883*/
+  *(unsigned int *)v7.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x53187b*/
+  v9 = (void **)((unsigned int)(0)); /*0x531883*/
   ((Vector *)((int)v8))->Clear(); /*0x531887*/
-  *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x531890*/
+  *(unsigned int *)v7.CDFileClass = (unsigned int)(&off_7E1668); /*0x531890*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
   return 1; /*0x5317c4*/
 }
@@ -536,7 +536,7 @@ CreateTeamCommand * * InitCommands()
     unsigned int * v3 = (unsigned int *)operator new(4); /*0x5321d2*/
     if ( v3 ) /*0x5321dc*/
     {
-      v4 = v3; /*0x5321e4*/
+      v4 = (gamemd::CreateTeamCommand *)(v3); /*0x5321e4*/
     }
     else
     {
@@ -557,7 +557,7 @@ CreateTeamCommand * * InitCommands()
   unsigned int * v6 = (unsigned int *)operator new(4); /*0x53223f*/
   if ( v6 ) /*0x532249*/
   {
-    v7 = v6; /*0x532251*/
+    v7 = (gamemd::CreateTeamCommand *)(v6); /*0x532251*/
   }
   else
   {

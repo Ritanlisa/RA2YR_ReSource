@@ -310,7 +310,7 @@ LABEL_72:
             {
 LABEL_87:
               strcat(v34, ((String *)((String *)v33))->GetOrEmpty()); /*0x7aad7a*/
-              strcat(v34, asc_8318B8); /*0x7aadd7*/
+              strcat(v34,(const char *)(asc_8318B8)); /*0x7aadd7*/
               ++*(unsigned int *)&v33[4]; /*0x7aade5*/
             }
           }

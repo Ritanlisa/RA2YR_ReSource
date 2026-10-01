@@ -933,7 +933,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x6457b3*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0),(gamemd::ObjectTypeClass *)(aP1), aP2); /*0x6457b3*/
   if ( result >= 0 ) /*0x6457ba*/
   {
     v4 = *(unsigned int *)aP1; /*0x6457c2*/

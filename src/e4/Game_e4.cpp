@@ -494,19 +494,19 @@ int Game::MakeScreenshot(int a1)
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
           v8 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0)); /*0x537d3b*/
-          *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x537d3d*/
+          *(unsigned int *)v19.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           ((Vector *)((int)v20))->Clear(); /*0x537d4f*/
-          *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x537d5b*/
+          *(unsigned int *)v19.CDFileClass = (unsigned int)(&off_7E1668); /*0x537d5b*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.CDFileClass, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
-        *(unsigned int *)v16.CDFileClass = &vt_CCFileClass; /*0x537d9b*/
+        *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         ((Vector *)((int)v17))->Clear(); /*0x537daa*/
-        *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x537db3*/
+        *(unsigned int *)v16.CDFileClass = (unsigned int)(&off_7E1668); /*0x537db3*/
         return BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x537dbb*/
       }
     }

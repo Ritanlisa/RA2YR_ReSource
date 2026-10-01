@@ -56,7 +56,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   if ( a2 != 1175 ) /*0x531a50*/
     return 0; /*0x531c1d*/
   DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
-  String = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, g_Str_File_Init_CPP, 5680)); /*0x531a75*/
+  String = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SHORT_TITLE), 0,(const char *)(g_Str_File_Init_CPP), 5680)); /*0x531a75*/
   SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
   ModuleVersion = GetModuleVersion(); /*0x531a8b*/
   sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
@@ -77,7 +77,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F420); /*0x531b7c*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F520); /*0x531b8b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F394); /*0x531b9a*/
-  GetVersionString(&v14, &v13, 0, 0); /*0x531ba8*/
+  GetVersionString((unsigned int *)(&v14), &v13, 0, 0); /*0x531ba8*/
   v11 = (const unsigned int)((const char *)&off_821F08); /*0x531bb3*/
   if ( !v13 ) /*0x531bb8*/
     v11 = g_INI_Key_No; /*0x531bba*/

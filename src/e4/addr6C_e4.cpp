@@ -276,7 +276,7 @@ int ProcessGameResults(char a1)
   }
   char * v9 = (char *)operator new(0x10u);
   if ( v9 )
-    char * v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72436]), (IUnknown *)v8);
+    char * v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72436]),(int)((IUnknown *)v8));
   else
     v10 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v10);

@@ -48,7 +48,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   {
     v8 = (void *)((unsigned int)(__2_YAPAXI_Z(0x4Cu)));
     if ( v8 ) /*0x76fc94*/
-      v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0); /*0x76fcb6*/
+      v9 = (gamemd::Init)(MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0)); /*0x76fcb6*/
     else
       v9 = 0; /*0x76fcbd*/
     *((unsigned int *)this + 10) = (unsigned int)(v9); /*0x76fcbf*/

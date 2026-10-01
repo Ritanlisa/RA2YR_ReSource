@@ -160,7 +160,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
       {
         v6 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x72b3e8*/
         if ( !dword_B0FB80 ) /*0x72b3ea*/
-          LoadPaletteSimple(off_844BAC, &dword_B0FB7C, &dword_B0FB80); /*0x72b3fc*/
+          LoadPaletteSimple((char *)(off_844BAC), &dword_B0FB7C, &dword_B0FB80); /*0x72b3fc*/
         if ( !dword_B0FB88 ) /*0x72b408*/
         {
           if ( v6 ) /*0x72b40c*/
@@ -168,7 +168,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
             v7 = (char *)(off_844BB4[0]);
             if ( v6 != 1 ) /*0x72b433*/
               v7 = (char *)(off_844BB8); /*0x72b435*/
-            LoadPaletteSimple(v7, &dword_B0FB84, &dword_B0FB88); /*0x72b43b*/
+            LoadPaletteSimple(v7,(int *)(&dword_B0FB84), &dword_B0FB88); /*0x72b43b*/
           }
           else
           {
@@ -177,7 +177,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
         }
         result = (unsigned int *)dword_B0FB90; /*0x72b440*/
         if ( !dword_B0FB90 ) /*0x72b448*/
-          return (unsigned int *)LoadPaletteSimple(off_844BBC, &dword_B0FB8C, &dword_B0FB90); /*0x72b45a*/
+          return (unsigned int *)LoadPaletteSimple((char *)(off_844BBC), &dword_B0FB8C, &dword_B0FB90); /*0x72b45a*/
       }
     }
   }
@@ -235,7 +235,7 @@ LABEL_14:
   v11 = StringTable::Find((StringTable *)pad_50, *(const char ***)(v10 + 4 * v9)); /*0x5ae037*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->AssignFromPtr((const char **)(v11 + 4)); /*0x5ae041*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->ToLower(); /*0x5ae04a*/
-  ((String *)(&v13))->AssignFromPtr(aP2); /*0x5ae058*/
+  ((String *)(&v13))->AssignFromPtr((const char **)(aP2)); /*0x5ae058*/
   ((String *)(&v13))->ToLower(); /*0x5ae061*/
   if ( !v11 || !(uint8_t)((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Compare((const char **)&v13) ) /*0x5ae073*/
   {

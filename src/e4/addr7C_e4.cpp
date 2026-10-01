@@ -257,7 +257,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
           v28 |= 8u; /*0x7c0c23*/
         else
           v28 &= ~8u; /*0x7c0c28*/
-        result = FillAudioStreamBuffer(a1, v28); /*0x7c0c2f*/
+        result = (gamemd::DSurface *)(FillAudioStreamBuffer(a1, v28)); /*0x7c0c2f*/
         if ( result != (unsigned int)((gamemd::DSurface *))(-1) ) /*0x7c0c37*/
         {
           if ( !arg8 || result != (unsigned int)((gamemd::DSurface *))(-9) && result != -11 ) /*0x7c0c49*/
@@ -523,7 +523,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     ((DSurface *)((int)v7))->Flip(); /*0x7c2b39*/
     return -8; /*0x7c2b3b*/
   }
-  if ( Audio_Render_7C1D40(v7, v28) != -1 ) /*0x7c2963*/
+  if ( Audio_Render_7C1D40((int)(v7), v28) != -1 ) /*0x7c2963*/
     goto LABEL_113; /*0x7c2963*/
   if ( !*((unsigned char *)v7 + 264) && !v7[940] ) /*0x7c2973*/
   {
@@ -578,7 +578,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     }
     sub_4125F0(); /*0x7c2a56*/
     *((unsigned int *)v7 + 495) |= 0x40000000u; /*0x7c2a67*/
-    Audio_Render_7C7350(v7 + 1000); /*0x7c2a74*/
+    Audio_Render_7C7350((int)(v7 + 1000)); /*0x7c2a74*/
   }
   else if ( *((unsigned int *)v7 + 22) ) /*0x7c2a7e*/
   {
@@ -594,7 +594,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   {
     if ( ((int (*)(unsigned short *, int, const char **, unsigned int))*v9)(v7, 9, &v25, 0) ) /*0x7c2abe*/
       v25 = 0; /*0x7c2ac8*/
-    *((unsigned int *)v7 + 446) = Audio_Render_7C3860(v7, v25); /*0x7c2adf*/
+    *((unsigned int *)v7 + 446) = Audio_Render_7C3860((int)(v7), v25); /*0x7c2adf*/
     (*((void (**)(unsigned short *, int, int *, unsigned int))v7 + 17))(v7, 6, &v26, 0); /*0x7c2aeb*/
     v21 = (const char *)v26; /*0x7c2aee*/
     if ( v26 < 0 )
@@ -3330,7 +3330,7 @@ void sub_7C6620(int a1, int a2, int a3, int a4)
     {
       if ( v5 | v4 ) /*0x7c6651*/
       {
-        v6 = (char *)g_SlaveManagerPool + 8 * v5 + 8 * a1 + 8 * dword_8759A4 * (v4 + a2); /*0x7c667a*/
+        v6 = (unsigned int *)((char *)g_SlaveManagerPool + 8 * v5 + 8 * a1 + 8 * dword_8759A4 * (v4 + a2)); /*0x7c667a*/
         if ( (v6[1] & 1) != 0 ) /*0x7c6684*/
         {
           if ( !a4 && abs32(*v6 - v10) > 0xC ) /*0x7c6699*/

@@ -143,13 +143,13 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   *(unsigned int *)this->__pad_174 = (unsigned int)(0); /*0x48e929*/
   this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
   *((unsigned int *)this + 95) = 0; /*0x48e935*/
-  *(unsigned int *)this->__pad_0 = &vt_ConvertClass; /*0x48e93b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConvertClass); /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(unsigned int *)&this->__pad_6[358] = 1; /*0x48e943*/
   if ( *(unsigned int *)&this->ConvertClass_field_0x2[2] == 1 ) /*0x48e94f*/
   {
     v10 = (CampaignClass *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
-    this->ConvertClass_field_0x178 = v10; /*0x48e95f*/
+    this->ConvertClass_field_0x178 = (unsigned int)(v10); /*0x48e95f*/
     LOBYTE(v10->AbstractClass) = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
@@ -158,23 +158,23 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
       LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
       LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
       BYTE2(v29.Color_field_00) = (uint8_t)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
+      v13 = Color::ConvertToRGB((int)(&v29), (int)&v28); /*0x48e9ae*/
       LOWORD(a4) = *(unsigned short *)v13; /*0x48e9b6*/
       BYTE2(a4) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
-      *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((char *)a2, (int)&a4); /*0x48e9db*/
+      *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((int)((char *)a2), (int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = (CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 8); /*0x48e9eb*/
     this->ConvertClass_field_0x170 = (unsigned int)(v14); /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(unsigned int *)&this->__pad_6[358]; /*0x48e9f8*/
-    *(unsigned int *)this->__pad_174 = (char *)v15 + 256 * ((v16 - 1) >> 1); /*0x48ea10*/
+    *(unsigned int *)this->__pad_174 = (unsigned int)((char *)v15 + 256 * ((v16 - 1) >> 1)); /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
       LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
       v17 = (char *)&v15->AbstractClass + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
-        *v17++ = Palette::FindClosestColor((char *)a3, a2 + 2 * (i % 256) + i % 256); /*0x48ea40*/
+        *v17++ = Palette::FindClosestColor((int)((char *)a3), a2 + 2 * (i % 256) + i % 256); /*0x48ea40*/
     }
     else
     {
@@ -193,10 +193,10 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
             LOBYTE(v31) = v21; /*0x48ea97*/
             BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
             BYTE2(v29.Color_field_00) = 2 * v30 * v21 / (*(unsigned int *)&this->__pad_6[358] - 1); /*0x48eac2*/
-            v22 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48eac6*/
+            v22 = Color::ConvertToRGB((int)(&v29), (int)&v28); /*0x48eac6*/
             LOWORD(a4) = *(unsigned short *)v22; /*0x48eace*/
             BYTE2(a4) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
-            LOBYTE(v15->AbstractClass) = Palette::FindClosestColor((char *)a3, (int)&a4); /*0x48eae8*/
+            LOBYTE(v15->AbstractClass) = Palette::FindClosestColor((int)((char *)a3), (int)&a4); /*0x48eae8*/
             v15 = (CampaignClass *)((char *)v15 + 1); /*0x48eaea*/
           }
           v23 = *(unsigned int *)&this->__pad_6[358] - 1; /*0x48eb03*/
@@ -208,10 +208,10 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   }
   else
   {
-    v24 = (unsigned int)((CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 9)); /*0x48eb1c*/
+    v24 = (gamemd::CampaignClass *)((unsigned int)((CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 9))); /*0x48eb1c*/
     v25 = *(unsigned int *)&this->__pad_6[358]; /*0x48eb21*/
-    this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
-    *(unsigned int *)this->__pad_174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/
+    this->ConvertClass_field_0x170 = (unsigned int)(v24); /*0x48eb2a*/
+    *(unsigned int *)this->__pad_174 = (unsigned int)((char *)v24 + 512 * ((v25 - 1) >> 1)); /*0x48eb3a*/
     if ( !a6 ) /*0x48eb46*/
       DSurface::BlitStretch((int)v24, v25, a2); /*0x48eb51*/
     *((unsigned int *)this + 96) = (uint16_t)g_DDraw_Gray127; /*0x48eb60*/
@@ -228,7 +228,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
          0) )
   {
     v26 = dword_89ED08++; /*0x48ebc4*/
-    *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
+    *((unsigned int *)dword_89ECFC + v26) = (unsigned int)(this); /*0x48ebd3*/
   }
   return this->__pad_0; /*0x48ebd8*/
 

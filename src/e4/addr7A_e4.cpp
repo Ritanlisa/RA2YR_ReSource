@@ -246,7 +246,7 @@ void WOL_RequestMatch(void * a1)
   *(unsigned int *)&v31[24] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x7a082c*/
   if ( (uint8_t)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
-    PlayerProfile = (unsigned int)(LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&g_WindowManager.__pad_EC[684]));
+    PlayerProfile = (void *)((unsigned int)(LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&g_WindowManager.__pad_EC[684])));
     ComPtr::Set((ComPtr *)&v31[24], (int)((unsigned int *)PlayerProfile)[0]); /*0x7a084f*/
     *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x7a0858*/
     ((ComPtr *)((ComPtr *)&v31[16]))->Release(); /*0x7a085c*/
@@ -366,7 +366,7 @@ void WOL_RequestMatch(void * a1)
   v21 = FromStringInt((char **)&v31[4], stru_A8EB00.ObjectTypeClass[33]); /*0x7a0bb0*/
   ((String *)((String *)v31))->Append2(v21); /*0x7a0bba*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0bc3*/
-  ((Network *)((Network *)&stru_A8DBC0))->GetAddress((unsigned int *)(&v31[56]), (int)&v31[48], &v31[46]); /*0x7a0bdc*/
+  ((Network *)((Network *)&stru_A8DBC0))->GetAddress((unsigned int *)(&v31[56]), (int)&v31[48],(unsigned short *)(&v31[46])); /*0x7a0bdc*/
   v22 = *(unsigned int *)&v31[48]; /*0x7a0be1*/
   ((String *)((String *)v31))->Append(aAdr); /*0x7a0bee*/
   v23 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v22); /*0x7a0bf9*/

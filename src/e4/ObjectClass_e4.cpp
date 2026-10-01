@@ -159,7 +159,7 @@ LABEL_38:
       v37 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, aP3); /*0x4d80a6*/
       v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP4); /*0x4d80ac*/
 LABEL_51:
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, void *))(vtable0 + 888))(this, 2, 0, v21, v37); /*0x4d822a*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, void *))(vtable0 + 888))(this, 2, 0, v21, v37); /*0x4d822a*/
 LABEL_52:
       result = 1; /*0x4d8237*/
       break; /*0x4d8239*/
@@ -168,7 +168,7 @@ LABEL_52:
         return 0; /*0x4d8155*/
       v27 = this->vtable0; /*0x4d815b*/
       v28 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d8165*/
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v27 + 888))(this, 7, 0, v28, 0); /*0x4d8171*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v27 + 888))(this, 7, 0, v28, 0); /*0x4d8171*/
       return 1; /*0x4d817f*/
     case 5: /*0x4d7de0*/
     case 63: /*0x4d7de0*/
@@ -177,7 +177,7 @@ LABEL_52:
       {
         v23 = this->vtable0; /*0x4d80e9*/
         v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d80f5*/
-        (*(void (**)(TechnoClass *, int, void *, unsigned int, unsigned int))(v23 + 888))(this, 1, v24, 0, 0); /*0x4d80ff*/
+        (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, void *, unsigned int, unsigned int))(v23 + 888))(this, 1, v24, 0, 0); /*0x4d80ff*/
         return 1; /*0x4d8107*/
       }
       else
@@ -188,19 +188,19 @@ LABEL_52:
     case 6: /*0x4d7de0*/
       v14 = this->vtable0; /*0x4d7e8e*/
       v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d7e98*/
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
       return 1; /*0x4d7eb2*/
     case 9: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d811c*/
         return 0; /*0x4d811c*/
       v25 = this->vtable0; /*0x4d8122*/
       v26 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d812c*/
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v25 + 888))(this, 8, 0, v26, 0); /*0x4d8138*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v25 + 888))(this, 8, 0, v26, 0); /*0x4d8138*/
       return 1; /*0x4d8146*/
     case 16: /*0x4d7de0*/
       v29 = this->vtable0; /*0x4d8182*/
       v30 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d818c*/
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v29 + 888))(this, 17, 0, v30, 0); /*0x4d8198*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v29 + 888))(this, 17, 0, v30, 0); /*0x4d8198*/
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 156))(this) /*0x4d7e59*/
@@ -211,15 +211,15 @@ LABEL_52:
       }
       v12 = (unsigned int)(this->vtable0);
       v13 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d7e73*/
-      (*(void (**)(TechnoClass *, int, void *, unsigned int, unsigned int))(v12 + 888))(this, 11, v13, 0, 0); /*0x4d7e7d*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, void *, unsigned int, unsigned int))(v12 + 888))(this, 11, v13, 0, 0); /*0x4d7e7d*/
       return 1; /*0x4d7e8b*/
     case 35: /*0x4d7de0*/
       v31 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d81af*/
       Type = (gamemd::FootClass *)(InfantryClass::GetType(v31));
-      aP2 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
+      aP2 = (int16_t *)((gamemd::FootClass *)(*(int16_t **)(Type + 40)));
       v33 = (gamemd::InfantryClass *)((gamemd::FootClass *)((InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP2)));
       v34 = (gamemd::FootClass *)(*(unsigned int *)(InfantryClass::GetType(v33) + 44) - 4);
-      aP3 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
+      aP3 = (int16_t *)((gamemd::FootClass *)(*(int16_t **)(Type + 40)));
       v35 = v34 & 7; /*0x4d81e7*/
       v37 = 0; /*0x4d81ea*/
       v36 = (unsigned short)aP3 + LOWORD(dword_89F688[v35]); /*0x4d81fb*/
@@ -235,9 +235,9 @@ LABEL_52:
         return 0; /*0x4d7df3*/
       PlacementCell = (void ***)FindPlacementCell@<eax>((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = this->vtable0; /*0x4d7e06*/
-      aP4 = (gamemd::FootClass *)(*PlacementCell); /*0x4d7e0c*/
+      aP4 = (void **)((gamemd::FootClass *)(*PlacementCell)); /*0x4d7e0c*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP4); /*0x4d7e18*/
-      (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v10 + 888))(this, 25, 0, v11, 0); /*0x4d7e24*/
+      (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v10 + 888))(this, 25, 0, v11, 0); /*0x4d7e24*/
       return 1; /*0x4d7e32*/
     default:
       goto LABEL_52;
@@ -510,7 +510,7 @@ int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struc
   IPersistStream *v13; // ebx
 
   v3 = (IStream *)aP1; /*0x4db696*/
-  v4 = a0; /*0x4db69b*/
+  v4 = (gamemd::ObjectClass *)(a0); /*0x4db69b*/
   SizeMax = IPersistStream::GetSizeMax((TechnoClass *)a0, (int)aP1, (int)a2); /*0x4db6a7*/
   if ( SizeMax < 0 ) /*0x4db6ab*/
     return SizeMax; /*0x4db6ab*/
@@ -561,7 +561,7 @@ LABEL_6:
         v13 = (IPersistStream *)a0; /*0x4db794*/
         if ( aP1 ) /*0x4db79a*/
           (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)aP1 + 8))(aP1); /*0x4db79f*/
-        aP1 = v13; /*0x4db7a2*/
+        aP1 = (gamemd::FootClass *)(v13); /*0x4db7a2*/
       }
       else
       {
@@ -649,14 +649,14 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   GroundHeight = Cell::GetGroundHeight(v38); /*0x4de23e*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v38)->flags[0] & 0x100) != 0 ) /*0x4de250*/
     GroundHeight += (int)((char *)&FootClass_Array); /*0x4de25d*/
-  if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3213) && (uint8_t)Cell::IsPassable(v38) ) /*0x4de27d*/
+  if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3213) && (uint8_t)Cell::IsPassable((IUnknown *)(v38)) ) /*0x4de27d*/
     goto LABEL_36; /*0x4de284*/
   v12 = *v7; /*0x4de28c*/
   *(unsigned int *)v34 = *(unsigned int *)v8; /*0x4de293*/
   v13 = (unsigned int *)(*(int (**)(unsigned int *, unsigned short *, unsigned int, int))(v12 + 76))(v7, v42, 0, a2); /*0x4de29b*/
   v14 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13); /*0x4de2a4*/
   v15 = *v7; /*0x4de2a9*/
-  v38[0] = v14; /*0x4de2ad*/
+  v38[0] = (unsigned int)(v14); /*0x4de2ad*/
   v16 = *(unsigned int *)((*(int (**)(unsigned int *))(v15 + 132))(v7) + 1460); /*0x4de2b7*/
   if ( v16 == 6 ) /*0x4de2c0*/
   {
@@ -685,7 +685,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   v41 = Cell::GetGroundHeight(v40); /*0x4de388*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v40)->flags[0] & 0x100) != 0 ) /*0x4de39a*/
     v41 += (int)((char *)&FootClass_Array); /*0x4de3a7*/
-  IsPassable = Cell::IsPassable(v40); /*0x4de3b5*/
+  IsPassable = Cell::IsPassable((IUnknown *)(v40)); /*0x4de3b5*/
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
     if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3372) /*0x4de3f7*/
@@ -755,7 +755,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
                      0);
 LABEL_32:
     v27 = *v24; /*0x4de52d*/
-    *(unsigned int *)v34 = v27; /*0x4de52f*/
+    *(unsigned int *)v34 = (unsigned int)(v27); /*0x4de52f*/
     goto LABEL_34; /*0x4de533*/
   }
   v27 = *(void **)v34; /*0x4de535*/

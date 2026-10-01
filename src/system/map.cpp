@@ -73,7 +73,7 @@ MapClass::MapClass() noexcept
 
 CellClass* MapClass::TryGetCellAt(const CellStruct& map_coords) const
 {
-    int idx = GetCellIndex(map_coords);
+    int idx = GetCellIndex((const gamemd::CellStruct &)(map_coords));
     if (idx >= 0 && idx < cellsCount && cells)
         return cells[idx];
     return nullptr;
@@ -87,7 +87,7 @@ CellClass* MapClass::TryGetCellAt(const CoordStruct& crd) const
 
 CellClass* MapClass::GetCellAt(const CellStruct& map_coords) const
 {
-    return cells[GetCellIndex(map_coords)];
+    return cells[GetCellIndex((const gamemd::CellStruct &)(map_coords))];
 }
 
 CellClass* MapClass::GetCellAt(const CoordStruct& crd) const
@@ -98,7 +98,7 @@ CellClass* MapClass::GetCellAt(const CoordStruct& crd) const
 
 bool MapClass::CellExists(const CellStruct& map_coords) const
 {
-    int idx = GetCellIndex(map_coords);
+    int idx = GetCellIndex((const gamemd::CellStruct &)(map_coords));
     return idx >= 0 && idx < cellsCount && cells && cells[idx] != nullptr;
 }
 

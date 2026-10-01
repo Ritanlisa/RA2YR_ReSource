@@ -461,17 +461,17 @@ int TeamClass::FindByMemberType(int a2)
             ((Color *)(v22))->Lerp(0x50u, &byte_A83CD9); /*0x635b0d*/
             v15 = (BYTE1(v22[0].Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635b45*/
                 | (BYTE2(v22[0].Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-            Color_field_00 = v22[0].Color_field_00; /*0x635b47*/
+            Color_field_00 = (uint8_t)(v22[0].Color_field_00); /*0x635b47*/
             goto LABEL_19; /*0x635b4b*/
           }
-          uniqueId = v22[0].Color_field_00; /*0x635ab6*/
+          uniqueId = (int)(v22[0].Color_field_00); /*0x635ab6*/
         }
         ++v6; /*0x635aba*/
       }
       while ( v6 < uniqueId ); /*0x635abd*/
       if ( !v5 ) /*0x635b52*/
         return -1; /*0x635b52*/
-      v17 = ((unsigned int *)v5)[0]; /*0x635b61*/
+      v17 = (gamemd::HouseClass *)(((unsigned int *)v5)[0]); /*0x635b61*/
       Object_field_0x30 = (void *)v17->relatedTagsCount; /*0x635b67*/
       if ( (uint8_t)House::IsHumanPlayer((House *)v17) ) /*0x635b6a*/
       {
@@ -484,7 +484,7 @@ int TeamClass::FindByMemberType(int a2)
       ((Color *)(v22))->Lerp(0x64u, (uint8_t *)&stru_A80220); /*0x635ba7*/
       v15 = (BYTE1(v22[0].Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635bdf*/
           | (BYTE2(v22[0].Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-      Color_field_00 = v22[0].Color_field_00; /*0x635be1*/
+      Color_field_00 = (uint8_t)(v22[0].Color_field_00); /*0x635be1*/
 LABEL_19:
       result = (Color_field_00 >> g_BitShift_Green_0 << g_BitShift_Red) | v15; /*0x635be5*/
       *(unsigned int *)(v20 + 116) = result; /*0x635c01*/
@@ -528,13 +528,13 @@ int TeamClass::GetMember(void *a1, void *a2)
     {
       do /*0x635c56*/
       {
-        v6 = (gamemd::HouseClass *)(*((unsigned int *)((unsigned int *)this)[0] + v5)); /*0x635c36*/
+        v6 = (int)((gamemd::HouseClass *)(*((unsigned int *)((unsigned int *)this)[0] + v5))); /*0x635c36*/
         if ( *(unsigned char *)(v6 + 12) ) /*0x635c39*/
         {
           v4 = *(BuildingClass **)v6; /*0x635c40*/
           if ( !*(unsigned char *)(BuildingClass::GetType(*(BuildingClass **)v6) + 152) ) /*0x635c51*/
           {
-            owner = ((unsigned int *)v4)[0]; /*0x635c71*/
+            owner = (gamemd::HouseClass *)(((unsigned int *)v4)[0]); /*0x635c71*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635c73*/
             if ( (uint8_t)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635c86*/
               relatedTagsCount = dword_A83D4C->Object_field_0x30; /*0x635c88*/
@@ -544,7 +544,7 @@ int TeamClass::GetMember(void *a1, void *a2)
             ((Color *)(&v15))->Lerp(0x50u, &byte_A83CD9); /*0x635cb4*/
             v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635cec*/
                 | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-            Color_field_00 = v15.Color_field_00; /*0x635cee*/
+            Color_field_00 = (uint8_t)(v15.Color_field_00); /*0x635cee*/
             goto LABEL_16; /*0x635cf2*/
           }
         }
@@ -553,7 +553,7 @@ int TeamClass::GetMember(void *a1, void *a2)
       while ( v5 < uniqueId ); /*0x635c56*/
       if ( !v4 ) /*0x635c5a*/
         return -1; /*0x635c5a*/
-      v12 = ((unsigned int *)v4)[0]; /*0x635cf7*/
+      v12 = (gamemd::HouseClass *)(((unsigned int *)v4)[0]); /*0x635cf7*/
       Object_field_0x30 = (void *)v12->relatedTagsCount; /*0x635cfd*/
       if ( (uint8_t)House::IsHumanPlayer((House *)v12) ) /*0x635d00*/
       {
@@ -566,7 +566,7 @@ int TeamClass::GetMember(void *a1, void *a2)
       ((Color *)(&v15))->Lerp(0x64u, (uint8_t *)&stru_A80220); /*0x635d3d*/
       v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635d75*/
           | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-      Color_field_00 = v15.Color_field_00; /*0x635d77*/
+      Color_field_00 = (uint8_t)(v15.Color_field_00); /*0x635d77*/
 LABEL_16:
       result = (Color_field_00 >> g_BitShift_Green_0 << g_BitShift_Red) | v10; /*0x635d7b*/
       *((unsigned int *)this + 43) = result; /*0x635d93*/
@@ -627,7 +627,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   for ( i = 0; i < (int)vtable0; ++i ) /*0x63613d*/
   {
     v4 = *((unsigned int *)((unsigned int *)this)[0] + v3); /*0x636148*/
-    Value = Array::FindValue((IUnknown *)((Array *)v4), (int)this->AbstractClass); /*0x636150*/
+    Value = Array::FindValue((int)((IUnknown *)((Array *)v4)), (int)this->AbstractClass); /*0x636150*/
     if ( Value == -1 ) /*0x636158*/
       v6 = 0; /*0x63615a*/
     else
@@ -658,9 +658,9 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       {
         ((FactoryClass *)((FactoryClass *)v4))->ClearObjects(); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
-        *(unsigned int *)(v4 + 32) = &vt_VectorClass; /*0x636206*/
+        *(unsigned int *)(v4 + 32) = (unsigned int)(&vt_VectorClass); /*0x636206*/
         VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
-        *(unsigned int *)v4 = &vt_VectorClass; /*0x636213*/
+        *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
@@ -695,7 +695,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       }
     }
   }
-  result = (*((int (**)(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x6362e3*/
+  result = (*((int ((void **)(**))(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x6362e3*/
   this->countObjects[1] = -1; /*0x6362e6*/
   this->countObjects[2] = -1; /*0x6362ec*/
   this->countObjects[3] = -1; /*0x6362f2*/
@@ -743,13 +743,13 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
   result = BuildingClass::GetType((BuildingClass *)aP1); /*0x6367c4*/
   if ( result ) /*0x6367cb*/
   {
-    result = aP2; /*0x6367d1*/
-    v27 = aP2; /*0x6367e1*/
+    result = (int)(aP2); /*0x6367d1*/
+    v27 = (int)(aP2); /*0x6367e1*/
     if ( aP2 < aP2 + aP3 ) /*0x6367eb*/
     {
       while ( 1 ) /*0x6367fa*/
       {
-        vtable2 = ((unsigned int *)v4)[0]; /*0x6367fa*/
+        vtable2 = (unsigned int *)(((unsigned int *)v4)[0]); /*0x6367fa*/
         vtable0 = v4->AbstractClass; /*0x636801*/
         v8 = vtable2[v27]; /*0x636803*/
         v9 = 0; /*0x636806*/

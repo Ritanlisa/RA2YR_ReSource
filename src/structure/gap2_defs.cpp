@@ -58,13 +58,13 @@ int InfantryClass::PerFrameUpdate() {
           if ( v8 >= v10 ) /*0x517d0f*/
             goto LABEL_11; /*0x517d0f*/
         }
-        Power::ChangedHouse((Power *)(v2 + 336), 1); /*0x517d1b*/
+        Power::ChangedHouse((char)((Power *)(v2 + 336)), 1); /*0x517d1b*/
       }
     }
   LABEL_11:
     v12 = *(unsigned int *)(v2 + 540); /*0x517d20*/
     if ( v12 && v12->barracksInfiltrated && *(unsigned char *)(*(unsigned int *)(v2 + 1728) + 3214) ) /*0x517d3a*/
-      Power::ChangedHouse((Power *)(v2 + 336), 1); /*0x517d4c*/
+      Power::ChangedHouse((char)((Power *)(v2 + 336)), 1); /*0x517d4c*/
     result = *(unsigned int **)(v2 + 1728); /*0x517d51*/
     *(unsigned int *)(v2 + 108) = result[40]; /*0x517d5d*/
     *(unsigned int *)(v2 + 112) = result[40]; /*0x517d66*/
@@ -91,7 +91,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   unsigned int *v12; // edx
 
   FootClass::Construct((unsigned int *)this, (int)a2); /*0x413d2b*/
-  this->Type = a1; /*0x413d3a*/
+  this->Type = (gamemd::AircraftTypeClass *)(a1); /*0x413d3a*/
   this->AircraftClass_field_bool_6C8 = 0; /*0x413d40*/
   this->HasPassengers = 0; /*0x413d47*/
   this->IsKamikaze = 0; /*0x413d4e*/
@@ -102,21 +102,21 @@ int AircraftClass::Construct(int a1, void* a2) {
   this->AircraftClass_field_char_6D3 = 5; /*0x413d74*/
   this->AircraftClass_field_bool_6D4 = 1; /*0x413d7b*/
   this->AircraftClass_field_bool_6D5 = (unsigned int)(1); /*0x413d81*/
-  *(unsigned int *)this = (void *)&AircraftClass_vftable; /*0x413d87*/
+  *(unsigned int *)this = (unsigned int)((void *)&AircraftClass_vftable); /*0x413d87*/
   this->vtable2 = (void *)&AircraftClass_vftable; /*0x413d8d*/
   this->vtable3 = (void *)&AircraftClass_vftable; /*0x413d94*/
   this->vtable4 = (void *)&AircraftClass_vftable; /*0x413d9b*/
   this->vtable5 = (void *)&AircraftClass_vftable; /*0x413da2*/
   this->vtable2.GenerateUniqueID(); /*0x413dac*/
-  v4 = this->Type; /*0x413db1*/
+  v4 = (int)(this->Type); /*0x413db1*/
   if ( v4 ) /*0x413db9*/
   {
     v5 = (unsigned int *)(&this->airstrike2); /*0x413dbb*/
-    v6 = (int)((const IID *)(v4 + 844)); /*0x413dc1*/
-    v7 = this->locomotor; /*0x413dc7*/
+    v6 = (const IID *)((int)((const IID *)(v4 + 844))); /*0x413dc1*/
+    v7 = (int)(this->locomotor); /*0x413dc7*/
     if ( v7 ) /*0x413dcb*/
       (*(void ((unsigned int)(**))(unsigned int))(*(unsigned int *)v7 + 8))(this->locomotor); /*0x413dd0*/
-    if ( CoCreateInstance((const IID &)(v6), 0, 7u, &riid, (LPVOID *)&a2) >= 0 ) /*0x413dea*/
+    if ( CoCreateInstance((const IID &)(v6), 0, 7u,(const IID &)(&riid), (LPVOID *)&a2) >= 0 ) /*0x413dea*/
     {
       if ( OleRun(a2) >= 0 ) /*0x413df9*/
         a2->lpVtbl->QueryInterface(a2, &stru_817BB0, (void **)(&this->airstrike2)); /*0x413e08*/
@@ -136,7 +136,7 @@ int AircraftClass::Construct(int a1, void* a2) {
          0) )
   {
     v8 = (unsigned int)(g_AircraftClassCount++); /*0x413e76*/
-    *((unsigned int *)dword_A8E394 + v8) = this; /*0x413e85*/
+    *((unsigned int *)dword_A8E394 + v8) = (unsigned int)(this); /*0x413e85*/
   }
   a2 = (IUnknown *)this->vtable2.GetVtable3(); /*0x413e94*/
   if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x413ea0*/
@@ -151,12 +151,12 @@ int AircraftClass::Construct(int a1, void* a2) {
   {
     v9 = 10; /*0x413eaa*/
   }
-  v10 = RA2_OPNEW(8 * (g_BuildingLoadQueue_Capacity + v9)); /*0x413ecb*/
+  v10 = (unsigned int *)(RA2_OPNEW(8 * (g_BuildingLoadQueue_Capacity + v9))); /*0x413ecb*/
   if ( v10 ) /*0x413ed2*/
   {
     for ( i = 0; i < (int)g_BuildingLoadQueue_Count; v10[2 * i - 1] = v12[1] ) /*0x413ee7*/
     {
-      v12 = (char *)v10 + 8 * i++; /*0x413eef*/
+      v12 = (unsigned int *)((char *)v10 + 8 * i++); /*0x413eef*/
       v10[2 * i - 2] = *v12; /*0x413ef5*/
     }
     RA2_OPDEL(v10); /*0x413f10*/
@@ -165,7 +165,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     g_BuildingLoadQueue_Active = 0; /*0x413f2a*/
   LABEL_25:
     *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count) = (unsigned int)(a2); /*0x413f34*/
-    *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count + 1) = this; /*0x413f52*/
+    *((unsigned int *)v10 + 2 * g_BuildingLoadQueue_Count + 1) = (unsigned int)(this); /*0x413f52*/
     g_BuildingLoadQueue_Dirty = 0; /*0x413f5c*/
     ++g_BuildingLoadQueue_Count; /*0x413f63*/
   }
@@ -249,7 +249,7 @@ void* BuildingLightClass::CTOR(int a1) {
     v37 = a1->q0A0; /*0x435940*/
     v30 = g_RulesClass_Instance->BuildPower[1]; /*0x43594d*/
     v38 = (unsigned int *)(a1->q0A4); /*0x435951*/
-    Value = ProgressTimer::GetValue((unsigned short *)(a1 + 904), (unsigned int *)&v34 + 1); /*0x435967*/
+    Value = (unsigned int *)(ProgressTimer::GetValue((unsigned short *)(a1 + 904), (unsigned int *)&v34 + 1)); /*0x435967*/
     v38 = v38; /*0x43597d*/
     v6 = (double)(*(int16_t *)Value - 0x3FFF) * -0.00009587672516830327; /*0x435998*/
     v31 = (double)v30; /*0x43599a*/

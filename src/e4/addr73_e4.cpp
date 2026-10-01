@@ -78,7 +78,7 @@ AbstractClass * * ProcessSelectionExperience()
   char v14; // [esp+13h] [ebp-5h]
   unsigned int v15;
 
-  IDA_LOBYTE(v1) = (gamemd::AbstractClass **)((unsigned char)dword_A8ECC8); /*0x730af3*/
+  IDA_LOBYTE(v1) = (unsigned char)((gamemd::AbstractClass **)((unsigned char)dword_A8ECC8)); /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)dword_A8ECC8 <= 0 ) /*0x730b03*/
     return v1; /*0x730b03*/
@@ -524,7 +524,7 @@ void SelectAllOfType()
       {
         v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v2); /*0x7329d7*/
         if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x7329db*/
-          ((DynamicVector *)((DynamicVector *)v4))->AddItem(&v23); /*0x7329eb*/
+          ((DynamicVector *)((DynamicVector *)v4))->AddItem((unsigned int *)(&v23)); /*0x7329eb*/
         ++v2; /*0x7329f0*/
       }
       while ( v2 < v5 ); /*0x7329f3*/
@@ -554,7 +554,7 @@ void SelectAllOfType()
       {
         v23 = CoordDataMap; /*0x732a58*/
         if ( (uint8_t)((TechnoClass *)(CoordDataMap))->IsOwnedByHuman() ) /*0x732a5c*/
-          ((DynamicVector *)((DynamicVector *)v8))->AddItem(&v23); /*0x732a6c*/
+          ((DynamicVector *)((DynamicVector *)v8))->AddItem((unsigned int *)(&v23)); /*0x732a6c*/
       }
     }
     v12 = 0; /*0x732a79*/

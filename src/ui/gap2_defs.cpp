@@ -72,7 +72,7 @@ int MouseClass::selectCursor(int a2, int * a3) {
   {
     IDA_LOBYTE(this->m_C) = (unsigned int *)(0); /*0x40d732*/
     if ( a3 ) /*0x40d738*/
-      v4 = a3; /*0x40d74e*/
+      v4 = (unsigned int *)(a3); /*0x40d74e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x40d74a*/
     IDA_LOBYTE(this->m_C) = 1; /*0x40d752*/
@@ -165,10 +165,10 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
   v17 = 0; /*0x433f62*/
   if ( !MaxMessageCount ) /*0x433f66*/
     return 0; /*0x433f66*/
-  v8 = a1; /*0x433f6c*/
+  v8 = (unsigned short *)(a1); /*0x433f6c*/
   if ( !a1 ) /*0x433f72*/
     return 0; /*0x434092*/
-  v9 = *a1; /*0x433f7a*/
+  v9 = (uint16_t)(*a1); /*0x433f7a*/
   if ( *a1 ) /*0x433f7a*/
   {
     while ( 1 ) /*0x433f99*/
@@ -183,7 +183,7 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
         v11 = *(uint16_t *)(MaxMessageCount[6] + 2 * v9); /*0x433fae*/
         if ( (unsigned short)v11 ) /*0x433fb4*/
           ScrollOffset = (uint8_t *)(MaxMessageCount[7] + (v11 - 1) * MaxMessageCount[5]); /*0x433fbd*/
-        v8 = a1; /*0x433fc0*/
+        v8 = (unsigned short *)(a1); /*0x433fc0*/
         if ( ScrollOffset || (ScrollOffset = (uint8_t *)this->ScrollOffset) != 0 ) /*0x433fd1*/
           v6 += *ScrollOffset + this->MessageRect[3]; /*0x433fe0*/
       }
@@ -238,13 +238,13 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
   v6 = CellClass::DrawWithFlags((ListClass *)this, a1, a2, 0); /*0x4884cb*/
   if ( (a1 & 1) != 0 ) /*0x4884cd*/
   {
-    Clamped = Array::GetClamped((ListClass *)this, this->u32_16C); /*0x4884d8*/
+    Clamped = Array::GetClamped((int)((ListClass *)this), this->u32_16C); /*0x4884d8*/
     if ( Clamped ) /*0x4884df*/
       v8 = *(unsigned char *)(Clamped + 4); /*0x4884e1*/
     else
       v8 = 0; /*0x4884e6*/
     v9 = v8 == 0; /*0x4884f3*/
-    v10 = Array::GetClamped((ListClass *)this, this->u32_16C); /*0x4884f6*/
+    v10 = Array::GetClamped((int)((ListClass *)this), this->u32_16C); /*0x4884f6*/
     if ( v10 ) /*0x4884fd*/
     {
       if ( *(unsigned char *)(v10 + 4) != v9 ) /*0x488502*/
@@ -292,7 +292,7 @@ void* CheckListClass::QueryInterface(int a2) {
 // 0x4B4FB0
 namespace gamemd { 
 int DropListClass::SetFocus(void* a1) {
-  wcsncpy((wchar_t *)this->DropListClass_field_0x34,(const wchar_t *)(a1), this->DropListClass_field_0x38); /*0x4b4fc1*/
+  wcsncpy((wchar_t *)this->DropListClass_field_0x34,(const wchar_t *)(a1),(size_t)(this->DropListClass_field_0x38)); /*0x4b4fc1*/
   (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b4fcd*/
   return (*(int (**)(char *, wchar_t *))(this->q02C + 136))((char *)this + 176, a1); /*0x4b4fe3*/
 }
@@ -314,7 +314,7 @@ namespace gamemd {
 int DropListClass::AddItem() {
   char result; // al
 
-  result = this->DropListClass_field_0x48; /*0x4b50a3*/
+  result = (char)(this->DropListClass_field_0x48); /*0x4b50a3*/
   if ( result ) /*0x4b50a8*/
   {
     result = (*(int (**)(char *))(this->q02C + 36))((char *)&this->q0446); /*0x4b50b6*/
@@ -342,18 +342,18 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
     if ( IDA_LOBYTE(this->DropListClass_field_0x48) ) /*0x4b50da*/
     {
       (*(void (**)(char *))(this->q02C + 36))((char *)&this->q0446); /*0x4b50ed*/
-      DropListClass_field_0x24 = this->DropListClass_field_0x24; /*0x4b50f0*/
+      DropListClass_field_0x24 = (int)(this->DropListClass_field_0x24); /*0x4b50f0*/
       IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50f3*/
       IDA_BYTE1(DropListClass_field_0x24) |= 0x80u; /*0x4b50f7*/
-      *a2 = DropListClass_field_0x24; /*0x4b50fa*/
+      *a2 = (void *)(DropListClass_field_0x24); /*0x4b50fa*/
     }
     else
     {
-      DropListClass_field_0x10 = this->DropListClass_field_0x10; /*0x4b5101*/
-      DropListClass_field_0x14 = this->DropListClass_field_0x14; /*0x4b5104*/
+      DropListClass_field_0x10 = (int)(this->DropListClass_field_0x10); /*0x4b5101*/
+      DropListClass_field_0x14 = (int)(this->DropListClass_field_0x14); /*0x4b5104*/
       v8 = this->q02C; /*0x4b5108*/
       this->u32_BC = this->DropListClass_field_0x0C; /*0x4b510e*/
-      DropListClass_field_0x4C = this->DropListClass_field_0x4C; /*0x4b5114*/
+      DropListClass_field_0x4C = (int)(this->DropListClass_field_0x4C); /*0x4b5114*/
       this->q030 = DropListClass_field_0x10 + 18; /*0x4b511b*/
       v10 = *(unsigned int *)this->__pad_0; /*0x4b5121*/
       this->u32_C8 = DropListClass_field_0x4C; /*0x4b5129*/

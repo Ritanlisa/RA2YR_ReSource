@@ -254,23 +254,23 @@ LABEL_26:
     v10 = v9; /*0x5eb29a*/
     if ( v9 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eb29c*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0, g_Str_File_netshare_cpp, 5436));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const char *)(g_Str_File_netshare_cpp), 5436));
     }
     else if ( v9 == (wchar_t *)g_Lobby_PlayerCount ) /*0x5eb2ba*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Closed), 0, g_Str_File_netshare_cpp, 5438));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Closed), 0,(const char *)(g_Str_File_netshare_cpp), 5438));
     }
     else if ( v9 == (wchar_t *)g_Lobby_PlayerTeam ) /*0x5eb2d8*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0, g_Str_File_netshare_cpp, 5440));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0,(const char *)(g_Str_File_netshare_cpp), 5440));
     }
     else if ( v9 == (wchar_t *)g_Lobby_PlayerSide ) /*0x5eb2f3*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0, g_Str_File_netshare_cpp, 5442));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0,(const char *)(g_Str_File_netshare_cpp), 5442));
     }
     else if ( v9 == (wchar_t *)g_Lobby_PlayerColor ) /*0x5eb30e*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0, g_Str_File_netshare_cpp, 5444));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0,(const char *)(g_Str_File_netshare_cpp), 5444));
     }
     else if ( v9 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x5eb329*/
     {
@@ -280,7 +280,7 @@ LABEL_26:
     {
       if ( v9 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5eb344*/
         goto LABEL_79; /*0x5eb344*/
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_OpenObserver), 0, g_Str_File_netshare_cpp, 5448)); /*0x5eb357*/
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_OpenObserver), 0,(const char *)(g_Str_File_netshare_cpp), 5448)); /*0x5eb357*/
     }
     v10 = StringCSF; /*0x5eb35c*/
 LABEL_79:
@@ -290,7 +290,7 @@ LABEL_79:
        || v9 == (wchar_t *)g_Lobby_PlayerColor)
       && !v33 )
     {
-      v10 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0, g_Str_File_netshare_cpp, 5455));
+      v10 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const char *)(g_Str_File_netshare_cpp), 5455));
     }
     ((WideString *)((wchar_t **)&v38))->Assign(v10); /*0x5eb39f*/
     v12 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5eb3a9*/
@@ -344,29 +344,29 @@ LABEL_79:
           }
           if ( (int)v36 < v17 ) /*0x5eb4ac*/
           {
-LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0, g_Str_File_netshare_cpp, 5479));
+LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const char *)(g_Str_File_netshare_cpp), 5479));
             v20 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19); /*0x5eb4cd*/
             SendMessageA(DlgItem, 0x151u, v20, g_HouseClass_ObserverFlags); /*0x5eb4dd*/
           }
         }
         if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb4e5*/
         {
-          v21 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_OpenObserver), 0, g_Str_File_netshare_cpp, 5489));
+          v21 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_OpenObserver), 0,(const char *)(g_Str_File_netshare_cpp), 5489));
           v22 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21); /*0x5eb506*/
           SendMessageA(DlgItem, 0x151u, v22, g_Lobby_MaxPlayers); /*0x5eb516*/
         }
-        v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Closed), 0, g_Str_File_netshare_cpp, 5496));
+        v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Closed), 0,(const char *)(g_Str_File_netshare_cpp), 5496));
         v24 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23); /*0x5eb537*/
         SendMessageA(DlgItem, 0x151u, v24, g_Lobby_PlayerCount); /*0x5eb547*/
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
-          v25 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0, g_Str_File_netshare_cpp, 5504));
+          v25 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0,(const char *)(g_Str_File_netshare_cpp), 5504));
           v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
           SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
-          v27 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0, g_Str_File_netshare_cpp, 5510)); /*0x5eb5a3*/
+          v27 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0,(const char *)(g_Str_File_netshare_cpp), 5510)); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
           SendMessageA(DlgItem, 0x151u, v28, g_Lobby_PlayerSide); /*0x5eb5c1*/
-          v29 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0, g_Str_File_netshare_cpp, 5516)); /*0x5eb5d4*/
+          v29 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0,(const char *)(g_Str_File_netshare_cpp), 5516)); /*0x5eb5d4*/
           v30 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v29); /*0x5eb5e2*/
           SendMessageA(DlgItem, 0x151u, v30, g_Lobby_PlayerColor); /*0x5eb5f2*/
         }
@@ -527,7 +527,7 @@ int Lobby::BuildPlayerList()
   char *v5; // eax
   ObjectClass v7; // [esp+8h] [ebp-110h] BYREF
 
-  strcpy((char *)&((char *)&v7), asc_84A480); /*0x77dbb5*/
+  strcpy((char *)&((char *)&v7),(const char *)(asc_84A480)); /*0x77dbb5*/
   v1 = (wchar_t **)dword_A8DA90; /*0x77dbbe*/
   do /*0x77dc6e*/
   {

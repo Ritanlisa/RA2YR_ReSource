@@ -53,7 +53,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   CHAR lParam[1024]; // [esp+20h] [ebp-400h] BYREF
 
   v4 = 0; /*0x6149bd*/
-  lpWideCharStr = a2; /*0x6149c3*/
+  lpWideCharStr = (LPWSTR)(a2); /*0x6149c3*/
   hWnda = hWnd; /*0x6149c7*/
   if ( dword_AC1B4C ) /*0x6149cb*/
   {
@@ -80,7 +80,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   if ( a4 ) /*0x614a37*/
     v8 = (unsigned int)CallWindowProcA(v4, hWnda, 0xB0u, (WPARAM)&wParam, (LPARAM)&v22) >> 16; /*0x614a52*/
   v9 = lpWideCharStr; /*0x614a5c*/
-  v19 = lpWideCharStr; /*0x614a61*/
+  v19 = (gamemd::WCHAR *)(lpWideCharStr); /*0x614a61*/
   *lpWideCharStr = 0; /*0x614a6d*/
   MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/

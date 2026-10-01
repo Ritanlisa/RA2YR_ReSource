@@ -286,7 +286,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/
     if ( !*(unsigned char *)(k + 284) && Cell::IsEmpty((unsigned int *)k) ) /*0x578fa1*/
-      v2 = (char)(Terrain::SelectTileType((gamemd::Random *)(k), aP1)); /*0x578fb5*/
+      v2 = (char)(Terrain::SelectTileType((gamemd::Random *)(k),(IUnknown *)(aP1))); /*0x578fb5*/
   }
   dword_880990 = 0; /*0x578fcd*/
   if ( dword_88098C ) /*0x578fd5*/
@@ -739,25 +739,25 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
     v13 = (TerrainMask & 4) != 0 ? 5 : 29;
   }
   LABEL_71:
-  v26 = a3; /*0x57b12d*/
+  v26 = (gamemd::Cell *)(a3); /*0x57b12d*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
   v27 = *(unsigned int *)&a3->__pad_1C[8]; /*0x57b149*/
   v28 = g_MissionQueueFrame.briefing[v13 + 71]; /*0x57b14c*/
   v29 = IDA_HIWORD(g_MissionQueueFrame.briefing[v13 + 71]); /*0x57b154*/
   IDA_LOWORD(a3) = v27 + v28; /*0x57b168*/
   IDA_HIWORD(a3) = IDA_HIWORD(v27) + v29; /*0x57b16d*/
-  v39[0] = a3; /*0x57b17e*/
+  v39[0] = (unsigned int)(a3); /*0x57b17e*/
   ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&v40, v39); /*0x57b189*/
   IDA_LOBYTE(a3) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {
-    GenerateTerrainMap(0, 0, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1b7*/
+    GenerateTerrainMap(0, 0,(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]), a5, &a3, a6); /*0x57b1b7*/
   }
   else
   {
     if ( a4 != 2 ) /*0x57b1bc*/
       return 1; /*0x57b1bc*/
-    GenerateTerrainMap(dword_ABAD28, dword_ABAD28 + 41, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
+    GenerateTerrainMap((gamemd::MouseClass *)(dword_ABAD28), dword_ABAD28 + 41, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
   }
   return (unsigned char)a3 != 0; /*0x57b1ee*/
 }

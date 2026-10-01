@@ -79,7 +79,7 @@ namespace gamemd {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
 
-  RadioClass::SaveState((int *)((RadioClass *)a0), (int *)aP1, a3); /*0x70c25f*/
+  RadioClass::SaveState((int *)((RadioClass *)a0),(gamemd::RadioClass *)((int *)aP1), a3); /*0x70c25f*/
   return 0; /*0x70c266*/
 
 }

@@ -138,7 +138,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = INIClass::GetString((gamemd::INIClass *)(a1), g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
+      result = INIClass::GetString((gamemd::INIClass *)(a1),(unsigned char *)(g_INI_Key_TaskForces), StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
@@ -188,7 +188,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
   *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
   *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block), 1); /*0x6e8811*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(gamemd::AbstractClass *)(1)); /*0x6e8811*/
   v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
   v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
@@ -314,7 +314,7 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); /*0x6e868f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
   return result; /*0x6e869a*/
@@ -331,7 +331,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
   int *v3; // esi
   int v4; // edi
 
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x6e86ab*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0),(gamemd::AbstractClass *)(aP1)); /*0x6e86ab*/
   if ( result >= 0 ) /*0x6e86b2*/
   {
     if ( aP0 ) /*0x6e86b6*/

@@ -265,7 +265,7 @@ AbstractClass * * HandleWOLForwardingError()
             ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x793596*/
                         ((Debug *)0)->Log();
             v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
-            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkLocalPr), 0, g_Str_File_wonline_cpp, 18850));
+            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkLocalPr), 0,(const char *)(g_Str_File_wonline_cpp), 18850));
   LABEL_19:
             swprintf(Buffer, (const size_t)StringCSF, v11); /*0x7935c8*/
             Dialog::ShowMessage(-1, (size_t)Buffer); /*0x7935df*/
@@ -275,7 +275,7 @@ AbstractClass * * HandleWOLForwardingError()
             if ( v7 == v3 ) /*0x7935f0*/
             {
                             ((Debug *)0)->Log();
-              v12 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward), 0, g_Str_File_wonline_cpp, 18861));
+              v12 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward), 0,(const char *)(g_Str_File_wonline_cpp), 18861));
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
@@ -283,7 +283,7 @@ AbstractClass * * HandleWOLForwardingError()
               ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x79362a*/
                             ((Debug *)0)->Log();
               v13 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
-              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward_0), 0, g_Str_File_wonline_cpp, 18864));
+              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward_0), 0,(const char *)(g_Str_File_wonline_cpp), 18864));
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
               Dialog::ShowMessage(-1, (size_t)Buffer); /*0x793674*/
             }
@@ -628,7 +628,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     {
       ((Debug *)0)->Log(); /*0x79420e*/
       *(&dword_A8E2B2 + v12) = (unsigned int)(dword_A8E050[v3]); /*0x79421e*/
-      Network::SetPort((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40)), dword_A8E050[v3]); /*0x79423b*/
+      Network::SetPort((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40)),(void *)(dword_A8E050[v3])); /*0x79423b*/
       Network::SetPort((Network *)(dword_A8DA90[v3] + 40), dword_A8E050[v3]); /*0x794253*/
       memset(v98, 0, sizeof(v98)); /*0x794266*/
       v99 = 0; /*0x794268*/

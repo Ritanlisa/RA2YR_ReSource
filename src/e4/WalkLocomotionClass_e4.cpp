@@ -152,7 +152,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v14 = (int *)(*(unsigned int *)(v13 + 4));
             v20[0] = (int)((int *)(*(unsigned int *)v13));
             v20[1] = (int)((int *)(v14));
-            v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1));
+            v15 = (int *)(WalkLocomotion::TransformCoords((gamemd::ObjectClass *)((WalkLocomotion *)&v4[-1].Piggybackee), v21, v20, (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             location = (int *)(((unsigned int *)v4)[0]); /*0x6a401e*/

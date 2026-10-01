@@ -185,7 +185,7 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
-          v15 = EventClass::AddEvent((int)(v29), *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
+          v15 = (char *)(EventClass::AddEvent((int)(v29), *((unsigned int *)dword_A83D4C + 12),(void *)(0x1Du))); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -234,7 +234,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19)); /*0x4f15c6*/
+            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u), (int)v19)); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             ((Debug *)this)->Log(); /*0x4f15dc*/
           }
@@ -252,7 +252,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12), 0xDu, v22)); /*0x4f166f*/
+            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu), v22)); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -337,7 +337,7 @@ AbstractClass * * Options::Screen_Save()
       v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
-      Theme::QueueSong((gamemd::IUnknown *)((int)&unk_A83D10), v10); /*0x55fbfa*/
+      Theme::QueueSong((gamemd::IUnknown *)((int)&unk_A83D10),(void *)(v10)); /*0x55fbfa*/
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x55fc06*/
     }
   }
@@ -631,11 +631,11 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   int v20; // [esp+28h] [ebp-8h]
   int v21; // [esp+2Ch] [ebp-4h]
 
-  v2 = (unsigned int)(aP1); /*0x6255f5*/
-  v3 = (void **)((int *)this); /*0x6255fb*/
-  v4 = (void *)(0); /*0x625600*/
-  *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
-  v5 = &this->field_8; /*0x625607*/
+  v2 = (unsigned int *)((unsigned int)(aP1)); /*0x6255f5*/
+  v3 = (int *)((void **)((int *)this)); /*0x6255fb*/
+  v4 = (int)((void *)(0)); /*0x625600*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(*aP1); /*0x625602*/
+  v5 = (void **)(&this->field_8); /*0x625607*/
   this->field_4 = (void *)aP1[1]; /*0x62560a*/
   this->field_8 = 0; /*0x625615*/
   this->field_C = 0; /*0x625617*/
@@ -659,7 +659,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       v7 += 24; /*0x625660*/
     }
     while ( v4 < (int)*v5 ); /*0x625665*/
-    v2 = aP1; /*0x625667*/
+    v2 = (unsigned int *)(aP1); /*0x625667*/
     v3 = (int *)this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
@@ -694,11 +694,11 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       ++v10; /*0x625739*/
       *v5 = (char *)*v5 + 1; /*0x62573a*/
       v11 = v16 + 24; /*0x625740*/
-      v9 = aP1[2]; /*0x625743*/
+      v9 = (int)(aP1[2]); /*0x625743*/
       v16 += 24; /*0x625746*/
       if ( v10 >= v9 ) /*0x62574c*/
         break; /*0x62574c*/
-      v2 = aP1; /*0x62568a*/
+      v2 = (unsigned int *)(aP1); /*0x62568a*/
     }
     v3 = (int *)this; /*0x625752*/
   }
@@ -728,7 +728,7 @@ int Options::SaveOptionValue()
   v5 = (void *)__2_YAPAXI_Z(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = v5; /*0x625a64*/
-  v6 = this->field_8; /*0x625a6a*/
+  v6 = (void *)(this->field_8); /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
   __3_YAXPAX_Z(this->field_8); /*0x625a8d*/

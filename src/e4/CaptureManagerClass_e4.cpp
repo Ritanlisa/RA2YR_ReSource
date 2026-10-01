@@ -362,7 +362,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       v25 = v23[1]; /*0x471f06*/
       v26 = v22 + v23[2]; /*0x471f11*/
       v32 = v24; /*0x471f13*/
-      v33 = (gamemd::BuildingClass *)(v25); /*0x471f17*/
+      v33 = (int)((gamemd::BuildingClass *)(v25)); /*0x471f17*/
       v34 = v26; /*0x471f1b*/
       v27 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x471f1f*/
       if ( v27 ) /*0x471f29*/
@@ -551,7 +551,7 @@ LABEL_7:
             v19 = *(unsigned int *)(v12 + 988) + v11; /*0x472245*/
             v16 = 0; /*0x472251*/
             v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))(v13); /*0x472264*/
-            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]), v14[2], (int)va, -1 - v21 % 5, 0, 0)); /*0x472282*/
+            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]),(void *)(v14[2]), (int)va, -1 - v21 % 5, 0, 0)); /*0x472282*/
           }
         }
       }
@@ -644,7 +644,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
     {
       __asm { fild dword ptr [ebx+6Ch] } /*0x472497*/
       __asm { fstp [esp+20h+var_8] }
-      _EAX = (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x4724a2*/
+      _EAX = (unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX)); /*0x4724a2*/
       __asm { fild dword ptr [eax+0A0h] } /*0x4724a8*/
       _ESI = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4724ae*/
       __asm /*0x4724b4*/

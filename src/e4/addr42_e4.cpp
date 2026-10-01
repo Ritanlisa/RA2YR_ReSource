@@ -220,7 +220,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v6 = (int *)(v51 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0);
         v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
         v51 = (int *)(dword_886FA4 + v6);
-        v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70), (int *)&v50, v54, 0, 0));
+        v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70),(const RectangleStruct *)((int *)&v50), v54, 0, 0));
         v68[0] = (int)((int *)(*v7));
         v68[1] = (int)((int *)(v7[1]));
         v68[2] = (int)((int *)(v7[2]));
@@ -232,7 +232,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v62 = (int *)(v10);
         v64 = (int *)(60);
         v65 = (int *)((unsigned int)((int *)(30)));
-        v11 = (int *)(ClipRectIntersection((RectangleStruct *)(v71), v68, &v62, 0, 0));
+        v11 = (int *)(ClipRectIntersection((RectangleStruct *)(v71),(const RectangleStruct *)(v68), &v62, 0, 0));
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
         v13 = v11[1]; /*0x421055*/
@@ -279,7 +279,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v48 = (int *)((unsigned int)(v40)+ v21 - v23);
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
-          v25 = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek((int)(v40), v41 - dword_886FA4); /*0x4211d3*/
+          v25 = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek((int)(v40),(int)(v41 - dword_886FA4)); /*0x4211d3*/
           v26 = dword_87E8A4; /*0x4211d8*/
           v27 = (uint8_t *)(v22 + (unsigned int)(v60)* v21 + SubFile); /*0x4211ed*/
           if ( (unsigned int)&v25[(v37 - v41) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v42 + 0x7FFFFFFF * v40] < *((unsigned int *)dword_87E8A4 + 7) ) /*0x421211*/
@@ -727,7 +727,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     {
       if ( BYTE2(this->ironCurtainTimer[2]) ) /*0x425b61*/
         goto LABEL_47; /*0x425b69*/
-      v37 = ((Building *)((Building *)this))->ComputePosition(&v54); /*0x425b7b*/
+      v37 = (int *)(((Building *)((Building *)this))->ComputePosition(&v54)); /*0x425b7b*/
       v38 = v37[1]; /*0x425b7f*/
       v39 = v37[2]; /*0x425b82*/
       if ( *v37 == Map_InvalidCoord_X && v38 == Map_InvalidCoord_Y && v39 == Map_InvalidCoord_Z ) /*0x425b9d*/
@@ -737,7 +737,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         v40 = Map_InvalidCoord_Z; /*0x425bb7*/
         BYTE2(this->ironCurtainTimer[2]) = 1; /*0x425bbd*/
         this->animation[6] = (wchar_t *)(v40); /*0x425bc4*/
-        v41 = dword_A8ED84; /*0x425bc7*/
+        v41 = (wchar_t *)(dword_A8ED84); /*0x425bc7*/
         this->missionStartTime = 1; /*0x425bd7*/
         this->queuedMission = (int)v41; /*0x425bdd*/
         *(unsigned int *)this->missionQueued = v55; /*0x425be3*/
@@ -761,7 +761,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     v54 = *v4; /*0x4256fc*/
     v47 = v7 - this->animation[5]; /*0x425708*/
     v56 = this->animation[6]; /*0x425709*/
-    v8 = ((Coord *)((Coord *)&v51))->Subtract(v6 - v54, v47, 0); /*0x425718*/
+    v8 = (int *)(((Coord *)((Coord *)&v51))->Subtract(v6 - v54, v47, 0)); /*0x425718*/
     v54 = *v8; /*0x42571f*/
     v55 = v8[1]; /*0x42572a*/
     v56 = v8[2]; /*0x425731*/

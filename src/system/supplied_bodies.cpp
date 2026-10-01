@@ -50,7 +50,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
       IDA_BYTE1(this->headNode[2]) = 0; /*0x4782c9*/
       return this->__pad_0; /*0x4782cc*/
     }
-    v4 = RA2_OPNEW(3 * v3); /*0x47825b*/
+    v4 = (int)(RA2_OPNEW(3 * v3)); /*0x47825b*/
     if ( v4 ) /*0x478265*/
     {
       if ( v3 - 1 >= 0 ) /*0x47826c*/
@@ -112,7 +112,7 @@ int CellClass::QuickPassable() {
     v6[0] = v1; /*0x487989*/
     v6[1] = v2; /*0x487993*/
     v6[2] = inited; /*0x487997*/
-    return Cell::IsPassable(v6); /*0x4879a0*/
+    return Cell::IsPassable((IUnknown *)(v6)); /*0x4879a0*/
 }
 } // namespace gamemd
 
@@ -127,7 +127,7 @@ unsigned int * INIClass::sectionExists() {
     int v6; // edi
 
     result = (int *)(this->__pad_0); /*0x52af50*/
-    sectionHead = this->sectionHead; /*0x52af59*/
+    sectionHead = (int *)(this->sectionHead); /*0x52af59*/
     this->headNode[1] = 0; /*0x52af5f*/
     this->headNode[2] = 0; /*0x52af62*/
     this->headNode[0] = (int)&GenericNode::`vftable'; /*0x52af65*/
@@ -155,7 +155,7 @@ unsigned int * INIClass::sectionExists() {
     this->sectionHead[1] = v5; /*0x52afa5*/
     v6 = this->headNode[1]; /*0x52afa8*/
     if ( v6 ) /*0x52afad*/
-      *(unsigned int *)(v6 + 8) = sectionHead; /*0x52afaf*/
+      *(unsigned int *)(v6 + 8) = (unsigned int)(sectionHead); /*0x52afaf*/
     this->headNode[1] = (int)sectionHead; /*0x52afb2*/
     *(unsigned int *)this->__pad_0 = &List<INIClass::INIEntry *>::`vftable'; /*0x52afb7*/
     return result; /*0x52afb5*/

@@ -1281,14 +1281,14 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   ToggleClass::Construct((int)this, aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
   this->__pad_0[53] = aP9; /*0x71ff52*/
   this->__pad_0[52] = a9; /*0x71ff5c*/
-  this->field_38 = a3; /*0x71ff5f*/
+  this->field_38 = (gamemd::CampaignScore *)(a3); /*0x71ff5f*/
   *((unsigned int *)this + 15) = a4; /*0x71ff62*/
   *(unsigned int *)this->__pad_0 = &vt_TextButtonClass; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
-    Instance = TextRenderer::GetInstance(); /*0x71ff7a*/
+    Instance = (int)(TextRenderer::GetInstance()); /*0x71ff7a*/
     if ( aP4 == -1 ) /*0x71ff7c*/
-      *(unsigned int *)&this->__pad_0[20] = Text_MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/
+      *(unsigned int *)&this->__pad_0[20] = Text_MeasureWidth((int)(this->field_38), 0) + 8; /*0x71ff8e*/
     if ( aP5 == -1 ) /*0x71ff94*/
       *(unsigned int *)&this->__pad_0[24] = *(unsigned int *)(Instance + 28) + 2; /*0x71ff9c*/
   }

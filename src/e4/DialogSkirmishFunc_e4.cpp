@@ -285,10 +285,10 @@ LABEL_151:
             {
               if ( (int)Format < (int)v10 )
               {
-                StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SCENARIO_TOO_SMALL), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1079));
+                StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SCENARIO_TOO_SMALL), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1079));
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = (gamemd::CampaignScore *)(&stru_82083C);
-                v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1080));
+                v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1080));
   int v73; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
@@ -300,7 +300,7 @@ LABEL_151:
                 v14 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[63048], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1087));
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = (gamemd::CampaignScore *)(&stru_82083C);
-                v15 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1088));
+                v15 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1088));
   int v74; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
@@ -351,7 +351,7 @@ LABEL_151:
                     v22 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[3632], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1111));
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = (gamemd::CampaignScore *)(&stru_82083C);
-                    v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1112));
+                    v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1112));
                     Dialog::ShowMessageBox((int)Destination, v23, 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
@@ -369,7 +369,7 @@ LABEL_151:
               if ( var244 == 1559 )
               {
                 v83 = (VectorClass_flat *)&stru_82083C;
-                v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1129));
+                v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1129));
                 v26 = WideString::GetOrEmpty(&v82);
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
@@ -385,7 +385,7 @@ LABEL_151:
               *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30332] = 0;
             v28 = GetDlgItem((HWND)hWnd, 1696);
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
-            CopyWideToChar(&((unsigned int *)(HouseClass_Player))[30260], lParam, -1);
+            CopyWideToChar((unsigned char *)(&((unsigned int *)(HouseClass_Player))[30260]), lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
             SessionClass::AssignSide(&HouseClass_Player[29932], ComboBoxSelected, (MPCooperative *)1);
             int v30 = 0;

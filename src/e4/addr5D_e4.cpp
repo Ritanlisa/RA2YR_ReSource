@@ -380,7 +380,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(aP0 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0)))));
+    *a2 = (int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0))))));
     (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }
@@ -426,7 +426,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
             *(unsigned short *)(aP0 + 2 * v20 + 40) = v12; /*0x5d476e*/
             v21 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d4779*/
             *(unsigned int *)(aP0 + 688) = v21; /*0x5d477a*/
-            *(unsigned short *)(aP0 + 2 * v21 + 40) = (gamemd::CampaignScore **)(0); /*0x5d4780*/
+            *(unsigned short *)(aP0 + 2 * v21 + 40) = (unsigned short)((gamemd::CampaignScore **)(0)); /*0x5d4780*/
             *a2 = 0; /*0x5d4788*/
             return 4; /*0x5d478d*/
           }
@@ -722,7 +722,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   v19.customSound = edx0; /*0x5d759a*/
   v19.customSound_controller[3] = (int)a1; /*0x5d75aa*/
   CCFileClass::Construct((CCFileClass *)&v19.lineTrailer, aMpmodesmdIni); /*0x5d75ae*/
-  if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v19.lineTrailer, 0) ) /*0x5d75bd*/
+  if ( (uint8_t)CCFileClass::Open((int)((CCFileClass *)&v19.lineTrailer), 0) ) /*0x5d75bd*/
   {
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/

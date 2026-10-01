@@ -130,7 +130,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
   a1->PhoneNumber[5] = a7; /*0x48be8c*/
   a1->PhoneNumber[6] = a8; /*0x48be8f*/
   a1->PhoneNumber[2] = RA2_OPNEW(a4 + 14); /*0x48be99*/
-  v10 = (CommBufferClass *)RA2_OPNEW(0x58u); /*0x48be9c*/
+  v10 = (unsigned int)((CommBufferClass *)RA2_OPNEW(0x58u)); /*0x48be9c*/
   if ( v10 ) /*0x48bea6*/
     a1->PlayerIndex = (int)sub_48B0E0(v10, a2, a3, a1->PhoneNumber[1], a9); /*0x48bec2*/
   else
@@ -307,13 +307,13 @@ int IPXManagerClass::processPacket()
   unsigned int *v8; // edi
 
   v2 = (unsigned int)(((unsigned char *)(this) + 0x014));
-  *(unsigned int *)this = (void *)&IPXManagerClass_vftable; /*0x5409fa*/
+  *(unsigned int *)this = (unsigned int)((void *)&IPXManagerClass_vftable); /*0x5409fa*/
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(); /*0x540a04*/
     ((unsigned char *)(this) + 0x014) = 0; /*0x540a09*/
   }
-  v3 = (void (***)(unsigned int, int))((unsigned char *)(this) + 0x048); /*0x540a0c*/
+  v3 = (void (__thiscall ***)(unsigned int,int))((void (***)(unsigned int, int))((unsigned char *)(this) + 0x048)); /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
   {
     (**v3)(v3, 1); /*0x540a17*/
@@ -336,7 +336,7 @@ int IPXManagerClass::processPacket()
   if ( result <= 0 ) /*0x540a43*/
   {
     this->q044 = 0; /*0x540a70*/
-    *(unsigned int *)this = (void *)&ConnManClass_vftable; /*0x540a73*/
+    *(unsigned int *)this = (unsigned int)((void *)&ConnManClass_vftable); /*0x540a73*/
   }
   else
   {
@@ -352,7 +352,7 @@ int IPXManagerClass::processPacket()
     }
     while ( v7 < result ); /*0x540a60*/
     this->q044 = 0; /*0x540a62*/
-    *(unsigned int *)this = (void *)&ConnManClass_vftable; /*0x540a65*/
+    *(unsigned int *)this = (unsigned int)((void *)&ConnManClass_vftable); /*0x540a65*/
   }
   return result; /*0x540a6c*/
 }
@@ -376,12 +376,12 @@ void IPXManagerClass::destroyConnection(IPXConnClass* conn)
 {
   int result; // eax
 
-  result = *(conn + 18); /*0x540d60*/
+  result = (int)(*(conn + 18)); /*0x540d60*/
   if ( result ) /*0x540d65*/
   {
     result->q028 = *(conn + 25); /*0x540d6a*/
     *(unsigned int *)(*(conn + 18) + 44) = *(conn + 26); /*0x540d73*/
-    result = *(conn + 18); /*0x540d76*/
+    result = (int)(*(conn + 18)); /*0x540d76*/
     result->q030 = *(conn + 27); /*0x540d7c*/
   }
   return result; /*0x540d7f*/

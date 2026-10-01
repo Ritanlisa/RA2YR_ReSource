@@ -115,9 +115,9 @@ int AudioSample::ResetState() {
       v2 = *((unsigned int *)this + 41); /*0x4024b1*/
       IDA_LOBYTE(v2) = v2 & 0xF7; /*0x4024b7*/
       *((unsigned int *)this + 41) = v2; /*0x4024b9*/
-      *((unsigned int *)this + 87) = AudioController::AdvanceQueue; /*0x4024c1*/
-      *((unsigned int *)this + 88) = AudioController::UpdatePlayback; /*0x4024cb*/
-      *((unsigned int *)this + 89) = AudioController::CleanupStream; /*0x4024d5*/
+      *((unsigned int *)this + 87) = (unsigned int)(AudioController::AdvanceQueue); /*0x4024c1*/
+      *((unsigned int *)this + 88) = (unsigned int)(AudioController::UpdatePlayback); /*0x4024cb*/
+      *((unsigned int *)this + 89) = (unsigned int)(AudioController::CleanupStream); /*0x4024d5*/
       *((unsigned int *)this + 44) = 0; /*0x4024df*/
       *((unsigned int *)this + 45) = 0; /*0x4024e5*/
       *((unsigned int *)this + 46) = 0; /*0x4024eb*/

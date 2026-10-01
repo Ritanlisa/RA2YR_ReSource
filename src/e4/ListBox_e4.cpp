@@ -166,7 +166,7 @@ LABEL_70:
     else
     {
       v34 = (const char *)lParam; /*0x614977*/
-      CopyWideToChar(lParam, (char *)String, v13); /*0x614988*/
+      CopyWideToChar((unsigned char *)(lParam), (char *)String, v13); /*0x614988*/
       v34[v13 - 1] = 0; /*0x614992*/
       return strlen(v34); /*0x61499f*/
     }
@@ -224,7 +224,7 @@ LABEL_70:
         Rect.top = top; /*0x6146b5*/
         SetupDialogRenderBuffer((int *)(&Rect.left), hWnd, v37); /*0x6146b9*/
         if ( !v25 ) /*0x6146c0*/
-          DrawDialogGradient((int *)DSurface_Alternate, &Rect.left, 2, -1); /*0x6146d0*/
+          DrawDialogGradient((int *)DSurface_Alternate,(int *)(&Rect.left), 2, -1); /*0x6146d0*/
         v41 = 0; /*0x6146eb*/
         Memory_Helper_6149B0(hWnd, 5120, (int)&v41); /*0x6146f3*/
         v44.left = v42.left; /*0x614706*/

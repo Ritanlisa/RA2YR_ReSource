@@ -310,7 +310,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x62d820*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); /*0x62d820*/
   aP0->__pad_128[8] = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 

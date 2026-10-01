@@ -49,7 +49,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
   {
-    StringByIndex = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1), (uint8_t *)aAitriggertypes, v5); /*0x41f317*/
+    StringByIndex = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1),(gamemd::CCINIClass *)((uint8_t *)aAitriggertypes), v5); /*0x41f317*/
     if ( _strcmpi((const char *)(g_Str__none_), StringByIndex) ) /*0x41f31f*/
     {
       if ( _strcmpi((const char *)(g_Str_none), StringByIndex) ) /*0x41f335*/
@@ -97,7 +97,7 @@ LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
-      v11 = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1), (uint8_t *)aAitriggertypes_0, v10); /*0x41f3f9*/
+      v11 = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1),(gamemd::CCINIClass *)((uint8_t *)aAitriggertypes_0), v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
       if ( dword_A8B210 > 0 ) /*0x41f404*/
       {
@@ -242,7 +242,7 @@ CCINIClass::CCINIClass()
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
   sectionHead[1] = (unsigned int)((int)p_sectionCount); /*0x535b99*/
-  result[3] = &vt_List; /*0x535b9c*/
+  result[3] = (unsigned int)(&vt_List); /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/
@@ -273,7 +273,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
-    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
+    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes,(gamemd::INIClass *)(StringByIndex), &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/

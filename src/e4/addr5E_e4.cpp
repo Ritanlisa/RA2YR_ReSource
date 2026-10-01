@@ -161,12 +161,12 @@ void sub_5E2AC0()
         UI_Assign_623F60(DlgItem, v3 - 1, (void **)&v5); /*0x5e2b36*/
       if ( (unsigned int)WideString::Length((const wchar_t **)&v5) >= 0x24 ) /*0x5e2b47*/
       {
-        ((WideString *)((void **)&v5))->Assign_Alt(asc_831774); /*0x5e2b6e*/
+        ((WideString *)((void **)&v5))->Assign_Alt((wchar_t *)(asc_831774)); /*0x5e2b6e*/
       }
       else
       {
         SendMessageA(DlgItem, 0x182u, v3 - 1, 0); /*0x5e2b53*/
-        WideString::Append2((wchar_t **)&v5, asc_831774); /*0x5e2b5e*/
+        WideString::Append2((gamemd::CampaignScore *)((wchar_t **)&v5), asc_831774); /*0x5e2b5e*/
       }
       v4 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v5));
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
@@ -428,10 +428,10 @@ char Game_CheckSettingsChanged(char a1, char a2)
     if ( _wcsicmp((const wchar_t *)(&word_AC10F0), (const wchar_t *)&dword_A8B320 + 1) ) /*0x5e3403*/
       v2 = 1; /*0x5e340f*/
     byte_AC0CFD = 0; /*0x5e341b*/
-    if ( _strcmpi((const char *)(byte_AC0CF0), &byte_A8B8E0) ) /*0x5e3422*/
+    if ( _strcmpi((const char *)(byte_AC0CF0),(const char *)(&byte_A8B8E0)) ) /*0x5e3422*/
       v2 = 1; /*0x5e342e*/
     byte_AC0D20 = 0; /*0x5e343a*/
-    if ( _strcmpi((const char *)(byte_AC0D00), &byte_A8BAE2) ) /*0x5e3441*/
+    if ( _strcmpi((const char *)(byte_AC0D00),(const char *)(&byte_A8BAE2)) ) /*0x5e3441*/
       v2 = 1; /*0x5e344d*/
     if ( dword_8316E8 != dword_A8BB04 ) /*0x5e345c*/
       v2 = 1; /*0x5e345e*/
@@ -448,9 +448,9 @@ char Game_CheckSettingsChanged(char a1, char a2)
       byte_AC11C0 = (unsigned char)(dword_A8B320);
       byte_AC11C1 = (unsigned char)(g_abs_A8B261);
       wcscpy((wchar_t *)(&word_AC10F0), (const wchar_t *)&dword_A8B320 + 1); /*0x5e34eb*/
-      strcpy((char *)(byte_AC0D00), &byte_A8BAE2); /*0x5e350f*/
+      strcpy((char *)(byte_AC0D00),(const char *)(&byte_A8BAE2)); /*0x5e350f*/
       dword_8316E8 = dword_A8BB04; /*0x5e3536*/
-      strcpy((char *)(byte_AC0CF0), &byte_A8B8E0); /*0x5e353e*/
+      strcpy((char *)(byte_AC0CF0),(const char *)(&byte_A8B8E0)); /*0x5e353e*/
       byte_8316E4 = dword_A8BB08; /*0x5e3553*/
       memset(Buffer, 0, sizeof(Buffer)); /*0x5e355e*/
       if ( ppv ) /*0x5e356d*/
@@ -508,15 +508,15 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
           String = GetStringCSF(aGuiHostmaptran, 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
 // 0x5e2700
-          return Dialog::ShowMessage((gamemd::ObjectClass *)(-1), (size_t)String, v11, 11055906); /*0x5e3a9b*/
+          return Dialog::ShowMessage((gamemd::ObjectClass *)(-1),(gamemd::CampaignScore *)((size_t)String), v11, 11055906); /*0x5e3a9b*/
         }
       }
       else
       {
         v10 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)(dword_A8DA78 + 4 * v6))));
-        v8 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_HostNoMap), 0, g_Str_File_netshare_cpp, 1169));
+        v8 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_HostNoMap), 0,(const char *)(g_Str_File_netshare_cpp), 1169));
 // 0x5e2700
-        return Dialog::ShowMessage((gamemd::ObjectClass *)(-1), (size_t)v8, v10, 11055906); /*0x5e3a62*/
+        return Dialog::ShowMessage((gamemd::ObjectClass *)(-1),(gamemd::CampaignScore *)((size_t)v8), v10, 11055906); /*0x5e3a62*/
       }
     }
   }

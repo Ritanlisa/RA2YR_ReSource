@@ -168,7 +168,7 @@ LABEL_61:
   MixFileClass_MULTI = (int)MixFileClass::FromFile(v14, aMultiMix, (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
+  v15 = CCFileClass::Construct(&v24,(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
   v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
   ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
@@ -201,10 +201,10 @@ LABEL_58:
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
   v19 = CCFileClass::Construct((CCFileClass *)&((char *)&v24), Source); /*0x4795f5*/
   v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0)); /*0x479609*/
-  *(unsigned int *)v24.CDFileClass = &vt_CCFileClass; /*0x47960b*/
+  *(unsigned int *)v24.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x47960b*/
   v27 = 0; /*0x47960f*/
   ((Vector *)((int)&v25))->Clear(); /*0x479616*/
-  *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
+  *(unsigned int *)v24.CDFileClass = (unsigned int)(&off_7E1668); /*0x47961f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
@@ -399,9 +399,9 @@ void LinkedList_flat::RelinkNode(int a2)
       *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
     *((unsigned int *)this + 6) = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
-      *(unsigned int *)(a2 + 8) = (unsigned int *)this + 5; /*0x632d4e*/
-    *((unsigned int *)this + 7) = this; /*0x632d54*/
-    *((unsigned int *)this + 1) = (unsigned int *)this + 5; /*0x632d57*/
+      *(unsigned int *)(a2 + 8) = (unsigned int)((unsigned int *)this + 5); /*0x632d4e*/
+    *((unsigned int *)this + 7) = (unsigned int)(this); /*0x632d54*/
+    *((unsigned int *)this + 1) = (unsigned int)((unsigned int *)this + 5); /*0x632d57*/
   }
 
 }
@@ -443,7 +443,7 @@ int LinkedList_flat::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void
   *(unsigned int *)this->Tail[0] = *(unsigned int *)this->__pad_0; /*0x407455*/
   result = *(unsigned int *)this->__pad_0; /*0x407457*/
   *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4) = this->Tail[0]; /*0x40745c*/
-  *(unsigned int *)this->__pad_0 = this; /*0x40745f*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(this); /*0x40745f*/
   this->Tail[0] = (int)this; /*0x407461*/
   return result; /*0x407464*/
 
@@ -532,12 +532,12 @@ unsigned int * LinkedList_flat::FindNext()
   LinkClass **p_m_Next; // edx
   unsigned int *result; // eax
 
-  p_m_Next = &this->m_Next; /*0x556673*/
+  p_m_Next = (gamemd::LinkClass **)(&this->m_Next); /*0x556673*/
   if ( !this->m_Next ) /*0x556670*/
     return this->__pad_0; /*0x55668d*/
   do /*0x556681*/
   {
-    result = *p_m_Next; /*0x55667b*/
+    result = (unsigned int *)(*p_m_Next); /*0x55667b*/
     if ( *p_m_Next == this ) /*0x55667f*/
       break; /*0x55667f*/
     p_m_Next = (LinkClass **)(result + 1); /*0x556684*/

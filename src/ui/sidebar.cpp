@@ -67,13 +67,13 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   {
     case 15:
     case 16:
-      v24 = (gamemd::AbstractType)(2); /*0x6a63af*/
+      v24 = (int)((gamemd::AbstractType)(2)); /*0x6a63af*/
       break;
     case 1:
     case 40:
     case 2:
     case 3:
-      v24 = (gamemd::AbstractType)(3); /*0x6a63a5*/
+      v24 = (int)((gamemd::AbstractType)(3)); /*0x6a63a5*/
       break;
     case 6:
     case 7:

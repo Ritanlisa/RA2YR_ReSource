@@ -98,8 +98,8 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
       v10 = *(unsigned char **)(*(unsigned int *)(ownerHouse->supersCount + 4 * i) + 40); /*0x50b078*/
       if ( v10[231] && !SWAllowed ) /*0x50b099*/
         v16 = (int)(0); /*0x50b09b*/
-      v11 = ownerHouse->powerOutput; /*0x50b0a0*/
-      v12 = ownerHouse->powerDrain; /*0x50b0a6*/
+      v11 = (int)(ownerHouse->powerOutput); /*0x50b0a0*/
+      v12 = (int)(ownerHouse->powerDrain); /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)ownerHouse->powerOutput / (double)ownerHouse->powerDrain < 1.0) ) /*0x50b0d3*/
         v4 = 0; /*0x50b0d5*/
       (*(void (**)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/

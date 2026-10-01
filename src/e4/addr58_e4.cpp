@@ -565,7 +565,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         v7 = (IDA_SHIWORD(v20) << 9) + (int16_t)v20; /*0x5885de*/
         if ( v7 >= 0x40000 || (v8 = *(unsigned int **)(dword_87F924 + 4 * v7)) == 0 ) /*0x5885f7*/
         {
-          dword_ABDC74 = (unsigned int *)(v20);
+          dword_ABDC74 = (unsigned int)((unsigned int *)(v20));
           v8 = (unsigned int *)(unk_ABDC50);
         }
         v5 = (int)((Cell *)(v8))->IsBridge(); /*0x588604*/
@@ -573,22 +573,22 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         {
           if ( *(unsigned char *)(*(unsigned int *)(v5 + 1312) + 5824) ) /*0x588613*/
           {
-            v9 = (unsigned char)((gamemd::VectorClass_flat *)(*(unsigned int *)(v5 + 540)));
-            IDA_LOBYTE(v5) = aP1; /*0x588623*/
+            v9 = (gamemd::VectorClass_flat *)((unsigned char)((gamemd::VectorClass_flat *)(*(unsigned int *)(v5 + 540))));
+            IDA_LOBYTE(v5) = (unsigned char)(aP1); /*0x588623*/
             if ( v9 == aP1 ) /*0x588629*/
               break; /*0x588629*/
           }
         }
         if ( v7 < 0x40000 && (v10 = *(unsigned int **)(dword_87F924 + 4 * v7)) != 0 ) /*0x588641*/
         {
-          v11 = (unsigned int)(v10);
+          v11 = (unsigned int *)((unsigned int)(v10));
         }
         else
         {
-          dword_ABDC74 = (unsigned int *)(v20);
-          v11 = unk_ABDC50; /*0x58864d*/
+          dword_ABDC74 = (unsigned int)((unsigned int *)(v20));
+          v11 = (unsigned int *)(unk_ABDC50); /*0x58864d*/
         }
-        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C, aP2, aP1); /*0x58865f*/
+        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C,(int)(aP2), aP1); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
           IDA_LOBYTE(v5) = ++v18; /*0x588674*/
@@ -652,8 +652,8 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   int v22; // [esp+20h] [ebp-10h]
   unsigned int v23[3]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = (int)(aP2); /*0x588754*/
-  result = aP2[917]; /*0x588758*/
+  v3 = (int *)((int)(aP2)); /*0x588754*/
+  result = (int)(aP2[917]); /*0x588758*/
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/
     return result; /*0x588764*/
@@ -661,9 +661,9 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   for ( i = 0; i < 8; i += 2 ) /*0x58876f*/
   {
     v5 = (int)(v3[366] >> 8); /*0x58877d*/
-    v6 = *aP0; /*0x588780*/
+    v6 = (int)(*aP0); /*0x588780*/
     v19 = (int)(v5); /*0x588782*/
-    v18 = *aP0; /*0x588788*/
+    v18 = (int)(*aP0); /*0x588788*/
     v16 = 0; /*0x58878c*/
     if ( v5 <= 0 ) /*0x588794*/
       goto LABEL_24; /*0x588794*/
@@ -677,8 +677,8 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
       IDA_LOWORD(v6) = v17; /*0x5887d0*/
       if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5887e8*/
       {
-        dword_ABDC74 = (unsigned int *)(v17); /*0x5887ea*/
-        v9 = unk_ABDC50; /*0x5887f0*/
+        dword_ABDC74 = (unsigned int)((unsigned int *)(v17)); /*0x5887ea*/
+        v9 = (unsigned int *)(unk_ABDC50); /*0x5887f0*/
       }
       v10 = v9[17]; /*0x5887f5*/
       if ( v10 == -1 ) /*0x5887fb*/
@@ -687,8 +687,8 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
       {
         if ( v8 >= 0x40000 || (v11 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x58881f*/
         {
-          dword_ABDC74 = (unsigned int *)(v17); /*0x588821*/
-          v11 = unk_ABDC50; /*0x588827*/
+          dword_ABDC74 = (unsigned int)((unsigned int *)(v17)); /*0x588821*/
+          v11 = (unsigned int *)(unk_ABDC50); /*0x588827*/
         }
         if ( *(unsigned int *)(aP1 + 48) == v11[20] ) /*0x588836*/
           break; /*0x588836*/
@@ -697,10 +697,10 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   LABEL_15:
       if ( v8 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x588852*/
       {
-        dword_ABDC74 = (unsigned int *)(v17); /*0x588854*/
-        v12 = unk_ABDC50; /*0x58885a*/
+        dword_ABDC74 = (unsigned int)((unsigned int *)(v17)); /*0x588854*/
+        v12 = (unsigned int *)(unk_ABDC50); /*0x58885a*/
       }
-      if ( ((CellClass *)((int)v12))->IsPassable(v3[415], (int)v3, aP1) ) /*0x58886e*/
+      if ( ((CellClass *)((int)v12))->IsPassable(v3[415], (int)v3,(int)(aP1)) ) /*0x58886e*/
       {
         if ( ++v16 < v5 ) /*0x588886*/
           continue; /*0x588886*/
@@ -719,7 +719,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
         v23[0] = (v14 << 8) + 128; /*0x5888f5*/
         v23[1] = (v20 << 8) + 128; /*0x588903*/
         (*(void (**)(int, unsigned int *, unsigned int))(*(unsigned int *)v15 + 216))(v15, v23, 0); /*0x58890c*/
-        v3 = aP2; /*0x58891c*/
+        v3 = (int *)(aP2); /*0x58891c*/
         v14 += *v7; /*0x58892a*/
         --v13; /*0x58892e*/
         v20 += v7[1]; /*0x58892f*/

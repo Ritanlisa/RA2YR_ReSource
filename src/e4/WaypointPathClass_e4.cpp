@@ -117,7 +117,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 
   v2 = (AbstractClass *)a1; /*0x763c76*/
   v3 = a2; /*0x763c7b*/
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), a2); /*0x763c81*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1),(gamemd::AbstractClass *)(a2)); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
   {
     if ( v2 ) /*0x763c92*/
@@ -295,7 +295,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int i; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x763da3*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x763da3*/
   if ( result >= 0 ) /*0x763daa*/
   {
     v4 = *a1; /*0x763daf*/

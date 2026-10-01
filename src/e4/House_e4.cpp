@@ -201,7 +201,7 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex((int)((HouseClass *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d7fb*/
+        *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex((int)((HouseClass *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = *((unsigned int *)this + 17); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -215,7 +215,7 @@ LABEL_40:
           }
           else
           {
-            *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d843*/
+            *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d843*/
             *((unsigned int *)this + 17) = -1; /*0x47d849*/
             *((unsigned char *)this + 286) = 0; /*0x47d850*/
           }
@@ -223,7 +223,7 @@ LABEL_40:
         }
         if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *((unsigned int *)this + 17)) + 684) ) /*0x47d885*/
 LABEL_47:
-          *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d8aa*/
+          *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d8aa*/
 LABEL_48:
         if ( *((unsigned int *)this + 59) == 10 ) /*0x47d8b7*/
         {

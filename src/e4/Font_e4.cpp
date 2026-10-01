@@ -107,7 +107,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   uint8_t v58; // [esp+3Ah] [ebp-6h]
   int16_t v59; // [esp+58h] [ebp+18h]
 
-  v11 = (uint16_t *)((int)((unsigned short *)(0)));
+  v11 = (int)((uint16_t *)((int)((unsigned short *)(0))));
   if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
   {
     FontRenderer::InitContext((unsigned int *)aP0, (int *)aP1); /*0x434cf8*/

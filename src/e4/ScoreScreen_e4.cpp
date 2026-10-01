@@ -270,7 +270,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   void *retaddr; // [esp+E0h] [ebp+0h] BYREF
 
   CCFileClass::Construct(&v38,(void *)(Source)); /*0x77821f*/
-  v8 = DecodeFrameSHP((int)&v38, a5, 0, 0); /*0x778238*/
+  v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
     v28 = (*(int (**)(int *, int, int))(*(void *)(((unsigned int)(void)*))(a2) + 124))(a2, a4, a3); /*0x778251*/
@@ -294,7 +294,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     {
       v10 = 0; /*0x7782b5*/
     }
-    Render_Draw((int)(v10), &v33, 0); /*0x7782bf*/
+    Render_Draw((int)(v10),(int *)(&v33), 0); /*0x7782bf*/
     (*(void (**)(int *, int, unsigned int, int))(*(void *)(((unsigned int)(void)*))(a2) + 4))(a2, v10, 0, 1); /*0x7782cd*/
     if ( v10 ) /*0x7782d2*/
       (**(void ((int)(***))(int, int))v10)(v10, 1); /*0x7782da*/
@@ -314,7 +314,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     {
       v14 = (gamemd::ConvertClass *)((int)((ConvertClass *)RA2_OPNEW(0x188u)));
       if ( v14 ) /*0x778370*/
-        ((ConvertClass *)(v14))->Construct(a7, a7, (int)a2, 1, 0); /*0x778382*/
+        ((ConvertClass *)(v14))->Construct((int)(a7), a7, (int)a2, 1, 0); /*0x778382*/
       v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/

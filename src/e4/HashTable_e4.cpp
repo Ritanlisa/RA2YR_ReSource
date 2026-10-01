@@ -1091,7 +1091,7 @@ LABEL_13:
   Block = v9; /*0x7247b2*/
   if ( (void *)HashTable_field_0x04 == v9 && HashTable_field_0x04 ) /*0x7247ba*/
   {
-    (*(void (**)(HashTable *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->HashTable_field_0x18); /*0x7247c5*/
+    (*(void ((gamemd::HashTable *)(**))(HashTable *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->HashTable_field_0x18); /*0x7247c5*/
     v9 = Block; /*0x7247c8*/
   }
   v11 = (unsigned int *)v9; /*0x7247cd*/

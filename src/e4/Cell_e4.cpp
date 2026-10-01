@@ -774,7 +774,7 @@ int Cell::Exists(MouseClass * aP1)
 
   int result; // eax
 
-  result = *aP1; /*0x5657ee*/
+  result = (int)(*aP1); /*0x5657ee*/
   LOBYTE(result) = *((unsigned int *)this->Cell_field_0x13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
   return result; /*0x5657fd*/
 
@@ -908,7 +908,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
   }
   else
   {
-    v6 = &unk_ABDC50; /*0x56e9c7*/
+    v6 = (unsigned int *)(&unk_ABDC50); /*0x56e9c7*/
     dword_ABDC74 = *(unsigned int *)aP0; /*0x56e9cc*/
   }
   if ( !(unsigned char)a3 ) /*0x56e9d7*/
@@ -929,7 +929,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
     v21 -= 15 * *((char *)v6 + 283); /*0x56ea78*/
     Cell::CreateCrater(v20 - 128, v21 - 128, 256, 256, 0); /*0x56ea98*/
   }
-  v9 = aP1; /*0x56eaa3*/
+  v9 = (int)(aP1); /*0x56eaa3*/
   LOBYTE(v7) = (v6[80] & 0x2000) != 0; /*0x56eaaa*/
   if ( (unsigned char)aP1 != (unsigned char)v7 ) /*0x56eaae*/
   {

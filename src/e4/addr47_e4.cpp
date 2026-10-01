@@ -82,7 +82,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v19; // eax
   DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
+  if ( INIClass::GetString((INIClass *)a2,(unsigned char *)(a3), a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
@@ -1037,14 +1037,14 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
   if ( !byte_89E7C5 ) /*0x47efed*/
   {
     byte_89E7C5 = 1; /*0x47eff6*/
-    dword_89E794 = (unsigned int)(SearchMIXFile(aShroudShp, 0)); /*0x47f009*/
-    dword_89E790 = (unsigned int)(SearchMIXFile(aFogShp, 0)); /*0x47f013*/
+    dword_89E794 = (unsigned int)(SearchMIXFile((char *)(aShroudShp), 0)); /*0x47f009*/
+    dword_89E790 = (unsigned int)(SearchMIXFile((char *)(aFogShp), 0)); /*0x47f013*/
   }
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x47f022*/
     v33 = (char **)dword_89E790; /*0x47f02a*/
   else
     v33 = (char **)dword_89E794; /*0x47f035*/
-  FoundationSize = Building::GetFoundationSize(v25, a3); /*0x47f046*/
+  FoundationSize = (int *)(Building::GetFoundationSize((unsigned int *)(v25), a3)); /*0x47f046*/
   v26 = *FoundationSize; /*0x47f053*/
   v5 = a2[1]; /*0x47f059*/
   v27 = FoundationSize[1]; /*0x47f05c*/
@@ -1096,7 +1096,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
           v14 = (v32 - v35) * *((unsigned int *)dword_87E8A4 + 10); /*0x47f16d*/
           v41 = (uint8_t *)(v12 + v28 * v10 + SubFile); /*0x47f172*/
           v33 = (char **)result; /*0x47f178*/
-          v15 = dword_87E8A4; /*0x47f18a*/
+          v15 = (unsigned int *)(dword_87E8A4); /*0x47f18a*/
           if ( result + 2 * (v14 + v39 + 0x7FFFFFFF * v9) + 4 < *((unsigned int *)dword_87E8A4 + 7) ) /*0x47f193*/
           {
             v29 = v32 - v35; /*0x47f20d*/
@@ -1137,7 +1137,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
                   if ( *v41++ != 0xFE ) /*0x47f1b7*/
                   {
                     *(unsigned short *)result = v17; /*0x47f1c4*/
-                    v15 = dword_87E8A4; /*0x47f1c7*/
+                    v15 = (unsigned int *)(dword_87E8A4); /*0x47f1c7*/
                   }
                   result += 2; /*0x47f1d0*/
                   if ( result >= v15[7] ) /*0x47f1d5*/
@@ -1207,9 +1207,9 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
   if ( !byte_89E7C6 ) /*0x47f25a*/
   {
     byte_89E7C6 = 1; /*0x47f263*/
-    dword_89E760 = SearchMIXFile(aFogShp, 0); /*0x47f26f*/
+    dword_89E760 = (unsigned int)(SearchMIXFile((char *)(aFogShp), 0)); /*0x47f26f*/
   }
-  FoundationSizeBuilding = Building::GetFoundationSize(v33, a3); /*0x47f288*/
+  FoundationSizeBuilding = (int *)(Building::GetFoundationSize((unsigned int *)(v33), a3)); /*0x47f288*/
   v31 = *FoundationSizeBuilding; /*0x47f293*/
   v5 = FoundationSizeBuilding[1]; /*0x47f297*/
   v6 = a2[1]; /*0x47f29a*/

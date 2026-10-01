@@ -98,7 +98,7 @@ AbstractClass * FootClass::Destruct(void *a1, void *a2)
   if ( v9 && this->__pad_58C[9] ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
-    *(unsigned int *)this->__pad_58C = (gamemd::AbstractClass *)(0); /*0x4d36ed*/
+    *(unsigned int *)this->__pad_58C = (unsigned int)((gamemd::AbstractClass *)(0)); /*0x4d36ed*/
   }
   this->__pad_58C[9] = 0; /*0x4d36f5*/
   *(unsigned int *)&this->__pad_58C[4] = 0; /*0x4d36fb*/
@@ -274,14 +274,14 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))(v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
       {
-        m_Size = v28.m_Size; /*0x710297*/
+        m_Size = (int)(v28.m_Size); /*0x710297*/
         if ( *(unsigned int *)(v28.m_Size + 684) ) /*0x71029b*/
           TechnoClass::EjectPassengers((TechnoClass *)v28.m_Size, 0); /*0x7102a6*/
         if ( v6[171] ) /*0x7102ab*/
           TechnoClass::EjectPassengers((TechnoClass *)v6, 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
-        (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))(v28.m_Data, *v10); /*0x7102d8*/
+        (*(void ((int)(**))(int, int))(*(unsigned int *)v28.m_Data + 12))(v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
         if ( *v10 != a1 ) /*0x7102e3*/
         {
@@ -316,7 +316,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       if ( a1 ) /*0x7103e1*/
         (*(void ((int)(**))(int))(*(unsigned int *)a1 + 8))(a1); /*0x7103e6*/
       if ( v28.m_Data ) /*0x7103ef*/
-        (*(void (**)(int))(*(unsigned int *)v28.m_Data + 8))(v28.m_Data); /*0x7103f4*/
+        (*(void ((int)(**))(int))(*(unsigned int *)v28.m_Data + 8))(v28.m_Data); /*0x7103f4*/
     }
     if ( *(unsigned int *)v28.__pad_0 ) /*0x7103fd*/
       (*(void (**)(unsigned int))(**(unsigned int **)v28.__pad_0 + 8))(*(unsigned int *)v28.__pad_0); /*0x710402*/

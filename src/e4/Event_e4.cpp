@@ -216,7 +216,7 @@ void sub_796960()
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
       v10[0] = 13; /*0x796a7c*/
-      CopyWideToChar(&v10[1], (char *)*(unsigned int *)(dword_A8DA78), -1); /*0x796a90*/
+      CopyWideToChar((unsigned char *)(&v10[1]), (char *)*(unsigned int *)(dword_A8DA78), -1); /*0x796a90*/
       v5 = 0; /*0x796a9b*/
       if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x796a9f*/
       {

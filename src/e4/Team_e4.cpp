@@ -101,12 +101,12 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     ((Debug *)0)->Log();
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
-  Frame::Present((void *)((int)g_DSurface_Hidden), a3, yBottom, a4, 0, v13, v15, v17); /*0x5611c7*/
+  Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0, v13, v15, v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
     (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
-    Frame::Present((void *)((int)g_DSurface_Hidden), a3, yBottom, a4, 0, v14, v16, v18); /*0x5611f7*/
+    Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0, v14, v16, v18); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
@@ -343,7 +343,7 @@ Game * * E4Recv_634B20::sub_634B20()
       v3 += 108; /*0x634b57*/
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
-      GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
+      GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634b60*/
       ((Debug *)this)->Log(); /*0x634b7d*/
       uniqueId = ((unsigned int *)this)[0]; /*0x634b82*/
       v5 = 0; /*0x634b88*/
@@ -369,7 +369,7 @@ Game * * E4Recv_634B20::sub_634B20()
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
-    GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
+    GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634c24*/
     ((Debug *)this)->Log(); /*0x634c43*/
     v8 = ((unsigned int *)this)[0]; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
@@ -578,7 +578,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230)); /*0x76ed62*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
   DeleteAndZero::Alt((void **)&v9); /*0x76ed83*/
@@ -724,7 +724,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  *(unsigned int *)a1->__pad_0 = (void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x767b54*/
+  *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_History_vftable); /*0x767b54*/
   ComPtr::Set(a1, v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }

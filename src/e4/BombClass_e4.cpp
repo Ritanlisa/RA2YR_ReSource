@@ -33,9 +33,9 @@ int BombClass::AbstractClass()
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->AbstractClass = &vt_BombClass; /*0x4385e1*/
-  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385e7*/
-  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385ee*/
-  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385f5*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385e7*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385ee*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -50,7 +50,7 @@ int BombClass::AbstractClass()
          0) )
   {
     v2 = (unsigned int)(dword_89C678++);
-    *((unsigned int *)dword_89C66C + v2) = this; /*0x438666*/
+    *((unsigned int *)dword_89C66C + v2) = (unsigned int)(this); /*0x438666*/
   }
   return (int)this; /*0x43866b*/
 
@@ -207,7 +207,7 @@ namespace gamemd {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x438be4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x438be4*/
 
 }
 } // namespace gamemd

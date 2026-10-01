@@ -205,7 +205,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     ((Debug *)0)->Log();
   v6 = (gamemd::AbstractClass **)((int)((char)((gamemd::AbstractClass **)(1))));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
-  v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589)));
+  v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1589)));
   MessageBox = (gamemd::AbstractClass **)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag));
   v21 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(MessageBox)));
   if ( !MessageBox ) /*0x5f2d6d*/
@@ -268,7 +268,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     if ( strstr(Source, aConnect) ) /*0x5f2ebe*/
     {
       memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2ed8*/
-      strncpy((char *)(byte_AC1288), Source, 0x4Fu); /*0x5f2ee4*/
+      strncpy((char *)(byte_AC1288),(const char *)(Source), 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
             ((Debug *)0)->Log();
     }
@@ -288,8 +288,8 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
             ((Debug *)0)->Log();
-      v21 = (wchar_t *)((HWND)asc_82083C);
-      v16 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1671));
+      v21 = (gamemd::AbstractClass **)((wchar_t *)((HWND)asc_82083C));
+      v16 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullMgr_CPP), 1671));
       v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
@@ -311,9 +311,9 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
         ((Debug *)0)->Log();
     if ( strlen((const char *)(Source)) ) /*0x5f3041*/
             ((Debug *)0)->Log();
-    v21 = (wchar_t *)((HWND)asc_82083C);
-    v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1687));
-    v13 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_ERROR_TIMEOUT), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
+    v21 = (gamemd::AbstractClass **)((wchar_t *)((HWND)asc_82083C));
+    v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullMgr_CPP), 1687));
+    v13 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_ERROR_TIMEOUT), 0,(const char *)(g_Str_File_NullMgr_CPP), 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
         ((Debug *)0)->Log();
     v3 = 5; /*0x5f30b4*/

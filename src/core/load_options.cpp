@@ -395,7 +395,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   {
     IDA_LOBYTE(this->m_C) = 0; /*0x55a206*/
     if ( out_buffer ) /*0x55a20c*/
-      v4 = out_buffer; /*0x55a222*/
+      v4 = (unsigned int *)(out_buffer); /*0x55a222*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * new_size); /*0x55a21e*/
     IDA_LOBYTE(this->m_C) = 1; /*0x55a226*/

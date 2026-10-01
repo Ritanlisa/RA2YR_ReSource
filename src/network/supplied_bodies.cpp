@@ -113,7 +113,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v21 = a4[1]; /*0x53fda2*/
       v22 = a4[2]; /*0x53fda9*/
       if ( (unsigned short)a5 ) /*0x53fdad*/
-        Network::SetPort((Network *)v20, a5); /*0x53fdb4*/
+        Network::SetPort((gamemd::IPXManagerClass *)((Network *)v20), a5); /*0x53fdb4*/
       v12 = 0; /*0x53fdbf*/
       if ( *((int *)this + 53) <= 0 ) /*0x53fdc3*/
       {

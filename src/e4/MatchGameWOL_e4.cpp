@@ -29,8 +29,8 @@ void sub_7A19E0()
   unsigned int v14[27]; // [esp+14h] [ebp-6Ch] BYREF
 
   v10 = (wchar_t *)((int)((wchar_t *)(stru_B76AC4)));
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchfoundw), 0, g_Str_File_wonline_cpp, 28774));
-  Dialog::ShowMessage((gamemd::ObjectClass *)(12648447), (size_t)StringCSF, v10); /*0x7a1a07*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchfoundw), 0,(const char *)(g_Str_File_wonline_cpp), 28774));
+  Dialog::ShowMessage((gamemd::ObjectClass *)(12648447),(gamemd::CampaignScore *)((size_t)StringCSF), v10); /*0x7a1a07*/
   ((String *)((const char **)&stru_B76AC4))->ToLowerCopy((char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
@@ -70,7 +70,7 @@ void sub_7A19E0()
   DeleteAndZero((void **)&v13); /*0x7a1ac7*/
   if ( v5 == -1 ) /*0x7a1ad0*/
   {
-    v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0, g_Str_File_wonline_cpp, 28787));
+    v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0,(const char *)(g_Str_File_wonline_cpp), 28787));
   }
   else
   {
@@ -84,16 +84,16 @@ void sub_7A19E0()
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
         v11 = (wchar_t *)((void *)v13);
-        v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone), 0, g_Str_File_wonline_cpp, 28800));
-        Dialog::ShowMessage((gamemd::ObjectClass *)(12648447), (size_t)v9, v11); /*0x7a1b5d*/
+        v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone), 0,(const char *)(g_Str_File_wonline_cpp), 28800));
+        Dialog::ShowMessage((gamemd::ObjectClass *)(12648447),(gamemd::CampaignScore *)((size_t)v9), v11); /*0x7a1b5d*/
         DeleteAndZero(&v12); /*0x7a1b69*/
         return; /*0x7a1b73*/
       }
-      v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0, g_Str_File_wonline_cpp, 28802));
+      v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0,(const char *)(g_Str_File_wonline_cpp), 28802));
     }
     else
     {
-      v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0, g_Str_File_wonline_cpp, 28794));
+      v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0,(const char *)(g_Str_File_wonline_cpp), 28794));
     }
   }
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/

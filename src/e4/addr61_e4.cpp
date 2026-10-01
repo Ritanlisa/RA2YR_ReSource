@@ -344,7 +344,7 @@ void sub_612930()
       v6 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
-      stru_AC1858 = RA2_OPNEW(4 * (v0 >> 1)); /*0x6129d9*/
+      stru_AC1858 = (unsigned char)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6129d9*/
       memset((void *)(stru_AC1858), 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {

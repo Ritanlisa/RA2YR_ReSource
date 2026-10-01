@@ -1148,7 +1148,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24,(gamemd::IUnknown *)(&v25), &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1194,7 +1194,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA4D = 0; /*0x554fc3*/
       dword_ABCA48 = 0; /*0x554fca*/
       byte_ABCA84 = 0; /*0x554fd4*/
-      MapClass::MarkForRedraw((int)(&dword_87F7E8), 1); /*0x554fdb*/
+      MapClass::MarkForRedraw((int)(&dword_87F7E8),(void *)(1)); /*0x554fdb*/
     }
   }
   v12 = Timer::GetHighPrecision(&dbl_884D88); /*0x554fe9*/

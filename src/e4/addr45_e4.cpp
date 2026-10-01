@@ -168,7 +168,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
                 strcpy((char *)(a2), (const char *)(*(unsigned int *)(a1 + 1312) + 504));
-        v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
+        v18 = strlen((const char *)(asc_818D7C)) + 1; /*0x45158c*/
         qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
         v19 = strlen(v26); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
@@ -197,7 +197,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         fcomp qword ptr [eax+1700h]
         fnstsw ax
       }
-      v23 = (BOOL)((_EAX & 0x4100) != 0);
+      v23 = (gamemd::IUnknown *)((BOOL)((_EAX & 0x4100) != 0));
             v23 = (IUnknown *)(*(char *)(a1 + 1794) - 1);
       if ( v23 ) /*0x45163c*/
                 v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3932);
@@ -382,7 +382,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   v49[0] = v40 - v12; /*0x456a4c*/
   v49[2] = 2 * v12; /*0x456a53*/
   v49[3] = v12; /*0x456a5a*/
-  v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47), v49, &DSurface_ViewBounds, 0, 0); /*0x456a66*/
+  v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(v49), &DSurface_ViewBounds, 0, 0); /*0x456a66*/
   v48 = *v13; /*0x456a6a*/
   v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
   if ( v14 > 0 && *((int *)v13 + 3) > 0 ) /*0x456a85*/
@@ -984,7 +984,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
   unsigned int *v7; // ebx
   unsigned char *v8; // eax
 
-  v4 = aP4; /*0x451ee3*/
+  v4 = (int)(aP4); /*0x451ee3*/
   if ( *(unsigned char *)(a1 + 1766) != (unsigned char)aP4 ) /*0x451eed*/
   {
     v5 = 0; /*0x451ef2*/

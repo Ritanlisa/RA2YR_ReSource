@@ -90,7 +90,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
+  if ( INIClass::GetString((INIClass *)this,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
   v4 = 0; /*0x474964*/
   v5 = (char **)(&off_81B9B0); /*0x474966*/
@@ -123,7 +123,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
-  INIClass::GetString((INIClass *)this, a2,(gamemd::INIClass *)(a3), v4, Destination, 32); /*0x474f85*/
+  INIClass::GetString((INIClass *)this, a2,(gamemd::INIClass *)(a3),(gamemd::INIClass *)(v4), Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 
 }
@@ -269,7 +269,7 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
   int v6; // edx
 
   AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
-  v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
+  v3 = (int *)(&this->ChargerTurrets[3]); /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
@@ -313,7 +313,7 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
   this->AbstractTypeClass = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73d9*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73df*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73e6*/
-  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73ed*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
 }
@@ -334,7 +334,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
   *((unsigned int *)this + 1) = (unsigned int)(&vt_ObjectTypeClass); /*0x5f7411*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_ObjectTypeClass); /*0x5f7418*/
   *((unsigned int *)this + 3) = (int)(&vt_ObjectTypeClass); /*0x5f741f*/
-  v8 = this; /*0x5f7431*/
+  v8 = (int)(this); /*0x5f7431*/
   v2 = (*(int ((int *)(**))(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
@@ -555,7 +555,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   {
     if ( !*((unsigned char *)this + 530) ) /*0x5f90a0*/
     {
-      v2 = (unsigned char *)this + 504; /*0x5f90ab*/
+      v2 = (char *)((unsigned char *)this + 504); /*0x5f90ab*/
       sprintf(Buffer, off_832AE8, (unsigned char *)this + 504); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
@@ -578,7 +578,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   {
     *((unsigned char *)this + 530) = 0; /*0x5f9112*/
   }
-  _makepath(&Source, 0, 0,(const char *)((unsigned char *)this + 504), Ext); /*0x5f912e*/
+  _makepath(&Source, 0, 0,(const char *)((unsigned char *)this + 504),(const char *)(Ext)); /*0x5f912e*/
   if ( *((unsigned char *)this + 556) ) /*0x5f9133*/
   {
     _makepath(&Source, 0, 0,(const char *)((unsigned char *)this + 504), (const char *)&off_7E1BC6 + 112 * *((unsigned int *)dword_A8B230 + 1174)); /*0x5f9169*/
@@ -606,7 +606,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   if ( (*(int ((char *)(**))(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
     || (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) == 5 )
   {
-    v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
+    v9 = (int)(SearchMIXFile(&Source, 1)); /*0x5f9267*/
     *((unsigned int *)this + 41) = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
@@ -617,14 +617,14 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
     && (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 37 )
   {
-    v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
+    v7 = (int)(SearchMIXFile(&Source, 0)); /*0x5f9249*/
     *((unsigned int *)this + 41) = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
       v15 = 71; /*0x5f9258*/
       v8 = 0; /*0x5f925d*/
 LABEL_40:
-      *((unsigned int *)this + 41) = SearchMIXFile(&Source, v8); /*0x5f927d*/
+      *((unsigned int *)this + 41) = (unsigned int)(SearchMIXFile(&Source, v8)); /*0x5f927d*/
     }
   }
 LABEL_41:

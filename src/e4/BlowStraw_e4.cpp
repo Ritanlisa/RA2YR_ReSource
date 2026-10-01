@@ -213,7 +213,7 @@ CellStruct * * sub_731AF0()
   result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731af1*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 856));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0,(const char *)(g_Str_File_UICmnds_cpp), 856));
     v3 = 3; /*0x731b18*/
     if ( dword_A83D4C ) /*0x731b1f*/
       v3 = *(unsigned int *)&((unsigned int *)(dword_A83D4C))[134].__pad_90[4]; /*0x731b21*/

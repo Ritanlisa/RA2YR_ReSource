@@ -275,11 +275,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
   *((unsigned int *)this + 201) = 0; /*0x710bf8*/
   *((unsigned int *)this + 202) = 10; /*0x710bfb*/
-  *((unsigned int *)this + 197) = &vt_TypeList; /*0x710bfe*/
+  *((unsigned int *)this + 197) = (unsigned int)(&vt_TypeList); /*0x710bfe*/
   VectorClass::Construct((unsigned int *)this + 204, 0, 0); /*0x710c0f*/
   *((unsigned int *)this + 209) = 10; /*0x710c14*/
   *((unsigned int *)this + 208) = 0; /*0x710c17*/
-  *((unsigned int *)this + 204) = &vt_TypeList; /*0x710c1a*/
+  *((unsigned int *)this + 204) = (unsigned int)(&vt_TypeList); /*0x710c1a*/
   *((unsigned int *)this + 211) = 1247291207; /*0x710c2d*/
   *((unsigned int *)this + 212) = 298948665; /*0x710c39*/
   *((unsigned int *)this + 213) = -1610610249; /*0x710c42*/

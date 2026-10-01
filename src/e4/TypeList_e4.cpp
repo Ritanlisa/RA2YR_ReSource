@@ -652,7 +652,7 @@ char TypeList_Infantry::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x512c42*/
+  m_8 = (int)(this->m_8); /*0x512c42*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x512c4d*/
   {
     v3 = 0; /*0x512c4f*/
@@ -718,7 +718,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       return 0; /*0x512f1a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x512ea8*/
     {
-      m_8 = this->m_8; /*0x512eaf*/
+      m_8 = (int)(this->m_8); /*0x512eaf*/
       if ( a2 < m_8 ) /*0x512eb4*/
         m_8 = a2; /*0x512eb6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x512ebc*/
@@ -729,7 +729,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x512ee1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x512eea*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x512eea*/
     this->m_8 = a2; /*0x512ef2*/
     BYTE1(this->m_C) = a3 == 0; /*0x512ef5*/
   }
@@ -737,7 +737,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x512efe*/
   }
-  v7 = this->m_8; /*0x512f01*/
+  v7 = (int)(this->m_8); /*0x512f01*/
   if ( v7 < this->m_10 ) /*0x512f09*/
     this->m_10 = v7; /*0x512f0b*/
   return 1; /*0x512f0e*/
@@ -754,7 +754,7 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x512f70*/
+  m_10 = (int)(this->m_10); /*0x512f70*/
   result = 0; /*0x512f73*/
   if ( m_10 <= 0 ) /*0x512f78*/
     return -1; /*0x512f8f*/

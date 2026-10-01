@@ -86,7 +86,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2), StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
+    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex), &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -321,10 +321,10 @@ LABEL_47:
   ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aScore2, this->scenario[15], 0); /*0x49ca3e*/
   INIClass::WriteDigest((INIClass *)&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset(&v30); /*0x49ca5d*/
-  *(unsigned int *)v30.CDFileClass = &vt_CCFileClass; /*0x49ca67*/
+  *(unsigned int *)v30.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
   ((Vector *)((int)v31))->Clear(); /*0x49ca7e*/
-  *(unsigned int *)v30.CDFileClass = &off_7E1668; /*0x49ca8f*/
+  *(unsigned int *)v30.CDFileClass = (unsigned int)(&off_7E1668); /*0x49ca8f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
   *(unsigned int *)v33.CDFileClass = &vt_CCFileClass; /*0x49caab*/

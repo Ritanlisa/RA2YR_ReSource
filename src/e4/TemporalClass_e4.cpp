@@ -277,7 +277,7 @@ LABEL_10:
             v30 = *((unsigned int *)this + 15); /*0x71a9de*/
             if ( v30 ) /*0x71a9e3*/
             {
-              SuperClass::SetOnHold(v30, 0); /*0x71a9e6*/
+              SuperClass::SetOnHold((gamemd::CoordStruct *)(v30), 0); /*0x71a9e6*/
               *((unsigned int *)this + 15) = 0; /*0x71a9eb*/
             }
             v31 = *(unsigned int **)this->__pad_28; /*0x71a9ee*/
@@ -380,10 +380,10 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71b1bd*/
-  ((unsigned int *)Block)[0] = (gamemd::TemporalClass *)(&vt_TemporalClass); /*0x71b1c3*/
-  ((unsigned int *)Block)[0] = &vt_TemporalClass; /*0x71b1ca*/
-  ((unsigned int *)Block)[0] = &vt_TemporalClass; /*0x71b1d1*/
-  v5 = Block; /*0x71b1df*/
+  ((unsigned int *)Block)[0] = (unsigned int)((gamemd::TemporalClass *)(&vt_TemporalClass)); /*0x71b1c3*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_TemporalClass); /*0x71b1ca*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_TemporalClass); /*0x71b1d1*/
+  v5 = (gamemd::TemporalClass *)(Block); /*0x71b1df*/
   v3 = (*(int (**)(int *, TemporalClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 16))( /*0x71b1e3*/
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
          &v5);
@@ -429,11 +429,11 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
       aP0->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71a687*/
-      ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a68d*/
-      ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a694*/
-      ((unsigned int *)aP0)[0] = &vt_TemporalClass; /*0x71a69b*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a69b*/
     }
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->creationFrame)); /*0x71a6ab*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_28); /*0x71a6b9*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 16); /*0x71a6c7*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 17); /*0x71a6d5*/
@@ -450,7 +450,7 @@ namespace gamemd {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x71a714*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x71a714*/
 
 }
 } // namespace gamemd
@@ -500,7 +500,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-          v4 = ((Coord *)(&dword_87F7E8))->To_Cell(v5); /*0x71aef8*/
+          v4 = (unsigned int *)(((Coord *)(&dword_87F7E8))->To_Cell(v5)); /*0x71aef8*/
           if ( ((Cell *)(v4))->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

@@ -188,7 +188,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 
   v2 = (gamemd::AbstractTypeClass *)((int)(a0));
   v3 = (gamemd::AbstractTypeClass *)((int)(aP1));
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a0), aP1); /*0x6a478d*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a0),(gamemd::AbstractClass *)(aP1)); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
     if ( v2 ) /*0x6a47a4*/
@@ -323,29 +323,29 @@ wchar_t * SideClass::GetName()
 {
 
   if ( this == (SideClass *)-2 ) /*0x4e38a3*/
-    return GetStringCSF((wchar_t *)(aSttPlayersider), 0, g_Str_File_GDlgSupp_cpp, 237); /*0x4e38b6*/
+    return GetStringCSF((wchar_t *)(aSttPlayersider), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 237); /*0x4e38b6*/
   if ( this == (SideClass *)-3 ) /*0x4e38bf*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideo), 0, g_Str_File_GDlgSupp_cpp, 239); /*0x4e38d2*/
+    return GetStringCSF((wchar_t *)(aSttPlayersideo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 239); /*0x4e38d2*/
   if ( !this ) /*0x4e38da*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidea), 0, g_Str_File_GDlgSupp_cpp, 241); /*0x4e38ed*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidea), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 241); /*0x4e38ed*/
   if ( this == (SideClass *)1 ) /*0x4e38f6*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidek), 0, g_Str_File_GDlgSupp_cpp, 243); /*0x4e3909*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidek), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 243); /*0x4e3909*/
   if ( this == (SideClass *)2 ) /*0x4e3912*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidef), 0, g_Str_File_GDlgSupp_cpp, 245); /*0x4e3925*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidef), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 245); /*0x4e3925*/
   if ( this == (SideClass *)3 ) /*0x4e392e*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideg), 0, g_Str_File_GDlgSupp_cpp, 247); /*0x4e3941*/
+    return GetStringCSF((wchar_t *)(aSttPlayersideg), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 247); /*0x4e3941*/
   if ( this == (SideClass *)4 ) /*0x4e394a*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideb), 0, g_Str_File_GDlgSupp_cpp, 249); /*0x4e395d*/
+    return GetStringCSF((wchar_t *)(aSttPlayersideb), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 249); /*0x4e395d*/
   if ( this == (SideClass *)5 ) /*0x4e3966*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidel), 0, g_Str_File_GDlgSupp_cpp, 251); /*0x4e3979*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidel), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 251); /*0x4e3979*/
   if ( this == (SideClass *)6 ) /*0x4e3982*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidei), 0, g_Str_File_GDlgSupp_cpp, 253); /*0x4e3995*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidei), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 253); /*0x4e3995*/
   if ( this == (SideClass *)7 ) /*0x4e399e*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidec), 0, g_Str_File_GDlgSupp_cpp, 255); /*0x4e39b1*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidec), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 255); /*0x4e39b1*/
   if ( this == (SideClass *)8 ) /*0x4e39ba*/
-    return GetStringCSF((wchar_t *)(aSttPlayersider_0), 0, g_Str_File_GDlgSupp_cpp, 257); /*0x4e39cd*/
+    return GetStringCSF((wchar_t *)(aSttPlayersider_0), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 257); /*0x4e39cd*/
   if ( this == (SideClass *)9 ) /*0x4e39d6*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidey), 0, g_Str_File_GDlgSupp_cpp, 259); /*0x4e39e9*/
+    return GetStringCSF((wchar_t *)(aSttPlayersidey), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 259); /*0x4e39e9*/
   return 0; /*0x4e38bb*/
 
 }
@@ -376,7 +376,7 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // edx
   int i; // esi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6a48b1*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x6a48b1*/
   if ( result >= 0 ) /*0x6a48b8*/
   {
     v4 = *a1; /*0x6a48c0*/

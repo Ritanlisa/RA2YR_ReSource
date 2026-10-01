@@ -92,17 +92,17 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf(v5, "RA2 Sync\n"); /*0x651788*/
     ModuleVersion = GetModuleVersion(); /*0x651790*/
     fprintf(v5, "\nVersion %s\n", ModuleVersion); /*0x65179c*/
-    ModuleInternalVersion = GetModuleInternalVersion((void *)((int)&g_CoordScatterManager)); /*0x6517a9*/
+    ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&g_CoordScatterManager))); /*0x6517a9*/
     fprintf(v5, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     Time::FormatDate(v62); /*0x6517cb*/
     v52 = (char *)(((String *)(Destination))->CopyConstant()); /*0x6517f2*/
-    v9 = ((String *)(v64))->FormatDword(); /*0x6517f3*/
+    v9 = (char *)(((String *)(v64))->FormatDword()); /*0x6517f3*/
     fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = (char *)((int)((char *)(5)));
     IDA_HIBYTE(v57) = 0; /*0x65181b*/
-    GetVersionString(&v60, (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
-    v10 = (char *)&off_821F08; /*0x65182b*/
+    GetVersionString((unsigned int *)(&v60), (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
+    v10 = (unsigned int)((char *)&off_821F08); /*0x65182b*/
     if ( !IDA_HIBYTE(v57) ) /*0x651830*/
       v10 = g_INI_Key_No; /*0x651832*/
     v10 = v10; /*0x65183c*/
@@ -395,11 +395,11 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
           v54 += 40; /*0x651ec1*/
         }
         while ( v23 );
-        v33 = (int)(v56);
+        v33 = (int *)((int)(v56));
       }
       ++v33; /*0x651ecf*/
       ++v34; /*0x651ed0*/
-      v56 = v33; /*0x651ed6*/
+      v56 = (unsigned int)(v33); /*0x651ed6*/
     }
     while ( v33 < (int *)(5) );
     fprintf(v5, ">>>> LOGIC LAYER <<<<\n"); /*0x651ee6*/
@@ -447,7 +447,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       fprintf(v5, "CommandCount: %d\n", *(uint16_t *)(v49 + 11));
       fprintf(v5, "Delay:        %d\n", v49[13]);
     }
-    fclose(v5); /*0x65204f*/
+    fclose((FILE *)(v5)); /*0x65204f*/
   }
   else
   {

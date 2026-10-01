@@ -44,7 +44,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1, void *a2_1)
   }
   else
   {
-    v3 = this->field_10; /*0x663d70*/
+    v3 = (void *)(this->field_10); /*0x663d70*/
     result = 0; /*0x663d73*/
     if ( (int)v3 <= 0 ) /*0x663d79*/
       goto LABEL_9; /*0x663d79*/

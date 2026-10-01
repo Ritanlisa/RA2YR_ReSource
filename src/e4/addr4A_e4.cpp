@@ -514,7 +514,7 @@ void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     v15 = (unsigned char *)v6[6]; /*0x4a2c92*/
     v14 = (uint8_t *)v6[7]; /*0x4a2c93*/
     v16 = 0x10000; /*0x4a2c96*/
-    DecodeBlockLCW((gamemd::AbstractClass *)(v14), v13, v15, &v16, 0); /*0x4a2c9e*/
+    DecodeBlockLCW((gamemd::AbstractClass *)(v14), v13, v15,(unsigned int *)(&v16), 0); /*0x4a2c9e*/
   }
   if ( a4 ) /*0x4a2cb7*/
     *a4 = Size; /*0x4a2cbd*/
@@ -600,16 +600,16 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
     v5 = 0; /*0x4a38f2*/
     if ( (*(uint8_t (**)(CCFileClass *, unsigned int))(*(unsigned int *)v8.CDFileClass + 20))(&v8, 0) ) /*0x4a38fd*/
     {
-      v6 = (*(int (**)(CCFileClass *))(*(unsigned int *)v8.CDFileClass + 44))(&v8); /*0x4a390f*/
+      v6 = (void *)((*(int (**)(CCFileClass *))(*(unsigned int *)v8.CDFileClass + 44))(&v8)); /*0x4a390f*/
       v5 = (int)(RA2_OPNEW(v6)); /*0x4a3917*/
       v7 = v5 == 0; /*0x4a391c*/
       if ( !v5 ) /*0x4a391e*/
       {
   LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
-        *(unsigned int *)v8.CDFileClass = (void*)&CCFileClass_vftable; /*0x4a3938*/
+        *(unsigned int *)v8.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x4a3938*/
         v9[3] = (unsigned int)(0); /*0x4a3940*/
         ((Vector *)((int)v9))->Clear(); /*0x4a3948*/
-        *(unsigned int *)v8.CDFileClass = (gamemd::AbstractClass **)(&off_7E1668); /*0x4a3951*/
+        *(unsigned int *)v8.CDFileClass = (unsigned int)((gamemd::AbstractClass **)(&off_7E1668)); /*0x4a3951*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
       }
@@ -651,7 +651,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         v8[0] = (unsigned int)((gamemd::AbstractClass **)((void*)&CCFileClass_vftable));
         v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
         ((Vector *)((int)v9))->Clear(); /*0x4a39ef*/
-        v8[0] = (gamemd::AbstractClass **)((unsigned int)&off_7E1668); /*0x4a39f8*/
+        v8[0] = (unsigned int)((gamemd::AbstractClass **)((unsigned int)&off_7E1668)); /*0x4a39f8*/
         BufferIOFileClass::Dtor(v8); /*0x4a3a00*/
         return (int)v5; /*0x4a3a05*/
       }
@@ -878,12 +878,12 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   if ( !g_lpDirectDraw7 ) /*0x4a4915*/
     return 0; /*0x4a4ab2*/
   sub_4A4E30(&v16, 0, 0); /*0x4a4923*/
-  v16 = (void*)&DynamicVectorClass__DDSURFACEDESC___vftable; /*0x4a4937*/
+  v16 = (void **)((void*)&DynamicVectorClass__DDSURFACEDESC___vftable); /*0x4a4937*/
   v20 = 10; /*0x4a493f*/
   v19 = 0; /*0x4a4947*/
   if ( g_lpDirectDraw7->lpVtbl->EnumDisplayModes(g_lpDirectDraw7, 0, 0, &v16, (LPDDENUMMODESCALLBACK)sub_4A4850) || !v19 ) /*0x4a4967*/
   {
-    v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a93*/
+    v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a93*/
     if ( Block && IDA_BYTE1(v18) ) /*0x4a4aa5*/
       RA2_OPDEL(Block); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
@@ -918,7 +918,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   {
   LABEL_13:
     RA2_OPDEL(v5); /*0x4a4a1a*/
-    v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a28*/
+    v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a28*/
     if ( Block && IDA_BYTE1(v18) ) /*0x4a4a38*/
     {
       RA2_OPDEL(Block); /*0x4a4a3b*/
@@ -927,7 +927,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
     return 0; /*0x4a4a38*/
   }
   qsort(v5, NumOfElements, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_4A48C0); /*0x4a4a5b*/
-  v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a69*/
+  v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a69*/
   if ( Block && IDA_BYTE1(v18) ) /*0x4a4a79*/
     RA2_OPDEL(Block); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
@@ -1093,7 +1093,7 @@ void SHP_DrawBuildingTiles(int * a1, int a2, char a3)
   v90 = v9; /*0x4a5b34*/
   v93 = v9; /*0x4a5b3b*/
   v94 = v9; /*0x4a5b42*/
-  v10 = &v73[4 * a2]; /*0x4a5b49*/
+  v10 = (int *)(&v73[4 * a2]); /*0x4a5b49*/
   if ( a3 ) /*0x4a5b4d*/
   {
     v11 = v5[195]; /*0x4a5b4f*/

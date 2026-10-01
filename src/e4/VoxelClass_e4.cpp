@@ -191,7 +191,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                             *((unsigned int *)a1 + 413),
                             v73,
                             &v66);
-      Transform::Copy(v70, v29); /*0x73c885*/
+      Transform::Copy(v70,(void *)(v29)); /*0x73c885*/
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
       ((Matrix3x4 *)(v70))->Translate(v46); /*0x73c8b2*/
       v54 = (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/

@@ -32,7 +32,7 @@ int sub_53AB70()
     1000 * *((unsigned int *)dword_A8B230 + 3418) / 100,
     1000 * *((unsigned int *)dword_A8B230 + 3419) / 100,
     1);
-  return MapClass::MarkForRedraw((int)(&dword_87F7E8), 1); /*0x53ac4a*/
+  return MapClass::MarkForRedraw((int)(&dword_87F7E8),(void *)(1)); /*0x53ac4a*/
 }
 }
 // 0x5C0080

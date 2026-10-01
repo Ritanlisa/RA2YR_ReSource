@@ -79,7 +79,7 @@ int MapSeed::CheckName(void *a1)
         DeleteAndZero((ObjectClass *)&v8.m_3[1]),
         DeleteAndZero((ObjectClass *)&v9),
         v3)
-    || (uint8_t)ValidateStringContains((const char **)this, v4, asc_84BA18) )
+    || (uint8_t)ValidateStringContains((const char **)this, v4,(char *)(asc_84BA18)) )
   {
     result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
     LOBYTE(result) = 0; /*0x79c5bc*/

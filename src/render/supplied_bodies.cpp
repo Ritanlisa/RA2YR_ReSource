@@ -100,7 +100,7 @@ int BuildingQueue::IsCellSuitable(int a2) {
       IDA_LOBYTE(result) = 1; /*0x42e793*/
       return result; /*0x42e796*/
     }
-    v4 = 16 * a2 + this->BuildingQueue_field_0x08; /*0x42e79f*/
+    v4 = (int)(16 * a2 + this->BuildingQueue_field_0x08); /*0x42e79f*/
     result = *(unsigned int *)v4; /*0x42e7a2*/
     if ( *(int *)v4 < 0 ) /*0x42e7a7*/
       goto LABEL_9; /*0x42e7a7*/

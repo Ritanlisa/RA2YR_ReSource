@@ -889,7 +889,7 @@ int E4Recv_496310::sub_496310()
     v22 = v19; /*0x496355*/
     if ( v19 ) /*0x496359*/
     {
-      m_4 = this->m_4; /*0x496376*/
+      m_4 = (int)(this->m_4); /*0x496376*/
       LOWORD(v12) = *((unsigned short *)this + 4); /*0x496379*/
       v14 += 2; /*0x496383*/
       v21 = *(uint16_t *)(m_4 + 2 * v22); /*0x496386*/
@@ -951,7 +951,7 @@ int E4Recv_4964D0::sub_4964D0()
     v23 = v19; /*0x496515*/
     if ( v19 ) /*0x496519*/
     {
-      m_4 = this->m_4; /*0x496536*/
+      m_4 = (int)(this->m_4); /*0x496536*/
       LOWORD(v12) = *((unsigned short *)this + 4); /*0x496539*/
       v14 += 2; /*0x496543*/
       LOWORD(m_4) = *(unsigned short *)(m_4 + 2 * v23) >> 2; /*0x49654a*/
@@ -1197,7 +1197,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
   v14 = a1; /*0x496a90*/
   if ( a5 <= 0 ) /*0x496aa5*/
   {
-    v18 = aP3; /*0x496ad8*/
+    v18 = (int)(aP3); /*0x496ad8*/
   }
   else
   {
@@ -1210,7 +1210,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
     }
     while ( result > 0 ); /*0x496abc*/
     v17 = -result; /*0x496ac2*/
-    v18 = aP3 - v17; /*0x496ac4*/
+    v18 = (int)(aP3 - v17); /*0x496ac4*/
     v14 = &a1[v17]; /*0x496ac6*/
     result = a7 + 2 * v17; /*0x496ac9*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496acf*/
@@ -1264,7 +1264,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   v14 = a7; /*0x496bd0*/
   if ( a5 <= 0 ) /*0x496be5*/
   {
-    v18 = aP3; /*0x496c18*/
+    v18 = (int)(aP3); /*0x496c18*/
   }
   else
   {
@@ -1277,7 +1277,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
     }
     while ( result > 0 ); /*0x496bfc*/
     v17 = -result; /*0x496c02*/
-    v18 = aP3 - v17; /*0x496c04*/
+    v18 = (int)(aP3 - v17); /*0x496c04*/
     v12 = arg0 + 2 * v17; /*0x496c06*/
     result = a7 + 2 * v17; /*0x496c09*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496c0f*/

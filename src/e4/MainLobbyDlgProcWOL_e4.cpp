@@ -64,7 +64,7 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
   }
   v4 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1775))));
   SendMessageA(v4, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x77a920*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_UnknownStats), 0, g_Str_File_WOLPersonaInformation_cpp, 892)); /*0x77a933*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_UnknownStats), 0,(const char *)(g_Str_File_WOLPersonaInformation_cpp), 892)); /*0x77a933*/
   ((WideString *)((wchar_t **)&v16))->Assign(StringCSF); /*0x77a93d*/
   v6 = GetDlgItem(hDlg, 1776); /*0x77a94e*/
   v7 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a950*/

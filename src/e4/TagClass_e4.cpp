@@ -272,7 +272,7 @@ int TagClass::Unlink(void *a1)
   {
     if ( *(TagClass **)(result + 68) == this ) /*0x71ae1c*/
       *(unsigned int *)(result + 68) = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(*((TagClass **)this + 16)); /*0x71ae24*/
+    result = (int)(TagClass::Unlink(*((TagClass **)this + 16))); /*0x71ae24*/
   }
   buildingType = this->buildingType; /*0x71ae29*/
   *((unsigned int *)this + 17) = 0; /*0x71ae2c*/
@@ -395,7 +395,7 @@ int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6e57af*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x6e57af*/
   if ( result >= 0 ) /*0x6e57b6*/
     return 0; /*0x6e57b8*/
   return result; /*0x6e57ba*/

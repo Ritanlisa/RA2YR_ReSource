@@ -162,7 +162,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
   if ( this == (Rules *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
   (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
-  v3 = aP1[2]; /*0x67a581*/
+  v3 = (int)(aP1[2]); /*0x67a581*/
   *(unsigned int *)&this->m_5[3] = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
@@ -170,7 +170,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
     BYTE1(this->m_C) = 0; /*0x67a5dd*/
 LABEL_8:
     *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
-    *((unsigned int *)this + 5) = aP1[5]; /*0x67a5ea*/
+    *((unsigned int *)this + 5) = (unsigned int)(aP1[5]); /*0x67a5ea*/
     return this->__pad_0; /*0x67a5ed*/
   }
   v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a593*/
@@ -189,7 +189,7 @@ LABEL_8:
   }
   while ( v6 < *(unsigned int *)&this->m_5[3] ); /*0x67a5c1*/
   *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
-  *((unsigned int *)this + 5) = aP1[5]; /*0x67a5cc*/
+  *((unsigned int *)this + 5) = (unsigned int)(aP1[5]); /*0x67a5cc*/
   return this->__pad_0; /*0x67a5d1*/
 
 }

@@ -130,7 +130,7 @@ LABEL_162:
       HouseClass::CheckWinCondition((int)v22, 0);
       return 1;
     case 3:
-      Owner = ObjectClass_FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
+      Owner = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !Owner )
         return 0;
       *(unsigned char *)(Owner + 494) = 1;
@@ -149,7 +149,7 @@ LABEL_162:
       ((TeamTypeClass *)(v77))->DestroyAllInstances();
       return 1;
     case 6:
-      int v81 = ObjectClass_FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
+      int v81 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v81 )
         return 0;
       (*(void (**)(int))(*(unsigned int *)(v81 + 36) + 56))(v81 + 36);
@@ -162,7 +162,7 @@ LABEL_162:
     case 8:
       return TActionClass::executeRetreatAction((int *)a1, aP1, (int)v9, (int)a5, aP4);
     case 9:
-      int v74 = ObjectClass_FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
+      int v74 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v74 )
         return 0;
       *(unsigned int *)(v74 + 592) = 4;
@@ -214,7 +214,7 @@ LABEL_162:
       while ( v87 >= 0 );
       return 1;
     case 0xD:
-      int v75 = ObjectClass_FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
+      int v75 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v75 )
         return 0;
       *(unsigned char *)(v75 + 495) = 1;
@@ -232,7 +232,7 @@ LABEL_162:
       {
         Conditions::CheckResult(i + 36, (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
-      MapClass::MarkForRedraw((int)(&((unsigned int *)(stru_87C374))[13428]), 1);
+      MapClass::MarkForRedraw((int)(&((unsigned int *)(stru_87C374))[13428]),(void *)(1));
       return 1;
     case 0x11:
       return TActionClass::RevealWaypointArea((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);

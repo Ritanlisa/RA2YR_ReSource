@@ -296,17 +296,17 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.__pad_0 = &vt_TypeList; /*0x721b7b*/
+    *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_TypeList); /*0x721b7b*/
     for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
-      v23 = AnimTypeClass::FindOrCreate(i); /*0x721b9d*/
+      v23 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(i))); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(unsigned int *)v25.__pad_0 = &vt_VectorClass; /*0x721bd6*/
+    *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else

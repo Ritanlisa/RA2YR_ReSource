@@ -84,7 +84,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
-      result      result = (int)(StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])), (int)v18, 0)); 
+      result      result = (int)(StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])),(unsigned int *)((int)v18), 0)); 
     }
     *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/
@@ -427,10 +427,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/
     }
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_54); /*0x41d757*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_58); /*0x41d765*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_5C); /*0x41d773*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_50)); /*0x41d749*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_54)); /*0x41d757*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_58)); /*0x41d765*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_5C)); /*0x41d773*/
   }
   return Prefix_0; /*0x41d77a*/
 
@@ -442,7 +442,7 @@ namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); 
+  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
 
 }
 } // namespace gamemd

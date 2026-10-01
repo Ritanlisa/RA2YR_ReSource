@@ -495,14 +495,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          Destination,
          128) )
   {
-    v27 = TagTypeClass::FindOrCreate(Destination); /*0x6f134e*/
+    v27 = (char *)(TagTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination))); /*0x6f134e*/
   }
   else
   {
-    v27 = (unsigned int)(v26); /*0x6f1355*/
+    v27 = (char *)((unsigned int)(v26)); /*0x6f1355*/
   }
   v28 = *((unsigned int *)this + 39); /*0x6f1357*/
-  *((unsigned int *)this + 52) = v27; /*0x6f135d*/
+  *((unsigned int *)this + 52) = (unsigned int)(v27); /*0x6f135d*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
           (bool *)aP1,
           (uint8_t *)&this->TeamTypeClass_field_24,

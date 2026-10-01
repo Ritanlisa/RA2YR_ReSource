@@ -172,7 +172,7 @@ void * sub_6D0F10()
   do /*0x6d0f5a*/
   {
     sprintf(Buffer, "Button%02d.SHP", v0); /*0x6d0f2f*/
-    result = LoadFileSHP((gamemd::ConvertClass *)(Buffer), &v4); /*0x6d0f3f*/
+    result = LoadFileSHP((gamemd::ConvertClass *)(Buffer),(gamemd::ConvertClass *)(&v4)); /*0x6d0f3f*/
     v3 = v4; /*0x6d0f44*/
     *(unsigned int *)(v1) = (int)result; /*0x6d0f48*/
     ((unsigned int *)(byte_B0CBDC))[v0] = v3; /*0x6d0f4a*/

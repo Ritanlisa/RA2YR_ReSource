@@ -539,7 +539,7 @@ void RunNetworkGameLoop()
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
         ((Debug *)0)->Log();
-    SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64847e*/
+    SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x64847e*/
   LABEL_11:
     (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
     v6 = v25; /*0x64848e*/
@@ -590,7 +590,7 @@ void RunNetworkGameLoop()
         }
         return;
       }
-      if ( ProcessNetworkFrameSync((int)v3, (int)v2, v15, v14, (int)&dword_AFA358, &v19) == 3 ) /*0x64850e*/
+      if ( ProcessNetworkFrameSync((int)v3, (int)v2, v15, v14, (int)&dword_AFA358,(unsigned int *)(&v19)) == 3 ) /*0x64850e*/
         goto LABEL_33; /*0x64850e*/
   LABEL_23:
       (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648586*/
@@ -629,10 +629,10 @@ void RunNetworkGameLoop()
   }
     ((Debug *)0)->Log();
     ((Debug *)0)->Log();
-  SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64869f*/
-  SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
-  SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/
-  SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486d8*/
+  SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x64869f*/
+  SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486b2*/
+  SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486c5*/
+  SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486d8*/
 }
 }
 // 0x648710

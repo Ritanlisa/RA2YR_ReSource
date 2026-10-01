@@ -70,7 +70,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
     FollowingObject = v4->FollowingObject; /*0x436c23*/
     v25 = v5; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
-    v22 = (gamemd::Object *)(0); /*0x436c3b*/
+    v22 = (unsigned int *)((gamemd::Object *)(0)); /*0x436c3b*/
     nextArrayIndex = (gamemd::Object *)((Object *)FollowingObject[3]); /*0x436c3f*/
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
@@ -254,7 +254,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/
   if ( v28 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) ) /*0x513e9b*/
   {
-    if ( (uint8_t)StreamClass::GetDirty((IUnknown *)&((unsigned int *)this)[0]) ) /*0x513ea1*/
+    if ( (uint8_t)StreamClass::GetDirty((int)((IUnknown *)&((unsigned int *)this)[0])) ) /*0x513ea1*/
       *(double *)&((unsigned int *)this)[4] = ((double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) /*0x513ec8*/
                               + (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484)
                               - (double)v28)
@@ -310,7 +310,7 @@ namespace gamemd {
 int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x4369d4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x4369d4*/
 
 }
 } // namespace gamemd

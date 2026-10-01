@@ -172,7 +172,7 @@ void* WWMouseClass::captureMouse()
         if ( this->WWMouseClass_field_0x4 ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
-          FoundationSize = (int *)(Building::GetFoundationSize(&v18, (unsigned int)this->WWMouseClass_field_0x8)); /*0x7b9b43*/
+          FoundationSize = (int *)(Building::GetFoundationSize((unsigned int *)(&v18), (unsigned int)this->WWMouseClass_field_0x8)); /*0x7b9b43*/
           v16.X = *FoundationSize; /*0x7b9b4c*/
           v16.Y = FoundationSize[1]; /*0x7b9b53*/
           v16.Width = FoundationSize[2]; /*0x7b9b5a*/
@@ -189,7 +189,7 @@ void* WWMouseClass::captureMouse()
         Width = (unsigned int)(v16.Width);
         Height = (unsigned int)(v16.Height);
         v17[0] = (unsigned int)(v16.X);
-        *(unsigned int *)this->__pad_48 = v16.X; /*0x7b9ba4*/
+        *(unsigned int *)this->__pad_48 = (unsigned int)(v16.X); /*0x7b9ba4*/
         v17[2] = Width; /*0x7b9ba7*/
         v17[3] = Height; /*0x7b9bab*/
         *(unsigned int *)&this->__pad_48[4] = Y; /*0x7b9bb1*/

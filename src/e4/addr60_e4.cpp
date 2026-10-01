@@ -1438,7 +1438,7 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
      || v5 == 3015)
     && DlgCtrlID == 1820 )
   {
-    return LoadFileSHP((gamemd::ConvertClass *)(off_833674), a3); /*0x603a08*/
+    return LoadFileSHP((gamemd::ConvertClass *)(off_833674),(gamemd::ConvertClass *)(a3)); /*0x603a08*/
   }
   if ( v5 == 148 ) /*0x603a2c*/
   {

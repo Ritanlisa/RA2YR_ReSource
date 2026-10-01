@@ -74,7 +74,7 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c00fa*/
-    Frame::Present((void *)((int)DSurface_Alternate), v3, a2, a3, 0, v8, v9, v10); /*0x5c0107*/
+    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0, v8, v9, v10); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
@@ -120,7 +120,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   char v17[16]; // [esp+20h] [ebp-D8h] BYREF
   char Str[200]; // [esp+30h] [ebp-C8h] BYREF
 
-  if ( !a2 || !Render_Play(a1, Str, 1) ) /*0x5c07ea*/
+  if ( !a2 || !Render_Play((const char *)(a1), Str, 1) ) /*0x5c07ea*/
     return 0; /*0x5c07f1*/
   v4 = a3; /*0x5c07f7*/
   if ( a3 ) /*0x5c0800*/
@@ -161,7 +161,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     }
     return 0; /*0x5c0964*/
   }
-  VQMovie = (gamemd::MovieClass **)((unsigned int)((MovieClass **)LoadVQMovie(Str,(int *)(a2), 0, 0, 0, 0, v5, v14, v15, v16, 255, 0)));
+  VQMovie = (gamemd::MovieClass **)((unsigned int)((MovieClass **)LoadVQMovie(Str,(int *)(a2), 0, 0, 0, 0, v5, v14,(gamemd::IUnknown *)(v15), v16, 255, 0)));
   if ( !VQMovie ) /*0x5c090e*/
     return 0; /*0x5c090e*/
   v12 = RA2_OPNEW(0x18u); /*0x5c0912*/
@@ -254,8 +254,8 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
   int v6; // [esp+0h] [ebp-8h]
 
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, aDRa2mdpostMpla, 108));
-  v3 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, aDRa2mdpostMpla, 108));
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(aDRa2mdpostMpla), 108));
+  v3 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(aDRa2mdpostMpla), 108));
   return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 
 }
@@ -1180,7 +1180,7 @@ void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4,
       v22 = v20 - (unsigned int)v21; /*0x5c7425*/
       for ( i = v20 - (unsigned int)v21; ; v22 = i ) /*0x5c7427*/
       {
-        RotateBitBufferLeft((int *)(a1), 1, aP2); /*0x5c743d*/
+        RotateBitBufferLeft((int *)(a1), 1,(int)(aP2)); /*0x5c743d*/
         if ( (v40 & *(unsigned int *)((char *)v36 + v22)) != 0 ) /*0x5c744d*/
         {
           v23 = aP2; /*0x5c7452*/
@@ -1343,7 +1343,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
     v38 = !v38; /*0x5c7611*/
   }
   v18 = v40; /*0x5c7615*/
-  SubtractBigInteger((unsigned int *)(v40), a2, (int)v42, (char *)v41, a5); /*0x5c762b*/
+  SubtractBigInteger((unsigned int *)(v40),(unsigned int *)(a2), (int)v42, (char *)v41, a5); /*0x5c762b*/
   IDA_LOBYTE(v19) = v38; /*0x5c7630*/
   if ( v38 ) /*0x5c7636*/
   {
@@ -1434,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)(v39) != 0 && !v36))));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
@@ -1512,8 +1512,8 @@ void ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
     }
     v10 = (v6 % 3) << 8; /*0x5c783f*/
     v11 = ((v6 + 2) % 3) << 8; /*0x5c7853*/
-    SubtractBigInteger((unsigned int *)(&v34[v11]), v33, (int)&v34[v10], &v34[v7], a4); /*0x5c785d*/
-    FillArrayPattern(v30, (char *)v31 + v7, v33, a4); /*0x5c7875*/
+    SubtractBigInteger((unsigned int *)(&v34[v11]), v33, (int)&v34[v10], &v34[v7],(gamemd::Buffer *)(a4)); /*0x5c785d*/
+    FillArrayPattern((unsigned int *)(v30), (char *)v31 + v7, v33, a4); /*0x5c7875*/
     v12 = (char *)v31 + v10; /*0x5c787e*/
     v27 = 0; /*0x5c7887*/
     v13 = (char *)v31 + v11; /*0x5c788c*/
@@ -1963,9 +1963,9 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
       return -2; /*0x5c85e2*/
   }
   v16 = (char *)((unsigned int *)(&a3[v6 - 4]));
-  v17 = (int)((unsigned int *)(a5));
+  v17 = (unsigned int *)((int)((unsigned int *)(a5)));
   v18 = (char *)&aP1[v6 / 4u - 1]; /*0x5c85ef*/
-  v19 = v16; /*0x5c85f3*/
+  v19 = (unsigned int *)(v16); /*0x5c85f3*/
   if ( *(unsigned int *)v18 < *(unsigned int *)v16 ) /*0x5c85f9*/
   {
   LABEL_23:

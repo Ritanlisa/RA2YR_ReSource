@@ -206,7 +206,7 @@ LABEL_14:
           v32 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
                             v120,
                             v103);
-          unsigned int * v33 = Coord::To_Cell(DataGlobal_87F7E8, v32);
+          unsigned int * v33 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v32));
           Cell::ApplyDamage(v33, 1, 0, 0, v98);
           if ( v20->vt_slot_24() )
           {
@@ -284,9 +284,9 @@ LABEL_54:
             this->FireWeapon(((unsigned char *)(this) + 0x2B4), v45);
             v105 = (int)(((unsigned char *)(this) + 0x027));
             v106 = (int)(this->owningHouseIndex);
-            int v107 = ((unsigned char *)(this) + 0x029);
+            int v107 = (int)(((unsigned char *)(this) + 0x029));
             unsigned int * v46 = (unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord();
-            unsigned int * v47 = Coord::To_Cell(DataGlobal_87F7E8, v46);
+            unsigned int * v47 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v46));
             Cell::ApplyDamage(v47, (int)v119, (int)&v105, 1, 0);
             if ( !((unsigned char *)(this) + 0x0BF) )
               goto LABEL_107;
@@ -332,10 +332,10 @@ LABEL_54:
       }
       return result;
     case 6:
-      int v48 = ((unsigned char *)(this) + 0x2B4);
+      int v48 = (int)(((unsigned char *)(this) + 0x2B4));
       if ( v48 )
       {
-        int v49 = *this;
+        int v49 = (int)(*this);
         int v50 = this->SelectWeapon(v48, 1);
         switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v50) )
         {
@@ -349,14 +349,14 @@ LABEL_54:
           default:
             goto LABEL_91;
         }
-        int v51 = *this;
+        int v51 = (int)(*this);
         int v94 = (int)(this->SelectWeapon(((unsigned char *)(this) + 0x2B4)));
-        int v89 = ((unsigned char *)(this) + 0x2B4);
+        int v89 = (int)(((unsigned char *)(this) + 0x2B4));
         this->FireWeapon();
         v100 = (int)(((unsigned char *)(this) + 0x027));
-        int v52 = ((unsigned char *)(this) + 0x2B4);
+        int v52 = (int)(((unsigned char *)(this) + 0x2B4));
         v101[0] = (unsigned int)(this->owningHouseIndex);
-        v101[1] = ((unsigned char *)(this) + 0x029);
+        v101[1] = (unsigned int)(((unsigned char *)(this) + 0x029));
   unsigned int *v53; // eax
         v53 = (unsigned int *)(*(int (**)(int, unsigned char *, int *, int, unsigned int, unsigned int))(*(unsigned int *)v52 + 72))(
                           v52,
@@ -366,10 +366,10 @@ LABEL_54:
                           1,
                           0,
                           0);
-        unsigned int * v54 = Coord::To_Cell(DataGlobal_87F7E8, v53);
+        unsigned int * v54 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v53));
         Cell::ApplyDamage(v54, v89, v94, v98, v99);
         this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
-        int v55 = *this;
+        int v55 = (int)(*this);
         this->missionStatus = 7;
         return *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(0) + 176);
       }

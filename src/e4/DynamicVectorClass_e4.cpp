@@ -870,7 +870,7 @@ char DynamicVectorClass_PAD::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x49ea32*/
+  m_8 = (int)(this->m_8); /*0x49ea32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x49ea3d*/
   {
     v3 = 0; /*0x49ea3f*/
@@ -913,7 +913,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
       return 0; /*0x49eb1a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x49eaa8*/
     {
-      m_8 = this->m_8; /*0x49eaaf*/
+      m_8 = (int)(this->m_8); /*0x49eaaf*/
       if ( a2 < m_8 ) /*0x49eab4*/
         m_8 = a2; /*0x49eab6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49eabc*/
@@ -924,7 +924,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x49eae1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x49eaea*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49eaea*/
     this->m_8 = a2; /*0x49eaf2*/
     BYTE1(this->m_C) = a3 == 0; /*0x49eaf5*/
   }
@@ -932,7 +932,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49eafe*/
   }
-  v7 = this->m_8; /*0x49eb01*/
+  v7 = (int)(this->m_8); /*0x49eb01*/
   if ( v7 < this->m_10 ) /*0x49eb09*/
     this->m_10 = v7; /*0x49eb0b*/
   return 1; /*0x49eb0e*/
@@ -949,7 +949,7 @@ int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x49eb20*/
+  m_10 = (int)(this->m_10); /*0x49eb20*/
   result = 0; /*0x49eb23*/
   if ( m_10 <= 0 ) /*0x49eb28*/
     return -1; /*0x49eb3f*/
@@ -972,7 +972,7 @@ char DynamicVectorClass_PAD_16::Add(int a2, void *a2_2, void *a3_1)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x49eb52*/
+  m_8 = (int)(this->m_8); /*0x49eb52*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x49eb5d*/
   {
     v3 = 0; /*0x49eb5f*/
@@ -1014,7 +1014,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x49ebd5*/
       {
-        m_8 = this->m_8; /*0x49ebdc*/
+        m_8 = (int)(this->m_8); /*0x49ebdc*/
         if ( a2 < m_8 ) /*0x49ebe1*/
           m_8 = a2; /*0x49ebe3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49ebe9*/
@@ -1025,7 +1025,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x49ec0e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x49ec17*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49ec17*/
       this->m_8 = a2; /*0x49ec1f*/
       BYTE1(this->m_C) = a3 == 0; /*0x49ec22*/
       return 1; /*0x49ec28*/
@@ -1071,7 +1071,7 @@ int DynamicVectorClass_PAD_16::GetSize(unsigned int * a2)
 
   if ( !LOBYTE(this->m_C) ) /*0x49ec70*/
     return 0; /*0x49ec78*/
-  m_8 = this->m_8; /*0x49ec7e*/
+  m_8 = (int)(this->m_8); /*0x49ec7e*/
   result = 0; /*0x49ec81*/
   if ( m_8 <= 0 ) /*0x49ec85*/
     return -1; /*0x49ec9c*/
@@ -1120,7 +1120,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x49edda*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x49ed68*/
     {
-      m_8 = this->m_8; /*0x49ed6f*/
+      m_8 = (int)(this->m_8); /*0x49ed6f*/
       if ( a2 < m_8 ) /*0x49ed74*/
         m_8 = a2; /*0x49ed76*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49ed7c*/
@@ -1131,7 +1131,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x49eda1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x49edaa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49edaa*/
     this->m_8 = a2; /*0x49edb2*/
     BYTE1(this->m_C) = a3 == 0; /*0x49edb5*/
   }
@@ -1139,7 +1139,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49edbe*/
   }
-  v7 = this->m_8; /*0x49edc1*/
+  v7 = (int)(this->m_8); /*0x49edc1*/
   if ( v7 < this->m_10 ) /*0x49edc9*/
     this->m_10 = v7; /*0x49edcb*/
   return 1; /*0x49edce*/
@@ -1156,7 +1156,7 @@ int DynamicVectorClass_PAD::FindItemIndex(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x49ede0*/
+  m_10 = (int)(this->m_10); /*0x49ede0*/
   result = 0; /*0x49ede3*/
   if ( m_10 <= 0 ) /*0x49ede8*/
     return -1; /*0x49edff*/

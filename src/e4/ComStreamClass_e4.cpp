@@ -398,7 +398,7 @@ int ComStreamClass::Seek(void *a1, void *a2, void *a3)
   int v8; // [esp+10h] [ebp+10h]
 
   Debug::Log(); /*0x7a4075*/
-  dword_B77DF4 = a3; /*0x7a4083*/
+  dword_B77DF4 = (unsigned int)(a3); /*0x7a4083*/
   if ( !a3 ) /*0x7a4088*/
   {
     dword_B77E60 = a4; /*0x7a4092*/

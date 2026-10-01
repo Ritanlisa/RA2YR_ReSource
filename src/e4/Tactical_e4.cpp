@@ -274,7 +274,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
     }
     else
     {
-      result = CreateSurfaceClassPrimary(v16, aP5, a4); /*0x484142*/
+      result = CreateSurfaceClassPrimary(v16,(int)(aP5), a4); /*0x484142*/
       *a2 = result; /*0x48414e*/
     }
   }

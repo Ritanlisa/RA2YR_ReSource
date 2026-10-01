@@ -33,9 +33,9 @@ int Rect::SetRedraw(int a1) {
   }
   else
   {
-    result = (unsigned int *)(this->u32_1C); /*0x48bab9*/
+    result = (int)((unsigned int *)(this->u32_1C)); /*0x48bab9*/
     this->u32_18 = (unsigned int *)(1); /*0x48babc*/
-    this->u32_14 = result; /*0x48bac3*/
+    this->u32_14 = (unsigned int *)(result); /*0x48bac3*/
   }
   this->Width = result; /*0x48bab3*/
   return result; /*0x48bab6*/
@@ -46,8 +46,8 @@ namespace gamemd {
 void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]); /*0x4a0e63*/
-  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_IConnectionPoint___vftable; /*0x4a0e66*/
+  v3 = (void *)((unsigned int)(*(void **)&this->m_1[3])); /*0x4a0e63*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)((void *)&VectorClass_IConnectionPoint___vftable); /*0x4a0e66*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a0e70*/
   {
     RA2_OPDEL(v3); /*0x4a0e78*/
@@ -94,7 +94,7 @@ void EnumConnectionPointsClass::ClearBuffer() {
     unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x4a0f26*/
+  v2 = (unsigned int)(*(void **)&this->m_1[3]); /*0x4a0f26*/
   this->m_10 = 0; /*0x4a0f29*/
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x4a0f30*/
   {
@@ -134,7 +134,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
       return 0; /*0x4a146a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4a13f8*/
     {
-      m_8 = this->m_8; /*0x4a13ff*/
+      m_8 = (int)(this->m_8); /*0x4a13ff*/
       if ( a2 < m_8 ) /*0x4a1404*/
         m_8 = a2; /*0x4a1406*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a140c*/
@@ -145,15 +145,15 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a1431*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = (unsigned int *)(v4); /*0x4a143a*/
-    this->m_8 = a2; /*0x4a1442*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)((unsigned int *)(v4)); /*0x4a143a*/
+    this->m_8 = (unsigned int *)(a2); /*0x4a1442*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a1445*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
   }
-  v7 = this->m_8; /*0x4a1451*/
+  v7 = (int)(this->m_8); /*0x4a1451*/
   if (v7 < this->m_10, unsigned int a2) /*0x4a1459*/
     this->m_10 = v7; /*0x4a145b*/
   return 1; /*0x4a145e*/
@@ -166,7 +166,7 @@ int EnumConnectionPointsClass::FindItem(void* a1) {
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x4a1470*/
+  m_10 = (int)(this->m_10); /*0x4a1470*/
   result = 0; /*0x4a1473*/
   if ( m_10 <= 0 ) /*0x4a1478*/
     return -1; /*0x4a148f*/
@@ -185,8 +185,8 @@ int COMObject::ActivateThunk(int a1, int a2, int a3) {
 
   if ( !a1 ) /*0x4e1536*/
     return 0; /*0x4e154a*/
-  v4 = (unsigned int *)(*(unsigned int *)this->__pad_0); /*0x4e1538*/
-  this->q01C = 1; /*0x4e153b*/
+  v4 = (int)((unsigned int *)(*(unsigned int *)this->__pad_0)); /*0x4e1538*/
+  this->q01C = (unsigned int *)(1); /*0x4e153b*/
   (*(void (**)(int))(v4 + 120))(a1); /*0x4e153f*/
   return 1; /*0x4e1547*/
 }
@@ -271,7 +271,7 @@ int COMObject::Check(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2afb*/
     return 0; /*0x4e2b0d*/
   *(unsigned int *)&this->__pad_31[11] = a1; /*0x4e2afd*/
-  (*(void (**)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
+  (*(void ((gamemd::TriColorGaugeClass *)(**))(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
   return 1; /*0x4e2b0a*/
 }
 }
@@ -281,7 +281,7 @@ int COMObject::SetField(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2b2b*/
     return 0; /*0x4e2b3d*/
   *(unsigned int *)&this->__pad_31[15] = a1; /*0x4e2b2d*/
-  (*(void (**)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
+  (*(void ((gamemd::TriColorGaugeClass *)(**))(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
   return 1; /*0x4e2b3a*/
 }
 }

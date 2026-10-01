@@ -233,7 +233,7 @@ void * SidebarClass::LoadAssets()
   do /*0x6a598c*/
   {
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
-    v7 = LoadFileSHP((gamemd::ConvertClass *)(Buffer), (bool *)&v12); /*0x6a5960*/
+    v7 = LoadFileSHP((gamemd::ConvertClass *)(Buffer),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a5960*/
     ShapeButton::SetShape(v6, (int)v7, 0, 0); /*0x6a5968*/
     ButtonClass::SetState((ButtonClass *)v6, v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/

@@ -47,7 +47,7 @@ AudioController * * CCFileClass::Close(void *a1, void *a2)
     result = ((FileClass *)(a1))->CloseHandle(); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
-  BYTE1(this->BufferOffset) = (gamemd::AudioController **)(0); /*0x432601*/
+  BYTE1(this->BufferOffset) = (unsigned char)((gamemd::AudioController **)(0)); /*0x432601*/
   return result; /*0x4325f4*/
 
 }

@@ -50,7 +50,7 @@ void AITriggerTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2, voi
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)((unsigned char *)(aP0) + 0x0), a2, a3); /*0x41e5cf*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)((unsigned char *)(aP0) + 0x0)), a2, a3); /*0x41e5cf*/
   if ( result >= 0 ) /*0x41e5d6*/
     return 0; /*0x41e5d8*/
   return result; /*0x41e5da*/
@@ -69,7 +69,7 @@ void AITriggerTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->q09C); /*0x41e605*/
   Power::TimerProcess(this->q0A0); /*0x41e613*/
   Power::TimerProcess(this->q0A8); /*0x41e621*/
-  Power::TimerProcess(((unsigned char *)(this) + 0x0B0)); /*0x41e62f*/
+  Power::TimerProcess((int)(((unsigned char *)(this) + 0x0B0))); /*0x41e62f*/
   switch ( this->q098 ) /*0x41e63f*/
   {
     case 0: /*0x41e63f*/

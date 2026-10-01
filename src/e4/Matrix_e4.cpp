@@ -59,7 +59,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
   int v13; // [esp+28h] [ebp+8h]
 
-  v13 = *aP2; /*0x6d2372*/
+  v13 = (int)(*aP2); /*0x6d2372*/
   if ( v13 >= dword_B0CE30 || (v8 = aP2[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
     *aP1 = (unsigned int *)(dword_B0CE08);

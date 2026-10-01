@@ -26,9 +26,9 @@ int AlphaShapeClass::SD_vt13(int a2)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x420da9*/
-  Power::TimerProcess((void *)(*((unsigned int *)this + 10))); 
-  Power::TimerProcess((void *)(*((unsigned int *)this + 11))); 
-  Power::TimerProcess((void *)(*((unsigned int *)this + 12))); 
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 10)))); 
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 11)))); 
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 12)))); 
   return Pow  return Power::TimerProcess((int)((void *)(*((unsigned int *)this + 13)))); 
 
 }
@@ -40,7 +40,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int Prefix; // eax
 
-  Prefix = A  Prefix = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1), aP2); 
+  Prefix = A  Prefix = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
   return Prefix >= 0 ? 0 : Prefix;
 
 }

@@ -355,8 +355,8 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
-  this->dropshipCountsCount = (gamemd::TechnoTypeClass *)(10); /*0x68339a*/
-  this->allowableUnits[0] = (int)&vt_TypeList; /*0x68339d*/
+  this->dropshipCountsCount = (unsigned int)((gamemd::TechnoTypeClass *)(10)); /*0x68339a*/
+  this->allowableUnits[0] = (gamemd::TechnoTypeClass *)((int)&vt_TypeList); /*0x68339d*/
   VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
@@ -386,7 +386,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   wcscpy((wchar_t *)this->uiNameLoaded,(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x683446*/
   strcpy((char *)this->fileName,(const char *)(&g_INI_DefaultBuffer)); /*0x683475*/
   strcpy((char *)this->briefingCsf,(const char *)(&g_INI_DefaultBuffer)); /*0x68349d*/
-  strcpy((char *)(this->uiName), &g_INI_DefaultBuffer); /*0x6834bf*/
+  strcpy((char *)(this->uiName),(const char *)(&g_INI_DefaultBuffer)); /*0x6834bf*/
   wcscpy((wchar_t *)this->briefing,(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x6834cf*/
   v8 = 0; /*0x6834d7*/
   v9 = &this->globalVariables[40]; /*0x6834d9*/
@@ -489,7 +489,7 @@ LABEL_14:
   {
 LABEL_21:
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x683d3c*/
-      ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x683d45*/
+      ChatMessageWOL(0,(wchar_t *)(&g_TypeClass_DefaultString)); /*0x683d45*/
     return 0; /*0x683d56*/
   }
   --dword_A8DAB4; /*0x683c03*/

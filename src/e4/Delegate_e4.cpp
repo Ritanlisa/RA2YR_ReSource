@@ -69,9 +69,9 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     if ( v8 == (unsigned char *)((int))(v5) ) /*0x42de60*/
     {
       if ( this->field_C ) /*0x42de62*/
-        v9 = DecodeBitmapRGB((gamemd::Pipe *)(pad_14), v5, v6, Srca); /*0x42de88*/
+        v9 = DecodeBitmapRGB((gamemd::Pipe *)(pad_14),(int)(v5), v6, Srca); /*0x42de88*/
       else
-        v9 = EncodeBitmapRGB((gamemd::Pipe *)((char *)pad_14), v5, v6, Srca); /*0x42de75*/
+        v9 = EncodeBitmapRGB((gamemd::Pipe *)((char *)pad_14),(int)(v5), v6, Srca); /*0x42de75*/
       v13 = Delegate::Dispatch((Pipe *)this, (int)v6, v9); /*0x42de96*/
       this->field_10 = 0; /*0x42de9a*/
     }
@@ -79,9 +79,9 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   for ( ; a3 >= (int)(v5); a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->field_C ) /*0x42dea7*/
-      v10 = DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)v3), v5, v6, Srca); /*0x42dec9*/
+      v10 = DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)v3),(int)(v5), v6, Srca); /*0x42dec9*/
     else
-      v10 = EncodeBitmapRGB((gamemd::Pipe *)(v3), v5, v6, Srca); /*0x42deb8*/
+      v10 = EncodeBitmapRGB((gamemd::Pipe *)(v3),(int)(v5), v6, Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
     v13 += Delegate::Dispatch((Pipe *)this, (int)v6, v10); /*0x42dee5*/
   }
@@ -184,12 +184,12 @@ int Delegate::ProcessBitmapAndDispatch()
     if ( this->field_C ) /*0x42df4d*/
     {
       pad_14 = (void *)((int)(&this->field_18));
-      v5 = (int)(DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)this->__pad_14), v3, &this->field_18, 3));
+      v5 = (int)(DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)this->__pad_14), v3,(unsigned char *)(&this->field_18), 3));
     }
     else
     {
       pad_14 = (void *)((int)(this->__pad_14));
-      v5 = (int)(EncodeBitmapRGB((gamemd::Pipe *)((char *)&this->field_18), v3, this->__pad_14, 4));
+      v5 = (int)(EncodeBitmapRGB((gamemd::Pipe *)((char *)&this->field_18), v3,(unsigned char *)(this->__pad_14), 4));
     }
     v2 = (int)(Delegate::Dispatch((Pipe *)this, (int)pad_14, v5));
     this->field_10 = 0; /*0x42df7d*/

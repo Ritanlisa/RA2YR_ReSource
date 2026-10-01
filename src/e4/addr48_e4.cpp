@@ -230,7 +230,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v120 = (TechnoClass *)aP1;
   aP2 = (CoordStruct *)aP0;
   sub_48B070(&v117, 0, 0);
-  var94 = (gamemd::ObjectClass *)(10);
+  var94 = (int)((gamemd::ObjectClass *)(10));
   v121 = 0;
   if ( !aP1 || (**(unsigned char **)&((unsigned int *)(HouseClass_Player))[29924] & 0x20) != 0 || (v8 = aP3) == 0 )
   {
@@ -273,7 +273,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
               int v13 = *(unsigned int *)(v12 + 156);
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
-              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
+              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
               Coord::Length((int *)&v143);
@@ -289,7 +289,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 }
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
-                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
+                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
                 Coord::Length((int *)&v132);
@@ -310,7 +310,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
         v12 = VectorClass_flat::RemoveObjectById((int)&((unsigned int *)(stru_87C374))[46356]);
       }
       while ( v12 );
-      v8 = aP3;
+      v8 = (gamemd::ObjectClass *)(aP3);
     }
   }
   if ( ((int)aP1a[20].vtable0 & 0x100) != 0
@@ -367,7 +367,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
 LABEL_81:
       if ( ++v110 >= dword_7ED3D0[((unsigned int *)(v122))[0]] )
         goto LABEL_82;
-      v8 = aP3;
+      v8 = (gamemd::ObjectClass *)(aP3);
     }
     while ( (unsigned int *)v26 == a2 && !*(unsigned char *)((*(int (**)(unsigned int *))(*a2 + 132))(a2) + 3232) && !v106
          || !*(unsigned char *)(v26 + 144) )
@@ -460,7 +460,7 @@ LABEL_67:
     unsigned int v145 = 0;  /* G37 hoist */
           v48 = (IUnknown *)(v121);
           v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))))))))));
-          *((unsigned int *)Block + (unsigned int)v48) = v31;
+          *((unsigned int *)Block + (unsigned int)v48) = (unsigned int)(v31);
         }
         goto LABEL_80;
       }
@@ -478,7 +478,7 @@ LABEL_67:
     else
     {
   char v146[12]; // [esp+F0h] [ebp-30h] BYREF
-      eax64 = (IUnknown *)((unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v26 + 164))(v26, v146));
+      eax64 = (unsigned int *)((IUnknown *)((unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v26 + 164))(v26, v146)));
       v43 = Coord::Subtract(
   int v147[3]; // [esp+FCh] [ebp-24h] BYREF
               v147,

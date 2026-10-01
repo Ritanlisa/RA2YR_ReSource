@@ -81,7 +81,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *(unsigned int *)&this->__pad_30[20] = (unsigned int)(aP7); /*0x5cbd84*/
-  *(unsigned int *)this->__pad_30 = (gamemd::MSShapeAnim **)(v10); /*0x5cbd87*/
+  *(unsigned int *)this->__pad_30 = (unsigned int)((gamemd::MSShapeAnim **)(v10)); /*0x5cbd87*/
   *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_MSFadeAnim); /*0x5cbd8d*/
   return this; /*0x5cbd95*/
@@ -247,7 +247,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v25.VectorCursor_field_0x18 = (unsigned int)((int)&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d89b*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&((char *)&v28)); /*0x76d89f*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d8a3*/
-  ((unsigned int *)&v28)[0] = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d8a7*/
+  ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&((char *)&v28)) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
@@ -271,7 +271,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           ((String *)((String *)&v28))->Assign((const char *)(aTargetzoom)); /*0x76d944*/
           if ( (uint8_t)String::NotEquals((const char *)((String *)&v28), 0) ) /*0x76d94e*/
           {
-            Trigger::processTrigger((Trigger *)&v25, this + 1172, 0); /*0x76d963*/
+            Trigger::processTrigger((int)((Trigger *)&v25), this + 1172, 0); /*0x76d963*/
             while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d970*/
             {
               if ( !(uint8_t)String::Compare( /*0x76d98a*/
@@ -283,7 +283,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             }
             if ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d9b5*/
               nullsub_24(v24); /*0x76d9ca*/
-            *(unsigned int *)v25.__pad_0 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76d9cf*/
+            *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorCursorMSSfxEntryDynamicVectorClass); /*0x76d9cf*/
           }
           DeleteAndZero(&v28); /*0x76d9d7*/
           PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
@@ -297,7 +297,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))(&((char *)&v28)) ); /*0x76da41*/
   }
   ComPtr::Set((ComPtr *)(this + 1160), *(unsigned int *)(a3 + 4)); /*0x76da5d*/
-  ((unsigned int *)&v28)[0] = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76da66*/
+  ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76da66*/
   v25.VectorCursor_field_0x18 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76da6a*/
   v25.VectorCursor_field_0x0C = (int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76da76*/
   ((unsigned int *)&v28)[0] = (int)&vt_VectorClass; /*0x76da7e*/

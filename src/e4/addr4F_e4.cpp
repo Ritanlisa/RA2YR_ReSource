@@ -190,7 +190,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
       DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1737))));
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiLeave), 0, g_Str_File_GOptions_CPP, 547));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiLeave), 0,(const char *)(g_Str_File_GOptions_CPP), 547));
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
@@ -222,14 +222,14 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         else
         {
           dword_A8EE7C = (unsigned int)((wchar_t *)(3));
-          v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0, g_Str_File_GOptions_CPP, 586));
+          v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0,(const char *)(g_Str_File_GOptions_CPP), 586));
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
         }
       }
       else
       {
-        v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiRestart), 0, g_Str_File_GOptions_CPP, 558));
+        v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiRestart), 0,(const char *)(g_Str_File_GOptions_CPP), 558));
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
@@ -428,7 +428,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v27 ) /*0x4f1fff*/
     ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
   ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
-  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId), abstractFlags, (char **)&v38.vtable1, 100); /*0x4f202c*/
+  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags), (char **)&v38.vtable1, 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
   v29 = 0; /*0x4f203b*/

@@ -1361,14 +1361,14 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
     RA2_OPDEL(dword_B0B654); /*0x6b3e8d*/
     dword_B0B654 = 0; /*0x6b3e95*/
   }
-  v5 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a4 & 3 | (2 * (a4 & 4)) | (a4 >> 1) & 4)));
-  v6 = (int)((gamemd::AbstractClass **)((int16_t)a3 - dword_8759A8));
-  dword_B0B658 = (gamemd::AbstractClass **)(0);
+  v5 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a4 & 3 | (2 * (a4 & 4)) | (a4 >> 1) & 4))));
+  v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)((int16_t)a3 - dword_8759A8)));
+  dword_B0B658 = (unsigned int)((gamemd::AbstractClass **)(0));
   byte_B0B65D = 0; /*0x6b3ed3*/
   v7 = IDA_SHIWORD(a3) - dword_8759AC; /*0x6b3eda*/
-  v26 = v5; /*0x6b3edc*/
+  v26 = (gamemd::AbstractClass **)(v5); /*0x6b3edc*/
   v8 = v7 + 2; /*0x6b3ee0*/
-  v25 = v6; /*0x6b3ee3*/
+  v25 = (int)(v6); /*0x6b3ee3*/
   v24 = 1; /*0x6b3ee9*/
   v30 = v7; /*0x6b3ef1*/
   v28 = v7 + 2; /*0x6b3ef5*/

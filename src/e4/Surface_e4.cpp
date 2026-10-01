@@ -160,7 +160,7 @@ LABEL_18:
     }
     else
     {
-      v11 = (int)((int *)(result[3] + 16 * Width)); /*0x5d208a*/
+      v11 = (int *)((int)((int *)(result[3] + 16 * Width))); /*0x5d208a*/
       *v11 = (int)(*aP1); /*0x5d208d*/
       v11[1] = (int)(aP1[1]); /*0x5d2093*/
       v11[2] = (int)(aP1[2]); /*0x5d2099*/
@@ -1049,8 +1049,8 @@ LABEL_21:
       }
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
-        v62 = (int16_t *)(v29); /*0x6ba9b4*/
-        v52 = v30; /*0x6ba9b8*/
+        v62 = (unsigned char *)((int16_t *)(v29)); /*0x6ba9b4*/
+        v52 = (int16_t *)(v30); /*0x6ba9b8*/
         v32 = (unsigned short *)(v70 + 2 * v31); /*0x6ba9bc*/
         v60 = v74 - v55 - v10; /*0x6ba9bf*/
         v58 = v32; /*0x6ba9c3*/

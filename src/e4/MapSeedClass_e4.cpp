@@ -84,7 +84,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   char v57[4]; // [esp+124h] [ebp-4h] BYREF
 
   v33[1] = (unsigned int)(this); /*0x5a5b6a*/
-  v2 = (int *)(globalHelper_0A7640((unsigned int *)(v50), aP1)); /*0x5a5b6e*/
+  v2 = (int *)(globalHelper_0A7640((unsigned int *)(v50),(int)(aP1))); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v38 = *v2; /*0x5a5b75*/
   v4 = v2[1]; /*0x5a5b79*/
@@ -101,8 +101,8 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
     {
       do /*0x5a5de6*/
       {
-        v27 = *FindClearPlacementCell((unsigned int *)(v23), &v24, &v38, 2); /*0x5a5bd8*/
-        v7 = *globalHelper_0A7070((gamemd::MapSeedClass *)(v33), (int16_t *)&v27, &v38, 2); /*0x5a5bf0*/
+        v27 = *FindClearPlacementCell((unsigned int *)(v23),(gamemd::MapSeedClass *)(&v24), &v38, 2); /*0x5a5bd8*/
+        v7 = *globalHelper_0A7070((gamemd::MapSeedClass *)(v33), (int16_t *)&v27,(gamemd::MapSeedClass *)(&v38), 2); /*0x5a5bf0*/
         v28 = v7; /*0x5a5bf7*/
         if ( v7 && (v24 || v25) && (int16_t)v7 - v24 >= 6 ) /*0x5a5c28*/
         {
@@ -182,8 +182,8 @@ LABEL_18:
     v25 = v4; /*0x5a5e21*/
     while ( v13 > 3 ) /*0x5a5e26*/
     {
-      LODWORD(v20) = *FindClearPlacementCell((unsigned int *)(v57), &v24, &v38, 4); /*0x5a5e4d*/
-      v5 = *globalHelper_0A7070((gamemd::MapSeedClass *)(&v49), (int16_t *)&v20, &v38, 4); /*0x5a5e68*/
+      LODWORD(v20) = *FindClearPlacementCell((unsigned int *)(v57),(gamemd::MapSeedClass *)(&v24), &v38, 4); /*0x5a5e4d*/
+      v5 = *globalHelper_0A7070((gamemd::MapSeedClass *)(&v49), (int16_t *)&v20,(gamemd::MapSeedClass *)(&v38), 4); /*0x5a5e68*/
       v28 = v5; /*0x5a5e6a*/
       if ( v5 && ((LOWORD(v5) = v25, v24) || v25) && (LOWORD(v5) = v25, SHIWORD(v5) - v25 >= 6) ) /*0x5a5ea1*/
       {

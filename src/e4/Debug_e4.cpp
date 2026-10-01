@@ -41,7 +41,7 @@ void Debug::ScrollText(CellStruct * aP1)
     v13 = *((unsigned int *)this + 2504) + *((unsigned int *)this + 2506); /*0x5bd10e*/
     v6 = v4 + *((unsigned int *)this + 2507); /*0x5bd112*/
     *((unsigned char *)this + 10036) = 0; /*0x5bd119*/
-    v7 = v5 + strlen(aP1); /*0x5bd127*/
+    v7 = v5 + strlen((const char *)(aP1)); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
     v8 = v5; /*0x5bd131*/
@@ -53,7 +53,7 @@ void Debug::ScrollText(CellStruct * aP1)
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
         v15 = v9[v8]; /*0x5bd16f*/
-        *v12 = Debug_Helper(v15); /*0x5bd187*/
+        *v12 = Debug_Helper((gamemd::ObjectClass *)(v15)); /*0x5bd187*/
         *v11 = *((unsigned int *)this + 2500); /*0x5bd18f*/
         if ( v15 == 10 ) /*0x5bd197*/
         {
@@ -134,7 +134,7 @@ char Debug::Printf()
   {
     vsprintf(Buffer, Format, va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
-    return Debug::ScrollText(Buffer); /*0x5bd230*/
+    return Debug::ScrollText((int)(Buffer)); /*0x5bd230*/
   }
   return result; /*0x5bd235*/
 

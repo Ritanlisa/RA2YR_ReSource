@@ -1066,7 +1066,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
     if ( *v3 != 37 ) /*0x7d17a0*/
     {
       ++v76; /*0x7d207f*/
-      v46 = fgetc_0(v5); /*0x7d2088*/
+      v46 = fgetc_0((FILE *)(v5)); /*0x7d2088*/
       v47 = (uint8_t)*v3++; /*0x7d208b*/
       C = v46; /*0x7d2091*/
       v78 = (int)v3; /*0x7d2094*/
@@ -1075,7 +1075,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         if ( *((char *)off_87C590 + 2 * (uint8_t)v46 + 1) >= 0 ) /*0x7d20a7*/
           goto LABEL_247; /*0x7d20a7*/
         ++v76; /*0x7d20a9*/
-        v48 = fgetc_0(v5); /*0x7d20ad*/
+        v48 = fgetc_0((FILE *)(v5)); /*0x7d20ad*/
         v49 = (uint8_t)*v3++; /*0x7d20b3*/
         v78 = (int)v3; /*0x7d20b9*/
         if ( v49 == v48 ) /*0x7d20bc*/
@@ -1190,7 +1190,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
       if ( v57 == 99 || v57 == 123 ) /*0x7d18d7*/
       {
         ++v76; /*0x7d18eb*/
-        v15 = fgetc_0(Stream); /*0x7d18ee*/
+        v15 = fgetc_0((FILE *)(Stream)); /*0x7d18ee*/
       }
       else
       {
@@ -1215,7 +1215,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         case 's': /*0x7d1b73*/
           if ( v75 > 0 ) /*0x7d1c6e*/
             v68 = 1; /*0x7d1c70*/
-          v30 = asc_87C918; /*0x7d1c74*/
+          v30 = (char *)(asc_87C918); /*0x7d1c74*/
           break;
         case 'u': /*0x7d1b73*/
           goto LABEL_181; /*0x7d1b84*/
@@ -1232,13 +1232,13 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
             if ( v16 != 48 ) /*0x7d1c0a*/
               goto LABEL_189; /*0x7d1c0a*/
             ++v76; /*0x7d1c13*/
-            v31 = fgetc_0(Stream); /*0x7d1c16*/
+            v31 = fgetc_0((FILE *)(Stream)); /*0x7d1c16*/
             v16 = v31; /*0x7d1c1b*/
             C = v31; /*0x7d1c21*/
             if ( (unsigned char)v31 == 120 || (unsigned char)v31 == 88 ) /*0x7d1c29*/
             {
               ++v76; /*0x7d1c58*/
-              v16 = fgetc_0(Stream); /*0x7d1c61*/
+              v16 = fgetc_0((FILE *)(Stream)); /*0x7d1c61*/
               C = v16; /*0x7d1c63*/
               v51 = 120; /*0x7d1c66*/
               goto LABEL_134; /*0x7d1c68*/
@@ -1259,7 +1259,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
           if ( --v74 || !v64 ) /*0x7d1bee*/
           {
             ++v76; /*0x7d1bf9*/
-            v16 = fgetc_0(Stream); /*0x7d1c01*/
+            v16 = fgetc_0((FILE *)(Stream)); /*0x7d1c01*/
             C = v16; /*0x7d1c04*/
           }
           else

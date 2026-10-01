@@ -162,7 +162,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   int v24; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
   {
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
@@ -468,7 +468,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   Checksummer v21; // [esp+18h] [ebp-58h] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  Source = &g_INI_DefaultBuffer; /*0x52a11f*/
+  Source = (char *)(&g_INI_DefaultBuffer); /*0x52a11f*/
   if ( !Destination ) /*0x52a127*/
     goto LABEL_18; /*0x52a127*/
   v6 = a3; /*0x52a12d*/
@@ -495,13 +495,13 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     }
     v7 = (unsigned int)(a4); /*0x52a2a8*/
     ((unsigned int *)this)[0] = (unsigned int)(vtable2); /*0x52a2ac*/
-    ((unsigned int *)this)[0] = v6; /*0x52a2af*/
+    ((unsigned int *)this)[0] = (unsigned int)(v6); /*0x52a2af*/
   }
   if ( vtable2 ) /*0x52a155*/
   {
     v9 = strlen((const char *)LODWORD(v7)) + 1; /*0x52a15e*/
-    v18 = (gamemd::Checksummer *)((uint8_t *)LODWORD(v7)); /*0x52a164*/
-    v10 = (Checksummer *)KeyValuePair::Init((KeyValuePair *)&v21.buffer, 0); /*0x52a16a*/
+    v18 = (uint8_t *)((gamemd::Checksummer *)((uint8_t *)LODWORD(v7))); /*0x52a164*/
+    v10 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init((KeyValuePair *)&v21.buffer, 0)); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
     v11 = vtable2 + 11; /*0x52a17a*/
     if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x52a184*/

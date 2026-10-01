@@ -98,8 +98,8 @@ int Trigger_AllocateLog(int a1)
           }
         }
         if ( !*(unsigned char *)v5
-          && (!_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)), g_INI_Key_Neutral)
-           || !_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)), g_INI_Key_Special)) )
+          && (!_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)),(const char *)(g_INI_Key_Neutral))
+           || !_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)),(const char *)(g_INI_Key_Special))) )
         {
           strcpy((char *)v5, (const char *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36));
           v3 = (int)v83;
@@ -589,7 +589,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
                   DSurface_Sidebar,
                   &v49,
                   0);
-    DrawToSurfaceSHP((int)DSurface_Sidebar, v5,(gamemd::ConvertClass *)(dword_B04A38), 0x20u, &v43, v6, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
+    DrawToSurfaceSHP((int)DSurface_Sidebar, v5,(gamemd::ConvertClass *)(dword_B04A38), 0x20u,(gamemd::ConvertClass *)(&v43), v6, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
     v7 = v4[1149] + 2; /*0x65401c*/
     v43 = v4[1148]; /*0x65401f*/
     v44 = v7; /*0x654031*/
@@ -1128,7 +1128,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   char v3; // al
 
   v3 = *((unsigned char *)this + 29); /*0x65c5a3*/
-  *(unsigned int *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RAMFileClass); /*0x65c5a6*/
   *((unsigned char *)this + 28) = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
@@ -1136,7 +1136,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
     this->RAMFileClass_field_0x8 = (unsigned int)(0); /*0x65c5c0*/
     *((unsigned char *)this + 29) = 0; /*0x65c5c7*/
   }
-  *(unsigned int *)this->__pad_0 = &vt_FileClass; /*0x65c5cf*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_FileClass); /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
     __3_YAXPAX_Z(this); /*0x65c5da*/
   return this; /*0x65c5e4*/
@@ -1177,19 +1177,19 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   void *vtable0; // [esp+14h] [ebp+4h]
   int v23; // [esp+18h] [ebp+8h]
 
-  result = aP1; /*0x65c913*/
+  result = (int)(aP1); /*0x65c913*/
   v5 = a3; /*0x65c919*/
-  v6 = (gamemd::ObjectClass *)(aP1); /*0x65c91e*/
+  v6 = (int)((gamemd::ObjectClass *)(aP1)); /*0x65c91e*/
   v7 = (int)(aP1 == a3); /*0x65c920*/
   v8 = aP1 <= a3; /*0x65c920*/
-  v19 = this; /*0x65c922*/
-  v23 = aP1; /*0x65c926*/
+  v19 = (gamemd::ObjectClass *)(this); /*0x65c922*/
+  v23 = (int)(aP1); /*0x65c926*/
   if ( !v7 ) /*0x65c92a*/
   {
     if ( !v8 ) /*0x65c930*/
     {
       v6 = v5; /*0x65c932*/
-      v5 = aP1; /*0x65c934*/
+      v5 = (int)(aP1); /*0x65c934*/
       v23 = v6; /*0x65c936*/
     }
     v9 = v5 - v6; /*0x65c93d*/
@@ -1216,7 +1216,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
         vtable1 = (unsigned int)((unsigned int *)this)[0]; /*0x65c980*/
         v14 = (unsigned int)vtable0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        ((unsigned int *)this)[0] = (void *)(vtable1 + 1); /*0x65c98c*/
+        ((unsigned int *)this)[0] = (unsigned int)((void *)(vtable1 + 1)); /*0x65c98c*/
         do /*0x65c9d5*/
         {
           v16 = vtable1; /*0x65c995*/
@@ -1233,7 +1233,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
         v12 = v20 & v18; /*0x65c9df*/
         if ( (v20 & v18) <= v21 ) /*0x65c9e3*/
           break; /*0x65c9e3*/
-        this = v19; /*0x65c97c*/
+        this = (gamemd::E4Recv_65C910 *)(v19); /*0x65c97c*/
       }
       v6 = v23; /*0x65c9e5*/
     }
@@ -1259,7 +1259,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
   v10[2] = 0; /*0x65d523*/
   v10[3] = a1; /*0x65d527*/
   v11 = 0; /*0x65d52b*/
-  v10[0] = (void*)&FileStraw_vftable; /*0x65d530*/
+  v10[0] = (unsigned int)((void*)&FileStraw_vftable); /*0x65d530*/
   if ( a3 && a2 ) /*0x65d53c*/
   {
     v6 = 0; /*0x65d54b*/

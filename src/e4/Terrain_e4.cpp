@@ -639,7 +639,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       else
       {
         g_MissionQueueFrame.briefing[273] = 0; /*0x56c640*/
-        v15 = Terrain::FloodFillConnectivity((unsigned char *)((int)v1), v12, v10, &v92); /*0x56c64a*/
+        v15 = Terrain::FloodFillConnectivity((unsigned char *)((int)v1),(IUnknown *)(v12), v10, &v92); /*0x56c64a*/
         if ( v15 > v13 ) /*0x56c651*/
         {
           v13 = v15; /*0x56c655*/
@@ -743,7 +743,7 @@ LABEL_48:
     }
     while ( !v37 ); /*0x56c7e0*/
   }
-  v38 = __2_YAPAXI_Z(2 * *(unsigned int *)&v1->__pad_44[8]); /*0x56c7ec*/
+  v38 = (int)(__2_YAPAXI_Z(2 * *(unsigned int *)&v1->__pad_44[8])); /*0x56c7ec*/
   v39 = *(unsigned int *)&v1->__pad_44[8]; /*0x56c7f1*/
   v40 = (unsigned short *)v38; /*0x56c7f4*/
   v41 = 0; /*0x56c7f9*/
@@ -785,7 +785,7 @@ LABEL_48:
     v49 = v40; /*0x56c882*/
     do /*0x56c8aa*/
     {
-      *v48++ = __2_YAPAXI_Z(2 * *v49++); /*0x56c891*/
+      *v48++ = (int)(__2_YAPAXI_Z(2 * *v49++)); /*0x56c891*/
       ++v89; /*0x56c8a6*/
     }
     while ( (int)v89 < *(unsigned int *)&v1->__pad_44[8] ); /*0x56c8aa*/
@@ -833,7 +833,7 @@ LABEL_48:
     v85 = v52; /*0x56c94f*/
   }
   while ( v52 < 6144 ); /*0x56c953*/
-  v59 = __2_YAPAXI_Z(*(unsigned int *)&v1->__pad_44[8]); /*0x56c962*/
+  v59 = (int)(__2_YAPAXI_Z(*(unsigned int *)&v1->__pad_44[8])); /*0x56c962*/
   v60 = 0; /*0x56c96a*/
   for ( Blocka = (uint8_t *)v59; /*0x56c972*/
         v60 < *(unsigned int *)&v1->__pad_44[8];
@@ -842,7 +842,7 @@ LABEL_48:
     ++v60; /*0x56c978*/
   }
   v91 = (unsigned short *)__2_YAPAXI_Z(2 * *(unsigned int *)&v1->__pad_44[8]); /*0x56c993*/
-  v61 = dword_82A594; /*0x56c997*/
+  v61 = (int *)(dword_82A594); /*0x56c997*/
   v86 = dword_82A594; /*0x56c9a2*/
   v83 = v1->__pad_18; /*0x56c9a6*/
   do /*0x56cb01*/

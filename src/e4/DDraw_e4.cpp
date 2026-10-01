@@ -90,7 +90,7 @@ int DDraw::CapabilityCheck()
   }
   v0 = aFailed_1; /*0x4a3ed7*/
 LABEL_7:
-  Debug::Log_0((void *)("%s\n"), v0); /*0x4a3edc*/
+  Debug::Log_0((void *)("%s\n"),(void *)(v0)); /*0x4a3edc*/
   Debug::Log(aCheckingOverla); /*0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
   XSurface::Fill(v7, 0); /*0x4a3f00*/

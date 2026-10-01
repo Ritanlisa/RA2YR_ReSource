@@ -316,7 +316,7 @@ AnimClass * * InfantryClass::ProcessIdleDeploy()
           IDA_LOBYTE(movementDestination) = (*(int (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]); /*0x520236*/
           if ( !(unsigned char)movementDestination ) /*0x52023b*/
           {
-            movementDestination = ((unsigned int *)this)[0]; /*0x52023d*/
+            movementDestination = (ra2::game::AbstractClass *)(((unsigned int *)this)[0]); /*0x52023d*/
             if ( !movementDestination ) /*0x520245*/
               IDA_LOBYTE(movementDestination) = (*((char (**)(InfantryClass *, unsigned char *, int, unsigned int))this->FootClass /*0x520254*/
                                              + 93))(
@@ -423,7 +423,7 @@ AnimClass * InfantryClass::CheckDeployPath()
   if ( ((unsigned int *)this)[0] ) /*0x521eb8*/
   {
     result = 0; /*0x521ec5*/
-    pathDirections = ((unsigned int *)this)[0]; /*0x521ec7*/
+    pathDirections = (int *)(((unsigned int *)this)[0]); /*0x521ec7*/
     do /*0x521ee1*/
     {
       if ( *pathDirections == -1 ) /*0x521ed2*/

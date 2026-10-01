@@ -616,15 +616,15 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
               WideString::Assign_Alt(v16); /*0x6ae61f*/
               return 1; /*0x6ae62d*/
             case 2: /*0x6ae604*/
-              v17 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI), (int)g_Str_File_Skirmish_cpp, 137); /*0x6ae646*/
+              v17 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp), 137); /*0x6ae646*/
               WideString::Assign_Alt(v17); /*0x6ae64e*/
               return 1; /*0x6ae65c*/
             case 1: /*0x6ae604*/
-              v18 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI), (int)g_Str_File_Skirmish_cpp, 139); /*0x6ae675*/
+              v18 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp), 139); /*0x6ae675*/
               WideString::Assign_Alt(v18); /*0x6ae67d*/
               return 1; /*0x6ae68b*/
             case 0: /*0x6ae604*/
-              v19 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI), (int)g_Str_File_Skirmish_cpp, 141); /*0x6ae6a3*/
+              v19 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp), 141); /*0x6ae6a3*/
               WideString::Assign_Alt(v19); /*0x6ae6ab*/
               return 1; /*0x6ae6b9*/
           }
@@ -634,7 +634,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
         {
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
-            v10 = (gamemd::ReferenceCounted **)(GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4))); /*0x6ae589*/
+            v10 = (int)((gamemd::ReferenceCounted **)(GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4)))); /*0x6ae589*/
             v11 = (wchar_t *)((GameSetup *)(v10))->GetColorTooltip(); /*0x6ae590*/
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/
@@ -799,13 +799,13 @@ AbstractClass * * Skirmish::SetupGame(SkirmishDialog * hWnd, int a2)
     StringCSF = GetStringCSF(aGuiNone, 0, g_Str_File_Skirmish_cpp, 158); /*0x6ae7bb*/
     v11 = SendMessageA(v9, 0x4C2u, 0, (LPARAM)StringCSF); /*0x6ae7c9*/
     SendMessageA(v9, 0x151u, v11, -1); /*0x6ae7d4*/
-    v12 = GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0, g_Str_File_Skirmish_cpp, 161); /*0x6ae7e7*/
+    v12 = GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0,(const char *)(g_Str_File_Skirmish_cpp), 161); /*0x6ae7e7*/
     v13 = SendMessageA(v9, 0x4C2u, 0, (LPARAM)v12); /*0x6ae7f5*/
     SendMessageA(v9, 0x151u, v13, 2); /*0x6ae800*/
-    v14 = GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0, g_Str_File_Skirmish_cpp, 164); /*0x6ae813*/
+    v14 = GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0,(const char *)(g_Str_File_Skirmish_cpp), 164); /*0x6ae813*/
     v15 = SendMessageA(v9, 0x4C2u, 0, (LPARAM)v14); /*0x6ae821*/
     SendMessageA(v9, 0x151u, v15, 1); /*0x6ae82c*/
-    v16 = GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0, g_Str_File_Skirmish_cpp, 167); /*0x6ae83f*/
+    v16 = GetStringCSF((wchar_t *)(g_Str_GUI_AIHard), 0,(const char *)(g_Str_File_Skirmish_cpp), 167); /*0x6ae83f*/
     v17 = SendMessageA(v9, 0x4C2u, 0, (LPARAM)v16); /*0x6ae84d*/
     SendMessageA(v9, 0x151u, v17, 0); /*0x6ae858*/
     SendMessageA(v9, 0x14Eu, 0, 0); /*0x6ae864*/

@@ -117,7 +117,7 @@ LABEL_27:
         int v16 = 32;
         if ( a5 )
           v16 = 48;
-        result = FillAudioStreamBuffer(a1, v16);
+        result = (gamemd::DSurface *)(FillAudioStreamBuffer(a1, v16));
         if ( result != (gamemd::DSurface *)(-1) )
         {
 LABEL_31:

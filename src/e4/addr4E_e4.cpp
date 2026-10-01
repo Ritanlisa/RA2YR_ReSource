@@ -753,7 +753,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 522)); /*0x4e45fe*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 522)); /*0x4e45fe*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e4624*/
@@ -1176,7 +1176,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 833)); /*0x4e511b*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 833)); /*0x4e511b*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
   switch ( nIDDlgItem )
@@ -1485,7 +1485,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       v4 = v5 + 7; /*0x4e5779*/
       break;
   }
-  v6 = (int *)(0);
+  v6 = (int)((int *)(0));
   v7 = dword_8B3F38; /*0x4e577f*/
   while ( *v7 != v4 ) /*0x4e5786*/
   {
@@ -1598,7 +1598,7 @@ void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   {
     if ( dword_A8B23C && (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C) < 0 ) /*0x4e5be8*/
     {
-      StringCSF = GetStringCSF(aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1110); /*0x4e5bfb*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1110); /*0x4e5bfb*/
       goto LABEL_9; /*0x4e5bfb*/
     }
   }

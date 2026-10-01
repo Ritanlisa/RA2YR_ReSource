@@ -132,7 +132,7 @@ int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * a
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x549d7f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1,(gamemd::TechnoTypeClass *)(aP2)); /*0x549d7f*/
   if ( result >= 0 ) /*0x549d86*/
     return 0; /*0x549d88*/
   return result; /*0x549d8a*/

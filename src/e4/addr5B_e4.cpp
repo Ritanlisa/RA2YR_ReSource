@@ -478,7 +478,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
       ((WideString *)(v17))->Trim(); /*0x5b4e40*/
       if ( IDA_HIWORD(a3) != 768 ) /*0x5b4e4a*/
         SendMessageA(v14, 0x4B2u, 0, (LPARAM)v17); /*0x5b4e59*/
-      CopyWideToChar(unk_A8B380, (char *)v17, -1); /*0x5b4e66*/
+      CopyWideToChar((unsigned char *)(unk_A8B380), (char *)v17, -1); /*0x5b4e66*/
       *(unsigned char *)(WindowLongA + 9) = 1; /*0x5b4e72*/
       *(unsigned char *)(WindowLongA + 8) = 1; /*0x5b4e75*/
       return 0; /*0x5b4e70*/

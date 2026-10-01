@@ -136,7 +136,10 @@ def main():
             depth += lines[end].count('{') - lines[end].count('}')
             end += 1
         body = '\n'.join(lines[bi:end])
-        if re.search(r'\b%s\s*(\[[^\]]*\])?\s*;' % re.escape(name), body):
+        # decl must be a statement-initial declaration line (type + name),
+        # not a use like `x = result;` that merely ends with `name;`
+        if re.search(r'^\s*[\w:<>\*\s&]+\b%s\s*(\[[^\]]*\])?\s*(=\s*[^;]*)?;'
+                     % re.escape(name), body, re.M):
             n_skip += 1
             continue
         # error site must be INSIDE this def (sanity)

@@ -339,19 +339,19 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v18 = this->u32_24; /*0x47e929*/
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
-    inited = Isometric::InitTables(this, &v13); /*0x47e953*/
+    inited = (int)(Isometric::InitTables((IUnknown *)(this), &v13)); /*0x47e953*/
     v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
-    if ( !Cell::IsPassable(&v15) /*0x47e9cf*/
+    if ( !Cell::IsPassable((IUnknown *)(&v15)) /*0x47e9cf*/
       && (v19 = this->u32_24,
           v13 = 128,
           v14 = 128,
-          v8 = Isometric::InitTables(this, &v13),
+          v8 = Isometric::InitTables((IUnknown *)(this), &v13),
           v15 = ((int16_t)v19 << 8) + 128,
           v16 = (IDA_SHIWORD(v19) << 8) + 128,
           v17 = v8,
-          !Game::Stub3((int)&v15))
+          !Game::Stub3((IUnknown *)((int)&v15)))
       || ((unsigned int *)(dword_A8B238))[0] )
     {
       (*(void (**)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
@@ -399,9 +399,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( !content ) /*0x47ea9d*/
     return; /*0x47ea9d*/
   if ( on_bridge ) /*0x47eaa9*/
-    v4 = (unsigned int)(*(unsigned int **)(this + 232)); /*0x47eaab*/
+    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(this + 232))); /*0x47eaab*/
   else
-    v4 = (unsigned int)(*(unsigned int **)(this + 228)); /*0x47eab3*/
+    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(this + 228))); /*0x47eab3*/
   if ( v4 == (unsigned int *)(content) ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
@@ -712,7 +712,7 @@ void CellClass::ReduceTiberium(int amount)
   char v32[16]; // [esp+3Ch] [ebp-10h] BYREF
 
   PlacementRect = (int *)(BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31));
-  StartCoords = House::GetStartCoords((House *)this, v32); /*0x480a9c*/
+  StartCoords = (int *)(House::GetStartCoords((House *)this, v32)); /*0x480a9c*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x480ab1*/
   {
     v12 = *PlacementRect; /*0x480b44*/

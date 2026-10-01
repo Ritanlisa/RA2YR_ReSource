@@ -51,7 +51,7 @@ Coord * * sub_77E110()
     v2 = dword_A83D14; /*0x77e17d*/
     if ( dword_A83D14 == -1 ) /*0x77e186*/
       v2 = dword_A83D18; /*0x77e188*/
-    v1 = ((StringList *)((StringList *)&unk_A83D10))->Find(g_INI_Key_INTRO); /*0x77e198*/
+    v1 = ((StringList *)((StringList *)&unk_A83D10))->Find((const char *)(g_INI_Key_INTRO)); /*0x77e198*/
     if ( v2 == v1 ) /*0x77e1a0*/
     {
   LABEL_5:
@@ -125,7 +125,7 @@ void sub_785EA0()
     Game::ProcessIdle(v7); /*0x785f70*/
     if ( !(*(int (**)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtWolLoggingO), 0, g_Str_File_wonline_cpp, 9527));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtWolLoggingO), 0,(const char *)(g_Str_File_wonline_cpp), 9527));
       ((WideString *)((wchar_t **)&v15))->Assign(StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v15, 0); /*0x785fb4*/
       DeleteAndZero::Alt((DeleteAndZero *)&v15); /*0x785fbd*/
@@ -243,8 +243,8 @@ char sub_72C7E0()
   if ( !byte_B0FCFD ) /*0x72c7e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
-      dword_B0F9E8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D84), (bool *)&byte_B0FCFC)); /*0x72c805*/
-    result = LoadPaletteSimple(off_844D88, &dword_B0FD00, &dword_B0FD04); /*0x72c81a*/
+      dword_B0F9E8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D84),(gamemd::ConvertClass *)((bool *)&byte_B0FCFC))); /*0x72c805*/
+    result = LoadPaletteSimple((char *)(off_844D88), &dword_B0FD00, &dword_B0FD04); /*0x72c81a*/
     byte_B0FCFD = 1; /*0x72c81f*/
   }
   return result; /*0x72c826*/
@@ -323,7 +323,7 @@ int sub_799D30()
   result = (wchar_t *)(LoginFlowWOL_Reset(v1));
   if ( result == 1 ) /*0x799d3b*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_FETCHING_SERVLIST), 0, g_Str_File_wonline_cpp, 24300));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_FETCHING_SERVLIST), 0,(const char *)(g_Str_File_wonline_cpp), 24300));
     ((WideString *)((wchar_t **)&v13))->Assign(StringCSF); /*0x799d5c*/
     ShowUIMessage(16, (wchar_t **)&v13, 0); /*0x799d6c*/
     DeleteAndZero::Alt(&v13); /*0x799d75*/

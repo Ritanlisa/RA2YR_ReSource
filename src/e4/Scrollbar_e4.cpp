@@ -59,7 +59,7 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
       v26[0] = v14; /*0x620624*/
       v25[1] = v9 + v13; /*0x62062c*/
       v26[1] = v9 + v13; /*0x620630*/
-      DrawSurfaceLineAlpha(aP0, v26, v25, v23, a6); /*0x620641*/
+      DrawSurfaceLineAlpha((int)(aP0), v26, v25, v23, a6); /*0x620641*/
       v15 = *a1; /*0x620649*/
       v16 = a1[1]; /*0x620651*/
       v27 = a1[2] - v9 + *a1 - 1; /*0x620654*/
@@ -67,14 +67,14 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
       v29[0] = v9 + v15; /*0x62065f*/
       v28 = v16 - v9 + v17 - 1; /*0x620670*/
       v29[1] = v28; /*0x620674*/
-      DrawSurfaceLineAlpha(aP0, v29, &v27, v10, a8); /*0x620680*/
+      DrawSurfaceLineAlpha((int)(aP0), v29, &v27, v10, a8); /*0x620680*/
       v18 = a1[3]; /*0x620687*/
       v19 = a1[1]; /*0x62068d*/
       v30[0] = *a1 + v9; /*0x620692*/
       v31[0] = v30[0]; /*0x620698*/
       v31[1] = v19 + v9 + 1; /*0x6206a8*/
       v30[1] = v19 - v9 + v18 - 1; /*0x6206ac*/
-      DrawSurfaceLineAlpha(aP0, v31, v30, v23, a5); /*0x6206c1*/
+      DrawSurfaceLineAlpha((int)(aP0), v31, v30, v23, a5); /*0x6206c1*/
       v20 = a1[3]; /*0x6206cd*/
       v21 = a1[1]; /*0x6206d4*/
       v32[0] = *a1 - v9 + a1[2] - 1; /*0x6206d9*/
@@ -83,7 +83,7 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
       v10 = v24; /*0x6206ed*/
       v33[1] = v9 + v21; /*0x6206f1*/
       v32[1] = v22; /*0x6206f6*/
-      result = DrawSurfaceLineAlpha(aP0, v33, v32, v24, a7); /*0x620706*/
+      result = DrawSurfaceLineAlpha((int)(aP0), v33, v32, v24, a7); /*0x620706*/
       ++v9; /*0x62070b*/
     }
     while ( v9 < a4 ); /*0x620710*/

@@ -109,7 +109,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v40 = (int *)(v13[1]);
     v41 = (int *)(v13[2]);
     v42 = (int *)(v13[3]);
-    v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48), &DSurface_ViewBounds, &v39, 0, 0));
+    v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48),(const RectangleStruct *)(&DSurface_ViewBounds), &v39, 0, 0));
     v43 = (int *)(*v14);
     v44 = (int *)(v14[1]);
     v45 = (int *)(v14[2]);
@@ -127,7 +127,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v44 = (int *)(v17[1]); /*0x704b60*/
     v45 = (int *)(v17[2]); /*0x704b6c*/
     v46 = (int *)(v17[3]); /*0x704b7c*/
-    v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704b80*/
+    v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0)); /*0x704b80*/
     v39 = (int *)(*v18); /*0x704b88*/
     v40 = (int *)(v18[1]); /*0x704b8f*/
     v41 = (int *)(v18[2]); /*0x704b9c*/
@@ -160,7 +160,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v22[1]);
   v45 = (int *)(v22[2]);
   v46 = (int *)(v22[3]);
-  v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0));
+  v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0));
   v39 = (int *)(*v23);
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
@@ -174,7 +174,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v25[1]); /*0x704d52*/
   v45 = (int *)(v25[2]); /*0x704d5f*/
   v46 = (int *)(v25[3]); /*0x704d70*/
-  v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704d74*/
+  v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0)); /*0x704d74*/
   v39 = (int *)(*v26); /*0x704d7c*/
   v40 = (int *)(v26[1]); /*0x704d83*/
   v41 = (int *)(v26[2]); /*0x704d90*/
@@ -270,7 +270,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v35 = (int)(v8[1]);
   v36 = (int *)(v8[2]);
   v37 = (int *)(v8[3]);
-  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v46), &DSurface_ViewBounds, &v34, 0, 0));
+  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v46),(const RectangleStruct *)(&DSurface_ViewBounds), &v34, 0, 0));
   v30 = *v9; /*0x704f61*/
   v31 = v9[1]; /*0x704f68*/
   v32 = (void *)(v9[2]);
@@ -283,7 +283,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v31 = (int)(v10[1]);
   v32 = (void *)((unsigned int)(v10[2]));
   v33 = (void *)((unsigned int)(v10[3]));
-  v11 = (int *)((unsigned int)(ClipRectIntersection((RectangleStruct *)(v45), &DSurface_ViewBounds, &v30, 0, 0)));
+  v11 = (int *)((unsigned int)(ClipRectIntersection((RectangleStruct *)(v45),(const RectangleStruct *)(&DSurface_ViewBounds), &v30, 0, 0)));
   v34 = (unsigned int)(*v11);
   v35 = (unsigned int)(v11[1]);
   v36 = (int *)((unsigned int)(v11[2]));
@@ -413,7 +413,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
         v14 = (unsigned int *)v39; /*0x706fb9*/
       }
       v16 = (float *)(MultiplyMatrix3x4(v53, (float *)stru_887430.m_Data, v50));
-      TransformVoxelVertex((gamemd::VoxelSection *)(v13), v15++, 0, v16); /*0x706fda*/
+      TransformVoxelVertex((gamemd::VoxelSection *)(v13),(gamemd::VoxelSection *)(v15++), 0, v16); /*0x706fda*/
     }
     while ( v15 < ((unsigned int *)(v13))[1] ); /*0x706fe5*/
   }
@@ -726,8 +726,8 @@ void UpdateTimedStateMachine(int * a1)
     switch ( a1[112] ) /*0x70e97d*/
     {
       case 0: /*0x70e97d*/
-        a1[112] = (unsigned int *)(1); /*0x70e988*/
-        v2 = a1 + 109; /*0x70e997*/
+        a1[112] = (int)((unsigned int *)(1)); /*0x70e988*/
+        v2 = (unsigned int *)(a1 + 109); /*0x70e997*/
         *v2 = dword_A8ED84; /*0x70e9a3*/
         v2[1] = v21; /*0x70e9a5*/
         v2[2] = 6; /*0x70e9a8*/
@@ -833,8 +833,8 @@ void UpdateTimedStateMachine(int * a1)
       case 6: /*0x70e97d*/
         if ( Timeout::GetRemaining(a1 + 106) <= 30 ) /*0x70eb96*/
         {
-          a1[112] = (unsigned int *)(7); /*0x70eb9c*/
-          v14 = a1 + 109; /*0x70ebab*/
+          a1[112] = (int)((unsigned int *)(7)); /*0x70eb9c*/
+          v14 = (unsigned int *)(a1 + 109); /*0x70ebab*/
           *v14 = dword_A8ED84; /*0x70ebb7*/
           v14[1] = v21; /*0x70ebbd*/
           v14[2] = 6; /*0x70ebc0*/
@@ -918,8 +918,8 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
     dword_B0EB38 = a1; /*0x70f13a*/
     v3 = *((unsigned int *)dword_8871E0 + 1536); /*0x70f140*/
     Ticks = Timer::GetTicks(); /*0x70f14a*/
-    dword_B0EA74 = (void *)(v9); /*0x70f161*/
-    v7 = dword_A83D4C; /*0x70f169*/
+    dword_B0EA74 = (unsigned int)((void *)(v9)); /*0x70f161*/
+    v7 = (void *)(dword_A83D4C); /*0x70f169*/
     dword_B0EA70 = Ticks; /*0x70f16e*/
     dword_B0EA78 = v3; /*0x70f173*/
     v5 = (*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v8); /*0x70f180*/
@@ -957,7 +957,7 @@ int E4Recv_7011A0::sub_7011A0()
   int v13; // [esp+20h] [ebp-10h]
   unsigned char v14[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 21))(this) ) /*0x7011a9*/
+  if ( (*((uint8_t ((gamemd::ObjectClass *)(**))(ObjectClass *))this->AbstractClass + 21))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
   if ( !*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6200) ) /*0x7011bd*/
     return 0; /*0x7011c8*/

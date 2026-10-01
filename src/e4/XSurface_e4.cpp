@@ -256,7 +256,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
   v5 = (int *)(*(unsigned int *)this->Surface);
   v28 = (int *)(this);
   v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
-  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v26), (int *)a2, v6, 0, 0)); /*0x7babaf*/
+  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v26),(const RectangleStruct *)((int *)a2), v6, 0, 0)); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
   v36 = v7[1]; /*0x7babbd*/
   v37 = v7[2]; /*0x7babc4*/
@@ -453,7 +453,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4, void *a4_
   if ( a3[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
   v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
-  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v50), a2, v6, 0, 0)); /*0x7bb08f*/
+  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v50),(const RectangleStruct *)(a2), v6, 0, 0)); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
   v8 = *a3; /*0x7bb09f*/
@@ -470,7 +470,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4, void *a4_
   v45[1] = v13[1]; /*0x7bb0e0*/
   v45[2] = v13[2]; /*0x7bb0e6*/
   v45[3] = v13[3]; /*0x7bb0f2*/
-  v14 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v43), v46, v45, 0, 0)); /*0x7bb0f9*/
+  v14 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v43),(const RectangleStruct *)(v46), v45, 0, 0)); /*0x7bb0f9*/
   v47[0] = *v14; /*0x7bb100*/
   v47[1] = v14[1]; /*0x7bb106*/
   v15 = v14[2]; /*0x7bb109*/
@@ -873,23 +873,23 @@ XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a
     if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
     {
       a4 = (void **)(&vt_BlitTrans); /*0x7bbc3d*/
-      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v13, (int)v6, (int)v12, (int *)&a4, 0, 3, 1000, 0); /*0x7bbc45*/
+      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v13), (int)v6, (int)v12, (int *)&a4, 0, 3, 1000, 0); /*0x7bbc45*/
     }
     else
     {
       a3 = (gamemd::XSurface *)(&vt_BlitTrans); /*0x7bbc5c*/
-      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v13, (int)v6, (int)v12, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
+      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v13), (int)v6, (int)v12, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
     }
   }
   else if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc72*/
   {
     a2 = (void **)(&vt_BlitPlain); /*0x7bbc90*/
-    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v13, (int)v6, (int)v12, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
+    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v13), (int)v6, (int)v12, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
   }
   else
   {
     arg8 = (void **)(&vt_BlitPlain); /*0x7bbcaf*/
-    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v13, (int)v6, (int)v12, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
+    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v13), (int)v6, (int)v12, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
   }
 
 }
@@ -917,23 +917,23 @@ XSurface * * XSurface::Blit(int a2, void **a3, int arg8, int a5, unsigned int *a
     if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 1 ) /*0x7bbd65*/
     {
       a4 = (void **)(&vt_BlitTrans); /*0x7bbd70*/
-      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbd7e*/
+      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v11), arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbd7e*/
     }
     else
     {
       a3 = (void **)(&vt_BlitTrans); /*0x7bbd89*/
-      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbda8*/
+      return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v11), arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbda8*/
     }
   }
   else if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 1 ) /*0x7bbdbe*/
   {
     a4 = (void **)(&vt_BlitPlain); /*0x7bbdc9*/
-    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbdd7*/
+    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v11), arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbdd7*/
   }
   else
   {
     a3 = (void **)(&vt_BlitPlain); /*0x7bbde2*/
-    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface), v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
+    return BlitterCopySimpleSHP((gamemd::XSurface *)((int *)this->Surface),(gamemd::XSurface *)(v11), arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
   }
 
 }

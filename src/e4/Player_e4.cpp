@@ -51,7 +51,7 @@ void Player::BuildListString(wchar_t * Destination)
     }
     v5 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v6));
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
-    wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
+    wcscat((wchar_t *)Destination,(const wchar_t *)(asc_8304FC)); /*0x5e8e6f*/
     DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }

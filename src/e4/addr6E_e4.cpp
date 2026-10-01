@@ -236,7 +236,7 @@ void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
   }
   if ( !Field11 ) /*0x6e30fe*/
     return 0; /*0x6e30fe*/
-  HouseClass::RespawnStartingForces((gamemd::TechnoClass *)(v10), a2, a3, (int)v7); /*0x6e3108*/
+  HouseClass::RespawnStartingForces((gamemd::TechnoClass *)(v10),(void **)(a2), a3, (int)v7); /*0x6e3108*/
   return 1; /*0x6e3102*/
 }
 }
