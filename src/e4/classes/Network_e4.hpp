@@ -153,8 +153,8 @@ struct Network {
     int receiveData(int a2);  // 0x5413F0
     int SendPacket(int a2, int a3, unsigned char a4);  // 0x541410
     int SendPacketThunk2(int a2, int a3, int a4, int a5);  // 0x541480
-    void * ReceiveLoop(void *a1_1);  // 0x541820
-    int GetQueueCount(void *a1_1);  // 0x5422D0
+    void * ReceiveLoop(IPXManagerClass * a1_1);
+    int GetQueueCount(IPXManagerClass * a1_1);
     int GetLobbyStatus();  // 0x5424C0
     int updateLatency();  // 0x542500
     unsigned int * SetPlayerCoords(IPXManagerClass * aP1);  // 0x543050

@@ -57,7 +57,7 @@ struct String {
     ObjectClass * CopyConstant(char * Destination);  // 0x777B60
     char * CopyUpper(char * String, ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char * a2, void *a2_2);  // 0x4F4C70
-    char * CopyChecked(const char * a2, void *a2_2);  // 0x4F4CB0
+    char * CopyChecked(const char * a2, const char * a2_2);
     bool Equals(ObjectClass * aP1, void *a2_1);  // 0x4F4CE0
     unsigned int ComputeHash(void *a1_1);  // 0x5E2620
     char * Trim(void *a1_1);  // 0x727CF0

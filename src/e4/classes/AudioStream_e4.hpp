@@ -145,7 +145,7 @@ struct AudioStream {
     int ReadSamples(const void * a2, void *a2_2);  // 0x4A33A0
     MouseClass * * DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);  // 0x4BEAC0
     int SetFlag4C(void *a1_1);  // 0x7BD270
-    int CalcReadPos(void *a1_1);  // 0x7BD2D0
+    int CalcReadPos(AudioStream * a1_1);
     int ProcessStream();  // 0x7BEA80
     unsigned int GetPosition(void *a1_1);  // 0x7C3960
     void Destructor(unsigned int * Block);  // 0x402550
