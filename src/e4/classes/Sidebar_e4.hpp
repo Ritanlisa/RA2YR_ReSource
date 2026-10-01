@@ -116,7 +116,7 @@ struct Sidebar {
     unsigned int field_1530;
     unsigned int Debug;
 // --- flat members (END) ---
-    AbstractClass * * StartSidebarProduction(int a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5, void *a5_2);
+    AbstractClass * * StartSidebarProduction(int a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5, void *a5_2);  // 0x4FA350
     int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);  // 0x5007A0
     CreateTeamCommand * * ScrollSidebarSkipGame();  // 0x533F50
     TechnoClass * * CancelSidebarProductionQueue(int * Block);  // 0x636310

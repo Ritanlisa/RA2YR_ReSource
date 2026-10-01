@@ -295,11 +295,11 @@ struct DSurface {
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);
     int  FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
-    int Flip(void *a1);
+    int Flip(DSurface * a1);
     int Flip2();
     int GetBytesPerPixel();
     int LockAndPrepareRect();
-    int RestoreIfLost(void *a1);
+    int RestoreIfLost(DSurface * a1);
     long long ConstructFromHandle();
     unsigned int * CreateBackBuffer(int a2, void *a2_2);
     AbstractClass * * CreatePrimary(void *a1);

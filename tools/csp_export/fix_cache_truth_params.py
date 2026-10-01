@@ -251,7 +251,10 @@ def main():
                              r'\b', htext):
                 continue      # the decl's hpp does not declare the class
         if addr is None:
-            addr = _sig_addr(short) or _sig_addr(callee)
+            # signals keys: short name, gamemd-stripped qualified, full
+            stripped = re.sub(r'^gamemd::', '', callee)
+            addr = (_sig_addr(short) or _sig_addr(stripped)
+                    or _sig_addr(callee))
             if addr is None:
                 continue
         short_to_decl[short] = (hp, k, addr)
@@ -315,8 +318,15 @@ def main():
             continue
         newt = types[cache_idx]
         newpl = retype_param(plist, n - 1, newt)
+        # G41.43: preserve EVERYTHING after the closing paren's first `;`
+        # (trailing `// 0xADDR` annotations live there and are the
+        # verifier's address authority -- losing them breaks the corpus)
+        close = hl.find(')', dm.start(4))
+        semi = hl.find(';', close)
+        after_semi = hl[semi + 1:] if semi >= 0 else ''
         newl = (dm.group(1) + (dm.group(2) or '') + dm.group(3) +
-                '(' + ', '.join(newpl) + ')' + (dm.group(5) or '') + ';')
+                '(' + ', '.join(newpl) + ')' + (dm.group(5) or '') + ';' +
+                after_semi)
         if newl != hl:
             edits.setdefault(hp, []).append((k, newl))
             n_fixed += 1
@@ -337,7 +347,7 @@ def main():
                         cm = re.match(
                             r'^(\s*)((?:[A-Za-z_][\w:<>,\s\*&\(\)]*?[\s\*&])?)'
                             r'((?:[A-Za-z_]\w*::)*~?' + re.escape(short) +
-                            r')\s*\((.*)\)\s*\{', cl)
+                            r')\s*\((.*)\)\s*(\{)?\s*$', cl)
                         if not cm:
                             continue
                         dpl = split_params(cm.group(4))
@@ -347,9 +357,30 @@ def main():
                         if not re.match(r'^void\s*\*\s*(?:[A-Za-z_]\w*)?$',
                                         dpl[n - 1]):
                             break
+                        # body-safety: a filler the BODY references is not
+                        # a filler (arity-bug family) -- withhold both edits
+                        fnm = re.search(r'([A-Za-z_]\w*)\s*$', dpl[n - 1])
+                        if fnm:
+                            bstart = j if cm.group(5) else j + 1
+                            depth = 0
+                            body = []
+                            for bl in clines[bstart:min(bstart + 400,
+                                                        len(clines))]:
+                                depth += bl.count('{') - bl.count('}')
+                                body.append(bl)
+                                if depth <= 0 and len(body) > 1:
+                                    break
+                            btxt = '\n'.join(body)
+                            if re.search(r'\b' + re.escape(fnm.group(1)) +
+                                         r'\b', btxt):
+                                de = edits.get(hp, [])
+                                edits[hp] = [e for e in de if e[0] != k]
+                                break
                         ndpl = retype_param(dpl, n - 1, newt)
+                        brace = (cm.group(5) or ' {')
                         newcl = (cm.group(1) + (cm.group(2) or '') +
-                                 cm.group(3) + '(' + ', '.join(ndpl) + ') {')
+                                 cm.group(3) + '(' + ', '.join(ndpl) + ')' +
+                                 brace)
                         edits.setdefault(str(cpp), []).append((j, newcl))
                         break
                 break

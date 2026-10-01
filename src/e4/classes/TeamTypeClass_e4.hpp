@@ -103,7 +103,7 @@ struct TeamTypeClass {
     int GetTypeIdentifier();
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int ProcessTaskForce(void *a1);
+    int ProcessTaskForce(TeamTypeClass * a1);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     void * CreateScriptType();

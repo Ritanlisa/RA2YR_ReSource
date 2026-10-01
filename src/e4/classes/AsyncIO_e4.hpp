@@ -30,7 +30,7 @@ struct AsyncIO {
 // --- flat members (END) ---
     void Shutdown(void *a1);
     void Read(void *a1, void *a2);
-    int WaitCompletion(void *a1);
+    int WaitCompletion(int a1);
 };
 
 } // namespace gamemd

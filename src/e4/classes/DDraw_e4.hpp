@@ -26,9 +26,9 @@ struct DDraw {
     int CleanupSurfaces();
     int GetStatus();
     int HandleSuspend(void *a1);
-    void LogError(void * a1, void * a2);
-    void ReleaseSurfaces(void *a1);
-    int WaitForIdle(void *a1);
+    void LogError(UINT a1, void * a2);
+    void ReleaseSurfaces(DDraw * a1);
+    int WaitForIdle(DDraw * a1);
     void Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
 };
 

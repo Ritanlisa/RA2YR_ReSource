@@ -182,7 +182,7 @@ struct House {
     unsigned int * GetStartCoords(IUnknown * aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer(void *a1_1);  // 0x50B6F0
-    int IsCurrentPlayer(House * a1_1);
+    int IsCurrentPlayer(House * a1_1);  // 0x50B730
     AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2, void *a2_2);  // 0x544BE0
     int LoadMapFileData(int a2, char a3, void *a3_2);  // 0x544C20

@@ -1599,7 +1599,7 @@ struct BuildingTypeClass {
     int ConstructFull(char * Source, void *a2);
     int FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3, void *a4);
     int FindIndex(void *a1);
-    int FindIndexByName(void *a1);
+    int FindIndexByName(BuildingTypeClass * a1);
     int GetAuxField();
     int GetClassIdentifier();
     int GetMaxPips();

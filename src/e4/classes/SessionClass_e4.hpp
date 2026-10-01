@@ -666,15 +666,15 @@ struct SessionClass {
     TypeList_flat * QueryInterface(char a2);
     VectorClass_flat * validateGame(char a2);
     char AddRef(int a2);
-    char GetGameSpeed(void *a1);
+    char GetGameSpeed(SessionClass * a1);
     char Release(int a2, unsigned int * a3);
     char addPlayer(int a2, unsigned int * a3);
     int AssignColor(int a2, MPCooperative * aP2);
     int AssignSide(int a2, MPCooperative * aP2);
     int CreateConnections();
     int Destruct(void *a1, void *a2);
-    int GetOption(void *a1);
-    int GetOption2(void *a1);
+    int GetOption(int * a1);
+    int GetOption2(SessionClass * a1);
     int GetPlayerColor(void *a1);
     int GetPlayerSide(int a1);
     int  IsValidHouse(void * a2);
@@ -684,7 +684,7 @@ struct SessionClass {
     int SetField();
     int SetOption(SessionClass * aP1, void *a2);
     int SetOption2(SessionClass * aP1);
-    int SetPlayerColor(int a2, void *a2_2);
+    int SetPlayerColor(int a2, int a2_2);
     int SetPlayerOption(SkirmishDialog * aP1, void *a2);
     int  findPlayer(unsigned int * a2);
     int initInternet();
