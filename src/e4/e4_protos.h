@@ -810,7 +810,7 @@ extern char * CopyAudioData(char *a1, int a2);
 extern float * InvertMatrix3x3Signs(float *a1, float *a2);
 extern char * Locomotor_Update(char *a1, int a2);
 extern char ** ToWideStringCharAlt(char **a1, const wchar_t **a2);
-extern int CreateDialogA(uint16_t a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3);
+// (CreateDialog proto removed: collides with the SDK extern "C" CreateDialogA; callers fall back to the SDK decl)
 extern int ValidateStringContains(const char **a1, const char *a2, char *Control);
 extern int SendNetworkHeartbeat(int a1, int a2, int a3, int a4);
 extern int SkirmishDialogProc(HWND hDlg, int a2, uint16_t a3, HWND a4);
