@@ -681,6 +681,7 @@ extern int ZCoordToScreenY(int aP0);
 
 } // namespace gamemd
 
+namespace gamemd {
 // G41.46 C2065 supply: class forward declarations for names the
 // cache-typed bodies reference but the TU closure never declared.
 // Idempotent with full definitions included later in any TU.
@@ -809,7 +810,7 @@ extern char * CopyAudioData(char *a1, int a2);
 extern float * InvertMatrix3x3Signs(float *a1, float *a2);
 extern char * Locomotor_Update(char *a1, int a2);
 extern char ** ToWideStringCharAlt(char **a1, const wchar_t **a2);
-extern int CreateDialog(uint16_t a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3);
+extern int CreateDialogA(uint16_t a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3);
 extern int ValidateStringContains(const char **a1, const char *a2, char *Control);
 extern int SendNetworkHeartbeat(int a1, int a2, int a3, int a4);
 extern int SkirmishDialogProc(HWND hDlg, int a2, uint16_t a3, HWND a4);
@@ -827,14 +828,14 @@ extern int UpdateThemeManager(int a1, int a2, int a3);
 extern char globalHelper_0E2050(int a1, int a2, int a3, int16_t *a4);
 extern int Team_Find(int *a1, int a2, int a3, int a4);
 extern int LoadFileClassToBuffer(char **a1, bool *a2);
-extern int FadePalette(const void *a1, signed int a2, void (*a3)(void) a3);
+extern int FadePalette(const void *a1, signed int a2, void (*a3)(void));
 extern char * FromNameIndex(int a1);
 extern int * ChangeVideoMode_Setup(int a1, int a2);
 extern char * GetTileDataEntry(int a1);
 extern char Render_Play(const char *a1, char *a2, int a3);
 extern int FillArrayPattern(unsigned int *a1, char *a2, unsigned int *a3, int a4);
 extern int ModBigIntExp_Helper(const void *a1, int a2);
-extern int MessageDialogLoopAlt(HWND hWnd, uint8_t (*a2)(void) a2, int a3, char a4, char a5);
+extern int MessageDialogLoopAlt(HWND hWnd, uint8_t (*a2)(void), int a3, char a4, char a5);
 extern void LogMultiplayToSync_MPDEBUG(int a1, uint8_t *a2);
 extern int ProcessNetworkMessage(int a1, int a2);
 extern int ProcessNetworkFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int *a6);
@@ -846,3 +847,15 @@ extern int Audio_Render_7C3860(int a1, int a2);
 extern int ProcessAudioStreamBuffer(int a1, signed int a2, int a3);
 extern int PushFrontLinkedListAlt(unsigned int *a1, int a2);
 extern char sub_434840(unsigned int *a1, unsigned int *a2, unsigned int *a3);
+
+
+// G41.46: fwd decls for types used by the supply protos above
+class IUnknown;
+class MSG;
+class WCHAR;
+
+
+// G41.46: fwd for supply-proto types (in-place visibility)
+class FILE;
+
+} // namespace gamemd
