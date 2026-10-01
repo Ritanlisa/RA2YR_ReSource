@@ -590,7 +590,7 @@ LABEL_23:
     }
 LABEL_25:
     ((Radar *)(0))->UpdateReveal(0); /*0x577efc*/
-    FogOfWar::Render((FogOfWar *)&dword_87F7E8); /*0x577f0d*/
+    ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x577f0d*/
     return (void *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/

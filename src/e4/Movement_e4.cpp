@@ -269,7 +269,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v88.field_8 = (unsigned int)(v42); /*0x5b23e5*/
   *(unsigned int *)v87 = v43; /*0x5b23e9*/
   *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
-  v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.field_4); /*0x5b23ff*/
+  v45 = ((Coord2D *)((Coord2D *)v87))->Sub((int *)&v90, &v88.field_4); /*0x5b23ff*/
   v46 = Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
   v47 = (unsigned int)aP3[2]; /*0x5b240b*/
   Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/

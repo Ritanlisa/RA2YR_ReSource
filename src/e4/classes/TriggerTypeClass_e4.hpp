@@ -89,6 +89,7 @@ struct TriggerTypeClass {
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int Write(TechnoTypeClass * aP0, int * a1, int aP2);
     static double GetFlags(...);  // C2597 interim stub
+    unsigned int * Construct(char *Source);  // 0x726c80
 };
 
 } // namespace gamemd

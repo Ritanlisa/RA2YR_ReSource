@@ -518,7 +518,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   {
     v19 = (gamemd::Init)((MissionClass *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
     if ( v19 ) /*0x5c15d0*/
-      v20 = MissionClass::Init(v19); /*0x5c15d9*/
+      v20 = ((MissionClass *)(v19))->Init(); /*0x5c15d9*/
     else
       v20 = 0; /*0x5c15dd*/
     Movie::SetupScreen((int)v20, aP6); /*0x5c15e6*/
@@ -696,7 +696,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
   {
     v8 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c190b*/
     if ( v8 ) /*0x5c1915*/
-      v9 = MissionClass::Init(v8); /*0x5c191e*/
+      v9 = ((MissionClass *)(v8))->Init(); /*0x5c191e*/
     else
       v9 = 0; /*0x5c1922*/
     Movie::SetupScreen((int)v9, j); /*0x5c1927*/
@@ -790,7 +790,7 @@ LABEL_30:
   }
   v6 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1ae2*/
   if ( v6 ) /*0x5c1aec*/
-    result = (int)MissionClass::Init(v6); /*0x5c1af0*/
+    result = (int)((MissionClass *)(v6))->Init(); /*0x5c1af0*/
   else
     result = 0; /*0x5c1af7*/
   this->MPCooperative_field_0x40 = (void *)result; /*0x5c1afb*/
@@ -884,7 +884,7 @@ int MPCooperative::InitSession()
   {
     v3 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1cef*/
     if ( v3 ) /*0x5c1cf9*/
-      v4 = MissionClass::Init(v3); /*0x5c1cfd*/
+      v4 = ((MissionClass *)(v3))->Init(); /*0x5c1cfd*/
     else
       v4 = 0; /*0x5c1d04*/
     this->MPCooperative_field_0x40 = v4; /*0x5c1d06*/
@@ -947,7 +947,7 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
       this->MPCooperative_field_0x40 = *(void **)(*(unsigned int *)this->__pad_328 + 4 * v3); /*0x5c1e58*/
       v5 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1e5b*/
       if ( v5 ) /*0x5c1e65*/
-        v6 = MissionClass::Init(v5); /*0x5c1e69*/
+        v6 = ((MissionClass *)(v5))->Init(); /*0x5c1e69*/
       else
         v6 = 0; /*0x5c1e70*/
       *(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3) = v6; /*0x5c1e79*/
@@ -2176,7 +2176,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     {
       v11 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c3be4*/
       if ( v11 ) /*0x5c3bee*/
-        v12 = MissionClass::Init(v11); /*0x5c3bf7*/
+        v12 = ((MissionClass *)(v11))->Init(); /*0x5c3bf7*/
       else
         v12 = 0; /*0x5c3bfb*/
       Movie::SetupScreen((int)v12, i); /*0x5c3c00*/
@@ -2400,7 +2400,7 @@ AbstractClass * * MPCooperative::ProcessChat()
   {
     v3 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c4129*/
     if ( v3 ) /*0x5c4133*/
-      v4 = MissionClass::Init(v3); /*0x5c4137*/
+      v4 = ((MissionClass *)(v3))->Init(); /*0x5c4137*/
     else
       v4 = 0; /*0x5c413e*/
     this->MPCooperative_field_0x40 = v4; /*0x5c4144*/

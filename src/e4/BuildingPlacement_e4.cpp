@@ -63,7 +63,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(v10); /*0x4fb877*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x4fb883*/
-  BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4fb88f*/
+  ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(0); /*0x4fb88f*/
   stru_87F5F0.__pad_E12[1432] = 0; /*0x4fb894*/
   stru_87F5F0.__pad_E12[1433] = 0; /*0x4fb89b*/
   stru_87F5F0.__pad_E12[1434] = 0; /*0x4fb8a2*/

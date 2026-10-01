@@ -1621,6 +1621,7 @@ struct BuildingTypeClass {
     void LoadVoxel();
     void* LoadAnimations(int aP1);
     void* ProcessPower(AbstractClass * aP1, void *a2);
+    int GetFoundationHeight(char a2);  // 0x45eca0
 };
 
 } // namespace gamemd

@@ -54,6 +54,7 @@ struct CCFileClass {
     static double GetSize(...);  // C2597 interim stub
     void Construct2(void* filename, void *a1 = 0, void *a2 = 0);  // init file object with name
      void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a1 = 0);
+    LONG Load();  // 0x595bc0
 };
 
 } // namespace gamemd

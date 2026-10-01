@@ -28,6 +28,7 @@ struct FileSystem {
     void CleanupTrees();
     void InitPipShapes();
     static double FlushTempFiles(...);  // C2597 interim stub
+    int readFile();  // 0x628740
 };
 
 } // namespace gamemd

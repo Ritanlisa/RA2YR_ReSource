@@ -1324,7 +1324,7 @@ LABEL_124:
   if ( (g_ScenarioClass_Instance->nextScenario[0] & 0x1000) != 0 )
     SmallFunc_5866C0(&DataGlobal_87F7E8);
   Map_Load_660B00();
-  FogOfWar::Render((int **)&DataGlobal_87F7E8);
+  ((FogOfWar *)((int **)&DataGlobal_87F7E8))->Render();
   *(unsigned int *)aP1[0].__pad_0 = &vt_CCFileClass;
   v69 = 0;
   ((Vector *)((int)v65))->Clear();

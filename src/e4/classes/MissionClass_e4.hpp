@@ -137,6 +137,7 @@ struct MissionClass {
     int Return450N();
     int vt_entry_1FC();
     static double GetMissionControl(...);  // C2597 interim stub
+    unsigned int * Init();  // 0x49b610
 };
 
 } // namespace gamemd

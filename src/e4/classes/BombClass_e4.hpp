@@ -58,6 +58,7 @@ struct BombClass {
     int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * GetCurrentFrame();
+    int AbstractClass();  // 0x4385d0
 };
 
 } // namespace gamemd

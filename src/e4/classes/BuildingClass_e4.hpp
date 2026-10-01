@@ -778,6 +778,7 @@ struct BuildingClass {
     char ValidatePath(unsigned short *a2, int a3);  // 0x716150
     int TogglePower2(int a2);  // 0x4ac8c0
     int ProcessUpgradeEffects();  // 0x726400
+    int TogglePower(int a2);  // 0x4ac660
 };
 
 } // namespace gamemd

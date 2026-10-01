@@ -17881,6 +17881,7 @@ struct MSAnim {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     int SetField(unsigned int a2);  // 0x5cb860
+    int GetField(unsigned int a2);  // 0x5cb840
 };
 
 struct MSChoiceClass {
@@ -18093,6 +18094,9 @@ struct ObjectClass {
     int Dtor();  // 0x5f3b80
     int Undeploy();  // 0x5f4d30
     int PreDraw();  // 0x6d0f00
+    char SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4);  // 0x4d7d50
+    int processPointerInvalid();  // 0x483610
+    unsigned int * Init(int a2);  // 0x5f3b50
 };
 
 struct ObjectPtr {
@@ -18454,6 +18458,7 @@ struct Viewport {
 struct VoxelAnimTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    unsigned int * Constructor(int a2, int a3);  // 0x67c310
 };
 
 struct VoxelPalette {

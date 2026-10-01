@@ -1174,7 +1174,7 @@ LABEL_6:
     SidebarClass::LoadResources(); /*0x67e6a9*/
     BuildingClass::ClearOccupancyData(); /*0x67e6ae*/
     BuildingClass::ClearFactoryData(); /*0x67e6b3*/
-    FogOfWar::Render((int **)&dword_87F7E8); /*0x67e6bd*/
+    ((FogOfWar *)((int **)&dword_87F7E8))->Render(); /*0x67e6bd*/
     byte_A8ED5C = 1; /*0x67e6c4*/
     byte_A8E378 = 1; /*0x67e6ca*/
     ToggleDisplayMode(1); /*0x67e6d0*/

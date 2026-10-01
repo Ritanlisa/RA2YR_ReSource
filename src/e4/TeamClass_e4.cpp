@@ -129,7 +129,7 @@ LABEL_7:
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x577c60*/
   dword_A83D4C->__pad_140[256] = 0; /*0x577c6f*/
-  FogOfWar::Render((FogOfWar *)&stru_87F5F0.__pad_58[416]); /*0x577c76*/
+  ((FogOfWar *)((FogOfWar *)&stru_87F5F0.__pad_58[416]))->Render(); /*0x577c76*/
   return (*((int (**)(TeamClass *, int))this->AbstractClass + 14))(this, 2); /*0x577c84*/
 
 }

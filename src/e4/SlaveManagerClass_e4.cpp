@@ -477,7 +477,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               FoundationWidth = BuildingTypeClass::GetFoundationWidth(*(unsigned int **)(v4 + 1312)); /*0x6af806*/
               v14 = *(unsigned int *)(v4 + 1312); /*0x6af80b*/
               v79 = FoundationWidth; /*0x6af813*/
-              FoundationHeight = BuildingTypeClass::GetFoundationHeight(v14, 0); /*0x6af817*/
+              FoundationHeight = ((BuildingTypeClass *)(v14))->GetFoundationHeight(0); /*0x6af817*/
               v16 = a1[9]; /*0x6af81f*/
               v76 = ((CellStruct *)(v100))->Set(v79 - 1, FoundationHeight / 2); /*0x6af839*/
               v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer)(v16, v89); /*0x6af849*/
@@ -529,7 +529,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v24 = BuildingTypeClass::GetFoundationWidth(*(unsigned int **)(IsBuildingType + 1312)); /*0x6af926*/
               v25 = *(unsigned int *)(IsBuildingType + 1312); /*0x6af92b*/
               v84[0] = v24 - 1; /*0x6af934*/
-              v26 = BuildingTypeClass::GetFoundationHeight(v25, 0); /*0x6af939*/
+              v26 = ((BuildingTypeClass *)(v25))->GetFoundationHeight(0); /*0x6af939*/
               v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
               v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer)(v27, v87); /*0x6af95c*/
@@ -573,7 +573,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v34 = BuildingTypeClass::GetFoundationWidth(v33->q520); /*0x6afa32*/
               v35 = v33->q520; /*0x6afa37*/
               v77 = v34; /*0x6afa3f*/
-              v36 = BuildingTypeClass::GetFoundationHeight(v35, 0); /*0x6afa43*/
+              v36 = ((BuildingTypeClass *)(v35))->GetFoundationHeight(0); /*0x6afa43*/
               v37 = a1[9]; /*0x6afa4c*/
               v72 = ((CellStruct *)(v97))->Set(v77 - 1, v36 / 2); /*0x6afa67*/
               v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer)(v37, &v99, v93); /*0x6afa75*/
@@ -602,7 +602,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v45 = BuildingTypeClass::GetFoundationWidth(v44->q520); /*0x6afb41*/
             v46 = v44->q520; /*0x6afb46*/
             v77 = v45; /*0x6afb4e*/
-            v47 = BuildingTypeClass::GetFoundationHeight(v46, 0); /*0x6afb52*/
+            v47 = ((BuildingTypeClass *)(v46))->GetFoundationHeight(0); /*0x6afb52*/
             v48 = a1[9]; /*0x6afb5a*/
             v73 = ((CellStruct *)(v87))->Set(v77 - 1, v47 / 2); /*0x6afb71*/
             v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer)(v48, v90, v88); /*0x6afb7e*/
@@ -647,7 +647,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v59 = BuildingTypeClass::GetFoundationWidth(*(unsigned int **)(v58 + 1312)); /*0x6afc39*/
             v60 = *(unsigned int *)(v58 + 1312); /*0x6afc3e*/
             v80[0] = v59 - 1; /*0x6afc47*/
-            v61 = BuildingTypeClass::GetFoundationHeight(v60, 0); /*0x6afc4c*/
+            v61 = ((BuildingTypeClass *)(v60))->GetFoundationHeight(0); /*0x6afc4c*/
             v62 = a1[9]; /*0x6afc52*/
             v80[1] = v61 / 2; /*0x6afc59*/
             v63 = (unsigned short *)(*(int (**)(int, char *, char *, unsigned short *))(v62->airstrikeTintTimer)( /*0x6afc72*/

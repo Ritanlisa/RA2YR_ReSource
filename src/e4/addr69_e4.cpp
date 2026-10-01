@@ -457,7 +457,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ((Debug *)0)->Log();
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
-    FileClass::Delete((RawFileClass *)v43); /*0x694208*/
+    ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x694208*/
   ((FileClass *)((RawFileClass *)v43))->Open2((const CHAR *)2); /*0x694213*/
   v7 = a2 / 0xC0; /*0x69422c*/
   v25 = a2 / 0xC0; /*0x69422f*/
@@ -593,11 +593,11 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   RA2_OPDEL((void *)lpBuffer); /*0x6946d8*/
   RA2_OPDEL(Block); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
-  FileClass::CloseHandle((RawFileClass *)v43); /*0x694706*/
+  ((FileClass *)((RawFileClass *)v43))->CloseHandle(); /*0x694706*/
   Debug::Log(); /*0x694710*/
   if ( !v21 && (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x694722*/
   {
-    FileClass::Delete((RawFileClass *)v43); /*0x69472f*/
+    ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x69472f*/
     Debug::Log(); /*0x694739*/
   }
   RA2_OPDEL(v6); /*0x694742*/

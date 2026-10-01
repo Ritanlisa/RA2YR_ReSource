@@ -1872,7 +1872,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
   {
     return 1; /*0x4a905d*/
   }
-  FoundationHeight = BuildingTypeClass::GetFoundationHeight((int)aP0, 0); /*0x4a8f2c*/
+  FoundationHeight = ((BuildingTypeClass *)((int)aP0))->GetFoundationHeight(0); /*0x4a8f2c*/
   FoundationWidth = BuildingTypeClass::GetFoundationWidth(aP0); /*0x4a8f30*/
   v6 = *aP3; /*0x4a8f35*/
   v7 = aP3[1]; /*0x4a8f38*/
@@ -1963,7 +1963,7 @@ void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
     return 1; /*0x4a90cc*/
   if ( (*(int (**)(unsigned int *))(*a0 + 44))(a0) != 7 ) /*0x4a90dc*/
     return 1; /*0x4a90dc*/
-  FoundationHeight = BuildingTypeClass::GetFoundationHeight((int)a0, 0); /*0x4a90ed*/
+  FoundationHeight = ((BuildingTypeClass *)((int)a0))->GetFoundationHeight(0); /*0x4a90ed*/
   FoundationWidth = BuildingTypeClass::GetFoundationWidth(a0); /*0x4a90ef*/
   v6 = *a3; /*0x4a90f4*/
   v7 = a3[1]; /*0x4a90f7*/

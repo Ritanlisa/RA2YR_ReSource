@@ -213,7 +213,7 @@ MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2
   pad_50 = (char *)(this->__pad_50); /*0x5adf96*/
   v7 = ((SessionClass *)((SessionClass *)pad_50))->LoadMapSelection((char **)&((unsigned int *)(v13.m_3))[1]) == 0; /*0x5adfab*/
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5adfae*/
-  if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, *(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
+  if ( v7 || (v8 = ((CampaignClass *)((CampaignClass *)pad_50))->Check(*(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
     ((Debug *)this)->Log(); /*0x5adfc3*/

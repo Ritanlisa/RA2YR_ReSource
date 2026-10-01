@@ -281,7 +281,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
 // 0x766960
 namespace gamemd {
-rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Conflict_WorldDominationTour_12::Constructor(char Block)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
@@ -295,7 +295,7 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char
 
 // 0x766990
 namespace gamemd {
-rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(char Block)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/

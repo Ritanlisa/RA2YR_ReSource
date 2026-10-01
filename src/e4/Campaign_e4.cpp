@@ -212,7 +212,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, 
 
 // 0x765710
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor(char Block)
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
@@ -226,7 +226,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char
 
 // 0x765740
 namespace gamemd {
-rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char Block)
 {
 
   *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/

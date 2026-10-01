@@ -204,7 +204,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
-int LocomotionClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int LocomotionClass::Init()
 {
 
   this->Owner = 0; /*0x55a6c6*/

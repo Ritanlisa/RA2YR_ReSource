@@ -44,7 +44,7 @@ int ObjectClass::processPointerInvalid()
 
 // 0x4D7D50
 namespace gamemd {
-int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
+int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
 {
 
   char result; // al

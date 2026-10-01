@@ -260,7 +260,7 @@ LABEL_7:
   }
   ((Radar *)(0))->UpdateReveal(0); /*0x577d63*/
   dword_A83D4C->__pad_140[256] = 0; /*0x577d72*/
-  FogOfWar::Render((FogOfWar *)&stru_87F5F0.__pad_58[416]); /*0x577d79*/
+  ((FogOfWar *)((FogOfWar *)&stru_87F5F0.__pad_58[416]))->Render(); /*0x577d79*/
   return (*((int (**)(TActionClass *, int))this->AbstractClass + 14))(this, 2); /*0x577d88*/
 
 }
@@ -1340,7 +1340,7 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
   }
   Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x6e2243*/
   MapClass::BuildSubzones((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x6e224d*/
-  FogOfWar::Render((FogOfWar *)&stru_87F5F0.__pad_58[416]); /*0x6e2257*/
+  ((FogOfWar *)((FogOfWar *)&stru_87F5F0.__pad_58[416]))->Render(); /*0x6e2257*/
   for ( j = stru_A8EB00.ObjectTypeClass[20] - 1; j >= 0; --j ) /*0x6e2267*/
     (*(void (**)(unsigned int, int))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[17] + 4 * j) + 1184))( /*0x6e2275*/
       *(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * j),

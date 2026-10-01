@@ -19,6 +19,9 @@ struct AudioController {
     int LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5);
     void GetVolume();
      double Init(...);  // C2597 interim stub
+    int CleanupStream();  // 0x4023f0
+    int UpdatePlayback();  // 0x402330
+    int AdvanceQueue();  // 0x4022c0
 };
 
 } // namespace gamemd

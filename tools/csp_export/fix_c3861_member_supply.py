@@ -107,10 +107,12 @@ for addr, v in sig['symbols'].items():
     name2addrs[v['name']].append(addr)
     addr2sym[addr] = v
 
-pairs = json.load(open(os.path.join(ROOT, '.omo', 'g120_c3861_resolvable.json')))
+PAIRS_SRC = os.environ.get('PAIRS_SRC') or '.omo/g120_c3861_resolvable.json'
+pairs = json.load(open(os.path.join(ROOT, PAIRS_SRC)))
 
 # site TUs per (cls, name): for include-closure supply
-census = json.load(open(os.path.join(ROOT, '.omo', 'tu_errors_g119.json')))
+CENSUS_SRC = os.environ.get('CENSUS_SRC') or '.omo/tu_errors_g119.json'
+census = json.load(open(os.path.join(ROOT, CENSUS_SRC)))
 site_tus = collections.defaultdict(set)
 for tu, el in census.items():
     for e in el:

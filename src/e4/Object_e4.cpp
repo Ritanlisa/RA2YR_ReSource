@@ -1760,7 +1760,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
   {
     if ( aP1 ) /*0x5fd909*/
     {
-      ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x5fd912*/
+      ((ObjectClass *)((ObjectClass *)aP1))->Init((int)&aP1a); /*0x5fd912*/
       *aP1 = &vt_OverlayClass; /*0x5fd917*/
       aP1[1] = &vt_OverlayClass; /*0x5fd91d*/
       aP1[2] = &vt_OverlayClass; /*0x5fd924*/

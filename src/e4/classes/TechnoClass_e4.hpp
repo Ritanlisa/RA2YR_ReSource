@@ -586,6 +586,7 @@ struct TechnoClass {
     int CalculateDamage();  // 0x663030
     int32_t u32_608;  // 0x608
     ProgressTimer q0584;  // 0x584
+    int FireWeapon();  // 0x6fdd50
 };
 
 } // namespace gamemd

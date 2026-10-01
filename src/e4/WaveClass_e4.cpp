@@ -57,7 +57,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
   {
     if ( v4 ) /*0x75f672*/
     {
-      ObjectClass::Init((ObjectClass *)v4, (int)&a3); /*0x75f67b*/
+      ((ObjectClass *)((ObjectClass *)v4))->Init((int)&a3); /*0x75f67b*/
       *(unsigned int *)(v4 + 332) = 0; /*0x75f680*/
       *(unsigned int *)(v4 + 424) = (gamemd::Init)(0); /*0x75f68c*/
       FrameSnapshot::Init((FrameSnapshot *)(v4 + 472)); /*0x75f692*/

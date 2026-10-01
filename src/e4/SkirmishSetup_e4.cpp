@@ -518,7 +518,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     unsigned int loc_5BB260 = (unsigned int)((gamemd::AbstractClass **)(0));
     v1 = (CCFileClass *)&loc_5BB260; /*0x5e85bc*/
   }
-  if ( CCFileClass::Load(v1) != 1 ) /*0x5e85c9*/
+  if ( ((CCFileClass *)(v1))->Load() != 1 ) /*0x5e85c9*/
     return -1; /*0x5e85cb*/
   byte_8316D4 = 1; /*0x5e85db*/
   MapSeed::ValidateName(byte_ABDFD8, (int)aRandmapSed); /*0x5e85e2*/

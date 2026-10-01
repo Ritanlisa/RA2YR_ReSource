@@ -6439,7 +6439,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
 
   Debug::Log(); /*0x5b9c9f*/
   byte_8316D4 = 0; /*0x5b9cac*/
-  if ( CCFileClass::Load((CCFileClass *)&loc_5BB260) == 1 ) /*0x5b9cbb*/
+  if ( ((CCFileClass *)((CCFileClass *)&loc_5BB260))->Load() == 1 ) /*0x5b9cbb*/
   {
     byte_8316D4 = 1; /*0x5b9ccd*/
     MapSeed::ValidateName((char *)&g_MissionQueueFrame.briefing[356], (int)&((char *)&stru_82BA00)); /*0x5b9cd2*/

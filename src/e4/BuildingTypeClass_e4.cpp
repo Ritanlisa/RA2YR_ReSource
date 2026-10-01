@@ -1517,7 +1517,7 @@ int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
   v5 = a2; /*0x50b783*/
   v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5216); /*0x50b78f*/
   v12 = 2 * v11 + BuildingTypeClass::GetFoundationWidth((BuildingTypeClass *)a2); /*0x50b7a3*/
-  v6 = 2 * v11 + BuildingTypeClass::GetFoundationHeight(v5, 0); /*0x50b7b1*/
+  v6 = 2 * v11 + ((BuildingTypeClass *)(v5))->GetFoundationHeight(0); /*0x50b7b1*/
   v7 = 1 << ((unsigned int *)this)[0]; /*0x50b7b8*/
   v8 = a3; /*0x50b7ba*/
   v9 = *a3 - v11 - 1; /*0x50b7cd*/

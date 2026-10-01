@@ -2792,7 +2792,7 @@ LABEL_24:
       goto LABEL_25; /*0x57804f*/
     }
 LABEL_26:
-    FogOfWar::Render((FogOfWar *)&dword_87F7E8); /*0x578064*/
+    ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x578064*/
     return (void *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1); /*0x578075*/
   }
   return result; /*0x57807a*/

@@ -307,7 +307,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
 LABEL_6:
     v3 = (TriggerTypeClass *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
+      return ((TriggerTypeClass *)(v3))->Construct(Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v2) + 36), Source) ) /*0x727aea*/

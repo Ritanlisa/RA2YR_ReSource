@@ -433,7 +433,7 @@ LABEL_157:
       *(unsigned int *)&stru_87C374[17952] = -1;
       Mouse::SetBounds((int)&stru_87C374[13428], 0);
       ((BuildingClass *)(&stru_87C374[13428]))->TogglePower2(0);
-      BuildingClass::TogglePower(&stru_87C374[13428], 0);
+      ((BuildingClass *)(&stru_87C374[13428]))->TogglePower(0);
       stru_87C374[17958] = 0;
       stru_87C374[17959] = 0;
       stru_87C374[17960] = 0;
@@ -1277,7 +1277,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   {
     if ( v2 ) /*0x71ce8a*/
     {
-      ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
+      ((ObjectClass *)(v2))->Init((int)&a1); /*0x71ce93*/
       v2->AbstractClass = &vt_TerrainClass; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
       ((unsigned int *)v2)[0] = &vt_TerrainClass; /*0x71cea5*/

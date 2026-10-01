@@ -230,6 +230,7 @@ struct CampaignClass {
     int ddtor(int a1, unsigned int * a2);
      double LoadFromINI(...);  // C2597 interim stub
     int GetValue(unsigned int *a2);  // 0x49e4f0
+    int Check(uint16_t a2);  // 0x5cf810
 };
 
 } // namespace gamemd

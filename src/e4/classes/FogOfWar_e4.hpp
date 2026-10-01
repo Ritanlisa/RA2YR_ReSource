@@ -72,6 +72,7 @@ struct FogOfWar {
     AbstractClass * RevealCell(IUnknown * aP1);
     MapClass * * RevealArea(RadarClass * aP1);
     int RenderCell();
+    int Render();  // 0x657ce0
 };
 
 } // namespace gamemd

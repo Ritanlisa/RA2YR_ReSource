@@ -868,7 +868,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
   {
     if ( aP1 ) /*0x74a989*/
     {
-      ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x74a992*/
+      ((ObjectClass *)((ObjectClass *)aP1))->Init((int)&aP1a); /*0x74a992*/
       *aP1 = (int)&vt_VoxelAnimClass; /*0x74a997*/
       aP1[1] = (int)&vt_VoxelAnimClass; /*0x74a99d*/
       aP1[2] = (int)&vt_VoxelAnimClass; /*0x74a9a4*/

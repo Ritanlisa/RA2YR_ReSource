@@ -1450,7 +1450,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v43 = v35[3]; /*0x57e16a*/
       v42 = v35[2]; /*0x57e16f*/
       v36 = CellStruct::Copy(v35, v52); /*0x57e17d*/
-      v37 = Coord2D::Sub(v36, v50, v62); /*0x57e184*/
+      v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57e184*/
       v38 = Rect::Construct(v55, v37, v42, v43); /*0x57e18e*/
       v58 = *v38; /*0x57e19c*/
       v59 = v38[1]; /*0x57e1a3*/
@@ -1731,7 +1731,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v46 = v36[3]; /*0x57e65f*/
       v45 = v36[2]; /*0x57e664*/
       v37 = CellStruct::Copy(v36, v56); /*0x57e672*/
-      v38 = Coord2D::Sub(v37, v51, v61); /*0x57e679*/
+      v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57e679*/
       v39 = Rect::Construct(v62, v38, v45, v46); /*0x57e683*/
       v57 = *v39; /*0x57e691*/
       v58 = v39[1]; /*0x57e698*/
@@ -2016,7 +2016,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v43 = v35[3]; /*0x57ebc4*/
       v42 = v35[2]; /*0x57ebc9*/
       v36 = CellStruct::Copy(v35, v52); /*0x57ebd7*/
-      v37 = Coord2D::Sub(v36, v50, v62); /*0x57ebde*/
+      v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57ebde*/
       v38 = Rect::Construct(v55, v37, v42, v43); /*0x57ebe8*/
       v58 = *v38; /*0x57ebf6*/
       v59 = v38[1]; /*0x57ebfd*/
@@ -2298,7 +2298,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v46 = v36[3]; /*0x57f0c9*/
       v45 = v36[2]; /*0x57f0ce*/
       v37 = CellStruct::Copy(v36, v56); /*0x57f0dc*/
-      v38 = Coord2D::Sub(v37, v51, v61); /*0x57f0e3*/
+      v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57f0e3*/
       v39 = Rect::Construct(v62, v38, v45, v46); /*0x57f0ed*/
       v57 = *v39; /*0x57f0fb*/
       v58 = v39[1]; /*0x57f102*/

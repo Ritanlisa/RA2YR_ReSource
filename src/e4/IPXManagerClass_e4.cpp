@@ -60,7 +60,7 @@ int IPXManagerClass::send(int a2)
 } // namespace gamemd
 // 0x541070
 namespace gamemd {
-int IPXManagerClass::receivePacket(int a2, void *a2_2, void *a3)
+int IPXManagerClass::receivePacket(int a2)
 {
 
   int v2; // edx

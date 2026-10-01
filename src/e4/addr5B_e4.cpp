@@ -700,11 +700,11 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)FileClass::Open((RawFileClass *)v18, 0) ) /*0x5bb4c1*/
-      FileClass::Delete((RawFileClass *)v18); /*0x5bb4ce*/
+      ((FileClass *)((RawFileClass *)v18))->Delete(); /*0x5bb4ce*/
     ((FileClass *)((RawFileClass *)v18))->Open2((const CHAR *)2); /*0x5bb4d9*/
     ((FileClass *)((RawFileClass *)v18))->Write2(&Buffer, 4u); /*0x5bb4e9*/
     ((FileClass *)((RawFileClass *)v18))->Write2(v6, v8); /*0x5bb4f4*/
-    FileClass::CloseHandle((RawFileClass *)v18); /*0x5bb4fd*/
+    ((FileClass *)((RawFileClass *)v18))->CloseHandle(); /*0x5bb4fd*/
     RA2_OPDEL(v6); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
