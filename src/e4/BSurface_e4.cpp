@@ -41,9 +41,9 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   *(unsigned int *)this->XSurface = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
   *((unsigned int *)this + 10) = v7; /*0x410cfe*/
-  this->? = v9; /*0x410d01*/
-  this->? = v7; /*0x410d04*/
-  this->? = v8; /*0x410d07*/
+  ((unsigned int *)this)[0] = v9; /*0x410d01*/
+  ((unsigned int *)this)[0] = v7; /*0x410d04*/
+  ((unsigned int *)this)[0] = v8; /*0x410d07*/
   *((unsigned int *)this + 8) = 2 * v7 * v8; /*0x410d0f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
@@ -253,9 +253,9 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   *(unsigned int *)this->XSurface = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/
   *((unsigned int *)this + 10) = v7; /*0x7bc98e*/
-  this->? = v9; /*0x7bc991*/
-  this->? = v7; /*0x7bc994*/
-  this->? = v8; /*0x7bc997*/
+  ((unsigned int *)this)[0] = v9; /*0x7bc991*/
+  ((unsigned int *)this)[0] = v7; /*0x7bc994*/
+  ((unsigned int *)this)[0] = v8; /*0x7bc997*/
   *((unsigned int *)this + 8) = 2 * v7 * v8; /*0x7bc99f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/

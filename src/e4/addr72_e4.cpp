@@ -1555,17 +1555,17 @@ unsigned int * E4Recv_720960::sub_720960()
 {
 
   this->AbstractClass = (void *)-1; /*0x720965*/
-  this->? = (void *)-1; /*0x720967*/
-  this->? = (void *)-1; /*0x72096a*/
-  this->? = (void *)255; /*0x72096f*/
-  LOBYTE(this->?) = 0; /*0x720976*/
-  BYTE1(this->?) = 0; /*0x720979*/
-  BYTE2(this->?) = 0; /*0x72097c*/
-  this->? = 0; /*0x72097f*/
-  this->? = 0; /*0x720982*/
-  LOBYTE(this->?) = 1; /*0x720985*/
-  BYTE1(this->?) = 0; /*0x720989*/
-  this->? = (int)&vt_DynamicVectorClass; /*0x72098c*/
+  ((unsigned int *)this)[0] = (void *)-1; /*0x720967*/
+  ((unsigned int *)this)[0] = (void *)-1; /*0x72096a*/
+  ((unsigned int *)this)[0] = (void *)255; /*0x72096f*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x720976*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x720979*/
+  BYTE2(((unsigned int *)this)[0]) = 0; /*0x72097c*/
+  ((unsigned int *)this)[0] = 0; /*0x72097f*/
+  ((unsigned int *)this)[0] = 0; /*0x720982*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x720985*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x720989*/
+  ((unsigned int *)this)[0] = (int)&vt_DynamicVectorClass; /*0x72098c*/
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/
@@ -3232,14 +3232,14 @@ int E4Recv_7294E0::sub_7294E0()
   unsigned int v6[2]; // [esp+8h] [ebp-Ch] BYREF
   int v7; // [esp+10h] [ebp-4h]
 
-  vtable3 = this->?; /*0x7294e6*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x7294e6*/
   v6[0] = vtable3[39]; /*0x7294f5*/
   v6[1] = vtable3[40]; /*0x7294fc*/
   v7 = vtable3[41]; /*0x729508*/
   if ( v7 <= -256 ) /*0x72950c*/
   {
     result = (*(int (**)(unsigned int *, unsigned int))(*vtable3 + 292))(vtable3, 0); /*0x729569*/
-    this->? = 4; /*0x72956f*/
+    ((unsigned int *)this)[0] = 4; /*0x72956f*/
   }
   else
   {
@@ -3250,7 +3250,7 @@ int E4Recv_7294E0::sub_7294E0()
     v7 -= v3; /*0x729542*/
     if ( v7 < -256 ) /*0x729546*/
       v7 = -256; /*0x729548*/
-    return (*(int (**)(void *, unsigned int *))(*(unsigned int *)this->? + 436))(this->?, v6); /*0x72955a*/
+    return (*(int (**)(void *, unsigned int *))(*(unsigned int *)((unsigned int *)this)[0] + 436))(((unsigned int *)this)[0], v6); /*0x72955a*/
   }
   return result; /*0x729560*/
 

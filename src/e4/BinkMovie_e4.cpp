@@ -29,8 +29,8 @@ namespace gamemd {
 unsigned int * BinkMovie::Close(char * FullPath)
 {
 
-  this-((unsigned int *)(>__pad_0))[0] = (unsigned int *)(0);
-  this-((unsigned int *)(>BinkMovie_field_0x4))[0] = 0; /*0x432697*/
+  this->__pad_0[0] = (unsigned int *)(0);
+  this->BinkMovie_field_0x4[0] = 0; /*0x432697*/
   this->BinkMovie_field_0xC = 0; /*0x43269a*/
   this->BinkMovie_field_0x20 = 0; /*0x43269d*/
   *((unsigned char *)this + 45) = 0; /*0x4326a0*/
@@ -47,8 +47,8 @@ void BinkMovie::Open( char * FullPath, int a3)
 {
 
   this->BinkMovie_field_0xC = (unsigned int)((void *)a3);
-  this-((unsigned int *)(>__pad_0))[0] = 0; /*0x4326d3*/
-  this-((unsigned int *)(>BinkMovie_field_0x4))[0] = 0; /*0x4326d5*/
+  this->__pad_0[0] = 0; /*0x4326d3*/
+  this->BinkMovie_field_0x4[0] = 0; /*0x4326d5*/
   this->BinkMovie_field_0x20 = 0; /*0x4326d8*/
   *((unsigned int *)this + 10) = -1; /*0x4326db*/
   *((unsigned char *)this + 44) = 1; /*0x4326e2*/
@@ -73,10 +73,10 @@ void BinkMovie::Stop()
     __3_YAXPAX_Z(BinkMovie_field_0x20); /*0x432713*/
     this->BinkMovie_field_0x20 = 0; /*0x43271b*/
   }
-  if ( this-((unsigned int *)(>BinkMovie_field_0x4))[0] ) /*0x432722*/
+  if ( this->BinkMovie_field_0x4[0] ) /*0x432722*/
   {
-    BinkClose(this-((unsigned int *)(>BinkMovie_field_0x4))[0]); /*0x43272a*/
-    this-((unsigned int *)(>BinkMovie_field_0x4))[0] = 0; /*0x432730*/
+    BinkClose(this->BinkMovie_field_0x4[0]); /*0x43272a*/
+    this->BinkMovie_field_0x4[0] = 0; /*0x432730*/
   }
   result = *((unsigned int *)this + 10); /*0x432737*/
   if ( result != -1 ) /*0x43273d*/
@@ -276,7 +276,7 @@ namespace gamemd {
 int BinkMovie::Pause(unsigned char a2)
 {
 
-  return BinkPause(this-((unsigned int *)(>BinkMovie_field_0x4))[0], a2); /*0x432c44*/
+  return BinkPause(this->BinkMovie_field_0x4[0], a2); /*0x432c44*/
 
 }
 }
@@ -357,7 +357,7 @@ void BinkMovie::Play()
           BinkMovie_field_0x10 = this->BinkMovie_field_0x10; /*0x432db4*/
           BinkMovie_field_0x14 = this->BinkMovie_field_0x14; /*0x432db6*/
           v10[2] = *(unsigned int *)this->__pad_18; /*0x432dbc*/
-          v10[3] = *(unsigned int *)&this-((unsigned int *)(>__pad_18))[4]; /*0x432dc9*/
+          v10[3] = *(unsigned int *)&this->__pad_18[4]; /*0x432dc9*/
           v9 = this->BinkMovie_field_0xC; /*0x432dd3*/
           v10[1] = v12.top + BinkMovie_field_0x14; /*0x432dd6*/
           v10[0] = v12.left + BinkMovie_field_0x10; /*0x432de1*/
@@ -372,7 +372,7 @@ void BinkMovie::Play()
           v3 = (void (*)(HWND, LPPOINT))ClientToScreen; /*0x432def*/
         }
         if ( EventQueue::Process((EventQueue *)dword_87F770) /*0x432e21*/
-          && !this-((unsigned int *)(>__pad_0))[0]
+          && !this->__pad_0[0]
           && EventQueue::Read((EventQueue *)dword_87F770) == 2075 )
         {
           return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e21*/

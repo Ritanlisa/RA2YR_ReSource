@@ -1174,7 +1174,7 @@ unsigned int HashTable_flat::CleanupAndResize()
     while ( v3 ) /*0x7ace77*/
     {
       v4 = v3; /*0x7ace79*/
-      v3 = (ObjectClass *)v3->?; /*0x7ace7b*/
+      v3 = (ObjectClass *)((unsigned int *)v3)[0]; /*0x7ace7b*/
       DeleteAndZero(v4); /*0x7ace84*/
       __3_YAXPAX_Z(v4); /*0x7ace8a*/
     }

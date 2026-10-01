@@ -174,15 +174,15 @@ int MPCooperative::WriteCoopSaveINI()
   v1 = (char *)((unsigned int)((char *)this));
   if ( !LOBYTE(this->MPCooperative_field_0x0) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
-  v2 = &this-((unsigned int *)(>__pad_18))[4]; /*0x49be58*/
-  if ( !this-((unsigned int *)(>__pad_18))[4] ) /*0x49be55*/
+  v2 = &this->__pad_18[4]; /*0x49be58*/
+  if ( !this->__pad_18[4] ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
   INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v15 + 2)); /*0x49be81*/
   Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
-  v15.? = 0; /*0x49be9d*/
+  ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
   *(unsigned int *)v15.INIClass = &CCINIClass_Vtable; /*0x49bea5*/
   CCINIClass::Load(&v15, (int)&v19, 0, 0); /*0x49bead*/
@@ -1092,7 +1092,7 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
       *(int *)v14.VectorClass,
       *(void **)&(unsigned int *)((char *)&v14 + 3),
       *(int *)&(unsigned int *)((char *)&v14 + 3),
-      v14.?,
+      ((char *)&v14),
       v14.Count,
       v14.CapacityIncrement,
       v15,
@@ -1651,16 +1651,16 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   }
   v8 = 0; /*0x5c2e08*/
   v9 = 0; /*0x5c2e0a*/
-  if ( stru_A80220.? > 0 ) /*0x5c2e0e*/
+  if ( ((char *)&stru_A80220) > 0 ) /*0x5c2e0e*/
   {
     do /*0x5c2e2e*/
     {
-      v10 = (House *)*((unsigned int *)stru_A80220.? + v9); /*0x5c2e15*/
+      v10 = (House *)*((unsigned int *)((char *)&stru_A80220) + v9); /*0x5c2e15*/
       if ( v10 && (uint8_t)House::IsCurrentPlayer(v10) ) /*0x5c2e1c*/
         ++v8; /*0x5c2e25*/
       ++v9; /*0x5c2e2b*/
     }
-    while ( v9 < stru_A80220.? ); /*0x5c2e2e*/
+    while ( v9 < ((char *)&stru_A80220) ); /*0x5c2e2e*/
     v4 = a3; /*0x5c2e30*/
   }
   if ( v5 >= v8 ) /*0x5c2e37*/
@@ -1731,11 +1731,11 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   do /*0x5c2f2a*/
     v16[v1++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5c2f17*/
   while ( v1 < 16 ); /*0x5c2f2a*/
-  for ( i = 0; i < stru_A80220.?; ++i ) /*0x5c2f36*/
+  for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5c2f36*/
   {
     v4 = 0; /*0x5c2f44*/
     v5 = -1; /*0x5c2f46*/
-    v6 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5c2f49*/
+    v6 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5c2f49*/
     thisa = v6; /*0x5c2f4c*/
     if ( !*(unsigned char *)(v6->relatedTagsCapacity + 422) ) /*0x5c2f53*/
     {
@@ -1895,29 +1895,29 @@ AbstractClass * * MPCooperative::GetMapData()
   int v14; // [esp+18h] [ebp-4h]
 
   Debug::Log(); /*0x5c322c*/
-  if ( stru_A80220.? > 0 ) /*0x5c323b*/
+  if ( ((char *)&stru_A80220) > 0 ) /*0x5c323b*/
   {
     v1 = 1; /*0x5c3241*/
     v9 = 0; /*0x5c3246*/
     v13 = 1; /*0x5c324e*/
     do /*0x5c337f*/
     {
-      v2 = *(unsigned int *)((char *)stru_A80220.? + v9); /*0x5c325b*/
+      v2 = *(unsigned int *)((char *)((char *)&stru_A80220) + v9); /*0x5c325b*/
       ToWideStringChar((char *)(v2 + 90154)); /*0x5c3264*/
       Debug::Log(); /*0x5c3276*/
       if ( *(unsigned char *)(*(unsigned int *)(v2 + 52) + 422) || !*(unsigned char *)(v2 + 492) ) /*0x5c328f*/
       {
-        nextArrayIndex = stru_A80220.?; /*0x5c34e1*/
+        nextArrayIndex = ((char *)&stru_A80220); /*0x5c34e1*/
       }
       else
       {
-        nextArrayIndex = stru_A80220.?; /*0x5c329d*/
+        nextArrayIndex = ((char *)&stru_A80220); /*0x5c329d*/
         v11 = v1; /*0x5c32a2*/
-        if ( v1 < stru_A80220.? ) /*0x5c32a8*/
+        if ( v1 < ((char *)&stru_A80220) ) /*0x5c32a8*/
         {
           do /*0x5c3360*/
           {
-            v4 = *((unsigned int *)stru_A80220.? + v1); /*0x5c32b4*/
+            v4 = *((unsigned int *)((char *)&stru_A80220) + v1); /*0x5c32b4*/
             ToWideStringChar((char *)(v4 + 90154)); /*0x5c32bf*/
             Debug::Log(); /*0x5c32ca*/
             if ( !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422) && *(unsigned char *)(v4 + 492) ) /*0x5c32df*/
@@ -1929,10 +1929,10 @@ AbstractClass * * MPCooperative::GetMapData()
               HouseClass::HandleAlliance((int *)v4, v2, 0); /*0x5c334b*/
               v1 = v11; /*0x5c3350*/
             }
-            nextArrayIndex = stru_A80220.?; /*0x5c3354*/
+            nextArrayIndex = ((char *)&stru_A80220); /*0x5c3354*/
             v11 = ++v1; /*0x5c335c*/
           }
-          while ( v1 < stru_A80220.? ); /*0x5c3360*/
+          while ( v1 < ((char *)&stru_A80220) ); /*0x5c3360*/
           v1 = v13; /*0x5c3366*/
         }
       }
@@ -1948,17 +1948,17 @@ AbstractClass * * MPCooperative::GetMapData()
       v12 = 1; /*0x5c339a*/
       do /*0x5c34d1*/
       {
-        v6 = *(unsigned int *)((char *)stru_A80220.? + v10); /*0x5c33a8*/
+        v6 = *(unsigned int *)((char *)((char *)&stru_A80220) + v10); /*0x5c33a8*/
         ToWideStringChar((char *)(v6 + 90154)); /*0x5c33b1*/
         Debug::Log(); /*0x5c33c3*/
         if ( !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) && !*(unsigned char *)(v6 + 492) ) /*0x5c33dc*/
         {
           v14 = v5; /*0x5c33ef*/
-          if ( v5 < stru_A80220.? ) /*0x5c33f5*/
+          if ( v5 < ((char *)&stru_A80220) ) /*0x5c33f5*/
           {
             do /*0x5c34ac*/
             {
-              v7 = *((unsigned int *)stru_A80220.? + v5); /*0x5c3400*/
+              v7 = *((unsigned int *)((char *)&stru_A80220) + v5); /*0x5c3400*/
               ToWideStringChar((char *)(v7 + 90154)); /*0x5c340b*/
               Debug::Log(); /*0x5c3416*/
               if ( !*(unsigned char *)(*(unsigned int *)(v7 + 52) + 422) && !*(unsigned char *)(v7 + 492) ) /*0x5c342b*/
@@ -1972,7 +1972,7 @@ AbstractClass * * MPCooperative::GetMapData()
               }
               v14 = ++v5; /*0x5c34a8*/
             }
-            while ( v5 < stru_A80220.? ); /*0x5c34ac*/
+            while ( v5 < ((char *)&stru_A80220) ); /*0x5c34ac*/
             v5 = v12; /*0x5c34b2*/
           }
         }
@@ -1980,7 +1980,7 @@ AbstractClass * * MPCooperative::GetMapData()
         v10 += 4; /*0x5c34c4*/
         v12 = v5; /*0x5c34c8*/
       }
-      while ( v5 - 1 < stru_A80220.? ); /*0x5c34d1*/
+      while ( v5 - 1 < ((char *)&stru_A80220) ); /*0x5c34d1*/
     }
   }
   return 1; /*0x5c34d7*/
@@ -2775,13 +2775,13 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
     do /*0x5c4e7b*/
     {
       v4 = 0; /*0x5c4ccb*/
-      if ( stru_A80220.? > 0 ) /*0x5c4ccf*/
+      if ( ((char *)&stru_A80220) > 0 ) /*0x5c4ccf*/
       {
         while ( _wcsicmp( /*0x5c4cf5*/
-                  (const wchar_t *)(*((unsigned int *)stru_A80220.? + v4) + 90154),
+                  (const wchar_t *)(*((unsigned int *)((char *)&stru_A80220) + v4) + 90154),
                   *((const wchar_t **)this->MPCooperative_field_0x5C + v2)) )
         {
-          if ( ++v4 >= stru_A80220.? ) /*0x5c4cff*/
+          if ( ++v4 >= ((char *)&stru_A80220) ) /*0x5c4cff*/
             goto LABEL_16; /*0x5c4cff*/
         }
         *(unsigned int *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 111) = v4; /*0x5c4d11*/

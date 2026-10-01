@@ -31,12 +31,12 @@ void ParticleTypeClass::GetClassIdentifier()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x477906*/
+  v2 = *(void **)&this->m_1[3]; /*0x477906*/
   this->m_10 = 0; /*0x477909*/
   if ( v2 && BYTE1(this->m_C) ) /*0x477910*/
   {
     __3_YAXPAX_Z(v2); /*0x477916*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x47791e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x47791e*/
   }
   BYTE1(this->m_C) = 0; /*0x477921*/
   this->m_8 = 0; /*0x477924*/
@@ -114,7 +114,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x478562*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x478562*/
     {
       m_8 = this->m_8; /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
@@ -124,7 +124,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
-          v13 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3] + v12; /*0x47857b*/
+          v13 = *(unsigned int *)&this->m_1[3] + v12; /*0x47857b*/
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -136,11 +136,11 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x478598*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4785a1*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4785a9*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4785a1*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x4785a9*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v5; /*0x4785b4*/
+    *(unsigned int *)&this->m_1[3] = v5; /*0x4785b4*/
     this->m_8 = v3; /*0x4785ba*/
     BYTE1(this->m_C) = a3 == 0; /*0x4785bd*/
   }
@@ -600,27 +600,27 @@ int ParticleTypeClass::ProcessPower(int * a2)
   int v7; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6454e9*/
-  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2DC))[0]); /*0x6454f7*/
-  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2E0))[0]); /*0x645505*/
-  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2E8))[0]); /*0x645513*/
-  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2EC))[0]); /*0x645521*/
-  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2F0))[0]); /*0x64552f*/
+  Power::TimerProcess(this->ParticleTypeClass_field_0x2DC[0]); /*0x6454f7*/
+  Power::TimerProcess(this->ParticleTypeClass_field_0x2E0[0]); /*0x645505*/
+  Power::TimerProcess(this->ParticleTypeClass_field_0x2E8[0]); /*0x645513*/
+  Power::TimerProcess(this->ParticleTypeClass_field_0x2EC[0]); /*0x645521*/
+  Power::TimerProcess(this->ParticleTypeClass_field_0x2F0[0]); /*0x64552f*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F4); /*0x64553d*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F8); /*0x64554b*/
   Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->__pad_2FC); /*0x645559*/
   Checksummer::Add_float((Checksummer *)a2, this->ParticleTypeClass_field_0x300); /*0x645567*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
-  LOBYTE(v3) = this-((unsigned int *)(>__pad_308))[0]; /*0x64557a*/
+  LOBYTE(v3) = this->__pad_308[0]; /*0x64557a*/
   Power::FlagProcess((Power *)a2, v3); /*0x645583*/
-  LOBYTE(v4) = this-((unsigned int *)(>__pad_308))[1]; /*0x645588*/
+  LOBYTE(v4) = this->__pad_308[1]; /*0x645588*/
   v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
-  LOBYTE(v5) = this-((unsigned int *)(>__pad_308))[2]; /*0x645596*/
+  LOBYTE(v5) = this->__pad_308[2]; /*0x645596*/
   Power::FinalizeDrain((Power *)a2, v5); /*0x64559f*/
-  LOBYTE(v6) = this-((unsigned int *)(>__pad_308))[3]; /*0x6455a4*/
+  LOBYTE(v6) = this->__pad_308[3]; /*0x6455a4*/
   Power::FinalizeDrain((Power *)a2, v6); /*0x6455ad*/
-  Power::TimerProcess((uint8_t)this-((unsigned int *)(>__pad_308))[5]); /*0x6455bd*/
-  Power::TimerProcess((uint8_t)this-((unsigned int *)(>__pad_308))[6]); /*0x6455cd*/
-  LOBYTE(v7) = this-((unsigned int *)(>__pad_308))[7]; /*0x6455d2*/
+  Power::TimerProcess((uint8_t)this->__pad_308[5]); /*0x6455bd*/
+  Power::TimerProcess((uint8_t)this->__pad_308[6]); /*0x6455cd*/
+  LOBYTE(v7) = this->__pad_308[7]; /*0x6455d2*/
   Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x310); /*0x6455e9*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/

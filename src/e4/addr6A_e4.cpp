@@ -150,13 +150,13 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   int v5; // ecx
   int *v6; // eax
 
-  v4 = this-((unsigned int *)(>customSound_controller))[1]; /*0x6a87f5*/
+  v4 = this->customSound_controller[1]; /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
   v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    v6 = &this-((unsigned int *)(>customSound_controller))[2]; /*0x6a880b*/
+    v6 = &this->customSound_controller[2]; /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/
@@ -198,9 +198,9 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
-    if ( this-((unsigned int *)(>ambientSoundController))[2] ) /*0x6a8a58*/
+    if ( this->ambientSoundController[2] ) /*0x6a8a58*/
     {
-      this-((unsigned int *)(>ambientSoundController))[3] -= v3; /*0x6a8a72*/
+      this->ambientSoundController[3] -= v3; /*0x6a8a72*/
       return 1; /*0x6a8a76*/
     }
     else
@@ -218,12 +218,12 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     {
       v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
       v8 = (gamemd::ObjectClass *)(this);
-      if ( this-((unsigned int *)(>ambientSoundController))[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
+      if ( this->ambientSoundController[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else
     {
-      if ( 2 * (v6 + this-((unsigned int *)(>ambientSoundController))[2]) >= this-((unsigned int *)(>customSound_controller))[1] ) /*0x6a8ae2*/
+      if ( 2 * (v6 + this->ambientSoundController[2]) >= this->customSound_controller[1] ) /*0x6a8ae2*/
         return 0; /*0x6a8aed*/
       v8 = this; /*0x6a8af0*/
     }
@@ -244,7 +244,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   unsigned int v5; // eax
   int v6; // ebp
 
-  LOBYTE(this->?) = 1; /*0x6a93f8*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6a93f8*/
   v2 = 26; /*0x6a9408*/
   if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
@@ -863,14 +863,14 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     v6 = aP1[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
-    vtable3 = this->?; /*0x6a054a*/
+    vtable3 = ((unsigned int *)this)[0]; /*0x6a054a*/
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x6a0551*/
-    if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
+    if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
-    if ( *((unsigned char *)this->? + 144) ) /*0x6a0583*/
+    if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x6a0583*/
     {
       *v4 = g_OverlayTypeConfig; /*0x6a0593*/
       *(unsigned long long *)&this->ambientSoundController[2] = qword_B077FC; /*0x6a059b*/

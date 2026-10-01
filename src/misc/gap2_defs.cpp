@@ -2023,9 +2023,9 @@ int MovementAI::StepFootClass(int a1) {
   m_State = (unsigned int *)this->m_State; /*0x5164de*/
   p_MovementAI_field_18 = &this->MovementAI_field_18; /*0x5164e4*/
   *(unsigned int *)v58 = m_State[376]; /*0x5164ed*/
-  if ( this->MovementAI_field_18 != *(unsigned int *)&stru_A8EB00.?[1436] /*0x516511*/
-    || this->u32_1C != *(unsigned int *)&stru_A8EB00.?[1440]
-    || (result = *(unsigned int *)&stru_A8EB00.?[1444], this->u32_8 != *(unsigned int *)&stru_A8EB00.?[1444]) )
+  if ( this->MovementAI_field_18 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436] /*0x516511*/
+    || this->u32_1C != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440]
+    || (result = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444], this->u32_8 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444]) )
   {
     v6 = *p_MovementAI_field_18 / 256; /*0x516535*/
     v7 = this->u32_1C / 256; /*0x516538*/
@@ -2039,7 +2039,7 @@ int MovementAI::StepFootClass(int a1) {
                      + 8)
          - this->u32_8;
       result = (IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8); /*0x51656c*/
-      if ( result < 2 * *(unsigned int *)&stru_A8EB00.?[1500] ) /*0x516573*/
+      if ( result < 2 * *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1500] ) /*0x516573*/
       {
         (*(void (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x51657c*/
         return (*(int (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
@@ -2048,11 +2048,11 @@ int MovementAI::StepFootClass(int a1) {
   }
   if ( *(unsigned int *)v58 != -1 ) /*0x516589*/
     return result; /*0x516589*/
-  if ( *p_MovementAI_field_18 == *(unsigned int *)&stru_A8EB00.?[1436] /*0x5165a5*/
-    && this->u32_1C == *(unsigned int *)&stru_A8EB00.?[1440] )
+  if ( *p_MovementAI_field_18 == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436] /*0x5165a5*/
+    && this->u32_1C == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440] )
   {
     result = this->u32_8; /*0x5165ad*/
-    if ( result == *(unsigned int *)&stru_A8EB00.?[1444] ) /*0x5165b2*/
+    if ( result == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444] ) /*0x5165b2*/
       return result; /*0x5165b2*/
   }
   v9 = *p_MovementAI_field_18 / 256; /*0x5165dd*/
@@ -2067,7 +2067,7 @@ int MovementAI::StepFootClass(int a1) {
                     + 8)
         - this->u32_8;
     result = (IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12); /*0x516614*/
-    if ( result <= 2 * *(unsigned int *)&stru_A8EB00.?[1500] ) /*0x51661b*/
+    if ( result <= 2 * *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1500] ) /*0x51661b*/
       return result; /*0x51661b*/
   }
   v13 = this->m_State; /*0x516621*/
@@ -2075,9 +2075,9 @@ int MovementAI::StepFootClass(int a1) {
   result = this->u32_654; /*0x51662a*/
   if ( v14 != -1 ) /*0x516633*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v14 >= result ) /*0x51663f*/
+    if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v14 >= result ) /*0x51663f*/
       goto LABEL_19; /*0x51663f*/
-    result -= *(unsigned int *)&stru_A8EB00.?[416] - v14; /*0x516641*/
+    result -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v14; /*0x516641*/
   }
   if ( result ) /*0x516645*/
     return result; /*0x516645*/
@@ -2086,7 +2086,7 @@ int MovementAI::StepFootClass(int a1) {
   IDA_HIWORD(v59) = this->u32_1C / 256; /*0x51666d*/
   if ( (uint8_t)FootClass::MovementStep(v13, (int)p_MovementAI_field_18, v59, 0, v60, v57) ) /*0x51667e*/
   {
-    v29 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5168d6*/
+    v29 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x5168d6*/
     v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x5168e2*/
     IDA_LOWORD(v31) = Math::RoundToInt(v30); /*0x5168e8*/
     v32 = v68[1]; /*0x5168f0*/
@@ -2122,7 +2122,7 @@ int MovementAI::StepFootClass(int a1) {
         ClosestObjectCell = Object::FindClosestObjectCell( /*0x516a41*/
                               v39,
                               &v62,
-                              v41 > 3 * *(unsigned int *)&stru_A8EB00.?[1500] + GroundHeight,
+                              v41 > 3 * *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1500] + GroundHeight,
                               0);
         if ( ClosestObjectCell ) /*0x516a48*/
         {
@@ -2146,7 +2146,7 @@ int MovementAI::StepFootClass(int a1) {
               v65 = *v51; /*0x516af8*/
               v66 = v51[1]; /*0x516aff*/
               v52 = this->u32_8 - v51[2]; /*0x516b0b*/
-              if ( (int)((IDA_HIDWORD(v52) ^ v52) - IDA_HIDWORD(v52)) < 2 * *(unsigned int *)&stru_A8EB00.?[1500] ) /*0x516b1a*/
+              if ( (int)((IDA_HIDWORD(v52) ^ v52) - IDA_HIDWORD(v52)) < 2 * *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1500] ) /*0x516b1a*/
               {
                 v65 = *v51; /*0x516b1e*/
                 v66 = v51[1]; /*0x516b25*/
@@ -2166,12 +2166,12 @@ int MovementAI::StepFootClass(int a1) {
                   v53 = (int *)(this->m_State + 156),
                   v65 = *v53,
                   v66 = v53[1],
-                  v54 = v53[2] / *(unsigned int *)&stru_A8EB00.?[1500] - v39->__pad_EC[47],
+                  v54 = v53[2] / *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1500] - v39->__pad_EC[47],
                   (int)((IDA_HIDWORD(v54) ^ v54) - IDA_HIDWORD(v54)) <= 2) )
             {
               v61 = 0; /*0x516bb0*/
             }
-            Cell::ApplyDamage((Cell *)v39, (int)&stru_A8EB00.?[1436], 1, 1, v61); /*0x516bc5*/
+            Cell::ApplyDamage((Cell *)v39, (int)&((unsigned int *)&stru_A8EB00)[1436], 1, 1, v61); /*0x516bc5*/
           }
         }
       }
@@ -2181,7 +2181,7 @@ int MovementAI::StepFootClass(int a1) {
   }
   else
   {
-    v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x516690*/
+    v15 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x516690*/
     v16 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x51669c*/
     IDA_LOWORD(v17) = Math::RoundToInt(v16); /*0x5166a2*/
     v66 = v66; /*0x5166aa*/
@@ -2253,14 +2253,14 @@ int MovementAI::StepFootClass(int a1) {
         }
       }
     }
-    if ( this->u32_24 != *(unsigned int *)&stru_A8EB00.?[1436] /*0x516899*/
-      || this->u32_28 != *(unsigned int *)&stru_A8EB00.?[1440]
-      || this->u32_2C != *(unsigned int *)&stru_A8EB00.?[1444] )
+    if ( this->u32_24 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436] /*0x516899*/
+      || this->u32_28 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440]
+      || this->u32_2C != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444] )
     {
       (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, (char *)&this->m_State6); /*0x5168a1*/
-      this->u32_24 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x5168ad*/
-      this->u32_28 = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x5168b5*/
-      this->u32_2C = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x5168bd*/
+      this->u32_24 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436]; /*0x5168ad*/
+      this->u32_28 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440]; /*0x5168b5*/
+      this->u32_2C = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444]; /*0x5168bd*/
     }
     return (*(int (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x5168c3*/
   }
@@ -6679,7 +6679,7 @@ int RulesClass::ReadDataList() {
       }
       else
       {
-        v6 = *(unsigned int **)(FootClass_Array.?[0] + 4 * v4); /*0x6724c3*/
+        v6 = *(unsigned int **)(((unsigned int *)&FootClass_Array)[0] + 4 * v4); /*0x6724c3*/
       }
       v21 = (char *)(v6 + 9); /*0x6724c9*/
       v20 = (char *)v2; /*0x6724ca*/
@@ -6720,19 +6720,19 @@ int RulesClass::ReadDataList() {
         {
           v12 = 0; /*0x672573*/
           v13 = *(unsigned int *)(v6[39] + 4 * v11); /*0x672577*/
-          if ( FootClass_Array.?[0] <= 0 ) /*0x67257a*/
+          if ( ((unsigned int *)&FootClass_Array)[0] <= 0 ) /*0x67257a*/
           {
   LABEL_17:
             v12 = -1; /*0x67258e*/
           }
           else
           {
-            v14 = (unsigned int *)FootClass_Array.?[0]; /*0x67257c*/
+            v14 = (unsigned int *)((unsigned int *)&FootClass_Array)[0]; /*0x67257c*/
             while ( (unsigned int *)*v14 != v6 ) /*0x672584*/
             {
               ++v12; /*0x672586*/
               ++v14; /*0x672587*/
-              if ( v12 >= FootClass_Array.?[0] ) /*0x67258c*/
+              if ( v12 >= ((unsigned int *)&FootClass_Array)[0] ) /*0x67258c*/
                 goto LABEL_17; /*0x67258c*/
             }
           }
@@ -7007,7 +7007,7 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
           TypeList::BuildingTypeCopy(v96, &this->CHRONOSK_SHP);
         }
         DynamicVector::Copy(&this->CHRONOSK_SHP, v96);
-        IDA_LODWORD(this->?) = v97;
+        IDA_LODWORD(((unsigned int *)this)[0]) = v97;
         v96[0] = &vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v96);
         if ( INIClass::GetString(
@@ -7034,10 +7034,10 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v96, (unsigned int *)&this->? + 1);
+          TypeList::BuildingTypeCopy(v96, (unsigned int *)&((unsigned int *)this)[0] + 1);
         }
-        DynamicVector::Copy((unsigned int *)&this->? + 1, v96);
-        this->?[3] = v97;
+        DynamicVector::Copy((unsigned int *)&((unsigned int *)this)[0] + 1, v96);
+        ((unsigned int *)this)[3] = v97;
         v96[0] = &vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v96);
         if ( INIClass::GetString(
@@ -7064,11 +7064,11 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v96, this->?);
+          TypeList::BuildingTypeCopy(v96, ((unsigned int *)this)[0]);
         }
-        DynamicVector::Copy(this->?, v96);
+        DynamicVector::Copy(((unsigned int *)this)[0], v96);
         v96[0] = &vt_VectorClass_BuildingTypeClass_const;
-        this->?[2] = v97;
+        ((unsigned int *)this)[2] = v97;
         DynamicVectorClass::Destroy((int)v96);
         if ( INIClass::GetString(
                v99,
@@ -7093,10 +7093,10 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?[3]);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[3]);
         }
-        DynamicVector::Copy(&this->?[3], v94);
-        this->?[1] = v95;
+        DynamicVector::Copy(&((unsigned int *)this)[3], v94);
+        ((unsigned int *)this)[1] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
@@ -7122,10 +7122,10 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?[2]);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[2]);
         }
-        DynamicVector::Copy(&this->?[2], v94);
-        this->? = v95;
+        DynamicVector::Copy(&((unsigned int *)this)[2], v94);
+        ((unsigned int *)this)[0] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
@@ -7151,11 +7151,11 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, this->?);
+          TypeList::BuildingTypeCopy(v94, ((unsigned int *)this)[0]);
         }
-        DynamicVector::Copy(this->?, v94);
+        DynamicVector::Copy(((unsigned int *)this)[0], v94);
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
-        this->? = v95;
+        ((unsigned int *)this)[0] = v95;
         DynamicVectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
                v99,
@@ -7209,14 +7209,14 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, this->?);
+          TypeList::BuildingTypeCopy(v94, ((unsigned int *)this)[0]);
         }
-        DynamicVector::Copy(this->?, v94);
-        this->?[2] = v95;
+        DynamicVector::Copy(((unsigned int *)this)[0], v94);
+        ((unsigned int *)this)[2] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
         IntList = v89;
-        DynamicVectorClass::Copy(v89, &this->?[3]);
+        DynamicVectorClass::Copy(v89, &((unsigned int *)this)[3]);
         *IntList = &vt_TypeList_int;
         IntList = (void ***)INIClass::ReadIntList(
                               v99,
@@ -7230,10 +7230,10 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                               v91,
                               IDA_SLODWORD(v92),
                               IDA_SHIDWORD(v92));
-        Rules::CopyDataArray(&this->?[3], IntList);
+        Rules::CopyDataArray(&((unsigned int *)this)[3], IntList);
         v14 = (int)IntList[6];
         v94[0] = (int)&vt_VectorClass_int;
-        this->?[1] = v14;
+        ((unsigned int *)this)[1] = v14;
         VectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
                v99,
@@ -7258,10 +7258,10 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?[2]);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[2]);
         }
-        DynamicVector::Copy(&this->?[2], v94);
-        this->?[0] = v95;
+        DynamicVector::Copy(&((unsigned int *)this)[2], v94);
+        ((unsigned int *)this)[0] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
@@ -7287,9 +7287,9 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?[1]);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[1]);
         }
-        DynamicVector::Copy(&this->?[1], v94);
+        DynamicVector::Copy(&((unsigned int *)this)[1], v94);
         this->AALimit[3] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
@@ -7320,7 +7320,7 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         DynamicVector::Copy(this->WarRatio, v94);
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
-        this->?[2] = v95;
+        ((unsigned int *)this)[2] = v95;
         DynamicVectorClass::Destroy((int)v94);
         if ( INIClass::GetString(
                v99,
@@ -7345,9 +7345,9 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?[3]);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[3]);
         }
-        DynamicVector::Copy(&this->?[3], v94);
+        DynamicVector::Copy(&((unsigned int *)this)[3], v94);
         this->InfantryBaseMult[1] = v95;
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
@@ -7403,9 +7403,9 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         }
         else
         {
-          TypeList::BuildingTypeCopy(v94, &this->?);
+          TypeList::BuildingTypeCopy(v94, &((unsigned int *)this)[0]);
         }
-        DynamicVector::Copy(&this->?, v94);
+        DynamicVector::Copy(&((unsigned int *)this)[0], v94);
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         IDA_LODWORD(this->MaxIQLevels) = v95;
         DynamicVectorClass::Destroy((int)v94);
@@ -7456,21 +7456,21 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
         TypeList::CopyAircraft(&this->BridgeDestruction[1], v25);
         v94[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
         DynamicVectorClass::Destroy((int)v94);
-        *(double *)&this->? = INIClass::ReadDouble_Overwrite(
+        *(double *)&((unsigned int *)this)[0] = INIClass::ReadDouble_Overwrite(
                                 (int)v99,
                                 (uint8_t *)DataGlobal_839DA4,
                                 (uint8_t *)DataGlobal_83D35C,
-                                *(double *)&this->?);
-        *(double *)&this->? = INIClass::ReadDouble_Overwrite(
+                                *(double *)&((unsigned int *)this)[0]);
+        *(double *)&((unsigned int *)this)[0] = INIClass::ReadDouble_Overwrite(
                                 (int)v99,
                                 (uint8_t *)DataGlobal_839DA4,
                                 (uint8_t *)DataGlobal_83D350,
-                                *(double *)&this->?);
-        *(double *)this->? = INIClass::ReadDouble_Overwrite(
+                                *(double *)&((unsigned int *)this)[0]);
+        *(double *)((unsigned int *)this)[0] = INIClass::ReadDouble_Overwrite(
                                (int)v99,
                                (uint8_t *)DataGlobal_839DA4,
                                (uint8_t *)DataGlobal_83D344,
-                               *(double *)this->?);
+                               *(double *)((unsigned int *)this)[0]);
         this->LightningCellSpread = INIClass::ReadInt_Overwrite(
                                      (int)v99,
                                      (uint8_t *)DataGlobal_839DA4,
@@ -7494,9 +7494,9 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                              (uint8_t *)DataGlobal_839DA4,
                              (uint8_t *)DataGlobal_83D304,
                              COERCE_DOUBLE(IDA___PAIR64__(v27, v28)));
-        v30 = this->?[14];
+        v30 = ((unsigned int *)this)[14];
         this->q1510 = Double_Overwrite;
-        this->?[14] = INIClass::ReadInt_Overwrite(
+        ((unsigned int *)this)[14] = INIClass::ReadInt_Overwrite(
                         (int)v99,
                         (uint8_t *)DataGlobal_839DA4,
                         (uint8_t *)DataGlobal_83D2F4,
@@ -7505,146 +7505,146 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D2E0,
-                this->?[15]);
-        v32 = this->?[13];
-        this->?[15] = v31;
+                ((unsigned int *)this)[15]);
+        v32 = ((unsigned int *)this)[13];
+        ((unsigned int *)this)[15] = v31;
         v33 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D2D0,
                 v32);
-        v34 = this->?[12];
-        this->?[13] = v33;
+        v34 = ((unsigned int *)this)[12];
+        ((unsigned int *)this)[13] = v33;
         v35 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D2C4,
                 v34);
-        v36 = this->?[10];
-        this->?[12] = v35;
-        IDA_HIDWORD(v92) = this->?[11];
+        v36 = ((unsigned int *)this)[10];
+        ((unsigned int *)this)[12] = v35;
+        IDA_HIDWORD(v92) = ((unsigned int *)this)[11];
         IDA_LODWORD(v92) = v36;
         v37 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D2B4,
                 v92);
-        v38 = this->?[9];
-        *(double *)&this->?[10] = v37;
+        v38 = ((unsigned int *)this)[9];
+        *(double *)&((unsigned int *)this)[10] = v37;
         v39 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D2A4,
                 v38);
-        IDA_HIDWORD(v40) = this->?[7];
-        this->?[9] = v39;
-        IDA_LODWORD(v40) = this->?[6];
+        IDA_HIDWORD(v40) = ((unsigned int *)this)[7];
+        ((unsigned int *)this)[9] = v39;
+        IDA_LODWORD(v40) = ((unsigned int *)this)[6];
         v41 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D294,
                 v40);
-        v42 = this->?[8];
-        *(double *)&this->?[6] = v41;
+        v42 = ((unsigned int *)this)[8];
+        *(double *)&((unsigned int *)this)[6] = v41;
         v43 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D284,
                 v42);
-        v44 = this->?[3];
-        v45 = this->?[2];
-        this->?[8] = v43;
+        v44 = ((unsigned int *)this)[3];
+        v45 = ((unsigned int *)this)[2];
+        ((unsigned int *)this)[8] = v43;
         v46 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D278,
                 COERCE_DOUBLE(IDA___PAIR64__(v44, v45)));
-        v47 = this->?[4];
-        *(double *)&this->?[2] = v46;
+        v47 = ((unsigned int *)this)[4];
+        *(double *)&((unsigned int *)this)[2] = v46;
         v48 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D26C,
                 v47);
-        v49 = this->?[18];
-        this->?[4] = v48;
-        IDA_HIDWORD(v92) = this->?[19];
+        v49 = ((unsigned int *)this)[18];
+        ((unsigned int *)this)[4] = v48;
+        IDA_HIDWORD(v92) = ((unsigned int *)this)[19];
         IDA_LODWORD(v92) = v49;
         v50 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D25C,
                 v92);
-        v51 = this->?[0];
-        *(double *)&this->?[18] = v50;
+        v51 = ((unsigned int *)this)[0];
+        *(double *)&((unsigned int *)this)[18] = v50;
         v52 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D24C,
                 v51);
-        IDA_HIDWORD(v53) = this->?[15];
-        this->?[0] = v52;
-        IDA_LODWORD(v53) = this->?[14];
+        IDA_HIDWORD(v53) = ((unsigned int *)this)[15];
+        ((unsigned int *)this)[0] = v52;
+        IDA_LODWORD(v53) = ((unsigned int *)this)[14];
         v54 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D244,
                 v53);
-        v55 = this->?[16];
-        *(double *)&this->?[14] = v54;
+        v55 = ((unsigned int *)this)[16];
+        *(double *)&((unsigned int *)this)[14] = v54;
         v56 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D23C,
                 v55);
-        v57 = this->?[11];
-        v58 = this->?[10];
-        this->?[16] = v56;
+        v57 = ((unsigned int *)this)[11];
+        v58 = ((unsigned int *)this)[10];
+        ((unsigned int *)this)[16] = v56;
         v59 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D230,
                 COERCE_DOUBLE(IDA___PAIR64__(v57, v58)));
-        v60 = this->?[12];
-        *(double *)&this->?[10] = v59;
+        v60 = ((unsigned int *)this)[12];
+        *(double *)&((unsigned int *)this)[10] = v59;
         v61 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D224,
                 v60);
-        v62 = this->?[6];
-        this->?[12] = v61;
-        IDA_HIDWORD(v92) = this->?[7];
+        v62 = ((unsigned int *)this)[6];
+        ((unsigned int *)this)[12] = v61;
+        IDA_HIDWORD(v92) = ((unsigned int *)this)[7];
         IDA_LODWORD(v92) = v62;
         v63 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D214,
                 v92);
-        v64 = this->?[8];
-        *(double *)&this->?[6] = v63;
+        v64 = ((unsigned int *)this)[8];
+        *(double *)&((unsigned int *)this)[6] = v63;
         v65 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D204,
                 v64);
-        IDA_HIDWORD(v66) = this->?[3];
-        this->?[8] = v65;
-        IDA_LODWORD(v66) = this->?[2];
+        IDA_HIDWORD(v66) = ((unsigned int *)this)[3];
+        ((unsigned int *)this)[8] = v65;
+        IDA_LODWORD(v66) = ((unsigned int *)this)[2];
         v67 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D1F4,
                 v66);
-        v68 = this->?[4];
-        *(double *)&this->?[2] = v67;
+        v68 = ((unsigned int *)this)[4];
+        *(double *)&((unsigned int *)this)[2] = v67;
         v69 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D1E4,
                 v68);
         v70 = this->q17E3;
-        this->?[4] = v69;
+        ((unsigned int *)this)[4] = v69;
         this->q17E3 = INIClass::ReadBool_Overwrite(
                                     (int)v99,
                                     (uint8_t *)DataGlobal_839DA4,
@@ -7655,23 +7655,23 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                            (uint8_t *)DataGlobal_839DA4,
                            (uint8_t *)DataGlobal_83D1C8,
                            this->ElevationIncrement);
-        IDA_HIDWORD(v72) = this->?[1];
+        IDA_HIDWORD(v72) = ((unsigned int *)this)[1];
         this->ElevationIncrement = Bool_Overwrite;
-        IDA_LODWORD(v72) = this->?[0];
+        IDA_LODWORD(v72) = ((unsigned int *)this)[0];
         v73 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D1B8,
                 v72);
         v74 = this->q1460;
-        *(double *)this->? = v73;
+        *(double *)((unsigned int *)this)[0] = v73;
         v75 = INIClass::ReadInt_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D1A8,
                 v74);
         v76 = this->BaseDefenseDelay[0];
-        MaximumBuildingPlacementFailures = this->?;
+        MaximumBuildingPlacementFailures = ((unsigned int *)this)[0];
         this->q1460 = v75;
         v78 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
@@ -7680,13 +7680,13 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                 COERCE_DOUBLE(IDA___PAIR64__(v76, MaximumBuildingPlacementFailures)));
         v79 = this->BaseDefenseDelay[2];
         v80 = this->BaseDefenseDelay[1];
-        *(double *)&this->? = v78;
+        *(double *)&((unsigned int *)this)[0] = v78;
         v81 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D17C,
                 COERCE_DOUBLE(IDA___PAIR64__(v79, v80)));
-        v82 = this->?[0];
+        v82 = ((unsigned int *)this)[0];
         v83 = this->BaseDefenseDelay[3];
         *(double *)&this->BaseDefenseDelay[1] = v81;
         v84 = INIClass::ReadDouble_Overwrite(
@@ -7694,8 +7694,8 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                 (uint8_t *)DataGlobal_839DA4,
                 (uint8_t *)DataGlobal_83D160,
                 COERCE_DOUBLE(IDA___PAIR64__(v82, v83)));
-        v85 = this->?[2];
-        v86 = this->?[1];
+        v85 = ((unsigned int *)this)[2];
+        v86 = ((unsigned int *)this)[1];
         *(double *)&this->BaseDefenseDelay[3] = v84;
         v87 = INIClass::ReadDouble_Overwrite(
                 (int)v99,
@@ -7703,7 +7703,7 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                 (uint8_t *)DataGlobal_83D144,
                 COERCE_DOUBLE(IDA___PAIR64__(v85, v86)));
         v88 = this->SovietSurvivorDivisor[0];
-        *(double *)&this->?[1] = v87;
+        *(double *)&((unsigned int *)this)[1] = v87;
         this->SovietSurvivorDivisor[0] = INIClass::ReadInt_Overwrite(
                                            (int)v99,
                                            (uint8_t *)DataGlobal_839DA4,
@@ -7713,8 +7713,8 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                    (int)v99,
                    (uint8_t *)DataGlobal_839DA4,
                    (uint8_t *)DataGlobal_83D110,
-                   this->?[3]);
-        this->?[3] = result;
+                   ((unsigned int *)this)[3]);
+        ((unsigned int *)this)[3] = result;
         IDA_LOBYTE(result) = 1;
       }
       else
@@ -7903,7 +7903,7 @@ int RulesClass::ReadIQSection() {
     *(unsigned int *)&this->__pad_C3C[2064] = INIClass::ReadInt_Overwrite( /*0x67433a*/
                                           v15,
                                           (uint8_t *)g_INI_Key_IQ,
-                                          (uint8_t *)&stru_82BA00.?[28],
+                                          (uint8_t *)&((unsigned int *)&stru_82BA00)[28],
                                           v10);
     v11 = INIClass::ReadInt_Overwrite( /*0x674355*/
             v15,
@@ -8428,8 +8428,8 @@ void SuperClass::AdvanceCountdown() {
   if ( this->SuperClass_field_0x0 != (void *)-1 ) /*0x6ce286*/
   {
     SuperClass_field_0x8 = (char *)this->SuperClass_field_0x8; /*0x6ce288*/
-    v3 = *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)SuperClass_field_0x0; /*0x6ce296*/
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)SuperClass_field_0x0 >= (int)SuperClass_field_0x8 ) /*0x6ce29a*/
+    v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (unsigned int)SuperClass_field_0x0; /*0x6ce296*/
+    if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (int)SuperClass_field_0x0 >= (int)SuperClass_field_0x8 ) /*0x6ce29a*/
     {
       this->SuperClass_field_0x8 = 0; /*0x6ce2ab*/
       this->SuperClass_field_0x0 = (void *)-1; /*0x6ce2ae*/
@@ -8449,8 +8449,8 @@ void* SuperClass::SetCurrentFrame() {
 
   if ( this->SuperClass_field_0x0 == (void *)-1 ) /*0x6ce2c3*/
   {
-    result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x6ce2c5*/
-    this->SuperClass_field_0x0 = *(void **)&stru_A8EB00.?[416]; /*0x6ce2ca*/
+    result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ce2c5*/
+    this->SuperClass_field_0x0 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ce2ca*/
   }
   return result; /*0x6ce2cc*/
 }
@@ -8472,7 +8472,7 @@ int ThemeClass::Play(int a1) {
   int v5; // eax
   int v6; // ecx
 
-  if ( stru_A8EB00.?[144] && Audio::IsSoundEnabled() && !stru_A8EB00.?[384] )
+  if ( ((unsigned int *)&stru_A8EB00)[144] && Audio::IsSoundEnabled() && !((unsigned int *)&stru_A8EB00)[384] )
   {
     ThemeClass_field_2C = (AudioSample *)this->ThemeClass_field_2C; /*0x720bdc*/
     if ( !ThemeClass_field_2C ) /*0x720be5*/
@@ -8482,7 +8482,7 @@ int ThemeClass::Play(int a1) {
     if ( !Audio::IsSoundPlaying((Audio *)this->ThemeClass_field_2C) || this->ThemeClass_field_04 != a1 )
     {
   LABEL_13:
-      if ( stru_A8EB00.?[144] && Audio::IsSoundEnabled() && !stru_A8EB00.?[384] && this->ThemeClass_field_00 != -1 ) /*0x720c37*/
+      if ( ((unsigned int *)&stru_A8EB00)[144] && Audio::IsSoundEnabled() && !((unsigned int *)&stru_A8EB00)[384] && this->ThemeClass_field_00 != -1 ) /*0x720c37*/
       {
         Debug::Log(); /*0x720c42*/
         v4 = (Audio *)this->ThemeClass_field_2C; /*0x720c47*/
@@ -8509,12 +8509,12 @@ int ThemeClass::Play(int a1) {
           else
           {
             _makepath( /*0x720cdc*/
-              (char *)&g_BuildingLoadQueue_Array.?[72],
+              (char *)&((unsigned int *)&g_BuildingLoadQueue_Array)[72],
               0,
               0,
               (const char *)(*(unsigned int *)(this->m_Name[4] + 4 * a1) + 256),
               g_Str_File__WAV);
-            ThreadAudioMixerMain((unsigned int *)this->ThemeClass_field_2C, (char *)&g_BuildingLoadQueue_Array.?[72], 1); /*0x720ced*/
+            ThreadAudioMixerMain((unsigned int *)this->ThemeClass_field_2C, (char *)&((unsigned int *)&g_BuildingLoadQueue_Array)[72], 1); /*0x720ced*/
           }
           this->ThemeClass_field_00 = a1; /*0x720cf2*/
         }
@@ -8525,11 +8525,11 @@ int ThemeClass::Play(int a1) {
           {
             if ( v5 <= -1 && this->m_Name[0] == -1 ) /*0x720d29*/
             {
-              if ( stru_A8EB00.?[144] ) /*0x720d36*/
+              if ( ((unsigned int *)&stru_A8EB00)[144] ) /*0x720d36*/
               {
                 if ( Audio::IsSoundEnabled() ) /*0x720d3c*/
                 {
-                  if ( !stru_A8EB00.?[384] ) /*0x720d4c*/
+                  if ( !((unsigned int *)&stru_A8EB00)[384] ) /*0x720d4c*/
                   {
                     dword_A83D18 = a1; /*0x720d51*/
                     if ( a1 != dword_A83D14 ) /*0x720d5f*/

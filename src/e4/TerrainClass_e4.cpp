@@ -269,7 +269,7 @@ LABEL_162:
       v54 = (TerrainTypeClass *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
       if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) == -1 )
         return 1;
-      *(unsigned int *)&v54-((unsigned int *)(>__pad_0))[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
+      *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
       *(unsigned int *)v54->__pad_0 = -1;
       ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
@@ -1228,22 +1228,22 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   int v17; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (ObjectClass *)a1; /*0x71cda4*/
-  p_vtable1 = &a1->?; /*0x71cdad*/
-  v4 = (*((int (**)(void **))a1->? + 4))(&a1->?); /*0x71cdb1*/
-  vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cdb4*/
+  p_vtable1 = &((unsigned int *)a1)[0]; /*0x71cdad*/
+  v4 = (*((int (**)(void **))((unsigned int *)a1)[0] + 4))(&((unsigned int *)a1)[0]); /*0x71cdb1*/
+  vtable1 = ((char *)&g_BuildingLoadQueue_Array); /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
-  if ( g_BuildingLoadQueue_Array.? ) /*0x71cdbe*/
+  if ( ((char *)&g_BuildingLoadQueue_Array) ) /*0x71cdbe*/
   {
-    if ( !LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x71cdcb*/
+    if ( !LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x71cdcb*/
     {
       qsort( /*0x71cddc*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
+        (size_t)((char *)&g_BuildingLoadQueue_Array),
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cde1*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x71cdea*/
-      LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x71cdf4*/
+      vtable1 = ((char *)&g_BuildingLoadQueue_Array); /*0x71cde1*/
+      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x71cdea*/
+      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
     v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, &v17); /*0x71ce0a*/
@@ -1253,19 +1253,19 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       if ( v9 != -1 ) /*0x71ce1f*/
       {
         v10 = v9 + 1; /*0x71ce21*/
-        for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x71ce2b*/
-              v10 < (int)g_BuildingLoadQueue_Array.?;
-              i = (char *)g_BuildingLoadQueue_Array.? )
+        for ( i = (char *)((char *)&g_BuildingLoadQueue_Array); /*0x71ce2b*/
+              v10 < (int)((char *)&g_BuildingLoadQueue_Array);
+              i = (char *)((char *)&g_BuildingLoadQueue_Array) )
         {
           v12 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v10++; /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
-        g_BuildingLoadQueue_Array.? = i - 1; /*0x71ce54*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x71ce59*/
+        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = i - 1; /*0x71ce54*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71ce59*/
         vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x71ce61*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x71ce69*/
-        g_BuildingLoadQueue_Array.? = 0; /*0x71ce6d*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = 0; /*0x71ce69*/
+        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x71ce6d*/
       }
     }
   }
@@ -1277,24 +1277,24 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
       v2->AbstractClass = &vt_TerrainClass; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
-      v2->? = &vt_TerrainClass; /*0x71cea5*/
-      v2->? = &vt_TerrainClass; /*0x71ceac*/
+      ((unsigned int *)v2)[0] = &vt_TerrainClass; /*0x71cea5*/
+      ((unsigned int *)v2)[0] = &vt_TerrainClass; /*0x71ceac*/
     }
     v14 = (*((int (**)(void **))*p_vtable1 + 4))(p_vtable1); /*0x71cebf*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x71cec1*/
-    if ( (int)g_BuildingLoadQueue_Array.? + 1 <= (int)g_BuildingLoadQueue_Array.? ) /*0x71cec9*/
+    vtable2 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x71cec1*/
+    if ( (int)((char *)&g_BuildingLoadQueue_Array) + 1 <= (int)((char *)&g_BuildingLoadQueue_Array) ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
-    if ( !g_BuildingLoadQueue_Array.? ) /*0x71cecd*/
+    if ( !((char *)&g_BuildingLoadQueue_Array) ) /*0x71cecd*/
       vtable2 = 10; /*0x71cecf*/
     if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x71ceda*/
     {
 LABEL_16:
-      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v14; /*0x71ceee*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = v2; /*0x71cefc*/
-      LOBYTE(g_BuildingLoadQueue_Array.?) = 0; /*0x71cf06*/
-      ++g_BuildingLoadQueue_Array.?; /*0x71cf0d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = v14; /*0x71ceee*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = v2; /*0x71cefc*/
+      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71cf06*/
+      ++((char *)&g_BuildingLoadQueue_Array); /*0x71cf0d*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].?); /*0x71cf1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1]); /*0x71cf1e*/
   }
   return Register; /*0x71cf25*/
 

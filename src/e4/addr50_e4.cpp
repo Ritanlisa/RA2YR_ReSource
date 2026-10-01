@@ -372,7 +372,7 @@ namespace gamemd {
 double E4Recv_50C160::sub_50C160()
 {
 
-  return *(float *)this-((unsigned int *)(>attachedTag))[5].defaultCoords; /*0x50c169*/
+  return *(float *)this->attachedTag[5].defaultCoords; /*0x50c169*/
 
 }
 } // namespace gamemd

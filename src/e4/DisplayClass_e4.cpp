@@ -888,7 +888,7 @@ int DisplayClass::GetCoordDelta(AbstractClass * aP1)
     v9 = v7; /*0x6da309*/
     if ( ClampCoordMap(&v8) ) /*0x6da30d*/
     {
-      if ( !stru_A8EB00.?[391] ) /*0x6da31d*/
+      if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x6da31d*/
       {
         v6 = v8; /*0x6da31f*/
         v7 = v9; /*0x6da323*/

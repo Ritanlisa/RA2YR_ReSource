@@ -95,9 +95,9 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
   int v4; // esi
 
   Owner = a1->Owner; /*0x55aca6*/
-  v3 = Owner->?[1]; /*0x55acb3*/
-  v4 = Owner->?[2]; /*0x55acb6*/
-  *a2 = Owner->?[0]; /*0x55acbf*/
+  v3 = ((unsigned int *)Owner)[1]; /*0x55acb3*/
+  v4 = ((unsigned int *)Owner)[2]; /*0x55acb6*/
+  *a2 = ((unsigned int *)Owner)[0]; /*0x55acbf*/
   a2[1] = v3; /*0x55acc1*/
   a2[2] = v4; /*0x55acc4*/
   return a2; /*0x55acc7*/

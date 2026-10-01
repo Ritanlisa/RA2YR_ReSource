@@ -47,7 +47,7 @@ void NetworkClass::ExecutePlanningModeCmd()
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233));
 LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
@@ -57,7 +57,7 @@ LABEL_10:
       byte_AC4C08 = (unsigned char)((wchar_t *)(1));
       v3 = (unsigned int)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !byte_AC4C08 ) /*0x63a05c*/
@@ -66,7 +66,7 @@ LABEL_10:
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233));
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+  return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 
 }
 }

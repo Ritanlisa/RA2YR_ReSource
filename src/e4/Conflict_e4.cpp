@@ -80,22 +80,22 @@ LABEL_14:
   LOBYTE(this->m_C) = 1; /*0x766c9f*/
   if ( !v8 ) /*0x766ca5*/
     return 0; /*0x766caa*/
-  if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x766cb1*/
+  if ( *(unsigned int *)&this->m_1[3] ) /*0x766cb1*/
   {
     if ( a2 >= this->m_8 ) /*0x766cbd*/
       m_8 = this->m_8; /*0x766cbf*/
     for ( i = 0; i < m_8; ++i ) /*0x766cc5*/
-      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * i + 4)); /*0x766cd2*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x766cd2*/
     if ( BYTE1(this->m_C) ) /*0x766cdc*/
     {
-      v12 = *(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]; /*0x766ce3*/
+      v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766ce3*/
       if ( v12 ) /*0x766ce8*/
         (**v12)(v12, 3); /*0x766cee*/
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x766cf0*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x766cf0*/
     }
     m_8 = a2; /*0x766cf7*/
   }
-  *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v8; /*0x766d06*/
+  *(unsigned int *)&this->m_1[3] = v8; /*0x766d06*/
   this->m_8 = m_8; /*0x766d09*/
   BYTE1(this->m_C) = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
@@ -169,22 +169,22 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     LOBYTE(this->m_C) = 1; /*0x766e4f*/
     if ( !v6 ) /*0x766e53*/
       return 0; /*0x766ed6*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x766e55*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x766e55*/
     {
       if ( a2 >= this->m_8 ) /*0x766e61*/
         m_8 = this->m_8; /*0x766e63*/
       for ( i = 0; i < m_8; ++i ) /*0x766e69*/
-        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * i + 4)); /*0x766e76*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x766e76*/
       if ( BYTE1(this->m_C) ) /*0x766e80*/
       {
-        v11 = *(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]; /*0x766e87*/
+        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766e87*/
         if ( v11 ) /*0x766e8c*/
           (**v11)(v11, 3); /*0x766e92*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x766e94*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x766e94*/
       }
       m_8 = a2; /*0x766e9b*/
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v6; /*0x766eaa*/
+    *(unsigned int *)&this->m_1[3] = v6; /*0x766eaa*/
     this->m_8 = m_8; /*0x766ead*/
     BYTE1(this->m_C) = a3 == 0; /*0x766eb0*/
   }
@@ -208,12 +208,12 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]; /*0x766806*/
+  v2 = *(int (****)(unsigned int, int))&this->m_1[3]; /*0x766806*/
   this->m_10 = 0; /*0x766809*/
   if ( v2 && BYTE1(this->m_C) ) /*0x766810*/
   {
     result = (**v2)(v2, 3); /*0x76681d*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x76681f*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x76681f*/
   }
   BYTE1(this->m_C) = 0; /*0x766822*/
   this->m_8 = 0; /*0x766825*/
@@ -226,7 +226,7 @@ namespace gamemd {
 BOOL Conflict_WorldDominationTour_26::AddRef()
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 16); /*0x76692d*/
+  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76692d*/
 
 }
 }
@@ -256,7 +256,7 @@ unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x766830*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 3; /*0x766845*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x766845*/
   else
     return 0; /*0x766837*/
 
@@ -270,7 +270,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
 
   int v3; // edi
 
-  v3 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * a3; /*0x76685d*/
+  v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x76685d*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x766862*/
   *a2 = &vt_rc_ptr; /*0x766867*/
   ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x766873*/

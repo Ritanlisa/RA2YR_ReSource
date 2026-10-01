@@ -36,8 +36,8 @@ void* ProgressTimer::GetValue(IUnknown * aP1)
   }
   if ( ProgressTimer_field_0x10 ) /*0x4c93fa*/
   {
-    v5 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this-((unsigned int *)(>__pad_0))[4]); /*0x4c9406*/
-    v6 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this-((unsigned int *)(>__pad_0))[4]); /*0x4c940b*/
+    v5 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c9406*/
+    v6 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c940b*/
     v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / ProgressTimer_field_0x14; /*0x4c9411*/
     v12 = *(unsigned int *)this->__pad_0; /*0x4c9415*/
     if ( (int16_t)v7 <= 0 ) /*0x4c941c*/

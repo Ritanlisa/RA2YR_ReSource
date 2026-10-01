@@ -53,12 +53,12 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   unsigned int *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)g_INI_Key_TRUCKA.?); /*0x6f19c1*/
+  result = INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA)); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)g_INI_Key_TRUCKA.?, i); /*0x6f19db*/
-    INIClass::GetString(a1, (uint8_t *)g_INI_Key_TRUCKA.?, StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x6f19f4*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
+    INIClass::GetString(a1, (uint8_t *)((char *)&g_INI_Key_TRUCKA), StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
@@ -186,15 +186,15 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   int v2; // eax
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x5afef3*/
-  this-((unsigned int *)(>MovingDestination))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
-  this-((unsigned int *)(>MovingDestination))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
-  this-((unsigned int *)(>MovingDestination))[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
-  this-((unsigned int *)(>HeadToCoord))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
-  this-((unsigned int *)(>HeadToCoord))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
+  this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
+  this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
+  this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
+  this->HeadToCoord[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
+  this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
   *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff32*/
-  this-((unsigned int *)(>HeadToCoord))[2] = v2; /*0x5aff38*/
+  this->HeadToCoord[2] = v2; /*0x5aff38*/
   *(unsigned int *)&this->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 
@@ -300,12 +300,12 @@ int E4Recv_728A00::sub_728A00()
 {
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
-  this-((unsigned int *)(>CurrentState))[0] = 0; /*0x728a0d*/
-  this-((unsigned int *)(>CurrentState))[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
-  this-((unsigned int *)(>CurrentState))[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
-  this-((unsigned int *)(>CurrentState))[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
-  this-((unsigned int *)(>CurrentState))[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
-  this-((unsigned int *)(>CurrentState))[6] = 0; /*0x728a33*/
+  this->CurrentState[0] = 0; /*0x728a0d*/
+  this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
+  this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
+  this->CurrentState[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
+  this->CurrentState[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
+  this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
   *(unsigned int *)this->LocomotionClass = &vt_TunnelLocomotionClass; /*0x728a3c*/

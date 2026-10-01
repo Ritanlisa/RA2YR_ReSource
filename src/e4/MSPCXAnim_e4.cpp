@@ -49,7 +49,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/
       return 0; /*0x5d0a90*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x5d0a12*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d0a12*/
     {
       m_8 = this->m_8; /*0x5d0a19*/
       if ( a2 < m_8 ) /*0x5d0a1e*/
@@ -59,7 +59,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       {
         do /*0x5d0a3e*/
         {
-          v9 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3]; /*0x5d0a28*/
+          v9 = *(unsigned int *)&this->m_1[3]; /*0x5d0a28*/
           ++v8; /*0x5d0a2b*/
           v6[2 * v8 - 2] = *(unsigned int *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
           v6[2 * v8 - 1] = *(unsigned int *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
@@ -69,11 +69,11 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x5d0a44*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x5d0a4f*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d0a57*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5d0a4f*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5d0a57*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v6; /*0x5d0a60*/
+    *(unsigned int *)&this->m_1[3] = v6; /*0x5d0a60*/
     this->m_8 = a2; /*0x5d0a68*/
     BYTE1(this->m_C) = v4 == 0; /*0x5d0a6b*/
   }
@@ -111,12 +111,12 @@ void MSPCXAnim_42::FreeData()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d05a6*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d05a6*/
   this->m_10 = 0; /*0x5d05a9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d05b0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d05b6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d05be*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d05be*/
   }
   BYTE1(this->m_C) = 0; /*0x5d05c1*/
   this->m_8 = 0; /*0x5d05c4*/
@@ -130,7 +130,7 @@ unsigned int MSPCXAnim_42::GetCount_8B(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d05d0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 3; /*0x5d05e5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x5d05e5*/
   else
     return 0; /*0x5d05d7*/
 
@@ -144,12 +144,12 @@ void MSPCXAnim_42::FreeData_0()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d0616*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d0616*/
   this->m_10 = 0; /*0x5d0619*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d0620*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0626*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d062e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d062e*/
   }
   BYTE1(this->m_C) = 0; /*0x5d0631*/
   this->m_8 = 0; /*0x5d0634*/
@@ -163,7 +163,7 @@ unsigned int MSPCXAnim_42::GetCount(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d0640*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d0655*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d0655*/
   else
     return 0; /*0x5d0647*/
 
@@ -177,12 +177,12 @@ void MSPCXAnim_42::FreeData_1()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d0676*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d0676*/
   this->m_10 = 0; /*0x5d0679*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d0680*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0686*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d068e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d068e*/
   }
   BYTE1(this->m_C) = 0; /*0x5d0691*/
   this->m_8 = 0; /*0x5d0694*/
@@ -196,7 +196,7 @@ unsigned int MSPCXAnim_42::GetCount_0(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d06a0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d06b5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d06b5*/
   else
     return 0; /*0x5d06a7*/
 
@@ -210,12 +210,12 @@ void MSPCXAnim_26::ddtor()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d06d6*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d06d6*/
   this->m_10 = 0; /*0x5d06d9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d06e0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d06e6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d06ee*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d06ee*/
   }
   BYTE1(this->m_C) = 0; /*0x5d06f1*/
   this->m_8 = 0; /*0x5d06f4*/
@@ -229,7 +229,7 @@ unsigned int MSPCXAnim_26::Draw(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d0700*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d0715*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d0715*/
   else
     return 0; /*0x5d0707*/
 
@@ -241,7 +241,7 @@ namespace gamemd {
 int MSPCXAnim_26::GetFrame(int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x5d072a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d072a*/
 
 }
 } // namespace gamemd
@@ -253,12 +253,12 @@ void MSPCXAnim_26::FreeData()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d0736*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d0736*/
   this->m_10 = 0; /*0x5d0739*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d0740*/
   {
     __3_YAXPAX_Z(v2); /*0x5d0746*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d074e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d074e*/
   }
   BYTE1(this->m_C) = 0; /*0x5d0751*/
   this->m_8 = 0; /*0x5d0754*/
@@ -272,7 +272,7 @@ unsigned int MSPCXAnim_26::GetCount(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d0760*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d0775*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d0775*/
   else
     return 0; /*0x5d0767*/
 
@@ -284,7 +284,7 @@ namespace gamemd {
 int MSPCXAnim_42::GetFrame(int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x5d078a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d078a*/
 
 }
 } // namespace gamemd
@@ -296,12 +296,12 @@ void MSPCXAnim_26::FreeData_0()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x5d0796*/
+  v2 = *(void **)&this->m_1[3]; /*0x5d0796*/
   this->m_10 = 0; /*0x5d0799*/
   if ( v2 && BYTE1(this->m_C) ) /*0x5d07a0*/
   {
     __3_YAXPAX_Z(v2); /*0x5d07a6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d07ae*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d07ae*/
   }
   BYTE1(this->m_C) = 0; /*0x5d07b1*/
   this->m_8 = 0; /*0x5d07b4*/
@@ -315,7 +315,7 @@ unsigned int MSPCXAnim_26::GetCount_0(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d07c0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d07d5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d07d5*/
   else
     return 0; /*0x5d07c7*/
 
@@ -335,7 +335,7 @@ int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
   result = 0; /*0x5d0aa5*/
   if ( m_10 <= 0 ) /*0x5d0aab*/
     return -1; /*0x5d0acc*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
   {
     if ( ++result >= m_10 ) /*0x5d0aca*/
       return -1; /*0x5d0aca*/
@@ -364,20 +364,20 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x5d0c92*/
     if ( !v4 ) /*0x5d0c96*/
       return 0; /*0x5d0d0a*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x5d0c98*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d0c98*/
     {
       m_8 = this->m_8; /*0x5d0c9f*/
       if ( a2 < m_8 ) /*0x5d0ca4*/
         m_8 = a2; /*0x5d0ca6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x5d0cac*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5d0cac*/
         ++i; /*0x5d0cb1*/
       if ( BYTE1(this->m_C) ) /*0x5d0cbe*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x5d0cc9*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d0cd1*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5d0cc9*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5d0cd1*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x5d0cda*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x5d0cda*/
     this->m_8 = a2; /*0x5d0ce2*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d0ce5*/
   }
@@ -406,7 +406,7 @@ int MSPCXAnim_42::FindIndex(unsigned int * a2)
   result = 0; /*0x5d0d13*/
   if ( m_10 <= 0 ) /*0x5d0d18*/
     return -1; /*0x5d0d2f*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x5d0d1e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d0d1e*/
   {
     if ( ++result >= m_10 ) /*0x5d0d2d*/
       return -1; /*0x5d0d2d*/
@@ -435,20 +435,20 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x5d0ef2*/
     if ( !v4 ) /*0x5d0ef6*/
       return 0; /*0x5d0f6a*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x5d0ef8*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d0ef8*/
     {
       m_8 = this->m_8; /*0x5d0eff*/
       if ( a2 < m_8 ) /*0x5d0f04*/
         m_8 = a2; /*0x5d0f06*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x5d0f0c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5d0f0c*/
         ++i; /*0x5d0f11*/
       if ( BYTE1(this->m_C) ) /*0x5d0f1e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x5d0f29*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5d0f31*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5d0f29*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5d0f31*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x5d0f3a*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x5d0f3a*/
     this->m_8 = a2; /*0x5d0f42*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d0f45*/
   }

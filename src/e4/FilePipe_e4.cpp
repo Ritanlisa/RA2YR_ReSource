@@ -78,7 +78,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x4783ac*/
     if ( v5 ) /*0x4783b0*/
     {
-      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x4783bb*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4783bb*/
       {
         m_8 = this->m_8; /*0x4783c0*/
         if ( a2 < m_8 ) /*0x4783c5*/
@@ -88,7 +88,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
           v13 = 0; /*0x4783cd*/
           do /*0x4783e9*/
           {
-            v14 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3] + v13; /*0x4783d4*/
+            v14 = *(unsigned int *)&this->m_1[3] + v13; /*0x4783d4*/
             v15 = &v5[v13]; /*0x4783d6*/
             v13 += 3; /*0x4783d9*/
             --m_8; /*0x4783dc*/
@@ -100,11 +100,11 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
         }
         if ( BYTE1(this->m_C) ) /*0x4783f1*/
         {
-          __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4783fa*/
-          *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x478402*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4783fa*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x478402*/
         }
       }
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v5; /*0x47840d*/
+      *(unsigned int *)&this->m_1[3] = v5; /*0x47840d*/
       this->m_8 = v3; /*0x478413*/
       BYTE1(this->m_C) = a3 == 0; /*0x478416*/
       return 1; /*0x47841c*/
@@ -129,12 +129,12 @@ void FilePipe_30::ddtor()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x4778a6*/
+  v2 = *(void **)&this->m_1[3]; /*0x4778a6*/
   this->m_10 = 0; /*0x4778a9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x4778b0*/
   {
     __3_YAXPAX_Z(v2); /*0x4778b6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4778be*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4778be*/
   }
   BYTE1(this->m_C) = 0; /*0x4778c1*/
   this->m_8 = 0; /*0x4778c4*/
@@ -148,7 +148,7 @@ unsigned int FilePipe_30::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4778d0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4778e5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4778e5*/
   else
     return 0; /*0x4778d7*/
 
@@ -162,7 +162,7 @@ int FilePipe_38::Seek(int a2, int a3)
 
   int v3; // ecx
 
-  v3 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 3 * a3; /*0x47796d*/
+  v3 = *(unsigned int *)&this->m_1[3] + 3 * a3; /*0x47796d*/
   *(unsigned short *)a2 = *(unsigned short *)v3; /*0x477978*/
   *(unsigned char *)(a2 + 2) = *(unsigned char *)(v3 + 2); /*0x47797f*/
   return a2; /*0x47797b*/
@@ -213,20 +213,20 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x478172*/
     if ( !v4 ) /*0x478176*/
       return 0; /*0x4781ea*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x478178*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x478178*/
     {
       m_8 = this->m_8; /*0x47817f*/
       if ( a2 < m_8 ) /*0x478184*/
         m_8 = a2; /*0x478186*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x47818c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
       if ( BYTE1(this->m_C) ) /*0x47819e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4781a9*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4781b1*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4781a9*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x4781b1*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x4781ba*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x4781ba*/
     this->m_8 = a2; /*0x4781c2*/
     BYTE1(this->m_C) = a3 == 0; /*0x4781c5*/
   }
@@ -255,7 +255,7 @@ int FilePipe_30::Read( unsigned int * a2)
   result = 0; /*0x4781f3*/
   if ( m_10 <= 0 ) /*0x4781f8*/
     return -1; /*0x47820f*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x4781fe*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4781fe*/
   {
     if ( ++result >= m_10 ) /*0x47820d*/
       return -1; /*0x47820d*/
@@ -283,7 +283,7 @@ char FilePipe_38::AddRef(int a2)
     if ( m_8 <= 0 ) /*0x4782f6*/
       return 1; /*0x478332*/
     v4 = *(unsigned int *)(a2 + 4); /*0x4782f8*/
-    v5 = *(unsigned char **)&this-((unsigned int *)(>m_1))[3]; /*0x4782fb*/
+    v5 = *(unsigned char **)&this->m_1[3]; /*0x4782fb*/
     v6 = (unsigned char *)(v4 + 2); /*0x478300*/
     v7 = v4 - (unsigned int)v5; /*0x478303*/
     while ( *v5 == v5[v7] && v5[1] == *(v6 - 1) && v5[2] == *v6 ) /*0x47831f*/
@@ -305,10 +305,10 @@ namespace gamemd {
 void FilePipe_38::ddtor()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] && BYTE1(this->m_C) ) /*0x47844d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x47844d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x478453*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x47845b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x478453*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x47845b*/
   }
   BYTE1(this->m_C) = 0; /*0x47845e*/
   this->m_8 = 0; /*0x478461*/
@@ -331,7 +331,7 @@ int FilePipe_38::Read( unsigned char * a2)
   result = 0; /*0x478485*/
   if ( m_8 <= 0 ) /*0x478489*/
     return -1; /*0x4784b0*/
-  for ( i = *(unsigned char **)&this-((unsigned int *)(>m_1))[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x47848f*/
+  for ( i = *(unsigned char **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x47848f*/
   {
     if ( ++result >= m_8 ) /*0x4784ae*/
       return -1; /*0x4784ae*/
@@ -347,7 +347,7 @@ unsigned int FilePipe_38::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4784c0*/
-    return (a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) / 3u; /*0x4784de*/
+    return (a2 - *(unsigned int *)&this->m_1[3]) / 3u; /*0x4784de*/
   else
     return 0; /*0x4784c7*/
 
@@ -384,12 +384,12 @@ void FilePipe_30::Clear()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x4b9be6*/
+  v2 = *(void **)&this->m_1[3]; /*0x4b9be6*/
   this->m_10 = 0; /*0x4b9be9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x4b9bf0*/
   {
     __3_YAXPAX_Z(v2); /*0x4b9bf6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4b9bfe*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4b9bfe*/
   }
   BYTE1(this->m_C) = 0; /*0x4b9c01*/
   this->m_8 = 0; /*0x4b9c04*/
@@ -403,7 +403,7 @@ unsigned int FilePipe_30::GetCount(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4b9c10*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4b9c25*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4b9c25*/
   else
     return 0; /*0x4b9c17*/
 
@@ -417,12 +417,12 @@ void FilePipe_30::Clear_0()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x4b9c46*/
+  v2 = *(void **)&this->m_1[3]; /*0x4b9c46*/
   this->m_10 = 0; /*0x4b9c49*/
   if ( v2 && BYTE1(this->m_C) ) /*0x4b9c50*/
   {
     __3_YAXPAX_Z(v2); /*0x4b9c56*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4b9c5e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4b9c5e*/
   }
   BYTE1(this->m_C) = 0; /*0x4b9c61*/
   this->m_8 = 0; /*0x4b9c64*/
@@ -436,7 +436,7 @@ unsigned int FilePipe_30::GetCount_0(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4b9c70*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4b9c85*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4b9c85*/
   else
     return 0; /*0x4b9c77*/
 
@@ -463,17 +463,17 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x4b9e52*/
     if ( !v4 ) /*0x4b9e56*/
       return 0; /*0x4b9eca*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x4b9e58*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x4b9e58*/
     {
       m_8 = this->m_8; /*0x4b9e5f*/
       if ( a2 < m_8 ) /*0x4b9e64*/
         m_8 = a2; /*0x4b9e66*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x4b9e6c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
       if ( BYTE1(this->m_C) ) /*0x4b9e7e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4b9e89*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4b9e91*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4b9e89*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x4b9e91*/
       }
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x4b9e9a*/

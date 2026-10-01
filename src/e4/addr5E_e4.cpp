@@ -4048,14 +4048,14 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
   }
   v9 = v23 - dword_831700; /*0x5ec493*/
   vtable1 = 0; /*0x5ec495*/
-  v24.? = 0; /*0x5ec499*/
+  ((unsigned int *)&v24)[0] = 0; /*0x5ec499*/
   if ( !g_MPCooperativeState ) /*0x5ec49d*/
   {
     if ( v7 ) /*0x5ec4a1*/
     {
   LABEL_40:
       vtable1 = 1; /*0x5ec4f1*/
-      v24.? = (void *)1; /*0x5ec4fd*/
+      ((unsigned int *)&v24)[0] = (void *)1; /*0x5ec4fd*/
       if ( !dword_AC11CC && v9 + v23 < 7 ) /*0x5ec50d*/
         ++v9; /*0x5ec50f*/
       goto LABEL_43; /*0x5ec50f*/
@@ -4099,7 +4099,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
     ResourceIDCSF = GetResourceIDCSF(0); /*0x5ec560*/
     FillListBox((HWND)hDlg, ResourceIDCSF); /*0x5ec566*/
     SetupSkirmishSpawnLocations((HWND)hDlg, ResourceIDCSF, 8); /*0x5ec571*/
-    vtable1 = (int)v24.?; /*0x5ec576*/
+    vtable1 = (int)((char *)&v24); /*0x5ec576*/
   }
   if ( v9 <= 0 )
   {
@@ -4181,7 +4181,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
       else
         RetVtableStubZero_eax_27(); /*0x5ec69b*/
       CheckGameSettingsChanged(1, 0); /*0x5ec690*/
-      vtable1 = (int)v24.?; /*0x5ec695*/
+      vtable1 = (int)((char *)&v24); /*0x5ec695*/
     }
   }
   else
@@ -4199,7 +4199,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
         MultiplayerLobby::FillSlots(hDlg); /*0x5ec709*/
         Debug::Log(); /*0x5ec713*/
         v19 = (wchar_t *)dword_A8DA90[(unsigned int)g_MPCooperativeState]; /*0x5ec724*/
-        unknown_libname_74(&v24.?); /*0x5ec72b*/
+        unknown_libname_74(&((char *)&v24)); /*0x5ec72b*/
         if ( !v19 /*0x5ec76a*/
           || v19 == (wchar_t *)g_HouseClass_ObserverFlags
           || v19 == (wchar_t *)g_Lobby_PlayerCount
@@ -4210,25 +4210,25 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
           || v19 == (wchar_t *)g_Lobby_PlayerColor )
         {
           GetPlayerTypeString((char **)&v24, v19); /*0x5ec77e*/
-          v20 = CharStringToWide((wchar_t **)&v24.?, (const char **)&v24); /*0x5ec78b*/
-          WideString::Reassign_Alt(&v24.?, (const wchar_t **)v20); /*0x5ec795*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v24.?); /*0x5ec79e*/
+          v20 = CharStringToWide((wchar_t **)&((char *)&v24), (const char **)&v24); /*0x5ec78b*/
+          WideString::Reassign_Alt(&((char *)&v24), (const wchar_t **)v20); /*0x5ec795*/
+          DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v24)); /*0x5ec79e*/
           DeleteAndZero(&v24); /*0x5ec7a7*/
         }
         else
         {
-          WideString::Assign_Alt(&v24.?, v19); /*0x5ec771*/
+          WideString::Assign_Alt(&((char *)&v24), v19); /*0x5ec771*/
         }
-        v21 = WideString::GetOrEmpty((wchar_t **)&v24.?); /*0x5ec7b0*/
+        v21 = WideString::GetOrEmpty((wchar_t **)&((char *)&v24)); /*0x5ec7b0*/
         WideString::Assign((wchar_t **)&v24, v21); /*0x5ec7ba*/
-        v22 = ToWideStringCharAlt((char **)&v24.?, (const wchar_t **)&v24); /*0x5ec7c7*/
-        sprintf((char *const)&v24.?, "O%d%s", g_MPCooperativeState, *v22); /*0x5ec7e0*/
-        DeleteAndZero((ObjectClass *)&v24.?); /*0x5ec7ec*/
+        v22 = ToWideStringCharAlt((char **)&((char *)&v24), (const wchar_t **)&v24); /*0x5ec7c7*/
+        sprintf((char *const)&((char *)&v24), "O%d%s", g_MPCooperativeState, *v22); /*0x5ec7e0*/
+        DeleteAndZero((ObjectClass *)&((char *)&v24)); /*0x5ec7ec*/
         DeleteAndZero::Alt((DeleteAndZero *)&v24); /*0x5ec7f5*/
-        Network::SendOptionsGame((char *)&v24.?); /*0x5ec7fe*/
-        DeleteAndZero::Alt((DeleteAndZero *)&v24.?); /*0x5ec807*/
+        Network::SendOptionsGame((char *)&((char *)&v24)); /*0x5ec7fe*/
+        DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v24)); /*0x5ec807*/
         dword_831700 = v23; /*0x5ec816*/
-        dword_AC11CC = (int)v24.?; /*0x5ec81c*/
+        dword_AC11CC = (int)((char *)&v24); /*0x5ec81c*/
       }
       else
       {

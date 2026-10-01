@@ -229,7 +229,7 @@ LABEL_2:
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
-    if ( !stru_A8EB00.?[412] ) /*0x774d7b*/
+    if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
     Bytes = WinModemClass::ReadBytes(v5, &Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
     if ( Bytes ) /*0x774da0*/
@@ -459,7 +459,7 @@ LABEL_21:
       Str,
       80,
       a8);
-    if ( !strcmp(Str, (const char *)&stru_82BA00.?) ) /*0x77531d*/
+    if ( !strcmp(Str, (const char *)&((char *)&stru_82BA00)) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
       return 2; /*0x775337*/

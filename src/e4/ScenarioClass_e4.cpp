@@ -292,9 +292,9 @@ int ScenarioClass::AssignStartPositions(char a1)
   char v7; // [esp+11h] [ebp-Bh]
 
   ((Multiplayer *)(v5))->FindStartPositions(); /*0x5d6bec*/
-  for ( i = 0; i < stru_A80220.?; ++i ) /*0x5d6bfa*/
+  for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5d6bfa*/
   {
-    v2 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5d6c02*/
+    v2 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5d6c02*/
     if ( !*(unsigned char *)(v2->relatedTagsCapacity + 422) ) /*0x5d6c08*/
     {
       startingAllies = v2->startingAllies; /*0x5d6c12*/
@@ -365,7 +365,7 @@ TimerStruct * * ScenarioClass::Constructor()
   this->ionGround = 0; /*0x6833d2*/
   this->ionAmbient = (int)&vt_TypeList; /*0x6833d5*/
   ScenarioClass::InitTimer(this); /*0x6833db*/
-  this-((unsigned int *)(>__pad_3566))[50] = 0; /*0x6833e2*/
+  this->__pad_3566[50] = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
   ScenarioClass::ResetIntroFlags(this); /*0x6833ee*/
   this->techLevel = 1; /*0x6833f3*/
@@ -498,20 +498,20 @@ LABEL_21:
   GenericList::Constructor((GenericList *)&(unsigned int *)((char *)&v19 + 2)); /*0x683c20*/
   *((unsigned int *)((char *)&v19 + 2)) = (int)&vt_List; /*0x683c29*/
   memset(&(unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
-  memset(&v19.?, 0, 9); /*0x683c42*/
+  memset(&((char *)&v19), 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
   if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) ) /*0x683c67*/
   {
     Bool = INIClass::GetBool( /*0x683c85*/
              (INIClass *)&v19,
-             (uint8_t *)&stru_82BA00.?,
+             (uint8_t *)&((char *)&stru_82BA00),
              (uint8_t *)g_INI_Key_Intro,
              -1);
     if ( Bool != -1 /*0x683ca5*/
       || (Bool = INIClass::GetBool(
                    (INIClass *)&v19,
-                   (uint8_t *)&stru_82BA00.?,
+                   (uint8_t *)&((char *)&stru_82BA00),
                    (uint8_t *)g_INI_Key_Brief,
                    -1),
           Bool != -1) )
@@ -527,7 +527,7 @@ LABEL_21:
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
-  v11 = StringList::Find((StringList *)&unk_A83D10, &stru_82BA00.?); /*0x683d0f*/
+  v11 = StringList::Find((StringList *)&unk_A83D10, &((char *)&stru_82BA00)); /*0x683d0f*/
   ThemeClass::Play((ThemeClass *)&unk_A83D10, v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
@@ -672,7 +672,7 @@ void ScenarioClass_Construct()
     GenericList::Constructor((GenericList *)&(unsigned int *)((char *)&v5 + 2)); /*0x686773*/
     *((unsigned int *)((char *)&v5 + 2)) = (int)&List_INIClass_INISection___vftable; /*0x68677c*/
     Node::Init((Node *)&(unsigned int *)((char *)&v5 + 8)); /*0x686784*/
-    v5.? = 0; /*0x68678d*/
+    ((unsigned int *)&v5)[0] = 0; /*0x68678d*/
     v5.ownsFile = 0; /*0x686792*/
     *(unsigned int *)v5.INIClass = &CCINIClass_Vtable; /*0x686797*/
     CCFileClass::Construct(&v6, Source); /*0x68679f*/

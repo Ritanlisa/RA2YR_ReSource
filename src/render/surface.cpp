@@ -776,7 +776,7 @@ bool DSurface::Blit(
   {
     v42 = 1; /*0x4bb1fa*/
   }
-  if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
+  if ( !g_DDraw_Initialized && !((unsigned int *)&stru_A8EB00)[412] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
   v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
   if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
@@ -1002,7 +1002,7 @@ bool DSurface::FillRectEx(
 // 0x7bb050
       return XSurface::FillRectEx((XSurface *)this, (unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
-    if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/
+    if ( g_DDraw_Initialized || ((unsigned int *)&stru_A8EB00)[412] ) /*0x4bb690*/
     {
       v5 = this->DSurface_field_0x1C[0]; /*0x4bb696*/
       if ( !v5 || (*(int (**)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C[0]) != -2005532222 ) /*0x4bb6a8*/
@@ -1219,7 +1219,7 @@ void* DSurface::Lock(int x, int y)
   int v9; // esi
   unsigned int v11[27]; // [esp+28h] [ebp-6Ch] BYREF
 
-  if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bad99*/
+  if ( !g_DDraw_Initialized && !((unsigned int *)&stru_A8EB00)[412] ) /*0x4bad99*/
     return 0; /*0x4bad99*/
   v4 = this->DSurface_field_0x1C[0]; /*0x4bad9f*/
   if ( v4 && (*(int (**)(int))(*(unsigned int *)v4 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4badb1*/
@@ -1278,7 +1278,7 @@ int DSurface::Unlock()
   void *DSurface_field_0x0; // edx
   int result; // eax
 
-  if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4baf54*/
+  if ( g_DDraw_Initialized || ((unsigned int *)&stru_A8EB00)[412] ) /*0x4baf54*/
   {
     v2 = this->DSurface_field_0x1C[0]; /*0x4baf56*/
     if ( v2 ) /*0x4baf5b*/
@@ -1372,7 +1372,7 @@ void* BSurface::Lock(int x, int y)
   int v6; // ebx
 
   v4 = *(unsigned int *)this->XSurface; /*0x4115f8*/
-  ++this->?; /*0x4115fb*/
+  ++((unsigned int *)this)[0]; /*0x4115fb*/
   Buffer = (char *)this->Buffer; /*0x4115fe*/
   v6 = x * (*(int (**)(BSurface *))(v4 + 112))(this); /*0x411608*/
   return &Buffer[v6 + y * (*(int (**)(BSurface *))(*(unsigned int *)this->XSurface + 116))(this)]; /*0x41161b*/

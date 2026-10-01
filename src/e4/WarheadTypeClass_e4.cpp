@@ -66,20 +66,20 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x525338*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x525338*/
     {
       m_8 = this->m_8; /*0x52533f*/
       if ( a2 < m_8 ) /*0x525344*/
         m_8 = a2; /*0x525346*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x52534c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x52534c*/
         ++i; /*0x525351*/
       if ( BYTE1(this->m_C) ) /*0x52535e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x525369*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x525371*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x525369*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x525371*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x52537a*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x52537a*/
     this->m_8 = a2; /*0x525382*/
     BYTE1(this->m_C) = a3 == 0; /*0x525385*/
   }

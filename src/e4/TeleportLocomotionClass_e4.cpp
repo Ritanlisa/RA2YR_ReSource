@@ -21,10 +21,10 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   int v2; // ecx
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
-  this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
+  this->MovingDestination[0] = ((char *)&g_BuildingLoadQueue_Array); /*0x718011*/
   this->MovingDestination[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71801a*/
   this->MovingDestination[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718026*/
-  this->LastCoords[0] = g_BuildingLoadQueue_Array.?; /*0x71802e*/
+  this->LastCoords[0] = ((char *)&g_BuildingLoadQueue_Array); /*0x71802e*/
   this->LastCoords[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718036*/
   this->LastCoords[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71803e*/
   this->Moving = 0; /*0x718043*/

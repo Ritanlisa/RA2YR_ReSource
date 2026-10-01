@@ -715,7 +715,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !*((unsigned char *)this + 21413) || !byte_A8E9A0 || !stru_A8EB00.?[376] ) /*0x6a7109*/
+  if ( !*((unsigned char *)this + 21413) || !byte_A8E9A0 || !((unsigned int *)&stru_A8EB00)[376] ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/

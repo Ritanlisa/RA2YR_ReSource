@@ -1116,8 +1116,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   }
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v17.spawnStatus, 0) )
   {
-    v17.? = 0; /*0x778abf*/
-    v17.? = 0; /*0x778ac3*/
+    ((unsigned int *)&v17)[0] = 0; /*0x778abf*/
+    ((unsigned int *)&v17)[0] = 0; /*0x778ac3*/
     v17.fallRate = 0; /*0x778ac7*/
     v17.nextObject = 0; /*0x778acb*/
     v17.owningHouseIndex = (int)&GenericNode_vftable; /*0x778acf*/
@@ -1127,66 +1127,66 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     memset(&v17.ambientSoundController[1], 0, 13); /*0x778b07*/
     v17.customSound_controller[0] = 0; /*0x778b18*/
     v17.customSound_controller[1] = 0; /*0x778b1c*/
-    v17.? = (int)&INIClass_vftable; /*0x778b20*/
-    FileStraw::Open((FileStraw *)&v17.?, (int)&v17.spawnStatus, 0); /*0x778b28*/
+    ((unsigned int *)&v17)[0] = (int)&INIClass_vftable; /*0x778b20*/
+    FileStraw::Open((FileStraw *)&((char *)&v17), (int)&v17.spawnStatus, 0); /*0x778b28*/
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778b34*/
-    String::AssignFromPtr((String *)&v17.?, a2); /*0x778b3e*/
-    String::ToLower((String *)&v17.?); /*0x778b47*/
-    v5 = (uint8_t *)String::GetOrEmpty_Alt((String *)&v17.?); /*0x778b50*/
-    if ( INIClass::BinarySearchSection((int)&v17.?, v5) )
+    String::AssignFromPtr((String *)&((char *)&v17), a2); /*0x778b3e*/
+    String::ToLower((String *)&((char *)&v17)); /*0x778b47*/
+    v5 = (uint8_t *)String::GetOrEmpty_Alt((String *)&((char *)&v17)); /*0x778b50*/
+    if ( INIClass::BinarySearchSection((int)&((char *)&v17), v5) )
     {
-      unknown_libname_73(&v17.?); /*0x778ba4*/
+      unknown_libname_73(&((char *)&v17)); /*0x778ba4*/
       String::Assign((String *)&v17, g_INI_Key_Server); /*0x778bb2*/
-      INIClass::ReadString((INIClass *)&v17.?, (char **)&v17.?, (char **)&v17, (char **)&v17.?, (int)&v17.?); /*0x778bcf*/
+      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778bcf*/
       DeleteAndZero(&v17); /*0x778bd8*/
       String::Assign((String *)&v17, g_INI_Key_Locale); /*0x778be6*/
-      Int = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, 0); /*0x778c03*/
+      Int = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
-      v7 = (uint8_t *)String::GetOrEmpty((String *)&v17.?); /*0x778c14*/
-      Bool_Overwrite = INIClass::ReadBool_Overwrite(&v17.?, v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
+      v7 = (uint8_t *)String::GetOrEmpty((String *)&((char *)&v17)); /*0x778c14*/
+      Bool_Overwrite = INIClass::ReadBool_Overwrite(&((char *)&v17), v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
       IDA_LOBYTE(v17.customSound_controller[4]) = Bool_Overwrite; /*0x778c2e*/
       String::Assign((String *)&v17, g_INI_Key_Country); /*0x778c32*/
-      v9 = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -2); /*0x778c50*/
+      v9 = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -2); /*0x778c50*/
       DeleteAndZero(&v17); /*0x778c52*/
       String::Assign((String *)&v17, &(unsigned int *)((char *)&stru_81AF8C + 95)); /*0x778c60*/
-      v10 = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -2); /*0x778c7e*/
+      v10 = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -2); /*0x778c7e*/
       DeleteAndZero(&v17); /*0x778c80*/
       String::Assign((String *)&v17, aRank); /*0x778c8e*/
-      v17.customSound_controller[3] = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -1); /*0x778cac*/
+      v17.customSound_controller[3] = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778cac*/
       DeleteAndZero(&v17); /*0x778cb0*/
       String::Assign((String *)&v17, (const char *)&(unsigned int *)((char *)&g_INI_Key_TRUCKA + 82)); /*0x778cbe*/
-      *(unsigned int *)&v17.isOnMap = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -1); /*0x778cdc*/
+      *(unsigned int *)&v17.isOnMap = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778cdc*/
       DeleteAndZero(&v17); /*0x778ce3*/
       String::Assign((String *)&v17, aWins); /*0x778cf1*/
-      v17.customSound = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -1); /*0x778d0f*/
+      v17.customSound = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d0f*/
       DeleteAndZero(&v17); /*0x778d13*/
       String::Assign((String *)&v17, aLosses); /*0x778d21*/
-      v17.health = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -1); /*0x778d3f*/
+      v17.health = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d3f*/
       DeleteAndZero(&v17); /*0x778d43*/
       String::Assign((String *)&v17, aDisconnects); /*0x778d51*/
-      v17.customSound_controller[2] = INIClass::ReadInt((bool *)&v17.?, (char **)&v17.?, (char **)&v17, -1); /*0x778d6f*/
+      v17.customSound_controller[2] = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d6f*/
       DeleteAndZero(&v17); /*0x778d73*/
-      v11 = (uint8_t *)String::GetOrEmpty((String *)&v17.?); /*0x778d83*/
-      IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite(&v17.?, v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
-      unknown_libname_73(&v17.?); /*0x778d9d*/
-      unknown_libname_74(&v17.?); /*0x778da6*/
+      v11 = (uint8_t *)String::GetOrEmpty((String *)&((char *)&v17)); /*0x778d83*/
+      IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite(&((char *)&v17), v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
+      unknown_libname_73(&((char *)&v17)); /*0x778d9d*/
+      unknown_libname_74(&((char *)&v17)); /*0x778da6*/
       String::Assign((String *)&v17, g_INI_Key_UpdateTime); /*0x778db4*/
-      INIClass::ReadString((INIClass *)&v17.?, (char **)&v17.?, (char **)&v17, (char **)&v17.?, (int)&v17.?); /*0x778dd1*/
+      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778dd1*/
       DeleteAndZero(&v17); /*0x778dda*/
-      LocalizeWOLDateString((char **)&v17.?, (void **)&v17.?); /*0x778de7*/
-      DeleteAndZero::Alt2((DeleteAndZero *)&v17.?); /*0x778df0*/
-      unknown_libname_74(&v17.?); /*0x778df9*/
+      LocalizeWOLDateString((char **)&((char *)&v17), (void **)&((char *)&v17)); /*0x778de7*/
+      DeleteAndZero::Alt2((DeleteAndZero *)&((char *)&v17)); /*0x778df0*/
+      unknown_libname_74(&((char *)&v17)); /*0x778df9*/
       String::Assign((String *)&v17, g_INI_Key_UpdateDate); /*0x778e07*/
-      INIClass::ReadString((INIClass *)&v17.?, (char **)&v17.?, (char **)&v17, (char **)&v17.?, (int)&v17.?); /*0x778e24*/
+      INIClass::ReadString((INIClass *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778e24*/
       DeleteAndZero(&v17); /*0x778e2d*/
-      v12 = String::GetOrEmpty_Alt((String *)&v17.?); /*0x778e36*/
+      v12 = String::GetOrEmpty_Alt((String *)&((char *)&v17)); /*0x778e36*/
       v13 = CharToWideString(v12); /*0x778e3d*/
-      WideString::Reassign((void **)&v17.?, (wchar_t *)v13); /*0x778e47*/
+      WideString::Reassign((void **)&((char *)&v17), (wchar_t *)v13); /*0x778e47*/
       v14 = (ReferenceCounted *)RA2_OPNEW(0x44u); /*0x778e4e*/
       if ( v14 )
         AccountInfoWOL_Load = LoadAccountInfoWOL_Load(
                                 v14,
-                                (const char **)&v17.?,
+                                (const char **)&((char *)&v17),
                                 Int,
                                 v17.customSound_controller[4],
                                 Bool_Overwrite != 0 ? 1 : 3,
@@ -1198,20 +1198,20 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                                 v17.health,
                                 v17.customSound_controller[2],
                                 v17.estimatedHealth,
-                                (const wchar_t **)&v17.?,
-                                (const wchar_t **)&v17.?);
+                                (const wchar_t **)&((char *)&v17),
+                                (const wchar_t **)&((char *)&v17));
       else
         AccountInfoWOL_Load = 0; /*0x778eb7*/
       v16 = *(ComPtr **)&v17.bombVisible; /*0x778eb9*/
       ComPtr::Constructor(*(ComPtr **)&v17.bombVisible); /*0x778ebf*/
       *(unsigned int *)v16->__pad_0 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x778ec6*/
       ComPtr::Set(v16, (int)AccountInfoWOL_Load); /*0x778ecd*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v17.?); /*0x778ed6*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v17.?); /*0x778edf*/
-      DeleteAndZero((ObjectClass *)&v17.?); /*0x778ee8*/
-      DeleteAndZero((ObjectClass *)&v17.?); /*0x778ef1*/
-      DeleteAndZero((ObjectClass *)&v17.?); /*0x778efa*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v17.?); /*0x778f03*/
+      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v17)); /*0x778ed6*/
+      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v17)); /*0x778edf*/
+      DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778ee8*/
+      DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778ef1*/
+      DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778efa*/
+      HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v17)); /*0x778f03*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778f0f*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778f1a*/
       return (ObjectClass *)v16; /*0x778f1f*/
@@ -1219,8 +1219,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     else
     {
       LoadAccountInfoWOL(a1); /*0x778b65*/
-      DeleteAndZero((ObjectClass *)&v17.?); /*0x778b6e*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v17.?); /*0x778b77*/
+      DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778b6e*/
+      HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v17)); /*0x778b77*/
       v17.spawnStatus = (int)&off_7E1668; /*0x778b83*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17.spawnStatus); /*0x778b8e*/
       return a1; /*0x778b93*/
@@ -3412,7 +3412,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
 
   v4 = a4; /*0x770976*/
   vtable0 = this->AbstractClass; /*0x77097f*/
-  v6 = &this->? + 37 * a2 + 12 * a3; /*0x770990*/
+  v6 = &((unsigned int *)this)[0] + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
   if ( v7 <= 0 ) /*0x7709a0*/
@@ -3462,7 +3462,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
 
   v4 = a4; /*0x770a56*/
   vtable0 = this->AbstractClass; /*0x770a5f*/
-  v6 = &this->? + 37 * a2 + 12 * a3; /*0x770a70*/
+  v6 = &((unsigned int *)this)[0] + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
   if ( v7 <= 0 ) /*0x770a80*/
@@ -3598,7 +3598,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   void *v14; // [esp+8h] [ebp-4h] BYREF
 
   v4 = a4; /*0x770f17*/
-  v5 = &this->? + 12 * a3; /*0x770f21*/
+  v5 = &((unsigned int *)this)[0] + 12 * a3; /*0x770f21*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770f27*/
   v6 = (int)v5[4]; /*0x770f2c*/
   if ( v6 <= 0 ) /*0x770f31*/
@@ -3646,7 +3646,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   void *v14; // [esp+8h] [ebp-4h] BYREF
 
   v4 = a4; /*0x770fe7*/
-  v5 = &this->? + 12 * a3; /*0x770ff1*/
+  v5 = &((unsigned int *)this)[0] + 12 * a3; /*0x770ff1*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770ff7*/
   v6 = v5[4]; /*0x770ffc*/
   if ( v6 <= 0 ) /*0x771001*/
@@ -4163,7 +4163,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
   if ( !Value ) /*0x7738c7*/
   {
     strcpy(ValueName, cbData); /*0x7738e8*/
-    if ( !this->? ) /*0x7738ec*/
+    if ( !((unsigned int *)this)[0] ) /*0x7738ec*/
       strcat(ValueName, asc_84968C); /*0x77391d*/
     cbData = Type; /*0x773932*/
     Value = RegQueryValueExA(phkResult, ValueName, 0, (LPDWORD)&Type, lpData, (LPDWORD)&cbData); /*0x77394f*/
@@ -4461,12 +4461,12 @@ unsigned int E4Recv_7767F0::sub_7767F0()
   char *referenceCount; // edi
   LPARAM lParam[10]; // [esp+8h] [ebp-28h] BYREF
 
-  referenceCount = (char *)this->?; /*0x7767f7*/
+  referenceCount = (char *)((unsigned int *)this)[0]; /*0x7767f7*/
   if ( !referenceCount ) /*0x7767fc*/
     return 0; /*0x776873*/
   String::Trim(referenceCount); /*0x776801*/
   strcpy((char *)dword_B73080, referenceCount); /*0x77681e*/
-  lParam[1] = this->?; /*0x776835*/
+  lParam[1] = ((unsigned int *)this)[0]; /*0x776835*/
   lParam[0] = 1; /*0x776847*/
   lParam[4] = dword_B73080; /*0x77684f*/
   SendMessageA(qword_B730A0, 0x110Du, 0, (LPARAM)lParam); /*0x776853*/
@@ -4660,8 +4660,8 @@ void * E4Recv_776EB0::sub_776EB0()
   struct _OSVERSIONINFOA VersionInformation; // [esp+8h] [ebp-94h] BYREF
 
   this->AbstractClass = 0; /*0x776ec1*/
-  this->? = 0; /*0x776ec3*/
-  this->? = 0; /*0x776ec6*/
+  ((unsigned int *)this)[0] = 0; /*0x776ec3*/
+  ((unsigned int *)this)[0] = 0; /*0x776ec6*/
   this->onBridge = 0; /*0x776ec9*/
   this->isFallingDown = 0; /*0x776ecf*/
   VersionInformation.dwOSVersionInfoSize = 148; /*0x776ed5*/
@@ -4669,9 +4669,9 @@ void * E4Recv_776EB0::sub_776EB0()
   dwBuildNumber = (void *)VersionInformation.dwBuildNumber; /*0x776ee7*/
   dwMinorVersion = (void *)VersionInformation.dwMinorVersion; /*0x776eeb*/
   this->AbstractClass = (void *)VersionInformation.dwMajorVersion; /*0x776eef*/
-  this->? = dwBuildNumber; /*0x776ef1*/
+  ((unsigned int *)this)[0] = dwBuildNumber; /*0x776ef1*/
   dwPlatformId = VersionInformation.dwPlatformId; /*0x776ef4*/
-  this->? = dwMinorVersion; /*0x776efd*/
+  ((unsigned int *)this)[0] = dwMinorVersion; /*0x776efd*/
   if ( dwPlatformId == 1 ) /*0x776f02*/
   {
     this->onBridge = 1; /*0x776f04*/
@@ -4680,7 +4680,7 @@ void * E4Recv_776EB0::sub_776EB0()
   {
     this->isFallingDown = 1; /*0x776f11*/
   }
-  strncpy((char *)&this->?, VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
+  strncpy((char *)&((unsigned int *)this)[0], VersionInformation.szCSDVersion, 0x7Fu); /*0x776f22*/
   HIBYTE(this->parachute) = 0; /*0x776f2a*/
   return this; /*0x776f32*/
 

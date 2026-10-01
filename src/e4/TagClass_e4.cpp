@@ -51,9 +51,9 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
   a1->AbstractClass = &vt_TagClass; /*0x6e4f69*/
-  a1->? = &vt_TagClass; /*0x6e4f6f*/
-  a1->? = &vt_TagClass; /*0x6e4f76*/
-  a1->? = &vt_TagClass; /*0x6e4f7d*/
+  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f6f*/
+  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f76*/
+  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
@@ -65,19 +65,19 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
         if ( (Debug::AccumFlags((Debug *)buildingType) & 0x10) != 0 ) /*0x6e4fad*/
         {
           v3 = 0; /*0x6e4fb5*/
-          if ( (int)FootClass_Array.? <= 0 ) /*0x6e4fb9*/
+          if ( (int)((char *)&FootClass_Array) <= 0 ) /*0x6e4fb9*/
           {
 LABEL_9:
             v3 = -1; /*0x6e4fcd*/
           }
           else
           {
-            ambientParticles = FootClass_Array.?; /*0x6e4fbb*/
+            ambientParticles = ((char *)&FootClass_Array); /*0x6e4fbb*/
             while ( ambientParticles->ObjectClass != a1 ) /*0x6e4fc3*/
             {
               ++v3; /*0x6e4fc5*/
               ambientParticles = (ParticleSystemClass *)((char *)ambientParticles + 4); /*0x6e4fc6*/
-              if ( v3 >= (int)FootClass_Array.? ) /*0x6e4fcb*/
+              if ( v3 >= (int)((char *)&FootClass_Array) ) /*0x6e4fcb*/
                 goto LABEL_9; /*0x6e4fcb*/
             }
           }
@@ -85,7 +85,7 @@ LABEL_9:
           if ( dword_A83CDC >= v3 ) /*0x6e4fd8*/
           {
             --dword_A83CDC; /*0x6e4fdd*/
-            if ( v5 - 1 < 0 && !FootClass_Array.? ) /*0x6e4fe6*/
+            if ( v5 - 1 < 0 && !((char *)&FootClass_Array) ) /*0x6e4fe6*/
               dword_A83CDC = 0; /*0x6e4fe8*/
           }
         }
@@ -108,7 +108,7 @@ LABEL_22:
             }
             else
             {
-              v8 = (TagClass **)FootClass_Array.?[5]; /*0x6e5020*/
+              v8 = (TagClass **)((unsigned int *)&FootClass_Array)[5]; /*0x6e5020*/
               while ( *(gamemd::TagClass *)(v8) != a1 ) /*0x6e5028*/
               {
                 ++v7; /*0x6e502a*/
@@ -121,7 +121,7 @@ LABEL_22:
             if ( (int)stru_A83D50.SuperClass_field_0x6C >= v7 ) /*0x6e503d*/
             {
               --stru_A83D50.SuperClass_field_0x6C; /*0x6e5042*/
-              if ( (int)SuperClass_field_0x6C - 1 < 0 && !FootClass_Array.?[0] ) /*0x6e504b*/
+              if ( (int)SuperClass_field_0x6C - 1 < 0 && !((unsigned int *)&FootClass_Array)[0] ) /*0x6e504b*/
                 stru_A83D50.SuperClass_field_0x6C = 0; /*0x6e504d*/
             }
           }
@@ -344,12 +344,12 @@ int TagClass::ProcessTag(int * a2)
   int v5; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
-  v3 = (*((int (**)(void **))this->buildingType->? + 4))(&this->buildingType->?); /*0x6e56f7*/
+  v3 = (*((int (**)(void **))this->((unsigned int *)buildingType)[0] + 4))(&this->((unsigned int *)buildingType)[0]); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int (**)(void **))firstTrigger->? + 4))(&firstTrigger->?); /*0x6e5710*/
+    v5 = (*((int (**)(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
@@ -372,9 +372,9 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
       aP0->AbstractClass = &vt_TagClass; /*0x6e5754*/
-      aP0->? = &vt_TagClass; /*0x6e575a*/
-      aP0->? = &vt_TagClass; /*0x6e5761*/
-      aP0->? = &vt_TagClass; /*0x6e5768*/
+      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e575a*/
+      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e5761*/
+      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/

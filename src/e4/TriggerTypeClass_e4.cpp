@@ -94,7 +94,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   v10 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v9));
   if ( a0 ) /*0x6fc1a0*/
   {
-    if ( (a0->? & 4) != 0 && *((unsigned char *)a0 + 1709) ) /*0x6fc1a8*/
+    if ( (((unsigned int *)a0)[0] & 4) != 0 && *((unsigned char *)a0 + 1709) ) /*0x6fc1a8*/
       return 5; /*0x6fc1b0*/
   }
   if ( v8 ) /*0x6fc1b8*/
@@ -123,7 +123,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
       return 5; /*0x6fc2cc*/
     }
   }
-  if ( a0->? ) /*0x6fc2d2*/
+  if ( ((unsigned int *)a0)[0] ) /*0x6fc2d2*/
     return 5; /*0x6fc2d2*/
   if ( (*((uint8_t (**)(TechnoClass *))a0->RadioClass + 223))(a0) ) /*0x6fc2e4*/
   {
@@ -211,7 +211,7 @@ LABEL_52:
     if ( *(unsigned char *)(v19 + 347) && v8 && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 3479) ) /*0x6fc56f*/
       return 5; /*0x6fc56f*/
   }
-  if ( a0->? ) /*0x6fc57d*/
+  if ( ((unsigned int *)a0)[0] ) /*0x6fc57d*/
   {
     if ( !*(unsigned char *)(v12 + 323) ) /*0x6fc587*/
       return 5; /*0x6fc587*/
@@ -222,7 +222,7 @@ LABEL_52:
         return 5; /*0x6fc5a5*/
     }
   }
-  if ( a0->? ) /*0x6fc5b3*/
+  if ( ((unsigned int *)a0)[0] ) /*0x6fc5b3*/
   {
     v21 = a0->transporter; /*0x6fc5bd*/
     if ( v21 ) /*0x6fc5c5*/
@@ -379,13 +379,13 @@ LABEL_164:
     return 8; /*0x6fca7e*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345)
     && a0
-    && (a0->? & 4) != 0
-    && !ParasiteClass::CanInfect(*((ParasiteClass **)a0 + 423), (v25->? & 4) != 0 ? v25 : 0) )
+    && (((unsigned int *)a0)[0] & 4) != 0
+    && !ParasiteClass::CanInfect(*((ParasiteClass **)a0 + 423), (((unsigned int *)v25)[0] & 4) != 0 ? v25 : 0) )
   {
     return 5; /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (v25->? & 4) != 0 && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) < v25->unknown698 ) /*0x6fcae9*/
+  if ( v32 && (((unsigned int *)v25)[0] & 4) != 0 && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) < v25->unknown698 ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
@@ -402,7 +402,7 @@ LABEL_164:
     return 5; /*0x6fcbca*/
   if ( *((unsigned char *)v8 + 973) ) /*0x6fcbcd*/
     return 5; /*0x6fcbe3*/
-  if ( a0->? == *((unsigned char *)v8 + 140) ) /*0x6fcbf4*/
+  if ( ((unsigned int *)a0)[0] == *((unsigned char *)v8 + 140) ) /*0x6fcbf4*/
     goto LABEL_231; /*0x6fcbf4*/
   if ( (*((int (**)(TechnoClass *))a0->RadioClass + 111))(a0) /*0x6fcc4c*/
     && (*(unsigned int *)((*((int (**)(TechnoClass *))a0->RadioClass + 111))(a0) + 320) & 0x100) != 0
@@ -413,11 +413,11 @@ LABEL_164:
     return 5; /*0x6fcc5a*/
   }
   v34 = (int *)(v8 + 39); /*0x6fcc63*/
-  v39 = a0->?[0]; /*0x6fcc6b*/
-  v35 = a0->?[1]; /*0x6fcc72*/
+  v39 = ((unsigned int *)a0)[0]; /*0x6fcc6b*/
+  v35 = ((unsigned int *)a0)[1]; /*0x6fcc72*/
   v39 = *v34; /*0x6fcc75*/
   v40 = v35; /*0x6fcc79*/
-  v36 = a0->?[2]; /*0x6fcc80*/
+  v36 = ((unsigned int *)a0)[2]; /*0x6fcc80*/
   v40 = v34[1]; /*0x6fcc83*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345) ) /*0x6fcc90*/
   {
@@ -466,9 +466,9 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
       aP0->AbstractClass = &vt_TriggerTypeClass; /*0x727c14*/
-      aP0->? = &vt_TriggerTypeClass; /*0x727c1a*/
-      aP0->? = &vt_TriggerTypeClass; /*0x727c21*/
-      aP0->? = &vt_TriggerTypeClass; /*0x727c28*/
+      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c1a*/
+      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c21*/
+      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c28*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->NextTrigger); /*0x727c3b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->FirstEvent); /*0x727c4c*/

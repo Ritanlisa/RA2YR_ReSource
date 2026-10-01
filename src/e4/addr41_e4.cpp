@@ -769,7 +769,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
       v9 = TypeClass::FindByName(v8); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
-        v10 = (IUnknown *)*((unsigned int *)stru_A80220.? + v7); /*0x41b1b9*/
+        v10 = (IUnknown *)*((unsigned int *)((char *)&stru_A80220) + v7); /*0x41b1b9*/
         v11 = RA2_OPNEW(0x6D8u); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
         {
@@ -1079,7 +1079,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (int16_t *)(this->? + this->?); /*0x410de9*/
+  v9 = (int16_t *)(((unsigned int *)this)[0] + ((unsigned int *)this)[0]); /*0x410de9*/
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
@@ -1095,8 +1095,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= this->? ) /*0x410e20*/
-            v9 = (int16_t *)((char *)v9 - (unsigned int)this->?); /*0x410e22*/
+          if ( (unsigned int)v9 >= ((unsigned int *)this)[0] ) /*0x410e20*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)((unsigned int *)this)[0]); /*0x410e22*/
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/

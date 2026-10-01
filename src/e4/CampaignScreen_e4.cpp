@@ -189,34 +189,34 @@ void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
       v22 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471067*/
       v55 = 24 * v53; /*0x471071*/
       v23 = (uint8_t)v56 | (*(uint16_t *)((char *)&v56 + 1) << 8); /*0x471081*/
-      nIDDlgItem = stru_81AF8C.?[6 * v53 + 7]; /*0x471085*/
+      nIDDlgItem = ((unsigned int *)&stru_81AF8C)[6 * v53 + 7]; /*0x471085*/
       lParam = v22; /*0x471089*/
       v24 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47108d*/
       SendMessageA(v24, 0x4B2u, 0, lParam); /*0x47109c*/
       v25 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710a4*/
       SendMessageA(v25, 0x498u, 0, v23); /*0x4710af*/
       v26 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x4710bf*/
-      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 8]; /*0x4710c6*/
+      nIDDlgItem = ((unsigned int *)&stru_81AF8C)[v55 / 4 + 8]; /*0x4710c6*/
       swprintf(v59, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v26 + 64)); /*0x4710d8*/
       v27 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710e6*/
       SendMessageA(v27, 0x4B2u, 0, (LPARAM)v59); /*0x4710f5*/
       v28 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710fd*/
       SendMessageA(v28, 0x498u, 0, v23); /*0x471108*/
-      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 9]; /*0x471118*/
+      nIDDlgItem = ((unsigned int *)&stru_81AF8C)[v55 / 4 + 9]; /*0x471118*/
       swprintf(v61, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(((unsigned int *)(dword_89DFE0))[v53] + 48)); /*0x471134*/
       v29 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471142*/
       SendMessageA(v29, 0x4B2u, 0, (LPARAM)v61); /*0x471154*/
       v30 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47115c*/
       SendMessageA(v30, 0x498u, 0, v23); /*0x471167*/
       v31 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471177*/
-      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 10]; /*0x47117e*/
+      nIDDlgItem = ((unsigned int *)&stru_81AF8C)[v55 / 4 + 10]; /*0x47117e*/
       swprintf(v60, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v31 + 80)); /*0x471193*/
       v32 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711a1*/
       SendMessageA(v32, 0x4B2u, 0, (LPARAM)v60); /*0x4711b3*/
       v33 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711bb*/
       SendMessageA(v33, 0x498u, 0, v23); /*0x4711c6*/
       v34 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x4711d6*/
-      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 11]; /*0x4711dd*/
+      nIDDlgItem = ((unsigned int *)&stru_81AF8C)[v55 / 4 + 11]; /*0x4711dd*/
       swprintf(v62, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v34 + 96)); /*0x4711f2*/
       v35 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471200*/
       SendMessageA(v35, 0x4B2u, 0, (LPARAM)v62); /*0x471212*/

@@ -890,30 +890,30 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     v3 = 0; /*0x7b9587*/
     v4 = 0; /*0x7b9589*/
     v5 = 0; /*0x7b958b*/
-    if ( this->? ) /*0x7b957f*/
+    if ( ((unsigned int *)this)[0] ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
         this->Debug::Log(); /*0x7b95b9*/
-      FoundationSize = Building::GetFoundationSize(v21, (unsigned int)this->?); /*0x7b95cd*/
+      FoundationSize = Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0]); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
-      abstractFlags = this->?; /*0x7b95d4*/
+      abstractFlags = ((unsigned int *)this)[0]; /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
       v4 = FoundationSize[2]; /*0x7b95da*/
       v10 = FoundationSize[3]; /*0x7b95dd*/
-      nextArrayIndex = this->?; /*0x7b95e0*/
+      nextArrayIndex = ((unsigned int *)this)[0]; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
-      v2 = abstractFlags - this-((unsigned int *)(>ambientSoundController))[0] + v7; /*0x7b95f2*/
-      v3 = nextArrayIndex - this-((unsigned int *)(>ambientSoundController))[1] + v9; /*0x7b95fa*/
+      v2 = abstractFlags - this->ambientSoundController[0] + v7; /*0x7b95f2*/
+      v3 = nextArrayIndex - this->ambientSoundController[1] + v9; /*0x7b95fa*/
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
     v12 = (gamemd::ObjectClass *)(v2 + this->fallRate);
-    this-((unsigned int *)(>ambientSoundController))[3] = v2; /*0x7b9610*/
+    this->ambientSoundController[3] = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
     nextObject = this->nextObject; /*0x7b961a*/
-    this-((unsigned int *)(>ambientSoundController))[4] = v3; /*0x7b961d*/
+    this->ambientSoundController[4] = v3; /*0x7b961d*/
     v14 = (char *)nextObject + v3; /*0x7b9620*/
-    v15 = this-((unsigned int *)(>ambientSoundController))[2]; /*0x7b9622*/
+    v15 = this->ambientSoundController[2]; /*0x7b9622*/
     v18[2] = v4; /*0x7b9625*/
     this->customSound_controller[0] = v4; /*0x7b9629*/
     v18[3] = v5; /*0x7b962c*/
@@ -1378,12 +1378,12 @@ AbstractClass * * ObjectClass::sub_7BC580( ObjectClass * aP1, double a3)
   int v3; // edx
   void *vtable1; // [esp+8h] [ebp-4h]
 
-  if ( (double)((unsigned int)this->AbstractClass + (unsigned int)this->?) > aP1 ) /*0x7bc5a3*/
+  if ( (double)((unsigned int)this->AbstractClass + (unsigned int)((unsigned int *)this)[0]) > aP1 ) /*0x7bc5a3*/
     v3 = (double)(int)this->AbstractClass > aP1; /*0x7bc5bb*/
   else
     v3 = 2; /*0x7bc5a5*/
-  vtable1 = this->?; /*0x7bc5c8*/
-  if ( (double)(int)((int)vtable1 + (unsigned int)this->?) <= a3 ) /*0x7bc5dd*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x7bc5c8*/
+  if ( (double)(int)((int)vtable1 + (unsigned int)((unsigned int *)this)[0]) <= a3 ) /*0x7bc5dd*/
     return v3 | 4; /*0x7bc5e2*/
   if ( (double)(int)vtable1 > a3 ) /*0x7bc5f7*/
     return v3 | 8; /*0x7bc5f9*/
@@ -3500,7 +3500,7 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
   int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x7bca72*/
-  v9 = (int16_t *)(this->? + this->?); /*0x7bca79*/
+  v9 = (int16_t *)(((unsigned int *)this)[0] + ((unsigned int *)this)[0]); /*0x7bca79*/
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x7bca7b*/
   v11 = a5; /*0x7bca81*/
   v12 = v10 / 2 - a5; /*0x7bca87*/
@@ -3516,8 +3516,8 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x7bca9f*/
           *v8++ = v14; /*0x7bcaa5*/
-          if ( (unsigned int)v9 >= this->? ) /*0x7bcab0*/
-            v9 = (int16_t *)((char *)v9 - (unsigned int)this->?); /*0x7bcab2*/
+          if ( (unsigned int)v9 >= ((unsigned int *)this)[0] ) /*0x7bcab0*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)((unsigned int *)this)[0]); /*0x7bcab2*/
           --v13; /*0x7bcab5*/
         }
         while ( v13 ); /*0x7bcab6*/

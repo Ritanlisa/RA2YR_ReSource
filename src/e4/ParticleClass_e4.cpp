@@ -69,17 +69,17 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
       if ( *((unsigned int *)((char *)&stru_A8EB00 + 391)) /*0x62cf58*/
         || !g_hWnd
         || ((int)dword_A8B230->vtable0 & 0x1000) == 0
-        || (v29 = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[116],
-            v30 = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[120],
-            v31 = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[124],
+        || (v29 = *(unsigned int *)&this->__pad_28[116],
+            v30 = *(unsigned int *)&this->__pad_28[120],
+            v31 = *(unsigned int *)&this->__pad_28[124],
             !(uint8_t)Game::Stub3((int)&v29)) )
       {
         v5 = *((unsigned int *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v28[0] = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[116]; /*0x62d036*/
-          v28[1] = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[120]; /*0x62d048*/
-          v28[2] = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[124]; /*0x62d054*/
+          v28[0] = *(unsigned int *)&this->__pad_28[116]; /*0x62d036*/
+          v28[1] = *(unsigned int *)&this->__pad_28[120]; /*0x62d048*/
+          v28[2] = *(unsigned int *)&this->__pad_28[124]; /*0x62d054*/
           Coord::To_Screen((Coord *)g_TacticalClass_Instance, v28, &v29); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
@@ -96,7 +96,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
               {
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/
                 v28[0] = v29; /*0x62d0d9*/
-                v16 = ZCoordToScreenY(*(unsigned int *)&this-((unsigned int *)(>__pad_28))[124]); /*0x62d0e8*/
+                v16 = ZCoordToScreenY(*(unsigned int *)&this->__pad_28[124]); /*0x62d0e8*/
                 v17 = (uint16_t)(LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
                                        + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
                                        - v30)
@@ -148,7 +148,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v10 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 488))(this); /*0x62cfb5*/
             if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
-              v11 = this-((unsigned int *)(>__pad_128))[7]; /*0x62cfc4*/
+              v11 = this->__pad_128[7]; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/

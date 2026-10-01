@@ -258,7 +258,7 @@ int COMObject::DeactivateGlobal() {
 // 0x4E19F0
 namespace gamemd { 
 bool COMObject::IsPrimaryInstance() {
-  return this == (GadgetClass *)FootClass_Array.?[2]; /*0x4e19fd*/
+  return this == (GadgetClass *)((unsigned int *)&FootClass_Array)[2]; /*0x4e19fd*/
 }
 }
 // 0x4E2AF0

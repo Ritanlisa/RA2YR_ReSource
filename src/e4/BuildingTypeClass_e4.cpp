@@ -401,15 +401,15 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
 
   TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
   this->Buildup[0] = 0; /*0x45e52f*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[116] = 0; /*0x45e535*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[120] = 0; /*0x45e53b*/
-  this-((unsigned int *)(>__pad_1714))[124] = 1; /*0x45e541*/
-  this-((unsigned int *)(>__pad_1714))[125] = 0; /*0x45e548*/
+  *(unsigned int *)&this->__pad_1714[116] = 0; /*0x45e535*/
+  *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
+  this->__pad_1714[124] = 1; /*0x45e541*/
+  this->__pad_1714[125] = 0; /*0x45e548*/
   *(unsigned int *)&this->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e54e*/
   this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
-  this->? = &vt_BuildingTypeClass; /*0x45e55e*/
-  this->? = &vt_BuildingTypeClass; /*0x45e565*/
-  this->? = &vt_BuildingTypeClass; /*0x45e56c*/
+  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e55e*/
+  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e565*/
+  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e56c*/
   return &this->TechnoTypeClass; /*0x45e575*/
 
 }
@@ -426,9 +426,9 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
   a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
-  a1->? = &vt_BuildingTypeClass; /*0x45e595*/
-  a1->? = &vt_BuildingTypeClass; /*0x45e59c*/
-  a1->? = &vt_BuildingTypeClass; /*0x45e5a3*/
+  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e595*/
+  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e59c*/
+  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e5a3*/
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
@@ -991,10 +991,10 @@ void BuildingTypeClass::LoadVoxel()
       CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/
       if ( (uint8_t)CCFileClass::Open(&v25, 0) ) /*0x45fb48*/
       {
-        v3 = (void *)this->?[0]; /*0x45fb55*/
+        v3 = (void *)((unsigned int *)this)[0]; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
         {
-          WaveClass::Destroy((WaveClass *)this->?[0]); /*0x45fb61*/
+          WaveClass::Destroy((WaveClass *)((unsigned int *)this)[0]); /*0x45fb61*/
           __3_YAXPAX_Z(v3); /*0x45fb67*/
         }
         v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fb71*/
@@ -1002,13 +1002,13 @@ void BuildingTypeClass::LoadVoxel()
           FileVXL = File::LoadFileVXL(v4, (int)&v25, 0); /*0x45fb85*/
         else
           FileVXL = 0; /*0x45fb8c*/
-        this->?[0] = (int)FileVXL; /*0x45fb8e*/
+        ((unsigned int *)this)[0] = (int)FileVXL; /*0x45fb8e*/
         _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fbab*/
         CCFileClass::Construct(&v22, Buffer); /*0x45fbbf*/
-        v6 = (void *)this->?[0]; /*0x45fbc4*/
+        v6 = (void *)((unsigned int *)this)[0]; /*0x45fbc4*/
         if ( v6 ) /*0x45fbcc*/
         {
-          String::Release((String *)this->?[0]); /*0x45fbd0*/
+          String::Release((String *)((unsigned int *)this)[0]); /*0x45fbd0*/
           __3_YAXPAX_Z(v6); /*0x45fbd6*/
         }
         v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fbe0*/
@@ -1016,11 +1016,11 @@ void BuildingTypeClass::LoadVoxel()
           FileHVA = File::LoadFileHVA(v7, (int)&v22); /*0x45fbf3*/
         else
           FileHVA = 0; /*0x45fbfa*/
-        this->?[0] = (int)FileHVA; /*0x45fbfe*/
+        ((unsigned int *)this)[0] = (int)FileHVA; /*0x45fbfe*/
         if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x45fc06*/
         {
-          Info = VoxelSection::GetInfo((VoxelSection *)this->?[0], 0, 0); /*0x45fc12*/
-          Matrix::Scale((Matrix *)this->?[0], *(float *)(Info + 12)); /*0x45fc21*/
+          Info = VoxelSection::GetInfo((VoxelSection *)((unsigned int *)this)[0], 0, 0); /*0x45fc12*/
+          Matrix::Scale((Matrix *)((unsigned int *)this)[0], *(float *)(Info + 12)); /*0x45fc21*/
         }
         *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
@@ -1054,10 +1054,10 @@ void BuildingTypeClass::LoadVoxel()
     CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
     if ( (uint8_t)CCFileClass::Open(&v28, 0) ) /*0x45fd0e*/
     {
-      v13 = (void *)this->?[1]; /*0x45fd1b*/
+      v13 = (void *)((unsigned int *)this)[1]; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
-        WaveClass::Destroy((WaveClass *)this->?[1]); /*0x45fd27*/
+        WaveClass::Destroy((WaveClass *)((unsigned int *)this)[1]); /*0x45fd27*/
         __3_YAXPAX_Z(v13); /*0x45fd2d*/
       }
       v14 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fd37*/
@@ -1065,13 +1065,13 @@ void BuildingTypeClass::LoadVoxel()
         v15 = File::LoadFileVXL(v14, (int)&v28, 0); /*0x45fd4e*/
       else
         v15 = 0; /*0x45fd55*/
-      this->?[1] = (int)v15; /*0x45fd63*/
+      ((unsigned int *)this)[1] = (int)v15; /*0x45fd63*/
       _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
       CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
-      v16 = (void *)this->?[2]; /*0x45fd8d*/
+      v16 = (void *)((unsigned int *)this)[2]; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
-        String::Release((String *)this->?[2]); /*0x45fd99*/
+        String::Release((String *)((unsigned int *)this)[2]); /*0x45fd99*/
         __3_YAXPAX_Z(v16); /*0x45fd9f*/
       }
       v17 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fda9*/
@@ -1079,13 +1079,13 @@ void BuildingTypeClass::LoadVoxel()
         v18 = File::LoadFileHVA(v17, (int)&v22); /*0x45fdbc*/
       else
         v18 = 0; /*0x45fdc3*/
-      this->?[2] = (int)v18; /*0x45fdc7*/
+      ((unsigned int *)this)[2] = (int)v18; /*0x45fdc7*/
       if ( v18 ) /*0x45fdcd*/
       {
         if ( !*(unsigned char *)v18 ) /*0x45fdcf*/
         {
-          v19 = VoxelSection::GetInfo((VoxelSection *)this->?[1], 0, 0); /*0x45fddb*/
-          Matrix::Scale((Matrix *)this->?[2], *(float *)(v19 + 12)); /*0x45fdea*/
+          v19 = VoxelSection::GetInfo((VoxelSection *)((unsigned int *)this)[1], 0, 0); /*0x45fddb*/
+          Matrix::Scale((Matrix *)((unsigned int *)this)[2], *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
       *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
@@ -1516,7 +1516,7 @@ int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
   v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5216); /*0x50b78f*/
   v12 = 2 * v11 + BuildingTypeClass::GetFoundationWidth((BuildingTypeClass *)a2); /*0x50b7a3*/
   v6 = 2 * v11 + BuildingTypeClass::GetFoundationHeight(v5, 0); /*0x50b7b1*/
-  v7 = 1 << this->?; /*0x50b7b8*/
+  v7 = 1 << ((unsigned int *)this)[0]; /*0x50b7b8*/
   v8 = a3; /*0x50b7ba*/
   v9 = *a3 - v11 - 1; /*0x50b7cd*/
   if ( v9 < *a3 + v12 + 1 ) /*0x50b7d0*/
@@ -1619,7 +1619,7 @@ LABEL_15:
                                + g_MissionQueueFrame.localVariables[163]
                                + 56)
                    : -1;
-            if ( (void *)result != this->? && result != v12 ) /*0x59413b*/
+            if ( (void *)result != ((unsigned int *)this)[0] && result != v12 ) /*0x59413b*/
               break; /*0x59413b*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x594147*/
             result = Cell::IsEmpty(v14); /*0x59414e*/
@@ -1704,47 +1704,47 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   int v4; // eax
 
   ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x644beb*/
-  this->? = 0; /*0x644bf8*/
-  this->? = 0; /*0x644bfe*/
-  *(unsigned int *)this->? = 0; /*0x644c04*/
-  *(unsigned int *)&this->?[2] = 0; /*0x644c10*/
-  *(unsigned int *)&this->?[4] = 1; /*0x644c19*/
-  *(unsigned int *)&this->?[8] = 1; /*0x644c1f*/
-  *(unsigned int *)&this->?[12] = 0; /*0x644c25*/
-  *(unsigned int *)&this->?[16] = 1; /*0x644c2b*/
-  *(unsigned int *)&this->?[6] = 0; /*0x644c31*/
-  BuildingTypeClass::loadBuildingProperty_b_5478850((BuildingTypeClass *)&this->?[10], 0, 0); /*0x644c37*/
-  this->?[1] = 10; /*0x644c3c*/
-  this->?[0] = 0; /*0x644c43*/
-  *(unsigned int *)&this->?[10] = &vt_TypeList; /*0x644c46*/
-  this->?[1] = 0; /*0x644c4c*/
-  LOBYTE(this->?[0]) = 0; /*0x644c66*/
-  BYTE1(this->?[0]) = 0; /*0x644c6c*/
-  BYTE1(this->?[1]) = -1; /*0x644c72*/
-  BYTE2(this->?[1]) = -1; /*0x644c78*/
-  this->?[1] = 0; /*0x644c81*/
-  this->?[0] = 1; /*0x644c87*/
-  this->?[1] = 0; /*0x644c8d*/
-  this->?[0] = 0; /*0x644c93*/
-  this->?[1] = 0; /*0x644c99*/
-  this->?[0] = 1; /*0x644c9f*/
-  this->?[1] = 0; /*0x644ca5*/
-  this->? = 0; /*0x644cab*/
-  this->?[0] = 0; /*0x644cb1*/
-  this->?[0] = 0; /*0x644cb7*/
-  this->?[1] = 0; /*0x644cbd*/
-  LOBYTE(this->?[0]) = 0; /*0x644cc3*/
-  BYTE1(this->?[0]) = 0; /*0x644cc9*/
-  BYTE2(this->?[0]) = 0; /*0x644ccf*/
-  HIBYTE(this->?[0]) = 4; /*0x644cd5*/
-  LOBYTE(this->?[1]) = 0; /*0x644cdc*/
-  HIBYTE(this->?[1]) = 0; /*0x644ce2*/
-  this->? = -1; /*0x644ce8*/
-  this->?[0] = -1; /*0x644cee*/
+  ((unsigned int *)this)[0] = 0; /*0x644bf8*/
+  ((unsigned int *)this)[0] = 0; /*0x644bfe*/
+  *(unsigned int *)((unsigned int *)this)[0] = 0; /*0x644c04*/
+  *(unsigned int *)&((unsigned int *)this)[2] = 0; /*0x644c10*/
+  *(unsigned int *)&((unsigned int *)this)[4] = 1; /*0x644c19*/
+  *(unsigned int *)&((unsigned int *)this)[8] = 1; /*0x644c1f*/
+  *(unsigned int *)&((unsigned int *)this)[12] = 0; /*0x644c25*/
+  *(unsigned int *)&((unsigned int *)this)[16] = 1; /*0x644c2b*/
+  *(unsigned int *)&((unsigned int *)this)[6] = 0; /*0x644c31*/
+  BuildingTypeClass::loadBuildingProperty_b_5478850((BuildingTypeClass *)&((unsigned int *)this)[10], 0, 0); /*0x644c37*/
+  ((unsigned int *)this)[1] = 10; /*0x644c3c*/
+  ((unsigned int *)this)[0] = 0; /*0x644c43*/
+  *(unsigned int *)&((unsigned int *)this)[10] = &vt_TypeList; /*0x644c46*/
+  ((unsigned int *)this)[1] = 0; /*0x644c4c*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x644c66*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x644c6c*/
+  BYTE1(((unsigned int *)this)[1]) = -1; /*0x644c72*/
+  BYTE2(((unsigned int *)this)[1]) = -1; /*0x644c78*/
+  ((unsigned int *)this)[1] = 0; /*0x644c81*/
+  ((unsigned int *)this)[0] = 1; /*0x644c87*/
+  ((unsigned int *)this)[1] = 0; /*0x644c8d*/
+  ((unsigned int *)this)[0] = 0; /*0x644c93*/
+  ((unsigned int *)this)[1] = 0; /*0x644c99*/
+  ((unsigned int *)this)[0] = 1; /*0x644c9f*/
+  ((unsigned int *)this)[1] = 0; /*0x644ca5*/
+  ((unsigned int *)this)[0] = 0; /*0x644cab*/
+  ((unsigned int *)this)[0] = 0; /*0x644cb1*/
+  ((unsigned int *)this)[0] = 0; /*0x644cb7*/
+  ((unsigned int *)this)[1] = 0; /*0x644cbd*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x644cc3*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x644cc9*/
+  BYTE2(((unsigned int *)this)[0]) = 0; /*0x644ccf*/
+  HIBYTE(((unsigned int *)this)[0]) = 4; /*0x644cd5*/
+  LOBYTE(((unsigned int *)this)[1]) = 0; /*0x644cdc*/
+  HIBYTE(((unsigned int *)this)[1]) = 0; /*0x644ce2*/
+  ((unsigned int *)this)[0] = -1; /*0x644ce8*/
+  ((unsigned int *)this)[0] = -1; /*0x644cee*/
   this->TechnoTypeClass = &vt_ParticleTypeClass; /*0x644cf4*/
-  this->? = &vt_ParticleTypeClass; /*0x644cfa*/
-  this->? = &vt_ParticleTypeClass; /*0x644d01*/
-  this->? = &vt_ParticleTypeClass; /*0x644d08*/
+  ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644cfa*/
+  ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644d01*/
+  ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644d08*/
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
     && *(int *)&stru_A83D50.__pad_3C[32] > 0
@@ -1767,7 +1767,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x644da3*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x644db2*/
   }
-  this->? = 0; /*0x644db5*/
+  ((unsigned int *)this)[0] = 0; /*0x644db5*/
   return &this->TechnoTypeClass; /*0x644dbd*/
 
 }
@@ -2056,15 +2056,15 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
     else
       v14 = v13; /*0x717953*/
     a2->TechnoTypeClass = v11; /*0x71795f*/
-    a2->? = v12; /*0x717961*/
-    a2->? = (void *)v14; /*0x717966*/
+    ((unsigned int *)a2)[0] = v12; /*0x717961*/
+    ((unsigned int *)a2)[0] = (void *)v14; /*0x717966*/
     return &a2->TechnoTypeClass; /*0x717959*/
   }
   else
   {
     a2->TechnoTypeClass = *(void **)(v4 + 1968); /*0x71797f*/
-    a2->? = *(void **)(v4 + 1972); /*0x717984*/
-    a2->? = *(void **)(v4 + 1976); /*0x71798b*/
+    ((unsigned int *)a2)[0] = *(void **)(v4 + 1972); /*0x717984*/
+    ((unsigned int *)a2)[0] = *(void **)(v4 + 1976); /*0x71798b*/
     return &a2->TechnoTypeClass; /*0x717971*/
   }
 
@@ -2172,18 +2172,18 @@ size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
   int vtable1; // ecx
   int v7; // esi
 
-  result = (int)this->?; /*0x41c593*/
+  result = (int)((unsigned int *)this)[0]; /*0x41c593*/
   if ( result ) /*0x41c598*/
   {
-    if ( !LOBYTE(this->?) ) /*0x41c59e*/
+    if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x41c59e*/
     {
       qsort(this->TechnoTypeClass, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction); /*0x41c5b0*/
-      this->? = 0; /*0x41c5b8*/
-      LOBYTE(this->?) = 1; /*0x41c5bf*/
+      ((unsigned int *)this)[0] = 0; /*0x41c5b8*/
+      LOBYTE(((unsigned int *)this)[0]) = 1; /*0x41c5bf*/
     }
     vtable0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
     v5 = *aP1; /*0x41c5cb*/
-    vtable1 = (int)this->?; /*0x41c5cd*/
+    vtable1 = (int)((unsigned int *)this)[0]; /*0x41c5cd*/
     if ( vtable1 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
@@ -2239,7 +2239,7 @@ int BuildingTypeClass::GetMaxPips()
   int Storage; // ecx
 
   result = 60 * stru_81926C.Type[this->Foundation[0]] / 8; /*0x45ed02*/
-  if ( this->?[0] == 2 ) /*0x45ed08*/
+  if ( ((unsigned int *)this)[0] == 2 ) /*0x45ed08*/
   {
     if ( this->Weeder ) /*0x45ed14*/
     {
@@ -2256,7 +2256,7 @@ int BuildingTypeClass::GetMaxPips()
     }
     else
     {
-      Storage = this->?; /*0x45ed38*/
+      Storage = ((unsigned int *)this)[0]; /*0x45ed38*/
       if ( Storage >= 0 ) /*0x45ed40*/
       {
         if ( Storage <= result ) /*0x45ed47*/
@@ -2268,7 +2268,7 @@ int BuildingTypeClass::GetMaxPips()
       }
     }
   }
-  else if ( this->?[0] != 4 ) /*0x45ed0d*/
+  else if ( ((unsigned int *)this)[0] != 4 ) /*0x45ed0d*/
   {
     return ObjectClass::GetModeSpecificValue((TechnoTypeClass *)this); /*0x45ed0f*/
   }
@@ -2317,7 +2317,7 @@ int BuildingTypeClass::SaveLoad_Prefix_0()
   if ( result >= 0 ) /*0x46531a*/
   {
     v2 = *v8; /*0x465322*/
-    v9 = *(int **)&v7[1].?[1424]; /*0x46532e*/
+    v9 = *(int **)&((unsigned int *)&v7[1])[1424]; /*0x46532e*/
     result = (*(int (**)(unsigned int *, int **, int, unsigned int))(v2 + 16))(v8, &v9, 4, 0); /*0x465332*/
     if ( result >= 0 ) /*0x465337*/
     {
@@ -2332,7 +2332,7 @@ int BuildingTypeClass::SaveLoad_Prefix_0()
         {
           result = (*(int (**)(unsigned int *, int, int, unsigned int))(*v8 + 16))( /*0x465355*/
                      v8,
-                     i + *(unsigned int *)&v7[1].?[1420],
+                     i + *(unsigned int *)&((unsigned int *)&v7[1])[1420],
                      12,
                      0);
           if ( result < 0 ) /*0x46535a*/
@@ -2452,10 +2452,10 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   int v10; // edx
 
   v4 = 0; /*0x478859*/
-  this->? = 0; /*0x47885d*/
-  this->? = (void *)a2; /*0x478860*/
-  LOBYTE(this->?) = 1; /*0x478863*/
-  BYTE1(this->?) = 0; /*0x478867*/
+  ((unsigned int *)this)[0] = 0; /*0x47885d*/
+  ((unsigned int *)this)[0] = (void *)a2; /*0x478860*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x478863*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x478867*/
   this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return &this->TechnoTypeClass; /*0x4788d0*/
@@ -2480,8 +2480,8 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
       }
       v4 = (void *)v8; /*0x4788c7*/
     }
-    this->? = v4; /*0x4788c9*/
-    BYTE1(this->?) = 1; /*0x4788cc*/
+    ((unsigned int *)this)[0] = v4; /*0x4788c9*/
+    BYTE1(((unsigned int *)this)[0]) = 1; /*0x4788cc*/
     return &this->TechnoTypeClass; /*0x4788cc*/
   }
   if ( a2 - 1 >= 0 ) /*0x47887f*/
@@ -2498,7 +2498,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     }
     while ( v6 ); /*0x478891*/
   }
-  this->? = (void *)a3; /*0x478893*/
+  ((unsigned int *)this)[0] = (void *)a3; /*0x478893*/
   return &this->TechnoTypeClass; /*0x478898*/
 
 }
@@ -2516,7 +2516,7 @@ int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
     result = 127; /*0x4c9689*/
   LOBYTE(v3) = 0; /*0x4c968e*/
   HIBYTE(v3) = result; /*0x4c9690*/
-  LOWORD(this->?) = v3; /*0x4c9692*/
+  LOWORD(((unsigned int *)this)[0]) = v3; /*0x4c9692*/
   return result; /*0x4c9696*/
 
 }

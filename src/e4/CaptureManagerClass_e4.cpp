@@ -834,9 +834,9 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)&v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
       v3->AbstractClass = &vt_CaptureManagerClass; /*0x47276c*/
-      v3->? = &vt_CaptureManagerClass; /*0x472773*/
-      v3->? = &vt_CaptureManagerClass; /*0x47277a*/
-      v3->? = &vt_CaptureManagerClass; /*0x472781*/
+      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472773*/
+      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x47277a*/
+      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/
@@ -1072,9 +1072,9 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   CaptureManagerClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_CaptureManagerClass; /*0x4729cd*/
-  Block->? = &vt_CaptureManagerClass; /*0x4729d3*/
-  Block->? = &vt_CaptureManagerClass; /*0x4729da*/
-  Block->? = &vt_CaptureManagerClass; /*0x4729e1*/
+  ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729d3*/
+  ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729da*/
+  ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729e1*/
   v6 = Block; /*0x4729ef*/
   v3 = (*(int (**)(int *, CaptureManagerClass **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
@@ -1352,20 +1352,20 @@ namespace gamemd {
 unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
 
-  this->? = 0; /*0x47314b*/
-  this->? = (void *)a2; /*0x47314e*/
-  LOBYTE(this->?) = 1; /*0x473151*/
-  BYTE1(this->?) = 0; /*0x473155*/
+  ((unsigned int *)this)[0] = 0; /*0x47314b*/
+  ((unsigned int *)this)[0] = (void *)a2; /*0x47314e*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x473151*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x473155*/
   this->AbstractClass = &vt_VectorClass; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/
     {
-      this->? = (void *)a3; /*0x473168*/
+      ((unsigned int *)this)[0] = (void *)a3; /*0x473168*/
       return &this->AbstractClass; /*0x47316e*/
     }
-    this->? = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
-    BYTE1(this->?) = 1; /*0x473180*/
+    ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    BYTE1(((unsigned int *)this)[0]) = 1; /*0x473180*/
   }
   return &this->AbstractClass; /*0x47316d*/
 

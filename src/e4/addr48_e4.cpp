@@ -68,10 +68,10 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   if ( !Control::DispatchClick((ControlClass *)this, a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
-  uniqueId = this->?; /*0x488116*/
-  abstractFlags = this->?; /*0x488119*/
-  vtable3 = this->?; /*0x48811c*/
-  nextArrayIndex = this->?; /*0x488120*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x488119*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x48811c*/
+  nextArrayIndex = ((unsigned int *)this)[0]; /*0x488120*/
   v16 = uniqueId; /*0x488123*/
   v17 = abstractFlags; /*0x488127*/
   v18 = nextArrayIndex; /*0x488133*/
@@ -80,11 +80,11 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
     v6 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 13); /*0x48814f*/
   else
     v6 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 26); /*0x48815c*/
-  v7 = this->? + 1; /*0x488167*/
-  vtable3 = (char *)this->? + 1; /*0x488168*/
-  v8 = this->?; /*0x48816c*/
+  v7 = ((unsigned int *)this)[0] + 1; /*0x488167*/
+  vtable3 = (char *)((unsigned int *)this)[0] + 1; /*0x488168*/
+  v8 = ((unsigned int *)this)[0]; /*0x48816c*/
   v16 = v7; /*0x48816f*/
-  v9 = this->? - 1; /*0x488177*/
+  v9 = ((unsigned int *)this)[0] - 1; /*0x488177*/
   v17 = v8 - 1; /*0x488178*/
   v18 = v9; /*0x488183*/
   (*(void (**)(AudioStream *, void **, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x48818e*/
@@ -97,11 +97,11 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
       v10 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 4); /*0x4881ab*/
     else
       v10 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 8); /*0x4881b8*/
-    v11 = this->? + 1; /*0x4881c3*/
-    vtable3 = (char *)this->? + 1; /*0x4881c4*/
-    v12 = this->?; /*0x4881c8*/
+    v11 = ((unsigned int *)this)[0] + 1; /*0x4881c3*/
+    vtable3 = (char *)((unsigned int *)this)[0] + 1; /*0x4881c4*/
+    v12 = ((unsigned int *)this)[0]; /*0x4881c8*/
     v16 = v11; /*0x4881cb*/
-    v13 = this->? - 1; /*0x4881d3*/
+    v13 = ((unsigned int *)this)[0] - 1; /*0x4881d3*/
     v17 = v12 - 1; /*0x4881d4*/
     v18 = v13; /*0x4881df*/
     (*(void (**)(AudioStream *, void **, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4881ea*/

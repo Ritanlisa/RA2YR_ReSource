@@ -59,7 +59,7 @@ namespace gamemd {
 int E4Recv_540C50::sub_540C50()
 {
 
-  return LOBYTE(this->?); /*0x540c55*/
+  return LOBYTE(((unsigned int *)this)[0]); /*0x540c55*/
 
 }
 }
@@ -91,18 +91,18 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (unsigned int *)(((unsigned int *)(dword_A8DA78))[v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->?; /*0x5411c9*/
+  vtable1 = (char)((unsigned int *)this)[0]; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->?) ) /*0x5411e8*/
+  if ( !vtable1 || !BYTE1(((unsigned int *)this)[0]) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || ((Network *)((Network *)v15))->IsBroadcastAddr()) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
-  v13 = (*(int (**)(int, int, int, unsigned int *, int, int, unsigned int))(*(unsigned int *)this-((unsigned int *)(>ambientSoundController))[3] /*0x541225*/
+  v13 = (*(int (**)(int, int, int, unsigned int *, int, int, unsigned int))(*(unsigned int *)this->ambientSoundController[3] /*0x541225*/
                                                                          + 44))(
-          this-((unsigned int *)(>ambientSoundController))[3],
+          this->ambientSoundController[3],
           a2,
           a3,
           v15,
@@ -111,7 +111,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
           0);
   if ( !v13 ) /*0x541229*/
   {
-    ++this-((unsigned int *)(>location))[1]; /*0x541232*/
+    ++this->location[1]; /*0x541232*/
     this->Debug::Log(); /*0x541240*/
   }
   return v13; /*0x5411af*/
@@ -136,7 +136,7 @@ int E4Recv_542F30::sub_542F30()
   result = 0; /*0x542f3b*/
   v3 = 0; /*0x542f3d*/
   v8 = 0; /*0x542f45*/
-  if ( this-((unsigned int *)(>ambientSoundController))[2] > 0 ) /*0x542f49*/
+  if ( this->ambientSoundController[2] > 0 ) /*0x542f49*/
   {
     for ( i = &this->owningHouseIndex; ; ++i ) /*0x542f4d*/
     {
@@ -167,7 +167,7 @@ LABEL_9:
         }
       }
 LABEL_12:
-      if ( ++v3 >= this-((unsigned int *)(>ambientSoundController))[2] ) /*0x542fa3*/
+      if ( ++v3 >= this->ambientSoundController[2] ) /*0x542fa3*/
         return v8; /*0x542fa5*/
     }
     TileIndex = 0; /*0x542f77*/
@@ -3198,17 +3198,17 @@ unsigned int * E4Recv_54E360::sub_54E360()
   void *v2; // [esp+8h] [ebp-8h]
 
   this->AbstractClass = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e370*/
-  this->? = 0; /*0x54e375*/
-  this->? = 0; /*0x54e378*/
-  this->? = 0; /*0x54e37b*/
-  LOBYTE(this->?) = 1; /*0x54e37e*/
-  BYTE1(this->?) = 0; /*0x54e382*/
-  this->? = &vt_DynamicVectorClass; /*0x54e385*/
-  this->? = (void *)10; /*0x54e38c*/
-  this->? = 0; /*0x54e393*/
+  ((unsigned int *)this)[0] = 0; /*0x54e375*/
+  ((unsigned int *)this)[0] = 0; /*0x54e378*/
+  ((unsigned int *)this)[0] = 0; /*0x54e37b*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x54e37e*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x54e382*/
+  ((unsigned int *)this)[0] = &vt_DynamicVectorClass; /*0x54e385*/
+  ((unsigned int *)this)[0] = (void *)10; /*0x54e38c*/
+  ((unsigned int *)this)[0] = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e39e*/
-  this->? = v2; /*0x54e3a4*/
-  this->? = (void *)100; /*0x54e3a7*/
+  ((unsigned int *)this)[0] = v2; /*0x54e3a4*/
+  ((unsigned int *)this)[0] = (void *)100; /*0x54e3a7*/
   return &this->AbstractClass; /*0x54e3aa*/
 
 }
@@ -3226,12 +3226,12 @@ void E4Recv_54E690::sub_54E690()
   int abstractFlags; // edi
   void *v7; // eax
 
-  for ( i = this->? - 1; i >= 0; --i ) /*0x54e699*/
-    __3_YAXPAX_Z(*(void **)(this->? + 4 * i)); /*0x54e6a2*/
-  vtable3 = (void (**)(void **))this->?; /*0x54e6ad*/
-  p_vtable3 = &this->?; /*0x54e6b0*/
-  v5 = &this->?; /*0x54e6b3*/
-  abstractFlags = this->?; /*0x54e6b5*/
+  for ( i = ((unsigned int *)this)[0] - 1; i >= 0; --i ) /*0x54e699*/
+    __3_YAXPAX_Z(*(void **)(((unsigned int *)this)[0] + 4 * i)); /*0x54e6a2*/
+  vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x54e6ad*/
+  p_vtable3 = &((unsigned int *)this)[0]; /*0x54e6b0*/
+  v5 = &((unsigned int *)this)[0]; /*0x54e6b3*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x54e6b5*/
   vtable3[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/

@@ -122,7 +122,7 @@ AbstractClass * * DSurface::Destroy()
   this->DSurface_field_0x0 = (unsigned int)(&DSurface_Vtable);
   if ( DSurface_field_0x18 ) /*0x4ba6c1*/
   {
-    v3 = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4ba6c3*/
+    v3 = this->DSurface_field_0x1C[0]; /*0x4ba6c3*/
     if ( v3 ) /*0x4ba6c8*/
     {
       if ( g_DDraw_Clipper ) /*0x4ba6d0*/
@@ -134,11 +134,11 @@ AbstractClass * * DSurface::Destroy()
     }
   }
   __3_YAXPAX_Z(this->DSurface_field_0x20); /*0x4ba6ee*/
-  result = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4ba6f3*/
+  result = this->DSurface_field_0x1C[0]; /*0x4ba6f3*/
   this->DSurface_field_0x20 = 0; /*0x4ba6fb*/
   if ( result ) /*0x4ba6fe*/
     result = (*(int (**)(int))(*(unsigned int *)result + 8))(result); /*0x4ba703*/
-  this-((unsigned int *)(>DSurface_field_0x1C))[0] = 0; /*0x4ba706*/
+  this->DSurface_field_0x1C[0] = 0; /*0x4ba706*/
   this->DSurface_field_0x0 = &Surface_Vtable; /*0x4ba709*/
   return result; /*0x4ba70f*/
 
@@ -403,7 +403,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   this->DSurface_field_0x14 = (unsigned int)(0);
   LOBYTE(this->DSurface_field_0x18) = 0; /*0x4bac7a*/
   BYTE1(this->DSurface_field_0x18) = 0; /*0x4bac7d*/
-  this-((unsigned int *)(>DSurface_field_0x1C))[0] = a2; /*0x4bac80*/
+  this->DSurface_field_0x1C[0] = a2; /*0x4bac80*/
   this->DSurface_field_0x20 = 0; /*0x4bac83*/
   this->DSurface_field_0x0 = &DSurface_Vtable; /*0x4bac86*/
   if ( a2 ) /*0x4bac8c*/
@@ -412,8 +412,8 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
     this->DSurface_field_0x20 = (unsigned int)(v3);
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(unsigned int *)this->DSurface_field_0x20 = 108; /*0x4bacaa*/
-    if ( !(*(int (**)(int, void *))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 88))( /*0x4bacba*/
-            this-((unsigned int *)(>DSurface_field_0x1C))[0],
+    if ( !(*(int (**)(int, void *))(*(unsigned int *)this->DSurface_field_0x1C[0] + 88))( /*0x4bacba*/
+            this->DSurface_field_0x1C[0],
             this->DSurface_field_0x20) )
     {
       DSurface_field_0x20 = (void *)((unsigned int)(this->DSurface_field_0x20));
@@ -445,13 +445,13 @@ int DSurface::RestoreIfLost()
   void *DSurface_field_0xC; // edi
   void *DSurface_field_0x0; // edx
 
-  if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb014*/
+  if ( !g_DDraw_Initialized && !((unsigned int *)&stru_A8EB00)[412] ) /*0x4bb014*/
     return 0; /*0x4bb014*/
-  v3 = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4bb01b*/
-  if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 96))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) == -2005532222 ) /*0x4bb02d*/
+  v3 = this->DSurface_field_0x1C[0]; /*0x4bb01b*/
+  if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 108))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) /*0x4bb042*/
-      || (*(int (**)(int))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 96))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) )
+    if ( (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb042*/
+      || (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
     {
       return 0; /*0x4bb01a*/
     }
@@ -564,7 +564,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   {
     v42 = 1; /*0x4bb1fa*/
   }
-  if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
+  if ( !g_DDraw_Initialized && !((unsigned int *)&stru_A8EB00)[412] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
   v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
   if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/

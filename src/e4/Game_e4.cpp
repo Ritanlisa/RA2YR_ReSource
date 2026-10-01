@@ -39,7 +39,7 @@ void Game::initScenario()
   int v3; // ebx
   int v4; // edi
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_44))[28] ) /*0x430983*/
+  if ( *(unsigned int *)&this->__pad_44[28] ) /*0x430983*/
   {
     v2 = this; /*0x43098d*/
     v3 = 8; /*0x43098f*/
@@ -60,7 +60,7 @@ void Game::initScenario()
       --v3; /*0x4309b4*/
     }
     while ( v3 ); /*0x4309b5*/
-    *(unsigned int *)&this-((unsigned int *)(>__pad_44))[28] = 0; /*0x4309b9*/
+    *(unsigned int *)&this->__pad_44[28] = 0; /*0x4309b9*/
   }
 
 }
@@ -1269,10 +1269,10 @@ LABEL_14:
                 if ( v13 <= 0 )
                 {
 LABEL_27:
-                  for ( j = 0; j < (int)FootClass_Array.?; ++j ) /*0x67fbb2*/
+                  for ( j = 0; j < (int)((char *)&FootClass_Array); ++j ) /*0x67fbb2*/
                     ObjectPtr::RegisterForTracking( /*0x67fbc2*/
                       (int)&SwizzleManagerClass_Instance,
-                      (int *)&FootClass_Array.?->ObjectClass + j);
+                      (int *)&((char *)&FootClass_Array)->ObjectClass + j);
                   result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x67fbdd*/
                              this,
                              &v13,
@@ -1348,7 +1348,7 @@ LABEL_39:
                         if ( result < 0 ) /*0x67fc03*/
                           break; /*0x67fc03*/
                         if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x67fc3f*/
-                          || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !FootClass_Array.?[6])
+                          || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
                           && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
                           && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 8))(
                                &(unsigned int *)((char *)&FootClass_Array + 4),
@@ -1375,16 +1375,16 @@ LABEL_39:
                                0);
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
-                    if ( (int)FootClass_Array.? < (int)FootClass_Array.? /*0x67fb7d*/
-                      || (BYTE1(FootClass_Array.?) || !FootClass_Array.?)
+                    if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x67fb7d*/
+                      || (BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
                       && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
-                      && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
-                           &FootClass_Array.?,
-                           (char *)FootClass_Array.? + *((unsigned int *)((char *)&FootClass_Array + 0)),
+                      && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))((char *)&FootClass_Array))(
+                           &((char *)&FootClass_Array),
+                           (char *)((char *)&FootClass_Array) + *((unsigned int *)((char *)&FootClass_Array + 0)),
                            0) )
                     {
-                      v7 = FootClass_Array.?++; /*0x67fb90*/
-                      *((unsigned int *)&FootClass_Array.?->ObjectClass + (unsigned int)v7) = v14; /*0x67fb9d*/
+                      v7 = ((char *)&FootClass_Array)++; /*0x67fb90*/
+                      *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + (unsigned int)v7) = v14; /*0x67fb9d*/
                     }
                     if ( ++v6 >= v13 ) /*0x67fba7*/
                       goto LABEL_27; /*0x67fba7*/

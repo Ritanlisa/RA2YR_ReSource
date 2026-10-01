@@ -248,12 +248,12 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
   vtable0 = this->RadioClass; /*0x70ece5*/
   if ( this->RadioClass ) /*0x70ece5*/
   {
-    result = (BulletClass *)this->?; /*0x70eceb*/
-    this->? = 1; /*0x70ecf5*/
-    this->? = (int)result; /*0x70ecf8*/
+    result = (BulletClass *)((unsigned int *)this)[0]; /*0x70eceb*/
+    ((unsigned int *)this)[0] = 1; /*0x70ecf5*/
+    ((unsigned int *)this)[0] = (int)result; /*0x70ecf8*/
     if ( (int)result < 1 ) /*0x70ecfb*/
-      this->? = 1; /*0x70ecfd*/
-    *(float *)&this->? = (double)(int)vtable0 / (double)this->?; /*0x70ed07*/
+      ((unsigned int *)this)[0] = 1; /*0x70ecfd*/
+    *(float *)&((unsigned int *)this)[0] = (double)(int)vtable0 / (double)((unsigned int *)this)[0]; /*0x70ed07*/
   }
   return result; /*0x70ed0b*/
 }
@@ -379,7 +379,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
   v5 = *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))target->RadioClass + 254))(target, 0); /*0x6f33b1*/
   if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
     return 0; /*0x6f33d3*/
-  if ( target->? && *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
+  if ( ((unsigned int *)target)[0] && *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
     return *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3408); /*0x6f340d*/
   v6 = (((unsigned int *)(v11))[5] & 1) != 0 ? (unsigned char *)v11 : 0;
   if ( !*(unsigned char *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
@@ -3606,15 +3606,15 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   else
   {
     v5 = g_RulesClass_Instance; /*0x707d4a*/
-    Scatter = g_RulesClass_Instance->?; /*0x707d4f*/
+    Scatter = ((unsigned int *)g_RulesClass_Instance)[0]; /*0x707d4f*/
   }
   if ( *(unsigned int *)(v3->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
-    return v5->?; /*0x707dc5*/
+    return ((unsigned int *)v5)[0]; /*0x707dc5*/
   if ( this->HasActiveParam() /*0x707db2*/
 // 0x65c7e0
     && Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < 15 )
   {
-    return g_RulesClass_Instance->?; /*0x707dc4*/
+    return ((unsigned int *)g_RulesClass_Instance)[0]; /*0x707dc4*/
   }
   return Scatter; /*0x707d37*/
   else
@@ -3801,12 +3801,12 @@ int TechnoClass::FindMatchingUnit() { return -1; }
   return v6; /*0x5f7a68*/
 // 0x659540
 int RadBeam::drawMindControlPips(int a2) {
-  this->?[1] = a2; /*0x659544*/
+  ((unsigned int *)this)[1] = a2; /*0x659544*/
   return a2; /*0x659547*/
 }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
-  IDA_LOBYTE(this->?[2]) = a2; /*0x659554*/
+  IDA_LOBYTE(((unsigned int *)this)[2]) = a2; /*0x659554*/
   return a2; /*0x659557*/
 }
 // 0x633d30
@@ -3848,24 +3848,24 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
     *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
   if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
     *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
-  occupant = (void *)this->?; /*0x633dfb*/
-  this->? = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
-  if ( occupant && IDA_BYTE1(this->?) ) /*0x633e09*/
+  occupant = (void *)((unsigned int *)this)[0]; /*0x633dfb*/
+  ((unsigned int *)this)[0] = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( occupant && IDA_BYTE1(((unsigned int *)this)[0]) ) /*0x633e09*/
   {
     RA2_OPDEL(occupant); /*0x633e0f*/
-    this->? = 0; /*0x633e17*/
+    ((unsigned int *)this)[0] = 0; /*0x633e17*/
   }
-  IDA_BYTE1(this->?) = 0; /*0x633e1a*/
-  this->? = 0; /*0x633e1d*/
-  vtable1 = this->?; /*0x633e20*/
+  IDA_BYTE1(((unsigned int *)this)[0]) = 0; /*0x633e1a*/
+  ((unsigned int *)this)[0] = 0; /*0x633e1d*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x633e20*/
   this->RadioClass = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
-  if ( vtable1 && IDA_BYTE1(this->?) ) /*0x633e2d*/
+  if ( vtable1 && IDA_BYTE1(((unsigned int *)this)[0]) ) /*0x633e2d*/
   {
     RA2_OPDEL(vtable1); /*0x633e33*/
-    this->? = 0; /*0x633e3b*/
+    ((unsigned int *)this)[0] = 0; /*0x633e3b*/
   }
-  IDA_BYTE1(this->?) = 0; /*0x633e3e*/
-  this->? = 0; /*0x633e41*/
+  IDA_BYTE1(((unsigned int *)this)[0]) = 0; /*0x633e3e*/
+  ((unsigned int *)this)[0] = 0; /*0x633e41*/
 }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
     *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/

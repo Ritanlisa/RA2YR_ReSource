@@ -575,10 +575,10 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
   strcpy((char *)this, a2); /*0x752cd4*/
   LOBYTE(this->fallRate) = 0; /*0x752cdf*/
   BYTE1(this->attachedTag) = 0; /*0x752ce2*/
-  BYTE2(this-((unsigned int *)(>ambientSoundController))[0]) = 0; /*0x752ce5*/
-  this-((unsigned int *)(>ambientSoundController))[3] = 1; /*0x752ce8*/
-  this-((unsigned int *)(>ambientSoundController))[4] = 0; /*0x752cef*/
-  this-((unsigned int *)(>customSound_controller))[0] = 2; /*0x752cf2*/
+  BYTE2(this->ambientSoundController[0]) = 0; /*0x752ce5*/
+  this->ambientSoundController[3] = 1; /*0x752ce8*/
+  this->ambientSoundController[4] = 0; /*0x752cef*/
+  this->customSound_controller[0] = 2; /*0x752cf2*/
   if ( g_InfantrySelectState < dword_B1D4A8 /*0x752d2e*/
     || (byte_B1D4AD || !dword_B1D4A8)
     && dword_B1D4B4 > 0
@@ -1954,17 +1954,17 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->?; /*0x758aed*/
-  vtable1 = this->?; /*0x758af0*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x758aed*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->?; /*0x758af7*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x758af7*/
   v9[2] = vtable2; /*0x758afa*/
   v9[1] = vtable1; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
   v9[3] = vtable3; /*0x758b08*/
   if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
-    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
-    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, ((unsigned int *)this)[0], 768) != 768
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, ((unsigned int *)this)[0], (int)((unsigned int *)this)[0] << 8) != (int)((unsigned int *)this)[0] << 8 )
   {
 LABEL_5:
     v3 = 1; /*0x758b4c*/
@@ -3440,12 +3440,12 @@ unsigned int * E4Recv_755CB0::sub_755CB0()
 {
 
   LOBYTE(this->AbstractClass) = 0; /*0x755cb4*/
-  this->? = 0; /*0x755cb6*/
-  this->? = 0; /*0x755cb9*/
-  this->? = 0; /*0x755cbc*/
-  this->? = 0; /*0x755cbf*/
-  this->? = 0; /*0x755cc2*/
-  this->? = 0; /*0x755cc5*/
+  ((unsigned int *)this)[0] = 0; /*0x755cb6*/
+  ((unsigned int *)this)[0] = 0; /*0x755cb9*/
+  ((unsigned int *)this)[0] = 0; /*0x755cbc*/
+  ((unsigned int *)this)[0] = 0; /*0x755cbf*/
+  ((unsigned int *)this)[0] = 0; /*0x755cc2*/
+  ((unsigned int *)this)[0] = 0; /*0x755cc5*/
   return &this->AbstractClass; /*0x755cc8*/
 
 }
@@ -3456,7 +3456,7 @@ namespace gamemd {
 int E4Recv_7564A0::sub_7564A0(int a2)
 {
 
-  return this->? + 12 * a2; /*0x7564ad*/
+  return ((unsigned int *)this)[0] + 12 * a2; /*0x7564ad*/
 
 }
 } // namespace gamemd
@@ -3478,8 +3478,8 @@ float * E4Recv_7564E0::sub_7564E0(float * a2, int a3, int a4)
   float v14; // [esp+10h] [ebp-8h]
   float v15; // [esp+14h] [ebp-4h]
 
-  uniqueId = this->?; /*0x7564e7*/
-  abstractFlags = this->?; /*0x7564ea*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x7564e7*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x7564ea*/
   v6 = 41 * (a4 + *(unsigned int *)(uniqueId + 12 * a3)); /*0x7564fc*/
   v7 = *(float *)(abstractFlags + 4 * v6 + 112) + *(float *)(abstractFlags + 4 * v6 + 88); /*0x756503*/
   v8 = (float *)(abstractFlags + 164 * (a4 + *(unsigned int *)(uniqueId + 12 * a3))); /*0x75650b*/
@@ -3502,7 +3502,7 @@ namespace gamemd {
 int E4Recv_756570::sub_756570()
 {
 
-  return (int)this->? + 164 * (int)this->? + 12 * (int)this->? + 28; /*0x75658c*/
+  return (int)((unsigned int *)this)[0] + 164 * (int)((unsigned int *)this)[0] + 12 * (int)((unsigned int *)this)[0] + 28; /*0x75658c*/
 
 }
 } // namespace gamemd
@@ -3515,7 +3515,7 @@ BOOL E4Recv_7589F0::sub_7589F0(int a2)
   BOOL v4; // ebx
 
   (*(void (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
-  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, this->?, 768) != 768; /*0x758a1b*/
+  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, ((unsigned int *)this)[0], 768) != 768; /*0x758a1b*/
   (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758a24*/
   return v4; /*0x758a27*/
 
@@ -3535,7 +3535,7 @@ char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
   double v9; // st4
   float v11; // [esp+4h] [ebp-8h]
 
-  uniqueId = (uint8_t *)this->?; /*0x758e13*/
+  uniqueId = (uint8_t *)((unsigned int *)this)[0]; /*0x758e13*/
   v5 = 0; /*0x758e17*/
   v11 = 100000.0; /*0x758e19*/
   for ( i = 0; i < 256; ++i ) /*0x758e21*/

@@ -42,9 +42,9 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
-  this->? = &vt_CampaignClass; /*0x46cb82*/
-  this->? = &vt_CampaignClass; /*0x46cb89*/
-  this->? = &vt_CampaignClass; /*0x46cb90*/
+  ((unsigned int *)this)[0] = &vt_CampaignClass; /*0x46cb82*/
+  ((unsigned int *)this)[0] = &vt_CampaignClass; /*0x46cb89*/
+  ((unsigned int *)this)[0] = &vt_CampaignClass; /*0x46cb90*/
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -179,8 +179,8 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  p_referenceCount = &this->?; /*0x49c5c4*/
-  if ( !LOBYTE(this->?) ) /*0x49c5c1*/
+  p_referenceCount = &((unsigned int *)this)[0]; /*0x49c5c4*/
+  if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->scenario[7]; /*0x49c5d4*/
   if ( !LOBYTE(g_DDrawSurfaceManager.scenario[14]) ) /*0x49c5d9*/
@@ -195,7 +195,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
   INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v28 + 2)); /*0x49c642*/
   Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
-  v28.? = 0; /*0x49c65e*/
+  ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
   *(unsigned int *)v28.INIClass = &CCINIClass_Vtable; /*0x49c667*/
   CCINIClass::Load(&v28, (int)&v33, 0, 0); /*0x49c66f*/
@@ -242,7 +242,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   }
   g_IsWindowed[v5] = 0; /*0x49c720*/
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
-  v13 = (char *)&this->?; /*0x49c743*/
+  v13 = (char *)&((unsigned int *)this)[0]; /*0x49c743*/
   v14 = 0; /*0x49c745*/
   for ( i = *(unsigned char *)p_referenceCount; i; ++v13 )
   {
@@ -365,9 +365,9 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
       aP0->AbstractClass = &vt_CampaignClass; /*0x46d024*/
-      aP0->? = &vt_CampaignClass; /*0x46d02a*/
-      aP0->? = &vt_CampaignClass; /*0x46d031*/
-      aP0->? = &vt_CampaignClass; /*0x46d038*/
+      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d02a*/
+      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d031*/
+      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -420,9 +420,9 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_CampaignClass; /*0x46d096*/
-  Block->? = &vt_CampaignClass; /*0x46d09c*/
-  Block->? = &vt_CampaignClass; /*0x46d0a3*/
-  Block->? = &vt_CampaignClass; /*0x46d0aa*/
+  ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d09c*/
+  ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0a3*/
+  ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x46d0b1*/
   v5 = Block; /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/

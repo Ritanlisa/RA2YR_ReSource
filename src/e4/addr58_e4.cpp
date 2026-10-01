@@ -1974,7 +1974,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
     while ( v4 > v2 - 1 ); /*0x58c372*/
     v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c380*/
   }
-  while ( *(void **)(v5 + 56) != this->? || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c38f*/
+  while ( *(void **)(v5 + 56) != ((unsigned int *)this)[0] || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c38f*/
   v6 = *(unsigned int *)(80 * v4 + g_MissionQueueFrame.localVariables[163]); /*0x58c39e*/
   *a2 = v6; /*0x58c3a6*/
   return a2; /*0x58c398*/
@@ -2013,7 +2013,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       while ( v4 > v3 - 1 ); /*0x58c406*/
       v5 = g_MissionQueueFrame.localVariables[163] + 80 * v4; /*0x58c414*/
     }
-    while ( *(void **)(v5 + 56) != this->? || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c423*/
+    while ( *(void **)(v5 + 56) != ((unsigned int *)this)[0] || !*(unsigned short *)v5 && !*(unsigned short *)(v5 + 2) ); /*0x58c423*/
     *(unsigned int *)v9 = *(unsigned int *)(80 * v4 + g_MissionQueueFrame.localVariables[163]); /*0x58c432*/
     if ( ++v8 > 200 ) /*0x58c444*/
     {
@@ -2059,7 +2059,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
       *aP1 = 0; /*0x58c57e*/
       return aP1; /*0x58c584*/
     }
-    if ( (void *)*((unsigned int *)v2 + 14) == this->? && (*v2 || v2[1]) ) /*0x58c53a*/
+    if ( (void *)*((unsigned int *)v2 + 14) == ((unsigned int *)this)[0] && (*v2 || v2[1]) ) /*0x58c53a*/
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
@@ -2150,7 +2150,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
   v7 = this; /*0x58d12e*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x58d134*/
   {
-    this->? = 0; /*0x58d1b3*/
+    ((unsigned int *)this)[0] = 0; /*0x58d1b3*/
   }
   else
   {
@@ -2159,7 +2159,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
     v8 = g_MapCellWidth * g_MapCellWidth; /*0x58d143*/
     do /*0x58d1a4*/
     {
-      if ( *(void **)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == this->? ) /*0x58d153*/
+      if ( *(void **)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == ((unsigned int *)this)[0] ) /*0x58d153*/
       {
         *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) = a2; /*0x58d155*/
         *(unsigned char *)(v5 + g_MissionQueueFrame.localVariables[163] + 75) = 0; /*0x58d15e*/
@@ -2175,7 +2175,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
       result = --v8; /*0x58d19f*/
     }
     while ( v8 ); /*0x58d1a4*/
-    this->? = 0; /*0x58d1a8*/
+    ((unsigned int *)this)[0] = 0; /*0x58d1a8*/
   }
   return result; /*0x58d1ac*/
 

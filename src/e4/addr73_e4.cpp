@@ -84,7 +84,7 @@ AbstractClass * * ProcessSelectionExperience()
     || (v2 = *(House ***)dword_A8ECBC,
         v1 = (*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 44))(*(unsigned int *)dword_A8ECBC),
         v1 != 6)
-    || (v1 = (*(int (**)(House **))&(*v2)-((unsigned int *)(>__pad_3D7))[49])(v2), v1 <= 0)
+    || (v1 = (*(int (**)(House **))&(*v2)->__pad_3D7[49])(v2), v1 <= 0)
     || (IDA_LOBYTE(v1) = House::IsHumanPlayer(v2[135]), !(unsigned char)v1) )
   {
     v4 = dword_A8ECC8; /*0x730b71*/
@@ -507,7 +507,7 @@ void SelectAllOfType()
     {
       EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
       v4->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x7329af*/
-      *(unsigned int *)&v4-((unsigned int *)(>__pad_10))[4] = 10; /*0x7329b5*/
+      *(unsigned int *)&v4->__pad_10[4] = 10; /*0x7329b5*/
       *(unsigned int *)v4->__pad_10 = 0; /*0x7329bc*/
     }
     else
@@ -536,7 +536,7 @@ void SelectAllOfType()
     {
       EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
       v8->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x732a13*/
-      *(unsigned int *)&v8-((unsigned int *)(>__pad_10))[4] = 10; /*0x732a1a*/
+      *(unsigned int *)&v8->__pad_10[4] = 10; /*0x732a1a*/
       *(unsigned int *)v8->__pad_10 = 0; /*0x732a21*/
     }
     else
@@ -596,7 +596,7 @@ void SelectAllOfType()
   LABEL_36: DynamicVector_field_0x10 = (void *)(v6->DynamicVector_field_0x10);
   for ( k = 0; k < (int)DynamicVector_field_0x10; ++k ) /*0x732b26*/
   {
-    v19 = *(void **)(*(unsigned int *)&v6-((unsigned int *)(>DynamicVector_field_0x1))[3] + 4 * k); /*0x732b2b*/
+    v19 = *(void **)(*(unsigned int *)&v6->DynamicVector_field_0x1[3] + 4 * k); /*0x732b2b*/
     if ( IDTechnoClassMatches(v19, (int)v24) ) /*0x732b34*/
       (*(void (**)(void *))(*(unsigned int *)v19 + 332))(v19); /*0x732b41*/
   }
@@ -1365,13 +1365,13 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     v3 = 0; /*0x733d0d*/
   }
   v4 = 0; /*0x733d12*/
-  uniqueId = v1->?; /*0x733d16*/
+  uniqueId = ((unsigned int *)v1)[0]; /*0x733d16*/
   v16 = 0; /*0x733d1a*/
   if ( uniqueId <= 0 ) /*0x733d1e*/
     return (unsigned int *)v3; /*0x733dfa*/
   while ( 1 ) /*0x733d2e*/
   {
-    v5 = *((unsigned int *)v1->? + v4); /*0x733d2e*/
+    v5 = *((unsigned int *)((unsigned int *)v1)[0] + v4); /*0x733d2e*/
     v6 = (*(int (**)(int))(*(unsigned int *)v5 + 136))(v5); /*0x733d33*/
     v7 = *(unsigned int *)(v3 + 16); /*0x733d39*/
     v8 = (const char *)(v6 + 36); /*0x733d3e*/

@@ -225,7 +225,7 @@ void* TacticalClass::ProcessScroll(int * a2)
   void * v11;
   void *v12; // [esp+14h] [ebp-Ch]
 
-  if ( !this-((unsigned int *)(>__pad_11B4))[27] || HIBYTE(this->DisplayClass_field_0x11B0) || this->__pad_11B4[0] ) /*0x4ac3a3*/
+  if ( !this->__pad_11B4[27] || HIBYTE(this->DisplayClass_field_0x11B0) || this->__pad_11B4[0] ) /*0x4ac3a3*/
   {
     LOBYTE(v4) = this->DisplayClass_field_0x11D0; /*0x4ac436*/
     if ( (unsigned char)v4 ) /*0x4ac43e*/
@@ -252,9 +252,9 @@ void* TacticalClass::ProcessScroll(int * a2)
       {
         DisplayClass_field_0x11B0_high = HIBYTE(this->DisplayClass_field_0x11B0); /*0x4ac496*/
         LOBYTE(v4) = 1; /*0x4ac49c*/
-        this-((unsigned int *)(>__pad_11B4))[27] = 1; /*0x4ac4a0*/
+        this->__pad_11B4[27] = 1; /*0x4ac4a0*/
         LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
-        if ( !DisplayClass_field_0x11B0_high && !this-((unsigned int *)(>__pad_11B4))[0] ) /*0x4ac4af*/
+        if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4[0] ) /*0x4ac4af*/
         {
           g_TacticalClass_Instance[((unsigned int *)(863].__tail_0))[1] = 1; /*0x4ac4c0*/
           TacticalClass::InitScrollBounds((TacticalClass *)g_TacticalClass_Instance, &this->DisplayClass_field_0x11D4); /*0x4ac4cc*/
@@ -1134,7 +1134,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
             {
               v28 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v32); /*0x6d70b5*/
               v29 = (int)v28; /*0x6d70ba*/
-              if ( v28->?[2] != -1 ) /*0x6d70c0*/
+              if ( ((unsigned int *)v28)[2] != -1 ) /*0x6d70c0*/
               {
                 PlacementRect = BuildingClass::GetPlacementRect(v28, v60); /*0x6d70d0*/
                 v47 = *PlacementRect; /*0x6d70d9*/
@@ -1548,7 +1548,7 @@ void* TacticalClass::DrawPlacementCircles()
     }
     dword_842954 = v35; /*0x6dc286*/
 LABEL_44:
-    v37 = *((unsigned int *)stru_A80220.? + (int)dword_A83D4C->Object_field_0x30) + 22265; /*0x6dc28c*/
+    v37 = *((unsigned int *)((char *)&stru_A80220) + (int)dword_A83D4C->Object_field_0x30) + 22265; /*0x6dc28c*/
     LOWORD(v49.Color_field_00) = *(unsigned short *)v37; /*0x6dc2a7*/
     v38 = *(float *)(v29 + 252); /*0x6dc2ac*/
     v39 = *(unsigned char *)(v37 + 2); /*0x6dc2b2*/

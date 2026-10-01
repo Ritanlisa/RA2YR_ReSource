@@ -167,11 +167,11 @@ LABEL_61:
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
   v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
-  v24.? = (int)&vt_CCFileClass; /*0x479541*/
+  ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
-  v24.? = (int)&off_7E1668; /*0x47955a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.?); /*0x47955e*/
+  ((unsigned int *)&v24)[0] = (int)&off_7E1668; /*0x47955a*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *)&((char *)&v24)); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
     this->Debug::Log(); /*0x47956c*/
@@ -196,7 +196,7 @@ LABEL_61:
 LABEL_58:
   Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
-  v19 = CCFileClass::Construct((CCFileClass *)&v24.?, Source); /*0x4795f5*/
+  v19 = CCFileClass::Construct((CCFileClass *)&((char *)&v24), Source); /*0x4795f5*/
   v20 = (*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0); /*0x479609*/
   *(unsigned int *)v24.CDFileClass = &vt_CCFileClass; /*0x47960b*/
   v27 = 0; /*0x47960f*/

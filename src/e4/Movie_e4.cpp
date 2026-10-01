@@ -309,7 +309,7 @@ int Movie::Update()
   if ( IsSoundEnabled ) /*0x7209da*/
   {
     LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x7209e0*/
-    if ( !stru_A8EB00.?[384] ) /*0x7209e7*/
+    if ( !((unsigned int *)&stru_A8EB00)[384] ) /*0x7209e7*/
     {
       LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x7209ed*/
       if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x7209f4*/

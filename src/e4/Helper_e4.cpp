@@ -61,12 +61,12 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v6 = *a3; /*0x4371fa*/
   v7 = (*((int (**)(void **))*a1 + 28))(a1); /*0x4371fc*/
   v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
-  v11.? = *(unsigned int *)(a2 + 8); /*0x437205*/
-  v11.? = v8; /*0x437215*/
+  ((unsigned int *)&v11)[0] = *(unsigned int *)(a2 + 8); /*0x437205*/
+  ((unsigned int *)&v11)[0] = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
   *(unsigned int *)v11.Surface = &XSurface_Vtable; /*0x437221*/
   v12 = v7; /*0x437229*/
-  Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.?); /*0x43722d*/
+  Buffer::Init((Buffer *)v13, v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
   *(unsigned int *)v11.Surface = &BSurface_Vtable; /*0x43724b*/

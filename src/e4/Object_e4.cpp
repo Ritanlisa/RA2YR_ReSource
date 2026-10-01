@@ -277,11 +277,11 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     v7 = v4 + *((unsigned short *)v5 + 1); /*0x56c351*/
     LOWORD(v23) = v3 + v6; /*0x56c354*/
     v8 = (int16_t)(v3 + v6); /*0x56c359*/
-    v9 = *(unsigned int *)&this-((unsigned int *)(>__pad_EC))[8]; /*0x56c35c*/
+    v9 = *(unsigned int *)&this->__pad_EC[8]; /*0x56c35c*/
     HIWORD(v23) = v7; /*0x56c362*/
     v10 = v7; /*0x56c367*/
     v11 = v8 + v7; /*0x56c36a*/
-    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(unsigned int *)&this-((unsigned int *)(>__pad_EC))[12] ) /*0x56c39c*/
+    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(unsigned int *)&this->__pad_EC[12] ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
       if ( v12 >= 0x40000 || (v13 = (int *)*((unsigned int *)this->Object_field_0x13C + v12)) == 0 ) /*0x56c3c1*/
@@ -439,7 +439,7 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
   this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
   *(unsigned int *)&this->Object_field_0x2[2] = &vt_OverlayClass; /*0x5fc3a6*/
   *(unsigned int *)this->__pad_C = &vt_OverlayClass; /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this-((unsigned int *)(>Object_field_0x2))[2]); /*0x5fc3b3*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->Object_field_0x2[2]); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
     && dword_A8EC64 > 0
@@ -503,11 +503,11 @@ void* Object::HandleAction(int * a2, int * a3)
   int v33; // [esp+20h] [ebp-8h]
   int v34; // [esp+24h] [ebp-4h]
 
-  location = this->?; /*0x5fd987*/
+  location = ((unsigned int *)this)[0]; /*0x5fd987*/
   v5 = (*((int (**)(OverlayTypeClass *))this->Type->ObjectTypeClass + 39))(this->Type); /*0x5fd98d*/
   v32 = *location; /*0x5fd993*/
-  v33 = this->?[1]; /*0x5fd99f*/
-  v34 = this->?[2]; /*0x5fd9a6*/
+  v33 = ((unsigned int *)this)[1]; /*0x5fd99f*/
+  v34 = ((unsigned int *)this)[2]; /*0x5fd9a6*/
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
@@ -591,8 +591,8 @@ LABEL_20:
     if ( Type->LandType[0] == 167 ) /*0x5fdb20*/
       v31 -= 38; /*0x5fdb22*/
     v32 = *location; /*0x5fdb2b*/
-    v33 = this->?[1]; /*0x5fdb32*/
-    v34 = this->?[2]; /*0x5fdb41*/
+    v33 = ((unsigned int *)this)[1]; /*0x5fdb32*/
+    v34 = ((unsigned int *)this)[2]; /*0x5fdb41*/
     v20 = *(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x5fdb60*/
     v27 = *(int16_t *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v32)->CellClass_field_10C; /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
@@ -616,14 +616,14 @@ LABEL_20:
   else
   {
     v21 = *location; /*0x5fdba1*/
-    v22 = this->?[1]; /*0x5fdba3*/
-    v34 = this->?[2]; /*0x5fdba9*/
+    v22 = ((unsigned int *)this)[1]; /*0x5fdba3*/
+    v34 = ((unsigned int *)this)[2]; /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
     if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&a2) ) /*0x5fdbe3*/
     {
-      v23 = this->?[2]; /*0x5fdbee*/
-      v24 = this->?[1]; /*0x5fdbf1*/
+      v23 = ((unsigned int *)this)[2]; /*0x5fdbee*/
+      v24 = ((unsigned int *)this)[1]; /*0x5fdbf1*/
       v32 = *location; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/
       v33 = v24; /*0x5fdc06*/
@@ -683,9 +683,9 @@ void * Object::DrawObject(void ** Block, char a2)
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
-  Block->? = &vt_OverlayClass; /*0x5fdf7c*/
-  Block->? = &vt_OverlayClass; /*0x5fdf83*/
-  Block->? = &vt_OverlayClass; /*0x5fdf8a*/
+  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf7c*/
+  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf83*/
+  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   v5 = Block; /*0x5fdfa6*/
   v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/

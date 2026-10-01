@@ -2646,16 +2646,16 @@ LPARAM * InitGameDropdownColors()
   LPARAM *result; // eax
   int v3; // edx
 
-  FootClass_Array.? = (TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
-  FootClass_Array.? = (int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
+  ((unsigned int *)&FootClass_Array)[0] = (TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
+  ((unsigned int *)&FootClass_Array)[0] = (int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
   *((unsigned int *)((char *)&FootClass_Array + 2)) = (int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
-  FootClass_Array.? = (int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
-  FootClass_Array.? = (FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
-  FootClass_Array.? = (AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
-  FootClass_Array.? = (TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
-  FootClass_Array.? = (HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
-  FootClass_Array.? = (SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
-  p_owningHouseIndex0 = &FootClass_Array.?; /*0x4e44b3*/
+  ((unsigned int *)&FootClass_Array)[0] = (int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
+  ((unsigned int *)&FootClass_Array)[0] = (FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
+  ((unsigned int *)&FootClass_Array)[0] = (AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
+  ((unsigned int *)&FootClass_Array)[0] = (TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
+  ((unsigned int *)&FootClass_Array)[0] = (HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
+  ((unsigned int *)&FootClass_Array)[0] = (SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  p_owningHouseIndex0 = &((char *)&FootClass_Array); /*0x4e44b3*/
   result = dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
   {
@@ -2880,7 +2880,7 @@ int E4Recv_4E6070::sub_4E6070()
   this->health = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
   memset(this, 0xFFu, 0x18u); /*0x4e609f*/
-  LOWORD(this->?) = -1; /*0x4e60a9*/
+  LOWORD(((unsigned int *)this)[0]) = -1; /*0x4e60a9*/
   *((unsigned int *)&this->AbstractClass + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
   return (int)this; /*0x4e612c*/

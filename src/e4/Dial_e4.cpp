@@ -15,12 +15,12 @@ void Dial8Class_48::ClearBuffer()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x4a7d26*/
+  v2 = *(void **)&this->m_1[3]; /*0x4a7d26*/
   this->m_10 = 0; /*0x4a7d29*/
   if ( v2 && BYTE1(this->m_C) ) /*0x4a7d30*/
   {
     __3_YAXPAX_Z(v2); /*0x4a7d36*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a7d3e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a7d3e*/
   }
   BYTE1(this->m_C) = 0; /*0x4a7d41*/
   this->m_8 = 0; /*0x4a7d44*/
@@ -34,7 +34,7 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4a7d50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4a7d65*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a7d65*/
   else
     return 0; /*0x4a7d57*/
 
@@ -46,7 +46,7 @@ namespace gamemd {
 int Dial8Class_48::Seek( int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x4a7d7a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a7d7a*/
 
 }
 } // namespace gamemd
@@ -67,7 +67,7 @@ char Dial8Class_48::AddRef(int a2)
     v3 = 0; /*0x4a7d8f*/
     if ( m_8 <= 0 ) /*0x4a7d93*/
       return 1; /*0x4a7db3*/
-    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x4a7d95*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x4a7d95*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a7d9b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a7da4*/
     {
@@ -101,20 +101,20 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
-      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x4a7e05*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4a7e05*/
       {
         m_8 = this->m_8; /*0x4a7e0c*/
         if ( a2 < m_8 ) /*0x4a7e11*/
           m_8 = a2; /*0x4a7e13*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x4a7e19*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
         if ( BYTE1(this->m_C) ) /*0x4a7e2b*/
         {
-          __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4a7e36*/
-          *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a7e3e*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7e36*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4a7e3e*/
         }
       }
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x4a7e47*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4a7e47*/
       this->m_8 = a2; /*0x4a7e4f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
@@ -138,10 +138,10 @@ namespace gamemd {
 void Dial8Class_48::ddtor()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] && BYTE1(this->m_C) ) /*0x4a7e7d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4a7e7d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4a7e83*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a7e8b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7e83*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a7e8b*/
   }
   BYTE1(this->m_C) = 0; /*0x4a7e8e*/
   this->m_8 = 0; /*0x4a7e91*/
@@ -164,7 +164,7 @@ int Dial8Class_48::Read( unsigned int * a2)
   result = 0; /*0x4a7eb1*/
   if ( m_8 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x4a7ebb*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a7ebb*/
   {
     if ( ++result >= m_8 ) /*0x4a7eca*/
       return -1; /*0x4a7eca*/
@@ -180,7 +180,7 @@ unsigned int Dial8Class_48::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4a7ee0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4a7ef5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a7ef5*/
   else
     return 0; /*0x4a7ee7*/
 
@@ -207,20 +207,20 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x4a7f38*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x4a7f38*/
     {
       m_8 = this->m_8; /*0x4a7f3f*/
       if ( a2 < m_8 ) /*0x4a7f44*/
         m_8 = a2; /*0x4a7f46*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x4a7f4c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
       if ( BYTE1(this->m_C) ) /*0x4a7f5e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4a7f69*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a7f71*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7f69*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x4a7f71*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x4a7f7a*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x4a7f7a*/
     this->m_8 = a2; /*0x4a7f82*/
     BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
   }
@@ -249,7 +249,7 @@ int Dial8Class_48::FindItem(unsigned int * a2)
   result = 0; /*0x4a7fb3*/
   if ( m_10 <= 0 ) /*0x4a7fb8*/
     return -1; /*0x4a7fcf*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x4a7fbe*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a7fbe*/
   {
     if ( ++result >= m_10 ) /*0x4a7fcd*/
       return -1; /*0x4a7fcd*/

@@ -38,10 +38,10 @@ Coord * * sub_77E110()
   if ( ppv ) /*0x77e117*/
   {
     (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))(ppv, *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
-    (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, stru_B7622C.?); /*0x77e13c*/
+    (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, ((char *)&stru_B7622C)); /*0x77e13c*/
   }
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
-  if ( stru_B76900.? ) /*0x77e153*/
+  if ( ((char *)&stru_B76900) ) /*0x77e153*/
   {
     if ( !((Theme *)((Theme *)&unk_A83D10))->IsPlaying() ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/

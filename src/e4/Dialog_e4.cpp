@@ -32,7 +32,7 @@ namespace gamemd {
 void Dialog::MapDialogResource()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4] == 48879 ) /*0x49f74a*/
+  if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
   {
     this->Debug::Log(); /*0x49f751*/
     g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
@@ -319,7 +319,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, a2); /*0x5f2a44*/
   (*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
   g_NetworkTestFlag = 0; /*0x5f2a57*/
-  v11 = *(unsigned int *)&this-((unsigned int *)(>__pad_10))[20]; /*0x5f2a5e*/
+  v11 = *(unsigned int *)&this->__pad_10[20]; /*0x5f2a5e*/
   this->Debug::Log(); /*0x5f2a66*/
   while ( 1 ) /*0x5f2a6e*/
   {

@@ -13,18 +13,18 @@ namespace gamemd {
 int Matrix3x4::Identity()
 {
 
-  this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
-  this-((unsigned int *)(>m_Data))[1] = 0; /*0x5ae869*/
-  this-((unsigned int *)(>m_Data))[2] = 0; /*0x5ae86c*/
-  this-((unsigned int *)(>m_Data))[3] = 0; /*0x5ae86f*/
-  this-((unsigned int *)(>m_Data))[4] = 0; /*0x5ae872*/
-  this-((unsigned int *)(>m_Data))[5] = 1065353216; /*0x5ae875*/
-  this-((unsigned int *)(>m_Data))[6] = 0; /*0x5ae878*/
-  this-((unsigned int *)(>m_Data))[7] = 0; /*0x5ae87b*/
-  this-((unsigned int *)(>m_Data))[8] = 0; /*0x5ae87e*/
-  this-((unsigned int *)(>m_Data))[9] = 0; /*0x5ae881*/
-  this-((unsigned int *)(>m_Data))[10] = 1065353216; /*0x5ae884*/
-  this-((unsigned int *)(>m_Data))[11] = 0; /*0x5ae887*/
+  this->m_Data[0] = 1065353216; /*0x5ae867*/
+  this->m_Data[1] = 0; /*0x5ae869*/
+  this->m_Data[2] = 0; /*0x5ae86c*/
+  this->m_Data[3] = 0; /*0x5ae86f*/
+  this->m_Data[4] = 0; /*0x5ae872*/
+  this->m_Data[5] = 1065353216; /*0x5ae875*/
+  this->m_Data[6] = 0; /*0x5ae878*/
+  this->m_Data[7] = 0; /*0x5ae87b*/
+  this->m_Data[8] = 0; /*0x5ae87e*/
+  this->m_Data[9] = 0; /*0x5ae881*/
+  this->m_Data[10] = 1065353216; /*0x5ae884*/
+  this->m_Data[11] = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 
 }

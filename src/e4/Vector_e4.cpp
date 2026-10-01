@@ -31,11 +31,11 @@ void Vector::Cleanup()
 
   int result; // eax
 
-  result = *(unsigned int *)&this-((unsigned int *)(>m_1))[3]; /*0x512d36*/
+  result = *(unsigned int *)&this->m_1[3]; /*0x512d36*/
   if ( result && BYTE1(this->m_C) ) /*0x512d3d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x512d43*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x512d4b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x512d43*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x512d4b*/
   }
   BYTE1(this->m_C) = 0; /*0x512d4e*/
   this->m_8 = 0; /*0x512d51*/
@@ -50,11 +50,11 @@ void Vector::Destructor()
 
   int result; // eax
 
-  result = *(unsigned int *)&this-((unsigned int *)(>m_1))[3]; /*0x513106*/
+  result = *(unsigned int *)&this->m_1[3]; /*0x513106*/
   if ( result && BYTE1(this->m_C) ) /*0x51310d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x513113*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x51311b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x513113*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x51311b*/
   }
   BYTE1(this->m_C) = 0; /*0x51311e*/
   this->m_8 = 0; /*0x513121*/
@@ -92,11 +92,11 @@ void Vector::Cleanup2()
 
   int result; // eax
 
-  result = *(unsigned int *)&this-((unsigned int *)(>m_1))[3]; /*0x67abe6*/
+  result = *(unsigned int *)&this->m_1[3]; /*0x67abe6*/
   if ( result && BYTE1(this->m_C) ) /*0x67abed*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x67abf3*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x67abfb*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x67abf3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x67abfb*/
   }
   BYTE1(this->m_C) = 0; /*0x67abfe*/
   this->m_8 = 0; /*0x67ac01*/
@@ -237,7 +237,7 @@ int Vector::Find(unsigned int * a2)
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -251,7 +251,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 16); /*0x76f0bd*/
+  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
 
 }
 } // namespace gamemd

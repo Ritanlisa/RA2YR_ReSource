@@ -28,38 +28,38 @@ BulletClass::BulletClass()
   ObjectClass::ctor((ObjectClass *)this); /*0x466384*/
   this->BulletClass_field_0xAC = 0; /*0x466391*/
   this->BulletClass_field_0xB0 = 0; /*0x466397*/
-  this-((unsigned int *)(>__pad_B4))[0] = 0; /*0x46639d*/
-  BulletClass::ResetDetonationTimer((BulletClass *)&this-((unsigned int *)(>__pad_B4))[4]); /*0x4663a3*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_110))[16] = 0; /*0x4663aa*/
-  this-((unsigned int *)(>__pad_B4))[80] = 1; /*0x4663b0*/
-  this-((unsigned int *)(>__pad_B4))[81] = 1; /*0x4663b6*/
-  this-((unsigned int *)(>__pad_B4))[44] = 0; /*0x4663bf*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_B4))[76] = 0; /*0x4663c5*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_B4))[84] = 0; /*0x4663cb*/
+  this->__pad_B4[0] = 0; /*0x46639d*/
+  BulletClass::ResetDetonationTimer((BulletClass *)&this->__pad_B4[4]); /*0x4663a3*/
+  *(unsigned int *)&this->__pad_110[16] = 0; /*0x4663aa*/
+  this->__pad_B4[80] = 1; /*0x4663b0*/
+  this->__pad_B4[81] = 1; /*0x4663b6*/
+  this->__pad_B4[44] = 0; /*0x4663bf*/
+  *(unsigned int *)&this->__pad_B4[76] = 0; /*0x4663c5*/
+  *(unsigned int *)&this->__pad_B4[84] = 0; /*0x4663cb*/
   this->BulletClass_field_0x10C = 0; /*0x4663d1*/
   *(unsigned int *)this->__pad_110 = 0; /*0x4663d7*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_110))[4] = -1; /*0x4663dd*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_110))[8] = 0; /*0x4663e3*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_110))[20] = 0; /*0x4663e9*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_110))[24] = 0; /*0x4663ef*/
-  this-((unsigned int *)(>__pad_110))[28] = 0; /*0x4663f5*/
-  this-((unsigned int *)(>__pad_110))[29] = 0; /*0x4663fb*/
+  *(unsigned int *)&this->__pad_110[4] = -1; /*0x4663dd*/
+  *(unsigned int *)&this->__pad_110[8] = 0; /*0x4663e3*/
+  *(unsigned int *)&this->__pad_110[20] = 0; /*0x4663e9*/
+  *(unsigned int *)&this->__pad_110[24] = 0; /*0x4663ef*/
+  this->__pad_110[28] = 0; /*0x4663f5*/
+  this->__pad_110[29] = 0; /*0x4663fb*/
   this->BulletClass_field_0x130 = 0; /*0x466401*/
-  *(unsigned short *)&this-((unsigned int *)(>__pad_144))[8] = -1; /*0x466407*/
-  *(unsigned short *)&this-((unsigned int *)(>__pad_144))[10] = -1; /*0x46640e*/
+  *(unsigned short *)&this->__pad_144[8] = -1; /*0x466407*/
+  *(unsigned short *)&this->__pad_144[10] = -1; /*0x46640e*/
   this->BulletClass_field_0x154 = 0; /*0x466419*/
-  this-((unsigned int *)(>__pad_158))[0] = 0; /*0x46641f*/
+  this->__pad_158[0] = 0; /*0x46641f*/
   *(unsigned int *)this->__pad_0 = &vt_BulletClass; /*0x466425*/
   this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46642b*/
   this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466431*/
   *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x466438*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_134))[4] = 0; /*0x46644a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_134))[8] = 0; /*0x466450*/
+  *(unsigned int *)&this->__pad_134[4] = 0; /*0x46644a*/
+  *(unsigned int *)&this->__pad_134[8] = 0; /*0x466450*/
   this->BulletClass_field_0x140 = 0; /*0x466456*/
   *(unsigned int *)this->__pad_144 = 0; /*0x46645c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_144))[4] = 0; /*0x466462*/
+  *(unsigned int *)&this->__pad_144[4] = 0; /*0x466462*/
   if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 364) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 356) /*0x46649b*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 361)) || !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 356))
     && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 368) > 0
@@ -89,15 +89,15 @@ BulletClass * * BulletClass::Dtor()
   this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466573*/
   *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
-  if ( this-((unsigned int *)(>__pad_158))[0] ) /*0x466586*/
+  if ( this->__pad_158[0] ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
     v2 = (*(int (**)(int *, BulletClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x4665a4*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            &v5);
     if ( v2 != -1 && v2 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x4665b4*/
     {
-      --g_BuildingLoadQueue_Array.?[1]; /*0x4665b9*/
+      --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x4665b9*/
       for ( ; /*0x4665bf*/
             v2 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1));
             *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v2 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))

@@ -370,11 +370,11 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   {
     return; /*0x422fe6*/
   }
-  if ( this-((unsigned int *)(>__pad_194))[9] ) /*0x422fec*/
+  if ( this->__pad_194[9] ) /*0x422fec*/
     return; /*0x422fec*/
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x422ffa*/
   if ( *(unsigned int *)&AnimClass_field_0xC8[((unsigned int *)(2].__pad_C))[72] > stru_A8EB00.ObjectTypeClass[30] /*0x42301e*/
-    || this-((unsigned int *)(>__pad_194))[5] && ((unsigned int *)(AnimClass_field_0xC8))[2].__pad_C[232] )
+    || this->__pad_194[5] && ((unsigned int *)(AnimClass_field_0xC8))[2].__pad_C[232] )
   {
     return; /*0x42301e*/
   }
@@ -385,7 +385,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   AnimClass_field_0x190 = this->AnimClass_field_0x190; /*0x42304b*/
   AnimClass_field_0xAC = this->AnimClass_field_0xAC; /*0x423051*/
   v104 = (unsigned int)AnimClass_field_0xAC + *(unsigned int *)&v21[((unsigned int *)(2].__pad_C))[40]; /*0x42305d*/
-  if ( this-((unsigned int *)(>__pad_118))[1] ) /*0x423061*/
+  if ( this->__pad_118[1] ) /*0x423061*/
   {
     if ( v21[((unsigned int *)(2].__pad_C))[220] ) /*0x42306b*/
       AnimClass_field_0x190 |= 6u; /*0x423075*/
@@ -399,7 +399,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       v28 = *(unsigned int *)&v21[((unsigned int *)(2].__pad_C))[96]; /*0x423183*/
       if ( v28 <= 0 ) /*0x42318b*/
       {
-        v29 = this-((unsigned int *)(>__pad_178))[0]; /*0x4231c1*/
+        v29 = this->__pad_178[0]; /*0x4231c1*/
         if ( !v29 ) /*0x4231c9*/
           goto LABEL_47; /*0x4231c9*/
         if ( v29 > 15 ) /*0x4231d1*/

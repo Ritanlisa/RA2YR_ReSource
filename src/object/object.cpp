@@ -77,7 +77,7 @@ AbstractClass * * ObjectClass::Destroy()
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
   if ( attachedBomb ) /*0x5f65f8*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
-  if ( this && (this->? & 1) != 0 ) /*0x5f6607*/
+  if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f6607*/
     TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
   (*((void (**)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/

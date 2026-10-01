@@ -171,9 +171,9 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
   this->DeathAnims[0] = (int)&vt_TypeList; /*0x523998*/
   this->VoiceComment[0] = (int)&vt_TypeList; /*0x52399e*/
   this->TechnoTypeClass = &vt_InfantryTypeClass; /*0x5239a8*/
-  this->? = &vt_InfantryTypeClass; /*0x5239ae*/
-  this->? = &vt_InfantryTypeClass; /*0x5239b5*/
-  this->? = &vt_InfantryTypeClass; /*0x5239bc*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x5239ae*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x5239b5*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x5239bc*/
   return &this->TechnoTypeClass; /*0x5239c5*/
 
 }
@@ -296,13 +296,13 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   v45 = 128; /*0x52410c*/
   v44.CapacityIncrement = (int)String; /*0x524111*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524112*/
-  v44.? = (int)aOccupyweapon; /*0x524117*/
+  ((unsigned int *)&v44)[0] = (int)aOccupyweapon; /*0x524117*/
   *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52411c*/
   *(unsigned int *)(v4 + 3584) = PipIdx; /*0x52411f*/
   if ( INIClass::GetString( /*0x524125*/
          (INIClass *)a2,
          *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
-         (uint8_t *)v44.?,
+         (uint8_t *)((char *)&v44),
          (char *)v44.Count,
          (char *)v44.CapacityIncrement,
          v45) )
@@ -342,7 +342,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
                                             *(void ***)v44.VectorClass,
                                             *(void **)&(unsigned int *)((char *)&v44 + 3),
                                             *(int *)&(unsigned int *)((char *)&v44 + 3),
-                                            v44.?,
+                                            ((char *)&v44),
                                             v44.Count,
                                             v44.CapacityIncrement,
                                             v45);
@@ -449,13 +449,13 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   v45 = 128; /*0x52442e*/
   v44.CapacityIncrement = (int)String; /*0x524433*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524434*/
-  v44.? = (int)aLeavewatersoun; /*0x524439*/
+  ((unsigned int *)&v44)[0] = (int)aLeavewatersoun; /*0x524439*/
   *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52443e*/
   *(unsigned int *)(v4 + 3748) = Index; /*0x524441*/
   if ( !INIClass::GetString( /*0x52445c*/
           (INIClass *)a2,
           *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
-          (uint8_t *)v44.?,
+          (uint8_t *)((char *)&v44),
           (char *)v44.Count,
           (char *)v44.CapacityIncrement,
           v45)
@@ -741,9 +741,9 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
   Block->TechnoTypeClass = &vt_InfantryTypeClass; /*0x524d76*/
-  Block->? = &vt_InfantryTypeClass; /*0x524d7c*/
-  Block->? = &vt_InfantryTypeClass; /*0x524d83*/
-  Block->? = &vt_InfantryTypeClass; /*0x524d8a*/
+  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d7c*/
+  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d83*/
+  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->TechnoTypeClass, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
@@ -804,33 +804,33 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
     goto LABEL_8; /*0x524f2a*/
   (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
   v3 = (void *)aP1[2]; /*0x524f31*/
-  this->? = v3; /*0x524f36*/
+  ((unsigned int *)this)[0] = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
-    this->? = 0; /*0x524f86*/
-    BYTE1(this->?) = 0; /*0x524f8d*/
+    ((unsigned int *)this)[0] = 0; /*0x524f86*/
+    BYTE1(((unsigned int *)this)[0]) = 0; /*0x524f8d*/
 LABEL_8:
-    this->? = aP1[4]; /*0x524f91*/
-    this->? = aP1[5]; /*0x524f9a*/
+    ((unsigned int *)this)[0] = aP1[4]; /*0x524f91*/
+    ((unsigned int *)this)[0] = aP1[5]; /*0x524f9a*/
     return &this->TechnoTypeClass; /*0x524f9d*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
-  this->? = v4; /*0x524f4b*/
+  ((unsigned int *)this)[0] = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  vtable2 = this->?; /*0x524f52*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x524f52*/
   v6 = 0; /*0x524f55*/
-  BYTE1(this->?) = 1; /*0x524f59*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x524f59*/
   if ( (int)vtable2 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *((unsigned int *)this->? + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
+    *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
-  while ( v6 < (int)this->? ); /*0x524f71*/
-  this->? = aP1[4]; /*0x524f76*/
-  this->? = aP1[5]; /*0x524f7c*/
+  while ( v6 < (int)((unsigned int *)this)[0] ); /*0x524f71*/
+  ((unsigned int *)this)[0] = aP1[4]; /*0x524f76*/
+  ((unsigned int *)this)[0] = aP1[5]; /*0x524f7c*/
   return &this->TechnoTypeClass; /*0x524f81*/
 
 }
@@ -896,8 +896,8 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   v1 = (void *)(2 * *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1768)); /*0x52476c*/
   a1->TechnoTypeClass = (void *)85; /*0x524777*/
-  a1->? = (void *)85; /*0x524779*/
-  a1->? = v1; /*0x52477c*/
+  ((unsigned int *)a1)[0] = (void *)85; /*0x524779*/
+  ((unsigned int *)a1)[0] = v1; /*0x52477c*/
   return &a1->TechnoTypeClass; /*0x52477f*/
 
 }
@@ -933,8 +933,8 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
   if ( v7 < GroundHeight ) /*0x524800*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x524811*/
   a1->TechnoTypeClass = v5; /*0x52481e*/
-  a1->? = v6; /*0x524824*/
-  a1->? = v3; /*0x524828*/
+  ((unsigned int *)a1)[0] = v6; /*0x524824*/
+  ((unsigned int *)a1)[0] = v3; /*0x524828*/
   return &a1->TechnoTypeClass; /*0x52482b*/
 
 }

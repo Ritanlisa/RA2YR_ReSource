@@ -153,7 +153,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
-            location = v4->?->?; /*0x6a401e*/
+            location = ((unsigned int *)v4)[0]; /*0x6a401e*/
             v21[0] = *location; /*0x6a4025*/
             v21[1] = location[1]; /*0x6a402c*/
             v22 = location[2]; /*0x6a4033*/

@@ -30,7 +30,7 @@ HWND E4Recv_696AE0::sub_696AE0()
   {
     if ( result ) /*0x696b15*/
     {
-      p_vtable2 = (char *)&this->?; /*0x696b21*/
+      p_vtable2 = (char *)&((unsigned int *)this)[0]; /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
       ((String *)(p_vtable2))->Trim(); /*0x696b43*/

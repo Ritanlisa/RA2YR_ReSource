@@ -65,9 +65,9 @@ int TActionClass::executeMoveAction(int a2)
   int result; // eax
   unsigned int *v5; // esi
 
-  for ( i = *(unsigned int *)&this-((unsigned int *)(>pad_6E))[10] - 1; i >= 0; --i ) /*0x50d2d8*/
+  for ( i = *(unsigned int *)&this->pad_6E[10] - 1; i >= 0; --i ) /*0x50d2d8*/
   {
-    result = *(unsigned int *)&this-((unsigned int *)(>pad_55))[23]; /*0x50d2e0*/
+    result = *(unsigned int *)&this->pad_55[23]; /*0x50d2e0*/
     v5 = *(unsigned int **)(result + 4 * i); /*0x50d2e3*/
     if ( v5[184] == a2 ) /*0x50d2ec*/
     {
@@ -227,7 +227,7 @@ int TActionClass::executeRepairAction(int a2)
 
   result = a2; /*0x577c90*/
   if ( a2 ) /*0x577c99*/
-    *(unsigned char *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(a2 + 48)) + 577) = 0; /*0x577ca7*/
+    *(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(a2 + 48)) + 577) = 0; /*0x577ca7*/
   if ( (Object *)a2 != (gamemd::Object *)(dword_A83D4C) ) /*0x577cb4*/
   {
     if ( a2 ) /*0x577cb8*/
@@ -405,7 +405,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
   int v15; // esi
   int v16; // eax
 
-  v5 = *(HouseClass **)&this-((unsigned int *)(>pad_6E))[34]; /*0x6e0b63*/
+  v5 = *(HouseClass **)&this->pad_6E[34]; /*0x6e0b63*/
   v6 = 0; /*0x6e0b6d*/
   if ( !a3 ) /*0x6e0b71*/
     return 0; /*0x6e0b71*/
@@ -843,12 +843,12 @@ TActionClass::TActionClass()
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(unsigned int *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
   this->AbstractClass = &vt_TEventClass; /*0x71e6c1*/
-  this->? = &vt_TEventClass; /*0x71e6c7*/
-  this->? = &vt_TEventClass; /*0x71e6ce*/
-  this->? = &vt_TEventClass; /*0x71e6d5*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6c7*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6ce*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6d5*/
   v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)); /*0x71e6dc*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 52)) /*0x71e71a*/
-    || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 53))) || !g_BuildingLoadQueue_Array.?[52])
+    || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 53))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 55)) > 0
     && (v3 = (*(int (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50)) + 8))(
                &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50),
@@ -869,7 +869,7 @@ LABEL_11:
   }
   else
   {
-    v5 = (TActionClass **)g_BuildingLoadQueue_Array.?[51]; /*0x71e73a*/
+    v5 = (TActionClass **)((unsigned int *)&g_BuildingLoadQueue_Array)[51]; /*0x71e73a*/
     while ( *v5 != this ) /*0x71e742*/
     {
       ++v4; /*0x71e744*/
@@ -1626,7 +1626,7 @@ char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, Abstrac
   GroundHeight = Cell::GetGroundHeight(&v22); /*0x6e346b*/
   if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v18) + 80) & 0x100) != 0 ) /*0x6e3487*/
     GroundHeight += dword_B0E6D4; /*0x6e3495*/
-  v10 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName((SuperWeaponClass *)&stru_81AF8C.?)); /*0x6e34ad*/
+  v10 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName((SuperWeaponClass *)&((char *)&stru_81AF8C))); /*0x6e34ad*/
   v11 = v10[40]; /*0x6e34c3*/
   v17 = v10[43]; /*0x6e34c9*/
   v16 = v10[41]; /*0x6e34ca*/
@@ -1701,9 +1701,9 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
       aP0->AbstractClass = &vt_TActionClass; /*0x6e3dd4*/
-      aP0->? = &vt_TActionClass; /*0x6e3dda*/
-      aP0->? = &vt_TActionClass; /*0x6e3de1*/
-      aP0->? = &vt_TActionClass; /*0x6e3de8*/
+      ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3dda*/
+      ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3de1*/
+      ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_28); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_30); /*0x6e3e06*/

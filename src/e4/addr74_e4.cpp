@@ -143,7 +143,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
       {
         v8 = strtok(0, Str); /*0x743325*/
         Index = ((BuildingTypeClass *)((BuildingTypeClass *)v8))->FindIndex(); /*0x74333a*/
-        v10 = (void *)*((unsigned int *)stru_A80220.? + v7); /*0x74333f*/
+        v10 = (void *)*((unsigned int *)((char *)&stru_A80220) + v7); /*0x74333f*/
         if ( Index != -1 ) /*0x743342*/
         {
           v11 = (int *)RA2_OPNEW(0x8E8u); /*0x74334d*/
@@ -262,14 +262,14 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
   for ( i = 0; i < *((unsigned int *)((char *)&FootClass_Array + 2)); ++i ) /*0x74366e*/
   {
     v42 = *((unsigned int *)Block + i); /*0x74367a*/
-    v43 = *(unsigned int *)(FootClass_Array.? + 4 * i); /*0x74367d*/
+    v43 = *(unsigned int *)(((char *)&FootClass_Array) + 4 * i); /*0x74367d*/
     if ( v42 == -1 || v42 >= v40 ) /*0x743687*/
     {
       *(unsigned int *)(v43 + 1736) = 0; /*0x74369b*/
     }
     else
     {
-      v44 = *(unsigned int *)(FootClass_Array.? + 4 * v42); /*0x743689*/
+      v44 = *(unsigned int *)(((char *)&FootClass_Array) + 4 * v42); /*0x743689*/
       *(unsigned int *)(v43 + 1736) = v44; /*0x74368c*/
       *(unsigned char *)(v44 + 1744) = 1; /*0x743692*/
     }
@@ -735,16 +735,16 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vtable3 = &this->?; /*0x74bbff*/
-  this->? = 0; /*0x74bc04*/
-  this->? = 0; /*0x74bc07*/
-  LOBYTE(this->?) = 1; /*0x74bc0a*/
-  BYTE1(this->?) = 0; /*0x74bc0e*/
-  this->? = &vt_VectorClass; /*0x74bc11*/
-  this->? = (void *)-1; /*0x74bc17*/
-  LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  this->? = *(void **)(a2 + 8); /*0x74bc27*/
-  if ( &this->? == (void **)(a2 + 12) ) /*0x74bc2a*/
+  p_vtable3 = &((unsigned int *)this)[0]; /*0x74bbff*/
+  ((unsigned int *)this)[0] = 0; /*0x74bc04*/
+  ((unsigned int *)this)[0] = 0; /*0x74bc07*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x74bc0a*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x74bc0e*/
+  ((unsigned int *)this)[0] = &vt_VectorClass; /*0x74bc11*/
+  ((unsigned int *)this)[0] = (void *)-1; /*0x74bc17*/
+  LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
+  ((unsigned int *)this)[0] = *(void **)(a2 + 8); /*0x74bc27*/
+  if ( &((unsigned int *)this)[0] == (void **)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*((void (**)(void **))*p_vtable3 + 3))(p_vtable3); /*0x74bc30*/
   v4 = *(unsigned int *)(a2 + 20); /*0x74bc33*/
@@ -788,42 +788,42 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   int abstractFlags; // ecx
   int v7; // eax
 
-  vtable2 = this->?; /*0x74bca6*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x74bca6*/
   if ( vtable2 != (void *)-1 ) /*0x74bcac*/
   {
-    SetBitfieldBit(this->?, (int)vtable2, LOBYTE(this->?)); /*0x74bcb7*/
-    this->? = (void *)-1; /*0x74bcbc*/
+    SetBitfieldBit(((unsigned int *)this)[0], (int)vtable2, LOBYTE(((unsigned int *)this)[0])); /*0x74bcb7*/
+    ((unsigned int *)this)[0] = (void *)-1; /*0x74bcbc*/
   }
-  LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
-  this->? = *(void **)(a2 + 8); /*0x74bcd8*/
-  if ( &this->? == (void **)(a2 + 12) ) /*0x74bcdb*/
+  LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
+  ((unsigned int *)this)[0] = *(void **)(a2 + 8); /*0x74bcd8*/
+  if ( &((unsigned int *)this)[0] == (void **)(a2 + 12) ) /*0x74bcdb*/
     goto LABEL_10; /*0x74bcdb*/
-  (*((void (**)(void **))this->? + 3))(&this->?); /*0x74bce1*/
+  (*((void (**)(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x74bce1*/
   v4 = *(unsigned int *)(a2 + 20); /*0x74bce4*/
-  this->? = v4; /*0x74bce9*/
+  ((unsigned int *)this)[0] = v4; /*0x74bce9*/
   if ( !v4 ) /*0x74bcec*/
   {
-    this->? = 0; /*0x74bd2c*/
-    BYTE1(this->?) = 0; /*0x74bd33*/
+    ((unsigned int *)this)[0] = 0; /*0x74bd2c*/
+    BYTE1(((unsigned int *)this)[0]) = 0; /*0x74bd33*/
 LABEL_10:
     this->AbstractClass = *(void **)a2; /*0x74bd37*/
     return &this->AbstractClass; /*0x74bd39*/
   }
   v5 = __2_YAPAXI_Z(v4); /*0x74bcef*/
-  this->? = v5; /*0x74bcf7*/
+  ((unsigned int *)this)[0] = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
-  abstractFlags = this->?; /*0x74bcfe*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x74bcfe*/
   v7 = 0; /*0x74bd01*/
-  BYTE1(this->?) = 1; /*0x74bd05*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x74bd05*/
   if ( abstractFlags <= 0 ) /*0x74bd09*/
     goto LABEL_10; /*0x74bd09*/
   do /*0x74bd1d*/
   {
-    *(unsigned char *)(this->? + v7) = *(unsigned char *)(v7 + *(unsigned int *)(a2 + 16)); /*0x74bd14*/
+    *(unsigned char *)(((unsigned int *)this)[0] + v7) = *(unsigned char *)(v7 + *(unsigned int *)(a2 + 16)); /*0x74bd14*/
     ++v7; /*0x74bd1a*/
   }
-  while ( v7 < this->? ); /*0x74bd1d*/
+  while ( v7 < ((unsigned int *)this)[0] ); /*0x74bd1d*/
   this->AbstractClass = *(void **)a2; /*0x74bd23*/
   return &this->AbstractClass; /*0x74bd25*/
 
@@ -843,23 +843,23 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   void (**vtable3)(void **); // edx
   void * v12;
 
-  vtable2 = this->?; /*0x74bdc8*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
   {
-    SetBitfieldBit(this->?, (int)vtable2, LOBYTE(this->?)); /*0x74bdd8*/
-    this->? = (void *)-1; /*0x74bddd*/
+    SetBitfieldBit(((unsigned int *)this)[0], (int)vtable2, LOBYTE(((unsigned int *)this)[0])); /*0x74bdd8*/
+    ((unsigned int *)this)[0] = (void *)-1; /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
     vtable0 = (char *)((unsigned int)((char *)this->AbstractClass));
-    v6 = (unsigned int)((*((int (**)(void **, unsigned int, unsigned int))this->? + 2))(&this->?, (a2 + 7) >> 3, 0));
+    v6 = (unsigned int)((*((int (**)(void **, unsigned int, unsigned int))((unsigned int *)this)[0] + 2))(&((unsigned int *)this)[0], (a2 + 7) >> 3, 0));
     this->AbstractClass = (unsigned int)((void *)a2);
     v12 = v6; /*0x74be03*/
     if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/
     {
       do /*0x74be53*/
       {
-        v7 = (char *)this->?; /*0x74be0e*/
+        v7 = (char *)((unsigned int *)this)[0]; /*0x74be0e*/
         if ( v7 != vtable0 ) /*0x74be13*/
         {
           v8 = (int)vtable0; /*0x74be17*/
@@ -868,14 +868,14 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
           if ( (char *)v8 != v7 ) /*0x74be22*/
           {
             if ( v7 != (char *)-1 ) /*0x74be27*/
-              SetBitfieldBit(this->?, (int)v7, LOBYTE(this->?)); /*0x74be32*/
+              SetBitfieldBit(((unsigned int *)this)[0], (int)v7, LOBYTE(((unsigned int *)this)[0])); /*0x74be32*/
             if ( v8 != -1 ) /*0x74be3a*/
-              LOBYTE(this->?) = BitArray::TestBit(this->?, v8); /*0x74be46*/
-            this->? = (void *)v8; /*0x74be49*/
+              LOBYTE(((unsigned int *)this)[0]) = BitArray::TestBit(((unsigned int *)this)[0], v8); /*0x74be46*/
+            ((unsigned int *)this)[0] = (void *)v8; /*0x74be49*/
           }
         }
         ++vtable0; /*0x74be4c*/
-        LOBYTE(this->?) = 0; /*0x74be4d*/
+        LOBYTE(((unsigned int *)this)[0]) = 0; /*0x74be4d*/
       }
       while ( (unsigned int)vtable0 < a2 ); /*0x74be53*/
     }
@@ -883,15 +883,15 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   else
   {
-    v10 = this->?; /*0x74be60*/
+    v10 = ((unsigned int *)this)[0]; /*0x74be60*/
     if ( v10 != (void *)-1 ) /*0x74be65*/
     {
-      SetBitfieldBit(this->?, (int)v10, LOBYTE(this->?)); /*0x74be70*/
-      this->? = (void *)-1; /*0x74be75*/
+      SetBitfieldBit(((unsigned int *)this)[0], (int)v10, LOBYTE(((unsigned int *)this)[0])); /*0x74be70*/
+      ((unsigned int *)this)[0] = (void *)-1; /*0x74be75*/
     }
-    vtable3 = (void (**)(void **))this->?; /*0x74be78*/
+    vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&this->?); /*0x74be84*/
+    vtable3[3](&((unsigned int *)this)[0]); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 
@@ -1207,13 +1207,13 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   v3 = this->ambientSoundController[2]; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
-    vtable2_high = HIWORD(this->?); /*0x74fb70*/
+    vtable2_high = HIWORD(((unsigned int *)this)[0]); /*0x74fb70*/
   }
   else
   {
     vtable2_high = 1; /*0x74fb76*/
     LOBYTE(v3) = v3 | 4; /*0x74fb7b*/
-    HIWORD(this->?) = 1; /*0x74fb7d*/
+    HIWORD(((unsigned int *)this)[0]) = 1; /*0x74fb7d*/
     this->ambientSoundController[2] = v3; /*0x74fb81*/
   }
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 320)) & 8) == 0 ) /*0x74fb8b*/
@@ -1223,8 +1223,8 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     {
       FileClass::Read(&v9, &(unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
       for ( *((unsigned int *)((char *)&stru_A8EB00 + 309)) = 0; /*0x74fbd9*/
-            stru_A8EB00.?[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
-            stru_A8EB00.?[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )
+            ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
+            ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )
       {
         ; /*0x74fbee*/
       }
@@ -1248,7 +1248,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     v6 = 1; /*0x74fc49*/
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320) |= 2u; /*0x74fc4e*/
   }
-  p_vtable3 = (char *)&this->?; /*0x74fc60*/
+  p_vtable3 = (char *)&((unsigned int *)this)[0]; /*0x74fc60*/
   sprintf(p_vtable3, "%d.%3.3d", v6, vtable2_high); /*0x74fc6a*/
   return p_vtable3; /*0x74fc74*/
 
@@ -1825,14 +1825,14 @@ void E4Recv_74BF40::sub_74BF40(unsigned int a2)
   v3 = a2; /*0x74bf44*/
   if ( (void *)a2 >= this->AbstractClass ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
-  vtable2 = this->?; /*0x74bf4f*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x74bf4f*/
   if ( (void *)v3 != vtable2 ) /*0x74bf54*/
   {
     if ( vtable2 != (void *)-1 ) /*0x74bf59*/
-      SetBitfieldBit(this->?, (int)vtable2, LOBYTE(this->?)); /*0x74bf64*/
+      SetBitfieldBit(((unsigned int *)this)[0], (int)vtable2, LOBYTE(((unsigned int *)this)[0])); /*0x74bf64*/
     if ( v3 != -1 ) /*0x74bf6c*/
-      LOBYTE(this->?) = BitArray::TestBit(this->?, v3); /*0x74bf78*/
-    this->? = (void *)v3; /*0x74bf7b*/
+      LOBYTE(((unsigned int *)this)[0]) = BitArray::TestBit(((unsigned int *)this)[0], v3); /*0x74bf78*/
+    ((unsigned int *)this)[0] = (void *)v3; /*0x74bf7b*/
   }
 
 }
@@ -2062,15 +2062,15 @@ unsigned int * E4Recv_74F730::sub_74F730()
   int v2; // edx
 
   v2 = this->ambientSoundController[2]; /*0x74f734*/
-  this->? = 0; /*0x74f737*/
-  LOWORD(this->?) = 0; /*0x74f73d*/
-  HIWORD(this->?) = 0; /*0x74f741*/
+  ((unsigned int *)this)[0] = 0; /*0x74f737*/
+  LOWORD(((unsigned int *)this)[0]) = 0; /*0x74f73d*/
+  HIWORD(((unsigned int *)this)[0]) = 0; /*0x74f741*/
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
   this->AbstractClass = &vt_VersionClass; /*0x74f74e*/
   BYTE2(this->owningHouseIndex) = 0; /*0x74f754*/
-  LOBYTE(this->?) = 0; /*0x74f757*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x74f757*/
   return &this->AbstractClass; /*0x74f75a*/
 
 }

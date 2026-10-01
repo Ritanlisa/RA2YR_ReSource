@@ -140,7 +140,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       if ( (unsigned char)result ) /*0x4add2e*/
         break; /*0x4add2e*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4addce*/
-        && HIBYTE(dword_8871E0[1].?[2])
+        && HIBYTE(dword_8871E0[1][2])
         && (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v5 + 540), dword_A83D4C) )
       {
         (*(void (**)(int, unsigned int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v5 + 1160))(v5, 0, aP1, 0, 0, 0); /*0x4adde4*/

@@ -205,24 +205,24 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   float v41[12]; // [esp+80h] [ebp-30h] BYREF
 
   if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x749bb6*/
-    || (v27 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[4],
-        v28 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[8],
-        v29 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[12],
+    || (v27 = *(unsigned int *)&this->__pad_98[4],
+        v28 = *(unsigned int *)&this->__pad_98[8],
+        v29 = *(unsigned int *)&this->__pad_98[12],
         LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((int)&v27),
         !(unsigned char)VoxelAnimClass_field_0x104) )
   {
     v6 = a2[1]; /*0x749bcb*/
     v36 = *a2; /*0x749bd0*/
     v37 = v6; /*0x749bd4*/
-    v32 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[4]; /*0x749bda*/
-    v33 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[8]; /*0x749beb*/
-    GroundHeight = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[12]; /*0x749bf2*/
+    v32 = *(unsigned int *)&this->__pad_98[4]; /*0x749bda*/
+    v33 = *(unsigned int *)&this->__pad_98[8]; /*0x749beb*/
+    GroundHeight = *(unsigned int *)&this->__pad_98[12]; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v32); /*0x749c05*/
     if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
-    v27 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[4]; /*0x749c1f*/
-    v28 = *(unsigned int *)&this-((unsigned int *)(>__pad_98))[8]; /*0x749c26*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>__pad_98))[12] >= dword_B1D1BC + GroundHeight ) /*0x749c38*/
+    v27 = *(unsigned int *)&this->__pad_98[4]; /*0x749c1f*/
+    v28 = *(unsigned int *)&this->__pad_98[8]; /*0x749c26*/
+    if ( *(unsigned int *)&this->__pad_98[12] >= dword_B1D1BC + GroundHeight ) /*0x749c38*/
     {
       v35 = dword_B1D1BC + GroundHeight; /*0x749c3e*/
       v29 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
@@ -236,7 +236,7 @@ LABEL_6:
       v35 = GroundHeight; /*0x749c62*/
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v32, v38); /*0x749c76*/
     }
-    LOBYTE(VoxelAnimClass_field_0x104) = this-((unsigned int *)(>__pad_12C))[16]; /*0x749c7b*/
+    LOBYTE(VoxelAnimClass_field_0x104) = this->__pad_12C[16]; /*0x749c7b*/
     if ( !(unsigned char)VoxelAnimClass_field_0x104 ) /*0x749c83*/
     {
       VoxelAnimClass_field_0x104 = (unsigned int *)(this->VoxelAnimClass_field_0x104);
@@ -635,7 +635,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   Object::SpawnAtCell( /*0x74a427*/
                     (#374 *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
-                              + 4 * ((int)v44->altObject + (unsigned int)v44->jumpjet->? + 2 * v43[284] + v45)
+                              + 4 * ((int)v44->altObject + (unsigned int)v44->((unsigned int *)jumpjet)[0] + 2 * v43[284] + v45)
                               - 8),
                     (int16_t *)&v93,
                     -1);
@@ -650,7 +650,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
                     (#374 *)v94,
-                    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v44->jumpjet->? + v46)),
+                    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v44->((unsigned int *)jumpjet)[0] + v46)),
                     (int16_t *)&v95,
                     -1);
                 }
@@ -735,7 +735,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                             + 4
                             * ((int)v56->altObject
-                             + (unsigned int)v56->jumpjet->?
+                             + (unsigned int)v56->((unsigned int *)jumpjet)[0]
                              + 2 * (uint8_t)v55->slopeIndex
                              + v58)
                             - 8),
@@ -752,7 +752,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                 v60 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
                 Object::SpawnAtCell( /*0x74a6ce*/
                   v59,
-                  *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v56->jumpjet->? + v60)),
+                  *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v56->((unsigned int *)jumpjet)[0] + v60)),
                   (int16_t *)&smudgeTypeIndex,
                   -1);
               }

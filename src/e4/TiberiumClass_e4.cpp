@@ -164,12 +164,12 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   int v5; // eax
 
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
-  this->?[1] = -1717986918; /*0x7216dc*/
+  ((unsigned int *)this)[1] = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
-  *(unsigned int *)&this->? = -1; /*0x7216f1*/
-  this->?[0] = 0; /*0x7216fb*/
-  this->?[2] = 1069128089; /*0x721701*/
-  this->? = 0; /*0x721707*/
+  *(unsigned int *)&((unsigned int *)this)[0] = -1; /*0x7216f1*/
+  ((unsigned int *)this)[0] = 0; /*0x7216fb*/
+  ((unsigned int *)this)[2] = 1069128089; /*0x721701*/
+  ((unsigned int *)this)[0] = 0; /*0x721707*/
   this->SpreadPercentage[0] = 1069128089; /*0x72170d*/
   this->SpreadPercentage[1] = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
@@ -196,12 +196,12 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->ObjectClass = &vt_TiberiumClass; /*0x7217a6*/
-  this->? = &vt_TiberiumClass; /*0x7217ac*/
-  this->? = &vt_TiberiumClass; /*0x7217b3*/
-  this->? = &vt_TiberiumClass; /*0x7217ba*/
-  *(unsigned int *)&this->? = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x7217c6*/
+  ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217ac*/
+  ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217b3*/
+  ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217ba*/
+  *(unsigned int *)&((unsigned int *)this)[0] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x7217c6*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) /*0x7217fe*/
-    || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) || !g_BuildingLoadQueue_Array.?[3])
+    || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) || !((unsigned int *)&g_BuildingLoadQueue_Array)[3])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) + 8))(
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1),
@@ -313,14 +313,14 @@ void TiberiumClass::LoadFromINI( uint8_t *** aP1)
     TypeList::AnimTypeCopy(&v24, (unsigned int *)(v5 + 196)); /*0x721bf0*/
   }
   VectorClass::CopyDefault((VectorClass *)(v5 + 196), &v24); /*0x721c03*/
-  CapacityIncrement = v24.?; /*0x721c0c*/
+  CapacityIncrement = ((char *)&v24); /*0x721c0c*/
   unknown_18 = v24.unknown_18; /*0x721c10*/
-  *(unsigned int *)(v5 + 212) = v24.?; /*0x721c14*/
-  Items = v24.?; /*0x721c17*/
+  *(unsigned int *)(v5 + 212) = ((char *)&v24); /*0x721c14*/
+  Items = ((char *)&v24); /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
   v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
-  if ( Items && v24.? ) /*0x721c34*/
+  if ( Items && ((char *)&v24) ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
              (bool *)aP1,
@@ -433,9 +433,9 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
       v2->ObjectClass = &vt_TiberiumClass; /*0x721fc7*/
-      v2->? = &vt_TiberiumClass; /*0x721fcd*/
-      v2->? = &vt_TiberiumClass; /*0x721fd4*/
-      v2->? = &vt_TiberiumClass; /*0x721fdb*/
+      ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fcd*/
+      ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fd4*/
+      ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/

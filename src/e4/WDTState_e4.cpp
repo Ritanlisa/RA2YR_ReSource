@@ -74,22 +74,22 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x76baff*/
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x76bb05*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x76bb05*/
     {
       if ( a2 >= this->m_8 ) /*0x76bb11*/
         m_8 = this->m_8; /*0x76bb13*/
       for ( i = 0; i < m_8; ++i ) /*0x76bb19*/
-        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * i + 4)); /*0x76bb26*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76bb26*/
       if ( BYTE1(this->m_C) ) /*0x76bb30*/
       {
-        v11 = *(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]; /*0x76bb37*/
+        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x76bb44*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x76bb44*/
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v6; /*0x76bb5a*/
+    *(unsigned int *)&this->m_1[3] = v6; /*0x76bb5a*/
     this->m_8 = m_8; /*0x76bb5d*/
     BYTE1(this->m_C) = a3 == 0; /*0x76bb60*/
   }
@@ -112,12 +112,12 @@ int WDTState_4::ddtor()
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]; /*0x76b716*/
+  v2 = *(int (****)(unsigned int, int))&this->m_1[3]; /*0x76b716*/
   this->m_10 = 0; /*0x76b719*/
   if ( v2 && BYTE1(this->m_C) ) /*0x76b720*/
   {
     result = (**v2)(v2, 3); /*0x76b72d*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x76b72f*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x76b72f*/
   }
   BYTE1(this->m_C) = 0; /*0x76b732*/
   this->m_8 = 0; /*0x76b735*/
@@ -132,7 +132,7 @@ unsigned int WDTState_4::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x76b740*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 3; /*0x76b755*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x76b755*/
   else
     return 0; /*0x76b747*/
 
@@ -152,7 +152,7 @@ int WDTState_4::Read( int a2)
   result = 0; /*0x76bb93*/
   if ( m_10 <= 0 ) /*0x76bb98*/
     return -1; /*0x76bbb3*/
-  for ( i = (unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76bba1*/
+  for ( i = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76bba1*/
   {
     if ( ++result >= m_10 ) /*0x76bbb1*/
       return -1; /*0x76bbb1*/

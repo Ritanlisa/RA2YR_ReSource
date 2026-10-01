@@ -305,8 +305,8 @@ int E4Recv_5ADD10::Map_Delete()
   MSEngine::Destruct(&v7); /*0x5add86*/
   if ( v2 )
   {
-    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?, 134); /*0x5addba*/
-    v3 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&stru_82BA00.?, 134); /*0x5addc5*/
+    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addba*/
+    v3 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addc5*/
     Dialog::ShowMessageBox(v3, StringCSF, 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }
@@ -1983,22 +1983,22 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
   void *v10[5]; // [esp+D8h] [ebp-14h] BYREF
 
   String::Assign((String *)&v9, a2); /*0x5ade32*/
-  MSEngine::Construct((MSEngine *)&v9.?); /*0x5ade3b*/
+  MSEngine::Construct((MSEngine *)&((char *)&v9)); /*0x5ade3b*/
   Map_Delete_5CEDD0((DynamicVector *)&v9.customSound_controller[1]); /*0x5ade44*/
   unknown_libname_73(v10); /*0x5ade50*/
   v10[1] = (void *)Timer::GetTicks(); /*0x5ade61*/
   v10[3] = 0; /*0x5ade72*/
-  v9.? = (void*)&MapSelect_vftable; /*0x5ade7d*/
-  v4 = !SessionClass::LoadGameSession((SessionClass *)&v9.?, a1, (const char **)&v9); /*0x5ade93*/
+  ((unsigned int *)&v9)[0] = (void*)&MapSelect_vftable; /*0x5ade7d*/
+  v4 = !SessionClass::LoadGameSession((SessionClass *)&((char *)&v9), a1, (const char **)&v9); /*0x5ade93*/
   DeleteAndZero((ObjectClass *)v10); /*0x5ade96*/
   MSEngine::Destructor((MSEngine *)&v9.customSound_controller[1]); /*0x5ade9f*/
-  MSEngine::Destruct((MSEngine *)&v9.?); /*0x5adea8*/
+  MSEngine::Destruct((MSEngine *)&((char *)&v9)); /*0x5adea8*/
   DeleteAndZero(&v9); /*0x5adeb1*/
   if ( !v4 ) /*0x5adeb8*/
     return a2; /*0x5adf0b*/
   v9.AbstractClass = (void *)asc_82083C; /*0x5aded1*/
-  StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?, 152); /*0x5adee5*/
-  v5 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&stru_82BA00.?, 152); /*0x5adef0*/
+  StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 152); /*0x5adee5*/
+  v5 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&((char *)&stru_82BA00), 152); /*0x5adef0*/
   Dialog::ShowMessageBox(v5, StringCSF, 0, 0, 0, v8); /*0x5adefa*/
   return 0; /*0x5adf01*/
 }
@@ -2061,7 +2061,7 @@ namespace gamemd {
 int E4Recv_5FBF70::sub_5FBF70()
 {
 
-  return (int)this->?; /*0x5fbf73*/
+  return (int)((unsigned int *)this)[0]; /*0x5fbf73*/
 
 }
 } // namespace gamemd

@@ -58,10 +58,10 @@ int InfantryClass::ScanTarget(int * a1)
   }
   if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
   {
-    v17 = a1->?[0]; /*0x4d4e21*/
+    v17 = ((unsigned int *)a1)[0]; /*0x4d4e21*/
     v5 = (int (**)(FootClass *, int, int *, unsigned int))a1->TechnoClass; /*0x4d4e25*/
-    v18 = a1->?[1]; /*0x4d4e2a*/
-    v19 = a1->?[2]; /*0x4d4e36*/
+    v18 = ((unsigned int *)a1)[1]; /*0x4d4e2a*/
+    v19 = ((unsigned int *)a1)[2]; /*0x4d4e36*/
     v6 = v5[241](a1, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {
@@ -69,14 +69,14 @@ int InfantryClass::ScanTarget(int * a1)
       a1->FootClass_field_bool_68E = 0; /*0x4d4e53*/
     }
   }
-  if ( a1->? ) /*0x4d4e5a*/
+  if ( ((unsigned int *)a1)[0] ) /*0x4d4e5a*/
     (*((void (**)(FootClass *, unsigned int))a1->TechnoClass + 335))(a1, 0); /*0x4d4e6a*/
   else
     (*((void (**)(FootClass *, unsigned int, int))a1->TechnoClass + 289))(a1, 0, 1); /*0x4d4e7a*/
   v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)a1) + 2) * 900.0; /*0x4d4e8a*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
   v9 = v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
-  if ( !a1->?
+  if ( !((unsigned int *)a1)[0]
     || (!a1
      || (*((int (**)(FootClass *))a1->TechnoClass + 11))(a1) != 15
      || !*((unsigned char *)((*((int (**)(FootClass *))a1->TechnoClass + 11))(a1) == 15
@@ -88,7 +88,7 @@ int InfantryClass::ScanTarget(int * a1)
   {
     return v9; /*0x4d4f1c*/
   }
-  v10 = (int *)(*((int (**)(AbstractClass *, unsigned char *))a1->?->TechnoClass::vtable0 + 18))(a1->?, v20); /*0x4d4f30*/
+  v10 = (int *)(*((int (**)(AbstractClass *, unsigned char *))((unsigned int *)a1)[0]->TechnoClass::vtable0 + 18))(((unsigned int *)a1)[0], v20); /*0x4d4f30*/
   v11 = *v10; /*0x4d4f33*/
   v12 = v10[1]; /*0x4d4f35*/
   v13 = (int *)(*((int (**)(FootClass *, unsigned char *))a1->TechnoClass + 18))(a1, v21); /*0x4d4f41*/
@@ -127,13 +127,13 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   unsigned int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
   if ( *(unsigned char *)((*((int (**)(FootClass *))a1->TechnoClass + 33))(a1) + 1748) /*0x4d5392*/
-    || (v15[0] = a1->?[0],
+    || (v15[0] = ((unsigned int *)a1)[0],
         v2 = a1->TechnoClass,
-        v15[1] = a1->?[1],
-        v15[2] = a1->?[2],
+        v15[1] = ((unsigned int *)a1)[1],
+        v15[2] = ((unsigned int *)a1)[2],
         !(*((uint8_t (**)(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
   {
-    if ( (uint8_t)House::IsCurrentPlayer((House *)a1->?) || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
+    if ( (uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)a1)[0]) || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
     {
       (*((void (**)(FootClass *))a1->TechnoClass + 286))(a1); /*0x4d557c*/
     }
@@ -143,7 +143,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
       *(unsigned int *)v13 = *HouseClass::GetCurrentOption((HouseClass *)dword_A83D4C, &v14); /*0x4d5529*/
       if ( *(unsigned int *)v13 != g_FootClass_Pool ) /*0x4d552d*/
       {
-        slaveManager = (FactoryClass *)a1->?; /*0x4d553d*/
+        slaveManager = (FactoryClass *)((unsigned int *)a1)[0]; /*0x4d553d*/
         if ( slaveManager ) /*0x4d5545*/
           FactoryClass::ResetProductionTimers(slaveManager); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d554c*/
@@ -165,14 +165,14 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   if ( v5[3779] && !v5[3778] && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) ) /*0x4d53df*/
   {
 LABEL_14:
-    (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, a1->?, 1); /*0x4d547c*/
+    (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, ((unsigned int *)a1)[0], 1); /*0x4d547c*/
     (*((void (**)(FootClass *, int, unsigned int))a1->TechnoClass + 122))(a1, 8, 0); /*0x4d5497*/
     if ( !(*((uint8_t (**)(FootClass *))a1->TechnoClass + 128))(a1) ) /*0x4d54a9*/
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
   if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) /*0x4d5428*/
-    || (target = a1->?) == 0
+    || (target = ((unsigned int *)a1)[0]) == 0
     || (*((int (**)(AbstractClass *))target->vtable0 + 11))(target) != 6 )
   {
     if ( !*(unsigned char *)(v4[432] + 3782) ) /*0x4d547a*/
@@ -183,7 +183,7 @@ LABEL_14:
     }
     goto LABEL_14; /*0x4d547a*/
   }
-  (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, a1->?, 1); /*0x4d5437*/
+  (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, ((unsigned int *)a1)[0], 1); /*0x4d5437*/
   (*((void (**)(FootClass *, int, unsigned int))a1->TechnoClass + 122))(a1, 17, 0); /*0x4d5445*/
   if ( (*((uint8_t (**)(FootClass *))a1->TechnoClass + 128))(a1) ) /*0x4d544f*/
 LABEL_12:
@@ -216,35 +216,35 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   unsigned int *v15; // eax
   int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  p_vtable1 = (AbstractClass *)&a1->?; /*0x517d9a*/
+  p_vtable1 = (AbstractClass *)&((unsigned int *)a1)[0]; /*0x517d9a*/
   a1->FootClass = &vt_InfantryClass; /*0x517d9d*/
-  a1->? = &vt_InfantryClass; /*0x517da3*/
-  a1->? = &off_7EB02C; /*0x517daa*/
-  a1->? = &vt_InfantryClass; /*0x517db1*/
+  ((unsigned int *)a1)[0] = &vt_InfantryClass; /*0x517da3*/
+  ((unsigned int *)a1)[0] = &off_7EB02C; /*0x517daa*/
+  ((unsigned int *)a1)[0] = &vt_InfantryClass; /*0x517db1*/
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
     Type = a1->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
-      if ( HouseClass::CanBuild(a1->?, (int)Type, 0, 0) == -1 ) /*0x517de3*/
-        a1->?->recheckTechTree = 1; /*0x517deb*/
-      team = (int *)a1->?; /*0x517df2*/
+      if ( HouseClass::CanBuild(((unsigned int *)a1)[0], (int)Type, 0, 0) == -1 ) /*0x517de3*/
+        ((unsigned int *)a1)[0]->recheckTechTree = 1; /*0x517deb*/
+      team = (int *)((unsigned int *)a1)[0]; /*0x517df2*/
       if ( team ) /*0x517dfa*/
       {
         TeamClass::LiberateMember_Start(team, (int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
-        a1->? = 0; /*0x517e05*/
+        ((unsigned int *)a1)[0] = 0; /*0x517e05*/
       }
-      slaveOwner = a1->?; /*0x517e0b*/
+      slaveOwner = ((unsigned int *)a1)[0]; /*0x517e0b*/
       if ( slaveOwner ) /*0x517e13*/
       {
         slaveManager = slaveOwner->slaveManager; /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
       }
-      HouseClass::DecrementUnitCount(a1->?, a1); /*0x517e2e*/
-      if ( !a1->?[0] ) /*0x517e33*/
+      HouseClass::DecrementUnitCount(((unsigned int *)a1)[0], a1); /*0x517e2e*/
+      if ( !((unsigned int *)a1)[0] ) /*0x517e33*/
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
-      (*(void (**)(int))(*(unsigned int *)a1->?[0] + 172))(a1->?[0]); /*0x517e4e*/
+      (*(void (**)(int))(*(unsigned int *)((unsigned int *)a1)[0] + 172))(((unsigned int *)a1)[0]); /*0x517e4e*/
       a1->unknown_int_6E8 = 2; /*0x517e56*/
       a1->Crawling = 0; /*0x517e60*/
       a1->SequenceAnim[0] = 0; /*0x517e66*/
@@ -268,20 +268,20 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x517ec3*/
-  vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
+  vtable1 = ((char *)&g_BuildingLoadQueue_Array); /*0x517ec8*/
   v10 = Vtable3; /*0x517ece*/
-  if ( g_BuildingLoadQueue_Array.? ) /*0x517ed2*/
+  if ( ((char *)&g_BuildingLoadQueue_Array) ) /*0x517ed2*/
   {
-    if ( !LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x517ede*/
+    if ( !LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x517ede*/
     {
       qsort( /*0x517eee*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
+        (size_t)((char *)&g_BuildingLoadQueue_Array),
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ef3*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x517efc*/
-      LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x517f02*/
+      vtable1 = ((char *)&g_BuildingLoadQueue_Array); /*0x517ef3*/
+      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x517efc*/
+      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
     v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, v17); /*0x517f18*/
@@ -291,22 +291,22 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       if ( v12 != -1 ) /*0x517f2d*/
       {
         v13 = v12 + 1; /*0x517f2f*/
-        for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x517f39*/
-              v13 < (int)g_BuildingLoadQueue_Array.?;
-              i = (char *)g_BuildingLoadQueue_Array.? )
+        for ( i = (char *)((char *)&g_BuildingLoadQueue_Array); /*0x517f39*/
+              v13 < (int)((char *)&g_BuildingLoadQueue_Array);
+              i = (char *)((char *)&g_BuildingLoadQueue_Array) )
         {
           v15 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v13++; /*0x517f41*/
           *(v15 - 2) = *v15; /*0x517f47*/
           *(v15 - 1) = v15[1]; /*0x517f4d*/
         }
-        g_BuildingLoadQueue_Array.? = i - 1; /*0x517f62*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x517f67*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x517f77*/
-        g_BuildingLoadQueue_Array.? = 0; /*0x517f7b*/
+        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = i - 1; /*0x517f62*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x517f67*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = 0; /*0x517f77*/
+        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x517f7b*/
       }
     }
   }
-  a1->? = 0; /*0x517f83*/
+  ((unsigned int *)a1)[0] = 0; /*0x517f83*/
   return FootClass::Destruct((FootClass *)a1); /*0x517f8e*/
 
 }

@@ -35,7 +35,7 @@ unsigned int * AudioQueue::CreateNode()
   DListNode::InitEmpty(v2); /*0x402b0e*/
   *(unsigned int *)v2[2].__pad_0 = 0; /*0x402b13*/
   v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
-  if ( ((int (*)(DListNode *))this-((unsigned int *)(>AudioQueue_field_0x14))[0])(v2) ) /*0x402b1f*/
+  if ( ((int (*)(DListNode *))this->AudioQueue_field_0x14[0])(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {
@@ -48,9 +48,9 @@ unsigned int * AudioQueue::CreateNode()
   }
   if ( !v2 ) /*0x402b4a*/
     return 0; /*0x402b51*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] |= 1u; /*0x402b5e*/
+  *(unsigned int *)&this->__pad_0[12] |= 1u; /*0x402b5e*/
   InsertAfterDListNode((int)off_815E98, v2); /*0x402b67*/
-  if ( (this-((unsigned int *)(>__pad_0))[8] & 2) != 0 ) /*0x402b70*/
+  if ( (this->__pad_0[8] & 2) != 0 ) /*0x402b70*/
     dword_87DE28 = 1; /*0x402b72*/
   return v2->__pad_0; /*0x402b44*/
 

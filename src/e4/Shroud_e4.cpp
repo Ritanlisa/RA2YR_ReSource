@@ -36,14 +36,14 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   int v16; // eax
 
   ShroudClass::UpdateVisibility((MapClass *)this, aP1); /*0x65449d*/
-  v3 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[60]; /*0x6544a2*/
-  v4 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[64]; /*0x6544a8*/
+  v3 = *(unsigned int *)&this->__pad_C0[60]; /*0x6544a2*/
+  v4 = *(unsigned int *)&this->__pad_C0[64]; /*0x6544a8*/
   *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/
   *(unsigned int *)this->__pad_14A0 = 10000; /*0x6544bd*/
   this->RadarClass_field_0x149C = (RadarClass *)10000; /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
-  v6 = v4 + *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[52] - v3; /*0x6544da*/
-  v7 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[68]; /*0x6544dc*/
+  v6 = v4 + *(unsigned int *)&this->__pad_C0[52] - v3; /*0x6544da*/
+  v7 = *(unsigned int *)&this->__pad_C0[68]; /*0x6544dc*/
   this->RadarClass_field_0x14A4 = 0; /*0x6544e7*/
   this->RadarClass_field_0x1498 = (MapClass *)-1; /*0x6544f4*/
   this->RadarClass_field_0x1494 = (MapClass *)((int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6)); /*0x654533*/
@@ -76,7 +76,7 @@ LABEL_17:
     {
       v12 = 0; /*0x6545be*/
     }
-    else if ( v12 != (RadarClass *)(2 * *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[68] - 1) ) /*0x6545ce*/
+    else if ( v12 != (RadarClass *)(2 * *(unsigned int *)&this->__pad_C0[68] - 1) ) /*0x6545ce*/
     {
 LABEL_9: RadarClass_field_0x149C = (gamemd::RadarClass *)(this->RadarClass_field_0x149C);
       if ( (int)v12 >= (int)RadarClass_field_0x149C ) /*0x6545dd*/

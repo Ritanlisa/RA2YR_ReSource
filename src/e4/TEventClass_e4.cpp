@@ -261,7 +261,7 @@ LABEL_22:
           case 53: /*0x71ec93*/
           case 54: /*0x71ec93*/
           case 59: /*0x71ec93*/
-            if ( a2 == TEventClass_field_2C && !stru_A8EB00.?[391] ) /*0x71eca9*/
+            if ( a2 == TEventClass_field_2C && !((unsigned int *)&stru_A8EB00)[391] ) /*0x71eca9*/
               break; /*0x71eca9*/
             goto LABEL_139; /*0x71eca9*/
           default:
@@ -451,11 +451,11 @@ LABEL_112:
             *(unsigned char *)a6 = 1; /*0x71effe*/
             goto LABEL_122; /*0x71f001*/
           case 23: /*0x71eea2*/
-            waveEffect = FootClass_Array.?; /*0x71eea9*/
+            waveEffect = ((char *)&FootClass_Array); /*0x71eea9*/
             v41 = 0; /*0x71eeaf*/
-            if ( (int)FootClass_Array.? <= 0 ) /*0x71eeb3*/
+            if ( (int)((char *)&FootClass_Array) <= 0 ) /*0x71eeb3*/
               goto LABEL_91; /*0x71eeb3*/
-            auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
+            auxParticles1 = ((char *)&FootClass_Array); /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
             if ( !DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
@@ -486,11 +486,11 @@ LABEL_112:
           }
           ++v41; /*0x71eed6*/
           auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x71eed7*/
-          if ( v41 >= (int)FootClass_Array.? ) /*0x71eedc*/
+          if ( v41 >= (int)((char *)&FootClass_Array) ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
         *(unsigned char *)a6 = 1; /*0x71eee4*/
-        waveEffect = FootClass_Array.?; /*0x71eee7*/
+        waveEffect = ((char *)&FootClass_Array); /*0x71eee7*/
 LABEL_91:
         if ( (WaveClass *)v41 == waveEffect ) /*0x71eeef*/
         {
@@ -716,9 +716,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
-  Block->? = &vt_TEventClass; /*0x71fa8c*/
-  Block->? = &vt_TEventClass; /*0x71fa93*/
-  Block->? = &vt_TEventClass; /*0x71fa9a*/
+  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa8c*/
+  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa93*/
+  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
@@ -755,7 +755,7 @@ void * TEventClass::Fire(void ** Block, char a2)
          &v7);
   if ( v5 != -1 && v5 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)) ) /*0x71fb5c*/
   {
-    --g_BuildingLoadQueue_Array.?[54]; /*0x71fb61*/
+    --((unsigned int *)&g_BuildingLoadQueue_Array)[54]; /*0x71fb61*/
     for ( ; /*0x71fb67*/
           v5 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54));
           *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * v5 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51))
@@ -830,9 +830,9 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
       aP0->AbstractClass = &vt_TEventClass; /*0x71f8e4*/
-      aP0->? = &vt_TEventClass; /*0x71f8ea*/
-      aP0->? = &vt_TEventClass; /*0x71f8f1*/
-      aP0->? = &vt_TEventClass; /*0x71f8f8*/
+      ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8ea*/
+      ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8f1*/
+      ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/

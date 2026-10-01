@@ -340,16 +340,16 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   char **RegionStringWOL; // [esp-4h] [ebp-108h]
   ObjectClass v7; // [esp+Ch] [ebp-F8h] BYREF
 
-  v7.? = 0; /*0x7651e1*/
-  v7.? = 0; /*0x7651e5*/
-  GenericNode::Constructor((GenericNode *)&v7.?); /*0x7651e9*/
+  ((unsigned int *)&v7)[0] = 0; /*0x7651e1*/
+  ((unsigned int *)&v7)[0] = 0; /*0x7651e5*/
+  GenericNode::Constructor((GenericNode *)&((char *)&v7)); /*0x7651e9*/
   GenericNode::Constructor((GenericNode *)&v7.occupant); /*0x7651f2*/
-  LinkedList::Prepend((LinkedList *)&v7.?, (int)&v7.occupant); /*0x765208*/
-  v7.? = (int)&vt_List; /*0x765211*/
+  LinkedList::Prepend((LinkedList *)&((char *)&v7), (int)&v7.occupant); /*0x765208*/
+  ((unsigned int *)&v7)[0] = (int)&vt_List; /*0x765211*/
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
-  v7.? = &vt_INIClass; /*0x765231*/
+  ((unsigned int *)&v7)[0] = &vt_INIClass; /*0x765231*/
   BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
   CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(uint8_t)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
@@ -358,29 +358,29 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
     CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
   }
-  FileStraw::Open((FileStraw *)&v7.?, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
+  FileStraw::Open((FileStraw *)&((char *)&v7), (int)&v7.ambientSoundController[3], 0); /*0x765288*/
   CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x7652a2*/
   String::Assign((String *)&v7, g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = (char **)&this->ambientSoundController[3]; /*0x7652ba*/
-  INIClass::SetIntFormat((char *)&v7.?, (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
+  INIClass::SetIntFormat((char *)&((char *)&v7), (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
-    v4 = String::Assign((String *)&v7.?, g_INI_Key_LastDay); /*0x7652ea*/
+    v4 = String::Assign((String *)&((char *)&v7), g_INI_Key_LastDay); /*0x7652ea*/
     String::Concat((String *)v4, (char **)&v7, RegionStringWOL); /*0x7652f1*/
-    DeleteAndZero((ObjectClass *)&v7.?); /*0x7652fa*/
-    INIClass::SetIntFormat((char *)&v7.?, v2, (char **)&v7, 0, 0); /*0x76530b*/
+    DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x7652fa*/
+    INIClass::SetIntFormat((char *)&((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
   BufferIOFile::Init((BufferIOFile *)&v7.location[1]); /*0x765326*/
   CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
-  INIClass::SaveToPipe((INIClass *)&v7.?, (int)&v7.location[1]); /*0x76534a*/
+  INIClass::SaveToPipe((INIClass *)&((char *)&v7), (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
-  return HashTable::DestroyHashTableINIClass((INIClass *)&v7.?); /*0x76536f*/
+  return HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v7)); /*0x76536f*/
 
 }
 }
@@ -565,7 +565,7 @@ namespace gamemd {
 int E4Recv_7667E0::sub_7667E0()
 {
 
-  return BYTE2(this->?); /*0x7667e5*/
+  return BYTE2(((unsigned int *)this)[0]); /*0x7667e5*/
 
 }
 }
@@ -574,7 +574,7 @@ namespace gamemd {
 int E4Recv_7667F0::sub_7667F0()
 {
 
-  return HIBYTE(this->?); /*0x7667f5*/
+  return HIBYTE(((unsigned int *)this)[0]); /*0x7667f5*/
 
 }
 }
@@ -671,8 +671,8 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
   vtable0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
   v55.AbstractClass = vtable0; /*0x769600*/
-  v55.? = (*(int (**)(void *))(*(unsigned int *)vtable0 + 128))(vtable0); /*0x76960d*/
-  v55.? = (*(int (**)(void *))(*(unsigned int *)vtable0 + 124))(vtable0); /*0x76961e*/
+  ((unsigned int *)&v55)[0] = (*(int (**)(void *))(*(unsigned int *)vtable0 + 128))(vtable0); /*0x76960d*/
+  ((unsigned int *)&v55)[0] = (*(int (**)(void *))(*(unsigned int *)vtable0 + 124))(vtable0); /*0x76961e*/
   *(unsigned int *)&v51.m_1[3] = 0; /*0x769627*/
   v51.m_8 = 30; /*0x76962b*/
   IDA_LOWORD(v51.m_C) = 1; /*0x76962f*/
@@ -696,41 +696,41 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   else
     v7 = 0; /*0x7696a5*/
   Block = v7; /*0x7696ab*/
-  v55.? = &v51; /*0x7696af*/
+  ((unsigned int *)&v55)[0] = &v51; /*0x7696af*/
   IDA_BYTE1(v54) = 1; /*0x7696b7*/
-  v55.? = 0; /*0x7696bc*/
-  v55.? = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7696c0*/
-  if ( Map_WorldDominationTour_38::AddRef(&v55.?) ) /*0x7696c8*/
+  ((unsigned int *)&v55)[0] = 0; /*0x7696bc*/
+  ((unsigned int *)&v55)[0] = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7696c0*/
+  if ( Map_WorldDominationTour_38::AddRef(&((char *)&v55)) ) /*0x7696c8*/
   {
     do /*0x769700*/
     {
-      v8 = (unsigned int *)(16 * (int)v55.? + *((unsigned int *)v55.? + 1)); /*0x7696e4*/
+      v8 = (unsigned int *)(16 * (int)((char *)&v55) + *((unsigned int *)((char *)&v55) + 1)); /*0x7696e4*/
       *v8 = 0; /*0x7696e6*/
       v8[1] = 0; /*0x7696e8*/
       v8[2] = 0; /*0x7696eb*/
       v8[3] = 0; /*0x7696ee*/
-      (*((void (**)(void **))v55.? + 2))(&v55.?); /*0x7696f5*/
+      (*((void (**)(void **))((char *)&v55) + 2))(&((char *)&v55)); /*0x7696f5*/
     }
-    while ( (*((uint8_t (**)(void **))v55.? + 1))(&v55.?) ); /*0x769700*/
+    while ( (*((uint8_t (**)(void **))((char *)&v55) + 1))(&((char *)&v55)) ); /*0x769700*/
   }
   v9 = 0; /*0x76970b*/
   v50 = 0; /*0x76970f*/
-  if ( v55.? > 0 ) /*0x769713*/
+  if ( ((char *)&v55) > 0 ) /*0x769713*/
   {
     while ( 1 ) /*0x76971d*/
     {
       v49 = 0; /*0x76971d*/
-      if ( v55.? > 0 ) /*0x769723*/
+      if ( ((char *)&v55) > 0 ) /*0x769723*/
         break; /*0x769723*/
   LABEL_67:
       v50 = ++v9; /*0x769a2a*/
-      if ( v9 >= v55.? ) /*0x769a2e*/
+      if ( v9 >= ((char *)&v55) ) /*0x769a2e*/
         goto LABEL_68; /*0x769a2e*/
     }
     while ( 1 ) /*0x769736*/
     {
       abstractFlags = (*(int (**)(void *, int *))(*(unsigned int *)vtable0 + 40))(vtable0, &v49); /*0x769736*/
-      v55.? = abstractFlags; /*0x76973b*/
+      ((unsigned int *)&v55)[0] = abstractFlags; /*0x76973b*/
       if ( abstractFlags <= 0x1D ) /*0x76973f*/
       {
         v11 = abstractFlags + 1; /*0x769755*/
@@ -765,7 +765,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
                   v16[2] = v17[2]; /*0x7697cc*/
                 }
                 while ( v14 ); /*0x7697cf*/
-                abstractFlags = v55.?; /*0x7697d1*/
+                abstractFlags = ((char *)&v55); /*0x7697d1*/
               }
               if ( IDA_BYTE1(v54) ) /*0x7697db*/
                 RA2_OPDEL(Block); /*0x7697e2*/
@@ -816,7 +816,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
                     v25[3] = v26[3]; /*0x7698ad*/
                   }
                   while ( m_8 ); /*0x7698b0*/
-                  abstractFlags = v55.?; /*0x7698b2*/
+                  abstractFlags = ((char *)&v55); /*0x7698b2*/
                 }
                 if ( IDA_BYTE1(v51.m_C) ) /*0x7698bc*/
                   RA2_OPDEL(*(void **)&v51.m_1[3]); /*0x7698c3*/
@@ -831,22 +831,22 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
             (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)v51.__pad_0 + 12))(&v51); /*0x7698e2*/
           }
           v55.occupant = v55.owningHouseIndex; /*0x7698ed*/
-          v55.? = &v51; /*0x7698fa*/
-          v55.? = (int)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7698fe*/
-          if ( Map_WorldDominationTour_38::AddRef(&v55.?) ) /*0x769902*/
+          ((unsigned int *)&v55)[0] = &v51; /*0x7698fa*/
+          ((unsigned int *)&v55)[0] = (int)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7698fe*/
+          if ( Map_WorldDominationTour_38::AddRef(&((char *)&v55)) ) /*0x769902*/
           {
             do /*0x76993a*/
             {
-              v27 = (unsigned int *)(16 * v55.occupant + *((unsigned int *)v55.? + 1)); /*0x76991e*/
+              v27 = (unsigned int *)(16 * v55.occupant + *((unsigned int *)((char *)&v55) + 1)); /*0x76991e*/
               *v27 = 0; /*0x769920*/
               v27[1] = 0; /*0x769922*/
               v27[2] = 0; /*0x769925*/
               v27[3] = 0; /*0x769928*/
-              (*(void (**)(int *))(v55.? + 8))(&v55.?); /*0x76992f*/
+              (*(void (**)(int *))(((char *)&v55) + 8))(&((char *)&v55)); /*0x76992f*/
             }
-            while ( (*(uint8_t (**)(int *))(v55.? + 4))(&v55.?) ); /*0x76993a*/
+            while ( (*(uint8_t (**)(int *))(((char *)&v55) + 4))(&((char *)&v55)) ); /*0x76993a*/
           }
-          v55.? = (int)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769941*/
+          ((unsigned int *)&v55)[0] = (int)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769941*/
         }
         v28 = *(unsigned int *)&v51.m_1[3] + 16 * abstractFlags; /*0x76994e*/
         v29 = v28->q008; /*0x769950*/
@@ -902,15 +902,15 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   LABEL_66:
       vtable0 = v55.AbstractClass; /*0x769a0e*/
       v49 = v30 + 1; /*0x769a19*/
-      if ( v30 + 1 >= v55.? ) /*0x769a1d*/
+      if ( v30 + 1 >= ((char *)&v55) ) /*0x769a1d*/
         goto LABEL_67; /*0x769a1d*/
     }
   }
   LABEL_68:
-  _769D70 = Map_Load_769D70(&v55.?, (int)&v51); /*0x769a34*/
-  Map_Load_769C20((ObjectClass *)&v55.?, (int)_769D70); /*0x769a46*/
+  _769D70 = Map_Load_769D70(&((char *)&v55), (int)&v51); /*0x769a34*/
+  Map_Load_769C20((ObjectClass *)&((char *)&v55), (int)_769D70); /*0x769a46*/
   v41 = 0; /*0x769a4f*/
-  if ( (*((uint8_t (**)(void **))v55.? + 1))(&v55.?) ) /*0x769a55*/
+  if ( (*((uint8_t (**)(void **))((char *)&v55) + 1))(&((char *)&v55)) ) /*0x769a55*/
   {
     v42 = 0; /*0x769a60*/
     do /*0x769b22*/
@@ -918,29 +918,29 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
       v43 = FormatStringInt((char **)&v55.owningHouseIndex, v41, 2); /*0x769a6a*/
       ConcatStringAlloc((char **)&v55, (const char **)v55.ambientSoundController[0], v43); /*0x769a78*/
       DeleteAndZero((ObjectClass *)&v55.owningHouseIndex); /*0x769a81*/
-      FromStringInt((char **)&v55.?, (int)g_DisplayWidth); /*0x769a90*/
-      _7694C0 = Map_Load_7694C0((ObjectClass *)((char *)Block + v42), &v55.?); /*0x769aa0*/
+      FromStringInt((char **)&((char *)&v55), (int)g_DisplayWidth); /*0x769a90*/
+      _7694C0 = Map_Load_7694C0((ObjectClass *)((char *)Block + v42), &((char *)&v55)); /*0x769aa0*/
       v45 = (ObjectClass *)_7694C0[1]; /*0x769aa9*/
       v55.fallRate = *_7694C0; /*0x769aac*/
       v55.v45 = v45; /*0x769ab0*/
-      v46 = String::Assign((String *)&v55.?, aTarget_0); /*0x769acc*/
-      v47 = String::Concat((String *)v46, (char **)&v55.?, (char **)&v55.?); /*0x769ad3*/
+      v46 = String::Assign((String *)&((char *)&v55), aTarget_0); /*0x769acc*/
+      v47 = String::Concat((String *)v46, (char **)&((char *)&v55), (char **)&((char *)&v55)); /*0x769ad3*/
       INIClass::GetInt((char *)&v55.ambientSoundController[1], (char **)&v55, v47, &v55.fallRate); /*0x769ae2*/
-      DeleteAndZero((ObjectClass *)&v55.?); /*0x769aeb*/
-      DeleteAndZero((ObjectClass *)&v55.?); /*0x769af4*/
-      (*((void (**)(void **))v55.? + 2))(&v55.?); /*0x769b01*/
+      DeleteAndZero((ObjectClass *)&((char *)&v55)); /*0x769aeb*/
+      DeleteAndZero((ObjectClass *)&((char *)&v55)); /*0x769af4*/
+      (*((void (**)(void **))((char *)&v55) + 2))(&((char *)&v55)); /*0x769b01*/
       ++v41; /*0x769b08*/
       v42 += 12; /*0x769b09*/
-      DeleteAndZero((ObjectClass *)&v55.?); /*0x769b0c*/
+      DeleteAndZero((ObjectClass *)&((char *)&v55)); /*0x769b0c*/
       DeleteAndZero(&v55); /*0x769b15*/
     }
-    while ( (*((uint8_t (**)(void **))v55.? + 1))(&v55.?) ); /*0x769b22*/
+    while ( (*((uint8_t (**)(void **))((char *)&v55) + 1))(&((char *)&v55)) ); /*0x769b22*/
   }
   CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aWdtmapmdIni_0, (CHAR *)2); /*0x769b3b*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b4c*/
   CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aCodeWdtmapmdIn, (CHAR *)2); /*0x769b5f*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b70*/
-  v55.? = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769b79*/
+  ((unsigned int *)&v55)[0] = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769b79*/
   *(unsigned int *)v51.__tail_10 = (void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x769b81*/
   Map_WorldDominationTour_43::ddtor((int)v51.__tail_10); /*0x769b89*/
   *(unsigned int *)v51.__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x769b92*/
@@ -970,11 +970,11 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     return &this->AbstractClass; /*0x76b7bc*/
   (*((void (**)(ObjectClass *))this->AbstractClass + 3))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
-  this->? = (void *)v4; /*0x76b7cc*/
+  ((unsigned int *)this)[0] = (void *)v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
-    this->? = 0; /*0x76b855*/
-    BYTE1(this->?) = 0; /*0x76b85c*/
+    ((unsigned int *)this)[0] = 0; /*0x76b855*/
+    BYTE1(((unsigned int *)this)[0]) = 0; /*0x76b85c*/
     return &this->AbstractClass; /*0x76b860*/
   }
   v5 = (int *)__2_YAPAXI_Z(8 * v4 + 4); /*0x76b7dd*/
@@ -1001,20 +1001,20 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     v8 = 0; /*0x76b815*/
   }
-  this->? = v8; /*0x76b819*/
+  ((unsigned int *)this)[0] = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->AbstractClass; /*0x76b81c*/
-  vtable2 = this->?; /*0x76b81e*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
-  BYTE1(this->?) = 1; /*0x76b825*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x76b825*/
   if ( (int)vtable2 <= 0 ) /*0x76b829*/
     return &this->AbstractClass; /*0x76b829*/
   do /*0x76b84a*/
   {
-    ComPtr::Set((ComPtr *)((char *)this->? + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
+    ComPtr::Set((ComPtr *)((char *)((unsigned int *)this)[0] + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < (int)this->? ); /*0x76b84a*/
+  while ( v10 < (int)((unsigned int *)this)[0] ); /*0x76b84a*/
   return &this->AbstractClass; /*0x76b84e*/
 
 }
@@ -1316,8 +1316,8 @@ unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
 
   this->AbstractClass = (void *)*a2; /*0x76370b*/
-  this->? = (void *)a2[1]; /*0x763710*/
-  this->? = (void *)a2[2]; /*0x763717*/
+  ((unsigned int *)this)[0] = (void *)a2[1]; /*0x763710*/
+  ((unsigned int *)this)[0] = (void *)a2[2]; /*0x763717*/
   return &this->AbstractClass; /*0x763713*/
 
 }
@@ -1880,7 +1880,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
 
   v5 = (*((int (**)(ObjectClass *, int))this->AbstractClass + 5))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
-  ConcatStringAlloc((char **)&a3, (const char **)&this->?, v6); /*0x767343*/
+  ConcatStringAlloc((char **)&a3, (const char **)&((unsigned int *)this)[0], v6); /*0x767343*/
   DeleteAndZero((ObjectClass *)&v14); /*0x76734c*/
   v7 = a4; /*0x767351*/
   if ( WideString::Length(a4) ) /*0x767357*/
@@ -2263,9 +2263,9 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
   char *v4; // ecx
 
   result = &this->AbstractClass; /*0x769490*/
-  vtable1 = (char *)this->?; /*0x76949d*/
+  vtable1 = (char *)((unsigned int *)this)[0]; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
-  v4 = (char *)this->? + 1; /*0x7694aa*/
+  v4 = (char *)((unsigned int *)this)[0] + 1; /*0x7694aa*/
   result[1] = &vtable1[a2[1]]; /*0x7694ab*/
   result[2] = v4; /*0x7694ae*/
   return result; /*0x7694b1*/

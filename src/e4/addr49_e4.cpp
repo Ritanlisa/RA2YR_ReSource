@@ -2650,15 +2650,15 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
     }
     BYTE1(Block->attachedTag) = 0; /*0x49e89c*/
     Block->nextObject = 0; /*0x49e89f*/
-    abstractFlags = (void *)Block->?; /*0x49e8a2*/
-    Block->? = (int)&vt_VectorClassDynamicVectorClass; /*0x49e8a5*/
-    if ( abstractFlags && BYTE1(Block->?) ) /*0x49e8ac*/
+    abstractFlags = (void *)((unsigned int *)Block)[0]; /*0x49e8a2*/
+    ((unsigned int *)Block)[0] = (int)&vt_VectorClassDynamicVectorClass; /*0x49e8a5*/
+    if ( abstractFlags && BYTE1(((unsigned int *)Block)[0]) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
-      Block->? = 0; /*0x49e8ba*/
+      ((unsigned int *)Block)[0] = 0; /*0x49e8ba*/
     }
-    BYTE1(Block->?) = 0; /*0x49e8c1*/
-    Block->? = 0; /*0x49e8c6*/
+    BYTE1(((unsigned int *)Block)[0]) = 0; /*0x49e8c1*/
+    ((unsigned int *)Block)[0] = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
       __3_YAXPAX_Z(Block); /*0x49e8cc*/
     return (char *)Block; /*0x49e8d4*/
@@ -6570,8 +6570,8 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   int v7; // edi
 
   result = &this->AbstractClass; /*0x49da60*/
-  p_uniqueId = &this->?; /*0x49da66*/
-  p_referenceCount = &this->?; /*0x49da69*/
+  p_uniqueId = &((unsigned int *)this)[0]; /*0x49da66*/
+  p_referenceCount = &((unsigned int *)this)[0]; /*0x49da69*/
   result[1] = 0; /*0x49da6c*/
   result[2] = 0; /*0x49da6f*/
   p_uniqueId[1] = 0; /*0x49da72*/

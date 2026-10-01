@@ -219,7 +219,7 @@ int DDraw::HandleSuspend()
       v4 = *(unsigned int *)(*((unsigned int *)this + 7) + 4 * i); /*0x5d255a*/
       (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
-    while ( !stru_A8EB00.?[412] ) /*0x5d2571*/
+    while ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x5d2571*/
     {
       this->Debug::Log(); /*0x5d257e*/
       Sleep(0x1F4u); /*0x5d258b*/

@@ -262,7 +262,7 @@ wchar_t * * sub_730EA0()
       if ( ++v2 >= (int)v1 ) /*0x730efa*/
       {
         if ( v3 ) /*0x730efe*/
-          return (wchar_t *)PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x730f17*/
+          return (wchar_t *)PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x730f17*/
         return result; /*0x730f17*/
       }
     }

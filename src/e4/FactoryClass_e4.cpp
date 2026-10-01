@@ -47,19 +47,19 @@ int FactoryClass::UpdateProduction()
   LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
-    Speed = *(unsigned int *)&this-((unsigned int *)(>__pad_42))[22]; /*0x4c9b33*/
+    Speed = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
-      if ( this-((unsigned int *)(>production))[0] == 54 ) /*0x4c9b4d*/
+      if ( this->production[0] == 54 ) /*0x4c9b4d*/
         return Speed; /*0x4c9b4d*/
     }
     else if ( !this->specialItem ) /*0x4c9b3f*/
     {
       return Speed; /*0x4c9b3f*/
     }
-    if ( this->specialItem == (char [4])(-1) || this-((unsigned int *)(>production))[0] != 54 ) /*0x4c9b5d*/
+    if ( this->specialItem == (char [4])(-1) || this->production[0] != 54 ) /*0x4c9b5d*/
     {
-      v3 = &this-((unsigned int *)(>production))[2]; /*0x4c9b63*/
+      v3 = &this->production[2]; /*0x4c9b63*/
       Speed = Locomotor::GetSpeed((Locomotor *)&this->production[2]); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
@@ -67,16 +67,16 @@ int FactoryClass::UpdateProduction()
       }
       else
       {
-        this-((unsigned int *)(>production))[0] += (int)this->object; /*0x4c9b82*/
+        this->production[0] += (int)this->object; /*0x4c9b82*/
         LOBYTE(this->production[1]) = 1; /*0x4c9b89*/
         *v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9b92*/
-        this-((unsigned int *)(>queuedObjects))[0] = v11; /*0x4c9b94*/
+        this->queuedObjects[0] = v11; /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
-        v4 = *(unsigned int *)&this-((unsigned int *)(>__pad_42))[22]; /*0x4c9b9a*/
-        this-((unsigned int *)(>__pad_42))[27] = 1; /*0x4c9b9f*/
+        v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b9a*/
+        this->__pad_42[27] = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
-          v5 = this-((unsigned int *)(>production))[0]; /*0x4c9ba4*/
+          v5 = this->production[0]; /*0x4c9ba4*/
           if ( v5 == 54 ) /*0x4c9bae*/
             balance = this->balance; /*0x4c9bc5*/
           else
@@ -92,24 +92,24 @@ int FactoryClass::UpdateProduction()
         {
           HouseClass::ProcessPowerDrain((int *)this->owner, balance); /*0x4c9bf5*/
           v8 = this->balance; /*0x4c9bfa*/
-          this-((unsigned int *)(>__pad_42))[26] = 0; /*0x4c9bfd*/
+          this->__pad_42[26] = 0; /*0x4c9bfd*/
           Speed = v8 - balance; /*0x4c9c01*/
           this->balance = Speed; /*0x4c9c03*/
         }
         else
         {
-          v7 = this-((unsigned int *)(>production))[0]; /*0x4c9be5*/
-          this-((unsigned int *)(>__pad_42))[26] = 1; /*0x4c9be8*/
+          v7 = this->production[0]; /*0x4c9be5*/
+          this->__pad_42[26] = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
-          this-((unsigned int *)(>production))[0] = Speed; /*0x4c9bec*/
+          this->production[0] = Speed; /*0x4c9bec*/
         }
-        if ( this-((unsigned int *)(>production))[0] == 54 ) /*0x4c9c0a*/
+        if ( this->production[0] == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
           v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9c0f*/
           this->queuedCapacity = 0; /*0x4c9c19*/
-          this-((unsigned int *)(>production))[2] = v9; /*0x4c9c1c*/
-          this-((unsigned int *)(>queuedObjects))[0] = v11; /*0x4c9c22*/
+          this->production[2] = v9; /*0x4c9c1c*/
+          this->queuedObjects[0] = v11; /*0x4c9c22*/
           this->queuedCount = 0; /*0x4c9c25*/
           LOBYTE(Speed) = HouseClass::ProcessPowerDrain((int *)this->owner, this->balance); /*0x4c9c2f*/
           this->balance = 0; /*0x4c9c34*/
@@ -128,8 +128,8 @@ int FactoryClass::HasProgressChanged()
 
   char result; // al
 
-  result = this-((unsigned int *)(>__pad_42))[27]; /*0x4c9c60*/
-  this-((unsigned int *)(>__pad_42))[27] = 0; /*0x4c9c63*/
+  result = this->__pad_42[27]; /*0x4c9c60*/
+  this->__pad_42[27] = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 
 }
@@ -193,7 +193,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
          || HouseClass::ShouldDisableCameo(*(unsigned int **)((char *)this + 108), a2) )
   {
     if ( (uint8_t)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
-      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
   else
@@ -225,16 +225,16 @@ int FactoryClass::SetObject(int a2)
   int v5; // [esp+8h] [ebp-8h]
 
   BuildingClass::AbandonProduction((int)this); /*0x4c9e16*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_42))[22] = a2; /*0x4c9e21*/
+  *(unsigned int *)&this->__pad_42[22] = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
-  this-((unsigned int *)(>production))[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
+  this->production[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
-  this-((unsigned int *)(>queuedObjects))[0] = v5; /*0x4c9e41*/
+  this->queuedObjects[0] = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
-  this-((unsigned int *)(>production))[0] = 54; /*0x4c9e49*/
-  this-((unsigned int *)(>__pad_42))[27] = 1; /*0x4c9e50*/
+  this->production[0] = 54; /*0x4c9e49*/
+  this->__pad_42[27] = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
 
@@ -279,7 +279,7 @@ int FactoryClass::GetBuildTimeFrames()
   int v3; // edx
   int result; // eax
 
-  v1 = *(HouseClass **)&this-((unsigned int *)(>__pad_42))[22]; /*0x4c9fb0*/
+  v1 = *(HouseClass **)&this->__pad_42[22]; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -325,9 +325,9 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = &vt_FactoryClass; /*0x4ca2c7*/
-      v3->? = &vt_FactoryClass; /*0x4ca2cd*/
-      v3->? = &vt_FactoryClass; /*0x4ca2d4*/
-      v3->? = &vt_FactoryClass; /*0x4ca2db*/
+      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2cd*/
+      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2d4*/
+      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -408,9 +408,9 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4a7*/
   Debug::Log(); /*0x4ca4b5*/
   Debug::Log(); /*0x4ca4c3*/
-  (*((void (**)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca4d4*/
+  (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
-  (*((void (**)(void **))this->? + 4))(&this->?); /*0x4ca4ec*/
+  (*((void (**)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
@@ -426,7 +426,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
     Power::TimerProcess(v6); /*0x4ca549*/
   }
   Power::TimerProcess(this->specialItem); /*0x4ca554*/
-  v7 = (*((int (**)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca563*/
+  v7 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 
 }
@@ -560,9 +560,9 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_FactoryClass; /*0x4ca776*/
-  Block->? = &vt_FactoryClass; /*0x4ca77c*/
-  Block->? = &vt_FactoryClass; /*0x4ca783*/
-  Block->? = &vt_FactoryClass; /*0x4ca78a*/
+  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca77c*/
+  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca783*/
+  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
@@ -936,7 +936,7 @@ namespace gamemd {
 int FactoryClass::GetState()
 {
 
-  return this->?; /*0x636dc3*/
+  return ((unsigned int *)this)[0]; /*0x636dc3*/
 
 }
 } // namespace gamemd

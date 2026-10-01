@@ -80,7 +80,7 @@ int Theme::Stop(ObjectClass * aP1)
     if ( result ) /*0x720eb7*/
     {
       LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x720ebd*/
-      if ( !stru_A8EB00.?[384] && *(unsigned int *)this != -1 ) /*0x720ecd*/
+      if ( !((unsigned int *)&stru_A8EB00)[384] && *(unsigned int *)this != -1 ) /*0x720ecd*/
       {
         if ( !aP1 ) /*0x720ed9*/
           goto LABEL_14; /*0x720ed9*/

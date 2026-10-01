@@ -190,12 +190,12 @@ void IsometricTileTypeClass::ClearBuffer()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x54a196*/
+  v2 = *(void **)&this->m_1[3]; /*0x54a196*/
   this->m_10 = 0; /*0x54a199*/
   if ( v2 && BYTE1(this->m_C) ) /*0x54a1a0*/
   {
     __3_YAXPAX_Z(v2); /*0x54a1a6*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x54a1ae*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x54a1ae*/
   }
   BYTE1(this->m_C) = 0; /*0x54a1b1*/
   this->m_8 = 0; /*0x54a1b4*/
@@ -208,7 +208,7 @@ unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x54a1c0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x54a1d5*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x54a1d5*/
   else
     return 0; /*0x54a1c7*/
 
@@ -234,16 +234,16 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x54a408*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x54a408*/
     {
       m_8 = this->m_8; /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x54a41c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( BYTE1(this->m_C) ) /*0x54a42e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x54a439*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x54a439*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x54a441*/
       }
     }

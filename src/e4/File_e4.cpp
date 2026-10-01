@@ -210,22 +210,22 @@ char File::Dispatch()
   int v5; // eax
 
   v2 = ntohs(*(unsigned short *)this->__pad_6); /*0x4cb928*/
-  v3 = *(unsigned short *)&this-((unsigned int *)(>File_field_0x2))[2]; /*0x4cb92d*/
+  v3 = *(unsigned short *)&this->File_field_0x2[2]; /*0x4cb92d*/
   *(unsigned short *)this->__pad_6 = v2; /*0x4cb931*/
   v4 = ntohs(v3); /*0x4cb936*/
-  *(unsigned short *)&this-((unsigned int *)(>File_field_0x2))[2] = v4; /*0x4cb93b*/
+  *(unsigned short *)&this->File_field_0x2[2] = v4; /*0x4cb93b*/
   v5 = v4 - 3; /*0x4cb944*/
   switch ( v5 ) /*0x4cb94c*/
   {
     case 0: /*0x4cb94c*/
     case 1: /*0x4cb94c*/
-      LOWORD(v5) = ntohs(**(unsigned short **)&this-((unsigned int *)(>__pad_6))[2]); /*0x4cb95a*/
-      **(unsigned short **)&this-((unsigned int *)(>__pad_6))[2] = v5; /*0x4cb963*/
+      LOWORD(v5) = ntohs(**(unsigned short **)&this->__pad_6[2]); /*0x4cb95a*/
+      **(unsigned short **)&this->__pad_6[2] = v5; /*0x4cb963*/
       break; /*0x4cb966*/
     case 2: /*0x4cb94c*/
     case 3: /*0x4cb94c*/
-      v5 = ntohl(**(unsigned int **)&this-((unsigned int *)(>__pad_6))[2]); /*0x4cb96d*/
-      **(unsigned int **)&this-((unsigned int *)(>__pad_6))[2] = v5; /*0x4cb975*/
+      v5 = ntohl(**(unsigned int **)&this->__pad_6[2]); /*0x4cb96d*/
+      **(unsigned int **)&this->__pad_6[2] = v5; /*0x4cb975*/
       break; /*0x4cb975*/
     default:
       return v5;
@@ -239,12 +239,12 @@ namespace gamemd {
 unsigned int * File::LoadFileHVA(int a2)
 {
 
-  this-((unsigned int *)(>__pad_0))[0] = (unsigned int *)(0);
-  *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2] = 0; /*0x5bd577*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = 0; /*0x5bd57a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[6] = 0; /*0x5bd57d*/
+  this->__pad_0[0] = (unsigned int *)(0);
+  *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x5bd577*/
+  *(unsigned int *)&this->__pad_6[2] = 0; /*0x5bd57a*/
+  *(unsigned int *)&this->__pad_6[6] = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, a2) ) /*0x5bd585*/
-    this-((unsigned int *)(>__pad_0))[0] = 1; /*0x5bd58e*/
+    this->__pad_0[0] = 1; /*0x5bd58e*/
   return this->__pad_0; /*0x5bd593*/
 
 }
@@ -363,7 +363,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   v5 = aP1 + 2; /*0x625b1f*/
   *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
   v6 = *(unsigned short *)this->__pad_0; /*0x625b2d*/
-  *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2] = 0; /*0x625b30*/
+  *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
     return (u_short *)this; /*0x625bf4*/
@@ -384,8 +384,8 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
     v15 += -8 - v13 - v11; /*0x625bcc*/
     File::Dispatch((File *)v9); /*0x625bd0*/
     result = (u_short *)this; /*0x625bd5*/
-    *(unsigned int *)(v9 + 12) = *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2]; /*0x625bde*/
-    *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2] = v9; /*0x625be1*/
+    *(unsigned int *)(v9 + 12) = *(unsigned int *)&this->File_field_0x2[2]; /*0x625bde*/
+    *(unsigned int *)&this->File_field_0x2[2] = v9; /*0x625be1*/
     if ( v15 <= 0 ) /*0x625be4*/
       break; /*0x625be4*/
     v5 = v17; /*0x625b4a*/
@@ -402,7 +402,7 @@ int File::FindByPrefix(char * Str1, unsigned char * a3)
   int v3; // esi
   BOOL v4; // eax
 
-  v3 = *(unsigned int *)&this-((unsigned int *)(>File_field_0x2))[2]; /*0x625db1*/
+  v3 = *(unsigned int *)&this->File_field_0x2[2]; /*0x625db1*/
   if ( v3 ) /*0x625db7*/
   {
     while ( strncmp(Str1, (const char *)v3, 4u) ) /*0x625dcb*/

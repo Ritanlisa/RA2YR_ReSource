@@ -127,7 +127,7 @@ namespace gamemd {
 int CCINIClass::GetDB()
 {
 
-  return this->?[0]; /*0x473453*/
+  return ((unsigned int *)this)[0]; /*0x473453*/
 
 }
 }
@@ -208,8 +208,8 @@ CCINIClass::CCINIClass()
   int v7; // edi
 
   result = (unsigned int *)(this->INIClass);
-  sectionHead = this->?; /*0x535b36*/
-  p_sectionCount = &this->?; /*0x535b39*/
+  sectionHead = ((unsigned int *)this)[0]; /*0x535b36*/
+  p_sectionCount = &((unsigned int *)this)[0]; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   sectionHead[1] = 0; /*0x535b42*/

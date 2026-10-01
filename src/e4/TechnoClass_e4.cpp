@@ -307,9 +307,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
   this->RadioClass = &vt_TechnoClass; /*0x6f3130*/
-  this->? = &vt_TechnoClass; /*0x6f3136*/
-  this->? = &vt_TechnoClass; /*0x6f313d*/
-  this->? = &off_7F4934; /*0x6f314a*/
+  ((unsigned int *)this)[0] = &vt_TechnoClass; /*0x6f3136*/
+  ((unsigned int *)this)[0] = &vt_TechnoClass; /*0x6f313d*/
+  ((unsigned int *)this)[0] = &off_7F4934; /*0x6f314a*/
   AudioController::Init((AudioController *)this->turretRotateSoundController); /*0x6f3151*/
   AudioController::Init((AudioController *)this->gattlingSoundController); /*0x6f315c*/
   AudioController::Init((AudioController *)this->unusedGattlingSoundController); /*0x6f3167*/
@@ -338,7 +338,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
     v11 = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[16])++; /*0x6f3216*/
     *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[4] + 4 * v11) = this; /*0x6f3225*/
   }
-  LOBYTE(this->?) |= 1u; /*0x6f3237*/
+  LOBYTE(((unsigned int *)this)[0]) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
   *(unsigned short *)this->unknown_short_3C8 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x6f3259*/
@@ -472,7 +472,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
         v19 = 0; /*0x6f419b*/
       vtable0 = (int (**)(TechnoClass *, unsigned int))v3->RadioClass; /*0x6f419d*/
       v3->temporalUsing = v19; /*0x6f41a3*/
-      v3->temporalUsing[1].? = *(unsigned int *)(*(unsigned int *)vtable0[254](v3, 0) + 164); /*0x6f41bd*/
+      v3->temporalUsing[1] = *(unsigned int *)(*(unsigned int *)vtable0[254](v3, 0) + 164); /*0x6f41bd*/
     }
     if ( *(int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 1564) > 0 ) /*0x6f41d2*/
     {
@@ -699,33 +699,33 @@ Coord * * TechnoClass::RegisterKill()
   v27 = 0; /*0x702d46*/
   v2 = (*((int (**)(TechnoClass *))this->RadioClass + 33))(this); /*0x702d50*/
   v3 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v2 + 132))(v2, this->owner); /*0x702d6b*/
-  if ( this->? ) /*0x702d6d*/
+  if ( ((unsigned int *)this)[0] ) /*0x702d6d*/
   {
-    attachedTag = (TeamClass *)this->?; /*0x702d77*/
+    attachedTag = (TeamClass *)((unsigned int *)this)[0]; /*0x702d77*/
     if ( attachedTag ) /*0x702d7c*/
     {
       if ( v28 ) /*0x702d80*/
         TeamClass::Update_0(attachedTag, 6, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702d90*/
     }
   }
-  if ( this->? ) /*0x702d95*/
+  if ( ((unsigned int *)this)[0] ) /*0x702d95*/
   {
-    v5 = (TeamClass *)this->?; /*0x702da3*/
+    v5 = (TeamClass *)((unsigned int *)this)[0]; /*0x702da3*/
     if ( v5 && v28 ) /*0x702dac*/
       TeamClass::Update_0(v5, 4, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702dbb*/
-    if ( this->? && (*((int (**)(TechnoClass *))this->RadioClass + 11))(this) != 1 && this->? ) /*0x702dd6*/
+    if ( ((unsigned int *)this)[0] && (*((int (**)(TechnoClass *))this->RadioClass + 11))(this) != 1 && ((unsigned int *)this)[0] ) /*0x702dd6*/
     {
-      v6 = (TeamClass *)this->?; /*0x702de0*/
+      v6 = (TeamClass *)((unsigned int *)this)[0]; /*0x702de0*/
       if ( v6 && v28 ) /*0x702de9*/
         TeamClass::Update_0(v6, 7, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702df8*/
-      if ( this->? ) /*0x702dfd*/
+      if ( ((unsigned int *)this)[0] ) /*0x702dfd*/
       {
-        v7 = (TeamClass *)this->?; /*0x702e07*/
+        v7 = (TeamClass *)((unsigned int *)this)[0]; /*0x702e07*/
         if ( v7 ) /*0x702e0c*/
           TeamClass::Update_0(v7, 48, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e1c*/
-        if ( this->? ) /*0x702e21*/
+        if ( ((unsigned int *)this)[0] ) /*0x702e21*/
         {
-          v8 = (TeamClass *)this->?; /*0x702e2b*/
+          v8 = (TeamClass *)((unsigned int *)this)[0]; /*0x702e2b*/
           if ( v8 ) /*0x702e30*/
             TeamClass::Update_0(v8, 29, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e3f*/
         }
@@ -1971,7 +1971,7 @@ namespace gamemd {
 BOOL TechnoClass::updateWeaponCooldown(int a1)
 {
 
-  return *((unsigned char *)a1->? + 3598) != 0; /*0x41b854*/
+  return *((unsigned char *)((unsigned int *)a1)[0] + 3598) != 0; /*0x41b854*/
 
 }
 } // namespace gamemd
@@ -1991,7 +1991,7 @@ namespace gamemd {
 int TechnoClass::processPowerDrain()
 {
 
-  return (int)this->?; /*0x4722d3*/
+  return (int)((unsigned int *)this)[0]; /*0x4722d3*/
 
 }
 } // namespace gamemd
@@ -2003,8 +2003,8 @@ void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
 
   if ( aP1 && (*(int (**)(unsigned char *))(*(unsigned int *)aP1 + 44))(aP1) == 1 && aP1[144] && !aP1[129] ) /*0x4c2bf2*/
   {
-    this->? = aP1; /*0x4c2c00*/
-    this->? = a3; /*0x4c2c03*/
+    ((unsigned int *)this)[0] = aP1; /*0x4c2c00*/
+    ((unsigned int *)this)[0] = a3; /*0x4c2c03*/
   }
 
 }
@@ -2032,7 +2032,7 @@ char TechnoClass::ScanAdjacentCells()
 
   *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, int16_t *))this->RadioClass + 110))(this, v16); /*0x703ce4*/
   v2 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x703ced*/
-  if ( !v2 || this->? ) /*0x703cf7*/
+  if ( !v2 || ((unsigned int *)this)[0] ) /*0x703cf7*/
     return 0; /*0x703cf7*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d1c*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d21*/

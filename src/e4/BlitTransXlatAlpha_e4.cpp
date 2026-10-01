@@ -151,7 +151,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(unsigned short *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
+        *a2 = *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
         v14 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/

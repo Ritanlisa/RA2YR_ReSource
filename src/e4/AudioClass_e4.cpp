@@ -56,9 +56,9 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   {
     if ( BuildingClass::FindByCellHash(j) == *((unsigned int *)this + 38) && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
     {
-      p_occupant = (Cell *)&j->?; /*0x72294a*/
-      v17 = (Cell *)&j->?; /*0x72294d*/
-      *(unsigned int *)(*((unsigned int *)this + 63) + 8 * *((unsigned int *)this + 60)) = j->?; /*0x722953*/
+      p_occupant = (Cell *)&((unsigned int *)j)[0]; /*0x72294a*/
+      v17 = (Cell *)&((unsigned int *)j)[0]; /*0x72294d*/
+      *(unsigned int *)(*((unsigned int *)this + 63) + 8 * *((unsigned int *)this + 60)) = ((unsigned int *)j)[0]; /*0x722953*/
       *(unsigned int *)(*((unsigned int *)this + 63) + 8 * *((unsigned int *)this + 60) + 4) = 0; /*0x722962*/
       v8 = *((unsigned int *)this + 60); /*0x72296a*/
       v9 = (unsigned int *)*((unsigned int *)this + 61); /*0x722976*/

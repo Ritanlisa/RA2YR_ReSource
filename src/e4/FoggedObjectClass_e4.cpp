@@ -66,9 +66,9 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
   this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0a06*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0a0c*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0a13*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0a1a*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0a0c*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0a13*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0a1a*/
   v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -202,9 +202,9 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
   *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
   this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0cb2*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0cb8*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0cbf*/
-  this->? = &vt_FoggedObjectClass; /*0x4d0cc6*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0cb8*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0cbf*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -577,9 +577,9 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
   this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/
-  this->? = &vt_FoggedObjectClass; /*0x4d1414*/
-  this->? = &vt_FoggedObjectClass; /*0x4d141b*/
-  this->? = &vt_FoggedObjectClass; /*0x4d1422*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d1414*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d141b*/
+  ((unsigned int *)this)[0] = &vt_FoggedObjectClass; /*0x4d1422*/
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
   *((unsigned int *)this + 17) = v5[1]; /*0x4d1440*/
@@ -694,12 +694,12 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor((FoggedObject *)v3[1].Cell, 0, 0); /*0x4d2547*/
     v3[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
-    v3[2].? = 10; /*0x4d2552*/
-    v3[2].? = 0; /*0x4d2559*/
+    v3[2] = 10; /*0x4d2552*/
+    v3[2] = 0; /*0x4d2559*/
     v3->AbstractClass = &vt_FoggedObjectClass; /*0x4d255c*/
-    v3->? = &vt_FoggedObjectClass; /*0x4d2562*/
-    v3->? = &vt_FoggedObjectClass; /*0x4d2569*/
-    v3->? = &vt_FoggedObjectClass; /*0x4d2570*/
+    ((unsigned int *)v3)[0] = &vt_FoggedObjectClass; /*0x4d2562*/
+    ((unsigned int *)v3)[0] = &vt_FoggedObjectClass; /*0x4d2569*/
+    ((unsigned int *)v3)[0] = &vt_FoggedObjectClass; /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
@@ -764,18 +764,18 @@ LABEL_22:
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
-    vtable1 = v3[2].?; /*0x4d25de*/
-    if ( (int)v3[2].? < (int)vtable1 /*0x4d2605*/
-      || (BYTE1(v3[2].?) || !vtable1)
-      && (uniqueId = v3[2].?, uniqueId > 0)
+    vtable1 = v3[2]; /*0x4d25de*/
+    if ( (int)v3[2] < (int)vtable1 /*0x4d2605*/
+      || (BYTE1(v3[2]) || !vtable1)
+      && (uniqueId = v3[2], uniqueId > 0)
       && (*(uint8_t (**)(int *, int, unsigned int))(v3[1].Cell[0] + 8))(
            v3[1].Cell,
            (int)vtable1 + uniqueId,
            0) )
     {
-      vtable3 = v3[2].?; /*0x4d260c*/
+      vtable3 = v3[2]; /*0x4d260c*/
       v10 = v18; /*0x4d260f*/
-      v3[2].? = (char *)vtable3 + 1; /*0x4d2616*/
+      v3[2] = (char *)vtable3 + 1; /*0x4d2616*/
       v11 = (char *)v3[2].AbstractClass + 16 * (unsigned int)vtable3; /*0x4d261f*/
       *v11 = v10; /*0x4d2621*/
       v11[1] = v19; /*0x4d2627*/
@@ -784,7 +784,7 @@ LABEL_22:
     }
     ObjectPtr::RegisterForTracking( /*0x4d264b*/
       (int)&SwizzleManagerClass_Instance,
-      (int *)v3[2].AbstractClass + 4 * (int)v3[2].? - 4);
+      (int *)v3[2].AbstractClass + 4 * (int)v3[2] - 4);
     if ( ++v17 >= (int)a1 ) /*0x4d265f*/
       goto LABEL_14; /*0x4d265f*/
   }

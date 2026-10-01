@@ -999,9 +999,9 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
     do /*0x50150f*/
     {
       v2 = *(BuildingClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v1); /*0x501423*/
-      if ( (HouseClass *)((char *)a1 - 36) == v2->? && v2->? && !v2->? ) /*0x50143d*/
+      if ( (HouseClass *)((char *)a1 - 36) == ((unsigned int *)v2)[0] && ((unsigned int *)v2)[0] && !((unsigned int *)v2)[0] ) /*0x50143d*/
       {
-        if ( v2->? /*0x50146d*/
+        if ( ((unsigned int *)v2)[0] /*0x50146d*/
           && *(unsigned char *)((*((int (**)(unsigned int))v2->TechnoClass + 33))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152)
                                                                                          + 4 * v1))
                       + 562)
@@ -1022,7 +1022,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
         }
         else if ( v2 ) /*0x5014b4*/
         {
-          if ( (v2->? & 4) != 0 ) /*0x5014c3*/
+          if ( (((unsigned int *)v2)[0] & 4) != 0 ) /*0x5014c3*/
           {
             v5 = (int *)v2->DamageFireAnims[3]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
@@ -3054,15 +3054,15 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
 
   void *count; // eax
 
-  count = (void *)Block->?; /*0x40cc23*/
+  count = (void *)((unsigned int *)Block)[0]; /*0x40cc23*/
   Block->LayerClass[0] = (int)&vt_VectorClass; /*0x40cc26*/
   if ( count && *((unsigned char *)Block + 13) ) /*0x40cc30*/
   {
     __3_YAXPAX_Z(count); /*0x40cc38*/
-    Block->? = 0; /*0x40cc40*/
+    ((unsigned int *)Block)[0] = 0; /*0x40cc40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40cc4b*/
-  Block->? = 0; /*0x40cc51*/
+  ((unsigned int *)Block)[0] = 0; /*0x40cc51*/
   if ( (a2 & 1) != 0 ) /*0x40cc58*/
     __3_YAXPAX_Z(Block); /*0x40cc5b*/
   return Block->LayerClass; /*0x40cc65*/
@@ -20636,7 +20636,7 @@ long long VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0(int a1
   float v4; // [esp+4h] [ebp-4h]
   HouseClass *thisa; // [esp+Ch] [ebp+4h]
 
-  v4 = *(float *)(a1->? + 328); /*0x4f699f*/
+  v4 = *(float *)(((unsigned int *)a1)[0] + 328); /*0x4f699f*/
   thisa = (HouseClass *)AbstractClass::GetTotalValue((float *)&a1->poweredUnitCenters); /*0x4f69ae*/
   v3 = Math::RoundToInt((double)(int)thisa * v4 + (double)a1->ownedUnits); /*0x4f69c0*/
   WORD2(result) = HIWORD(v3); /*0x4f69c0*/

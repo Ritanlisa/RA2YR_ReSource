@@ -731,7 +731,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   int yTopa; // [esp+28h] [ebp+4h]
 
   v9 = (unsigned int *)((int)(a1));
-  if ( !stru_A8EB00.?[412] ) /*0x6211e0*/
+  if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
     a7 = (int *)DSurface_Alternate; /*0x6211f9*/
@@ -2090,7 +2090,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v18 = 0; /*0x62791f*/
   }
   String::CopyUpper(String, a2); /*0x62792c*/
-  vtable3 = (int (**)(char *))this->?; /*0x627931*/
+  vtable3 = (int (**)(char *))((unsigned int *)this)[0]; /*0x627931*/
   v6 = vtable3[1](String); /*0x627938*/
   v7 = *((unsigned int *)*vtable3 + 6 * (v6 % (int)vtable3[2]) + 4); /*0x627944*/
   v8 = (int)*vtable3 + 24 * (v6 % (int)vtable3[2]); /*0x627948*/
@@ -2155,7 +2155,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   char String[256]; // [esp+14h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627a2c*/
-  vtable3 = (int (**)(char *))this->?; /*0x627a31*/
+  vtable3 = (int (**)(char *))((unsigned int *)this)[0]; /*0x627a31*/
   v4 = (int)*vtable3 + 24 * (vtable3[1](String) % (int)vtable3[2]); /*0x627a48*/
   v5 = *(unsigned int *)(v4 + 16) - 1; /*0x627a4b*/
   if ( v5 < 0 ) /*0x627a4c*/
@@ -2232,11 +2232,11 @@ void E4Recv_629530::sub_629530()
   {
     v4 = this; /*0x629567*/
     v3 = (*(int (**)(int *, ObjectClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x62956b*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            &v4);
     if ( v3 != -1 && v3 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x62957b*/
     {
-      --g_BuildingLoadQueue_Array.?[1]; /*0x629580*/
+      --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x629580*/
       for ( ; /*0x629586*/
             v3 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1));
             *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
@@ -2860,7 +2860,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
   char String[256]; // [esp+10h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627505*/
-  vtable3 = (int (**)(char *))this->?; /*0x62750a*/
+  vtable3 = (int (**)(char *))((unsigned int *)this)[0]; /*0x62750a*/
   v4 = (int)*vtable3 + 24 * (vtable3[1](String) % (int)vtable3[2]); /*0x627521*/
   v5 = *(unsigned int *)(v4 + 16) - 1; /*0x627524*/
   if ( v5 < 0 ) /*0x627525*/

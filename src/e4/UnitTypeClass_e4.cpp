@@ -306,111 +306,111 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   INIClass::ResetSection(); /*0x747637*/
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v79) ) /*0x74763f*/
     return 0; /*0x747ea0*/
-  p_occupant = (uint8_t *)&v4->?; /*0x747654*/
+  p_occupant = (uint8_t *)&((unsigned int *)v4)[0]; /*0x747654*/
   v4[1].__pad_6B8[21] = INIClass::ReadBool_Overwrite( /*0x747665*/
                           (int *)this,
-                          (uint8_t *)&v4->?,
+                          (uint8_t *)&((unsigned int *)v4)[0],
                           aCrategoodie,
                           v4[1].__pad_6B8[21]);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74767a*/
                      (int *)this,
-                     (uint8_t *)&v4->?,
+                     (uint8_t *)&((unsigned int *)v4)[0],
                      aDeploytofire,
                      v4[1].__pad_6B8[26]);
   v71 = v4[1].__pad_6B8[27]; /*0x747687*/
   v4[1].__pad_6B8[26] = Bool_Overwrite; /*0x74768e*/
-  v4[1].__pad_6B8[27] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aIssimpledeploy, v71); /*0x747699*/
-  v7 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aHarvester, v4[1].__pad_6B8[22]); /*0x7476ae*/
+  v4[1].__pad_6B8[27] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aIssimpledeploy, v71); /*0x747699*/
+  v7 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aHarvester, v4[1].__pad_6B8[22]); /*0x7476ae*/
   v8 = v4[1].__pad_6B8[23]; /*0x7476b3*/
   v4[1].__pad_6B8[22] = v7; /*0x7476b9*/
-  v4[1].__pad_6B8[23] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aWeeder, v8); /*0x7476cd*/
+  v4[1].__pad_6B8[23] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aWeeder, v8); /*0x7476cd*/
   if ( v4->Audio7[1] == -1 ) /*0x7476dc*/
     v4->Audio7[1] = 2 - (v4[1].RequiresDamageFires != 0); /*0x7476eb*/
   TypeMember_476FC0 = ObjectTypeClass::loadTypeMember_476FC0( /*0x747700*/
                         (ObjectTypeClass *)this,
-                        (uint8_t *)&v4->?,
+                        (uint8_t *)&((unsigned int *)v4)[0],
                         (uint8_t *)&g_INI_Key_TRUCKA.__pad_1714[36],
                         v4->Audio7[1]);
   v10 = v4[1].__pad_6B8[28]; /*0x747705*/
   v4->Audio7[1] = TypeMember_476FC0; /*0x74770b*/
-  v11 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aIstilter, v10); /*0x74771a*/
+  v11 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aIstilter, v10); /*0x74771a*/
   v72 = v4[1].__pad_6B8[34]; /*0x747727*/
   v4[1].__pad_6B8[28] = v11; /*0x74772e*/
-  v12 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aCarriescrate, v72); /*0x747734*/
+  v12 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aCarriescrate, v72); /*0x747734*/
   v13 = IDA_BYTE1(v4[1].Anims[1]); /*0x747739*/
   v4[1].__pad_6B8[34] = v12; /*0x74773f*/
   v73 = v4[1].__pad_6B8[30]; /*0x74774d*/
   v4[1].__pad_6B8[25] = v13 == 0; /*0x747759*/
-  v4[1].__pad_6B8[30] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aToobigtofitund, v73); /*0x747778*/
+  v4[1].__pad_6B8[30] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aToobigtofitund, v73); /*0x747778*/
   Point3D_Overwrite = INIClass::ReadPoint3D_Overwrite( /*0x74777e*/
                         (INIClass *)this,
                         Buffer,
-                        (uint8_t *)&v4->?,
+                        (uint8_t *)&((unsigned int *)v4)[0],
                         (int)aHalfdamagesmok_1,
                         &v4[1].__pad_6B8[8]);
   *(unsigned int *)&v4[1].__pad_6B8[8] = *Point3D_Overwrite; /*0x747785*/
   *(unsigned int *)&v4[1].__pad_6B8[12] = Point3D_Overwrite[1]; /*0x74778a*/
   v15 = Point3D_Overwrite[2]; /*0x74778d*/
-  v4->?[4] = 15; /*0x747790*/
+  ((unsigned int *)v4)[4] = 15; /*0x747790*/
   *(unsigned int *)&v4[1].__pad_6B8[16] = v15; /*0x74779a*/
   if ( v4[1].__pad_6B8[22] || v4[1].__pad_6B8[23] ) /*0x7477a7*/
-    v4->?[4] = 10; /*0x7477b1*/
+    ((unsigned int *)v4)[4] = 10; /*0x7477b1*/
   v16 = INIClass::ReadBool_Overwrite( /*0x7477d3*/
           (int *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aUseturretshado,
           v4[1].__pad_6B8[29]);
   ProductionTimer_low = IDA_SLOBYTE(v4[1].ProductionTimer); /*0x7477df*/
   v4[1].__pad_6B8[29] = v16; /*0x7477eb*/
   IDA_LOBYTE(v4[1].ProductionTimer) = INIClass::ReadInt_Overwrite( /*0x7477f6*/
                                     (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                                    (uint8_t *)&v4->?,
+                                    (uint8_t *)&((unsigned int *)v4)[0],
                                     aWalkframes,
                                     ProductionTimer_low);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74780f*/
                     (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                    (uint8_t *)&v4->?,
+                    (uint8_t *)&((unsigned int *)v4)[0],
                     aFiringframes,
                     SBYTE1(v4[1].ProductionTimer));
   v18 = v4[1].__pad_6B8[20]; /*0x747814*/
   IDA_BYTE1(v4[1].ProductionTimer) = Int_Overwrite; /*0x74781a*/
-  v19 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aPassive, v18); /*0x747829*/
+  v19 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aPassive, v18); /*0x747829*/
   v75 = *(unsigned int *)&v4[1].__pad_6B8[4]; /*0x747836*/
   v4[1].__pad_6B8[20] = v19; /*0x74783d*/
   *(unsigned int *)&v4[1].__pad_6B8[4] = OverlayTypeClass::ReadINIString( /*0x747848*/
                                      (OverlayTypeClass *)this,
-                                     (uint8_t *)&v4->?,
+                                     (uint8_t *)&((unsigned int *)v4)[0],
                                      aMovementrestri,
                                      v75);
-  v20 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aCanbeach, v4[1].__pad_6B8[31]); /*0x74785d*/
+  v20 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aCanbeach, v4[1].__pad_6B8[31]); /*0x74785d*/
   v21 = v4[1].__pad_6B8[32]; /*0x747862*/
   v4[1].__pad_6B8[31] = v20; /*0x747868*/
-  v22 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aSmallvisceroid, v21); /*0x747877*/
+  v22 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aSmallvisceroid, v21); /*0x747877*/
   v76 = v4[1].__pad_6B8[33]; /*0x747884*/
   v4[1].__pad_6B8[32] = v22; /*0x74788b*/
-  v4[1].__pad_6B8[33] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->?, aLargevisceroid, v76); /*0x747896*/
+  v4[1].__pad_6B8[33] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aLargevisceroid, v76); /*0x747896*/
   v4[1].__pad_6B8[35] = INIClass::ReadBool_Overwrite( /*0x7478b0*/
                           (int *)this,
-                          (uint8_t *)&v4->?,
+                          (uint8_t *)&((unsigned int *)v4)[0],
                           aNonvehicle,
                           v4[1].__pad_6B8[35]);
   if ( SBYTE1(v4[1].ProductionTimer) > 0 ) /*0x7478be*/
     *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = 1; /*0x7478c0*/
   v23 = INIClass::ReadInt_Overwrite( /*0x7478dc*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aStandingframes,
           *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC);
   v77 = *(unsigned int *)&v4[1].NoCrew; /*0x7478ec*/
   *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = v23; /*0x7478f3*/
   *(unsigned int *)&v4[1].NoCrew = INIClass::ReadInt_Overwrite( /*0x7478fe*/
                                (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                               (uint8_t *)&v4->?,
+                               (uint8_t *)&((unsigned int *)v4)[0],
                                aDeathframes,
                                v77);
   v24 = INIClass::ReadInt_Overwrite( /*0x747916*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aDeathframerate,
           *(unsigned int *)&v4[1].ActuallyPlacedOnMap);
   *(unsigned int *)&v4[1].ActuallyPlacedOnMap = v24; /*0x747920*/
@@ -420,7 +420,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
     v4[1].BuildingClass_field_int_6FC = 1; /*0x747944*/
   v25 = INIClass::ReadInt_Overwrite( /*0x74795c*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aFacings,
           v4[1].BuildingClass_field_int_6FC);
   v26 = *(unsigned int *)&v4[1].CloakRadius; /*0x747961*/
@@ -455,31 +455,31 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   }
   *(unsigned int *)&v4[1].IsBeingRepaired = INIClass::ReadInt_Overwrite( /*0x747a2e*/
                                         (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                                        (uint8_t *)&v4->?,
+                                        (uint8_t *)&((unsigned int *)v4)[0],
                                         aStartstandfram,
                                         *(unsigned int *)&v4[1].IsBeingRepaired);
   v31 = INIClass::ReadInt_Overwrite( /*0x747a46*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aStartwalkframe,
           *(unsigned int *)&v4[1].CloakRadius);
   StorageFilledSlots = v4[1].StorageFilledSlots; /*0x747a4b*/
   *(unsigned int *)&v4[1].CloakRadius = v31; /*0x747a51*/
   v33 = INIClass::ReadInt_Overwrite( /*0x747a63*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)&v4->?,
+          (uint8_t *)&((unsigned int *)v4)[0],
           aStartfiringfra,
           StorageFilledSlots);
   parent_gap = (int)v4[1].SecretProduction->ObjectTypeClass; /*0x747a73*/
   v4[1].StorageFilledSlots = v33; /*0x747a7a*/
   v4[1].SecretProduction = (TechnoTypeClass *)INIClass::ReadInt_Overwrite( /*0x747a85*/
                                                 (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                                                (uint8_t *)&v4->?,
+                                                (uint8_t *)&((unsigned int *)v4)[0],
                                                 aStartdeathfram,
                                                 parent_gap);
   *(unsigned int *)v4[1].ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
                                 (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                                (uint8_t *)&v4->?,
+                                (uint8_t *)&((unsigned int *)v4)[0],
                                 aMaxdeathcounte,
                                 *(unsigned int *)v4[1].ColorAdd);
   v82 = 0; /*0x747aae*/
@@ -489,7 +489,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
     sprintf((char *const)Buffer, "FiringSyncFrame%d", v82); /*0x747ac9*/
     *BuildingClass_field_short_700 = INIClass::ReadInt_Overwrite( /*0x747aec*/
                                        (bool *)&DSurface_ViewBounds.__pad_FC[228],
-                                       (uint8_t *)&v4->?,
+                                       (uint8_t *)&((unsigned int *)v4)[0],
                                        (uint8_t *)Buffer,
                                        *BuildingClass_field_short_700);
     v34 = ++v82 < 2; /*0x747af6*/
@@ -513,7 +513,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   INIClass::GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
   _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
-  if ( AbstractTypeClass::NameEquals((int)v83, g_INI_Key_TRUCKA.?) ) /*0x747bca*/
+  if ( AbstractTypeClass::NameEquals((int)v83, ((char *)&g_INI_Key_TRUCKA)) ) /*0x747bca*/
   {
     v36 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aNormalturretin, 0); /*0x747bf0*/
     v37 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aNormalturretwe, -1); /*0x747bf2*/
@@ -603,7 +603,7 @@ int *  UnitTypeClass::GetDimensions( int * a2)
   int v2; // eax
   int v3; // ecx
 
-  v2 = this->? - this->? / 4; /*0x7475a3*/
+  v2 = ((unsigned int *)this)[0] - ((unsigned int *)this)[0] / 4; /*0x7475a3*/
   v3 = v2; /*0x7475a5*/
   if ( v2 >= 60 ) /*0x7475aa*/
   {
@@ -624,8 +624,8 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
   a1->TechnoTypeClass = (void *)256; /*0x7475e7*/
-  a1->? = (void *)256; /*0x7475e9*/
-  a1->? = v1; /*0x7475ec*/
+  ((unsigned int *)a1)[0] = (void *)256; /*0x7475e9*/
+  ((unsigned int *)a1)[0] = v1; /*0x7475ec*/
   return (unsigned int *)a1; /*0x7475ef*/
 
 }
@@ -647,8 +647,8 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
   if ( v7 < GroundHeight ) /*0x747ee0*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x747ef1*/
   a1->TechnoTypeClass = v5; /*0x747efe*/
-  a1->? = v6; /*0x747f04*/
-  a1->? = v3; /*0x747f08*/
+  ((unsigned int *)a1)[0] = v6; /*0x747f04*/
+  ((unsigned int *)a1)[0] = v3; /*0x747f08*/
   return (unsigned int *)a1; /*0x747f0b*/
 
 }
@@ -723,9 +723,9 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
       a1->TechnoTypeClass = &vt_UnitTypeClass; /*0x74803d*/
-      a1->? = &vt_UnitTypeClass; /*0x748043*/
-      a1->? = &vt_UnitTypeClass; /*0x74804a*/
-      a1->? = &vt_UnitTypeClass; /*0x748051*/
+      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748043*/
+      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x74804a*/
+      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/

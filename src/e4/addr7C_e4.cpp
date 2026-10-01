@@ -8833,9 +8833,9 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
   int v27; // [esp+1Ch] [ebp-4h]
   char v28; // [esp+2Fh] [ebp+Fh]
 
-  uniqueId = aP0->?; /*0x7cf7f6*/
+  uniqueId = ((unsigned int *)aP0)[0]; /*0x7cf7f6*/
   v3 = (int *)(aP1 - 4); /*0x7cf801*/
-  v4 = (aP1 - (unsigned int)aP0->?) >> 15; /*0x7cf805*/
+  v4 = (aP1 - (unsigned int)((unsigned int *)aP0)[0]) >> 15; /*0x7cf805*/
   v5 = *(unsigned int *)(aP1 - 4) - 1; /*0x7cf813*/
   v27 = *(unsigned int *)(aP1 - 8); /*0x7cf814*/
   v24 = v5; /*0x7cf81e*/
@@ -8856,7 +8856,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
         *(unsigned int *)(uniqueId + 4 * v4 + 196) &= v11; /*0x7cf881*/
         v9 = (*v10)-- == 1; /*0x7cf888*/
         if ( v9 ) /*0x7cf88a*/
-          aP0->? = (void *)((int)aP0->? & v11); /*0x7cf88f*/
+          ((unsigned int *)aP0)[0] = (void *)((int)((unsigned int *)aP0)[0] & v11); /*0x7cf88f*/
       }
       else
       {
@@ -8904,7 +8904,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
           *(unsigned int *)(uniqueId + 4 * v4 + 196) &= v19; /*0x7cf93f*/
           v9 = (*v18)-- == 1; /*0x7cf946*/
           if ( v9 ) /*0x7cf948*/
-            aP0->? = (void *)((int)aP0->? & v19); /*0x7cf94d*/
+            ((unsigned int *)aP0)[0] = (void *)((int)((unsigned int *)aP0)[0] & v19); /*0x7cf94d*/
         }
         else
         {
@@ -8935,7 +8935,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
       if ( v14 >= 0x20 ) /*0x7cf9b0*/
       {
         if ( !v28 ) /*0x7cf9db*/
-          aP0->? = (void *)((int)aP0->? | (0x80000000 >> (v14 - 32))); /*0x7cf9ea*/
+          ((unsigned int *)aP0)[0] = (void *)((int)((unsigned int *)aP0)[0] | (0x80000000 >> (v14 - 32))); /*0x7cf9ea*/
         *(unsigned int *)(uniqueId + 4 * v4 + 196) |= 0x80000000 >> (v14 - 32); /*0x7cf9fe*/
       }
       else
@@ -9027,7 +9027,7 @@ unsigned int * __sbh_alloc_block(IUnknown * aP0)
   ObjectClass *thisa; // [esp+28h] [ebp+8h]
 
   v33 = (char *)lp + 20 * dword_B78B94; /*0x7cfb30*/
-  v28 = ((unsigned int)&aP0->? + 3) & 0xFFFFFFF0; /*0x7cfb39*/
+  v28 = ((unsigned int)&((unsigned int *)aP0)[0] + 3) & 0xFFFFFFF0; /*0x7cfb39*/
   v1 = (v28 >> 4) - 1; /*0x7cfb3f*/
   if ( v1 >= 32 ) /*0x7cfb43*/
   {
@@ -12211,7 +12211,7 @@ namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
 
-  return (char *)&this->?; /*0x7c8b2c*/
+  return (char *)&((unsigned int *)this)[0]; /*0x7c8b2c*/
 
 }
 } // namespace gamemd
@@ -14056,7 +14056,7 @@ int _except_handler3(int a1, unsigned int * TargetFrame, int a3)
 namespace gamemd {
 int _seh_longjmp_unwind_4(int a1)
 {
-  return _local_unwind2(a1->?, a1->?); /*0x7cc2a8*/
+  return _local_unwind2(((unsigned int *)a1)[0], ((unsigned int *)a1)[0]); /*0x7cc2a8*/
 }
 } // namespace gamemd
 

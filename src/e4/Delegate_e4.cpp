@@ -213,7 +213,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 
   result = 0; /*0x4a2786*/
   v10 = 0; /*0x4a278c*/
-  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] ) /*0x4a2789*/
+  if ( *(unsigned int *)&this->__pad_0[12] ) /*0x4a2789*/
   {
     v5 = a1; /*0x4a2794*/
     if ( a1 ) /*0x4a279a*/
@@ -228,19 +228,19 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           {
             if ( v7 >= v6 ) /*0x4a27ad*/
               v7 = v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
+            memcpy(v5, (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
             v8 = this->field_1C - v7; /*0x4a27cf*/
             v6 -= v7; /*0x4a27d4*/
-            *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] += v7; /*0x4a27d6*/
+            *(unsigned int *)&this->__pad_14[4] += v7; /*0x4a27d6*/
             v10 += v7; /*0x4a27d9*/
             this->field_1C = v8; /*0x4a27dd*/
             v5 += v7; /*0x4a27e0*/
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12], this->field_10); /*0x4a27f0*/
+          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
-          *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] = 0; /*0x4a27fa*/
+          *(unsigned int *)&this->__pad_14[4] = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/
             break; /*0x4a2801*/
         }
@@ -288,7 +288,7 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 
-  Vector::Clear((int)&this-((unsigned int *)(>__pad_0))[12]); /*0x52ae76*/
+  Vector::Clear((int)&this->__pad_0[12]); /*0x52ae76*/
   Straw::Dtor((Straw *)this); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     __3_YAXPAX_Z(this); /*0x52ae8a*/

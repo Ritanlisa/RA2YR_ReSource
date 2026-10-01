@@ -110,9 +110,9 @@ LABEL_5:
         if ( (*(unsigned char *)(v9 + 12) & 1) != 0 /*0x4312a6*/
           && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, result)
           && (uint8_t)HouseClass::IsAlliedWith(
-                                *((#375 **)stru_A80220.? + *(unsigned int *)(v9 + 272)),
+                                *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v9 + 272)),
                                 (#375 *)dword_A83D4C)
-          && !*(unsigned char *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(v9 + 272)) + 501) )
+          && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v9 + 272)) + 501) )
         {
           v10 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)&stru_87F5F0.__pad_E12[1538] + 120))( /*0x4312bf*/
                          *(unsigned int *)&stru_87F5F0.__pad_E12[1538],
@@ -295,10 +295,10 @@ LABEL_5:
           result = HouseClass::IsAllied((HouseClass *)dword_A83D4C, result); /*0x43166a*/
           if ( (unsigned char)result ) /*0x431671*/
           {
-            result = HouseClass::IsAlliedWith(*((#375 **)stru_A80220.? + *(unsigned int *)(v10 + 272)), (#375 *)dword_A83D4C); /*0x431688*/
+            result = HouseClass::IsAlliedWith(*((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v10 + 272)), (#375 *)dword_A83D4C); /*0x431688*/
             if ( (unsigned char)result ) /*0x43168f*/
             {
-              result = *((unsigned int *)stru_A80220.? + *(unsigned int *)(v10 + 272)); /*0x43169d*/
+              result = *((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v10 + 272)); /*0x43169d*/
               if ( !*(unsigned char *)(result + 501) ) /*0x4316a0*/
               {
                 v16 = *(unsigned int *)(v10 + 4); /*0x4316b4*/
@@ -1546,11 +1546,11 @@ LABEL_33:
                           if ( *((unsigned int *)this + 17) ) /*0x541c00*/
                           {
                             v22 = dword_A8DA78[v10]; /*0x541c16*/
-                            if ( stru_A80220.? > *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
+                            if ( ((char *)&stru_A80220) > *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
                             {
                               if ( SessionClass::IsValidHouse( /*0x541c36*/
                                      (int)&dword_A8B238,
-                                     *((#375 **)stru_A80220.? + *(unsigned int *)(v22 + 111))) )
+                                     *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v22 + 111))) )
                               {
                                 Network::FormatAddress(v47, 0); /*0x541c49*/
                                 Network::FormatAddress((Network *)(*((unsigned int *)this + 20) + 76), 0); /*0x541c57*/
@@ -1737,7 +1737,7 @@ LABEL_75:
               if ( (uint8_t)NetworkID::Compare((bool *)(dword_A8DA78[i] + 40), *((unsigned int *)this + 20) + 76) /*0x54203e*/
                 && SessionClass::IsValidHouse(
                      (int)&dword_A8B238,
-                     *((#375 **)stru_A80220.? + *(unsigned int *)(dword_A8DA78[i] + 111))) )
+                     *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(dword_A8DA78[i] + 111))) )
               {
                 Network::FormatAddress(v47, 0); /*0x542051*/
                 Network::FormatAddress((Network *)(*((unsigned int *)this + 20) + 76), 0); /*0x54205f*/
@@ -2901,10 +2901,10 @@ int Network::processQueue()
   Network *v4; // edx
 
   result = 0; /*0x5e2ba6*/
-  if ( stru_A80220.? > 0 ) /*0x5e2baa*/
+  if ( ((char *)&stru_A80220) > 0 ) /*0x5e2baa*/
   {
-    vtable3 = (Network **)stru_A80220.?; /*0x5e2bae*/
-    nextArrayIndex = stru_A80220.?; /*0x5e2bb5*/
+    vtable3 = (Network **)((char *)&stru_A80220); /*0x5e2bae*/
+    nextArrayIndex = ((char *)&stru_A80220); /*0x5e2bb5*/
     do /*0x5e2bda*/
     {
       v4 = *vtable3; /*0x5e2bb7*/
@@ -2933,15 +2933,15 @@ int Network::CountDisconnectedHouses()
   int v8; // [esp+0h] [ebp-Ch]
   int v9; // [esp+4h] [ebp-8h]
 
-  nextArrayIndex = stru_A80220.?; /*0x5e2be3*/
+  nextArrayIndex = ((char *)&stru_A80220); /*0x5e2be3*/
   v2 = 0; /*0x5e2bee*/
   v8 = 0; /*0x5e2bf2*/
   v9 = 0; /*0x5e2bf6*/
-  if ( stru_A80220.? <= 0 ) /*0x5e2bfa*/
+  if ( ((char *)&stru_A80220) <= 0 ) /*0x5e2bfa*/
     return 0; /*0x5e2cc5*/
   do /*0x5e2cb3*/
   {
-    v3 = *((unsigned int *)stru_A80220.? + v2); /*0x5e2c0a*/
+    v3 = *((unsigned int *)((char *)&stru_A80220) + v2); /*0x5e2c0a*/
     if ( v3 && !*(unsigned char *)(v3 + 501) && !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) && (Network *)v3 != this ) /*0x5e2c34*/
     {
       v4 = 0; /*0x5e2c36*/
@@ -2952,13 +2952,13 @@ int Network::CountDisconnectedHouses()
       {
         if ( v5 != v9 ) /*0x5e2c42*/
         {
-          v6 = *((unsigned int *)stru_A80220.? + v5); /*0x5e2c4a*/
+          v6 = *((unsigned int *)((char *)&stru_A80220) + v5); /*0x5e2c4a*/
           if ( v6 ) /*0x5e2c4f*/
           {
             if ( !*(unsigned char *)(v6 + 501) /*0x5e2c7d*/
               && !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422)
               && (Network *)v6 != this
-              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v3, *((#375 **)stru_A80220.? + v5))
+              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v3, *((#375 **)((char *)&stru_A80220) + v5))
               && (uint8_t)HouseClass::IsAlliedWith((#375 *)v6, (#375 *)v3) )
             {
               if ( v5 > v9 && !v4 ) /*0x5e2c8e*/
@@ -2967,10 +2967,10 @@ int Network::CountDisconnectedHouses()
             }
           }
         }
-        nextArrayIndex = stru_A80220.?; /*0x5e2c96*/
+        nextArrayIndex = ((char *)&stru_A80220); /*0x5e2c96*/
         ++v5; /*0x5e2c9b*/
       }
-      while ( v5 < stru_A80220.? ); /*0x5e2c9e*/
+      while ( v5 < ((char *)&stru_A80220) ); /*0x5e2c9e*/
       if ( !v4 ) /*0x5e2ca2*/
 LABEL_20:
         ++v8; /*0x5e2ca4*/
@@ -5591,10 +5591,10 @@ void sub_64D990()
   int v1; // edx
   int grindingAnimHandle; // eax
 
-  v1 = *(unsigned int *)&FootClass_Array.?; /*0x64d990*/
-  if ( *(unsigned int *)&FootClass_Array.? ) /*0x64d999*/
+  v1 = *(unsigned int *)&((char *)&FootClass_Array); /*0x64d990*/
+  if ( *(unsigned int *)&((char *)&FootClass_Array) ) /*0x64d999*/
   {
-    grindingAnimHandle = FootClass_Array.?; /*0x64d9a1*/
+    grindingAnimHandle = ((char *)&FootClass_Array); /*0x64d9a1*/
     do /*0x64d9d5*/
     {
       if ( (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 1) & 1) == 0 /*0x64d9bd*/
@@ -5606,8 +5606,8 @@ void sub_64D990()
         break; /*0x64d9c1*/
       grindingAnimHandle = ((unsigned short)grindingAnimHandle + 1) & 0x3FFF; /*0x64d9c4*/
       --v1; /*0x64d9c9*/
-      FootClass_Array.? = grindingAnimHandle; /*0x64d9ca*/
-      *(unsigned int *)&FootClass_Array.? = v1; /*0x64d9cf*/
+      ((unsigned int *)&FootClass_Array)[0] = grindingAnimHandle; /*0x64d9ca*/
+      *(unsigned int *)&((unsigned int *)&FootClass_Array)[0] = v1; /*0x64d9cf*/
     }
     while ( v1 ); /*0x64d9d5*/
   }
@@ -5629,10 +5629,10 @@ int sub_64D9E0()
   {
     v2 = 0; /*0x64da00*/
     Buffer = 0; /*0x64da06*/
-    if ( *(int *)&FootClass_Array.? > 0 ) /*0x64da0a*/
+    if ( *(int *)&((char *)&FootClass_Array) > 0 ) /*0x64da0a*/
     {
-      grindingAnimHandle = FootClass_Array.?; /*0x64da0c*/
-      v4 = *(unsigned int *)&FootClass_Array.?; /*0x64da13*/
+      grindingAnimHandle = ((char *)&FootClass_Array); /*0x64da0c*/
+      v4 = *(unsigned int *)&((char *)&FootClass_Array); /*0x64da13*/
       do /*0x64da37*/
       {
         if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)&(unsigned int *)((char *)&FootClass_Array + 1) /*0x64da32*/
@@ -5649,21 +5649,21 @@ int sub_64D9E0()
       Buffer = v2; /*0x64da39*/
     }
     FileClass::Write(&dword_A8D58C, &Buffer, 4u); /*0x64da4a*/
-    result = *(unsigned int *)&FootClass_Array.?; /*0x64da4f*/
-    for ( i = 0; i < *(int *)&FootClass_Array.?; ++i ) /*0x64da59*/
+    result = *(unsigned int *)&((char *)&FootClass_Array); /*0x64da4f*/
+    for ( i = 0; i < *(int *)&((char *)&FootClass_Array); ++i ) /*0x64da59*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)&(unsigned int *)((char *)&FootClass_Array + 1) /*0x64da85*/
-                                                    + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF)
+                                                    + 111 * ((IDA_LOWORD(((char *)&FootClass_Array)) + (unsigned short)i) & 0x3FFF)
                                                     + 3)
-        && (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF) + 1) & 1) == 0 )
+        && (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(((char *)&FootClass_Array)) + (unsigned short)i) & 0x3FFF) + 1) & 1) == 0 )
       {
         FileClass::Write( /*0x64da96*/
           &dword_A8D58C,
-          (char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF),
+          (char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(((char *)&FootClass_Array)) + (unsigned short)i) & 0x3FFF),
           0x6Fu);
         --Buffer; /*0x64da9b*/
       }
-      result = *(unsigned int *)&FootClass_Array.?; /*0x64da9f*/
+      result = *(unsigned int *)&((char *)&FootClass_Array); /*0x64da9f*/
     }
   }
   return result; /*0x64daa9*/

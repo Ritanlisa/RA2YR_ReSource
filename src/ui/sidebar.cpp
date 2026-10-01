@@ -42,7 +42,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   int v23; // [esp+10h] [ebp-4h]
   int v24; // [esp+18h] [ebp+4h]
 
-  if ( stru_A8EB00.?[391] ) /*0x6a630e*/
+  if ( ((unsigned int *)&stru_A8EB00)[391] ) /*0x6a630e*/
     goto LABEL_57; /*0x6a630e*/
   v5 = 0; /*0x6a6314*/
   v6 = (int *)((char *)&((unsigned char *)(this) + 0x2288)); /*0x6a6316*/

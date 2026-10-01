@@ -24,16 +24,16 @@ void E4Recv_7AE830::sub_7AE830()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  vtable2 = (unsigned int)this->?; /*0x7ae835*/
-  if ( (ObjectClass *)vtable2 > (gamemd::ObjectClass *)(this->nextObject) && LOBYTE(this->?) != 1 ) /*0x7ae847*/
+  vtable2 = (unsigned int)((unsigned int *)this)[0]; /*0x7ae835*/
+  if ( (ObjectClass *)vtable2 > (gamemd::ObjectClass *)(this->nextObject) && LOBYTE(((unsigned int *)this)[0]) != 1 ) /*0x7ae847*/
   {
     vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
-    vtable3 = (unsigned int)((char *)this->?);
+    vtable3 = (unsigned int)((char *)((unsigned int *)this)[0]);
     v13 = (int *)((unsigned int)((int *)this->AbstractClass));
-    this->? = (void *)(vtable2 >> 1); /*0x7ae85c*/
-    this->? = vtable3 - 1; /*0x7ae864*/
+    ((unsigned int *)this)[0] = (void *)(vtable2 >> 1); /*0x7ae85c*/
+    ((unsigned int *)this)[0] = vtable3 - 1; /*0x7ae864*/
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
-    v6 = 4 * (int)this->?; /*0x7ae874*/
+    v6 = 4 * (int)((unsigned int *)this)[0]; /*0x7ae874*/
     this->AbstractClass = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)vtable2 > 0 ) /*0x7ae88b*/
@@ -47,7 +47,7 @@ void E4Recv_7AE830::sub_7AE830()
         {
           do /*0x7ae8bd*/
           {
-            v10 = ((int (*)(int))this->?)(v9) & ((1 << (int)this->?) - 1); /*0x7ae8a7*/
+            v10 = ((int (*)(int))((unsigned int *)this)[0])(v9) & ((1 << (int)((unsigned int *)this)[0]) - 1); /*0x7ae8a7*/
             v11 = *((unsigned int *)this->AbstractClass + v10); /*0x7ae8ab*/
             *((unsigned int *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/

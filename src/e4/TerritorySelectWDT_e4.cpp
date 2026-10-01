@@ -145,7 +145,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 
   v5 = *(unsigned int *)this->isUseless; /*0x7714c4*/
   v6 = v5 - 1; /*0x7714c6*/
-  if ( v5 > this-((unsigned int *)(>targetLaserTimer))[0] ) /*0x7714c9*/
+  if ( v5 > this->targetLaserTimer[0] ) /*0x7714c9*/
   {
     do /*0x77150b*/
     {
@@ -156,14 +156,14 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         v9 = v6; /*0x7714d6*/
         for ( *(unsigned int *)this->isUseless = v8; v9 < *(unsigned int *)this->isUseless; ++v9 ) /*0x7714e0*/
           String::Reassign( /*0x7714f0*/
-            (String *)(this-((unsigned int *)(>targetLaserTimer))[2] + 4 * v9),
-            (const char **)(this-((unsigned int *)(>targetLaserTimer))[2] + 4 * v9 + 4));
+            (String *)(this->targetLaserTimer[2] + 4 * v9),
+            (const char **)(this->targetLaserTimer[2] + 4 * v9 + 4));
       }
       v10 = v6--; /*0x771506*/
     }
-    while ( v10 > this-((unsigned int *)(>targetLaserTimer))[0] ); /*0x77150b*/
+    while ( v10 > this->targetLaserTimer[0] ); /*0x77150b*/
   }
-  if ( !this-((unsigned int *)(>targetLaserTimer))[0] ) /*0x77150d*/
+  if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
   vtable0 = this->vtable0; /*0x77152b*/

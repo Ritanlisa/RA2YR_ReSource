@@ -90,15 +90,15 @@ unsigned int * Power::UpdateAll()
   Power::ComputeHousePowerChecksum((int)dword_A8B230, (unsigned int *)&v53); /*0x67c70a*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))(*((unsigned int *)dword_A83C9C + i), &v53); /*0x67c72a*/
-  for ( j = 0; j < stru_A80220.?; ++j ) /*0x67c740*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)stru_A80220.? + j) + 52))( /*0x67c752*/
-      *((unsigned int *)stru_A80220.? + j),
+  for ( j = 0; j < ((char *)&stru_A80220); ++j ) /*0x67c740*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)((char *)&stru_A80220) + j) + 52))( /*0x67c752*/
+      *((unsigned int *)((char *)&stru_A80220) + j),
       &v53);
   for ( k = 0; k < dword_A83CF0; ++k ) /*0x67c768*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CE4 + k) + 52))(*((unsigned int *)dword_A83CE4 + k), &v53); /*0x67c77a*/
   for ( m = 0; m < *((unsigned int *)((char *)&FootClass_Array + 2)); ++m ) /*0x67c790*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(FootClass_Array.? + 4 * m) + 52))( /*0x67c7a2*/
-      *(unsigned int *)(FootClass_Array.? + 4 * m),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(((char *)&FootClass_Array) + 4 * m) + 52))( /*0x67c7a2*/
+      *(unsigned int *)(((char *)&FootClass_Array) + 4 * m),
       &v53);
   for ( n = 0; n < dword_A8E358; ++n ) /*0x67c7b8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E34C + n) + 52))(*((unsigned int *)dword_A8E34C + n), &v53); /*0x67c7ca*/
@@ -142,11 +142,11 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5) + 52))( /*0x67c95a*/
       *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5),
       &v53);
-  for ( i6 = 0; i6 < (int)FootClass_Array.?; ++i6 ) /*0x67c970*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)&FootClass_Array.?->ObjectClass + i6) + 52))( /*0x67c982*/
-      *((unsigned int *)&FootClass_Array.?->ObjectClass + i6),
+  for ( i6 = 0; i6 < (int)((char *)&FootClass_Array); ++i6 ) /*0x67c970*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)&((char *)&FootClass_Array)->ObjectClass + i6) + 52))( /*0x67c982*/
+      *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + i6),
       &v53);
-  for ( i7 = 0; i7 < *(int *)&FootClass_Array.?; ++i7 ) /*0x67c998*/
+  for ( i7 = 0; i7 < *(int *)&((char *)&FootClass_Array); ++i7 ) /*0x67c998*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7) + 52))( /*0x67c9aa*/
       *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7),
       &v53);
@@ -162,7 +162,7 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_TagClassCount + i10) + 52))( /*0x67ca22*/
       *((unsigned int *)g_TagClassCount + i10),
       &v53);
-  for ( i11 = 0; i11 < *(int *)FootClass_Array.?; ++i11 ) /*0x67ca38*/
+  for ( i11 = 0; i11 < *(int *)((char *)&FootClass_Array); ++i11 ) /*0x67ca38*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11) + 52))( /*0x67ca4a*/
       *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11),
       &v53);
@@ -239,8 +239,8 @@ unsigned int * Power::UpdateAll()
       *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * i29),
       &v53);
   for ( i30 = 0; i30 < *((unsigned int *)((char *)&FootClass_Array + 2)); ++i30 ) /*0x67cd30*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&FootClass_Array.? + 4 * i30) + 52))( /*0x67cd42*/
-      *(unsigned int *)(*(unsigned int *)&FootClass_Array.? + 4 * i30),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&((char *)&FootClass_Array) + 4 * i30) + 52))( /*0x67cd42*/
+      *(unsigned int *)(*(unsigned int *)&((char *)&FootClass_Array) + 4 * i30),
       &v53);
   for ( i31 = 0; i31 < *((unsigned int *)((char *)&FootClass_Array + 0)); ++i31 ) /*0x67cd58*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31) + 52))( /*0x67cd6a*/

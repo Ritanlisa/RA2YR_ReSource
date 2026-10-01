@@ -22,7 +22,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   int v6; // [esp+4h] [ebp-8h]
 
   LOBYTE(Ticks) = a2; /*0x7718a0*/
-  this-((unsigned int *)(>__pad_C))[0] = a2; /*0x7718a9*/
+  this->__pad_C[0] = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
     v3 = this->field_1C; /*0x7718af*/
@@ -74,8 +74,8 @@ namespace gamemd {
 signed int Territory_WorldDominationTour_8::ddtor()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_C))[4] == -1 ) /*0x771957*/
-    *(unsigned int *)&this-((unsigned int *)(>__pad_C))[4] = this->Timer::GetTicks(); /*0x771961*/
+  if ( *(unsigned int *)&this->__pad_C[4] == -1 ) /*0x771957*/
+    *(unsigned int *)&this->__pad_C[4] = this->Timer::GetTicks(); /*0x771961*/
 
 }
 } // namespace gamemd

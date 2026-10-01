@@ -213,7 +213,7 @@ LABEL_23: v99[1] = (int)(v27);
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
             if ( !aP11 /*0x56de4c*/
-              || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30-((unsigned int *)(>Cell_field_0x11B))[0],
+              || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->Cell_field_0x11B[0],
                   (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
@@ -271,7 +271,7 @@ LABEL_44: v98[1] = (int)(v36);
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
             if ( !aP11 /*0x56e062*/
-              || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39-((unsigned int *)(>Cell_field_0x11B))[0],
+              || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->Cell_field_0x11B[0],
                   (int)((HIDWORD(v40) ^ v40) - HIDWORD(v40)) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
@@ -339,7 +339,7 @@ LABEL_67:
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
             if ( !aP11 /*0x56e2a5*/
-              || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49-((unsigned int *)(>Cell_field_0x11B))[0],
+              || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->Cell_field_0x11B[0],
                   (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
@@ -393,7 +393,7 @@ LABEL_86:
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
             if ( !aP11 /*0x56e4a7*/
-              || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56-((unsigned int *)(>Cell_field_0x11B))[0],
+              || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->Cell_field_0x11B[0],
                   (int)((HIDWORD(v57) ^ v57) - HIDWORD(v57)) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/

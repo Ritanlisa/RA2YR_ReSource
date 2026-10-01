@@ -83,7 +83,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
-      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x6cf616*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf616*/
       {
         m_8 = this->m_8; /*0x6cf61b*/
         if ( a2 < m_8 ) /*0x6cf620*/
@@ -94,7 +94,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           do /*0x6cf647*/
           {
             v14 = 2 * v13; /*0x6cf62d*/
-            v15 = (unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * v13++); /*0x6cf636*/
+            v15 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
           }
@@ -103,11 +103,11 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
         }
         if ( BYTE1(this->m_C) ) /*0x6cf64f*/
         {
-          __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x6cf658*/
-          *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x6cf660*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf658*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x6cf660*/
         }
       }
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v5; /*0x6cf66b*/
+      *(unsigned int *)&this->m_1[3] = v5; /*0x6cf66b*/
       this->m_8 = v3; /*0x6cf671*/
       BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
@@ -192,7 +192,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x6cf791*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf791*/
     {
       m_8 = this->m_8; /*0x6cf796*/
       if ( a2 < m_8 ) /*0x6cf79b*/
@@ -203,7 +203,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         do /*0x6cf7c2*/
         {
           v13 = 2 * v12; /*0x6cf7a8*/
-          v14 = (unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * v12++); /*0x6cf7b1*/
+          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
         }
@@ -212,11 +212,11 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x6cf7ca*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x6cf7d3*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x6cf7db*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf7d3*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x6cf7db*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v5; /*0x6cf7e6*/
+    *(unsigned int *)&this->m_1[3] = v5; /*0x6cf7e6*/
     this->m_8 = v3; /*0x6cf7ec*/
     BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
   }
@@ -276,12 +276,12 @@ void SwizzleManagerClass_19::ClearBuffer()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x6cf4f6*/
+  v2 = *(void **)&this->m_1[3]; /*0x6cf4f6*/
   this->m_10 = 0; /*0x6cf4f9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x6cf500*/
   {
     __3_YAXPAX_Z(v2); /*0x6cf506*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x6cf50e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf50e*/
   }
   BYTE1(this->m_C) = 0; /*0x6cf511*/
   this->m_8 = 0; /*0x6cf514*/
@@ -295,7 +295,7 @@ unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x6cf520*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 3; /*0x6cf535*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6cf535*/
   else
     return 0; /*0x6cf527*/
 
@@ -309,7 +309,7 @@ unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
 
   int v3; // edx
 
-  v3 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3]; /*0x6cf540*/
+  v3 = *(unsigned int *)&this->m_1[3]; /*0x6cf540*/
   *a2 = *(unsigned int *)(v3 + 8 * a3); /*0x6cf54f*/
   a2[1] = *(unsigned int *)(v3 + 8 * a3 + 4); /*0x6cf556*/
   return a2; /*0x6cf551*/
@@ -333,7 +333,7 @@ char SwizzleManagerClass_19::AddRef(int a2)
     v3 = 0; /*0x6cf56f*/
     if ( m_8 <= 0 ) /*0x6cf573*/
       return 1; /*0x6cf593*/
-    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x6cf575*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x6cf575*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6cf57b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6cf584*/
     {
@@ -353,10 +353,10 @@ namespace gamemd {
 void SwizzleManagerClass_19::ddtor()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] && BYTE1(this->m_C) ) /*0x6cf69d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x6cf69d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x6cf6a3*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x6cf6ab*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf6a3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf6ab*/
   }
   BYTE1(this->m_C) = 0; /*0x6cf6ae*/
   this->m_8 = 0; /*0x6cf6b1*/
@@ -379,7 +379,7 @@ int SwizzleManagerClass_19::Init( unsigned int * a2)
   result = 0; /*0x6cf6d1*/
   if ( m_8 <= 0 ) /*0x6cf6d5*/
     return -1; /*0x6cf6ec*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; i += 2 ) /*0x6cf6db*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; i += 2 ) /*0x6cf6db*/
   {
     if ( ++result >= m_8 ) /*0x6cf6ea*/
       return -1; /*0x6cf6ea*/
@@ -395,7 +395,7 @@ unsigned int SwizzleManagerClass_19::Add(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x6cf700*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 3; /*0x6cf715*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6cf715*/
   else
     return 0; /*0x6cf707*/
 
@@ -415,7 +415,7 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
   result = 0; /*0x6cf823*/
   if ( m_10 <= 0 ) /*0x6cf828*/
     return -1; /*0x6cf83f*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; i += 2 ) /*0x6cf82e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; i += 2 ) /*0x6cf82e*/
   {
     if ( ++result >= m_10 ) /*0x6cf83d*/
       return -1; /*0x6cf83d*/

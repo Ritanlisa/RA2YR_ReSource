@@ -12,7 +12,7 @@ namespace gamemd {
 unsigned int IRTTITypeInfo::GetOffset()
 {
 
-  return *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[8]; /*0x71d156*/
+  return *(unsigned int *)&this->__pad_C0[8]; /*0x71d156*/
 
 }
 } // namespace ra2

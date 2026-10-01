@@ -93,3 +93,5 @@ void ClearAndFree3();
 void ClearAndFree4();
 void Destroy();
 // fused-garbage: void Desvoidvoid Destroy();
+};  // fix_truncated_headers: restored closer
+}  // fix_truncated_headers: restored closer // namespace gamemd

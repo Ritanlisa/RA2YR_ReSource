@@ -98,9 +98,9 @@ int AbstractTypeClass::Dtor()
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
-  this->? = &vt_AbstractTypeClass; /*0x4109d3*/
-  this->? = &vt_AbstractTypeClass; /*0x4109da*/
-  this->? = &vt_AbstractTypeClass; /*0x4109e1*/
+  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109d3*/
+  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109da*/
+  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/
@@ -152,7 +152,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
     if ( Destination != Name ) /*0x410ad2*/
     {
       qmemcpy(Name, Destination, 0x30u); /*0x410add*/
-      this-((unsigned int *)(>Name))[48] = v7; /*0x410adf*/
+      this->Name[48] = v7; /*0x410adf*/
     }
     UINameLabel = (char *)(this->UINameLabel);
     INIClass::GetString( /*0x410afb*/
@@ -202,9 +202,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
-  Block->? = &vt_AbstractTypeClass; /*0x410c43*/
-  Block->? = &vt_AbstractTypeClass; /*0x410c4a*/
-  Block->? = &vt_AbstractTypeClass; /*0x410c51*/
+  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c43*/
+  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c4a*/
+  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = Block; /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/

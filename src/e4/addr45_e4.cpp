@@ -67,10 +67,10 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   int *v25; // ecx
   char v26[64]; // [esp+10h] [ebp-40h] BYREF
 
-  Strength = a1->Type->?; /*0x451412*/
-  if ( a1->? != Strength ) /*0x45141a*/
+  Strength = a1->((unsigned int *)Type)[0]; /*0x451412*/
+  if ( ((unsigned int *)a1)[0] != Strength ) /*0x45141a*/
   {
-    a1->? = Strength; /*0x451420*/
+    ((unsigned int *)a1)[0] = Strength; /*0x451420*/
     if ( a1->IsDamaged ) /*0x451423*/
     {
       v4 = 0; /*0x45142d*/
@@ -103,7 +103,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     }
     if ( (_AX & 0x4100) == 0 ) /*0x45148f*/
     {
-      damageParticles = a1->?; /*0x451491*/
+      damageParticles = ((unsigned int *)a1)[0]; /*0x451491*/
       if ( damageParticles ) /*0x451499*/
         (*((void (**)(ParticleSystemClass *))damageParticles->ObjectClass + 62))(damageParticles); /*0x45149d*/
     }
@@ -126,7 +126,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       ++v13; /*0x4514e1*/
     }
     while (v12 <= 102, unsigned int a2); /*0x4514ea*/
-    a1->? = 1; /*0x4514ec*/
+    ((unsigned int *)a1)[0] = 1; /*0x4514ec*/
   }
     v15 = (gamemd::BuildingTypeClass *)(*(unsigned int *)(a1 + 1312));
   if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x451505*/
@@ -182,7 +182,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   else
   {
         v21 = *(unsigned char *)(a1 + 1794);
-    if ( UpgradeLevel == *(unsigned int *)&v15-((unsigned int *)(>__pad_F70))[1392] ) /*0x4515fa*/
+    if ( UpgradeLevel == *(unsigned int *)&v15->__pad_F70[1392] ) /*0x4515fa*/
     {
       return 0; /*0x4515ff*/
     }

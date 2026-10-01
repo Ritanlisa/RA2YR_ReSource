@@ -127,11 +127,11 @@ v3 = (int)((void ***)(0));
       while ( dword_8B40F8 ); /*0x6f0b4d*/
     }
     v9 = 4 * *(unsigned int *)(a2 + 388); /*0x6f0b5b*/
-    WallPenetratorThreshold_high = IDA_HIDWORD(dword_8871E0->?); /*0x6f0b5e*/
+    WallPenetratorThreshold_high = IDA_HIDWORD(((unsigned int *)dword_8871E0)[0]); /*0x6f0b5e*/
     IDA_LOBYTE(v53[0]) = 0; /*0x6f0b64*/
     if ( v6 < *(unsigned int *)(WallPenetratorThreshold_high + v9) || v3 < (void ***)(v6) / 2 ) /*0x6f0b77*/
     {
-      if ( v3 > *(unsigned int *)(IDA_LODWORD(dword_8871E0->?) + v9) ) /*0x6f0bd4*/
+      if ( v3 > *(unsigned int *)(IDA_LODWORD(((unsigned int *)dword_8871E0)[0]) + v9) ) /*0x6f0bd4*/
         IDA_LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
     }
     else
@@ -163,7 +163,7 @@ v3 = (int)((void ***)(0));
         }
       }
     }
-    if ( v6 < *(unsigned int *)(IDA_HIDWORD(dword_8871E0->?) + 4 * *(unsigned int *)(a2 + 388)) ) /*0x6f0bf4*/
+    if ( v6 < *(unsigned int *)(IDA_HIDWORD(((unsigned int *)dword_8871E0)[0]) + 4 * *(unsigned int *)(a2 + 388)) ) /*0x6f0bf4*/
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(0, 0); /*0x6f0c02*/

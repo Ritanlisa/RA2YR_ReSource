@@ -287,7 +287,7 @@ namespace gamemd {
 int CStreamClass_16::Seek( int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x4a4b2a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a4b2a*/
 
 }
 } // namespace gamemd
@@ -308,7 +308,7 @@ char CStreamClass_16::AddRef(int a2)
     v3 = 0; /*0x4a4b3f*/
     if ( m_8 <= 0 ) /*0x4a4b43*/
       return 1; /*0x4a4b63*/
-    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x4a4b45*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x4a4b45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a4b4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a4b54*/
     {
@@ -342,20 +342,20 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
-      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x4a4bb5*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4a4bb5*/
       {
         m_8 = this->m_8; /*0x4a4bbc*/
         if ( a2 < m_8 ) /*0x4a4bc1*/
           m_8 = a2; /*0x4a4bc3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x4a4bc9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
         if ( BYTE1(this->m_C) ) /*0x4a4bdb*/
         {
-          __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4a4be6*/
-          *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a4bee*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a4be6*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4a4bee*/
         }
       }
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x4a4bf7*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4a4bf7*/
       this->m_8 = a2; /*0x4a4bff*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a4c02*/
       return 1; /*0x4a4c08*/
@@ -379,10 +379,10 @@ namespace gamemd {
 int CStreamClass_16::ddtor()
 {
 
-  if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] && BYTE1(this->m_C) ) /*0x4a4c2d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4a4c2d*/
   {
-    __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x4a4c33*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x4a4c3b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a4c33*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4c3b*/
   }
   BYTE1(this->m_C) = 0; /*0x4a4c3e*/
   this->m_8 = 0; /*0x4a4c41*/

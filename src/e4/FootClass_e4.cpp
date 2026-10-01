@@ -48,9 +48,9 @@ AbstractClass * FootClass::Destruct()
 
   team = (int *)this->team; /*0x4d3597*/
   this->TechnoClass = &vt_FootClass; /*0x4d359d*/
-  this->? = &vt_FootClass; /*0x4d35a5*/
-  this->? = &vt_FootClass; /*0x4d35ac*/
-  this->? = &vt_FootClass; /*0x4d35b3*/
+  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35a5*/
+  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35ac*/
+  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -69,7 +69,7 @@ AbstractClass * FootClass::Destruct()
     (*((void (**)(ParasiteClass *, int))parasiteImUsing->AbstractClass + 8))(parasiteImUsing, 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
-  if ( this-((unsigned int *)(>currentJumpjetMapCoords))[0] != g_FootClass_Pool ) /*0x4d3646*/
+  if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
     v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
@@ -77,27 +77,27 @@ AbstractClass * FootClass::Destruct()
   }
   Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
-  v7 = this-((unsigned int *)(>locomotor))[0]; /*0x4d3683*/
+  v7 = this->locomotor[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (**)(int))(*(unsigned int *)v7 + 8))(this-((unsigned int *)(>locomotor))[0]); /*0x4d3690*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC[0] = (int)&vt_VectorClass; /*0x4d36a0*/
-  if ( v8 && this-((unsigned int *)(>__pad_5B0))[9] ) /*0x4d36a8*/
+  if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
     *(unsigned int *)this->__pad_5B0 = 0; /*0x4d36b9*/
   }
-  this-((unsigned int *)(>__pad_5B0))[9] = 0; /*0x4d36bf*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_5B0))[4] = 0; /*0x4d36c5*/
+  this->__pad_5B0[9] = 0; /*0x4d36bf*/
+  *(unsigned int *)&this->__pad_5B0[4] = 0; /*0x4d36c5*/
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
   this->unknownAbstractArray588[0] = (int)&vt_VectorClass; /*0x4d36d1*/
-  if ( v9 && this-((unsigned int *)(>__pad_58C))[9] ) /*0x4d36dc*/
+  if ( v9 && this->__pad_58C[9] ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
     *(unsigned int *)this->__pad_58C = 0; /*0x4d36ed*/
   }
-  this-((unsigned int *)(>__pad_58C))[9] = 0; /*0x4d36f5*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_58C))[4] = 0; /*0x4d36fb*/
+  this->__pad_58C[9] = 0; /*0x4d36f5*/
+  *(unsigned int *)&this->__pad_58C[4] = 0; /*0x4d36fb*/
   return TechnoClass::DTOR((int)this); /*0x4d3706*/
 
 }
@@ -111,7 +111,7 @@ void FootClass::Destroyed(int a2)
   int64_t v3; // rax
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (uint8_t)House::IsHumanPlayer((House *)this->?) /*0x4d98dd*/
+  if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) /*0x4d98dd*/
     && !*(unsigned char *)((*((int (**)(FootClass *))this->TechnoClass + 33))(this) + 3412) )
   {
     v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->TechnoClass + 110))(this, v4); /*0x4d98f0*/
@@ -130,8 +130,8 @@ int FootClass::updateThreat()
   int v1; // edx
   int v2; // eax
 
-  v1 = this->?[0]; /*0x70f7e0*/
-  v2 = this->?[2]; /*0x70f7e6*/
+  v1 = ((unsigned int *)this)[0]; /*0x70f7e0*/
+  v2 = ((unsigned int *)this)[2]; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
@@ -338,7 +338,7 @@ unsigned int FootClass::checkTurning()
 
   unsigned int result; // eax
 
-  result = this->?[0]; /*0x50daa0*/
+  result = ((unsigned int *)this)[0]; /*0x50daa0*/
   if ( result >= 4 ) /*0x50daa8*/
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/

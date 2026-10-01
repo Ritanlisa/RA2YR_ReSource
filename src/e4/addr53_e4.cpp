@@ -2759,7 +2759,7 @@ AnimClass * * UpdateChronosphereEffect()
         ChronoScreenEffect_Status = 3; /*0x53b68f*/
         SetVocClassEnabled(1); /*0x53b699*/
         Mixer::ReleaseChannel((int **)&dword_A9F9B8); /*0x53b6a3*/
-        PlayVocClass(g_RulesClass_Instance->?[0], 0x2000, 1.0, (int)&dword_A9F9B8); /*0x53b6c2*/
+        PlayVocClass(((unsigned int *)g_RulesClass_Instance)[0], 0x2000, 1.0, (int)&dword_A9F9B8); /*0x53b6c2*/
         SetVocClassEnabled(0); /*0x53b6c9*/
       }
       break; /*0x53b6c9*/

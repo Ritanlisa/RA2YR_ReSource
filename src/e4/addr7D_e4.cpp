@@ -11643,8 +11643,8 @@ namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
 
-  this->? = 0; /*0x7d2e70*/
-  this->? = 0; /*0x7d2e74*/
+  ((unsigned int *)this)[0] = 0; /*0x7d2e70*/
+  ((unsigned int *)this)[0] = 0; /*0x7d2e74*/
   this->AbstractClass = &vt_exception; /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 
@@ -13388,20 +13388,20 @@ int _getbuf(MouseClass * aP0)
 
   ++dword_B781C0; /*0x7d7710*/
   v1 = malloc(0x1000u); /*0x7d771b*/
-  aP0->? = v1; /*0x7d7727*/
+  ((unsigned int *)aP0)[0] = v1; /*0x7d7727*/
   if ( v1 ) /*0x7d772a*/
   {
-    aP0->? = (void *)((int)aP0->? | 8); /*0x7d772c*/
-    aP0->? = 4096; /*0x7d7730*/
+    ((unsigned int *)aP0)[0] = (void *)((int)((unsigned int *)aP0)[0] | 8); /*0x7d772c*/
+    ((unsigned int *)aP0)[0] = 4096; /*0x7d7730*/
   }
   else
   {
-    aP0->? = (void *)((int)aP0->? | 4); /*0x7d7739*/
-    aP0->? = &aP0->?; /*0x7d7740*/
-    aP0->? = 2; /*0x7d7743*/
+    ((unsigned int *)aP0)[0] = (void *)((int)((unsigned int *)aP0)[0] | 4); /*0x7d7739*/
+    ((unsigned int *)aP0)[0] = &((unsigned int *)aP0)[0]; /*0x7d7740*/
+    ((unsigned int *)aP0)[0] = 2; /*0x7d7743*/
   }
-  result = (int)aP0->?; /*0x7d774a*/
-  aP0->? = 0; /*0x7d774d*/
+  result = (int)((unsigned int *)aP0)[0]; /*0x7d774a*/
+  ((unsigned int *)aP0)[0] = 0; /*0x7d774d*/
   aP0->AbstractClass = (void *)result; /*0x7d7751*/
   return result; /*0x7d7753*/
 }

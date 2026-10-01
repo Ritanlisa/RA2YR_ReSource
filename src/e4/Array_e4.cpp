@@ -353,15 +353,15 @@ int Array::Cleanup()
   int result; // eax
   int i; // edi
 
-  result = this-((unsigned int *)(>Array_field_0x3C))[0]; /*0x49b723*/
+  result = this->Array_field_0x3C[0]; /*0x49b723*/
   if ( result ) /*0x49b728*/
   {
     for ( i = 0; i < (int)this->Array_field_0x40; ++i ) /*0x49b732*/
     {
-      if ( *(unsigned int *)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i) ) /*0x49b737*/
-        __3_YAXPAX_Z(*(void **)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i)); /*0x49b73f*/
+      if ( *(unsigned int *)(this->Array_field_0x3C[0] + 4 * i) ) /*0x49b737*/
+        __3_YAXPAX_Z(*(void **)(this->Array_field_0x3C[0] + 4 * i)); /*0x49b73f*/
     }
-    __3_YAXPAX_Z((void *)this-((unsigned int *)(>Array_field_0x3C))[0]); /*0x49b753*/
+    __3_YAXPAX_Z((void *)this->Array_field_0x3C[0]); /*0x49b753*/
   }
   return result; /*0x49b75c*/
 

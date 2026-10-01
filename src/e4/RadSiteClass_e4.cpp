@@ -43,9 +43,9 @@ RadSiteClass::RadSiteClass()
   this->RadDuration = 0; /*0x65b222*/
   this->RadTimeLeft = 0; /*0x65b225*/
   this->AbstractClass = &vt_RadSiteClass; /*0x65b228*/
-  this->? = &vt_RadSiteClass; /*0x65b22e*/
-  this->? = &vt_RadSiteClass; /*0x65b235*/
-  this->? = &vt_RadSiteClass; /*0x65b23c*/
+  ((unsigned int *)this)[0] = &vt_RadSiteClass; /*0x65b22e*/
+  ((unsigned int *)this)[0] = &vt_RadSiteClass; /*0x65b235*/
+  ((unsigned int *)this)[0] = &vt_RadSiteClass; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -96,14 +96,14 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
       v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
-      aP0-((unsigned int *)(>RadLevelTimer))[2] = 0; /*0x65b3fd*/
-      aP0-((unsigned int *)(>RadLevelTimer))[0] = v3; /*0x65b404*/
-      aP0-((unsigned int *)(>RadLightTimer))[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
-      aP0-((unsigned int *)(>RadLightTimer))[2] = 0; /*0x65b40f*/
+      aP0->RadLevelTimer[2] = 0; /*0x65b3fd*/
+      aP0->RadLevelTimer[0] = v3; /*0x65b404*/
+      aP0->RadLightTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
+      aP0->RadLightTimer[2] = 0; /*0x65b40f*/
       aP0->AbstractClass = &vt_RadSiteClass; /*0x65b416*/
-      aP0->? = &vt_RadSiteClass; /*0x65b41c*/
-      aP0->? = &vt_RadSiteClass; /*0x65b423*/
-      aP0->? = &vt_RadSiteClass; /*0x65b42a*/
+      ((unsigned int *)aP0)[0] = &vt_RadSiteClass; /*0x65b41c*/
+      ((unsigned int *)aP0)[0] = &vt_RadSiteClass; /*0x65b423*/
+      ((unsigned int *)aP0)[0] = &vt_RadSiteClass; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
   }

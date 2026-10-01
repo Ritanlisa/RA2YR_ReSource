@@ -137,7 +137,7 @@ int Scenario::ReadTeams()
       v6 = ((HouseClass *)(v5))->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
       {
-        v7 = (Object *)*((unsigned int *)stru_A80220.? + v6); /*0x44f8bc*/
+        v7 = (Object *)*((unsigned int *)((char *)&stru_A80220) + v6); /*0x44f8bc*/
         v65 = (int)v7; /*0x44f8c1*/
         if ( v7 ) /*0x44f8c5*/
         {
@@ -382,7 +382,7 @@ int Scenario::CopyLocalScenarioData()
   this->Scenario_field_0x38 = (unsigned char)(abstractFlags);
   result = *(unsigned int *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
   *(unsigned int *)this->__pad_3C = result; /*0x4c61ec*/
-  *(unsigned short *)&this-((unsigned int *)(>__pad_3C))[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
+  *(unsigned short *)&this->__pad_3C[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
   return result; /*0x4c6200*/
 
 }
@@ -410,23 +410,23 @@ int Scenario::ProcessSidebarUnits()
     v3 = *(Scenario ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * result); /*0x50d631*/
     if ( v3[135] == this ) /*0x50d63a*/
     {
-      v4 = *(unsigned int *)(*(int (**)(Scenario **, char *))&(*v3)-((unsigned int *)(>__pad_9C))[284])(v3, v12); /*0x50d64d*/
+      v4 = *(unsigned int *)(*(int (**)(Scenario **, char *))&(*v3)->__pad_9C[284])(v3, v12); /*0x50d64d*/
       v5 = (*(int (**)(Scenario **))(*v3)->__pad_84)(v3); /*0x50d659*/
       v6 = (int *)__2_YAPAXI_Z(8u); /*0x50d660*/
       *v6 = v5; /*0x50d665*/
       v6[1] = v4; /*0x50d66d*/
-      v7 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[216]; /*0x50d670*/
-      if ( *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224] < v7 /*0x50d695*/
-        || (this-((unsigned int *)(>__pad_9C))[221] || !v7)
-        && (v8 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[228], v8 > 0)
+      v7 = *(unsigned int *)&this->__pad_9C[216]; /*0x50d670*/
+      if ( *(unsigned int *)&this->__pad_9C[224] < v7 /*0x50d695*/
+        || (this->__pad_9C[221] || !v7)
+        && (v8 = *(unsigned int *)&this->__pad_9C[228], v8 > 0)
         && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&this->__pad_9C[208] + 8))(
              &this->__pad_9C[208],
              v7 + v8,
              0) )
       {
-        v9 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224]; /*0x50d69c*/
-        v10 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[212]; /*0x50d69f*/
-        *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224] = v9 + 1; /*0x50d6a5*/
+        v9 = *(unsigned int *)&this->__pad_9C[224]; /*0x50d69c*/
+        v10 = *(unsigned int *)&this->__pad_9C[212]; /*0x50d69f*/
+        *(unsigned int *)&this->__pad_9C[224] = v9 + 1; /*0x50d6a5*/
         *(unsigned int *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
       }
     }
@@ -628,11 +628,11 @@ void Scenario::Update()
   v2 = dword_A8B230; /*0x55afcd*/
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[278]; /*0x55afd3*/
   dword_A83CDC = 0; /*0x55afdb*/
-  if ( (int)FootClass_Array.? > 0 ) /*0x55afe0*/
+  if ( (int)((char *)&FootClass_Array) > 0 ) /*0x55afe0*/
   {
     while ( 1 ) /*0x55afec*/
     {
-      v3 = (TeamClass *)*((unsigned int *)&FootClass_Array.?->ObjectClass + v1); /*0x55afec*/
+      v3 = (TeamClass *)*((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + v1); /*0x55afec*/
       if ( BYTE2(v2[375].vtable0) ) /*0x55afef*/
       {
         if ( (uint8_t)TeamClass::Update_0(v3, 50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
@@ -674,7 +674,7 @@ void Scenario::Update()
       }
 LABEL_23:
       v1 = ++dword_A83CDC; /*0x55b164*/
-      if ( dword_A83CDC >= (int)FootClass_Array.? ) /*0x55b177*/
+      if ( dword_A83CDC >= (int)((char *)&FootClass_Array) ) /*0x55b177*/
         goto LABEL_24; /*0x55b177*/
     }
     TeamClass::Update_0(v3, 14, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0); /*0x55b148*/
@@ -855,18 +855,18 @@ LABEL_71:
   v67 = &vt_DynamicVectorClass; /*0x55b50e*/
   v72 = 10; /*0x55b516*/
   v71 = 0; /*0x55b51a*/
-  if ( (int)FootClass_Array.? > 0 ) /*0x55b51e*/
+  if ( (int)((char *)&FootClass_Array) > 0 ) /*0x55b51e*/
   {
     v42 = v69; /*0x55b520*/
     while ( 1 ) /*0x55b530*/
     {
-      v43 = &FootClass_Array.?->ObjectClass + v40; /*0x55b530*/
+      v43 = &((char *)&FootClass_Array)->ObjectClass + v40; /*0x55b530*/
       if ( v71 < v42 ) /*0x55b539*/
         goto LABEL_79; /*0x55b539*/
       if ( (v70 || !v42) && v41 > 0 ) /*0x55b549*/
         break; /*0x55b549*/
 LABEL_81:
-      if ( ++v40 >= (int)FootClass_Array.? ) /*0x55b580*/
+      if ( ++v40 >= (int)((char *)&FootClass_Array) ) /*0x55b580*/
         goto LABEL_82; /*0x55b580*/
       v41 = v72; /*0x55b526*/
     }
@@ -910,9 +910,9 @@ LABEL_82:
   (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55b667*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_C8[40]; ++ii ) /*0x55b673*/
     (*(void (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii) + 92))(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii)); /*0x55b680*/
-  for ( jj = 0; jj < stru_A80220.?; ++jj ) /*0x55b696*/
+  for ( jj = 0; jj < ((char *)&stru_A80220); ++jj ) /*0x55b696*/
   {
-    v53 = *((unsigned int *)stru_A80220.? + jj); /*0x55b69d*/
+    v53 = *((unsigned int *)((char *)&stru_A80220) + jj); /*0x55b69d*/
     if ( v53 ) /*0x55b6a2*/
       (*(void (**)(int))(*(unsigned int *)v53 + 92))(v53); /*0x55b6a6*/
   }

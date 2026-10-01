@@ -641,7 +641,7 @@ void sub_4251F0(int a1, short * a2)
   v5[2] = 0; /*0x425202*/
   v5[0] = v3; /*0x42520d*/
   v5[1] = (v2 << 8) + 128; /*0x42521e*/
-  PlaySoundEffectAt(v5, dword_8871E0[((unsigned int *)(1].GUIMoveInSound))[1], 0, dword_8871E0->?, 0, 0); /*0x425237*/
+  PlaySoundEffectAt(v5, dword_8871E0[((unsigned int *)(1].GUIMoveInSound))[1], 0, ((unsigned int *)dword_8871E0)[0], 0, 0); /*0x425237*/
   result = ((unsigned int *)(dword_A8B238))[0]; /*0x42523c*/
   if ( !((unsigned int *)(dword_A8B238))[0] ) /*0x425243*/
     return FadePalette(&FileSystem_TEMPERAT_PAL, 30, (void (*)(void))Event::Dispatch); /*0x425254*/
@@ -1360,48 +1360,48 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
   int v10; // edi
   void *v11; // eax
 
-  abstractFlags = (void **)this->?; /*0x42a907*/
+  abstractFlags = (void **)((unsigned int *)this)[0]; /*0x42a907*/
   if ( abstractFlags ) /*0x42a90c*/
   {
     __3_YAXPAX_Z(abstractFlags[2]); /*0x42a912*/
     __3_YAXPAX_Z(abstractFlags); /*0x42a918*/
   }
   v3 = *(void ***)&this->bombVisible; /*0x42a920*/
-  this->? = 0; /*0x42a923*/
+  ((unsigned int *)this)[0] = 0; /*0x42a923*/
   if ( v3 ) /*0x42a928*/
   {
     __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
     __3_YAXPAX_Z(v3); /*0x42a934*/
   }
-  uniqueId = (void *)this->?; /*0x42a93c*/
+  uniqueId = (void *)((unsigned int *)this)[0]; /*0x42a93c*/
   *(unsigned int *)&this->bombVisible = 0; /*0x42a93f*/
   if ( uniqueId ) /*0x42a944*/
     __3_YAXPAX_Z(uniqueId); /*0x42a947*/
-  vtable3 = this->?; /*0x42a94f*/
-  this->? = 0; /*0x42a952*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x42a94f*/
+  ((unsigned int *)this)[0] = 0; /*0x42a952*/
   if ( vtable3 ) /*0x42a957*/
     __3_YAXPAX_Z(vtable3); /*0x42a95a*/
-  nextArrayIndex = (void *)this->?; /*0x42a962*/
-  this->? = 0; /*0x42a965*/
+  nextArrayIndex = (void *)((unsigned int *)this)[0]; /*0x42a962*/
+  ((unsigned int *)this)[0] = 0; /*0x42a965*/
   if ( nextArrayIndex ) /*0x42a96a*/
   {
     __3_YAXPAX_Z(nextArrayIndex); /*0x42a96d*/
-    this->? = 0; /*0x42a975*/
+    ((unsigned int *)this)[0] = 0; /*0x42a975*/
   }
-  if ( this->? ) /*0x42a978*/
+  if ( ((unsigned int *)this)[0] ) /*0x42a978*/
   {
-    __3_YAXPAX_Z((void *)this->?); /*0x42a980*/
-    this->? = 0; /*0x42a988*/
+    __3_YAXPAX_Z((void *)((unsigned int *)this)[0]); /*0x42a980*/
+    ((unsigned int *)this)[0] = 0; /*0x42a988*/
   }
   if ( this->occupant ) /*0x42a98b*/
   {
     __3_YAXPAX_Z((void *)this->occupant); /*0x42a993*/
     this->occupant = 0; /*0x42a99b*/
   }
-  if ( this->? ) /*0x42a99e*/
+  if ( ((unsigned int *)this)[0] ) /*0x42a99e*/
   {
-    __3_YAXPAX_Z(this->?); /*0x42a9a6*/
-    this->? = 0; /*0x42a9ae*/
+    __3_YAXPAX_Z(((unsigned int *)this)[0]); /*0x42a9a6*/
+    ((unsigned int *)this)[0] = 0; /*0x42a9ae*/
   }
   v7 = (void **)&this->ambientSoundController[4]; /*0x42a9b2*/
   v8 = 3; /*0x42a9b5*/
@@ -3962,12 +3962,12 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
   int uniqueId; // eax
   unsigned int *vtable1; // edx
 
-  vtable2 = this->?; /*0x42d833*/
-  if ( this->? >= (int)vtable2 ) /*0x42d83b*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x42d833*/
+  if ( ((unsigned int *)this)[0] >= (int)vtable2 ) /*0x42d83b*/
   {
-    if ( !BYTE1(this->?) && vtable2 ) /*0x42d846*/
+    if ( !BYTE1(((unsigned int *)this)[0]) && vtable2 ) /*0x42d846*/
       return 0; /*0x42d846*/
-    abstractFlags = this->?; /*0x42d848*/
+    abstractFlags = ((unsigned int *)this)[0]; /*0x42d848*/
     if ( abstractFlags <= 0 /*0x42d858*/
       || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))(
             this,
@@ -3977,9 +3977,9 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
       return 0; /*0x42d85f*/
     }
   }
-  uniqueId = this->?; /*0x42d865*/
-  vtable1 = this->?; /*0x42d868*/
-  this->? = uniqueId + 1; /*0x42d86e*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x42d865*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x42d868*/
+  ((unsigned int *)this)[0] = uniqueId + 1; /*0x42d86e*/
   vtable1[uniqueId] = *a2; /*0x42d878*/
   return 1; /*0x42d861*/
 
@@ -4147,7 +4147,7 @@ namespace gamemd {
 char E4Recv_42E800::sub_42E800(int a2)
 {
 
-  return *((unsigned char *)this->? + 16 * a2 + 8); /*0x42e80e*/
+  return *((unsigned char *)((unsigned int *)this)[0] + 16 * a2 + 8); /*0x42e80e*/
 
 }
 } // namespace gamemd
@@ -4167,12 +4167,12 @@ bool E4Recv_42E990::sub_42E990(unsigned int * a2)
   if ( a2[135] != *(unsigned int *)&this->isOnMap ) /*0x42e9a6*/
     return 0; /*0x42e9a6*/
   v4 = 0; /*0x42e9ab*/
-  if ( this->? <= 0 ) /*0x42e9af*/
+  if ( ((unsigned int *)this)[0] <= 0 ) /*0x42e9af*/
     return 0; /*0x42e9af*/
   v5 = 0; /*0x42e9b1*/
   for ( i = 0; ; i += 4 ) /*0x42e9b3*/
   {
-    v6 = (char *)this->? + (unsigned int)v5; /*0x42e9c0*/
+    v6 = (char *)((unsigned int *)this)[0] + (unsigned int)v5; /*0x42e9c0*/
     if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v6 ) /*0x42e9ca*/
     {
       v7 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))(a2, v9); /*0x42e9d6*/
@@ -4181,10 +4181,10 @@ bool E4Recv_42E990::sub_42E990(unsigned int * a2)
     }
     ++v4; /*0x42e9f6*/
     v5 = i + 4; /*0x42e9f7*/
-    if ( v4 >= this->? ) /*0x42ea00*/
+    if ( v4 >= ((unsigned int *)this)[0] ) /*0x42ea00*/
       return 0; /*0x42ea00*/
   }
-  return (char *)this->? + 16 * v4 != 0; /*0x42ea13*/
+  return (char *)((unsigned int *)this)[0] + 16 * v4 != 0; /*0x42ea13*/
 
 }
 } // namespace gamemd
@@ -4204,11 +4204,11 @@ int E4Recv_42EA30::sub_42EA30(unsigned int * a2)
     return 0; /*0x42ea44*/
   v4 = 0; /*0x42ea49*/
   v9 = 0; /*0x42ea4d*/
-  if ( this->? <= 0 ) /*0x42ea51*/
+  if ( ((unsigned int *)this)[0] <= 0 ) /*0x42ea51*/
     return 0; /*0x42eab7*/
   while ( 1 ) /*0x42ea62*/
   {
-    v5 = (char *)this->? + v4; /*0x42ea62*/
+    v5 = (char *)((unsigned int *)this)[0] + v4; /*0x42ea62*/
     if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v5 ) /*0x42ea6a*/
     {
       v6 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))(a2, v8); /*0x42ea75*/
@@ -4216,10 +4216,10 @@ int E4Recv_42EA30::sub_42EA30(unsigned int * a2)
         break; /*0x42ea8c*/
     }
     v4 += 16; /*0x42ea96*/
-    if ( ++v9 >= this->? ) /*0x42ea9f*/
+    if ( ++v9 >= ((unsigned int *)this)[0] ) /*0x42ea9f*/
       return 0; /*0x42ea9f*/
   }
-  return (int)this->? + 16 * v9; /*0x42eaaa*/
+  return (int)((unsigned int *)this)[0] + 16 * v9; /*0x42eaaa*/
 
 }
 } // namespace gamemd
@@ -4234,11 +4234,11 @@ int E4Recv_42EAD0::sub_42EAD0(unsigned short * a2)
   char *vtable2; // esi
   unsigned short *i; // ecx
 
-  abstractFlags = this->?; /*0x42ead0*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x42ead0*/
   v3 = 0; /*0x42ead5*/
   if ( abstractFlags <= 0 ) /*0x42eadb*/
     return 0; /*0x42eb0f*/
-  vtable2 = (char *)this->?; /*0x42eae1*/
+  vtable2 = (char *)((unsigned int *)this)[0]; /*0x42eae1*/
   for ( i = vtable2 + 4; *a2 != *i || a2[1] != i[1]; i += 8 ) /*0x42eae7*/
   {
     if ( ++v3 >= abstractFlags ) /*0x42eaff*/

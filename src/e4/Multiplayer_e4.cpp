@@ -270,7 +270,7 @@ void Multiplayer::ShowProgress(int a2)
   char v18; // [esp+1E2h] [ebp-2h]
 
   LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 391)); /*0x69ae90*/
-  if ( !stru_A8EB00.?[391] ) /*0x69aea1*/
+  if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
     if ( BYTE1(dword_A8B230[375].vtable0) ) /*0x69aeb8*/

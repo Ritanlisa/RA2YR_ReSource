@@ -142,7 +142,7 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 
   aP0->Owner = (unsigned int)((FootClass *)a2);
-  *(unsigned int *)&aP0-((unsigned int *)(>ILocomotion))[4] = a2; /*0x55a71b*/
+  *(unsigned int *)&aP0->ILocomotion[4] = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 
 }

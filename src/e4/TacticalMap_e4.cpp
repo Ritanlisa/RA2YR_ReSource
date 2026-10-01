@@ -141,18 +141,18 @@ void TacticalMap::Redraw()
     stru_887598.lineTrailer,
     DSurface_Composite,
     0);
-  v3 = this-((unsigned int *)(>vfptr))[3]; /*0x4f44a5*/
-  this-((unsigned int *)(>vfptr))[3] = 0; /*0x4f44a8*/
+  v3 = this->vfptr[3]; /*0x4f44a5*/
+  this->vfptr[3] = 0; /*0x4f44a8*/
   LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
   if ( !UI_Helper() ) /*0x4f44c2*/
   {
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 1); /*0x4f44f4*/
-    (*(void (**)(GScreenClass *, bool))(this-((unsigned int *)(>vfptr))[0] + 64))(this, v7); /*0x4f4502*/
+    (*(void (**)(GScreenClass *, bool))(this->vfptr[0] + 64))(this, v7); /*0x4f4502*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 2); /*0x4f4515*/
   }
-  if ( byte_B0B519 && !stru_A8EB00.?[391] ) /*0x4f452b*/
+  if ( byte_B0B519 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x4f452b*/
   {
     (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x4f453d*/
       stru_887598.lineTrailer,
@@ -173,7 +173,7 @@ void TacticalMap::Redraw()
     stru_887598.lineTrailer,
     DSurface_Composite,
     0);
-  result = (*(int (**)(GScreenClass *))(this-((unsigned int *)(>vfptr))[0] + 68))(this); /*0x4f459a*/
+  result = (*(int (**)(GScreenClass *))(this->vfptr[0] + 68))(this); /*0x4f459a*/
   g_DSurface_Hidden_2 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 
@@ -258,35 +258,35 @@ void TacticalMap::Construct()
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6d1c25*/
   this->Tactical_field_0xA8 = (IUnknown *)-1; /*0x6d1c2c*/
-  this-((unsigned int *)(>__pad_AC))[0] = 0; /*0x6d1c36*/
-  this-((unsigned int *)(>__pad_AC))[1] = 0; /*0x6d1c3c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[20] = 0; /*0x6d1c42*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[4] = 0; /*0x6d1c48*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[8] = 0; /*0x6d1c4e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[12] = 0; /*0x6d1c54*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[16] = 0; /*0x6d1c5a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[24] = 1072693248; /*0x6d1c60*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[28] = dword_B0CE08; /*0x6d1c6f*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[32] = dword_B0CE0C; /*0x6d1c7b*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[36] = dword_B0CE08; /*0x6d1c87*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[40] = dword_B0CE0C; /*0x6d1c92*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[44] = 0; /*0x6d1c98*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[48] = 0; /*0x6d1c9e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_AC))[52] = 0; /*0x6d1ca4*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3141] = 0; /*0x6d1caa*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3145] = 0; /*0x6d1cb0*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3149] = 0; /*0x6d1cb6*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3153] = 0; /*0x6d1cbc*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3157] = 0; /*0x6d1cc2*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3161] = 0; /*0x6d1cc8*/
-  this-((unsigned int *)(>__pad_11F))[3165] = 1; /*0x6d1cce*/
-  this-((unsigned int *)(>__pad_11F))[3166] = 0; /*0x6d1cd5*/
-  this-((unsigned int *)(>__pad_11F))[3167] = 0; /*0x6d1cdb*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3169] = dword_B0CD60; /*0x6d1ced*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3173] = dword_B0CD64; /*0x6d1cf8*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3177] = dword_B0CD68; /*0x6d1d01*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3181] = dword_B0CD6C; /*0x6d1d09*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_11F))[3185] = 0; /*0x6d1d0c*/
+  this->__pad_AC[0] = 0; /*0x6d1c36*/
+  this->__pad_AC[1] = 0; /*0x6d1c3c*/
+  *(unsigned int *)&this->__pad_AC[20] = 0; /*0x6d1c42*/
+  *(unsigned int *)&this->__pad_AC[4] = 0; /*0x6d1c48*/
+  *(unsigned int *)&this->__pad_AC[8] = 0; /*0x6d1c4e*/
+  *(unsigned int *)&this->__pad_AC[12] = 0; /*0x6d1c54*/
+  *(unsigned int *)&this->__pad_AC[16] = 0; /*0x6d1c5a*/
+  *(unsigned int *)&this->__pad_AC[24] = 1072693248; /*0x6d1c60*/
+  *(unsigned int *)&this->__pad_AC[28] = dword_B0CE08; /*0x6d1c6f*/
+  *(unsigned int *)&this->__pad_AC[32] = dword_B0CE0C; /*0x6d1c7b*/
+  *(unsigned int *)&this->__pad_AC[36] = dword_B0CE08; /*0x6d1c87*/
+  *(unsigned int *)&this->__pad_AC[40] = dword_B0CE0C; /*0x6d1c92*/
+  *(unsigned int *)&this->__pad_AC[44] = 0; /*0x6d1c98*/
+  *(unsigned int *)&this->__pad_AC[48] = 0; /*0x6d1c9e*/
+  *(unsigned int *)&this->__pad_AC[52] = 0; /*0x6d1ca4*/
+  *(unsigned int *)&this->__pad_11F[3141] = 0; /*0x6d1caa*/
+  *(unsigned int *)&this->__pad_11F[3145] = 0; /*0x6d1cb0*/
+  *(unsigned int *)&this->__pad_11F[3149] = 0; /*0x6d1cb6*/
+  *(unsigned int *)&this->__pad_11F[3153] = 0; /*0x6d1cbc*/
+  *(unsigned int *)&this->__pad_11F[3157] = 0; /*0x6d1cc2*/
+  *(unsigned int *)&this->__pad_11F[3161] = 0; /*0x6d1cc8*/
+  this->__pad_11F[3165] = 1; /*0x6d1cce*/
+  this->__pad_11F[3166] = 0; /*0x6d1cd5*/
+  this->__pad_11F[3167] = 0; /*0x6d1cdb*/
+  *(unsigned int *)&this->__pad_11F[3169] = dword_B0CD60; /*0x6d1ced*/
+  *(unsigned int *)&this->__pad_11F[3173] = dword_B0CD64; /*0x6d1cf8*/
+  *(unsigned int *)&this->__pad_11F[3177] = dword_B0CD68; /*0x6d1d01*/
+  *(unsigned int *)&this->__pad_11F[3181] = dword_B0CD6C; /*0x6d1d09*/
+  *(unsigned int *)&this->__pad_11F[3185] = 0; /*0x6d1d0c*/
   *(unsigned int *)&this->__pad_11F[3189] = 0; /*0x6d1d12*/
   *(unsigned int *)&this->__pad_11F[3193] = 0; /*0x6d1d18*/
   *(unsigned int *)&this->__pad_11F[3197] = 0; /*0x6d1d1e*/
@@ -864,7 +864,7 @@ LABEL_54:
         do /*0x6d9597*/
         {
           v54 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * v53); /*0x6d944a*/
-          if ( v54->? && v54->? ) /*0x6d9458*/
+          if ( ((unsigned int *)v54)[0] && ((unsigned int *)v54)[0] ) /*0x6d9458*/
           {
             v55 = (int *)(*((int (**)(BuildingClass *, unsigned char *))v54->TechnoClass + 43))(v54, v105); /*0x6d9472*/
             v56 = g_TacticalClass_Instance; /*0x6d9478*/

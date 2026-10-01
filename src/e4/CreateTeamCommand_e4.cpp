@@ -240,13 +240,13 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
     if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6aae*/
     {
-      if ( *(unsigned int *)&v4-((unsigned int *)(>__pad_14))[48] + v7 / 2 < dword_884CF8 ) /*0x6a6ac2*/
+      if ( *(unsigned int *)&v4->__pad_14[48] + v7 / 2 < dword_884CF8 ) /*0x6a6ac2*/
         goto LABEL_13; /*0x6a6ac2*/
     }
-    else if ( 2 * (v7 + *(unsigned int *)&v4-((unsigned int *)(>__pad_14))[48]) < *(unsigned int *)&v4->__pad_14[64] ) /*0x6a6ad2*/
+    else if ( 2 * (v7 + *(unsigned int *)&v4->__pad_14[48]) < *(unsigned int *)&v4->__pad_14[64] ) /*0x6a6ad2*/
     {
 LABEL_13:
-      ++*(unsigned int *)&v4-((unsigned int *)(>__pad_14))[52]; /*0x6a6ad4*/
+      ++*(unsigned int *)&v4->__pad_14[52]; /*0x6a6ad4*/
       (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0); /*0x6a6adf*/
       return 1; /*0x6a6ae6*/
     }

@@ -70,10 +70,10 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   int v39[3]; // [esp+34h] [ebp-Ch] BYREF
   DropPodLocomotionClass *thisa; // [esp+44h] [ebp+4h]
 
-  Owner = a1->?; /*0x4b5b7b*/
-  v36 = Owner->?[0]; /*0x4b5b88*/
-  v37 = Owner->?[1]; /*0x4b5b8f*/
-  v4 = Owner->?[2]; /*0x4b5b93*/
+  Owner = ((unsigned int *)a1)[0]; /*0x4b5b7b*/
+  v36 = ((unsigned int *)Owner)[0]; /*0x4b5b88*/
+  v37 = ((unsigned int *)Owner)[1]; /*0x4b5b8f*/
+  v4 = ((unsigned int *)Owner)[2]; /*0x4b5b93*/
   v39[0] = v36; /*0x4b5b96*/
   v38 = v4; /*0x4b5b9a*/
   v39[1] = v37; /*0x4b5b9e*/
@@ -93,10 +93,10 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   Math::SinCos(v6); /*0x4b5c5c*/
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4b5c6c*/
-  v9 = a1->?; /*0x4b5c71*/
+  v9 = ((unsigned int *)a1)[0]; /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
   v10 = (*((int (**)(FootClass *))v9->TechnoClass + 114))(v9); /*0x4b5c7a*/
-  v11 = a1->?; /*0x4b5c80*/
+  v11 = ((unsigned int *)a1)[0]; /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
     (*((void (**)(FootClass *, int *))v11->TechnoClass + 109))(v11, &v36); /*0x4b5eaa*/
@@ -117,7 +117,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
         v33 = 0.0; /*0x4b5f39*/
         v23 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a1->IsOutOfMap); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell((Object *)v23, &v33, 0, 0); /*0x4b5f48*/
-        if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->?->?, ClosestObjectCell) ) /*0x4b5f57*/
+        if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)((unsigned int *)a1)[0], ClosestObjectCell) ) /*0x4b5f57*/
         {
           v25 = RandomCoordScatter((int *)&v33, (int *)&a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
           v26 = v20[51]; /*0x4b5f74*/
@@ -126,7 +126,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v35 = v25[2]; /*0x4b5f8d*/
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)), &v36, 0); /*0x4b5fa8*/
-          PlaySoundEffectAt(v34, 2 * v20[41], &a1->?->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/
+          PlaySoundEffectAt(v34, 2 * v20[41], &((unsigned int *)a1)[0]->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/
           v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
           if ( v28 ) /*0x4b5fdd*/
           {
@@ -142,17 +142,17 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   else
   {
     (*((void (**)(FootClass *, unsigned int))v11->TechnoClass + 115))(v11, 0); /*0x4b5c92*/
-    v36 = v11->?[0]; /*0x4b5ca4*/
-    v37 = v11->?[1]; /*0x4b5cab*/
-    v38 = v11->?[2]; /*0x4b5cb2*/
+    v36 = ((unsigned int *)v11)[0]; /*0x4b5ca4*/
+    v37 = ((unsigned int *)v11)[1]; /*0x4b5cab*/
+    v38 = ((unsigned int *)v11)[2]; /*0x4b5cb2*/
     (*((void (**)(FootClass *))v11->TechnoClass + 53))(v11); /*0x4b5cba*/
     v12 = (char *)a1 - 4; /*0x4b5cc3*/
     (*(void (**)(char *))(*((unsigned int *)a1 - 1) + 4))((char *)a1 - 4); /*0x4b5cc7*/
-    locomotor = a1->?->locomotor; /*0x4b5ccd*/
+    locomotor = ((unsigned int *)a1)[0]->locomotor; /*0x4b5ccd*/
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (**)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/
-    (*(void (**)(int *, int *))(a1->? + 16))(&a1->?, locomotor); /*0x4b5cee*/
+    (*(void (**)(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
     if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->TechnoClass + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
@@ -205,7 +205,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       PlaySoundEffectAt( /*0x4b5d28*/
         &v36,
         100,
-        &a1->?->TechnoClass,
+        &((unsigned int *)a1)[0]->TechnoClass,
         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
         1,
         0);

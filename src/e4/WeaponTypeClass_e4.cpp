@@ -169,14 +169,14 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   this->RadLevel = 0; /*0x771e6b*/
   this->IsMagBeam = 0; /*0x771e71*/
   this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771e77*/
-  this->? = &vt_WeaponTypeClass; /*0x771e7d*/
-  this->? = &vt_WeaponTypeClass; /*0x771e83*/
-  this->? = &vt_WeaponTypeClass; /*0x771e8a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x771e91*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e7d*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e83*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e8a*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
-    && ((uint8_t (*)(WeaponTypeClass **, int, unsigned int))WeaponTypeClass_Array->?)(
+    && ((uint8_t (*)(WeaponTypeClass **, int, unsigned int))((unsigned int *)WeaponTypeClass_Array)[0])(
          &WeaponTypeClass_Array,
          dword_887570 + dword_88757C,
          0) )
@@ -200,14 +200,14 @@ int WeaponTypeClass::Destructor()
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
-  this->? = &vt_WeaponTypeClass; /*0x771f5d*/
-  this->? = &vt_WeaponTypeClass; /*0x771f64*/
-  this->? = &vt_WeaponTypeClass; /*0x771f6b*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f5d*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f64*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x771f72*/
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))WeaponTypeClass_Array->?)( /*0x771f99*/
+  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
          &WeaponTypeClass_Array,
          &v7);
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
@@ -348,8 +348,8 @@ void WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, void * a1, void * a2,
   int m; // esi
 v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
   Report = (int *)(aP0->Report);
-  (*(void (**)(int *))(aP0-((unsigned int *)(>Report))[0] + 12))(aP0->Report); /*0x772ce5*/
-  (*(void (**)(int *))(v5-((unsigned int *)(>DownReport))[0] + 12))(v5->DownReport); /*0x772cf4*/
+  (*(void (**)(int *))(aP0->Report[0] + 12))(aP0->Report); /*0x772ce5*/
+  (*(void (**)(int *))(v5->DownReport[0] + 12))(v5->DownReport); /*0x772cf4*/
   v7 = a2; /*0x772cf7*/
   result = AbstractClass::SaveLoad_Prefix_0(v5, (int)a2); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
@@ -359,7 +359,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     if ( v5 != (WeaponTypeClass *)-244 ) /*0x772d23*/
     {
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->Anim, 0, 0); /*0x772d2b*/
-      v5-((unsigned int *)(>Anim))[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
+      v5->Anim[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
     }
     (*(void (**)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))(v7, &aP0, 4, 0, v4); /*0x772d42*/
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
@@ -456,7 +456,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
   v9 = v3; /*0x773135*/
-  v4 = ((int (*)(WeaponTypeClass **, AbstractClass **))WeaponTypeClass_Array->?)(&WeaponTypeClass_Array, &v9); /*0x773139*/
+  v4 = ((int (*)(WeaponTypeClass **, AbstractClass **))((unsigned int *)WeaponTypeClass_Array)[0])(&WeaponTypeClass_Array, &v9); /*0x773139*/
   if ( v4 != -1 && v4 < g_WeaponTypePool && v4 < --g_WeaponTypePool ) /*0x773154*/
   {
     do /*0x77316c*/
@@ -585,9 +585,9 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties( AbstractTypeClass * aP1)
   this->DownReport[0] = (int)&vt_TypeList; /*0x771f18*/
   this->Anim[0] = (int)&vt_TypeList; /*0x771f1e*/
   this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f28*/
-  this->? = &vt_WeaponTypeClass; /*0x771f2e*/
-  this->? = &vt_WeaponTypeClass; /*0x771f35*/
-  this->? = &vt_WeaponTypeClass; /*0x771f3c*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f2e*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f35*/
+  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f3c*/
   return &this->AbstractTypeClass; /*0x771f45*/
 
 }

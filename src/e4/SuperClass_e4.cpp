@@ -216,16 +216,16 @@ SuperClass * * SuperClass::CleanupMembers()
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     *((unsigned int *)this + 26) = 0; /*0x6cb14d*/
     v9 = this; /*0x6cb164*/
-    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb168*/
+    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v3); /*0x6cb176*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
     v9 = this; /*0x6cb192*/
-    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb196*/
+    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v4); /*0x6cb1a4*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
   }
   v9 = this; /*0x6cb1bd*/
@@ -383,12 +383,12 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         *(unsigned char *)(v15 + 405) = 0; /*0x6cb6bf*/
         *((unsigned int *)this + 26) = 0; /*0x6cb6cb*/
         aP1 = this; /*0x6cb6ce*/
-        VectorClass::RemoveAt((VectorClass *)g_BuildingLoadQueue_Array.?, (int)&aP1); /*0x6cb6d2*/
+        VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6d2*/
       }
       if ( *((unsigned char *)this + 108) ) /*0x6cb6d7*/
       {
         aP1 = this; /*0x6cb6e6*/
-        VectorClass::RemoveAt((VectorClass *)g_BuildingLoadQueue_Array.?, (int)&aP1); /*0x6cb6ea*/
+        VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6ea*/
         *((unsigned char *)this + 108) = 0; /*0x6cb6ef*/
       }
       if ( !*((unsigned char *)this + 109) /*0x6cb704*/
@@ -907,19 +907,19 @@ AbstractClass * * SuperClass::Reset()
     this->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = this; /*0x6ce0db*/
     v3 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v3 != -1 ) /*0x6ce0e5*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v3); /*0x6ce0ed*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v3); /*0x6ce0ed*/
   }
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
     v12[0] = this; /*0x6ce109*/
     v4 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v4 != -1 ) /*0x6ce113*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v4); /*0x6ce11b*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x6ce11b*/
     LOBYTE(this->SuperClass_field_0x6C) = 0; /*0x6ce120*/
   }
   SuperClass_field_0x24 = this->SuperClass_field_0x24; /*0x6ce124*/
@@ -975,19 +975,19 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
     v6 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v6 != -1 ) /*0x6cb3d5*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v6); /*0x6cb3dd*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v6); /*0x6cb3dd*/
   }
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
     v7 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/
-           g_BuildingLoadQueue_Array.?,
+           ((char *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
-      DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.?, v7); /*0x6cb40b*/
+      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v7); /*0x6cb40b*/
     LOBYTE(this->SuperClass_field_0x6C) = 0; /*0x6cb410*/
   }
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
@@ -1008,17 +1008,17 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     if ( result ) /*0x6cb470*/
     {
       this->SuperClass_field_0x68 = result; /*0x6cb472*/
-      result = (void **)g_BuildingLoadQueue_Array.?; /*0x6cb475*/
-      if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < g_BuildingLoadQueue_Array.? /*0x6cb4ae*/
-        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !g_BuildingLoadQueue_Array.?)
+      result = (void **)((char *)&g_BuildingLoadQueue_Array); /*0x6cb475*/
+      if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x6cb4ae*/
+        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
         && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
         && (result = (void **)(*(int (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-                                g_BuildingLoadQueue_Array.?,
-                                g_BuildingLoadQueue_Array.? + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
+                                ((char *)&g_BuildingLoadQueue_Array),
+                                ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
                                 0),
             (unsigned char)result) )
       {
-        result = (void **)g_BuildingLoadQueue_Array.?[1]++; /*0x6cb4b6*/
+        result = (void **)((unsigned int *)&g_BuildingLoadQueue_Array)[1]++; /*0x6cb4b6*/
         *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * (unsigned int)result) = this; /*0x6cb4c5*/
       }
     }
@@ -1214,12 +1214,12 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       *(unsigned int *)aP0->__pad_C = &vt_SuperClass; /*0x6cdf27*/
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
-      && (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < g_BuildingLoadQueue_Array.?
-       || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !g_BuildingLoadQueue_Array.?)
+      && (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array)
+       || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
        && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
        && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-            g_BuildingLoadQueue_Array.?,
-            g_BuildingLoadQueue_Array.? + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
+            ((char *)&g_BuildingLoadQueue_Array),
+            ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
             0)) )
     {
       v3 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x6cdf7d*/

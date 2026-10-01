@@ -36,7 +36,7 @@ int RawFileClass::Dtor()
     }
     *(unsigned int *)this->FileTimeDateLo = -1; /*0x65ca36*/
   }
-  LOBYTE(result) = this-((unsigned int *)(>CacheReadAhead))[0]; /*0x65ca3d*/
+  LOBYTE(result) = this->CacheReadAhead[0]; /*0x65ca3d*/
   if ( (unsigned char)result ) /*0x65ca42*/
   {
     result = *(unsigned int *)this->FileNameAllocated; /*0x65ca44*/
@@ -44,7 +44,7 @@ int RawFileClass::Dtor()
     {
       result = (int)(free(*(void **)this->FileNameAllocated));
       *(unsigned int *)this->FileNameAllocated = 0; /*0x65ca54*/
-      this-((unsigned int *)(>CacheReadAhead))[0] = 0; /*0x65ca5b*/
+      this->CacheReadAhead[0] = 0; /*0x65ca5b*/
     }
   }
   this->FileClass = (FileClass)&vt_FileClass; /*0x65ca5f*/

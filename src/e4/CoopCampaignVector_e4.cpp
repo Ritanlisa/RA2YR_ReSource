@@ -15,7 +15,7 @@ unsigned int CoopCampaignVector::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5c5750*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5c5765*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
 

@@ -68,7 +68,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   ObjectVector v11; // [esp+24h] [ebp-18h] BYREF
   char thisa; // [esp+40h] [ebp+4h]
 
-  if ( a1->?->? ) /*0x4cfe8e*/
+  if ( ((unsigned int *)a1)[0] ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
   *(unsigned int *)v11.__pad_0 = &vt_DynamicVectorClass; /*0x4cfeb7*/
@@ -79,7 +79,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
-    || (owner = a1->?->?, owner->enemyHouseIndex == -1)
+    || (owner = ((unsigned int *)a1)[0], owner->enemyHouseIndex == -1)
     || (thisa = 1, (uint8_t)House::IsCurrentPlayer((House *)owner)) )
   {
     thisa = 0; /*0x4cfefd*/
@@ -89,10 +89,10 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
     v4 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x4cff17*/
     if ( thisa ) /*0x4cff20*/
     {
-      if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)stru_A80220.? + a1->?->?->enemyHouseIndex) ) /*0x4cff5e*/
+      if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)((char *)&stru_A80220) + ((unsigned int *)a1)[0]->enemyHouseIndex) ) /*0x4cff5e*/
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith((#375 *)a1->?->?, *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith((#375 *)((unsigned int *)a1)[0], *(#375 **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -106,7 +106,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
       if ( *(unsigned int *)&dword_A8B238 /*0x4d003d*/
-        && (uint8_t)House::IsCurrentPlayer((House *)a1->?->?)
+        && (uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)a1)[0])
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
         && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
@@ -150,13 +150,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       goto LABEL_45; /*0x4d00f8*/
     v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
     v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
-    vtable0 = (void (**)(unsigned int))a1->?->TechnoClass; /*0x4d0115*/
+    vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d0115*/
   }
   else
   {
     v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
     v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
-    vtable0 = (void (**)(unsigned int))a1->?->TechnoClass; /*0x4d00ee*/
+    vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d00ee*/
   }
   vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
 LABEL_45:

@@ -641,9 +641,9 @@ int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int) a1)
 
   v3 = (int (***)(unsigned int, int))this->customSound_controller[1]; /*0x4f2648*/
   if ( v3 ) /*0x4f264e*/
-    result = UI_Load_5D1C90((ObjectClass *)&this->?, v3, a2); /*0x4f2654*/
+    result = UI_Load_5D1C90((ObjectClass *)&((unsigned int *)this)[0], v3, a2); /*0x4f2654*/
   else
-    result = PriorityQueue::Add((PriorityQueue *)&this->?, (int)a2); /*0x4f2664*/
+    result = PriorityQueue::Add((PriorityQueue *)&((unsigned int *)this)[0], (int)a2); /*0x4f2664*/
   this->customSound_controller[1] = (int)a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 
@@ -1049,10 +1049,10 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
   int (**vtable0)(int); // edx
 
   result = a2; /*0x4f3ab0*/
-  if ( (unsigned char)a2 != BYTE1(this->?) ) /*0x4f3ab9*/
+  if ( (unsigned char)a2 != BYTE1(((unsigned int *)this)[0]) ) /*0x4f3ab9*/
   {
     vtable0 = (int (**)(int))this->AbstractClass; /*0x4f3abb*/
-    BYTE1(this->?) = a2; /*0x4f3abe*/
+    BYTE1(((unsigned int *)this)[0]) = a2; /*0x4f3abe*/
     return vtable0[5](a2); /*0x4f3ac1*/
   }
   return result; /*0x4f3ac4*/
@@ -1675,10 +1675,10 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   *((unsigned int *)this + 9) = 0; /*0x4f2f5a*/
   *(unsigned int *)this->__pad_0 = &vt_GraphicMenuAnimItem; /*0x4f2f5d*/
   CCFileClass::Construct2((CCFileClass *)&v15.estimatedHealth, aP5); /*0x4f2f63*/
-  CCFileClass::Construct2((CCFileClass *)&v15.?, a6); /*0x4f2f74*/
+  CCFileClass::Construct2((CCFileClass *)&((char *)&v15), a6); /*0x4f2f74*/
   if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v15.estimatedHealth, 0) ) /*0x4f2f81*/
   {
-    if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v15.?, 0) ) /*0x4f2f8f*/
+    if ( (uint8_t)CCFileClass::Open((CCFileClass *)&((char *)&v15), 0) ) /*0x4f2f8f*/
     {
       v11 = String::GetOrEmpty_Alt((String *)a6); /*0x4f2f9a*/
       String::Assign((String *)&v15, v11); /*0x4f2fa4*/
@@ -1693,11 +1693,11 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
       }
     }
   }
-  v15.? = &vt_CCFileClass; /*0x4f3011*/
+  ((unsigned int *)&v15)[0] = &vt_CCFileClass; /*0x4f3011*/
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
-  v15.? = &off_7E1668; /*0x4f3027*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
+  ((unsigned int *)&v15)[0] = &off_7E1668; /*0x4f3027*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *)&((char *)&v15)); /*0x4f302b*/
   v15.estimatedHealth = (int)&vt_CCFileClass; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
   Vector::Clear((int)v16); /*0x4f3045*/
@@ -1760,14 +1760,14 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
 
   v3 = this; /*0x4f3c49*/
   GraphicMenuItem::Constructor((GraphicMenuItem *)this, a2); /*0x4f3c50*/
-  p_uniqueId = &v3->?; /*0x4f3c55*/
-  v3->? = 0; /*0x4f3c5e*/
-  v3->? = 0; /*0x4f3c61*/
-  LOBYTE(v3->?) = 1; /*0x4f3c64*/
-  BYTE1(v3->?) = 0; /*0x4f3c68*/
-  v3->? = (int)&vt_DynamicVectorClass; /*0x4f3c6b*/
+  p_uniqueId = &((unsigned int *)v3)[0]; /*0x4f3c55*/
+  ((unsigned int *)v3)[0] = 0; /*0x4f3c5e*/
+  ((unsigned int *)v3)[0] = 0; /*0x4f3c61*/
+  LOBYTE(((unsigned int *)v3)[0]) = 1; /*0x4f3c64*/
+  BYTE1(((unsigned int *)v3)[0]) = 0; /*0x4f3c68*/
+  ((unsigned int *)v3)[0] = (int)&vt_DynamicVectorClass; /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/
-  v3->? = 0; /*0x4f3c78*/
+  ((unsigned int *)v3)[0] = 0; /*0x4f3c78*/
   v3->AbstractClass = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
@@ -2144,10 +2144,10 @@ unsigned int * E4Recv_4F7850::sub_4F7850()
 {
 
   this->AbstractClass = 0; /*0x4f7854*/
-  this->? = (void *)1; /*0x4f7856*/
-  this->? = 0; /*0x4f785d*/
-  this->? = 0; /*0x4f7860*/
-  this->? = -1; /*0x4f7863*/
+  ((unsigned int *)this)[0] = (void *)1; /*0x4f7856*/
+  ((unsigned int *)this)[0] = 0; /*0x4f785d*/
+  ((unsigned int *)this)[0] = 0; /*0x4f7860*/
+  ((unsigned int *)this)[0] = -1; /*0x4f7863*/
   return &this->AbstractClass; /*0x4f786a*/
 
 }
@@ -2223,11 +2223,11 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
   ObjectClass *v5; // ecx
 
   v2 = 0; /*0x4fbd08*/
-  if ( stru_A80220.? <= 0 ) /*0x4fbd0e*/
+  if ( ((char *)&stru_A80220) <= 0 ) /*0x4fbd0e*/
     return 0; /*0x4fbd61*/
   while ( 1 ) /*0x4fbd19*/
   {
-    v4 = *((unsigned int *)stru_A80220.? + v2); /*0x4fbd19*/
+    v4 = *((unsigned int *)((char *)&stru_A80220) + v2); /*0x4fbd19*/
     if ( v4 ) /*0x4fbd1e*/
     {
       if ( (ObjectClass *)v4 != this ) /*0x4fbd22*/
@@ -2241,7 +2241,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
         }
       }
     }
-    if ( ++v2 >= stru_A80220.? ) /*0x4fbd5f*/
+    if ( ++v2 >= ((char *)&stru_A80220) ) /*0x4fbd5f*/
       return 0; /*0x4fbd5f*/
   }
   return 1; /*0x4fbd61*/

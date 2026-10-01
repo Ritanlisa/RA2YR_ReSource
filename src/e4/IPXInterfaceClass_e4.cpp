@@ -72,7 +72,7 @@ int IPXInterfaceClass::initSocket( IUnknown * aP1, Color * aP2)
   }
   *(unsigned int *)optval = 1; /*0x7b0e44*/
   optlen = 4; /*0x7b0e4e*/
-  if ( stru_887598.onBridge && stru_887598.AbstractClass == (void *)4 && !stru_887598.? ) /*0x7b0e63*/
+  if ( stru_887598.onBridge && stru_887598.AbstractClass == (void *)4 && !((char *)&stru_887598) ) /*0x7b0e63*/
   {
     this->Debug::Log(); /*0x7b0eae*/
   }
@@ -159,7 +159,7 @@ LABEL_6:
           v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(unsigned short *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
-          if ( v7-((unsigned int *)(>__pad_14))[0] ) /*0x7b1458*/
+          if ( v7->__pad_14[0] ) /*0x7b1458*/
           {
             *(unsigned int *)to.sa_data = *((unsigned int *)this + 64703); /*0x7b146b*/
             *(unsigned int *)&to.sa_data[4] = *((unsigned int *)this + 64704); /*0x7b1471*/
@@ -172,7 +172,7 @@ LABEL_6:
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(*((unsigned int *)this + 64539), &v7-((unsigned int *)(>__pad_14))[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(*((unsigned int *)this + 64539), &v7->__pad_14[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
@@ -189,13 +189,13 @@ LABEL_6:
               ++v10; /*0x7b14f6*/
             }
           }
-          if ( v7-((unsigned int *)(>__pad_14))[2] ) /*0x7b1505*/
+          if ( v7->__pad_14[2] ) /*0x7b1505*/
           {
             __3_YAXPAX_Z(v7); /*0x7b150d*/
           }
           else
           {
-            v7-((unsigned int *)(>__pad_14))[1] = 0; /*0x7b1517*/
+            v7->__pad_14[1] = 0; /*0x7b1517*/
             --*((unsigned int *)this + 64536); /*0x7b1522*/
           }
           if ( !*((unsigned int *)this + 12) ) /*0x7b1528*/
@@ -258,7 +258,7 @@ LABEL_6:
   if ( (*(uint8_t (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = *(unsigned int *)&this-((unsigned int *)(>LocalNode))[4]; /*0x7b16d5*/
+    v19 = *(unsigned int *)&this->LocalNode[4]; /*0x7b16d5*/
     v20 = *((unsigned int *)this + 6); /*0x7b16d8*/
     p_LocalNetwork = &this->LocalNetwork; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/

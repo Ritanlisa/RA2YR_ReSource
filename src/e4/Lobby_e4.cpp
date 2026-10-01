@@ -527,7 +527,7 @@ int Lobby::BuildPlayerList()
   char *v5; // eax
   ObjectClass v7; // [esp+8h] [ebp-110h] BYREF
 
-  strcpy((char *)&v7.?, asc_84A480); /*0x77dbb5*/
+  strcpy((char *)&((char *)&v7), asc_84A480); /*0x77dbb5*/
   v1 = (wchar_t **)dword_A8DA90; /*0x77dbbe*/
   do /*0x77dc6e*/
   {
@@ -535,26 +535,26 @@ int Lobby::BuildPlayerList()
     unknown_libname_73(&v7); /*0x77dbc9*/
     if ( (uint8_t)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
-      WideString::Assign((wchar_t **)&v7.?, v2); /*0x77dbde*/
-      v3 = ToWideStringCharAlt((char **)&v7.?, (const wchar_t **)&v7.?); /*0x77dbeb*/
+      WideString::Assign((wchar_t **)&((char *)&v7), v2); /*0x77dbde*/
+      v3 = ToWideStringCharAlt((char **)&((char *)&v7), (const wchar_t **)&((char *)&v7)); /*0x77dbeb*/
       String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
-      DeleteAndZero((ObjectClass *)&v7.?); /*0x77dbfe*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v7.?); /*0x77dc07*/
+      DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x77dbfe*/
+      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v7)); /*0x77dc07*/
     }
     else
     {
-      PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.?, v2); /*0x77dc14*/
+      PlayerTypeString = (const char **)GetPlayerTypeString((String *)&((char *)&v7), v2); /*0x77dc14*/
       String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
-      DeleteAndZero((ObjectClass *)&v7.?); /*0x77dc27*/
+      DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x77dc27*/
     }
     v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/
-    strncat((char *)&v7.?, v5, 0x100u); /*0x77dc40*/
-    strncat((char *)&v7.?, Str, 0x100u); /*0x77dc54*/
+    strncat((char *)&((char *)&v7), v5, 0x100u); /*0x77dc40*/
+    strncat((char *)&((char *)&v7), Str, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v7); /*0x77dc60*/
     ++v1; /*0x77dc65*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x77dc6e*/
-  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, &v7.?); /*0x77dc84*/
+  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, &((char *)&v7)); /*0x77dc84*/
 
 }
 } // namespace gamemd

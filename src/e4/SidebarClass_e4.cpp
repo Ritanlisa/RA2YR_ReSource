@@ -329,7 +329,7 @@ int SidebarClass::Redraw(char a2)
   v22[3] = v3; /*0x6a6cab*/
   if ( a2 || v2[((unsigned int *)(3].__pad_CD2))[1788] || (v23 = 0, ((unsigned int *)(v2))[3].__pad_CD2[1789]) ) /*0x6a6cb9*/
     v23 = 1; /*0x6a6cc7*/
-  if ( v2[((unsigned int *)(3].__pad_CD2))[1787] && v23 && !stru_A8EB00.?[391] ) /*0x6a6ce8*/
+  if ( v2[((unsigned int *)(3].__pad_CD2))[1787] && v23 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x6a6ce8*/
   {
     if ( v2[((unsigned int *)(3].__pad_CD2))[1789] ) /*0x6a6cee*/
     {
@@ -833,7 +833,7 @@ void SidebarClass::CreateScrollButtons()
   DisplayClass *v1; // ecx
 
   DisplayClass::ddtor(v1); /*0x653011*/
-  if ( !stru_A8EB00.?[391] ) /*0x65301f*/
+  if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x65301f*/
   {
     dword_B0499C = 242; /*0x65303d*/
     byte_B049C4 = 1; /*0x653047*/

@@ -244,7 +244,7 @@ int CellClass::RegisterForRedraw(int a1, int a2)
     if ( *(unsigned int *)a1->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)a1); /*0x7235e2*/
     *(unsigned int *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8EB00.?[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
     v4 = *(unsigned int *)a1->CellClass_field_10C; /*0x723636*/
     v5 = *(unsigned int **)a1->unknown110; /*0x723642*/
     v6 = *(unsigned int *)&a1->unknown118 + 8 * v4; /*0x723648*/
@@ -656,7 +656,7 @@ const wchar_t* CellClass::GetUIName() const
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
-    return *(const wchar_t **)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 96); /*0x485006*/
+    return *(const wchar_t **)(*(unsigned int *)(((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 4 * BuildingByTiberiumType) + 96); /*0x485006*/
 }
 int CellClass::GetContainedTiberiumIndex() const
 {
@@ -763,7 +763,7 @@ void CellClass::ReduceTiberium(int amount)
   v16 = v23; /*0x480b73*/
   if ( v23 <= 0 || BuildingByTiberiumType == -1 ) /*0x480b82*/
     return 0; /*0x480ca3*/
-  v17 = *(CellClass **)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
+  v17 = *(CellClass **)(((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
   if ( this->u32_11E == 11 ) /*0x480b99*/
     CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
   if ( *((uint8_t *)&this->estimatedHealth6) + 1 <= v16 ) /*0x480bb9*/
@@ -849,6 +849,6 @@ int CellClass::IsTunnelEntrance()
 {
   int16_t v1; // ax
 
-  v1 = IDA_HIWORD(this->?[0]); /*0x484ab0*/
-  return v1 >= 0 && v1 < FootClass_Array.?[0] && this->?[3] == 10; /*0x484ad7*/
+  v1 = IDA_HIWORD(((unsigned int *)this)[0]); /*0x484ab0*/
+  return v1 >= 0 && v1 < ((unsigned int *)&FootClass_Array)[0] && ((unsigned int *)this)[3] == 10; /*0x484ad7*/
 }

@@ -161,7 +161,7 @@ void GameConfig::Constructor()
   void ** v8;
 
   v1 = this; /*0x5d67b5*/
-  if ( !*(unsigned int *)&this-((unsigned int *)(>__pad_0))[56] ) /*0x5d67bd*/
+  if ( !*(unsigned int *)&this->__pad_0[56] ) /*0x5d67bd*/
   {
     v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
@@ -190,17 +190,17 @@ void GameConfig::Constructor()
     {
       v3 = 0; /*0x5d682f*/
     }
-    *(unsigned int *)&v1-((unsigned int *)(>__pad_0))[56] = v3; /*0x5d6839*/
-    CCFileClass::Construct2(&v6, (char **)&v1-((unsigned int *)(>__pad_0))[44]); /*0x5d683c*/
+    *(unsigned int *)&v1->__pad_0[56] = v3; /*0x5d6839*/
+    CCFileClass::Construct2(&v6, (char **)&v1->__pad_0[44]); /*0x5d683c*/
     if ( (uint8_t)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(*(CCINIClass **)&v1-((unsigned int *)(>__pad_0))[56], (int)&v6, 0, 0); /*0x5d685a*/
+      CCINIClass::Load(*(CCINIClass **)&v1->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x5d6880*/
   }
-  return *(char **)&v1-((unsigned int *)(>__pad_0))[56]; /*0x5d6888*/
+  return *(char **)&v1->__pad_0[56]; /*0x5d6888*/
 
 }
 }

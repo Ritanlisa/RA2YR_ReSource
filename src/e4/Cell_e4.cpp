@@ -73,12 +73,12 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   }
   v14 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x419bd1*/
   v9 = 0; /*0x419bda*/
-  if ( FootClass_Array.? <= 0 ) /*0x419bde*/
+  if ( ((char *)&FootClass_Array) <= 0 ) /*0x419bde*/
     return 1; /*0x419c6b*/
   while ( 1 ) /*0x419bea*/
   {
-    v10 = (Cell *)*((unsigned int *)FootClass_Array.? + v9); /*0x419bea*/
-    if ( v10 && (!v16 || *((Cell **)this + 361) != v10) && (a3 || v10 != this) && !v10-((unsigned int *)(>__pad_70))[17] && v10->__pad_70[4] ) /*0x419c1d*/
+    v10 = (Cell *)*((unsigned int *)((char *)&FootClass_Array) + v9); /*0x419bea*/
+    if ( v10 && (!v16 || *((Cell **)this + 361) != v10) && (a3 || v10 != this) && !v10->__pad_70[17] && v10->__pad_70[4] ) /*0x419c1d*/
     {
       v11 = (unsigned short *)(*(int (**)(Cell *, unsigned int *))(v10->Cell_field_0x0 + 440))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/
@@ -86,7 +86,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
       if ( *(void **)&v10[((unsigned int *)(2].__pad_3C))[40] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
     }
-    if ( ++v9 >= FootClass_Array.? ) /*0x419c5c*/
+    if ( ++v9 >= ((char *)&FootClass_Array) ) /*0x419c5c*/
       return 1; /*0x419c5c*/
   }
   return 0; /*0x419c60*/
@@ -284,7 +284,7 @@ int Cell::GetNeighbourContent( unsigned int a2)
   result = this; /*0x481815*/
   if ( a2 < 8 ) /*0x48181a*/
   {
-    v4 = *(unsigned int *)&this-((unsigned int *)(>__pad_1C))[8]; /*0x481822*/
+    v4 = *(unsigned int *)&this->__pad_1C[8]; /*0x481822*/
     v3 = HIWORD(v4) + HIWORD(((unsigned int *)(g_DDrawSurfaceManager.scenario))[(a2 & 7) + 82]); /*0x481839*/
     LOWORD(a2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481841*/
     HIWORD(a2) = v3; /*0x48184a*/

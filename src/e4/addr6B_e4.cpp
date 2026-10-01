@@ -4476,9 +4476,9 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
   int v7; // kr00_4
 
   if ( BYTE2(this->fallRate) ) /*0x6b1ee6*/
-    abstractFlags = this->?; /*0x6b1eed*/
+    abstractFlags = ((unsigned int *)this)[0]; /*0x6b1eed*/
   else
-    abstractFlags = this->?; /*0x6b1ef2*/
+    abstractFlags = ((unsigned int *)this)[0]; /*0x6b1ef2*/
   nextObject = (double)(int)this->nextObject; /*0x6b1ef5*/
   LOWORD(v4) = Math::RoundToInt(nextObject); /*0x6b1f07*/
   v5 = v4; /*0x6b1f0f*/
@@ -5347,14 +5347,14 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
   void *v5; // edi
   unsigned int v6; // edx
 
-  this->? = (void *)-1717986918; /*0x6b945a*/
+  ((unsigned int *)this)[0] = (void *)-1717986918; /*0x6b945a*/
   this->owningHouseIndex = -1717986918; /*0x6b945d*/
   this->occupant = 1070176665; /*0x6b9466*/
   this->fallRate = 1072273817; /*0x6b946d*/
   this->nextObject = (ObjectClass *)128; /*0x6b9474*/
-  this->? = 128; /*0x6b9477*/
-  this->? = (void *)128; /*0x6b947a*/
-  this->? = 0; /*0x6b947d*/
+  ((unsigned int *)this)[0] = 128; /*0x6b9477*/
+  ((unsigned int *)this)[0] = (void *)128; /*0x6b947a*/
+  ((unsigned int *)this)[0] = 0; /*0x6b947d*/
   v2 = 0; /*0x6b9480*/
   v3 = 128; /*0x6b9482*/
   do /*0x6b9489*/
@@ -5363,18 +5363,18 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
     v3 >>= 1; /*0x6b9485*/
   }
   while ( v3 ); /*0x6b9489*/
-  this->? = v2; /*0x6b948b*/
-  this->? = 0; /*0x6b9496*/
+  ((unsigned int *)this)[0] = v2; /*0x6b948b*/
+  ((unsigned int *)this)[0] = 0; /*0x6b9496*/
   v4 = 1 << ((unsigned char)v2 - 1); /*0x6b9499*/
-  this->? = v2 - 1; /*0x6b949b*/
-  this->? = 0; /*0x6b949e*/
-  LOBYTE(this->?) = 0; /*0x6b94a1*/
-  this->? = (void *)v4; /*0x6b94a4*/
+  ((unsigned int *)this)[0] = v2 - 1; /*0x6b949b*/
+  ((unsigned int *)this)[0] = 0; /*0x6b949e*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x6b94a1*/
+  ((unsigned int *)this)[0] = (void *)v4; /*0x6b94a4*/
   v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x6b94b3*/
-  v6 = 4 * (int)this->?; /*0x6b94b8*/
+  v6 = 4 * (int)((unsigned int *)this)[0]; /*0x6b94b8*/
   this->AbstractClass = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/
-  this->? = (int)sub_6B94E0; /*0x6b94cd*/
+  ((unsigned int *)this)[0] = (int)sub_6B94E0; /*0x6b94cd*/
   return &this->AbstractClass; /*0x6b94d6*/
 
 }

@@ -124,22 +124,22 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   vtable0 = (void *)(this->AbstractClass);
-  vtable1 = this->?; /*0x645d76*/
-  vtable2 = this->?; /*0x645d7d*/
-  vtable3 = this->?; /*0x645d88*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x645d76*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x645d7d*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply((float *)((unsigned int *)(v30))[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
-  v5 = *(float *)&this->?; /*0x645da3*/
+  v5 = *(float *)&((unsigned int *)this)[0]; /*0x645da3*/
   v6 = *((unsigned int *)v4 + 1); /*0x645da6*/
   v25 = *(unsigned int *)v4; /*0x645da9*/
   v7 = *((unsigned int *)v4 + 2); /*0x645daf*/
   v26 = v6; /*0x645db2*/
   v27 = v7; /*0x645db7*/
   *(float *)&v20 = -v5; /*0x645dbe*/
-  v8 = *(float *)&this->?; /*0x645dc1*/
+  v8 = *(float *)&((unsigned int *)this)[0]; /*0x645dc1*/
   v28 = *((unsigned int *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
-  *(float *)&v18 = -*(float *)&this->?; /*0x645dd4*/
+  *(float *)&v18 = -*(float *)&((unsigned int *)this)[0]; /*0x645dd4*/
   *(float *)&v17 = -*(float *)&this->AbstractClass; /*0x645de0*/
   v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
@@ -156,9 +156,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645ea9*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645eb1*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645eb9*/
+    *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645ea9*/
+    *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645eb1*/
+    *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645eb9*/
   }
   return (float *)this; /*0x645ebe*/
 
@@ -3770,7 +3770,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
   this->visibilityFlags = 0; /*0x642a20*/
   this->AbstractClass = &vt_ProgressScreenClass; /*0x642a23*/
-  memset(&this->?, 0, 0x40u); /*0x642a29*/
+  memset(&((unsigned int *)this)[0], 0, 0x40u); /*0x642a29*/
   return &this->AbstractClass; /*0x642a2d*/
 
 }
@@ -4336,9 +4336,9 @@ void E4Recv_645CD0::sub_645CD0(float a2)
 {
 
   *(float *)&this->AbstractClass = a2 * *(float *)&this->AbstractClass; /*0x645cd6*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645cdf*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645ce9*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645cf3*/
+  *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645cdf*/
+  *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645ce9*/
+  *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645cf3*/
 
 }
 } // namespace gamemd
@@ -4720,11 +4720,11 @@ unsigned int * E4Recv_646D00::sub_646D00()
 {
 
   this->AbstractClass = (void *)-1; /*0x646d04*/
-  this->? = 0; /*0x646d0a*/
-  this->? = 0; /*0x646d0d*/
-  this->? = 0; /*0x646d10*/
-  this->? = 0; /*0x646d13*/
-  this->? = 0; /*0x646d16*/
+  ((unsigned int *)this)[0] = 0; /*0x646d0a*/
+  ((unsigned int *)this)[0] = 0; /*0x646d0d*/
+  ((unsigned int *)this)[0] = 0; /*0x646d10*/
+  ((unsigned int *)this)[0] = 0; /*0x646d13*/
+  ((unsigned int *)this)[0] = 0; /*0x646d16*/
   return &this->AbstractClass; /*0x646d19*/
 
 }

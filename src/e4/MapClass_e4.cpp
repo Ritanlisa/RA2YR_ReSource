@@ -2680,7 +2680,7 @@ MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
       if ( v12 && v12->ambientSoundController[0] == v3 ) /*0x57798e*/
       {
         ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
-        v13 = ((int (*)(ObjectClass **, int *))this->MapClass_field_0x115C->?)( /*0x5779ab*/
+        v13 = ((int (*)(ObjectClass **, int *))this->((unsigned int *)MapClass_field_0x115C)[0])( /*0x5779ab*/
                 &this->MapClass_field_0x115C,
                 &v12->occupant);
         if ( v13 != -1 ) /*0x5779b1*/
@@ -2711,7 +2711,7 @@ MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
     result = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &aP1); /*0x577a15*/
     if ( result != -1 && result < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x577a25*/
     {
-      --FootClass_Array.?[0]; /*0x577a2a*/
+      --((unsigned int *)&FootClass_Array)[0]; /*0x577a2a*/
       for ( ; /*0x577a30*/
             result < *((unsigned int *)((char *)&FootClass_Array + 0));
             *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * result - 4) = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * result) )

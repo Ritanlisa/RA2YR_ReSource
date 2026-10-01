@@ -1012,7 +1012,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 
   this->ambientSoundController[2] = a2; /*0x5f15cc*/
   this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  this->? = (void *)a4; /*0x5f15da*/
+  ((unsigned int *)this)[0] = (void *)a4; /*0x5f15da*/
   LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
@@ -1020,12 +1020,12 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/
-  this->? = 0; /*0x5f1600*/
-  this->? = 500; /*0x5f1603*/
-  this->? = 0; /*0x5f160a*/
-  this->? = -1; /*0x5f160d*/
-  this->? = 0; /*0x5f1610*/
-  this->? = 0; /*0x5f1613*/
+  ((unsigned int *)this)[0] = 0; /*0x5f1600*/
+  ((unsigned int *)this)[0] = 500; /*0x5f1603*/
+  ((unsigned int *)this)[0] = 0; /*0x5f160a*/
+  ((unsigned int *)this)[0] = -1; /*0x5f160d*/
+  ((unsigned int *)this)[0] = 0; /*0x5f1610*/
+  ((unsigned int *)this)[0] = 0; /*0x5f1613*/
   this->occupant = 3000; /*0x5f1616*/
   this->owningHouseIndex = 1200; /*0x5f161d*/
   LOBYTE(this->nextObject) = 43; /*0x5f1624*/
@@ -1051,7 +1051,7 @@ int E4Recv_5F1F20::sub_5F1F20()
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  vtable1 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
+  vtable1 = (int *)this->((unsigned int *)attachedBomb)[0]; /*0x5f1f2c*/
   if ( vtable1[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
@@ -1063,7 +1063,7 @@ int E4Recv_5F1F20::sub_5F1F20()
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    vtable1 = (int *)this->attachedBomb->?; /*0x5f1f53*/
+    vtable1 = (int *)this->((unsigned int *)attachedBomb)[0]; /*0x5f1f53*/
     if ( v2 >= vtable1[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }

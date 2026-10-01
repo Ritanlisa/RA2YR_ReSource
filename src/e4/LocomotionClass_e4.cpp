@@ -97,7 +97,7 @@ int LocomotionClass::CheckBridgeBlock()
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
     if ( vtable1 == 2 /*0x4cfacc*/
-      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, *(unsigned char *)(vtable1 + 3597))
+      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1], *(unsigned char *)(vtable1 + 3597))
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
           v5 = Cell::IsBridge(v4),
           LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
@@ -170,23 +170,23 @@ int LocomotionClass::Update()
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x54ac46*/
-  this-((unsigned int *)(>DestinationCoords))[0] = dword_ABC5A8; /*0x54ac59*/
-  this-((unsigned int *)(>DestinationCoords))[1] = dword_ABC5AC; /*0x54ac61*/
+  this->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
+  this->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/
   this->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
-  this-((unsigned int *)(>DestinationCoords))[2] = v2; /*0x54ac70*/
+  this->DestinationCoords[2] = v2; /*0x54ac70*/
   FrameSnapshot::InitMax( /*0x54ac82*/
-    (FrameSnapshot *)&this-((unsigned int *)(>__pad_50))[4],
+    (FrameSnapshot *)&this->__pad_50[4],
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
   this->CurrentHeight = 0; /*0x54ac87*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[4] = 0; /*0x54ac8a*/
+  *(unsigned int *)&this->__pad_74[4] = 0; /*0x54ac8a*/
   *(unsigned int *)&this->DestinationReached = 0; /*0x54ac8d*/
   *(unsigned int *)this->__pad_74 = 0; /*0x54ac93*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[8] = 0; /*0x54ac96*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[12] = 0; /*0x54ac99*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_89))[3] = 0; /*0x54ac9f*/
-  this-((unsigned int *)(>__pad_89))[7] = 0; /*0x54aca5*/
+  *(unsigned int *)&this->__pad_74[8] = 0; /*0x54ac96*/
+  *(unsigned int *)&this->__pad_74[12] = 0; /*0x54ac99*/
+  *(unsigned int *)&this->__pad_89[3] = 0; /*0x54ac9f*/
+  this->__pad_89[7] = 0; /*0x54aca5*/
   this->unknown_91 = 0; /*0x54acab*/
   this->Piggybackee = 0; /*0x54acb5*/
   this->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54acc3*/

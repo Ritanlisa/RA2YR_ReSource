@@ -113,26 +113,26 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
   for ( i = 0; result < *(int *)&stru_A83D50.__pad_80[40]; i = result ) /*0x51ff15*/
   {
     v6 = *(BuildingClass **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * result); /*0x51ff25*/
-    if ( !v6->? ) /*0x51ff28*/
+    if ( !((unsigned int *)v6)[0] ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
       if ( (*((int (**)(BuildingClass *, int, int))v6->TechnoClass + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
-        queuedMission = (char *)v6->?; /*0x51ff79*/
+        queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->TechnoClass + 97))(v6); /*0x51ff89*/
-      v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->?, &v27); /*0x51ff9d*/
-      owner = v6->?; /*0x51ffab*/
-      v9 = *(unsigned int *)&v6-((unsigned int *)(>__pad_6B8))[8] + 36; /*0x51ffb3*/
-      v24.Input_field_00 = v6->?[0]; /*0x51ffb6*/
-      isRecruitableByEnemy = (uint8_t)v6->?; /*0x51ffbf*/
-      v25 = v6->?[1]; /*0x51ffc5*/
-      isRecruitableByAlly = (uint8_t)v6->?; /*0x51ffce*/
-      v26 = v6->?[2]; /*0x51ffd4*/
+      v7 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)v6)[0], &v27); /*0x51ff9d*/
+      owner = ((unsigned int *)v6)[0]; /*0x51ffab*/
+      v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
+      v24.Input_field_00 = ((unsigned int *)v6)[0]; /*0x51ffb6*/
+      isRecruitableByEnemy = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffbf*/
+      v25 = ((unsigned int *)v6)[1]; /*0x51ffc5*/
+      isRecruitableByAlly = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffce*/
+      v26 = ((unsigned int *)v6)[2]; /*0x51ffd4*/
       a3 = isRecruitableByEnemy; /*0x51ffe0*/
       a2 = isRecruitableByAlly; /*0x51ffe7*/
-      onBridge = (uint8_t)v6->?; /*0x51ffec*/
-      controlGroup = v6->?; /*0x51ffef*/
-      Field = FootClass::GetField(v6->?); /*0x52000b*/
+      onBridge = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffec*/
+      controlGroup = ((unsigned int *)v6)[0]; /*0x51ffef*/
+      Field = FootClass::GetField(((unsigned int *)v6)[0]); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
       v12 = ((Input *)(&v24))->OffsetToDirection(); /*0x52001c*/
       v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->TechnoClass + 110))( /*0x52002b*/
@@ -648,13 +648,13 @@ int E4Recv_517110::sub_517110()
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->? + 440))(this->?, v8); /*0x517167*/
+    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))(((unsigned int *)this)[0], v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = this->?; /*0x51717f*/
-  this-((unsigned int *)(>ambientSoundController))[3] = 0; /*0x517182*/
-  this-((unsigned int *)(>ambientSoundController))[4] = 1072693248; /*0x517189*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x51717f*/
+  this->ambientSoundController[3] = 0; /*0x517182*/
+  this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
@@ -701,7 +701,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  LOBYTE(this->?) = 0; /*0x51779f*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x51779f*/
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -710,7 +710,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = (unsigned int)(*(void **)v7);
-      LOBYTE(this->?) = 1; /*0x51781d*/
+      LOBYTE(((unsigned int *)this)[0]) = 1; /*0x51781d*/
       this->AbstractClass = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/

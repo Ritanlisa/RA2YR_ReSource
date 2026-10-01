@@ -628,9 +628,9 @@ void RenderScoreboardSidebar(void * a1, void * a2)
       v14);
     v16 = v13 + 4; /*0x65414f*/
     v3 = 0; /*0x654152*/
-    for ( i = 0; v3 < stru_A80220.?; i = v3 ) /*0x65415a*/
+    for ( i = 0; v3 < ((char *)&stru_A80220); i = v3 ) /*0x65415a*/
     {
-      v44 = *((unsigned int *)stru_A80220.? + v3); /*0x65416d*/
+      v44 = *((unsigned int *)((char *)&stru_A80220) + v3); /*0x65416d*/
       v17 = v44; /*0x654168*/
       if ( v44 && *(unsigned char *)(*(unsigned int *)(v44 + 52) + 421) ) /*0x65417a*/
       {
@@ -730,7 +730,7 @@ namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
 
-  return (int)this->AbstractClass + 251 * (int)this->?; /*0x6558a3*/
+  return (int)this->AbstractClass + 251 * (int)((unsigned int *)this)[0]; /*0x6558a3*/
 
 }
 }
@@ -953,7 +953,7 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   result = ClipLine(v9, v8, v10); /*0x6595f6*/
   if ( result ) /*0x6595fd*/
   {
-    v6 = (char *)this->? - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
+    v6 = (char *)((unsigned int *)this)[0] - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
     v7 = ZCoordToScreenY(a3[2]); /*0x659612*/
     return (*(char (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, char *, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x65963f*/
              g_DSurface_Hidden_2,
@@ -1209,10 +1209,10 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
       vtable0 = this->AbstractClass; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-        vtable1 = (unsigned int)this->?; /*0x65c980*/
+        vtable1 = (unsigned int)((unsigned int *)this)[0]; /*0x65c980*/
         v14 = (unsigned int)vtable0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        this->? = (void *)(vtable1 + 1); /*0x65c98c*/
+        ((unsigned int *)this)[0] = (void *)(vtable1 + 1); /*0x65c98c*/
         do /*0x65c9d5*/
         {
           v16 = vtable1; /*0x65c995*/
@@ -2953,7 +2953,7 @@ namespace gamemd {
 void E4Recv_659560::sub_659560()
 {
 
-  BYTE1(this->?) = 0; /*0x659560*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x659560*/
 
 }
 } // namespace gamemd
@@ -2963,7 +2963,7 @@ namespace gamemd {
 char E4Recv_659570::sub_659570()
 {
 
-  return BYTE1(this->?); /*0x659573*/
+  return BYTE1(((unsigned int *)this)[0]); /*0x659573*/
 
 }
 } // namespace gamemd
@@ -3015,7 +3015,7 @@ short E4Recv_659A30::sub_659A30()
   int16_t result; // ax
   char v10; // cl
 
-  LOWORD(v2) = Math::RoundToInt(*(double *)&this->bombVisible / *(double *)&this->?); /*0x659a3c*/
+  LOWORD(v2) = Math::RoundToInt(*(double *)&this->bombVisible / *(double *)&((unsigned int *)this)[0]); /*0x659a3c*/
   v3 = this->customSound_controller[3]; /*0x659a41*/
   v4 = this->customSound_controller[4]; /*0x659a44*/
   customSound = this->customSound; /*0x659a47*/
@@ -3033,7 +3033,7 @@ short E4Recv_659A30::sub_659A30()
   this->location[0] = this->occupant; /*0x659a8b*/
   this->location[1] = this->owningHouseIndex; /*0x659a90*/
   this->location[2] = this->fallRate; /*0x659a96*/
-  p_NeedsSaveOrLink = &this->?; /*0x659a99*/
+  p_NeedsSaveOrLink = &((unsigned int *)this)[0]; /*0x659a99*/
   v8 = (double *)((char *)this + 192); /*0x659a9c*/
   result = *(unsigned short *)p_NeedsSaveOrLink; /*0x659aa2*/
   v10 = *((unsigned char *)p_NeedsSaveOrLink + 2); /*0x659aa5*/
@@ -3359,7 +3359,7 @@ unsigned int * E4Recv_65C890::sub_65C890(int a2, int a3)
 {
 
   this->AbstractClass = (void *)a2; /*0x65c89a*/
-  this->? = (void *)a3; /*0x65c89c*/
+  ((unsigned int *)this)[0] = (void *)a3; /*0x65c89c*/
   return &this->AbstractClass; /*0x65c89f*/
 
 }

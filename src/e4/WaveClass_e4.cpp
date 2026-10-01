@@ -125,9 +125,9 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->ObjectClass = (gamemd::WaveClass *)(&vt_WaveClass);
-  Block->? = &vt_WaveClass; /*0x76320c*/
-  Block->? = &vt_WaveClass; /*0x763213*/
-  Block->? = &off_7F6BC8; /*0x76321a*/
+  ((unsigned int *)Block)[0] = &vt_WaveClass; /*0x76320c*/
+  ((unsigned int *)Block)[0] = &vt_WaveClass; /*0x763213*/
+  ((unsigned int *)Block)[0] = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763221*/
   v6 = Block; /*0x763236*/
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/

@@ -238,7 +238,7 @@ unsigned int LoadOptions::vt05(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x55a180*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x55a195*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x55a195*/
   else
     return 0; /*0x55a187*/
 
@@ -250,7 +250,7 @@ namespace gamemd {
 int LoadOptions::vt06(int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x55a1aa*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55a1aa*/
 
 }
 } // namespace gamemd
@@ -271,7 +271,7 @@ char LoadOptions::vt01(int a2)
     v3 = 0; /*0x55a1bf*/
     if ( m_8 <= 0 ) /*0x55a1c3*/
       return 1; /*0x55a1e3*/
-    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x55a1c5*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x55a1c5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x55a1cb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x55a1d4*/
     {
@@ -306,20 +306,20 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x55a362*/
     if ( !v4 ) /*0x55a366*/
       return 0; /*0x55a3da*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x55a368*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x55a368*/
     {
       m_8 = this->m_8; /*0x55a36f*/
       if ( a2 < m_8 ) /*0x55a374*/
         m_8 = a2; /*0x55a376*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x55a37c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x55a37c*/
         ++i; /*0x55a381*/
       if ( BYTE1(this->m_C) ) /*0x55a38e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x55a399*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x55a3a1*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x55a399*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x55a3a1*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x55a3aa*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x55a3aa*/
     this->m_8 = a2; /*0x55a3b2*/
     BYTE1(this->m_C) = a3 == 0; /*0x55a3b5*/
   }
@@ -348,7 +348,7 @@ int LoadOptions::vt04(unsigned int * a2)
   result = 0; /*0x55a3e3*/
   if ( m_10 <= 0 ) /*0x55a3e8*/
     return -1; /*0x55a3ff*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x55a3ee*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x55a3ee*/
   {
     if ( ++result >= m_10 ) /*0x55a3fd*/
       return -1; /*0x55a3fd*/

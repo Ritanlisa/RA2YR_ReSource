@@ -1677,7 +1677,7 @@ void sub_556D40()
   {
     v2 = *(ObjectClass **)(g_MissionQueueFrame.random[220] + 4 * i); /*0x556d59*/
     Render_Render_556B70(v2); /*0x556d5e*/
-    if ( v2->? || *(&v2->? + 4 * (int)v2->?) ) /*0x556d70*/
+    if ( ((unsigned int *)v2)[0] || *(&((unsigned int *)v2)[0] + 4 * (int)((unsigned int *)v2)[0]) ) /*0x556d70*/
     {
       Render_Render_556C00(v2); /*0x556dd2*/
     }

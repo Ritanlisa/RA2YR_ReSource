@@ -705,7 +705,7 @@ void PostLoadInitScenario()
   for ( i = 0; i < stru_A8EB00.ObjectTypeClass[20]; ++i ) /*0x684c4c*/
     (*(void (**)(unsigned int))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[17] + 4 * i) + 1248))(*(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * i)); /*0x684c58*/
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x684c6f*/
-  if ( !stru_A8EB00.?[391] ) /*0x684c7b*/
+  if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x684c7b*/
   {
     TacticalClass::BuildCommandBar((TabClass *)1, v1, (int)v34); /*0x684c88*/
     if ( !*(unsigned int *)&dword_A8B238 ) /*0x684c94*/
@@ -734,7 +734,7 @@ void PostLoadInitScenario()
     {
       v8 = TeamClass::FindOrCreate(v7); /*0x684d77*/
       if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x684da9*/
-        || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !FootClass_Array.?[6])
+        || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
         && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
         && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 8))(
              &(unsigned int *)((char *)&FootClass_Array + 4),
@@ -748,16 +748,16 @@ void PostLoadInitScenario()
     if ( (Debug::AccumFlags((Debug *)v7) & 0x10) != 0 ) /*0x684dd1*/
     {
       v10 = TeamClass::FindOrCreate(v7); /*0x684de0*/
-      if ( (int)FootClass_Array.? < (int)FootClass_Array.? /*0x684e13*/
-        || (IDA_BYTE1(FootClass_Array.?) || !FootClass_Array.?)
+      if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x684e13*/
+        || (IDA_BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
-        && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
-             &FootClass_Array.?,
-             (char *)FootClass_Array.? + *((unsigned int *)((char *)&FootClass_Array + 0)),
+        && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))((char *)&FootClass_Array))(
+             &((char *)&FootClass_Array),
+             (char *)((char *)&FootClass_Array) + *((unsigned int *)((char *)&FootClass_Array + 0)),
              0) )
       {
-        v11 = FootClass_Array.?++; /*0x684e20*/
-        *((unsigned int *)&FootClass_Array.?->ObjectClass + (unsigned int)v11) = v10; /*0x684e2f*/
+        v11 = ((char *)&FootClass_Array)++; /*0x684e20*/
+        *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + (unsigned int)v11) = v10; /*0x684e2f*/
       }
     }
     if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
@@ -801,14 +801,14 @@ void PostLoadInitScenario()
   if ( IDA_BYTE2(dword_A8B230[374].nextArrayIndex) ) /*0x684f02*/
   {
     v22 = 0; /*0x684f12*/
-    for ( k = 0; v22 < stru_A80220.?; k = v22 ) /*0x684f1a*/
+    for ( k = 0; v22 < ((char *)&stru_A80220); k = v22 ) /*0x684f1a*/
     {
-      v23 = (HouseClass *)*((unsigned int *)stru_A80220.? + v22); /*0x684f23*/
+      v23 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + v22); /*0x684f23*/
       if ( v23 ) /*0x684f28*/
       {
         v24 = (*(int (**)(int *))(v23->arrayIndex + 24))(&v23->arrayIndex); /*0x684f34*/
-        v25 = *(unsigned int *)g_BuildingLoadQueue_Array.?[2]; /*0x684f3b*/
-        if ( v24 > *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.?[2] + 184) ) /*0x684f43*/
+        v25 = *(unsigned int *)((unsigned int *)&g_BuildingLoadQueue_Array)[2]; /*0x684f3b*/
+        if ( v24 > *(unsigned int *)(*(unsigned int *)((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 184) ) /*0x684f43*/
         {
           do /*0x684f69*/
           {
@@ -1384,7 +1384,7 @@ AbstractClass * * SessionClass_AssignHouses()
   v21 = (int *)RA2_OPNEW(0x160B8u); /*0x6882de*/
   if ( v21 ) /*0x6882e4*/
   {
-    v22 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&stru_82BA00.?); /*0x6882eb*/
+    v22 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&((char *)&stru_82BA00)); /*0x6882eb*/
     v23 = HouseClass::Construct(v21, *((unsigned int *)dword_A83C9C + v22)); /*0x688303*/
   }
   else
@@ -2090,7 +2090,7 @@ namespace gamemd {
 int E4Recv_681070::sub_681070()
 {
 
-  return (int)this->?; /*0x681073*/
+  return (int)((unsigned int *)this)[0]; /*0x681073*/
 
 }
 } // namespace gamemd
@@ -2836,8 +2836,8 @@ int E4Recv_68F8A0::sub_68F8A0()
   v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    vtable3 = this->?; /*0x68f8f8*/
-    v6 = (char *)this->? + 214; /*0x68f8fd*/
+    vtable3 = ((unsigned int *)this)[0]; /*0x68f8f8*/
+    v6 = (char *)((unsigned int *)this)[0] + 214; /*0x68f8fd*/
     *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
     *(unsigned int *)(v4 + 12) = Timer::GetTicks(); /*0x68f910*/
@@ -2854,25 +2854,25 @@ int E4Recv_68F8A0::sub_68F8A0()
     v4 = 0; /*0x68f934*/
   }
   occupant = this->occupant; /*0x68f936*/
-  p_referenceCount = &this->?; /*0x68f93c*/
+  p_referenceCount = &((unsigned int *)this)[0]; /*0x68f93c*/
   if ( this->fallRate < occupant /*0x68f95e*/
     || (BYTE1(this->owningHouseIndex) || !occupant)
     && (nextObject = this->nextObject, (int)nextObject > 0)
     && (*(uint8_t (**)(int *, int, unsigned int))(*p_referenceCount + 8))(
-         &this->?,
+         &((unsigned int *)this)[0],
          (int)nextObject + occupant,
          0) )
   {
     fallRate = this->fallRate; /*0x68f965*/
-    NeedsSaveOrLink = this->?; /*0x68f968*/
+    NeedsSaveOrLink = ((unsigned int *)this)[0]; /*0x68f968*/
     this->fallRate = fallRate + 1; /*0x68f96e*/
     NeedsSaveOrLink[fallRate] = v4; /*0x68f971*/
   }
   v12 = *p_referenceCount; /*0x68f974*/
   v15 = v4; /*0x68f97d*/
-  for ( result = (*(int (**)(int *, int *))(v12 + 16))(&this->?, &v15); /*0x68f987*/
+  for ( result = (*(int (**)(int *, int *))(v12 + 16))(&((unsigned int *)this)[0], &v15); /*0x68f987*/
         result != -1;
-        result = (*(int (**)(int *, int *))(v14 + 16))(&this->?, &v15) )
+        result = (*(int (**)(int *, int *))(v14 + 16))(&((unsigned int *)this)[0], &v15) )
   {
     Screen::TransitionLoop((Screen *)this, 1); /*0x68f98d*/
     v14 = *p_referenceCount; /*0x68f992*/
@@ -2900,10 +2900,10 @@ unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t Buffe
   if ( (int)Format >= (int)a6 ) /*0x68fb2b*/
     v8 = a6; /*0x68fb2d*/
   swprintf(Buffer, BufferCount, v8); /*0x68fb3d*/
-  vtable3 = this->?; /*0x68fb42*/
+  vtable3 = ((unsigned int *)this)[0]; /*0x68fb42*/
   v11 = a8 - vtable3[2]; /*0x68fb5d*/
   (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*vtable3 + 12))(vtable3, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
-  v12 = this->?; /*0x68fb71*/
+  v12 = ((unsigned int *)this)[0]; /*0x68fb71*/
   v13 = v12[2]; /*0x68fb7b*/
   v14 = (*(int (**)(unsigned int *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
   *a2 = a7; /*0x68fb8a*/

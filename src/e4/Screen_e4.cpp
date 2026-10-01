@@ -539,7 +539,7 @@ int Screen::TransitionLoop(int a2)
     {
       Event::Dispatch(); /*0x690240*/
       MessageLoop(); /*0x690245*/
-      if ( !stru_A8EB00.?[412] )
+      if ( !((unsigned int *)&stru_A8EB00)[412] )
       {
         if ( Ticks == -1
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
@@ -550,7 +550,7 @@ int Screen::TransitionLoop(int a2)
             v8 = *(unsigned int *)(*((unsigned int *)this + 8) + 4 * i); /*0x690297*/
             (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x69029c*/
           }
-          while ( !stru_A8EB00.?[412] ) /*0x6902ae*/
+          while ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6902ae*/
           {
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/

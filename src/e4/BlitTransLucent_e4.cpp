@@ -65,7 +65,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     if ( *a2++ ) /*0x49628f*/
     {
       --v17; /*0x4962b8*/
-      *result = *(unsigned short *)&this-((unsigned int *)(>m_2))[2] & (*result >> 1); /*0x4962b9*/
+      *result = *(unsigned short *)&this->m_2[2] & (*result >> 1); /*0x4962b9*/
       ++result; /*0x4962bc*/
     }
     else

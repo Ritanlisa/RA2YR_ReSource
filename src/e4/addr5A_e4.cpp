@@ -4322,34 +4322,34 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     }
   }
   _ESI->AbstractClass = (void *)1065353216; /*0x5af638*/
-  _ESI->? = 0; /*0x5af63a*/
-  _ESI->? = 0; /*0x5af63d*/
-  _ESI->? = 0; /*0x5af640*/
-  _ESI->? = 0; /*0x5af643*/
-  _ESI->? = 1065353216; /*0x5af646*/
-  _ESI->? = 0; /*0x5af649*/
-  _ESI->? = 0; /*0x5af64c*/
-  _ESI->? = 0; /*0x5af64f*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af63a*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af63d*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af640*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af643*/
+  ((unsigned int *)_ESI)[0] = 1065353216; /*0x5af646*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af649*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af64c*/
+  ((unsigned int *)_ESI)[0] = 0; /*0x5af64f*/
   _ESI->occupant = 0; /*0x5af652*/
   _ESI->owningHouseIndex = 1065353216; /*0x5af655*/
   _ESI->fallRate = 0; /*0x5af658*/
   __asm { fld dword ptr [edi] } /*0x5af65b*/
   v36 = 0; /*0x5af65d*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af669*/
-  *(float *)&_ESI->? = _ET1; /*0x5af669*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af669*/
   __asm { fld ds:flt_7E1748 } /*0x5af66c*/
   __asm
   {
     fst [esp+24h+var_18]
     fst dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5af677*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af677*/
   __asm { fstp dword ptr [esi+2Ch] } /*0x5af67a*/
   *(float *)&_ESI->fallRate = _ET1; /*0x5af67a*/
   __asm { fadd [esp+24h+arg_4] } /*0x5af680*/
   v25 = *((unsigned int *)_EDI + 1); /*0x5af684*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af68d*/
-  *(float *)&_ESI->? = _ET1; /*0x5af68d*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af68d*/
   __asm /*0x5af690*/
   {
     fld [esp+28h+var_14]
@@ -4357,7 +4357,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fst [esp+28h+var_14]
     fstp dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5af69b*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af69b*/
   __asm /*0x5af69e*/
   {
     fld [esp+28h+arg_4]
@@ -4374,7 +4374,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   __asm { fadd st, st(1) }
   v32 = *((unsigned int *)_EDI + 2); /*0x5af6be*/
   __asm { fstp dword ptr [esi+0Ch] } /*0x5af6c4*/
-  *(float *)&_ESI->? = _ET1; /*0x5af6c4*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af6c4*/
   __asm /*0x5af6c7*/
   {
     fstp st
@@ -4382,7 +4382,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fadd [esp+28h+var_14]
     fstp dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5af6d1*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af6d1*/
   __asm /*0x5af6d4*/
   {
     fld [esp+28h+var_18]
@@ -4620,7 +4620,7 @@ ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
 
   this->AbstractClass = (void *)*a1; /*0x5a992c*/
-  this->? = (void *)aP2; /*0x5a992e*/
+  ((unsigned int *)this)[0] = (void *)aP2; /*0x5a992e*/
   return &this->AbstractClass; /*0x5a9931*/
 
 }
@@ -4632,7 +4632,7 @@ ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
 {
 
   this->AbstractClass = (void *)*a1; /*0x5a9968*/
-  this->? = (void *)a1[1]; /*0x5a996d*/
+  ((unsigned int *)this)[0] = (void *)a1[1]; /*0x5a996d*/
   return &this->AbstractClass; /*0x5a9970*/
 
 }
@@ -4659,10 +4659,10 @@ unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
 {
 
   this->AbstractClass = (void *)*a2; /*0x5a99f8*/
-  this->? = (void *)a2[1]; /*0x5a99fd*/
-  this->? = (void *)a2[2]; /*0x5a9a03*/
-  this->? = (void *)a2[3]; /*0x5a9a09*/
-  this->? = a2[4]; /*0x5a9a0f*/
+  ((unsigned int *)this)[0] = (void *)a2[1]; /*0x5a99fd*/
+  ((unsigned int *)this)[0] = (void *)a2[2]; /*0x5a9a03*/
+  ((unsigned int *)this)[0] = (void *)a2[3]; /*0x5a9a09*/
+  ((unsigned int *)this)[0] = a2[4]; /*0x5a9a0f*/
   return &this->AbstractClass; /*0x5a9a12*/
 
 }
@@ -4890,8 +4890,8 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   result = Timer::GetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/
-  v3->? = v5; /*0x5ae55f*/
-  v3->? = (void *)aP2; /*0x5ae562*/
+  ((unsigned int *)v3)[0] = v5; /*0x5ae55f*/
+  ((unsigned int *)v3)[0] = (void *)aP2; /*0x5ae562*/
   return result; /*0x5ae565*/
 
 }
@@ -4934,26 +4934,26 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aec5f*/
   Math::ArcTan2(v19); /*0x5aec65*/
   __asm { fld [esp+40h+arg_0] } /*0x5aec70*/
-  abstractFlags = this->?; /*0x5aec74*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x5aec74*/
   __asm { fchs } /*0x5aec7b*/
-  NeedsSaveOrLink = this->?; /*0x5aec7d*/
+  NeedsSaveOrLink = ((unsigned int *)this)[0]; /*0x5aec7d*/
   __asm /*0x5aec84*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  uniqueId = this->?; /*0x5aec8a*/
-  nextArrayIndex = this->?; /*0x5aec8e*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x5aec8a*/
+  nextArrayIndex = ((unsigned int *)this)[0]; /*0x5aec8e*/
   __asm { fld [esp+40h+var_20] } /*0x5aec92*/
   __asm { fmul st, st(3) }
   occupant = this->occupant; /*0x5aec9e*/
-  LODWORD(v19) = this->?; /*0x5aeca2*/
+  LODWORD(v19) = ((unsigned int *)this)[0]; /*0x5aeca2*/
   result = this->owningHouseIndex; /*0x5aeca6*/
   __asm { faddp st(1), st } /*0x5aecac*/
   v16 = result; /*0x5aecae*/
   fallRate = this->fallRate; /*0x5aecb2*/
   __asm { fstp dword ptr [esi+10h] } /*0x5aecb9*/
-  this->? = _ET1; /*0x5aecb9*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aecb9*/
   __asm /*0x5aecbc*/
   {
     fld [esp+30h+var_1C]
@@ -4963,7 +4963,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  this->? = _ET1; /*0x5aecca*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aecca*/
   __asm /*0x5aeccd*/
   {
     fld [esp+30h+var_14]
@@ -4973,7 +4973,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  this->? = _ET1; /*0x5aecdb*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aecdb*/
   __asm /*0x5aecde*/
   {
     fld [esp+30h+var_C]
@@ -4983,7 +4983,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+1Ch]
   }
-  this->? = _ET1; /*0x5aecec*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aecec*/
   __asm /*0x5aecef*/
   {
     fstp st
@@ -4994,7 +4994,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
-  this->? = _ET1; /*0x5aed01*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aed01*/
   __asm /*0x5aed04*/
   {
     fld [esp+30h+var_1C]
@@ -5064,13 +5064,13 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fld st(2)
     fmul st, st(5)
   }
-  vtable1 = _ESI->?; /*0x5aed95*/
+  vtable1 = ((unsigned int *)_ESI)[0]; /*0x5aed95*/
   result = _ESI->occupant; /*0x5aed99*/
   v13 = result; /*0x5aed9c*/
-  vtable2 = _ESI->?; /*0x5aeda0*/
+  vtable2 = ((unsigned int *)_ESI)[0]; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
-  vtable3 = _ESI->?; /*0x5aedb0*/
+  vtable3 = ((unsigned int *)_ESI)[0]; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *(float *)&_ESI->AbstractClass = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
@@ -5086,7 +5086,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+4]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5aedd0*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5aedd0*/
   __asm /*0x5aedd3*/
   {
     fld [esp+28h+var_10]
@@ -5096,7 +5096,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+8]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5aede3*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5aede3*/
   __asm /*0x5aede6*/
   {
     fld dword ptr [esp+28h+var_8]
@@ -5106,7 +5106,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+0Ch]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5aedf6*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5aedf6*/
   __asm /*0x5aedf9*/
   {
     fxch st(1)
@@ -5116,7 +5116,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
-  *(float *)&_ESI->? = _ET1; /*0x5aee03*/
+  *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5aee03*/
   __asm /*0x5aee06*/
   {
     fld [esp+28h+var_1C]
@@ -5175,24 +5175,24 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = this->?; /*0x5aee83*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
-  uniqueId = this->?; /*0x5aee8c*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x5aee8c*/
   __asm /*0x5aee93*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
   vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = this->?; /*0x5aee9d*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
-  abstractFlags = this->?; /*0x5aeead*/
-  LODWORD(v19) = this->?; /*0x5aeeb1*/
-  result = this->?; /*0x5aeeb5*/
+  abstractFlags = ((unsigned int *)this)[0]; /*0x5aeead*/
+  LODWORD(v19) = ((unsigned int *)this)[0]; /*0x5aeeb1*/
+  result = ((unsigned int *)this)[0]; /*0x5aeeb5*/
   __asm { faddp st(1), st } /*0x5aeebb*/
   v16 = result; /*0x5aeebd*/
-  referenceCount = this->?; /*0x5aeec1*/
+  referenceCount = ((unsigned int *)this)[0]; /*0x5aeec1*/
   __asm { fstp dword ptr [esi] } /*0x5aeec8*/
   this->AbstractClass = _ET1; /*0x5aeec8*/
   __asm /*0x5aeeca*/
@@ -5204,7 +5204,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+4]
   }
-  this->? = _ET1; /*0x5aeed8*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aeed8*/
   __asm /*0x5aeedb*/
   {
     fld [esp+30h+var_14]
@@ -5214,7 +5214,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+8]
   }
-  this->? = _ET1; /*0x5aeee9*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aeee9*/
   __asm /*0x5aeeec*/
   {
     fld [esp+30h+var_C]
@@ -5224,7 +5224,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+0Ch]
   }
-  this->? = _ET1; /*0x5aeefa*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aeefa*/
   __asm /*0x5aeefd*/
   {
     fstp st
@@ -5235,7 +5235,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+10h]
   }
-  this->? = _ET1; /*0x5aef0f*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aef0f*/
   __asm /*0x5aef12*/
   {
     fld [esp+30h+var_1C]
@@ -5245,7 +5245,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  this->? = _ET1; /*0x5aef22*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aef22*/
   __asm /*0x5aef25*/
   {
     fld [esp+30h+var_14]
@@ -5255,7 +5255,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  this->? = _ET1; /*0x5aef35*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aef35*/
   __asm /*0x5aef38*/
   {
     fld [esp+30h+var_C]
@@ -5265,7 +5265,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
   }
   __asm { fstp dword ptr [esi+1Ch] }
-  this->? = _ET1; /*0x5aef49*/
+  ((unsigned int *)this)[0] = _ET1; /*0x5aef49*/
   __asm { fstp st } /*0x5aef4e*/
   return result; /*0x5aef50*/
 

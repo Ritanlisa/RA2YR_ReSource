@@ -629,7 +629,7 @@ int Audio::LoadWAVFiles()
     if ( IsSoundEnabled ) /*0x72080e*/
     {
       LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x720814*/
-      if ( !stru_A8EB00.?[384] ) /*0x72081b*/
+      if ( !((unsigned int *)&stru_A8EB00)[384] ) /*0x72081b*/
       {
         IsSoundEnabled = *(unsigned int *)&this->__pad_18[12]; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
@@ -2222,30 +2222,30 @@ AbstractClass * * sub_6C6D00()
     if ( (int)g_SidebarButtonState.AbstractClass <= 0 ) /*0x6c6d12*/
       v1 = (char *)g_SidebarButtonState.AbstractClass - 1; /*0x6c6d14*/
     memcpy( /*0x6c6d45*/
-      (char *)g_SidebarButtonState.? + 32776 * (unsigned int)v1,
-      (char *)g_SidebarButtonState.? + 32776 * (unsigned int)(v1 + 1),
+      (char *)((char *)&g_SidebarButtonState) + 32776 * (unsigned int)v1,
+      (char *)((char *)&g_SidebarButtonState) + 32776 * (unsigned int)(v1 + 1),
       32776 * (int)g_SidebarButtonState.AbstractClass - 32776 * (unsigned int)(v1 + 1));
-    if ( 3 * (int)--g_SidebarButtonState.AbstractClass <= (int)g_SidebarButtonState.? ) /*0x6c6d63*/
+    if ( 3 * (int)--g_SidebarButtonState.AbstractClass <= (int)((char *)&g_SidebarButtonState) ) /*0x6c6d63*/
     {
-      v2 = (int)g_SidebarButtonState.? / 2; /*0x6c6d6c*/
-      if ( (int)g_SidebarButtonState.? / 2 < 10 ) /*0x6c6d71*/
+      v2 = (int)((char *)&g_SidebarButtonState) / 2; /*0x6c6d6c*/
+      if ( (int)((char *)&g_SidebarButtonState) / 2 < 10 ) /*0x6c6d71*/
         v2 = 10; /*0x6c6d73*/
-      if ( v2 < (int)g_SidebarButtonState.? ) /*0x6c6d7a*/
+      if ( v2 < (int)((char *)&g_SidebarButtonState) ) /*0x6c6d7a*/
       {
         v3 = (char *)RA2_OPNEW(32776 * v2); /*0x6c6d88*/
-        vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6d8d*/
+        vtable2 = (char *)((char *)&g_SidebarButtonState); /*0x6c6d8d*/
         v5 = v3; /*0x6c6d98*/
-        if ( g_SidebarButtonState.? ) /*0x6c6d9a*/
+        if ( ((char *)&g_SidebarButtonState) ) /*0x6c6d9a*/
         {
           v6 = 8 * IDA_LOBYTE(g_SidebarButtonState.AbstractClass); /*0x6c6dae*/
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.AbstractClass) >> 2; /*0x6c6db0*/
-          qmemcpy(v3, g_SidebarButtonState.?, 4 * v7); /*0x6c6db3*/
+          qmemcpy(v3, ((char *)&g_SidebarButtonState), 4 * v7); /*0x6c6db3*/
           qmemcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
-          vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6dbc*/
+          vtable2 = (char *)((char *)&g_SidebarButtonState); /*0x6c6dbc*/
         }
         RA2_OPDEL(vtable2); /*0x6c6dc4*/
-        g_SidebarButtonState.? = v5; /*0x6c6dcc*/
-        g_SidebarButtonState.? = (void *)v2; /*0x6c6dd2*/
+        ((unsigned int *)&g_SidebarButtonState)[0] = v5; /*0x6c6dcc*/
+        ((unsigned int *)&g_SidebarButtonState)[0] = (void *)v2; /*0x6c6dd2*/
       }
     }
   }
@@ -2269,11 +2269,11 @@ AbstractClass * * sub_6C6DE0()
   {
     if ( (int)g_SidebarButtonState.AbstractClass > 0 ) /*0x6c6e06*/
     {
-      Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)g_SidebarButtonState.?); /*0x6c6e12*/
+      Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)((char *)&g_SidebarButtonState)); /*0x6c6e12*/
       vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e17*/
     }
   LABEL_4:
-    vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6e1d*/
+    vtable2 = (char *)((char *)&g_SidebarButtonState); /*0x6c6e1d*/
     while ( *(int *)&v6[4] < 1 || *(int *)v6 > 10 ) /*0x6c6e31*/
     {
       v3 = 0; /*0x6c6e37*/
@@ -2284,7 +2284,7 @@ AbstractClass * * sub_6C6DE0()
       memcpy(&vtable2[32776 * v3], &vtable2[32776 * v3 + 32776], 32776 * vtable0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
       vtable0 = (int)g_SidebarButtonState.AbstractClass - 1; /*0x6c6e81*/
       g_SidebarButtonState.AbstractClass = (void *)vtable0; /*0x6c6e82*/
-      if ( 3 * vtable0 <= (int)g_SidebarButtonState.? ) /*0x6c6e8d*/
+      if ( 3 * vtable0 <= (int)((char *)&g_SidebarButtonState) ) /*0x6c6e8d*/
       {
         Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
         vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
@@ -2293,11 +2293,11 @@ AbstractClass * * sub_6C6DE0()
         return; /*0x6c6ea1*/
       if ( vtable0 <= 0 ) /*0x6c6ea7*/
         goto LABEL_4; /*0x6c6ea7*/
-      vtable2 = (char *)g_SidebarButtonState.?; /*0x6c6ead*/
-      *(unsigned int *)v6 = *(unsigned int *)g_SidebarButtonState.?; /*0x6c6eb5*/
-      *(unsigned int *)&v6[4] = *((unsigned int *)g_SidebarButtonState.? + 1); /*0x6c6ec2*/
+      vtable2 = (char *)((char *)&g_SidebarButtonState); /*0x6c6ead*/
+      *(unsigned int *)v6 = *(unsigned int *)((char *)&g_SidebarButtonState); /*0x6c6eb5*/
+      *(unsigned int *)&v6[4] = *((unsigned int *)((char *)&g_SidebarButtonState) + 1); /*0x6c6ec2*/
       if ( *(int *)&v6[4] <= 0x8000 ) /*0x6c6ec6*/
-        qmemcpy(&v6[8], (char *)g_SidebarButtonState.? + 8, *(unsigned int *)&v6[4]); /*0x6c6edd*/
+        qmemcpy(&v6[8], (char *)((char *)&g_SidebarButtonState) + 8, *(unsigned int *)&v6[4]); /*0x6c6edd*/
       else
         *(unsigned int *)&v6[4] = 0; /*0x6c6ec8*/
     }
@@ -2315,7 +2315,7 @@ AbstractClass * * sub_6C6DE0()
       {
         if ( (int)g_SidebarButtonState.AbstractClass <= 0 ) /*0x6c6f21*/
           v4 = (char *)g_SidebarButtonState.AbstractClass - 1; /*0x6c6f23*/
-        v5 = (char *)g_SidebarButtonState.? + 32776 * (unsigned int)v4; /*0x6c6f32*/
+        v5 = (char *)((char *)&g_SidebarButtonState) + 32776 * (unsigned int)v4; /*0x6c6f32*/
         if ( v5 ) /*0x6c6f37*/
           qmemcpy(v5, v6, 0x8008u); /*0x6c6f42*/
       }

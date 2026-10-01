@@ -175,20 +175,20 @@ void SlaveManagerClass::Constructor()
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   BYTE1(this->creationFrame) = 0; /*0x6af37b*/
   this->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_48))[4] = 10; /*0x6af385*/
+  *(unsigned int *)&this->__pad_48[4] = 10; /*0x6af385*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_48))[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/
+  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/
-  this->? = &vt_SlaveManagerClass; /*0x6af3a1*/
-  this->? = &vt_SlaveManagerClass; /*0x6af3a8*/
-  this->? = &vt_SlaveManagerClass; /*0x6af3af*/
+  ((unsigned int *)this)[0] = &vt_SlaveManagerClass; /*0x6af3a1*/
+  ((unsigned int *)this)[0] = &vt_SlaveManagerClass; /*0x6af3a8*/
+  ((unsigned int *)this)[0] = &vt_SlaveManagerClass; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
   this->slaveType = 0; /*0x6af3bf*/
   this->slaveCount = 0; /*0x6af3c2*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_48))[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af3cb*/
+  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af3cb*/
   this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -829,10 +829,10 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
       Timer::Start((Timer *)&v3->__pad_48[8], 0); /*0x6b11c0*/
       v3->AbstractClass = &vt_SlaveManagerClass; /*0x6b11c5*/
-      v3->? = &vt_SlaveManagerClass; /*0x6b11cb*/
+      ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
-      v3->? = &vt_SlaveManagerClass; /*0x6b11d6*/
-      v3->? = &vt_SlaveManagerClass; /*0x6b11dd*/
+      ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11d6*/
+      ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/

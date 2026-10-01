@@ -32,13 +32,13 @@ int BombClass::AbstractClass()
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->AbstractClass = &vt_BombClass; /*0x4385e1*/
-  this->? = &vt_BombClass; /*0x4385e7*/
-  this->? = &vt_BombClass; /*0x4385ee*/
-  this->? = &vt_BombClass; /*0x4385f5*/
+  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385e7*/
+  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385ee*/
+  ((unsigned int *)this)[0] = &vt_BombClass; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((AudioController *)&this-((unsigned int *)(>audioController))[3]); /*0x438605*/
+  AudioController::Init((AudioController *)&this->audioController[3]); /*0x438605*/
   *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
@@ -63,10 +63,10 @@ void * BombClass::GetCurrentFrame()
 
   int v2; // ecx
 
-  if ( this-((unsigned int *)(>audioController))[0] == 1 ) /*0x438a04*/
+  if ( this->audioController[0] == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
-     * ((*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - this-((unsigned int *)(>audioController))[1])
+     * ((*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - this->audioController[1])
       / (*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048)
        / 6));
   if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
@@ -84,7 +84,7 @@ namespace gamemd {
 int BombClass::TimeToExplode()
 {
 
-  return !this-((unsigned int *)(>audioController))[0] /*0x438a8c*/
+  return !this->audioController[0] /*0x438a8c*/
       && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > this->audioController[2]
       && !this->BombClass_field_58;
 
@@ -151,7 +151,7 @@ namespace gamemd {
 int BombClass::IsDeathBomb()
 {
 
-  return this-((unsigned int *)(>audioController))[0]; /*0x4389f3*/
+  return this->audioController[0]; /*0x4389f3*/
 
 }
 } // namespace gamemd
@@ -186,9 +186,9 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
       aP0->AbstractClass = &vt_BombClass; /*0x438b67*/
-      aP0->? = &vt_BombClass; /*0x438b6d*/
-      aP0->? = &vt_BombClass; /*0x438b74*/
-      aP0->? = &vt_BombClass; /*0x438b7b*/
+      ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b6d*/
+      ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b74*/
+      ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b7b*/
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/
@@ -220,9 +220,9 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_BombClass; /*0x4393f7*/
-  Block->? = &vt_BombClass; /*0x4393fd*/
-  Block->? = &vt_BombClass; /*0x439404*/
-  Block->? = &vt_BombClass; /*0x43940b*/
+  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x4393fd*/
+  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x439404*/
+  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
   v5 = Block; /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/

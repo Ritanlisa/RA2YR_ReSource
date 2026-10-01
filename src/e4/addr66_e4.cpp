@@ -411,8 +411,8 @@ LABEL_17:
       if ( (double)(IDA_LODWORD(var84_4) - v39) / (double)IDA_SLODWORD(var84_4) != 1.0 )
       {
   double v47; // st5
-        st7_69 = *(float *)&v113-((unsigned int *)(>__pad_0))[8] * 1.570796326794897;
-        st6_69 = *(float *)&v113-((unsigned int *)(>__pad_0))[12] * 1.570796326794897;
+        st7_69 = *(float *)&v113->__pad_0[8] * 1.570796326794897;
+        st6_69 = *(float *)&v113->__pad_0[12] * 1.570796326794897;
         IDA_LODWORD(desiredFacing_4) = *(unsigned int *)(a1 + 44);
         if ( IDA_LODWORD(desiredFacing_4) )
         {
@@ -437,7 +437,7 @@ LABEL_17:
       else
       {
 LABEL_63:
-        *(float *)(a1 + 80) = *(float *)&v113-((unsigned int *)(>__pad_0))[12] * 1.570796326794897;
+        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * 1.570796326794897;
         *(unsigned int *)(a1 + 60) = 3;
         eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))(
                            *(unsigned int *)(a1 + 8),
@@ -538,7 +538,7 @@ LABEL_63:
           double v71 = -1.570796326794897;
         else
           v71 = ((Math *)((double)v127 / v70))->ArcTan();
-        *(float *)(a1 + 80) = *(float *)&v113-((unsigned int *)(>__pad_0))[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
+        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
       }
       else
       {
@@ -954,7 +954,7 @@ int E4Recv_664750::sub_664750(char a2)
   unsigned char v3[340]; // [esp+4h] [ebp-154h] BYREF
 
   memset(v3, 0, 338); /*0x664764*/
-  result = this->?; /*0x66476c*/
+  result = ((unsigned int *)this)[0]; /*0x66476c*/
   if ( result ) /*0x664772*/
   {
     v3[0] = 6; /*0x664780*/
@@ -1054,11 +1054,11 @@ int E4Recv_661960::sub_661960(short a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661995*/
     {
-      v3 = (char *)&this->? + (uint8_t)((int)this->? / 8); /*0x661991*/
-      *v3 ^= 1 << ((int)this->? & 7); /*0x66199e*/
+      v3 = (char *)&((unsigned int *)this)[0] + (uint8_t)((int)((unsigned int *)this)[0] / 8); /*0x661991*/
+      *v3 ^= 1 << ((int)((unsigned int *)this)[0] & 7); /*0x66199e*/
     }
-    v4 = (char *)this->? + 1; /*0x6619a4*/
-    this->? = v4; /*0x6619a6*/
+    v4 = (char *)((unsigned int *)this)[0] + 1; /*0x6619a4*/
+    ((unsigned int *)this)[0] = v4; /*0x6619a6*/
     if ( v4 == (char *)2048 ) /*0x6619ae*/
     {
       v5 = 0; /*0x6619b4*/
@@ -1070,10 +1070,10 @@ int E4Recv_661960::sub_661960(short a2)
       v14 = -1732584194; /*0x6619d6*/
       v15 = 271733878; /*0x6619de*/
       v16 = -1009589776; /*0x6619e6*/
-      p_abstractFlags = &this->?; /*0x6619ee*/
+      p_abstractFlags = &((unsigned int *)this)[0]; /*0x6619ee*/
       do /*0x661a35*/
       {
-        SHA1::Process(&v11, (int)&this->?, 256); /*0x6619fa*/
+        SHA1::Process(&v11, (int)&((unsigned int *)this)[0], 256); /*0x6619fa*/
         SHA1::Compute(&v11, Src); /*0x661a08*/
         v7 = 256 - v5; /*0x661a12*/
         if ( 256 - v5 > 0x14 ) /*0x661a17*/
@@ -1121,11 +1121,11 @@ int E4Recv_661A60::sub_661A60(int a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661a95*/
     {
-      v3 = (char *)&this->? + (uint8_t)((int)this->? / 8); /*0x661a91*/
-      *v3 ^= 1 << ((int)this->? & 7); /*0x661a9e*/
+      v3 = (char *)&((unsigned int *)this)[0] + (uint8_t)((int)((unsigned int *)this)[0] / 8); /*0x661a91*/
+      *v3 ^= 1 << ((int)((unsigned int *)this)[0] & 7); /*0x661a9e*/
     }
-    v4 = (char *)this->? + 1; /*0x661aa4*/
-    this->? = v4; /*0x661aa6*/
+    v4 = (char *)((unsigned int *)this)[0] + 1; /*0x661aa4*/
+    ((unsigned int *)this)[0] = v4; /*0x661aa6*/
     if ( v4 == (char *)2048 ) /*0x661aae*/
     {
       v5 = 0; /*0x661ab4*/
@@ -1137,10 +1137,10 @@ int E4Recv_661A60::sub_661A60(int a2)
       v15 = -1732584194; /*0x661ad6*/
       v16 = 271733878; /*0x661ade*/
       v17 = -1009589776; /*0x661ae6*/
-      p_abstractFlags = &this->?; /*0x661aee*/
+      p_abstractFlags = &((unsigned int *)this)[0]; /*0x661aee*/
       do /*0x661b35*/
       {
-        SHA1::Process(&v12, (int)&this->?, 256); /*0x661afa*/
+        SHA1::Process(&v12, (int)&((unsigned int *)this)[0], 256); /*0x661afa*/
         SHA1::Compute(&v12, Src); /*0x661b08*/
         v7 = 256 - v5; /*0x661b12*/
         if ( 256 - v5 > 0x14 ) /*0x661b17*/
@@ -1182,7 +1182,7 @@ void * E4Recv_661B70::sub_661B70()
   int v13; // [esp+4Ch] [ebp-48h]
   int v14; // [esp+50h] [ebp-44h]
 
-  p_abstractFlags = &this->?; /*0x661b7a*/
+  p_abstractFlags = &((unsigned int *)this)[0]; /*0x661b7a*/
   v7.__pad_0[0] = 0; /*0x661b7e*/
   v13 = 0; /*0x661b82*/
   v14 = 0; /*0x661b86*/
@@ -1192,7 +1192,7 @@ void * E4Recv_661B70::sub_661B70()
   v11 = 271733878; /*0x661ba2*/
   v12 = -1009589776; /*0x661baa*/
   v2 = 0; /*0x661bb2*/
-  v3 = &this->?; /*0x661bb4*/
+  v3 = &((unsigned int *)this)[0]; /*0x661bb4*/
   do /*0x661bfb*/
   {
     SHA1::Process(&v7, (int)p_abstractFlags, 256); /*0x661bc0*/
@@ -1358,9 +1358,9 @@ double E4Recv_662240::sub_662240()
   int v7; // [esp+10h] [ebp-10h]
   char *v8; // [esp+1Ch] [ebp-4h]
 
-  v1 = this->? - *((unsigned int *)this->? + 39); /*0x66225b*/
-  v2 = this->? - *((unsigned int *)this->? + 40); /*0x662263*/
-  v8 = (char *)this->? - *((unsigned int *)this->? + 41); /*0x662267*/
+  v1 = ((unsigned int *)this)[0] - *((unsigned int *)((unsigned int *)this)[0] + 39); /*0x66225b*/
+  v2 = ((unsigned int *)this)[0] - *((unsigned int *)((unsigned int *)this)[0] + 40); /*0x662263*/
+  v8 = (char *)((unsigned int *)this)[0] - *((unsigned int *)((unsigned int *)this)[0] + 41); /*0x662267*/
   v7 = v2 * v2 + v1 * v1; /*0x662277*/
   __asm /*0x66227b*/
   {
@@ -1603,15 +1603,15 @@ namespace gamemd {
 unsigned int * E4Recv_6638E0::sub_6638E0()
 {
 
-  this->? = 0; /*0x6638e4*/
-  this->? = 0; /*0x6638e7*/
-  LOBYTE(this->?) = 1; /*0x6638ea*/
-  BYTE1(this->?) = 0; /*0x6638ee*/
+  ((unsigned int *)this)[0] = 0; /*0x6638e4*/
+  ((unsigned int *)this)[0] = 0; /*0x6638e7*/
+  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6638ea*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x6638ee*/
   this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/
-  this->? = 10; /*0x6638f7*/
-  this->? = 0; /*0x6638fe*/
-  LOBYTE(this->?) = 0; /*0x663901*/
-  this->? = 0; /*0x663904*/
+  ((unsigned int *)this)[0] = 10; /*0x6638f7*/
+  ((unsigned int *)this)[0] = 0; /*0x6638fe*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x663901*/
+  ((unsigned int *)this)[0] = 0; /*0x663904*/
   return &this->AbstractClass; /*0x663907*/
 
 }
@@ -1672,11 +1672,11 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
     return -1; /*0x663cf5*/
   v5 = 0; /*0x663d0c*/
   Network::CopyAddress(v2, &a2, (int)&v10); /*0x663d0e*/
-  uniqueId = this->?; /*0x663d13*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x663d13*/
   v7 = 0; /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-    vtable1 = this->?; /*0x663d1c*/
+    vtable1 = ((unsigned int *)this)[0]; /*0x663d1c*/
     for ( i = vtable1; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/

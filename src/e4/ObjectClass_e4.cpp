@@ -646,7 +646,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   GroundHeight = 0; /*0x4de22b*/
   GroundHeight = Cell::GetGroundHeight(v38); /*0x4de23e*/
   if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v38)->flags[0] & 0x100) != 0 ) /*0x4de250*/
-    GroundHeight += (int)FootClass_Array.?; /*0x4de25d*/
+    GroundHeight += (int)((char *)&FootClass_Array); /*0x4de25d*/
   if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3213) && (uint8_t)Cell::IsPassable(v38) ) /*0x4de27d*/
     goto LABEL_36; /*0x4de284*/
   v12 = *v7; /*0x4de28c*/
@@ -682,7 +682,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   v40[0] = (v20 << 8) + 128; /*0x4de375*/
   v41 = Cell::GetGroundHeight(v40); /*0x4de388*/
   if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v40)->flags[0] & 0x100) != 0 ) /*0x4de39a*/
-    v41 += (int)FootClass_Array.?; /*0x4de3a7*/
+    v41 += (int)((char *)&FootClass_Array); /*0x4de3a7*/
   IsPassable = Cell::IsPassable(v40); /*0x4de3b5*/
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
@@ -1438,7 +1438,7 @@ LABEL_41:
          || (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this) == 36 && *(unsigned char *)(v6 + 689))
         && (!*(unsigned int *)&dword_A8B238
          || *(unsigned int *)&dword_A8B238 == 5
-         || (*((int (**)(void **))this->? + 4))(&this->?) != -2) )
+         || (*((int (**)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]) != -2) )
       {
         ObjectClass::SetDeployState((LogicClass *)this, 0); /*0x5f5040*/
       }
@@ -1527,7 +1527,7 @@ AbstractClass * * ObjectClass::Destroy2()
   v4 = 0; /*0x5f52ac*/
   if ( v7 ) /*0x5f52b0*/
     goto LABEL_10; /*0x5f52b0*/
-  if ( this && (this->? & 1) != 0 ) /*0x5f52c0*/
+  if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f52c0*/
     v4 = (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 202))(this) != 0; /*0x5f52d0*/
   if ( !v3 || !(uint8_t)House::IsHumanPlayer(v3) && !v4 ) /*0x5f52e3*/
 LABEL_10:
@@ -1952,11 +1952,11 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
   if ( (unsigned char)a5 ) /*0x71826f*/
   {
     p_owningHouseIndex = &this->owningHouseIndex; /*0x718664*/
-    if ( this->owningHouseIndex == g_BuildingLoadQueue_Array.? /*0x718681*/
+    if ( this->owningHouseIndex == ((char *)&g_BuildingLoadQueue_Array) /*0x718681*/
       && this->fallRate == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
-      && this->nextObject == (ObjectClass *)g_BuildingLoadQueue_Array.?[0] )
+      && this->nextObject == (ObjectClass *)((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
     {
-      vtable3 = this->?; /*0x71868b*/
+      vtable3 = ((unsigned int *)this)[0]; /*0x71868b*/
       v43 = vtable3[39]; /*0x71869a*/
       v44 = vtable3[40]; /*0x7186a1*/
       v45 = vtable3[41]; /*0x7186a8*/
@@ -1964,24 +1964,24 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     }
     else
     {
-      (*(void (**)(int *))(*(unsigned int *)this->? + 244))(&this->owningHouseIndex); /*0x718689*/
+      (*(void (**)(int *))(*(unsigned int *)((unsigned int *)this)[0] + 244))(&this->owningHouseIndex); /*0x718689*/
     }
-    v31 = (char *)this->? + 648; /*0x7186be*/
+    v31 = (char *)((unsigned int *)this)[0] + 648; /*0x7186be*/
     *p_owningHouseIndex = *(unsigned int *)v31; /*0x7186c6*/
     this->fallRate = *((unsigned int *)v31 + 1); /*0x7186cb*/
     this->nextObject = (ObjectClass *)*((unsigned int *)v31 + 2); /*0x7186d1*/
     this->nextObject = (ObjectClass *)Cell::GetGroundHeight(&this->owningHouseIndex); /*0x7186e4*/
     if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &this->owningHouseIndex)->flags[0] & 0x100) == 0 /*0x7186fa*/
-      || (v32 = this->?, v32[140]) )
+      || (v32 = ((unsigned int *)this)[0], v32[140]) )
     {
-      *((unsigned char *)this->? + 140) = 0; /*0x718719*/
+      *((unsigned char *)((unsigned int *)this)[0] + 140) = 0; /*0x718719*/
     }
     else
     {
       v32[140] = 1; /*0x718704*/
       this->nextObject = (ObjectClass *)((char *)this->nextObject + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))); /*0x718711*/
     }
-    (*(void (**)(void *, int *))(*(unsigned int *)this->? + 240))(this->?, &this->owningHouseIndex); /*0x718726*/
+    (*(void (**)(void *, int *))(*(unsigned int *)((unsigned int *)this)[0] + 240))(((unsigned int *)this)[0], &this->owningHouseIndex); /*0x718726*/
   }
   else
   {
@@ -1994,7 +1994,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     {
       if ( !(*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) /*0x718305*/
         && (*((int (**)(ObjectClass *))altObject->AbstractClass + 11))(altObject) == 15
-        && (*(int (**)(void *))(*(unsigned int *)this->? + 44))(this->?) == 15 )
+        && (*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 44))(((unsigned int *)this)[0]) == 15 )
       {
         v8 = (unsigned int *)(*((int (**)(ObjectClass *, int *))altObject->AbstractClass + 18))(altObject, &v43); /*0x718310*/
         if ( a2 == *v8 && a3 == v8[1] && a4 == v8[2] ) /*0x718339*/
@@ -2014,14 +2014,14 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
         }
       }
       else if ( (*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) /*0x718397*/
-             || (altObject->? & 4) == 0 )
+             || (((unsigned int *)altObject)[0] & 4) == 0 )
       {
         if ( (*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) ) /*0x7183d4*/
         {
-          *(unsigned int *)v39 = *(unsigned int *)((*(int (**)(void *))(*(unsigned int *)this->? + 132))(this->?) + 160); /*0x7183f5*/
-          (*(void (**)(void *, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->? /*0x71840f*/
+          *(unsigned int *)v39 = *(unsigned int *)((*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 132))(((unsigned int *)this)[0]) + 160); /*0x7183f5*/
+          (*(void (**)(void *, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)((unsigned int *)this)[0] /*0x71840f*/
                                                                                                  + 364))(
-            this->?,
+            ((unsigned int *)this)[0],
             v39,
             0,
             *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
@@ -2030,7 +2030,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
             0,
             0);
         }
-        else if ( (altObject->? & 4) == 0 ) /*0x718428*/
+        else if ( (((unsigned int *)altObject)[0] & 4) == 0 ) /*0x718428*/
         {
           LOBYTE(a5) = 1; /*0x71842a*/
         }
@@ -2056,7 +2056,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     {
       LOBYTE(a5) = 1; /*0x71846e*/
     }
-    v13 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)this->? + 72))(this->?, &v43); /*0x71847d*/
+    v13 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)((unsigned int *)this)[0] + 72))(((unsigned int *)this)[0], &v43); /*0x71847d*/
     LOWORD(v37) = *v13 / 256; /*0x718490*/
     HIWORD(v37) = v13[1] / 256; /*0x7184a8*/
     *(unsigned int *)v39 = v37; /*0x7184b1*/
@@ -2067,7 +2067,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       && !ObjectClass::processPointerInvalid
       || (unsigned char)a5 )
     {
-      v14 = *(unsigned int *)((*(int (**)(void *))(*(unsigned int *)this->? + 132))(this->?) + 1460); /*0x718505*/
+      v14 = *(unsigned int *)((*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 132))(((unsigned int *)this)[0]) + 1460); /*0x718505*/
       switch ( v14 ) /*0x71850e*/
       {
         case 9: /*0x71850e*/
@@ -2112,7 +2112,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v41); /*0x71861f*/
       v23 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v22 + 72))(v22, &v43); /*0x71862d*/
       v24 = *v23 + v19; /*0x718635*/
-      v25 = (int *)((char *)this->? + 648); /*0x71863d*/
+      v25 = (int *)((char *)((unsigned int *)this)[0] + 648); /*0x71863d*/
       v26 = v20 + v23[1]; /*0x718643*/
       v27 = v21 + v23[2]; /*0x718645*/
       *v25 = v24; /*0x718647*/
@@ -2122,11 +2122,11 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     }
   }
   v33 = &this->owningHouseIndex; /*0x718735*/
-  if ( this->owningHouseIndex == g_BuildingLoadQueue_Array.? /*0x718754*/
+  if ( this->owningHouseIndex == ((char *)&g_BuildingLoadQueue_Array) /*0x718754*/
     && this->fallRate == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
-    && this->nextObject == (ObjectClass *)g_BuildingLoadQueue_Array.?[0] )
+    && this->nextObject == (ObjectClass *)((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
   {
-    v34 = (int *)this->?; /*0x71875e*/
+    v34 = (int *)((unsigned int *)this)[0]; /*0x71875e*/
     v43 = v34[39]; /*0x71876d*/
     v44 = v34[40]; /*0x718774*/
     v45 = v34[41]; /*0x71877b*/
@@ -2135,7 +2135,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
   }
   else
   {
-    v34 = (int *)this->?; /*0x718756*/
+    v34 = (int *)((unsigned int *)this)[0]; /*0x718756*/
     v35 = *v34; /*0x718759*/
   }
   (*(void (**)(int *, int *))(v35 + 240))(v34, v33); /*0x718789*/
@@ -2170,10 +2170,10 @@ int ObjectClass::processDeath()
   int v1; // edx
   char *i; // esi
 
-  v1 = stru_B1D290.? - 1; /*0x74cd68*/
-  if ( stru_B1D290.? - 1 < 0 ) /*0x74cd6d*/
+  v1 = ((char *)&stru_B1D290) - 1; /*0x74cd68*/
+  if ( ((char *)&stru_B1D290) - 1 < 0 ) /*0x74cd6d*/
     return 0; /*0x74cda2*/
-  for ( i = (char *)stru_B1D290.? + 4 * v1; /*0x74cd78*/
+  for ( i = (char *)((char *)&stru_B1D290) + 4 * v1; /*0x74cd78*/
         *(unsigned short *)(*(unsigned int *)i + 248) != LOWORD(this->AbstractClass)
      || *(unsigned short *)(*(unsigned int *)i + 250) != HIWORD(this->AbstractClass);
         i -= 4 )
@@ -2181,7 +2181,7 @@ int ObjectClass::processDeath()
     if ( --v1 < 0 ) /*0x74cd97*/
       return 0; /*0x74cd97*/
   }
-  return *((unsigned int *)stru_B1D290.? + v1); /*0x74cd9e*/
+  return *((unsigned int *)((char *)&stru_B1D290) + v1); /*0x74cd9e*/
 
 }
 } // namespace ra2
@@ -2311,7 +2311,7 @@ int ObjectClass::updateMissionState(int a2)
   result = a2; /*0x556b57*/
   if ( !stru_A8EB00.ObjectTypeClass[30] ) /*0x556b5b*/
     result = 2 * a2; /*0x556b5d*/
-  this->? = (void *)result; /*0x556b5f*/
+  ((unsigned int *)this)[0] = (void *)result; /*0x556b5f*/
   return result; /*0x556b62*/
 
 }

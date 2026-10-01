@@ -24,9 +24,9 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     {
       ((AbstractClass *)((AbstractClass *)aP0))->Constructor(); /*0x7281ba*/
       aP0->ObjectClass = &vt_TubeClass; /*0x7281bf*/
-      aP0->? = &vt_TubeClass; /*0x7281c5*/
-      aP0->? = &vt_TubeClass; /*0x7281cc*/
-      aP0->? = &vt_TubeClass; /*0x7281d3*/
+      ((unsigned int *)aP0)[0] = &vt_TubeClass; /*0x7281c5*/
+      ((unsigned int *)aP0)[0] = &vt_TubeClass; /*0x7281cc*/
+      ((unsigned int *)aP0)[0] = &vt_TubeClass; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

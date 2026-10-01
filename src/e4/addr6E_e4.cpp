@@ -142,7 +142,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
                     v7,
                     &a3,
                     0,
-                    dword_8871E0->?[5],
+                    ((unsigned int *)dword_8871E0)[5],
                     0,
                     1,
                     0,
@@ -191,7 +191,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  *(unsigned int *)v6 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, this-((unsigned int *)(>ambientSoundController))[2]); /*0x6e27ab*/
+  *(unsigned int *)v6 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2]); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
@@ -283,8 +283,8 @@ int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
     *(unsigned int *)(*(unsigned int *)v6 + 1588) = *(unsigned int *)&this->isAliveFlag; /*0x6e385b*/
   }
 LABEL_7:
-  v7 = stru_A80220.? - 1; /*0x6e3861*/
-  for ( result = 1; v7 >= 0; *(unsigned char *)(*((unsigned int *)stru_A80220.? + v7 + 1) + 508) = 1 ) /*0x6e3870*/
+  v7 = ((char *)&stru_A80220) - 1; /*0x6e3861*/
+  for ( result = 1; v7 >= 0; *(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + v7 + 1) + 508) = 1 ) /*0x6e3870*/
     --v7; /*0x6e3878*/
   return result; /*0x6e3867*/
 
@@ -581,10 +581,10 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v23[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = (TechnoClass *)this-((unsigned int *)(>customSound_controller))[1]; /*0x6efc76*/
+  v3 = (TechnoClass *)this->customSound_controller[1]; /*0x6efc76*/
   v4 = -1; /*0x6efc79*/
   v20 = (int)this; /*0x6efc7f*/
-  for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].? ) /*0x6efc85*/
+  for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1] ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 1532); /*0x6efc91*/
     if ( (uint8_t)TechnoClass::IsDeployed(v3) /*0x6efcba*/
@@ -708,7 +708,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
   unsigned short *v9; // eax
   int v11; // [esp+8h] [ebp-4h] BYREF
 
-  v5 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v11, this-((unsigned int *)(>ambientSoundController))[2]); /*0x6e0097*/
+  v5 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2]); /*0x6e0097*/
   v6 = 0; /*0x6e009e*/
   v11 = v5; /*0x6e00a0*/
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
@@ -781,7 +781,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e07a3*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e07b5*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -798,7 +798,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0803*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e0815*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -815,7 +815,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0863*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&this->?[44]); /*0x6e0875*/
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 
@@ -1520,7 +1520,7 @@ namespace gamemd {
 unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
 {
 
-  LOBYTE(this->?) = 11; /*0x6e6b75*/
+  LOBYTE(((unsigned int *)this)[0]) = 11; /*0x6e6b75*/
   this->AbstractClass = (void *)(*a2 / 256 + 1000 * (a2[1] / 256)); /*0x6e6ba4*/
   return this; /*0x6e6ba3*/
 
@@ -1676,25 +1676,25 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   int v6; // edx
 
   result = &this->AbstractClass; /*0x6e8004*/
-  this->? = &vt_INoticeSink; /*0x6e8008*/
-  this->? = &vt_INoticeSource; /*0x6e800f*/
-  this->? = *(unsigned int *)(a2 + 16); /*0x6e801c*/
-  LOBYTE(this->?) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
-  this->? = *(unsigned int *)(a2 + 24); /*0x6e8028*/
-  this->? = *(unsigned int *)(a2 + 28); /*0x6e802e*/
-  LOBYTE(this->?) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
+  ((unsigned int *)this)[0] = &vt_INoticeSink; /*0x6e8008*/
+  ((unsigned int *)this)[0] = &vt_INoticeSource; /*0x6e800f*/
+  ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 16); /*0x6e801c*/
+  LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
+  ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 24); /*0x6e8028*/
+  ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 28); /*0x6e802e*/
+  LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
   this->AbstractClass = &vt_AbstractClass; /*0x6e803f*/
-  this->? = &vt_AbstractClass; /*0x6e8045*/
-  this->? = &vt_AbstractClass; /*0x6e804c*/
-  this->? = &vt_AbstractClass; /*0x6e8053*/
+  ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e8045*/
+  ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e804c*/
+  ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e8053*/
   qmemcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   qmemcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   qmemcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
   this->AbstractClass = &vt_TaskForceClass; /*0x6e807e*/
-  this->? = &vt_TaskForceClass; /*0x6e8084*/
-  this->? = &vt_TaskForceClass; /*0x6e808b*/
-  this->? = &vt_TaskForceClass; /*0x6e8092*/
+  ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e8084*/
+  ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e808b*/
+  ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e8092*/
   v3 = &this->location[2]; /*0x6e809f*/
   result[38] = *(unsigned int *)(a2 + 152); /*0x6e80a5*/
   result[39] = *(unsigned int *)(a2 + 156); /*0x6e80b1*/
@@ -1906,7 +1906,7 @@ char E4Recv_6EC370::sub_6EC370()
   int v1; // ecx
   char result; // al
 
-  v1 = *(unsigned int *)&this->?[23]; /*0x6ec370*/
+  v1 = *(unsigned int *)&((unsigned int *)this)[23]; /*0x6ec370*/
   result = 1; /*0x6ec373*/
   if ( v1 ) /*0x6ec377*/
   {

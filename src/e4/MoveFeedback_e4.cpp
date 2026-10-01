@@ -155,7 +155,7 @@ char MoveFeedback::AddRef(int a2)
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x40b975*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x40b975*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
@@ -182,7 +182,7 @@ int MoveFeedback::Draw(unsigned int * a2)
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x40bb9e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40bb9e*/
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -220,12 +220,12 @@ void MoveFeedback::Destroy()
 
   void *v2; // eax
 
-  v2 = *(void **)&this-((unsigned int *)(>m_1))[3]; /*0x40be56*/
+  v2 = *(void **)&this->m_1[3]; /*0x40be56*/
   this->m_10 = 0; /*0x40be59*/
   if ( v2 && BYTE1(this->m_C) ) /*0x40be60*/
   {
     __3_YAXPAX_Z(v2); /*0x40be66*/
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x40be6e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40be6e*/
   }
   BYTE1(this->m_C) = 0; /*0x40be71*/
   this->m_8 = 0; /*0x40be74*/
@@ -238,7 +238,7 @@ unsigned int MoveFeedback::GetIndex2(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x40be80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x40be95*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
 
@@ -264,20 +264,20 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x40c068*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x40c068*/
     {
       m_8 = this->m_8; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x40c07c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
       if ( BYTE1(this->m_C) ) /*0x40c08e*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x40c099*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x40c0a1*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40c099*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v4; /*0x40c0aa*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
     BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
   }
@@ -305,7 +305,7 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x40c0ee*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40c0ee*/
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/

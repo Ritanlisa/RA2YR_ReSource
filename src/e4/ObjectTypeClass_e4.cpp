@@ -309,9 +309,9 @@ BulletTypeClass * ObjectTypeClass::Construct( ObjectTypeClass * aP1)
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
   this->AbstractTypeClass = &vt_ObjectTypeClass; /*0x5f73d9*/
-  this->? = &vt_ObjectTypeClass; /*0x5f73df*/
-  this->? = &vt_ObjectTypeClass; /*0x5f73e6*/
-  this->? = &vt_ObjectTypeClass; /*0x5f73ed*/
+  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73df*/
+  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73e6*/
+  ((unsigned int *)this)[0] = &vt_ObjectTypeClass; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
 }
@@ -688,17 +688,17 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   strcpy(Source, this->ImageFile); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
     (INIClass *)aP1,
-    (uint8_t *)this->?,
+    (uint8_t *)((unsigned int *)this)[0],
     (uint8_t *)g_INI_Key_Image,
     Source,
     this->ImageFile,
     25);
   v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
-  INIClass::GetString((INIClass *)aP1, (uint8_t *)this->?, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
+  INIClass::GetString((INIClass *)aP1, (uint8_t *)((unsigned int *)this)[0], aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          (INIClass *)aP1,
-         (uint8_t *)this->?,
+         (uint8_t *)((unsigned int *)this)[0],
          aCrushsound,
          &g_INI_DefaultBuffer,
          (char *)&Destination,
@@ -712,7 +712,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   AmbientSound = this->AmbientSound; /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
           (INIClass *)aP1,
-          (uint8_t *)this->?,
+          (uint8_t *)((unsigned int *)this)[0],
           aAmbientsound,
           &g_INI_DefaultBuffer,
           (char *)&Destination,
@@ -723,54 +723,54 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   }
   Crushable = this->Crushable; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aCrushable, Crushable); /*0x5f9412*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrushable, Crushable); /*0x5f9412*/
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
-  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aBombable, Bombable); /*0x5f9431*/
-  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
+  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aBombable, Bombable); /*0x5f9431*/
+  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
   this->__pad_14D[155] = v9; /*0x5f9451*/
-  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
+  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
   this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                            (int *)aP1,
-                           (uint8_t *)this->?,
+                           (uint8_t *)((unsigned int *)this)[0],
                            aRadarinvisible,
                            RadarInvisible);
-  v12 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aSelectable, this->Selectable); /*0x5f9494*/
+  v12 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aSelectable, this->Selectable); /*0x5f9494*/
   LegalTarget = this->LegalTarget; /*0x5f9499*/
   this->Selectable = v12; /*0x5f949f*/
-  v14 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aLegaltarget, LegalTarget); /*0x5f94ae*/
+  v14 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aLegaltarget, LegalTarget); /*0x5f94ae*/
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
-  this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (uint8_t *)this->?, g_INI_Key_Armor, v29); /*0x5f94cd*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)this->?, aStrength, this->Strength); /*0x5f94e2*/
+  this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (uint8_t *)((unsigned int *)this)[0], g_INI_Key_Armor, v29); /*0x5f94cd*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)((unsigned int *)this)[0], aStrength, this->Strength); /*0x5f94e2*/
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
-  v17 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aImmune, Immune); /*0x5f94fc*/
+  v17 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aImmune, Immune); /*0x5f94fc*/
   Insignificant = this->Insignificant; /*0x5f9509*/
   this->Immune = v17; /*0x5f9510*/
   this->Insignificant = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                           (int *)aP1,
-                          (uint8_t *)this->?,
+                          (uint8_t *)((unsigned int *)this)[0],
                           aInsignificant,
                           Insignificant);
   this->HasRadialIndicator = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                                (int *)aP1,
-                               (uint8_t *)this->?,
+                               (uint8_t *)((unsigned int *)this)[0],
                                aHasradialindic,
                                this->HasRadialIndicator);
   Coord = INIClass::GetCoord( /*0x5f954f*/
             (INIClass *)aP1,
             (int)&v34,
-            (uint8_t *)this->?,
+            (uint8_t *)((unsigned int *)this)[0],
             aRadialcolor,
             (uint8_t *)this->__pad_98);
   IgnoresFirestorm = this->IgnoresFirestorm; /*0x5f9557*/
   *(unsigned short *)this->__pad_98 = *(unsigned short *)Coord; /*0x5f955d*/
   this->__pad_98[2] = *(unsigned char *)(Coord + 2); /*0x5f956c*/
-  v20 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
+  v20 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
   UseLineTrail = this->UseLineTrail; /*0x5f9580*/
   this->IgnoresFirestorm = v20; /*0x5f958c*/
   this->UseLineTrail = INIClass::ReadBool_Overwrite( /*0x5f959d*/
@@ -980,15 +980,15 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 
   v1 = dword_A83D4C; /*0x712040*/
   if ( !dword_A83D4C ) /*0x71204a*/
-    return *(unsigned int *)&this->?[1548]; /*0x7120bf*/
+    return *(unsigned int *)&((unsigned int *)this)[1548]; /*0x7120bf*/
   if ( dword_A83D4C[1].__pad_C[19] ) /*0x71204c*/
   {
     if ( (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
     {
-      result = *(unsigned int *)&this->?[1580]; /*0x712062*/
+      result = *(unsigned int *)&((unsigned int *)this)[1580]; /*0x712062*/
       if ( result ) /*0x71206a*/
       {
-        if ( this->?[2986] ) /*0x71206c*/
+        if ( ((unsigned int *)this)[2986] ) /*0x71206c*/
           return result; /*0x712074*/
       }
     }
@@ -998,13 +998,13 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     || !v1[1].__pad_C[20]
     || (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 40
     && ((*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 7
-     || !*(unsigned int *)&this->?[804]) )
+     || !*(unsigned int *)&((unsigned int *)this)[804]) )
   {
-    return *(unsigned int *)&this->?[1548]; /*0x7120a1*/
+    return *(unsigned int *)&((unsigned int *)this)[1548]; /*0x7120a1*/
   }
-  result = *(unsigned int *)&this->?[1580]; /*0x7120ab*/
-  if ( !result || !this->?[2986] ) /*0x7120b5*/
-    return *(unsigned int *)&this->?[1548]; /*0x7120bd*/
+  result = *(unsigned int *)&((unsigned int *)this)[1580]; /*0x7120ab*/
+  if ( !result || !((unsigned int *)this)[2986] ) /*0x7120b5*/
+    return *(unsigned int *)&((unsigned int *)this)[1548]; /*0x7120bd*/
   return result; /*0x7120c5*/
 
 }
@@ -1110,7 +1110,7 @@ int ObjectTypeClass::DeserializeArrays()
     *v20 = v12; /*0x717142*/
     v13 = v12 + 4 * *(unsigned int *)&v19[2].Selectable + 4; /*0x71714a*/
     *v20 = v13; /*0x71714e*/
-    v14 = v13 + 4 * *(unsigned int *)&v19[1].?[44] + 4; /*0x717156*/
+    v14 = v13 + 4 * *(unsigned int *)&((unsigned int *)&v19[1])[44] + 4; /*0x717156*/
     *v20 = v14; /*0x71715a*/
     v15 = v14 + 4 * (int)v19[2].AlphaImage + 4; /*0x717162*/
     *v20 = v15; /*0x717166*/
@@ -1160,28 +1160,28 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     return &this->AbstractTypeClass; /*0x717c0a*/
   (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
   v3 = (void *)a2[2]; /*0x717c11*/
-  this->? = v3; /*0x717c16*/
+  ((unsigned int *)this)[0] = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
-    this->? = 0; /*0x717c5a*/
-    BYTE1(this->?) = 0; /*0x717c61*/
+    ((unsigned int *)this)[0] = 0; /*0x717c5a*/
+    BYTE1(((unsigned int *)this)[0]) = 0; /*0x717c61*/
     return &this->AbstractTypeClass; /*0x717c65*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
-  this->? = v4; /*0x717c2b*/
+  ((unsigned int *)this)[0] = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return &this->AbstractTypeClass; /*0x717c30*/
-  vtable2 = this->?; /*0x717c32*/
+  vtable2 = ((unsigned int *)this)[0]; /*0x717c32*/
   v6 = 0; /*0x717c35*/
-  BYTE1(this->?) = 1; /*0x717c39*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
     return &this->AbstractTypeClass; /*0x717c3d*/
   do /*0x717c51*/
   {
-    *((unsigned int *)this->? + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x717c48*/
+    *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x717c48*/
     ++v6; /*0x717c4e*/
   }
-  while ( v6 < (int)this->? ); /*0x717c51*/
+  while ( v6 < (int)((unsigned int *)this)[0] ); /*0x717c51*/
   return &this->AbstractTypeClass; /*0x717c55*/
 
 }
@@ -1207,8 +1207,8 @@ unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
 
   a0->AbstractTypeClass = (void *)*aP1; /*0x41cf8d*/
-  a0->? = (void *)aP1[1]; /*0x41cf92*/
-  a0->? = (void *)aP1[2]; /*0x41cf99*/
+  ((unsigned int *)a0)[0] = (void *)aP1[1]; /*0x41cf92*/
+  ((unsigned int *)a0)[0] = (void *)aP1[2]; /*0x41cf99*/
   return &a0->AbstractTypeClass; /*0x41cf95*/
 
 }
@@ -1472,8 +1472,8 @@ namespace gamemd {
 int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 {
 
-  if ( *(unsigned int *)&this->? ) /*0x5f1c30*/
-    return (*(int (**)(unsigned int, int, int))(**(unsigned int **)&this->?[8] + 16))(*(unsigned int *)&this->?[8], aP1, aP2); /*0x5f1c4b*/
+  if ( *(unsigned int *)&((unsigned int *)this)[0] ) /*0x5f1c30*/
+    return (*(int (**)(unsigned int, int, int))(**(unsigned int **)&((unsigned int *)this)[8] + 16))(*(unsigned int *)&((unsigned int *)this)[8], aP1, aP2); /*0x5f1c4b*/
   else
     return 0; /*0x5f1c37*/
 
@@ -1493,14 +1493,14 @@ void ObjectTypeClass::ReleaseWaveAndString()
     WaveClass::Destroy((WaveClass *)this->AbstractTypeClass); /*0x5f61ac*/
     __3_YAXPAX_Z(vtable0); /*0x5f61b2*/
   }
-  vtable1 = (String *)this->?; /*0x5f61ba*/
+  vtable1 = (String *)((unsigned int *)this)[0]; /*0x5f61ba*/
   this->AbstractTypeClass = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
   {
     String::Release(vtable1); /*0x5f61c9*/
     __3_YAXPAX_Z(vtable1); /*0x5f61cf*/
   }
-  this->? = 0; /*0x5f61d7*/
+  ((unsigned int *)this)[0] = 0; /*0x5f61d7*/
 
 }
 } // namespace gamemd
@@ -1510,8 +1510,8 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
 
   a1->AbstractTypeClass = (void *)10; /*0x5f75cd*/
-  a1->? = (void *)10; /*0x5f75d3*/
-  a1->? = (void *)10; /*0x5f75d6*/
+  ((unsigned int *)a1)[0] = (void *)10; /*0x5f75d3*/
+  ((unsigned int *)a1)[0] = (void *)10; /*0x5f75d6*/
   return &a1->AbstractTypeClass; /*0x5f75d9*/
 
 }
@@ -1586,10 +1586,10 @@ int ObjectTypeClass::FreeLoaderBuffer()
 
   __3_YAXPAX_Z(this->AbstractTypeClass); /*0x5f9b66*/
   this->AbstractTypeClass = 0; /*0x5f9b70*/
-  this->? = 0; /*0x5f9b72*/
-  this->? = 0; /*0x5f9b75*/
-  LOBYTE(this->?) = 0; /*0x5f9b78*/
-  this->? = 0; /*0x5f9b7b*/
+  ((unsigned int *)this)[0] = 0; /*0x5f9b72*/
+  ((unsigned int *)this)[0] = 0; /*0x5f9b75*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x5f9b78*/
+  ((unsigned int *)this)[0] = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 
 }
@@ -1627,16 +1627,16 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
   if ( this != (ObjectTypeClass *)aP2 ) /*0x7179d7*/
   {
     this->AbstractTypeClass = (void *)*aP2; /*0x7179dd*/
-    this->? = (void *)aP2[1]; /*0x7179e2*/
-    this->? = (void *)aP2[2]; /*0x7179e8*/
-    this->? = (void *)aP2[3]; /*0x7179ee*/
-    LOWORD(this->?) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
+    ((unsigned int *)this)[0] = (void *)aP2[1]; /*0x7179e2*/
+    ((unsigned int *)this)[0] = (void *)aP2[2]; /*0x7179e8*/
+    ((unsigned int *)this)[0] = (void *)aP2[3]; /*0x7179ee*/
+    LOWORD(((unsigned int *)this)[0]) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
   }
   *(unsigned int *)aP1 = this->AbstractTypeClass; /*0x717a01*/
-  *(unsigned int *)(aP1 + 4) = this->?; /*0x717a06*/
-  *(unsigned int *)(aP1 + 8) = this->?; /*0x717a0c*/
-  *(unsigned int *)(aP1 + 12) = this->?; /*0x717a12*/
-  *(unsigned short *)(aP1 + 16) = this->?; /*0x717a1a*/
+  *(unsigned int *)(aP1 + 4) = ((unsigned int *)this)[0]; /*0x717a06*/
+  *(unsigned int *)(aP1 + 8) = ((unsigned int *)this)[0]; /*0x717a0c*/
+  *(unsigned int *)(aP1 + 12) = ((unsigned int *)this)[0]; /*0x717a12*/
+  *(unsigned short *)(aP1 + 16) = ((unsigned int *)this)[0]; /*0x717a1a*/
   return aP1; /*0x717a19*/
 
 }
@@ -1661,7 +1661,7 @@ int ObjectTypeClass::loadTypeMember_5717A50(int a2)
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  this->? = (void *)result; /*0x717a5d*/
+  ((unsigned int *)this)[0] = (void *)result; /*0x717a5d*/
   return result; /*0x717a60*/
 
 }
@@ -1671,7 +1671,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A70()
 {
 
-  return (int)this->?; /*0x717a73*/
+  return (int)((unsigned int *)this)[0]; /*0x717a73*/
 
 }
 } // namespace gamemd
@@ -1685,7 +1685,7 @@ int ObjectTypeClass::loadTypeMember_5717A80(int a2)
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
-  this->? = (void *)result; /*0x717a8d*/
+  ((unsigned int *)this)[0] = (void *)result; /*0x717a8d*/
   return result; /*0x717a90*/
 
 }
@@ -1695,7 +1695,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AA0()
 {
 
-  return (int)this->?; /*0x717aa3*/
+  return (int)((unsigned int *)this)[0]; /*0x717aa3*/
 
 }
 } // namespace gamemd
@@ -1709,7 +1709,7 @@ int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
-  this->? = (void *)result; /*0x717abd*/
+  ((unsigned int *)this)[0] = (void *)result; /*0x717abd*/
   return result; /*0x717ac0*/
 
 }
@@ -1719,7 +1719,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AD0()
 {
 
-  return (int)this->?; /*0x717ad3*/
+  return (int)((unsigned int *)this)[0]; /*0x717ad3*/
 
 }
 } // namespace gamemd

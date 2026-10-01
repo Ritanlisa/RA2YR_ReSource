@@ -1150,11 +1150,11 @@ unsigned int * E4Recv_6107E0::sub_6107E0()
 {
 
   this->AbstractClass = 0; /*0x6107e4*/
-  this->? = 0; /*0x6107e6*/
-  this->? = 0; /*0x6107e9*/
-  this->? = 0; /*0x6107ec*/
-  this->? = 0; /*0x6107ef*/
-  LOWORD(this->?) = 0; /*0x6107f2*/
+  ((unsigned int *)this)[0] = 0; /*0x6107e6*/
+  ((unsigned int *)this)[0] = 0; /*0x6107e9*/
+  ((unsigned int *)this)[0] = 0; /*0x6107ec*/
+  ((unsigned int *)this)[0] = 0; /*0x6107ef*/
+  LOWORD(((unsigned int *)this)[0]) = 0; /*0x6107f2*/
   *((unsigned int *)this + 69) = 0; /*0x6107f6*/
   *((unsigned int *)this + 70) = 0; /*0x6107fc*/
   *((unsigned int *)this + 71) = 0; /*0x610802*/

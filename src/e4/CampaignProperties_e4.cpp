@@ -12,7 +12,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Seek( int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x5d277a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d277a*/
 
 }
 } // namespace gamemd
@@ -32,7 +32,7 @@ int CampaignProperties_WorldDominationTour_22::Read( unsigned int * a2)
   result = 0; /*0x5d2911*/
   if ( m_8 <= 0 ) /*0x5d2915*/
     return -1; /*0x5d292c*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x5d291b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d291b*/
   {
     if ( ++result >= m_8 ) /*0x5d292a*/
       return -1; /*0x5d292a*/
@@ -48,7 +48,7 @@ unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x5d2940*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5d2955*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d2955*/
   else
     return 0; /*0x5d2947*/
 
@@ -83,7 +83,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::AddRef()
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 16); /*0x76f0fd*/
+  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0fd*/
 
 }
 } // namespace gamemd

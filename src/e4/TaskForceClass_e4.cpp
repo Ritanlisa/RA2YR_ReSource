@@ -82,7 +82,7 @@ int TaskForceClass::Construct(ObjectClass * aP1)
 
   AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
   this->TaskForceClass_field_0x98 = (AbstractClass *)-1; /*0x6e7e8f*/
-  this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e7e99*/
+  this->TaskForceClass_field_0x9C[0] = 0; /*0x6e7e99*/
   *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
   *(unsigned int *)this->__pad_0 = &vt_TaskForceClass; /*0x6e7ead*/
   this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e7eb3*/
@@ -233,7 +233,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
-  this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e844f*/
+  this->TaskForceClass_field_0x9C[0] = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
     sprintf(v8.__pad_8, "%d", v3); /*0x6e8460*/

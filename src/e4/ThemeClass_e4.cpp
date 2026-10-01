@@ -28,7 +28,7 @@ namespace gamemd {
 int ThemeClass::RequestBuffer()
 {
 
-  return RequestBufferMixer((unsigned int *)(this-((unsigned int *)(>m_Name))[3] + 16), 0);
+  return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
 
 }
 } // namespace gamemd
@@ -37,7 +37,7 @@ namespace gamemd {
 int ThemeClass::GetValue()
 {
 
-  return *(unsigned long long *)&this-((unsigned int *)(>m_Name))[6]; /*0x408146*/
+  return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
 
 }
 } // namespace gamemd

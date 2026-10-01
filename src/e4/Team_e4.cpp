@@ -168,14 +168,14 @@ int Team::ReleaseAll(ObjectClass * aP1)
   int v5; // ecx
 
   v3 = 0; /*0x5d26c4*/
-  result = *(unsigned int *)&this-((unsigned int *)(>__pad_0))[40]; /*0x5d26c6*/
+  result = *(unsigned int *)&this->__pad_0[40]; /*0x5d26c6*/
   if ( result > 0 ) /*0x5d26cb*/
   {
     do /*0x5d26e4*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>__pad_0))[28] + 4 * v3); /*0x5d26d6*/
+      v5 = *(unsigned int *)(*(unsigned int *)&this->__pad_0[28] + 4 * v3); /*0x5d26d6*/
       (*(void (**)(int, int))(*(unsigned int *)v5 + 32))(v5, aP1); /*0x5d26db*/
-      result = *(unsigned int *)&this-((unsigned int *)(>__pad_0))[40]; /*0x5d26de*/
+      result = *(unsigned int *)&this->__pad_0[40]; /*0x5d26de*/
       ++v3; /*0x5d26e1*/
     }
     while ( v3 < result ); /*0x5d26e4*/
@@ -341,12 +341,12 @@ Game * * E4Recv_634B20::sub_634B20()
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       this->Debug::Log(); /*0x634b7d*/
-      uniqueId = this->?; /*0x634b82*/
+      uniqueId = ((unsigned int *)this)[0]; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
-        v6 = (unsigned int *)*((unsigned int *)this->? + v5); /*0x634b99*/
+        v6 = (unsigned int *)*((unsigned int *)((unsigned int *)this)[0] + v5); /*0x634b99*/
         if ( v6[2] == (unsigned int)(v2) ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
@@ -367,11 +367,11 @@ Game * * E4Recv_634B20::sub_634B20()
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     this->Debug::Log(); /*0x634c43*/
-    v8 = this->?; /*0x634c48*/
+    v8 = ((unsigned int *)this)[0]; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = (unsigned char *)*((unsigned int *)this->? + v9); /*0x634c5b*/
+      v10 = (unsigned char *)*((unsigned int *)((unsigned int *)this)[0] + v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/

@@ -90,7 +90,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   vtable0 = (char *)this->AbstractClass; /*0x690429*/
-  vtable1 = (char *)this->?; /*0x69042f*/
+  vtable1 = (char *)((unsigned int *)this)[0]; /*0x69042f*/
   v5[0] = vtable0; /*0x690432*/
   v6[0] = &vtable0[Rect.left]; /*0x69043d*/
   v5[1] = vtable1; /*0x690441*/
@@ -1430,24 +1430,24 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
               *a5 = INIClass::ReadInt_Overwrite( /*0x6997e5*/
                       (bool *)v27.__pad_0,
-                      (uint8_t *)&stru_82BA00.?,
+                      (uint8_t *)&((char *)&stru_82BA00),
                       aMinplayers,
                       *a5);
               *a6 = INIClass::ReadInt_Overwrite( /*0x69981b*/
                       (bool *)v27.__pad_0,
-                      (uint8_t *)&stru_82BA00.?,
+                      (uint8_t *)&((char *)&stru_82BA00),
                       aMaxplayers,
                       *a6);
               INIClass::GetString( /*0x699833*/
                 &v27,
-                (uint8_t *)&stru_82BA00.?,
+                (uint8_t *)&((char *)&stru_82BA00),
                 (uint8_t *)g_INI_Key_GameMode,
                 &g_INI_DefaultBuffer,
                 aP3,
                 256);
               INIClass::GetString( /*0x699858*/
                 &v27,
-                (uint8_t *)&stru_82BA00.?,
+                (uint8_t *)&((char *)&stru_82BA00),
                 (uint8_t *)g_INI_Key_Name,
                 g_Str_No_Name,
                 v31,
@@ -1456,7 +1456,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               INIClass::GetString(&v29, (uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
               *a4 = INIClass::ReadBool_Overwrite( /*0x6998ba*/
                       (int *)v27.__pad_0,
-                      (uint8_t *)&stru_82BA00.?,
+                      (uint8_t *)&((char *)&stru_82BA00),
                       (uint8_t *)g_INI_Key_Official,
                       0);
               Debug::Log(); /*0x6998d9*/
@@ -1623,11 +1623,11 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
       {
         v7 = 1.0; /*0x69f125*/
       }
-      v10 = InterpolateVoxelAnimPose(v14, (int)this->?, this->?, v7); /*0x69f165*/
+      v10 = InterpolateVoxelAnimPose(v14, (int)((unsigned int *)this)[0], ((unsigned int *)this)[0], v7); /*0x69f165*/
       goto LABEL_17; /*0x69f16a*/
     }
   }
-  referenceCount = this->?; /*0x69f16c*/
+  referenceCount = ((unsigned int *)this)[0]; /*0x69f16c*/
   if ( referenceCount ) /*0x69f171*/
   {
     v10 = CopyAudioData(v14, referenceCount); /*0x69f177*/
@@ -2319,11 +2319,11 @@ HWND E4Recv_696950::sub_696950()
   {
     ShowWindow((HWND)result, 0); /*0x69696c*/
     EnableWindow(v3, 0); /*0x696975*/
-    SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&this->?); /*0x696987*/
-    HIBYTE(this->?) = 0; /*0x69698f*/
-    String::Trim((char *)&this->?); /*0x696993*/
-    _strupr((char *)&this->?); /*0x696999*/
-    return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &this->?); /*0x6969ab*/
+    SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&((unsigned int *)this)[0]); /*0x696987*/
+    HIBYTE(((unsigned int *)this)[0]) = 0; /*0x69698f*/
+    String::Trim((char *)&((unsigned int *)this)[0]); /*0x696993*/
+    _strupr((char *)&((unsigned int *)this)[0]); /*0x696999*/
+    return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &((unsigned int *)this)[0]); /*0x6969ab*/
   }
   return result; /*0x6969b1*/
 
@@ -2601,8 +2601,8 @@ int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
   if ( !a1 || aP2 < 1 ) /*0x69ea03*/
     return 0; /*0x69ea29*/
   v4 = Delegate::Invoke((Straw *)this, a1, aP2); /*0x69ea0d*/
-  if ( !LOBYTE(this->?) ) /*0x69ea0f*/
-    SHA1::Process((SHA1 *)&this->?, a1, v4); /*0x69ea1b*/
+  if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x69ea0f*/
+    SHA1::Process((SHA1 *)&((unsigned int *)this)[0], a1, v4); /*0x69ea1b*/
   return v4; /*0x69ea23*/
 
 }
@@ -2829,7 +2829,7 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
   result = 0; /*0x69f65f*/
   if ( v2 == 1.0 ) /*0x69f630*/
   {
-    vtable3 = (float *)this->?; /*0x69f632*/
+    vtable3 = (float *)((unsigned int *)this)[0]; /*0x69f632*/
     if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x69f65d*/
       return 1; /*0x69f630*/
   }

@@ -80,20 +80,20 @@ LABEL_6:
     DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
     return 0; /*0x5d0210*/
   }
-  while ( !(uint8_t)String::NotEquals(*(String **)(this-((unsigned int *)(>customSound_controller))[2] + 4 * v3), 0) ) /*0x5d01c4*/
+  while ( !(uint8_t)String::NotEquals(*(String **)(this->customSound_controller[2] + 4 * v3), 0) ) /*0x5d01c4*/
   {
 LABEL_5:
     if ( ++v3 >= this->customSound ) /*0x5d0200*/
       goto LABEL_6; /*0x5d0200*/
   }
-  ((String *)((String *)&a2))->AssignFromPtr(*(const char ***)(this-((unsigned int *)(>customSound_controller))[2] + 4 * v3)); /*0x5d01d1*/
+  ((String *)((String *)&a2))->AssignFromPtr(*(const char ***)(this->customSound_controller[2] + 4 * v3)); /*0x5d01d1*/
   ((String *)((String *)&a2))->ToLower(); /*0x5d01da*/
   if ( !(uint8_t)String::Compare((String *)&v6, &a2) ) /*0x5d01e8*/
   {
     DeleteAndZero((ObjectClass *)&a2); /*0x5d01f5*/
     goto LABEL_5; /*0x5d01f5*/
   }
-  v5 = *(unsigned int *)(this-((unsigned int *)(>customSound_controller))[2] + 4 * v3); /*0x5d021a*/
+  v5 = *(unsigned int *)(this->customSound_controller[2] + 4 * v3); /*0x5d021a*/
   DeleteAndZero((ObjectClass *)&a2); /*0x5d021d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x5d0226*/
   return v5; /*0x5d020b*/
@@ -120,7 +120,7 @@ LABEL_5:
   }
   else
   {
-    v5 = this-((unsigned int *)(>customSound_controller))[2]; /*0x5d024c*/
+    v5 = this->customSound_controller[2]; /*0x5d024c*/
     v6 = v5; /*0x5d0253*/
     while ( a3 != *(unsigned char *)(*(unsigned int *)v6 + 4) ) /*0x5d025a*/
     {
@@ -201,13 +201,13 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   v4 = (Audio *)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
   v5 = v4 ? Audio::SetSoundFileName(v4, Source, a3) : 0;
   attachedBomb = (gamemd::BombClass *)(this->attachedBomb);
-  if ( this-((unsigned int *)(>ambientSoundController))[1] >= (int)attachedBomb ) /*0x5d260d*/
+  if ( this->ambientSoundController[1] >= (int)attachedBomb ) /*0x5d260d*/
   {
-    if ( !BYTE1(this-((unsigned int *)(>ambientSoundController))[0]) && attachedBomb ) /*0x5d2618*/
+    if ( !BYTE1(this->ambientSoundController[0]) && attachedBomb ) /*0x5d2618*/
       return 0; /*0x5d2618*/
-    v7 = this-((unsigned int *)(>ambientSoundController))[2]; /*0x5d261a*/
+    v7 = this->ambientSoundController[2]; /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
-      || !((uint8_t (*)(ObjectClass **, char *, unsigned int))this->nextObject->?)(
+      || !((uint8_t (*)(ObjectClass **, char *, unsigned int))this->((unsigned int *)nextObject)[0])(
             &this->nextObject,
             (char *)attachedBomb + v7,
             0) )
@@ -215,9 +215,9 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d264a*/
     }
   }
-  v8 = (gamemd::TagClass *)(this-((unsigned int *)(>ambientSoundController))[1]);
+  v8 = (gamemd::TagClass *)(this->ambientSoundController[1]);
   attachedTag = (gamemd::TagClass *)(this->attachedTag);
-  this-((unsigned int *)(>ambientSoundController))[1] = v8 + 1; /*0x5d263a*/
+  this->ambientSoundController[1] = v8 + 1; /*0x5d263a*/
   *((unsigned int *)&attachedTag->AbstractClass + v8) = v5; /*0x5d263d*/
   return 1; /*0x5d2640*/
 
@@ -236,11 +236,11 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
     if ( this->Audio::IsSoundEnabled() ) /*0x5d265e*/
     {
       v4 = 0; /*0x5d266a*/
-      if ( this-((unsigned int *)(>ambientSoundController))[1] > 0 ) /*0x5d266e*/
+      if ( this->ambientSoundController[1] > 0 ) /*0x5d266e*/
       {
         while ( _strcmpi((char *)a2, **((char ***)&this->attachedTag->AbstractClass + v4)) ) /*0x5d2684*/
         {
-          if ( ++v4 >= this-((unsigned int *)(>ambientSoundController))[1] ) /*0x5d268c*/
+          if ( ++v4 >= this->ambientSoundController[1] ) /*0x5d268c*/
             return; /*0x5d268c*/
         }
         LOWORD(v5) = Math::RoundToInt((double)a3 * *(float *)&stru_A8EB00.ObjectTypeClass[38]); /*0x5d269f*/
@@ -737,111 +737,111 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
       {
         while ( 1 ) /*0x5d766b*/
         {
-          INIClass::GetStringByIndexEx((INIClass *)&v19.bombVisible, (char **)&v19.?, v2, v19.owningHouseIndex); /*0x5d766b*/
-          __1_Timevec_std__QAE_XZ((const char **)&v19.?); /*0x5d7674*/
+          INIClass::GetStringByIndexEx((INIClass *)&v19.bombVisible, (char **)&((char *)&v19), v2, v19.owningHouseIndex); /*0x5d766b*/
+          __1_Timevec_std__QAE_XZ((const char **)&((char *)&v19)); /*0x5d7674*/
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
           String::Assign((String *)&v19.attachedBomb, &g_INI_DefaultBuffer); /*0x5d768d*/
           String = INIClass::ReadString( /*0x5d76b2*/
                      (INIClass *)&v19.bombVisible,
                      v2,
-                     (char **)&v19.?,
+                     (char **)&((char *)&v19),
                      (char **)&v19.attachedBomb,
                      (int)&v19);
           DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
           if ( String <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
-          unknown_libname_73(&v19.?); /*0x5d76c5*/
-          v6 = String::Tokenize((String *)&v19, 0, Str, &v19.?); /*0x5d76e2*/
-          if ( String::Length((String *)&v19.?) ) /*0x5d76e4*/
+          unknown_libname_73(&((char *)&v19)); /*0x5d76c5*/
+          v6 = String::Tokenize((String *)&v19, 0, Str, &((char *)&v19)); /*0x5d76e2*/
+          if ( String::Length((String *)&((char *)&v19)) ) /*0x5d76e4*/
             break; /*0x5d76e4*/
   LABEL_48:
-          DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c50*/
+          DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c50*/
   LABEL_49:
           DeleteAndZero(&v19); /*0x5d7c59*/
-          DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c66*/
+          DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c66*/
           if ( ++v19.owningHouseIndex >= v19.customSound_controller[4] ) /*0x5d7c7a*/
             goto LABEL_50; /*0x5d7c7a*/
           v2 = (char **)v19.customSound_controller[3]; /*0x5d7655*/
         }
         String::Assign((String *)&v19.customSound_controller[1], asc_830A14); /*0x5d76fa*/
-        String::TrimLeft((String *)&v19.?, (const char **)&v19.customSound_controller[1]); /*0x5d7708*/
+        String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.customSound_controller[1]); /*0x5d7708*/
         DeleteAndZero((ObjectClass *)&v19.customSound_controller[1]); /*0x5d7711*/
         String::Assign((String *)&v19.fallRate, asc_830A14); /*0x5d771f*/
-        String::TrimRight((String *)&v19.?, (const char **)&v19.fallRate); /*0x5d772d*/
+        String::TrimRight((String *)&((char *)&v19), (const char **)&v19.fallRate); /*0x5d772d*/
         DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
-        v7 = String::GetOrEmpty((String *)&v19.?); /*0x5d7749*/
+        v7 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d7749*/
         StringCSF = GetStringCSF((wchar_t *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
-        WideString::Assign((wchar_t **)&v19.?, StringCSF); /*0x5d775c*/
-        unknown_libname_73(&v19.?); /*0x5d7765*/
-        v9 = String::Tokenize((String *)&v19, v6, Str, &v19.?); /*0x5d7782*/
-        if ( !String::Length((String *)&v19.?) ) /*0x5d778b*/
+        WideString::Assign((wchar_t **)&((char *)&v19), StringCSF); /*0x5d775c*/
+        unknown_libname_73(&((char *)&v19)); /*0x5d7765*/
+        v9 = String::Tokenize((String *)&v19, v6, Str, &((char *)&v19)); /*0x5d7782*/
+        if ( !String::Length((String *)&((char *)&v19)) ) /*0x5d778b*/
         {
   LABEL_47:
-          DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c3e*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v19.?); /*0x5d7c4b*/
+          DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c3e*/
+          DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v19)); /*0x5d7c4b*/
           goto LABEL_48; /*0x5d7c4b*/
         }
         String::Assign((String *)&v19.ambientSoundController[4], asc_830A14); /*0x5d779a*/
-        String::TrimLeft((String *)&v19.?, (const char **)&v19.ambientSoundController[4]); /*0x5d77a8*/
+        String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[4]); /*0x5d77a8*/
         DeleteAndZero((ObjectClass *)&v19.ambientSoundController[4]); /*0x5d77b1*/
         String::Assign((String *)&v19.ambientSoundController[1], asc_830A14); /*0x5d77bf*/
-        String::TrimRight((String *)&v19.?, (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
+        String::TrimRight((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
         DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
-        v10 = String::GetOrEmpty((String *)&v19.?); /*0x5d77e9*/
+        v10 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d77e9*/
         v11 = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
-        WideString::Assign((wchar_t **)&v19.?, v11); /*0x5d77fc*/
-        unknown_libname_73(&v19.?); /*0x5d7805*/
-        v12 = String::Tokenize((String *)&v19, v9, Str, &v19.?); /*0x5d7822*/
-        if ( !String::Length((String *)&v19.?) ) /*0x5d782b*/
+        WideString::Assign((wchar_t **)&((char *)&v19), v11); /*0x5d77fc*/
+        unknown_libname_73(&((char *)&v19)); /*0x5d7805*/
+        v12 = String::Tokenize((String *)&v19, v9, Str, &((char *)&v19)); /*0x5d7822*/
+        if ( !String::Length((String *)&((char *)&v19)) ) /*0x5d782b*/
         {
   LABEL_46:
-          DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c2c*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v19.?); /*0x5d7c39*/
+          DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c2c*/
+          DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v19)); /*0x5d7c39*/
           goto LABEL_47; /*0x5d7c39*/
         }
         String::Assign((String *)v19.customSound_controller, asc_830A14); /*0x5d783a*/
-        String::TrimLeft((String *)&v19.?, (const char **)v19.customSound_controller); /*0x5d7848*/
+        String::TrimLeft((String *)&((char *)&v19), (const char **)v19.customSound_controller); /*0x5d7848*/
         DeleteAndZero((ObjectClass *)v19.customSound_controller); /*0x5d7851*/
         String::Assign((String *)&v19.ambientSoundController[3], asc_830A14); /*0x5d785f*/
-        String::TrimRight((String *)&v19.?, (const char **)&v19.ambientSoundController[3]); /*0x5d786d*/
+        String::TrimRight((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[3]); /*0x5d786d*/
         DeleteAndZero((ObjectClass *)&v19.ambientSoundController[3]); /*0x5d7876*/
-        unknown_libname_73(&v19.?); /*0x5d787f*/
-        v13 = String::Tokenize((String *)&v19, v12, Str, (void **)&v19.?); /*0x5d789c*/
+        unknown_libname_73(&((char *)&v19)); /*0x5d787f*/
+        v13 = String::Tokenize((String *)&v19, v12, Str, (void **)&((char *)&v19)); /*0x5d789c*/
         String::Assign((String *)&v19.customSound_controller[2], asc_830A14); /*0x5d78a3*/
-        String::TrimLeft((String *)&v19.?, (const char **)&v19.customSound_controller[2]); /*0x5d78b1*/
+        String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.customSound_controller[2]); /*0x5d78b1*/
         DeleteAndZero((ObjectClass *)&v19.customSound_controller[2]); /*0x5d78ba*/
         String::Assign((String *)&v19.nextObject, asc_830A14); /*0x5d78c8*/
-        String::TrimRight((String *)&v19.?, (const char **)&v19.nextObject); /*0x5d78d6*/
+        String::TrimRight((String *)&((char *)&v19), (const char **)&v19.nextObject); /*0x5d78d6*/
         DeleteAndZero((ObjectClass *)&v19.nextObject); /*0x5d78df*/
-        unknown_libname_73(&v19.?); /*0x5d78e8*/
-        String::Tokenize((String *)&v19, v13, Str, (void **)&v19.?); /*0x5d78fc*/
+        unknown_libname_73(&((char *)&v19)); /*0x5d78e8*/
+        String::Tokenize((String *)&v19, v13, Str, (void **)&((char *)&v19)); /*0x5d78fc*/
         String::Assign((String *)&v19.attachedTag, asc_830A14); /*0x5d790a*/
-        String::TrimLeft((String *)&v19.?, (const char **)&v19.attachedTag); /*0x5d7918*/
+        String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.attachedTag); /*0x5d7918*/
         DeleteAndZero((ObjectClass *)&v19.attachedTag); /*0x5d7921*/
         String::Assign((String *)v19.ambientSoundController, asc_830A14); /*0x5d792f*/
-        String::TrimRight((String *)&v19.?, (const char **)v19.ambientSoundController); /*0x5d793d*/
+        String::TrimRight((String *)&((char *)&v19), (const char **)v19.ambientSoundController); /*0x5d793d*/
         DeleteAndZero((ObjectClass *)v19.ambientSoundController); /*0x5d7946*/
         IDA_LOBYTE(v19.ambientSoundController[2]) = 1; /*0x5d794f*/
-        if ( String::Length((String *)&v19.?) ) /*0x5d7954*/
+        if ( String::Length((String *)&((char *)&v19)) ) /*0x5d7954*/
         {
-          v14 = String::GetOrEmpty((String *)&v19.?); /*0x5d7966*/
+          v14 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d7966*/
           IDA_LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
-        if ( WideString::Length((const wchar_t **)&v19.?) /*0x5d79a3*/
+        if ( WideString::Length((const wchar_t **)&((char *)&v19)) /*0x5d79a3*/
 // 0x7b54b0
-          && String::Length((String *)&v19.?)
+          && String::Length((String *)&((char *)&v19))
 // 0x7b54b0
-          && String::Length((String *)&v19.?) )
+          && String::Length((String *)&((char *)&v19)) )
         {
           v15 = 0; /*0x5d79d3*/
           v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/
                                                                                               + 4))(
                            v19.customSound,
-                           &v19.?,
-                           &v19.?,
-                           &v19.?,
-                           &v19.?,
+                           &((char *)&v19),
+                           &((char *)&v19),
+                           &((char *)&v19),
+                           &((char *)&v19),
                            v19.ambientSoundController[2],
                            v4);
           v16 = g_MultiplayerMode; /*0x5d79d9*/
@@ -945,8 +945,8 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
           ++g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10; /*0x5d7c14*/
         }
   LABEL_45:
-        DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c1a*/
-        DeleteAndZero((ObjectClass *)&v19.?); /*0x5d7c27*/
+        DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c1a*/
+        DeleteAndZero((ObjectClass *)&((char *)&v19)); /*0x5d7c27*/
         goto LABEL_46; /*0x5d7c27*/
       }
     }
@@ -1030,11 +1030,11 @@ int E4Recv_5D9060::sub_5D9060(int a2)
   v4 = 255; /*0x5d9073*/
   while ( 1 ) /*0x5d907b*/
   {
-    v5 = v2 + this->?; /*0x5d907b*/
-    this->? = v5; /*0x5d907f*/
+    v5 = v2 + ((unsigned int *)this)[0]; /*0x5d907b*/
+    ((unsigned int *)this)[0] = v5; /*0x5d907f*/
     v6 = v5; /*0x5d9087*/
     if ( v5 > 0xFFFF ) /*0x5d908a*/
-      this->? = 2048; /*0x5d908c*/
+      ((unsigned int *)this)[0] = 2048; /*0x5d908c*/
     if ( !*(unsigned int *)&stru_887598.isAliveFlag || *(unsigned int *)&dword_A8B238 != 4 ) /*0x5d90a4*/
       break; /*0x5d90a4*/
     if ( (*(uint8_t (**)(unsigned short))(**(unsigned int **)&stru_887598.isAliveFlag + 104))(v5) ) /*0x5d90a9*/
@@ -2165,7 +2165,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->?; /*0x5d30e2*/
+    vtable2 = (char *)((unsigned int *)this)[0]; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -2180,7 +2180,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         v10 = v4; /*0x5d3112*/
       if ( *v3 == 10 ) /*0x5d311a*/
       {
-        v6 = (int)this->?; /*0x5d311c*/
+        v6 = (int)((unsigned int *)this)[0]; /*0x5d311c*/
         ++v3; /*0x5d311f*/
         vtable2 += v6; /*0x5d3122*/
       }
@@ -2188,7 +2188,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->?; /*0x5d312a*/
+    vtable1 = (char *)((unsigned int *)this)[0]; /*0x5d312a*/
     a3[3] = vtable2; /*0x5d3137*/
     a3[2] = &vtable1[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
@@ -2803,9 +2803,9 @@ unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
 
   this->AbstractClass = 0; /*0x5d8fb4*/
-  this->? = 0; /*0x5d8fb6*/
-  this->? = 0; /*0x5d8fb9*/
-  this->? = 0; /*0x5d8fbc*/
+  ((unsigned int *)this)[0] = 0; /*0x5d8fb6*/
+  ((unsigned int *)this)[0] = 0; /*0x5d8fb9*/
+  ((unsigned int *)this)[0] = 0; /*0x5d8fbc*/
   return &this->AbstractClass; /*0x5d8fbf*/
 
 }

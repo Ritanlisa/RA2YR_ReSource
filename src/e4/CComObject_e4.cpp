@@ -431,10 +431,10 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   {
     if ( *(unsigned int *)a3 ) /*0x7a572c*/
     {
-      memset(&g_WOL_LoginObject.?, 0, 0x940u); /*0x7a576f*/
+      memset(&((char *)&g_WOL_LoginObject), 0, 0x940u); /*0x7a576f*/
       v9 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x7a577b*/
       v10 = (TagClass *)dword_A8B3AC; /*0x7a5788*/
-      strcpy((char *)&g_WOL_LoginObject.?, v9); /*0x7a5799*/
+      strcpy((char *)&((char *)&g_WOL_LoginObject), v9); /*0x7a5799*/
       g_WOL_LoginObject.attachedTag = v10; /*0x7a57a8*/
       g_WOL_LoginObject.attachedBomb = 0; /*0x7a57ad*/
       g_WOL_LoginObject.nextObject = (ObjectClass *)dword_A8B394; /*0x7a57b7*/
@@ -1135,7 +1135,7 @@ LABEL_22:
     if ( byte_B77E40 ) /*0x7a94f4*/
     {
       v23 = *(unsigned int *)ppv; /*0x7a9500*/
-      v24 = WideString::GetOrEmpty((wchar_t **)&stru_B7622C.?); /*0x7a9502*/
+      v24 = WideString::GetOrEmpty((wchar_t **)&((char *)&stru_B7622C)); /*0x7a9502*/
       (*(void (**)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
@@ -1209,14 +1209,14 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     return 0; /*0x7a9600*/
   if ( BYTE1(stru_B77D80.HashTable_field_0x40) ) /*0x7a9614*/
   {
-    swprintf((wchar_t *const)&v18[0].?, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)(a3 + 36), String); /*0x7a9625*/
+    swprintf((wchar_t *const)&v18[0], (const size_t)g_Str_Trace___hs_, (const wchar_t *const)(a3 + 36), String); /*0x7a9625*/
     Type = BuildingAnim::GetType(); /*0x7a9638*/
     LOWORD(v10) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9648*/
     MessageListClass::AddMessage( /*0x7a965f*/
       (MessageListClass *)&stru_A8BB1C.__pad_87[189],
       0,
       0,
-      (wchar_t *)&v18[0].?,
+      (wchar_t *)&v18[0],
       Type,
       22,
       v10,
@@ -1263,7 +1263,7 @@ LABEL_27:
   if ( byte_B77E40 ) /*0x7a97a3*/
   {
     v16 = *(unsigned int *)ppv; /*0x7a97ab*/
-    v17 = WideString::GetOrEmpty((wchar_t **)&stru_B7622C.?); /*0x7a97b2*/
+    v17 = WideString::GetOrEmpty((wchar_t **)&((char *)&stru_B7622C)); /*0x7a97b2*/
     (*(void (**)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
   }
   PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a97dd*/
@@ -1671,7 +1671,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
             PlayerProfile = LoadPlayerProfile( /*0x7aba38*/
                               (ObjectClass *)&v14.ComPtr_field_0x20,
                               (const char **)&g_WindowManager.__pad_EC[684]);
-            ComPtr::Set(&v14, (int)PlayerProfile->?); /*0x7aba45*/
+            ComPtr::Set(&v14, (int)((unsigned int *)PlayerProfile)[0]); /*0x7aba45*/
             v14.ComPtr_field_0x20 = (int)&vt_rc_ptr; /*0x7aba4e*/
             ComPtr::Release((ComPtr *)&v14.ComPtr_field_0x20); /*0x7aba52*/
           }

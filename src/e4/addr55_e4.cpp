@@ -57,8 +57,8 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   int v7; // eax
   unsigned int v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  vtable2 = Block->?; /*0x550086*/
-  uniqueId = Block->?; /*0x550089*/
+  vtable2 = ((unsigned int *)Block)[0]; /*0x550086*/
+  uniqueId = ((unsigned int *)Block)[0]; /*0x550089*/
   if ( vtable2 == (void *)-1 ) /*0x55008f*/
   {
 LABEL_4:
@@ -72,20 +72,20 @@ LABEL_4:
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
-  abstractFlags = Block->?; /*0x5500a3*/
+  abstractFlags = ((unsigned int *)Block)[0]; /*0x5500a3*/
   if ( abstractFlags ) /*0x5500a8*/
   {
-    v5 = (char *)Block->AbstractClass + Block->?; /*0x5500af*/
-    LOBYTE(Block->?) = 1; /*0x5500b1*/
+    v5 = (char *)Block->AbstractClass + ((unsigned int *)Block)[0]; /*0x5500af*/
+    LOBYTE(((unsigned int *)Block)[0]) = 1; /*0x5500b1*/
     Block->AbstractClass = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    Block->? = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5500c1*/
-    Block->? = v6; /*0x5500c4*/
-    Block->? = abstractFlags; /*0x5500c7*/
+    ((unsigned int *)Block)[0] = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5500c1*/
+    ((unsigned int *)Block)[0] = v6; /*0x5500c4*/
+    ((unsigned int *)Block)[0] = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
 LABEL_7:
-  LOBYTE(Block->?) = 0; /*0x5500cc*/
+  LOBYTE(((unsigned int *)Block)[0]) = 0; /*0x5500cc*/
 LABEL_8:
   if ( LOBYTE(Block->customSound_controller[0]) ) /*0x5500d0*/
     BYTE1(Block->customSound_controller[0]) = BYTE1(Block->customSound_controller[0]) == 0; /*0x5500df*/
@@ -1407,17 +1407,17 @@ LABEL_15:
     goto LABEL_15; /*0x55b7ef*/
   }
 LABEL_16:
-  result = this->?; /*0x55b818*/
+  result = ((unsigned int *)this)[0]; /*0x55b818*/
   for ( i = 0; i < result; ++i ) /*0x55b81f*/
   {
-    v14 = *((unsigned int *)this->? + i); /*0x55b824*/
+    v14 = *((unsigned int *)((unsigned int *)this)[0] + i); /*0x55b824*/
     if ( v14 && (*(unsigned char *)(v14 + 20) & 4) != 0 && *(unsigned int *)(v14 + 1652) && !*(unsigned char *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(unsigned int *)(v14 + 1652) ) /*0x55b84e*/
         WinAPI::Wrapper(-2147467261); /*0x55b85d*/
       (*(void (**)(unsigned int))(**(unsigned int **)(v14 + 1652) + 64))(*(unsigned int *)(v14 + 1652)); /*0x55b86b*/
     }
-    result = this->?; /*0x55b86e*/
+    result = ((unsigned int *)this)[0]; /*0x55b86e*/
   }
   return result; /*0x55b876*/
 
@@ -4470,7 +4470,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
   CCFileClass::Construct3((int)&v6); /*0x5595fb*/
   do /*0x559633*/
   {
-    vtable2 = (const char *)this->?; /*0x559607*/
+    vtable2 = (const char *)((unsigned int *)this)[0]; /*0x559607*/
     v3 = rand(); /*0x559608*/
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/

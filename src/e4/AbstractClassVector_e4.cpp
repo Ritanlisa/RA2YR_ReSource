@@ -24,7 +24,7 @@ int AbstractClassVector::Read(unsigned int * a2)
   result = 0; /*0x4e0451*/
   if ( m_8 <= 0 ) /*0x4e0455*/
     return -1; /*0x4e046c*/
-  for ( i = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; *i != *a2; ++i ) /*0x4e045b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e045b*/
   {
     if ( ++result >= m_8 ) /*0x4e046a*/
       return -1; /*0x4e046a*/
@@ -39,7 +39,7 @@ unsigned int AbstractClassVector::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x4e0480*/
-    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x4e0495*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/
 

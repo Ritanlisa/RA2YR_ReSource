@@ -49,7 +49,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
     {
-      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x5acd8b*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x5acd8b*/
       {
         m_8 = this->m_8; /*0x5acd92*/
         if ( a2 < m_8 ) /*0x5acd97*/
@@ -60,7 +60,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           do /*0x5acdc3*/
           {
             v11 = &v7[v10]; /*0x5acda4*/
-            v12 = (unsigned int *)(v10 + *(unsigned int *)&this-((unsigned int *)(>m_1))[3]); /*0x5acda7*/
+            v12 = (unsigned int *)(v10 + *(unsigned int *)&this->m_1[3]); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --m_8; /*0x5acdac*/
             *(unsigned int *)v11 = *v12; /*0x5acdaf*/
@@ -74,11 +74,11 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
         if ( BYTE1(this->m_C) ) /*0x5acdcd*/
         {
-          __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x5acdd8*/
-          *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5acde0*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5acdd8*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x5acde0*/
         }
       }
-      *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v7; /*0x5acde9*/
+      *(unsigned int *)&this->m_1[3] = v7; /*0x5acde9*/
       this->m_8 = v3; /*0x5acdf1*/
       BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
       return 1; /*0x5acdfa*/
@@ -131,7 +131,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
       return 0; /*0x5acfb4*/
-    if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x5acf25*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5acf25*/
     {
       m_8 = this->m_8; /*0x5acf2c*/
       if ( a2 < m_8 ) /*0x5acf31*/
@@ -142,7 +142,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         do /*0x5acf5d*/
         {
           v10 = &v7[v9]; /*0x5acf3e*/
-          v11 = (unsigned int *)(v9 + *(unsigned int *)&this-((unsigned int *)(>m_1))[3]); /*0x5acf41*/
+          v11 = (unsigned int *)(v9 + *(unsigned int *)&this->m_1[3]); /*0x5acf41*/
           v9 += 16; /*0x5acf43*/
           --m_8; /*0x5acf46*/
           *(unsigned int *)v10 = *v11; /*0x5acf49*/
@@ -156,11 +156,11 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x5acf67*/
       {
-        __3_YAXPAX_Z(*(void **)&this-((unsigned int *)(>m_1))[3]); /*0x5acf72*/
-        *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = 0; /*0x5acf7a*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5acf72*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5acf7a*/
       }
     }
-    *(unsigned int *)&this-((unsigned int *)(>m_1))[3] = v7; /*0x5acf83*/
+    *(unsigned int *)&this->m_1[3] = v7; /*0x5acf83*/
     this->m_8 = v3; /*0x5acf8b*/
     BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
   }
@@ -211,7 +211,7 @@ CampaignClass * MSEngine::Destructor()
     __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/
     this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
   }
-  BYTE1(this-((unsigned int *)(>MSEngine_field_0xC))[0]) = 0; /*0x5ceedb*/
+  BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 
 }

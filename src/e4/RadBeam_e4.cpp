@@ -42,35 +42,35 @@ namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
 
-  this->? = 0; /*0x6593fe*/
+  ((unsigned int *)this)[0] = 0; /*0x6593fe*/
   this->AbstractClass = 0; /*0x659401*/
-  this->? = 0; /*0x659403*/
-  LOBYTE(this->?) = 0; /*0x659406*/
-  BYTE1(this->?) = 1; /*0x659409*/
-  this->? = 0; /*0x65940c*/
-  this->? = aP1; /*0x65940f*/
-  this->? = 0; /*0x659412*/
-  LOBYTE(this->?) = 0; /*0x659415*/
-  BYTE1(this->?) = 0; /*0x659418*/
-  BYTE2(this->?) = 0; /*0x65941b*/
-  this-((unsigned int *)(>range))[0] = 0; /*0x65941e*/
-  this-((unsigned int *)(>range))[1] = 0; /*0x659421*/
-  this-((unsigned int *)(>data))[0] = 0; /*0x659424*/
-  this-((unsigned int *)(>data))[1] = 0; /*0x659427*/
-  this-((unsigned int *)(>data))[2] = 0; /*0x65942a*/
-  this-((unsigned int *)(>data))[3] = 0; /*0x65942d*/
-  this-((unsigned int *)(>data))[5] = 0; /*0x659430*/
-  this-((unsigned int *)(>data))[7] = 0; /*0x659433*/
-  this-((unsigned int *)(>data))[4] = 0; /*0x659436*/
-  this-((unsigned int *)(>data))[6] = 0; /*0x659439*/
-  this-((unsigned int *)(>data))[8] = 0; /*0x65943c*/
-  this-((unsigned int *)(>data))[9] = 0; /*0x65943f*/
-  this-((unsigned int *)(>data))[10] = 1; /*0x659442*/
+  ((unsigned int *)this)[0] = 0; /*0x659403*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x659406*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x659409*/
+  ((unsigned int *)this)[0] = 0; /*0x65940c*/
+  ((unsigned int *)this)[0] = aP1; /*0x65940f*/
+  ((unsigned int *)this)[0] = 0; /*0x659412*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x659415*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x659418*/
+  BYTE2(((unsigned int *)this)[0]) = 0; /*0x65941b*/
+  this->range[0] = 0; /*0x65941e*/
+  this->range[1] = 0; /*0x659421*/
+  this->data[0] = 0; /*0x659424*/
+  this->data[1] = 0; /*0x659427*/
+  this->data[2] = 0; /*0x65942a*/
+  this->data[3] = 0; /*0x65942d*/
+  this->data[5] = 0; /*0x659430*/
+  this->data[7] = 0; /*0x659433*/
+  this->data[4] = 0; /*0x659436*/
+  this->data[6] = 0; /*0x659439*/
+  this->data[8] = 0; /*0x65943c*/
+  this->data[9] = 0; /*0x65943f*/
+  this->data[10] = 1; /*0x659442*/
   LOBYTE(this->data[11]) = 0; /*0x659445*/
-  this-((unsigned int *)(>data))[20] = 0; /*0x659448*/
+  this->data[20] = 0; /*0x659448*/
   LOBYTE(this->data[37]) = 0; /*0x65944b*/
-  BYTE1(this-((unsigned int *)(>data))[37]) = 0; /*0x659451*/
-  BYTE2(this-((unsigned int *)(>data))[37]) = 0; /*0x659457*/
+  BYTE1(this->data[37]) = 0; /*0x659451*/
+  BYTE2(this->data[37]) = 0; /*0x659457*/
   return &this->AbstractClass; /*0x65945d*/
 
 }

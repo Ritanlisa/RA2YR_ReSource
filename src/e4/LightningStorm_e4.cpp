@@ -79,12 +79,12 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       if ( dword_A83D4C ) /*0x53a000*/
         *((unsigned char *)dword_A83D4C + 22393) = 1; /*0x53a002*/
       ScenarioClass::UpdateLighting(); /*0x53a009*/
-      if ( LOBYTE(dword_8871E0[1].?) ) /*0x53a014*/
+      if ( LOBYTE(dword_8871E0[1]) ) /*0x53a014*/
       {
         v10 = 3; /*0x53a023*/
         if ( dword_A83D4C ) /*0x53a02a*/
           v10 = *((unsigned int *)dword_A83D4C + 22549); /*0x53a02c*/
-        PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x53a044*/
+        PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x53a044*/
         StringCSF = GetStringCSF(aTxtLightningSt, 0, g_Str_File_Ion_cpp, 531); /*0x53a067*/
         MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v10, 16454, 150, 0); /*0x53a076*/
       }
@@ -123,7 +123,7 @@ void LightningStorm::Strike(IUnknown * aP0)
   int v9[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v1 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP0); /*0x53a159*/
-  v2 = (*(int (**)(unsigned int))(**(unsigned int **)dword_8871E0->? + 156))(*(unsigned int *)dword_8871E0->?); /*0x53a165*/
+  v2 = (*(int (**)(unsigned int))(**(unsigned int **)((unsigned int *)dword_8871E0)[0] + 156))(*(unsigned int *)((unsigned int *)dword_8871E0)[0]); /*0x53a165*/
   v3 = ((v1[80] & 0x100) != 0 ? dword_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
      + dword_A9FA90 * *((char *)v1 + 283);
@@ -133,7 +133,7 @@ void LightningStorm::Strike(IUnknown * aP0)
   v9[2] = v3; /*0x53a1d0*/
   if ( result != dword_A9FA30 || (SHIWORD(aP0) << 8) + 128 != qword_A9FA34 || v3 != MEMORY[0xA9FA38] ) /*0x53a1e4*/
   {
-    v5 = *(void **)(dword_8871E0->? + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % dword_8871E0->?)); /*0x53a213*/
+    v5 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a213*/
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
@@ -212,7 +212,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v34[0] = *Coords; /*0x53a32e*/
   v34[1] = v5; /*0x53a337*/
   v34[2] = v6; /*0x53a33b*/
-  v7 = *(void **)(dword_8871E0->? + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % dword_8871E0->?)); /*0x53a363*/
+  v7 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a363*/
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
@@ -238,14 +238,14 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   if ( v31 != dword_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
     v12 = dword_8871E0; /*0x53a45f*/
-    if ( dword_8871E0->? > 0 ) /*0x53a46c*/
+    if ( ((unsigned int *)dword_8871E0)[0] > 0 ) /*0x53a46c*/
     {
       v13 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x53a47a*/
-      StartAudioControllerAt(*(unsigned int *)(dword_8871E0->?[1] + 4 * (v13 % dword_8871E0->?)), (int)&v31, 0); /*0x53a49e*/
+      StartAudioControllerAt(*(unsigned int *)(((unsigned int *)dword_8871E0)[1] + 4 * (v13 % ((unsigned int *)dword_8871E0)[0])), (int)&v31, 0); /*0x53a49e*/
       v12 = dword_8871E0; /*0x53a4a3*/
     }
-    Climb = v12[1].?; /*0x53a4ae*/
-    WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, HIDWORD(v12[1].?), v3[59], &v31); /*0x53a4c7*/
+    Climb = v12[1]; /*0x53a4ae*/
+    WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, HIDWORD(v12[1]), v3[59], &v31); /*0x53a4c7*/
     v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/
     {
@@ -277,8 +277,8 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
           break;
       }
     }
-    CreateSmokeEffectAt(Climb, HIDWORD(dword_8871E0[1].?), v31, v32, (int)v33, 0, 0); /*0x53a581*/
-    PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(dword_8871E0[1].?), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
+    CreateSmokeEffectAt(Climb, HIDWORD(dword_8871E0[1]), v31, v32, (int)v33, 0, 0); /*0x53a581*/
+    PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(dword_8871E0[1]), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
     if ( v18 == Cell::IsBridge(v3) /*0x53a607*/
       && (v29 = 0, v30 = 0, v20 == Object::FindClosestObjectCell(v3, &v29, 0, 0))
       && *((char *)v3 + 283) == v28 )

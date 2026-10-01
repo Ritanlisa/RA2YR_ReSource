@@ -528,21 +528,21 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   this->AbstractClass = (void *)a4; /*0x4a328f*/
   this->estimatedHealth = 0; /*0x4a3291*/
   *(unsigned int *)&this->isOnMap = 0; /*0x4a3297*/
-  memset(&this->?, 0, 0x6Cu); /*0x4a329e*/
-  this->? = (void *)108; /*0x4a32a4*/
-  this->? = (void *)7; /*0x4a32aa*/
+  memset(&((unsigned int *)this)[0], 0, 0x6Cu); /*0x4a329e*/
+  ((unsigned int *)this)[0] = (void *)108; /*0x4a32a4*/
+  ((unsigned int *)this)[0] = (void *)7; /*0x4a32aa*/
   this->health = dword_81FC60[a4]; /*0x4a32b8*/
-  this->? = a2; /*0x4a32bf*/
-  this->? = (void *)a3; /*0x4a32c2*/
+  ((unsigned int *)this)[0] = a2; /*0x4a32bf*/
+  ((unsigned int *)this)[0] = (void *)a3; /*0x4a32c2*/
   if ( a4 == 1 ) /*0x4a32c5*/
   {
-    this->? = (void *)71; /*0x4a32c7*/
-    this->? = 16; /*0x4a32ce*/
+    ((unsigned int *)this)[0] = (void *)71; /*0x4a32c7*/
+    ((unsigned int *)this)[0] = 16; /*0x4a32ce*/
   }
   if ( !dword_8A0E00 /*0x4a32e5*/
     || !(*(int (**)(int, void **, int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 24))(
           dword_8A0E00,
-          &this->?,
+          &((unsigned int *)this)[0],
           &this->estimatedHealth,
           0) )
   {
@@ -1547,66 +1547,66 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   void *vtable3; // ecx
 
   LOBYTE(this->AbstractClass) = 0; /*0x4a6855*/
-  this->? = 0; /*0x4a6857*/
-  this->? = 0; /*0x4a685a*/
-  this->? = 0; /*0x4a685d*/
-  this->? = a3; /*0x4a6860*/
-  this->? = a4; /*0x4a6863*/
-  this->? = 0; /*0x4a6866*/
-  this->? = 0; /*0x4a6869*/
-  this->? = 0; /*0x4a686c*/
+  ((unsigned int *)this)[0] = 0; /*0x4a6857*/
+  ((unsigned int *)this)[0] = 0; /*0x4a685a*/
+  ((unsigned int *)this)[0] = 0; /*0x4a685d*/
+  ((unsigned int *)this)[0] = a3; /*0x4a6860*/
+  ((unsigned int *)this)[0] = a4; /*0x4a6863*/
+  ((unsigned int *)this)[0] = 0; /*0x4a6866*/
+  ((unsigned int *)this)[0] = 0; /*0x4a6869*/
+  ((unsigned int *)this)[0] = 0; /*0x4a686c*/
   v6 = (unsigned int *)__2_YAPAXI_Z(0x42Cu); /*0x4a686f*/
-  this->? = v6; /*0x4a6879*/
+  ((unsigned int *)this)[0] = v6; /*0x4a6879*/
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
-  *((unsigned int *)this->? + 1) = a3; /*0x4a688d*/
-  *((unsigned int *)this->? + 2) = -a4; /*0x4a6893*/
-  *((unsigned short *)this->? + 6) = 1; /*0x4a689d*/
-  *((unsigned short *)this->? + 7) = 8; /*0x4a68a6*/
-  *((unsigned int *)this->? + 4) = 0; /*0x4a68af*/
-  *((unsigned int *)this->? + 5) = 0; /*0x4a68b5*/
-  *((unsigned int *)this->? + 6) = 0; /*0x4a68bb*/
-  *((unsigned int *)this->? + 7) = 0; /*0x4a68c6*/
-  *((unsigned int *)this->? + 8) = 256; /*0x4a68cc*/
-  *((unsigned int *)this->? + 9) = 256; /*0x4a68d2*/
-  for ( i = 0; i < 256; *((unsigned char *)this->? + 4 * i + 39) = 0 ) /*0x4a68d5*/
+  *((unsigned int *)((unsigned int *)this)[0] + 1) = a3; /*0x4a688d*/
+  *((unsigned int *)((unsigned int *)this)[0] + 2) = -a4; /*0x4a6893*/
+  *((unsigned short *)((unsigned int *)this)[0] + 6) = 1; /*0x4a689d*/
+  *((unsigned short *)((unsigned int *)this)[0] + 7) = 8; /*0x4a68a6*/
+  *((unsigned int *)((unsigned int *)this)[0] + 4) = 0; /*0x4a68af*/
+  *((unsigned int *)((unsigned int *)this)[0] + 5) = 0; /*0x4a68b5*/
+  *((unsigned int *)((unsigned int *)this)[0] + 6) = 0; /*0x4a68bb*/
+  *((unsigned int *)((unsigned int *)this)[0] + 7) = 0; /*0x4a68c6*/
+  *((unsigned int *)((unsigned int *)this)[0] + 8) = 256; /*0x4a68cc*/
+  *((unsigned int *)((unsigned int *)this)[0] + 9) = 256; /*0x4a68d2*/
+  for ( i = 0; i < 256; *((unsigned char *)((unsigned int *)this)[0] + 4 * i + 39) = 0 ) /*0x4a68d5*/
   {
     v8 = (unsigned char *)(a5 + 2 * (i % 256) + i % 256); /*0x4a68ef*/
     ++i; /*0x4a68f1*/
-    *((unsigned char *)this->? + 4 * i + 36) = v8[2]; /*0x4a68fa*/
-    *((unsigned char *)this->? + 4 * i + 37) = v8[1]; /*0x4a6904*/
-    *((unsigned char *)this->? + 4 * i + 38) = *v8; /*0x4a690d*/
+    *((unsigned char *)((unsigned int *)this)[0] + 4 * i + 36) = v8[2]; /*0x4a68fa*/
+    *((unsigned char *)((unsigned int *)this)[0] + 4 * i + 37) = v8[1]; /*0x4a6904*/
+    *((unsigned char *)((unsigned int *)this)[0] + 4 * i + 38) = *v8; /*0x4a690d*/
   }
-  p_vtable3 = (int *)&this->?; /*0x4a6929*/
+  p_vtable3 = (int *)&((unsigned int *)this)[0]; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
-  this->? = CreateDIBSection(DC, (const BITMAPINFO *)this->?, 0, &this->?, 0, 0); /*0x4a693f*/
+  ((unsigned int *)this)[0] = CreateDIBSection(DC, (const BITMAPINFO *)((unsigned int *)this)[0], 0, &((unsigned int *)this)[0], 0, 0); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
-  if ( !this->? ) /*0x4a6948*/
+  if ( !((unsigned int *)this)[0] ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  vtable1 = this->?; /*0x4a6951*/
-  this->? = vtable1[1]; /*0x4a6957*/
-  uniqueId = this->?; /*0x4a6962*/
-  this->? = abs32(vtable1[2]); /*0x4a6965*/
+  vtable1 = ((unsigned int *)this)[0]; /*0x4a6951*/
+  ((unsigned int *)this)[0] = vtable1[1]; /*0x4a6957*/
+  uniqueId = ((unsigned int *)this)[0]; /*0x4a6962*/
+  ((unsigned int *)this)[0] = abs32(vtable1[2]); /*0x4a6965*/
   v13 = uniqueId + 3; /*0x4a6968*/
   LOBYTE(v13) = (uniqueId + 3) & 0xFC; /*0x4a696b*/
-  this->? = v13; /*0x4a696d*/
+  ((unsigned int *)this)[0] = v13; /*0x4a696d*/
   if ( (int)vtable1[2] <= 0 ) /*0x4a6975*/
   {
-    this->? = *p_vtable3; /*0x4a698b*/
+    ((unsigned int *)this)[0] = *p_vtable3; /*0x4a698b*/
   }
   else
   {
-    this->? = *p_vtable3 + uniqueId * (this->? - 1); /*0x4a6981*/
+    ((unsigned int *)this)[0] = *p_vtable3 + uniqueId * (((unsigned int *)this)[0] - 1); /*0x4a6981*/
     v13 = -v13; /*0x4a6984*/
   }
-  this->? = v13; /*0x4a698e*/
+  ((unsigned int *)this)[0] = v13; /*0x4a698e*/
   v14 = abs32(v13); /*0x4a6998*/
   v15 = (char *)__2_YAPAXI_Z(0x20u); /*0x4a699f*/
   if ( v15 ) /*0x4a69a6*/
   {
-    abstractFlags = this->?; /*0x4a69a8*/
-    vtable3 = this->?; /*0x4a69ab*/
+    abstractFlags = ((unsigned int *)this)[0]; /*0x4a69a8*/
+    vtable3 = ((unsigned int *)this)[0]; /*0x4a69ab*/
     *((unsigned int *)v15 + 2) = abstractFlags; /*0x4a69ae*/
     *((unsigned int *)v15 + 1) = v14; /*0x4a69b9*/
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
@@ -1619,7 +1619,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   {
     v15 = 0; /*0x4a69d9*/
   }
-  this->? = v15; /*0x4a69dd*/
+  ((unsigned int *)this)[0] = v15; /*0x4a69dd*/
   if ( !v15 ) /*0x4a69e0*/
 LABEL_12:
     LOBYTE(this->AbstractClass) = 1; /*0x4a69e2*/
@@ -2739,11 +2739,11 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
       {
         v7 = 1.0; /*0x4afa15*/
       }
-      v10 = InterpolateVoxelAnimPose(v14, (int)this->?, this->?, v7); /*0x4afa55*/
+      v10 = InterpolateVoxelAnimPose(v14, (int)((unsigned int *)this)[0], ((unsigned int *)this)[0], v7); /*0x4afa55*/
       goto LABEL_17; /*0x4afa5a*/
     }
   }
-  referenceCount = this->?; /*0x4afa5c*/
+  referenceCount = ((unsigned int *)this)[0]; /*0x4afa5c*/
   if ( referenceCount ) /*0x4afa61*/
   {
     v10 = CopyAudioData(v14, referenceCount); /*0x4afa67*/
@@ -3059,7 +3059,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
 
-  Checksummer::Add_Buffer((Checksummer *)&this->?, aP1, aP2); /*0x4a2042*/
+  Checksummer::Add_Buffer((Checksummer *)&((unsigned int *)this)[0], aP1, aP2); /*0x4a2042*/
   return Delegate::Dispatch((Pipe *)this, (int)aP1, aP2); /*0x4a2050*/
 
 }
@@ -3075,7 +3075,7 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
   if ( !aP1 || aP2 < 1 ) /*0x4a20c3*/
     return 0; /*0x4a20e2*/
   v4 = Delegate::Invoke((Straw *)this, (int)aP1, aP2); /*0x4a20cd*/
-  Checksummer::Add_Buffer((Checksummer *)&this->?, aP1, v4); /*0x4a20d4*/
+  Checksummer::Add_Buffer((Checksummer *)&((unsigned int *)this)[0], aP1, v4); /*0x4a20d4*/
   return v4; /*0x4a20dc*/
 
 }
@@ -3822,8 +3822,8 @@ namespace gamemd {
 void E4Recv_4A52D0::sub_4A52D0()
 {
 
-  LOBYTE(this->?) = 0; /*0x4a52d0*/
-  BYTE1(this->?) = 1; /*0x4a52d4*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x4a52d0*/
+  BYTE1(((unsigned int *)this)[0]) = 1; /*0x4a52d4*/
 
 }
 } // namespace gamemd
@@ -3833,8 +3833,8 @@ namespace gamemd {
 char E4Recv_4A52E0::sub_4A52E0()
 {
 
-  LOBYTE(this->?) = 0; /*0x4a52e2*/
-  BYTE1(this->?) = 0; /*0x4a52e5*/
+  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x4a52e2*/
+  BYTE1(((unsigned int *)this)[0]) = 0; /*0x4a52e5*/
   return 0; /*0x4a52e8*/
 
 }
@@ -4640,7 +4640,7 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
   result = 0; /*0x4aff4f*/
   if ( v2 == 1.0 ) /*0x4aff20*/
   {
-    vtable3 = (float *)this->?; /*0x4aff22*/
+    vtable3 = (float *)((unsigned int *)this)[0]; /*0x4aff22*/
     if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x4aff4d*/
       return 1; /*0x4aff20*/
   }

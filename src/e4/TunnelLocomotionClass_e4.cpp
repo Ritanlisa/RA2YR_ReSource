@@ -41,7 +41,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
   TunnelLocomotionClass *thisa; // [esp+38h] [ebp+4h]
   uint16_t this_2; // [esp+3Ah] [ebp+6h]
 
-  switch ( a1->? ) /*0x728c17*/
+  switch ( ((unsigned int *)a1)[0] ) /*0x728c17*/
   {
     case 1: /*0x728c17*/
     case 5: /*0x728c17*/
@@ -49,10 +49,10 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     case 7: /*0x728c17*/
       goto LABEL_11;
     case 2: /*0x728c17*/
-      a1->? = 7; /*0x728dd9*/
+      ((unsigned int *)a1)[0] = 7; /*0x728dd9*/
       goto LABEL_11; /*0x728dd9*/
     case 3: /*0x728c17*/
-      a1->? = 5; /*0x728dd0*/
+      ((unsigned int *)a1)[0] = 5; /*0x728dd0*/
 LABEL_11:
       a1->CurrentState[0] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728de0*/
       a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728df0*/
@@ -60,9 +60,9 @@ LABEL_11:
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       CurrentState = a1->CurrentState; /*0x728c29*/
-      v4 = a1->?->?[0]; /*0x728c31*/
-      v5 = a1->?->?[2]; /*0x728c38*/
-      v16 = a1->?->?[1] - a1->CurrentState[1]; /*0x728c3b*/
+      v4 = ((unsigned int *)&((unsigned int *)a1)[0])[0]; /*0x728c31*/
+      v5 = ((unsigned int *)&((unsigned int *)a1)[0])[2]; /*0x728c38*/
+      v16 = ((unsigned int *)&((unsigned int *)a1)[0])[1] - a1->CurrentState[1]; /*0x728c3b*/
       __asm { fild [esp+34h+var_8] } /*0x728c3f*/
       v17 = v5; /*0x728c43*/
       v15 = v4 - a1->CurrentState[0]; /*0x728c4b*/
@@ -89,8 +89,8 @@ LABEL_11:
       }
       if ( (BYTE1(_EAX) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->?->TechnoClass + 110))( /*0x728c9e*/
-                                      a1->?,
+        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))((unsigned int *)a1)[0]->TechnoClass + 110))( /*0x728c9e*/
+                                      ((unsigned int *)a1)[0],
                                       v13);
         v11[0] = 0; /*0x728cc4*/
         v11[1] = 0; /*0x728cc9*/
@@ -142,8 +142,8 @@ LABEL_11:
         }
         if ( __PAIR32__(this_2, v8) == *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728d4f*/
         {
-          (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->?->TechnoClass + 91))( /*0x728d7c*/
-            &a1->?->?,
+          (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))((unsigned int *)a1)[0]->TechnoClass + 91))( /*0x728d7c*/
+            &((unsigned int *)a1)[0],
             0,
             *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
             0,
