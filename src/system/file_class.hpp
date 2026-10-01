@@ -110,7 +110,7 @@ class RawFileClass : public FileClass
 {
     int SetName(int, ...); // vtable slot +8
 public:
-    virtual ~RawFileClass() override;  // 0x65CA00
+    virtual int ~RawFileClass() override;
 
     // design: inline accessor, inlined at all call sites
     const char* GetFileName() const override;

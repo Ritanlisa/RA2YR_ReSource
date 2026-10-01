@@ -81,8 +81,8 @@ struct Array {
     unsigned char Array_field_0x38;  // 0x38
     unsigned char Array_field_0xE8;  // 0xE8
 // --- flat members (END) ---
-    int GetClamped(CheckListClass * aP1);  // 0x557AC0
-    int FindValue(IUnknown * aP1);  // 0x634290
+    int GetClamped(int a2);
+    int FindValue(int a2);
     int RemoveAt(int a2, void *a2_2);  // 0x63E590
     int Get(int a2);  // 0x65AD40
     int ContainsValue(IUnknown * aP1, void *a2_1);  // 0x65ADF0

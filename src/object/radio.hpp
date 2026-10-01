@@ -10,7 +10,7 @@ enum class RadioCommand : int;
 
 class RadioClass : public MissionClass {
 public:
-    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x65AB80
+    virtual int Load(int a2, int a3) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x65AC40
 
     virtual ~RadioClass() = default; // 0x65A750

@@ -292,7 +292,7 @@ int IPXManagerClass::init()
   return *((unsigned int *)this + 8); /*0x48ba93*/
 }
 // 0x5409f0
-void IPXManagerClass::processPacket()
+int IPXManagerClass::processPacket()
 {
   char v2; // al
   void (__thiscall ***v3)(unsigned int, int); // ecx

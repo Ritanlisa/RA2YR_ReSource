@@ -732,7 +732,7 @@ public:
     virtual ~GadgetGrid() = default;
 
     virtual void InsertItem(int index, void* item);  // 0x4134A0
-    virtual void RemoveItem(int index);  // 0x4135D0
+    virtual int RemoveItem(int a2);
 
     uint8_t GadgetGrid_field_0x04[4];
 };

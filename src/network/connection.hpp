@@ -22,7 +22,7 @@ public:
     virtual ULONG   __stdcall AddRef();
     virtual ULONG   __stdcall Release();
 
-    virtual ~ConnectionClass();                                                    // 0x48BEE0
+    virtual void ~ConnectionClass();
 
     virtual bool  Open();
     virtual void  Close();
@@ -98,7 +98,7 @@ public:
     bool IsIPXAvailable() const;
 
     int init();  // 0x48BA90
-    void processPacket();                                             // 0x5409F0
+    int processPacket();                                             // 0x5409F0
     IPXConnClass* createConnection();                                 // 0x540D40
     void destroyConnection(IPXConnClass*);                             // 0x540D60
     void release();  // 0x5414C0

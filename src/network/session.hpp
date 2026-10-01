@@ -140,7 +140,7 @@ protected:
     int initLAN(int a1, int a2, int a3);  // 0x540dc0 -- SessionClass::initLAN
     int initInternet();  // 0x540e70 -- SessionClass::initInternet
     void* Load();  // 0x552cc0 -- SessionClass::Load
-    bool LoadGameSession(int a1, int a2);  // 0x5adf20 -- SessionClass::LoadGameSession
+    bool LoadGameSession(int a2, const char **a3);
     int LoadMapSelection(int a1);  // 0x5ceef0 -- SessionClass::LoadMapSelection
     void loadSettings();  // 0x5d0070 -- SessionClass::loadSettings
     int initPlayers();  // 0x5e64c0 -- SessionClass::initPlayers

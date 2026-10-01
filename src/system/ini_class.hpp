@@ -27,7 +27,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int GetTechnoType(int a1, int a2);  // 0x476eb0 -- INIEntry::GetTechnoType
+    int GetTechnoType(unsigned __int8 *a2, unsigned __int8 *a3);
     // === SYMBOL-ANCHOR (END) ===
 };
 
