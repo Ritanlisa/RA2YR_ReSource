@@ -131,7 +131,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3
   int v3; // eax
   int v4; // eax
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x46bbc9*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull((char *)(aP1)); /*0x46bbc9*/
   *((unsigned char *)this + 660) = 0; /*0x46bbd5*/
   *((unsigned char *)this + 661) = 0; /*0x46bbdb*/
   *((unsigned char *)this + 662) = 0; /*0x46bbe1*/

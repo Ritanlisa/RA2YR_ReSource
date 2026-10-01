@@ -32,7 +32,7 @@ void BulkData::InitMissionHashing()
   SessionClass::LoadMissionList((SessionClass *)this); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
-  ComputeHash(&Time, v2); /*0x697af1*/
+  ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
   inited = Object_Init_7CBC11(aPath); /*0x697afb*/
   v4 = inited; /*0x697b00*/
   if ( inited ) /*0x697b07*/
@@ -41,7 +41,7 @@ void BulkData::InitMissionHashing()
     if ( strlen(inited) ) /*0x697b12*/
     {
       do /*0x697b35*/
-        ComputeHash(&Time, v4[v5++]); /*0x697b21*/
+        ComputeHash((unsigned int *)(&Time), v4[v5++]); /*0x697b21*/
       while ( v5 < strlen(v4) ); /*0x697b35*/
     }
   }

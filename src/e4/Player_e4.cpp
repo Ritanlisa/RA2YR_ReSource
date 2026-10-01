@@ -78,7 +78,7 @@ wchar_t * Player::FindByName(wchar_t * String2)
     return (wchar_t *)g_Lobby_PlayerSide; /*0x5e8c62*/
   if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, (const wchar_t *)String2) ) /*0x5e8c74*/
     return (wchar_t *)g_Lobby_PlayerColor; /*0x5e8c80*/
-  if ( !wcscmp(g_Lobby_PlayerReady, (const wchar_t *)String2) ) /*0x5e8c92*/
+  if ( !wcscmp((const wchar_t *)(g_Lobby_PlayerReady), (const wchar_t *)String2) ) /*0x5e8c92*/
     return g_Lobby_PlayerReady; /*0x5e8c9e*/
   if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, (const wchar_t *)String2) ) /*0x5e8caf*/
     return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/

@@ -22,7 +22,7 @@ namespace gamemd {
 int LinkClass::Destroy(void *a1)
 {
 
-  (*(void (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
+  (*(void ((gamemd::GadgetClass *)(**))(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
   return LinkedList::RemoveNode((LinkClass *)this); /*0x4e148f*/
 
 }

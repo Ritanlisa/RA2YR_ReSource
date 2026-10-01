@@ -440,7 +440,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         }
         if ( (unsigned char)a2 ) /*0x5a5a6a*/
 LABEL_98:
-          PlaceMapSeedClassBuildings((int)v79 + dword_AA10A4, &v82, -1, -1); /*0x5a5a7f*/
+          PlaceMapSeedClassBuildings((int)v79 + dword_AA10A4,(gamemd::ObjectClass *)(&v82), -1, -1); /*0x5a5a7f*/
         --v80; /*0x5a5a89*/
       }
       while ( *(float *)&v80 != 0.0 ); /*0x5a5a8d*/

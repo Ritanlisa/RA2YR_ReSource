@@ -299,7 +299,7 @@ void WOL_RequestMatch(void * a1)
   ((String *)((String *)&v31[8]))->Assign_Alt(aWds0); /*0x7a08e2*/
   LABEL_34:
   ((String *)((String *)&v31[8]))->Append(aWdt); /*0x7a0987*/
-  v11 = FromStringInt((char **)&v31[4], *(int *)dword_A8B240); /*0x7a099f*/
+  v11 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), *(int *)dword_A8B240); /*0x7a099f*/
   ((String *)((String *)&v31[8]))->Append2(v11); /*0x7a09a9*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
   *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7a09bb*/
@@ -309,11 +309,11 @@ void WOL_RequestMatch(void * a1)
   Dialog::ShowMessage(16744576, (size_t)StringCSF); /*0x7a09e6*/
   ((String *)((String *)v31))->AssignFromPtr((const char **)&v31[32]); /*0x7a09f7*/
   ((String *)((String *)v31))->Append(aCou); /*0x7a0a05*/
-  v13 = FromStringInt((char **)&v31[4], v9); /*0x7a0a10*/
+  v13 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v9); /*0x7a0a10*/
   ((String *)((String *)v31))->Append2(v13); /*0x7a0a1a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a23*/
   ((String *)((String *)v31))->Append(aCol); /*0x7a0a31*/
-  v14 = FromStringInt((char **)&v31[4], *(unsigned int *)(*(unsigned int *)&v31[28] + 32)); /*0x7a0a41*/
+  v14 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), *(unsigned int *)(*(unsigned int *)&v31[28] + 32)); /*0x7a0a41*/
   ((String *)((String *)v31))->Append2(v14); /*0x7a0a4b*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a54*/
   ((String *)((String *)v31))->Append(aMbr); /*0x7a0a62*/
@@ -352,32 +352,32 @@ void WOL_RequestMatch(void * a1)
     }
   LABEL_49:
     ((String *)((String *)v31))->Append(aLoc); /*0x7a0b3b*/
-    v18 = FromStringInt((char **)&v31[4], v16); /*0x7a0b4f*/
+    v18 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v16); /*0x7a0b4f*/
     ((String *)((String *)v31))->Append2(v18); /*0x7a0b59*/
     DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b62*/
   }
   LABEL_50:
   ((String *)((String *)v31))->Append(aRat); /*0x7a0b67*/
   v19 = Performance::Profile(v29); /*0x7a0b75*/
-  v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
+  v20 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v19); /*0x7a0b80*/
   ((String *)((String *)v31))->Append2(v20); /*0x7a0b8a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
   ((String *)((String *)v31))->Append(aRes); /*0x7a0ba1*/
   v21 = FromStringInt((char **)&v31[4], stru_A8EB00.ObjectTypeClass[33]); /*0x7a0bb0*/
   ((String *)((String *)v31))->Append2(v21); /*0x7a0bba*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0bc3*/
-  ((Network *)((Network *)&stru_A8DBC0))->GetAddress(&v31[56], (int)&v31[48], &v31[46]); /*0x7a0bdc*/
+  ((Network *)((Network *)&stru_A8DBC0))->GetAddress((unsigned int *)(&v31[56]), (int)&v31[48], &v31[46]); /*0x7a0bdc*/
   v22 = *(unsigned int *)&v31[48]; /*0x7a0be1*/
   ((String *)((String *)v31))->Append(aAdr); /*0x7a0bee*/
-  v23 = FromStringInt((char **)&v31[4], v22); /*0x7a0bf9*/
+  v23 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v22); /*0x7a0bf9*/
   ((String *)((String *)v31))->Append2(v23); /*0x7a0c03*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c0c*/
   ((String *)((String *)v31))->Append(aNat); /*0x7a0c1a*/
-  v24 = (char **)((unsigned int)(FromStringInt((char **)&v31[4], (uint16_t)dword_ABFEC8)));
+  v24 = (char **)((unsigned int)(FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), (uint16_t)dword_ABFEC8)));
   ((String *)((String *)v31))->Append2(v24); /*0x7a0c39*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c42*/
   ((String *)((String *)v31))->Append(aPrt); /*0x7a0c50*/
-  v25 = FromStringInt((char **)&v31[4], dword_A8E228); /*0x7a0c5f*/
+  v25 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), dword_A8E228); /*0x7a0c5f*/
   ((String *)((String *)v31))->Append2(v25); /*0x7a0c69*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c72*/
   ((String *)((String *)v31))->Append2((char **)&v31[8]); /*0x7a0c80*/
@@ -411,7 +411,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
   {
     v2 = 0; /*0x7a0dda*/
     v3 = (char **)dword_A8DA90; /*0x7a0ddc*/
-    while ( !*v3 || strcmp(ToWideStringChar(*v3), (const char *)&this->occupant) ) /*0x7a0e1a*/
+    while ( !*v3 || strcmp(ToWideStringChar((gamemd::IUnknown *)(*v3)), (const char *)&this->occupant) ) /*0x7a0e1a*/
     {
       ++v3; /*0x7a0e1c*/
       ++v2; /*0x7a0e1f*/

@@ -74,7 +74,7 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c00fa*/
-    Frame::Present((int)DSurface_Alternate, v3, a2, a3, 0, v8, v9, v10); /*0x5c0107*/
+    Frame::Present((void *)((int)DSurface_Alternate), v3, a2, a3, 0, v8, v9, v10); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
@@ -131,7 +131,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   }
   else
   {
-    v4 = (int *)(*(int (**)(int *, char *))(*(int *)(a2) + 120))(a2, v17); /*0x5c0819*/
+    v4 = (int *)(*(int ((int *)(**))(int *, char *))(*(int *)(a2) + 120))(a2, v17); /*0x5c0819*/
     v5 = *v4; /*0x5c081c*/
     v14 = v4[1]; /*0x5c0821*/
     v6 = v4[2]; /*0x5c0825*/
@@ -139,7 +139,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   v15 = v6; /*0x5c0832*/
   v16 = v4[3]; /*0x5c0836*/
   v7 = strrchr(Str, 46); /*0x5c083a*/
-  if ( v7 && !_strcmpi(v7, aBik) ) /*0x5c084c*/
+  if ( v7 && !_strcmpi(v7,(const char *)(aBik)) ) /*0x5c084c*/
   {
         Debug::Log(aPlayMovieAsBin);
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
@@ -161,7 +161,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     }
     return 0; /*0x5c0964*/
   }
-  VQMovie = (gamemd::MovieClass **)((unsigned int)((MovieClass **)LoadVQMovie(Str, a2, 0, 0, 0, 0, v5, v14, v15, v16, 255, 0)));
+  VQMovie = (gamemd::MovieClass **)((unsigned int)((MovieClass **)LoadVQMovie(Str,(int *)(a2), 0, 0, 0, 0, v5, v14, v15, v16, 255, 0)));
   if ( !VQMovie ) /*0x5c090e*/
     return 0; /*0x5c090e*/
   v12 = RA2_OPNEW(0x18u); /*0x5c0912*/
@@ -254,8 +254,8 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
   int v6; // [esp+0h] [ebp-8h]
 
-  StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
-  v3 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108));
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, aDRa2mdpostMpla, 108));
+  v3 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, aDRa2mdpostMpla, 108));
   return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 
 }
@@ -360,7 +360,7 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
     v9 = (void *)((unsigned int)(a3)<< 16); /*0x5c6435*/
     IDA_LOWORD(v9) = (unsigned short)(a3); /*0x5c6438*/
     memset32(a2, v9, v8 >> 2); /*0x5c643f*/
-    memset(&a2[4 * (v8 >> 2)], a3, v8 & 3); /*0x5c644a*/
+    memset(&a2[4 * (v8 >> 2)],(int)(a3), v8 & 3); /*0x5c644a*/
     v6 = (unsigned char *)(&a2[v8]); /*0x5c6450*/
   }
   v10 = v5; /*0x5c6454*/
@@ -491,7 +491,7 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
 }
 // 0x5C67A0
 namespace gamemd {
-void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
+int RotateBitBufferLeft(int *a0, int a2, int aP2)
 {
   Buffer * result;
   char v4; // di
@@ -1180,7 +1180,7 @@ void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4,
       v22 = v20 - (unsigned int)v21; /*0x5c7425*/
       for ( i = v20 - (unsigned int)v21; ; v22 = i ) /*0x5c7427*/
       {
-        RotateBitBufferLeft(a1, 1, aP2); /*0x5c743d*/
+        RotateBitBufferLeft((int *)(a1), 1, aP2); /*0x5c743d*/
         if ( (v40 & *(unsigned int *)((char *)v36 + v22)) != 0 ) /*0x5c744d*/
         {
           v23 = aP2; /*0x5c7452*/
@@ -1343,7 +1343,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
     v38 = !v38; /*0x5c7611*/
   }
   v18 = v40; /*0x5c7615*/
-  SubtractBigInteger(v40, a2, (int)v42, (char *)v41, a5); /*0x5c762b*/
+  SubtractBigInteger((unsigned int *)(v40), a2, (int)v42, (char *)v41, a5); /*0x5c762b*/
   IDA_LOBYTE(v19) = v38; /*0x5c7630*/
   if ( v38 ) /*0x5c7636*/
   {
@@ -1512,7 +1512,7 @@ void ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
     }
     v10 = (v6 % 3) << 8; /*0x5c783f*/
     v11 = ((v6 + 2) % 3) << 8; /*0x5c7853*/
-    SubtractBigInteger(&v34[v11], v33, (int)&v34[v10], &v34[v7], a4); /*0x5c785d*/
+    SubtractBigInteger((unsigned int *)(&v34[v11]), v33, (int)&v34[v10], &v34[v7], a4); /*0x5c785d*/
     FillArrayPattern(v30, (char *)v31 + v7, v33, a4); /*0x5c7875*/
     v12 = (char *)v31 + v10; /*0x5c787e*/
     v27 = 0; /*0x5c7887*/

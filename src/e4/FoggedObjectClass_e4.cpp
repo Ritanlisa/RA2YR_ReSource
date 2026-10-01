@@ -267,7 +267,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
       v19 = (unsigned int *)((char *)g_MissionPool + 8 * i++);
       v17[2 * i - 2] = *v19; /*0x4d0e72*/
     }
-    __3_YAXPAX_Z(g_MissionPool); /*0x4d0e8e*/
+    __3_YAXPAX_Z((void *)(g_MissionPool)); /*0x4d0e8e*/
     g_MissionPool = (int)(v17); /*0x4d0e9d*/
     dword_8B3CC8 += v16; /*0x4d0ea3*/
     dword_8B3CD0 = 0; /*0x4d0ea8*/
@@ -416,7 +416,7 @@ LABEL_11:
   if ( *((unsigned int *)this + 27) < v16 /*0x4d113e*/
     || (*((unsigned char *)this + 105) || !v16)
     && (v17 = *((unsigned int *)this + 28), v17 > 0)
-    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v16 + v17, 0) )
+    && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v16 + v17, 0) )
   {
     v18 = *((unsigned int *)this + 27); /*0x4d1145*/
     *((unsigned int *)this + 27) = v18 + 1; /*0x4d114b*/
@@ -503,7 +503,7 @@ LABEL_41:
     if ( v35 < v37 /*0x4d12cb*/
       || (*((unsigned char *)this + 105) || !v37)
       && (v38 = *((unsigned int *)this + 28), v38 > 0)
-      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v37 + v38, 0) )
+      && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v37 + v38, 0) )
     {
       v39 = *((unsigned int *)this + 27); /*0x4d12d2*/
       *((unsigned int *)this + 27) = v39 + 1; /*0x4d12dc*/
@@ -644,7 +644,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
       v20 = (unsigned int *)((char *)g_MissionPool + 8 * i++); /*0x4d15ca*/
       v18[2 * i - 2] = *v20; /*0x4d15d0*/
     }
-    __3_YAXPAX_Z(g_MissionPool); /*0x4d15ec*/
+    __3_YAXPAX_Z((void *)(g_MissionPool)); /*0x4d15ec*/
     g_MissionPool = (int)(v18); /*0x4d15fb*/
     dword_8B3CC8 += v17; /*0x4d1601*/
     dword_8B3CD0 = 0; /*0x4d1606*/
@@ -686,7 +686,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 
   v2 = (int *)a2; /*0x4d2514*/
   v3 = (gamemd::FoggedObjectClass *)(a1); /*0x4d251b*/
-  result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x4d2521*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), a2); /*0x4d2521*/
   if ( result < 0 ) /*0x4d252a*/
     return result; /*0x4d252a*/
   if ( v3 ) /*0x4d2532*/
@@ -745,7 +745,7 @@ LABEL_22:
         v16 = (char *)g_MissionPool + 8 * i++; /*0x4d2700*/
         v14[2 * i - 2] = *v16; /*0x4d2706*/
       }
-      __3_YAXPAX_Z(g_MissionPool); /*0x4d2721*/
+      __3_YAXPAX_Z((void *)(g_MissionPool)); /*0x4d2721*/
       g_MissionPool = v14; /*0x4d2730*/
       dword_8B3CC8 += v13; /*0x4d2736*/
       dword_8B3CD0 = 0; /*0x4d273b*/

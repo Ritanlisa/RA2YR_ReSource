@@ -50,7 +50,7 @@ int LookupString(const char ** a2, unsigned int * a3);
 unsigned int CleanupAndResize();
 unsigned int Rebuild();
 void Rebuild2();
-void Shrink();
+int Shrink();
 void Shrink2();
 };
 

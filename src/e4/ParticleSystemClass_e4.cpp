@@ -29,7 +29,7 @@ unsigned int * ParticleSystemClass::ddtor(int a2, int a3)
 
   DestructParticleSystemClass(v4, (int)a3); /*0x630233*/
   if ( (a3 & 1) != 0 ) /*0x63023d*/
-    __3_YAXPAX_Z(a3); /*0x630240*/
+    __3_YAXPAX_Z((void *)(a3)); /*0x630240*/
   return a3; /*0x63024a*/
 
 }

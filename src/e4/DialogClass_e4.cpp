@@ -36,7 +36,7 @@ int DialogClass::Reposition(int hWnd, int a2)
 
   GetWindowRect(hWnd, &Rect); /*0x775bdd*/
   GetClassNameA(hWnd, ClassName, 128); /*0x775bea*/
-  if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x775c01*/
+  if ( !strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x775c01*/
     SendMessageA(hWnd, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {

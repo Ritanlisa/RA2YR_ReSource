@@ -52,14 +52,14 @@ int E4Recv_501750::sub_501750(int a2)
     v12 = result; /*0x5017a2*/
     if ( !dword_A8E7AC && v5 != result ) /*0x5017ae*/
     {
-      (*(void (**)(ObjectClass *, void *, int *))this->AbstractClass)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
+      (*(void ((gamemd::ObjectClass *)(**))(ObjectClass *, void *, int *))this->AbstractClass)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
       (*(void (**)(int, int *))(*(unsigned int *)v9 + 12))(v9, &v8); /*0x5017cf*/
       if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
       {
         while ( 1 ) /*0x5017f7*/
         {
           (*(void (**)(int, unsigned char *))(*(unsigned int *)v6 + 12))(v6, v11); /*0x5017f9*/
-          if ( !memcmp(v11, dword_7E9550, 0x10u) ) /*0x501810*/
+          if ( !memcmp(v11,(const void *)(dword_7E9550), 0x10u) ) /*0x501810*/
             break; /*0x501810*/
           (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x501817*/
           if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) < 0 ) /*0x50182f*/

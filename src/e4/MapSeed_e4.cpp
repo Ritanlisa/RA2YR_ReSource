@@ -30,7 +30,7 @@ int MapSeed::ValidateName(int a2)
 
   if ( a2 ) /*0x597736*/
     return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (unsigned char *)this + 120); /*0x597740*/
-  LOBYTE(result) = ShowSaveLoadDialog((int)this, (unsigned char *)this + 120); /*0x597752*/
+  LOBYTE(result) = ShowSaveLoadDialog((void *)((int)this), (unsigned char *)this + 120); /*0x597752*/
   return result; /*0x597744*/
 
 }

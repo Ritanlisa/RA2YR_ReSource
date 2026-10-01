@@ -175,7 +175,7 @@ void ** TemporalClass::ProcessTimeWarp()
     if ( !v3 ) /*0x71a7b6*/
       goto LABEL_10; /*0x71a7b6*/
     v6 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v44); /*0x71a7c9*/
-    v7 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->creationFrame + 72))(this->creationFrame, v45); /*0x71a7d2*/
+    v7 = (unsigned int *)(*(int ((int)(**))(int, unsigned char *))(*(unsigned int *)this->creationFrame + 72))(this->creationFrame, v45); /*0x71a7d2*/
     v8 = v6[1]; /*0x71a7d9*/
     v9 = *v7 - *v6; /*0x71a7dc*/
     v10 = v7[1]; /*0x71a7de*/
@@ -200,7 +200,7 @@ LABEL_10:
       v16 = (int)(this->creationFrame); /*0x71a860*/
       v17 = *(unsigned int *)v16; /*0x71a864*/
       v18 = (*(int (**)(int, unsigned int))(*(unsigned int *)v16 + 740))(v16, 0); /*0x71a866*/
-      v19 = (*(int (**)(int, int))(v17 + 1016))(this->creationFrame, v18); /*0x71a870*/
+      v19 = (*(int ((int)(**))(int, int))(v17 + 1016))(this->creationFrame, v18); /*0x71a870*/
       v20 = *((unsigned int *)this + 18); /*0x71a878*/
       v21 = *(unsigned int *)(*(unsigned int *)v19 + 164); /*0x71a87b*/
       *((unsigned int *)this + 19) = v21; /*0x71a881*/
@@ -241,10 +241,10 @@ LABEL_10:
         }
         if ( *(unsigned int *)this->__pad_28 )
         {
-          if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x71a922*/
+          if ( *(unsigned char *)((*(int ((int)(**))(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x71a922*/
           {
             v24 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_28 + 132))(*(unsigned int *)this->__pad_28); /*0x71a938*/
-            v25 = (*(int (**)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame); /*0x71a944*/
+            v25 = (*(int ((int)(**))(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame); /*0x71a944*/
             v40 = *(unsigned int *)(*(unsigned int *)this->__pad_28 + 540); /*0x71a94f*/
             v26 = (*(int (**)(int))(*(unsigned int *)v24 + 132))(v24); /*0x71a952*/
             v27 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v25 + 132))( /*0x71a968*/
@@ -361,7 +361,7 @@ int TemporalClass::GetWarpPerStep(int a2)
   creationFrame = (int)(this->creationFrame); /*0x71ab30*/
   v6 = *(unsigned int *)creationFrame; /*0x71ab35*/
   v7 = (*(int (**)(int, unsigned int))(*(unsigned int *)creationFrame + 740))(creationFrame, 0); /*0x71ab37*/
-  v8 = *(unsigned int *)(*(unsigned int *)(*(int (**)(int, int))(v6 + 1016))(this->creationFrame, v7) + 164); /*0x71ab4a*/
+  v8 = *(unsigned int *)(*(unsigned int *)(*(int ((int)(**))(int, int))(v6 + 1016))(this->creationFrame, v7) + 164); /*0x71ab4a*/
   *((unsigned int *)this + 19) = v8; /*0x71ab50*/
   return WarpPerStep + v8; /*0x71ab49*/
 
@@ -419,7 +419,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x71a671*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x71a671*/
   if ( Prefix_0 >= 0 ) /*0x71a675*/
   {
     if ( aP0 ) /*0x71a679*/
@@ -447,7 +447,7 @@ namespace gamemd {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71a714*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x71a714*/
 
 }
 } // namespace gamemd

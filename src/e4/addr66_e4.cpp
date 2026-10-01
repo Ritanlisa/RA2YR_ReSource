@@ -462,7 +462,7 @@ LABEL_63:
         v46 = *(ObjectClass **)(a1 + 8);
         v124 = *(CoordStruct *)v46->location;
         int v44 = (*(int (**)(ObjectClass *))(*(unsigned int *)v46->__pad_0 + 132))(v46);
-        StartAudioControllerAt(*(AudioController **)(v44 + 1324), (int)&v124, 0);
+        StartAudioControllerAt((int)(*(AudioController **)(v44 + 1324)), (int)&v124, 0);
       }
       goto LABEL_111;
     case 3:

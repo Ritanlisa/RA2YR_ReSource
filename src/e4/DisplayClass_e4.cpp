@@ -106,7 +106,7 @@ int DisplayClass::LoadTypeData()
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
   MapClass::Destru_vt05((MapClass *)this); /*0x4a8856*/
-  stru_8A0390.health = SearchMIXFile(aPlaceShp, 0); /*0x4a886e*/
+  stru_8A0390.health = SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
   dword_8A072C = SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
   Viewport = Display::GetViewport(v7); /*0x4a8881*/
   v6[0] = *Viewport; /*0x4a8888*/
@@ -224,7 +224,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
   copyFlags = v5->copyFlags; /*0x4a98e6*/
   LOBYTE(copyFlags) = copyFlags | 8; /*0x4a98ec*/
   v5->copyFlags = copyFlags; /*0x4a98f0*/
-  AdjacentPassableMask = Cell::GetAdjacentPassableMask(a1, 0); /*0x4a98fd*/
+  AdjacentPassableMask = Cell::GetAdjacentPassableMask((IUnknown *)(a1), 0); /*0x4a98fd*/
   if ( AdjacentPassableMask != v5->shroudedness ) /*0x4a9908*/
   {
     v30 = 1; /*0x4a990a*/
@@ -236,7 +236,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
     LOBYTE(v9) = v9 | 0x10; /*0x4a9924*/
     v5->copyFlags = v9; /*0x4a9926*/
   }
-  v10 = Cell::GetAdjacentPassableMask(a1, 1); /*0x4a9935*/
+  v10 = Cell::GetAdjacentPassableMask((IUnknown *)(a1), 1); /*0x4a9935*/
   if ( v10 != v5->foggedness ) /*0x4a9940*/
   {
     v30 = 1; /*0x4a9942*/
@@ -261,7 +261,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
     v14 = CellCoord::To_CellObj((CellCoord *)this, v32); /*0x4a99c5*/
     if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[75] & 0x10) == 0 ) /*0x4a99e2*/
     {
-      v15 = Cell::GetAdjacentPassableMask(v32, 0); /*0x4a99f5*/
+      v15 = Cell::GetAdjacentPassableMask((IUnknown *)(v32), 0); /*0x4a99f5*/
       if ( v15 == -1 ) /*0x4a99fd*/
       {
         v16 = v14[75]; /*0x4a9a03*/
@@ -279,7 +279,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
           HIWORD(v35) = v18; /*0x4a9a67*/
           *(unsigned int *)v36 = v35; /*0x4a9a73*/
           v20 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9a89*/
-          v21 = Cell::GetAdjacentPassableMask(v36, 0); /*0x4a9a8b*/
+          v21 = Cell::GetAdjacentPassableMask((IUnknown *)(v36), 0); /*0x4a9a8b*/
           if ( v21 != v20[288] ) /*0x4a9a96*/
           {
             v20[288] = v21; /*0x4a9a98*/
@@ -307,7 +307,7 @@ LABEL_20:
 LABEL_31:
     if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[80] & 1) == 0 ) /*0x4a9b1f*/
     {
-      v22 = Cell::GetAdjacentPassableMask(v32, 1); /*0x4a9b32*/
+      v22 = Cell::GetAdjacentPassableMask((IUnknown *)(v32), 1); /*0x4a9b32*/
       if ( v22 == -1 ) /*0x4a9b3a*/
       {
         v23 = v14[80]; /*0x4a9b40*/
@@ -325,7 +325,7 @@ LABEL_31:
           HIWORD(v37) = v25; /*0x4a9ba4*/
           *(unsigned int *)v36 = v37; /*0x4a9bb0*/
           v27 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9bc6*/
-          v28 = Cell::GetAdjacentPassableMask(v36, 1); /*0x4a9bc8*/
+          v28 = Cell::GetAdjacentPassableMask((IUnknown *)(v36), 1); /*0x4a9bc8*/
           if ( v28 != v27[289] ) /*0x4a9bd3*/
           {
             v27[289] = v28; /*0x4a9bd5*/
@@ -398,7 +398,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
   v29 = v21; /*0x4a9e02*/
   LOBYTE(v28) = v21; /*0x4a9e06*/
   v5->flags[0] = v6; /*0x4a9e0a*/
-  AdjacentPassableMask = Cell::GetAdjacentPassableMask(aP1, 1); /*0x4a9e16*/
+  AdjacentPassableMask = Cell::GetAdjacentPassableMask((IUnknown *)(aP1), 1); /*0x4a9e16*/
   if ( AdjacentPassableMask != v5->foggedness ) /*0x4a9e21*/
   {
     v29 = 1; /*0x4a9e23*/
@@ -422,7 +422,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
     v12 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4a9eaa*/
     if ( (v22[0] != *aP1 || v22[1] != aP1[1]) && (v12[80] & 1) == 0 ) /*0x4a9ec7*/
     {
-      v13 = Cell::GetAdjacentPassableMask(v22, 1); /*0x4a9eda*/
+      v13 = Cell::GetAdjacentPassableMask((IUnknown *)(v22), 1); /*0x4a9eda*/
       if ( v13 == -1 ) /*0x4a9ee2*/
       {
         v14 = v12[80]; /*0x4a9ee8*/
@@ -440,7 +440,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
           HIWORD(v25) = v22[1] + v16; /*0x4a9f54*/
           *(unsigned int *)v26 = v25; /*0x4a9f5d*/
           v18 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4a9f73*/
-          v19 = Cell::GetAdjacentPassableMask(v26, 1); /*0x4a9f75*/
+          v19 = Cell::GetAdjacentPassableMask((IUnknown *)(v26), 1); /*0x4a9f75*/
           if ( v19 != v18[289] ) /*0x4a9f80*/
           {
             v18[289] = v19; /*0x4a9f82*/
@@ -512,7 +512,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
   v8 = (v7 & 8) == 0; /*0x4aa07b*/
   v5[75] = v6; /*0x4aa07e*/
   LOBYTE(v27) = v8; /*0x4aa08a*/
-  AdjacentPassableMask = Cell::GetAdjacentPassableMask(a1, 0); /*0x4aa08e*/
+  AdjacentPassableMask = Cell::GetAdjacentPassableMask((IUnknown *)(a1), 0); /*0x4aa08e*/
   if ( AdjacentPassableMask != *((unsigned char *)v5 + 288) ) /*0x4aa099*/
   {
     v8 = 1; /*0x4aa09b*/
@@ -536,7 +536,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
     v13 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4aa11a*/
     if ( (v22[0] != *v3 || v22[1] != v3[1]) && (v13[75] & 0x10) == 0 ) /*0x4aa137*/
     {
-      v14 = Cell::GetAdjacentPassableMask(v22, 0); /*0x4aa14a*/
+      v14 = Cell::GetAdjacentPassableMask((IUnknown *)(v22), 0); /*0x4aa14a*/
       if ( v14 == -1 ) /*0x4aa152*/
       {
         v15 = v13[75]; /*0x4aa158*/
@@ -554,7 +554,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
           HIWORD(v25) = v17; /*0x4aa1bd*/
           *(unsigned int *)v26 = v25; /*0x4aa1c9*/
           v19 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4aa1df*/
-          v20 = Cell::GetAdjacentPassableMask(v26, 0); /*0x4aa1e1*/
+          v20 = Cell::GetAdjacentPassableMask((IUnknown *)(v26), 0); /*0x4aa1e1*/
           if ( v20 != v19[288] ) /*0x4aa1ec*/
           {
             v19[288] = v20; /*0x4aa1ee*/
@@ -655,14 +655,14 @@ void * DisplayClass::Draw(int a2)
   v6 = v5[1]; /*0x4ae54a*/
   v17[0] = *v5 - v3; /*0x4ae54d*/
   v17[1] = v6 - (unsigned int)v4; /*0x4ae557*/
-  Tactical::MouseOver(v17, v16, v19, &v15, &v14[3], (bool *)&a2); /*0x4ae571*/
+  Tactical::MouseOver((gamemd::MouseClass *)(v17), v16, v19, &v15, &v14[3], (bool *)&a2); /*0x4ae571*/
   if ( LOBYTE(stru_A8EB00.__pad_CD4[1]) ) /*0x4ae57e*/
   {
     swprintf(&word_8A0630, (const size_t)aDD_2, (const wchar_t *const)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
     return &word_8A0630; /*0x4ae5be*/
   }
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v19)->copyFlags & 8) == 0 && g_hWnd ) /*0x4ae5e0*/
-    return GetStringCSF(aTxtShadow, 0, aDRa2mdpostDisp, 5048); /*0x4ae5fd*/
+    return GetStringCSF((wchar_t *)(aTxtShadow), 0, aDRa2mdpostDisp, 5048); /*0x4ae5fd*/
   v8 = v15; /*0x4ae600*/
   if ( !v15 ) /*0x4ae606*/
     return 0; /*0x4ae606*/

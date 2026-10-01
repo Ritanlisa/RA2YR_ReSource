@@ -1006,7 +1006,7 @@ HWND sub_5E2340()
 
 // 0x5E29A0
 namespace gamemd {
-LRESULT UI_Draw(HWND hWnd, wchar_t * Source, DropListClass * Count, LPARAM lParam)
+LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
 {
   wchar_t *v5; // eax
   LRESULT v6; // ebx

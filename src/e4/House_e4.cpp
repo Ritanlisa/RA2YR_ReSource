@@ -201,7 +201,7 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(uint8_t *)((char *)this + 282)); /*0x47d7fb*/
+        *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex((int)((HouseClass *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = *((unsigned int *)this + 17); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -215,7 +215,7 @@ LABEL_40:
           }
           else
           {
-            *((unsigned int *)this + 59) = House::LookupObject((House *)v19, *(uint8_t *)((char *)this + 282)); /*0x47d843*/
+            *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d843*/
             *((unsigned int *)this + 17) = -1; /*0x47d849*/
             *((unsigned char *)this + 286) = 0; /*0x47d850*/
           }
@@ -223,7 +223,7 @@ LABEL_40:
         }
         if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *((unsigned int *)this + 17)) + 684) ) /*0x47d885*/
 LABEL_47:
-          *((unsigned int *)this + 59) = House::LookupObject((House *)v19, *(uint8_t *)((char *)this + 282)); /*0x47d8aa*/
+          *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19), *(uint8_t *)((char *)this + 282)); /*0x47d8aa*/
 LABEL_48:
         if ( *((unsigned int *)this + 59) == 10 ) /*0x47d8b7*/
         {
@@ -624,11 +624,11 @@ LABEL_4:
 LABEL_5:
   if ( *((unsigned int *)this + 5504) == -1 && *(unsigned int *)&dword_A8B238 && !*(unsigned char *)(*(unsigned int *)&this->__pad_2D[7] + 422) )
   {
-    v6 = (uint8_t)CellStruct::Equals((CellStruct *)((char *)this + 21652), &dword_A8EF98)
+    v6 = (uint8_t)CellStruct::Equals((unsigned short *)((CellStruct *)((char *)this + 21652)), &dword_A8EF98)
        ? *((unsigned int *)this + 5412)
        : *((unsigned int *)this + 5413);
     *(unsigned int *)v38 = v6; /*0x4fd58b*/
-    if ( !(uint8_t)CellStruct::Equals((CellStruct *)v38, &dword_A8EF98) )
+    if ( !(uint8_t)CellStruct::Equals((unsigned short *)((CellStruct *)v38), &dword_A8EF98) )
     {
       v7 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v38); /*0x4fd5a6*/
       v8 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v7 + 72))(v7, &v44); /*0x4fd5b4*/
@@ -651,11 +651,11 @@ LABEL_5:
               v10 = *(unsigned int *)(v12 + 52); /*0x4fd616*/
               if ( !*(unsigned char *)(v10 + 422) && !*(unsigned char *)(v12 + 501) )
               {
-                v13 = (uint8_t)CellStruct::Equals((CellStruct *)((char *)this + 21652), &dword_A8EF98)
+                v13 = (uint8_t)CellStruct::Equals((unsigned short *)((CellStruct *)((char *)this + 21652)), &dword_A8EF98)
                     ? *((unsigned int *)this + 5412)
                     : *((unsigned int *)this + 5413);
                 *(unsigned int *)v39 = v13; /*0x4fd660*/
-                if ( (uint8_t)CellStruct::Equals((CellStruct *)v39, &dword_A8EF98) ) /*0x4fd664*/
+                if ( (uint8_t)CellStruct::Equals((unsigned short *)((CellStruct *)v39), &dword_A8EF98) ) /*0x4fd664*/
                 {
                   v14 = dword_A8EFF8; /*0x4fd66d*/
                   v15 = dword_A8EFFC; /*0x4fd672*/

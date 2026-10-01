@@ -322,7 +322,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
   this->Debug::Log(); /*0x774f5e*/
-  strcpy(Buffer, aAtd); /*0x774f83*/
+  strcpy(Buffer,(const char *)(aAtd)); /*0x774f83*/
   if ( *((unsigned int *)this + 24) ) /*0x774f87*/
   {
     this->Debug::Log(); /*0x774fd5*/
@@ -330,7 +330,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
   }
   else
   {
-    strcat(Buffer, g_Str_T); /*0x774fbd*/
+    strcat(Buffer,(const char *)(g_Str_T)); /*0x774fbd*/
     this->Debug::Log(); /*0x774fc6*/
   }
   this->Debug::Log(); /*0x775010*/

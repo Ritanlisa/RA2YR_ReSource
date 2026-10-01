@@ -1414,7 +1414,7 @@ AbstractClass * * InsertGameSettings(unsigned char * a1, char a2)
 }
 // 0x782320
 namespace gamemd {
-void InsertBuddyList(char * a1, char a2)
+int InsertBuddyList(const char *a1, char a2)
 {
   ObjectClass *nextObject; // eax
   int v5; // esi
@@ -1869,7 +1869,7 @@ void InsertBuddyList(char * a1, char a2)
 }
 // 0x782BB0
 namespace gamemd {
-int FindBuddyList(int a1, char a2)
+char FindBuddyList(unsigned char *a1, char a2)
 {
   ObjectClass *nextObject; // eax
   int v4; // ebp

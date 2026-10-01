@@ -89,7 +89,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       if ( !*i ) /*0x47714a*/
         break; /*0x47714d*/
       v13 = 0; /*0x477159*/
-      if ( !_strcmpi(i, aPower) ) /*0x47715b*/
+      if ( !_strcmpi(i,(const char *)(aPower)) ) /*0x47715b*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477194*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
@@ -104,7 +104,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         }
         v13 = 1; /*0x4771b1*/
       }
-      if ( !_strcmpi(i, aFactory) ) /*0x4771b9*/
+      if ( !_strcmpi(i,(const char *)(aFactory)) ) /*0x4771b9*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4771f2*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
@@ -149,7 +149,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         }
         v13 = 1; /*0x4772cb*/
       }
-      if ( !_strcmpi(i, aTech) ) /*0x4772d3*/
+      if ( !_strcmpi(i,(const char *)(aTech)) ) /*0x4772d3*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47730c*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
@@ -164,7 +164,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         }
         v13 = 1; /*0x477329*/
       }
-      if ( _strcmpi(i, aProc) ) /*0x477331*/
+      if ( _strcmpi(i,(const char *)(aProc)) ) /*0x477331*/
       {
         if ( !v13 ) /*0x47738b*/
         {

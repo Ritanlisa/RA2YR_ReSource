@@ -74,7 +74,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       (**v3)(v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
   }
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x549cbf*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1), a2); /*0x549cbf*/
   if ( result >= 0 ) /*0x549cc6*/
   {
     if ( a1 ) /*0x549cce*/
@@ -131,7 +131,7 @@ int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * a
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x549d7f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x549d7f*/
   if ( result >= 0 ) /*0x549d86*/
     return 0; /*0x549d88*/
   return result; /*0x549d8a*/

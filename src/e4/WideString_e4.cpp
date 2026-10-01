@@ -31,7 +31,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
   if ( a3 <= 0 ) /*0x5d4b27*/
     return 0; /*0x5d4b2c*/
   v6 = (wchar_t *)(aP1); /*0x5d4b31*/
-  v7 = wcslen(aP1); /*0x5d4b37*/
+  v7 = wcslen((const wchar_t *)(aP1)); /*0x5d4b37*/
   v8 = (unsigned int)(aP3); /*0x5d4b3c*/
   if ( aP3 > (gamemd::CampaignScore *)(v7) ) /*0x5d4b49*/
     v8 = v7; /*0x5d4b4b*/
@@ -170,7 +170,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
       if ( v10 ) /*0x7b74f7*/
         __3_YAXPAX_Z(v10); /*0x7b74fa*/
     }
-    v4 = &v22[wcslen(aP1)]; /*0x7b7513*/
+    v4 = &v22[wcslen((const wchar_t *)(aP1))]; /*0x7b7513*/
     if ( !v4 ) /*0x7b7518*/
       break; /*0x7b7518*/
   }
@@ -220,7 +220,7 @@ int WideString::Hash(wchar_t * Source)
   v2 = String; /*0x5dac34*/
   do /*0x5dac59*/
   {
-    ComputeHash(&v4, *v2); /*0x5dac41*/
+    ComputeHash((unsigned int *)(&v4), *v2); /*0x5dac41*/
     ++v1; /*0x5dac4a*/
     ++v2; /*0x5dac4c*/
   }
@@ -394,7 +394,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1, void *a2_1)
   if ( aP1 ) /*0x7b6aeb*/
   {
     v3 = (wchar_t *)((unsigned int)(*(wchar_t **)this));
-    v4 = (unsigned int)(wcslen(aP1) + 1);
+    v4 = (unsigned int)(wcslen((const wchar_t *)(aP1)) + 1);
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen(v3); /*0x7b6b09*/
     v5 = (wchar_t *)__2_YAPAXI_Z(4 * v4); /*0x7b6b13*/
@@ -403,7 +403,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1, void *a2_1)
       wcscpy(v5, v3); /*0x7b6b24*/
     else
       *v5 = 0; /*0x7b6b2e*/
-    wcscat(*(wchar_t **)this, aP1); /*0x7b6b37*/
+    wcscat(*(wchar_t **)this,(const wchar_t *)(aP1)); /*0x7b6b37*/
     if ( v3 ) /*0x7b6b41*/
       __3_YAXPAX_Z(v3); /*0x7b6b44*/
   }

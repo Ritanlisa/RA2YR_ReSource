@@ -119,7 +119,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x5550cb*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x5550cb*/
   if ( result >= 0 ) /*0x5550d2*/
   {
     if ( aP0 ) /*0x5550d6*/
@@ -143,7 +143,7 @@ int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x55511f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x55511f*/
   if ( result >= 0 ) /*0x555126*/
     return 0; /*0x555128*/
   return result; /*0x55512a*/

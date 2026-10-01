@@ -39,13 +39,13 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((unsigned int *)this + 91) = a2; /*0x557f4c*/
-    (*(void (**)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
+    (*(void ((gamemd::ListClass *)(**))(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
     if ( *((unsigned int *)this + 91) < *((unsigned int *)this + 92) ) /*0x557f67*/
-      (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, *((unsigned int *)this + 91)); /*0x557f6e*/
+      (*(void ((gamemd::ListClass *)(**))(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, *((unsigned int *)this + 91)); /*0x557f6e*/
     v4 = *((unsigned int *)this + 20); /*0x557f74*/
     result = *((unsigned int *)this + 91); /*0x557f7d*/
     if ( result >= v4 + *((unsigned int *)this + 92) ) /*0x557f87*/
-      return (*(int (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))(this, result - v4 + 1); /*0x557f91*/
+      return (*(int ((gamemd::ListClass *)(**))(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 
@@ -66,7 +66,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
       if ( ++v3 >= *((unsigned int *)this + 17) ) /*0x558044*/
         return; /*0x558044*/
     }
-    (*(void (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 184))(this, v3); /*0x558051*/
+    (*(void ((gamemd::ListClass *)(**))(ListClass *, int))(*(unsigned int *)this->__pad_0 + 184))(this, v3); /*0x558051*/
   }
 
 }

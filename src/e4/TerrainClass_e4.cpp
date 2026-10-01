@@ -184,7 +184,7 @@ LABEL_162:
       if ( !v44 )
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
-      StringCSF = (wchar_t *)(GetStringCSF(v44, 0, &((unsigned int *)(stru_830620))[75224], 1766));
+      StringCSF = (wchar_t *)(GetStringCSF(v44, 0,(const char *)(&((unsigned int *)(stru_830620))[75224]), 1766));
       MessageListClass::AddMessage(
         &((unsigned int *)(HouseClass_Player))[32532],
         0,
@@ -229,7 +229,7 @@ LABEL_162:
       {
         Conditions::CheckResult(i + 36, (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
-      MapClass::MarkForRedraw(&((unsigned int *)(stru_87C374))[13428], 1);
+      MapClass::MarkForRedraw((int)(&((unsigned int *)(stru_87C374))[13428]), 1);
       return 1;
     case 0x11:
       return TActionClass::RevealWaypointArea((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
@@ -239,7 +239,7 @@ LABEL_162:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
     case 0x14:
-      Theme::QueueSong((int)&g_BuildingTypeClass_Count, *(IUnknown **)((unsigned int)(a1)+ 144));
+      Theme::QueueSong((gamemd::IUnknown *)((int)&g_BuildingTypeClass_Count), *(IUnknown **)((unsigned int)(a1)+ 144));
       return 1;
     case 0x15:
       UpdateThemeManager(*(unsigned int *)((unsigned int)(a1)+ 144), 2, -1);
@@ -276,7 +276,7 @@ LABEL_162:
       return 1;
     case 0x19:
       int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-      ((Timer *)(&v131))->Start((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57));
+      ((Timer *)(&v131))->Start((int)((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57)));
       int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
   int v132; // [esp+28h] [ebp-228h]
@@ -289,7 +289,7 @@ LABEL_162:
       if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
       {
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-        ((Timer *)(&v113))->Start((DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+        ((Timer *)(&v113))->Start((int)((DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144))));
         ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
         *(unsigned int *)(ecx134 + 4) = (unsigned int)(v128);
@@ -307,7 +307,7 @@ LABEL_162:
       }
       return 1;
     case 0x1B:
-      ((Timer *)(&v131))->Start((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+      ((Timer *)(&v131))->Start((int)((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144))));
       int v62 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
       *(unsigned int *)(v62 + 4) = v132;
@@ -319,7 +319,7 @@ LABEL_162:
         v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
       v61->missionTimer_text_csf = &stru_87C374[46016];
-      ScriptAction::CopyStringField(Destination, &((unsigned int *)(stru_87C374))[56304]);
+      ScriptAction::CopyStringField(Destination,(char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
       ScriptAction::CopyStructField((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600), v137, Destination);
       ObjectClass::PreDraw(&stru_87C374[13428]);

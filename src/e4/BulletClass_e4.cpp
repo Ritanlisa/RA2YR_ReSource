@@ -53,7 +53,7 @@ BulletClass::BulletClass()
   this->BulletClass_field_0x4 = (unsigned int)(&vt_BulletClass); /*0x46642b*/
   this->BulletClass_field_0x8 = (unsigned int)(&vt_BulletClass); /*0x466431*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_BulletClass); /*0x466438*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&this->BulletClass_field_0x4)); /*0x46643f*/
   *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
   *(unsigned int *)&this->__pad_134[4] = 0; /*0x46644a*/
   *(unsigned int *)&this->__pad_134[8] = 0; /*0x466450*/
@@ -88,7 +88,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   this->BulletClass_field_0x4 = (unsigned int)(&vt_BulletClass); /*0x46656c*/
   this->BulletClass_field_0x8 = (unsigned int)(&vt_BulletClass); /*0x466573*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_BulletClass); /*0x46657a*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x466581*/
   if ( this->__pad_158[0] ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
@@ -113,7 +113,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
   this->BulletClass_field_0x154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 348) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 348), &v5); /*0x46661b*/
+  v3 = (*(int ((unsigned char *)(**))(unsigned char *, BulletClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 348) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 348), &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 364) ) /*0x46662b*/
   {
     --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 364); /*0x466630*/

@@ -115,7 +115,7 @@ public:
     // IDA 0x48B2A0 area
      int32_t Read(const char* filename, void* buffer, int32_t size);  // 0x5BF500
     // IDA 0x48B2A0 area
-    static void WaitCompletion();  // 0x774BC0
+    int WaitCompletion(int this);
 
     static bool    s_Initialized;  // 0x00
     static uint32_t s_Handle;      // 0x04

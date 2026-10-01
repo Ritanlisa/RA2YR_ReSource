@@ -343,7 +343,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
           (*(void (**)(unsigned int *))(*v5 + 976))(v5); /*0x471ea5*/
       }
       ((CaptureManagerClass *)((CaptureManagerClass *)a1))->DecideUnitFate((int)v5); /*0x471eae*/
-      if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
+      if ( (*(int ((int)(**))(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
       {
         v21 = (void *)((int)(a3));
         v22 = dword_89E178 * *(unsigned int *)(*(unsigned int *)((unsigned int)(a3)+ 1312) + 3828); /*0x471ed8*/
@@ -546,7 +546,7 @@ LABEL_7:
             v19 = *(unsigned int *)(v12 + 988) + v11; /*0x472245*/
             v16 = 0; /*0x472251*/
             v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))(v13); /*0x472264*/
-            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14, v14[1], v14[2], (int)va, -1 - v21 % 5, 0, 0)); /*0x472282*/
+            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]), v14[2], (int)va, -1 - v21 % 5, 0, 0)); /*0x472282*/
           }
         }
       }

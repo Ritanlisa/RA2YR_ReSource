@@ -87,7 +87,7 @@ int Game::SendCampaignOptions()
   char v14[452]; // [esp+Ch] [ebp-1C4h] BYREF
 
   v13 = 50; /*0x46d4bc*/
-  strcpy(v14, unk_A8B380); /*0x46d4cd*/
+  strcpy(v14,(const char *)(unk_A8B380)); /*0x46d4cd*/
   result = this->Settings::CheckString(); /*0x46d4d6*/
   if ( (unsigned char)result )
   {
@@ -112,7 +112,7 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 76] = PlayerSide; /*0x46d533*/
         *(unsigned int *)&v14[4 * i + 108] = ((SessionClass *)(v6))->GetPlayerColor(); /*0x46d53c*/
       }
-      v7 = ToWideStringChar((char *)*(&dword_A8DA90 + i)); /*0x46d561*/
+      v7 = ToWideStringChar((IUnknown *)((char *)*(&dword_A8DA90 + i))); /*0x46d561*/
       Debug::Log(
         "Player %i %s: Start %i, Country %i, Color %i\n",
         i,
@@ -146,7 +146,7 @@ int Game::SendCampaignOptions()
         result = IsKnownPointer(*v12); /*0x46d60b*/
         if ( (unsigned char)result ) /*0x46d612*/
         {
-          Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
+          Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455,(wchar_t *)(1), *v12); /*0x46d628*/
           result = (int)(((Network *)(unk_A8E9C0))->ReceiveLoop()); /*0x46d632*/
         }
       }

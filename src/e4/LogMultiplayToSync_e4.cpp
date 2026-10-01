@@ -91,7 +91,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf(v5, "RA2 Sync\n"); /*0x651788*/
     ModuleVersion = GetModuleVersion(); /*0x651790*/
     fprintf(v5, "\nVersion %s\n", ModuleVersion); /*0x65179c*/
-    ModuleInternalVersion = GetModuleInternalVersion((int)&g_CoordScatterManager); /*0x6517a9*/
+    ModuleInternalVersion = GetModuleInternalVersion((void *)((int)&g_CoordScatterManager)); /*0x6517a9*/
     fprintf(v5, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     Time::FormatDate(v62); /*0x6517cb*/
@@ -144,7 +144,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     {
       if ( *(v15 - 80) )
       {
-        ((Network *)((unsigned int *)v15 + 3))->CopyAddress(&v54, (int)&v58); /*0x651970*/
+        ((Network *)((unsigned int *)v15 + 3))->CopyAddress((unsigned int *)(&v54), (int)&v58); /*0x651970*/
         fprintf(v5, "\nName: %s\n", v15 - 80);
         fprintf(v5, "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
         fprintf(v5, "Max avg round trip: %d\n", *(unsigned int *)v15);

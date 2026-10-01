@@ -37,7 +37,7 @@ void sub_786EF0()
     || dword_B77DF8 == -2147221387
     || dword_B77DF8 == -2147221386 )
   {
-    if ( ShowDialogConfirm(&word_B77AD0, 4, (uint8_t (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
+    if ( ShowDialogConfirm(&word_B77AD0,(void *)(4), (uint8_t (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
     {
       switch ( dword_B77DF8 ) /*0x786f78*/
       {
@@ -66,7 +66,7 @@ void sub_786EF0()
         default:
           break;
       }
-      OpenURLWOL(Buffer, 1); /*0x786fce*/
+      OpenURLWOL((gamemd::INIClass *)(Buffer), 1); /*0x786fce*/
     }
     return 1; /*0x786fdc*/
   }
@@ -87,7 +87,7 @@ char sub_72BCA0()
   if ( !byte_B0FD45 ) /*0x72bca7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
-      dword_B0FA98 = (unsigned int)(LoadFileSHP(off_844DB4, (bool *)&byte_B0FD44)); /*0x72bcc5*/
+      dword_B0FA98 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DB4), (bool *)&byte_B0FD44)); /*0x72bcc5*/
     result = LoadPaletteSimple(off_844DB8, &dword_B0FD48, &dword_B0FD4C); /*0x72bcda*/
     byte_B0FD45 = 1; /*0x72bcdf*/
   }
@@ -141,7 +141,7 @@ char sub_72C600()
   if ( !byte_B0FD09 ) /*0x72c607*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
-      dword_B0FB0C = (unsigned int)(LoadFileSHP(off_844D8C, (bool *)&byte_B0FD08)); /*0x72c625*/
+      dword_B0FB0C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D8C), (bool *)&byte_B0FD08)); /*0x72c625*/
     result = LoadPaletteSimple(off_844D90, &dword_B0FD0C, &dword_B0FD10); /*0x72c63a*/
     byte_B0FD09 = 1; /*0x72c63f*/
   }
@@ -205,9 +205,9 @@ int sub_786390(void * a1)
   *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {
-    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x7863da*/
+    if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x7863da*/
     {
-      strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x786405*/
+      strcpy(SubKey,(const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)); /*0x786405*/
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x786420*/
       {
         cbData = 4; /*0x786445*/

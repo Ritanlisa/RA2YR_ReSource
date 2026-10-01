@@ -48,7 +48,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP4); /*0x5447ce*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull((char *)(aP4)); /*0x5447ce*/
   this->ArrayIndex = a2; /*0x5447d9*/
   this->Foundation = 0xFFFF; /*0x5447e4*/
   *(unsigned int *)this->RadarColor = 0xFFFF; /*0x5447ea*/
@@ -110,7 +110,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( aP4 ) /*0x544991*/
   {
-    strncpy(Destination, aP4, 0x30u); /*0x5449a1*/
+    strncpy(Destination,(const char *)(aP4), 0x30u); /*0x5449a1*/
     v11 = 0; /*0x5449a9*/
   }
   else

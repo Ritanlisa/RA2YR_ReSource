@@ -148,7 +148,7 @@ LABEL_103:
           }
           else
           {
-            ((Array *)((Array *)&((char *)&stru_B76AC4)))->InsertElement(v6, ((char *)&stru_B76AC4)); /*0x7aaa74*/
+            ((Array *)((Array *)&((char *)&stru_B76AC4)))->InsertElement(v6,(int)(((char *)&stru_B76AC4))); /*0x7aaa74*/
             v12 = 0; /*0x7aaa79*/
             v13 = *(unsigned int *)&v33[12]; /*0x7aaa7b*/
             if ( *(int *)&v33[12] > 0 ) /*0x7aaa81*/
@@ -158,7 +158,7 @@ LABEL_103:
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
                   qmemcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
-                if ( !strcmp(&v33[84], v6 + 52) ) /*0x7aaaad*/
+                if ( !strcmp((const char *)(&v33[84]), v6 + 52) ) /*0x7aaaad*/
                   break; /*0x7aaaad*/
                 v13 = *(unsigned int *)&v33[12]; /*0x7aaad4*/
                 v6 = a3; /*0x7aaad8*/
@@ -226,7 +226,7 @@ LABEL_51:
                     goto LABEL_51; /*0x7aab94*/
                 }
               }
-              DeleteAndZero((ObjectClass *)&v33[24]); /*0x7aac1e*/
+              DeleteAndZero((char)((ObjectClass *)&v33[24])); /*0x7aac1e*/
             }
             v20 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7aac42*/
                             + 4 * (dword_B76548(v33) & ((1 << SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
@@ -290,7 +290,7 @@ LABEL_72:
                     goto LABEL_72; /*0x7aacb1*/
                 }
               }
-              DeleteAndZero((ObjectClass *)&v33[28]); /*0x7aad3b*/
+              DeleteAndZero((char)((ObjectClass *)&v33[28])); /*0x7aad3b*/
             }
             v25 = g_WOL_HashTable; /*0x7aad40*/
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
@@ -364,7 +364,7 @@ LABEL_88:
         memset(v34, 0, 0x200u); /*0x7aaeea*/
       }
     }
-    SetEvent(dword_B73690); /*0x7aaef2*/
+    SetEvent((void *)(dword_B73690)); /*0x7aaef2*/
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7aaf0a*/
     {
       this->Debug::Log(); /*0x7aaf18*/
@@ -396,7 +396,7 @@ LABEL_88:
   *(unsigned int *)&v33[12] = 0; /*0x7aa8af*/
   __3_YAXPAX_Z(0); /*0x7aa8b4*/
 LABEL_104:
-  DeleteAndZero((ObjectClass *)v33); /*0x7aaf8e*/
+  DeleteAndZero((char)((ObjectClass *)v33)); /*0x7aaf8e*/
   return 0; /*0x7aaf9a*/
 
 }
@@ -481,7 +481,7 @@ namespace gamemd {
 ObjectClass * CChatEventSink::DeleteAndZero(void ** Block, char a2)
 {
 
-  DeleteAndZero((ObjectClass *)Block); /*0x7ad353*/
+  DeleteAndZero((char)((ObjectClass *)Block)); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
     __3_YAXPAX_Z(Block); /*0x7ad360*/
   return (void **)Block; /*0x7ad36a*/

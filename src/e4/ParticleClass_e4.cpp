@@ -72,7 +72,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         || (v29 = *(unsigned int *)&this->__pad_28[116],
             v30 = *(unsigned int *)&this->__pad_28[120],
             v31 = *(unsigned int *)&this->__pad_28[124],
-            !(uint8_t)Game::Stub3((int)&v29)) )
+            !(uint8_t)Game::Stub3((IUnknown *)((int)&v29))) )
       {
         v5 = *((unsigned int *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
@@ -80,7 +80,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           v28[0] = *(unsigned int *)&this->__pad_28[116]; /*0x62d036*/
           v28[1] = *(unsigned int *)&this->__pad_28[120]; /*0x62d048*/
           v28[2] = *(unsigned int *)&this->__pad_28[124]; /*0x62d054*/
-          ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v28, &v29); /*0x62d058*/
+          ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v28), &v29); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
@@ -233,13 +233,13 @@ int ParticleClass::AdjustHeight()
       if ( *((float *)this + 57) > 0.0 ) /*0x62d683*/
       {
         GroundHeight = ((Cell *)(v13))->GetGroundHeight(); /*0x62d69e*/
-        if ( (int)Cell::GetGroundHeight(&v10) > GroundHeight ) /*0x62d6a7*/
+        if ( (int)Cell::GetGroundHeight((unsigned int *)(&v10)) > GroundHeight ) /*0x62d6a7*/
         {
           *((unsigned char *)this + 301) = 1; /*0x62d6ab*/
           *((unsigned char *)this + 305) = 1; /*0x62d6b1*/
         }
       }
-      return (*(int (**)(int *, int *))(*(unsigned int *)this + 436))(this, &v10); /*0x62d6c0*/
+      return (*(int ((int *)(**))(int *, int *))(*(unsigned int *)this + 436))(this, &v10); /*0x62d6c0*/
     }
   }
   else

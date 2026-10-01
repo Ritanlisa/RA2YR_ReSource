@@ -318,14 +318,14 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   (*(void (**)(int *, char *))(v43.customSound_controller[2] + 8))( /*0x5cef6b*/
     &v43.customSound_controller[2],
     aMapselmdIni);
-  (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
+  (*(void ((int *)(**))(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
   if ( !FileStraw::Open((FileStraw *)&((char *)&v43), (int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/
   while ( 1 ) /*0x5cefa2*/
   {
     ((String *)((String *)&v43))->Assign(0); /*0x5cefa2*/
-    v42 = FromStringInt((char **)&((char *)&v43), v4); /*0x5cefbc*/
+    v42 = FromStringInt((IUnknown *)((char **)&((char *)&v43)), v4); /*0x5cefbc*/
     v5 = INIClass::ReadString((INIClass *)&((char *)&v43), a1, v42, (char **)&v43, (int)&((char *)&v43)) == 0; /*0x5cefd4*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cefd7*/
     DeleteAndZero(&v43); /*0x5cefe0*/
@@ -361,7 +361,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   if ( uniqueId->unknown_10[0] ) /*0x5cf073*/
   {
     ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf0e0*/
-    ((String *)((String *)&v43))->Assign(aAnims); /*0x5cf0ee*/
+    ((String *)((String *)&v43))->Assign((const char *)(aAnims)); /*0x5cf0ee*/
     v13 = INIClass::ReadString((INIClass *)&((char *)&v43), a1, (char **)&v43, (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf119*/
     DeleteAndZero(&v43); /*0x5cf11c*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf125*/

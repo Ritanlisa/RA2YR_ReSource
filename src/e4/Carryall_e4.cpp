@@ -102,7 +102,7 @@ LABEL_18:
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
-          TeamClass::SelectMember(v10, *((unsigned int *)this + 361)); /*0x416ef5*/
+          TeamClass::SelectMember((gamemd::AbstractClass *)(v10), *((unsigned int *)this + 361)); /*0x416ef5*/
         *((unsigned int *)this + 47) = 1; /*0x416eff*/
         this->Debug::Log(); /*0x416f09*/
       }

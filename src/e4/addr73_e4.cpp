@@ -43,7 +43,7 @@
 
 // 0x730A90
 namespace gamemd {
-int AddMessageListPlayerMessage(CellStruct * a1, int a2)
+int AddMessageListPlayerMessage(wchar_t *a1, int a2)
 {
   int v2; // eax
 
@@ -1612,7 +1612,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
 }
 // 0x734E60
 namespace gamemd {
-void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
+wchar_t * GetStringCSF(wchar_t *Format, unsigned int *a2, const char *aP3, int a4)
 {
   unsigned int *v7; // eax
   wchar_t *v8; // esi
@@ -1693,7 +1693,7 @@ int sub_734FC0()
 }
 // 0x735120
 namespace gamemd {
-void * * CharToWideString(unsigned char * a1)
+char * CharToWideString(unsigned char *a1)
 {
   char *result; // eax
   int v2; // esi

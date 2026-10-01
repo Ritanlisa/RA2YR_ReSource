@@ -390,10 +390,10 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
         && *(unsigned char *)(*((*(int (**)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 6 ? v11 + 328 : (unsigned int *)1312) + 5495) )
       {
         v8 = (*(int (**)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11); /*0x6f34c9*/
-        if ( *(unsigned char *)((*(int (**)(unsigned int *))(*(unsigned int *)((v8 == 6 ? v11 : 0)) + 132))(v8 == 6 ? v11 : 0) + 1517) )
+        if ( *(unsigned char *)((*(int ((unsigned int *)(**))(unsigned int *))(*(unsigned int *)((v8 == 6 ? v11 : 0)) + 132))(v8 == 6 ? v11 : 0) + 1517) )
         {
           v9 = (*(int (**)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11); /*0x6f34f3*/
-          return !*(unsigned char *)((*(int (**)(unsigned int *))(*(unsigned int *)((v9 == 6 ? v11 : 0)) + 132))(v9 == 6 ? v11 : 0) + 1516);
+          return !*(unsigned char *)((*(int ((unsigned int *)(**))(unsigned int *))(*(unsigned int *)((v9 == 6 ? v11 : 0)) + 132))(v9 == 6 ? v11 : 0) + 1516);
         }
         return 1; /*0x6f380a*/
       }

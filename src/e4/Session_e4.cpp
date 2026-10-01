@@ -105,7 +105,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
   {
     case 1: /*0x5e7521*/
     case 2: /*0x5e7521*/
-      if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e774c*/
+      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e774c*/
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
@@ -147,7 +147,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       }
     case 3: /*0x5e7521*/
       if ( this->Dialog::GetCurrentType() != 189 /*0x5e7550*/
-        || FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
+        || FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
       {
         goto LABEL_42; /*0x5e7557*/
       }
@@ -161,10 +161,10 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       if ( !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
-      if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e7630*/
+      if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e7630*/
       {
-        strcpy(Str, byte_A8B8E0); /*0x5e765a*/
-        _strupr(Str); /*0x5e7668*/
+        strcpy((char *)(Str), byte_A8B8E0); /*0x5e765a*/
+        _strupr((char *)(Str)); /*0x5e7668*/
         this->Debug::Log(); /*0x5e7677*/
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
@@ -190,12 +190,12 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
       if ( !g_UIControlState ) /*0x5e7704*/
         return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7704*/
       ((ComPtr *)((ComPtr *)g_UIControlState))->Dtor(); /*0x5e770c*/
-      __3_YAXPAX_Z(v8); /*0x5e7712*/
+      __3_YAXPAX_Z((void *)(v8)); /*0x5e7712*/
       g_UIControlState = 0; /*0x5e771a*/
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
+      v13 = CCFileClass::Construct((CCFileClass *)Str,(void *)(byte_A8B8E0)); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
@@ -240,8 +240,8 @@ LABEL_44:
       Flagged = (int)(this->GameSettings::FindFlagged());
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
-      v5 = (char *)(CharToWideString(Flagged + 36)); /*0x5e75b0*/
-      v3 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)Str, 47, 1, (wchar_t *)v5)); /*0x5e75c4*/
+      v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
+      v3 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)Str, 47,(wchar_t *)(1), (wchar_t *)v5)); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {
@@ -298,7 +298,7 @@ int Session::StartGame(HWND hWnd)
   if ( g_UIControlState ) /*0x5ed393*/
   {
     ((ComPtr *)((ComPtr *)g_UIControlState))->Dtor(); /*0x5ed397*/
-    __3_YAXPAX_Z(v2); /*0x5ed39d*/
+    __3_YAXPAX_Z((void *)(v2)); /*0x5ed39d*/
   }
   v3 = (gamemd::ObjectClass *)((int)((ObjectClass *)__2_YAPAXI_Z(4u)));
   if ( v3 ) /*0x5ed3b2*/

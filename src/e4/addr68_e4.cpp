@@ -1859,7 +1859,7 @@ void GenerateScenarioUnits()
 }
 // 0x688ED0
 namespace gamemd {
-void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
+int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
 {
   int16_t *v3; // esi
   Object *v5; // eax

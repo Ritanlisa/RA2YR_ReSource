@@ -86,7 +86,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   GroundHeight = ((Cell *)(v37))->GetGroundHeight(); /*0x655d38*/
   if ( !g_hWnd || (v42 = 1, !((Cell *)(v37))->IsPassable()) ) /*0x655d4f*/
     v42 = 0; /*0x655d5d*/
-  if ( !g_hWnd || (v34 = 1, !(uint8_t)FogOfWar_Get(v37)) ) /*0x655d74*/
+  if ( !g_hWnd || (v34 = 1, !(uint8_t)FogOfWar_Get((gamemd::IUnknown *)(v37))) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
   v9 = **(unsigned int **)((char *)this + 4696) + 24 * (uint8_t)(*aP1 - 5 * aP1[1]); /*0x655da7*/

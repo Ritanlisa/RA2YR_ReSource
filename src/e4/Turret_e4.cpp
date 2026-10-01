@@ -67,7 +67,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       if ( (unsigned char)v2 ) /*0x5f8d14*/
       {
         sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8d30*/
-        _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
+        _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__VXL)); /*0x5f8d4c*/
         CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
         if ( (uint8_t)CCFileClass::Open(&v26, 0) ) /*0x5f8d70*/
         {
@@ -86,7 +86,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
             sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
-            _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
+            _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__HVA)); /*0x5f8df9*/
             CCFileClass::Construct(&v20, Source); /*0x5f8e0d*/
             v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
@@ -111,7 +111,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           }
         }
         sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8ea0*/
-        _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
+        _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__VXL)); /*0x5f8ebc*/
         CCFileClass::Construct(&v23, Source); /*0x5f8ed0*/
         if ( (uint8_t)CCFileClass::Open(&v23, 0) ) /*0x5f8edd*/
         {
@@ -130,7 +130,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           if ( v13 && !*(unsigned char *)v13 ) /*0x5f8f31*/
           {
             sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8f47*/
-            _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
+            _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__HVA)); /*0x5f8f63*/
             CCFileClass::Construct(&v20, Source); /*0x5f8f77*/
             v14 = (void *)*((unsigned int *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/

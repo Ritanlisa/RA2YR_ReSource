@@ -46,7 +46,7 @@ int Voxel::BuildIndexTable()
   v1 = 0; /*0x748229*/
   if ( dword_B1D14C ) /*0x748230*/
   {
-    __3_YAXPAX_Z(dword_B1D14C); /*0x748233*/
+    __3_YAXPAX_Z((void *)(dword_B1D14C)); /*0x748233*/
     dword_B1D14C = 0; /*0x74823b*/
   }
   result = (unsigned int)(__2_YAPAXI_Z(0x1FFFCu));
@@ -212,7 +212,7 @@ AbstractClass * Voxel::RenderFrame(void *a1_1)
       v14 = v7 + 1; /*0x754608*/
       do /*0x75461e*/
       {
-        ((Voxel *)(**v13))->ProcessColor(*v13, v25); /*0x754615*/
+        ((Voxel *)(**v13))->ProcessColor((unsigned int *)(*v13), v25); /*0x754615*/
         --v13; /*0x75461a*/
         --v14; /*0x75461d*/
       }
@@ -227,7 +227,7 @@ AbstractClass * Voxel::RenderFrame(void *a1_1)
       v16 = (unsigned int ***)&unk_B2D824; /*0x754628*/
       do /*0x754647*/
       {
-        ((Voxel *)(**v16))->ProcessColor(*v16, v25); /*0x754637*/
+        ((Voxel *)(**v16))->ProcessColor((unsigned int *)(*v16), v25); /*0x754637*/
         ++v15; /*0x754641*/
         ++v16; /*0x754642*/
       }

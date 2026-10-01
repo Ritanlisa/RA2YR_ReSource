@@ -106,7 +106,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
 
   v3 = (int)(*aP1);
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
-  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
+  (*(void ((int *)(**))(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
   result = Stream_field_10; /*0x67a4c0*/
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
@@ -225,7 +225,7 @@ LABEL_14:
   *((unsigned int *)this + 321) = 0; /*0x759477*/
   *((unsigned int *)this + 339) = 0; /*0x75947d*/
   *((unsigned int *)this + 322) = 0; /*0x759483*/
-  strcpy((unsigned char *)this + 113, a1); /*0x75949f*/
+  strcpy((char *)((unsigned char *)this + 113), a1); /*0x75949f*/
   *((unsigned int *)this + 338) = (unsigned int)(aP5); /*0x7594b0*/
   *((unsigned int *)this + 326) = 0; /*0x7594b7*/
   *((unsigned int *)this + 327) = 0; /*0x7594bd*/

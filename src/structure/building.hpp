@@ -376,7 +376,7 @@ public:
     void ProcessUpgradeTargeting();  // 0x459C20
     void ProcessSpreadEffect();  // 0x43FB20
     void Unlimbo_UnitDeliveryFix();  // 0x440580
-    void SetConnectedBuildingMission();  // 0x452170
+    int SetConnectedBuildingMission(int a2);
     void CreateDestructionCrater();  // 0x4852D0
     void CreatePlacementCrater();  // 0x486E70
     void CreateCraterAtCell(int cell_x, int cell_y);  // 0x4A18F0

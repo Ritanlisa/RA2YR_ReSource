@@ -82,8 +82,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   unsigned int v47[4]; // [esp+8Ch] [ebp-20h] BYREF
   unsigned int v48[4]; // [esp+9Ch] [ebp-10h] BYREF
 
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&aP0, &v31); /*0x7049dc*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v29); /*0x7049f4*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&aP0), &v31); /*0x7049dc*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a4), &v29); /*0x7049f4*/
   v9 = dword_886FA4; /*0x7049fd*/
   v10 = a9; /*0x704a07*/
   v32 += dword_886FA4; /*0x704a14*/
@@ -106,7 +106,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v40 = (int *)(v13[1]);
     v41 = (int *)(v13[2]);
     v42 = (int *)(v13[3]);
-    v14 = (int *)(ClipRectIntersection(v48, &DSurface_ViewBounds, &v39, 0, 0));
+    v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48), &DSurface_ViewBounds, &v39, 0, 0));
     v43 = (int *)(*v14);
     v44 = (int *)(v14[1]);
     v45 = (int *)(v14[2]);
@@ -124,7 +124,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v44 = (int *)(v17[1]); /*0x704b60*/
     v45 = (int *)(v17[2]); /*0x704b6c*/
     v46 = (int *)(v17[3]); /*0x704b7c*/
-    v18 = (int *)(ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0)); /*0x704b80*/
+    v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704b80*/
     v39 = (int *)(*v18); /*0x704b88*/
     v40 = (int *)(v18[1]); /*0x704b8f*/
     v41 = (int *)(v18[2]); /*0x704b9c*/
@@ -157,7 +157,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v22[1]);
   v45 = (int *)(v22[2]);
   v46 = (int *)(v22[3]);
-  v23 = (int *)(ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0));
+  v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0));
   v39 = (int *)(*v23);
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
@@ -171,7 +171,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v25[1]); /*0x704d52*/
   v45 = (int *)(v25[2]); /*0x704d5f*/
   v46 = (int *)(v25[3]); /*0x704d70*/
-  v26 = (int *)(ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0)); /*0x704d74*/
+  v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704d74*/
   v39 = (int *)(*v26); /*0x704d7c*/
   v40 = (int *)(v26[1]); /*0x704d83*/
   v41 = (int *)(v26[2]); /*0x704d90*/
@@ -253,8 +253,8 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v20 = 0; /*0x704e6c*/
   v26 = -1; /*0x704e71*/
   v27 = -1; /*0x704e79*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v24); /*0x704e7d*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v21); /*0x704e95*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a1), &v24); /*0x704e7d*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a4), &v21); /*0x704e95*/
   v22 += dword_886FA4; /*0x704ec3*/
   v25 += dword_886FA4; /*0x704ece*/
   v29 = v25 - 2; /*0x704eeb*/
@@ -267,7 +267,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v35 = (int)(v8[1]);
   v36 = (int *)(v8[2]);
   v37 = (int *)(v8[3]);
-  v9 = (int *)(ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0));
+  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v46), &DSurface_ViewBounds, &v34, 0, 0));
   v30 = *v9; /*0x704f61*/
   v31 = v9[1]; /*0x704f68*/
   v32 = (void *)(v9[2]);
@@ -280,7 +280,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v31 = (int)(v10[1]);
   v32 = (void *)((unsigned int)(v10[2]));
   v33 = (void *)((unsigned int)(v10[3]));
-  v11 = (int *)((unsigned int)(ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0)));
+  v11 = (int *)((unsigned int)(ClipRectIntersection((RectangleStruct *)(v45), &DSurface_ViewBounds, &v30, 0, 0)));
   v34 = (unsigned int)(*v11);
   v35 = (unsigned int)(v11[1]);
   v36 = (int *)((unsigned int)(v11[2]));
@@ -308,7 +308,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     v23 = (v14 * a6 + v15 * a3) / 32; /*0x7050f8*/
     v40 = Math::RoundToInt(v17); /*0x705119*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v41, &v24); /*0x70512f*/
-    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v38, &v21); /*0x705144*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v38), &v21); /*0x705144*/
     v25 += dword_886FA4; /*0x705158*/
     v22 += dword_886FA4; /*0x70516b*/
     if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
@@ -410,7 +410,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
         v14 = (unsigned int *)v39; /*0x706fb9*/
       }
       v16 = (float *)(MultiplyMatrix3x4(v53, (float *)stru_887430.m_Data, v50));
-      TransformVoxelVertex(v13, v15++, 0, v16); /*0x706fda*/
+      TransformVoxelVertex((gamemd::VoxelSection *)(v13), v15++, 0, v16); /*0x706fda*/
     }
     while ( v15 < ((unsigned int *)(v13))[1] ); /*0x706fe5*/
   }

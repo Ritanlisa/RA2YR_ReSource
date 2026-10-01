@@ -62,7 +62,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor_0(int a1, int a2);  // 0x49F090
     int LoadMovieDisplay(int a1);  // 0x5AE220
     int ReleaseSubobjectsAndDestruct();  // 0x5AE460
-    int DeleteAndZero(void* a1);  // 0x5CF760
+    int DeleteAndZero(const char **a2);
     int Check(int a1);  // 0x5CF810
     void* Constructor_1(int a1);  // 0x5D2E00
     // --- gap2 auto-generated stub declarations (END) ---

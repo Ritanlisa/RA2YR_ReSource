@@ -38,7 +38,7 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x691d9b*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x691d9b*/
   if ( result >= 0 ) /*0x691da2*/
   {
     if ( aP0 ) /*0x691da6*/
@@ -63,7 +63,7 @@ int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x691def*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x691def*/
   if ( result >= 0 ) /*0x691df6*/
     return 0; /*0x691df8*/
   return result; /*0x691dfa*/
@@ -105,7 +105,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x691fc1*/
   v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
-  v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
+  v3 = (*(int ((int *)(**))(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&((char *)&FootClass_Array) ) /*0x691fea*/
   {
     --*(unsigned int *)&((char *)&FootClass_Array); /*0x691fef*/
@@ -143,7 +143,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
-    INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
+    INIClass::GetString((gamemd::INIClass *)(a1), g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/

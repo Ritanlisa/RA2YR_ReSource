@@ -259,7 +259,7 @@ v3 = (void ***)((int)((void ***)(0)));
   LABEL_58:
       v62 = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0dc2*/
       if ( v63 && v64 ) /*0x6f0dd8*/
-        Team_Helper_6F26E0(v63, 3); /*0x6f0de0*/
+        Team_Helper_6F26E0((char *)(v63), 3); /*0x6f0de0*/
     }
   }
   v31 = (unsigned int *)(Block);

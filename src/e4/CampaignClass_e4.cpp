@@ -76,7 +76,7 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount(this->__pad_0, (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(this->__pad_0), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
@@ -84,7 +84,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    INIClass::GetString(this, (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2), StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
+    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2), StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -118,7 +118,7 @@ LABEL_7:
           *((unsigned int *)dword_A83CFC + v7) = v6; /*0x46cf34*/
         }
         *(unsigned char *)(v6 + 156) = 0; /*0x46cf43*/
-        wcscpy((wchar_t *)(v6 + 672), &g_TypeClass_DefaultString); /*0x46cf4a*/
+        wcscpy((wchar_t *)(v6 + 672),(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x46cf4a*/
       }
       else
       {
@@ -190,7 +190,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v27 = g_DDrawSurfaceManager.scenario[12] + 76 * v3; /*0x49c60d*/
   if ( this->scenario[6] == this->scenario[4] ) /*0x49c616*/
     return 1; /*0x49c61b*/
-  CCFileClass::Construct(&v33, g_Str_File_coopsave_ini); /*0x49c631*/
+  CCFileClass::Construct(&v33,(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
   INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v28 + 2)); /*0x49c642*/
@@ -198,7 +198,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
   *(unsigned int *)v28.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49c667*/
-  CCINIClass::Load(&v28, (int)&v33, 0, 0); /*0x49c66f*/
+  CCINIClass::Load((int)(&v28), (int)&v33, 0, 0); /*0x49c66f*/
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/
@@ -241,7 +241,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     while ( v12 );
   }
   g_IsWindowed[v5] = 0; /*0x49c720*/
-  strcpy(Block, g_IsWindowed); /*0x49c73a*/
+  strcpy(Block,(const char *)(g_IsWindowed)); /*0x49c73a*/
   v13 = (char *)&((unsigned int *)this)[0]; /*0x49c743*/
   v14 = 0; /*0x49c745*/
   for ( i = *(unsigned char *)p_referenceCount; i; ++v13 )
@@ -269,7 +269,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     ++v14; /*0x49c7ad*/
   }
   g_IsWindowed[v14] = 0; /*0x49c7bd*/
-  strcat(Block, g_IsWindowed); /*0x49c7df*/
+  strcat(Block,(const char *)(g_IsWindowed)); /*0x49c7df*/
   CCFileClass::Construct3((int)&v30); /*0x49c7ef*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))(&v30, g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v30.CDFileClass + 28))(&v30, 2); /*0x49c81a*/

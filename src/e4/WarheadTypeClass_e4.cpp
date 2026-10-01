@@ -302,7 +302,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(ObjectClass * Source)
   int v6; // ecx
   unsigned int *i; // edx
 
-  if ( !_strcmpi(Source, g_Str__none_) || !strlen(Source) ) /*0x644649*/
+  if ( !_strcmpi((const char *)(Source), g_Str__none_) || !strlen((const char *)(Source)) ) /*0x644649*/
     return -1; /*0x644653*/
   v2 = 0; /*0x64465a*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 <= 0 ) /*0x64465e*/
@@ -425,9 +425,9 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   *((unsigned int *)this + 1) = (unsigned int)(&vt_WarheadTypeClass); /*0x75d0c1*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_WarheadTypeClass); /*0x75d0c7*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_WarheadTypeClass); /*0x75d0ce*/
-  AbstractClass::GenerateUniqueID((char *)this + 4); /*0x75d0d5*/
-  (*(void (**)(int))(*((unsigned int *)this + 99) + 12))((char *)this + 396); /*0x75d0de*/
-  (*(void (**)(int))(*((unsigned int *)this + 106) + 12))((char *)this + 424); /*0x75d0e5*/
+  AbstractClass::GenerateUniqueID((int)((char *)this + 4)); /*0x75d0d5*/
+  (*(void ((int)(**))(int))(*((unsigned int *)this + 99) + 12))((char *)this + 396); /*0x75d0de*/
+  (*(void ((int)(**))(int))(*((unsigned int *)this + 106) + 12))((char *)this + 424); /*0x75d0e5*/
   if ( g_WarheadTypePool < dword_8874C8 /*0x75d11c*/
     || (byte_8874CD || !dword_8874C8)
     && dword_8874D4 > 0
@@ -553,7 +553,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
   (*(void (**)(int *))(a1->DebrisTypes[0] + 12))(a1->DebrisTypes); /*0x75e0d6*/
   (*(void (**)(char *))(*(unsigned int *)&v2->__pad_1A0[8] + 12))(&v2->__pad_1A0[8]); /*0x75e0e7*/
   v4 = a2; /*0x75e0ea*/
-  result = AbstractClass::SaveLoad_Prefix_0(v2, a2); /*0x75e0f0*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(v2), a2); /*0x75e0f0*/
   if ( result >= 0 ) /*0x75e0f7*/
   {
     if ( v2 ) /*0x75e0ff*/

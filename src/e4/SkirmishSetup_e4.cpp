@@ -55,7 +55,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d6168*/
     {
       g_MultiplayerMode |= 1u; /*0x5d6171*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d617c*/
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d617c*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d6181*/
       dword_ABFDB4 = 10; /*0x5d618b*/
       dword_ABFDB0 = 0; /*0x5d619a*/
@@ -66,7 +66,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d61bb*/
     {
       g_MultiplayerMode |= 1u; /*0x5d61c4*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d61cf*/
+      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d61cf*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d61d4*/
       dword_ABFDB4 = 10; /*0x5d61de*/
       dword_ABFDB0 = 0; /*0x5d61ed*/

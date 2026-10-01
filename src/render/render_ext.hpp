@@ -887,8 +887,8 @@ public:
 
     virtual int GetIndex(int a2, int a3);
     virtual int AddColor(int a2);
-    virtual void GetCount(); // 0x488910
-    virtual void SetIndex(); // 0x488960
+    virtual void GetCount(signed int a2);
+    virtual int SetIndex(int a2, int a3);
     virtual void DrawColorRect(); // 0x488980
     // +5 more virtual methods
 

@@ -130,7 +130,7 @@ void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
     v8 = (wchar_t *)(GetDlgItem((HWND)this, 1843));
     SendMessageA(v8, 0x4B2u, 0, (LPARAM)&word_89E0A4); /*0x470de1*/
     v46 = dword_89DFC0; /*0x470deb*/
-    StringCSF = (wchar_t *)(GetStringCSF(aGuiCampaignlab, 0, g_Str_File_CampScor_cpp, 1792)); /*0x470dfb*/
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiCampaignlab), 0, g_Str_File_CampScor_cpp, 1792)); /*0x470dfb*/
     swprintf(Buffer, (const size_t)StringCSF, v46); /*0x470e06*/
     v10 = GetDlgItem((HWND)this, 1845); /*0x470e14*/
     SendMessageA(v10, 0x4B2u, 0, (LPARAM)Buffer); /*0x470e23*/
@@ -138,26 +138,26 @@ void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
     {
       if ( dword_89E008 == 1 ) /*0x470e71*/
       {
-        v48 = (wchar_t *)(GetStringCSF(aTxtDifficultyM, 0, g_Str_File_CampScor_cpp, 1798));
-        v12 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1798));
+        v48 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtDifficultyM), 0, g_Str_File_CampScor_cpp, 1798));
+        v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1798));
         swprintf(Buffer, (const size_t)v12, v48); /*0x470ea6*/
       }
       else if ( dword_89E008 == 2 ) /*0x470eb3*/
       {
-        v49 = (wchar_t *)(GetStringCSF(aTxtDifficultyB, 0, g_Str_File_CampScor_cpp, 1800));
-        v13 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1800));
+        v49 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtDifficultyB), 0, g_Str_File_CampScor_cpp, 1800));
+        v13 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1800));
         swprintf(Buffer, (const size_t)v13, v49); /*0x470ee8*/
       }
       else
       {
-        v14 = (wchar_t *)(GetStringCSF(aGuiBlank, 0, g_Str_File_CampScor_cpp, 1802));
+        v14 = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiBlank), 0, g_Str_File_CampScor_cpp, 1802));
         swprintf(Buffer, (const size_t)v14, v51); /*0x470f0e*/
       }
     }
     else
     {
-      v47 = (wchar_t *)(GetStringCSF(aTxtDifficultyE, 0, g_Str_File_CampScor_cpp, 1796));
-      v11 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1796));
+      v47 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtDifficultyE), 0, g_Str_File_CampScor_cpp, 1796));
+      v11 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1796));
       swprintf(Buffer, (const size_t)v11, v47); /*0x470e61*/
     }
     v15 = GetDlgItem((HWND)this, 1842); /*0x470f1c*/

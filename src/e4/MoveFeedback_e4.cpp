@@ -118,7 +118,7 @@ int MoveFeedback::ProcessCommand()
             v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
             if ( (unsigned char)result ) /*0x7328fa*/
-              result = ((DynamicVector *)((DynamicVector *)v3))->AddItem(&v17); /*0x732903*/
+              result = ((DynamicVector *)((DynamicVector *)v3))->AddItem((unsigned int *)(&v17)); /*0x732903*/
           }
         }
         ++v10; /*0x732908*/

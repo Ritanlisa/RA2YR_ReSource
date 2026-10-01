@@ -253,12 +253,12 @@ void* AnimTypeClass::GetWarhead(int a2)
         ImageFile = (const char *)((unsigned int *)this)[0]; /*0x427bb9*/
       _makep      _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); 
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
-      v3 = (      v3 = (SHPStruct *)SearchMIXFile(Buffer,(IUnknown *)(1)); 
+      v3 = (      v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
       ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
-        v3 =        v3 = (SHPStruct *)SearchMIXFile(Buffer,(IUnknown *)(1)); 
+        v3 =        v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
         ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427c0c*/
       }
     }

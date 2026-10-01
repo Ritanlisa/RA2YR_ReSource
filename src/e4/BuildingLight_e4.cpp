@@ -86,7 +86,7 @@ Coord * * BuildingLight::CalculateShading()
     LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
+      if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((IUnknown *)((int)v3)), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = (int)((gamemd::AudioStream *)(v47[0] - 128));
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
@@ -103,7 +103,7 @@ Coord * * BuildingLight::CalculateShading()
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
         v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
         v40 = ((unsigned int *)(dword_AC1698))[v7]; /*0x5ff94a*/
-        v9 = (*(int (**)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
+        v9 = (*(int ((gamemd::AudioStream *)(**))(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
         v48[1] = 0; /*0x5ff95e*/
         v51[0] = 0; /*0x5ff962*/
@@ -114,7 +114,7 @@ Coord * * BuildingLight::CalculateShading()
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
+        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53,(gamemd::IUnknown *)(v52), v40, v51, v48, &v31, (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
         if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/
@@ -272,25 +272,25 @@ LABEL_23:
                 if ( dword_AC1838 ) /*0x5ffa00*/
                   Object_Calc_7DF3C2(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa15*/
                 else
-                  Object_Calc_7DF191(v42, v41, 256, v9, v49, v50); /*0x5ffa34*/
+                  Object_Calc_7DF191((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa34*/
                 break; /*0x5ffa1d*/
               case 1: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa49*/
                   Object_Calc_7DF500(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa5e*/
                 else
-                  Object_Calc_7DF0B4(v42, v41, 256, v9, v49, v50); /*0x5ffa7d*/
+                  Object_Calc_7DF0B4((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa7d*/
                 break; /*0x5ffa66*/
               case 2: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa92*/
                   Object_Calc_7DF280(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaa7*/
                 else
-                  Object_Calc(v42, v41, 256, v9, v49, v50); /*0x5ffac6*/
+                  Object_Calc((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffac6*/
                 break; /*0x5ffaaf*/
               case 3: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffadb*/
                   Object_Calc_7DF640(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaf0*/
                 else
-                  Object_Calc_7DEFD7(v42, v41, 256, v9, v49, v50); /*0x5ffb0f*/
+                  Object_Calc_7DEFD7((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffb0f*/
                 break; /*0x5ffaf8*/
               default:
                 goto LABEL_23;

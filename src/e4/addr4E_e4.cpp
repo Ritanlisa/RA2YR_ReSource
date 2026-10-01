@@ -143,7 +143,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   unsigned int *WindowLongA; // eax
   HWND hWnda; // [esp+20h] [ebp+10h]
 
-  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, (unsigned int)hWnd));
   if ( !result ) /*0x4e2001*/
   {
     if ( a2 == 273 ) /*0x4e200d*/
@@ -293,7 +293,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
         v28 = v27; /*0x4e2305*/
         if ( v27 ) /*0x4e2309*/
         {
-          String = (wchar_t *)(GetStringCSF(v26, 0, aDRa2mdpostGame, 434));
+          String = (wchar_t *)(GetStringCSF(v26, 0,(const char *)(aDRa2mdpostGame), 434));
           SendMessageA(v28, 0x4B2u, 0, (LPARAM)String); /*0x4e232b*/
           return 0; /*0x4e2337*/
         }
@@ -618,7 +618,7 @@ void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
 }
 // 0x4E3F70
 namespace gamemd {
-void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
+HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
 {
   LRESULT v5; // ebx
   WPARAM v6; // edi
@@ -753,7 +753,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
-  StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 522)); /*0x4e45fe*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 522)); /*0x4e45fe*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e4624*/
@@ -812,7 +812,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 }
 // 0x4E48E0
 namespace gamemd {
-void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
+int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
   int v2; // edi
   int v3; // eax
@@ -863,7 +863,7 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 }
 // 0x4E49A0
 namespace gamemd {
-void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
+int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
   HWND v4; // ebp
   int v5; // eax
@@ -1176,7 +1176,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
-  StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 833)); /*0x4e511b*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 833)); /*0x4e511b*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
   switch ( nIDDlgItem )
@@ -1233,7 +1233,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 }
 // 0x4E53D0
 namespace gamemd {
-void Lobby_FillFactionComboBox(HWND a1, int a2)
+int Lobby_FillFactionComboBox(HWND a1, int a2)
 {
   int v2; // edi
   int v3; // eax
@@ -1282,7 +1282,7 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
 }
 // 0x4E5480
 namespace gamemd {
-void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
+int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
 {
   SessionClass * v4;
   int v5; // eax
@@ -2618,7 +2618,7 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 
 // 0x4E4170
 namespace gamemd {
-LRESULT GetComboBoxSelected(ReferenceCounted * aP0, int nIDDlgItem, WPARAM wParam)
+int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
   LRESULT v3; // eax
   int result; // eax
@@ -2706,7 +2706,7 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 
 // 0x4E4E20
 namespace gamemd {
-LRESULT GetComboBoxSelectedRaw(ReferenceCounted * aP0, int nIDDlgItem, WPARAM wParam)
+int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
   LRESULT v3; // eax
 
@@ -2793,7 +2793,7 @@ bool sub_4E50A0(int a1)
 
 // 0x4E5260
 namespace gamemd {
-LRESULT SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
+int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
   bool v3; // bl

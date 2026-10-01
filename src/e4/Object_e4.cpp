@@ -508,7 +508,7 @@ void* Object::HandleAction(int * a2, int * a3)
   v32 = *location; /*0x5fd993*/
   v33 = ((unsigned int *)this)[1]; /*0x5fd99f*/
   v34 = ((unsigned int *)this)[2]; /*0x5fd9a6*/
-  GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v32)); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
   if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5fd9c9*/
@@ -631,10 +631,10 @@ LABEL_20:
     }
     else
     {
-      v26 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(&a2, &v30); /*0x5fdc21*/
+      v26 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell((unsigned int *)(&a2), &v30); /*0x5fdc21*/
       if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v26) ) /*0x5fdc2c*/
       {
-        v28 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(&a2, &v30); /*0x5fdc4a*/
+        v28 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell((unsigned int *)(&a2), &v30); /*0x5fdc4a*/
         v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28); /*0x5fdc4b*/
       }
       else
@@ -688,7 +688,7 @@ void * Object::DrawObject(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
-  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
+  v3 = (*(int ((unsigned char *)(**))(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {
     --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
@@ -1008,7 +1008,7 @@ char Object_Init(char a1, int a2, int a3, char a4, int a5)
 }
 // 0x7DEEFA
 namespace gamemd {
-void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+char Object_Calc(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6)
 {
   unsigned char *v6; // esi
   unsigned short *v7; // edi
@@ -1073,7 +1073,7 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
 }
 // 0x7DEFD7
 namespace gamemd {
-void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6)
 {
   unsigned char *v6; // esi
   unsigned short *v7; // edi
@@ -1138,7 +1138,7 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
 }
 // 0x7DF0B4
 namespace gamemd {
-void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6)
 {
   unsigned char *v6; // esi
   unsigned short *v7; // edi
@@ -1203,7 +1203,7 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
 }
 // 0x7DF191
 namespace gamemd {
-void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6)
 {
   unsigned char *v6; // esi
   unsigned short *v7; // edi

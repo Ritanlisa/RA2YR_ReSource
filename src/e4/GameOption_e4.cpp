@@ -27,12 +27,12 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
 
   if ( aP1 ) /*0x69acd9*/
   {
-    result = wcsncpy((wchar_t *)Destination, aP1, 0x2Cu); /*0x69acdf*/
+    result = wcsncpy((wchar_t *)Destination,(const wchar_t *)(aP1), 0x2Cu); /*0x69acdf*/
     *(unsigned short *)&Destination->__pad_0[86] = 0; /*0x69ace7*/
   }
   else
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NoDescription), 0, g_Str_File_Session_CPP, 2845));
     return wcscpy((wchar_t *)Destination, StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
@@ -48,12 +48,12 @@ void * GameOption::SetDigest(CCINIClass * aP1)
 
   if ( aP1 ) /*0x69ad89*/
   {
-    result = strncpy((unsigned char *)this + 348, aP1, 0x20u); /*0x69ad95*/
+    result = strncpy((char *)((unsigned char *)this + 348), aP1, 0x20u); /*0x69ad95*/
     *((unsigned char *)this + 379) = 0; /*0x69ad9d*/
   }
   else
   {
-    result = (char *)(strlen(g_Str_No_Digest) + 1); /*0x69adb3*/
+    result = (char *)(strlen((const char *)(g_Str_No_Digest)) + 1); /*0x69adb3*/
     qmemcpy((unsigned char *)this + 348, g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/

@@ -204,7 +204,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
-      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
+      && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
     {
       v9 = *(unsigned int *)(v7 + 16); /*0x4c9d22*/
       v10 = *(unsigned int *)(v7 + 4); /*0x4c9d25*/
@@ -313,7 +313,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
 
   v2 = a2; /*0x4ca273*/
   v3 = (gamemd::FactoryClass *)(a1); /*0x4ca279*/
-  result = AbstractClass::SaveLoad_Prefix_0(a1, (int)a2); /*0x4ca27f*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), (int)a2); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
   {
     if ( v3 ) /*0x4ca290*/
@@ -410,7 +410,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4c3*/
   (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
-  (*((void (**)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
+  (*((void ((void **)(**))(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
@@ -418,14 +418,14 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   LOBYTE(v4) = this->__pad_42[27]; /*0x4ca514*/
   ((Power *)((Power *)a2))->FlagProcess(v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
-  Power::TimerProcess(this->originalBalance); /*0x4ca530*/
+  Power::TimerProcess((int)(this->originalBalance)); /*0x4ca530*/
   v5 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca535*/
   if ( v5 ) /*0x4ca53a*/
   {
     v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
     Power::TimerProcess(v6); /*0x4ca549*/
   }
-  Power::TimerProcess(this->specialItem); /*0x4ca554*/
+  Power::TimerProcess((int)(this->specialItem)); /*0x4ca554*/
   v7 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 
@@ -487,7 +487,7 @@ int FactoryClass::StartProduction_2()
           v10 = v3[3278]; /*0x4ca5ff*/
           v9 = v2; /*0x4ca600*/
           v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))(v3); /*0x4ca603*/
-          LOBYTE(v2) = ((Sidebar *)((int)this->owner))->StartSidebarProduction(v7, v9, v10, 1); /*0x4ca60a*/
+          LOBYTE(v2) = ((Sidebar *)((int)this->owner))->StartSidebarProduction((gamemd::HouseClass *)(v7), v9, v10, 1); /*0x4ca60a*/
         }
       }
     }
@@ -692,7 +692,7 @@ int FactoryClass::Seek(int * a1, int * a2, int a3)
   int v4; // edx
   int i; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((int *)a1, a2, a3); /*0x4ca3d2*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, a3); /*0x4ca3d2*/
   if ( result >= 0 ) /*0x4ca3d9*/
   {
     v4 = *a2; /*0x4ca3de*/
@@ -724,7 +724,7 @@ char FactoryClass::RemoveOneFromQueue(char a2)
   int v5; // ecx
 
   p_onHold = &this->onHold; /*0x4ca624*/
-  v3 = (*(int (**)(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
+  v3 = (*(int ((char *)(**))(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
   if ( v3 == -1 ) /*0x4ca634*/
     return 0; /*0x4ca634*/
   v4 = *((unsigned int *)p_onHold + 4); /*0x4ca636*/

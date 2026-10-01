@@ -57,7 +57,7 @@ int Count::SetupAllCountriesLobby()
   v8 = (int **)dword_A8DA90; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
-    ResourceID2CSF = GetResourceID2CSF(v1); /*0x46f6ef*/
+    ResourceID2CSF = GetResourceID2CSF((int)(v1)); /*0x46f6ef*/
     hWnd = GetDlgItem((HWND)this, ResourceID2CSF); /*0x46f700*/
     result = ShowWindow(hWnd, 0); /*0x46f704*/
     if ( result ) /*0x46f70c*/

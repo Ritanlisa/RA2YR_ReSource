@@ -147,7 +147,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)Block); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
-  v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
+  v3 = (*(int ((int *)(**))(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
     do /*0x43713a*/
@@ -201,7 +201,7 @@ signed int BuildingLightClass::UpdateOscillation()
   int v30; // [esp+2Ch] [ebp-8h]
   int v31; // [esp+30h] [ebp-4h]
 
-  v26 = (*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 456))(((unsigned int *)this)[0]); /*0x513d3a*/
+  v26 = (*(int ((void *)(**))(void *))(*(unsigned int *)((unsigned int *)this)[0] + 456))(((unsigned int *)this)[0]); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
   vtable3 = (unsigned int *)(((unsigned int *)this)[0]); /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/
@@ -210,7 +210,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v29 = *v3; /*0x513d59*/
     v30 = v3[1]; /*0x513d65*/
     v31 = v3[2]; /*0x513d71*/
-    GroundHeight = Cell::GetGroundHeight(&v29); /*0x513d7a*/
+    GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v29)); /*0x513d7a*/
     v5 = (unsigned int *)(((unsigned int *)this)[0]); /*0x513d7c*/
     v6 = (int *)(v5 + 39); /*0x513d8b*/
     v7 = v5[376] & 7; /*0x513d8d*/
@@ -222,7 +222,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v30 = v9 + *(unsigned int *)(v11 + 4); /*0x513dad*/
     v29 = v12; /*0x513dbb*/
     v31 = v10; /*0x513dbf*/
-    if ( Cell::GetGroundHeight(&v29) > GroundHeight ) /*0x513dca*/
+    if ( Cell::GetGroundHeight((unsigned int *)(&v29)) > GroundHeight ) /*0x513dca*/
       v28 = v26 - *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484); /*0x513ddc*/
   }
   v13 = (double)v26 + *(double *)&((unsigned int *)this)[4]; /*0x513de4*/
@@ -247,7 +247,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v21 = (unsigned char *)(((unsigned int *)this)[0]); /*0x513e70*/
   v22 = v21[116]; /*0x513e74*/
   v21[116] = 0; /*0x513e77*/
-  (*(void (**)(void *, int))(*(unsigned int *)((unsigned int *)this)[0] + 460))(((unsigned int *)this)[0], v20); /*0x513e7f*/
+  (*(void ((void *)(**))(void *, int))(*(unsigned int *)((unsigned int *)this)[0] + 460))(((unsigned int *)this)[0], v20); /*0x513e7f*/
   result = (signed int)((unsigned int *)this)[0]; /*0x513e85*/
   *(unsigned char *)(result + 116) = v22; /*0x513e8c*/
   v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/
@@ -309,7 +309,7 @@ namespace gamemd {
 int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4369d4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x4369d4*/
 
 }
 } // namespace gamemd

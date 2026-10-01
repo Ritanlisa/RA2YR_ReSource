@@ -70,7 +70,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
   {
     TabClass_field_0x0 = this->TabClass_field_0x0; /*0x6d06ae*/
     *((unsigned char *)this + 21829) = 1; /*0x6d06b4*/
-    (*(void (**)(TabClass *, unsigned int))(TabClass_field_0x0 + 56))(this, 0); /*0x6d06ba*/
+    (*(void ((gamemd::TabClass *)(**))(TabClass *, unsigned int))(TabClass_field_0x0 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
   v7 = *((unsigned int *)dword_B0FC58 + 1); /*0x6d06bd*/
@@ -89,7 +89,7 @@ LABEL_6:
       if ( *((unsigned char *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll((ObjectClass *)this); /*0x6d0875*/
-        (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CCB0); /*0x6d0883*/
+        (*(void ((gamemd::TabClass *)(**))(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CCB0); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
@@ -99,11 +99,11 @@ LABEL_6:
         HashTable::Remove((HashTable *)dword_887368, 240); /*0x6d08b3*/
         v16 = this->TabClass_field_0x0; /*0x6d08b8*/
         *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
-        (*(void (**)(TabClass *, GadgetClass *))(v16 + 48))(this, &stru_B0CC40); /*0x6d08c8*/
+        (*(void ((gamemd::TabClass *)(**))(TabClass *, GadgetClass *))(v16 + 48))(this, &stru_B0CC40); /*0x6d08c8*/
         PushCommandClass::Execute(&stru_B0CC40, (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
         v17 = this->TabClass_field_0x0; /*0x6d08da*/
         *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
-        (*(void (**)(TabClass *, unsigned int))(v17 + 56))(this, 0); /*0x6d08e6*/
+        (*(void ((gamemd::TabClass *)(**))(TabClass *, unsigned int))(v17 + 56))(this, 0); /*0x6d08e6*/
       }
     }
     else if ( v9 == 33009 ) /*0x6d08f3*/
@@ -113,13 +113,13 @@ LABEL_6:
         PlayVocClass(dword_8871E0->SpySatDeactivationSound, 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
-          (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40); /*0x6d0932*/
+          (*(void ((gamemd::TabClass *)(**))(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40); /*0x6d0932*/
           HashTable::Remove((HashTable *)dword_887368, 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar((CommandClass *)this); /*0x6d094d*/
           v18 = this->TabClass_field_0x0; /*0x6d0952*/
           *((unsigned char *)this + 21829) = 1; /*0x6d0958*/
-          (*(void (**)(TabClass *, unsigned int))(v18 + 56))(this, 0); /*0x6d095e*/
+          (*(void ((gamemd::TabClass *)(**))(TabClass *, unsigned int))(v18 + 56))(this, 0); /*0x6d095e*/
         }
       }
     }
@@ -213,7 +213,7 @@ CellStruct * * sub_731AF0()
   result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731af1*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 856));
     v3 = 3; /*0x731b18*/
     if ( dword_A83D4C ) /*0x731b1f*/
       v3 = *(unsigned int *)&((unsigned int *)(dword_A83D4C))[134].__pad_90[4]; /*0x731b21*/

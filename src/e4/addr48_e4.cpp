@@ -148,7 +148,7 @@ void Network_SendTimestamp(int a1, int a2, int a3, int a4)
 }
 // 0x489280
 namespace gamemd {
-void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, ObjectClass * aP3, char a5, int aP6)
+int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, char a5, int aP6)
 {
   ObjectClass *v8; // esi
   VectorClass_flat *v9; // eax
@@ -252,7 +252,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   IDA_LODWORD(v143) = ((int16_t)v115 << 8) + 128;
   IDA_HIDWORD(v143) = (IDA_SHIWORD(v115) << 8) + 128;
   v144 = 0.0;
-  if ( Cell::GetGroundHeight((IUnknown *)&v143) < *(unsigned int *)&aP0->__pad_0[8] )
+  if ( Cell::GetGroundHeight((unsigned int *)((IUnknown *)&v143)) < *(unsigned int *)&aP0->__pad_0[8] )
   {
     int v11 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus);
     AircraftTrackerClass::FillCurrentVector((int)&stru_87C374[46356], aP1a, v11);
@@ -311,7 +311,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
     }
   }
   if ( ((int)aP1a[20].vtable0 & 0x100) != 0
-    && *(unsigned int *)&aP0->__pad_0[8] > *(unsigned int *)&stru_89E138[1836] / 2 + Cell::GetGroundHeight((IUnknown *)aP0) )
+    && *(unsigned int *)&aP0->__pad_0[8] > *(unsigned int *)&stru_89E138[1836] / 2 + Cell::GetGroundHeight((unsigned int *)((IUnknown *)aP0)) )
   {
     varC2 = 1;
   }
@@ -2065,7 +2065,7 @@ void CellChainReact()
 
 // 0x48A4F0
 namespace gamemd {
-int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3)
+int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
 {
   int v4; // edi
   int v6; // ecx

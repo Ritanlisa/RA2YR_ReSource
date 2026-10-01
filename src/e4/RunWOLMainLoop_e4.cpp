@@ -53,12 +53,12 @@ Coord * * sub_77E110()
     {
   LABEL_5:
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x77e16a*/
-      IDA_LOBYTE(v1) = Theme::QueueSong((int)&unk_A83D10, -2); /*0x77e176*/
+      IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10), -2); /*0x77e176*/
     }
   }
   else
   {
-    IDA_LOBYTE(v1) = Theme::QueueSong((int)&unk_A83D10, -3); /*0x77e1c2*/
+    IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10), -3); /*0x77e1c2*/
   }
   return (gamemd::Coord **)(v1);
 }
@@ -122,15 +122,15 @@ void sub_785EA0()
     Game::ProcessIdle(v7); /*0x785f70*/
     if ( !(*(int (**)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
-      StringCSF = (wchar_t *)(GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtWolLoggingO), 0, g_Str_File_wonline_cpp, 9527));
       ((WideString *)((wchar_t **)&v15))->Assign(StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v15, 0); /*0x785fb4*/
       DeleteAndZero::Alt((DeleteAndZero *)&v15); /*0x785fbd*/
       for ( j = 0; j < 5; ++j ) /*0x785fc8*/
       {
-        for ( k = WaitForMultipleObjects(0x12u, &Handles, 0, 0x64u); /*0x785fdf*/
+        for ( k = WaitForMultipleObjects(0x12u,(const HANDLE *)(&Handles), 0, 0x64u); /*0x785fdf*/
               k == 258;
-              k = WaitForMultipleObjects(0x12u, &Handles, 0, 0x64u) )
+              k = WaitForMultipleObjects(0x12u,(const HANDLE *)(&Handles), 0, 0x64u) )
         {
           Game::ProcessIdle(v10); /*0x785fe1*/
         }
@@ -240,7 +240,7 @@ char sub_72C7E0()
   if ( !byte_B0FCFD ) /*0x72c7e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
-      dword_B0F9E8 = (unsigned int)(LoadFileSHP(off_844D84, (bool *)&byte_B0FCFC)); /*0x72c805*/
+      dword_B0F9E8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D84), (bool *)&byte_B0FCFC)); /*0x72c805*/
     result = LoadPaletteSimple(off_844D88, &dword_B0FD00, &dword_B0FD04); /*0x72c81a*/
     byte_B0FCFD = 1; /*0x72c81f*/
   }
@@ -320,7 +320,7 @@ int sub_799D30()
   result = (wchar_t *)(LoginFlowWOL_Reset(v1));
   if ( result == 1 ) /*0x799d3b*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_FETCHING_SERVLIST), 0, g_Str_File_wonline_cpp, 24300));
     ((WideString *)((wchar_t **)&v13))->Assign(StringCSF); /*0x799d5c*/
     ShowUIMessage(16, (wchar_t **)&v13, 0); /*0x799d6c*/
     DeleteAndZero::Alt(&v13); /*0x799d75*/

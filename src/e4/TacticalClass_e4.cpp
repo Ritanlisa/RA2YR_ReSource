@@ -141,7 +141,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
   unsigned int v4; // eax
   unsigned int result; // eax
 
-  LOBYTE(v4) = Cell::GetAdjacentPassableMask((int16_t *)((char *)this + 36), 0); /*0x480202*/
+  LOBYTE(v4) = Cell::GetAdjacentPassableMask((IUnknown *)((int16_t *)((char *)this + 36)), 0); /*0x480202*/
   *((unsigned char *)this + 288) = v4; /*0x480207*/
   v4 = (char)v4; /*0x48020d*/
   if ( (char)v4 == -2 ) /*0x480213*/
@@ -153,7 +153,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
     v4 = 0; /*0x480221*/
   }
   RenderFogOfWar(aP1, aP2, v4); /*0x480230*/
-  result = Cell::GetAdjacentPassableMask((int16_t *)((char *)this + 36), 1); /*0x48023e*/
+  result = Cell::GetAdjacentPassableMask((IUnknown *)((int16_t *)((char *)this + 36)), 1); /*0x48023e*/
   *((unsigned char *)this + 289) = result; /*0x480243*/
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 && !*((unsigned char *)dword_A83D4C + 501) ) /*0x48025c*/
   {

@@ -166,7 +166,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   *(unsigned int *)(v5 + 24) = v8; /*0x5cc381*/
   if ( v9 >= 4 ) /*0x5cc384*/
     return 0; /*0x5cc538*/
-  FoundationSize = Building::GetFoundationSize(&v29, *(unsigned int *)(v5 + 40)); /*0x5cc398*/
+  FoundationSize = Building::GetFoundationSize((unsigned int *)(&v29), *(unsigned int *)(v5 + 40)); /*0x5cc398*/
   v11 = (unsigned int *)a3; /*0x5cc39d*/
   v12 = (unsigned int *)a3; /*0x5cc3a3*/
   *(unsigned int *)a3 = *FoundationSize; /*0x5cc3a5*/
@@ -198,7 +198,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v30 = *(unsigned int *)(v5 + 4); /*0x5cc447*/
   v27 = v15; /*0x5cc452*/
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
-  v17 = (int *)(*(int (**)(MSOverlayAnim *))(v16 + 120))(aP0); /*0x5cc45a*/
+  v17 = (int *)(*(int ((gamemd::MSOverlayAnim *)(**))(MSOverlayAnim *))(v16 + 120))(aP0); /*0x5cc45a*/
   DrawToSurfaceSHP( /*0x5cc470*/
     (int)aP0,
     *(unsigned int *)(v5 + 32),
@@ -220,7 +220,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   if ( v18 ) /*0x5cc47a*/
   {
     a3 = (void *)(v5);
-    a3 = (void *)((*(int (**)(int, int *))(*(unsigned int *)v18 + 16))(v18, &a3));
+    a3 = (void *)((*(int ((int)(**))(int, int *))(*(unsigned int *)v18 + 16))(v18, &a3));
     v19 = *(unsigned int *)(v5 + 68); /*0x5cc48e*/
     for ( i = 0; i < *(unsigned int *)(v19 + 16); ++i ) /*0x5cc498*/
     {
@@ -241,7 +241,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
     IDA_BYTE1(v23) |= 4u; /*0x5cc4e3*/
     v28 = v23; /*0x5cc4e7*/
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
-    v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))(aP0, &v32); /*0x5cc4f5*/
+    v24 = (int *)(*(int ((gamemd::MSOverlayAnim *)(**))(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))(aP0, &v32); /*0x5cc4f5*/
     DrawToSurfaceSHP( /*0x5cc50f*/
       (int)DSurface_Alternate,
       *(unsigned int *)(v5 + 32),
@@ -276,7 +276,7 @@ namespace gamemd {
 int ScenarioClass::MissionStubReturnZero3()
 {
 
-  return (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 108))(this);
+  return (*(int ((gamemd::MultiplayerGameMode *)(**))(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 108))(this);
 
 }
 // 0x5D6BE0
@@ -381,12 +381,12 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
     --v7; /*0x683426*/
   }
   while ( v7 ); /*0x683427*/
-  wcscpy((wchar_t *)this->name, &g_TypeClass_DefaultString); /*0x683435*/
-  wcscpy((wchar_t *)this->uiNameLoaded, &g_TypeClass_DefaultString); /*0x683446*/
-  strcpy((char *)this->fileName, &g_INI_DefaultBuffer); /*0x683475*/
-  strcpy((char *)this->briefingCsf, &g_INI_DefaultBuffer); /*0x68349d*/
-  strcpy(this->uiName, &g_INI_DefaultBuffer); /*0x6834bf*/
-  wcscpy((wchar_t *)this->briefing, &g_TypeClass_DefaultString); /*0x6834cf*/
+  wcscpy((wchar_t *)this->name,(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x683435*/
+  wcscpy((wchar_t *)this->uiNameLoaded,(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x683446*/
+  strcpy((char *)this->fileName,(const char *)(&g_INI_DefaultBuffer)); /*0x683475*/
+  strcpy((char *)this->briefingCsf,(const char *)(&g_INI_DefaultBuffer)); /*0x68349d*/
+  strcpy((char *)(this->uiName), &g_INI_DefaultBuffer); /*0x6834bf*/
+  wcscpy((wchar_t *)this->briefing,(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x6834cf*/
   v8 = 0; /*0x6834d7*/
   v9 = &this->globalVariables[40]; /*0x6834d9*/
   do /*0x683502*/
@@ -450,7 +450,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   CHAR v23[28]; // [esp+E0h] [ebp-1Ch] BYREF
 
   v4 = (char *)(Source); /*0x683ab8*/
-  if ( (!Source || !strlen(Source)) && a4 != -1 ) /*0x683ade*/
+  if ( (!Source || !strlen((const char *)(Source))) && a4 != -1 ) /*0x683ade*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 377)) == 1 ) /*0x683ae7*/
       v4 = &stru_A83D50.__pad_C8[48]; /*0x683ae9*/

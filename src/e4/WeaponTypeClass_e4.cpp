@@ -45,7 +45,7 @@ LABEL_6:
       return SuperWeaponTypeClass::Construct(v3, Source); /*0x5126f1*/
     return 0; /*0x5126e5*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C9C + v2) + 36), Source) ) /*0x5126ca*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C9C + v2) + 36),(const char *)(Source)) ) /*0x5126ca*/
   {
     if ( ++v2 >= dword_A83CA8 ) /*0x5126d4*/
       goto LABEL_6; /*0x5126d4*/
@@ -73,7 +73,7 @@ LABEL_6:
       return SuperWeaponTypeClass::SuperWeaponTypeClass((int)v3, Source); /*0x6cef61*/
     return 0; /*0x6cef55*/
   }
-  while ( _strcmpi((const void *)(*((unsigned int *)dword_A8E334 + v2) + 36), Source) ) /*0x6cef3a*/
+  while ( _strcmpi((const char *)((const void *)(*((unsigned int *)dword_A8E334 + v2) + 36)), Source) ) /*0x6cef3a*/
   {
     if ( ++v2 >= dword_A8E340 ) /*0x6cef44*/
       goto LABEL_6; /*0x6cef44*/
@@ -172,7 +172,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e7d*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e83*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771e8a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x771e91*/
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
@@ -203,7 +203,7 @@ int WeaponTypeClass::Destructor(void *a1)
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f5d*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f64*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f6b*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x771f72*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x771f72*/
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
@@ -298,7 +298,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
     Power::TimerProcess(v10); /*0x772b75*/
   }
   Power::TimerProcess(this->Damage); /*0x772b83*/
-  Power::TimerProcess(this->Speed); /*0x772b91*/
+  Power::TimerProcess((int)(this->Speed)); /*0x772b91*/
   Warhead = this->Warhead; /*0x772b96*/
   if ( Warhead ) /*0x772b9e*/
   {
@@ -351,7 +351,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
   (*(void (**)(int *))(aP0->Report[0] + 12))(aP0->Report); /*0x772ce5*/
   (*(void (**)(int *))(v5->DownReport[0] + 12))(v5->DownReport); /*0x772cf4*/
   v7 = a2; /*0x772cf7*/
-  result = AbstractClass::SaveLoad_Prefix_0(v5, (int)a2); /*0x772cfd*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(v5), (int)a2); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
   {
     if ( v5 ) /*0x772d0c*/

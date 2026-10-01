@@ -48,7 +48,7 @@ namespace gamemd {
 void SelectTeamCommand::ddtor()
 {
 
-  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
+  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
 
 }
 } // namespace gamemd

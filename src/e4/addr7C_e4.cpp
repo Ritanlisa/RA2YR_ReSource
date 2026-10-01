@@ -903,7 +903,7 @@ void AudioStream_Process(int a1, int a2, char a3)
 }
 // 0x7C34B0
 namespace gamemd {
-void SeekAudioStream(int a1, DSurface * aP1, DSurface * aP2, int a4, unsigned int a5)
+int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int a5)
 {
   signed int v5; // edi
   int result; // eax

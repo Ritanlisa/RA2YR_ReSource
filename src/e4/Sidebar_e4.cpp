@@ -98,7 +98,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
       v21 = 0; /*0x4fa40c*/
       break; /*0x4fa40c*/
   }
-  Sidebar::Dispatch((Sidebar *)this, (int)v6, aP3, v7, 0); /*0x4fa41c*/
+  Sidebar::Dispatch((IUnknown *)((Sidebar *)this), (int)v6, aP3, v7, 0); /*0x4fa41c*/
   v9 = (int)(TechnoTypeClass::GetByTypeAndIndex((int)v6, aP2)); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
   if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/

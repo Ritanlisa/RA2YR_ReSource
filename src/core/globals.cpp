@@ -158,11 +158,11 @@ void FindGameDirectoryCD(const char* path) {
     v1 = 0; /*0x47ab17*/
     if ( !Source ) /*0x47ab1b*/
       return 0; /*0x47ab26*/
-    v3 = _strdup(Source); /*0x47ab30*/
+    v3 = _strdup((const char *)(Source)); /*0x47ab30*/
     if ( v3 != byte_89E41C ) /*0x47ab3b*/
     {
       strcat(byte_89E41C, asc_81C8FC); /*0x47ab61*/
-      strcat(byte_89E41C, v3); /*0x47ab89*/
+      strcat((char *)(byte_89E41C), v3); /*0x47ab89*/
     }
     for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) ) /*0x47aba4*/
     {
@@ -172,7 +172,7 @@ void FindGameDirectoryCD(const char* path) {
         v5 = Str1[strlen(Str1) - 1]; /*0x47abed*/
         if ( v5 != 58 && v5 != 92 ) /*0x47abf9*/
           strcat(Str1, asc_815E74); /*0x47ac1e*/
-        if ( !strncmp(Str1, Str2, 2u) ) /*0x47ac33*/
+        if ( !strncmp(Str1,(const char *)(Str2), 2u) ) /*0x47ac33*/
         {
           if ( !dword_89E414 ) /*0x47ac47*/
             continue; /*0x47ac47*/
@@ -242,7 +242,7 @@ void FindGameDirectoryCD(const char* path) {
       char v5 = Str1[strlen(Str1) - 1];
       if ( v5 != 58 && v5 != 92 )
         strcat(Str1, asc_815E74);
-      if ( !strncmp(Str1, Str2, 2) )
+      if ( !strncmp(Str1,(const char *)(Str2), 2) )
       {
         if ( !DataGlobal_87F7E8[31499] )
           continue;
@@ -887,7 +887,7 @@ void NetworkShutdownInterface() {
     if ( !v1 ) /*0x5f9e8d*/
       return 0; /*0x5f9e8f*/
     memset(Destination, 0xA5u, sizeof(Destination)); /*0x5f9eaa*/
-    strncpy(Destination, v1, 0x80u); /*0x5f9eb7*/
+    strncpy(Destination,(const char *)(v1), 0x80u); /*0x5f9eb7*/
     Destination[127] = 0; /*0x5f9ec5*/
     v3 = strlen(Destination) + 1; /*0x5f9ecd*/
     v4 = v3 - 1; /*0x5f9ed2*/

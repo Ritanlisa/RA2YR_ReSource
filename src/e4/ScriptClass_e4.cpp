@@ -33,7 +33,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x69163b*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x69163b*/
   if ( result >= 0 ) /*0x691642*/
   {
     if ( aP0 ) /*0x691646*/
@@ -59,7 +59,7 @@ int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x69169f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x69169f*/
   if ( result >= 0 ) /*0x6916a6*/
     return 0; /*0x6916a8*/
   return result; /*0x6916aa*/

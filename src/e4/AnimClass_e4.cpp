@@ -93,7 +93,7 @@ void AnimClass::Destruct(void * a2, void *a2_2)
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
-      Remove      RemoveTarget((gamemd::IUnknown *)((int)a2)); 
+      Remove      RemoveTarget((int)((gamemd::IUnknown *)((int)a2))); 
   }
   v12 = (gamemd::AnimClass *)(a2);
   v7 = (*(int (**)(int *, AnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x4229e3*/
@@ -508,14 +508,14 @@ LABEL_77:
 LABEL_78:
   if ( this->__pad_194[0] ) /*0x423358*/
   {
-    v34 = ZC    v34 = ZCoordToScreenY((gamemd::IUnknown *)(*(int *)v101)); 
+    v34 = ZC    v34 = ZCoordToScreenY((int)((gamemd::IUnknown *)(*(int *)v101))); 
     v35 = (int)(*a2); /*0x423384*/
     v36 = *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     *(unsigned int *)v101 = v35; /*0x4233a2*/
     v38 = AnimClass_field_0x0[116](this); /*0x4233a6*/
-    v39 = ZC    v39 = ZCoordToScreenY((gamemd::IUnknown *)(v38)); 
+    v39 = ZC    v39 = ZCoordToScreenY((int)((gamemd::IUnknown *)(v38))); 
     DrawToSurfaceSHP( /*0x4233e9*/
       (int)g_DSurface_Hidden_2,
       v105[0],
@@ -655,7 +655,7 @@ LABEL_99:
     v68 = v66[116](this); /*0x42367e*/
     v69 = this->AnimClass_field_0x100 /*0x4236a1*/
         + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
-        - ZCoordToScreenY((gamemd::IUnknown *)(v68))
+        - ZCoordToScreenY((int)((gamemd::IUnknown *)(v68)))
         - 50;
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x4236a4*/
     do /*0x423719*/

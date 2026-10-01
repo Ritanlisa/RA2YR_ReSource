@@ -700,7 +700,7 @@ void E4Recv_776570::sub_776570()
 }
 // 0x777080
 namespace gamemd {
-AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
+BOOL SetDialogParent(HWND hWnd, HWND a2)
 {
   int v4; // eax
   int v5; // ecx
@@ -2391,7 +2391,7 @@ int sub_77D840()
 }
 // 0x77DC90
 namespace gamemd {
-void OpenURLWOL(INIClass * a1, int a2)
+int OpenURLWOL(INIClass * a1, int a2)
 {
   FILE *v4; // esi
   HINSTANCE ExecutableA; // esi

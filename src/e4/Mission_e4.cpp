@@ -527,7 +527,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   LOWORD(v22) = *v11 / 256; /*0x6ed9bb*/
                   HIWORD(v22) = v11[1] / 256; /*0x6ed9d7*/
                   v16 = v22; /*0x6ed9e4*/
-                  v12 = (int *)globalHelper_0DA020(v18, &v16); /*0x6ed9e8*/
+                  v12 = (int *)globalHelper_0DA020((unsigned int *)(v18), &v16); /*0x6ed9e8*/
                   v13 = *i; /*0x6ed9ef*/
                   v17 = *v12; /*0x6ed9fd*/
                   v14 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v17); /*0x6eda01*/

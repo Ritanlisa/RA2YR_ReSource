@@ -38,13 +38,13 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !ppv ) /*0x410267*/
     return -2147467261; /*0x410269*/
   *ppv = 0; /*0x410286*/
-  if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x410290*/
+  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x410290*/
     *ppv = thisa; /*0x410294*/
-  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
+  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
     *ppv = thisa; /*0x4102a9*/
-  if ( !memcmp(iid, &IID_IPersist, 0x10u) ) /*0x4102b9*/
+  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x4102b9*/
     *ppv = thisa; /*0x4102be*/
-  if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
+  if ( !memcmp((const void *)(iid), &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
       p_vtable1 = &thisa->vtable1; /*0x4102d8*/

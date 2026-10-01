@@ -76,7 +76,7 @@ struct String {
     char * GetOrEmpty(void *a1_1);  // 0x7B5400
     char * GetOrEmpty_Alt(void *a1_1);  // 0x7B5440
     char Assign_Bool(const char *a2);  // 0x7B5A40
-    void ToLower(void *a1_1);  // 0x7B5B30
+    int ToLower(void *a1_1);  // 0x7B5B30
     char ** ToLowerCopy(char **aP1);  // 0x7B5B80
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0

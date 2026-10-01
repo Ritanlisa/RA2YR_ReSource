@@ -71,7 +71,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   char v31[112]; // [esp+1B4h] [ebp-470h] BYREF
   wchar_t Buffer[512]; // [esp+224h] [ebp-400h] BYREF
 
-  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, (unsigned int)a4));
   if ( !result ) /*0x4f11e3*/
   {
     if ( a2 != 273 ) /*0x4f11ef*/
@@ -102,7 +102,7 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = (wchar_t *)(GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196));
+            String = (wchar_t *)(GetStringCSF(v6, 0,(const char *)(g_Str_File_GOptions_CPP), 196));
             SendMessageA(v8, 0x4B2u, 0, (LPARAM)String); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -182,7 +182,7 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
-          v15 = EventClass::AddEvent(v29, *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
+          v15 = EventClass::AddEvent((int)(v29), *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -231,7 +231,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19)); /*0x4f15c6*/
+            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19)); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             this->Debug::Log(); /*0x4f15dc*/
           }
@@ -249,7 +249,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(EventClass::Add2(v30, *((unsigned int *)dword_A83D4C + 12), 0xDu, v22)); /*0x4f166f*/
+            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12), 0xDu, v22)); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -334,7 +334,7 @@ AbstractClass * * Options::Screen_Save()
       v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
-      Theme::QueueSong((int)&unk_A83D10, v10); /*0x55fbfa*/
+      Theme::QueueSong((gamemd::IUnknown *)((int)&unk_A83D10), v10); /*0x55fbfa*/
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x55fc06*/
     }
   }
@@ -416,7 +416,7 @@ char Options::Screen_Dialog()
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
       break; /*0x55fd1c*/
-    ShowHotkeyOptionsDialog(dword_A8EB60); /*0x55fd1e*/
+    ShowHotkeyOptionsDialog((void *)(dword_A8EB60)); /*0x55fd1e*/
   }
   ScenarioClass::SaveGameOptions(dword_A8EB60); /*0x55fd8e*/
   byte_A8E9A0 = v7; /*0x55fd9a*/
@@ -484,7 +484,7 @@ char Options::EnsureCapacity(void *a1_1, void *a2_1)
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
-  __3_YAXPAX_Z(this->field_8); /*0x62490f*/
+  __3_YAXPAX_Z((void *)(this->field_8)); /*0x62490f*/
   this->field_8 = (unsigned int)(v8); /*0x62491b*/
   this->field_4 = (unsigned int)((void *)v5); /*0x62491e*/
   return 1; /*0x6248b2*/
@@ -518,7 +518,7 @@ int Options::GrowBuffer()
     qmemcpy(v5, this->field_8, 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
-  __3_YAXPAX_Z(this->field_8); /*0x625429*/
+  __3_YAXPAX_Z((void *)(this->field_8)); /*0x625429*/
   this->field_4 = (unsigned int)((void *)v4); /*0x625431*/
   this->field_8 = (unsigned int)(v5); /*0x625434*/
   return 1; /*0x6253bf*/
@@ -551,7 +551,7 @@ int Options::ReadOptionValue()
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
-  __3_YAXPAX_Z(this->field_8); /*0x62553f*/
+  __3_YAXPAX_Z((void *)(this->field_8)); /*0x62553f*/
   this->field_8 = (unsigned int)(v8); /*0x62554b*/
   this->field_4 = (unsigned int)((void *)v5); /*0x62554e*/
   return 1; /*0x6254e2*/

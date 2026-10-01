@@ -787,7 +787,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
         v6 = *((unsigned int *)aP0 - 1) - 1; /*0x7d0fc5*/
         if ( v6 >= v3 ) /*0x7d0fc8*/
           v6 = v3; /*0x7d0fca*/
-        memcpy_0(v4, aP0, v6); /*0x7d0fcf*/
+        memcpy_0(v4, aP0,(gamemd::AbstractClass *)(v6)); /*0x7d0fcf*/
         __sbh_free_block(Sizea, aP0); /*0x7d0fd8*/
         goto LABEL_22; /*0x7d0fd8*/
       }
@@ -801,7 +801,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
       v7 = *((unsigned int *)aP0 - 1) - 1; /*0x7d1009*/
       if ( v7 >= v3 ) /*0x7d100c*/
         v7 = v3; /*0x7d100e*/
-      memcpy_0(v4, aP0, v7); /*0x7d1013*/
+      memcpy_0(v4, aP0,(gamemd::AbstractClass *)(v7)); /*0x7d1013*/
       __sbh_free_block(Sizea, aP0); /*0x7d101c*/
     }
     goto LABEL_22; /*0x7d101c*/
@@ -844,7 +844,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     }
   }
   if ( cchSrc > 0 ) /*0x7d113b*/
-    cchSrc = (int)(strncnt(aP2, cchSrc)); /*0x7d114a*/
+    cchSrc = (int)(strncnt((const unsigned char *)(aP2), cchSrc)); /*0x7d114a*/
   if ( dword_B782CC == 2 ) /*0x7d1155*/
     return LCMapStringA(aP0, dwMapFlags, aP2, cchSrc, lpDestStr, cchDest); /*0x7d116f*/
   if ( dword_B782CC != 1 ) /*0x7d1177*/

@@ -107,8 +107,8 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
         v43[0] = (*v7 << 8) + 128; /*0x4d7ed9*/
         v43[1] = v16 + 128; /*0x4d7ee9*/
         GroundHeight = 0; /*0x4d7eed*/
-        GroundHeight = Cell::GetGroundHeight(v43); /*0x4d7efe*/
-        if ( (((Coord *)((Coord *)&dword_87F7E8))->To_Cell(v43)->flags & 0x100) != 0 ) /*0x4d7f16*/
+        GroundHeight = Cell::GetGroundHeight((unsigned int *)(v43)); /*0x4d7efe*/
+        if ( (((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(v43))->flags & 0x100) != 0 ) /*0x4d7f16*/
           GroundHeight += dword_8B3DF4; /*0x4d7f24*/
         referenceCount = ((unsigned int *)(dword_A8B230))[14].referenceCount; /*0x4d7f35*/
         if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x4d7f40*/
@@ -439,14 +439,14 @@ LABEL_28:
             {
               v13 = *(unsigned int *)v4->__pad_0; /*0x4db4e8*/
               v20 = 0; /*0x4db4f4*/
-              result = (*(int (**)(IStream *, int *, int, unsigned int))(v13 + 12))(v4, &v20, 4, 0); /*0x4db4f8*/
+              result = (*(int ((gamemd::IStream *)(**))(IStream *, int *, int, unsigned int))(v13 + 12))(v4, &v20, 4, 0); /*0x4db4f8*/
               if ( result < 0 ) /*0x4db4fd*/
                 break; /*0x4db4fd*/
               v14 = *(unsigned int *)(aP0 + 1460); /*0x4db503*/
               if ( *(unsigned int *)(aP0 + 1468) < v14 /*0x4db525*/
                 || (*(unsigned char *)(aP0 + 1465) || !v14)
                 && (v15 = *(unsigned int *)(aP0 + 1472), v15 > 0)
-                && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v12 + 8))(aP0 + 1452, v14 + v15, 0) )
+                && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v12 + 8))(aP0 + 1452, v14 + v15, 0) )
               {
                 v16 = *(unsigned int *)(aP0 + 1468); /*0x4db52c*/
                 v17 = *(unsigned int *)(aP0 + 1456); /*0x4db52f*/
@@ -465,14 +465,14 @@ LABEL_28:
         {
           v7 = *(unsigned int *)v4->__pad_0; /*0x4db43a*/
           v20 = 0; /*0x4db446*/
-          result = (*(int (**)(IStream *, int *, int, unsigned int))(v7 + 12))(v4, &v20, 4, 0); /*0x4db44a*/
+          result = (*(int ((gamemd::IStream *)(**))(IStream *, int *, int, unsigned int))(v7 + 12))(v4, &v20, 4, 0); /*0x4db44a*/
           if ( result < 0 ) /*0x4db44f*/
             break; /*0x4db44f*/
           v8 = *(unsigned int *)(aP0 + 1424); /*0x4db455*/
           if ( *(unsigned int *)(aP0 + 1432) < v8 /*0x4db477*/
             || (*(unsigned char *)(aP0 + 1429) || !v8)
             && (v9 = *(unsigned int *)(aP0 + 1436), v9 > 0)
-            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))(aP0 + 1416, v8 + v9, 0) )
+            && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v6 + 8))(aP0 + 1416, v8 + v9, 0) )
           {
             v10 = *(unsigned int *)(aP0 + 1432); /*0x4db47e*/
             v11 = *(unsigned int *)(aP0 + 1420); /*0x4db481*/

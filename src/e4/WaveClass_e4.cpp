@@ -128,9 +128,9 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x76320c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x763213*/
   ((unsigned int *)Block)[0] = (unsigned int)(&off_7F6BC8); /*0x76321a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763221*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block,(gamemd::AbstractClass *)(1)); /*0x763221*/
   v6 = (gamemd::WaveClass *)(Block); /*0x763236*/
-  v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
+  v3 = (*(int ((unsigned char *)(**))(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
     --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
@@ -188,7 +188,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5[1] / 256; /*0x75f372*/
     v6 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x75f391*/
-    v7 = (*(int (**)(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
+    v7 = (*(int ((void *)(**))(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = *(unsigned int *)v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*(unsigned int *)v7 + 172); /*0x75f3a9*/
     v18 = *(unsigned int *)(*(unsigned int *)v7 + 152); /*0x75f3ad*/
@@ -245,7 +245,7 @@ int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
   int result; // eax
   int i; // ebx
 
-  AbstractClass::SaveLoad_Prefix((int *)a1, a2, a3); /*0x75f7e2*/
+  AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, a3); /*0x75f7e2*/
   v3 = *a2; /*0x75f7ed*/
   a3 = *((unsigned int *)a1 + 128); /*0x75f7f9*/
   result = (*(int (**)(int *, int *, int, unsigned int))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/

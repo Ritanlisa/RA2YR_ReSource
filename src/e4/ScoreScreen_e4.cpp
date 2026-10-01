@@ -43,11 +43,11 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   ++dword_B0558C; /*0x690a3c*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreFullFontClass); /*0x690a44*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
-  v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
+  v3 = SearchMIXFile((char *)(g_Str_File_FULLFNT3_SHP), 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
-    CCFileClass::Construct(&v5, g_Str_File_FULLFNT3_SHP); /*0x690a62*/
+    CCFileClass::Construct(&v5,(void *)(g_Str_File_FULLFNT3_SHP)); /*0x690a62*/
     this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
@@ -265,7 +265,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   unsigned char v41[20]; // [esp+CCh] [ebp-14h] BYREF
   void *retaddr; // [esp+E0h] [ebp+0h] BYREF
 
-  CCFileClass::Construct(&v38, Source); /*0x77821f*/
+  CCFileClass::Construct(&v38,(void *)(Source)); /*0x77821f*/
   v8 = DecodeFrameSHP((int)&v38, a5, 0, 0); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
@@ -290,10 +290,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     {
       v10 = 0; /*0x7782b5*/
     }
-    Render_Draw(v10, &v33, 0); /*0x7782bf*/
+    Render_Draw((int)(v10), &v33, 0); /*0x7782bf*/
     (*(void (**)(int *, int, unsigned int, int))(*(void *)(((unsigned int)(void)*))(a2) + 4))(a2, v10, 0, 1); /*0x7782cd*/
     if ( v10 ) /*0x7782d2*/
-      (**(void (***)(int, int))v10)(v10, 1); /*0x7782da*/
+      (**(void ((int)(***))(int, int))v10)(v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
     v29 = (*(int (**)(int *))(*v8 + 124))(v8); /*0x7782eb*/
@@ -314,7 +314,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
-      v26 = (*(int (**)(int *, int *))((unsigned int)(v15)+ 120))(a2, v37); /*0x7783c2*/
+      v26 = (*(int ((int *)(**))(int *, int *))((unsigned int)(v15)+ 120))(a2, v37); /*0x7783c2*/
       v16 = (unsigned int *)(*(int (**)(int *))(*v8 + 120))(v8); /*0x7783c9*/
       BlitterDrawSHP(a2, (int)v27, v8, v16, v31, v30, v26, 0, 0, 0, 0, 1000, 0); /*0x7783d6*/
       if ( v27 ) /*0x7783dd*/
@@ -334,8 +334,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v32[1] = v12; /*0x77841d*/
       v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))(v8, &v38, 0, 1); /*0x778421*/
       v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
-      v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))(a2, &retaddr, v32, v8, v23); /*0x778447*/
-      (*(void (**)(int *, int))((unsigned int)(v21)+ 12))(a2, v24); /*0x77844d*/
+      v24 = (*(int ((int *)(**))(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))(a2, &retaddr, v32, v8, v23); /*0x778447*/
+      (*(void ((int *)(**))(int *, int))((unsigned int)(v21)+ 12))(a2, v24); /*0x77844d*/
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }

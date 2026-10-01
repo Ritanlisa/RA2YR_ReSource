@@ -23,7 +23,7 @@
 
 // 0x6ACEE0
 namespace gamemd {
-AbstractClass * * DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
+void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a3, int a4)
 {
   HWND DlgItem; // eax
   LRESULT v9; // eax
@@ -128,7 +128,7 @@ LABEL_151:
         case 1450:
           Formatc = *(VectorClass_flat **)&((unsigned int *)(HouseClass_Player))[29956];
           v60 = *(CCINIClass **)&((unsigned int *)(HouseClass_Player))[29960];
-          strcpy((char *)Destination, &((unsigned int *)(HouseClass_Player))[31636]);
+          strcpy((char *)Destination,(const char *)(&((unsigned int *)(HouseClass_Player))[31636]));
           wcscpy(Destination, (const wchar_t *)&((unsigned int *)(HouseClass_Player))[30166]);
           Dialog::IdleProcess(hWnd);
           ShowWindow((HWND)hWnd, 0);
@@ -162,7 +162,7 @@ LABEL_151:
                 v63 = (ObjectClass *)unknown_libname_27(v62);
               ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
               *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
-              ((Surface *)((char **)v63))->LoadToSurfaceSHP(((unsigned int *)(stru_829ABC))[0]);
+              ((Surface *)((char **)v63))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
               if ( !(*(&g_MatrixTransformState + 2257))->X )
                 Session::PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
@@ -207,7 +207,7 @@ LABEL_151:
                     v69 = (ObjectClass *)unknown_libname_27(v68);
                   ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
                   *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v69);
-                  ((Surface *)((char **)v69))->LoadToSurfaceSHP(((unsigned int *)(stru_829ABC))[0]);
+                  ((Surface *)((char **)v69))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(unsigned int *)v67->__pad_0 )
@@ -282,10 +282,10 @@ LABEL_151:
             {
               if ( (int)Format < (int)v10 )
               {
-                StringCSF = (wchar_t *)(GetStringCSF( g_Str_TXT_SCENARIO_TOO_SMALL, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1079));
+                StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SCENARIO_TOO_SMALL), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1079));
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = (gamemd::CampaignScore *)(&stru_82083C);
-                v12 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1080));
+                v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1080));
   int v73; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
@@ -294,10 +294,10 @@ LABEL_151:
               }
               if ( (int)v10 <= 1 )
               {
-                v14 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[63048], 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1087));
+                v14 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[63048], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1087));
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = (gamemd::CampaignScore *)(&stru_82083C);
-                v15 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1088));
+                v15 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1088));
   int v74; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
@@ -338,17 +338,17 @@ LABEL_151:
                   v19 = SendDlgItemMessageA((HWND)hWnd, v18, 0x147u, 0, 0);
                   if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v18, 0x150u, v19, 0) <= 2 )
                   {
-                    ResourceID4CSF = GetResourceID4CSF((void *)(v17 + 1));
+                    ResourceID4CSF = GetResourceID4CSF((int)((void *)(v17 + 1)));
                     ComboBoxSelectedRaw2 = (wchar_t *)GetComboBoxSelectedRaw2((HWND)hWnd, ResourceID4CSF, 0xFFFFFFFF);
                     if ( (wchar_t *)GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF) != ComboBoxSelectedRaw2 )
                       break;
                   }
                   if ( ++v17 >= 7 )
                   {
-                    v22 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[3632], 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1111));
+                    v22 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[3632], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1111));
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = (gamemd::CampaignScore *)(&stru_82083C);
-                    v23 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1112));
+                    v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1112));
                     Dialog::ShowMessageBox((int)Destination, v23, 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
@@ -366,7 +366,7 @@ LABEL_151:
               if ( var244 == 1559 )
               {
                 v83 = (VectorClass_flat *)&stru_82083C;
-                v71 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1129));
+                v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1129));
                 v26 = WideString::GetOrEmpty(&v82);
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
@@ -418,10 +418,10 @@ LABEL_151:
               {
                 v32 = 1291;
               }
-              ResourceID2CSF = GetResourceID2CSF((void *)v31);
-              Formata = (VectorClass_flat *)GetResourceIDCSF((void *)v31);
-              ResourceID3 = (VectorClass_flat *)GetResourceID3CSF((void *)v31);
-              nIDDlgItema = (VectorClass_flat *)GetResourceID4CSF((void *)v31);
+              ResourceID2CSF = GetResourceID2CSF((int)((void *)v31));
+              Formata = (VectorClass_flat *)GetResourceIDCSF((int)((void *)v31));
+              ResourceID3 = (VectorClass_flat *)GetResourceID3CSF((int)((void *)v31));
+              nIDDlgItema = (VectorClass_flat *)GetResourceID4CSF((int)((void *)v31));
               v34 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0);
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 )
               {
@@ -489,8 +489,8 @@ LABEL_151:
               {
                 v37 = 1291;
               }
-              int v38 = GetResourceID2CSF(++v36);
-              nIDDlgItema = (VectorClass_flat *)GetResourceIDCSF(v36);
+              int v38 = GetResourceID2CSF((int)(++v36));
+              nIDDlgItema = (VectorClass_flat *)GetResourceIDCSF((int)(v36));
               v39 = SendDlgItemMessageA((HWND)hWnd, v37, 0x147u, 0, 0);
               v40 = SendDlgItemMessageA((HWND)hWnd, v37, 0x150u, v39, 0);
               v41 = GetComboBoxSelected((ReferenceCounted *)hWnd, v38, 0xFFFFFFFF);

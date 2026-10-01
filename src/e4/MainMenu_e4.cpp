@@ -88,7 +88,7 @@ long MainMenu_Screen(void * a1, void * a2)
             v11[0] = (unsigned char)(a1);
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
-            v7 = strlen(byte_A8F7B8); /*0x531e5e*/
+            v7 = strlen((const char *)(byte_A8F7B8)); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
@@ -105,7 +105,7 @@ long MainMenu_Screen(void * a1, void * a2)
                 goto LABEL_27; /*0x531ea2*/
             }
             *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
-            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8)); /*0x531ec8*/
+            memset((void *)(byte_A8F7B8), 0, sizeof(byte_A8F7B8)); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0, a1, a2); /*0x531eeb*/

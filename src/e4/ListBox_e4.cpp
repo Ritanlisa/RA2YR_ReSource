@@ -138,7 +138,7 @@ LABEL_47:
 LABEL_70:
     v29 = GetParent(hWnd); /*0x6147ee*/
     GetClassNameA(v29, ClassName, 32); /*0x614806*/
-    if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x61481d*/
+    if ( !strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x61481d*/
     {
       v30 = GetParent(hWnd); /*0x614858*/
       InvalidateRect(v30, 0, 0); /*0x61485b*/
@@ -202,7 +202,7 @@ LABEL_70:
         ScreenDialogToClient(hWnd, &v42); /*0x6145d5*/
         v24 = GetParent(hWnd); /*0x6145e9*/
         GetClassNameA(v24, ClassName, 16); /*0x6145f0*/
-        v25 = strcmp(ClassName, g_INI_Key_ComboBox) == 0; /*0x61462e*/
+        v25 = strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) == 0; /*0x61462e*/
         if ( v12 == 15 && GetUpdateRect(hWnd, &v39, 0) ) /*0x614645*/
         {
           left = v42.left; /*0x61464f*/
@@ -222,7 +222,7 @@ LABEL_70:
         v37 = v8[50]; /*0x6146a5*/
         Rect.bottom = v42.bottom - top + 1; /*0x6146ad*/
         Rect.top = top; /*0x6146b5*/
-        SetupDialogRenderBuffer(&Rect.left, hWnd, v37); /*0x6146b9*/
+        SetupDialogRenderBuffer((int *)(&Rect.left), hWnd, v37); /*0x6146b9*/
         if ( !v25 ) /*0x6146c0*/
           DrawDialogGradient((int *)DSurface_Alternate, &Rect.left, 2, -1); /*0x6146d0*/
         v41 = 0; /*0x6146eb*/
@@ -262,7 +262,7 @@ LABEL_70:
         v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
         v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
-        strcat(v17, String2); /*0x6144b3*/
+        strcat(v17,(const char *)(String2)); /*0x6144b3*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
         __3_YAXPAX_Z(v17); /*0x6144ce*/
         v18 = GetWindowLongA(hWnd, -12); /*0x6144e0*/

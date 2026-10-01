@@ -184,7 +184,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
           {
             continue; /*0x568fbf*/
           }
-          Cell::SetTileType(v77, v7 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x568fdd*/
+          Cell::SetTileType((IUnknown *)(v77), v7 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x568fdd*/
           v14 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x568fe9*/
           v7 = g_TerrainSoundTable2; /*0x568fee*/
           v63 |= v14; /*0x568ffd*/
@@ -246,14 +246,14 @@ LABEL_41:
             }
           }
         }
-        Cell::UpdateTileType(v77, 0, 0); /*0x5693de*/
+        Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x5693de*/
         *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88]); /*0x5693fc*/
         v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569401*/
 LABEL_86:
         v63 |= v40; /*0x569468*/
         break; /*0x569468*/
       }
-      Cell::UpdateTileType(v77, 0, 0); /*0x5693ac*/
+      Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x5693ac*/
       *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[88]); /*0x5693ca*/
 LABEL_85:
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569460*/
@@ -263,20 +263,20 @@ LABEL_85:
       continue; /*0x569194*/
     if ( v13 == dword_ABC1D0 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691a5*/
     {
-      Cell::UpdateTileType(v77, 0, 0); /*0x56940e*/
+      Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x56940e*/
       *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82]); /*0x56942c*/
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569431*/
       goto LABEL_86; /*0x569431*/
     }
     if ( v13 == dword_AA1540 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691ba*/
     {
-      Cell::UpdateTileType(v77, 0, 0); /*0x56943e*/
+      Cell::UpdateTileType((IUnknown *)(v77), 0, 0); /*0x56943e*/
       *(unsigned int *)v71 = *CellStruct::Add((CellStruct *)v77, &v75, &g_DDrawSurfaceManager.scenario[82]); /*0x56945c*/
       goto LABEL_85; /*0x56945c*/
     }
     if ( v13 != v8 && v13 != v8 + 3 && v13 != v8 + 4 && v13 != v8 + 2 && v13 != v8 + 1 || *((unsigned char *)v64 + 282) != 2 ) /*0x5691e7*/
       continue; /*0x5691e7*/
-    Cell::SetTileType(v77, g_Cell_BuildabilityLUT + v8 - 1, -1, -1, 0); /*0x569200*/
+    Cell::SetTileType((IUnknown *)(v77), g_Cell_BuildabilityLUT + v8 - 1, -1, -1, 0); /*0x569200*/
     v27 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x56920c*/
     v8 = g_TerrainSoundConfig; /*0x569215*/
     v63 |= v27; /*0x56921d*/
@@ -370,7 +370,7 @@ LABEL_44:
       v46 = g_MissionQueueFrame.briefing[272] * *(char *)(a2 + 283); /*0x5694fb*/
       v79 = (SHIWORD(v83) << 8) + 128; /*0x56950e*/
       v80 = v46; /*0x569516*/
-      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v78, &v75); /*0x569522*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v78), &v75); /*0x569522*/
       v47 = v76; /*0x56952b*/
       *v45 = v75; /*0x56952f*/
       v45[1] = v47; /*0x569532*/
@@ -434,7 +434,7 @@ LABEL_44:
       v80 = g_MissionQueueFrame.briefing[272] * *((char *)v56 + 283); /*0x56968f*/
       v79 = (v77[1] << 8) + 128; /*0x569699*/
       v78 = (v77[0] << 8) + 128; /*0x5696a5*/
-      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v78, &v75); /*0x5696b1*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v78), &v75); /*0x5696b1*/
       v57 = *v45; /*0x5696b6*/
       v58 = v75; /*0x5696b9*/
       v59 = v45[1]; /*0x5696bd*/
@@ -639,7 +639,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       else
       {
         g_MissionQueueFrame.briefing[273] = 0; /*0x56c640*/
-        v15 = Terrain::FloodFillConnectivity((int)v1, v12, v10, &v92); /*0x56c64a*/
+        v15 = Terrain::FloodFillConnectivity((unsigned char *)((int)v1), v12, v10, &v92); /*0x56c64a*/
         if ( v15 > v13 ) /*0x56c651*/
         {
           v13 = v15; /*0x56c655*/

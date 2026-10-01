@@ -38,7 +38,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   unsigned int *v6; // edx
   int i; // eax
 
-  TechnoTypeClass::ReadINI((char *)this, aP1, 0); /*0x5236ae*/
+  TechnoTypeClass::ReadINI((char *)this,(int)(aP1), 0); /*0x5236ae*/
   *((unsigned int *)this + 894) = -1; /*0x5236b3*/
   *((unsigned int *)this + 895) = 1; /*0x5236bd*/
   *((unsigned int *)this + 896) = 7; /*0x5236c7*/
@@ -88,7 +88,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   *((unsigned int *)this + 1) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237ee*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237f4*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237fb*/
-  AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
+  AbstractClass::GenerateUniqueID((int)((char *)this + 4)); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
     || (byte_A8E355 || !dword_A8E350)
@@ -284,7 +284,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   INIClass::ResetSection((INIClass *)a2); /*0x5240b5*/
   v45 = (int)a2; /*0x5240ba*/
   *(unsigned char *)(v4 + 3215) = 0; /*0x5240bd*/
-  if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)v45, a2, v46) ) /*0x5240c4*/
+  if ( !(uint8_t)ObjectTypeClass::LoadExtras((gamemd::CCINIClass *)((TechnoTypeClass *)v45), a2, v46) ) /*0x5240c4*/
     return 0; /*0x524751*/
   *(unsigned int *)(v4 + 3580) = INIClass::GetPipIdx( /*0x5240e8*/
                              (INIClass *)a2,

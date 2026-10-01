@@ -352,7 +352,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
       v14 = (SHIWORD(v29) << 8) + 128; /*0x4842ce*/
       v35[0] = 128; /*0x4842d0*/
       v35[1] = 128; /*0x4842d4*/
-      Isometric::InitTables((int)v9, v35); /*0x4842dd*/
+      Isometric::InitTables((gamemd::IUnknown *)((int)v9), v35); /*0x4842dd*/
       v15 = (int *)(v12 + 56); /*0x4842e2*/
       v16 = *(unsigned int *)(v12 + 56); /*0x4842e7*/
       v40 = *(unsigned int *)(v12 + 60); /*0x4842ec*/

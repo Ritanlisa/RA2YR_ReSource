@@ -89,7 +89,7 @@ bool sub_46D650()
         v0 = 1; /*0x46d71e*/
       ((SessionClass *)(*v4))->SetPlayerColor(v8); /*0x46d723*/
     }
-    ToWideStringChar((char *)*v4); /*0x46d72a*/
+    ToWideStringChar((gamemd::IUnknown *)((char *)*v4)); /*0x46d72a*/
     ((SessionClass *)(*v4))->GetPlayerColor(); /*0x46d733*/
     ((SessionClass *)(*v4))->GetPlayerSide(); /*0x46d73b*/
     ((SessionClass *)(*v4))->GetOption(); /*0x46d743*/
@@ -314,13 +314,13 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
         v5 = 1041; /*0x46dcef*/
       DlgItem = (int)(GetDlgItem(hDlg, v5)); /*0x46dd09*/
       EnableWindow(DlgItem, a2); /*0x46dd17*/
-      ResourceID2CSF = GetResourceID2CSF((void *)i); /*0x46dd1f*/
+      ResourceID2CSF = GetResourceID2CSF((int)((void *)i)); /*0x46dd1f*/
       v8 = GetDlgItem(hDlg, ResourceID2CSF); /*0x46dd26*/
       EnableWindow(v8, a2); /*0x46dd2a*/
-      ResourceIDCSF = GetResourceIDCSF((void *)i); /*0x46dd32*/
+      ResourceIDCSF = GetResourceIDCSF((int)((void *)i)); /*0x46dd32*/
       v10 = GetDlgItem(hDlg, ResourceIDCSF); /*0x46dd39*/
       EnableWindow(v10, a2); /*0x46dd3d*/
-      ResourceID3CSF = GetResourceID3CSF((void *)i); /*0x46dd45*/
+      ResourceID3CSF = GetResourceID3CSF((int)((void *)i)); /*0x46dd45*/
       v12 = GetDlgItem(hDlg, ResourceID3CSF); /*0x46dd4c*/
       result = EnableWindow(v12, a2); /*0x46dd50*/
     }
@@ -349,13 +349,13 @@ void EnableGameModeControls(HWND hDlg, bool a2)
     v4 = 1041; /*0x46dd81*/
   DlgItem = (int)(GetDlgItem(hDlg, v4)); /*0x46dd9f*/
   EnableWindow(DlgItem, a2); /*0x46ddaf*/
-  ResourceID2 = GetResourceID2CSF((void *)dword_A8DA8C); /*0x46ddb7*/
+  ResourceID2 = GetResourceID2CSF((int)((void *)dword_A8DA8C)); /*0x46ddb7*/
   v7 = (int)(GetDlgItem(hDlg, ResourceID2)); /*0x46ddbe*/
   EnableWindow(v7, a2); /*0x46ddc2*/
-  ResourceID = GetResourceIDCSF((void *)dword_A8DA8C); /*0x46ddca*/
+  ResourceID = GetResourceIDCSF((int)((void *)dword_A8DA8C)); /*0x46ddca*/
   v9 = (int)(GetDlgItem(hDlg, ResourceID)); /*0x46ddd1*/
   EnableWindow(v9, a2); /*0x46ddd5*/
-  ResourceID3 = GetResourceID3CSF((void *)dword_A8DA8C); /*0x46dddd*/
+  ResourceID3 = GetResourceID3CSF((int)((void *)dword_A8DA8C)); /*0x46dddd*/
   v11 = GetDlgItem(hDlg, ResourceID3); /*0x46dde4*/
   EnableWindow(v11, a2); /*0x46dde8*/
   result = (HWND)Settings::CheckString(); /*0x46ddea*/
@@ -685,10 +685,10 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   LPVOID ppv; // [esp+8h] [ebp-4h] BYREF
 
   ppv = (LPVOID)(0);
-  if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
+  if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init(aP0, aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
+  ((Particle *)((int *)ppv))->Init((int)(aP0), aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
   return (int)v10; /*0x46b07c*/
 }
 } // namespace gamemd
@@ -1124,14 +1124,14 @@ int sub_46D810()
   int PlayerColor; // [esp+3Fh] [ebp-191h]
 
   v2 = 51; /*0x46d82c*/
-  strcpy(v3, unk_A8B380); /*0x46d83d*/
+  strcpy(v3,(const char *)(unk_A8B380)); /*0x46d83d*/
   Option = ((SessionClass *)((int *)*(unsigned int *)(dword_A8DA78)))->GetOption(); /*(unsigned int *)(0x46d859)*/
   PlayerSide = ((SessionClass *)((int *)*(unsigned int *)(dword_A8DA78)))->GetPlayerSide(); /*0x46d864*/
   PlayerColor = ((SessionClass *)((SessionClass *)*(unsigned int *)(dword_A8DA78)))->GetPlayerColor(); /*0x46d874*/
   result = dword_A8DA90; /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
-    Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455, 1, (wchar_t *)dword_A8DA90); /*0x46d895*/
+    Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455,(wchar_t *)(1), (wchar_t *)dword_A8DA90); /*0x46d895*/
 // 0x541820
     return ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x46d89f*/
   }

@@ -317,7 +317,7 @@ int Palette::FindClosestColor(int a2, void *a2_2)
   {
     v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
-    v5 = Palette::CalcColorDistance(a2, v7); /*0x62621c*/
+    v5 = Palette::CalcColorDistance((unsigned char *)(a2), v7); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
       v3 = v5; /*0x62622a*/

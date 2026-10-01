@@ -311,10 +311,10 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
   IDA_LOWORD(v59) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 9, &v75); /*0x550b91*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 12, (int *)&v74); /*0x550ba2*/
-  v4 = v1[15] - ZCoordToScreenY(v1[11]) - 2; /*0x550bb7*/
-  v5 = -2 - ZCoordToScreenY(v1[14]); /*0x550bc4*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(v1 + 9), &v75); /*0x550b91*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(v1 + 12), (int *)&v74); /*0x550ba2*/
+  v4 = v1[15] - ZCoordToScreenY((int)(v1[11])) - 2; /*0x550bb7*/
+  v5 = -2 - ZCoordToScreenY((int)(v1[14])); /*0x550bc4*/
   v66 = v5; /*0x550bc6*/
   if ( (unsigned int)dword_ABCD44 < PingPongBuffer::GetWriteOffset() || (v53 = 1, !dword_A8EB78) ) /*0x550be3*/
     v53 = 0; /*0x550be5*/
@@ -1148,7 +1148,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((int)v6, &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1194,7 +1194,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA4D = 0; /*0x554fc3*/
       dword_ABCA48 = 0; /*0x554fca*/
       byte_ABCA84 = 0; /*0x554fd4*/
-      MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x554fdb*/
+      MapClass::MarkForRedraw((int)(&dword_87F7E8), 1); /*0x554fdb*/
     }
   }
   v12 = Timer::GetHighPrecision(&dbl_884D88); /*0x554fe9*/
@@ -1790,7 +1790,7 @@ void CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * 
 }
 // 0x55C0E0
 namespace gamemd {
-void DecodeBlockLCW(AbstractClass * aP0, Pipe * aP1, unsigned char * a2, unsigned int * a3, int a5)
+int DecodeBlockLCW(AbstractClass * aP0, int aP1, unsigned char *a2, unsigned int *a3, int a5)
 {
   uint8_t *v5; // eax
   unsigned char *v6; // esi
@@ -4809,7 +4809,7 @@ int sub_55AF20()
 
 // 0x55BB90
 namespace gamemd {
-int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a3, int a5)
+int WriteCompressionBlock(Pipe * aP0, unsigned int aP1, CCINIClass * aP2, int *a3, int a5)
 {
   int result; // eax
   int *v6; // esi

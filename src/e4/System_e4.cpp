@@ -395,7 +395,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
   v7 = (unsigned int *)(dword_B054D4);
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = (gamemd::AbstractClass **)(_strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0);
+    v8 = (gamemd::AbstractClass **)(_strcmpi((const char *)(aP0), *(const void **)(v7[v6] + 772)) == 0);
     v7 = (unsigned int *)((gamemd::gamemd::AbstractClass **)(dword_B054D4));
     if ( v8 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v6) + 784) == a5 ) /*0x68ca08*/
       return v6; /*0x68ca40*/
@@ -468,7 +468,7 @@ char sub_72C9C0()
   if ( !byte_B0FCF1 ) /*0x72c9c7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/
-      dword_B0FA60 = LoadFileSHP(off_844D7C, (bool *)&byte_B0FCF0); /*0x72c9e5*/
+      dword_B0FA60 = LoadFileSHP((gamemd::ConvertClass *)(off_844D7C), (bool *)&byte_B0FCF0); /*0x72c9e5*/
     result = LoadPaletteSimple(off_844D80, &dword_B0FCF4, &dword_B0FCF8); /*0x72c9fa*/
     byte_B0FCF1 = 1; /*0x72c9ff*/
   }

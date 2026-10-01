@@ -321,7 +321,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
     if ( CellClass::GetTerrainFlag(v7, *(uint8_t *)(&((unsigned char *)(this) + 0x0702))) ) /*0x4803ba*/
       inited = (((unsigned char *)(this) + 0x140) >> 13) & 1; /*0x4803cc*/
     else
-      inited = CellClass::InitRandomOffsets(this, this->u32_38, v7[188]); /*0x4803dc*/
+      inited = CellClass::InitRandomOffsets((int)(this), this->u32_38, v7[188]); /*0x4803dc*/
     goto LABEL_10; /*0x4803cf*/
   }
   LABEL_11:
@@ -410,13 +410,13 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
   result = PingPongBuffer::GetWriteOffset(); /*0x6d7847*/
   if ( (unsigned int)dword_ABCD44 >= result ) /*0x6d7852*/
   {
-    result = (*(int (**)(int *))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
+    result = (*(int ((int *)(**))(int *))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
     if ( result == 2 ) /*0x6d7866*/
     {
       result = dword_A8EB78; /*0x6d786c*/
       if ( dword_A8EB78 ) /*0x6d7873*/
       {
-        result = (*(int (**)(int *, unsigned int, unsigned int))(*(int *)(g_DSurface_Hidden_2) + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
+        result = (*(int ((int *)(**))(int *, unsigned int, unsigned int))(*(int *)(g_DSurface_Hidden_2) + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
         result = result; /*0x6d788c*/
         if ( result ) /*0x6d7890*/
         {
@@ -426,7 +426,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v32 = v6; /*0x6d78b1*/
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
-          v7 = (*(int (**)(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
+          v7 = (*(int ((int *)(**))(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
           v8 = (int)(((unsigned char *)(this) + 0x0B0)); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = ((unsigned char *)(this) + 0x02D); /*0x6d78e2*/
@@ -531,7 +531,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
               v18 = v18; /*0x6d7bd9*/
             }
           }
-          return (*(int (**)(int *))(*g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x6d7bed*/
+          return (*(int ((int *)(**))(int *))(*g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x6d7bed*/
         }
       }
     }

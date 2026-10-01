@@ -488,9 +488,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v45[1] = 300; /*0x4b98b8*/
   v45[2] = 190; /*0x4b98be*/
   v45[3] = 80; /*0x4b98c2*/
-  v7 = (*(int (**)(int *))(v6 + 128))(a1); /*0x4b98d2*/
+  v7 = (*(int ((int *)(**))(int *))(v6 + 128))(a1); /*0x4b98d2*/
   v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
-  v9 = (*(int (**)(int *))(*a1 + 124))(a1); /*0x4b98f2*/
+  v9 = (*(int ((int *)(**))(int *))(*a1 + 124))(a1); /*0x4b98f2*/
   v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden); /*0x4b98f6*/
   v44.Coord2D_field_0x04 = 300; /*0x4b9903*/
   v40 = (v10 - v9) / 2; /*0x4b9909*/
@@ -531,7 +531,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 9)); /*0x4b9a6e*/
     if ( !a4 ) /*0x4b9a73*/
       v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 5)); /*0x4b9a75*/
-    BuildingAnimByName = FindBuildingAnimByName(v17, 1); /*0x4b9a87*/
+    BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(v17), 1); /*0x4b9a87*/
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/
     v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->AbstractClass /*0x4b9ab3*/

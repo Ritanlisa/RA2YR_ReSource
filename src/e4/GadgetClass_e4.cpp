@@ -161,7 +161,7 @@ LABEL_7:
     v14 = Parent; /*0x60ab2e*/
     if ( !dword_AC1B04 ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -254,13 +254,13 @@ LABEL_12:
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
-    if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&dword_AC1B00, &v17, &v16)) ) /*0x60aeab*/
+    if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) && (v16 = 0, HashTable::Get(&dword_AC1B00, &v17, &v16)) ) /*0x60aeab*/
     {
       v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
     }
     else
     {
-      if ( strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x60aed0*/
+      if ( strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x60aed0*/
         goto LABEL_86; /*0x60aef5*/
       v11 = (GetWindowLongA(v17, -16) & 3) != 3; /*0x60af09*/
     }
@@ -297,10 +297,10 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
   {
     if ( *(unsigned int *)(String) ) /*0x623583*/
     {
-      v3 = (unsigned int)(wcslen(String));
+      v3 = (unsigned int)(wcslen((const wchar_t *)(String)));
       v4 = (wchar_t *)((unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2)));
       *((unsigned int *)this + 10) = (unsigned int)(v4); /*0x62359b*/
-      wcscpy(v4, String); /*0x62359e*/
+      wcscpy(v4,(const wchar_t *)(String)); /*0x62359e*/
     }
   }
 

@@ -77,7 +77,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9920*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9926*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c992d*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
     && *(int *)&stru_A83D50.__pad_C8[44] > 0
@@ -177,7 +177,7 @@ LABEL_17:
     }
     return 0; /*0x691d3e*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_8B41CC + v2) + 36), Source) ) /*0x691c52*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_8B41CC + v2) + 36),(const char *)(Source)) ) /*0x691c52*/
   {
     if ( ++v2 >= dword_8B41D8 ) /*0x691c60*/
       goto LABEL_6; /*0x691c60*/
@@ -205,7 +205,7 @@ LABEL_6:
       return TaskForceClass::Construct(v3, Source); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v2) + 36), Source) ) /*0x6e863a*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v2) + 36),(const char *)(Source)) ) /*0x6e863a*/
   {
     if ( ++v2 >= dword_A8E8E0 ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/

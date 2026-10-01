@@ -146,7 +146,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
   v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
   if ( !v4 || *v4 != v3 ) /*0x5269bb*/
   {
-    v5 = SortedArray::BinarySearch(&aP1); /*0x5269c4*/
+    v5 = SortedArray::BinarySearch((int *)(&aP1)); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
@@ -158,7 +158,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
     v7 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
-    v8 = SortedArray::BinarySearch(&aP1); /*0x5269ed*/
+    v8 = SortedArray::BinarySearch((int *)(&aP1)); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
       *((unsigned int *)v2 + 4) = v8; /*0x5269f6*/
@@ -395,7 +395,7 @@ int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
   int result; // eax
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( !INIClass::GetString(this, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
+  if ( !INIClass::GetString(this,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
   result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/
@@ -428,7 +428,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     return 0; /*0x526d10*/
   if ( !(uint8_t)SortedArray::CheckCache(&aP1) ) /*0x526d19*/
   {
-    v5 = SortedArray::BinarySearch(&aP1); /*0x526d29*/
+    v5 = SortedArray::BinarySearch((int *)(&aP1)); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     *((unsigned int *)v3 + 4) = v5; /*0x526d32*/

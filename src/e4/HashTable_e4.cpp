@@ -620,7 +620,7 @@ LABEL_23:
         v25 = v24; /*0x6b96cd*/
         v24 = (ObjectClass *)v24[4].customSound_controller[2]; /*0x6b96cf*/
         DeleteAndZero(v25); /*0x6b96db*/
-        __3_YAXPAX_Z(v25); /*0x6b96e1*/
+        __3_YAXPAX_Z((void *)(v25)); /*0x6b96e1*/
       }
       ++v3; /*0x6b96f0*/
       *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v3 - 4) = 0; /*0x6b96f1*/
@@ -835,12 +835,12 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   if ( !HashTable_field_0x04 ) /*0x6bac50*/
     return 0; /*0x6bac55*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x6bac80*/
-  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bac95*/
+  v7 = ((int ((const char **)(*))(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bac95*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6bac97*/
   v36 = v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
     return 0; /*0x6baca5*/
-  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x6bacb1*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare((const char **)(aP1)) ) /*0x6bacb1*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6baccf*/
@@ -906,7 +906,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
     v38 = 0; /*0x6badc5*/
     if ( v24 ) /*0x6badcc*/
     {
-      while ( !(uint8_t)((String *)((String *)v24))->Compare(aP1) ) /*0x6badd8*/
+      while ( !(uint8_t)((String *)((String *)v24))->Compare((const char **)(aP1)) ) /*0x6badd8*/
       {
         v36 = v24; /*0x6badda*/
         v24 = *(unsigned int *)(v24 + 776); /*0x6badde*/
@@ -1176,7 +1176,7 @@ unsigned int HashTable_flat::CleanupAndResize()
       v4 = v3; /*0x7ace79*/
       v3 = (ObjectClass *)((unsigned int *)v3)[0]; /*0x7ace7b*/
       DeleteAndZero(v4); /*0x7ace84*/
-      __3_YAXPAX_Z(v4); /*0x7ace8a*/
+      __3_YAXPAX_Z((void *)(v4)); /*0x7ace8a*/
     }
     ++i; /*0x7ace98*/
   }
@@ -1261,7 +1261,7 @@ unsigned int HashTable_flat::Rebuild()
       v4 = customSound; /*0x7acf89*/
       customSound = (ObjectClass *)customSound[1].customSound; /*0x7acf8b*/
       DeleteAndZero(v4); /*0x7acf97*/
-      __3_YAXPAX_Z(v4); /*0x7acf9d*/
+      __3_YAXPAX_Z((void *)(v4)); /*0x7acf9d*/
     }
     ++i; /*0x7acfab*/
   }
@@ -1403,12 +1403,12 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   if ( !HashTable_field_0x04 ) /*0x7adce0*/
     return 0; /*0x7adce5*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7add10*/
-  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
+  v7 = ((int ((const char **)(*))(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add27*/
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
     return 0; /*0x7add35*/
-  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x7add41*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare((const char **)(aP1)) ) /*0x7add41*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add5f*/
@@ -1474,7 +1474,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     v38 = 0; /*0x7ade49*/
     if ( v24 ) /*0x7ade50*/
     {
-      while ( !(uint8_t)((String *)((String *)v24))->Compare(aP1) ) /*0x7ade5c*/
+      while ( !(uint8_t)((String *)((String *)v24))->Compare((const char **)(aP1)) ) /*0x7ade5c*/
       {
         v36 = v24; /*0x7ade5e*/
         v24 = *(unsigned int *)(v24 + 112); /*0x7ade62*/
@@ -1578,11 +1578,11 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   if ( !HashTable_field_0x04 ) /*0x7ae200*/
     return 0; /*0x7ae205*/
   v32 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7ae230*/
-  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae244*/
+  v7 = ((int ((const char **)(*))(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae244*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
-  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x7ae25c*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare((const char **)(aP1)) ) /*0x7ae25c*/
   {
     *aP2 = *(unsigned int *)(v8 + 4); /*0x7ae270*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae274*/
@@ -1646,7 +1646,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     v33 = 0; /*0x7ae34e*/
     if ( v22 ) /*0x7ae355*/
     {
-      while ( !(uint8_t)((String *)((String *)v22))->Compare(aP1) ) /*0x7ae361*/
+      while ( !(uint8_t)((String *)((String *)v22))->Compare((const char **)(aP1)) ) /*0x7ae361*/
       {
         v8 = v22; /*0x7ae363*/
         v22 = *(unsigned int *)(v22 + 8); /*0x7ae365*/
@@ -1951,7 +1951,7 @@ LABEL_24:
 } // namespace gamemd
 // 0x7AEC00
 namespace gamemd {
-void HashTable_flat::Shrink()
+int HashTable_flat::Shrink()
 {
 
   unsigned int HashTable_field_0x08; // esi

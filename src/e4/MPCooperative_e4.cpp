@@ -40,11 +40,11 @@ int MPCooperative::processTurn(char * a2, char * a3)
 {
 
   if ( a2 ) /*0x49b66e*/
-    strcpy((char *)this, ToWideStringChar(a2)); /*0x49b68b*/
+    strcpy((char *)this, ToWideStringChar((gamemd::IUnknown *)(a2))); /*0x49b68b*/
   else
     *(unsigned char *)this = 0; /*0x49b696*/
   if ( a3 ) /*0x49b69f*/
-    strcpy((char *)((char *)this + 28), ToWideStringChar(a3)); /*0x49b6bf*/
+    strcpy((char *)((char *)this + 28), ToWideStringChar((gamemd::IUnknown *)(a3))); /*0x49b6bf*/
   else
     *((unsigned char *)this + 28) = 0; /*0x49b6ca*/
   *((unsigned int *)this + 5) = -2; /*0x49b6d3*/
@@ -107,10 +107,10 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
   }
   v9 = (wchar_t *)__2_YAPAXI_Z(0x70u); /*0x49bd41*/
   v16 = v9; /*0x49bd4a*/
-  FillScoreScreenStats(v9, 0); /*0x49bd4e*/
+  FillScoreScreenStats((gamemd::IUnknown *)(v9), 0); /*0x49bd4e*/
   v17 = (wchar_t *)__2_YAPAXI_Z(0x70u); /*0x49bd61*/
-  FillScoreScreenStats(v17, 1); /*0x49bd65*/
-  if ( strcmp((const char *)this, ToWideStringChar((char *)v9)) ) /*0x49bd7b*/
+  FillScoreScreenStats((gamemd::IUnknown *)(v17), 1); /*0x49bd65*/
+  if ( strcmp((const char *)this, ToWideStringChar((gamemd::IUnknown *)((char *)v9))) ) /*0x49bd7b*/
   {
     v16 = v17; /*0x49bda8*/
     v17 = v9; /*0x49bdac*/
@@ -177,7 +177,7 @@ int MPCooperative::WriteCoopSaveINI()
   v2 = (char *)(&this->__pad_18[4]); /*0x49be58*/
   if ( !this->__pad_18[4] ) /*0x49be55*/
     return 1; /*0x49c0c5*/
-  CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
+  CCFileClass::Construct(&v19,(void *)(g_Str_File_coopsave_ini)); /*0x49be70*/
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
   INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v15 + 2)); /*0x49be81*/
@@ -185,7 +185,7 @@ int MPCooperative::WriteCoopSaveINI()
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
   *(unsigned int *)v15.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49bea5*/
-  CCINIClass::Load(&v15, (int)&v19, 0, 0); /*0x49bead*/
+  CCINIClass::Load((int)(&v15), (int)&v19, 0, 0); /*0x49bead*/
   CCFileClass::Reset(&v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
   if ( *v1 )
@@ -218,7 +218,7 @@ int MPCooperative::WriteCoopSaveINI()
     while ( v7 );
   }
   ((unsigned int *)(g_IsWindowed))[v3] = 0; /*0x49bf36*/
-  strcpy(v22, g_IsWindowed); /*0x49bf52*/
+  strcpy(v22,(const char *)(g_IsWindowed)); /*0x49bf52*/
   v8 = v2; /*0x49bf5b*/
   v9 = 0; /*0x49bf5d*/
   for ( i = *v2; i; ++v8 )
@@ -246,7 +246,7 @@ int MPCooperative::WriteCoopSaveINI()
     ++v9; /*0x49bfc5*/
   }
   ((unsigned int *)(g_IsWindowed))[v9] = (unsigned int)(0);
-  strcat(v22, g_IsWindowed); /*0x49bff9*/
+  strcat(v22,(const char *)(g_IsWindowed)); /*0x49bff9*/
   CCFileClass::Construct3((int)&v16); /*0x49c006*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))(&v16, g_Str_File_coopsave_ini); /*0x49c018*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))(&v16, 2); /*0x49c025*/
@@ -326,7 +326,7 @@ int MPCooperative::ReadCoopSaveINI()
   v2 = (char *)((unsigned char *)this + 28); /*0x49d137*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d134*/
     return 0; /*0x49d13c*/
-  CCFileClass::Construct(v16, g_Str_File_coopsave_ini); /*0x49d14b*/
+  CCFileClass::Construct(v16,(void *)(g_Str_File_coopsave_ini)); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
   v19[2] = 0; /*0x49d15d*/
   INISectionList::Constructor(v20); /*0x49d164*/
@@ -334,7 +334,7 @@ int MPCooperative::ReadCoopSaveINI()
   v21[5] = 0; /*0x49d183*/
   v22 = 0; /*0x49d18a*/
   v19[0] = &CCINIClass_Vtable; /*0x49d192*/
-  if ( !CCINIClass::Load(v19, (int)v16, 0, 0) ) /*0x49d19d*/
+  if ( !CCINIClass::Load((int)(v19), (int)v16, 0, 0) ) /*0x49d19d*/
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
@@ -377,7 +377,7 @@ int MPCooperative::ReadCoopSaveINI()
     while ( v8 );
   }
   ((unsigned int *)(g_IsWindowed))[v4] = 0; /*0x49d26c*/
-  strcpy(v23, g_IsWindowed); /*0x49d289*/
+  strcpy(v23,(const char *)(g_IsWindowed)); /*0x49d289*/
   v9 = v2; /*0x49d292*/
   v10 = 0; /*0x49d294*/
   for ( i = *v2; i; ++v9 )
@@ -405,8 +405,8 @@ int MPCooperative::ReadCoopSaveINI()
     ++v10; /*0x49d2fc*/
   }
   ((unsigned int *)(g_IsWindowed))[v10] = 0; /*0x49d30c*/
-  strcat(v23, g_IsWindowed); /*0x49d331*/
-  v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
+  strcat(v23,(const char *)(g_IsWindowed)); /*0x49d331*/
+  v15 = INIClass::BinarySearchSection((gamemd::INIClass *)((int)v19), (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
   v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/

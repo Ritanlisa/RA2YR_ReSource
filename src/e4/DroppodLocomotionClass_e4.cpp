@@ -125,13 +125,13 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v34[1] = v25[1]; /*0x4b5f86*/
           v35 = v25[2]; /*0x4b5f8d*/
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
-          StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)), &v36, 0); /*0x4b5fa8*/
+          StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * v20[41], &((unsigned int *)a1)[0]->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/
           v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
           if ( v28 ) /*0x4b5fdd*/
           {
-            v32 = (void *)Return::HRESULT_Fail(v34[0], v34[1], v35); /*0x4b5ffe*/
-            WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(2 * v20[41], v20[43], 0, v34); /*0x4b6020*/
+            v32 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v34[0]), v34[1], v35); /*0x4b5ffe*/
+            WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(2 * v20[41], v20[43], 0,(gamemd::BulletClass *)(v34)); /*0x4b6020*/
             AnimClass::ctor(v28, WarheadVersusMultiplier, v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
           }
         }
@@ -152,7 +152,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (**)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/
-    (*(void (**)(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
+    (*(void ((int *)(**))(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
     if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->TechnoClass + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
@@ -212,7 +212,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       v14 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
       if ( v14 ) /*0x4b5d3e*/
       {
-        v31 = (void *)Return::HRESULT_Fail(v36, v37, v38); /*0x4b5d64*/
+        v31 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v36), v37, v38); /*0x4b5d64*/
         v15 = (void *)GetWarheadVersusMultiplier( /*0x4b5d8a*/
                         100,
                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),

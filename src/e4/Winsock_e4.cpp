@@ -31,14 +31,14 @@ char Winsock::VerifyCRC(int a1)
       do /*0x7b2094*/
       {
         v5 = *v4++; /*0x7b2077*/
-        ComputeHash(&a1, v5); /*0x7b2080*/
+        ComputeHash((unsigned int *)(&a1), v5); /*0x7b2080*/
         ++v3; /*0x7b2088*/
       }
       while ( v3 < *(unsigned int *)&v1[1].Initialized / 4 ); /*0x7b2094*/
     }
     v6 = *(unsigned int *)&v1[1].Initialized & 3; /*0x7b2099*/
     if ( v6 ) /*0x7b209c*/
-      ComputeHash(&a1, *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
+      ComputeHash((unsigned int *)(&a1), *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
     if ( a1 == *(WinsockInterfaceClass **)&v1[2].Initialized ) /*0x7b20c5*/
       return 1; /*0x7b20ca*/
     this->Debug::Log(); /*0x7b20d2*/

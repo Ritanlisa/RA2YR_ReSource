@@ -210,7 +210,7 @@ void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
 }
 // 0x750D40
 namespace gamemd {
-int * StartAudioController(AudioMixer * ecx0, int ** a2)
+VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
 {
   VocClass *result; // eax
   VocClass *v5; // esi
@@ -747,7 +747,7 @@ void sub_7532A0(std::codecvt_base * a1)
 }
 // 0x7540F0
 namespace gamemd {
-void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache * aP2, float * a4)
+int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, float *a4)
 {
   int Info; // eax
   VoxelSection **v7; // esi
@@ -832,7 +832,7 @@ void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache
 }
 // 0x7542F0
 namespace gamemd {
-AbstractClass * * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
+int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
 {
   int v3; // edi
   unsigned int **v5; // esi
@@ -2385,7 +2385,7 @@ void sub_750340()
 
 // 0x7509E0
 namespace gamemd {
-int StartAudioControllerAt(AudioController * aP0, int a2, int a1)
+int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
 {
   int *v5; // esi
   unsigned int *v6; // edi

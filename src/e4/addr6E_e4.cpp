@@ -195,7 +195,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
-  GroundHeight = Cell::GetGroundHeight(v8); /*0x6e27e3*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v8)); /*0x6e27e3*/
   if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v6) + 80) & 0x100) != 0 /*0x6e2819*/
     || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v6) + 80) & 0x400) != 0 )
   {
@@ -232,7 +232,7 @@ void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
   }
   if ( !Field11 ) /*0x6e30fe*/
     return 0; /*0x6e30fe*/
-  HouseClass::RespawnStartingForces(v10, a2, a3, (int)v7); /*0x6e3108*/
+  HouseClass::RespawnStartingForces((gamemd::TechnoClass *)(v10), a2, a3, (int)v7); /*0x6e3108*/
   return 1; /*0x6e3102*/
 }
 }
@@ -251,7 +251,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
-  GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v8)); /*0x6e33d5*/
   v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/

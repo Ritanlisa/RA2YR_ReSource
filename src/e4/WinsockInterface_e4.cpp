@@ -43,7 +43,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   {
     unknown_libname_73(v4); /*0x770289*/
     Array::ForEach(v5, 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
-    ((String *)(v4))->Assign_Alt(&g_INI_DefaultBuffer); /*0x7702a4*/
+    ((String *)(v4))->Assign_Alt((const char *)(&g_INI_DefaultBuffer)); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
     --v3; /*0x7702b5*/
@@ -133,7 +133,7 @@ int WinsockInterface::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void 
     (*(void (**)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
     (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
-    if ( WSAStartup(0x101u, v5) ) /*0x7b1e8c*/
+    if ( WSAStartup((void *)(0x101u), v5) ) /*0x7b1e8c*/
     {
       Debug::Log(); /*0x7b1e9b*/
       __3_YAXPAX_Z(v5); /*0x7b1ea1*/

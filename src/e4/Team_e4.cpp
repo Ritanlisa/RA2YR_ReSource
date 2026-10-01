@@ -97,12 +97,12 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     ((Debug *)0)->Log();
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
-  Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v13, v15, v17); /*0x5611c7*/
+  Frame::Present((void *)((int)g_DSurface_Hidden), a3, yBottom, a4, 0, v13, v15, v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
     (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
-    Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v14, v16, v18); /*0x5611f7*/
+    Frame::Present((void *)((int)g_DSurface_Hidden), a3, yBottom, a4, 0, v14, v16, v18); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
@@ -574,7 +574,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
-  StringCSF = (wchar_t *)(GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230)); /*0x76ed62*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
   DeleteAndZero::Alt((void **)&v9); /*0x76ed83*/
@@ -633,7 +633,7 @@ void Team_Start_7AFAD0(void * a1, void * a2)
   v2 = (char **)(StaticString::Factory(a1));
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
   ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
-  ((String *)((char **)&v7))->Assign(aWdtchoicemdIni); /*0x7afb08*/
+  ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
   v3 = (char **)(sub_4F1B80((char **)&v6, (char **)&v7, a2)); /*0x7afb1e*/
   DeleteAndZero(&v7); /*0x7afb20*/
   DeleteAndZero(&v6); /*0x7afb29*/

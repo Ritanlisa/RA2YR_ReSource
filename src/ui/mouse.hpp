@@ -160,7 +160,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int SetBounds(int a1);  // 0x4a8bf0 -- Mouse::SetBounds
+    int SetBounds(int this, const void *a2);
     int GetKeyState();  // 0x53ec90 -- Mouse::GetKeyState
     int SetCursor(int a1, int a2);  // 0x5bdc80 -- Mouse::SetCursor
     int ReleaseCapture();  // 0x6938c0 -- Mouse::ReleaseCapture

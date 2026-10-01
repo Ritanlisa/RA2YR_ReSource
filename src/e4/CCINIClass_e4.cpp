@@ -43,15 +43,15 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int i; // [esp+10h] [ebp-8h]
 
   v2 = (gamemd::CCINIClass *)((int)(a2));
-  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes));
+  result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes));
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
   {
-    StringByIndex = (char *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes, v5); /*0x41f317*/
-    if ( _strcmpi(g_Str__none_, StringByIndex) ) /*0x41f31f*/
+    StringByIndex = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1), (uint8_t *)aAitriggertypes, v5); /*0x41f317*/
+    if ( _strcmpi((const char *)(g_Str__none_), StringByIndex) ) /*0x41f31f*/
     {
-      if ( _strcmpi(g_Str_none, StringByIndex) ) /*0x41f335*/
+      if ( _strcmpi((const char *)(g_Str_none), StringByIndex) ) /*0x41f335*/
       {
         v8 = 0; /*0x41f34a*/
         if ( dword_A8B210 > 0 ) /*0x41f34e*/
@@ -92,11 +92,11 @@ LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes_0));
+    result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes_0));
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
-      v11 = (char *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes_0, v10); /*0x41f3f9*/
+      v11 = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1), (uint8_t *)aAitriggertypes_0, v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
       if ( dword_A8B210 > 0 ) /*0x41f404*/
       {
@@ -180,10 +180,10 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_2)
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = (unsigned int)(&vt_SHAPipe); /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
-  ((SHA1 *)(&v12))->ComputeThunk(this->__pad_41); /*0x4742da*/
+  ((SHA1 *)(&v12))->ComputeThunk((char *)(this->__pad_41)); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
-  v8 = memcmp(v20, this->__pad_41, 0x14u) == 0; /*0x4742fa*/
+  v8 = memcmp(v20,(const void *)(this->__pad_41), 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
 LABEL_7:
@@ -272,7 +272,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
-    INIClass::GetString(a1, (uint8_t *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
+    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/

@@ -168,7 +168,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       if ( *(unsigned int *)(this + 1136) ) /*0x76d68f*/
       {
         CCFileClass::Construct2((CCFileClass *)&v28.ambientSoundController[1], *(char ***)(this + 1136)); /*0x76d6a9*/
-        if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v28.ambientSoundController[1], 0) ) /*0x76d6b3*/
+        if ( (uint8_t)CCFileClass::Open((int)((CCFileClass *)&v28.ambientSoundController[1]), 0) ) /*0x76d6b3*/
         {
           v18 = (Trigger *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v18 ) /*0x76d6c8*/
@@ -201,7 +201,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v28.ambientSoundController[1]); /*0x76d75d*/
       }
       CCFileClass::Construct2(&v29, *(char ***)(this + 1140)); /*0x76d770*/
-      if ( (uint8_t)CCFileClass::Open(&v29, 0) )
+      if ( (uint8_t)CCFileClass::Open((int)(&v29), 0) )
       {
         v20 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
         v21 = v20
@@ -224,7 +224,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         if ( (int)((char *)&v28) < ((char *)&v28) /*0x76d821*/
           || (BYTE1(((char *)&v28)) || !((char *)&v28))
           && v28.occupant > 0
-          && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
+          && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
         {
           v22 = ((char *)&v28)++; /*0x76d82c*/
           *(unsigned int *)(((char *)&v28) + 4 * (unsigned int)v22) = (unsigned int)(v21); /*0x76d837*/
@@ -263,8 +263,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         }
         else
         {
-          ((String *)((String *)&v28))->Assign(aTargetzoom); /*0x76d944*/
-          if ( (uint8_t)String::NotEquals((String *)&v28, 0) ) /*0x76d94e*/
+          ((String *)((String *)&v28))->Assign((const char *)(aTargetzoom)); /*0x76d944*/
+          if ( (uint8_t)String::NotEquals((const char *)((String *)&v28), 0) ) /*0x76d94e*/
           {
             Trigger::processTrigger((Trigger *)&v25, this + 1172, 0); /*0x76d963*/
             while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d970*/
@@ -287,9 +287,9 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
       }
       PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(*((unsigned int *)((char *)&v28) + 1) + 4 * (int)((char *)&v28))); /*0x76da29*/
-      (*((void (**)(void **))((char *)&v28) + 2))(&((char *)&v28)); /*0x76da36*/
+      (*((void ((void **)(**))(void **))((char *)&v28) + 2))(&((char *)&v28)); /*0x76da36*/
     }
-    while ( (*((uint8_t (**)(void **))((char *)&v28) + 1))(&((char *)&v28)) ); /*0x76da41*/
+    while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))(&((char *)&v28)) ); /*0x76da41*/
   }
   ComPtr::Set((ComPtr *)(this + 1160), *(unsigned int *)(a3 + 4)); /*0x76da5d*/
   ((unsigned int *)&v28)[0] = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76da66*/

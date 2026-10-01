@@ -156,7 +156,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
 
-  result = (int)(BaseDialogProc(hDlg, a2, a3, a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, a4));
   if ( !result ) /*0x4f18d0*/
   {
     if ( a2 == 273 ) /*0x4f18dc*/
@@ -187,7 +187,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
       DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1737))));
-      StringCSF = (wchar_t *)(GetStringCSF(aGuiLeave, 0, g_Str_File_GOptions_CPP, 547));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiLeave), 0, g_Str_File_GOptions_CPP, 547));
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
@@ -219,14 +219,14 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         else
         {
           dword_A8EE7C = (unsigned int)((wchar_t *)(3));
-          v12 = (wchar_t *)(GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_GOptions_CPP, 586));
+          v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0, g_Str_File_GOptions_CPP, 586));
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
         }
       }
       else
       {
-        v9 = (wchar_t *)(GetStringCSF(aGuiRestart, 0, g_Str_File_GOptions_CPP, 558));
+        v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiRestart), 0, g_Str_File_GOptions_CPP, 558));
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
@@ -285,7 +285,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   v38.uniqueId = (void *)((unsigned int)((int)a2));
   v40 = (unsigned int)(0);
   v5 = (uint8_t *)((unsigned int)((uint8_t *)((String *)(v3))->GetOrEmpty_Alt()));
-  if ( !INIClass::BinarySearchSection((int)a2, v5) ) /*0x4f1cc6*/
+  if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), v5) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
   v7 = RA2_OPNEW(0x70u); /*0x4f1cdd*/
   v8 = v7; /*0x4f1ce2*/
@@ -296,7 +296,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   ((MSEngine *)((MSEngine *)((unsigned int)(v7)+ 4)))->Construct(); /*0x4f1cf3*/
   ((String *)((String *)(v8 + 76)))->Assign(aTitlePcx); /*0x4f1d02*/
   v38.referenceCount = (void *)((unsigned int)(v8)+ 80); /*0x4f1d0f*/
-  ((String *)((String *)((unsigned int)(v8)+ 80)))->Assign(g_INI_Key_Intro); /*0x4f1d13*/
+  ((String *)((String *)((unsigned int)(v8)+ 80)))->Assign((const char *)(g_INI_Key_Intro)); /*0x4f1d13*/
   v9 = (void *)((unsigned int)(v8)+ 88); /*0x4f1d18*/
   *(unsigned int *)((unsigned int)(v8)+ 84) = 0; /*0x4f1d1b*/
   sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
@@ -305,8 +305,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   *(unsigned int *)((unsigned int)(v8)+ 104) = 0; /*0x4f1d34*/
   *(unsigned int *)v8 = (unsigned int)((void*)&GraphicMenu_vftable); /*0x4f1d3b*/
   unknown_libname_73(&v38.vtable2); /*0x4f1d42*/
-  ((String *)((String *)&v38.vtable3))->Assign(&g_INI_DefaultBuffer); /*0x4f1d50*/
-  ((String *)((String *)&v38))->Assign(aBackground); /*0x4f1d5e*/
+  ((String *)((String *)&v38.vtable3))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f1d50*/
+  ((String *)((String *)&v38))->Assign((const char *)(aBackground)); /*0x4f1d5e*/
   v10 = INIClass::ReadString( /*0x4f1d86*/
           (INIClass *)v38.uniqueId,
           (char **)v38.abstractFlags,
@@ -410,7 +410,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     goto LABEL_18; /*0x4f1f66*/
   }
   LABEL_22:
-  ((String *)((String *)&v38))->Assign(&g_INI_DefaultBuffer); /*0x4f1fab*/
+  ((String *)((String *)&v38))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f1fab*/
   ((String *)((String *)&v38.vtable1))->Assign(g_INI_Key_Theme); /*0x4f1fc2*/
   abstractFlags = (char **)v38.abstractFlags; /*0x4f1fcf*/
   uniqueId = (bool *)v38.uniqueId; /*0x4f1fd3*/
@@ -425,7 +425,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v27 ) /*0x4f1fff*/
     ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
   ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
-  Int = INIClass::ReadInt(uniqueId, abstractFlags, (char **)&v38.vtable1, 100); /*0x4f202c*/
+  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId), abstractFlags, (char **)&v38.vtable1, 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
   v29 = 0; /*0x4f203b*/
@@ -434,7 +434,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     do /*0x4f210e*/
     {
       sprintf((char *const)v38.ambientSoundController, "%d", v29); /*0x4f2050*/
-      ((String *)((String *)&v38))->Assign(&g_INI_DefaultBuffer); /*0x4f2061*/
+      ((String *)((String *)&v38))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2061*/
       ((String *)((String *)&v38.vtable1))->Assign((const char *)v38.ambientSoundController); /*0x4f206f*/
       v30 = INIClass::ReadString( /*0x4f2099*/
               (INIClass *)v38.uniqueId,

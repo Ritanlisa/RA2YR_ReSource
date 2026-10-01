@@ -790,7 +790,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
 }
 // 0x6214B0
 namespace gamemd {
-AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
+int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
 {
   int *v3; // ebx
   int v4; // edi
@@ -1125,7 +1125,7 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT
 }
 // 0x622820
 namespace gamemd {
-AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
+int SetupDialog(Dialog *hWnd, int a2)
 {
   int v4; // eax
   bool v5; // al

@@ -52,7 +52,7 @@ int InfantryClass::ScanTarget(int * a1)
     && !(*((int (**)(FootClass *))a1->TechnoClass + 114))(a1) )
   {
     vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
-    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1, &v17, (int)a1); /*0x4d4df4*/
+    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((gamemd::IUnknown *)((char *)a1), &v17, (int)a1); /*0x4d4df4*/
     v4 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], PlacementCellsAlt); /*0x4d4dff*/
     vtable0[288](a1, v4, 1); /*0x4d4e07*/
   }
@@ -131,7 +131,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         v2 = a1->TechnoClass,
         v15[1] = ((unsigned int *)a1)[1],
         v15[2] = ((unsigned int *)a1)[2],
-        !(*((uint8_t (**)(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
+        !(*((uint8_t ((gamemd::FootClass *)(**))(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
   {
     if ( (uint8_t)((House *)((House *)((unsigned int *)a1)[0]))->IsCurrentPlayer() || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
     {
@@ -314,6 +314,6 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 namespace gamemd {
 int InfantryClass_ScanTarget_0(void * a1)
 {
-  return InfantryClass::ScanTarget(a1);
+  return InfantryClass::ScanTarget((int *)(a1));
 }
 } // namespace gamemd

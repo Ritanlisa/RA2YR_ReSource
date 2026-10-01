@@ -113,7 +113,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_VoxelAnimClass; /*0x7499fc*/
   this->VoxelAnimClass_field_0x8 = (unsigned int)(&vt_VoxelAnimClass); /*0x749a03*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_VoxelAnimClass); /*0x749a0a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x749a11*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x749a11*/
   v6 = this; /*0x749a26*/
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad_1C[64] + 16))( /*0x749a2a*/
          &stru_88732C.__pad_1C[64],
@@ -208,7 +208,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     || (v27 = *(unsigned int *)&this->__pad_98[4],
         v28 = *(unsigned int *)&this->__pad_98[8],
         v29 = *(unsigned int *)&this->__pad_98[12],
-        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((int)&v27),
+        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((IUnknown *)((int)&v27)),
         !(unsigned char)VoxelAnimClass_field_0x104) )
   {
     v6 = a2[1]; /*0x749bcb*/
@@ -217,7 +217,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v32 = *(unsigned int *)&this->__pad_98[4]; /*0x749bda*/
     v33 = *(unsigned int *)&this->__pad_98[8]; /*0x749beb*/
     GroundHeight = *(unsigned int *)&this->__pad_98[12]; /*0x749bf2*/
-    GroundHeight = Cell::GetGroundHeight(&v32); /*0x749c05*/
+    GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v32)); /*0x749c05*/
     if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
     v27 = *(unsigned int *)&this->__pad_98[4]; /*0x749c1f*/
@@ -228,13 +228,13 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
       v29 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v27 = v32; /*0x749c4e*/
       v28 = v33; /*0x749c5b*/
-      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v27, v38); /*0x749c60*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v27), v38); /*0x749c60*/
     }
     else
     {
 LABEL_6:
       v35 = GroundHeight; /*0x749c62*/
-      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v32, v38); /*0x749c76*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v32), v38); /*0x749c76*/
     }
     LOBYTE(VoxelAnimClass_field_0x104) = this->__pad_12C[16]; /*0x749c7b*/
     if ( !(unsigned char)VoxelAnimClass_field_0x104 ) /*0x749c83*/
@@ -255,7 +255,7 @@ LABEL_6:
           0,
           0,
           0);
-        InitializeAudioOcclusion(v39, &v31, &v30); /*0x749cfa*/
+        InitializeAudioOcclusion((IUnknown *)(v39), &v31, &v30); /*0x749cfa*/
         v27 = v38[0] + v31; /*0x749d15*/
         v28 = v30 + v38[1]; /*0x749d26*/
         v23 = -4 - ZCoordToScreenY(v35); /*0x749d36*/
@@ -279,8 +279,8 @@ LABEL_6:
         globalHelper_053C80(v7, 0, 0, v40, (float *)&stru_887460.Buffer_field_10); /*0x749da3*/
         Viewport::Clear(v26); /*0x749da8*/
         v9 = MultiplyMatrix3x4(v41, (float *)stru_887430.m_Data, v40); /*0x749dbe*/
-        TransformVoxelVertex(v7, *((unsigned int *)this->VoxelAnimClass_field_0x104 + 166), 0, v9); /*0x749dd4*/
-        InitializeAudioOcclusion(v39, &v31, &v30); /*0x749de6*/
+        TransformVoxelVertex((gamemd::VoxelSection *)(v7), *((unsigned int *)this->VoxelAnimClass_field_0x104 + 166), 0, v9); /*0x749dd4*/
+        InitializeAudioOcclusion((IUnknown *)(v39), &v31, &v30); /*0x749de6*/
         v10 = 10240; /*0x749df1*/
         if ( *((unsigned char *)this->VoxelAnimClass_field_0x104 + 661) ) /*0x749df6*/
           v10 = 10244; /*0x749e00*/
@@ -457,7 +457,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
   if ( VoxelAnimClass_field_0x104[183] != -1 ) /*0x749f4a*/
   {
     v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))this->VoxelAnimClass_field_0x0 + 18))(this, &v101); /*0x749f5b*/
-    StartAudioController(v3, (int **)&v1->VoxelAnimClass_field_0x114); /*0x749f62*/
+    StartAudioController((gamemd::AudioMixer *)(v3), (int **)&v1->VoxelAnimClass_field_0x114); /*0x749f62*/
   }
   if ( v1->__pad_110[0] ) /*0x749f67*/
     return (*((int (**)(VoxelAnimClass *))v1->VoxelAnimClass_field_0x0 + 62))(v1); /*0x749f82*/
@@ -479,7 +479,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
     v98 = *(unsigned int *)&v1->__pad_98[8]; /*0x749ff6*/
     v88 = v8; /*0x74a002*/
     v99 = *(unsigned int *)&v1->__pad_98[12]; /*0x74a007*/
-    v10 = v9 >= (int)(dword_B1D1BC + Cell::GetGroundHeight(&v97)); /*0x74a01e*/
+    v10 = v9 >= (int)(dword_B1D1BC + Cell::GetGroundHeight((unsigned int *)(&v97))); /*0x74a01e*/
     v87 = v10; /*0x74a023*/
     if ( !v88 || v10 ) /*0x74a02f*/
     {
@@ -503,7 +503,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
         v28 = v27[188]; /*0x74a1c9*/
         v84 = v27[190]; /*0x74a1cf*/
         Coords = (unsigned int *)Coord::GetCoords(&v101, 0); /*0x74a1d8*/
-        PlaySoundEffectAt(Coords, v28, v83, v84, 1, 0); /*0x74a1e1*/
+        PlaySoundEffectAt((gamemd::TechnoClass *)(Coords), v28, v83, v84, 1, 0); /*0x74a1e1*/
         v30 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1e6*/
         v90 = v30[190]; /*0x74a1f6*/
         v31 = v30[188]; /*0x74a1fa*/

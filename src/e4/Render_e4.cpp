@@ -193,8 +193,8 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x6522d0*/
                 ((Timer *)0)->UpdateDelta();
       ++dword_A8DAB4; /*0x6522e4*/
-      StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Queue_CPP, 8878)); /*0x65230f*/
-      v5 = (int *)GetStringCSF(g_Str_TXT_QUEUE_FULL, 0, g_Str_File_Queue_CPP, 8878); /*0x65231a*/
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_Queue_CPP, 8878)); /*0x65230f*/
+      v5 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_QUEUE_FULL), 0, g_Str_File_Queue_CPP, 8878); /*0x65231a*/
       Dialog::ShowMessageBox(v5, StringCSF, 0, 0, 0, v7); /*0x652324*/
       dword_A8B8B8 = 0; /*0x652335*/
       --dword_A8DAB4; /*0x652341*/
@@ -425,13 +425,13 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   char *v9; // eax
 
   v4 = ((String *)(a2))->GetOrEmpty_Alt(); /*0x780d9f*/
-  if ( _strcmpi(v4, aRandmapSed) ) /*0x780da5*/
+  if ( _strcmpi(v4,(const char *)(aRandmapSed)) ) /*0x780da5*/
   {
     v7 = 0; /*0x780ddb*/
     if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
   LABEL_6:
-      ((WideString *)((WideString *)a1))->Assign(&g_TypeClass_DefaultString); /*0x780e0b*/
+      ((WideString *)((WideString *)a1))->Assign((wchar_t *)(&g_TypeClass_DefaultString)); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
     else
@@ -1437,7 +1437,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   }
   Rect::Inflate(v10, v11, dy); /*0x554252*/
 // 0x621b80
-  return DSurface::FillRectWithColor(v14, a2, 0, 0x9Fu); /*0x554269*/
+  return DSurface::FillRectWithColor(v14,(gamemd::ObjectClass *)(a2), 0, 0x9Fu); /*0x554269*/
 }
 }
 // 0x554280
@@ -1508,18 +1508,18 @@ AbstractClass * * sub_63B0A0()
 }
 // 0x642BB0
 namespace gamemd {
-void sub_642BB0(unsigned int a1)
+int sub_642BB0(unsigned int a1)
 {
   int result; // eax
   unsigned int PlayerColor; // eax
 
   result = 0; /*0x642bba*/
   if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) && *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * a1) + 107) == -1 ) /*0x642bd8*/
-    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(0xFFFFFFFE)); /*0x642bed*/
+    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((gamemd::ObjectClass *)(0xFFFFFFFE))); /*0x642bed*/
   if ( a1 < 8 ) /*0x642bf5*/
   {
     PlayerColor = ((SessionClass *)(*(unsigned int *)(dword_A8DA78 + 4 * a1)))->GetPlayerColor(); /*0x642bff*/
-    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
+    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((gamemd::ObjectClass *)(PlayerColor))); /*0x642c15*/
   }
   return result; /*0x642bec*/
 }
@@ -1963,7 +1963,7 @@ ObjectClass * Render_Render_72B520()
 
 // 0x72E820
 namespace gamemd {
-void Render_Draw(ConvertClass * a1, int * a2, char a3)
+void Render_Draw(int a1, int *a2, char a3)
 {
   RenderScoreScreen(a1, a2, a3); /*0x72e82b*/
   UI_Draw_72E730(a1, a2, dword_B0FBCC, (int)dword_B0FB50, (int)dword_B0FA04); /*0x72e848*/

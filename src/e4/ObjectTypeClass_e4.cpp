@@ -47,7 +47,7 @@ LABEL_6:
       return BulletTypeClass::Construct(v3, Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C84 + v2) + 36), Source) ) /*0x46c7da*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C84 + v2) + 36),(const char *)(Source)) ) /*0x46c7da*/
   {
     if ( ++v2 >= dword_A83C90 ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
@@ -88,7 +88,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
+  if ( INIClass::GetString((INIClass *)this,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
   v4 = 0; /*0x474964*/
   v5 = (char **)(&off_81B9B0); /*0x474966*/
@@ -121,7 +121,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
-  INIClass::GetString((INIClass *)this, a2, a3, v4, Destination, 32); /*0x474f85*/
+  INIClass::GetString((INIClass *)this, a2,(gamemd::INIClass *)(a3), v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 
 }
@@ -229,7 +229,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     qmemcpy((char *)this + 126, (char *)this + 9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
   {
-    strncpy(Destination, &g_INI_DefaultBuffer, 0x18u); /*0x5f7292*/
+    strncpy(Destination,(const char *)(&g_INI_DefaultBuffer), 0x18u); /*0x5f7292*/
     v10 = 0; /*0x5f729a*/
   }
   else
@@ -333,7 +333,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
   *((unsigned int *)this + 2) = &vt_ObjectTypeClass; /*0x5f7418*/
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
-  v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
+  v2 = (*(int ((int *)(**))(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
@@ -576,10 +576,10 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   {
     *((unsigned char *)this + 530) = 0; /*0x5f9112*/
   }
-  _makepath(&Source, 0, 0, (unsigned char *)this + 504, Ext); /*0x5f912e*/
+  _makepath(&Source, 0, 0,(const char *)((unsigned char *)this + 504), Ext); /*0x5f912e*/
   if ( *((unsigned char *)this + 556) ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, (unsigned char *)this + 504, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)dword_A8B230 + 1174)); /*0x5f9169*/
+    _makepath(&Source, 0, 0,(const char *)((unsigned char *)this + 504), (const char *)&off_7E1BC6 + 112 * *((unsigned int *)dword_A8B230 + 1174)); /*0x5f9169*/
   }
   else if ( *((unsigned char *)this + 567) ) /*0x5f9173*/
   {
@@ -601,8 +601,8 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   v6 = *(unsigned int *)this; /*0x5f91fe*/
   *((unsigned int *)this + 41) = 0; /*0x5f9203*/
   *((unsigned char *)this + 168) = 0; /*0x5f920d*/
-  if ( (*(int (**)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 5 )
+  if ( (*(int ((char *)(**))(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
+    || (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) == 5 )
   {
     v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
     *((unsigned int *)this + 41) = v9; /*0x5f926e*/
@@ -612,8 +612,8 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
-    && (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 37 )
+  if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
+    && (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
     *((unsigned int *)this + 41) = v7; /*0x5f9250*/
@@ -685,7 +685,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   INIClass::ResetSection((INIClass *)aP1); /*0x5f92e3*/
   if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x5f92eb*/
     return 0; /*0x5f969e*/
-  strcpy(Source, this->ImageFile); /*0x5f931c*/
+  strcpy(Source,(const char *)(this->ImageFile)); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
     (INIClass *)aP1,
     (uint8_t *)((unsigned int *)this)[0],
@@ -693,7 +693,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
     Source,
     this->ImageFile,
     25);
-  v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
+  v34 = (int)strcpy(Source,(const char *)(this->AlphaImageFile)); /*0x5f9366*/
   INIClass::GetString((INIClass *)aP1, (uint8_t *)((unsigned int *)this)[0], aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/

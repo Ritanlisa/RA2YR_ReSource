@@ -17,7 +17,7 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x7281ab*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x7281ab*/
   if ( result >= 0 ) /*0x7281b2*/
   {
     if ( aP0 ) /*0x7281b6*/
@@ -42,7 +42,7 @@ int TubeClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x7281ef*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x7281ef*/
   if ( result >= 0 ) /*0x7281f6*/
     return 0; /*0x7281f8*/
   return result; /*0x7281fa*/

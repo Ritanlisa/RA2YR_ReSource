@@ -72,7 +72,7 @@ void sub_600750()
       dword_AC1B50 = v0 >> 1; /*0x6007d4*/
       --dword_AC1B54; /*0x6007e0*/
       dword_AC1B48 = (unsigned int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6007f9*/
-      memset(dword_AC1B48, 0, 4 * dword_AC1B50); /*0x600801*/
+      memset((void *)(dword_AC1B48), 0, 4 * dword_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
         v7 = v5; /*0x600805*/
@@ -150,7 +150,7 @@ void sub_600920()
       dword_AC18C8 = v0 >> 1; /*0x6009a4*/
       --dword_AC18CC; /*0x6009b0*/
       g_DialogPool = (int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6009c9*/
-      memset(g_DialogPool, 0, 4 * dword_AC18C8); /*0x6009d1*/
+      memset((void *)(g_DialogPool), 0, 4 * dword_AC18C8); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
         v7 = v5; /*0x6009d5*/
@@ -242,7 +242,7 @@ void sub_600AF0()
       dword_AC1B08 = v0 >> 1; /*0x600bbb*/
       --dword_AC1B0C; /*0x600bc5*/
       dword_AC1B00 = (unsigned int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x600bdd*/
-      memset(dword_AC1B00, 0, 4 * dword_AC1B08); /*0x600be5*/
+      memset((void *)(dword_AC1B00), 0, 4 * dword_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {
         v9 = v7; /*0x600be9*/
@@ -1436,7 +1436,7 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
      || v5 == 3015)
     && DlgCtrlID == 1820 )
   {
-    return LoadFileSHP(off_833674, a3); /*0x603a08*/
+    return LoadFileSHP((gamemd::ConvertClass *)(off_833674), a3); /*0x603a08*/
   }
   if ( v5 == 148 ) /*0x603a2c*/
   {
@@ -1513,7 +1513,7 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   GetClassNameA(a2, ClassName, 128); /*0x603bb0*/
   if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
     return 192; /*0x603c2c*/
-  if ( !strcmp(ClassName, g_INI_Key_ListBox) /*0x603c99*/
+  if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) /*0x603c99*/
     && dword_AC1B04
     && (v7 = *((unsigned int *)dword_AC1B00 + (dword_AC1B18(&hWnd) & ((1 << dword_AC1B0C) - 1)))) != 0 )
   {
@@ -1530,7 +1530,7 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   {
     v8 = hWnd; /*0x603cbc*/
   LABEL_37:
-    if ( strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x603cd1*/
+    if ( strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x603cd1*/
       return 0; /*0x603cf8*/
     v9 = (GetWindowLongA(v8, -16) & 3) != 3; /*0x603d0c*/
   }
@@ -1607,12 +1607,12 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   v4 = (char *)(DlgSkirmishMenuProc(a2, a3));
   if ( v4 ) /*0x604072*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0,(const char *)(g_Str_File_ownrdraw_cpp), 1957));
     ((WideString *)((WideString *)aP0))->Assign(StringCSF); /*0x60408a*/
   }
   else
   {
-    ((WideString *)((WideString *)aP0))->Assign(&g_TypeClass_DefaultString); /*0x60409c*/
+    ((WideString *)((WideString *)aP0))->Assign((wchar_t *)(&g_TypeClass_DefaultString)); /*0x60409c*/
   }
   return (wchar_t **)(aP0);
 }
@@ -1691,7 +1691,7 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   v62 = a1;
   if ( !g_DialogHashMap_Count )
     goto LABEL_6;
-  int v3 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  int v3 = HashTable_flat::ComputeHash((unsigned int *)((int)&g_DialogHashMap_Base), (int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v3);
   if ( !v4 )
@@ -2652,7 +2652,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 }
 // 0x608CD0
 namespace gamemd {
-void IsDialogControlVisible(int a1, HWND a2)
+int IsDialogControlVisible(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
@@ -2969,7 +2969,7 @@ char sub_6096A0(int a1, HWND a2)
 }
 // 0x609730
 namespace gamemd {
-void GetDialogDefaultButton(int a1, HWND a2)
+int GetDialogDefaultButton(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi

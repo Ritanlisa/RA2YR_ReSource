@@ -215,8 +215,8 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       Flagged = (char *)((int)((char *)(((GameSettings *)0)->FindFlagged())));
       if ( Flagged ) /*0x693c50*/
       {
-        v5 = (char *)(CharToWideString(Flagged + 36));
-        Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455, 1, (wchar_t *)v5); /*0x693c6f*/
+        v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36)));
+        Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455,(wchar_t *)(1), (wchar_t *)v5); /*0x693c6f*/
       }
     }
     while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x693c80*/
@@ -282,7 +282,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
                     v14 = ((GameSettings *)0)->FindFlagged();
-          v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
+          v13 = v14 && !_strcmpi(v14 + 36,(const char *)(v49)); /*0x693e20*/
         }
         if ( v48 == 17 && v13 ) /*0x693e2d*/
           break; /*0x693e2d*/
@@ -348,14 +348,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     v44 = 0; /*0x693fc0*/
     v45 = 0; /*0x693fc2*/
     v43[0] = 21; /*0x693fc8*/
-    strcpy((char *)&v43[1], ToWideStringChar(*(char **)dword_A8DA78)); /*0x693ff7*/
+    strcpy((char *)&v43[1], ToWideStringChar((gamemd::IUnknown *)(*(char **)dword_A8DA78))); /*0x693ff7*/
     if ( dword_A8B238 == 4 ) /*0x694007*/
     {
       v22 = (char *)((int)((char *)(((GameSettings *)0)->FindFlagged())));
       if ( v22 ) /*0x694010*/
       {
-        v23 = (char *)(CharToWideString(v22 + 36));
-        Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455, 1, (wchar_t *)v23); /*0x69402f*/
+        v23 = (char *)(CharToWideString((unsigned char *)(v22 + 36)));
+        Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455,(wchar_t *)(1), (wchar_t *)v23); /*0x69402f*/
       }
     }
     else
@@ -391,7 +391,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v28 ) /*0x69413f*/
     goto LABEL_78; /*0x69413f*/
-  v30 = ReceiveNetworkFile(a1, v36, a2, a3); /*0x694173*/
+  v30 = ReceiveNetworkFile((int)(a1), v36, a2, a3); /*0x694173*/
   v31 = g_Str_true; /*0x694175*/
   if ( !v30 ) /*0x69417c*/
     v31 = g_Str_false; /*0x69417e*/
@@ -401,7 +401,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 }
 // 0x6941A0
 namespace gamemd {
-void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
+char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
 {
   char *v6; // ebp
   size_t v7; // esi
@@ -1024,7 +1024,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
 }
 // 0x6951F0
 namespace gamemd {
-AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
+char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, char a5)
 {
   const void *v5; // esi
   int v6; // ebp

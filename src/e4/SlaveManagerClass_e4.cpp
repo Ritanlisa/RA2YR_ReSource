@@ -130,7 +130,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
         continue; /*0x6af2a1*/
       v14 = *((unsigned int *)this + 19); /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
+        || !(*(uint8_t ((int)(**))(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
@@ -230,8 +230,8 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
       __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6af4d1*/
   }
   v3 = *((unsigned int *)this + 16); /*0x6af4e5*/
-  (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6af4e8*/
-  (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6af4f2*/
+  (*(void ((int)(**))(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6af4e8*/
+  (*(void ((int)(**))(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6af4f2*/
   v6 = (int)(this); /*0x6af505*/
   v4 = (*(int (**)(int *, int *))(SlaveManagerClass_Array + 16))(&SlaveManagerClass_Array, &v6); /*0x6af509*/
   if ( v4 != -1 && v4 < dword_B0B600 && v4 < --dword_B0B600 ) /*0x6af525*/

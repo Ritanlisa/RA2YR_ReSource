@@ -447,7 +447,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
 
   v6 = 128; /*0x48508f*/
   v7 = 128; /*0x485097*/
-  inited = (int)(Isometric::InitTables((int)this, &v6)); /*0x4850a3*/
+  inited = (int)(Isometric::InitTables((gamemd::IUnknown *)((int)this), &v6)); /*0x4850a3*/
   if ( byte_A8E9A0 && (v3 = *((unsigned int *)this + 57)) != 0 ) /*0x4850b6*/
   {
     while ( (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) != 6 ) /*0x4850c2*/

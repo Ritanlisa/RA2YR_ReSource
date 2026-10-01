@@ -140,7 +140,7 @@ namespace gamemd {
 void * Timer::EnableHighPrecision()
 {
 
-  timeBeginPeriod(1u); /*0x5d5875*/
+  timeBeginPeriod((void *)(1u)); /*0x5d5875*/
   return this; /*0x5d587d*/
 
 }
@@ -151,7 +151,7 @@ namespace gamemd {
 MMRESULT Timer::DisableHighPrecision()
 {
 
-  return timeEndPeriod(1u); /*0x5d5888*/
+  return timeEndPeriod((void *)(1u)); /*0x5d5888*/
 
 }
 } // namespace gamemd

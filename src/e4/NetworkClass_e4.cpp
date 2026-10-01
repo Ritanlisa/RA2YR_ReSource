@@ -44,7 +44,7 @@ void NetworkClass::ExecutePlanningModeCmd()
     if ( !byte_AC4C08 ) /*0x639fdd*/
     {
       byte_AC4C08 = (unsigned char)((wchar_t *)(1));
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
 LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
       PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a09e*/
@@ -55,7 +55,7 @@ LABEL_10:
     if ( !byte_AC4C08 ) /*0x63a008*/
     {
       byte_AC4C08 = (unsigned char)((wchar_t *)(1));
-      v3 = (unsigned int)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
+      v3 = (unsigned int)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoStop), 0, g_Str_File_PlanMgr_cpp, 3233));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
@@ -63,7 +63,7 @@ LABEL_10:
   else if ( v1 == 7 && !byte_AC4C08 ) /*0x63a05c*/
   {
     byte_AC4C08 = (unsigned char)((wchar_t *)(1));
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoScatter), 0, g_Str_File_PlanMgr_cpp, 3233));
     goto LABEL_10; /*0x63a076*/
   }
   return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a0c0*/
@@ -85,7 +85,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  EventClass::Add((gamemd::AbstractClass *)(v5), (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (unsigned char)result ) /*0x6ffe40*/
   {

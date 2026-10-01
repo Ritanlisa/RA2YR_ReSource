@@ -219,7 +219,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v6 = (int *)(v51 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0);
         v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
         v51 = (int *)(dword_886FA4 + v6);
-        v7 = (int *)(ClipRectIntersection(v70, (int *)&v50, v54, 0, 0));
+        v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70), (int *)&v50, v54, 0, 0));
         v68[0] = (int)((int *)(*v7));
         v68[1] = (int)((int *)(v7[1]));
         v68[2] = (int)((int *)(v7[2]));
@@ -231,7 +231,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v62 = (int *)(v10);
         v64 = (int *)(60);
         v65 = (int *)((unsigned int)((int *)(30)));
-        v11 = (int *)(ClipRectIntersection(v71, v68, &v62, 0, 0));
+        v11 = (int *)(ClipRectIntersection((RectangleStruct *)(v71), v68, &v62, 0, 0));
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
         v13 = v11[1]; /*0x421055*/
@@ -247,7 +247,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v18 = (int *)((int)(*((unsigned int *)dword_88A0F4 + v4)));
           v58 = (int)(v51);
           v61 = (char **)((int)(*(char ***)(v18 + 56)));
-          FoundationSize = (int *)(Building::GetFoundationSize(v72, 0));
+          FoundationSize = (int *)(Building::GetFoundationSize((unsigned int *)(v72), 0));
           v41 = (int *)((unsigned int)((int *)(v13)));
           v20 = (int *)(*FoundationSize);
           v66 = (int *)(FoundationSize[1]);
@@ -278,7 +278,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v48 = (int *)((unsigned int)(v40)+ v21 - v23);
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
-          v25 = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v40, v41 - dword_886FA4); /*0x4211d3*/
+          v25 = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek((int)(v40), v41 - dword_886FA4); /*0x4211d3*/
           v26 = dword_87E8A4; /*0x4211d8*/
           v27 = (uint8_t *)(v22 + (unsigned int)(v60)* v21 + SubFile); /*0x4211ed*/
           if ( (unsigned int)&v25[(v37 - v41) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v42 + 0x7FFFFFFF * v40] < *((unsigned int *)dword_87E8A4 + 7) ) /*0x421211*/
@@ -363,7 +363,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
 }
 // 0x421B60
 namespace gamemd {
-unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, MapClass * aP3, unsigned int * a4)
+RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, unsigned int *aP3, unsigned int *a4)
 {
   unsigned int *result; // eax
   int v6; // ebx
@@ -2556,7 +2556,7 @@ void sub_42E150()
 }
 // 0x42FD30
 namespace gamemd {
-void EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
+int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char *a2, int a4)
 {
   int v4; // eax
   char *v5; // ebp
@@ -2643,7 +2643,7 @@ void EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
 }
 // 0x42FE50
 namespace gamemd {
-void DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4)
+int DecodeBitmapRGB(Pipe * aP0, int aP1, unsigned char *a2, int a4)
 {
   unsigned char *v4; // esi
   int v5; // eax

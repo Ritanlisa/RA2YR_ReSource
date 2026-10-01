@@ -438,19 +438,19 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80420] = (unsigned int)(operator new(v10));
   signed int v11 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80420], v11);
-  unsigned int v148 = (unsigned int)(((FileClass *)(v149))->SetFileName((IUnknown *)Buffer));
+  unsigned int v148 = (unsigned int)(((FileClass *)(v149))->SetFileName((char *)((IUnknown *)Buffer)));
   v12 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80424] = (unsigned int)(operator new(v12));
   signed int v13 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80424], v13);
   v148 = (unsigned int)((void *)(51));
-  ((FileClass *)(v149))->SetFileName((IUnknown *)Buffer);
+  ((FileClass *)(v149))->SetFileName((char *)((IUnknown *)Buffer));
   v14 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80428] = (unsigned int)(operator new(v14));
   signed int v15 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80428], v15);
   v148 = (unsigned int)((void *)(52));
-  ((FileClass *)(v149))->SetFileName((IUnknown *)Buffer);
+  ((FileClass *)(v149))->SetFileName((char *)((IUnknown *)Buffer));
   v16 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80432] = (unsigned int)(operator new(v16));
   signed int v17 = CCFileClass::GetSize(v149);
@@ -466,7 +466,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
   unsigned int v161[22]; // [esp+3A8h] [ebp-668h] BYREF
   ((CCFileClass *)(v161))->Construct(v180);
-  if ( CCFileClass::Open(v161, 0) )
+  if ( CCFileClass::Open((int)(v161), 0) )
   {
     ((CCFileClass *)(v161))->Read(&stru_ABBED0, 768);
     v18 = (gamemd::CampaignScore *)(&stru_ABBED0);

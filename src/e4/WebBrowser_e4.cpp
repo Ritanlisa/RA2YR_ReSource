@@ -102,7 +102,7 @@ int WebBrowser::ShowDialog()
 
   v1 = (const char *)(this);
   v9 = (const char *)(this);
-  if ( !this || !strlen(this) ) /*0x773eaa*/
+  if ( !this || !strlen((const char *)(this)) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
   result = (HWND)CreateDialog(0x131u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
@@ -112,7 +112,7 @@ int WebBrowser::ShowDialog()
     dwNewLong = (LONG)((unsigned int *)(0));
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
     LOBYTE(v4) = 1; /*0x773ef5*/
-    SetDialogActiveFlag(v3, v4); /*0x773ef9*/
+    SetDialogActiveFlag((int)(v3), v4); /*0x773ef9*/
     Dialog::Show(v3); /*0x773f00*/
     GetClientRect(v3, &Rect); /*0x773f0b*/
     v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
@@ -132,7 +132,7 @@ int WebBrowser::ShowDialog()
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
       *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
-      if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
+      if ( CoCreateInstance((const IID &)(&stru_7F7C60), 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
         Debug::Log(g_Str_Starting_up_WOLBrowser); /*0x773fd4*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/
@@ -178,11 +178,11 @@ int WebBrowser::GoForward()
     (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
       this->WebBrowser_field_0x8,
       this);
-    (*(void (**)(void *))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
+    (*(void ((void *)(**))(void *))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
   }
   WebBrowser_field_0x8 = (void *)(this->WebBrowser_field_0x8);
   if ( WebBrowser_field_0x8 ) /*0x7740e2*/
-    (*(void (**)(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
+    (*(void ((void *)(**))(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/
@@ -206,7 +206,7 @@ bool WebBrowser::OpenURL(void *a1_1)
 
   if ( !this ) /*0x55163d*/
     return 0; /*0x55163d*/
-  if ( !strlen(this) ) /*0x55164a*/
+  if ( !strlen((const char *)(this)) ) /*0x55164a*/
     return 0; /*0x55164a*/
   GetWindowsDirectoryA(Buffer, 0x104u); /*0x551662*/
   GetTempFileNameA(Buffer, PrefixString, 0, TempFileName); /*0x55167c*/

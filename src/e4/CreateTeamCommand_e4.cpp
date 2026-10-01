@@ -41,7 +41,7 @@ namespace gamemd {
 int CreateTeamCommand::vt02()
 {
 
-  return (*(int (**)(CommandClass *))(*(unsigned int *)this + 16))(this);
+  return (*(int ((gamemd::CommandClass *)(**))(CommandClass *))(*(unsigned int *)this + 16))(this);
 
 }
 // 0x537350
@@ -59,11 +59,11 @@ unsigned int * CreateTeamCommand::performAction_148()
   v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].nextArrayIndex) << 8) + 128; /*0x53737d*/
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53739d*/
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x5373a6*/
   result = (unsigned int *)dword_880990; /*0x5373ab*/
   if ( dword_880990 ) /*0x5373b2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5373c3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5373c3*/
   return result; /*0x5373c8*/
 
 }
@@ -83,11 +83,11 @@ unsigned int * CreateTeamCommand::performAction_153()
   v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].referenceCount) << 8) + 128; /*0x53746d*/
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53748d*/
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537496*/
   result = (unsigned int *)dword_880990; /*0x53749b*/
   if ( dword_880990 ) /*0x5374a2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5374b3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5374b3*/
   return result; /*0x5374b8*/
 
 }
@@ -107,11 +107,11 @@ unsigned int * CreateTeamCommand::performAction_158()
   v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53757d*/
   ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537586*/
   result = (unsigned int *)dword_880990; /*0x53758b*/
   if ( dword_880990 ) /*0x537592*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5375a3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3), &word_A8F2F8); /*0x5375a3*/
   return result; /*0x5375a8*/
 
 }

@@ -73,8 +73,8 @@ int sub_679CC0()
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
     v1[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679d14*/
-    CCFileClass::Construct(v7, g_Str_File_CoopCampMD_ini); /*0x679d1c*/
-    if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
+    CCFileClass::Construct(v7,(void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
+    if ( CCINIClass::Load((int)(v1), (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679d51*/
@@ -107,7 +107,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2), a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -345,7 +345,7 @@ int ArtINI_Load()
 
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
   ((CCFileClass *)(v1))->Construct(aArtmdIni); /*0x679efa*/
-  CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
+  CCINIClass::Load((int)(&dword_887180), (int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   ((Vector *)((int)v2))->Clear(); /*0x679f26*/
@@ -361,7 +361,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
@@ -375,7 +375,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1), a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
 // 0x41cef0
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else

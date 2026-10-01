@@ -283,7 +283,7 @@ char Vector::Grow()
     qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  __3_YAXPAX_Z(this->Vector_field_0x8); /*0x7aef39*/
+  __3_YAXPAX_Z((void *)(this->Vector_field_0x8)); /*0x7aef39*/
   this->Vector_field_0x4 = (unsigned int)((void *)v4); /*0x7aef41*/
   this->Vector_field_0x8 = (unsigned int)(v5); /*0x7aef44*/
   return 1; /*0x7aeecf*/

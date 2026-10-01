@@ -345,7 +345,7 @@ LABEL_139:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(&v59, this->TEventClass_field_34));
+            WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords((unsigned int *)(&v59), this->TEventClass_field_34));
             v33 = *WorldCoords; /*0x71ede0*/
             v34 = WorldCoords[1]; /*0x71ede6*/
             v35 = WorldCoords[2]; /*0x71edeb*/

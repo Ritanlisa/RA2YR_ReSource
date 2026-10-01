@@ -127,7 +127,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   v19 = a3[2]; /*0x540421*/
   if ( aP4 ) /*0x540425*/
   {
-    ((Network *)((Network *)a3))->CopyAddress(&v15, (int)v17); /*0x540431*/
+    ((Network *)((Network *)a3))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x540431*/
     v15 = (int)(*aP4); /*0x540442*/
     NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
@@ -313,7 +313,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
 
-  return ConnectionClass::sendAck((int)this, a1, aP2, aP3, aP4); /*0x540629*/
+  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this), a1, aP2, aP3, aP4); /*0x540629*/
 
 }
 } // namespace gamemd

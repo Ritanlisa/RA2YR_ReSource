@@ -222,7 +222,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   StringCSF = (unsigned int)(GetStringCSF(aGuiTooltip, 0, g_Str_File_ownrdraw_cpp, 7457));
   swprintf(word_AC1CCC, (const size_t)StringCSF, v8); /*0x6108e5*/
   if ( a2 ) /*0x6108ef*/
-    wcscpy(word_AC1CCC, a2); /*0x6108f7*/
+    wcscpy((wchar_t *)(word_AC1CCC), a2); /*0x6108f7*/
   *(unsigned long long *)&dword_AC1CB8 = *(unsigned long long *)a1; /*0x610901*/
   DWORD2(dword_AC1CB8) = *(unsigned int *)(a1 + 8); /*0x610917*/
   v6 = *(unsigned int *)(a1 + 12); /*0x61091c*/
@@ -345,7 +345,7 @@ void sub_612930()
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
       stru_AC1858 = RA2_OPNEW(4 * (v0 >> 1)); /*0x6129d9*/
-      memset(stru_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
+      memset((void *)(stru_AC1858), 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
         v7 = v5; /*0x6129e5*/

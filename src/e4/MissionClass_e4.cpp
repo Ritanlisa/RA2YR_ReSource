@@ -35,7 +35,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v3 = g_Str__none_; /*0x5b3776*/
   else
     v3 = off_816CAC[(int)this->ObjectClass]; /*0x5b377d*/
-  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)v3) ) /*0x5b3787*/
+  if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), (uint8_t *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
   if ( this->ObjectClass == (void *)-1 ) /*0x5b379e*/
     v4 = g_Str__none_; /*0x5b37a0*/

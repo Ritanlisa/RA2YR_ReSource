@@ -116,7 +116,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 
   v2 = (AbstractClass *)a1; /*0x763c76*/
   v3 = a2; /*0x763c7b*/
-  result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x763c81*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), a2); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
   {
     if ( v2 ) /*0x763c92*/
@@ -294,7 +294,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int i; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x763da3*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x763da3*/
   if ( result >= 0 ) /*0x763daa*/
   {
     v4 = *a1; /*0x763daf*/
@@ -360,7 +360,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763e41*/
   v6 = (gamemd::WaypointPathClass *)(Block); /*0x763e56*/
-  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
+  v3 = (*(int ((int *)(**))(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
   {
     do /*0x763e8d*/

@@ -62,7 +62,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   char v22; // [esp+31h] [ebp-5h]
   int16_t v23[2]; // [esp+32h] [ebp-4h] BYREF
 
-  for ( i = (unsigned int *)((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
+  for ( i = (unsigned int *)((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(&a2))->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
     if ( (*(uint8_t (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
@@ -81,8 +81,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   v22 = 0; /*0x718814*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278) /*0x71885d*/
-    && ((((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&a2)->flags & 0x100) != 0
-     || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&a2)->landType == 1) )
+    && ((((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(&a2))->flags & 0x100) != 0
+     || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(&a2))->landType == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
@@ -102,8 +102,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     || v6
     || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
     || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
-    || (((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&a2)->flags & 0x100) != 0
-    || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&a2)->landType == 1 )
+    || (((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(&a2))->flags & 0x100) != 0
+    || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell((unsigned int *)(&a2))->landType == 1 )
   {
     vtable3 = (int *)this->vtable3; /*0x718a01*/
     v23[0] = a2 / 256; /*0x718a14*/

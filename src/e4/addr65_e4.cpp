@@ -89,13 +89,13 @@ int Trigger_AllocateLog(int a1)
           int v7 = *(unsigned int *)(Game_PlayerInfoArray + 4 * i);
           if ( *(unsigned int *)(v7 + 111) == v4 )
           {
-            char * v8 = ToWideStringChar((char *)v7);
+            char * v8 = ToWideStringChar((gamemd::IUnknown *)((char *)v7));
             strncpy((char *)v5, v8, 0x14u);
           }
         }
         if ( !*(unsigned char *)v5
-          && (!_strcmpi((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36), g_INI_Key_Neutral)
-           || !_strcmpi((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36), g_INI_Key_Special)) )
+          && (!_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)), g_INI_Key_Neutral)
+           || !_strcmpi((const char *)((const void *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36)), g_INI_Key_Special)) )
         {
           strcpy((char *)v5, (const char *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 36));
           v3 = (int)v83;
@@ -585,7 +585,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
                   DSurface_Sidebar,
                   &v49,
                   0);
-    DrawToSurfaceSHP((int)DSurface_Sidebar, v5, dword_B04A38, 0x20u, &v43, v6, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
+    DrawToSurfaceSHP((int)DSurface_Sidebar, v5,(gamemd::ConvertClass *)(dword_B04A38), 0x20u, &v43, v6, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
     v7 = v4[1149] + 2; /*0x65401c*/
     v43 = v4[1148]; /*0x65401f*/
     v44 = v7; /*0x654031*/
@@ -1128,7 +1128,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   *((unsigned char *)this + 28) = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
-    __3_YAXPAX_Z(this->RAMFileClass_field_0x8); /*0x65c5b8*/
+    __3_YAXPAX_Z((void *)(this->RAMFileClass_field_0x8)); /*0x65c5b8*/
     this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
     *((unsigned char *)this + 29) = 0; /*0x65c5c7*/
   }
@@ -2492,7 +2492,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
 }
 // 0x65FA70
 namespace gamemd {
-void CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
+int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
 {
   double v3; // st7
   int v4; // edi

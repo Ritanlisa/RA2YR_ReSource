@@ -28,7 +28,7 @@ int String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
 
   if ( aP1 ) /*0x49b76b*/
   {
-    v4 = ToWideStringChar(aP1); /*0x49b772*/
+    v4 = ToWideStringChar((IUnknown *)(aP1)); /*0x49b772*/
     result = strlen(v4) + 1; /*0x49b779*/
     qmemcpy(this, v4, result); /*0x49b788*/
   }
@@ -38,7 +38,7 @@ int String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
   }
   if ( aP2 ) /*0x49b79c*/
   {
-    v6 = ToWideStringChar(aP2); /*0x49b7a3*/
+    v6 = ToWideStringChar((IUnknown *)(aP2)); /*0x49b7a3*/
     result = strlen(v6) + 1; /*0x49b7ad*/
     qmemcpy((unsigned char *)this + 28, v6, result); /*0x49b7bc*/
   }
@@ -59,7 +59,7 @@ void * String::AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * a
   unsigned int v5; // edx
   char *v6; // edi
 
-  strncpy(Destination, aP1, 4u); /*0x4cb5ed*/
+  strncpy(Destination,(const char *)(aP1), 4u); /*0x4cb5ed*/
   *((unsigned short *)Destination + 2) = 2; /*0x4cb5f4*/
   *((unsigned short *)Destination + 3) = 1; /*0x4cb5fa*/
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
@@ -178,7 +178,7 @@ ControlClass * * String::To_Waypoint()
   int v2; // esi
 
   v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
+  if ( isalpha(*this) && (v2 = toupper((int)(*this)) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
     return toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
@@ -422,7 +422,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   v11 = (const char *)((unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0)));
   Stra = (char *)((unsigned int)(v10));
   if ( *aP3 ) /*0x7b5fc3*/
-    __3_YAXPAX_Z(*aP3); /*0x7b5fca*/
+    __3_YAXPAX_Z((void *)(*aP3)); /*0x7b5fca*/
   *(unsigned int *)aP3 = (unsigned int)((const char *)(0));
   if ( v11 ) /*0x7b5fda*/
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
@@ -447,7 +447,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   if ( v17 ) /*0x7b6061*/
     v18 = v17; /*0x7b6063*/
   if ( *aP3 ) /*0x7b6065*/
-    __3_YAXPAX_Z(*aP3); /*0x7b606c*/
+    __3_YAXPAX_Z((void *)(*aP3)); /*0x7b606c*/
   *(unsigned int *)aP3 = 0; /*0x7b6076*/
   if ( v18 ) /*0x7b607c*/
     v19 = strlen(v18) + 1; /*0x7b6085*/
@@ -638,7 +638,7 @@ namespace gamemd {
 char * String::CopyUpper(char * String, ObjectClass * aP1)
 {
 
-  strcpy(String, aP1); /*0x4f4c4e*/
+  strcpy(String,(const char *)(aP1)); /*0x4f4c4e*/
   _strupr(String); /*0x4f4c57*/
   return String; /*0x4f4c61*/
 
@@ -650,7 +650,7 @@ namespace gamemd {
 char * String::Copy(const char * a2, void *a2_2)
 {
 
-  strcpy(this, a2); /*0x4f4c8c*/
+  strcpy((char *)(this), a2); /*0x4f4c8c*/
   return this; /*0x4f4c97*/
 
 }
@@ -674,7 +674,7 @@ bool String::Equals(ObjectClass * aP1, void *a2_1)
 
   int result; // eax
 
-  result = strcmp(this, aP1); /*0x4f4cf0*/
+  result = strcmp((const char *)(this), aP1); /*0x4f4cf0*/
   if ( !result ) /*0x4f4d0a*/
     return 1; /*0x4f4d0c*/
   LOBYTE(result) = 0; /*0x4f4d29*/
@@ -726,9 +726,9 @@ char * String::Trim(void *a1_1)
       }
       while ( v2 ); /*0x727d0a*/
       if ( v3 != this ) /*0x727d0e*/
-        strcpy(this, v3); /*0x727d27*/
+        strcpy((char *)(this), v3); /*0x727d27*/
     }
-    for ( i = strlen(this) - 1; i >= 0; --i ) /*0x727d3f*/
+    for ( i = strlen((const char *)(this)) - 1; i >= 0; --i ) /*0x727d3f*/
     {
       if ( !*v3 ) /*0x727d41*/
         break; /*0x727d44*/
@@ -758,7 +758,7 @@ namespace gamemd {
 ObjectClass * String::CopyConstant(char * Destination)
 {
 
-  strncpy(Destination, g_Str_gsmallwoo, 0x20u); /*0x777b6b*/
+  strncpy(Destination,(const char *)(g_Str_gsmallwoo), 0x20u); /*0x777b6b*/
   return Destination; /*0x777b75*/
 
 }
@@ -1341,7 +1341,7 @@ char String::Assign_Bool(const char *a2)
 
 // 0x7B5B30
 namespace gamemd {
-void String::ToLower(void *a1_1)
+int String::ToLower(void *a1_1)
 {
 
   unsigned int i; // esi

@@ -273,10 +273,10 @@ int ProcessRandomMapCellAdjacency()
     v2 = (void *)((int)(((Cell *)((unsigned int *)i))->GetNeighbourContent(3u)));
     v3 = (int16_t *)((Cell *)((unsigned int *)i))->GetNeighbourContent(2u); /*0x5a1a37*/
     v4 = (int16_t *)((Cell *)((unsigned int *)i))->GetNeighbourContent(6u); /*0x5a1a44*/
-    AdjacencyFlags = (int)(Cell::GetAdjacencyFlags(i)); /*0x5a1a46*/
+    AdjacencyFlags = (int)(Cell::GetAdjacencyFlags((gamemd::MouseClass *)(i))); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
-      if ( Cell::GetAdjacencyFlags((int)v2) != (_T)(131) || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
+      if ( Cell::GetAdjacencyFlags((gamemd::MouseClass *)((int)v2)) != (_T)(131) || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
         goto LABEL_32; /*0x5a1a6e*/
       do /*0x5a1aa3*/
       {
@@ -298,7 +298,7 @@ int ProcessRandomMapCellAdjacency()
     }
     else if ( AdjacencyFlags == 56 )
     {
-      if ( Cell::GetAdjacencyFlags((int)v2) != (_T)(56) || !Cell::IsEmpty(v4) ) /*0x5a1b1f*/
+      if ( Cell::GetAdjacencyFlags((gamemd::MouseClass *)((int)v2)) != (_T)(56) || !Cell::IsEmpty(v4) ) /*0x5a1b1f*/
         goto LABEL_32; /*0x5a1b1f*/
       do /*0x5a1b54*/
       {
@@ -321,8 +321,8 @@ int ProcessRandomMapCellAdjacency()
     else
     {
       if ( AdjacencyFlags != 224 /*0x5a1bea*/
-        || Cell::GetAdjacencyFlags((int)NeighbourContent) != (_T)(224)
-        || Cell::GetAdjacencyFlags((int)v14) != (_T)(224)
+        || Cell::GetAdjacencyFlags((gamemd::MouseClass *)((int)NeighbourContent)) != (_T)(224)
+        || Cell::GetAdjacencyFlags((gamemd::MouseClass *)((int)v14)) != (_T)(224)
         || !Cell::IsEmpty((unsigned int *)i) )
       {
         goto LABEL_32; /*0x5a1bea*/
@@ -1425,7 +1425,7 @@ LABEL_6:
 }
 // 0x5A6C10
 namespace gamemd {
-void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, int a4)
+int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
 {
   unsigned int *v4; // ebp
   int result; // eax
@@ -1505,7 +1505,7 @@ void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, in
 }
 // 0x5A6D80
 namespace gamemd {
-unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, MapSeedClass * aP2, int a4)
+unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapSeedClass * aP2, int a4)
 {
   int v4; // ecx
   int v5; // ebp
@@ -1638,7 +1638,7 @@ unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, Map
 }
 // 0x5A7070
 namespace gamemd {
-unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass * aP2, int a4)
+unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass * aP2, int a4)
 {
   int v4; // ebp
   int v5; // esi
@@ -1741,7 +1741,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass 
 }
 // 0x5A7250
 namespace gamemd {
-void IsAreaClearMap(MapClass * aP0, char a2, char a3)
+int IsAreaClearMap(MapClass * aP0, char a2, char a3)
 {
   int result; // eax
   int v5; // esi
@@ -4404,7 +4404,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
 }
 // 0x5AF980
 namespace gamemd {
-void * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
+float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
 {
   float *result; // eax
   double v4; // st7
@@ -4568,7 +4568,7 @@ double sub_5A5AE0(short * a1, short * a2)
 
 // 0x5A7640
 namespace gamemd {
-unsigned int * globalHelper_0A7640(unsigned int * a0, MapSeedClass * aP1)
+unsigned int * globalHelper_0A7640(unsigned int *a0, int aP1)
 {
   int16_t v2; // ax
   int16_t v3; // di

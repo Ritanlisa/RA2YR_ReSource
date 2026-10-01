@@ -70,7 +70,7 @@ int Warhead::RemoveFromDamageList(int a2)
   int v8; // edx
 
   v2 = (gamemd::Warhead *)((unsigned int *)this + 1644);
-  v3 = (*(int (**)(Warhead *, int *))(*((unsigned int *)this + 411) + 16))((unsigned int *)this + 1644, &a2); /*0x452834*/
+  v3 = (*(int ((gamemd::Warhead *)(**))(Warhead *, int *))(*((unsigned int *)this + 411) + 16))((unsigned int *)this + 1644, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     v4 = *(unsigned int *)&v2[16]; /*0x45283c*/

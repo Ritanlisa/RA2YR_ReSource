@@ -131,7 +131,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         {
           v6 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f0250*/
           MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v6, 0); /*0x5f0273*/
-          MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5f027f*/
+          MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f027f*/
         }
         v7 = 0; /*0x5f028b*/
         if ( dword_A8DA84 > 0 ) /*0x5f028f*/
@@ -142,7 +142,7 @@ char HandlePlayerDisconnection(int a1, int a2)
               goto LABEL_20; /*0x5f02ba*/
           }
           RA2_OPDEL(*(void **)(dword_A8DA78 + 4 * v7)); /*0x5f02c7*/
-          v8 = (*(int (**)(int *, int))(stru_A8DA74 + 16))(&stru_A8DA74, dword_A8DA78 + 4 * v7); /*0x5f02e3*/
+          v8 = (*(int ((int *)(**))(int *, int))(stru_A8DA74 + 16))(&stru_A8DA74, dword_A8DA78 + 4 * v7); /*0x5f02e3*/
           if ( v8 != -1 && v8 < dword_A8DA84 && v8 < --dword_A8DA84 ) /*0x5f02fe*/
           {
             do /*0x5f0316*/
@@ -162,7 +162,7 @@ char HandlePlayerDisconnection(int a1, int a2)
           swprintf(String, (const size_t)&off_8240B4, v9); /*0x5f0352*/
           v10 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f036e*/
           MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v10, 0); /*0x5f0391*/
-          return MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5f039d*/
+          return MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f039d*/
         }
       }
     }
@@ -204,7 +204,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     ((Debug *)0)->Log();
   v6 = (gamemd::AbstractClass **)((int)((char)((gamemd::AbstractClass **)(1))));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
-  v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589)));
+  v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589)));
   MessageBox = (gamemd::AbstractClass **)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag));
   v21 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(MessageBox)));
   if ( !MessageBox ) /*0x5f2d6d*/
@@ -250,8 +250,8 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       WinModemClass::WriteSerial((int *)v14, &Buffer, 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
     }
-    _strupr(Source); /*0x5f2e06*/
-    if ( strlen(Source) ) /*0x5f2e0f*/
+    _strupr((char *)(Source)); /*0x5f2e06*/
+    if ( strlen((const char *)(Source)) ) /*0x5f2e0f*/
             ((Debug *)0)->Log();
     if ( !strncmp(Source, aRing, 4u) ) /*0x5f2e3c*/
     {
@@ -266,8 +266,8 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     }
     if ( strstr(Source, aConnect) ) /*0x5f2ebe*/
     {
-      memset(byte_AC1288, 0, 0x50u); /*0x5f2ed8*/
-      strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2ee4*/
+      memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2ed8*/
+      strncpy((char *)(byte_AC1288), Source, 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
             ((Debug *)0)->Log();
     }
@@ -288,7 +288,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       v3 = 3; /*0x5f2f83*/
             ((Debug *)0)->Log();
       v21 = (wchar_t *)((HWND)asc_82083C);
-      v16 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1671));
+      v16 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1671));
       v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
@@ -308,11 +308,11 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   if ( (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 ) /*0x5f3009*/
   {
         ((Debug *)0)->Log();
-    if ( strlen(Source) ) /*0x5f3041*/
+    if ( strlen((const char *)(Source)) ) /*0x5f3041*/
             ((Debug *)0)->Log();
     v21 = (wchar_t *)((HWND)asc_82083C);
-    v17 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1687));
-    v13 = (int *)GetStringCSF(g_Str_TXT_ERROR_TIMEOUT, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
+    v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1687));
+    v13 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_ERROR_TIMEOUT), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
         ((Debug *)0)->Log();
     v3 = 5; /*0x5f30b4*/
@@ -453,7 +453,7 @@ char sub_5FBEF0()
 }
 // 0x5FDD20
 namespace gamemd {
-void FindBuildingByTiberiumType(IUnknown * aP0)
+int FindBuildingByTiberiumType(int aP0)
 {
   int v1; // eax
   int v2; // ebx
@@ -1432,7 +1432,7 @@ void nullsub_207()
 
 // 0x5F96B0
 namespace gamemd {
-void TheaterObjectTypeClassSpecificID(char * a1, int a2)
+int TheaterObjectTypeClassSpecificID(char *a1, int a2)
 {
   int result; // eax
   char v3; // bl

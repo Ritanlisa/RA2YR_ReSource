@@ -172,7 +172,7 @@ void * sub_6D0F10()
   do /*0x6d0f5a*/
   {
     sprintf(Buffer, "Button%02d.SHP", v0); /*0x6d0f2f*/
-    result = LoadFileSHP(Buffer, &v4); /*0x6d0f3f*/
+    result = LoadFileSHP((gamemd::ConvertClass *)(Buffer), &v4); /*0x6d0f3f*/
     v3 = v4; /*0x6d0f44*/
     *(unsigned int *)(v1) = (int)result; /*0x6d0f48*/
     ((unsigned int *)(byte_B0CBDC))[v0] = v3; /*0x6d0f4a*/
@@ -206,7 +206,7 @@ char E4Recv_6D1570::sub_6D1570()
   int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-  result = (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B0CC40); /*0x6d157a*/
+  result = (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B0CC40); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
     v2[2] = stru_B0CC40.Height; /*0x6d1597*/
@@ -481,7 +481,7 @@ void E4Recv_6D1E80::sub_6D1E80()
 
 // 0x6D20E0
 namespace gamemd {
-long long ZCoordToScreenY(IUnknown * aP0)
+int ZCoordToScreenY(int aP0)
 {
   int result; // eax
 
@@ -537,7 +537,7 @@ long long sub_6D6A90(unsigned int * a1)
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
 // 0x47b3a0
-  return Isometric::InitTables((int)v1, v4); /*0x6d6abc*/
+  return Isometric::InitTables((gamemd::IUnknown *)((int)v1), v4); /*0x6d6abc*/
 }
 } // namespace gamemd
 
@@ -553,7 +553,7 @@ int * sub_6D84D0(int * a1, int * a2)
   v2 = a2[1]; /*0x6d84da*/
   v5 = *a2; /*0x6d84dd*/
   v6 = v2; /*0x6d84e6*/
-  if ( !ClampCoordMap(&v5) || byte_A8ED6B ) /*0x6d84fa*/
+  if ( !ClampCoordMap((gamemd::AbstractClass *)(&v5)) || byte_A8ED6B ) /*0x6d84fa*/
   {
     *a1 = *a2; /*0x6d851a*/
     a1[1] = a2[1]; /*0x6d851f*/

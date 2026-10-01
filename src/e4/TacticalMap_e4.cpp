@@ -390,7 +390,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v34[1] = v9[1]; /*0x6d2c21*/
           v34[2] = v9[2]; /*0x6d2c28*/
           v34[3] = v9[3]; /*0x6d2c37*/
-          v10 = (int *)(ClipRectIntersection(v36, v34, &v30, 0, 0)); /*0x6d2c40*/
+          v10 = (int *)(ClipRectIntersection((RectangleStruct *)(v36), v34, &v30, 0, 0)); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
           v31 = v10[1]; /*0x6d2c50*/
           v32 = v10[2]; /*0x6d2c57*/
@@ -441,7 +441,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       v25 = *Coords; /*0x6d2d3b*/
       v26 = (void *)Coords[1]; /*0x6d2d47*/
       v27 = 0; /*0x6d2d59*/
-      v20 = Coord::To_ScreenRaw(v29, &v25); /*0x6d2d61*/
+      v20 = Coord::To_ScreenRaw((gamemd::AbstractClass *)(v29), &v25); /*0x6d2d61*/
       v21 = v20[1] - *((unsigned int *)this + 45); /*0x6d2d81*/
       *(unsigned int *)v28.__pad_0 = *v20 - *((unsigned int *)this + 44) + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
       v28.Coord2D_field_0x04 = (int)DSurface_ViewBounds.field_4 + v21 - 15; /*0x6d2d9c*/

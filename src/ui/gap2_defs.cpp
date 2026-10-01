@@ -289,7 +289,7 @@ void* CheckListClass::QueryInterface(int a2) {
 // 0x4B4FB0
 namespace gamemd { 
 int DropListClass::SetFocus(void* a1) {
-  wcsncpy((wchar_t *)this->DropListClass_field_0x34, a1, this->DropListClass_field_0x38); /*0x4b4fc1*/
+  wcsncpy((wchar_t *)this->DropListClass_field_0x34,(const wchar_t *)(a1), this->DropListClass_field_0x38); /*0x4b4fc1*/
   (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b4fcd*/
   return (*(int (**)(char *, wchar_t *))(this->q02C + 136))((char *)this + 176, a1); /*0x4b4fe3*/
 }

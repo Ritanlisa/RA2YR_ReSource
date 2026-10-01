@@ -506,7 +506,7 @@ void RunNetworkGameLoop()
     v13 = (gamemd::IPXManagerClass *)(&unk_A8D812);
     v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0);
   }
-  IDA_LOWORD(dword_AFA400) = (unsigned short)(BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400); /*0x6483c1*/
+  IDA_LOWORD(dword_AFA400) = (unsigned short)(BuildNetworkEventPacket((int)v3, (int)v2,(int)(v1), (int)dword_A8B550, dword_AFA400) + dword_AFA400); /*0x6483c1*/
     TicksTimer = Timer::GetTicks();
   v22 = 15; /*0x6483d9*/
     v22 = ((Timer *)0)->GetTicks();
@@ -1546,7 +1546,7 @@ LABEL_116:
 
 // 0x649CA0
 namespace gamemd {
-AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
+int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
 {
   int v6; // ecx
   int v8; // ecx
@@ -4345,7 +4345,7 @@ void E4Recv_645CD0::sub_645CD0(float a2)
 
 // 0x645ED0
 namespace gamemd {
-float * QuaternionMathMultiply(ObjectClass * aP0, float * a1, float * a2)
+float * QuaternionMathMultiply(ObjectClass * aP0, float *a1, float *a2)
 {
   double v4; // st6
   double v5; // st7
@@ -4429,7 +4429,7 @@ unsigned int * sub_646040(ObjectClass * aP0, float * a1, float * a2)
 
 // 0x6460C0
 namespace gamemd {
-float * sub_6460C0(float * a0, ObjectClass * aP1)
+float * sub_6460C0(float *a0, ObjectClass * aP1)
 {
   float v3; // [esp+0h] [ebp-10h]
   float v4; // [esp+4h] [ebp-Ch]

@@ -87,7 +87,7 @@ unsigned int * Power::UpdateAll()
   v53 = 0; /*0x67c6f2*/
   v54 = 0; /*0x67c6fa*/
   v55 = 0; /*0x67c702*/
-  Power::ComputeHousePowerChecksum((int)dword_A8B230, (unsigned int *)&v53); /*0x67c70a*/
+  Power::ComputeHousePowerChecksum((unsigned int *)((int)dword_A8B230), (unsigned int *)&v53); /*0x67c70a*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))(*((unsigned int *)dword_A83C9C + i), &v53); /*0x67c72a*/
   for ( j = 0; j < ((char *)&stru_A80220); ++j ) /*0x67c740*/

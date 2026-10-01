@@ -157,7 +157,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
 }
 // 0x5B40B0
 namespace gamemd {
-AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
+AbstractClass * * SearchMIXFile(char *Source, char aP1)
 {
   int v3; // edi
   unsigned int v4;
@@ -213,7 +213,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     {
       if ( *((unsigned int *)dword_ABF00C + 2) < v3 ) /*0x5b41d6*/
         v10 = (char *)dword_ABF00C + 4; /*0x5b41d8*/
-      InsertIntoHashTree(v8, v10); /*0x5b41dd*/
+      InsertIntoHashTree(v8,(unsigned int *)(v10)); /*0x5b41dd*/
     }
     else
     {
@@ -225,7 +225,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     {
       v12 = (gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
       if ( v12 ) /*0x5b421a*/
-        SHPFile = (gamemd::AbstractClass **)(LoadSHPFile(v12, Source)); /*0x5b4224*/
+        SHPFile = (gamemd::AbstractClass **)(LoadSHPFile((int)(v12), Source)); /*0x5b4224*/
       else
         SHPFile = 0; /*0x5b4228*/
     }
@@ -354,7 +354,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   int16_t v19; // [esp+130h] [ebp-204h]
   wchar_t lParam[256]; // [esp+134h] [ebp-200h] BYREF
 
-  result = (int)(BaseDialogProc(hWnd, a2, a3, a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4));
   if ( result ) /*0x5b4b3f*/
     return result; /*0x5b4b3f*/
   WindowLongA = GetWindowLongA(hWnd, 8); /*0x5b4b4f*/
@@ -397,12 +397,12 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
                     memset(v18, 0, sizeof(v18)); /*0x5b4ce5*/
                     v19 = 0; /*0x5b4ce7*/
                     v18[0] = 104; /*0x5b4cf3*/
-                    strcpy((char *)&v18[1], unk_A8B380); /*0x5b4d11*/
+                    strcpy((char *)&v18[1],(const char *)(unk_A8B380)); /*0x5b4d11*/
                     IDA_LOBYTE(v18[6]) = dword_A8B394; /*0x5b4d26*/
                     wcscpy((wchar_t *)((char *)&v18[6] + 1), lParam); /*0x5b4d2a*/
                     Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4d43*/
                     Stream::ReadPacket((int)&unk_A8EA70); /*0x5b4d4d*/
-                    v9 = (char *)(CharToWideString(unk_A8B380)); /*0x5b4d57*/
+                    v9 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5b4d57*/
                     UI_Setup((wchar_t *)v9, dword_A8B394, (int)lParam); /*0x5b4d6e*/
                     return 0; /*0x5b4d7f*/
                   }

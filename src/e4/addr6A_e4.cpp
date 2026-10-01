@@ -100,7 +100,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v8 = v14[18] - v12; /*0x6a6ba3*/
 LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    (*((void (**)(ObjectClass *, unsigned int))this->AbstractClass + 14))(this, 0); /*0x6a6c14*/
+    (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, unsigned int))this->AbstractClass + 14))(this, 0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
@@ -326,11 +326,11 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
       break;
   }
   v6 = v4 + 1; /*0x6adc92*/
-  ResourceIDCSF = GetResourceIDCSF((void *)(v4 + 1)); /*0x6adc9c*/
+  ResourceIDCSF = GetResourceIDCSF((int)((void *)(v4 + 1))); /*0x6adc9c*/
   v19 = ResourceIDCSF; /*0x6adca0*/
-  nIDDlgItema = GetResourceID2CSF((void *)v6); /*0x6adcab*/
-  hWnd = (HWND)GetResourceID3CSF((void *)v6); /*0x6adcb6*/
-  ResourceID4CSF = (HWND)GetResourceID4CSF((void *)v6); /*0x6adcc1*/
+  nIDDlgItema = GetResourceID2CSF((int)((void *)v6)); /*0x6adcab*/
+  hWnd = (HWND)GetResourceID3CSF((int)((void *)v6)); /*0x6adcb6*/
+  ResourceID4CSF = (HWND)GetResourceID4CSF((int)((void *)v6)); /*0x6adcc1*/
   if ( hDlg && dword_A8B23C ) /*0x6adcce*/
   {
     v8 = 1; /*0x6adcd2*/
@@ -342,7 +342,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     }
     for ( i = (char *)v8; (int)i < v9; ++i ) /*0x6adceb*/
     {
-      v11 = GetResourceID4CSF(i); /*0x6adcef*/
+      v11 = GetResourceID4CSF((int)(i)); /*0x6adcef*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6adcfe*/
         SetupLobbyPlayerSlots(hDlg, v11, 3); /*0x6add07*/
       else
@@ -440,7 +440,7 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
         SendDlgItemMessageA(hDlg, v4, 0x14Eu, v6, 0); /*0x6ae13c*/
       }
   LABEL_22:
-      SetupSkirmishSpawnLocationEntry(hDlg, v4); /*0x6ae146*/
+      SetupSkirmishSpawnLocationEntry((gamemd::SessionClass *)(hDlg), v4); /*0x6ae146*/
       if ( ++nIDDlgItem + 1 >= 8 ) /*0x6ae158*/
         break; /*0x6ae158*/
     }
@@ -481,10 +481,10 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
           nIDDlgItema = 1291; /*0x6ae17e*/
         }
         hWnda = (HWND)GetResourceIDHardcodedCSF(++v7); /*0x6ae1f4*/
-        ResourceID2CSF = (HWND)GetResourceID2CSF(v7); /*0x6ae1ff*/
-        ResourceIDCSF = (HWND)GetResourceIDCSF(v7); /*0x6ae20a*/
-        ResourceID3CSF = (HWND)GetResourceID3CSF(v7); /*0x6ae215*/
-        ResourceID4CSF = (HWND)GetResourceID4CSF(v7); /*0x6ae21e*/
+        ResourceID2CSF = (HWND)GetResourceID2CSF((int)(v7)); /*0x6ae1ff*/
+        ResourceIDCSF = (HWND)GetResourceIDCSF((int)(v7)); /*0x6ae20a*/
+        ResourceID3CSF = (HWND)GetResourceID3CSF((int)(v7)); /*0x6ae215*/
+        ResourceID4CSF = (HWND)GetResourceID4CSF((int)(v7)); /*0x6ae21e*/
         nIDDlgItemb = GetDlgItem(hDlg, nIDDlgItema); /*0x6ae22e*/
         hWndb = GetDlgItem(hDlg, (int)hWnda); /*0x6ae23a*/
         DlgItem = GetDlgItem(hDlg, (int)ResourceID2CSF); /*0x6ae242*/

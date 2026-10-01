@@ -510,7 +510,7 @@ void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     v15 = (unsigned char *)v6[6]; /*0x4a2c92*/
     v14 = (uint8_t *)v6[7]; /*0x4a2c93*/
     v16 = 0x10000; /*0x4a2c96*/
-    DecodeBlockLCW(v14, v13, v15, &v16, 0); /*0x4a2c9e*/
+    DecodeBlockLCW((gamemd::AbstractClass *)(v14), v13, v15, &v16, 0); /*0x4a2c9e*/
   }
   if ( a4 ) /*0x4a2cb7*/
     *a4 = Size; /*0x4a2cbd*/
@@ -589,7 +589,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
   int v9[5]; // [esp+64h] [ebp-14h] BYREF
 
   *aP1 = 0; /*0x4a38db*/
-  result = (void *)SearchMIXFile(aP0, 0); /*0x4a38de*/
+  result = (void *)SearchMIXFile((char *)(aP0), 0); /*0x4a38de*/
   if ( !result ) /*0x4a38e5*/
   {
     CCFileClass::Construct(&v8, aP0); /*0x4a38ed*/
@@ -1998,7 +1998,7 @@ void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
 }
 // 0x4A9770
 namespace gamemd {
-void RemoveTarget(IUnknown * aP0)
+int RemoveTarget(int aP0)
 {
   int result; // eax
   int v3; // eax

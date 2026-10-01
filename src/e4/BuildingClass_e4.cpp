@@ -73,7 +73,7 @@ void* BuildingClass::LoadFromStream()
 
   v1 = v33; /*0x453e25*/
   p_vtable1 = (void **)(&((unsigned int *)v33)[0]); /*0x453e2c*/
-  v33 = (BuildingClass *)(*((int (**)(void **))((unsigned int *)v33)[0] + 4))(&((unsigned int *)v33)[0]); /*0x453e3d*/
+  v33 = (BuildingClass *)(*((int ((void **)(**))(void **))((unsigned int *)v33)[0] + 4))(&((unsigned int *)v33)[0]); /*0x453e3d*/
   v3 = ((BuildingTypeClass *)(&g_BuildingLoadQueue_Array))->Dequeue((int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
@@ -97,7 +97,7 @@ void* BuildingClass::LoadFromStream()
     }
   }
   v9 = v34; /*0x453ead*/
-  result = BuildingClass::AllocAndCtor((int)v1, v34); /*0x453eb3*/
+  result = BuildingClass::AllocAndCtor((gamemd::BuildingClass *)((int)v1), v34); /*0x453eb3*/
   v32 = result; /*0x453eba*/
   if ( result >= 0 ) /*0x453ebe*/
   {
@@ -109,7 +109,7 @@ void* BuildingClass::LoadFromStream()
       goto LABEL_13; /*0x453eea*/
     if ( !((char *)&g_BuildingLoadQueue_Array) ) /*0x453eee*/
       vtable2 = 10; /*0x453ef0*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x453efb*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array,(void *)(vtable2)) ) /*0x453efb*/
     {
 LABEL_13:
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = v11; /*0x453f0f*/

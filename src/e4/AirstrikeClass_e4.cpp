@@ -72,7 +72,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 76) + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
-  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0, this); /*0x41d926*/
+  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0,(int)(this)); /*0x41d926*/
   *((unsigned int *)this + 11) = result; /*0x41d92d*/
   *((unsigned int *)this + 12) = result; /*0x41d930*/
   if ( result ) /*0x41d933*/
@@ -84,7 +84,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
       v18[0] = *v11; /*0x41d949*/
       v18[1] = v11[1]; /*0x41d956*/
       v18[2] = v11[2]; /*0x41d961*/
-      result      result = StartAudioControllerAt((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0]), (int)v18, 0); 
+      result      result = StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])), (int)v18, 0); 
     }
     *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/
@@ -442,7 +442,7 @@ namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); 
+  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); 
 
 }
 } // namespace gamemd

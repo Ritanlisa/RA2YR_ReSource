@@ -210,7 +210,7 @@ void sub_594190(int * a1, int a2)
 }
 // 0x594420
 namespace gamemd {
-void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
+void FloodFillRandomMapTerrain(int a1, int a2, int a3)
 {
   unsigned int *v4; // eax
   unsigned int *v5; // ebx

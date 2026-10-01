@@ -72,7 +72,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source, void *a2, vo
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae71*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae77*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae7e*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x74ae85*/
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x74ae85*/
   ((unsigned int *)this)[0] = 0; /*0x74ae8c*/
   ((unsigned int *)this)[0] = 1; /*0x74ae92*/
   ((unsigned int *)this)[0] = 1; /*0x74ae98*/

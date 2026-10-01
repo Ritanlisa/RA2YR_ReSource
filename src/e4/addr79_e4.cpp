@@ -53,7 +53,7 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       case 0x111u: /*0x792d68*/
         if ( (uint16_t)a3 == 1421 ) /*0x792e0f*/
         {
-          SetEvent(Handles); /*0x792e2b*/
+          SetEvent((void *)(Handles)); /*0x792e2b*/
           CloseDialog(hWnd, 1); /*0x792e3a*/
         }
         else if ( (uint16_t)a3 == 1422 ) /*0x792e12*/
@@ -236,7 +236,7 @@ AbstractClass * * HandleWOLForwardingError()
       {
         while ( 1 ) /*0x793509*/
         {
-          v5 = ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v4]); /*0x793509*/
+          v5 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v4])); /*0x793509*/
           if ( !_strcmpi(v5, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x79350f*/
             break; /*0x79350f*/
           if ( ++v4 >= dword_A8DA84 ) /*0x793523*/
@@ -255,17 +255,17 @@ AbstractClass * * HandleWOLForwardingError()
         {
           case 0: /*0x79354a*/
             v6 = 1; /*0x793557*/
-            ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79355c*/
+            ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x79355c*/
                         ((Debug *)0)->Log();
             v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
-            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840));
+            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)aTxtTalkReporte, 0,(const char *)(g_Str_File_wonline_cpp), 18840));
             goto LABEL_19; /*0x793589*/
           case 1: /*0x79354a*/
             v6 = 1; /*0x793591*/
-            ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x793596*/
+            ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x793596*/
                         ((Debug *)0)->Log();
             v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
-            StringCSF = (wchar_t *)(GetStringCSF(aTxtTalkLocalPr, 0, g_Str_File_wonline_cpp, 18850));
+            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkLocalPr), 0, g_Str_File_wonline_cpp, 18850));
   LABEL_19:
             swprintf(Buffer, (const size_t)StringCSF, v11); /*0x7935c8*/
             Dialog::ShowMessage(-1, (size_t)Buffer); /*0x7935df*/
@@ -275,15 +275,15 @@ AbstractClass * * HandleWOLForwardingError()
             if ( v7 == v3 ) /*0x7935f0*/
             {
                             ((Debug *)0)->Log();
-              v12 = (wchar_t *)(GetStringCSF(aTxtTalkForward, 0, g_Str_File_wonline_cpp, 18861));
+              v12 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward), 0, g_Str_File_wonline_cpp, 18861));
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
             {
-              ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79362a*/
+              ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x79362a*/
                             ((Debug *)0)->Log();
               v13 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
-              v9 = (wchar_t *)(GetStringCSF(aTxtTalkForward_0, 0, g_Str_File_wonline_cpp, 18864));
+              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward_0), 0, g_Str_File_wonline_cpp, 18864));
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
               Dialog::ShowMessage(-1, (size_t)Buffer); /*0x793674*/
             }
@@ -450,8 +450,8 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   do /*0x793dd5*/
   {
     v5 = (char *)dword_A8DA90[v3]; /*0x793da3*/
-    v6 = ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v4]); /*0x793db4*/
-    v7 = ToWideStringChar(v5); /*0x793db6*/
+    v6 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v4])); /*0x793db4*/
+    v7 = ToWideStringChar((IUnknown *)(v5)); /*0x793db6*/
     if ( !_strcmpi(v6, v7) ) /*0x793dbd*/
       v62 = v4; /*0x793dc9*/
     ++v4; /*0x793dd2*/
@@ -460,7 +460,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   if ( v62 == -1 ) /*0x793ddc*/
   {
   LABEL_6:
-    strcpy(&((unsigned int *)(v91.__pad_0))[12], "Z10"); /*0x793de5*/
+    strcpy((char *)(&((unsigned int *)(v91.__pad_0))[12]), "Z10"); /*0x793de5*/
         ((Debug *)0)->Log();
     (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, &((unsigned int *)(v91.__pad_0))[12]); /*0x793e23*/
         ((Debug *)0)->Log();
@@ -532,7 +532,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         {
           while ( 1 ) /*0x79400a*/
           {
-            v21 = ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v20]); /*0x79400a*/
+            v21 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v20])); /*0x79400a*/
             v22 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x79400c*/
             if ( !_strcmpi(v21, v22) ) /*0x794013*/
               break; /*0x794013*/
@@ -628,7 +628,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     {
       ((Debug *)0)->Log(); /*0x79420e*/
       *(&dword_A8E2B2 + v12) = (unsigned int)(dword_A8E050[v3]); /*0x79421e*/
-      Network::SetPort((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40), dword_A8E050[v3]); /*0x79423b*/
+      Network::SetPort((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40)), dword_A8E050[v3]); /*0x79423b*/
       Network::SetPort((Network *)(dword_A8DA90[v3] + 40), dword_A8E050[v3]); /*0x794253*/
       memset(v98, 0, sizeof(v98)); /*0x794266*/
       v99 = 0; /*0x794268*/
@@ -6554,7 +6554,7 @@ Coord * * WOL_JoinLobby()
 }
 // 0x792BE0
 namespace gamemd {
-char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
+char ShowUIMessage(int a1, wchar_t **a2, char a3)
 {
   DLGTEMPLATE *DialogIndirect; // esi
   HWND DlgItem; // edi

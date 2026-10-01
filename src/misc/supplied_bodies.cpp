@@ -313,7 +313,7 @@ unsigned int * AudioFileClass::Release() {
             if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405c69*/
             {
               if ( (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 2) != 0 ) /*0x405c6f*/
-                Voice::Stop(v6); /*0x405c71*/
+                Voice::Stop((int32_t)(v6)); /*0x405c71*/
               AudioStream::ReleaseChannel(*(AudioStream **)(*(unsigned int *)&v2 + 176)); /*0x405c7c*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 192) = 0; /*0x405c87*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 188) = 0; /*0x405c93*/

@@ -236,7 +236,7 @@ int E4Recv_490400::sub_490400()
   __3_YAXPAX_Z(v2); /*0x49042c*/
   *((unsigned int *)this + 94) = 0; /*0x490434*/
   v4 = (int)(this); /*0x49044d*/
-  result = (*(int (**)(int *, int *))(dword_89ECF8 + 16))(&dword_89ECF8, &v4); /*0x490451*/
+  result = (*(int ((int *)(**))(int *, int *))(dword_89ECF8 + 16))(&dword_89ECF8, &v4); /*0x490451*/
   if ( result != -1 && result < dword_89ED08 && result < --dword_89ED08 ) /*0x49046d*/
   {
     do /*0x490485*/
@@ -1742,7 +1742,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
 }
 // 0x49B7E0
 namespace gamemd {
-void FillScoreScreenStats(IUnknown * Destination, char a2)
+int FillScoreScreenStats(IUnknown * Destination, char a2)
 {
   int v2; // ebp
   int result; // eax

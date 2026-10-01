@@ -124,7 +124,7 @@ LABEL_19:
   }
   if ( v12 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle(v1); /*0x55e2d8*/
+    DDraw::WaitForIdle((gamemd::DDraw *)(v1)); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/

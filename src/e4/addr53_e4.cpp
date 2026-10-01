@@ -204,7 +204,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
           v8 = (unsigned int)(aGlssmdShp);
           if ( g_DisplayWidth != 640 ) /*0x531378*/
             v8 = (unsigned int)(aGlslmdShp); /*0x53137a*/
-          Block = (void *)SearchMIXFile(v8, 0); /*0x531386*/
+          Block = (void *)SearchMIXFile((char *)(v8), 0); /*0x531386*/
           v3 = (int16_t *)Block; /*0x53138a*/
         }
       }
@@ -224,10 +224,10 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v9 = v3[2]; /*0x5313cf*/
     v32[0] = (Rect.right - Rect.left - v3[1]) / 2; /*0x5313d5*/
     v32[1] = (Rect.bottom - Rect.top - v9) / 2; /*0x5313e5*/
-    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31, (int)v3, 0, v32, v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
+    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0, v32, v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
-  v10 = (int)(GetStringCSF(aTxtCopyright, (int)g_Str_File_Init_CPP, 4930));
-  v11 = (int)(TextRenderer::GetInstance(22));
+  v10 = (int)(GetStringCSF((wchar_t *)(aTxtCopyright), (int)g_Str_File_Init_CPP, 4930));
+  v11 = (int)(TextRenderer::GetInstance((void *)(22)));
   v29 = 0; /*0x53143e*/
   v30 = v37 - 40; /*0x531444*/
   if ( v11 ) /*0x53144d*/
@@ -235,8 +235,8 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v12 = (int)(Text::MeasureWidth(v10, 0, unsigned int a2));
     v29 = (int)(v36 - v12 - 10);
   }
-  TextRenderer::Printf((int)v32, v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
-  v13 = (int)(GetStringCSF(aGuiWwbrand, (int)g_Str_File_Init_CPP, 4941)); /*0x53149e*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
+  v13 = (int)(GetStringCSF((wchar_t *)(aGuiWwbrand), (int)g_Str_File_Init_CPP, 4941)); /*0x53149e*/
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
   {
@@ -244,19 +244,19 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v29 = (size_t)(v36 - v15 - 10);
     v30 += v11->q01C + 3; /*0x5314ca*/
   }
-  TextRenderer::Printf((int)v32, v13, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
-  v16 = (size_t)(GetStringCSF(aGuiLoadingex, (int)g_Str_File_Init_CPP, 4951)); /*0x531507*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v13, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
+  v16 = (size_t)(GetStringCSF((wchar_t *)(aGuiLoadingex), (int)g_Str_File_Init_CPP, 4951)); /*0x531507*/
   v29 = 10; /*0x53152c*/
   v30 = 10; /*0x531530*/
-  TextRenderer::Printf((int)v32, v16, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v16, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
   v17 = GetStringCSF(aGuiTrademarkto, (int)g_Str_File_Init_CPP, 4958); /*0x53154d*/
   v29 = 10; /*0x531556*/
   v30 = v37 - 40; /*0x531565*/
-  TextRenderer::Printf((int)v32, v17, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v24); /*0x531581*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v17, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v24); /*0x531581*/
   v18 = GetStringCSF(aGuiTrademarkbo, (int)g_Str_File_Init_CPP, 4965); /*0x53159a*/
   v29 = 10; /*0x53159f*/
   v30 += v11->q01C + 3; /*0x5315bb*/
-  TextRenderer::Printf((int)v32, v18, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v18, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
   Frame::Present(g_DSurface_Hidden, 10, (int)v4, v13, 0, v26, a3, a1); /*0x5315e4*/
     *(unsigned long long *)&dword_A8ED54[653] = v20 + 5000;
   if ( v4 ) /*0x531603*/
@@ -4068,7 +4068,7 @@ int sub_53AC80(int a1, int a2, int a3, int a4)
 
 // 0x53AD00
 namespace gamemd {
-int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
+int UpdateSurfaceAnimations(int a1, int aP1, int a3, int a4)
 {
   int i; // esi
   int j; // esi

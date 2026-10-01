@@ -13,7 +13,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !ppv ) /*0x55a9b6*/
     return -2147467261; /*0x55a9b8*/
   *ppv = 0; /*0x55a9d9*/
-  if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
+  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x55a9df*/
   {
     if ( this ) /*0x55a9e5*/
       v4 = &this->ILocomotion[4]; /*0x55a9e7*/
@@ -21,7 +21,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
       v4 = 0; /*0x55a9ec*/
     *ppv = v4; /*0x55a9ee*/
   }
-  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
+  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
     *ppv = this; /*0x55aa03*/
   if ( !memcmp(iid, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
   {
@@ -31,7 +31,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
       v5 = 0; /*0x55aa21*/
     *ppv = v5; /*0x55aa23*/
   }
-  if ( !memcmp(iid, &IID_IPersist, 0x10u) ) /*0x55aa33*/
+  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x55aa33*/
     *ppv = this; /*0x55aa3a*/
   if ( !*ppv ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/

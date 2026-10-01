@@ -92,12 +92,12 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   unsigned short v72[12]; // [esp+19Ch] [ebp-48h] BYREF
   unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
 
-  v13 = (void *)((int)((void *)((*(int (**)(unsigned char *))(*(unsigned int *)a1 + 108))(a1))));
+  v13 = (void *)((int)((void *)((*(int ((unsigned char *)(**))(unsigned char *))(*(unsigned int *)a1 + 108))(a1))));
   v14 = (void *)((int)((void *)(*((unsigned int *)a1 + 433))));
   v15 = (void *)((unsigned int)(v13));
   v61 = v13; /*0x73c60a*/
   v52 = 1; /*0x73c60e*/
-  if ( *(unsigned int *)((unsigned int)(v14)+ 3644) != 8 || (*(uint8_t (**)(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
+  if ( *(unsigned int *)((unsigned int)(v14)+ 3644) != 8 || (*(uint8_t ((unsigned char *)(**))(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
     v16 = 0; /*0x73c649*/
   else
     v16 = ((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue((unsigned (unsigned int)(short)*)a1 + 452, &v60) >> 12) + 1) >> 1) + 1) /*0x73c644*/
@@ -147,7 +147,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     if ( v23 ) /*0x73c751*/
       v64 = (void *)((unsigned int)(a3)- 14); /*0x73c756*/
     v24 = v15->nextArrayIndex; /*0x73c762*/
-    v25 = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
+    v25 = (*(int ((unsigned char *)(**))(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
       g_DSurface_Hidden_2,
       g_FileSystem_THEATER_PAL,
@@ -216,8 +216,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
         Matrix3x4::Translate(v70, v48, unsigned int a1); /*0x73c9d9*/
       }
-      v53 = (float)(*(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
-      v56 = *(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
+      v53 = (float)(*(unsigned int *)((*(int ((unsigned char *)(**))(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
+      v56 = *(unsigned int *)((*(int ((unsigned char *)(**))(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
       v67[2] = v53; /*0x73ca3c*/
       v67[1] = 0.0; /*0x73ca40*/
       IDA_HIDWORD(v58) = 0; /*0x73ca44*/
@@ -230,7 +230,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       Matrix3x3::Multiply(v71, (float *)&v54); /*0x73ca90*/
       v30 = *(unsigned int *)a1; /*0x73ca95*/
       qmemcpy(v72, (unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
-      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
+      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int ((unsigned char *)(**))(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
         v31 = (unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 7) + 1) >> 1)); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
@@ -296,7 +296,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         10240,
         0);
     }
-    Value = (unsigned int *)(((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v57));
+    Value = (unsigned int *)(((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue((unsigned int *)(&v57)));
     (*(void (**)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
       a1,
       v15,
@@ -336,7 +336,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
           0);
       }
     }
-    v41 = (*(int (**)(unsigned char *, int))(*(unsigned int *)a1 + 1124))(a1, a8); /*0x73cd86*/
+    v41 = (*(int ((unsigned char *)(**))(unsigned char *, int))(*(unsigned int *)a1 + 1124))(a1, a8); /*0x73cd86*/
     v60 = v60; /*0x73cd93*/
     (*(void (**)(unsigned char *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 + 1372))( /*0x73cddb*/
       a1,

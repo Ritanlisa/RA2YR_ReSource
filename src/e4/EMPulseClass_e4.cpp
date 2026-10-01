@@ -40,9 +40,9 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
   a3->EMPulseClass_field_0x0C = (int)&vt_EMPulseClass; /*0x4c5ad8*/
   if ( byte_A8E9A0 ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
-  AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)a3), 1); /*0x4c5af1*/
   v5 = a3; /*0x4c5b06*/
-  v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
+  v3 = (*(int ((int *)(**))(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
   if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
   {
     do /*0x4c5b3d*/
@@ -54,7 +54,7 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
   }
   AbstractClass::DTOR((AbstractClass *)a3); /*0x4c5b41*/
   if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
-    __3_YAXPAX_Z(a3); /*0x4c5b4e*/
+    __3_YAXPAX_Z((void *)(a3)); /*0x4c5b4e*/
   return (void **)a3; /*0x4c5b58*/
 
 }

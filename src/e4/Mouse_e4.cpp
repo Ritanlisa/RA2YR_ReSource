@@ -224,7 +224,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4, 
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
+      v12 = (unsigned int *)(*(int ((int *)(**))(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
     ((Vector *)((int)v21))->Clear(); /*0x7b951f*/

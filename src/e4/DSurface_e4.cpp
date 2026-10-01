@@ -128,12 +128,12 @@ AbstractClass * * DSurface::Destroy(void *a1)
       if ( g_DDraw_Clipper ) /*0x4ba6d0*/
       {
         (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 112))(v3, 0); /*0x4ba6d6*/
-        (*(void (**)(int))(*(unsigned int *)g_DDraw_Clipper + 8))(g_DDraw_Clipper); /*0x4ba6e1*/
+        (*(void ((int)(**))(int))(*(unsigned int *)g_DDraw_Clipper + 8))(g_DDraw_Clipper); /*0x4ba6e1*/
         g_DDraw_Clipper = 0; /*0x4ba6e4*/
       }
     }
   }
-  __3_YAXPAX_Z(this->DSurface_field_0x20); /*0x4ba6ee*/
+  __3_YAXPAX_Z((void *)(this->DSurface_field_0x20)); /*0x4ba6ee*/
   result = this->DSurface_field_0x1C[0]; /*0x4ba6f3*/
   this->DSurface_field_0x20 = 0; /*0x4ba6fb*/
   if ( result ) /*0x4ba6fe*/
@@ -257,7 +257,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     {
       v15 = *(unsigned int *)g_DDraw_Clipper; /*0x4ba983*/
       ActiveWindow = GetActiveWindow(); /*0x4ba985*/
-      if ( !(*(int (**)(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
+      if ( !(*(int ((int)(**))(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
         (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
     }
     qmemcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
@@ -380,7 +380,7 @@ LABEL_60:
     stru_820320.Rate = 1; /*0x4bac07*/
     goto LABEL_60; /*0x4bac07*/
   }
-  DDraw::LogError(v7, 1); /*0x4bac2f*/
+  DDraw::LogError(v7,(void *)(1)); /*0x4bac2f*/
   this->Debug::Log(); /*0x4bac3a*/
   if ( v5 ) /*0x4bac44*/
     (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x4bac4d*/
@@ -703,7 +703,7 @@ LABEL_71:
   v66 = v41; /*0x4bb4f7*/
   v64 = v35; /*0x4bb513*/
   v67 = v39; /*0x4bb51a*/
-  if ( (uint8_t)IntersectSurfaceRects(&v49, (int)&v64, &v56, (int)&v60) ) /*0x4bb521*/
+  if ( (uint8_t)IntersectSurfaceRects((gamemd::IUnknown *)(&v49), (int)&v64, &v56, (int)&v60) ) /*0x4bb521*/
   {
     v53[0] = v64 + v49; /*0x4bb544*/
     v53[1] = v65 + v50; /*0x4bb552*/
@@ -789,7 +789,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
         }
 LABEL_15:
         v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
-        v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
+        v9 = ClipRectIntersection((RectangleStruct *)(v31), (int *)a2, v8, 0, 0); /*0x4bb710*/
         v30[0] = *v9; /*0x4bb719*/
         v30[1] = v9[1]; /*0x4bb722*/
         v30[2] = v9[2]; /*0x4bb729*/
@@ -806,7 +806,7 @@ LABEL_15:
         v26 = v15; /*0x4bb751*/
         v27 = v16; /*0x4bb755*/
         v28 = v17; /*0x4bb762*/
-        v18 = ClipRectIntersection(v31, &v25, v30, 0, 0); /*0x4bb76b*/
+        v18 = ClipRectIntersection((RectangleStruct *)(v31), &v25, v30, 0, 0); /*0x4bb76b*/
         v19 = *v18; /*0x4bb76d*/
         v25 = *v18; /*0x4bb76f*/
         v20 = v18[1]; /*0x4bb773*/
@@ -892,7 +892,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
   if ( (int)aP0->DSurface_field_0x8 <= 0 || (int)aP0->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
   v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
-  v9 = ClipRectIntersection(v42, v8, (int *)aP0, 0, 0); /*0x4bb888*/
+  v9 = ClipRectIntersection((RectangleStruct *)(v42), v8, (int *)aP0, 0, 0); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
   v40 = v9[2]; /*0x4bb89f*/

@@ -209,7 +209,7 @@ LABEL_17:
   v7 = v3[2]; /*0x7ac912*/
   if ( v7 != (char **)1 ) /*0x7ac918*/
   {
-    result = ((int (*)(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
+    result = ((int ((unsigned int *)(*))(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
     if (!result || !v6 && result < 0, unsigned int a2) /*0x7ac931*/
       return result; /*0x7ac931*/
     goto LABEL_17; /*0x7ac931*/
@@ -250,7 +250,7 @@ AbstractClass * * ComStreamClass::readData()
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
     v6 = (void *)(4 * this->ComStreamClass_field_0x08); /*0x7ae118*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x7ae11f*/
-    memset(v5, 0, v6); /*0x7ae124*/
+    memset(v5, 0,(size_t)(v6)); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
     {
       v7 = (int *)(v3);
@@ -312,7 +312,7 @@ void ComStreamClass::flushStream()
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
     v6 = (void *)(4 * this->ComStreamClass_field_0x08); /*0x7aef94*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x7aef9b*/
-    memset(v5, 0, v6); /*0x7aefa0*/
+    memset(v5, 0,(size_t)(v6)); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
     {
       v7 = v3; /*0x7aefad*/

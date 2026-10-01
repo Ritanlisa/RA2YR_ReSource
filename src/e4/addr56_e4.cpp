@@ -41,7 +41,7 @@
 
 // 0x560BF0
 namespace gamemd {
-char ChangeVideoMode(ObjectClass * xRight, int yBottom)
+char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
 {
   uint64_t v2; // rdi
   char BitShift_Green; // bp
@@ -168,7 +168,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
         Debug::Log();
-    sub_491100(BitShift_Red, BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
+    sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
       MouseClass::CalcConfiningRect((MouseClass *)stru_887598.lineTrailer); /*0x5610dd*/
@@ -180,7 +180,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
         stru_887598.lineTrailer = ((MouseClass *)(v13))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x56107f*/
       else
         stru_887598.lineTrailer = 0; /*0x561086*/
-      v14 = (int)(SearchMIXFile(g_Str_File_MOUSE_SHA, 0)); /*0x561093*/
+      v14 = (int)(SearchMIXFile((char *)(g_Str_File_MOUSE_SHA), 0)); /*0x561093*/
       if ( v14 ) /*0x56109a*/
       {
         BitShift_Red = 0; /*0x56109f*/
@@ -204,7 +204,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
         for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)Dialog::FindByPtr(i) )
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
-      ResizeDialogAndEnum((HWND)i, (LPARAM)&lParam); /*0x561146*/
+      ResizeDialogAndEnum((HWND)i,(void *)((LPARAM)&lParam)); /*0x561146*/
     }
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561160*/
         Debug::Log();
@@ -242,7 +242,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     stru_887598.lineTrailer = ((MouseClass *)(v4))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
   else
     stru_887598.lineTrailer = 0; /*0x560d6e*/
-  v5 = (int)(SearchMIXFile(g_Str_File_MOUSE_SHA, 0)); /*0x560d7b*/
+  v5 = (int)(SearchMIXFile((char *)(g_Str_File_MOUSE_SHA), 0)); /*0x560d7b*/
   if ( v5 ) /*0x560d82*/
   {
     BitShift_Red = 0; /*0x560d88*/
@@ -282,7 +282,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   int wParama; // [esp+58h] [ebp+Ch]
   int v21; // [esp+5Ch] [ebp+10h]
 
-  result = (int)(BaseDialogProc(aP0, a2, wParam, a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(aP0), a2, wParam, a4));
   if ( result ) /*0x561423*/
     return result; /*0x561423*/
   WindowLongA = (unsigned int *)GetWindowLongA(aP0, 8); /*0x561439*/

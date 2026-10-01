@@ -78,16 +78,16 @@ char MouseClass::LoadCursors()
   if ( !byte_B0FBE0 ) /*0x72ddb7*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ddbd*/
-    dword_B0FAC4 = (unsigned int)(LoadFileSHP(off_844CD4, (bool *)&byte_B0FC95)); /*0x72dddd*/
-    dword_B0F9DC = (unsigned int)(LoadFileSHP(off_844CD8, (bool *)&byte_B0FC96)); /*0x72ddf2*/
-    dword_B0FAC0 = (unsigned int)(LoadFileSHP(off_844CDC, (bool *)&byte_B0FC97)); /*0x72de07*/
-    dword_B0FB50 = (unsigned int)(LoadFileSHP(off_844CE0, (bool *)&byte_B0FC98)); /*0x72de1c*/
-    dword_B0FA04 = (unsigned int)(LoadFileSHP(off_844CE4, (bool *)&byte_B0FC99)); /*0x72de31*/
-    dword_B0FAF8 = (unsigned int)(LoadFileSHP(off_844CE8, (bool *)&byte_B0FC9A)); /*0x72de46*/
-    dword_B0FA74 = (unsigned int)(LoadFileSHP(off_844CEC, (bool *)&byte_B0FC9B)); /*0x72de5b*/
-    dword_B0FA38 = (unsigned int)(LoadFileSHP(off_844CF0, (bool *)&byte_B0FC9C)); /*0x72de70*/
-    dword_B0FAE8 = (unsigned int)(LoadFileSHP(off_844CF4, (bool *)&byte_B0FC9D)); /*0x72de85*/
-    dword_B0FA54 = (unsigned int)(LoadFileSHP(off_844CF8, (bool *)&byte_B0FC9E)); /*0x72de9f*/
+    dword_B0FAC4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD4), (bool *)&byte_B0FC95)); /*0x72dddd*/
+    dword_B0F9DC = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD8), (bool *)&byte_B0FC96)); /*0x72ddf2*/
+    dword_B0FAC0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CDC), (bool *)&byte_B0FC97)); /*0x72de07*/
+    dword_B0FB50 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE0), (bool *)&byte_B0FC98)); /*0x72de1c*/
+    dword_B0FA04 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE4), (bool *)&byte_B0FC99)); /*0x72de31*/
+    dword_B0FAF8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE8), (bool *)&byte_B0FC9A)); /*0x72de46*/
+    dword_B0FA74 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CEC), (bool *)&byte_B0FC9B)); /*0x72de5b*/
+    dword_B0FA38 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF0), (bool *)&byte_B0FC9C)); /*0x72de70*/
+    dword_B0FAE8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF4), (bool *)&byte_B0FC9D)); /*0x72de85*/
+    dword_B0FA54 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF8), (bool *)&byte_B0FC9E)); /*0x72de9f*/
     LoadPaletteSimple(off_844BE4, &dword_B0FBC8, &dword_B0FBCC); /*0x72dea4*/
     LoadPaletteSimple(off_844BE8, &dword_B0FBD0, &dword_B0FBD4); /*0x72deb9*/
     LoadPaletteSimple(off_844BEC, &dword_B0FBD8, &dword_B0FBDC); /*0x72dece*/

@@ -203,7 +203,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   char v38; // [esp+2Ch] [ebp+10h]
 
   v33 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2));
-  v7 = (int)(TechnoTypeClass::GetByTypeAndIndex(a3, aP3));
+  v7 = (int)(TechnoTypeClass::GetByTypeAndIndex(a3,(int)(aP3)));
   v34 = v7; /*0x6a8451*/
   if ( !a3 ) /*0x6a8455*/
     return 1; /*0x6a8460*/
@@ -382,13 +382,13 @@ void RadarClass::Destru_vt50()
 
   if ( byte_B048F9 ) /*0x652d9a*/
   {
-    __3_YAXPAX_Z(dword_B048E0); /*0x652da2*/
+    __3_YAXPAX_Z((void *)(dword_B048E0)); /*0x652da2*/
     byte_B048F9 = 0; /*0x652daa*/
   }
   dword_B048E0 = 0; /*0x652db5*/
   if ( byte_B048F8 ) /*0x652dbd*/
   {
-    __3_YAXPAX_Z(dword_B048AC); /*0x652dc6*/
+    __3_YAXPAX_Z((void *)(dword_B048AC)); /*0x652dc6*/
     byte_B048F8 = 0; /*0x652dce*/
   }
   dword_B048AC = 0; /*0x652dd4*/

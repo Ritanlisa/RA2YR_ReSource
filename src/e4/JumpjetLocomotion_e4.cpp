@@ -361,7 +361,7 @@ void* JumpjetLocomotion::Land()
     v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(v50) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->__pad_48[12], v49); /*0x54cb39*/
   }
-  v10 = dword_ABC5DC + Cell::GetGroundHeight(&v51); /*0x54cb5e*/
+  v10 = dword_ABC5DC + Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x54cb5e*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v51)->flags[0] & 0x100) == 0 /*0x54cb7f*/
     || v3 < v10
     || (v45 = 1, v53 >= v10) )
@@ -410,7 +410,7 @@ void* JumpjetLocomotion::Land()
         v16 = *v13; /*0x54ccfd*/
         v56 = v15[2]; /*0x54cd02*/
         v17 = (*(int (**)(unsigned int *))(v16 + 136))(v13); /*0x54cd06*/
-        StartAudioControllerAt(*(unsigned int *)(v17 + 496), &v54, 0); /*0x54cd14*/
+        StartAudioControllerAt(*(unsigned int *)(v17 + 496),(unsigned int *)(&v54), 0); /*0x54cd14*/
         v18 = *(unsigned int *)this->__pad_C; /*0x54cd19*/
         v19 = *(unsigned int *)(v18 + 1064); /*0x54cd1e*/
         if ( v19 ) /*0x54cd26*/

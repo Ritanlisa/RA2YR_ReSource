@@ -53,7 +53,7 @@ v2 = (LPVOID)(ppv);
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
-    strcpy(&v7[36], a1); /*0x5e3892*/
+    strcpy(&v7[36],(const char *)(a1)); /*0x5e3892*/
     return (*(int (**, unsigned int a2, unsigned int a1)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
@@ -62,15 +62,15 @@ v2 = (LPVOID)(ppv);
     v9 = 0; /*0x5e38c8*/
     v10 = 0; /*0x5e38ca*/
     v8[0] = 24; /*0x5e38d5*/
-    strcpy((char *)&v8[1], unk_A8B380); /*0x5e38f6*/
-    strcpy((char *)&v8[11] + 3, a2); /*0x5e3915*/
+    strcpy((char *)&v8[1],(const char *)(unk_A8B380)); /*0x5e38f6*/
+    strcpy((char *)&v8[11] + 3,(const char *)(a2)); /*0x5e3915*/
     dword_A8D7F7 = ((Session *)(dword_A8B238))->GetPlayerColor(); /*0x5e392d*/
-    dword_A8D7FB = WideString::Hash(word_A8D610); /*0x5e3937*/
+    dword_A8D7FB = WideString::Hash((wchar_t *)(word_A8D610)); /*0x5e3937*/
     result = dword_A8DA84; /*0x5e393c*/
     for ( i = 1; i < dword_A8DA84; ++i ) /*0x5e3948*/
     {
-      v6 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * i)); /*0x5e3953*/
-      if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
+      v6 = ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * i))); /*0x5e3953*/
+      if ( !_strcmpi(v6,(const char *)(a1)) ) /*0x5e3959*/
       {
         this->Debug::Log(); /*0x5e3974*/
         Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
@@ -211,7 +211,7 @@ char sub_72BAC0()
   if ( !byte_B0FD51 ) /*0x72bac7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bad3*/
-      dword_B0FB2C = (unsigned int)(LoadFileSHP(off_844DBC, (bool *)&byte_B0FD50)); /*0x72bae5*/
+      dword_B0FB2C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DBC), (bool *)&byte_B0FD50)); /*0x72bae5*/
     result = LoadPaletteSimple(off_844DC0, &dword_B0FD54, &dword_B0FD58); /*0x72bafa*/
     byte_B0FD51 = 1; /*0x72baff*/
   }

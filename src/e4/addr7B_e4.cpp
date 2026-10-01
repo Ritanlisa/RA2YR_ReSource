@@ -627,7 +627,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   v16 = v15; /*0x7b61d9*/
   *v15 = 0; /*0x7b61e0*/
   if ( v13 ) /*0x7b61e4*/
-    strncpy(v15, v13, v14); /*0x7b61e9*/
+    strncpy(v15, v13,(size_t)(v14)); /*0x7b61e9*/
   v16[v14] = 0; /*0x7b61f1*/
   v17 = (const char *)(&g_INI_DefaultBuffer); /*0x7b61f5*/
   if ( v16 ) /*0x7b61fc*/
@@ -661,13 +661,13 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   char *Block; // [esp+10h] [ebp-4h]
 
   if ( aP1 ) /*0x7b63cb*/
-    v5 = strlen(aP1) + 1; /*0x7b63d4*/
+    v5 = strlen((const char *)(aP1)) + 1; /*0x7b63d4*/
   else
     v5 = 1; /*0x7b63da*/
   v6 = (char *)RA2_OPNEW(v5); /*0x7b63e5*/
   *v6 = 0; /*0x7b63ec*/
   if ( aP1 ) /*0x7b63ef*/
-    strcpy(v6, aP1); /*0x7b6407*/
+    strcpy(v6,(const char *)(aP1)); /*0x7b6407*/
   Block = 0; /*0x7b6412*/
   if ( v6 ) /*0x7b641a*/
   {
@@ -834,7 +834,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v17 = v16; /*0x7b7ce3*/
   *v16 = 0; /*0x7b7cea*/
   if ( v15 ) /*0x7b7cef*/
-    wcsncpy(v16, v15, v14); /*0x7b7cf4*/
+    wcsncpy(v16, v15,(size_t)(v14)); /*0x7b7cf4*/
   v17[v14] = 0; /*0x7b7cfc*/
   v18 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7d05*/
   if ( v17 ) /*0x7b7d0a*/
@@ -939,7 +939,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
 }
 // 0x7BBE20
 namespace gamemd {
-void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
+int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
 {
   int v5; // ecx
   int v6; // ecx
@@ -1028,7 +1028,7 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   }
   else
   {
-    v20 = ClipRectIntersection(v23, aP0, (int *)a2, 0, 0); /*0x7bbf71*/
+    v20 = ClipRectIntersection((RectangleStruct *)(v23), aP0, (int *)a2, 0, 0); /*0x7bbf71*/
     *aP0 = *v20; /*0x7bbf7e*/
     aP0[1] = v20[1]; /*0x7bbf83*/
     aP0[2] = v20[2]; /*0x7bbf89*/

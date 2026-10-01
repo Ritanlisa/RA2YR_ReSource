@@ -741,7 +741,7 @@ Coord * * Cell::IsValidDestination(short * a2)
       v16[2] = GroundHeight; /*0x4dcefa*/
       v16[0] = v7; /*0x4dcf0b*/
       v16[1] = (v6 << 8) + 128; /*0x4dcf15*/
-      if ( (uint8_t)Cell::IsPassable(v16) ) /*0x4dcf19*/
+      if ( (uint8_t)Cell::IsPassable((IUnknown *)(v16)) ) /*0x4dcf19*/
         return 0; /*0x4dcf19*/
     }
   }

@@ -209,22 +209,22 @@ char File::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   uint16_t v4; // ax
   int v5; // eax
 
-  v2 = ntohs(*(unsigned short *)this->__pad_6); /*0x4cb928*/
+  v2 = ntohs((void *)(*(unsigned short *)this->__pad_6)); /*0x4cb928*/
   v3 = *(unsigned short *)&this->File_field_0x2[2]; /*0x4cb92d*/
   *(unsigned short *)this->__pad_6 = v2; /*0x4cb931*/
-  v4 = ntohs(v3); /*0x4cb936*/
+  v4 = ntohs((void *)(v3)); /*0x4cb936*/
   *(unsigned short *)&this->File_field_0x2[2] = v4; /*0x4cb93b*/
   v5 = v4 - 3; /*0x4cb944*/
   switch ( v5 ) /*0x4cb94c*/
   {
     case 0: /*0x4cb94c*/
     case 1: /*0x4cb94c*/
-      LOWORD(v5) = ntohs(**(unsigned short **)&this->__pad_6[2]); /*0x4cb95a*/
+      LOWORD(v5) = ntohs((void *)(**(unsigned short **)&this->__pad_6[2])); /*0x4cb95a*/
       **(unsigned short **)&this->__pad_6[2] = v5; /*0x4cb963*/
       break; /*0x4cb966*/
     case 2: /*0x4cb94c*/
     case 3: /*0x4cb94c*/
-      v5 = ntohl(**(unsigned int **)&this->__pad_6[2]); /*0x4cb96d*/
+      v5 = ntohl((void *)(**(unsigned int **)&this->__pad_6[2])); /*0x4cb96d*/
       **(unsigned int **)&this->__pad_6[2] = v5; /*0x4cb975*/
       break; /*0x4cb975*/
     default:
@@ -357,11 +357,11 @@ File * * File::LoadPaletteData(unsigned short *aP1)
 
   v3 = (gamemd::File **)(*aP1);
   *(unsigned short *)this->__pad_0 = (unsigned short)(*aP1); /*0x625b05*/
-  *(unsigned short *)this->__pad_0 = ntohs(v3); /*0x625b11*/
+  *(unsigned short *)this->__pad_0 = ntohs((void *)(v3)); /*0x625b11*/
   v4 = (gamemd::u_short)(aP1[1]); /*0x625b17*/
   *(unsigned short *)this->File_field_0x2 = v4; /*0x625b1a*/
   v5 = (gamemd::u_short *)(aP1 + 2); /*0x625b1f*/
-  *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
+  *(unsigned short *)this->File_field_0x2 = ntohs((void *)(v4)); /*0x625b27*/
   v6 = *(unsigned short *)this->__pad_0; /*0x625b2d*/
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
@@ -375,11 +375,11 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
-    v11 = (uint16_t)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
+    v11 = (uint16_t)ntohs((void *)(*(unsigned short *)(v7 + 6))); /*0x625b78*/
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     *(unsigned int *)(v9 + 8) = (unsigned int)(v12); /*0x625b8a*/
     qmemcpy(v12, v10, v11); /*0x625b90*/
-    v13 = -(ntohs(*(unsigned short *)(v9 + 6)) & 3) & 3; /*0x625baf*/
+    v13 = -(ntohs((void *)(*(unsigned short *)(v9 + 6))) & 3) & 3; /*0x625baf*/
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/
     File::Dispatch((File *)v9); /*0x625bd0*/
@@ -455,7 +455,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 
   ((CCFileClass *)(&v23))->Construct(Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
-  if ( (uint8_t)CCFileClass::Open(&v23, 0) /*0x7349e5*/
+  if ( (uint8_t)CCFileClass::Open((int)(&v23), 0) /*0x7349e5*/
     && ((FileClass *)(&v23))->Load((const CHAR *)1)
     && ((CCFileClass *)(&v23))->Read(Buffer, 24) == 24 )
   {
@@ -483,7 +483,7 @@ LABEL_42:
       }
       v3 = (char *)dword_B1CF74; /*0x734a53*/
       byte_B1BF38[v2] = 0; /*0x734a59*/
-      strcpy(&v3[v1], byte_B1BF38); /*0x734a7b*/
+      strcpy(&v3[v1],(const char *)(byte_B1BF38)); /*0x734a7b*/
       if ( (int)Size > dword_B1CF58 ) /*0x734a90*/
         dword_B1CF58 = Size; /*0x734a92*/
       v4 = v19; /*0x734a9d*/
@@ -558,9 +558,9 @@ LABEL_31:
             }
           }
           *v12 = 0; /*0x734bb4*/
-          v14 = wcslen(dword_B17F24); /*0x734bbc*/
+          v14 = wcslen((const wchar_t *)(dword_B17F24)); /*0x734bbc*/
           *(unsigned int *)((char *)dword_B1CF78 + v6) = (unsigned int)(__2_YAPAXI_Z(2 * v14 + 2)); /*0x734bd6*/
-          wcscpy(*(wchar_t **)((char *)dword_B1CF78 + v6), dword_B17F24); /*0x734be3*/
+          wcscpy(*(wchar_t **)((char *)dword_B1CF78 + v6),(const wchar_t *)(dword_B17F24)); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
             CCFileClass::Read(&v23, &Size, 4); /*0x734c01*/
@@ -574,7 +574,7 @@ LABEL_31:
             if ( v15 ) /*0x734c29*/
             {
               *(unsigned int *)((char *)dword_B1CF7C + v6) = (unsigned int)(__2_YAPAXI_Z(v15 + 1)); /*0x734c43*/
-              strcpy(*(char **)((char *)dword_B1CF7C + v6), byte_B1BF38); /*0x734c5e*/
+              strcpy(*(char **)((char *)dword_B1CF7C + v6),(const char *)(byte_B1BF38)); /*0x734c5e*/
             }
           }
           v5 = v20; /*0x734c6b*/
@@ -613,7 +613,7 @@ unsigned int * File::LoadFileVXL(int a2, int a3)
   *(unsigned int *)&this->__pad_6[10] = 0; /*0x755ce4*/
   *(unsigned int *)&this->__pad_6[14] = 0; /*0x755ce7*/
   *(unsigned int *)&this->__pad_6[18] = 0; /*0x755cea*/
-  if ( !Voxel::SortDepth((int)this, a2, a3) ) /*0x755cf5*/
+  if ( !Voxel::SortDepth((gamemd::ObjectClass *)((int)this), a2, a3) ) /*0x755cf5*/
     this->__pad_0[0] = 1; /*0x755cfe*/
   return this->__pad_0; /*0x755d03*/
 
@@ -653,7 +653,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   *(unsigned int *)this = (unsigned int)(&vt_WDTState); /*0x76acbe*/
   v3 = (File *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = (gamemd::u_short *)(((File *)(v3))->LoadPaletteData(aP1)); /*0x76acdc*/
+    PaletteData = (gamemd::u_short *)(((File *)(v3))->LoadPaletteData((unsigned short *)(aP1))); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
   v5 = (char *)((unsigned char *)this + 28); /*0x76ace6*/

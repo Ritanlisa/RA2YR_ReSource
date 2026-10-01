@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""G41.35: log-driven C2664 repair -- wrap the Nth call argument in a
+"""G41.35/G41.46w3: log-driven C2664 repair -- wrap the Nth call argument in a
 C-style cast to the parameter's declared type.
 
 Message shape: 无法将参数 N 从"SRC"转换为"DST". Only scalar<->pointer
 pairs are cast (same legality gate as fix_c2440_rhs_casts); the DST is
-taken from the message's declared param type.
+taken from the message's declared param type. G41.46 wave 3: the call is
+located by the callee name parsed from the display signature, and a site
+is skipped unless exactly one candidate call with >= N args exists on the
+line (previously the first paren group that merely covered N args was
+used, which could wrap the wrong call). Fn-pointer and class-by-value
+DSTs are skipped.
 
 Usage: python tools/csp_export/fix_c2664_arg_casts.py <log> [--apply]
 """
@@ -16,12 +21,48 @@ ROOT = Path(__file__).resolve().parents[2]
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
-LN = re.compile(r'D:[^:]*RA2YR_ReSource[\\/](src[\\/][^(]+)[\\/]?[(](\d+),(\d+)[)]: error C2664')
+LN = re.compile(r'D:[^:]*RA2YR_ReSource[\\/](src[\\/][^(]+)[\\/]?[(](\d+)(?:,(\d+))?[)]: error C2664')
 Q = chr(0x201C) + chr(0x201D)
 QT = '["' + Q + ']'
 PAIR = re.compile(r'无法将参数 (\d+) 从' + QT + r'([^"' + Q + r']+)' + QT +
                   r'转换为' + QT + r'([^"' + Q + r']+)' + QT)
+SIG = re.compile(r'error C2664: ' + QT + r'(.+?)' + QT + r': 无法将参数')
 BAD = re.compile(r'double|float|^void$|模板|_T[=>]')
+
+SCALARS = set('''int unsigned int long unsigned long short unsigned short char
+unsigned char signed char int8_t uint8_t int16_t uint16_t int32_t uint32_t
+int64_t uint64_t bool float double wchar_t size_t'''.split())
+
+STATS = {}
+
+
+def stat(k):
+    STATS[k] = STATS.get(k, 0) + 1
+
+
+def callee_of(ln):
+    m = SIG.search(ln)
+    if not m:
+        return None
+    head = m.group(1)
+    i = head.rfind('(')
+    head = head[:i].strip() if i >= 0 else head
+    parts = head.split()
+    qname = re.sub(r'^[*&]+', '', parts[-1]) if parts else ''
+    callee = qname.split('::')[-1] if qname else ''
+    if callee and re.match(r'^~?[A-Za-z_]\w*$', callee):
+        return callee
+    return None
+
+
+def dst_castable(dst):
+    if '(' in dst or ')' in dst:
+        return False
+    if dst.rstrip().endswith('*') or dst.rstrip().endswith('&'):
+        return True
+    base = re.search(r'([A-Za-z_]\w*)\s*$', dst.rstrip())
+    return bool(base) and base.group(1) in SCALARS
+
 
 
 def split_args(seg):
@@ -43,16 +84,43 @@ def split_args(seg):
     return parts
 
 
-def wrap_arg(line, argno, dst):
-    """Wrap the argno-th (1-based) argument of the FIRST call-ish paren
-    group that opens at/after the error column. Falls back to scanning
-    from column 0."""
+def wrap_arg(line, argno, dst, callee=None):
+    """Wrap the argno-th (1-based) argument of the callee's call in a cast.
+    Only rewrites when exactly one candidate call with >= argno args exists
+    on the line (callee-anchored); falls back to the old first-span scan
+    only when no callee name is available."""
     body = line.split('/*')[0]
-    col = 0
-    # find candidate '(' positions; the arg list containing col
-    # simplest: first '(' after the last identifier before ';'
-    # strategy: try every '(' from the start; pick the first whose
-    # balanced span covers >= argno args
+    occ = []
+    if callee:
+        for cm in re.finditer(r'\b%s\s*\(' % re.escape(callee), body):
+            i = cm.end() - 1
+            depth = 0
+            for j in range(i, len(body)):
+                if body[j] == '(':
+                    depth += 1
+                elif body[j] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        parts = split_args(body[i + 1:j])
+                        if len(parts) >= argno and parts[argno - 1].strip():
+                            occ.append((i, j, parts))
+                        break
+    if len(occ) > 1:
+        stat('skip-ambiguous-multi-call')
+        return None
+    if len(occ) == 1:
+        i, j, parts = occ[0]
+        a = parts[argno - 1].strip()
+        if a.startswith('(' + dst + ')'):
+            stat('skip-already-cast')
+            return None
+        parts[argno - 1] = '(%s)(%s)' % (dst, a)
+        newbody = body[:i + 1] + ','.join(parts) + body[j:]
+        return newbody + line[len(body):]
+    if callee:
+        stat('skip-no-call-found')
+        return None
+    # legacy fallback (no callee name in message)
     i = 0
     while i < len(body):
         if body[i] == '(':
@@ -91,8 +159,12 @@ def main():
         src, dst = pm.group(2), pm.group(3)
         if BAD.search(src) or BAD.search(dst):
             continue
+        if not dst_castable(dst):
+            stat('skip-uncastable-dst') 
+            continue
+        callee = callee_of(ln)
         key = (m.group(1).replace('/', '\\'), int(m.group(2)))
-        sites.setdefault(key, []).append((int(pm.group(1)), dst))
+        sites.setdefault(key, []).append((int(pm.group(1)), dst, callee))
     print('castable arg sites:', len(sites))
 
     n = miss = 0
@@ -112,8 +184,8 @@ def main():
             if line > len(lines):
                 miss += 1
                 continue
-            for argno, dst in items:
-                new = wrap_arg(lines[line - 1], argno, dst)
+            for argno, dst, callee in items:
+                new = wrap_arg(lines[line - 1], argno, dst, callee)
                 if new is None:
                     miss += 1
                     continue
@@ -124,6 +196,8 @@ def main():
             p.write_text('\n'.join(lines), encoding='utf-8')
     print('arg casts inserted: %d, unmatched: %d %s'
           % (n, miss, '(written)' if APPLY else '(DRY)'))
+    for k in sorted(STATS, key=STATS.get, reverse=True):
+        print('  %-28s %d' % (k, STATS[k]))
 
 
 if __name__ == '__main__':

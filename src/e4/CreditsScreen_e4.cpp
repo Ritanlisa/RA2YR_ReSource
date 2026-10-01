@@ -43,7 +43,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4))));
+  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4))));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
@@ -56,12 +56,12 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   if ( a2 != 1175 ) /*0x531a50*/
     return 0; /*0x531c1d*/
   DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
-  String = (wchar_t *)(GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, g_Str_File_Init_CPP, 5680)); /*0x531a75*/
+  String = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, g_Str_File_Init_CPP, 5680)); /*0x531a75*/
   SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
   ModuleVersion = GetModuleVersion(); /*0x531a8b*/
   sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531ab0*/
-  ModuleInternalVersion = (char *)(GetModuleInternalVersion((int)&dword_A8ECE0)); /*0x531ab7*/
+  ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&dword_A8ECE0))); /*0x531ab7*/
   sprintf(Buffer, "Internal Version %s", ModuleInternalVersion); /*0x531ac7*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
   v16[0] = 0; /*0x531aea*/

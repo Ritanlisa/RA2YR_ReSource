@@ -349,7 +349,7 @@ int TagClass::ProcessTag(int * a2)
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int (**)(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
+    v5 = (*((int ((void **)(**))(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
@@ -365,7 +365,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6e573b*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x6e573b*/
   if ( result >= 0 ) /*0x6e5742*/
   {
     if ( aP0 ) /*0x6e5746*/
@@ -392,7 +392,7 @@ int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6e57af*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6e57af*/
   if ( result >= 0 ) /*0x6e57b6*/
     return 0; /*0x6e57b8*/
   return result; /*0x6e57ba*/

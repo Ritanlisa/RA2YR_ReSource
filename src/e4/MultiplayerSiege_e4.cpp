@@ -75,7 +75,7 @@ int MultiplayerSiege::Write(void ** a1)
     v4 = 0; /*0x5ca6f3*/
     if ( dword_A8DA84 <= 0 ) /*0x5ca6f7*/
     {
-LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65));
+LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0, g_Str_File_MPSiege_cpp, 65));
       ((WideString *)((void **)a1))->Assign_Alt(StringCSF); /*0x5ca73a*/
       return 0; /*0x5ca742*/
     }
@@ -92,7 +92,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
           {
             if ( v7 != 1 ) /*0x5ca70d*/
             {
-              v9 = (wchar_t *)(GetStringCSF(aMpIllegalteam, 0, g_Str_File_MPSiege_cpp, 60));
+              v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpIllegalteam), 0, g_Str_File_MPSiege_cpp, 60));
               ((WideString *)((void **)a1))->Assign_Alt(v9); /*0x5ca75e*/
               return 0; /*0x5ca769*/
             }
@@ -102,7 +102,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
           {
             if ( v2 ) /*0x5ca714*/
             {
-              v10 = (wchar_t *)(GetStringCSF(aMpOnlyonebesei, 0, g_Str_File_MPSiege_cpp, 51));
+              v10 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpOnlyonebesei), 0, g_Str_File_MPSiege_cpp, 51));
               ((WideString *)((void **)a1))->Assign_Alt(v10); /*0x5ca782*/
               return 0; /*0x5ca78d*/
             }
@@ -121,7 +121,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
       }
       else
       {
-        v11 = (wchar_t *)(GetStringCSF(aMpNoattackers, 0, g_Str_File_MPSiege_cpp, 70));
+        v11 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNoattackers), 0, g_Str_File_MPSiege_cpp, 70));
         ((WideString *)((void **)a1))->Assign_Alt(v11); /*0x5ca7ab*/
         return 0; /*0x5ca7b3*/
       }
@@ -366,7 +366,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
   CurrentOption = (int16_t *)HouseClass::GetCurrentOption((HouseClass *)ppv, &a2); /*0x5cab91*/
-  if ( FindInfantryDeployPosition(v8, CurrentOption, 1) ) /*0x5cab9a*/
+  if ( FindInfantryDeployPosition(v8,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
   (*(void (**)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
   return 0; /*0x5cab08*/

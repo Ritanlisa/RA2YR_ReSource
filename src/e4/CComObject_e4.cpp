@@ -170,7 +170,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
     dword_B77DE4 = a3; /*0x7a4eee*/
     if ( a2 ) /*0x7a4efc*/
       return 0; /*0x7a4efc*/
-    strcpy(byte_B77A94, (const char *)(a4 + 401)); /*0x7a4f26*/
+    strcpy((char *)(byte_B77A94), (const char *)(a4 + 401)); /*0x7a4f26*/
   }
   else if ( a2 ) /*0x7a4f38*/
   {
@@ -239,10 +239,10 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
       switch ( dword_B77E48 ) /*0x7a5104*/
       {
         case 2: /*0x7a5104*/
-          InsertBuddyList(&v20[12], 1); /*0x7a510c*/
+          InsertBuddyList((const char *)(&v20[12]), 1); /*0x7a510c*/
           break;
         case 3: /*0x7a5104*/
-          InsertBuddyList(&v20[12], 0); /*0x7a511e*/
+          InsertBuddyList((const char *)(&v20[12]), 0); /*0x7a511e*/
           break;
         case 4: /*0x7a5104*/
           FindBuddyList(&v20[12], 1); /*0x7a5130*/
@@ -332,10 +332,10 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
       switch ( a2 ) /*0x7a52ce*/
       {
         case -2147221404: /*0x7a52ce*/
-          StringCSF = (wchar_t *)(GetStringCSF(aTxtLoginUsed, 0, g_Str_File_wonline_cpp, 5737)); /*0x7a52e6*/
+          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoginUsed), 0, g_Str_File_wonline_cpp, 5737)); /*0x7a52e6*/
           break; /*0x7a52e6*/
         case -2147221403: /*0x7a52ce*/
-          StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_BADPASS, 0, g_Str_File_wonline_cpp, 5742)); /*0x7a531f*/
+          StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_BADPASS), 0, g_Str_File_wonline_cpp, 5742)); /*0x7a531f*/
           break; /*0x7a532a*/
         case -2147221390: /*0x7a52ce*/
           StringCSF = GetStringCSF((wchar_t *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5747); /*0x7a5357*/
@@ -354,8 +354,8 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
     if ( a2 == -2147221384 ) /*0x7a538c*/
     {
       v4 = GetStringCSF(aTxtSkuserialmi, 0, g_Str_File_wonline_cpp, 5773); /*0x7a53d6*/
-      wcscpy(&word_B77AD0, v4); /*0x7a53e1*/
-      SetEvent(Handles); /*0x7a53ef*/
+      wcscpy((wchar_t *)(&word_B77AD0), v4); /*0x7a53e1*/
+      SetEvent((void *)(Handles)); /*0x7a53ef*/
       return 0; /*0x7a53fa*/
     }
     if ( a2 == -2147221386 ) /*0x7a5393*/
@@ -366,9 +366,9 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   }
   if ( a2 ) /*0x7a53ff*/
   {
-LABEL_19: StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 5779));
+LABEL_19: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANT_CONNECT), 0, g_Str_File_wonline_cpp, 5779));
 LABEL_20:
-    wcscpy(&word_B77AD0, StringCSF); /*0x7a5417*/
+    wcscpy((wchar_t *)(&word_B77AD0), StringCSF); /*0x7a5417*/
     SetEvent(Handles, unsigned int a1018); /*0x7a542c*/
     return 0; /*0x7a5437*/
   }
@@ -403,7 +403,7 @@ LABEL_20:
   memset(&g_WindowManager.__pad_EC[84], 0, 0x10Cu); /*0x7a559a*/
   BYTE2(stru_B77D80.HashTable_field_0x40) = 0; /*0x7a559d*/
   stru_B77D80.HashTable_field_0x50 = 0; /*0x7a55a4*/
-  SetEvent(dword_B7368C); /*0x7a55ae*/
+  SetEvent((void *)(dword_B7368C)); /*0x7a55ae*/
   QueryNATPortWOL(&stru_A8DBC0); /*0x7a55b9*/
   return 0; /*0x7a5308*/
 
@@ -443,8 +443,8 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     else
     {
       v14 = (char *)((wchar_t *)(CharToWideString(a3 + 52)));
-      StringCSF = (wchar_t *)(GetStringCSF(aTxtCreatedChan, 0, g_Str_File_wonline_cpp, 5835));
-      Dialog::ShowMessage(-1, (size_t)StringCSF, v14); /*0x7a5759*/
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtCreatedChan), 0, g_Str_File_wonline_cpp, 5835));
+      Dialog::ShowMessage((gamemd::ObjectClass *)(-1), (size_t)StringCSF, v14); /*0x7a5759*/
     }
     qmemcpy(&stru_B76AC4.ambientSoundController[4], a3, 0x10Cu); /*0x7a57d8*/
     dword_B77E4C = 1; /*0x7a57e0*/
@@ -471,7 +471,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   }
   else
   {
-    v3 = (wchar_t *)(GetStringCSF(aTxtChancreateF, 0, g_Str_File_wonline_cpp, 5825));
+    v3 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtChancreateF), 0, g_Str_File_wonline_cpp, 5825));
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/

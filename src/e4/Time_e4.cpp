@@ -31,7 +31,7 @@ int Time::FormatDate(char * Buffer)
   int result; // eax
   struct _SYSTEMTIME SystemTime; // [esp+4h] [ebp-10h] BYREF
 
-  result = FileTimeToSystemTime(&FileTime, &SystemTime); /*0x777ad0*/
+  result = FileTimeToSystemTime((const FILETIME *)(&FileTime), &SystemTime); /*0x777ad0*/
   if ( result ) /*0x777ad8*/
     return sprintf( /*0x777b20*/
              Buffer,

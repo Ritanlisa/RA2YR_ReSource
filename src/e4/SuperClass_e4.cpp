@@ -154,7 +154,7 @@ void SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a
   *((unsigned int *)this + 1) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_SuperClass); /*0x6cb003*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_SuperClass); /*0x6cb00a*/
-  AbstractClass::GenerateUniqueID((char *)this + 4); /*0x6cb011*/
+  AbstractClass::GenerateUniqueID((int)((char *)this + 4)); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
@@ -216,14 +216,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     *((unsigned int *)this + 26) = 0; /*0x6cb14d*/
     v9 = (int)(this); /*0x6cb164*/
-    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
+    v3 = (*(int ((int *)(**))(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
     v9 = (int)(this); /*0x6cb192*/
-    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
+    v4 = (*(int ((int *)(**))(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
@@ -430,7 +430,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
     if ( !*((unsigned char *)this + 110) ) /*0x6cb788*/
       return aP1; /*0x6cb79f*/
 LABEL_45:
-    SuperClass::AnnounceReady(this, aP2); /*0x6cb78a*/
+    SuperClass::AnnounceReady((gamemd::DynamicVector *)(this), aP2); /*0x6cb78a*/
     return aP1; /*0x6cb791*/
   }
   return 0; /*0x6cb79a*/
@@ -483,14 +483,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     *((unsigned int *)this + 26) = 0; /*0x6cb846*/
     v8[0] = this; /*0x6cb859*/
-    v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
+    v4 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
-    v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
+    v5 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5); /*0x6cb897*/
     *((unsigned char *)this + 108) = 0; /*0x6cb89c*/

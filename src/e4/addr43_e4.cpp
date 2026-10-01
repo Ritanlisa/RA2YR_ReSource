@@ -310,7 +310,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         v34 = v20 * v19; /*0x4375f0*/
       v35 = (int)(*aP6); /*0x4375fc*/
       if ( (unsigned char)aP5 ) /*0x4375fe*/
-        aP6->Blit(v62, aP2, v34, 0, 0, 0, 1000); /*0x437616*/
+        aP6->Blit(v62,(void **)(aP2), v34, 0, 0, 0, 1000); /*0x437616*/
       else
         (*(void (**)(int, int *, int, unsigned int, unsigned int, unsigned int, int, unsigned int))(v35 + 4))( /*0x437636*/
           v62,
@@ -1694,7 +1694,7 @@ char sub_437290(int * a1, int a2, int * a3)
 
 // 0x437350
 namespace gamemd {
-char BlitterCopySimpleSHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, int arg4, int * a4, int aP7, int aP8, int a8, int a9)
+char BlitterCopySimpleSHP(XSurface * aP0, XSurface * aP1, int aP2, int arg4, int *a4, int aP7, int aP8, int a8, int a9)
 {
   unsigned int *v11; // eax
   unsigned int *v13; // [esp-1Ch] [ebp-48h]

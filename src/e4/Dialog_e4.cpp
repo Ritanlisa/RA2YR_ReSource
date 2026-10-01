@@ -300,7 +300,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
     StringCSF = GetStringCSF(aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/
   g_NetworkTestFlag = 0; /*0x5f29bc*/
-  v9 = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415)); /*0x5f29c3*/
+  v9 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1415)); /*0x5f29c3*/
   MessageBox = CreateMessageBox(v8, (LPARAM)v9, (LONG)&g_NetworkTestFlag); /*0x5f29cc*/
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
@@ -360,8 +360,8 @@ LABEL_35:
       this->Debug::Log(); /*0x5f2ae6*/
     if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
     {
-      memset(byte_AC1288, 0, 0x50u); /*0x5f2b12*/
-      strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2b1e*/
+      memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2b12*/
+      strncpy((char *)(byte_AC1288), Source, 0x4Fu); /*0x5f2b1e*/
       v6 = 0; /*0x5f2b27*/
       this->Debug::Log(); /*0x5f2b2f*/
     }
@@ -436,7 +436,7 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
   hWnd = Parent; /*0x606814*/
   if ( !dword_AC1B04 ) /*0x60681f*/
     goto LABEL_5; /*0x60681f*/
-  v3 = *((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&hWnd)); /*0x606836*/
+  v3 = *((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&hWnd)); /*0x606836*/
   if ( !v3 ) /*0x60683b*/
     goto LABEL_5; /*0x60683b*/
   while ( *(HWND *)v3 != hWnd ) /*0x606843*/
@@ -887,7 +887,7 @@ LABEL_7:
       v10 = hWnd; /*0x60a3d2*/
       if ( dword_AC1B04 ) /*0x60a3d8*/
       {
-        v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v10)); /*0x60a3ef*/
+        v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&v10)); /*0x60a3ef*/
         if ( v5 ) /*0x60a3f4*/
         {
           while ( *v5 != v10 ) /*0x60a3fc*/

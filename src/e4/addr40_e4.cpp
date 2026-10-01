@@ -2078,7 +2078,7 @@ void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
 }
 // 0x409030
 namespace gamemd {
-void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char * a3)
+int WriteAudioStreamToFile(int aP0, FILE *a1, signed int arg0, char *a3)
 {
   signed int v7; // eax
   int v8; // esi

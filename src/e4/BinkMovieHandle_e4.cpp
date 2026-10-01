@@ -98,7 +98,7 @@ LABEL_18:
 } // namespace gamemd
 // 0x433060
 namespace gamemd {
-void BinkMovieHandle::CopyFrameToSurface(void *a1)
+_DWORD * BinkMovieHandle::CopyFrameToSurface(void *a1)
 {
 
   DSurface *width; // edi

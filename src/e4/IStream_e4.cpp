@@ -23,7 +23,7 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 
   v4 = (unsigned int *)v3; /*0x4a3026*/
   v7 = pv; /*0x4a302d*/
-  WriteCompressionBlock(pstm, (unsigned int)pv, *(unsigned char **)(v3 + 28), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
+  WriteCompressionBlock((gamemd::Pipe *)(pstm), (unsigned int)pv, *(unsigned char **)(v3 + 28), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
   v5 = v7; /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
   pv = 0; /*0x4a3051*/

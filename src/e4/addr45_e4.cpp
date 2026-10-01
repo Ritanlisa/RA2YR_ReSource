@@ -166,7 +166,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
     unsigned int v21 = 0;  /* G37 hoist */
-                strcpy(a2, (const char *)(*(unsigned int *)(a1 + 1312) + 504));
+                strcpy((char *)(a2), (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
         qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
         v19 = strlen(v26); /*0x4515b3*/
@@ -238,7 +238,7 @@ void sub_452000(unsigned int * a1)
     && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
         *(unsigned int **)(a1[165] + 80) == v4) )
   {
-    IDA_LOWORD(v3) = (unsigned short)(Techno::StartInvulnerability(v3)); /*0x452078*/
+    IDA_LOWORD(v3) = (unsigned short)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v3))); /*0x452078*/
   }
   *((unsigned short *)a1 + 896) = v3; /*0x45207a*/
   v15 = a1 + 343; /*0x452091*/
@@ -373,7 +373,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   }
   v12 = (double *)((int)((double *)(v10)));
   v36 = (double *)((unsigned int)(v10));
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v40); /*0x4569f6*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a1), &v40); /*0x4569f6*/
   v40 += DSurface_ViewBounds; /*0x456a11*/
   v41 += dword_886FA4; /*0x456a20*/
   v49[1] = v41 - (unsigned int)(v12)/ 2; /*0x456a2f*/
@@ -381,7 +381,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   v49[0] = v40 - v12; /*0x456a4c*/
   v49[2] = 2 * v12; /*0x456a53*/
   v49[3] = v12; /*0x456a5a*/
-  v13 = (double *)ClipRectIntersection(v47, v49, &DSurface_ViewBounds, 0, 0); /*0x456a66*/
+  v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47), v49, &DSurface_ViewBounds, 0, 0); /*0x456a66*/
   v48 = *v13; /*0x456a6a*/
   v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
   if ( v14 > 0 && *((int *)v13 + 3) > 0 ) /*0x456a85*/
@@ -391,7 +391,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     v35 = 0; /*0x456aa6*/
     v38 = a6; /*0x456aab*/
     if ( aP1 ) /*0x456ab0*/
-      Color::Lerp(50, &v34); /*0x456abd*/
+      Color::Lerp(50,(uint8_t *)(&v34)); /*0x456abd*/
     (*(void (**)(int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)g_DSurface_Hidden_2 + 32))( /*0x456b57*/
       g_DSurface_Hidden_2,
       v40,
@@ -501,12 +501,12 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
   if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x456fc9*/
 // 0x70e360
-    return Techno::StartInvulnerability(v4); /*0x456fc9*/
+    return Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v4)); /*0x456fc9*/
   if ( a1[165]
     && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v5 = 0),
         *(unsigned int **)(a1[165] + 80) == v5) )
   {
-    return (gamemd::BuildingTypeClass **)(Techno::StartInvulnerability(v4));
+    return (gamemd::BuildingTypeClass **)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v4)));
   }
   else
   {

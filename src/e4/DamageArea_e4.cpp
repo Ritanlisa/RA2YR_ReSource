@@ -127,13 +127,13 @@ int DamageArea::CheckOccupancyEligibility()
       if ( v5 >= 0 ) /*0x4d0208*/
       {
         v6 = v9; /*0x4d021c*/
-        Release3COM((ObjectClass *)&v8); /*0x4d0224*/
+        Release3COM((gamemd::IUnknown **)((ObjectClass *)&v8)); /*0x4d0224*/
         v4 = v6; /*0x4d0229*/
         v8 = v6; /*0x4d022c*/
       }
       else
       {
-        Release3COM((ObjectClass *)&v8); /*0x4d020e*/
+        Release3COM((gamemd::IUnknown **)((ObjectClass *)&v8)); /*0x4d020e*/
         v4 = 0; /*0x4d0213*/
         v8 = 0; /*0x4d0215*/
       }

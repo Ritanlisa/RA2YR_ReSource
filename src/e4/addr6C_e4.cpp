@@ -204,7 +204,7 @@ int ProcessGameResults(char a1)
   v2 = dword_B779D4;
   char * v3 = (char *)operator new(0x10u);
   if ( v3 )
-    inited = TerrainInitMap(v3, (RandomStruct *)&((unsigned int *)(stru_830620))[72452], v2);
+    inited = TerrainInitMap(v3,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72452]), v2);
   else
     inited = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)inited);
@@ -276,14 +276,14 @@ int ProcessGameResults(char a1)
   }
   char * v9 = (char *)operator new(0x10u);
   if ( v9 )
-    char * v10 = TerrainInitMap(v9, (RandomStruct *)&((unsigned int *)(stru_830620))[72436], (IUnknown *)v8);
+    char * v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72436]), (IUnknown *)v8);
   else
     v10 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v10);
   v11 = dword_B779C4;
   char * v12 = (char *)operator new(0x10u);
   if ( v12 )
-    char * v13 = TerrainInitMap(v12, (RandomStruct *)&((unsigned int *)(stru_830620))[72428], v11);
+    char * v13 = TerrainInitMap(v12,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72428]), v11);
   else
     v13 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v13);

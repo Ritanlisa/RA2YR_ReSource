@@ -249,7 +249,7 @@ namespace gamemd {
 BOOL AbstractTypeClass::NameEquals(void * a2)
 {
 
-  return _st  return _strcmpi((const char *)(a2), (const void *)((char *)this + 36)) == 0; 
+  return _st  return _strcmpi((const char *)(a2),(const char *)((const void *)((char *)this + 36))) == 0; 
 
 }
 } // namespace gamemd

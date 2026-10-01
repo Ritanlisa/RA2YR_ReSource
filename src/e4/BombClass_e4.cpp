@@ -206,7 +206,7 @@ namespace gamemd {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x438be4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x438be4*/
 
 }
 } // namespace gamemd
@@ -225,7 +225,7 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
   v5 = (gamemd::BombClass *)(Block); /*0x439427*/
-  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
+  v3 = (*(int ((int *)(**))(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/

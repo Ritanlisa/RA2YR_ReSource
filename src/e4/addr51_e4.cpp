@@ -120,7 +120,7 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->TechnoClass + 97))(v6); /*0x51ff89*/
-      v7 = (unsigned int)(*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue(&v27)); /*0x51ff9d*/
+      v7 = (unsigned int)(*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue((unsigned int *)(&v27))); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(((unsigned int *)v6)[0]); /*0x51ffab*/
       v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
       v24.Input_field_00 = ((unsigned int *)v6)[0]; /*0x51ffb6*/
@@ -337,7 +337,7 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
         v4 = (const unsigned int)(&g_INI_DefaultBuffer); /*0x510e9d*/
       break;
   }
-  result = strlen(v4) + 1; /*0x510ea7*/
+  result = strlen((const char *)(v4)) + 1; /*0x510ea7*/
   qmemcpy(a2, v4, result); /*0x510eb6*/
   return result; /*0x510ebf*/
 }
@@ -648,7 +648,7 @@ int E4Recv_517110::sub_517110()
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))(((unsigned int *)this)[0], v8); /*0x517167*/
+    v4 = (unsigned short *)(*(int ((void *)(**))(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))(((unsigned int *)this)[0], v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
@@ -691,7 +691,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
   CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
 
-  strcpy(SubKey, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5176ff*/
+  strcpy(SubKey,(const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5176ff*/
   v5 = 0; /*0x51770a*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
     && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )
@@ -702,7 +702,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x51779f*/
-  strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
+  strcpy(v13,(const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {
