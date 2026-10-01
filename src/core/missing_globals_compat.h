@@ -6,8 +6,8 @@
 
 namespace gamemd {
 
-extern unsigned int dword_ABF2A4;
-extern unsigned long long qword_81C918;
+extern double flt_A8EB9C;
+extern unsigned char * stru_B782B8;
 
 // CRT/RTTI/FILE compat stubs (blockers #30/#31/#33/#35)
 // IDA pseudo-intrinsics (bit-reinterpretation; value-safe casts)
