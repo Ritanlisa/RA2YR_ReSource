@@ -339,7 +339,7 @@ void* sub_5F33B0()
 
     ((Event *)0)->Dispatch();
   MessageLoop(); /*0x5f33b6*/
-  v0 = (uint16_t)(EventQueue::Process(dword_87F770)); /*0x5f33c1*/
+  v0 = (uint16_t)(((EventQueue *)(dword_87F770))->Process()); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
@@ -763,7 +763,7 @@ AbstractClass * * GenerateRangeRingTextures()
           0,
           1);
       }
-      Vector::Clear((int)v33); /*0x5ff584*/
+      ((Vector *)((int)v33))->Clear(); /*0x5ff584*/
       ++v2; /*0x5ff58d*/
       *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff593*/
     }
@@ -821,7 +821,7 @@ AbstractClass * * GenerateRangeRingTextures()
           0,
           1);
       }
-      Vector::Clear((int)v33); /*0x5ff702*/
+      ((Vector *)((int)v33))->Clear(); /*0x5ff702*/
       v11 -= 6; /*0x5ff70b*/
       ++v10; /*0x5ff70f*/
       *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff715*/

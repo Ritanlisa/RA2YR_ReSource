@@ -1357,7 +1357,7 @@ int sub_412870()
   v1 = 400; /*0x412878*/
   do /*0x41289c*/
   {
-    EventClass::resetEvent(v0, 0, 0); /*0x412883*/
+    ((EventClass *)(v0))->resetEvent(0, 0); /*0x412883*/
     *v0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
@@ -2122,15 +2122,15 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
       aP0 = *CurrentOption; /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/
       {
-        TileIndex = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&aP0, v6, 0); /*0x41ffa2*/
+        TileIndex = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&aP0, v6, 0); /*0x41ffa2*/
 // 0x56d230
-        return MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&a2, v6, 0) == TileIndex; /*0x41ffbd*/
+        return ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&a2, v6, 0) == TileIndex; /*0x41ffbd*/
       }
-      v7 = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&aP0, v6, 0); /*0x41ff55*/
-      if ( MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&a2, v6, 0) == v7 ) /*0x41ff5e*/
+      v7 = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&aP0, v6, 0); /*0x41ff55*/
+      if ( ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&a2, v6, 0) == v7 ) /*0x41ff5e*/
         return 0; /*0x41ff5e*/
-      v8 = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&aP0, 5, 0); /*0x41ff81*/
-      if ( MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&a2, 5, 0) != v8 ) /*0x41ff8a*/
+      v8 = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&aP0, 5, 0); /*0x41ff81*/
+      if ( ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&a2, 5, 0) != v8 ) /*0x41ff8a*/
         return 0; /*0x41ff90*/
     }
   }

@@ -28,7 +28,7 @@
 
 // 0x71E940
 namespace gamemd {
-DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7, void *a7_2)
+DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
 {
 
   double v7; // st7
@@ -345,7 +345,7 @@ LABEL_139:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, &v59, this->TEventClass_field_34));
+            WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(&v59, this->TEventClass_field_34));
             v33 = *WorldCoords; /*0x71ede0*/
             v34 = WorldCoords[1]; /*0x71ede6*/
             v35 = WorldCoords[2]; /*0x71edeb*/
@@ -458,7 +458,7 @@ LABEL_112:
             auxParticles1 = ((char *)&FootClass_Array); /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
+            if ( !((DynamicVector *)((DynamicVector *)(a3 + 21840)))->GetOrGrow(this->TEventClass_field_34) ) /*0x71efb9*/
               goto LABEL_139; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
@@ -468,7 +468,7 @@ LABEL_112:
             LOBYTE(v18) = 0; /*0x71ef36*/
             return v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efd5*/
+            if ( ((DynamicVector *)((DynamicVector *)(a3 + 21840)))->GetOrGrow(this->TEventClass_field_34) ) /*0x71efd5*/
               goto LABEL_139; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/

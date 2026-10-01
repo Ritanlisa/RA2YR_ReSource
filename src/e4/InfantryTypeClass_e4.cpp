@@ -29,7 +29,7 @@
 
 // 0x5236A0
 namespace gamemd {
-InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a3)
+InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
 {
 
   int v3; // eax
@@ -205,7 +205,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v13[0] = (*a2 << 8) + 128; /*0x523b93*/
       v13[1] = v7 + 128; /*0x523b9b*/
       v13[2] = 0; /*0x523bb1*/
-      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13)); /*0x523bb9*/
+      v8 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13)); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
       v10 = v9[1]; /*0x523bd5*/
@@ -648,7 +648,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       do /*0x524a09*/
       {
         (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x5249f5*/
-        DynamicVector::Add_Alt((DynamicVector *)v5->VoiceComment, &a3); /*0x5249ff*/
+        ((DynamicVector *)((DynamicVector *)v5->VoiceComment))->Add_Alt(&a3); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
       while ( v6 < a2 ); /*0x524a09*/
@@ -835,7 +835,7 @@ LABEL_8:
 
 }
 // 0x772FA0
-WeaponTypeClass * * InfantryTypeClass::Find(ObjectClass * Source)
+WeaponTypeClass * * InfantryTypeClass::Find(char *Source)
 {
 
   int v2; // esi
@@ -963,27 +963,27 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->DeadBodies[4]); /*0x5248a2*/
   Power::TimerProcess(this->DeathAnims[4]); /*0x5248b0*/
   LOBYTE(v3) = this->Fearless; /*0x5248b5*/
-  Power::FlagProcess((Power *)a2, v3); /*0x5248be*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x5248be*/
   LOBYTE(v4) = this->Crawls; /*0x5248c3*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x5248cc*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x5248cc*/
   LOBYTE(v5) = this->Infiltrate; /*0x5248d1*/
-  Power::FlagProcess((Power *)a2, v5); /*0x5248da*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x5248da*/
   LOBYTE(v6) = this->Fraidycat; /*0x5248df*/
-  Power::FlagProcess((Power *)a2, v6); /*0x5248e8*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x5248e8*/
   LOBYTE(v7) = this->TiberiumProof; /*0x5248ed*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x5248f6*/
+  v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x5248f6*/
   LOBYTE(v8) = this->Civilian; /*0x5248fb*/
-  Power::FlagProcess((Power *)a2, v8); /*0x524904*/
+  ((Power *)((Power *)a2))->FlagProcess(v8); /*0x524904*/
   LOBYTE(v9) = this->C4; /*0x524909*/
-  Power::FlagProcess((Power *)a2, v9); /*0x524912*/
+  ((Power *)((Power *)a2))->FlagProcess(v9); /*0x524912*/
   LOBYTE(v10) = this->Engineer; /*0x524917*/
-  v11 = Power::FlagProcess((Power *)a2, v10); /*0x524920*/
+  v11 = ((Power *)((Power *)a2))->FlagProcess(v10); /*0x524920*/
   LOBYTE(v11) = this->Agent; /*0x524925*/
-  Power::FlagProcess((Power *)a2, v11); /*0x52492e*/
+  ((Power *)((Power *)a2))->FlagProcess(v11); /*0x52492e*/
   LOBYTE(v12) = this->Thief; /*0x524933*/
-  Power::FlagProcess((Power *)a2, v12); /*0x52493c*/
+  ((Power *)((Power *)a2))->FlagProcess(v12); /*0x52493c*/
   LOBYTE(v13) = this->VehicleThief; /*0x524941*/
-  return Power::FlagProcess((Power *)a2, v13); /*0x52494f*/
+  return ((Power *)((Power *)a2))->FlagProcess(v13); /*0x52494f*/
 
 }
 // 0x524C70

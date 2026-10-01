@@ -555,7 +555,7 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_2)
   int v3; // edx
   int v4; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x51217a*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x51217a*/
   Power::TimerProcess(this->arrayIndex2); /*0x512188*/
   Power::TimerProcess(this->sideIndex); /*0x512196*/
   Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
@@ -568,9 +568,9 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_2)
   Checksummer::Add_double((Checksummer *)a2, this->buildtimeMult[0], this->buildtimeMult[1]); /*0x512237*/
   Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)&this->__pad_16D[51], strlen(&this->__pad_16D[51])); /*0x512252*/
   LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
-  v4 = Power::FinalizeDrain((Power *)a2, v3); /*0x512260*/
+  v4 = ((Power *)((Power *)a2))->FinalizeDrain(v3); /*0x512260*/
   LOBYTE(v4) = this->__pad_16D[56]; /*0x512265*/
-  return Power::FlagProcess((Power *)a2, v4); /*0x512273*/
+  return ((Power *)((Power *)a2))->FlagProcess(v4); /*0x512273*/
 
 }
 }

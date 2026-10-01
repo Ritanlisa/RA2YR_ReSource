@@ -128,7 +128,7 @@ struct Game {
     unsigned int * LockMutex(IUnknown * aP1, IUnknown * aP2);  // 0x67C3A0
     int LoadSaved(LPCCH a1_1);
     CellStruct * * SerializeGameSaveState();  // 0x67F9C0
-    int validateScenario(unsigned int * a2, void *a2_2);  // 0x680F70
+    int validateScenario(unsigned int *a2);  // 0x680F70
     void EncodeGameSetupState(char * Buffer);  // 0x77E430
     Coord * * ProcessIdle(void *a1_1);  // 0x77F900
     AbstractClass * * SetupWOLTournament();  // 0x7A2330
@@ -138,7 +138,7 @@ struct Game {
     void * shutdownGame();  // 0x72D830
     int CheckForGameCD();  // 0x4790A0
     int loadCampaignData(void *a1_1);  // 0x550000
-    void processStartup(Game * a1_1);
+    void processStartup();
     char ResetFlags();  // 0x5E8B40
     int ResetReadyStates();  // 0x5E9850
     int readIniSettings(void *a1_1);  // 0x67FDE0

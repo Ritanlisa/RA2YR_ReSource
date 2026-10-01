@@ -895,7 +895,7 @@ XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a
 } // namespace gamemd
 // 0x7BBCF0
 namespace gamemd {
-XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
+XSurface * * XSurface::Blit(int a2, void **a3, int arg8, int a5, unsigned int *a6, void **a4, int a8)
 {
 
   int v10[4]; // [esp+4h] [ebp-20h] BYREF

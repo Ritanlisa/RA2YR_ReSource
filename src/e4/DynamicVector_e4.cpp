@@ -57,7 +57,7 @@ LABEL_8:
 }
 // 0x413A70
 namespace gamemd {
-char DynamicVector::AddItem(VectorClass_flat * aP1, void *a2_1)
+char DynamicVector::AddItem(unsigned int *aP1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -127,7 +127,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 
 // 0x45ADD0
 namespace gamemd {
-char DynamicVector::RemoveItem(IUnknown * aP1, void *a2_1)
+char DynamicVector::RemoveItem(int aP1)
 {
 
   char *DynamicVector_field_0x10; // edx
@@ -163,7 +163,7 @@ char DynamicVector::RemoveItem(IUnknown * aP1, void *a2_1)
 
 // 0x477EC0
 namespace gamemd {
-char DynamicVector::Add_Alt(VectorClass_flat * aP1, void *a2_1)
+char DynamicVector::Add_Alt(unsigned int *aP1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -198,7 +198,7 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1, void *a2_1)
 
 // 0x49FAE0
 namespace gamemd {
-int DynamicVector::GetOrGrow(DynamicVector * aP1, void *a2_1)
+int DynamicVector::GetOrGrow(int aP1)
 {
 
   int DynamicVector_field_0x8; // edi

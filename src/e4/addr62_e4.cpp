@@ -1154,7 +1154,7 @@ AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
   HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x622898*/
   if ( v14 ) /*0x6228a3*/
     *(unsigned int *)(v14 + 108) = a2; /*0x6228a5*/
-  if ( !(uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x6228ad*/
+  if ( !(uint8_t)((SessionClass *)((SessionClass *)&dword_A8B238))->GetGameSpeed() ) /*0x6228ad*/
     Control::CreateControlDialog((Control *)hWnd); /*0x6228b8*/
   lParam[0] = (LPARAM)hWnd; /*0x6228cc*/
   v14 = 0; /*0x6228d0*/
@@ -1313,7 +1313,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       Dialog::InitWindow(aP0, 0); /*0x622f46*/
       Dialog::GetField(aP0); /*0x622f4d*/
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
-      if ( !(uint8_t)SessionClass::GetGameSpeed(&g_GameMode_Current) ) /*0x622f60*/
+      if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x622f60*/
         Control::CreateControlDialog(aP0); /*0x622f6b*/
       UI_Helper_60CAF0(aP0); /*0x622f72*/
       UI_Helper_60C930(aP0); /*0x622f79*/
@@ -1343,7 +1343,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       HashTable::Get(hWnda, &aP2); /*0x622fef*/
       if ( aP2 ) /*0x622ffa*/
         aP2->health = 0; /*0x622ffc*/
-      if ( !(uint8_t)SessionClass::GetGameSpeed(&g_GameMode_Current) ) /*0x623004*/
+      if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x623004*/
         Control::CreateControlDialog(aP0); /*0x62300f*/
       UI_Helper_60CAF0(aP0); /*0x623016*/
       UI_Helper_60C930(aP0); /*0x62301d*/
@@ -1835,7 +1835,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
   {
     v6 = (char *)RA2_OPNEW(v4 + 2); /*0x623e74*/
     v7 = SendMessageA(hWnd, 0x4B5u, v4 + 1, (LPARAM)v6); /*0x623e87*/
-    String::Assign_Alt(a2, v6); /*0x623e8a*/
+    ((String *)(a2))->Assign_Alt(v6); /*0x623e8a*/
     RA2_OPDEL(v6); /*0x623e90*/
     return v7; /*0x623e98*/
   }
@@ -2552,7 +2552,7 @@ LRESULT GetEditControlText(HWND hWnd, void ** a2)
   {
     v6 = (wchar_t *)RA2_OPNEW(2 * v4 + 4); /*0x623ed5*/
     v7 = SendMessageA(hWnd, 0x4B3u, v4 + 1, (LPARAM)v6); /*0x623ee8*/
-    WideString::Assign_Alt(a2, v6); /*0x623eeb*/
+    ((WideString *)(a2))->Assign_Alt(v6); /*0x623eeb*/
     RA2_OPDEL(v6); /*0x623ef1*/
     return v7; /*0x623ef9*/
   }
@@ -2577,7 +2577,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
     DeleteAndZero::Alt2(a2); /*0x623f23*/
   v6 = (char *)RA2_OPNEW(v5 + 2); /*0x623f34*/
   v7 = SendMessageA(aP0, 0x4B7u, wParam, (LPARAM)v6); /*0x623f40*/
-  String::Assign_Alt(a2, v6); /*0x623f47*/
+  ((String *)(a2))->Assign_Alt(v6); /*0x623f47*/
   RA2_OPDEL(v6); /*0x623f4d*/
   return v7; /*0x623f57*/
 }
@@ -2692,7 +2692,7 @@ unsigned char E4Recv_6260F0::sub_6260F0(ObjectClass * aP1)
   v3 = 256; /*0x6260f9*/
   do /*0x62610f*/
   {
-    result = Color::Lerp((Color *)this, aP1, &byte_A83CD9); /*0x626106*/
+    result = ((Color *)((Color *)this))->Lerp(aP1, &byte_A83CD9); /*0x626106*/
     this = (ObjectClass *)((char *)this + 3); /*0x62610b*/
     --v3; /*0x62610e*/
   }
@@ -2713,7 +2713,7 @@ unsigned char E4Recv_626170::sub_626170(ObjectClass * aP1, int a3)
   for ( i = 0; i < 256; ++i ) /*0x62617c*/
   {
     if ( *(unsigned char *)(i + a3) ) /*0x626180*/
-      result = Color::Lerp((Color *)this, aP1, &byte_A83CD9); /*0x62618e*/
+      result = ((Color *)((Color *)this))->Lerp(aP1, &byte_A83CD9); /*0x62618e*/
     this = (ObjectClass *)((char *)this + 3); /*0x626194*/
   }
   return result; /*0x62619f*/
@@ -2733,7 +2733,7 @@ unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
   {
     result = a4; /*0x6261c0*/
     if ( *(unsigned char *)(i + a4) ) /*0x6261c4*/
-      result = Color::Lerp((Color *)this, aP1, (uint8_t *)(a3 + 2 * (i % 256) + i % 256)); /*0x6261e3*/
+      result = ((Color *)((Color *)this))->Lerp(aP1, (uint8_t *)(a3 + 2 * (i % 256) + i % 256)); /*0x6261e3*/
     this = (ObjectClass *)((char *)this + 3); /*0x6261e9*/
   }
   return result; /*0x6261f4*/

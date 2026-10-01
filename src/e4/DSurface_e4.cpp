@@ -233,7 +233,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       {
         v9 = (gamemd::DSurface *)((unsigned int)((DSurface *)__2_YAPAXI_Z(0x24u)));
         if ( v9 ) /*0x4ba8e9*/
-          BackBuffer = DSurface::CreateBackBuffer(v9, v29); /*0x4ba8f2*/
+          BackBuffer = ((DSurface *)(v9))->CreateBackBuffer(v29); /*0x4ba8f2*/
         else
           BackBuffer = 0; /*0x4ba8f9*/
         this->DSurface_field_0x0 = (unsigned int)(BackBuffer); /*0x4ba8ff*/
@@ -390,7 +390,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x4BAC60
 namespace gamemd {
-unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_2)
+unsigned int * DSurface::CreateBackBuffer(int a2)
 {
 
   void *v3; // edi
@@ -438,7 +438,7 @@ int DSurface::GetBytesPerPixel()
 } // namespace gamemd
 // 0x4BB000
 namespace gamemd {
-int DSurface::RestoreIfLost(void *a1)
+int DSurface::RestoreIfLost()
 {
 
   int v3; // eax
@@ -727,7 +727,7 @@ LABEL_71:
 } // namespace gamemd
 // 0x4BB620
 namespace gamemd {
-void* DSurface::FillRectEx(int a2, int a3, int a4, void *a4_2)
+void* DSurface::FillRectEx(int a2, int a3, int a4)
 {
 
   int v5; // eax
@@ -1251,7 +1251,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
       {
         Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4bbf45*/
         v95[2] = v97; /*0x4bbf4c*/
-        SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v96, v97 - Stream_field_04); /*0x4bbf5d*/
+        SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v96, v97 - Stream_field_04); /*0x4bbf5d*/
         v88 = -1; /*0x4bbf6d*/
         LOWORD(v36) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4bbf79*/
         pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4bbf80*/
@@ -1857,10 +1857,10 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
     return 0; /*0x4be274*/
   Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4be27e*/
   v94[2] = v96; /*0x4be285*/
-  SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v95, v96 - Stream_field_04); /*0x4be29c*/
+  SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v95, v96 - Stream_field_04); /*0x4be29c*/
   v41 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4); /*0x4be2a2*/
   v94[2] = v96; /*0x4be2a5*/
-  v42 = (uint16_t *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v95, v96 - v41); /*0x4be2b6*/
+  v42 = (uint16_t *)((StreamClass *)(*(int **)&stru_87E790.__pad_D8[60]))->ReadAndSeek(v95, v96 - v41); /*0x4be2b6*/
   v85 = -1; /*0x4be2c1*/
   LOWORD(v41) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4be2cd*/
   pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4be2d4*/
@@ -2679,10 +2679,10 @@ LABEL_17:
     goto LABEL_121; /*0x4c000c*/
   Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4c0016*/
   v88[2] = v90; /*0x4c001d*/
-  SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v89, v90 - Stream_field_04); /*0x4c0034*/
+  SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v89, v90 - Stream_field_04); /*0x4c0034*/
   v39 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4); /*0x4c003a*/
   v88[2] = v90; /*0x4c003d*/
-  v40 = (unsigned short *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v89, v90 - v39); /*0x4c004e*/
+  v40 = (unsigned short *)((StreamClass *)(*(int **)&stru_87E790.__pad_D8[60]))->ReadAndSeek(v89, v90 - v39); /*0x4c004e*/
   v82 = -1; /*0x4c0055*/
   LOWORD(v41) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4c0061*/
   result = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4c0065*/
@@ -4414,7 +4414,7 @@ int DSurface::CommitBuffers()
 
 }
 // 0x7C2C60
-int DSurface::Flip(void *a1)
+int DSurface::Flip()
 {
 
   int v2; // eax
@@ -4465,7 +4465,7 @@ long long DSurface::ConstructFromHandle()
 
 }
 // 0x4BB080
-int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6, void *a6_2)
+int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
 {
 
   int (**DSurface_field_0x0)(DSurface *, int); // ebx
@@ -4535,7 +4535,7 @@ char DSurface::FlipIfNeeded()
 
   result = (char)this->DSurface_field_0x514; /*0x759e60*/
   if ( result ) /*0x759e68*/
-    return DSurface::Flip((DSurface *)this->DSurface_field_0x200); /*0x759e70*/
+    return ((DSurface *)((DSurface *)this->DSurface_field_0x200))->Flip(); /*0x759e70*/
   return result; /*0x759e75*/
 
 }

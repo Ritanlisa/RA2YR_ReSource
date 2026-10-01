@@ -1852,7 +1852,7 @@ struct HouseClass {
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
     AbstractClass * * FindStartPositions(void *a1);
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
-    BOOL GainedPoweredCenter(int a2, void *a2_2);
+    BOOL GainedPoweredCenter(int a2);
     CellStruct * * UpdateAITryFireSW(void *a1);
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
@@ -1879,7 +1879,7 @@ struct HouseClass {
     int GetStatus(IUnknown * aP1);
     int GetUnitSelfHealStep();
     int InitAlliances();
-    int IsAlliedWith(IUnknown * aP1, void *a2);
+    int IsAlliedWith();
     int IsCellOccupied(IUnknown * aP1, char a3);
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);

@@ -1126,7 +1126,7 @@ void IsValidActionDialog(int a1, HWND a2)
     return 1; /*0x602aa0*/
   }
 // 0x601360
-  return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(dword_A8B238); /*0x60262e*/
+  return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60262e*/
 }
 }
 // 0x602DD0
@@ -1608,11 +1608,11 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   if ( v4 ) /*0x604072*/
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
-    WideString::Assign((WideString *)aP0, StringCSF); /*0x60408a*/
+    ((WideString *)((WideString *)aP0))->Assign(StringCSF); /*0x60408a*/
   }
   else
   {
-    WideString::Assign((WideString *)aP0, &g_TypeClass_DefaultString); /*0x60409c*/
+    ((WideString *)((WideString *)aP0))->Assign(&g_TypeClass_DefaultString); /*0x60409c*/
   }
   return (wchar_t **)(aP0);
 }
@@ -3148,7 +3148,7 @@ bool sub_609BC0(int a1, HWND a2)
   unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( (uint8_t)SessionClass::GetGameSpeed(dword_A8B238) ) /*0x609bcd*/
+  if ( (uint8_t)((SessionClass *)(dword_A8B238))->GetGameSpeed() ) /*0x609bcd*/
     return 0; /*0x609bcd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609bea*/
   {
@@ -3202,7 +3202,7 @@ bool sub_609CF0(int a1, HWND a2)
   unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( !(uint8_t)SessionClass::GetGameSpeed(dword_A8B238) ) /*0x609cfd*/
+  if ( !(uint8_t)((SessionClass *)(dword_A8B238))->GetGameSpeed() ) /*0x609cfd*/
     return 0; /*0x609cfd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609d1a*/
   {
@@ -3493,7 +3493,7 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
   struct tagRECT v19; // [esp+54h] [ebp-10h] BYREF
 
   Parent = GetParent(hWnd); /*0x60b019*/
-  GameSpeedSessionClass = SessionClass::GetGameSpeed(dword_A8B238); /*0x60b020*/
+  GameSpeedSessionClass = ((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60b020*/
   GetWindowRect(Parent, &Rect); /*0x60b02e*/
   GetWindowRect(hWnd, &v19); /*0x60b036*/
   if ( GameSpeedSessionClass )
@@ -4159,9 +4159,9 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
   lParam[0] = (LPARAM)hWnd; /*0x604016*/
   lParam[1] = v10; /*0x60401a*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x60401e*/
-  WideString::AssignFromPtr((WideString *)&a5, (const wchar_t **)&v9); /*0x604029*/
+  ((WideString *)((WideString *)&a5))->AssignFromPtr((const wchar_t **)&v9); /*0x604029*/
   DeleteAndZero::Alt((DeleteAndZero *)&v9); /*0x604032*/
-  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&a5); /*0x60403e*/
+  ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&a5); /*0x60403e*/
   DeleteAndZero::Alt(&a5); /*0x604047*/
   return a1; /*0x60404e*/
 }

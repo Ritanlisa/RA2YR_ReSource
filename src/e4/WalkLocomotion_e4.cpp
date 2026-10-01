@@ -32,7 +32,7 @@
 
 // 0x6A01A0
 namespace gamemd {
-AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
+AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
 {
 
   unsigned int *v3; // edx

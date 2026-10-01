@@ -516,13 +516,13 @@ LABEL_21:
                    -1),
           Bool != -1) )
     {
-      Theme::Stop((Theme *)&unk_A83D10, 0); /*0x683cad*/
+      ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x683cad*/
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
   *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
-  Vector::Clear((int)v21); /*0x683cd8*/
+  ((Vector *)((int)v21))->Clear(); /*0x683cd8*/
   *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x683ce1*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
@@ -557,7 +557,7 @@ LABEL_21:
     *p_vtable2 = Timer::GetTicks(); /*0x683e3f*/
   }
   if ( dword_A8B230[202].vtable2 == (void *)-1 ) /*0x683e50*/
-    Theme::Stop((Theme *)&unk_A83D10, 1); /*0x683e66*/
+    ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x683e66*/
   else
     Theme::QueueSong((int)&unk_A83D10, (int)dword_A8B230[202].vtable2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
@@ -605,7 +605,7 @@ int ScenarioClass::CleanupTemporary()
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x683f5d*/
     Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], 0); /*0x683f61*/
   Mouse::ReleaseCapture((ScrollClass *)&stru_87F5F0.__pad_58[416]); /*0x683f6b*/
-  Mouse::SetCursor((int)&stru_87F5F0.__pad_58[416], 0, 0); /*0x683f79*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x683f90*/
   TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x683f9a*/
@@ -683,7 +683,7 @@ void ScenarioClass_Construct()
       Map = ScenarioClass::LoadMap(0, (bool *)v5.INIClass, a2); /*0x686851*/
       *(unsigned int *)v6.CDFileClass = (void*)&CCFileClass_vftable; /*0x686853*/
       v8 = 0; /*0x68685b*/
-      Vector::Clear((int)v7); /*0x686862*/
+      ((Vector *)((int)v7))->Clear(); /*0x686862*/
       *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x68686b*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x686873*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x68687c*/
@@ -694,7 +694,7 @@ void ScenarioClass_Construct()
       Debug::Log(); /*0x6867cc*/
       *(unsigned int *)v6.CDFileClass = (void*)&CCFileClass_vftable; /*0x6867db*/
       v8 = 0; /*0x6867e3*/
-      Vector::Clear((int)v7); /*0x6867ea*/
+      ((Vector *)((int)v7))->Clear(); /*0x6867ea*/
       *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x6867f3*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x6867fb*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x686804*/
@@ -795,7 +795,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
       {
         _splitpath((const char *)g_ScenarioClass_Instance->fileName, 0, 0, Filename[0], 0);
         strcat(Filename[0], &stru_830620[54836]);
-        FileClass::SetFileName(aP1, (IUnknown *)&Filename);
+        ((FileClass *)(aP1))->SetFileName((IUnknown *)&Filename);
         if ( CCFileClass::Open(aP1, 0) )
         {
           CCINIClass::Load(var158, aP1, 0, 0);
@@ -803,7 +803,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
         }
         CCFileClass::Reset(aP1);
       }
-      FileClass::SetFileName(aP1, (IUnknown *)&stru_830620[37124]);
+      ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[37124]);
       if ( CCFileClass::Open(aP1, 0) )
       {
         CCINIClass::Load(var158, aP1, 0, 0);
@@ -1089,7 +1089,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
     v51 = 0;
     *(unsigned int *)aP1[0].__pad_0 = &vt_CCFileClass;
     v69 = 0;
-    Vector::Clear((int)v65);
+    ((Vector *)((int)v65))->Clear();
     *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
     BufferIOFileClass::Dtor(aP1);
     HashTable_flat::DestroyHashTableINIClass((void **)var158);
@@ -1164,7 +1164,7 @@ LABEL_124:
       *(unsigned int *)aP1[0].__pad_0 = &vt_CCFileClass;
       --*(unsigned int *)&g_NetworkPlayerBuffer[4464];
       v69 = 0;
-      Vector::Clear((int)v65);
+      ((Vector *)((int)v65))->Clear();
       *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
       BufferIOFileClass::Dtor(aP1);
       HashTable_flat::DestroyHashTableINIClass((void **)var158);
@@ -1249,7 +1249,7 @@ LABEL_124:
   Event::Dispatch();
   LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
   for ( m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); m; m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
-    House::AnnounceUpgrade(m, (IUnknown *)0xFFFFFFFF);
+    ((House *)(m))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
   ResetBuildingState();
   CCINIClass::LoadTypeFromINI(a2->__pad_0);
   Event::Dispatch();
@@ -1279,7 +1279,7 @@ LABEL_124:
     if ( g_NetworkPlayerBuffer[5973] )
     {
       CCFileClass::Reset(aP1);
-      FileClass::SetFileName(aP1, (IUnknown *)&stru_830620[54640]);
+      ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[54640]);
       if ( CCFileClass::Open(aP1, 0) == 1 )
       {
         CCINIClass::Load(var158, aP1, 0, 0);
@@ -1326,7 +1326,7 @@ LABEL_124:
   FogOfWar::Render((int **)&DataGlobal_87F7E8);
   *(unsigned int *)aP1[0].__pad_0 = &vt_CCFileClass;
   v69 = 0;
-  Vector::Clear((int)v65);
+  ((Vector *)((int)v65))->Clear();
   *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
   BufferIOFileClass::Dtor(aP1);
   HashTable_flat::DestroyHashTableINIClass((void **)var158);

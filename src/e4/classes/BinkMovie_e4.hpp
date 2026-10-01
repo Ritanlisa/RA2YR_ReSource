@@ -47,16 +47,16 @@ struct BinkMovie {
     unsigned int Debug;
 // --- flat members (END) ---
     unsigned int * Close(char * FullPath, void *a2_1);  // 0x432690
-    void Open(char * FullPath, int a3, void *a3_2);  // 0x4326C0
+    void Open(char *FullPath, int a3);  // 0x4326C0
     void Stop(void *a1_1, void *a2_1);  // 0x432700
     AbstractClass * * InitFromFile(LPCSTR * FullPath, void *a2_1);  // 0x432750
     int Pause(unsigned char a2);  // 0x432C30
     // dup-decl removed: BOOL IsAtEnd();  // 0x432C50
     void Play(void *a1_1);  // 0x432C70
-    int RenderLoop(DSurface * aP1, int a3, int a4, void *a4_2);  // 0x432E40
+    int RenderLoop(int aP1, int a3, int a4);  // 0x432E40
     int RenderFrameToSurface(void *a1_1);  // 0x433040
     unsigned int * RenderSingleFrame(DSurface * aP1, int a3, int a4, char a5);  // 0x4331F0
-    unsigned int * BlitToTarget(DSurface * aP1, void *a2_1);  // 0x433270
+    unsigned int * BlitToTarget(int aP1);  // 0x433270
     int AdjustSurfaceFormat(DSurface * aP1, void *a2_1);  // 0x433330
     void Cleanup(void *a1_1);  // 0x5C01F0
     int HandleKeyboard(int a1, HWND a2);  // 0x6033F0

@@ -403,7 +403,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   if ( a10 != -1 ) /*0x6f8992*/
   {
     v12 = (*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1); /*0x6f899a*/
-    if ( MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
+    if ( ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
   v14 = v11[58]; /*0x6f89bf*/
@@ -446,17 +446,17 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       fcomp qword ptr [ecx+16F8h]
       fnstsw ax
     }
-    if ( (_AX & 0x100) != 0 && (uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) ) /*0x6f8a64*/
+    if ( (_AX & 0x100) != 0 && (uint8_t)((Object *)((Object *)a1->owner))->IsAlliedWithObjectHouse(v14) ) /*0x6f8a64*/
       goto LABEL_34; /*0x6f8a6b*/
   LABEL_33:
     v14 = v14->vtable4; /*0x6f8b3e*/
     if ( !v14 ) /*0x6f8b43*/
       goto LABEL_34; /*0x6f8b43*/
   }
-  if ( ((uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
+  if ( ((uint8_t)((Object *)((Object *)a1->owner))->IsAlliedWithObjectHouse(v14) || v25) /*0x6f8ac7*/
     && !*(unsigned char *)((*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
     && !a1->isBerserk
-    && (!v25 || !owner || !(uint8_t)Object::IsAlliedWithObjectHouse(owner, v14)) )
+    && (!v25 || !owner || !(uint8_t)((Object *)(owner))->IsAlliedWithObjectHouse(v14)) )
   {
     if ( (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
@@ -488,9 +488,9 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     return 0; /*(void *)(0x6f8b4b)*/
   v23 = 0; /*0x6f8b5b*/
   *(unsigned int *)(a8) = v15; /*0x6f8b5d*/
-  if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v15)
+  if ( !(uint8_t)((Object *)((Object *)a1->owner))->IsAlliedWithObjectHouse(v15)
     || ((TechnoClass *)(a1))->GetValue(-1) < 0
-    || !(uint8_t)House::IsCurrentPlayer((House *)a1->owner)
+    || !(uint8_t)((House *)((House *)a1->owner))->IsCurrentPlayer()
     && a1
     && (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
     && *(unsigned char *)(*((*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
@@ -881,7 +881,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int v25; // [esp+24h] [ebp-10h] BYREF
   unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  v5 = (int *)(Coord::Subtract(v26, (3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
+  v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
   v6 = (int *)(a1[1]);
   v7 = (int *)(*v5);
   v8 = (int *)(v5[1]);
@@ -891,7 +891,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v21[0] = (unsigned int)((int *)(v7));
   v11 = (int *)(*a2);
   v22 = (int *)(v9);
-  v12 = (int *)(Coord::Subtract(v26, (3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4));
+  v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4));
   v13 = v12[1]; /*0x6f5fa9*/
   v14 = v12[2]; /*0x6f5fac*/
   v23 = *v12; /*0x6f5faf*/

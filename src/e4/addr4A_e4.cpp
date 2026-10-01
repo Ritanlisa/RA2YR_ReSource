@@ -604,7 +604,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
   LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
         *(unsigned int *)v8.CDFileClass = (void*)&CCFileClass_vftable; /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
-        Vector::Clear((int)v9); /*0x4a3948*/
+        ((Vector *)((int)v9))->Clear(); /*0x4a3948*/
         *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x4a3951*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
@@ -646,7 +646,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
   LABEL_6: *a2 = (unsigned int)((gamemd::AbstractClass **)(!v7));
         v8[0] = (unsigned int)((gamemd::AbstractClass **)((void*)&CCFileClass_vftable));
         v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
-        Vector::Clear((int)v9); /*0x4a39ef*/
+        ((Vector *)((int)v9))->Clear(); /*0x4a39ef*/
         v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
         BufferIOFileClass::Dtor(v8); /*0x4a3a00*/
         return (int)v5; /*0x4a3a05*/
@@ -2225,7 +2225,7 @@ ScenarioClass * * sub_4AC4F0()
   result = dword_A8B230; /*0x4ac62d*/
   dword_A8B230[14].nextArrayIndex = dword_A8B230[14].abstractFlags; /*0x4ac638*/
   if ( g_TacticalClass_Instance ) /*0x4ac646*/
-    return (void *)Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac64d*/
+    return (void *)((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(&v11); /*0x4ac64d*/
   return result; /*0x4ac5c5*/
 }
 }
@@ -2655,7 +2655,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
         if ( v39 ) /*0x4af275*/
           (**v39)(v39, 1); /*0x4af27b*/
 // 0x43ae50
-        return Vector::Clear((int)v65); /*0x4af284*/
+        return ((Vector *)((int)v65))->Clear(); /*0x4af284*/
       }
     }
   }
@@ -3076,7 +3076,7 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
 
   if ( !aP1 || aP2 < 1 ) /*0x4a20c3*/
     return 0; /*0x4a20e2*/
-  v4 = Delegate::Invoke((Straw *)this, (int)aP1, aP2); /*0x4a20cd*/
+  v4 = ((Delegate *)((Straw *)this))->Invoke((int)aP1, aP2); /*0x4a20cd*/
   Checksummer::Add_Buffer((Checksummer *)&((unsigned int *)this)[0], aP1, v4); /*0x4a20d4*/
   return v4; /*0x4a20dc*/
 

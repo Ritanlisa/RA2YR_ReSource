@@ -139,7 +139,7 @@ int GameConfig::ComputeHash()
   byte_B053B8 = 1; /*0x679e59*/
   v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
   v14 = 0; /*0x679e68*/
-  Vector::Clear((int)v13); /*0x679e6f*/
+  ((Vector *)((int)v13))->Clear(); /*0x679e6f*/
   v12[0] = (unsigned int)(&off_7E1668); /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
   HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
@@ -196,7 +196,7 @@ void GameConfig::Constructor(void *a1_1, void *a2_1, void *a3_1)
       CCINIClass::Load(*(CCINIClass **)&v1->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
-    Vector::Clear((int)v7); /*0x5d686f*/
+    ((Vector *)((int)v7))->Clear(); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&off_7E1668); /*0x5d6878*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x5d6880*/
   }

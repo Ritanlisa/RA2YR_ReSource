@@ -285,9 +285,9 @@ AbstractClass * * CampaignClass::SaveProgress()
   v20 = dword_A8DA84; /*0x49c8ac*/
   if ( dword_A8DA84 ) /*0x49c8b4*/
   {
-    PlayerSide = (void *)SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x49c8be*/
+    PlayerSide = (void *)((SessionClass *)((int *)*dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse1, PlayerSide); /*0x49c8d2*/
-    PlayerColor = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x49c8e1*/
+    PlayerColor = ((SessionClass *)((SessionClass *)*dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
     INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aColor1, PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
   }
@@ -302,9 +302,9 @@ AbstractClass * * CampaignClass::SaveProgress()
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)SessionClass::GetPlayerSide((int *)dword_A8DA78[v23]); /*0x49c925*/
+    v25 = (void *)((SessionClass *)((int *)dword_A8DA78[v23]))->GetPlayerSide(); /*0x49c925*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse2, v25); /*0x49c939*/
-    v26 = SessionClass::GetPlayerColor((SessionClass *)dword_A8DA78[v23]); /*0x49c949*/
+    v26 = ((SessionClass *)((SessionClass *)dword_A8DA78[v23]))->GetPlayerColor(); /*0x49c949*/
     INIClass::SetInt(v28.INIClass, (uint8_t *)Block, aColor2, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
@@ -321,13 +321,13 @@ LABEL_47:
   CCFileClass::Reset(&v30); /*0x49ca5d*/
   *(unsigned int *)v30.CDFileClass = &vt_CCFileClass; /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
-  Vector::Clear((int)v31); /*0x49ca7e*/
+  ((Vector *)((int)v31))->Clear(); /*0x49ca7e*/
   *(unsigned int *)v30.CDFileClass = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
   *(unsigned int *)v33.CDFileClass = &vt_CCFileClass; /*0x49caab*/
   v35 = 0; /*0x49cab2*/
-  Vector::Clear((int)v34); /*0x49cab9*/
+  ((Vector *)((int)v34))->Clear(); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
   LOBYTE(this->scenario[17]) = 1; /*0x49cad2*/

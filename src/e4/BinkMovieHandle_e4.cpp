@@ -147,7 +147,7 @@ LABEL_6:
       goto LABEL_6; /*0x433155*/
     }
   }
-  return Bin  return BinkMovie::BlitToTarget((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
+  return Bin  return ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget((int)width); 
 
 }
 } // namespace gamemd

@@ -180,7 +180,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_2)
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = (unsigned int)(&vt_SHAPipe); /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
-  SHA1::ComputeThunk(&v12, this->__pad_41); /*0x4742da*/
+  ((SHA1 *)(&v12))->ComputeThunk(this->__pad_41); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
   v8 = memcmp(v20, this->__pad_41, 0x14u) == 0; /*0x4742fa*/

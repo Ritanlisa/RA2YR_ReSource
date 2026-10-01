@@ -368,9 +368,9 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
             *(unsigned int *)(dword_A8DA90[0] + 107) = 0; /*0x5ded15*/
             v21 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x5ded20*/
-            SessionClass::SetPlayerOption((int *)dword_A8DA90[0], v21); /*0x5ded2a*/
-            SessionClass::SetPlayerColor((int *)dword_A8DA90[0], -2); /*0x5ded37*/
-            SessionClass::SetOption((int *)dword_A8DA90[0], -2); /*0x5ded44*/
+            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerOption(v21); /*0x5ded2a*/
+            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerColor(-2); /*0x5ded37*/
+            ((SessionClass *)((int *)dword_A8DA90[0]))->SetOption(-2); /*0x5ded44*/
             SessionClass::SetOption2((int *)dword_A8DA90[0], -2); /*0x5ded51*/
             Lobby::FillPlayerFactions((Lobby *)hDlg); /*0x5ded58*/
           }
@@ -380,7 +380,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
             && dword_A8B23C
             && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
           {
-            SessionClass::SetPlayerOption((int *)dword_A8DA90[0], -3); /*0x5ded9e*/
+            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerOption(-3); /*0x5ded9e*/
             *(unsigned int *)(dword_A8DA90[0] + 107) = -1; /*0x5deda8*/
           }
           NetworkLobby::Dispatch((NetworkLobby *)hDlg); /*0x5dedb1*/
@@ -412,7 +412,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
       }
       return 0; /*0x5deeff*/
     }
-    WideString::Assign_Alt((void **)(lParam + 8), 0); /*0x5def2d*/
+    ((WideString *)((void **)(lParam + 8)))->Assign_Alt(0); /*0x5def2d*/
     if ( *(unsigned int *)lParam && *(unsigned int *)(lParam + 4) != -1 ) /*0x5def40*/
     {
       DlgCtrlID = (Dialog *)GetDlgCtrlID(*(HWND *)lParam); /*0x5def49*/
@@ -429,7 +429,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           ComboBoxSelectedRaw = (GameSetup *)GetComboBoxSelectedRaw(hDlg, (int)DlgCtrlID, *(unsigned int *)(lParam + 4)); /*0x5def77*/
           DifficultyString = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5def7e*/
 LABEL_132:
-          WideString::Assign_Alt((void **)(lParam + 8), DifficultyString); /*0x5defb4*/
+          ((WideString *)((void **)(lParam + 8)))->Assign_Alt(DifficultyString); /*0x5defb4*/
         }
       }
       else
@@ -457,7 +457,7 @@ LABEL_132:
       case 0xFu: /*0x5de57f*/
         Dialog::DrawBackground((Dialog *)hDlg); /*0x5de634*/
         if ( g_UIControlState ) /*0x5de641*/
-          Skirmish::RenderPreview(g_UIControlState, hDlg); /*0x5de644*/
+          ((Skirmish *)(g_UIControlState))->RenderPreview(hDlg); /*0x5de644*/
         if ( (uint8_t)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5de64e*/
           LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], lParam, nIDDlgItem, NAN); /*0x5de664*/
         Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
@@ -963,9 +963,9 @@ LABEL_55:
           *(unsigned int *)(v21 + 40) = *(unsigned int *)&HouseClass_Player[39608];
           *(unsigned int *)(v21 + 44) = *(unsigned int *)&HouseClass_Player[39612];
           *(unsigned int *)(v21 + 48) = *(unsigned int *)&HouseClass_Player[39616];
-          SessionClass::SetPlayerOption(v21, *(SkirmishDialog **)&HouseClass_Player[39195]);
-          SessionClass::SetPlayerColor(v21, *(int *)&HouseClass_Player[39199]);
-          SessionClass::SetOption(v21, (SessionClass *)0xFFFFFFFE);
+          ((SessionClass *)(v21))->SetPlayerOption(*(SkirmishDialog **)&HouseClass_Player[39195]);
+          ((SessionClass *)(v21))->SetPlayerColor(*(int *)&HouseClass_Player[39199]);
+          ((SessionClass *)(v21))->SetOption((SessionClass *)0xFFFFFFFE);
           SessionClass::SetOption2(v21, (SessionClass *)0xFFFFFFFE);
           if ( *(unsigned int *)&HouseClass_Player[39235] )
             *(unsigned int *)(v21 + 107) = -1;
@@ -1055,10 +1055,10 @@ LABEL_79:
           char * v30 = CharToWideString(&HouseClass_Player[30260]);
           wcscpy((wchar_t *)v29, (const wchar_t *)v30);
           PlayerOption = (SkirmishDialog *)Session::GetPlayerOption(&HouseClass_Player[29932]);
-          SessionClass::SetPlayerOption(v29, PlayerOption);
-          PlayerColor = Session::GetPlayerColor(&HouseClass_Player[29932]);
-          SessionClass::SetPlayerColor(v29, PlayerColor);
-          SessionClass::SetOption(v29, (SessionClass *)0xFFFFFFFE);
+          ((SessionClass *)(v29))->SetPlayerOption(PlayerOption);
+          PlayerColor = ((Session *)(&HouseClass_Player[29932]))->GetPlayerColor();
+          ((SessionClass *)(v29))->SetPlayerColor(PlayerColor);
+          ((SessionClass *)(v29))->SetOption((SessionClass *)0xFFFFFFFE);
           SessionClass::SetOption2(v29, (SessionClass *)0xFFFFFFFE);
           *(unsigned int *)&stru_830620[4228] = *(unsigned int *)&HouseClass_Player[39235];
           if ( *(unsigned int *)&HouseClass_Player[39231] == *(unsigned int *)&HouseClass_Player[39235]
@@ -1151,27 +1151,27 @@ LABEL_79:
               aP1 = (SessionClass *)atol(v53);
             if ( !Dialog::FindByHandle((void *)0xBC) )
               Dialog::FindByHandle((void *)0xBD);
-            PlayerSide = SessionClass::GetPlayerSide(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]);
+            PlayerSide = ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->GetPlayerSide();
             bool v114 = PlayerSide != (unsigned int)v48;
             if ( (SkirmishDialog *)PlayerSide != v48 )
-              SessionClass::SetPlayerOption(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396], v48);
-            v54 = (SessionClass *)SessionClass::GetPlayerColor(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]);
+              ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->SetPlayerOption(v48);
+            v54 = (SessionClass *)((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->GetPlayerColor();
             bool v116 = v54 != (SessionClass *)v50;
             if ( v54 != (SessionClass *)v50 )
             {
               if ( NetworkSession::IsPlayerInGame(&HouseClass_Player[29932], v50) )
                 v50 = -2;
-              SessionClass::SetPlayerColor(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396], v50);
+              ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->SetPlayerColor(v50);
             }
-            Option = SessionClass::GetOption(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]);
+            Option = ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->GetOption();
             bool v115 = Option != v52;
             if ( Option != v52 )
             {
               if ( NetworkLobby::CheckPlayerNames((void *)v52) )
                 v52 = -2;
-              SessionClass::SetOption(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396], (SessionClass *)v52);
+              ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->SetOption((SessionClass *)v52);
             }
-            Option2 = SessionClass::GetOption2(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]);
+            Option2 = ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->GetOption2();
             bool v58 = Option2 != (unsigned int)aP1;
             if ( (SessionClass *)Option2 != aP1 )
               SessionClass::SetOption2(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396], aP1);
@@ -1610,7 +1610,7 @@ LABEL_276:
                         v96 = (SkirmishDialog *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
                                                                               + 40))(*(unsigned int *)&HouseClass_Player[29936]);
                       }
-                      SessionClass::SetPlayerOption(v94, v96);
+                      ((SessionClass *)(v94))->SetPlayerOption(v96);
                     }
                     strcpy((char *)(v94 + 52), &HouseClass_Player[39172]);
                     int v97 = *(unsigned int *)&HouseClass_Player[39199];
@@ -1619,7 +1619,7 @@ LABEL_276:
                     if ( *(unsigned int *)&HouseClass_Player[39235] == 1 )
                     {
                       v97 = -2;
-                      SessionClass::SetPlayerOption(v94, (SkirmishDialog *)0xFFFFFFFD);
+                      ((SessionClass *)(v94))->SetPlayerOption((SkirmishDialog *)0xFFFFFFFD);
                       *(unsigned int *)(v94 + 107) = -1;
                     }
                     else
@@ -1631,16 +1631,16 @@ LABEL_276:
                         {
                           v106 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
                                                                              + 40))(*(unsigned int *)&HouseClass_Player[29936]);
-                          SessionClass::SetPlayerOption(v94, (SkirmishDialog *)v106);
+                          ((SessionClass *)(v94))->SetPlayerOption((SkirmishDialog *)v106);
                         }
                         else
                         {
-                          SessionClass::SetPlayerOption(v94, (SkirmishDialog *)0xFFFFFFFE);
+                          ((SessionClass *)(v94))->SetPlayerOption((SkirmishDialog *)0xFFFFFFFE);
                         }
                       }
                     }
-                    SessionClass::SetPlayerColor(v94, v97);
-                    SessionClass::SetOption(v94, (SessionClass *)0xFFFFFFFE);
+                    ((SessionClass *)(v94))->SetPlayerColor(v97);
+                    ((SessionClass *)(v94))->SetOption((SessionClass *)0xFFFFFFFE);
                     if ( *(unsigned int *)&HouseClass_Player[29936] )
                     {
                       v107 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
@@ -1672,8 +1672,8 @@ LABEL_276:
                     v119[0] = 7;
                     v110 = 1;
                     strcpy((char *)&v119[1], &HouseClass_Player[30260]);
-                    *(unsigned int *)((char *)&v119[11] + 3) = SessionClass::GetPlayerSide(v94);
-                    v99 = (SessionClass *)SessionClass::GetPlayerColor(v94);
+                    *(unsigned int *)((char *)&v119[11] + 3) = ((SessionClass *)(v94))->GetPlayerSide();
+                    v99 = (SessionClass *)((SessionClass *)(v94))->GetPlayerColor();
                     *(unsigned int *)((char *)&v119[21] + 3) = *(unsigned int *)&stru_830620[4228];
                     *(unsigned int *)((char *)&v119[12] + 3) = v99;
                     *(unsigned int *)((char *)&v119[20] + 3) = ebx325;
@@ -1784,9 +1784,9 @@ LABEL_276:
           (int)&HouseClass_Player[39092],
           0,
           0);
-      while ( Network::GetQueueCount((int)&HouseClass_Player[44148]) > 0 )
+      while ( ((Network *)((int)&HouseClass_Player[44148]))->GetQueueCount() > 0 )
       {
-        if ( !Network::ReceiveLoop(&HouseClass_Player[44148]) )
+        if ( !((Network *)(&HouseClass_Player[44148]))->ReceiveLoop() )
           break;
         Event::Dispatch();
       }
@@ -1941,7 +1941,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
     v10 = 0; /*0x5e8f7a*/
     for ( i = wcstok(Destination, asc_8304FC, v23); i; i = wcstok(0, asc_8304FC, v24) )
     {
-      WideString::Assign((wchar_t **)&v25, i); /*0x5e8f93*/
+      ((WideString *)((wchar_t **)&v25))->Assign(i); /*0x5e8f93*/
       v12 = NetworkLobby::DeleteAndZero((NetworkLobby *)&v25); /*0x5e8fa5*/
       DeleteAndZero::Alt(&v25); /*0x5e8fa7*/
       if ( !v12 ) /*0x5e8fae*/
@@ -2568,7 +2568,7 @@ char NetworkLobby::CheckPlayerNameValid()
         && v3 != (wchar_t *)g_Lobby_PlayerTeam
         && v3 != (wchar_t *)g_Lobby_PlayerSide
         && v3 != (wchar_t *)g_Lobby_PlayerColor
-        && (NetworkLobby *)SessionClass::GetPlayerColor((SessionClass *)v3) == this )
+        && (NetworkLobby *)((SessionClass *)((SessionClass *)v3))->GetPlayerColor() == this )
       {
         break; /*0x5e96f3*/
       }
@@ -2613,7 +2613,7 @@ char NetworkLobby::CheckPlayerNames()
         && v3 != (wchar_t *)g_Lobby_PlayerTeam
         && v3 != (wchar_t *)g_Lobby_PlayerSide
         && v3 != (wchar_t *)g_Lobby_PlayerColor
-        && (NetworkLobby *)SessionClass::GetOption((int *)v3) == this )
+        && (NetworkLobby *)((SessionClass *)((int *)v3))->GetOption() == this )
       {
         break; /*0x5e9773*/
       }
@@ -2720,7 +2720,7 @@ void NetworkLobby::UpdateLabels(HWND hDlg)
       FillComboBoxSides((HWND)hDlg, ResourceID3CSF); /*0x5ee6be*/
       v5 = SetComboBoxSelection((HWND)hDlg, ResourceID3CSF, -1); /*0x5ee6c9*/
       if ( *v3 ) /*0x5ee6ce*/
-        SessionClass::SetOption(*v3, v5); /*0x5ee6d5*/
+        ((SessionClass *)(*v3))->SetOption(v5); /*0x5ee6d5*/
       ++v3; /*0x5ee6da*/
       v2 = (ObjectClass *)((char *)v2 + 1); /*0x5ee6dd*/
     }

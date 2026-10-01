@@ -102,13 +102,13 @@ struct Dialog {
     CampaignClass * * CleanupTree();  // 0x6233A0
     int UpdateControlState(unsigned int * a2, unsigned int * a3);  // 0x624930
     AbstractClass * * GrowBuffer();  // 0x624BE0
-    AbstractClass * * BindGadgetData(int * a2, char * Block, void *a3_1);  // 0x624CA0
+    AbstractClass * * BindGadgetData(int *a2, char *Block);  // 0x624CA0
     INIClass * * ReadMultiplayerDialogSettings();  // 0x671EA0
     int FindByHandle(void *a1_1);  // 0x775940
     int GetCurrent();  // 0x775B10
     int GetCurrentType();  // 0x775B20
     BOOL GetField(void *a1_1, void *a2_1);  // 0x775BA0
-    int SideIDToIndex(void *a1_1);  // 0x4E4EC0
+    int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700

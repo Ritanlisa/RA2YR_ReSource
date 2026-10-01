@@ -351,7 +351,7 @@ void sub_626C60()
 }
 }
 // 0x641DB0
-AbstractClass * * Surface::LoadToSurfaceSHP(char * Source, void *a2)
+AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
 {
 
   unsigned int *v3; // esi
@@ -395,7 +395,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source, void *a2)
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
     *(unsigned int *)v9.CDFileClass = &vt_CCFileClass; /*0x641e7a*/
     v11 = 0; /*0x641e82*/
-    Vector::Clear((int)v10); /*0x641e8a*/
+    ((Vector *)((int)v10))->Clear(); /*0x641e8a*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641e93*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
     return 1; /*0x641ea2*/
@@ -405,7 +405,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source, void *a2)
 LABEL_11:
     *(unsigned int *)v9.CDFileClass = &vt_CCFileClass; /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
-    Vector::Clear((int)v10); /*0x641ebf*/
+    ((Vector *)((int)v10))->Clear(); /*0x641ebf*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641ec8*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641ed0*/
     return 0; /*0x641ed6*/
@@ -479,7 +479,7 @@ int Surface::RenderRadar()
     while ( 1 ) /*0x65528b*/
     {
       *(unsigned int *)v35 = *(unsigned int *)(*((unsigned int *)this + 1162) + 4 * v4); /*0x65528b*/
-      if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, v35, 1) ) /*0x655298*/
+      if ( !(uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v35, 1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
       v5 = v35[0] + *((unsigned int *)this + 1316) - v35[1]; /*0x6552b8*/
       v6 = 2; /*0x6552bf*/
@@ -1250,7 +1250,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
       0,
       aP6);
   }
-  Vector::Clear((int)v40); /*0x70773f*/
+  ((Vector *)((int)v40))->Clear(); /*0x70773f*/
 
 }
 // 0x7602E0
@@ -1420,7 +1420,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 v84 = v50; /*0x760914*/
                 for ( i = abs32(v56 - v76 - *((unsigned int *)this + 52)); v50 >= v60; --v68 ) /*0x760925*/
                 {
-                  if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v84, v51) > (uint16_t)v88 ) /*0x760940*/
+                  if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v84, v51) > (uint16_t)v88 ) /*0x760940*/
                     Voxel::BlendColor((Voxel *)this, v50, v57, i, v68); /*0x760950*/
                   --v50; /*0x76095e*/
                   --v84; /*0x76095f*/
@@ -1445,7 +1445,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
           v37 = (unsigned short *)(v74 + 2 * v9 * v83); /*0x76071a*/
           v90 = (unsigned int *)(*((unsigned int *)this + 106) + 8 * v81); /*0x760728*/
           v87 = LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v9 - v58 - 2; /*0x760740*/
-          v38 = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, 0, v9 - (unsigned int)DSurface_ViewBounds.field_4); /*0x760753*/
+          v38 = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(0, v9 - (unsigned int)DSurface_ViewBounds.field_4); /*0x760753*/
           v39 = v9; /*0x760755*/
           v55 = v9; /*0x760759*/
           if ( v9 >= (int)v8 ) /*0x76075d*/
@@ -1496,7 +1496,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       else
       {
         v86 = LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v58 - (unsigned short)v8 - 2; /*0x7603f4*/
-        v11 = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, 0, v8 - (char *)DSurface_ViewBounds.field_4); /*0x760406*/
+        v11 = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(0, v8 - (char *)DSurface_ViewBounds.field_4); /*0x760406*/
         v12 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x76040a*/
         v70 = g_ZBufferDescriptor[2].m_Stream; /*0x760418*/
         if ( (unsigned int)(v11 + 2 * (v12 + (unsigned int)v70 * (v9 - v61 + 1))) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x760437*/
@@ -1533,7 +1533,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 {
                   while ( 1 ) /*0x760622*/
                   {
-                    if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v82, v33) > v86 ) /*0x76063b*/
+                    if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v82, v33) > v86 ) /*0x76063b*/
                       Voxel::BlendColor((Voxel *)this, v32, v57, v34, v65); /*0x76064b*/
                     ++v32; /*0x760659*/
                     ++v82; /*0x76065a*/
@@ -1644,7 +1644,7 @@ int Surface::PixelToIndex(unsigned int * a2)
 
 }
 // 0x7BD690
-int Surface::CommitSurfaceBuffersAudio(void *a1)
+int Surface::CommitSurfaceBuffersAudio()
 {
 
   int v3; // eax

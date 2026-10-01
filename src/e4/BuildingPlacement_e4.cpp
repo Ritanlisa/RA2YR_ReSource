@@ -67,7 +67,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], v7); /*0x4fb8df*/
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
-  Tactical::MouseMove((Tactical *)&stru_87F5F0.__pad_58[416], &a3, v8); /*0x4fb8fe*/
+  ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
 
@@ -128,7 +128,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v50; // [esp+68h] [ebp-4h]
 
   v2 = (BuildingPlacement *)((char *)this + 64); /*0x54c55e*/
-  v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 16)); /*0x54c562*/
+  v3 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell((unsigned int *)this + 16)); /*0x54c562*/
   BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
   if ( !*(unsigned char *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
@@ -143,7 +143,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
-        NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
+        NeighbourContent = ((Cell *)(v8))->GetNeighbourContent(v7); /*0x54c5ea*/
         (*(void (**)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
         v11 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
         LOBYTE(v9) = v11[116]; /*0x54c600*/
@@ -189,7 +189,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     if ( v18[45] != 7 && (*(int (**)(unsigned int *))(*v18 + 388))(v18) != 7 ) /*0x54c6d9*/
     {
       if ( !v46 /*0x54c70c*/
-        || (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 16)->flags[0] & 0x100) == 0
+        || (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell((unsigned int *)this + 16)->flags[0] & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !*((unsigned char *)this + 144)) )
       {
         LOBYTE(v12) = (*(char (**)(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
@@ -213,7 +213,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         if ( !*(unsigned char *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
         {
           v21 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c776*/
-          Value = ProgressTimer::GetValue((ProgressTimer *)((char *)this + 84), &v47); /*0x54c77a*/
+          Value = ((ProgressTimer *)((ProgressTimer *)((char *)this + 84)))->GetValue(&v47); /*0x54c77a*/
           LOBYTE(v23) = 0; /*0x54c77f*/
           HIBYTE(v23) = v21; /*0x54c781*/
           if ( *(unsigned short *)Value != v23 ) /*0x54c786*/
@@ -237,7 +237,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     v48 = *v27; /*0x54c7ce*/
     v49 = v27[1]; /*0x54c7da*/
     v50 = v27[2]; /*0x54c7e6*/
-    v12 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48)); /*0x54c7ea*/
+    v12 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v48)); /*0x54c7ea*/
     if ( (v12->flags[0] & 0x100) != 0 ) /*0x54c7f8*/
     {
       LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
@@ -270,7 +270,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       v48 = *v31; /*0x54c888*/
       v49 = v31[1]; /*0x54c894*/
       v50 = v31[2]; /*0x54c8a0*/
-      if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48)->flags[0] & 0x100) != 0 ) /*0x54c8b2*/
+      if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v48)->flags[0] & 0x100) != 0 ) /*0x54c8b2*/
         *(unsigned char *)(this->BuildingPlacement_field_0x0C + 140) = 1; /*0x54c8b7*/
     }
     (*(void (**)(int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c8c5*/
@@ -713,7 +713,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
   v17[3] = v9[2]; /*0x500286*/
   LOWORD(a3) = v10 / 256; /*0x500296*/
   HIWORD(a3) = v11 / 256; /*0x5002b2*/
-  TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3, 0, 0); /*0x5002cf*/
+  TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex((int16_t *)&a3, 0, 0); /*0x5002cf*/
   v13 = *LayerClass::Pathfinding_Find( /*0x5002ea*/
            &stru_87F5F0.__pad_58[416],
            (int)v17,

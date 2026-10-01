@@ -276,7 +276,7 @@ LABEL_162:
       return 1;
     case 0x19:
       int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57));
+      ((Timer *)(&v131))->Start((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57));
       int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
   int v132; // [esp+28h] [ebp-228h]
@@ -289,7 +289,7 @@ LABEL_162:
       if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
       {
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-        Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+        ((Timer *)(&v113))->Start((DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
         ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
         *(unsigned int *)(ecx134 + 4) = (unsigned int)(v128);
@@ -298,7 +298,7 @@ LABEL_162:
       }
       else
       {
-        Timer::Start(&v131, 0);
+        ((Timer *)(&v131))->Start(0);
         int v59 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
         *(unsigned int *)(v59 + 4) = v132;
@@ -307,7 +307,7 @@ LABEL_162:
       }
       return 1;
     case 0x1B:
-      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+      ((Timer *)(&v131))->Start((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
       int v62 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
       *(unsigned int *)(v62 + 4) = v132;
@@ -342,7 +342,7 @@ LABEL_162:
         v50 = *(IUnknown **)(**(unsigned int **)&aP1[2].__pad_0[12] + 156);
         int v53 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 160);
         v133 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 164);
-        v52 = *(IUnknown **)CellStruct::Set(&v130, (int)v50 / 256, v53 / 256);
+        v52 = *(IUnknown **)((CellStruct *)(&v130))->Set((int)v50 / 256, v53 / 256);
         HouseClass::SetMapSeed(aP1, v52);
         aP1[620].NeedsSaveOrLink = v52;
       }
@@ -642,17 +642,17 @@ LABEL_157:
       return PlayWaypointEffect((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x40:
       int v25 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 4008);
-      WorldCoords = Cell::GetWorldCoords(*(int16_t **)&HouseClass_Player[29924], &v131, *(unsigned int *)(a1 + 144));
+      WorldCoords = ((Cell *)(*(int16_t **)&HouseClass_Player[29924]))->GetWorldCoords(&v131, *(unsigned int *)(a1 + 144));
       CreateSmokeEffectAt(50, v25, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
       return 1;
     case 0x41:
       int v27 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 4008);
-      int * v28 = Cell::GetWorldCoords(*(int16_t **)&HouseClass_Player[29924], &v131, *(unsigned int *)(a1 + 144));
+      int * v28 = ((Cell *)(*(int16_t **)&HouseClass_Player[29924]))->GetWorldCoords(&v131, *(unsigned int *)(a1 + 144));
       CreateSmokeEffectAt(100, v27, *v28, v28[1], v28[2], 0, 0);
       return 1;
     case 0x42:
       int v29 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 4008);
-      int * v30 = Cell::GetWorldCoords(*(int16_t **)&HouseClass_Player[29924], &v131, *(unsigned int *)(a1 + 144));
+      int * v30 = ((Cell *)(*(int16_t **)&HouseClass_Player[29924]))->GetWorldCoords(&v131, *(unsigned int *)(a1 + 144));
       CreateSmokeEffectAt(300, v29, *v30, v30[1], v30[2], 0, 0);
       return 1;
     case 0x43:
@@ -971,7 +971,7 @@ LABEL_60:
                             *(char **)&HouseClass_Player[29924],
                             &v130,
                             *(unsigned int *)(a1 + 68));
-      Coord::Subtract(&v131, (IUnknown *)(((int16_t)v112 << 8) + 128), (IUnknown *)((IDA_SHIWORD(v112) << 8) + 128), 0);
+      ((Coord *)(&v131))->Subtract((IUnknown *)(((int16_t)v112 << 8) + 128), (IUnknown *)((IDA_SHIWORD(v112) << 8) + 128), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
@@ -1097,7 +1097,7 @@ LABEL_290:
       {
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&stru_B05488[37452]);
       }
-      Tactical::SetTacticalPosition(*(int *)&stru_87C374[44976], (IUnknown *)&v113);
+      ((Tactical *)(*(int *)&stru_87C374[44976]))->SetTacticalPosition((IUnknown *)&v113);
       return 1;
     case 0x71:
       v120 = (AnimClass *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
@@ -1332,18 +1332,18 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     ++v9[290]; /*0x71d091*/
   }
   v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
   v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
   this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
     if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
-                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
+                              + 4 * *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28])
                   + 681) )
     {
-      *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
-      Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
+      *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28] = -1; /*0x71d123*/
+      ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/

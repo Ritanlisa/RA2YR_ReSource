@@ -26,7 +26,7 @@
 
 // 0x568300
 namespace gamemd {
-int LayerClass::CoordinatesLegal(IUnknown * aP1, void *a2)
+int LayerClass::CoordinatesLegal(int16_t *aP1)
 {
 
   int v2; // edx
@@ -208,7 +208,7 @@ LABEL_23: v99[1] = (int)(v27);
         v99[0] = (int16_t)(v86 + v26); /*0x56dd9f*/
         v99[2] = (int)(aP8); /*0x56ddad*/
         v99[3] = (int)(aP9); /*0x56ddb9*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v30, 1) ) /*0x56ddc0*/
+        if ( (uint8_t)((Type *)((Type *)v17))->CheckAmbiguity((int)v30, 1) ) /*0x56ddc0*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
@@ -218,7 +218,7 @@ LABEL_23: v99[1] = (int)(v27);
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
                 && (aP13 || ((int)v30->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v99, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v99, -1)) )
               {
                 v32 = v87; /*0x56deaa*/
                 v33 = v76; /*0x56deae*/
@@ -266,7 +266,7 @@ LABEL_44: v98[1] = (int)(v36);
         v98[3] = (int)(aP9);
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
         v98[2] = (int)(aP8); /*0x56dfcf*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v39, 1) ) /*0x56dfd6*/
+        if ( (uint8_t)((Type *)((Type *)v17))->CheckAmbiguity((int)v39, 1) ) /*0x56dfd6*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
@@ -276,7 +276,7 @@ LABEL_44: v98[1] = (int)(v36);
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
                 && (aP13 || ((int)v39->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v98, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v98, -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
                 v42 = v76; /*0x56e0c4*/
@@ -334,7 +334,7 @@ LABEL_67:
         v100[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e1fd*/
         v100[2] = (int)(aP8); /*0x56e209*/
         v100[3] = (int)(aP9); /*0x56e210*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v49, 1) ) /*0x56e217*/
+        if ( (uint8_t)((Type *)((Type *)v17))->CheckAmbiguity((int)v49, 1) ) /*0x56e217*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
@@ -344,7 +344,7 @@ LABEL_67:
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
                 && (aP13 || ((int)v49->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v100, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v100, -1)) )
               {
                 v51 = v76; /*0x56e303*/
                 v52 = v78; /*0x56e307*/
@@ -388,7 +388,7 @@ LABEL_86:
         v97[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e3ff*/
         v97[2] = (int)(aP8); /*0x56e40b*/
         v97[3] = (int)(aP9); /*0x56e412*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v56, 1) ) /*0x56e419*/
+        if ( (uint8_t)((Type *)((Type *)v17))->CheckAmbiguity((int)v56, 1) ) /*0x56e419*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
@@ -398,7 +398,7 @@ LABEL_86:
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
                 && (aP13 || ((int)v56->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v97, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v97, -1)) )
               {
                 v58 = v76; /*0x56e501*/
                 v59 = v78; /*0x56e505*/
@@ -669,7 +669,7 @@ int LayerClass::CellIteratorReset(void *a1)
 }
 // 0x578460
 namespace gamemd {
-int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2, void *a3)
+int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2)
 {
 
   int v3; // esi

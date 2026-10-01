@@ -37,7 +37,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {
-const char* FileClass::SetFileName(IUnknown * aP1, void *a2)
+const char* FileClass::SetFileName(char *aP1)
 {
 
   *((unsigned int *)this + 26) = 0; /*0x473fc4*/
@@ -211,7 +211,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 } // namespace gamemd
 // 0x65CF00
 namespace gamemd {
-int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod, void *a3)
+int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
 {
 
   char *FileName; // ecx

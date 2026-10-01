@@ -488,7 +488,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
 }
 // 0x65AD30
 namespace gamemd {
-int Team::GetMember(AbstractClass * aP1, void *a2_1)
+int Team::GetMember(int aP1)
 {
 
   return *((unsigned int *)(unsigned int)(this->field_E4)+ aP1); /*0x65ad3d*/
@@ -575,7 +575,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230)); /*0x76ed62*/
-  WideString::Assign((wchar_t **)&v9, StringCSF); /*0x76ed6c*/
+  ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
   DeleteAndZero::Alt((void **)&v9); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
@@ -632,8 +632,8 @@ void Team_Start_7AFAD0(void * a1, void * a2)
 
   v2 = (char **)(StaticString::Factory(a1));
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
-  String::Assign((char **)&v6, Buffer); /*0x7afafa*/
-  String::Assign((char **)&v7, aWdtchoicemdIni); /*0x7afb08*/
+  ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
+  ((String *)((char **)&v7))->Assign(aWdtchoicemdIni); /*0x7afb08*/
   v3 = (char **)(sub_4F1B80((char **)&v6, (char **)&v7, a2)); /*0x7afb1e*/
   DeleteAndZero(&v7); /*0x7afb20*/
   DeleteAndZero(&v6); /*0x7afb29*/

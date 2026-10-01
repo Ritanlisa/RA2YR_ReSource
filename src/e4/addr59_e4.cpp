@@ -83,7 +83,7 @@ void PlaceCabhutMap(FootClass * aP0)
   }
   v7 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x59053c*/
   Owner = HouseClass::FindOwner(v7); /*0x59054d*/
-  IndexByName = BuildingTypeClass::FindIndexByName(stru_82BA00); /*0x590559*/
+  IndexByName = ((BuildingTypeClass *)(stru_82BA00))->FindIndexByName(); /*0x590559*/
   v10 = RA2_OPNEW(0x720u); /*0x59055b*/
   if ( v10 ) /*0x590565*/
     v11 = (int *)((BuildingClass *)((int)v10))->Construct(*((unsigned int *)dword_A83C6C + IndexByName), Owner); /*0x590574*/
@@ -250,7 +250,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   v31 = a2; /*0x594426*/
   v4 = RA2_OPNEW(0x50u); /*0x59442e*/
   if ( v4 ) /*0x594438*/
-    v5 = RandomMap::TerrainTileDataConstructor(v4, *(unsigned int *)(a1 + 36)); /*0x594445*/
+    v5 = ((RandomMap *)(v4))->TerrainTileDataConstructor(*(unsigned int *)(a1 + 36)); /*0x594445*/
   else
     v5 = 0; /*0x594449*/
   v6 = v5[2]; /*0x59444b*/
@@ -324,7 +324,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
           v24 = (char *)dword_ABED10 + 80 * v20[18] + 80 * g_MapCellWidth * v20[19]; /*0x594642*/
           if ( !*((unsigned int *)v20 + 19) /*0x594664*/
 // 0x56d230
-            && MapClass::GetTileIndex(&dword_87F7E8, v23, v31, 0) == a3
+            && ((MapClass *)(&dword_87F7E8))->GetTileIndex(v23, v31, 0) == a3
             && *((unsigned int *)v24 + 15) == -1 )
           {
             *((unsigned int *)v24 + 15) = v29; /*0x59466a*/
@@ -798,7 +798,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         v6 = 0; /*0x5960c4*/
       g_MissionQueueFrame.briefing[451] = (int)v6; /*0x5960c6*/
     }
-    if ( Surface::LoadToSurfaceSHP(v6, Destination) ) /*0x5960d5*/
+    if ( ((Surface *)(v6))->LoadToSurfaceSHP(Destination) ) /*0x5960d5*/
     {
       RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x5960e7*/
       CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
@@ -869,7 +869,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   LABEL_39:
   *(unsigned int *)v18.CDFileClass = (void*)&CCFileClass_vftable; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
-  Vector::Clear((int)v19); /*0x5962ce*/
+  ((Vector *)((int)v19))->Clear(); /*0x5962ce*/
   *(unsigned int *)v18.CDFileClass = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
@@ -1123,9 +1123,9 @@ int sub_59C630()
   {
     if ( *(unsigned int *)(i + 56) == g_CellPassabilityLUT && !*(unsigned char *)(i + 282) ) /*0x59c668*/
     {
-      NeighbourContent = Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x59c681*/
-      v3 = Cell::GetNeighbourContent((unsigned int *)i, 4u); /*0x59c68c*/
-      v4 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x59c68e*/
+      NeighbourContent = ((Cell *)((unsigned int *)i))->GetNeighbourContent(2u); /*0x59c681*/
+      v3 = ((Cell *)((unsigned int *)i))->GetNeighbourContent(4u); /*0x59c68c*/
+      v4 = ((Cell *)((unsigned int *)i))->GetNeighbourContent(3u); /*0x59c68e*/
       if ( NeighbourContent[14] != g_CellPassabilityLUT /*0x59c6ce*/
         || *((unsigned char *)NeighbourContent + 282)
         || v3[14] != g_CellPassabilityLUT

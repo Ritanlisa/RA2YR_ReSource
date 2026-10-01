@@ -430,8 +430,8 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v2->GrowthPercentage[1], 0, 0); /*0x721fa4*/
       v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
-      Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
-      Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
+      ((Timer *)((Timer *)v2->SpreadTimer))->Start(0); /*0x721fb6*/
+      ((Timer *)((Timer *)v2->GrowthTimer))->Start(0); /*0x721fc2*/
       v2->ObjectClass = &vt_TiberiumClass; /*0x721fc7*/
       ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fcd*/
       ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fd4*/

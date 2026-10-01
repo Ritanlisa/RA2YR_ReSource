@@ -80,7 +80,7 @@ int WinModemClass::ReadSerial()
     *((unsigned int *)this + 8) = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
-      WinModemClass::LogCommErrors((WinModemClass *)this, v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
+      ((WinModemClass *)((WinModemClass *)this))->LogCommErrors(v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
       cbInQue = Stat.cbInQue; /*0x774a67*/
     }
     if ( cbInQue < 0x2000 ) /*0x774a71*/
@@ -521,7 +521,7 @@ int WinModemClass::HangUp(int a2)
 } // namespace gamemd
 // 0x7754D0
 namespace gamemd {
-int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5_2)
+int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
 {
 
   int result; // eax

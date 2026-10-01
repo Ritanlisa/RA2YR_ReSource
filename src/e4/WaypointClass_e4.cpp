@@ -76,7 +76,7 @@ LABEL_13:
   }
   while ( 1 ) /*0x5021cf*/
   {
-    Element = (int *)Array::GetElement(v7, v8); /*0x5021cf*/
+    Element = (int *)((Array *)(v7))->GetElement(v8); /*0x5021cf*/
     v10 = *Element; /*0x5021e1*/
     v11 = Element[1] / 256; /*0x5021f2*/
     if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/

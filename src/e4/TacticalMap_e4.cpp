@@ -402,7 +402,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v11[3] = v33; /*0x6d2c80*/
           if ( v32 > 0 && v33 > 0 ) /*0x6d2c91*/
           {
-            TacticalMap::FillScanlinesOpaque((TacticalMap *)g_ZBufferDescriptor, v30, v31, v32, v33); /*0x6d2cee*/
+            ((TacticalMap *)((TacticalMap *)g_ZBufferDescriptor))->FillScanlinesOpaque(v30, v31, v32, v33); /*0x6d2cee*/
           }
           else if ( v6 < g_CraterCreationState ) /*0x6d2c9a*/
           {
@@ -736,7 +736,7 @@ int TacticalMap::RenderAllObjects(int a2)
           v28 = *v18; /*0x6d90fd*/
           *((unsigned char *)v18 + 153) = 1; /*0x6d9111*/
           v29 = (unsigned int *)(*(int (**)(int *, char *))(v28 + 72))(v18, v109); /*0x6d9118*/
-          if ( Coord::To_Screen((Coord *)g_TacticalClass_Instance, v29, v102) ) /*0x6d9122*/
+          if ( ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v29, v102) ) /*0x6d9122*/
           {
             (*(void (**)(int *, int *, CellStruct *))(*v18 + 268))(v18, v102, &DSurface_ViewBounds); /*0x6d913c*/
             (*(void (**)(int *, int *, CellStruct *))(*v18 + 272))(v18, v102, &DSurface_ViewBounds); /*0x6d9153*/
@@ -1017,7 +1017,7 @@ int TacticalMap::DrawOccupiedRegion()
 
 }
 // 0x7BCFB0
-unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5_2)
+unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int aP3, int a5)
 {
 
   TacticalMap *v5; // edi

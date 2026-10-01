@@ -143,8 +143,8 @@ struct Cell {
     int PosToIndex(void *a1_1);  // 0x42B1C0
     int CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
     void ApplyDamage(int a2, int a3, int a4, char a5);
-    int GetNeighbourContent(unsigned int a2, void *a2_2);  // 0x481810
-    int IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, void *a8_1);  // 0x4834A0
+    int GetNeighbourContent(unsigned int a2);  // 0x481810
+    int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
     int IsValidHeight(void *a1_1);  // 0x485060
     void IsEmpty(void *a1_1);  // 0x486380
     int IsGroundTypeRange(void *a1_1);  // 0x4865D0
@@ -165,13 +165,13 @@ struct Cell {
     ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
     int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
     HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
-    int GetTerrainMask(IUnknown * aP1, int a3, void *a3_2);  // 0x57B210
+    int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     void * Clear(void *a1_1);  // 0x5A9940
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     void* CreateCrater(IUnknown aP2, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790
     CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
     unsigned short * GetHeight(BuildingTypeClass * aP1, int * a2);  // 0x4265B0
-    unsigned int * GetWorldCoords(unsigned int * a2, int a3, void *a3_2);  // 0x68BD00
+    unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
     BOOL IsPassableOffset(IUnknown * aP1);  // 0x4870D0
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80

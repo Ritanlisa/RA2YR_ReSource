@@ -205,7 +205,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     HIDWORD(v92) = v25; /*0x5b22dd*/
     LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
     v78 = __PAIR64__(v26 + a2->Vector3_field_0x08, HIDWORD(v92) + a2->Vector3_field_0x04); /*0x5b22f9*/
-    v27 = Coord::Subtract((Coord *)&v92, *(unsigned int *)a2->__pad_0 + v24, v78, SHIDWORD(v78)); /*0x5b22ff*/
+    v27 = ((Coord *)((Coord *)&v92))->Subtract(*(unsigned int *)a2->__pad_0 + v24, v78, SHIDWORD(v78)); /*0x5b22ff*/
     v28 = v27[1]; /*0x5b2308*/
     v29 = v27[2]; /*0x5b230b*/
     *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/
@@ -394,7 +394,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
   HIDWORD(v90) = v59; /*0x5b2672*/
   LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
-  v61 = Coord::Subtract((Coord *)&v88.field_4, 6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
+  v61 = ((Coord *)((Coord *)&v88.field_4))->Subtract(6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
   v62 = (double *)Coord::Subtract( /*0x5b26b9*/
                     (Coord *)v87,
                     *(unsigned int *)a2->__pad_0 + *v61,
@@ -403,7 +403,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v90 = *v62; /*0x5b26c0*/
   LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
-  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v90)->flags[0] & 0x100) != 0 ) /*0x5b26fb*/
+  if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v90)->flags[0] & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += g_MissionQueueFrame.localVariables[304]; /*0x5b26fd*/
   v64 = SLODWORD(v89) / 256; /*0x5b2713*/
   if ( a7 || a8 ) /*0x5b271f*/

@@ -219,7 +219,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
         Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455, 1, (wchar_t *)v5); /*0x693c6f*/
       }
     }
-    while ( Network::GetQueueCount((int)unk_A8E9C0) > 0 ) /*0x693c80*/
+    while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x693c80*/
     {
       v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
@@ -254,7 +254,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     while ( 1 ) /*0x693e97*/
     {
           while ( 1 )
-      if ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v46, (int)v40) > 0 && *(unsigned int *)v46 == 111 ) /*0x693ebe*/
+      if ( ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v46, (int)v40) > 0 && *(unsigned int *)v46 == 111 ) /*0x693ebe*/
         break; /*0x693ebe*/
       v18 = 3600; /*0x693ec4*/
       if ( v33 != -1 ) /*0x693ecb*/
@@ -276,7 +276,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     {
           while ( 1 )
       v37 = 455; /*0x693dd4*/
-      if ( Network::Send((int)unk_A8E9C0, (int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
+      if ( ((Network *)((int)unk_A8E9C0))->Send((int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
       {
         v13 = (gamemd::Compare)(NetworkID::Compare((int)v39, (int)&stru_A8BB1C)); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
@@ -362,7 +362,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     {
       Network::SendMessage((int)unk_A8E9C0, (int)v43, 455, 1, (int)&stru_A8BB1C, 0, 0); /*0x694053*/
     }
-    while ( Network::GetQueueCount((int)unk_A8E9C0) > 0 ) /*0x694064*/
+    while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x694064*/
     {
       v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
@@ -491,7 +491,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   {
     MessageLoop(); /*0x69452f*/
     ((Event *)0)->Dispatch(); /*0x694534*/
-    if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v6, (int)v32) <= 0 ) /*0x69454b*/
+    if ( ((ObjectTypeClass *)(&unk_A8EA70))->CreateInstance((int)v6, (int)v32) <= 0 ) /*0x69454b*/
       goto LABEL_43; /*0x69454b*/
     if ( *(unsigned int *)v6 != 112 ) /*0x694555*/
       goto LABEL_43; /*0x694555*/
@@ -539,7 +539,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   MessageLoop(); /*0x6943a3*/
   this->this->Event::Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
-  if ( !Network::Send((Network *)&unk_A8E9C0, (int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
+  if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/
   v13 = NetworkID::Compare(v42, (int)&stru_A8BB1C); /*0x6943e0*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6943ec*/
@@ -672,7 +672,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   {
     *(unsigned int *)v54.CDFileClass = (void*)&CCFileClass_vftable; /*0x6947b7*/
     v56 = 0; /*0x6947bf*/
-    Vector::Clear((int)v55); /*0x6947c6*/
+    ((Vector *)((int)v55))->Clear(); /*0x6947c6*/
     *(unsigned int *)v54.CDFileClass = &off_7E1668; /*0x6947cf*/
     result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6947d7*/
     IDA_LOBYTE(result) = 0; /*0x6947dc*/
@@ -725,7 +725,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     if ( dword_A8BB18 <= 0 ) /*0x694927*/
     {
   LABEL_21:
-      while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x6949ba*/
+      while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x6949ba*/
       {
         v14 = 3600; /*0x6949c4*/
         if ( Ticks != -1 ) /*0x6949cb*/
@@ -797,7 +797,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       Debug::Log(); /*0x694abd*/
       *(unsigned int *)v54.CDFileClass = (void*)&CCFileClass_vftable; /*0x694ad1*/
       v56 = 0; /*0x694ad9*/
-      Vector::Clear((int)v55); /*0x694ae4*/
+      ((Vector *)((int)v55))->Clear(); /*0x694ae4*/
       *(unsigned int *)v54.CDFileClass = &off_7E1668; /*0x694aed*/
       result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x694af5*/
       IDA_LOBYTE(result) = 0; /*0x694afa*/
@@ -819,7 +819,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     while ( 1 ) /*0x694bce*/
     {
       Event::Dispatch(); /*0x694bce*/
-      if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v64, (int)v53) > 0 && v64[0] == 113 ) /*0x694bf5*/
+      if ( ((ObjectTypeClass *)(&unk_A8EA70))->CreateInstance((int)v64, (int)v53) > 0 && v64[0] == 113 ) /*0x694bf5*/
         break; /*0x694bf5*/
       v24 = 3600; /*0x694bfb*/
       if ( v44 != -1 ) /*0x694c02*/
@@ -840,7 +840,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694b60*/
       v48 = 455; /*0x694b84*/
-      if ( Network::Send((Network *)&unk_A8E9C0, (int)v65, (int)&v48, (int)&v57, (int)v52) && v65[0] == 21 ) /*0x694b9c*/
+      if ( ((Network *)((Network *)&unk_A8E9C0))->Send((int)v65, (int)&v48, (int)&v57, (int)v52) && v65[0] == 21 ) /*0x694b9c*/
         ++v20; /*0x694b9e*/
       v22 = 3600; /*0x694ba3*/
       if ( v44 != -1 ) /*0x694baa*/
@@ -942,7 +942,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     Event::Dispatch(); /*0x694dc2*/
     if ( v27 < v26 ) /*0x694dce*/
     {
-      if ( Network::GetQueueCount(&unk_A8E9C0) < 10 ) /*0x694ddc*/
+      if ( ((Network *)(&unk_A8E9C0))->GetQueueCount() < 10 ) /*0x694ddc*/
       {
         *(unsigned int *)&v57.__pad_0[12] = 18; /*0x694de4*/
         *(unsigned short *)&v57.__pad_0[36] = v27; /*0x694def*/
@@ -999,10 +999,10 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       }
       goto LABEL_70; /*0x694f92*/
     }
-    if ( Network::GetQueueCount(&unk_A8E9C0) ) /*0x694f97*/
+    if ( ((Network *)(&unk_A8E9C0))->GetQueueCount() ) /*0x694f97*/
       goto LABEL_70; /*0x694f9e*/
   }
-  while ( Network::GetQueueCount(&unk_A8E9C0) ); /*0x694fb0*/
+  while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() ); /*0x694fb0*/
   if ( v45 != -1 ) /*0x6950f5*/
     Timer::GetTicks(); /*0x6950fb*/
   Debug::Log(); /*0x695114*/
@@ -1015,7 +1015,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   Debug::Log(); /*0x69519c*/
   *(unsigned int *)v54.CDFileClass = (void*)&CCFileClass_vftable; /*0x6951ab*/
   v56 = 0; /*0x6951b3*/
-  Vector::Clear((int)v55); /*0x6951be*/
+  ((Vector *)((int)v55))->Clear(); /*0x6951be*/
   *(unsigned int *)v54.CDFileClass = &off_7E1668; /*0x6951c7*/
   result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6951cf*/
   IDA_LOBYTE(result) = v42; /*0x6951d4*/
@@ -1069,7 +1069,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
       --dword_A8DAB4; /*0x695418*/
       v18[0] = (int)&CCFileClass_vftable; /*0x69541d*/
       v20 = 0; /*0x695425*/
-      Vector::Clear((int)v19); /*0x69542c*/
+      ((Vector *)((int)v19))->Clear(); /*0x69542c*/
       v18[0] = (int)&off_7E1668; /*0x695435*/
       BufferIOFileClass::Dtor(v18); /*0x69543d*/
       return 0; /*0x69544e*/
@@ -1081,7 +1081,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   LABEL_16:
     v18[0] = (int)&CCFileClass_vftable; /*0x6953c3*/
     v20 = 0; /*0x6953d2*/
-    Vector::Clear((int)v19); /*0x6953d9*/
+    ((Vector *)((int)v19))->Clear(); /*0x6953d9*/
     v18[0] = (int)&off_7E1668; /*0x6953e2*/
     BufferIOFileClass::Dtor(v18); /*0x6953ea*/
     v5 = aP0; /*0x6953ef*/
@@ -1113,7 +1113,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   HashTable::DestroyHashTableINIClass(v13); /*0x69547f*/
   v18[0] = (int)&CCFileClass_vftable; /*0x69548b*/
   v20 = 0; /*0x695493*/
-  Vector::Clear((int)v19); /*0x69549a*/
+  ((Vector *)((int)v19))->Clear(); /*0x69549a*/
   v18[0] = (int)&off_7E1668; /*0x6954a3*/
   BufferIOFileClass::Dtor(v18); /*0x6954ab*/
   return 1; /*0x695401*/
@@ -1463,10 +1463,10 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               Debug::Log(); /*0x6998eb*/
               RA2_OPDEL(v8); /*0x6998f1*/
               RA2_OPDEL(v14); /*0x6998f7*/
-              Vector::Clear((int)&v25); /*0x699906*/
+              ((Vector *)((int)&v25))->Clear(); /*0x699906*/
               Straw::Dtor(&v23); /*0x699912*/
               HashTable::DestroyHashTableINIClass(&v29); /*0x69991e*/
-              Vector::Clear((int)&v25.Buffer_field_1C); /*0x69992a*/
+              ((Vector *)((int)&v25.Buffer_field_1C))->Clear(); /*0x69992a*/
               Straw::Dtor((Straw *)&v25.Buffer_field_10); /*0x699936*/
               HashTable::DestroyHashTableINIClass(&v27); /*0x699942*/
               goto LABEL_20; /*0x699942*/
@@ -1491,7 +1491,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
   LABEL_20:
   *(unsigned int *)v20.CDFileClass = (void*)&CCFileClass_vftable; /*0x699947*/
   v22 = 0; /*0x699953*/
-  Vector::Clear((int)v21); /*0x69995a*/
+  ((Vector *)((int)v21))->Clear(); /*0x69995a*/
   *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x699963*/
 // 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x699970*/
@@ -2600,7 +2600,7 @@ int E4Recv_69E9F0::sub_69E9F0(int a1, Straw * aP2)
 
   if ( !a1 || aP2 < 1 ) /*0x69ea03*/
     return 0; /*0x69ea29*/
-  v4 = Delegate::Invoke((Straw *)this, a1, aP2); /*0x69ea0d*/
+  v4 = ((Delegate *)((Straw *)this))->Invoke(a1, aP2); /*0x69ea0d*/
   if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x69ea0f*/
     SHA1::Process((SHA1 *)&((unsigned int *)this)[0], a1, v4); /*0x69ea1b*/
   return v4; /*0x69ea23*/

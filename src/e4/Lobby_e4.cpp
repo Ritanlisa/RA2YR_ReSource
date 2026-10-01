@@ -292,7 +292,7 @@ LABEL_79:
     {
       v10 = (wchar_t *)(GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455));
     }
-    WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
+    ((WideString *)((wchar_t **)&v38))->Assign(v10); /*0x5eb39f*/
     v12 = (char *)(CharToWideString(unk_A8B380)); /*0x5eb3a9*/
     if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5eb3b4*/
     {
@@ -535,16 +535,16 @@ int Lobby::BuildPlayerList()
     unknown_libname_73(&v7); /*0x77dbc9*/
     if ( (uint8_t)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
-      WideString::Assign((wchar_t **)&((char *)&v7), v2); /*0x77dbde*/
+      ((WideString *)((wchar_t **)&((char *)&v7)))->Assign(v2); /*0x77dbde*/
       v3 = ToWideStringCharAlt((char **)&((char *)&v7), (const wchar_t **)&((char *)&v7)); /*0x77dbeb*/
-      String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
+      ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
       DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x77dbfe*/
       DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v7)); /*0x77dc07*/
     }
     else
     {
       PlayerTypeString = (const char **)GetPlayerTypeString((String *)&((char *)&v7), v2); /*0x77dc14*/
-      String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
+      ((String *)((String *)&v7))->Reassign(PlayerTypeString); /*0x77dc1e*/
       DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x77dc27*/
     }
     v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/

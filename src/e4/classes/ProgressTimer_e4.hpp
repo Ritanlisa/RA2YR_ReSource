@@ -20,7 +20,7 @@ struct ProgressTimer {
     unsigned char ProgressTimer_field_0x10;  // 0x10
     unsigned char ProgressTimer_field_0x14;  // 0x14
 // --- flat members (END) ---
-    void* GetValue(IUnknown * aP1, void *a2);
+    void* GetValue(unsigned int *aP1);
 };
 
 } // namespace gamemd

@@ -39,7 +39,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   result = a3; /*0x539eb1*/
   if ( a3 == dword_A9F9F8 ) /*0x539ec3*/
   {
-    for ( ; !LayerClass::CoordinatesLegal(&dword_87F7E8, (int16_t *)&a3); a3 = v12 ) /*0x539edd*/
+    for ( ; !((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_87F918); /*0x539f04*/
       LOWORD(v12) = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_87F914); /*0x539f1e*/
@@ -205,7 +205,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = Coord::To_Cell(&dword_87F7E8, &a1); /*0x53a31a*/
+  v3 = ((Coord *)(&dword_87F7E8))->To_Cell(&a1); /*0x53a31a*/
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/

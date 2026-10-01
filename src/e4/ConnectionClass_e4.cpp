@@ -81,7 +81,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {
-int ConnectionClass::initQueue(unsigned int a2, void *a2_2)
+int ConnectionClass::initQueue(unsigned int a2)
 {
 
   int v2; // eax
@@ -169,7 +169,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
 } // namespace gamemd
 // 0x48C040
 namespace gamemd {
-int ConnectionClass::receivePacket(int a2, int a3, void *a3_2)
+int ConnectionClass::receivePacket(int a2, int a3)
 {
 
   char v5; // al
@@ -268,7 +268,7 @@ LABEL_40:
       {
         do /*0x48c1ae*/
         {
-          TileType = Terrain::GetTileType(v14, v15); /*0x48c1ae*/
+          TileType = ((Terrain *)(v14))->GetTileType(v15); /*0x48c1ae*/
           if ( TileType ) /*0x48c1b5*/
           {
             v17 = *(unsigned int *)(TileType + 12); /*0x48c1b7*/
@@ -297,7 +297,7 @@ LABEL_40:
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
             {
-              v23 = Terrain::GetTileType(v21, v22); /*0x48c25a*/
+              v23 = ((Terrain *)(v21))->GetTileType(v22); /*0x48c25a*/
               if ( v23 ) /*0x48c261*/
               {
                 v24 = *(unsigned int *)(v23 + 12); /*0x48c263*/
@@ -343,7 +343,7 @@ LABEL_40:
 } // namespace gamemd
 // 0x48C320
 namespace gamemd {
-int ConnectionClass::processTileUpdate(void * a2, signed int * a3, void *a3_2)
+int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
 {
 
   int v4; // esi
@@ -360,7 +360,7 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3, void *a3_2)
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
-    TileType = Terrain::GetTileType(PlayerIndex, v4); /*0x48c333*/
+    TileType = ((Terrain *)(PlayerIndex))->GetTileType(v4); /*0x48c333*/
     if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
     v7 = *(unsigned int *)(TileType + 12); /*0x48c341*/
@@ -428,7 +428,7 @@ int ConnectionClass::serviceSendQueue()
           v6 = dword_887340; /*0x48c419*/
           if ( dword_887338 != -1 ) /*0x48c422*/
             v6 += this->Timer::GetTicks() - dword_887338; /*0x48c434*/
-          ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
+          ((ConnectionClass *)((ConnectionClass *)this->PlayerIndex))->initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }

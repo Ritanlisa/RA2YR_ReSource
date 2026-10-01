@@ -129,7 +129,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     }
     else
     {
-      PlayerColor = SessionClass::GetPlayerColor(v4); /*0x46f96e*/
+      PlayerColor = ((SessionClass *)(v4))->GetPlayerColor(); /*0x46f96e*/
     }
     SetupSkirmishSpawnLocations((HWND)hDlg, v5, PlayerColor); /*0x46f978*/
   }
@@ -164,7 +164,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
       }
       else
       {
-        v12 = SessionClass::GetPlayerColor(v10); /*0x46f9e4*/
+        v12 = ((SessionClass *)(v10))->GetPlayerColor(); /*0x46f9e4*/
       }
       SetupSkirmishSpawnLocations((HWND)hDlg, v11, v12); /*0x46f9f0*/
       v1 = v14; /*0x46f9f5*/
@@ -255,7 +255,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   {
     g_MissionQueueFrame.globalVariables[88] = 1; /*0x596df0*/
   }
-  Skirmish::RandomizeSettings(this, *((unsigned int *)this + 15)); /*0x596e08*/
+  ((Skirmish *)(this))->RandomizeSettings(*((unsigned int *)this + 15)); /*0x596e08*/
   v14 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596e0d*/
   if ( g_MissionQueueFrame.briefing[451] ) /*0x596e15*/
   {
@@ -270,7 +270,7 @@ int Skirmish::ReadSettings(HWND hDlg)
 } // namespace gamemd
 // 0x597260
 namespace gamemd {
-TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1, void *a2)
+TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
 {
 
   int v3; // eax
@@ -327,7 +327,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1, void *a2)
 } // namespace gamemd
 // 0x640710
 namespace gamemd {
-int Skirmish::RenderPreview(SkirmishDialog * aP1, void *a2)
+int Skirmish::RenderPreview(HWND aP1)
 {
 
   int result; // eax
@@ -632,7 +632,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/
           }
-          if ( Dialog::SideIDToIndex(v7) != -1 ) /*0x6ae553*/
+          if ( ((Dialog *)(v7))->SideIDToIndex() != -1 ) /*0x6ae553*/
           {
             v8 = SetComboBoxSelection(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae561*/
             v9 = (wchar_t *)sub_4E4F30(v8); /*0x6ae568*/
@@ -1043,7 +1043,7 @@ LABEL_44:
   v48 = (ObjectClass *)__2_YAPAXI_Z(4u); /*0x6aeebd*/
   v49 = v48 ? (Skirmish *)unknown_libname_27(v48) : 0;
   g_UIControlState = v49; /*0x6aeedb*/
-  Surface::LoadToSurfaceSHP((Surface *)v49, ExistingFileName); /*0x6aeee0*/
+  ((Surface *)((Surface *)v49))->LoadToSurfaceSHP(ExistingFileName); /*0x6aeee0*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x6aeeeb*/
 LABEL_92:
     Session::PrepareGame((Session *)hWnd); /*0x6aeef2*/

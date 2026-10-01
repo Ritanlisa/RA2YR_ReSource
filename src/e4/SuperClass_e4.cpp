@@ -218,14 +218,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     v9 = (int)(this); /*0x6cb164*/
     v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v3); /*0x6cb176*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
     v9 = (int)(this); /*0x6cb192*/
     v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x6cb1a4*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
   }
   v9 = (int)(this); /*0x6cb1bd*/
@@ -402,7 +402,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         *((unsigned int *)this + 30) = -1; /*0x6cb70f*/
         SuperClass::SetCurrentFrame((SuperClass *)((char *)this + 48)); /*0x6cb718*/
         DefaultTimer = Super::GetDefaultTimer((Super *)this); /*0x6cb71f*/
-        Timer::Start((Timer *)&v21, DefaultTimer); /*0x6cb729*/
+        ((Timer *)((Timer *)&v21))->Start(DefaultTimer); /*0x6cb729*/
         v17 = v22; /*0x6cb732*/
         v18 = v23; /*0x6cb736*/
         *((unsigned int *)this + 12) = v21; /*0x6cb73a*/
@@ -485,14 +485,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
     v8[0] = this; /*0x6cb859*/
     v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
-      DynamicVector::RemoveItem(&stru_B0F5B8, v4); /*0x6cb86b*/
+      ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
     v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
-      DynamicVector::RemoveItem(&stru_B0F5B8, v5); /*0x6cb897*/
+      ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5); /*0x6cb897*/
     *((unsigned char *)this + 108) = 0; /*0x6cb89c*/
   }
   if ( !*((unsigned char *)this + 109) /*0x6cb8b1*/
@@ -551,7 +551,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   v4 = *((unsigned int *)this + 10); /*0x6cb92a*/
   if ( *(unsigned char *)(v4 + 229) ) /*0x6cb92d*/
   {
-    if ( (uint8_t)House::IsCurrentPlayer(*(#375 **)((char *)this + 44)) ) /*0x6cb93c*/
+    if ( (uint8_t)((House *)(*(#375 **)((char *)this + 44)))->IsCurrentPlayer() ) /*0x6cb93c*/
     {
       v5 = *((unsigned int *)this + 31); /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
@@ -750,35 +750,35 @@ int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2)
       switch ( *(unsigned int *)(*((unsigned int *)this + 10) + 180) ) /*0x6cc0fc*/
       {
         case 0: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaNuclearmiss, -1); /*0x6cc10d*/
+          ((VoxClass *)(aEvaNuclearmiss))->FindAndPlay(-1); /*0x6cc10d*/
           break; /*0x6cc10d*/
         case 1: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaIroncurtain, -1); /*0x6cc119*/
+          ((VoxClass *)(aEvaIroncurtain))->FindAndPlay(-1); /*0x6cc119*/
           break; /*0x6cc119*/
         case 2: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaLightningst, -1); /*0x6cc131*/
+          ((VoxClass *)(aEvaLightningst))->FindAndPlay(-1); /*0x6cc131*/
           break; /*0x6cc131*/
         case 3: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(g_Str_EVA_ChronosphereReady, -1); /*0x6cc149*/
+          ((VoxClass *)(g_Str_EVA_ChronosphereReady))->FindAndPlay(-1); /*0x6cc149*/
           break; /*0x6cc149*/
         case 5: /*0x6cc0fc*/
         case 6: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaReinforceme, -1); /*0x6cc155*/
+          ((VoxClass *)(aEvaReinforceme))->FindAndPlay(-1); /*0x6cc155*/
           break; /*0x6cc155*/
         case 7: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaPsychicdomi, -1); /*0x6cc13d*/
+          ((VoxClass *)(aEvaPsychicdomi))->FindAndPlay(-1); /*0x6cc13d*/
           break; /*0x6cc13d*/
         case 8: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaSpyplanerea, -1); /*0x6cc161*/
+          ((VoxClass *)(aEvaSpyplanerea))->FindAndPlay(-1); /*0x6cc161*/
           break; /*0x6cc161*/
         case 9: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(unk_842414, -1); /*0x6cc16d*/
+          ((VoxClass *)(unk_842414))->FindAndPlay(-1); /*0x6cc16d*/
           break; /*0x6cc16d*/
         case 0xA: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(aEvaForceshield, -1); /*0x6cc125*/
+          ((VoxClass *)(aEvaForceshield))->FindAndPlay(-1); /*0x6cc125*/
           break; /*0x6cc125*/
         case 0xB: /*0x6cc0fc*/
-          VoxClass::FindAndPlay(g_Str_EVA_PsychicRevealReady, -1); /*0x6cc179*/
+          ((VoxClass *)(g_Str_EVA_PsychicRevealReady))->FindAndPlay(-1); /*0x6cc179*/
           break; /*0x6cc179*/
         default:
           break;
@@ -910,7 +910,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
            ((char *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v3 != -1 ) /*0x6ce0e5*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v3); /*0x6ce0ed*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6ce0ed*/
   }
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
@@ -919,7 +919,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
            ((char *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v4 != -1 ) /*0x6ce113*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x6ce11b*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6ce11b*/
     LOBYTE(this->SuperClass_field_0x6C) = 0; /*0x6ce120*/
   }
   SuperClass_field_0x24 = this->SuperClass_field_0x24; /*0x6ce124*/
@@ -978,7 +978,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            ((char *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v6 != -1 ) /*0x6cb3d5*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v6); /*0x6cb3dd*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v6); /*0x6cb3dd*/
   }
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6cb3e2*/
   {
@@ -987,7 +987,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            ((char *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v7); /*0x6cb40b*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v7); /*0x6cb40b*/
     LOBYTE(this->SuperClass_field_0x6C) = 0; /*0x6cb410*/
   }
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
@@ -1289,17 +1289,17 @@ int SuperClass::PowerDrainUpdate(int * a2)
 
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x6ce029*/
   LOBYTE(v3) = BYTE1(this->SuperClass_field_0x6C); /*0x6ce02e*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6ce034*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6ce034*/
   LOBYTE(v4) = BYTE2(this->SuperClass_field_0x6C); /*0x6ce039*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6ce03f*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x6ce03f*/
   LOBYTE(v5) = HIBYTE(this->SuperClass_field_0x6C); /*0x6ce044*/
-  Power::FlagProcess((Power *)a2, v5); /*0x6ce04a*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x6ce04a*/
   Power::TimerProcess(this->SuperClass_field_0x78); /*0x6ce055*/
   Power::TimerProcess((int)this->SuperClass_field_0x7C); /*0x6ce060*/
   LOBYTE(v6) = this->SuperClass_field_0x60; /*0x6ce065*/
-  v7 = Power::FlagProcess((Power *)a2, v6); /*0x6ce06b*/
+  v7 = ((Power *)((Power *)a2))->FlagProcess(v6); /*0x6ce06b*/
   LOBYTE(v7) = this->SuperClass_field_0x6C; /*0x6ce070*/
-  Power::FlagProcess((Power *)a2, v7); /*0x6ce076*/
+  ((Power *)((Power *)a2))->FlagProcess(v7); /*0x6ce076*/
   result = (int)this->SuperClass_field_0x68; /*0x6ce07b*/
   if ( result ) /*0x6ce080*/
   {

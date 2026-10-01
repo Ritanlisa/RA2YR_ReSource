@@ -33,7 +33,7 @@ char PlayerClass::AssignPlayerIndex()
 
   for ( i = 0; i < dword_A8DA84; ++i ) /*0x5d62ca*/
   {
-    if ( SessionClass::GetPlayerSide((int *)((unsigned int *)(dword_A8DA78))[i]) == -3 ) /*0x5d62dc*/
+    if ( ((SessionClass *)((int *)((unsigned int *)(dword_A8DA78))[i]))->GetPlayerSide() == -3 ) /*0x5d62dc*/
       *(unsigned int *)(((unsigned int *)(dword_A8DA78))[i] + 107) = -1; /*0x5d62e7*/
     else
       *(unsigned int *)(((unsigned int *)(dword_A8DA78))[i] + 107) = i; /*0x5d62f8*/

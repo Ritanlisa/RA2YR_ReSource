@@ -80,7 +80,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           v28[0] = *(unsigned int *)&this->__pad_28[116]; /*0x62d036*/
           v28[1] = *(unsigned int *)&this->__pad_28[120]; /*0x62d048*/
           v28[2] = *(unsigned int *)&this->__pad_28[124]; /*0x62d054*/
-          Coord::To_Screen((Coord *)g_TacticalClass_Instance, v28, &v29); /*0x62d058*/
+          ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v28, &v29); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
@@ -102,7 +102,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                                        - v30)
                     - v16
                     - 50;
-                if ( v17 < *(uint16_t *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
+                if ( v17 < *(uint16_t *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v28[0], v15) ) /*0x62d11e*/
                 {
                   ParticleClass_field_0xB4 = (IUnknown *)(this->ParticleClass_field_0xB4);
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/

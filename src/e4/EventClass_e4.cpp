@@ -425,7 +425,7 @@ AbstractClass * * EventClass::validateEventType()
     v9 = (Network *)(((unsigned int *)(dword_A8DA78))[v10] + 40); /*0x6644fd*/
   }
 LABEL_23:
-  Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
+  ((Network *)(v9))->CopyAddress(&v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
   return v1; /*0x66451c*/
 
@@ -676,7 +676,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
 // 0x40BD00
 namespace gamemd {
-unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2, void *a3_1)
+unsigned int * EventClass::resetEvent(int aP1, int aP2)
 {
 
   this->EventClass_field_0x4 = 0; /*0x40bd0b*/

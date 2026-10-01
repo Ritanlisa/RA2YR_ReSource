@@ -335,7 +335,7 @@ AbstractClass * * Options::Screen_Save()
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
       Theme::QueueSong((int)&unk_A83D10, v10); /*0x55fbfa*/
-      Theme::Stop((Theme *)&unk_A83D10, 0); /*0x55fc06*/
+      ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x55fc06*/
     }
   }
   v11 = GetDlgItem((HWND)this, 1330); /*0x55fc11*/
@@ -672,8 +672,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       {
         v12 = v11 + v2[4]; /*0x625699*/
         v18 = *(unsigned int *)v12; /*0x6256a5*/
-        WideString::Reassign_Alt((void **)&v19, (const wchar_t **)(v12 + 4)); /*0x6256a9*/
-        WideString::Reassign_Alt((void **)&v19.DeleteAndZero_field_0x04, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
+        ((WideString *)((void **)&v19))->Reassign_Alt((const wchar_t **)(v12 + 4)); /*0x6256a9*/
+        ((WideString *)((void **)&v19.DeleteAndZero_field_0x04))->Reassign_Alt((const wchar_t **)(v12 + 8)); /*0x6256b6*/
         v19.DeleteAndZero_field_0x08 = *(unsigned int *)(v12 + 12); /*0x6256be*/
         v20 = *(unsigned int *)(v12 + 16); /*0x6256c5*/
         v21 = *(unsigned int *)(v12 + 20); /*0x6256cc*/

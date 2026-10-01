@@ -54,7 +54,7 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
     this->Debug::Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690a91*/
     v7 = 0; /*0x690a99*/
-    Vector::Clear((int)v6); /*0x690a9d*/
+    ((Vector *)((int)v6))->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690aa6*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
   }
@@ -95,7 +95,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     this->Debug::Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690b61*/
     v7 = 0; /*0x690b69*/
-    Vector::Clear((int)v6); /*0x690b6d*/
+    ((Vector *)((int)v6))->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690b76*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
   }
@@ -189,7 +189,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
     {
       v17 = *((unsigned int *)this + 244); /*0x7713ce*/
       *((unsigned int *)this + 244) = v17 + 1; /*0x7713d9*/
-      String::Reassign((String *)(*((unsigned int *)this + 241) + 4 * v17), (const char **)&v25); /*0x7713e2*/
+      ((String *)((String *)(*((unsigned int *)this + 241) + 4 * v17)))->Reassign((const char **)&v25); /*0x7713e2*/
     }
     if ( a5 ) /*0x7713ed*/
       ++*((unsigned int *)this + 239); /*0x7713ef*/
@@ -214,7 +214,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
           {
             v23 = *((unsigned int *)this + 244); /*0x771470*/
             *((unsigned int *)this + 244) = v23 + 1; /*0x77147b*/
-            String::Reassign((String *)(*((unsigned int *)this + 241) + 4 * v23), (const char **)&v25); /*0x771484*/
+            ((String *)((String *)(*((unsigned int *)this + 241) + 4 * v23)))->Reassign((const char **)&v25); /*0x771484*/
           }
           if ( a5 ) /*0x77148f*/
             ++*((unsigned int *)this + 239); /*0x771491*/
@@ -310,7 +310,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     {
       v14 = (gamemd::ConvertClass *)((int)((ConvertClass *)RA2_OPNEW(0x188u)));
       if ( v14 ) /*0x778370*/
-        ConvertClass::Construct(v14, a7, a7, (int)a2, 1, 0); /*0x778382*/
+        ((ConvertClass *)(v14))->Construct(a7, a7, (int)a2, 1, 0); /*0x778382*/
       v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
@@ -341,7 +341,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   }
   *(unsigned int *)v38.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x778461*/
   v40 = 0; /*0x778469*/
-  Vector::Clear((int)v39); /*0x778474*/
+  ((Vector *)((int)v39))->Clear(); /*0x778474*/
   *(unsigned int *)v38.CDFileClass = (unsigned int)(&off_7E1668); /*0x77847d*/
 // 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v38); /*0x77848a*/

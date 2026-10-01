@@ -57,14 +57,14 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   {
 LABEL_11:
     Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
-    if ( ((unsigned int *)(dword_A8B230))[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
+    if ( ((unsigned int *)(dword_A8B230))[13720] && ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/
       {
         if ( v2[0] == 108 && v3[0] != dword_A8DB30 ) /*0x48d129*/
           Network::UpdateLatencyDisplay((int)dword_AC4F58, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
       }
-      while ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
+      while ( ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v2, (int)v1) > 0 ); /*0x48d15f*/
     }
     result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d161*/
   }
@@ -210,7 +210,7 @@ void sub_796960()
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
-      Network::FormatAddress(&stru_A8BB1C, 0); /*0x796a4e*/
+      ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
             ((Debug *)0)->Log();
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/

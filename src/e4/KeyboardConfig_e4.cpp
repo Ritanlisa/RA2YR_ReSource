@@ -97,7 +97,7 @@ LABEL_14:
     }
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
-    Vector::Clear((int)v11); /*0x533ecf*/
+    ((Vector *)((int)v11))->Clear(); /*0x533ecf*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533ed8*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
@@ -108,7 +108,7 @@ LABEL_14:
     this->Debug::Log(); /*0x533efe*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
-    Vector::Clear((int)v11); /*0x533f1c*/
+    ((Vector *)((int)v11))->Clear(); /*0x533f1c*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533f25*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/

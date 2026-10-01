@@ -37,7 +37,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source, void *a2, vo
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, Source); /*0x74ad89*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(Source); /*0x74ad89*/
   this->StartSound = -1; /*0x74ad93*/
   this->StopSound = -1; /*0x74ad99*/
   this->Normalized = 0; /*0x74ad9f*/
@@ -160,7 +160,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 
   v4 = v3; /*0x74b061*/
   INIClass::ResetSection((INIClass *)a2); /*0x74b066*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)v4, (uint8_t ***)a2) ) /*0x74b06e*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x74b06e*/
     return 0; /*0x74b614*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
                      (int *)a2,
@@ -423,13 +423,13 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     v41 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x74b5b9*/
     if ( v41 ) /*0x74b5c3*/
-      FileVXL = File::LoadFileVXL(v41, (int)&Destination, 0); /*0x74b5ce*/
+      FileVXL = ((File *)(v41))->LoadFileVXL((int)&Destination, 0); /*0x74b5ce*/
     else
       FileVXL = 0; /*0x74b5d5*/
     *(unsigned int *)(v4 + 176) = FileVXL; /*0x74b5db*/
     Destination.Header[0] = (int)&vt_CCFileClass; /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
-    Vector::Clear((int)&Destination.MinDelay); /*0x74b5f1*/
+    ((Vector *)((int)&Destination.MinDelay))->Clear(); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&Destination); /*0x74b602*/
   }
@@ -448,13 +448,13 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   int v6; // edx
   int v7; // edx
 
-  v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x74b699*/
+  v3 = ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x74b699*/
   LOBYTE(v3) = this->Normalized; /*0x74b69e*/
-  Power::FlagProcess((Power *)a2, v3); /*0x74b6a7*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x74b6a7*/
   LOBYTE(v4) = this->Translucent; /*0x74b6ac*/
-  Power::FlagProcess((Power *)a2, v4); /*0x74b6b5*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x74b6b5*/
   LOBYTE(v5) = this->SourceShared; /*0x74b6ba*/
-  Power::FlagProcess((Power *)a2, v5); /*0x74b6c3*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x74b6c3*/
   Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
   Power::TimerProcess(this->Duration); /*0x74b6df*/
   Checksummer::Add_double((Checksummer *)a2, this->Elasticity[0], this->Elasticity[1]); /*0x74b6f4*/
@@ -464,14 +464,14 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_double((Checksummer *)a2, this->MaxZVel[0], this->MaxZVel[1]); /*0x74b748*/
   Checksummer::Add_double((Checksummer *)a2, this->MaxXYVel[0], this->MaxXYVel[1]); /*0x74b75d*/
   LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
-  Power::FlagProcess((Power *)a2, v6); /*0x74b76b*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/
   Power::TimerProcess(this->StartSound); /*0x74b787*/
   Power::TimerProcess(this->StopSound); /*0x74b795*/
   Power::TimerProcess(this->Damage); /*0x74b7a3*/
   Power::TimerProcess(this->DamageRadius); /*0x74b7b1*/
   LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
-  return Power::FlagProcess((Power *)a2, v7); /*0x74b7c4*/
+  return ((Power *)((Power *)a2))->FlagProcess(v7); /*0x74b7c4*/
 
 }
 }

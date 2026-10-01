@@ -112,10 +112,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             HouseClass::IsAlliedWith(hDlga, dword_A83D4C); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
-            if ( dword_A8B538 || !(uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
+            if ( dword_A8B538 || !(uint8_t)((House *)(hDlga))->IsCurrentPlayer() ) /*0x657f5c*/
               EnableWindow(v9, 0); /*0x657f68*/
           }
-          if ( (uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
+          if ( (uint8_t)((House *)(hDlga))->IsCurrentPlayer() ) /*0x657f79*/
           {
             if ( dword_A8B538 ) /*0x657f97*/
             {

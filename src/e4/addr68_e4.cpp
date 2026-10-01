@@ -587,7 +587,7 @@ void WaitForMultiplayerLoadSync()
   AverageProgress = Progress::GetAverage((int)g_UIManager); /*0x6843e5*/
   while ( 1 )
   {
-    EventQueue::Process(g_BinkMoviePlayer); /*0x6843ef*/
+    ((EventQueue *)(g_BinkMoviePlayer))->Process(); /*0x6843ef*/
         Event::Dispatch();
     v0 = 1; /*0x6843fe*/
     if ( ((unsigned int *)(g_GameMode_Current))[0] == 1 /*0x684418*/
@@ -833,7 +833,7 @@ void PostLoadInitScenario()
         m;
         m = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
   {
-    House::AnnounceUpgrade(m, -1); /*0x684faf*/
+    ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
   MapClass::ProcessRegion((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x684fc7*/
   Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x684fd1*/
@@ -1125,7 +1125,7 @@ void SaveScenarioToINI()
     v10.customSound_controller[3] = (int)&CCFileClass_vftable; /*0x687d48*/
     v8 = v5; /*0x687d50*/
     v12 = 0; /*0x687d54*/
-    Vector::Clear((int)v11); /*0x687d5b*/
+    ((Vector *)((int)v11))->Clear(); /*0x687d5b*/
     v10.customSound_controller[3] = (int)&off_7E1668; /*0x687d64*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687d6c*/
     if ( v8 ) /*0x687d75*/
@@ -1134,7 +1134,7 @@ void SaveScenarioToINI()
       CCINIClass::Load((CCINIClass *)&v10.vtable1, (int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
       v10.customSound_controller[3] = (int)&CCFileClass_vftable; /*0x687d99*/
       v12 = 0; /*0x687da1*/
-      Vector::Clear((int)v11); /*0x687da8*/
+      ((Vector *)((int)v11))->Clear(); /*0x687da8*/
       v10.customSound_controller[3] = (int)&off_7E1668; /*0x687db1*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687db9*/
     }
@@ -1228,7 +1228,7 @@ AbstractClass * * SessionClass_AssignHouses()
   {
     v3 = (int *)dword_A8DA78[v2]; /*0x687f2a*/
     if ( *(int *)((char *)v3 + 75) == -3 ) /*0x687f31*/
-      SessionClass::SetPlayerOption(v3, 0); /*0x687f35*/
+      ((SessionClass *)(v3))->SetPlayerOption(0); /*0x687f35*/
   }
   v31[0] = 0; /*0x687f42*/
   v31[1] = 0; /*0x687f49*/
@@ -1262,7 +1262,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v9 = 0; /*0x687fcc*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x687fd5*/
       {
-        WideString::Assign((wchar_t **)&v29, (wchar_t *)v7); /*0x687fdc*/
+        ((WideString *)((wchar_t **)&v29))->Assign((wchar_t *)v7); /*0x687fdc*/
         ToWideStringCharAlt((char **)&v29.DeleteAndZero_field_0x04, (const wchar_t **)&v29); /*0x687fe9*/
         DeleteAndZero::Alt(&v29); /*0x687ff2*/
         v10 = String::GetOrEmpty((String *)&v29.DeleteAndZero_field_0x04); /*0x687ffb*/
@@ -1308,7 +1308,7 @@ AbstractClass * * SessionClass_AssignHouses()
       *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(*(unsigned int *)(v7 + 83)); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
-      *(unsigned int *)(v9 + 90200) = SessionClass::GetOption((int *)v7); /*0x6880f2*/
+      *(unsigned int *)(v9 + 90200) = ((SessionClass *)((int *)v7))->GetOption(); /*0x6880f2*/
       *(unsigned int *)(v9 + 90204) = *(unsigned int *)(v7 + 99); /*0x688101*/
       if ( !v28 ) /*0x688107*/
       {
@@ -1496,7 +1496,7 @@ void GenerateScenarioUnits()
   unsigned int v87[26]; // [esp+C0h] [ebp-68h] BYREF
 
   a1 = a1; /*0x6886c0*/
-  EventClass::resetEvent(&v60, 0, 0); /*0x6886cc*/
+  ((EventClass *)(&v60))->resetEvent(0, 0); /*0x6886cc*/
   v60 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x6886d6*/
   ppv = (LPVOID)g_abs_A8B270; /*0x6886de*/
   v65 = 10; /*0x6886e9*/
@@ -1791,7 +1791,7 @@ void GenerateScenarioUnits()
               }
               if ( (*(unsigned int *)dword_A8B230 & 0x200) != 0 ) /*0x688d68*/
                 Timer::SetFlag(v51 + 84, 1); /*0x688d72*/
-              if ( (uint8_t)House::IsCurrentPlayer(v52) ) /*0x688d79*/
+              if ( (uint8_t)((House *)(v52))->IsCurrentPlayer() ) /*0x688d79*/
                 (*(void (**)(unsigned int *, int))(*v51 + 496))(v51, 5); /*0x688d98*/
               else
                 (*(void (**)(unsigned int *, int))(*v51 + 496))(v51, 11); /*0x688d89*/
@@ -1907,7 +1907,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
   v3 = a2; /*0x688ed7*/
   v34 = a2; /*0x688ee3*/
   v35 = a1; /*0x688ee7*/
-  if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], a2, 1) ) /*0x688eeb*/
+  if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(a2, 1) ) /*0x688eeb*/
   {
     v39 = 0; /*0x688f07*/
     v40 = 0; /*0x688f0b*/
@@ -2047,7 +2047,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
       }
       if ( v18 == *v3 && v28[1] == v3[1] ) /*0x6891a4*/
         v36 = 1; /*0x6891a6*/
-      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v28, 1) ) /*0x6891ba*/
+      if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(v28, 1) ) /*0x6891ba*/
       {
         if ( !v36 ) /*0x6891cf*/
         {
@@ -2059,9 +2059,9 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
             || (*(int (**)(int))(*(unsigned int *)v26 + 44))(v26) == 15
             && (*(int (**)(int *))(*v24 + 44))(v24) == 15 )
           {
-            Coord::Subtract((Coord *)v45, (v28[0] << 8) + 128, (v28[1] << 8) + 128, 0); /*0x68923d*/
+            ((Coord *)((Coord *)v45))->Subtract((v28[0] << 8) + 128, (v28[1] << 8) + 128, 0); /*0x68923d*/
             v27 = Cell::GetGroundHeight(v45); /*0x68924c*/
-            Coord::Subtract((Coord *)v46, (v28[0] << 8) + 128, (v28[1] << 8) + 128, v27); /*0x689274*/
+            ((Coord *)((Coord *)v46))->Subtract((v28[0] << 8) + 128, (v28[1] << 8) + 128, v27); /*0x689274*/
             if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(*v24 + 216))(v24, v46, 0) ) /*0x689283*/
               return 1; /*0x68928b*/
           }

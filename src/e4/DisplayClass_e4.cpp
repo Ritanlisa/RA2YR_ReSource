@@ -249,7 +249,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
     v5->flags[0] = v11; /*0x4a995e*/
   }
   if ( v30 ) /*0x4a996a*/
-    Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4a9973*/
+    ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v5); /*0x4a9973*/
   for ( i = 0; i < 8; ++i ) /*0x4a9979*/
   {
     v12 = i & 7; /*0x4a9985*/
@@ -269,7 +269,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
           goto LABEL_20; /*0x4a9a0b*/
         LOBYTE(v16) = v16 | 0x10; /*0x4a9a26*/
         v14[75] = v16; /*0x4a9a29*/
-        Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9a35*/
+        ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v14); /*0x4a9a35*/
         for ( j = 0; j < 8; ++j ) /*0x4a9a3a*/
         {
           v18 = j & 7; /*0x4a9a3e*/
@@ -283,7 +283,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
           if ( v21 != v20[288] ) /*0x4a9a96*/
           {
             v20[288] = v21; /*0x4a9a98*/
-            Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v20); /*0x4a9aa5*/
+            ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v20); /*0x4a9aa5*/
           }
         }
         v5 = v38; /*0x4a9ab0*/
@@ -300,7 +300,7 @@ LABEL_20:
         if ( v15 >= 0 && v15 != *((char *)v14 + 288) ) /*0x4a9aeb*/
         {
           *((unsigned char *)v14 + 288) = v15; /*0x4a9aed*/
-          Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9afa*/
+          ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v14); /*0x4a9afa*/
         }
       }
     }
@@ -315,7 +315,7 @@ LABEL_31:
           goto LABEL_36; /*0x4a9b48*/
         LOBYTE(v23) = v23 | 1; /*0x4a9b63*/
         v14[80] = v23; /*0x4a9b66*/
-        Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9b72*/
+        ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v14); /*0x4a9b72*/
         for ( k = 0; k < 8; ++k ) /*0x4a9b77*/
         {
           v25 = k & 7; /*0x4a9b7b*/
@@ -329,7 +329,7 @@ LABEL_31:
           if ( v28 != v27[289] ) /*0x4a9bd3*/
           {
             v27[289] = v28; /*0x4a9bd5*/
-            Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v27); /*0x4a9be2*/
+            ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v27); /*0x4a9be2*/
           }
         }
         v5 = v38; /*0x4a9bed*/
@@ -346,7 +346,7 @@ LABEL_36:
         if ( v22 >= 0 && v22 != *((char *)v14 + 289) ) /*0x4a9c28*/
         {
           *((unsigned char *)v14 + 289) = v22; /*0x4a9c2a*/
-          Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9c37*/
+          ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v14); /*0x4a9c37*/
         }
       }
     }
@@ -411,7 +411,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
     v5->flags[0] = v9; /*0x4a9e3f*/
   }
   if ( v29 ) /*0x4a9e4b*/
-    Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4a9e54*/
+    ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v5); /*0x4a9e54*/
   for ( i = 0; i < 8; ++i ) /*0x4a9e5a*/
   {
     v10 = i & 7; /*0x4a9e69*/
@@ -430,7 +430,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
           goto LABEL_13; /*0x4a9ef0*/
         LOBYTE(v14) = v14 | 1; /*0x4a9f0c*/
         v12[80] = v14; /*0x4a9f0f*/
-        Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v12); /*0x4a9f1b*/
+        ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v12); /*0x4a9f1b*/
         for ( j = 0; j < 8; ++j ) /*0x4a9f20*/
         {
           v16 = j & 7; /*0x4a9f29*/
@@ -444,7 +444,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
           if ( v19 != v18[289] ) /*0x4a9f80*/
           {
             v18[289] = v19; /*0x4a9f82*/
-            Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v18); /*0x4a9f8f*/
+            ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v18); /*0x4a9f8f*/
           }
         }
         v5 = v27; /*0x4a9f9a*/
@@ -460,7 +460,7 @@ LABEL_13:
         if ( v13 >= 0 && v13 != *((char *)v12 + 289) ) /*0x4a9fd2*/
         {
           *((unsigned char *)v12 + 289) = v13; /*0x4a9fd4*/
-          Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v12); /*0x4a9fe1*/
+          ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v12); /*0x4a9fe1*/
         }
       }
     }
@@ -525,7 +525,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
     v5[75] = v10; /*0x4aa0b4*/
   }
   if ( v8 ) /*0x4aa0bc*/
-    Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4aa0c5*/
+    ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v5); /*0x4aa0c5*/
   for ( i = 0; i < 8; ++i ) /*0x4aa0ca*/
   {
     v11 = i & 7; /*0x4aa0d6*/
@@ -544,7 +544,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
           goto LABEL_13; /*0x4aa160*/
         LOBYTE(v15) = v15 | 0x10; /*0x4aa17c*/
         v13[75] = v15; /*0x4aa17f*/
-        Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v13); /*0x4aa18b*/
+        ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v13); /*0x4aa18b*/
         for ( j = 0; j < 8; ++j ) /*0x4aa190*/
         {
           v17 = j & 7; /*0x4aa194*/
@@ -558,7 +558,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
           if ( v20 != v19[288] ) /*0x4aa1ec*/
           {
             v19[288] = v20; /*0x4aa1ee*/
-            Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v19); /*0x4aa1fb*/
+            ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v19); /*0x4aa1fb*/
           }
         }
         v3 = a1; /*0x4aa206*/
@@ -574,7 +574,7 @@ LABEL_13:
         if ( v14 >= 0 && v14 != *((char *)v13 + 288) ) /*0x4aa23e*/
         {
           *((unsigned char *)v13 + 288) = v14; /*0x4aa240*/
-          Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v13); /*0x4aa24d*/
+          ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v13); /*0x4aa24d*/
         }
       }
     }
@@ -661,7 +661,7 @@ void * DisplayClass::Draw(int a2)
     swprintf(&word_8A0630, (const size_t)aDD_2, (const wchar_t *const)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
     return &word_8A0630; /*0x4ae5be*/
   }
-  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v19)->copyFlags & 8) == 0 && g_hWnd ) /*0x4ae5e0*/
+  if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v19)->copyFlags & 8) == 0 && g_hWnd ) /*0x4ae5e0*/
     return GetStringCSF(aTxtShadow, 0, aDRa2mdpostDisp, 5048); /*0x4ae5fd*/
   v8 = v15; /*0x4ae600*/
   if ( !v15 ) /*0x4ae606*/
@@ -675,7 +675,7 @@ void * DisplayClass::Draw(int a2)
       {
         Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ae635*/
         v10 = (unsigned int *)(*(int (**)(unsigned char *))(*(unsigned int *)v15 + 72))(v18); /*0x4ae63b*/
-        v11 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v10); /*0x4ae644*/
+        v11 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v10); /*0x4ae644*/
         if ( !(uint8_t)Cell::IsPassableOffset((Cell *)v11, (int)Object_field_0x30) ) /*0x4ae64b*/
           return 0; /*0x4ae64b*/
       }
@@ -1013,7 +1013,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
   Tactical::MouseOver(&v12, v9, v14, &v10, &v8[1], &a2); /*0x4aacd4*/
   if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
-    Tactical::MouseMove((Tactical *)&dword_87F7E8, v11, v9); /*0x4aad04*/
+    ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(v11, v9); /*0x4aad04*/
   return COMObject::ActivateThunk((GadgetClass *)this, 0, a3, 0); /*0x4aad19*/
 
 }
@@ -1120,7 +1120,7 @@ namespace gamemd {
 int * DisplayClass::processDisplayMode(char a2)
 {
 
-  Vector::Clear((int)((unsigned int *)this + 1)); /*0x4aec36*/
+  ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aec36*/
   Straw::Dtor((Straw *)this); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     __3_YAXPAX_Z(this); /*0x4aec4a*/

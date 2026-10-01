@@ -91,7 +91,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   }
   v8 = (aP2[20] & 1) != 0 ? (#375 **)aP2 : 0;
   v9 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39)));
-  v10 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v9));
+  v10 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v9));
   if ( a0 ) /*0x6fc1a0*/
   {
     if ( (((unsigned int *)a0)[0] & 4) != 0 && *((unsigned char *)a0 + 1709) ) /*0x6fc1a8*/
@@ -391,7 +391,7 @@ LABEL_164:
     goto LABEL_231; /*0x6fcafc*/
   if ( v32 && (*((uint8_t (**)(#375 **))*v8 + 88))(v8) ) /*0x6fcb0b*/
     return 5; /*0x6fcb21*/
-  if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 341) && !CaptureManagerClass::CanCapture((int)a0->captureManager, v8) ) /*0x6fcb3b*/
+  if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 341) && !((CaptureManagerClass *)((int)a0->captureManager))->CanCapture(v8) ) /*0x6fcb3b*/
     return 5; /*0x6fcb50*/
   v33 = *(unsigned int *)(v38 + 172); /*0x6fcb56*/
   if ( *(double *)(v33 + 8 * *(unsigned int *)((*((int (**)(#375 **))*v8 + 33))(v8) + 156) + 160) == 0.0 ) /*0x6fcb7c*/

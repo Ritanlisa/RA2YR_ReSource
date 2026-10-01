@@ -538,7 +538,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   {
     *(unsigned int *)&v11.q4 = aP4; /*0x76689f*/
     *(unsigned int *)v11.__pad_0 = v7; /*0x7668a0*/
-    String::AssignFromPtr(&v11, (const char **)&a4); /*0x7668a4*/
+    ((String *)(&v11))->AssignFromPtr((const char **)&a4); /*0x7668a4*/
     inited = System_Init_766A10(v8, a2, a3, *(void **)v11.__pad_0, *(int *)&v11.q4); /*0x7668b6*/
   }
   else

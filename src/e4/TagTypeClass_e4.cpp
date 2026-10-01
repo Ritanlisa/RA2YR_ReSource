@@ -277,7 +277,7 @@ namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6e63e9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6e63e9*/
   return Power::TimerProcess(*((unsigned int *)this + 39)); /*0x6e63fc*/
 
 }
@@ -293,7 +293,7 @@ int TagTypeClass::GetAuxField()
 }
 // 0x727AA0
 namespace gamemd {
-TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(ObjectClass * Source)
+TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
 {
 
   int v2; // esi

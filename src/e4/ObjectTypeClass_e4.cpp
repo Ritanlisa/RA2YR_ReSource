@@ -128,7 +128,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 } // namespace gamemd
 // 0x5F7090
 namespace gamemd {
-int ObjectTypeClass::ConstructFull(AbstractClass * aP1, void *a2)
+int ObjectTypeClass::ConstructFull(char *aP1)
 {
 
   int *v3; // eax
@@ -645,7 +645,7 @@ LABEL_41:
 } // namespace gamemd
 // 0x5F92D0
 namespace gamemd {
-void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1, void *a2)
+void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
 {
 
   int CrushSound; // edi
@@ -1469,7 +1469,7 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 } // namespace gamemd
 // 0x5F1C30
 namespace gamemd {
-int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2, void *a3)
+int ObjectTypeClass::CreateInstance(int aP1, int aP2)
 {
 
   if ( *(unsigned int *)&((unsigned int *)this)[0] ) /*0x5f1c30*/

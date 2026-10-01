@@ -46,7 +46,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
 } // namespace gamemd
 // 0x5138F0
 namespace gamemd {
-unsigned int * InfantryTypeVector::Construct2(int a2, int a3, void *a3_2)
+unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 {
 
   this->InfantryTypeVector_field_0x04 = 0; /*0x5138fb*/

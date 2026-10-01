@@ -35,7 +35,7 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam(MSShapeAnim * aP1, void *a2_1)
+int Session::RemoveTeam(int (__thiscall ***a2)(unsigned int, int) aP1)
 {
 
   int result; // eax
@@ -200,7 +200,7 @@ LABEL_44:
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
-      Vector::Clear((int)&Str[88]); /*0x5e7876*/
+      ((Vector *)((int)&Str[88]))->Clear(); /*0x5e7876*/
       *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
       result = ((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
@@ -245,7 +245,7 @@ LABEL_44:
     }
     if ( v3 ) /*0x5e75cb*/
     {
-      for ( result = Network::GetQueueCount(&unk_A8E9C0); result; result = Network::GetQueueCount(&unk_A8E9C0) ) /*0x5e75e0*/
+      for ( result = ((Network *)(&unk_A8E9C0))->GetQueueCount(); result; result = ((Network *)(&unk_A8E9C0))->GetQueueCount() ) /*0x5e75e0*/
         this->Event::Dispatch(); /*0x5e75e6*/
       return result; /*0x5e75f7*/
     }
@@ -271,7 +271,7 @@ int Session::GetPlayerOption()
 }
 // 0x69B720
 namespace gamemd {
-int Session::GetPlayerColor(void *a1_1)
+int Session::GetPlayerColor()
 {
 
   int result; // eax
@@ -306,7 +306,7 @@ int Session::StartGame(HWND hWnd)
   else
     v4 = 0; /*0x5ed3bd*/
   g_UIControlState = (int)(v4); /*0x5ed3c6*/
-  Surface::LoadToSurfaceSHP((Surface *)v4, ExistingFileName); /*0x5ed3cb*/
+  ((Surface *)((Surface *)v4))->LoadToSurfaceSHP(ExistingFileName); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
     Session::PrepareGame(hWnd); /*0x5ed3dd*/
   return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/

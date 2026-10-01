@@ -101,14 +101,14 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   int v8; // eax
   char *v10; // [esp+Ch] [ebp-4h] BYREF
 
-  String::Assign((String *)this, 0); /*0x5d0389*/
+  ((String *)((String *)this))->Assign(0); /*0x5d0389*/
   *((unsigned int *)this + 1) = 0; /*0x5d0392*/
   *((unsigned int *)this + 2) = 0; /*0x5d0395*/
   *((unsigned int *)this + 3) = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
   if ( String::Length((String *)&v10) ) /*0x5d03bc*/
-    String::Reassign((String *)this, (const char **)&v10); /*0x5d03cc*/
+    ((String *)((String *)this))->Reassign((const char **)&v10); /*0x5d03cc*/
   v4 = String::Tokenize(aP1, v3, Str, (void **)&v10); /*0x5d03e7*/
   if ( String::Length((String *)&v10) ) /*0x5d03e9*/
   {
@@ -766,7 +766,7 @@ ObjectClass * String::CopyConstant(char * Destination)
 
 // 0x7B4630
 namespace gamemd {
-char ** String::Assign(const char * a2, void *a2_2)
+char ** String::Assign(const char *a2)
 {
 
   size_t v3; // ecx
@@ -789,7 +789,7 @@ char ** String::Assign(const char * a2, void *a2_2)
 
 // 0x7B4690
 namespace gamemd {
-char ** String::AssignFromPtr(const char ** a2, void *a2_2)
+char ** String::AssignFromPtr(const char **a2)
 {
 
   char *v3; // edx
@@ -840,7 +840,7 @@ bool String::Equals_Alt(const char * a2)
 
 // 0x7B4780
 namespace gamemd {
-bool String::Compare(const char ** a2, void *a2_2)
+bool String::Compare(const char **a2)
 {
 
   int result; // eax
@@ -902,7 +902,7 @@ bool String::NotEquals(const char * a2, void *a2_2)
 
 // 0x7B48D0
 namespace gamemd {
-void ** String::Assign_Alt(CCINIClass * aP1, void *a2_1)
+void ** String::Assign_Alt(const char *aP1)
 {
 
   size_t v3; // ecx
@@ -927,7 +927,7 @@ void ** String::Assign_Alt(CCINIClass * aP1, void *a2_1)
 
 // 0x7B4940
 namespace gamemd {
-char ** String::Reassign(AbstractClass * aP1, void *a2_1)
+char ** String::Reassign(const char **aP1)
 {
 
   void *v3; // edi
@@ -961,7 +961,7 @@ char ** String::Reassign(AbstractClass * aP1, void *a2_1)
 
 // 0x7B4C20
 namespace gamemd {
-const char ** String::Append(CCINIClass * aP1, void *a2_1)
+const char ** String::Append(const char *aP1)
 {
 
   const char *v2; // esi
@@ -1000,7 +1000,7 @@ const char ** String::Append(CCINIClass * aP1, void *a2_1)
 
 // 0x7B4CD0
 namespace gamemd {
-const char ** String::Append2(IUnknown * aP1, void *a2_1)
+const char ** String::Append2(char **aP1)
 {
 
   char *v2; // eax
@@ -1312,7 +1312,7 @@ char * String::GetOrEmpty_Alt(void *a1_1)
 
 // 0x7B5A40
 namespace gamemd {
-char String::Assign_Bool(const char * a2, void *a2_2)
+char String::Assign_Bool(const char *a2)
 {
 
   size_t v3; // ecx
@@ -1367,7 +1367,7 @@ void String::ToLower(void *a1_1)
 
 // 0x7B5B80
 namespace gamemd {
-char ** String::ToLowerCopy(ObjectClass * aP1, void *a2_1)
+char ** String::ToLowerCopy(char **aP1)
 {
 
   char *v3; // ebx

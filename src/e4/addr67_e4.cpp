@@ -79,7 +79,7 @@ int sub_679CC0()
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679d51*/
     v9 = 0; /*0x679d59*/
-    Vector::Clear((int)v8); /*0x679d60*/
+    ((Vector *)((int)v8))->Clear(); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     BufferIOFileClass::Dtor(v7); /*0x679d71*/
     HashTable::DestroyHashTableINIClass(v1); /*0x679d7a*/
@@ -219,7 +219,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
          (char *)&v17.InfantryTypeVector_field_0x1C,
          128) )
   {
-    InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
+    ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
     v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
     *(unsigned int *)v17.__pad_0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
@@ -348,7 +348,7 @@ int ArtINI_Load()
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
   v3 = 0; /*0x679f1e*/
-  Vector::Clear((int)v2); /*0x679f26*/
+  ((Vector *)((int)v2))->Clear(); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
 // 0x431b80
   return BufferIOFileClass::Dtor(v1); /*0x679f3c*/

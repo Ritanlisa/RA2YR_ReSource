@@ -466,8 +466,8 @@ int WebBrowser::GoBack()
     FindChannelWOL((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }
-  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773dee*/
-  String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
+  ((String *)((String *)&g_WindowManager.__pad_EC[684]))->Assign_Alt((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773dee*/
+  ((String *)((String *)&g_WebBrowserConfig))->Assign_Alt(v5); /*0x773dfd*/
   *(unsigned int *)&v2.m_3[1] = &vt_rc_ptr; /*0x773e06*/
   ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/
   DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/

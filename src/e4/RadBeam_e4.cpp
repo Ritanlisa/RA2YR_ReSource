@@ -17,7 +17,7 @@ void * RadBeam::Create()
 
   v2 = (RadBeam *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
   if ( v2 ) /*0x659124*/
-    inited = (double *)RadBeam::InitState(v2, (int)this); /*0x65912e*/
+    inited = (double *)((RadBeam *)(v2))->InitState((int)this); /*0x65912e*/
   else
     inited = 0; /*0x659132*/
   if ( dword_B04A70 < dword_B04A68 /*0x65916a*/
@@ -39,7 +39,7 @@ void * RadBeam::Create()
 
 // 0x6593F0
 namespace gamemd {
-unsigned int * RadBeam::InitState(rc_ptr_base * aP1, void *a2)
+unsigned int * RadBeam::InitState(int aP1)
 {
 
   ((unsigned int *)this)[0] = 0; /*0x6593fe*/

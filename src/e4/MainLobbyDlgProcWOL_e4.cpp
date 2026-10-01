@@ -31,7 +31,7 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
     SafeDelete::Ptr(a3); /*0x624043*/
   v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x624055*/
   v7 = SendMessageA(hWnd, 0x4C3u, wParam, (LPARAM)v6); /*0x624061*/
-  WideString::Assign_Alt(a3, v6); /*0x624068*/
+  ((WideString *)(a3))->Assign_Alt(v6); /*0x624068*/
   RA2_OPDEL(v6); /*0x62406e*/
   return v7; /*0x624078*/
 }
@@ -65,7 +65,7 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
   v4 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1775))));
   SendMessageA(v4, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x77a920*/
   StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_UnknownStats, 0, g_Str_File_WOLPersonaInformation_cpp, 892)); /*0x77a933*/
-  WideString::Assign((wchar_t **)&v16, StringCSF); /*0x77a93d*/
+  ((WideString *)((wchar_t **)&v16))->Assign(StringCSF); /*0x77a93d*/
   v6 = GetDlgItem(hDlg, 1776); /*0x77a94e*/
   v7 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a950*/
   SendMessageA(v6, 0x4B2u, 0, (LPARAM)v7); /*0x77a95e*/

@@ -388,7 +388,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       SpawnManagerClass::Constructor_6B83A0((SpawnManagerClass *)v2->spawns, 0, 0); /*0x6b7f45*/
       *(unsigned int *)&v2->__pad_48[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
-      Timer::Start((Timer *)&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
+      ((Timer *)((Timer *)&v2->SpawnManagerClass_field_5C))->Start(0); /*0x6b7f5a*/
       v2->AbstractClass = &vt_SpawnManagerClass; /*0x6b7f5f*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f65*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f6c*/

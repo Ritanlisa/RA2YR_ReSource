@@ -153,7 +153,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     }
     v19[0] = (int)&CCFileClass_vftable; /*0x401547*/
     v21 = 0; /*0x40154f*/
-    Vector::Clear((int)v20); /*0x401556*/
+    ((Vector *)((int)v20))->Clear(); /*0x401556*/
     v19[0] = (int)&off_7E1668; /*0x40155f*/
     ((BufferIOFileClass *)(v19))->Dtor(); /*0x401567*/
     return 0; /*0x40156c*/
@@ -203,7 +203,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   }
   v19[0] = (int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)((int)&CCFileClass_vftable))));
   v21 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(0)));
-  Vector::Clear((int)v20); /*0x4014bb*/
+  ((Vector *)((int)v20))->Clear(); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
   ((BufferIOFileClass *)(v19))->Dtor(); /*0x4014cc*/
   return v3; /*0x4014d3*/
@@ -1376,7 +1376,7 @@ LABEL_11:
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
-    Vector::Clear((int)v15); /*0x406c76*/
+    ((Vector *)((int)v15))->Clear(); /*0x406c76*/
     *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x406c7f*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x406c87*/
     if ( v4 ) /*0x406c91*/
@@ -5879,7 +5879,7 @@ int sub_40B540()
   stru_87F5D8 = (int)&DynamicVectorClass_BombClass___vftable; /*0x40b563*/
   dword_87F5EC = 10; /*0x40b56d*/
   dword_87F5E8 = 0; /*0x40b577*/
-  EventClass::resetEvent(&stru_87F5F0, 0, 0); /*0x40b57d*/
+  ((EventClass *)(&stru_87F5F0))->resetEvent(0, 0); /*0x40b57d*/
   stru_87F5F0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x40b587*/
   dword_87F604 = 10; /*0x40b591*/
   dword_87F600 = 0; /*0x40b59b*/

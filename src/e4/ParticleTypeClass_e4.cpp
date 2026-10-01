@@ -284,7 +284,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   char Destination[128]; // [esp+64h] [ebp-80h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x644f65*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
   v44[0] = &vt_TypeList; /*0x644f8a*/
@@ -590,7 +590,7 @@ LABEL_17:
 }
 // 0x6454E0
 namespace gamemd {
-int ParticleTypeClass::ProcessPower(int * a2, void *a2_2)
+int ParticleTypeClass::ProcessPower(int *a2)
 {
 
   int v3; // ecx
@@ -599,7 +599,7 @@ int ParticleTypeClass::ProcessPower(int * a2, void *a2_2)
   int v6; // ecx
   int v7; // ecx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6454e9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6454e9*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2DC[0]); /*0x6454f7*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2E0[0]); /*0x645505*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2E8[0]); /*0x645513*/
@@ -611,17 +611,17 @@ int ParticleTypeClass::ProcessPower(int * a2, void *a2_2)
   Checksummer::Add_float((Checksummer *)a2, this->ParticleTypeClass_field_0x300); /*0x645567*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
   LOBYTE(v3) = this->__pad_308[0]; /*0x64557a*/
-  Power::FlagProcess((Power *)a2, v3); /*0x645583*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x645583*/
   LOBYTE(v4) = this->__pad_308[1]; /*0x645588*/
-  v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
+  v5 = ((Power *)((Power *)a2))->FinalizeDrain(v4); /*0x645591*/
   LOBYTE(v5) = this->__pad_308[2]; /*0x645596*/
-  Power::FinalizeDrain((Power *)a2, v5); /*0x64559f*/
+  ((Power *)((Power *)a2))->FinalizeDrain(v5); /*0x64559f*/
   LOBYTE(v6) = this->__pad_308[3]; /*0x6455a4*/
-  Power::FinalizeDrain((Power *)a2, v6); /*0x6455ad*/
+  ((Power *)((Power *)a2))->FinalizeDrain(v6); /*0x6455ad*/
   Power::TimerProcess((uint8_t)this->__pad_308[5]); /*0x6455bd*/
   Power::TimerProcess((uint8_t)this->__pad_308[6]); /*0x6455cd*/
   LOBYTE(v7) = this->__pad_308[7]; /*0x6455d2*/
-  Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
+  ((Power *)((Power *)a2))->FlagProcess(v7); /*0x6455db*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x310); /*0x6455e9*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/
   return Checksummer::Add_double( /*0x645611*/

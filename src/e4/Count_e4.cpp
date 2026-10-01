@@ -88,7 +88,7 @@ int Count::SetupAllCountriesLobby()
       }
       else
       {
-        PlayerSide = SessionClass::GetPlayerSide(v5); /*0x46f786*/
+        PlayerSide = ((SessionClass *)(v5))->GetPlayerSide(); /*0x46f786*/
       }
       if ( dword_A8B23C /*0x46f795*/
         && !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->AbstractClass + 7))(
@@ -102,7 +102,7 @@ int Count::SetupAllCountriesLobby()
         }
         else if ( (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x46f7b7*/
         {
-          SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
+          ((SessionClass *)(*v8))->SetPlayerOption(v6); /*0x46f7c7*/
         }
       }
       SetupLobbyCountryCombo((HWND)this, ResourceID2CSF, PlayerSide); /*0x46f7d3*/

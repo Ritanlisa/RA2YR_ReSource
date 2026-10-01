@@ -218,7 +218,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v33 = *(unsigned int *)&this->__pad_98[8]; /*0x749beb*/
     GroundHeight = *(unsigned int *)&this->__pad_98[12]; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v32); /*0x749c05*/
-    if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
+    if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v32)->flags[0] & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
     v27 = *(unsigned int *)&this->__pad_98[4]; /*0x749c1f*/
     v28 = *(unsigned int *)&this->__pad_98[8]; /*0x749c26*/
@@ -228,13 +228,13 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
       v29 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v27 = v32; /*0x749c4e*/
       v28 = v33; /*0x749c5b*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v27, v38); /*0x749c60*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v27, v38); /*0x749c60*/
     }
     else
     {
 LABEL_6:
       v35 = GroundHeight; /*0x749c62*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v32, v38); /*0x749c76*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v32, v38); /*0x749c76*/
     }
     LOBYTE(VoxelAnimClass_field_0x104) = this->__pad_12C[16]; /*0x749c7b*/
     if ( !(unsigned char)VoxelAnimClass_field_0x104 ) /*0x749c83*/
@@ -289,7 +289,7 @@ LABEL_6:
         v27 = *(unsigned int *)&this->__pad_98[4]; /*0x749e17*/
         v29 = v11; /*0x749e1f*/
         v28 = v12; /*0x749e29*/
-        v13 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27)); /*0x749e2d*/
+        v13 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v27)); /*0x749e2d*/
         VoxelAnimClass_field_0x10C = (gamemd::AbstractClass *)(this->VoxelAnimClass_field_0x10C); /*0x749e32*/
         v15 = *(int16_t *)v13->CellClass_field_10A; /*0x749e38*/
         if ( VoxelAnimClass_field_0x10C ) /*0x749e41*/
@@ -471,7 +471,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
     v97 = *(unsigned int *)&v1->__pad_98[4]; /*0x749fac*/
     v98 = *(unsigned int *)&v1->__pad_98[8]; /*0x749fbd*/
     v99 = *(unsigned int *)&v1->__pad_98[12]; /*0x749fc4*/
-    v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v97)->landType == 2; /*0x749fd5*/
+    v8 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v97)->landType == 2; /*0x749fd5*/
     v101 = *(unsigned int *)&v1->__pad_98[4]; /*0x749fda*/
     v102 = *(unsigned int *)&v1->__pad_98[8]; /*0x749fe1*/
     v9 = *(unsigned int *)&v1->__pad_98[12]; /*0x749fe5*/
@@ -719,7 +719,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
         if ( !v87 ) /*0x74a5ca*/
         {
           v54 = (unsigned int *)Coord::GetCoords(&v101, v86); /*0x74a5db*/
-          v55 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v54); /*0x74a5eb*/
+          v55 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v54); /*0x74a5eb*/
           if ( (uint8_t)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
           {
             v56 = *(CellClass **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * FindBuildingByTiberiumType(127)); /*0x74a612*/
@@ -800,7 +800,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
     v97 = *(unsigned int *)&v1->__pad_98[4]; /*0x74a7f9*/
     v98 = *(unsigned int *)&v1->__pad_98[8]; /*0x74a80a*/
     v99 = *(unsigned int *)&v1->__pad_98[12]; /*0x74a811*/
-    if ( Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v97)->landType == 2 ) /*0x74a821*/
+    if ( ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v97)->landType == 2 ) /*0x74a821*/
     {
       v1->VoxelAnimClass_field_0x140 = 0; /*0x74a823*/
     }
@@ -820,7 +820,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
         }
       }
       v72 = (unsigned int *)Coord::GetCoords(&v105, v86); /*0x74a88b*/
-      for ( i = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v72)->firstObject; i; i = i->nextObject ) /*0x74a8a3*/
+      for ( i = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v72)->firstObject; i; i = i->nextObject ) /*0x74a8a3*/
       {
         v74 = i->location[0]; /*0x74a8af*/
         v102 = i->location[1]; /*0x74a8b8*/
@@ -905,9 +905,9 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   v6 = (*((int (**)(void **))this->VoxelAnimClass_field_0x10C->vtable1 + 4))(&this->VoxelAnimClass_field_0x10C->vtable1); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
   LOBYTE(v7) = this->__pad_110[0]; /*0x74aa96*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x74aa9f*/
+  v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x74aa9f*/
   LOBYTE(v8) = this->__pad_12C[16]; /*0x74aaa4*/
-  Power::FlagProcess((Power *)a2, v8); /*0x74aaad*/
+  ((Power *)((Power *)a2))->FlagProcess(v8); /*0x74aaad*/
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 
 }
@@ -1077,7 +1077,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7); /*0x749b2f*/
-  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
+  if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->__pad_20[96] = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/
 

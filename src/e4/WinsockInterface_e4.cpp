@@ -43,7 +43,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   {
     unknown_libname_73(v4); /*0x770289*/
     Array::ForEach(v5, 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
-    String::Assign_Alt(v4, &g_INI_DefaultBuffer); /*0x7702a4*/
+    ((String *)(v4))->Assign_Alt(&g_INI_DefaultBuffer); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
     --v3; /*0x7702b5*/
@@ -71,23 +71,23 @@ void * WinsockInterface::ProcessPacket(int a2)
   *((unsigned int *)this + 244) = 0; /*0x770324*/
   *((unsigned int *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
-  String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
-  String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
+  ((String *)((char **)&a2))->Assign(aOldcycle); /*0x77033b*/
+  ((String *)((char **)this + 1))->Reassign((const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
-  String::Assign((char **)&a2, aHistory); /*0x77035f*/
-  String::Reassign((char **)this + 38, (const char **)&a2); /*0x77036f*/
+  ((String *)((char **)&a2))->Assign(aHistory); /*0x77035f*/
+  ((String *)((char **)this + 38))->Reassign((const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
-  String::Assign((char **)&a2, aStatus); /*0x770386*/
-  String::Reassign((char **)this + 75, (const char **)&a2); /*0x770396*/
+  ((String *)((char **)&a2))->Assign(aStatus); /*0x770386*/
+  ((String *)((char **)this + 75))->Reassign((const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
-  String::Assign((char **)&a2, aTerritory); /*0x7703ad*/
-  String::Reassign((char **)this + 112, (const char **)&a2); /*0x7703bd*/
+  ((String *)((char **)&a2))->Assign(aTerritory); /*0x7703ad*/
+  ((String *)((char **)this + 112))->Reassign((const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
-  String::Assign((char **)&a2, aGame); /*0x7703d4*/
-  String::Reassign((char **)this + 149, (const char **)&a2); /*0x7703e4*/
+  ((String *)((char **)&a2))->Assign(aGame); /*0x7703d4*/
+  ((String *)((char **)this + 149))->Reassign((const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
-  String::Assign((char **)&a2, aEvacuate); /*0x7703fb*/
-  String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
+  ((String *)((char **)&a2))->Assign(aEvacuate); /*0x7703fb*/
+  ((String *)((char **)this + 186))->Reassign((const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 

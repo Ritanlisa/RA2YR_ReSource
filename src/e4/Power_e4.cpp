@@ -327,26 +327,26 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 1820)); /*0x68b9de*/
   Checksummer::Add_double(*((unsigned int *)this + 1822), *((unsigned int *)this + 1823)); /*0x68b9f3*/
   LOBYTE(v3) = *((unsigned char *)this + 13500); /*0x68b9f8*/
-  Power::FlagProcess((int *)a2, v3); /*0x68ba01*/
+  ((Power *)((int *)a2))->FlagProcess(v3); /*0x68ba01*/
   LOBYTE(v4) = *((unsigned char *)this + 13485); /*0x68ba06*/
-  Power::FlagProcess((int *)a2, v4); /*0x68ba0f*/
+  ((Power *)((int *)a2))->FlagProcess(v4); /*0x68ba0f*/
   Power::TimerProcess(*((unsigned int *)this + 1824) / 100); /*0x68ba2e*/
   Power::TimerProcess(*((unsigned int *)this + 3368)); /*0x68ba3c*/
   LOBYTE(v5) = *((unsigned char *)this + 13484); /*0x68ba41*/
-  Power::FlagProcess((int *)a2, v5); /*0x68ba4a*/
+  ((Power *)((int *)a2))->FlagProcess(v5); /*0x68ba4a*/
   Power::TimerProcess(*((unsigned int *)this + 3379)); /*0x68ba58*/
   LOBYTE(v6) = *((unsigned char *)this + 13486); /*0x68ba5d*/
-  Power::FlagProcess((int *)a2, v6); /*0x68ba66*/
+  ((Power *)((int *)a2))->FlagProcess(v6); /*0x68ba66*/
   LOBYTE(v7) = *((unsigned char *)this + 13487); /*0x68ba6b*/
-  v8 = Power::FlagProcess((int *)a2, v7); /*0x68ba74*/
+  v8 = ((Power *)((int *)a2))->FlagProcess(v7); /*0x68ba74*/
   LOBYTE(v8) = *((unsigned char *)this + 13488); /*0x68ba79*/
-  Power::FlagProcess((int *)a2, v8); /*0x68ba82*/
+  ((Power *)((int *)a2))->FlagProcess(v8); /*0x68ba82*/
   LOBYTE(v9) = *((unsigned char *)this + 13490); /*0x68ba87*/
-  Power::FlagProcess((int *)a2, v9); /*0x68ba90*/
+  ((Power *)((int *)a2))->FlagProcess(v9); /*0x68ba90*/
   LOBYTE(v10) = *((unsigned char *)this + 13492); /*0x68ba95*/
-  v11 = Power::FlagProcess((int *)a2, v10); /*0x68ba9e*/
+  v11 = ((Power *)((int *)a2))->FlagProcess(v10); /*0x68ba9e*/
   LOBYTE(v11) = *((unsigned char *)this + 13489); /*0x68baa3*/
-  Power::FlagProcess((int *)a2, v11); /*0x68baac*/
+  ((Power *)((int *)a2))->FlagProcess(v11); /*0x68baac*/
   Power::TimerProcess(*((unsigned int *)this + 1825)); /*0x68baba*/
   Power::TimerProcess(*((unsigned int *)this + 3380)); /*0x68bac8*/
   v12 = *((unsigned int *)this + 1146); /*0x68bacd*/
@@ -409,7 +409,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 3408)); /*0x68bc03*/
   Power::TimerProcess(*((unsigned int *)this + 3409)); /*0x68bc11*/
   LOBYTE(v23) = *((unsigned char *)this + 13476); /*0x68bc16*/
-  Power::FlagProcess((int *)a2, v23); /*0x68bc1f*/
+  ((Power *)((int *)a2))->FlagProcess(v23); /*0x68bc1f*/
   Power::TimerProcess(*((unsigned int *)this + 3410)); /*0x68bc2d*/
   Power::TimerProcess(*((unsigned int *)this + 3411)); /*0x68bc3b*/
   Power::TimerProcess(*((unsigned int *)this + 3412)); /*0x68bc49*/
@@ -424,7 +424,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
 }
 // 0x4A1C10
 namespace gamemd {
-int Power::FinalizeDrain(int a2, void *a2_2)
+int Power::FinalizeDrain(int a2)
 {
 
   void *Power_field_0x4; // eax
@@ -467,7 +467,7 @@ int Power::FinalizeDrain(int a2, void *a2_2)
 
 // 0x4A1CA0
 namespace gamemd {
-int Power::FlagProcess(int a2, void *a2_2)
+int Power::FlagProcess(int a2)
 {
 
   void *Power_field_0x4; // eax

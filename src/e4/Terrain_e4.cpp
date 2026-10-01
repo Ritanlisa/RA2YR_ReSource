@@ -42,7 +42,7 @@ int Terrain::GetTileIndex(int a2, void *a2_2, void *a3_1, void *a4_1)
 }
 // 0x48B9E0
 namespace gamemd {
-int Terrain::GetTileType(AnimClass * aP1, void *a2_1)
+int Terrain::GetTileType(int aP1)
 {
 
   return (*((unsigned int *)this->Terrain_field_0x34 + 6 * *((unsigned int *)this->Terrain_field_0x40 + aP1)) & 1) != 0
@@ -370,7 +370,7 @@ LABEL_44:
       v46 = g_MissionQueueFrame.briefing[272] * *(char *)(a2 + 283); /*0x5694fb*/
       v79 = (SHIWORD(v83) << 8) + 128; /*0x56950e*/
       v80 = v46; /*0x569516*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x569522*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v78, &v75); /*0x569522*/
       v47 = v76; /*0x56952b*/
       *v45 = v75; /*0x56952f*/
       v45[1] = v47; /*0x569532*/
@@ -434,7 +434,7 @@ LABEL_44:
       v80 = g_MissionQueueFrame.briefing[272] * *((char *)v56 + 283); /*0x56968f*/
       v79 = (v77[1] << 8) + 128; /*0x569699*/
       v78 = (v77[0] << 8) + 128; /*0x5696a5*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x5696b1*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v78, &v75); /*0x5696b1*/
       v57 = *v45; /*0x5696b6*/
       v58 = v75; /*0x5696b9*/
       v59 = v45[1]; /*0x5696bd*/
@@ -2737,7 +2737,7 @@ LABEL_82:
   LOWORD(aP0) = v31 + v32; /*0x579afa*/
   HIWORD(aP0) = HIWORD(v31) + v33; /*0x579aff*/
   v38 = aP0; /*0x579b17*/
-  Tactical::MouseMove((int)&dword_87F7E8, &v37, &v38); /*0x579b1b*/
+  ((Tactical *)((int)&dword_87F7E8))->MouseMove(&v37, &v38); /*0x579b1b*/
   v35 = *(unsigned char *)(v3 + 283); /*0x579b33*/
   LOBYTE(aP0) = 1; /*0x579b3a*/
   return GenerateTerrainMap(0, 0, v35, aP1, &aP0, 0) || (unsigned char)aP0; /*0x579b4e*/
@@ -3001,7 +3001,7 @@ LABEL_49:
       LOWORD(v57) = *v4 + LOWORD(dword_89F688[v34]); /*0x5a2c99*/
       HIWORD(v57) = v35; /*0x5a2ca2*/
       v50 = v57; /*0x5a2cab*/
-      if ( !LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&v50, 1) ) /*0x5a2cbc*/
+      if ( !((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v50, 1) ) /*0x5a2cbc*/
         goto LABEL_67; /*0x5a2cbc*/
       v36 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v50); /*0x5a2cd1*/
       v58 = (int)v36; /*0x5a2cd5*/

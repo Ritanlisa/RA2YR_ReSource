@@ -26,7 +26,7 @@ struct BlowStraw_29 {
     unsigned int CommandClass;
     unsigned char TabClass_field_0x0;  // 0x0
 // --- flat members (END) ---
-    int Seek(TabClass * aP1, unsigned int * a2, void *a3_1);  // 0x6D0680
+    int Seek(int *aP1, unsigned int *a2);  // 0x6D0680
     TabClass * Read(char * Block, char a2);  // 0x5BE9E0
 };
 } // namespace gamemd

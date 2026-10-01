@@ -534,12 +534,12 @@ struct MapClass {
     int FreeAllCells(void *a1);
     int GetScrollMode();
     int GetTileDataField14(MapResourceClass * aP0);
-    int GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4);
+    int GetTileIndex(int16_t *aP1, int aP2, char aP3);
     int  InitCellVe_vt04(unsigned int * a2);
     int InitCellVe_vt06(int a2);
     int InitCellVector();
     int InitializeTileData(MapClass * aP1);
-    int  IsAreaFree(int * a2, int a3, void *a3_2);
+    int IsAreaFree(int *a2, int a3);
     int IsCellPassable(int a1, int a2);
     int LoadTerrainData(MapClass * aP1);
     int MarkForRedraw(int a2, void *a2_2);

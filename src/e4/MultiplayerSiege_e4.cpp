@@ -76,7 +76,7 @@ int MultiplayerSiege::Write(void ** a1)
     if ( dword_A8DA84 <= 0 ) /*0x5ca6f7*/
     {
 LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65));
-      WideString::Assign_Alt((void **)a1, StringCSF); /*0x5ca73a*/
+      ((WideString *)((void **)a1))->Assign_Alt(StringCSF); /*0x5ca73a*/
       return 0; /*0x5ca742*/
     }
     else
@@ -93,7 +93,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
             if ( v7 != 1 ) /*0x5ca70d*/
             {
               v9 = (wchar_t *)(GetStringCSF(aMpIllegalteam, 0, g_Str_File_MPSiege_cpp, 60));
-              WideString::Assign_Alt((void **)a1, v9); /*0x5ca75e*/
+              ((WideString *)((void **)a1))->Assign_Alt(v9); /*0x5ca75e*/
               return 0; /*0x5ca769*/
             }
             ++v3; /*0x5ca70f*/
@@ -103,7 +103,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
             if ( v2 ) /*0x5ca714*/
             {
               v10 = (wchar_t *)(GetStringCSF(aMpOnlyonebesei, 0, g_Str_File_MPSiege_cpp, 51));
-              WideString::Assign_Alt((void **)a1, v10); /*0x5ca782*/
+              ((WideString *)((void **)a1))->Assign_Alt(v10); /*0x5ca782*/
               return 0; /*0x5ca78d*/
             }
             v2 = 1; /*0x5ca716*/
@@ -122,7 +122,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
       else
       {
         v11 = (wchar_t *)(GetStringCSF(aMpNoattackers, 0, g_Str_File_MPSiege_cpp, 70));
-        WideString::Assign_Alt((void **)a1, v11); /*0x5ca7ab*/
+        ((WideString *)((void **)a1))->Assign_Alt(v11); /*0x5ca7ab*/
         return 0; /*0x5ca7b3*/
       }
     }

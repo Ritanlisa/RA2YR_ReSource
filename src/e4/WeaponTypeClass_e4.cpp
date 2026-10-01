@@ -276,20 +276,20 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   int v21; // ecx
   int v22; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x772ae9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
   LOBYTE(v3) = this->IsSonic; /*0x772afc*/
-  Power::FlagProcess((Power *)a2, v3); /*0x772b05*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x772b05*/
   LOBYTE(v4) = this->TurboBoost; /*0x772b0a*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x772b13*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x772b13*/
   LOBYTE(v5) = this->Supress; /*0x772b18*/
-  Power::FlagProcess((Power *)a2, v5); /*0x772b21*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x772b21*/
   LOBYTE(v6) = this->Camera; /*0x772b26*/
-  Power::FlagProcess((Power *)a2, v6); /*0x772b2f*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x772b2f*/
   LOBYTE(v7) = this->IsLaser; /*0x772b34*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x772b3d*/
+  v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x772b3d*/
   LOBYTE(v8) = this->IsHouseColor; /*0x772b42*/
-  Power::FlagProcess((Power *)a2, v8); /*0x772b4b*/
+  ((Power *)((Power *)a2))->FlagProcess(v8); /*0x772b4b*/
   Power::TimerProcess(this->Burst); /*0x772b59*/
   Projectile = this->Projectile; /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
@@ -311,25 +311,25 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(this->DownReport[4]); /*0x772be5*/
   Power::TimerProcess(this->Anim[4]); /*0x772bf3*/
   LOBYTE(v13) = this->UseFireParticles; /*0x772bf8*/
-  v14 = Power::FlagProcess((Power *)a2, v13); /*0x772c01*/
+  v14 = ((Power *)((Power *)a2))->FlagProcess(v13); /*0x772c01*/
   LOBYTE(v14) = this->Lobber; /*0x772c06*/
-  Power::FlagProcess((Power *)a2, v14); /*0x772c0f*/
+  ((Power *)((Power *)a2))->FlagProcess(v14); /*0x772c0f*/
   LOBYTE(v15) = this->LaserDuration; /*0x772c14*/
-  Power::FinalizeDrain((Power *)a2, v15); /*0x772c1d*/
+  ((Power *)((Power *)a2))->FinalizeDrain(v15); /*0x772c1d*/
   LOBYTE(v16) = this->IsBigLaser; /*0x772c22*/
-  v17 = Power::FlagProcess((Power *)a2, v16); /*0x772c2b*/
+  v17 = ((Power *)((Power *)a2))->FlagProcess(v16); /*0x772c2b*/
   LOBYTE(v17) = this->IsRailgun; /*0x772c30*/
-  Power::FlagProcess((Power *)a2, v17); /*0x772c39*/
+  ((Power *)((Power *)a2))->FlagProcess(v17); /*0x772c39*/
   LOBYTE(v18) = this->Charges; /*0x772c3e*/
-  Power::FlagProcess((Power *)a2, v18); /*0x772c47*/
+  ((Power *)((Power *)a2))->FlagProcess(v18); /*0x772c47*/
   LOBYTE(v19) = this->Bright; /*0x772c4c*/
-  v20 = Power::FlagProcess((Power *)a2, v19); /*0x772c55*/
+  v20 = ((Power *)((Power *)a2))->FlagProcess(v19); /*0x772c55*/
   LOBYTE(v20) = this->UseSparkParticles; /*0x772c5a*/
-  Power::FlagProcess((Power *)a2, v20); /*0x772c63*/
+  ((Power *)((Power *)a2))->FlagProcess(v20); /*0x772c63*/
   LOBYTE(v21) = this->OmniFire; /*0x772c68*/
-  Power::FlagProcess((Power *)a2, v21); /*0x772c71*/
+  ((Power *)((Power *)a2))->FlagProcess(v21); /*0x772c71*/
   LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
-  return Power::FlagProcess((Power *)a2, v22); /*0x772c84*/
+  return ((Power *)((Power *)a2))->FlagProcess(v22); /*0x772c84*/
 
 }
 } // namespace gamemd
@@ -376,7 +376,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
       (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772db0*/
-      DynamicVector::Add_Alt((DynamicVector *)Report, &a3); /*0x772dba*/
+      ((DynamicVector *)((DynamicVector *)Report))->Add_Alt(&a3); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
@@ -384,7 +384,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
       (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772dfc*/
-      DynamicVector::Add_Alt((DynamicVector *)v5->DownReport, &a2); /*0x772e06*/
+      ((DynamicVector *)((DynamicVector *)v5->DownReport))->Add_Alt(&a2); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Projectile); /*0x772e2f*/

@@ -97,7 +97,7 @@ void UI_Get(HWND hWnd, unsigned int * a2)
   struct tagRECT Rect; // [esp+10h] [ebp-10h] BYREF
 
   Parent = GetParent(hWnd); /*0x60af67*/
-  GameSpeed = SessionClass::GetGameSpeed(dword_A8B238); /*0x60af6e*/
+  GameSpeed = ((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60af6e*/
   GetWindowRect(Parent, &Rect); /*0x60af76*/
   v6 = 0; /*0x60af7c*/
   if ( !GameSpeed )
@@ -444,7 +444,7 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
 
   v13 = a2; /*0x60b1d9*/
   Parent = GetParent(hWnd); /*0x60b1e9*/
-  GameSpeed = SessionClass::GetGameSpeed(dword_A8B238); /*0x60b1f0*/
+  GameSpeed = ((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60b1f0*/
   GetWindowRect(Parent, &Rect); /*0x60b1fe*/
   GetWindowRect(hWnd, &v17); /*0x60b206*/
   right = Rect.right; /*0x60b20a*/
@@ -1053,7 +1053,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
   lParam[0] = a3; /*0x603f1e*/
   lParam[1] = a4; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
-  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v8); /*0x603f3c*/
+  ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&v8); /*0x603f3c*/
   DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
   return a1; /*0x603f4c*/
 }
@@ -1104,7 +1104,7 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
     SafeDelete::Ptr(a3); /*0x623f83*/
   v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x623f95*/
   v7 = SendMessageA(hWnd, 0x4B6u, wParam, (LPARAM)v6); /*0x623fa1*/
-  WideString::Assign_Alt(a3, v6); /*0x623fa8*/
+  ((WideString *)(a3))->Assign_Alt(v6); /*0x623fa8*/
   RA2_OPDEL(v6); /*0x623fae*/
   return v7; /*0x623fb8*/
 }
@@ -1871,13 +1871,13 @@ unsigned short sub_734120()
     v5 = ((int16_t)v1 << 8) + 128; /*0x73418c*/
     v6 = (IDA_SHIWORD(v4) << 8) + 128; /*0x73419c*/
     v7 = 0; /*0x7341a0*/
-    v3 = (*((char *)Coord::To_Cell(&dword_87F7E8, &v5) + 283) << 8) / 2; /*0x7341c6*/
+    v3 = (*((char *)((Coord *)(&dword_87F7E8))->To_Cell(&v5) + 283) << 8) / 2; /*0x7341c6*/
     v6 -= v3; /*0x7341cc*/
     v5 -= v3; /*0x7341df*/
-    Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v5); /*0x7341e3*/
+    ((Tactical *)((int)g_TacticalClass_Instance))->SetTacticalPosition(&v5); /*0x7341e3*/
     result = dword_880990; /*0x7341e8*/
     if ( dword_880990 ) /*0x7341ef*/
-      return (uint16_t)Tactical::MouseMove((int)&dword_87F7E8, &v4, &word_B0FDF0); /*0x734200*/
+      return (uint16_t)((Tactical *)((int)&dword_87F7E8))->MouseMove(&v4, &word_B0FDF0); /*0x734200*/
   }
   return result; /*0x734205*/
 }
@@ -1974,7 +1974,7 @@ void sub_7A2750()
 
   Current = Dialog::GetCurrent(); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
-  String::Assign((char **)&v4, 0); /*0x7a276c*/
+  ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
   DeleteAndZero(&v4); /*0x7a2784*/
   if ( v2 ) /*0x7a278b*/

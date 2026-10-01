@@ -8,7 +8,7 @@
 
 // 0x578540
 namespace gamemd {
-int Type::CheckAmbiguity(int a2, char a3, void *a3_2)
+int Type::CheckAmbiguity(int a2, char a3)
 {
 
   int v3; // edx

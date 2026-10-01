@@ -144,7 +144,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
         Debug::Log(aPlayMovieAsBin);
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
-      v9 = BinkMovie::Open(v8, Str, (int)a2); /*0x5c087d*/
+      v9 = ((BinkMovie *)(v8))->Open(Str, (int)a2); /*0x5c087d*/
     else
       v9 = 0; /*0x5c0881*/
     result = (unsigned int *)RA2_OPNEW(0x14u); /*0x5c0885*/
@@ -2910,11 +2910,11 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           v17 = v15; /*0x5cda04*/
           v4 = a2; /*0x5cda06*/
           v7 -= (*(int (**)(int *, int))(v17 + 4))(a2, v16); /*0x5cda14*/
-          WideString::AssignFromPtr((WideString *)&v31, ecx0); /*0x5cda17*/
+          ((WideString *)((WideString *)&v31))->AssignFromPtr(ecx0); /*0x5cda17*/
           String::TruncateTo(&v31, v3); /*0x5cda21*/
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x08, ecx0); /*0x5cda2b*/
+          ((WideString *)((WideString *)&v30.DeleteAndZero_field_0x08))->AssignFromPtr(ecx0); /*0x5cda2b*/
           WideString::Erase((WideString *)&v30.DeleteAndZero_field_0x08, 0, v3); /*0x5cda37*/
-          v18 = WideString::Assign((WideString *)&v35.DeleteAndZero_field_0x08, asc_830174); /*0x5cda4f*/
+          v18 = ((WideString *)((WideString *)&v35.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cda4f*/
           v19 = WideString::ConcatAlloc( /*0x5cda5e*/
                   (WideString *)&v31,
                   (wchar_t **)&v35.DeleteAndZero_field_0x04,
@@ -2923,7 +2923,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
                   (WideString *)v19,
                   (wchar_t **)&v35,
                   (const wchar_t **)&v30.DeleteAndZero_field_0x08);
-          WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v20); /*0x5cda6d*/
+          ((WideString *)((WideString *)ecx0))->Reassign_Alt((const wchar_t **)v20); /*0x5cda6d*/
           DeleteAndZero::Alt(&v35); /*0x5cda76*/
           DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x04); /*0x5cda7f*/
           DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x08); /*0x5cda88*/
@@ -2932,17 +2932,17 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
         }
         else
         {
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x04, ecx0); /*0x5cdaf1*/
+          ((WideString *)((WideString *)&v30.DeleteAndZero_field_0x04))->AssignFromPtr(ecx0); /*0x5cdaf1*/
           String::TruncateTo((String *)&v30.DeleteAndZero_field_0x04, ++v3); /*0x5cdafc*/
-          WideString::AssignFromPtr((WideString *)&v30, ecx0); /*0x5cdb06*/
+          ((WideString *)((WideString *)&v30))->AssignFromPtr(ecx0); /*0x5cdb06*/
           WideString::Erase((WideString *)&v30, 0, v3); /*0x5cdb12*/
-          v23 = WideString::Assign((WideString *)&v34.DeleteAndZero_field_0x08, asc_830174); /*0x5cdb2a*/
+          v23 = ((WideString *)((WideString *)&v34.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cdb2a*/
           v24 = WideString::ConcatAlloc( /*0x5cdb39*/
                   (WideString *)&v30.DeleteAndZero_field_0x04,
                   (wchar_t **)&v34.DeleteAndZero_field_0x04,
                   (const wchar_t **)v23);
           v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
-          WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v25); /*0x5cdb48*/
+          ((WideString *)((WideString *)ecx0))->Reassign_Alt((const wchar_t **)v25); /*0x5cdb48*/
           DeleteAndZero::Alt(&v34); /*0x5cdb51*/
           DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x04); /*0x5cdb5a*/
           DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x08); /*0x5cdb63*/
@@ -4664,7 +4664,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd59c*/
   *((unsigned int *)this + 6) = 0; /*0x5cd59f*/
   *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5cd5a5*/
-  WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
+  ((WideString *)((wchar_t **)this + 7))->AssignFromPtr(a2); /*0x5cd5ab*/
   *((unsigned int *)this + 11) = a8; /*0x5cd5c0*/
   *((unsigned char *)this + 48) = a9; /*0x5cd5c7*/
   *((unsigned int *)this + 8) = 0; /*0x5cd5ce*/
@@ -4845,11 +4845,11 @@ const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
   while ( 1 ) /*0x5cf864*/
   {
     v5 = *(const char ***)(this->ambientSoundController[3] + 4 * v3); /*0x5cf864*/
-    String::AssignFromPtr((String *)&v7, v5); /*0x5cf868*/
+    ((String *)((String *)&v7))->AssignFromPtr(v5); /*0x5cf868*/
     String::ToLower((String *)&v7); /*0x5cf871*/
-    String::AssignFromPtr((String *)&aP1, v4); /*0x5cf87b*/
+    ((String *)((String *)&aP1))->AssignFromPtr(v4); /*0x5cf87b*/
     String::ToLower((String *)&aP1); /*0x5cf884*/
-    if ( (uint8_t)String::Compare((String *)&v7, (const char **)&aP1) ) /*0x5cf892*/
+    if ( (uint8_t)((String *)((String *)&v7))->Compare((const char **)&aP1) ) /*0x5cf892*/
       break; /*0x5cf892*/
     DeleteAndZero((ObjectClass *)&aP1); /*0x5cf89f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5cf8a8*/

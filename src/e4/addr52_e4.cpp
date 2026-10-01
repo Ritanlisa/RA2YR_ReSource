@@ -319,7 +319,7 @@ LABEL_29:
         attachedBomb = (gamemd::BombClass *)(this->attachedBomb); /*0x52831f*/
         if ( !attachedBomb || attachedBomb->AbstractClass != v16 ) /*0x528328*/
         {
-          v18 = (BombClass *)SortedArray::BinarySearch((SortedArray *)&this->owningHouseIndex, (int *)&a2); /*0x528331*/
+          v18 = (BombClass *)((SortedArray *)((SortedArray *)&this->owningHouseIndex))->BinarySearch((int *)&a2); /*0x528331*/
           if ( !v18 ) /*0x528338*/
             goto LABEL_27; /*0x528338*/
           this->attachedBomb = (unsigned int)(v18); /*0x52833a*/
@@ -867,7 +867,7 @@ LABEL_3:
   if ( stru_89E138[616] == 1 )
     SetSoundWarning(-2);
   do
-    EventQueue::Process(*(unsigned int **)&stru_87C374[13308]);
+    ((EventQueue *)(*(unsigned int **)&stru_87C374[13308]))->Process();
   while ( !HouseClass_Player[45108] );
   stru_89E138[8040] = 0;
   TextBufferEntry = (unsigned char *)GetTextBufferEntry(4);
@@ -1277,7 +1277,7 @@ LABEL_93:
 LABEL_94:
     int v93 = 0;
   unsigned char v92[12]; // [esp+ACh] [ebp-2E94h] BYREF
-    Vector::Clear((int)v92);
+    ((Vector *)((int)v92))->Clear();
     BufferIOFileClass::Destruct(&aP1);
     return -1;
   }
@@ -1299,7 +1299,7 @@ LABEL_94:
     Debug::Log();
     *(unsigned int *)v94[0] = &vt_CCFileClass;
     v96 = 0;
-    Vector::Clear((int)v95);
+    ((Vector *)((int)v95))->Clear();
     BufferIOFileClass::Destruct(&v94);
     HashTable_flat::DestroyHashTableINIClass(v97);
     *(unsigned int *)aP1[0] = &vt_CCFileClass;
@@ -1314,7 +1314,7 @@ LABEL_94:
     HashTable_flat::DestroyHashTableINIClass((void **)&v99);
     *(unsigned int *)v94[0] = &vt_CCFileClass;
     v96 = 0;
-    Vector::Clear((int)v95);
+    ((Vector *)((int)v95))->Clear();
     BufferIOFileClass::Destruct(&v94);
 LABEL_109:
     HashTable_flat::DestroyHashTableINIClass(v97);
@@ -1529,7 +1529,7 @@ void InitRules()
   LABEL_24:
     *(unsigned int *)v19.INIClass = (void*)&CCFileClass_vftable; /*0x52cee4*/
     v21 = 0; /*0x52cef3*/
-    Vector::Clear((int)v20); /*0x52cefa*/
+    ((Vector *)((int)v20))->Clear(); /*0x52cefa*/
     *(unsigned int *)v19.INIClass = &off_7E1668; /*0x52cf03*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cf0b*/
   }
@@ -1574,7 +1574,7 @@ void InitRules()
     }
     *(unsigned int *)v19.INIClass = (void*)&CCFileClass_vftable; /*0x52cfe1*/
     v21 = 0; /*0x52cfe5*/
-    Vector::Clear((int)v20); /*0x52cfec*/
+    ((Vector *)((int)v20))->Clear(); /*0x52cfec*/
     *(unsigned int *)v19.INIClass = &off_7E1668; /*0x52cffa*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cffe*/
   }
@@ -1590,7 +1590,7 @@ void InitRules()
     Debug::Log(); /*0x52d061*/
     *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d070*/
     v24 = 0; /*0x52d077*/
-    Vector::Clear((int)v23); /*0x52d07e*/
+    ((Vector *)((int)v23))->Clear(); /*0x52d07e*/
     *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d08a*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
     *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d09a*/
@@ -1643,12 +1643,12 @@ void InitRules()
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
       *(unsigned int *)v25.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d28d*/
       v27 = 0; /*0x52d294*/
-      Vector::Clear((int)v26); /*0x52d29b*/
+      ((Vector *)((int)v26))->Clear(); /*0x52d29b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x52d2a7*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d2ae*/
       *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d2ba*/
       v24 = 0; /*0x52d2c1*/
-      Vector::Clear((int)v23); /*0x52d2c8*/
+      ((Vector *)((int)v23))->Clear(); /*0x52d2c8*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d2d4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
       *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d2e4*/
@@ -1682,17 +1682,17 @@ void InitRules()
   CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140], (int)&v28, 1, 0); /*0x52d378*/
   *(unsigned int *)v28.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d384*/
   v29[3] = 0; /*0x52d38b*/
-  Vector::Clear((int)v29); /*0x52d392*/
+  ((Vector *)((int)v29))->Clear(); /*0x52d392*/
   *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x52d39e*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x52d3a5*/
   *(unsigned int *)v25.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d3b1*/
   v27 = 0; /*0x52d3b8*/
-  Vector::Clear((int)v26); /*0x52d3bf*/
+  ((Vector *)((int)v26))->Clear(); /*0x52d3bf*/
   *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x52d3cb*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d3d2*/
   *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d3de*/
   v24 = 0; /*0x52d3e5*/
-  Vector::Clear((int)v23); /*0x52d3ec*/
+  ((Vector *)((int)v23))->Clear(); /*0x52d3ec*/
   *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d3f8*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
   *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d408*/
@@ -1912,7 +1912,7 @@ LABEL_18:
       &HouseClass_Player[44564],
       184);
     Debug::Log();
-    Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
+    ((Theme *)(&g_BuildingTypeClass_Count))->Stop((ObjectClass *)1);
     goto LABEL_145;
   }
 LABEL_20:
@@ -2009,7 +2009,7 @@ LABEL_40:
         }
         goto LABEL_134;
       case 7:
-        Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
+        ((Theme *)(&g_BuildingTypeClass_Count))->Stop((ObjectClass *)1);
         int v40 = *(unsigned int *)&stru_87C374[45004];
         if ( *(unsigned int *)&stru_87C374[44996] != -1 )
           v40 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
@@ -2025,7 +2025,7 @@ LABEL_40:
             break;
           Event::Dispatch();
         }
-        Theme::Stop(&g_BuildingTypeClass_Count, 0);
+        ((Theme *)(&g_BuildingTypeClass_Count))->Stop(0);
         if ( !g_Is16BitMode )
           FadePalette(&stru_87C374[35596], 30, 0);
         return 0;
@@ -2291,7 +2291,7 @@ LABEL_189:
           Frame::Present(v50, 0);
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
           *(unsigned int *)&stru_87C374[44960] = *(unsigned int *)&stru_87C374[44952];
-          Mouse::SetCursor((int)&stru_87C374[13428], (ObjectClass *)0x13, 0);
+          ((Mouse *)((int)&stru_87C374[13428]))->SetCursor((ObjectClass *)0x13, 0);
           MouseClass::GetPosition(&stru_87C374[13428]);
           if ( !HouseClass_Player[45087] )
             TacticalClass::BuildCommandBar(&stru_87C374[13428], j, 1);
@@ -2503,7 +2503,7 @@ LABEL_116:
                 ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v31);
                 goto LABEL_116;
               case -1:
-                Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
+                ((Theme *)(&g_BuildingTypeClass_Count))->Stop((ObjectClass *)1);
                 if ( !g_Is16BitMode )
                   FadePalette(&stru_87C374[35596], 30, 0);
                 if ( *(unsigned int *)&stru_87C374[45748] )

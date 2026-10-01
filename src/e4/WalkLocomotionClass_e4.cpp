@@ -67,7 +67,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *v6 = (int)((gamemd::CellClass *)(a3));
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
-      v9 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12)); /*0x6a03e4*/
+      v9 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v12)); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
       {
         LOBYTE(v4) = *(unsigned char *)(*((unsigned int *)v5 + 3) + 144); /*0x6a043d*/
@@ -81,7 +81,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       }
       else
       {
-        WalkLocomotion::MoveTo((int)a1 - 4, &v12, 1); /*0x6a040a*/
+        ((WalkLocomotion *)((int)a1 - 4))->MoveTo(&v12, 1); /*0x6a040a*/
         LOBYTE(v4) = (unsigned char)a1 + 48; /*0x6a040f*/
         a1->SlopeTimer[3] = a3; /*0x6a041a*/
         *(unsigned long long *)a1->Dest = a4; /*0x6a041c*/

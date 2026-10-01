@@ -308,8 +308,8 @@ struct ObjectTypeClass {
     char ReadBool2(INIClass * Block, INIClass * aP2, short * a4);
     char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
     char ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3);
-    int ConstructFull(AbstractClass * aP1, void *a2);
-    int CreateInstance(CampaignScore * aP1, CampaignScore * aP2, void *a3);
+    int ConstructFull(char *aP1);
+    int CreateInstance(int aP1, int aP2);
     int DeserializeArrays();
     int FindByName(void *a1);
     int FreeLoaderBuffer();
@@ -348,7 +348,7 @@ struct ObjectTypeClass {
     void ReleaseWaveAndString(void *a1);
     void SetRTTI71(void *a1);
     void UnloadPipsSHP();
-    void* LoadFromINI(CCINIClass * aP1, void *a2);
+    void* LoadFromINI(uint8_t ***aP1);
 };
 
 } // namespace gamemd

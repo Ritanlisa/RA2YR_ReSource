@@ -711,10 +711,10 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   else
   {
     v10 = (gamemd::SkirmishDialog **)((char)((gamemd::SkirmishDialog **)(1)));
-    if ( SessionClass::GetPlayerSide((int)v9) != -3 ) /*0x5ec998*/
+    if ( ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec998*/
       return 1; /*0x5ec998*/
   }
-  if ( !dword_A8B23C || a4 || !v10 || SessionClass::GetPlayerSide((int)v9) != -3 ) /*0x5ec9b9*/
+  if ( !dword_A8B23C || a4 || !v10 || ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec9b9*/
   {
     v4 = hDlg; /*0x5ec9bb*/
     goto LABEL_39; /*0x5ec9bb*/
@@ -1262,7 +1262,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
     v24 = v16; /*0x76fe83*/
     Team::ReleaseAll(a5, (int)&v21); /*0x76fe87*/
     DSurface::Flip2(); /*0x76fe8e*/
-    GameClass::FrameLoop(a5, 1); /*0x76fe97*/
+    ((GameClass *)(a5))->FrameLoop(1); /*0x76fe97*/
   }
 }
 }
@@ -1982,7 +1982,7 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
   ObjectClass v9; // [esp+Ch] [ebp-E0h] BYREF
   void *v10[5]; // [esp+D8h] [ebp-14h] BYREF
 
-  String::Assign((String *)&v9, a2); /*0x5ade32*/
+  ((String *)((String *)&v9))->Assign(a2); /*0x5ade32*/
   MSEngine::Construct((MSEngine *)&((char *)&v9)); /*0x5ade3b*/
   Map_Delete_5CEDD0((DynamicVector *)&v9.customSound_controller[1]); /*0x5ade44*/
   unknown_libname_73(v10); /*0x5ade50*/
@@ -2949,7 +2949,7 @@ char sub_770C10(int a1, int a2, void ** a3)
   {
     v10 = FormatStringInt((char **)&v14, v9, 2); /*0x770c5f*/
     v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10); /*0x770c6e*/
-    String::Reassign(v3, (const char **)v11); /*0x770c76*/
+    ((String *)(v3))->Reassign((const char **)v11); /*0x770c76*/
     DeleteAndZero((void **)&a3); /*0x770c7f*/
     DeleteAndZero(&v14); /*0x770c88*/
   }
@@ -2957,7 +2957,7 @@ char sub_770C10(int a1, int a2, void ** a3)
   {
     v12 = FormatStringInt((char **)&v16, v9, 2); /*0x770c9c*/
     v13 = ProcessStringAndCopy((char **)&v15, g_Str_WWD_Allied, v12); /*0x770cab*/
-    String::Reassign(v3, (const char **)v13); /*0x770cb3*/
+    ((String *)(v3))->Reassign((const char **)v13); /*0x770cb3*/
     DeleteAndZero(&v15); /*0x770cbc*/
     DeleteAndZero(&v16); /*0x770cc5*/
   }
@@ -2980,7 +2980,7 @@ char sub_770CE0(int a1, int a2, char ** a3)
   {
     v3 = FormatStringInt((char **)&v9, a2, 2); /*0x770cee*/
     v4 = ProcessStringAndCopy((char **)&v8, g_Str_WWD_Soviet, v3); /*0x770cfd*/
-    String::Reassign(a3, (const char **)v4); /*0x770d07*/
+    ((String *)(a3))->Reassign((const char **)v4); /*0x770d07*/
     DeleteAndZero(&v8); /*0x770d10*/
     DeleteAndZero(&v9); /*0x770d19*/
   }
@@ -2988,7 +2988,7 @@ char sub_770CE0(int a1, int a2, char ** a3)
   {
     v6 = FormatStringInt((char **)&v8, a2, 2); /*0x770d2a*/
     v7 = ProcessStringAndCopy((char **)&v9, g_Str_WWD_Allied, v6); /*0x770d39*/
-    String::Reassign(a3, (const char **)v7); /*0x770d43*/
+    ((String *)(a3))->Reassign((const char **)v7); /*0x770d43*/
     DeleteAndZero(&v9); /*0x770d4c*/
     DeleteAndZero(&v8); /*0x770d55*/
   }

@@ -15,7 +15,7 @@
 
 // 0x5B3760
 namespace gamemd {
-AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2, void *a2_2)
+AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
 {
 
   unsigned int v3;

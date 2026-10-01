@@ -12,7 +12,7 @@ struct Color {
     int ConvertToRGB(int a2, void *a2_2);
     unsigned char * Lerp2(int a2, int a3, float a4);
     unsigned char * ScaleRGB(unsigned char * a2, float a3);
-    unsigned char Lerp(ObjectClass * aP1, unsigned char * a2, void *a3);
+    unsigned char Lerp(uint8_t aP1, uint8_t *a2);
     int RGBFromFloat(IUnknown * aP1, float a3);
 };
 

@@ -31,7 +31,7 @@ void sub_7A19E0()
   v10 = (wchar_t *)((int)((wchar_t *)(stru_B76AC4)));
   StringCSF = (wchar_t *)(GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774));
   Dialog::ShowMessage(12648447, (size_t)StringCSF, v10); /*0x7a1a07*/
-  String::ToLowerCopy((const char **)&stru_B76AC4, (char **)&v12); /*0x7a1a19*/
+  ((String *)((const char **)&stru_B76AC4))->ToLowerCopy((char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
     for ( i = *((unsigned int *)stru_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
@@ -41,7 +41,7 @@ void sub_7A19E0()
     }
   }
   v2 = ((String *)((char **)&stru_B76AC4))->GetOrEmpty(); /*0x7a1a6a*/
-  String::Assign((char **)&v13, v2); /*0x7a1a74*/
+  ((String *)((char **)&v13))->Assign(v2); /*0x7a1a74*/
   v3 = dword_B77900; /*0x7a1a79*/
   v4 = 0; /*0x7a1a7e*/
   v5 = 0; /*0x7a1a80*/

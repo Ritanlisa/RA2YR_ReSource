@@ -30,7 +30,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   }
   *((unsigned int *)this + 25) = a7; /*0x53f494*/
   wcscpy((wchar_t *)this + 52, Source); /*0x53f497*/
-  Network::CopyAddress((Network *)((char *)this + 76), &aP8, (int)&v13); /*0x53f4ab*/
+  ((Network *)((Network *)((char *)this + 76)))->CopyAddress(&aP8, (int)&v13); /*0x53f4ab*/
   v10 = v13; /*0x53f4b0*/
   v11 = v14; /*0x53f4b4*/
   *((unsigned int *)this + 24) = 0; /*0x53f4bc*/

@@ -133,7 +133,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         v15[2] = ((unsigned int *)a1)[2],
         !(*((uint8_t (**)(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
   {
-    if ( (uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)a1)[0]) || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
+    if ( (uint8_t)((House *)((House *)((unsigned int *)a1)[0]))->IsCurrentPlayer() || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
     {
       (*((void (**)(FootClass *))a1->TechnoClass + 286))(a1); /*0x4d557c*/
     }
@@ -231,7 +231,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       team = (int *)((unsigned int *)a1)[0]; /*0x517df2*/
       if ( team ) /*0x517dfa*/
       {
-        TeamClass::LiberateMember_Start(team, (int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
+        ((TeamClass *)(team))->LiberateMember_Start((int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
         ((unsigned int *)a1)[0] = 0; /*0x517e05*/
       }
       slaveOwner = (gamemd::TechnoClass *)(((unsigned int *)a1)[0]); /*0x517e0b*/

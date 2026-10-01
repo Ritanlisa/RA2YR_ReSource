@@ -479,7 +479,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v79 = FoundationWidth; /*0x6af813*/
               FoundationHeight = BuildingTypeClass::GetFoundationHeight(v14, 0); /*0x6af817*/
               v16 = a1[9]; /*0x6af81f*/
-              v76 = CellStruct::Set(v100, v79 - 1, FoundationHeight / 2); /*0x6af839*/
+              v76 = ((CellStruct *)(v100))->Set(v79 - 1, FoundationHeight / 2); /*0x6af839*/
               v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer)(v16, v89); /*0x6af849*/
               v18 = CellStruct::Add(v17, &v99, v76); /*0x6af851*/
             }
@@ -575,7 +575,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v77 = v34; /*0x6afa3f*/
               v36 = BuildingTypeClass::GetFoundationHeight(v35, 0); /*0x6afa43*/
               v37 = a1[9]; /*0x6afa4c*/
-              v72 = CellStruct::Set(v97, v77 - 1, v36 / 2); /*0x6afa67*/
+              v72 = ((CellStruct *)(v97))->Set(v77 - 1, v36 / 2); /*0x6afa67*/
               v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer)(v37, &v99, v93); /*0x6afa75*/
               v39 = CellStruct::Add(v38, v72, a2); /*0x6afa7d*/
             }
@@ -588,7 +588,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v85 = v85; /*0x6afa9a*/
             a2 = &v102; /*0x6afaa9*/
             v42 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v40 + 72))(v40); /*0x6afaaa*/
-            v100[0] = *(unsigned int *)CellStruct::Set(v86, *v42 / 256, v42[1] / 256); /*0x6afad9*/
+            v100[0] = *(unsigned int *)((CellStruct *)(v86))->Set(*v42 / 256, v42[1] / 256); /*0x6afad9*/
             IDA_LOWORD(v79) = IDA_LOWORD(v100[0]) - v85; /*0x6afaef*/
             IDA_HIWORD(v79) = IDA_HIWORD(v100[0]) - v84[3]; /*0x6afaf4*/
             v77 = v79; /*0x6afb01*/
@@ -604,7 +604,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v77 = v45; /*0x6afb4e*/
             v47 = BuildingTypeClass::GetFoundationHeight(v46, 0); /*0x6afb52*/
             v48 = a1[9]; /*0x6afb5a*/
-            v73 = CellStruct::Set(v87, v77 - 1, v47 / 2); /*0x6afb71*/
+            v73 = ((CellStruct *)(v87))->Set(v77 - 1, v47 / 2); /*0x6afb71*/
             v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer)(v48, v90, v88); /*0x6afb7e*/
             v50 = CellStruct::Add(v49, v73, a2); /*0x6afb86*/
           }
@@ -827,7 +827,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       v3->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
-      Timer::Start((Timer *)&v3->__pad_48[8], 0); /*0x6b11c0*/
+      ((Timer *)((Timer *)&v3->__pad_48[8]))->Start(0); /*0x6b11c0*/
       v3->AbstractClass = &vt_SlaveManagerClass; /*0x6b11c5*/
       ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/

@@ -23,7 +23,7 @@ struct Matrix3x4 {
 // --- flat members (END) ---
     int Identity(void *a1);
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3);
-    void Translate(ParticleSystemClass * aP1, void *a2);
+    void Translate(float aP1);
 };
 
 } // namespace gamemd

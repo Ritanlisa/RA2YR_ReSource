@@ -72,7 +72,7 @@ struct Terrain {
     unsigned int __pad_68;
 // --- flat members (END) ---
     int GetTileIndex(int a2, void *a2_2, void *a3_1, void *a4_1);  // 0x48B720
-    int GetTileType(AnimClass * aP1, void *a2_1);  // 0x48B9E0
+    int GetTileType(int aP1);  // 0x48B9E0
     AbstractClass * * PlaceCliffs(int a2, int a3, IUnknown * aP3);  // 0x568E40
     AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
     int FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3, void *a4_1);  // 0x56CB90

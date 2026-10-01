@@ -268,11 +268,11 @@ int ProcessRandomMapCellAdjacency()
   result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
-    NeighbourContent = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 5u)));
-    v14 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 1u)));
-    v2 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u)));
-    v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
-    v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
+    NeighbourContent = (void *)((int)(((Cell *)((unsigned int *)i))->GetNeighbourContent(5u)));
+    v14 = (void *)((int)(((Cell *)((unsigned int *)i))->GetNeighbourContent(1u)));
+    v2 = (void *)((int)(((Cell *)((unsigned int *)i))->GetNeighbourContent(3u)));
+    v3 = (int16_t *)((Cell *)((unsigned int *)i))->GetNeighbourContent(2u); /*0x5a1a37*/
+    v4 = (int16_t *)((Cell *)((unsigned int *)i))->GetNeighbourContent(6u); /*0x5a1a44*/
     AdjacencyFlags = (int)(Cell::GetAdjacencyFlags(i)); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
@@ -1151,7 +1151,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v32 = v13; /*0x5a669c*/
       }
       while ( v13 > v12 ); /*0x5a66a0*/
-      IndexByName = BuildingTypeClass::FindIndexByName(*((void **)Block + v13)); /*0x5a66b5*/
+      IndexByName = ((BuildingTypeClass *)(*((void **)Block + v13)))->FindIndexByName(); /*0x5a66b5*/
       v15 = RA2_OPNEW(0x720u); /*0x5a66b7*/
       v16 = v15 ? BuildingClass::Construct((int)v15, *((unsigned int *)dword_A83C6C + IndexByName), Owner) : 0;
       v28 = 0; /*0x5a66db*/
@@ -1181,7 +1181,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
           if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21[57]
             || v21[59] == 3
-            || !Type::CheckAmbiguity(&dword_87F7E8, (int)v21, 1) )
+            || !((Type *)(&dword_87F7E8))->CheckAmbiguity((int)v21, 1) )
           {
             v26 = 0; /*0x5a67e3*/
           }
@@ -1333,7 +1333,7 @@ void PlaceRandomNeutralUnits(int a1)
         }
         while ( v13 > v12 ); /*0x5a6a82*/
         v18 = *(unsigned int *)(*(unsigned int *)(a1 + 4) + 4 * v13); /*0x5a6a9a*/
-        if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&v18, 1) /*0x5a6aba*/
+        if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v18, 1) /*0x5a6aba*/
           && !*((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v18) + 57) )
         {
           do /*0x5a6aea*/
@@ -2255,7 +2255,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
         IDA_LOWORD(v25) = v15; /*0x5a88a7*/
         IDA_WORD1(v25) = v16; /*0x5a88ac*/
         v21 = v25; /*0x5a88b9*/
-        if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&v21, 1) /*0x5a88df*/
+        if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v21, 1) /*0x5a88df*/
           && !*((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v21) + 57) )
         {
           do /*0x5a890f*/
@@ -2447,9 +2447,9 @@ void MapSeed_ScheduleBuildings(int * a1)
           do /*0x5a8c27*/
           {
             *(v20 - 2) = 0xFFFF; /*0x5a8bf3*/
-            *(v20 - 1) = *(unsigned int *)CellStruct::Set(&v51, 0, 0); /*0x5a8c09*/
+            *(v20 - 1) = *(unsigned int *)((CellStruct *)(&v51))->Set(0, 0); /*0x5a8c09*/
             *v20 = 0xFFFF; /*0x5a8c0c*/
-            v22 = *(unsigned int *)CellStruct::Set(&v48, 0, 0); /*0x5a8c17*/
+            v22 = *(unsigned int *)((CellStruct *)(&v48))->Set(0, 0); /*0x5a8c17*/
             v20[2] = -1; /*0x5a8c19*/
             v20[1] = v22; /*0x5a8c20*/
             v20 += 5; /*0x5a8c23*/
@@ -3984,226 +3984,226 @@ unsigned int * InitializePathData()
   v123 = 2;
   v125 = 6;
   WaypointPath::Constructor(dword_ABE604, &aP1, &aP2);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(1, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE610, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE61C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v115 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v115 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   v118 = v115;
   WaypointPath::Constructor(dword_ABE628, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 0);
   v123 = 6;
   ListNode::Alloc(dword_ABE634, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 0);
   v123 = 6;
   ListNode::Alloc(dword_ABE640, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 1);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 1);
   v123 = 6;
   ListNode::Alloc(dword_ABE64C, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 2, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(2, 0);
   v123 = 2;
   ListNode::Alloc(dword_ABE658, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 0);
   v123 = 2;
   ListNode::Alloc(dword_ABE664, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 0);
   v123 = 2;
   ListNode::Alloc(dword_ABE670, &aP2);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 1);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 1);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE67C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 1);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE688, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
   dword_ABE694 = 0;
   dword_ABE698 = 0;
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 3);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6A0, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 3);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6AC, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v116 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v116 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 3);
   v121 = 3;
   v120 = v116;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6B8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 3, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(3, 3);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6C4, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 2, 2);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(2, 2);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6D0, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 1);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(1, 1);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6DC, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 1);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(1, 1);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE6E8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 1);
   v123 = 7;
   ListNode::Alloc(dword_ABE6F4, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 1);
   v123 = 7;
   ListNode::Alloc(dword_ABE700, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 1);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 1);
   v123 = 7;
   ListNode::Alloc(dword_ABE70C, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 3, 3);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(3, 3);
   v123 = 3;
   ListNode::Alloc(dword_ABE718, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 1, 2);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(1, 2);
   v123 = 3;
   ListNode::Alloc(dword_ABE724, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 2, 2);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(2, 2);
   v123 = 3;
   ListNode::Alloc(dword_ABE730, &aP2);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 4, 2);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(4, 2);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE73C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 2, 4);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(2, 4);
   v121 = 3;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 1);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 1);
   v119 = 7;
   WaypointPath::Constructor(dword_ABE748, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
   dword_ABE754 = 0;
   dword_ABE758 = 0;
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE760, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE76C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE778, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE784, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 2);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 2);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE790, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 1);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 1);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE79C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE7A8, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE7B4, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 3);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 3);
   v123 = 4;
   ListNode::Alloc(dword_ABE7C0, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 2);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 2);
   v123 = 4;
   ListNode::Alloc(dword_ABE7CC, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 2);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 2);
   v123 = 4;
   ListNode::Alloc(dword_ABE7D8, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 0);
   v123 = 0;
   ListNode::Alloc(dword_ABE7E4, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 0);
   v123 = 0;
   ListNode::Alloc(dword_ABE7F0, &aP2);
-  aP2.vfptr = *(void **)CellStruct::Set(&aP1, 0, 0);
+  aP2.vfptr = *(void **)((CellStruct *)(&aP1))->Set(0, 0);
   v123 = 0;
   ListNode::Alloc(dword_ABE7FC, &aP2);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 1, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(1, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE808, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 1, 3);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(1, 3);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE814, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
   dword_ABE820 = 0;
   dword_ABE824 = 0;
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE82C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE838, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE844, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE850, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE85C, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 2;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 6;
   WaypointPath::Constructor(dword_ABE868, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   WaypointPath::Constructor(dword_ABE874, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
-  v120 = *(rc_ptr_base **)CellStruct::Set(&aP1, 0, 0);
+  v120 = *(rc_ptr_base **)((CellStruct *)(&aP1))->Set(0, 0);
   v121 = 4;
-  v118 = *(rc_ptr_base **)CellStruct::Set(&aP2, 0, 0);
+  v118 = *(rc_ptr_base **)((CellStruct *)(&aP2))->Set(0, 0);
   v119 = 0;
   return WaypointPath::Constructor(dword_ABE880, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
 }
@@ -4886,7 +4886,7 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   void *v5; // [esp+8h] [ebp-8h]
 
   v3 = this; /*0x5ae538*/
-  String::Reassign((String *)this + 25, aP1); /*0x5ae541*/
+  ((String *)((String *)this + 25))->Reassign(aP1); /*0x5ae541*/
   result = Timer::GetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/

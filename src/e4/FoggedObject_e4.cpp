@@ -14,7 +14,7 @@
 
 // 0x4D2DB0
 namespace gamemd {
-int FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * aP2, void *a3_1)
+int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 {
 
   AbstractClass *v4; // ebx

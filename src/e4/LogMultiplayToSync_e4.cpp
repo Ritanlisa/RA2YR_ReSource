@@ -144,7 +144,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     {
       if ( *(v15 - 80) )
       {
-        Network::CopyAddress((unsigned int *)v15 + 3, &v54, (int)&v58); /*0x651970*/
+        ((Network *)((unsigned int *)v15 + 3))->CopyAddress(&v54, (int)&v58); /*0x651970*/
         fprintf(v5, "\nName: %s\n", v15 - 80);
         fprintf(v5, "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
         fprintf(v5, "Max avg round trip: %d\n", *(unsigned int *)v15);

@@ -136,8 +136,8 @@ struct Network {
     void * initConnection(int a2, unsigned int * a3, char a4);  // 0x4C6C50
     int SendOffer();  // 0x4FC980
     AbstractClass * * Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x52F3F0
-    int GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3, void *a4_1);  // 0x53ED60
-    void * CopyAddress(unsigned int * a2, int a3, void *a3_2);  // 0x53EDA0
+    int GetAddress(unsigned int *a1, int aP2, unsigned short *a3);  // 0x53ED60
+    void * CopyAddress(unsigned int *a2, int a3);  // 0x53EDA0
     int IsBroadcastAddr(void *a1_1);  // 0x53EE00
     int processPacket(TechnoTypeClass * aP1);  // 0x53EF60
     AbstractClass * * SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4, void *a5_1);  // 0x540C60
@@ -148,13 +148,13 @@ struct Network {
     int FindPlayerByID(DynamicVector * aP1);  // 0x541000
     int SendMessage(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5410F0
     AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2, void *a5_1);  // 0x541260
-    int Send(int a2, int a3, TechnoTypeClass * aP3, int a5, void *a5_2);  // 0x541370
+    int Send(int a2, int a3, int aP3, int a5);  // 0x541370
     int SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5413B0
     int receiveData(int a2);  // 0x5413F0
     int SendPacket(int a2, int a3, unsigned char a4);  // 0x541410
     int SendPacketThunk2(int a2, int a3, int a4, int a5);  // 0x541480
-    void * ReceiveLoop(IPXManagerClass * a1_1);
-    int GetQueueCount(IPXManagerClass * a1_1);
+    void * ReceiveLoop();
+    int GetQueueCount();
     int GetLobbyStatus();  // 0x5424C0
     int updateLatency();  // 0x542500
     unsigned int * SetPlayerCoords(IPXManagerClass * aP1);  // 0x543050
@@ -163,7 +163,7 @@ struct Network {
     AbstractClass * * SetupRematch();  // 0x5C46E0
     int dispatchEvent();  // 0x5D93D0
     IPXConnClass * * ResolveAndConnect(unsigned char * a2);  // 0x5D9410
-    unsigned short ResolveNetworkAddress(unsigned short a2, void *a2_2);  // 0x5DA0B0
+    unsigned short ResolveNetworkAddress(uint16_t a2);  // 0x5DA0B0
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
     int AddFrameEvent();  // 0x6471A0
@@ -180,7 +180,7 @@ struct Network {
     unsigned int * processGameEvent(void *a1_1);  // 0x69B540
     AbstractClass * * SyncPlayerList(void *a1_1);  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
-    char * FormatAddress(IUnknown * aP1, void *a2_1);  // 0x53F0E0
+    char * FormatAddress(uint16_t *aP1);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040
     int GetMaxPacketSize();  // 0x74FD20
     short SetPort(IPXManagerClass * aP1, void *a2_1);  // 0x53F200

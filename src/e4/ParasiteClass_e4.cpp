@@ -128,7 +128,7 @@ int ParasiteClass::Attach(int * a2)
   Power::TimerProcess(*((unsigned int *)this + 19)); /*0x629508*/
   Power::TimerProcess(*((unsigned int *)this + 20)); /*0x629513*/
   LOBYTE(v5) = *((unsigned char *)this + 84); /*0x629518*/
-  return Power::FlagProcess((Power *)a2, v5); /*0x629523*/
+  return ((Power *)((Power *)a2))->FlagProcess(v5); /*0x629523*/
 
 }
 } // namespace ra2
@@ -289,7 +289,7 @@ LABEL_20:
       case 4u: /*0x6298bc*/
         *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x629a59*/
         v20 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3024); /*0x629a67*/
-        v45 = *(int16_t *)ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)_ESI->__pad_28 + 904), &v50) - 0x3FFF; /*0x629a81*/
+        v45 = *(int16_t *)((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)_ESI->__pad_28 + 904)))->GetValue(&v50) - 0x3FFF; /*0x629a81*/
         __asm /*0x629a85*/
         {
           fild dword ptr [esp+68h+var_5C+4]
@@ -609,7 +609,7 @@ LABEL_8:
         0,
         &dword_AC4948,
         0);
-    v15 = *ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)this->__pad_28 + 904), &v27); /*0x62a11b*/
+    v15 = *((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)this->__pad_28 + 904)))->GetValue(&v27); /*0x62a11b*/
     if ( v6[65] ) /*0x62a11d*/
     {
       v16 = *(void **)(v6[62] + 4 * ((((v15 >> 12) + 1) >> 1) & 7)); /*0x62a138*/
@@ -692,7 +692,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
     v14 = this; /*0x62a9bd*/
     v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v14); /*0x62a9c1*/
     if ( v4 != -1 ) /*0x62a9c7*/
-      DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x62a9cf*/
+      ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x62a9cf*/
     *((unsigned char *)this + 84) = 0; /*0x62a9d4*/
   }
   *((unsigned int *)this + 14) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62a9e6*/
@@ -1001,10 +1001,10 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   Coord3D::Set(v70, v16, v47, v50); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v70); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/
-  v17 = Coord::To_Cell(&dword_87F7E8, v70); /*0x62bf46*/
+  v17 = ((Coord *)(&dword_87F7E8))->To_Cell(v70); /*0x62bf46*/
   v58 = 0; /*0x62bf4d*/
   v57 = 0; /*0x62bf52*/
-  if ( (v17->flags[0] & 0x100) != 0 || (Coord::To_Cell(&dword_87F7E8, v68)->flags[0] & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v17->flags[0] & 0x100) != 0 || (((Coord *)(&dword_87F7E8))->To_Cell(v68)->flags[0] & 0x100) != 0 ) /*0x62bf74*/
   {
     if ( v70[2] < v67 ) /*0x62bf84*/
     {
@@ -1083,7 +1083,7 @@ LABEL_39:
   v59 = *(unsigned int *)v24; /*0x62c11f*/
   v60 = *(float *)(v24 + 4); /*0x62c126*/
   v61 = *(float *)(v24 + 8); /*0x62c131*/
-  Coord::Scale((int *)0x3F800000, v54); /*0x62c135*/
+  ((Coord *)((int *)0x3F800000))->Scale(v54); /*0x62c135*/
   v61 = -v61; /*0x62c14a*/
   v25 = Matrix3x3::TransformPoint(v71, (float *)&v59, v55); /*0x62c152*/
   v59 = *(unsigned int *)v25; /*0x62c159*/
@@ -1116,7 +1116,7 @@ LABEL_50:
       v68[0] = *((unsigned int *)this + 39); /*0x62c23f*/
       v68[1] = *((unsigned int *)this + 40); /*0x62c250*/
       v69 = *((unsigned int *)this + 41); /*0x62c257*/
-      firstObject = Coord::To_Cell(&dword_87F7E8, v68)->firstObject; /*0x62c260*/
+      firstObject = ((Coord *)(&dword_87F7E8))->To_Cell(v68)->firstObject; /*0x62c260*/
       if ( firstObject ) /*0x62c268*/
       {
         do /*0x62c30d*/

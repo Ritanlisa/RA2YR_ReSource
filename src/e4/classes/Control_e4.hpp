@@ -10,7 +10,7 @@ struct Control {
     char Control_field_00[4];  // 0x0
 // --- flat members (END) ---
     int CheckControlTypeDialog();
-    int DispatchClick(ControlClass * aP1, void *a2);
+    int DispatchClick(int aP1);
     int RepositionControlsDialog();
 };
 

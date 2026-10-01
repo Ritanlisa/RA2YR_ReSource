@@ -154,7 +154,7 @@ AbstractClass * * MixFile::LoadSide()
   v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
   v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535117*/
   v20 = 0; /*0x53511f*/
-  Vector::Clear((int)v19); /*0x535126*/
+  ((Vector *)((int)v19))->Clear(); /*0x535126*/
   v18.FileClass = (FileClass)&off_7E1668; /*0x535134*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x535138*/
   if ( v7 ) /*0x53513f*/
@@ -172,7 +172,7 @@ AbstractClass * * MixFile::LoadSide()
   v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
   v18.FileClass = (FileClass)&vt_CCFileClass; /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
-  Vector::Clear((int)v19); /*0x5351c9*/
+  ((Vector *)((int)v19))->Clear(); /*0x5351c9*/
   v18.FileClass = (FileClass)&off_7E1668; /*0x5351d2*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
@@ -200,7 +200,7 @@ AbstractClass * * MixFile::LoadSide()
     v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
     v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535296*/
     v20 = 0; /*0x53529a*/
-    Vector::Clear((int)v19); /*0x5352a1*/
+    ((Vector *)((int)v19))->Clear(); /*0x5352a1*/
     v18.FileClass = (FileClass)&off_7E1668; /*0x5352aa*/
     ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
@@ -220,7 +220,7 @@ AbstractClass * * MixFile::LoadSide()
       SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
       v21.FileClass = (FileClass)&vt_CCFileClass; /*0x535353*/
       v23 = 0; /*0x53535a*/
-      Vector::Clear((int)v22); /*0x535361*/
+      ((Vector *)((int)v22))->Clear(); /*0x535361*/
       v21.FileClass = (FileClass)&off_7E1668; /*0x53536d*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x535374*/
       return 1; /*0x535379*/
@@ -230,7 +230,7 @@ AbstractClass * * MixFile::LoadSide()
       this->Debug::Log(); /*0x53538b*/
       v21.FileClass = (FileClass)&vt_CCFileClass; /*0x53539a*/
       v23 = 0; /*0x5353a1*/
-      Vector::Clear((int)v22); /*0x5353a8*/
+      ((Vector *)((int)v22))->Clear(); /*0x5353a8*/
       v21.FileClass = (FileClass)&off_7E1668; /*0x5353b4*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x5353bb*/
       return 0; /*0x5353c0*/

@@ -88,7 +88,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1, void *a2)
           {
             if ( ((*(int (**)(unsigned int *))(*v8 + 44))(v8) == 15 /*0x436cb9*/
                || (*(int (**)(unsigned int *))(*v8 + 44))(v8) == 1)
-              && !(uint8_t)Object::IsAlliedWithObjectHouse(nextArrayIndex, (int)v8) )
+              && !(uint8_t)((Object *)(nextArrayIndex))->IsAlliedWithObjectHouse((int)v8) )
             {
               v9 = *v8; /*0x436ccc*/
               location = (int *)(((unsigned int *)v4)[0]); /*0x436cce*/

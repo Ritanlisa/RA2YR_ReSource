@@ -173,7 +173,7 @@ struct Voxel {
     AbstractClass * RenderFrame(void *a1_1);  // 0x754510
     int Projection_Setup();  // 0x754CB0
     AbstractClass * * SortDepth(ObjectClass * aP1, int a3, void *a3_2);  // 0x755DB0
-    int ProcessColor(unsigned int * a2, float * a3, void *a3_2);  // 0x756590
+    int ProcessColor(unsigned int *a2, float *a3);  // 0x756590
     void* DrawHelper(IUnknown * aP1);  // 0x75C240
     int BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4);  // 0x75EDF0
     int loadSectionData();  // 0x75F140

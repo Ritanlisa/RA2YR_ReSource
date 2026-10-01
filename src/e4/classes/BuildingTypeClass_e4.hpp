@@ -1599,7 +1599,7 @@ struct BuildingTypeClass {
     int ConstructFull(char * Source, void *a2);
     int FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3, void *a4);
     int FindIndex(void *a1);
-    int FindIndexByName(BuildingTypeClass * a1);
+    int FindIndexByName();
     int GetAuxField();
     int GetClassIdentifier();
     int GetMaxPips();
@@ -1611,7 +1611,7 @@ struct BuildingTypeClass {
     int SaveLoad_Prefix_0();
     int UpdatePower();
     int ddtor(void *a1);
-    size_t Dequeue(BuildingClass * aP1, void *a2);
+    size_t Dequeue(int *aP1);
     unsigned int * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
     unsigned int * GetUpgradeOffset(unsigned int * a2);
@@ -1619,7 +1619,7 @@ struct BuildingTypeClass {
     unsigned int * loadBuildingProperty_b_5478850(int a2, int a3);
     void IsPowered();
     void LoadVoxel();
-    void* LoadAnimations(ObjectTypeClass * aP1, void *a2);
+    void* LoadAnimations(int aP1);
     void* ProcessPower(AbstractClass * aP1, void *a2);
 };
 

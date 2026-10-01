@@ -184,7 +184,7 @@ int sub_4D2370()
       v13[0] = (gamemd::CellClass *)(*v7);
       v13[1] = (gamemd::CellClass *)(v7[1]);
       v13[2] = (gamemd::CellClass *)(v7[2]);
-      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13));
+      v8 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13));
       v8->flags[0] |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/

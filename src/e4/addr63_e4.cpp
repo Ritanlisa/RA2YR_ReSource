@@ -214,7 +214,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       v55 = 0; /*0x630460*/
       v12 = 0; /*0x630464*/
     }
-    Vector::Clear((int)v65); /*0x630459*/
+    ((Vector *)((int)v65))->Clear(); /*0x630459*/
   }
   else
   {
@@ -2361,7 +2361,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
     Team_Get_63A1B0(4); /*0x63b034*/
     return result; /*0x63b034*/
   }
-  EventClass::resetEvent((EventClass *)&v25, 0, 0); /*0x63ad87*/
+  ((EventClass *)((EventClass *)&v25))->resetEvent(0, 0); /*0x63ad87*/
   v2 = 0; /*0x63ad8e*/
   *(unsigned int *)v25.__pad_0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x63ad92*/
   v26 = 10; /*0x63ad9a*/
@@ -2779,7 +2779,7 @@ int E4Recv_63CF10::sub_63CF10()
   v3 = *((unsigned int *)((char *)&stru_A80220) + (unsigned int)Object_field_0x30) + 22265; /*0x63cf41*/
   LOWORD(v5.Color_field_00) = *(unsigned short *)v3; /*0x63cf4a*/
   BYTE2(v5.Color_field_00) = *(unsigned char *)(v3 + 2); /*0x63cf56*/
-  Color::Lerp(&v5, 0x50u, &byte_A83CD9); /*0x63cf5a*/
+  ((Color *)(&v5))->Lerp(0x50u, &byte_A83CD9); /*0x63cf5a*/
   return (BYTE1(v5.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x63cf80*/
        | (LOBYTE(v5.Color_field_00) >> g_BitShift_Green_0 << g_BitShift_Red)
        | (BYTE2(v5.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
@@ -2803,7 +2803,7 @@ int E4Recv_63CFC0::sub_63CFC0()
   v3 = *((unsigned int *)((char *)&stru_A80220) + (unsigned int)Object_field_0x30) + 22265; /*0x63cff1*/
   LOWORD(v5.Color_field_00) = *(unsigned short *)v3; /*0x63cffa*/
   BYTE2(v5.Color_field_00) = *(unsigned char *)(v3 + 2); /*0x63d006*/
-  Color::Lerp(&v5, 0x64u, (uint8_t *)&stru_A80220); /*0x63d00a*/
+  ((Color *)(&v5))->Lerp(0x64u, (uint8_t *)&stru_A80220); /*0x63d00a*/
   return (BYTE1(v5.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x63d030*/
        | (LOBYTE(v5.Color_field_00) >> g_BitShift_Green_0 << g_BitShift_Red)
        | (BYTE2(v5.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
@@ -3858,7 +3858,7 @@ BuildingClass * ToCoordPixel(unsigned int * a1, unsigned int * a2)
   char *v3; // ecx
   int v5[2]; // [esp+4h] [ebp-8h] BYREF
 
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, a2, v5); /*0x6339f2*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(a2, v5); /*0x6339f2*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x633a0d*/
   *a1 = DSurface_ViewBounds.field_0 + v5[0]; /*0x633a0f*/
   a1[1] = v3; /*0x633a11*/
@@ -4048,7 +4048,7 @@ unsigned int * E4Recv_633C60::sub_633C60(unsigned int * a2)
   v6[0] = *ScenarioClassActionCoords; /*0x633c70*/
   v6[1] = ScenarioClassActionCoords[1]; /*0x633c82*/
   v6[2] = ScenarioClassActionCoords[2]; /*0x633c8e*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x633c92*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x633c92*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x633cac*/
   *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x633cb2*/
   a2[1] = v3; /*0x633cb4*/
@@ -4249,7 +4249,7 @@ unsigned int * E4Recv_634880::sub_634880(unsigned int * a2, int a3)
   v7[0] = *ScenarioClassActionCoords; /*0x634898*/
   v7[1] = ScenarioClassActionCoords[1]; /*0x63489f*/
   v7[2] = ScenarioClassActionCoords[2]; /*0x6348b6*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v7, v6); /*0x6348ba*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v7, v6); /*0x6348ba*/
   v4 = (char *)DSurface_ViewBounds.field_4 + v6[1]; /*0x6348d4*/
   *a2 = DSurface_ViewBounds.field_0 + v6[0]; /*0x6348da*/
   a2[1] = v4; /*0x6348dc*/
@@ -4273,7 +4273,7 @@ unsigned int * E4Recv_6348F0::sub_6348F0(unsigned int * a2)
   v6[0] = *ScenarioClassActionCoords; /*0x634901*/
   v6[1] = ScenarioClassActionCoords[1]; /*0x634913*/
   v6[2] = ScenarioClassActionCoords[2]; /*0x63491f*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x634923*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x634923*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x63493d*/
   *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x634943*/
   a2[1] = v3; /*0x634945*/
@@ -4471,7 +4471,7 @@ unsigned int * E4Recv_635DF0::sub_635DF0(unsigned int * a2)
   v6[0] = *ScenarioClassActionCoords; /*0x635e09*/
   v6[1] = ScenarioClassActionCoords[1]; /*0x635e10*/
   v6[2] = ScenarioClassActionCoords[2]; /*0x635e27*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x635e2b*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x635e2b*/
   v5[0] += DSurface_ViewBounds.field_0; /*0x635e48*/
   v4 = (char *)DSurface_ViewBounds.field_4 + v5[1] - 8; /*0x635e64*/
   *a2 = v5[0] - 8; /*0x635e69*/
@@ -4850,7 +4850,7 @@ int ColorLerpAndPack(short * a1, unsigned char * a2, ObjectClass * aP1)
   vtable0 = (int16_t)a1->AbstractClass; /*0x63d073*/
   IDA_BYTE2(v5.Color_field_00) = IDA_BYTE2(a1->AbstractClass); /*0x63d07e*/
   IDA_LOWORD(v5.Color_field_00) = vtable0; /*0x63d087*/
-  Color::Lerp(&v5, aP1, a2); /*0x63d08c*/
+  ((Color *)(&v5))->Lerp(aP1, a2); /*0x63d08c*/
   return (IDA_LOBYTE(v5.Color_field_00) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x63d0e2*/
        | (IDA_BYTE1(v5.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green)
        | (IDA_BYTE2(v5.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
@@ -4892,7 +4892,7 @@ int * ActionScenarioClassCoordToScreen(BuildingClass * aP0, const void * a1, int
     v12[1] = v8; /*0x63d282*/
     v12[0] = v7; /*0x63d286*/
     v12[2] = v9; /*0x63d294*/
-    Coord::To_Screen(g_TacticalClass_Instance, v12, v13); /*0x63d298*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(v12, v13); /*0x63d298*/
     v3 = DSurface_ViewBounds + v13[0]; /*0x63d2b1*/
     v5 = dword_886FA4 + v13[1]; /*0x63d2b4*/
   }

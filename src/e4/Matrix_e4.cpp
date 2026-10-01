@@ -31,7 +31,7 @@ int Matrix3x4::Identity(void *a1)
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {
-int Matrix3x4::Translate(ParticleSystemClass * aP1, void *a2)
+int Matrix3x4::Translate(float aP1)
 {
 
   int result; // eax

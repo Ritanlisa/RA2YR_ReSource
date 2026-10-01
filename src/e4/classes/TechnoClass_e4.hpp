@@ -548,7 +548,7 @@ struct TechnoClass {
     HouseClass * * RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11);
     char ScanAdjacentCells();
     int COMStub_Return0_287();
-    int DTOR(void *a1);
+    int DTOR();
     int DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6);
     int HasVoiceResponse(int weaponIndex);
     int ProcessDeployAction();

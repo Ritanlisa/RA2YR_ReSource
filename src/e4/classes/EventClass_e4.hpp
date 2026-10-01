@@ -120,7 +120,7 @@ struct EventClass {
     char dispatchEvent(int a2, unsigned int * a3);  // 0x40B9A0
     char checkCondition(int a2, unsigned int * a3, void *a3_2);  // 0x40BAE0
     DynamicVector * executeAction(unsigned int * Block, char a2);  // 0x40BC10
-    unsigned int * resetEvent(BuildingClass * aP1, BuildingClass * aP2, void *a3_1);  // 0x40BD00
+    unsigned int * resetEvent(int aP1, int aP2);  // 0x40BD00
     VectorClass_flat * queueEvent(unsigned int * Block, char a2);  // 0x40C110
     char clearEvents(int a2, unsigned int * a3);  // 0x40C410
     void finalizeEvent();  // 0x40BE10

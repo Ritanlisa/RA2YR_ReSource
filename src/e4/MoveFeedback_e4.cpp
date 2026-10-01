@@ -51,7 +51,7 @@ int MoveFeedback::ProcessCommand()
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
-      result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
+      result = (int)((EventClass *)((EventClass *)result))->resetEvent(0, 0); /*0x73280f*/
       *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x732814*/
       *(unsigned int *)(v3 + 20) = 10; /*0x73281a*/
       *(unsigned int *)(v3 + 16) = 0; /*0x732821*/
@@ -95,7 +95,7 @@ int MoveFeedback::ProcessCommand()
     v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
-      EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
+      ((EventClass *)(v9))->resetEvent(0, 0); /*0x7328a3*/
       *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x7328a8*/
       *(unsigned int *)(v3 + 20) = 10; /*0x7328ae*/
       *(unsigned int *)(v3 + 16) = 0; /*0x7328b5*/
@@ -118,7 +118,7 @@ int MoveFeedback::ProcessCommand()
             v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
             if ( (unsigned char)result ) /*0x7328fa*/
-              result = DynamicVector::AddItem((DynamicVector *)v3, &v17); /*0x732903*/
+              result = ((DynamicVector *)((DynamicVector *)v3))->AddItem(&v17); /*0x732903*/
           }
         }
         ++v10; /*0x732908*/

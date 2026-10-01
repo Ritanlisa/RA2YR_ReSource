@@ -56,7 +56,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
     while ( 1 ) /*0x654567*/
     {
       aP1 = (gamemd::MouseClass *)((gamemd::RadarClass **)(*(int **)(v9 + 36)));
-      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&aP1, 1) ) /*0x65456b*/
+      if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea((int16_t *)&aP1, 1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:
       result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x65462c*/

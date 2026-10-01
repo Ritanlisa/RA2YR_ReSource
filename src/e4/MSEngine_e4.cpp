@@ -329,7 +329,7 @@ CampaignClass * MSEngine::Destruct(void *a1_1, void *a2_1)
 }
 // 0x5D1DF0
 namespace gamemd {
-int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3, void *a3_2)
+int MSEngine::ProcessEvents(char aP1, int a3)
 {
 
   int v4; // ebx
@@ -347,7 +347,7 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3, void *a3_2)
     result = (*(int (**)(int))(*(unsigned int *)v6 + 28))(v6); /*0x5d1e29*/
     if ( (unsigned char)result || !v4 ) /*0x5d1e32*/
       break; /*0x5d1e32*/
-    GameClass::FrameLoop((GameClass *)this, 1); /*0x5d1e38*/
+    ((GameClass *)((GameClass *)this))->FrameLoop(1); /*0x5d1e38*/
   }
   return result; /*0x5d1e3f*/
 

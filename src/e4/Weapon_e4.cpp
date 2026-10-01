@@ -83,8 +83,8 @@ void Weapon_Update(void * a1, void * a2)
         v6 = updated | ((unsigned int)(a2)<< g_BitShift_Blue); /*0x659d40*/
         IDA_LOWORD(updated) = (uint8_t)(*(unsigned char *)(v3 + 192) >> g_BitShift_Green_0); /*0x659d45*/
         a2 = (void *)(((unsigned int)updated << g_BitShift_Red) | v6); /*0x659d55*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)(v3 + 156), v15); /*0x659d57*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)(v3 + 168), v14); /*0x659d68*/
+        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v3 + 156), v15); /*0x659d57*/
+        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v3 + 168), v14); /*0x659d68*/
         v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/
         v16[0] = DSurface_ViewBounds.field_0; /*0x659d86*/
         v16[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x659d8f*/
@@ -482,13 +482,13 @@ LABEL_55:
       return a1; /*0x70cc78*/
     }
   }
-  v26 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cae2*/
+  v26 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v49); /*0x70cae2*/
   if ( (uint8_t)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
     v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
     {
-      v28 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cb20*/
+      v28 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v49); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v29, (int)v28); /*0x70cb2b*/
     }
   }

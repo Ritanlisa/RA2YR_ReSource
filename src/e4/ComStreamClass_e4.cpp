@@ -53,7 +53,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
-  String::Assign((String *)v22, lParama); /*0x7a3dd3*/
+  ((String *)((String *)v22))->Assign(lParama); /*0x7a3dd3*/
   LoadPlayerProfile((ObjectClass *)&v22[0].vtable1, (const char **)v22); /*0x7a3de0*/
   DeleteAndZero(v22); /*0x7a3de9*/
   v22[0].vtable0 = 0; /*0x7a3df2*/
@@ -85,8 +85,8 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
     }
     if ( v21 ) /*0x7a3ed8*/
     {
-      String::Assign_Alt((String *)&dword_B73E40, lParama); /*0x7a3eeb*/
-      String::Assign_Alt((String *)&g_WebBrowserConfig, v23); /*0x7a3efd*/
+      ((String *)((String *)&dword_B73E40))->Assign_Alt(lParama); /*0x7a3eeb*/
+      ((String *)((String *)&g_WebBrowserConfig))->Assign_Alt(v23); /*0x7a3efd*/
       v7 = GetDlgItem(v5, 1836); /*0x7a3f0f*/
       v8 = ((String *)((String *)&g_WebBrowserConfig))->GetOrEmpty_Alt(); /*0x7a3f11*/
       SendMessageA(v7, 0x4B4u, 0, (LPARAM)v8); /*0x7a3f1f*/
@@ -103,7 +103,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
 LABEL_14:
         v15 = GetDlgItem(v5, 1771); /*0x7a3f99*/
         v10(v15, 1); /*0x7a3fa4*/
-        String::Assign((String *)v22, lParama); /*0x7a3fb2*/
+        ((String *)((String *)v22))->Assign(lParama); /*0x7a3fb2*/
         FillPersonaInfoWOL(v22[0].vtable2, v5, (char **)v22, (wchar_t **)1); /*0x7a3fc3*/
         DeleteAndZero(v22); /*0x7a3fcc*/
       }

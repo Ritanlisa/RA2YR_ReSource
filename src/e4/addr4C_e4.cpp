@@ -402,8 +402,8 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
   int v15[2]; // [esp+8h] [ebp-10h] BYREF
   int v16[2]; // [esp+10h] [ebp-8h] BYREF
 
-  Coord::To_Screen(g_TacticalClass_Instance, &a1, v16); /*0x4c1e85*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a4, v15); /*0x4c1e9a*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, v16); /*0x4c1e85*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, v15); /*0x4c1e9a*/
   v9 = ZCoordToScreenY(a3); /*0x4c1ea3*/
   v10 = a8 - v9 - 2; /*0x4c1eb2*/
   v11 = ZCoordToScreenY(a6); /*0x4c1eb5*/
@@ -434,8 +434,8 @@ int E4Recv_4C2790::sub_4C2790()
 
   if ( this->owningHouseIndex )
   {
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, this, v4); /*0x4c27aa*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &((unsigned int *)this)[0], v3); /*0x4c27be*/
+    ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(this, v4); /*0x4c27aa*/
+    ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&((unsigned int *)this)[0], v3); /*0x4c27be*/
     if ( (uint8_t)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
       Lightning::Draw(
         (Lightning *)this,
@@ -504,8 +504,8 @@ void sub_4C2830()
     v10 = v2; /*0x4c28be*/
     if ( v2[10] ) /*0x4c28b6*/
     {
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, v2, v19); /*0x4c28ce*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10 + 3, v18); /*0x4c28e2*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v2, v19); /*0x4c28ce*/
+      ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v10 + 3, v18); /*0x4c28e2*/
       if ( (uint8_t)ClipLine(v19, v18, &DSurface_ViewBounds.field_0) ) /*0x4c28f4*/
       {
         v11 = -(*((unsigned char *)v10 + 44) != 0); /*0x4c2904*/
@@ -629,7 +629,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
         v12 = (int)&a1[2 * (v10 % 256) + v10 % 256]; /*0x4c39ac*/
         IDA_LOWORD(v16) = *(unsigned short *)v12; /*0x4c39ba*/
         IDA_BYTE2(v16) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
-        Color::Lerp((uint8_t *)&v16, v18, (uint8_t *)&v14); /*0x4c39cb*/
+        ((Color *)((uint8_t *)&v16))->Lerp(v18, (uint8_t *)&v14); /*0x4c39cb*/
         v7[v10++] = Palette::FindClosestColor(a1, (int)&v16); /*0x4c39dc*/
       }
       while ( v10 < 256 ); /*0x4c39e6*/
@@ -1049,7 +1049,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf20a*/
     if ( v32 > 768 /*0x4cf248*/
       || (IDA_LOWORD(v58) = 0x2000,
-          IDA_LOWORD(a4) = v28 - *(unsigned short *)ProgressTimer::GetValue((unsigned short *)*v6 + 452, &a4),
+          IDA_LOWORD(a4) = v28 - *(unsigned short *)((ProgressTimer *)((unsigned short *)*v6 + 452))->GetValue(&a4),
           (uint8_t)UnitClass::CompareCoordinateMagnitude(&a4)) )
     {
   LABEL_32:
@@ -1643,7 +1643,7 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
       v6 = a1 + 2 * (v5 % 256) + v5 % 256; /*0x4c3813*/
       v13 = *(unsigned short *)v6; /*0x4c3818*/
       v14 = *(unsigned char *)(v6 + 2); /*0x4c3820*/
-      Color::Lerp((uint8_t *)&v13, a4, (uint8_t *)(a1 + 2 * (a3 % 256) + a3 % 256)); /*0x4c3845*/
+      ((Color *)((uint8_t *)&v13))->Lerp(a4, (uint8_t *)(a1 + 2 * (a3 % 256) + a3 % 256)); /*0x4c3845*/
       v7 = -1; /*0x4c384a*/
       v8 = 0; /*0x4c384d*/
       for ( i = 240; i < 255; ++i ) /*0x4c384f*/
@@ -1732,7 +1732,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
     v8 = (int)&a1[2 * (v6 % 256) + v6 % 256]; /*0x4c3b0a*/
     IDA_LOWORD(a3) = *(unsigned short *)v8; /*0x4c3b0f*/
     IDA_BYTE2(a3) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
-    Color::Lerp((uint8_t *)&a3, a4, v7); /*0x4c3b24*/
+    ((Color *)((uint8_t *)&a3))->Lerp(a4, v7); /*0x4c3b24*/
     *(unsigned char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3); /*0x4c3b35*/
     ++v6; /*0x4c3b38*/
   }
@@ -1762,7 +1762,7 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
     v9 = (int)&a1[2 * (v8 % 256) + v8 % 256]; /*0x4c3bad*/
     IDA_LOWORD(a4) = *(unsigned short *)v9; /*0x4c3bbc*/
     IDA_BYTE2(a4) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
-    Color::Lerp((uint8_t *)&a4, v6, (uint8_t *)&a3); /*0x4c3bc8*/
+    ((Color *)((uint8_t *)&a4))->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
     a2[v8++] = Palette::FindClosestColor(a1, (int)&a4); /*0x4c3bd9*/
   }
   while ( v8 < 256 ); /*0x4c3be3*/
@@ -2791,7 +2791,7 @@ char sub_4C9160()
   v0 = CCFileClass::Open(v2, 0); /*0x4c9181*/
   v2[0] = (void*)&CCFileClass_vftable; /*0x4c9183*/
   v4 = 0; /*0x4c918b*/
-  Vector::Clear((int)v3); /*0x4c9193*/
+  ((Vector *)((int)v3))->Clear(); /*0x4c9193*/
   v2[0] = (unsigned int)&off_7E1668; /*0x4c919c*/
   BufferIOFileClass::Dtor(v2); /*0x4c91a4*/
   return v0; /*0x4c91ab*/

@@ -1114,7 +1114,7 @@ struct TechnoTypeClass {
     int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
-    unsigned int * LoadBase(ObjectClass * aP1, void *a2);
+    unsigned int * LoadBase(char *aP1);
     void * ReadINI(char * Source, int a3, void *a3_2);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();

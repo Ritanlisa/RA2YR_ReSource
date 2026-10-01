@@ -168,7 +168,7 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   }
 LABEL_7:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a882b*/
-    VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a8837*/
+    ((VoxClass *)(&stru_83FA64))->FindAndPlay(-1); /*0x6a8837*/
   TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)this, a2, a3); /*0x6a8840*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
@@ -864,10 +864,10 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
     vtable3 = ((unsigned int *)this)[0]; /*0x6a054a*/
-    v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x6a0551*/
+    v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x6a0551*/
     if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x6a0564*/
     {
-      WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
+      ((WalkLocomotion *)((int)this))->MoveTo(aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
     if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x6a0583*/

@@ -358,11 +358,11 @@ void* JumpjetLocomotion::Land()
   {
     LOWORD(v9) = Math::RoundToInt((double)v53 - *(float *)&this->__pad_C[28]); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
-    v49[0] = *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)&this->__pad_48[12], v50) + 11520; /*0x54cb2a*/
+    v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(v50) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->__pad_48[12], v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight(&v51); /*0x54cb5e*/
-  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v51)->flags[0] & 0x100) == 0 /*0x54cb7f*/
+  if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v51)->flags[0] & 0x100) == 0 /*0x54cb7f*/
     || v3 < v10
     || (v45 = 1, v53 >= v10) )
   {
@@ -370,7 +370,7 @@ void* JumpjetLocomotion::Land()
   }
   v49[0] = v51 / 256; /*0x54cba0*/
   v49[1] = v52 / 256; /*0x54cbb5*/
-  if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], v49) ) /*0x54cbc2*/
+  if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v49) ) /*0x54cbc2*/
   {
     RemoveTarget(*(unsigned int *)this->__pad_C); /*0x54cbd4*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 0); /*0x54cbe1*/
@@ -479,7 +479,7 @@ void* JumpjetLocomotion::Land()
   v54 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*v23)));
   v55 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v23[1])));
   v56 = (int)((gamemd::CellClass *)(v23[2]));
-  v24 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v54)); /*0x54cdf4*/
+  v24 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v54)); /*0x54cdf4*/
   landType = v24->landType; /*0x54cdf6*/
   if ( landType != 2 || (v48 = 1, v45) ) /*0x54ce0c*/
     v48 = 0; /*0x54ce0e*/
@@ -495,12 +495,12 @@ void* JumpjetLocomotion::Land()
   v29 = v27; /*0x54ce3d*/
   if ( v28 /*0x54ce5c*/
     && (*(int (**)(int))(*(unsigned int *)v28 + 44))(v28) == 2
-    && !(uint8_t)Cell::IsBuildable((bool *)v24, 2, 1, 1, -1, 0, -1, 1) )
+    && !(uint8_t)((Cell *)((bool *)v24))->IsBuildable(2, 1, 1, -1, 0, -1, 1) )
   {
     v29 = 7; /*0x54ce65*/
   }
   if ( *(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)this->__pad_C + 132))(*(unsigned int *)this->__pad_C) + 3476) /*0x54ce9a*/
-    && !(uint8_t)Cell::IsBuildable((bool *)v24, 2, 1, 1, -1, 0, -1, 1)
+    && !(uint8_t)((Cell *)((bool *)v24))->IsBuildable(2, 1, 1, -1, 0, -1, 1)
     || v29 )
   {
     if ( v48 && !v26 ) /*0x54ceae*/
@@ -736,7 +736,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v22 = *(unsigned int *)this->__pad_C + 156; /*0x54d2a4*/
   v62 = *(double *)v22; /*0x54d2ab*/
   v63 = *(unsigned int *)(v22 + 8); /*0x54d2c3*/
-  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v62)->flags[0] & 0x100) != 0 ) /*0x54d2d5*/
+  if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v62)->flags[0] & 0x100) != 0 ) /*0x54d2d5*/
   {
     v23 = *(unsigned int *)this->__pad_C + 156; /*0x54d2da*/
     v62 = *(double *)v23; /*0x54d2e2*/
@@ -767,7 +767,7 @@ void* JumpjetLocomotion::UpdateFacing()
     v28 = *(unsigned int *)this->__pad_C + 156; /*0x54d379*/
     v62 = *(double *)v28; /*0x54d381*/
     v63 = *(unsigned int *)(v28 + 8); /*0x54d394*/
-    if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v62)->flags[0] & 0x100) != 0 ) /*0x54d3ab*/
+    if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v62)->flags[0] & 0x100) != 0 ) /*0x54d3ab*/
     {
       v29 = *(unsigned int *)this->__pad_C; /*0x54d3ad*/
       if ( !*(unsigned char *)(v29 + 140) ) /*0x54d3b0*/
@@ -857,7 +857,7 @@ LABEL_50:
   v41 = v40[2]; /*0x54d572*/
   LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
-  v61 = (double)(*(int16_t *)ProgressTimer::GetValue((ProgressTimer *)&this->__pad_48[12], &v59) - 0x3FFF) /*0x54d5a2*/
+  v61 = (double)(*(int16_t *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
       * -0.00009587672516830327;
   v43 = HIDWORD(v61); /*0x54d5aa*/
   v44 = LODWORD(v61); /*0x54d5ae*/
@@ -890,7 +890,7 @@ LABEL_50:
     }
     else
     {
-      Value = ProgressTimer::GetValue((ProgressTimer *)&this->__pad_48[12], &v61); /*0x54d68b*/
+      Value = ((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v61); /*0x54d68b*/
       FacingClass::Set_SyncLog((char *)(*(unsigned int *)this->__pad_C + 904), Value); /*0x54d692*/
     }
   }

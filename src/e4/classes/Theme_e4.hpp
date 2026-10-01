@@ -21,7 +21,7 @@ struct Theme {
 // --- flat members (END) ---
     void IsPlaying();
     int QueueSong(IUnknown * aP1, void *a2);
-    int Stop(ObjectClass * aP1, void *a2);
+    int Stop(char aP1);
 };
 
 } // namespace gamemd

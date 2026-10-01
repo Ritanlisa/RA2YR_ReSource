@@ -168,9 +168,9 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       {
         if ( !v13 ) /*0x47738b*/
         {
-          v21.DynamicVector_field_0x1C = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)i); /*0x477397*/
+          v21.DynamicVector_field_0x1C = ((BuildingTypeClass *)((BuildingTypeClass *)i))->FindIndexByName(); /*0x477397*/
           if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
-            DynamicVector::Add_Alt(&v21, &v21.DynamicVector_field_0x1C); /*0x4773a6*/
+            ((DynamicVector *)(&v21))->Add_Alt(&v21.DynamicVector_field_0x1C); /*0x4773a6*/
         }
       }
       else if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47736a*/
@@ -1089,7 +1089,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
           v31 = v28 + v9 - v11; /*0x47f118*/
           v30 = v9 + *((unsigned int *)dword_87E8A4 + 10) - v11; /*0x47f12e*/
           SubFile = MixFileClass::GetSubFile(v33, a3); /*0x47f142*/
-          result = StreamClass::ReadAndSeek((int)dword_87E8A4, v9, v35 - dword_886FA4); /*0x47f14c*/
+          result = ((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v9, v35 - dword_886FA4); /*0x47f14c*/
           v13 = v32 - v35; /*0x47f15b*/
           v14 = (v32 - v35) * *((unsigned int *)dword_87E8A4 + 10); /*0x47f16d*/
           v41 = (uint8_t *)(v12 + v28 * v10 + SubFile); /*0x47f172*/
@@ -1248,7 +1248,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
           v28 = v32 + v14 - v9; /*0x47f362*/
           v30 = v14 + *((unsigned int *)dword_87E8A4 + 10) - v9; /*0x47f373*/
           SubFileMixFileClass = MixFileClass::GetSubFile((char **)dword_89E760, a3); /*0x47f38d*/
-          result = (unsigned short *)StreamClass::ReadAndSeek((int)dword_87E8A4, v14, v12 - dword_886FA4); /*0x47f397*/
+          result = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4); /*0x47f397*/
           v16 = dword_87E8A4; /*0x47f3a5*/
           v41 = (uint8_t *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
           if ( (unsigned int)&result[((unsigned int)v35 - v12) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v39 + 0x7FFFFFFF * v14] < *((unsigned int *)dword_87E8A4 + 7) )
@@ -2020,7 +2020,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v11 = -1009589776; /*0x4745b5*/
   *(unsigned int *)v6.__pad_0 = &vt_SHAPipe; /*0x4745bd*/
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
-  SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
+  ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
   Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
@@ -2069,7 +2069,7 @@ int E4Recv_476E20::sub_476E20()
   v8 = -1009589776; /*0x476e64*/
   *(unsigned int *)v3.__pad_0 = &vt_SHAPipe; /*0x476e6c*/
   INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
-  SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
+  ((SHA1 *)(&v3))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
   return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
 

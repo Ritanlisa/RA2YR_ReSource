@@ -69,7 +69,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
       v6 = dword_A83D18; /*0x479222*/
     *(unsigned int *)(v5 + 4) = v6; /*0x479227*/
   }
-  Theme::Stop((Theme *)&unk_A83D10, 0); /*0x479232*/
+  ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
     this->Debug::Log(); /*0x479249*/
@@ -169,7 +169,7 @@ LABEL_61:
   v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
   ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
-  Vector::Clear((int)v26); /*0x47954c*/
+  ((Vector *)((int)v26))->Clear(); /*0x47954c*/
   ((unsigned int *)&v24)[0] = (int)&off_7E1668; /*0x47955a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&((char *)&v24)); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
@@ -200,7 +200,7 @@ LABEL_58:
   v20 = (*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0); /*0x479609*/
   *(unsigned int *)v24.CDFileClass = &vt_CCFileClass; /*0x47960b*/
   v27 = 0; /*0x47960f*/
-  Vector::Clear((int)&v25); /*0x479616*/
+  ((Vector *)((int)&v25))->Clear(); /*0x479616*/
   *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
   if ( v20 ) /*0x47962b*/

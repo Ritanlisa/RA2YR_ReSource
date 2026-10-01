@@ -98,7 +98,7 @@ LABEL_5:
     }
     v9 = *(unsigned int *)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( DynamicVector::GetOrGrow((DynamicVector *)((char *)this + 21860), *(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( ((DynamicVector *)((DynamicVector *)((char *)this + 21860)))->GetOrGrow(*(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
@@ -260,11 +260,11 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   *((unsigned int *)this + 80) = 1065353216; /*0x5114ea*/
   *((unsigned int *)this + 81) = 1065353216; /*0x5114f0*/
   *((unsigned int *)this + 82) = 1065353216; /*0x5114f6*/
-  InfantryTypeVector::Construct2((InfantryTypeVector *)((char *)this + 332), 0, 0); /*0x5114fc*/
+  ((InfantryTypeVector *)((InfantryTypeVector *)((char *)this + 332)))->Construct2(0, 0); /*0x5114fc*/
   *((unsigned int *)this + 88) = 10; /*0x511501*/
   *((unsigned int *)this + 87) = 0; /*0x511508*/
   *((unsigned int *)this + 83) = &vt_TypeList; /*0x51150b*/
-  UnitTypeVector::ConstructUnitTypeVectorClass((UnitTypeVector *)((char *)this + 360), 0, 0); /*0x51151b*/
+  ((UnitTypeVector *)((UnitTypeVector *)((char *)this + 360)))->ConstructUnitTypeVectorClass(0, 0); /*0x51151b*/
   *((unsigned int *)this + 95) = 10; /*0x511520*/
   *((unsigned int *)this + 94) = 0; /*0x511527*/
   *((unsigned int *)this + 90) = &vt_TypeList; /*0x51152a*/
@@ -907,7 +907,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   int v8; // edx
   int v9; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6ce919*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6ce919*/
   Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
   Power::TimerProcess(this->ActionValue[0]); /*0x6ce935*/
   Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
@@ -915,22 +915,22 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   Power::TimerProcess(this->ImpatientVoice); /*0x6ce95f*/
   v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
   LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6ce97b*/
   LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6ce989*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x6ce989*/
   LOBYTE(v5) = this->PreClick; /*0x6ce98e*/
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x6ce997*/
+  v6 = ((Power *)((Power *)a2))->FlagProcess(v5); /*0x6ce997*/
   LOBYTE(v6) = this->PostClick; /*0x6ce99c*/
-  Power::FlagProcess((Power *)a2, v6); /*0x6ce9a5*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x6ce9a5*/
   Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
   LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
-  Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
+  ((Power *)((Power *)a2))->FlagProcess(v7); /*0x6ce9c1*/
   Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
   Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
   LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
-  v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
+  v9 = ((Power *)((Power *)a2))->FlagProcess(v8); /*0x6ce9eb*/
   LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
-  return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
+  return ((Power *)((Power *)a2))->FlagProcess(v9); /*0x6ce9fe*/
 
 }
 } // namespace gamemd

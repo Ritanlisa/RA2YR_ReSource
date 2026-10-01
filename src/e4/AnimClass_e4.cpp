@@ -89,7 +89,7 @@ void AnimClass::Destruct(void * a2, void *a2_2)
       v13[0] = (gamemd::CellClass *)(a2->AnimClass_field_0x9C);
       v13[1] = (gamemd::CellClass *)(*(unsigned int *)a2->__pad_A0);
       v13[2] = (gamemd::CellClass *)(a2->AnimClass_field_0xA4);
-      v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13));
+      v6 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13));
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
@@ -347,8 +347,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         - 2;
     *(float *)&v104 = (double)(uint16_t)(v17 + v9) * 0.000015259022; /*0x422eab*/
     *(float *)&v103 = (double)(uint16_t)(v17 - v9) * 0.000015259022; /*0x422eb9*/
-    ColorStr    ColorStruct::SetRGB((unsigned char)(&v110), v100[0], v13, v15); 
-    ColorStr    ColorStruct::SetRGB((unsigned char)(&v111), v100[0], v13, v15); 
+    ColorStr    ((ColorStruct *)((unsigned char)(&v110)))->SetRGB(v100[0], v13, v15); 
+    ColorStr    ((ColorStruct *)((unsigned char)(&v111)))->SetRGB(v100[0], v13, v15); 
     *(float *)&v88 = (float)v102; /*0x422ede*/
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
@@ -466,7 +466,7 @@ LABEL_47:
     if ( v25[2].__pad_C[209] ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
     v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108); /*0x423166*/
-    v27 = *(int16_t *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v26)->CellClass_field_10C; /*0x423177*/
+    v27 = *(int16_t *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v26)->CellClass_field_10C; /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( this->__pad_194[2] ) /*0x4231f3*/
@@ -540,7 +540,7 @@ LABEL_78:
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x42340b*/
-  v43 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v42)); /*0x423414*/
+  v43 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v42)); /*0x423414*/
   v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
@@ -866,7 +866,7 @@ LABEL_47:
     if ( IDA_BYTE1(v25[71].Z) ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
     v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108);;
-    v27 = (ConvertClass *)*((int16_t *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v26) + 134); /*0x423177*/
+    v27 = (ConvertClass *)*((int16_t *)((Coord *)(&stru_87C374.__pad_14B0[8132]))->To_Cell(v26) + 134); /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( *((unsigned char *)this + 406) ) /*0x4231f3*/
@@ -940,7 +940,7 @@ LABEL_78:
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108);;
-  v43 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v42); /*0x423414*/
+  v43 = ((Coord *)(&stru_87C374.__pad_14B0[8132]))->To_Cell(v42); /*0x423414*/
   v44 = (CoordStruct *)Cell::IsBridge(v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
@@ -1414,7 +1414,7 @@ char AnimClass::ProcessAreaEffect(unsigned int * a1)
   char result; // al
 
   v1 = Input::OffsetToDirection((Input *)a1); /*0x426314*/
-  v2 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a1); /*0x426321*/
+  v2 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a1); /*0x426321*/
   if ( Cell::GetGroundHeight(a1) + Map_MaxHeight > (int)a1->AnimClass_field_0x8 ) /*0x426335*/
   {
     result = ~(1 << v1) & LOBYTE(v2->occupationFlags); /*0x426370*/

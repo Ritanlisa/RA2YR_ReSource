@@ -14,7 +14,7 @@
 
 // 0x752700
 namespace gamemd {
-void VoxClass::FindAndPlay(int a2, int a3)
+void VoxClass::FindAndPlay(int a3)
 {
 
   int v2; // edx

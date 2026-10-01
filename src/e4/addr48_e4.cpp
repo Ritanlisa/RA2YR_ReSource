@@ -65,7 +65,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   int v17; // [esp+10h] [ebp-8h]
   int v18; // [esp+14h] [ebp-4h]
 
-  if ( !Control::DispatchClick((ControlClass *)this, a2) ) /*0x4880fb*/
+  if ( !((Control *)((ControlClass *)this))->DispatchClick(a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
   uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
@@ -270,7 +270,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
               int v13 = *(unsigned int *)(v12 + 156);
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
-              v15 = (IUnknown *)(Coord::Subtract( &v135, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
+              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
               Coord::Length((int *)&v143);
@@ -286,7 +286,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                 }
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
-                v17 = (IUnknown *)(Coord::Subtract( &v130, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
+                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
                 Coord::Length((int *)&v132);
@@ -416,7 +416,7 @@ LABEL_58:
           goto LABEL_67;
         }
         eax61a = (unsigned int *)(*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable0 + 18))(aP1a, &v130);
-        v32 = (IUnknown *)(Coord::Subtract( int v148[3]; v148, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2])));
+        v32 = (IUnknown *)(((Coord *)(int v148[3]; v148))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2])));
         IDA_LODWORD(v132) = v32->field_0;
         v34 = (BuildingTypeClass *)v32->field_8;
         IDA_HIDWORD(v132) = v32->field_4;
@@ -463,7 +463,7 @@ LABEL_67:
       }
   char v149[12]; // [esp+114h] [ebp-Ch] BYREF
       eax63 = (unsigned int *)(*((int (**)(VectorClass_flat *, char *))aP1a->vtable0 + 18))(aP1a, v149);
-      v37 = (IUnknown *)(Coord::Subtract( int v145[3]; v145, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2])));
+      v37 = (IUnknown *)(((Coord *)(int v145[3]; v145))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2])));
       IDA_LODWORD(v139) = v37->field_0;
       st7_63 = (double)(int)v139;
       v39 = (BuildingTypeClass *)v37->field_8;
@@ -739,7 +739,7 @@ LABEL_189:
                         goto LABEL_189;
                     }
                   }
-                  Coord::To_Screen(*(unsigned int **)&stru_87C374[44976], aP2, (IUnknown *)v122);
+                  ((Coord *)(*(unsigned int **)&stru_87C374[44976]))->To_Screen(aP2, (IUnknown *)v122);
                   ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                     v122[0] - 96,
                     v122[1] - 96,
@@ -815,7 +815,7 @@ LABEL_163:
                     goto LABEL_163;
                 }
               }
-              Coord::To_Screen(*(unsigned int **)&stru_87C374[44976], aP2, (IUnknown *)&v141);
+              ((Coord *)(*(unsigned int **)&stru_87C374[44976]))->To_Screen(aP2, (IUnknown *)&v141);
               ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                 IDA_LODWORD(v141) - 128,
                 IDA_HIDWORD(v141) - 128,
@@ -843,7 +843,7 @@ LABEL_203:
   {
     BuildingClass::CreatePlacementCrater((char *)v71);
     v71->field_44 = -1;
-    House::AnnounceUpgrade((int)v71, (IUnknown *)0xFFFFFFFF);
+    ((House *)((int)v71))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
     Cell::SetRadar((int *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
     Radar::Update((IUnknown *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
     AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
@@ -1546,7 +1546,7 @@ CellStruct * * sub_48E0B0()
         if ( *((unsigned char *)v6 - 80) )
         {
           fprintf(v2, "\nName: %s\n", (const char *)v6 - 80);
-          v7 = Network::FormatAddress((Network *)(v6 + 3), 0); /*0x48e1d4*/
+          v7 = ((Network *)((Network *)(v6 + 3)))->FormatAddress(0); /*0x48e1d4*/
           fprintf(v2, "Address: %s\n", v7);
           fprintf(v2, "Max avg round trip: %d\n", *v6);
           fprintf(v2, "Max round trip: %d\n", *(v6 - 4));
@@ -2078,7 +2078,7 @@ int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, Coord
     return 0; /*0x48a501*/
   if ( aP2 == 2 /*0x48a54f*/
     && *(unsigned char *)(aP1 + 333)
-    && (*((unsigned int *)Coord::To_Cell(&dword_87F7E8, aP3) + 80) & 0x100) == 0
+    && (*((unsigned int *)((Coord *)(&dword_87F7E8))->To_Cell(aP3) + 80) & 0x100) == 0
 // 0x578080
     && aP3[2] < Cell::GetGroundHeight(unsigned int * a1) + 2 * dword_89E870 )
 {

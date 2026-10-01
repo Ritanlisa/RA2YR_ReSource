@@ -769,7 +769,7 @@ AbstractClass * * Dialog::IdleProcess(void *a1_1, void *a2_1)
   int v15; // [esp+14h] [ebp-4h]
 
   v3 = v2; /*0x608075*/
-  if ( (uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x60807d*/
+  if ( (uint8_t)((SessionClass *)((SessionClass *)&dword_A8B238))->GetGameSpeed() ) /*0x60807d*/
     return 0; /*0x60807d*/
   v13 = v3; /*0x60808b*/
   if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x608091*/
@@ -880,7 +880,7 @@ LABEL_7:
   if ( !hWnda ) /*0x60a39a*/
     return 1; /*0x60a39a*/
   Parent = GetParent(hWnd); /*0x60a3ac*/
-  if ( !SessionClass::GetGameSpeed(dword_A8B238) ) /*0x60a3ae*/
+  if ( !((SessionClass *)(dword_A8B238))->GetGameSpeed() ) /*0x60a3ae*/
   {
     if ( (GetWindowLongA(hWnd, -16) & 0xB) == 0xB ) /*0x60a3cb*/
     {
@@ -922,7 +922,7 @@ LABEL_22:
       }
     }
   }
-  if ( !SessionClass::GetGameSpeed(dword_A8B238) ) /*0x60a48e*/
+  if ( !((SessionClass *)(dword_A8B238))->GetGameSpeed() ) /*0x60a48e*/
     goto LABEL_33; /*0x60a48e*/
   if ( (GetWindowLongA(hWnd, -16) & 0xB) != 0xB /*0x60a4da*/
     || (v12 = hWnd, v11 = 0, HashTable::Get(&dword_AC1B00, &v12, &v11), !v11)
@@ -1617,7 +1617,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   *(unsigned int *)&v15[64] = 0; /*0x6103e3*/
   *(unsigned int *)&v15[92] = 0; /*0x6103e7*/
   *(unsigned int *)&v15[144] = -1; /*0x6103eb*/
-  Dialog::BindGadgetData((Dialog *)&g_DialogPool.__pad_208[56], (int *)&hWnd, v15); /*0x6103f6*/
+  ((Dialog *)((Dialog *)&g_DialogPool.__pad_208[56]))->BindGadgetData((int *)&hWnd, v15); /*0x6103f6*/
   if ( *(unsigned int *)&v15[40] ) /*0x610401*/
   {
     __3_YAXPAX_Z(*(void **)&v15[40]); /*0x610404*/
@@ -2259,7 +2259,7 @@ LABEL_7:
       v10 = v3[44]; /*0x621fb1*/
       if ( v10 == 1 ) /*0x621fba*/
       {
-        if ( (uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x621fc5*/
+        if ( (uint8_t)((SessionClass *)((SessionClass *)&dword_A8B238))->GetGameSpeed() ) /*0x621fc5*/
         {
           RenderCreditsScreen(v7, &left, 0); /*0x621fd5*/
         }
@@ -2371,7 +2371,7 @@ LABEL_43:
           &left,
           0,
           1);
-        if ( (uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x62221a*/
+        if ( (uint8_t)((SessionClass *)((SessionClass *)&dword_A8B238))->GetGameSpeed() ) /*0x62221a*/
         {
           NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x622229*/
           if ( NeedsSaveOrLink ) /*0x622231*/
@@ -2627,7 +2627,7 @@ AbstractClass * * Dialog::GrowBuffer()
 }
 // 0x624CA0
 namespace gamemd {
-AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block, void *a3_1)
+AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
 {
 
   int v4; // eax
@@ -3037,7 +3037,7 @@ int Dialog::GetCurrentType()
 }
 // 0x4E4EC0
 namespace gamemd {
-int Dialog::SideIDToIndex(void *a1_1)
+int Dialog::SideIDToIndex()
 {
 
   int v2; // eax

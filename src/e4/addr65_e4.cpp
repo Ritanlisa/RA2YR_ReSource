@@ -150,7 +150,7 @@ int Trigger_AllocateLog(int a1)
       int v18 = *(unsigned int *)(v16 + 160);
       v86 = *(unsigned int *)(v16 + 164);
       *(unsigned int *)v15 = v17 / 10 + ((v18 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v16 + 904), &v84) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v16 + 388))(v16);
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v16 + 1728) + 3576);
       *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v16 + 1400) * 256.0);
@@ -217,8 +217,8 @@ int Trigger_AllocateLog(int a1)
         int v30 = *(unsigned int *)(v28 + 160);
         v86 = *(unsigned int *)(v28 + 164);
         *(unsigned int *)v15 = v29 / 10 + ((v30 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v28 + 904), &v84) >> 7) + 1) >> 1;
-        *(unsigned char *)(v15 + 101) = (unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v28 + 928), v85) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 101) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue(v85) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v28 + 388))(v28);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v28 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
@@ -298,7 +298,7 @@ int Trigger_AllocateLog(int a1)
         int v42 = *(unsigned int *)(v40 + 160);
         v86 = *(unsigned int *)(v40 + 164);
         *(unsigned int *)v15 = v41 / 10 + ((v42 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v40 + 904), v85) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v40 + 388))(v40);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v40 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v40 + 1400) * 256.0);
@@ -367,7 +367,7 @@ int Trigger_AllocateLog(int a1)
       int v55 = *(unsigned int *)(v53 + 160);
       v86 = *(unsigned int *)(v53 + 164);
       *(unsigned int *)v15 = v54 / 10 + ((v55 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v53 + 904), v85) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v53 + 388))(v53);
       int v56 = 0;
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v53 + 1312) + 3576);
@@ -944,8 +944,8 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   int v9[2]; // [esp+14h] [ebp-18h] BYREF
   int v10[4]; // [esp+1Ch] [ebp-10h] BYREF
 
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, a2, v9); /*0x6595a8*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, a3, v8); /*0x6595bd*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(a2, v9); /*0x6595a8*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(a3, v8); /*0x6595bd*/
   v10[0] = DSurface_ViewBounds.field_0; /*0x6595d3*/
   v10[1] = (int)DSurface_ViewBounds.field_4; /*0x6595dd*/
   v10[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6595e5*/
@@ -1433,7 +1433,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     {
       NeighbourContent = v17; /*0x65da41*/
       if ( v18 != -1 ) /*0x65da43*/
-        NeighbourContent = (Cell *)Cell::GetNeighbourContent(v17, v18); /*0x65da48*/
+        NeighbourContent = (Cell *)((Cell *)(v17))->GetNeighbourContent(v18); /*0x65da48*/
       v20 = (ObjectClass *)Cell::IsBridge(NeighbourContent); /*0x65da4f*/
       v20 = v20; /*0x65da54*/
       if ( v20 && v20->health > 0 && ProcessDataCellClass(v20) ) /*0x65da63*/
@@ -1550,7 +1550,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   v39 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x65dc79*/
   (*(void (**)(int, void *))(v38 + 968))(v31, v39); /*0x65dc81*/
   ++dword_A8E7AC; /*0x65dc95*/
-  Coord::Subtract((Coord *)v49, ((int16_t)v36 << 8) + 128, (IDA_SHIWORD(v46) << 8) + 128, 0); /*0x65dcb6*/
+  ((Coord *)((Coord *)v49))->Subtract(((int16_t)v36 << 8) + 128, (IDA_SHIWORD(v46) << 8) + 128, 0); /*0x65dcb6*/
   v40 = (*(int (**)(int, unsigned int *, unsigned int))(*(unsigned int *)v31 + 216))(v31, v49, 0); /*0x65dcc6*/
   --dword_A8E7AC; /*0x65dcda*/
   if ( v40 ) /*0x65dce0*/
@@ -1767,7 +1767,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
             IDA_LOWORD(v54) = IDA_LOWORD(dword_89F688[v38]) + v49; /*0x65e4a5*/
             IDA_HIWORD(v54) = v39; /*0x65e4b1*/
             a2 = v54; /*0x65e4c0*/
-            if ( LayerClass::CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x65e4c7*/
+            if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a2) ) /*0x65e4c7*/
               break; /*0x65e4c7*/
             if ( ++v37 >= 8 ) /*0x65e4d4*/
             {
@@ -1846,7 +1846,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         IDA_LOWORD(v55) = IDA_LOWORD(dword_89F688[v41]) + v49; /*0x65e529*/
         IDA_HIWORD(v55) = IDA_HIWORD(v49) + v42; /*0x65e53b*/
         a2 = v55; /*0x65e544*/
-        if ( !LayerClass::CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x65e550*/
+        if ( !((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a2) ) /*0x65e550*/
         {
           v43 = *v5; /*0x65e559*/
           v44 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a2); /*0x65e570*/
@@ -2261,7 +2261,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
     v14 = dword_B04C58; /*0x65edce*/
     v15 = dword_B04C5C; /*0x65edda*/
     v68 = dword_B04C60; /*0x65edea*/
-    v16 = Coord::To_Cell(&MapClass_Instance, &v52); /*0x65edf3*/
+    v16 = ((Coord *)(&MapClass_Instance))->To_Cell(&v52); /*0x65edf3*/
     for ( i = 0; v14 == dword_B04C58 && v15 == dword_B04C5C && v68 == dword_B04C60 && i < 255; ++i ) /*0x65edf7*/
     {
       if ( v47 ) /*0x65ee39*/

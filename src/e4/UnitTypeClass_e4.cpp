@@ -689,23 +689,23 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   BuildingTypeClass::ProcessPower((int)this, a2); /*0x747f79*/
   Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
   LOBYTE(v3) = this->Passive; /*0x747f8c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x747f95*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x747f95*/
   LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x747fa3*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x747fa3*/
   LOBYTE(v5) = this->Harvester; /*0x747fa8*/
-  Power::FlagProcess((Power *)a2, v5); /*0x747fb1*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x747fb1*/
   LOBYTE(v6) = this->Weeder; /*0x747fb6*/
-  Power::FlagProcess((Power *)a2, v6); /*0x747fbf*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x747fbf*/
   LOBYTE(v7) = this->unknown_E10; /*0x747fc4*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x747fcd*/
+  v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x747fcd*/
   LOBYTE(v8) = this->HasTurret; /*0x747fd2*/
-  Power::FlagProcess((Power *)a2, v8); /*0x747fdb*/
+  ((Power *)((Power *)a2))->FlagProcess(v8); /*0x747fdb*/
   LOBYTE(v9) = this->IsTilter; /*0x747fe0*/
-  Power::FlagProcess((Power *)a2, v9); /*0x747fe9*/
+  ((Power *)((Power *)a2))->FlagProcess(v9); /*0x747fe9*/
   LOBYTE(v10) = this->IsSimpleDeployer; /*0x747fee*/
-  v11 = Power::FlagProcess((Power *)a2, v10); /*0x747ff7*/
+  v11 = ((Power *)((Power *)a2))->FlagProcess(v10); /*0x747ff7*/
   LOBYTE(v11) = this->UseTurretShadow; /*0x747ffc*/
-  return Power::FlagProcess((Power *)a2, v11); /*0x74800a*/
+  return ((Power *)((Power *)a2))->FlagProcess(v11); /*0x74800a*/
 
 }
 // 0x748010

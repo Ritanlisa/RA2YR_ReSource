@@ -547,7 +547,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     if ( v5 == -1 ) /*0x6b9596*/
       break; /*0x6b9596*/
     v7 = *(const char ***)(*(unsigned int *)this->__pad_0 + 4 * v5); /*0x6b959c*/
-    String::Reassign((String *)v30, v7); /*0x6b95a4*/
+    ((String *)((String *)v30))->Reassign(v7); /*0x6b95a4*/
     v8 = *(unsigned int *)this->__pad_0; /*0x6b95a9*/
     qmemcpy(&v30[20], v7 + 1, 0x304u); /*0x6b95b8*/
     v9 = *(unsigned int **)(v8 + 4 * v5); /*0x6b95ba*/
@@ -653,7 +653,7 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
   const void *v6; // esi
   int v7; // esi
 
-  String::Assign((String *)&a1, a1); /*0x6ba14c*/
+  ((String *)((String *)&a1))->Assign(a1); /*0x6ba14c*/
   if ( (byte_B0B930 & 1) == 0 ) /*0x6ba158*/
   {
     dword_B0B948 = 0; /*0x6ba164*/
@@ -667,7 +667,7 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
                        * (((int (*)(const char **))this->HashTable_field_0x18)(&a1)
                         & ((1 << this->HashTable_field_0x0C) - 1)))) != 0 )
   {
-    while ( !(uint8_t)String::Compare((String *)v4, &a1) ) /*0x6ba1b8*/
+    while ( !(uint8_t)((String *)((String *)v4))->Compare(&a1) ) /*0x6ba1b8*/
     {
       v4 = *(unsigned int *)(v4 + 776); /*0x6ba1ba*/
       if ( !v4 ) /*0x6ba1c2*/
@@ -711,7 +711,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   int v15; // esi
   unsigned char v16[784]; // [esp+Ch] [ebp-310h] BYREF
 
-  String::Assign((String *)v16, a2); /*0x6ba247*/
+  ((String *)((String *)v16))->Assign(a2); /*0x6ba247*/
   HashTable_field_0x04 = this->HashTable_field_0x04; /*0x6ba24c*/
   *(unsigned int *)&v16[12] = 0; /*0x6ba253*/
   if ( !HashTable_field_0x04 ) /*0x6ba257*/
@@ -722,7 +722,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
                   & ((1 << this->HashTable_field_0x0C) - 1)));
   if ( !v4 ) /*0x6ba278*/
     goto LABEL_24; /*0x6ba278*/
-  while ( !(uint8_t)String::Compare((String *)v4, (const char **)v16) ) /*0x6ba28c*/
+  while ( !(uint8_t)((String *)((String *)v4))->Compare((const char **)v16) ) /*0x6ba28c*/
   {
     v4 = *(unsigned int *)(v4 + 776); /*0x6ba28e*/
     if ( !v4 ) /*0x6ba296*/
@@ -741,7 +741,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
     v9 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
-      if ( (uint8_t)String::Compare((String *)v9, (const char **)v16) ) /*0x6ba30b*/
+      if ( (uint8_t)((String *)((String *)v9))->Compare((const char **)v16) ) /*0x6ba30b*/
       {
         v10 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v8); /*0x6ba316*/
         v11 = v10[194]; /*0x6ba31b*/
@@ -763,7 +763,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
         v15 = *(unsigned int *)(v9 + 776); /*0x6ba34f*/
         if ( v15 ) /*0x6ba357*/
         {
-          while ( !(uint8_t)String::Compare((String *)v15, (const char **)v16) ) /*0x6ba367*/
+          while ( !(uint8_t)((String *)((String *)v15))->Compare((const char **)v16) ) /*0x6ba367*/
           {
             v9 = v15; /*0x6ba369*/
             v15 = *(unsigned int *)(v15 + 776); /*0x6ba36b*/
@@ -840,7 +840,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   v36 = v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
     return 0; /*0x6baca5*/
-  if ( (uint8_t)String::Compare((String *)v8, aP1) ) /*0x6bacb1*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x6bacb1*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6baccf*/
@@ -906,7 +906,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
     v38 = 0; /*0x6badc5*/
     if ( v24 ) /*0x6badcc*/
     {
-      while ( !(uint8_t)String::Compare((String *)v24, aP1) ) /*0x6badd8*/
+      while ( !(uint8_t)((String *)((String *)v24))->Compare(aP1) ) /*0x6badd8*/
       {
         v36 = v24; /*0x6badda*/
         v24 = *(unsigned int *)(v24 + 776); /*0x6badde*/
@@ -1335,7 +1335,7 @@ int HashTable_flat::LookupString(const char ** a2, unsigned int * a3)
     {
       while ( 1 ) /*0x7adc9b*/
       {
-        result = String::Compare((String *)v6, a2); /*0x7adc9b*/
+        result = ((String *)((String *)v6))->Compare(a2); /*0x7adc9b*/
         if ( (unsigned char)result ) /*0x7adca2*/
           break; /*0x7adca2*/
         v6 = *(unsigned int *)(v6 + 112); /*0x7adca4*/
@@ -1408,7 +1408,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
     return 0; /*0x7add35*/
-  if ( (uint8_t)String::Compare((String *)v8, aP1) ) /*0x7add41*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x7add41*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add5f*/
@@ -1474,7 +1474,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     v38 = 0; /*0x7ade49*/
     if ( v24 ) /*0x7ade50*/
     {
-      while ( !(uint8_t)String::Compare((String *)v24, aP1) ) /*0x7ade5c*/
+      while ( !(uint8_t)((String *)((String *)v24))->Compare(aP1) ) /*0x7ade5c*/
       {
         v36 = v24; /*0x7ade5e*/
         v24 = *(unsigned int *)(v24 + 112); /*0x7ade62*/
@@ -1582,7 +1582,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
-  if ( (uint8_t)String::Compare((String *)v8, aP1) ) /*0x7ae25c*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare(aP1) ) /*0x7ae25c*/
   {
     *aP2 = *(unsigned int *)(v8 + 4); /*0x7ae270*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae274*/
@@ -1646,7 +1646,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     v33 = 0; /*0x7ae34e*/
     if ( v22 ) /*0x7ae355*/
     {
-      while ( !(uint8_t)String::Compare((String *)v22, aP1) ) /*0x7ae361*/
+      while ( !(uint8_t)((String *)((String *)v22))->Compare(aP1) ) /*0x7ae361*/
       {
         v8 = v22; /*0x7ae363*/
         v22 = *(unsigned int *)(v22 + 8); /*0x7ae365*/
@@ -1819,7 +1819,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
   v36 = v8; /*0x7ae9ac*/
   if ( !v8 ) /*0x7ae9b0*/
     return 0; /*0x7ae9b5*/
-  if ( (uint8_t)String::Compare((String *)v8, a2) ) /*0x7ae9c1*/
+  if ( (uint8_t)((String *)((String *)v8))->Compare(a2) ) /*0x7ae9c1*/
   {
     qmemcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
     v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae9df*/
@@ -1885,7 +1885,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
     v38 = 0; /*0x7aead5*/
     if ( v24 ) /*0x7aeadc*/
     {
-      while ( !(uint8_t)String::Compare((String *)v24, a2) ) /*0x7aeae8*/
+      while ( !(uint8_t)((String *)((String *)v24))->Compare(a2) ) /*0x7aeae8*/
       {
         v36 = v24; /*0x7aeaea*/
         v24 = *(unsigned int *)(v24 + 272); /*0x7aeaee*/

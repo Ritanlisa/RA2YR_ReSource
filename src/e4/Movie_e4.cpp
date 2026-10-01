@@ -321,7 +321,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( this->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
-            Audio::Release(*(Audio **)&this->__pad_28[4]); /*0x720a1b*/
+            ((Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
           LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->__pad_28[4]) != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {

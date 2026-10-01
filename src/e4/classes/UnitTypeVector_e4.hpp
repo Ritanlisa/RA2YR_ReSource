@@ -23,7 +23,7 @@ struct UnitTypeVector {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     unsigned int * Construct2(int a2, int a3, void *a3_2);
-    unsigned int * ConstructUnitTypeVectorClass(int a2, int a3, void *a3_2);
+    unsigned int * ConstructUnitTypeVectorClass(int a2, int a3);
 };
 
 } // namespace gamemd

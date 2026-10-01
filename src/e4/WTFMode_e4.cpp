@@ -20,7 +20,7 @@ int sub_7535D0()
     dword_B1D4C4 = 0; /*0x7535e0*/
   }
   if ( g_InfantryDrawState ) /*0x7535f2*/
-    Audio::Release(g_InfantryDrawState); /*0x7535f4*/
+    ((Audio *)(g_InfantryDrawState))->Release(); /*0x7535f4*/
     result = this->ThemeClass::ClearQueues();
   dword_B1D428 = 0; /*0x7535fe*/
   dword_B1D3D8 = 0; /*0x753608*/

@@ -77,7 +77,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
                                  &v13,
                                  v5,
                                  &v11);
-        WideString::Reassign_Alt(&v11, v6); /*0x766680*/
+        ((WideString *)(&v11))->Reassign_Alt(v6); /*0x766680*/
         DeleteAndZero::Alt(&v13); /*0x766689*/
         --v3; /*0x766692*/
         (unsigned int)(v2)|= v15[2]; /*0x766693*/
@@ -107,7 +107,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
                                  &v13,
                                  v8,
                                  &v11);
-        WideString::Reassign_Alt(&v11, v9); /*0x766735*/
+        ((WideString *)(&v11))->Reassign_Alt(v9); /*0x766735*/
         DeleteAndZero::Alt(&v13); /*0x76673e*/
         --v3; /*0x766747*/
         (unsigned int)(v2)|= v15[2]; /*0x766748*/
@@ -117,7 +117,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     ComPtr::Release(&v14); /*0x766753*/
     ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
   }
-  WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
+  ((WideString *)(a2))->AssignFromPtr((const wchar_t **)&v11); /*0x766776*/
   v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76677f*/
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
@@ -191,7 +191,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
       {
         v16 = *(unsigned int *)this->isUseless; /*0x7715e0*/
         *(unsigned int *)this->isUseless = v16 + 1; /*0x7715eb*/
-        String::Reassign((String *)(this->targetLaserTimer[2] + 4 * v16), (const char **)&v17); /*0x7715f4*/
+        ((String *)((String *)(this->targetLaserTimer[2] + 4 * v16)))->Reassign((const char **)&v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
         ++this->targetLaserTimer[0]; /*0x771601*/

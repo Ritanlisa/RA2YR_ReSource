@@ -294,7 +294,7 @@ LABEL_18:
                     {
                       NeighbourContent->Cell_field_0x38 = g_CellTileTypeCache + 1; /*0x5a63b1*/
                       NeighbourContent->__pad_FC[30] = 1; /*0x5a63b4*/
-                      NeighbourContent = (Cell *)Cell::GetNeighbourContent(NeighbourContent, 0); /*0x5a63c0*/
+                      NeighbourContent = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(0); /*0x5a63c0*/
                     }
                     while ( Value::InRange((Value *)NeighbourContent) ); /*0x5a63c4*/
                   }

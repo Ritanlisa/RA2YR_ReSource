@@ -255,13 +255,13 @@ int MPCooperative::WriteCoopSaveINI()
   CCFileClass::Reset(&v16); /*0x49c04d*/
   *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c05e*/
   v18 = 0; /*0x49c062*/
-  Vector::Clear((int)v17); /*0x49c069*/
+  ((Vector *)((int)v17))->Clear(); /*0x49c069*/
   *(unsigned int *)v16.CDFileClass = (unsigned int)(&off_7E1668); /*0x49c077*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x49c07b*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v15); /*0x49c084*/
   *(unsigned int *)v19.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c090*/
   v21 = 0; /*0x49c097*/
-  Vector::Clear((int)v20); /*0x49c09e*/
+  ((Vector *)((int)v20))->Clear(); /*0x49c09e*/
   *(unsigned int *)v19.CDFileClass = (unsigned int)(&off_7E1668); /*0x49c0aa*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
@@ -340,7 +340,7 @@ int MPCooperative::ReadCoopSaveINI()
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
     v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
-    Vector::Clear((int)v17); /*0x49d1c8*/
+    ((Vector *)((int)v17))->Clear(); /*0x49d1c8*/
     v16[0] = (unsigned int)(&off_7E1668); /*0x49d1d1*/
     BufferIOFileClass::Dtor(v16); /*0x49d1d9*/
     return 0; /*0x49d1e9*/
@@ -410,7 +410,7 @@ int MPCooperative::ReadCoopSaveINI()
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
   v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
-  Vector::Clear((int)v17); /*0x49d36c*/
+  ((Vector *)((int)v17))->Clear(); /*0x49d36c*/
   v16[0] = (unsigned int)(&off_7E1668); /*0x49d375*/
   BufferIOFileClass::Dtor(v16); /*0x49d37d*/
   return v15; /*0x49d1de*/
@@ -987,17 +987,17 @@ LABEL_16:
           for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c1f3b*/
           {
             MPCooperative_field_0x0 = (uint8_t (**)(MPCooperative *, int))this->MPCooperative_field_0x0; /*0x5c1f43*/
-            PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA78[i]); /*0x5c1f48*/
+            PlayerSide = ((SessionClass *)((int *)dword_A8DA78[i]))->GetPlayerSide(); /*0x5c1f48*/
             if ( !MPCooperative_field_0x0[7](this, PlayerSide) ) /*0x5c1f50*/
             {
               if ( v10 <= 1 ) /*0x5c1f5a*/
               {
                 v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(*(unsigned int *)(v18 + 20) + 4 * v17) + 4)); /*0x5c1f78*/
-                SessionClass::SetPlayerOption((int *)dword_A8DA78[i], v16); /*0x5c1f82*/
+                ((SessionClass *)((int *)dword_A8DA78[i]))->SetPlayerOption(v16); /*0x5c1f82*/
               }
               else
               {
-                SessionClass::SetPlayerOption((int *)dword_A8DA78[i], -2); /*0x5c1f5e*/
+                ((SessionClass *)((int *)dword_A8DA78[i]))->SetPlayerOption(-2); /*0x5c1f5e*/
               }
             }
           }
@@ -1591,7 +1591,7 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   for ( j = 0; j < dword_A80238; ++j ) /*0x5c2d2e*/
   {
     v8 = *(void **)&dword_A8022C->AbstractClass[4 * j]; /*0x5c2d36*/
-    if ( v8 && (uint8_t)House::IsCurrentPlayer(v8) ) /*0x5c2d3d*/
+    if ( v8 && (uint8_t)((House *)(v8))->IsCurrentPlayer() ) /*0x5c2d3d*/
       ++v6; /*0x5c2d46*/
   }
   if ( v4 >= v6 ) /*0x5c2d53*/
@@ -1656,7 +1656,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
     do /*0x5c2e2e*/
     {
       v10 = (House *)*((unsigned int *)((char *)&stru_A80220) + v9); /*0x5c2e15*/
-      if ( v10 && (uint8_t)House::IsCurrentPlayer(v10) ) /*0x5c2e1c*/
+      if ( v10 && (uint8_t)((House *)(v10))->IsCurrentPlayer() ) /*0x5c2e1c*/
         ++v8; /*0x5c2e25*/
       ++v9; /*0x5c2e2b*/
     }
@@ -1786,11 +1786,11 @@ LABEL_17:
         }
         else
         {
-          SessionClass::SetOption((int *)dword_A8DA78[v10], v9); /*0x5c2ffa*/
+          ((SessionClass *)((int *)dword_A8DA78[v10]))->SetOption(v9); /*0x5c2ffa*/
           SessionClass::SetOption2((int *)dword_A8DA78[v10], 0); /*0x5c300a*/
           v14 = (SessionClass **)&dword_A8DA78[v10]; /*0x5c3018*/
-          SessionClass::GetOption2(*v14); /*0x5c301b*/
-          SessionClass::GetOption((*v14)->GameMode); /*0x5c3023*/
+          ((SessionClass *)(*v14))->GetOption2(); /*0x5c301b*/
+          ((SessionClass *)((*v14)->GameMode))->GetOption(); /*0x5c3023*/
         }
         Debug::Log(); /*0x5c3053*/
         HouseClass::SetMapSeed(thisa, *((unsigned int *)Block + v9)); /*0x5c3067*/
@@ -2198,7 +2198,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     }
   }
   v17 = 0; /*0x5c3c49*/
-  IsometricTileTypeClass::Constructor_0(&v27, 0, 0); /*0x5c3c51*/
+  ((IsometricTileTypeClass *)(&v27))->Constructor_0(0, 0); /*0x5c3c51*/
   *(unsigned int *)v27.__pad_0 = &vt_DynamicVectorClass; /*0x5c3c60*/
   v27.IsometricTileTypeClass_field_0x14 = 10; /*0x5c3c68*/
   v27.IsometricTileTypeClass_field_0x10 = 0; /*0x5c3c70*/
@@ -2808,7 +2808,7 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
         *(unsigned int *)(v8 + 115) = *(unsigned int *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 115); /*0x5c4dca*/
         *(unsigned int *)(v8 + 119) = *(unsigned int *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 119); /*0x5c4dd6*/
         *(unsigned int *)(v8 + 123) = *(unsigned int *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 123); /*0x5c4deb*/
-        Network::GetAddress((Network *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 40), &v10, (int)v11, v9); /*0x5c4dfd*/
+        ((Network *)((Network *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 40)))->GetAddress(&v10, (int)v11, v9); /*0x5c4dfd*/
         NetworkID::Assign((NetworkID *)(v8 + 40), &v10, (int)v11, v9[0]); /*0x5c4e14*/
         if ( dword_A8DA84 < dword_A8DA7C /*0x5c4e50*/
           || (byte_A8DA81 || !dword_A8DA7C)

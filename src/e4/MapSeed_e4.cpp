@@ -69,12 +69,12 @@ int MapSeed::CheckName(void *a1)
   String v8; // [esp+4h] [ebp-Ch] BYREF
   char *v9; // [esp+Ch] [ebp-4h] BYREF
 
-  String::AssignFromPtr(&v8, (const char **)this); /*0x79c52b*/
+  ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x79c52b*/
   String::ToLower(&v8); /*0x79c534*/
   if ( !String::Length((String *)this) /*0x79c5aa*/
-    || (v7 = String::ToLowerCopy((String *)&g_WindowManager.__pad_EC[684], &v9),
-        v2 = String::ToLowerCopy(&v8, (char **)&v8.m_3[1]),
-        v3 = String::Compare((String *)v2, (const char **)v7),
+    || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy(&v9),
+        v2 = ((String *)(&v8))->ToLowerCopy((char **)&v8.m_3[1]),
+        v3 = ((String *)((String *)v2))->Compare((const char **)v7),
         DeleteAndZero((ObjectClass *)&v8.m_3[1]),
         DeleteAndZero((ObjectClass *)&v9),
         v3)
@@ -98,9 +98,9 @@ LABEL_12:
       {
         unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager.__pad_0 ) /*0x79c5e1*/
-          String::Reassign((String *)&v8.m_3[1], (const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
+          ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
         String::ToLower((String *)&v8.m_3[1]); /*0x79c5fa*/
-        if ( (uint8_t)String::Compare((String *)&v8.m_3[1], (const char **)&v8) ) /*0x79c608*/
+        if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
         DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager.__pad_0 ) /*0x79c622*/
@@ -134,7 +134,7 @@ AbstractClass * * MapSeed::InsertName()
 
   if ( (uint8_t)MapSeed::CheckName(this) ) /*0x79c656*/
   {
-    String::AssignFromPtr((String *)&v11, (const char **)this); /*0x79c668*/
+    ((String *)((String *)&v11))->AssignFromPtr((const char **)this); /*0x79c668*/
     v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c66d*/
     v3 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c672*/
     if ( *(int *)g_WindowManager.__pad_0 >= (int)g_WindowManager.Array_field_0x4 ) /*0x79c67e*/
@@ -158,7 +158,7 @@ AbstractClass * * MapSeed::InsertName()
     v4 = (String *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3); /*0x79c6d8*/
     if ( v4 ) /*0x79c6dd*/
     {
-      String::AssignFromPtr(v4, &v11); /*0x79c6e4*/
+      ((String *)(v4))->AssignFromPtr(&v11); /*0x79c6e4*/
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
     }
     *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
@@ -185,7 +185,7 @@ AbstractClass * * MapSeed::InsertName()
     v7 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
-      String::AssignFromPtr(v7, &v11); /*0x79c76b*/
+      ((String *)(v7))->AssignFromPtr(&v11); /*0x79c76b*/
       v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c770*/
     }
     *(unsigned int *)&stru_B76900.needsRedraw = v5 + 1; /*0x79c776*/
@@ -212,7 +212,7 @@ AbstractClass * * MapSeed::InsertName()
     v10 = (String *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v9); /*0x79c7e6*/
     if ( v10 ) /*0x79c7eb*/
     {
-      String::AssignFromPtr(v10, &v11); /*0x79c7f2*/
+      ((String *)(v10))->AssignFromPtr(&v11); /*0x79c7f2*/
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
@@ -230,7 +230,7 @@ LABEL_33:
     {
       if ( *(int *)&stru_B76900.needsRedraw > 0 ) /*0x79c83e*/
       {
-        String::Reassign((String *)&g_WindowManager.__pad_14[16], (const char **)stru_B76900.parachute); /*0x79c84b*/
+        ((String *)((String *)&g_WindowManager.__pad_14[16]))->Reassign((const char **)stru_B76900.parachute); /*0x79c84b*/
         DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x79c857*/
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/

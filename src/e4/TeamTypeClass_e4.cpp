@@ -625,7 +625,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   int v9; // eax
   int v10; // esi
 
-  if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, aP1) ) /*0x6f1559*/
+  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI(aP1) ) /*0x6f1559*/
     return 0; /*0x6f185b*/
   v3 = *((unsigned int *)this + 49); /*0x6f1566*/
   v4 = -1; /*0x6f156d*/
@@ -861,28 +861,28 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   int v21; // esi
   int v22; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6f1c89*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6f1c89*/
   Power::TimerProcess(*((unsigned int *)this + 39)); /*0x6f1c97*/
   LOBYTE(v3) = *((unsigned char *)this + 168); /*0x6f1c9c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6f1ca5*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6f1ca5*/
   LOBYTE(v4) = *((unsigned char *)this + 169); /*0x6f1caa*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x6f1cb3*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x6f1cb3*/
   LOBYTE(v5) = *((unsigned char *)this + 170); /*0x6f1cb8*/
-  Power::FlagProcess((Power *)a2, v5); /*0x6f1cc1*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x6f1cc1*/
   LOBYTE(v6) = *((unsigned char *)this + 171); /*0x6f1cc6*/
-  Power::FlagProcess((Power *)a2, v6); /*0x6f1ccf*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x6f1ccf*/
   LOBYTE(v7) = *((unsigned char *)this + 172); /*0x6f1cd4*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x6f1cdd*/
+  v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x6f1cdd*/
   LOBYTE(v8) = *((unsigned char *)this + 173); /*0x6f1ce2*/
-  Power::FlagProcess((Power *)a2, v8); /*0x6f1ceb*/
+  ((Power *)((Power *)a2))->FlagProcess(v8); /*0x6f1ceb*/
   LOBYTE(v9) = *((unsigned char *)this + 174); /*0x6f1cf0*/
-  Power::FlagProcess((Power *)a2, v9); /*0x6f1cf9*/
+  ((Power *)((Power *)a2))->FlagProcess(v9); /*0x6f1cf9*/
   LOBYTE(v10) = *((unsigned char *)this + 175); /*0x6f1cfe*/
-  v11 = Power::FlagProcess((Power *)a2, v10); /*0x6f1d07*/
+  v11 = ((Power *)((Power *)a2))->FlagProcess(v10); /*0x6f1d07*/
   LOBYTE(v11) = *((unsigned char *)this + 176); /*0x6f1d0c*/
-  Power::FlagProcess((Power *)a2, v11); /*0x6f1d15*/
+  ((Power *)((Power *)a2))->FlagProcess(v11); /*0x6f1d15*/
   LOBYTE(v12) = *((unsigned char *)this + 177); /*0x6f1d1a*/
-  Power::FlagProcess((Power *)a2, v12); /*0x6f1d23*/
+  ((Power *)((Power *)a2))->FlagProcess(v12); /*0x6f1d23*/
   Power::TimerProcess(*((unsigned int *)this + 45)); /*0x6f1d31*/
   Power::TimerProcess(*((unsigned int *)this + 46)); /*0x6f1d3f*/
   Power::TimerProcess(*((unsigned int *)this + 47)); /*0x6f1d4d*/
@@ -926,7 +926,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
 }
 // 0x6F1FA0
 namespace gamemd {
-int TeamTypeClass::ProcessTaskForce(void *a1)
+int TeamTypeClass::ProcessTaskForce()
 {
 
   int v2; // edi

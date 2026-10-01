@@ -152,7 +152,7 @@ struct VoxelAnimType {
     unsigned int u32_106;
     unsigned int u32_5205;
 // --- flat members (END) ---
-    AbstractClass * * LoadSection(const char * a2, int a3, void *a3_2);  // 0x5F7A90
+    AbstractClass * * LoadSection(const char *a2, int a3);  // 0x5F7A90
     AbstractClass * * LoadBarrel(const char * a2, int a3);  // 0x5F7DB0
     int LoadAnim(void *a1_1);  // 0x5F8110
 };

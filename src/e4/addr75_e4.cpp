@@ -163,7 +163,7 @@ void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   if ( (*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
   LABEL_7:
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, aP0, v26); /*0x750bb9*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(aP0, v26); /*0x750bb9*/
   v11 = (double)v26[0] - v23; /*0x750bc2*/
   v19 = v11; /*0x750bc6*/
   IDA_LOWORD(v12) = Math::RoundToInt(v11); /*0x750bca*/
@@ -352,7 +352,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
               dword_B1D4C4 = 0; /*0x752532*/
             }
             if ( g_InfantryDrawState ) /*0x752544*/
-              Audio::Release(g_InfantryDrawState); /*0x752546*/
+              ((Audio *)(g_InfantryDrawState))->Release(); /*0x752546*/
             this->ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
@@ -710,7 +710,7 @@ int E4Recv_7531A0::EVA_LoadINI()
     dword_B1D4C4 = 0; /*0x7531b1*/
   }
   if ( g_InfantryDrawState ) /*0x7531c3*/
-    Audio::Release(g_InfantryDrawState); /*0x7531c5*/
+    ((Audio *)(g_InfantryDrawState))->Release(); /*0x7531c5*/
   ThemeClass::ClearQueues(); /*0x7531ca*/
   for ( result = g_InfantrySelectState; g_InfantrySelectState > 0; result = g_InfantrySelectState ) /*0x7531d6*/
   {
@@ -938,7 +938,7 @@ AbstractClass * * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, un
       v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
-        Voxel::ProcessColor(**v16, *v16, &v33); /*0x754402*/
+        ((Voxel *)(**v16))->ProcessColor(*v16, &v33); /*0x754402*/
         --v16; /*0x754407*/
         --v17; /*0x75440a*/
       }
@@ -953,7 +953,7 @@ AbstractClass * * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, un
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
-        Voxel::ProcessColor(**v19, *v19, &v33); /*0x754424*/
+        ((Voxel *)(**v19))->ProcessColor(*v19, &v33); /*0x754424*/
         ++v18; /*0x75442e*/
         ++v19; /*0x75442f*/
       }
@@ -2804,7 +2804,7 @@ void ThemeClass_Stop(char a1)
     dword_B1D4C4 = 0; /*0x7529b3*/
   }
   if ( g_InfantryDrawState ) /*0x7529c5*/
-    Audio::Release(g_InfantryDrawState); /*0x7529c7*/
+    ((Audio *)(g_InfantryDrawState))->Release(); /*0x7529c7*/
   if ( a1 ) /*0x7529cf*/
     ThemeClass::ClearQueues(); /*0x7529d1*/
 }
@@ -2815,7 +2815,7 @@ namespace gamemd {
 void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ()
 {
   if ( dword_B1D4D8 ) /*0x752ca8*/
-    Audio::Release(dword_B1D4D8); /*0x752caa*/
+    ((Audio *)(dword_B1D4D8))->Release(); /*0x752caa*/
 }
 } // namespace gamemd
 
@@ -2879,7 +2879,7 @@ int sub_7539D0()
 namespace gamemd {
 void sub_753A30()
 {
-  Vector::Clear((int)&stru_B2D93C); /*0x753a35*/
+  ((Vector *)((int)&stru_B2D93C))->Clear(); /*0x753a35*/
   dword_B2D928 = (int)&Surface_Vtable; /*0x753a3a*/
 }
 } // namespace gamemd
@@ -2903,7 +2903,7 @@ int sub_753A50()
 namespace gamemd {
 void sub_753AB0()
 {
-  Vector::Clear((int)&stru_B2D804); /*0x753ab5*/
+  ((Vector *)((int)&stru_B2D804))->Clear(); /*0x753ab5*/
   dword_B2D7F0 = (int)&Surface_Vtable; /*0x753aba*/
 }
 } // namespace gamemd

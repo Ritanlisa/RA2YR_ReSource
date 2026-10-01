@@ -236,7 +236,7 @@ char File::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 }
 // 0x5BD570
 namespace gamemd {
-unsigned int * File::LoadFileHVA(int a2, void *a2_2)
+unsigned int * File::LoadFileHVA(int a2)
 {
 
   this->__pad_0[0] = (unsigned int)((unsigned int *)(0));
@@ -337,7 +337,7 @@ LABEL_15:
 }
 // 0x625AF0
 namespace gamemd {
-File * * File::LoadPaletteData(ObjectClass * aP1, void *a2_1)
+File * * File::LoadPaletteData(unsigned short *aP1)
 {
 
   u_short v3; // cx
@@ -464,7 +464,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 LABEL_42:
       *(unsigned int *)v23.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x734cad*/
       v25 = 0; /*0x734cbc*/
-      Vector::Clear((int)v24); /*0x734cc3*/
+      ((Vector *)((int)v24))->Clear(); /*0x734cc3*/
       *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
       return 1; /*0x734ce8*/
@@ -594,7 +594,7 @@ LABEL_31:
 LABEL_43:
   *(unsigned int *)v23.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
-  Vector::Clear((int)v24); /*0x734cff*/
+  ((Vector *)((int)v24))->Clear(); /*0x734cff*/
   *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734d08*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
   return 0; /*0x734cde*/
@@ -603,7 +603,7 @@ LABEL_43:
 }
 // 0x755CD0
 namespace gamemd {
-unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_2)
+unsigned int * File::LoadFileVXL(int a2, int a3)
 {
 
   this->__pad_0[0] = 0; /*0x755cd9*/
@@ -653,7 +653,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   *(unsigned int *)this = (unsigned int)(&vt_WDTState); /*0x76acbe*/
   v3 = (File *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = (gamemd::u_short *)(File::LoadPaletteData(v3, aP1)); /*0x76acdc*/
+    PaletteData = (gamemd::u_short *)(((File *)(v3))->LoadPaletteData(aP1)); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
   v5 = (char *)((unsigned char *)this + 28); /*0x76ace6*/

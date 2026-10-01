@@ -74,18 +74,18 @@ LABEL_4:
         goto LABEL_18; /*0x416ddc*/
       if ( *((unsigned int *)this + 70) ) /*0x416de2*/
         goto LABEL_18; /*0x416de2*/
-      if ( !(uint8_t)Object::IsAlliedWithObjectHouse(*((Object **)this + 135), (int)v6) ) /*0x416df7*/
+      if ( !(uint8_t)((Object *)(*((Object **)this + 135)))->IsAlliedWithObjectHouse((int)v6) ) /*0x416df7*/
         goto LABEL_18; /*0x416df7*/
       if ( (v6[20] & 1) != 0 ) /*0x416e0e*/
       {
         v7 = (Object *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 60))(v6); /*0x416e15*/
-        if ( !(uint8_t)Object::IsAlliedWithObjectHouse(v7, (int)this) ) /*0x416e1a*/
+        if ( !(uint8_t)((Object *)(v7))->IsAlliedWithObjectHouse((int)this) ) /*0x416e1a*/
           goto LABEL_18; /*0x416e1a*/
       }
       if ( (*(int (**)(unsigned char *))(*(unsigned int *)v6 + 44))(v6) != 1 ) /*0x416e31*/
         goto LABEL_18; /*0x416e31*/
       this->Debug::Log(); /*0x416e3c*/
-      if ( (unsigned char *)Team::GetMember((Team *)this, 0) != v6 ) /*0x416e4f*/
+      if ( (unsigned char *)((Team *)((Team *)this))->GetMember(0) != v6 ) /*0x416e4f*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x416e57*/
       if ( (*(int (**)(Carryall *, int, unsigned char *))(this->Carryall_field_00 + 632))(this, 2, v6) != 1 ) /*0x416e6d*/
       {
@@ -139,7 +139,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
       v13 = *((unsigned int *)this + 361); /*0x416fa3*/
       if ( v13 /*0x416fc7*/
         && (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13) != 11
-        && Team::GetMember((Team *)this, 0) != *((unsigned int *)this + 361) )
+        && ((Team *)((Team *)this))->GetMember(0) != *((unsigned int *)this + 361) )
       {
         this->Debug::Log(); /*0x416fce*/
         *((unsigned int *)this + 47) = 0; /*0x416fd6*/
@@ -219,11 +219,11 @@ LABEL_44:
         v27[2] = v21; /*0x417201*/
         v28[1] = *((unsigned int *)this + 40); /*0x41720c*/
         v28[2] = v22; /*0x417216*/
-        v26 = BYTE1(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v27)->flags[0]) & 1; /*0x41722f*/
-        v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v28)); /*0x417236*/
+        v26 = BYTE1(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v27)->flags[0]) & 1; /*0x41722f*/
+        v23 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28)); /*0x417236*/
         Building = CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
-          && Building == (unsigned char *)Team::GetMember((Team *)this, 0)
+          && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)
           && (this->Debug::Log(), (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
         {
           this->Debug::Log(); /*0x417277*/

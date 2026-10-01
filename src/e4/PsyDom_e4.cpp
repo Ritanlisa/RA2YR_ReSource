@@ -100,7 +100,7 @@ void PsyDom::Fire()
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/
   v10 = ((unsigned int *)(dword_7ED3D0))[v9]; /*0x53b186*/
-  EventClass::resetEvent((EventClass *)&v36, 0, 0); /*0x53b193*/
+  ((EventClass *)((EventClass *)&v36))->resetEvent(0, 0); /*0x53b193*/
   v36 = &vt_DynamicVectorClass; /*0x53b19a*/
   v41 = 10; /*0x53b1a2*/
   v40 = 0; /*0x53b1aa*/
@@ -173,7 +173,7 @@ void PsyDom::Fire()
     }
     while ( v30 );
   }
-  if ( !(uint8_t)House::IsCurrentPlayer(PsyDom_Owner) ) /*0x53b39d*/
+  if ( !(uint8_t)((House *)(PsyDom_Owner))->IsCurrentPlayer() ) /*0x53b39d*/
   {
     for ( j = v40 - 1; j >= 0; --j ) /*0x53b3af*/
       (*(void (**)(unsigned int, int, unsigned int))(**((unsigned int **)Block + j) + 488))(*((unsigned int *)Block + j), 15, 0); /*0x53b3bd*/

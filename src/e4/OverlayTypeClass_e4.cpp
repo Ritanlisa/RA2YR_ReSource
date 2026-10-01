@@ -33,7 +33,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   int v5; // ecx
   OverlayTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x5fe259*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x5fe259*/
   this->Strength = 1; /*0x5fe265*/
   *(unsigned int *)&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
@@ -135,7 +135,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x5fe783*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x5fe78b*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                                  (OverlayTypeClass *)aP1,
@@ -303,7 +303,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       ((unsigned int *)this)[0] = 1; /*0x5feeb9*/
     *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
-    Vector::Clear((int)v5); /*0x5feed4*/
+    ((Vector *)((int)v5))->Clear(); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
     return v3; /*0x5feeea*/
@@ -317,7 +317,7 @@ unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
 
   void *v3; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x6440a9*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
   *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
   *((unsigned int *)this + 174) = -1; /*0x6440bf*/
@@ -496,21 +496,21 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   int v6; // ecx
   int v7; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->Strength); /*0x5fea83*/
   Power::TimerProcess(*(unsigned int *)&this->Wall); /*0x5fea91*/
   LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
-  Power::FlagProcess((Power *)a2, v3); /*0x5fea9f*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x5fea9f*/
   LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x5feaad*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x5feaad*/
   LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
-  Power::FlagProcess((Power *)a2, v5); /*0x5feabb*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x5feabb*/
   LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
-  Power::FlagProcess((Power *)a2, v6); /*0x5feac9*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x5feac9*/
   LOBYTE(v7) = this->IsRubble; /*0x5feace*/
-  return Power::FlagProcess((Power *)a2, v7); /*0x5feadc*/
+  return ((Power *)((Power *)a2))->FlagProcess(v7); /*0x5feadc*/
 
 }
 // 0x5FEC10

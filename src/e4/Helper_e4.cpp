@@ -36,7 +36,7 @@ int sub_6F2040()
   result = dword_A8ECB0; /*0x6f2040*/
   for ( i = 0; i < dword_A8ECB0; ++i ) /*0x6f204a*/
   {
-    TeamTypeClass::ProcessTaskForce(*((unsigned int *)dword_A8ECA4 + i)); /*0x6f2054*/
+    ((TeamTypeClass *)(*((unsigned int *)dword_A8ECA4 + i)))->ProcessTaskForce(); /*0x6f2054*/
     result = dword_A8ECB0; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
@@ -74,7 +74,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
   LOBYTE(v6) = XSurface::BlitPart(&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
-  Vector::Clear((int)v13); /*0x437272*/
+  ((Vector *)((int)v13))->Clear(); /*0x437272*/
   return v6; /*0x4371e7*/
 
 }

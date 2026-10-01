@@ -146,7 +146,7 @@ struct RandomMap {
     unsigned int *__pad_4C;
 // --- flat members (END) ---
     int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x486790
-    unsigned int * TerrainTileDataConstructor(int a2, void *a2_2);  // 0x58BF70
+    unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70
     int GenerateTerrain(void *a1_1);  // 0x58C800
     MapClass * * ExpandTerrainCells(int a2, int a3);  // 0x58D1C0
     unsigned int * TerrainAlloc(void *a1_1);  // 0x58D410

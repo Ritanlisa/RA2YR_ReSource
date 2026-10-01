@@ -294,9 +294,9 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     return 0; /*0x4f1cda*/
   p_nextObject = (int *)a3; /*(unsigned int)(0x4f1cef)*/
   ((MSEngine *)((MSEngine *)((unsigned int)(v7)+ 4)))->Construct(); /*0x4f1cf3*/
-  String::Assign((String *)(v8 + 76), aTitlePcx); /*0x4f1d02*/
+  ((String *)((String *)(v8 + 76)))->Assign(aTitlePcx); /*0x4f1d02*/
   v38.referenceCount = (void *)((unsigned int)(v8)+ 80); /*0x4f1d0f*/
-  String::Assign((String *)((unsigned int)(v8)+ 80), g_INI_Key_Intro); /*0x4f1d13*/
+  ((String *)((String *)((unsigned int)(v8)+ 80)))->Assign(g_INI_Key_Intro); /*0x4f1d13*/
   v9 = (void *)((unsigned int)(v8)+ 88); /*0x4f1d18*/
   *(unsigned int *)((unsigned int)(v8)+ 84) = 0; /*0x4f1d1b*/
   sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
@@ -305,8 +305,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   *(unsigned int *)((unsigned int)(v8)+ 104) = 0; /*0x4f1d34*/
   *(unsigned int *)v8 = (unsigned int)((void*)&GraphicMenu_vftable); /*0x4f1d3b*/
   unknown_libname_73(&v38.vtable2); /*0x4f1d42*/
-  String::Assign((String *)&v38.vtable3, &g_INI_DefaultBuffer); /*0x4f1d50*/
-  String::Assign((String *)&v38, aBackground); /*0x4f1d5e*/
+  ((String *)((String *)&v38.vtable3))->Assign(&g_INI_DefaultBuffer); /*0x4f1d50*/
+  ((String *)((String *)&v38))->Assign(aBackground); /*0x4f1d5e*/
   v10 = INIClass::ReadString( /*0x4f1d86*/
           (INIClass *)v38.uniqueId,
           (char **)v38.abstractFlags,
@@ -327,7 +327,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     v13 = (*(int (**)(unsigned int *, unsigned int, int *))(*v12 + 20))(v12, 0, p_nextObject); /*0x4f1df8*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
-    Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
+    ((Vector *)((int)&v38.location[1]))->Clear(); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1e1a*/
     if ( v13 ) /*0x4f1e21*/
@@ -369,7 +369,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     v16 = (*(int (**)(unsigned int *, unsigned int))(*v15 + 20))(v15, 0); /*0x4f1e89*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1e8b*/
     v39 = 0; /*0x4f1e93*/
-    Vector::Clear((int)&v38.location[1]); /*0x4f1e9e*/
+    ((Vector *)((int)&v38.location[1]))->Clear(); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1eaf*/
     if ( v16 ) /*0x4f1eb6*/
@@ -395,7 +395,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
       if ( v18 ) /*0x4f1f1e*/
       {
         v19 = String::GetOrEmpty((String *)&v38.referenceCount); /*0x4f1f24*/
-        String::Assign((String *)&v38.vtable2, v19); /*0x4f1f2e*/
+        ((String *)((String *)&v38.vtable2))->Assign(v19); /*0x4f1f2e*/
         v20 = 1; /*0x4f1f33*/
         Config = UI_Load(v18, (const char **)&v38.vtable2, (unsigned int)(v8)+ 28, 1); /*0x4f1f49*/
       }
@@ -410,8 +410,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     goto LABEL_18; /*0x4f1f66*/
   }
   LABEL_22:
-  String::Assign((String *)&v38, &g_INI_DefaultBuffer); /*0x4f1fab*/
-  String::Assign((String *)&v38.vtable1, g_INI_Key_Theme); /*0x4f1fc2*/
+  ((String *)((String *)&v38))->Assign(&g_INI_DefaultBuffer); /*0x4f1fab*/
+  ((String *)((String *)&v38.vtable1))->Assign(g_INI_Key_Theme); /*0x4f1fc2*/
   abstractFlags = (char **)v38.abstractFlags; /*0x4f1fcf*/
   uniqueId = (bool *)v38.uniqueId; /*0x4f1fd3*/
   v27 = INIClass::ReadString( /*0x4f1fec*/
@@ -423,8 +423,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f1fef*/
   DeleteAndZero(&v38); /*0x4f1ff8*/
   if ( v27 ) /*0x4f1fff*/
-    String::Reassign((String *)v38.referenceCount, (const char **)&v38.vtable2); /*0x4f200a*/
-  String::Assign((String *)&v38.vtable1, aItemmax); /*0x4f2018*/
+    ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
+  ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
   Int = INIClass::ReadInt(uniqueId, abstractFlags, (char **)&v38.vtable1, 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
@@ -434,8 +434,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
     do /*0x4f210e*/
     {
       sprintf((char *const)v38.ambientSoundController, "%d", v29); /*0x4f2050*/
-      String::Assign((String *)&v38, &g_INI_DefaultBuffer); /*0x4f2061*/
-      String::Assign((String *)&v38.vtable1, (const char *)v38.ambientSoundController); /*0x4f206f*/
+      ((String *)((String *)&v38))->Assign(&g_INI_DefaultBuffer); /*0x4f2061*/
+      ((String *)((String *)&v38.vtable1))->Assign((const char *)v38.ambientSoundController); /*0x4f206f*/
       v30 = INIClass::ReadString( /*0x4f2099*/
               (INIClass *)v38.uniqueId,
               (char **)v38.abstractFlags,
@@ -514,7 +514,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x4f2364*/
   v5 = *((unsigned int *)this + 21); /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
-    MSEngine::ProcessEvents((MSEngine *)((char *)this + 4), v5, 300000); /*0x4f2379*/
+    ((MSEngine *)((MSEngine *)((char *)this + 4)))->ProcessEvents(v5, 300000); /*0x4f2379*/
   v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))DSurface_Alternate->DSurface_field_0x0 /*0x4f238e*/
         + 30))(
          DSurface_Alternate,
@@ -529,7 +529,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     v7 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4f23ce*/
     v18[0] = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4f23db*/
     v18[1] = v7; /*0x4f23df*/
-    if ( EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]) ) /*0x4f23e3*/
+    if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x4f23e3*/
     {
       v8 = EventQueue::Read(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x4f23f7*/
       v9 = v8; /*0x4f23ff*/
@@ -617,7 +617,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           State::SetIfChanged(v13, 1); /*0x4f25e9*/
       }
     }
-    GameClass::FrameLoop((GameClass *)((char *)this + 4), 1); /*0x4f25f2*/
+    ((GameClass *)((GameClass *)((char *)this + 4)))->FrameLoop(1); /*0x4f25f2*/
   }
   while ( !v17 ); /*0x4f25fd*/
   if ( v4 ) /*0x4f2605*/
@@ -675,23 +675,23 @@ void ParseINIAnimGadgetDefinition()
   int v26; // [esp+3Ch] [ebp-8h]
   int v27; // [esp+40h] [ebp-4h]
 
-  String::Assign(&v20, ValueName); /*0x4f2c83*/
+  ((String *)(&v20))->Assign(ValueName); /*0x4f2c83*/
   Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.q4 = Int; /*0x4f2c9d*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( Int == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&v19); /*0x4f2cba*/
-  String::Assign(&v21, &g_INI_DefaultBuffer); /*0x4f2cc8*/
-  String::Assign(&v20, g_INI_Key_Image); /*0x4f2cd6*/
+  ((String *)(&v21))->Assign(&g_INI_DefaultBuffer); /*0x4f2cc8*/
+  ((String *)(&v20))->Assign(g_INI_Key_Image); /*0x4f2cd6*/
   INIClass::ReadString(a2, Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.q4); /*0x4f2d29*/
-    String::Assign(&v20, &g_INI_DefaultBuffer); /*0x4f2d37*/
-    String::Assign(&v21, g_INI_Key_Palette); /*0x4f2d45*/
+    ((String *)(&v20))->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
+    ((String *)(&v21))->Assign(g_INI_Key_Palette); /*0x4f2d45*/
     INIClass::ReadString(a2, Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
@@ -700,7 +700,7 @@ void ParseINIAnimGadgetDefinition()
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
-      String::Assign(&v21, aOrigin); /*0x4f2db1*/
+      ((String *)(&v21))->Assign(aOrigin); /*0x4f2db1*/
       CoordPair = INIClass::GetCoordPair(a2, &v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair[1]; /*0x4f2dcf*/
@@ -716,7 +716,7 @@ void ParseINIAnimGadgetDefinition()
       v23 += v14; /*0x4f2e0d*/
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
-      String::Assign((String *)&a4, aActiverect); /*0x4f2e19*/
+      ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f2e19*/
       Rect = INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
@@ -727,7 +727,7 @@ void ParseINIAnimGadgetDefinition()
       v25 += vtable0[1]; /*0x4f2e77*/
       v16 = (uint8_t *)String::GetOrEmpty_Alt((String *)Source); /*0x4f2e7b*/
       v21.__pad_0[0] = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
-      String::Assign((String *)&a4, g_INI_Key_Rate); /*0x4f2e95*/
+      ((String *)((String *)&a4))->Assign(g_INI_Key_Rate); /*0x4f2e95*/
       v17 = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
       v18 = (GraphicMenuAnimItem *)RA2_OPNEW(0x28u); /*0x4f2eb6*/
@@ -788,7 +788,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   int v28; // [esp+48h] [ebp-8h]
   int v29; // [esp+4Ch] [ebp-4h]
 
-  String::Assign(&v22, ValueName); /*0x4f3153*/
+  ((String *)(&v22))->Assign(ValueName); /*0x4f3153*/
   Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v22, -1); /*0x4f3167*/
   *(unsigned int *)&v22.q4 = Int; /*0x4f316d*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f3171*/
@@ -797,7 +797,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   v8 = 0; /*0x4f3187*/
   v23 = 0; /*0x4f3192*/
   v24 = 0; /*0x4f3196*/
-  String::Assign(&v22, aOrigin); /*0x4f319a*/
+  ((String *)(&v22))->Assign(aOrigin); /*0x4f319a*/
   CoordPair = INIClass::GetCoordPair(a2, v25, (char *)Source, (char **)&v22, &v23); /*0x4f31b1*/
   v10 = *CoordPair; /*0x4f31b6*/
   v11 = CoordPair[1]; /*0x4f31b8*/
@@ -813,7 +813,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   v24 += v14; /*0x4f31f6*/
   v28 = 0; /*0x4f31fa*/
   v29 = 0; /*0x4f31fe*/
-  String::Assign((String *)&a4, aActiverect); /*0x4f3202*/
+  ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f3202*/
   Rect = INIClass::GetRect(a2, v25, Source, (char **)&a4, &v26); /*0x4f3219*/
   v26 = *Rect; /*0x4f3220*/
   v27 = Rect[1]; /*0x4f3227*/
@@ -825,30 +825,30 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   unknown_libname_73(&v21); /*0x4f325f*/
   unknown_libname_73(&v20); /*0x4f3268*/
   unknown_libname_73(&v19); /*0x4f3271*/
-  String::Assign(&v22, &g_INI_DefaultBuffer); /*0x4f327f*/
-  String::Assign((String *)&a4, g_INI_Key_Image); /*0x4f328d*/
+  ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f327f*/
+  ((String *)((String *)&a4))->Assign(g_INI_Key_Image); /*0x4f328d*/
   INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v21); /*0x4f32a4*/
   DeleteAndZero(&a4); /*0x4f32ad*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f32b6*/
-  String::Assign(&v22, &g_INI_DefaultBuffer); /*0x4f32c4*/
-  String::Assign((String *)&a4, aHighlighted); /*0x4f32d2*/
+  ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f32c4*/
+  ((String *)((String *)&a4))->Assign(aHighlighted); /*0x4f32d2*/
   INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v20); /*0x4f32e9*/
   DeleteAndZero(&a4); /*0x4f32f2*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f32fb*/
-  String::Assign(&v22, &g_INI_DefaultBuffer); /*0x4f3309*/
-  String::Assign((String *)&a4, aDisabled); /*0x4f3317*/
+  ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f3309*/
+  ((String *)((String *)&a4))->Assign(aDisabled); /*0x4f3317*/
   INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v19); /*0x4f332e*/
   DeleteAndZero(&a4); /*0x4f3337*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f3340*/
   unknown_libname_73(&v18); /*0x4f3349*/
-  String::Assign(&v22, &g_INI_DefaultBuffer); /*0x4f3357*/
-  String::Assign((String *)&a4, aHighlightsound); /*0x4f3365*/
+  ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f3357*/
+  ((String *)((String *)&a4))->Assign(aHighlightsound); /*0x4f3365*/
   INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v18); /*0x4f337c*/
   DeleteAndZero(&a4); /*0x4f3385*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f338e*/
   unknown_libname_73(&v17); /*0x4f3397*/
-  String::Assign(&v22, &g_INI_DefaultBuffer); /*0x4f33a5*/
-  String::Assign((String *)&a4, aSelectvq); /*0x4f33b3*/
+  ((String *)(&v22))->Assign(&g_INI_DefaultBuffer); /*0x4f33a5*/
+  ((String *)((String *)&a4))->Assign(aSelectvq); /*0x4f33b3*/
   INIClass::ReadString(a2, Source, (char **)&a4, (char **)&v22, (int)&v17); /*0x4f33ca*/
   DeleteAndZero(&a4); /*0x4f33d3*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f33dc*/
@@ -915,7 +915,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
   if ( String::Length(v15) && (aP2 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
-    String::Assign((char **)&aP1, aHighlightsound); /*0x4f34df*/
+    ((String *)((char **)&aP1))->Assign(aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
     v16 = Audio::ParseVolume((int)aP2, (const char **)&aP1, v15); /*0x4f34f3*/
   }
@@ -926,7 +926,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   *((unsigned int *)this + 12) = v16; /*0x4f34ff*/
   if ( (v10 & 1) != 0 ) /*0x4f3502*/
     DeleteAndZero((void **)&aP1); /*0x4f3508*/
-  String::Reassign((char **)((char *)this + 52), a9); /*0x4f3515*/
+  ((String *)((char **)((char *)this + 52)))->Reassign(a9); /*0x4f3515*/
   v17 = aP6; /*0x4f351a*/
   v18 = String::Length(aP6); /*0x4f3520*/
   v19 = a3; /*0x4f3525*/
@@ -986,8 +986,8 @@ void sub_4F38B0()
 
   v16 = 0; /*0x4f38be*/
   unknown_libname_73(&v13); /*0x4f38c6*/
-  String::Assign(&v15, &g_INI_DefaultBuffer); /*0x4f38d4*/
-  String::Assign(&v14, g_INI_Key_Type); /*0x4f38e2*/
+  ((String *)(&v15))->Assign(&g_INI_DefaultBuffer); /*0x4f38d4*/
+  ((String *)(&v14))->Assign(g_INI_Key_Type); /*0x4f38e2*/
   INIClass::ReadString(a2, Source, &v14, &v15, (int)&v13); /*0x4f38f9*/
   DeleteAndZero((void **)&v14); /*0x4f3902*/
   DeleteAndZero((void **)&v15); /*0x4f390b*/
@@ -1010,8 +1010,8 @@ void sub_4F38B0()
   if ( v7 ) /*0x4f3983*/
   {
     unknown_libname_73(&a4); /*0x4f398e*/
-    String::Assign(&v15, &g_INI_DefaultBuffer); /*0x4f399c*/
-    String::Assign(&a3, aSelectsound); /*0x4f39aa*/
+    ((String *)(&v15))->Assign(&g_INI_DefaultBuffer); /*0x4f399c*/
+    ((String *)(&a3))->Assign(aSelectsound); /*0x4f39aa*/
     v8 = INIClass::ReadString(a2, Source, &a3, &v15, (int)&a4) > 0; /*0x4f39cc*/
     DeleteAndZero((void **)&a3); /*0x4f39cf*/
     DeleteAndZero((void **)&v15); /*0x4f39d8*/
@@ -1020,7 +1020,7 @@ void sub_4F38B0()
       v9 = RA2_OPNEW(0x10u); /*0x4f39e8*/
       if ( v9 ) /*0x4f39ef*/
       {
-        String::Assign(&a3, aSelectsound); /*0x4f39fa*/
+        ((String *)(&a3))->Assign(aSelectsound); /*0x4f39fa*/
         v10 = 1; /*0x4f3a0b*/
         v11 = Audio::ParseVolume(v9, (const char **)&a3, (const char **)&a4); /*0x4f3a10*/
       }
@@ -1070,14 +1070,14 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
   char *v9; // [esp+Ch] [ebp-Ch] BYREF
   String v10; // [esp+10h] [ebp-8h] BYREF
 
-  v4 = String::Assign((String *)&v10.q4, ValueName); /*0x4f3b95*/
+  v4 = ((String *)((String *)&v10.q4))->Assign(ValueName); /*0x4f3b95*/
   Int = INIClass::ReadInt((bool *)edx0->__pad_0, a1, v4, -1); /*0x4f3ba7*/
   DeleteAndZero((ObjectClass *)&v10.m_3[1]); /*0x4f3ba9*/
   if ( Int == -1 ) /*0x4f3bb1*/
     return 0; /*0x4f3bb5*/
   unknown_libname_73(&v9); /*0x4f3bc0*/
-  String::Assign((String *)&v10.q4, &g_INI_DefaultBuffer); /*0x4f3bce*/
-  String::Assign(&v10, aKeys); /*0x4f3bdc*/
+  ((String *)((String *)&v10.q4))->Assign(&g_INI_DefaultBuffer); /*0x4f3bce*/
+  ((String *)(&v10))->Assign(aKeys); /*0x4f3bdc*/
   INIClass::ReadString(edx0, a1, (char **)&v10, (char **)&v10.q4, (int)&v9); /*0x4f3bf3*/
   DeleteAndZero((ObjectClass *)&v10); /*0x4f3bfc*/
   DeleteAndZero((ObjectClass *)&v10.m_3[1]); /*0x4f3c05*/
@@ -1104,23 +1104,23 @@ int E4Recv_4F3D40::sub_4F3D40()
   String v8; // [esp+Ch] [ebp-8h] BYREF
 
   v1 = 0; /*0x4f3d4b*/
-  String::AssignFromPtr(&v8, (const char **)this); /*0x4f3d4d*/
+  ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x4f3d4d*/
   String::ToLower(&v8); /*0x4f3d56*/
-  String::AssignFromPtr((String *)&v8.m_3[1], (const char **)&v8); /*0x4f3d64*/
+  ((String *)((String *)&v8.m_3[1]))->AssignFromPtr((const char **)&v8); /*0x4f3d64*/
   String::CopyTruncated((String *)&v8.m_3[1], 5u); /*0x4f3d6f*/
   if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aCtrl) ) /*0x4f3d7d*/
   {
     v1 = 512; /*0x4f3d8e*/
     String::Erase(&v8, 0, 5); /*0x4f3d93*/
   }
-  String::Reassign((String *)&v8.m_3[1], (const char **)&v8); /*0x4f3da1*/
+  ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)&v8); /*0x4f3da1*/
   String::CopyTruncated((String *)&v8.m_3[1], 4u); /*0x4f3dac*/
   if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aAlt) ) /*0x4f3dba*/
   {
     BYTE1(v1) |= 4u; /*0x4f3dcb*/
     String::Erase(&v8, 0, 4); /*0x4f3dce*/
   }
-  String::Reassign((String *)&v8.m_3[1], (const char **)&v8); /*0x4f3ddc*/
+  ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)&v8); /*0x4f3ddc*/
   String::CopyTruncated((String *)&v8.m_3[1], 6u); /*0x4f3de7*/
   if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aShift) ) /*0x4f3df5*/
   {
@@ -1511,7 +1511,7 @@ int sub_4F1B80()
     HashTable::DestroyHashTableINIClass(&v6); /*0x4f1c62*/
     *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x4f1c6e*/
     v9 = 0; /*0x4f1c76*/
-    Vector::Clear((int)v8); /*0x4f1c7d*/
+    ((Vector *)((int)v8))->Clear(); /*0x4f1c7d*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f1c86*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f1c8e*/
     return v4; /*0x4f1c93*/
@@ -1520,7 +1520,7 @@ int sub_4F1B80()
   {
     *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x4f1bab*/
     v9 = 0; /*0x4f1bb3*/
-    Vector::Clear((int)v8); /*0x4f1bba*/
+    ((Vector *)((int)v8))->Clear(); /*0x4f1bba*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f1bc3*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f1bcb*/
     return 0; /*0x4f1bd0*/
@@ -1681,7 +1681,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
     if ( (uint8_t)CCFileClass::Open((CCFileClass *)&((char *)&v15), 0) ) /*0x4f2f8f*/
     {
       v11 = String::GetOrEmpty_Alt((String *)a6); /*0x4f2f9a*/
-      String::Assign((String *)&v15, v11); /*0x4f2fa4*/
+      ((String *)((String *)&v15))->Assign(v11); /*0x4f2fa4*/
       *((unsigned int *)this + 9) = PaletteClass::Load((PaletteClass *)&v15); /*0x4f2fb6*/
       DeleteAndZero(&v15); /*0x4f2fb9*/
       v12 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x4f2fc0*/
@@ -1695,12 +1695,12 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   }
   ((unsigned int *)&v15)[0] = &vt_CCFileClass; /*0x4f3011*/
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
-  Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
+  ((Vector *)((int)&v15.customSound_controller[3]))->Clear(); /*0x4f3019*/
   ((unsigned int *)&v15)[0] = &off_7E1668; /*0x4f3027*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&((char *)&v15)); /*0x4f302b*/
   v15.estimatedHealth = (int)&vt_CCFileClass; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
-  Vector::Clear((int)v16); /*0x4f3045*/
+  ((Vector *)((int)v16))->Clear(); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.estimatedHealth); /*0x4f3058*/
   return (int *)this->__pad_0; /*0x4f305f*/
@@ -2235,7 +2235,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
         v5 = *(ObjectClass **)(v4 + 48); /*0x4fbd24*/
         if ( v5 != this->nextObject /*0x4fbd55*/
           && (v5 == (ObjectClass *)-1 || ((1 << (char)v5) & *((unsigned int *)this + 5602)) == 0)
-          && DynamicVector::GetOrGrow((DynamicVector *)(v4 + 21840), a2) > 0 )
+          && ((DynamicVector *)((DynamicVector *)(v4 + 21840)))->GetOrGrow(a2) > 0 )
         {
           break; /*0x4fbd55*/
         }

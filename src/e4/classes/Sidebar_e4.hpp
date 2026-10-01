@@ -116,14 +116,14 @@ struct Sidebar {
     unsigned int field_1530;
     unsigned int Debug;
 // --- flat members (END) ---
-    AbstractClass * * StartSidebarProduction(int a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5, void *a5_2);  // 0x4FA350
+    AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);  // 0x4FA350
     int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);  // 0x5007A0
     CreateTeamCommand * * ScrollSidebarSkipGame();  // 0x533F50
     TechnoClass * * CancelSidebarProductionQueue(int * Block);  // 0x636310
     void RemoveItem(int a2, void *a2_2);  // 0x63F040
-    ObjectClass * * Render(char a2, void *a2_2);  // 0x63FB20
+    ObjectClass * * Render(char a2);  // 0x63FB20
     int ActivateTab(IUnknown * aP1, void *a2_1);  // 0x6A60A0
-    AbstractClass * * FlushSidebarTooltip(char a2, void *a2_2);  // 0x6A70E0
+    AbstractClass * * FlushSidebarTooltip(char a2);  // 0x6A70E0
     char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);  // 0x6A6140
     static double UpdateProductionDisplay(...);  // C2597 interim stub
 };

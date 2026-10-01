@@ -116,7 +116,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   do /*0x679cad*/
   {
     v20->ObjectClass = v19; /*0x679c9c*/
-    MissionClass::LoadFromINI(v20, aP0); /*0x679c9e*/
+    ((MissionClass *)(v20))->LoadFromINI(aP0); /*0x679c9e*/
     v20 = (MissionClass *)((char *)v20 + 32); /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }
@@ -165,7 +165,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6a4719*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6a4719*/
   return Power::TimerProcess(*((unsigned int *)this + 42)); /*0x6a472c*/
 
 }

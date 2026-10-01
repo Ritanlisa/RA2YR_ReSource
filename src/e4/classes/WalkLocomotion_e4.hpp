@@ -177,7 +177,7 @@ struct WalkLocomotion {
     unsigned int u32_184;
     unsigned int q140;
 // --- flat members (END) ---
-    AbstractClass * * MoveTo(IUnknown * aP1, int aP3, void *a3_1);  // 0x6A01A0
+    AbstractClass * * MoveTo(unsigned int *aP1, int aP3);  // 0x6A01A0
     void ProcessCollision(char a2, void *a2_2);  // 0x6A05F0
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x6A1C80
     unsigned int * TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1);  // 0x6A3DB0

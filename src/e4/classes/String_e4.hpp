@@ -61,23 +61,23 @@ struct String {
     bool Equals(ObjectClass * aP1, void *a2_1);  // 0x4F4CE0
     unsigned int ComputeHash(void *a1_1);  // 0x5E2620
     char * Trim(void *a1_1);  // 0x727CF0
-    char ** Assign(const char * a2, void *a2_2);  // 0x7B4630
-    char ** AssignFromPtr(const char ** a2, void *a2_2);  // 0x7B4690
+    char ** Assign(const char *a2);  // 0x7B4630
+    char ** AssignFromPtr(const char **a2);  // 0x7B4690
     bool Equals_Alt(const char * a2);  // 0x7B4710
-    bool Compare(const char ** a2, void *a2_2);  // 0x7B4780
-    void ** Assign_Alt(CCINIClass * aP1, void *a2_1);  // 0x7B48D0
-    char ** Reassign(AbstractClass * aP1, void *a2_1);  // 0x7B4940
-    const char ** Append(CCINIClass * aP1, void *a2_1);  // 0x7B4C20
-    const char ** Append2(IUnknown * aP1, void *a2_1);  // 0x7B4CD0
+    bool Compare(const char **a2);  // 0x7B4780
+    void ** Assign_Alt(const char *aP1);  // 0x7B48D0
+    char ** Reassign(const char **aP1);  // 0x7B4940
+    const char ** Append(const char *aP1);  // 0x7B4C20
+    const char ** Append2(char **aP1);  // 0x7B4CD0
     char ** Concat2(char ** a2, const char * a3, void *a3_2);  // 0x7B4DA0
     char ** Concat(char ** a1, IUnknown * aP2, void *a3_1);  // 0x7B4ED0
     char Erase(MPCooperative * aP1, int a3, void *a3_2);  // 0x7B5020
     void TrimRight(ObjectClass * aP1);  // 0x7B5230
     char * GetOrEmpty(void *a1_1);  // 0x7B5400
     char * GetOrEmpty_Alt(void *a1_1);  // 0x7B5440
-    char Assign_Bool(const char * a2, void *a2_2);  // 0x7B5A40
+    char Assign_Bool(const char *a2);  // 0x7B5A40
     void ToLower(void *a1_1);  // 0x7B5B30
-    char ** ToLowerCopy(ObjectClass * aP1, void *a2_1);  // 0x7B5B80
+    char ** ToLowerCopy(char **aP1);  // 0x7B5B80
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0
     int Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4);  // 0x7CCA19

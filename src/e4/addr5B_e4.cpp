@@ -236,7 +236,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     v9[3] = (unsigned int)((gamemd::AbstractClass **)(SHPFile));
     v14.buffer = (unsigned char)((gamemd::AbstractClass **)((int)&CCFileClass_vftable));
     v16 = 0; /*0x5b4239*/
-    Vector::Clear((int)v15); /*0x5b4240*/
+    ((Vector *)((int)v15))->Clear(); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14.buffer); /*0x5b4251*/
     return SHPFile; /*0x5b4256*/
@@ -245,7 +245,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   {
     v14.buffer = (int)&CCFileClass_vftable; /*0x5b4169*/
     v16 = 0; /*0x5b4171*/
-    Vector::Clear((int)v15); /*0x5b4178*/
+    ((Vector *)((int)v15))->Clear(); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14.buffer); /*0x5b4189*/
     return 0; /*0x5b418e*/
@@ -371,7 +371,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
       return 0; /*0x5b4ec7*/
     case 0xFu: /*0x5b4b56*/
       if ( g_UIControlState ) /*0x5b4e8d*/
-        Skirmish::RenderPreview(g_UIControlState, hWnd); /*0x5b4e90*/
+        ((Skirmish *)(g_UIControlState))->RenderPreview(hWnd); /*0x5b4e90*/
       ValidateRect(hWnd, 0); /*0x5b4e98*/
       return 0; /*0x5b4ea1*/
     case 0x111u: /*0x5b4b56*/
@@ -418,7 +418,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
           {
             if ( !IDA_HIWORD(a3) ) /*0x5b4bbb*/
             {
-              Game::processStartup(WindowLongA); /*0x5b4bc6*/
+              ((Game *)(WindowLongA))->processStartup(); /*0x5b4bc6*/
               *(unsigned int *)(WindowLongA + 4) = 2; /*0x5b4bcb*/
               return 0; /*0x5b4bde*/
             }
@@ -661,7 +661,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     while ( 1 ) /*0x5bb392*/
     {
       Event::Dispatch(); /*0x5bb392*/
-      if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v22, (int)&v17) > 0 && v22[0] == 118 ) /*0x5bb3b9*/
+      if ( ((ObjectTypeClass *)(&unk_A8EA70))->CreateInstance((int)v22, (int)&v17) > 0 && v22[0] == 118 ) /*0x5bb3b9*/
         break; /*0x5bb3b9*/
       v3 = v13; /*0x5bb3bf*/
       if ( Ticks != -1 ) /*0x5bb3c5*/
@@ -705,7 +705,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     RawFileClass::Dtor((RawFileClass *)v18); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
-    Vector::Clear((int)&v15.Pipe_field_0x0C); /*0x5bb53c*/
+    ((Vector *)((int)&v15.Pipe_field_0x0C))->Clear(); /*0x5bb53c*/
     Pipe::Dtor(&v15); /*0x5bb545*/
   }
 }
@@ -933,7 +933,7 @@ void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         if ( dword_ABF228 <= 0 ) /*0x5bc929*/
           return 0; /*0x5bc929*/
         v13 = (unsigned int *)*(&dword_ABF110 + dword_ABF228--); /*0x5bc92b*/
-        Audio::Release(v13); /*0x5bc938*/
+        ((Audio *)(v13))->Release(); /*0x5bc938*/
         AudioSample::Destructor(*(&dword_ABF114 + dword_ABF228)); /*0x5bc94a*/
         return 0; /*0x5bc957*/
       default:
@@ -1316,7 +1316,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   *(unsigned int *)v53.CDFileClass = (void*)&CCFileClass_vftable; /*0x5bfb2a*/
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
-  Vector::Clear((int)v54); /*0x5bfb3e*/
+  ((Vector *)((int)v54))->Clear(); /*0x5bfb3e*/
   *(unsigned int *)v53.CDFileClass = &off_7E1668; /*0x5bfb47*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v53); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/
@@ -2471,7 +2471,7 @@ HWND sub_5B6F30()
     if ( dword_887338 != -1 ) /*0x5b6fe9*/
       v4 += Timer::GetTicks() - dword_887338; /*0x5b6ffb*/
     if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5b7040*/
-      || ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v9, (int)v6) > 0
+      || ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v9, (int)v6) > 0
       && v9[0] == 102
       && (uint8_t)v10 == dword_A8DB30 )
     {
@@ -2841,7 +2841,7 @@ HWND sub_5BAB00()
     if ( dword_887338 != -1 ) /*0x5babb9*/
       v4 += Timer::GetTicks() - dword_887338; /*0x5babcb*/
     if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5bac10*/
-      || ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v9, (int)v6) > 0
+      || ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v9, (int)v6) > 0
       && v9[0] == 102
       && (uint8_t)v10 == dword_A8DB30 )
     {

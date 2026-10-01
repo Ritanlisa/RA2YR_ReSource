@@ -74,7 +74,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     }
   LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));
     if ( v8 ) /*0x6f1a67*/
-      Base = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
+      Base = ((TechnoTypeClass *)(v8))->LoadBase(Source); /*0x6f1a75*/
     else
   LABEL_10:
       Base = 0; /*0x6f1a84*/
@@ -126,7 +126,7 @@ int sub_59B6D0()
     {
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
-        NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent(i, j));
+        NeighbourContent = (unsigned int *)(((Cell *)(i))->GetNeighbourContent(j));
         if ( Cell::IsEmpty(NeighbourContent) ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }

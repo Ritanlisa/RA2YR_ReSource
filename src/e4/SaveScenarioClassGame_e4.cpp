@@ -103,7 +103,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   pStm = 0; /*0x67d182*/
   if ( v9 ) /*0x67d188*/
   {
-    v6 = Game::validateScenario(&pStm, &v9); /*0x67d193*/
+    v6 = ((Game *)(&pStm))->validateScenario(&v9); /*0x67d193*/
     if ( v6 < 0 && v6 != -2147467262 ) /*0x67d1a1*/
       WinAPI::Wrapper(v6); /*0x67d1a4*/
   }

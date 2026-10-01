@@ -374,7 +374,7 @@ int LoadGame::LoadMagicAndAudio()
     dword_B1D4C4 = 0; /*0x753406*/
   }
   if ( g_InfantryDrawState ) /*0x753418*/
-    Audio::Release(g_InfantryDrawState); /*0x75341a*/
+    ((Audio *)(g_InfantryDrawState))->Release(); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
   result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
@@ -500,7 +500,7 @@ int sub_721040(int a1)
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
                   if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/
-                    Audio::Release((unsigned int *)dword_A83D3C); /*0x721104*/
+                    ((Audio *)((unsigned int *)dword_A83D3C))->Release(); /*0x721104*/
                   if ( Audio::IsSoundPlaying((unsigned int *)dword_A83D3C) != 0 ) /*0x721116*/
                   {
                     if ( dword_A83D3C ) /*0x721125*/

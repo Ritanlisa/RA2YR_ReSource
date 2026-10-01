@@ -64,7 +64,7 @@ v2 = (LPVOID)(ppv);
     v8[0] = 24; /*0x5e38d5*/
     strcpy((char *)&v8[1], unk_A8B380); /*0x5e38f6*/
     strcpy((char *)&v8[11] + 3, a2); /*0x5e3915*/
-    dword_A8D7F7 = Session::GetPlayerColor(dword_A8B238); /*0x5e392d*/
+    dword_A8D7F7 = ((Session *)(dword_A8B238))->GetPlayerColor(); /*0x5e392d*/
     dword_A8D7FB = WideString::Hash(word_A8D610); /*0x5e3937*/
     result = dword_A8DA84; /*0x5e393c*/
     for ( i = 1; i < dword_A8DA84; ++i ) /*0x5e3948*/
@@ -195,7 +195,7 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
   lParam[0] = a3; /*0x603f83*/
   lParam[1] = -1; /*0x603f87*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f8f*/
-  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x603f9c*/
+  ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&v7); /*0x603f9c*/
   DeleteAndZero::Alt((DeleteAndZero *)&v7); /*0x603fa5*/
   return a1; /*0x603fac*/
 }
@@ -278,7 +278,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     }
     StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
-  WideString::Assign((WideString *)a1, StringCSF); /*0x78111b*/
+  ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78111b*/
   return a1; /*0x7810fb*/
 }
 } // namespace gamemd

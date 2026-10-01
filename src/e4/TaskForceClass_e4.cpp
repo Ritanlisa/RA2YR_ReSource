@@ -28,7 +28,7 @@
 
 // 0x4C4EF0
 namespace gamemd {
-unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer, void *a2_1)
+unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
 {
 
   int ExitCellByName; // eax
@@ -245,7 +245,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
            v8.__pad_28,
            128) > 0 )
     {
-      v4 = TaskForceClass::ParseUnitCountAndType(&v8, v8.__pad_28); /*0x6e8491*/
+      v4 = ((TaskForceClass *)(&v8))->ParseUnitCountAndType(v8.__pad_28); /*0x6e8491*/
       v5 = this->TaskForceClass_field_0x9C[0]; /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
       *((unsigned int *)this + 2 * v5 + 42) = v4[1]; /*0x6e84a8*/
@@ -276,7 +276,7 @@ char TaskForceClass::GetUnitType(char * a2)
   char *v5; // eax
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
+  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI(a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4); /*0x6e8529*/
@@ -379,7 +379,7 @@ namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6e8759*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6e8759*/
   Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
   return Power::TimerProcess(this->TaskForceClass_field_0x9C[0]); /*0x6e877a*/
 

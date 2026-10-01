@@ -451,7 +451,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
   int v11; // edx
   int v12; // ecx
 
-  EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x7b22e9*/
+  ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b22e9*/
   if ( !*((unsigned int *)this + 6) ) /*0x7b22ee*/
     return 0; /*0x7b22f5*/
   v8 = **((unsigned int **)this + 3); /*0x7b2304*/
@@ -551,7 +551,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   }
   v19 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v14); /*0x7b24af*/
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
-  return EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x7b24ca*/
+  return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b24ca*/
 
 }
 }

@@ -28,7 +28,7 @@ LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
     DeleteAndZero::Alt2(a2); /*0x623fe3*/
   v6 = (char *)RA2_OPNEW(v5 + 2); /*0x623ff4*/
   v7 = SendMessageA(aP0, 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
-  String::Assign_Alt(a2, v6); /*0x624007*/
+  ((String *)(a2))->Assign_Alt(v6); /*0x624007*/
   RA2_OPDEL(v6); /*0x62400d*/
   return v7; /*0x624017*/
 }

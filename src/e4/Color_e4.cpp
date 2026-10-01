@@ -123,7 +123,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 } // namespace gamemd
 // 0x6612C0
 namespace gamemd {
-unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2, void *a3)
+unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
 {
 
   uint8_t v3; // bl

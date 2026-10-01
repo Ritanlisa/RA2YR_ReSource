@@ -111,7 +111,7 @@ LABEL_14:
     {
       if ( vtable0[7](this, 1) ) /*0x431d02*/
       {
-        this->customSound_controller[0] = FileClass::Seek((RawFileClass *)this, 0, 1u); /*0x431d13*/
+        this->customSound_controller[0] = ((FileClass *)((RawFileClass *)this))->Seek(0, 1u); /*0x431d13*/
         v11 = 1; /*0x431d16*/
       }
     }
@@ -121,7 +121,7 @@ LABEL_14:
       if ( ((unsigned int *)this)[0] == -1 ) /*0x431cc5*/
         this->customSound_controller[0] = (int)v7; /*0x431cd6*/
       else
-        this->customSound_controller[0] = FileClass::Seek((RawFileClass *)this, 0, 1u); /*0x431cd1*/
+        this->customSound_controller[0] = ((FileClass *)((RawFileClass *)this))->Seek(0, 1u); /*0x431cd1*/
       if ( this->ambientSoundController[3] > (int)this->attachedTag ) /*0x431ce1*/
       {
         this->ambientSoundController[0] = (int)v7; /*0x431cf8*/
@@ -617,7 +617,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x437b5e*/
     v56 = (char *)a1->field_4 + v59; /*0x437b61*/
     v25 = (int)&v56[-Stream_field_04]; /*0x437b67*/
-    SamplePosition = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v23, v25); /*0x437b73*/
+    SamplePosition = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v23, v25); /*0x437b73*/
     v46 = *(unsigned int *)(v18 + 8); /*0x437b7c*/
     v69 = 0; /*0x437b80*/
     v47 = *(unsigned int *)(v18 + 12); /*0x437b91*/
@@ -669,7 +669,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   {
     v31 = a1->field_0 + v58; /*0x437ce7*/
     v32 = (int)a1->field_4 + v59 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4); /*0x437cfa*/
-    v44 = StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v31, v32); /*0x437d18*/
+    v44 = ((StreamClass *)(*(int **)&stru_87E790.__pad_D8[60]))->ReadAndSeek(v31, v32); /*0x437d18*/
     v51 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x437d1c*/
     v19 = (2 * (v32 & 1)) | ((uint8_t)v31 ^ (uint8_t)v32) & 1; /*0x437d20*/
   }
@@ -1687,7 +1687,7 @@ char sub_437290(int * a1, int a2, int * a3)
                  v11,
                  0,
                  1);
-  Vector::Clear((int)v17); /*0x437334*/
+  ((Vector *)((int)v17))->Clear(); /*0x437334*/
   return v6; /*0x4372a7*/
 }
 } // namespace gamemd
@@ -2432,7 +2432,7 @@ int E4Recv_43EE50::sub_43EE50()
 
   if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 1020))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
     return 0; /*0x43eea7*/
-  Value = ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v5); /*0x43ee76*/
+  Value = ((ProgressTimer *)((ProgressTimer *)this->primaryFacing))->GetValue(&v5); /*0x43ee76*/
   v3 = *((unsigned int *)this + 352); /*0x43ee7d*/
   result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
   if ( v3 ) /*0x43ee95*/

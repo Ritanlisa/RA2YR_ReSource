@@ -239,7 +239,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2, void *a
       LOWORD(a2) = *v4 + v9; /*0x4a95f1*/
       HIWORD(a2) = (unsigned short)v8; /*0x4a95f6*/
       aP1 = (IUnknown *)(a2); /*0x4a9603*/
-      result = LayerClass::CoordinatesLegal((LayerClass *)this, (int16_t *)&aP1); /*0x4a960a*/
+      result = ((LayerClass *)((LayerClass *)this))->CoordinatesLegal((int16_t *)&aP1); /*0x4a960a*/
       if ( (unsigned char)result ) /*0x4a9611*/
       {
         result = (int)CellCoord::To_CellObj((CellCoord *)this, (int16_t *)&aP1); /*0x4a961a*/
@@ -393,7 +393,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
     (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate); /*0x4ad9fb*/
   }
   (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate); /*0x4ada06*/
-  Vector::Clear((int)&v18.Pipe_field_0x0C); /*0x4ada0d*/
+  ((Vector *)((int)&v18.Pipe_field_0x0C))->Clear(); /*0x4ada0d*/
   return Pipe::Dtor(&v18); /*0x4ada1b*/
 
 }
@@ -549,7 +549,7 @@ ObjectClass * * MapClass::LoadFileData(void *a1)
   TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
   *(unsigned int *)v12.CDFileClass = &vt_CCFileClass; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
-  Vector::Clear((int)v13); /*0x5470e8*/
+  ((Vector *)((int)v13))->Clear(); /*0x5470e8*/
   *(unsigned int *)v12.CDFileClass = &off_7E1668; /*0x5470f1*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v12); /*0x5470f9*/
   return Size; /*0x5470fe*/
@@ -1293,11 +1293,11 @@ void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
       if ( v7 >= 0x40000 || (v10 = *((unsigned int *)this->MapClass_field_0x13C + v7)) == 0 ) /*0x5684db*/
       {
         g_MissionQueueFrame.briefing[139] = v34; /*0x5684f9*/
-        House::AnnounceUpgrade((int)&g_MissionQueueFrame.briefing[130], -1); /*0x5684ff*/
+        ((House *)((int)&g_MissionQueueFrame.briefing[130]))->AnnounceUpgrade(-1); /*0x5684ff*/
         v4 = this; /*0x568504*/
         goto LABEL_17; /*0x568504*/
       }
-      House::AnnounceUpgrade(v10, -1); /*0x5684e1*/
+      ((House *)(v10))->AnnounceUpgrade(-1); /*0x5684e1*/
       v4 = this; /*0x5684e6*/
       v6 += 2; /*0x5684ea*/
     }
@@ -1523,11 +1523,11 @@ void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
       if ( v7 >= 0x40000 || (v10 = *((unsigned int *)this->MapClass_field_0x13C + v7)) == 0 ) /*0x56890b*/
       {
         g_MissionQueueFrame.briefing[139] = v32; /*0x568929*/
-        House::AnnounceUpgrade((int)&g_MissionQueueFrame.briefing[130], -1); /*0x56892f*/
+        ((House *)((int)&g_MissionQueueFrame.briefing[130]))->AnnounceUpgrade(-1); /*0x56892f*/
         v4 = this; /*0x568934*/
         goto LABEL_17; /*0x568934*/
       }
-      House::AnnounceUpgrade(v10, -1); /*0x568911*/
+      ((House *)(v10))->AnnounceUpgrade(-1); /*0x568911*/
       v4 = this; /*0x568916*/
       v6 += 2; /*0x56891a*/
     }
@@ -1757,7 +1757,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
     else
       updated = Building::GetNthOfType((Building *)j); /*0x568de1*/
     v20 += updated; /*0x568dee*/
-    House::AnnounceUpgrade(j, -1); /*0x568df4*/
+    ((House *)(j))->AnnounceUpgrade(-1); /*0x568df4*/
     v18 = *(unsigned int *)(j + 68); /*0x568df9*/
     if ( v18 != -1 && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v18) + 680) ) /*0x568e0a*/
       CellClass::SetWallOwner(j); /*0x568e16*/
@@ -1843,7 +1843,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
 } // namespace gamemd
 // 0x56D230
 namespace gamemd {
-int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4)
+int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 {
 
   int16_t *v4; // esi
@@ -1893,7 +1893,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void 
         }
         for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
               (NeighbourContent[80] & 0x100) != 0;
-              NeighbourContent = (int *)Cell::GetNeighbourContent((Cell *)NeighbourContent, i) )
+              NeighbourContent = (int *)((Cell *)((Cell *)NeighbourContent))->GetNeighbourContent(i) )
         {
           ; /*0x56d30d*/
         }
@@ -1993,13 +1993,13 @@ int MapClass::ProcessRegion()
       {
         if ( (uint8_t)InfantryClass::IsInBounds((InfantryClass *)v5) ) /*0x56d75b*/
         {
-          if ( (NeighbourContent = (InfantryClass *)Cell::GetNeighbourContent((Cell *)v5, 2u), /*0x56d7b3*/
+          if ( (NeighbourContent = (InfantryClass *)((Cell *)((Cell *)v5))->GetNeighbourContent(2u), /*0x56d7b3*/
                 (uint8_t)InfantryClass::IsInBounds(NeighbourContent))
-            && (v7 = (InfantryClass *)Cell::GetNeighbourContent((Cell *)v5, 6u),
+            && (v7 = (InfantryClass *)((Cell *)((Cell *)v5))->GetNeighbourContent(6u),
                 (uint8_t)InfantryClass::IsInBounds(v7))
-            || (v8 = (InfantryClass *)Cell::GetNeighbourContent((Cell *)v5, 4u),
+            || (v8 = (InfantryClass *)((Cell *)((Cell *)v5))->GetNeighbourContent(4u),
                 (uint8_t)InfantryClass::IsInBounds(v8))
-            && (v9 = (InfantryClass *)Cell::GetNeighbourContent((Cell *)v5, 0),
+            && (v9 = (InfantryClass *)((Cell *)((Cell *)v5))->GetNeighbourContent(0),
                 (uint8_t)InfantryClass::IsInBounds(v9)) )
           {
             v42 = *(unsigned int *)(InfantryClass::GetType((InfantryClass *)v5) + 40); /*0x56d7cd*/
@@ -2049,7 +2049,7 @@ LABEL_42:
     v38 = 0; /*0x56d896*/
     v41 = dword_82A774[v21]; /*0x56d89b*/
     v39 = 1; /*0x56d89f*/
-    for ( i = (Cell *)Cell::GetNeighbourContent((Cell *)v5, v41); ; i = (Cell *)Cell::GetNeighbourContent(v23, v41) ) /*0x56d8a7*/
+    for ( i = (Cell *)((Cell *)((Cell *)v5))->GetNeighbourContent(v41); ; i = (Cell *)((Cell *)(v23))->GetNeighbourContent(v41) ) /*0x56d8a7*/
     {
       while ( 1 ) /*0x56d8b0*/
       {
@@ -2066,7 +2066,7 @@ LABEL_42:
           if ( !v38 ) /*0x56d979*/
             goto LABEL_42; /*0x56d979*/
 LABEL_36:
-          v30 = *((unsigned int *)Cell::GetNeighbourContent(v23, ((unsigned char)v41 - 4) & 7) + 9); /*0x56d97b*/
+          v30 = *((unsigned int *)((Cell *)(v23))->GetNeighbourContent(((unsigned char)v41 - 4) & 7) + 9); /*0x56d97b*/
           v31 = p_MapClass_field_0x50[2]; /*0x56d990*/
           v32 = p_MapClass_field_0x50[4]; /*0x56d993*/
           v33 = *(unsigned int *)(v5 + 36); /*0x56d99a*/
@@ -2101,7 +2101,7 @@ LABEL_27:
         if ( v29 != -1 && dword_82A7B4[v29] == (uint8_t)v23->__pad_FC[30] ) /*0x56d92e*/
           v38 = 1; /*0x56d930*/
 LABEL_30:
-        i = (Cell *)Cell::GetNeighbourContent(v23, v41); /*0x56d935*/
+        i = (Cell *)((Cell *)(v23))->GetNeighbourContent(v41); /*0x56d935*/
       }
       if ( (uint8_t)Cell::IsInRange2(v23) ) /*0x56d943*/
       {
@@ -2188,7 +2188,7 @@ LABEL_11:
       v14 = &unk_ABDC50; /*0x56e828*/
       dword_ABDC74 = v16; /*0x56e82d*/
     }
-    if ( aP8 && v14[17] != -1 || !Cell::IsBuildable((int)v14, aP3, 0, 0, aP4, aP5, aP6, aP7) ) /*0x56e859*/
+    if ( aP8 && v14[17] != -1 || !((Cell *)((int)v14))->IsBuildable(aP3, 0, 0, aP4, aP5, aP6, aP7) ) /*0x56e859*/
       return 0; /*0x56e87c*/
     if ( ++v11 >= aP2 ) /*0x56e869*/
       goto LABEL_11; /*0x56e869*/
@@ -2820,24 +2820,24 @@ void MapClass::MapClass_IsRectInBounds()
   v6 = *a2; /*0x5783a4*/
   HIWORD(a2) = a2[2]; /*0x5783ab*/
   LOWORD(a2) = v6; /*0x5783b4*/
-  if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&a2, a3) ) /*0x5783b9*/
+  if ( !(uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea((int16_t *)&a2, a3) ) /*0x5783b9*/
     return 0; /*0x5783b9*/
   v7 = v4[2]; /*0x5783d0*/
   LOWORD(a3) = *((unsigned int *)v4 + 2) + *(unsigned int *)v4 - 1; /*0x5783d8*/
   HIWORD(a3) = v7; /*0x5783e0*/
-  if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&a3, v3) ) /*0x5783e5*/
+  if ( !(uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea((int16_t *)&a3, v3) ) /*0x5783e5*/
     return 0; /*0x5783e5*/
   v8 = *((unsigned int *)v4 + 1); /*0x5783f1*/
   v9 = *((unsigned int *)v4 + 3); /*0x5783f4*/
   v13[0] = *v4; /*0x5783f7*/
   v13[1] = v8 + v9 - 1; /*0x578408*/
-  if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, v13, v3) ) /*0x57840d*/
+  if ( !(uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v13, v3) ) /*0x57840d*/
     return 0; /*0x57840d*/
   v10 = *((unsigned int *)v4 + 1); /*0x578420*/
   v11 = *((unsigned int *)v4 + 3); /*0x578423*/
   v14[0] = *((unsigned int *)v4 + 2) + *(unsigned int *)v4 - 1; /*0x578426*/
   v14[1] = v10 + v11 - 1; /*0x578436*/
-  return (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, v14, v3) != 0; /*0x578446*/
+  return (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v14, v3) != 0; /*0x578446*/
 
 }
 }
@@ -2889,7 +2889,7 @@ unsigned int * MapClass::SpiralSearch(void *a1)
       else
         *(unsigned int *)&this->__pad_10C[16] = v9 + 1; /*0x5787b4*/
     }
-    if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, v13, 1) ) /*0x5787d3*/
+    if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v13, 1) ) /*0x5787d3*/
       break; /*0x5787d3*/
     MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x5787e8*/
     v3 = *(unsigned int *)&this->__pad_10C[20]; /*0x5787ee*/
@@ -3388,7 +3388,7 @@ int MapClass::LoadTerrainData(MapClass * aP1)
 
 }
 // 0x586780
-int  MapClass::IsAreaFree(int * a2, int a3, void *a3_2)
+int  MapClass::IsAreaFree(int *a2, int a3)
 {
 
   int v4; // eax
@@ -3794,7 +3794,7 @@ int MapClass::Cleanup(int a1, int a2)
       && !*(unsigned int *)(j + 76) )
     {
       v11 = v14; /*0x59482f*/
-      TileIndex = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)(j + 36), v14, 0); /*0x59483c*/
+      TileIndex = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)(j + 36), v14, 0); /*0x59483c*/
       if ( TileIndex == v15 ) /*0x594847*/
         FloodFillRandomMapTerrain(j, v11, v15); /*0x59484e*/
     }
@@ -4067,8 +4067,8 @@ int MapClass::FindPassableNeighbor()
     v2 = *(unsigned int *)(i + 56); /*0x5a1819*/
     if ( v2 >= g_TerrainBuildConfig && v2 < g_TerrainBuildConfig + 40 ) /*0x5a182f*/
     {
-      NeighbourContent = Cell::GetNeighbourContent((unsigned int *)i, 4u); /*0x5a1842*/
-      v4 = Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a184c*/
+      NeighbourContent = ((Cell *)((unsigned int *)i))->GetNeighbourContent(4u); /*0x5a1842*/
+      v4 = ((Cell *)((unsigned int *)i))->GetNeighbourContent(2u); /*0x5a184c*/
       if ( *(unsigned int *)(i + 56) == *((unsigned int *)NeighbourContent + 14) /*0x5a1867*/
         && *(unsigned char *)(i + 282) > *((unsigned char *)NeighbourContent + 282) )
       {
@@ -4185,7 +4185,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
     v34 = 0; /*0x6d8312*/
     v35 = v11 - v10; /*0x6d8316*/
   }
-  smudgeTypeIndex = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v34)->smudgeTypeIndex; /*0x6d8329*/
+  smudgeTypeIndex = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v34)->smudgeTypeIndex; /*0x6d8329*/
   v13 = v3[2]; /*0x6d833c*/
   v28 = HIWORD(smudgeTypeIndex) + 3; /*0x6d8344*/
   v27 = smudgeTypeIndex - 2; /*0x6d835d*/
@@ -4207,7 +4207,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
         v24 = v16; /*0x6d83c9*/
         do /*0x6d84a9*/
         {
-          if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3) ) /*0x6d83d7*/
+          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal((int16_t *)&a3) ) /*0x6d83d7*/
           {
             v37[2] = 0.0; /*0x6d8417*/
             LODWORD(v37[0]) = ((((int16_t)a3 << 8) + 128) / 256) << 8; /*0x6d8433*/
@@ -4268,7 +4268,7 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2, v
   if ( v7 == -1 ) /*0x703644*/
     TileIndex = -1; /*0x70365f*/
   else
-    TileIndex = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&v10, v7, *((unsigned char *)this + 140)); /*0x703658*/
+    TileIndex = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&v10, v7, *((unsigned char *)this + 140)); /*0x703658*/
   aP2 = 0; /*0x703663*/
   *aP1 = *LayerClass::Pathfinding_Find( /*0x7036aa*/
            &dword_87F7E8,
@@ -4391,7 +4391,7 @@ int MapClass::ProcessVisibilityFlags()
     {
       v10 = j; /*0x4acad9*/
       v11 = i; /*0x4acade*/
-      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)this, &v10) ) /*0x4acae3*/
+      if ( (uint8_t)((LayerClass *)((LayerClass *)this))->CoordinatesLegal(&v10) ) /*0x4acae3*/
       {
         v12[0] = j; /*0x4acaf0*/
         v12[1] = i; /*0x4acaf8*/
@@ -4408,7 +4408,7 @@ int MapClass::ProcessVisibilityFlags()
     {
       v10 = m; /*0x4acb35*/
       v11 = k; /*0x4acb3a*/
-      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)this, &v10) /*0x4acb5a*/
+      if ( (uint8_t)((LayerClass *)((LayerClass *)this))->CoordinatesLegal(&v10) /*0x4acb5a*/
         && (*((unsigned char *)CellCoord::To_CellObj((CellCoord *)this, &v10) + 320) & 0x20) != 0 )
       {
         v8 = CellCoord::To_CellObj((CellCoord *)this, &v10); /*0x4acb63*/
@@ -4465,7 +4465,7 @@ char  MapClass::RevealCell(MouseClass * aP1)
   int16_t *v9; // [esp+8h] [ebp-4h]
 
   v2 = aP1; /*0x4acda3*/
-  LOBYTE(v4) = LayerClass::CoordinatesLegal((LayerClass *)this, aP1); /*0x4acdaa*/
+  LOBYTE(v4) = ((LayerClass *)((LayerClass *)this))->CoordinatesLegal(aP1); /*0x4acdaa*/
   if ( (unsigned char)v4 ) /*0x4acdb1*/
   {
     v4 = CellCoord::To_CellObj((CellCoord *)this, v2); /*0x4acdba*/
@@ -4473,7 +4473,7 @@ char  MapClass::RevealCell(MouseClass * aP1)
     if ( (v5 & 8) != 0 ) /*0x4acdc8*/
     {
       v4[75] = v5 & 0xFFFFFFE7; /*0x4acdd2*/
-      Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v4); /*0x4acddf*/
+      ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v4); /*0x4acddf*/
       for ( i = 0; i < 8; ++i ) /*0x4acde4*/
       {
         v7 = i & 7; /*0x4acde8*/
@@ -4484,7 +4484,7 @@ char  MapClass::RevealCell(MouseClass * aP1)
         if ( aP1 != *(int16_t **)v2 ) /*0x4ace2f*/
         {
           v4[75] &= ~0x10u; /*0x4ace46*/
-          LOBYTE(v4) = Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v4); /*0x4ace52*/
+          LOBYTE(v4) = ((Tactical *)((int *)g_TacticalClass_Instance))->AddCellToDrawList((int)v4); /*0x4ace52*/
         }
       }
     }
@@ -4608,7 +4608,7 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
   result = *(unsigned int *)(aP1 + 56); /*0x57a330*/
   if ( result >= g_CellPassabilityLUT && result < g_CellPassabilityLUT + 12 ) /*0x57a340*/
   {
-    result = Cell::GetTerrainMask((Cell *)this, (int *)aP1, 2); /*0x57a349*/
+    result = ((Cell *)((Cell *)this))->GetTerrainMask((int *)aP1, 2); /*0x57a349*/
     if ( result == 199 /*0x57a37c*/
       || result == 124
       || result == 241
@@ -4626,7 +4626,7 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
         *((unsigned int *)Tactical::GetCellData((Tactical *)(aP1 + 36)) + 14) = aP2; /*0x57a3a8*/
       do /*0x57a41e*/
       {
-        NeighbourContent = (int *)Cell::GetNeighbourContent(v4, v6); /*0x57a3b3*/
+        NeighbourContent = (int *)((Cell *)(v4))->GetNeighbourContent(v6); /*0x57a3b3*/
         v9 = NeighbourContent[9]; /*0x57a3b5*/
         aP3 = v9; /*0x57a3ba*/
         result = SHIWORD(v9); /*0x57a3c1*/
@@ -4641,7 +4641,7 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
               aP3 = v9; /*0x57a3f5*/
               CellData = Tactical::GetCellData((Tactical *)&aP3); /*0x57a402*/
               *((unsigned int *)CellData + 16) = -1; /*0x57a407*/
-              result = Cell::GetTerrainMask((Cell *)this, NeighbourContent, 2); /*0x57a40e*/
+              result = ((Cell *)((Cell *)this))->GetTerrainMask(NeighbourContent, 2); /*0x57a40e*/
               *((unsigned int *)CellData + 16) = result; /*0x57a413*/
             }
           }
@@ -5016,16 +5016,16 @@ int MapClass::SetCellOverlayFlag()
   unsigned int *v6; // [esp+8h] [ebp+4h]
 
   if ( (signed int)(dword_AC13BC + Cell::GetGroundHeight(v6)) <= v6[2] /*0x5f60d3*/
-    && (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6)->flags[0] & 0x100) != 0 )
+    && (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6)->flags[0] & 0x100) != 0 )
   {
-    v1 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6); /*0x5f60db*/
+    v1 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6); /*0x5f60db*/
     altOccupationFlags = v1->altOccupationFlags; /*0x5f60e0*/
     result = (int)&v1->altOccupationFlags; /*0x5f60e6*/
     *(unsigned int *)result = altOccupationFlags | 0x40; /*0x5f60ef*/
   }
   else
   {
-    v4 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6); /*0x5f60fa*/
+    v4 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6); /*0x5f60fa*/
     occupationFlags = v4->occupationFlags; /*0x5f60ff*/
     result = (int)&v4->occupationFlags; /*0x5f6105*/
     *(unsigned int *)result = occupationFlags | 0x40; /*0x5f610e*/
@@ -5045,16 +5045,16 @@ int MapClass::ClearCellOverlayFlag()
   unsigned int *v6; // [esp+8h] [ebp+4h]
 
   if ( (signed int)(dword_AC13BC + Cell::GetGroundHeight(v6)) <= v6[2] /*0x5f6153*/
-    && (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6)->flags[0] & 0x100) != 0 )
+    && (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6)->flags[0] & 0x100) != 0 )
   {
-    v1 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6); /*0x5f615b*/
+    v1 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6); /*0x5f615b*/
     altOccupationFlags = v1->altOccupationFlags; /*0x5f6160*/
     result = (int)&v1->altOccupationFlags; /*0x5f6166*/
     *(unsigned int *)result = altOccupationFlags & 0xFFFFFFBF; /*0x5f616f*/
   }
   else
   {
-    v4 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v6); /*0x5f617a*/
+    v4 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v6); /*0x5f617a*/
     occupationFlags = v4->occupationFlags; /*0x5f617f*/
     result = (int)&v4->occupationFlags; /*0x5f6185*/
     *(unsigned int *)result = occupationFlags & 0xFFFFFFBF; /*0x5f618e*/

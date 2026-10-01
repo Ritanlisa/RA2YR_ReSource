@@ -234,7 +234,7 @@ int NullModemClass::sendData()
     *((unsigned int *)this + 7) = Stat.cbInQue; /*0x774789*/
     *((unsigned int *)this + 8) = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
+      ((WinModemClass *)((WinModemClass *)this))->LogCommErrors(v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
   }
   return 1; /*0x77470a*/
 
@@ -276,7 +276,7 @@ int NullModemClass::receiveData()
     *((unsigned int *)this + 7) = Stat.cbInQue; /*0x774869*/
     *((unsigned int *)this + 8) = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
+      ((WinModemClass *)((WinModemClass *)this))->LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
   return (*(int (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774893*/
 

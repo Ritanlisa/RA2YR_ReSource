@@ -192,7 +192,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
           0);
       }
       Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x5610bf*/
-      Mouse::SetCursor((int)&stru_87F5F0.__pad_58[416], 0, 0); /*0x5610cb*/
+      ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x5610cb*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5610d8*/
     }
     TacticalClass::SetViewDimensions((DisplayClass *)v31); /*0x5610ec*/
@@ -254,7 +254,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
       0);
   }
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x560da9*/
-  Mouse::SetCursor((int)&stru_87F5F0.__pad_58[416], 0, 0); /*0x560db5*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x560db5*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }

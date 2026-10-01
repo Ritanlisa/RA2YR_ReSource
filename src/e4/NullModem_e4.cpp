@@ -81,7 +81,7 @@ char NullModem_TestConnection(void * a1)
       IDA_LOBYTE(v23[6]) = dword_A8B394; /*0x5f04db*/
       Stream::WriteBlock(&unk_A8EA70, (int)v23, 250, 0); /*0x5f04df*/
     }
-    if ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v25, (int)v22) > 0 ) /*0x5f04fd*/
+    if ( ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v25, (int)v22) > 0 ) /*0x5f04fd*/
     {
       v11 = dword_887340; /*0x5f0508*/
       if ( dword_887338 != -1 ) /*0x5f0511*/

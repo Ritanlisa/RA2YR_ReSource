@@ -54,7 +54,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   }
   v11[0] = (unsigned int)(&vt_CCFileClass);
   v13 = (unsigned int)(0);
-  Vector::Cl  Vector::Clear((void *)((int)v12)); 
+  Vector::Cl  ((Vector *)((void *)((int)v12)))->Clear(); 
   v11[0] = (unsigned int)(&off_7E1668); /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 

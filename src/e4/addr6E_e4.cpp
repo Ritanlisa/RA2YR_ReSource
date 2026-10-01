@@ -175,7 +175,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
     v17[1] = (v10[1] << 8) + 128; /*0x6e2157*/
     v17[0] = v13 + 128; /*0x6e2165*/
     v17[2] = dword_B0E6D4; /*0x6e2171*/
-    Coord::To_Screen(g_TacticalClass_Instance, v17, v16); /*0x6e217d*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(v17, v16); /*0x6e217d*/
     Cell::CreateCrater(v16[0] - 128, v16[1] - 128, 256, 256, 0); /*0x6e21af*/
   }
   return v15; /*0x6e21b8*/
@@ -201,7 +201,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   {
     GroundHeight += dword_B0E6D4; /*0x6e2827*/
   }
-  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v8); /*0x6e2836*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
 
 }
@@ -344,7 +344,7 @@ int sub_6EC250(int a1, int a2)
     if ( v4 && a2 == v4->owner && v4->buildingType->q0B4 < a1 ) /*0x6ec294*/
     {
       for ( j = v4->firstUnit; j; j = v4->firstUnit ) /*0x6ec29b*/
-        TeamClass::LiberateMember_Start(v4, j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
+        ((TeamClass *)(v4))->LiberateMember_Start(j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
             *(unsigned char *)(v4 + 126) = 1;
             *(unsigned char *)(v4 + 125) = 1;
       g_CurrentFrame = g_CurrentFrame; /*0x6ec2bc*/
@@ -781,7 +781,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e07a3*/
-  WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e07b5*/
+  WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -798,7 +798,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0803*/
-  WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e0815*/
+  WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -815,7 +815,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0863*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e0875*/
+  WorldCoords = ((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 
@@ -934,7 +934,7 @@ unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
   unsigned int *WorldCoords; // edx
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v4, *(unsigned int *)&this->isAliveFlag); /*0x6e3f8b*/
+  WorldCoords = ((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v4, *(unsigned int *)&this->isAliveFlag); /*0x6e3f8b*/
   *a2 = *WorldCoords; /*0x6e3f95*/
   a2[1] = WorldCoords[1]; /*0x6e3f9a*/
   a2[2] = WorldCoords[2]; /*0x6e3fa1*/

@@ -224,7 +224,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   unknown38 = (uint8_t **)this->unknown38; /*0x528b26*/
   if ( unknown38 && *unknown38 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
-  v21 = SortedArray::BinarySearch((SortedArray *)&this->__pad_20[8], (int *)&aP1); /*0x528b38*/
+  v21 = ((SortedArray *)((SortedArray *)&this->__pad_20[8]))->BinarySearch((int *)&aP1); /*0x528b38*/
   if ( !v21 ) /*0x528b3f*/
   {
 LABEL_29: v23 = (char *)(aP3);

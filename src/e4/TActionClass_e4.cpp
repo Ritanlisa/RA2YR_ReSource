@@ -589,7 +589,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   v6 = (gamemd::CellClass *)(*(unsigned int *)&this->pad_6E[34]);
   v7 = *((unsigned int *)g_WeaponTypeConfig + v6); /*0x6e2440*/
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
-  v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v16); /*0x6e244f*/
+  v9 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v16); /*0x6e244f*/
   WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v8, *(unsigned int *)(v7 + 172), v9->landType, &v16); /*0x6e246d*/
   if ( WarheadVersusMultiplier ) /*0x6e2471*/
   {
@@ -1153,7 +1153,7 @@ char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * a
                                    (char *)dword_A8B230,
                                    &v14,
                                    *(unsigned int *)&this->pad_6E[34]);
-  TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], Waypoint_Location, 1, 0); /*0x6e1203*/
+  TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(Waypoint_Location, 1, 0); /*0x6e1203*/
   TActionClass::executeSellAction((TActionClass *)&stru_87F5F0.__pad_58[416]); /*0x6e1205*/
   v7 = MapClass::SpiralSearch((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x6e1214*/
   if ( !v7 ) /*0x6e1218*/
@@ -1161,7 +1161,7 @@ char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * a
   do /*0x6e1314*/
   {
     v8 = (int16_t *)(v7 + 9); /*0x6e1220*/
-    if ( MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (int16_t *)v7 + 18, 1, 0) == TileIndex ) /*0x6e1234*/
+    if ( ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex((int16_t *)v7 + 18, 1, 0) == TileIndex ) /*0x6e1234*/
     {
       v9 = *((unsigned short *)v7 + 19); /*0x6e1244*/
       v10 = *((char *)v7 + 283) / 2; /*0x6e124c*/
@@ -1240,7 +1240,7 @@ char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4
   int v12; // [esp+10h] [ebp-10h]
   unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v13, (int)this->TActionClass_field_44); /*0x6e1993*/
+  WorldCoords = ((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v13, (int)this->TActionClass_field_44); /*0x6e1993*/
   v10 = *WorldCoords; /*0x6e199c*/
   v11 = WorldCoords[1]; /*0x6e19a3*/
   v12 = WorldCoords[2]; /*0x6e19b1*/
@@ -1332,7 +1332,7 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
         i;
         i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
   {
-    House::AnnounceUpgrade(i, -1); /*0x6e222a*/
+    ((House *)(i))->AnnounceUpgrade(-1); /*0x6e222a*/
   }
   Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x6e2243*/
   MapClass::BuildSubzones((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x6e224d*/
@@ -1630,7 +1630,7 @@ char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, Abstrac
   v11 = v10[40]; /*0x6e34c3*/
   v17 = v10[43]; /*0x6e34c9*/
   v16 = v10[41]; /*0x6e34ca*/
-  v12 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v22); /*0x6e34d3*/
+  v12 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v22); /*0x6e34d3*/
   UIObjectCOM = (int *)CreateUIObjectCOM(v11, (int)v12, 0, v16, v17, 50, 0); /*0x6e34e1*/
   Function::Method_46B260(UIObjectCOM, (int)v10); /*0x6e34e6*/
   v25[0] = v22; /*0x6e34ff*/
@@ -1817,7 +1817,7 @@ char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * a
   v15[0] = *v8; /*0x6e424a*/
   v15[1] = v8[1]; /*0x6e4251*/
   v15[2] = v8[2]; /*0x6e425b*/
-  IndexByName = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)&this->TActionClass_field_54); /*0x6e425f*/
+  IndexByName = ((BuildingTypeClass *)((BuildingTypeClass *)&this->TActionClass_field_54))->FindIndexByName(); /*0x6e425f*/
   if ( IndexByName < 0 ) /*0x6e4266*/
     return 0; /*0x6e4266*/
   if ( IndexByName > dword_A83C78 ) /*0x6e426e*/

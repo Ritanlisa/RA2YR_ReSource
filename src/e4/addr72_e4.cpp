@@ -343,14 +343,14 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     RA2_OPDEL(v4); /*0x72ae9e*/
     v12 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x72aea8*/
     if ( v12 ) /*0x72aeb4*/
-      v13 = ConvertClass::Construct(v12, *a2, *a2, (int)DSurface_Alternate, 1, 0); /*0x72aecb*/
+      v13 = ((ConvertClass *)(v12))->Construct(*a2, *a2, (int)DSurface_Alternate, 1, 0); /*0x72aecb*/
     else
       v13 = 0; /*0x72aed2*/
     *a3 = v13; /*0x72aedb*/
   }
   *(unsigned int *)v17.CDFileClass = (void*)&CCFileClass_vftable; /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
-  Vector::Clear((int)v18); /*0x72aef1*/
+  ((Vector *)((int)v18))->Clear(); /*0x72aef1*/
   *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x72aefa*/
 // 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x72af07*/

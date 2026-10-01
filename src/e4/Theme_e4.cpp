@@ -44,7 +44,7 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
           if ( *((unsigned int *)this + 11) ) /*0x720b5f*/
           {
             if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
-              Audio::Release(*((unsigned int *)this + 11)); /*0x720b7c*/
+              ((Audio *)(*((unsigned int *)this + 11)))->Release(); /*0x720b7c*/
             LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*((unsigned int *)this + 11)) != 0; /*0x720b8b*/
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
@@ -63,7 +63,7 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
 } // namespace gamemd
 // 0x720EA0
 namespace gamemd {
-int Theme::Stop(ObjectClass * aP1, void *a2)
+int Theme::Stop(char aP1)
 {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
@@ -88,7 +88,7 @@ int Theme::Stop(ObjectClass * aP1, void *a2)
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
-          Audio::Release(*((Audio **)this + 11)); /*0x720ef5*/
+          ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
         if ( Audio::IsSoundPlaying(*((Audio **)this + 11)) != 0 ) /*0x720f04*/
         {
           result = this->Debug::Log(); /*0x720f14*/
@@ -102,7 +102,7 @@ int Theme::Stop(ObjectClass * aP1, void *a2)
 LABEL_14: result = (int)(this->Debug::Log());
           v6 = (int)((Audio *)*((unsigned int *)this + 11));
           if ( v6 ) /*0x720f44*/
-            result = Audio::Release(v6); /*0x720f46*/
+            result = ((Audio *)(v6))->Release(); /*0x720f46*/
         }
         *(unsigned int *)this = -1; /*0x720f4b*/
         *((unsigned int *)this + 1) = -1; /*0x720f51*/
@@ -127,7 +127,7 @@ void Theme::IsPlaying()
   if ( *((unsigned char *)this + 17) ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
-      Audio::Release(*((Audio **)this + 11)); /*0x720fed*/
+      ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720fed*/
   }
   return Audio::IsSoundPlaying(*((Audio **)this + 11)) != 0; /*0x720ffe*/
 

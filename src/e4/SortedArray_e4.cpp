@@ -20,7 +20,7 @@
 
 // 0x52B620
 namespace gamemd {
-int SortedArray::BinarySearch(CCINIClass * aP1, void *a2)
+int SortedArray::BinarySearch(int *aP1)
 {
 
   int result; // eax

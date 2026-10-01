@@ -56,7 +56,7 @@ struct MSEngine {
     CampaignClass * Destructor(void *a1_1);  // 0x5CEE60
     CampaignClass * Construct(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x5D1AA0
     CampaignClass * Destruct(void *a1_1, void *a2_1);  // 0x5D1B30
-    int ProcessEvents(MSVQAnim * aP1, int a3, void *a3_2);  // 0x5D1DF0
+    int ProcessEvents(char aP1, int a3);  // 0x5D1DF0
     CampaignClass * ClearBuffer(void *a1_1);  // 0x5AC520
     unsigned int * Shutdown(unsigned int * a2, int a3);  // 0x5AC570
     char AddRef(int a2);  // 0x5ACCC0

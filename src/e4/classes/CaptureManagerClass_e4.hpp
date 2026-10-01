@@ -53,7 +53,7 @@ struct CaptureManagerClass {
     char CaptureManagerClass_field_2C[4];  // 0x50
     unsigned int *__pad_3C;
 // --- flat members (END) ---
-    void DecideUnitFate(IUnknown * aP1, void *a2);
+    void DecideUnitFate(int aP1);
     void FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5);
     CaptureManagerClass(void * aP1, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
@@ -65,7 +65,7 @@ struct CaptureManagerClass {
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char SetCapacity(int a2, unsigned int * a3);
-    bool CanCapture(unsigned int * a2, void *a2_2);
+    bool CanCapture(unsigned int *a2);
     int CannotControlAnyMore();
     int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);

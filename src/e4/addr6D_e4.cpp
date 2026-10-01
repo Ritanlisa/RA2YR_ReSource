@@ -532,7 +532,7 @@ long long sub_6D6A90(unsigned int * a1)
   int v2; // edx
   unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
 
-  v1 = Coord::To_Cell(&dword_87F7E8, a1); /*0x6d6a9e*/
+  v1 = ((Coord *)(&dword_87F7E8))->To_Cell(a1); /*0x6d6a9e*/
   v2 = a1[1]; /*0x6d6aa5*/
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/

@@ -33,7 +33,7 @@
 
 // 0x47D2B0
 namespace gamemd {
-int House::AnnounceUpgrade(IUnknown * aP1, void *a2_1)
+int House::AnnounceUpgrade(int aP1)
 {
 
   int result; // eax
@@ -195,7 +195,7 @@ LABEL_19:
     v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
     v54 = *(uint8_t *)((char *)this + 282); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
-    MapFileData = House::LoadMapFileData((House *)v19, v54, 0); /*0x47d5b5*/
+    MapFileData = ((House *)((House *)v19))->LoadMapFileData(v54, 0); /*0x47d5b5*/
     if ( *((unsigned char *)this + 284) ) /*0x47d5ba*/
     {
       if ( MapFileData ) /*0x47d5c6*/
@@ -302,7 +302,7 @@ LABEL_48:
         }
         goto LABEL_82; /*0x47dacf*/
       }
-      MapFileData = House::LoadMapFileData((House *)v19, *(uint8_t *)((char *)this + 282), 1); /*0x47d5d9*/
+      MapFileData = ((House *)((House *)v19))->LoadMapFileData(*(uint8_t *)((char *)this + 282), 1); /*0x47d5d9*/
     }
     if ( !MapFileData ) /*0x47d5e0*/
     {
@@ -522,7 +522,7 @@ LABEL_12:
   v27[2] = 0; /*0x47fce2*/
   v27[0] = (v11 / 256) << 8; /*0x47fd02*/
   v27[1] = (v12 / 256) << 8; /*0x47fd06*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v27, &v25); /*0x47fd0a*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v27, &v25); /*0x47fd0a*/
   v13 = BuildingClass::CalcDrawPos((BuildingClass *)this, v27); /*0x47fd16*/
   v25 += *v13; /*0x47fd27*/
   v14 = v13[1] + v26; /*0x47fd31*/
@@ -880,7 +880,7 @@ int House::IsHumanPlayer(void *a1_1)
 }
 // 0x50B730
 namespace gamemd {
-int House::IsCurrentPlayer(void *a1_1)
+int House::IsCurrentPlayer()
 {
 
   int result; // eax
@@ -1020,7 +1020,7 @@ LABEL_24:
       return 0; /*0x50dede*/
     }
   }
-  v15 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v40); /*0x50dcb9*/
+  v15 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v40); /*0x50dcb9*/
   smudgeTypeIndex_low = SLOWORD(v15->smudgeTypeIndex); /*0x50dcbe*/
   smudgeTypeIndex_high = SHIWORD(v15->smudgeTypeIndex); /*0x50dcc2*/
   v37 = *(unsigned int *)&stru_87F5F0.__pad_58[676] / 2; /*0x50dcd9*/
@@ -1153,7 +1153,7 @@ int House::LookupObject(int a2, void *a2_2)
 }
 // 0x544C20
 namespace gamemd {
-int House::LoadMapFileData(int a2, char a3, void *a3_2)
+int House::LoadMapFileData(int a2, char a3)
 {
 
   unsigned int *v4; // eax
@@ -1186,7 +1186,7 @@ void House::Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5
     }
     *(unsigned int *)v3.CDFileClass = &vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
-    Vector::Clear((int)v4); /*0x69e0d8*/
+    ((Vector *)((int)v4))->Clear(); /*0x69e0d8*/
     *(unsigned int *)v3.CDFileClass = &off_7E1668; /*0x69e0e1*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v3); /*0x69e0e9*/
   }
@@ -1260,7 +1260,7 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Power::TimerProcess(v6); /*0x70c325*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->warpFactor)); /*0x70c333*/
   LOBYTE(v7) = this->isChronosphereImmune; /*0x70c338*/
-  Power::FlagProcess((Power *)aP1, v7); /*0x70c341*/
+  ((Power *)((Power *)aP1))->FlagProcess(v7); /*0x70c341*/
   Power::TimerProcess(this->lastSightRange); /*0x70c34f*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->pitchAngle)); /*0x70c35d*/
   v8 = this->diskLaserTimer[0]; /*0x70c362*/
@@ -1290,42 +1290,42 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles2); /*0x70c3f9*/
   Checksummer::Add_float((Checksummer *)aP1, (int)this->firingParticles); /*0x70c407*/
   LOBYTE(v12) = this->isSinking; /*0x70c40c*/
-  v13 = Power::FlagProcess((Power *)aP1, v12); /*0x70c415*/
+  v13 = ((Power *)((Power *)aP1))->FlagProcess(v12); /*0x70c415*/
   LOBYTE(v13) = this->isReceivingDamageEffect; /*0x70c41a*/
-  Power::FlagProcess((Power *)aP1, v13); /*0x70c423*/
+  ((Power *)((Power *)aP1))->FlagProcess(v13); /*0x70c423*/
   LOBYTE(v14) = this->isUseless; /*0x70c428*/
-  Power::FlagProcess((Power *)aP1, v14); /*0x70c431*/
+  ((Power *)((Power *)aP1))->FlagProcess(v14); /*0x70c431*/
   LOBYTE(v15) = this->hasBeenAttacked; /*0x70c436*/
-  v16 = Power::FlagProcess((Power *)aP1, v15); /*0x70c43f*/
+  v16 = ((Power *)((Power *)aP1))->FlagProcess(v15); /*0x70c43f*/
   LOBYTE(v16) = this->isCloakableFlag; /*0x70c444*/
-  Power::FlagProcess((Power *)aP1, v16); /*0x70c44d*/
+  ((Power *)((Power *)aP1))->FlagProcess(v16); /*0x70c44d*/
   LOBYTE(v17) = this->isPrimaryFactory; /*0x70c452*/
-  Power::FlagProcess((Power *)aP1, v17); /*0x70c45b*/
+  ((Power *)((Power *)aP1))->FlagProcess(v17); /*0x70c45b*/
   LOBYTE(v18) = this->isALoaner; /*0x70c460*/
-  v19 = Power::FlagProcess((Power *)aP1, v18); /*0x70c469*/
+  v19 = ((Power *)((Power *)aP1))->FlagProcess(v18); /*0x70c469*/
   LOBYTE(v19) = this->isInPlayfield; /*0x70c46e*/
-  Power::FlagProcess((Power *)aP1, v19); /*0x70c477*/
+  ((Power *)((Power *)aP1))->FlagProcess(v19); /*0x70c477*/
   LOBYTE(v20) = this->isTether; /*0x70c47c*/
-  Power::FlagProcess((Power *)aP1, v20); /*0x70c485*/
+  ((Power *)((Power *)aP1))->FlagProcess(v20); /*0x70c485*/
   LOBYTE(v21) = this->isAlternativeTether; /*0x70c48a*/
-  Power::FlagProcess((Power *)aP1, v21); /*0x70c493*/
+  ((Power *)((Power *)aP1))->FlagProcess(v21); /*0x70c493*/
   v22 = *(unsigned int *)&dword_A8B238; /*0x70c498*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x70c4a4*/
   {
     LOBYTE(v22) = this->isOwnedByCurrentPlayer; /*0x70c4a6*/
-    Power::FlagProcess((Power *)aP1, v22); /*0x70c4af*/
+    ((Power *)((Power *)aP1))->FlagProcess(v22); /*0x70c4af*/
     LOBYTE(v23) = this->isDiscoveredByCurrentPlayer; /*0x70c4b4*/
-    Power::FlagProcess((Power *)aP1, v23); /*0x70c4bd*/
+    ((Power *)((Power *)aP1))->FlagProcess(v23); /*0x70c4bd*/
     LOBYTE(v24) = this->isDiscoveredByComputer; /*0x70c4c2*/
-    v22 = Power::FlagProcess((Power *)aP1, v24); /*0x70c4cb*/
+    v22 = ((Power *)((Power *)aP1))->FlagProcess(v24); /*0x70c4cb*/
   }
   LOBYTE(v22) = this->isSelectedByPlayer; /*0x70c4d0*/
-  Power::FlagProcess((Power *)aP1, v22); /*0x70c4d9*/
+  ((Power *)((Power *)aP1))->FlagProcess(v22); /*0x70c4d9*/
   Power::TimerProcess(this->empLockRemaining); /*0x70c4e7*/
   Power::TimerProcess((uint8_t)this->isUnderCursor); /*0x70c4f7*/
   Power::TimerProcess((uint8_t)this->isCommandLineTarget); /*0x70c507*/
   LOBYTE(v25) = this->sightRangeBonus; /*0x70c50c*/
-  Power::FinalizeDrain((Power *)aP1, v25); /*0x70c515*/
+  ((Power *)((Power *)aP1))->FinalizeDrain(v25); /*0x70c515*/
   v26 = this->currentTargets[4]; /*0x70c51a*/
   Power::TimerProcess(v26); /*0x70c523*/
   for ( i = 0; i < v26; ++i ) /*0x70c52c*/

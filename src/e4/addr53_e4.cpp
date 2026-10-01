@@ -270,7 +270,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   if ( v31 ) /*0x531630*/
     (**v31)(v31, 1); /*0x531636*/
   v41 = 0; /*0x531647*/
-  Vector::Clear(v40); /*0x531652*/
+  ((Vector *)(v40))->Clear(); /*0x531652*/
   v39[0] = (unsigned int)&off_7E1668; /*0x53165b*/
 // 0x431b80
   return BufferIOFileClass::Dtor(v39); /*0x531668*/
@@ -328,7 +328,7 @@ char BulkData_Initialize()
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = 0; /*0x5317cc*/
     goto LABEL_11; /*0x5317d2*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = (unsigned int)(File::LoadFileVXL(v0, (int)&v7, 0)); /*0x531788*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = (unsigned int)(((File *)(v0))->LoadFileVXL((int)&v7, 0)); /*0x531788*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
   {
   LABEL_11:
@@ -336,7 +336,7 @@ char BulkData_Initialize()
   LABEL_12:
     *(unsigned int *)v7.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x53179c*/
     v9 = 0; /*0x5317a8*/
-    Vector::Clear((int)v8); /*0x5317ac*/
+    ((Vector *)((int)v8))->Clear(); /*0x5317ac*/
     *(unsigned int *)v7.CDFileClass = (unsigned int)(&off_7E1668); /*0x5317b5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
     return 0; /*0x5317cb*/
@@ -348,26 +348,26 @@ char BulkData_Initialize()
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = 0; /*0x531843*/
     goto LABEL_16; /*0x531849*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = (unsigned int)(File::LoadFileHVA(v2, (int)&v10)); /*0x5317fe*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = (unsigned int)(((File *)(v2))->LoadFileHVA((int)&v10)); /*0x5317fe*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
   {
   LABEL_16:
         Debug::Log();
     *(unsigned int *)v10.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x531819*/
     v12 = 0; /*0x531821*/
-    Vector::Clear((int)v11); /*0x531828*/
+    ((Vector *)((int)v11))->Clear(); /*0x531828*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x531831*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
   *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x531852*/
   v12 = 0; /*0x53185a*/
-  Vector::Clear((int)v11); /*0x531861*/
+  ((Vector *)((int)v11))->Clear(); /*0x531861*/
   *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x53186a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
   *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x53187b*/
   v9 = 0; /*0x531883*/
-  Vector::Clear((int)v8); /*0x531887*/
+  ((Vector *)((int)v8))->Clear(); /*0x531887*/
   *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x531890*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
   return 1; /*0x5317c4*/
@@ -2293,7 +2293,7 @@ char sub_538F20(int a1, int a2, char * Source)
       }
       v20.FileClass = (FileClass)(void*)&CCFileClass_vftable; /*0x538f9d*/
       v22 = 0; /*0x538fa5*/
-      Vector::Clear((int)v21); /*0x538fad*/
+      ((Vector *)((int)v21))->Clear(); /*0x538fad*/
       v20.FileClass = (FileClass)&off_7E1668; /*0x538fb6*/
       BufferIOFileClass::Dtor(&v20); /*0x538fba*/
     }
@@ -2311,7 +2311,7 @@ char sub_538F20(int a1, int a2, char * Source)
     }
     v20.FileClass = (FileClass)(void*)&CCFileClass_vftable; /*0x539015*/
     v22 = 0; /*0x53901d*/
-    Vector::Clear((int)v21); /*0x539025*/
+    ((Vector *)((int)v21))->Clear(); /*0x539025*/
     v20.FileClass = (FileClass)&off_7E1668; /*0x53902e*/
     BufferIOFileClass::Dtor(&v20); /*0x539032*/
   }
@@ -2533,7 +2533,7 @@ void SuperWeapon_Update()
             v31 = 3; /*0x53aaf8*/
             if ( dword_A83D4C ) /*0x53aaff*/
               v31 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x53ab01*/
-            VoxClass::FindAndPlay(&stru_828080, -1); /*0x53ab11*/
+            ((VoxClass *)(&stru_828080))->FindAndPlay(-1); /*0x53ab11*/
             StringCSF = GetStringCSF(aTxtLightningSt_0, 0, g_Str_File_Ion_cpp, 974); /*0x53ab31*/
             IDA_LOBYTE(v17) = MessageListClass::AddMessage( /*0x53ab40*/
                             (MessageListClass *)&stru_A8BB1C.__pad_87[189],
@@ -2604,7 +2604,7 @@ void SuperWeapon_Update()
             v36 = 1; /*0x53aa48*/
           }
   LABEL_52:
-          if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], v37) && !v36 ) /*0x53aa66*/
+          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v37) && !v36 ) /*0x53aa66*/
             break; /*0x53aa66*/
           IDA_LOBYTE(v17) = --v38; /*0x53aa6c*/
           if ( v38 <= 0 ) /*0x53aa73*/
@@ -3612,7 +3612,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   }
   v2.FileClass = (FileClass)&vt_CCFileClass; /*0x538c8e*/
   v4 = 0; /*0x538c96*/
-  Vector::Clear((int)v3); /*0x538c9e*/
+  ((Vector *)((int)v3))->Clear(); /*0x538c9e*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538ca7*/
   return BufferIOFileClass::Dtor(&v2); /*0x538cb4*/
 
@@ -3637,7 +3637,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   }
   v2.FileClass = (FileClass)&vt_CCFileClass; /*0x538d07*/
   v4 = 0; /*0x538d0f*/
-  Vector::Clear((int)v3); /*0x538d17*/
+  ((Vector *)((int)v3))->Clear(); /*0x538d17*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538d20*/
   return BufferIOFileClass::Dtor(&v2); /*0x538d2d*/
 

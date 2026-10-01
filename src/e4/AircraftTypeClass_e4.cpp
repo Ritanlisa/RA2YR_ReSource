@@ -272,15 +272,15 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
 
   v3 = BuildingTypeClass::ProcessPower((int)this, a2); /*0x41cdb9*/
   LOBYTE(v3) = *((unsigned char *)this + 3592); /*0x41cdbe*/
-  Power::FlagProcess((Power *)a2, v3); /*0x41cdc7*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x41cdc7*/
   LOBYTE(v4) = *((unsigned char *)this + 3593); /*0x41cdcc*/
-  Power::FlagProcess((Power *)a2, v4); /*0x41cdd5*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x41cdd5*/
   LOBYTE(v5) = *((unsigned char *)this + 3594); /*0x41cdda*/
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x41cde3*/
+  v6 = ((Power *)((Power *)a2))->FlagProcess(v5); /*0x41cde3*/
   LOBYTE(v6) = *((unsigned char *)this + 3597); /*0x41cde8*/
-  Power::FlagProcess((Power *)a2, v6); /*0x41cdf1*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x41cdf1*/
   LOBYTE(v7) = *((unsigned char *)this + 3598); /*0x41cdf6*/
-  Power::FlagProcess((Power *)a2, v7); /*0x41cdff*/
+  ((Power *)((Power *)a2))->FlagProcess(v7); /*0x41cdff*/
   return Power::TimerProcess(*((unsigned int *)this + 894)); /*0x41ce12*/
 
 }

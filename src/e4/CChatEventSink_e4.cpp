@@ -92,7 +92,7 @@ LABEL_103:
               qmemcpy(&v33[32], (const void *)(stru_B76AC4.occupant + v5), 0x10Cu); /*0x7aa959*/
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
-              Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
+              ((Array *)((Array *)&v33[12]))->InsertElement(&v33[32], *(int *)&v33[12]); /*0x7aa972*/
               referenceCount = (int)(((char *)&stru_B76AC4)); /*0x7aa977*/
             }
             ++v4; /*0x7aa97c*/
@@ -148,7 +148,7 @@ LABEL_103:
           }
           else
           {
-            Array::InsertElement((Array *)&((char *)&stru_B76AC4), v6, ((char *)&stru_B76AC4)); /*0x7aaa74*/
+            ((Array *)((Array *)&((char *)&stru_B76AC4)))->InsertElement(v6, ((char *)&stru_B76AC4)); /*0x7aaa74*/
             v12 = 0; /*0x7aaa79*/
             v13 = *(unsigned int *)&v33[12]; /*0x7aaa7b*/
             if ( *(int *)&v33[12] > 0 ) /*0x7aaa81*/
@@ -173,8 +173,8 @@ LABEL_103:
               *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
 LABEL_43:
-            String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
-            CChatEventSink::EncodeString((CChatEventSink *)v33, 39); /*0x7aab1f*/
+            ((String *)((String *)v33))->Assign_Bool(v6 + 52); /*0x7aab0c*/
+            ((CChatEventSink *)((CChatEventSink *)v33))->EncodeString(39); /*0x7aab1f*/
             ((String *)((String *)v33))->ToLower(); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {
@@ -208,7 +208,7 @@ LABEL_51:
                 v19 = (String *)(((char *)&g_WebBrowserConfig) + 4 * v18); /*0x7aabfe*/
                 if ( v19 ) /*0x7aac03*/
                 {
-                  String::AssignFromPtr(v19, (const char **)v33); /*0x7aac0a*/
+                  ((String *)(v19))->AssignFromPtr((const char **)v33); /*0x7aac0a*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aac0f*/
                 }
                 ((unsigned int *)&g_WebBrowserConfig)[0] = abstractFlags + 1; /*0x7aac15*/
@@ -218,8 +218,8 @@ LABEL_51:
                 while ( 1 ) /*0x7aab5b*/
                 {
                   if ( v17 >= 0 && v17 < abstractFlags ) /*0x7aab61*/
-                    String::Reassign((String *)&v33[24], (const char **)(((char *)&g_WebBrowserConfig) + 4 * v17)); /*0x7aab71*/
-                  if ( (uint8_t)String::Compare((String *)&v33[24], (const char **)v33) ) /*0x7aab7f*/
+                    ((String *)((String *)&v33[24]))->Reassign((const char **)(((char *)&g_WebBrowserConfig) + 4 * v17)); /*0x7aab71*/
+                  if ( (uint8_t)((String *)((String *)&v33[24]))->Compare((const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aab8c*/
                   if ( ++v17 >= ((char *)&g_WebBrowserConfig) ) /*0x7aab94*/
@@ -232,7 +232,7 @@ LABEL_51:
                             + 4 * (dword_B76548(v33) & ((1 << SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
-              while ( !(uint8_t)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
+              while ( !(uint8_t)((String *)((String *)v20))->Compare((const char **)v33) ) /*0x7aac57*/
               {
                 v20 = *(unsigned int *)(v20 + 8); /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
@@ -272,7 +272,7 @@ LABEL_72:
                 v24 = (String *)(((char *)&stru_B765EC) + 4 * v23); /*0x7aad1b*/
                 if ( v24 ) /*0x7aad20*/
                 {
-                  String::AssignFromPtr(v24, (const char **)v33); /*0x7aad27*/
+                  ((String *)(v24))->AssignFromPtr((const char **)v33); /*0x7aad27*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aad2c*/
                 }
                 ((unsigned int *)&stru_B765EC)[0] = (unsigned int)(vtable3 + 1); /*0x7aad32*/
@@ -282,8 +282,8 @@ LABEL_72:
                 while ( 1 ) /*0x7aac78*/
                 {
                   if ( v22 >= 0 && v22 < (int)vtable3 ) /*0x7aac7e*/
-                    String::Reassign((String *)&v33[28], (const char **)(((char *)&stru_B765EC) + 4 * v22)); /*0x7aac8e*/
-                  if ( (uint8_t)String::Compare((String *)&v33[28], (const char **)v33) ) /*0x7aac9c*/
+                    ((String *)((String *)&v33[28]))->Reassign((const char **)(((char *)&stru_B765EC) + 4 * v22)); /*0x7aac8e*/
+                  if ( (uint8_t)((String *)((String *)&v33[28]))->Compare((const char **)v33) ) /*0x7aac9c*/
                     break; /*0x7aac9c*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aaca9*/
                   if ( ++v22 >= (int)((char *)&stru_B765EC) ) /*0x7aacb1*/
@@ -299,7 +299,7 @@ LABEL_72:
                              & ((1 << v25->HashTable_field_0x0C) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
-              while ( !(uint8_t)String::Compare((String *)v26, (const char **)v33) ) /*0x7aad71*/
+              while ( !(uint8_t)((String *)((String *)v26))->Compare((const char **)v33) ) /*0x7aad71*/
               {
                 v26 = *(unsigned int *)(v26 + 112); /*0x7aad73*/
                 if ( !v26 ) /*0x7aad78*/
@@ -317,7 +317,7 @@ LABEL_87:
         }
         else
         {
-          Array::InsertElement((Array *)&g_WindowManager.__pad_EC[636], v6, *(int *)&g_WindowManager.__pad_EC[636]); /*0x7aa9ae*/
+          ((Array *)((Array *)&g_WindowManager.__pad_EC[636]))->InsertElement(v6, *(int *)&g_WindowManager.__pad_EC[636]); /*0x7aa9ae*/
         }
 LABEL_88:
         if ( *(int *)&v33[4] > 20 ) /*0x7aadee*/
@@ -549,7 +549,7 @@ char CChatEventSink::EnsureCapacity(int a2, void *a2_2)
 } // namespace gamemd
 // 0x7B5E30
 namespace gamemd {
-char CChatEventSink::EncodeString(char a2, void *a2_2)
+char CChatEventSink::EncodeString(char a2)
 {
 
   char *v4; // eax

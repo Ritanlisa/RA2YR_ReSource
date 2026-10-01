@@ -11,7 +11,7 @@
 
 // 0x54F000
 namespace gamemd {
-__int16 EventQueue::Process(void *a1)
+__int16 EventQueue::Process()
 {
 
   int v2; // eax

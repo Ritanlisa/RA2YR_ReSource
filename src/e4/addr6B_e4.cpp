@@ -705,7 +705,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     Object_Create(v28); /*0x6b3252*/
     if ( v27 != *((char *)v12 + 283) ) /*0x6b3260*/
       CellClass::ClearCellContents(v12); /*0x6b3264*/
-    House::AnnounceUpgrade((int)v12, -1); /*0x6b326d*/
+    ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b326d*/
     v29 = v12[18]; /*0x6b3272*/
     if ( v29 != -1 ) /*0x6b3278*/
     {
@@ -785,7 +785,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     else
       v47 = dword_AA10B0; /*0x6b33f1*/
     v12[14] = v47; /*0x6b3402*/
-    House::AnnounceUpgrade((int)v12, -1); /*0x6b3409*/
+    ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b3409*/
     v77 = v12[9]; /*0x6b341b*/
     BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)&v77); /*0x6b341f*/
     v48 = CellClass::GetScreenRect((int)v12, v113); /*0x6b342e*/
@@ -1509,7 +1509,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
       *(unsigned int *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x6b54ff*/
       v5[0] = (void*)&CCFileClass_vftable; /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
-      Vector::Clear((int)v6); /*0x6b5515*/
+      ((Vector *)((int)v6))->Clear(); /*0x6b5515*/
       v5[0] = (unsigned int)&off_7E1668; /*0x6b551e*/
       BufferIOFileClass::Dtor(v5); /*0x6b5526*/
     }
@@ -2317,7 +2317,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
       (*(void (**)(unsigned int *))(*v10 + 96))(v10); /*0x6b9f71*/
     }
     v60[0] = v10; /*0x6b9f80*/
-    String::Assign((char **)&v48, Source); /*0x6b9f87*/
+    ((String *)((char **)&v48))->Assign(Source); /*0x6b9f87*/
     String::ToLower(&v48); /*0x6b9f90*/
     v37 = *(unsigned int *)(v5 + 4); /*0x6b9f95*/
     v38 = 0; /*0x6b9f98*/
@@ -2377,7 +2377,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     DeleteAndZero(&v48); /*0x6ba0d6*/
     v55[0] = (void*)&CCFileClass_vftable; /*0x6ba0e2*/
     v57 = 0; /*0x6ba0ea*/
-    Vector::Clear((int)v56); /*0x6ba0f1*/
+    ((Vector *)((int)v56))->Clear(); /*0x6ba0f1*/
     v55[0] = (unsigned int)&off_7E1668; /*0x6ba0fa*/
     BufferIOFileClass::Dtor(v55); /*0x6ba102*/
     return 1; /*0x6ba10a*/
@@ -2386,7 +2386,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
   {
     v55[0] = (void*)&CCFileClass_vftable; /*0x6b9d68*/
     v57 = 0; /*0x6b9d70*/
-    Vector::Clear((int)v56); /*0x6b9d77*/
+    ((Vector *)((int)v56))->Clear(); /*0x6b9d77*/
     v55[0] = (unsigned int)&off_7E1668; /*0x6b9d80*/
     BufferIOFileClass::Dtor(v55); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
@@ -4338,7 +4338,7 @@ void WinMain_Setup()
   v16 = dword_A83DB8; /*0x6bea83*/
   if ( dword_A83DB8 ) /*0x6bea8b*/
   {
-    Vector::Clear(dword_A83DB8); /*0x6bea8f*/
+    ((Vector *)(dword_A83DB8))->Clear(); /*0x6bea8f*/
     RA2_OPDEL(v16); /*0x6bea95*/
     dword_A83DB8 = 0; /*0x6bea9d*/
   }

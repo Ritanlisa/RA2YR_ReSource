@@ -1093,9 +1093,9 @@ struct InfantryTypeClass {
     unsigned int vtable0;
 // --- flat members (END) ---
     InfantryClass *  ConstructInfantry(AbstractClass * ppv);
-    InfantryTypeClass * Constructor(ObjectClass * aP1, void *a2, void *a3);
+    InfantryTypeClass * Constructor(char *aP1);
     InfantryTypeClass * ddtor(char a2);
-    WeaponTypeClass * * Find(ObjectClass * Source);
+    WeaponTypeClass * * Find(char *Source);
     int * GetDimensions(int a1);
     int CreateInfantry(short * a2, AbstractClass * ppv);
     int GetAuxField();

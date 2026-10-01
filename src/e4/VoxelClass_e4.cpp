@@ -192,12 +192,12 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                             &v66);
       Transform::Copy(v70, v29); /*0x73c885*/
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
-      Matrix3x4::Translate(v70, v46); /*0x73c8b2*/
+      ((Matrix3x4 *)(v70))->Translate(v46); /*0x73c8b2*/
       v54 = (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
                         - 8)
           * -0.1963495408493621;
       v47 = v54 /*0x73c91f*/
-          - (double, void * a1)(int)((((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 452, &v57) >> 10) + 1) >> 1) & 0x1F)
+          - (double, void * a1)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
                         - 8)
           * -0.1963495408493621;
       Matrix2D::Rotate(v70, v47); /*0x73c922*/
@@ -253,7 +253,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       Matrix3x3::Multiply(v71, v67); /*0x73cba5*/
       Matrix3x3::Multiply(v71, &v68); /*0x73cbb6*/
       if ( (((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
-        || (v52 = 1, (((unsigned int, void * a1)((*ProgressTimer::GetValue((unsigned short *)a1 + 464, &v56) >> 13) + 1) >> 1) & 3) == 3) )
+        || (v52 = 1, (((unsigned int, void * a1)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
         v52 = 0; /*0x73cbfa*/
       }
@@ -296,7 +296,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         10240,
         0);
     }
-    Value = (unsigned int *)(ProgressTimer::GetValue((unsigned short *)a1 + 464, &v57));
+    Value = (unsigned int *)(((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v57));
     (*(void (**)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
       a1,
       v15,

@@ -9,7 +9,7 @@
 
 // 0x4A35A0
 namespace gamemd {
-int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4, void *a4_2)
+int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4)
 {
 
   void *v4; // eax

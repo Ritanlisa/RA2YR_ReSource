@@ -196,7 +196,7 @@ LABEL_10:
       v14 = (TemporalClass *)*((unsigned int *)this + 17); /*0x71a84e*/
       WarpPerStep = 0; /*0x71a851*/
       if ( v14 ) /*0x71a855*/
-        WarpPerStep = TemporalClass::GetWarpPerStep(v14, 1); /*0x71a85e*/
+        WarpPerStep = ((TemporalClass *)(v14))->GetWarpPerStep(1); /*0x71a85e*/
       v16 = (int)(this->creationFrame); /*0x71a860*/
       v17 = *(unsigned int *)v16; /*0x71a864*/
       v18 = (*(int (**)(int, unsigned int))(*(unsigned int *)v16 + 740))(v16, 0); /*0x71a866*/
@@ -344,7 +344,7 @@ LABEL_10:
 
 // 0x71AB10
 namespace gamemd {
-int TemporalClass::GetWarpPerStep(int a2, void *a2_2)
+int TemporalClass::GetWarpPerStep(int a2)
 {
 
   int WarpPerStep; // ebx
@@ -357,7 +357,7 @@ int TemporalClass::GetWarpPerStep(int a2, void *a2_2)
   WarpPerStep = 0; /*0x71ab14*/
   v4 = (TemporalClass *)*((unsigned int *)this + 17); /*0x71ab17*/
   if ( v4 && a2 <= 50 ) /*0x71ab25*/
-    WarpPerStep = TemporalClass::GetWarpPerStep(v4, a2 + 1); /*0x71ab2e*/
+    WarpPerStep = ((TemporalClass *)(v4))->GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   creationFrame = (int)(this->creationFrame); /*0x71ab30*/
   v6 = *(unsigned int *)creationFrame; /*0x71ab35*/
   v7 = (*(int (**)(int, unsigned int))(*(unsigned int *)creationFrame + 740))(creationFrame, 0); /*0x71ab37*/
@@ -486,7 +486,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
-    Member = Team::GetMember(a1, 0); /*0x71aead*/
+    Member = ((Team *)(a1))->GetMember(0); /*0x71aead*/
     v3 = (unsigned int *)Member; /*0x71aeb2*/
     if ( Member ) /*0x71aeb6*/
     {
@@ -497,7 +497,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&dword_87F7E8, v5); /*0x71aef8*/
+          v4 = ((Coord *)(&dword_87F7E8))->To_Cell(v5); /*0x71aef8*/
           if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

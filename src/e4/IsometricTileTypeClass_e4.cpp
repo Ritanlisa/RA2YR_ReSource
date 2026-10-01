@@ -29,7 +29,7 @@ void IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   int v5; // edx
   int v6; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x549b79*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x549b79*/
   Power::TimerProcess(*((unsigned int *)this + 165)); /*0x549b87*/
   Power::TimerProcess(*((unsigned int *)this + 166)); /*0x549b95*/
   Power::TimerProcess(*((unsigned int *)this + 167)); /*0x549ba3*/
@@ -47,9 +47,9 @@ void IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 182)); /*0x549c13*/
   Power::TimerProcess(*((unsigned int *)this + 183)); /*0x549c21*/
   LOBYTE(v5) = *((unsigned char *)this + 736); /*0x549c26*/
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x549c2f*/
+  v6 = ((Power *)((Power *)a2))->FlagProcess(v5); /*0x549c2f*/
   LOBYTE(v6) = *((unsigned char *)this + 737); /*0x549c34*/
-  Power::FlagProcess((Power *)a2, v6); /*0x549c3d*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x549c3d*/
   Power::TimerProcess(*((unsigned int *)this + 185)); /*0x549c4b*/
   Power::TimerProcess(*((unsigned int *)this + 186)); /*0x549c59*/
   Power::TimerProcess(*((unsigned int *)this + 187)); /*0x549c67*/
@@ -80,7 +80,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     if ( a1 ) /*0x549cce*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
-      IsometricTileTypeClass::Constructor_0((IsometricTileTypeClass *)((char *)a1 + 676), 0, 0); /*0x549ce9*/
+      ((IsometricTileTypeClass *)((IsometricTileTypeClass *)((char *)a1 + 676)))->Constructor_0(0, 0); /*0x549ce9*/
       *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
@@ -308,7 +308,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 } // namespace gamemd
 // 0x54A850
 namespace gamemd {
-unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3, void *a3_2)
+unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 
   this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/

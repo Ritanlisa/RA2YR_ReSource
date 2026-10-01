@@ -52,7 +52,7 @@ AbstractClass * FootClass::Destruct(void *a1, void *a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35ac*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
-    TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
+    ((TeamClass *)(team))->LiberateMember_Start((int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
   v3 = (*((int (**)(FootClass *, FootClass **))FootClass_Array.TechnoClass + 4))(&FootClass_Array, &v11); /*0x4d35e1*/
   if ( v3 != -1 ) /*0x4d35e7*/
@@ -62,7 +62,7 @@ AbstractClass * FootClass::Destruct(void *a1, void *a2)
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem((DynamicVector *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2), v4); /*0x4d3616*/
+    ((DynamicVector *)((DynamicVector *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)))->RemoveItem(v4); /*0x4d3616*/
   parasiteImUsing = (gamemd::ParasiteClass *)(this->parasiteImUsing); /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
@@ -98,7 +98,7 @@ AbstractClass * FootClass::Destruct(void *a1, void *a2)
   }
   this->__pad_58C[9] = 0; /*0x4d36f5*/
   *(unsigned int *)&this->__pad_58C[4] = 0; /*0x4d36fb*/
-  return TechnoClass::DTOR((int)this); /*0x4d3706*/
+  return ((TechnoClass *)((int)this))->DTOR(); /*0x4d3706*/
 
 }
 } // namespace ra2
@@ -116,7 +116,7 @@ void FootClass::Destroyed(int a2)
   {
     v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->TechnoClass + 110))(this, v4); /*0x4d98f0*/
     if ( (uint8_t)CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
-      VoxClass::FindAndPlay((VoxClass *)&(unsigned int *)((char *)&stru_822420 + 8), -1); /*0x4d9911*/
+      ((VoxClass *)((VoxClass *)&(unsigned int *)((char *)&stru_822420 + 8)))->FindAndPlay(-1); /*0x4d9911*/
   }
 
 }
@@ -295,9 +295,9 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         (*(void (**)(unsigned int))(**(unsigned int **)(m_Size + 684) + 336))(*(unsigned int *)(m_Size + 684)); /*0x710334*/
         v23 = (int *)v6[373]; /*0x71033a*/
         if ( v23 ) /*0x710342*/
-          TeamClass::LiberateMember_Start(v23, (int)v6, 0xFFFFFFFF, 0); /*0x710349*/
+          ((TeamClass *)(v23))->LiberateMember_Start((int)v6, 0xFFFFFFFF, 0); /*0x710349*/
         *((unsigned char *)v6 + 1709) = 1; /*0x710352*/
-        Member = Team::GetMember((Team *)v6, 0); /*0x710359*/
+        Member = ((Team *)((Team *)v6))->GetMember(0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
           (*(void (**)(int *, int))(*v6 + 640))(v6, 3); /*0x710374*/
         (*(void (**)(unsigned int, int, int))(**(unsigned int **)(m_Size + 684) + 488))(*(unsigned int *)(m_Size + 684), 5, 1); /*0x710386*/

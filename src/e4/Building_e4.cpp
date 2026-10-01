@@ -24,7 +24,7 @@
 
 // 0x425D10
 namespace gamemd {
-AnimClass * * Building::ComputePosition(AnimClass * aP1, void *a2_1)
+AnimClass * * Building::ComputePosition(int *aP1)
 {
 
   double v2; // st7
@@ -96,7 +96,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1, void *a2_1)
         {
           v35[0] = v9; /*0x425da0*/
           v35[1] = v13; /*0x425da5*/
-          if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v35, 1) ) /*0x425daa*/
+          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(v35, 1) ) /*0x425daa*/
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
@@ -104,8 +104,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1, void *a2_1)
             v15 = v14; /*0x425dd0*/
             if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
               && ((int)v14->Cell_field_0x140 & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
+              && (*((unsigned int *)((Cell *)(v14))->GetNeighbourContent(6u) + 80) & 0x100) == 0
+              && (*((unsigned int *)((Cell *)(v15))->GetNeighbourContent(0) + 80) & 0x100) == 0 )
             {
               if ( *(unsigned int *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
               {

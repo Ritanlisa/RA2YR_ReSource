@@ -24,7 +24,7 @@ struct InfantryTypeVector {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     int Add(InfantryTypeClass * aP1, void *a2, void *a3);
-    unsigned int * Construct2(int a2, int a3, void *a3_2);
+    unsigned int * Construct2(int a2, int a3);
     unsigned int * ConstructFromData(int a2, int a3);
 };
 

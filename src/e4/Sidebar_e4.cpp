@@ -30,7 +30,7 @@
 
 // 0x4FA350
 namespace gamemd {
-AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5, void *a5_2)
+AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5)
 {
 
   HouseClass *v6; // ebx
@@ -478,7 +478,7 @@ void Sidebar::RemoveItem(int a2, void *a2_2)
 }
 // 0x63FB20
 namespace gamemd {
-ObjectClass * * Sidebar::Render(char a2, void *a2_2)
+ObjectClass * * Sidebar::Render(char a2)
 {
 
   int v3; // ebx
@@ -695,7 +695,7 @@ int Sidebar::ActivateTab(IUnknown * aP1, void *a2_1)
 }
 // 0x6A70E0
 namespace gamemd {
-AbstractClass * * Sidebar::FlushSidebarTooltip(char a2, void *a2_2)
+AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 {
 
   int v3; // esi

@@ -12,7 +12,7 @@
 
 // 0x4138C0
 namespace gamemd {
-int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorClass_flat * aP3)
+int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 {
 
   int v4; // esi
@@ -122,7 +122,7 @@ unsigned int * Coord::ToCell(IUnknown * aP1)
 }
 // 0x41C230
 namespace gamemd {
-void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1)
+void * Coord::Subtract(int aP1, int aP2, int aP3)
 {
 
   *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
@@ -181,7 +181,7 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 }
 // 0x43A0D0
 namespace gamemd {
-void * Coord::Scale(IUnknown * aP1, void *a2_1)
+void * Coord::Scale(float aP1)
 {
 
   float *v2; // ecx
@@ -195,7 +195,7 @@ void * Coord::Scale(IUnknown * aP1, void *a2_1)
 }
 // 0x565730
 namespace gamemd {
-void * Coord::To_Cell(IUnknown * aP1, void *a2_1)
+void * Coord::To_Cell(unsigned int *aP1)
 {
 
   int v2; // eax
@@ -266,7 +266,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 }
 // 0x6D2140
 namespace gamemd {
-AbstractClass * * Coord::To_Screen(unsigned int * a2, int * a3, void *a3_2)
+AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
 {
 
   int v4; // edi

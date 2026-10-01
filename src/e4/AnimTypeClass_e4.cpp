@@ -84,7 +84,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   int v5; // eax
   AnimTypeClass **v6; // ecx
 
-  ObjectType  ObjectTypeClass::ConstructFull((gamemd::AbstractClass *)((int *)this), aP1); 
+  ObjectType  ((ObjectTypeClass *)((gamemd::AbstractClass *)((int *)this)))->ConstructFull(aP1); 
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
@@ -402,32 +402,32 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
   int v14; // ecx
 
-  AbstractTy  AbstractTypeClass::ProcessPower((gamemd::AbstractClass *)((AbstractTypeClass *)this), a2); 
+  AbstractTy  ((AbstractTypeClass *)((gamemd::AbstractClass *)((AbstractTypeClass *)this)))->ProcessPower(a2); 
   Power::Tim  Power::TimerProcess((void *)(this->Layer[0])); 
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v3); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v3); 
   LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
-  v5 = Power  v5 = Power::FlagProcess((int)((Power *)a2), v4); 
+  v5 = Power  v5 = ((Power *)((int)((Power *)a2)))->FlagProcess(v4); 
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v5); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v5); 
   LOBYTE(v6) = this->Scorch; /*0x428a16*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v6); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v6); 
   LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power  v8 = Power::FlagProcess((int)((Power *)a2), v7); 
+  v8 = Power  v8 = ((Power *)((int)((Power *)a2)))->FlagProcess(v7); 
   LOBYTE(v8) = this->Crater; /*0x428a32*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v8); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v8); 
   LOBYTE(v9) = this->Sticky; /*0x428a40*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v9); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v9); 
   LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Powe  v11 = Power::FlagProcess((int)((Power *)a2), v10); 
+  v11 = Powe  v11 = ((Power *)((int)((Power *)a2)))->FlagProcess(v10); 
   LOBYTE(v11) = this->Reverse; /*0x428a5c*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v11); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v11); 
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v12); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v12); 
   Power::Tim  Power::TimerProcess((void *)(this->MiddleFrameWidth)); 
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
-  Power::Fla  Power::FlagProcess((int)((Power *)a2), v13); 
+  Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v13); 
   Power::Tim  Power::TimerProcess((void *)(this->Rate)); 
   Power::Tim  Power::TimerProcess((void *)(this->Start)); 
   Power::Tim  Power::TimerProcess((void *)(this->LoopStart)); 
@@ -442,7 +442,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::Tim  Power::TimerProcess((void *)(this->RandomLoopDelay[1])); 
   Power::Tim  Power::TimerProcess((void *)(this->Translucency)); 
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Pow  return Power::FlagProcess((int)((Power *)a2), v14); 
+  return Pow  return ((Power *)((int)((Power *)a2)))->FlagProcess(v14); 
 
 }
 }
@@ -525,7 +525,7 @@ int AnimTypeClass::GetDamage()
         ((unsigned int *)this)[0] = 1; /*0x428d55*/
       *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
-      Vector::Clear((int)v11); /*0x428d76*/
+      ((Vector *)((int)v11))->Clear(); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
@@ -533,7 +533,7 @@ int AnimTypeClass::GetDamage()
     Image = ((unsigned int *)this)[0]; /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
-    Vector::Clear((int)v8); /*0x428dbc*/
+    ((Vector *)((int)v8))->Clear(); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/

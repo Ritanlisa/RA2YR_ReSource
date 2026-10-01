@@ -50,7 +50,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   IPXGlobalConnClass_field_0x04 = (Terrain *)v2->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
-    TileType = Terrain::GetTileType(IPXGlobalConnClass_field_0x04, i); /*0x540158*/
+    TileType = ((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(i); /*0x540158*/
     this->Debug::Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
@@ -127,7 +127,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   v19 = a3[2]; /*0x540421*/
   if ( aP4 ) /*0x540425*/
   {
-    Network::CopyAddress((Network *)a3, &v15, (int)v17); /*0x540431*/
+    ((Network *)((Network *)a3))->CopyAddress(&v15, (int)v17); /*0x540431*/
     v15 = (int)(*aP4); /*0x540442*/
     NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
@@ -138,7 +138,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     {
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
-      Network::CopyAddress((Network *)&v20, &v15, (int)v17); /*0x5404ba*/
+      ((Network *)((Network *)&v20))->CopyAddress(&v15, (int)v17); /*0x5404ba*/
       NetworkID::Assign(&v20, &v15, (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
@@ -215,7 +215,7 @@ int IPXGlobalConnClass::CheckStatus()
   {
     do /*0x540104*/
     {
-      if ( (*(unsigned char *)Terrain::GetTileType(IPXGlobalConnClass_field_0x04, v2) & 2) != 0 ) /*0x5400e9*/
+      if ( (*(unsigned char *)((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(v2) & 2) != 0 ) /*0x5400e9*/
         PacketQueue::ReleaseEntry((PacketQueue *)this->IPXGlobalConnClass_field_0x04, 0, 0, v2--, 0, 0); /*0x5400f7*/
       IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x5400fd*/
       ++v2; /*0x540100*/
@@ -322,7 +322,7 @@ namespace gamemd {
 int IPXGlobalConnClass::ddtor(int a2, int a3)
 {
 
-  return ConnectionClass::receivePacket((ConnectionClass *)this, a2, a3); /*0x54063f*/
+  return ((ConnectionClass *)((ConnectionClass *)this))->receivePacket(a2, a3); /*0x54063f*/
 
 }
 } // namespace gamemd
@@ -331,7 +331,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 {
 
-  return ConnectionClass::processTileUpdate((ConnectionClass *)this, a2, a3); /*0x54065f*/
+  return ((ConnectionClass *)((ConnectionClass *)this))->processTileUpdate(a2, a3); /*0x54065f*/
 
 }
 } // namespace gamemd

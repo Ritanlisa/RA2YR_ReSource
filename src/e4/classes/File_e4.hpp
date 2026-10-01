@@ -36,12 +36,12 @@ struct File {
     char IsReady(int a2, void *a2_2);  // 0x431F10
     AbstractClass * LoadFont(char * Source);  // 0x433990
     char Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x4CB920
-    unsigned int * LoadFileHVA(int a2, void *a2_2);  // 0x5BD570
+    unsigned int * LoadFileHVA(int a2);  // 0x5BD570
     AbstractClass * * ParseFileHVA(int a2, int a2_2);  // 0x5BD5C0
-    File * * LoadPaletteData(ObjectClass * aP1, void *a2_1);  // 0x625AF0
+    File * * LoadPaletteData(unsigned short *aP1);  // 0x625AF0
     int FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
     AbstractClass * * ParseCSFString(char * Source);  // 0x734990
-    unsigned int * LoadFileVXL(int a2, int a3, void *a3_2);  // 0x755CD0
+    unsigned int * LoadFileVXL(int a2, int a3);  // 0x755CD0
     AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
     AbstractClass * * LoadWDTDecompress(CCINIClass * aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF(void *a1_1);  // 0x7C12B0

@@ -168,7 +168,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     *((unsigned int *)this + 13) = 0; /*0x4c9d92*/
     *((unsigned int *)this + 9) = 0; /*0x4c9d95*/
     *((unsigned int *)this + 22) = (*(int (**)(int, #375 *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
-    if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
+    if ( !(uint8_t)((House *)(a3))->IsCurrentPlayer() ) /*0x4c9da7*/
     {
       v12 = *((unsigned int *)this + 22); /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
@@ -414,9 +414,9 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4f5*/
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
-  Power::FlagProcess((Power *)a2, v3); /*0x4ca50f*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x4ca50f*/
   LOBYTE(v4) = this->__pad_42[27]; /*0x4ca514*/
-  Power::FlagProcess((Power *)a2, v4); /*0x4ca51a*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
   v5 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca535*/
@@ -487,7 +487,7 @@ int FactoryClass::StartProduction_2()
           v10 = v3[3278]; /*0x4ca5ff*/
           v9 = v2; /*0x4ca600*/
           v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))(v3); /*0x4ca603*/
-          LOBYTE(v2) = Sidebar::StartSidebarProduction((int)this->owner, v7, v9, v10, 1); /*0x4ca60a*/
+          LOBYTE(v2) = ((Sidebar *)((int)this->owner))->StartSidebarProduction(v7, v9, v10, 1); /*0x4ca60a*/
         }
       }
     }

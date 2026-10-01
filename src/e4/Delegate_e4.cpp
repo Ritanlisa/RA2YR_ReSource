@@ -154,7 +154,7 @@ int Delegate::Set(AbstractTypeClass * aP1, void *a2, void *a3)
 } // namespace gamemd
 // 0x6C98E0
 namespace gamemd {
-int Delegate::Invoke(int a2, Straw * aP2, void *a3)
+int Delegate::Invoke(int a2, int aP2)
 {
 
   int Straw_field_0x04; // ecx
@@ -238,7 +238,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
+          v9 = ((Delegate *)((Straw *)this))->Invoke(*(unsigned int *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
           *(unsigned int *)&this->__pad_14[4] = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/
@@ -288,7 +288,7 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 
-  Vector::Clear((int)&this->__pad_0[12]); /*0x52ae76*/
+  ((Vector *)((int)&this->__pad_0[12]))->Clear(); /*0x52ae76*/
   Straw::Dtor((Straw *)this); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     __3_YAXPAX_Z(this); /*0x52ae8a*/

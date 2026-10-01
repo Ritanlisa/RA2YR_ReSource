@@ -505,7 +505,7 @@ int SidebarClass::Redraw(char a2)
     (wchar_t)v2,
     v2[((unsigned int *)(3].__pad_CD2))[1789]);
   v9 = v23 || v17; /*0x6a6ff4*/
-  Sidebar::Render((PowerClass *)v2, v9); /*0x6a6ffc*/
+  ((Sidebar *)((PowerClass *)v2))->Render(v9); /*0x6a6ffc*/
   if ( byte_B07E4C ) /*0x6a7007*/
   {
     v10 = 1; /*0x6a7009*/
@@ -554,7 +554,7 @@ int SidebarClass::Redraw(char a2)
     v10 = g_TooltipActive; /*0x6a7090*/
   }
   v12 = v10 || v2[((unsigned int *)(3].__pad_CD2))[1789]; /*0x6a70a6*/
-  Sidebar::FlushSidebarTooltip((Sidebar *)v2, v12); /*0x6a70ae*/
+  ((Sidebar *)((Sidebar *)v2))->FlushSidebarTooltip(v12); /*0x6a70ae*/
   v2[3].__pad_CD2[1788] = 0; /*0x6a70b7*/
   v2[3].__pad_CD2[1789] = 0; /*0x6a70bd*/
   g_DSurface_Hidden_2 = v19; /*0x6a70c5*/

@@ -83,7 +83,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
 LABEL_9:
     Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226)), *(unsigned int *)(v3[433] + 1820)); 
     Building    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232)), *(unsigned int *)(v3[433] + 1820)); 
-    Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
+    Value = ((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue(&v18); /*0x41400d*/
     FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*(unsigned int *)v3[433] + 188))(v3[433]); /*0x414024*/
@@ -250,12 +250,12 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
-    if ( (uint8_t)Object::IsAlliedWithObjectHouse((Object *)((unsigned int *)this)[0], (int)v4) ) /*0x417d33*/
+    if ( (uint8_t)((Object *)((Object *)((unsigned int *)this)[0]))->IsAlliedWithObjectHouse((int)v4) ) /*0x417d33*/
     {
       if ( !v4 /*0x417d56*/
         || (LOBYTE(a3) = v4[5] & 1, !(unsigned char)a3)
         || (v8 = (Object *)(*(int (**)(int *))(*v4 + 60))(v4),
-            (uint8_t)Object::IsAlliedWithObjectHouse(v8, (int)this)) )
+            (uint8_t)((Object *)(v8))->IsAlliedWithObjectHouse((int)this)) )
       {
         if ( !((unsigned int *)this)[1] && (*(int (**)(int *))(*v4 + 44))(v4) == 1 ) /*0x417d73*/
         {
@@ -362,7 +362,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   team = (gamemd::TeamClass *)(((unsigned int *)this)[0]); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (uint8_t)TechnoClass::IsWaypointHidden((TechnoClass *)team)
-    && !(uint8_t)Type::CheckAmbiguity((Type *)&stru_87F5F0.__pad_58[416], (int)a2, 1) )
+    && !(uint8_t)((Type *)((Type *)&stru_87F5F0.__pad_58[416]))->CheckAmbiguity((int)a2, 1) )
   {
     return 0; /*0x4196d7*/
   }
@@ -373,7 +373,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
      || *(unsigned int *)(v8 + 544) != 2
      && !dword_A8E7AC
      && ((*(int (**)(int))(*(unsigned int *)v8 + 44))(v8) != 6 || !*(unsigned char *)(*(unsigned int *)(v8 + 1312) + 3226)))
-    && !(uint8_t)Cell::IsBuildable((bool *)a2, 4, 0, 0, -1, 0, -1, 1) )
+    && !(uint8_t)((Cell *)((bool *)a2))->IsBuildable(4, 0, 0, -1, 0, -1, 1) )
   {
     return 7; /*0x419761*/
   }
@@ -537,8 +537,8 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
                   WinAPI::Wrapper(-2147467261); /*0x41ad75*/
                 (*(void (**)(int))(*(unsigned int *)a1->locomotor[0] + 88))(a1->locomotor[0]); /*0x41ad83*/
               }
-              if ( (int *)Team::GetMember((Team *)a1, 0) == v14 /*0x41ad9e*/
-                && ClosestPlacementCell != (int *)Team::GetMember((Team *)a1, 0) )
+              if ( (int *)((Team *)((Team *)a1))->GetMember(0) == v14 /*0x41ad9e*/
+                && ClosestPlacementCell != (int *)((Team *)((Team *)a1))->GetMember(0) )
               {
                 (*((void (**)(FootClass *, int))a1->vtable0 + 157))(a1, 3); /*0x41ada6*/
               }
@@ -675,7 +675,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
   v2 = a0; /*0x41b432*/
   p_vtable1 = &((unsigned int *)a0)[0]; /*0x41b43a*/
   a0 = (AircraftClass *)(*((int (**)(void **))((unsigned int *)a0)[0] + 4))(&((unsigned int *)a0)[0]); /*0x41b44b*/
-  v4 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&a0); /*0x41b44f*/
+  v4 = ((BuildingTypeClass *)(&g_BuildingLoadQueue_Array))->Dequeue((int *)&a0); /*0x41b44f*/
   if ( v4 ) /*0x41b456*/
   {
     v5 = (signed int)(v4 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x41b45e*/

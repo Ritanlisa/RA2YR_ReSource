@@ -11,7 +11,7 @@ struct Font {
     char Font_field_04[4];  // 0x4
     char Font_field_08[4];  // 0x8
 // --- flat members (END) ---
-    int GetGlyphDataForChar(AbstractClass * aP1, void *a2);
+    int GetGlyphDataForChar(uint16_t aP1);
     int Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9);
 };
 

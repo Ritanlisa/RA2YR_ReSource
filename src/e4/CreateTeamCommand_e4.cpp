@@ -60,10 +60,10 @@ unsigned int * CreateTeamCommand::performAction_148()
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
-  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x5373a6*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x5373a6*/
   result = (unsigned int *)dword_880990; /*0x5373ab*/
   if ( dword_880990 ) /*0x5373b2*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5373c3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5373c3*/
   return result; /*0x5373c8*/
 
 }
@@ -84,10 +84,10 @@ unsigned int * CreateTeamCommand::performAction_153()
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
-  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537496*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537496*/
   result = (unsigned int *)dword_880990; /*0x53749b*/
   if ( dword_880990 ) /*0x5374a2*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5374b3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5374b3*/
   return result; /*0x5374b8*/
 
 }
@@ -108,10 +108,10 @@ unsigned int * CreateTeamCommand::performAction_158()
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
-  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537586*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537586*/
   result = (unsigned int *)dword_880990; /*0x53758b*/
   if ( dword_880990 ) /*0x537592*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5375a3*/
+    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(&v3, &word_A8F2F8); /*0x5375a3*/
   return result; /*0x5375a8*/
 
 }
@@ -2193,7 +2193,7 @@ void * CreateTeamCommand::performAction_167()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53771e*/
   v5[0] = *v1; /*0x537725*/
   v5[1] = v1[1]; /*0x53773c*/
-  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537745*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537745*/
   result = dword_A8B230; /*0x537747*/
   *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = v2; /*0x53774c*/
   return result; /*0x537752*/
@@ -2255,7 +2255,7 @@ void * CreateTeamCommand::performAction_172()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x5377de*/
   v5[0] = *v1; /*0x5377e5*/
   v5[1] = v1[1]; /*0x5377fc*/
-  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537805*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537805*/
   result = dword_A8B230; /*0x537807*/
   *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = v2; /*0x53780c*/
   return result; /*0x537812*/
@@ -2317,7 +2317,7 @@ void * CreateTeamCommand::performAction_177()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53789e*/
   v5[0] = *v1; /*0x5378a5*/
   v5[1] = v1[1]; /*0x5378bc*/
-  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x5378c5*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x5378c5*/
   result = dword_A8B230; /*0x5378c7*/
   *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = v2; /*0x5378cc*/
   return result; /*0x5378d2*/
@@ -2379,7 +2379,7 @@ void * CreateTeamCommand::performAction_182()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53795e*/
   v5[0] = *v1; /*0x537965*/
   v5[1] = v1[1]; /*0x53797c*/
-  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537985*/
   result = dword_A8B230; /*0x537987*/
   *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/

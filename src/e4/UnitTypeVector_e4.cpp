@@ -9,7 +9,7 @@
 
 // 0x513940
 namespace gamemd {
-unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3, void *a3_2)
+unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
 
   this->UnitTypeVector_field_0x04 = 0; /*0x51394b*/

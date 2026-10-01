@@ -82,8 +82,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   unsigned int v47[4]; // [esp+8Ch] [ebp-20h] BYREF
   unsigned int v48[4]; // [esp+9Ch] [ebp-10h] BYREF
 
-  Coord::To_Screen(g_TacticalClass_Instance, &aP0, &v31); /*0x7049dc*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v29); /*0x7049f4*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&aP0, &v31); /*0x7049dc*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v29); /*0x7049f4*/
   v9 = dword_886FA4; /*0x7049fd*/
   v10 = a9; /*0x704a07*/
   v32 += dword_886FA4; /*0x704a14*/
@@ -253,8 +253,8 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v20 = 0; /*0x704e6c*/
   v26 = -1; /*0x704e71*/
   v27 = -1; /*0x704e79*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v24); /*0x704e7d*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v21); /*0x704e95*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v24); /*0x704e7d*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v21); /*0x704e95*/
   v22 += dword_886FA4; /*0x704ec3*/
   v25 += dword_886FA4; /*0x704ece*/
   v29 = v25 - 2; /*0x704eeb*/
@@ -307,8 +307,8 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     v17 = ((double)v23 - 16.0) * 0.0625; /*0x7050f2*/
     v23 = (v14 * a6 + v15 * a3) / 32; /*0x7050f8*/
     v40 = Math::RoundToInt(v17); /*0x705119*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v41, &v24); /*0x70512f*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v38, &v21); /*0x705144*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v41, &v24); /*0x70512f*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v38, &v21); /*0x705144*/
     v25 += dword_886FA4; /*0x705158*/
     v22 += dword_886FA4; /*0x70516b*/
     if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
@@ -316,7 +316,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
       v20 = (void *)((int16_t)(IDA_BYTE2(a7)));
       v19 = (void *)((unsigned int)(a7));
       if ( (((unsigned short)v16 - (unsigned short)v28) & 0x1F8u) <= 0xF8 && (((unsigned short)v16 - (unsigned short)v28) & 0x1F8) != 0 ) /*0x7051aa*/
-        Color::Lerp((uint8_t *)&v19, (v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
+        ((Color *)((uint8_t *)&v19))->Lerp((v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
       (*(void (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x705226*/
         DSurface_Composite,
         &v24,

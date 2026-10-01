@@ -36,11 +36,11 @@ struct DynamicVector {
     unsigned int *__pad_C;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
-    char AddItem(VectorClass_flat * aP1, void *a2_1);  // 0x413A70
+    char AddItem(unsigned int *aP1);  // 0x413A70
     unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x42F670
-    char RemoveItem(IUnknown * aP1, void *a2_1);  // 0x45ADD0
-    char Add_Alt(VectorClass_flat * aP1, void *a2_1);  // 0x477EC0
-    int GetOrGrow(DynamicVector * aP1, int a2_1);
+    char RemoveItem(int aP1);  // 0x45ADD0
+    char Add_Alt(unsigned int *aP1);  // 0x477EC0
+    int GetOrGrow(int aP1);
     char Add_Alt4(VectorClass_flat * aP1);  // 0x5253B0
     char Add_Alt2(DynamicVector * aP1);  // 0x538780
     char Add_Alt3(VectorClass_flat * aP1);  // 0x5AD7D0

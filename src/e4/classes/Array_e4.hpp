@@ -84,13 +84,13 @@ struct Array {
     int GetClamped(CheckListClass * aP1);  // 0x557AC0
     int FindValue(IUnknown * aP1);  // 0x634290
     int RemoveAt(int a2, void *a2_2);  // 0x63E590
-    int Get(int a2, void *a2_2);  // 0x65AD40
+    int Get(int a2);  // 0x65AD40
     int ContainsValue(IUnknown * aP1, void *a2_1);  // 0x65ADF0
     int Zero(void *a1_1);  // 0x7490D0
     void ByteSwap();  // 0x749150
-    int GetElement(CampaignScore * aP1, void *a2_1);  // 0x763980
+    int GetElement(int aP1);  // 0x763980
     int CleanupArrayWOL(void *a1_1);  // 0x7ACD30
-    AbstractClass * * InsertElement(const void * a1, ObjectClass * aP2, void *a3_1);  // 0x7AD790
+    AbstractClass * * InsertElement(const void *a1, int aP2);  // 0x7AD790
     int ForEach(int a1, int a2, int a3, int (* a4)(int));
     int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
     int Cleanup(void *a1_1);  // 0x49B720

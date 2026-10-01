@@ -505,7 +505,7 @@ void SelectAllOfType()
     v4 = v3; /*0x73299d*/
     if ( v3 ) /*0x7329a4*/
     {
-      EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
+      ((EventClass *)(v3))->resetEvent(0, 0); /*0x7329aa*/
       v4->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x7329af*/
       *(unsigned int *)&v4->__pad_10[4] = 10; /*0x7329b5*/
       *(unsigned int *)v4->__pad_10 = 0; /*0x7329bc*/
@@ -521,7 +521,7 @@ void SelectAllOfType()
       {
         v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v2); /*0x7329d7*/
         if ( (uint8_t)TechnoClass::IsOwnedByHuman(v23) ) /*0x7329db*/
-          DynamicVector::AddItem((DynamicVector *)v4, &v23); /*0x7329eb*/
+          ((DynamicVector *)((DynamicVector *)v4))->AddItem(&v23); /*0x7329eb*/
         ++v2; /*0x7329f0*/
       }
       while ( v2 < v5 ); /*0x7329f3*/
@@ -534,7 +534,7 @@ void SelectAllOfType()
     v8 = v7; /*0x732a01*/
     if ( v7 ) /*0x732a08*/
     {
-      EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
+      ((EventClass *)(v7))->resetEvent(0, 0); /*0x732a0e*/
       v8->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x732a13*/
       *(unsigned int *)&v8->__pad_10[4] = 10; /*0x732a1a*/
       *(unsigned int *)v8->__pad_10 = 0; /*0x732a21*/
@@ -551,7 +551,7 @@ void SelectAllOfType()
       {
         v23 = CoordDataMap; /*0x732a58*/
         if ( (uint8_t)TechnoClass::IsOwnedByHuman(CoordDataMap) ) /*0x732a5c*/
-          DynamicVector::AddItem((DynamicVector *)v8, &v23); /*0x732a6c*/
+          ((DynamicVector *)((DynamicVector *)v8))->AddItem(&v23); /*0x732a6c*/
       }
     }
     v12 = 0; /*0x732a79*/
@@ -590,7 +590,7 @@ void SelectAllOfType()
     {
       v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * j); /*0x732b01*/
       if ( (uint8_t)TechnoClass::IsOwnedByHuman(v23) ) /*0x732b05*/
-        DynamicVector::AddItem(v6, &v23); /*0x732b15*/
+        ((DynamicVector *)(v6))->AddItem(&v23); /*0x732b15*/
     }
   }
   LABEL_36: DynamicVector_field_0x10 = (void *)(v6->DynamicVector_field_0x10);
@@ -661,7 +661,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     v5 = 0; /*0x733015*/
     if ( HeightMap ) /*0x73301c*/
     {
-      IDA_LOBYTE(HeightMap) = (uint8_t)EventClass::resetEvent((unsigned int *)HeightMap, 0, 0); /*0x733022*/
+      IDA_LOBYTE(HeightMap) = (uint8_t)((EventClass *)((unsigned int *)HeightMap))->resetEvent(0, 0); /*0x733022*/
       *v4 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x733027*/
       v4[5] = 10; /*0x73302d*/
       v4[4] = 0; /*0x733034*/
@@ -703,7 +703,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     v4 = v10; /*0x7330aa*/
     if ( v10 ) /*0x7330b1*/
     {
-      EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
+      ((EventClass *)(v10))->resetEvent(0, 0); /*0x7330b9*/
       *v4 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7330be*/
       v4[5] = 10; /*0x7330c4*/
       v4[4] = 0; /*0x7330cb*/
@@ -724,7 +724,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
           v17 = HeightMap; /*0x73310b*/
           IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, a1); /*0x73310f*/
           if ( (unsigned char)HeightMap ) /*0x733116*/
-            IDA_LOBYTE(HeightMap) = DynamicVector::AddItem(v4, &v17); /*0x73311f*/
+            IDA_LOBYTE(HeightMap) = ((DynamicVector *)(v4))->AddItem(&v17); /*0x73311f*/
         }
       }
     }
@@ -770,7 +770,7 @@ void sub_7331B0()
   v3 = v2; /*0x7331d4*/
   if ( v2 ) /*0x7331db*/
   {
-    EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
+    ((EventClass *)(v2))->resetEvent(0, 0); /*0x7331e1*/
     v3->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x7331e6*/
         *(unsigned int *)(v2 + 20) = 10;
         *(unsigned int *)(v2 + 16) = 0;
@@ -818,7 +818,7 @@ void sub_7331B0()
     v12 = v11; /*0x733289*/
     if ( v11 ) /*0x733290*/
     {
-      EventClass::resetEvent(v11, 0, 0); /*0x733296*/
+      ((EventClass *)(v11))->resetEvent(0, 0); /*0x733296*/
       v12->EventClass_field_0x0 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x73329b*/
             *(unsigned int *)(v11 + 20) = 10;
             *(unsigned int *)(v11 + 16) = 0;
@@ -1001,7 +1001,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x73350d*/
         {
           v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x733516*/
-          DynamicVector::AddItem(v11, &v19); /*0x73351a*/
+          ((DynamicVector *)(v11))->AddItem(&v19); /*0x73351a*/
         }
         ++v2; /*0x73351f*/
       }
@@ -1157,7 +1157,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x733851*/
         {
           v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x73385a*/
-          DynamicVector::AddItem(v11, &v19); /*0x73385e*/
+          ((DynamicVector *)(v11))->AddItem(&v19); /*0x73385e*/
         }
         ++v2; /*0x733863*/
       }
@@ -1284,7 +1284,7 @@ int SelectUnitsByTheme(char a1)
         if ( *(unsigned char *)(v13 + 20) & 1 ) /*0x733b2c*/
         {
           v19 = v13; /*0x733b39*/
-          DynamicVector::AddItem(v10, &v19); /*0x733b3d*/
+          ((DynamicVector *)(v10))->AddItem(&v19); /*0x733b3d*/
         }
       }
     }

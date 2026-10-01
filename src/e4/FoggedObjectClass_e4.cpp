@@ -57,10 +57,10 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 13) = *a2; /*0x4d09b4*/
   *((unsigned int *)this + 14) = a2[1]; /*0x4d09b9*/
   *((unsigned int *)this + 15) = a2[2]; /*0x4d09c4*/
-  *((unsigned int *)this + 20) = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2)->level; /*0x4d09da*/
+  *((unsigned int *)this + 20) = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)->level; /*0x4d09da*/
   *((unsigned int *)this + 21) = -1; /*0x4d09dd*/
   *((unsigned int *)this + 22) = 0; /*0x4d09e4*/
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d09e7*/
+  ((FoggedObject *)((FoggedObject *)((char *)this + 92)))->DrawVector_Constructor(0, 0); /*0x4d09e7*/
   *((unsigned int *)this + 23) = (unsigned int)(&vt_DynamicVectorClass); /*0x4d09ec*/
   *((unsigned int *)this + 28) = 10; /*0x4d09f2*/
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
@@ -69,7 +69,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a0c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a13*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
-  v5 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2)); /*0x4d0a2a*/
+  v5 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
@@ -192,11 +192,11 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   this->House = (unsigned int)(0);
   this->Cell[0] = (unsigned int)(0);
   *((unsigned int *)this + 12) = 29; /*0x4d0c67*/
-  level = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1)->level; /*0x4d0c73*/
+  level = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1)->level; /*0x4d0c73*/
   *((unsigned int *)this + 21) = a3; /*0x4d0c85*/
   *((unsigned int *)this + 20) = level; /*0x4d0c8c*/
   *((unsigned int *)this + 22) = a4; /*0x4d0c8f*/
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d0c92*/
+  ((FoggedObject *)((FoggedObject *)((char *)this + 92)))->DrawVector_Constructor(0, 0); /*0x4d0c92*/
   *((unsigned int *)this + 23) = (unsigned int)(&vt_DynamicVectorClass); /*0x4d0c97*/
   *((unsigned int *)this + 28) = 10; /*0x4d0c9e*/
   *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
@@ -205,7 +205,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cb8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cbf*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cc6*/
-  v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1)); /*0x4d0ccd*/
+  v6 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1)); /*0x4d0ccd*/
   v7 = (int)(aP1[1]); /*0x4d0cd4*/
   v8 = (int)(aP1[2]); /*0x4d0cd7*/
   v23[0] = (unsigned int)(*aP1); /*0x4d0cda*/
@@ -216,7 +216,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   *((unsigned int *)this + 13) = v23[0]; /*0x4d0cfd*/
   *((unsigned int *)this + 14) = v7; /*0x4d0d03*/
   *((unsigned int *)this + 15) = v9; /*0x4d0d06*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v23, &v21); /*0x4d0d15*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v23, &v21); /*0x4d0d15*/
   v10 = v21 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v11 = v22; /*0x4d0d2a*/
@@ -356,10 +356,10 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = (char *)this + 92; /*0x4d0f67*/
-  *((unsigned int *)this + 20) = *((char *)Coord::To_Cell(&dword_87F7E8, v49) + 283); /*0x4d0f6a*/
+  *((unsigned int *)this + 20) = *((char *)((Coord *)(&dword_87F7E8))->To_Cell(v49) + 283); /*0x4d0f6a*/
   *((unsigned int *)this + 21) = -1; /*0x4d0f73*/
   *((unsigned int *)this + 22) = 0; /*0x4d0f7a*/
-  FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 92), 0, 0); /*0x4d0f81*/
+  ((FoggedObject *)((unsigned int *)((char *)this + 92)))->DrawVector_Constructor(0, 0); /*0x4d0f81*/
   *((unsigned int *)this + 23) = (unsigned int)(&vt_DynamicVectorClass); /*0x4d0f8a*/
   *((unsigned int *)this + 28) = 10; /*0x4d0f90*/
   *((unsigned int *)this + 27) = 0; /*0x4d0f97*/
@@ -568,10 +568,10 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   v22[0] = a2[39]; /*0x4d13bb*/
   v22[1] = v3; /*0x4d13c9*/
   v23 = v4; /*0x4d13cd*/
-  *((unsigned int *)this + 20) = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v22)->level; /*0x4d13e4*/
+  *((unsigned int *)this + 20) = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v22)->level; /*0x4d13e4*/
   *((unsigned int *)this + 21) = -1; /*0x4d13e7*/
   *((unsigned int *)this + 22) = 0; /*0x4d13ee*/
-  FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d13f1*/
+  ((FoggedObject *)((FoggedObject *)((char *)this + 92)))->DrawVector_Constructor(0, 0); /*0x4d13f1*/
   *((unsigned int *)this + 23) = (unsigned int)(&vt_DynamicVectorClass); /*0x4d13f6*/
   *((unsigned int *)this + 28) = 10; /*0x4d13fc*/
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
@@ -692,7 +692,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   if ( v3 ) /*0x4d2532*/
   {
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
-    FoggedObject::DrawVector_Constructor((FoggedObject *)v3[1].Cell, 0, 0); /*0x4d2547*/
+    ((FoggedObject *)((FoggedObject *)v3[1].Cell))->DrawVector_Constructor(0, 0); /*0x4d2547*/
     v3[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
     v3[2] = 10; /*0x4d2552*/
     v3[2] = 0; /*0x4d2559*/

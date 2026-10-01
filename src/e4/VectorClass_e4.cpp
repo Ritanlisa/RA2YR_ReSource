@@ -1026,7 +1026,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
           {
             v5 = (int *)v2->DamageFireAnims[3]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
-              TeamClass::LiberateMember_Start(v5, (int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
+              ((TeamClass *)(v5))->LiberateMember_Start((int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
             (*((void (**)(BuildingClass *, int, unsigned int))v2->TechnoClass + 122))(v2, 15, 0); /*0x5014e1*/
           }
           else if ( (*((int (**)(BuildingClass *))v2->TechnoClass + 11))(v2) == 6 /*0x501501*/
@@ -33407,7 +33407,7 @@ namespace gamemd {
 char **  VectorClass_Wstring::Clear(char ** a2, int a3)
 {
 
-  String::AssignFromPtr((String *)a2, (const char **)(*(unsigned int *)&this->m_1[3] + 4 * a3)); /*0x69c592*/
+  ((String *)((String *)a2))->AssignFromPtr((const char **)(*(unsigned int *)&this->m_1[3] + 4 * a3)); /*0x69c592*/
   return a2; /*0x69c599*/
 
 }
@@ -33642,7 +33642,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
         if ( a2 >= this->m_8 ) /*0x69ca67*/
           m_8 = this->m_8; /*0x69ca69*/
         for ( i = 0; i < m_8; ++i ) /*0x69ca6f*/
-          String::Reassign((String *)&v6[i], (const char **)(4 * i + *(unsigned int *)&this->m_1[3])); /*0x69ca81*/
+          ((String *)((String *)&v6[i]))->Reassign((const char **)(4 * i + *(unsigned int *)&this->m_1[3])); /*0x69ca81*/
         if ( BYTE1(this->m_C) ) /*0x69ca8b*/
         {
           v11 = *(unsigned int *)&this->m_1[3]; /*0x69ca92*/
@@ -33741,7 +33741,7 @@ int VectorClass_Wstring::GetSize(const char ** a2)
   v4 = 0; /*0x69cb67*/
   if ( this->m_8 <= 0 ) /*0x69cb6b*/
     return -1; /*0x69cb89*/
-  while ( !(uint8_t)String::Compare((String *)(*(unsigned int *)&this->m_1[3] + 4 * v4), a2) ) /*0x69cb7f*/
+  while ( !(uint8_t)((String *)((String *)(*(unsigned int *)&this->m_1[3] + 4 * v4)))->Compare(a2) ) /*0x69cb7f*/
   {
     if ( ++v4 >= this->m_8 ) /*0x69cb87*/
       return -1; /*0x69cb87*/

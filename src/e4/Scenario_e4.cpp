@@ -260,7 +260,7 @@ int Scenario::ReadTeams()
                         v40 = *(Trigger **)(v29 + 1556); /*0x44fc78*/
                         *(unsigned char *)(v29 + 1770) = 1; /*0x44fc80*/
                         if ( v40 ) /*0x44fc87*/
-                          Trigger::EnableOnce(v40, 0); /*0x44fc8b*/
+                          ((Trigger *)(v40))->EnableOnce(0); /*0x44fc8b*/
                         if ( *(unsigned char *)(*(unsigned int *)(v29 + 1312) + 5822) ) /*0x44fc96*/
                           BuildingClass::RepairPlacement((BuildingClass *)v29, 0); /*0x44fca4*/
                         v41 = 0; /*0x44fca9*/
@@ -281,7 +281,7 @@ int Scenario::ReadTeams()
                           HouseClass::UpdateProduction(*(unsigned int *)(v29 + 540), v44, v39, 0); /*0x44fcfc*/
                         }
                         if ( (uint8_t)House::IsHumanPlayer(*(House **)(v29 + 540)) ) /*0x44fd07*/
-                          VoxClass::FindAndPlay((VoxClass *)&stru_818E00.Next, -1); /*0x44fd1a*/
+                          ((VoxClass *)((VoxClass *)&stru_818E00.Next))->FindAndPlay(-1); /*0x44fd1a*/
                       }
                     }
                     else
@@ -321,7 +321,7 @@ int Scenario::ReadTeams()
                       && (*(uint8_t (**)(int))(*(unsigned int *)v29 + 1020))(v29)
                       && *(unsigned int *)(v29 + 1408) )
                     {
-                      Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(v29 + 904), &v76));
+                      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v29 + 904)))->GetValue(&v76));
                       v53 = *(unsigned int *)(v29 + 1408); /*0x44fdfd*/
                       v54 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x44fe09*/
                       if ( v53 ) /*0x44fe0e*/
@@ -635,26 +635,26 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       v3 = (TeamClass *)*((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + v1); /*0x55afec*/
       if ( BYTE2(v2[375].vtable0) ) /*0x55afef*/
       {
-        if ( (uint8_t)TeamClass::Update_0(v3, 50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
+        if ( (uint8_t)((TeamClass *)(v3))->Update_0(50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
           goto LABEL_22; /*0x55b011*/
         v2 = dword_A8B230; /*0x55b017*/
       }
       if ( BYTE2(v2[374].uniqueId) ) /*0x55b01d*/
       {
-        if ( (uint8_t)TeamClass::Update_0(v3, 27, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) /*0x55b090*/
-          || (uint8_t)TeamClass::Update_0(v3, 28, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-          || (uint8_t)TeamClass::Update_0(v3, 36, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-          || (uint8_t)TeamClass::Update_0(v3, 37, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) )
+        if ( (uint8_t)((TeamClass *)(v3))->Update_0(27, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) /*0x55b090*/
+          || (uint8_t)((TeamClass *)(v3))->Update_0(28, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
+          || (uint8_t)((TeamClass *)(v3))->Update_0(36, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
+          || (uint8_t)((TeamClass *)(v3))->Update_0(37, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) )
         {
           goto LABEL_22; /*0x55b097*/
         }
         v2 = dword_A8B230; /*0x55b09d*/
       }
       if ( HIBYTE(v2[374].uniqueId) /*0x55b10f*/
-        && ((uint8_t)TeamClass::Update_0(v3, 45, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-         || (uint8_t)TeamClass::Update_0(v3, 46, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0))
-        || (uint8_t)TeamClass::Update_0(v3, 13, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-        || (uint8_t)TeamClass::Update_0(v3, 51, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) )
+        && ((uint8_t)((TeamClass *)(v3))->Update_0(45, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
+         || (uint8_t)((TeamClass *)(v3))->Update_0(46, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0))
+        || (uint8_t)((TeamClass *)(v3))->Update_0(13, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
+        || (uint8_t)((TeamClass *)(v3))->Update_0(51, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) )
       {
         goto LABEL_22; /*0x55b116*/
       }
@@ -677,7 +677,7 @@ LABEL_23:
       if ( dword_A83CDC >= (int)((char *)&FootClass_Array) ) /*0x55b177*/
         goto LABEL_24; /*0x55b177*/
     }
-    TeamClass::Update_0(v3, 14, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0); /*0x55b148*/
+    ((TeamClass *)(v3))->Update_0(14, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0); /*0x55b148*/
 LABEL_22:
     v2 = dword_A8B230; /*0x55b15e*/
     goto LABEL_23; /*0x55b15e*/
@@ -922,7 +922,7 @@ LABEL_82:
     v64 = *v54; /*0x55b6d6*/
     v65 = v54[1]; /*0x55b6e8*/
     v66 = v54[2]; /*0x55b6ef*/
-    Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v64); /*0x55b6f3*/
+    ((Tactical *)((int)g_TacticalClass_Instance))->SetTacticalPosition(&v64); /*0x55b6f3*/
   }
   v67 = &vt_VectorClass; /*0x55b6fc*/
   if ( Block ) /*0x55b706*/
@@ -1112,7 +1112,7 @@ int Scenario::LoadWithProgress()
           v12 = &dword_A8E2B2 + 2; /*0x6848ca*/
           do /*0x684955*/
           {
-            Network::CopyAddress((Network *)(dword_A8DA78[v11] + 40), &v31, (int)v30); /*0x6848e5*/
+            ((Network *)((Network *)(dword_A8DA78[v11] + 40)))->CopyAddress(&v31, (int)v30); /*0x6848e5*/
             sprintf(Buffer, "%d.%d.%d.%d", LOBYTE(v30[0]), BYTE1(v30[0]), BYTE2(v30[0]), HIBYTE(v30[0])); /*0x68491f*/
             v13 = Debug::Log(); /*0x68492e*/
             LOWORD(v13) = *v12; /*0x684933*/

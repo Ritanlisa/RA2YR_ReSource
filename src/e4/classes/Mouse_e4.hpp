@@ -36,7 +36,7 @@ struct Mouse {
     unsigned int u32_5568;
     void* vfptr;  // minimal E2 declaration
     int SetBounds(int aP1, void *a2_1);  // 0x4A8BF0
-    int SetCursor(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x5BDC80
+    int SetCursor(int aP1, char aP2);  // 0x5BDC80
     HWND ReleaseCapture(void *a1_1);  // 0x6938C0
     void DrawCursor(int *a2, int a3, int a4);
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90

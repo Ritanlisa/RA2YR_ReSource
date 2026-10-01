@@ -93,7 +93,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   v15[16] = 0; /*0x6105df*/
   v15[23] = 0; /*0x6105e3*/
   v15[36] = (void *)-1; /*0x6105e7*/
-  Dialog::BindGadgetData(&dword_AC1B00, (int *)&hWnd, (char *)v15); /*0x6105f2*/
+  ((Dialog *)(&dword_AC1B00))->BindGadgetData((int *)&hWnd, (char *)v15); /*0x6105f2*/
   if ( v15[10] ) /*0x6105fd*/
   {
     RA2_OPDEL(v15[10]); /*0x610600*/

@@ -332,7 +332,7 @@ AbstractClass * * ProcessNetworkEvents()
   if ( (dword_A8D5F8 & 2) != 0 ) /*0x64726e*/
   {
     v8[0] = 0; /*0x64727a*/
-    if ( EventQueue::Process((EventQueue *)dword_87F770) ) /*0x64727f*/
+    if ( ((EventQueue *)((EventQueue *)dword_87F770))->Process() ) /*0x64727f*/
     {
       if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
       {
@@ -515,7 +515,7 @@ void RunNetworkGameLoop()
     ((Debug *)0)->Log();
   while ( 2 ) /*0x64840c*/
   {
-    EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x64840c*/
+    ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x64840c*/
     v4 = v22; /*0x64841b*/
     if ( Ticks == -1 ) /*0x648424*/
     {
@@ -563,7 +563,7 @@ void RunNetworkGameLoop()
               &v14,
               &v15) )
         break; /*0x6484ce*/
-      EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x6484da*/
+      ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x6484da*/
       if ( *(unsigned int *)&dword_A8B238 == 1 || *(unsigned int *)&dword_A8B238 == 2 ) /*0x6484ec*/
       {
         switch ( ProcessNetworkMessage((int)v2, 0) ) /*0x648528*/
@@ -792,7 +792,7 @@ LABEL_4:
     v10 = (ObjectClass *)arg4;
   }
   v13 = (ObjectClass *)arg0;
-  EventQueue::Process(*(unsigned int **)&stru_87C374[13308]);
+  ((EventQueue *)(*(unsigned int **)&stru_87C374[13308]))->Process();
   v14 = (ObjectClass *)v100;
   if ( Ticks == (ObjectClass *)-1 )
   {
@@ -1187,7 +1187,7 @@ LABEL_100:
       {
         if ( !(*(int (**)(int *, int, unsigned int *, ObjectClass **))(*v8 + 12))(v8, a6, &var684, &v130) )
           goto LABEL_120;
-        EventQueue::Process(*(unsigned int **)&stru_87C374[13308]);
+        ((EventQueue *)(*(unsigned int **)&stru_87C374[13308]))->Process();
         if ( *(unsigned int *)&HouseClass_Player[29932] == 1 || *(unsigned int *)&HouseClass_Player[29932] == 2 )
         {
           int v61 = ProcessNetworkMessage(a6, (int)aP0);
@@ -2964,7 +2964,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Block + v10) + 72))( /*0x64cf79*/
                                   *((unsigned int *)Block + v10),
                                   &v112);
-                v17 = (float *)Coord::Subtract(&v115, *v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
+                v17 = (float *)((Coord *)(&v115))->Subtract(*v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
                 v106 = *v17; /*0x64cf9b*/
                 v107 = v17[1]; /*0x64cfac*/
                 v108 = v17[2]; /*0x64cfb6*/
@@ -3150,7 +3150,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               v74 = 0; /*0x64d3fa*/
               v72 = 0; /*0x64d402*/
               v127 = (*(int (**)(unsigned int *))(v41 + 132))(v29); /*0x64d40d*/
-              TileIndex = MapClass::GetTileIndex(&MapClass_Instance, (int16_t *)&v73, *(unsigned int *)(v127 + 1460), 1); /*0x64d42c*/
+              TileIndex = ((MapClass *)(&MapClass_Instance))->GetTileIndex((int16_t *)&v73, *(unsigned int *)(v127 + 1460), 1); /*0x64d42c*/
               while ( 1 ) /*0x64d43e*/
               {
                 v109 = v115 + v112; /*0x64d43e*/
@@ -3163,7 +3163,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 IDA_HIWORD(v121) = Math::RoundToInt(v110); /*0x64d4b9*/
                 v121 = v121; /*0x64d4d2*/
                 v42 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v121); /*0x64d4df*/
-                if ( !LayerClass::IsWithinUsableArea(&MapClass_Instance, (int16_t *)&v121, 1) ) /*0x64d4f0*/
+                if ( !((LayerClass *)(&MapClass_Instance))->IsWithinUsableArea((int16_t *)&v121, 1) ) /*0x64d4f0*/
                   goto LABEL_75; /*0x64d4f0*/
                 v43 = MapClass::GetTileIndex( /*0x64d520*/
                         &MapClass_Instance,
@@ -3350,7 +3350,7 @@ void ComputeNetworkFrameCRC()
     v35 = *(unsigned int *)(v3 + 164); /*0x64daf3*/
     v1 = v4 / 10 /*0x64db41*/
        + ((v5 / 10) << 16)
-       + (uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v3 + 904), &v32) >> 7) + 1) >> 1)
+       + (uint8_t)((unsigned int)((*((ProgressTimer *)((ProgressTimer *)(v3 + 904)))->GetValue(&v32) >> 7) + 1) >> 1)
        + (*(unsigned int *)dword_AC51FC >> 31)
        + 2 * *(unsigned int *)dword_AC51FC;
     ++v2; /*0x64db49*/
@@ -3361,8 +3361,8 @@ void ComputeNetworkFrameCRC()
     v8 = *(unsigned int *)(v7 + 156); /*0x64db76*/
     v34 = *(unsigned int *)(v7 + 160); /*0x64db7f*/
     v35 = *(unsigned int *)(v7 + 164); /*0x64db8a*/
-    v9 = (uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v7 + 904), &v32) >> 7) + 1) >> 1); /*0x64dbad*/
-    Value = ProgressTimer::GetValue((ProgressTimer *)(v7 + 928), v33); /*0x64dbb3*/
+    v9 = (uint8_t)((unsigned int)((*((ProgressTimer *)((ProgressTimer *)(v7 + 904)))->GetValue(&v32) >> 7) + 1) >> 1); /*0x64dbad*/
+    Value = ((ProgressTimer *)((ProgressTimer *)(v7 + 928)))->GetValue(v33); /*0x64dbb3*/
     v1 = (uint8_t)((unsigned int)((*Value >> 7) + 1) >> 1) /*0x64dc09*/
        + v9
        + ((v34 / 10) << 16)
@@ -3379,7 +3379,7 @@ void ComputeNetworkFrameCRC()
     v35 = *(unsigned int *)(v12 + 164); /*0x64dc48*/
     v1 = v13 / 10 /*0x64dc9d*/
        + ((v14 / 10) << 16)
-       + (uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v12 + 904), v33) >> 7) + 1) >> 1)
+       + (uint8_t)((unsigned int)((*((ProgressTimer *)((ProgressTimer *)(v12 + 904)))->GetValue(v33) >> 7) + 1) >> 1)
        + (*(unsigned int *)dword_AC51FC >> 31)
        + 2 * *(unsigned int *)dword_AC51FC;
     ++j; /*0x64dca5*/

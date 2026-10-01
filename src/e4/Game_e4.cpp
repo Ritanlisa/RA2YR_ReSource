@@ -104,13 +104,13 @@ int Game::SendCampaignOptions()
       }
       else
       {
-        Option = SessionClass::GetOption(v2); /*0x46d517*/
+        Option = ((SessionClass *)(v2))->GetOption(); /*0x46d517*/
         v4 = *(&dword_A8DA90 + i); /*0x46d51c*/
         *(unsigned int *)&v14[4 * i + 44] = Option; /*0x46d523*/
-        PlayerSide = SessionClass::GetPlayerSide(v4); /*0x46d527*/
+        PlayerSide = ((SessionClass *)(v4))->GetPlayerSide(); /*0x46d527*/
         v6 = *(&dword_A8DA90 + i); /*0x46d52c*/
         *(unsigned int *)&v14[4 * i + 76] = PlayerSide; /*0x46d533*/
-        *(unsigned int *)&v14[4 * i + 108] = SessionClass::GetPlayerColor(v6); /*0x46d53c*/
+        *(unsigned int *)&v14[4 * i + 108] = ((SessionClass *)(v6))->GetPlayerColor(); /*0x46d53c*/
       }
       v7 = ToWideStringChar((char *)*(&dword_A8DA90 + i)); /*0x46d561*/
       Debug::Log(
@@ -147,7 +147,7 @@ int Game::SendCampaignOptions()
         if ( (unsigned char)result ) /*0x46d612*/
         {
           Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
-          result = (int)(Network::ReceiveLoop(unk_A8E9C0)); /*0x46d632*/
+          result = (int)(((Network *)(unk_A8E9C0))->ReceiveLoop()); /*0x46d632*/
         }
       }
       ++v12; /*0x46d637*/
@@ -492,7 +492,7 @@ int Game::MakeScreenshot(int a1)
           v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x537d3b*/
           *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
-          Vector::Clear((int)v20); /*0x537d4f*/
+          ((Vector *)((int)v20))->Clear(); /*0x537d4f*/
           *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x537d5b*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x537d66*/
         }
@@ -501,7 +501,7 @@ int Game::MakeScreenshot(int a1)
         CompressScreenshot((int *)v16.CDFileClass, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
         *(unsigned int *)v16.CDFileClass = &vt_CCFileClass; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
-        Vector::Clear((int)v17); /*0x537daa*/
+        ((Vector *)((int)v17))->Clear(); /*0x537daa*/
         *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x537db3*/
         return BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x537dbb*/
       }
@@ -533,7 +533,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
 
   if ( a3 == 1 ) /*0x5b709b*/
     return 0; /*0x5b709f*/
-  Game::processStartup((Game *)this); /*0x5b70a7*/
+  ((Game *)((Game *)this))->processStartup(); /*0x5b70a7*/
   dword_A8B54C = 0; /*0x5b70b1*/
   v5 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b70bb*/
   v6 = v5; /*0x5b70c0*/
@@ -707,7 +707,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5ba91d*/
   *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
-  Vector::Clear((int)v14); /*0x5ba93f*/
+  ((Vector *)((int)v14))->Clear(); /*0x5ba93f*/
   *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v13); /*0x5ba95b*/
 
@@ -831,15 +831,15 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   if ( &dword_A8B320 == (int *)-2 ) /*0x5dbb7c*/
   {
     v2 = 4; /*0x5dbba5*/
-    v3 = String::Assign((char **)&v19, &g_INI_DefaultBuffer); /*0x5dbbaa*/
+    v3 = ((String *)((char **)&v19))->Assign(&g_INI_DefaultBuffer); /*0x5dbbaa*/
   }
   else
   {
-    WideString::Assign((wchar_t **)&v17, (wchar_t *)&dword_A8B320 + 1); /*0x5dbb83*/
+    ((WideString *)((wchar_t **)&v17))->Assign((wchar_t *)&dword_A8B320 + 1); /*0x5dbb83*/
     v2 = 3; /*0x5dbb90*/
     v3 = (char **)Game_Set(&OptionSessionClass, &v17); /*0x5dbb95*/
   }
-  String::AssignFromPtr((char **)&v18, (const char **)v3); /*0x5dbbb4*/
+  ((String *)((char **)&v18))->AssignFromPtr((const char **)v3); /*0x5dbbb4*/
   if ( (v2 & 4) != 0 ) /*0x5dbbbc*/
   {
     v2 &= ~4u; /*0x5dbbc2*/
@@ -885,10 +885,10 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     do /*0x5dbd16*/
     {
       v6 = *(unsigned int *)(dword_A8DA78 + 4 * v5); /*0x5dbca8*/
-      PlayerSideSessionClass = SessionClass::GetPlayerSide(v6); /*0x5dbcb4*/
-      PlayerColorSessionClass = SessionClass::GetPlayerColor(v6); /*0x5dbcbd*/
-      OptionSessionClass = SessionClass::GetOption(v6); /*0x5dbcc6*/
-      Option2SessionClass = SessionClass::GetOption2(v6); /*0x5dbce2*/
+      PlayerSideSessionClass = ((SessionClass *)(v6))->GetPlayerSide(); /*0x5dbcb4*/
+      PlayerColorSessionClass = ((SessionClass *)(v6))->GetPlayerColor(); /*0x5dbcbd*/
+      OptionSessionClass = ((SessionClass *)(v6))->GetOption(); /*0x5dbcc6*/
+      Option2SessionClass = ((SessionClass *)(v6))->GetOption2(); /*0x5dbce2*/
       v13 = (void *)OptionSessionClass; /*0x5dbce3*/
       v11 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * v5)); /*0x5dbcf3*/
       sprintf( /*0x5dbd07*/
@@ -1429,7 +1429,7 @@ LABEL_39:
 }
 // 0x680F70
 namespace gamemd {
-int Game::validateScenario(unsigned int * a2, void *a2_2)
+int Game::validateScenario(unsigned int *a2)
 {
 
   int v3; // edi
@@ -1526,7 +1526,7 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
   fprintf(v3, "Handle = %s\n", (const char *)&this->Game_field_0x148); /*0x698cfd*/
   for ( i = 0; i < (int)this->Game_field_0x314; ++i ) /*0x698d0f*/
   {
-    Network::CopyAddress((Network *)(dword_A8DA78[i] + 40), &Stream, (int)v11); /*0x698d2a*/
+    ((Network *)((Network *)(dword_A8DA78[i] + 40)))->CopyAddress(&Stream, (int)v11); /*0x698d2a*/
     fprintf(v3, "Player Addr[%d] = ", i); /*0x698d36*/
     for ( j = 0; j < 4; ++j ) /*0x698d3e*/
       fprintf(v3, "%02X", *((uint8_t *)&Stream + j)); /*0x698d4d*/
@@ -1536,7 +1536,7 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
     fprintf(v3, "\n"); /*0x698d8c*/
   }
   fprintf(v3, "\n"); /*0x698da9*/
-  Network::CopyAddress(&stru_A8BB1C, &Stream, (int)v11); /*0x698dc0*/
+  ((Network *)(&stru_A8BB1C))->CopyAddress(&Stream, (int)v11); /*0x698dc0*/
   fprintf(v3, "Address = "); /*0x698dcb*/
   for ( m = 0; m < 4; ++m ) /*0x698dd3*/
     fprintf(v3, "%02X", *((uint8_t *)&Stream + m)); /*0x698de3*/
@@ -1624,15 +1624,15 @@ void Game::EncodeGameSetupState(char * Buffer)
   if ( &dword_A8B320 == (int *)-2 ) /*0x77e44c*/
   {
     v2 = 4; /*0x77e475*/
-    v3 = String::Assign((char **)&v24, &g_INI_DefaultBuffer); /*0x77e47a*/
+    v3 = ((String *)((char **)&v24))->Assign(&g_INI_DefaultBuffer); /*0x77e47a*/
   }
   else
   {
-    WideString::Assign((wchar_t **)&v22, (wchar_t *)&dword_A8B320 + 1); /*0x77e453*/
+    ((WideString *)((wchar_t **)&v22))->Assign((wchar_t *)&dword_A8B320 + 1); /*0x77e453*/
     v2 = 3; /*0x77e460*/
     v3 = (char **)Game_Set(&v23, &v22); /*0x77e465*/
   }
-  String::AssignFromPtr((char **)&v25, (const char **)v3); /*0x77e484*/
+  ((String *)((char **)&v25))->AssignFromPtr((const char **)v3); /*0x77e484*/
   if ( (v2 & 4) != 0 ) /*0x77e48c*/
   {
     v2 &= ~4u; /*0x77e492*/
@@ -1678,12 +1678,12 @@ void Game::EncodeGameSetupState(char * Buffer)
     do /*0x77e6b2*/
     {
       v6 = *(unsigned int *)(dword_A8DA78 + 4 * v5); /*0x77e57c*/
-      PlayerSide = SessionClass::GetPlayerSide(v6); /*0x77e588*/
-      PlayerColor = SessionClass::GetPlayerColor(v6); /*0x77e593*/
-      Option = SessionClass::GetOption(v6); /*0x77e59e*/
+      PlayerSide = ((SessionClass *)(v6))->GetPlayerSide(); /*0x77e588*/
+      PlayerColor = ((SessionClass *)(v6))->GetPlayerColor(); /*0x77e593*/
+      Option = ((SessionClass *)(v6))->GetOption(); /*0x77e59e*/
       v7 = 0; /*0x77e5a7*/
       v8 = 0; /*0x77e5a9*/
-      Option2 = SessionClass::GetOption2(v6); /*0x77e5ab*/
+      Option2 = ((SessionClass *)(v6))->GetOption2(); /*0x77e5ab*/
       v28 = 0; /*0x77e5af*/
       v29 = 0; /*0x77e5b3*/
       v9 = (char **)&dword_A8DA90; /*0x77e5b7*/
@@ -1703,12 +1703,12 @@ void Game::EncodeGameSetupState(char * Buffer)
           goto LABEL_16; /*0x77e603*/
         }
       }
-      Network::GetAddress((unsigned int *)(12 * v8 + 11066316), &v36, (int)v37, &v22); /*0x77e61e*/
+      ((Network *)((unsigned int *)(12 * v8 + 11066316)))->GetAddress(&v36, (int)v37, &v22); /*0x77e61e*/
       v11 = dword_A8DC2C[v8]; /*0x77e623*/
       v7 = v37[0]; /*0x77e62a*/
       v12 = dword_A8E230[v8]; /*0x77e62e*/
 LABEL_16:
-      WideString::Assign((wchar_t **)&v23, *(wchar_t **)(dword_A8DA78 + 4 * v5)); /*0x77e635*/
+      ((WideString *)((wchar_t **)&v23))->Assign(*(wchar_t **)(dword_A8DA78 + 4 * v5)); /*0x77e635*/
       ToWideStringCharAlt((char **)&v24, (const wchar_t **)&v23); /*0x77e650*/
       DeleteAndZero::Alt(&v23); /*0x77e659*/
       v20 = Option2; /*0x77e66d*/
@@ -1848,7 +1848,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
       v7 = dword_B777A0 - 1; /*0x77fb4e*/
       if ( dword_B777A0 - 1 >= 0 && v7 < dword_B777A0 ) /*0x77fb57*/
       {
-        String::Reassign(&v31, (const char **)dword_B777A8 + v7); /*0x77fb67*/
+        ((String *)(&v31))->Reassign((const char **)dword_B777A8 + v7); /*0x77fb67*/
         DynamicArray::Remove((DynamicArray *)&dword_B777A0, v7); /*0x77fb72*/
       }
       v8 = String::GetOrEmpty(&v31); /*0x77fb80*/
@@ -1904,7 +1904,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
       v13 = dword_B765F8 - 1; /*0x77fd00*/
       if ( dword_B765F8 - 1 >= 0 && v13 < dword_B765F8 ) /*0x77fd0d*/
       {
-        String::Reassign(&v31, (const char **)dword_B76600 + v13); /*0x77fd20*/
+        ((String *)(&v31))->Reassign((const char **)dword_B76600 + v13); /*0x77fd20*/
         if ( dword_B765F8 ) /*0x77fd2c*/
         {
           if ( v13 >= dword_B765F8 ) /*0x77fd34*/
@@ -1993,7 +1993,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
     goto LABEL_118; /*0x77ffa7*/
   if ( ppv && dword_B76B10 && time(0) - dword_B77E70 > 10 ) /*0x77ffd9*/
   {
-    String::ToLowerCopy((String *)&dword_B73E40, (char **)&v30); /*0x77ffe9*/
+    ((String *)((String *)&dword_B73E40))->ToLowerCopy((char **)&v30); /*0x77ffe9*/
     if ( dword_A8B244 != 3 && dword_A8B244 != 1 && dword_A8B244 != 2 ) /*0x780008*/
     {
       v21 = dword_B77900; /*0x78000e*/
@@ -2004,9 +2004,9 @@ Coord * * Game::ProcessIdle(void *a1_1)
         {
           if ( v22 >= 0 && v1 < v21 ) /*0x780023*/
             qmemcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
-          String::Assign(&v29, (const char *)&Buffer[9]); /*0x780042*/
-          v23 = String::ToLowerCopy(&v29, (char **)&v31.m_3[1]); /*0x780050*/
-          v30.__tail_7[0] = String::Compare(&v30, (const char **)v23); /*0x780063*/
+          ((String *)(&v29))->Assign((const char *)&Buffer[9]); /*0x780042*/
+          v23 = ((String *)(&v29))->ToLowerCopy((char **)&v31.m_3[1]); /*0x780050*/
+          v30.__tail_7[0] = ((String *)(&v30))->Compare((const char **)v23); /*0x780063*/
           DeleteAndZero((ObjectClass *)&v31.m_3[1]); /*0x780067*/
           if ( !v30.__tail_7[0] && Buffer[6].S_un.S_addr ) /*0x78007a*/
           {
@@ -2133,7 +2133,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v24 = strtok(0, Str); /*0x7a23b7*/
   v7 = strtok(0, Str); /*0x7a23bb*/
   Game_Setup(v1, v6, v24, v7); /*0x7a23cd*/
-  String::Assign(&v24, v1); /*0x7a23d7*/
+  ((String *)(&v24))->Assign(v1); /*0x7a23d7*/
   SetupLobbyPlayerSlot((const char **)&v24, v3, v5, -2, -2); /*0x7a23e7*/
   DeleteAndZero((void **)&v24); /*0x7a23f0*/
   v8 = strtok(0, Str); /*0x7a2408*/
@@ -2145,7 +2145,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v24 = strtok(0, Str); /*0x7a244c*/
   v14 = strtok(0, Str); /*0x7a2450*/
   Game_Setup(v8, v13, v24, v14); /*0x7a2462*/
-  String::Assign(&v24, v8); /*0x7a246c*/
+  ((String *)(&v24))->Assign(v8); /*0x7a246c*/
   SetupLobbyPlayerSlot((const char **)&v24, v10, v12, -2, -2); /*0x7a247c*/
   DeleteAndZero((void **)&v24); /*0x7a2485*/
   dword_ABE028 = 4; /*0x7a2494*/
@@ -2327,7 +2327,7 @@ char Game::Stub3(IUnknown * aP0)
 
 // 0x5B56F0
 namespace gamemd {
-void Game::processStartup(void *a1_1)
+void Game::processStartup()
 {
 
   HWND DlgItem; // eax

@@ -37,7 +37,7 @@ struct Delegate {
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);
     int * DestroyStraw(char a2);
-    int Invoke(int a2, Straw * aP2, void *a3);
+    int Invoke(int a2, int aP2);
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);

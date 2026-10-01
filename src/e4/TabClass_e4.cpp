@@ -114,10 +114,10 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
       }
       else
       {
-        LOBYTE(v25) = HouseClass::IsAlliedWith((HouseClass *)dword_A83D4C); /*0x6584f4*/
+        LOBYTE(v25) = ((HouseClass *)((HouseClass *)dword_A83D4C))->IsAlliedWith(); /*0x6584f4*/
         SendMessageA(hWnd, 0xF1u, (uint8_t)v25, 0); /*0x65850b*/
       }
-      IsAlliedWith = HouseClass::IsAlliedWith((HouseClass *)other); /*0x658515*/
+      IsAlliedWith = ((HouseClass *)((HouseClass *)other))->IsAlliedWith(); /*0x658515*/
       globalHelper_003DD0(hWnd, IsAlliedWith); /*0x658520*/
     }
     if ( *((unsigned char *)other + 584) ) /*0x658525*/

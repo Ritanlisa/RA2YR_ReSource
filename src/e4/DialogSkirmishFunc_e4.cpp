@@ -162,7 +162,7 @@ LABEL_151:
                 v63 = (ObjectClass *)unknown_libname_27(v62);
               ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
               *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
-              Surface::LoadToSurfaceSHP((char **)v63, ((unsigned int *)(stru_829ABC))[0]);
+              ((Surface *)((char **)v63))->LoadToSurfaceSHP(((unsigned int *)(stru_829ABC))[0]);
               if ( !(*(&g_MatrixTransformState + 2257))->X )
                 Session::PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
@@ -207,7 +207,7 @@ LABEL_151:
                     v69 = (ObjectClass *)unknown_libname_27(v68);
                   ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
                   *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v69);
-                  Surface::LoadToSurfaceSHP((char **)v69, ((unsigned int *)(stru_829ABC))[0]);
+                  ((Surface *)((char **)v69))->LoadToSurfaceSHP(((unsigned int *)(stru_829ABC))[0]);
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(unsigned int *)v67->__pad_0 )

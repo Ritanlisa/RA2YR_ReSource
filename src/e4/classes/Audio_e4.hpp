@@ -87,16 +87,16 @@ struct Audio {
     void * ProcessMixerOutput(char * Source);  // 0x4063B0
     int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
     int WaitForCallback(void *a1_1);  // 0x4070B0
-    void Release(void *a1_1);  // 0x407F40
+    void Release();  // 0x407F40
     int IsSoundPlaying(void *a1_1);  // 0x408070
     int CalcRate(int a2, int a3);  // 0x408540
     int GetSampleSize(void *a1_1);  // 0x409320
     ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
-    char ** SetSoundFileName(char * Source, int a3, void *a3_2);  // 0x5D5820
+    char ** SetSoundFileName(char *Source, int a3);  // 0x5D5820
     int LoadWAVFiles(void *a1_1);  // 0x7207F0
     int InitFromINI();  // 0x7510D0
     void * LoadSoundINI();  // 0x7513F0
-    unsigned int GetSamplePosition(MouseClass * aP1, MouseClass * aP2, void *a3_1);  // 0x7BD130
+    unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
     int InitChannels(void *a1_1);  // 0x401080
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
     void Shutdown(void *a1_1);  // 0x406D40

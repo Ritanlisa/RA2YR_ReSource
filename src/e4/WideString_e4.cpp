@@ -281,7 +281,7 @@ int WideString::Trim(wchar_t * Source)
 
 // 0x7B66D0
 namespace gamemd {
-int WideString::Assign(CampaignScore * aP1, void *a2_1)
+int WideString::Assign(wchar_t *aP1)
 {
 
   int v3; // eax
@@ -304,7 +304,7 @@ int WideString::Assign(CampaignScore * aP1, void *a2_1)
 
 // 0x7B6720
 namespace gamemd {
-int WideString::AssignFromPtr(const wchar_t ** a2, void *a2_2)
+int WideString::AssignFromPtr(const wchar_t **a2)
 {
 
   int v3; // eax
@@ -325,7 +325,7 @@ int WideString::AssignFromPtr(const wchar_t ** a2, void *a2_2)
 
 // 0x7B6880
 namespace gamemd {
-void ** WideString::Assign_Alt(wchar_t * String, void *a2_1)
+void ** WideString::Assign_Alt(wchar_t *String)
 {
 
   int v3; // eax
@@ -350,7 +350,7 @@ void ** WideString::Assign_Alt(wchar_t * String, void *a2_1)
 
 // 0x7B68E0
 namespace gamemd {
-int WideString::Reassign_Alt(const wchar_t ** a2, void *a2_2)
+int WideString::Reassign_Alt(const wchar_t **a2)
 {
 
   const wchar_t *v3; // eax

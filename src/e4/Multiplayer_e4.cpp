@@ -315,7 +315,7 @@ void Multiplayer::ShowProgress(int a2)
             if ( v11 <= 0 ) /*0x69b11e*/
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
-            EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x69b12a*/
+            ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x69b12a*/
             Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
           }
           break; /*0x69b146*/
@@ -349,7 +349,7 @@ void Multiplayer::ShowProgress(int a2)
             }
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount(&unk_A8E9C0) > 5 ) /*0x69b027*/
+          while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 5 ) /*0x69b027*/
           {
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

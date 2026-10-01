@@ -48,7 +48,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
-  ObjectTypeClass::ConstructFull((int *)this, aP4); /*0x5447ce*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP4); /*0x5447ce*/
   this->ArrayIndex = a2; /*0x5447d9*/
   this->Foundation = 0xFFFF; /*0x5447e4*/
   *(unsigned int *)this->RadarColor = 0xFFFF; /*0x5447ea*/
@@ -142,7 +142,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   int v5; // ecx
   TerrainTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x71da89*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x71da89*/
   this->ArrayIndex = -1; /*0x71da90*/
   this->Foundation = 0; /*0x71da9a*/
   this->RadarColor[0] = 0; /*0x71daa5*/
@@ -234,7 +234,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x71deb3*/
-  if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x71debb*/
+  if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x71debb*/
   {
     if ( ((unsigned int *)this)[0] == -1 ) /*0x71decf*/
       ((unsigned int *)this)[0] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4420); /*0x71dedc*/
@@ -431,7 +431,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * a4, unsigned i
   v7 = (unsigned int *)*((char *)this + 1); /*0x53ffa0*/
   if ( v7[14] < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
-  TileType = Terrain::GetTileType(v7, a2); /*0x53ffad*/
+  TileType = ((Terrain *)(v7))->GetTileType(a2); /*0x53ffad*/
   if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x53ffb9*/
     return 0; /*0x540024*/
   v9 = *(unsigned int *)(TileType + 12); /*0x53ffbf*/
@@ -504,17 +504,17 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   int v5; // eax
   int v6; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x71e149*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x71e149*/
   Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
   LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x71e165*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x71e165*/
   LOBYTE(v4) = this->SpawnsTiberium; /*0x71e16a*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x71e173*/
+  v5 = ((Power *)((Power *)a2))->FlagProcess(v4); /*0x71e173*/
   LOBYTE(v5) = this->IsFlammable; /*0x71e178*/
-  Power::FlagProcess((Power *)a2, v5); /*0x71e181*/
+  ((Power *)((Power *)a2))->FlagProcess(v5); /*0x71e181*/
   Power::TimerProcess(this->Foundation); /*0x71e18f*/
   LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
-  Power::FlagProcess((Power *)a2, v6); /*0x71e19d*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
   return Checksummer::Add_float((Checksummer *)a2, LODWORD(this->AnimationProbability)); /*0x71e1be*/
 

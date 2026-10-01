@@ -543,7 +543,7 @@ LABEL_220:
               if ( (v43 & 1) == 0 || (v43 & 0x40) == 0 )
                 goto LABEL_200;
 LABEL_109:
-              if ( AudioStream::CalcReadPos(a1) == -11 )
+              if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
               {
 LABEL_203:
                 *(unsigned int *)(a1 + 336) |= 1u;
@@ -615,7 +615,7 @@ LABEL_123:
           if ( (v42 & 1) == 0 || (v42 & 0x40) == 0 )
             goto LABEL_200;
 LABEL_104:
-          if ( AudioStream::CalcReadPos(a1) == -11 )
+          if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
             goto LABEL_203;
           *(unsigned int *)(a1 + 336) &= ~1u;
           v35 = Audio_Helper_7C2250(a1, g_AudioDSPState);
@@ -678,7 +678,7 @@ LABEL_104:
             if ( (v34 & 1) == 0 || (v34 & 0x40) != 0 )
               goto LABEL_200;
 LABEL_70:
-            if ( AudioStream::CalcReadPos(a1) == -11 )
+            if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
               goto LABEL_203;
             *(unsigned int *)(a1 + 336) &= ~1u;
             v35 = Audio_Helper_7C2180(a1, g_AudioDSPState);
@@ -712,7 +712,7 @@ LABEL_73:
   }
   if ( (a2 & 2) == 0 && (v3 & 1) != 0 && (v3 & 0x40) == 0 )
   {
-    if ( AudioStream::CalcReadPos(a1) == -11 )
+    if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
     {
       int v25 = *(unsigned int *)(a1 + 336);
       IDA_LOBYTE(v25) = v25 | 1;

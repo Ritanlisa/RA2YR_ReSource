@@ -69,7 +69,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 
   _ESI = this; /*0x6442de*/
   INIClass::ResetSection((INIClass *)aP1); /*0x6442e3*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)_ESI, aP1) ) /*0x6442eb*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI(aP1) ) /*0x6442eb*/
     return 0; /*0x644622*/
   INIClass::GetString( /*0x64430f*/
     (INIClass *)aP1,
@@ -275,10 +275,10 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 
   int v3; // ecx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x644709*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x644709*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
   LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x644725*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x644725*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/
   Checksummer::Add_float((Checksummer *)a2, (int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/
   Power::TimerProcess(LODWORD(this->ParticleSystemTypeClass_field_0x2A4)); /*0x64474f*/

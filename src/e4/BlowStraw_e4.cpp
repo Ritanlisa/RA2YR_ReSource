@@ -37,7 +37,7 @@
 
 // 0x6D0680
 namespace gamemd {
-int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2, void *a3_1)
+int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
 {
 
   int v4; // edx
@@ -78,7 +78,7 @@ LABEL_6:
   {
     v8 = a2[1]; /*0x6d06df*/
     if ( v8 >= v7 && v8 < v7 + 30 ) /*0x6d06f2*/
-      Mouse::SetCursor((int)&dword_87F7E8, 0, 0); /*0x6d06fd*/
+      ((Mouse *)((int)&dword_87F7E8))->SetCursor(0, 0); /*0x6d06fd*/
   }
   v9 = (int)(*aP1);
   if ( *aP1 < 32982 || v9 >= 33007 ) /*0x6d0718*/

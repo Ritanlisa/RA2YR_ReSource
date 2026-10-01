@@ -94,7 +94,7 @@ LABEL_11:
                                       v13);
         v11[0] = 0; /*0x728cc4*/
         v11[1] = 0; /*0x728cc9*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v10, 0, 0); /*0x728cce*/
+        TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(v10, 0, 0); /*0x728cce*/
         v8 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 (Type *)&stru_87F5F0.__pad_58[416],
                 (int)&v14,

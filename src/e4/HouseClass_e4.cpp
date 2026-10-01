@@ -855,7 +855,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
 
 // 0x4F9A50
 namespace gamemd {
-int HouseClass::IsAlliedWith(IUnknown * aP1, void *a2)
+int HouseClass::IsAlliedWith()
 {
 
   int result; // eax
@@ -916,7 +916,7 @@ int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
     LOWORD(v11) = *v7 / 256; /*0x4fbe9d*/
     HIWORD(v11) = v7[1] / 256; /*0x4fbeb5*/
     *(unsigned int *)v9 = v11; /*0x4fbebe*/
-    result = LayerClass::CoordinatesLegal(&dword_87F7E8, v9); /*0x4fbec8*/
+    result = ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal(v9); /*0x4fbec8*/
     if ( !(unsigned char)result ) /*0x4fbecf*/
       goto LABEL_10; /*0x4fbecf*/
     v8 = CellCoord::To_CellObj(&dword_87F7E8, v9); /*0x4fbedb*/
@@ -2713,7 +2713,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
           {
 LABEL_16:
             if ( !dword_A8E7AC ) /*0x50e18f*/
-              VoxClass::FindAndPlay(g_Str_EVA_RobotTanksOffline, -1); /*0x50e19b*/
+              ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1); /*0x50e19b*/
           }
         }
       }
@@ -2911,7 +2911,7 @@ LABEL_34:
           *a1 -= v27; /*0x5d73f3*/
           if ( ((int)dword_A8B230->vtable0 & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
-          if ( (uint8_t)House::IsCurrentPlayer((House *)aP0) ) /*0x5d7411*/
+          if ( (uint8_t)((House *)((House *)aP0))->IsCurrentPlayer() ) /*0x5d7411*/
             (*(void (**)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/
           else
             (*(void (**)(int *, int))(*v24 + 496))(v24, 11); /*0x5d742e*/
@@ -3648,7 +3648,7 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
   int v12; // [esp+8h] [ebp-4h] BYREF
 
   v3 = aP1; /*0x4fbf63*/
-  if ( !(uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], aP1) ) /*0x4fbf6f*/
+  if ( !(uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(aP1) ) /*0x4fbf6f*/
     return 0; /*0x4fc055*/
   HouseClass::IsCellOccupied((int *)this, this->ourFlagCoords[0], a3); /*0x4fbf8b*/
   relatedTagsCapacity = this->relatedTagsCapacity; /*0x4fbf92*/
@@ -3730,7 +3730,7 @@ char HouseClass::ReshroudMap()
 
 // 0x50E1B0
 namespace gamemd {
-BOOL HouseClass::GainedPoweredCenter(int a2, void *a2_2)
+BOOL HouseClass::GainedPoweredCenter(int a2)
 {
 
   return this->poweredUnitCenters > 0; /*0x50e1bd*/
@@ -3782,7 +3782,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
   if ( (unsigned char)v2 ) /*0x54b990*/
   {
     (*(void (**)(void *, unsigned int, int))(*(unsigned int *)((unsigned int *)this)[0] + 1348))(((unsigned int *)this)[0], 0, 1072693248); /*0x54b9a4*/
-    Value = ProgressTimer::GetValue((ProgressTimer *)((char *)((unsigned int *)this)[0] + 904), &v6); /*0x54b9b8*/
+    Value = ((ProgressTimer *)((ProgressTimer *)((char *)((unsigned int *)this)[0] + 904)))->GetValue(&v6); /*0x54b9b8*/
     FacingClass::Set_SyncLog((char *)&this->repairStationsCount, Value); /*0x54b9c1*/
     v4 = this->relatedTags[0]; /*0x54b9c6*/
     this->absorbersCapacity = 0; /*0x54b9cc*/

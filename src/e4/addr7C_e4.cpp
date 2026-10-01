@@ -424,13 +424,13 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   if ( ((int (*)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 4) ) /*0x7c272d*/
   {
   LABEL_21:
-    DSurface::Flip((int)v7); /*0x7c26fb*/
+    ((DSurface *)((int)v7))->Flip(); /*0x7c26fb*/
     return -4; /*0x7c270e*/
   }
   if ( v27 != 1095849559 ) /*0x7c2755*/
   {
   LABEL_26:
-    DSurface::Flip((int)v7); /*0x7c2757*/
+    ((DSurface *)((int)v7))->Flip(); /*0x7c2757*/
     return -7; /*0x7c276a*/
   }
   while ( 1 ) /*0x7c27d0*/
@@ -512,15 +512,15 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   LABEL_56:
       if ( ((int (*)(unsigned short *, int, int, unsigned int))*v9)(v7, 7, 1, (v11 + 1) & 0xFFFFFFFE) ) /*0x7c28f2*/
       {
-        DSurface::Flip((int)v7); /*0x7c29e4*/
+        ((DSurface *)((int)v7))->Flip(); /*0x7c29e4*/
         return -6; /*0x7c29f5*/
       }
     }
   }
-  if ( Surface::CommitSurfaceBuffersAudio((int)v7) != -1 ) /*0x7c2950*/
+  if ( ((Surface *)((int)v7))->CommitSurfaceBuffersAudio() != -1 ) /*0x7c2950*/
   {
   LABEL_99:
-    DSurface::Flip((int)v7); /*0x7c2b39*/
+    ((DSurface *)((int)v7))->Flip(); /*0x7c2b39*/
     return -8; /*0x7c2b3b*/
   }
   if ( Audio_Render_7C1D40(v7, v28) != -1 ) /*0x7c2963*/
@@ -555,7 +555,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   {
     if ( !*((unsigned int *)v7 + 22) ) /*0x7c29c5*/
     {
-      DSurface::Flip((int)v7); /*0x7c29ce*/
+      ((DSurface *)((int)v7))->Flip(); /*0x7c29ce*/
       return -21; /*0x7c29df*/
     }
     if ( (v18 & 0x40) != 0 ) /*0x7c29fa*/
@@ -573,7 +573,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     *((unsigned char *)v7 + 63) = v19; /*0x7c2a32*/
     if ( Audio_Render_7BD170(v7) != -1 ) /*0x7c2a3e*/
     {
-      DSurface::Flip((int)v7); /*0x7c2a42*/
+      ((DSurface *)((int)v7))->Flip(); /*0x7c2a42*/
       return -13; /*0x7c2a53*/
     }
     sub_4125F0(); /*0x7c2a56*/
@@ -625,7 +625,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     if ( SeekAudioStream((int)v7, 0, *((unsigned int *)v7 + 71), 0, 0) == -1 ) /*0x7c2bd9*/
       goto LABEL_108; /*0x7c2bd9*/
   LABEL_104:
-    DSurface::Flip((int)v7); /*0x7c2bad*/
+    ((DSurface *)((int)v7))->Flip(); /*0x7c2bad*/
     return -23; /*0x7c2bb4*/
   }
   else
@@ -643,7 +643,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     else
     {
   LABEL_113:
-      DSurface::Flip((int)v7); /*0x7c2c2f*/
+      ((DSurface *)((int)v7))->Flip(); /*0x7c2c2f*/
       return -4; /*0x7c2c36*/
     }
   }

@@ -12,7 +12,7 @@
 
 // 0x46B640
 namespace gamemd {
-void * Timer::Start(DynamicVector * aP1, void *a2_1)
+void * Timer::Start(int aP1)
 {
 
   *(unsigned int *)this->__pad_0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/

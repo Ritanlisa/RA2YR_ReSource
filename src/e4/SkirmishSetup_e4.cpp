@@ -150,7 +150,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           v8 = (Dialog *)aP0; /*0x5e696b*/
           Dialog::DrawBackground((Dialog *)aP0); /*0x5e6971*/
           if ( g_UIControlState ) /*0x5e697e*/
-            Skirmish::RenderPreview(g_UIControlState, (HWND)v8); /*0x5e6981*/
+            ((Skirmish *)(g_UIControlState))->RenderPreview((HWND)v8); /*0x5e6981*/
           Dialog::StopBink(v8); /*0x5e6988*/
           ValidateRect((HWND)v8, 0); /*0x5e6990*/
           return 0; /*0x5e699f*/
@@ -410,7 +410,7 @@ LABEL_28:
   v29 = _3C; /*0x5e6e44*/
   v30 = (void **)(_3C + 8); /*0x5e6e51*/
   DlgCtrlID = GetDlgCtrlID(*(HWND *)_3C); /*0x5e6e58*/
-  WideString::Assign_Alt(v30, 0); /*0x5e6e5a*/
+  ((WideString *)(v30))->Assign_Alt(0); /*0x5e6e5a*/
   if ( DlgCtrlID == 1771 ) /*0x5e6e65*/
   {
     v32 = *(unsigned int *)(v29 + 4); /*0x5e6e67*/
@@ -420,7 +420,7 @@ LABEL_28:
       if ( v33 ) /*0x5e6e85*/
       {
         v34 = WideString::GetOrEmpty_Alt((wchar_t **)(v33 + 36)); /*0x5e6e8a*/
-        WideString::Assign_Alt(v30, v34); /*0x5e6e92*/
+        ((WideString *)(v30))->Assign_Alt(v34); /*0x5e6e92*/
       }
     }
   }
@@ -435,7 +435,7 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
   char v3; // bl
   SkirmishSetup *v4; // [esp+8h] [ebp-4h] BYREF
 
-  result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60826a*/
+  result = ((SessionClass *)((SessionClass *)&dword_A8B238))->GetGameSpeed(); /*0x60826a*/
   if ( (unsigned char)result ) /*0x608271*/
     goto LABEL_6; /*0x608271*/
   result = *(unsigned int *)&g_DialogPool.__pad_208[60]; /*0x608273*/
@@ -524,7 +524,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   else
     v5 = 0; /*0x5e8618*/
   g_UIControlState = (int)(v5); /*0x5e8621*/
-  Surface::LoadToSurfaceSHP((Surface *)v5, ExistingFileName); /*0x5e8626*/
+  ((Surface *)((Surface *)v5))->LoadToSurfaceSHP(ExistingFileName); /*0x5e8626*/
   v6 = 0; /*0x5e8630*/
   if ( dword_A8B8D8 <= 0 ) /*0x5e8634*/
   {

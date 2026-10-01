@@ -167,7 +167,7 @@ LABEL_6:
           }
           else
           {
-            Network::CopyAddress(v7, &a3, (int)&v27); /*0x7b148c*/
+            ((Network *)(v7))->CopyAddress(&a3, (int)&v27); /*0x7b148c*/
             *(unsigned int *)to.sa_data = a3; /*0x7b149e*/
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
@@ -553,7 +553,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   }
   v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v10); /*0x7b25b9*/
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
-  return EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x7b25d4*/
+  return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b25d4*/
 
 }
 } // namespace gamemd

@@ -77,7 +77,7 @@ void JumpjetLocomotionClass_Process(int a1)
   {
     *((unsigned int *)v2 + 8) = v4; /*0x4b052a*/
     *((unsigned int *)v2 + 7) = v3; /*0x4b0533*/
-    Timer::Start((Timer *)&v30, 3); /*0x4b0536*/
+    ((Timer *)((Timer *)&v30))->Start(3); /*0x4b0536*/
     *((unsigned int *)v2 + 9) = v30; /*0x4b0547*/
     *((unsigned int *)v2 + 10) = v31; /*0x4b054d*/
     *((unsigned int *)v2 + 11) = v32; /*0x4b0554*/
@@ -669,7 +669,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
     vtable3 = ((unsigned int *)this)[0]; /*0x4b0e7a*/
-    v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4b0e81*/
+    v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
     if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)this, aP1, 1); /*0x4b0ea3*/

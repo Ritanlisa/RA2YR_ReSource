@@ -311,8 +311,8 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
   IDA_LOWORD(v59) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
-  Coord::To_Screen(g_TacticalClass_Instance, v1 + 9, &v75); /*0x550b91*/
-  Coord::To_Screen(g_TacticalClass_Instance, v1 + 12, (int *)&v74); /*0x550ba2*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 9, &v75); /*0x550b91*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 12, (int *)&v74); /*0x550ba2*/
   v4 = v1[15] - ZCoordToScreenY(v1[11]) - 2; /*0x550bb7*/
   v5 = -2 - ZCoordToScreenY(v1[14]); /*0x550bc4*/
   v66 = v5; /*0x550bc6*/
@@ -446,7 +446,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
         {
           v57 = v11; /*0x550e98*/
           v56 = v54; /*0x550ea0*/
-          Color::Lerp((uint8_t *)&v56, v58, v71); /*0x550eab*/
+          ((Color *)((uint8_t *)&v56))->Lerp(v58, v71); /*0x550eab*/
           v30 = ((uint8_t)v56 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x550f09*/
               | (IDA_HIBYTE(v56) >> g_BitMask_Blue << g_BitMask_Green)
               | (v57 >> g_BitMask_Red << g_BitShift_Blue);
@@ -517,7 +517,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
       (uint16_t)(v58 * (uint8_t)v60) >> 8,
       (uint16_t)(v58 * IDA_HIBYTE(v60)) >> 8,
       (uint16_t)(v58 * v61) >> 8);
-    ColorStruct::SetRGB(v78, v37, v36, v35); /*0x5510ac*/
+    ((ColorStruct *)(v78))->SetRGB(v37, v36, v35); /*0x5510ac*/
     v38 = v73; /*0x5510b1*/
     *(float *)&v47 = (float)v69; /*0x5510bf*/
     *(float *)&v41 = (float)v68; /*0x5510ce*/
@@ -559,7 +559,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
   {
     v56 = v60; /*0x551216*/
     v57 = v61; /*0x551223*/
-    Color::Lerp((uint8_t *)&v56, v58, v71); /*0x55122d*/
+    ((Color *)((uint8_t *)&v56))->Lerp(v58, v71); /*0x55122d*/
     return (*(int (**)(int, int *, int *, int64_t *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x5512a7*/
                                                                                       + 52))(
              g_DSurface_Hidden_2,
@@ -2223,7 +2223,7 @@ void GameFrameLoop()
     }
     else if ( v2 != -3 ) /*0x55d426*/
     {
-      Theme::Stop((Theme *)&unk_A83D10, 1); /*0x55d42f*/
+      ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x55d42f*/
       Theme::QueueSong((int)&unk_A83D10, -3); /*0x55d43b*/
     }
   }
@@ -4473,12 +4473,12 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     vtable2 = (const char *)((unsigned int *)this)[0]; /*0x559607*/
     v3 = rand(); /*0x559608*/
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
-    FileClass::SetFileName(&v6, Buffer); /*0x559621*/
+    ((FileClass *)(&v6))->SetFileName(Buffer); /*0x559621*/
   }
   while ( (uint8_t)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
   *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x559639*/
   v8 = 0; /*0x559641*/
-  Vector::Clear((int)v7); /*0x559649*/
+  ((Vector *)((int)v7))->Clear(); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x55965f*/
 

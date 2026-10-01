@@ -102,7 +102,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     {
       if ( (*v10 & 0x100) != 0 ) /*0x58366b*/
       {
-        NeighbourContent = (int *)((unsigned int *)((IUnknown *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8))));
+        NeighbourContent = (int *)((unsigned int *)((IUnknown *)((int *)((Cell *)(NeighbourContent))->GetNeighbourContent(v8))));
         v10 = (unsigned int *)((IUnknown *)(NeighbourContent + 80));
         if ( (NeighbourContent[80] & 0x100) == 0 /*0x5836a5*/
           && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
@@ -113,7 +113,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       }
       if ( (*v11 & 0x100) == 0 ) /*0x5836b3*/
         goto LABEL_22; /*0x5836b3*/
-      v12 = (int *)Cell::GetNeighbourContent(v12, v23); /*0x5836c1*/
+      v12 = (int *)((Cell *)(v12))->GetNeighbourContent(v23); /*0x5836c1*/
       v11 = (unsigned int *)(v12 + 80); /*0x5836cc*/
       if ( (v12[80] & 0x100) == 0 ) /*0x5836d2*/
       {
@@ -130,12 +130,12 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     }
     v13 = (IUnknown *)((unsigned int)((IUnknown *)(dword_ABD480)));
     v22 = (IUnknown *)(dword_ABD480);
-    if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&aP1, 1) ) /*0x583727*/
+    if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&aP1, 1) ) /*0x583727*/
     {
       v13 = (IUnknown *)((unsigned int)((IUnknown *)((int)aP1)));
       v22 = (IUnknown *)((int)aP1);
     }
-    if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&v21, 1) ) /*0x583744*/
+    if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v21, 1) ) /*0x583744*/
     {
       if ( IDA___PAIR32__(IDA_HIWORD(v22), v13) == dword_ABD480 ) /*0x583758*/
         goto LABEL_28; /*0x583758*/
@@ -202,7 +202,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   {
     if ( *((unsigned int *)i + 19) == 4 ) /*0x583b39*/
     {
-      TileIndex = MapClass::GetTileIndex((MapClass *)this, i + 18, 10, 0); /*0x583b49*/
+      TileIndex = ((MapClass *)((MapClass *)this))->GetTileIndex(i + 18, 10, 0); /*0x583b49*/
       v5 = TileIndex; /*0x583b4e*/
       if ( TileIndex >= 0 ) /*0x583b52*/
       {
@@ -879,7 +879,7 @@ ScenarioClass * * ComputeMapCameraBounds()
           j;
           j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
     {
-      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], j + 18, 1) ) /*0x58b953*/
+      if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(j + 18, 1) ) /*0x58b953*/
       {
         v15 = (*(int (**)(int16_t *))(j->u32_48)(j); /*0x58b973*/
         v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(j->u32_48)( /*0x58b983*/
@@ -2111,7 +2111,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
     v7 = v6; /*0x58c63f*/
   }
   while ( !*v3 && !v3[1] /*0x58c67e*/
-       || MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)v6 + 18, 0, 0) != a2
+       || ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)v6 + 18, 0, 0) != a2
        || !Cell::IsEmpty(v7)
        || a3 != -1 && *((unsigned int *)v3 + 14) != a3 );
   *a1 = *(unsigned int *)v3; /*0x58c6ac*/

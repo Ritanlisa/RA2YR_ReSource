@@ -68,7 +68,7 @@ int sub_6863E0()
   AsyncIO::Shutdown(a1); /*0x686475*/
     ((Timer *)0)->GetTicks();
     v7 = ((Timer *)0)->GetTicks();
-  Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6864b4*/
+  ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x6864b4*/
     ((AudioMixer *)0)->Shutdown();
     ((AudioQueue *)0)->DrainAll();
   StopThemeClass(1); /*0x6864c5*/
@@ -132,9 +132,9 @@ AbstractClass * * sub_686570()
     0);
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x6865e4*/
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x6865ee*/
-  Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6865fa*/
+  ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x6865fa*/
   Audio::GetFlag((Audio *)g_MixerState); /*0x686605*/
-  VoxClass::FindAndPlay(&stru_83DB34, -1); /*0x686616*/
+  ((VoxClass *)(&stru_83DB34))->FindAndPlay(-1); /*0x686616*/
   Audio::WaitForCallback((Audio *)g_MixerState); /*0x686621*/
   v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68662b*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686634*/

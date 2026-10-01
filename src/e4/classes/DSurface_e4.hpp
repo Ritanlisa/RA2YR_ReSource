@@ -288,26 +288,26 @@ struct DSurface {
     ObjectClass * *  RenderToSurface(ObjectClass * aP1, void *a2);
     char FlipIfNeeded();
     char IsDSurface();
-    int BlitPart(int a2, int a3, int a4, int a5, int a6, void *a6_2);
+    int BlitPart(int a2, int a3, int a4, int a5, int a6);
     int CommitBuffers();
     AbstractClass * * Destroy(void *a1);
     int DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);
     int  FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
-    int Flip(DSurface * a1);
+    int Flip();
     int Flip2();
     int GetBytesPerPixel();
     int LockAndPrepareRect();
-    int RestoreIfLost(DSurface * a1);
+    int RestoreIfLost();
     long long ConstructFromHandle();
-    unsigned int * CreateBackBuffer(int a2, void *a2_2);
+    unsigned int * CreateBackBuffer(int a2);
     AbstractClass * * CreatePrimary(void *a1);
     void * loc_4C1AC0(std::codecvt_base *a1);
     void BlitStretch(int a1, int a2, int a3);
     void* DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8);
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);
-    void* FillRectEx(int a2, int a3, int a4, void *a4_2);
+    void* FillRectEx(int a2, int a3, int a4);
     static double Lock(...);  // C2597 interim stub
 };
 

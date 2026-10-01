@@ -215,7 +215,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
 
 // 0x471C90
 namespace gamemd {
-bool CaptureManagerClass::CanCapture(unsigned int * a2, void *a2_2)
+bool CaptureManagerClass::CanCapture(unsigned int *a2)
 {
 
   int v3; // edi
@@ -290,7 +290,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
   if ( !a3 ) /*0x471d4f*/
     return 0; /*0x471d54*/
   v5 = (*(unsigned char *)((unsigned int)(a3)+ 20) & 1) != 0 ? (unsigned int *)a3 : 0;
-  result = (char)(CaptureManagerClass::CanCapture(a1, v5));
+  result = (char)(((CaptureManagerClass *)(a1))->CanCapture(v5));
   if ( result )
   {
     if ( *(unsigned int *)((unsigned int)(a1)+ 60) == 1 ) /*0x471d85*/
@@ -342,7 +342,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
         if ( v20 != 19 && v20 != 18 ) /*0x471e9f*/
           (*(void (**)(unsigned int *))(*v5 + 976))(v5); /*0x471ea5*/
       }
-      CaptureManagerClass::DecideUnitFate((CaptureManagerClass *)a1, (int)v5); /*0x471eae*/
+      ((CaptureManagerClass *)((CaptureManagerClass *)a1))->DecideUnitFate((int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
       {
         v21 = (void *)((int)(a3));
@@ -446,7 +446,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
       a2 = (IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/
       (*((void (**)(CaptureManagerClass *))aP0->AbstractClass + 245))(aP0); /*0x4720da*/
-      CaptureManagerClass::DecideUnitFate(v7, (int)aP0); /*0x4720e3*/
+      ((CaptureManagerClass *)(v7))->DecideUnitFate((int)aP0); /*0x4720e3*/
       *((unsigned int *)aP0 + 176) = 0; /*0x4720e8*/
       controlNodeCount = v7->controlNodeCount; /*0x4720f2*/
       if ( *(unsigned int *)(controlNodeCount + 4 * i) ) /*0x4720f5*/
@@ -576,7 +576,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 
 // 0x4723B0
 namespace gamemd {
-void CaptureManagerClass::DecideUnitFate(IUnknown * aP1, void *a2)
+void CaptureManagerClass::DecideUnitFate(int aP1)
 {
 
   int v3; // edi
@@ -609,7 +609,7 @@ void CaptureManagerClass::DecideUnitFate(IUnknown * aP1, void *a2)
   {
     v5 = *(int **)(aP1 + 1492); /*0x4723d1*/
     if ( v5 ) /*0x4723d9*/
-      TeamClass::LiberateMember_Start(v5, aP1, 0xFFFFFFFF, 0); /*0x4723df*/
+      ((TeamClass *)(v5))->LiberateMember_Start(aP1, 0xFFFFFFFF, 0); /*0x4723df*/
   }
   v6 = *(FactoryClass **)(aP1 + 628); /*0x4723e4*/
   if ( v6 && v6->production[1] ) /*0x4723ee*/
@@ -1378,7 +1378,7 @@ namespace gamemd {
 char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
 {
 
-  return TeamClass::AddMember((int *)this, aP1, 1); /*0x6ea4fc*/
+  return ((TeamClass *)((int *)this))->AddMember(aP1, 1); /*0x6ea4fc*/
 
 }
 } // namespace gamemd

@@ -656,7 +656,7 @@ LABEL_119:
         IDA_LOWORD(v116) = v106 / 256;
         IDA_HIWORD(v116) = v129.Y / 256;
         desiredFacing = v116;
-        if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&desiredFacing) )
+        if ( ((LayerClass *)(&stru_87C374[13428]))->CoordinatesLegal((IUnknown *)&desiredFacing) )
           (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &v124);
         v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 440))(
                                  *(unsigned int *)(a1 + 8),
@@ -784,7 +784,7 @@ LABEL_38:
         IDA_LOWORD(v115) = IDA_SLODWORD(var74_4) / 256;
         IDA_HIWORD(v115) = IDA_SHIDWORD(var74_4) / 256;
         IDA_LODWORD(var64_4) = v115;
-        if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&var64_4) )
+        if ( ((LayerClass *)(&stru_87C374[13428]))->CoordinatesLegal((IUnknown *)&var64_4) )
           (*(void (**)(unsigned int, double *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &var74_4);
       }
       else
@@ -859,7 +859,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
     if ( *dword_A8DA78 == -40 ) /*0x663f21*/
       goto LABEL_11; /*0x663f21*/
-    Network::CopyAddress((Network *)(*dword_A8DA78 + 40), &v20, (int)&v12); /*0x663f31*/
+    ((Network *)((Network *)(*dword_A8DA78 + 40)))->CopyAddress(&v20, (int)&v12); /*0x663f31*/
     v6 = a2[2]; /*0x663f39*/
     v7 = *a2; /*0x663f3c*/
     v13 = a2[1]; /*0x663f3e*/
@@ -883,13 +883,13 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   v5 = (Network *)(*dword_A8DA78 + 40); /*0x663e69*/
   if ( *dword_A8DA78 != -40 ) /*0x663e6c*/
   {
-    Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/
+    ((Network *)(v5))->CopyAddress(&v20, (int)&v12); /*0x663e7e*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", v12, v13, v14, v15); /*0x663ebb*/
     qword_A8DBB0 = *(NetworkID *)&v5->Network_field_0x0; /*0x663ec5*/
     dword_A8DBB8 = v5->Network_field_0x8; /*0x663ed6*/
     dword_A8DBBC = 0; /*0x663edc*/
 LABEL_10:
-    Network::FormatAddress((Network *)&qword_A8DBB0, 0); /*0x663fad*/
+    ((Network *)((Network *)&qword_A8DBB0))->FormatAddress(0); /*0x663fad*/
     Debug::Log(); /*0x663fbf*/
   }
 LABEL_11:
@@ -1671,7 +1671,7 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
   if ( Network::IsBroadcastAddr((Network *)a2) ) /*0x663ceb*/
     return -1; /*0x663cf5*/
   v5 = 0; /*0x663d0c*/
-  Network::CopyAddress(v2, &a2, (int)&v10); /*0x663d0e*/
+  ((Network *)(v2))->CopyAddress(&a2, (int)&v10); /*0x663d0e*/
   uniqueId = ((unsigned int *)this)[0]; /*0x663d13*/
   v7 = 0; /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/

@@ -255,7 +255,7 @@ BOOL AbstractTypeClass::NameEquals(void * a2)
 } // namespace gamemd
 // 0x410B90
 namespace gamemd {
-char AbstractTypeClass::WriteINI(CCINIClass * aP1, void *a2)
+char AbstractTypeClass::WriteINI(char *aP1)
 {
 
   uint8_t *pad_24; // edi
@@ -271,7 +271,7 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1, void *a2)
 } // namespace gamemd
 // 0x410BE0
 namespace gamemd {
-int AbstractTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
+int AbstractTypeClass::ProcessPower(int *aP1)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/

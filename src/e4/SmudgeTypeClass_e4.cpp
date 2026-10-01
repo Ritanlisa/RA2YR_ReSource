@@ -50,7 +50,7 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   int v5; // ecx
   void **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int)this, Source); /*0x6b5269*/
+  ((ObjectTypeClass *)((int)this))->ConstructFull(Source); /*0x6b5269*/
   *((unsigned int *)this + 165) = -1; /*0x6b5277*/
   *((unsigned int *)this + 166) = 1; /*0x6b5281*/
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
@@ -147,7 +147,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
-  if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x6b56eb*/
+  if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x6b56eb*/
   {
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrater, this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
@@ -262,12 +262,12 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   LOBYTE(v3) = this->Crater; /*0x6b580c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6b5815*/
   LOBYTE(v4) = this->Burn; /*0x6b581a*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 

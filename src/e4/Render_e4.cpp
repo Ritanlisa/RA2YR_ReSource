@@ -282,8 +282,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
 
   v31 = 0; /*0x70527a*/
   v32 = 0; /*0x705282*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v29); /*0x70529b*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v33); /*0x7052b3*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v29); /*0x70529b*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v33); /*0x7052b3*/
   v30 += dword_886FA4; /*0x7052ce*/
   v34 += dword_886FA4; /*0x70530d*/
   v8 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x705348*/
@@ -382,8 +382,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
     v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
     v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v45, &v29); /*0x705732*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v48, &v33); /*0x705747*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v45, &v29); /*0x705732*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v48, &v33); /*0x705747*/
     v30 += dword_886FA4; /*0x705761*/
     v34 += dword_886FA4; /*0x70576e*/
     if ( ClipLine(&v29, &v33, v51) ) /*0x705772*/
@@ -393,7 +393,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
       v25 = v24; /*0x70579d*/
       if ( v24 >= 254 ) /*0x70579f*/
         v25 = -2; /*0x7057a1*/
-      Color::Lerp((uint8_t *)&v31, v25, (uint8_t *)&byte_A83CD9); /*0x7057b0*/
+      ((Color *)((uint8_t *)&v31))->Lerp(v25, (uint8_t *)&byte_A83CD9); /*0x7057b0*/
       (*(void (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x70581e*/
         DSurface_Composite,
         &v29,
@@ -431,7 +431,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
     if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
   LABEL_6:
-      WideString::Assign((WideString *)a1, &g_TypeClass_DefaultString); /*0x780e0b*/
+      ((WideString *)((WideString *)a1))->Assign(&g_TypeClass_DefaultString); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
     else
@@ -445,14 +445,14 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
         if ( ++v7 >= dword_A8B8D8 ) /*0x780e09*/
           goto LABEL_6; /*0x780e09*/
       }
-      WideString::Assign((WideString *)a1, (wchar_t *)v8); /*0x780e21*/
+      ((WideString *)((WideString *)a1))->Assign((wchar_t *)v8); /*0x780e21*/
       return a1; /*0x780e26*/
     }
   }
   else
   {
     StringCSF = GetStringCSF(aTxtRandomMapDe, 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
-    WideString::Assign((WideString *)a1, StringCSF); /*0x780dca*/
+    ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }
 }
@@ -1518,7 +1518,7 @@ void sub_642BB0(unsigned int a1)
     return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(0xFFFFFFFE)); /*0x642bed*/
   if ( a1 < 8 ) /*0x642bf5*/
   {
-    PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)(dword_A8DA78 + 4 * a1)); /*0x642bff*/
+    PlayerColor = ((SessionClass *)(*(unsigned int *)(dword_A8DA78 + 4 * a1)))->GetPlayerColor(); /*0x642bff*/
     return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
   }
   return result; /*0x642bec*/
@@ -1748,7 +1748,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   v6 = (*(int (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0); /*0x5c06e8*/
   v11[0] = (void*)&CCFileClass_vftable; /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
-  Vector::Clear((int)v12); /*0x5c06fa*/
+  ((Vector *)((int)v12))->Clear(); /*0x5c06fa*/
   v11[0] = (unsigned int)&off_7E1668; /*0x5c0703*/
   BufferIOFileClass::Dtor(v11); /*0x5c070b*/
   if ( !v6 ) /*0x5c0712*/
@@ -1758,7 +1758,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
     v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x5c0754*/
     v11[0] = (void*)&CCFileClass_vftable; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
-    Vector::Clear((int)v12); /*0x5c0766*/
+    ((Vector *)((int)v12))->Clear(); /*0x5c0766*/
     v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/
     BufferIOFileClass::Dtor(v11); /*0x5c0777*/
     if ( !v8 ) /*0x5c077e*/

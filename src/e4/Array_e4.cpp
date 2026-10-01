@@ -96,7 +96,7 @@ int Array::RemoveAt(int a2, void *a2_2)
 }
 // 0x65AD40
 namespace gamemd {
-int Array::Get(int a2, void *a2_2)
+int Array::Get(int a2)
 {
 
   return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
@@ -192,7 +192,7 @@ void Array::ByteSwap()
 }
 // 0x763980
 namespace gamemd {
-int Array::GetElement(CampaignScore * aP1, void *a2_1)
+int Array::GetElement(int aP1)
 {
 
   if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)((int))this->Array_field_0x38 ) /*0x76398b*/
@@ -222,7 +222,7 @@ int Array::CleanupArrayWOL(void *a1_1)
 }
 // 0x7AD790
 namespace gamemd {
-AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2, void *a3_1)
+AbstractClass * * Array::InsertElement(const void *a1, int aP2)
 {
 
   ObjectClass * v4;

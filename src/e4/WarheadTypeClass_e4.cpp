@@ -480,40 +480,40 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   int *v18; // ebx
   int v20; // [esp+Ch] [ebp-4h]
 
-  v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x75ded0*/
+  v3 = ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x75ded0*/
   LOBYTE(v3) = this->__pad_144[0]; /*0x75ded5*/
-  Power::FlagProcess((Power *)a2, v3); /*0x75dede*/
+  ((Power *)((Power *)a2))->FlagProcess(v3); /*0x75dede*/
   LOBYTE(v4) = this->__pad_144[3]; /*0x75dee3*/
-  Power::FlagProcess((Power *)a2, v4); /*0x75deec*/
+  ((Power *)((Power *)a2))->FlagProcess(v4); /*0x75deec*/
   LOBYTE(v5) = this->__pad_144[4]; /*0x75def1*/
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x75defa*/
+  v6 = ((Power *)((Power *)a2))->FlagProcess(v5); /*0x75defa*/
   LOBYTE(v6) = this->WarheadTypeClass_field_bool_149[0]; /*0x75deff*/
-  Power::FlagProcess((Power *)a2, v6); /*0x75df08*/
+  ((Power *)((Power *)a2))->FlagProcess(v6); /*0x75df08*/
   LOBYTE(v7) = this->WarheadTypeClass_field_bool_149[1]; /*0x75df0d*/
-  Power::FlagProcess((Power *)a2, v7); /*0x75df16*/
+  ((Power *)((Power *)a2))->FlagProcess(v7); /*0x75df16*/
   LOBYTE(v8) = this->WarheadTypeClass_field_bool_149[2]; /*0x75df1b*/
-  v9 = Power::FlagProcess((Power *)a2, v8); /*0x75df24*/
+  v9 = ((Power *)((Power *)a2))->FlagProcess(v8); /*0x75df24*/
   LOBYTE(v9) = this->WarheadTypeClass_field_bool_149[3]; /*0x75df29*/
-  Power::FlagProcess((Power *)a2, v9); /*0x75df32*/
+  ((Power *)((Power *)a2))->FlagProcess(v9); /*0x75df32*/
   LOBYTE(v10) = this->Conventional[0]; /*0x75df37*/
-  Power::FlagProcess((Power *)a2, v10); /*0x75df40*/
+  ((Power *)((Power *)a2))->FlagProcess(v10); /*0x75df40*/
   LOBYTE(v11) = this->Conventional[1]; /*0x75df45*/
-  v12 = Power::FlagProcess((Power *)a2, v11); /*0x75df4e*/
+  v12 = ((Power *)((Power *)a2))->FlagProcess(v11); /*0x75df4e*/
   LOBYTE(v12) = this->Conventional[2]; /*0x75df53*/
-  Power::FlagProcess((Power *)a2, v12); /*0x75df5c*/
+  ((Power *)((Power *)a2))->FlagProcess(v12); /*0x75df5c*/
   LOBYTE(v13) = this->Conventional[3]; /*0x75df61*/
-  Power::FlagProcess((Power *)a2, v13); /*0x75df6a*/
+  ((Power *)((Power *)a2))->FlagProcess(v13); /*0x75df6a*/
   LOBYTE(v14) = this->CLDisableRed[0]; /*0x75df6f*/
-  v15 = Power::FlagProcess((Power *)a2, v14); /*0x75df78*/
+  v15 = ((Power *)((Power *)a2))->FlagProcess(v14); /*0x75df78*/
   LOBYTE(v15) = this->CLDisableRed[1]; /*0x75df7d*/
-  Power::FlagProcess((Power *)a2, v15); /*0x75df86*/
+  ((Power *)((Power *)a2))->FlagProcess(v15); /*0x75df86*/
   LOBYTE(v16) = this->CLDisableRed[2]; /*0x75df8b*/
-  Power::FlagProcess((Power *)a2, v16); /*0x75df94*/
+  ((Power *)((Power *)a2))->FlagProcess(v16); /*0x75df94*/
   Checksummer::Add_double((Checksummer *)a2, *(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x100); /*0x75dfb7*/
   Checksummer::Add_double((Checksummer *)a2, (int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
   LOBYTE(v17) = HIBYTE(this->PsychicDamage); /*0x75dfd1*/
-  Power::FlagProcess((Power *)a2, v17); /*0x75dfda*/
+  ((Power *)((Power *)a2))->FlagProcess(v17); /*0x75dfda*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x17C); /*0x75dfe8*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x180); /*0x75dff6*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x184); /*0x75e004*/
@@ -593,7 +593,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( k = 0; k < (int)a1; ++k ) /*0x75e221*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e22f*/
-      DynamicVector::Add_Alt((DynamicVector *)&v2->__pad_1A0[8], &a2); /*0x75e239*/
+      ((DynamicVector *)((DynamicVector *)&v2->__pad_1A0[8]))->Add_Alt(&a2); /*0x75e239*/
     }
     for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/
       ObjectPtr::RegisterForTracking( /*0x75e260*/

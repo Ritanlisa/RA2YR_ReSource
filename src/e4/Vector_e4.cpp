@@ -141,7 +141,7 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
 
 // 0x43AE50
 namespace gamemd {
-int Vector::Clear(void *a1_1)
+int Vector::Clear()
 {
 
   int result; // eax

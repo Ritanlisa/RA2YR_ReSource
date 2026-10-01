@@ -80,7 +80,7 @@ struct TaskForceClass {
     unsigned int *__pad_8;
     unsigned int *__pad_A0;
 // --- flat members (END) ---
-    unsigned int * ParseUnitCountAndType(char * Buffer, void *a2_1);  // 0x4C4EF0
+    unsigned int * ParseUnitCountAndType(char *Buffer);  // 0x4C4EF0
     int Construct(ObjectClass * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x6E7E80
     AbstractClass * * LoadFromINI(char * a1, int a2);  // 0x6E8220
     void * ExecuteAction(void ** Block, char a2);  // 0x6E87F0

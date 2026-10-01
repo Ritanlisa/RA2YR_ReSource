@@ -31,7 +31,7 @@
 
 // 0x4346C0
 namespace gamemd {
-int Font::GetGlyphDataForChar(AbstractClass * aP1, void *a2)
+int Font::GetGlyphDataForChar(uint16_t aP1)
 {
 
   unsigned int *Font_field_04; // ecx
@@ -171,7 +171,7 @@ LABEL_4:
                       (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
               v55 = *(unsigned short *)v23; /*0x434e3b*/
               v56 = v23[2]; /*0x434e4c*/
-              Color::Lerp((uint8_t *)&v55, v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
+              ((Color *)((uint8_t *)&v55))->Lerp(v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
               v22 = PackRGB565((uint8_t)v55, HIBYTE(v55), v56); /*0x434e7c*/
             }
 LABEL_18:
@@ -204,10 +204,10 @@ LABEL_23:
           goto LABEL_26; /*0x434f06*/
         default:
 LABEL_26:
-          GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, (uint16_t)v53); /*0x434f0a*/
+          GlyphDataForChar = (uint8_t *)((Font *)((unsigned int *)aP0))->GetGlyphDataForChar((uint16_t)v53); /*0x434f0a*/
           if ( !GlyphDataForChar ) /*0x434f1a*/
           {
-            GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, 0x3Fu); /*0x434f22*/
+            GlyphDataForChar = (uint8_t *)((Font *)((unsigned int *)aP0))->GetGlyphDataForChar(0x3Fu); /*0x434f22*/
             if ( !GlyphDataForChar ) /*0x434f29*/
               goto LABEL_55; /*0x434f29*/
           }
@@ -268,7 +268,7 @@ LABEL_26:
             HIBYTE(v47) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
             v57 = v47; /*0x43504b*/
             v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
-            Color::Lerp((uint8_t *)&v57, v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
+            ((Color *)((uint8_t *)&v57))->Lerp(v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
             v35 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
                 | (v58 >> g_BitMask_Red << g_BitShift_Blue)
                 | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);
@@ -355,7 +355,7 @@ LABEL_59:
               HIBYTE(v59) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
               v57 = v59; /*0x435228*/
               v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
-              Color::Lerp((uint8_t *)&v57, v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
+              ((Color *)((uint8_t *)&v57))->Lerp(v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
               v43 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
                   | (v58 >> g_BitMask_Red << g_BitShift_Blue)
                   | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);

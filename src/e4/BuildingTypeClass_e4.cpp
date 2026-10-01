@@ -581,7 +581,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           *(unsigned int *)(v4 + 3584) = 0; /*0x45eb26*/
           *(unsigned char *)(v4 + 3588) = 0; /*0x45eb2c*/
         }
-        BuildingTypeClass::LoadAnimations(v4, v2); /*0x45eb35*/
+        ((BuildingTypeClass *)(v4))->LoadAnimations(v2); /*0x45eb35*/
       }
       ++v3; /*0x45eb3f*/
     }
@@ -613,7 +613,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 } // namespace gamemd
 // 0x45F230
 namespace gamemd {
-void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1, void *a2)
+void* BuildingTypeClass::LoadAnimations(int aP1)
 {
 
   int v3; // eax
@@ -999,7 +999,7 @@ void BuildingTypeClass::LoadVoxel()
         }
         v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fb71*/
         if ( v4 ) /*0x45fb7b*/
-          FileVXL = File::LoadFileVXL(v4, (int)&v25, 0); /*0x45fb85*/
+          FileVXL = ((File *)(v4))->LoadFileVXL((int)&v25, 0); /*0x45fb85*/
         else
           FileVXL = 0; /*0x45fb8c*/
         ((unsigned int *)this)[0] = (int)FileVXL; /*0x45fb8e*/
@@ -1013,7 +1013,7 @@ void BuildingTypeClass::LoadVoxel()
         }
         v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fbe0*/
         if ( v7 ) /*0x45fbea*/
-          FileHVA = File::LoadFileHVA(v7, (int)&v22); /*0x45fbf3*/
+          FileHVA = ((File *)(v7))->LoadFileHVA((int)&v22); /*0x45fbf3*/
         else
           FileHVA = 0; /*0x45fbfa*/
         ((unsigned int *)this)[0] = (int)FileHVA; /*0x45fbfe*/
@@ -1024,7 +1024,7 @@ void BuildingTypeClass::LoadVoxel()
         }
         *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
-        Vector::Clear((int)v23); /*0x45fc36*/
+        ((Vector *)((int)v23))->Clear(); /*0x45fc36*/
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fc43*/
       }
@@ -1042,7 +1042,7 @@ void BuildingTypeClass::LoadVoxel()
       }
       *(unsigned int *)v25.CDFileClass = &vt_CCFileClass; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
-      Vector::Clear((int)v26); /*0x45fc9b*/
+      ((Vector *)((int)v26))->Clear(); /*0x45fc9b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x45fca8*/
     }
@@ -1062,7 +1062,7 @@ void BuildingTypeClass::LoadVoxel()
       }
       v14 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fd37*/
       if ( v14 ) /*0x45fd41*/
-        v15 = File::LoadFileVXL(v14, (int)&v28, 0); /*0x45fd4e*/
+        v15 = ((File *)(v14))->LoadFileVXL((int)&v28, 0); /*0x45fd4e*/
       else
         v15 = 0; /*0x45fd55*/
       ((unsigned int *)this)[1] = (int)v15; /*0x45fd63*/
@@ -1076,7 +1076,7 @@ void BuildingTypeClass::LoadVoxel()
       }
       v17 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fda9*/
       if ( v17 ) /*0x45fdb3*/
-        v18 = File::LoadFileHVA(v17, (int)&v22); /*0x45fdbc*/
+        v18 = ((File *)(v17))->LoadFileHVA((int)&v22); /*0x45fdbc*/
       else
         v18 = 0; /*0x45fdc3*/
       ((unsigned int *)this)[2] = (int)v18; /*0x45fdc7*/
@@ -1090,13 +1090,13 @@ void BuildingTypeClass::LoadVoxel()
       }
       *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
-      Vector::Clear((int)v23); /*0x45fdff*/
+      ((Vector *)((int)v23))->Clear(); /*0x45fdff*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
     *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
-    Vector::Clear((int)v29); /*0x45fe2a*/
+    ((Vector *)((int)v29))->Clear(); /*0x45fe2a*/
     *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x45fe3d*/
   }
@@ -1186,102 +1186,102 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1392]); /*0x464c7b*/
   v2 = Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1444]); /*0x464c89*/
   LOBYTE(v2) = this->HoverPad; /*0x464c8e*/
-  Power::FlagProcess((Power *)v54, v2); /*0x464c97*/
+  ((Power *)((Power *)v54))->FlagProcess(v2); /*0x464c97*/
   LOBYTE(v3) = this->IsPlug; /*0x464c9c*/
-  Power::FlagProcess((Power *)v54, v3); /*0x464ca5*/
+  ((Power *)((Power *)v54))->FlagProcess(v3); /*0x464ca5*/
   LOBYTE(v4) = this->IsTemple; /*0x464caa*/
-  v5 = Power::FlagProcess((Power *)v54, v4); /*0x464cb3*/
+  v5 = ((Power *)((Power *)v54))->FlagProcess(v4); /*0x464cb3*/
   LOBYTE(v5) = this->HasSpotlight; /*0x464cb8*/
-  Power::FlagProcess((Power *)v54, v5); /*0x464cc1*/
+  ((Power *)((Power *)v54))->FlagProcess(v5); /*0x464cc1*/
   LOBYTE(v6) = this->BaseNormal; /*0x464cc6*/
-  Power::FlagProcess((Power *)v54, v6); /*0x464ccf*/
+  ((Power *)((Power *)v54))->FlagProcess(v6); /*0x464ccf*/
   LOBYTE(v7) = this->EligibileForAllyBuilding; /*0x464cd4*/
-  v8 = Power::FlagProcess((Power *)v54, v7); /*0x464cdd*/
+  v8 = ((Power *)((Power *)v54))->FlagProcess(v7); /*0x464cdd*/
   LOBYTE(v8) = this->NeedsEngineer; /*0x464ce2*/
-  Power::FlagProcess((Power *)v54, v8); /*0x464ceb*/
+  ((Power *)((Power *)v54))->FlagProcess(v8); /*0x464ceb*/
   LOBYTE(v9) = this->Bib; /*0x464cf0*/
-  Power::FlagProcess((Power *)v54, v9); /*0x464cf9*/
+  ((Power *)((Power *)v54))->FlagProcess(v9); /*0x464cf9*/
   LOBYTE(v10) = this->Wall; /*0x464cfe*/
-  v11 = Power::FlagProcess((Power *)v54, v10); /*0x464d07*/
+  v11 = ((Power *)((Power *)v54))->FlagProcess(v10); /*0x464d07*/
   LOBYTE(v11) = this->Capturable; /*0x464d0c*/
-  Power::FlagProcess((Power *)v54, v11); /*0x464d15*/
+  ((Power *)((Power *)v54))->FlagProcess(v11); /*0x464d15*/
   LOBYTE(v12) = this->Powered; /*0x464d1a*/
-  Power::FlagProcess((Power *)v54, v12); /*0x464d23*/
+  ((Power *)((Power *)v54))->FlagProcess(v12); /*0x464d23*/
   LOBYTE(v13) = this->Unsellable; /*0x464d28*/
-  v14 = Power::FlagProcess((Power *)v54, v13); /*0x464d31*/
+  v14 = ((Power *)((Power *)v54))->FlagProcess(v13); /*0x464d31*/
   LOBYTE(v14) = this->__pad_1624[128]; /*0x464d36*/
-  Power::FlagProcess((Power *)v54, v14); /*0x464d3f*/
+  ((Power *)((Power *)v54))->FlagProcess(v14); /*0x464d3f*/
   LOBYTE(v15) = this->__pad_1624[129]; /*0x464d44*/
-  Power::FlagProcess((Power *)v54, v15); /*0x464d4d*/
+  ((Power *)((Power *)v54))->FlagProcess(v15); /*0x464d4d*/
   LOBYTE(v16) = this->ChargeAnim; /*0x464d52*/
-  v17 = Power::FlagProcess((Power *)v54, v16); /*0x464d5b*/
+  v17 = ((Power *)((Power *)v54))->FlagProcess(v16); /*0x464d5b*/
   LOBYTE(v17) = this->IsAnimDelayedFire; /*0x464d60*/
-  Power::FlagProcess((Power *)v54, v17); /*0x464d69*/
+  ((Power *)((Power *)v54))->FlagProcess(v17); /*0x464d69*/
   Power::TimerProcess(this->DelayedFireDelay); /*0x464d77*/
   LOBYTE(v18) = this->SiloDamage; /*0x464d7c*/
-  v19 = Power::FlagProcess((Power *)v54, v18); /*0x464d85*/
+  v19 = ((Power *)((Power *)v54))->FlagProcess(v18); /*0x464d85*/
   LOBYTE(v19) = this->UnitRepair; /*0x464d8a*/
-  Power::FlagProcess((Power *)v54, v19); /*0x464d93*/
+  ((Power *)((Power *)v54))->FlagProcess(v19); /*0x464d93*/
   LOBYTE(v20) = this->UnitReload; /*0x464d98*/
-  Power::FlagProcess((Power *)v54, v20); /*0x464da1*/
+  ((Power *)((Power *)v54))->FlagProcess(v20); /*0x464da1*/
   LOBYTE(v21) = this->Cloning; /*0x464da6*/
-  v22 = Power::FlagProcess((Power *)v54, v21); /*0x464daf*/
+  v22 = ((Power *)((Power *)v54))->FlagProcess(v21); /*0x464daf*/
   LOBYTE(v22) = this->Grinding; /*0x464db4*/
-  Power::FlagProcess((Power *)v54, v22); /*0x464dbd*/
+  ((Power *)((Power *)v54))->FlagProcess(v22); /*0x464dbd*/
   LOBYTE(v23) = this->UnitAbsorb; /*0x464dc2*/
-  Power::FlagProcess((Power *)v54, v23); /*0x464dcb*/
+  ((Power *)((Power *)v54))->FlagProcess(v23); /*0x464dcb*/
   LOBYTE(v24) = this->InfantryAbsorb; /*0x464dd0*/
-  v25 = Power::FlagProcess((Power *)v54, v24); /*0x464dd9*/
+  v25 = ((Power *)((Power *)v54))->FlagProcess(v24); /*0x464dd9*/
   LOBYTE(v25) = this->SecretLab; /*0x464dde*/
-  Power::FlagProcess((Power *)v54, v25); /*0x464de7*/
+  ((Power *)((Power *)v54))->FlagProcess(v25); /*0x464de7*/
   LOBYTE(v26) = this->Flat_flag; /*0x464dec*/
-  Power::FlagProcess((Power *)v54, v26); /*0x464df5*/
+  ((Power *)((Power *)v54))->FlagProcess(v26); /*0x464df5*/
   LOBYTE(v27) = this->DockUnload; /*0x464dfa*/
-  v28 = Power::FlagProcess((Power *)v54, v27); /*0x464e03*/
+  v28 = ((Power *)((Power *)v54))->FlagProcess(v27); /*0x464e03*/
   LOBYTE(v28) = this->Recoilless; /*0x464e08*/
-  Power::FlagProcess((Power *)v54, v28); /*0x464e11*/
+  ((Power *)((Power *)v54))->FlagProcess(v28); /*0x464e11*/
   LOBYTE(v29) = this->BridgeRepairHut; /*0x464e16*/
-  Power::FlagProcess((Power *)v54, v29); /*0x464e1f*/
+  ((Power *)((Power *)v54))->FlagProcess(v29); /*0x464e1f*/
   LOBYTE(v30) = this->Gate; /*0x464e24*/
-  v31 = Power::FlagProcess((Power *)v54, v30); /*0x464e2d*/
+  v31 = ((Power *)((Power *)v54))->FlagProcess(v30); /*0x464e2d*/
   LOBYTE(v31) = this->SAM; /*0x464e32*/
-  Power::FlagProcess((Power *)v54, v31); /*0x464e3b*/
+  ((Power *)((Power *)v54))->FlagProcess(v31); /*0x464e3b*/
   LOBYTE(v32) = this->ConstructionYard; /*0x464e40*/
-  Power::FlagProcess((Power *)v54, v32); /*0x464e49*/
+  ((Power *)((Power *)v54))->FlagProcess(v32); /*0x464e49*/
   LOBYTE(v33) = this->NukeSilo; /*0x464e4e*/
-  v34 = Power::FlagProcess((Power *)v54, v33); /*0x464e57*/
+  v34 = ((Power *)((Power *)v54))->FlagProcess(v33); /*0x464e57*/
   LOBYTE(v34) = this->Refinery; /*0x464e5c*/
-  Power::FlagProcess((Power *)v54, v34); /*0x464e65*/
+  ((Power *)((Power *)v54))->FlagProcess(v34); /*0x464e65*/
   LOBYTE(v35) = this->WeaponsFactory; /*0x464e6a*/
-  Power::FlagProcess((Power *)v54, v35); /*0x464e73*/
+  ((Power *)((Power *)v54))->FlagProcess(v35); /*0x464e73*/
   LOBYTE(v36) = this->LaserFencePost; /*0x464e78*/
-  v37 = Power::FlagProcess((Power *)v54, v36); /*0x464e81*/
+  v37 = ((Power *)((Power *)v54))->FlagProcess(v36); /*0x464e81*/
   LOBYTE(v37) = this->LaserFence; /*0x464e86*/
-  Power::FlagProcess((Power *)v54, v37); /*0x464e8f*/
+  ((Power *)((Power *)v54))->FlagProcess(v37); /*0x464e8f*/
   LOBYTE(v38) = this->FirestormWall; /*0x464e94*/
-  Power::FlagProcess((Power *)v54, v38); /*0x464e9d*/
+  ((Power *)((Power *)v54))->FlagProcess(v38); /*0x464e9d*/
   LOBYTE(v39) = this->Helipad; /*0x464ea2*/
-  v40 = Power::FlagProcess((Power *)v54, v39); /*0x464eab*/
+  v40 = ((Power *)((Power *)v54))->FlagProcess(v39); /*0x464eab*/
   LOBYTE(v40) = this->OrePurifier; /*0x464eb0*/
-  Power::FlagProcess((Power *)v54, v40); /*0x464eb9*/
+  ((Power *)((Power *)v54))->FlagProcess(v40); /*0x464eb9*/
   LOBYTE(v41) = this->ExtraDamageStage; /*0x464ebe*/
-  Power::FlagProcess((Power *)v54, v41); /*0x464ec7*/
+  ((Power *)((Power *)v54))->FlagProcess(v41); /*0x464ec7*/
   LOBYTE(v42) = this->Hospital; /*0x464ecc*/
-  v43 = Power::FlagProcess((Power *)v54, v42); /*0x464ed5*/
+  v43 = ((Power *)((Power *)v54))->FlagProcess(v42); /*0x464ed5*/
   LOBYTE(v43) = this->Armory; /*0x464eda*/
-  Power::FlagProcess((Power *)v54, v43); /*0x464ee3*/
+  ((Power *)((Power *)v54))->FlagProcess(v43); /*0x464ee3*/
   Power::TimerProcess(this->GateStages); /*0x464ef1*/
   v44 = Power::TimerProcess(this->PowersUpToLevel); /*0x464eff*/
   LOBYTE(v44) = this->DamagedDoor; /*0x464f04*/
-  Power::FlagProcess((Power *)v54, v44); /*0x464f0d*/
+  ((Power *)((Power *)v54))->FlagProcess(v44); /*0x464f0d*/
   LOBYTE(v45) = this->InvisibleInGame; /*0x464f12*/
-  Power::FlagProcess((Power *)v54, v45); /*0x464f1b*/
+  ((Power *)((Power *)v54))->FlagProcess(v45); /*0x464f1b*/
   LOBYTE(v46) = this->TerrainPalette; /*0x464f20*/
-  v47 = Power::FlagProcess((Power *)v54, v46); /*0x464f29*/
+  v47 = ((Power *)((Power *)v54))->FlagProcess(v46); /*0x464f29*/
   LOBYTE(v47) = this->TurretAnimIsVoxel; /*0x464f2e*/
-  Power::FlagProcess((Power *)v54, v47); /*0x464f37*/
+  ((Power *)((Power *)v54))->FlagProcess(v47); /*0x464f37*/
   LOBYTE(v48) = this->BarrelAnimIsVoxel; /*0x464f3c*/
-  Power::FlagProcess((Power *)v54, v48); /*0x464f45*/
+  ((Power *)((Power *)v54))->FlagProcess(v48); /*0x464f45*/
   Checksum::AddString((Checksum *)v54, (uint8_t *)this->__pad_1714); /*0x464f53*/
   Checksummer::Add_double(v54, *(unsigned int *)&this->__pad_1714[20], *(unsigned int *)&this->__pad_1714[24]); /*0x464f68*/
   Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[28], 12); /*0x464f78*/
@@ -1289,15 +1289,15 @@ int BuildingTypeClass::UpdatePower()
   Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[52], 12); /*0x464f98*/
   v49 = Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[64], 12); /*0x464fa8*/
   LOBYTE(v49) = this->__pad_1714[83]; /*0x464fad*/
-  Power::FlagProcess((Power *)v54, v49); /*0x464fb6*/
+  ((Power *)((Power *)v54))->FlagProcess(v49); /*0x464fb6*/
   LOBYTE(v50) = this->__pad_1714[84]; /*0x464fbb*/
-  Power::FlagProcess((Power *)v54, v50); /*0x464fc4*/
+  ((Power *)((Power *)v54))->FlagProcess(v50); /*0x464fc4*/
   LOBYTE(v51) = this->__pad_1714[85]; /*0x464fc9*/
-  Power::FlagProcess((Power *)v54, v51); /*0x464fd2*/
+  ((Power *)((Power *)v54))->FlagProcess(v51); /*0x464fd2*/
   Power::TimerProcess(*(unsigned int *)&this->__pad_1714[108]); /*0x464fe0*/
   Power::TimerProcess(this->BarrelStartPitch); /*0x464fee*/
   LOBYTE(v52) = this->ConcentricRadialIndicator; /*0x464ff3*/
-  return Power::FlagProcess((Power *)v54, v52); /*0x465001*/
+  return ((Power *)((Power *)v54))->FlagProcess(v52); /*0x465001*/
 
 }
 } // namespace gamemd
@@ -1414,7 +1414,7 @@ LABEL_32:
         v1[1].AltCameoFile[19] = 0; /*0x4652c6*/
         *(unsigned int *)&v1[1].AltCameoFile[23] = 0; /*0x4652cc*/
         LOBYTE(v1[1].AltCameo) = 0; /*0x4652d2*/
-        BuildingTypeClass::LoadAnimations((int)v1, dword_A8B230[130].uniqueId); /*0x4652e6*/
+        ((BuildingTypeClass *)((int)v1))->LoadAnimations(dword_A8B230[130].uniqueId); /*0x4652e6*/
         return 0; /*0x4652eb*/
       }
       else
@@ -1569,27 +1569,27 @@ int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
   v4 = *aP1; /*0x594027*/
   HIWORD(aP1) = aP1[2]; /*0x59402a*/
   LOWORD(aP1) = v4; /*0x594035*/
-  result = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1, 1); /*0x59403a*/
+  result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea((int16_t *)&aP1, 1); /*0x59403a*/
   if ( (unsigned char)result )
   {
     v6 = v3[2]; /*0x594052*/
     LOWORD(aP1) = *((unsigned int *)v3 + 2) + *(unsigned int *)v3 - 1; /*0x59405a*/
     HIWORD(aP1) = v6; /*0x594065*/
-    result = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1, 1); /*0x59406a*/
+    result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea((int16_t *)&aP1, 1); /*0x59406a*/
     if ( (unsigned char)result )
     {
       v7 = *((unsigned int *)v3 + 1); /*0x59407a*/
       v8 = *((unsigned int *)v3 + 3); /*0x59407d*/
       LOWORD(aP1) = *v3; /*0x594080*/
       HIWORD(aP1) = v7 + v8 - 1; /*0x594095*/
-      result = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1, 1); /*0x59409a*/
+      result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea((int16_t *)&aP1, 1); /*0x59409a*/
       if ( (unsigned char)result )
       {
         v9 = *((unsigned int *)v3 + 1); /*0x5940b2*/
         v10 = *((unsigned int *)v3 + 3); /*0x5940b5*/
         LOWORD(aP1) = *((unsigned int *)v3 + 2) + *(unsigned int *)v3 - 1; /*0x5940b8*/
         HIWORD(aP1) = v9 + v10 - 1; /*0x5940cb*/
-        result = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1, 1); /*0x5940d0*/
+        result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea((int16_t *)&aP1, 1); /*0x5940d0*/
         if ( (unsigned char)result )
         {
           v11 = *((unsigned int *)v3 + 1); /*0x5940dd*/
@@ -1703,7 +1703,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x644beb*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x644beb*/
   ((unsigned int *)this)[0] = 0; /*0x644bf8*/
   ((unsigned int *)this)[0] = 0; /*0x644bfe*/
   *(unsigned int *)((unsigned int *)this)[0] = 0; /*0x644c04*/
@@ -1860,7 +1860,7 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
   int v40; // eax
   int v41; // ecx
 
-  AbstractTypeClass::ProcessPower((char *)this, aP1); /*0x7171a9*/
+  ((AbstractTypeClass *)((char *)this))->ProcessPower(aP1); /*0x7171a9*/
   Checksummer::Add_double(*((unsigned int *)this + 188), *((unsigned int *)this + 189)); /*0x7171be*/
   Power::TimerProcess(*((unsigned int *)this + 190)); /*0x7171cc*/
   Checksummer::Add_double(*((unsigned int *)this + 192), *((unsigned int *)this + 193)); /*0x7171e1*/
@@ -1878,14 +1878,14 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
   Checksummer::Add_double(*((unsigned int *)this + 224), *((unsigned int *)this + 225)); /*0x7172b5*/
   Checksummer::Add_double(*((unsigned int *)this + 226), *((unsigned int *)this + 227)); /*0x7172ca*/
   LOBYTE(v3) = *((unsigned char *)this + 912); /*0x7172cf*/
-  Power::FlagProcess(aP1, v3); /*0x7172d8*/
+  ((Power *)(aP1))->FlagProcess(v3); /*0x7172d8*/
   v4 = Power::TimerProcess(*((unsigned int *)this + 230)); /*0x7172e6*/
   LOBYTE(v4) = *((unsigned char *)this + 3217); /*0x7172eb*/
-  Power::FlagProcess(aP1, v4); /*0x7172f4*/
+  ((Power *)(aP1))->FlagProcess(v4); /*0x7172f4*/
   LOBYTE(v5) = *((unsigned char *)this + 3218); /*0x7172f9*/
-  Power::FlagProcess(aP1, v5); /*0x717302*/
+  ((Power *)(aP1))->FlagProcess(v5); /*0x717302*/
   LOBYTE(v6) = *((unsigned char *)this + 3216); /*0x717307*/
-  Power::FlagProcess(aP1, v6); /*0x717310*/
+  ((Power *)(aP1))->FlagProcess(v6); /*0x717310*/
   Checksummer::Add_double(*((unsigned int *)this + 232), *((unsigned int *)this + 233)); /*0x717325*/
   Checksummer::Add_double(*((unsigned int *)this + 236), *((unsigned int *)this + 237)); /*0x71733a*/
   Checksummer::Add_double(*((unsigned int *)this + 234), *((unsigned int *)this + 235)); /*0x71734f*/
@@ -1934,75 +1934,75 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
   Power::TimerProcess(*((unsigned int *)this + 511)); /*0x7175b0*/
   v7 = Power::TimerProcess(*((unsigned int *)this + 512)); /*0x7175be*/
   LOBYTE(v7) = *((unsigned char *)this + 3220); /*0x7175c3*/
-  Power::FlagProcess(aP1, v7); /*0x7175cc*/
+  ((Power *)(aP1))->FlagProcess(v7); /*0x7175cc*/
   LOBYTE(v8) = *((unsigned char *)this + 3221); /*0x7175d1*/
-  Power::FlagProcess(aP1, v8); /*0x7175da*/
+  ((Power *)(aP1))->FlagProcess(v8); /*0x7175da*/
   LOBYTE(v9) = *((unsigned char *)this + 3222); /*0x7175df*/
-  v10 = Power::FlagProcess(aP1, v9); /*0x7175e8*/
+  v10 = ((Power *)(aP1))->FlagProcess(v9); /*0x7175e8*/
   LOBYTE(v10) = *((unsigned char *)this + 3223); /*0x7175ed*/
-  Power::FlagProcess(aP1, v10); /*0x7175f6*/
+  ((Power *)(aP1))->FlagProcess(v10); /*0x7175f6*/
   LOBYTE(v11) = *((unsigned char *)this + 3224); /*0x7175fb*/
-  Power::FlagProcess(aP1, v11); /*0x717604*/
+  ((Power *)(aP1))->FlagProcess(v11); /*0x717604*/
   LOBYTE(v12) = *((unsigned char *)this + 3225); /*0x717609*/
-  v13 = Power::FlagProcess(aP1, v12); /*0x717612*/
+  v13 = ((Power *)(aP1))->FlagProcess(v12); /*0x717612*/
   LOBYTE(v13) = *((unsigned char *)this + 3226); /*0x717617*/
-  Power::FlagProcess(aP1, v13); /*0x717620*/
+  ((Power *)(aP1))->FlagProcess(v13); /*0x717620*/
   LOBYTE(v14) = *((unsigned char *)this + 3227); /*0x717625*/
-  Power::FlagProcess(aP1, v14); /*0x71762e*/
+  ((Power *)(aP1))->FlagProcess(v14); /*0x71762e*/
   LOBYTE(v15) = *((unsigned char *)this + 3228); /*0x717633*/
-  v16 = Power::FlagProcess(aP1, v15); /*0x71763c*/
+  v16 = ((Power *)(aP1))->FlagProcess(v15); /*0x71763c*/
   LOBYTE(v16) = *((unsigned char *)this + 3229); /*0x717641*/
-  Power::FlagProcess(aP1, v16); /*0x71764a*/
+  ((Power *)(aP1))->FlagProcess(v16); /*0x71764a*/
   LOBYTE(v17) = *((unsigned char *)this + 3230); /*0x71764f*/
-  Power::FlagProcess(aP1, v17); /*0x717658*/
+  ((Power *)(aP1))->FlagProcess(v17); /*0x717658*/
   LOBYTE(v18) = *((unsigned char *)this + 3231); /*0x71765d*/
-  v19 = Power::FlagProcess(aP1, v18); /*0x717666*/
+  v19 = ((Power *)(aP1))->FlagProcess(v18); /*0x717666*/
   LOBYTE(v19) = *((unsigned char *)this + 3232); /*0x71766b*/
-  Power::FlagProcess(aP1, v19); /*0x717674*/
+  ((Power *)(aP1))->FlagProcess(v19); /*0x717674*/
   LOBYTE(v20) = *((unsigned char *)this + 3233); /*0x717679*/
-  Power::FlagProcess(aP1, v20); /*0x717682*/
+  ((Power *)(aP1))->FlagProcess(v20); /*0x717682*/
   LOBYTE(v21) = *((unsigned char *)this + 3276); /*0x717687*/
-  v22 = Power::FlagProcess(aP1, v21); /*0x717690*/
+  v22 = ((Power *)(aP1))->FlagProcess(v21); /*0x717690*/
   LOBYTE(v22) = *((unsigned char *)this + 3277); /*0x717695*/
-  Power::FlagProcess(aP1, v22); /*0x71769e*/
+  ((Power *)(aP1))->FlagProcess(v22); /*0x71769e*/
   LOBYTE(v23) = *((unsigned char *)this + 3279); /*0x7176a3*/
-  Power::FlagProcess(aP1, v23); /*0x7176ac*/
+  ((Power *)(aP1))->FlagProcess(v23); /*0x7176ac*/
   LOBYTE(v24) = *((unsigned char *)this + 3280); /*0x7176b1*/
-  v25 = Power::FlagProcess(aP1, v24); /*0x7176ba*/
+  v25 = ((Power *)(aP1))->FlagProcess(v24); /*0x7176ba*/
   LOBYTE(v25) = *((unsigned char *)this + 3281); /*0x7176bf*/
-  Power::FlagProcess(aP1, v25); /*0x7176c8*/
+  ((Power *)(aP1))->FlagProcess(v25); /*0x7176c8*/
   LOBYTE(v26) = *((unsigned char *)this + 3282); /*0x7176cd*/
-  Power::FinalizeDrain(aP1, v26); /*0x7176d6*/
+  ((Power *)(aP1))->FinalizeDrain(v26); /*0x7176d6*/
   LOBYTE(v27) = *((unsigned char *)this + 3283); /*0x7176db*/
-  v28 = Power::FinalizeDrain(aP1, v27); /*0x7176e4*/
+  v28 = ((Power *)(aP1))->FinalizeDrain(v27); /*0x7176e4*/
   LOBYTE(v28) = *((unsigned char *)this + 3284); /*0x7176e9*/
-  Power::FlagProcess(aP1, v28); /*0x7176f2*/
+  ((Power *)(aP1))->FlagProcess(v28); /*0x7176f2*/
   LOBYTE(v29) = *((unsigned char *)this + 3348); /*0x7176f7*/
-  Power::FlagProcess(aP1, v29); /*0x717700*/
+  ((Power *)(aP1))->FlagProcess(v29); /*0x717700*/
   LOBYTE(v30) = *((unsigned char *)this + 3349); /*0x717705*/
-  v31 = Power::FlagProcess(aP1, v30); /*0x71770e*/
+  v31 = ((Power *)(aP1))->FlagProcess(v30); /*0x71770e*/
   LOBYTE(v31) = *((unsigned char *)this + 3360); /*0x717713*/
-  Power::FlagProcess(aP1, v31); /*0x71771c*/
+  ((Power *)(aP1))->FlagProcess(v31); /*0x71771c*/
   LOBYTE(v32) = *((unsigned char *)this + 3361); /*0x717721*/
-  Power::FlagProcess(aP1, v32); /*0x71772a*/
+  ((Power *)(aP1))->FlagProcess(v32); /*0x71772a*/
   LOBYTE(v33) = *((unsigned char *)this + 3363); /*0x71772f*/
-  v34 = Power::FlagProcess(aP1, v33); /*0x717738*/
+  v34 = ((Power *)(aP1))->FlagProcess(v33); /*0x717738*/
   LOBYTE(v34) = *((unsigned char *)this + 3364); /*0x71773d*/
-  Power::FlagProcess(aP1, v34); /*0x717746*/
+  ((Power *)(aP1))->FlagProcess(v34); /*0x717746*/
   LOBYTE(v35) = *((unsigned char *)this + 3365); /*0x71774b*/
-  Power::FlagProcess(aP1, v35); /*0x717754*/
+  ((Power *)(aP1))->FlagProcess(v35); /*0x717754*/
   LOBYTE(v36) = *((unsigned char *)this + 3366); /*0x717759*/
-  v37 = Power::FlagProcess(aP1, v36); /*0x717762*/
+  v37 = ((Power *)(aP1))->FlagProcess(v36); /*0x717762*/
   LOBYTE(v37) = *((unsigned char *)this + 3518); /*0x717767*/
-  Power::FlagProcess(aP1, v37); /*0x717770*/
+  ((Power *)(aP1))->FlagProcess(v37); /*0x717770*/
   LOBYTE(v38) = *((unsigned char *)this + 3519); /*0x717775*/
-  Power::FlagProcess(aP1, v38); /*0x71777e*/
+  ((Power *)(aP1))->FlagProcess(v38); /*0x71777e*/
   LOBYTE(v39) = *((unsigned char *)this + 1710); /*0x717783*/
-  v40 = Power::FlagProcess(aP1, v39); /*0x71778c*/
+  v40 = ((Power *)(aP1))->FlagProcess(v39); /*0x71778c*/
   LOBYTE(v40) = *((unsigned char *)this + 1711); /*0x717791*/
-  Power::FlagProcess(aP1, v40); /*0x71779a*/
+  ((Power *)(aP1))->FlagProcess(v40); /*0x71779a*/
   LOBYTE(v41) = *((unsigned char *)this + 1712); /*0x71779f*/
-  return Power::FlagProcess(aP1, v41); /*0x7177ad*/
+  return ((Power *)(aP1))->FlagProcess(v41); /*0x7177ad*/
 
 }
 } // namespace gamemd
@@ -2093,8 +2093,8 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   if ( v5 == 1 ) /*0x746083*/
     return 0; /*0x74608c*/
   if ( v5 >= 12 /*0x7460ad*/
-    || !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], aP1, 1)
-    || !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], aP2, 1) )
+    || !(uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(aP1, 1)
+    || !(uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(aP2, 1) )
   {
     return 1; /*0x7460f7*/
   }
@@ -2163,7 +2163,7 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 } // namespace gamemd
 // 0x41C590
 namespace gamemd {
-size_t BuildingTypeClass::Dequeue(BuildingClass * aP1, void *a2)
+size_t BuildingTypeClass::Dequeue(int *aP1)
 {
 
   int result; // eax
@@ -2210,7 +2210,7 @@ size_t BuildingTypeClass::Dequeue(BuildingClass * aP1, void *a2)
 } // namespace gamemd
 // 0x45E7B0
 namespace gamemd {
-int BuildingTypeClass::FindIndexByName(void *a1)
+int BuildingTypeClass::FindIndexByName()
 {
 
   int v2; // esi

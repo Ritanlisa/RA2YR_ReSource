@@ -266,7 +266,7 @@ int Audio::WaitForCallback(void *a1_1)
 }
 // 0x407F40
 namespace gamemd {
-void Audio::Release(void *a1_1)
+void Audio::Release()
 {
 
   int result; // eax
@@ -402,7 +402,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   int v5; // eax
   String v7; // [esp+4h] [ebp-8h] BYREF
 
-  String::Assign((String *)this, 0); /*0x5d0478*/
+  ((String *)((String *)this))->Assign(0); /*0x5d0478*/
   *((unsigned char *)this + 4) = 0; /*0x5d0483*/
   *((unsigned int *)this + 2) = 0; /*0x5d0487*/
   *((unsigned int *)this + 3) = 255; /*0x5d048e*/
@@ -428,7 +428,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
       *((unsigned int *)this + 3) = 255 * *((unsigned int *)this + 3) / 100; /*0x5d053f*/
     }
     if ( *((int *)this + 3) > 0 && (uint8_t)String::NotEquals((String *)&v7.m_3[1], 0) ) /*0x5d054f*/
-      String::Reassign((String *)this, a1); /*0x5d055f*/
+      ((String *)((String *)this))->Reassign(a1); /*0x5d055f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
     DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
   }
@@ -438,7 +438,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 }
 // 0x5D5820
 namespace gamemd {
-char ** Audio::SetSoundFileName(char * Source, int a3, void *a3_2)
+char ** Audio::SetSoundFileName(char *Source, int a3)
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x5d5825*/
@@ -653,7 +653,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           }
           *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x7208f9*/
           v12 = 0; /*0x720901*/
-          Vector::Clear((int)v11); /*0x72090c*/
+          ((Vector *)((int)v11))->Clear(); /*0x72090c*/
           *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x72091d*/
           IsSoundEnabled = *(unsigned int *)&this->__pad_18[12]; /*0x720922*/
@@ -908,7 +908,7 @@ void sub_752590(int a1, int a2, int a3)
 }
 // 0x7BD130
 namespace gamemd {
-unsigned int Audio::GetSamplePosition(MouseClass * aP1, MouseClass * aP2, void *a3_1)
+unsigned int Audio::GetSamplePosition(int aP1, int aP2)
 {
 
   int v4; // edi
@@ -2640,7 +2640,7 @@ void sub_752340()
   ThemeClass::ClearQueues(); /*0x752340*/
   if ( g_InfantryDrawState ) /*0x75234d*/
   {
-    Audio::Release(g_InfantryDrawState); /*0x75234f*/
+    ((Audio *)(g_InfantryDrawState))->Release(); /*0x75234f*/
     AudioSample::Destructor(g_InfantryDrawState); /*0x75235a*/
     g_InfantryDrawState = 0; /*0x75235f*/
   }
@@ -2704,7 +2704,7 @@ void sub_752B40()
 {
   if ( dword_B1D4D8 ) /*0x752b48*/
   {
-    Audio::Release(dword_B1D4D8); /*0x752b4a*/
+    ((Audio *)(dword_B1D4D8))->Release(); /*0x752b4a*/
     AudioSample::Destructor(dword_B1D4D8); /*0x752b55*/
     dword_B1D4D8 = 0; /*0x752b5a*/
   }

@@ -134,7 +134,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/
       if ( p_vtable1 ) /*0x763cdd*/
       {
-        WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
+        ((WaypointPathClass *)(p_vtable1))->computePath(0, 0); /*0x763ce3*/
         p_vtable1->AbstractClass = (unsigned int)(&vt_DynamicVectorClass); /*0x763ce8*/
         ((unsigned int *)p_vtable1)[0] = 10; /*0x763cee*/
         ((unsigned int *)p_vtable1)[0] = 0; /*0x763cf5*/
@@ -186,7 +186,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-void WaypointPathClass::computePath(int a2, unsigned int * a3, void *a3_2)
+void WaypointPathClass::computePath(int a2, unsigned int *a3)
 {
 
   unsigned int *v4; // eax

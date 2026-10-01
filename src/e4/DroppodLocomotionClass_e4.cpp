@@ -115,9 +115,9 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 3) ) /*0x4b5f1f*/
       {
         v33 = 0.0; /*0x4b5f39*/
-        v23 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a1->IsOutOfMap); /*0x4b5f41*/
+        v23 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&a1->IsOutOfMap); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell((Object *)v23, &v33, 0, 0); /*0x4b5f48*/
-        if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)((unsigned int *)a1)[0], ClosestObjectCell) ) /*0x4b5f57*/
+        if ( !(uint8_t)((Object *)((Object *)((unsigned int *)a1)[0]))->IsAlliedWithObjectHouse(ClosestObjectCell) ) /*0x4b5f57*/
         {
           v25 = RandomCoordScatter((int *)&v33, (int *)&a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
           v26 = v20[51]; /*0x4b5f74*/

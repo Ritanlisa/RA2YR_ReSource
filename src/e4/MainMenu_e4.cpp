@@ -72,7 +72,7 @@ long MainMenu_Screen(void * a1, void * a2)
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
         Frame::Present(0, unsigned int a1, unsigned int a2); /*0x531de6*/
       }
-      if ( (uint16_t)EventQueue::Process(dword_87F770) ) /*0x531df1*/
+      if ( (uint16_t)((EventQueue *)(dword_87F770))->Process() ) /*0x531df1*/
       {
         v6 = (void *)((uint16_t)((void *)(EventQueue::Read(dword_87F770))));
         a1 = (void *)(v6);

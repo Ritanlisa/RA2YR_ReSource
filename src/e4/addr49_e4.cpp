@@ -1953,7 +1953,7 @@ LABEL_44:
     HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
     v29[0] = &vt_CCFileClass; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
-    Vector::Clear((int)v30); /*0x49c575*/
+    ((Vector *)((int)v30))->Clear(); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/
     BufferIOFileClass::Dtor(v29); /*0x49c58c*/
     return 0; /*0x49c594*/
@@ -2010,7 +2010,7 @@ LABEL_44:
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
   v29[0] = &vt_CCFileClass; /*0x49c515*/
   v31 = 0; /*0x49c520*/
-  Vector::Clear((int)v30); /*0x49c527*/
+  ((Vector *)((int)v30))->Clear(); /*0x49c527*/
   v29[0] = &off_7E1668; /*0x49c533*/
   BufferIOFileClass::Dtor(v29); /*0x49c53e*/
   return 1; /*0x49c543*/
@@ -2325,7 +2325,7 @@ LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
     v17[0] = &vt_CCFileClass; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
-    Vector::Clear((int)v18); /*0x49d436*/
+    ((Vector *)((int)v18))->Clear(); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
     BufferIOFileClass::Dtor(v17); /*0x49d447*/
     return 0; /*0x49d457*/
@@ -2405,7 +2405,7 @@ LABEL_5:
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
   v17[0] = &vt_CCFileClass; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
-  Vector::Clear((int)v18); /*0x49d659*/
+  ((Vector *)((int)v18))->Clear(); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
   BufferIOFileClass::Dtor(v17); /*0x49d66a*/
   return 1; /*0x49d44c*/
@@ -6830,7 +6830,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   v21 = v9; /*0x49f49d*/
   Math::ArcTan2(v16); /*0x49f4a1*/
   IDA_LOWORD(v10) = Math::RoundToInt(a3 * v19 + (double)*a2); /*0x49f4af*/
-  Coord::Subtract(&v16, v10, v21, v8); /*0x49f4bf*/
+  ((Coord *)(&v16))->Subtract(v10, v21, v8); /*0x49f4bf*/
   v11 = IDA_HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/
   v13 = IDA_LODWORD(v16); /*0x49f4d0*/

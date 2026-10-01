@@ -173,7 +173,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1, void *a2_1)
 }
 // 0x5D2410
 namespace gamemd {
-int GameClass::FrameLoop(int a2, void *a2_2)
+int GameClass::FrameLoop(int a2)
 {
 
   int v3; // eax
@@ -370,12 +370,12 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v3 = a2; /*0x633138*/
   v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x63314c*/
+    return ((Delegate *)((Straw *)this))->Invoke((int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x633155*/
+    return ((Delegate *)((Straw *)this))->Invoke((int)a2, Size); /*0x633155*/
   m_38 = this->m_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x6332e5*/
+    return ((Delegate *)((Straw *)this))->Invoke((int)a2, Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
   if ( LOBYTE(this->m_C) ) /*0x633166*/
   {
@@ -424,7 +424,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
     this->m_140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
-  return v16 + Delegate::Invoke((Straw *)this, (int)v3, v4); /*0x6331db*/
+  return v16 + ((Delegate *)((Straw *)this))->Invoke((int)v3, v4); /*0x6331db*/
 
 }
 }
@@ -442,7 +442,7 @@ int GameClass::initPlayerData(const char ** a2, void *a2_2)
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !(uint8_t)String::Compare((String *)a2, (const char **)(*(unsigned int *)&this->__pad_3D[363] + 4 * v5)) ) /*0x69ae50*/
+  while ( !(uint8_t)((String *)((String *)a2))->Compare((const char **)(*(unsigned int *)&this->__pad_3D[363] + 4 * v5)) ) /*0x69ae50*/
   {
     if ( ++v5 >= *(unsigned int *)&this->__pad_3D[375] ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
@@ -662,7 +662,7 @@ namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
 
-  Vector::Clear((int)((unsigned int *)this + 1)); /*0x4aeca6*/
+  ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aeca6*/
   Pipe::Dtor((Pipe *)this); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     __3_YAXPAX_Z(this); /*0x4aecba*/
