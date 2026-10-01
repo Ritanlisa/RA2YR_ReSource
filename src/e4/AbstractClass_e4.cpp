@@ -160,6 +160,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 namespace gamemd {
 VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
+  p_vtable0 = &v6->vtable0; /*0x4fba45*/
   int v5; // ecx
   AbstractClass *v6; // ebp
   int v7; // esi

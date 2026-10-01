@@ -270,6 +270,8 @@ int WinMain::Constructor_VectorClass_Wstring_()
 unsigned int * WinMain::ShutdownCleanup()
 {
 dword_B1CF74 = 0; /*0x734df7*/
+dword_B1CF80 = 0; /*0x734e1d*/
+dword_B1CF74 = 0; /*0x734df7*/
 
   void **i; // eax
   void **v2; // ecx

@@ -14828,3 +14828,28 @@ extern unsigned char vt_INISection[4];
 extern unsigned char vt_ATLCComObject[4];
 extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];
 extern unsigned char vt_DynamicVectorClassDiscreteDistributionClassDistributionObject[4];
+
+// G41.47 data supply (g126 fresh names)
+extern unsigned int asc_815E74;  // data: 0x815E74
+extern unsigned int asc_818D7C;  // data: 0x818D7C
+extern unsigned int asc_81C8FC;  // data: 0x81C8FC
+extern unsigned int asc_82083C;  // data: 0x82083C
+extern unsigned int asc_8304FC;  // data: 0x8304FC
+extern unsigned int asc_831774;  // data: 0x831774
+extern unsigned int asc_8318B8;  // data: 0x8318B8
+extern unsigned int asc_84968C;  // data: 0x84968C
+extern unsigned int asc_84A480;  // data: 0x84A480
+extern unsigned int asc_84BA18;  // data: 0x84BA18
+extern unsigned int asc_87C918;  // data: 0x87C918
+extern unsigned int dbl_ABFA80;  // data: 0xABFA80
+extern unsigned int dbl_ABFAA0;  // data: 0xABFAA0
+extern unsigned int dbl_ABFAA8;  // data: 0xABFAA8
+extern unsigned int dbl_ABFAB0;  // data: 0xABFAB0
+extern unsigned int dbl_ABFAC8;  // data: 0xABFAC8
+extern unsigned int dbl_ABFB08;  // data: 0xABFB08
+extern unsigned int dbl_ABFB28;  // data: 0xABFB28
+extern unsigned int dbl_ABFB30;  // data: 0xABFB30
+extern unsigned int dbl_ABFB58;  // data: 0xABFB58
+extern unsigned int dbl_ABFB60;  // data: 0xABFB60
+extern unsigned int dbl_ABFB78;  // data: 0xABFB78
+extern unsigned char vt_VectorClassDynamicVectorClass[4];

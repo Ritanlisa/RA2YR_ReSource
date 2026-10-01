@@ -362,6 +362,8 @@ int Palette::LoadFile(char * Source)
 {
 dword_B0FBA0 = 0; /*0x72b833*/
 dword_B0FB9C = 0; /*0x72b84f*/
+dword_B0FBA0 = 0; /*0x72b833*/
+dword_B0FB9C = 0; /*0x72b84f*/
 
   if ( dword_B0FBA0 ) /*0x72b82b*/
   {
