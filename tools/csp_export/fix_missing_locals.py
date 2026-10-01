@@ -34,30 +34,38 @@ ERR_RE = re.compile(
 
 
 def find_def(lines, err_line):
-    """(def_head_idx, brace_idx, addr) for the def containing err_line."""
-    lo = max(0, err_line - 251)
+    """(def_head_idx, brace_idx, addr) for the def containing err_line.
+    Anchors on the corpus structure: a standalone `// 0xADDR` marker at
+    column 0, optionally `namespace X {`, then the def head with `{`
+    within a few lines."""
+    lo = max(0, err_line - 400)
     i = min(err_line, len(lines)) - 1
     while i >= lo:
-        s = lines[i].strip()
-        if s and not s.startswith('//') and '(' in s \
-                and not s.rstrip().endswith(';'):
-            for d in (0, 1, 2):
-                j = i - d
-                if j < 0:
+        m = re.match(r'^//\s*(0x[0-9A-Fa-f]{5,8})\s*$', lines[i])
+        if m:
+            addr = int(m.group(1), 16)
+            # scan forward for the def head
+            j = i + 1
+            skipped = 0
+            while j < min(i + 6, len(lines)) and skipped < 4:
+                s = lines[j].strip()
+                if not s or re.match(r'^namespace\s+\w+\s*\{', s):
+                    j += 1
                     continue
-                m = re.search(r'//\s*(?:IDA\s+)?0x([0-9A-Fa-f]{5,8})',
-                              lines[j])
-                if m:
-                    # brace: same line or next lines
-                    if '{' in lines[i]:
-                        return i, i, int(m.group(1), 16)
-                    b = i + 1
-                    while b < min(i + 4, len(lines)):
+                if '(' in s and not s.startswith('//') and \
+                        not s.endswith(';') and '{' not in s:
+                    b = j + 1
+                    while b < min(j + 4, len(lines)):
                         if '{' in lines[b]:
-                            return i, b, int(m.group(1), 16)
+                            return j, b, addr
                         if lines[b].strip() and '{' not in lines[b]:
                             break
                         b += 1
+                    return None, None, None
+                if s.startswith('//'):
+                    skipped += 1
+                j += 1
+            return None, None, None
         i -= 1
     return None, None, None
 
@@ -66,8 +74,13 @@ def cache_decl(addr, name):
     """The cache's declaration line for local `name`, or None. Scans the
     cache's preamble (first 60 lines); tolerates initializers and
     array/[esp+..] forms."""
-    cp = CACHE / ('func_0x%X.json' % addr)
-    if not cp.exists():
+    cp = None
+    for cand in ('func_0x%08X.json' % addr, 'func_0x%X.json' % addr):
+        c = CACHE / cand
+        if c.exists():
+            cp = c
+            break
+    if cp is None:
         return None
     try:
         txt = json.load(open(cp, encoding='utf-8')).get('decompiled', '')
@@ -75,7 +88,7 @@ def cache_decl(addr, name):
         return None
     pat = re.compile(r'^\s*[\w:<>\*\s]+\b%s\s*(\[[^\]]*\])?\s*(=\s*[^;]*)?;'
                      % re.escape(name))
-    for ln in txt.split('\n')[:60]:
+    for ln in txt.split('\n'):
         if pat.match(ln):
             return ln.strip()
     return None

@@ -38,6 +38,8 @@ inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }
 inline unsigned long operator-(const IdaRegVar& r, long d) { return r.v - d; }
 inline unsigned long operator-(long d, const IdaRegVar& r) { return d - r.v; }
 static IdaRegVar _EAX, _EBX, _ECX, _EDX, _ESI, _EDI, _EBP, _ESP;
+static IdaRegVar _AX, _BX, _CX, _DX, _SI, _DI, _SP, _BP;
+static IdaRegVar _AL, _BL, _CL, _DL, _AH, _BH, _CH, _DH;
 
 // IDA primitive spellings used in casts throughout pseudocode
 typedef unsigned int _DWORD;

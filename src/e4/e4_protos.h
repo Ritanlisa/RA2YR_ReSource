@@ -680,3 +680,68 @@ extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
 extern int ZCoordToScreenY(int aP0);
 
 } // namespace gamemd
+
+// G41.46 C2065 supply: class forward declarations for names the
+// cache-typed bodies reference but the TU closure never declared.
+// Idempotent with full definitions included later in any TU.
+class VectorClass;
+class HashTable;
+class DynamicVectorClass;
+struct Terrain;
+struct Base64Straw;
+struct Object;
+struct IsoCoord;
+struct TEventClass;
+struct Type;
+struct CellStruct;
+struct ScriptAction;
+struct AudioQueue;
+struct MapClass_Instance;
+class Point2D;
+struct TeleportLocomotionClass;
+struct ILocomotion;
+struct LocomotionClass;
+struct ObjectTypeClass;
+struct CoordStruct;
+struct Power;
+struct Queue;
+struct GadgetClass;
+struct BINK;
+struct LinkClass;
+struct TechnoTypeClass;
+struct GameOption;
+struct SkirmishSetup;
+struct LayerClass;
+struct SwizzleManagerClass;
+struct Array;
+struct CommBufferClass;
+struct GScreenClass;
+struct Vector3;
+struct BuildingLightQueue;
+struct TActionClass;
+struct CampaignCoop;
+struct MovieClass;
+struct IPXManagerClass;
+struct DropPodLocomotionClass;
+struct DynamicVector;
+struct Vector;
+class DialogIndirect;
+struct AbstractTypeClass;
+struct UnitTypeClass;
+class UnitCrateType;
+struct WarheadTypeClass;
+class MutateExplosionWarhead;
+struct InfantryTypeClass;
+class Technician;
+struct SHPStruct;
+struct MixFileClass;
+struct VectorClass_flat;
+struct MPCooperative;
+class SchedulerBase;
+class DirStruct;
+struct RulesClass;
+class String1;
+struct Voice;
+struct BuildingLight;
+struct Rules;
+struct CrateClass;
