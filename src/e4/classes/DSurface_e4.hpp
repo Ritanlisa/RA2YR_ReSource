@@ -266,7 +266,7 @@ struct DSurface {
     unsigned int DSurface_field_0x0;
     unsigned int DSurface_field_0x10;
     unsigned int DSurface_field_0x18;
-    unsigned int DSurface_field_0x1C;
+    unsigned int *DSurface_field_0x1C;
     unsigned int DSurface_field_0x20;
     unsigned int DSurface_field_0xC;
     unsigned int field_0;

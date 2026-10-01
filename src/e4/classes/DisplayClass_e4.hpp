@@ -453,10 +453,10 @@ struct DisplayClass {
     unsigned int DisplayClass_field_0x130;
     unsigned int DisplayClass_field_0x134;
     unsigned int DisplayClass_field_0x140;
-    unsigned int __pad_1198;
+    unsigned int *__pad_1198;
     unsigned int __pad_11AC;
-    unsigned int __pad_11B4;
-    unsigned int __pad_41E;
+    unsigned int *__pad_11B4;
+    unsigned int *__pad_41E;
     unsigned int MapClass;
 // --- flat members (END) ---
     DisplayClass * Read(char a2, void *a1 = 0);

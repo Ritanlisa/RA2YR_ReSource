@@ -28,7 +28,7 @@ struct ConnectionPointClass {
     unsigned int ConnectionPointClass_field_0x18;
     unsigned int ConnectionPointClass_field_0x1C;
     unsigned int ConnectionPointClass_field_0x20;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_24;
     unsigned int u32_28;
     unsigned int u32_29;

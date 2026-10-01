@@ -18,7 +18,7 @@ struct GadgetClass {
     unsigned int ID;  // 0x18
     unsigned int Hovered;
     unsigned int X0;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_28;
     unsigned int LinkClass;
     unsigned int ClearState;

@@ -25,7 +25,7 @@ struct AlphaShapeClass {
     unsigned int AlphaShapeClass_field_0x08;
     unsigned int AlphaShapeClass_field_0x0C;
     unsigned int AlphaShapeClass_field_0x24;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_28;
     unsigned int u32_2C;
     unsigned int u32_34;

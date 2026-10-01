@@ -655,8 +655,8 @@ struct SuperClass {
     unsigned int SuperClass_field_0x70;
     unsigned int SuperClass_field_0x7C;
     unsigned int SuperClass_field_0x8;
-    unsigned int __pad_3C;
-    unsigned int __pad_C;
+    unsigned int *__pad_3C;
+    unsigned int *__pad_C;
     unsigned int unknown_6D;
     unsigned int unknown_6E;
     unsigned int Accel;

@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct ListClass {
     unsigned int ListClass_field_0x10;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     int ListClass:: Destruct();
 };
 

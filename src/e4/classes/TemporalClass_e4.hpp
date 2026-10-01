@@ -28,7 +28,7 @@ struct TemporalClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int TemporalClass_field_34;  // 0x34
-    unsigned int __pad_28;
+    unsigned int *__pad_28;
     unsigned int u32_308;
     unsigned int u32_38;
     unsigned int u32_3C;

@@ -20,8 +20,8 @@ struct TacticalMap {
     unsigned int TacticalMap_field_20;  // 0x20
     unsigned int TacticalMap_field_040;
     unsigned int Tactical_field_0xA8;
-    unsigned int __pad_11F;
-    unsigned int __pad_AC;
+    unsigned int *__pad_11F;
+    unsigned int *__pad_AC;
     unsigned int q104;
     unsigned int q108;
     unsigned short u16_10A;
@@ -35,15 +35,15 @@ struct TacticalMap {
     unsigned int u32_686;
     unsigned int u32_6C0;
     unsigned int vfptr;
-    unsigned int Tactical_field_0x2;
-    unsigned int Tactical_field_0x8;
-    unsigned int Tactical_field_0xC;
+    unsigned int *Tactical_field_0x2;
+    unsigned int *Tactical_field_0x8;
+    unsigned int *Tactical_field_0xC;
     unsigned int Tactical_field_0xDA4;
     unsigned int Tactical_field_0xDB4;
-    unsigned int __pad_0;
-    unsigned int __pad_10;
-    unsigned int __pad_34;
-    unsigned int __pad_DA8;
+    unsigned int *__pad_0;
+    unsigned int *__pad_10;
+    unsigned int *__pad_34;
+    unsigned int *__pad_DA8;
     unsigned int u32_DE4;
     unsigned int u32_DE8;
     unsigned int u32_DEC;

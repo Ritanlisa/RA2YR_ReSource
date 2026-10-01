@@ -68,7 +68,7 @@ struct AITriggerTypeClass {
     unsigned int AITriggerTypeClass_field_0x04;
     unsigned int AITriggerTypeClass_field_0x08;
     unsigned int AITriggerTypeClass_field_0x0C;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int AbstractTypeClass;
     unsigned char AITriggerTypeClass_field_0x18;  // 0x18
     unsigned char AITriggerTypeClass_field_0x24;  // 0x24

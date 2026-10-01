@@ -115,9 +115,9 @@ struct Scenario {
     void* q1910;  // 0x1910
     unsigned char Scenario_field_0x34;  // 0x34
     unsigned char Scenario_field_0x38;  // 0x38
-    unsigned char __pad_3C;  // 0x3C
+    unsigned char *__pad_3C;  // 0x3C
     unsigned char __pad_84;  // 0x84
-    unsigned char __pad_9C;  // 0x9C
+    unsigned char *__pad_9C;  // 0x9C
 // --- flat members (END) ---
     int ReadTeams();  // 0x44F820
     int CopyLocalScenarioData();  // 0x4C6180

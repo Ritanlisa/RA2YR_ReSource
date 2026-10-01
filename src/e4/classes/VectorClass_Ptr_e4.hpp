@@ -22,8 +22,8 @@ struct VectorClass_Ptr {
     unsigned char q774;  // 0x774
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
-    unsigned int __pad_5;
-    unsigned int m_1;
+    unsigned int *__pad_5;
+    unsigned int *m_1;
     unsigned int m_C;
     unsigned int __tail_10;
 // --- flat members (END) ---

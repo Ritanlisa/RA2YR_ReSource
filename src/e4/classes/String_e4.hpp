@@ -33,8 +33,8 @@ struct String {
     unsigned int q1908;  // 0x1908
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
-    unsigned int m_3;
+    unsigned int *__pad_0;
+    unsigned int *m_3;
     void* ptr_88;
     void* ptr_4;
     void* ptr_8;

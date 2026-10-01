@@ -43,11 +43,11 @@ struct DynamicVectorClass_uint {
     unsigned char q064;  // 0x64
     char q068[4];  // 0x68
     ObjectClass* q070;  // 0x70
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x42D540
     int  Clear(int a2);  // 0x42D590

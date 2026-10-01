@@ -23,7 +23,7 @@ struct Factory {
     void* q5520;  // 0x5520
     unsigned int field_10;
     unsigned int field_4;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int field_8;
 // --- flat members (END) ---
     int  GetLinkedIndex(void * aP1);  // 0x663D60

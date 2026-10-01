@@ -10,8 +10,8 @@ struct BlitTransXlatAlpha_ushort {
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     AbstractClass * ptr_8;  // 0x8
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_4;
     unsigned int m_8;
 // --- flat members (END) ---

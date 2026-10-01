@@ -1525,8 +1525,8 @@ struct BuildingTypeClass {
     double CostRatePerFrame;  // 0x1790
     unsigned int q1791_a;  // 0x1791
     unsigned int q1794;  // 0x1794
-    unsigned int __pad_1714;
-    unsigned int __pad_F70;
+    unsigned int *__pad_1714;
+    unsigned int *__pad_F70;
     unsigned int gap0;
     unsigned int q6242;
     unsigned int q9684;

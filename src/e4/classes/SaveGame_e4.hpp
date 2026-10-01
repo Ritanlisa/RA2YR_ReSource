@@ -30,7 +30,7 @@ struct SaveGame {
     void* q2304;  // 0x2304
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     int  LoadArrayData(int * a2);  // 0x4391C0
     int  WriteDataArray(int * a2);  // 0x54E750

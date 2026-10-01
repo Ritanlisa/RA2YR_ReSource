@@ -12,7 +12,7 @@ struct DialogControl {
     unsigned char q008;  // 0x8
     unsigned int u32_C;  // 0xC
     bool q00F;  // 0xF
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_1C;
     unsigned int u32_1E;
     unsigned int u32_40;

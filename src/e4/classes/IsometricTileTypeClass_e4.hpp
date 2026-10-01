@@ -45,8 +45,8 @@ struct IsometricTileTypeClass {
     unsigned int IsometricTileTypeClass_field_0x04;
     unsigned int IsometricTileTypeClass_field_0x08;
     unsigned int IsometricTileTypeClass_field_0x0C;
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

@@ -115,15 +115,15 @@ struct Cell {
     void* q298;  // 0x298
     void* q29C;  // 0x29C
     unsigned int Cell_field_0x0;
-    unsigned int Cell_field_0x11B;
+    unsigned int *Cell_field_0x11B;
     unsigned int Cell_field_0x140;
     unsigned int Cell_field_0x38;
     unsigned int Cell_field_0xE4;
-    unsigned int __pad_1C;
-    unsigned int __pad_3C;
-    unsigned int __pad_70;
-    unsigned int __pad_E8;
-    unsigned int __pad_FC;
+    unsigned int *__pad_1C;
+    unsigned int *__pad_3C;
+    unsigned int *__pad_70;
+    unsigned int *__pad_E8;
+    unsigned int *__pad_FC;
     unsigned int u32_5A4;
     unsigned int u32_6C4;
     unsigned int u32_901;

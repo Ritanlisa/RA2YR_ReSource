@@ -49,7 +49,7 @@ struct Shroud {
     unsigned int RadarClass_field_0x14A4;
     unsigned int __pad_14A0;
     unsigned int __pad_14A8;
-    unsigned int __pad_C0;
+    unsigned int *__pad_C0;
 // --- flat members (END) ---
     RadarClass * * ProcessCellVisibility(MouseClass * aP1);
 };

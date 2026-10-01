@@ -13,7 +13,7 @@ struct ParticleSystemClass_32_ {
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_C;
     unsigned int m_10;
     unsigned int m_8;

@@ -72,11 +72,11 @@ struct Audio {
     unsigned int Audio_field_0x14;
     unsigned int Audio_field_0x34;
     unsigned int Audio_field_0x38;
-    unsigned int Audio_field_0xC;
-    unsigned int __pad_0;
-    unsigned int __pad_10;
-    unsigned int __pad_18;
-    unsigned int __pad_3C;
+    unsigned int *Audio_field_0xC;
+    unsigned int *__pad_0;
+    unsigned int *__pad_10;
+    unsigned int *__pad_18;
+    unsigned int *__pad_3C;
     unsigned int u32_C4;
     unsigned int Event;
 // --- flat members (END) ---

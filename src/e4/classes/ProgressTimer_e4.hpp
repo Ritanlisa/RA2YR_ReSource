@@ -15,7 +15,7 @@ struct ProgressTimer {
     void* q014;  // 0x14
     unsigned int vt_slot_24;
     unsigned int vt_slot_28;
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned char ProgressTimer_field_0x8;  // 0x8
     unsigned char ProgressTimer_field_0x10;  // 0x10
     unsigned char ProgressTimer_field_0x14;  // 0x14

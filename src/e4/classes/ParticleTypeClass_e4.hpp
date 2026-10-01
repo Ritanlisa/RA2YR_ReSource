@@ -290,23 +290,23 @@ struct ParticleTypeClass {
     unsigned int BehavesLike;
     unsigned int ParticleTypeClass_field_0xC;
     unsigned int ParticleTypeClass_field_28C;
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
     unsigned int ParticleTypeClass_LoadFromINI;
     unsigned char ParticleTypeClass_field_0x2B0;  // 0x2B0
-    unsigned char ParticleTypeClass_field_0x2DC;  // 0x2DC
-    unsigned char ParticleTypeClass_field_0x2E0;  // 0x2E0
-    unsigned char ParticleTypeClass_field_0x2E8;  // 0x2E8
-    unsigned char ParticleTypeClass_field_0x2EC;  // 0x2EC
-    unsigned char ParticleTypeClass_field_0x2F0;  // 0x2F0
+    unsigned char *ParticleTypeClass_field_0x2DC;  // 0x2DC
+    unsigned char *ParticleTypeClass_field_0x2E0;  // 0x2E0
+    unsigned char *ParticleTypeClass_field_0x2E8;  // 0x2E8
+    unsigned char *ParticleTypeClass_field_0x2EC;  // 0x2EC
+    unsigned char *ParticleTypeClass_field_0x2F0;  // 0x2F0
     unsigned char ParticleTypeClass_field_0x2F4;  // 0x2F4
     unsigned char ParticleTypeClass_field_0x2F8;  // 0x2F8
     unsigned char __pad_2FC;  // 0x2FC
     unsigned char ParticleTypeClass_field_0x300;  // 0x300
     unsigned char ParticleTypeClass_field_0x304;  // 0x304
-    unsigned char __pad_308;  // 0x308
+    unsigned char *__pad_308;  // 0x308
     unsigned char ParticleTypeClass_field_0x310;  // 0x310
     unsigned char ParticleTypeClass_field_0x314;  // 0x314
 // --- flat members (END) ---

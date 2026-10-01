@@ -83,16 +83,16 @@ struct Object {
     unsigned int Object_field_0x30;
     unsigned int Object_field_0xE4;
     unsigned int Type;
-    unsigned int __pad_EC;
+    unsigned int *__pad_EC;
     unsigned int q03C6;
     unsigned int q0442;
     unsigned int q0A0;
     unsigned int q0A4;
     unsigned int u32_5788;
-    unsigned char __pad_0;  // 0x0
-    unsigned char Object_field_0x2;  // 0x2
+    unsigned char *__pad_0;  // 0x0
+    unsigned char *Object_field_0x2;  // 0x2
     unsigned char Object_field_0x8;  // 0x8
-    unsigned char __pad_C;  // 0xC
+    unsigned char *__pad_C;  // 0xC
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
 // --- flat members (END) ---

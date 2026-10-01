@@ -52,7 +52,7 @@ struct SpawnManagerClass {
     unsigned int SpawnManagerClass_field_68;  // 0x68
     unsigned int SpawnManagerClass_field_6C;  // 0x6C
     unsigned int SpawnManagerClass_field_70;  // 0x70
-    unsigned int __pad_48;
+    unsigned int *__pad_48;
     unsigned int uniqueId0;
     unsigned int vtable24;
     unsigned int vtable46;

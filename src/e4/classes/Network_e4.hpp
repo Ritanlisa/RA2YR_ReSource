@@ -124,7 +124,7 @@ struct Network {
     unsigned int Timer;
     unsigned int UpdateLatencyDisplay;
     unsigned char Network_field_0x10;  // 0x10
-    unsigned char __pad_14;  // 0x14
+    unsigned char *__pad_14;  // 0x14
 // --- flat members (END) ---
     char  SendBeaconDelete(int a2, int a3);  // 0x4311C0
     char  SendBeacon(void * aP1, int a3, int a4, char a5);  // 0x431450

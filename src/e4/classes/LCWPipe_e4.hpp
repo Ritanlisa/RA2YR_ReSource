@@ -9,7 +9,7 @@ struct LCWPipe {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_14;
     unsigned int u32_18;
 // --- flat members (END) ---

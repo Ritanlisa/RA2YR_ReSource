@@ -14,7 +14,7 @@ struct TypeList_Infantry {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     void ddtor();  // 0x5128A0
     unsigned int  GetIndex(int a2);  // 0x5128D0

@@ -63,10 +63,10 @@ struct WWMouseClass {
     unsigned int WWMouseClass_field_0x44;
     unsigned int WWMouseClass_field_0x8;
     unsigned int WWMouseClass_field_0xC;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int __pad_3C;
-    unsigned int __pad_48;
+    unsigned int *__pad_0;
+    unsigned int *__pad_14;
+    unsigned int *__pad_3C;
+    unsigned int *__pad_48;
     unsigned int q0080;
     unsigned int q0081;
     unsigned int Debug;

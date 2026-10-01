@@ -14,7 +14,7 @@ struct LinkedList_flat {
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_28;  // 0x28
     unsigned int u32_34;  // 0x34
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __tail_0;
     unsigned int m_Next;
     unsigned int m_Prev;

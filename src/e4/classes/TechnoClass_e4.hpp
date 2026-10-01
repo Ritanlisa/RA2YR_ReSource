@@ -508,7 +508,7 @@ struct TechnoClass {
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
     unsigned int RadioClass;
-    unsigned int __pad_18C;
+    unsigned int *__pad_18C;
     unsigned int __pad_1C4;
     unsigned int barrelRecoil;
     unsigned int checkCloakState;
@@ -522,7 +522,7 @@ struct TechnoClass {
     unsigned int vtable31;
     unsigned int vtable32;
     unsigned int queueUpToEnter;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int EvaluateTarget;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);

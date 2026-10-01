@@ -25,9 +25,9 @@ struct Gadget {
     unsigned int q1908;  // 0x1908
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_5;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
+    unsigned int *m_5;
 // --- flat members (END) ---
     unsigned int * InitProperties();  // 0x600630
 };

@@ -914,7 +914,7 @@ struct TechnoTypeClass {
     unsigned int u32_DF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
     unsigned int IsClean;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int abstractFlags0;
     unsigned int abstractFlags1;
     unsigned int abstractFlags2;

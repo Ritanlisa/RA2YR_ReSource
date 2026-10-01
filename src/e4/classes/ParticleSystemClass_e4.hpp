@@ -126,8 +126,8 @@ struct ParticleSystemClass {
     bool ParticleSystemClass_field_bool_F9;  // 0xF9
     unsigned char q0FB;  // 0xFB
     unsigned int OwnerHouse;  // 0xFC
-    unsigned int __pad_E5;
-    unsigned int m_1;
+    unsigned int *__pad_E5;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

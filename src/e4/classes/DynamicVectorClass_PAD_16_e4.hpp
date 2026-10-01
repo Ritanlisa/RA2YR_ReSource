@@ -13,7 +13,7 @@ struct DynamicVectorClass_PAD_16 {
     unsigned char IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     int  Get(int a2);  // 0x49EA00
     char  Add(int a2);  // 0x49EB50

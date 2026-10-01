@@ -694,7 +694,7 @@ struct BuildingClass {
     unsigned int GetExitCoords;
     unsigned int SuperWeaponToken;
     unsigned int TogglePrimaryFactory;
-    unsigned int __pad_6B8;
+    unsigned int *__pad_6B8;
     unsigned int u32_898;
     unsigned int u32_8B4;
     unsigned int ctor;

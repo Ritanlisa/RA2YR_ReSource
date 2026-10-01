@@ -1176,12 +1176,12 @@ struct AnimClass {
     unsigned int AnimClass_field_0xBC;
     unsigned int AnimClass_field_0xC0;
     unsigned int AnimClass_field_0xC8;
-    unsigned int __pad_118;
-    unsigned int __pad_194;
+    unsigned int *__pad_118;
+    unsigned int *__pad_194;
     unsigned int AnimClass_field_0xD4;
-    unsigned int __pad_178;
-    unsigned int AnimClass_field_0xFC;
-    unsigned int __pad_C;
+    unsigned int *__pad_178;
+    unsigned int *AnimClass_field_0xFC;
+    unsigned int *__pad_C;
     unsigned int field_0;
     unsigned int field_16054;
     unsigned int field_4;

@@ -474,11 +474,11 @@ struct MapClass {
     unsigned int MapClass_field_0x2C;
     unsigned int MapClass_field_0xF4;
     unsigned int __pad_1170;
-    unsigned int __pad_11A4;
-    unsigned int __pad_18;
-    unsigned int __pad_298;
-    unsigned int __pad_30;
-    unsigned int __pad_5C;
+    unsigned int *__pad_11A4;
+    unsigned int *__pad_18;
+    unsigned int *__pad_298;
+    unsigned int *__pad_30;
+    unsigned int *__pad_5C;
     unsigned int __pad_F8;
     unsigned int q01C6;
     unsigned int q0086;

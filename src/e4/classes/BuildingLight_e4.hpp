@@ -22,7 +22,7 @@ struct BuildingLight {
     unsigned int q304;  // 0x304
     void* q1634;  // 0x1634
     void* q5684;  // 0x5684
-    unsigned int __pad_10;
+    unsigned int *__pad_10;
     unsigned int field_C;
 // --- flat members (END) ---
     char CalculateShading();  // 0x5FF850

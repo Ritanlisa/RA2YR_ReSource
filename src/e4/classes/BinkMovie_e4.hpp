@@ -20,9 +20,9 @@ struct BinkMovie {
     unsigned int BinkMovie_field_0x10;
     unsigned int BinkMovie_field_0x14;
     unsigned int BinkMovie_field_0x20;
-    unsigned int BinkMovie_field_0x4;
+    unsigned int *BinkMovie_field_0x4;
     unsigned int BinkMovie_field_0xC;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int memoryBuffer;
     unsigned int q00C2;
     unsigned int tempPath;
@@ -32,7 +32,7 @@ struct BinkMovie {
     unsigned int u32_2D;
     unsigned int u32_40;
     unsigned int u32_42;
-    unsigned int __pad_18;
+    unsigned int *__pad_18;
     unsigned int q02C;
     unsigned int q02D;
     unsigned int q040;

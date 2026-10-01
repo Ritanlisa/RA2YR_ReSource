@@ -73,8 +73,8 @@ struct Dialog {
     unsigned char q6B8;  // 0x6B8
     void* q6C4;  // 0x6C4
     unsigned int Dialog_field_0xC;
-    unsigned int __pad_0;
-    unsigned int __pad_10;
+    unsigned int *__pad_0;
+    unsigned int *__pad_10;
     unsigned int Debug;
 // --- flat members (END) ---
     void MapDialogResource();  // 0x49F740

@@ -31,11 +31,11 @@ struct LoadOptions {
     unsigned int GetFlag252;
     unsigned int GetFlag98;
     unsigned int GetFlag99;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __pad_22;
     unsigned int __pad_4;
     unsigned int m_0;
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

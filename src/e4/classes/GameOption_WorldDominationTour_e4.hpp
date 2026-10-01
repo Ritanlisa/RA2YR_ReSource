@@ -15,7 +15,7 @@ struct GameOption_WorldDominationTour {
     unsigned int u32_14;
     unsigned int u32_C;
     unsigned int GameOption_WorldDominationTour_field_0x04;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     void * ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5);
 };

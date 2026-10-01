@@ -22,8 +22,8 @@ struct Delegate {
     unsigned int Blowfish;
     unsigned int Previous;
     unsigned int Straw_field_0x04;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
+    unsigned int *__pad_0;
+    unsigned int *__pad_14;
     unsigned int field_10;
     unsigned int field_18;
     unsigned int field_1C;

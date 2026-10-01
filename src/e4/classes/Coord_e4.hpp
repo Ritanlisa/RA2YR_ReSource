@@ -47,10 +47,10 @@ struct Coord {
     unsigned int q134;  // 0x134
     unsigned char q138;  // 0x138
     void* q13C;  // 0x13C
-    unsigned int Coord_field_0x2;
+    unsigned int *Coord_field_0x2;
     unsigned int Coord_field_0x8;
-    unsigned int __pad_0;
-    unsigned int __pad_C;
+    unsigned int *__pad_0;
+    unsigned int *__pad_C;
     unsigned int q01C;
     unsigned int u32_1488;
     unsigned int u32_1490;

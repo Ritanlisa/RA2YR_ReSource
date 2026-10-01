@@ -106,9 +106,9 @@ struct ConvertClass {
     unsigned int ConvertClass_field_0x170;
     unsigned int ConvertClass_field_0x178;
     unsigned int ConvertClass_field_0x2;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __pad_174;
-    unsigned int __pad_6;
+    unsigned int *__pad_6;
     unsigned int u32_17C;
     unsigned int field_2;
 // --- flat members (END) ---

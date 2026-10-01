@@ -43,7 +43,7 @@ struct VectorClass_K_8 {
     unsigned int CStreamClass_field_0x18;
     unsigned int CStreamClass_field_0x1C;
     unsigned int CStreamClass_field_0x20;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int CStreamClass_field_0x24;
 // --- flat members (END) ---
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x4A2820

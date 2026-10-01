@@ -186,7 +186,7 @@ struct MPCooperative {
     unsigned char q1060;  // 0x1060
     void* q11E4;  // 0x11E4
     unsigned int MPCooperative_field_0x0;
-    unsigned int __pad_18;
+    unsigned int *__pad_18;
     unsigned int q0088;
     unsigned int q014;
     unsigned int q038;

@@ -11,7 +11,7 @@ struct AddTeamCommand {
     void *q4;  // 0x4
     char AddTeamCommand_field_04[4];  // 0x8
     unsigned int CommandClass;
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int AddTeamCommand_field_00;
 // --- flat members (END) ---
     void Construct(int a2);

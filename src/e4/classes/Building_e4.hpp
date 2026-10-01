@@ -30,8 +30,8 @@ struct Building {
     unsigned int q274;  // 0x274
     void* q2A4;  // 0x2A4
     unsigned int tail_2A8;  // 0x2A8
-    unsigned int __pad_A4;
-    unsigned int __pad_C;
+    unsigned int *__pad_A4;
+    unsigned int *__pad_C;
     unsigned int uniqueId0;
     unsigned char Building_field_0xA0;  // 0xA0
 // --- flat members (END) ---

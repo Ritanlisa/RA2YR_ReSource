@@ -47,7 +47,7 @@ struct SlaveManagerClass {
     unsigned int SlaveManagerClass_field_58;  // 0x58
     unsigned int SlaveManagerClass_field_5C;  // 0x5C
     unsigned int SlaveManagerClass_field_60;  // 0x60
-    unsigned int __pad_48;
+    unsigned int *__pad_48;
     unsigned int abstractFlags6;
     unsigned int nextArrayIndex0;
     unsigned int uniqueId0;

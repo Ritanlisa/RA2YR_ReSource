@@ -22,7 +22,7 @@ struct LoadGame {
     unsigned char q02C;  // 0x2C
     unsigned int LoadGame_field_0x04;
     unsigned int LoadGame_field_0x10;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned char LoadGame_field_0x0C;  // 0xC
     unsigned char LoadGame_field_0x14;  // 0x14
     unsigned char LoadGame_field_0x18;  // 0x18

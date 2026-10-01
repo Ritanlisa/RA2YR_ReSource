@@ -76,8 +76,8 @@ struct Timer {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    unsigned int __pad_0;
-    unsigned int __pad_6;
+    unsigned int *__pad_0;
+    unsigned int *__pad_6;
     unsigned int m_18;
     // dup-member: unsigned int DisableHighPrecision;
     unsigned int ReadTSC;

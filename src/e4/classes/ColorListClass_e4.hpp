@@ -23,7 +23,7 @@ struct ColorListClass {
     unsigned int q01E;  // 0x1E
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_16C;
     unsigned int u32_170;
     unsigned int u32_174;

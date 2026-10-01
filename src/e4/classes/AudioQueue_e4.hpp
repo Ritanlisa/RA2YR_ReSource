@@ -11,8 +11,8 @@ struct AudioQueue {
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
-    unsigned int AudioQueue_field_0x14;
-    unsigned int __pad_0;
+    unsigned int *AudioQueue_field_0x14;
+    unsigned int *__pad_0;
     void* ptr_24;
     unsigned int q3D0;
     unsigned int q3F054;

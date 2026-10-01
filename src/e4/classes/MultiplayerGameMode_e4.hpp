@@ -21,7 +21,7 @@ struct MultiplayerGameMode {
     unsigned int MultiplayerGameMode_field_0x10;
     unsigned int MultiplayerGameMode_field_0x14;
     unsigned int MultiplayerGameMode_field_0x18;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int q00C2;
     unsigned int q0104;
     unsigned int q0108;

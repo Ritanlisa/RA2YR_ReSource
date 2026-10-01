@@ -16,7 +16,7 @@ struct VoxelRenderer {
     unsigned char q018;  // 0x18
     unsigned int VoxelRenderer_field_0x04;
     unsigned int VoxelRenderer_field_0x10;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int q028;
     unsigned int q02C;
     unsigned int q070;

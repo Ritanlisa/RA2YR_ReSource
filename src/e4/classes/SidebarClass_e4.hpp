@@ -600,7 +600,7 @@ struct SidebarClass {
     unsigned int SidebarClass_field_0x0;
     unsigned int SidebarClass_field_0x5C;
     unsigned int SidebarClass_field_0x68;
-    unsigned int __pad_CD2;
+    unsigned int *__pad_CD2;
     unsigned int calcSidebarRect;
     unsigned int q2288;
     unsigned int u32_539C;

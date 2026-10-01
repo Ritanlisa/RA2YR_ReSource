@@ -655,8 +655,8 @@ struct FootClass {
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
     unsigned int FootClass_field_abstract_array_5AC;
-    unsigned int __pad_58C;
-    unsigned int __pad_5B0;
+    unsigned int *__pad_58C;
+    unsigned int *__pad_5B0;
     unsigned int currentJumpjetMapCoords;
     unsigned int locomotor;
     unsigned int parasiteImUsing;
@@ -664,7 +664,7 @@ struct FootClass {
     unsigned int unknownAbstractArray588;
     unsigned int Capacity;
     unsigned int FindAITarget;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int MissionMoveCarryallLand;
 // --- flat members (END) ---
     AbstractClass * Destruct();

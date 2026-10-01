@@ -82,9 +82,9 @@ struct Sidebar {
     unsigned int u32_878;  // 0x878
     unsigned int Sidebar_field_0x4;
     unsigned int Sidebar_field_0x8;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int __pad_70;
+    unsigned int *__pad_0;
+    unsigned int *__pad_14;
+    unsigned int *__pad_70;
     unsigned int q53D0;
     unsigned int q53D4;
     unsigned int q53D8;

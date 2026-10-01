@@ -37,7 +37,7 @@ struct ParasiteClass {
     void *q40;  // 0x40
     bool q042;  // 0x42
     unsigned int ParasiteClass_field_38;
-    unsigned int __pad_28;
+    unsigned int *__pad_28;
     unsigned int q044;
     unsigned int q048;
     unsigned int q04C;

@@ -53,11 +53,11 @@ struct GameClass {
     unsigned int u32_1A8;  // 0x1A8
     unsigned int u32_1B4;  // 0x1B4
     void* q200;  // 0x200
-    unsigned int GameClass_field_0x4;
-    unsigned int __pad_0;
-    unsigned int __pad_24;
-    unsigned int __pad_3D;
-    unsigned int __pad_8;
+    unsigned int *GameClass_field_0x4;
+    unsigned int *__pad_0;
+    unsigned int *__pad_24;
+    unsigned int *__pad_3D;
+    unsigned int *__pad_8;
     unsigned int field_14;
     unsigned int field_3C;
     unsigned int m_10;

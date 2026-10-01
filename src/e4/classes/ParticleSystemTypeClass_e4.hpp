@@ -273,7 +273,7 @@ struct ParticleSystemTypeClass {
     unsigned int ParticleSystemTypeClass_field_0x2AC;
     unsigned int ParticleSystemTypeClass_field_0x2B4;
     unsigned int ParticleSystemTypeClass_field_0x2B8;
-    unsigned int __pad_298;
+    unsigned int *__pad_298;
     unsigned int q1180;
     unsigned int q11C2;
     unsigned int q1200;

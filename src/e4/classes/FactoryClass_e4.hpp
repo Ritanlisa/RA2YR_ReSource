@@ -61,7 +61,7 @@ struct FactoryClass {
     bool isManual;  // 0x71
     unsigned char align72;  // 0x72
     unsigned int NeedsSaveOrLink8;
-    unsigned int __pad_42;
+    unsigned int *__pad_42;
     unsigned int u32_288;
     unsigned int vtable21;
     unsigned int vtable22;

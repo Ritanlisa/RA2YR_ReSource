@@ -123,7 +123,7 @@ struct RadioClass {
     bool q0ED;  // 0xED
     unsigned int MissionClass;
     unsigned int Undeploy;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     int ExecuteAction(TimerStruct * aP1, IUnknown * aP2);
     int FindLinkIndex(int a2);

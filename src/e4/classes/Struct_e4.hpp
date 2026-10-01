@@ -31,9 +31,9 @@ struct Struct {
     unsigned int u32_4C;
     unsigned int u32_54;
     unsigned int u32_8;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int __pad_28;
+    unsigned int *__pad_0;
+    unsigned int *__pad_14;
+    unsigned int *__pad_28;
     unsigned int field_24;
     unsigned int field_34;
     unsigned int field_8;

@@ -20,7 +20,7 @@ struct GameConfig {
     bool spawn_mode;  // 0xCE
     bool windowed;  // 0xCF
     bool enable_log;  // 0xD0
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
      void Constructor();  // 0x5D67B0
     static int  BuildChecksum(char * Buffer);  // 0x77E7A0

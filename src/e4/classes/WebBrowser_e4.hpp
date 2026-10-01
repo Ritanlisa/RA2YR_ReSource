@@ -12,7 +12,7 @@ struct WebBrowser {
     unsigned char q00C;  // 0xC
     void* q010;  // 0x10
     unsigned int WebBrowser_field_0x8;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_40C;
     unsigned int u32_42;
     unsigned int q008;

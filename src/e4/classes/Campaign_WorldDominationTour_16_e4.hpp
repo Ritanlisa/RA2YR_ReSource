@@ -13,7 +13,7 @@ struct Campaign_WorldDominationTour_16 {
     int q008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x765840
     unsigned int *  Seek(unsigned int * a2, int a3);  // 0x7656D0

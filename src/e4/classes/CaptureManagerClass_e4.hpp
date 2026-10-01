@@ -46,7 +46,7 @@ struct CaptureManagerClass {
     unsigned int linkCount;  // 0x4C
     unsigned char q04F;  // 0x4F
     char CaptureManagerClass_field_2C[4];  // 0x50
-    unsigned int __pad_3C;
+    unsigned int *__pad_3C;
 // --- flat members (END) ---
     void DecideUnitFate(IUnknown * aP1);
     AnimClass * * FreeUnit(void* aP0, int _28, void* a2, void* aP1, int _34, void** a5);

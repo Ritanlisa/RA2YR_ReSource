@@ -39,6 +39,30 @@ known_names |= set(signals.get('globals', {}).keys())
 CRT = ['dword_B782A0', 'dword_B78BA0', 'dword_B78BA4', 'dword_B78BC0',
        'dword_B78BBC', 'hHeap', 'stru_B782B8']
 
+# G41.27 fixed IDA pseudo-intrinsics (macros -- never emitted as externs)
+IDA_MACROS = '''
+#define LOBYTE(x) (*((unsigned char *)&(x)))
+#define HIBYTE(x) (*(((unsigned char *)&(x)) + 1))
+#define BYTE1(x) (*((unsigned char *)&(x) + 1))
+#define BYTE2(x) (*((unsigned char *)&(x) + 2))
+#define BYTE3(x) (*((unsigned char *)&(x) + 3))
+#define LOWORD(x) (*((unsigned short *)&(x)))
+#define HIWORD(x) (*(((unsigned short *)&(x)) + 1))
+#define WORD1(x) (*((unsigned short *)&(x) + 1))
+#define WORD2(x) (*((unsigned short *)&(x) + 2))
+#define SHIWORD(x) (*(((short *)&(x)) + 1))
+#define SLOWORD(x) (*((short *)&(x)))
+#define LODWORD(x) (*((unsigned int *)&(x)))
+#define HIDWORD(x) (*(((unsigned int *)&(x)) + 1))
+#define SHIDWORD(x) (*(((int *)&(x)) + 1))
+'''
+
+# G41.27 CRT mangled operator names the typed export renders verbatim
+CRT_OPS = '''
+void __3_YAXPAX_Z(void *);        // operator delete(void*)
+void *__2_YAPAXI_Z(unsigned int); // operator new[](unsigned)
+'''
+
 names = set()
 for code, nm in ERR.findall(TXT):
     if re.match(r'^(byte_|word_|dword_|stru_|qword_|unk_|loc_|sub_|j_|off_)',
@@ -114,6 +138,11 @@ hdr += ['', '// CRT/RTTI/FILE compat stubs (blockers #30/#31/#33/#35)',
         '#define COERCE_INT64(x) ((long long)(x))',
         '#define COERCE_UNSIGNED_INT(x) ((unsigned int)(x))',
         '#define COERCE_INT(x) ((int)(x))',
+        '',
+        '// G41.27 IDA pseudo-intrinsics (register-lane accessors)',
+        IDA_MACROS,
+        '// G41.27 CRT mangled operators (typed-export verbatim names)',
+        CRT_OPS,
         '',
         'struct PMD { int mdisp; int pdisp; int vdisp; };',
         'struct TypeDescriptor { void* pVFTable; void* spare; char name[64]; };',

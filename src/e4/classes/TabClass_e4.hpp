@@ -49,7 +49,7 @@ struct TabClass {
     unsigned int q058;  // 0x58
     unsigned int TabClass_field_0x0;
     unsigned int TabClass_field_0x4;
-    unsigned int TabClass_field_0x8;
+    unsigned int *TabClass_field_0x8;
     unsigned int TabClass_field_0xC;
     unsigned int field_0;
 // --- flat members (END) ---

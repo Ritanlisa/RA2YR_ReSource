@@ -58,9 +58,9 @@ struct Radar {
     void* q20C;  // 0x20C
     unsigned int Radar_field_0x60;
     unsigned int Radar_field_0xC;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __pad_64;
-    unsigned int __pad_34;
+    unsigned int *__pad_34;
 // --- flat members (END) ---
     int  FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
     void  UpdateReveal(char a1, void * aP1);  // 0x4ADCD0

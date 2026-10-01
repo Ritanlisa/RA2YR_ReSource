@@ -70,7 +70,7 @@ struct Math {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int field_4;
     unsigned int field_8;
     unsigned int u32_40;

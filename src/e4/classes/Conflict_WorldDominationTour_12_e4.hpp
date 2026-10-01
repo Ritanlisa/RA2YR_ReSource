@@ -15,8 +15,8 @@ struct Conflict_WorldDominationTour_12 {
     int q010;  // 0x10
     unsigned int Capacity;
     unsigned int Items;
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

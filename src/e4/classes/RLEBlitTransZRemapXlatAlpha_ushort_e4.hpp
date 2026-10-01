@@ -19,7 +19,7 @@ struct RLEBlitTransZRemapXlatAlpha_ushort {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int m_4;
     unsigned int m_8;
     unsigned int m_C;

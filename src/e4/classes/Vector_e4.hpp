@@ -17,8 +17,8 @@ struct Vector {
     unsigned int Vector_field_0x10;
     unsigned int Vector_field_0x4;
     unsigned int Vector_field_0x8;
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_8;
     unsigned int m_C;
     unsigned int u32_14;

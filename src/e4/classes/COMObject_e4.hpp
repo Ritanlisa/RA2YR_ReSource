@@ -31,7 +31,7 @@ struct COMObject {
     unsigned char q050;  // 0x50
     unsigned int Hovered;
     unsigned int Image;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __pad_31;
     unsigned int vfptr;
     unsigned int m_2D;

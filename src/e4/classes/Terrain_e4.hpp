@@ -65,8 +65,8 @@ struct Terrain {
     unsigned int Terrain_field_0x38;
     unsigned int Terrain_field_0x40;
     unsigned int Terrain_field_0x60;
-    unsigned int __pad_18;
-    unsigned int __pad_44;
+    unsigned int *__pad_18;
+    unsigned int *__pad_44;
     unsigned int __pad_68;
 // --- flat members (END) ---
     int  GetTileIndex(int a2);  // 0x48B720

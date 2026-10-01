@@ -34,7 +34,7 @@ struct TagTypeClass {
     unsigned int u32_9C;
     unsigned int uniqueId0;
     unsigned int vtable46;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers();
     AbstractTypeClass * Construct(ObjectClass * aP1);

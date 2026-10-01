@@ -21,7 +21,7 @@ struct IPXConnClass {
     unsigned short RemoteSocket;  // 0x28
     unsigned char padding;  // 0x2A
     unsigned int RemoteAddress6;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int initConnection;
     unsigned int u32_4C;
     unsigned int u32_54;

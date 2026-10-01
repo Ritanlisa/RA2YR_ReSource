@@ -50,7 +50,7 @@ struct ShipLocomotionClass {
     ILocomotion * ptr_68;  // 0x68
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
-    unsigned int __pad_18;
+    unsigned int *__pad_18;
     unsigned int BeginMove;
     unsigned int LoadFromStream;
 // --- flat members (END) ---

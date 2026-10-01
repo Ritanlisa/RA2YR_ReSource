@@ -30,7 +30,7 @@ struct ArrayClass {
     unsigned int q1908;  // 0x1908
     void* q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_18;
+    unsigned int *__pad_18;
     unsigned int field_14;
     unsigned int field_8;
     unsigned int field_94;

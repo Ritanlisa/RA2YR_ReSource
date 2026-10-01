@@ -46,9 +46,9 @@ struct AbstractClass {
     unsigned int RadLevelTimer;
     unsigned int RadLightTimer;
     unsigned int RefCount;
-    unsigned int __pad_0;
-    unsigned int __pad_A0;
-    unsigned int __pad_C;
+    unsigned int *__pad_0;
+    unsigned int *__pad_A0;
+    unsigned int *__pad_C;
     unsigned int buildingType;
     unsigned int firstTrigger;
     unsigned int house;
@@ -63,7 +63,7 @@ struct AbstractClass {
     unsigned int u32_2C;
     unsigned int vtable0;
     unsigned int vtable22;
-    unsigned int __pad_28;
+    unsigned int *__pad_28;
     unsigned int creationFrame;
     unsigned int TEventClass_field_28;
     unsigned int TEventClass_field_30;
@@ -71,7 +71,7 @@ struct AbstractClass {
     unsigned int SpawnManagerClass_field_58;
     unsigned int SpawnManagerClass_field_5C;
     unsigned int spawns;
-    unsigned int __pad_48;
+    unsigned int *__pad_48;
     unsigned int spawnVectorCount;
     unsigned int q3D4;  // 0x3D4
     unsigned int q090;  // 0x90

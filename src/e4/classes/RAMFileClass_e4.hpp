@@ -14,7 +14,7 @@ struct RAMFileClass {
     AbstractClass* q00C;  // 0xC
     AbstractClass* q010;  // 0x10
     unsigned int RAMFileClass_field_0x10;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int RAMFileClass_field_0x8;
     unsigned int u32_14;
     unsigned int u32_1C;

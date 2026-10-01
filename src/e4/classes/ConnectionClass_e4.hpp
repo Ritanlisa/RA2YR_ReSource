@@ -17,7 +17,7 @@ struct ConnectionClass {
     unsigned int PacketsReceived;  // 0x14
     unsigned int LastPacketTime2;
     unsigned int PhoneNumber;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int __pad_009;
     unsigned int queueSendPacket;
     unsigned int u32_18;

@@ -21,7 +21,7 @@ struct SortedArray {
     unsigned int SortedArray_field_0x04;
     unsigned int SortedArray_field_0x0C;
     unsigned int SortedArray_field_0x10;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int q0046;
     unsigned int q040;
 // --- flat members (END) ---

@@ -11,8 +11,8 @@ struct Mouse {
     // dup-member: unsigned int ReleaseCapture;
     unsigned int DisplayClass;
     unsigned int Timer;
-    unsigned int __pad_5;
-    unsigned int m_1;
+    unsigned int *__pad_5;
+    unsigned int *m_1;
     unsigned int q048;
     unsigned int q04C;
     unsigned int q050;

@@ -492,8 +492,8 @@ struct ScenarioClass {
     char ls800BkgdName;  // 0x36BC
     char ls800BkgdPal;  // 0x36FC
     unsigned int InitTimer;
-    unsigned int __pad_0;
-    unsigned int __pad_3566;
+    unsigned int *__pad_0;
+    unsigned int *__pad_3566;
     unsigned int __pad_628;
     unsigned int Timer;
 // --- flat members (END) ---

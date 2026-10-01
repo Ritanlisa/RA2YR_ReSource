@@ -34,7 +34,7 @@ struct MapSeedClass {
     unsigned int MapSeedClass_field_0x24;
     unsigned int MapSeedClass_field_0x28;
     unsigned int MapSeedClass_field_0x2C;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     MapSeedClass * * PlaceBuildingClusters(void * aP1);
     MapSeedClass * QueryInterface(char a2);

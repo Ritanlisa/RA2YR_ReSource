@@ -121,22 +121,22 @@ struct RandomMap {
     unsigned int RandomMap_field_0x14;
     unsigned int RandomMap_field_0x18;
     unsigned int RandomMap_field_0x1C;
-    unsigned int RandomMap_field_0x2;
+    unsigned int *RandomMap_field_0x2;
     unsigned int RandomMap_field_0x20;
-    unsigned int RandomMap_field_0x24;
-    unsigned int RandomMap_field_0x28;
-    unsigned int RandomMap_field_0x2C;
+    unsigned int *RandomMap_field_0x24;
+    unsigned int *RandomMap_field_0x28;
+    unsigned int *RandomMap_field_0x2C;
     unsigned int RandomMap_field_0x30;
-    unsigned int RandomMap_field_0x34;
-    unsigned int RandomMap_field_0x38;
-    unsigned int RandomMap_field_0x3C;
-    unsigned int RandomMap_field_0x40;
+    unsigned int *RandomMap_field_0x34;
+    unsigned int *RandomMap_field_0x38;
+    unsigned int *RandomMap_field_0x3C;
+    unsigned int *RandomMap_field_0x40;
     unsigned int RandomMap_field_0x48;
     unsigned int RandomMap_field_0x8;
     unsigned int RandomMap_field_0xC;
-    unsigned int __pad_0;
-    unsigned int __pad_44;
-    unsigned int __pad_4C;
+    unsigned int *__pad_0;
+    unsigned int *__pad_44;
+    unsigned int *__pad_4C;
 // --- flat members (END) ---
     bool Check();  // 0x486790
     unsigned int *  TerrainTileDataConstructor(int a2);  // 0x58BF70

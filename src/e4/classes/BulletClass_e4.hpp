@@ -386,13 +386,13 @@ struct BulletClass {
     unsigned int BulletClass_field_0xAC;
     unsigned int BulletClass_field_0xB0;
     unsigned int ResetDetonationTimer;
-    unsigned int __pad_0;
-    unsigned int __pad_110;
-    unsigned int __pad_134;
-    unsigned int __pad_144;
-    unsigned int __pad_158;
-    unsigned int __pad_B4;
-    unsigned int __pad_C;
+    unsigned int *__pad_0;
+    unsigned int *__pad_110;
+    unsigned int *__pad_134;
+    unsigned int *__pad_144;
+    unsigned int *__pad_158;
+    unsigned int *__pad_B4;
+    unsigned int *__pad_C;
 // --- flat members (END) ---
     BulletClass();
     BulletClass * * Dtor();

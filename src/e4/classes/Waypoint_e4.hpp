@@ -49,7 +49,7 @@ struct Waypoint {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int field_38;
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0

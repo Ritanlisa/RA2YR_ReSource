@@ -15,10 +15,10 @@ struct AbstractClassVector {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_8;
     unsigned int m_C;
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned char AbstractClassVector_field_0x04;  // 0x4
     unsigned char AbstractClassVector_field_0x08;  // 0x8
     unsigned char AbstractClassVector_field_0x0C;  // 0xC

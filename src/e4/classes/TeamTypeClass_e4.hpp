@@ -58,7 +58,7 @@ struct TeamTypeClass {
     unsigned char TeamTypeClass_field_71;  // 0x71
     unsigned char pad_72;  // 0x72
     unsigned int TeamTypeClass_field_60;
-    unsigned int __pad_4C;
+    unsigned int *__pad_4C;
     unsigned int q090;
     unsigned int q0A0;
     unsigned int q0C0;
@@ -81,7 +81,7 @@ struct TeamTypeClass {
     unsigned char u8_B1;
     unsigned int q0B4;
     unsigned char u8_B3;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * FindOrCreateTaskForce();
     AbstractClass * * GetMaxCount(void * aP1);

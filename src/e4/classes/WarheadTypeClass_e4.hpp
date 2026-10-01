@@ -194,7 +194,7 @@ struct WarheadTypeClass {
     unsigned int WarheadTypeClass_field_0x4;
     unsigned int WarheadTypeClass_field_0x8;
     unsigned int WarheadTypeClass_field_0xC;
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
@@ -204,7 +204,7 @@ struct WarheadTypeClass {
     unsigned int vtable26;
     unsigned int Tiberium0;
     unsigned int Tiberium8;
-    unsigned int __pad_144;
+    unsigned int *__pad_144;
     unsigned int u32_A84;
     unsigned int AnimList;
     unsigned int CellInset;
@@ -221,10 +221,10 @@ struct WarheadTypeClass {
     unsigned int WarheadTypeClass_field_0x188;
     unsigned int WarheadTypeClass_field_0xF8;
     unsigned int __pad_1A0;
-    unsigned int __pad_44;
-    unsigned int __pad_FC;
+    unsigned int *__pad_44;
+    unsigned int *__pad_FC;
     unsigned int __pad_104;
-    unsigned int __pad_10;
+    unsigned int *__pad_10;
     unsigned int __pad_4;
     unsigned int field_0;
     unsigned int field_2C;

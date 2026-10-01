@@ -104,8 +104,8 @@ struct Game {
     void* q680;  // 0x680
     unsigned char q684;  // 0x684
     void* q6F8;  // 0x6F8
-    unsigned int __pad_0;
-    unsigned int __pad_44;
+    unsigned int *__pad_0;
+    unsigned int *__pad_44;
     unsigned int u32_C2;
     unsigned int MixFileClass;
     unsigned int Settings;

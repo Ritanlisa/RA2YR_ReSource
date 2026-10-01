@@ -31,8 +31,8 @@ struct INIClass {
     unsigned int IsAllocated;
     unsigned int IsInitialized;
     unsigned int Items;
-    unsigned int __pad_0;
-    unsigned int __pad_20;
+    unsigned int *__pad_0;
+    unsigned int *__pad_20;
     unsigned int q0146;
     unsigned int sectionHead0;
     unsigned int vtable0;

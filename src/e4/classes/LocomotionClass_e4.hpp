@@ -24,9 +24,9 @@ struct LocomotionClass {
     unsigned int Piggybackee;
     unsigned int TurnRate;
     unsigned int __pad_015;
-    unsigned int __pad_50;
-    unsigned int __pad_74;
-    unsigned int __pad_89;
+    unsigned int *__pad_50;
+    unsigned int *__pad_74;
+    unsigned int *__pad_89;
     unsigned int q020;
     unsigned int q5D4;
     unsigned int u32_18;
@@ -55,7 +55,7 @@ struct LocomotionClass {
     unsigned int unknown_91;
     unsigned int Powered;
     unsigned int RefCount;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     LocomotionClass * ProcessMove(char a2);
     int CheckBridgeBlock();

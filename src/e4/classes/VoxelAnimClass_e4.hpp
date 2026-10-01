@@ -677,13 +677,13 @@ struct VoxelAnimClass {
     unsigned int VoxelAnimClass_field_0x10C;
     unsigned int VoxelAnimClass_field_0x114;
     unsigned int VoxelAnimClass_field_0x128;
-    unsigned int VoxelAnimClass_field_0x4;
+    unsigned int *VoxelAnimClass_field_0x4;
     unsigned int VoxelAnimClass_field_0x8;
-    unsigned int __pad_12C;
-    unsigned int __pad_98;
-    unsigned int __pad_C;
+    unsigned int *__pad_12C;
+    unsigned int *__pad_98;
+    unsigned int *__pad_C;
     unsigned int VoxelAnimClass_field_0x140;
-    unsigned int __pad_110;
+    unsigned int *__pad_110;
     unsigned int Undeploy;
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);

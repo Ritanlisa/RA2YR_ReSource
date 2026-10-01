@@ -22,9 +22,9 @@ struct File {
     unsigned int u32_2C;  // 0x2C
     unsigned char tail_2D;  // 0x2D
     unsigned int BufferSize;
-    unsigned int File_field_0x2;
-    unsigned int __pad_0;
-    unsigned int __pad_6;
+    unsigned int *File_field_0x2;
+    unsigned int *__pad_0;
+    unsigned int *__pad_6;
     unsigned int u32_42;
     void* ptr_8;
     unsigned int q004;

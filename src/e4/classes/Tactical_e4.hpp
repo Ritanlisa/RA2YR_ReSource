@@ -586,9 +586,9 @@ struct Tactical {
     unsigned char qDA8;  // 0xDA8
     void* qDB0;  // 0xDB0
     ObjectClass* qDB4;  // 0xDB4
-    unsigned int Tactical_field_0x11B;
-    unsigned int __pad_10;
-    unsigned int __pad_34;
+    unsigned int *Tactical_field_0x11B;
+    unsigned int *__pad_10;
+    unsigned int *__pad_34;
     unsigned int u32_146;
     unsigned int q068;
     unsigned int q06C;
@@ -601,7 +601,7 @@ struct Tactical {
     unsigned int q4696;
     unsigned char u8_1180;
     unsigned char u8_1181;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int field_24;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0

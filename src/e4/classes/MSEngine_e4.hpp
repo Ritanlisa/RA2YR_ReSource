@@ -18,9 +18,9 @@ struct MSEngine {
     void* q010;  // 0x10
     unsigned int MSEngine_field_0x4;
     unsigned int MSEngine_field_0x8;
-    unsigned int MSEngine_field_0xC;
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *MSEngine_field_0xC;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

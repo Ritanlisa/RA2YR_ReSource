@@ -22,8 +22,8 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int __pad_0;
-    unsigned int m_2;
+    unsigned int *__pad_0;
+    unsigned int *m_2;
     unsigned int m_4;
     unsigned int m_8;
 // --- flat members (END) ---

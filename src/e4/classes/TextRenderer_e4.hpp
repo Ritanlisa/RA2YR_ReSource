@@ -27,7 +27,7 @@ struct TextRenderer {
     unsigned int u32_80;
     unsigned int u32_86;
     unsigned int u32_87;
-    unsigned int __pad_4C;
+    unsigned int *__pad_4C;
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
     int MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6);

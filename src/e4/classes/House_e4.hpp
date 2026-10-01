@@ -170,7 +170,7 @@ struct House {
     unsigned int u32_504;  // 0x504
     unsigned int q508;  // 0x508
     void* q520;  // 0x520
-    unsigned int __pad_3D7;
+    unsigned int *__pad_3D7;
 // --- flat members (END) ---
     int AnnounceUpgrade(IUnknown * aP1);  // 0x47D2B0
     unsigned int *  GetStartCoords(void * aP1);  // 0x47FB90

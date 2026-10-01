@@ -1133,7 +1133,7 @@ struct MouseClass {
     unsigned int _flag;
     unsigned int _ptr;
     unsigned int field_0;
-    unsigned int __pad_74;
+    unsigned int *__pad_74;
     unsigned int LoadGameAssets;
 // --- flat members (END) ---
     char LoadCursors();

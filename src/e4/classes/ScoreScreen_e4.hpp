@@ -27,7 +27,7 @@ struct ScoreScreen {
     unsigned int ScoreScreen_field_0x10;
     unsigned int ScoreScreen_field_0x14;
     unsigned int ScoreScreen_field_0x18;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_3AC;
     unsigned int u32_3B0;
     unsigned int u32_3B4;

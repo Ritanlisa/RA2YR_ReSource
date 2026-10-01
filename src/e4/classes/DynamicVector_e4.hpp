@@ -28,10 +28,10 @@ struct DynamicVector {
     unsigned int DynamicVector_field_0x10;
     unsigned int DynamicVector_field_0x1C;
     unsigned int DynamicVector_field_0x8;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int __pad_20;
-    unsigned int __pad_C;
+    unsigned int *__pad_0;
+    unsigned int *__pad_14;
+    unsigned int *__pad_20;
+    unsigned int *__pad_C;
 // --- flat members (END) ---
     unsigned int *  Copy(void * aP1);  // 0x5AC430
     char  AddItem(void * aP1);  // 0x413A70

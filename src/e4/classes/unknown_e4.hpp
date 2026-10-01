@@ -12,7 +12,7 @@ struct unknown {
     char m_Size[4];  // 0x8
     char unknown_field_0C[4];  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int m_1;
+    unsigned int *m_1;
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---

@@ -32,10 +32,10 @@ struct Trigger {
     unsigned int Trigger_field_0x2C;
     unsigned int Trigger_field_0x4;
     unsigned int Trigger_field_0x48;
-    unsigned int __pad_0;
-    unsigned int __pad_18;
-    unsigned int __pad_30;
-    unsigned int __pad_8;
+    unsigned int *__pad_0;
+    unsigned int *__pad_18;
+    unsigned int *__pad_30;
+    unsigned int *__pad_8;
     void* ptr_470;
     unsigned int q444;
     unsigned int u32_1250;

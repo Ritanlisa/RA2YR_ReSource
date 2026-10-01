@@ -15,7 +15,7 @@ struct Node_flat {
     unsigned int CountFiles;
     unsigned int FileSize;
     unsigned int Previous;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
 unsigned int * Init();
 };

@@ -112,7 +112,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int q5684;  // 0x5684
     unsigned char q6408;  // 0x6408
     unsigned int __tail_18;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     unsigned int *  Constructor(void * aP1);  // 0x4A0C20
     int  SetCapacity(int a1, int a2);  // 0x4F6A20

@@ -20,8 +20,8 @@ struct MapFile {
     unsigned int MapFile_field_0x04;
     unsigned int MapFile_field_0x08;
     unsigned int MapFile_field_0x0C;
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---

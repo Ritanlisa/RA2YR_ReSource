@@ -13,8 +13,8 @@ struct WDTState_4 {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

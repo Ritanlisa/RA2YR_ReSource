@@ -13,7 +13,7 @@ struct XSurface {
     bool q00A;  // 0xA
     int LockCount;  // 0xC
     unsigned int Surface;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int q010;
     unsigned int q014;
     unsigned int vt_slot_116;

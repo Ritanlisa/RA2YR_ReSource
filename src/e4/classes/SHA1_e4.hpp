@@ -17,7 +17,7 @@ struct SHA1 {
     unsigned int ProcessBlock;
     unsigned int SHA1_field_0x04;
     unsigned int SHA1_field_0x0C;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int u32_2C;
 // --- flat members (END) ---
     int ComputeThunk(ObjectClass * aP1);

@@ -36,7 +36,7 @@ struct CCINIClass {
     unsigned int __pad_41;
     unsigned int v3;
     unsigned int v4;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int headNode;
     unsigned int sectionHead;
 // --- flat members (END) ---

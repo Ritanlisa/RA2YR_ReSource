@@ -123,7 +123,7 @@ struct CellClass {
     unsigned int CellClass_field_13C;  // 0x13C
     char flags[4];  // 0x140
     unsigned char padding144;  // 0x144
-    unsigned int __pad_28;
+    unsigned int *__pad_28;
     unsigned int mapCoords;
     unsigned int u32_11E;
     unsigned int u32_24;

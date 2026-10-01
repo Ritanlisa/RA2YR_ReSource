@@ -19,7 +19,7 @@ struct HashTable_flat {
     unsigned int HashTable_field_0x18;
     unsigned int HashTable_field_0x20;
     unsigned int HashTable_field_0x30;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int q01C;
     unsigned int u32_234;
     unsigned int u32_238;

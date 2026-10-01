@@ -18,7 +18,7 @@ struct BlitTransLucent25Alpha_ushort {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int m_8;
 // --- flat members (END) ---
     BlitTransLucent25Alpha_ushort * Blit(char a2);

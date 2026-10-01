@@ -617,9 +617,9 @@ struct RadarClass {
     unsigned int RadarClass_field_0x14C0;
     unsigned int RadarClass_field_0x4;
     unsigned int RadarClass_field_0x8;
-    unsigned int __pad_122C;
-    unsigned int __pad_1264;
-    unsigned int __pad_C;
+    unsigned int *__pad_122C;
+    unsigned int *__pad_1264;
+    unsigned int *__pad_C;
     unsigned int field_0;
     unsigned int field_4;
 // --- flat members (END) ---

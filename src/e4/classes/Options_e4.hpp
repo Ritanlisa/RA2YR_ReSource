@@ -65,12 +65,12 @@ struct Options {
     void* q5508;  // 0x5508
     void* q6148;  // 0x6148
     void* q6408;  // 0x6408
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned int field_4;
     unsigned int field_8;
     unsigned int field_C;
-    unsigned int __pad_14;
-    unsigned int __pad_34;
+    unsigned int *__pad_14;
+    unsigned int *__pad_34;
     unsigned int Debug;
     unsigned int Dialog;
     unsigned int Timer;

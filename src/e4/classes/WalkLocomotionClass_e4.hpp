@@ -33,7 +33,7 @@ struct WalkLocomotionClass {
     unsigned int q03B;  // 0x3B
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
-    unsigned int __pad_18;
+    unsigned int *__pad_18;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

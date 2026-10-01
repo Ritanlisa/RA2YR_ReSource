@@ -25,8 +25,8 @@ struct EnumConnectionPointsClass {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int __pad_0;
-    unsigned int m_1;
+    unsigned int *__pad_0;
+    unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;

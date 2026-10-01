@@ -57,8 +57,8 @@ struct Movie {
     unsigned int q280;  // 0x280
     unsigned char tail_28D;  // 0x28D
     unsigned int Movie_field_0xC;
-    unsigned int __pad_10;
-    unsigned int __pad_28;
+    unsigned int *__pad_10;
+    unsigned int *__pad_28;
     unsigned int q0180;
     unsigned int q058;
     unsigned int q05C;

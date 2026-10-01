@@ -30,7 +30,7 @@ struct IPXGlobalConnClass {
     unsigned int u32_D4;
     unsigned int Debug;
     unsigned int Timer;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
     unsigned char IPXGlobalConnClass_field_0x20;  // 0x20
 // --- flat members (END) ---
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);

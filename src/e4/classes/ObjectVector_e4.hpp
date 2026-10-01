@@ -19,7 +19,7 @@ struct ObjectVector {
     unsigned int ObjectVector_field_0x0C;
     unsigned int ObjectVector_field_0x10;
     unsigned int ObjectVector_field_0x14;
-    unsigned int __pad_0;
+    unsigned int *__pad_0;
 // --- flat members (END) ---
     int Construct(IUnknown * aP1, IUnknown * aP2);
      double ddtor(...);  // C2597 interim stub

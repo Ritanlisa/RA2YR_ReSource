@@ -541,9 +541,9 @@ struct ParticleClass {
     unsigned int ParticleClass_field_0xB4;
     unsigned int ParticleClass_field_0xB8;
     unsigned int SetPosition;
-    unsigned int __pad_0;
-    unsigned int __pad_128;
-    unsigned int __pad_28;
+    unsigned int *__pad_0;
+    unsigned int *__pad_128;
+    unsigned int *__pad_28;
     unsigned int __pad_B0;
     unsigned int q0100;
     unsigned int q0101;
