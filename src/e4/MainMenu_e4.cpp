@@ -64,7 +64,7 @@ long MainMenu_Screen(void * a1, void * a2)
     }
     do /*0x531f04*/
     {
-            if ( (uint8_t)this->Dialog::PumpMessages() )
+            if ( (uint8_t)((Dialog *)this)->PumpMessages() )
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {

@@ -234,7 +234,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
       v6 = (*(int (**)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = (unsigned short *)(this->TextRenderer::GetInstance());
+  Instance = (unsigned short *)(((TextRenderer *)this)->GetInstance());
   v10 = (unsigned int)(v17);
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/

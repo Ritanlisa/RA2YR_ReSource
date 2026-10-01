@@ -11,5 +11,6 @@ struct E4Recv_491EA0 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     int sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x491EA0
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

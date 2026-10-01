@@ -1156,6 +1156,9 @@ struct MouseClass {
     static double CalcConfiningRect(...);  // C2597 interim stub
      double Construct(...);  // C2597 interim stub
     void * LoadTypeData();  // 0x5bdf30
+    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 
 } // namespace gamemd

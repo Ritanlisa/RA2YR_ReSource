@@ -244,7 +244,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
           v21 = GetDlgItem(hDlg, 1325); /*0x4e2212*/
           if ( v21 ) /*0x4e2216*/
           {
-                        IsSoundEnabled = this->Audio::IsSoundEnabled();
+                        IsSoundEnabled = ((Audio *)this)->IsSoundEnabled();
             EnableWindow(v21, IsSoundEnabled); /*0x4e2223*/
             return 0; /*0x4e222f*/
           }

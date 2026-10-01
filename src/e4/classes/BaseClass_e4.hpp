@@ -41,6 +41,9 @@ struct BaseClass {
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_54;  // 0x54
     unsigned int u32_52;  // 0x52
+    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 
 } // namespace gamemd

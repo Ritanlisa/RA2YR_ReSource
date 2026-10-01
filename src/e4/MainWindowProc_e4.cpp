@@ -75,13 +75,13 @@ AbstractClass * * sub_777420()
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   ((AsyncIO *)(v2))->Read(); /*0x777594*/
-    result = this->Dialog::GetCurrent();
+    result = ((Dialog *)this)->GetCurrent();
   if ( result ) /*0x7775a1*/
   {
     unsigned int v4 = 0;  /* G37 hoist */
-        Current = this->Dialog::GetCurrent();
+        Current = ((Dialog *)this)->GetCurrent();
     SetActiveWindow(Current); /*0x7775a9*/
-        v4 = this->Dialog::GetCurrent();
+        v4 = ((Dialog *)this)->GetCurrent();
     return (int)SetFocus(v5); /*0x7775b5*/
   }
   return result; /*0x7775bb*/

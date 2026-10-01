@@ -178,7 +178,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
                 v13[13] = 0; /*0x5bf008*/
                 v13[16] = v16; /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
-                this->Debug::Log(); /*0x5bf02b*/
+                ((Debug *)this)->Log(); /*0x5bf02b*/
               }
             }
           }
@@ -191,8 +191,8 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf067*/
           {
             AudioFrame::CounterInc(); /*0x5bf069*/
-            this->AudioQueue::IncrementPriority(); /*0x5bf06e*/
-            this->AudioQueue::ReleaseBuffers(); /*0x5bf073*/
+            ((AudioQueue *)this)->IncrementPriority(); /*0x5bf06e*/
+            ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bf073*/
             RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bf083*/
             RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bf093*/
             LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a1) = 1; /*0x5bf098*/
@@ -206,10 +206,10 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           {
             AudioTimer::DecrementAll(); /*0x5bf0d6*/
             ProcessAudioTimer(); /*0x5bf0db*/
-            this->Mixer::RequestAllBuffers(); /*0x5bf0e0*/
+            ((Mixer *)this)->RequestAllBuffers(); /*0x5bf0e0*/
             RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf0f0*/
             RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf100*/
-            this->AudioMixer::Pump(); /*0x5bf105*/
+            ((AudioMixer *)this)->Pump(); /*0x5bf105*/
             LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf10a*/
           }
           MovieContext::Cleanup(v13); /*0x5bf112*/
@@ -234,7 +234,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
     }
     else
     {
-      this->Debug::Log(); /*0x5bedad*/
+      ((Debug *)this)->Log(); /*0x5bedad*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
@@ -247,8 +247,8 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
       if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/
-        this->AudioQueue::IncrementPriority(); /*0x5bee0d*/
-        this->AudioQueue::ReleaseBuffers(); /*0x5bee12*/
+        ((AudioQueue *)this)->IncrementPriority(); /*0x5bee0d*/
+        ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bee12*/
         RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bee22*/
         RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bee32*/
         LOBYTE(g_MissionQueueFrame.localVariables[566]) = 1; /*0x5bee37*/
@@ -262,10 +262,10 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
       {
         AudioTimer::DecrementAll(); /*0x5bee6f*/
         ProcessAudioTimer(); /*0x5bee74*/
-        this->Mixer::RequestAllBuffers(); /*0x5bee79*/
+        ((Mixer *)this)->RequestAllBuffers(); /*0x5bee79*/
         RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bee89*/
         RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bee99*/
-        this->AudioMixer::Pump(); /*0x5bee9e*/
+        ((AudioMixer *)this)->Pump(); /*0x5bee9e*/
         LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a3) = 0; /*0x5beea3*/
       }
       if ( a5 == 1 ) /*0x5beeb1*/

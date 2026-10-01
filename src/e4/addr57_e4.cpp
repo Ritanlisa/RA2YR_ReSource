@@ -275,7 +275,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   {
     if ( !v2 ) /*0x578f39*/
       break; /*0x578f39*/
-    v2 = Cliff::ProcessTransitions(j, aP1); /*0x578f4b*/
+    v2 = Cliff_ProcessTransitions(j, aP1); /*0x578f4b*/
   }
   dword_87F8F8 = dword_87F8DC; /*0x578f61*/
   dword_87F8F4 = 1; /*0x578f66*/

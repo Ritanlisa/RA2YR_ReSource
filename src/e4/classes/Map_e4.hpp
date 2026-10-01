@@ -18,6 +18,7 @@ struct Map {
     int refcount;  // 0x20
 // --- flat members (END) ---
     unsigned int IsCellFlag(int a1);
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 
 } // namespace gamemd

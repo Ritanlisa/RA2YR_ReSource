@@ -119,7 +119,7 @@ LABEL_11:
     if ( (byte_A8EDF8 & 1) == 0 ) /*0x4f12be*/
     {
       byte_A8EDF8 |= 1u; /*0x4f12ca*/
-      dword_A8EE30 = this->Timer::GetTicks(); /*0x4f12da*/
+      dword_A8EE30 = ((Timer *)this)->GetTicks(); /*0x4f12da*/
       dword_A8EE38 = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
@@ -226,7 +226,7 @@ LABEL_39:
         {
           if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
           {
-            this->Debug::Log(); /*0x4f15eb*/
+            ((Debug *)this)->Log(); /*0x4f15eb*/
           }
           else
           {
@@ -236,7 +236,7 @@ LABEL_39:
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19)); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
-            this->Debug::Log(); /*0x4f15dc*/
+            ((Debug *)this)->Log(); /*0x4f15dc*/
           }
         }
       }
@@ -257,7 +257,7 @@ LABEL_39:
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          this->Debug::Log(); /*0x4f169e*/
+          ((Debug *)this)->Log(); /*0x4f169e*/
         }
       }
     }
@@ -390,10 +390,10 @@ char Options::Screen_Dialog()
       Dialog::Show(v1); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fcec*/
+        if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
         LOBYTE(v2) = 0; /*0x55fcee*/
-        ScreenSaver::Process(v2); /*0x55fcf0*/
+        Process@<al>(v2); /*0x55fcf0*/
       }
       Options::Screen_Save(v1); /*0x55fcff*/
       Dialog::Destroy(v1); /*0x55fd06*/
@@ -409,10 +409,10 @@ char Options::Screen_Dialog()
         Dialog::Show(v4); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fd71*/
+          if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
           LOBYTE(v5) = 0; /*0x55fd73*/
-          ScreenSaver::Process(v5); /*0x55fd75*/
+          Process@<al>(v5); /*0x55fd75*/
         }
         Dialog::Destroy(v4); /*0x55fd84*/
       }

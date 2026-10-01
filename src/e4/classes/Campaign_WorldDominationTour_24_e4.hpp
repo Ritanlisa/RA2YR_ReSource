@@ -13,5 +13,6 @@ struct Campaign_WorldDominationTour_24 {
     BOOL AddRef(void *a1_1);  // 0x765700
     BOOL Release(void *a1_1);  // 0x765B40
     BOOL ddtor();  // 0x765B50
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

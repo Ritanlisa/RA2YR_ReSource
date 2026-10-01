@@ -74,12 +74,12 @@ int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2, void *a3)
   optlen = 4; /*0x7b0e4e*/
   if ( stru_887598.onBridge && stru_887598.AbstractClass == (void *)4 && !((char *)&stru_887598) ) /*0x7b0e63*/
   {
-    this->Debug::Log(); /*0x7b0eae*/
+    ((Debug *)this)->Log(); /*0x7b0eae*/
   }
   else if ( getsockopt(v4, 1000, 16397, optval, &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
-    this->Debug::Log(); /*0x7b0e9f*/
+    ((Debug *)this)->Log(); /*0x7b0e9f*/
   }
   else if ( aP1 >= *(int *)optval ) /*0x7b0e87*/
   {
@@ -91,7 +91,7 @@ int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2, void *a3)
   if ( getsockopt(v4, 1000, 16391, v12, &v10) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
-    this->Debug::Log(); /*0x7b0efc*/
+    ((Debug *)this)->Log(); /*0x7b0efc*/
     closesocket(v4); /*0x7b0f05*/
     return 0; /*0x7b0f0c*/
   }
@@ -273,7 +273,7 @@ LABEL_6:
     }
     return 0; /*0x7b1711*/
   }
-  this->Debug::Log(); /*0x7b1671*/
+  ((Debug *)this)->Log(); /*0x7b1671*/
   if ( !byte_B7801C ) /*0x7b1680*/
     byte_B7801C = 1; /*0x7b1682*/
   if ( BYTE2(v18[2].NetworkID_field_0x04) ) /*0x7b1689*/
@@ -356,7 +356,7 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   *((unsigned int *)this + 64532) = 0; /*0x7b1a88*/
   *((unsigned int *)this + 64533) = 0; /*0x7b1a8e*/
   *((unsigned int *)this + 1) = 576; /*0x7b1a94*/
-  this->Debug::Log(); /*0x7b1a9b*/
+  ((Debug *)this)->Log(); /*0x7b1a9b*/
   return this; /*0x7b1aa5*/
 
 }

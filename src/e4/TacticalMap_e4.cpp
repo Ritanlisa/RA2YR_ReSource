@@ -61,13 +61,13 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   v2 = *((unsigned short *)this + 132) + (int16_t)(1000 * LOWORD(dword_A8B230[378].vtable1)) / 100; /*0x4846ab*/
   *((unsigned short *)this + 133) = v2; /*0x4846b2*/
   *((unsigned short *)this + 135) = v2; /*0x4846b9*/
-  if ( (uint8_t)this->LightningStorm::IsActive() ) /*0x4846c0*/
+  if ( (uint8_t)((LightningStorm *)this)->IsActive() ) /*0x4846c0*/
   {
     v3 = *((char *)this + 283); /*0x4846cf*/
     *((unsigned short *)this + 133) += v3 * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vtable3); /*0x4846ec*/
     v4 = (v3 + 4) * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vtable3); /*0x484703*/
   }
-  else if ( (uint8_t)this->PsyDom::IsActive() ) /*0x48470f*/
+  else if ( (uint8_t)((PsyDom *)this)->IsActive() ) /*0x48470f*/
   {
     v5 = *((char *)this + 283); /*0x48471e*/
     *((unsigned short *)this + 133) += v5 * LOWORD(dword_A8B230[380].NeedsSaveOrLink) - LOWORD(dword_A8B230[380].referenceCount); /*0x48473b*/
@@ -225,7 +225,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
   {
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5d49c8*/
     (*(void (**)(unsigned int, int))(**((unsigned int **)this + 9) + 108))(*((unsigned int *)this + 9), 1); /*0x5d49d2*/
-    this->TextRenderer::GetInstance(); /*0x5d49db*/
+    ((TextRenderer *)this)->GetInstance(); /*0x5d49db*/
     v3 = Text::MeasureWidth(*(unsigned int *)(*((unsigned int *)this + 9) + 48), 0); /*0x5d49f8*/
     if ( *((unsigned short *)this + 348) /*0x5d4a1b*/
       && *((unsigned int *)this + 172) - *((unsigned int *)this + 173) < (unsigned int)(this->TacticalMap_field_10) - 1

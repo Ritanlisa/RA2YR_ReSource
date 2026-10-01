@@ -275,7 +275,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
-    this->Debug::Log();
+    ((Debug *)this)->Log();
   ((DSurface *)((DSurface *)&v61))->Destroy(); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
 }

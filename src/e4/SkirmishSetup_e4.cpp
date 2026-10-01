@@ -84,7 +84,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     }
     v5 = (LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3)))))))))));
         if ( (*(unsigned char *)(v5 + 61) || g_abs_A8B238[0] != 4 || !Network::IsMultiplayerActive())
-      && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !this->Network::IsLobbyFeature())
+      && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !((Network *)this)->IsLobbyFeature())
       && (g_MPCooperativeState
        || *(unsigned int *)(dword_A8DA90 + 107) != -1
        || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 188))(v5))

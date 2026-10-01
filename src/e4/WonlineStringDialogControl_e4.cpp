@@ -381,7 +381,7 @@ int WonlineStringDialogControl_28::ddtor(int a1)
 
   HWND Current; // eax
 
-  Current = (HWND)this->Dialog::GetCurrent(); /*0x7ad449*/
+  Current = (HWND)((Dialog *)this)->GetCurrent(); /*0x7ad449*/
   SendMessageA(Current, 0x5F4u, 0, 0); /*0x7ad44f*/
   return 0; /*0x7ad457*/
 
@@ -396,7 +396,7 @@ int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
   HWND Current; // eax
   LPARAM lParama; // [esp+8h] [ebp+8h]
 
-  Current = (HWND)this->Dialog::GetCurrent(); /*0x7ad46c*/
+  Current = (HWND)((Dialog *)this)->GetCurrent(); /*0x7ad46c*/
   SendMessageA(Current, 0x5F5u, 0, lParama); /*0x7ad472*/
   return 0; /*0x7ad47a*/
 
@@ -417,7 +417,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   int v12; // [esp+1ACh] [ebp+14h]
 
   Buffer[0] = 0; /*0x7ad49d*/
-  Current = (HWND)this->Dialog::GetCurrent(); /*0x7ad4b7*/
+  Current = (HWND)((Dialog *)this)->GetCurrent(); /*0x7ad4b7*/
   SendDlgItemMessageA(Current, 1478, 0x402u, 100 * a3 / a4, 0); /*0x7ad4bd*/
   if ( v12 <= 0 ) /*0x7ad4cc*/
   {
@@ -431,7 +431,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
   {
-    v8 = (HWND)this->Dialog::GetCurrent(); /*0x7ad538*/
+    v8 = (HWND)((Dialog *)this)->GetCurrent(); /*0x7ad538*/
     DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
     dword_B77EA8 = time(0); /*0x7ad561*/

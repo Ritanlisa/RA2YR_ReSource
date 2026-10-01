@@ -702,7 +702,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     ((unsigned int *)v3)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d2569*/
     ((unsigned int *)v3)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d2570*/
   }
-  ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->House); /*0x4d2580*/
+  ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
   a1 = 0; /*0x4d2590*/
   result = (*(int (**)(int *, FoggedObjectClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x4d2594*/
@@ -783,7 +783,7 @@ LABEL_22:
       v11[2] = v20; /*0x4d262e*/
       v11[3] = v21; /*0x4d2635*/
     }
-    ObjectPtr::RegisterForTracking( /*0x4d264b*/
+    ObjectPtr_RegisterForTracking( /*0x4d264b*/
       (int)&SwizzleManagerClass_Instance,
       (int *)v3[2].AbstractClass + 4 * (int)v3[2] - 4);
     if ( ++v17 >= (int)a1 ) /*0x4d265f*/

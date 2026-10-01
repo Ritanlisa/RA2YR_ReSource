@@ -859,3 +859,11 @@ class WCHAR;
 class FILE;
 
 } // namespace gamemd
+
+// G41.47 flattened free-function protos
+extern int __stdcall ObjectPtr_RegisterForTracking(int a1, int *a2);
+extern int MultiplayerGameMode_GetFirst();
+extern int NetworkLobby_UpdatePlayerList();
+extern int __stdcall ObjectClass_FindOwner(_DWORD *a1, void *a2);
+extern int __stdcall Text_MeasureWidth(int a1, int a2);
+extern char __stdcall Cliff_ProcessTransitions(int a1, int a2);

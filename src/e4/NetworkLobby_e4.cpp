@@ -402,7 +402,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           ResetLobbyFactionTable((int)vtable2); /*0x5dee02*/
           Lobby::InvalidateFactionCombos((Lobby *)hDlg); /*0x5dee09*/
           SkirmishDialogProc(hDlg, 1175, nIDDlgItem, (HWND)lParam); /*0x5dee16*/
-          NetworkLobby::UpdatePlayerList(); /*0x5dee1b*/
+          NetworkLobby_UpdatePlayerList(); /*0x5dee1b*/
           return 0; /*0x5dee2c*/
         }
       }

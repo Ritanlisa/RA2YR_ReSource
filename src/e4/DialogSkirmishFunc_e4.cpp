@@ -377,7 +377,7 @@ LABEL_151:
                 DeleteAndZero::Alt((void **)&v82);
                 return;
               }
-              MultiplayerGameMode::GetFirst();
+              MultiplayerGameMode_GetFirst();
             }
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30328] = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956];
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30332] = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960];

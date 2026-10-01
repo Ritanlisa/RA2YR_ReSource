@@ -28,5 +28,8 @@ struct TypeList_Infantry {
     int GetSize(unsigned int * a2);  // 0x512F70
     DynamicVector * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x5131F0
     DynamicVector * Constructor_1(unsigned int * Block, char a2);  // 0x5135C0
+    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

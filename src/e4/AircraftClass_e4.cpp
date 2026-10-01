@@ -532,7 +532,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
               if ( !a1->locomotor[0] ) /*0x41ad33*/
                 WinAPI::Wrapper(-2147467261); /*0x41ad42*/
               if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1->locomotor[0] + 96))(a1->locomotor[0]) /*0x41ad5d*/
-                && !this->HouseClass::IonSensitivesShouldBeOffline() )
+                && !((HouseClass *)this)->IonSensitivesShouldBeOffline() )
               {
                 if ( !a1->locomotor[0] ) /*0x41ad66*/
                   WinAPI::Wrapper(-2147467261); /*0x41ad75*/

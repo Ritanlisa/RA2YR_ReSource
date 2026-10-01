@@ -353,7 +353,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6448*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/
   }
   return result; /*0x6e6462*/

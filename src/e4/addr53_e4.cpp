@@ -236,7 +236,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v30 = v37 - 40; /*0x531444*/
   if ( v11 ) /*0x53144d*/
   {
-    v12 = (int)(Text::MeasureWidth(v10, 0, unsigned int a2));
+    v12 = (int)(Text_MeasureWidth(v10, 0, unsigned int a2));
     v29 = (int)(v36 - v12 - 10);
   }
   TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
@@ -244,7 +244,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
   {
-    v15 = (size_t)(Text::MeasureWidth(v13, 0, unsigned int a1, unsigned int a3));
+    v15 = (size_t)(Text_MeasureWidth(v13, 0, unsigned int a1, unsigned int a3));
     v29 = (size_t)(v36 - v15 - 10);
     v30 += v11->q01C + 3; /*0x5314ca*/
   }

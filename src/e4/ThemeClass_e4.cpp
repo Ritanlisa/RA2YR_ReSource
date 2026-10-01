@@ -175,10 +175,10 @@ LABEL_10:
     }
     ++v5; /*0x720707*/
   }
-  result = this->Audio::GetEnabled(); /*0x720714*/
+  result = ((Audio *)this)->GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = (unsigned int)(this->Audio::GetEnabled());
+    Enabled = (unsigned int)(((Audio *)this)->GetEnabled());
     result = (void *)((unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u)));
     *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/

@@ -495,7 +495,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v36 = (*(int (**)(int *))(v31 + 752))(a1); /*0x707200*/
   v35 = (*(int (**)(int *))(*a1 + 748))(a1); /*0x70720c*/
   SHPFrame = (int *)BuildingClass::GetSHPFrame(v25, v24); /*0x707215*/
-  v32 = Miles::DriverGet(); /*0x707227*/
+  v32 = Miles_DriverGet(); /*0x707227*/
   BlitterDrawSHP( /*0x707235*/
     (int *)g_DSurface_Hidden_2->__pad_0,
     (int)v25,

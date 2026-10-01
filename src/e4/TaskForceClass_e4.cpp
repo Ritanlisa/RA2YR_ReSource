@@ -346,7 +346,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     v4 = 6; /*0x6e86e6*/
     do /*0x6e86fa*/
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3); /*0x6e86f1*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, v3); /*0x6e86f1*/
       v3 += 2; /*0x6e86f6*/
       --v4; /*0x6e86f9*/
     }

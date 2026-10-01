@@ -489,14 +489,14 @@ int sub_721040(int a1)
         v3 = v5; /*0x72109a*/
         if ( byte_A8EC74 ) /*0x7210a0*/
         {
-          if ( this->Audio::IsSoundEnabled() ) /*0x7210a6*/
+          if ( ((Audio *)this)->IsSoundEnabled() ) /*0x7210a6*/
           {
             if ( !byte_A8ED64 ) /*0x7210ba*/
             {
               dword_A83D18 = v3; /*0x7210bf*/
               if ( v3 != -1 && v3 != -2 && v3 != dword_A83D14 ) /*0x7210d2*/
               {
-                this->Debug::Log(); /*0x7210da*/
+                ((Debug *)this)->Log(); /*0x7210da*/
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
                   if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/

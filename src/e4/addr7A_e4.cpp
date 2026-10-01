@@ -418,7 +418,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
       if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
-    GameUI = (HWND)this->Dialog::FindGameUI(); /*0x7a0e2d*/
+    GameUI = (HWND)((Dialog *)this)->FindGameUI(); /*0x7a0e2d*/
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }

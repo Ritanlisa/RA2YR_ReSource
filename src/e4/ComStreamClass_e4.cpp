@@ -49,7 +49,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  this->Debug::Log(); /*0x7a3da1*/
+  ((Debug *)this)->Log(); /*0x7a3da1*/
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -138,7 +138,7 @@ LABEL_16:
     if ( !dword_B77DC8 ) /*0x7a403c*/
       CloseDialog(v16, 0); /*0x7a4042*/
   }
-  Current = (HWND)this->Dialog::GetCurrent(); /*0x7a4047*/
+  Current = (HWND)((Dialog *)this)->GetCurrent(); /*0x7a4047*/
   v18 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v18 ) /*0x7a4058*/
     SetFocus(v18); /*0x7a405b*/

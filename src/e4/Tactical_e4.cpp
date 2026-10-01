@@ -403,9 +403,9 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   v21 = *aP2 + *v10; /*0x48446b*/
   *v10 = v21; /*0x48446f*/
   *(unsigned int *)aP5 = v21; /*0x484471*/
-  if ( !(uint8_t)this->LightningStorm::IsActive() ) /*0x48447a*/
+  if ( !(uint8_t)((LightningStorm *)this)->IsActive() ) /*0x48447a*/
   {
-    if ( (uint8_t)this->PsyDom::IsActive() ) /*0x4844c4*/
+    if ( (uint8_t)((PsyDom *)this)->IsActive() ) /*0x4844c4*/
     {
       *v10 += v9->Tactical_field_0x11B[0] * (int)dword_A8B230[380].vtable1 - dword_A8B230[380].referenceCount; /*0x4844ec*/
       referenceCount = ((unsigned int *)(dword_A8B230))[380].referenceCount; /*0x4844fa*/

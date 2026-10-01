@@ -361,13 +361,13 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->BounceAnim); /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Spawns); /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Warhead); /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TiberiumSpawnType); /*0x4288cc*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->BounceAnim); /*0x428899*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Spawns); /*0x4288aa*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Warhead); /*0x4288bb*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TiberiumSpawnType); /*0x4288cc*/
     if ( !a1->DemandLoad ) /*0x4288d1*/
     {
       if ( ((unsigned int *)a1)[0] ) /*0x4288db*/
@@ -404,7 +404,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v14; // ecx
 
   AbstractTy  ((AbstractTypeClass *)((gamemd::AbstractClass *)((AbstractTypeClass *)this)))->ProcessPower(a2); 
-  Power::Tim  Power::TimerProcess((void *)(this->Layer[0])); 
+  Power::TimerProcess((void *)(this->Layer[0])); 
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v3); 
   LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
@@ -425,15 +425,15 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v11); 
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v12); 
-  Power::Tim  Power::TimerProcess((void *)(this->MiddleFrameWidth)); 
+  Power::TimerProcess((void *)(this->MiddleFrameWidth)); 
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v13); 
-  Power::Tim  Power::TimerProcess((void *)(this->Rate)); 
-  Power::Tim  Power::TimerProcess((void *)(this->Start)); 
-  Power::Tim  Power::TimerProcess((void *)(this->LoopStart)); 
-  Power::Tim  Power::TimerProcess((void *)(this->LoopEnd)); 
-  Power::Tim  Power::TimerProcess((void *)(this->End)); 
+  Power::TimerProcess((void *)(this->Rate)); 
+  Power::TimerProcess((void *)(this->Start)); 
+  Power::TimerProcess((void *)(this->LoopStart)); 
+  Power::TimerProcess((void *)(this->LoopEnd)); 
+  Power::TimerProcess((void *)(this->End)); 
   Power::Tim  Power::TimerProcess((void *)(this->Report)); 
   Power::Tim  Power::TimerProcess((void *)(this->StopSound)); 
   Power::Tim  Power::TimerProcess((void *)(this->NumParticles)); 

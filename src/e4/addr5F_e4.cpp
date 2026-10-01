@@ -229,7 +229,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       goto LABEL_35; /*0x5f310a*/
     }
     IDA_LOBYTE(v10) = (gamemd::Process)(0); /*0x5f2db1*/
-    ScreenSaver::Process(v10, v18); /*0x5f2db3*/
+    Process@<al>(v10, v18); /*0x5f2db3*/
     memset(Source, 0, 0xF0u); /*0x5f2dc3*/
     v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))(
            g_ClipboardBuffer,
@@ -444,7 +444,7 @@ char sub_5FBEF0()
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
         IDA_LOBYTE(v1) = 0; /*0x5fbf48*/
-        ScreenSaver::Process(v1); /*0x5fbf4a*/
+        Process@<al>(v1); /*0x5fbf4a*/
       }
     }
     Dialog::Destroy(Dialog); /*0x5fbf59*/

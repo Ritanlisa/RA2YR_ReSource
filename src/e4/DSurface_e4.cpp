@@ -180,13 +180,13 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
   int v28; // [esp+20h] [ebp-8h] BYREF
   int v29; // [esp+24h] [ebp-4h] BYREF
 
-  this->Debug::Log(); /*0x4ba780*/
-  v1 = this->DDraw::CheckCapabilities(); /*0x4ba78d*/
+  ((Debug *)this)->Log(); /*0x4ba780*/
+  v1 = ((DDraw *)this)->CheckCapabilities(); /*0x4ba78d*/
   g_DDraw_AllowStretchBlits = (v1 & 0x40) != 0; /*0x4ba79b*/
-  this->Debug::Log(); /*0x4ba7b4*/
+  ((Debug *)this)->Log(); /*0x4ba7b4*/
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
     LOBYTE(stru_820320.Start) = 0; /*0x4ba7c1*/
-  this->Debug::Log(); /*0x4ba7e3*/
+  ((Debug *)this)->Log(); /*0x4ba7e3*/
   v2 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4ba7ea*/
   v3 = (unsigned int *)v2; /*0x4ba7ef*/
   if ( v2 ) /*0x4ba7f8*/
@@ -218,7 +218,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     *(unsigned int *)(v5[8] + 4) |= 0x20u; /*0x4ba879*/
     *(unsigned int *)(v5[8] + 20) = this != 0; /*0x4ba87f*/
   }
-  this->Debug::Log(); /*0x4ba887*/
+  ((Debug *)this)->Log(); /*0x4ba887*/
   v6 = (int *)(v5 + 7); /*0x4ba897*/
   v7 = g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba8a1*/
          g_lpDirectDraw7,
@@ -227,7 +227,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
-    this->Debug::Log(); /*0x4ba8b3*/
+    ((Debug *)this)->Log(); /*0x4ba8b3*/
     if ( this ) /*0x4ba8bd*/
     {
       v8 = *v6; /*0x4ba8bf*/
@@ -245,7 +245,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     memset((void *)v5[8], 0, 0x6Cu); /*0x4ba90b*/
     *(unsigned int *)v5[8] = 108; /*0x4ba910*/
     if ( (*(int (**)(int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, v5[8]) ) /*0x4ba91f*/
-      this->Debug::Log(); /*0x4ba92b*/
+      ((Debug *)this)->Log(); /*0x4ba92b*/
     v11 = (unsigned int *)v5[8]; /*0x4ba933*/
     v5[4] = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
     v12 = (v11[26] & 0x4000) != 0; /*0x4ba951*/
@@ -354,7 +354,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
         if ( v22 == 2 && g_BitShift_Red == 11 && g_BitShift_Green_0 == 3 ) /*0x4babd2*/
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(2);
-          this->Debug::Log(); /*0x4babdf*/
+          ((Debug *)this)->Log(); /*0x4babdf*/
           return v5; /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
@@ -364,7 +364,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
         if ( g_BitShift_Green_0 == 3 ) /*0x4bab72*/
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(0);
-          this->Debug::Log(); /*0x4bab87*/
+          ((Debug *)this)->Log(); /*0x4bab87*/
           return v5; /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
@@ -372,7 +372,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       if ( g_BitShift_Red != 11 || g_BitShift_Green_0 != 2 ) /*0x4bac05*/
       {
 LABEL_60:
-        this->Debug::Log(); /*0x4bac11*/
+        ((Debug *)this)->Log(); /*0x4bac11*/
         return v5; /*0x4bac27*/
       }
     }
@@ -384,7 +384,7 @@ LABEL_60:
     goto LABEL_60; /*0x4bac07*/
   }
   DDraw::LogError(v7,(void *)(1)); /*0x4bac2f*/
-  this->Debug::Log(); /*0x4bac3a*/
+  ((Debug *)this)->Log(); /*0x4bac3a*/
   if ( v5 ) /*0x4bac44*/
     (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/

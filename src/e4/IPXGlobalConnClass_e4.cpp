@@ -46,34 +46,34 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   unsigned int *v11; // edx
 
   v2 = this; /*0x540113*/
-  this->Debug::Log(); /*0x540132*/
+  ((Debug *)this)->Log(); /*0x540132*/
   IPXGlobalConnClass_field_0x04 = (Terrain *)v2->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
     TileType = ((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(i); /*0x540158*/
-    this->Debug::Log(); /*0x54015a*/
+    ((Debug *)this)->Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
-      this->Debug::Log(); /*0x540170*/
+      ((Debug *)this)->Log(); /*0x540170*/
       v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x540175*/
       v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x540186*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
       {
-        Ticks = this->Timer::GetTicks(); /*0x54019a*/
+        Ticks = ((Timer *)this)->GetTicks(); /*0x54019a*/
         v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x54019c*/
         v7 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5401a3*/
       }
       if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          this->Timer::GetTicks(); /*0x540244*/
-        this->Debug::Log(); /*0x54026f*/
+          ((Timer *)this)->GetTicks(); /*0x540244*/
+        ((Debug *)this)->Log(); /*0x54026f*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          this->Timer::GetTicks(); /*0x5401c0*/
-        this->Debug::Log(); /*0x5401eb*/
+          ((Timer *)this)->GetTicks(); /*0x5401c0*/
+        ((Debug *)this)->Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
         v10 = *((unsigned int *)this + 53); /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
@@ -95,7 +95,7 @@ LABEL_14:
     }
     IPXGlobalConnClass_field_0x04 = (Terrain *)v2->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
-  this->Debug::Log(); /*0x540296*/
+  ((Debug *)this)->Log(); /*0x540296*/
 
 }
 } // namespace gamemd

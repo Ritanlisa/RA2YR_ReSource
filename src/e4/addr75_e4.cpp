@@ -353,7 +353,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
             }
             if ( g_InfantryDrawState ) /*0x752544*/
               ((Audio *)(g_InfantryDrawState))->Release(); /*0x752546*/
-            this->ThemeClass::ClearQueues(); /*0x75254b*/
+            ((ThemeClass *)this)->ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
           v7 = AudioQueue::FindByData(v5); /*0x75255e*/

@@ -421,7 +421,7 @@ int SaveGame::LoadVeinholeData()
   uniqueId = (int)(((char *)&stru_B1D290)); /*0x74ed7a*/
   if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &uniqueId, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
-  v4 = this->Object::ComputeAllocationSize(); /*0x74ed9a*/
+  v4 = ((Object *)this)->ComputeAllocationSize(); /*0x74ed9a*/
   v5 = *(unsigned int *)this->__pad_0; /*0x74ed9c*/
   v15 = v4; /*0x74eda3*/
   if ( (*(int (**)(SaveGame *, int, int, unsigned int))(v5 + 16))( /*0x74edac*/

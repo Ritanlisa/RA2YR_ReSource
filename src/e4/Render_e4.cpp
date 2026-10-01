@@ -202,7 +202,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       dword_A8B8BC = 0; /*0x652347*/
       byte_A8E9A0 = 0; /*0x652351*/
       if ( dword_B04874 ) /*0x652358*/
-                this->Mouse::HideWindow();
+                ((Mouse *)this)->HideWindow();
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x652366*/
       {
         byte_B0BD78 = 1; /*0x65236a*/

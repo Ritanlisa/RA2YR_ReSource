@@ -102,5 +102,7 @@ struct Rules {
     IUnknown * * ReadCombatINI();  // 0x66BBB0
     unsigned int * CopyDataArray(VectorClass_flat * aP1);  // 0x67A570
     char * GetProductionTimeMult(CellStruct * aP1);  // 0x5FB2E0
+    unsigned char m_5[64];  // pad compile-supply (G41.47)
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

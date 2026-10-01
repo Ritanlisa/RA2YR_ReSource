@@ -53,7 +53,7 @@ void SyncDelay::Start(void *a1, void *a2)
   v3 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e171*/
   if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e179*/
   {
-    Ticks = this->Timer::GetTicks(); /*0x55e180*/
+    Ticks = ((Timer *)this)->GetTicks(); /*0x55e180*/
     v2 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e185*/
     v5 = Ticks - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e18b*/
     if ( v5 >= v3 ) /*0x55e18f*/
@@ -76,7 +76,7 @@ void SyncDelay::Start(void *a1, void *a2)
       }
       if ( !v6 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
-      this->Event::Dispatch(); /*0x55e1f3*/
+      ((Event *)this)->Dispatch(); /*0x55e1f3*/
       if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) && *((unsigned int *)((char *)&stru_A8EB00 + 412)) == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
 LABEL_23:
@@ -117,7 +117,7 @@ LABEL_19:
   v12 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2b4*/
   if ( v2 != -1 ) /*0x55e2bc*/
   {
-    v13 = this->Timer::GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2c8*/
+    v13 = ((Timer *)this)->GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2c8*/
     if ( v13 >= v12 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v12 -= v13; /*0x55e2d2*/
@@ -133,7 +133,7 @@ LABEL_19:
         v15 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2e9*/
         if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e2f1*/
         {
-          v16 = this->Timer::GetTicks(); /*0x55e2f8*/
+          v16 = ((Timer *)this)->GetTicks(); /*0x55e2f8*/
           v14 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2fd*/
           v17 = v16 - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e303*/
           if ( v17 >= v15 ) /*0x55e307*/
@@ -148,7 +148,7 @@ LABEL_19:
 LABEL_37:
         Sleep(v18); /*0x55e336*/
       }
-      v19 = this->Timer::GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e323*/
+      v19 = ((Timer *)this)->GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e323*/
       if ( v19 >= v18 ) /*0x55e32b*/
       {
         v18 = 0; /*0x55e334*/
@@ -161,7 +161,7 @@ LABEL_38:
   if ( (g_MissionQueueFrame.waypoints[362] & 1) == 0 ) /*0x55e343*/
   {
     g_MissionQueueFrame.waypoints[362] |= 1u; /*0x55e34f*/
-    *(unsigned int *)&g_MissionQueueFrame.waypoints[350] = this->Timer::GetTicks(); /*0x55e35a*/
+    *(unsigned int *)&g_MissionQueueFrame.waypoints[350] = ((Timer *)this)->GetTicks(); /*0x55e35a*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[358] = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/
   }
@@ -174,7 +174,7 @@ LABEL_43:
       return result; /*0x55e399*/
     goto LABEL_44; /*0x55e399*/
   }
-  result = this->Timer::GetTicks() - *(unsigned int *)&g_MissionQueueFrame.waypoints[350]; /*0x55e38b*/
+  result = ((Timer *)this)->GetTicks() - *(unsigned int *)&g_MissionQueueFrame.waypoints[350]; /*0x55e38b*/
   if ( result < v21 ) /*0x55e393*/
   {
     v21 -= result; /*0x55e395*/
@@ -192,7 +192,7 @@ LABEL_44:
     *(unsigned int *)&g_MissionQueueFrame.waypoints[286] = 0; /*0x55e3ce*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[290] = 0; /*0x55e3d4*/
   }
-  result = this->Timer::GetTicks(); /*0x55e3de*/
+  result = ((Timer *)this)->GetTicks(); /*0x55e3de*/
   *(unsigned int *)&g_MissionQueueFrame.waypoints[350] = result; /*0x55e3ec*/
   *(unsigned int *)&g_MissionQueueFrame.waypoints[354] = v26[2]; /*0x55e3f1*/
   *(unsigned int *)&g_MissionQueueFrame.waypoints[358] = 60; /*0x55e3f7*/

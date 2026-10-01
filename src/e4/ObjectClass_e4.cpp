@@ -152,7 +152,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
       goto LABEL_38; /*0x4d8062*/
     case 2: /*0x4d7de0*/
 LABEL_38:
-      aP4 = (void **)*ObjectClass::FindPlacementCell((ObjectClass *)&v42, referenceCount, v7, 0, v38, v39); /*0x4d8065*/
+      aP4 = (void **)*FindPlacementCell@<eax>((ObjectClass *)&v42, referenceCount, v7, 0, v38, v39); /*0x4d8065*/
       if ( aP4 == (gamemd::FootClass *)((void **))g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = this->vtable0; /*0x4d8099*/
@@ -233,7 +233,7 @@ LABEL_52:
     case 51: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d7df3*/
         return 0; /*0x4d7df3*/
-      PlacementCell = (void ***)ObjectClass::FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
+      PlacementCell = (void ***)FindPlacementCell@<eax>((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = this->vtable0; /*0x4d7e06*/
       aP4 = (gamemd::FootClass *)(*PlacementCell); /*0x4d7e0c*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP4); /*0x4d7e18*/
@@ -413,24 +413,24 @@ LABEL_28:
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db566*/
             OleLoadFromStream(v4, &IID_ILocomotion, (LPVOID *)(aP0 + 1652)); /*0x4db568*/
             *(unsigned int *)(aP0 + 1440) = 0; /*0x4db574*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1496)); /*0x4db591*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1444)); /*0x4db5a2*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1448)); /*0x4db5b3*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1480)); /*0x4db5c4*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1484)); /*0x4db5d5*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1500)); /*0x4db5e6*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1684)); /*0x4db5f7*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1692)); /*0x4db608*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1496)); /*0x4db591*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1444)); /*0x4db5a2*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1448)); /*0x4db5b3*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1480)); /*0x4db5c4*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1484)); /*0x4db5d5*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1500)); /*0x4db5e6*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1684)); /*0x4db5f7*/
+            ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1692)); /*0x4db608*/
             AudioController::Init((unsigned int *)(aP0 + 1348)); /*0x4db613*/
             *(unsigned char *)(aP0 + 1340) = 0; /*0x4db618*/
             *(unsigned int *)(aP0 + 1344) = 0; /*0x4db61e*/
             for ( i = 0; i < *(unsigned int *)(aP0 + 1468); ++i ) /*0x4db62e*/
-              ObjectPtr::RegisterForTracking( /*0x4db63f*/
+              ObjectPtr_RegisterForTracking( /*0x4db63f*/
                 (int)&SwizzleManagerClass_Instance,
                 (int *)(*(unsigned int *)(aP0 + 1456) + 4 * i));
             for ( j = 0; j < *(unsigned int *)(aP0 + 1432); ++j ) /*0x4db659*/
-              ObjectPtr::RegisterForTracking( /*0x4db66a*/
+              ObjectPtr_RegisterForTracking( /*0x4db66a*/
                 (int)&SwizzleManagerClass_Instance,
                 (int *)(*(unsigned int *)(aP0 + 1420) + 4 * j));
             return 0; /*0x4db67a*/

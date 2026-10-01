@@ -92,7 +92,7 @@ int Game::SendCampaignOptions()
 
   v13 = 50; /*0x46d4bc*/
   strcpy(v14,(const char *)(unk_A8B380)); /*0x46d4cd*/
-  result = this->Settings::CheckString(); /*0x46d4d6*/
+  result = ((Settings *)this)->CheckString(); /*0x46d4d6*/
   if ( (unsigned char)result )
   {
     Debug::Log(aSendingCampaig); /*0x46d4e8*/
@@ -209,7 +209,7 @@ AbstractClass * * Game::DestroyAllObjects()
   ++dword_A8E7AC; /*0x53445f*/
   stru_B0F698.Count = 0; /*0x534465*/
   ((AbstractClassVector *)((int)&stru_B0F698))->ddtor(); /*0x53446b*/
-  this->MixFileClass::CleanupCache(); /*0x534470*/
+  ((MixFileClass *)this)->CleanupCache(); /*0x534470*/
   for ( i = dword_B0E844; dword_B0E844; i = dword_B0E844 ) /*0x53447c*/
   {
     if ( !byte_B0E84C ) /*0x534484*/

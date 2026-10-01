@@ -44,7 +44,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0aa*/
   if ( ((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x48d0b7*/
   {
-    this->Network::Dispatch(); /*0x48d0b9*/
+    ((Network *)this)->Dispatch(); /*0x48d0b9*/
     result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0be*/
   }
   if ( result == 1 ) /*0x48d0c6*/

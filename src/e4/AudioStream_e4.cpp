@@ -387,7 +387,7 @@ int AudioStream::SetPlaybackCallback()
   v1 = this->AudioStream_field_0xC0[0]; /*0x407a31*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a3b*/
   {
-    *(unsigned int *)(v1 + 32) = this->Audio::Callback(); /*0x407a42*/
+    *(unsigned int *)(v1 + 32) = ((Audio *)this)->Callback(); /*0x407a42*/
     *(unsigned int *)(v1 + 36) = v2; /*0x407a45*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a48*/
@@ -410,7 +410,7 @@ int AudioStream::ProcessCallback(void *a1_1)
   v1 = this->AudioStream_field_0xC0[0]; /*0x407a61*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a6b*/
   {
-    *(unsigned int *)(v1 + 32) = this->Audio::Callback(); /*0x407a72*/
+    *(unsigned int *)(v1 + 32) = ((Audio *)this)->Callback(); /*0x407a72*/
     *(unsigned int *)(v1 + 36) = v2; /*0x407a75*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a78*/

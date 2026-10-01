@@ -58,6 +58,9 @@ struct CStreamClass {
     int Stat(int a1, int a2);
     int UnlockRegion(int a1, int a2, int a3);
     int Write(int a1, int a2, int a3);
+    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 
 } // namespace gamemd

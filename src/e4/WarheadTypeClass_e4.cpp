@@ -600,11 +600,11 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       ((DynamicVector *)((DynamicVector *)&v2->__pad_1A0[8]))->Add_Alt(&a2); /*0x75e239*/
     }
     for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/
-      ObjectPtr::RegisterForTracking( /*0x75e260*/
+      ObjectPtr_RegisterForTracking( /*0x75e260*/
         (int)&SwizzleManagerClass_Instance,
         (int *)(v2->WarheadTypeClass_field_0x108 + 4 * m));
     for ( n = 0; n < v2->unused_1CC[0]; ++n ) /*0x75e27a*/
-      ObjectPtr::RegisterForTracking( /*0x75e28b*/
+      ObjectPtr_RegisterForTracking( /*0x75e28b*/
         (int)&SwizzleManagerClass_Instance,
         (int *)(v2->WarheadTypeClass_field_0x190[0] + 4 * n));
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->WarheadTypeClass_field_0x140); /*0x75e2a7*/

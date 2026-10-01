@@ -495,7 +495,7 @@ void * * ScenarioClass_SetTimer(int a1)
 
   if ( a1 ) /*0x684068*/
   {
-    Ticks = (void **)(this->Timer::GetTicks());
+    Ticks = (void **)(((Timer *)this)->GetTicks());
     v3 = (char *)((void **)((char *)dword_A8B230 + 1568));
     *((unsigned int *)dword_A8B230 + 392) = Ticks; /*0x68408c*/
     *((unsigned int *)v3 + 1) = v9; /*0x684092*/

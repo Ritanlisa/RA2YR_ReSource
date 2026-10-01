@@ -30,7 +30,7 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
   LOBYTE(IsSoundEnabled) = byte_A8EC74; /*0x720b20*/
   if ( byte_A8EC74 ) /*0x720b2a*/
   {
-    IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x720b2c*/
+    IsSoundEnabled = ((Audio *)this)->IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
       LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
@@ -49,7 +49,7 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( *((unsigned int *)this + 11) ) /*0x720b92*/
-                LOBYTE(IsSoundEnabled) = this->ThemeClass::RequestBuffer(); /*0x720b99*/
+                LOBYTE(IsSoundEnabled) = ((ThemeClass *)this)->RequestBuffer(); /*0x720b99*/
               *((unsigned char *)this + 17) = 1; /*0x720b9e*/
             }
           }
@@ -76,7 +76,7 @@ int Theme::Stop(char aP1)
   LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x720ea0*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x720eaa*/
   {
-    result = this->Audio::IsSoundEnabled(); /*0x720eb0*/
+    result = ((Audio *)this)->IsSoundEnabled(); /*0x720eb0*/
     if ( result ) /*0x720eb7*/
     {
       LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x720ebd*/
@@ -91,7 +91,7 @@ int Theme::Stop(char aP1)
           ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
         if ( Audio::IsSoundPlaying(*((Audio **)this + 11)) != 0 ) /*0x720f04*/
         {
-          result = this->Debug::Log(); /*0x720f14*/
+          result = ((Debug *)this)->Log(); /*0x720f14*/
           v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             result = ThemeClass::RequestBuffer(v5); /*0x720f23*/
@@ -99,7 +99,7 @@ int Theme::Stop(char aP1)
         }
         else
         {
-LABEL_14: result = (int)(this->Debug::Log());
+LABEL_14: result = (int)(((Debug *)this)->Log());
           v6 = (int)((Audio *)*((unsigned int *)this + 11));
           if ( v6 ) /*0x720f44*/
             result = ((Audio *)(v6))->Release(); /*0x720f46*/

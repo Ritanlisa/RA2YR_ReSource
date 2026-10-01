@@ -64,5 +64,6 @@ struct WinsockInterface {
 // --- flat members (END) ---
     void * ProcessPacket(int a2);  // 0x770270
     int Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x7B1DE0
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

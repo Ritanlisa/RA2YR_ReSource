@@ -20,6 +20,7 @@ struct unknown {
     int Seek(int a2, int a3, void *a3_2);
     unsigned int Write(int a2);
     void ddtor(void *a1);
+    unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 
 } // namespace gamemd

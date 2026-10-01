@@ -213,7 +213,7 @@ int DDraw::HandleSuspend(void *a1)
   LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 412)); /*0x5d2530*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 ) /*0x5d253b*/
   {
-    this->Debug::Log(); /*0x5d2546*/
+    ((Debug *)this)->Log(); /*0x5d2546*/
     for ( i = 0; i < *((unsigned int *)this + 10); ++i ) /*0x5d2555*/
     {
       v4 = *(unsigned int *)(*((unsigned int *)this + 7) + 4 * i); /*0x5d255a*/
@@ -221,11 +221,11 @@ int DDraw::HandleSuspend(void *a1)
     }
     while ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x5d2571*/
     {
-      this->Debug::Log(); /*0x5d257e*/
+      ((Debug *)this)->Log(); /*0x5d257e*/
       Sleep(0x1F4u); /*0x5d258b*/
       MessageLoop(); /*0x5d258d*/
     }
-    this->Debug::Log(); /*0x5d25a0*/
+    ((Debug *)this)->Log(); /*0x5d25a0*/
     result = *((unsigned int *)this + 10); /*0x5d25a5*/
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {

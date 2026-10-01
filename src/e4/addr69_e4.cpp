@@ -474,7 +474,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 355); /*0x6942c2*/
     TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
-    LoadScreen::Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
+    Render@<eax>((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
   }
   v9 = a3; /*0x694307*/
@@ -513,7 +513,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
-    this->this->Debug::Log(); /*0x6945b1*/
+    this->((Debug *)this)->Log(); /*0x6945b1*/
     qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
@@ -535,7 +535,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v19 = v35; /*0x694629*/
     if ( Ticks != -1 ) /*0x694634*/
     {
-      v20 = this->this->Timer::GetTicks() - Ticks; /*0x69463f*/
+      v20 = this->((Timer *)this)->GetTicks() - Ticks; /*0x69463f*/
       if ( v20 >= v19 ) /*0x694645*/
         goto LABEL_53; /*0x694645*/
       v19 -= v20; /*0x694647*/
@@ -544,7 +544,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
       goto LABEL_53; /*0x69464b*/
   }
   MessageLoop(); /*0x6943a3*/
-  this->this->Event::Dispatch(); /*0x6943a8*/
+  this->((Event *)this)->Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
   if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/

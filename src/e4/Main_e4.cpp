@@ -28,7 +28,7 @@ void Main::CreateDialog()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x4e1d1d*/
-  this->Debug::Log(); /*0x4e1d25*/
+  ((Debug *)this)->Log(); /*0x4e1d25*/
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
@@ -40,12 +40,12 @@ void Main::CreateDialog()
     Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
-      if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
+      if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
         LOBYTE(v5) = 0; /*0x4e1d8a*/
-        ScreenSaver::Process(v5, v6); /*0x4e1d8c*/
+        Process@<al>(v5, v6); /*0x4e1d8c*/
       }
     }
     if ( i == 1 ) /*0x4e1d9d*/
@@ -55,7 +55,7 @@ void Main::CreateDialog()
     }
     Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/
   }
-  this->Debug::Log(); /*0x4e1dd0*/
+  ((Debug *)this)->Log(); /*0x4e1dd0*/
 
 }
 } // namespace gamemd

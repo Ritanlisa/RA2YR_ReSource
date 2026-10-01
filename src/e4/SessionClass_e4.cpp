@@ -205,10 +205,10 @@ MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2
   v4 = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * *(unsigned int *)(*((unsigned int *)dword_A83C9C + *(unsigned int *)(aP1 + 7284)) + 188)); /*0x5adf5b*/
   if ( !v4 ) /*0x5adf60*/
   {
-    this->Debug::Log(); /*0x5adf67*/
+    ((Debug *)this)->Log(); /*0x5adf67*/
     return 0; /*0x5adf78*/
   }
-  this->Debug::Log(); /*0x5adf84*/
+  ((Debug *)this)->Log(); /*0x5adf84*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Assign((const char *)(v4 + 36)); /*0x5adf91*/
   pad_50 = (char *)(this->__pad_50); /*0x5adf96*/
   v7 = ((SessionClass *)((SessionClass *)pad_50))->LoadMapSelection((char **)&((unsigned int *)(v13.m_3))[1]) == 0; /*0x5adfab*/
@@ -216,7 +216,7 @@ MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2
   if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, *(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
-    this->Debug::Log(); /*0x5adfc3*/
+    ((Debug *)this)->Log(); /*0x5adfc3*/
     return 0; /*0x5adfd4*/
   }
   ScenarioClass::SetFileName((char *)aP1, &g_INI_DefaultBuffer); /*0x5ae013*/

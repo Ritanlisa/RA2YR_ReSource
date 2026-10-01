@@ -200,8 +200,8 @@ int sub_786390(void * a1)
     return 1; /*0x78639f*/
   byte_B77E75 = 1; /*0x7863ad*/
   LoadNetworkShareStrings(); /*0x7863b4*/
-    this->Game::ResetFlags();
-    this->Network::InitPlayerSlots();
+    ((Game *)this)->ResetFlags();
+    ((Network *)this)->InitPlayerSlots();
   *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {

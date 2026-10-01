@@ -52,10 +52,10 @@ char AsyncIO::Shutdown(void *a1)
   {
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
-    this->Mixer::RequestAllBuffers(); /*0x5bf4c5*/
+    ((Mixer *)this)->RequestAllBuffers(); /*0x5bf4c5*/
     RequestB    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); 
     RequestB    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x4000); 
-    result = this->AudioMixer::Pump(); /*0x5bf4ea*/
+    result = ((AudioMixer *)this)->Pump(); /*0x5bf4ea*/
     LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
   }
   return result; /*0x5bf4f5*/
@@ -76,12 +76,12 @@ int AsyncIO::WaitCompletion(void *a1)
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
-  Ticks = this->Timer::GetTicks(); /*0x774bcf*/
+  Ticks = ((Timer *)this)->GetTicks(); /*0x774bcf*/
   v2 = *((unsigned char *)this + 81); /*0x774bd3*/
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
-    Ticks = this->Timer::GetTicks(); /*0x774bf4*/
+    Ticks = ((Timer *)this)->GetTicks(); /*0x774bf4*/
     v8 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
@@ -94,7 +94,7 @@ int AsyncIO::WaitCompletion(void *a1)
       v3 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = this->Timer::GetTicks() - Ticks; /*0x774c41*/
+        v4 = ((Timer *)this)->GetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v3 ) /*0x774c47*/
           break; /*0x774c47*/
         v3 -= v4; /*0x774c49*/

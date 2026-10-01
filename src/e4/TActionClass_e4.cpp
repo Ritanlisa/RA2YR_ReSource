@@ -240,7 +240,7 @@ int TActionClass::executeRepairAction(int a2)
   }
   if ( !a2 ) /*0x577cc2*/
 LABEL_7:
-    this->Debug::Log(); /*0x577cc4*/
+    ((Debug *)this)->Log(); /*0x577cc4*/
   ((HouseClass *)(0))->ResetObjectOrders(0); /*0x577cd1*/
   v4 = *((unsigned int *)this + 61); /*0x577ce0*/
   *((unsigned int *)this + 67) = 1; /*0x577ce6*/

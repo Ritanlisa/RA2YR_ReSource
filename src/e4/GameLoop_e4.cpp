@@ -13,7 +13,7 @@ namespace gamemd {
 int GameLoop::Thunk()
 {
 
-  return this->Game::ProcessIdle();
+  return ((Game *)this)->ProcessIdle();
 
 }
 }

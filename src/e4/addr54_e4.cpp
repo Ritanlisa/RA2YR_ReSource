@@ -115,7 +115,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   if ( !v13 ) /*0x541229*/
   {
     ++this->location[1]; /*0x541232*/
-    this->Debug::Log(); /*0x541240*/
+    ((Debug *)this)->Log(); /*0x541240*/
   }
   return v13; /*0x5411af*/
 

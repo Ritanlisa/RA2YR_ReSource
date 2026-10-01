@@ -110,14 +110,14 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = this->Timer::GetTicks(); /*0x5e7774*/
+      result = ((Timer *)this)->GetTicks(); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
         if ( v17 != (void **)(-1) ) /*0x5e7793*/
         {
-          result = this->Timer::GetTicks() - v17; /*0x5e779e*/
+          result = ((Timer *)this)->GetTicks() - v17; /*0x5e779e*/
           if ( result >= (void **)(1800) ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
@@ -133,21 +133,21 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
           v11 = 1800; /*0x5e77de*/
           if ( v17 != (void **)(-1) ) /*0x5e77e4*/
           {
-            result = this->Timer::GetTicks() - v17; /*0x5e77ef*/
+            result = ((Timer *)this)->GetTicks() - v17; /*0x5e77ef*/
             if ( result >= (void **)(1800) ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
           }
           if ( !v11 ) /*0x5e77fb*/
             break; /*0x5e77fb*/
-          this->Event::Dispatch(); /*0x5e77fd*/
+          ((Event *)this)->Dispatch(); /*0x5e77fd*/
         }
         if ( v10 ) /*0x5e7812*/
           return result; /*0x5e7812*/
         v9 = 1800; /*0x5e778b*/
       }
     case 3: /*0x5e7521*/
-      if ( this->Dialog::GetCurrentType() != 189 /*0x5e7550*/
+      if ( ((Dialog *)this)->GetCurrentType() != 189 /*0x5e7550*/
         || FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
       {
         goto LABEL_42; /*0x5e7557*/
@@ -166,7 +166,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       {
         strcpy((char *)(Str), byte_A8B8E0); /*0x5e765a*/
         _strupr((char *)(Str)); /*0x5e7668*/
-        this->Debug::Log(); /*0x5e7677*/
+        ((Debug *)this)->Log(); /*0x5e7677*/
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
@@ -238,7 +238,7 @@ LABEL_44:
     }
     else
     {
-      Flagged = (int)(this->GameSettings::FindFlagged());
+      Flagged = (int)(((GameSettings *)this)->FindFlagged());
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
@@ -247,11 +247,11 @@ LABEL_44:
     if ( v3 ) /*0x5e75cb*/
     {
       for ( result = ((Network *)(&unk_A8E9C0))->GetQueueCount(); result; result = ((Network *)(&unk_A8E9C0))->GetQueueCount() ) /*0x5e75e0*/
-        this->Event::Dispatch(); /*0x5e75e6*/
+        ((Event *)this)->Dispatch(); /*0x5e75e6*/
       return result; /*0x5e75f7*/
     }
 LABEL_12:
-    this->Event::Dispatch(); /*0x5e75cd*/
+    ((Event *)this)->Dispatch(); /*0x5e75cd*/
   }
 
 }

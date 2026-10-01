@@ -62,13 +62,13 @@ void GameSettings::Read(void *a1, void *a2)
   wchar_t String[200]; // [esp+18h] [ebp-190h] BYREF
 
   _ESI = this; /*0x5fa62f*/
-  this->Debug::Log(); /*0x5fa636*/
+  ((Debug *)this)->Log(); /*0x5fa636*/
   *(unsigned int *)_ESI = INIClass::ReadInt_Overwrite( /*0x5fa65b*/
                       (bool *)&DSurface_ViewBounds.__pad_FC[36],
                       (uint8_t *)g_INI_Key_Options,
                       (uint8_t *)g_INI_Key_GameSpeed,
                       *(unsigned int *)_ESI);
-  this->Debug::Log(); /*0x5fa65d*/
+  ((Debug *)this)->Log(); /*0x5fa65d*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5fa678*/
                     (bool *)&DSurface_ViewBounds.__pad_FC[36],
                     (uint8_t *)g_INI_Key_Options,
@@ -79,7 +79,7 @@ void GameSettings::Read(void *a1, void *a2)
     Int_Overwrite = 4; /*0x5fa685*/
   *(unsigned int *)&_ESI[4] = Int_Overwrite; /*0x5fa68c*/
   *(unsigned int *)&_ESI[4] = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
-  this->Debug::Log(); /*0x5fa6a0*/
+  ((Debug *)this)->Log(); /*0x5fa6a0*/
   v4 = INIClass::ReadInt_Overwrite( /*0x5fa6bb*/
          (bool *)&DSurface_ViewBounds.__pad_FC[36],
          (uint8_t *)g_INI_Key_Options,
@@ -90,25 +90,25 @@ void GameSettings::Read(void *a1, void *a2)
     v4 = 2; /*0x5fa6c8*/
   *(unsigned int *)&_ESI[8] = v4; /*0x5fa6cf*/
   *(unsigned int *)&_ESI[8] = v4 <= 0 ? 0 : v4;
-  this->Debug::Log(); /*0x5fa6e3*/
+  ((Debug *)this)->Log(); /*0x5fa6e3*/
   *(unsigned int *)&_ESI[12] = INIClass::ReadInt_Overwrite( /*0x5fa709*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[36],
                            (uint8_t *)g_INI_Key_Options,
                            (uint8_t *)aScrollmethod,
                            *(unsigned int *)&_ESI[12]);
-  this->Debug::Log(); /*0x5fa70c*/
+  ((Debug *)this)->Log(); /*0x5fa70c*/
   *(unsigned int *)&_ESI[16] = INIClass::ReadInt_Overwrite( /*0x5fa732*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[36],
                            (uint8_t *)g_INI_Key_Options,
                            (uint8_t *)aScrollrate,
                            *(unsigned int *)&_ESI[16]);
-  this->Debug::Log(); /*0x5fa735*/
+  ((Debug *)this)->Log(); /*0x5fa735*/
   _ESI[20] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa75a*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              (uint8_t *)g_INI_Key_Options,
                              (uint8_t *)aAutoscroll,
                              *(unsigned char *)&_ESI[20]);
-  this->Debug::Log(); /*0x5fa771*/
+  ((Debug *)this)->Log(); /*0x5fa771*/
   v5 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
          (bool *)&DSurface_ViewBounds.__pad_FC[36],
          (uint8_t *)g_INI_Key_Options,
@@ -119,33 +119,33 @@ void GameSettings::Read(void *a1, void *a2)
     v5 = 2; /*0x5fa799*/
   *(unsigned int *)&_ESI[24] = v5; /*0x5fa7a0*/
   *(unsigned int *)&_ESI[24] = v5 <= 0 ? 0 : v5;
-  this->Debug::Log(); /*0x5fa7b4*/
+  ((Debug *)this)->Log(); /*0x5fa7b4*/
   _ESI[28] = (GameSettings)1; /*0x5fa7c3*/
-  this->Debug::Log(); /*0x5fa7c6*/
+  ((Debug *)this)->Log(); /*0x5fa7c6*/
   _ESI[29] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa7e6*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              (uint8_t *)g_INI_Key_Options,
                              (uint8_t *)aSidebarcameote,
                              *(unsigned char *)&_ESI[29]);
-  this->Debug::Log(); /*0x5fa7fd*/
+  ((Debug *)this)->Log(); /*0x5fa7fd*/
   _ESI[30] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa81d*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              (uint8_t *)g_INI_Key_Options,
                              (uint8_t *)aUnitactionline,
                              *(unsigned char *)&_ESI[30]);
-  this->Debug::Log(); /*0x5fa834*/
+  ((Debug *)this)->Log(); /*0x5fa834*/
   _ESI[31] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa854*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              (uint8_t *)g_INI_Key_Options,
                              (uint8_t *)aShowhidden,
                              *(unsigned char *)&_ESI[31]);
-  this->Debug::Log(); /*0x5fa86b*/
+  ((Debug *)this)->Log(); /*0x5fa86b*/
   _ESI[32] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa88b*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              (uint8_t *)g_INI_Key_Options,
                              (uint8_t *)aTooltips,
                              *(unsigned char *)&_ESI[32]);
-  this->Debug::Log(); /*0x5fa8a2*/
+  ((Debug *)this)->Log(); /*0x5fa8a2*/
   v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/
          (bool *)&DSurface_ViewBounds.__pad_FC[36],
          g_INI_Key_Video,
@@ -158,7 +158,7 @@ void GameSettings::Read(void *a1, void *a2)
                            g_INI_Key_Video,
                            (uint8_t *)g_INI_Key_ScreenHeight,
                            v7);
-  this->Debug::Log(); /*0x5fa8ea*/
+  ((Debug *)this)->Log(); /*0x5fa8ea*/
   Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/
                                    (int *)&DSurface_ViewBounds.__pad_FC[36],
                                    g_INI_Key_Video,
@@ -167,13 +167,13 @@ void GameSettings::Read(void *a1, void *a2)
   _ESI[52] = Bool_Overwrite; /*0x5fa90c*/
   v9 = Bool_Overwrite == 1 && g_DDraw_AllowStretchBlits == 1; /*0x5fa919*/
   _ESI[52] = (GameSettings)v9; /*0x5fa91f*/
-  this->Debug::Log(); /*0x5fa936*/
+  ((Debug *)this)->Log(); /*0x5fa936*/
   _ESI[53] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/
                              (int *)&DSurface_ViewBounds.__pad_FC[36],
                              g_INI_Key_Video,
                              aAllowhiresmode,
                              *(unsigned char *)&_ESI[53]);
-  this->Debug::Log(); /*0x5fa96d*/
+  ((Debug *)this)->Log(); /*0x5fa96d*/
   *((unsigned int *)((char *)&stru_A8EB00 + 383)) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                          (int *)&DSurface_ViewBounds.__pad_FC[36],
                          g_INI_Key_Video,

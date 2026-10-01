@@ -118,7 +118,7 @@ int Mouse::SetCursor(int aP1, char aP2)
   {
     byte_ABF2DD = 1; /*0x5bdce4*/
     v6 = dword_82D030[7 * aP1]; /*0x5bdceb*/
-    Ticks = this->Timer::GetTicks(); /*0x5bdcf2*/
+    Ticks = ((Timer *)this)->GetTicks(); /*0x5bdcf2*/
     v8 = 0; /*0x5bdcfb*/
     dword_ABF2A0 = Ticks; /*0x5bdcfd*/
     dword_ABF2A4 = v14; /*0x5bdd02*/

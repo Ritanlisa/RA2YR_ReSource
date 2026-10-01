@@ -46,7 +46,7 @@ void BulkData::InitMissionHashing()
     }
   }
   *((unsigned int *)this + 81) = Time; /*0x697b41*/
-  this->Debug::Log(); /*0x697b47*/
+  ((Debug *)this)->Log(); /*0x697b47*/
 
 }
 } // namespace gamemd

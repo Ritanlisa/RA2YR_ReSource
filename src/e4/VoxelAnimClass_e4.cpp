@@ -264,7 +264,7 @@ LABEL_6:
         v28 = v30 + v38[1]; /*0x749d26*/
         v23 = -4 - ZCoordToScreenY(v35); /*0x749d36*/
         SHPFrame = (int *)BuildingClass::GetSHPFrame(*(BuildingClass **)&stru_87F5F0.__pad_58[108], 8193); /*0x749d4e*/
-        v8 = Miles::DriverGet(); /*0x749d5c*/
+        v8 = Miles_DriverGet(); /*0x749d5c*/
         BlitterDrawSHP( /*0x749d6e*/
           (int *)g_DSurface_Hidden_2->__pad_0,
           *(int *)&stru_87F5F0.__pad_58[108],
@@ -318,7 +318,7 @@ LABEL_6:
         v18 = VoxelAnimClass_field_0x0[116](this); /*0x749ea4*/
         v24 = -2 - ZCoordToScreenY(v18); /*0x749eb8*/
         v22 = (int *)BuildingClass::GetSHPFrame(v16, v10); /*0x749ec8*/
-        v19 = Miles::DriverGet(); /*0x749ed6*/
+        v19 = Miles_DriverGet(); /*0x749ed6*/
         LOBYTE(VoxelAnimClass_field_0x104) = BlitterDrawSHP( /*0x749ee4*/
                                                (int *)g_DSurface_Hidden_2->__pad_0,
                                                (int)v16,

@@ -236,7 +236,7 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 
   if ( a2 ) /*0x5d265c*/
   {
-    if ( this->Audio::IsSoundEnabled() ) /*0x5d265e*/
+    if ( ((Audio *)this)->IsSoundEnabled() ) /*0x5d265e*/
     {
       v4 = 0; /*0x5d266a*/
       if ( this->ambientSoundController[1] > 0 ) /*0x5d266e*/

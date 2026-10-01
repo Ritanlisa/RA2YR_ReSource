@@ -296,7 +296,7 @@ int E4Recv_5ADD10::Map_Delete()
   MSEngine::Construct(&v7); /*0x5add1e*/
   Map_Delete_5CEDD0(v8); /*0x5add27*/
   unknown_libname_73(v9); /*0x5add33*/
-  v9[1] = (void *)this->Timer::GetTicks(); /*0x5add48*/
+  v9[1] = (void *)((Timer *)this)->GetTicks(); /*0x5add48*/
   v9[3] = 0; /*0x5add50*/
   *(unsigned int *)v7.__pad_0 = (unsigned int)(&vt_MapSelect); /*0x5add5b*/
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
@@ -312,7 +312,7 @@ int E4Recv_5ADD10::Map_Delete()
   }
   else
   {
-    this->Debug::Log(); /*0x5addf6*/
+    ((Debug *)this)->Log(); /*0x5addf6*/
     return strlen((const char *)this + 4700) != 0 ? (unsigned int)(unsigned int *)this + 4700 : 0;
   }
 

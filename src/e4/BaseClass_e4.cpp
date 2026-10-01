@@ -72,7 +72,7 @@ LABEL_24:
               if ( a2 <= 0 ) /*0x42efe0*/
               {
 LABEL_34:
-                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 29); /*0x42f044*/
+                ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 29); /*0x42f044*/
               }
               else
               {

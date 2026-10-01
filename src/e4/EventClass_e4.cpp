@@ -188,7 +188,7 @@ namespace gamemd {
 int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1)
 {
 
-  this->Debug::Log(); /*0x4c6afc*/
+  ((Debug *)this)->Log(); /*0x4c6afc*/
   if ( aP1 < 0 ) /*0x4c6b0a*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/

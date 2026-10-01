@@ -84,7 +84,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/
-    this->Debug::Log();
+    ((Debug *)this)->Log();
   v5 = fopen(Buffer, Mode); /*0x651755*/
   v5 = v5; /*0x65175a*/
   if ( v5 )
@@ -452,7 +452,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   else
   {
     GetLastError(); /*0x651764*/
-        this->Debug::Log();
+        ((Debug *)this)->Log();
   }
 }
 }

@@ -26,9 +26,9 @@ int AlphaShapeClass::SD_vt13(int a2)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x420da9*/
-  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 10))); 
-  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 11))); 
-  Power::Tim  Power::TimerProcess((void *)(*((unsigned int *)this + 12))); 
+  Power::TimerProcess((void *)(*((unsigned int *)this + 10))); 
+  Power::TimerProcess((void *)(*((unsigned int *)this + 11))); 
+  Power::TimerProcess((void *)(*((unsigned int *)this + 12))); 
   return Pow  return Power::TimerProcess((int)((void *)(*((unsigned int *)this + 13)))); 
 
 }

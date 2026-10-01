@@ -510,7 +510,7 @@ LABEL_63:
       {
     unsigned int v71 = 0;  /* G37 hoist */
         ebx90 = (unsigned int *)(a1 - 4);
-        if ( BulletClass::ComputeImpactTrajectory(a1 - 4, v4) )
+        if ( ComputeImpactTrajectory@<al>(a1 - 4, v4) )
           return 0;
         v61 = *(ObjectClass **)(a1 + 8);
         int v59 = *(unsigned int *)(a1 + 20);
@@ -693,7 +693,7 @@ LABEL_119:
       return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:
       unsigned int * v86 = (unsigned int *)(a1 - 4);
-      if ( BulletClass::ComputeImpactTrajectory(a1 - 4, v4) )
+      if ( ComputeImpactTrajectory@<al>(a1 - 4, v4) )
         return 0;
       v88 = (BuildingTypeClass *)(v86[6] - *(unsigned int *)(v86[3] + 156));
       ecx102 = v86[7] - *(unsigned int *)(v86[3] + 160);

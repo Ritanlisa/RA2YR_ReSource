@@ -410,7 +410,7 @@ void* sub_7B84F0()
         {
           LastError = GetLastError(); /*0x7b8598*/
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
-                    this->Debug::Log();
+                    ((Debug *)this)->Log();
           while ( !dword_B78140 ) /*0x7b85c4*/
             Sleep(0); /*0x7b85ce*/
           WaitForSingleObject(dword_B78154, 0x1388u); /*0x7b85e6*/

@@ -1288,7 +1288,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/
     if ( aP4 == -1 ) /*0x71ff7c*/
-      *(unsigned int *)&this->__pad_0[20] = Text::MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/
+      *(unsigned int *)&this->__pad_0[20] = Text_MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/
     if ( aP5 == -1 ) /*0x71ff94*/
       *(unsigned int *)&this->__pad_0[24] = *(unsigned int *)(Instance + 28) + 2; /*0x71ff9c*/
   }

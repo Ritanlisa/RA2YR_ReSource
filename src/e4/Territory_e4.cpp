@@ -31,7 +31,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       StopThemeClass(1); /*0x7718be*/
       (*(void (**)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
     }
-    Ticks = this->Timer::GetTicks(); /*0x7718d6*/
+    Ticks = ((Timer *)this)->GetTicks(); /*0x7718d6*/
     v4 = (int *)(v3 + 940); /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
@@ -75,7 +75,7 @@ signed int Territory_WorldDominationTour_8::ddtor()
 {
 
   if ( *(unsigned int *)&this->__pad_C[4] == -1 ) /*0x771957*/
-    *(unsigned int *)&this->__pad_C[4] = this->Timer::GetTicks(); /*0x771961*/
+    *(unsigned int *)&this->__pad_C[4] = ((Timer *)this)->GetTicks(); /*0x771961*/
 
 }
 } // namespace gamemd
@@ -145,7 +145,7 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::Open(void *a1_1, void *a2_1, void *a3_1)
 {
 
-  return (uint8_t)this->Audio::IsPlaying() == 0; /*0x7719ca*/
+  return (uint8_t)((Audio *)this)->IsPlaying() == 0; /*0x7719ca*/
 
 }
 } // namespace gamemd

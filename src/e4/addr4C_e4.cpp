@@ -652,7 +652,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
   void *vtable2; // edx
   unsigned int v5[4]; // [esp+4h] [ebp-10h] BYREF
 
-  this->TextRenderer::GetInstance(); /*0x4c3dd9*/
+  ((TextRenderer *)this)->GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth((int)this->AbstractClass, 0); /*0x4c3de5*/
   vtable2 = (void *)(((unsigned int *)this)[0]); /*0x4c3def*/
   v5[2] = g_DisplayWidth; /*0x4c3df8*/
