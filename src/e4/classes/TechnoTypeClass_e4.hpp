@@ -1102,7 +1102,7 @@ struct TechnoTypeClass {
     TechnoTypeClass * ddtor(char a2);
     VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
     bool CanAttackMove_IgnoreWeapon();
-    char RemoveItem(int a2, void *a2);
+    char RemoveItem(int a2, void *a2_2);
     char vt_entry_A0();
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
@@ -1115,7 +1115,7 @@ struct TechnoTypeClass {
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
     unsigned int * LoadBase(ObjectClass * aP1, void *a2);
-    void * ReadINI(char * Source, int a3, void *a3);
+    void * ReadINI(char * Source, int a3, void *a3_2);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static double HasVoiceResponse(...);  // C2597 interim stub

@@ -1594,7 +1594,7 @@ struct BuildingTypeClass {
     ParticleSystemTypeClass * * LoadOrGet();
     ParticleTypeClass * * FindOrCreateEx(AbstractClass * Source);
     bool CanPlacePath(unsigned short *a2, int a3);
-    char Enqueue(int a2, void *a2);
+    char Enqueue(int a2, void *a2_2);
     int CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2);
     int ConstructFull(char * Source, void *a2);
     int FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3, void *a4);

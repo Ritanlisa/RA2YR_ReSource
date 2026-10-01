@@ -274,7 +274,7 @@ struct VoxelAnimTypeClass {
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
 // --- flat members (END) ---
-    VoxelAnimTypeClass * LoadFromINI(uint8_t *** a2, void *a2);
+    VoxelAnimTypeClass * LoadFromINI(uint8_t *** a2, void *a2_2);
     VoxelAnimTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);
     int GetClassIdentifier(int a1, unsigned int * a2);

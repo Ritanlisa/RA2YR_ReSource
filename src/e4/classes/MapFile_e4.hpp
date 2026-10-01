@@ -27,7 +27,7 @@ struct MapFile {
     unsigned int m_C;
 // --- flat members (END) ---
     DynamicVector * QueryInterface(unsigned int * Block, char a2);
-    void Constructor(int a2, int a3, void *a3);
+    void Constructor(int a2, int a3, void *a3_2);
 };
 
 } // namespace gamemd

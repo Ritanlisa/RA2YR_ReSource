@@ -19,8 +19,8 @@ struct XSurface {
     unsigned int vt_slot_116;
 // --- flat members (END) ---
     XSurface * * Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8);
-    XSurface * BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a6);
-    XSurface * * FillRectEx(unsigned int * a2, int * a3, int a4, void *a4);
+    XSurface * BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a6_2);
+    XSurface * * FillRectEx(unsigned int * a2, int * a3, int a4, void *a4_2);
     XSurface * ScalarDtor(char a2);
     char DrawRectEx(int a2, unsigned int * a3, int a4);
     char StubReturnFalse();

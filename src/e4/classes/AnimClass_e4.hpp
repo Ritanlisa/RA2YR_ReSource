@@ -1216,7 +1216,7 @@ struct AnimClass {
     int MissionStubReturnZero2(int a1, unsigned int * a2);
     int ProcessFrame();
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
-    void Destruct(void * a2, void *a2);
+    void Destruct(void * a2, void *a2_2);
     void FreeRenderBuffer(void *a1);
     void* Render(ConvertClass * a2, ConvertClass * aP5);
     static double SetField95(...);  // C2597 interim stub

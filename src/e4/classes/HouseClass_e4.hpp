@@ -1852,7 +1852,7 @@ struct HouseClass {
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
     AbstractClass * * FindStartPositions(void *a1);
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
-    BOOL GainedPoweredCenter(int a2, void *a2);
+    BOOL GainedPoweredCenter(int a2, void *a2_2);
     CellStruct * * UpdateAITryFireSW(void *a1);
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
@@ -1873,7 +1873,7 @@ struct HouseClass {
     int DestroyAllNonBuildingsNaval();
     int DestroyAllNonBuildingsNonNaval();
     int FailedToPlaceNode(int a1);
-    int GetCameoTypeIndex(int a2, void *a2);
+    int GetCameoTypeIndex(int a2, void *a2_2);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
     int GetStatus(IUnknown * aP1);
@@ -1903,8 +1903,8 @@ struct HouseClass {
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    int Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6);
-    void LostPoweredCenter(int a2, void *a2);
+    int Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    void LostPoweredCenter(int a2, void *a2_2);
     void ResetObjectOrders(char a1, int a2);
     void vt_03_();
     static double CalcProductionSpeed(...);  // C2597 interim stub

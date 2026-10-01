@@ -55,7 +55,7 @@ struct WinModemClass {
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
     WinModemClass * QueryInterface(char a2);
     int HangUp(int a2);
-    int LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5);
+    int LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5_2);
     int ReadBytes(void ()() a1, WinModemClass * aP1, WinModemClass * aP2);
     int ReadSerial();
     int SaveToINI(const char * NumberOfBytesWritten);

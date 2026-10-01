@@ -33,7 +33,7 @@ int Clear(int a2);
 int GetSize(unsigned int * a2);
 unsigned int * AnimTypeCopy(VectorClass_flat * aP1);
 unsigned int * BuildingTypeCopy(VectorClass_flat * aP1);
-unsigned int * Copy(unsigned int * a2, void *a2);
+unsigned int * Copy(unsigned int * a2, void *a2_2);
 unsigned int * CopyConstructor(VectorClass_flat * aP1);
 unsigned int * CopyVoxelAnim(VectorClass_flat * aP1);
 unsigned int * InfantryConstructor();

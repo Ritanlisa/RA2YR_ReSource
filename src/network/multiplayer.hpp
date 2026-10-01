@@ -46,15 +46,15 @@ public:
     virtual void   PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*); // 0x5D1A80 (MPBattleClass::populateTeamDropdown)
     virtual void   DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*); // 0x5D2DE0 (MPBattleClass::drawTeamDropdown)
     virtual void   PopulateTeamDropdownForPlayer(HWND, int32_t); // 0x5D3470 (MPBattleClass::populateTeamDropdownForPlayer)
-    virtual bool   ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t);
-    virtual bool   ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t);
-    virtual bool   ValidateColor(int32_t,int32_t,int32_t); // 0x5D38F0 (MPBattleClass::validateColor)
+    virtual bool   ValidateHouse(int32_t,int32_t_2,void*,int32_t_3,int16_t,int32_t_4,int32_t_5);
+    virtual bool   ValidateOwner(int32_t,int32_t_2,void*,int32_t_3,int16_t,int32_t_4,int32_t_5,int32_t_6,int32_t_7);
+    virtual bool   ValidateColor(int32_t,int32_t_2,int32_t_3); // 0x5D38F0 (MPBattleClass::validateColor)
     virtual bool   ValidateStartPosition(); // 0x5D3920 (MPBattleClass::validateStartPosition)
     virtual bool   IsDefaultFix(); // 0x5D3950 (MPBattleClass::isDefaultFix)
     virtual bool   IsDefaultAI(); // 0x5D3980 (MPBattleClass::isDefaultAI)
     virtual int32_t RandomHumanCountryIndex(); // 0x5D3990 (MPBattleClass::randomHumanCountryIndex)
     virtual int32_t RandomAICountryIndex();
-    virtual void   OnDialogCreated(int32_t, int32_t); // 0x5D4C30 (MPBattleClass::onDialogCreated)
+    virtual void   OnDialogCreated(int32_t, int32_t_2); // 0x5D4C30 (MPBattleClass::onDialogCreated)
     virtual void   OnDialogDestroyed(int32_t); // 0x5D4C50 (MPBattleClass::onDialogDestroyed)
     virtual bool   UnfixAlliances(); // 0x5D4CD0 (MPBattleClass::unfixAlliances)
     virtual bool   StartingPositionsToHouseBaseCells(int8_t);
@@ -70,7 +70,7 @@ public:
     virtual bool   IsGameOver(); // 0x5D5DE0 (GameMode::IsValid)
     virtual void   OnEndOfFrame(); // 0x5C0F10 (ScenarioClass::StubReturnTrue3)
     virtual void   OnDrawDialog(); // 0x5C0F20 (ScenarioClass::StubReturnTrue4)
-    virtual bool   IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t); // 0x5D6430 (ScenarioClass::dispatchEvents)
+    virtual bool   IsDefeated(int32_t,void*,int32_t_2,int16_t,int32_t_3,int32_t_4,int32_t_5); // 0x5D6430 (ScenarioClass::dispatchEvents)
     virtual int32_t IsWinner(); // 0x5D6350 (DialogClass::GetFlag)
     virtual bool   IsPlayerEliminated(); // 0x5C0F40 (ScenarioClass::StubReturnTrue5)
     virtual void   CreateMPTeams(DynamicVectorClass<MPTeam*>*); // 0x5C0F30 (ScenarioClass::initTeams)
@@ -120,9 +120,9 @@ public:
     virtual int32_t FirstValidMapIndex() override;  // 0x5CEDB0
     virtual void PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5D1A80
     virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;  // 0x5D3470
-    virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override;
-    virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override;
-    virtual bool ValidateColor(int32_t,int32_t,int32_t) override;  // 0x5D38F0
+    virtual bool ValidateHouse(int32_t,int32_t_2,void*,int32_t_3,int16_t,int32_t_4,int32_t_5) override;
+    virtual bool ValidateOwner(int32_t,int32_t_2,void*,int32_t_3,int16_t,int32_t_4,int32_t_5,int32_t_6,int32_t_7) override;
+    virtual bool ValidateColor(int32_t,int32_t_2,int32_t_3) override;  // 0x5D38F0
     virtual bool ValidateStartPosition() override;  // 0x5D3920
     virtual bool IsDefaultFix() override;  // 0x5D3950
     virtual bool IsDefaultAI() override;  // 0x5D3980
@@ -131,7 +131,7 @@ public:
     virtual int32_t RandomAICountryIndex() override;
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
     virtual bool IsHouseAllyChangeAllowed() override;  // 0x5CADF0
-    virtual void OnDialogCreated(int32_t, int32_t) override;  // 0x5D4C30
+    virtual void OnDialogCreated(int32_t, int32_t_2) override;  // 0x5D4C30
     virtual void OnDialogDestroyed(int32_t) override;  // 0x5D4C50
     virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5D2DE0
     virtual bool UnfixAlliances() override;  // 0x5D4CD0
@@ -158,7 +158,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual void OnDrawDialog() override;
     // unmatched: no callgraph reference and no git history record
-    virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override;
+    virtual bool IsDefeated(int32_t,void*,int32_t_2,int16_t,int32_t_3,int32_t_4,int32_t_5) override;
     // unmatched: no callgraph reference and no git history record
     virtual int32_t IsWinner() override;
     // design: virtual function, no binary implementation matched in IDA

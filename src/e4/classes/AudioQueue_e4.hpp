@@ -72,6 +72,6 @@ struct AudioQueue {
     int * IncrementPriority();  // 0x408200
     int ReleaseBuffers();  // 0x408270
     int DrainAll();  // 0x750FA0
-    int StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2), void *a2, void *a2_1, void *a2_1)( int, void *a2_1 = 0);
+    int StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2), void *a2, void *a2_1, void *a2_1_2)( int, void *a2_1 = 0);
 };
 } // namespace gamemd

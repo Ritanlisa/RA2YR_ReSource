@@ -269,7 +269,7 @@ struct TerrainTypeClass {
     unsigned int u32_308;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    TerrainClass * GetTileIndex(int a2, void *a2, void *a3, void *a4);
+    TerrainClass * GetTileIndex(int a2, void *a2_2, void *a3, void *a4);
     TerrainTypeClass * * FindOrCreate(ObjectClass * Source);
     TerrainTypeClass * ddtor(void * a2, char a3);
     bool  GetHeight(TerrainClass * aP2, int a3);
@@ -282,7 +282,7 @@ struct TerrainTypeClass {
     int PowerDrainUpdate(int * a2);
     int  SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6);
+    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2);
     unsigned int *  GetWidth(unsigned int * a1, int * a2);
     TerrainTypeClass(void * aP1);
 };

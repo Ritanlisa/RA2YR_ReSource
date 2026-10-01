@@ -342,7 +342,7 @@ struct AnimTypeClass {
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetDamage();
     int GetObjectSize();
-    int LoadFromINI(uint8_t *** a2, void *a2);
+    int LoadFromINI(uint8_t *** a2, void *a2_2);
     int LookupByName();
     int PowerDrainUpdate(int * a2);
     int ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3);

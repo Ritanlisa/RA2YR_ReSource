@@ -35,7 +35,7 @@ struct DynamicVectorClass_flat {
     int q080;  // 0x80
 unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2);
 unsigned int * BuildingTypeConstructor(int a2, int a3);
-unsigned int * Construct(int a2, int a3, void *a3, void *a4, void *a5, void *a6);
+unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6);
 unsigned int * Copy(DynamicVector * aP1, void *a2);
 void Destroy(void *a1);
 void Destroy_Alt();

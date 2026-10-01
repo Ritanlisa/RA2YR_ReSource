@@ -43,7 +43,7 @@ struct Voice {
     unsigned int q2148;  // 0x2148
 // --- flat members (END) ---
     int DetachChannel();
-    int Stop(__thiscall *__thiscall Voice_Stop(), void *a2, void *a2_1, void *a2_1)( int, void *a2_1 = 0);
+    int Stop(__thiscall *__thiscall Voice_Stop(), void *a2, void *a2_1, void *a2_1_2)( int, void *a2_1 = 0);
 };
 
 } // namespace gamemd

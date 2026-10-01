@@ -679,12 +679,12 @@ struct SessionClass {
     int GetPlayerSide(void *a1);
     int  IsValidHouse(void * a2);
     MixFileClass * LoadGameSession(ObjectClass * aP1, CellStruct * aP2);
-    int Read(unsigned int * a2, void *a2);
-    int Seek(int a2, void *a2, void *a3);
+    int Read(unsigned int * a2, void *a2_2);
+    int Seek(int a2, void *a2_2, void *a3);
     int SetField();
     int SetOption(SessionClass * aP1, void *a2);
     int SetOption2(SessionClass * aP1);
-    int SetPlayerColor(int a2, void *a2);
+    int SetPlayerColor(int a2, void *a2_2);
     int SetPlayerOption(SkirmishDialog * aP1, void *a2);
     int  findPlayer(unsigned int * a2);
     int initInternet();

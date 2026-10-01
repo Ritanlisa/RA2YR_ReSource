@@ -39,7 +39,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual bool  IsHost() const;
 
-    void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
+    void queueSendPacket(const uint8_t*, int32_t, int32_t_2);                                   // 0x48B410
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
     void sendAck();  // 0x48BF40

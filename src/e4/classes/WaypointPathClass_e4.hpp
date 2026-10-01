@@ -53,7 +53,7 @@ struct WaypointPathClass {
     int StubReturn51();
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
-    void computePath(int a2, unsigned int * a3, void *a3);
+    void computePath(int a2, unsigned int * a3, void *a3_2);
 };
 
 } // namespace gamemd

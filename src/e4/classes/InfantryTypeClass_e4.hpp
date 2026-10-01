@@ -1103,7 +1103,7 @@ struct InfantryTypeClass {
     int GetGameplayValue();
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadFromINI(uint8_t *** a2, void *a2);
+    int LoadFromINI(uint8_t *** a2, void *a2_2);
     int PowerDrainUpdate(int * a2);
     int StubReturnFalse();
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19();

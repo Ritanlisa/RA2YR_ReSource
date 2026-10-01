@@ -34,7 +34,7 @@ struct NullModemClass {
     int CheckStatus();
     int Disconnect(int a2, int a3, int a4);
     int Flush(int a2);
-    void GetAddress(int a2, void *a2, void *a3, void *a4);
+    void GetAddress(int a2, void *a2_2, void *a3, void *a4);
     int GetMember23();
     int Receive();
     int Release(int a2, int a3, int a4, int a5);

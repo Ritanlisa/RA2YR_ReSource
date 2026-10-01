@@ -28,7 +28,7 @@ struct MultiplayerGameMode {
     unsigned int u32_38;
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
-    unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3);
+    unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);
      double Construct(...);  // C2597 interim stub
      double Find(...);  // C2597 interim stub
     static double ListGet(...);  // C2597 interim stub

@@ -705,7 +705,7 @@ struct VoxelAnimClass {
     Coord * * ProcessAnim(int * a2, unsigned int * a3);
     VoxelAnimClass * DrawVoxel(char a2);
     char UpdateMatrix();
-    float * QuaternionToMatrix(float * a2, void *a2);
+    float * QuaternionToMatrix(float * a2, void *a2_2);
     int CleanupMembers(void *a1);
     int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     int DrawVoxelFrame(int a2, int a3, int a4);

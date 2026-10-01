@@ -8,7 +8,7 @@ struct AbstractClass;  // fix_fwd_type_supply
 struct KeyboardConfig {
     unsigned int Debug;
     void* vfptr;
-    AbstractClass * ReleaseBuffer(int a2, void *a2);
+    AbstractClass * ReleaseBuffer(int a2, void *a2_2);
     int LoadINI();
 };
 

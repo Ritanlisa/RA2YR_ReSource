@@ -60,7 +60,7 @@ struct TacticalMap {
     int DrawOccupiedRegion();
     void Redraw(void *a1);
     int RenderAllObjects(int a2);
-    unsigned int FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5);
+    unsigned int FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5_2);
     void MultiplyByScalar(ObjectClass * aP1, void *a2);
     void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
      double Render(...);  // C2597 interim stub

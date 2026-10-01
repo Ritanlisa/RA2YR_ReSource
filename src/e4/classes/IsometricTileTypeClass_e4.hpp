@@ -79,11 +79,11 @@ struct IsometricTileTypeClass {
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
-    void GetTileIndex(int a2, int a3, void *a3, void *a4);
+    void GetTileIndex(int a2, int a3, void *a3_2, void *a4);
     int GetTypeIdentifier();
-    void ProcessPower(int * a2, void *a2);
+    void ProcessPower(int * a2, void *a2_2);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Constructor_0(int a2, int a3, void *a3);
+    unsigned int * Constructor_0(int a2, int a3, void *a3_2);
     unsigned int PointerToIndex(int a2);
     void ClearBuffer(void *a1);
     static double CleanupMembers(...);  // C2597 interim stub

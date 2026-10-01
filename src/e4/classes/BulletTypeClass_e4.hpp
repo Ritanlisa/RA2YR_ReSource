@@ -293,7 +293,7 @@ struct BulletTypeClass {
     BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();
     BulletTypeClass * ddtor(char a2);
-    WeaponTypeClass * * LoadFromINI(unsigned char *** a2, void *a2);
+    WeaponTypeClass * * LoadFromINI(unsigned char *** a2, void *a2_2);
     char ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4);
     char Stub(int a1, int a2);
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -301,7 +301,7 @@ struct BulletTypeClass {
     int GetTypeIdentifier();
     int GetWarhead(int a2, int a3);
     int ProcessImpact(int a1);
-    int ProcessPower(int * a2, void *a2);
+    int ProcessPower(int * a2, void *a2_2);
     int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);

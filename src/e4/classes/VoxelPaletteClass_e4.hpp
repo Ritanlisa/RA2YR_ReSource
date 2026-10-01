@@ -17,7 +17,7 @@ struct VoxelPaletteClass {
     unsigned int q034;  // 0x34
     unsigned int q050;  // 0x50
 // --- flat members (END) ---
-    int ConvertFromFile(int a2, void *a2);
+    int ConvertFromFile(int a2, void *a2_2);
     int LoadFromFile();
 };
 

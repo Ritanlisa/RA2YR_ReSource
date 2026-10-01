@@ -252,7 +252,7 @@ struct WarheadTypeClass {
     int GetDamage(int a2, int a3);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int Init(unsigned int * a2, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
+    int Init(unsigned int * a2, void *a2_2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     int LoadType();
     int SaveLoad_Prefix(unsigned int * a1, int a2);
     int SaveToINI(int a2);
@@ -261,7 +261,7 @@ struct WarheadTypeClass {
     void * loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4);
     void * parseModifiers(char a2);
     void GetClassIdentifier();
-    void* ProcessPower(int * a2, void *a2);
+    void* ProcessPower(int * a2, void *a2_2);
 };
 
 } // namespace gamemd

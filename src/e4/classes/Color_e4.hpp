@@ -9,7 +9,7 @@ struct Color {
 // --- flat members (BEGIN) ---
     char Color_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int ConvertToRGB(int a2, void *a2);
+    int ConvertToRGB(int a2, void *a2_2);
     unsigned char * Lerp2(int a2, int a3, float a4);
     unsigned char * ScaleRGB(unsigned char * a2, float a3);
     unsigned char Lerp(ObjectClass * aP1, unsigned char * a2, void *a3);

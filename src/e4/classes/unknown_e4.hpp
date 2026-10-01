@@ -16,8 +16,8 @@ struct unknown {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int  Read(unsigned short * a2, void *a2);
-    int Seek(int a2, int a3, void *a3);
+    int  Read(unsigned short * a2, void *a2_2);
+    int Seek(int a2, int a3, void *a3_2);
     unsigned int Write(int a2);
     void ddtor(void *a1);
 };
