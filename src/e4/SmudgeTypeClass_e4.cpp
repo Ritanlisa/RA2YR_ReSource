@@ -136,7 +136,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
 
 }
 // 0x6B56D0
-int SmudgeTypeClass::GetSize( uint8_t *** aP1)
+int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 {
 
   int result; // eax
@@ -181,7 +181,7 @@ int SmudgeTypeClass::GetSize( uint8_t *** aP1)
 
 }
 // 0x6B6160
-SmudgeTypeClass *  SmudgeTypeClass::ddtor( void * a2, char a3)
+SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 {
 
   SHPStruct *Image; // eax

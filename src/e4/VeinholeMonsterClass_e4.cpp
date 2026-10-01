@@ -63,7 +63,7 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 }
 }
 // 0x74EEE0
-int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
+int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
 
   return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x74eef4*/

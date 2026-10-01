@@ -23,7 +23,7 @@ struct VectorClass_K {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x6C6350
     int  FindItemIndex(unsigned int * a2);  // 0x6C6450
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x6C6480
-    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x6C64D0
+    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x6C64D0
     unsigned int  GetItemIndex(int a2);  // 0x6BED80
     int  Clear(int a2);  // 0x6BEDA0
     char  AddRef(int a2);  // 0x6C61D0

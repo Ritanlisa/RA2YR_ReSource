@@ -54,14 +54,14 @@ struct TacticalMap {
     unsigned int u32_E00;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
-    void Construct();
-    void DrawCursor();
+    void Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    void DrawCursor(void *a1, void *a2, void *a3, void *a4);
     int DrawOccupiedRegion();
-    void Redraw();
+    void Redraw(void *a1);
     int RenderAllObjects(int a2);
-    unsigned int FillScanlinesOpaque(int a2, int a3, void * aP3, int a5);
-    void MultiplyByScalar(ObjectClass * aP1);
-    void* RenderCell(char arg0, void * aP2, int a4, int a2);
+    unsigned int FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5);
+    void MultiplyByScalar(ObjectClass * aP1, void *a2);
+    void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
      double Render(...);  // C2597 interim stub
 };
 

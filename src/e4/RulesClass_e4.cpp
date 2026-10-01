@@ -87,7 +87,7 @@ RulesClass::RulesClass()
 }
 
 // 0x667A30
-int RulesClass::DTOR()
+int RulesClass::DTOR(void *a1)
 {
 
   char *v2; // ecx
@@ -461,7 +461,7 @@ void RulesClass::readVehicleTypes()
 
 }
 // 0x67A190
-void *  RulesClass::readAircraftTypes( int * a2)
+void *  RulesClass::readAircraftTypes(int * a2)
 {
 
   int v3; // eax
@@ -613,7 +613,7 @@ unsigned int * RulesClass::readParticles()
 
 }
 // 0x67B480
-int  RulesClass::readAI( unsigned int * a2)
+int  RulesClass::readAI(unsigned int * a2)
 {
 
   int DetailBufferZoneWidth; // ecx
@@ -1001,7 +1001,7 @@ int RulesClass::ReadSidesList()
 
 }
 // 0x67A3C0
-int  RulesClass::readTerrainTypes( TechnoTypeClass * aP1)
+int  RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
 {
 
   int v3; // ecx
@@ -1036,7 +1036,7 @@ int RulesClass::readOverlayTypes()
 
 }
 // 0x67A7D0
-int  RulesClass::readAnimations( TechnoTypeClass * aP1)
+int  RulesClass::readAnimations(TechnoTypeClass * aP1)
 {
 
   int v3; // ecx
@@ -1064,7 +1064,7 @@ int RulesClass::readWarheads()
 
 }
 // 0x67A8E0
-int  RulesClass::readParticleSystems( TechnoTypeClass * aP1)
+int  RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 {
 
   int v3; // ecx

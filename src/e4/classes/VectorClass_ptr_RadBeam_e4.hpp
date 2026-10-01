@@ -17,8 +17,8 @@ struct VectorClass_ptr_RadBeam {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x65A1E0
     unsigned int  GetItemIndex(int a2);  // 0x65A210
-    int  Get(int a2);  // 0x65A230
-    char  Add(int a2);  // 0x65A240
+    int  Get(int a2, void *a1 = 0);  // 0x65A230
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x65A240
     char  Release(int a2, unsigned int * a3);  // 0x65A280
     void Remove(void *a1 = 0);  // 0x65A330
     int  GetSize(unsigned int * a2);  // 0x65A360

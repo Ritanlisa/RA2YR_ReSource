@@ -84,7 +84,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x771C70
 namespace gamemd {
-unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
+unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
   int v3; // eax
@@ -190,7 +190,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 } // namespace gamemd
 // 0x771F50
 namespace gamemd {
-int WeaponTypeClass::Destructor()
+int WeaponTypeClass::Destructor(void *a1)
 {
 
   int v2; // eax
@@ -252,7 +252,7 @@ int WeaponTypeClass::Destructor()
 } // namespace gamemd
 // 0x772AE0
 namespace gamemd {
-int WeaponTypeClass::ProcessPower(int * a2)
+int WeaponTypeClass::ProcessPower(int * a2, void *a2)
 {
 
   int v3; // ecx
@@ -541,7 +541,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
 
 }
 // 0x475C70
-char  WeaponTypeClass::ReadVeteranData( uint8_t * a2, char * a3, int a4, int * Block, int a6, int16_t a7, int a8, int a9, int a10)
+char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Block, int a6, int16_t a7, int a8, int a9, int a10)
 {
 
   int *v10; // ebx
@@ -577,7 +577,7 @@ char  WeaponTypeClass::ReadVeteranData( uint8_t * a2, char * a3, int a4, int * B
 
 }
 // 0x771F00
-unsigned int *  WeaponTypeClass::loadWeaponProperties( AbstractTypeClass * aP1)
+unsigned int *  WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
@@ -592,7 +592,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties( AbstractTypeClass * aP1)
 
 }
 // 0x7729F0
-int WeaponTypeClass::CalculateSpeed()
+int WeaponTypeClass::CalculateSpeed(void *a1)
 {
 
   int result; // eax

@@ -18,7 +18,7 @@
 
 // 0x432AB0
 namespace gamemd {
-int BinkMovieHandle::RenderFrameClipped(int a2, int a3)
+int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3)
 {
 
   int *v3; // eax
@@ -98,7 +98,7 @@ LABEL_18:
 } // namespace gamemd
 // 0x433060
 namespace gamemd {
-void BinkMovieHandle::CopyFrameToSurface()
+void BinkMovieHandle::CopyFrameToSurface(void *a1)
 {
 
   DSurface *width; // edi
@@ -153,7 +153,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x432BD0
 namespace gamemd {
-void BinkMovieHandle::Check( int a2)
+void BinkMovieHandle::Check(int a2, void *a2, void *a3)
 {
 
   int result; // eax
@@ -166,7 +166,7 @@ void BinkMovieHandle::Check( int a2)
 } // namespace gamemd
 // 0x5C0550
 namespace gamemd {
-int BinkMovieHandle::InitFromFile()
+int BinkMovieHandle::InitFromFile(void *a1, void *a2)
 {
 
   int result; // eax
@@ -189,7 +189,7 @@ BOOL BinkMovieHandle::COMStub()
 } // namespace gamemd
 // 0x5C0580
 namespace gamemd {
-void BinkMovieHandle::AddRef()
+void BinkMovieHandle::AddRef(void *a1)
 {
 
   return BinkMovie::RenderFrameToSurface((BinkMovieHandle *)this->height);
@@ -198,7 +198,7 @@ void BinkMovieHandle::AddRef()
 } // namespace gamemd
 // 0x5C0590
 namespace gamemd {
-void BinkMovieHandle::Release()
+void BinkMovieHandle::Release(void *a1)
 {
 
   int height; // esi
@@ -223,7 +223,7 @@ int BinkMovieHandle::Pause(int a2, int a3)
 } // namespace gamemd
 // 0x5C05C0
 namespace gamemd {
-int BinkMovieHandle::RenderLoop(int a2)
+int BinkMovieHandle::RenderLoop(int a2, void *a2, void *a3, void *a4)
 {
 
   return COMStub_432C10((WeaponTypeClass *)this->height, a2); /*0x5c05cd*/
@@ -232,7 +232,7 @@ int BinkMovieHandle::RenderLoop(int a2)
 } // namespace gamemd
 // 0x5C05D0
 namespace gamemd {
-int BinkMovieHandle::AdjustSurfaceFormat(int a2)
+int BinkMovieHandle::AdjustSurfaceFormat(int a2, void *a2)
 {
 
   return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2); /*0x5c05dd*/
@@ -241,7 +241,7 @@ int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 } // namespace gamemd
 // 0x5C05E0
 namespace gamemd {
-unsigned int BinkMovieHandle::BlitToTarget()
+unsigned int BinkMovieHandle::BlitToTarget(void *a1, void *a2)
 {
 
   return 0x3E8 /*0x432c06*/
@@ -251,7 +251,7 @@ unsigned int BinkMovieHandle::BlitToTarget()
 } // namespace gamemd
 // 0x5C05F0
 namespace gamemd {
-unsigned int * BinkMovieHandle::Close()
+unsigned int * BinkMovieHandle::Close(void *a1, void *a2)
 {
 
   return BinkMovieHandle::CopyFrameToSurface((BinkMovieHandle *)this->height);

@@ -26,7 +26,7 @@
 
 // 0x5FA620
 namespace gamemd {
-void GameSettings::Read()
+void GameSettings::Read(void *a1, void *a2)
 {
 
   double v1; // st7
@@ -437,7 +437,7 @@ void * GameSettings::ParseNetworkAddress()
 } // namespace gamemd
 // 0x721290
 namespace gamemd {
-void GameSettings::SetScoreVolume(int volume)
+void GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
 
   int result; // eax

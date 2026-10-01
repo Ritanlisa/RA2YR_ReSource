@@ -22,7 +22,7 @@
 
 // 0x720B20
 namespace gamemd {
-int Theme::QueueSong(IUnknown * aP1)
+int Theme::QueueSong(IUnknown * aP1, void *a2)
 {
 
   int IsSoundEnabled; // eax
@@ -63,7 +63,7 @@ int Theme::QueueSong(IUnknown * aP1)
 } // namespace gamemd
 // 0x720EA0
 namespace gamemd {
-int Theme::Stop(ObjectClass * aP1)
+int Theme::Stop(ObjectClass * aP1, void *a2)
 {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */

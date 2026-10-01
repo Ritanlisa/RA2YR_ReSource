@@ -11,8 +11,8 @@ struct Conflict_WorldDominationTour_26 {
     unsigned int *__pad_0;
     unsigned int *m_1;
 // --- flat members (END) ---
-    BOOL AddRef();  // 0x766920
-    BOOL Release();  // 0x766FA0
+    BOOL AddRef(void *a1 = 0);  // 0x766920
+    BOOL Release(void *a1 = 0);  // 0x766FA0
     unsigned int* ddtor();  // 0x766FB0
 };
 } // namespace gamemd

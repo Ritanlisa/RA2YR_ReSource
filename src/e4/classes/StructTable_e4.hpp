@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct StructTable {
-    int StructTable:: Append(void * a2);
+    int StructTable:: Append(void * a2, void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -75,15 +75,15 @@ struct GameClass {
 // --- flat members (END) ---
     int  initGameMode(int a2, int a3);  // 0x437FD0
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0
-    unsigned int *  updateUI(int a2, int a3);  // 0x438300
-    int loadScenarioFiles(ObjectClass * aP1);  // 0x5D2260
-    int  FrameLoop(int a2);  // 0x5D2410
+    unsigned int *  updateUI(int a2, int a3, void *a1 = 0);  // 0x438300
+    int loadScenarioFiles(ObjectClass * aP1, void *a1 = 0);  // 0x5D2260
+    int  FrameLoop(int a2, void *a1 = 0);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
-    int GetRelatedObject();  // 0x631D30
+    int GetRelatedObject(void *a1 = 0);  // 0x631D30
     void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int  ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
-    int  initPlayerData(void * a2);  // 0x69AE10
-    void Shutdown();  // 0x6BEC60
+    int  initPlayerData(void * a2, void *a1 = 0);  // 0x69AE10
+    void Shutdown(void *a1 = 0);  // 0x6BEC60
     short ReadVersionFile();  // 0x74F960
     short ReadVersionFile2();  // 0x74FA20
     void ReadVersionString();  // 0x74FC80

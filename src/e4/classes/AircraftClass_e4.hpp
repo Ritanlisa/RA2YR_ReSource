@@ -672,12 +672,12 @@ struct AircraftClass {
     unsigned char q1B0;  // 0x1B0
 // --- flat members (END) ---
     AircraftClass * CheckActionStatus(char a2);
-    AircraftTypeClass * GetCursorOverObject(IUnknown * aP1, IUnknown * a3);
-    HRESULT CheckPassengerCount(void * a0, void * aP1, void * a2);
+    AircraftTypeClass * GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3);
+    HRESULT CheckPassengerCount(int a1, int pPStm, int a3);
     char * CheckLandingClearance(int a2, int a3, int a4);
     char CheckDockState();
-    char ValidateMovement(int _10, int * a2, int a4);
-    int CanEnterCell(short * a1, void* aP2, void * aP3);
+    char ValidateMovement(int a2, int * a3, int a4);
+    int CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3);
     int CheckMissionAbort();
     int CheckMissionFail();
     int CheckMissionStatus();
@@ -695,8 +695,8 @@ struct AircraftClass {
     int RevealSight(int a2, int a3);
     int UpdateDocking(int a2);
     int ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6);
-    AircraftTypeClass * Update();
-    void* LoadFromStream(unsigned int * a0, void * aP1);
+    AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
+    void* LoadFromStream(unsigned int * a0, FootClass * aP1);
      double Construct(...);  // C2597 interim stub
 };
 

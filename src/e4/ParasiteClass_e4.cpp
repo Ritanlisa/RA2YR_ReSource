@@ -28,7 +28,7 @@
 
 // 0x629210
 namespace gamemd {
-void ParasiteClass::Constructor()
+void ParasiteClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   int v2; // ecx
@@ -857,7 +857,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
 
 // 0x62BD50
 namespace gamemd {
-Coord * * ParasiteClass::Update()
+Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // edi

@@ -3280,7 +3280,7 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 } // namespace gamemd
 
 // 0x765b50
-unsigned int* Campaign_WorldDominationTour_24_::ddtor()
+unsigned int* Campaign_WorldDominationTour_24_::ddtor(void *a1)
 {
 
   --*((unsigned int *)this + 2); /*0x765b52*/

@@ -17,7 +17,7 @@
 
 // 0x4080F0
 namespace gamemd {
-void ThemeManager::ProcessCallback()
+void ThemeManager::ProcessCallback(void *a1)
 {
 
   int v2; // ebp
@@ -43,7 +43,7 @@ void ThemeManager::ProcessCallback()
 } // namespace gamemd
 // 0x720770
 namespace gamemd {
-void ThemeManager::Cleanup()
+void ThemeManager::Cleanup(void *a1)
 {
 
   int v2; // eax

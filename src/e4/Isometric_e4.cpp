@@ -16,7 +16,7 @@
 
 // 0x47B3A0
 namespace gamemd {
-AbstractClass * Isometric::InitTables( IUnknown * aP1)
+AbstractClass * Isometric::InitTables(IUnknown * aP1, void *a2)
 {
 
   char v2; // al

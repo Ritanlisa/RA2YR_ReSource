@@ -74,7 +74,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 }
 // 0x6CAEC0
 namespace gamemd {
-void SuperClass::Constructor()
+void SuperClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   int v2; // eax
@@ -120,7 +120,7 @@ void SuperClass::Constructor()
 }
 // 0x6CAF90
 namespace gamemd {
-void SuperClass::Construct( int a2, CCINIClass * aP2)
+void SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v4; // edx
@@ -194,7 +194,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
 }
 // 0x6CB120
 namespace gamemd {
-SuperClass * * SuperClass::CleanupMembers()
+SuperClass * * SuperClass::CleanupMembers(void *a1)
 {
 
   int v2; // eax
@@ -721,7 +721,7 @@ LABEL_11:
 }
 // 0x6CC080
 namespace gamemd {
-int SuperClass::AnnounceReady(DynamicVector * aP1)
+int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2)
 {
 
   char result; // al
@@ -885,7 +885,7 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
 
 // 0x6CE0B0
 namespace gamemd {
-AbstractClass * * SuperClass::Reset()
+AbstractClass * * SuperClass::Reset(void *a1, void *a2)
 {
 
   unsigned char *SuperClass_field_0x68; // eax
@@ -1030,7 +1030,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
 
 // 0x6CB4D0
 namespace gamemd {
-char SuperClass::SetOnHold(CoordStruct * aP1)
+char SuperClass::SetOnHold(CoordStruct * aP1, void *a2)
 {
 
   int result; // eax

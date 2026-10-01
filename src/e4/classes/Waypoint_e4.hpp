@@ -53,7 +53,7 @@ struct Waypoint {
     unsigned int field_38;
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0
-    IPXManagerClass * InitInvalid();  // 0x53ECB0
+    IPXManagerClass * InitInvalid(void *a1 = 0);  // 0x53ECB0
     char  FindCell(unsigned int * a2);  // 0x763A50
     CHAR *  To_String(void * aP0);  // 0x763610
 };

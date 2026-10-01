@@ -23,8 +23,8 @@ struct AbstractClassVector {
     unsigned char AbstractClassVector_field_0x08;  // 0x8
     unsigned char AbstractClassVector_field_0x0C;  // 0xC
 // --- flat members (END) ---
-    int Read(unsigned int * a2);
-    int Construct(IUnknown * aP1, IUnknown * aP2);
+    int Read(unsigned int * a2, void *a2);
+    int Construct(IUnknown * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);
      double ddtor(...);  // C2597 interim stub
 };

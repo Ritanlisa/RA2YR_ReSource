@@ -84,26 +84,26 @@ struct TeamTypeClass {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * FindOrCreateTaskForce();
-    AbstractClass * * GetMaxCount(void * aP1);
-    AbstractClass * * LoadFromINI(unsigned char *** aP1);
+    AbstractClass * * GetMaxCount(CCINIClass * aP1);
+    AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
-    int Check(int a2);
-    int Construct();
+    int Check(int a2, void *a2, void *a3);
+    int Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
     int DestroyAllInstances();
-    int FindByName(void *a1 = 0);
+    int FindByName(void *a1);
     int FindFirstInstance();
-    int FlashAllInstances(void * aP1);
+    int FlashAllInstances(AnimClass * aP1);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetGroup();
     int GetObjectSize();
     int GetTeam(int a2, int a3);
     int GetTypeIdentifier();
-    int LoadTypeData(void * aP0, int aP1);
+    int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int ProcessTaskForce();
-    int SaveToINI(void * aP0, int * a1, int aP2);
+    int ProcessTaskForce(void *a1);
+    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     void * CreateScriptType();
     static double vftable(...);  // C2597 interim stub

@@ -16,11 +16,11 @@ struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x54A7B0
-    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x54A800
+    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x54A800
     void Destroy(void *a1 = 0);  // 0x54A1F0
     unsigned int  GetItemIndex(int a2);  // 0x54A220
-    int  Get(int a2);  // 0x54A240
-    char  Add(int a2);  // 0x54A4B0
+    int  Get(int a2, void *a1 = 0);  // 0x54A240
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x54A4B0
     char  Release(int a2, unsigned int * a3);  // 0x54A4F0
     void Remove(void *a1 = 0);  // 0x54A5A0
     int  GetSize(unsigned int * a2);  // 0x54A5D0

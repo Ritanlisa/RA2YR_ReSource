@@ -97,7 +97,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 
 }
 // 0x5CB3F0
-char UnholyAlliance::Read()
+char UnholyAlliance::Read(void *a1, void *a2)
 {
 
   stru_A8B250.__pad_0[8] = 1; /*0x5cb3f2*/
@@ -112,7 +112,7 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 
 }
 // 0x5CB430
-char UnholyAlliance::Seek()
+char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
 
   stru_A8B250.__pad_0[8] = 1; /*0x5cb432*/

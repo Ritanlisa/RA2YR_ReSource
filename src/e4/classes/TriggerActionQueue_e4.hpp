@@ -12,7 +12,7 @@ struct TriggerActionQueue {
     void* q064;  // 0x64
     void* q100;  // 0x100
 // --- flat members (END) ---
-    int ProcessAll();
+    int ProcessAll(void *a1);
 };
 
 } // namespace gamemd

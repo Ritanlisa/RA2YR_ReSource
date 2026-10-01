@@ -14,7 +14,7 @@
 
 // 0x433880
 namespace gamemd {
-int BitTextClass::ParseFontData(char * Source)
+int BitTextClass::ParseFontData(char * Source, void *a2)
 {
 
   struct tagRECT *v3; // ebp

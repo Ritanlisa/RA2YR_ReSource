@@ -101,7 +101,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
 }
 // 0x7499F0
 namespace gamemd {
-int VoxelAnimClass::CleanupMembers()
+int VoxelAnimClass::CleanupMembers(void *a1)
 {
 
   int v2; // eax
@@ -923,7 +923,7 @@ int VoxelAnimClass::LoadFrame()
 }
 // 0x75AA90
 namespace gamemd {
-int VoxelAnimClass::Reset()
+int VoxelAnimClass::Reset(void *a1, void *a2)
 {
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x75aa93*/
@@ -946,7 +946,7 @@ int VoxelAnimClass::Reset()
 }
 // 0x75EBE0
 namespace gamemd {
-int VoxelAnimClass::Constructor()
+int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   int v2; // eax
@@ -1002,7 +1002,7 @@ int VoxelAnimClass::Constructor()
 }
 // 0x4399E0
 namespace gamemd {
-float * VoxelAnimClass::QuaternionToMatrix(float * a2)
+float * VoxelAnimClass::QuaternionToMatrix(float * a2, void *a2)
 {
 
   float *v2; // esi

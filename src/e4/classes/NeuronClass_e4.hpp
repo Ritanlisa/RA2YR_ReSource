@@ -17,7 +17,7 @@ struct NeuronClass {
     unsigned char q014;  // 0x14
 // --- flat members (END) ---
     NeuronClass();
-    void * Reset(char a2);
+    void * Reset(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

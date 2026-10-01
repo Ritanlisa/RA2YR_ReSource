@@ -14,8 +14,8 @@ struct VectorClass_ptr_TaskForceClass {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Get(int a2);  // 0x4E8B90
-    char  Add(int a2);  // 0x4ECA20
+    int  Get(int a2, void *a1 = 0);  // 0x4E8B90
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4ECA20
     char  Release(int a2, unsigned int * a3);  // 0x4ECA60
     void Remove(void *a1 = 0);  // 0x4ECB10
     int  GetSize(unsigned int * a2);  // 0x4ECB40

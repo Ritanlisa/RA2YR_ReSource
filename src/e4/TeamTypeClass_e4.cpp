@@ -40,7 +40,7 @@
 
 // 0x4C98B0
 namespace gamemd {
-int TeamTypeClass::Construct()
+int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v2; // eax
@@ -216,7 +216,7 @@ LABEL_6:
 }
 // 0x6EF5F0
 namespace gamemd {
-int TeamTypeClass::Check(int a2)
+int TeamTypeClass::Check(int a2, void *a2, void *a3)
 {
 
   int result; // eax
@@ -278,7 +278,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 }
 // 0x6F1090
 namespace gamemd {
-AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
+AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
 
   int v3; // ecx
@@ -926,7 +926,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
 }
 // 0x6F1FA0
 namespace gamemd {
-int TeamTypeClass::ProcessTaskForce()
+int TeamTypeClass::ProcessTaskForce(void *a1)
 {
 
   int v2; // edi
@@ -1251,7 +1251,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 }
 // 0x6F0FC0
 namespace gamemd {
-int TeamTypeClass::FindByName()
+int TeamTypeClass::FindByName(void *a1)
 {
 
   int v2; // esi

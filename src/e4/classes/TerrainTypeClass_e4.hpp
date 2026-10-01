@@ -260,21 +260,21 @@ struct TerrainTypeClass {
     unsigned int u32_308;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    TerrainClass * GetTileIndex(int a2, void *a1 = 0, void *a3 = 0);
-    TerrainTypeClass * * FindOrCreate(void *a1 = 0);
+    TerrainClass * GetTileIndex(int a2, void *a2, void *a3, void *a4);
+    TerrainTypeClass * * FindOrCreate(ObjectClass * Source);
     TerrainTypeClass * ddtor(void * a2, char a3);
-    bool GetHeight(void * aP2, int a3);
+    bool  GetHeight(TerrainClass * aP2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
-    int GetTileData(void * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6);
+    int GetTileData(int a2, void * a3, signed int * a4, unsigned int * a5, unsigned short * a6, unsigned int * a7);
     int GetTypeIdentifier();
-    int LoadFromINI(unsigned char *** aP1);
+    int LoadFromINI(unsigned char *** aP1, void *a2);
     int PowerDrainUpdate(int * a2);
-    int SaveLoad_Prefix(void * aP0, int aP1);
-    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, void * aP4, char a6);
-    unsigned int * GetWidth(unsigned int * a1, int * a2);
+    int  SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6);
+    unsigned int *  GetWidth(unsigned int * a1, int * a2);
     TerrainTypeClass(void * aP1);
 };
 

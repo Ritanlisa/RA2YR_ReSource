@@ -700,14 +700,14 @@ struct BuildingClass {
     unsigned int ctor;
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
-    int AllocAndCtor(void * aP0, int aP2);
+    int AllocAndCtor(BuildingClass * aP0, int aP2);
     int AnimController();
     int AssignDestination_SyncLog();
     int FindClosestForRepair(unsigned int * a1);
     int FindClosestForRepair2(int a1);
     int FindInPointerArray(unsigned int * a2);
     int Mission_Guard();
-    int SaveLoad_Register(void *a1 = 0);
+    int SaveLoad_Register(void *a1);
     int processCapture();
     void ClearSuperWeaponAnim();
     void* LoadFromStream();

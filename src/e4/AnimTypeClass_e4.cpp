@@ -25,7 +25,7 @@
 
 // 0x41E350
 namespace gamemd {
-unsigned int * AnimTypeClass::Construct2(char * Source)
+unsigned int * AnimTypeClass::Construct2(char * Source, void *a2, void *a3)
 {
 
   int v3; // eax
@@ -76,7 +76,7 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
 }
 // 0x427530
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
+AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -289,7 +289,7 @@ void* AnimTypeClass::GetWarhead(int a2)
 }
 // 0x427D00
 namespace gamemd {
-int AnimTypeClass::LoadFromINI( uint8_t *** a2)
+int AnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2)
 {
 
   int v3; // ecx
@@ -650,7 +650,7 @@ char AnimTypeClass::GetLoopCount(int a2)
 
 // 0x427CB0
 namespace gamemd {
-int AnimTypeClass::FindIndex()
+int AnimTypeClass::FindIndex(void *a1)
 {
 
   int v2; // esi

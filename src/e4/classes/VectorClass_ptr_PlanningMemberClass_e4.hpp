@@ -19,10 +19,10 @@ struct VectorClass_ptr_PlanningMemberClass {
     DynamicVector *  Constructor_VectorClass_PlanningBranchClass___(unsigned int * Block, char a2);  // 0x63ED40
     void Destroy(void *a1 = 0);  // 0x63DB60
     unsigned int  GetItemIndex(int a2);  // 0x63DB90
-    int  Get(int a2);  // 0x63DBB0
+    int  Get(int a2, void *a1 = 0);  // 0x63DBB0
     void Destroy_0();  // 0x63DBC0
     unsigned int  GetItemIndex_0(int a2);  // 0x63DBF0
-    char  Add(int a2);  // 0x63DD40
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x63DD40
     char  Release(int a2, unsigned int * a3);  // 0x63DD80
     void Remove(void *a1 = 0);  // 0x63DE30
     int  GetSize(unsigned int * a2);  // 0x63DE60

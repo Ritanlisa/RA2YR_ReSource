@@ -25,10 +25,10 @@ struct DiskLaserClass {
     bool q02B;  // 0x2B
 // --- flat members (END) ---
     DiskLaserClass();
-    int Seek(void * aP0, int * a1, int aP2);
+    int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn64();
     int StubReturn73();
-    int Write(void * aP0, int aP1);
+    int  Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
 };

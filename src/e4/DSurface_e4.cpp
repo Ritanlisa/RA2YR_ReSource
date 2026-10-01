@@ -59,7 +59,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
+AbstractClass * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a5, void *a6)
 {
 
   unsigned int *v6; // ebp
@@ -111,7 +111,7 @@ AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass
 } // namespace gamemd
 // 0x4BA6B0
 namespace gamemd {
-AbstractClass * * DSurface::Destroy()
+AbstractClass * * DSurface::Destroy(void *a1)
 {
 
   char DSurface_field_0x18; // al
@@ -146,7 +146,7 @@ AbstractClass * * DSurface::Destroy()
 } // namespace gamemd
 // 0x4BA770
 namespace gamemd {
-AbstractClass * * DSurface::CreatePrimary()
+AbstractClass * * DSurface::CreatePrimary(void *a1)
 {
 
   char v1; // bl
@@ -390,7 +390,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x4BAC60
 namespace gamemd {
-unsigned int * DSurface::CreateBackBuffer(int a2)
+unsigned int * DSurface::CreateBackBuffer(int a2, void *a2)
 {
 
   void *v3; // edi
@@ -438,7 +438,7 @@ int DSurface::GetBytesPerPixel()
 } // namespace gamemd
 // 0x4BB000
 namespace gamemd {
-int DSurface::RestoreIfLost()
+int DSurface::RestoreIfLost(void *a1)
 {
 
   int v3; // eax
@@ -727,7 +727,7 @@ LABEL_71:
 } // namespace gamemd
 // 0x4BB620
 namespace gamemd {
-void* DSurface::FillRectEx(int a2, int a3, int a4)
+void* DSurface::FillRectEx(int a2, int a3, int a4, void *a4)
 {
 
   int v5; // eax
@@ -3908,7 +3908,7 @@ void * DSurface::loc_4C1AC0(std::codecvt_base * this)
 }
 
 // 0x5D1E70
-ObjectClass * *  DSurface::RenderToSurface( ObjectClass * aP1)
+ObjectClass * *  DSurface::RenderToSurface(ObjectClass * aP1, void *a2)
 {
 
   int *v3; // eax
@@ -4414,7 +4414,7 @@ int DSurface::CommitBuffers()
 
 }
 // 0x7C2C60
-int DSurface::Flip()
+int DSurface::Flip(void *a1)
 {
 
   int v2; // eax
@@ -4465,7 +4465,7 @@ long long DSurface::ConstructFromHandle()
 
 }
 // 0x4BB080
-int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
+int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6, void *a6)
 {
 
   int (**DSurface_field_0x0)(DSurface *, int); // ebx

@@ -15,7 +15,7 @@ struct VectorClass_PBG {
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
     int  Count(int a2);  // 0x558230
-    char  Get(int a2);  // 0x558240
+    char  Get(int a2, void *a1 = 0);  // 0x558240
     char  Release(int a2, unsigned int * a3);  // 0x558280
     void Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x558330
     int  GetSize(unsigned int * a2);  // 0x558360

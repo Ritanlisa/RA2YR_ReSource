@@ -31,7 +31,7 @@
 
 // 0x74AD80
 namespace gamemd {
-VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
+VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source, void *a2, void *a3)
 {
 
   int v3; // eax
@@ -108,7 +108,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
 }
 // 0x74B050
 namespace gamemd {
-VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
+VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2)
 {
 
   int v3; // ecx

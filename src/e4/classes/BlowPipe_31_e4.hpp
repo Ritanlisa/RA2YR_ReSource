@@ -21,10 +21,10 @@ struct BlowPipe_31 {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     void ddtor();  // 0x63DC20
-    int  Seek(int a2);  // 0x63DC70
+    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x63DC70
     char  AddRef(int a2);  // 0x63E310
     char  Release(int a2, unsigned int * a3);  // 0x63E490
-    int  Read(unsigned int * a2);  // 0x63E620
+    int  Read(unsigned int * a2, void *a1 = 0);  // 0x63E620
     DynamicVector *  QueryInterface(unsigned int * Block, char a2);  // 0x63EDE0
     unsigned int  Write(int a2);  // 0x63DC50
 };

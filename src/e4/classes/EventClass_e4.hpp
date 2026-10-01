@@ -97,13 +97,13 @@ struct EventClass {
     unsigned char EventClass_field_0x38;  // 0x38
     unsigned char *__pad_58;  // 0x58
 // --- flat members (END) ---
-    int serializeEvent();  // 0x48B390
+    int serializeEvent(void *a1 = 0);  // 0x48B390
     int  SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
     void * Add(AbstractClass * aP1, unsigned char a3, int a4, char a5);  // 0x4C65E0
-    char *  AddEvent(int a2, uint8_t a3);  // 0x4C66C0
-    int Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3);  // 0x4C6720
+    char *  AddEvent(int a2, uint8_t a3, void *a1 = 0);  // 0x4C66C0
+    int Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a1 = 0);  // 0x4C6720
     int AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5);  // 0x4C6970
-    int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6);  // 0x4C6AE0
+    int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a1 = 0, void *a2 = 0);  // 0x4C6AE0
     void ProcessEvent();  // 0x4C6CB0
     int  deserializeEvent(int a2, void * aP2);  // 0x542280
     char  Enqueue(uint16_t a2, char a3);  // 0x54F200
@@ -114,9 +114,9 @@ struct EventClass {
     char  processEvent(int a2, unsigned int * a3);  // 0x40B740
     char  validateEvent(int a2, unsigned int * a3);  // 0x40B880
     char  dispatchEvent(int a2, unsigned int * a3);  // 0x40B9A0
-    char  checkCondition(int a2, unsigned int * a3);  // 0x40BAE0
+    char  checkCondition(int a2, unsigned int * a3, void *a1 = 0);  // 0x40BAE0
     DynamicVector *  executeAction(unsigned int * Block, char a2);  // 0x40BC10
-    unsigned int *  resetEvent(void * aP1, void * aP2);  // 0x40BD00
+    unsigned int *  resetEvent(void * aP1, void * aP2, void *a1 = 0);  // 0x40BD00
     VectorClass_flat *  queueEvent(unsigned int * Block, char a2);  // 0x40C110
     char  clearEvents(int a2, unsigned int * a3);  // 0x40C410
     void finalizeEvent();  // 0x40BE10

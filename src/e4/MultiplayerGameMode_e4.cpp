@@ -20,7 +20,7 @@
 
 // 0x5D89F0
 namespace gamemd {
-unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
+unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3)
 {
 
   this->MultiplayerGameMode_field_0x04 = 0; /*0x5d89fb*/

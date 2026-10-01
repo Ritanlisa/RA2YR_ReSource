@@ -119,7 +119,7 @@ LABEL_14:
 } // namespace gamemd
 // 0x538B80
 namespace gamemd {
-AbstractClass * KeyboardConfig::ReleaseBuffer( int a2)
+AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *a2)
 {
 
   char *v3; // edi

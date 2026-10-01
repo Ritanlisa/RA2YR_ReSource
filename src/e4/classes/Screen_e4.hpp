@@ -24,7 +24,7 @@ struct Screen {
 // --- flat members (END) ---
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
-    int TransitionRender(void * aP1, void * aP2, int a4);
+    int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);
 };
 
 } // namespace gamemd

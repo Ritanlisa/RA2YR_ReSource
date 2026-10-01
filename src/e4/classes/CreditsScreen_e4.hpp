@@ -8,7 +8,7 @@ namespace gamemd {
 struct CreditsScreen {
     void* vfptr;
     INIClass * * DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4);
-    void Init();
+    void Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
 };
 
 } // namespace gamemd

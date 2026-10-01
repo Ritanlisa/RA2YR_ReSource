@@ -105,7 +105,7 @@ struct AbstractClass {
     void  ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     AbstractClass * *  AnnounceExpiredPointer(void * aP0, void * aP1);  // 0x7258D0
     int getMapCoords();  // 0x426A80
-    void DTOR();  // 0x4101F0
+    void DTOR(void *a1 = 0);  // 0x4101F0
     MissionClass *  getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
     DynamicVector *  resetScriptState(unsigned int * Block, char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
@@ -123,11 +123,11 @@ struct AbstractClass {
     int  COMStub_5(void * aP1, int aP1a);  // 0x543990
     int  COMStub_54(int a2, int a3);  // 0x543A10
     char COMStub_53();  // 0x543A40
-    IsometricTileClass *  CreateInstance(void ** Block, char a2);  // 0x543B10
+    IsometricTileClass *  CreateInstance(void ** Block, char a2, void *a1 = 0);  // 0x543B10
     void  processStateTransition(void * aP1);  // 0x54E590
     int  COMStub_125(int a2, int a3, void * aP3);  // 0x5B3650
     char COMStub_126();  // 0x5B36B0
-    int  COMStub_13(void * aP1);  // 0x5B3970
+    int  COMStub_13(void * aP1, void *a1 = 0);  // 0x5B3970
     void*  getWeaponSpeed(unsigned int * Block, char a2);  // 0x5B46E0
     void  checkLOS(char a2);  // 0x5C0280
     char computePathCost();  // 0x5C02C0
@@ -141,7 +141,7 @@ struct AbstractClass {
     int  applyDamageEffects(unsigned int * a2);  // 0x5C0BF0
     unsigned int  checkDamageThreshold(int a2);  // 0x5C0C30
     VectorClass_flat *  processDeathEvent(unsigned int * Block, char a2);  // 0x5C0D30
-    unsigned int *  updateAnimationState(void * aP1, void * aP2);  // 0x5C5A30
+    unsigned int *  updateAnimationState(void * aP1, void * aP2, void *a1 = 0);  // 0x5C5A30
     int IsNotNull();  // 0x5F5930
     int COMStub_79();  // 0x5F6C70
     void ProcessData(unsigned int * a2, int16_t * a3);  // 0x6293E0
@@ -247,7 +247,7 @@ struct AbstractClass {
     unsigned int *  applyRevealToCell(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8270
     unsigned int *  checkRevealCell(void * a1, void * a2, void * a3, void * a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
-    int COMStub_Return0_38();  // 0x5F42C0
+    int COMStub_Return0_38(void *a1 = 0);  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
     int COMStub_Return0_40();  // 0x5F42E0
     int COMStub_Return0_56();  // 0x5F42F0

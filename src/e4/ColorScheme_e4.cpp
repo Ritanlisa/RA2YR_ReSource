@@ -8,7 +8,7 @@
 
 // 0x68C8D0
 namespace gamemd {
-int ColorScheme::Destructor()
+int ColorScheme::Destructor(void *a1)
 {
 
   void (***v2)(unsigned int, int); // ecx

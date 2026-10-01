@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct TClassFactory_MechLocomotionClass {
     void* vfptr;
-    LONG AddRef(void *a1 = 0);
+    LONG AddRef(void *a1);
     int GetClassName();
     int GetSize();
     int ddtor(void *a1 = 0);

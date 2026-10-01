@@ -35,8 +35,8 @@ struct ConnectionPointClass {
 // --- flat members (END) ---
     int EnumConnections(int a1, int a2);
     int GetConnectionInterface(unsigned int * a1, int a2);
-    int Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int_2, int *), int * a3);
-    unsigned int * Construct(unsigned int * a1, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * updated);
+    unsigned int * Construct(unsigned int * a1, ConnectionPointClass * aP2, void *a3, void *a4, void *a5, void *a6);
 };
 
 } // namespace gamemd

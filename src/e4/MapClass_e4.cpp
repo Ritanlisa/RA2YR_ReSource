@@ -213,7 +213,7 @@ int MapClass::RemoveCellReference(int a2)
 } // namespace gamemd
 // 0x4A95A0
 namespace gamemd {
-int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
+int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2, void *a3)
 {
 
   int result; // eax
@@ -499,7 +499,7 @@ int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass_flat * aP2, int *
 } // namespace gamemd
 // 0x547020
 namespace gamemd {
-ObjectClass * * MapClass::LoadFileData()
+ObjectClass * * MapClass::LoadFileData(void *a1)
 {
 
   int Size; // ebx
@@ -575,7 +575,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
 } // namespace gamemd
 // 0x5652C0
 namespace gamemd {
-void* MapClass::Destruct()
+void* MapClass::Destruct(void *a1, void *a2)
 {
 
   unsigned int *v2; // edi
@@ -963,7 +963,7 @@ unsigned int * MapClass::InitAllCells()
 } // namespace gamemd
 // 0x5673A0
 namespace gamemd {
-int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
+int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9)
 {
 
   double v9; // st7
@@ -1768,7 +1768,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
 } // namespace gamemd
 // 0x56B3F0
 namespace gamemd {
-BombClass * * MapClass::DecompressCellData(MouseClass * aP1)
+BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
 {
 
   MapClass *v2; // esi
@@ -1843,7 +1843,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1)
 } // namespace gamemd
 // 0x56D230
 namespace gamemd {
-int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4)
 {
 
   int16_t *v4; // esi
@@ -2842,7 +2842,7 @@ void MapClass::MapClass_IsRectInBounds()
 }
 }
 // 0x578710
-unsigned int * MapClass::SpiralSearch()
+unsigned int * MapClass::SpiralSearch(void *a1)
 {
 
   void *MapClass_field_0xF4; // edi
@@ -3388,7 +3388,7 @@ int MapClass::LoadTerrainData(MapClass * aP1)
 
 }
 // 0x586780
-int  MapClass::IsAreaFree( int * a2, int a3)
+int  MapClass::IsAreaFree(int * a2, int a3, void *a3)
 {
 
   int v4; // eax
@@ -4241,7 +4241,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
 
 }
 // 0x703590
-unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
+unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2, void *a3)
 {
 
   int v4; // ebx
@@ -4335,7 +4335,7 @@ char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
 
 }
 // 0x48DC90
-int MapClass::UnselectAll_ClearLimboLaunchers()
+int MapClass::UnselectAll_ClearLimboLaunchers(void *a1)
 {
 
   int result; // eax
@@ -4454,7 +4454,7 @@ int MapClass::ProcessFogTransition()
 
 }
 // 0x4ACDA0
-char  MapClass::RevealCell( MouseClass * aP1)
+char  MapClass::RevealCell(MouseClass * aP1)
 {
 
   int16_t *v2; // esi
@@ -4519,7 +4519,7 @@ int MapClass::GetScrollMode()
 
 }
 // 0x4F42F0
-int MapClass::MarkForRedraw(int a2)
+int MapClass::MarkForRedraw(int a2, void *a2)
 {
 
   int result; // eax
@@ -4553,7 +4553,7 @@ int MapClass::IsCellPassable(int a1, int a2)
 
 }
 // 0x565B00
-int MapClass::FreeAllCells()
+int MapClass::FreeAllCells(void *a1)
 {
 
   int i; // ecx
@@ -4781,7 +4781,7 @@ void MapClass::allocateCellArrays()
 
 }
 // 0x5894D0
-int  MapClass::FindSubzoneConnectionIndex( unsigned short * a2)
+int  MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
 {
 
   int result; // eax
@@ -4902,7 +4902,7 @@ void MapClass::InitCellVe_vt03()
 
 }
 // 0x589DC0
-int  MapClass::InitCellVe_vt04( unsigned int * a2)
+int  MapClass::InitCellVe_vt04(unsigned int * a2)
 {
 
   int result; // eax

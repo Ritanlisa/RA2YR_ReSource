@@ -72,9 +72,9 @@ struct CreateTeamCommand {
     char  performAction_241(int a2, unsigned int * a3);  // 0x5386A0
     rc_ptr_base *  performAction_243(void * Block, char a2);  // 0x538A20
     char  performAction_245(char a2, int a3);  // 0x6A6A00
-    void performAction_246();  // 0x731060
-    unsigned int *  Construct(int a2);  // 0x535C00
-    ObjectClass * AddRef();  // 0x535C20
+    void performAction_246(void *a1 = 0);  // 0x731060
+    unsigned int *  Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0);  // 0x535C00
+    ObjectClass * AddRef(void *a1 = 0);  // 0x535C20
     CreateTeamCommand *  performAction_0(char a2);  // 0x535CD0
     CommandClass *  performAction_1(char a2);  // 0x535D00
     SelectTeamCommand *  performAction_22(char a2);  // 0x536090
@@ -109,9 +109,9 @@ struct CreateTeamCommand {
     unsigned int *  performAction_232(unsigned int * Block, char a2);  // 0x5383E0
     unsigned int *  performAction_233(unsigned int * Block, char a2);  // 0x538400
     unsigned int *  performAction_234(unsigned int * Block, char a2);  // 0x538420
-    wchar_t * Release();  // 0x535C40
+    wchar_t * Release(void *a1 = 0);  // 0x535C40
     wchar_t * ddtor();  // 0x535C70
-    wchar_t * Read();  // 0x535C90
+    wchar_t * Read(void *a1 = 0, void *a2 = 0);  // 0x535C90
     void  Undo(int a2);  // 0x535CC0
     char * performAction_2();  // 0x535D20
     wchar_t * performAction_3();  // 0x535D30

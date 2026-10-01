@@ -20,12 +20,12 @@ struct VectorClass_ptr_ParticleTypeClass {
     DynamicVector *  Constructor_VectorClass_SuperWeaponTypeClass___(unsigned int * Block, char a2);  // 0x4F0DE0
     void Destroy(void *a1 = 0);  // 0x4E9080
     unsigned int  GetItemIndex(int a2);  // 0x4E90B0
-    int  Get(int a2);  // 0x4E90D0
+    int  Get(int a2, void *a1 = 0);  // 0x4E90D0
     void Destroy_0();  // 0x4E90E0
     unsigned int  GetItemIndex_0(int a2);  // 0x4E9110
     void Destroy_1();  // 0x4E9140
     unsigned int  GetItemIndex_1(int a2);  // 0x4E9170
-    char  Add(int a2);  // 0x4EEB60
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EEB60
     char  Release(int a2, unsigned int * a3);  // 0x4EEBA0
     void Remove(void *a1 = 0);  // 0x4EEC50
     int  GetSize(unsigned int * a2);  // 0x4EEC80

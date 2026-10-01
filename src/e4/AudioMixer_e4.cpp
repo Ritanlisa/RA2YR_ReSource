@@ -27,7 +27,7 @@ int AudioMixer::SetVolume()
 } // namespace gamemd
 // 0x4071C0
 namespace gamemd {
-int AudioMixer::PlaySample()
+int AudioMixer::PlaySample(void *a1)
 {
 
   int AudioMixer_field_08; // eax
@@ -119,7 +119,7 @@ int AudioMixer::PlaySample()
 } // namespace gamemd
 // 0x401000
 namespace gamemd {
-int AudioMixer::Init()
+int AudioMixer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   SetupSampleAudioMixer(&this->AudioMixer_field_00, 0x4000); /*0x40100a*/
@@ -180,7 +180,7 @@ int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 } // namespace gamemd
 // 0x406E80
 namespace gamemd {
-int AudioMixer::Shutdown()
+int AudioMixer::Shutdown(void *a1)
 {
 
   if ( g_Audio_Enabled ) /*0x406e88*/

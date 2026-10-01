@@ -33,7 +33,7 @@ int Surface::IsLocked()
 } // namespace gamemd
 // 0x5D1FD0
 namespace gamemd {
-unsigned int * Surface::CopyRect(ObjectClass * aP1)
+unsigned int * Surface::CopyRect(ObjectClass * aP1, void *a2)
 {
 
   unsigned int *result; // eax
@@ -351,7 +351,7 @@ void sub_626C60()
 }
 }
 // 0x641DB0
-AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
+AbstractClass * * Surface::LoadToSurfaceSHP(char * Source, void *a2)
 {
 
   unsigned int *v3; // esi
@@ -1254,7 +1254,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
 
 }
 // 0x7602E0
-void   Surface::RenderToSurfaceVoxel( unsigned int * a2, int * a3)
+void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
 {
 
   int *v4; // edi
@@ -1644,7 +1644,7 @@ int Surface::PixelToIndex(unsigned int * a2)
 
 }
 // 0x7BD690
-int Surface::CommitSurfaceBuffersAudio()
+int Surface::CommitSurfaceBuffersAudio(void *a1)
 {
 
   int v3; // eax
@@ -2077,7 +2077,7 @@ LABEL_103:
 
 }
 // 0x411510
-unsigned int *  Surface::GetRect( unsigned int * a2)
+unsigned int *  Surface::GetRect(unsigned int * a2)
 {
 
   int Width; // edi
@@ -2171,7 +2171,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
 
 }
 // 0x4AEC60
-unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
+unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->Width = aP1; /*0x4aec6a*/

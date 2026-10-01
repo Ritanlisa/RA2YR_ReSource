@@ -60,11 +60,11 @@ struct Skirmish {
     AbstractClass * * SetupGame(int a2);
     CampaignClass * * SetupAllSpawnLocations();
     ReferenceCounted * * Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4);
-    TechnoTypeClass * * RandomizeSettings(void * aP1);
-    int EnableSpawnButtons(void *a1 = 0);
+    TechnoTypeClass * * RandomizeSettings(ObjectClass * aP1, void *a2);
+    int EnableSpawnButtons(HWND hDlg);
     int FillPlayerNames();
     int ReadSettings(HWND hDlg);
-    int RenderPreview(void * aP1);
+    int RenderPreview(SkirmishDialog * aP1, void *a2);
 };
 
 } // namespace gamemd

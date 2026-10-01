@@ -96,16 +96,16 @@ struct Object {
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
 // --- flat members (END) ---
-    int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);  // 0x47C3D0
+    int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a1 = 0);  // 0x47C3D0
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
-    int IsAlliedWithObjectHouse(IUnknown * aP1);  // 0x4F9A90
+    int IsAlliedWithObjectHouse(IUnknown * aP1, void *a1 = 0);  // 0x4F9A90
     bool  IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int *  FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
     int SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3);  // 0x5FC380
     void  HandleAction(int * a2, int * a3);  // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
     void*  DrawObject(void ** Block, char a2);  // 0x5FDF70
-    int *  CalculateObjectPlacementPosition(int * a2);  // 0x62AC30
+    int *  CalculateObjectPlacementPosition(int * a2, void *a1 = 0);  // 0x62AC30
     int  LoadObject(void * aP1, int aP1a);  // 0x5FD8F0
     SessionClass *  DtorWithDelete(void ** Block, char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0

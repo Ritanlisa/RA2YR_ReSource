@@ -20,7 +20,7 @@
 
 // 0x4325C0
 namespace gamemd {
-AudioController * * CCFileClass::Close()
+AudioController * * CCFileClass::Close(void *a1, void *a2)
 {
     unsigned int v3 = 0;  /* G37 hoist */
 
@@ -53,7 +53,7 @@ AudioController * * CCFileClass::Close()
 } // namespace gamemd
 // 0x535A70
 namespace gamemd {
-void CCFileClass::Destruct()
+void CCFileClass::Destruct(void *a1, void *a2)
 {
 
   *(unsigned int *)this->CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x535a76*/
@@ -66,7 +66,7 @@ void CCFileClass::Destruct()
 } // namespace gamemd
 // 0x65D0D0
 namespace gamemd {
-void CCFileClass::GetFileSize()
+void CCFileClass::GetFileSize(void *a1, void *a2)
 {
 
   DWORD FileSize; // edi

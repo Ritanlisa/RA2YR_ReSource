@@ -39,7 +39,7 @@ void * RadBeam::Create()
 
 // 0x6593F0
 namespace gamemd {
-unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
+unsigned int * RadBeam::InitState(rc_ptr_base * aP1, void *a2)
 {
 
   ((unsigned int *)this)[0] = 0; /*0x6593fe*/

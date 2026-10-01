@@ -40,8 +40,8 @@ struct GameOption {
     unsigned int u32_949;
 // --- flat members (END) ---
     char CheckDuplicate();
-    int GetField();
-    void * SetDescriptionWStr(void * Destination, void * aP1);
+    int GetField(void *a1, void *a2);
+    int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
     void * SetDigest(CCINIClass * aP1);
 };
 

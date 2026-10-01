@@ -36,7 +36,7 @@
 
 // 0x71A450
 namespace gamemd {
-void TemporalClass::Constructor()
+void TemporalClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   int v2; // eax
@@ -344,7 +344,7 @@ LABEL_10:
 
 // 0x71AB10
 namespace gamemd {
-void TemporalClass::GetWarpPerStep( int a2)
+void TemporalClass::GetWarpPerStep(int a2, void *a2)
 {
 
   int WarpPerStep; // ebx

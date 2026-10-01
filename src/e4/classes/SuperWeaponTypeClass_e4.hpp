@@ -151,9 +151,9 @@ struct SuperWeaponTypeClass {
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
     SuperWeaponTypeClass * SDDTOR(char a2);
-    int FindByName(void *a1 = 0);
+    int FindByName(void *a1);
     int FindFirstOfAction();
-    int FindOrCreate(void * aP1, unsigned char * a2, void * aP3);
+    int FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3);
     int SD_vt03(int a1, unsigned int * a2);
     int SD_vt11();
     int SD_vt12();
@@ -161,10 +161,10 @@ struct SuperWeaponTypeClass {
     int SD_vt16();
     int SD_vt27(int a2, int a3);
     int SaveLoad_Prefix(int a1, int a2);
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     SuperWeaponTypeClass(void * aP1);
-    int loadSWProperties(void * aP1, unsigned char * a2, int a4);
-    int Construct(AbstractClass * aP1);
+    int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4);
+    int Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     void* SD_vt25(unsigned char *** aP1);
 };
 

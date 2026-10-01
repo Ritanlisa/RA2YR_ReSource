@@ -3758,7 +3758,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
 }
 }
 // 0x60C4A0
-int SkirmishDialog::ResizeDialogAndEnum()
+int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
 {
 
   MoveWindow(hWndParent, 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/

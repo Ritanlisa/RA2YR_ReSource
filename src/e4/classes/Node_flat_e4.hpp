@@ -17,7 +17,7 @@ struct Node_flat {
     unsigned int Previous;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-unsigned int * Init();
+unsigned int * Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
 };
 
 } // namespace gamemd

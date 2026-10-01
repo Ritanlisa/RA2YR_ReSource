@@ -28,8 +28,8 @@ struct MapSeed {
     unsigned char MapSeed_field_0x20;  // 0x20
 // --- flat members (END) ---
     AbstractClass * * InsertName();
-    int CheckName(void *a1 = 0);
-    int IsCellInBounds();
+    int CheckName(void *a1);
+    int IsCellInBounds(void *a1);
     int ValidateName(int a2);
 };
 

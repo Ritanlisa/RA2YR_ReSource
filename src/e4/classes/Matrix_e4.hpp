@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct Matrix {
     unsigned int *Matrix:: Copy12Float(int a2);
-    int Matrix:: Scale(float a2);
+    int Matrix:: Scale(float a2, void *a1 = 0);
 };
 
 } // namespace gamemd

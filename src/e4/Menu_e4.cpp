@@ -8,7 +8,7 @@
 
 // 0x4C6140
 namespace gamemd {
-int Menu::Reset()
+int Menu::Reset(void *a1, void *a2)
 {
 
   *((unsigned int *)this + 13) = 0; /*0x4c614c*/

@@ -11,6 +11,6 @@ struct TypeList_BuildingType {
     int Capacity;  // 0x8
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    TypeList_flat *  Add(unsigned int * Block, char a2);  // 0x5AC650
+    TypeList_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x5AC650
 };
 } // namespace gamemd

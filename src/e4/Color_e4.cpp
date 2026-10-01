@@ -11,7 +11,7 @@
 
 // 0x517440
 namespace gamemd {
-int Color::ConvertToRGB(int a2)
+int Color::ConvertToRGB(int a2, void *a2)
 {
 
   int v2; // esi
@@ -123,7 +123,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 } // namespace gamemd
 // 0x6612C0
 namespace gamemd {
-unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
+unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2, void *a3)
 {
 
   uint8_t v3; // bl

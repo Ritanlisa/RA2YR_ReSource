@@ -259,11 +259,11 @@ struct OverlayTypeClass {
     Color* q2B7;  // 0x2B7
 // --- flat members (END) ---
     AnimTypeClass * * GetCategory();
-    AnimTypeClass * * LoadFromINI(unsigned char *** aP1);
-    void* GetDamage(int a2);
+    AnimTypeClass * * LoadFromINI(unsigned char *** aP1, void *a2);
+    OverlayClass * GetDamage(int a2);
     OverlayTypeClass * ddtor(char a2);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
-    bool GetType(void* aP2, int a3);
+    bool GetType(IUnknown * aP2, int a3);
     int * GetTile(int a1);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -272,11 +272,11 @@ struct OverlayTypeClass {
     int GetTypeIdentifier();
     int LookupByName();
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(void * aP1, unsigned char * a2, void * aP3);
-    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
-    unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4);
+    int   SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    unsigned int *  Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     OverlayTypeClass(void * aP1);
-    unsigned int * vt_entry_6C(unsigned int * a0, void * aP1);
+    unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
 };
 

@@ -45,17 +45,17 @@ struct INIClass {
     unsigned int SetInt;
     unsigned int SetString;
 // --- flat members (END) ---
-    INIClass * ReadCoord(double aP1, int a2, void * aP2, int a4);
-    ObjectClass * * BinarySearchSection(INIClass * aP1);
-    VoxelStruct * * GetKeyCount(INIClass * aP1);
+    int ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
+    ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
+    VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(INIClass * aP1, unsigned char * a2, int a4);
-    int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2);
-    int ReadInt(void * aP1, void * aP2, void * aP3);
+    int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);
+    int ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3);
     int WOLobby_Play();
     int sub_44FE60();
     INIClass();
-    unsigned int GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count);
+    unsigned int GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count, void *a6);
     void SetGameOptionsPing();
     static double ClearSection(...);  // C2597 interim stub
     static double GetBase64Data(...);  // C2597 interim stub

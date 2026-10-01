@@ -498,8 +498,8 @@ struct ScenarioClass {
     unsigned int Timer;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
-    ScenarioClass * * CopyStartPositions();
-    TimerStruct * * Constructor();
+    ScenarioClass * * CopyStartPositions(void *a1);
+    TimerStruct * * Constructor(void *a1, void *a2, void *a3);
     char ClearFlag();
     char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);
@@ -508,7 +508,7 @@ struct ScenarioClass {
     char StubReturnFalse2();
     char StubReturnFalse3(int a1);
     char StubReturnFalse5(int a1, int a2, int a3);
-    char createStartingForces();
+    char createStartingForces(void *a1);
     char initTriggers();
     char initUnits();
     char initWaypoints();
@@ -518,14 +518,14 @@ struct ScenarioClass {
     char saveGame();
     int AssignStartPositions(char a1);
     int CleanupTemporary();
-    int LoadScenarioAndStart(void * Source, char a2, int a3);
+    int LoadScenarioAndStart(AnimClass * Source, char a2, int a3);
     int MissionStubReturnZero();
     int MissionStubReturnZero3();
-    int ReadMapINI(void * aP1);
+    int ReadMapINI(CCINIClass * aP1);
     int StubReturnFalse11();
     int initTeams();
     unsigned char * ProcessIntroTimer();
-    unsigned int ResetIntroFlags();
+    unsigned int ResetIntroFlags(void *a1);
     void StubReturnFalse4(int a1);
     void StubReturnFalse6(int a1, int a2);
     void StubReturnFalse7(int a1);

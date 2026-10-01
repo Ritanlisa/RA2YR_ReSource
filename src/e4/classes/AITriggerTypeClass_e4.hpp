@@ -76,7 +76,7 @@ struct AITriggerTypeClass {
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
     DynamicVector * * OwnerHouseOwns(unsigned int * a2, int a3);
-    ObjectClass * * LoadFromINI(unsigned char *** a2);
+    ObjectClass * * LoadFromINI(unsigned char *** a2, void *a2);
     int ChronoSphereCharged(int a1, int a2);
     int CivilianHouseOwns(int a2, int a3);
     int GetObjectSize();

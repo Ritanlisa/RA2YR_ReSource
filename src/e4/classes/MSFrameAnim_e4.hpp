@@ -33,11 +33,11 @@ struct MSFrameAnim {
     int  resetAnimation(unsigned int * a2);  // 0x76A360
     DynamicVector *  setPosition(unsigned int * Block, char a2);  // 0x76A680
     DynamicVector *  setScale(unsigned int * Block, char a2);  // 0x76A720
-    char  Load(int a1, int * a2);  // 0x767ED0
+    char  Load(int a1, int * a2, void *a3 = 0, void *a4 = 0);  // 0x767ED0
     void  Draw(int a1, int * a2);  // 0x767EF0
     unsigned int *  UpdateFrame(unsigned int * a1);  // 0x767F80
     unsigned int  startAnimation(int a2);  // 0x769C80
     unsigned int  pauseAnimation(int a2);  // 0x769D00
-    unsigned int * drawFrame();  // 0x76A7C0
+    unsigned int * drawFrame(void *a1 = 0);  // 0x76A7C0
 };
 } // namespace gamemd

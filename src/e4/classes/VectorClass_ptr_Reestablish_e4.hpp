@@ -22,11 +22,11 @@ struct VectorClass_ptr_Reestablish {
     char  Remove(int a2, unsigned int * a3);  // 0x45A7A0
     void ddtor(void *a1 = 0);  // 0x45A850
     int  GetSize(unsigned int * a2);  // 0x45A880
-    unsigned int  Get(int a2);  // 0x45A8C0
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x45A8C0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x45A8E0
     int  FindItemIndex(unsigned int * a2);  // 0x45A990
-    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x45AA10
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x45ACE0
+    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x45AA10
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x45ACE0
     DynamicVector *  Constructor_VectorClass_Reestablish___(unsigned int * Block, char a2);  // 0x45AD30
 };
 } // namespace gamemd

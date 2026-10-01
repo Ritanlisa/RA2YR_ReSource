@@ -25,7 +25,7 @@
 
 // 0x4080C0
 namespace gamemd {
-int ThemeClass::RequestBuffer()
+int ThemeClass::RequestBuffer(void *a1)
 {
 
   return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
@@ -34,7 +34,7 @@ int ThemeClass::RequestBuffer()
 } // namespace gamemd
 // 0x408140
 namespace gamemd {
-int ThemeClass::GetValue()
+int ThemeClass::GetValue(void *a1, void *a2)
 {
 
   return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
@@ -43,7 +43,7 @@ int ThemeClass::GetValue()
 } // namespace gamemd
 // 0x720480
 namespace gamemd {
-int ThemeClass::ReadThemeEntry( uint8_t *** a2)
+int ThemeClass::ReadThemeEntry(uint8_t *** a2, void *a2)
 {
 
   const char *v3; // edi
@@ -245,7 +245,7 @@ int ThemeClass::ClearQueues()
 } // namespace gamemd
 // 0x752AB0
 namespace gamemd {
-void ThemeClass::GetField(int a1)
+void ThemeClass::GetField(int a1, void *a2)
 {
 
   dword_846614 = a1; /*0x752ab6*/

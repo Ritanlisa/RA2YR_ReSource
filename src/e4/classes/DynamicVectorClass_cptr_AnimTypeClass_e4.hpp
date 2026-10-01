@@ -11,6 +11,6 @@ struct DynamicVectorClass_cptr_AnimTypeClass {
     int Capacity;  // 0x8
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    DynamicVector *  Add(unsigned int * Block, char a2);  // 0x5252B0
+    DynamicVector *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x5252B0
 };
 } // namespace gamemd

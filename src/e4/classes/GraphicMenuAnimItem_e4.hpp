@@ -17,7 +17,7 @@ struct GraphicMenuAnimItem {
     unsigned char q014;  // 0x14
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    VectorCursor * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    VectorCursor * Constructor(std::locale::facet * this, char a2, void *a3, void *a4, void *a5);
 };
 
 } // namespace gamemd

@@ -697,7 +697,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
 } // namespace gamemd
 
 // 0x4779E0
-unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1)
+unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
 {
 
   int v3; // eax
@@ -748,7 +748,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1)
 
 }
 // 0x477DB0
-unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3)
+unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3, void *a4, void *a5, void *a6)
 {
 
   *(unsigned int *)&((unsigned int *)this)[3] = 0; /*0x477db9*/
@@ -1240,7 +1240,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 } // namespace gamemd
 
 // 0x50EA00
-void DynamicVectorClass_flat::Destroy()
+void DynamicVectorClass_flat::Destroy(void *a1)
 {
 
   int result; // eax

@@ -10,7 +10,7 @@
 
 // 0x4105F0
 namespace gamemd {
-int INoticeSource::Dispatch(int a1)
+int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   AbstractClass *v1; // ecx

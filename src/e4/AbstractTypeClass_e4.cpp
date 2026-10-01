@@ -16,7 +16,7 @@
 
 // 0x410800
 namespace gamemd {
-int AbstractTypeClass::Constructor( AbstractClass * aP1)
+int AbstractTypeClass::Constructor(AbstractClass * aP1, void *a2, void *a3)
 {
 
   char *v3; // ebx
@@ -91,7 +91,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {
-int AbstractTypeClass::Dtor()
+int AbstractTypeClass::Dtor(void *a1)
 {
 
   int v2; // eax
@@ -118,7 +118,7 @@ int AbstractTypeClass::Dtor()
 } // namespace gamemd
 // 0x410A60
 namespace gamemd {
-int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
+int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -225,7 +225,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
 } // namespace gamemd
 // 0x410960
 namespace gamemd {
-int AbstractTypeClass::Init( AbstractTypeClass * aP1)
+int AbstractTypeClass::Init(AbstractTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   char v3; // al
@@ -255,7 +255,7 @@ BOOL AbstractTypeClass::NameEquals(void * a2)
 } // namespace gamemd
 // 0x410B90
 namespace gamemd {
-char AbstractTypeClass::WriteINI(CCINIClass * aP1)
+char AbstractTypeClass::WriteINI(CCINIClass * aP1, void *a2)
 {
 
   uint8_t *pad_24; // edi
@@ -271,7 +271,7 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 } // namespace gamemd
 // 0x410BE0
 namespace gamemd {
-int AbstractTypeClass::ProcessPower( AbstractClass * aP1)
+int AbstractTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/
@@ -294,7 +294,7 @@ int AbstractTypeClass::StubReturnFalse()
 } // namespace gamemd
 // 0x5F75B0
 namespace gamemd {
-int AbstractTypeClass::GetData()
+int AbstractTypeClass::GetData(void *a1)
 {
 
   return 0; /*0x5f75b2*/

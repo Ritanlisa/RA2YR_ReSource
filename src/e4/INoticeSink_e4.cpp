@@ -8,7 +8,7 @@
 
 // 0x410210
 namespace gamemd {
-int INoticeSink::Dispatch(int a1)
+int INoticeSink::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   return (*(int (**)(char *))(*((unsigned int *)a1 - 1) + 44))((char *)a1 - 4); /*0x41021d*/

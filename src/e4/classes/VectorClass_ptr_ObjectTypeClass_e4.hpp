@@ -18,8 +18,8 @@ struct VectorClass_ptr_ObjectTypeClass {
     DynamicVector *  Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2);  // 0x5F9E30
     void Destroy(void *a1 = 0);  // 0x5F9B00
     unsigned int  GetItemIndex(int a2);  // 0x5F9B30
-    int  Get(int a2);  // 0x5F9B50
-    char  Add(int a2);  // 0x5F9B80
+    int  Get(int a2, void *a1 = 0);  // 0x5F9B50
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x5F9B80
     char  Release(int a2, unsigned int * a3);  // 0x5F9BC0
     void Remove(void *a1 = 0);  // 0x5F9C70
     int  GetSize(unsigned int * a2);  // 0x5F9CA0

@@ -50,11 +50,11 @@ struct Trigger {
     unsigned int u32_84;
     unsigned int Timer;
 // --- flat members (END) ---
-    int EnableOnce(AbstractClass * aP1);  // 0x554A60
-    MSShapeAnim * * initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7);  // 0x5CBD20
+    int EnableOnce(AbstractClass * aP1, void *a1 = 0);  // 0x554A60
+    MSShapeAnim * * initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7, void *a1 = 0);  // 0x5CBD20
     void ProcessMapEvents(int *a1,  int * a2,  int a3,  int a4,  char a5,  char a6);    // 0x76D4D0
-    unsigned int *  processTrigger(int a2, int a3);  // 0x76F090
-    unsigned int *  checkCondition(void * aP1, void * aP2);  // 0x76F1C0
-    int  executeActions(int a2);  // 0x76FF20
+    unsigned int *  processTrigger(int a2, int a3, void *a1 = 0);  // 0x76F090
+    unsigned int *  checkCondition(void * aP1, void * aP2, void *a1 = 0);  // 0x76F1C0
+    int  executeActions(int a2, void *a1 = 0);  // 0x76FF20
 };
 } // namespace gamemd

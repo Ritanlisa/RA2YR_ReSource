@@ -56,7 +56,7 @@ struct ShipLocomotionClass {
 // --- flat members (END) ---
     HRESULTBeginMove(int * a1, int * pStm);
     HRESULTLoadFromStream(int * a1, int * pPStm, int a3);
-    ShipLocomotionClass * ProcessMove(void * Block, char a2);
+    ShipLocomotionClass * ProcessMove(ILocomotion ** Block, char a2);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
 };

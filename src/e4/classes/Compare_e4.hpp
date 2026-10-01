@@ -9,7 +9,7 @@ struct Compare {
 // --- flat members (BEGIN) ---
     char Compare_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int Field96(void * a1, void * a2);
+    int Field96(const void * a1, const void * a2);
 };
 
 } // namespace gamemd

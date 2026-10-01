@@ -19,8 +19,8 @@ struct VectorClass_ptr_IsometricTileClass {
     LogicClass *  Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2);  // 0x40CC20
     void Destroy(void *a1 = 0);  // 0x40C820
     unsigned int  GetItemIndex(int a2);  // 0x40C850
-    int  Get(int a2);  // 0x40C870
-    char  Add(int a2);  // 0x40C880
+    int  Get(int a2, void *a1 = 0);  // 0x40C870
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40C880
     char  Release(int a2, unsigned int * a3);  // 0x40C8C0
     void Remove(void *a1 = 0);  // 0x40C970
     int  GetSize(unsigned int * a2);  // 0x40C9A0

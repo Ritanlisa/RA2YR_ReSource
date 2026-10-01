@@ -18,8 +18,8 @@ struct VectorClass_ptr_TemporalClass {
     DynamicVector *  Constructor_VectorClass_TemporalClass___(unsigned int * Block, char a2);  // 0x71B550
     void Destroy(void *a1 = 0);  // 0x71B240
     unsigned int  GetItemIndex(int a2);  // 0x71B270
-    int  Get(int a2);  // 0x71B290
-    char  Add(int a2);  // 0x71B2A0
+    int  Get(int a2, void *a1 = 0);  // 0x71B290
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x71B2A0
     char  Release(int a2, unsigned int * a3);  // 0x71B2E0
     void Remove(void *a1 = 0);  // 0x71B390
     int  GetSize(unsigned int * a2);  // 0x71B3C0

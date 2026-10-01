@@ -43,10 +43,10 @@ struct TriggerClass {
     unsigned int u32_54;
 // --- flat members (END) ---
     char FindByEventType(char a1);
-    void GetValue();
-    int LoadTrigger(void * aP0, int aP1);
+    void GetValue(void *a1, void *a2);
+    int LoadTrigger(AbstractClass * aP0, int aP1);
     int RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6);
-    int SaveTrigger(void * aP0, int * a1, int aP2);
+    int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn38();
     int StubReturn72();
     int ddtor(int a1, unsigned int * a2);

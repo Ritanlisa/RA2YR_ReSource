@@ -15,13 +15,13 @@ struct Map_WorldDominationTour_20 {
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x769E30
-    rc_ptr_base *  Constructor_0(void * Block, char a2);  // 0x76A610
-    VectorCursor *  Constructor(unsigned int * Block, char a2);  // 0x769DC0
+    rc_ptr_base *  Constructor_0(void * Block, char a2, void *a1 = 0);  // 0x76A610
+    VectorCursor *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x769DC0
     char  AddRef(int a2);  // 0x769DE0
     int ddtor(void *a1 = 0);  // 0x769F50
-    int  Read(int a2);  // 0x769F80
+    int  Read(int a2, void *a1 = 0);  // 0x769F80
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x76A5C0
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x769CA0
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a1 = 0);  // 0x769CA0
     unsigned int  Write(int a2);  // 0x769FC0
 };
 } // namespace gamemd

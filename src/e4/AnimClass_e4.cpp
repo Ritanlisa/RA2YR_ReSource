@@ -38,7 +38,7 @@
 
 // 0x4228E0
 namespace gamemd {
-void AnimClass::Destruct( void * a2)
+void AnimClass::Destruct(void * a2, void *a2)
 {
 
   unsigned char *AnimClass_field_0xCC; // ebp
@@ -1217,7 +1217,7 @@ LABEL_6:
 }
 // 0x428DE0
 namespace gamemd {
-void AnimClass::FreeRenderBuffer()
+void AnimClass::FreeRenderBuffer(void *a1)
 {
 
   if ( this->AnimClass_field_0x35D[1] && this->AnimClass_field_0xA4 ) /*0x428ded*/
@@ -1235,7 +1235,7 @@ void AnimClass::FreeRenderBuffer()
 }
 // 0x448260
 namespace gamemd {
-BuildingTypeClass * * AnimClass::drawFrame()
+BuildingTypeClass * * AnimClass::drawFrame(void *a1)
 {
 
   int result; // eax

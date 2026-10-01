@@ -34,10 +34,10 @@ struct ComStreamClass {
     unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * readData();
-    LONG AddRef(void *a1 = 0);
+    LONG AddRef(void *a1);
     int QueryInterface();
-    int Release(void *a1 = 0);
-    int Seek();
+    int Release(void *a1);
+    int Seek(void *a1, void *a2, void *a3);
     int Write();
     int ddtor();
     unsigned int * getStreamSize();

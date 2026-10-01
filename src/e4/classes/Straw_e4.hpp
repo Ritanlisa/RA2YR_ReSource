@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Straw {
-    int Straw:: Dtor();
+    int Straw:: Dtor(void *a1 = 0);
 };
 
 } // namespace gamemd

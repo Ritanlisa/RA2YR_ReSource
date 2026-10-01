@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct DynamicArray {
-    char DynamicArray:: Resize(int * a2, unsigned int * a3);
+    char DynamicArray:: Resize(int * a2, unsigned int * a3, void *a1 = 0);
 };
 
 } // namespace gamemd

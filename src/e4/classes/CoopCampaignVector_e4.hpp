@@ -25,7 +25,7 @@ struct CoopCampaignVector {
     unsigned int m_C;
 // --- flat members (END) ---
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
-    void Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2);
+    void Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);
 };
 

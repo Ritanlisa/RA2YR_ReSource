@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Rect_Point {
-    int Rect_Point:: Set(int a2, int a3);
+    int Rect_Point:: Set(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

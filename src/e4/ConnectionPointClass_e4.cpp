@@ -89,7 +89,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 } // namespace gamemd
 // 0x4A0870
 namespace gamemd {
-unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
+unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->ConnectionPointClass_field_0x04 = *a1; /*0x4a087c*/

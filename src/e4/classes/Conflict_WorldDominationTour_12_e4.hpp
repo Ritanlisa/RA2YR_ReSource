@@ -23,17 +23,17 @@ struct Conflict_WorldDominationTour_12 {
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x766C10
     char  Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x766850
-    void*  Constructor(unsigned int * Block, char a2);  // 0x766960
-    void*  Constructor_0(unsigned int * Block, char a2);  // 0x766990
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a1 = 0);  // 0x766850
+    void*  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x766960
+    void*  Constructor_0(unsigned int * Block, char a2, void *a1 = 0);  // 0x766990
     char  AddRef(int a2);  // 0x766BC0
     int ddtor();  // 0x766D30
-    int  Read(int a2);  // 0x766D60
+    int  Read(int a2, void *a1 = 0);  // 0x766D60
     int  IndexOf(int a2);  // 0x766F40
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x766FC0
     DynamicVector *  Constructor_2(unsigned int * Block, char a2);  // 0x767080
     unsigned int  PointerToIndex(int a2);  // 0x766830
     unsigned int  Write(int a2);  // 0x766DA0
-    int Constructor_3();  // 0x7670D0
+    int Constructor_3(void *a1 = 0);  // 0x7670D0
 };
 } // namespace gamemd

@@ -667,11 +667,11 @@ struct FootClass {
     unsigned int *__pad_0;
     unsigned int MissionMoveCarryallLand;
 // --- flat members (END) ---
-    AbstractClass * Destruct();
+    AbstractClass * Destruct(void *a1, void *a2);
     int updateThreat();
     unsigned int checkTurning();
     void Destroyed(int a2);
-    void FootClass_ImbueLocomotor(int * a1, int a2, int a3, unsigned int * ppv, IID rclsid, int a6);
+    AbstractClass * FootClass_ImbueLocomotor(void * a1, void * a2, void * a3, void *a4, void *a5, void *a6);
     void Stub(int a1);
      double GetField(...);  // C2597 interim stub
     static double SetField(...);  // C2597 interim stub

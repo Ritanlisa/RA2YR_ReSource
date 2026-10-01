@@ -31,7 +31,7 @@
 
 // 0x4346C0
 namespace gamemd {
-int Font::GetGlyphDataForChar(AbstractClass * aP1)
+int Font::GetGlyphDataForChar(AbstractClass * aP1, void *a2)
 {
 
   unsigned int *Font_field_04; // ecx

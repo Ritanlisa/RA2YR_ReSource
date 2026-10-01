@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Pipe {
-    int Pipe:: Dtor();
+    int Pipe:: Dtor(void *a1 = 0);
 };
 
 } // namespace gamemd

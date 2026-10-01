@@ -14,8 +14,8 @@ struct VectorClass_ptr_PhoneEntryClass {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Get(int a2);  // 0x69C6B0
-    char  Add(int a2);  // 0x69D200
+    int  Get(int a2, void *a1 = 0);  // 0x69C6B0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x69D200
     char  Release(int a2, unsigned int * a3);  // 0x69D240
     void Remove(void *a1 = 0);  // 0x69D2F0
     int  GetSize(unsigned int * a2);  // 0x69D320

@@ -28,7 +28,7 @@
 
 // 0x7B1B50
 namespace gamemd {
-int UDPInterfaceClass::connect()
+int UDPInterfaceClass::connect(void *a1)
 {
 
   char result; // al
@@ -165,7 +165,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
 } // namespace gamemd
 // 0x7B3AA0
 namespace gamemd {
-AbstractClass * * UDPInterfaceClass::ProcessSocketIO( int a2, SOCKET s, int a4, unsigned int a5)
+AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
 
   SOCKET v6; // ebx
@@ -999,7 +999,7 @@ int UDPInterfaceClass_Destru::COMStub_Ret2()
 
 }
 // 0x7B45D0
-DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2)
+DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, void *a3)
 {
 
   void *v3; // eax

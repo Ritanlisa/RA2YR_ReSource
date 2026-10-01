@@ -384,7 +384,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
 } // namespace gamemd
 // 0x7BB050
 namespace gamemd {
-XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
+XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4, void *a4)
 {
 
   XSurface *v4; // edi
@@ -841,7 +841,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
 } // namespace gamemd
 // 0x7BBB90
 namespace gamemd {
-XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
+XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a6)
 {
 
   void **v6; // edi

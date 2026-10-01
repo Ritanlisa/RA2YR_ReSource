@@ -8,7 +8,7 @@
 
 // 0x49EA10
 namespace gamemd {
-unsigned int * Node_flat::Init()
+unsigned int * Node_flat::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x49ea14*/

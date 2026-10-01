@@ -21,8 +21,8 @@ struct ParticleSystemClass_16 {
     char  AddRef(int a2);  // 0x4EB260
     char  Release(int a2, unsigned int * a3);  // 0x4EB2A0
     void ddtor(int a2, int a3);  // 0x4EB350
-    int  Init(unsigned int * a2);  // 0x4EB380
+    int  Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x4EB380
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4EFD50
-    unsigned int  Read(int a2);  // 0x4EB3C0
+    unsigned int  Read(int a2, void *a1 = 0);  // 0x4EB3C0
 };
 } // namespace gamemd

@@ -20,7 +20,7 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     char  AddRef(int a2);  // 0x4E07E0
     int  FindItemIndex(unsigned int * a2);  // 0x4E0CA0
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x4E0D80
-    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x4E0E20
+    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x4E0E20
     unsigned int *  Clear(unsigned int * a2, int a3);  // 0x4E0250
     unsigned int  GetCapacity(int a2);  // 0x4E09E0
     void Destroy(void *a1 = 0);  // 0x4E0AB0

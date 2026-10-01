@@ -26,7 +26,7 @@
 
 // 0x568300
 namespace gamemd {
-int LayerClass::CoordinatesLegal( IUnknown * aP1)
+int LayerClass::CoordinatesLegal(IUnknown * aP1, void *a2)
 {
 
   int v2; // edx
@@ -599,7 +599,7 @@ LABEL_25:
 }
 // 0x578290
 namespace gamemd {
-int LayerClass::CellIteratorNext()
+int LayerClass::CellIteratorNext(void *a1)
 {
 
   int v1; // eax
@@ -651,7 +651,7 @@ int LayerClass::CellIteratorNext()
 }
 // 0x578350
 namespace gamemd {
-int LayerClass::CellIteratorReset()
+int LayerClass::CellIteratorReset(void *a1)
 {
 
   int v1; // eax
@@ -669,7 +669,7 @@ int LayerClass::CellIteratorReset()
 }
 // 0x578460
 namespace gamemd {
-int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
+int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2, void *a3)
 {
 
   int v3; // esi

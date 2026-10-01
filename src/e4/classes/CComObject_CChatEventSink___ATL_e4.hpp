@@ -13,7 +13,7 @@ struct CComObject_CChatEventSink___ATL {
     unsigned int Dialog;
     unsigned int Timer;
 // --- flat members (END) ---
-    int DispatchConnectionPairs();  // 0x7937B0
+    int DispatchConnectionPairs(void *a1 = 0);  // 0x7937B0
     int  DispatchStub_32(int a1, int a2, int a3, int a4);  // 0x7A4EC0
     int  GetTypeInfo(int a1, int a2, void * a3);  // 0x7A5290
     int  FireEvent(int a1, int a2, unsigned char * a3);  // 0x7A5690
@@ -32,9 +32,9 @@ struct CComObject_CChatEventSink___ATL {
     int  DispatchStub_34(int a1, int a2, float a3);  // 0x7ABD40
     int  DispatchStub_36(int a1, int a2, int a3);  // 0x7ABFA0
     int  DispatchStub_37(int a1, int a2, int a3);  // 0x7AC220
-    LONG Release();  // 0x7AC6B0
+    LONG Release(void *a1 = 0);  // 0x7AC6B0
     int QueryInterface();  // 0x7AC700
-    int  Check(void * aP1);  // 0x7AE5B0
+    int  Check(void * aP1, void *a1 = 0, void *a2 = 0);  // 0x7AE5B0
     int  DispatchStub_20(int a1, int a2, void * a3);  // 0x7A5220
     int  GetTypeInfoCount(int a1, int a2, int a3);  // 0x7A5240
     int  GetIDsOfNames(int a1, int a2, char * Source);  // 0x7A55F0
@@ -46,7 +46,7 @@ struct CComObject_CChatEventSink___ATL {
     int  DispatchStub_43(int a1, int a2, int a3, void * a4, void * String);  // 0x7AB260
     int  DispatchStub_29(int a1, int a2, int Time);  // 0x7AB350
     int  DispatchStub_31(int a1, int a2, unsigned char * a3, int a4);  // 0x7AB3C0
-    LONG AddRef();  // 0x7AC690
+    LONG AddRef(void *a1 = 0);  // 0x7AC690
     int  DispatchStub_38(int a1, int a2, int a3);  // 0x7AC4A0
     int  DispatchStub_39(int a1, int a2, int a3);  // 0x7AC4B0
     int  DispatchStub_45(int a1, int a2, int a3);  // 0x7AC4C0

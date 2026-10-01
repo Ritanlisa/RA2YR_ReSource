@@ -6,6 +6,6 @@
 namespace gamemd {
 struct AbstractType {
     void* vfptr;  // minimal E2 declaration
-    char * FindName();  // 0x40DCB0
+    char * FindName(void *a1 = 0);  // 0x40DCB0
 };
 } // namespace gamemd

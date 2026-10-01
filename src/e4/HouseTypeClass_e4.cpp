@@ -45,7 +45,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 }
 // 0x5116A0
 namespace gamemd {
-AbstractClass * HouseTypeClass::Dtor()
+AbstractClass * HouseTypeClass::Dtor(void *a1)
 {
 
   int v2; // eax
@@ -103,7 +103,7 @@ AbstractClass * HouseTypeClass::Dtor()
 }
 // 0x511850
 namespace gamemd {
-AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
+AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
 {
 
   int v3; // ecx
@@ -549,7 +549,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
 }
 // 0x512170
 namespace gamemd {
-AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
+AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2)
 {
 
   int v3; // edx
@@ -1767,7 +1767,7 @@ int HouseTypeClass::readLoadoutData(int a1)
 
 // 0x6A46D0
 namespace gamemd {
-int HouseTypeClass::Find()
+int HouseTypeClass::Find(void *a1)
 {
 
   int v1; // esi

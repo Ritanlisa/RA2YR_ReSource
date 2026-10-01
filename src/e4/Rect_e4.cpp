@@ -77,7 +77,7 @@ void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {
-void Rect::Set( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
+void Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
 
   this->X = aP1; /*0x42e41a*/
@@ -90,7 +90,7 @@ void Rect::Set( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
-void Rect::Construct( IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
+void Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3, void *a4, void *a5, void *a6)
 {
 
   this->X = *aP1; /*0x45a138*/

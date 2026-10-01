@@ -20,8 +20,8 @@ struct VectorClass_ptr_ThemeControl {
     char  Remove(int a2, unsigned int * a3);  // 0x4EA2E0
     void ddtor(void *a1 = 0);  // 0x4EA390
     int  GetSize(unsigned int * a2);  // 0x4EA3C0
-    unsigned int  Get(int a2);  // 0x4EA400
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x4EF940
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x4EA400
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x4EF940
     void Destroy(void *a1 = 0);  // 0x7212B0
     unsigned int  GetItemIndex(int a2);  // 0x7212E0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x721300

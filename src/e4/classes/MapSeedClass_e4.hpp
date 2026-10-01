@@ -36,10 +36,10 @@ struct MapSeedClass {
     unsigned int MapSeedClass_field_0x2C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    MapSeedClass * * PlaceBuildingClusters(void * aP1);
+    MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);
     MapSeedClass * QueryInterface(char a2);
     int GenerateSeed(unsigned int * a2);
-    int ValidateRectBounds(void *a1 = 0);
+    void ValidateRectBounds(void *a1);
     wchar_t * GetCell();
     wchar_t * SetCell();
     wchar_t * Validate();

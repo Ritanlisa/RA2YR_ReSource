@@ -270,7 +270,7 @@ int Skirmish::ReadSettings(HWND hDlg)
 } // namespace gamemd
 // 0x597260
 namespace gamemd {
-TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
+TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1, void *a2)
 {
 
   int v3; // eax
@@ -327,7 +327,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
 } // namespace gamemd
 // 0x640710
 namespace gamemd {
-int Skirmish::RenderPreview(SkirmishDialog * aP1)
+int Skirmish::RenderPreview(SkirmishDialog * aP1, void *a2)
 {
 
   int result; // eax

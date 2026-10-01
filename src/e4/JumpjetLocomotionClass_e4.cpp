@@ -345,7 +345,7 @@ LABEL_43:
 } // namespace gamemd
 // 0x43A130
 namespace gamemd {
-void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0()
+void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0(void *a1)
 {
 
   Math::Sqrt(*this * *this + *((unsigned int *)this + 1) * *((unsigned int *)this + 1) + *((unsigned int *)this + 2) * *((unsigned int *)this + 2)); /*0x43a154*/
@@ -354,7 +354,7 @@ void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0()
 } // namespace gamemd
 // 0x4848B0
 namespace gamemd {
-void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
+void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2, void *a2)
 {
 
   unsigned int *v2; // ebx
@@ -3026,7 +3026,7 @@ int JumpjetLocomotionClass_26::FindItem(unsigned int * a2)
 
 }
 // 0x439A10
-double JumpjetLocomotionClass::ComputeVectorLengthMetric()
+double JumpjetLocomotionClass::ComputeVectorLengthMetric(void *a1)
 {
 
   int v2; // eax
@@ -4719,7 +4719,7 @@ bool JumpjetLocomotionClass::CheckCompositeState(int a1)
 
 }
 // 0x54D820
-int JumpjetLocomotionClass::GetFloorZSetContext()
+int JumpjetLocomotionClass::GetFloorZSetContext(void *a1)
 {
 
   int *location; // eax
@@ -6195,7 +6195,7 @@ LONG JumpjetLocomotionClass::SmallStub_6A4320(int a1)
 
 }
 // 0x6A4330
-int JumpjetLocomotionClass::loc_6A4330(int a1)
+int JumpjetLocomotionClass::loc_6A4330(int a1, void *a2, void *a3)
 {
 
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));

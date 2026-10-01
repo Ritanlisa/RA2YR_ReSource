@@ -556,7 +556,7 @@ struct ParticleClass {
     unsigned int field_AC;
 // --- flat members (END) ---
     int * CheckDrawFlags(int a1);
-    int CheckCollisionFlags(void * aP0, int * a1, int aP2);
+    int CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2);
     int CheckStateFlag();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();

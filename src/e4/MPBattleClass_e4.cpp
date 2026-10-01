@@ -54,7 +54,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
 } // namespace gamemd
 // 0x5C6150
 namespace gamemd {
-unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
+unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6, void *a7)
 {
 
   ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
@@ -231,7 +231,7 @@ int MPBattleClass::isAIAllowed()
 
 }
 // 0x5CB3A0
-unsigned int * MPBattleClass::MPUnholyAllianceClass( const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
+unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/

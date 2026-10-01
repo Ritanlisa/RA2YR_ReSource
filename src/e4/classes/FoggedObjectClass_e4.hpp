@@ -53,20 +53,20 @@ struct FoggedObjectClass {
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);
-    AbstractClass * * ResizeArray(int v3, char * a3);
+    AbstractClass * * ResizeArray(int a2, char * a3);
     DynamicVector * QueryInterface(char a2);
     FoggedObjectClass * ddtor(char a2);
     HouseClass * * PowerDrainUpdate(int a2);
     char AddRef(int a2);
-    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2);
+    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
     int InitBuildingFog(unsigned int * a2, int a3, int a4);
     int LoadTypeData(int * a1, int a2);
-    int Read(unsigned int * a2, void *a1 = 0);
-    int SaveToINI(void * aP0, int * a1, int aP2);
-    unsigned int * CheckVisibility(unsigned int * v3);
+    int Read(unsigned int * a2, void *a2);
+    int   SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
+    unsigned int * CheckVisibility(unsigned int * a2);
 };
 
 } // namespace gamemd

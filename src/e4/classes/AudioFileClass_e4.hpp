@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioFileClass {
-    unsigned int *AudioFileClass:: Release();
+    unsigned int *AudioFileClass:: Release(void *a1 = 0);
 };
 
 } // namespace gamemd

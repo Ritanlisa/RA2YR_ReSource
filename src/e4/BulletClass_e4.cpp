@@ -77,7 +77,7 @@ BulletClass::BulletClass()
 }
 // 0x466560
 namespace gamemd {
-BulletClass * * BulletClass::Dtor()
+BulletClass * * BulletClass::Dtor(void *a1)
 {
 
   int v2; // eax

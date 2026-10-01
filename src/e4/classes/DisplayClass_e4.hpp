@@ -459,33 +459,33 @@ struct DisplayClass {
     unsigned int *__pad_41E;
     unsigned int MapClass;
 // --- flat members (END) ---
-    DisplayClass * Read(char a2, void *a1 = 0);
-    HWND Render(void *a1 = 0);
-    Tactical * * UpdateCellPassability(short * a1, void* aP2);
-    VectorClass_flat * * ProcessCellReveal(void * aP1, void* aP2);
-    bool SetCoordVisible(void* aP0, void * aP1, char a3);
-    char ddtor(void *a1 = 0);
+    DisplayClass * Read(char * Block, char a2);
+    HWND Render(void *a1, void *a2);
+    Tactical * * UpdateCellPassability(short * a1, IUnknown * aP2);
+    VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, IUnknown * aP2);
+    bool SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3);
+    char ddtor(void *a1);
     int * processDisplayMode(char a2);
     int AdvanceFrameCounter();
     int ExitMode();
-    int GetCoordDelta(void * aP1);
+    int GetCoordDelta(AbstractClass * aP1);
     int GetSurface(unsigned int * a1);
     int InitViewBounds(unsigned int * a2);
     int InsertPriorityText(int a2);
     int LoadTypeData();
     int ProcessTacticalMouseInput(char a2, int a3, int a4);
     int ReadFromBuffer(void * a1, signed int Size);
-    int RenderStatusText(void* aP1, char a3);
-    int RevealFogCell(short * a1, void* aP2);
-    int ScrollTacticalView(void* aP1, void* aP2);
+    int RenderStatusText(IUnknown * aP1, char a3);
+    int RevealFogCell(short * a1, IUnknown * aP2);
+    int ScrollTacticalView(IUnknown * aP1, IUnknown * aP2);
     int SetSize();
     int SetSurface(unsigned int * a1);
     int UpdateDisplayTimer();
     int checkScreenBounds(int a2);
-    unsigned int * loc_4AEB50(char a2);
+    unsigned int * loc_4AEB50(MouseClass * aP1);
     unsigned int * updateRenderState(char a2);
     void * Draw(int a2);
-    void Update(void * aP1, int a3, void *a2 = 0, void *a1 = 0);
+    void Update(PowerClass * aP1, int a3, void *a3, void *a4);
 };
 
 } // namespace gamemd

@@ -1025,8 +1025,8 @@ struct UnitTypeClass {
     INIClass * * ReadINIEntry();
     UnitTypeClass(void * aP1);
     UnitTypeClass * ddtor(char a2);
-    VoxelAnimTypeClass * * FindOrCreate(void *a1 = 0);
-    int * GetDimensions(int * a2);
+    VoxelAnimTypeClass * * FindOrCreate(ObjectClass * Source);
+    int *  GetDimensions(int * a2);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetGameplayValue();
@@ -1034,10 +1034,10 @@ struct UnitTypeClass {
     int GetTypeIdentifier();
     int LoadFromINI2(int a1, int a2);
     int PowerDrainUpdate(int * a2);
-    int SaveToINI(void * a0, void * aP1, int a3);
+    int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
-    unsigned int * GetDefaultDimensions(unsigned int * a1);
+    unsigned int *  GetDefaultDimensions(unsigned int * a1);
 };
 
 } // namespace gamemd

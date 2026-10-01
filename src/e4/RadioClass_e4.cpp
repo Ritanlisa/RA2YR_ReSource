@@ -16,7 +16,7 @@
 
 // 0x65A750
 namespace gamemd {
-void RadioClass::Release()
+void RadioClass::Release(void *a1)
 {
 
   RadioClass::Constructor((int)this); /*0x65a753*/

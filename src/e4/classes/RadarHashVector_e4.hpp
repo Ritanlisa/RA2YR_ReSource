@@ -38,8 +38,8 @@ struct RadarHashVector {
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char * Destructor(char a2);
     int FindItemIndex(unsigned int * a2);
-    int Read(unsigned int * a2);
-    unsigned int * Construct(void * aP1, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Read(unsigned int * a2, void *a2);
+    unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);
     void ddtor();
 };

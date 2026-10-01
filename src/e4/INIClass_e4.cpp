@@ -31,7 +31,7 @@
 
 // 0x526810
 namespace gamemd {
-ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
+ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
 {
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
@@ -121,7 +121,7 @@ LABEL_19:
 }
 // 0x526960
 namespace gamemd {
-VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
+VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
 {
 
   char *v2; // esi
@@ -177,7 +177,7 @@ LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
 }
 // 0x528A10
 namespace gamemd {
-unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count)
+unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count, void *a6)
 {
 
   char *v6; // edi
@@ -407,7 +407,7 @@ int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
 
 // 0x526CC0
 namespace gamemd {
-int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
+int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 {
 
   char *v3; // esi

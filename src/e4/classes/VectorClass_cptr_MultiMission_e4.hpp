@@ -21,7 +21,7 @@ struct VectorClass_cptr_MultiMission {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5EED90
     int  FindItemIndex(unsigned int * a2);  // 0x5EEE90
     VectorClass_flat *  GetAt(unsigned int * Block, char a2);  // 0x5EEEC0
-    DynamicVector *  Constructor(unsigned int * Block, char a2);  // 0x5EEF10
+    DynamicVector *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x5EEF10
     unsigned int  GetItemIndex(int a2);  // 0x5EEBE0
     int  Capacity(int a2);  // 0x5EEC00
     char  AddRef(int a2);  // 0x5EEC10

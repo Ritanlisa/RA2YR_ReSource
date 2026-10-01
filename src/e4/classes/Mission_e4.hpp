@@ -220,8 +220,8 @@ struct Mission {
 // --- flat members (END) ---
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40
-    int  SetAndCall(int a2, int a3);  // 0x5BDA80
+    int  SetAndCall(int a2, int a3, void *a1 = 0);  // 0x5BDA80
     char AssignTeamMemberMissions(ScriptClass * aP1, int a3);  // 0x6ED7E0
-    int GetMissionDelay();  // 0x70F770
+    int GetMissionDelay(void *a1 = 0);  // 0x70F770
 };
 } // namespace gamemd

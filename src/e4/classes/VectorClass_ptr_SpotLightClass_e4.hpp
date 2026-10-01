@@ -17,8 +17,8 @@ struct VectorClass_ptr_SpotLightClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2);  // 0x6002D0
     unsigned int  GetItemIndex(int a2);  // 0x5FFFF0
-    int  Get(int a2);  // 0x600010
-    char  Add(int a2);  // 0x600020
+    int  Get(int a2, void *a1 = 0);  // 0x600010
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x600020
     char  Release(int a2, unsigned int * a3);  // 0x600060
     void Remove(void *a1 = 0);  // 0x600110
     int  GetSize(unsigned int * a2);  // 0x600140

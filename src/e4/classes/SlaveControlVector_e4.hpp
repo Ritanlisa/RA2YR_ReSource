@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SlaveControlVector {
-    unsigned int *SlaveControlVector:: Constructor(int a2, int a3);
+    unsigned int *SlaveControlVector:: Constructor(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

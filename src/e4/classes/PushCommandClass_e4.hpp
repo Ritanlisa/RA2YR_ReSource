@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PushCommandClass {
-    int __fastcall PushCommandClass:: Execute(unsigned int * a1, int a2);
+    int __fastcall PushCommandClass:: Execute(unsigned int * a1, int a2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
 };
 
 } // namespace gamemd

@@ -11,7 +11,7 @@
 
 // 0x54F000
 namespace gamemd {
-void EventQueue::Process()
+void EventQueue::Process(void *a1)
 {
 
   int v2; // eax
@@ -28,7 +28,7 @@ void EventQueue::Process()
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {
-void EventQueue::Read()
+void EventQueue::Read(void *a1, void *a2)
 {
 
   int v2; // eax
@@ -101,7 +101,7 @@ void EventQueue::Read()
 } // namespace gamemd
 // 0x54F650
 namespace gamemd {
-void EventQueue::Check()
+void EventQueue::Check(void *a1, void *a2, void *a3)
 {
 
   int v1; // eax

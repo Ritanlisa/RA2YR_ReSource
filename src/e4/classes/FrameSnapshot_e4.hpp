@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct FrameSnapshot {
-    unsigned short *FrameSnapshot:: Init();
+    unsigned short *FrameSnapshot:: Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     unsigned short *FrameSnapshot:: InitMax(int a2);
 };
 

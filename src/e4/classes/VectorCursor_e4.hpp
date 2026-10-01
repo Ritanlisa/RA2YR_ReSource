@@ -16,8 +16,8 @@ struct VectorCursor {
     unsigned char q018;  // 0x18
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    unsigned int* ddtor(void *a1 = 0);
-    unsigned int * Release(void *a1 = 0);
+    unsigned int * ddtor(void *a1);
+    unsigned int * Release(void *a1);
 };
 
 } // namespace gamemd

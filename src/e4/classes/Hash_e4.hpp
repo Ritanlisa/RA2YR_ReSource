@@ -6,7 +6,7 @@ namespace gamemd {
 struct Hash {
     int __thiscall ComputeHashSHA1();
     int Hash:: InsertOrdered(int a2);
-    int Hash:: Reset();
+    int Hash:: Reset(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

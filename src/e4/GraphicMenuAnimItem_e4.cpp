@@ -8,7 +8,7 @@
 
 // 0x4F3FD0
 namespace gamemd {
-VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet * this, char a2)
+VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet * this, char a2, void *a3, void *a4, void *a5)
 {
 
   *(unsigned int *)this->__pad_0 = &vt_VectorCursorunsignedintDynamicVectorClass; /*0x4f3fd9*/

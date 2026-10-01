@@ -18,8 +18,8 @@ struct VectorClass_ptr_ParasiteClass {
     DynamicVector *  Constructor_VectorClass_ParasiteClass___(unsigned int * Block, char a2);  // 0x62B380
     void Destroy(void *a1 = 0);  // 0x62B070
     unsigned int  GetItemIndex(int a2);  // 0x62B0A0
-    int  Get(int a2);  // 0x62B0C0
-    char  Add(int a2);  // 0x62B0D0
+    int  Get(int a2, void *a1 = 0);  // 0x62B0C0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x62B0D0
     char  Release(int a2, unsigned int * a3);  // 0x62B110
     void Remove(void *a1 = 0);  // 0x62B1C0
     int  GetSize(unsigned int * a2);  // 0x62B1F0

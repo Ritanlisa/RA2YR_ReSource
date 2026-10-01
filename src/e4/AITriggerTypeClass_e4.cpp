@@ -316,7 +316,7 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
 } // namespace gamemd
 // 0x41F580
 namespace gamemd {
-ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
+ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2)
 {
 
   double v2; // st7

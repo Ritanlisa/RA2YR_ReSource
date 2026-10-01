@@ -18,7 +18,7 @@
 
 // 0x55E160
 namespace gamemd {
-void SyncDelay::Start()
+void SyncDelay::Start(void *a1, void *a2)
 {
     unsigned int v1 = 0;  /* G37 hoist */
 
@@ -202,7 +202,7 @@ LABEL_44:
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {
-void SyncDelay::Check( unsigned int * a2)
+void SyncDelay::Check(unsigned int * a2, void *a2, void *a3)
 {
 
   unsigned int *v2; // eax

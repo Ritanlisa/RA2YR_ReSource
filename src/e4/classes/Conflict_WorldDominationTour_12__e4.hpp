@@ -19,7 +19,7 @@ struct Conflict_WorldDominationTour_12_ {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int ReleaseBuffer();  // 0x766800
+    int ReleaseBuffer(void *a1 = 0, void *a2 = 0);  // 0x766800
      double Constructor_3(...);  // C2597 interim stub
 };
 } // namespace gamemd

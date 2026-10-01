@@ -103,7 +103,7 @@ LABEL_11:
 
 }
 // 0x5FE770
-AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
 
   AnimTypeClass *INIString; // eax
@@ -312,7 +312,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
 
 }
 // 0x6440A0
-unsigned int *  OverlayTypeClass::Construct( ObjectClass * aP1)
+unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   void *v3; // eax

@@ -125,7 +125,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
 } // namespace gamemd
 // 0x4F4480
 namespace gamemd {
-void TacticalMap::Redraw()
+void TacticalMap::Redraw(void *a1)
 {
 
   AudioStream *v1; // ebp
@@ -181,7 +181,7 @@ void TacticalMap::Redraw()
 } // namespace gamemd
 // 0x5AEA10
 namespace gamemd {
-void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
+void TacticalMap::MultiplyByScalar(ObjectClass * aP1, void *a2)
 {
 
   *this = aP1 * *this; /*0x5aea16*/
@@ -198,7 +198,7 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
 } // namespace gamemd
 // 0x5D49A0
 namespace gamemd {
-void TacticalMap::DrawCursor()
+void TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
 {
 
   char result; // al
@@ -249,7 +249,7 @@ void TacticalMap::DrawCursor()
 } // namespace gamemd
 // 0x6D1C20
 namespace gamemd {
-void TacticalMap::Construct()
+void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   float v3; // [esp+0h] [ebp-10h]
@@ -1017,7 +1017,7 @@ int TacticalMap::DrawOccupiedRegion()
 
 }
 // 0x7BCFB0
-unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5)
+unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5, void *a5)
 {
 
   TacticalMap *v5; // edi

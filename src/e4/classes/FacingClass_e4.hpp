@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct FacingClass {
     int FacingClass:: Set_SyncLog(unsigned int * a2);
-    int FacingClass:: Update(unsigned short * a2);
+    int FacingClass:: Update(unsigned short * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
 };
 
 } // namespace gamemd

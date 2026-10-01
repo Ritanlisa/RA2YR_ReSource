@@ -75,13 +75,13 @@ struct FactoryClass {
     unsigned int AbandonProduction;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
-    char GetFlag(void *a1 = 0);
+    char GetFlag(void *a1);
     char RemoveOneFromQueue(char a2);
     int CountType(IUnknown * aP1);
     int DemandProduction(int a2, void * a3, char a4);
     int FinishProduction(int a2);
     int GetBuildTimeFrames();
-    int GetState();
+    int GetState(void *a1);
     int HasProgressChanged();
     int IsQueued(int a2);
     int LoadFromStream(int a1, int * a2);

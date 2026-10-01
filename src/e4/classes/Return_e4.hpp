@@ -9,7 +9,7 @@ struct Return {
 // --- flat members (BEGIN) ---
     char Return_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int HRESULT_Fail(void * aP0, int a2, int a3);
+    int HRESULT_Fail(BulletClass * aP0, int a2, int a3);
 };
 
 } // namespace gamemd

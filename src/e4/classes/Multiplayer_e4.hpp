@@ -24,8 +24,8 @@ struct Multiplayer {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    unsigned int * CopyDataArray(void * aP1);
-    void * FindStartPositions(void *a1 = 0);
+    unsigned int * CopyDataArray(ObjectClass * aP1);
+    void * FindStartPositions(void *a1);
     void ShowProgress(int a2);
 };
 

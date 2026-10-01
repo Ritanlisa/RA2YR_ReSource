@@ -60,14 +60,14 @@ struct Coord {
 // --- flat members (END) ---
     int  ToGridIndex(void * aP1, void * aP2, void * aP3);  // 0x4138C0
     unsigned int *  ToCell(void * aP1);  // 0x413A30
-    void*  Subtract(void * aP1, void * aP2, void * aP3);  // 0x41C230
-    double Length();  // 0x41C380
-    unsigned int *  GetCoords(int * outCoords);  // 0x4399A0
-    float *  Scale(void * aP1);  // 0x43A0D0
-    void *  To_Cell(void * aP1);  // 0x565730
-    int  Compare2D(unsigned short * a2);  // 0x5AC370
+    void*  Subtract(void * aP1, void * aP2, void * aP3, void *a1 = 0);  // 0x41C230
+    double Length(void *a1 = 0);  // 0x41C380
+    unsigned int *  GetCoords(int * outCoords, void *a1 = 0);  // 0x4399A0
+    float *  Scale(void * aP1, void *a1 = 0);  // 0x43A0D0
+    void *  To_Cell(void * aP1, void *a1 = 0);  // 0x565730
+    int  Compare2D(unsigned short * a2, void *a1 = 0);  // 0x5AC370
     int *  WorldToScreen(void * aP1, void * aP2, char a4);  // 0x6557F0
-    AbstractClass * *  To_Screen(unsigned int * a2, int * a3);  // 0x6D2140
+    AbstractClass * *  To_Screen(unsigned int * a2, int * a3, void *a1 = 0);  // 0x6D2140
     int *  Divide(int * a2, int a3);  // 0x710700
     int *  To_ScreenRaw(void * aP0, void * aP1);  // 0x6D1F10
     long long ScaleToScreenY();  // 0x6D2120

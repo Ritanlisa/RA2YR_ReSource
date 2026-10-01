@@ -20,12 +20,12 @@ struct VectorClass_ptr_AnimTypeClass {
     DynamicVector *  Constructor_VectorClass_BulletTypeClass___(unsigned int * Block, char a2);  // 0x4F0AC0
     void Destroy(void *a1 = 0);  // 0x4E8EA0
     unsigned int  GetItemIndex(int a2);  // 0x4E8ED0
-    int  Get(int a2);  // 0x4E8EF0
+    int  Get(int a2, void *a1 = 0);  // 0x4E8EF0
     void Destroy_0();  // 0x4E8F00
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8F30
     void Destroy_1();  // 0x4E8F60
     unsigned int  GetItemIndex_1(int a2);  // 0x4E8F90
-    char  Add(int a2);  // 0x4EDF80
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EDF80
     char  Release(int a2, unsigned int * a3);  // 0x4EDFC0
     void Remove(void *a1 = 0);  // 0x4EE070
     int  GetSize(unsigned int * a2);  // 0x4EE0A0

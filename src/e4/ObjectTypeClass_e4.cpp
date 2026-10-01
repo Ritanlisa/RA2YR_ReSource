@@ -128,7 +128,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 } // namespace gamemd
 // 0x5F7090
 namespace gamemd {
-int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
+int ObjectTypeClass::ConstructFull(AbstractClass * aP1, void *a2)
 {
 
   int *v3; // eax
@@ -258,7 +258,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
-BulletTypeClass * ObjectTypeClass::Construct( ObjectTypeClass * aP1)
+BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int *v3; // eax
@@ -318,7 +318,7 @@ BulletTypeClass * ObjectTypeClass::Construct( ObjectTypeClass * aP1)
 } // namespace gamemd
 // 0x5F7400
 namespace gamemd {
-SomeVoxelCache * * ObjectTypeClass::Destruct()
+SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
 {
 
   int v2; // eax
@@ -530,7 +530,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 } // namespace gamemd
 // 0x5F9070
 namespace gamemd {
-AbstractClass * * ObjectTypeClass::Load2DArt()
+AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
 {
 
   char *v2; // edi
@@ -645,7 +645,7 @@ LABEL_41:
 } // namespace gamemd
 // 0x5F92D0
 namespace gamemd {
-void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
+void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1, void *a2)
 {
 
   int CrushSound; // edi
@@ -825,7 +825,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
-void ObjectTypeClass::SetRTTI71()
+void ObjectTypeClass::SetRTTI71(void *a1)
 {
 
   int result; // eax
@@ -1469,7 +1469,7 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 } // namespace gamemd
 // 0x5F1C30
 namespace gamemd {
-int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
+int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2, void *a3)
 {
 
   if ( *(unsigned int *)&((unsigned int *)this)[0] ) /*0x5f1c30*/
@@ -1481,7 +1481,7 @@ int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 } // namespace gamemd
 // 0x5F61A0
 namespace gamemd {
-void ObjectTypeClass::ReleaseWaveAndString()
+void ObjectTypeClass::ReleaseWaveAndString(void *a1)
 {
 
   void *vtable0; // edi
@@ -1518,7 +1518,7 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 } // namespace gamemd
 // 0x5F8080
 namespace gamemd {
-void ObjectTypeClass::CleanupWeapons()
+void ObjectTypeClass::CleanupWeapons(void *a1)
 {
 
   char *v1; // esi
@@ -1596,7 +1596,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
 } // namespace gamemd
 // 0x6E5E70
 namespace gamemd {
-int ObjectTypeClass::FindByName()
+int ObjectTypeClass::FindByName(void *a1)
 {
 
   int v2; // ebx

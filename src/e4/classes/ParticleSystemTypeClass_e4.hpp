@@ -297,8 +297,8 @@ struct ParticleSystemTypeClass {
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int SaveLoad_Prefix(void * aP0, int aP1);
-    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     void* GetType(unsigned char *** aP1);
     void* PowerDrainUpdate(int * a2);

@@ -597,7 +597,7 @@ LABEL_6:
 
 }
 // 0x747590
-int *  UnitTypeClass::GetDimensions( int * a2)
+int *  UnitTypeClass::GetDimensions(int * a2)
 {
 
   int v2; // eax

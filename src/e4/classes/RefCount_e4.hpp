@@ -12,7 +12,7 @@ struct RefCount {
     unsigned int u32_8;
     unsigned int u32_C;
 // --- flat members (END) ---
-    int Decrement();
+    int32_t Decrement(void *a1);
     int Increment(int a2);
 };
 

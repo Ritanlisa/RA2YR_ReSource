@@ -17,8 +17,8 @@ struct VectorClass_ptr_SubTitle {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x6CA7C0
     unsigned int  GetItemIndex(int a2);  // 0x6CA7F0
-    int  Get(int a2);  // 0x6CA810
-    char  Add(int a2);  // 0x6CA820
+    int  Get(int a2, void *a1 = 0);  // 0x6CA810
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x6CA820
     char  SetCapacity(int a2, unsigned int * a3);  // 0x6CA860
     int  FindItemIndex(unsigned int * a2);  // 0x6CA910
     DynamicVector *  Constructor_VectorClass_SubTitle___(unsigned int * Block, char a2);  // 0x6CA9C0

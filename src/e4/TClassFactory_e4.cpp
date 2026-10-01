@@ -101,7 +101,7 @@ int TClassFactory_CampaignClass::GetSize(void * a1, void * a2)
 } // namespace gamemd
 // 0x6C4D40
 namespace gamemd {
-LONG TClassFactory_MechLocomotionClass::AddRef()
+LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 {
 
   int v2; // [esp+4h] [ebp+4h]

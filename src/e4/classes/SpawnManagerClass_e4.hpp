@@ -59,20 +59,20 @@ struct SpawnManagerClass {
     unsigned int spawns;
     unsigned int SpawnControl;
 // --- flat members (END) ---
-    AbstractClass * * LoadFromStream(int aP1, void * aP1_4);
+    AbstractClass * * LoadFromStream(int aP1, AbstractClass * aP1_4);
     SpawnManagerClass(void * aP1, int a3, int a4, int a5, int a6);
     SpawnManagerClass * ProcessEvent(char a2);
     int CountAliveSpawns();
     int CountDockedSpawns();
     int PowerDrainUpdate(int a2);
-    int SaveState(void * aP0, int * a1, int aP2);
+    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetTarget(int a2);
     int StubReturn116();
     int StubReturn65();
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * Constructor_6B83A0(void * aP1, void * aP2);
+    unsigned int * Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2);
     void Constructor_SpawnManagerClass();
-    void* Constructor();
+    void* Constructor(void *a1, void *a2, void *a3);
 };
 
 } // namespace gamemd

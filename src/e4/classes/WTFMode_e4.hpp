@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct WTFMode {
     char WTFMode:: ResetUnitFlags();
-    int WTFMode:: Shutdown();
+    int WTFMode:: Shutdown(void *a1 = 0);
 };
 
 } // namespace gamemd

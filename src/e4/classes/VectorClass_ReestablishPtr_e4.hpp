@@ -16,6 +16,6 @@ struct VectorClass_ReestablishPtr {
     unsigned char q054;  // 0x54
     unsigned char q084;  // 0x84
 // --- flat members (END) ---
-    unsigned int *  Construct(void * aP1, void * aP2);  // 0x45AE50
+    unsigned int *  Construct(void * aP1, void * aP2, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x45AE50
 };
 } // namespace gamemd

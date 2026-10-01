@@ -11,11 +11,11 @@ struct ScreenCaptureCommandClass {
     char ScreenCaptureCommandClass_field_00[4];  // 0x4
     unsigned int CommandClass;
 // --- flat members (END) ---
-    char * AddRef();
-    void Constructor();
-    wchar_t * Execute();
-    wchar_t * Release();
-    wchar_t * ddtor();
+    void AddRef(void *a1);
+    void Constructor(void *a1, void *a2, void *a3);
+    void Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7);
+    void Release(void *a1);
+    void ddtor();
 };
 
 } // namespace gamemd

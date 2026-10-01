@@ -41,9 +41,9 @@ struct CCFileClass {
     unsigned int FileClass;
     unsigned int u32_68;
 // --- flat members (END) ---
-    AudioController * * Close();
-    void Destruct();
-    void GetFileSize();
+    AudioController * * Close(void *a1, void *a2);
+    void Destruct(void *a1, void *a2);
+    void GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
     bool Open(int mode, void *a2 = 0, void *a1 = 0);  // open file with mode
@@ -51,8 +51,8 @@ struct CCFileClass {
     static double ReadEntireFile(...);  // C2597 interim stub
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
-    void Construct2(void* filename);  // init file object with name
-     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct2(void* filename, void *a1 = 0, void *a2 = 0);  // init file object with name
+     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -33,8 +33,8 @@ struct VectorClass_W4PassabilityType {
     int  FindItemIndex_0(unsigned int * a2);  // 0x58A230
     char  SetCapacity_1(int a2, char * a3);  // 0x58A2A0
     int  FindItemIndex_1(unsigned int * a2);  // 0x58A3A0
-    char *  Constructor(unsigned int * Block, char a2);  // 0x58A630
-    char *  Constructor_0(unsigned int * Block, char a2);  // 0x58A840
+    char *  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x58A630
+    char *  Constructor_0(unsigned int * Block, char a2, void *a1 = 0);  // 0x58A840
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x58AA90
     DynamicVector *  Constructor_1(unsigned int * Block, char a2);  // 0x58AAE0
 };

@@ -66,7 +66,7 @@ struct NetworkLobby {
     void  SetupPlayers(void * Source);  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
     int  InitLobbyDropdowns(void * hDlg);  // 0x5E9E00
-    HWND * Dispatch();  // 0x5EA2A0
+    HWND * Dispatch(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x5EA2A0
     char  SetupPlayerSlotControls(HWND hDlg);  // 0x5EB660
     char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290

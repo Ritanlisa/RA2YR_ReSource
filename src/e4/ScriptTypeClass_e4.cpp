@@ -126,7 +126,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
 
 // 0x6E8340
 namespace gamemd {
-TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
+TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
 {
 
   int KeyCount; // ebx

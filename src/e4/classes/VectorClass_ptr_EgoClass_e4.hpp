@@ -17,8 +17,8 @@ struct VectorClass_ptr_EgoClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x4C49A0
     unsigned int  GetItemIndex(int a2);  // 0x4C49D0
-    int  Get(int a2);  // 0x4C49F0
-    char  Add(int a2);  // 0x4C4A00
+    int  Get(int a2, void *a1 = 0);  // 0x4C49F0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4C4A00
     char  Release(int a2, unsigned int * a3);  // 0x4C4A40
     void Remove(void *a1 = 0);  // 0x4C4AF0
     int  GetSize(unsigned int * a2);  // 0x4C4B20

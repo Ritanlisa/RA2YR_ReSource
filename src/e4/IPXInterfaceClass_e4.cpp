@@ -31,7 +31,7 @@
 
 // 0x7B0D90
 namespace gamemd {
-int IPXInterfaceClass::Construct()
+int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   IPXInterfaceClass::bindSocket((char *)this); /*0x7b0d93*/
@@ -47,7 +47,7 @@ int IPXInterfaceClass::Construct()
 } // namespace gamemd
 // 0x7B0DD0
 namespace gamemd {
-int IPXInterfaceClass::initSocket( IUnknown * aP1, Color * aP2)
+int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2, void *a3)
 {
     unsigned int v4 = 0;  /* G37 hoist */
 
@@ -301,7 +301,7 @@ int IPXInterfaceClass::GetLocalAddress(int a2)
 } // namespace gamemd
 // 0x7B19C0
 namespace gamemd {
-void * IPXInterfaceClass::bindSocket()
+void * IPXInterfaceClass::bindSocket(void *a1)
 {
 
   unsigned char *v2; // eax
@@ -363,7 +363,7 @@ void * IPXInterfaceClass::bindSocket()
 } // namespace gamemd
 // 0x7B1B80
 namespace gamemd {
-int IPXInterfaceClass::AddRef()
+int IPXInterfaceClass::AddRef(void *a1)
 {
 
   int result; // eax
@@ -452,7 +452,7 @@ void IPXInterfaceClass::Disconnect()
 } // namespace gamemd
 // 0x7B2240
 namespace gamemd {
-unsigned char * IPXInterfaceClass::processPacket()
+unsigned char * IPXInterfaceClass::processPacket(void *a1)
 {
 
   unsigned char *result; // eax
@@ -635,7 +635,7 @@ int IPXInterfaceClass::COMStub_Return0()
 } // namespace gamemd
 // 0x7B1750
 namespace gamemd {
-int IPXInterfaceClass::Send(int a1)
+int IPXInterfaceClass::Send(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   return 0; /*0x7b1752*/
@@ -711,7 +711,7 @@ int IPXInterfaceClass::SetAddress(unsigned int * a1)
 } // namespace gamemd
 // 0x7B25E0
 namespace gamemd {
-int IPXInterfaceClass::GetAddress(SOCKET s)
+int IPXInterfaceClass::GetAddress(SOCKET s, void *a2, void *a3, void *a4)
 {
 
   WinsockInterfaceClass *v1; // esi

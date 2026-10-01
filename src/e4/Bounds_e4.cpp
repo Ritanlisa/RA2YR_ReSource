@@ -8,7 +8,7 @@
 
 // 0x487EE0
 namespace gamemd {
-int Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
+int Bounds::Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4)
 {
 
   int v3; // edx

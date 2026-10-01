@@ -109,7 +109,7 @@ int NullModemClass::CheckStatus()
 } // namespace gamemd
 // 0x5F3610
 namespace gamemd {
-void NullModemClass::GetAddress( int a2)
+void NullModemClass::GetAddress(int a2, void *a2, void *a3, void *a4)
 {
 
   int v2; // eax
@@ -302,7 +302,7 @@ int NullModemClass::COMStub_Return0(int a1)
 } // namespace gamemd
 // 0x5F3530
 namespace gamemd {
-void NullModemClass::Send(int a1)
+void NullModemClass::Send(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   return 0; /*0x5f3532*/

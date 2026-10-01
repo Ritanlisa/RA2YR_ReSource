@@ -1188,8 +1188,8 @@ struct AnimClass {
     unsigned int field_8;
     unsigned int ctor;
 // --- flat members (END) ---
-    BuildingTypeClass * * drawFrame(void *a1 = 0);
-    char * sub_4C68E0(int a2, int a3, void* aP3, void* aP4, int a6, char a7, int a8, char a9, int a10, int a11);
+    BuildingTypeClass * * drawFrame(void *a1);
+    char * sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11);
     char ProcessAreaEffect(unsigned int * a1);
     char sub_773590(int a2, int a3);
     int * CheckMirrorFlags(int a1);
@@ -1197,9 +1197,9 @@ struct AnimClass {
     int MissionStubReturnZero();
     int MissionStubReturnZero2(int a1, unsigned int * a2);
     int ProcessFrame();
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
-    void Destruct(void * a2);
-    void FreeRenderBuffer();
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    void Destruct(void * a2, void *a2);
+    void FreeRenderBuffer(void *a1);
     void* Render(ConvertClass * a2, ConvertClass * aP5);
     static double SetField95(...);  // C2597 interim stub
 };

@@ -163,7 +163,7 @@ LABEL_27:
 } // namespace gamemd
 // 0x4D0C40
 namespace gamemd {
-AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a4)
+AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
 {
 
   int level; // eax
@@ -283,7 +283,7 @@ LABEL_15:
 } // namespace gamemd
 // 0x4D0EF0
 namespace gamemd {
-AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
+AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3)
 {
 
   int v4; // eax
@@ -944,7 +944,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 } // namespace gamemd
 // 0x4D2CD0
 namespace gamemd {
-int FoggedObjectClass::Read(unsigned int * a2)
+int FoggedObjectClass::Read(unsigned int * a2, void *a2)
 {
 
   int v2; // edx

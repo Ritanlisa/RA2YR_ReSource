@@ -40,7 +40,7 @@
 
 // 0x5447C0
 namespace gamemd {
-unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
+unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6)
 {
 
   int v7; // eax
@@ -207,7 +207,7 @@ LABEL_11:
 
 }
 // 0x71DEA0
-int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
+int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
 
   double v2; // st7
@@ -383,7 +383,7 @@ LABEL_6:
 
 }
 // 0x71E360
-TerrainTypeClass * TerrainTypeClass::ddtor( void * a2, char a3)
+TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
 {
 
   SHPStruct *Image; // eax
@@ -450,7 +450,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * a4, unsigned i
 
 }
 // 0x71DDD0
-bool  TerrainTypeClass::GetHeight( TerrainClass * aP2, int a3)
+bool  TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
 {
 
   TerrainClass *v4; // eax
@@ -460,7 +460,7 @@ bool  TerrainTypeClass::GetHeight( TerrainClass * aP2, int a3)
 
 }
 // 0x71DE10
-TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
+TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2, void *a3, void *a4)
 {
 
   TerrainClass *v3; // eax

@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct Campaign_WorldDominationTour_24_ {
     void* vfptr;
-    unsigned int* ddtor(void *a1 = 0);
+    unsigned int* ddtor(void *a1);
      double AddRef(...);  // C2597 interim stub
 };
 

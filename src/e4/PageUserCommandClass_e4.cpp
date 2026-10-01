@@ -30,14 +30,14 @@ PageUserCommandClass::PageUserCommandClass()
 
 }
 // 0x537DE0
-char * PageUserCommandClass::AddRef()
+char * PageUserCommandClass::AddRef(void *a1)
 {
 
   return aPageuser; /*0x537de5*/
 
 }
 // 0x537DF0
-wchar_t * PageUserCommandClass::Release()
+wchar_t * PageUserCommandClass::Release(void *a1)
 {
 
   return GetStringCSF(aTxtPageuser, 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
@@ -51,7 +51,7 @@ wchar_t * PageUserCommandClass::ddtor()
 
 }
 // 0x537E30
-wchar_t * PageUserCommandClass::Read()
+wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
 
   return GetStringCSF(aTxtPageuserDes, 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/

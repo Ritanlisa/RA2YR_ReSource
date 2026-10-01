@@ -395,14 +395,14 @@ struct BulletClass {
     unsigned int *__pad_C;
 // --- flat members (END) ---
     BulletClass();
-    BulletClass * * Dtor();
+    BulletClass * * Dtor(void *a1);
     LONG CheckTargetValidity(int a1);
-    LONG ValidateTarget(volatile void * a1);
+    LONG ValidateTarget(volatile LONG * a1);
     int * CalculateSpreadAngle(int a1);
     int MissionStubReturnZero();
     int MissionStubReturnZero2();
     int PowerDrainProcess(int a1, unsigned int * a2);
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
 };
 
 } // namespace gamemd

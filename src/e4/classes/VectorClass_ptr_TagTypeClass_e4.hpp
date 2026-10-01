@@ -17,8 +17,8 @@ struct VectorClass_ptr_TagTypeClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x6E64E0
     unsigned int  GetItemIndex(int a2);  // 0x6E6510
-    int  Get(int a2);  // 0x6E6530
-    char  Add(int a2);  // 0x6E6540
+    int  Get(int a2, void *a1 = 0);  // 0x6E6530
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x6E6540
     char  Release(int a2, unsigned int * a3);  // 0x6E6580
     void Remove(void *a1 = 0);  // 0x6E6630
     int  GetSize(unsigned int * a2);  // 0x6E6660

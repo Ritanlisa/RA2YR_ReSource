@@ -17,8 +17,8 @@ struct VectorClass_ptr_TEventClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x71FBA0
     unsigned int  GetItemIndex(int a2);  // 0x71FBD0
-    int  Get(int a2);  // 0x71FBF0
-    char  Add(int a2);  // 0x71FC00
+    int  Get(int a2, void *a1 = 0);  // 0x71FBF0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x71FC00
     char  Release(int a2, unsigned int * a3);  // 0x71FC40
     void Remove(void *a1 = 0);  // 0x71FCF0
     int  GetSize(unsigned int * a2);  // 0x71FD20

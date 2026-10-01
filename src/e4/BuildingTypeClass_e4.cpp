@@ -31,7 +31,7 @@
 
 // 0x45DD90
 namespace gamemd {
-int BuildingTypeClass::ConstructFull(char * Source)
+int BuildingTypeClass::ConstructFull(char * Source, void *a2)
 {
 
   int v3; // ecx
@@ -613,7 +613,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 } // namespace gamemd
 // 0x45F230
 namespace gamemd {
-void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
+void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1, void *a2)
 {
 
   int v3; // eax
@@ -1697,7 +1697,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x644BE0
 namespace gamemd {
-unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
+unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -1817,7 +1817,7 @@ LABEL_5:
 } // namespace gamemd
 // 0x7171A0
 namespace gamemd {
-void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
+void* BuildingTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
 {
 
   int v3; // ecx
@@ -2132,7 +2132,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x41C500
 namespace gamemd {
-char BuildingTypeClass::Enqueue(int a2)
+char BuildingTypeClass::Enqueue(int a2, void *a2)
 {
 
   char *v3; // edi
@@ -2163,7 +2163,7 @@ char BuildingTypeClass::Enqueue(int a2)
 } // namespace gamemd
 // 0x41C590
 namespace gamemd {
-size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
+size_t BuildingTypeClass::Dequeue(BuildingClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -2210,7 +2210,7 @@ size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
 } // namespace gamemd
 // 0x45E7B0
 namespace gamemd {
-int BuildingTypeClass::FindIndexByName()
+int BuildingTypeClass::FindIndexByName(void *a1)
 {
 
   int v2; // esi
@@ -2393,7 +2393,7 @@ int BuildingTypeClass::GetAuxField()
 } // namespace gamemd
 // 0x465DC0
 namespace gamemd {
-int BuildingTypeClass::ddtor()
+int BuildingTypeClass::ddtor(void *a1)
 {
 
   char v3; // [esp+8h] [ebp+4h]
@@ -2407,7 +2407,7 @@ int BuildingTypeClass::ddtor()
 } // namespace gamemd
 // 0x474A90
 namespace gamemd {
-int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3)
+int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3, void *a4)
 {
 
   int v4; // esi
@@ -2505,7 +2505,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
 } // namespace gamemd
 // 0x4C9680
 namespace gamemd {
-int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
+int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -2523,7 +2523,7 @@ int BuildingTypeClass::GetPowerOutput(ObjectClass * aP1)
 } // namespace gamemd
 // 0x747370
 namespace gamemd {
-int BuildingTypeClass::FindIndex()
+int BuildingTypeClass::FindIndex(void *a1)
 {
 
   int v2; // esi

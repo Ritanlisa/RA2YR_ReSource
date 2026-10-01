@@ -232,16 +232,16 @@ struct SmudgeTypeClass {
 // --- flat members (END) ---
     SmudgeTypeClass(void * aP1);
     SmudgeClass * GetFlag(int a2);
-    SmudgeTypeClass * ddtor(void * a2, char a3);
+    SmudgeTypeClass *  ddtor(void * a2, char a3);
     bool GetType(short * a2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
-    int GetSize(unsigned char *** aP1);
+    int GetSize(uint8_t *** aP1);
     int GetTypeIdentifier();
-    int LoadTypeData(void * aP0, int aP1);
+    int  LoadTypeData(ObjectTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int SaveToINI(void * aP0, void * aP1, int aP2);
+    int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
 };
 

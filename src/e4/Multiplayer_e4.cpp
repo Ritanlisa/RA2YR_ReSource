@@ -33,7 +33,7 @@
 
 // 0x688380
 namespace gamemd {
-void * Multiplayer::FindStartPositions()
+void * Multiplayer::FindStartPositions(void *a1)
 {
 
   int v1; // esi

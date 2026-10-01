@@ -69,14 +69,14 @@ struct Terrain {
     unsigned int *__pad_44;
     unsigned int __pad_68;
 // --- flat members (END) ---
-    int  GetTileIndex(int a2);  // 0x48B720
-    int  GetTileType(void * aP1);  // 0x48B9E0
+    int  GetTileIndex(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x48B720
+    int  GetTileType(void * aP1, void *a1 = 0);  // 0x48B9E0
     void  PlaceCliffs(int a2, int a3, void * aP3);  // 0x568E40
-    int ConnectivityGraph();  // 0x56C510
-    int  FloodFillConnectivity(uint8_t * a1, void * aP2, void * aP3);  // 0x56CB90
+    int ConnectivityGraph(void *a1 = 0);  // 0x56C510
+    int  FloodFillConnectivity(uint8_t * a1, void * aP2, void * aP3, void *a2 = 0);  // 0x56CB90
     void  ProcessCellModification(void * aP1);  // 0x570050
     void  RecursiveModify(void * aP1);  // 0x573540
-    char  CreateCrater(void * aP1);  // 0x576770
+    char  CreateCrater(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x576770
     VectorClass_flat * *  SelectTileType(void * aP0, void * aP1);  // 0x579620
     void  PlaceTiberiumTrees(void * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int *  ClimbCheck(void * aP0, void * aP1);  // 0x6D6410

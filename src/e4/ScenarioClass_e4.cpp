@@ -46,7 +46,7 @@
 
 // 0x58BB30
 namespace gamemd {
-ScenarioClass * * ScenarioClass::CopyStartPositions()
+ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
 {
 
   void *result; // eax
@@ -314,7 +314,7 @@ int ScenarioClass::AssignStartPositions(char a1)
 }
 // 0x6832C0
 namespace gamemd {
-TimerStruct * * ScenarioClass::Constructor()
+TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   int v2; // eax
@@ -1672,7 +1672,7 @@ char ScenarioClass::loadGame()
 
 // 0x5D6340
 namespace gamemd {
-char ScenarioClass::createStartingForces()
+char ScenarioClass::createStartingForces(void *a1)
 {
 
   return 1; /*0x5d6342*/
@@ -1737,7 +1737,7 @@ void ScenarioClass::sub_5D80B0()
 
 // 0x6B8AE0
 namespace gamemd {
-unsigned int ScenarioClass::ResetIntroFlags()
+unsigned int ScenarioClass::ResetIntroFlags(void *a1)
 {
 
   unsigned int result; // eax

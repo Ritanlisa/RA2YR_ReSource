@@ -46,12 +46,12 @@ struct TEventClass {
     char TEventClass_field_58[4];  // 0x58
     char TEventClass_field_5C[4];  // 0x5C
 // --- flat members (END) ---
-    DynamicVector * Execute(int a2, int a3, int a4, int * a5, int a6, int a7);
+    DynamicVector * Execute(int a2, int a3, int a4, int * a5, int a6, int a7, void *a7);
     int CheckConditions(int a2, int a3);
     int PrepareSaveToINI(const char * a2);
     int ProcessEvent(int a2);
-    int SaveLoad_Prefix(void * aP0, int aP1);
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int Stub();
     int StubReturn48();
     int StubReturn88();

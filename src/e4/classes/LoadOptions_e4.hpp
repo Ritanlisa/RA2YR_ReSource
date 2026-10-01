@@ -50,7 +50,7 @@ struct LoadOptions {
     LoadOptions * QueryInterface(char a2);
     VectorClass_flat * Constructor_VectorClass_FileEntryClass___(char a2);
     bool ddtor(LPCSTR lpFileName);
-    void GetData();
+    void GetData(void *a1);
     char AddRef(LPCCH lpMultiByteStr);
     char Read(wchar_t * Destination, int a2);
     char Release(LPCCH lpMultiByteStr, wchar_t * Source);
@@ -59,9 +59,9 @@ struct LoadOptions {
     int vt04(unsigned int * a2);
     int vt06(int a2);
     unsigned int vt05(int a2);
-    wchar_t * Close(void *a1 = 0);
-    wchar_t * Open(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-    wchar_t * Seek(void *a1 = 0, void *a2 = 0);
+    void Close(void *a1, void *a2);
+    void Open(void *a1, void *a2, void *a3);
+    void Seek(void *a1, void *a2, void *a3);
     wchar_t * Write();
     char * GetDataPtr(void);
     void** GetEntries(void);

@@ -125,7 +125,7 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
 } // namespace gamemd
 // 0x46BBC0
 namespace gamemd {
-unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
+unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -215,7 +215,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
 } // namespace gamemd
 // 0x46BEE0
 namespace gamemd {
-WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
+WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2)
 {
 
   int v3; // ecx
@@ -545,7 +545,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
 } // namespace gamemd
 // 0x46C560
 namespace gamemd {
-int BulletTypeClass::ProcessPower(int * a2)
+int BulletTypeClass::ProcessPower(int * a2, void *a2)
 {
 
   int v3; // eax

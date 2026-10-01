@@ -13,7 +13,7 @@ struct LCWPipe {
     unsigned int u32_14;
     unsigned int u32_18;
 // --- flat members (END) ---
-    int Dtor();
+    int Dtor(void *a1);
 };
 
 } // namespace gamemd

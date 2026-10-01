@@ -30,12 +30,12 @@ struct HashTable_flat {
 AbstractClass * * FindWOLHashTableEntry(const char ** a2, void * a3);
 AbstractClass * * Grow();
 AbstractClass * * Grow2();
-AbstractClass * * Insert(void * aP1, void * a2);
-AbstractClass * * Lookup(void * aP1, void * aP2);
-AbstractClass * * RebuildEx();
+AbstractClass * * Insert(ObjectClass * aP1, void * a2);
+AbstractClass * * Lookup(ObjectClass * aP1, TechnoTypeClass * aP2);
+AbstractClass * * RebuildEx(void *a1);
 AbstractClass * * RemoveAndResize(unsigned int * a2, unsigned char * a3);
 AbstractClass * * RemoveHashTableEntry(ObjectClass * aP1, void * a2);
-CampaignClass * * Clear();
+CampaignClass * * Clear(void *a1);
 CampaignClass * * RemoveEntry(const char * a2);
 ObjectClass * * Remove(int a2);
 int ComputeHash(int a2);

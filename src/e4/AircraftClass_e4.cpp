@@ -34,7 +34,7 @@
 
 // 0x413F80
 namespace gamemd {
-AircraftTypeClass * AircraftClass::Update(void * a1, void * a2)
+AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *a4)
 {
 
   int *v2; // ecx
@@ -218,7 +218,7 @@ void AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void
 }
 // 0x417CC0
 namespace gamemd {
-AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown * a3)
+AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3)
 {
 
   int *v3; // ebp

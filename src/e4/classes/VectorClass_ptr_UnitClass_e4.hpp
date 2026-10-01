@@ -17,10 +17,10 @@ struct VectorClass_ptr_UnitClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x4E88A0
     unsigned int  GetItemIndex(int a2);  // 0x4E88D0
-    int  Get(int a2);  // 0x4E88F0
+    int  Get(int a2, void *a1 = 0);  // 0x4E88F0
     void Destroy_0();  // 0x4E8900
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8930
-    char  Add(int a2);  // 0x4EB980
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EB980
     char  Release(int a2, unsigned int * a3);  // 0x4EB9C0
     void Remove(void *a1 = 0);  // 0x4EBA70
     int  GetSize(unsigned int * a2);  // 0x4EBAA0

@@ -32,7 +32,7 @@ struct BaseClass {
     HouseClass* owner;  // 0x4C
 // --- flat members (END) ---
     int LoadArrayFields(unsigned int * a1, int a2);
-    int LoadBaseNodeClass(void * aP0, int a2);
+    int LoadBaseNodeClass(VectorClass_flat * aP0, int a2);
 };
 
 } // namespace gamemd

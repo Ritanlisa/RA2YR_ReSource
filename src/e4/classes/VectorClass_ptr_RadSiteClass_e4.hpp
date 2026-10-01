@@ -17,8 +17,8 @@ struct VectorClass_ptr_RadSiteClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x65BEF0
     unsigned int  GetItemIndex(int a2);  // 0x65BF20
-    int  Get(int a2);  // 0x65BF40
-    char  Add(int a2);  // 0x65BF50
+    int  Get(int a2, void *a1 = 0);  // 0x65BF40
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x65BF50
     char  Release(int a2, unsigned int * a3);  // 0x65BF90
     void Remove(void *a1 = 0);  // 0x65C040
     int  GetSize(unsigned int * a2);  // 0x65C070

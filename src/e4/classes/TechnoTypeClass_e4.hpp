@@ -1081,26 +1081,26 @@ struct TechnoTypeClass {
     unsigned int u32_1E42;
     unsigned int vtable0;
 // --- flat members (END) ---
-    AbstractClass * * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
-    DynamicVectorClass_flat * * SaveLoad_Prefix(void * aP0, int aP1);
+    DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);
-    VectorClass_flat * Constructor_1(void * aP1);
+    VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
     bool CanAttackMove_IgnoreWeapon();
-    char RemoveItem(int a2, void *a1 = 0);
+    char RemoveItem(int a2, void *a2);
     char vt_entry_A0();
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
-    int DTOR();
-    void Dispatch(TechnoTypeClass * aP1);
+    int DTOR(void *a1);
+    void Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5);
     int GetThreatMultiplier(TechnoTypeClass * aP1);
-    int SaveLoadDataArray(void * aP1);
-    int SaveLoad_Prefix_0(void * a1, void * aP2, void * aP3);
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * Constructor_0(void * aP1, void *a2 = 0, void *a1 = 0);
-    unsigned int * LoadBase(ObjectClass * aP1);
-    void * ReadINI(char * Source, int a3);
+    int  SaveLoadDataArray(TechnoTypeClass * aP1);
+    int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
+    unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
+    unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
+    unsigned int * LoadBase(ObjectClass * aP1, void *a2);
+    void * ReadINI(char * Source, int a3, void *a3);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static double HasVoiceResponse(...);  // C2597 interim stub

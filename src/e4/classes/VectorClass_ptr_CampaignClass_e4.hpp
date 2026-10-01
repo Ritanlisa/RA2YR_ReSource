@@ -18,10 +18,10 @@ struct VectorClass_ptr_CampaignClass {
     DynamicVector *  Constructor_VectorClass_CampaignClass___(unsigned int * Block, char a2);  // 0x4F0200
     void Destroy(void *a1 = 0);  // 0x4E8A20
     unsigned int  GetItemIndex(int a2);  // 0x4E8A50
-    int  Get(int a2);  // 0x4E8A70
+    int  Get(int a2, void *a1 = 0);  // 0x4E8A70
     void Destroy_0();  // 0x4E8A80
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8AB0
-    char  Add(int a2);  // 0x4EC300
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EC300
     char  Release(int a2, unsigned int * a3);  // 0x4EC340
     void Remove(void *a1 = 0);  // 0x4EC3F0
     int  GetSize(unsigned int * a2);  // 0x4EC420

@@ -113,7 +113,7 @@ struct MissionClass {
     unsigned int q0CC;  // 0xCC
     unsigned int q0D0;  // 0xD0
 // --- flat members (END) ---
-    AbstractClass * * LoadFromINI(unsigned int * a2);
+    AbstractClass * * LoadFromINI(unsigned int * a2, void *a2);
     int HasValidTarget();
     int Return450A();
     int Return450B();

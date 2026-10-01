@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct GameState {
-    unsigned int *GameState:: Reset();
+    unsigned int *GameState:: Reset(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

@@ -12,11 +12,11 @@ struct LayerClass {
     char capacity[4];  // 0x8
     char q00B[4];  // 0xB
 // --- flat members (END) ---
-    int CellIteratorNext(void *a1 = 0);
-    int CellIteratorReset(void *a1 = 0);
-    int CoordinatesLegal(IUnknown * aP1);
-    int IsWithinUsableArea(void * aP1, void * aP2);
-    unsigned int * Pathfinding_Find(void* aP0, void* aP1, void* aP2, void* aP3, void* aP4, void* aP5, void* aP6, void* aP7, void* aP8, void* aP9, void* aP10, void* aP11, void* aP12, void* aP13, void* aP14, void * aP15, char a17);
+    int CellIteratorNext(void *a1);
+    int CellIteratorReset(void *a1);
+    int CoordinatesLegal(IUnknown * aP1, void *a2);
+    int IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2, void *a3);
+    int Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17);
     void * Reveal(int a2);
     void* DestroyCliff(int * a1, int a2, int a3);
     static double Save(...);  // C2597 interim stub

@@ -9,7 +9,7 @@
 
 // 0x4F3A70
 namespace gamemd {
-void GraphicMenuItem::Dtor()
+void GraphicMenuItem::Dtor(void *a1)
 {
 
   ObjectClass *v1; // esi

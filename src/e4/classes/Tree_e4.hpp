@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Tree {
-    void Tree:: Destructor();
+    void Tree:: Destructor(void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -17,8 +17,8 @@ struct VectorClass_ptr_AlphaShapeClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x421800
     unsigned int  GetItemIndex(int a2);  // 0x421830
-    int  Get(int a2);  // 0x421850
-    char  Add(int a2);  // 0x421860
+    int  Get(int a2, void *a1 = 0);  // 0x421850
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x421860
     char  Release(int a2, unsigned int * a3);  // 0x4218A0
     void Remove(void *a1 = 0);  // 0x421950
     int  GetSize(unsigned int * a2);  // 0x421980

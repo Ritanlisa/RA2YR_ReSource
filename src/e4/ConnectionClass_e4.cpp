@@ -18,7 +18,7 @@
 
 // 0x48B750
 namespace gamemd {
-int ConnectionClass::allocPacketSlot( const void * a2, signed int a3, const void * a4, signed int a5)
+int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5, void *a5)
 {
 
   int v6; // edx
@@ -81,7 +81,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {
-int ConnectionClass::initQueue( unsigned int a2)
+int ConnectionClass::initQueue(unsigned int a2, void *a2)
 {
 
   int v2; // eax
@@ -116,7 +116,7 @@ int ConnectionClass::initQueue( unsigned int a2)
 } // namespace gamemd
 // 0x48BEE0
 namespace gamemd {
-void ConnectionClass::dtor()
+void ConnectionClass::dtor(void *a1)
 {
 
   void *v2; // eax
@@ -133,7 +133,7 @@ void ConnectionClass::dtor()
 } // namespace gamemd
 // 0x48BF40
 namespace gamemd {
-AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
+AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5)
 {
 
   **(unsigned short **)((char *)this + 32) = *((unsigned short *)this + 18); /*0x48bf4b*/
@@ -169,7 +169,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
 } // namespace gamemd
 // 0x48C040
 namespace gamemd {
-int ConnectionClass::receivePacket(int a2, int a3)
+int ConnectionClass::receivePacket(int a2, int a3, void *a3)
 {
 
   char v5; // al
@@ -343,7 +343,7 @@ LABEL_40:
 } // namespace gamemd
 // 0x48C320
 namespace gamemd {
-int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
+int ConnectionClass::processTileUpdate(void * a2, signed int * a3, void *a3)
 {
 
   int v4; // esi

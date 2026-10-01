@@ -16,12 +16,12 @@ struct AITriggerTypeClass_40 {
     bool IsInitialized;  // 0x12
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ClearBuffer();  // 0x420370
-    int  Seek(int a2);  // 0x4203C0
+    void ClearBuffer(void *a1 = 0);  // 0x420370
+    int  Seek(int a2, void *a1 = 0, void *a3 = 0);  // 0x4203C0
     char  AddRef(int a2);  // 0x4203D0
     char  Release(int a2, unsigned int * a3);  // 0x420410
     void ddtor();  // 0x4204C0
-    int  Read(unsigned int * a2);  // 0x4204F0
+    int  Read(unsigned int * a2, void *a1 = 0);  // 0x4204F0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x420550
     int  FindItem(unsigned int * a2);  // 0x420600
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x420630

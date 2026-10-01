@@ -37,7 +37,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {
-const char* FileClass::SetFileName(IUnknown * aP1)
+const char* FileClass::SetFileName(IUnknown * aP1, void *a2)
 {
 
   *((unsigned int *)this + 26) = 0; /*0x473fc4*/
@@ -117,7 +117,7 @@ LABEL_14:
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
-  int FileClass::Open(RawFileClass *this, int a2)
+  int FileClass::Open(RawFileClass *this, int a2, void *a3)
   {
     if ( CloseHandle((HANDLE)*((char *)this + 5)) ) /*0x65cc31*/
     {
@@ -211,7 +211,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 } // namespace gamemd
 // 0x65CF00
 namespace gamemd {
-int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
+int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod, void *a3)
 {
 
   char *FileName; // ecx
@@ -397,7 +397,7 @@ LABEL_27: v16 = (void *)(this->FileName);
 } // namespace gamemd
 // 0x65D150
 namespace gamemd {
-int FileClass::Close()
+int FileClass::Close(void *a1, void *a2)
 {
 
   (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d155*/
@@ -440,7 +440,7 @@ char FileClass::Stub(int a1)
 } // namespace gamemd
 // 0x76F020
 namespace gamemd {
-int FileClass::GetState()
+int FileClass::GetState(void *a1)
 {
 
   return this->FilePointer; /*0x76f023*/
@@ -449,7 +449,7 @@ int FileClass::GetState()
 } // namespace gamemd
 // 0x76F070
 namespace gamemd {
-int FileClass::SetState()
+int FileClass::SetState(void *a1)
 {
 
   return this->FilePointer; /*0x76f073*/

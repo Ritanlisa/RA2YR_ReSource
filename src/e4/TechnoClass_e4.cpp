@@ -526,7 +526,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
 
 // 0x6F4500
 namespace gamemd {
-int TechnoClass::DTOR()
+int TechnoClass::DTOR(void *a1)
 {
 
   Sidebar *v2; // ecx
@@ -2166,7 +2166,7 @@ int TechnoClass::StubReturnFalse9()
 
 // 0x731CF0
 namespace gamemd {
-void TechnoClass::GetField()
+void TechnoClass::GetField(void *a1, void *a2)
 {
 
   byte_B0FE58 = 0; /*0x731cf0*/

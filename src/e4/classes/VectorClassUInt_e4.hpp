@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct VectorClassUInt {
-    unsigned int *VectorClassUInt:: Constructor(int a2, int a3);
+    unsigned int *VectorClassUInt:: Constructor(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

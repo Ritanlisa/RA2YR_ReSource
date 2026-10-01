@@ -163,7 +163,7 @@ int WinModemClass::ReadBytes(void ()() a1, WinModemClass * aP1, WinModemClass * 
 } // namespace gamemd
 // 0x774C70
 namespace gamemd {
-int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
+int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2, void *a3)
 {
 
   int result; // eax
@@ -521,7 +521,7 @@ int WinModemClass::HangUp(int a2)
 } // namespace gamemd
 // 0x7754D0
 namespace gamemd {
-int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
+int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5, void *a5)
 {
 
   int result; // eax

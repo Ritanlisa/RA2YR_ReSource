@@ -16,13 +16,13 @@ struct Campaign_WorldDominationTour_16 {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x765840
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x7656D0
-    void*  Constructor(unsigned int * Block, char a2);  // 0x765710
-    void*  Constructor_0(unsigned int * Block, char a2);  // 0x765740
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a1 = 0);  // 0x7656D0
+    void*  Constructor(unsigned int * Block, char a2, void *a1 = 0);  // 0x765710
+    void*  Constructor_0(unsigned int * Block, char a2, void *a1 = 0);  // 0x765740
     VectorCursor *  Constructor_1(unsigned int * Block, char a2);  // 0x765770
     char  AddRef(int a2);  // 0x7657F0
     int ddtor();  // 0x765960
-    int  Read(int a2);  // 0x765990
+    int  Read(int a2, void *a1 = 0);  // 0x765990
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x765B60
     unsigned int  Write(int a2);  // 0x7659D0
 };

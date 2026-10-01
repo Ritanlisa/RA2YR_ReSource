@@ -33,7 +33,7 @@
 
 // 0x4D3590
 namespace gamemd {
-AbstractClass * FootClass::Destruct()
+AbstractClass * FootClass::Destruct(void *a1, void *a2)
 {
 
   int *team; // ecx
@@ -145,7 +145,7 @@ int FootClass::updateThreat()
 
 // 0x710000
 namespace gamemd {
-AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void * a3)
+AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void * a3, void *a4, void *a5, void *a6)
 {
 
   int v4; // ebp

@@ -151,7 +151,7 @@ int DisplayClass::SetSize()
 } // namespace gamemd
 // 0x4A8930
 namespace gamemd {
-char DisplayClass::ddtor()
+char DisplayClass::ddtor(void *a1)
 {
 
   char result; // al
@@ -939,7 +939,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 } // namespace gamemd
 // 0x4A9700
 namespace gamemd {
-void DisplayClass::Update(PowerClass * aP1, int a3)
+void DisplayClass::Update(PowerClass * aP1, int a3, void *a3, void *a4)
 {
 
   VectorCursor_uint_DynamicVectorClass_uint____13::Count((int *)this, aP1, a3); /*0x4a970a*/
@@ -1020,7 +1020,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 } // namespace gamemd
 // 0x4AE6B0
 namespace gamemd {
-HWND DisplayClass::Render()
+HWND DisplayClass::Render(void *a1, void *a2)
 {
 
   int result; // eax

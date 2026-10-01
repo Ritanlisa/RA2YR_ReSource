@@ -26,7 +26,7 @@ struct DialogClass {
     unsigned int RegisterWinClasses;
 // --- flat members (END) ---
     ATOMRegisterWinClasses();
-    int GetFlag();
+    int GetFlag(void *a1);
     int Reposition(int hWnd, int a2);
 };
 

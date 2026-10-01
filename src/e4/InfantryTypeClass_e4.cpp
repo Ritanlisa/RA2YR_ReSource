@@ -29,7 +29,7 @@
 
 // 0x5236A0
 namespace gamemd {
-InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
+InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a3)
 {
 
   int v3; // eax
@@ -227,7 +227,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 } // namespace gamemd
 // 0x5240A0
 namespace gamemd {
-int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
+int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2)
 {
 
   int v3; // ecx
@@ -861,7 +861,7 @@ LABEL_6:
 
 }
 // 0x523B10
-InfantryClass *  InfantryTypeClass::ConstructInfantry( AbstractClass * ppv)
+InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 {
 
   int v2; // edi

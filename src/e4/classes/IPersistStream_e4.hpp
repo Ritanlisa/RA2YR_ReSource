@@ -11,11 +11,11 @@ struct IPersistStream {
 // --- flat members (END) ---
     char SetField(int a1);
     int GetMaxSize();
-    int GetSizeMax(int a0, void * aP1, int a3);
+    int GetSizeMax(int a0, RadioClass * aP1, int a3);
     int IsDirty(int a1, int a2);
     int StubReturn450();
     int StubReturnFalse();
-    void Stub(void * aP0, int a2);
+    void Stub(BuildingTypeClass * aP0, int a2);
 };
 
 } // namespace gamemd

@@ -19,10 +19,10 @@ struct VectorClass_ptr_VoxelAnimTypeClass {
     DynamicVector *  Constructor_VectorClass_IsometricTileTypeClass___(unsigned int * Block, char a2);  // 0x4F0C00
     void Destroy(void *a1 = 0);  // 0x4E8FC0
     unsigned int  GetItemIndex(int a2);  // 0x4E8FF0
-    int  Get(int a2);  // 0x4E9010
+    int  Get(int a2, void *a1 = 0);  // 0x4E9010
     void Destroy_0();  // 0x4E9020
     unsigned int  GetItemIndex_0(int a2);  // 0x4E9050
-    char  Add(int a2);  // 0x4EE6A0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EE6A0
     char  Release(int a2, unsigned int * a3);  // 0x4EE6E0
     void Remove(void *a1 = 0);  // 0x4EE790
     int  GetSize(unsigned int * a2);  // 0x4EE7C0

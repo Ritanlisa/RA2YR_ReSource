@@ -215,7 +215,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
 
 // 0x471C90
 namespace gamemd {
-void CaptureManagerClass::CanCapture(unsigned int * a2)
+void CaptureManagerClass::CanCapture(unsigned int * a2, void *a2)
 {
 
   int v3; // edi
@@ -575,7 +575,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 
 // 0x4723B0
 namespace gamemd {
-void CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
+void CaptureManagerClass::DecideUnitFate(IUnknown * aP1, void *a2)
 {
 
   int v3; // edi
@@ -1200,7 +1200,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
 
 // 0x472C30
 namespace gamemd {
-void CaptureManagerClass::Destroy()
+void CaptureManagerClass::Destroy(void *a1)
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x472c3d*/
@@ -1374,7 +1374,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 
 // 0x6EA4F0
 namespace gamemd {
-char CaptureManagerClass::AddMember(TechnoClass * aP1)
+char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
 {
 
   return TeamClass::AddMember((int *)this, aP1, 1); /*0x6ea4fc*/

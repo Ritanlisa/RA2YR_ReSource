@@ -125,7 +125,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 } // namespace gamemd
 // 0x658DE0
 namespace gamemd {
-unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
+unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   unsigned int *v4; // eax
@@ -211,7 +211,7 @@ void RadarHashVector::ddtor()
 } // namespace gamemd
 // 0x658AA0
 namespace gamemd {
-int RadarHashVector::Read(unsigned int * a2)
+int RadarHashVector::Read(unsigned int * a2, void *a2)
 {
 
   int result; // eax

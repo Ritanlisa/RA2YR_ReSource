@@ -32,7 +32,7 @@ struct DamageArea {
 // --- flat members (END) ---
     int ApplyScatter();
     int CheckOccupancyEligibility();
-    unsigned int * CalcScatterOffset(unsigned int * v11, short * a3);
+    unsigned int * CalcScatterOffset(unsigned int * a2, int16_t * a3);
 };
 
 } // namespace gamemd

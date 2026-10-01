@@ -11,7 +11,7 @@ struct Explosion {
     unsigned int u32_10;
     unsigned int u32_4;
 // --- flat members (END) ---
-    int RemoveItem(int a2);
+    void RemoveItem(int a2, void *a2);
 };
 
 } // namespace gamemd

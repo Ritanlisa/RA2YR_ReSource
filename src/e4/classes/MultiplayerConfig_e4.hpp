@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct MultiplayerConfig {
-    void __cdecl Cleanup();
+    void __cdecl Cleanup(void *a1 = 0);
 };
 
 } // namespace gamemd

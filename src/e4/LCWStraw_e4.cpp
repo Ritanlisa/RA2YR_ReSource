@@ -10,7 +10,7 @@
 
 // 0x552450
 namespace gamemd {
-int LCWStraw::Dtor()
+int LCWStraw::Dtor(void *a1)
 {
 
   void *v2; // eax

@@ -10,7 +10,7 @@ struct SkirmishSetup {
     char SkirmishSetup_field_00[4];  // 0x0
     char SkirmishSetup_field_04[4];  // 0x4
 // --- flat members (END) ---
-    int DlgProc(void * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5);
+    int DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5);
     int PlayButtonClickAnim();
 };
 

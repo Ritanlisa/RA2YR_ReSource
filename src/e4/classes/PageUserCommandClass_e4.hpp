@@ -11,11 +11,11 @@ struct PageUserCommandClass {
     char PageUserCommandClass_field_00[4];  // 0x4
     char PageUserCommandClass_field_04[4];  // 0x8
 // --- flat members (END) ---
-    char * AddRef();
+    char * AddRef(void *a1);
     char Do(int a1);
 PageUserCommandClass();
-    wchar_t * Read();
-    wchar_t * Release();
+    wchar_t * Read(void *a1, void *a2);
+    wchar_t * Release(void *a1);
     wchar_t * ddtor();
 };
 

@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct BuildingLoadQueue {
     void *BuildingLoadQueue:: Find();
-    void *BuildingLoadQueue:: GetNext();
+    void *BuildingLoadQueue:: GetNext(void *a1 = 0);
 };
 
 } // namespace gamemd

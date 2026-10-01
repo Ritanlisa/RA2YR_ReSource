@@ -60,18 +60,18 @@ struct SlaveManagerClass {
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);
-    int AssignTask(void * aP1);
-    void Check();
+    int AssignTask(AbstractClass * aP1);
+    void Check(void *a1, void *a2, void *a3);
     int CheckIsOne();
-    void Constructor();
+    void Constructor(void *a1, void *a2, void *a3);
     int IsMasterHarvester();
-    int LostSlave(void * aP1);
-    int SaveManager(void * aP0, int * a1, int aP2);
+    int LostSlave(ObjectClass * aP1);
+    int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetOwner(TechnoClass * aP1);
     int ShouldWakeUpNow();
     int StubReturn100();
     int StubReturn72();
-    int UpdateSlaves();
+    void UpdateSlaves();
     int VtableDispatch();
     int ddtor(int a1, unsigned int * a2);
     long long Calc2DDistance();

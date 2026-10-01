@@ -122,13 +122,13 @@ struct BuildingLightClass {
 // --- flat members (END) ---
     BuildingLightClass * SDDTOR(char a2);
     int SD_vt03(int a1, unsigned int * a2);
-    int SD_vt06(void * aP0, int * a1, int aP2);
+    int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);
     int SD_vt11();
     int SD_vt12();
     int SD_vt30();
     int SD_vt34();
     signed int UpdateOscillation();
-    unsigned int * FindTarget(void * aP1);
+    unsigned int * FindTarget(CCINIClass * aP1, void *a2);
 };
 
 } // namespace gamemd

@@ -166,12 +166,12 @@ struct HouseTypeClass {
     unsigned int q1AC;  // 0x1AC
     unsigned int *__pad_16D;
 // --- flat members (END) ---
-    AbstractClass * Dtor();
-    AbstractClass * * ProcessPower(int * a2, void *a1 = 0);
+    AbstractClass * Dtor(void *a1);
+    AbstractClass * * ProcessPower(int * a2, void *a2);
     HouseTypeClass * Destructor(char a2);
-    char readPowerPlants(void * aP1);
+    char readPowerPlants(TypeList_flat * aP1);
     int AddRef(int a1);
-    int Find(void *a1 = 0);
+    int Find(void *a1);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
@@ -185,15 +185,15 @@ struct HouseTypeClass {
     int readBaseDefenses(int a1, const void * a2, unsigned int * a3);
     int readLoadoutData(int a1);
     unsigned int * loadVeteranWeapons(HouseTypeClass * aP1);
-    unsigned int * readAllowedUnits(void * aP1);
-    unsigned int * readBaseDefense(void * aP1);
+    unsigned int * readAllowedUnits(InfantryTypeClass * aP1);
+    unsigned int * readBaseDefense(VectorClass_flat * aP1);
     unsigned int * readDefaultAlly(int a2, int a3);
-    unsigned int * readParaDropTypes(void * aP1);
-    unsigned int * readStartInfantry(void * aP1);
+    unsigned int * readParaDropTypes(VectorClass_flat * aP1);
+    unsigned int * readStartInfantry(InfantryTypeClass * aP1);
     unsigned int * readStartUnit();
     unsigned int loadBuildLimits();
-    void * ReadCountryName(int a1, unsigned char *** edx0, void * aP1, unsigned char * a2, unsigned int * a5);
-    void* LoadFromINI(unsigned char *** aP1);
+    void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
+    AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
 };
 
 } // namespace gamemd

@@ -517,7 +517,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
 } // namespace gamemd
 
 // 0x478720
-unsigned int * TypeList_flat::Copy(unsigned int * a2)
+unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2)
 {
 
   int v3; // eax
@@ -1217,7 +1217,7 @@ int TypeList_VoxelAnim::Clear(int a2)
 } // namespace gamemd
 
 // 0x67A4F0
-DynamicVector * TypeList_flat::Construct()
+DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   ((unsigned int *)this)[0] = 0; /*0x67a4f4*/

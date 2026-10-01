@@ -18,8 +18,8 @@ struct VectorClass_ptr_SpawnManagerClass {
     DynamicVector *  Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2);  // 0x6B8830
     void Destroy(void *a1 = 0);  // 0x6B81C0
     unsigned int  GetItemIndex(int a2);  // 0x6B81F0
-    int  Get(int a2);  // 0x6B8210
-    char  Add(int a2);  // 0x6B84E0
+    int  Get(int a2, void *a1 = 0);  // 0x6B8210
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x6B84E0
     char  Release(int a2, unsigned int * a3);  // 0x6B8520
     void Remove(void *a1 = 0);  // 0x6B85D0
     int  GetSize(unsigned int * a2);  // 0x6B8600

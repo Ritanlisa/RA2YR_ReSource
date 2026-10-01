@@ -148,7 +148,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x7AC820
 namespace gamemd {
-int ComStreamClass::Release()
+int ComStreamClass::Release(void *a1)
 {
 
   LONG v1; // ebx
@@ -389,7 +389,7 @@ unsigned int * ComStreamClass::getStreamSize()
 } // namespace gamemd
 // 0x7A4070
 namespace gamemd {
-int ComStreamClass::Seek()
+int ComStreamClass::Seek(void *a1, void *a2, void *a3)
 {
 
   HWND v4; // eax
@@ -451,7 +451,7 @@ int ComStreamClass::ddtor()
 } // namespace gamemd
 // 0x7AC800
 namespace gamemd {
-LONG ComStreamClass::AddRef()
+LONG ComStreamClass::AddRef(void *a1)
 {
 
   int v2; // [esp+4h] [ebp+4h]

@@ -210,11 +210,11 @@ struct MPCooperative {
     char WriteCoopSaveINI();  // 0x49BE40
     bool ReadCoopSaveINI();  // 0x49D120
     unsigned int *  ctor(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x5C1470
-    char Read();  // 0x5C18A0
+    char Read(void *a1 = 0, void *a2 = 0);  // 0x5C18A0
     HWND CopyTo();  // 0x5C1A10
     // dup-decl removed: COM Stub();  // 0x5C1CB0
     int InitSession();  // 0x5C1CC0
-    char Seek();  // 0x5C1DC0
+    char Seek(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x5C1DC0
     int Revert();  // 0x5C1FA0
     char  StartGame(int a2, void ** a3, void * Block, int a5, int16_t a6, int a7, int a8, char * a9, char * a10);  // 0x5C2040
     char  EndGame(int a2, int a3, int a4);  // 0x5C2100
@@ -264,7 +264,7 @@ struct MPCooperative {
     void  Clone(HWND hDlg);  // 0x5C2640
     char ValidateSettings();  // 0x5C2CB0
     int  SaveSettings(HWND hWnd, int a3);  // 0x5C2CE0
-    int Cleanup();  // 0x5C3F30
+    int Cleanup(void *a1 = 0);  // 0x5C3F30
     unsigned int  syncPlayers(int a2);  // 0x5C5040
     unsigned int  updateGameClock(int a2);  // 0x5C5100
     unsigned int  handleDisconnect(int a2);  // 0x5C5290

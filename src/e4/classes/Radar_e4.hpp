@@ -66,7 +66,7 @@ struct Radar {
     void  UpdateReveal(char a1, void * aP1);  // 0x4ADCD0
     bool IsRadarTargetEligible();  // 0x5090F0
     void*  ProcessSubzone(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5);  // 0x5824A0
-    void  Update(void * aP1);  // 0x584550
+    void  Update(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x584550
     int *  CopyDataArray(int * a2);  // 0x58ABD0
     int PixelIndex();  // 0x6558B0
     char RenderMinimap();  // 0x656EC0

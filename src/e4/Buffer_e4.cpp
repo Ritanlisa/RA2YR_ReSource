@@ -295,7 +295,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x7C1730
 namespace gamemd {
-int Buffer::AllocateCodecFrameBuffers()
+int Buffer::AllocateCodecFrameBuffers(void *a1)
 {
 
   unsigned int *v3; // ebx
@@ -420,7 +420,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x43AD00
 namespace gamemd {
-void Buffer::Init( int a2, AbstractClass * aP2)
+void Buffer::Init(int a2, AbstractClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   this->Buffer_field_00 = (unsigned int)(a2);

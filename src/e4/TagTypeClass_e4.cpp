@@ -22,7 +22,7 @@
 
 // 0x6E5B60
 namespace gamemd {
-AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
+AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -81,7 +81,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
 }
 // 0x6E5CA0
 namespace gamemd {
-AbstractClass * * TagTypeClass::CleanupMembers()
+AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
 {
 
   unsigned int *v2; // ecx

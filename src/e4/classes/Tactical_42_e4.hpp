@@ -17,7 +17,7 @@ struct Tactical_42 {
 // --- flat members (END) ---
     int  FindItem(unsigned int * a2);  // 0x6E4A80
     unsigned int *  loc_6E4B00(unsigned int * Block, char a2);  // 0x6E4B00
-    void ClearBuffer();  // 0x6E47F0
+    void ClearBuffer(void *a1 = 0);  // 0x6E47F0
     int  UpdateView(int a2);  // 0x6E4840
     char  AddRef(int a2);  // 0x6E4850
     char  Release(int a2, unsigned int * a3);  // 0x6E4890

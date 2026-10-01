@@ -35,8 +35,8 @@ struct BlitTransXlatAlphaZRead_ushort {
     unsigned int m_8;
 // --- flat members (END) ---
     BlitTransXlatAlphaZRead_ushort * Blit(unsigned int * Block, char a2);
-    int AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, uint16_t * a6, uint16_t * a7, int a8, int a9);
-    int BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, uint16_t * a6, uint16_t * a7, int a8, int a9, int16_t a10);
+    int AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9);
+    int BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10);
     int CallBlit0_10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
     int CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
     int CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
@@ -52,8 +52,8 @@ struct BlitTransXlatAlphaZRead_ushort {
     std::locale::facet * Constructor_Blitter_0(char a2);
     std::locale::facet * Constructor_Blitter_1(char a2);
     std::locale::facet * Constructor_Blitter_2(char a2);
-    unsigned short * Blit_Alpha_Lucent50(unsigned short * a1, uint8_t * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
-    unsigned short * Blit_Alpha_Lucent50_0(unsigned short * a1, uint8_t * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
+    unsigned short * Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
+    unsigned short * Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
 };
 
 } // namespace gamemd

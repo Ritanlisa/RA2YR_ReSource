@@ -21,12 +21,12 @@ struct VectorClass_ptr_GlobalPacketType {
     unsigned int  GetItemIndex(int a2);  // 0x69C5D0
     void Destroy_0();  // 0x69C600
     unsigned int  GetItemIndex_0(int a2);  // 0x69C630
-    int  Get(int a2);  // 0x69C650
+    int  Get(int a2, void *a1 = 0);  // 0x69C650
     void Destroy_1();  // 0x69C660
     unsigned int  GetItemIndex_1(int a2);  // 0x69C690
     char  SetCapacity(int a2, unsigned int * a3);  // 0x69CEC0
     int  FindItemIndex(unsigned int * a2);  // 0x69CF70
-    char  Add(int a2);  // 0x69CFA0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x69CFA0
     char  Release(int a2, unsigned int * a3);  // 0x69CFE0
     void Remove(void *a1 = 0);  // 0x69D090
     int  GetSize(unsigned int * a2);  // 0x69D0C0

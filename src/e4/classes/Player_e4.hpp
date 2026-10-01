@@ -10,9 +10,9 @@ struct Player {
     void* q004;  // 0x4
     unsigned int u32_54;  // 0x54
 // --- flat members (END) ---
-    void IsObserver();
-    void BuildListString(void *a1 = 0);
-    wchar_t * FindByName(void *a1 = 0);
+    void IsObserver(void *a1);
+    void BuildListString(wchar_t * Destination);
+    void FindByName(wchar_t * String2);
 };
 
 } // namespace gamemd

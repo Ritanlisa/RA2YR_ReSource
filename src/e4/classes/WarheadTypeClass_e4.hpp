@@ -232,19 +232,19 @@ struct WarheadTypeClass {
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
-    CCINIClass * checkImmunity(void * aP1);
+    CCINIClass * checkImmunity(TypeList_flat * aP1);
     CampaignClass * * Destructor(char a2);
-    DynamicVector * calculateDamage(void * aP1);
+    DynamicVector * calculateDamage(AbstractClass * aP1);
     ParticleSystemTypeClass * * applyDamage();
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    void Construct(ObjectClass * aP1);
-    int FindOrCreate(void *a1 = 0);
+    void Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    int FindOrCreate(ObjectClass * Source);
     int GetDamage(int a2, int a3);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    int Init(unsigned int * a2, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     int LoadType();
     int SaveLoad_Prefix(unsigned int * a1, int a2);
     int SaveToINI(int a2);
@@ -253,7 +253,7 @@ struct WarheadTypeClass {
     void * loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4);
     void * parseModifiers(char a2);
     void GetClassIdentifier();
-    void* ProcessPower(int * a2, void *a1 = 0);
+    void* ProcessPower(int * a2, void *a2);
 };
 
 } // namespace gamemd

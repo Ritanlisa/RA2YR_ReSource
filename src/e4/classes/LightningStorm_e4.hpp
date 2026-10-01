@@ -23,7 +23,7 @@ struct LightningStorm {
     void* q6208;  // 0x6208
     void* q6210;  // 0x6210
 // --- flat members (END) ---
-    AnimClass * * Strike(void* aP0);
+    void Strike(IUnknown * aP0);
     char End();
     int IsActive();
     int Start(int a1, int a2, int a3, void * a4);

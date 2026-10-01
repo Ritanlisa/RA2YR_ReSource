@@ -166,10 +166,10 @@ struct Voxel {
     void* q2D8;  // 0x2D8
 // --- flat members (END) ---
     char BuildIndexTable();  // 0x748220
-    float * RenderFrame();  // 0x754510
+    float * RenderFrame(void *a1 = 0);  // 0x754510
     int Projection_Setup();  // 0x754CB0
-    AbstractClass * *  SortDepth(void * aP1, int a3);  // 0x755DB0
-    int  ProcessColor(unsigned int * a2, float * a3);  // 0x756590
+    AbstractClass * *  SortDepth(void * aP1, int a3, void *a1 = 0);  // 0x755DB0
+    int  ProcessColor(unsigned int * a2, float * a3, void *a1 = 0);  // 0x756590
     void*  DrawHelper(void * aP1);  // 0x75C240
     int  BlendShadowColor(int a2, void * aP2, int arg8, unsigned short * a4);  // 0x75EDF0
     int loadSectionData();  // 0x75F140

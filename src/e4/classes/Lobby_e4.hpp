@@ -19,7 +19,7 @@ struct Lobby {
     unsigned int Network;
 // --- flat members (END) ---
     int BuildPlayerList();
-    int InvalidatePlayerSlots(void *a1 = 0);
+    int InvalidatePlayerSlots(HWND hDlg);
     void SetupPlayerWidgets(HWND hDlg);
     void UpdatePlayerLabels();
     static double InvalidateFactionCombos(...);  // C2597 interim stub

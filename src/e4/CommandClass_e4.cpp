@@ -189,7 +189,7 @@ int CommandClass::BuildBar()
 } // namespace gamemd
 // 0x724580
 namespace gamemd {
-int CommandClass::AddAction(ToolTipManager * aP1)
+int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
 {
 
   ToolTipManager * v2;

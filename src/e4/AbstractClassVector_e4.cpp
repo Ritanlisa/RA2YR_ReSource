@@ -11,7 +11,7 @@
 
 // 0x4E0440
 namespace gamemd {
-int AbstractClassVector::Read(unsigned int * a2)
+int AbstractClassVector::Read(unsigned int * a2, void *a2)
 {
 
   int result; // eax
@@ -47,7 +47,7 @@ unsigned int AbstractClassVector::Write(int a2)
 } // namespace gamemd
 // 0x4E0E80
 namespace gamemd {
-int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
+int AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->AbstractClassVector_field_0x04 = (unsigned char)(0);

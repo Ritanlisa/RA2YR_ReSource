@@ -126,7 +126,7 @@ int SessionClass::initInternet()
 } // namespace gamemd
 // 0x552CC0
 namespace gamemd {
-MixFileClass * SessionClass::Load()
+MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
 {
 
   unsigned int *v2; // eax
@@ -184,7 +184,7 @@ MixFileClass * SessionClass::Load()
 } // namespace gamemd
 // 0x5ADF20
 namespace gamemd {
-MixFileClass * SessionClass::LoadGameSession( ObjectClass * aP1, CellStruct * aP2)
+MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
 {
 
   int v4; // esi
@@ -253,7 +253,7 @@ LABEL_17:
 } // namespace gamemd
 // 0x5CEEF0
 namespace gamemd {
-AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
+AbstractClass * * SessionClass::LoadMapSelection(char ** a1, void *a2)
 {
 
   SessionClass *uniqueId; // ebp
@@ -542,7 +542,7 @@ LABEL_17:
 } // namespace gamemd
 // 0x5CF5F0
 namespace gamemd {
-int SessionClass::Destruct()
+int SessionClass::Destruct(void *a1, void *a2)
 {
 
   int i; // ebx
@@ -854,7 +854,7 @@ int SessionClass::SetField()
 } // namespace gamemd
 // 0x696F10
 namespace gamemd {
-int SessionClass::GetPlayerSide()
+int SessionClass::GetPlayerSide(void *a1)
 {
 
   int result; // eax
@@ -868,7 +868,7 @@ int SessionClass::GetPlayerSide()
 } // namespace gamemd
 // 0x696F20
 namespace gamemd {
-int SessionClass::GetPlayerColor()
+int SessionClass::GetPlayerColor(void *a1)
 {
 
   int result; // eax
@@ -882,7 +882,7 @@ int SessionClass::GetPlayerColor()
 } // namespace gamemd
 // 0x696F50
 namespace gamemd {
-int SessionClass::GetOption()
+int SessionClass::GetOption(void *a1)
 {
 
   int result; // eax
@@ -896,7 +896,7 @@ int SessionClass::GetOption()
 } // namespace gamemd
 // 0x696F70
 namespace gamemd {
-int SessionClass::GetOption2()
+int SessionClass::GetOption2(void *a1)
 {
 
   int result; // eax
@@ -910,7 +910,7 @@ int SessionClass::GetOption2()
 } // namespace gamemd
 // 0x696F90
 namespace gamemd {
-int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
+int SessionClass::SetPlayerOption(SkirmishDialog * aP1, void *a2)
 {
 
   int result; // eax
@@ -932,7 +932,7 @@ int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
 } // namespace gamemd
 // 0x696FC0
 namespace gamemd {
-int SessionClass::SetPlayerColor(int a2)
+int SessionClass::SetPlayerColor(int a2, void *a2)
 {
 
   int result; // eax
@@ -954,7 +954,7 @@ int SessionClass::SetPlayerColor(int a2)
 } // namespace gamemd
 // 0x696FF0
 namespace gamemd {
-int SessionClass::SetOption(SessionClass * aP1)
+int SessionClass::SetOption(SessionClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -1419,7 +1419,7 @@ LABEL_22:
 
 }
 // 0x697E70
-int  SessionClass::IsValidHouse( void * a2)
+int  SessionClass::IsValidHouse(void * a2)
 {
 
   #375 *v2; // edi
@@ -2521,7 +2521,7 @@ int SessionClass::AssignSide(int a2, MPCooperative * aP2)
 
 }
 // 0x69BBE0
-char SessionClass::GetGameSpeed()
+char SessionClass::GetGameSpeed(void *a1)
 {
 
   int result; // eax
@@ -2531,7 +2531,7 @@ char SessionClass::GetGameSpeed()
 
 }
 // 0x69C4A0
-void SessionClass::ddtor()
+void SessionClass::ddtor(void *a1)
 {
 
   void *v2; // eax
@@ -2558,7 +2558,7 @@ unsigned int SessionClass::Write(int a2)
 
 }
 // 0x69C4F0
-int SessionClass::Seek(int a2)
+int SessionClass::Seek(int a2, void *a2, void *a3)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c4fa*/
@@ -2674,7 +2674,7 @@ void SessionClass::removePlayer()
 
 }
 // 0x69C830
-int  SessionClass::findPlayer( unsigned int * a2)
+int  SessionClass::findPlayer(unsigned int * a2)
 {
 
   int result; // eax
@@ -2752,7 +2752,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
 
 }
 // 0x69C940
-int SessionClass::Read(unsigned int * a2)
+int SessionClass::Read(unsigned int * a2, void *a2)
 {
 
   int m_10; // edx

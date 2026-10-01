@@ -23,10 +23,10 @@ struct WebBrowser {
     int LoadURLFromRegistry(const char * a2);  // 0x773600
     HWND ShowDialog();  // 0x773E90
     int GoForward();  // 0x7740A0
-    bool OpenURL();  // 0x551630
+    bool OpenURL(void *a1 = 0);  // 0x551630
     int QueryInterface();  // 0x773A40
-    int AddRef();  // 0x773AA0
-    int Release();  // 0x773AB0
+    int AddRef(void *a1 = 0);  // 0x773AA0
+    int Release(void *a1 = 0);  // 0x773AB0
     int Write();  // 0x773B10
     int Clone();  // 0x773BC0
     int Navigate();  // 0x773D20

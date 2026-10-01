@@ -114,7 +114,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int __tail_18;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    unsigned int *  Constructor(void * aP1);  // 0x4A0C20
+    unsigned int *  Constructor(void * aP1, void *a1 = 0, void *a2 = 0);  // 0x4A0C20
     int  SetCapacity(int a1, int a2);  // 0x4F6A20
     int  SetCapacity_0(int a1, int a2);  // 0x4F6A80
     int  SetCapacity_1(int a1, int a2);  // 0x4F6AE0
@@ -137,8 +137,8 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int  StubReturnNullPointer(int a1, unsigned int * a2);  // 0x5024F0
     void Destroy_0();  // 0x50E640
     unsigned int  GetItemIndex_1(int a2);  // 0x50E670
-    int  Get(int a2);  // 0x50E690
-    char  Add(int a2);  // 0x50F4E0
+    int  Get(int a2, void *a1 = 0);  // 0x50E690
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x50F4E0
     void Remove(void *a1 = 0);  // 0x50F5D0
     int  GetSize(unsigned int * a2);  // 0x50F600
     unsigned int  GetCapacity(int a2);  // 0x50F640

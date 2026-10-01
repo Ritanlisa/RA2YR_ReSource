@@ -127,7 +127,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 }
 // 0x6A4550
 namespace gamemd {
-int SideClass::Construct(CCINIClass * aP1)
+int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -248,7 +248,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 }
 // 0x6A4930
 namespace gamemd {
-void * SideClass::Init(void ** Block, char a2)
+void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   int v3; // eax
@@ -290,7 +290,7 @@ void * SideClass::Init(void ** Block, char a2)
 }
 // 0x49D9F0
 namespace gamemd {
-int SideClass::FindByName()
+int SideClass::FindByName(void *a1)
 {
 
   int v3; // ebx

@@ -19,7 +19,7 @@ struct DynamicVectorClass_AnimType {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x525110
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x525010
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x525010
     int  GetSize(unsigned int * a2);  // 0x5251F0
     unsigned int  Remove(int a2);  // 0x525230
 };

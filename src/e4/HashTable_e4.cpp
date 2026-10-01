@@ -488,7 +488,7 @@ LABEL_4:
 } // namespace gamemd
 // 0x6B9530
 namespace gamemd {
-CampaignClass * * HashTable_flat::Clear()
+CampaignClass * * HashTable_flat::Clear(void *a1)
 {
 
   int HashTable_field_0x04; // ecx
@@ -972,7 +972,7 @@ LABEL_24:
 } // namespace gamemd
 // 0x6BAEF0
 namespace gamemd {
-AbstractClass * * HashTable_flat::RebuildEx()
+AbstractClass * * HashTable_flat::RebuildEx(void *a1)
 {
 
   unsigned int HashTable_field_0x08; // esi

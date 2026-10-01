@@ -621,7 +621,7 @@ int SidebarClass::SwitchTab(int a2)
 } // namespace gamemd
 // 0x6ABD30
 namespace gamemd {
-GadgetClass * SidebarClass::LoadResources()
+GadgetClass * SidebarClass::LoadResources(void *a1)
 {
 
   PowerClass *v1; // ecx

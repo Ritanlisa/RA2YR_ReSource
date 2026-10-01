@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TextGroup {
-    unsigned int *TextGroup:: SetRect(unsigned int * a2);
+    unsigned int *TextGroup:: SetRect(unsigned int * a2, void *a1 = 0);
 };
 
 } // namespace gamemd

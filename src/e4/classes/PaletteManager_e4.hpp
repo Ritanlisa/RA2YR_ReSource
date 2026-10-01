@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PaletteManager {
-    int PaletteManager:: Load(int a2);
+    int PaletteManager:: Load(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
 };
 
 } // namespace gamemd

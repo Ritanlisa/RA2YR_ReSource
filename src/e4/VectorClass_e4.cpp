@@ -2113,7 +2113,7 @@ void VectorClass_flat::Cleanup5()
 
 }
 // 0x40B2A0
-int  VectorClass_flat::GetSize( unsigned int * a2)
+int  VectorClass_flat::GetSize(unsigned int * a2)
 {
 
   int result; // eax
@@ -5615,7 +5615,7 @@ int VectorClass_ptr_Reestablish::Clear(int a2)
 } // namespace gamemd
 
 // 0x45A270
-void VectorClass_flat::Cleanup()
+void VectorClass_flat::Cleanup(void *a1)
 {
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45a27d*/
@@ -7079,7 +7079,7 @@ int * VectorClass_flat::ScalarDtor(char a2)
 
 }
 // 0x4777B0
-unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1)
+unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
 {
 
   int v3; // eax
@@ -7137,7 +7137,7 @@ int VectorClass_flat::GetAt_Copy(int a2)
 
 }
 // 0x477BE0
-unsigned int * VectorClass_flat::Construct(int a2, int a3)
+unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->Items = 0; /*0x477beb*/
@@ -7207,7 +7207,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
 
 }
 // 0x477D20
-void VectorClass_flat::Destroy()
+void VectorClass_flat::Destroy(void *a1)
 {
 
   int result; // eax
@@ -7224,7 +7224,7 @@ void VectorClass_flat::Destroy()
 
 }
 // 0x477D50
-int  VectorClass_flat::vt04( unsigned int * a2)
+int  VectorClass_flat::vt04(unsigned int * a2)
 {
 
   int result; // eax
@@ -23492,7 +23492,7 @@ void VectorClass_flat::ClearAndFree4()
 
 }
 // 0x525060
-unsigned int *  VectorClass_flat::CopyDefault( VectorClass * aP1)
+unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
 {
 
   int v3; // eax
@@ -25692,7 +25692,7 @@ VectorClass_flat * VectorClass_PBG::QueryInterface(unsigned int * Block, char a2
 } // namespace gamemd
 
 // 0x55BAE0
-int VectorClass_flat::RemoveItem(ObjectClass * aP1)
+int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -31954,7 +31954,7 @@ int VectorClass_ptr_PlanningMemberClass::FindItemIndex_0(unsigned int * a2)
 } // namespace gamemd
 
 // 0x63E540
-char VectorClass_flat::Append(VectorClass_flat * aP1)
+char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
 {
 
   int Capacity; // ecx
@@ -33203,7 +33203,7 @@ void VectorClass_flat::Dtor()
 
 }
 // 0x67A630
-int  VectorClass_flat::LoadStream( TechnoTypeClass * aP1)
+int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
 {
 
   int v3; // ecx
@@ -33334,7 +33334,7 @@ void VectorClass_flat::ClearAndFree()
 
 }
 // 0x67B180
-unsigned int *  VectorClass_flat::CopyBuilding( VectorClass * aP1)
+unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
 {
 
   int v3; // eax
@@ -34632,7 +34632,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
 
 }
 // 0x69E9B0
-int VectorClass_flat::Check(Pipe * aP1, int aP2)
+int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
 {
 
   SHA1::Process((SHA1 *)((char *)this + 12), aP1, aP2); /*0x69e9c2*/
@@ -36729,7 +36729,7 @@ VectorClass_flat * VectorClass_ptr_SubTitle::QueryInterface(unsigned int * Block
 } // namespace gamemd
 
 // 0x6CE2D0
-char VectorClass_flat::RemoveAt(int a2)
+char VectorClass_flat::RemoveAt(int a2, void *a2)
 {
 
   int result; // eax

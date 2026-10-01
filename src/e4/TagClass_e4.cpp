@@ -227,7 +227,7 @@ LABEL_45:
 }
 // 0x6E6220
 namespace gamemd {
-void TagClass::HasValidHouse()
+void TagClass::HasValidHouse(void *a1)
 {
 
   HouseClass *v1; // esi
@@ -247,7 +247,7 @@ void TagClass::HasValidHouse()
 }
 // 0x71ADE0
 namespace gamemd {
-void TagClass::Unlink()
+void TagClass::Unlink(void *a1)
 {
 
   int v2; // eax

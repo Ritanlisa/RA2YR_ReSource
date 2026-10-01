@@ -10,7 +10,7 @@
 
 // 0x5AE860
 namespace gamemd {
-int Matrix3x4::Identity()
+int Matrix3x4::Identity(void *a1)
 {
 
   this->m_Data[0] = 1065353216; /*0x5ae867*/
@@ -31,7 +31,7 @@ int Matrix3x4::Identity()
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {
-void Matrix3x4::Translate(ParticleSystemClass * aP1)
+void Matrix3x4::Translate(ParticleSystemClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -45,7 +45,7 @@ void Matrix3x4::Translate(ParticleSystemClass * aP1)
 } // namespace gamemd
 // 0x6D2360
 namespace gamemd {
-unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2)
+unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3)
 {
 
   float *v4; // eax

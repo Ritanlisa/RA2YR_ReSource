@@ -36,20 +36,20 @@ struct TagTypeClass {
     unsigned int vtable46;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    AbstractClass * * CleanupMembers();
-    AbstractTypeClass * Construct(ObjectClass * aP1);
-    AbstractTypeClass * * FindOrCreate(void *a1 = 0);
+    AbstractClass * * CleanupMembers(void *a1);
+    AbstractTypeClass * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    AbstractTypeClass * FindOrCreate(ObjectClass * Source);
     TagTypeClass * ddtor(char a2);
-    TriggerTypeClass * * FindOrCreateTriggerType(void *a1 = 0);
+    TriggerTypeClass * * FindOrCreateTriggerType(ObjectClass * Source);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetEvent(int a2, int a3);
     int GetObjectSize();
     int GetParameter(char * a2);
     int GetTypeIdentifier();
-    int LoadTypeData(void * aP0, int aP1);
+    int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int SaveToINI(void * aP0, int * a1, int aP2);
+    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     void* GetAction(unsigned char *** a2);
 };
 

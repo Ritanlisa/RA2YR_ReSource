@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AllocCallback {
-    unsigned int *__cdecl Dispatch(int a1, int a2, unsigned int * Block, int Size);
+    unsigned int *__cdecl Dispatch(int a1, int a2, unsigned int * Block, int Size, void *a3 = 0);
 };
 
 } // namespace gamemd

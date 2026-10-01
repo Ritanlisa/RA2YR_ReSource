@@ -86,7 +86,7 @@ void Struct::ClearAllMemberFlags()
 } // namespace gamemd
 // 0x48BF10
 namespace gamemd {
-int Struct::ZeroInitAndSetup()
+int Struct::ZeroInitAndSetup(void *a1)
 {
 
   this->PhoneNumber[7] = 0; /*0x48bf12*/
@@ -118,7 +118,7 @@ unsigned char * Struct::Zero3()
 } // namespace gamemd
 // 0x4085A0
 namespace gamemd {
-int Struct::ZeroInit32()
+int Struct::ZeroInit32(void *a1)
 {
 
   memset(this, 0, 0x20u); /*0x4085aa*/

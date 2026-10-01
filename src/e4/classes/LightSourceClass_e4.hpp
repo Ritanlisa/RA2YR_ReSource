@@ -42,12 +42,12 @@ struct LightSourceClass {
     bool q04A;  // 0x4A
 // --- flat members (END) ---
     LightSourceClass * CopyTo(char a2);
-    void Constructor();
-    int Seek(void * aP0, int * a1, int aP2);
+    void Constructor(void *a1, void *a2, void *a3);
+    int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int Stat(AbstractClass * aP1);
     int StubReturn54();
     int StubReturn76();
-    int Write(void * aP0, int aP1);
+    int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
 };

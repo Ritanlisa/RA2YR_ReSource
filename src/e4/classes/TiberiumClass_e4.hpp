@@ -135,8 +135,8 @@ struct TiberiumClass {
     unsigned int __pad_E4;
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);
-    int LoadFromINI(unsigned char *** aP1);
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    void LoadFromINI(uint8_t *** aP1, void *a2);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn296();
     int StubReturn46();
     int ddtor(int a1, unsigned int * a2);

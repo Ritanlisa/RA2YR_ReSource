@@ -81,15 +81,15 @@ struct Options {
     void Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
     int DeleteAndZero();  // 0x6244E0
-    char EnsureCapacity();  // 0x6248A0
+    char EnsureCapacity(void *a1 = 0, void *a2 = 0);  // 0x6248A0
     char GrowBuffer();  // 0x6253B0
     char ReadOptionValue();  // 0x6254D0
     void *  DestroyComposite(void * Block, char a2);  // 0x625560
     int *  RebuildDropdownList(void * aP1);  // 0x6255F0
     char SaveOptionValue();  // 0x625A20
-    void  SetScoreVolume(float volume, int pad);  // 0x5FA4A0
-    void  SetSoundVolume(float volume, int pad);  // 0x5FA510
-    void  SetVoiceVolume(float volume, int pad);  // 0x5FA590
+    void  SetScoreVolume(float volume, int pad, void *a1 = 0);  // 0x5FA4A0
+    void  SetSoundVolume(float volume, int pad, void *a1 = 0);  // 0x5FA510
+    void  SetVoiceVolume(float volume, int pad, void *a1 = 0);  // 0x5FA590
     HWND  InitDialogControls(HWND hDlg);  // 0x4F1720
     int  DialogProc(int hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460

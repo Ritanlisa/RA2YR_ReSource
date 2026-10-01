@@ -36,13 +36,13 @@ struct Delegate {
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);
     int * DestroyStraw(char a2);
-    int Invoke(int a2, Straw * aP2);
+    int Invoke(int a2, Straw * aP2, void *a3);
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
-    void GetField();
-    void Dispatch(Pipe * aP1, Pipe * aP2);
-    void Set(AbstractTypeClass * aP1);
+    void GetField(void *a1, void *a2);
+    void Dispatch(Pipe * aP1, Pipe * aP2, void *a3, void *a4, void *a5);
+    void Set(AbstractTypeClass * aP1, void *a2, void *a3);
 };
 
 } // namespace gamemd

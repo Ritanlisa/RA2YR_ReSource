@@ -489,7 +489,7 @@ LABEL_19:
 }
 // 0x635C10
 namespace gamemd {
-int TeamClass::GetMember()
+int TeamClass::GetMember(void *a1, void *a2)
 {
 
   int result; // eax
@@ -571,7 +571,7 @@ LABEL_16:
 }
 // 0x635DB0
 namespace gamemd {
-int TeamClass::Reset(ObjectClass * aP1)
+int TeamClass::Reset(ObjectClass * aP1, void *a2)
 {
 
   int result; // eax
@@ -1068,7 +1068,7 @@ LABEL_4:
 }
 // 0x6E52A0
 namespace gamemd {
-void * TeamClass::FindOrCreate()
+void * TeamClass::FindOrCreate(void *a1)
 {
 
   int v2; // ecx
@@ -1106,7 +1106,7 @@ LABEL_5:
 }
 // 0x6E53A0
 namespace gamemd {
-int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5)
+int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5, void *a6)
 {
 
   int result; // eax
@@ -1206,7 +1206,7 @@ LABEL_14:
 }
 // 0x6E8DE0
 namespace gamemd {
-void TeamClass::Destructor( void * a2)
+void TeamClass::Destructor(void * a2)
 {
 
   int v2; // edi
@@ -1346,7 +1346,7 @@ void TeamClass::Destructor( void * a2)
 }
 // 0x6E9140
 namespace gamemd {
-void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j)
+void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4)
 {
 
   TeamClass *v3; // ecx
@@ -1478,7 +1478,7 @@ LABEL_14:
 }
 // 0x6EA870
 namespace gamemd {
-int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3)
+int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3, void *a4)
 {
 
   int result; // eax
@@ -2809,7 +2809,7 @@ char TeamClass::SetField11(ScriptClass * aP1)
 
 // 0x6915B0
 namespace gamemd {
-BOOL TeamClass::Check()
+BOOL TeamClass::Check(void *a1, void *a2, void *a3)
 {
 
   HouseClass *v1; // eax
@@ -2823,7 +2823,7 @@ BOOL TeamClass::Check()
 
 // 0x6E9050
 namespace gamemd {
-char TeamClass::SelectMember(AbstractClass * aP1)
+char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
 {
 
   int v4; // eax
@@ -2887,7 +2887,7 @@ char TeamClass::SelectMember(AbstractClass * aP1)
 
 // 0x6EA500
 namespace gamemd {
-char TeamClass::AddMember(IUnknown * aP1, IUnknown * aP2)
+char TeamClass::AddMember(IUnknown * aP1, IUnknown * aP2, void *a3)
 {
 
   int v3; // edi

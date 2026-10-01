@@ -17,8 +17,8 @@ struct VectorClass_ptr_LightConvertClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_LightConvertClass___(unsigned int * Block, char a2);  // 0x40C540
     void Destroy(void *a1 = 0);  // 0x40C230
-    int  Get(int a2);  // 0x40C280
-    char  Add(int a2);  // 0x40C290
+    int  Get(int a2, void *a1 = 0);  // 0x40C280
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40C290
     char  Release(int a2, unsigned int * a3);  // 0x40C2D0
     void Remove(void *a1 = 0);  // 0x40C380
     int  GetSize(unsigned int * a2);  // 0x40C3B0

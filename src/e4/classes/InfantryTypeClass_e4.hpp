@@ -1076,24 +1076,24 @@ struct InfantryTypeClass {
     unsigned int u32_E18;
     unsigned int vtable0;
 // --- flat members (END) ---
-    InfantryClass * ConstructInfantry(void * ppv);
-    InfantryTypeClass * Constructor(ObjectClass * aP1);
+    InfantryClass *  ConstructInfantry(AbstractClass * ppv);
+    InfantryTypeClass * Constructor(ObjectClass * aP1, void *a2, void *a3);
     InfantryTypeClass * ddtor(char a2);
-    WeaponTypeClass * * Find(void *a1 = 0);
+    WeaponTypeClass * * Find(ObjectClass * Source);
     int * GetDimensions(int a1);
-    int CreateInfantry(short * a2, void * ppv);
+    int CreateInfantry(short * a2, AbstractClass * ppv);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetGameplayValue();
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadFromINI(unsigned char *** a2);
+    int LoadFromINI(uint8_t *** a2, void *a2);
     int PowerDrainUpdate(int * a2);
     int StubReturnFalse();
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
-    unsigned int * Constructor_523980(void * aP1);
-    unsigned int * CopyDataArray(void * aP1);
+    unsigned int * Constructor_523980(ObjectTypeClass * aP1);
+    unsigned int * CopyDataArray(DynamicVector * aP1);
     unsigned int * GetDefaultDimensions(unsigned int * a1);
 };
 

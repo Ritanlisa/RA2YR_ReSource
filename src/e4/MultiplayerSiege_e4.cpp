@@ -25,7 +25,7 @@
 
 // 0x5CA680
 namespace gamemd {
-void MultiplayerSiege::Read()
+void MultiplayerSiege::Read(void *a1, void *a2)
 {
 
   char result; // al

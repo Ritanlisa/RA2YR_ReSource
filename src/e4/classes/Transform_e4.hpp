@@ -9,7 +9,7 @@ struct Transform {
 // --- flat members (BEGIN) ---
     char Transform_field_00[4];  // 0x0
 // --- flat members (END) ---
-    void * Copy(const void * a2);
+    void * Copy(const void * a2, void *a2);
 };
 
 } // namespace gamemd

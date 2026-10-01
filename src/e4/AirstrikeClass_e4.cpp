@@ -29,7 +29,7 @@
 
 // 0x41D860
 namespace gamemd {
-int AirstrikeClass::SpawnAircraft(int * a2)
+int AirstrikeClass::SpawnAircraft(int * a2, void *a2)
 {
 
   int v3; // eax
@@ -115,7 +115,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
 
 // 0x41DA20
 namespace gamemd {
-int AirstrikeClass::ReassignTarget(int a2)
+int AirstrikeClass::ReassignTarget(int a2, void *a2)
 {
 
   int v3; // ecx

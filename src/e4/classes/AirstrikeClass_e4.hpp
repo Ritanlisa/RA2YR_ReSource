@@ -61,12 +61,12 @@ struct AirstrikeClass {
     AbstractClass * * UpdateAll();
     char StartMission(int * a2);
     AirstrikeClass(void * aP1);
-    int ReassignTarget(int a2);
+    int ReassignTarget(int a2, void *a2);
     int RemoveAircraft(AudioController * aP1);
-    int Seek(void * aP0, int * a1, int aP2);
-    int SpawnAircraft(int * a2);
+    int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SpawnAircraft(int * a2, void *a2);
     int Stat(AbstractClass * aP1);
-    int Write(void * aP0, int aP1);
+    int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
 };

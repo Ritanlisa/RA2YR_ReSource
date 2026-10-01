@@ -13,9 +13,9 @@ struct CenterTeamCommand {
     unsigned int *m_1;
     unsigned int CenterTeamCommand_field_00;
 // --- flat members (END) ---
-    void Construct(int a2);
-    void * AddRef();
-    void * Release();
+    void Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6);
+    void AddRef(void *a1);
+    void Release(void *a1);
 };
 
 } // namespace gamemd

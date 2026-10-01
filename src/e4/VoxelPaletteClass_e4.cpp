@@ -18,7 +18,7 @@
 
 // 0x758A30
 namespace gamemd {
-int VoxelPaletteClass::ConvertFromFile(int a2)
+int VoxelPaletteClass::ConvertFromFile(int a2, void *a2)
 {
 
   int v3; // ebx

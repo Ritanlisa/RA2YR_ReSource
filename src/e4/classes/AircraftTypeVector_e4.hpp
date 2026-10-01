@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AircraftTypeVector {
-    unsigned int *AircraftTypeVector:: Constructor(int a2, int a3);
+    unsigned int *AircraftTypeVector:: Constructor(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

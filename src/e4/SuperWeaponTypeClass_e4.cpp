@@ -210,7 +210,7 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass
 }
 // 0x5113F0
 namespace gamemd {
-int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
+int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   BuildingTypeClass *v3; // ebx
@@ -724,7 +724,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
 
 // 0x5117D0
 namespace gamemd {
-int SuperWeaponTypeClass::FindByName()
+int SuperWeaponTypeClass::FindByName(void *a1)
 {
 
   int v3; // ebx

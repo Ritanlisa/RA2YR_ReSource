@@ -933,7 +933,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
 
 // 0x636DC0
 namespace gamemd {
-int FactoryClass::GetState()
+int FactoryClass::GetState(void *a1)
 {
 
   return ((unsigned int *)this)[0]; /*0x636dc3*/
@@ -943,7 +943,7 @@ int FactoryClass::GetState()
 
 // 0x637AA0
 namespace gamemd {
-char FactoryClass::GetFlag()
+char FactoryClass::GetFlag(void *a1)
 {
 
   int result; // eax

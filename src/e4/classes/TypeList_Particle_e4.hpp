@@ -23,6 +23,6 @@ struct TypeList_Particle {
     char  Remove(int a2, unsigned int * a3);  // 0x45A1C0
     int  GetSize(unsigned int * a2);  // 0x45A2A0
     unsigned int  GetCapacity(int a2);  // 0x45A2E0
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x45A9C0
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x45A9C0
 };
 } // namespace gamemd

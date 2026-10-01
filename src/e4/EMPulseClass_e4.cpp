@@ -28,7 +28,7 @@ int EMPulseClass::StubReturn55()
 } // namespace gamemd
 // 0x4C5AC0
 namespace gamemd {
-EMPulseClass * EMPulseClass::CopyTo( void * a2, char a3)
+EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
 {
 
   int v3; // eax

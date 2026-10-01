@@ -14,8 +14,8 @@ struct VectorClass_ptr_AbstractTypeClass {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int  Get(int a2);  // 0x4E91F0
-    char  Add(int a2);  // 0x4EF280
+    int  Get(int a2, void *a1 = 0);  // 0x4E91F0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EF280
     char  Release(int a2, unsigned int * a3);  // 0x4EF2C0
     void Remove(void *a1 = 0);  // 0x4EF370
     int  GetSize(unsigned int * a2);  // 0x4EF3A0

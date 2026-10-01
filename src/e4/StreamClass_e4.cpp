@@ -21,7 +21,7 @@ int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 } // namespace gamemd
 // 0x4114B0
 namespace gamemd {
-unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
+unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2, void *a3)
 {
 
   int v4; // edi
@@ -79,7 +79,7 @@ int StreamClass::Set2(unsigned int * a2)
 } // namespace gamemd
 // 0x45AF20
 namespace gamemd {
-int StreamClass::Set(IUnknown * aP1)
+int StreamClass::Set(IUnknown * aP1, void *a2, void *a3)
 {
 
   int v3; // edi

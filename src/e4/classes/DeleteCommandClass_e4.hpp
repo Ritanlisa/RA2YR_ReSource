@@ -11,11 +11,11 @@ struct DeleteCommandClass {
     char DeleteCommandClass_field_00[4];  // 0x4
     char DeleteCommandClass_field_04[4];  // 0x8
 // --- flat members (END) ---
-    char * AddRef(void *a1 = 0);
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    wchar_t * Read(void *a1 = 0, void *a2 = 0);
-    wchar_t * Release(void *a1 = 0);
-    wchar_t * ddtor(void *a1 = 0);
+    char * AddRef(void *a1);
+    unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
+    wchar_t * Read(void *a1, void *a2);
+    wchar_t * Release(void *a1);
+    wchar_t * ddtor(void *a1);
 };
 
 } // namespace gamemd

@@ -12,8 +12,8 @@ struct UnholyAlliance {
 // --- flat members (END) ---
     BOOLWrite(void * aP0);
     UnholyAlliance * QueryInterface(unsigned int * Block, char a2);
-    char Read();
-    char Seek();
+    char Read(void *a1, void *a2);
+    char Seek(void *a1, void *a2, void *a3);
 };
 
 } // namespace gamemd

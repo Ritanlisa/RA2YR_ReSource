@@ -71,16 +71,16 @@ struct SideClass {
     unsigned int u32_A5;
     unsigned int u32_A8;
 // --- flat members (END) ---
-    int FindByName();
+    int FindByName(void *a1);
     int GetCountry(int * a2);
-    int LoadAllFromINI(void * aP0);
-    int SaveLoad_Prefix(unsigned int * a0, void * aP1);
-    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    int LoadAllFromINI(CCINIClass * aP0);
+    int SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn180();
     int StubReturn28();
     int ddtor(int a1, unsigned int * a2);
-    int Construct(CCINIClass * aP1);
-    void * Init(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    int Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    void * Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     wchar_t * GetName();
     static double AbstractClass(...);  // C2597 interim stub
 };

@@ -229,7 +229,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 }
 // 0x721A50
 namespace gamemd {
-void TiberiumClass::LoadFromINI( uint8_t *** aP1)
+void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
 {
 
   int v4; // ecx

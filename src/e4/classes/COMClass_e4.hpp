@@ -36,7 +36,7 @@ struct COMClass {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     VectorCursor * disconnectPoint(unsigned int * Block, char a2);
-    void * lockServer(void * Block, char a2);
+    void * lockServer(rc_ptr_base * Block, char a2);
     static double RegisterAll(...);  // C2597 interim stub
 };
 

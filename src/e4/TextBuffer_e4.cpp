@@ -16,7 +16,7 @@
 
 // 0x5BCC90
 namespace gamemd {
-void TextBuffer::Init()
+void TextBuffer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   TextBuffer * v1;

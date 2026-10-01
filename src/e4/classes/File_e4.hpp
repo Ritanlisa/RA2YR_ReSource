@@ -32,17 +32,17 @@ struct File {
     unsigned int q030;
     unsigned int q034;
 // --- flat members (END) ---
-    char  IsReady(int a2);  // 0x431F10
+    char  IsReady(int a2, void *a1 = 0);  // 0x431F10
     unsigned int *  LoadFont(char * Source);  // 0x433990
-    short Dispatch();  // 0x4CB920
-    unsigned int *  LoadFileHVA(int a2);  // 0x5BD570
-    AbstractClass * *  ParseFileHVA(int a2);  // 0x5BD5C0
-    File * * LoadPaletteData(ObjectClass * aP1);  // 0x625AF0
+    short Dispatch(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x4CB920
+    unsigned int *  LoadFileHVA(int a2, void *a1 = 0);  // 0x5BD570
+    AbstractClass * *  ParseFileHVA(int a2, void *a1 = 0);  // 0x5BD5C0
+    File * * LoadPaletteData(ObjectClass * aP1, void *a1 = 0);  // 0x625AF0
     bool  FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
     int  ParseCSFString(char * Source);  // 0x734990
-    unsigned int *  LoadFileVXL(int a2, int a3);  // 0x755CD0
+    unsigned int *  LoadFileVXL(int a2, int a3, void *a1 = 0);  // 0x755CD0
     AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
     char  LoadWDTDecompress(void * aP1, int a3);  // 0x76B0A0
-    int ParseAudioFileRIFF();  // 0x7C12B0
+    int ParseAudioFileRIFF(void *a1 = 0);  // 0x7C12B0
 };
 } // namespace gamemd

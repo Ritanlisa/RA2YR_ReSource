@@ -281,7 +281,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
 }
 }
 // 0x661350
-int Palette::CalcColorDistance(unsigned char * a2)
+int Palette::CalcColorDistance(unsigned char * a2, void *a2)
 {
 
   int v2; // esi
@@ -301,7 +301,7 @@ int Palette::CalcColorDistance(unsigned char * a2)
 
 }
 // 0x626200
-int Palette::FindClosestColor(int a2)
+int Palette::FindClosestColor(int a2, void *a2)
 {
 
   int v2; // ebx

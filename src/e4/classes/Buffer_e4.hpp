@@ -36,9 +36,9 @@ struct Buffer {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2);
     int * RotateBufferCrypto(int * a2, int a3);
-    int AllocateCodecFrameBuffers();
-    int AppendCellData(void * aP1, int a3);
-    void Init(int a2, AbstractClass * aP2);
+    int AllocateCodecFrameBuffers(void *a1);
+    int AppendCellData(AbstractClass * aP1, int a3);
+    void Init(int a2, AbstractClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
 };
 

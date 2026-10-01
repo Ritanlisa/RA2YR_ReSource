@@ -53,7 +53,7 @@ struct RadBeam {
     unsigned int pad_195;  // 0xC3
     unsigned int AbstractClass;
 // --- flat members (END) ---
-    unsigned int * InitState(rc_ptr_base * aP1);
+    unsigned int * InitState(rc_ptr_base * aP1, void *a2);
     void * Create();
 };
 

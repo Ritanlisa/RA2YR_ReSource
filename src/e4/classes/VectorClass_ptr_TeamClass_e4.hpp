@@ -17,12 +17,12 @@ struct VectorClass_ptr_TeamClass {
 // --- flat members (END) ---
     void Destroy(void *a1 = 0);  // 0x4E84D0
     unsigned int  GetItemIndex(int a2);  // 0x4E8500
-    int  Get(int a2);  // 0x4E8520
+    int  Get(int a2, void *a1 = 0);  // 0x4E8520
     void Destroy_0();  // 0x4E8960
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8990
     void Destroy_1();  // 0x4E89C0
     unsigned int  GetItemIndex_1(int a2);  // 0x4E89F0
-    char  Add(int a2);  // 0x4EA040
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EA040
     char  Release(int a2, unsigned int * a3);  // 0x4EA080
     void Remove(void *a1 = 0);  // 0x4EA130
     int  GetSize(unsigned int * a2);  // 0x4EA160

@@ -19,13 +19,13 @@ struct FileClass {
     unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
-    int Close();
-    int GetState();
-    int Open(int a2);
+    int Close(void *a1, void *a2);
+    int GetState(void *a1);
+    int Open(RawFileClass *this, int a2, void *a3);
     int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
-    int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
-    const char* SetFileName(IUnknown * aP1);
-    int SetState();
+    int Seek(LONG lDistanceToMove, DWORD dwMoveMethod, void *a3);
+    const char* SetFileName(IUnknown * aP1, void *a2);
+    int SetState(void *a1);
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950();

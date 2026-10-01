@@ -174,7 +174,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 }
 // 0x4F54A0
 namespace gamemd {
-int HouseClass::Construct( int a2)
+int HouseClass::Construct(int a2, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // edx
@@ -855,7 +855,7 @@ int HouseClass::Construct( int a2)
 
 // 0x4F9A50
 namespace gamemd {
-int HouseClass::IsAlliedWith( IUnknown * aP1)
+int HouseClass::IsAlliedWith(IUnknown * aP1, void *a2)
 {
 
   int result; // eax
@@ -887,7 +887,7 @@ LABEL_8:
 }
 // 0x4FBE40
 namespace gamemd {
-int HouseClass::IsCellOccupied( IUnknown * aP1, char a3)
+int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 {
 
   char v4; // bl
@@ -2370,7 +2370,7 @@ LABEL_29:
 }
 // 0x5098F0
 namespace gamemd {
-CellStruct * * HouseClass::UpdateAITryFireSW()
+CellStruct * * HouseClass::UpdateAITryFireSW(void *a1)
 {
 
   int lastBuiltInfantryType; // eax
@@ -2670,7 +2670,7 @@ int HouseClass::GetUnitSelfHealStep()
 }
 // 0x50E0E0
 namespace gamemd {
-void HouseClass::LostPoweredCenter(int a2)
+void HouseClass::LostPoweredCenter(int a2, void *a2)
 {
 
   int v3; // eax
@@ -2724,7 +2724,7 @@ LABEL_16:
 }
 // 0x5471B0
 namespace gamemd {
-int HouseClass::GetCameoTypeIndex(int a2)
+int HouseClass::GetCameoTypeIndex(int a2, void *a2)
 {
 
   unsigned int *v2; // eax
@@ -3016,7 +3016,7 @@ int HouseClass::InitAlliances()
 }
 // 0x5EE9D0
 namespace gamemd {
-AbstractClass * * HouseClass::FindStartPositions()
+AbstractClass * * HouseClass::FindStartPositions(void *a1)
 {
 
   int v1; // eax
@@ -3730,7 +3730,7 @@ char HouseClass::ReshroudMap()
 
 // 0x50E1B0
 namespace gamemd {
-BOOL HouseClass::GainedPoweredCenter(int a2)
+BOOL HouseClass::GainedPoweredCenter(int a2, void *a2)
 {
 
   return this->poweredUnitCenters > 0; /*0x50e1bd*/
@@ -3770,7 +3770,7 @@ char HouseClass::IonSensitivesShouldBeOffline()
 
 // 0x54B980
 namespace gamemd {
-char HouseClass::Set()
+char HouseClass::Set(void *a1, void *a2, void *a3)
 {
 
   unsigned int *v2; // eax

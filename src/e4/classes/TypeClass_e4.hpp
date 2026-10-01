@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TypeClass {
-    int TypeClass:: FindByName();
+    int TypeClass:: FindByName(void *a1 = 0);
 };
 
 } // namespace gamemd

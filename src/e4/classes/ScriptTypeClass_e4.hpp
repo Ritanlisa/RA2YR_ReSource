@@ -143,12 +143,12 @@ struct ScriptTypeClass {
     unsigned int q1B5;  // 0x1B5
 // --- flat members (END) ---
     ScriptTypeClass * ddtor(char a2);
-    TaskForceClass * ReadINI(char * a1, int a2);
+    TaskForceClass * ReadINI(char * a1, int a2, void *a3);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadTypeData(void * aP0, int aP1);
-    int SaveToINI(void * aP0, int * a1, int aP2);
+    int LoadTypeData(AbstractTypeClass * aP0, int aP1);
+    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
 };
 
 } // namespace gamemd

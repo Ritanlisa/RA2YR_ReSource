@@ -23,7 +23,7 @@ void DeleteCommandClass_Undo()
 }
 }
 // 0x537F10
-unsigned int * DeleteCommandClass::Constructor()
+unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   *(unsigned int *)this->CommandClass = &vt_DeleteCommandClass; /*0x537f12*/
@@ -31,28 +31,28 @@ unsigned int * DeleteCommandClass::Constructor()
 
 }
 // 0x537F20
-char * DeleteCommandClass::AddRef()
+char * DeleteCommandClass::AddRef(void *a1)
 {
 
   return (char *)(aDelete);
 
 }
 // 0x537F30
-wchar_t * DeleteCommandClass::Release()
+wchar_t * DeleteCommandClass::Release(void *a1)
 {
 
   return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
 
 }
 // 0x537F50
-wchar_t * DeleteCommandClass::ddtor()
+wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
 
   return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
 
 }
 // 0x537F70
-wchar_t * DeleteCommandClass::Read()
+wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 {
 
   return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/

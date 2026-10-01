@@ -321,27 +321,27 @@ struct AnimTypeClass {
     unsigned int Image;
     unsigned int q2A0;
 // --- flat members (END) ---
-    AnimTypeClass * * FindOrCreate(void *a1 = 0);
+    AnimTypeClass * * FindOrCreate(AbstractClass * Source);
     AnimTypeClass * ddtor(char a2);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
     char GetLoopCount(int a2);
     char Stub(int a1, int a2);
-    int FindIndex(void *a1 = 0);
+    int FindIndex(void *a1);
     int GetAnimData(int a2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetDamage();
     int GetObjectSize();
-    int LoadFromINI(unsigned char *** a2);
+    int LoadFromINI(uint8_t *** a2, void *a2);
     int LookupByName();
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(void * aP1, unsigned char * a2, Layer a3);
-    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
+    int ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
-    AnimTypeClass * Construct(AbstractClass * aP1);
-    unsigned int * Construct2(char * Source);
+    AnimTypeClass * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    unsigned int * Construct2(char * Source, void *a2, void *a3);
     void* GetWarhead(int a2);
 };
 

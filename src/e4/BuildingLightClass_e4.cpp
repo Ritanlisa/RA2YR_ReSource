@@ -24,7 +24,7 @@
 
 // 0x436BE0
 namespace gamemd {
-unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
+unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1, void *a2)
 {
 
   double v2; // st7

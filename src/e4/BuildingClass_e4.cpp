@@ -660,7 +660,7 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
 }
 // 0x5F5E80
 namespace gamemd {
-int BuildingClass::SaveLoad_Register()
+int BuildingClass::SaveLoad_Register(void *a1)
 {
 
   int result; // eax

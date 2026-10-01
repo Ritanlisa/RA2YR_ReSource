@@ -22,10 +22,10 @@ struct VectorClass_ptr_DamageGroup {
     char  Remove(int a2, unsigned int * a3);  // 0x48ADB0
     void ddtor(void *a1 = 0);  // 0x48AE60
     int  GetSize(unsigned int * a2);  // 0x48AE90
-    unsigned int  Get(int a2);  // 0x48AED0
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x48AED0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x48AEF0
     int  FindItemIndex(unsigned int * a2);  // 0x48AFA0
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x48AFD0
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x48AFD0
     DynamicVector *  Constructor_VectorClass_DamageGroup___(unsigned int * Block, char a2);  // 0x48B020
 };
 } // namespace gamemd

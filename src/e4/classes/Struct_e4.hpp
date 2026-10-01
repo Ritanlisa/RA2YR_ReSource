@@ -38,9 +38,9 @@ struct Struct {
     unsigned int field_34;
     unsigned int field_8;
 // --- flat members (END) ---
-    int ClearAllMemberFlags();
-    int ZeroInit32();
-    int ZeroInitAndSetup();
+    void ClearAllMemberFlags();
+    int ZeroInit32(void *a1);
+    int ZeroInitAndSetup(void *a1);
     int ZeroInitAndSetup_0();
     int ZeroInitAndSetup_0_0();
     unsigned char * Zero3();

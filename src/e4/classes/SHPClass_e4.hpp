@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SHPClass {
-    int SHPClass:: Load(char * Source, char * a3, int a4);
+    int SHPClass:: Load(char * Source, char * a3, int a4, void *a1 = 0);
 };
 
 } // namespace gamemd

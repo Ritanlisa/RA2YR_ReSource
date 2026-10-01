@@ -19,7 +19,7 @@ struct VectorClass_ptr_CCINIClass {
     char  Remove(int a2, unsigned int * a3);  // 0x538560
     void ddtor(void *a1 = 0);  // 0x538610
     int  GetSize(unsigned int * a2);  // 0x538640
-    unsigned int  Get(int a2);  // 0x538680
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x538A90
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x538680
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x538A90
 };
 } // namespace gamemd

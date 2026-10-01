@@ -64,7 +64,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {
-void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
+void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
   double result; // st7
@@ -128,7 +128,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 } // namespace gamemd
 // 0x6F06E0
 namespace gamemd {
-unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
+unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1, void *a2)
 {
 
   int v3; // ecx
@@ -222,7 +222,7 @@ LABEL_11:
 } // namespace gamemd
 // 0x710AF0
 namespace gamemd {
-void * TechnoTypeClass::ReadINI(char * Source, int a3)
+void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3)
 {
 
   unsigned int *v4; // eax
@@ -765,7 +765,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-void TechnoTypeClass::Construct(ObjectTypeClass * aP1)
+void TechnoTypeClass::Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -866,7 +866,7 @@ LABEL_5:
 } // namespace gamemd
 // 0x711AE0
 namespace gamemd {
-int TechnoTypeClass::DTOR()
+int TechnoTypeClass::DTOR(void *a1)
 {
 
   char v2; // al
@@ -1557,7 +1557,7 @@ TechnoTypeClass * TechnoTypeClass::ddtor(void * Block, char a2)
 
 }
 // 0x717AF0
-unsigned int * TechnoTypeClass::Constructor()
+unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   this->ObjectTypeClass[1] = 0; /*0x717af4*/
@@ -1571,7 +1571,7 @@ unsigned int * TechnoTypeClass::Constructor()
 
 }
 // 0x717B20
-int  TechnoTypeClass::SaveLoadDataArray( TechnoTypeClass * aP1)
+int  TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
 {
 
   int v3; // ecx
@@ -1592,7 +1592,7 @@ int  TechnoTypeClass::SaveLoadDataArray( TechnoTypeClass * aP1)
 
 }
 // 0x717BC0
-unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1)
+unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3)
 {
 
   this->ObjectTypeClass[0] = (int)&vt_DynamicVectorClass; /*0x717bc2*/
@@ -1608,7 +1608,7 @@ VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 
 }
 // 0x717DB0
-char TechnoTypeClass::RemoveItem(int a2)
+char TechnoTypeClass::RemoveItem(int a2, void *a2)
 {
 
   int v2; // edx

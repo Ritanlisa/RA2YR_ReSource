@@ -9,7 +9,7 @@
 
 // 0x69E9E0
 namespace gamemd {
-int SHA1::ComputeThunk(ObjectClass * aP1)
+int SHA1::ComputeThunk(ObjectClass * aP1, void *a2)
 {
 
   return SHA1::Compute((SHA1 *)&this->SHA1_field_0x0C, aP1); /*0x69e9ed*/

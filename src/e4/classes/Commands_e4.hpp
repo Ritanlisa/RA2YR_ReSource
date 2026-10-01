@@ -10,10 +10,10 @@ struct Commands {
     char m_RefCount[4];  // 0x0
 // --- flat members (END) ---
     void ** StubReturn8550640();
-    char * AddRef();
-    char ** Release();
-    char Execute();
-    const wchar_t * ddtor();
+    int32_t AddRef(void *a1);
+    int32_t Release(void *a1);
+    int32_t Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7);
+    int32_t ddtor();
 };
 
 } // namespace gamemd

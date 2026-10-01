@@ -35,7 +35,7 @@ struct BuildingPlacement {
     unsigned int u32_90;
 // --- flat members (END) ---
     VectorClass_flat * * ProcessBuildingPlacementAction();
-    unsigned int * FindPosition(int * a0, void* aP1, void* a3);
+    unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown a3);
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int * a3);
     static double ValidateType(...);  // C2597 interim stub

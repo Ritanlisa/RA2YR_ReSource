@@ -36,12 +36,12 @@ struct COMObject {
     unsigned int vfptr;
     unsigned int m_2D;
 // --- flat members (END) ---
-    bool IsSameType(void * aP0);
+    bool IsSameType(GScreenClass * aP0);
     int FindNextActive(unsigned char * a1);
-    int GetSizeMaxWrapper(void * aP0, void * aP1);
+    int GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1);
     int GetSpecialValue(int a1);
     int GetStringValue(int a1, unsigned int * a2);
-    int QueryInterface(int a1, void * a2, unsigned int * a3);
+    int QueryInterface(int a1, const void * a2, unsigned int * a3);
     int QueryInterface2();
     int Thunk_COMObject_sub_4E30C0();
     unsigned int * GetCoord3D(int a1, unsigned int * a2);

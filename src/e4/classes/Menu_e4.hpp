@@ -27,7 +27,7 @@ struct Menu {
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
-    int Reset();
+    int Reset(void *a1, void *a2);
 };
 
 } // namespace gamemd

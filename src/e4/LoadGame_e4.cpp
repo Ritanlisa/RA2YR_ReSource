@@ -151,7 +151,7 @@ int LoadGame::LoadTriggerEvents()
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-void LoadGame::RemoveItem( int a2)
+void LoadGame::RemoveItem(int a2, void *a2)
 {
 
   int LoadGame_field_0x10; // edx
@@ -179,7 +179,7 @@ void LoadGame::RemoveItem( int a2)
 } // namespace gamemd
 // 0x67E730
 namespace gamemd {
-void LoadGame::Start(LPSTREAM pStm)
+void LoadGame::Start(LPSTREAM pStm, void *a2)
 {
 
   char result; // al

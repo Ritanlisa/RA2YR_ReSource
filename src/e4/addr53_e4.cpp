@@ -2624,7 +2624,7 @@ void SuperWeapon_Update()
 }
 // 0x53AF40
 namespace gamemd {
-AnimClass * * PsyDom::Update()
+AnimClass * * PsyDom::Update(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v1; // esi

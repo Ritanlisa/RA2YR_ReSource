@@ -10,7 +10,7 @@
 namespace gamemd {
 public:
 public:
-    int ChronoScreenEffect::DecrementCounter()
+    int ChronoScreenEffect::DecrementCounter(void *a1, void *a2)
 {
   int result; // eax
 

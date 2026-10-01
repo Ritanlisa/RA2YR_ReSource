@@ -10,7 +10,7 @@
 
 // 0x5D4E70
 namespace gamemd {
-int DialogQueue::PushEntry()
+int DialogQueue::PushEntry(void *a1)
 {
 
   int result; // eax
@@ -34,7 +34,7 @@ int DialogQueue::PushEntry()
 } // namespace gamemd
 // 0x5D4ED0
 namespace gamemd {
-int DialogQueue::RemoveEntry()
+int DialogQueue::RemoveEntry(void *a1)
 {
 
   int result; // eax

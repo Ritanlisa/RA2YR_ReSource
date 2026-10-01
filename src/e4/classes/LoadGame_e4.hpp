@@ -33,9 +33,9 @@ struct LoadGame {
     int LoadMagicAndAudio();
     int LoadPointArray(int a2);
     int LoadTriggerEvents();
-    void RemoveItem(int a2);
+    void RemoveItem(int a2, void *a2);
     int RestoreAudioState();
-    int Start(void *a1 = 0);
+    void Start(LPSTREAM pStm, void *a2);
     static double LoadBlock68(...);  // C2597 interim stub
 };
 

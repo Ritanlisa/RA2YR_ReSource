@@ -8,7 +8,7 @@
 
 // 0x6260D0
 namespace gamemd {
-void * Block::Copy(const void * a2)
+void * Block::Copy(const void * a2, void *a2)
 {
 
   void *result; // eax

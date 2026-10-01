@@ -25,8 +25,8 @@ struct VectorClass_ptr_CrossDissolveEffect {
     char  Remove(int a2, unsigned int * a3);  // 0x4B9F40
     void ddtor(void *a1 = 0);  // 0x4B9FF0
     int  GetSize(unsigned int * a2);  // 0x4BA020
-    unsigned int  Get(int a2);  // 0x4BA060
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x4BA060
     unsigned int *  loc_4BA1B0(unsigned int * Block, char a2);  // 0x4BA1B0
-    VectorClass_flat *  Add(unsigned int * Block, char a2);  // 0x4BA250
+    VectorClass_flat *  Add(unsigned int * Block, char a2, void *a1 = 0);  // 0x4BA250
 };
 } // namespace gamemd

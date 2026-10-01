@@ -13,7 +13,7 @@
 
 // 0x76F180
 namespace gamemd {
-unsigned int * VectorCursor::Release()
+unsigned int * VectorCursor::Release(void *a1)
 {
 
   ++*((unsigned int *)this + 2); /*0x76f182*/
@@ -23,7 +23,7 @@ unsigned int * VectorCursor::Release()
 } // namespace gamemd
 // 0x76F190
 namespace gamemd {
-unsigned int * VectorCursor::ddtor()
+unsigned int * VectorCursor::ddtor(void *a1)
 {
 
   --*((unsigned int *)this + 2); /*0x76f192*/

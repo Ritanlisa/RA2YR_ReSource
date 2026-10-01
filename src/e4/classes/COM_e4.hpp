@@ -10,7 +10,7 @@ struct COM {
     char COM_field_00[4];  // 0x0
 // --- flat members (END) ---
     LONG AddRef(int a1);
-    LONG ReleaseRef(volatile void * a1);
+    LONG ReleaseRef(volatile LONG * a1);
     int GetClassID(int a1, unsigned int * a2);
 };
 

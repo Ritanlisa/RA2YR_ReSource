@@ -14,7 +14,7 @@
 
 // 0x48E620
 namespace gamemd {
-int Control::DispatchClick(ControlClass * aP1)
+int Control::DispatchClick(ControlClass * aP1, void *a2)
 {
 
   int v3; // ecx
