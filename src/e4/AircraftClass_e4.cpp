@@ -28,6 +28,7 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+struct Type;  // fix_tu_missing_types
 #include "e4/classes/AlphaShapeClass_e4.hpp"
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"

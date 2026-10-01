@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <cwchar>
 #include <algorithm>
+struct FileEntryClass;  // fix_tu_missing_types
+struct LoadOptions;  // fix_tu_missing_types
+struct SaveLoadDialog;  // fix_tu_missing_types
 
 namespace gamemd {
 

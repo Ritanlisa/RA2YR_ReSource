@@ -24,6 +24,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+struct Type;  // fix_tu_missing_types
 
 // 0x438E70
 namespace gamemd {

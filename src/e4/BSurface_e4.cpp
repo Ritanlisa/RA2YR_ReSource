@@ -13,6 +13,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+struct BSurface;  // fix_tu_missing_types
 
 // 0x410CE0
 namespace gamemd {

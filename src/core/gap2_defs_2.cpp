@@ -14,6 +14,8 @@
 #include "core/math.hpp"
 #include "core/utility_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
+struct GadgetClass;  // fix_tu_missing_types
+struct ShpButtonClass;  // fix_tu_missing_types
 
 // 0x48BAA0
 namespace gamemd { 
