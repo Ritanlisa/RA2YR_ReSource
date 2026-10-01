@@ -122,7 +122,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
   {
     IDA_LOBYTE(this->m_C) = 0; /*0x4a13d2*/
     if ( a3 ) /*0x4a13d8*/
-      v4 = a3; /*0x4a13ee*/
+      v4 = (unsigned int *)(a3); /*0x4a13ee*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4a13ea*/
     IDA_LOBYTE(this->m_C) = 1; /*0x4a13f2*/

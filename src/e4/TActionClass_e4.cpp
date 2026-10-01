@@ -170,29 +170,29 @@ void sub_567F70(int * a1, int a2)
           {
             IDA_HIWORD(v22) = v9 + v21; /*0x568045*/
             IDA_LOWORD(v22) = v10 + v20; /*0x56804a*/
-            v15 = ((int16_t)(v9 + v21) << 9) + (int16_t)(v10 + v20); /*0x56805c*/
+            v15 = (unsigned int *)(((int16_t)(v9 + v21) << 9) + (int16_t)(v10 + v20)); /*0x56805c*/
             if ( v15 >= (unsigned int *)(0x40000) || (v16 = *(unsigned int **)(v12 + 4 * v15)) == 0 ) /*0x56806e*/
             {
-              dword_ABDC74 = (unsigned int *)(v22);
+              dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
               v16 = unk_ABDC50; /*0x568076*/
             }
             if ( !((unsigned int *)(v16))[76] ) /*0x56807b*/
             {
               if ( v15 >= (unsigned int *)(0x40000) || (v17 = *(unsigned int **)(v12 + 4 * v15)) == 0 ) /*0x568098*/
               {
-                dword_ABDC74 = (unsigned int *)(v22);
+                dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v17 = unk_ABDC50; /*0x5680a0*/
               }
               ((unsigned int *)(v17))[76] = (unsigned int)(1);
               if ( v15 >= (unsigned int *)(0x40000) || (v18 = *(unsigned int **)(dword_87F924 + 4 * v15)) == 0 ) /*0x5680c5*/
               {
-                dword_ABDC74 = (unsigned int *)(v22);
+                dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v18 = unk_ABDC50; /*0x5680cd*/
               }
               ((unsigned int *)(v18))[75] &= ~8u; /*0x5680dd*/
               if ( v15 >= (unsigned int *)(0x40000) || (v19 = *(unsigned int **)(dword_87F924 + 4 * v15)) == 0 ) /*0x5680f7*/
               {
-                dword_ABDC74 = (unsigned int *)(v22);
+                dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v19 = unk_ABDC50; /*0x5680ff*/
               }
               ((unsigned int *)(v19))[75] &= ~0x10u; /*0x56810d*/
@@ -291,7 +291,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
   char *v10; // edx
   unsigned int *v11; // ecx
 
-  result = (unsigned int *)dword_A8E358; /*0x6ac5f0*/
+  result = (unsigned int)((unsigned int *)dword_A8E358); /*0x6ac5f0*/
   v5 = 0; /*0x6ac5f9*/
   if ( dword_A8E358 <= 0 ) /*0x6ac601*/
   {
@@ -317,7 +317,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
       }
       else
       {
-        result = (unsigned int *)(dword_A8B21C);
+        result = (unsigned int)((unsigned int *)(dword_A8B21C));
         while ( a2 != *(unsigned int *)(result) ) /*0x6ac645*/
         {
           ++v5; /*0x6ac647*/
@@ -329,7 +329,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
     }
     else
     {
-      result = (unsigned int *)(dword_A83CE4);
+      result = (unsigned int)((unsigned int *)(dword_A83CE4));
       while ( a2 != *(unsigned int *)(result) ) /*0x6ac628*/
       {
         ++v5; /*0x6ac62a*/
@@ -350,7 +350,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
         goto LABEL_5; /*0x6ac613*/
     }
   }
-  result = (unsigned int *)(*(int (**)(void))(*(unsigned int *)a2 + 44))(); /*0x6ac677*/
+  result = (unsigned int)((unsigned int *)(*(int (**)(void))(*(unsigned int *)a2 + 44))()); /*0x6ac677*/
   if ( result == (unsigned int)((unsigned int *))15 || result == (unsigned int *)16 ) /*0x6ac682*/
   {
     v7 = 2; /*0x6ac6d4*/
@@ -369,8 +369,8 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
       return result; /*0x6ac6af*/
     v7 = 1; /*0x6ac6b1*/
   }
-  v8 = (int)((unsigned int *)(997 * v7));
-  v9 = (int)((unsigned int *)(0));
+  v8 = (unsigned int *)((int)((unsigned int *)(997 * v7)));
+  v9 = (unsigned int *)((int)((unsigned int *)(0)));
   v10 = (unsigned int *)((char *)this + 4 * v8 + 5444);
   v11 = (unsigned int *)(v10 + 88);
   while ( *v11 != v5 ) /*0x6ac6f4*/
@@ -382,7 +382,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
   }
   *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ac713*/
 LABEL_38:
-  result = (unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) + (unsigned int)(aP2)+ 1); /*0x6ac71a*/
+  result = (unsigned int)((unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) + (unsigned int)(aP2)+ 1)); /*0x6ac71a*/
   *((unsigned int *)this + 5352) = result; /*0x6ac728*/
   return result; /*0x6ac670*/
 

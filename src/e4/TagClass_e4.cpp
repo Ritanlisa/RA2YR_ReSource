@@ -51,9 +51,9 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
   a1->AbstractClass = &vt_TagClass; /*0x6e4f69*/
-  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f6f*/
-  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f76*/
-  ((unsigned int *)a1)[0] = &vt_TagClass; /*0x6e4f7d*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f6f*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f76*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
@@ -72,7 +72,7 @@ LABEL_9:
           }
           else
           {
-            ambientParticles = ((char *)&FootClass_Array); /*0x6e4fbb*/
+            ambientParticles = (gamemd::ParticleSystemClass *)(((char *)&FootClass_Array)); /*0x6e4fbb*/
             while ( ambientParticles->ObjectClass != a1 ) /*0x6e4fc3*/
             {
               ++v3; /*0x6e4fc5*/
@@ -372,9 +372,9 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
       aP0->AbstractClass = &vt_TagClass; /*0x6e5754*/
-      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e575a*/
-      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e5761*/
-      ((unsigned int *)aP0)[0] = &vt_TagClass; /*0x6e5768*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/

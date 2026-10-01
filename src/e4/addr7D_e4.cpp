@@ -67,8 +67,8 @@ void __sbh_heap_check()
 
   if ( IsBadWritePtr(::lp, 20 * dword_B78B94) ) /*0x7d03ad*/
     return -1; /*0x7d03ba*/
-  v2 = ::lp; /*0x7d03bf*/
-  v23 = ::lp; /*0x7d03cd*/
+  v2 = (unsigned int *)(::lp); /*0x7d03bf*/
+  v23 = (unsigned int *)(::lp); /*0x7d03cd*/
   v29 = 0; /*0x7d03d0*/
   if ( dword_B78B94 <= 0 ) /*0x7d03d3*/
     return 0; /*0x7d03d3*/
@@ -97,7 +97,7 @@ void __sbh_heap_check()
           if ( IsBadWritePtr(lp, 0x8000u) ) /*0x7d0446*/
             return -4; /*0x7d0685*/
           v6 = 0; /*0x7d0457*/
-          v7 = (char *)lp + 4092; /*0x7d0459*/
+          v7 = (unsigned int *)((char *)lp + 4092); /*0x7d0459*/
           while ( 2 ) /*0x7d045f*/
           {
             v8 = (int *)(v7 - 1020);
@@ -122,7 +122,7 @@ void __sbh_heap_check()
               }
               if ( v9 < 16 || (v9 & 0xF) != 0 || v9 > 4080 ) /*0x7d04ca*/
                 return -7; /*0x7d0693*/
-              v12 = (int *)((char *)v8 + v9); /*0x7d04d4*/
+              v12 = (unsigned int *)((int *)((char *)v8 + v9)); /*0x7d04d4*/
               if ( *(int *)((char *)v8 + v9 - 4) != v10 ) /*0x7d04d7*/
                 return -8; /*0x7d04d7*/
               v8 = (int *)((char *)v8 + v9); /*0x7d04dd*/
@@ -844,7 +844,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     }
   }
   if ( cchSrc > 0 ) /*0x7d113b*/
-    cchSrc = strncnt(aP2, cchSrc); /*0x7d114a*/
+    cchSrc = (int)(strncnt(aP2, cchSrc)); /*0x7d114a*/
   if ( dword_B782CC == 2 ) /*0x7d1155*/
     return LCMapStringA(aP0, dwMapFlags, aP2, cchSrc, lpDestStr, cchDest); /*0x7d116f*/
   if ( dword_B782CC != 1 ) /*0x7d1177*/

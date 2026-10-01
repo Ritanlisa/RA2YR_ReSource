@@ -58,12 +58,12 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   v28 = (unsigned int *)((RandomMap *)(a1))->CellListAlloc(); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v8 = (unsigned int *)(__2_YAPAXI_Z(0x18u)); /*0x5a0189*/
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &vt_DynamicVectorClass; /*0x5a01a0*/
+      *v9 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a01a0*/
       v9[5] = 10; /*0x5a01a6*/
       v9[4] = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/

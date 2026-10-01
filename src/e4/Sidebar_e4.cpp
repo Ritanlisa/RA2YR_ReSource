@@ -55,8 +55,8 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 
   if ( aP2 >= 0 ) /*0x4fa35f*/
   {
-    v6 = a1; /*0x4fa36d*/
-    v8 = TechnoTypeClass::GetByTypeAndIndex((int)a1, aP2); /*0x4fa375*/
+    v6 = (gamemd::HouseClass *)(a1); /*0x4fa36d*/
+    v8 = (int)(TechnoTypeClass::GetByTypeAndIndex((int)a1, aP2)); /*0x4fa375*/
     if ( a1 == (HouseClass *)6 || a1 == (HouseClass *)7 ) /*0x4fa382*/
       v22 = *(unsigned int *)(v8 + 3592); /*0x4fa394*/
     else
@@ -65,7 +65,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   }
   else
   {
-    v6 = a1; /*0x4fa361*/
+    v6 = (gamemd::HouseClass *)(a1); /*0x4fa361*/
     v7 = 0; /*0x4fa365*/
     v22 = 0; /*0x4fa367*/
   }
@@ -99,7 +99,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
       break; /*0x4fa40c*/
   }
   Sidebar::Dispatch((Sidebar *)this, (int)v6, aP3, v7, 0); /*0x4fa41c*/
-  v9 = TechnoTypeClass::GetByTypeAndIndex((int)v6, aP2); /*0x4fa42a*/
+  v9 = (int)(TechnoTypeClass::GetByTypeAndIndex((int)v6, aP2)); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
   if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
   {

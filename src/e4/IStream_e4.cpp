@@ -27,7 +27,7 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   v5 = v7; /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
   pv = 0; /*0x4a3051*/
-  v4[9] = v5; /*0x4a3059*/
+  v4[9] = (unsigned int)(v5); /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
     WinAPI::Wrapper(-2147467261); /*0x4a3067*/
   result = (*(int (**)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4 + 9, 8, &pv); /*0x4a307a*/

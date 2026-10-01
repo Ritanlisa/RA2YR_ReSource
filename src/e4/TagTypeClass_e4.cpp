@@ -34,10 +34,10 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
-  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5b8e*/
-  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5b95*/
-  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5b9c*/
-  *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
+  *(unsigned int *)this = (unsigned int)(&vt_TagTypeClass); /*0x6e5b8e*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_TagTypeClass); /*0x6e5b95*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_TagTypeClass); /*0x6e5b9c*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_TagTypeClass); /*0x6e5ba3*/
   if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -62,7 +62,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
          0) )
   {
     v3 = (unsigned int)(g_MultiplayerCleanup++);
-    *((unsigned int *)dword_B0E784 + v3) = this; /*0x6e5c3a*/
+    *((unsigned int *)dword_B0E784 + v3) = (unsigned int)(this); /*0x6e5c3a*/
   }
   if ( dword_B0F680 < dword_B0F678 /*0x6e5c71*/
     || (byte_B0F67D || !dword_B0F678)
@@ -73,7 +73,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
          0) )
   {
     v4 = (unsigned int)(dword_B0F680++);
-    *((unsigned int *)dword_B0F674 + v4) = this; /*0x6e5c8d*/
+    *((unsigned int *)dword_B0F674 + v4) = (unsigned int)(this); /*0x6e5c8d*/
   }
   return (gamemd::AbstractTypeClass *)(this);
 
@@ -94,9 +94,9 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   AbstractTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_TagTypeClass; /*0x6e5ca7*/
-  ((unsigned int *)this)[0] = &vt_TagTypeClass; /*0x6e5cad*/
-  ((unsigned int *)this)[0] = &vt_TagTypeClass; /*0x6e5cb4*/
-  ((unsigned int *)this)[0] = &vt_TagTypeClass; /*0x6e5cbb*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cad*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cb4*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e5cc2*/
   v2 = (unsigned int *)*((unsigned int *)this + 40); /*0x6e5cc7*/
   *((unsigned int *)this + 40) = 0; /*0x6e5ccd*/
@@ -115,7 +115,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-    v5 = (unsigned int *)(g_TagClassCount);
+    v5 = (unsigned int)((unsigned int *)(g_TagClassCount));
     do /*0x6e5d2e*/
     {
       v6 = (unsigned int *)((unsigned int *)(v5))[v4]; /*0x6e5d0c*/
@@ -217,7 +217,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     *((unsigned char *)this + 148) = v7; /*0x6e6125*/
   }
   v4 = (void *)(strtok(0, Str));
-  *((unsigned int *)this + 40) = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
+  *((unsigned int *)this + 40) = (unsigned int)(TagTypeClass::FindOrCreateTriggerType(v4)); /*0x6e613d*/
   return 1; /*0x6e6143*/
 
 }
@@ -349,9 +349,9 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
       aP0->AbstractClass = &vt_TagTypeClass; /*0x6e6434*/
-      ((unsigned int *)aP0)[0] = &vt_TagTypeClass; /*0x6e643a*/
-      ((unsigned int *)aP0)[0] = &vt_TagTypeClass; /*0x6e6441*/
-      ((unsigned int *)aP0)[0] = &vt_TagTypeClass; /*0x6e6448*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e643a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/

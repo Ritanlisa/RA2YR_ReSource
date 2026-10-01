@@ -278,7 +278,7 @@ LABEL_162:
       int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
       Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57));
       int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
-      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
+      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
   int v132; // [esp+28h] [ebp-228h]
       *(unsigned int *)(v58 + 4) = v132;
   int v133; // [esp+2Ch] [ebp-224h]
@@ -291,16 +291,16 @@ LABEL_162:
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
         Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
         ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))))));
-        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v113;
-        *(unsigned int *)(ecx134 + 4) = v128;
-        *(unsigned int *)(ecx134 + 8) = GroundHeight;
+        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
+        *(unsigned int *)(ecx134 + 4) = (unsigned int)(v128);
+        *(unsigned int *)(ecx134 + 8) = (unsigned int)(GroundHeight);
         ObjectClass::PreDraw(&stru_87C374[13428]);
       }
       else
       {
         Timer::Start(&v131, 0);
         int v59 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
-        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
+        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
         *(unsigned int *)(v59 + 4) = v132;
         *(unsigned int *)(v59 + 8) = v133;
         ObjectClass::PreDraw(&stru_87C374[13428]);
@@ -309,7 +309,7 @@ LABEL_162:
     case 0x1B:
       Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
       int v62 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
-      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
+      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
       *(unsigned int *)(v62 + 4) = v132;
       *(unsigned int *)(v62 + 8) = v133;
       v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];

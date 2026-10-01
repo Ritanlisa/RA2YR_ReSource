@@ -48,9 +48,9 @@ AbstractClass * FootClass::Destruct()
 
   team = (int *)this->team; /*0x4d3597*/
   this->TechnoClass = &vt_FootClass; /*0x4d359d*/
-  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35a5*/
-  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35ac*/
-  ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d35b3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35a5*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35ac*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -63,7 +63,7 @@ AbstractClass * FootClass::Destruct()
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
     DynamicVector::RemoveItem((DynamicVector *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2), v4); /*0x4d3616*/
-  parasiteImUsing = this->parasiteImUsing; /*0x4d361b*/
+  parasiteImUsing = (gamemd::ParasiteClass *)(this->parasiteImUsing); /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
     (*((void (**)(ParasiteClass *, int))parasiteImUsing->AbstractClass + 8))(parasiteImUsing, 1); /*0x4d3629*/
@@ -281,12 +281,12 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         v22 = *v10; /*0x7102db*/
         if ( *v10 != a1 ) /*0x7102e3*/
         {
-          *v10 = a1; /*0x7102e7*/
+          *v10 = (int)(a1); /*0x7102e7*/
           SuperClass::SetFieldX((SuperClass *)(v6 + 413)); /*0x7102e9*/
           if ( v22 ) /*0x7102f0*/
             (*(void (**)(int))(*(unsigned int *)v22 + 8))(v22); /*0x7102f6*/
         }
-        *(unsigned int *)(m_Size + 684) = (v6[5] & 1) != 0 ? v6 : 0;
+        *(unsigned int *)(m_Size + 684) = (unsigned int)((v6[5] & 1) != 0 ? v6 : 0);
         *((v6[5] & 1) != 0 ? v6 + 172 : (int *)688) = m_Size;
         (*(void (**)(unsigned int, int, int))(**(unsigned int **)(m_Size + 684) + 1152))( /*0x710326*/
           *(unsigned int *)(m_Size + 684),

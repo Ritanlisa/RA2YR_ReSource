@@ -298,14 +298,14 @@ int E4Recv_5ADD10::Map_Delete()
   unknown_libname_73(v9); /*0x5add33*/
   v9[1] = (void *)this->Timer::GetTicks(); /*0x5add48*/
   v9[3] = 0; /*0x5add50*/
-  *(unsigned int *)v7.__pad_0 = &vt_MapSelect; /*0x5add5b*/
+  *(unsigned int *)v7.__pad_0 = (unsigned int)(&vt_MapSelect); /*0x5add5b*/
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
   MSEngine::Destruct(&v7); /*0x5add86*/
   if ( v2 )
   {
-    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addba*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 134)); /*0x5addba*/
     v3 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addc5*/
     Dialog::ShowMessageBox(v3, StringCSF, 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/
@@ -332,7 +332,7 @@ void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 
   v9 = (int)((unsigned int *)((CHAR)((int)((unsigned int *)(0)))));
   *lpMultiByteStr = (CHAR)((unsigned int *)(0));
-  v3 = (int)((unsigned int *)(0));
+  v3 = (unsigned int *)((int)((unsigned int *)(0)));
   v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x68217b*/
   {
@@ -509,7 +509,7 @@ void sub_55CF10()
         {
           NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
-                    Ticks = ((Timer *)0)->GetTicks();
+                    Ticks = (gamemd::Network *)(((Timer *)0)->GetTicks());
           while ( 1 ) /*0x55cf74*/
           {
             if ( Ticks != (Network *)-1 ) /*0x55cf79*/
@@ -807,7 +807,7 @@ void Map_Helper_584030(IUnknown * aP0)
     v6 = (int16_t)v11 + (IDA_SHIWORD(v11) << 9); /*0x584071*/
     if ( v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x584081*/
     {
-      dword_ABDC74 = (unsigned int *)(v11);
+      dword_ABDC74 = (unsigned int)((unsigned int *)(v11));
       v7 = unk_ABDC50; /*0x58408c*/
     }
     v8 = ((unsigned int *)(v7))[19]; /*0x584091*/

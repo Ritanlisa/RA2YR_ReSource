@@ -105,8 +105,8 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 
   v4 = v3; /*0x4a3112*/
   v5 = *(unsigned int *)(v3 + 8); /*0x4a3116*/
-  *(unsigned int *)v3 = &vt_CStreamClass; /*0x4a3119*/
-  *(unsigned int *)(v3 + 4) = &vt_CStreamClass; /*0x4a3121*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_CStreamClass); /*0x4a3119*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_CStreamClass); /*0x4a3121*/
   if ( v5 ) /*0x4a3128*/
   {
     if ( *(unsigned char *)(v3 + 17) /*0x4a314b*/
@@ -355,7 +355,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x4a4bee*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4a4bf7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a4bf7*/
       this->m_8 = a2; /*0x4a4bff*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a4c02*/
       return 1; /*0x4a4c08*/

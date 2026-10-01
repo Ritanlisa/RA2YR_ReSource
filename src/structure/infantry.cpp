@@ -205,14 +205,14 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
     ProductionTimeMult = (int)Rules::GetProductionTimeMult( /*0x51da02*/
                                 (Rules *)&stru_A8EB00.ObjectTypeClass[24],
                                 (uint8_t)byte_7EAF7F[4 * v4]);
-    v18 = &((unsigned int *)this)[2]; /*0x51da0d*/
+    v18 = (int *)(&((unsigned int *)this)[2]); /*0x51da0d*/
     ((unsigned int *)this)[2] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51da13*/
     v19 = v25; /*0x51da19*/
   }
   else
   {
     ProductionTimeMult = (uint8_t)byte_7EAF7F[4 * v4]; /*0x51da27*/
-    v18 = &((unsigned int *)this)[2]; /*0x51da2e*/
+    v18 = (int *)(&((unsigned int *)this)[2]); /*0x51da2e*/
     ((unsigned int *)this)[2] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51da34*/
     v19 = v25; /*0x51da3a*/
   }

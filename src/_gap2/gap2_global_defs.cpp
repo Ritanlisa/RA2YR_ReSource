@@ -95,7 +95,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     v7 = (AudioChannel *)*((unsigned int *)this + 58); /*0x4030a8*/
     if ( !v7 || (IsActive = AudioChannel::IsActive(v7)) == 0 ) /*0x4030bd*/
       IsActive = AudioChannel::IsActive((AudioChannel *)&this->bombVisible); /*0x4030c6*/
-    v8 = (ObjectClass *)*((unsigned int *)this + 62); /*0x4030ca*/
+    v8 = (unsigned int)((ObjectClass *)*((unsigned int *)this + 62)); /*0x4030ca*/
     if ( v8 != (unsigned int)((ObjectClass *))((char *)this + 248) ) /*0x4030d8*/
     {
       do /*0x40317d*/
@@ -148,7 +148,7 @@ int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
   char v15[200]; // [esp+13Ch] [ebp-190h] BYREF
   char v16[200]; // [esp+204h] [ebp-C8h] BYREF
 
-  v4 = a2; /*0x403a8b*/
+  v4 = (void (__cdecl *)(char *))(a2); /*0x403a8b*/
   a2(aAudioDeviceDum); /*0x403a96*/
   sprintf(Buffer, "%s (%d)\n", **(const char ***)(a1->nextArrayIndex + 12), a1->radioLinks[3]); /*0x403ab2*/
   v4(Buffer); /*0x403abe*/

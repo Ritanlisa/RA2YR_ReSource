@@ -240,7 +240,7 @@ char sub_72C7E0()
   if ( !byte_B0FCFD ) /*0x72c7e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
-      dword_B0F9E8 = LoadFileSHP(off_844D84, (bool *)&byte_B0FCFC); /*0x72c805*/
+      dword_B0F9E8 = (unsigned int)(LoadFileSHP(off_844D84, (bool *)&byte_B0FCFC)); /*0x72c805*/
     result = LoadPaletteSimple(off_844D88, &dword_B0FD00, &dword_B0FD04); /*0x72c81a*/
     byte_B0FCFD = 1; /*0x72c81f*/
   }

@@ -120,16 +120,16 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->TechnoClass + 97))(v6); /*0x51ff89*/
-      v7 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)v6)[0], &v27); /*0x51ff9d*/
-      owner = ((unsigned int *)v6)[0]; /*0x51ffab*/
+      v7 = (unsigned int)(*ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)v6)[0], &v27)); /*0x51ff9d*/
+      owner = (gamemd::HouseClass *)(((unsigned int *)v6)[0]); /*0x51ffab*/
       v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
       v24.Input_field_00 = ((unsigned int *)v6)[0]; /*0x51ffb6*/
       isRecruitableByEnemy = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffbf*/
       v25 = ((unsigned int *)v6)[1]; /*0x51ffc5*/
       isRecruitableByAlly = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffce*/
       v26 = ((unsigned int *)v6)[2]; /*0x51ffd4*/
-      a3 = isRecruitableByEnemy; /*0x51ffe0*/
-      a2 = isRecruitableByAlly; /*0x51ffe7*/
+      a3 = (void *)(isRecruitableByEnemy); /*0x51ffe0*/
+      a2 = (void *)(isRecruitableByAlly); /*0x51ffe7*/
       onBridge = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffec*/
       controlGroup = ((unsigned int *)v6)[0]; /*0x51ffef*/
       Field = FootClass::GetField(((unsigned int *)v6)[0]); /*0x52000b*/
@@ -334,7 +334,7 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
     default:
       v4 = unk_825000; /*0x510e96*/
       if ( a1 != 4482 ) /*0x510e9b*/
-        v4 = &g_INI_DefaultBuffer; /*0x510e9d*/
+        v4 = (const unsigned int)(&g_INI_DefaultBuffer); /*0x510e9d*/
       break;
   }
   result = strlen(v4) + 1; /*0x510ea7*/
@@ -621,7 +621,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_HoverLocomotionClass; /*0x513d00*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d00*/
   *(unsigned int *)&this->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x513d0d*/
 
@@ -652,7 +652,7 @@ int E4Recv_517110::sub_517110()
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = ((unsigned int *)this)[0]; /*0x51717f*/
+  vtable3 = (void *)(((unsigned int *)this)[0]); /*0x51717f*/
   this->ambientSoundController[3] = 0; /*0x517182*/
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
@@ -709,9 +709,9 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     *(unsigned int *)v7 = 0; /*0x5177e9*/
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
-      v4 = (unsigned int)(*(void **)v7);
+      v4 = (void *)((unsigned int)(*(void **)v7));
       LOBYTE(((unsigned int *)this)[0]) = 1; /*0x51781d*/
-      this->AbstractClass = v4; /*0x517821*/
+      this->AbstractClass = (unsigned int)(v4); /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/
   }

@@ -51,7 +51,7 @@ char TriggerClass::FindByEventType(char a1)
     if ( dword_AC1CC8 ) /*0x610978*/
       (**(void (***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
     dword_AC1CC8 = 0; /*0x610982*/
-    v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
+    v2 = (unsigned int *)(__2_YAPAXI_Z(0x20u)); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
       v4 = (unsigned int)(HIDWORD(dword_AC1CB8));
@@ -59,10 +59,10 @@ char TriggerClass::FindByEventType(char a1)
       v2[1] = (unsigned int)(DWORD2(dword_AC1CB8));
       v2[2] = (unsigned int)(v4);
       v2[3] = (unsigned int)(0);
-      *v2 = &XSurface_Vtable; /*0x6109b4*/
+      *v2 = (unsigned int)(&XSurface_Vtable); /*0x6109b4*/
       v2[4] = 2; /*0x6109ba*/
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
-      *v2 = &BSurface_Vtable; /*0x6109c6*/
+      *v2 = (unsigned int)(&BSurface_Vtable); /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
     }
     else
@@ -193,9 +193,9 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
       aP0->AbstractClass = &vt_TriggerClass; /*0x726884*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerClass; /*0x72688a*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerClass; /*0x726891*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerClass; /*0x726898*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x72688a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726891*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/

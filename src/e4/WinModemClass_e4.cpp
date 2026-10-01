@@ -262,7 +262,7 @@ LABEL_2:
       }
       if ( !v13 ) /*0x774e2b*/
       {
-LABEL_20: Str[a4 - 1] = (char *)(0);
+LABEL_20: Str[a4 - 1] = (char)((char *)(0));
         v15 = (char *)(strstr(Str, word_832678));
         if ( v15 ) /*0x774e4c*/
         {

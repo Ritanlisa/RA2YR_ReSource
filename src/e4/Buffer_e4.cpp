@@ -428,7 +428,7 @@ void Buffer::Init( int a2, AbstractClass * aP2)
   LOBYTE(this->Buffer_field_08) = 0; /*0x43ad12*/
   if ( !a2 && aP2 > 0 ) /*0x43ad1a*/
   {
-    this->Buffer_field_00 = __2_YAPAXI_Z(aP2); /*0x43ad25*/
+    this->Buffer_field_00 = (unsigned int)(__2_YAPAXI_Z(aP2)); /*0x43ad25*/
     LOBYTE(this->Buffer_field_08) = 1; /*0x43ad27*/
   }
   return &this->Buffer_field_00; /*0x43ad2d*/
@@ -443,7 +443,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x488033*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x488036*/
+  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x488036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/
@@ -501,7 +501,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned short *)(Buffer_field_08 + 6) = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
-  v8 = aP1; /*0x6c8a49*/
+  v8 = (int *)(aP1); /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
@@ -518,12 +518,12 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         return 0; /*0x6c8af2*/
       }
       qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
-      v13 = *aP1; /*0x6c8ac2*/
+      v13 = (int)(*aP1); /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/
         break; /*0x6c8ada*/
-      v8 = aP1; /*0x6c8adc*/
+      v8 = (int *)(aP1); /*0x6c8adc*/
     }
     Buffer_field_08 = (int *)(v15);
     v8 = (int *)(aP1);

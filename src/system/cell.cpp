@@ -359,7 +359,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         {
           v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
           v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
-          v11 = *content; /*0x47ea18*/
+          v11 = (int)(*content); /*0x47ea18*/
           v17 = 0; /*0x47ea1b*/
           v15 = (v9 << 8) + 128; /*0x47ea2e*/
           v16 = (v10 << 8) + 128; /*0x47ea3c*/
@@ -398,9 +398,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( v4 == (unsigned int *)(content) ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
-      *(unsigned int *)(this + 232) = content[12]; /*0x47eac4*/
+      *(unsigned int *)(this + 232) = (unsigned int)(content[12]); /*0x47eac4*/
     else
-      *(unsigned int *)(this + 228) = content[12]; /*0x47eacf*/
+      *(unsigned int *)(this + 228) = (unsigned int)(content[12]); /*0x47eacf*/
   LABEL_14:
     content[12] = 0; /*0x47eaf0*/
     goto LABEL_15; /*0x47eaf0*/
@@ -427,7 +427,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     {
       v6 = *(int16_t *)(this + 36); /*0x47eb21*/
       v7 = *(int16_t *)(this + 38); /*0x47eb25*/
-      v8 = *content; /*0x47eb29*/
+      v8 = (int)(*content); /*0x47eb29*/
       v11 = 0; /*0x47eb2b*/
       v9 = (v6 << 8) + 128; /*0x47eb3c*/
       v10 = (v7 << 8) + 128; /*0x47eb50*/

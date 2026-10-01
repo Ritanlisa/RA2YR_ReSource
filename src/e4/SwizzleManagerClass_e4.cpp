@@ -57,7 +57,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf5c7*/
       if ( v6 ) /*0x6cf5d1*/
       {
         v7 = (unsigned int *)v6; /*0x6cf5d6*/
@@ -107,7 +107,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x6cf660*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x6cf66b*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x6cf66b*/
       this->m_8 = v3; /*0x6cf671*/
       BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
@@ -166,7 +166,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf747*/
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf747*/
       if ( v6 ) /*0x6cf751*/
       {
         v7 = (unsigned int *)v6; /*0x6cf756*/
@@ -216,7 +216,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x6cf7db*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x6cf7e6*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x6cf7e6*/
     this->m_8 = v3; /*0x6cf7ec*/
     BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
   }

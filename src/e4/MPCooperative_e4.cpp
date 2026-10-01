@@ -137,7 +137,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
     v14 = *(unsigned int *)(a2 + 16); /*0x49be0a*/
     v15 = *(unsigned int *)(a2 + 4); /*0x49be0d*/
     *(unsigned int *)(a2 + 16) = v14 + 1; /*0x49be13*/
-    *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
+    *(unsigned int *)(v15 + 4 * v14) = (unsigned int)(v11); /*0x49be16*/
   }
   *(unsigned int *)aP2 = *((unsigned int *)this + 26); /*0x49be28*/
   return 1; /*0x49bced*/
@@ -174,7 +174,7 @@ int MPCooperative::WriteCoopSaveINI()
   v1 = (char *)((unsigned int)((char *)this));
   if ( !LOBYTE(this->MPCooperative_field_0x0) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
-  v2 = &this->__pad_18[4]; /*0x49be58*/
+  v2 = (char *)(&this->__pad_18[4]); /*0x49be58*/
   if ( !this->__pad_18[4] ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
@@ -184,7 +184,7 @@ int MPCooperative::WriteCoopSaveINI()
   Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
-  *(unsigned int *)v15.INIClass = &CCINIClass_Vtable; /*0x49bea5*/
+  *(unsigned int *)v15.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49bea5*/
   CCINIClass::Load(&v15, (int)&v19, 0, 0); /*0x49bead*/
   CCFileClass::Reset(&v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
@@ -253,16 +253,16 @@ int MPCooperative::WriteCoopSaveINI()
   INIClass::ClearSection((int *)v15.INIClass, (int)v22, 0); /*0x49c035*/
   INIClass::WriteDigest((INIClass *)&v15, (int)&v16, 0); /*0x49c044*/
   CCFileClass::Reset(&v16); /*0x49c04d*/
-  *(unsigned int *)v16.CDFileClass = &vt_CCFileClass; /*0x49c05e*/
+  *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c05e*/
   v18 = 0; /*0x49c062*/
   Vector::Clear((int)v17); /*0x49c069*/
-  *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x49c077*/
+  *(unsigned int *)v16.CDFileClass = (unsigned int)(&off_7E1668); /*0x49c077*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x49c07b*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v15); /*0x49c084*/
-  *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x49c090*/
+  *(unsigned int *)v19.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c090*/
   v21 = 0; /*0x49c097*/
   Vector::Clear((int)v20); /*0x49c09e*/
-  *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x49c0aa*/
+  *(unsigned int *)v19.CDFileClass = (unsigned int)(&off_7E1668); /*0x49c0aa*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
 
@@ -323,7 +323,7 @@ int MPCooperative::ReadCoopSaveINI()
   v1 = (char *)(this);
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
-  v2 = (unsigned char *)this + 28; /*0x49d137*/
+  v2 = (char *)((unsigned char *)this + 28); /*0x49d137*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d134*/
     return 0; /*0x49d13c*/
   CCFileClass::Construct(v16, g_Str_File_coopsave_ini); /*0x49d14b*/
@@ -338,10 +338,10 @@ int MPCooperative::ReadCoopSaveINI()
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
-    v16[0] = &vt_CCFileClass; /*0x49d1bc*/
+    v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
     Vector::Clear((int)v17); /*0x49d1c8*/
-    v16[0] = &off_7E1668; /*0x49d1d1*/
+    v16[0] = (unsigned int)(&off_7E1668); /*0x49d1d1*/
     BufferIOFileClass::Dtor(v16); /*0x49d1d9*/
     return 0; /*0x49d1e9*/
   }
@@ -408,10 +408,10 @@ int MPCooperative::ReadCoopSaveINI()
   strcat(v23, g_IsWindowed); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
-  v16[0] = &vt_CCFileClass; /*0x49d360*/
+  v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
   Vector::Clear((int)v17); /*0x49d36c*/
-  v16[0] = &off_7E1668; /*0x49d375*/
+  v16[0] = (unsigned int)(&off_7E1668); /*0x49d375*/
   BufferIOFileClass::Dtor(v16); /*0x49d37d*/
   return v15; /*0x49d1de*/
 

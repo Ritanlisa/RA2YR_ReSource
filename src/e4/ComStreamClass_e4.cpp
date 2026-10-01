@@ -157,7 +157,7 @@ int ComStreamClass::Release()
   v1 = (unsigned int)(InterlockedDecrement((volatile LONG *)Block + 1));
   if ( !v1 && Block ) /*0x7ac83c*/
   {
-    *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
+    *(unsigned int *)Block = (unsigned int)(&off_7F766C); /*0x7ac843*/
     *((unsigned int *)Block + 1) = 1; /*0x7ac849*/
     InterlockedDecrement(&Addend); /*0x7ac84f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac855*/
@@ -191,7 +191,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   if ( !*(unsigned (unsigned int)(int)*)(a3) && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ac8b3*/
   {
     (*(void (**, unsigned int a3)(unsigned int *))(*a2 + 4))(a2); /*0x7ac8c6*/
-    *v10 = a2; /*0x7ac8c9*/
+    *v10 = (unsigned int)(a2); /*0x7ac8c9*/
     return 0; /*0x7ac8d1*/
   }
   while ( 1 ) /*0x7ac8dd*/
@@ -216,7 +216,7 @@ LABEL_17:
   }
   v9 = (char *)((unsigned int)((char *)v3[1] + (unsigned int)a2));
   (*(void (**)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ac955*/
-  *v10 = v9; /*0x7ac958*/
+  *v10 = (unsigned int)(v9); /*0x7ac958*/
   return 0; /*0x7ac881*/
 
 }
@@ -248,8 +248,8 @@ AbstractClass * * ComStreamClass::readData()
     v13 = v3; /*0x7ae100*/
     this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7ae118*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x7ae11f*/
+    v6 = (void *)(4 * this->ComStreamClass_field_0x08); /*0x7ae118*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
     {
@@ -310,8 +310,8 @@ void ComStreamClass::flushStream()
     this->ComStreamClass_field_0x08 = (unsigned int)(ComStreamClass_field_0x08 >> 1);
     this->ComStreamClass_field_0x0C = (unsigned int)(ComStreamClass_field_0x0C - 1);
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x7aef9b*/
+    v6 = (void *)(4 * this->ComStreamClass_field_0x08); /*0x7aef94*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
     {

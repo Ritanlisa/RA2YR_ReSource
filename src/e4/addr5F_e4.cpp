@@ -339,7 +339,7 @@ void* sub_5F33B0()
 
     ((Event *)0)->Dispatch();
   MessageLoop(); /*0x5f33b6*/
-  v0 = EventQueue::Process(dword_87F770); /*0x5f33c1*/
+  v0 = (uint16_t)(EventQueue::Process(dword_87F770)); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
@@ -600,7 +600,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
       if ( !v5 ) /*0x5fe65b*/
         break; /*0x5fe65b*/
       _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * a1); /*0x5fe67e*/
-      v6 = SearchMIXFile(Buffer, 1); /*0x5fe68c*/
+      v6 = (int)(SearchMIXFile(Buffer, 1)); /*0x5fe68c*/
       *(unsigned int *)(v4 + 164) = v6; /*0x5fe693*/
       if ( !v6 ) /*0x5fe699*/
         goto LABEL_5; /*0x5fe699*/
@@ -613,13 +613,13 @@ int BuildingTypeClass_LoadSHPs(int a1)
       goto LABEL_14; /*0x5fe6be*/
     _makepath(Buffer, 0, 0, (const char *)(v4 + 504), Ext); /*0x5fe6dd*/
     TheaterObjectTypeClassSpecificID(Buffer, a1); /*0x5fe6eb*/
-    v7 = SearchMIXFile(Buffer, 1); /*0x5fe6f6*/
+    v7 = (int)(SearchMIXFile(Buffer, 1)); /*0x5fe6f6*/
     *(unsigned int *)(v4 + 164) = v7; /*0x5fe6fd*/
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
   LABEL_5:
     ((ObjectTypeClass *)(Buffer))->SetRTTI71(); /*0x5fe69f*/
-    *(unsigned int *)(v4 + 164) = SearchMIXFile(Buffer, 1); /*0x5fe6b3*/
+    *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 1)); /*0x5fe6b3*/
     goto LABEL_14; /*0x5fe6b9*/
   }
   return result; /*0x5fe763*/

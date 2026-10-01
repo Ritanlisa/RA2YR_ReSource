@@ -83,7 +83,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   char v57[4]; // [esp+124h] [ebp-4h] BYREF
 
   v33[1] = this; /*0x5a5b6a*/
-  v2 = globalHelper_0A7640(v50, aP1); /*0x5a5b6e*/
+  v2 = (int *)(globalHelper_0A7640(v50, aP1)); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v38 = *v2; /*0x5a5b75*/
   v4 = v2[1]; /*0x5a5b79*/
@@ -486,7 +486,7 @@ LABEL_23:
               v12[0] = v5; /*0x5a7814*/
               v12[1] = MapSeedClass_field_0x04; /*0x5a781f*/
               v6 = (Value *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x5a7824*/
-              Value_field_00 = v6[14].Value_field_00; /*0x5a7829*/
+              Value_field_00 = (int)(v6[14].Value_field_00); /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
                 && !Value::InRange(v6) )
               {

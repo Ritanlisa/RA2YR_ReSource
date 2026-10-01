@@ -48,7 +48,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v15; // [esp+8h] [ebp-4h]
   float v16; // [esp+8h] [ebp-4h]
 
-  v1 = (int)((unsigned int *)(0));
+  v1 = (unsigned int *)((int)((unsigned int *)(0)));
   v2 = (unsigned int *)(&unk_86D0BC);
   v3 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
@@ -109,10 +109,10 @@ int VoxelAnimClass::CleanupMembers()
   int v4; // eax
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  this->VoxelAnimClass_field_0x0 = &vt_VoxelAnimClass; /*0x7499f6*/
+  this->VoxelAnimClass_field_0x0 = (unsigned int)(&vt_VoxelAnimClass); /*0x7499f6*/
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_VoxelAnimClass; /*0x7499fc*/
-  this->VoxelAnimClass_field_0x8 = &vt_VoxelAnimClass; /*0x749a03*/
-  *(unsigned int *)this->__pad_C = &vt_VoxelAnimClass; /*0x749a0a*/
+  this->VoxelAnimClass_field_0x8 = (unsigned int)(&vt_VoxelAnimClass); /*0x749a03*/
+  *(unsigned int *)this->__pad_C = (unsigned int)(&vt_VoxelAnimClass); /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x749a11*/
   v6 = this; /*0x749a26*/
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad_1C[64] + 16))( /*0x749a2a*/
@@ -289,8 +289,8 @@ LABEL_6:
         v27 = *(unsigned int *)&this->__pad_98[4]; /*0x749e17*/
         v29 = v11; /*0x749e1f*/
         v28 = v12; /*0x749e29*/
-        v13 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x749e2d*/
-        VoxelAnimClass_field_0x10C = this->VoxelAnimClass_field_0x10C; /*0x749e32*/
+        v13 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27)); /*0x749e2d*/
+        VoxelAnimClass_field_0x10C = (gamemd::AbstractClass *)(this->VoxelAnimClass_field_0x10C); /*0x749e32*/
         v15 = *(int16_t *)v13->CellClass_field_10A; /*0x749e38*/
         if ( VoxelAnimClass_field_0x10C ) /*0x749e41*/
         {
@@ -499,12 +499,12 @@ void VoxelAnimClass::VoxelAnimClass_Update()
           v99 = v25; /*0x74a19a*/
           AnimClass::ctor(v20, v26[186], &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
-        v27 = v1->VoxelAnimClass_field_0x104; /*0x74a1b4*/
+        v27 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1b4*/
         v28 = v27[188]; /*0x74a1c9*/
         v84 = v27[190]; /*0x74a1cf*/
         Coords = (unsigned int *)Coord::GetCoords(&v101, 0); /*0x74a1d8*/
         PlaySoundEffectAt(Coords, v28, v83, v84, 1, 0); /*0x74a1e1*/
-        v30 = v1->VoxelAnimClass_field_0x104; /*0x74a1e6*/
+        v30 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1e6*/
         v90 = v30[190]; /*0x74a1f6*/
         v31 = v30[188]; /*0x74a1fa*/
         v32 = (int *)Coord::GetCoords(&v101, 0); /*0x74a205*/

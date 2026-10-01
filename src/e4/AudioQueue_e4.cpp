@@ -527,7 +527,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       v12 = *((unsigned int *)this + 18); /*0x7b244b*/
       v13 = *((unsigned int *)this + 15); /*0x7b244e*/
       *((unsigned int *)this + 18) = v12 + 1; /*0x7b2454*/
-      *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7b2457*/
+      *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7b2457*/
     }
     v14 = *((unsigned int *)this + 64540); /*0x7b245a*/
   }
@@ -545,7 +545,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       v17 = *((unsigned int *)this + 12); /*0x7b2491*/
       v18 = *((unsigned int *)this + 9); /*0x7b2494*/
       *((unsigned int *)this + 12) = v17 + 1; /*0x7b249a*/
-      *(unsigned int *)(v18 + 4 * v17) = v9; /*0x7b249d*/
+      *(unsigned int *)(v18 + 4 * v17) = (unsigned int)(v9); /*0x7b249d*/
     }
     v14 = *((unsigned int *)this + 64539); /*0x7b24a0*/
   }

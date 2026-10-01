@@ -26,7 +26,7 @@ void* ProgressTimer::GetValue(IUnknown * aP1)
   ProgressTimer_field_0x14 = (void *)((int16_t)((void *)((int16_t)this->ProgressTimer_field_0x14)));
   if ( ProgressTimer_field_0x14 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  ProgressTimer_field_0x8 = this->ProgressTimer_field_0x8; /*0x4c93dd*/
+  ProgressTimer_field_0x8 = (void *)(this->ProgressTimer_field_0x8); /*0x4c93dd*/
   ProgressTimer_field_0x10 = (char *)this->ProgressTimer_field_0x10; /*0x4c93e0*/
   if ( ProgressTimer_field_0x8 != (void *)-1 ) /*0x4c93ec*/
   {

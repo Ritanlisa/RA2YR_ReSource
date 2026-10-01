@@ -193,7 +193,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x63e3ce*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x63e3d7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x63e3d7*/
       this->m_8 = a2; /*0x63e3df*/
       BYTE1(this->m_C) = a3 == 0; /*0x63e3e2*/
       return 1; /*0x63e3e8*/
@@ -299,7 +299,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x63e501*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x63e50a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x63e50a*/
     this->m_8 = a2; /*0x63e512*/
     BYTE1(this->m_C) = a3 == 0; /*0x63e515*/
   }
@@ -400,7 +400,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x63e70e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x63e717*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x63e717*/
       this->m_8 = a2; /*0x63e71f*/
       BYTE1(this->m_C) = a3 == 0; /*0x63e722*/
       return 1; /*0x63e728*/
@@ -506,7 +506,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x63e841*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x63e84a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x63e84a*/
     this->m_8 = a2; /*0x63e852*/
     BYTE1(this->m_C) = a3 == 0; /*0x63e855*/
   }
@@ -577,7 +577,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x63eb41*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x63eb4a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x63eb4a*/
     this->m_8 = a2; /*0x63eb52*/
     BYTE1(this->m_C) = a3 == 0; /*0x63eb55*/
   }

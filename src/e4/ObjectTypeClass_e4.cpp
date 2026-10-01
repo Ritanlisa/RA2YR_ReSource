@@ -67,7 +67,7 @@ int ObjectTypeClass::loadTypeMember_473980()
   if ( !this ) /*0x473987*/
     return -1; /*0x4739bd*/
   v2 = 0; /*0x473989*/
-  v3 = off_81B7C8; /*0x47398b*/
+  v3 = (char **)(off_81B7C8); /*0x47398b*/
   while ( _strcmpi(v3[1], (char *)this) && _strcmpi(*v3, (char *)this) ) /*0x4739af*/
   {
     v3 += 2; /*0x4739b1*/
@@ -91,7 +91,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   if ( INIClass::GetString((INIClass *)this, aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
   v4 = 0; /*0x474964*/
-  v5 = &off_81B9B0; /*0x474966*/
+  v5 = (char **)(&off_81B9B0); /*0x474966*/
   while ( _strcmpi(Destination, *v5) ) /*0x47497d*/
   {
     v5 += 2; /*0x47497f*/
@@ -140,7 +140,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   char v10; // [esp+20h] [ebp-4h]
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  v3 = (char *)this + 50; /*0x5f70a3*/
+  v3 = (int *)((char *)this + 50); /*0x5f70a3*/
   *((unsigned char *)this + 152) = 0; /*0x5f70a9*/
   *((unsigned char *)this + 153) = 0; /*0x5f70af*/
   *((unsigned char *)this + 154) = 0; /*0x5f70b5*/
@@ -164,7 +164,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  v5 = (char *)this + 86; /*0x5f710d*/
+  v5 = (int *)((char *)this + 86); /*0x5f710d*/
   v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
@@ -250,7 +250,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
          0) )
   {
     v7 = (unsigned int)(dword_AC1428++);
-    *((unsigned int *)dword_AC141C + v7) = this; /*0x5f730a*/
+    *((unsigned int *)dword_AC141C + v7) = (unsigned int)(this); /*0x5f730a*/
   }
   return (int)this; /*0x5f730f*/
 

@@ -70,19 +70,19 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
   if ( dword_88A090 <= 0 ) /*0x420152*/
   {
   LABEL_5: v3 = (unsigned int *)(RA2_OPNEW(0x20008u));
-    v4 = (unsigned int)(v3);
+    v4 = (unsigned int *)((unsigned int)(v3));
     if ( v3 ) /*0x42017f*/
     {
-      v3[0x8000] = (unsigned short *)(aP0);
-      v5 = (unsigned int)((gamemd::CCINIClass *)((unsigned short *)(0)));
-      v3[32769] = (unsigned short *)(0);
+      v3[0x8000] = (unsigned int)((unsigned short *)(aP0));
+      v5 = (unsigned short *)((unsigned int)((gamemd::CCINIClass *)((unsigned short *)(0))));
+      v3[32769] = (unsigned int)((unsigned short *)(0));
       v6 = (gamemd::CCINIClass *)((unsigned short *)(aP0 - 1));
       v7 = (unsigned short *)(v3);
       do /*0x4201d3*/
       {
         v8 = (unsigned char)((unsigned int)(v6)* ((unsigned int)(v5)>> 8) * (uint8_t)v5 / 32258);
         if ( v8 > (int)(v6) ) /*0x4201be*/
-          IDA_LOBYTE(v8) = aP0 - 1; /*0x4201c0*/
+          IDA_LOBYTE(v8) = (unsigned char)(aP0 - 1); /*0x4201c0*/
         IDA_LOBYTE(v9) = 0; /*0x4201c2*/
         ++v5; /*0x4201c4*/
         IDA_HIBYTE(v9) = v8; /*0x4201c5*/
@@ -102,7 +102,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
            dword_88A088 + dword_88A094,
            0) )
     {
-      v11 = (unsigned int)(dword_88A090++);
+      v11 = (unsigned int *)((unsigned int)(dword_88A090++));
       *((unsigned int *)(unsigned int)(dword_88A084)+ v11) = v4; /*0x42024c*/
     }
     ++v4[32769]; /*0x420258*/
@@ -220,13 +220,13 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
         v51 = (int *)(dword_886FA4 + v6);
         v7 = (int *)(ClipRectIntersection(v70, (int *)&v50, v54, 0, 0));
-        v68[0] = (int *)(*v7);
-        v68[1] = (int *)(v7[1]);
-        v68[2] = (int *)(v7[2]);
+        v68[0] = (int)((int *)(*v7));
+        v68[1] = (int)((int *)(v7[1]));
+        v68[2] = (int)((int *)(v7[2]));
         v8 = (int *)(v3[1]);
         v9 = (int *)(v7[3]);
         v10 = (int *)(*v3);
-        v68[3] = (int *)(v9);
+        v68[3] = (int)((int *)(v9));
         v63 = (int *)(v8);
         v62 = (int *)(v10);
         v64 = (int *)(60);
@@ -242,9 +242,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         if ( v14 > 0 && v15 > 0 ) /*0x421070*/
         {
           v16 = (int *)(v13 - v63);
-          v17 = (int)((unsigned int)((int *)(v50)));
+          v17 = (int *)((int)((unsigned int)((int *)(v50))));
           v69 = (int *)(v12 - v62);
-          v18 = (int)(*((unsigned int *)dword_88A0F4 + v4));
+          v18 = (int *)((int)(*((unsigned int *)dword_88A0F4 + v4)));
           v58 = (int)(v51);
           v61 = (char **)((int)(*(char ***)(v18 + 56)));
           FoundationSize = (int *)(Building::GetFoundationSize(v72, 0));
@@ -255,25 +255,25 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v67 = (int *)(FoundationSize[3]);
           if ( v13 <= (int)((int))(v58) + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
-          v60 = v41 - v58 - v66; /*0x4210fd*/
-          v37 = v57 + v13; /*0x421118*/
+          v60 = (int *)(v41 - v58 - v66); /*0x4210fd*/
+          v37 = (int *)(v57 + v13); /*0x421118*/
           if ( v57 + v13 >= (int)((int))(v66) + v67 + v58 ) /*0x42111c*/
             v37 = (unsigned int)(v66)+ v67 + v58; /*0x42111e*/
-          v40 = v55; /*0x42112b*/
+          v40 = (int *)(v55); /*0x42112b*/
           if ( v55 <= (int)((unsigned int)(v17)+ v20) ) /*0x42112f*/
             v40 = (unsigned int)(v17)+ v20; /*0x421131*/
           v22 = v40 - v17 - v20; /*0x421144*/
-          v23 = v55 + v56; /*0x42114e*/
+          v23 = (int *)(v55 + v56); /*0x42114e*/
           if ( v55 + v56 >= (int)((unsigned int)(v20)+ (unsigned int)(v17)+ v21) ) /*0x421156*/
           {
-            v42 = (int)((unsigned int)(v20)+ (unsigned int)(v17)+ v21);
-            v23 = (int)(v42);
+            v42 = (int *)((int)((unsigned int)(v20)+ (unsigned int)(v17)+ v21));
+            v23 = (int *)((int)(v42));
           }
           else
           {
             v42 = (int *)(v55 + v56);
           }
-          v47 = (int)(v40 + *((unsigned int *)dword_87E8A4 + 10) - v23);
+          v47 = (int *)((int)(v40 + *((unsigned int *)dword_87E8A4 + 10) - v23));
           v43 = (int *)(60 - v56);
           v48 = (int *)((unsigned int)(v40)+ v21 - v23);
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
@@ -316,12 +316,12 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (int *)((unsigned int)(v37 - v41));
-            v29 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40)))))))))))))))))))));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))))))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/
               {
-                v30 = (int)(v42 - v29);
+                v30 = (int *)((int)(v42 - v29));
                 do /*0x421281*/
                 {
                   v31 = *v27++; /*0x42123f*/
@@ -337,7 +337,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
                   --v30; /*0x421280*/
                 }
                 while ( v30 ); /*0x421281*/
-                v29 = v40; /*0x421283*/
+                v29 = (unsigned int)(v40); /*0x421283*/
               }
               v27 += v48; /*0x42128b*/
               v28 += v43; /*0x421291*/
@@ -387,10 +387,10 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   v8 = (int)(aP1[2]);
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
-  v15 = aP1[3]; /*0x421b92*/
+  v15 = (int)(aP1[3]); /*0x421b92*/
   if ( v15 <= 0 || aP2[2] <= 0 || aP2[3] <= 0 ) /*0x421bac*/
     goto LABEL_23; /*0x421bac*/
-  v9 = *aP1; /*0x421bb2*/
+  v9 = (int)(*aP1); /*0x421bb2*/
   if ( v6 < *aP1 ) /*0x421bb6*/
   {
     v10 = (int)(v6 - v9 + v16);
@@ -399,7 +399,7 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   }
   if ( v16 < 1 ) /*0x421bcb*/
     goto LABEL_23; /*0x421bcb*/
-  v11 = aP1[1]; /*0x421bd1*/
+  v11 = (int)(aP1[1]); /*0x421bd1*/
   if ( v7 < v11 ) /*0x421bda*/
   {
     v12 = v7 - v11 + v17; /*0x421be2*/

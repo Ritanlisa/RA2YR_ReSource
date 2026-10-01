@@ -54,7 +54,7 @@ bool ObjectClass::Remove()
            &this);
     if ( v3 != -1 && v3 < (int)g_SelectionManager ) /*0x5f44d2*/
     {
-      for ( g_SelectionManager = (wchar_t *)((char *)g_SelectionManager - 1); /*0x5f44dd*/
+      for ( g_SelectionManager = (int)((wchar_t *)((char *)g_SelectionManager - 1)); /*0x5f44dd*/
             v3 < (int)g_SelectionManager;
             *((unsigned int *)g_ObjectClass_CurrentCount + v3 - 1) = *((unsigned int *)g_ObjectClass_CurrentCount + v3) )
       {

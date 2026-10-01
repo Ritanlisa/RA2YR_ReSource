@@ -46,7 +46,7 @@ int KeyboardConfig::LoadINI()
 
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
-  *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x533d3f*/
+  *(unsigned int *)v9.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x533d3f*/
   CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
@@ -95,10 +95,10 @@ LABEL_13:
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x533ec0*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
-    *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x533ed8*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533ed8*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
     return 1; /*0x533eee*/
@@ -106,10 +106,10 @@ LABEL_14:
   else
   {
     this->Debug::Log(); /*0x533efe*/
-    *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x533f0d*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
-    *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x533f25*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533f25*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
     return 0; /*0x533f3b*/
@@ -140,9 +140,9 @@ AbstractClass * KeyboardConfig::ReleaseBuffer( int a2)
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  v7 = a2 + *((unsigned int *)this + 2); /*0x538be6*/
-  *(unsigned int *)this = v3; /*0x538be8*/
-  *((unsigned int *)this + 2) = v7; /*0x538bea*/
+  v7 = (char *)(a2 + *((unsigned int *)this + 2)); /*0x538be6*/
+  *(unsigned int *)this = (unsigned int)(v3); /*0x538be8*/
+  *((unsigned int *)this + 2) = (unsigned int)(v7); /*0x538bea*/
   *((unsigned int *)this + 4) = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
 

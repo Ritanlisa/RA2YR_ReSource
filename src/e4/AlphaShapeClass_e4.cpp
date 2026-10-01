@@ -72,7 +72,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
   Block->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
   Block->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   Block->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
-  v6 = Block; /*0x42175f*/
+  v6 = (gamemd::AlphaShapeClass *)(Block); /*0x42175f*/
   v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
@@ -118,7 +118,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->__pad_0 = &vt_AlphaShapeClass; /*0x420e07*/
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
       aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
       aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
       aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/

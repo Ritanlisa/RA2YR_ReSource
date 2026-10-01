@@ -237,8 +237,8 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
   int v17; // eax
   char v18[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v3 = (int)(a3);
-  v4 = (int)(aP1);
+  v3 = (int *)((int)(a3));
+  v4 = (int *)((int)(aP1));
   result = (int)(InfantryClass::GetCursorOverObject((FootClass *)this, (int)aP1, (char)a3));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
@@ -358,7 +358,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   unsigned int *v10; // eax
   unsigned char v11[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  team = ((unsigned int *)this)[0]; /*0x4196bc*/
+  team = (gamemd::TeamClass *)(((unsigned int *)this)[0]); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (uint8_t)TechnoClass::IsWaypointHidden((TechnoClass *)team)
     && !(uint8_t)Type::CheckAmbiguity((Type *)&stru_87F5F0.__pad_58[416], (int)a2, 1) )

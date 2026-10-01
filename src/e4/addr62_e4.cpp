@@ -730,13 +730,13 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   unsigned int v22[4]; // [esp+14h] [ebp-10h] BYREF
   int yTopa; // [esp+28h] [ebp+4h]
 
-  v9 = (unsigned int *)((int)(a1));
+  v9 = (unsigned int)((unsigned int *)((int)(a1)));
   if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
     a7 = (int *)DSurface_Alternate; /*0x6211f9*/
-  v12 = *aP2; /*0x621234*/
-  v21 = aP2[3]; /*0x621255*/
+  v12 = (unsigned int *)(*aP2); /*0x621234*/
+  v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
@@ -863,13 +863,13 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
       *v7 = (unsigned int)(&XSurface_Vtable);
       v7[4] = (unsigned int)(2);
       Buffer::Init(v7 + 5, 0, 2 * v9 * v8); /*0x62156f*/
-      *v7 = &BSurface_Vtable; /*0x621574*/
+      *v7 = (unsigned int)(&BSurface_Vtable); /*0x621574*/
     }
     else
     {
-      v7 = (unsigned int)(0);
+      v7 = (unsigned int *)((unsigned int)(0));
     }
-    *(unsigned int *)(v4 + 16) = v7; /*0x621580*/
+    *(unsigned int *)(v4 + 16) = (unsigned int)(v7); /*0x621580*/
     v29[0] = 0; /*0x621591*/
     v29[1] = 0; /*0x621595*/
     ++g_GameScreenState; /*0x6215a1*/

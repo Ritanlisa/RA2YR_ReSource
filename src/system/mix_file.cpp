@@ -445,7 +445,7 @@ MixFileClass * * MixFileClass::Bootstrap()
   for ( i = 99; i >= 0; --i ) /*0x5301ba*/
   {
     sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
-    v2 = RawFileClass::Construct(&v18, (int)Buffer); /*0x5301db*/
+    v2 = (unsigned int *)(RawFileClass::Construct(&v18, (int)Buffer)); /*0x5301db*/
     v3 = (*(int (**)(unsigned int *, unsigned int))(*v2 + 20))(v2, 0); /*0x5301ee*/
     RawFileClass::Dtor(&v18); /*0x5301f0*/
     if ( v3 ) /*0x5301f7*/
@@ -465,7 +465,7 @@ MixFileClass * * MixFileClass::Bootstrap()
                  0) )
           {
             v6 = (unsigned int)(g_MixFilePool_Count++);
-            *((unsigned int *)g_MixFilePool + v6) = v5; /*0x530274*/
+            *((unsigned int *)g_MixFilePool + v6) = (unsigned int)(v5); /*0x530274*/
           }
           Debug::Log_0(); /*0x530281*/
         }

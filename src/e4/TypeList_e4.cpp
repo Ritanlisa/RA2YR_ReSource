@@ -129,7 +129,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x45a23e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x45a247*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x45a247*/
       this->m_8 = a2; /*0x45a24f*/
       BYTE1(this->m_C) = a3 == 0; /*0x45a252*/
       return 1; /*0x45a258*/
@@ -219,7 +219,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x45a371*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x45a37a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x45a37a*/
     this->m_8 = a2; /*0x45a382*/
     BYTE1(this->m_C) = a3 == 0; /*0x45a385*/
   }
@@ -420,7 +420,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x47807e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x478087*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x478087*/
       this->m_8 = a2; /*0x47808f*/
       BYTE1(this->m_C) = a3 == 0; /*0x478092*/
       return 1; /*0x478098*/
@@ -627,7 +627,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x5129f3*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x5129f6*/
+  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x5129f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
     __3_YAXPAX_Z(v3); /*0x512a08*/

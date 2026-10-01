@@ -34,7 +34,7 @@ v4 = (int)((unsigned int *)(a2));
   v5 = (*(int (**)(int))(v4->q07C)(v4); /*0x52fee8*/
   v6 = (*(int (**)(int))(v4->q080)(v4); /*0x52fef4*/
   v5 = v5; /*0x52ff00*/
-  v7 = operator new(0x20u); /*0x52ff08*/
+  v7 = (unsigned int *)(operator new(0x20u)); /*0x52ff08*/
   v8 = v7; /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
@@ -44,7 +44,7 @@ v4 = (int)((unsigned int *)(a2));
     *v7 = (unsigned int)(&XSurface_Vtable);
     v7[4] = (unsigned int)(2);
     Buffer::Init(0, 2 * v5 * v6); /*0x52ff3b*/
-    *v8 = &BSurface_Vtable; /*0x52ff40*/
+    *v8 = (unsigned int)(&BSurface_Vtable); /*0x52ff40*/
   }
   else
   {

@@ -124,9 +124,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   vtable0 = (void *)(this->AbstractClass);
-  vtable1 = ((unsigned int *)this)[0]; /*0x645d76*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x645d7d*/
-  vtable3 = ((unsigned int *)this)[0]; /*0x645d88*/
+  vtable1 = (void *)(((unsigned int *)this)[0]); /*0x645d76*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x645d7d*/
+  vtable3 = (void *)(((unsigned int *)this)[0]); /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply((float *)((unsigned int *)(v30))[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
   v5 = *(float *)&((unsigned int *)this)[0]; /*0x645da3*/
@@ -506,7 +506,7 @@ void RunNetworkGameLoop()
     v13 = (gamemd::IPXManagerClass *)(&unk_A8D812);
     v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0);
   }
-  IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400; /*0x6483c1*/
+  IDA_LOWORD(dword_AFA400) = (unsigned short)(BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400); /*0x6483c1*/
     TicksTimer = Timer::GetTicks();
   v22 = 15; /*0x6483d9*/
     v22 = ((Timer *)0)->GetTicks();

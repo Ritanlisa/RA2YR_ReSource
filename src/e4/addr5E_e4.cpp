@@ -64,7 +64,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)((wint_t *)((wchar_t *)(a1)))));
-  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))))))))))))))))))))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))))))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
@@ -96,7 +96,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
         UI_Draw(hWnd, v3, v5, aP0); /*0x5e295d*/
         for ( v3 += v5; *v3 == 32; ++v3 ) /*0x5e2968*/
           ; /*0x5e296a*/
-        v5 = wcslen(v3); /*0x5e297c*/
+        v5 = (wint_t *)(wcslen(v3)); /*0x5e297c*/
       }
       else
       {
@@ -132,7 +132,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
       ; /*0x5e297e*/
     }
     while ( v5 ); /*0x5e2980*/
-    v4 = hWnd; /*0x5e2986*/
+    v4 = (wint_t *)(hWnd); /*0x5e2986*/
   }
   return ReleaseDC(v4, hDC); /*0x5e2996*/
 }
@@ -312,7 +312,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
     {
       v3 = (unsigned int)(FindWDTTerritoryClass(v17, *(unsigned int *)dword_A8B240));
       ((ComPtr *)(&wParam))->Set(v3->q010); /*0x5e307f*/
-      v17[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3088*/
+      v17[0] = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x5e3088*/
       ComPtr::Release(v17); /*0x5e308c*/
     }
     if ( v16 ) /*0x5e3097*/
@@ -481,10 +481,10 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
   v2 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)(a1))))));
   if ( !a1 ) /*0x5e39c9*/
     v2 = unk_A8B380; /*0x5e39cb*/
-  v4 = CharToWideString(v2); /*0x5e39d7*/
+  v4 = (char *)(CharToWideString(v2)); /*0x5e39d7*/
   if ( !wcscmp((const wchar_t *)v4, word_A8D610) ) /*0x5e39dd*/
-    a2 = 1; /*0x5e39e9*/
-  result = (HWND)dword_A8DA84; /*0x5e39ee*/
+    a2 = (void *)(1); /*0x5e39e9*/
+  result = (gamemd::ObjectClass **)((HWND)dword_A8DA84); /*0x5e39ee*/
   v6 = 0; /*0x5e39f3*/
   if ( dword_A8DA84 > 0 ) /*0x5e39f7*/
   {
@@ -494,13 +494,13 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
       result = (gamemd::ObjectClass **)((HWND)((gamemd::ObjectClass **)((HWND)_strcmpi(v7, v2))));
       if ( !result ) /*0x5e3a16*/
         break; /*0x5e3a16*/
-      result = (HWND)dword_A8DA84; /*0x5e3a18*/
+      result = (gamemd::ObjectClass **)((HWND)dword_A8DA84); /*0x5e3a18*/
       if ( ++v6 >= dword_A8DA84 ) /*0x5e3a20*/
         return result; /*0x5e3a20*/
     }
     if ( v6 != -1 ) /*0x5e3a29*/
     {
-      *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * v6) + 127) = a2; /*0x5e3a36*/
+      *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * v6) + 127) = (unsigned int)(a2); /*0x5e3a36*/
       if ( a2 ) /*0x5e3a39*/
       {
         if ( a2 == (void *)(2) ) /*0x5e3a71*/

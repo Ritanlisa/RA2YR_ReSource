@@ -27,7 +27,7 @@ void sub_682780(int a1, int a2, wchar_t * String)
   int v9;
 
   v9 = (int)((unsigned int *)(0));
-  v3 = (int)((unsigned int *)(0));
+  v3 = (unsigned int *)((int)((unsigned int *)(0)));
   v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682797*/
   {

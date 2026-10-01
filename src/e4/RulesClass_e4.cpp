@@ -48,7 +48,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
       this->DetailMinFrameRateMovie = a3; /*0x538b58*/
       return &this->DetailMinFrameRateNormal; /*0x538b5e*/
     }
-    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
+    this->DetailMinFrameRateMovie = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x538b6d*/
     BYTE1(this->AmmoCrateDamage) = 1; /*0x538b70*/
   }
   return &this->DetailMinFrameRateNormal; /*0x538b5d*/

@@ -145,7 +145,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     v63 = (void *)((unsigned int)((void *)((unsigned int)(a2))));
     v64 = (void *)(a3);
     if ( v23 ) /*0x73c751*/
-      v64 = (unsigned int)(a3)- 14; /*0x73c756*/
+      v64 = (void *)((unsigned int)(a3)- 14); /*0x73c756*/
     v24 = v15->nextArrayIndex; /*0x73c762*/
     v25 = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
@@ -232,7 +232,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       qmemcpy(v72, (unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
-        v31 = (uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 7) + 1) >> 1); /*0x73cae1*/
+        v31 = (unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 7) + 1) >> 1)); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
@@ -247,7 +247,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v49 = -*((float *)a1 + 259); /*0x73cb52*/
         Matrix3x4::Translate(v71, v49, unsigned int a1); /*0x73cb55*/
       }
-      v56 = (((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 10) + 1) >> 1) & 0x1F) - 8; /*0x73cb81*/
+      v56 = (unsigned int *)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
       v50 = -((double)v56 * -0.1963495408493621); /*0x73cb91*/
       Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
       Matrix3x3::Multiply(v71, v67); /*0x73cba5*/

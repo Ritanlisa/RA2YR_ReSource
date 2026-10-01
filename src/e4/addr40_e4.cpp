@@ -118,9 +118,9 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v5 ) /*0x40128d*/
     *v5 = 0; /*0x40128f*/
   strcat(Str, aBag); /*0x4012bc*/
-  v6 = RA2_OPNEW(0x6Cu); /*0x4012c5*/
-  v7 = v6 ? ((CCFileClass *)(v6))->Construct(Str) : 0;
-  *((unsigned int *)v3 + 67) = v7; /*0x4012e4*/
+  v6 = (unsigned int *)(RA2_OPNEW(0x6Cu)); /*0x4012c5*/
+  v7 = (unsigned int *)(v6 ? ((CCFileClass *)(v6))->Construct(Str) : 0);
+  *((unsigned int *)v3 + 67) = (unsigned int)(v7); /*0x4012e4*/
   if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
     goto LABEL_30; /*0x4012ef*/
   ((FileClass *)(v19))->Load(1); /*0x401300*/
@@ -131,8 +131,8 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v18 <= 0 ) /*0x401338*/
     goto LABEL_17; /*0x401338*/
   v8 = RA2_OPNEW(36 * v18); /*0x401346*/
-  v9 = *((unsigned int *)v3 + 1); /*0x401348*/
-  *(unsigned int *)v3 = v8; /*0x40134b*/
+  v9 = (void *)(*((unsigned int *)v3 + 1)); /*0x401348*/
+  *(unsigned int *)v3 = (unsigned int)(v8); /*0x40134b*/
   memset(v8, 0, 4 * ((unsigned int)(36 * v9) >> 2)); /*0x40135e*/
   if ( Buffer[1] != 1 ) /*0x40136c*/
   {

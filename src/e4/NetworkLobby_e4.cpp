@@ -93,9 +93,9 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
           (**(void (***)(int, int))v10)(v10, 1); /*0x5d4299*/
       }
     }
-    v14 = aP3; /*0x5d429b*/
+    v14 = (wchar_t *)(aP3); /*0x5d429b*/
     if ( !aP3 ) /*0x5d42a1*/
-      v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
+      v14 = (wchar_t *)(&g_TypeClass_DefaultString); /*0x5d42a3*/
     *(unsigned short *)&this->__pad_3D[635] = a5; /*0x5d42b1*/
     memset(&this->__pad_C[28], 0, 0x144u); /*0x5d42c2*/
     wcscpy((wchar_t *)&this->__pad_C[28], v14); /*0x5d42c5*/
@@ -103,7 +103,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
     v15 = wcslen(v14); /*0x5d42d4*/
     *(unsigned int *)&this->__pad_3D[631] = v15; /*0x5d42db*/
     *(unsigned int *)&this->__pad_3D[627] = v15; /*0x5d42e1*/
-    v16 = __2_YAPAXI_Z(0x4Cu); /*0x5d42e7*/
+    v16 = (int)(__2_YAPAXI_Z(0x4Cu)); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
       v17 = a3; /*0x5d42f3*/
@@ -363,7 +363,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           if ( dword_A8B23C /*0x5decef*/
             && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
           {
-            g_MPCooperativeState = (ObjectClass *)-1; /*0x5decfb*/
+            g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
             *(unsigned int *)(dword_A8DA90[0] + 107) = 0; /*0x5ded15*/

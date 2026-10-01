@@ -91,12 +91,12 @@ AbstractClass * * E4Recv_690400::sub_690400()
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   vtable0 = (char *)this->AbstractClass; /*0x690429*/
   vtable1 = (char *)((unsigned int *)this)[0]; /*0x69042f*/
-  v5[0] = vtable0; /*0x690432*/
-  v6[0] = &vtable0[Rect.left]; /*0x69043d*/
-  v5[1] = vtable1; /*0x690441*/
+  v5[0] = (unsigned int)(vtable0); /*0x690432*/
+  v6[0] = (unsigned int)(&vtable0[Rect.left]); /*0x69043d*/
+  v5[1] = (unsigned int)(vtable1); /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
-  v6[1] = &vtable1[Rect.top]; /*0x69045b*/
+  v6[1] = (unsigned int)(&vtable1[Rect.top]); /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
@@ -278,7 +278,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v37 = 455; /*0x693dd4*/
       if ( Network::Send((int)unk_A8E9C0, (int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
       {
-        v13 = NetworkID::Compare((int)v39, (int)&stru_A8BB1C); /*0x693dee*/
+        v13 = (gamemd::Compare)(NetworkID::Compare((int)v39, (int)&stru_A8BB1C)); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
                     v14 = ((GameSettings *)0)->FindFlagged();

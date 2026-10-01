@@ -377,7 +377,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(aP0 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0)));
+    *a2 = (int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0))));
     (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }

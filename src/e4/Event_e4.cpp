@@ -129,7 +129,7 @@ void sub_5E95E0()
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v5 = dword_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/
-  v1 = &g_NetworkPlayerName; /*0x5e961a*/
+  v1 = (LPARAM *)(&g_NetworkPlayerName); /*0x5e961a*/
   while ( 1 ) /*0x5e961f*/
   {
     v2 = *v1; /*0x5e961f*/

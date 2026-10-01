@@ -223,7 +223,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   IDA_LOBYTE(aP5) = 0; /*0x4373cc*/
   v76[1] = v14; /*0x4373d1*/
   v62 = 0; /*0x4373d5*/
-  v15 = aP5[2]; /*0x4373d9*/
+  v15 = (int)(aP5[2]); /*0x4373d9*/
   v63 = 0; /*0x4373dc*/
   v15 = (char)(v15);
   aP2 = (gamemd::XSurface *)((char)(aP2));
@@ -238,7 +238,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v19 = (char)(aP2[2]);
   v66 = (gamemd::XSurface *)((char)(0));
   v19 = (char)(v19);
-  v20 = (int)((char)(aP2[3]));
+  v20 = (char)((int)((char)(aP2[3])));
   v64 = (void *)((char)(0));
   v20 = (char)(v20);
   v67 = (void *)((char)(0));
@@ -308,7 +308,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v34 = (int)(v17 * v15);
       if ( v17 * v15 >= v20 * v19 ) /*0x4375ee*/
         v34 = v20 * v19; /*0x4375f0*/
-      v35 = *aP6; /*0x4375fc*/
+      v35 = (int)(*aP6); /*0x4375fc*/
       if ( (unsigned char)aP5 ) /*0x4375fe*/
         aP6->Blit(v62, aP2, v34, 0, 0, 0, 1000); /*0x437616*/
       else
@@ -329,9 +329,9 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v37 = (gamemd::XSurface *)((int)((gamemd::XSurface *)((*(int (**)(int *))(*v30 + 116))(v30))));
       a4 = (int)((gamemd::XSurface *)(v37));
       if ( g_ZBufferDescriptor ) /*0x437661*/
-        v65 = *((unsigned int *)g_ZBufferDescriptor + 10); /*0x437666*/
+        v65 = (gamemd::XSurface *)(*((unsigned int *)g_ZBufferDescriptor + 10)); /*0x437666*/
       if ( g_VisibleSurfaceDescriptor ) /*0x437671*/
-        v66 = *((unsigned int *)g_VisibleSurfaceDescriptor + 10); /*0x437676*/
+        v66 = (gamemd::XSurface *)(*((unsigned int *)g_VisibleSurfaceDescriptor + 10)); /*0x437676*/
       if ( (unsigned char)aP5 ) /*0x437680*/
       {
         a4 = (int)((gamemd::XSurface *)(-v37));
@@ -423,7 +423,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
               if ( v64 >= (void *)(v68) ) /*0x437826*/
               {
                 v18 += aP8->q010; /*0x43782c*/
-                v64 = (unsigned int)(v52)- v68; /*0x437831*/
+                v64 = (void *)((unsigned int)(v52)- v68); /*0x437831*/
               }
             }
             if ( g_VisibleSurfaceDescriptor ) /*0x43783d*/

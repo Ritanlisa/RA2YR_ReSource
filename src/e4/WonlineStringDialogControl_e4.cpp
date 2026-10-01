@@ -48,7 +48,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   if ( !*a3 && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ad6d3*/
   {
     (*(void (**)(unsigned int *))(*a2 + 4))(a2); /*0x7ad6e6*/
-    *v10 = a2; /*0x7ad6e9*/
+    *v10 = (unsigned int)(a2); /*0x7ad6e9*/
     return 0; /*0x7ad6f1*/
   }
   while ( 1 ) /*0x7ad6fd*/
@@ -73,7 +73,7 @@ LABEL_17:
   }
   v9 = (char *)((unsigned int)((char *)v3[1] + (unsigned int)a2));
   (*(void (**)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ad775*/
-  *v10 = v9; /*0x7ad778*/
+  *v10 = (unsigned int)(v9); /*0x7ad778*/
   return 0; /*0x7ad6a1*/
 
 }
@@ -184,7 +184,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x7ad14e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x7ad157*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x7ad157*/
       this->m_8 = a2; /*0x7ad15f*/
       BYTE1(this->m_C) = a3 == 0; /*0x7ad162*/
       return 1; /*0x7ad168*/
@@ -290,7 +290,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x7ad281*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x7ad28a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x7ad28a*/
     this->m_8 = a2; /*0x7ad292*/
     BYTE1(this->m_C) = a3 == 0; /*0x7ad295*/
   }
@@ -461,7 +461,7 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
   }
   else if ( v8 == 4 ) /*0x7ad59c*/
   {
-    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
+    v5 = (wchar_t *)(GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195)); /*0x7ad5b4*/
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
   Current = (HWND)Dialog::GetCurrent(); /*0x7ad5e5*/

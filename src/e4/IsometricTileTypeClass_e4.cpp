@@ -81,7 +81,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
       IsometricTileTypeClass::Constructor_0((IsometricTileTypeClass *)((char *)a1 + 676), 0, 0); /*0x549ce9*/
-      *((unsigned int *)a1 + 169) = &vt_DynamicVectorClass; /*0x549cee*/
+      *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
       *(unsigned int *)a1->__pad_0 = &vt_IsometricTileTypeClass; /*0x549d02*/
@@ -247,7 +247,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x54a441*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x54a44a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x54a44a*/
     this->m_8 = a2; /*0x54a452*/
     BYTE1(this->m_C) = a3 == 0; /*0x54a455*/
   }
@@ -315,7 +315,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->IsometricTileTypeClass_field_0x08 = a2; /*0x54a85e*/
   LOBYTE(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a861*/
   BYTE1(this->IsometricTileTypeClass_field_0x0C) = 0; /*0x54a865*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x54a868*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/
@@ -323,7 +323,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       this->IsometricTileTypeClass_field_0x04 = a3; /*0x54a878*/
       return this->__pad_0; /*0x54a87e*/
     }
-    this->IsometricTileTypeClass_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x54a88d*/
+    this->IsometricTileTypeClass_field_0x04 = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x54a88d*/
     BYTE1(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a890*/
   }
   return this->__pad_0; /*0x54a87d*/

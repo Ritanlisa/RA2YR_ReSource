@@ -95,7 +95,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
-  *(unsigned int *)v4 = &vt_VectorClass; /*0x488f29*/
+  *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     __3_YAXPAX_Z(v5); /*0x488f37*/

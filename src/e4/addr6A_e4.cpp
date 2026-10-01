@@ -61,12 +61,12 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
   int v12; // [esp+0h] [ebp-8h]
   unsigned int *v14; // [esp+10h] [ebp+8h]
 
-  v3 = (int)((unsigned int *)(a3));
+  v3 = (unsigned int *)((int)((unsigned int *)(a3)));
   if ( a3 == -1 ) /*0x6a6afe*/
-    v3 = *((unsigned int *)this + 5351); /*0x6a6b00*/
+    v3 = (unsigned int *)(*((unsigned int *)this + 5351)); /*0x6a6b00*/
   v4 = (char *)this + 3988 * v3 + 5444; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
-  v14 = v4; /*0x6a6b25*/
+  v14 = (unsigned int *)(v4); /*0x6a6b25*/
   NeedsSaveOrLink = ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink; /*0x6a6b29*/
   if ( NeedsSaveOrLink ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
@@ -225,7 +225,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     {
       if ( 2 * (v6 + this->ambientSoundController[2]) >= this->customSound_controller[1] ) /*0x6a8ae2*/
         return 0; /*0x6a8aed*/
-      v8 = this; /*0x6a8af0*/
+      v8 = (gamemd::ObjectClass *)(this); /*0x6a8af0*/
     }
     v8->ambientSoundController[3] += v3; /*0x6a8afb*/
     return 1; /*0x6a8aff*/

@@ -49,10 +49,10 @@ BulletClass::BulletClass()
   *(unsigned short *)&this->__pad_144[10] = -1; /*0x46640e*/
   this->BulletClass_field_0x154 = 0; /*0x466419*/
   this->__pad_158[0] = 0; /*0x46641f*/
-  *(unsigned int *)this->__pad_0 = &vt_BulletClass; /*0x466425*/
-  this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46642b*/
-  this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466431*/
-  *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x466438*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_BulletClass); /*0x466425*/
+  this->BulletClass_field_0x4 = (unsigned int)(&vt_BulletClass); /*0x46642b*/
+  this->BulletClass_field_0x8 = (unsigned int)(&vt_BulletClass); /*0x466431*/
+  *(unsigned int *)this->__pad_C = (unsigned int)(&vt_BulletClass); /*0x466438*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
   *(unsigned int *)&this->__pad_134[4] = 0; /*0x46644a*/
@@ -69,7 +69,7 @@ BulletClass::BulletClass()
          0) )
   {
     v2 = (*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 364))++; /*0x4664a8*/
-    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v2) = this; /*0x4664b7*/
+    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v2) = (unsigned int)(this); /*0x4664b7*/
   }
   return (int)this->__pad_0; /*0x4664bc*/
 
@@ -84,10 +84,10 @@ BulletClass * * BulletClass::Dtor()
   int v3; // eax
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = &vt_BulletClass; /*0x466566*/
-  this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46656c*/
-  this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466573*/
-  *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x46657a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_BulletClass); /*0x466566*/
+  this->BulletClass_field_0x4 = (unsigned int)(&vt_BulletClass); /*0x46656c*/
+  this->BulletClass_field_0x8 = (unsigned int)(&vt_BulletClass); /*0x466573*/
+  *(unsigned int *)this->__pad_C = (unsigned int)(&vt_BulletClass); /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( this->__pad_158[0] ) /*0x466586*/
   {

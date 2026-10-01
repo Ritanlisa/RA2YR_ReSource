@@ -753,7 +753,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
-  StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 522); /*0x4e45fe*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 522)); /*0x4e45fe*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e4624*/
@@ -1176,7 +1176,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
-  StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 833); /*0x4e511b*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 833)); /*0x4e511b*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
   switch ( nIDDlgItem )

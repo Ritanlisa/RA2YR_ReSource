@@ -61,7 +61,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
           *(unsigned int *)&this->m_1[3] = 0; /*0x52518e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x525197*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x525197*/
       this->m_8 = a2; /*0x52519f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5251a2*/
       return 1; /*0x5251a8*/
@@ -120,7 +120,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x5891b7*/
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5891b7*/
       if ( v6 ) /*0x5891c1*/
       {
         v7 = v6; /*0x5891c6*/
@@ -170,7 +170,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x58924b*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x589256*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x589256*/
     *(unsigned int *)&this->__pad_5[3] = v3; /*0x58925c*/
     BYTE1(this->m_C) = a3 == 0; /*0x58925f*/
   }
@@ -236,7 +236,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
     }
     else
     {
-      v6 = __2_YAPAXI_Z(3 * a2); /*0x6284c4*/
+      v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x6284c4*/
       if ( v6 ) /*0x6284ce*/
       {
         if ( a2 - 1 >= 0 ) /*0x6284d5*/
@@ -289,7 +289,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
         *(unsigned int *)&this->m_1[3] = 0; /*0x628559*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x628564*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x628564*/
     this->m_8 = v3; /*0x62856a*/
     BYTE1(this->m_C) = a3 == 0; /*0x62856d*/
   }
@@ -323,7 +323,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   char *v16; // [esp+10h] [ebp-8h]
   int v17; // [esp+14h] [ebp-4h]
 
-  v3 = aP1; /*0x628bb7*/
+  v3 = (int)(aP1); /*0x628bb7*/
   if ( aP1 ) /*0x628bbf*/
   {
     v5 = (Byte *)a2; /*0x628bc5*/
@@ -332,7 +332,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     {
       if ( aP1 - 1 >= 0 ) /*0x628c25*/
       {
-        v8 = aP1; /*0x628c27*/
+        v8 = (int)(aP1); /*0x628c27*/
         do /*0x628c38*/
         {
           Byte::Zero(v5); /*0x628c2c*/
@@ -341,7 +341,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         }
         while ( v8 ); /*0x628c38*/
       }
-      v16 = a2; /*0x628c3e*/
+      v16 = (char *)(a2); /*0x628c3e*/
     }
     else
     {
@@ -351,7 +351,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         v7 = (Byte *)v6; /*0x628bed*/
         if ( aP1 - 1 >= 0 ) /*0x628bf1*/
         {
-          v15 = aP1; /*0x628bf4*/
+          v15 = (int)(aP1); /*0x628bf4*/
           do /*0x628c0e*/
           {
             Byte::Zero(v7); /*0x628bfa*/
@@ -374,7 +374,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     {
       m_8 = this->m_8; /*0x628c59*/
       if ( aP1 < m_8 ) /*0x628c5e*/
-        m_8 = aP1; /*0x628c60*/
+        m_8 = (int)(aP1); /*0x628c60*/
       if ( m_8 > 0 ) /*0x628c64*/
       {
         v10 = 0; /*0x628c66*/
@@ -390,7 +390,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
           --v17; /*0x628c98*/
         }
         while ( v17 ); /*0x628c9c*/
-        v3 = aP1; /*0x628c9e*/
+        v3 = (int)(aP1); /*0x628c9e*/
       }
       if ( BYTE1(this->m_C) ) /*0x628ca2*/
       {
@@ -506,7 +506,7 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x42d6be*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x42d6c7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x42d6c7*/
       this->m_8 = a2; /*0x42d6cf*/
       BYTE1(this->m_C) = a3 == 0; /*0x42d6d2*/
       return 1; /*0x42d6d8*/
@@ -612,7 +612,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x42d7f1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x42d7fa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x42d7fa*/
     this->m_8 = a2; /*0x42d802*/
     BYTE1(this->m_C) = a3 == 0; /*0x42d805*/
   }

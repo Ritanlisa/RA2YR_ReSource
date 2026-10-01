@@ -18,7 +18,7 @@ int BufferIOFile::Constructor( char * Source)
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47a9d3*/
   LOBYTE(this->m_54) = 0; /*0x47a9df*/
-  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47a9e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7E1668); /*0x47a9e3*/
   FileClass::OpenWithCDSearch((CDFileClass *)this, Source); /*0x47a9e9*/
   return this->__pad_0; /*0x47a9f0*/
 
@@ -31,7 +31,7 @@ int BufferIOFile::Init()
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa33*/
   LOBYTE(this->m_54) = 0; /*0x47aa38*/
-  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa3c*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7E1668); /*0x47aa3c*/
   return this->__pad_0; /*0x47aa44*/
 
 }

@@ -129,24 +129,24 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v3 = (unsigned int)(dword_ABF168);
   dword_ABF230 = (unsigned int)(aP0);
   dword_ABF234 = (unsigned int)(a2);
-  byte_ABF238 = (unsigned int *)(a3);
+  byte_ABF238 = (unsigned char)((unsigned int *)(a3));
   v20 = (unsigned int *)(0);
   v19 = (unsigned int)(dword_ABF168);
   do /*0x5bc24f*/
   {
-    v4 = (unsigned char *)(RA2_OPNEW(0x2738u));
+    v4 = (unsigned int)((unsigned char *)(RA2_OPNEW(0x2738u)));
     v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
-      ((unsigned int *)(v4))[2503] = (unsigned int *)(0);
-      ((unsigned int *)(v4))[2502] = v20; /*0x5bc1c6*/
+      ((unsigned int *)(v4))[2503] = (unsigned int)((unsigned int *)(0));
+      ((unsigned int *)(v4))[2502] = (unsigned int)(v20); /*0x5bc1c6*/
       ((unsigned int *)(v4))[2504] = 0; /*0x5bc1cc*/
       ((unsigned int *)(v4))[2505] = 0; /*0x5bc1d2*/
       ((unsigned int *)(v4))[2506] = 0; /*0x5bc1d8*/
       ((unsigned int *)(v4))[2507] = 80; /*0x5bc1de*/
       ((unsigned int *)(v4))[2508] = 25; /*0x5bc1e8*/
       v6 = 0; /*0x5bc1f2*/
-      v7 = v4 + 500; /*0x5bc1f4*/
+      v7 = (unsigned int *)(v4 + 500); /*0x5bc1f4*/
       do /*0x5bc219*/
       {
         v8 = &v5[v6]; /*0x5bc1fa*/
@@ -239,10 +239,10 @@ int WinMain::Constructor_VectorClass_Wstring_()
     v3 = *(unsigned int *)(*((unsigned int *)this + 421) + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      *(unsigned int *)(v3 + 420) = &vt_VectorClass; /*0x69a215*/
+      *(unsigned int *)(v3 + 420) = (unsigned int)(&vt_VectorClass); /*0x69a215*/
       VectorClass_Wstring::ddtor((_VectorClass_VWstring *)(v3 + 420)); /*0x69a21b*/
       v4 = *(void **)(v3 + 396); /*0x69a220*/
-      *(unsigned int *)(v3 + 392) = &vt_VectorClass; /*0x69a226*/
+      *(unsigned int *)(v3 + 392) = (unsigned int)(&vt_VectorClass); /*0x69a226*/
       if ( v4 && *(unsigned char *)(v3 + 405) ) /*0x69a234*/
       {
         __3_YAXPAX_Z(v4); /*0x69a23d*/

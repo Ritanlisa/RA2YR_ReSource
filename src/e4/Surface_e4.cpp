@@ -85,11 +85,11 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
   unsigned int v50; // [esp+40h] [ebp+4h]
 
   result = this->__pad_0; /*0x5d1fdc*/
-  v4 = aP1[2]; /*0x5d1fde*/
+  v4 = (int)(aP1[2]); /*0x5d1fde*/
   v37 = v4; /*0x5d1fe8*/
   if ( v4 <= 0 ) /*0x5d1fec*/
     return result; /*0x5d1fec*/
-  v39 = aP1[3]; /*0x5d1ff7*/
+  v39 = (int)(aP1[3]); /*0x5d1ff7*/
   if ( v39 <= 0 ) /*0x5d1ffb*/
     return result; /*0x5d1ffb*/
   Width = this->Width; /*0x5d2001*/
@@ -109,10 +109,10 @@ LABEL_18:
       v35 = 0; /*0x5d2181*/
       if ( Width > 0 ) /*0x5d2185*/
       {
-        v23 = *aP1; /*0x5d218b*/
-        v42 = *aP1; /*0x5d2191*/
+        v23 = (int)(*aP1); /*0x5d218b*/
+        v42 = (int)(*aP1); /*0x5d2191*/
         v43 = *aP1 + v37; /*0x5d219b*/
-        v38 = aP1[1]; /*0x5d21a3*/
+        v38 = (int)(aP1[1]); /*0x5d21a3*/
         v40 = v39 + v38; /*0x5d21a9*/
         LockCount = (int *)this->LockCount; /*0x5d21b1*/
         while ( 1 ) /*0x5d21c0*/
@@ -159,16 +159,16 @@ LABEL_18:
     else
     {
       v11 = (int *)(result[3] + 16 * Width); /*0x5d208a*/
-      *v11 = *aP1; /*0x5d208d*/
-      v11[1] = aP1[1]; /*0x5d2093*/
-      v11[2] = aP1[2]; /*0x5d2099*/
-      v11[3] = aP1[3]; /*0x5d20a0*/
+      *v11 = (int)(*aP1); /*0x5d208d*/
+      v11[1] = (int)(aP1[1]); /*0x5d2093*/
+      v11[2] = (int)(aP1[2]); /*0x5d2099*/
+      v11[3] = (int)(aP1[3]); /*0x5d20a0*/
       ++result[1]; /*0x5d20a8*/
     }
     return result; /*0x5d20af*/
   }
-  v6 = *aP1; /*0x5d2010*/
-  v7 = aP1[1]; /*0x5d2012*/
+  v6 = (int)(*aP1); /*0x5d2010*/
+  v7 = (int)(aP1[1]); /*0x5d2012*/
   v8 = (int *)result[3]; /*0x5d2015*/
   while ( 1 ) /*0x5d2020*/
   {
@@ -225,7 +225,7 @@ LABEL_16:
   if ( (int)v49 <= v16 ) /*0x5d20fe*/
     v47 = (unsigned int *)(v16 - v13); /*0x5d210a*/
   else
-    v47 = (int *)((char *)v49 - v13); /*0x5d2102*/
+    v47 = (unsigned int *)((int *)((char *)v49 - v13)); /*0x5d2102*/
   v17 = v34; /*0x5d2116*/
   this->Width = v41 - 1; /*0x5d211d*/
   if ( v34 < v41 - 1 ) /*0x5d2120*/
@@ -269,11 +269,11 @@ void sub_626C60()
 
   if ( g_FileExtensionState ) /*0x626c68*/
     return *(unsigned int *)(*((unsigned int *)g_FileExtensionState + 1) + 16); /*0x626d93*/
-  v0 = RA2_OPNEW(0x10u); /*0x626c70*/
+  v0 = (unsigned int *)(RA2_OPNEW(0x10u)); /*0x626c70*/
   v1 = v0; /*0x626c75*/
   if ( v0 ) /*0x626c7c*/
   {
-    *v0 = (unsigned int *)(-1);
+    *v0 = (unsigned int)((unsigned int *)(-1));
     v2 = (unsigned int *)(RA2_OPNEW(0x18u));
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
@@ -285,9 +285,9 @@ void sub_626C60()
     }
     else
     {
-      v3 = (unsigned int)(0);
+      v3 = (unsigned int *)((unsigned int)(0));
     }
-    v1[1] = (unsigned int *)(v3);
+    v1[1] = (unsigned int)((unsigned int *)(v3));
     v4 = (unsigned int *)(RA2_OPNEW(0x18u));
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
@@ -299,16 +299,16 @@ void sub_626C60()
     }
     else
     {
-      v5 = (unsigned int)(0);
+      v5 = (unsigned int *)((unsigned int)(0));
     }
-    v1[2] = (unsigned int *)(v5);
+    v1[2] = (unsigned int)((unsigned int *)(v5));
     v6 = (unsigned int *)(RA2_OPNEW(0x10u));
     v7 = v6; /*0x626cff*/
     if ( v6 ) /*0x626d06*/
     {
       v6[1] = (unsigned int *)(HashStringMod31);
-      v6[2] = (unsigned int *)(31);
-      v6[3] = (unsigned int *)(10);
+      v6[2] = (unsigned int)((unsigned int *)(31));
+      v6[3] = (unsigned int)((unsigned int *)(10));
       v8 = (unsigned int *)(RA2_OPNEW(0x2ECu));
       if ( v8 ) /*0x626d28*/
       {

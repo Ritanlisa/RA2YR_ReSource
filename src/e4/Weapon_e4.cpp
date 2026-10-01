@@ -82,7 +82,7 @@ void Weapon_Update(void * a1, void * a2)
         IDA_LODWORD(updated) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
         v6 = updated | ((unsigned int)(a2)<< g_BitShift_Blue); /*0x659d40*/
         IDA_LOWORD(updated) = (uint8_t)(*(unsigned char *)(v3 + 192) >> g_BitShift_Green_0); /*0x659d45*/
-        a2 = ((unsigned int)updated << g_BitShift_Red) | v6; /*0x659d55*/
+        a2 = (void *)(((unsigned int)updated << g_BitShift_Red) | v6); /*0x659d55*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)(v3 + 156), v15); /*0x659d57*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)(v3 + 168), v14); /*0x659d68*/
         v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/

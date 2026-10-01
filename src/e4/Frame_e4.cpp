@@ -138,11 +138,11 @@ LABEL_18:
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (unsigned int)((void *)((LONG)(*(unsigned int *)(a8))));
+          v20 = (void *)((unsigned int)((void *)((LONG)(*(unsigned int *)(a8)))));
           v21 = (LONG)((int)(a8[1]));
           v22 = (LONG)((void *)(a8[2]));
           Rect.right = (void *)(a8[3]);
-          v49 = (void *)(v20);
+          v49 = (unsigned int)((void *)(v20));
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
@@ -150,20 +150,20 @@ LABEL_18:
              || ((unsigned int *)(g_TacticalClass_Instance))[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
           {
             v51 = (void *)((int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1))));
-            v23 = (int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1)));
+            v23 = (void *)((int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1))));
             v24 = (LPPERSISTSTREAM)((void *)((double)v51));
             v25 = (LPPERSISTSTREAM)((void *)(g_TacticalClass_Instance));
-            *(unsigned int *)v38 = v23; /*0x4f4959*/
+            *(unsigned int *)v38 = (unsigned int)(v23); /*0x4f4959*/
             v42 = v24 / *(double *)&((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/
             v27 = (double)*(int *)v38; /*0x4f4978*/
-            v20 = v26; /*0x4f497c*/
+            v20 = (void *)(v26); /*0x4f497c*/
             *(double *)v38 = v27 / *(double *)&v25[48].__tail_0; /*0x4f4986*/
             v21 = Math::RoundToInt((v27 - *(double *)v38) * 0.5); /*0x4f499d*/
             v28 = Math::RoundToInt(v42); /*0x4f49a8*/
             v29 = Math::RoundToInt(*(double *)v38); /*0x4f49aa*/
             v13 = dword_87F7F0; /*0x4f49af*/
-            v49 = v20; /*0x4f49b5*/
+            v49 = (unsigned int)(v20); /*0x4f49b5*/
             Rect.left = v21; /*0x4f49b9*/
             Rect.top = v28; /*0x4f49bd*/
             Rect.right = v29; /*0x4f49c1*/

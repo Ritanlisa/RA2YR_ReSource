@@ -60,10 +60,10 @@ int WaveClass::LoadWaveData(int a2, int a3)
       *(unsigned int *)(v4 + 424) = 0; /*0x75f68c*/
       FrameSnapshot::Init((FrameSnapshot *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((WaveClass *)(v4 + 496), 0, 0); /*0x75f69f*/
-      *(unsigned int *)v4 = &vt_WaveClass; /*0x75f6a4*/
-      *(unsigned int *)(v4 + 4) = &vt_WaveClass; /*0x75f6aa*/
-      *(unsigned int *)(v4 + 8) = &vt_WaveClass; /*0x75f6b1*/
-      *(unsigned int *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
+      *(unsigned int *)v4 = (unsigned int)(&vt_WaveClass); /*0x75f6a4*/
+      *(unsigned int *)(v4 + 4) = (unsigned int)(&vt_WaveClass); /*0x75f6aa*/
+      *(unsigned int *)(v4 + 8) = (unsigned int)(&vt_WaveClass); /*0x75f6b1*/
+      *(unsigned int *)(v4 + 12) = (unsigned int)(&off_7F6BC8); /*0x75f6b8*/
     }
     *(unsigned int *)(v4 + 332) = *(unsigned int *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
@@ -125,11 +125,11 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->ObjectClass = (gamemd::WaveClass *)(&vt_WaveClass);
-  ((unsigned int *)Block)[0] = &vt_WaveClass; /*0x76320c*/
-  ((unsigned int *)Block)[0] = &vt_WaveClass; /*0x763213*/
-  ((unsigned int *)Block)[0] = &off_7F6BC8; /*0x76321a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x76320c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x763213*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&off_7F6BC8); /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763221*/
-  v6 = Block; /*0x763236*/
+  v6 = (gamemd::WaveClass *)(Block); /*0x763236*/
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
@@ -143,7 +143,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   }
   (*(void (**)(char *))(*((unsigned int *)Block + 124) + 12))((char *)Block + 496); /*0x76327e*/
   v4 = (void *)*((unsigned int *)Block + 125); /*0x763281*/
-  *((unsigned int *)Block + 124) = &vt_VectorClass; /*0x763284*/
+  *((unsigned int *)Block + 124) = (unsigned int)(&vt_VectorClass); /*0x763284*/
   if ( v4 && *((unsigned char *)Block + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/
@@ -198,7 +198,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       v9 = (unsigned int *)*((unsigned int *)v6 + 57); /*0x75f3df*/
     for ( ; v9; v9 = (unsigned int *)v9[12] ) /*0x75f3e7*/
     {
-      v10 = this->Owner; /*0x75f3e9*/
+      v10 = (unsigned int *)(this->Owner); /*0x75f3e9*/
       if ( v9 != v10 && *((unsigned char *)v9 + 144) && *((unsigned char *)v9 + 116) && !*((unsigned char *)v9 + 129) && (int)v9[27] > 0 ) /*0x75f413*/
         (*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/
           v9,
@@ -216,7 +216,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       v12 = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v11); /*0x75f447*/
       if ( *(unsigned char *)(v12 + 689) ) /*0x75f44a*/
       {
-        aP1 = (unsigned int *)*((unsigned int *)v6 + 9); /*0x75f45b*/
+        aP1 = (gamemd::ObjectClass *)((unsigned int *)*((unsigned int *)v6 + 9)); /*0x75f45b*/
         CellChainReact(v16); /*0x75f45f*/
       }
       if ( *(unsigned char *)(v12 + 680) ) /*0x75f464*/

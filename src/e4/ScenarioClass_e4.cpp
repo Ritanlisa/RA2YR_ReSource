@@ -305,7 +305,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       }
     }
   }
-  *(unsigned int *)v5 = &vt_VectorClass; /*0x5d6c45*/
+  *(unsigned int *)v5 = (unsigned int)(&vt_VectorClass); /*0x5d6c45*/
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -403,7 +403,7 @@ TimerStruct * * ScenarioClass::Constructor()
   }
   while ( v8 < 50 ); /*0x683502*/
   v10 = 0; /*0x683504*/
-  v11 = (char *)&this->localVariables[9] + 2; /*0x683506*/
+  v11 = (unsigned char *)((char *)&this->localVariables[9] + 2); /*0x683506*/
   do /*0x68352f*/
   {
     *(v11 - 40) = 0; /*0x68350f*/
@@ -449,7 +449,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   int v22; // [esp+D8h] [ebp-24h]
   CHAR v23[28]; // [esp+E0h] [ebp-1Ch] BYREF
 
-  v4 = Source; /*0x683ab8*/
+  v4 = (char *)(Source); /*0x683ab8*/
   if ( (!Source || !strlen(Source)) && a4 != -1 ) /*0x683ade*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 377)) == 1 ) /*0x683ae7*/

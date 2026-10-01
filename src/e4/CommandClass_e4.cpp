@@ -171,7 +171,7 @@ int CommandClass::BuildBar()
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
-    v30 = &stru_B0C1C0 + 8 * v29; /*0x6d1456*/
+    v30 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v29); /*0x6d1456*/
   PushCommandClass::Execute(v30, (int)aTipPlanningmod); /*0x6d1465*/
   FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
   PushCommandClass::Execute(FontClassEntry, (int)aTipStop); /*0x6d147c*/
@@ -221,7 +221,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       return result; /*0x7245ca*/
     }
   }
-  result = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
+  result = (int)(__2_YAPAXI_Z(0x1Cu)); /*0x7245cf*/
   v6 = (unsigned int *)result; /*0x7245d4*/
   if ( result ) /*0x7245db*/
   {
@@ -241,13 +241,13 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       v9 = (unsigned int)(*((char *)this + 145));
       v10 = (unsigned int)(*((char *)this + 142));
       *((char *)this + 145) = v9 + 1; /*0x724655*/
-      *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
+      *(unsigned int *)(v10 + 4 * v9) = (unsigned int)(v6); /*0x724658*/
       result = v4[2]; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
 LABEL_19:
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
-        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
+        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = (unsigned int)(v6); /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
         *((unsigned char *)v4 + 12) = 0; /*0x72470c*/
         v4[1] = result; /*0x724710*/
@@ -276,7 +276,7 @@ LABEL_19:
           *(unsigned int *)(v12 + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
         __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
-        v15 = aP1 + v4[2]; /*0x7246e6*/
+        v15 = (int)(aP1 + v4[2]); /*0x7246e6*/
         *v4 = v12; /*0x7246e8*/
         v4[2] = v15; /*0x7246ea*/
         v4[4] = 0; /*0x7246ed*/

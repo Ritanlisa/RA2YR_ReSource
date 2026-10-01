@@ -441,7 +441,7 @@ int LoadGame::LoadPointArray(int a2)
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
       LoadGame_field_0x14 = v12->LoadGame_field_0x14; /*0x54e828*/
-      p_LoadGame_field_0x0C = &v12->LoadGame_field_0x0C; /*0x54e82b*/
+      p_LoadGame_field_0x0C = (int *)(&v12->LoadGame_field_0x0C); /*0x54e82b*/
       if ( v12->LoadGame_field_0x1C >= LoadGame_field_0x14 ) /*0x54e833*/
       {
         if ( !BYTE1(v12->LoadGame_field_0x18) && LoadGame_field_0x14 ) /*0x54e83e*/
@@ -459,7 +459,7 @@ int LoadGame::LoadPointArray(int a2)
       v8 = (unsigned int)(p_LoadGame_field_0x0C[4]);
       v9 = (unsigned int)(p_LoadGame_field_0x0C[1]);
       p_LoadGame_field_0x0C[4] = (unsigned int)(v8 + 1);
-      *(unsigned int *)(v9 + 4 * v8) = v4; /*0x54e863*/
+      *(unsigned int *)(v9 + 4 * v8) = (unsigned int)(v4); /*0x54e863*/
       ++v13; /*0x54e871*/
     }
   }

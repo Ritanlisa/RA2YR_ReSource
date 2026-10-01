@@ -120,7 +120,7 @@ void Lobby::UpdatePlayerLabels()
   int v37; // [esp+8h] [ebp-Ch]
   int64_t v38; // [esp+Ch] [ebp-8h] BYREF
 
-  HIDWORD(v38) = this; /*0x5eb063*/
+  HIDWORD(v38) = (unsigned int)(this); /*0x5eb063*/
   if ( dword_A8B23C /*0x5eb07a*/
     && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
     || (v33 = 1, this->Network::IsMultiplayerActive()) )
@@ -280,7 +280,7 @@ LABEL_26:
     {
       if ( v9 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5eb344*/
         goto LABEL_79; /*0x5eb344*/
-      StringCSF = GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5448); /*0x5eb357*/
+      StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5448)); /*0x5eb357*/
     }
     v10 = StringCSF; /*0x5eb35c*/
 LABEL_79:
@@ -293,7 +293,7 @@ LABEL_79:
       v10 = (wchar_t *)(GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455));
     }
     WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
-    v12 = CharToWideString(unk_A8B380); /*0x5eb3a9*/
+    v12 = (char *)(CharToWideString(unk_A8B380)); /*0x5eb3a9*/
     if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5eb3b4*/
     {
       if ( v9 /*0x5eb3fe*/
@@ -363,10 +363,10 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare
           v25 = (wchar_t *)(GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5504));
           v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
           SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
-          v27 = GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5510); /*0x5eb5a3*/
+          v27 = (wchar_t *)(GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5510)); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
           SendMessageA(DlgItem, 0x151u, v28, g_Lobby_PlayerSide); /*0x5eb5c1*/
-          v29 = GetStringCSF(g_Str_GUI_AIHard, 0, g_Str_File_netshare_cpp, 5516); /*0x5eb5d4*/
+          v29 = (wchar_t *)(GetStringCSF(g_Str_GUI_AIHard, 0, g_Str_File_netshare_cpp, 5516)); /*0x5eb5d4*/
           v30 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v29); /*0x5eb5e2*/
           SendMessageA(DlgItem, 0x151u, v30, g_Lobby_PlayerColor); /*0x5eb5f2*/
         }

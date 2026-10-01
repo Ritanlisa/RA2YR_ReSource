@@ -217,7 +217,7 @@ LoadOptions * LoadOptions::QueryInterface(char * Block, char a2)
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)Block + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(LoadOptionsClass *))(*((unsigned int *)Block + 8) + 12))(Block + 2); /*0x55a102*/
   v4 = (void *)*((unsigned int *)Block + 9); /*0x55a105*/
-  *((unsigned int *)Block + 8) = &vt_VectorClass; /*0x55a108*/
+  *((unsigned int *)Block + 8) = (unsigned int)(&vt_VectorClass); /*0x55a108*/
   if ( v4 && *((unsigned char *)Block + 45) ) /*0x55a112*/
   {
     __3_YAXPAX_Z(v4); /*0x55a11a*/
@@ -319,7 +319,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x55a3a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x55a3aa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x55a3aa*/
     this->m_8 = a2; /*0x55a3b2*/
     BYTE1(this->m_C) = a3 == 0; /*0x55a3b5*/
   }

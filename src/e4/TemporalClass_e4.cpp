@@ -47,9 +47,9 @@ void TemporalClass::Constructor()
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
   this->AbstractClass = &vt_TemporalClass; /*0x71a467*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a46d*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a474*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a47b*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a46d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a474*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a47b*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) /*0x71a4b7*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[5])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
@@ -59,7 +59,7 @@ void TemporalClass::Constructor()
          0) )
   {
     v3 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))++; /*0x71a4c4*/
-    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v3) = this; /*0x71a4d3*/
+    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v3) = (unsigned int)(this); /*0x71a4d3*/
   }
   return (int)this; /*0x71a4d8*/
 
@@ -167,7 +167,7 @@ void ** TemporalClass::ProcessTimeWarp()
   }
   else
   {
-    creationFrame = this->creationFrame; /*0x71a79d*/
+    creationFrame = (int)(this->creationFrame); /*0x71a79d*/
     if ( !creationFrame ) /*0x71a7a2*/
       goto LABEL_10; /*0x71a7a2*/
     if ( !*(unsigned char *)(creationFrame + 130) ) /*0x71a7a8*/
@@ -197,7 +197,7 @@ LABEL_10:
       WarpPerStep = 0; /*0x71a851*/
       if ( v14 ) /*0x71a855*/
         WarpPerStep = TemporalClass::GetWarpPerStep(v14, 1); /*0x71a85e*/
-      v16 = this->creationFrame; /*0x71a860*/
+      v16 = (int)(this->creationFrame); /*0x71a860*/
       v17 = *(unsigned int *)v16; /*0x71a864*/
       v18 = (*(int (**)(int, unsigned int))(*(unsigned int *)v16 + 740))(v16, 0); /*0x71a866*/
       v19 = (*(int (**)(int, int))(v17 + 1016))(this->creationFrame, v18); /*0x71a870*/
@@ -205,7 +205,7 @@ LABEL_10:
       v21 = *(unsigned int *)(*(unsigned int *)v19 + 164); /*0x71a87b*/
       *((unsigned int *)this + 19) = v21; /*0x71a881*/
       result = (void **)(v20 - (WarpPerStep + v21)); /*0x71a888*/
-      *((unsigned int *)this + 18) = result; /*0x71a88a*/
+      *((unsigned int *)this + 18) = (unsigned int)(result); /*0x71a88a*/
       if ( (int)result <= 0 )
       {
         if ( *(unsigned int *)this->__pad_28 ) /*0x71a895*/
@@ -230,7 +230,7 @@ LABEL_10:
         }
         else
         {
-          v22 = this->creationFrame; /*0x71a89a*/
+          v22 = (int)(this->creationFrame); /*0x71a89a*/
           *(unsigned int *)this->__pad_28 = 0; /*0x71a89d*/
           *((unsigned int *)this + 17) = 0; /*0x71a8a2*/
           *((unsigned int *)this + 16) = 0; /*0x71a8a5*/
@@ -322,11 +322,11 @@ LABEL_10:
               this->creationFrame);
             result = (void **)(*(int (**)(unsigned int))(**(unsigned int **)this->__pad_28 + 248))(*(unsigned int *)this->__pad_28); /*0x71aacf*/
           }
-          v38 = this->creationFrame; /*0x71aad5*/
+          v38 = (int)(this->creationFrame); /*0x71aad5*/
           if ( v38 ) /*0x71aada*/
             result = (void **)(*(int (**)(int, unsigned int, int))(*(unsigned int *)v38 + 1156))(v38, 0, 1); /*0x71aae1*/
         }
-        v39 = this->creationFrame; /*0x71aae7*/
+        v39 = (int)(this->creationFrame); /*0x71aae7*/
         *(unsigned int *)this->__pad_28 = 0; /*0x71aaea*/
         *((unsigned int *)this + 17) = 0; /*0x71aaef*/
         *((unsigned int *)this + 16) = 0; /*0x71aaf2*/
@@ -358,7 +358,7 @@ void TemporalClass::GetWarpPerStep( int a2)
   v4 = (TemporalClass *)*((unsigned int *)this + 17); /*0x71ab17*/
   if ( v4 && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(v4, a2 + 1); /*0x71ab2e*/
-  creationFrame = this->creationFrame; /*0x71ab30*/
+  creationFrame = (int)(this->creationFrame); /*0x71ab30*/
   v6 = *(unsigned int *)creationFrame; /*0x71ab35*/
   v7 = (*(int (**)(int, unsigned int))(*(unsigned int *)creationFrame + 740))(creationFrame, 0); /*0x71ab37*/
   v8 = *(unsigned int *)(*(unsigned int *)(*(int (**)(int, int))(v6 + 1016))(this->creationFrame, v7) + 164); /*0x71ab4a*/

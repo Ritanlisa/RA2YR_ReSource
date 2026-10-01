@@ -41,7 +41,7 @@ HWND E4Recv_696AE0::sub_696AE0()
         v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (HWND)((char *)__2_YAPAXI_Z(0x29u));
+          v8 = (char *)((HWND)((char *)__2_YAPAXI_Z(0x29u)));
           strcpy(v8, p_vtable2); /*0x696ba2*/
           result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = result; /*0x696bb3*/
@@ -56,7 +56,7 @@ HWND E4Recv_696AE0::sub_696AE0()
                  0) )
           {
             v7 = (unsigned int)(dword_A8DB5C++);
-            *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            *(unsigned int *)(dword_A8DB50 + 4 * v7) = (unsigned int)(v8); /*0x696c11*/
           }
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/

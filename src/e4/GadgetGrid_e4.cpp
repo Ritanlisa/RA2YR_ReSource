@@ -87,7 +87,7 @@ int GadgetGrid::RemoveItem(int a2)
   v13 = (gamemd::GadgetGrid *)((int16_t)((gamemd::GadgetGrid *)(HIWORD(v3))));
   (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
   if ( ((unsigned int)(v3)& 0x8000u) == 0 ) /*0x413604*/
-    v3 = (int16_t)v3; /*0x41360a*/
+    v3 = (gamemd::GadgetGrid *)((int16_t)v3); /*0x41360a*/
   else
     v3 = 0; /*0x413606*/
   if ( v13 >= 0 ) /*0x413616*/
@@ -102,7 +102,7 @@ int GadgetGrid::RemoveItem(int a2)
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
   v8 = *(unsigned int *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
-  v9 = (unsigned int *)this + 60 * v7 + 3 * v6; /*0x413683*/
+  v9 = (gamemd::GadgetGrid *)((unsigned int *)this + 60 * v7 + 3 * v6); /*0x413683*/
   result = (*(int (**)(GadgetGrid *, int *))(v8 + 16))(v9, &a2); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {

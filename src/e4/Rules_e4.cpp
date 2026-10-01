@@ -172,7 +172,7 @@ LABEL_8:
     *((unsigned int *)this + 5) = aP1[5]; /*0x67a5ea*/
     return this->__pad_0; /*0x67a5ed*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
+  v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a593*/
   *(unsigned int *)&this->m_1[3] = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/

@@ -72,7 +72,7 @@ void* BuildingClass::LoadFromStream()
   int v34; // [esp+64h] [ebp+8h] BYREF
 
   v1 = v33; /*0x453e25*/
-  p_vtable1 = &((unsigned int *)v33)[0]; /*0x453e2c*/
+  p_vtable1 = (void **)(&((unsigned int *)v33)[0]); /*0x453e2c*/
   v33 = (BuildingClass *)(*((int (**)(void **))((unsigned int *)v33)[0] + 4))(&((unsigned int *)v33)[0]); /*0x453e3d*/
   v3 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
@@ -90,7 +90,7 @@ void* BuildingClass::LoadFromStream()
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
-      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = i - 1; /*0x453e8d*/
+      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = (unsigned int)(i - 1); /*0x453e8d*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x453e92*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = 0; /*0x453ea3*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x453ea7*/
@@ -155,7 +155,7 @@ LABEL_36:
                 ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Audio7[4] + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
-            Anims = v1->Anims; /*0x45411c*/
+            Anims = (int *)(v1->Anims); /*0x45411c*/
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
@@ -163,7 +163,7 @@ LABEL_36:
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
-            Upgrades = v1->Upgrades; /*0x454138*/
+            Upgrades = (int *)(v1->Upgrades); /*0x454138*/
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
@@ -171,7 +171,7 @@ LABEL_36:
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
-            DamageFireAnims = v1->DamageFireAnims; /*0x454154*/
+            DamageFireAnims = (int *)(v1->DamageFireAnims); /*0x454154*/
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
@@ -201,7 +201,7 @@ LABEL_36:
                 v23 = v1->Audio8[2]; /*0x4540df*/
                 v24 = v1->Audio7[4]; /*0x4540e2*/
                 v1->Audio8[2] = v23 + 1; /*0x4540e8*/
-                *(unsigned int *)(v24 + 4 * v23) = v33; /*0x4540ef*/
+                *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v33); /*0x4540ef*/
               }
               v19 = v34; /*0x4540f2*/
               if ( ++v20 >= v34 ) /*0x4540f9*/
@@ -217,7 +217,7 @@ LABEL_36:
           result = (*(int (**)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
-          FiringOccupantIndex = v1->FiringOccupantIndex; /*0x453ff8*/
+          FiringOccupantIndex = (int)(v1->FiringOccupantIndex); /*0x453ff8*/
           if ( v1->Audio7[1] < FiringOccupantIndex /*0x454029*/
             || (BYTE1(v1->Audio7[0]) || !FiringOccupantIndex)
             && (v15 = v1->Audio7[2], v15 > 0)
@@ -229,7 +229,7 @@ LABEL_36:
             v16 = v1->Audio7[1]; /*0x454030*/
             v17 = v1->Occupants[0]; /*0x454033*/
             v1->Audio7[1] = v16 + 1; /*0x454039*/
-            *(unsigned int *)(v17 + 4 * v16) = v33; /*0x454040*/
+            *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v33); /*0x454040*/
           }
           v13 = v34; /*0x454043*/
           if ( ++v4 >= v34 ) /*0x45404a*/
@@ -479,7 +479,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   {
     *(unsigned int *)(aP0 + 1300) = 0; /*0x70bf79*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
-    v3 = aP0 + 772; /*0x70bf84*/
+    v3 = (int)(aP0 + 772); /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {

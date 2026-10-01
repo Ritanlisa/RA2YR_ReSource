@@ -43,7 +43,7 @@ void sub_786EF0()
       {
         case -2147221390: /*0x786f78*/
           v3 = dword_B77E50; /*0x786f99*/
-          v2 = aHttpApiregiste_1; /*0x786f9a*/
+          v2 = (const unsigned int)(aHttpApiregiste_1); /*0x786f9a*/
           goto LABEL_16; /*0x786f9f*/
         case -2147221388: /*0x786f78*/
           sprintf(Buffer, "http://apiregister.westwood.com/support/disabled_%d.html", dword_B77E50); /*0x786fac*/
@@ -87,7 +87,7 @@ char sub_72BCA0()
   if ( !byte_B0FD45 ) /*0x72bca7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
-      dword_B0FA98 = LoadFileSHP(off_844DB4, (bool *)&byte_B0FD44); /*0x72bcc5*/
+      dword_B0FA98 = (unsigned int)(LoadFileSHP(off_844DB4, (bool *)&byte_B0FD44)); /*0x72bcc5*/
     result = LoadPaletteSimple(off_844DB8, &dword_B0FD48, &dword_B0FD4C); /*0x72bcda*/
     byte_B0FD45 = 1; /*0x72bcdf*/
   }
@@ -141,7 +141,7 @@ char sub_72C600()
   if ( !byte_B0FD09 ) /*0x72c607*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
-      dword_B0FB0C = LoadFileSHP(off_844D8C, (bool *)&byte_B0FD08); /*0x72c625*/
+      dword_B0FB0C = (unsigned int)(LoadFileSHP(off_844D8C, (bool *)&byte_B0FD08)); /*0x72c625*/
     result = LoadPaletteSimple(off_844D90, &dword_B0FD0C, &dword_B0FD10); /*0x72c63a*/
     byte_B0FD09 = 1; /*0x72c63f*/
   }
@@ -221,7 +221,7 @@ int sub_786390(void * a1)
   g_NetworkRematchState = Data[0] + 10496; /*0x786475*/
   ResetSystemWOL(a1); /*0x78647a*/
   IDA_LOBYTE(stru_B77D80.HashTable_field_0x40) = 1; /*0x786485*/
-  v2 = &Handles; /*0x78648c*/
+  v2 = (HANDLE *)(&Handles); /*0x78648c*/
   do /*0x7864a6*/
     *v2++ = CreateEventA(0, 0, 0, 0); /*0x78649b*/
   while ( (int)v2 < (int)g_WOL_RequestObject ); /*0x7864a6*/

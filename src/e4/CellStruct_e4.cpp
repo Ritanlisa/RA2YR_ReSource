@@ -16,8 +16,8 @@ void* CellStruct::Add(void* aP1,  void* aP2)
 
   v3 = (short)(LOWORD((unsigned int)(this-)>field_0) + *(unsigned int *)(aP2));
   HIWORD(v5) = HIWORD(this->field_0) + aP2[1]; /*0x42d522*/
-  LOWORD(v5) = v3; /*0x42d52b*/
-  *(unsigned int *)(aP1) = v5; /*0x42d534*/
+  LOWORD(v5) = (unsigned short)(v3); /*0x42d52b*/
+  *(unsigned int *)(aP1) = (unsigned int)(v5); /*0x42d534*/
   return aP1; /*0x42d536*/
 
 }
@@ -30,9 +30,9 @@ unsigned int * CellStruct::Copy(void* aP1)
   unsigned int * v3;
   void *v4; // ecx
 
-  v3 = (int)((unsigned int *)(this->field_0));
+  v3 = (unsigned int *)((int)((unsigned int *)(this->field_0)));
   v4 = (unsigned int *)(this->field_4);
-  *(unsigned int *)(aP1) = v3; /*0x437f39*/
+  *(unsigned int *)(aP1) = (unsigned int)(v3); /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
   return aP1; /*0x437f3e*/
 
@@ -60,7 +60,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
   v4 = (unsigned int)(HIWORD(this->field_0) - aP2[1]);
   LOWORD(v6) = v3 - *(unsigned int *)(aP2); /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
-  *(unsigned int *)(aP1) = v6; /*0x588c84*/
+  *(unsigned int *)(aP1) = (unsigned int)(v6); /*0x588c84*/
   return aP1; /*0x588c86*/
 
 }

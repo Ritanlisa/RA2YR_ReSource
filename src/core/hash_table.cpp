@@ -44,7 +44,7 @@ int Hash::InsertOrdered(void* table, const void* entry)
   }
   else
   {
-    *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] = entry; /*0x4f443c*/
+    *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] = (unsigned int)(entry); /*0x4f443c*/
     return 1; /*0x4f4442*/
   }
   return result; /*0x4f4421*/
@@ -198,7 +198,7 @@ void SHA1::Transform(void * a1, void * a2)
   v14 = v32[3]; /*0x69dbc0*/
   v15 = v32[0]; /*0x69dbc4*/
   v31 = 0; /*0x69dbcc*/
-  v29 = v33; /*0x69dbd0*/
+  v29 = (unsigned int *)(v33); /*0x69dbd0*/
   do
   {
     if ( v11 >= 20 ) /*0x69dbd7*/

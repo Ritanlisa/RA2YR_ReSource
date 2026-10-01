@@ -50,7 +50,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int16_t v16[4]; // [esp+10h] [ebp-Ch] BYREF
   int v17; // [esp+18h] [ebp-4h] BYREF
 
-  *(unsigned int *)v16 = aP0; /*0x4d1684*/
+  *(unsigned int *)v16 = (unsigned int)(aP0); /*0x4d1684*/
   v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
   {
@@ -250,7 +250,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   v2 = (int)((LPVOID)(*((unsigned int *)this + 413)));
   if ( v2 ) /*0x4db8af*/
     (*(void (**)(unsigned int))(*(unsigned int *)v2 + 4))(*((unsigned int *)this + 413)); /*0x4db8b4*/
-  ppv = (unsigned int)(0);
+  ppv = (LPVOID)((unsigned int)(0));
   InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x4db8da*/
     WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
@@ -271,7 +271,7 @@ LABEL_13:
   result = (int)ppv; /*0x4db952*/
   if ( v5 != ppv ) /*0x4db958*/
   {
-    *((unsigned int *)this + 413) = ppv; /*0x4db95c*/
+    *((unsigned int *)this + 413) = (unsigned int)(ppv); /*0x4db95c*/
     if ( result ) /*0x4db962*/
     {
       (*(void (**)(int))(*(unsigned int *)result + 4))(result); /*0x4db967*/
@@ -735,7 +735,7 @@ void E4Recv_4DF280::sub_4DF280()
     LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
     HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
     *(unsigned int *)v5 = v4; /*0x4df2d1*/
-    *((unsigned int *)this + 370) = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5); /*0x4df2da*/
+    *((unsigned int *)this + 370) = (unsigned int)(CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5)); /*0x4df2da*/
   }
   else
   {

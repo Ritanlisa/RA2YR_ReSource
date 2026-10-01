@@ -150,12 +150,12 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   int v47; // [esp+34h] [ebp-10h]
   char v48[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  v8 = (unsigned int *)(a2);
+  v8 = (unsigned char *)((unsigned int *)(a2));
   LOWORD(v41) = a4 / 256; /*0x4cc382*/
   HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
-  v10 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v43); /*0x4cc3b6*/
+  v10 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v43)); /*0x4cc3b6*/
   v42 = v10; /*0x4cc3bc*/
   if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
   {

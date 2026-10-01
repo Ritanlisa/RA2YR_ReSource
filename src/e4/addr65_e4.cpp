@@ -131,14 +131,14 @@ int Trigger_AllocateLog(int a1)
     }
     while ( (int)v12 < (int)&DataGlobal_8A03E8 );
     if ( !*(unsigned int *)(v3 + 820) )
-      *(unsigned int *)(v3 + 820) = operator new(*(unsigned int *)(v3 + 824));
+      *(unsigned int *)(v3 + 820) = (unsigned int)(operator new(*(unsigned int *)(v3 + 824)));
     int v14 = 40 * v10 + 104 * v11;
     if ( (unsigned int)(v14 + 1024) > *(unsigned int *)(v3 + 824) )
     {
       RA2_OPDEL(*(void **)(v3 + 820));
       *(unsigned int *)(v3 + 824) = (v14 + 0xFFFF) & 0xFFFF0000;
       ((Debug *)0)->Log();
-      *(unsigned int *)(v3 + 820) = operator new(*(unsigned int *)(v3 + 824));
+      *(unsigned int *)(v3 + 820) = (unsigned int)(operator new(*(unsigned int *)(v3 + 824)));
     }
     int v15 = *(unsigned int *)(v3 + 820);
     int v78 = 0;
@@ -671,7 +671,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
         }
         while ( v45 ); /*0x65428b*/
         swprintf(&Buffer[2], (const size_t)&stru_8392C0.VocClass_field_8C, v22); /*0x654298*/
-        a2 = v20 | 0x200; /*0x6542ba*/
+        a2 = (void *)(v20 | 0x200); /*0x6542ba*/
         v47 = v4[1150] + v4[1148] - 2; /*0x6542c5*/
         v48[0] = v16; /*0x6542c9*/
         v25 = (unsigned int *)(*((int (**)(DSurface *, char *, int *, int, unsigned int))DSurface_Sidebar->DSurface_field_0x0 /*0x6542d7*/
@@ -906,7 +906,7 @@ AbstractClass * * UpdateProjectileTrails()
       {
         *(unsigned int *)(v17 + 1296) = 0; /*0x659329*/
         *(unsigned int *)Block = 0; /*0x659333*/
-        v16 = Block; /*0x659335*/
+        v16 = (unsigned int *)(Block); /*0x659335*/
       }
       v18 = v16[1]; /*0x659339*/
       if ( v18
@@ -1079,10 +1079,10 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
   {
     return *((unsigned int *)this + 5); /*0x65c494*/
   }
-  RAMFileClass_field_0x10 = this->RAMFileClass_field_0x10; /*0x65c436*/
+  RAMFileClass_field_0x10 = (gamemd::AbstractClass *)(this->RAMFileClass_field_0x10); /*0x65c436*/
   RAMFileClass_field_0xC = RAMFileClass_field_0x10; /*0x65c43b*/
   if ( (*((unsigned char *)this + 24) & 2) != 0 ) /*0x65c43d*/
-    RAMFileClass_field_0xC = this->RAMFileClass_field_0xC; /*0x65c43f*/
+    RAMFileClass_field_0xC = (gamemd::AbstractClass *)(this->RAMFileClass_field_0xC); /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
   {
     case 0: /*0x65c449*/
@@ -1100,10 +1100,10 @@ LABEL_11:
   if ( *((int *)this + 5) < 0 ) /*0x65c475*/
     *((unsigned int *)this + 5) = 0; /*0x65c477*/
   if ( *((unsigned int *)this + 5) > (int)RAMFileClass_field_0xC ) /*0x65c481*/
-    *((unsigned int *)this + 5) = RAMFileClass_field_0xC; /*0x65c483*/
+    *((unsigned int *)this + 5) = (unsigned int)(RAMFileClass_field_0xC); /*0x65c483*/
   result = *((unsigned int *)this + 5); /*0x65c486*/
   if ( result > (int)RAMFileClass_field_0x10 ) /*0x65c48b*/
-    this->RAMFileClass_field_0x10 = (AbstractClass *)result; /*0x65c48d*/
+    this->RAMFileClass_field_0x10 = (unsigned int)((AbstractClass *)result); /*0x65c48d*/
   return result; /*0x65c490*/
 
 }

@@ -118,7 +118,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   LABEL_37:
   if ( dword_B0B478 ) /*0x6a6455*/
   {
-    ((unsigned char *)(this) + 0x14E6) = 1; /*0x6a6457*/
+    ((unsigned char *)(this) + 0x14E6) = (unsigned char *)(1); /*0x6a6457*/
     ((unsigned char *)(this) + 0x14E5) = 0; /*0x6a6461*/
   }
   LABEL_39:
@@ -146,7 +146,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
     {
       GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * v15)); /*0x6a64e3*/
       v16 = 0; /*0x6a64f5*/
-      v17 = &((unsigned char *)(this) + 0xCD2)[3988 * this->u32_539C + 2162]; /*0x6a64fd*/
+      v17 = (char *)(&((unsigned char *)(this) + 0xCD2)[3988 * this->u32_539C + 2162]); /*0x6a64fd*/
       *((unsigned char *)&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a6504*/
       do /*0x6a652f*/
       {
@@ -158,7 +158,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       while ( v16 < 60 ); /*0x6a652f*/
       this->u32_539C = v10; /*0x6a6534*/
       GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * v10)); /*0x6a6543*/
-      v18 = &((unsigned char *)(this) + 0xCD2)[3988 * this->u32_539C + 2162]; /*0x6a6560*/
+      v18 = (char *)(&((unsigned char *)(this) + 0xCD2)[3988 * this->u32_539C + 2162]); /*0x6a6560*/
       *((unsigned char *)&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a6567*/
       v19 = UI_Add_6AC430(v22); /*0x6a6570*/
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
@@ -174,7 +174,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       this->u32_53A7 = 1; /*0x6a65cf*/
     }
   }
-  SidebarClass_field_0x0 = (int (**)(SidebarClass *, unsigned int))((unsigned char *)(this) + 0x0); /*0x6a65d6*/
+  SidebarClass_field_0x0 = (int (__thiscall **)(gamemd::SidebarClass *,unsigned int))((int (**)(SidebarClass *, unsigned int))((unsigned char *)(this) + 0x0)); /*0x6a65d6*/
   this->u32_53A6 = 1; /*0x6a65dc*/
   result = SidebarClass_field_0x0[14](this, 0); /*0x6a65e3*/
   if ( v13 == this->u32_539C ) /*0x6a65ec*/

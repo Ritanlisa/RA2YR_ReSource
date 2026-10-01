@@ -134,8 +134,8 @@ LABEL_151:
           ShowWindow((HWND)hWnd, 0);
           if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
           {
-            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = Formatc;
-            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = v60;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);
             LoadScenarioClassByIndex((int)v60);
             Session::PrepareGame((HWND)hWnd);
             ShowWindow((HWND)hWnd, 5);
@@ -161,7 +161,7 @@ LABEL_151:
               if ( v62 )
                 v63 = (ObjectClass *)unknown_libname_27(v62);
               ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
-              *(&g_MatrixTransformState + 2257) = (CoordStruct *)v63;
+              *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
               Surface::LoadToSurfaceSHP((char **)v63, ((unsigned int *)(stru_829ABC))[0]);
               if ( !(*(&g_MatrixTransformState + 2257))->X )
                 Session::PrepareGame((HWND)hWnd);
@@ -206,7 +206,7 @@ LABEL_151:
                   if ( v68 )
                     v69 = (ObjectClass *)unknown_libname_27(v68);
                   ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
-                  *(&g_MatrixTransformState + 2257) = (CoordStruct *)v69;
+                  *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v69);
                   Surface::LoadToSurfaceSHP((char **)v69, ((unsigned int *)(stru_829ABC))[0]);
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
@@ -221,8 +221,8 @@ LABEL_151:
             }
             else
             {
-              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = v60;
-              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = Formatc;
+              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);
+              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
             }
           }
           break;
@@ -276,7 +276,7 @@ LABEL_151:
               ++v6;
             }
             while ( v6 < 7 );
-            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29992] = v75;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29992] = (unsigned int)(v75);
             v10 = (CampaignScore *)((char *)&v75->vtable0 + 1);
             if ( var244 == 1559 )
             {

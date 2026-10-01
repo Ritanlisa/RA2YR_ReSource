@@ -195,7 +195,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     if ( (int)(Size / v7 - 1) < v8 ) /*0x6303f7*/
       v8 = Size / v7 - 1; /*0x6303f9*/
     Buffer::Init(v65, a3, Size); /*0x630408*/
-    v10 = RA2_OPNEW(0x20u); /*0x63040f*/
+    v10 = (unsigned int *)(RA2_OPNEW(0x20u)); /*0x63040f*/
     v11 = v10; /*0x630414*/
     if ( v10 ) /*0x63041d*/
     {
@@ -206,7 +206,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       *v10 = (unsigned int)(&XSurface_Vtable);
       Buffer::Init(v10 + 5, (int)v65, v7 * v8 * v9); /*0x630444*/
       v12 = v11; /*0x630449*/
-      *v11 = &BSurface_Vtable; /*0x63044f*/
+      *v11 = (unsigned int)(&BSurface_Vtable); /*0x63044f*/
       v55 = v11; /*0x630455*/
     }
     else
@@ -218,17 +218,17 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   }
   else
   {
-    v13 = (unsigned int)(RA2_OPNEW(0x20u));
-    v14 = (unsigned int)(v13);
+    v13 = (unsigned int *)((unsigned int)(RA2_OPNEW(0x20u)));
+    v14 = (unsigned int *)((unsigned int)(v13));
     if ( !v13 ) /*0x63047f*/
       return 0; /*0x6304c8*/
     v13[4] = v9; /*0x630481*/
     v13[1] = v7; /*0x630494*/
     v13[2] = v8; /*0x630497*/
     v13[3] = 0; /*0x63049a*/
-    *v13 = &XSurface_Vtable; /*0x6304a1*/
+    *v13 = (unsigned int)(&XSurface_Vtable); /*0x6304a1*/
     Buffer::Init(v13 + 5, 0, v7 * v8 * v9); /*0x6304a7*/
-    *v14 = &BSurface_Vtable; /*0x6304ac*/
+    *v14 = (unsigned int)(&BSurface_Vtable); /*0x6304ac*/
     v12 = v14; /*0x6304b2*/
     v55 = v14; /*0x6304b4*/
   }
@@ -265,7 +265,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             {
               (*(void (**)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x630584*/
               v48 = v73; /*0x63058e*/
-              v19 = v73; /*0x630592*/
+              v19 = (unsigned int)(v73); /*0x630592*/
             }
             if ( (v18 & 0xC0) == 0xC0 ) /*0x63059a*/
             {
@@ -372,7 +372,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             *(unsigned char *)(v15 + v41++) = v42; /*0x63090f*/
           }
         }
-        v12 = (unsigned int)(v55);
+        v12 = (unsigned int *)((unsigned int)(v55));
         v28 = a1; /*0x63091f*/
         (*(void (**)(unsigned int *))(*v55 + 96))(v55); /*0x630927*/
       }
@@ -839,15 +839,15 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   Viewport = (int *)(Display::GetViewport(v16));
   v21[0] = (unsigned int)((int *)(*Viewport));
   v21[1] = (unsigned int)((int *)(Viewport[1]));
-  v21[2] = (int *)(Viewport[2]);
+  v21[2] = (unsigned int)((int *)(Viewport[2]));
   v4 = Viewport[3]; /*0x635586*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x635589*/
+  vtable1 = (void *)(((unsigned int *)this)[0]); /*0x635589*/
   v21[3] = v4; /*0x63558c*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)vtable1 + 4)); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
   v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
   v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
-  v7 = ToCoordPixel(&v14, v15); /*0x6355ba*/
+  v7 = (int *)(ToCoordPixel(&v14, v15)); /*0x6355ba*/
   v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
@@ -914,14 +914,14 @@ int E4Recv_635680::sub_635680(int a2)
   Viewport = (int *)(Display::GetViewport(&v16));
   v20[0] = (unsigned int)((int *)(*Viewport));
   v20[1] = (unsigned int)((int *)(Viewport[1]));
-  v20[2] = (int *)(Viewport[2]);
+  v20[2] = (unsigned int)((int *)(Viewport[2]));
   v20[3] = Viewport[3]; /*0x6356b0*/
   Coords = ScriptAction::GetCoords((ScriptAction *)this, v11); /*0x6356b4*/
   v10[0] = *Coords; /*0x6356bb*/
   v10[1] = Coords[1]; /*0x6356c6*/
   v10[2] = Coords[2]; /*0x6356d1*/
-  v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
-  v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
+  v5 = (int *)(ToCoordPixel(&v9, v10)); /*0x6356d5*/
+  v6 = (int *)(ComputeBounds(v21, 8, *v5, v5[1])); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/
@@ -977,7 +977,7 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   void **v10; // eax
   unsigned char *v11; // esi
 
-  vtable2 = (void *)(((unsigned int *)this)[0]);
+  vtable2 = (unsigned int *)((void *)(((unsigned int *)this)[0]));
   vtable0 = (void *)(this->AbstractClass);
   v5 = vtable2[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
@@ -1002,7 +1002,7 @@ LABEL_7:
   else
     v10 = v8[v6]; /*0x636f38*/
 LABEL_9:
-  v11 = v10[1]; /*0x636f3b*/
+  v11 = (unsigned char *)(v10[1]); /*0x636f3b*/
   qmemcpy((void *)a2, v11, 0x6Cu); /*0x636f49*/
   v11 += 108; /*0x636f49*/
   *(unsigned short *)(a2 + 108) = *(unsigned short *)v11; /*0x636f4b*/

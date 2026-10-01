@@ -151,7 +151,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     if ( result ) /*0x5c088f*/
     {
       *(void **)result = (void*)&BinkMovieHandle_vftable; /*0x5c0897*/
-      result[4] = v9; /*0x5c089d*/
+      result[4] = (unsigned int)(v9); /*0x5c089d*/
       if ( v9 ) /*0x5c08a0*/
       {
         result[2] = *(unsigned int *)v9[1]; /*0x5c08ab*/
@@ -169,8 +169,8 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   if ( !v12 ) /*0x5c091e*/
     return 0; /*0x5c0955*/
   *(unsigned char *)((unsigned int)(v12)+ 20) = 0; /*0x5c0920*/
-  *(unsigned int *)v12 = (void*)&VQMovieHandle_vftable; /*0x5c0924*/
-  *(unsigned int *)((unsigned int)(v12)+ 16) = VQMovie; /*0x5c092a*/
+  *(unsigned int *)v12 = (unsigned int)((void*)&VQMovieHandle_vftable); /*0x5c0924*/
+  *(unsigned int *)((unsigned int)(v12)+ 16) = (unsigned int)(VQMovie); /*0x5c092a*/
   *(unsigned int *)((unsigned int)(v12)+ 8) = MovieClass::GetWidth(*VQMovie); /*0x5c0934*/
   *(unsigned int *)((unsigned int)(v13)+ 12) = MovieClass::GetHeight(**(MovieClass ***)((unsigned int)(v13)+ 16)); /*0x5c0941*/
   return (unsigned int *)v13; /*0x5c08b7*/
@@ -356,12 +356,12 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   if ( v5 != 4 * a4 ) /*0x5c6428*/
   {
     IDA_LOBYTE(a3) = (*((unsigned int *)this + a4 - 1) >= 0) - 1; /*0x5c642b*/
-    IDA_BYTE1(a3) = a3; /*0x5c642d*/
-    v9 = (unsigned int)(a3)<< 16; /*0x5c6435*/
-    IDA_LOWORD(v9) = a3; /*0x5c6438*/
+    IDA_BYTE1(a3) = (unsigned char)(a3); /*0x5c642d*/
+    v9 = (void *)((unsigned int)(a3)<< 16); /*0x5c6435*/
+    IDA_LOWORD(v9) = (unsigned short)(a3); /*0x5c6438*/
     memset32(a2, v9, v8 >> 2); /*0x5c643f*/
     memset(&a2[4 * (v8 >> 2)], a3, v8 & 3); /*0x5c644a*/
-    v6 = &a2[v8]; /*0x5c6450*/
+    v6 = (unsigned char *)(&a2[v8]); /*0x5c6450*/
   }
   v10 = v5; /*0x5c6454*/
   if ( v5 >= v7 ) /*0x5c6456*/
@@ -525,8 +525,8 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
         v6 = aP2; /*0x5c67bf*/
         do /*0x5c67cc*/
         {
-          v7 = (int)((gamemd::Buffer *)((int)((gamemd::Buffer *)(*v5))));
-          *v5++ = result; /*0x5c67c4*/
+          v7 = (gamemd::Buffer *)((int)((gamemd::Buffer *)((int)((gamemd::Buffer *)(*v5)))));
+          *v5++ = (int)(result); /*0x5c67c4*/
           --v6; /*0x5c67c9*/
           result = v7; /*0x5c67ca*/
         }
@@ -896,7 +896,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
     return 0; /*0x5c6f7d*/
   }
   qmemcpy(v44, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c6e05*/
-  v6 = v44; /*0x5c6e09*/
+  v6 = (unsigned int)(v44); /*0x5c6e09*/
   if ( a4 > 0 ) /*0x5c6e14*/
   {
     v7 = a4; /*0x5c6e16*/
@@ -1434,8 +1434,8 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = v39) != 0 && !v36));
-          *(unsigned int *)v18 = v36; /*0x5c7723*/
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)(v39) != 0 && !v36)));
+          *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
           --v5; /*0x5c772b*/

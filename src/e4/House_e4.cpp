@@ -246,7 +246,7 @@ LABEL_48:
           }
         }
         if ( aP1 != (IUnknown *)(-1) ) /*0x47d94c*/
-          *((unsigned char *)this + 283) = aP1; /*0x47d94e*/
+          *((unsigned char *)this + 283) = (unsigned char)(aP1); /*0x47d94e*/
         TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)((char *)this + 282), v59, &v58); /*0x47d969*/
         v33 = *((unsigned int *)this + 80); /*0x47d988*/
         *((unsigned char *)this + 285) = (v58 - 30) / 15; /*0x47d993*/
@@ -293,7 +293,7 @@ LABEL_48:
             {
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + *((unsigned short *)this + 19); /*0x47daf3*/
-              *(unsigned int *)v55 = aP1; /*0x47dafc*/
+              *(unsigned int *)v55 = (unsigned int)(aP1); /*0x47dafc*/
               v44 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v55); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/

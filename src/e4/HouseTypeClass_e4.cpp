@@ -36,9 +36,9 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   *(unsigned int *)&this->prefix = &vt_TypeList; /*0x511667*/
   *(unsigned int *)&this->__pad_16D[23] = &vt_TypeList; /*0x511671*/
   this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x511681*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x511688*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x51168f*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511681*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511688*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x51168f*/
   return &this->AbstractClass; /*0x511698*/
 
 }
@@ -55,9 +55,9 @@ AbstractClass * HouseTypeClass::Dtor()
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_HouseTypeClass; /*0x5116a7*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x5116ad*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x5116b4*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x5116bb*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116ad*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116b4*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116bb*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5116c2*/
   v7 = this; /*0x5116d7*/
   v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
@@ -71,7 +71,7 @@ AbstractClass * HouseTypeClass::Dtor()
     while ( v2 < dword_A83CA8 ); /*0x51170e*/
   }
   v3 = *(void **)&this->__pad_16D[27]; /*0x511710*/
-  *(unsigned int *)&this->__pad_16D[23] = &vt_VectorClass; /*0x51171a*/
+  *(unsigned int *)&this->__pad_16D[23] = (unsigned int)(&vt_VectorClass); /*0x51171a*/
   if ( v3 && this->__pad_16D[36] ) /*0x511726*/
   {
     __3_YAXPAX_Z(v3); /*0x51172f*/
@@ -80,7 +80,7 @@ AbstractClass * HouseTypeClass::Dtor()
   this->__pad_16D[36] = 0; /*0x51173d*/
   *(unsigned int *)&this->__pad_16D[31] = 0; /*0x511743*/
   v4 = *(void **)&this->smartAi; /*0x511749*/
-  *(unsigned int *)&this->prefix = &vt_VectorClass; /*0x51174f*/
+  *(unsigned int *)&this->prefix = (unsigned int)(&vt_VectorClass); /*0x51174f*/
   if ( v4 && this->__pad_16D[8] ) /*0x51175d*/
   {
     __3_YAXPAX_Z(v4); /*0x511766*/
@@ -89,7 +89,7 @@ AbstractClass * HouseTypeClass::Dtor()
   this->__pad_16D[8] = 0; /*0x511774*/
   *(unsigned int *)&this->__pad_16D[3] = 0; /*0x51177a*/
   veteranInfantryCount = (void *)this->veteranInfantryCount; /*0x511780*/
-  this->veteranInfantry[0] = (int)&vt_VectorClass; /*0x511786*/
+  this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_VectorClass); /*0x511786*/
   if ( veteranInfantryCount && BYTE1(this->veteranUnitsCount) ) /*0x511794*/
   {
     __3_YAXPAX_Z(veteranInfantryCount); /*0x51179d*/
@@ -180,7 +180,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   char Source[32]; // [esp+58h] [ebp-A0h] BYREF
   char String[128]; // [esp+78h] [ebp-80h] BYREF
 
-  v4 = aP1; /*0x51185e*/
+  v4 = (gamemd::HouseTypeClass *)(aP1); /*0x51185e*/
   _EBX = v3; /*0x511861*/
   INIClass::ResetSection((INIClass *)aP1); /*0x511866*/
   if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (uint8_t ***)aP1) ) /*0x51186e*/
@@ -189,7 +189,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy((char *)(_EBX + 416), Source); /*0x5118c3*/
-    v4 = aP1; /*0x5118cc*/
+    v4 = (gamemd::HouseTypeClass *)(aP1); /*0x5118cc*/
   }
   INIClass::GetString((INIClass *)v4, (uint8_t *)(_EBX + 36), aParentcountry, (char *)(_EBX + 36), Source, 25); /*0x5118e2*/
   if ( Source ) /*0x5118ed*/
@@ -205,7 +205,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   {
     qmemcpy((void *)(_EBX + 152), &Destination, 0x18u); /*0x511925*/
     *(unsigned char *)(_EBX + 176) = Destination.UnitTypeVector_field_0x18; /*0x511927*/
-    v4 = aP1; /*0x511928*/
+    v4 = (gamemd::HouseTypeClass *)(aP1); /*0x511928*/
   }
   *(unsigned int *)(_EBX + 192) = BuildingTypeClass::FindAnimByName( /*0x511942*/
                               (BuildingTypeClass *)v4,

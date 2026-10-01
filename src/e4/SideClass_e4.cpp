@@ -140,10 +140,10 @@ int SideClass::Construct(CCINIClass * aP1)
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
   this->houseTypes = &vt_TypeList; /*0x6a458c*/
-  this->AbstractClass = &vt_SideClass; /*0x6a4597*/
-  ((unsigned int *)this)[0] = &vt_SideClass; /*0x6a459d*/
-  ((unsigned int *)this)[0] = &vt_SideClass; /*0x6a45a3*/
-  ((unsigned int *)this)[0] = &vt_SideClass; /*0x6a45aa*/
+  this->AbstractClass = (unsigned int)(&vt_SideClass); /*0x6a4597*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a459d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45a3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x6a45b1*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !((unsigned int *)&FootClass_Array)[1])
@@ -154,7 +154,7 @@ int SideClass::Construct(CCINIClass * aP1)
          0) )
   {
     v3 = (int)(*((unsigned int *)((char *)&FootClass_Array + 0))++);
-    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = this; /*0x6a4606*/
+    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = (unsigned int)(this); /*0x6a4606*/
   }
   return (int)(&this->AbstractClass);
 
@@ -201,9 +201,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2[1] = 0; /*0x6a47d1*/
       v2->houseTypes = &vt_TypeList; /*0x6a47d7*/
       v2->AbstractClass = &vt_SideClass; /*0x6a47e1*/
-      ((unsigned int *)v2)[0] = &vt_SideClass; /*0x6a47e7*/
-      ((unsigned int *)v2)[0] = &vt_SideClass; /*0x6a47ee*/
-      ((unsigned int *)v2)[0] = &vt_SideClass; /*0x6a47f5*/
+      ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47e7*/
+      ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47ee*/
+      ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47f5*/
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -236,9 +236,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
         }
       }
       v9 = p_houseTypes[4]; /*0x6a486c*/
-      v10 = p_houseTypes[1]; /*0x6a486f*/
+      v10 = (unsigned int *)(p_houseTypes[1]); /*0x6a486f*/
       p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
-      v10[(unsigned int)v9] = a0; /*0x6a487c*/
+      v10[(unsigned int)v9] = (unsigned int)(a0); /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -256,11 +256,11 @@ void * SideClass::Init(void ** Block, char a2)
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
-  ((unsigned int *)Block)[0] = &vt_SideClass; /*0x6a493c*/
-  ((unsigned int *)Block)[0] = &vt_SideClass; /*0x6a4943*/
-  ((unsigned int *)Block)[0] = &vt_SideClass; /*0x6a494a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a493c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a4943*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
-  v6 = Block; /*0x6a4966*/
+  v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
   v3 = (*(int (**)(int *, SideClass **))(((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {

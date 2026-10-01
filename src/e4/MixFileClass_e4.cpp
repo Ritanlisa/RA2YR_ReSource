@@ -48,7 +48,7 @@ void MixFileClass::CleanupCache()
             if ( v3 ) /*0x69e250*/
               *(unsigned int *)(v3 + 24) = *((unsigned int *)v1 + 6); /*0x69e255*/
             else
-              dword_B077B0 = (void *)*((unsigned int *)v1 + 6); /*0x69e25d*/
+              dword_B077B0 = (unsigned int)((void *)*((unsigned int *)v1 + 6)); /*0x69e25d*/
             if ( *((unsigned int *)v1 + 2) ) /*0x69e262*/
             {
               free(*((void **)v1 + 2)); /*0x69e26a*/
@@ -86,7 +86,7 @@ void MixFileClass::CleanupCache()
       if ( v9 ) /*0x69e2cf*/
         *(unsigned int *)(v9 + 24) = *((unsigned int *)v4 + 6); /*0x69e2d4*/
       else
-        dword_B077B0 = (void *)*((unsigned int *)v4 + 6); /*0x69e2dc*/
+        dword_B077B0 = (unsigned int)((void *)*((unsigned int *)v4 + 6)); /*0x69e2dc*/
       if ( *((unsigned int *)v4 + 2) ) /*0x69e2e1*/
       {
         free(*((void **)v4 + 2)); /*0x69e2e9*/
@@ -137,7 +137,7 @@ void MixFileClass::DestroyCache()
           if ( v4 ) /*0x69e1c7*/
             *(unsigned int *)(v4 + 24) = *((unsigned int *)v0 + 6); /*0x69e1cc*/
           else
-            dword_B077B0 = (void *)*((unsigned int *)v0 + 6); /*0x69e1d4*/
+            dword_B077B0 = (unsigned int)((void *)*((unsigned int *)v0 + 6)); /*0x69e1d4*/
           if ( *((unsigned int *)v0 + 2) ) /*0x69e1d9*/
           {
             free(*((void **)v0 + 2)); /*0x69e1e1*/

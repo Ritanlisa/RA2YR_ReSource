@@ -104,7 +104,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
 
   _ESI = (unsigned int)(a1);
   v11 = (unsigned int)((unsigned int)(*aP3 == (void *)g_MissionQueueFrame.localVariables[291]));
-  *(unsigned int *)v88.__pad_0 = a1; /*0x5b2110*/
+  *(unsigned int *)v88.__pad_0 = (unsigned int)(a1); /*0x5b2110*/
   if ( v11 /*0x5b2134*/
     && aP3[1] == (void *)g_MissionQueueFrame.localVariables[292]
     && aP3[2] == (void *)g_MissionQueueFrame.localVariables[293] )
@@ -260,13 +260,13 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
   v39 = Vector3::Subtract(a2, (int *)&v90, aP3); /*0x5b23c7*/
   v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
-  v41 = *aP3; /*0x5b23d3*/
-  v42 = aP3[1]; /*0x5b23d5*/
+  v41 = (void *)(*aP3); /*0x5b23d3*/
+  v42 = (void *)(aP3[1]); /*0x5b23d5*/
   LODWORD(v89) = v40; /*0x5b23d8*/
   v43 = *(unsigned int *)a2->__pad_0; /*0x5b23dc*/
-  v88.field_4 = v41; /*0x5b23de*/
+  v88.field_4 = (unsigned int)(v41); /*0x5b23de*/
   Vector3_field_0x04 = a2->Vector3_field_0x04; /*0x5b23e2*/
-  v88.field_8 = v42; /*0x5b23e5*/
+  v88.field_8 = (unsigned int)(v42); /*0x5b23e5*/
   *(unsigned int *)v87 = v43; /*0x5b23e9*/
   *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
   v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.field_4); /*0x5b23ff*/

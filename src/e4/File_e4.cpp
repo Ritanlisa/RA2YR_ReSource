@@ -93,7 +93,7 @@ LABEL_35:
       }
       memset(v3, 0, 0x24u); /*0x433a04*/
       v7 = (void *)__2_YAPAXI_Z(0x20000u); /*0x433a0b*/
-      v3[6] = v7; /*0x433a12*/
+      v3[6] = (unsigned int)(v7); /*0x433a12*/
       if ( v7 ) /*0x433a15*/
       {
         memset(v7, 0, 0x20000u); /*0x433a22*/
@@ -176,7 +176,7 @@ LABEL_24:
                     --v21; /*0x433ba3*/
                   }
                   while ( v21 ); /*0x433ba4*/
-                  v22 = __2_YAPAXI_Z(v20); /*0x433ba7*/
+                  v22 = (int)(__2_YAPAXI_Z(v20)); /*0x433ba7*/
                   v3[7] = v22; /*0x433bb1*/
                   if ( v22 && (*(int (**)(unsigned int *, int, size_t))(*v6 + 36))(v6, v22, v20) == v20 ) /*0x433bc1*/
                     goto LABEL_35; /*0x433bc1*/
@@ -239,7 +239,7 @@ namespace gamemd {
 unsigned int * File::LoadFileHVA(int a2)
 {
 
-  this->__pad_0[0] = (unsigned int *)(0);
+  this->__pad_0[0] = (unsigned int)((unsigned int *)(0));
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x5bd577*/
   *(unsigned int *)&this->__pad_6[2] = 0; /*0x5bd57a*/
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x5bd57d*/
@@ -285,7 +285,7 @@ AbstractClass * * File::ParseFileHVA(int a2)
     v7 = __2_YAPAXI_Z(48 * *((unsigned int *)this + 1) * *((unsigned int *)this + 2)); /*0x5bd636*/
     if ( !v7 ) /*0x5bd640*/
       v7 = 0; /*0x5bd649*/
-    *((unsigned int *)this + 3) = v7; /*0x5bd64d*/
+    *((unsigned int *)this + 3) = (unsigned int)(v7); /*0x5bd64d*/
     if ( v7 ) /*0x5bd650*/
     {
       (*(void (**)(int, int, int))(*(unsigned int *)a2 + 40))(a2, 16 * *((unsigned int *)this + 1), 1); /*0x5bd675*/
@@ -356,11 +356,11 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   u_short *v17; // [esp+14h] [ebp+4h]
 
   v3 = (gamemd::File **)(*aP1);
-  *(unsigned short *)this->__pad_0 = *aP1; /*0x625b05*/
+  *(unsigned short *)this->__pad_0 = (unsigned short)(*aP1); /*0x625b05*/
   *(unsigned short *)this->__pad_0 = ntohs(v3); /*0x625b11*/
-  v4 = aP1[1]; /*0x625b17*/
+  v4 = (gamemd::u_short)(aP1[1]); /*0x625b17*/
   *(unsigned short *)this->File_field_0x2 = v4; /*0x625b1a*/
-  v5 = aP1 + 2; /*0x625b1f*/
+  v5 = (gamemd::u_short *)(aP1 + 2); /*0x625b1f*/
   *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
   v6 = *(unsigned short *)this->__pad_0; /*0x625b2d*/
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x625b30*/
@@ -372,12 +372,12 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
     v7 = (unsigned int)(__2_YAPAXI_Z(0x10u));
     v8 = *(unsigned int *)v5; /*0x625b55*/
     v9 = v7; /*0x625b57*/
-    v10 = v5 + 4; /*0x625b5c*/
+    v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
     v11 = (uint16_t)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
-    *(unsigned int *)(v9 + 8) = v12; /*0x625b8a*/
+    *(unsigned int *)(v9 + 8) = (unsigned int)(v12); /*0x625b8a*/
     qmemcpy(v12, v10, v11); /*0x625b90*/
     v13 = -(ntohs(*(unsigned short *)(v9 + 6)) & 3) & 3; /*0x625baf*/
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
@@ -462,10 +462,10 @@ AbstractClass * * File::ParseCSFString(char * Source)
     if ( ((CCFileClass *)(&v23))->Read(&v18, 4) != 4 ) /*0x7349fe*/
     {
 LABEL_42:
-      *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734cad*/
+      *(unsigned int *)v23.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
-      *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734ccc*/
+      *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
       return 1; /*0x734ce8*/
     }
@@ -508,7 +508,7 @@ LABEL_42:
           }
           dword_B17F24[v7] = 0; /*0x734b1e*/
           v8 = *(unsigned int *)dword_B17F24; /*0x734b26*/
-          v9 = dword_B17F24; /*0x734b2e*/
+          v9 = (wchar_t *)(dword_B17F24); /*0x734b2e*/
           if ( dword_B17F24[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
@@ -523,8 +523,8 @@ LABEL_42:
           }
           v10 = 0; /*0x734b4b*/
           v11 = 1; /*0x734b50*/
-          v12 = dword_B17F24; /*0x734b55*/
-          v13 = dword_B17F24 + 2; /*0x734b5a*/
+          v12 = (wchar_t *)(dword_B17F24); /*0x734b55*/
+          v13 = (unsigned short *)(dword_B17F24 + 2); /*0x734b5a*/
           if ( (unsigned short)v8 ) /*0x734b5f*/
           {
             while ( 1 ) /*0x734b61*/
@@ -559,7 +559,7 @@ LABEL_31:
           }
           *v12 = 0; /*0x734bb4*/
           v14 = wcslen(dword_B17F24); /*0x734bbc*/
-          *(unsigned int *)((char *)dword_B1CF78 + v6) = __2_YAPAXI_Z(2 * v14 + 2); /*0x734bd6*/
+          *(unsigned int *)((char *)dword_B1CF78 + v6) = (unsigned int)(__2_YAPAXI_Z(2 * v14 + 2)); /*0x734bd6*/
           wcscpy(*(wchar_t **)((char *)dword_B1CF78 + v6), dword_B17F24); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
@@ -573,7 +573,7 @@ LABEL_31:
             byte_B1BF38[v15] = 0; /*0x734c23*/
             if ( v15 ) /*0x734c29*/
             {
-              *(unsigned int *)((char *)dword_B1CF7C + v6) = __2_YAPAXI_Z(v15 + 1); /*0x734c43*/
+              *(unsigned int *)((char *)dword_B1CF7C + v6) = (unsigned int)(__2_YAPAXI_Z(v15 + 1)); /*0x734c43*/
               strcpy(*(char **)((char *)dword_B1CF7C + v6), byte_B1BF38); /*0x734c5e*/
             }
           }
@@ -592,10 +592,10 @@ LABEL_31:
     }
   }
 LABEL_43:
-  *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734ce9*/
+  *(unsigned int *)v23.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
-  *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734d08*/
+  *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734d08*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
   return 0; /*0x734cde*/
 
@@ -650,13 +650,13 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   *((unsigned int *)this + 11) = &vt_DynamicVectorClassrc_ptr; /*0x76acab*/
   *((unsigned int *)this + 16) = 10; /*0x76acb2*/
   *((unsigned int *)this + 15) = 0; /*0x76acb9*/
-  *(unsigned int *)this = &vt_WDTState; /*0x76acbe*/
+  *(unsigned int *)this = (unsigned int)(&vt_WDTState); /*0x76acbe*/
   v3 = (File *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/
+    PaletteData = (gamemd::u_short *)(File::LoadPaletteData(v3, aP1)); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
-  v5 = (unsigned char *)this + 28; /*0x76ace6*/
+  v5 = (char *)((unsigned char *)this + 28); /*0x76ace6*/
   v13 = 0; /*0x76acf2*/
   v14 = 0; /*0x76acf6*/
   Size = 0; /*0x76acfa*/

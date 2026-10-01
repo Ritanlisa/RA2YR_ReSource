@@ -231,7 +231,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     if ( (unsigned char)v4 ) /*0x4ac43e*/
     {
       v7 = a2[1]; /*0x4ac45b*/
-      v11 = *a2 - (unsigned int)this->DisplayClass_field_0x11D4; /*0x4ac45e*/
+      v11 = (void *)(*a2 - (unsigned int)this->DisplayClass_field_0x11D4); /*0x4ac45e*/
       v12 = (void *)(v7 - (unsigned int)this->DisplayClass_field_0x11D8); /*0x4ac467*/
       __asm /*0x4ac46b*/
       {
@@ -268,7 +268,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     v12 = (void *)(DSurface_ViewBounds.field_4);
     v11 = (void *)(DSurface_ViewBounds.field_0);
     v4 = (void *)((int)((void *)(*a2)));
-    v5 = (int)((void *)a2[1]);
+    v5 = (void *)((int)((void *)a2[1]));
     if ( *a2 < 0 ) /*0x4ac3db*/
       v4 = 0; /*0x4ac3dd*/
     if ( v4 >= *(int *)DSurface_ViewBounds.__pad_8 ) /*0x4ac3e1*/
@@ -277,7 +277,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       v5 = 0; /*0x4ac3ea*/
     if ( (int)v5 >= *(int *)&DSurface_ViewBounds.__pad_8[4] ) /*0x4ac3ee*/
       v5 = (void *)(*(unsigned int *)&DSurface_ViewBounds.__pad_8[4] - 1); /*0x4ac3f0*/
-    DisplayClass_field_0x11DC = this->DisplayClass_field_0x11DC; /*0x4ac3f3*/
+    DisplayClass_field_0x11DC = (void *)(this->DisplayClass_field_0x11DC); /*0x4ac3f3*/
     v11 = v4; /*0x4ac3f9*/
     v12 = v5; /*0x4ac3ff*/
     if ( (void *)v4 != DisplayClass_field_0x11DC || v5 != (void *)(this->DisplayClass_field_0x11E0) ) /*0x4ac40b*/

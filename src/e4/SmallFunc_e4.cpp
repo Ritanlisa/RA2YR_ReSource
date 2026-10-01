@@ -53,7 +53,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   unsigned int *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA)); /*0x6f19c1*/
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA))); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
@@ -72,7 +72,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
       Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
       goto LABEL_11; /*0x6f1a82*/
     }
-  LABEL_7: v8 = (gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u));
+  LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));
     if ( v8 ) /*0x6f1a67*/
       Base = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
@@ -95,7 +95,7 @@ void sub_40D1B0()
 
   *(unsigned int *)&stru_87F5F0.__pad_58[416] = (void*)&MouseClass_vftable; /*0x40d1b2*/
   dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
-  v0 = &dword_884B84; /*0x40d1c6*/
+  v0 = (int *)(&dword_884B84); /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
   {
@@ -193,7 +193,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
-  *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff32*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff32*/
   this->HeadToCoord[2] = v2; /*0x5aff38*/
   *(unsigned int *)&this->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
@@ -308,7 +308,7 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
-  *(unsigned int *)this->LocomotionClass = &vt_TunnelLocomotionClass; /*0x728a3c*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a3c*/
   *(unsigned int *)&this->LocomotionClass[4] = &vt_TunnelLocomotionClass; /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 

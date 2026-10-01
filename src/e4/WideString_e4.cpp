@@ -30,9 +30,9 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
 
   if ( a3 <= 0 ) /*0x5d4b27*/
     return 0; /*0x5d4b2c*/
-  v6 = aP1; /*0x5d4b31*/
+  v6 = (wchar_t *)(aP1); /*0x5d4b31*/
   v7 = wcslen(aP1); /*0x5d4b37*/
-  v8 = aP3; /*0x5d4b3c*/
+  v8 = (unsigned int)(aP3); /*0x5d4b3c*/
   if ( aP3 > (gamemd::CampaignScore *)(v7) ) /*0x5d4b49*/
     v8 = v7; /*0x5d4b4b*/
   if ( a5 ) /*0x5d4b53*/
@@ -72,7 +72,7 @@ LABEL_18:
   if ( a0 ) /*0x5d4b9f*/
   {
     qmemcpy(a0, aP1, 2 * v9); /*0x5d4baf*/
-    v6 = aP1; /*0x5d4bb3*/
+    v6 = (wchar_t *)(aP1); /*0x5d4bb3*/
     a0[v9] = 0; /*0x5d4bbc*/
   }
   memcpy(v6, &v6[v9], 2 * (v7 + 0x7FFFFFFF * v9) + 2); /*0x5d4bdc*/
@@ -250,7 +250,7 @@ int WideString::Trim(wchar_t * Source)
       {
         if ( v2 > (gamemd::WideString *)(0x20u) ) /*0x727d76*/
           break; /*0x727d76*/
-        v2 = *(unsigned short *)&v3[2]; /*0x727d78*/
+        v2 = (gamemd::WideString *)(*(unsigned short *)&v3[2]); /*0x727d78*/
         v3 += 2; /*0x727d7c*/
       }
       while ( v2 ); /*0x727d82*/
@@ -293,7 +293,7 @@ int WideString::Assign( CampaignScore * aP1)
   else
     v3 = 1; /*0x7b66ee*/
   v4 = (unsigned short *)__2_YAPAXI_Z(2 * v3); /*0x7b66f6*/
-  *(unsigned int *)this = v4; /*0x7b66fe*/
+  *(unsigned int *)this = (unsigned int)(v4); /*0x7b66fe*/
   *v4 = 0; /*0x7b6702*/
   if ( aP1 ) /*0x7b6707*/
     wcscpy(*(wchar_t **)this, aP1); /*0x7b670d*/
@@ -314,8 +314,8 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
   if ( *a2 ) /*0x7b672e*/
   {
     v3 = (unsigned int)(wcslen(*a2));
-    v4 = (unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2));
-    *(unsigned int *)this = v4; /*0x7b6744*/
+    v4 = (wchar_t *)((unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2)));
+    *(unsigned int *)this = (unsigned int)(v4); /*0x7b6744*/
     wcscpy(v4, *a2); /*0x7b674a*/
   }
   return (int)((wchar_t **)this);
@@ -339,7 +339,7 @@ void ** WideString::Assign_Alt(wchar_t * String)
   else
     v3 = 1; /*0x7b68ad*/
   v4 = (unsigned short *)__2_YAPAXI_Z(2 * v3); /*0x7b68b5*/
-  *(unsigned int *)this = v4; /*0x7b68bd*/
+  *(unsigned int *)this = (unsigned int)(v4); /*0x7b68bd*/
   *v4 = 0; /*0x7b68c1*/
   if ( String ) /*0x7b68c6*/
     wcscpy(*(wchar_t **)this, String); /*0x7b68cc*/
@@ -363,7 +363,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
   {
     v4 = (wchar_t *)((unsigned int)((wchar_t *)*a2));
     if ( !*a2 ) /*0x7b690b*/
-      v4 = &g_TypeClass_DefaultString; /*0x7b6911*/
+      v4 = (wchar_t *)(&g_TypeClass_DefaultString); /*0x7b6911*/
     if ( *(unsigned int *)this ) /*0x7b6916*/
       __3_YAXPAX_Z(*(void **)this); /*0x7b691d*/
     *(unsigned int *)this = 0; /*0x7b6927*/
@@ -372,7 +372,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
     else
       v5 = 1; /*0x7b693b*/
     v6 = (unsigned short *)__2_YAPAXI_Z(2 * v5); /*0x7b6943*/
-    *(unsigned int *)this = v6; /*0x7b694b*/
+    *(unsigned int *)this = (unsigned int)(v6); /*0x7b694b*/
     *v6 = 0; /*0x7b694f*/
     if ( v4 ) /*0x7b6954*/
       wcscpy(*(wchar_t **)this, v4); /*0x7b695a*/
@@ -398,7 +398,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen(v3); /*0x7b6b09*/
     v5 = (wchar_t *)__2_YAPAXI_Z(4 * v4); /*0x7b6b13*/
-    *(unsigned int *)this = v5; /*0x7b6b1b*/
+    *(unsigned int *)this = (unsigned int)(v5); /*0x7b6b1b*/
     if ( v3 ) /*0x7b6b20*/
       wcscpy(v5, v3); /*0x7b6b24*/
     else
@@ -430,7 +430,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
     if ( v4 ) /*0x7b6b89*/
       v5 += wcslen(v4); /*0x7b6b94*/
     v6 = (wchar_t *)__2_YAPAXI_Z(4 * v5); /*0x7b6b9e*/
-    *(unsigned int *)this = v6; /*0x7b6ba6*/
+    *(unsigned int *)this = (unsigned int)(v6); /*0x7b6ba6*/
     if ( v4 ) /*0x7b6bab*/
       wcscpy(v6, v4); /*0x7b6baf*/
     else
@@ -576,7 +576,7 @@ short WideString::Erase(int a2, int a3)
   wcscpy(v8, *(const wchar_t **)this); /*0x7b6df9*/
   wcscat(v8, (const wchar_t *)(*(unsigned int *)this + v9)); /*0x7b6e02*/
   __3_YAXPAX_Z(*(void **)this); /*0x7b6e0a*/
-  *(unsigned int *)this = v8; /*0x7b6e12*/
+  *(unsigned int *)this = (unsigned int)(v8); /*0x7b6e12*/
   return 1; /*0x7b6dbf*/
 
 }
@@ -597,7 +597,7 @@ v3 = (char)((wchar_t *)(0));
   if ( !*(unsigned int *)this ) /*0x7b6e26*/
     return 0; /*0x7b6e2d*/
   v5 = wcslen(*(const wchar_t **)this); /*0x7b6e3f*/
-  v6 = wcschr(*(const wchar_t **)this, a2); /*0x7b6e45*/
+  v6 = (wchar_t *)(wcschr(*(const wchar_t **)this, a2)); /*0x7b6e45*/
   if ( v6 ) /*0x7b6e4f*/
   {
     v3 = 1; /*0x7b6e51*/
@@ -607,14 +607,14 @@ v3 = (char)((wchar_t *)(0));
       memcpy(v6, v6 + 1, v7 - (((int)v6 - *(unsigned int *)this) >> 1) - 2); /*0x7b6e6a*/
       v7 -= 2; /*0x7b6e71*/
       *(unsigned short *)(v7 + *(unsigned int *)this) = 0; /*0x7b6e75*/
-      v6 = wcschr(*(const wchar_t **)this, a2); /*0x7b6e7e*/
+      v6 = (wchar_t *)(wcschr(*(const wchar_t **)this, a2)); /*0x7b6e7e*/
     }
     while ( v6 ); /*0x7b6e88*/
     v8 = wcslen(*(const wchar_t **)this); /*0x7b6e8d*/
     v9 = (wchar_t *)__2_YAPAXI_Z(2 * v8 + 2); /*0x7b6e9c*/
     wcscpy(v9, *(const wchar_t **)this); /*0x7b6ea2*/
     __3_YAXPAX_Z(*(void **)this); /*0x7b6eaa*/
-    *(unsigned int *)this = v9; /*0x7b6eb2*/
+    *(unsigned int *)this = (unsigned int)(v9); /*0x7b6eb2*/
   }
   return v3; /*0x7b6e2c*/
 

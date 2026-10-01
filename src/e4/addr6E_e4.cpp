@@ -161,7 +161,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
     while ( v6 < dword_A8EC88 ); /*0x6e20e8*/
   }
   while ( v5 ); /*0x6e20ec*/
-  v10 = a4; /*0x6e20f2*/
+  v10 = (int16_t *)(a4); /*0x6e20f2*/
   if ( *(unsigned int *)a4 != dword_B0E680 ) /*0x6e2100*/
   {
     v11 = 3; /*0x6e2119*/
@@ -191,7 +191,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  *(unsigned int *)v6 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2]); /*0x6e27ab*/
+  *(unsigned int *)v6 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2])); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
@@ -247,12 +247,12 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, *((char *)this + 17)); /*0x6e339b*/
+  v7 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, *((char *)this + 17))); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
-  v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
+  v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
@@ -283,7 +283,7 @@ int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
     *(unsigned int *)(*(unsigned int *)v6 + 1588) = *(unsigned int *)&this->isAliveFlag; /*0x6e385b*/
   }
 LABEL_7:
-  v7 = ((char *)&stru_A80220) - 1; /*0x6e3861*/
+  v7 = (int)(((char *)&stru_A80220) - 1); /*0x6e3861*/
   for ( result = 1; v7 >= 0; *(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + v7 + 1) + 508) = 1 ) /*0x6e3870*/
     --v7; /*0x6e3878*/
   return result; /*0x6e3867*/
@@ -500,7 +500,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         goto LABEL_13; /*0x6eed35*/
       case 2: /*0x6eec7c*/
         v16 = v9 + 156; /*0x6eed46*/
-        v17 = v9->location; /*0x6eed4b*/
+        v17 = (int)(v9->location); /*0x6eed4b*/
         v18 = *(unsigned int *)(v16 + 4); /*0x6eed4d*/
         v48 = *(unsigned int *)(v16 + 8); /*0x6eed53*/
         v19 = v7[40]; /*0x6eed5d*/
@@ -516,7 +516,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         break; /*0x6eedb0*/
       case 3: /*0x6eec7c*/
         v22 = v9 + 156; /*0x6eedbe*/
-        v23 = v9->location; /*0x6eedc3*/
+        v23 = (int)(v9->location); /*0x6eedc3*/
         v24 = *(unsigned int *)(v22 + 4); /*0x6eedc5*/
         v25 = *(unsigned int *)(v22 + 8); /*0x6eedc8*/
         v26 = v7[39]; /*0x6eedcb*/
@@ -708,7 +708,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
   unsigned short *v9; // eax
   int v11; // [esp+8h] [ebp-4h] BYREF
 
-  v5 = *(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2]); /*0x6e0097*/
+  v5 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2])); /*0x6e0097*/
   v6 = 0; /*0x6e009e*/
   v11 = v5; /*0x6e00a0*/
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
@@ -781,7 +781,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e07a3*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e07b5*/
+  WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -798,7 +798,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0803*/
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44]); /*0x6e0815*/
+  WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 

@@ -114,7 +114,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
         do /*0x793906*/
         {
           v16 = (unsigned int)(*v14);
-          *(unsigned int *)v15 = v13; /*0x7938db*/
+          *(unsigned int *)v15 = (unsigned int)(v13); /*0x7938db*/
           *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
           this->Debug::Log(); /*0x7938e7*/
           v10 = dword_A8DA84; /*0x7938f0*/
@@ -189,7 +189,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
         v7 = (char *)g_WOL_UserList.nextObject + v4; /*0x7a4f66*/
       if ( *((unsigned int *)v7 + 5) != a3 ) /*0x7a4f75*/
         goto LABEL_38; /*0x7a4f75*/
-      *(unsigned int *)&v20[8] = v7 + 87; /*0x7a4f90*/
+      *(unsigned int *)&v20[8] = (unsigned int)(v7 + 87); /*0x7a4f90*/
       strcpy(v7 + 87, (const char *)(a4 + 401)); /*0x7a4fa8*/
       strcpy(v7 + 46, (const char *)(a4 + 360)); /*0x7a4fcb*/
       memset(&v20[120], 0, 0x6Cu); /*0x7a4ff0*/
@@ -332,10 +332,10 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
       switch ( a2 ) /*0x7a52ce*/
       {
         case -2147221404: /*0x7a52ce*/
-          StringCSF = GetStringCSF(aTxtLoginUsed, 0, g_Str_File_wonline_cpp, 5737); /*0x7a52e6*/
+          StringCSF = (wchar_t *)(GetStringCSF(aTxtLoginUsed, 0, g_Str_File_wonline_cpp, 5737)); /*0x7a52e6*/
           break; /*0x7a52e6*/
         case -2147221403: /*0x7a52ce*/
-          StringCSF = GetStringCSF(g_Str_TXT_BADPASS, 0, g_Str_File_wonline_cpp, 5742); /*0x7a531f*/
+          StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_BADPASS, 0, g_Str_File_wonline_cpp, 5742)); /*0x7a531f*/
           break; /*0x7a532a*/
         case -2147221390: /*0x7a52ce*/
           StringCSF = GetStringCSF((wchar_t *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5747); /*0x7a5357*/

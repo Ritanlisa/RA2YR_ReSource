@@ -102,7 +102,7 @@ void JumpjetLocomotionClass_Process(int a1)
     }
     else
     {
-      Owner = ((unsigned int *)v1)[0]; /*0x4b06d5*/
+      Owner = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b06d5*/
       if ( ((unsigned int *)Owner)[0] != 5 /*0x4b0732*/
         || IDA_HIBYTE(v1->TrackIndex)
         || v1->SlopeTimer[3] == g_DDraw_ClipRect && *(unsigned long long *)v1->Dest == qword_8A0794
@@ -119,7 +119,7 @@ void JumpjetLocomotionClass_Process(int a1)
         {
           IDA_BYTE2(v1->TrackIndex) = 0; /*0x4b089b*/
           (*((void (**)(FootClass *, unsigned int))((unsigned int *)v1)[0]->TechnoClass + 99))(((unsigned int *)v1)[0], 0); /*0x4b08a4*/
-          v22 = ((unsigned int *)v1)[0]; /*0x4b08aa*/
+          v22 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b08aa*/
           if ( !*(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown ) /*0x4b08bd*/
             return 0; /*0x4b08ce*/
         }
@@ -131,7 +131,7 @@ void JumpjetLocomotionClass_Process(int a1)
         }
         if ( !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x4b0906*/
         {
-          v23 = ((unsigned int *)v1)[0]; /*0x4b0911*/
+          v23 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b0911*/
           if ( v23->pathDirections[0] == -1 ) /*0x4b091b*/
           {
             if ( ((unsigned int *)v23)[0] ) /*0x4b0921*/
@@ -165,7 +165,7 @@ void JumpjetLocomotionClass_Process(int a1)
             goto LABEL_39; /*0x4b096c*/
           }
         }
-        v26 = ((unsigned int *)v1)[0]; /*0x4b09ab*/
+        v26 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b09ab*/
         if ( ((unsigned int *)v26)[0] /*0x4b09e2*/
           && (*((int (**)(FootClass *))v26->TechnoClass + 97))(v26) != 7
           && (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
@@ -225,7 +225,7 @@ void JumpjetLocomotionClass_Process(int a1)
      || ((unsigned int *)v1)[0]->pathDirections[0] != -1)
     && ((*((int (**)(FootClass *))((unsigned int *)v1)[0]->TechnoClass + 11))(((unsigned int *)v1)[0]) != 1 || !IDA_BYTE1(((unsigned int *)v1)[1])) )
   {
-    v5 = ((unsigned int *)v1)[0]; /*0x4b05d0*/
+    v5 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b05d0*/
     IDA_LOBYTE(a1) = 0; /*0x4b05d3*/
     if ( (*((int (**)(FootClass *))v5->TechnoClass + 11))(v5) == 1 ) /*0x4b05df*/
     {
@@ -257,7 +257,7 @@ void JumpjetLocomotionClass_Process(int a1)
     v29 = 1; /*0x4b0665*/
   LABEL_87:
     JumpjetLocomotion::ProcessCollision((int)&((unsigned int *)(v1))[-1].Piggybackee, v29); /*0x4b0aa8*/
-    v28 = ((unsigned int *)v1)[0]; /*0x4b0aaf*/
+    v28 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b0aaf*/
     if ( !v28 || !((unsigned int *)v28)[0] ) /*0x4b0ab6*/
       return 0; /*0x4b0ac5*/
   }
@@ -266,7 +266,7 @@ void JumpjetLocomotionClass_Process(int a1)
   {
     if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
     {
-      v18 = ((unsigned int *)v1)[0]; /*0x4b07ae*/
+      v18 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b07ae*/
       if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (**)(FootClass *))v18->TechnoClass + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x4b07cf*/
@@ -274,7 +274,7 @@ void JumpjetLocomotionClass_Process(int a1)
           v19 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4b07dc*/
           if ( v19 ) /*0x4b07e6*/
           {
-            location = ((unsigned int *)v1)[0]; /*0x4b07ec*/
+            location = (int *)(((unsigned int *)v1)[0]); /*0x4b07ec*/
             v30 = *location; /*0x4b07fd*/
             v31 = location[1]; /*0x4b0804*/
             v32 = location[2]; /*0x4b0810*/
@@ -297,7 +297,7 @@ void JumpjetLocomotionClass_Process(int a1)
     && *(unsigned long long *)&v1->Dest[1] == IDA___PAIR64__(g_DDraw_ClipRect, IDA_HIDWORD(qword_8A0794))
     && *(unsigned long long *)v1->HeadToCoord == qword_8A0794 )
   {
-    v21 = ((unsigned int *)v1)[0]; /*0x4b085d*/
+    v21 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b085d*/
     if ( v21->pathDirections[0] == -1 && *(double *)v21->currentSpeed_percentage > 0.0 ) /*0x4b087a*/
       (*((void (**)(FootClass *, unsigned int, unsigned int))v21->TechnoClass + 337))(v21, 0, 0); /*0x4b0880*/
   }
@@ -389,7 +389,7 @@ LABEL_12:
   v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = &((unsigned int *)this)[0] + a2; /*0x4b6b46*/
+    v9 = (int *)(&((unsigned int *)this)[0] + a2); /*0x4b6b46*/
     do /*0x4b6b57*/
     {
       ++v8; /*0x4b6b4b*/
@@ -528,9 +528,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
       swprintf(v49, (const size_t)&((char *)&stru_820320), v32); /*0x4b9a35*/
     }
     swprintf(&v51, (const size_t)&(unsigned int *)((char *)&stru_820320 + 17), (&off_7E5210)[((unsigned int *)a3)[0]]); /*0x4b9a58*/
-    v17 = &(unsigned int *)((char *)&stru_820320 + 9); /*0x4b9a6e*/
+    v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 9)); /*0x4b9a6e*/
     if ( !a4 ) /*0x4b9a73*/
-      v17 = &(unsigned int *)((char *)&stru_820320 + 5); /*0x4b9a75*/
+      v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 5)); /*0x4b9a75*/
     BuildingAnimByName = FindBuildingAnimByName(v17, 1); /*0x4b9a87*/
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/

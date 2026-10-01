@@ -164,7 +164,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x53c5de*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x53c5e7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x53c5e7*/
       this->m_8 = a2; /*0x53c5ef*/
       BYTE1(this->m_C) = a3 == 0; /*0x53c5f2*/
       return 1; /*0x53c5f8*/
@@ -270,7 +270,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x53c711*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x53c71a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x53c71a*/
     this->m_8 = a2; /*0x53c722*/
     BYTE1(this->m_C) = a3 == 0; /*0x53c725*/
   }

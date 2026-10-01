@@ -50,10 +50,10 @@ int StreamClass::Set2(unsigned int * a2)
     v3 = (**(int (***)(unsigned int, void *, unsigned int **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
     if ( v3 >= 0 ) /*0x45aec1*/
     {
-      v5 = (unsigned int)(a2);
+      v5 = (unsigned int *)((unsigned int)(a2));
       if ( *(unsigned int *)this->__pad_0 ) /*0x45aedc*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45aeea*/
-      *(unsigned int *)this->__pad_0 = v5; /*0x45aeed*/
+      *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
@@ -88,13 +88,13 @@ int StreamClass::Set(IUnknown * aP1)
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &(unsigned int *)((char *)&stru_818E00 + 17), &aP1); /*0x45af3d*/
+    v3 = (int (__cdecl ***)(unsigned int,int *,unsigned int **))((**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &(unsigned int *)((char *)&stru_818E00 + 17), &aP1)); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
-      v5 = (unsigned int)(aP1);
+      v5 = (unsigned int *)((unsigned int)(aP1));
       if ( *(unsigned int *)this->__pad_0 ) /*0x45af5c*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af6a*/
-      *(unsigned int *)this->__pad_0 = v5; /*0x45af6d*/
+      *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else

@@ -37,25 +37,25 @@ int DisplayClass::UpdateDisplayTimer()
   if ( this->DisplayClass_field_0x130 == (void *)1 ) /*0x487637*/
     this->DisplayClass_field_0x130 = 0; /*0x487639*/
   v1 = (char *)this->DisplayClass_field_0x130 - 1; /*0x487649*/
-  this->DisplayClass_field_0x130 = v1; /*0x48764a*/
+  this->DisplayClass_field_0x130 = (unsigned int)(v1); /*0x48764a*/
   v2 = (int)v1; /*0x487650*/
-  DisplayClass_field_0x12C = this->DisplayClass_field_0x12C; /*0x487652*/
+  DisplayClass_field_0x12C = (void *)(this->DisplayClass_field_0x12C); /*0x487652*/
   if ( ((uint8_t)DisplayClass_field_0x12C & 8) != 0 && ((uint8_t)DisplayClass_field_0x12C & 0x10) != 0 ) /*0x48765e*/
   {
     if ( v2 <= 0 ) /*0x48766f*/
     {
-      DisplayClass_field_0x12C = this->DisplayClass_field_0x140; /*0x487671*/
+      DisplayClass_field_0x12C = (void *)(this->DisplayClass_field_0x140); /*0x487671*/
       if ( ((int)this->DisplayClass_field_0x140 & 0x20) == 0x20 ) /*0x48767f*/
       {
         LOBYTE(DisplayClass_field_0x12C) = (uint8_t)DisplayClass_field_0x12C & 0xDF; /*0x487681*/
-        this->DisplayClass_field_0x140 = DisplayClass_field_0x12C; /*0x487683*/
+        this->DisplayClass_field_0x140 = (unsigned int)(DisplayClass_field_0x12C); /*0x487683*/
       }
     }
   }
   else if ( v2 <= 0 ) /*0x487662*/
   {
     LOBYTE(DisplayClass_field_0x12C) = (uint8_t)DisplayClass_field_0x12C | 0x18; /*0x487664*/
-    this->DisplayClass_field_0x12C = DisplayClass_field_0x12C; /*0x487666*/
+    this->DisplayClass_field_0x12C = (unsigned int)(DisplayClass_field_0x12C); /*0x487666*/
   }
   return (char)DisplayClass_field_0x12C; /*0x48766c*/
 
@@ -71,15 +71,15 @@ int DisplayClass::AdvanceFrameCounter()
   int v3; // edx
   int result; // eax
 
-  DisplayClass_field_0x130 = this->DisplayClass_field_0x130; /*0x487691*/
+  DisplayClass_field_0x130 = (void *)(this->DisplayClass_field_0x130); /*0x487691*/
   if ( DisplayClass_field_0x130 == (void *)-1 ) /*0x48769a*/
     this->DisplayClass_field_0x130 = 0; /*0x48769c*/
   v2 = (char *)this->DisplayClass_field_0x130 + 1; /*0x4876ac*/
-  this->DisplayClass_field_0x130 = v2; /*0x4876ad*/
+  this->DisplayClass_field_0x130 = (unsigned int)(v2); /*0x4876ad*/
   v3 = (int)v2; /*0x4876b3*/
   result = (int)this->DisplayClass_field_0x134; /*0x4876b5*/
   if ( v3 > result ) /*0x4876bd*/
-    this->DisplayClass_field_0x130 = (void *)result; /*0x4876bf*/
+    this->DisplayClass_field_0x130 = (unsigned int)((void *)result); /*0x4876bf*/
   if ( (int)DisplayClass_field_0x130 <= 0 ) /*0x4876c8*/
   {
     result = (int)this->DisplayClass_field_0x130; /*0x4876ca*/
@@ -87,7 +87,7 @@ int DisplayClass::AdvanceFrameCounter()
     {
       result = (int)this->DisplayClass_field_0x140; /*0x4876d4*/
       LOBYTE(result) = result | 0x20; /*0x4876da*/
-      this->DisplayClass_field_0x140 = (void *)result; /*0x4876dc*/
+      this->DisplayClass_field_0x140 = (unsigned int)((void *)result); /*0x4876dc*/
     }
   }
   return result; /*0x4876c7*/
@@ -138,7 +138,7 @@ int DisplayClass::SetSize()
   LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4a88f7*/
   BYTE1(this->DisplayClass_field_0x11B0) = 0; /*0x4a88fd*/
   BYTE2(this->DisplayClass_field_0x11B0) = 0; /*0x4a8903*/
-  v2 = &stru_8A0360; /*0x4a8909*/
+  v2 = (gamemd::LayerClass *)(&stru_8A0360); /*0x4a8909*/
   do /*0x4a891e*/
   {
     result = (*(int (**)(LayerClass *))(v2->items[0] + 12))(v2); /*0x4a8912*/

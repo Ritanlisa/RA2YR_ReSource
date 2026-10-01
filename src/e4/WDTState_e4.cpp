@@ -89,7 +89,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x76bb5a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x76bb5a*/
     this->m_8 = m_8; /*0x76bb5d*/
     BYTE1(this->m_C) = a3 == 0; /*0x76bb60*/
   }

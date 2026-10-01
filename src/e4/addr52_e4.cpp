@@ -187,7 +187,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       }
     }
     IntVector::Copy((IntVector *)a1, &v22); /*0x525514*/
-    *(unsigned int *)a1 = (void*)&TypeList_int_vftable; /*0x52551e*/
+    *(unsigned int *)a1 = (unsigned int)((void*)&TypeList_int_vftable); /*0x52551e*/
     v16 = v24; /*0x525528*/
     *(unsigned int *)(a1 + 16) = v23; /*0x52552c*/
     Items = v22.Items; /*0x52552f*/
@@ -202,7 +202,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     v19 = (void **)(a6);
     v22.IsAllocated = (void **)(0);
     v22.Capacity = (void **)(0);
-    a5 = (void*)&VectorClass_int_vftable; /*0x525562*/
+    a5 = (void **)((void*)&VectorClass_int_vftable); /*0x525562*/
     if ( a6 && IDA_HIBYTE(a8) ) /*0x525572*/
       goto LABEL_20; /*0x525572*/
   }
@@ -212,10 +212,10 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     *(unsigned int *)(a1 + 8) = 0; /*0x52558a*/
     *(unsigned char *)(a1 + 12) = 1; /*0x52558d*/
     *(unsigned char *)(a1 + 13) = 0; /*0x525591*/
-    *(unsigned int *)a1 = (void*)&VectorClass_int_vftable; /*0x525594*/
+    *(unsigned int *)a1 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x525594*/
     TypeList::Copy((TypeList *)a1, &a5); /*0x525596*/
-    *(unsigned int *)a1 = (void*)&TypeList_int_vftable; /*0x52559b*/
-    a5 = (void*)&VectorClass_int_vftable; /*0x5255a1*/
+    *(unsigned int *)a1 = (unsigned int)((void*)&TypeList_int_vftable); /*0x52559b*/
+    a5 = (void **)((void*)&VectorClass_int_vftable); /*0x5255a1*/
     v20 = a10; /*0x5255af*/
     *(unsigned int *)(a1 + 16) = a9; /*0x5255b6*/
     v19 = a6; /*0x5255b9*/
@@ -260,7 +260,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
     {
       if ( a2 == ((unsigned int *)this)[0] ) /*0x528248*/
       {
-        vtable2 = ((unsigned int *)this)[0]; /*0x52824e*/
+        vtable2 = (unsigned int *)(((unsigned int *)this)[0]); /*0x52824e*/
 LABEL_5:
         if ( vtable2 ) /*0x528253*/
         {
@@ -316,25 +316,25 @@ LABEL_29:
       a2 = v16; /*0x528314*/
       if ( this->fallRate ) /*0x528318*/
       {
-        attachedBomb = this->attachedBomb; /*0x52831f*/
+        attachedBomb = (gamemd::BombClass *)(this->attachedBomb); /*0x52831f*/
         if ( !attachedBomb || attachedBomb->AbstractClass != v16 ) /*0x528328*/
         {
           v18 = (BombClass *)SortedArray::BinarySearch((SortedArray *)&this->owningHouseIndex, (int *)&a2); /*0x528331*/
           if ( !v18 ) /*0x528338*/
             goto LABEL_27; /*0x528338*/
-          this->attachedBomb = v18; /*0x52833a*/
+          this->attachedBomb = (unsigned int)(v18); /*0x52833a*/
         }
         a2 = v16; /*0x528341*/
         if ( (uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a2) ) /*0x528348*/
           p_vtable1 = &this->((unsigned int *)attachedBomb)[0]; /*0x528354*/
         else
           p_vtable1 = (void **)&unk_B7882C; /*0x528359*/
-        vtable2 = *p_vtable1; /*0x52835e*/
+        vtable2 = (unsigned int *)(*p_vtable1); /*0x52835e*/
         if ( vtable2 ) /*0x528362*/
         {
           v6 = a3; /*0x528364*/
-          ((unsigned int *)this)[0] = vtable2; /*0x528368*/
-          ((unsigned int *)this)[0] = v4; /*0x52836b*/
+          ((unsigned int *)this)[0] = (unsigned int)(vtable2); /*0x528368*/
+          ((unsigned int *)this)[0] = (unsigned int)(v4); /*0x52836b*/
           goto LABEL_5; /*0x528370*/
         }
       }
@@ -379,7 +379,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   v6 = (char **)String::GetOrEmpty_Alt((String *)a4); /*0x529e85*/
   a4 = v6; /*0x529e87*/
   v7 = String::GetOrEmpty_Alt((String *)Source); /*0x529e90*/
-  Source = &g_INI_DefaultBuffer; /*0x529e98*/
+  Source = (char *)(&g_INI_DefaultBuffer); /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
   if ( v7 == ((unsigned int *)this)[0] ) /*0x529ebc*/
@@ -389,7 +389,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   else
   {
     v17 = strlen(v7) + 1; /*0x529fab*/
-    v18 = (Checksummer *)KeyValuePair::Init(v26, 0); /*0x529fb7*/
+    v18 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init(v26, 0)); /*0x529fb7*/
     v19 = Checksummer::Add_Buffer(v18, (uint8_t *)v7, v17 - 1); /*0x529fca*/
     v23 = v19; /*0x529fcf*/
     if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x529ff0*/
@@ -400,14 +400,14 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
       goto LABEL_11; /*0x52a00c*/
     }
     v6 = a4; /*0x529ff2*/
-    ((unsigned int *)this)[0] = vtable2; /*0x529ff9*/
-    ((unsigned int *)this)[0] = v7; /*0x529ffc*/
+    ((unsigned int *)this)[0] = (unsigned int)(vtable2); /*0x529ff9*/
+    ((unsigned int *)this)[0] = (unsigned int)(v7); /*0x529ffc*/
   }
   if ( vtable2 ) /*0x529ec7*/
   {
     v9 = strlen((const char *)v6) + 1; /*0x529ece*/
     v21 = (uint8_t *)a4; /*0x529edb*/
-    v10 = (Checksummer *)KeyValuePair::Init(v27, 0); /*0x529ee2*/
+    v10 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init(v27, 0)); /*0x529ee2*/
     v11 = vtable2 + 11; /*0x529ef5*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
     if ( (uint8_t)SortedArray::Find(v11, (int *)&a4) ) /*0x529f02*/

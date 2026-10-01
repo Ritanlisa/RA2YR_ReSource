@@ -362,7 +362,7 @@ LABEL_44:
       g_MissionQueueFrame.briefing[139] = *(unsigned int *)(a2 + 36); /*0x5694c2*/
       v44 = &g_MissionQueueFrame.briefing[130]; /*0x5694c8*/
     }
-    v45 = aP3; /*0x5694cd*/
+    v45 = (int *)(aP3); /*0x5694cd*/
     if ( aP3 ) /*0x5694d6*/
     {
       v83 = *(unsigned int *)(a2 + 36); /*0x5694e7*/
@@ -389,7 +389,7 @@ LABEL_44:
             v50 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x569580*/
             if ( v50 ) /*0x56958a*/
             {
-              aP3 = (int *)v44[9]; /*0x569596*/
+              aP3 = (IUnknown *)((int *)v44[9]); /*0x569596*/
               Object::SpawnAtCell(v50, *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 96), (int16_t *)&aP3, -1); /*0x5695a9*/
             }
           }
@@ -576,7 +576,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   v1 = this; /*0x56c515*/
   v81 = -1; /*0x56c51a*/
   v95 = -1; /*0x56c51e*/
-  Terrain_field_0x14 = this->Terrain_field_0x14; /*0x56c529*/
+  Terrain_field_0x14 = (unsigned int *)(this->Terrain_field_0x14); /*0x56c529*/
   v3 = 0; /*0x56c52c*/
   v4 = *(unsigned int *)this->__pad_68 + 4 * *(unsigned int *)&this->__pad_68[4]; /*0x56c52e*/
   v100 = 0; /*0x56c531*/

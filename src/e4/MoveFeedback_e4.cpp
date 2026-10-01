@@ -46,13 +46,13 @@ int MoveFeedback::ProcessCommand()
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
   {
-    result = __2_YAPAXI_Z(0x18u); /*0x7327fb*/
+    result = (int)(__2_YAPAXI_Z(0x18u)); /*0x7327fb*/
     v3 = result; /*0x732800*/
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x732814*/
+      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x732814*/
       *(unsigned int *)(v3 + 20) = 10; /*0x73281a*/
       *(unsigned int *)(v3 + 16) = 0; /*0x732821*/
     }
@@ -96,7 +96,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x7328a8*/
+      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x7328a8*/
       *(unsigned int *)(v3 + 20) = 10; /*0x7328ae*/
       *(unsigned int *)(v3 + 16) = 0; /*0x7328b5*/
     }
@@ -277,7 +277,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
     BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
   }

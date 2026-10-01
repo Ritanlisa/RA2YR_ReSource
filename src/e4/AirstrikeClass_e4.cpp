@@ -64,7 +64,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   {
     v5 = *((unsigned int *)this + 9); /*0x41d8b9*/
   }
-  v7 = (int)((unsigned int *)(*(int (**)(int *, unsigned int *))(*a2 + 72))(a2, v18));
+  v7 = (unsigned int *)((int)((unsigned int *)(*(int (**)(int *, unsigned int *))(*a2 + 72))(a2, v18)));
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
@@ -86,7 +86,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
       v18[2] = v11[2]; /*0x41d961*/
       result = StartAudioControllerAt(((unsigned int *)dword_8871E0)[0], (int)v18, 0); /*0x41d96b*/
     }
-    *((unsigned int *)this + 20) = a2; /*0x41d972*/
+    *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/
     {
       result = (*(int (**)(int *))(*a2 + 44))(a2); /*0x41d97f*/
@@ -252,10 +252,10 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
-  ((unsigned int *)Block)[0] = &vt_AirstrikeClass; /*0x41dd63*/
-  ((unsigned int *)Block)[0] = &vt_AirstrikeClass; /*0x41dd6a*/
-  ((unsigned int *)Block)[0] = &vt_AirstrikeClass; /*0x41dd71*/
-  v5 = Block; /*0x41dd7f*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd63*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
+  v5 = (gamemd::AirstrikeClass *)(Block); /*0x41dd7f*/
   v3 = (*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
@@ -294,7 +294,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
     while ( 1 ) /*0x420ec6*/
     {
       v3 = (unsigned int)(v2 % 256 * (v2 / 256));
-      v1 = (unsigned int *)((unsigned int)((uint64_t)(2164392969LL * v3) >> 32) >> 31); /*0x420ed6*/
+      v1 = (unsigned int)((unsigned int *)((unsigned int)((uint64_t)(2164392969LL * v3) >> 32) >> 31)); /*0x420ed6*/
       v4 = v3 / 127; /*0x420ed9*/
       if ( v3 / 127 > 255 ) /*0x420ee1*/
         break; /*0x420ee1*/
@@ -319,7 +319,7 @@ LABEL_9:
   v5 = g_AlphaShapeLimit - 1; /*0x420f07*/
   if ( g_AlphaShapeLimit - 1 >= 0 ) /*0x420f12*/
   {
-    v1 = (unsigned int *)(dword_88A0F4);
+    v1 = (unsigned int)((unsigned int *)(dword_88A0F4));
     do /*0x420f36*/
     {
       v6 = (unsigned char *)((unsigned int *)(v1))[v5]; /*0x420f19*/
@@ -422,9 +422,9 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
       aP0->AbstractClass = &vt_AirstrikeClass; /*0x41d717*/
-      ((unsigned int *)aP0)[0] = &vt_AirstrikeClass; /*0x41d71d*/
-      ((unsigned int *)aP0)[0] = &vt_AirstrikeClass; /*0x41d724*/
-      ((unsigned int *)aP0)[0] = &vt_AirstrikeClass; /*0x41d72b*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/

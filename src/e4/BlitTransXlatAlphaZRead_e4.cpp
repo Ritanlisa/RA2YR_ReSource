@@ -105,7 +105,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
-        *a2 = (gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v17[*a7])));
+        *a2 = (unsigned short)((gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v17[*a7]))));
         v13 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494c06*/
@@ -149,7 +149,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
-        *a2 = (gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v18[*a7])));
+        *a2 = (unsigned short)((gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v18[*a7]))));
         v14 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494ceb*/
@@ -371,7 +371,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3a9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Blitter); /*0x49a3a9*/
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
     __3_YAXPAX_Z(this); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
@@ -383,7 +383,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3c9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Blitter); /*0x49a3c9*/
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
     __3_YAXPAX_Z(this); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
@@ -395,7 +395,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3e9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Blitter); /*0x49a3e9*/
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
     __3_YAXPAX_Z(this); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
@@ -407,7 +407,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a409*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Blitter); /*0x49a409*/
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
     __3_YAXPAX_Z(this); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/

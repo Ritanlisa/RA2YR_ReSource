@@ -71,11 +71,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( ((unsigned int *)a1)[0] ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
-  *(unsigned int *)v11.__pad_0 = &vt_DynamicVectorClass; /*0x4cfeb7*/
+  *(unsigned int *)v11.__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  *(unsigned int *)v10.__pad_0 = &vt_DynamicVectorClass; /*0x4cfecd*/
+  *(unsigned int *)v10.__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/

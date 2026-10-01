@@ -200,7 +200,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   {
     v5 = (int)(*((unsigned int *)this + 18));
     v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (int)((char *)this + 64);
+    v7 = (char *)((int)((char *)this + 64));
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
@@ -228,7 +228,7 @@ int FactoryClass::SetObject(int a2)
   *(unsigned int *)&this->__pad_42[22] = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
-  this->owner = v3; /*0x4c9e30*/
+  this->owner = (unsigned int)(v3); /*0x4c9e30*/
   this->production[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
   this->queuedObjects[0] = v5; /*0x4c9e41*/
@@ -312,7 +312,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
   int v13; // [esp+28h] [ebp-4h]
 
   v2 = a2; /*0x4ca273*/
-  v3 = a1; /*0x4ca279*/
+  v3 = (gamemd::FactoryClass *)(a1); /*0x4ca279*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, (int)a2); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
   {
@@ -321,20 +321,20 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
-      *(unsigned int *)&v3->onHold = &vt_DynamicVectorClass; /*0x4ca2b7*/
+      *(unsigned int *)&v3->onHold = (unsigned int)(&vt_DynamicVectorClass); /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = &vt_FactoryClass; /*0x4ca2c7*/
-      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2cd*/
-      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2d4*/
-      ((unsigned int *)v3)[0] = &vt_FactoryClass; /*0x4ca2db*/
+      ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2cd*/
+      ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2d4*/
+      ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
     result = (*(int (**)(int *, FactoryClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x4ca2f2*/
     if ( result >= 0 ) /*0x4ca2f7*/
     {
-      v6 = a1; /*0x4ca2fd*/
+      v6 = (gamemd::FactoryClass *)(a1); /*0x4ca2fd*/
       v13 = 0; /*0x4ca301*/
       if ( (int)a1 <= 0 ) /*0x4ca307*/
       {
@@ -373,9 +373,9 @@ LABEL_14:
             v10 = *(unsigned int *)&v3->__pad_42[14]; /*0x4ca350*/
             v11 = *(unsigned int *)&v3->__pad_42[2]; /*0x4ca353*/
             *(unsigned int *)&v3->__pad_42[14] = v10 + 1; /*0x4ca359*/
-            *(unsigned int *)(v11 + 4 * v10) = a2; /*0x4ca360*/
+            *(unsigned int *)(v11 + 4 * v10) = (unsigned int)(a2); /*0x4ca360*/
           }
-          v6 = a1; /*0x4ca367*/
+          v6 = (gamemd::FactoryClass *)(a1); /*0x4ca367*/
           if ( ++v13 >= (int)a1 ) /*0x4ca372*/
             goto LABEL_14; /*0x4ca372*/
         }
@@ -560,9 +560,9 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_FactoryClass; /*0x4ca776*/
-  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca77c*/
-  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca783*/
-  ((unsigned int *)Block)[0] = &vt_FactoryClass; /*0x4ca78a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca77c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca783*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/

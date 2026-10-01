@@ -322,7 +322,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   }
   v12 = *(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 16); /*0x627719*/
   v37 = v12; /*0x62771c*/
-  v13 = __2_YAPAXI_Z(0x18u); /*0x627720*/
+  v13 = (int)(__2_YAPAXI_Z(0x18u)); /*0x627720*/
   v14 = (unsigned int *)v13; /*0x627725*/
   if ( v13 ) /*0x62772c*/
   {
@@ -330,10 +330,10 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     *(unsigned int *)(v13 + 8) = 20; /*0x627733*/
     *(unsigned char *)(v13 + 12) = 1; /*0x62773a*/
     *(unsigned char *)(v13 + 13) = 0; /*0x62773e*/
-    *(unsigned int *)v13 = &vt_VectorClass; /*0x627742*/
-    *(unsigned int *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
+    *(unsigned int *)v13 = (unsigned int)(&vt_VectorClass); /*0x627742*/
+    *(unsigned int *)(v13 + 4) = (unsigned int)(__2_YAPAXI_Z(0x50u)); /*0x627750*/
     *((unsigned char *)v14 + 13) = 1; /*0x627753*/
-    *v14 = &vt_DynamicVectorClass; /*0x627757*/
+    *v14 = (unsigned int)(&vt_DynamicVectorClass); /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }
@@ -367,7 +367,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
         v22 = v14[4]; /*0x627810*/
         v23 = v14[1]; /*0x627813*/
         v14[4] = v22 + 1; /*0x627819*/
-        *(unsigned int *)(v23 + 4 * v22) = inited; /*0x62781c*/
+        *(unsigned int *)(v23 + 4 * v22) = (unsigned int)(inited); /*0x62781c*/
       }
       v24 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x627824*/
       if ( v24 ) /*0x62782e*/
@@ -384,7 +384,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
         v28 = v14[4]; /*0x627881*/
         v29 = v14[1]; /*0x627884*/
         v14[4] = v28 + 1; /*0x62788a*/
-        *(unsigned int *)(v29 + 4 * v28) = v25; /*0x62788d*/
+        *(unsigned int *)(v29 + 4 * v28) = (unsigned int)(v25); /*0x62788d*/
       }
       v30 = ++v35 < v37; /*0x6278a0*/
       v32 += 3; /*0x6278a6*/

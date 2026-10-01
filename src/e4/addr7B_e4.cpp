@@ -536,7 +536,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   }
   UDPInterfaceClass::connect(this); /*0x7b2f04*/
   v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
-  *((unsigned int *)this + 64852) = &vt_VectorClass; /*0x7b2f0f*/
+  *((unsigned int *)this + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b2f0f*/
   if ( v8 && *((unsigned char *)this + 259421) ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -545,7 +545,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   *((unsigned char *)this + 259421) = 0; /*0x7b2f34*/
   *((unsigned int *)this + 64854) = 0; /*0x7b2f3a*/
   v9 = (void *)*((unsigned int *)this + 64719); /*0x7b2f40*/
-  *((unsigned int *)this + 64718) = &vt_VectorClass; /*0x7b2f46*/
+  *((unsigned int *)this + 64718) = (unsigned int)(&vt_VectorClass); /*0x7b2f46*/
   if ( v9 && *((unsigned char *)this + 258885) ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/
@@ -605,11 +605,11 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   vtable0 = (unsigned char *)((const char *)(this->AbstractClass));
   v20 = (void *)((int)((void *)(v5)));
   if ( *((unsigned char *)this->AbstractClass + v5) == 13 && vtable0[v5 + 1] == 10 ) /*0x7b6152*/
-    v20 = v5 + 1; /*0x7b6155*/
-  v10 = &vtable0[a2]; /*0x7b615d*/
+    v20 = (void *)(v5 + 1); /*0x7b6155*/
+  v10 = (const char *)(&vtable0[a2]); /*0x7b615d*/
   if ( *a3 ) /*0x7b6160*/
     __3_YAXPAX_Z(*a3); /*0x7b6167*/
-  *a3 = (const char *)(0);
+  *a3 = (void *)((const char *)(0));
   if ( v10 ) /*0x7b6177*/
     v11 = strlen(v10) + 1; /*0x7b6180*/
   else
@@ -619,8 +619,8 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   *v12 = 0; /*0x7b6198*/
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
-  v13 = &g_INI_DefaultBuffer; /*0x7b61c4*/
-  v14 = (unsigned int)(v20)- a2 + 1; /*0x7b61c9*/
+  v13 = (const char *)(&g_INI_DefaultBuffer); /*0x7b61c4*/
+  v14 = (void *)((unsigned int)(v20)- a2 + 1); /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
   v15 = (char *)__2_YAPAXI_Z((unsigned int)(v20)- a2 + 2); /*0x7b61d4*/
@@ -629,7 +629,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( v13 ) /*0x7b61e4*/
     strncpy(v15, v13, v14); /*0x7b61e9*/
   v16[v14] = 0; /*0x7b61f1*/
-  v17 = &g_INI_DefaultBuffer; /*0x7b61f5*/
+  v17 = (const char *)(&g_INI_DefaultBuffer); /*0x7b61f5*/
   if ( v16 ) /*0x7b61fc*/
     v17 = v16; /*0x7b61fe*/
   if ( *a3 ) /*0x7b6200*/
@@ -676,7 +676,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   }
   v7 = (char *)(*a2);
   if ( !*a2 ) /*0x7b6459*/
-    v7 = &g_INI_DefaultBuffer; /*0x7b645f*/
+    v7 = (char *)(&g_INI_DefaultBuffer); /*0x7b645f*/
   String_Process_7B4A10(v7); /*0x7b6469*/
   *(unsigned int *)aP0 = 0; /*0x7b6472*/
   if ( Block ) /*0x7b647b*/
@@ -745,7 +745,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
     strcat(v11, v7); /*0x7b65c1*/
     if ( v8 ) /*0x7b65cc*/
       RA2_OPDEL(v8); /*0x7b65cf*/
-    v4 = aP0; /*0x7b65d7*/
+    v4 = (char **)(aP0); /*0x7b65d7*/
   }
   *v4 = 0; /*0x7b65dd*/
   if ( v5 ) /*0x7b65e4*/
@@ -816,7 +816,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v11 = (const wchar_t *)(&v9[a2]);
   if ( *a3 ) /*0x7b7c77*/
     __3_YAXPAX_Z(*a3); /*0x7b7c7e*/
-  *a3 = (const wchar_t *)(0);
+  *a3 = (void *)((const wchar_t *)(0));
   if ( v11 ) /*0x7b7c8e*/
     v12 = wcslen(v11) + 1; /*0x7b7c99*/
   else
@@ -826,8 +826,8 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   *v13 = 0; /*0x7b7cb1*/
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
-  v14 = (unsigned int)(v21)- a2 + 1; /*0x7b7ccd*/
-  v15 = &g_TypeClass_DefaultString; /*0x7b7cce*/
+  v14 = (void *)((unsigned int)(v21)- a2 + 1); /*0x7b7ccd*/
+  v15 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
   v16 = (wchar_t *)__2_YAPAXI_Z(2 * v14 + 2); /*0x7b7cde*/
@@ -836,7 +836,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   if ( v15 ) /*0x7b7cef*/
     wcsncpy(v16, v15, v14); /*0x7b7cf4*/
   v17[v14] = 0; /*0x7b7cfc*/
-  v18 = &g_TypeClass_DefaultString; /*0x7b7d05*/
+  v18 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7d05*/
   if ( v17 ) /*0x7b7d0a*/
     v18 = v17; /*0x7b7d0c*/
   if ( *a3 ) /*0x7b7d0e*/
@@ -907,17 +907,17 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
-    v12 = (gamemd::ObjectClass *)(v2 + this->fallRate);
+    v12 = (int)((gamemd::ObjectClass *)(v2 + this->fallRate));
     this->ambientSoundController[3] = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
-    nextObject = this->nextObject; /*0x7b961a*/
+    nextObject = (gamemd::ObjectClass *)(this->nextObject); /*0x7b961a*/
     this->ambientSoundController[4] = v3; /*0x7b961d*/
     v14 = (char *)nextObject + v3; /*0x7b9620*/
     v15 = this->ambientSoundController[2]; /*0x7b9622*/
     v18[2] = v4; /*0x7b9625*/
     this->customSound_controller[0] = v4; /*0x7b9629*/
     v18[3] = v5; /*0x7b962c*/
-    v18[1] = v14; /*0x7b9630*/
+    v18[1] = (unsigned int)(v14); /*0x7b9630*/
     v19[2] = v4; /*0x7b9634*/
     this->customSound_controller[1] = v5; /*0x7b9638*/
     v19[0] = 0; /*0x7b963d*/
@@ -967,8 +967,8 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     {
       *aP2 -= *aP0; /*0x7bbe50*/
       aP2[2] = v5 + *aP0; /*0x7bbe56*/
-      v6 = *aP0; /*0x7bbe59*/
-      v7 = aP0[2]; /*0x7bbe5b*/
+      v6 = (int)(*aP0); /*0x7bbe59*/
+      v7 = (int)(aP0[2]); /*0x7bbe5b*/
       *(unsigned int *)aP0 = 0; /*0x7bbe5e*/
       aP0[2] = v6 + v7; /*0x7bbe66*/
     }
@@ -978,8 +978,8 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
       v9 = (int)(aP2[3]);
       aP2[1] -= v8; /*0x7bbe78*/
       aP2[3] = aP0[1] + v9; /*0x7bbe80*/
-      v10 = aP0[1]; /*0x7bbe83*/
-      v11 = aP0[3]; /*0x7bbe86*/
+      v10 = (int)(aP0[1]); /*0x7bbe83*/
+      v11 = (int)(aP0[3]); /*0x7bbe86*/
       aP0[1] = 0; /*0x7bbe89*/
       aP0[3] = v10 + v11; /*0x7bbe92*/
     }

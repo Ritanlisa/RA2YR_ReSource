@@ -207,7 +207,7 @@ LABEL_11:
   if ( aP4 ) /*0x4816ce*/
     v8 = *(unsigned int **)this->__pad_E8; /*0x4816d0*/
   else
-    v8 = this->Cell_field_0xE4; /*0x4816d8*/
+    v8 = (unsigned int *)(this->Cell_field_0xE4); /*0x4816d8*/
   v9 = 0; /*0x4816de*/
   v10 = 0; /*0x4816e0*/
   v11 = 10; /*0x4816e2*/
@@ -235,7 +235,7 @@ LABEL_24:
     if ( ((uint8_t (*)(void ***, int, unsigned int))v15[2])(&v15, v11 + v10, 0) ) /*0x481733*/
     {
 LABEL_22: v12 = (unsigned int)(v20++);
-      *((unsigned int *)Block + v12) = v8; /*0x481749*/
+      *((unsigned int *)Block + v12) = (unsigned int)(v8); /*0x481749*/
     }
     v10 = v17; /*0x48174c*/
     goto LABEL_24; /*0x48174c*/
@@ -568,7 +568,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
   v3 = *(unsigned int **)((char *)this + 228); /*0x487a19*/
   if ( v3 ) /*0x487a21*/
   {
-    v4 = aP1; /*0x487a27*/
+    v4 = (char)(aP1); /*0x487a27*/
     while ( 1 ) /*0x487a2d*/
     {
       v5 = (unsigned int *)v3[12]; /*0x487a2d*/
@@ -591,7 +591,7 @@ LABEL_8:
     }
 LABEL_10:
     v6 = *v3; /*0x487a78*/
-    aP1 = v3[27]; /*0x487a84*/
+    aP1 = (IUnknown *)(v3[27]); /*0x487a84*/
     (*(void (**)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,
       &aP1,
@@ -604,11 +604,11 @@ LABEL_10:
     goto LABEL_11; /*0x487a9e*/
   }
 LABEL_12:
-  aP1 = *((unsigned int *)this + 9); /*0x487aaa*/
+  aP1 = (IUnknown *)(*((unsigned int *)this + 9)); /*0x487aaa*/
   Coord::Subtract(v17, ((int16_t)aP1 << 8) + 128, (SHIWORD(aP1) << 8) + 128, 0); /*0x487ad0*/
   v16[0] = 128; /*0x487adc*/
   v16[1] = 128; /*0x487ae0*/
-  v7 = Isometric::InitTables(v16); /*0x487ae9*/
+  v7 = (int)(Isometric::InitTables(v16)); /*0x487ae9*/
   v14 = -2; /*0x487aeb*/
   do /*0x487bff*/
   {
@@ -618,8 +618,8 @@ LABEL_12:
     {
       HIWORD(v15) = v8 + *((unsigned short *)this + 19); /*0x487b0c*/
       LOWORD(v15) = v14 + *((unsigned short *)this + 18); /*0x487b11*/
-      aP1 = v15; /*0x487b1e*/
-      v9 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP1); /*0x487b28*/
+      aP1 = (IUnknown *)(v15); /*0x487b1e*/
+      v9 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP1)); /*0x487b28*/
       if ( v9 != (unsigned int *)this ) /*0x487b2f*/
       {
         v10 = (int *)v9[57]; /*0x487b35*/
@@ -642,7 +642,7 @@ LABEL_12:
                 if ( (*(int (**)(int *, int, int, int, unsigned int, int))(*v10 + 428))(v10, this, -1, -1, 0, 1) == 7 ) /*0x487ba8*/
                 {
                   v12 = *v10; /*0x487bb2*/
-                  aP1 = v10[27]; /*0x487bb6*/
+                  aP1 = (IUnknown *)(v10[27]); /*0x487bb6*/
                   (*(void (**)(int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v12 + 364))( /*0x487bd0*/
                     v10,
                     &aP1,
@@ -749,7 +749,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   Cell_field_0x0 = this->Cell_field_0x0; /*0x4dcf5b*/
   HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
-  *(unsigned int *)v14 = v17; /*0x4dcf69*/
+  *(unsigned int *)v14 = (unsigned int)(v17); /*0x4dcf69*/
   v10 = (*(int (**)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
   v11 = (*(int (**)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&stru_87F5F0.__pad_58[416], v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/

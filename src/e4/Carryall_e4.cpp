@@ -97,7 +97,7 @@ LABEL_4:
       {
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 7); /*0x416ec3*/
 LABEL_18:
-        Carryall_field_00 = this->Carryall_field_00; /*0x416ec9*/
+        Carryall_field_00 = (int)(this->Carryall_field_00); /*0x416ec9*/
         NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, *((unsigned int *)this + 361)); /*0x416ed6*/
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
@@ -220,7 +220,7 @@ LABEL_44:
         v28[1] = *((unsigned int *)this + 40); /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v27)->flags[0]) & 1; /*0x41722f*/
-        v23 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v28); /*0x417236*/
+        v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v28)); /*0x417236*/
         Building = CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)Team::GetMember((Team *)this, 0)
@@ -238,7 +238,7 @@ LABEL_44:
         }
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x4172b1*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 292))(this, 1); /*0x4172bd*/
-        v25 = this->Carryall_field_00; /*0x4172c3*/
+        v25 = (int)(this->Carryall_field_00); /*0x4172c3*/
         *((unsigned char *)this + 1748) = 1; /*0x4172ca*/
         (*(void (**)(Carryall *, unsigned int, int))(v25 + 1156))(this, 0, 1); /*0x4172d1*/
         return 1; /*0x4172da*/

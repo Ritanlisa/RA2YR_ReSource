@@ -62,7 +62,7 @@ void sub_5C7EC0(const void * a1, int a2)
     v8 = 0; /*0x5c7f03*/
     goto LABEL_8; /*0x5c7f05*/
   }
-  v9 = (int)(v5);
+  v9 = (int *)((int)(v5));
   v10 = ((unsigned int *)(dword_ABF5B0))[v5]; /*0x5c7f09*/
   v11 = 0x80000000; /*0x5c7f10*/
   v8 = 32 * v9; /*0x5c7f15*/
@@ -117,14 +117,14 @@ void sub_5C7EC0(const void * a1, int a2)
     }
     v17 = 0; /*0x5c7f87*/
   }
-  ((unsigned int *)(dword_ABF8C4))[0] = (int *)(v17 - 32);
+  ((unsigned int *)(dword_ABF8C4))[0] = (unsigned int)((int *)(v17 - 32));
   RotateBitBufferRight(&dword_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
   DivideBigInteger(&dword_ABF5A4, (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
   RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c7fd9*/
   v21 = 2; /*0x5c7ff5*/
   ((unsigned int *)(dword_ABF8C4))[0] = (((unsigned int *)(dword_ABF8C4))[0] + 15) % 16 + 1; /*0x5c7ffa*/
   v22 = dword_ABF5A4 == -1; /*0x5c8006*/
-  v23 = &dword_ABF5A4; /*0x5c8007*/
+  v23 = (int *)(&dword_ABF5A4); /*0x5c8007*/
   ++dword_ABF5A4; /*0x5c800c*/
   for ( ; v22; v22 = (*v23)++ == -1 ) /*0x5c8012*/
   {

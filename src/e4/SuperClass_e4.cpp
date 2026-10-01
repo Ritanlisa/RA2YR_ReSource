@@ -48,7 +48,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 764) /*0x53ae66*/
     && *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 768) )
   {
-    PsyDom_Owner = (House *)this; /*0x53ae79*/
+    PsyDom_Owner = (int)((House *)this); /*0x53ae79*/
     *(unsigned int *)&PsyDom_Coords = a2; /*0x53ae7f*/
     v3 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 764); /*0x53ae85*/
     v4 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], &PsyDom_Coords); /*0x53ae95*/
@@ -61,7 +61,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       PsyDom_Anim = (int)AnimClass::ctor(v6, v3, v8, 0, 1, (void *)0x600, 0, 0); /*0x53aeea*/
     else
       PsyDom_Anim = 0; /*0x53aef1*/
-    v7 = dword_A8B230 + 130; /*0x53af06*/
+    v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
     dword_A8B230[130].vtable0 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53af1b*/
     v7->vtable1 = (void *)v9[1]; /*0x53af21*/
@@ -80,10 +80,10 @@ void SuperClass::Constructor()
   int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
-  this->SuperClass_field_0x24 = (void *)-1; /*0x6caecd*/
+  this->SuperClass_field_0x24 = (unsigned int)((void *)-1); /*0x6caecd*/
   this->SuperClass_field_0x28 = 0; /*0x6caed0*/
   this->SuperClass_field_0x2C = 0; /*0x6caed3*/
-  this->SuperClass_field_0x30 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6caedc*/
+  this->SuperClass_field_0x30 = (unsigned int)(*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x6caedc*/
   this->SuperClass_field_0x38 = 0; /*0x6caedf*/
   *(unsigned int *)&this->__pad_3C[12] = 0; /*0x6caee2*/
   this->__pad_3C[4] = 0; /*0x6caee5*/
@@ -97,12 +97,12 @@ void SuperClass::Constructor()
   BYTE2(this->SuperClass_field_0x6C) = 0; /*0x6caf04*/
   HIBYTE(this->SuperClass_field_0x6C) = 0; /*0x6caf07*/
   LOBYTE(this->SuperClass_field_0x70) = 0; /*0x6caf0a*/
-  this->SuperClass_field_0x7C = (void *)-1; /*0x6caf0d*/
-  this->SuperClass_field_0x0 = &vt_SuperClass; /*0x6caf10*/
-  this->SuperClass_field_0x4 = &vt_SuperClass; /*0x6caf16*/
-  this->SuperClass_field_0x8 = &vt_SuperClass; /*0x6caf1d*/
-  *(unsigned int *)this->__pad_C = &vt_SuperClass; /*0x6caf24*/
-  *(unsigned int *)this->__pad_3C = &g_TypeClass_DefaultString; /*0x6caf2b*/
+  this->SuperClass_field_0x7C = (unsigned int)((void *)-1); /*0x6caf0d*/
+  this->SuperClass_field_0x0 = (unsigned int)(&vt_SuperClass); /*0x6caf10*/
+  this->SuperClass_field_0x4 = (unsigned int)(&vt_SuperClass); /*0x6caf16*/
+  this->SuperClass_field_0x8 = (unsigned int)(&vt_SuperClass); /*0x6caf1d*/
+  *(unsigned int *)this->__pad_C = (unsigned int)(&vt_SuperClass); /*0x6caf24*/
+  *(unsigned int *)this->__pad_3C = (unsigned int)(&g_TypeClass_DefaultString); /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
@@ -112,7 +112,7 @@ void SuperClass::Constructor()
          0) )
   {
     v2 = dword_A83CC8++; /*0x6caf71*/
-    *((unsigned int *)dword_A83CBC + v2) = this; /*0x6caf80*/
+    *((unsigned int *)dword_A83CBC + v2) = (unsigned int)(this); /*0x6caf80*/
   }
   return (int)this; /*0x6caf85*/
 
@@ -131,7 +131,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
   *((unsigned int *)this + 10) = a2; /*0x6cafa4*/
   *((unsigned int *)this + 9) = -1; /*0x6cafa7*/
-  *((unsigned int *)this + 11) = aP2; /*0x6cafaa*/
+  *((unsigned int *)this + 11) = (unsigned int)(aP2); /*0x6cafaa*/
   *((unsigned int *)this + 12) = dword_A8ED84; /*0x6cafb5*/
   *((unsigned int *)this + 14) = 0; /*0x6cafb8*/
   *((unsigned int *)this + 18) = 0; /*0x6cafbb*/
@@ -150,10 +150,10 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
   *((unsigned char *)this + 111) = 0; /*0x6cafea*/
   *((unsigned char *)this + 112) = 0; /*0x6cafed*/
   *((unsigned int *)this + 29) = -100; /*0x6caff0*/
-  *(unsigned int *)this = &vt_SuperClass; /*0x6caff7*/
-  *((unsigned int *)this + 1) = &vt_SuperClass; /*0x6caffd*/
-  *((unsigned int *)this + 2) = &vt_SuperClass; /*0x6cb003*/
-  *((unsigned int *)this + 3) = &vt_SuperClass; /*0x6cb00a*/
+  *(unsigned int *)this = (unsigned int)(&vt_SuperClass); /*0x6caff7*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_SuperClass); /*0x6cb003*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_SuperClass); /*0x6cb00a*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -164,7 +164,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
          0) )
   {
     v5 = dword_A83CC8++; /*0x6cb056*/
-    *((unsigned int *)dword_A83CBC + v5) = this; /*0x6cb065*/
+    *((unsigned int *)dword_A83CBC + v5) = (unsigned int)(this); /*0x6cb065*/
   }
   if ( dword_B0F680 < dword_B0F678 /*0x6cb09c*/
     || (byte_B0F67D || !dword_B0F678)
@@ -175,7 +175,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
          0) )
   {
     v6 = dword_B0F680++; /*0x6cb0a9*/
-    *((unsigned int *)dword_B0F674 + v6) = this; /*0x6cb0b8*/
+    *((unsigned int *)dword_B0F674 + v6) = (unsigned int)(this); /*0x6cb0b8*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6cb0ef*/
     || (byte_B0F6D5 || !dword_B0F6D0)
@@ -186,7 +186,7 @@ void SuperClass::Construct( int a2, CCINIClass * aP2)
          0) )
   {
     v7 = dword_B0F6D8++; /*0x6cb0fc*/
-    *((unsigned int *)dword_B0F6CC + v7) = this; /*0x6cb10b*/
+    *((unsigned int *)dword_B0F6CC + v7) = (unsigned int)(this); /*0x6cb10b*/
   }
   return this; /*0x6cb110*/
 
@@ -207,28 +207,28 @@ SuperClass * * SuperClass::CleanupMembers()
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = *((unsigned int *)this + 26); /*0x6cb124*/
-  *(unsigned int *)this = &vt_SuperClass; /*0x6cb127*/
-  *((unsigned int *)this + 1) = &vt_SuperClass; /*0x6cb12f*/
-  *((unsigned int *)this + 2) = &vt_SuperClass; /*0x6cb136*/
-  *((unsigned int *)this + 3) = &vt_SuperClass; /*0x6cb13d*/
+  *(unsigned int *)this = (unsigned int)(&vt_SuperClass); /*0x6cb127*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_SuperClass); /*0x6cb12f*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_SuperClass); /*0x6cb136*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_SuperClass); /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     *((unsigned int *)this + 26) = 0; /*0x6cb14d*/
-    v9 = this; /*0x6cb164*/
+    v9 = (int)(this); /*0x6cb164*/
     v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
-    v9 = this; /*0x6cb192*/
+    v9 = (int)(this); /*0x6cb192*/
     v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
   }
-  v9 = this; /*0x6cb1bd*/
+  v9 = (int)(this); /*0x6cb1bd*/
   v5 = (*((int (**)(SuperClass *, int *))stru_A83D50.SuperClass_field_0x0 + 4))(&stru_A83D50, &v9); /*0x6cb1c1*/
   if ( v5 != -1 && v5 < (int)stru_A83D50.SuperClass_field_0x10 ) /*0x6cb1d1*/
   {
@@ -240,7 +240,7 @@ SuperClass * * SuperClass::CleanupMembers()
       ++v5; /*0x6cb1e4*/
     }
   }
-  v9 = this; /*0x6cb206*/
+  v9 = (int)(this); /*0x6cb206*/
   v6 = (*(int (**)(unsigned int *, int *))(dword_A83CB8 + 16))(&dword_A83CB8, &v9); /*0x6cb20a*/
   if ( v6 != -1 && v6 < dword_A83CC8 && v6 < --dword_A83CC8 ) /*0x6cb225*/
   {
@@ -251,7 +251,7 @@ SuperClass * * SuperClass::CleanupMembers()
     }
     while ( v6 < dword_A83CC8 ); /*0x6cb23d*/
   }
-  v9 = this; /*0x6cb24f*/
+  v9 = (int)(this); /*0x6cb24f*/
   v7 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6cb253*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v9);
@@ -266,7 +266,7 @@ SuperClass * * SuperClass::CleanupMembers()
       ++v7; /*0x6cb276*/
     }
   }
-  v9 = this; /*0x6cb298*/
+  v9 = (int)(this); /*0x6cb298*/
   v8 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6cb29c*/
          g_BuildingLoadQueue_Array.__pad_E88,
          &v9);
@@ -310,7 +310,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( !*((unsigned char *)this + 109) ) /*0x6cb569*/
   {
-    v5 = aP1; /*0x6cb572*/
+    v5 = (char)(aP1); /*0x6cb572*/
     v6 = *((unsigned int *)this + 10); /*0x6cb576*/
     *((unsigned char *)this + 109) = 1; /*0x6cb579*/
     *((unsigned char *)this + 110) = v5; /*0x6cb57d*/
@@ -382,12 +382,12 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       {
         *(unsigned char *)(v15 + 405) = 0; /*0x6cb6bf*/
         *((unsigned int *)this + 26) = 0; /*0x6cb6cb*/
-        aP1 = this; /*0x6cb6ce*/
+        aP1 = (IUnknown *)(this); /*0x6cb6ce*/
         VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6d2*/
       }
       if ( *((unsigned char *)this + 108) ) /*0x6cb6d7*/
       {
-        aP1 = this; /*0x6cb6e6*/
+        aP1 = (IUnknown *)(this); /*0x6cb6e6*/
         VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6ea*/
         *((unsigned char *)this + 108) = 0; /*0x6cb6ef*/
       }

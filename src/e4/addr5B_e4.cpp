@@ -188,9 +188,9 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
       break; /*0x5b4137*/
   LABEL_5:
     if ( v6 ) /*0x5b4140*/
-      v4 = (unsigned int *)((unsigned int *)(v4))[1]; /*(unsigned int *)(0x5b4142)*/
+      v4 = (unsigned int)((unsigned int *)((unsigned int *)(v4))[1]); /*(unsigned int *)(0x5b4142)*/
     else
-      v4 = (unsigned int *)*(unsigned int *)(v4); /*0x5b4147*/
+      v4 = (unsigned int)((unsigned int *)*(unsigned int *)(v4)); /*0x5b4147*/
     if ( !v4 ) /*0x5b414b*/
       goto LABEL_9; /*0x5b414b*/
   }
@@ -206,7 +206,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v14.buffer, 0) ) /*0x5b415c*/
   {
     v8 = (unsigned int *)((char *)((unsigned int *)RA2_OPNEW(0x10u)));
-    v9 = (unsigned int)(v8);
+    v9 = (unsigned int *)((unsigned int)(v8));
     v8[2] = (unsigned int)((char *)(v3));
     v10 = (char *)(dword_ABF00C);
     if ( dword_ABF00C ) /*0x5b41c4*/
@@ -225,7 +225,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     {
       v12 = (gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
       if ( v12 ) /*0x5b421a*/
-        SHPFile = LoadSHPFile(v12, Source); /*0x5b4224*/
+        SHPFile = (gamemd::AbstractClass **)(LoadSHPFile(v12, Source)); /*0x5b4224*/
       else
         SHPFile = 0; /*0x5b4228*/
     }
@@ -311,7 +311,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
     break;
   }
   if ( a3 ) /*0x5b4516*/
-    *a3 = v6; /*0x5b4518*/
+    *a3 = (unsigned int)(v6); /*0x5b4518*/
   if ( a5 ) /*0x5b4523*/
     *a5 = *(unsigned int *)(v10 + 8); /*0x5b4528*/
   if ( a2 ) /*0x5b4530*/
@@ -402,7 +402,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
                     wcscpy((wchar_t *)((char *)&v18[6] + 1), lParam); /*0x5b4d2a*/
                     Stream::WriteBlock((int)&unk_A8EA70, (int)v18, 250, 1); /*0x5b4d43*/
                     Stream::ReadPacket((int)&unk_A8EA70); /*0x5b4d4d*/
-                    v9 = CharToWideString(unk_A8B380); /*0x5b4d57*/
+                    v9 = (char *)(CharToWideString(unk_A8B380)); /*0x5b4d57*/
                     UI_Setup((wchar_t *)v9, dword_A8B394, (int)lParam); /*0x5b4d6e*/
                     return 0; /*0x5b4d7f*/
                   }

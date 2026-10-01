@@ -76,7 +76,7 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(this->__pad_0, (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2)); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount(this->__pad_0, (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
@@ -96,16 +96,16 @@ int CampaignClass::LoadFromINIList()
     if ( v5 == -1 ) /*0x46ce91*/
     {
 LABEL_7:
-      v6 = __2_YAPAXI_Z(0x3A0u); /*0x46ce97*/
+      v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
         AbstractTypeClass::Constructor((int *)v6, Source); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
-        *(unsigned int *)v6 = &vt_CampaignClass; /*0x46cec6*/
-        *(unsigned int *)(v6 + 4) = &vt_CampaignClass; /*0x46cecc*/
-        *(unsigned int *)(v6 + 8) = &vt_CampaignClass; /*0x46ced3*/
-        *(unsigned int *)(v6 + 12) = &vt_CampaignClass; /*0x46ceda*/
+        *(unsigned int *)v6 = (unsigned int)(&vt_CampaignClass); /*0x46cec6*/
+        *(unsigned int *)(v6 + 4) = (unsigned int)(&vt_CampaignClass); /*0x46cecc*/
+        *(unsigned int *)(v6 + 8) = (unsigned int)(&vt_CampaignClass); /*0x46ced3*/
+        *(unsigned int *)(v6 + 12) = (unsigned int)(&vt_CampaignClass); /*0x46ceda*/
         if ( dword_A83D08 < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
@@ -179,7 +179,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  p_referenceCount = &((unsigned int *)this)[0]; /*0x49c5c4*/
+  p_referenceCount = (int *)(&((unsigned int *)this)[0]); /*0x49c5c4*/
   if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->scenario[7]; /*0x49c5d4*/
@@ -197,7 +197,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
-  *(unsigned int *)v28.INIClass = &CCINIClass_Vtable; /*0x49c667*/
+  *(unsigned int *)v28.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49c667*/
   CCINIClass::Load(&v28, (int)&v33, 0, 0); /*0x49c66f*/
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/

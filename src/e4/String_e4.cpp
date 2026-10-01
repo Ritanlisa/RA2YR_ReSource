@@ -64,7 +64,7 @@ void * String::AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * a
   *((unsigned short *)Destination + 3) = 1; /*0x4cb5fa*/
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
   v5 = *((uint16_t *)Destination + 3); /*0x4cb611*/
-  *((unsigned int *)Destination + 2) = v4; /*0x4cb613*/
+  *((unsigned int *)Destination + 2) = (unsigned int)(v4); /*0x4cb613*/
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + 4 * (v5 >> 2), v5 & 3); /*0x4cb625*/
@@ -210,7 +210,7 @@ void String::TrimLeft(ObjectClass * aP1)
       break; /*0x7b51f4*/
     v6 = (char *)*aP1; /*0x7b51f6*/
     if ( !*aP1 ) /*0x7b51f6*/
-      v6 = &g_INI_DefaultBuffer; /*0x7b51fd*/
+      v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b51fd*/
     result = (int)strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + i)); /*0x7b5208*/
     if ( !result ) /*0x7b5212*/
       break; /*0x7b5212*/
@@ -267,7 +267,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   v4 = (char *)((const char *)(0));
   v5 = *(const char **)this->__pad_0; /*0x7b57ae*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b57ae*/
-    v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
+    v5 = (const char *)(&g_INI_DefaultBuffer); /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
@@ -361,7 +361,7 @@ LABEL_35:
   else
     v21 = 1; /*0x7b59e8*/
   v22 = (unsigned char *)__2_YAPAXI_Z(v21); /*0x7b59ee*/
-  *(unsigned int *)this->__pad_0 = v22; /*0x7b59fc*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v22); /*0x7b59fc*/
   *v22 = 0; /*0x7b59fe*/
   if ( v20 ) /*0x7b5a01*/
     strcpy(*(char **)this->__pad_0, v20); /*0x7b5a1d*/
@@ -423,7 +423,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   Stra = (char *)((unsigned int)(v10));
   if ( *aP3 ) /*0x7b5fc3*/
     __3_YAXPAX_Z(*aP3); /*0x7b5fca*/
-  *(unsigned int *)aP3 = (const char *)(0);
+  *(unsigned int *)aP3 = (unsigned int)((const char *)(0));
   if ( v11 ) /*0x7b5fda*/
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
   else
@@ -433,7 +433,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   *v13 = 0; /*0x7b5ffb*/
   if ( v11 ) /*0x7b5ffe*/
     strcpy((char *)*aP3, v11); /*0x7b6016*/
-  v14 = &g_INI_DefaultBuffer; /*0x7b6029*/
+  v14 = (const char *)(&g_INI_DefaultBuffer); /*0x7b6029*/
   v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
   if ( *aP3 ) /*0x7b6023*/
     v14 = (const char *)*aP3; /*0x7b6033*/
@@ -443,7 +443,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   if ( v14 ) /*0x7b6049*/
     strncpy(v16, v14, v15); /*0x7b604e*/
   v17[v15] = 0; /*0x7b6056*/
-  v18 = &g_INI_DefaultBuffer; /*0x7b605a*/
+  v18 = (const char *)(&g_INI_DefaultBuffer); /*0x7b605a*/
   if ( v17 ) /*0x7b6061*/
     v18 = v17; /*0x7b6063*/
   if ( *aP3 ) /*0x7b6065*/
@@ -515,7 +515,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = (int)((const wchar_t *)(v4 - 1));
+  v11 = (const wchar_t *)((int)((const wchar_t *)(v4 - 1)));
   v23 = v4 - 1; /*0x7b7af8*/
   v12 = (const wchar_t *)(*(unsigned int *)this->__pad_0 + 2 * v9); /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/
@@ -530,8 +530,8 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   *v14 = 0; /*0x7b7b37*/
   if ( v12 ) /*0x7b7b3c*/
     wcscpy((wchar_t *)*a4, v12); /*0x7b7b42*/
-  v15 = v11 - v9; /*0x7b7b4e*/
-  v16 = &g_TypeClass_DefaultString; /*0x7b7b50*/
+  v15 = (int)(v11 - v9); /*0x7b7b4e*/
+  v16 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7b50*/
   v17 = v15 + 1; /*0x7b7b55*/
   if ( *a4 ) /*0x7b7b4a*/
     v16 = (const wchar_t *)*a4; /*0x7b7b5a*/
@@ -541,7 +541,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   if ( v16 ) /*0x7b7b72*/
     wcsncpy(v18, v16, v17); /*0x7b7b77*/
   v19[v17] = 0; /*0x7b7b7f*/
-  v20 = &g_TypeClass_DefaultString; /*0x7b7b88*/
+  v20 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7b88*/
   if ( v19 ) /*0x7b7b8d*/
     v20 = v19; /*0x7b7b8f*/
   if ( *a4 ) /*0x7b7b91*/

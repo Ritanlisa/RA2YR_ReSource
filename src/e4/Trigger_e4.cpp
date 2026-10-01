@@ -60,7 +60,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   int v10; // edx
 
   *(unsigned int *)this->__pad_8 = a4; /*0x5cbd2c*/
-  this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
+  this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2); /*0x5cbd32*/
   this->__pad_8[4] = 1; /*0x5cbd35*/
   this->Trigger_field_0x10 = (void *)this->Timer::GetTicks(); /*0x5cbd48*/
   *(unsigned int *)this->__pad_18 = 0; /*0x5cbd4f*/
@@ -70,15 +70,15 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   *(unsigned int *)&this->__pad_18[16] = 0; /*0x5cbd62*/
   this->__pad_30[4] = 0; /*0x5cbd65*/
   this->__pad_30[12] = 0; /*0x5cbd68*/
-  *(unsigned int *)this->__pad_0 = &vt_MSShapeAnim; /*0x5cbd6a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_MSShapeAnim); /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->__pad_30[12]); /*0x5cbd70*/
   *(unsigned int *)&this->__pad_18[4] = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  *(unsigned int *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
+  *(unsigned int *)&this->__pad_30[20] = (unsigned int)(aP7); /*0x5cbd84*/
   *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
   *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
-  *(unsigned int *)this->__pad_0 = &vt_MSFadeAnim; /*0x5cbd8d*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_MSFadeAnim); /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 
 }
@@ -189,8 +189,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                  (char *)v28.nextObject + v28.ambientSoundController[0],
                  0) )
           {
-            v19 = (unsigned int)(v28.attachedBomb)++; /*0x76d726*/
-            *(unsigned int *)(v28.fallRate + 4 * (unsigned int)v19) = inited; /*0x76d731*/
+            v19 = (gamemd::BombClass *)((unsigned int)(v28.attachedBomb)++); /*0x76d726*/
+            *(unsigned int *)(v28.fallRate + 4 * (unsigned int)v19) = (unsigned int)(inited); /*0x76d731*/
           }
           inited = 0; /*0x76d734*/
         }
@@ -227,20 +227,20 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
         {
           v22 = ((char *)&v28)++; /*0x76d82c*/
-          *(unsigned int *)(((char *)&v28) + 4 * (unsigned int)v22) = v21; /*0x76d837*/
+          *(unsigned int *)(((char *)&v28) + 4 * (unsigned int)v22) = (unsigned int)(v21); /*0x76d837*/
         }
       }
-      *(unsigned int *)v29.CDFileClass = &vt_CCFileClass; /*0x76d841*/
+      *(unsigned int *)v29.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x76d841*/
       v31 = 0; /*0x76d84c*/
       Vector::Clear((int)v30); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
     }
     (*(void (**)(int *))(v25.VectorCursor_field_0x0C + 8))(&v25.VectorCursor_field_0x0C); /*0x76d86c*/
   }
-  p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
+  p_owningHouseIndex = (int *)(&v28.owningHouseIndex); /*0x76d88b*/
   v27 = 0; /*0x76d897*/
   v25.VectorCursor_field_0x18 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d89b*/
-  ((unsigned int *)&v28)[0] = &((char *)&v28); /*0x76d89f*/
+  ((unsigned int *)&v28)[0] = (unsigned int)(&((char *)&v28)); /*0x76d89f*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d8a3*/
   ((unsigned int *)&v28)[0] = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&((char *)&v28)) ) /*0x76d8ab*/

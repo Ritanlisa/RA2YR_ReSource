@@ -228,14 +228,14 @@ int E4Recv_490400::sub_490400()
   int result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &vt_ConvertClass; /*0x490404*/
+  *(unsigned int *)this = (unsigned int)(&vt_ConvertClass); /*0x490404*/
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
   v2 = *(void **)((char *)this + 376); /*0x49041b*/
   *((unsigned int *)this + 92) = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
   *((unsigned int *)this + 94) = 0; /*0x490434*/
-  v4 = this; /*0x49044d*/
+  v4 = (int)(this); /*0x49044d*/
   result = (*(int (**)(int *, int *))(dword_89ECF8 + 16))(&dword_89ECF8, &v4); /*0x490451*/
   if ( result != -1 && result < dword_89ED08 && result < --dword_89ED08 ) /*0x49046d*/
   {
@@ -337,7 +337,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
 
   v12 = *(char **)this->m_4; /*0x491c65*/
   result = a5; /*0x491c67*/
-  v14 = g_ZBufferDescriptor; /*0x491c6b*/
+  v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491c6b*/
   v15 = a1; /*0x491c77*/
   v26 = v12; /*0x491c7b*/
   v16 = a7; /*0x491c82*/
@@ -377,7 +377,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
         result = this->m_8; /*0x491d22*/
         *v15 = *(unsigned char *)((uint8_t)v26[v24] + result); /*0x491d28*/
       }
-      v14 = g_ZBufferDescriptor; /*0x491d2a*/
+      v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491d2a*/
       ++v15; /*0x491d30*/
       --v19; /*0x491d31*/
     }
@@ -412,10 +412,10 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
   v11 = a5; /*0x491d91*/
   v12 = a7; /*0x491d95*/
   v14 = a1; /*0x491da0*/
-  v15 = g_ZBufferDescriptor; /*0x491da8*/
+  v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491da8*/
   if ( a5 <= 0 ) /*0x491db5*/
   {
-    v19 = aP3; /*0x491de7*/
+    v19 = (int)(aP3); /*0x491de7*/
   }
   else
   {
@@ -429,7 +429,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
     while ( v11 > 0 ); /*0x491dca*/
     v18 = -v11; /*0x491dd0*/
     v14 = &a1[v18]; /*0x491dd2*/
-    v19 = aP3 - v18; /*0x491dd4*/
+    v19 = (int)(aP3 - v18); /*0x491dd4*/
     v11 = a7 + 2 * v18; /*0x491dd6*/
     if ( (unsigned int)v11 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491dde*/
       v11 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491de0*/
@@ -454,7 +454,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         LOBYTE(v11) = *(unsigned char *)(*(unsigned int *)&this->m_1[3] + v11); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
-      v15 = g_ZBufferDescriptor; /*0x491e40*/
+      v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491e40*/
     }
     else
     {
@@ -555,10 +555,10 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
   v11 = a5; /*0x491fd1*/
   result = a6; /*0x491fd5*/
   v14 = arg0; /*0x491fe0*/
-  v15 = g_ZBufferDescriptor; /*0x491fe8*/
+  v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491fe8*/
   if ( a5 <= 0 ) /*0x491ff5*/
   {
-    v19 = aP3; /*0x492027*/
+    v19 = (int)(aP3); /*0x492027*/
   }
   else
   {
@@ -572,7 +572,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
     while ( v11 > 0 ); /*0x49200c*/
     v18 = -v11; /*0x492012*/
     v14 = v18 + arg0; /*0x492014*/
-    v19 = aP3 - v18; /*0x492016*/
+    v19 = (int)(aP3 - v18); /*0x492016*/
     result = &a6[v18]; /*0x492018*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x492020*/
       result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x492022*/
@@ -588,7 +588,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
         *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(unsigned int *)&this->m_1[3] + v20); /*0x49207f*/
         *result = arg10 - *a10; /*0x49208c*/
       }
-      v15 = g_ZBufferDescriptor; /*0x492092*/
+      v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x492092*/
       ++result; /*0x492098*/
       ++a10; /*0x49209b*/
       --v19; /*0x49209c*/
@@ -710,10 +710,10 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
   v11 = a5; /*0x492251*/
   result = a6; /*0x492255*/
   v14 = a1; /*0x492260*/
-  v15 = g_ZBufferDescriptor; /*0x492268*/
+  v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x492268*/
   if ( a5 <= 0 ) /*0x492275*/
   {
-    v19 = aP3; /*0x4922a7*/
+    v19 = (int)(aP3); /*0x4922a7*/
   }
   else
   {
@@ -727,7 +727,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
     while ( v11 > 0 ); /*0x49228c*/
     v18 = -v11; /*0x492292*/
     v14 = &a1[v18]; /*0x492294*/
-    v19 = aP3 - v18; /*0x492296*/
+    v19 = (int)(aP3 - v18); /*0x492296*/
     result = &a6[v18]; /*0x492298*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4922a0*/
       result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4922a2*/
@@ -755,7 +755,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
         --v19; /*0x492309*/
         ++v14; /*0x49230a*/
       }
-      v15 = g_ZBufferDescriptor; /*0x492313*/
+      v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x492313*/
     }
     else
     {
@@ -790,10 +790,10 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
   v11 = a5; /*0x492371*/
   result = a6; /*0x492375*/
   v14 = a1; /*0x492380*/
-  v15 = g_ZBufferDescriptor; /*0x492388*/
+  v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x492388*/
   if ( a5 <= 0 ) /*0x492395*/
   {
-    v19 = aP3; /*0x4923c7*/
+    v19 = (int)(aP3); /*0x4923c7*/
   }
   else
   {
@@ -807,7 +807,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
     while ( v11 > 0 ); /*0x4923ac*/
     v18 = -v11; /*0x4923b2*/
     v14 = &a1[v18]; /*0x4923b4*/
-    v19 = aP3 - v18; /*0x4923b6*/
+    v19 = (int)(aP3 - v18); /*0x4923b6*/
     result = &a6[v18]; /*0x4923b8*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4923c0*/
       result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4923c2*/
@@ -819,7 +819,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
     {
       if ( arg10 - *a10 >= *result ) /*0x492410*/
       {
-        v15 = g_ZBufferDescriptor; /*0x492455*/
+        v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x492455*/
         ++a10; /*0x49245b*/
         ++v14; /*0x49245c*/
         ++result; /*0x49245d*/
@@ -830,7 +830,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
         *v14++ = *(unsigned char *)(*(uint8_t *)(v20 + *(unsigned int *)&this->m_1[3]) + *((unsigned int *)this + 2)); /*0x49243a*/
         v22 = *a10++; /*0x492441*/
         *(result - 1) = arg10 - v22; /*0x492448*/
-        v15 = g_ZBufferDescriptor; /*0x49244c*/
+        v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x49244c*/
       }
       --v19; /*0x492452*/
     }

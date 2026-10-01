@@ -109,7 +109,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     pad_B0 = (char *)(*((unsigned int *)this->ParticleClass_field_0xAC + 175) /*0x62d13f*/
                                     + 3 * (unsigned int)ParticleClass_field_0xB4);
                   else
-                    pad_B0 = this->__pad_B0; /*0x62d12e*/
+                    pad_B0 = (char *)(this->__pad_B0); /*0x62d12e*/
                   v20 = *(unsigned short *)pad_B0; /*0x62d145*/
                   v21 = pad_B0[2]; /*0x62d148*/
                   LOWORD(v28[0]) = v20; /*0x62d14b*/

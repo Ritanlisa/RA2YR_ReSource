@@ -55,9 +55,9 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
   ((unsigned int *)this)[0] = 0; /*0x41e3f5*/
   ((unsigned int *)this)[1] = 0; /*0x41e3fb*/
   this->ObjectTypeClass = &vt_AITriggerTypeClass; /*0x41e401*/
-  ((unsigned int *)this)[0] = &vt_AITriggerTypeClass; /*0x41e407*/
-  ((unsigned int *)this)[0] = &vt_AITriggerTypeClass; /*0x41e40e*/
-  ((unsigned int *)this)[0] = &vt_AITriggerTypeClass; /*0x41e415*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e407*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e40e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e415*/
   memset(&((unsigned int *)this)[10], 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
@@ -68,7 +68,7 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
          0) )
   {
     v3 = (unsigned int)(dword_A8B210++);
-    *((unsigned int *)dword_A8B204 + v3) = this; /*0x41e46e*/
+    *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
   return &this->ObjectTypeClass; /*0x41e473*/
 
@@ -163,9 +163,9 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
   this->ObjectTypeClass = &vt_AnimTypeClass; /*0x427731*/
-  ((unsigned int *)this)[0] = &vt_AnimTypeClass; /*0x427737*/
-  ((unsigned int *)this)[0] = &vt_AnimTypeClass; /*0x42773d*/
-  ((unsigned int *)this)[0] = &vt_AnimTypeClass; /*0x427744*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427737*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42773d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427744*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x42774b*/
   ((unsigned int *)this)[0] = 1; /*0x427750*/
   ((unsigned int *)this)[0] = 1; /*0x427757*/
@@ -183,7 +183,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
          0) )
   {
     v3 = *((unsigned int *)((char *)&FootClass_Array + 0))++; /*0x4277bd*/
-    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v3) = this; /*0x4277cc*/
+    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v3) = (unsigned int)(this); /*0x4277cc*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -237,7 +237,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   {
     if ( ((unsigned int *)this)[0] ) /*0x427b67*/
     {
-      LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
+      LOBYTE(v3) = (unsigned char)(ObjectTypeClass::Load2DArt((char *)this)); /*0x427b71*/
     }
     else
     {
@@ -247,23 +247,23 @@ void* AnimTypeClass::GetWarhead(int a2)
         ((unsigned int *)this)[0] = 0; /*0x427b98*/
       }
       v4 = ((unsigned int *)this)[0]; /*0x427b9f*/
-      ImageFile = ((unsigned int *)this)[0]; /*0x427ba5*/
+      ImageFile = (const char *)(((unsigned int *)this)[0]); /*0x427ba5*/
       ((unsigned int *)this)[0] = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         ImageFile = (const char *)((unsigned int *)this)[0]; /*0x427bb9*/
       _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427be9*/
-      ((unsigned int *)this)[0] = v3; /*0x427bf0*/
+      ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
         v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427c07*/
-        ((unsigned int *)this)[0] = v3; /*0x427c0c*/
+        ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427c0c*/
       }
     }
   }
-  Image = ((unsigned int *)this)[0]; /*0x427c12*/
+  Image = (gamemd::SHPStruct *)(((unsigned int *)this)[0]); /*0x427c12*/
   if ( Image ) /*0x427c1a*/
   {
     End = this->End; /*0x427c1c*/
@@ -354,9 +354,9 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
       a1->ObjectTypeClass = &vt_AnimTypeClass; /*0x428831*/
-      ((unsigned int *)a1)[0] = &vt_AnimTypeClass; /*0x428837*/
-      ((unsigned int *)a1)[0] = &vt_AnimTypeClass; /*0x42883e*/
-      ((unsigned int *)a1)[0] = &vt_AnimTypeClass; /*0x428845*/
+      ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428837*/
+      ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42883e*/
+      ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -372,7 +372,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
       if ( ((unsigned int *)a1)[0] ) /*0x4288db*/
       {
         _makepath(&v3[1], 0, 0, (const char *)((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428910*/
-        ((unsigned int *)a1)[0] = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
+        ((unsigned int *)a1)[0] = (unsigned int)((SHPStruct *)SearchMIXFile(&v3[1], 1)); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( ((unsigned int *)a1)[0] ) /*0x428935*/

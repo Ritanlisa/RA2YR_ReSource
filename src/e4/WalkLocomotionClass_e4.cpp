@@ -67,7 +67,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *v6 = (int)((gamemd::CellClass *)(a3));
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
-      v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x6a03e4*/
+      v9 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12)); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
       {
         LOBYTE(v4) = *(unsigned char *)(*((unsigned int *)v5 + 3) + 144); /*0x6a043d*/
@@ -148,12 +148,12 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
           if ( v4->TrackNumber < v12 ) /*0x6a3feb*/
           {
             v14 = (int *)(*(unsigned int *)(v13 + 4));
-            v20[0] = (int *)(*(unsigned int *)v13);
-            v20[1] = (int *)(v14);
+            v20[0] = (int)((int *)(*(unsigned int *)v13));
+            v20[1] = (int)((int *)(v14));
             v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
-            location = ((unsigned int *)v4)[0]; /*0x6a401e*/
+            location = (int *)(((unsigned int *)v4)[0]); /*0x6a401e*/
             v21[0] = *location; /*0x6a4025*/
             v21[1] = location[1]; /*0x6a402c*/
             v22 = location[2]; /*0x6a4033*/
@@ -250,7 +250,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   v6 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
   LOBYTE(a3) = 1; /*0x75c738*/
   (*(void (**)(IStream *, int *, int, unsigned int))((unsigned int)(v6)+ 16))(v3, &a3, 1, 0); /*0x75c73d*/
-  Piggybackee = v4->Piggybackee; /*0x75c740*/
+  Piggybackee = (gamemd::ILocomotion *)(v4->Piggybackee); /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/
   {

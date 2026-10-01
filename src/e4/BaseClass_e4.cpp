@@ -50,7 +50,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
       aP0->cells24Count = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((DynamicVector *)&aP0->cells38Count, 0, 0); /*0x42ee7e*/
       DynamicVector::Constructor_Cell((DynamicVector *)&aP0->unknown54[3], 0, 0); /*0x42ee8a*/
-      aP0->baseNodes = (BaseNodeClass *)&vt_BaseClass; /*0x42ee8f*/
+      aP0->baseNodes = (unsigned int)((BaseNodeClass *)&vt_BaseClass); /*0x42ee8f*/
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/

@@ -57,7 +57,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   int v7; // eax
   unsigned int v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  vtable2 = ((unsigned int *)Block)[0]; /*0x550086*/
+  vtable2 = (void *)(((unsigned int *)Block)[0]); /*0x550086*/
   uniqueId = ((unsigned int *)Block)[0]; /*0x550089*/
   if ( vtable2 == (void *)-1 ) /*0x55008f*/
   {
@@ -79,8 +79,8 @@ LABEL_5:
     LOBYTE(((unsigned int *)Block)[0]) = 1; /*0x5500b1*/
     Block->AbstractClass = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    ((unsigned int *)Block)[0] = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5500c1*/
-    ((unsigned int *)Block)[0] = v6; /*0x5500c4*/
+    ((unsigned int *)Block)[0] = (unsigned int)(*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x5500c1*/
+    ((unsigned int *)Block)[0] = (unsigned int)(v6); /*0x5500c4*/
     ((unsigned int *)Block)[0] = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
@@ -267,7 +267,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
 v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)((unsigned int)(a1))));
-  IDA_LODWORD(v72) = a1; /*0x550a03*/
+  IDA_LODWORD(v72) = (unsigned int)(a1); /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
     ((unsigned int *)(dword_ABC7F8))[0] = -1; /*0x550a15*/
@@ -389,12 +389,12 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
         v22 = ((unsigned int *)(dword_ABC804))[v18]; /*0x550d64*/
         v63 += v21; /*0x550d6c*/
         v64 += v22; /*0x550d76*/
-        IDA_LODWORD(v62) = v19 + v62; /*0x550d84*/
+        IDA_LODWORD(v62) = (unsigned int)(v19 + v62); /*0x550d84*/
         v23 = v20 + IDA_HIDWORD(v62); /*0x550d8c*/
         v24 = v21 + v67; /*0x550d92*/
         v16 = v59; /*0x550d94*/
         IDA_HIDWORD(v62) = v23; /*0x550d9a*/
-        v1 = (int *)v72; /*0x550d9e*/
+        v1 = (gamemd::BuildingTypeClass *)((int *)v72); /*0x550d9e*/
         IDA_LODWORD(v67) = v24; /*0x550da2*/
         IDA_HIDWORD(v67) += v22; /*0x550da6*/
       }
@@ -769,10 +769,10 @@ void DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
   int v30; // [esp+30h] [ebp-8h]
   unsigned char *v31; // [esp+34h] [ebp-4h]
 
-  v25 = (char *)((unsigned char)(0));
+  v25 = (unsigned char *)((char *)((unsigned char)(0)));
   v28 = (char *)((unsigned char)(&aP0[a3]));
   v30 = (unsigned char)(1);
-  v27 = (unsigned char)(a1);
+  v27 = (unsigned char *)((unsigned char)(a1));
   *a1 = (unsigned char)(-127);
   v3 = (char *)((unsigned char)(aP0 + 1));
   a1[1] = (unsigned char)(*aP0);
@@ -816,7 +816,7 @@ void DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
     }
     while ( 1 ) /*0x551f13*/
     {
-      v13 = v3 - v5; /*0x551f13*/
+      v13 = (char *)(v3 - v5); /*0x551f13*/
       v12 = v3 == (char *)(v5); /*0x551f13*/
       if ( v3 == (char *)(v5) ) /*0x551f15*/
         break; /*0x551f15*/

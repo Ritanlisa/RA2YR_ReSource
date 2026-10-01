@@ -89,7 +89,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
     return 0; /*0x4d7d64*/
   if ( this->rockerLinkedUnit && !*(unsigned char *)((*(int (**)(TechnoClass *))(this->vtable0 + 132))(this) + 1682) ) /*0x4d7d81*/
     return 0; /*0x4d7d8d*/
-  v7 = aP2; /*0x4d7d9a*/
+  v7 = (int16_t *)(aP2); /*0x4d7d9a*/
   referenceCount = (*(int (**)(TechnoClass *, int16_t *, unsigned int, void **))(this->vtable0 + 112))( /*0x4d7db1*/
                      this,
                      aP2,
@@ -143,7 +143,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
                  0) )
           {
             v19 = (unsigned int)(dword_A83E10++);
-            *((unsigned int *)dword_A83E04 + v19) = aP4; /*0x4d8062*/
+            *((unsigned int *)dword_A83E04 + v19) = (unsigned int)(aP4); /*0x4d8062*/
           }
         }
       }
@@ -225,7 +225,7 @@ LABEL_52:
       LOWORD(v35) = HIWORD(dword_89F688[v35]); /*0x4d8200*/
       LOWORD(aP4) = v36; /*0x4d8204*/
       HIWORD(aP4) = HIWORD(aP3) + v35; /*0x4d8213*/
-      *(unsigned int *)v40 = aP4; /*0x4d821c*/
+      *(unsigned int *)v40 = (unsigned int)(aP4); /*0x4d821c*/
       v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v40); /*0x4d8225*/
       goto LABEL_51; /*0x4d8225*/
     case 51: /*0x4d7de0*/
@@ -233,7 +233,7 @@ LABEL_52:
         return 0; /*0x4d7df3*/
       PlacementCell = (void ***)ObjectClass::FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = this->vtable0; /*0x4d7e06*/
-      aP4 = *PlacementCell; /*0x4d7e0c*/
+      aP4 = (gamemd::FootClass *)(*PlacementCell); /*0x4d7e0c*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP4); /*0x4d7e18*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v10 + 888))(this, 25, 0, v11, 0); /*0x4d7e24*/
       return 1; /*0x4d7e32*/
@@ -367,7 +367,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   v3 = (gamemd::IStream *)((int)((gamemd::IStream *)(*(unsigned int *)(aP0 + 1652))));
   if ( v3 ) /*0x4db3d3*/
     (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(aP0 + 1652)); /*0x4db3d8*/
-  v4 = pStm; /*0x4db3db*/
+  v4 = (unsigned int)(pStm); /*0x4db3db*/
   *(unsigned int *)(aP0 + 1652) = 0; /*0x4db3df*/
   result = ((BuildingClass *)(aP0))->AllocAndCtor((int)v4); /*0x4db3e7*/
   if ( result >= 0 ) /*0x4db3ee*/
@@ -379,7 +379,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( aP0 != (gamemd::FootClass *)(-1416) ) /*0x4db413*/
       {
         AbstractClassVector::Construct((unsigned int *)(aP0 + 1416), 0, 0); /*0x4db419*/
-        *(unsigned int *)v6 = &vt_DynamicVectorClass; /*0x4db41e*/
+        *(unsigned int *)v6 = (unsigned int)(&vt_DynamicVectorClass); /*0x4db41e*/
         *(unsigned int *)(aP0 + 1436) = 10; /*0x4db424*/
         *(unsigned int *)(aP0 + 1432) = 0; /*0x4db42b*/
       }
@@ -398,7 +398,7 @@ LABEL_16:
           if ( aP0 != (gamemd::FootClass *)(-1452) ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct((unsigned int *)(aP0 + 1452), 0, 0); /*0x4db4c7*/
-            *(unsigned int *)v12 = &vt_DynamicVectorClass; /*0x4db4cc*/
+            *(unsigned int *)v12 = (unsigned int)(&vt_DynamicVectorClass); /*0x4db4cc*/
             *(unsigned int *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(unsigned int *)(aP0 + 1468) = 0; /*0x4db4d9*/
           }

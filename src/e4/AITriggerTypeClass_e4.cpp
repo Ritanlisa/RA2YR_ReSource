@@ -680,7 +680,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   Block->AITriggerTypeClass_field_0x04 = (int)&vt_AITriggerTypeClass; /*0x420003*/
   Block->AITriggerTypeClass_field_0x08 = (int)&vt_AITriggerTypeClass; /*0x42000a*/
   Block->AITriggerTypeClass_field_0x0C = (int)&vt_AITriggerTypeClass; /*0x420011*/
-  v5 = Block; /*0x42001f*/
+  v5 = (gamemd::AITriggerTypeClass *)(Block); /*0x42001f*/
   v3 = (*(int (**)(unsigned int *, AITriggerTypeClass **))(dword_A8B200 + 16))(&dword_A8B200, &v5); /*0x420023*/
   if ( v3 != -1 && v3 < dword_A8B210 && v3 < --dword_A8B210 ) /*0x42003e*/
   {

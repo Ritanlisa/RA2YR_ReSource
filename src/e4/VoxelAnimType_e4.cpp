@@ -67,12 +67,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
       *((unsigned int *)this + 2 * a3 + 50) = 0; /*0x5f7b61*/
     }
     v16 = (unsigned int)(0);
-    v5 = (unsigned int)((File *)__2_YAPAXI_Z(0x1Cu));
+    v5 = (gamemd::File *)((unsigned int)((File *)__2_YAPAXI_Z(0x1Cu)));
     if ( v5 ) /*0x5f7b78*/
       FileVXL = File::LoadFileVXL(v5, (int)&v17, 0); /*0x5f7b82*/
     else
       FileVXL = 0; /*0x5f7b89*/
-    *((unsigned int *)this + 2 * a3 + 50) = FileVXL; /*0x5f7b8d*/
+    *((unsigned int *)this + 2 * a3 + 50) = (unsigned int)(FileVXL); /*0x5f7b8d*/
     if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f7b96*/
       v16 = 1; /*0x5f7b9a*/
     if ( a3 ) /*0x5f7ba1*/
@@ -88,27 +88,27 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
       __3_YAXPAX_Z(v7); /*0x5f7c26*/
       *((unsigned int *)this + 2 * a3 + 51) = 0; /*0x5f7c2e*/
     }
-    v8 = (unsigned int)((File *)__2_YAPAXI_Z(0x10u));
+    v8 = (gamemd::File *)((unsigned int)((File *)__2_YAPAXI_Z(0x10u)));
     if ( v8 ) /*0x5f7c45*/
       FileHVA = File::LoadFileHVA(v8, (int)&v20); /*0x5f7c51*/
     else
       FileHVA = 0; /*0x5f7c58*/
-    *((unsigned int *)this + 2 * a3 + 51) = FileHVA; /*0x5f7c5c*/
+    *((unsigned int *)this + 2 * a3 + 51) = (unsigned int)(FileHVA); /*0x5f7c5c*/
     if ( !FileHVA || (v10 = *(unsigned char *)FileHVA, v11 = 1, v10) ) /*0x5f7c6b*/
       v11 = 0; /*0x5f7c6d*/
     if ( v16 && v11 ) /*0x5f7c7d*/
     {
       Info = (gamemd::AbstractClass **)(VoxelSection::GetInfo(*((VoxelSection **)this + 2 * a3 + 50), 0, 0));
       Matrix::Scale(*((Matrix **)this + 2 * a3 + 51), *(float *)(Info + 12)); /*0x5f7c9c*/
-      *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f7cad*/
+      *(unsigned int *)v20.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7cad*/
       v22 = 0; /*0x5f7cb4*/
       Vector::Clear((int)v21); /*0x5f7cbb*/
-      *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7ccc*/
+      *(unsigned int *)v20.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7ccc*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x5f7cd3*/
-      *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7cdc*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7cdc*/
       v19 = 0; /*0x5f7ce0*/
       Vector::Clear((int)v18); /*0x5f7ce4*/
-      *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7ced*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7ced*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x5f7cf1*/
       return 1; /*0x5f7d02*/
     }
@@ -126,22 +126,22 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
       __3_YAXPAX_Z(v15); /*0x5f7d3a*/
       *((unsigned int *)this + 2 * a3 + 51) = 0; /*0x5f7d42*/
     }
-    *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f7d55*/
+    *(unsigned int *)v20.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7d55*/
     v22 = 0; /*0x5f7d5c*/
     Vector::Clear((int)v21); /*0x5f7d63*/
-    *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7d74*/
+    *(unsigned int *)v20.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7d74*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x5f7d7b*/
-    *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7d84*/
+    *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7d84*/
     v19 = 0; /*0x5f7d88*/
     Vector::Clear((int)v18); /*0x5f7d8c*/
-    *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7d91*/
+    *(unsigned int *)v17.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7d91*/
   }
   else
   {
-    *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7b28*/
+    *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7b28*/
     v19 = 0; /*0x5f7b30*/
     Vector::Clear((int)v18); /*0x5f7b34*/
-    *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7b39*/
+    *(unsigned int *)v17.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7b39*/
   }
   ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x5f7d99*/
   return 0; /*0x5f7cf6*/
@@ -180,12 +180,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
   if ( (uint8_t)CCFileClass::Open(&v14, 0) ) /*0x5f7e3b*/
   {
     v13 = (unsigned int)(0);
-    v5 = (unsigned int)((File *)__2_YAPAXI_Z(0x1Cu));
+    v5 = (gamemd::File *)((unsigned int)((File *)__2_YAPAXI_Z(0x1Cu)));
     if ( v5 ) /*0x5f7e8a*/
       FileVXL = File::LoadFileVXL(v5, (int)&v14, 0); /*0x5f7e94*/
     else
       FileVXL = 0; /*0x5f7e9b*/
-    *((unsigned int *)this + 2 * a3 + 86) = FileVXL; /*0x5f7e9f*/
+    *((unsigned int *)this + 2 * a3 + 86) = (unsigned int)(FileVXL); /*0x5f7e9f*/
     if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f7ea8*/
       v13 = 1; /*0x5f7ead*/
     if ( a3 ) /*0x5f7eb4*/
@@ -200,22 +200,22 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
       FileHVA = File::LoadFileHVA(v8, (int)&v17); /*0x5f7f32*/
     else
       FileHVA = 0; /*0x5f7f39*/
-    *((unsigned int *)this + 2 * a3 + 87) = FileHVA; /*0x5f7f3d*/
+    *((unsigned int *)this + 2 * a3 + 87) = (unsigned int)(FileHVA); /*0x5f7f3d*/
     if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x5f7f46*/
       v7 = 1; /*0x5f7f4b*/
     if ( v13 && v7 ) /*0x5f7f5b*/
     {
       Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)this + 2 * a3 + 86), 0, 0));
       Matrix::Scale(*((Matrix **)this + 2 * a3 + 87), *(float *)(Info + 12)); /*0x5f7f7a*/
-      *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7f8b*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7f8b*/
       v19 = 0; /*0x5f7f92*/
       Vector::Clear((int)v18); /*0x5f7f99*/
-      *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7faa*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7faa*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x5f7fb1*/
-      *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x5f7fba*/
+      *(unsigned int *)v14.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7fba*/
       v16 = 0; /*0x5f7fbe*/
       Vector::Clear((int)v15); /*0x5f7fc2*/
-      *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x5f7fcb*/
+      *(unsigned int *)v14.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7fcb*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7fcf*/
       return 1; /*0x5f7fd7*/
     }
@@ -233,25 +233,25 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
         String::Release(v12); /*0x5f800d*/
         __3_YAXPAX_Z(v12); /*0x5f8013*/
       }
-      *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f8027*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8027*/
       v19 = 0; /*0x5f802e*/
       Vector::Clear((int)v18); /*0x5f8035*/
-      *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f8046*/
+      *(unsigned int *)v17.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8046*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f804d*/
-      *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x5f8056*/
+      *(unsigned int *)v14.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8056*/
       v16 = 0; /*0x5f805a*/
       Vector::Clear((int)v15); /*0x5f805e*/
-      *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x5f8067*/
+      *(unsigned int *)v14.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8067*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f806b*/
       return 0; /*0x5f8073*/
     }
   }
   else
   {
-    *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x5f7e48*/
+    *(unsigned int *)v14.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f7e48*/
     v16 = 0; /*0x5f7e50*/
     Vector::Clear((int)v15); /*0x5f7e54*/
-    *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x5f7e5d*/
+    *(unsigned int *)v14.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f7e5d*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5f7e65*/
     return 1; /*0x5f7e6d*/
   }
@@ -323,7 +323,7 @@ int VoxelAnimType::LoadAnim()
   int v60; // [esp+254h] [ebp-108h]
   char Filename[256]; // [esp+25Ch] [ebp-100h] BYREF
 
-  v2 = (unsigned char *)this + 504; /*0x5f811e*/
+  v2 = (const char *)((unsigned char *)this + 504); /*0x5f811e*/
   v50 = 0; /*0x5f8134*/
   _makepath(Buffer, 0, 0, (unsigned char *)this + 504, g_Str_File__VXL); /*0x5f8138*/
   CCFileClass::Construct(&v58, Buffer); /*0x5f814f*/
@@ -340,7 +340,7 @@ int VoxelAnimType::LoadAnim()
       FileVXL = File::LoadFileVXL(v4, (int)&v58, 0); /*0x5f819c*/
     else
       FileVXL = 0; /*0x5f81a3*/
-    *((unsigned int *)this + 44) = FileVXL; /*0x5f81a7*/
+    *((unsigned int *)this + 44) = (unsigned int)(FileVXL); /*0x5f81a7*/
     if ( !FileVXL || *(unsigned char *)FileVXL ) /*0x5f81af*/
       v50 = 1; /*0x5f81b3*/
     _makepath(Buffer, 0, 0, v2, g_Str_File__HVA); /*0x5f81c8*/
@@ -356,7 +356,7 @@ int VoxelAnimType::LoadAnim()
       FileHVA = File::LoadFileHVA(v7, (int)&v51); /*0x5f8210*/
     else
       FileHVA = 0; /*0x5f8217*/
-    *((unsigned int *)this + 45) = FileHVA; /*0x5f821b*/
+    *((unsigned int *)this + 45) = (unsigned int)(FileHVA); /*0x5f821b*/
     if ( !FileHVA || *(unsigned char *)FileHVA ) /*0x5f8223*/
     {
       v50 = 1; /*0x5f8245*/
@@ -366,10 +366,10 @@ int VoxelAnimType::LoadAnim()
       Info = VoxelSection::GetInfo(*((VoxelSection **)this + 44), 0, 0); /*0x5f822f*/
       Matrix::Scale(*((Matrix **)this + 45), *(float *)(Info + 12)); /*0x5f823e*/
     }
-    *(unsigned int *)v51.CDFileClass = &vt_CCFileClass; /*0x5f824e*/
+    *(unsigned int *)v51.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f824e*/
     v53 = 0; /*0x5f8256*/
     Vector::Clear((int)v52); /*0x5f825a*/
-    *(unsigned int *)v51.CDFileClass = &off_7E1668; /*0x5f8263*/
+    *(unsigned int *)v51.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8263*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v51); /*0x5f826b*/
   }
   else

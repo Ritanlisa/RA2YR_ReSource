@@ -18,9 +18,9 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
   int64_t v6; // [esp+8h] [ebp-18h]
   double v7; // [esp+18h] [ebp-8h]
 
-  v5 = (unsigned int)(aP1 - aP0 + 1);
+  v5 = (gamemd::MapClass *)((unsigned int)(aP1 - aP0 + 1));
   v3 = (unsigned int)((double)v5);
-  IDA_LODWORD(v5) = aP0; /*0x59804a*/
+  IDA_LODWORD(v5) = (unsigned int)(aP0); /*0x59804a*/
   v7 = (double)v5; /*0x59805a*/
   do /*0x598089*/
   {

@@ -313,7 +313,7 @@ void InitializeRadialGradientTexture()
                   if ( !v6 ) /*0x4c1806*/
                     return 2; /*0x4c19a2*/
                   v7 = -128; /*0x4c180c*/
-                  v8 = v6; /*0x4c1811*/
+                  v8 = (unsigned short *)(v6); /*0x4c1811*/
                   v21 = -128; /*0x4c1813*/
                   do /*0x4c18db*/
                   {
@@ -368,7 +368,7 @@ void InitializeRadialGradientTexture()
                       v15 = (StructTable *)sub_4A3630(v14); /*0x4c1973*/
                     else
                       v15 = 0; /*0x4c197a*/
-                    dword_8A0E10 = v15; /*0x4c1982*/
+                    dword_8A0E10 = (unsigned int)(v15); /*0x4c1982*/
                     if ( !dword_8A0E08 || !v15 ) /*0x4c1991*/
                       return -1; /*0x4c1991*/
                     return 0; /*0x4c1997*/
@@ -488,13 +488,13 @@ void sub_4C2830()
     if ( v3 ) /*0x4c285b*/
     {
       v4 = (int *)((unsigned int *)((int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/ v3, v20, v2[9], 0, 0, 0)));
-      v5 = (int)((unsigned int *)(*v4));
+      v5 = (unsigned int *)((int)((unsigned int *)(*v4)));
       v6 = v4[1]; /*0x4c288e*/
       v7 = v4[2]; /*0x4c2891*/
       if ( v5 != (unsigned int *)(dword_8A0E50) || v6 != dword_8A0E54 || v7 != dword_8A0E58 ) /*0x4c28a4*/
       {
         v8 = (unsigned int *)(Block);
-        *(unsigned int *)Block = v5; /*0x4c28aa*/
+        *(unsigned int *)Block = (unsigned int)(v5); /*0x4c28aa*/
         v8[1] = v6; /*0x4c28ac*/
         v8[2] = v7; /*0x4c28af*/
       }
@@ -531,7 +531,7 @@ void sub_4C2830()
       if ( Block ) /*0x4c299d*/
       {
         v14 = *((unsigned int *)Block + 8); /*0x4c299f*/
-        v15 = (char *)Block + 32; /*0x4c29a2*/
+        v15 = (unsigned int *)((char *)Block + 32); /*0x4c29a2*/
         if ( v14 ) /*0x4c29a7*/
         {
           *(unsigned int *)(v14 + 1756) = 0; /*0x4c29a9*/
@@ -595,7 +595,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   int v17; // [esp+18h] [ebp-8h]
   int v18; // [esp+1Ch] [ebp-4h]
 
-  v16 = (int)((unsigned char *)(a2));
+  v16 = (unsigned char *)((int)((unsigned char *)(a2)));
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return a4; /*0x4c38fb*/
   v5 = a4; /*0x4c3901*/
@@ -607,7 +607,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
     return a4; /*0x4c3a11*/
   v5 = v6; /*0x4c3924*/
   LABEL_6:
-  v7 = v5 + 256; /*0x4c3926*/
+  v7 = (unsigned char *)(v5 + 256); /*0x4c3926*/
   memset(v5, 0xFFu, 0x100u); /*0x4c3938*/
   v17 = 0; /*0x4c393a*/
   if ( a3 > 0 ) /*0x4c3942*/
@@ -654,10 +654,10 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 
   this->TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth((int)this->AbstractClass, 0); /*0x4c3de5*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x4c3def*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x4c3def*/
   v5[2] = g_DisplayWidth; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
-  v5[1] = vtable2; /*0x4c3e12*/
+  v5[1] = (unsigned int)(vtable2); /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
   return (*(int (**)(AudioStream *, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 /*0x4c3e28*/
                                                                                     + 8))(
@@ -732,7 +732,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   abstractFlags = ((unsigned int *)this)[0]; /*0x4c95d2*/
   if ( abstractFlags <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x4c95dd*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x4c95dd*/
   uniqueId = ((unsigned int *)this)[0]; /*0x4c95e0*/
   if ( vtable2 != (void *)-1 ) /*0x4c95ec*/
   {

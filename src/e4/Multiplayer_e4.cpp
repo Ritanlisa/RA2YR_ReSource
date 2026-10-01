@@ -67,7 +67,7 @@ void * Multiplayer::FindStartPositions()
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
-  v3 = dword_A8B230; /*0x68839a*/
+  v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x68839a*/
   v4 = 10; /*0x6883a0*/
   v25.vtable0 = &vt_DynamicVectorClass; /*0x6883a5*/
   v27 = 10; /*0x6883ad*/
@@ -88,7 +88,7 @@ void * Multiplayer::FindStartPositions()
   v7 = 0; /*0x6883f0*/
   if ( dword_A8DA84 > 0 ) /*0x6883f4*/
   {
-    v8 = dword_A8DA78; /*0x6883f6*/
+    v8 = (unsigned int *)(dword_A8DA78); /*0x6883f6*/
     v9 = dword_A8DA84; /*0x6883fc*/
     do /*0x68840b*/
     {
@@ -126,12 +126,12 @@ LABEL_22:
       v13 = v26++; /*0x6884ab*/
       *((unsigned int *)v25.Items + v13) = v12; /*0x6884b6*/
     }
-    v3 = dword_A8B230; /*0x6884b9*/
+    v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884b9*/
 LABEL_24:
     v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
     Debug::Log(); /*0x6884d9*/
     v4 = v27; /*0x6884de*/
-    v3 = dword_A8B230; /*0x6884e2*/
+    v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
   if ( v10 - v26 > 0 ) /*0x688502*/
@@ -192,9 +192,9 @@ LABEL_24:
   *(unsigned int *)&v2[8] = 0; /*0x688654*/
   v2[13] = 0; /*0x688657*/
   v2[12] = (Multiplayer)1; /*0x68865f*/
-  *(unsigned int *)v2 = &vt_VectorClass; /*0x688663*/
+  *(unsigned int *)v2 = (unsigned int)(&vt_VectorClass); /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
-  *(unsigned int *)v2 = &vt_DynamicVectorClass; /*0x68866e*/
+  *(unsigned int *)v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x68866e*/
   v25.vtable0 = &vt_VectorClass; /*0x688674*/
   Items = v25.Items; /*0x68867c*/
   v17 = v27; /*0x688684*/
@@ -219,7 +219,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
   (*(void (**)(Multiplayer *))(*(unsigned int *)this + 12))(this); /*0x68c2bf*/
-  v3 = aP1[2]; /*0x68c2c2*/
+  v3 = (int)(aP1[2]); /*0x68c2c2*/
   *((unsigned int *)this + 2) = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
@@ -227,7 +227,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
+  v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   *((unsigned int *)this + 1) = v4; /*0x68c2eb*/

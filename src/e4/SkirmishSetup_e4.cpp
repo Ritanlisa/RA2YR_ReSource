@@ -72,7 +72,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
       dword_ABFDB0 = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
-    v5 = (wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3))))))))));
+    v5 = (LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3)))))))))));
         if ( (*(unsigned char *)(v5 + 61) || g_abs_A8B238[0] != 4 || !Network::IsMultiplayerActive())
       && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !this->Network::IsLobbyFeature())
       && (g_MPCooperativeState
@@ -523,7 +523,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v5 = (Skirmish *)unknown_libname_27(v4); /*0x5e8611*/
   else
     v5 = 0; /*0x5e8618*/
-  g_UIControlState = v5; /*0x5e8621*/
+  g_UIControlState = (int)(v5); /*0x5e8621*/
   Surface::LoadToSurfaceSHP((Surface *)v5, ExistingFileName); /*0x5e8626*/
   v6 = 0; /*0x5e8630*/
   if ( dword_A8B8D8 <= 0 ) /*0x5e8634*/

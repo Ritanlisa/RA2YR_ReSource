@@ -305,7 +305,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
     result = (*(int (**)(unsigned int *, int))(v8 + 980))(v5, v10); /*0x471db8*/
     if ( result )
     {
-      v11 = __2_YAPAXI_Z(0x14u); /*0x471dce*/
+      v11 = (int)(__2_YAPAXI_Z(0x14u)); /*0x471dce*/
       v12 = 0; /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
@@ -325,7 +325,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
         v16 = *(unsigned int *)((unsigned int)(a1)+ 52); /*0x471e1f*/
         v17 = *(unsigned int *)((unsigned int)(a1)+ 40); /*0x471e22*/
         *(unsigned int *)((unsigned int)(a1)+ 52) = v16 + 1; /*0x471e28*/
-        *(unsigned int *)(v17 + 4 * v16) = v12; /*0x471e2b*/
+        *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v12); /*0x471e2b*/
       }
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(unsigned int *)((unsigned int)(a1)+ 72); /*0x471e34*/
@@ -373,7 +373,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
                                  0);
       else
         v28 = 0; /*0x471f53*/
-      v5[178] = v28; /*0x471f57*/
+      v5[178] = (unsigned int)(v28); /*0x471f57*/
       if ( v28 ) /*0x471f5d*/
       {
         BuildingClass::AimTurret(v28, v5); /*0x471f62*/
@@ -442,7 +442,7 @@ void CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnkn
         StartAudioControllerAt(*(unsigned int *)(v13 + 1456), v20, 0); /*0x47208d*/
         v10 = _34; /*0x472092*/
       }
-      a2 = 1; /*0x4720d5*/
+      a2 = (IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/
       (*((void (**)(CaptureManagerClass *))aP0->AbstractClass + 245))(aP0); /*0x4720da*/
       CaptureManagerClass::DecideUnitFate(v7, (int)aP0); /*0x4720e3*/
@@ -545,7 +545,7 @@ LABEL_7:
             v19 = *(unsigned int *)(v12 + 988) + v11; /*0x472245*/
             v16 = 0; /*0x472251*/
             v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))(v13); /*0x472264*/
-            LOBYTE(v3) = DrawTacticalLaserLine(*v14, v14[1], v14[2], (int)va, -1 - v21 % 5, 0, 0); /*0x472282*/
+            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14, v14[1], v14[2], (int)va, -1 - v21 % 5, 0, 0)); /*0x472282*/
           }
         }
       }

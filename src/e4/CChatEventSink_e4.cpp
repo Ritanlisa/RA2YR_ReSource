@@ -81,7 +81,7 @@ LABEL_103:
       {
         this->Debug::Log(); /*0x7aa91d*/
         memset(&v33[32], 0, 0x10Cu); /*0x7aa930*/
-        referenceCount = ((char *)&stru_B76AC4); /*0x7aa932*/
+        referenceCount = (int)(((char *)&stru_B76AC4)); /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
         if ( ((char *)&stru_B76AC4) > 0 ) /*0x7aa93b*/
         {
@@ -93,7 +93,7 @@ LABEL_103:
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
-              referenceCount = ((char *)&stru_B76AC4); /*0x7aa977*/
+              referenceCount = (int)(((char *)&stru_B76AC4)); /*0x7aa977*/
             }
             ++v4; /*0x7aa97c*/
             v5 += 268; /*0x7aa97d*/
@@ -118,7 +118,7 @@ LABEL_103:
           {
             if ( *((unsigned int *)v6 + 10) != -1 ) /*0x7aa9cd*/
             {
-              v7 = ((char *)&stru_B76AC4); /*0x7aa9d3*/
+              v7 = (int)(((char *)&stru_B76AC4)); /*0x7aa9d3*/
               v8 = 0; /*0x7aa9d8*/
               v9 = 0; /*0x7aa9da*/
               if ( ((char *)&stru_B76AC4) > 0 ) /*0x7aa9de*/
@@ -135,7 +135,7 @@ LABEL_103:
                     if ( !v11 ) /*0x7aaa30*/
                       break; /*0x7aaa30*/
                   }
-                  v7 = ((char *)&stru_B76AC4); /*0x7aaa32*/
+                  v7 = (int)(((char *)&stru_B76AC4)); /*0x7aaa32*/
                   ++v9; /*0x7aaa37*/
                   occupant += 268; /*0x7aaa38*/
                   if ( v9 >= ((char *)&stru_B76AC4) ) /*0x7aaa40*/
@@ -179,7 +179,7 @@ LABEL_43:
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {
               unknown_libname_73(&v33[24]); /*0x7aab4b*/
-              abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aab50*/
+              abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aab50*/
               v17 = 0; /*0x7aab55*/
               if ( ((char *)&g_WebBrowserConfig) <= 0 ) /*0x7aab59*/
               {
@@ -190,12 +190,12 @@ LABEL_51:
                 if ( v18 >= ((char *)&g_WebBrowserConfig) ) /*0x7aaba4*/
                 {
                   DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&g_WebBrowserConfig)); /*0x7aabab*/
-                  abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aabb0*/
+                  abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabb0*/
                 }
                 if ( abstractFlags >= ((char *)&g_WebBrowserConfig) ) /*0x7aabbb*/
                 {
                   DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&g_WebBrowserConfig)); /*0x7aabc2*/
-                  abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aabc7*/
+                  abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabc7*/
                 }
                 if ( v18 < abstractFlags ) /*0x7aabce*/
                 {
@@ -203,13 +203,13 @@ LABEL_51:
                     (void *)(((char *)&g_WebBrowserConfig) + 4 * v18 + 4),
                     (const void *)(((char *)&g_WebBrowserConfig) + 4 * v18),
                     4 * (abstractFlags + 0x3FFFFFFF * v18));
-                  abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aabf0*/
+                  abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabf0*/
                 }
                 v19 = (String *)(((char *)&g_WebBrowserConfig) + 4 * v18); /*0x7aabfe*/
                 if ( v19 ) /*0x7aac03*/
                 {
                   String::AssignFromPtr(v19, (const char **)v33); /*0x7aac0a*/
-                  abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aac0f*/
+                  abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aac0f*/
                 }
                 ((unsigned int *)&g_WebBrowserConfig)[0] = abstractFlags + 1; /*0x7aac15*/
               }
@@ -221,7 +221,7 @@ LABEL_51:
                     String::Reassign((String *)&v33[24], (const char **)(((char *)&g_WebBrowserConfig) + 4 * v17)); /*0x7aab71*/
                   if ( (uint8_t)String::Compare((String *)&v33[24], (const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
-                  abstractFlags = ((char *)&g_WebBrowserConfig); /*0x7aab8c*/
+                  abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aab8c*/
                   if ( ++v17 >= ((char *)&g_WebBrowserConfig) ) /*0x7aab94*/
                     goto LABEL_51; /*0x7aab94*/
                 }
@@ -275,7 +275,7 @@ LABEL_72:
                   String::AssignFromPtr(v24, (const char **)v33); /*0x7aad27*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aad2c*/
                 }
-                ((unsigned int *)&stru_B765EC)[0] = vtable3 + 1; /*0x7aad32*/
+                ((unsigned int *)&stru_B765EC)[0] = (unsigned int)(vtable3 + 1); /*0x7aad32*/
               }
               else
               {
@@ -564,12 +564,12 @@ char CChatEventSink::EncodeString(char a2)
 
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b5e33*/
     return 0; /*0x7b5e39*/
-  v4 = strchr(*(const char **)this->__pad_0, a2); /*0x7b5e46*/
+  v4 = (char *)(strchr(*(const char **)this->__pad_0, a2)); /*0x7b5e46*/
   if ( !v4 ) /*0x7b5e50*/
     return 0; /*0x7b5e52*/
   v5 = &v4[-*(unsigned int *)this->__pad_0]; /*0x7b5e5c*/
   v6 = (size_t)v5; /*0x7b5e5f*/
-  v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
+  v7 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5e63*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b5e58*/
     v7 = *(const char **)this->__pad_0; /*0x7b5e6a*/
   v8 = (char *)__2_YAPAXI_Z((size_t)(v5 + 1)); /*0x7b5e70*/
@@ -578,7 +578,7 @@ char CChatEventSink::EncodeString(char a2)
   if ( v7 ) /*0x7b5e80*/
     strncpy(v8, v7, v6); /*0x7b5e85*/
   v9[v6] = 0; /*0x7b5e8d*/
-  v10 = &g_INI_DefaultBuffer; /*0x7b5e91*/
+  v10 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5e91*/
   if ( v9 ) /*0x7b5e98*/
     v10 = v9; /*0x7b5e9a*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b5e9c*/
@@ -589,7 +589,7 @@ char CChatEventSink::EncodeString(char a2)
   else
     v11 = 1; /*0x7b5ec2*/
   v12 = (unsigned char *)__2_YAPAXI_Z(v11); /*0x7b5ec8*/
-  *(unsigned int *)this->__pad_0 = v12; /*0x7b5ed0*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(v12); /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/
   if ( v10 ) /*0x7b5ed7*/
     strcpy(*(char **)this->__pad_0, v10); /*0x7b5eef*/

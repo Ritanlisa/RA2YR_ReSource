@@ -131,7 +131,7 @@ int Audio::UpdatePlaybackPosition()
   if ( Audio::GetChannelStatus(*(Audio **)&this->__pad_3C[116]) ) /*0x40553e*/
   {
     *(unsigned int *)&this->__pad_18[4] = 1; /*0x405547*/
-    *(unsigned int *)&this->__pad_3C[268] = v4; /*0x40554e*/
+    *(unsigned int *)&this->__pad_3C[268] = (unsigned int)(v4); /*0x40554e*/
     v8 = *(unsigned int *)this->__pad_18; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
     *(unsigned int *)this->__pad_18 = v8; /*0x405559*/
@@ -169,7 +169,7 @@ void * Audio::ProcessMixerOutput(char * Source)
       return Next; /*0x40648d*/
   }
 LABEL_6:
-  v4 = __2_YAPAXI_Z(0x148u); /*0x4063f4*/
+  v4 = (unsigned int *)(__2_YAPAXI_Z(0x148u)); /*0x4063f4*/
   memset(v4, 0, 0x148u); /*0x40640a*/
   memset(v4, 0, 0x148u); /*0x406413*/
   DListNode::InitEmpty(v4); /*0x40641a*/
@@ -198,7 +198,7 @@ int Audio::ApplyFormatFlags(int * a1, char * a2)
   char *v6; // eax
   int v7; // eax
 
-  v4 = &off_816048; /*0x40687e*/
+  v4 = (char **)(&off_816048); /*0x40687e*/
   if ( off_816048 ) /*0x406883*/
   {
     do /*0x40689d*/
@@ -445,7 +445,7 @@ char ** Audio::SetSoundFileName(char * Source, int a3)
   *(unsigned int *)&this->__pad_0[4] = 0; /*0x5d5827*/
   this->__pad_0[8] = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
-    *(unsigned int *)this->__pad_0 = _strdup(Source); /*0x5d5843*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(_strdup(Source)); /*0x5d5843*/
   return (char **)this; /*0x5d5847*/
 
 }

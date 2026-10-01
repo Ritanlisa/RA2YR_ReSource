@@ -152,7 +152,7 @@ void PsyDom::Fire()
                                      0);
           else
             v22 = 0; /*0x53b30d*/
-          *(unsigned int *)(i + 712) = v22; /*0x53b311*/
+          *(unsigned int *)(i + 712) = (unsigned int)(v22); /*0x53b311*/
           if ( v22 ) /*0x53b317*/
             BuildingClass::AimTurret(v22, (unsigned char *)i); /*0x53b31c*/
           if ( v40 < v38 /*0x53b34b*/

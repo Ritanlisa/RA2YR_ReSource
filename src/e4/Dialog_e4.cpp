@@ -300,7 +300,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
     StringCSF = GetStringCSF(aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/
   g_NetworkTestFlag = 0; /*0x5f29bc*/
-  v9 = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
+  v9 = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415)); /*0x5f29c3*/
   MessageBox = CreateMessageBox(v8, (LPARAM)v9, (LONG)&g_NetworkTestFlag); /*0x5f29cc*/
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/

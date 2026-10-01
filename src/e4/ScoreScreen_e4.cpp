@@ -38,10 +38,10 @@ void ScoreScreen::LoadScoreFont( ScoreFontClass * aP1)
   this->ScoreScreen_field_0x08 = 0; /*0x690a1c*/
   this->ScoreScreen_field_0x0C = 0; /*0x690a1f*/
   this->ScoreScreen_field_0x14 = 0; /*0x690a22*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x690a25*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreFontClass); /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreFullFontClass; /*0x690a44*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreFullFontClass); /*0x690a44*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
@@ -52,10 +52,10 @@ void ScoreScreen::LoadScoreFont( ScoreFontClass * aP1)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     this->Debug::Log(); /*0x690a85*/
-    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690a91*/
+    *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690a91*/
     v7 = 0; /*0x690a99*/
     Vector::Clear((int)v6); /*0x690a9d*/
-    *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690aa6*/
+    *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690aa6*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
   }
   this->ScoreScreen_field_0x04 = (unsigned int)(11);
@@ -79,10 +79,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x08 = 0; /*0x690aec*/
   this->ScoreScreen_field_0x0C = 0; /*0x690aef*/
   this->ScoreScreen_field_0x14 = 0; /*0x690af2*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x690af5*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreFontClass); /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreBigFontClass; /*0x690b14*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreBigFontClass); /*0x690b14*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
@@ -93,15 +93,15 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     this->Debug::Log(); /*0x690b55*/
-    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690b61*/
+    *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
-    *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690b76*/
+    *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690b76*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
   }
-  this->ScoreScreen_field_0x04 = (unsigned int *)(20);
-  this->ScoreScreen_field_0x14 = (unsigned int *)(a2);
-  this->ScoreScreen_field_0x08 = (unsigned int *)(35);
+  this->ScoreScreen_field_0x04 = (unsigned int)((unsigned int *)(20));
+  this->ScoreScreen_field_0x14 = (unsigned int)((unsigned int *)(a2));
+  this->ScoreScreen_field_0x08 = (unsigned int)((unsigned int *)(35));
   return (unsigned int *)(this->__pad_0);
 
 }
@@ -116,7 +116,7 @@ void ScoreScreen::Constructor( ScoreAnimClass * aP1, int a3, int a4)
   this->ScoreScreen_field_0x0C = this->Timer::GetTicks(); /*0x690f4d*/
   this->ScoreScreen_field_0x14 = 0; /*0x690f50*/
   this->ScoreScreen_field_0x18 = a4; /*0x690f57*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreAnimClass; /*0x690f5a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }
@@ -168,7 +168,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   if ( !*((unsigned int *)this + 239) ) /*0x77131e*/
     *((unsigned char *)this + 952) = 1; /*0x771328*/
   unknown_libname_73(&v25); /*0x771333*/
-  v13 = &this->__pad_0[148 * a2 + 48 * a3]; /*0x771352*/
+  v13 = (char *)(&this->__pad_0[148 * a2 + 48 * a3]); /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this->__pad_0, (int)(v13 + 8), (void **)&v25) )
   {
     if ( !(uint8_t)this->Audio::IsPlaying() ) /*0x77136a*/
@@ -281,10 +281,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       *(unsigned int *)((unsigned int)(v10)+ 8) = v9; /*0x778283*/
       *(unsigned int *)((unsigned int)(v10)+ 4) = v28; /*0x778291*/
       *(unsigned int *)((unsigned int)(v10)+ 12) = 0; /*0x778294*/
-      *(unsigned int *)v10 = &XSurface_Vtable; /*0x77829b*/
+      *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x77829b*/
       *(unsigned int *)((unsigned int)(v10)+ 16) = 2; /*0x7782a1*/
       Buffer::Init((Buffer *)((unsigned int)(v10)+ 20), 0, 2 * v28 * v9); /*0x7782a8*/
-      *(unsigned int *)v10 = &BSurface_Vtable; /*0x7782ad*/
+      *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x7782ad*/
     }
     else
     {
@@ -311,7 +311,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v14 = (gamemd::ConvertClass *)((int)((ConvertClass *)RA2_OPNEW(0x188u)));
       if ( v14 ) /*0x778370*/
         ConvertClass::Construct(v14, a7, a7, (int)a2, 1, 0); /*0x778382*/
-      v15 = *(unsigned int *)a2); /*0x778395*/
+      v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
       v26 = (*(int (**)(int *, int *))((unsigned int)(v15)+ 120))(a2, v37); /*0x7783c2*/
@@ -328,9 +328,9 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v19 = (void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
       v20 = (void *)((int)((void *)(*v8)));
       v34 = (void *)((int)((void *)(v19)));
-      v33 = (int)((void *)(v31[0]));
-      v32[0] = (void *)(v11);
-      v21 = *(unsigned int *)(a2); /*0x778418*/
+      v33 = (void *)((int)((void *)(v31[0])));
+      v32[0] = (unsigned int)((void *)(v11));
+      v21 = (void *)(*(unsigned int *)(a2)); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
       v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))(v8, &v38, 0, 1); /*0x778421*/
       v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
@@ -339,10 +339,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }
-  *(unsigned int *)v38.CDFileClass = (void*)&CCFileClass_vftable; /*0x778461*/
+  *(unsigned int *)v38.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x778461*/
   v40 = 0; /*0x778469*/
   Vector::Clear((int)v39); /*0x778474*/
-  *(unsigned int *)v38.CDFileClass = &off_7E1668; /*0x77847d*/
+  *(unsigned int *)v38.CDFileClass = (unsigned int)(&off_7E1668); /*0x77847d*/
 // 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v38); /*0x77848a*/
 }

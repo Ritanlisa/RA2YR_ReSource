@@ -99,7 +99,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
       ++v3; /*0x43aa16*/
     }
   }
-  v6 = (unsigned int)(Block);
+  v6 = (unsigned int *)((unsigned int)(Block));
   v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v6);
@@ -192,7 +192,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x43abee*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x43abf7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x43abf7*/
       this->m_8 = a2; /*0x43abff*/
       BYTE1(this->m_C) = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/

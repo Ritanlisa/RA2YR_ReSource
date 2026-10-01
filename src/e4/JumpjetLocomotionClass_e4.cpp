@@ -315,8 +315,8 @@ LABEL_35:
     v43 = v82; /*0x439fd8*/
     *((unsigned int *)v5 + 1) = v42; /*0x439fdc*/
     *((float *)v5 + 2) = v43; /*0x439fe4*/
-    v44 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v83); /*0x439ff1*/
-    v45 = JumpjetLocomotionClass::AdjustClimbFacing((JumpjetLocomotionClass *)v44, &v84); /*0x439ff8*/
+    v44 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v83)); /*0x439ff1*/
+    v45 = (int)(JumpjetLocomotionClass::AdjustClimbFacing((JumpjetLocomotionClass *)v44, &v84)); /*0x439ff8*/
     if ( v45 != -1 ) /*0x43a000*/
     {
       qmemcpy(v87, Locomotor_Update((char *)v89, v45), sizeof(v87)); /*0x43a01f*/
@@ -447,7 +447,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
 
   v6 = 128; /*0x48508f*/
   v7 = 128; /*0x485097*/
-  inited = Isometric::InitTables((int)this, &v6); /*0x4850a3*/
+  inited = (int)(Isometric::InitTables((int)this, &v6)); /*0x4850a3*/
   if ( byte_A8E9A0 && (v3 = *((unsigned int *)this + 57)) != 0 ) /*0x4850b6*/
   {
     while ( (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) != 6 ) /*0x4850c2*/

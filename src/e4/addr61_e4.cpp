@@ -122,7 +122,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
         else
           v15[13] = *(void **)v6; /*0x61063a*/
         RA2_OPDEL(v6); /*0x61063f*/
-        v4 = v15[13]; /*0x610644*/
+        v4 = (unsigned int *)(v15[13]); /*0x610644*/
       }
   LABEL_16:
       ;
@@ -144,7 +144,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
         v9 = (HWND)((unsigned int)(v8[2]));
         RA2_OPDEL(*((void **)g_DialogPool + v7)); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
-        *((unsigned int *)g_DialogPool + v7) = v9; /*0x6106df*/
+        *((unsigned int *)g_DialogPool + v7) = (unsigned int)(v9); /*0x6106df*/
         --unk_AC18C4; /*0x6106ee*/
         if ( v10 > dbl_AC18E0 ) /*0x6106f8*/
           goto LABEL_31; /*0x6106f8*/
@@ -228,7 +228,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   v6 = *(unsigned int *)(a1 + 12); /*0x61091c*/
   dword_AC1DCC = 1; /*0x61091f*/
   IDA_HIDWORD(dword_AC1CB8) = v6; /*0x610925*/
-  dword_AC1DD4 = a3; /*0x61092d*/
+  dword_AC1DD4 = (unsigned int)(a3); /*0x61092d*/
 // 0x610950
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }

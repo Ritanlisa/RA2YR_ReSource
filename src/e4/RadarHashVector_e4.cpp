@@ -53,7 +53,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * a2); /*0x658b35*/
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
@@ -108,7 +108,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x658bd8*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x658be3*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x658be3*/
     this->m_8 = v3; /*0x658be9*/
     BYTE1(this->m_C) = a3 == 0; /*0x658bec*/
   }
@@ -146,7 +146,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
       if ( aP1 - 1 >= 0 ) /*0x658e0f*/
       {
         v4 = (unsigned int *)(aP2 + 4); /*0x658e11*/
-        v5 = aP1; /*0x658e14*/
+        v5 = (int)(aP1); /*0x658e14*/
         do /*0x658e21*/
         {
           *(v4 - 1) = 0; /*0x658e15*/
@@ -167,7 +167,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
         if ( aP1 - 1 >= 0 ) /*0x658e3f*/
         {
           v7 = (unsigned int *)(v6 + 4); /*0x658e41*/
-          v8 = aP1; /*0x658e44*/
+          v8 = (int)(aP1); /*0x658e44*/
           do /*0x658e51*/
           {
             *(v7 - 1) = 0; /*0x658e45*/

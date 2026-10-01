@@ -70,7 +70,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
   uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
   abstractFlags = ((unsigned int *)this)[0]; /*0x488119*/
-  vtable3 = ((unsigned int *)this)[0]; /*0x48811c*/
+  vtable3 = (void *)(((unsigned int *)this)[0]); /*0x48811c*/
   nextArrayIndex = ((unsigned int *)this)[0]; /*0x488120*/
   v16 = uniqueId; /*0x488123*/
   v17 = abstractFlags; /*0x488127*/
@@ -298,7 +298,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                 {
                   v19 = (IUnknown *)((int *)((IUnknown *)(v121)));
                   v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))))))))));
-                  *((unsigned int *)Block + (unsigned int)v19) = v109;
+                  *((unsigned int *)Block + (unsigned int)v19) = (unsigned int)(v109);
                 }
               }
             }

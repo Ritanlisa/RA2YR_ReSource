@@ -56,9 +56,9 @@ unsigned int * sub_6B2430(int * a1, int a2)
   unsigned int * v4;
   unsigned int * v6;
 
-  result = (int)((unsigned int *)dword_B0B658);
-  v3 = (int)((unsigned int *)(a1[1]));
-  v4 = (int)((unsigned int *)(*a1));
+  result = (unsigned int *)((int)((unsigned int *)dword_B0B658));
+  v3 = (unsigned int *)((int)((unsigned int *)(a1[1])));
+  v4 = (unsigned int *)((int)((unsigned int *)(*a1)));
   if ( g_SlaveMgrPool < dword_B0B658 /*0x6b2475*/
     || (byte_B0B65D || !dword_B0B658)
     && dword_B0B664 > 0
@@ -68,7 +68,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
                              0),
         (unsigned char)result) )
   {
-    v6 = (int)((unsigned int *)(g_SlaveMgrPool++));
+    v6 = (unsigned int *)((int)((unsigned int *)(g_SlaveMgrPool++)));
     result = (unsigned int *)((char *)dword_B0B654 + 12 * v6);
     *result = (unsigned int)(v4);
     result[1] = (unsigned int)(v3);
@@ -317,7 +317,7 @@ AbstractClass * * SlaveManager_InitGrid()
     {
       while ( 1 ) /*0x6b2b77*/
       {
-        v38 = (int *)(0);
+        v38 = (unsigned int)((int *)(0));
         *(unsigned int *)v32 = 0; /*0x6b2b7b*/
         v30 = (char *)g_SlaveManagerPool + 8 * v8 + 8 * v7 * result; /*0x6b2b82*/
         v30[4] = 0; /*0x6b2b86*/
@@ -620,7 +620,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     {
       IDA_HIWORD(v96) = dword_8759AC + v8; /*0x6b3080*/
       IDA_LOWORD(v96) = dword_8759A8 + v11; /*0x6b308f*/
-      v12 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v96); /*0x6b3099*/
+      v12 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v96)); /*0x6b3099*/
       if ( !((CellClass *)((int)v12))->IsBuildable() ) /*0x6b30a8*/
         goto LABEL_104; /*0x6b30a8*/
       v13 = v100 * dword_8759A4 + v83; /*0x6b30c5*/
@@ -762,7 +762,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     }
     while ( v38 ); /*0x6b338c*/
     v40 = 0; /*0x6b339c*/
-    v41 = &off_83FF18; /*0x6b339e*/
+    v41 = (unsigned int *)(&off_83FF18); /*0x6b339e*/
     while ( 1 ) /*0x6b33a3*/
     {
       v42 = (unsigned int *)*v41; /*0x6b33a3*/
@@ -1083,7 +1083,7 @@ void ProcessSlaveManagerTerrain()
               }
               while ( v14 ); /*0x6b39ed*/
               v17 = 0; /*0x6b39f7*/
-              v18 = &off_83FF18; /*0x6b39f9*/
+              v18 = (unsigned int *)(&off_83FF18); /*0x6b39f9*/
               while ( 1 ) /*0x6b39fe*/
               {
                 v19 = (unsigned int *)*v18; /*0x6b39fe*/

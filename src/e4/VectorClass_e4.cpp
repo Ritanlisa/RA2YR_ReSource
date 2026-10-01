@@ -325,7 +325,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
+      v4 = (int)(__2_YAPAXI_Z(4 * a2)); /*0x42f716*/
       if ( v4 ) /*0x42f720*/
         v5 = (unsigned int *)v4; /*0x42f725*/
       else
@@ -347,7 +347,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x42f784*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x42f78d*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x42f78d*/
       this->m_8 = a2; /*0x42f795*/
       BYTE1(this->m_C) = a3 == 0; /*0x42f798*/
       return 1; /*0x42f79e*/
@@ -412,7 +412,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         v6 = v5 + 1; /*0x4e0879*/
         if ( a2 - 1 >= 0 ) /*0x4e087c*/
         {
-          v7 = v5 + 2; /*0x4e087e*/
+          v7 = (unsigned int *)(v5 + 2); /*0x4e087e*/
           v8 = a2; /*0x4e0881*/
           do /*0x4e088c*/
           {
@@ -524,7 +524,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         v6 = v5 + 1; /*0x4e0b49*/
         if ( a2 - 1 >= 0 ) /*0x4e0b4c*/
         {
-          v7 = v5 + 2; /*0x4e0b4e*/
+          v7 = (unsigned int *)(v5 + 2); /*0x4e0b4e*/
           v8 = a2; /*0x4e0b51*/
           do /*0x4e0b5c*/
           {
@@ -642,7 +642,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5ad081*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5ad08a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5ad08a*/
     *(unsigned int *)&this->__pad_5[3] = a2; /*0x5ad092*/
     BYTE1(this->m_C) = a3 == 0; /*0x5ad095*/
   }

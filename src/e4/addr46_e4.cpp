@@ -312,7 +312,7 @@ void sub_46DCC0(HWND hDlg, bool a2)
         v5 = i != 1 ? -1 : 1042;
       else
         v5 = 1041; /*0x46dcef*/
-      DlgItem = GetDlgItem(hDlg, v5); /*0x46dd09*/
+      DlgItem = (int)(GetDlgItem(hDlg, v5)); /*0x46dd09*/
       EnableWindow(DlgItem, a2); /*0x46dd17*/
       ResourceID2CSF = GetResourceID2CSF((void *)i); /*0x46dd1f*/
       v8 = GetDlgItem(hDlg, ResourceID2CSF); /*0x46dd26*/
@@ -347,13 +347,13 @@ void EnableGameModeControls(HWND hDlg, bool a2)
     v4 = dword_A8DA8C != 1 ? -1 : 1042;
   else
     v4 = 1041; /*0x46dd81*/
-  DlgItem = GetDlgItem(hDlg, v4); /*0x46dd9f*/
+  DlgItem = (int)(GetDlgItem(hDlg, v4)); /*0x46dd9f*/
   EnableWindow(DlgItem, a2); /*0x46ddaf*/
   ResourceID2 = GetResourceID2CSF((void *)dword_A8DA8C); /*0x46ddb7*/
-  v7 = GetDlgItem(hDlg, ResourceID2); /*0x46ddbe*/
+  v7 = (int)(GetDlgItem(hDlg, ResourceID2)); /*0x46ddbe*/
   EnableWindow(v7, a2); /*0x46ddc2*/
   ResourceID = GetResourceIDCSF((void *)dword_A8DA8C); /*0x46ddca*/
-  v9 = GetDlgItem(hDlg, ResourceID); /*0x46ddd1*/
+  v9 = (int)(GetDlgItem(hDlg, ResourceID)); /*0x46ddd1*/
   EnableWindow(v9, a2); /*0x46ddd5*/
   ResourceID3 = GetResourceID3CSF((void *)dword_A8DA8C); /*0x46dddd*/
   v11 = GetDlgItem(hDlg, ResourceID3); /*0x46dde4*/

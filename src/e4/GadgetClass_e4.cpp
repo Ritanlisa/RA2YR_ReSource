@@ -19,7 +19,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
 
   unsigned int *result; // eax
 
-  result = (gamemd::ControlClass)(this->__pad_0);
+  result = (unsigned int *)((gamemd::ControlClass)(this->__pad_0));
   this->Height = (gamemd::ControlClass)(a3);
   this->Width = (gamemd::ControlClass)(a2);
   this->ID = (gamemd::ControlClass)(a5);
@@ -30,7 +30,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
   BYTE2(this->Image) = 0; /*0x4e1322*/
   BYTE1(this->Image) = a7; /*0x4e1327*/
   *(unsigned int *)this->Hovered = a6; /*0x4e132a*/
-  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e132d*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_GadgetClass); /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
     *(unsigned int *)this->Hovered = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
@@ -45,7 +45,7 @@ ControlClass GadgetClass::Dtor()
   ShpButtonClass *v1; // eax
   int v2; // eax
 
-  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e1390*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_GadgetClass); /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E90 ) /*0x4e139f*/
   {
@@ -298,8 +298,8 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
     if ( *(unsigned int *)(String) ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen(String));
-      v4 = (unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2));
-      *((unsigned int *)this + 10) = v4; /*0x62359b*/
+      v4 = (wchar_t *)((unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2)));
+      *((unsigned int *)this + 10) = (unsigned int)(v4); /*0x62359b*/
       wcscpy(v4, String); /*0x62359e*/
     }
   }

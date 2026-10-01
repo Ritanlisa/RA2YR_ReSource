@@ -125,10 +125,10 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   unsigned int v34[22]; // [esp+74h] [ebp-5Ch] BYREF
   int v35; // [esp+CCh] [ebp-4h]
 
-  v4 = (unsigned char *)this + 8; /*0x764b9e*/
+  v4 = (unsigned int *)((unsigned char *)this + 8); /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
   *((unsigned int *)this + 1) = 0; /*0x764baa*/
-  *(unsigned int *)this = &vt_ReferenceCounted; /*0x764bad*/
+  *(unsigned int *)this = (unsigned int)(&vt_ReferenceCounted); /*0x764bad*/
   ((ComPtr *)((unsigned int *)this + 2))->Constructor(); /*0x764bb3*/
   *v4 = &vt_rc_ptr; /*0x764bbf*/
   ((ComPtr *)(v4))->Set(*(unsigned int *)(a3 + 4)); /*0x764bcb*/
@@ -235,7 +235,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     *((unsigned int *)this + 12) = Int < 0 ? 0 : Int;
     if ( *((unsigned int *)this + 12) == WDTObject::GetSize(*(unsigned int **)(a3 + 4)) )
     {
-      v18 = (unsigned char *)this + 52; /*0x764e60*/
+      v18 = (unsigned int *)((unsigned char *)this + 52); /*0x764e60*/
       do
       {
         RegionString = GetRegionStringWOL((void *)v16); /*0x764e6a*/
@@ -262,7 +262,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
-  v34[0] = &off_7E1668; /*0x764f0e*/
+  v34[0] = (unsigned int)(&off_7E1668); /*0x764f0e*/
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
 
@@ -309,7 +309,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   }
   FileStraw::Open(v8, (int)v14, 0); /*0x7650d7*/
   CCFileClass::Close(v14); /*0x7650e0*/
-  v14[0] = &off_7E1668; /*0x7650e9*/
+  v14[0] = (unsigned int)(&off_7E1668); /*0x7650e9*/
   BufferIOFileClass::Dtor(v14); /*0x7650f1*/
   RegionStringWOL = GetRegionStringWOL(aP1); /*0x765101*/
   v3 = String::Assign((char **)&v6, g_INI_Key_LastDay); /*0x76510c*/
@@ -322,7 +322,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   BufferIOFile::Init(v15); /*0x76516b*/
   CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
-  v15[0] = &off_7E1668; /*0x76519b*/
+  v15[0] = (unsigned int)(&off_7E1668); /*0x76519b*/
   BufferIOFileClass::Dtor(v15); /*0x7651a6*/
   DeleteAndZero(&v7); /*0x7651af*/
   return HashTable::DestroyHashTableINIClass(v8); /*0x7651bd*/

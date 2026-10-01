@@ -26,7 +26,7 @@ void TauntCommandClass::Construct( int a2)
 {
 
   this->TauntCommandClass_field_00 = a2; /*0x536296*/
-  *(unsigned int *)this->CommandClass = &vt_TauntCommandClass; /*0x536299*/
+  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_TauntCommandClass); /*0x536299*/
   return this->CommandClass; /*0x53629f*/
 
 }

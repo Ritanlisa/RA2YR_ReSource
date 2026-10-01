@@ -117,7 +117,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     HIWORD(v16) = HIWORD(aP2); /*0x434d17*/
     v17 = 0; /*0x434d19*/
     v51 = 0; /*0x434d1b*/
-    LOWORD(v16) = *aP2; /*0x434d1f*/
+    LOWORD(v16) = (unsigned short)(*aP2); /*0x434d1f*/
     v54 = 0; /*0x434d22*/
     v52 = 0; /*0x434d29*/
     v49 = 0; /*0x434d2d*/
@@ -200,7 +200,7 @@ LABEL_23:
           goto LABEL_55; /*0x434ee4*/
         case 32: /*0x434d59*/
           v54 = v11; /*0x434f02*/
-          v52 = aP2; /*0x434f06*/
+          v52 = (unsigned short *)(aP2); /*0x434f06*/
           goto LABEL_26; /*0x434f06*/
         default:
 LABEL_26:
@@ -302,8 +302,8 @@ LABEL_57:
           aP4 += v36; /*0x435129*/
 LABEL_55:
           v13 = (int16_t)v53; /*0x43512d*/
-          v37 = aP2 + 1; /*0x435135*/
-          aP2 = v37; /*0x435138*/
+          v37 = (unsigned short *)(aP2 + 1); /*0x435135*/
+          aP2 = (gamemd::AbstractClass *)(v37); /*0x435138*/
           LOWORD(v37) = *v37; /*0x43513c*/
           v53 = v37; /*0x435142*/
           if ( !(unsigned short)v37 ) /*0x435146*/

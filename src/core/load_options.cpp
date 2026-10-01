@@ -93,15 +93,15 @@ LoadOptions::LoadOptions() {
   *((unsigned int *)p_is_active + 2) = 0; /*0x55874b*/
   p_is_active[12] = 1; /*0x55874e*/
   p_is_active[13] = 0; /*0x558752*/
-  *(unsigned int *)p_is_active = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
+  *(unsigned int *)p_is_active = (unsigned int)(&(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable); /*0x558755*/
   *((unsigned int *)p_is_active + 5) = 10; /*0x55875b*/
   *((unsigned int *)p_is_active + 4) = 0; /*0x558762*/
   *(unsigned int *)((unsigned char *)(this) + 0x4) = 0; /*0x558765*/
   this->field_0C = 0; /*0x558768*/
   this->field_14 = 0; /*0x55876b*/
   v3 = *(unsigned int *)p_is_active; /*0x55876e*/
-  this->extension = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
-  *(unsigned int *)&((unsigned char *)(this) + 0x4)[4] = &off_829EA0; /*0x558776*/
+  this->extension = (const char *)(&(void*)(void*)&LoadOptionsClass_vftable); /*0x558770*/
+  *(unsigned int *)&((unsigned char *)(this) + 0x4)[4] = (unsigned int)(&off_829EA0); /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
   (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x558784*/
   return &this->extension; /*0x558789*/
@@ -122,10 +122,10 @@ void LoadOptions::Cleanup() {
   for ( this->extension = &(void*)(void*)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
     RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
-  p_is_active = &this->is_active; /*0x5587c0*/
+  p_is_active = (char *)(&this->is_active); /*0x5587c0*/
   (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
   result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
-  *(unsigned int *)p_is_active = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
+  *(unsigned int *)p_is_active = (unsigned int)(&(void*)(void*)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
   {
     RA2_OPDEL((void *)result); /*0x5587db*/

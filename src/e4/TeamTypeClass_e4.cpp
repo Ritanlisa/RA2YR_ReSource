@@ -74,9 +74,9 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
   this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/
-  ((unsigned int *)this)[0] = &vt_FactoryClass; /*0x4c9920*/
-  ((unsigned int *)this)[0] = &vt_FactoryClass; /*0x4c9926*/
-  ((unsigned int *)this)[0] = &vt_FactoryClass; /*0x4c992d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9920*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9926*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
@@ -152,7 +152,7 @@ LABEL_6:
             v6) )
       {
         dword_8B41D8 = (unsigned int)(v5 + 1);
-        *((unsigned int *)dword_8B41CC + v5) = v4; /*0x691d02*/
+        *((unsigned int *)dword_8B41CC + v5) = (unsigned int)(v4); /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
       v7 = 0; /*0x691d0b*/
@@ -347,7 +347,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
                        v4);
   if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
   {
-    *((unsigned int *)this + 50) = v5; /*0x6f10ee*/
+    *((unsigned int *)this + 50) = (unsigned int)(v5); /*0x6f10ee*/
     *((unsigned int *)this + 49) = 0; /*0x6f10f4*/
   }
   else if ( v5 != (HouseClass *)-1 ) /*0x6f1103*/

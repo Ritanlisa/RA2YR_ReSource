@@ -74,7 +74,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass a
   char *v6; // [esp+10h] [ebp-4h] BYREF
 
   String::Assign((String *)&v6, off_83E188); /*0x770e80*/
-  v5 = aP3; /*0x770e85*/
+  v5 = (unsigned int)(aP3); /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
   String::Assign((String *)&aP3, g_INI_Key_Lose); /*0x770eb4*/
@@ -137,7 +137,7 @@ HKEY E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
     return 0; /*0x7742cf*/
   }
   v4 = cbMaxSubKeyLen + 16; /*0x77421f*/
-  v5 = __2_YAPAXI_Z(cbMaxSubKeyLen + 16); /*0x77422c*/
+  v5 = (unsigned char *)(__2_YAPAXI_Z(cbMaxSubKeyLen + 16)); /*0x77422c*/
   lpClass = (LPSTR)__2_YAPAXI_Z(cbMaxClassLen + 1); /*0x774235*/
   v6 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
@@ -464,7 +464,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
             v15 = (char *)dword_B72F40; /*0x775f9f*/
           }
           RA2_OPDEL(v15); /*0x775fa6*/
-          dword_B72F40 = hdc; /*0x775fb2*/
+          dword_B72F40 = (unsigned int)(hdc); /*0x775fb2*/
           v11 = dword_B72F38; /*0x775fb7*/
           dword_B72F3C = v13; /*0x775fbc*/
         }
@@ -487,7 +487,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
             v21 = (char *)dword_B72F40; /*0x77601f*/
           }
           RA2_OPDEL(v21); /*0x776026*/
-          dword_B72F40 = hdca; /*0x776032*/
+          dword_B72F40 = (unsigned int)(hdca); /*0x776032*/
           v11 = dword_B72F38; /*0x776037*/
           dword_B72F3C = v19; /*0x77603c*/
         }
@@ -545,9 +545,9 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
   {
     if ( !SendMessageA(hWnd, 0x4C9u, (WPARAM)a2, a3[15]) ) /*0x77625b*/
       return 0; /*0x77626a*/
-    *(&qword_B730A0 + 1) = (HWND)a3[15]; /*0x77627a*/
+    *(&qword_B730A0 + 1) = (unsigned __int64)((HWND)a3[15]); /*0x77627a*/
     SendMessageA(a2, 0x110Bu, 9u, 0); /*0x776280*/
-    himl = (HIMAGELIST)SendMessageA(a2, 0x1112u, 0, a3[15]); /*0x776294*/
+    himl = (int)((HIMAGELIST)SendMessageA(a2, 0x1112u, 0, a3[15])); /*0x776294*/
     lParam[0] = a3[15]; /*0x7762a5*/
     SendMessageA(a2, 0x1104u, 0, (LPARAM)lParam); /*0x7762a9*/
     v6 = SendMessageA(a2, 0x1106u, 0, 0); /*0x7762b5*/
@@ -558,7 +558,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
     ImageList_DragEnter(hWnd, 0, 0); /*0x7762e8*/
     SetTimer(hWnd, 1u, 1u, 0); /*0x7762f5*/
     byte_B7309C = 1; /*0x7762fb*/
-    qword_B730A0 = a2; /*0x776302*/
+    qword_B730A0 = (unsigned __int64)(a2); /*0x776302*/
   }
   return byte_B7309C; /*0x776261*/
 }

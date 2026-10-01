@@ -193,7 +193,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x6522d0*/
                 ((Timer *)0)->UpdateDelta();
       ++dword_A8DAB4; /*0x6522e4*/
-      StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Queue_CPP, 8878); /*0x65230f*/
+      StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Queue_CPP, 8878)); /*0x65230f*/
       v5 = (int *)GetStringCSF(g_Str_TXT_QUEUE_FULL, 0, g_Str_File_Queue_CPP, 8878); /*0x65231a*/
       Dialog::ShowMessageBox(v5, StringCSF, 0, 0, 0, v7); /*0x652324*/
       dword_A8B8B8 = 0; /*0x652335*/
@@ -1384,7 +1384,7 @@ void sub_53D850()
     ((unsigned int *)(dword_A9FAE8))[0] = 0; /*0x53d876*/
     dword_AA0150 = v1; /*0x53d880*/
     v2 = 1; /*0x53d886*/
-    v3 = &unk_A9FAEC; /*0x53d88b*/
+    v3 = (unsigned int *)(&unk_A9FAEC); /*0x53d88b*/
     do /*0x53d8b2*/
     {
       v4 = ComputeSpiralOffset(&v7, v2); /*0x53d896*/

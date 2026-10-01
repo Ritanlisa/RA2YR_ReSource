@@ -54,10 +54,10 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
           v13 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + v12); /*0x4885d6*/
         else
           v13 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * v12); /*0x4885e2*/
-        v19[0] = a3; /*0x4885f4*/
+        v19[0] = (unsigned int)(a3); /*0x4885f4*/
         v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
-        v19[1] = a4; /*0x488606*/
-        v19[2] = a5; /*0x48860a*/
+        v19[1] = (unsigned int)(a4); /*0x488606*/
+        v19[2] = (unsigned int)(a5); /*0x48860a*/
         (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
           v19,

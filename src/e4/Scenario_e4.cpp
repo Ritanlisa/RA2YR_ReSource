@@ -123,7 +123,7 @@ int Scenario::ReadTeams()
   v1 = (gamemd::INIClass *)((int)(this));
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
-  result = INIClass::GetKeyCount(v1->__pad_0, (uint8_t *)aStructures); /*0x44f84a*/
+  result = (gamemd::INIClass *)(INIClass::GetKeyCount(v1->__pad_0, (uint8_t *)aStructures)); /*0x44f84a*/
   v3 = 0; /*0x44f84f*/
   v71 = result; /*0x44f853*/
   v68 = 0; /*0x44f857*/
@@ -189,7 +189,7 @@ int Scenario::ReadTeams()
               v21 = strtok(0, Str); /*0x44fa69*/
               if ( v21 ) /*0x44fa73*/
                 v70 = atoi(v21); /*0x44fa7e*/
-              v22 = v73; /*0x44fa82*/
+              v22 = (unsigned int)(v73); /*0x44fa82*/
               v23 = 3; /*0x44fa86*/
               do /*0x44faab*/
               {
@@ -208,7 +208,7 @@ int Scenario::ReadTeams()
               v27 = strtok(0, Str); /*0x44fade*/
               if ( v27 ) /*0x44fae8*/
                 v26 = atoi(v27) != 0; /*0x44faf5*/
-              v28 = __2_YAPAXI_Z(0x720u); /*0x44fafd*/
+              v28 = (int)(__2_YAPAXI_Z(0x720u)); /*0x44fafd*/
               if ( v28 ) /*0x44fb07*/
               {
                 v29 = ((BuildingClass *)(v28))->Construct(*((unsigned int *)dword_A83C6C + IndexByName), v65); /*0x44fb27*/
@@ -301,7 +301,7 @@ int Scenario::ReadTeams()
                         if ( *v46 != -1 ) /*0x44fd66*/
                         {
                           v48 = *((unsigned int *)dword_A83C6C + *v46); /*0x44fd73*/
-                          v49 = __2_YAPAXI_Z(0x720u); /*0x44fd76*/
+                          v49 = (int)(__2_YAPAXI_Z(0x720u)); /*0x44fd76*/
                           if ( v49 ) /*0x44fd80*/
                             v50 = (int *)((BuildingClass *)(v49))->Construct(v48, v65); /*0x44fd8a*/
                           else
@@ -345,7 +345,7 @@ int Scenario::ReadTeams()
       v3 = (gamemd::INIClass *)((int)((gamemd::INIClass *)(++v68)));
       if ( v68 >= (int)(v71) ) /*0x44fe41*/
         break; /*0x44fe41*/
-      v1 = this; /*0x44f866*/
+      v1 = (gamemd::INIClass *)(this); /*0x44f866*/
     }
   }
   return (int)(result);
@@ -425,9 +425,9 @@ int Scenario::ProcessSidebarUnits()
              0) )
       {
         v9 = *(unsigned int *)&this->__pad_9C[224]; /*0x50d69c*/
-        v10 = *(unsigned int *)&this->__pad_9C[212]; /*0x50d69f*/
+        v10 = (int *)(*(unsigned int *)&this->__pad_9C[212]); /*0x50d69f*/
         *(unsigned int *)&this->__pad_9C[224] = v9 + 1; /*0x50d6a5*/
-        *(unsigned int *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
+        *(unsigned int *)(v10 + 4 * v9) = (unsigned int)(v6); /*0x50d6a8*/
       }
     }
     result = i - 1; /*0x50d6af*/
@@ -452,7 +452,7 @@ Game * * Scenario::ComputeDisplayPosition()
   int v9; // ebx
   int v10; // eax
 
-  v1 = g_DisplayWidth; /*0x552b12*/
+  v1 = (gamemd::LoadingScreen *)(g_DisplayWidth); /*0x552b12*/
   v2 = 640; /*0x552b20*/
   if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552b2b*/
     v2 = 800; /*0x552b2d*/
@@ -481,7 +481,7 @@ Game * * Scenario::ComputeDisplayPosition()
     this->Scenario_field_0x10 = (void *)v6; /*0x552b71*/
     v6 += 40; /*0x552b74*/
     v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
-    this->Scenario_field_0x34 = (void *)v2; /*0x552b78*/
+    this->Scenario_field_0x34 = (unsigned char)((void *)v2); /*0x552b78*/
     this->Scenario_field_0xC = (void *)v7; /*0x552b7b*/
     this->Scenario_field_0x1C = (void *)v7; /*0x552b7e*/
     this->Scenario_field_0x20 = (void *)v6; /*0x552b81*/

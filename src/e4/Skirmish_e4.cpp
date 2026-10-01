@@ -100,8 +100,8 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
   int v12; // eax
   ObjectClass *v14; // [esp+14h] [ebp-4h]
 
-  v1 = dword_A8DA8C; /*0x46f8f5*/
-  v14 = dword_A8DA8C; /*0x46f906*/
+  v1 = (gamemd::ObjectClass *)(dword_A8DA8C); /*0x46f8f5*/
+  v14 = (gamemd::ObjectClass *)(dword_A8DA8C); /*0x46f906*/
   if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46f90a*/
   {
     ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46f90e*/
@@ -409,7 +409,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
     }
     v25 = VtableStub_72E280(); /*0x6408c3*/
     BuildingAnimByName = FindBuildingAnimByName(&(unsigned int *)((char *)&stru_820320 + 12), 1); /*0x6408c7*/
-    v15 = dword_A8B230; /*0x6408cc*/
+    v15 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6408cc*/
     v16 = BuildingAnimByName; /*0x6408d2*/
     result = dword_A8B230[122].abstractFlags; /*0x6408d4*/
     if ( result > 0 && result <= 8 ) /*0x6408e5*/
@@ -468,7 +468,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
                         v16,
                         8,
                         25);
-        v15 = dword_A8B230; /*0x640a1a*/
+        v15 = (gamemd::AbstractClass *)(dword_A8B230); /*0x640a1a*/
       }
       while ( v17 < dword_A8B230[122].abstractFlags ); /*0x640a29*/
     }
@@ -490,7 +490,7 @@ int Skirmish::EnableSpawnButtons(HWND hDlg)
   LRESULT v6; // esi
   char v7; // [esp+7h] [ebp-1h]
 
-  v1 = hDlg; /*0x6acd62*/
+  v1 = (gamemd::Skirmish *)(hDlg); /*0x6acd62*/
   if ( !hDlg ) /*0x6acd66*/
     v1 = (Skirmish *)Dialog::FindByHandle((Dialog *)0x102); /*0x6acd72*/
   v7 = 0; /*0x6acd79*/
@@ -578,7 +578,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
   wchar_t *v18; // eax
   wchar_t *v19; // eax
 
-  result = BaseDialogProc(hDlg, a2, a3, a4); /*0x6ae40a*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, a4)); /*0x6ae40a*/
   if ( !result ) /*0x6ae411*/
   {
     if ( a2 > 0x497 ) /*0x6ae41d*/

@@ -23,7 +23,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   *((unsigned int *)this + 7) = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     *((unsigned int *)this + 7) = 0; /*0x408e7b*/
-  result = this->m_RefCount; /*0x408e82*/
+  result = (int)(this->m_RefCount); /*0x408e82*/
   v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
   *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/

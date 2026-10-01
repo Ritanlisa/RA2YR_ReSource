@@ -71,7 +71,7 @@ int Mouse::SetBounds(void* aP1)
     LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
     HIWORD(aP1) = (int16_t)(1 - HIWORD(v7)) / 2; /*0x4a8cd1*/
     v8 = (int16_t)aP1; /*0x4a8cd6*/
-    *((unsigned int *)this + 1118) = aP1; /*0x4a8cda*/
+    *((unsigned int *)this + 1118) = (unsigned int)(aP1); /*0x4a8cda*/
     LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
     LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
     HIWORD(aP1) = v7; /*0x4a8cfd*/
@@ -143,8 +143,8 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
       dword_ABF294,
       v9);
     result = (gamemd::ObjectClass *)((unsigned char)(aP1));
-    *((unsigned int *)this + 5464) = aP1; /*0x5bdd9f*/
-    *((unsigned char *)this + 21852) = aP2; /*0x5bdda5*/
+    *((unsigned int *)this + 5464) = (unsigned int)(aP1); /*0x5bdd9f*/
+    *((unsigned char *)this + 21852) = (unsigned char)(aP2); /*0x5bdda5*/
     LOBYTE(result) = 1; /*0x5bddad*/
   }
   return (int)(result);
@@ -200,7 +200,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     v9 = (int)(a4 + *((unsigned int *)this + 19));
     SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this->__pad_5[3]));
     v20[1] = v6; /*0x7b9447*/
-    v20[2] = v7; /*0x7b9454*/
+    v20[2] = (int)(v7); /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
     v20[4] = 1; /*0x7b9468*/
     Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/

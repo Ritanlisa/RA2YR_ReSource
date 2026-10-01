@@ -13,7 +13,7 @@ void SelectTeamCommand::Construct( int a2)
 {
 
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
-  *(unsigned int *)this->CommandClass = &vt_SelectTeamCommandClass; /*0x535fc9*/
+  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_SelectTeamCommandClass); /*0x535fc9*/
   return this->CommandClass; /*0x535fcf*/
 
 }

@@ -31,14 +31,14 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 
   if ( !a2 ) /*0x4a076a*/
     return -2147467261; /*0x4a076d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a077d*/
+  v3 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4a077d*/
   if ( !v3 ) /*0x4a0784*/
     return -2147024882; /*0x4a0864*/
   *(unsigned int *)(v3 + 8) = 0; /*0x4a0798*/
   *(unsigned int *)(v3 + 12) = 0; /*0x4a079b*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a079e*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a07a2*/
-  *(unsigned int *)(v3 + 4) = &vt_VectorClass; /*0x4a07a5*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a07a5*/
   if ( (int *)(v3 + 4) != &a1->ConnectionPointClass_field_0x1C ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a07af*/
@@ -46,7 +46,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
     *(unsigned int *)(v3 + 12) = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a07c7*/
+      v5 = (int)(__2_YAPAXI_Z(8 * v4)); /*0x4a07c7*/
       *(unsigned int *)(v3 + 8) = v5; /*0x4a07d1*/
       if ( v5 ) /*0x4a07d4*/
       {
@@ -74,10 +74,10 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   *(unsigned int *)(v3 + 20) = *((unsigned int *)a1 + 11); /*0x4a0815*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 12); /*0x4a081b*/
-  *(unsigned int *)(v3 + 4) = &vt_DynamicVectorClass; /*0x4a081e*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a081e*/
   *(unsigned int *)(v3 + 28) = 0; /*0x4a0824*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a0827*/
-  *(unsigned int *)v3 = &vt_EnumConnectionsClass; /*0x4a082a*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_EnumConnectionsClass); /*0x4a082a*/
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a0837*/
   {
     v11 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a083f*/
@@ -143,7 +143,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x4a12fe*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4a1307*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a1307*/
       this->m_8 = a2; /*0x4a130f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a1312*/
       return 1; /*0x4a1318*/

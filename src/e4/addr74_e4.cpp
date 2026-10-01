@@ -735,15 +735,15 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vtable3 = &((unsigned int *)this)[0]; /*0x74bbff*/
+  p_vtable3 = (void **)(&((unsigned int *)this)[0]); /*0x74bbff*/
   ((unsigned int *)this)[0] = 0; /*0x74bc04*/
   ((unsigned int *)this)[0] = 0; /*0x74bc07*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x74bc0a*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x74bc0e*/
-  ((unsigned int *)this)[0] = &vt_VectorClass; /*0x74bc11*/
-  ((unsigned int *)this)[0] = (void *)-1; /*0x74bc17*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_VectorClass); /*0x74bc11*/
+  ((unsigned int *)this)[0] = (unsigned int)((void *)-1); /*0x74bc17*/
   LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  ((unsigned int *)this)[0] = *(void **)(a2 + 8); /*0x74bc27*/
+  ((unsigned int *)this)[0] = (unsigned int)(*(void **)(a2 + 8)); /*0x74bc27*/
   if ( &((unsigned int *)this)[0] == (void **)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*((void (**)(void **))*p_vtable3 + 3))(p_vtable3); /*0x74bc30*/
@@ -754,10 +754,10 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     p_vtable3[1] = (void *)((unsigned int)(0));
     *((unsigned char *)p_vtable3 + 13) = 0; /*0x74bc82*/
 LABEL_8:
-    this->AbstractClass = *(void **)a2; /*0x74bc85*/
+    this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bc85*/
     return &this->AbstractClass; /*0x74bc8d*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bc3e*/
+  v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bc3e*/
   p_vtable3[1] = (void *)v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -772,7 +772,7 @@ LABEL_8:
     ++v7; /*0x74bc69*/
   }
   while ( v7 < (int)p_vtable3[2] ); /*0x74bc6c*/
-  this->AbstractClass = *(void **)a2; /*0x74bc74*/
+  this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bc74*/
   return &this->AbstractClass; /*0x74bc78*/
 
 }
@@ -788,14 +788,14 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   int abstractFlags; // ecx
   int v7; // eax
 
-  vtable2 = ((unsigned int *)this)[0]; /*0x74bca6*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x74bca6*/
   if ( vtable2 != (void *)-1 ) /*0x74bcac*/
   {
     SetBitfieldBit(((unsigned int *)this)[0], (int)vtable2, LOBYTE(((unsigned int *)this)[0])); /*0x74bcb7*/
-    ((unsigned int *)this)[0] = (void *)-1; /*0x74bcbc*/
+    ((unsigned int *)this)[0] = (unsigned int)((void *)-1); /*0x74bcbc*/
   }
   LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
-  ((unsigned int *)this)[0] = *(void **)(a2 + 8); /*0x74bcd8*/
+  ((unsigned int *)this)[0] = (unsigned int)(*(void **)(a2 + 8)); /*0x74bcd8*/
   if ( &((unsigned int *)this)[0] == (void **)(a2 + 12) ) /*0x74bcdb*/
     goto LABEL_10; /*0x74bcdb*/
   (*((void (**)(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x74bce1*/
@@ -806,10 +806,10 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     ((unsigned int *)this)[0] = 0; /*0x74bd2c*/
     BYTE1(((unsigned int *)this)[0]) = 0; /*0x74bd33*/
 LABEL_10:
-    this->AbstractClass = *(void **)a2; /*0x74bd37*/
+    this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bd37*/
     return &this->AbstractClass; /*0x74bd39*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bcef*/
+  v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bcef*/
   ((unsigned int *)this)[0] = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
@@ -824,7 +824,7 @@ LABEL_10:
     ++v7; /*0x74bd1a*/
   }
   while ( v7 < ((unsigned int *)this)[0] ); /*0x74bd1d*/
-  this->AbstractClass = *(void **)a2; /*0x74bd23*/
+  this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bd23*/
   return &this->AbstractClass; /*0x74bd25*/
 
 }
@@ -843,16 +843,16 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   void (**vtable3)(void **); // edx
   void * v12;
 
-  vtable2 = ((unsigned int *)this)[0]; /*0x74bdc8*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
   {
     SetBitfieldBit(((unsigned int *)this)[0], (int)vtable2, LOBYTE(((unsigned int *)this)[0])); /*0x74bdd8*/
-    ((unsigned int *)this)[0] = (void *)-1; /*0x74bddd*/
+    ((unsigned int *)this)[0] = (unsigned int)((void *)-1); /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
     vtable0 = (char *)((unsigned int)((char *)this->AbstractClass));
-    v6 = (unsigned int)((*((int (**)(void **, unsigned int, unsigned int))((unsigned int *)this)[0] + 2))(&((unsigned int *)this)[0], (a2 + 7) >> 3, 0));
+    v6 = (void *)((unsigned int)((*((int (**)(void **, unsigned int, unsigned int))((unsigned int *)this)[0] + 2))(&((unsigned int *)this)[0], (a2 + 7) >> 3, 0)));
     this->AbstractClass = (unsigned int)((void *)a2);
     v12 = v6; /*0x74be03*/
     if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/
@@ -871,7 +871,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
               SetBitfieldBit(((unsigned int *)this)[0], (int)v7, LOBYTE(((unsigned int *)this)[0])); /*0x74be32*/
             if ( v8 != -1 ) /*0x74be3a*/
               LOBYTE(((unsigned int *)this)[0]) = BitArray::TestBit(((unsigned int *)this)[0], v8); /*0x74be46*/
-            ((unsigned int *)this)[0] = (void *)v8; /*0x74be49*/
+            ((unsigned int *)this)[0] = (unsigned int)((void *)v8); /*0x74be49*/
           }
         }
         ++vtable0; /*0x74be4c*/
@@ -883,11 +883,11 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   else
   {
-    v10 = ((unsigned int *)this)[0]; /*0x74be60*/
+    v10 = (void *)(((unsigned int *)this)[0]); /*0x74be60*/
     if ( v10 != (void *)-1 ) /*0x74be65*/
     {
       SetBitfieldBit(((unsigned int *)this)[0], (int)v10, LOBYTE(((unsigned int *)this)[0])); /*0x74be70*/
-      ((unsigned int *)this)[0] = (void *)-1; /*0x74be75*/
+      ((unsigned int *)this)[0] = (unsigned int)((void *)-1); /*0x74be75*/
     }
     vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
@@ -955,7 +955,7 @@ int InitializeVeinholeSystem(char a1)
   }
   for ( i = dword_B1D2A0 - 1; i >= 0; --i ) /*0x74deb8*/
     System_Init_74E8A0(*((unsigned int *)dword_B1D294 + i)); /*0x74dec3*/
-  v4 = dword_B1D2F0; /*0x74decb*/
+  v4 = (void *)(dword_B1D2F0); /*0x74decb*/
   if ( dword_B1D2F0 ) /*0x74ded2*/
   {
     RA2_OPDEL(dword_B1D2F0); /*0x74ded5*/
@@ -970,8 +970,8 @@ int InitializeVeinholeSystem(char a1)
       v6 = (unsigned int *)(RA2_OPNEW(8 * dword_8871E0->AircraftFogReveal));
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 180) = v6; /*0x74df28*/
-      v7 = RA2_OPNEW(0x14u); /*0x74df33*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 180) = (unsigned int)(v6); /*0x74df28*/
+      v7 = (unsigned int *)(RA2_OPNEW(0x14u)); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
         VeinholeShrinkRate = (unsigned int)(dword_8871E0->AircraftFogReveal);
@@ -995,10 +995,10 @@ int InitializeVeinholeSystem(char a1)
       }
       else
       {
-        v7 = (unsigned int)(0);
+        v7 = (unsigned int *)((unsigned int)(0));
       }
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 176) = v7; /*0x74df90*/
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 196) = RA2_OPNEW(v2); /*0x74dfa9*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 176) = (unsigned int)(v7); /*0x74df90*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 196) = (unsigned int)(RA2_OPNEW(v2)); /*0x74dfa9*/
       memset(*(void **)(*((unsigned int *)dword_B1D294 + v5) + 196), 0, v2); /*0x74dfc5*/
       v12 = *(unsigned int **)(*((unsigned int *)dword_B1D294 + v5) + 176); /*0x74dfd6*/
       for ( j = 0; j <= *v12; *(unsigned int *)(v12[2] + 4 * j - 4) = 0 ) /*0x74dfe0*/
@@ -1012,7 +1012,7 @@ int InitializeVeinholeSystem(char a1)
   }
   LABEL_18:
   if ( !v4 ) /*0x74e004*/
-    dword_B1D2F0 = RA2_OPNEW(v2); /*0x74e00f*/
+    dword_B1D2F0 = (unsigned int)(RA2_OPNEW(v2)); /*0x74e00f*/
   ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e019*/
   for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/

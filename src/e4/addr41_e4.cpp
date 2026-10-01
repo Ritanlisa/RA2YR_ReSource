@@ -165,7 +165,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       dwUser[5].DebugInfo = (PRTL_CRITICAL_SECTION_DEBUG)60; /*0x41184a*/
       break; /*0x411852*/
     case 2: /*0x411835*/
-      result = sub_411B20((DWORD_PTR)dwUser, a3, a4); /*0x411862*/
+      result = (int)(sub_411B20((DWORD_PTR)dwUser, a3, a4)); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
             ((Debug *)0)->Log();
@@ -318,7 +318,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   {
     v7 = *(unsigned int *)(dwUser + 112); /*0x411bdf*/
     v8 = *(uint16_t *)(dwUser + 14); /*0x411be4*/
-    *((unsigned short *)v5 + 4) = v7 == (uint16_t)v8 ? *aP1 : v7 * (unsigned int)*aP1 / v8;
+    *((unsigned short *)v5 + 4) = (unsigned int)(v7 == (uint16_t)v8 ? *aP1 : v7 * (unsigned int)*aP1 / v8);
   }
   else
   {
@@ -334,8 +334,8 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
   v5[11] = *((unsigned char *)aP1 + 3); /*0x411c60*/
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
-  dword_88776C = (int (*)(unsigned int))*((unsigned int *)aP1 + 2); /*0x411c6c*/
-  dword_887770 = (int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
+  dword_88776C = (unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2)); /*0x411c6c*/
+  dword_887770 = (unsigned int)((int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3)); /*0x411c75*/
     ((Debug *)0)->Log();
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
     return -13; /*0x411cd5*/
@@ -534,8 +534,8 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     return -13; /*0x4120d3*/
   }
   v12 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)(a3))))));
-  *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
-  *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
+  *(unsigned int *)(v5 + 4 * v10 + 80) = (unsigned int)(v4); /*0x4120d8*/
+  *(unsigned int *)(v5 + 4 * v10 + 88) = (unsigned int)(v12); /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
   v13 = dword_887804[47 * *(unsigned int *)(v3 + 52)]; /*0x4120ef*/
   v14 = 188 * *(unsigned int *)(v3 + 52) + 8943480; /*0x4120f8*/
@@ -754,7 +754,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   char String[128]; // [esp+30h] [ebp-80h] BYREF
 
   INIClass::ResetSection(a1); /*0x41b119*/
-  result = INIClass::GetKeyCount(a1->__pad_0, aAircraft); /*0x41b126*/
+  result = (gamemd::INIClass **)(INIClass::GetKeyCount(a1->__pad_0, aAircraft)); /*0x41b126*/
   v4 = 0; /*0x41b12b*/
   v39 = result; /*0x41b12f*/
   for ( i = 0; i < (int)(v39); ++i ) /*0x41b137*/
@@ -1191,7 +1191,7 @@ int E4Recv_412610::sub_412610()
   char v3; // al
   int v4; // esi
 
-  v1 = this; /*0x412612*/
+  v1 = (char *)(this); /*0x412612*/
   v2 = 0; /*0x412614*/
   while ( v1 ) /*0x412618*/
   {

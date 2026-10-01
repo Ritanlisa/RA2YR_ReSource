@@ -260,8 +260,8 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
       qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad81c*/
     v4 = aP2; /*0x7ad825*/
-    *(unsigned int *)this->__pad_8 = v16; /*0x7ad82c*/
-    this->Array_field_0x4 = (void *)v7; /*0x7ad82f*/
+    *(unsigned int *)this->__pad_8 = (unsigned int)(v16); /*0x7ad82c*/
+    this->Array_field_0x4 = (unsigned int)((void *)v7); /*0x7ad82f*/
   }
   v10 = *(unsigned int *)this->__pad_0; /*0x7ad832*/
   if ( *(unsigned int *)this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
@@ -277,8 +277,8 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
       qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad8a1*/
     v4 = aP2; /*0x7ad8aa*/
-    *(unsigned int *)this->__pad_8 = v17; /*0x7ad8b1*/
-    this->Array_field_0x4 = (void *)v11; /*0x7ad8b4*/
+    *(unsigned int *)this->__pad_8 = (unsigned int)(v17); /*0x7ad8b1*/
+    this->Array_field_0x4 = (unsigned int)((void *)v11); /*0x7ad8b4*/
   }
   if ( v4 < *(unsigned int *)this->__pad_0 ) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/
@@ -308,7 +308,7 @@ int Array::ForEach(int a1, int a2, int a3, int (* a4)(int) a4)
     do /*0x406911*/
     {
       result = (int)(a4((int)a1));
-      a1 = (int *)((char *)a1 + a2); /*0x40690e*/
+      a1 = (int)((int *)((char *)a1 + a2)); /*0x40690e*/
       --v6; /*0x406910*/
     }
     while ( v6 ); /*0x406911*/
@@ -424,8 +424,8 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
               v5 = v3; /*0x55b8b2*/
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
-                ((unsigned int *)(v4))[v5] = (unsigned int *)(v4[v5 + 1]);
-                v2 = (int)((unsigned int *)(dword_8B40D8));
+                ((unsigned int *)(v4))[v5] = (unsigned int)((unsigned int *)(v4[v5 + 1]));
+                v2 = (unsigned int *)((int)((unsigned int *)(dword_8B40D8)));
                 v4 = (unsigned int *)(dword_8B40CC);
               }
             }

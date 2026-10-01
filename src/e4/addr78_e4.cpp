@@ -109,7 +109,7 @@ void WOL_ResetSystem()
 
   AccountInfoWOL = (unsigned int)(LoadAccountInfoWOL((ObjectClass *)v25));
   ((ComPtr *)(&stru_B75E48))->Set(AccountInfoWOL[1]); /*0x780129*/
-  v25[0] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x780132*/
+  v25[0] = (unsigned int)((void*)&rc_ptr_PlayerProfile_vftable); /*0x780132*/
   ComPtr::Release((ComPtr *)v25); /*0x78013a*/
   v2 = 0; /*0x780146*/
   *(unsigned int *)&g_WindowManager.__pad_EC[636] = 0; /*0x78014a*/
@@ -153,7 +153,7 @@ void WOL_ResetSystem()
     v10 = *(ObjectClass **)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * v9); /*0x78022e*/
     while ( v10 ) /*0x780233*/
     {
-      v11 = v10; /*0x780235*/
+      v11 = (gamemd::ObjectClass *)(v10); /*0x780235*/
       v10 = (ObjectClass *)v10->vtable3; /*0x780237*/
       DeleteAndZero(v11); /*0x780240*/
       RA2_OPDEL(v11); /*0x780246*/
@@ -181,7 +181,7 @@ void WOL_ResetSystem()
     v14 = *(ObjectClass **)(*(unsigned int *)g_WOL_ListParser.__pad_0 + 4 * v13); /*0x7802c6*/
     while ( v14 ) /*0x7802cb*/
     {
-      v15 = v14; /*0x7802cd*/
+      v15 = (gamemd::ObjectClass *)(v14); /*0x7802cd*/
       v14 = (ObjectClass *)v14->estimatedHealth; /*0x7802cf*/
       ResetSystemWOL_Reset(v15, 1); /*0x7802d8*/
     }
@@ -205,7 +205,7 @@ void WOL_ResetSystem()
     v18 = *(ObjectClass **)(*(unsigned int *)&g_WindowManager.__pad_48[8] + 4 * j); /*0x780336*/
     while ( v18 ) /*0x78033b*/
     {
-      v19 = v18; /*0x78033d*/
+      v19 = (gamemd::ObjectClass *)(v18); /*0x78033d*/
       v18 = (ObjectClass *)v18->estimatedHealth; /*0x78033f*/
       ResetSystemWOL_Reset(v19, 1); /*0x780348*/
     }

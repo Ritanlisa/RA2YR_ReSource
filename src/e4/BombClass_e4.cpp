@@ -105,7 +105,7 @@ int BombClass::Stat(int * a2)
   int v9; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x438a99*/
-  BombClass_field_28 = this->BombClass_field_28; /*0x438a9e*/
+  BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
     v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
@@ -220,11 +220,11 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_BombClass; /*0x4393f7*/
-  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x4393fd*/
-  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x439404*/
-  ((unsigned int *)Block)[0] = &vt_BombClass; /*0x43940b*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
-  v5 = Block; /*0x439427*/
+  v5 = (gamemd::BombClass *)(Block); /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {

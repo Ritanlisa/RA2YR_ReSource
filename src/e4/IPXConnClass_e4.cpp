@@ -21,7 +21,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
 
   IPXConnClass::initConnection((ModemConnectionClass *)this, aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
   Waypoint::InitInvalid((Waypoint *)((char *)this + 76)); /*0x53f462*/
-  *(unsigned int *)this->__pad_0 = &vt_IPXConnClass; /*0x53f46b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_IPXConnClass); /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
     *((unsigned int *)this + 19) = *a5; /*0x53f479*/

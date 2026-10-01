@@ -255,7 +255,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
   v5 = (int *)(*(unsigned int *)this->Surface);
   v28 = (int *)(this);
   v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
-  v7 = ClipRectIntersection(&v26, (int *)a2, v6, 0, 0); /*0x7babaf*/
+  v7 = (int *)(ClipRectIntersection(&v26, (int *)a2, v6, 0, 0)); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
   v36 = v7[1]; /*0x7babbd*/
   v37 = v7[2]; /*0x7babc4*/
@@ -452,7 +452,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
   if ( a3[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
   v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
-  v7 = ClipRectIntersection(&v50, a2, v6, 0, 0); /*0x7bb08f*/
+  v7 = (int *)(ClipRectIntersection(&v50, a2, v6, 0, 0)); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
   v8 = *a3; /*0x7bb09f*/
@@ -469,7 +469,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
   v45[1] = v13[1]; /*0x7bb0e0*/
   v45[2] = v13[2]; /*0x7bb0e6*/
   v45[3] = v13[3]; /*0x7bb0f2*/
-  v14 = ClipRectIntersection(v43, v46, v45, 0, 0); /*0x7bb0f9*/
+  v14 = (unsigned int *)(ClipRectIntersection(v43, v46, v45, 0, 0)); /*0x7bb0f9*/
   v47[0] = *v14; /*0x7bb100*/
   v47[1] = v14[1]; /*0x7bb106*/
   v15 = v14[2]; /*0x7bb109*/
@@ -854,7 +854,7 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
   unsigned char v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
   v6 = (void **)(a3);
-  v8 = (*((int (**)(void **, unsigned char *))*a3 + 30))(a3, v14); /*0x7bbbaa*/
+  v8 = (int (__cdecl **)(void **,unsigned char *))((*((int (**)(void **, unsigned char *))*a3 + 30))(a3, v14)); /*0x7bbbaa*/
   v9 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v15); /*0x7bbbb3*/
   v13[0] = (int)*a2; /*0x7bbbbd*/
   v13[1] = (int)a2[1]; /*0x7bbbc4*/
@@ -991,7 +991,7 @@ namespace gamemd {
 XSurface * XSurface::ScalarDtor(char a2)
 {
 
-  *(unsigned int *)this->Surface = &Surface_Vtable; /*0x4115a9*/
+  *(unsigned int *)this->Surface = (unsigned int)(&Surface_Vtable); /*0x4115a9*/
   if ( (a2 & 1) != 0 ) /*0x4115af*/
     __3_YAXPAX_Z(this); /*0x4115b2*/
   return (std::locale::facet *)this; /*0x4115bc*/

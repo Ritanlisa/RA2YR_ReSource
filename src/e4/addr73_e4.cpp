@@ -209,7 +209,7 @@ CellStruct * * sub_730D60()
 
   if ( FactoryClass::GetFlag() ) /*0x730d65*/
     return System_Get(); /*0x730d6e*/
-  result = (char)g_SelectionManager; /*0x730d79*/
+  result = (gamemd::CellStruct **)((char)g_SelectionManager); /*0x730d79*/
   if ( (int)g_SelectionManager > 0 )
   {
     v1 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)(0)));

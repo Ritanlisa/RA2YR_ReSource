@@ -92,11 +92,11 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     v8 = v7 + 4; /*0x583637*/
     NeighbourContent = v5; /*0x58363b*/
     v22 = v8; /*0x58363d*/
-    v10 = v5 + 80; /*0x583644*/
-    v11 = v5 + 80; /*0x583649*/
+    v10 = (unsigned int *)(v5 + 80); /*0x583644*/
+    v11 = (unsigned int *)(v5 + 80); /*0x583649*/
     v23 = ((unsigned char)v8 - 4) & 7; /*0x58364b*/
     v12 = v5; /*0x58364f*/
-    aP1 = (int16_t *)dword_ABD480; /*0x583657*/
+    aP1 = (IUnknown *)((int16_t *)dword_ABD480); /*0x583657*/
     v21 = dword_ABD480; /*0x58365b*/
     while ( 1 ) /*0x583665*/
     {
@@ -114,7 +114,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       if ( (*v11 & 0x100) == 0 ) /*0x5836b3*/
         goto LABEL_22; /*0x5836b3*/
       v12 = (int *)Cell::GetNeighbourContent(v12, v23); /*0x5836c1*/
-      v11 = v12 + 80; /*0x5836cc*/
+      v11 = (unsigned int *)(v12 + 80); /*0x5836cc*/
       if ( (v12[80] & 0x100) == 0 ) /*0x5836d2*/
       {
         if ( (Cell::IsInRange(v12) || Cell::IsInRange2(v12)) && v12[59] != 3 ) /*0x5836f1*/
@@ -128,11 +128,11 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       }
       v8 = (IUnknown *)(v22);
     }
-    v13 = (unsigned int)((IUnknown *)(dword_ABD480));
+    v13 = (IUnknown *)((unsigned int)((IUnknown *)(dword_ABD480)));
     v22 = (IUnknown *)(dword_ABD480);
     if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&aP1, 1) ) /*0x583727*/
     {
-      v13 = (unsigned int)((IUnknown *)((int)aP1));
+      v13 = (IUnknown *)((unsigned int)((IUnknown *)((int)aP1)));
       v22 = (IUnknown *)((int)aP1);
     }
     if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (int16_t *)&v21, 1) ) /*0x583744*/
@@ -141,17 +141,17 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
         goto LABEL_28; /*0x583758*/
       v14 = (unsigned short *)aP2; /*0x58376c*/
       v15 = (double)(int16_t)(IDA_HIWORD(v21) - aP2->u32_2); /*0x58378e*/
-      aP2 = (int16_t)(v21 - *(unsigned short *)aP2); /*0x583792*/
+      aP2 = (IUnknown *)((int16_t)(v21 - *(unsigned short *)aP2)); /*0x583792*/
       v16 = Math::Sqrt((double)aP2 * (double)aP2 + v15 * v15); /*0x5837ab*/
       v17 = Math::RoundToInt(v16); /*0x5837ba*/
       v18 = (unsigned short)aP1 - *v14; /*0x5837c5*/
-      aP2 = (int16_t)(IDA_HIWORD(aP1) - v14[1]); /*0x5837ce*/
+      aP2 = (IUnknown *)((int16_t)(IDA_HIWORD(aP1) - v14[1])); /*0x5837ce*/
       v19 = (double)aP2; /*0x5837d2*/
-      aP2 = v18; /*0x5837d6*/
+      aP2 = (IUnknown *)(v18); /*0x5837d6*/
       v20 = Math::Sqrt((double)v18 * (double)v18 + v19 * v19); /*0x5837ef*/
       if ( v17 < (int16_t)Math::RoundToInt(v20) ) /*0x5837ff*/
   LABEL_28:
-        v13 = v21; /*0x583801*/
+        v13 = (IUnknown *)(v21); /*0x583801*/
     }
     *a0 = (int)((gamemd::VectorClass_flat **)(v13));
     return (gamemd::VectorClass_flat **)(a0);
@@ -438,14 +438,14 @@ int MarkCliffEdgePassability(int a1)
         v4 = *(unsigned short *)(v3 + 4); /*0x586c3a*/
         if ( *(unsigned short *)v3 == v4 )
         {
-          v5 = (int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544));
+          v5 = (unsigned short *)((int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544)));
           for ( i = *(void *)(CellStruct)::Add((unsigned short *)v3, &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
             v7 = (unsigned int)(IDA_SHIWORD(i) << 9);
             v8 = v7 + (int16_t)i; /*0x586c95*/
             if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x586cab*/
             {
-              dword_ABDC74 = (unsigned int *)(i);
+              dword_ABDC74 = (unsigned int)((unsigned int *)(i));
               v9 = (unsigned int *)(unk_ABDC50);
             }
             if ( (v9[80] & 0x100) == 0 ) /*0x586cc1*/
@@ -483,7 +483,7 @@ int MarkCliffEdgePassability(int a1)
             v16 = (int16_t)j + (IDA_SHIWORD(v31) << 9); /*0x586d8c*/
             if ( v16 >= 0x40000 || (v17 = *(unsigned int **)(dword_87F924 + 4 * v16)) == 0 ) /*0x586da2*/
             {
-              dword_ABDC74 = (unsigned int *)(j);
+              dword_ABDC74 = (unsigned int)((unsigned int *)(j));
               v17 = (unsigned int *)(unk_ABDC50);
             }
             if ( (v17[80] & 0x100) == 0 ) /*0x586db8*/

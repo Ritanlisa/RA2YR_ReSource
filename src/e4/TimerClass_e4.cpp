@@ -42,7 +42,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   *(unsigned int *)this = 0; /*0x54fe6a*/
   *((unsigned char *)this + 4) = 0; /*0x54fe6c*/
   *((unsigned int *)this + 2) = dword_A8ED84; /*0x54fe75*/
-  v18 = (unsigned char *)this + 36; /*0x54fe78*/
+  v18 = (unsigned int *)((unsigned char *)this + 36); /*0x54fe78*/
   *((unsigned int *)this + 4) = 0; /*0x54fe7b*/
   *v18 = a2; /*0x54fe83*/
   *((unsigned int *)this + 5) = 0; /*0x54fe89*/
@@ -50,7 +50,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   v18[1] = a3; /*0x54fe8f*/
   *((unsigned int *)this + 7) = 1; /*0x54fe96*/
   *((unsigned char *)this + 32) = 0; /*0x54fe99*/
-  v18[2] = aP3; /*0x54fe9c*/
+  v18[2] = (unsigned int)(aP3); /*0x54fe9c*/
   *((unsigned char *)this + 33) = 0; /*0x54fea6*/
   *((unsigned int *)this + 12) = a5; /*0x54fea9*/
   *((unsigned int *)this + 13) = a6; /*0x54feaf*/
@@ -93,7 +93,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
          0) )
   {
     v20 = (unsigned int)(dword_ABC888++);
-    *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
+    *((unsigned int *)dword_ABC87C + v20) = (unsigned int)(this); /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
 

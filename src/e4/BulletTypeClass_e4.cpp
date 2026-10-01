@@ -52,7 +52,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     {
       if ( dword_89DDC0 ) /*0x46548b*/
         (**(void (***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x465491*/
-      v3 = __2_YAPAXI_Z(0x20u); /*0x46549a*/
+      v3 = (unsigned int *)(__2_YAPAXI_Z(0x20u)); /*0x46549a*/
       if ( v3 ) /*0x4654a1*/
       {
         v3[3] = (unsigned int)(0);
@@ -61,7 +61,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
         *v3 = (unsigned int)(&XSurface_Vtable);
         v3[4] = (unsigned int)(1);
         Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
-        *v3 = &BSurface_Vtable; /*0x4654cb*/
+        *v3 = (unsigned int)(&BSurface_Vtable); /*0x4654cb*/
         dword_89DDC0 = (int)v3; /*0x4654d1*/
       }
       else
@@ -196,7 +196,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
          0) )
   {
     v3 = (unsigned int)(dword_A83C90++);
-    *((unsigned int *)dword_A83C84 + v3) = this; /*0x46bd81*/
+    *((unsigned int *)dword_A83C84 + v3) = (unsigned int)(this); /*0x46bd81*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x46bdb8*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)

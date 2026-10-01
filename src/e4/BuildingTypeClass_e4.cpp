@@ -250,12 +250,12 @@ int BuildingTypeClass::ConstructFull(char * Source)
   *((unsigned char *)this + 6032) = 1; /*0x45e29e*/
   *((unsigned char *)this + 6033) = 0; /*0x45e2a5*/
   *((unsigned int *)this + 1505) = &vt_VectorClassTPoint3D; /*0x45e2ab*/
-  *((unsigned int *)this + 1506) = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
+  *((unsigned int *)this + 1506) = (unsigned int)(__2_YAPAXI_Z(0xCu)); /*0x45e2ba*/
   *((unsigned char *)this + 6033) = 1; /*0x45e2c6*/
-  *(unsigned int *)this = &vt_BuildingTypeClass; /*0x45e2cd*/
-  *((unsigned int *)this + 1) = &vt_BuildingTypeClass; /*0x45e2d3*/
-  *((unsigned int *)this + 2) = &vt_BuildingTypeClass; /*0x45e2d9*/
-  *((unsigned int *)this + 3) = &vt_BuildingTypeClass; /*0x45e2e1*/
+  *(unsigned int *)this = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2cd*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2d3*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2d9*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2e1*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
@@ -269,7 +269,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
         !v5) )
   {
     dword_A83C78 = (unsigned int)(v4 + 1);
-    *((unsigned int *)dword_A83C6C + v4) = this; /*0x45e33a*/
+    *((unsigned int *)dword_A83C6C + v4) = (unsigned int)(this); /*0x45e33a*/
     v4 = dword_A83C78; /*0x45e33d*/
   }
   v6 = 0; /*0x45e342*/
@@ -407,9 +407,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   this->__pad_1714[125] = 0; /*0x45e548*/
   *(unsigned int *)&this->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e54e*/
   this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
-  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e55e*/
-  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e565*/
-  ((unsigned int *)this)[0] = &vt_BuildingTypeClass; /*0x45e56c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e55e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e565*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e56c*/
   return &this->TechnoTypeClass; /*0x45e575*/
 
 }
@@ -426,9 +426,9 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
   a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
-  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e595*/
-  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e59c*/
-  ((unsigned int *)a1)[0] = &vt_BuildingTypeClass; /*0x45e5a3*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e595*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e59c*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e5a3*/
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
@@ -472,7 +472,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     a1->__pad_F70[1432] = 0; /*0x45e6af*/
   }
   AbstractClass::AnnounceExpiredPointer(&a1->TechnoTypeClass, 1); /*0x45e6b9*/
-  v6 = a1; /*0x45e6ce*/
+  v6 = (gamemd::BuildingTypeClass *)(a1); /*0x45e6ce*/
   v3 = (*(int (**)(unsigned int *, BuildingTypeClass **))(dword_A83C68 + 16))(&dword_A83C68, &v6); /*0x45e6d2*/
   if ( v3 != -1 && v3 < dword_A83C78 && v3 < --dword_A83C78 ) /*0x45e6ed*/
   {
@@ -514,8 +514,8 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 
   v2 = v1; /*0x45e97a*/
   ProcessDataCCFileClass(); /*0x45e97c*/
-  FileSystem_POWEROFF_SHP = SearchMIXFile(aPoweroffShp, 0); /*0x45e994*/
-  FileSystem_WRENCH_SHP = SearchMIXFile(aWrenchShp, 0); /*0x45e99e*/
+  FileSystem_POWEROFF_SHP = (int)(SearchMIXFile(aPoweroffShp, 0)); /*0x45e994*/
+  FileSystem_WRENCH_SHP = (int)(SearchMIXFile(aWrenchShp, 0)); /*0x45e99e*/
   v3 = 0; /*0x45e9aa*/
   v9 = 0; /*0x45e9ae*/
   if ( dword_A83C78 > 0 ) /*0x45e9b2*/
@@ -539,7 +539,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         else
         {
           _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea08*/
-          *(unsigned int *)(v4 + 164) = SearchMIXFile(Buffer, 0); /*0x45ea1b*/
+          *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 0)); /*0x45ea1b*/
         }
         if ( *(unsigned char *)(v4 + 5985) ) /*0x45ea42*/
         {
@@ -553,7 +553,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         else
         {
           _makepath(Buffer, 0, 0, (const char *)(v4 + 3676), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea6b*/
-          *(unsigned int *)(v4 + 3584) = SearchMIXFile(Buffer, 0); /*0x45ea7e*/
+          *(unsigned int *)(v4 + 3584) = (unsigned int)(SearchMIXFile(Buffer, 0)); /*0x45ea7e*/
         }
         v5 = *(unsigned int *)(v4 + 3584); /*0x45eaa5*/
         if ( v5 ) /*0x45eaad*/
@@ -590,17 +590,17 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     {
       if ( dword_89DDC0 ) /*0x45eb56*/
         (*(void (**)(Draw *, int))dword_89DDC0->Draw_field_00)(dword_89DDC0, 1); /*0x45eb5c*/
-      v8 = __2_YAPAXI_Z(0x20u); /*0x45eb65*/
+      v8 = (int)(__2_YAPAXI_Z(0x20u)); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
         *(unsigned int *)(v8 + 12) = 0; /*0x45eb72*/
-        *(unsigned int *)v8 = &XSurface_Vtable; /*0x45eb78*/
+        *(unsigned int *)v8 = (unsigned int)(&XSurface_Vtable); /*0x45eb78*/
         *(unsigned int *)(v8 + 4) = v9 + 16; /*0x45eb80*/
         *(unsigned int *)(v8 + 8) = v9 + 16; /*0x45eb8b*/
         *(unsigned int *)(v8 + 16) = 1; /*0x45eb8e*/
         Buffer::Init((Buffer *)(v8 + 20), 0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
-        *(unsigned int *)v8 = &BSurface_Vtable; /*0x45eb9a*/
-        dword_89DDC0 = (Draw *)v8; /*0x45eba0*/
+        *(unsigned int *)v8 = (unsigned int)(&BSurface_Vtable); /*0x45eb9a*/
+        dword_89DDC0 = (unsigned int)((Draw *)v8); /*0x45eba0*/
       }
       else
       {
@@ -645,11 +645,11 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
   {
     _makepath(Source, 0, 0, (const char *)((char *)this + 3676), ::Ext); /*0x45f26f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f282*/
-    v3 = SearchMIXFile(Source, 0); /*0x45f28d*/
+    v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f28d*/
     if ( !v3 ) /*0x45f294*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f29a*/
-      v3 = SearchMIXFile(Source, 0); /*0x45f2a5*/
+      v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f2a5*/
     }
     *((unsigned int *)this + 896) = v3; /*0x45f2ac*/
     if ( v3 ) /*0x45f2b2*/

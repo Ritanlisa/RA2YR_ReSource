@@ -37,7 +37,7 @@ void LinkClass::Destruct()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  *(unsigned int *)this->__pad_0 = &vt_LinkClass; /*0x5565a5*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_LinkClass); /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
   m_Prev = this->m_Prev; /*0x5565ba*/

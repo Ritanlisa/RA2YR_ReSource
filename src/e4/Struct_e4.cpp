@@ -152,8 +152,8 @@ unsigned int * Struct::InitTriple256(unsigned int * a1)
 
   v1 = (void *)(2 * dword_AC1474); /*0x5f75ec*/
   a1->AbstractTypeClass = (void *)256; /*0x5f75f7*/
-  ((unsigned int *)a1)[0] = (void *)256; /*0x5f75f9*/
-  ((unsigned int *)a1)[0] = v1; /*0x5f75fc*/
+  ((unsigned int *)a1)[0] = (unsigned int)((void *)256); /*0x5f75f9*/
+  ((unsigned int *)a1)[0] = (unsigned int)(v1); /*0x5f75fc*/
   return &a1->AbstractTypeClass; /*0x5f75ff*/
 
 }

@@ -16,7 +16,7 @@ void * Timer::Start(DynamicVector * aP1)
 {
 
   *(unsigned int *)this->__pad_0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
-  *(unsigned int *)&this->__pad_6[2] = aP1; /*0x46b64e*/
+  *(unsigned int *)&this->__pad_6[2] = (unsigned int)(aP1); /*0x46b64e*/
   return this->__pad_0; /*0x46b651*/
 
 }

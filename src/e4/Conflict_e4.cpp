@@ -95,7 +95,7 @@ LABEL_14:
     }
     m_8 = a2; /*0x766cf7*/
   }
-  *(unsigned int *)&this->m_1[3] = v8; /*0x766d06*/
+  *(unsigned int *)&this->m_1[3] = (unsigned int)(v8); /*0x766d06*/
   this->m_8 = m_8; /*0x766d09*/
   BYTE1(this->m_C) = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
@@ -184,7 +184,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
       }
       m_8 = a2; /*0x766e9b*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x766eaa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x766eaa*/
     this->m_8 = m_8; /*0x766ead*/
     BYTE1(this->m_C) = a3 == 0; /*0x766eb0*/
   }

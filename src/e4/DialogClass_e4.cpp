@@ -59,7 +59,7 @@ int DialogClass::Reposition(int hWnd, int a2)
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/
     bottom = v10.bottom; /*0x775cc5*/
-    dwInitParam = (HWND)v10.right; /*0x775cc9*/
+    dwInitParam = (int)((HWND)v10.right); /*0x775cc9*/
     dword_B72F58 = v10.bottom; /*0x775ccf*/
   }
   v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/

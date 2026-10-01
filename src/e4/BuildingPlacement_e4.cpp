@@ -128,7 +128,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v50; // [esp+68h] [ebp-4h]
 
   v2 = (BuildingPlacement *)((char *)this + 64); /*0x54c55e*/
-  v3 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 16); /*0x54c562*/
+  v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 16)); /*0x54c562*/
   BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
   if ( !*(unsigned char *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
@@ -237,7 +237,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     v48 = *v27; /*0x54c7ce*/
     v49 = v27[1]; /*0x54c7da*/
     v50 = v27[2]; /*0x54c7e6*/
-    v12 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48); /*0x54c7ea*/
+    v12 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48)); /*0x54c7ea*/
     if ( (v12->flags[0] & 0x100) != 0 ) /*0x54c7f8*/
     {
       LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/

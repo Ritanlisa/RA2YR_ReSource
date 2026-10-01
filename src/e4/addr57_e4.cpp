@@ -240,7 +240,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   v12 = (unsigned int *)(0);
   if ( !dword_ABED10 ) /*0x578e79*/
   {
-    v3 = (int)((unsigned int *)(g_MapCellWidth * g_MapCellWidth));
+    v3 = (unsigned int *)((int)((unsigned int *)(g_MapCellWidth * g_MapCellWidth)));
     v4 = (unsigned int *)(RA2_OPNEW(80 * g_MapCellWidth * g_MapCellWidth));
     if ( v4 ) /*0x578e97*/
     {
@@ -286,7 +286,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/
     if ( !*(unsigned char *)(k + 284) && Cell::IsEmpty((unsigned int *)k) ) /*0x578fa1*/
-      v2 = Terrain::SelectTileType(k, aP1); /*0x578fb5*/
+      v2 = (char)(Terrain::SelectTileType(k, aP1)); /*0x578fb5*/
   }
   dword_880990 = 0; /*0x578fcd*/
   if ( dword_88098C ) /*0x578fd5*/
@@ -357,7 +357,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   *((unsigned int *)CellData + 16) = Cell::GetTerrainMask(aP0, (int *)aP2, 2); /*0x57a467*/
   TerrainMask = Cell::GetTerrainMask(aP0, (int *)aP2, 0); /*0x57a46a*/
   v10 = TerrainMask; /*0x57a46f*/
-  aP2 = TerrainMask; /*0x57a473*/
+  aP2 = (IUnknown *)(TerrainMask); /*0x57a473*/
   if ( TerrainMask > 0 ) /*0x57a477*/
   {
     if ( TerrainMask == 11 || TerrainMask == 26 ) /*0x57a485*/
@@ -382,7 +382,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       }
       v52[0] = (unsigned int)(Cell::GetTerrainMask(aP0, v12, 0));
       v51 = (int *)((unsigned int)(aP2->outBuffer));
-      v13 = (int16_t)(v51 + 2) + (IDA_SHIWORD(v51) << 9); /*0x57a554*/
+      v13 = (int *)((int16_t)(v51 + 2) + (IDA_SHIWORD(v51) << 9)); /*0x57a554*/
       if ( v13 >= (int *)(0x40000) || (v14 = *(int **)(dword_87F924 + 4 * v13)) == 0 ) /*0x57a56a*/
       {
         IDA_LOWORD(v47) = v51 + 2; /*0x57a546*/
@@ -398,7 +398,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     {
       v52[0] = (unsigned int)(aP2->outBuffer);
       IDA_HIWORD(v48) = IDA_HIWORD(v52[0]); /*0x57a5ac*/
-      v16 = (int16_t)(IDA_LOWORD(v52[0]) - 1) + (IDA_SHIWORD(v52[0]) << 9); /*0x57a5bf*/
+      v16 = (int *)((int16_t)(IDA_LOWORD(v52[0]) - 1) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a5bf*/
       if ( v16 >= (int *)(0x40000) || (v17 = *(int **)(dword_87F924 + 4 * v16)) == 0 ) /*0x57a5d5*/
       {
         IDA_LOWORD(v48) = IDA_LOWORD(v52[0]) - 1; /*0x57a5b1*/
@@ -408,7 +408,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v18 = (unsigned int)(Cell::GetTerrainMask(aP0, v17, 0));
       v52[0] = (unsigned int)(aP2->outBuffer);
       IDA_HIWORD(v49) = IDA_HIWORD(v52[0]); /*0x57a600*/
-      v19 = (int16_t)(IDA_LOWORD(v52[0]) - 2) + (IDA_SHIWORD(v52[0]) << 9); /*0x57a613*/
+      v19 = (int *)((int16_t)(IDA_LOWORD(v52[0]) - 2) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a613*/
       if ( v19 >= (int *)(0x40000) || (v20 = *(int **)(dword_87F924 + 4 * v19)) == 0 ) /*0x57a629*/
       {
         IDA_LOWORD(v49) = IDA_LOWORD(v52[0]) - 2; /*0x57a605*/
@@ -418,7 +418,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v21 = (unsigned int)(Cell::GetTerrainMask(aP0, v20, 0));
       if ( (v18 & 0x20) != 0 || (v21 & 0x20) != 0 ) /*0x57a64a*/
         v45 = 1; /*0x57a64c*/
-      v10 = aP2; /*0x57a651*/
+      v10 = (unsigned int)(aP2); /*0x57a651*/
     }
     if ( ((unsigned int)(v10)& 8) != 0 ) /*0x57a658*/
     {
@@ -440,7 +440,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v27 = (unsigned int)(Cell::GetTerrainMask(aP0, v26, 0));
       if ( v24 < 0 || v27 < 0 ) /*0x57a709*/
         v45 = 1; /*0x57a70b*/
-      v10 = aP2; /*0x57a710*/
+      v10 = (unsigned int)(aP2); /*0x57a710*/
     }
     if ( v10 < 0 ) /*0x57a717*/
     {
@@ -462,7 +462,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v33 = (unsigned int)(Cell::GetTerrainMask(aP0, v32, 0));
       if ( (v30 & 8) != 0 || (v33 & 8) != 0 ) /*0x57a7c8*/
         v45 = 1; /*0x57a7ca*/
-      v10 = aP2; /*0x57a7cf*/
+      v10 = (unsigned int)(aP2); /*0x57a7cf*/
     }
     if ( ((unsigned int)(v10)& 0x88) == 0x88 || ((unsigned int)(v10)& 0x22) == 0x22 || v45 ) /*0x57a7ee*/
     {

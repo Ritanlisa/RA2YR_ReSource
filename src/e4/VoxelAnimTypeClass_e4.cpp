@@ -69,9 +69,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
   this->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
-  ((unsigned int *)this)[0] = &vt_VoxelAnimTypeClass; /*0x74ae71*/
-  ((unsigned int *)this)[0] = &vt_VoxelAnimTypeClass; /*0x74ae77*/
-  ((unsigned int *)this)[0] = &vt_VoxelAnimTypeClass; /*0x74ae7e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae71*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae77*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x74ae85*/
   ((unsigned int *)this)[0] = 0; /*0x74ae8c*/
   ((unsigned int *)this)[0] = 1; /*0x74ae92*/
@@ -254,9 +254,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   }
   else
   {
-    v22 = (unsigned int)(v46);
+    v22 = (unsigned int *)((unsigned int)(v46));
   }
-  *(unsigned int *)(v4 + 724) = v22; /*0x74b224*/
+  *(unsigned int *)(v4 + 724) = (unsigned int)(v22); /*0x74b224*/
   *(unsigned int *)(v4 + 728) = INIClass::ReadInt_Overwrite( /*0x74b248*/
                             (bool *)a2,
                             (uint8_t *)(v4 + 36),
@@ -310,7 +310,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
     v27 = v49; /*0x74b350*/
   }
   v28 = *(unsigned int **)(v4 + 744); /*0x74b354*/
-  *(unsigned int *)(v4 + 740) = v27; /*0x74b35a*/
+  *(unsigned int *)(v4 + 740) = (unsigned int)(v27); /*0x74b35a*/
   v50 = v28; /*0x74b377*/
   if ( INIClass::GetString( /*0x74b37b*/
          (INIClass *)a2,
@@ -327,7 +327,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
     v29 = v50; /*0x74b38f*/
   }
   v51 = *(unsigned int **)(v4 + 748); /*0x74b3a8*/
-  *(unsigned int *)(v4 + 744) = v29; /*0x74b3b4*/
+  *(unsigned int *)(v4 + 744) = (unsigned int)(v29); /*0x74b3b4*/
   if ( INIClass::GetString( /*0x74b3ba*/
          (INIClass *)a2,
          (uint8_t *)(v4 + 36),
@@ -342,7 +342,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   {
     v30 = v51; /*0x74b3ce*/
   }
-  *(unsigned int *)(v4 + 748) = v30; /*0x74b3d2*/
+  *(unsigned int *)(v4 + 748) = (unsigned int)(v30); /*0x74b3d2*/
   v31 = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)(v4 + 36), g_INI_Key_Damage, *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
   v32 = *(unsigned int *)(v4 + 756); /*0x74b3ec*/
   *(unsigned int *)(v4 + 752) = v31; /*0x74b3f2*/
@@ -380,7 +380,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   {
     v36 = v53; /*0x74b480*/
   }
-  *(unsigned int *)(v4 + 764) = v36; /*0x74b484*/
+  *(unsigned int *)(v4 + 764) = (unsigned int)(v36); /*0x74b484*/
   v37 = v56 || v54 || v55; /*0x74b4a6*/
   *(unsigned char *)(v4 + 662) = v37; /*0x74b4ad*/
   if ( v37 ) /*0x74b4b3*/

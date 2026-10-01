@@ -73,7 +73,7 @@ LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
             (*(void (**)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
-            v7[39] = a2; /*0x41f3a3*/
+            v7[39] = (unsigned int)(a2); /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
         }
@@ -178,7 +178,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v15 = -1732584194; /*0x4742ad*/
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
-  *(unsigned int *)v12.__pad_0 = &vt_SHAPipe; /*0x4742c5*/
+  *(unsigned int *)v12.__pad_0 = (unsigned int)(&vt_SHAPipe); /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_41); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
@@ -208,8 +208,8 @@ CCINIClass::CCINIClass()
   int v7; // edi
 
   result = (unsigned int *)(this->INIClass);
-  sectionHead = ((unsigned int *)this)[0]; /*0x535b36*/
-  p_sectionCount = &((unsigned int *)this)[0]; /*0x535b39*/
+  sectionHead = (int *)(((unsigned int *)this)[0]); /*0x535b36*/
+  p_sectionCount = (int *)(&((unsigned int *)this)[0]); /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   sectionHead[1] = 0; /*0x535b42*/
@@ -218,7 +218,7 @@ CCINIClass::CCINIClass()
   p_sectionCount[1] = 0; /*0x535b4e*/
   p_sectionCount[2] = 0; /*0x535b51*/
   *p_sectionCount = (int)&vt_GenericNode; /*0x535b54*/
-  result[3] = &vt_GenericList; /*0x535b5d*/
+  result[3] = (unsigned int)(&vt_GenericList); /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {
     v4 = p_sectionCount[1]; /*0x535b66*/
@@ -239,7 +239,7 @@ CCINIClass::CCINIClass()
   p_sectionCount[1] = (unsigned int)(v6);
   v7 = (unsigned int)(sectionHead[1]);
   if ( v7 ) /*0x535b94*/
-    *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/
+    *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
   sectionHead[1] = (int)p_sectionCount; /*0x535b99*/
   result[3] = &vt_List; /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
@@ -249,7 +249,7 @@ CCINIClass::CCINIClass()
   result[14] = 0; /*0x535bb0*/
   result[15] = 0; /*0x535bb4*/
   *((unsigned char *)result + 64) = 0; /*0x535bb7*/
-  *result = &CCINIClass_Vtable; /*0x535bba*/
+  *result = (unsigned int)(&CCINIClass_Vtable); /*0x535bba*/
   return result; /*0x535ba3*/
 
 }

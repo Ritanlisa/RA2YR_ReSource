@@ -71,7 +71,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x765867*/
+    v5 = (unsigned int)((int *)__2_YAPAXI_Z(8 * a2 + 4)); /*0x765867*/
     if ( !v5 ) /*0x765871*/
     {
       v8 = 0; /*0x76589f*/

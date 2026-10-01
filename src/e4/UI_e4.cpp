@@ -714,7 +714,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v15 = IDA_HIWORD(g_ScreenSaverState) /*0x621946*/
                     & ((g_GameScreenConfig * (uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v13)
                       + v12 * (unsigned int)(uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v7)) >> 8);
-                v16 = (int)((unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState)));
+                v16 = (unsigned int *)((int)((unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState))));
                 v4 = (unsigned int *)(aP0);
                 v6 = (unsigned int)(v20);
                 v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/

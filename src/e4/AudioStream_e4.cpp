@@ -159,7 +159,7 @@ int AudioStream::SetupPlayback()
   int AudioStream_field_0x24; // edi
   char *v6; // edx
 
-  v1 = (unsigned int)((char *)this->AudioStream_field_0xA8[0]);
+  v1 = (char *)((unsigned int)((char *)this->AudioStream_field_0xA8[0]));
   v2 = (unsigned int)(0);
   v3 = (char *)((unsigned int)(0));
   this->AudioStream_field_0x1E0 = (unsigned int)(v1);
@@ -185,10 +185,10 @@ int AudioStream::SetupPlayback()
     *(unsigned int *)(AudioStream_field_0x24 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
   }
-  v6 = &this->__pad_D8[136]; /*0x40476b*/
+  v6 = (char *)(&this->__pad_D8[136]); /*0x40476b*/
   do /*0x404780*/
   {
-    *(unsigned int *)v6 = v3; /*0x404771*/
+    *(unsigned int *)v6 = (unsigned int)(v3); /*0x404771*/
     ++v2; /*0x404779*/
     v6 += 4; /*0x40477a*/
     ++v3; /*0x40477d*/
@@ -680,7 +680,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
   v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v78); /*0x4beae2*/
-  v9 = ClipRectIntersection(&v76, aP1, v8, 0, 0); /*0x4beaf5*/
+  v9 = (int *)(ClipRectIntersection(&v76, aP1, v8, 0, 0)); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
   v11 = v9[1]; /*0x4beb02*/
@@ -1170,10 +1170,10 @@ int AudioStream::ProcessStream()
   int v33; // [esp+10h] [ebp-Ch]
   signed int v35; // [esp+18h] [ebp-4h]
 
-  v1 = this; /*0x7bea86*/
+  v1 = (int)(this); /*0x7bea86*/
   v2 = *((unsigned int *)this + 104); /*0x7bea8d*/
   v3 = (int *)((char *)this + 416); /*0x7bea93*/
-  v4 = (char *)this + 64; /*0x7bea99*/
+  v4 = (int)((char *)this + 64); /*0x7bea99*/
   if ( (*(unsigned char *)(v2 + 20) & 1) != 0 )
   {
     if ( (*((unsigned char *)this + 420) & 0x10) != 0 ) /*0x7beafb*/
@@ -1252,7 +1252,7 @@ int AudioStream::ProcessStream()
             }
             qmemcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
             v24 = v3[1]; /*0x7becf2*/
-            v1 = this; /*0x7becf8*/
+            v1 = (int)(this); /*0x7becf8*/
             LOBYTE(v24) = v24 | 1; /*0x7becfc*/
             v3[8] = *(unsigned int *)(v2 + 40); /*0x7becfe*/
             v3[1] = v24; /*0x7bed01*/

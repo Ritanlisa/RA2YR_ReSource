@@ -83,7 +83,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(unsigned int *)v21.__pad_0 = (void*)&TypeList_int_vftable; /*0x47712a*/
+    *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
     for ( i = strtok(v21.__pad_20, Str); i; i = strtok(0, Str) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
@@ -187,7 +187,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
     a1->vtable0 = (int)&TypeList_int_vftable; /*0x4773d9*/
-    *(unsigned int *)v21.__pad_0 = (void*)&VectorClass_int_vftable; /*0x4773df*/
+    *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = (void*)&VectorClass_int_vftable; /*0x4773ef*/
     VectorClass::Destroy((int, unsigned int a5)&a5); /*0x4773f6*/

@@ -293,7 +293,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     this = v22; /*0x770570*/
   }
   String::Assign(&v23, aStartup); /*0x77060c*/
-  v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
+  v7 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77061c*/
   ConcatStringAlloc((char **)&((unsigned int *)(v23.m_3))[1], (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
@@ -332,7 +332,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v23.m_3))[1]); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   String::Assign(&v23, aTerritoryselec); /*0x77072b*/
-  v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
+  v14 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77073b*/
   ConcatStringAlloc((char **)&((unsigned int *)(v23.m_3))[1], (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/

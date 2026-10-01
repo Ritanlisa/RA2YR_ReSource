@@ -86,7 +86,7 @@ int IPXInterfaceClass::initSocket( IUnknown * aP1, Color * aP2)
     return 0; /*0x7b0e91*/
   }
   memset(v12, 0, sizeof(v12)); /*0x7b0ec2*/
-  *(unsigned int *)v12 = aP1; /*0x7b0ed9*/
+  *(unsigned int *)v12 = (unsigned int)(aP1); /*0x7b0ed9*/
   v10 = 24; /*0x7b0edd*/
   if ( getsockopt(v4, 1000, 16391, v12, &v10) == -1 ) /*0x7b0eee*/
   {
@@ -260,7 +260,7 @@ LABEL_6:
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *(unsigned int *)&this->LocalNode[4]; /*0x7b16d5*/
     v20 = *((unsigned int *)this + 6); /*0x7b16d8*/
-    p_LocalNetwork = &this->LocalNetwork; /*0x7b16db*/
+    p_LocalNetwork = (int *)(&this->LocalNetwork); /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
       || (*((unsigned char *)p_LocalNetwork + 13) || !v19)
       && (v22 = p_LocalNetwork[5], v22 > 0)
@@ -269,7 +269,7 @@ LABEL_6:
       v23 = (unsigned int)(p_LocalNetwork[4]);
       v24 = (unsigned int)(p_LocalNetwork[1]);
       p_LocalNetwork[4] = (unsigned int)(v23 + 1);
-      *(unsigned int *)(v24 + 4 * v23) = v18; /*0x7b1711*/
+      *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v18); /*0x7b1711*/
     }
     return 0; /*0x7b1711*/
   }
@@ -311,14 +311,14 @@ void * IPXInterfaceClass::bindSocket()
   *((unsigned int *)this + 4) = 0; /*0x7b19d5*/
   *((unsigned char *)this + 20) = 1; /*0x7b19d8*/
   *((unsigned char *)this + 21) = 0; /*0x7b19db*/
-  *((unsigned int *)this + 2) = &vt_DynamicVectorClass; /*0x7b19de*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_DynamicVectorClass); /*0x7b19de*/
   *((unsigned int *)this + 7) = 10; /*0x7b19e1*/
   *((unsigned int *)this + 6) = 0; /*0x7b19e4*/
   *((unsigned int *)this + 9) = 0; /*0x7b19e7*/
   *((unsigned int *)this + 10) = 0; /*0x7b19ea*/
   *((unsigned char *)this + 44) = 1; /*0x7b19ed*/
   *((unsigned char *)this + 45) = 0; /*0x7b19f0*/
-  *((unsigned int *)this + 8) = &vt_DynamicVectorClass; /*0x7b19f3*/
+  *((unsigned int *)this + 8) = (unsigned int)(&vt_DynamicVectorClass); /*0x7b19f3*/
   *((unsigned int *)this + 13) = 10; /*0x7b19f6*/
   *((unsigned int *)this + 12) = 0; /*0x7b19f9*/
   *((unsigned int *)this + 19) = 10; /*0x7b19fc*/
@@ -326,11 +326,11 @@ void * IPXInterfaceClass::bindSocket()
   *((unsigned int *)this + 16) = 0; /*0x7b1a05*/
   *((unsigned char *)this + 68) = 1; /*0x7b1a08*/
   *((unsigned char *)this + 69) = 0; /*0x7b1a0b*/
-  *((unsigned int *)this + 14) = &vt_DynamicVectorClass; /*0x7b1a0e*/
+  *((unsigned int *)this + 14) = (unsigned int)(&vt_DynamicVectorClass); /*0x7b1a0e*/
   *((unsigned int *)this + 18) = 0; /*0x7b1a11*/
   *((unsigned int *)this + 64539) = -1; /*0x7b1a14*/
   *((unsigned int *)this + 64540) = -1; /*0x7b1a1a*/
-  *(unsigned int *)this = &vt_WinsockInterfaceClass; /*0x7b1a20*/
+  *(unsigned int *)this = (unsigned int)(&vt_WinsockInterfaceClass); /*0x7b1a20*/
   *((unsigned char *)this + 258152) = 0; /*0x7b1a26*/
   v2 = (unsigned char *)this + 102; /*0x7b1a2c*/
   v3 = 128; /*0x7b1a2f*/

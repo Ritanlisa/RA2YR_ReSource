@@ -43,14 +43,14 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
   {
-    v5 = (int)((unsigned char *)(4));
+    v5 = (unsigned char *)((int)((unsigned char *)(4)));
     pad_14 = (unsigned char *)((uint8_t *)this->__pad_14);
     v6 = (unsigned char *)(&this->field_18);
     Srca = 3; /*0x42de07*/
   }
   else
   {
-    v5 = (int)((unsigned char *)(3));
+    v5 = (unsigned char *)((int)((unsigned char *)(3)));
     pad_14 = (unsigned char *)((uint8_t *)&this->field_18);
     v6 = (unsigned char *)(this->__pad_14);
     Srca = 4; /*0x42ddee*/
@@ -64,7 +64,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     memcpy(&pad_14[this->field_10], v3, Size); /*0x42de3e*/
     v8 = Size + this->field_10; /*0x42de4e*/
     v3 += Size; /*0x42de55*/
-    this->field_10 = v8; /*0x42de59*/
+    this->field_10 = (unsigned int)(v8); /*0x42de59*/
     a3 -= Size; /*0x42de5c*/
     if ( v8 == (unsigned char *)((int))(v5) ) /*0x42de60*/
     {
@@ -144,9 +144,9 @@ void Delegate::Set(AbstractTypeClass * aP1)
     result = (unsigned int)(this->Straw_field_0x04);
     if ( result ) /*0x6c98bb*/
       *(unsigned int *)(result + 8) = 0; /*0x6c98bd*/
-    this->Straw_field_0x04 = aP1; /*0x6c98c6*/
+    this->Straw_field_0x04 = (unsigned int)(aP1); /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
-      *(unsigned int *)(aP1 + 8) = this; /*0x6c98cb*/
+      *(unsigned int *)(aP1 + 8) = (unsigned int)(this); /*0x6c98cb*/
   }
   return result; /*0x6c98ce*/
 

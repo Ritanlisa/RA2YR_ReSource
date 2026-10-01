@@ -147,7 +147,7 @@ int Game::SendCampaignOptions()
         if ( (unsigned char)result ) /*0x46d612*/
         {
           Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
-          result = Network::ReceiveLoop(unk_A8E9C0); /*0x46d632*/
+          result = (int)(Network::ReceiveLoop(unk_A8E9C0)); /*0x46d632*/
         }
       }
       ++v12; /*0x46d637*/
@@ -535,7 +535,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
     return 0; /*0x5b709f*/
   Game::processStartup((Game *)this); /*0x5b70a7*/
   dword_A8B54C = 0; /*0x5b70b1*/
-  v5 = __2_YAPAXI_Z(0x85u); /*0x5b70bb*/
+  v5 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b70bb*/
   v6 = v5; /*0x5b70c0*/
   if ( v5 ) /*0x5b70ca*/
   {
@@ -557,7 +557,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
     }
     ++dword_A8B54C; /*0x5b714f*/
   }
-  v8 = __2_YAPAXI_Z(0x85u); /*0x5b715a*/
+  v8 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b715a*/
   v9 = v8; /*0x5b715f*/
   if ( v8 ) /*0x5b7166*/
   {

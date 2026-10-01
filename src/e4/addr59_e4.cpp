@@ -72,7 +72,7 @@ void PlaceCabhutMap(FootClass * aP0)
   {
     IDA_LOWORD(aP0) = v3; /*0x5904db*/
     IDA_HIWORD(aP0) = v2; /*0x5904e6*/
-    v4 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP0); /*0x5904eb*/
+    v4 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP0)); /*0x5904eb*/
     v4 = v4; /*0x5904f0*/
     if ( v4[17] == -1 && Cell::IsEmpty(v4) && !v4[57] ) /*0x590503*/
       break; /*0x590503*/
@@ -167,7 +167,7 @@ void sub_594190(int * a1, int a2)
               {
                 v2 = a1; /*0x594298*/
   LABEL_19:
-                v10[283] = g_abs_10; /*0x59429c*/
+                v10[283] = (unsigned char)(g_abs_10); /*0x59429c*/
                 v5 = dword_ABED04; /*0x5942a7*/
               }
               else

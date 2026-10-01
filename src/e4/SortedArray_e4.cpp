@@ -83,7 +83,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   if ( *((unsigned int *)this + 1) + 1 <= v4 ) /*0x5387e0*/
   {
 LABEL_9:
-    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = *aP1; /*0x53885b*/
+    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = (unsigned int)(*aP1); /*0x53885b*/
     *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1) + 4) = *a2; /*0x538875*/
     v11 = *((unsigned int *)this + 1) + 1; /*0x53887c*/
     *((unsigned char *)this + 12) = 0; /*0x53887d*/
@@ -111,7 +111,7 @@ LABEL_9:
     }
     __3_YAXPAX_Z(*(void **)this); /*0x538842*/
     v10 = *((unsigned int *)this + 2); /*0x538847*/
-    *(unsigned int *)this = v6; /*0x53884f*/
+    *(unsigned int *)this = (unsigned int)(v6); /*0x53884f*/
     *((unsigned int *)this + 2) = v5 + v10; /*0x538851*/
     *((unsigned int *)this + 4) = 0; /*0x538854*/
     goto LABEL_9; /*0x538854*/
@@ -148,7 +148,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     *((unsigned char *)this + 12) = 1; /*0x5388d1*/
   }
   v4 = (int)(*((unsigned int *)this + 1));
-  v5 = (int)(*(unsigned int **)this);
+  v5 = (unsigned int *)((int)(*(unsigned int **)this));
   v15 = (int)(*aP1);
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
@@ -182,7 +182,7 @@ LABEL_9:
   }
   v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
   v14 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1)));
-  *((unsigned int *)this + 1) = v14; /*0x53895c*/
+  *((unsigned int *)this + 1) = (unsigned int)(v14); /*0x53895c*/
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
   *((unsigned int *)this + 4) = 0; /*0x538966*/
@@ -239,7 +239,7 @@ LABEL_12:
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  *((unsigned int *)this + 4) = v10; /*0x538a0d*/
+  *((unsigned int *)this + 4) = (unsigned int)(v10); /*0x538a0d*/
   return 1; /*0x5389a0*/
 
 }

@@ -138,9 +138,9 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
   if ( !aP1 ) /*0x52696d*/
     return 0; /*0x52696d*/
   memset(v12, 0, sizeof(v12)); /*0x52697a*/
-  v2 = (unsigned char *)this + 40; /*0x5269a2*/
+  v2 = (char *)((unsigned char *)this + 40); /*0x5269a2*/
   v3 = Checksummer::Add_Buffer(v12, aP1, strlen((const char *)aP1)); /*0x5269a5*/
-  aP1 = (uint8_t *)v3; /*0x5269a7*/
+  aP1 = (gamemd::INIClass *)((uint8_t *)v3); /*0x5269a7*/
   if ( !*((unsigned int *)v2 + 1) ) /*0x5269ab*/
     return 0; /*0x5269b0*/
   v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
@@ -205,7 +205,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
     return 0; /*0x528a20*/
   if ( Count < 2 ) /*0x528a2b*/
     return 0; /*0x528a2b*/
-  v8 = aP1; /*0x528a31*/
+  v8 = (uint8_t *)(aP1); /*0x528a31*/
   if ( !aP1 ) /*0x528a37*/
     return 0; /*0x528a37*/
   v9 = a2; /*0x528a3d*/
@@ -218,7 +218,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   }
   memset(v26, 0, sizeof(v26)); /*0x528af3*/
   v19 = (uint8_t *)Checksummer::Add_Buffer((Checksummer *)v26, aP1, strlen((const char *)aP1)); /*0x528b19*/
-  aP1 = v19; /*0x528b1b*/
+  aP1 = (gamemd::INIClass *)(v19); /*0x528b1b*/
   if ( !this->INIClass_field_2C ) /*0x528b1f*/
     goto LABEL_29; /*0x528b1f*/
   unknown38 = (uint8_t **)this->unknown38; /*0x528b26*/
@@ -243,7 +243,7 @@ LABEL_24: aP1 = (gamemd::INIClass *)((char *)(v19));
   if ( !v10 ) /*0x528b69*/
     goto LABEL_29; /*0x528b69*/
   v9 = a2; /*0x528b6b*/
-  v6 = aP4; /*0x528b6f*/
+  v6 = (char *)(aP4); /*0x528b6f*/
   this->headNode[1] = v10; /*0x528b73*/
   this->headNode[0] = (int)v8; /*0x528b76*/
 LABEL_7:
@@ -335,8 +335,8 @@ INIClass::INIClass()
   *sectionHead = (int)&vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &vt_GenericNode; /*0x535ac4*/
-  result[3] = &vt_GenericList; /*0x535acd*/
+  result[7] = (unsigned int)(&vt_GenericNode); /*0x535ac4*/
+  result[3] = (unsigned int)(&vt_GenericList); /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -357,7 +357,7 @@ INIClass::INIClass()
   result[8] = (unsigned int)(v6);
   v7 = (int *)((unsigned int)(sectionHead[1]));
   if ( v7 ) /*0x535b04*/
-    *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
+    *(unsigned int *)(v7 + 8) = (unsigned int)(v3); /*0x535b06*/
   sectionHead[1] = (int)v3; /*0x535b09*/
   result[3] = &vt_List; /*0x535b0c*/
   result[10] = 0; /*0x535b13*/
@@ -366,7 +366,7 @@ INIClass::INIClass()
   *((unsigned char *)result + 52) = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
-  *result = &vt_INIClass; /*0x535b27*/
+  *result = (unsigned int)(&vt_INIClass); /*0x535b27*/
   return result; /*0x535b22*/
 
 }
@@ -421,9 +421,9 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
   if ( !aP1 ) /*0x526ccd*/
     return 0; /*0x526ccd*/
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
-  v3 = (unsigned char *)this + 40; /*0x526d02*/
+  v3 = (char *)((unsigned char *)this + 40); /*0x526d02*/
   v4 = Checksummer::Add_Buffer(v10, aP1, strlen((const char *)aP1)); /*0x526d05*/
-  aP1 = (uint8_t *)v4; /*0x526d07*/
+  aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d07*/
   if ( !*((unsigned int *)v3 + 1) ) /*0x526d0b*/
     return 0; /*0x526d10*/
   if ( !(uint8_t)SortedArray::CheckCache(&aP1) ) /*0x526d19*/
@@ -433,11 +433,11 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2)
       return 0; /*0x526d30*/
     *((unsigned int *)v3 + 4) = v5; /*0x526d32*/
   }
-  aP1 = (uint8_t *)v4; /*0x526d3c*/
+  aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d3c*/
   v6 = *(unsigned int *)SortedArray::FindValue(&aP1); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
-    v7 = aP2; /*0x526d4b*/
+    v7 = (int)(aP2); /*0x526d4b*/
     if ( aP2 < *(unsigned int *)(v6 + 48) ) /*0x526d54*/
     {
       v8 = *(unsigned int **)(v6 + 24); /*0x526d56*/

@@ -107,7 +107,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x76a0ca*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x76a0ca*/
     this->m_8 = m_8; /*0x76a0cd*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a0d0*/
   }
@@ -327,7 +327,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x76a321*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x76a32a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
   }

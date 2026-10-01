@@ -274,10 +274,10 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   *((unsigned int *)this + 97) = &vt_TypeList; /*0x51154c*/
   *((unsigned int *)this + 105) = 16777281; /*0x511552*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/
-  this->AbstractTypeClass = &vt_HouseTypeClass; /*0x511572*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x511578*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x51157f*/
-  ((unsigned int *)this)[0] = &vt_HouseTypeClass; /*0x511586*/
+  this->AbstractTypeClass = (unsigned int)(&vt_HouseTypeClass); /*0x511572*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511578*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x51157f*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511586*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x51158d*/
   *((unsigned char *)this + 416) = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
@@ -292,7 +292,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         !v5) )
   {
     dword_A83CA8 = (unsigned int)(v4 + 1);
-    *((unsigned int *)dword_A83C9C + v4) = this; /*0x5115e5*/
+    *((unsigned int *)dword_A83C9C + v4) = (unsigned int)(this); /*0x5115e5*/
     v4 = dword_A83CA8; /*0x5115e8*/
   }
   v6 = 0; /*0x5115ed*/

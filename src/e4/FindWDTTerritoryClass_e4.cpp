@@ -49,7 +49,7 @@ int E4Recv_766060::sub_766060()
 
   unsigned int *vtable3; // eax
 
-  vtable3 = ((unsigned int *)this)[0]; /*0x766060*/
+  vtable3 = (unsigned int *)(((unsigned int *)this)[0]); /*0x766060*/
   if ( vtable3 ) /*0x766065*/
     return vtable3[2]; /*0x766067*/
   else

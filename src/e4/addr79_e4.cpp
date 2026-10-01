@@ -469,7 +469,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   v9 = (char *)&unk_A8E060; /*0x793e44*/
   while ( *v9 ) /*0x793e4c*/
   {
-    v10 = ToWideStringChar((char *)dword_A8DA90[v3]); /*0x793e55*/
+    v10 = (char *)(ToWideStringChar((char *)dword_A8DA90[v3])); /*0x793e55*/
     if ( !_strcmpi(v9, v10) ) /*0x793e66*/
     {
             ((Debug *)0)->Log();
@@ -546,7 +546,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
       }
   LABEL_34:
-      v24 = ToWideStringChar((char *)dword_A8DA90[v72]); /*0x794069*/
+      v24 = (char *)(ToWideStringChar((char *)dword_A8DA90[v72])); /*0x794069*/
       owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79407b*/
       v26 = 0; /*0x794080*/
       v27 = 0; /*0x794082*/
@@ -622,12 +622,12 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       Game::ProcessIdle(v29); /*0x7941ce*/
       v30 = v65; /*0x7941d3*/
     }
-    IDA_LOWORD(v31) = dword_A8E050[v3]; /*0x7941f3*/
+    IDA_LOWORD(v31) = (unsigned short)(dword_A8E050[v3]); /*0x7941f3*/
     v71 = v31; /*0x7941fe*/
     if ( (unsigned short)v31 ) /*0x794202*/
     {
       ((Debug *)0)->Log(); /*0x79420e*/
-      *(&dword_A8E2B2 + v12) = dword_A8E050[v3]; /*0x79421e*/
+      *(&dword_A8E2B2 + v12) = (unsigned int)(dword_A8E050[v3]); /*0x79421e*/
       Network::SetPort((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40), dword_A8E050[v3]); /*0x79423b*/
       Network::SetPort((Network *)(dword_A8DA90[v3] + 40), dword_A8E050[v3]); /*0x794253*/
       memset(v98, 0, sizeof(v98)); /*0x794266*/

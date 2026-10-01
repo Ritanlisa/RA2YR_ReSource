@@ -48,7 +48,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].vtable3 = 0; /*0x438ecb*/
-      v5->vtable0 = &vt_BombClass; /*0x438ece*/
+      v5->vtable0 = (unsigned int)(&vt_BombClass); /*0x438ece*/
       v5->vtable1 = &vt_BombClass; /*0x438ed4*/
       v5->vtable2 = &vt_BombClass; /*0x438edb*/
       v5->vtable3 = &vt_BombClass; /*0x438ee2*/
@@ -66,7 +66,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              0) )
       {
         v6 = dword_89C678++; /*0x438f44*/
-        *((unsigned int *)dword_89C66C + v6) = v5; /*0x438f53*/
+        *((unsigned int *)dword_89C66C + v6) = (unsigned int)(v5); /*0x438f53*/
       }
     }
     else
@@ -74,7 +74,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       v5 = 0; /*0x438f58*/
     }
     v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
-    v5[1].vtable0 = aP1; /*0x438f69*/
+    v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048); /*0x438f87*/
@@ -93,7 +93,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       uniqueId = this->uniqueId; /*0x438fbb*/
       vtable1 = this->vtable1; /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
-      vtable1[uniqueId] = v5; /*0x438fc7*/
+      vtable1[uniqueId] = (unsigned int)(v5); /*0x438fc7*/
     }
     *((unsigned int *)this + 12) = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 528) != -1 ) /*0x438fde*/

@@ -72,7 +72,7 @@ LABEL_32:
           unsigned int * v18 = v115;
           *(unsigned int *)(a1 + 300) = v117;
           *(unsigned int *)(a1 + 304) = v7;
-          *(unsigned int *)(a1 + 284) = v18;
+          *(unsigned int *)(a1 + 284) = (unsigned int)(v18);
           *(unsigned int *)(a1 + 384) = v17 + 1;
           return (int)(result);
         }
@@ -111,7 +111,7 @@ LABEL_23: result = (gamemd::DSurface *)(Audio_Process_7C0530(a1, (int)v11, 1));
         }
         result = (unsigned int)((int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5)));
 LABEL_27:
-        *(unsigned int *)(a1 + 384) = v11;
+        *(unsigned int *)(a1 + 384) = (unsigned int)(v11);
         if ( result != (gamemd::DSurface *)(-1) )
           goto LABEL_31;
         int v16 = 32;
@@ -701,7 +701,7 @@ LABEL_73:
             v31[4] = 0;
             v31[5] = (unsigned int)(v32);
             v31[3] = (unsigned int)(8);
-            *(unsigned int *)(a1 + 360) = v31;
+            *(unsigned int *)(a1 + 360) = (unsigned int)(v31);
             *(unsigned int *)(a1 + 356) = v31[1];
             break;
           default:

@@ -30,14 +30,14 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
-      v4 = (int)(__2_YAPAXI_Z(0x40u));
+      v4 = (void *)((int)(__2_YAPAXI_Z(0x40u)));
       if ( v4 ) /*0x5023d6*/
         v5 = WaypointPathClass::Construct((int)v4, v2); /*0x5023db*/
       else
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
     }
-    v6 = (int)(*(unsigned int **)i);
+    v6 = (unsigned int *)((int)(*(unsigned int **)i));
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(*(unsigned int *)i + 56) > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
@@ -103,7 +103,7 @@ int Waypoint::FindCell(unsigned int * a2)
     if ( ++v3 >= (int)v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  *(unsigned int *)&v7->__pad_0[36] = v3; /*0x763ad0*/
+  *(unsigned int *)&v7->__pad_0[36] = (unsigned int)(v3); /*0x763ad0*/
   return 1; /*0x763acd*/
 
 }

@@ -197,7 +197,7 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
   v13 = (unsigned int)(a5 >> 1);
   ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
   v7 = &unk_878720; /*0x7e023b*/
-  v6 = dword_877D20; /*0x7e023e*/
+  v6 = (unsigned char *)(dword_877D20); /*0x7e023e*/
   v11 = (int *)((char *)a1 + a4); /*0x7e0241*/
   v12 = a3 - 1; /*0x7e0244*/
   do /*0x7e02aa*/
@@ -209,9 +209,9 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     qmemcpy(v10, byte_879124, 4 * v8); /*0x7e028a*/
     v11 = (int *)((char *)v11 + a4); /*0x7e0295*/
     a2 = &v10[v13]; /*0x7e0298*/
-    v5 = v7; /*0x7e029b*/
+    v5 = (unsigned int)(v7); /*0x7e029b*/
     v7 = v6; /*0x7e02a1*/
-    v6 = v5; /*0x7e02a4*/
+    v6 = (unsigned char *)(v5); /*0x7e02a4*/
     --v12; /*0x7e02a7*/
   }
   while ( v12 ); /*0x7e02aa*/

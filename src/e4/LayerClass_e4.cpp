@@ -142,14 +142,14 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
 
   v17 = (gamemd::MapClass *)((IUnknown *)((MapClass *)aP0));
   v18 = (IUnknown *)(*aP3);
-  v19 = (IUnknown *)((Type *)aP3[1]);
+  v19 = (gamemd::Type *)((IUnknown *)((Type *)aP3[1]));
   v81 = (gamemd::Type *)((IUnknown *)(aP0));
-  v78 = (IUnknown *)(0);
+  v78 = (int)((IUnknown *)(0));
   v86 = v18; /*0x56dc51*/
   v82 = v19; /*0x56dc55*/
   v77 = 0; /*0x56dc59*/
   if ( aP5 == (IUnknown *)(0xFFFF) ) /*0x56dc5e*/
-    aP5 = -1; /*0x56dc60*/
+    aP5 = (IUnknown *)(-1); /*0x56dc60*/
   v20 = v18 + ((unsigned int)v19 << 9); /*0x56dc6e*/
   if ( v20 >= 0x40000 || (v21 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v20)) == 0 ) /*0x56dc84*/
   {
@@ -206,8 +206,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v30 = (int)((Cell *)&g_MissionQueueFrame.briefing[130]);
 LABEL_23: v99[1] = (int)(v27);
         v99[0] = (int16_t)(v86 + v26); /*0x56dd9f*/
-        v99[2] = aP8; /*0x56ddad*/
-        v99[3] = aP9; /*0x56ddb9*/
+        v99[2] = (int)(aP8); /*0x56ddad*/
+        v99[3] = (int)(aP9); /*0x56ddb9*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v30, 1) ) /*0x56ddc0*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
@@ -265,7 +265,7 @@ LABEL_36:
 LABEL_44: v98[1] = (int)(v36);
         v98[3] = (int)(aP9);
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
-        v98[2] = aP8; /*0x56dfcf*/
+        v98[2] = (int)(aP8); /*0x56dfcf*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v39, 1) ) /*0x56dfd6*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
@@ -332,8 +332,8 @@ LABEL_57:
 LABEL_67:
         v100[0] = (int16_t)(v86 - v79); /*0x56e1e8*/
         v100[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e1fd*/
-        v100[2] = aP8; /*0x56e209*/
-        v100[3] = aP9; /*0x56e210*/
+        v100[2] = (int)(aP8); /*0x56e209*/
+        v100[3] = (int)(aP9); /*0x56e210*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v49, 1) ) /*0x56e217*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
@@ -386,8 +386,8 @@ LABEL_80:
 LABEL_86:
         v97[0] = (int16_t)(v79 + v86); /*0x56e3ea*/
         v97[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e3ff*/
-        v97[2] = aP8; /*0x56e40b*/
-        v97[3] = aP9; /*0x56e412*/
+        v97[2] = (int)(aP8); /*0x56e40b*/
+        v97[3] = (int)(aP9); /*0x56e412*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v56, 1) ) /*0x56e419*/
         {
           if ( ((MapClass *)(&v76))->CheckCellsBuildable(aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
@@ -681,8 +681,8 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   int v9; // esi
 
   v3 = 0; /*0x57846b*/
-  v4 = aP1[1]; /*0x57846d*/
-  v5 = *aP1; /*0x578472*/
+  v4 = (int)(aP1[1]); /*0x57846d*/
+  v5 = (int)(*aP1); /*0x578472*/
   if ( aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/

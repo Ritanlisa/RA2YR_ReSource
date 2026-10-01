@@ -14,7 +14,7 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
 
   ((unsigned int *)this)[0] = 0; /*0x76aaf7*/
-  this->AbstractClass = &off_7F7220; /*0x76aafa*/
+  this->AbstractClass = (unsigned int)(&off_7F7220); /*0x76aafa*/
   ((unsigned int *)this)[0] = 0; /*0x76ab00*/
   BYTE2(((unsigned int *)this)[0]) = 10; /*0x76ab03*/
   HIBYTE(((unsigned int *)this)[0]) = 10; /*0x76ab06*/
@@ -50,7 +50,7 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   LOBYTE(this->nextObject) = 50; /*0x76ab70*/
   HIBYTE(this->nextObject) = 50; /*0x76ab73*/
   BYTE2(this->attachedTag) = 50; /*0x76ab76*/
-  this->attachedBomb = (BombClass *)-1; /*0x76ab79*/
+  this->attachedBomb = (unsigned int)((BombClass *)-1); /*0x76ab79*/
   this->ambientSoundController[0] = -1; /*0x76ab7c*/
   return &this->AbstractClass; /*0x76ab7f*/
 

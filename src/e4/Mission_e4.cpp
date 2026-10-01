@@ -452,7 +452,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   unsigned char v21[12]; // [esp+38h] [ebp-Ch] BYREF
   int v22; // [esp+48h] [ebp+4h]
 
-  LOBYTE(v3) = aP1; /*0x6ed7e3*/
+  LOBYTE(v3) = (unsigned char)(aP1); /*0x6ed7e3*/
   v4 = *(unsigned int *)(aP1 + 4); /*0x6ed7e9*/
   for ( i = *(int **)((char *)this + 84); i; i = (int *)i[374] )
   {
@@ -556,7 +556,7 @@ int Mission::GetMissionDelay()
 
   Mission_field_0x180 = this->Mission_field_0x180; /*0x70f770*/
   result = this->Mission_field_0x188; /*0x70f779*/
-  p_Mission_field_0x180 = &this->Mission_field_0x180; /*0x70f783*/
+  p_Mission_field_0x180 = (int *)(&this->Mission_field_0x180); /*0x70f783*/
   if ( Mission_field_0x180 != -1 ) /*0x70f789*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180 >= result ) /*0x70f795*/

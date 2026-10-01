@@ -218,9 +218,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 
   p_vtable1 = (AbstractClass *)&((unsigned int *)a1)[0]; /*0x517d9a*/
   a1->FootClass = &vt_InfantryClass; /*0x517d9d*/
-  ((unsigned int *)a1)[0] = &vt_InfantryClass; /*0x517da3*/
-  ((unsigned int *)a1)[0] = &off_7EB02C; /*0x517daa*/
-  ((unsigned int *)a1)[0] = &vt_InfantryClass; /*0x517db1*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_InfantryClass); /*0x517da3*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&off_7EB02C); /*0x517daa*/
+  ((unsigned int *)a1)[0] = (unsigned int)(&vt_InfantryClass); /*0x517db1*/
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
     Type = a1->Type; /*0x517dc4*/
@@ -234,7 +234,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         TeamClass::LiberateMember_Start(team, (int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
         ((unsigned int *)a1)[0] = 0; /*0x517e05*/
       }
-      slaveOwner = ((unsigned int *)a1)[0]; /*0x517e0b*/
+      slaveOwner = (gamemd::TechnoClass *)(((unsigned int *)a1)[0]); /*0x517e0b*/
       if ( slaveOwner ) /*0x517e13*/
       {
         slaveManager = slaveOwner->slaveManager; /*0x517e15*/
@@ -299,7 +299,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
           *(v15 - 2) = *v15; /*0x517f47*/
           *(v15 - 1) = v15[1]; /*0x517f4d*/
         }
-        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = i - 1; /*0x517f62*/
+        ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = (unsigned int)(i - 1); /*0x517f62*/
         *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x517f67*/
         *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = 0; /*0x517f77*/
         ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x517f7b*/

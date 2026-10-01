@@ -264,7 +264,7 @@ LABEL_8:
             {
               SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this); /*0x67f895*/
               v5 = *(unsigned int *)this->__pad_0; /*0x67f8a0*/
-              unk1Particles = ((char *)&FootClass_Array); /*0x67f8ac*/
+              unk1Particles = (gamemd::ParticleSystemClass *)(((char *)&FootClass_Array)); /*0x67f8ac*/
               result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v5 + 16))( /*0x67f8b0*/
                          this,
                          &unk1Particles,
@@ -418,7 +418,7 @@ int SaveGame::LoadVeinholeData()
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
   v2 = *(unsigned int *)this->__pad_0; /*0x74ed74*/
-  uniqueId = ((char *)&stru_B1D290); /*0x74ed7a*/
+  uniqueId = (int)(((char *)&stru_B1D290)); /*0x74ed7a*/
   if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &uniqueId, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   v4 = this->Object::ComputeAllocationSize(); /*0x74ed9a*/

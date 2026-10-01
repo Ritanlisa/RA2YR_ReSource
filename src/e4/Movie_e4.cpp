@@ -79,7 +79,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     }
     *((unsigned int *)this + 15) = 0; /*0x49cb9b*/
     *((unsigned int *)this + 16) = 0; /*0x49cb9e*/
-    *((unsigned int *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v5 + 8)); /*0x49cbae*/
+    *((unsigned int *)this + 15) = (unsigned int)(__2_YAPAXI_Z(4 * *(char *)(v5 + 8))); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
@@ -87,7 +87,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       do /*0x49cc26*/
       {
         v10 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 2); /*0x49cbde*/
-        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v9) = __2_YAPAXI_Z(0x104u); /*0x49cbf1*/
+        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v9) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(*((unsigned int *)this + 15) + 4 * v9++),
           (const char *)(*(unsigned int *)(v5 + 12) + 260 * (v12 + v10)),
@@ -100,7 +100,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     *((unsigned int *)this + 16) = *(char *)(v5 + 8); /*0x49cc32*/
     *((unsigned int *)this + 14) = 0; /*0x49cc35*/
   }
-  *((unsigned int *)this + 17) = v3; /*0x49cc39*/
+  *((unsigned int *)this + 17) = (unsigned int)(v3); /*0x49cc39*/
   return 1; /*0x49cc3d*/
 
 }

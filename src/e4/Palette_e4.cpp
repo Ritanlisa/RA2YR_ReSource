@@ -109,7 +109,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   DSurface::BlitPart((DSurface *)&v61, (int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
   v12 = (void *)RA2_OPNEW(0x4000u); /*0x6421bb*/
   memset(v12, 0, 0x4000u); /*0x6421c6*/
-  v49 = v12; /*0x6421cd*/
+  v49 = (unsigned int *)(v12); /*0x6421cd*/
   Block = 0; /*0x6421d1*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x6421db*/
   v42 = 0; /*0x6421e4*/
@@ -265,7 +265,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v38 = 2 * v21 + 12 + (unsigned int)(v61.Height)* v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
   v39 = (int *)RA2_OPNEW(v38); /*0x642551*/
-  *(unsigned int *)(v39) = v61.Width; /*0x64255b*/
+  *(unsigned int *)(v39) = (unsigned int)(v61.Width); /*0x64255b*/
   v39[1] = v61.Height; /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/

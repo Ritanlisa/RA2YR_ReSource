@@ -81,7 +81,7 @@ int InGameUI_Open()
   {
     if ( dword_A8B238 != 4 ) /*0x4f10fb*/
     {
-      v1 = (HWND)CreateDialog(0xBBAu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1127*/
+      v1 = (INT_PTR (__cdecl *)(HWND,UINT,WPARAM,LPARAM))((HWND)CreateDialog(0xBBAu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0)); /*0x4f1127*/
       goto LABEL_10; /*0x4f1127*/
     }
     if ( dword_A8B538 ) /*0x4f110b*/
@@ -89,7 +89,7 @@ int InGameUI_Open()
     else
       v0 = 255; /*0x4f1114*/
   }
-  v1 = (HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1135*/
+  v1 = (INT_PTR (__cdecl *)(HWND,UINT,WPARAM,LPARAM))((HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0)); /*0x4f1135*/
   LABEL_10:
   v2 = v1; /*0x4f113a*/
   if ( v1 ) /*0x4f113e*/
@@ -207,7 +207,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         {
           if ( *(unsigned char *)(*(unsigned int *)v10->AbstractClass + 492) && !*(unsigned char *)(*(unsigned int *)v10->AbstractClass + 501) ) /*0x4f19af*/
             ++v8; /*0x4f19b8*/
-          v10 = (HouseClass *)((char *)v10 + 4); /*0x4f19b9*/
+          v10 = (unsigned int)((HouseClass *)((char *)v10 + 4)); /*0x4f19b9*/
           --v11; /*0x4f19bc*/
         }
         while ( v11 ); /*0x4f19bd*/
@@ -295,15 +295,15 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   p_nextObject = (int *)a3; /*(unsigned int)(0x4f1cef)*/
   ((MSEngine *)((MSEngine *)((unsigned int)(v7)+ 4)))->Construct(); /*0x4f1cf3*/
   String::Assign((String *)(v8 + 76), aTitlePcx); /*0x4f1d02*/
-  v38.referenceCount = (unsigned int)(v8)+ 80; /*0x4f1d0f*/
+  v38.referenceCount = (void *)((unsigned int)(v8)+ 80); /*0x4f1d0f*/
   String::Assign((String *)((unsigned int)(v8)+ 80), g_INI_Key_Intro); /*0x4f1d13*/
-  v9 = (unsigned int)(v8)+ 88; /*0x4f1d18*/
+  v9 = (void *)((unsigned int)(v8)+ 88); /*0x4f1d18*/
   *(unsigned int *)((unsigned int)(v8)+ 84) = 0; /*0x4f1d1b*/
   sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
-  *(unsigned int *)((unsigned int)(v8)+ 88) = (void*)&DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f1d27*/
+  *(unsigned int *)((unsigned int)(v8)+ 88) = (unsigned int)((void*)&DynamicVectorClass_GraphicMenuItem___vftable); /*0x4f1d27*/
   *(unsigned int *)((unsigned int)(v8)+ 108) = 10; /*0x4f1d2d*/
   *(unsigned int *)((unsigned int)(v8)+ 104) = 0; /*0x4f1d34*/
-  *(unsigned int *)v8 = (void*)&GraphicMenu_vftable; /*0x4f1d3b*/
+  *(unsigned int *)v8 = (unsigned int)((void*)&GraphicMenu_vftable); /*0x4f1d3b*/
   unknown_libname_73(&v38.vtable2); /*0x4f1d42*/
   String::Assign((String *)&v38.vtable3, &g_INI_DefaultBuffer); /*0x4f1d50*/
   String::Assign((String *)&v38, aBackground); /*0x4f1d5e*/
@@ -343,12 +343,12 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
                    1);
         if ( Config ) /*0x4f1e52*/
         {
-  LABEL_18: v21 = (unsigned int)(*(int (****)(unsigned int, int))((unsigned int)(v8)+ 84));
+  LABEL_18: v21 = (int (__cdecl ***)(unsigned int,int))((unsigned int)(*(int (****)(unsigned int, int))((unsigned int)(v8)+ 84)));
           if ( v21 ) /*0x4f1f71*/
             UI_Load_5D1C90((ObjectClass *)((unsigned int)(v8)+ 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
             PriorityQueue::Add((PriorityQueue *)(v8 + 4), (int)Config); /*0x4f1f81*/
-          *(unsigned int *)((unsigned int)(v8)+ 84) = Config; /*0x4f1f86*/
+          *(unsigned int *)((unsigned int)(v8)+ 84) = (unsigned int)(Config); /*0x4f1f86*/
           p_nextObject = &v38.nextObject; /*0x4f1f91*/
           v22 = (int *)(*(int (**)(unsigned int *))(*Config + 24))(Config); /*0x4f1f92*/
           v23 = *v22; /*0x4f1f95*/

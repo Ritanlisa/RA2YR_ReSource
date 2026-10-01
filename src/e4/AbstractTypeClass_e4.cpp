@@ -83,7 +83,7 @@ LABEL_9:
          0) )
   {
     v4 = (unsigned int)(dword_A8E978++);
-    *((unsigned int *)dword_A8E96C + v4) = this; /*0x410945*/
+    *((unsigned int *)dword_A8E96C + v4) = (unsigned int)(this); /*0x410945*/
   }
   return (int)this; /*0x410948*/
 
@@ -98,9 +98,9 @@ int AbstractTypeClass::Dtor()
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
-  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109d3*/
-  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109da*/
-  ((unsigned int *)this)[0] = &vt_AbstractTypeClass; /*0x4109e1*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109d3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109da*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/
@@ -129,7 +129,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24); /*0x410a7f*/
+  result = (int)(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
@@ -202,10 +202,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
-  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c43*/
-  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c4a*/
-  ((unsigned int *)Block)[0] = &vt_AbstractTypeClass; /*0x410c51*/
-  v5 = Block; /*0x410c5f*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c43*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c4a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c51*/
+  v5 = (gamemd::AbstractTypeClass *)(Block); /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/
   {
@@ -232,14 +232,14 @@ int AbstractTypeClass::Init( AbstractTypeClass * aP1)
 
   AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
   v3 = *((unsigned char *)this + 61); /*0x41096d*/
-  *(unsigned int *)this = &vt_AbstractTypeClass; /*0x410975*/
-  *((unsigned int *)this + 1) = &vt_AbstractTypeClass; /*0x41097b*/
-  *((unsigned int *)this + 2) = &vt_AbstractTypeClass; /*0x410982*/
-  *((unsigned int *)this + 3) = &vt_AbstractTypeClass; /*0x410989*/
+  *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
   if ( v3 ) /*0x410990*/
     *((unsigned int *)this + 24) = GetStringCSF((wchar_t *)((char *)this + 61), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
   else
-    *((unsigned int *)this + 24) = &g_TypeClass_DefaultString; /*0x4109a9*/
+    *((unsigned int *)this + 24) = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
   return this; /*0x4109a5*/
 
 }

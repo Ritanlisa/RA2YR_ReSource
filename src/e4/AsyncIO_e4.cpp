@@ -29,7 +29,7 @@ void AsyncIO::Shutdown()
   void (***v3)(unsigned int, int); // ecx
   char result; // al
 
-  v1 = (int)((unsigned int *)(0));
+  v1 = (unsigned int *)((int)((unsigned int *)(0)));
   for ( i = AsyncIO_Instance; v1 < (unsigned int *)(g_AsyncIOState); ++v1 ) /*0x5bf462*/
   {
     v3 = (void (***)(unsigned int, int))((unsigned int *)(i))[v1]; /*0x5bf464*/

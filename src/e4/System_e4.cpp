@@ -163,7 +163,7 @@ void sub_6269A0()
   int v9; // esi
   int v10; // edi
 
-  v1 = (unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)(g_FileExtensionState))))))))))));
+  v1 = (gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)(g_FileExtensionState)))))))))))));
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     v2 = (FileSystem *)RA2_OPNEW(0x10u); /*0x6269b1*/
@@ -184,7 +184,7 @@ void sub_6269A0()
       {
         v5 = 0; /*0x6269fa*/
       }
-      *(unsigned int *)&v3[4] = v5; /*0x6269fe*/
+      *(unsigned int *)&v3[4] = (unsigned int)(v5); /*0x6269fe*/
       v6 = (VectorClass *)RA2_OPNEW(0x18u); /*0x626a01*/
       v7 = v6; /*0x626a06*/
       if ( v6 ) /*0x626a0d*/
@@ -219,7 +219,7 @@ void sub_6269A0()
     do /*0x626a90*/
     {
       RA2_OPDEL(*(void **)(*(unsigned int *)(*(unsigned int *)&v1[4] + 4) + 4 * v9)); /*0x626a80*/
-      v1 = g_FileExtensionState; /*0x626a85*/
+      v1 = (gamemd::FileSystem *)(g_FileExtensionState); /*0x626a85*/
       ++v9; /*0x626a8d*/
     }
     while ( v9 < v10 ); /*0x626a90*/
@@ -259,7 +259,7 @@ void sub_626AB0(const char * a1, int a2)
     v3 = v2; /*0x626ad2*/
     if ( v2 ) /*0x626ad9*/
     {
-      *v2 = (unsigned int *)(-1);
+      *v2 = (unsigned int)((unsigned int *)(-1));
       v4 = (unsigned int *)(RA2_OPNEW(0x18u));
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
@@ -273,7 +273,7 @@ void sub_626AB0(const char * a1, int a2)
       {
         v5 = 0; /*0x626b18*/
       }
-      v3[1] = (unsigned int *)(v5);
+      v3[1] = (unsigned int)((unsigned int *)(v5));
       v6 = (unsigned int *)(RA2_OPNEW(0x18u));
       v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
@@ -293,7 +293,7 @@ void sub_626AB0(const char * a1, int a2)
         v3[3] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626b6c*/
       else
         v3[3] = 0; /*0x626b79*/
-      g_FileExtensionState = v3; /*0x626b6f*/
+      g_FileExtensionState = (int)(v3); /*0x626b6f*/
     }
     else
     {
@@ -312,7 +312,7 @@ void sub_626AB0(const char * a1, int a2)
     v13 = *(unsigned int *)(v10 + 16); /*0x626bf3*/
     v14 = *(unsigned int *)(v10 + 4); /*0x626bf6*/
     *(unsigned int *)(v10 + 16) = v13 + 1; /*0x626bfc*/
-    *(unsigned int *)(v14 + 4 * v13) = v9; /*0x626bff*/
+    *(unsigned int *)(v14 + 4 * v13) = (unsigned int)(v9); /*0x626bff*/
   }
   v15 = *((unsigned int *)g_FileExtensionState + 2); /*0x626c07*/
   v16 = *(unsigned int *)(v15 + 8); /*0x626c0a*/

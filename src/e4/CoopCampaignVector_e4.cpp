@@ -52,7 +52,7 @@ void CoopCampaignVector::Construct( MultiplayerGameMode * aP1, MultiplayerGameMo
   this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
   LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
   BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5c5a98*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

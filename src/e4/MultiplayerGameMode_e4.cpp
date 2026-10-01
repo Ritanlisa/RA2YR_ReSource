@@ -27,15 +27,15 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   this->MultiplayerGameMode_field_0x08 = a2; /*0x5d89fe*/
   LOBYTE(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a01*/
   BYTE1(this->MultiplayerGameMode_field_0x0C) = 0; /*0x5d8a05*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5d8a08*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
     {
-      this->MultiplayerGameMode_field_0x04 = (unsigned int *)(a3);
+      this->MultiplayerGameMode_field_0x04 = (unsigned int)((unsigned int *)(a3));
       return (unsigned int *)(this->__pad_0);
     }
-    this->MultiplayerGameMode_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
+    this->MultiplayerGameMode_field_0x04 = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x5d8a2d*/
     BYTE1(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a30*/
   }
   return (unsigned int *)(this->__pad_0);

@@ -48,7 +48,7 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x659406*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x659409*/
   ((unsigned int *)this)[0] = 0; /*0x65940c*/
-  ((unsigned int *)this)[0] = aP1; /*0x65940f*/
+  ((unsigned int *)this)[0] = (unsigned int)(aP1); /*0x65940f*/
   ((unsigned int *)this)[0] = 0; /*0x659412*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x659415*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x659418*/

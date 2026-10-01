@@ -142,7 +142,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
             Debug::Log();
       SetWindowPos(g_hWnd, 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
             Debug::Log();
-      g_DSurface_Primary = (DSurface *)DSurface::CreatePrimary(0); /*0x560f18*/
+      g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560f18*/
     }
     Viewport = Display::GetViewport(v30); /*0x560fa1*/
     rc.left = 0; /*0x560fa3*/
@@ -166,7 +166,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
     v30[0] = 0; /*0x561006*/
     v30[1] = 0; /*0x56100a*/
     AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
-    g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56101e*/
+    g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
         Debug::Log();
     sub_491100(BitShift_Red, BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
@@ -180,7 +180,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
         stru_887598.lineTrailer = ((MouseClass *)(v13))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x56107f*/
       else
         stru_887598.lineTrailer = 0; /*0x561086*/
-      v14 = SearchMIXFile(g_Str_File_MOUSE_SHA, 0); /*0x561093*/
+      v14 = (int)(SearchMIXFile(g_Str_File_MOUSE_SHA, 0)); /*0x561093*/
       if ( v14 ) /*0x56109a*/
       {
         BitShift_Red = 0; /*0x56109f*/
@@ -235,14 +235,14 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   }
     Debug::Log();
     Debug::Log();
-  g_DSurface_Primary = (DSurface *)DSurface::CreatePrimary(0); /*0x560d32*/
+  g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560d32*/
     Debug::Log();
   v4 = (MouseClass *)RA2_OPNEW(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
     stru_887598.lineTrailer = ((MouseClass *)(v4))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
   else
     stru_887598.lineTrailer = 0; /*0x560d6e*/
-  v5 = SearchMIXFile(g_Str_File_MOUSE_SHA, 0); /*0x560d7b*/
+  v5 = (int)(SearchMIXFile(g_Str_File_MOUSE_SHA, 0)); /*0x560d7b*/
   if ( v5 ) /*0x560d82*/
   {
     BitShift_Red = 0; /*0x560d88*/
@@ -340,8 +340,8 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   else
     v7 = (unsigned int *)sub_4A4900(1024, 768, 16); /*0x561486*/
   v8 = 0; /*0x561491*/
-  dword_ABCF5C = v7; /*0x561495*/
-  v9 = v7; /*0x56149a*/
+  dword_ABCF5C = (unsigned int)(v7); /*0x561495*/
+  v9 = (int *)(v7); /*0x56149a*/
   wParama = -1; /*0x56149c*/
   v21 = 0; /*0x5614a4*/
   if ( v7 && *v7 ) /*0x5614ae*/
@@ -430,7 +430,7 @@ void sub_568140(int * a1, int a2)
         {
           IDA_LOWORD(v21) = v10 + v19; /*0x56820c*/
           IDA_HIWORD(v21) = v9 + v20; /*0x568211*/
-          v14 = ((int16_t)(v9 + v20) << 9) + (int16_t)(v10 + v19); /*0x568223*/
+          v14 = (unsigned int *)(((int16_t)(v9 + v20) << 9) + (int16_t)(v10 + v19)); /*0x568223*/
           if ( v14 >= (unsigned int *)(0x40000) || (v15 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x56823b*/
           {
             dword_ABDC74 = v21; /*0x56823d*/
@@ -489,7 +489,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   Pipe v17; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56af45*/
+  v2 = (gamemd::ObjectClass *)(this); /*0x56af45*/
   v3 = 0; /*0x56af47*/
   LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
   Pipe::SetDelegate(&v17, a2); /*0x56af65*/

@@ -111,7 +111,7 @@ LABEL_7:
   }
   else
   {
-    v4 = (unsigned int *)this + 32356; /*0x7b33f8*/
+    v4 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32356); /*0x7b33f8*/
     while ( LOWORD(v4->Socket) != a2 ) /*0x7b3401*/
     {
       ++v3; /*0x7b3403*/
@@ -331,7 +331,7 @@ LABEL_60:
         Socket = v35[2].Socket; /*0x7b40bf*/
         v38 = *(unsigned int *)&v35->Initialized; /*0x7b40c2*/
         v35[2].Socket = Socket + 1; /*0x7b40c8*/
-        *(unsigned int *)(v38 + 4 * Socket) = v13; /*0x7b40cb*/
+        *(unsigned int *)(v38 + 4 * Socket) = (unsigned int)(v13); /*0x7b40cb*/
       }
     }
     return 0; /*0x7b40d7*/

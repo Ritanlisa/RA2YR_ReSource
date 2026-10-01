@@ -123,7 +123,7 @@ void ConnectionClass::dtor()
   void (***PlayerIndex)(unsigned int, int); // ecx
 
   v2 = (void *)*((unsigned int *)this + 8); /*0x48bee3*/
-  *(unsigned int *)this->__pad_0 = &vt_ConnectionClass; /*0x48bee6*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionClass); /*0x48bee6*/
   __3_YAXPAX_Z(v2); /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/
@@ -149,7 +149,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = *((unsigned int *)this + 15); /*0x48bf86*/
   }
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 && byte_A8DBA0 ) /*0x48bf99*/
-    *(unsigned char *)(*((unsigned int *)this + 8) + 3) = aP4; /*0x48bfa2*/
+    *(unsigned char *)(*((unsigned int *)this + 8) + 3) = (unsigned char)(aP4); /*0x48bfa2*/
   if ( *((unsigned int *)this + 7) < (unsigned int)(aP2) ) /*0x48bfae*/
   {
     this->Debug::Log(); /*0x48bfb6*/
@@ -318,7 +318,7 @@ LABEL_40:
     return 0; /*0x48c309*/
   }
   this->Debug::Log(); /*0x48c079*/
-  v6 = this->PlayerIndex; /*0x48c07e*/
+  v6 = (int)(this->PlayerIndex); /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( *(int *)(v6 + 40) > 0 ) /*0x48c08b*/
   {

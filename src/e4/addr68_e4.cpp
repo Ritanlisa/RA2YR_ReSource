@@ -77,7 +77,7 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 128); /*0x68265f*/
   v9 = 0; /*0x68266c*/
   v3 = 0; /*0x682674*/
-  v4 = &unk_83D658; /*0x682676*/
+  v4 = (unsigned int *)(&unk_83D658); /*0x682676*/
   while ( *v4 != a2 ) /*0x68267d*/
   {
     v4 += 2; /*0x68267f*/
@@ -188,7 +188,7 @@ void COM_Property_ReadBool(int a1, int a2, char a3)
   int v6; // esi
   int v8;
 v8 = (int)((unsigned int *)(0));
-  v3 = (int)((unsigned int *)(0));
+  v3 = (unsigned int *)((int)((unsigned int *)(0)));
   v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682aa7*/
   {
@@ -297,9 +297,9 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
 
   v3 = (unsigned int *)(a3);
   a3 = (unsigned int *)(0);
-  v4 = (int)((unsigned int *)(0));
-  *v3 = (unsigned int *)(0);
-  v3[1] = (unsigned int *)(0);
+  v4 = (unsigned int *)((int)((unsigned int *)(0)));
+  *v3 = (unsigned int)((unsigned int *)(0));
+  v3[1] = (unsigned int)((unsigned int *)(0));
   v5 = (unsigned int *)(&unk_83D658);
   while ( *v5 != a2 ) /*0x682c98*/
   {
@@ -552,7 +552,7 @@ ScenarioClass * * Mouse_Update()
   }
   IDA_BYTE2(dword_A8B230[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 0; /*0x6842d9*/
-  result = Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6842e0*/
+  result = (int)(Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296])); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
   return result; /*0x6842ef*/
 }

@@ -36,8 +36,8 @@ int Theme::QueueSong(IUnknown * aP1)
       LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
       if ( !byte_A8ED64 ) /*0x720b3c*/
       {
-        LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
-        *((unsigned int *)this + 2) = aP1; /*0x720b45*/
+        LOBYTE(IsSoundEnabled) = (unsigned char)(aP1); /*0x720b3e*/
+        *((unsigned int *)this + 2) = (unsigned int)(aP1); /*0x720b45*/
         if ( aP1 != (IUnknown *)(-1) && aP1 != (IUnknown *)(-2) && aP1 != *((unsigned int *)this + 1) ) /*0x720b52*/
         {
           LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/

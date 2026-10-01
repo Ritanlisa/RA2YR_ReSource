@@ -54,7 +54,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = (unsigned int *)v6; /*0x5d55d6*/
@@ -104,7 +104,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d565b*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x5d5666*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x5d5666*/
     this->m_8 = v3; /*0x5d566c*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
   }
@@ -268,7 +268,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x5d520e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x5d5217*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d5217*/
       this->m_8 = a2; /*0x5d521f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
@@ -374,7 +374,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d5341*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d534a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d534a*/
     this->m_8 = a2; /*0x5d5352*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d5355*/
   }

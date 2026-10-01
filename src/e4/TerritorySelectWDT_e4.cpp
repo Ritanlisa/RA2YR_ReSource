@@ -56,7 +56,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     InitWDTGameOptions(); /*0x7665e6*/
   v3 = 6; /*0x7665ef*/
   unknown_libname_74(&v11); /*0x7665f4*/
-  v17 = &stru_B72760; /*0x7665f9*/
+  v17 = (int *)(&stru_B72760); /*0x7665f9*/
   v18 = 0; /*0x766601*/
   v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x766605*/
   do /*0x7666b0*/

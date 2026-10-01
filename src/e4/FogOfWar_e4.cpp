@@ -66,13 +66,13 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( !dword_A83D4C ) /*0x655c62*/
     return result; /*0x655c62*/
   result = (*(int (**)(unsigned int, char *))(**(unsigned int **)((char *)this + 4636) + 120))(*((unsigned int *)this + 1159), v40); /*0x655c75*/
-  v5 = *aP1; /*0x655c7e*/
-  v41 = *aP1; /*0x655c82*/
+  v5 = (int)(*aP1); /*0x655c7e*/
+  v41 = (int)(*aP1); /*0x655c82*/
   if ( v41 < *(unsigned int *)result ) /*0x655c86*/
     return result; /*0x655c86*/
   if ( v5 >= *(unsigned int *)result + *(unsigned int *)(result + 8) ) /*0x655c93*/
     return result; /*0x655c93*/
-  v6 = aP1[1]; /*0x655c99*/
+  v6 = (int)(aP1[1]); /*0x655c99*/
   v7 = *(unsigned int *)(result + 4); /*0x655c9c*/
   if ( v6 < v7 ) /*0x655ca5*/
     return result; /*0x655ca5*/

@@ -64,7 +64,7 @@ void GameClass::processFrame( int a2, int a3)
       result = sub_437F50(v5); /*0x4381ea*/
     else
       result = 0; /*0x4381f1*/
-    *(unsigned int *)&this->__pad_8[4] = result; /*0x4381f3*/
+    *(unsigned int *)&this->__pad_8[4] = (unsigned int)(result); /*0x4381f3*/
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
@@ -90,7 +90,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
       result = sub_437F50(v5); /*0x43831a*/
     else
       result = 0; /*0x438321*/
-    *(unsigned int *)&this->__pad_8[4] = result; /*0x438323*/
+    *(unsigned int *)&this->__pad_8[4] = (unsigned int)(result); /*0x438323*/
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x438326*/
   if ( v6 ) /*0x43832c*/
@@ -307,7 +307,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     {
       if ( *(unsigned int *)&this->__pad_24[16] ) /*0x632e01*/
       {
-        v9 = (unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80)))));
+        v9 = (char *)((unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80))))));
         if ( v9 >= (unsigned int)((char *))(aP2) ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], Src, v9); /*0x632e97*/

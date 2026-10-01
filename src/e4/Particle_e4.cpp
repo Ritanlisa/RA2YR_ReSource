@@ -15,19 +15,19 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   AbstractClass * result;
 
   result = (gamemd::AbstractClass *)((char)(aP1));
-  *((char *)this + 67) = aP2; /*0x4664c8*/
+  *((char *)this + 67) = (char)(aP2); /*0x4664c8*/
   *((char *)this + 68) = a7; /*0x4664d2*/
-  *((char *)this + 74) = aP5; /*0x4664dc*/
-  *((unsigned char *)this + 224) = aP7; /*0x4664e6*/
-  *((char *)this + 27) = aP4; /*0x4664f6*/
-  *((char *)this + 43) = aP1; /*0x4664fb*/
-  *((char *)this + 44) = aP3; /*0x466501*/
+  *((char *)this + 74) = (char)(aP5); /*0x4664dc*/
+  *((unsigned char *)this + 224) = (unsigned char)(aP7); /*0x4664e6*/
+  *((char *)this + 27) = (char)(aP4); /*0x4664f6*/
+  *((char *)this + 43) = (char)(aP1); /*0x4664fb*/
+  *((char *)this + 44) = (char)(aP3); /*0x466501*/
   *((unsigned char *)this + 300) = 0; /*0x466507*/
   *((unsigned char *)this + 301) = *(unsigned char *)(aP1 + 758); /*0x466513*/
   if ( *(unsigned char *)(aP1 + 681) && aP3 ) /*0x466525*/
   {
     result = (gamemd::AbstractClass *)((char)(*(unsigned int *)(*(unsigned int *)(aP3 + 540) + 90196)));
-    *((char *)this + 69) = result; /*0x466533*/
+    *((char *)this + 69) = (char)(result); /*0x466533*/
   }
   else
   {

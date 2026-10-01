@@ -83,7 +83,7 @@ Coord * * BuildingLight::CalculateShading()
   if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
     || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
   {
-    LOBYTE(v5) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47); /*0x5ff88b*/
+    LOBYTE(v5) = (unsigned char)(Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
       if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
@@ -114,7 +114,7 @@ Coord * * BuildingLight::CalculateShading()
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v5) = CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42); /*0x5ff9b7*/
+        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
         if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/

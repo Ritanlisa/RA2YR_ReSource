@@ -153,7 +153,7 @@ int House_GetTechLevel(int a1, int a2)
 
   if ( a2 < 0 ) /*0x5004e5*/
     return 0; /*0x5004e7*/
-  v4 = ((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2); /*0x5004ed*/
+  v4 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2)); /*0x5004ed*/
   if ( a1 == 6 || a1 == 7 ) /*0x5004fa*/
     return v4->qE08; /*0x500500*/
   else

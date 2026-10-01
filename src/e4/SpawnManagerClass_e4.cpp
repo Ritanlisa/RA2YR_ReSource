@@ -53,7 +53,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   *((unsigned int *)this + 13) = a6; /*0x6b6d10*/
   for ( i = 0; i < *((unsigned int *)this + 11); ++i ) /*0x6b6d17*/
   {
-    v8 = (wchar_t *)((int *)__2_YAPAXI_Z(0x18u));
+    v8 = (int *)((wchar_t *)((int *)__2_YAPAXI_Z(0x18u)));
     if ( !v8 ) /*0x6b6d2b*/
       break; /*0x6b6d2b*/
     v9 = dword_A8ED84; /*0x6b6d31*/
@@ -84,7 +84,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
         v16 = *((unsigned int *)this + 18); /*0x6b6de1*/
         v17 = *((unsigned int *)this + 15); /*0x6b6de4*/
         *((unsigned int *)this + 18) = v16 + 1; /*0x6b6dea*/
-        *(unsigned int *)(v17 + 4 * v16) = v8; /*0x6b6ded*/
+        *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v8); /*0x6b6ded*/
       }
     }
   }
@@ -131,9 +131,9 @@ void* SpawnManagerClass::Constructor()
   this->SpawnManagerClass_field_5C = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
   this->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/
-  ((unsigned int *)this)[0] = &vt_SpawnManagerClass; /*0x6b6eec*/
-  ((unsigned int *)this)[0] = &vt_SpawnManagerClass; /*0x6b6ef3*/
-  ((unsigned int *)this)[0] = &vt_SpawnManagerClass; /*0x6b6efa*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6eec*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6ef3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6efa*/
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
@@ -155,7 +155,7 @@ void* SpawnManagerClass::Constructor()
          0) )
   {
     v2 = dword_B0B890++; /*0x6b6f76*/
-    *((unsigned int *)dword_B0B884 + v2) = this; /*0x6b6f85*/
+    *((unsigned int *)dword_B0B884 + v2) = (unsigned int)(this); /*0x6b6f85*/
   }
   return (int)this; /*0x6b6f8a*/
 
@@ -174,9 +174,9 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   TaskManager *v6; // [esp+8h] [ebp-4h] BYREF
 
   *this = (TaskManager)&vt_SpawnManagerClass; /*0x6b7015*/
-  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b701b*/
-  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b7022*/
-  *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b7029*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_SpawnManagerClass); /*0x6b701b*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_SpawnManagerClass); /*0x6b7022*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_SpawnManagerClass); /*0x6b7029*/
   if ( byte_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update(this); /*0x6b7039*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6b7042*/
@@ -187,7 +187,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   v3 = *((unsigned int *)this + 16); /*0x6b7063*/
   (*(void (**)(TaskManager *))(*((unsigned int *)this + 14) + 12))((unsigned int *)this + 14); /*0x6b7066*/
   (*(void (**)(TaskManager *, int, unsigned int))(*((unsigned int *)this + 14) + 8))((unsigned int *)this + 14, v3, 0); /*0x6b7070*/
-  v6 = this; /*0x6b7083*/
+  v6 = (gamemd::TaskManager *)(this); /*0x6b7083*/
   v4 = (*(int (**)(int *, TaskManager **))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/
   if ( v4 != -1 && v4 < dword_B0B890 && v4 < --dword_B0B890 ) /*0x6b70a3*/
   {
@@ -199,7 +199,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
     while ( v4 < dword_B0B890 ); /*0x6b70bb*/
   }
   v5 = (void *)*((unsigned int *)this + 15); /*0x6b70bd*/
-  *((unsigned int *)this + 14) = &vt_VectorClass; /*0x6b70c0*/
+  *((unsigned int *)this + 14) = (unsigned int)(&vt_VectorClass); /*0x6b70c0*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
@@ -318,7 +318,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
     Power::TimerProcess(v6); /*0x6b7e26*/
   }
   SpawnManagerClass_field_5C = this->SpawnManagerClass_field_5C; /*0x6b7e2b*/
-  SpawnManagerClass_field_64 = this->SpawnManagerClass_field_64; /*0x6b7e2e*/
+  SpawnManagerClass_field_64 = (int)(this->SpawnManagerClass_field_64); /*0x6b7e2e*/
   if ( SpawnManagerClass_field_5C != -1 ) /*0x6b7e34*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - SpawnManagerClass_field_5C >= SpawnManagerClass_field_64 ) /*0x6b7e40*/

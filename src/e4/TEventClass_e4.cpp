@@ -146,7 +146,7 @@ LABEL_39:
       a6 = -1; /*0x71e975*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      TEventClass_field_38 = this->TEventClass_field_38; /*0x71e982*/
+      TEventClass_field_38 = (int *)(this->TEventClass_field_38); /*0x71e982*/
       v13 = stru_A8EB00.ObjectTypeClass[1] + 4 * v11; /*0x71e985*/
       while ( strcmp((const char *)(*(unsigned int *)v13 + 36), (const char *)TEventClass_field_38) ) /*0x71e9bb*/
       {
@@ -166,7 +166,7 @@ LABEL_8:
         goto LABEL_139; /*0x71e9db*/
       v14 = 0; /*0x71e9eb*/
       v15 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v10); /*0x71e9ed*/
-      TEventClass_field_34 = this->TEventClass_field_34; /*0x71e9f5*/
+      TEventClass_field_34 = (int)(this->TEventClass_field_34); /*0x71e9f5*/
       v17 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71e9f8*/
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71e9fd*/
         goto LABEL_139; /*0x71e9fd*/
@@ -189,7 +189,7 @@ LABEL_8:
       a6 = -1; /*0x71ea3a*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      v21 = this->TEventClass_field_38; /*0x71ea47*/
+      v21 = (int *)(this->TEventClass_field_38); /*0x71ea47*/
       v22 = stru_A8EB00.ObjectTypeClass[1] + 4 * v20; /*0x71ea4a*/
       while ( strcmp((const char *)(*(unsigned int *)v22 + 36), (const char *)v21) ) /*0x71ea80*/
       {

@@ -45,9 +45,9 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
       aP0->AbstractClass = &vt_ScriptTypeClass; /*0x691db4*/
-      ((unsigned int *)aP0)[0] = &vt_ScriptTypeClass; /*0x691dba*/
-      ((unsigned int *)aP0)[0] = &vt_ScriptTypeClass; /*0x691dc1*/
-      ((unsigned int *)aP0)[0] = &vt_ScriptTypeClass; /*0x691dc8*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dba*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc1*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -100,11 +100,11 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
-  ((unsigned int *)Block)[0] = &vt_ScriptTypeClass; /*0x691fac*/
-  ((unsigned int *)Block)[0] = &vt_ScriptTypeClass; /*0x691fb3*/
-  ((unsigned int *)Block)[0] = &vt_ScriptTypeClass; /*0x691fba*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fac*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fb3*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x691fc1*/
-  v5 = Block; /*0x691fd6*/
+  v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
   v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&((char *)&FootClass_Array) ) /*0x691fea*/
   {
@@ -139,7 +139,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
   int v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces); /*0x6e8357*/
+  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces)); /*0x6e8357*/
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/

@@ -132,7 +132,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
     if ( a3 ) /*0x5386b8*/
       v4 = a3; /*0x5386ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5386ca*/
+      v4 = (unsigned int *)(__2_YAPAXI_Z(4 * a2)); /*0x5386ca*/
     *((unsigned char *)this + 12) = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
@@ -149,7 +149,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
         *((unsigned int *)this + 1) = 0; /*0x538711*/
       }
     }
-    *((unsigned int *)this + 1) = v4; /*0x53871a*/
+    *((unsigned int *)this + 1) = (unsigned int)(v4); /*0x53871a*/
     *((unsigned int *)this + 2) = a2; /*0x538722*/
     *((unsigned char *)this + 13) = a3 == 0; /*0x538725*/
   }

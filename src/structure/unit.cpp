@@ -244,7 +244,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
   unsigned short *v9; // [esp+10h] [ebp+4h]
 
   v7 = 0; /*0x6b6086*/
-  result = *(&((unsigned char *)(this) + 0x0407)); /*0x6b608e*/
+  result = (int)(*(&((unsigned char *)(this) + 0x0407))); /*0x6b608e*/
   if ( result > 0 ) /*0x6b6096*/
   {
     do /*0x6b611c*/
@@ -255,7 +255,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
         IDA_HIWORD(v9) = v7 + cell[1]; /*0x6b60c6*/
         v9 = v9; /*0x6b60d5*/
         v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9); /*0x6b60d9*/
-        v6[18] = *(&((unsigned char *)(this) + 0x0405)); /*0x6b60ea*/
+        v6[18] = (unsigned int)(*(&((unsigned char *)(this) + 0x0405))); /*0x6b60ea*/
         *((unsigned char *)v6 + 287) = i + this->storedTiberium * v7; /*0x6b60f5*/
         BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
       }
@@ -512,7 +512,7 @@ int UnitClass::Deploy(void * a1)
   int v61; // [esp+44h] [ebp-4h]
 
   v2 = (gamemd::TeleportLocomotionClass *)(a1);
-  Owner = ((unsigned int *)a1)[0]; /*0x7192fd*/
+  Owner = (ra2::game::FootClass *)(((unsigned int *)a1)[0]); /*0x7192fd*/
   v61 = 0; /*0x719300*/
   if ( ((unsigned int *)Owner)[0] && !*(unsigned int *)&a1->Moving && !((unsigned int *)Owner)[0] ) /*0x719313*/
     goto LABEL_82; /*0x719319*/

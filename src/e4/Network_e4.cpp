@@ -73,7 +73,7 @@ int Network::SendBeaconDelete(int a2, int a3)
       v6 = this; /*0x4311f6*/
 LABEL_5:
       v7 = 0; /*0x4311fa*/
-      p_Network_field_0x0 = &v6->Network_field_0x0; /*0x4311fc*/
+      p_Network_field_0x0 = (int *)(&v6->Network_field_0x0); /*0x4311fc*/
       while ( 1 ) /*0x4311fe*/
       {
         result = *p_Network_field_0x0; /*0x4311fe*/

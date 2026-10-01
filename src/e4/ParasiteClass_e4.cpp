@@ -41,9 +41,9 @@ void ParasiteClass::Constructor()
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->AbstractClass = &vt_ParasiteClass; /*0x629231*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x629237*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x62923e*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x629245*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x629237*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x62923e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
@@ -53,7 +53,7 @@ void ParasiteClass::Constructor()
          0) )
   {
     v3 = (unsigned int)(dword_AC4920++);
-    *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
+    *((unsigned int *)dword_AC4914 + v3) = (unsigned int)(this); /*0x62929a*/
   }
   return (int)this; /*0x62929f*/
 

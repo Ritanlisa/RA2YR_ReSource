@@ -130,7 +130,7 @@ void * sub_722C40()
         v7 = g_CurrentFrame; /*0x722cbd*/
         v8 = (wchar_t *)Math::RoundToInt(v5); /*0x722cce*/
         v9 = (wchar_t **)(*(unsigned int *)&v6->gap0[4 * i] + 284); /*0x722cd6*/
-        *v9 = v7; /*0x722cde*/
+        *v9 = (wchar_t *)(v7); /*0x722cde*/
         v9[1] = v10; /*0x722ce0*/
         v9[2] = v8; /*0x722ce3*/
       }

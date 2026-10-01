@@ -84,10 +84,10 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
   *((unsigned char *)this + 3785) = 1; /*0x5237d5*/
   *((unsigned char *)this + 3786) = 0; /*0x5237dc*/
   *((unsigned char *)this + 3787) = 0; /*0x5237e2*/
-  *(unsigned int *)this = &vt_InfantryTypeClass; /*0x5237e8*/
-  *((unsigned int *)this + 1) = &vt_InfantryTypeClass; /*0x5237ee*/
-  *((unsigned int *)this + 2) = &vt_InfantryTypeClass; /*0x5237f4*/
-  *((unsigned int *)this + 3) = &vt_InfantryTypeClass; /*0x5237fb*/
+  *(unsigned int *)this = (unsigned int)(&vt_InfantryTypeClass); /*0x5237e8*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237ee*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237f4*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_InfantryTypeClass); /*0x5237fb*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
@@ -101,7 +101,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
         !v4) )
   {
     dword_A8E358 = (unsigned int)(v3 + 1);
-    *((unsigned int *)dword_A8E34C + v3) = this; /*0x523854*/
+    *((unsigned int *)dword_A8E34C + v3) = (unsigned int)(this); /*0x523854*/
     v3 = dword_A8E358; /*0x523857*/
   }
   v5 = 0; /*0x52385c*/
@@ -148,7 +148,7 @@ LABEL_11:
   *((unsigned char *)this + 3479) = 1; /*0x523911*/
   *((unsigned char *)this + 3478) = 0; /*0x523918*/
   *((unsigned char *)this + 3374) = 0; /*0x52391e*/
-  *((unsigned int *)this + 911) = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
+  *((unsigned int *)this + 911) = (unsigned int)(__2_YAPAXI_Z(0x5E8u)); /*0x52392c*/
   for ( i = 0; i < 1512; *(unsigned int *)(i + *((unsigned int *)this + 911) - 20) = 0 ) /*0x523932*/
   {
     i += 36; /*0x52393a*/
@@ -195,7 +195,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v14[3]; // [esp+10h] [ebp-18h] BYREF
   int v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v5 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
+  v5 = (int)(__2_YAPAXI_Z(0x6F0u)); /*0x523b4b*/
   if ( v5 ) /*0x523b55*/
   {
     v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
@@ -205,7 +205,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v13[0] = (*a2 << 8) + 128; /*0x523b93*/
       v13[1] = v7 + 128; /*0x523b9b*/
       v13[2] = 0; /*0x523bb1*/
-      v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x523bb9*/
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13)); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
       v10 = v9[1]; /*0x523bd5*/

@@ -114,7 +114,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x4a7e3e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4a7e47*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a7e47*/
       this->m_8 = a2; /*0x4a7e4f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
@@ -220,7 +220,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a7f71*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4a7f7a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a7f7a*/
     this->m_8 = a2; /*0x4a7f82*/
     BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
   }

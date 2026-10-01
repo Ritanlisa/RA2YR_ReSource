@@ -57,7 +57,7 @@ AbstractClass * * AircraftClass::Mission_Attack()
   char v99; // [esp+38h] [ebp-D4h]
   int v98; // [esp+34h] [ebp-D8h]
     case 0:
-      int v2 = ((unsigned char *)(this) + 0x2B4);
+      int v2 = (int)(((unsigned char *)(this) + 0x2B4));
       this->AircraftClass_field_bool_6D2 = 0;
       int v3 = -(v2 != 0);
       IDA_LOBYTE(v3) = v3 & 0xF7;
@@ -70,9 +70,9 @@ AbstractClass * * AircraftClass::Mission_Attack()
       {
         bool v6 = ((unsigned char *)(this) + 0x0BF);
         this->AircraftClass_field_bool_6C8 = 0;
-        ((unsigned char *)(this) + 0x0BF) = v6 - 1;
+        ((unsigned char *)(this) + 0x0BF) = (unsigned char *)(v6 - 1);
       }
-      int v7 = ((unsigned char *)(this) + 0x2B4);
+      int v7 = (int)(((unsigned char *)(this) + 0x2B4));
       if ( v7 && ((unsigned char *)(this) + 0x0BF) )
       {
         int v8 = (int)(*this);
@@ -91,9 +91,9 @@ LABEL_107:
       {
         bool v10 = ((unsigned char *)(this) + 0x0BF);
         this->AircraftClass_field_bool_6C8 = 0;
-        ((unsigned char *)(this) + 0x0BF) = v10 - 1;
+        ((unsigned char *)(this) + 0x0BF) = (unsigned char *)(v10 - 1);
       }
-      int v11 = ((unsigned char *)(this) + 0x2B4);
+      int v11 = (int)(((unsigned char *)(this) + 0x2B4));
       this->AircraftClass_field_bool_6D2 = 0;
       if ( !v11 || !((unsigned char *)(this) + 0x0BF) )
         goto LABEL_83;
@@ -176,8 +176,8 @@ LABEL_14:
       switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v24) )
       {
         case 0:
-          int v25 = *this;
-          int v93 = ((unsigned char *)(this) + 0x2B4);
+          int v25 = (int)(*this);
+          int v93 = (int)(((unsigned char *)(this) + 0x2B4));
           this->AircraftClass_field_bool_6C8 = 1;
           int v26 = 0;
           int v27 = this->SelectWeapon(v93);
@@ -196,9 +196,9 @@ LABEL_14:
             while ( v26 < *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(v31) + 156) );
           }
   unsigned int v103[3]; // [esp+64h] [ebp-A8h] BYREF
-          v103[0] = ((unsigned char *)(this) + 0x027);
+          v103[0] = (unsigned int)(((unsigned char *)(this) + 0x027));
           v103[1] = this->owningHouseIndex;
-          v103[2] = ((unsigned char *)(this) + 0x029);
+          v103[2] = (unsigned int)(((unsigned char *)(this) + 0x029));
   unsigned int *v32; // eax
           v32 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
                             v120,
@@ -269,17 +269,17 @@ LABEL_54:
         int * v39 = (int *)(ObjectClass::CalcTargetFacing(this, &v114, ((unsigned char *)(this) + 0x2B4)));
         this->primaryFacing.Update(v39);
   int v111; // [esp+9Ch] [ebp-70h] BYREF
-        int * v40 = ObjectClass::CalcTargetFacing(this, &v111, ((unsigned char *)(this) + 0x2B4));
+        int * v40 = (int *)(ObjectClass::CalcTargetFacing(this, &v111, ((unsigned char *)(this) + 0x2B4)));
         this->secondaryFacing.Update(v40);
-        int v41 = *this;
+        int v41 = (int)(*this);
         int v42 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4), 1);
         switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v42) )
         {
           case 0u:
-            int v44 = *this;
+            int v44 = (int)(*this);
             int v45 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
             this->FireWeapon(((unsigned char *)(this) + 0x2B4), v45);
-            v105 = ((unsigned char *)(this) + 0x027);
+            v105 = (int)(((unsigned char *)(this) + 0x027));
             v106 = this->owningHouseIndex;
             int v107 = ((unsigned char *)(this) + 0x029);
             unsigned int * v46 = (unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord();

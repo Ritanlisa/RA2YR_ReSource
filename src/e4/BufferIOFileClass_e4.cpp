@@ -12,7 +12,7 @@ namespace gamemd {
 void BufferIOFileClass::Destruct()
 {
 
-  *(unsigned int *)this->RawFileClass = &off_7E1668; /*0x535a60*/
+  *(unsigned int *)this->RawFileClass = (unsigned int)(&off_7E1668); /*0x535a60*/
   return BufferIOFileClass::Dtor(this);
 
 }

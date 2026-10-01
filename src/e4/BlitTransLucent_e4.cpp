@@ -250,7 +250,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a389*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Blitter); /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
     __3_YAXPAX_Z(this); /*0x49a392*/
   return (std::locale::facet *)this; /*0x49a39c*/
@@ -292,7 +292,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a789*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
     __3_YAXPAX_Z(this); /*0x49a792*/
   return (std::locale::facet *)this; /*0x49a79c*/
@@ -304,7 +304,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a7a9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
     __3_YAXPAX_Z(this); /*0x49a7b2*/
   return (std::locale::facet *)this; /*0x49a7bc*/

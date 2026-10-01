@@ -194,7 +194,7 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
     v9 = v8 - v5; /*0x565694*/
   LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
   HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
-  *a2 = v11; /*0x5656c2*/
+  *a2 = (unsigned int)(v11); /*0x5656c2*/
   return a2; /*0x5656bf*/
 
 }

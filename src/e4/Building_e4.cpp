@@ -187,7 +187,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v38[1] = HIWORD(v39); /*0x425f62*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
       {
-        *(unsigned int *)aP1 = (gamemd::AnimClass **)((v21 << 8) + 128);
+        *(unsigned int *)aP1 = (unsigned int)((gamemd::AnimClass **)((v21 << 8) + 128));
         aP1[1] = (v31 << 8) + 128; /*0x425fa2*/
         aP1[2] = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
@@ -196,7 +196,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v38[0] = v39; /*0x425fbd*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425fd3*/
       {
-        *(unsigned int *)aP1 = (gamemd::AnimClass **)((v8 << 8) + 128);
+        *(unsigned int *)aP1 = (unsigned int)((gamemd::AnimClass **)((v8 << 8) + 128));
         aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
         aP1[2] = 0; /*0x425ffd*/
         return aP1; /*0x426006*/
@@ -218,7 +218,7 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
     v29 = (int16_t)(v39 + LOWORD(g_DDrawSurfaceManager.scenario[v28 + 82]));
     LOWORD(v28) = HIWORD(v39) + HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
     v38[0] = v29; /*0x426066*/
-    v38[1] = v28; /*0x42606f*/
+    v38[1] = (int16_t)(v28); /*0x42606f*/
     *(unsigned int *)v34 = *(unsigned int *)v38; /*0x42607d*/
     if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v34) ) /*0x426081*/
       break; /*0x426081*/

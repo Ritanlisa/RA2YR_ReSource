@@ -151,7 +151,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     {
             ((Debug *)0)->Log();
       ChangeVideoMode(stru_A8EB00.ObjectTypeClass[33], stru_A8EB00.ObjectTypeClass[34]); /*0x56130c*/
-      g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56131b*/
+      g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56131b*/
       return 0; /*0x561317*/
     }
   }
@@ -574,7 +574,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
-  StringCSF = GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230)); /*0x76ed62*/
   WideString::Assign((wchar_t **)&v9, StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
   DeleteAndZero::Alt((void **)&v9); /*0x76ed83*/
@@ -634,7 +634,7 @@ void Team_Start_7AFAD0(void * a1, void * a2)
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
   String::Assign((char **)&v6, Buffer); /*0x7afafa*/
   String::Assign((char **)&v7, aWdtchoicemdIni); /*0x7afb08*/
-  v3 = sub_4F1B80((char **)&v6, (char **)&v7, a2); /*0x7afb1e*/
+  v3 = (char **)(sub_4F1B80((char **)&v6, (char **)&v7, a2)); /*0x7afb1e*/
   DeleteAndZero(&v7); /*0x7afb20*/
   DeleteAndZero(&v6); /*0x7afb29*/
   if ( !v3 ) /*0x7afb30*/

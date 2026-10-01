@@ -87,7 +87,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(3 * a2); /*0x478514*/
+      v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478514*/
       if ( v6 ) /*0x47851e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
@@ -140,7 +140,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4785a9*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x4785b4*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x4785b4*/
     this->m_8 = v3; /*0x4785ba*/
     BYTE1(this->m_C) = a3 == 0; /*0x4785bd*/
   }
@@ -150,7 +150,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   }
   v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
   if ( v15 < (gamemd::AbstractClass **)(this->m_10) ) /*0x4785d1*/
-    this->m_10 = v15; /*0x4785d3*/
+    this->m_10 = (unsigned int)(v15); /*0x4785d3*/
   return 1; /*0x4785d6*/
 
 }
@@ -174,7 +174,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
     return &this->ArrayIndex; /*0x4788ec*/
   (*((void (**)(ParticleTypeClass *))this->ArrayIndex + 3))(this); /*0x4788f4*/
   v3 = a2[2]; /*0x4788f7*/
-  this->BehavesLike = (void *)v3; /*0x4788fe*/
+  this->BehavesLike = (unsigned int)((void *)v3); /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
   {
     this->ParticleTypeClass_field_28C = 0; /*0x478974*/
@@ -206,7 +206,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   this->ParticleTypeClass_field_28C = (unsigned int)((void *)(v4));
   if ( !v4 ) /*0x478935*/
     return &this->ArrayIndex; /*0x478935*/
-  BehavesLike = this->BehavesLike; /*0x478937*/
+  BehavesLike = (void *)(this->BehavesLike); /*0x478937*/
   v8 = 0; /*0x47893a*/
   BYTE1(this->ParticleTypeClass_field_0xC) = 1; /*0x47893e*/
   if ( (int)BehavesLike <= 0 ) /*0x478942*/
@@ -745,7 +745,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   Block->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
   Block->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ArrayIndex, 1); /*0x645971*/
-  v7 = Block; /*0x645986*/
+  v7 = (gamemd::ParticleTypeClass *)(Block); /*0x645986*/
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -760,7 +760,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x6459ad*/
     }
   }
-  v7 = Block; /*0x6459cf*/
+  v7 = (gamemd::ParticleTypeClass *)(Block); /*0x6459cf*/
   v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/
          &stru_A83D50.__pad_3C[12],
          &v7);
@@ -804,10 +804,10 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
   int v8; // edx
 
   this->ParticleTypeClass_field_28C = 0; /*0x645a7d*/
-  this->BehavesLike = (void *)a2; /*0x645a80*/
+  this->BehavesLike = (unsigned int)((void *)a2); /*0x645a80*/
   LOBYTE(this->ParticleTypeClass_field_0xC) = 1; /*0x645a83*/
   BYTE1(this->ParticleTypeClass_field_0xC) = 0; /*0x645a87*/
-  this->ArrayIndex = &vt_VectorClass; /*0x645a8a*/
+  this->ArrayIndex = (unsigned int)(&vt_VectorClass); /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
     if ( a3 ) /*0x645a98*/
@@ -826,7 +826,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
         }
         while ( v5 ); /*0x645ab1*/
       }
-      this->ParticleTypeClass_field_28C = (void *)a3; /*0x645ab3*/
+      this->ParticleTypeClass_field_28C = (unsigned int)((void *)a3); /*0x645ab3*/
     }
     else
     {
@@ -835,7 +835,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       {
         if ( a2 - 1 >= 0 ) /*0x645acd*/
         {
-          v7 = v6 + 2; /*0x645acf*/
+          v7 = (unsigned char *)(v6 + 2); /*0x645acf*/
           v8 = a2; /*0x645ad2*/
           do /*0x645adf*/
           {
@@ -852,11 +852,11 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       {
         v6 = 0; /*0x645ae3*/
       }
-      this->ParticleTypeClass_field_28C = v6; /*0x645ae5*/
+      this->ParticleTypeClass_field_28C = (unsigned int)(v6); /*0x645ae5*/
       BYTE1(this->ParticleTypeClass_field_0xC) = 1; /*0x645ae8*/
     }
   }
-  this->ArrayIndex = &vt_DynamicVectorClass; /*0x645aec*/
+  this->ArrayIndex = (unsigned int)(&vt_DynamicVectorClass); /*0x645aec*/
   this->Damage = 10; /*0x645af2*/
   this->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
   return &this->ArrayIndex; /*0x645afe*/
@@ -884,7 +884,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477ac3*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x477ac6*/
+  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x477ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x477ad8*/

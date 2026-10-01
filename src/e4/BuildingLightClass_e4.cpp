@@ -56,7 +56,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   int v29; // [esp+58h] [ebp-10h]
   char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
 
-  result = aP1; /*0x436be9*/
+  result = (unsigned int *)(aP1); /*0x436be9*/
   v4 = this; /*0x436bef*/
   this->Speed[1] = 0; /*0x436bfa*/
   this->BehaviourMode = (int)aP1; /*0x436c00*/
@@ -70,7 +70,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     v25 = v5; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
     v22 = 0; /*0x436c3b*/
-    nextArrayIndex = (Object *)FollowingObject[3]; /*0x436c3f*/
+    nextArrayIndex = (gamemd::Object *)((Object *)FollowingObject[3]); /*0x436c3f*/
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
     {
@@ -91,7 +91,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
               && !(uint8_t)Object::IsAlliedWithObjectHouse(nextArrayIndex, (int)v8) )
             {
               v9 = *v8; /*0x436ccc*/
-              location = ((unsigned int *)v4)[0]; /*0x436cce*/
+              location = (int *)(((unsigned int *)v4)[0]); /*0x436cce*/
               v11 = ((unsigned int *)v4)[0]; /*0x436cd0*/
               v12 = location[1]; /*0x436cd2*/
               v29 = location[2]; /*0x436cdf*/
@@ -146,7 +146,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)Block); /*0x4370ee*/
-  v5 = Block; /*0x437103*/
+  v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
   v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
@@ -203,16 +203,16 @@ signed int BuildingLightClass::UpdateOscillation()
 
   v26 = (*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 456))(((unsigned int *)this)[0]); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
-  vtable3 = ((unsigned int *)this)[0]; /*0x513d42*/
+  vtable3 = (unsigned int *)(((unsigned int *)this)[0]); /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/
   {
-    v3 = vtable3 + 39; /*0x513d52*/
+    v3 = (int *)(vtable3 + 39); /*0x513d52*/
     v29 = *v3; /*0x513d59*/
     v30 = v3[1]; /*0x513d65*/
     v31 = v3[2]; /*0x513d71*/
     GroundHeight = Cell::GetGroundHeight(&v29); /*0x513d7a*/
-    v5 = ((unsigned int *)this)[0]; /*0x513d7c*/
-    v6 = v5 + 39; /*0x513d8b*/
+    v5 = (unsigned int *)(((unsigned int *)this)[0]); /*0x513d7c*/
+    v6 = (int *)(v5 + 39); /*0x513d8b*/
     v7 = v5[376] & 7; /*0x513d8d*/
     v8 = *v6; /*0x513d90*/
     v9 = v6[1]; /*0x513d92*/
@@ -244,7 +244,7 @@ signed int BuildingLightClass::UpdateOscillation()
     ((unsigned int *)this)[0] = 0; /*0x513e6b*/
     v20 = 0; /*0x513e6e*/
   }
-  v21 = ((unsigned int *)this)[0]; /*0x513e70*/
+  v21 = (unsigned char *)(((unsigned int *)this)[0]); /*0x513e70*/
   v22 = v21[116]; /*0x513e74*/
   v21[116] = 0; /*0x513e77*/
   (*(void (**)(void *, int))(*(unsigned int *)((unsigned int *)this)[0] + 460))(((unsigned int *)this)[0], v20); /*0x513e7f*/

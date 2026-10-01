@@ -205,7 +205,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   int v41[4]; // [esp+88h] [ebp-20h] BYREF
   int v42[4]; // [esp+98h] [ebp-10h] BYREF
 
-  v3 = (int)(*(const gamemd::RectangleStruct *)(viewRect));
+  v3 = (const gamemd::RectangleStruct *)((int)(*(const gamemd::RectangleStruct *)(viewRect)));
   v24 = 0; /*0x6d7581*/
   v5 = this->visibleArea + v3; /*0x6d7595*/
   v6 = viewRect[1] + ((unsigned char *)(this) + 0x0B4); /*0x6d759c*/
@@ -243,7 +243,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     IDA_LOWORD(v28) = v25 + v16; /*0x6d76ae*/
     IDA_HIWORD(v28) = v30 + IDA_HIWORD(v25); /*0x6d76b9*/
     result = v32; /*0x6d76be*/
-    *(unsigned int *)v28 = v28; /*0x6d76c8*/
+    *(unsigned int *)v28 = (unsigned int)(v28); /*0x6d76c8*/
     if ( v32 > 0 ) /*0x6d76cc*/
     {
       v32 = v32; /*0x6d76d2*/
@@ -328,7 +328,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   ++dword_A83ECC; /*0x480403*/
   v9 = this->u32_11B; /*0x480416*/
   v10 = screen_pos[1]; /*0x48041d*/
-  v16[0] = *(const gamemd::Point2D *)(screen_pos); /*0x480420*/
+  v16[0] = (const gamemd::Point2D *)(*(const gamemd::Point2D *)(screen_pos)); /*0x480420*/
   v11 = v10 - 15 * v9; /*0x48042e*/
   v4 = (*(int (**)(int *))(*v7 + 156))(v7); /*0x480430*/
   if ( v4 ) /*0x48043c*/
@@ -354,7 +354,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   {
     v12 = ((unsigned int *)(flags))[1]; /*0x4804b1*/
     v16[0] = v16[0] + 30 - *(int *)(flags); /*0x4804bd*/
-    v13 = ((unsigned char *)(this) + 0x048); /*0x4804c1*/
+    v13 = (int)(((unsigned char *)(this) + 0x048)); /*0x4804c1*/
     v16[1] = v11 + g_Map_VisibleRect - v12; /*0x4804c4*/
     IDA_LOBYTE(v4) = (*(int (**)(unsigned int, unsigned int *, unsigned int *, unsigned int, int, int))(**((unsigned int **)FactoryClass_Array /*0x4804f5*/
                                                                                         + v13)
@@ -427,7 +427,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
           v7 = (*(int (**)(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
-          v8 = ((unsigned char *)(this) + 0x0B0); /*0x6d78d0*/
+          v8 = (int)(((unsigned char *)(this) + 0x0B0)); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = ((unsigned char *)(this) + 0x02D); /*0x6d78e2*/
           v10 = v8 + *(const gamemd::RectangleStruct *)(viewRect); /*0x6d78ee*/

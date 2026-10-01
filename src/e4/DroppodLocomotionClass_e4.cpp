@@ -70,7 +70,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   int v39[3]; // [esp+34h] [ebp-Ch] BYREF
   DropPodLocomotionClass *thisa; // [esp+44h] [ebp+4h]
 
-  Owner = ((unsigned int *)a1)[0]; /*0x4b5b7b*/
+  Owner = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b5b7b*/
   v36 = ((unsigned int *)Owner)[0]; /*0x4b5b88*/
   v37 = ((unsigned int *)Owner)[1]; /*0x4b5b8f*/
   v4 = ((unsigned int *)Owner)[2]; /*0x4b5b93*/
@@ -93,10 +93,10 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   Math::SinCos(v6); /*0x4b5c5c*/
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4b5c6c*/
-  v9 = ((unsigned int *)a1)[0]; /*0x4b5c71*/
+  v9 = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
   v10 = (*((int (**)(FootClass *))v9->TechnoClass + 114))(v9); /*0x4b5c7a*/
-  v11 = ((unsigned int *)a1)[0]; /*0x4b5c80*/
+  v11 = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
     (*((void (**)(FootClass *, int *))v11->TechnoClass + 109))(v11, &v36); /*0x4b5eaa*/

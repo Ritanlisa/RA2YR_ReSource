@@ -92,13 +92,13 @@ void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, w
   v34[1] = v14; /*0x4b9790*/
   v31 = v14; /*0x4b9794*/
   v34[0] = v13; /*0x4b9798*/
-  v15 = *aP2; /*0x4b979c*/
+  v15 = (int)(*aP2); /*0x4b979c*/
   v30 = v13; /*0x4b979e*/
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
   v16 = (*(int (**)(int *))(v15 + 124))(aP2); /*0x4b97b5*/
   v17 = (*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
-  v18 = *aP2; /*0x4b97c5*/
+  v18 = (int)(*aP2); /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
   v19 = (*(int (**)(int *))(v18 + 128))(aP2); /*0x4b97df*/
   v31 += ((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
@@ -187,11 +187,11 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   else
   {
     *((char *)this + 26) = a2; /*0x642dc4*/
-    *((char *)this + 27) = aP2; /*0x642dc7*/
+    *((char *)this + 27) = (char)(aP2); /*0x642dc7*/
   }
   LOBYTE(result) = a6; /*0x642dd2*/
-  *((char *)this + 20) = aP3; /*0x642dd6*/
-  *((unsigned char *)this + 112) = aP4; /*0x642dd9*/
+  *((char *)this + 20) = (char)(aP3); /*0x642dd6*/
+  *((unsigned char *)this + 112) = (unsigned char)(aP4); /*0x642dd9*/
   *((unsigned char *, unsigned int a4)this + 113) = a6; /*0x642ddc*/
   return result; /*0x642ddf*/
 
@@ -249,14 +249,14 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
   *(unsigned int *)(a1) = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/
-  result = a2; /*0x642fba*/
+  result = (int *)(a2); /*0x642fba*/
   *(unsigned int *)(a2) = v6; /*0x642fc0*/
   if ( v6 <= v12 ) /*0x642fc2*/
     v6 = v12; /*0x642fc4*/
   *(unsigned int *)(a2) = v6; /*0x642fc6*/
   *(unsigned int *)(a1) += 10; /*0x642fd1*/
-  v14 = *(unsigned int *)(a2) + 4; /*0x642fd5*/
-  *(unsigned int *)(a2) = v14; /*0x642fdb*/
+  v14 = (void *)(*(unsigned int *)(a2) + 4); /*0x642fd5*/
+  *(unsigned int *)(a2) = (unsigned int)(v14); /*0x642fdb*/
   if ( a3 > (void *)(1) ) /*0x642fe3*/
     *(unsigned int *)(a2) = (unsigned int)(a3)* v14; /*0x642fe8*/
   return result; /*0x642fdf*/

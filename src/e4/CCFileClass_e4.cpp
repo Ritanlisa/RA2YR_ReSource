@@ -56,10 +56,10 @@ namespace gamemd {
 void CCFileClass::Destruct()
 {
 
-  *(unsigned int *)this->CDFileClass = &vt_CCFileClass; /*0x535a76*/
+  *(unsigned int *)this->CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x535a76*/
   *((unsigned int *)this + 25) = 0; /*0x535a7c*/
   Vector::Clear((int)(unsigned int *)this + 88); /*0x535a83*/
-  *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
+  *(unsigned int *)this->CDFileClass = (unsigned int)(&off_7E1668); /*0x535a8a*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)this))->Dtor(); /*0x535a95*/
 
 }
@@ -141,7 +141,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
             if ( v5 ) /*0x69e368*/
               *(unsigned int *)(v5 + 24) = *((unsigned int *)v3 + 6); /*0x69e36d*/
             else
-              dword_B077B0 = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
+              dword_B077B0 = (unsigned int)((void *)*((unsigned int *)v3 + 6)); /*0x69e375*/
             if ( *((unsigned int *)v3 + 2) ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
@@ -179,7 +179,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
       if ( v11 ) /*0x69e3e5*/
         *(unsigned int *)(v11 + 24) = *((unsigned int *)v6 + 6); /*0x69e3ea*/
       else
-        dword_B077B0 = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
+        dword_B077B0 = (unsigned int)((void *)*((unsigned int *)v6 + 6)); /*0x69e3f2*/
       if ( *((unsigned int *)v6 + 2) ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/

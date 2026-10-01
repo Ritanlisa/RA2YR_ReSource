@@ -71,7 +71,7 @@ void sub_600750()
       v6 = v0; /*0x6007cf*/
       dword_AC1B50 = v0 >> 1; /*0x6007d4*/
       --dword_AC1B54; /*0x6007e0*/
-      dword_AC1B48 = RA2_OPNEW(4 * (v0 >> 1)); /*0x6007f9*/
+      dword_AC1B48 = (unsigned int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6007f9*/
       memset(dword_AC1B48, 0, 4 * dword_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
@@ -149,7 +149,7 @@ void sub_600920()
       v6 = v0; /*0x60099f*/
       dword_AC18C8 = v0 >> 1; /*0x6009a4*/
       --dword_AC18CC; /*0x6009b0*/
-      g_DialogPool = RA2_OPNEW(4 * (v0 >> 1)); /*0x6009c9*/
+      g_DialogPool = (int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6009c9*/
       memset(g_DialogPool, 0, 4 * dword_AC18C8); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
@@ -241,7 +241,7 @@ void sub_600AF0()
       v8 = v0; /*0x600bb7*/
       dword_AC1B08 = v0 >> 1; /*0x600bbb*/
       --dword_AC1B0C; /*0x600bc5*/
-      dword_AC1B00 = RA2_OPNEW(4 * (v0 >> 1)); /*0x600bdd*/
+      dword_AC1B00 = (unsigned int)(RA2_OPNEW(4 * (v0 >> 1))); /*0x600bdd*/
       memset(dword_AC1B00, 0, 4 * dword_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {

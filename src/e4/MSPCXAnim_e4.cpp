@@ -40,7 +40,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x5d09e6*/
+      v5 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d09e6*/
       if ( v5 ) /*0x5d09f0*/
         v6 = (unsigned int *)v5; /*0x5d09f5*/
       else
@@ -73,7 +73,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d0a57*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x5d0a60*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x5d0a60*/
     this->m_8 = a2; /*0x5d0a68*/
     BYTE1(this->m_C) = v4 == 0; /*0x5d0a6b*/
   }
@@ -377,7 +377,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d0cd1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d0cda*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d0cda*/
     this->m_8 = a2; /*0x5d0ce2*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d0ce5*/
   }
@@ -448,7 +448,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d0f31*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d0f3a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d0f3a*/
     this->m_8 = a2; /*0x5d0f42*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d0f45*/
   }
@@ -550,7 +550,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x5d105e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x5d1067*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d1067*/
       this->m_8 = a2; /*0x5d106f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5d1072*/
       return 1; /*0x5d1078*/
@@ -656,7 +656,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d1191*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d119a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d119a*/
     this->m_8 = a2; /*0x5d11a2*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d11a5*/
   }
@@ -758,7 +758,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x5d12be*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x5d12c7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d12c7*/
       this->m_8 = a2; /*0x5d12cf*/
       BYTE1(this->m_C) = a3 == 0; /*0x5d12d2*/
       return 1; /*0x5d12d8*/
@@ -864,7 +864,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d13f1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d13fa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d13fa*/
     this->m_8 = a2; /*0x5d1402*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d1405*/
   }
@@ -936,7 +936,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5d1651*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d165a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5d165a*/
     this->m_8 = a2; /*0x5d1662*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d1665*/
   }

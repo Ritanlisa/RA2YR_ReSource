@@ -43,7 +43,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   *(unsigned int *)this->__pad_0 = 0; /*0x4c4f0a*/
   this->TaskForceClass_field_0x4 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
-  *(unsigned int *)this->__pad_0 = Buffer; /*0x4c4f27*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(Buffer); /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
@@ -81,13 +81,13 @@ int TaskForceClass::Construct(ObjectClass * aP1)
   int v5; // ecx
 
   AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
-  this->TaskForceClass_field_0x98 = (AbstractClass *)-1; /*0x6e7e8f*/
+  this->TaskForceClass_field_0x98 = (unsigned int)((AbstractClass *)-1); /*0x6e7e8f*/
   this->TaskForceClass_field_0x9C[0] = 0; /*0x6e7e99*/
   *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
-  *(unsigned int *)this->__pad_0 = &vt_TaskForceClass; /*0x6e7ead*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_TaskForceClass); /*0x6e7ead*/
   this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e7eb3*/
-  *(unsigned int *)this->__pad_8 = &vt_TaskForceClass; /*0x6e7eba*/
-  *(unsigned int *)&this->__pad_8[4] = &vt_TaskForceClass; /*0x6e7ec1*/
+  *(unsigned int *)this->__pad_8 = (unsigned int)(&vt_TaskForceClass); /*0x6e7eba*/
+  *(unsigned int *)&this->__pad_8[4] = (unsigned int)(&vt_TaskForceClass); /*0x6e7ec1*/
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
     && dword_A8E8E4 > 0
@@ -97,7 +97,7 @@ int TaskForceClass::Construct(ObjectClass * aP1)
          0) )
   {
     v3 = (unsigned int)(dword_A8E8E0++);
-    *((unsigned int *)dword_A8E8D4 + v3) = this; /*0x6e7f21*/
+    *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
   }
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4);
   v5 = 6; /*0x6e7f2a*/
@@ -158,9 +158,9 @@ LABEL_13:
       v10 = (unsigned int *)*((unsigned int *)dword_A8E8D4 + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
-LABEL_8: v9 = (unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u));
+LABEL_8: v9 = (gamemd::TaskForceClass *)((unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u)));
     if ( v9 ) /*0x6e82e1*/
-      v10 = TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
+      v10 = (unsigned int *)(TaskForceClass::Construct(v9, Source)); /*0x6e82ef*/
     else
 LABEL_11:
       v10 = 0; /*0x6e82fe*/
@@ -189,7 +189,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
   *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x6e8811*/
-  v5 = Block; /*0x6e8826*/
+  v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
   v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
   {
@@ -279,7 +279,7 @@ char TaskForceClass::GetUnitType(char * a2)
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
-  p_TaskForceClass_field_0xA4 = &this->TaskForceClass_field_0xA4; /*0x6e8529*/
+  p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4); /*0x6e8529*/
   do /*0x6e857d*/
   {
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
@@ -289,7 +289,7 @@ char TaskForceClass::GetUnitType(char * a2)
     }
     else
     {
-      v5 = TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4); /*0x6e854e*/
+      v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4)); /*0x6e854e*/
       INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
@@ -337,10 +337,10 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->__pad_0 = &vt_TaskForceClass; /*0x6e86c4*/
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_TaskForceClass); /*0x6e86c4*/
       aP0->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e86ca*/
-      *(unsigned int *)aP0->__pad_8 = &vt_TaskForceClass; /*0x6e86d1*/
-      *(unsigned int *)&aP0->__pad_8[4] = &vt_TaskForceClass; /*0x6e86d8*/
+      *(unsigned int *)aP0->__pad_8 = (unsigned int)(&vt_TaskForceClass); /*0x6e86d1*/
+      *(unsigned int *)&aP0->__pad_8[4] = (unsigned int)(&vt_TaskForceClass); /*0x6e86d8*/
     }
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

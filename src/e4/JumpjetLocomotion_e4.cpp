@@ -333,14 +333,14 @@ void* JumpjetLocomotion::Land()
   CellClass * v55;
   int v56; // [esp+52h] [ebp-4h]
 
-  v2 = (gamemd::CellClass *)(*(unsigned int *)this->__pad_C);
+  v2 = (int)((gamemd::CellClass *)(*(unsigned int *)this->__pad_C));
   v51 = *(unsigned int *)(v2 + 156); /*0x54caa6*/
   v52 = *(unsigned int *)(v2 + 160); /*0x54caad*/
   v53 = *(unsigned int *)(v2 + 164); /*0x54cab4*/
   v3 = *(unsigned int *)(v2 + 164); /*0x54caba*/
-  v54 = *(unsigned int *)(v2 + 156); /*0x54cabd*/
+  v54 = (gamemd::CellClass *)(*(unsigned int *)(v2 + 156)); /*0x54cabd*/
   v4 = *(unsigned char *)(v2 + 1709); /*0x54cac4*/
-  v55 = *(unsigned int *)(v2 + 160); /*0x54cacc*/
+  v55 = (gamemd::CellClass *)(*(unsigned int *)(v2 + 160)); /*0x54cacc*/
   if ( v4 ) /*0x54cad0*/
   {
     v5 = (double)v53; /*0x54cad2*/
@@ -403,10 +403,10 @@ void* JumpjetLocomotion::Land()
     {
       do /*0x54cd78*/
       {
-        v14 = (gamemd::CellClass *)((unsigned int *)v13[12]);
+        v14 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)v13[12]));
         v15 = (int *)(*(unsigned int *)this->__pad_C + 156); /*0x54cce4*/
-        v54 = *v15; /*0x54ccf0*/
-        v55 = v15[1]; /*0x54ccf9*/
+        v54 = (gamemd::CellClass *)(*v15); /*0x54ccf0*/
+        v55 = (gamemd::CellClass *)(v15[1]); /*0x54ccf9*/
         v16 = *v13; /*0x54ccfd*/
         v56 = v15[2]; /*0x54cd02*/
         v17 = (*(int (**)(unsigned int *))(v16 + 136))(v13); /*0x54cd06*/
@@ -477,9 +477,9 @@ void* JumpjetLocomotion::Land()
   v47 = (gamemd::CellClass *)((char)((gamemd::CellClass *)(1)));
   v23 = (int *)((gamemd::CellClass *)((int *)(*(unsigned int *)this->__pad_C + 156)));
   v54 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*v23)));
-  v55 = (int)((gamemd::CellClass *)(v23[1]));
-  v56 = (gamemd::CellClass *)(v23[2]);
-  v24 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v54); /*0x54cdf4*/
+  v55 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v23[1])));
+  v56 = (int)((gamemd::CellClass *)(v23[2]));
+  v24 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v54)); /*0x54cdf4*/
   landType = v24->landType; /*0x54cdf6*/
   if ( landType != 2 || (v48 = 1, v45) ) /*0x54ce0c*/
     v48 = 0; /*0x54ce0e*/

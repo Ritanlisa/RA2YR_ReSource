@@ -32,7 +32,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
-  v23 = this->m_C + (v14 << 9); /*0x497a60*/
+  v23 = (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)(this->m_C + (v14 << 9)); /*0x497a60*/
   v15 = aP4; /*0x497a64*/
   if ( aP4 <= 0 ) /*0x497a6a*/
   {
@@ -126,7 +126,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9a9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     __3_YAXPAX_Z(this); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
@@ -138,7 +138,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9c9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     __3_YAXPAX_Z(this); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
@@ -150,7 +150,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9e9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     __3_YAXPAX_Z(this); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/

@@ -169,9 +169,9 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   *((unsigned char *)this + 246) = 0; /*0x6f07f1*/
   *((unsigned char *)this + 247) = 0; /*0x6f07f7*/
   this->AbstractClass = &vt_TeamTypeClass; /*0x6f07fd*/
-  ((unsigned int *)this)[0] = &vt_TeamTypeClass; /*0x6f0803*/
-  ((unsigned int *)this)[0] = &vt_TeamTypeClass; /*0x6f080a*/
-  ((unsigned int *)this)[0] = &vt_TeamTypeClass; /*0x6f0811*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f0803*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f080a*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f0811*/
   v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 204); /*0x6f0818*/
   if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 196) /*0x6f0857*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 201)) || !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 196))
@@ -184,7 +184,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
         v4) )
   {
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) = v3 + 1; /*0x6f085c*/
-    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v3) = this; /*0x6f0868*/
+    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v3) = (unsigned int)(this); /*0x6f0868*/
     v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 204); /*0x6f086b*/
   }
   v5 = 0; /*0x6f0871*/

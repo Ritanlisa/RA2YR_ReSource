@@ -34,7 +34,7 @@ HouseClass * * FactoryClass::AbandonProduction() {
   int v9; // ecx
   int v11; // [esp+Ch] [ebp-8h]
 
-  v2 = (gamemd::TechnoTypeClass **)(((unsigned char *)(this) + 0x058));
+  v2 = (int)((gamemd::TechnoTypeClass **)(((unsigned char *)(this) + 0x058)));
   if ( !v2 ) /*0x4c9ffe*/
     return 0; /*0x4ca116*/
   v3 = (*(int (**)(int))(*(unsigned int *)v2 + 136))(v2); /*0x4ca007*/
@@ -48,8 +48,8 @@ HouseClass * * FactoryClass::AbandonProduction() {
     this->specialItem = -1; /*0x4ca058*/
   dword_A8ED84 = dword_A8ED84; /*0x4ca05b*/
   this->queuedCapacity = 0; /*0x4ca065*/
-  ((unsigned char *)(this) + 0x02C) = dword_A8ED84; /*0x4ca068*/
-  this->queuedObjects = v11; /*0x4ca06e*/
+  ((unsigned char *)(this) + 0x02C) = (unsigned char *)(dword_A8ED84); /*0x4ca068*/
+  this->queuedObjects = (gamemd::TechnoTypeClass **)(v11); /*0x4ca06e*/
   this->queuedCount = 0; /*0x4ca071*/
   v8 = *(void **)(&this->u32_288); /*0x4ca074*/
   this->production = 0; /*0x4ca077*/
@@ -67,7 +67,7 @@ HouseClass * * FactoryClass::AbandonProduction() {
       this->owner->ratioTeamInfantry = -1; /*0x4ca0dd*/
   }
   ++dword_A8E7AC; /*0x4ca0eb*/
-  v9 = ((unsigned char *)(this) + 0x058); /*0x4ca0f1*/
+  v9 = (int)(((unsigned char *)(this) + 0x058)); /*0x4ca0f1*/
   if ( v9 ) /*0x4ca0f6*/
     (*(void (**)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x4ca0fc*/
   ((unsigned char *)(this) + 0x058) = 0; /*0x4ca0ff*/

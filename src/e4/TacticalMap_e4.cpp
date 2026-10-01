@@ -174,7 +174,7 @@ void TacticalMap::Redraw()
     DSurface_Composite,
     0);
   result = (*(int (**)(GScreenClass *))(this->vfptr[0] + 68))(this); /*0x4f459a*/
-  g_DSurface_Hidden_2 = v1; /*0x4f459d*/
+  g_DSurface_Hidden_2 = (int)(v1); /*0x4f459d*/
   return result; /*0x4f45a3*/
 
 }
@@ -257,7 +257,7 @@ void TacticalMap::Construct()
   float v5; // [esp+0h] [ebp-10h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6d1c25*/
-  this->Tactical_field_0xA8 = (IUnknown *)-1; /*0x6d1c2c*/
+  this->Tactical_field_0xA8 = (unsigned int)((IUnknown *)-1); /*0x6d1c2c*/
   this->__pad_AC[0] = 0; /*0x6d1c36*/
   this->__pad_AC[1] = 0; /*0x6d1c3c*/
   *(unsigned int *)&this->__pad_AC[20] = 0; /*0x6d1c42*/
@@ -294,8 +294,8 @@ void TacticalMap::Construct()
   this->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&this->__pad_DA8[8] = 0; /*0x6d1d4e*/
-  *(unsigned int *)this->__pad_0 = &vt_Tactical; /*0x6d1d54*/
-  *(unsigned int *)&this->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1d5a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Tactical); /*0x6d1d54*/
+  *(unsigned int *)&this->Tactical_field_0x2[2] = (unsigned int)(&vt_Tactical); /*0x6d1d5a*/
   this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6d1d61*/
   this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6d1d68*/
   memset(&this->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/
@@ -320,7 +320,7 @@ void TacticalMap::Construct()
   *((unsigned int *)this + 898) = 0; /*0x6d1e08*/
   *((unsigned int *)this + 899) = 1065353216; /*0x6d1e0e*/
   *((unsigned int *)this + 900) = 0; /*0x6d1e18*/
-  g_TacticalClass_Instance = (LPPERSISTSTREAM)this; /*0x6d1e1e*/
+  g_TacticalClass_Instance = (int)((LPPERSISTSTREAM)this); /*0x6d1e1e*/
   return (int)this->__pad_0; /*0x6d1e26*/
 
 }
@@ -390,7 +390,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v34[1] = v9[1]; /*0x6d2c21*/
           v34[2] = v9[2]; /*0x6d2c28*/
           v34[3] = v9[3]; /*0x6d2c37*/
-          v10 = ClipRectIntersection(v36, v34, &v30, 0, 0); /*0x6d2c40*/
+          v10 = (int *)(ClipRectIntersection(v36, v34, &v30, 0, 0)); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
           v31 = v10[1]; /*0x6d2c50*/
           v32 = v10[2]; /*0x6d2c57*/

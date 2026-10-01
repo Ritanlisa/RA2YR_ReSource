@@ -490,7 +490,7 @@ void ThemeQueue_ClearPlaylist(int a1)
 
   if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x752a4e*/
   {
-    for ( i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)); /*0x752a61*/
+    for ( i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1))); /*0x752a61*/
           i;
           i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init((unsigned int **)i));
       if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
@@ -588,7 +588,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          0) )
   {
     v3 = (unsigned int)(g_InfantrySelectState++);
-    *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
+    *((unsigned int *)g_InfantryRenderPool + v3) = (unsigned int)(this); /*0x752d4a*/
   }
   return (int)this; /*0x752d4d*/
 
@@ -648,7 +648,7 @@ int CCINIClass::InitFromINIEVA()
         if ( v6 == -1 ) /*0x7530b7*/
         {
 LABEL_10:
-          v7 = __2_YAPAXI_Z(0x54u); /*0x7530bd*/
+          v7 = (int)(__2_YAPAXI_Z(0x54u)); /*0x7530bd*/
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -703,7 +703,7 @@ int E4Recv_7531A0::EVA_LoadINI()
   int v3; // eax
   ObjectClass *v4; // [esp+0h] [ebp-4h] BYREF
 
-  v4 = this; /*0x7531a0*/
+  v4 = (gamemd::ObjectClass *)(this); /*0x7531a0*/
   if ( dword_B1D4C4 ) /*0x7531a8*/
   {
     *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7531aa*/

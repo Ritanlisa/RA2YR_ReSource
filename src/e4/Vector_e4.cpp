@@ -216,7 +216,7 @@ void Vector::ReallocDynamic(int a2)
   }
   __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
   v7 = a2 + *((unsigned int *)this + 2); /*0x4d2ea6*/
-  *(unsigned int *)this = v3; /*0x4d2ea8*/
+  *(unsigned int *)this = (unsigned int)(v3); /*0x4d2ea8*/
   *((unsigned int *)this + 2) = v7; /*0x4d2eaa*/
   *((unsigned int *)this + 4) = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
@@ -284,8 +284,8 @@ char Vector::Grow()
     v4 = v6; /*0x7aef31*/
   }
   __3_YAXPAX_Z(this->Vector_field_0x8); /*0x7aef39*/
-  this->Vector_field_0x4 = (void *)v4; /*0x7aef41*/
-  this->Vector_field_0x8 = v5; /*0x7aef44*/
+  this->Vector_field_0x4 = (unsigned int)((void *)v4); /*0x7aef41*/
+  this->Vector_field_0x8 = (unsigned int)(v5); /*0x7aef44*/
   return 1; /*0x7aeecf*/
 
 }

@@ -37,7 +37,7 @@ int Stream::FlushAndReset()
   *((unsigned int *)this + 12) = 45; /*0x439119*/
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
   ((void (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
-  Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
+  Stream_field_04 = (int)(v1[1].Stream_field_04); /*0x43912d*/
   Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
   v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
   (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
@@ -135,9 +135,9 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
 
   CCFileClass::Construct3((int)((unsigned char *)this + 4)); /*0x75926a*/
   Stream::CopyFromTemplate((unsigned char *)this + 376); /*0x759275*/
-  *((unsigned int *)this + 331) = aP2; /*0x759282*/
-  *((unsigned int *)this + 121) = this; /*0x759288*/
-  *((unsigned int *)this + 101) = &v19; /*0x75928e*/
+  *((unsigned int *)this + 331) = (unsigned int)(aP2); /*0x759282*/
+  *((unsigned int *)this + 121) = (unsigned int)(this); /*0x759288*/
+  *((unsigned int *)this + 101) = (unsigned int)(&v19); /*0x75928e*/
   *((unsigned int *)this + 110) = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
     *((unsigned int *)this + 110) |= 1u; /*0x7592af*/
@@ -226,7 +226,7 @@ LABEL_14:
   *((unsigned int *)this + 339) = 0; /*0x75947d*/
   *((unsigned int *)this + 322) = 0; /*0x759483*/
   strcpy((unsigned char *)this + 113, a1); /*0x75949f*/
-  *((unsigned int *)this + 338) = aP5; /*0x7594b0*/
+  *((unsigned int *)this + 338) = (unsigned int)(aP5); /*0x7594b0*/
   *((unsigned int *)this + 326) = 0; /*0x7594b7*/
   *((unsigned int *)this + 327) = 0; /*0x7594bd*/
   *((unsigned int *)this + 328) = 0; /*0x7594c3*/

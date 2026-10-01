@@ -98,7 +98,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v65; // [esp+54h] [ebp-Ch]
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
-v3 = (int)((void ***)(0));
+v3 = (void ***)((int)((void ***)(0)));
   v55 = (void ***)(aP0);
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
@@ -202,7 +202,7 @@ v3 = (int)((void ***)(0));
         v67 += v20; /*0x6f0cb2*/
         goto LABEL_34; /*0x6f0cb2*/
       }
-  LABEL_35: v21 = (unsigned int *)(0);
+  LABEL_35: v21 = (unsigned int)((unsigned int *)(0));
       if ( !v67 ) /*0x6f0ccd*/
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
@@ -211,7 +211,7 @@ v3 = (int)((void ***)(0));
       v23 = 0; /*0x6f0cf3*/
       if ( v65 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/
-      v24 = (char *)v63 + 4; /*0x6f0d05*/
+      v24 = (unsigned int *)((char *)v63 + 4); /*0x6f0d05*/
       while ( 1 ) /*0x6f0d08*/
       {
         v21 += *v24; /*0x6f0d08*/
@@ -263,7 +263,7 @@ v3 = (int)((void ***)(0));
     }
   }
   v31 = (unsigned int *)(Block);
-  v32 = (int)((unsigned int *)(0));
+  v32 = (unsigned int *)((int)((unsigned int *)(0)));
   if ( dword_8B40F8 <= 0 ) /*0x6f0df2*/
   {
   LABEL_71:
@@ -278,7 +278,7 @@ v3 = (int)((void ***)(0));
     v40->vtable3 = (unsigned int)(0);
     v40->vtable4 = (unsigned int)(1);
     v40->attachedTag = (unsigned int)(0);
-    *(unsigned int *)v40 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0e7e*/
+    *(unsigned int *)v40 = (unsigned int)((void*)&VectorClass_TeamTypeClass_const___vftable); /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3(v40); /*0x6f0e8c*/
@@ -315,7 +315,7 @@ v3 = (int)((void ***)(0));
     v61 = (unsigned int)(v61);
     v40->uniqueId = (unsigned int)(v60);
     v40->abstractFlags = (unsigned int)(v61);
-    *(unsigned int *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
+    *(unsigned int *)v40 = (unsigned int)((void*)&TypeList_TeamTypeClass_const___vftable); /*0x6f0f8b*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
     {
@@ -342,7 +342,7 @@ v3 = (int)((void ***)(0));
         goto LABEL_71; /*0x6f0e41*/
     }
     v36 = *(unsigned int *)(v34 + 36); /*0x6f0e1d*/
-    v37 = Block; /*0x6f0e20*/
+    v37 = (unsigned int *)(Block); /*0x6f0e20*/
     while ( v36 != *v37 ) /*0x6f0e24*/
     {
       ++v35; /*0x6f0e2e*/
@@ -366,7 +366,7 @@ v3 = (int)((void ***)(0));
     *((unsigned char *)v46 + 13) = 0; /*0x6f0f20*/
     *(void **)v46 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
-    *(unsigned int *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f2f*/
+    *(unsigned int *)v40 = (unsigned int)((void*)&TypeList_TeamTypeClass_const___vftable); /*0x6f0f2f*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
     v47 = Block; /*0x6f0f3d*/
     v61 = v61; /*0x6f0f45*/

@@ -273,7 +273,7 @@ int ProcessRandomMapCellAdjacency()
     v2 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u)));
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
     v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
-    AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/
+    AdjacencyFlags = (int)(Cell::GetAdjacencyFlags(i)); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
       if ( Cell::GetAdjacencyFlags((int)v2) != (_T)(131) || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
@@ -483,16 +483,16 @@ void GenerateTerrainHeightMapInternal()
   {
     if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
     {
-      v2 = (int)((unsigned int *)(dword_ABED04));
+      v2 = (unsigned int *)((int)((unsigned int *)(dword_ABED04)));
       v3 = (unsigned int *)(0);
       while ( 1 ) /*0x5a3431*/
       {
-        v4 = (int)((unsigned int *)((unsigned int)(v3)& 7));
+        v4 = (unsigned int *)((int)((unsigned int *)((unsigned int)(v3)& 7)));
         v16 = (unsigned short)(i[9]);
         v5 = (unsigned short)(IDA_LOWORD(((unsigned int *)(dword_89F688))[v4]) + v16);
         IDA_LOWORD(v4) = IDA_HIWORD(dword_89F688[v4]); /*0x5a3447*/
-        IDA_LOWORD(v17) = v5; /*0x5a344b*/
-        IDA_HIWORD(v17) = IDA_HIWORD(v16) + v4; /*0x5a3455*/
+        IDA_LOWORD(v17) = (unsigned short)(v5); /*0x5a344b*/
+        IDA_HIWORD(v17) = (unsigned short)(IDA_HIWORD(v16) + v4); /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
         if ( v6 > (unsigned int *)((int))(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/

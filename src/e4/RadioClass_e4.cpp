@@ -27,10 +27,10 @@ void RadioClass::Release()
   this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a77c*/
   this->radioLinks[1] = __2_YAPAXI_Z(4u); /*0x65a78b*/
   BYTE1(this->radioLinks[3]) = 1; /*0x65a791*/
-  this->MissionClass = &vt_RadioClass; /*0x65a798*/
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a79e*/
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a7a5*/
-  ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65a7ac*/
+  this->MissionClass = (unsigned int)(&vt_RadioClass); /*0x65a798*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a79e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7a5*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7ac*/
   *(unsigned int *)this->radioLinks[1] = 0; /*0x65a7be*/
   this->lastCommands[0] = 0; /*0x65a7c4*/
   this->lastCommands[1] = 0; /*0x65a7ca*/
@@ -99,7 +99,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
   int v9; // esi
 
   v3 = (gamemd::ObjectClass *)((int)(aP1));
-  v4 = (int)((gamemd::ObjectClass *)((int)(aP2)));
+  v4 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(aP2))));
   result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
@@ -110,7 +110,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
       *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      *(unsigned int *)v6 = &vt_VectorClass; /*0x65abba*/
+      *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
     }
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
@@ -139,7 +139,7 @@ LABEL_8:
           result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP1, 4, 0));
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
-          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = aP1; /*0x65ac08*/
+          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)(aP1); /*0x65ac08*/
           v8 = aP2; /*0x65ac0b*/
           if ( ++(int)(v7) >= (int)(aP2) ) /*0x65ac12*/
             goto LABEL_8; /*0x65ac12*/

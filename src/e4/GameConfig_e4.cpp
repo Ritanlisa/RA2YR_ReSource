@@ -50,8 +50,8 @@ char * GameConfig::ComputeCRC()
 
   v0 = (int *)((unsigned int)((int *)(0)));
   qmemcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
-  v1 = &dword_ABE010; /*0x5e84ec*/
-  v10 = &dword_ABE010; /*0x5e84fd*/
+  v1 = (int *)(&dword_ABE010); /*0x5e84ec*/
+  v10 = (int *)(&dword_ABE010); /*0x5e84fd*/
   v2 = 320; /*0x5e8501*/
   memset(&unk_ABE050, 0, 0x100u); /*0x5e8506*/
   do /*0x5e854a*/
@@ -137,10 +137,10 @@ int GameConfig::ComputeHash()
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &vt_CCFileClass; /*0x679e60*/
+  v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
-  v12[0] = &off_7E1668; /*0x679e78*/
+  v12[0] = (unsigned int)(&off_7E1668); /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
   HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
   return dword_B053B4 + v0; /*0x679e97*/
@@ -163,7 +163,7 @@ void GameConfig::Constructor()
   v1 = this; /*0x5d67b5*/
   if ( !*(unsigned int *)&this->__pad_0[56] ) /*0x5d67bd*/
   {
-    v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
+    v2 = (int)(__2_YAPAXI_Z(0x58u)); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
     if ( v2 ) /*0x5d67d5*/
     {
@@ -171,9 +171,9 @@ void GameConfig::Constructor()
       *(unsigned int *)(v2 + 8) = 0; /*0x5d67e1*/
       *(unsigned int *)(v2 + 20) = 0; /*0x5d67e6*/
       *(unsigned int *)(v2 + 24) = 0; /*0x5d67e9*/
-      *(unsigned int *)(v2 + 16) = &vt_GenericNode; /*0x5d67ec*/
+      *(unsigned int *)(v2 + 16) = (unsigned int)(&vt_GenericNode); /*0x5d67ec*/
       GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
-      *(unsigned int *)(v3 + 12) = &vt_GenericList; /*0x5d67fa*/
+      *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_GenericList); /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
       *(unsigned int *)(v3 + 12) = &vt_List; /*0x5d680a*/
@@ -184,7 +184,7 @@ void GameConfig::Constructor()
       *(unsigned int *)(v3 + 56) = 0; /*0x5d681d*/
       *(unsigned int *)(v3 + 60) = 0; /*0x5d6820*/
       *(unsigned char *)(v3 + 64) = 0; /*0x5d6823*/
-      *(unsigned int *)v3 = &CCINIClass_Vtable; /*0x5d6826*/
+      *(unsigned int *)v3 = (unsigned int)(&CCINIClass_Vtable); /*0x5d6826*/
     }
     else
     {
@@ -194,10 +194,10 @@ void GameConfig::Constructor()
     CCFileClass::Construct2(&v6, (char **)&v1->__pad_0[44]); /*0x5d683c*/
     if ( (uint8_t)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
       CCINIClass::Load(*(CCINIClass **)&v1->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
-    *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x5d6863*/
+    *(unsigned int *)v6.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
-    *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
+    *(unsigned int *)v6.CDFileClass = (unsigned int)(&off_7E1668); /*0x5d6878*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x5d6880*/
   }
   return *(char **)&v1->__pad_0[56]; /*0x5d6888*/

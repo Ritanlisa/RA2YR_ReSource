@@ -82,7 +82,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             FileVXL = File::LoadFileVXL(v4, (int)&v26, 0); /*0x5f8db0*/
           else
             FileVXL = 0; /*0x5f8db7*/
-          *((unsigned int *)this + 46) = FileVXL; /*0x5f8dbb*/
+          *((unsigned int *)this + 46) = (unsigned int)(FileVXL); /*0x5f8dbb*/
           if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
             sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
@@ -100,7 +100,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             else
               FileHVA = 0; /*0x5f8e48*/
             v9 = (VoxelSection *)*((unsigned int *)this + 46); /*0x5f8e4a*/
-            *((unsigned int *)this + 47) = FileHVA; /*0x5f8e52*/
+            *((unsigned int *)this + 47) = (unsigned int)(FileHVA); /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((Matrix **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8e70*/
@@ -126,7 +126,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v13 = File::LoadFileVXL(v12, (int)&v23, 0); /*0x5f8f1a*/
           else
             v13 = 0; /*0x5f8f21*/
-          *((unsigned int *)this + 48) = v13; /*0x5f8f25*/
+          *((unsigned int *)this + 48) = (unsigned int)(v13); /*0x5f8f25*/
           if ( v13 && !*(unsigned char *)v13 ) /*0x5f8f31*/
           {
             sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8f47*/
@@ -144,7 +144,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             else
               v16 = 0; /*0x5f8fb2*/
             v17 = (VoxelSection *)*((unsigned int *)this + 48); /*0x5f8fb4*/
-            *((unsigned int *)this + 49) = v16; /*0x5f8fbc*/
+            *((unsigned int *)this + 49) = (unsigned int)(v16); /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((Matrix **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8fda*/
@@ -184,7 +184,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
   Matrix3x4 v8; // [esp+10h] [ebp-30h] BYREF
 
   Matrix3x4::Identity(&v8); /*0x55a739*/
-  v3 = a1; /*0x55a73e*/
+  v3 = (gamemd::LocomotionClass *)(a1); /*0x55a73e*/
   a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)a1->((unsigned int *)Owner)[0], &v7) >> 10) + 1) >> 1) /*0x55a763*/
                             & 0x1F)
                            - 8);

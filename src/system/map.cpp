@@ -442,7 +442,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct& s
           {
             IDA_LOWORD(v38) = v27 / 256; /*0x588483*/
             IDA_HIWORD(v38) = v35 / 256; /*0x588488*/
-            v31 = unk_ABDC50; /*0x588491*/
+            v31 = (unsigned int *)(unk_ABDC50); /*0x588491*/
             dword_ABDC74 = v38; /*0x588496*/
           }
           v32 = Cell::IsBridge(v31); /*0x58849b*/
@@ -783,7 +783,7 @@ CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, c
   v7 = ((unsigned int *)(dword_7ED3D0))[v5]; /*0x567f03*/
   LABEL_10:
   v29 = v7; /*0x567dfd*/
-  result = a5; /*0x567e01*/
+  result = (int)(a5); /*0x567e01*/
   if ( !a5 ) /*0x567e0b*/
   {
     v9 = (int)(*(unsigned int *)(a2));
@@ -810,7 +810,7 @@ CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, c
       v21 = IDA_SHIWORD(v28) << 9; /*0x567ed4*/
       v22 = (int16_t)v28 + v21 < 0; /*0x567ed7*/
       v23 = (int16_t)v28 + v21; /*0x567ed7*/
-      a5 = v28; /*0x567ed9*/
+      a5 = (void *)(v28); /*0x567ed9*/
       if ( v22 || v23 >= 0x40000 || (v24 = (int *)*((unsigned int *)((unsigned char *)(this) + 0x13C) + v23)) == 0 ) /*0x567ef5*/
       {
         g_MissionQueueFrame.briefing[139] = v28; /*0x567f0f*/

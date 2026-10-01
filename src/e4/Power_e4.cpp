@@ -281,8 +281,8 @@ unsigned int * Power::UpdateAll()
   v50 = v54; /*0x67ceca*/
   this->Power_field_0x0 = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
-  this->Power_field_0x4 = v50; /*0x67ced5*/
-  this->Power_field_0x8 = v51; /*0x67cedb*/
+  this->Power_field_0x4 = (unsigned int)(v50); /*0x67ced5*/
+  this->Power_field_0x8 = (unsigned char)(v51); /*0x67cedb*/
   return &this->Power_field_0x0; /*0x67ced4*/
 
 }

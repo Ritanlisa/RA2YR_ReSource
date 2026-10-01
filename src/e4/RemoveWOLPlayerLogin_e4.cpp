@@ -28,13 +28,13 @@ void E4Recv_7AE830::sub_7AE830()
   if ( (ObjectClass *)vtable2 > (gamemd::ObjectClass *)(this->nextObject) && LOBYTE(((unsigned int *)this)[0]) != 1 ) /*0x7ae847*/
   {
     vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
-    vtable3 = (unsigned int)((char *)((unsigned int *)this)[0]);
+    vtable3 = (char *)((unsigned int)((char *)((unsigned int *)this)[0]));
     v13 = (int *)((unsigned int)((int *)this->AbstractClass));
-    ((unsigned int *)this)[0] = (void *)(vtable2 >> 1); /*0x7ae85c*/
-    ((unsigned int *)this)[0] = vtable3 - 1; /*0x7ae864*/
+    ((unsigned int *)this)[0] = (unsigned int)((void *)(vtable2 >> 1)); /*0x7ae85c*/
+    ((unsigned int *)this)[0] = (unsigned int)(vtable3 - 1); /*0x7ae864*/
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
     v6 = 4 * (int)((unsigned int *)this)[0]; /*0x7ae874*/
-    this->AbstractClass = v5; /*0x7ae87b*/
+    this->AbstractClass = (unsigned int)(v5); /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)vtable2 > 0 ) /*0x7ae88b*/
     {

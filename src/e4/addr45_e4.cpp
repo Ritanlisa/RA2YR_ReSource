@@ -103,7 +103,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     }
     if ( (_AX & 0x4100) == 0 ) /*0x45148f*/
     {
-      damageParticles = ((unsigned int *)a1)[0]; /*0x451491*/
+      damageParticles = (gamemd::ParticleSystemClass *)(((unsigned int *)a1)[0]); /*0x451491*/
       if ( damageParticles ) /*0x451499*/
         (*((void (**)(ParticleSystemClass *))damageParticles->ObjectClass + 62))(damageParticles); /*0x45149d*/
     }
@@ -238,7 +238,7 @@ void sub_452000(unsigned int * a1)
     && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
         *(unsigned int **)(a1[165] + 80) == v4) )
   {
-    IDA_LOWORD(v3) = Techno::StartInvulnerability(v3); /*0x452078*/
+    IDA_LOWORD(v3) = (unsigned short)(Techno::StartInvulnerability(v3)); /*0x452078*/
   }
   *((unsigned short *)a1 + 896) = v3; /*0x45207a*/
   v15 = a1 + 343; /*0x452091*/
@@ -276,7 +276,7 @@ void sub_452000(unsigned int * a1)
   v11 = *((char *)a1 + 1773); /*0x452123*/
   if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x45213d*/
     IDA_LOBYTE(v11) = 16; /*0x45213f*/
-  v12 = a1 + 343; /*0x452144*/
+  v12 = (int *)(a1 + 343); /*0x452144*/
   v13 = 21; /*0x452146*/
   do /*0x45215b*/
   {
@@ -418,7 +418,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
       ((uint8_t)v38 >> g_BitShift_Green_0 << g_BitShift_Red)
     | (IDA_HIBYTE(v38) >> g_BitMask_Blue << g_BitMask_Green)
     | (v39 >> g_BitMask_Red << g_BitShift_Blue));
-    IDA_LOBYTE(v14) = aP0; /*0x456bee*/
+    IDA_LOBYTE(v14) = (unsigned char)(aP0); /*0x456bee*/
     if ( aP0 ) /*0x456bf4*/
     {
       v15 = (unsigned int)((double)v36);

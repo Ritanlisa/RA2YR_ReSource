@@ -51,9 +51,9 @@ int LocomotionClass::Initialize()
   *((unsigned char *)this + 100) = 0; /*0x4af5b8*/
   *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
   *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
-  *(unsigned int *)this->ILocomotion = &vt_DriveLocomotionClass; /*0x4af5c2*/
+  *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_DriveLocomotionClass); /*0x4af5c2*/
   *(unsigned int *)&this->ILocomotion[4] = &vt_DriveLocomotionClass; /*0x4af5c8*/
-  *((unsigned int *)this + 6) = &off_7E7E8C; /*0x4af5cf*/
+  *((unsigned int *)this + 6) = (unsigned int)(&off_7E7E8C); /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
 }
@@ -155,7 +155,7 @@ int LocomotionClass::ProcessData()
   *((unsigned char *)this + 104) = 0; /*0x513c88*/
   *((unsigned int *)this + 27) = 0; /*0x513c8b*/
   *((unsigned char *)this + 112) = 0; /*0x513c8e*/
-  *(unsigned int *)this->ILocomotion = &vt_HoverLocomotionClass; /*0x513c91*/
+  *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_HoverLocomotionClass); /*0x513c91*/
   *(unsigned int *)&this->ILocomotion[4] = &vt_HoverLocomotionClass; /*0x513c97*/
   return (int)this->ILocomotion; /*0x513ca0*/
 
@@ -210,7 +210,7 @@ int LocomotionClass::Init()
   this->Powered = 1; /*0x55a6cc*/
   this->Dirty = 1; /*0x55a6cf*/
   this->RefCount = 0; /*0x55a6d2*/
-  *(unsigned int *)this->ILocomotion = &vt_LocomotionClass; /*0x55a6d5*/
+  *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6d5*/
   *(unsigned int *)&this->ILocomotion[4] = &vt_LocomotionClass; /*0x55a6db*/
   return this->ILocomotion; /*0x55a6e2*/
 
@@ -221,7 +221,7 @@ namespace gamemd {
 void LocomotionClass::Construct()
 {
 
-  *(unsigned int *)this->ILocomotion = &vt_LocomotionClass; /*0x55a6f0*/
+  *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6f0*/
   *(unsigned int *)&this->ILocomotion[4] = &vt_LocomotionClass; /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
 

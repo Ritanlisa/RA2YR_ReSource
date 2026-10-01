@@ -87,7 +87,7 @@ MixFileClass * * sub_530000()
                    0) )
             {
               v4 = (unsigned int)(g_MixFilePool_Count++);
-              *((unsigned int *)g_MixFilePool + v4) = v3; /*0x5300b3*/
+              *((unsigned int *)g_MixFilePool + v4) = (unsigned int)(v3); /*0x5300b3*/
             }
             ReturnTrue(0); /*0x5300ba*/
           }
@@ -119,7 +119,7 @@ MixFileClass * * sub_530000()
                    0) )
             {
               v8 = (unsigned int)(g_MixFilePool_Count++);
-              *((unsigned int *)g_MixFilePool + v8) = v7; /*0x53016f*/
+              *((unsigned int *)g_MixFilePool + v8) = (unsigned int)(v7); /*0x53016f*/
             }
           }
         }
@@ -202,7 +202,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
         {
           v8 = (unsigned int)(aGlssmdShp);
           if ( g_DisplayWidth != 640 ) /*0x531378*/
-            v8 = aGlslmdShp; /*0x53137a*/
+            v8 = (unsigned int)(aGlslmdShp); /*0x53137a*/
           Block = (void *)SearchMIXFile(v8, 0); /*0x531386*/
           v3 = (int16_t *)Block; /*0x53138a*/
         }
@@ -235,7 +235,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v29 = (int)(v36 - v12 - 10);
   }
   TextRenderer::Printf((int)v32, v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
-  v13 = GetStringCSF(aGuiWwbrand, (int)g_Str_File_Init_CPP, 4941); /*0x53149e*/
+  v13 = (int)(GetStringCSF(aGuiWwbrand, (int)g_Str_File_Init_CPP, 4941)); /*0x53149e*/
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
   {
@@ -244,7 +244,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v30 += v11->q01C + 3; /*0x5314ca*/
   }
   TextRenderer::Printf((int)v32, v13, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
-  v16 = GetStringCSF(aGuiLoadingex, (int)g_Str_File_Init_CPP, 4951); /*0x531507*/
+  v16 = (size_t)(GetStringCSF(aGuiLoadingex, (int)g_Str_File_Init_CPP, 4951)); /*0x531507*/
   v29 = 10; /*0x53152c*/
   v30 = 10; /*0x531530*/
   TextRenderer::Printf((int)v32, v16, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
@@ -327,16 +327,16 @@ char BulkData_Initialize()
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = 0; /*0x5317cc*/
     goto LABEL_11; /*0x5317d2*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = File::LoadFileVXL(v0, (int)&v7, 0); /*0x531788*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = (unsigned int)(File::LoadFileVXL(v0, (int)&v7, 0)); /*0x531788*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
   {
   LABEL_11:
         Debug::Log();
   LABEL_12:
-    *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x53179c*/
+    *(unsigned int *)v7.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x53179c*/
     v9 = 0; /*0x5317a8*/
     Vector::Clear((int)v8); /*0x5317ac*/
-    *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x5317b5*/
+    *(unsigned int *)v7.CDFileClass = (unsigned int)(&off_7E1668); /*0x5317b5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
@@ -347,15 +347,15 @@ char BulkData_Initialize()
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = 0; /*0x531843*/
     goto LABEL_16; /*0x531849*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = File::LoadFileHVA(v2, (int)&v10); /*0x5317fe*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = (unsigned int)(File::LoadFileHVA(v2, (int)&v10)); /*0x5317fe*/
   if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
   {
   LABEL_16:
         Debug::Log();
-    *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x531819*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x531819*/
     v12 = 0; /*0x531821*/
     Vector::Clear((int)v11); /*0x531828*/
-    *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x531831*/
+    *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x531831*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }

@@ -293,7 +293,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = (int)(*a2 + 2 * (v7 + 8));
     *(unsigned int *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
     v106 = v10; /*0x422d40*/
-    v11 = a2[1]; /*0x422d47*/
+    v11 = (int)(a2[1]); /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
     v104 = (v8 - v7) << 8; /*0x422d5e*/
@@ -372,7 +372,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   }
   if ( this->__pad_194[9] ) /*0x422fec*/
     return; /*0x422fec*/
-  AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x422ffa*/
+  AnimClass_field_0xC8 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x422ffa*/
   if ( *(unsigned int *)&AnimClass_field_0xC8[((unsigned int *)(2].__pad_C))[72] > stru_A8EB00.ObjectTypeClass[30] /*0x42301e*/
     || this->__pad_194[5] && ((unsigned int *)(AnimClass_field_0xC8))[2].__pad_C[232] )
   {
@@ -381,9 +381,9 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   *(float *)&v103 = COERCE_FLOAT((*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 27))(this)); /*0x423035*/
   if ( *(float *)&v103 == 0.0 ) /*0x423039*/
     return; /*0x423039*/
-  v21 = this->AnimClass_field_0xC8; /*0x42303f*/
+  v21 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x42303f*/
   AnimClass_field_0x190 = this->AnimClass_field_0x190; /*0x42304b*/
-  AnimClass_field_0xAC = this->AnimClass_field_0xAC; /*0x423051*/
+  AnimClass_field_0xAC = (IUnknown *)(this->AnimClass_field_0xAC); /*0x423051*/
   v104 = (unsigned int)AnimClass_field_0xAC + *(unsigned int *)&v21[((unsigned int *)(2].__pad_C))[40]; /*0x42305d*/
   if ( this->__pad_118[1] ) /*0x423061*/
   {
@@ -457,7 +457,7 @@ LABEL_47:
   if ( (AnimClass_field_0x190 & 1) == 0 ) /*0x423101*/
     BYTE1(AnimClass_field_0x190) |= 8u; /*0x423103*/
   *(unsigned int *)v101 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 114))(this); /*0x423110*/
-  v25 = this->AnimClass_field_0xC8; /*0x423114*/
+  v25 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x423114*/
   v106 = 1000; /*0x42311a*/
   if ( v25[2].__pad_C[201] ) /*0x423122*/
   {
@@ -478,7 +478,7 @@ LABEL_47:
     v31 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
       TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
-    v32 = this->AnimClass_field_0xC8; /*0x42327b*/
+    v32 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x42327b*/
     v105[0] = v31[13]; /*0x423281*/
     if ( !v32[2].__pad_C[209] ) /*0x423285*/
       v106 = *((int16_t *)v31 + 134); /*0x42329a*/
@@ -509,7 +509,7 @@ LABEL_78:
   if ( this->__pad_194[0] ) /*0x423358*/
   {
     v34 = ZCoordToScreenY(*(int *)v101); /*0x423373*/
-    v35 = *a2; /*0x423384*/
+    v35 = (int)(*a2); /*0x423384*/
     v36 = *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
@@ -540,7 +540,7 @@ LABEL_78:
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x42340b*/
-  v43 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v42); /*0x423414*/
+  v43 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v42)); /*0x423414*/
   v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
@@ -639,11 +639,11 @@ LABEL_99:
     v41 = 0.0; /*0x42362a*/
     *(float *)v100 = 0.0; /*0x42362c*/
   }
-  v62 = this->AnimClass_field_0xC8; /*0x423630*/
+  v62 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x423630*/
   if ( v62[2].__pad_C[207] ) /*0x423636*/
   {
     FoundationSize = Building::GetFoundationSize(&v108, 0); /*0x42364f*/
-    v64 = *a2; /*0x423657*/
+    v64 = (int)(*a2); /*0x423657*/
     v65 = a2[1]; /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
     v66 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x423663*/

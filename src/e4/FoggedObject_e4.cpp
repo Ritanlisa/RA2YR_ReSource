@@ -26,10 +26,10 @@ int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
 
   v4 = (gamemd::AbstractClass *)((unsigned int)(0));
   this->FoggedObject_field_0x4 = (unsigned int)(0);
-  *((unsigned int *)this + 2) = aP1; /*0x4d2dc0*/
+  *((unsigned int *)this + 2) = (unsigned int)(aP1); /*0x4d2dc0*/
   *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/
   *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x4d2dca*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/

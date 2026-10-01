@@ -55,14 +55,14 @@ int Object::FindClosestObjectCell( IUnknown * aP1, IUnknown * aP2, IUnknown * aP
   unsigned char v16[20]; // [esp+34h] [ebp-18h] BYREF
   int v17; // [esp+48h] [ebp-4h]
 
-  v12 = (int)((unsigned char *)(0));
-  v13 = (int)((unsigned char *)(0));
+  v12 = (unsigned char *)((int)((unsigned char *)(0)));
+  v13 = (unsigned char *)((int)((unsigned char *)(0)));
   v5 = (unsigned char *)(7 * *aP1);
   v6 = (unsigned char *)(7 * aP1[1]);
   if ( aP2 ) /*0x47c405*/
-    Object_field_0xE8 = this->Object_field_0xE8; /*0x47c407*/
+    Object_field_0xE8 = (unsigned char *)(this->Object_field_0xE8); /*0x47c407*/
   else
-    Object_field_0xE8 = this->Object_field_0xE4; /*0x47c40f*/
+    Object_field_0xE8 = (unsigned char *)(this->Object_field_0xE4); /*0x47c40f*/
   if ( !Object_field_0xE8 ) /*0x47c417*/
     return 0; /*0x47c4bf*/
   v8 = Object_field_0xE8; /*0x47c41d*/
@@ -296,7 +296,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
-            v18 = Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = (unsigned int *)(Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2])); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
             v26[2] = v18[2]; /*0x56c490*/
@@ -434,11 +434,11 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
 
   ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
-  *(unsigned int *)this->__pad_0 = &vt_OverlayClass; /*0x5fc38f*/
-  this->Object_field_0xAC = v5; /*0x5fc395*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_OverlayClass); /*0x5fc38f*/
+  this->Object_field_0xAC = (unsigned char)(v5); /*0x5fc395*/
   this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
-  *(unsigned int *)&this->Object_field_0x2[2] = &vt_OverlayClass; /*0x5fc3a6*/
-  *(unsigned int *)this->__pad_C = &vt_OverlayClass; /*0x5fc3ac*/
+  *(unsigned int *)&this->Object_field_0x2[2] = (unsigned int)(&vt_OverlayClass); /*0x5fc3a6*/
+  *(unsigned int *)this->__pad_C = (unsigned int)(&vt_OverlayClass); /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->Object_field_0x2[2]); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
@@ -448,7 +448,7 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
          dword_A8EC58 + dword_A8EC64,
          0) )
   {
-    v6 = (unsigned int)(dword_A8EC60++);
+    v6 = (gamemd::Object *)((unsigned int)(dword_A8EC60++));
     *((unsigned int *)dword_A8EC54 + v6) = this; /*0x5fc40b*/
   }
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
@@ -503,7 +503,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v33; // [esp+20h] [ebp-8h]
   int v34; // [esp+24h] [ebp-4h]
 
-  location = ((unsigned int *)this)[0]; /*0x5fd987*/
+  location = (int *)(((unsigned int *)this)[0]); /*0x5fd987*/
   v5 = (*((int (**)(OverlayTypeClass *))this->Type->ObjectTypeClass + 39))(this->Type); /*0x5fd98d*/
   v32 = *location; /*0x5fd993*/
   v33 = ((unsigned int *)this)[1]; /*0x5fd99f*/
@@ -538,7 +538,7 @@ LABEL_5:
   v11 = v9 + a2[1]; /*0x5fda30*/
   v30 = *a2; /*0x5fda32*/
   v31 = (char *)DSurface_ViewBounds.field_4 + v11; /*0x5fda42*/
-  Type = this->Type; /*0x5fda46*/
+  Type = (gamemd::OverlayTypeClass *)(this->Type); /*0x5fda46*/
   if ( Type->IsVeinholeMonster ) /*0x5fda4c*/
   {
     v13 = 0; /*0x5fda5a*/
@@ -627,7 +627,7 @@ LABEL_20:
       v32 = *location; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/
       v33 = v24; /*0x5fdc06*/
-      v25 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v32); /*0x5fdc0a*/
+      v25 = (unsigned int *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v32)); /*0x5fdc0a*/
     }
     else
     {
@@ -683,11 +683,11 @@ void * Object::DrawObject(void ** Block, char a2)
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
-  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf7c*/
-  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf83*/
-  ((unsigned int *)Block)[0] = &vt_OverlayClass; /*0x5fdf8a*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf7c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf83*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
-  v5 = Block; /*0x5fdfa6*/
+  v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
   v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {

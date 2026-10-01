@@ -145,7 +145,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v38; // [esp+44h] [ebp+Ch]
   int v39; // [esp+48h] [ebp+10h]
 
-  v6 = ((unsigned char *)(this) + 0x16C); /*0x556098*/
+  v6 = (int)(((unsigned char *)(this) + 0x16C)); /*0x556098*/
   if ( v6 >= 1 )
   {
     if ( !((unsigned char *)(this) + 0x190) ) /*0x5560a8*/
@@ -175,14 +175,14 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     {
       if ( v7 == -1 ) /*0x556128*/
       {
-        v7 = ((unsigned char *)(this) + 0x1A4); /*0x55612a*/
+        v7 = (int)(((unsigned char *)(this) + 0x1A4)); /*0x55612a*/
         v12 = this->u32_1AC; /*0x556130*/
-        v11 = ((unsigned char *)(this) + 0x1A8); /*0x556136*/
+        v11 = (int)(((unsigned char *)(this) + 0x1A8)); /*0x556136*/
       }
       else
       {
-        ((unsigned char *)(this) + 0x1A4) = v7; /*0x556145*/
-        ((unsigned char *)(this) + 0x1A8) = v11; /*0x55614b*/
+        ((unsigned char *)(this) + 0x1A4) = (unsigned char *)(v7); /*0x556145*/
+        ((unsigned char *)(this) + 0x1A8) = (unsigned char *)(v11); /*0x55614b*/
         this->u32_1AC = v12; /*0x556151*/
       }
       this->u8_1B0 = 1; /*0x55613c*/
@@ -191,14 +191,14 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     {
       if ( v7 == -1 ) /*0x556163*/
       {
-        v7 = ((unsigned char *)(this) + 0x198); /*0x556165*/
-        v11 = ((unsigned char *)(this) + 0x19C); /*0x55616b*/
+        v7 = (int)(((unsigned char *)(this) + 0x198)); /*0x556165*/
+        v11 = (int)(((unsigned char *)(this) + 0x19C)); /*0x55616b*/
         v12 = this->u32_1A0; /*0x556171*/
       }
       else
       {
-        ((unsigned char *)(this) + 0x198) = v7; /*0x556179*/
-        ((unsigned char *)(this) + 0x19C) = v11; /*0x55617f*/
+        ((unsigned char *)(this) + 0x198) = (unsigned char *)(v7); /*0x556179*/
+        ((unsigned char *)(this) + 0x19C) = (unsigned char *)(v11); /*0x55617f*/
         this->u32_1A0 = v12; /*0x556185*/
       }
       this->u8_1B0 = 0; /*0x55618b*/
@@ -316,7 +316,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         v13 = 2 * v32 + v33; /*0x5564ae*/
         v27 += 2 * v34; /*0x5564c3*/
         v28 += 2 * v35; /*0x5564d3*/
-        v6 = ((unsigned char *)(this) + 0x16C); /*0x5564d7*/
+        v6 = (int)(((unsigned char *)(this) + 0x16C)); /*0x5564d7*/
         v29 += 0x10000; /*0x5564dd*/
         ++v26; /*0x5564e5*/
         v33 = v13; /*0x5564eb*/

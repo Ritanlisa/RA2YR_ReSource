@@ -231,7 +231,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19); /*0x4f15c6*/
+            v20 = (char *)(EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19)); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             this->Debug::Log(); /*0x4f15dc*/
           }
@@ -249,7 +249,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = EventClass::Add2(v30, *((unsigned int *)dword_A83D4C + 12), 0xDu, v22); /*0x4f166f*/
+            v23 = (char *)(EventClass::Add2(v30, *((unsigned int *)dword_A83D4C + 12), 0xDu, v22)); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -480,13 +480,13 @@ void Options::EnsureCapacity()
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
   v6 = (void *)__2_YAPAXI_Z(24 * v5); /*0x6248dd*/
-  v7 = this->field_8; /*0x6248e2*/
+  v7 = (void *)(this->field_8); /*0x6248e2*/
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
   __3_YAXPAX_Z(this->field_8); /*0x62490f*/
-  this->field_8 = v8; /*0x62491b*/
-  this->field_4 = (void *)v5; /*0x62491e*/
+  this->field_8 = (unsigned int)(v8); /*0x62491b*/
+  this->field_4 = (unsigned int)((void *)v5); /*0x62491e*/
   return 1; /*0x6248b2*/
 
 }
@@ -519,8 +519,8 @@ int Options::GrowBuffer()
     v4 = v6; /*0x625421*/
   }
   __3_YAXPAX_Z(this->field_8); /*0x625429*/
-  this->field_4 = (void *)v4; /*0x625431*/
-  this->field_8 = v5; /*0x625434*/
+  this->field_4 = (unsigned int)((void *)v4); /*0x625431*/
+  this->field_8 = (unsigned int)(v5); /*0x625434*/
   return 1; /*0x6253bf*/
 
 }
@@ -537,8 +537,8 @@ int Options::ReadOptionValue()
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = (int)((void *)(*(unsigned int *)this->__pad_0));
-  v3 = (void *)((int)this->field_4);
+  v2 = (void *)((int)((void *)(*(unsigned int *)this->__pad_0)));
+  v3 = (int)((void *)((int)this->field_4));
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
   v5 = v3 / 2; /*0x6254ef*/
@@ -547,13 +547,13 @@ int Options::ReadOptionValue()
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
   v6 = (void *)__2_YAPAXI_Z(20 * v5); /*0x62550d*/
-  v7 = this->field_8; /*0x625512*/
+  v7 = (void *)(this->field_8); /*0x625512*/
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
   __3_YAXPAX_Z(this->field_8); /*0x62553f*/
-  this->field_8 = v8; /*0x62554b*/
-  this->field_4 = (void *)v5; /*0x62554e*/
+  this->field_8 = (unsigned int)(v8); /*0x62554b*/
+  this->field_4 = (unsigned int)((void *)v5); /*0x62554e*/
   return 1; /*0x6254e2*/
 
 }

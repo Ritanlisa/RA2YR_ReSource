@@ -65,7 +65,7 @@ int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
            0);
   else
     v7 = 0; /*0x540e15*/
-  *(unsigned int *)((char *)this + 4 * *((unsigned int *)this + 17) + 40) = v7; /*0x540e1a*/
+  *(unsigned int *)((char *)this + 4 * *((unsigned int *)this + 17) + 40) = (unsigned int)(v7); /*0x540e1a*/
   v8 = *(unsigned int *)((char *)this + 4 * *((unsigned int *)this + 17) + 40); /*0x540e21*/
   if ( !v8 ) /*0x540e27*/
     return 0; /*0x540e29*/
@@ -164,7 +164,7 @@ MixFileClass * SessionClass::Load()
           {
             v7 = (char *)(off_844BB4[0]);
             if ( v6 != 1 ) /*0x72b433*/
-              v7 = off_844BB8; /*0x72b435*/
+              v7 = (char *)(off_844BB8); /*0x72b435*/
             LoadPaletteSimple(v7, &dword_B0FB84, &dword_B0FB88); /*0x72b43b*/
           }
           else
@@ -207,7 +207,7 @@ MixFileClass * SessionClass::LoadGameSession( ObjectClass * aP1, CellStruct * aP
   }
   this->Debug::Log(); /*0x5adf84*/
   String::Assign((String *)&((unsigned int *)(v13.m_3))[1], (const char *)(v4 + 36)); /*0x5adf91*/
-  pad_50 = this->__pad_50; /*0x5adf96*/
+  pad_50 = (char *)(this->__pad_50); /*0x5adf96*/
   v7 = SessionClass::LoadMapSelection((SessionClass *)pad_50, (char **)&((unsigned int *)(v13.m_3))[1]) == 0; /*0x5adfab*/
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5adfae*/
   if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, *(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
@@ -349,7 +349,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
       v10 = uniqueId->unknown_10[0]; /*0x5cf03f*/
       v11 = uniqueId->MPGameMode[0]; /*0x5cf042*/
       uniqueId->unknown_10[0] = v10 + 1; /*0x5cf048*/
-      *(unsigned int *)(v11 + 4 * v10) = v7; /*0x5cf04b*/
+      *(unsigned int *)(v11 + 4 * v10) = (unsigned int)(v7); /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
     {

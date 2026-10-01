@@ -50,9 +50,9 @@ int MapClass::isLocationShrouded(unsigned short a2)
   v5[3] = this->MapClass_field_0x2C; /*0x4112d8*/
   v5[0] = 0; /*0x4112e0*/
   v5[1] = 0; /*0x4112e4*/
-  MapClass_field_0x28 = this->MapClass_field_0x28; /*0x4112e8*/
-  MapClass_field_0x14 = this->MapClass_field_0x14; /*0x4112eb*/
-  v5[2] = MapClass_field_0x28; /*0x4112f4*/
+  MapClass_field_0x28 = (void *)(this->MapClass_field_0x28); /*0x4112e8*/
+  MapClass_field_0x14 = (void *)(this->MapClass_field_0x14); /*0x4112eb*/
+  v5[2] = (unsigned int)(MapClass_field_0x28); /*0x4112f4*/
   return (*(int (**)(void *, unsigned int *, unsigned int))(*(unsigned int *)MapClass_field_0x14 + 20))( /*0x411303*/
            MapClass_field_0x14,
            v5,
@@ -121,7 +121,7 @@ unsigned int * MapClass::AllocArrays()
     }
     if ( v1[3] ) /*0x42c240*/
       __3_YAXPAX_Z(v1[3]); /*0x42c248*/
-    result = __2_YAPAXI_Z(4 * *(int *)((char *)v1 + (unsigned int)v2)); /*0x42c257*/
+    result = (unsigned int *)(__2_YAPAXI_Z(4 * *(int *)((char *)v1 + (unsigned int)v2))); /*0x42c257*/
     v1[3] = result; /*0x42c25c*/
     v13 = *(int *)((char *)v1 + (unsigned int)v2) - 1; /*0x42c265*/
     if ( v13 >= 0 ) /*0x42c266*/
@@ -188,7 +188,7 @@ int MapClass::RemoveCellReference(int a2)
     result = (*(int (**)(void *))(*(unsigned int *)v3 + 44))(v3); /*0x4851b4*/
     if ( result == 61 ) /*0x4851ba*/
     {
-      MapClass_field_0x28 = this->MapClass_field_0x28; /*0x4851bc*/
+      MapClass_field_0x28 = (unsigned int *)(this->MapClass_field_0x28); /*0x4851bc*/
       a2 = (int)v3; /*0x4851bf*/
       result = (*(int (**)(unsigned int *, int *))(*MapClass_field_0x28 + 16))(MapClass_field_0x28, &a2); /*0x4851cc*/
       if ( result != -1 ) /*0x4851d2*/
@@ -224,8 +224,8 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
   int16_t v9; // dx
   int v10; // ecx
 
-  v4 = aP1; /*0x4a95a2*/
-  LOWORD(result) = *aP1; /*0x4a95aa*/
+  v4 = (unsigned short *)(aP1); /*0x4a95a2*/
+  LOWORD(result) = (unsigned short)(*aP1); /*0x4a95aa*/
   if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
   {
     v6 = *(int16_t **)&this->__pad_1170[12]; /*0x4a95c4*/
@@ -238,7 +238,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
       LOWORD(v8) = v4[1] + v8[1]; /*0x4a95ed*/
       LOWORD(a2) = *v4 + v9; /*0x4a95f1*/
       HIWORD(a2) = (unsigned short)v8; /*0x4a95f6*/
-      aP1 = a2; /*0x4a9603*/
+      aP1 = (IUnknown *)(a2); /*0x4a9603*/
       result = LayerClass::CoordinatesLegal((LayerClass *)this, (int16_t *)&aP1); /*0x4a960a*/
       if ( (unsigned char)result ) /*0x4a9611*/
       {
@@ -288,7 +288,7 @@ int MapClass::ToggleZoom(int a2)
     {
       if ( v4 && !MapClass::isCellAccessible((char *)&g_VisibilitySystem, (int)dword_A83D4C->Object_field_0x30) ) /*0x4ac9ad*/
         v4 = 0; /*0x4ac9b6*/
-      MapClass_field_0x0 = this->MapClass_field_0x0; /*0x4ac9b8*/
+      MapClass_field_0x0 = (void *)(this->MapClass_field_0x0); /*0x4ac9b8*/
       this->__pad_11A4[13] = 0; /*0x4ac9c0*/
       this->__pad_11A4[14] = 0; /*0x4ac9c7*/
       this->__pad_11A4[15] = 0; /*0x4ac9ce*/
@@ -377,7 +377,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   Buffer::Init((Buffer *)&v18.Pipe_field_0x0C, v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
   *(unsigned int *)v18.__pad_0 = &vt_BufferPipe; /*0x4ad979*/
-  v11 = MapClass::DecompressCellData((MapClass *)&stru_87F5F0.__pad_58[416], (int)&v18); /*0x4ad990*/
+  v11 = (int)(MapClass::DecompressCellData((MapClass *)&stru_87F5F0.__pad_58[416], (int)&v18)); /*0x4ad990*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack3, 0); /*0x4ad9af*/
@@ -405,7 +405,7 @@ int MapClass::SetScrollMode(MouseClass * aP1)
 
   int result; // eax
 
-  result = aP1; /*0x4aeb30*/
+  result = (int)(aP1); /*0x4aeb30*/
   *((unsigned int *)this + 1128) = aP1; /*0x4aeb36*/
   LOBYTE(result) = aP1 != 0; /*0x4aeb3c*/
   *((unsigned char *)this + 4508) = aP1 != 0; /*0x4aeb3f*/
@@ -520,7 +520,7 @@ ObjectClass * * MapClass::LoadFileData()
   if ( *(unsigned int *)&this->__pad_5C[72] ) /*0x547043*/
     __3_YAXPAX_Z(*(void **)&this->__pad_5C[72]); /*0x54704e*/
   v3 = (void *)__2_YAPAXI_Z(Size); /*0x547057*/
-  *(unsigned int *)&this->__pad_5C[72] = v3; /*0x547063*/
+  *(unsigned int *)&this->__pad_5C[72] = (unsigned int)(v3); /*0x547063*/
   CCFileClass::Read(&v12, v3, Size); /*0x54706b*/
   v4 = *(uint8_t **)&this->__pad_5C[72]; /*0x547070*/
   this->__pad_5C[76] = 1; /*0x547078*/

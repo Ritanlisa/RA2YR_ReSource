@@ -56,7 +56,7 @@ void DialogControl::Constructor()
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
-  *((unsigned int *)this + 15) = v3; /*0x623379*/
+  *((unsigned int *)this + 15) = (unsigned int)(v3); /*0x623379*/
   *((unsigned int *)this + 16) = 0; /*0x62337c*/
   *((unsigned int *)this + 23) = 0; /*0x62337f*/
   *((unsigned int *)this + 36) = -1; /*0x623382*/

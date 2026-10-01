@@ -29,7 +29,7 @@ namespace gamemd {
 unsigned int * BinkMovie::Close(char * FullPath)
 {
 
-  this->__pad_0[0] = (unsigned int *)(0);
+  this->__pad_0[0] = (unsigned int)((unsigned int *)(0));
   this->BinkMovie_field_0x4[0] = 0; /*0x432697*/
   this->BinkMovie_field_0xC = 0; /*0x43269a*/
   this->BinkMovie_field_0x20 = 0; /*0x43269d*/
@@ -163,7 +163,7 @@ LABEL_14:
   if ( (uint8_t)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
     FileA = (HANDLE)((unsigned int)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0)));
-    *((unsigned int *)this + 10) = FileA; /*0x43282d*/
+    *((unsigned int *)this + 10) = (unsigned int)(FileA); /*0x43282d*/
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {
       SetFilePointer(FileA, lDistanceToMove[0], 0, 0); /*0x43283a*/
@@ -182,7 +182,7 @@ LABEL_15:
                                           / *(unsigned int *)(*((unsigned int *)this + 1) + 24));
     v14 = (unsigned int *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
     v15 = *(int **)((char *)this + 4); /*0x4328bd*/
-    *((unsigned int *)this + 8) = v14; /*0x4328c0*/
+    *((unsigned int *)this + 8) = (unsigned int)(v14); /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
     v17 = *v15; /*0x4328c5*/
     v18 = v15[1]; /*0x4328c7*/
@@ -256,7 +256,7 @@ LABEL_40:
       v27 = v17; /*0x432a12*/
     }
     *((unsigned int *)this + 4) = left; /*0x432a29*/
-    *((unsigned int *)this + 5) = v22; /*0x432a2c*/
+    *((unsigned int *)this + 5) = (unsigned int)(v22); /*0x432a2c*/
     *((unsigned int *)this + 6) = v27; /*0x432a2f*/
     *((unsigned int *)this + 7) = bottom; /*0x432a32*/
     *((unsigned int *)this + 2) = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
@@ -319,7 +319,7 @@ void BinkMovie::Play()
     *((unsigned char *)this + 45) = 0; /*0x432cb4*/
     while ( 1 ) /*0x432cb8*/
     {
-      BinkMovie_field_0x4 = this->BinkMovie_field_0x4; /*0x432cb8*/
+      BinkMovie_field_0x4 = (int)(this->BinkMovie_field_0x4); /*0x432cb8*/
       v5 = *(unsigned int *)(BinkMovie_field_0x4 + 12); /*0x432cbb*/
       if ( v5 >= *(unsigned int *)(BinkMovie_field_0x4 + 8) || v5 < *((unsigned int *)this + 12) ) /*0x432ccc*/
         break; /*0x432ccc*/

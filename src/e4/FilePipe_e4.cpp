@@ -51,7 +51,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(3 * a2); /*0x478364*/
+      v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478364*/
       if ( v6 ) /*0x47836e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
@@ -104,7 +104,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x478402*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x47840d*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x47840d*/
       this->m_8 = v3; /*0x478413*/
       BYTE1(this->m_C) = a3 == 0; /*0x478416*/
       return 1; /*0x47841c*/
@@ -226,7 +226,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4781b1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4781ba*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4781ba*/
     this->m_8 = a2; /*0x4781c2*/
     BYTE1(this->m_C) = a3 == 0; /*0x4781c5*/
   }
@@ -476,7 +476,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4b9e91*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4b9e9a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4b9e9a*/
     this->m_8 = a2; /*0x4b9ea2*/
     BYTE1(this->m_C) = a3 == 0; /*0x4b9ea5*/
   }
@@ -547,7 +547,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4ba0f1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4ba0fa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4ba0fa*/
     this->m_8 = a2; /*0x4ba102*/
     BYTE1(this->m_C) = a3 == 0; /*0x4ba105*/
   }

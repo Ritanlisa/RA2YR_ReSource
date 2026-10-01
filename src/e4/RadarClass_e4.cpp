@@ -35,10 +35,10 @@ CampaignClass * RadarClass::Destruct()
   CampaignClass *RadarClass_field_0x1228; // eax
   int result; // eax
 
-  this->RadarClass_field_0x0 = (gamemd::MapClass **)(&vt_RadarClass);
+  this->RadarClass_field_0x0 = (unsigned int)((gamemd::MapClass **)(&vt_RadarClass));
   AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
-  p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
+  p_RadarClass_field_0x1488 = (gamemd::MapClass **)(&this->RadarClass_field_0x1488); /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -55,23 +55,23 @@ CampaignClass * RadarClass::Destruct()
     p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x652c55*/
+  RadarClass_field_0x1260 = (gamemd::CampaignClass *)(this->RadarClass_field_0x1260); /*0x652c55*/
   this->RadarClass_field_0x125C = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
     this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
   }
-  this->__pad_1264[5] = (gamemd::CampaignClass *)(0);
+  this->__pad_1264[5] = (unsigned int)((gamemd::CampaignClass *)(0));
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
-  RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
+  RadarClass_field_0x1228 = (gamemd::CampaignClass *)(this->RadarClass_field_0x1228); /*0x652c8c*/
   this->RadarClass_field_0x1224 = (VectorClass *)&vt_VectorClass; /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->__pad_122C[5] ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/
     this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
   }
-  this->__pad_122C[5] = (gamemd::CampaignClass *)(0);
+  this->__pad_122C[5] = (unsigned int)((gamemd::CampaignClass *)(0));
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
   ((MapClass *)((char *)this))->Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
@@ -158,7 +158,7 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
     {
       v17 = (char *)((unsigned int)(0));
     }
-    *((unsigned int *)v3 + 1159) = v17; /*0x65479d*/
+    *((unsigned int *)v3 + 1159) = (unsigned int)(v17); /*0x65479d*/
     (*(void (**)(char *, unsigned int))(v17->nextArrayIndex)(v17, 0); /*0x6547a8*/
     IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
   }
@@ -369,7 +369,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->RadarClass_field_0x4 = (unsigned int)(0);
   this->RadarClass_field_0x8 = (unsigned int)(0);
   *(unsigned int *)this->__pad_C = 2; /*0x4f422a*/
-  this->RadarClass_field_0x0 = &off_7EA6FC; /*0x4f4231*/
+  this->RadarClass_field_0x0 = (unsigned int)(&off_7EA6FC); /*0x4f4231*/
   return &this->RadarClass_field_0x0; /*0x4f4237*/
 
 }

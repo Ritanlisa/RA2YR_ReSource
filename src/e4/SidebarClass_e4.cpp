@@ -227,7 +227,7 @@ void * SidebarClass::LoadAssets()
   ButtonClass::SetState((ButtonClass *)&stru_B0B3A0, v12); /*0x6a592b*/
   v5 = 0; /*0x6a5936*/
   dword_B0B3F0 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a5938*/
-  v6 = &stru_B07C48; /*0x6a593e*/
+  v6 = (gamemd::ShapeButtonClass *)(&stru_B07C48); /*0x6a593e*/
   do /*0x6a598c*/
   {
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
@@ -283,7 +283,7 @@ void * SidebarClass::LoadAssets()
   dword_B0B4C0 = LoadFileSHP(aLatiShp, (bool *)&byte_B0B4D8); /*0x6a5bbb*/
   dword_B0B4C4 = LoadFileSHP(aRusiShp, (bool *)&byte_B0B4D9); /*0x6a5bcf*/
   result = LoadFileSHP(aYriiShp, (bool *)&byte_B0B4DA); /*0x6a5bd4*/
-  dword_B0B4C8 = result; /*0x6a5bdb*/
+  dword_B0B4C8 = (unsigned int)(result); /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
 
 }
@@ -320,7 +320,7 @@ int SidebarClass::Redraw(char a2)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1530] = dword_B07DD0; /*0x6a6c5f*/
   v19 = g_DSurface_Hidden_2; /*0x6a6c65*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1534] = dword_B07DD4; /*0x6a6c6f*/
-  g_DSurface_Hidden_2 = (AudioStream *)DSurface_Sidebar; /*0x6a6c74*/
+  g_DSurface_Hidden_2 = (int)((AudioStream *)DSurface_Sidebar); /*0x6a6c74*/
   v17 = 0; /*0x6a6c82*/
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a6c92*/
   v22[2] = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6a6c99*/
@@ -426,7 +426,7 @@ int SidebarClass::Redraw(char a2)
     }
     ShapeButton::Draw(&stru_B07DF8, v17); /*0x6a6e88*/
     ShapeButton::Draw(&stru_B0B3A0, v17); /*0x6a6e93*/
-    v8 = &stru_B07C48; /*0x6a6e98*/
+    v8 = (gamemd::ShapeButtonClass *)(&stru_B07C48); /*0x6a6e98*/
     do /*0x6a6eaf*/
     {
       ShapeButton::Draw(v8, 1); /*0x6a6ea1*/
@@ -580,7 +580,7 @@ int SidebarClass::SwitchTab(int a2)
   {
     GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * result)); /*0x6a75b4*/
     v4 = 0; /*0x6a75c6*/
-    v5 = (char *)this + 3988 * *((unsigned int *)this + 5351) + 5444; /*0x6a75ce*/
+    v5 = (int)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5444); /*0x6a75ce*/
     *(unsigned char *)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5472) = 0; /*0x6a75d5*/
     do /*0x6a7600*/
     {

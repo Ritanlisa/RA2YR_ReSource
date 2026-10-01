@@ -83,13 +83,13 @@ int FileSystem::ProcessNextFileExtension()
       {
         v4 = 0; /*0x626df8*/
       }
-      *(unsigned int *)&v1[4] = v4; /*0x626dfc*/
+      *(unsigned int *)&v1[4] = (unsigned int)(v4); /*0x626dfc*/
       v5 = (FileExtension *)__2_YAPAXI_Z(0x18u); /*0x626dff*/
       if ( v5 ) /*0x626e09*/
         v6 = FileExtension::Constructor(v5, 0, 0); /*0x626e0f*/
       else
         v6 = 0; /*0x626e16*/
-      *(unsigned int *)&v1[8] = v6; /*0x626e1a*/
+      *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
       v7 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v7 ) /*0x626e27*/
         *(unsigned int *)&v1[12] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626e39*/

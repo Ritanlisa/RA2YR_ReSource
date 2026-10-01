@@ -124,7 +124,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         if ( !v9 ) /*0x5e77ae*/
           return result; /*0x5e7812*/
         v10 = Stream::WriteBlock((int *)&unk_A8EA70, (int)Str, 250, 1); /*0x5e77cf*/
-        for ( result = Count::GetCountQueue((Count *)&unk_A8EA70); /*0x5e77d8*/
+        for ( result = (void **)(Count::GetCountQueue((Count *)&unk_A8EA70)); /*0x5e77d8*/
               result > 0;
               result = Count::GetCountQueue((Count *)&unk_A8EA70) )
         {
@@ -197,22 +197,22 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
 LABEL_44:
       v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(unsigned int *)Str = &vt_CCFileClass; /*0x5e7864*/
+      *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
-      *(unsigned int *)Str = &off_7E1668; /*0x5e787f*/
+      *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
       result = ((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = __2_YAPAXI_Z(4u); /*0x5e7892*/
+        result = (void **)(__2_YAPAXI_Z(4u)); /*0x5e7892*/
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = 0; /*0x5e78e4*/
           return result; /*0x5e78f4*/
         }
         result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
-        g_UIControlState = (Skirmish *)result; /*0x5e78a5*/
+        g_UIControlState = (int)((Skirmish *)result); /*0x5e78a5*/
       }
       if ( g_UIControlState ) /*0x5e78b0*/
       {
@@ -240,8 +240,8 @@ LABEL_44:
       Flagged = (int)(this->GameSettings::FindFlagged());
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
-      v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/
-      v3 = Network::SendToPlayer((int)&unk_A8E9C0, (int)Str, 47, 1, (wchar_t *)v5); /*0x5e75c4*/
+      v5 = (char *)(CharToWideString(Flagged + 36)); /*0x5e75b0*/
+      v3 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)Str, 47, 1, (wchar_t *)v5)); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {
@@ -300,12 +300,12 @@ int Session::StartGame(HWND hWnd)
     ((ComPtr *)((ComPtr *)g_UIControlState))->Dtor(); /*0x5ed397*/
     __3_YAXPAX_Z(v2); /*0x5ed39d*/
   }
-  v3 = (int)((ObjectClass *)__2_YAPAXI_Z(4u));
+  v3 = (gamemd::ObjectClass *)((int)((ObjectClass *)__2_YAPAXI_Z(4u)));
   if ( v3 ) /*0x5ed3b2*/
     v4 = (Skirmish *)unknown_libname_27(v3); /*0x5ed3b6*/
   else
     v4 = 0; /*0x5ed3bd*/
-  g_UIControlState = v4; /*0x5ed3c6*/
+  g_UIControlState = (int)(v4); /*0x5ed3c6*/
   Surface::LoadToSurfaceSHP((Surface *)v4, ExistingFileName); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
     Session::PrepareGame(hWnd); /*0x5ed3dd*/

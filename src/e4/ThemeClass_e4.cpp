@@ -136,7 +136,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       if ( v7 == -1 ) /*0x720631*/
       {
 LABEL_10:
-        v8 = __2_YAPAXI_Z(0x290u); /*0x720637*/
+        v8 = (unsigned int *)(__2_YAPAXI_Z(0x290u)); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
         {
@@ -161,7 +161,7 @@ LABEL_10:
           v12 = *((unsigned int *)this + 9); /*0x7206d8*/
           v13 = *((unsigned int *)this + 6); /*0x7206db*/
           *((unsigned int *)this + 9) = v12 + 1; /*0x7206e1*/
-          *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
+          *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7206e4*/
         }
       }
       else
@@ -180,7 +180,7 @@ LABEL_10:
   {
     Enabled = (unsigned int)(this->Audio::GetEnabled());
     result = (void *)((unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u)));
-    *((unsigned int *)this + 11) = result; /*0x720732*/
+    *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/

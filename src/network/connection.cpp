@@ -117,7 +117,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
 
   IDA_LOWORD(a1->PhoneNumber[3]) = a5; /*0x48be73*/
   a1->PhoneNumber[4] = a6; /*0x48be7b*/
-  *(unsigned int *)((unsigned char *)(a1) + 0x0) = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
+  *(unsigned int *)((unsigned char *)(a1) + 0x0) = (unsigned int)(&(void*)(void*)&ConnectionClass_vftable); /*0x48be83*/
   a1->PhoneNumber[1] = (unsigned int)(a4)+ 14; /*0x48be89*/
   a1->PhoneNumber[5] = a7; /*0x48be8c*/
   a1->PhoneNumber[6] = a8; /*0x48be8f*/
@@ -176,7 +176,7 @@ bool IPXConnClass::receive(void * a1, void * a2, void * a3, void * a4, void * a5
   if ( a5 ) /*0x53f682*/
   {
     Network::CopyAddress((Network *)a4, &a4, (int)v17); /*0x53f68e*/
-    a4 = *(unsigned int *)(a5); /*0x53f69f*/
+    a4 = (void *)(*(unsigned int *)(a5)); /*0x53f69f*/
     NetworkID::Assign(&qword_A8DBA4, &a4, (int)v17, 0); /*0x53f6a9*/
   }
   v9 = 0; /*0x53f6b2*/
