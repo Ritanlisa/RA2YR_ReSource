@@ -5,12 +5,13 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct GenericNode;  // fix_fwd_type_supply
 
 struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
     void *q4;  // 0x4
-    void* ;  // 0x8
+    void* p8;  // regen name
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
     char Delegate_field_10[4];  // 0x10
@@ -32,7 +33,6 @@ struct Delegate {
     unsigned int Delegate_field_08;
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
-struct GenericNode;  // fix_fwd_type_supply
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);

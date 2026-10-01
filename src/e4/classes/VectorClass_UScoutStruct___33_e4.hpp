@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_UScoutStruct___33 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
@@ -20,8 +22,6 @@ struct VectorClass_UScoutStruct___33 {
     AbstractClass * q130;  // 0x130
     AbstractClass * q304;  // 0x304
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor(void *a1_1);  // 0x50E4A0
     unsigned int GetCapacity(int a2);  // 0x50E4D0
     int GetSize(unsigned int * a2);  // 0x50EB40

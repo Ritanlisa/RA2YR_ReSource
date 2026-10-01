@@ -4,9 +4,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct IUnknown;  // fix_fwd_type_supply
 struct Math {
 // --- flat members (BEGIN) ---
-struct IUnknown;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC

@@ -5,12 +5,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct ParticleSystemClass {
-// --- flat members (BEGIN) ---
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+
+struct ParticleSystemClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

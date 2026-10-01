@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_765000 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -34,7 +35,6 @@ struct E4Recv_765000 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * sub_765000(ScoreScreen * aP1);  // 0x765000
 };
 } // namespace gamemd

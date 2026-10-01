@@ -111,7 +111,7 @@ void ObjectClass::MarkForRedraw()
   return result; /*0x5f4d2d*/
 }
 // 0x5f4d10
-    int __thiscall ObjectClass::MarkForRedraw(void *(void**)this)
+    int __thiscall ObjectClass::MarkForRedraw(void *a1)
     {
       int result; // eax
 

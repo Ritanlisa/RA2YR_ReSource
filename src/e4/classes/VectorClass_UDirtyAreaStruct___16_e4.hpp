@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UDirtyAreaStruct___16 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
@@ -15,8 +17,6 @@ struct VectorClass_UDirtyAreaStruct___16 {
     unsigned char q054;  // 0x54
     unsigned char q084;  // 0x84
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Clear(int a2);  // 0x6DC5D0
     char AddRef(int a2);  // 0x6DC9D0
     char Release(int a2, unsigned int * a3);  // 0x6DCA10

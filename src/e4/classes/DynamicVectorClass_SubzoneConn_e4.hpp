@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_SubzoneConn {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -19,7 +20,6 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned int *m_1;
     unsigned int m_C;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, char * a3);  // 0x589190
     DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5890B0
     int GetSize(unsigned int * a2);  // 0x5892D0

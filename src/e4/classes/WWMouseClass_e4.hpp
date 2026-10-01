@@ -7,10 +7,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MouseClass;  // fix_fwd_type_supply
 
 struct WWMouseClass {
 // --- flat members (BEGIN) ---
-struct MouseClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

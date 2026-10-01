@@ -5,12 +5,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct IPXInterfaceClass {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
+
+struct IPXInterfaceClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     bool Initialized;  // 0x4
     unsigned short BoundSocket;  // 0x6

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct File {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -32,7 +33,6 @@ struct File {
     unsigned int q030;
     unsigned int q034;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     char IsReady(int a2, void *a2_2);  // 0x431F10
     AbstractClass * LoadFont(char * Source);  // 0x433990
     char Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x4CB920

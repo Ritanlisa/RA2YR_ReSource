@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct OverlayTypeClass {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
@@ -20,6 +17,9 @@ struct AnimTypeClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 struct OverlayClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
+
+struct OverlayTypeClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

@@ -4,11 +4,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct HashTable_flat;  // fix_fwd_type_supply
 struct E4Recv_764B90 {
 // --- flat members (BEGIN) ---
-struct HashTable_flat;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
-    void* ;  // 0x4
+    void* p4;  // regen name
     unsigned int u32_C;  // 0xC
     void *q18;  // 0x18
     unsigned int M28;  // 0x1C

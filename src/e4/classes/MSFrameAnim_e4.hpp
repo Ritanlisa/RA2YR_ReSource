@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MSVQAnim;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct MSFrameAnim {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -23,8 +25,6 @@ struct MSFrameAnim {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct MSVQAnim;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void * QueryInterface(unsigned int * Block, char a2);  // 0x769BD0
     AbstractClass * * setFrameRate(int a2, unsigned int * a3);  // 0x769FE0
     int initAnimation();  // 0x769C50

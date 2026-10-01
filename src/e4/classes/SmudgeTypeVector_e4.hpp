@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct SmudgeTypeVector {
 // --- flat members (BEGIN) ---
@@ -20,7 +21,6 @@ struct SmudgeTypeVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
 };
 

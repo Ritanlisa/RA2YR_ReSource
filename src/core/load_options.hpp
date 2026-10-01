@@ -180,6 +180,8 @@ private:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void vt03();  // 0x55A150
     // --- gap2 auto-generated stub declarations (END) ---
+    unsigned int *m_1;  // supplied (C2039)
+    unsigned int *m_8;  // supplied (C2039)
 };
 
 // ============================================================================

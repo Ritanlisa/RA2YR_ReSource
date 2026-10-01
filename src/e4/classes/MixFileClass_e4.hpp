@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MixHeaderData;  // fix_fwd_type_supply
 
 struct MixFileClass {
 // --- flat members (BEGIN) ---
@@ -26,7 +27,6 @@ struct MixFileClass {
     unsigned char* MemoryData;  // 0x28
     int MemoryDataSize;  // 0x2C
 // --- flat members (END) ---
-struct MixHeaderData;  // fix_fwd_type_supply
     void CleanupCache();
     void DestroyCache();
     static double CacheNode_Dtor(...);  // C2597 interim stub

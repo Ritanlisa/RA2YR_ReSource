@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct ConnectionClass {
 // --- flat members (BEGIN) ---
@@ -29,7 +30,6 @@ struct ConnectionClass {
     unsigned int Debug;
     unsigned int Timer;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5);
     int StubReturnFalse();
     int allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5, void *a5);

@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct CCINIClass;  // fix_fwd_type_supply
 struct E4Recv_474540 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -26,7 +27,6 @@ struct E4Recv_474540 {
     unsigned int q5444;  // 0x5444
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-struct CCINIClass;  // fix_fwd_type_supply
     CCINIClass * sub_474540(CCINIClass * aP1, char a3);  // 0x474540
 };
 } // namespace gamemd

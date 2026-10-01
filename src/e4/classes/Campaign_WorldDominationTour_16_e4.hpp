@@ -6,6 +6,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorCursor;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct Campaign_WorldDominationTour_16 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -15,8 +17,6 @@ struct Campaign_WorldDominationTour_16 {
     bool IsAllocated;  // 0xD
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorCursor;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Release(int a2, unsigned int * a3);  // 0x765840
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);  // 0x7656D0
     rc_ptr * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x765710

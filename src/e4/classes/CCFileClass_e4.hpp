@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AudioController;  // fix_fwd_type_supply
 
 struct CCFileClass {
 // --- flat members (BEGIN) ---
-struct AudioController;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* FilePointer;  // 0x4
     int FileSize;  // 0x8

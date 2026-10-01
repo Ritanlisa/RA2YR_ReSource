@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct BuildingClass {
-// --- flat members (BEGIN) ---
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
@@ -34,6 +31,9 @@ struct LightSourceClass;  // fix_fwd_type_supply
 struct AudioController;  // fix_fwd_type_supply
 struct UnitTypeClass;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply
+
+struct BuildingClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

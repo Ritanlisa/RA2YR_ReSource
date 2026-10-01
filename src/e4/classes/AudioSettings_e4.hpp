@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct AudioSettings {
 // --- flat members (BEGIN) ---
@@ -20,7 +21,6 @@ struct AudioSettings {
     unsigned int Audio;
     unsigned int Debug;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd);
     void SetFlag68(char a2);
     void SetFlag70(char a2);

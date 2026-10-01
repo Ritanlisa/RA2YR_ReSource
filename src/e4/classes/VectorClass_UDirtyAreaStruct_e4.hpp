@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UDirtyAreaStruct {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct VectorClass_UDirtyAreaStruct {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass * * SetCapacity(CCINIClass * aP1, char * a2);  // 0x6DC850
     DynamicVector * Constructor_VectorClass_ShadowControlClass___(unsigned int * Block, char a2);  // 0x6DCD20
     void Destroy(void *a1_1);  // 0x6DC4E0

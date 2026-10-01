@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ObjectClass;  // fix_fwd_type_supply
 struct E4Recv_4CB640 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -21,7 +22,6 @@ struct E4Recv_4CB640 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-struct ObjectClass;  // fix_fwd_type_supply
     void * sub_4CB640(char * Destination, RandomStruct * aP1, int a3);  // 0x4CB640
 };
 } // namespace gamemd

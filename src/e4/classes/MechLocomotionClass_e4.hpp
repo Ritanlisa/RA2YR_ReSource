@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ILocomotion;  // fix_fwd_type_supply
 
 struct MechLocomotionClass {
 // --- flat members (BEGIN) ---
@@ -28,7 +29,6 @@ struct MechLocomotionClass {
     unsigned int q033;  // 0x33
     unsigned int LocomotionClass;
 // --- flat members (END) ---
-struct ILocomotion;  // fix_fwd_type_supply
     MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int * a1, int * a2);
     int StubReturn52();

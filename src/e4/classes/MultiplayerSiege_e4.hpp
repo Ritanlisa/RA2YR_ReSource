@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct MultiplayerSiege {
 // --- flat members (BEGIN) ---
@@ -17,7 +18,6 @@ struct MultiplayerSiege {
     unsigned int Debug;
     unsigned int PlayerClass;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * ProcessTurn(char a2);
     MultiplayerSiege * QueryInterface(char a2);
     char CheckStatus(int a1);

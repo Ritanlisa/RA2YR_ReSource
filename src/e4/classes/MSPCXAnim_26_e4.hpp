@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct MSPCXAnim_26 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct MSPCXAnim_26 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x5D06D0
     unsigned int Draw(int a2);  // 0x5D0700
     int GetFrame(int a2);  // 0x5D0720

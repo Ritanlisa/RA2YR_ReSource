@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct MSOverlayAnim {
 // --- flat members (BEGIN) ---
@@ -21,7 +22,6 @@ struct MSOverlayAnim {
     unsigned int u32_1C;
     unsigned int u32_3C;
 // --- flat members (END) ---
-struct MSShapeAnim;  // fix_fwd_type_supply
     MSShapeAnim * QueryInterface(unsigned int * Block, char a2);
     void StubReturnFalse(int a1);
 };

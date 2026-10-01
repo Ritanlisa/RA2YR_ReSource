@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x54A7B0
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x54A800
     void Destroy(void *a1_1);  // 0x54A1F0

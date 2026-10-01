@@ -6,12 +6,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct DynamicVectorClass_uint {
-// --- flat members (BEGIN) ---
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVectorClass_uint {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8

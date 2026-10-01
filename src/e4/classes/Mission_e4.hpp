@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ScriptClass;  // fix_fwd_type_supply
 struct Mission {
 // --- flat members (BEGIN) ---
-struct ScriptClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

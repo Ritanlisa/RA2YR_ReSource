@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ScriptTypeClass;  // fix_fwd_type_supply
 
 struct ScriptClass {
 // --- flat members (BEGIN) ---
@@ -26,7 +27,6 @@ struct ScriptClass {
     bool q02B;  // 0x2B
     char idxCurrentLine[4];  // 0x2C
 // --- flat members (END) ---
-struct ScriptTypeClass;  // fix_fwd_type_supply
     int LoadState(AbstractClass * aP0, int aP1);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn26();

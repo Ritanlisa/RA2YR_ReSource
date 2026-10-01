@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct MapClass {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -24,6 +21,9 @@ struct BombClass;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+
+struct MapClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -101,7 +101,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned char q0C0;  // 0xC0
     unsigned int q0C3;  // 0xC3
     unsigned char q0C7;  // 0xC7
-    void* ;  // 0xD4
+    void* pD4;  // regen name
     void* q0D8;  // 0xD8
     MapClass* q0DC;  // 0xDC
     unsigned char q0E0;  // 0xE0
@@ -400,7 +400,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
     unsigned int q1158;  // 0x1158
-    void* ;  // 0x115C
+    void* p115C;  // regen name
     void* q1160;  // 0x1160
     MapClass* q1164;  // 0x1164
     unsigned char q1168;  // 0x1168

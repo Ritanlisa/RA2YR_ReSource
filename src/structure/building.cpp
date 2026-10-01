@@ -563,7 +563,7 @@ int BuildingClass::ScalarDtor()
   return (int)this; /*0x459f3a*/
 }
 // 0x459f20
-    int __thiscall BuildingClass::ScalarDtor(void *(void**)this)
+    int __thiscall BuildingClass::ScalarDtor(void *a1)
     {
       char v3; // [esp+8h] [ebp+4h]
 
@@ -651,7 +651,7 @@ void BuildingClass::Destroyed(ObjectClass* killer)
   return 0; /*0x459e8d*/
 }
 // 0x459e80
-    int __thiscall BuildingClass::Destroyed(void *(void**)this)
+    int __thiscall BuildingClass::Destroyed(void *a1)
     {
       unsigned int *v2; // [esp+8h] [ebp+8h]
 
@@ -10363,7 +10363,7 @@ bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
   return result; /*0x465d6a*/
 }
 // 0x465d40
-    int __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(int *(void**)this)
+    int __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(int *a1)
     {
       int v1; // eax
       bool result; // al
@@ -12559,7 +12559,7 @@ double BuildingClass::GetHealthRatio() const
   *(unsigned char *)(v3 + 28) = 1; /*0x6386ba*/
   return 1; /*0x6386be*/
 // 0x455b90
-    int __thiscall BuildingClass::GetFWFlags(int *(void**)this)
+    int __thiscall BuildingClass::GetFWFlags(int *a1)
     {
       int *location; // ecx
       int v2; // ebx

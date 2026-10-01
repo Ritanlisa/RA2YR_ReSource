@@ -2892,7 +2892,7 @@ bool InfantryClass::CanEnterBuilding()
   return result; /*0x522bfa*/
 }
 // 0x522bc0
-    bool __thiscall InfantryClass::CanEnterBuilding(int *(void**)this)
+    bool __thiscall InfantryClass::CanEnterBuilding(int *a1)
     {
       int v2; // eax
       bool result; // al
@@ -2967,7 +2967,7 @@ int InfantryClass::FindIdleAITarget()
   return result; /*0x51f654*/
 }
 // 0x51f640
-    int __thiscall InfantryClass::FindIdleAITarget(int *(void**)this)
+    int __thiscall InfantryClass::FindIdleAITarget(int *a1)
     {
       int result; // eax
 

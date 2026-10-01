@@ -3,9 +3,9 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
-struct AbstractTypeClass;  // fix_fwd_type_supply
 
 namespace gamemd {
+struct AbstractTypeClass;  // fix_fwd_type_supply
 struct E4Recv_6E5FE0 {
     void* vfptr;  // minimal E2 declaration
     AbstractTypeClass * SaveTriggerTagsToINI();  // 0x6E5FE0

@@ -6,8 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass {
-// --- flat members (BEGIN) ---
 struct MissionClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct IsometricTileClass;  // fix_fwd_type_supply
@@ -15,6 +13,8 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct Surface;  // fix_fwd_type_supply
 struct FileClass;  // fix_fwd_type_supply
+struct AbstractClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

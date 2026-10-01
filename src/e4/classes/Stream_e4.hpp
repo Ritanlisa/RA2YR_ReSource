@@ -6,10 +6,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct StreamClass;  // fix_fwd_type_supply
 
 struct Stream {
 // --- flat members (BEGIN) ---
-struct StreamClass;  // fix_fwd_type_supply
     StreamClass* m_Stream;  // 0x0
     char Stream_field_04[4];  // 0x4
     char Stream_field_08[4];  // 0x8

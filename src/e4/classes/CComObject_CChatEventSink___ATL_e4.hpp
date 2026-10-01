@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Coord;  // fix_fwd_type_supply
 struct CComObject_CChatEventSink___ATL {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -13,7 +14,6 @@ struct CComObject_CChatEventSink___ATL {
     unsigned int Dialog;
     unsigned int Timer;
 // --- flat members (END) ---
-struct Coord;  // fix_fwd_type_supply
     int DispatchConnectionPairs(void *a1_1);  // 0x7937B0
     Coord * * DispatchStub_32(int a1, int a2, int a3, int a4);  // 0x7A4EC0
     Coord * * GetTypeInfo(int a1, int a2, const char * a3);  // 0x7A5290

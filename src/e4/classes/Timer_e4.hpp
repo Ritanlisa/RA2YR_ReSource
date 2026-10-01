@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct Timer {
 // --- flat members (BEGIN) ---
-struct AbstractClass;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC

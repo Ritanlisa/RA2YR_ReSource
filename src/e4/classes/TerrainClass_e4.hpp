@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TerrainTypeClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct TerrainClass {
 // --- flat members (BEGIN) ---
-struct TerrainTypeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

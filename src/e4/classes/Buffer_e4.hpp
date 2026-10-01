@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 
 struct Buffer {
 // --- flat members (BEGIN) ---
@@ -34,7 +35,6 @@ struct Buffer {
     unsigned int Buffer_field_00;
     unsigned int Buffer_field_04;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2);
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers(void *a1);

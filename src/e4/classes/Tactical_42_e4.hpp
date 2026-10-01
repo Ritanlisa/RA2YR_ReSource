@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct Tactical_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -15,7 +16,6 @@ struct Tactical_42 {
     unsigned int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int FindItem(unsigned int * a2);  // 0x6E4A80
     unsigned int * loc_6E4B00(unsigned int * Block, char a2);  // 0x6E4B00
     void ClearBuffer(void *a1_1);  // 0x6E47F0

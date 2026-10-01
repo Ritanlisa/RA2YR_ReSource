@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Game;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct GameSettings {
 // --- flat members (BEGIN) ---
-struct Game;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
     unsigned int q4;  // 0x4
     unsigned int q8;  // 0x8
     unsigned int u32_C;  // 0xC

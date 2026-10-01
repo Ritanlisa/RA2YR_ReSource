@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_BuildingType {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,8 +16,6 @@ struct VectorClass_BuildingType {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     void Destroy(void *a1_1);  // 0x50E6A0
     TypeList_flat * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x50E7E0
     char Set(int a2, unsigned int * a3, void *a3_2);  // 0x50E950

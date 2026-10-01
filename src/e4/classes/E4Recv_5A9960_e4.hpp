@@ -6,12 +6,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ObjectClass;  // fix_fwd_type_supply
 struct E4Recv_5A9960 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-struct ObjectClass;  // fix_fwd_type_supply
     ObjectClass * sub_5A9960(unsigned int * a1);  // 0x5A9960
 };
 } // namespace gamemd

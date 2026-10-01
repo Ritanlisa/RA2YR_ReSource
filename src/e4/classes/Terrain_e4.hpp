@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct Terrain {
 // --- flat members (BEGIN) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8

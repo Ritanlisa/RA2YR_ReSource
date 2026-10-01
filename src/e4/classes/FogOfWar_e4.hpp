@@ -6,11 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MapClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct FogOfWar {
 // --- flat members (BEGIN) ---
-struct MapClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
     unsigned int u32_1CC;  // 0x1CC
     unsigned int u32_1D0;  // 0x1D0
     unsigned int q460;  // 0x460

@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ObjectClass;  // fix_fwd_type_supply
 struct E4Recv_49DA60 {
 // --- flat members (BEGIN) ---
     unsigned int u32_10;  // 0x10
@@ -22,7 +23,6 @@ struct E4Recv_49DA60 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-struct ObjectClass;  // fix_fwd_type_supply
     unsigned int * sub_49DA60();  // 0x49DA60
 };
 } // namespace gamemd

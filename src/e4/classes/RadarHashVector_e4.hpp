@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct RadarHashVector {
 // --- flat members (BEGIN) ---
@@ -34,8 +36,6 @@ struct RadarHashVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass * * ComputeHashIndex(int a2, char * a3);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char * Destructor(char a2);

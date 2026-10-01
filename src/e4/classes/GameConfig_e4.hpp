@@ -6,6 +6,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Coord;  // fix_fwd_type_supply
+struct CCINIClass;  // fix_fwd_type_supply
 
 struct GameConfig {
 // --- flat members (BEGIN) ---
@@ -22,8 +24,6 @@ struct GameConfig {
     bool enable_log;  // 0xD0
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct Coord;  // fix_fwd_type_supply
-struct CCINIClass;  // fix_fwd_type_supply
      void Constructor(void *a1_1, void *a2_1, void *a3_1);  // 0x5D67B0
     int  BuildChecksum(char * Buffer);  // 0x77E7A0
     char * ComputeCRC();

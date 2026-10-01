@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_6EFC70 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -19,7 +20,6 @@ struct E4Recv_6EFC70 {
     unsigned int q6408;  // 0x6408
     unsigned int customSound_controller;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3);  // 0x6EFC70
 };
 } // namespace gamemd

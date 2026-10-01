@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct FactoryClass_33 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -13,7 +14,6 @@ struct FactoryClass_33 {
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4CA8E0
     char AddRef(int a2);  // 0x4CA8F0
     char Release(int a2, unsigned int * a3);  // 0x4CA930

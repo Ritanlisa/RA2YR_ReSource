@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, int * a3);  // 0x4E0840
     AbstractClass * * SetCapacity(int a2, int * a3);  // 0x4E0B10
     char AddRef(int a2);  // 0x4E07E0

@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass__N_18 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
@@ -20,9 +23,6 @@ struct VectorClass__N_18 {
     AbstractClass * q130;  // 0x130
     AbstractClass * q304;  // 0x304
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x50E8C0
     char Remove(int a2, int * a3);  // 0x50FC60
     char SetCapacity(int a2, int * a3);  // 0x50FE20

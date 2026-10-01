@@ -6,11 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct VoxelAnimType {
-// --- flat members (BEGIN) ---
 struct SomeVoxelCache;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct VoxelAnimType {
+// --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8
     unsigned int u32_10;  // 0x10
     unsigned int u32_30;  // 0x30

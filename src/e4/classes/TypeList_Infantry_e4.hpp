@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct TypeList_Infantry {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -16,8 +18,6 @@ struct TypeList_Infantry {
     void* Count;  // 0x10
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0
     int Clear(int a2);  // 0x5128F0

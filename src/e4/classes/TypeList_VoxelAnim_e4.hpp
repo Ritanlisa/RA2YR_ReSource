@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct TypeList_VoxelAnim {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,9 +18,6 @@ struct TypeList_VoxelAnim {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor(void *a1_1);  // 0x67A410
     unsigned int GetIndex(int a2);  // 0x67A440
     int Clear(int a2);  // 0x67A460

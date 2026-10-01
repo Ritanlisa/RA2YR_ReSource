@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct SpawnManagerClass_25 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -16,7 +17,6 @@ struct SpawnManagerClass_25 {
     bool IsInitialized;  // 0x12
     unsigned int Capacity;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor(void *a1_1, void *a2_1);  // 0x6B8160
     int SaveState(int a2);  // 0x6B81B0
     char AddRef(int a2);  // 0x6B8220

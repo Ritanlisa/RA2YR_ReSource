@@ -4,9 +4,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct MouseClass;  // fix_fwd_type_supply
 struct AudioStream {
 // --- flat members (BEGIN) ---
-struct MouseClass;  // fix_fwd_type_supply
     unsigned char q000;  // 0x0
     unsigned char u8_4;  // 0x4
     void* q008;  // 0x8

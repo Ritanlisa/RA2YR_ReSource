@@ -18567,6 +18567,7 @@ struct rc_ptr_base {
     unsigned char q274;  // 0x274
     AbstractClass * q304;  // 0x304
     unsigned int q308;  // 0x308
+    unsigned int *__pad_0;  // supplied (C2039)
 };
 
 

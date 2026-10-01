@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct NeuronClass_25 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -17,7 +18,6 @@ struct NeuronClass_25 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Update(int a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43AB20
     char AddRef(int a2);  // 0x43AB30
     char Release(int a2, unsigned int * a3);  // 0x43AB70

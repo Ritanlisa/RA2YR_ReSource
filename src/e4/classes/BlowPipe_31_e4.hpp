@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct BlowPipe_31 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,7 +21,6 @@ struct BlowPipe_31 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x63DC20
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x63DC70
     char AddRef(int a2);  // 0x63E310

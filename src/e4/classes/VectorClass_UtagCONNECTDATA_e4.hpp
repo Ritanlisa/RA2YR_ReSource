@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UtagCONNECTDATA {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct VectorClass_UtagCONNECTDATA {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     DynamicVector *  Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2);  // 0x4A0E10
     void Destroy(void *a1_1);  // 0x4A0EB0
     unsigned int GetItemIndex(int a2);  // 0x4A0EE0

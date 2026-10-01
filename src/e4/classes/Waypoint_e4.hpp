@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Waypoint {
-// --- flat members (BEGIN) ---
 struct IPXManagerClass;  // fix_fwd_type_supply
 struct CHAR;  // fix_fwd_type_supply
+struct Waypoint {
+// --- flat members (BEGIN) ---
     void * ptr_4;  // 0x4
     void * ptr_8;  // 0x8
     bool q00B;  // 0xB

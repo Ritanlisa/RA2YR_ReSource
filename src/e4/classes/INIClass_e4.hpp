@@ -6,11 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VoxelStruct;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
 
 struct INIClass {
 // --- flat members (BEGIN) ---
-struct VoxelStruct;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     char headNode[12];  // 0x4
     void* q008;  // 0x8

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass__N {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct VectorClass__N {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     char Remove(signed int Size, char * a3);  // 0x50F9E0
     char SetCapacity(signed int Size, char * a3);  // 0x50FB20
     int Destroy_0(unsigned char * a2);  // 0x50FBD0

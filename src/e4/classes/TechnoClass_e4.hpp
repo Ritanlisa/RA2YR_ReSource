@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct TechnoClass {
-// --- flat members (BEGIN) ---
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
@@ -26,6 +23,9 @@ struct TeamClass;  // fix_fwd_type_supply
 struct RadBeam;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
+
+struct TechnoClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

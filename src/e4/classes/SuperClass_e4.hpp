@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct SuperClass {
-// --- flat members (BEGIN) ---
 struct HouseClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
@@ -24,6 +21,9 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct Tactical;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
+
+struct SuperClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -64,7 +64,7 @@ struct WeaponTypeClass;  // fix_fwd_type_supply
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
     unsigned int q60;  // 0x60
-    void* ;  // 0x62
+    void* p62;  // regen name
     bool q064;  // 0x64
     void* q068;  // 0x68
     void* q06C;  // 0x6C
@@ -73,7 +73,7 @@ struct WeaponTypeClass;  // fix_fwd_type_supply
     void* IsCharged;  // 0x6F
     void* q070;  // 0x70
     unsigned int q74;  // 0x74
-    void* ;  // 0x78
+    void* p78;  // regen name
     unsigned int q7C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84

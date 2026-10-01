@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ObjectClass;  // fix_fwd_type_supply
 
 struct SortedArray {
 // --- flat members (BEGIN) ---
@@ -25,7 +26,6 @@ struct SortedArray {
     unsigned int q0046;
     unsigned int q040;
 // --- flat members (END) ---
-struct ObjectClass;  // fix_fwd_type_supply
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);
     int BinarySearch(CCINIClass * aP1, void *a2);

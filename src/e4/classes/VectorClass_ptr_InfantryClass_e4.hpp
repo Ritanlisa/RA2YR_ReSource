@@ -5,12 +5,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_ptr_InfantryClass {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
     unsigned char u8_D;  // 0xD
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     void Remove(void *a1_1);  // 0x45A4D0
 };
 } // namespace gamemd

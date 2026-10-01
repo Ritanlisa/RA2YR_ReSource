@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AnimClass;  // fix_fwd_type_supply
 struct Building {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -35,7 +36,6 @@ struct Building {
     unsigned int uniqueId0;
     unsigned char Building_field_0xA0;  // 0xA0
 // --- flat members (END) ---
-struct AnimClass;  // fix_fwd_type_supply
     AnimClass * * ComputePosition(AnimClass * aP1, void *a2_1);  // 0x425D10
     int GetNthOfType();  // 0x485020
     int GetRenderType();  // 0x772A90

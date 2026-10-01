@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorCursor;  // fix_fwd_type_supply
 
 struct GraphicMenuAnimItem {
 // --- flat members (BEGIN) ---
@@ -17,7 +18,6 @@ struct GraphicMenuAnimItem {
     unsigned char q014;  // 0x14
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorCursor;  // fix_fwd_type_supply
     VectorCursor * Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5);
 };
 

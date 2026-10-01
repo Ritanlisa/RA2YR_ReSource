@@ -6,10 +6,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct String {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct String {
+// --- flat members (BEGIN) ---
     unsigned int q4;  // 0x4
     unsigned int u16_6;  // 0x6
     unsigned int q8;  // 0x8

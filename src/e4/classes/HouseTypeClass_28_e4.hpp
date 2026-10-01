@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
 struct HouseTypeClass_28 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -15,7 +16,6 @@ struct HouseTypeClass_28 {
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
     void ddtor();  // 0x512990
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x5129E0
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x512A90

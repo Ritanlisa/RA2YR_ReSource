@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UHashObject_uint_uint {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,7 +15,6 @@ struct VectorClass_UHashObject_uint_uint {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x588FB0
     char AddRef(int a2);  // 0x58A110
     char Release(int a2, unsigned int * a3);  // 0x58A6E0

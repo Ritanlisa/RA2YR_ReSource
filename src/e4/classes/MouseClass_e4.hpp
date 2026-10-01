@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct MouseClass {
-// --- flat members (BEGIN) ---
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
@@ -23,6 +20,9 @@ struct AnimClass;  // fix_fwd_type_supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
+
+struct MouseClass {
+// --- flat members (BEGIN) ---
     void* q000;  // 0x0
     unsigned int u16_2;  // 0x2
     unsigned int u32_4;  // 0x4

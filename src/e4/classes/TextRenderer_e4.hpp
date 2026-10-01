@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TriggerTypeClass;  // fix_fwd_type_supply
 
 struct TextRenderer {
 // --- flat members (BEGIN) ---
@@ -29,7 +30,6 @@ struct TextRenderer {
     unsigned int u32_87;
     unsigned int *__pad_4C;
 // --- flat members (END) ---
-struct TriggerTypeClass;  // fix_fwd_type_supply
     TriggerTypeClass * Destructor(char a2);
     int MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6);
     unsigned int * Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8);

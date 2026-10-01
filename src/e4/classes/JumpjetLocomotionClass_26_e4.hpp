@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct JumpjetLocomotionClass_26 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -15,8 +17,6 @@ struct JumpjetLocomotionClass_26 {
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     int FindItem(unsigned int * a2);  // 0x54EB20
     void ClearBuffer(void *a1_1);  // 0x54E890
     char AddRef(int a2);  // 0x54E8F0

@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
 // --- flat members (BEGIN) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8

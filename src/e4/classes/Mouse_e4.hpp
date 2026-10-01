@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct Mouse {
     // dup-member: unsigned int GetKeyState;
     // dup-member: unsigned int IsButtonDown;
     // dup-member: unsigned int ReleaseCapture;
-struct AbstractClass;  // fix_fwd_type_supply
     unsigned int DisplayClass;
     unsigned int Timer;
     unsigned int *__pad_5;

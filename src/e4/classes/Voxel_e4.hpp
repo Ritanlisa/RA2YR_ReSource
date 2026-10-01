@@ -6,10 +6,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Voxel {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct Voxel {
+// --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8

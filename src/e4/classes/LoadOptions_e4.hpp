@@ -6,12 +6,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct LoadOptions {
-// --- flat members (BEGIN) ---
 struct FileEntryClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+
+struct LoadOptions {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
@@ -25,9 +25,9 @@ struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned char is_active;  // 0x20
     unsigned char owns_memory;  // 0x21
     unsigned int q024;  // 0x24
-    void* ;  // 0x28
+    void* p28;  // regen name
     unsigned char q02C;  // 0x2C
-    void* ;  // 0x2D
+    void* p2D;  // regen name
     unsigned char pad_2E;  // 0x2E
     unsigned int capacity;  // 0x30
     unsigned int grow_step;  // 0x34
@@ -72,6 +72,8 @@ struct VectorClass_flat;  // fix_fwd_type_supply
     void SetMode(uint32_t);
      double Cleanup(...);  // C2597 interim stub
     static double Run(...);  // C2597 interim stub
+    unsigned int *m_1;  // supplied (C2039)
+    unsigned int *m_8;  // supplied (C2039)
 };
 
 } // namespace gamemd

@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct RandomMap {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
+struct RandomMap {
+// --- flat members (BEGIN) ---
     void* q000;  // 0x0
     unsigned int u16_2;  // 0x2
     void* Items;  // 0x4

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct AITriggerTypeClass_40 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -16,8 +18,6 @@ struct AITriggerTypeClass_40 {
     bool IsInitialized;  // 0x12
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ClearBuffer(void *a1_1);  // 0x420370
     void Seek(int a2, void *a2_2, void *a3_1);  // 0x4203C0
     char AddRef(int a2);  // 0x4203D0
@@ -30,5 +30,7 @@ struct DynamicVector;  // fix_fwd_type_supply
     DynamicVector * Constructor_VectorClass_AlphaLightingRemapClass___(unsigned int * Block, char a2);  // 0x420680
     unsigned int PointerToIndex(int a2);  // 0x4203A0
     unsigned int Write(int a2);  // 0x420530
+    unsigned int *m_1;  // supplied (C2039)
+    unsigned int *m_10;  // supplied (C2039)
 };
 } // namespace gamemd

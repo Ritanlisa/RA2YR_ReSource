@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct TeamTypeClass_28 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -14,8 +16,6 @@ struct TeamTypeClass_28 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, int * a3);  // 0x6F22F0
     AbstractClass * * SetCapacity(int a2, int * a3);  // 0x6F24B0
     void ClearBuffer(void *a1_1);  // 0x6F21B0

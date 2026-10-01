@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Movie {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
+struct Movie {
+// --- flat members (BEGIN) ---
     AbstractClass* q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

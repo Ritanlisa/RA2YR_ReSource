@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 
 struct UDPInterfaceClass {
 // --- flat members (BEGIN) ---
@@ -32,9 +35,6 @@ struct UDPInterfaceClass {
     unsigned int qFC18;
     unsigned int u32_FC1E0;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct CampaignClass;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * Flush();
     AbstractClass * * ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5);
     AbstractClass * * flush(int a2, unsigned int * a3);

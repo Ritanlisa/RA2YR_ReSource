@@ -202,7 +202,7 @@ bool LoadOptions::Check() {
   return v2; /*0x559d17*/
 }
 // 0x559c20
-    char __thiscall LoadOptions::Check(const char **(void**)this)
+    char __thiscall LoadOptions::Check(const char **a1)
     {
       char v2; // bl
       const char *v3; // eax

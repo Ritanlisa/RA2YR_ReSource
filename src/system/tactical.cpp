@@ -2298,7 +2298,7 @@ void TacticalClass::updateVisibility()
   return v1; /*0x5090d9*/
 }
 // 0x5090a0
-    int __thiscall TacticalClass::updateVisibility(int *(void**)this)
+    int __thiscall TacticalClass::updateVisibility(int *a1)
     {
       int v1; // esi
       int *i; // edi

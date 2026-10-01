@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ScenarioClass;  // fix_fwd_type_supply
 
 struct TacticalMap {
 // --- flat members (BEGIN) ---
-struct ScenarioClass;  // fix_fwd_type_supply
     char TacticalMap_field_00[4];  // 0x0
     char TacticalMap_field_04[4];  // 0x4
     unsigned int u32_8;  // 0x8

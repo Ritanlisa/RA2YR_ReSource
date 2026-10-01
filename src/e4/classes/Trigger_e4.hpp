@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Trigger {
-// --- flat members (BEGIN) ---
 struct MSAnim;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
+struct Trigger {
+// --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     MSAnim * ptr_4;  // 0x4
     unsigned int u32_8;  // 0x8

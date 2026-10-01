@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct ComStreamClass {
 // --- flat members (BEGIN) ---
@@ -33,7 +34,6 @@ struct ComStreamClass {
     unsigned int *__pad_0;
     unsigned int Debug;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * readData();
     LONG AddRef(void *a1);
     int QueryInterface();

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_PAD {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -16,7 +17,6 @@ struct DynamicVectorClass_PAD {
     void* Count;  // 0x10
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor(void *a1_1);  // 0x49E950
     int Clear(int a2);  // 0x49E9A0
     void Clear_49E9B0();  // 0x49E9B0

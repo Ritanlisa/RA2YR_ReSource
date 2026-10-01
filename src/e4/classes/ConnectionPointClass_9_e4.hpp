@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct ConnectionPointClass_9 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -17,7 +18,6 @@ struct ConnectionPointClass_9 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, unsigned int * a3);  // 0x4A1280
     int EnumConnections(int a2);  // 0x4A0F70
     char AddRef(int a2);  // 0x4A1240

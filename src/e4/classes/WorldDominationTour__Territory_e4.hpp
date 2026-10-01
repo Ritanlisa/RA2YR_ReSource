@@ -6,10 +6,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct WorldDominationTour__Territory {
-// --- flat members (BEGIN) ---
 struct CampaignScore;  // fix_fwd_type_supply
 struct ReferenceCounted;  // fix_fwd_type_supply
+struct WorldDominationTour__Territory {
+// --- flat members (BEGIN) ---
     void * ptr_4;  // 0x4
     CampaignScore * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC

@@ -3,9 +3,9 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
-struct TriggerTypeClass;  // fix_fwd_type_supply
 
 namespace gamemd {
+struct TriggerTypeClass;  // fix_fwd_type_supply
 struct E4Recv_727880 {
     void* vfptr;  // minimal E2 declaration
     TriggerTypeClass * ReadAudioEventINI();  // 0x727880

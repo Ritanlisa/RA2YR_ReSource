@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct BlitTransXlatAlphaZRead_ushort {
 // --- flat members (BEGIN) ---
@@ -34,7 +35,6 @@ struct BlitTransXlatAlphaZRead_ushort {
     unsigned int m_4;
     unsigned int m_8;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     BlitTransXlatAlphaZRead_ushort * Blit(unsigned int * Block, char a2);
     int AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9);
     int BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10);

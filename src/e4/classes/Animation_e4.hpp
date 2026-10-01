@@ -6,11 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct BuildingClass;  // fix_fwd_type_supply
+struct ObjectClass;  // fix_fwd_type_supply
 
 struct Animation {
 // --- flat members (BEGIN) ---
-struct BuildingClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
     void* q008;  // 0x8
     bool q00E;  // 0xE
     bool q00F;  // 0xF

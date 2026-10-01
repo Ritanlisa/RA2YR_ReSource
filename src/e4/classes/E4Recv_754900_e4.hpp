@@ -5,9 +5,9 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
-struct Iostream_init;  // fix_fwd_type_supply
 
 namespace gamemd {
+struct Iostream_init;  // fix_fwd_type_supply
 struct E4Recv_754900 {
     void* vfptr;  // minimal E2 declaration
     Iostream_init * __0Iostream_init_QAE_XZ_8();  // 0x754900

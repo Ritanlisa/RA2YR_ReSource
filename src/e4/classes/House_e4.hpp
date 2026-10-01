@@ -7,14 +7,14 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct House {
-// --- flat members (BEGIN) ---
 struct HouseClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct ProgressTimer;  // fix_fwd_type_supply
 struct ParticleSystemClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
+struct House {
+// --- flat members (BEGIN) ---
     HouseClass* q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

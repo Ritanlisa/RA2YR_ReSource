@@ -14,7 +14,7 @@ struct E4Recv_4A0380 {
     unsigned int M17;  // 0x11
     unsigned int M20;  // 0x14
     unsigned int q018;  // 0x18
-    void* ;  // 0x1C
+    void* p1C;  // regen name
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28

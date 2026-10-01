@@ -6,6 +6,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ConvertClass;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ptr_ConvertClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -19,9 +22,6 @@ struct VectorClass_ptr_ConvertClass {
     unsigned char q018;  // 0x18
     void* q01C;  // 0x1C
 // --- flat members (END) ---
-struct ConvertClass;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
     void MarkDirty(void *a1_1);  // 0x4E1960
     void Destroy(void *a1_1);  // 0x491390

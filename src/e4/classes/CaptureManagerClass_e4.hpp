@@ -6,14 +6,14 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct CaptureManagerClass {
-// --- flat members (BEGIN) ---
 struct TechnoClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+
+struct CaptureManagerClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

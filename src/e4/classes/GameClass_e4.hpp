@@ -5,13 +5,13 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct GameClass {
-// --- flat members (BEGIN) ---
 struct Straw;  // fix_fwd_type_supply
 struct Pipe;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
+struct GameClass {
+// --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8

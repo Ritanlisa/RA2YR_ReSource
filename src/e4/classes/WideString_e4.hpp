@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignScore;  // fix_fwd_type_supply
 struct WideString {
 // --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8
@@ -22,8 +24,6 @@ struct WideString {
     unsigned int u32_478;  // 0x478
     unsigned int GetChar;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct CampaignScore;  // fix_fwd_type_supply
     int WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5);  // 0x5D4B20
     AbstractClass * * Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0
     int Trim(wchar_t * Source);  // 0x727D60

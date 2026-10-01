@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct WarheadTypeClass {
-// --- flat members (BEGIN) ---
 struct ParticleTypeClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
@@ -17,6 +14,9 @@ struct CCINIClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
+
+struct WarheadTypeClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -189,10 +189,10 @@ struct TypeList_flat;  // fix_fwd_type_supply
     unsigned int q1B0;  // 0x1B0
     unsigned int q1B1;  // 0x1B1
     unsigned char u8_1B4;  // 0x1B4
-    void* ;  // 0x1B5
+    void* p1B5;  // regen name
     unsigned int u32_1B8;  // 0x1B8
     unsigned char q1B9;  // 0x1B9
-    void* ;  // 0x1BC
+    void* p1BC;  // regen name
     unsigned char q1C0;  // 0x1C0
     unsigned int q1C4;  // 0x1C4
     unsigned int q1C8;  // 0x1C8

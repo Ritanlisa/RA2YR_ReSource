@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct RulesClass {
-// --- flat members (BEGIN) ---
 struct UnitTypeClass;  // fix_fwd_type_supply
 struct AnimTypeClass;  // fix_fwd_type_supply
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
@@ -19,6 +16,9 @@ struct WarheadTypeClass;  // fix_fwd_type_supply
 struct BulletTypeClass;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
+
+struct RulesClass {
+// --- flat members (BEGIN) ---
     unsigned int DetailMinFrameRateNormal;  // 0x0
     void *q4;  // 0x4
     unsigned int DetailBufferZoneWidth;  // 0x8

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct FootClass;  // fix_fwd_type_supply
 
 struct Carryall {
 // --- flat members (BEGIN) ---
@@ -22,7 +23,6 @@ struct Carryall {
     unsigned int audioController4;
     unsigned int audioController7;
 // --- flat members (END) ---
-struct FootClass;  // fix_fwd_type_supply
     FootClass * * MissionStateMachine();
 };
 

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct ParticleSystemClass_32 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct ParticleSystemClass_32 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     void ClearBuffer(void *a1_1);  // 0x4E82F0
     void Destroy(void *a1_1);  // 0x4E87E0
     int Write(int a2);  // 0x4E8830

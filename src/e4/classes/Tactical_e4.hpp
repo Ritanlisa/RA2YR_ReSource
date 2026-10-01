@@ -6,8 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Tactical {
-// --- flat members (BEGIN) ---
 struct Coord;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
@@ -21,6 +19,8 @@ struct HouseClass;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
+struct Tactical {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int q4;  // 0x4
     void* vtable3;  // 0x8

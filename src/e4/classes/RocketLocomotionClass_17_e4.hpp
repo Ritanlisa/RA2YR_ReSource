@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct RocketLocomotionClass_17 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct RocketLocomotionClass_17 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x6647B0
     int UpdateMovement(int a2);  // 0x664800
     char AddRef(int a2);  // 0x664810

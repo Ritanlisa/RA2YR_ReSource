@@ -5,17 +5,17 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TagTypeClass;  // fix_fwd_type_supply
+struct TriggerClass;  // fix_fwd_type_supply
 
 struct TagClass {
 // --- flat members (BEGIN) ---
-struct TagTypeClass;  // fix_fwd_type_supply
-struct TriggerClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* ;  // 0x10
-    void* ;  // 0x11
+    void* p10;  // regen name
+    void* p11;  // regen name
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18

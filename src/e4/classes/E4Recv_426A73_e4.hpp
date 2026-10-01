@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VirtualProcessor;  // fix_fwd_type_supply
 struct E4Recv_426A73 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -16,7 +17,6 @@ struct E4Recv_426A73 {
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
 // --- flat members (END) ---
-struct VirtualProcessor;  // fix_fwd_type_supply
     struct Concurrency::details::VirtualProcessor * _UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ();  // 0x426A73
 };
 } // namespace gamemd

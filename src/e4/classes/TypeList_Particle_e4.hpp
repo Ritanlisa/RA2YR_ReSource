@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct TypeList_Particle {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -18,7 +19,6 @@ struct TypeList_Particle {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int GetIndex(int a2);  // 0x459FE0
     char AddRef(int a2);  // 0x45A180
     char Remove(int a2, unsigned int * a3);  // 0x45A1C0

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct DeleteCommandClass_28 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct DeleteCommandClass_28 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ClearBuffer(void *a1_1);  // 0x53C4C0
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x53C510
     char AddRef(int a2);  // 0x53C520

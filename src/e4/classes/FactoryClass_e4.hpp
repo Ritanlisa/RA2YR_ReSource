@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TechnoClass;  // fix_fwd_type_supply
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct FactoryClass {
 // --- flat members (BEGIN) ---
-struct TechnoClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -55,7 +55,7 @@ struct AbstractClass;  // fix_fwd_type_supply
     unsigned int q05C;  // 0x5C
     unsigned char u8_5D;  // 0x5D
     unsigned char m_align_5E;  // 0x5E
-    void* ;  // 0x60
+    void* p60;  // regen name
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
     unsigned int q6C;  // 0x6C

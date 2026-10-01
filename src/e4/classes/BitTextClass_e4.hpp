@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct CampaignClass;  // fix_fwd_type_supply
 
 struct BitTextClass {
 // --- flat members (BEGIN) ---
@@ -23,7 +24,6 @@ struct BitTextClass {
     unsigned int u32_40;
     unsigned int u32_41;
 // --- flat members (END) ---
-struct CampaignClass;  // fix_fwd_type_supply
     int ParseFontData(char * Source, void *a2);
     void LoadFont();
 };

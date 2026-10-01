@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct FoggedObject {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -12,7 +13,6 @@ struct FoggedObject {
     unsigned char *__pad_0;  // 0x0
     unsigned char FoggedObject_field_0x4;  // 0x4
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     int DrawVector_Constructor(IUnknown * aP1, IUnknown * aP2, void *a3_1);  // 0x4D2DB0
 };
 } // namespace gamemd

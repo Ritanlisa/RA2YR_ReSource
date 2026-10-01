@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -33,8 +35,6 @@ struct DynamicVector {
     unsigned int *__pad_20;
     unsigned int *__pad_C;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct BufferIOFileClass;  // fix_fwd_type_supply
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
     char AddItem(VectorClass_flat * aP1, void *a2_1);  // 0x413A70
     unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x42F670

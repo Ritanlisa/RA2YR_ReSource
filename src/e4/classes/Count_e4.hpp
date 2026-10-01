@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct Count {
 // --- flat members (BEGIN) ---
@@ -15,7 +16,6 @@ struct Count {
     unsigned int u32_4;
     unsigned int u32_8;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * DecrementRefCountsAudio();
     int32_t ddtor();
     int32_t Get(void *a1, void *a2);

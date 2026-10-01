@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct RAMFileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -21,7 +22,6 @@ struct RAMFileClass {
     unsigned int RAMFileClass_field_0xC;
     unsigned int u32_1D;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     int nullsub_0_1();  // 0x65C300
     int nullsub_0_2(int a2);  // 0x65C350
     AbstractClass * *  nullsub_0_3(void * a1, signed int Size);  // 0x65C3A0

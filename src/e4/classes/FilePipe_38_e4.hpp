@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct FilePipe_38 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -17,7 +18,6 @@ struct FilePipe_38 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, char * a3);  // 0x478340
     int Seek(int a2, int a3, void *a3_2);  // 0x477960
     char AddRef(int a2);  // 0x4782E0

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Multiplayer {
 // --- flat members (BEGIN) ---
-    void* ;  // 0x4
+    void* p4;  // regen name
     unsigned int u32_8;  // 0x8
     unsigned char u8_C;  // 0xC
     unsigned char u8_D;  // 0xD

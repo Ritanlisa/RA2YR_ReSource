@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct WaypointPathClass;  // fix_fwd_type_supply
 
 struct WaypointClass {
 // --- flat members (BEGIN) ---
@@ -31,7 +32,6 @@ struct WaypointClass {
     unsigned int u32_20C;  // 0x20C
     unsigned int activePathIndex;  // 0x240
 // --- flat members (END) ---
-struct WaypointPathClass;  // fix_fwd_type_supply
     WaypointPathClass * * FindOrAddPath(unsigned int * a2);
 };
 

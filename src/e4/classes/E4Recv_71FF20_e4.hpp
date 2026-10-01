@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct CampaignScore;  // fix_fwd_type_supply
 struct E4Recv_71FF20 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -31,7 +32,6 @@ struct E4Recv_71FF20 {
     unsigned int q1634;  // 0x1634
     CampaignScore * q1910;  // 0x1910
 // --- flat members (END) ---
-struct CampaignScore;  // fix_fwd_type_supply
     int sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9);  // 0x71FF20
 };
 } // namespace gamemd

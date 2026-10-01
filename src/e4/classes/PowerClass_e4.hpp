@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct PowerClass {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -20,6 +17,9 @@ struct AudioController;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
+
+struct PowerClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8

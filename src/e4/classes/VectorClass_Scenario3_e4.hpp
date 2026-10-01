@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_Scenario3 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
@@ -19,7 +20,6 @@ struct VectorClass_Scenario3 {
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8590
 };
 } // namespace gamemd

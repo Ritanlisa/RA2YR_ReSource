@@ -1,10 +1,10 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
-struct INIClass;  // fix_fwd_type_supply
 #pragma once
 
 
 
 namespace gamemd {
+struct INIClass;  // fix_fwd_type_supply
 
 struct CreditsScreen {
     void* vfptr;

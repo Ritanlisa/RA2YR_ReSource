@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct AbstractTypeClass;  // fix_fwd_type_supply
+struct TriggerTypeClass;  // fix_fwd_type_supply
 
 struct TagTypeClass {
 // --- flat members (BEGIN) ---
@@ -36,9 +39,6 @@ struct TagTypeClass {
     unsigned int vtable46;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct AbstractTypeClass;  // fix_fwd_type_supply
-struct TriggerTypeClass;  // fix_fwd_type_supply
     AbstractClass * * CleanupMembers(void *a1);
     AbstractTypeClass * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     AbstractTypeClass * FindOrCreate(ObjectClass * Source);

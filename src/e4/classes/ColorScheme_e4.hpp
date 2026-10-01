@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct ColorScheme {
 // --- flat members (BEGIN) ---
@@ -16,7 +17,6 @@ struct ColorScheme {
     unsigned int q308;  // 0x308
     unsigned int u32_30C;  // 0x30C
 // --- flat members (END) ---
-struct AbstractTypeClass;  // fix_fwd_type_supply
     int Destructor(void *a1);
 };
 

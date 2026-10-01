@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct Map_WorldDominationTour_28 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -13,7 +14,6 @@ struct Map_WorldDominationTour_28 {
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     char AddRef(int a2);  // 0x76A130
     char Release(int a2, unsigned int * a3);  // 0x76A170
     void ddtor(void *a1_1);  // 0x76A220

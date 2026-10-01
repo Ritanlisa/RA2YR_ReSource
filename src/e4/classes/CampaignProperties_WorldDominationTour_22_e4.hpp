@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct CampaignProperties_WorldDominationTour_22 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -21,7 +22,6 @@ struct CampaignProperties_WorldDominationTour_22 {
     int Read(unsigned int * a2, void *a2_2);  // 0x5D2900
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D2CA0
     // dup-decl removed: BOOL AddRef();  // 0x76F0F0
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Release(void *a1_1);  // 0x76F1A0
     int ddtor();  // 0x76F1B0
     unsigned int Write(int a2);  // 0x5D2940

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct UDPInterfaceClass_Destru {
 // --- flat members (BEGIN) ---
@@ -23,7 +24,6 @@ struct UDPInterfaceClass_Destru {
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * Bind(int a2);
     int COMStub();
     int COMStub_Ret2();

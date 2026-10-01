@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct WDTState_4 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -19,7 +20,6 @@ struct WDTState_4 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * Release(int a2, unsigned int * a3);  // 0x76BA70
     int ddtor();  // 0x76B710
     int Read(int a2, void *a2_2);  // 0x76BB90

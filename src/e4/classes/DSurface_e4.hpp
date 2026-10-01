@@ -7,13 +7,13 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct DSurface {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct MouseClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
+
+struct DSurface {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8

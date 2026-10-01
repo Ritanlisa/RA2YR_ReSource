@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct MSFont_18 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct MSFont_18 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     AbstractClass * * SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     void ClearBuffer(void *a1_1);  // 0x5D5080
     int GetSize(int a2);  // 0x5D50D0

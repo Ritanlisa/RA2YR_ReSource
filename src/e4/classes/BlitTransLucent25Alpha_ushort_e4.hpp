@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct BlitTransLucent25Alpha_ushort {
 // --- flat members (BEGIN) ---
@@ -21,7 +22,6 @@ struct BlitTransLucent25Alpha_ushort {
     unsigned int *__pad_0;
     unsigned int m_8;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     BlitTransLucent25Alpha_ushort * Blit(char a2);
     int CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);

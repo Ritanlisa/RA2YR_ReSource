@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_BombClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,7 +15,6 @@ struct VectorClass_ptr_BombClass {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Get(int a2, void *a2_2);  // 0x40B690
     char Add(int a2, void *a2_2, void *a3_1);  // 0x40B700
     void Remove(void *a1_1);  // 0x40B7F0

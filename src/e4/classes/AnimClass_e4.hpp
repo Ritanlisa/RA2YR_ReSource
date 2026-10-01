@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct AnimClass {
-// --- flat members (BEGIN) ---
 struct WinModemClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -27,6 +24,9 @@ struct Tactical;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
+
+struct AnimClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

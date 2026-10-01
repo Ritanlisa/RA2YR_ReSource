@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -20,7 +21,6 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     int HashEntryCompare(unsigned char * a2);  // 0x517590
     AbstractClass * * SetCapacity_0(int a2, char * a3);  // 0x6284A0
     AbstractClass * * Remove(CCINIClass * aP1, unsigned char * a2);  // 0x628BB0

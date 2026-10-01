@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UAcceleratorTracker {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,7 +15,6 @@ struct VectorClass_UAcceleratorTracker {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x5D5130
     char AddRef(int a2);  // 0x5D53B0
     char Release(int a2, unsigned int * a3);  // 0x5D5410

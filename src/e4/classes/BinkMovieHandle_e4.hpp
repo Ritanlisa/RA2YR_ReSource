@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DSurface;  // fix_fwd_type_supply
 
 struct BinkMovieHandle {
 // --- flat members (BEGIN) ---
@@ -28,7 +29,6 @@ struct BinkMovieHandle {
     unsigned int MovieHandle;
     unsigned int tempPath2;
 // --- flat members (END) ---
-struct DSurface;  // fix_fwd_type_supply
     BOOL COMStub();
     BinkMovieHandle * QueryInterface(char a2);
     void AddRef(void *a1);

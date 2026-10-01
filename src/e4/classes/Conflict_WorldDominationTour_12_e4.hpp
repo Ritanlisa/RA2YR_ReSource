@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct Conflict_WorldDominationTour_12 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -21,8 +23,6 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     int Release(int a2, unsigned int * a3);  // 0x766C10
     AbstractClass * * Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);  // 0x766850

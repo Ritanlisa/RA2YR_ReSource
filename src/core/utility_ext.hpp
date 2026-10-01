@@ -305,6 +305,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int Inflate();  // 0x72a9e0
     // === FUNCS-MOVE (END) ===
+    unsigned int *u32_14;  // supplied (C2039)
+    unsigned int *u32_18;  // supplied (C2039)
+    unsigned int *u32_1C;  // supplied (C2039)
 };
 
 // ============================================================================
@@ -896,6 +899,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int QueryInterface2(int a1, int a2, int a3);  // 0x6c0050
     int GetStringValue(int a1, int a2);  // 0x55ab40
     // === FUNCS-MOVE (END) ===
+    unsigned int *__pad_0;  // supplied (C2039)
+    unsigned int *q01C;  // supplied (C2039)
 };
 // 1 methods in IDA
 class CRC32
@@ -993,6 +998,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int Skip(int a1);  // 0x4a0b10
     // === FUNCS-MOVE (END) ===
+    unsigned int *__pad_0;  // supplied (C2039)
+    unsigned int *m_1;  // supplied (C2039)
+    unsigned int *m_10;  // supplied (C2039)
+    unsigned int *m_8;  // supplied (C2039)
 };
 // 6 methods in IDA
 class EnumConnectionsClass

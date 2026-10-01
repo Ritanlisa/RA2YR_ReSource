@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ColorListClass;  // fix_fwd_type_supply
 struct E4Recv_488760 {
 // --- flat members (BEGIN) ---
-struct ColorListClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     unsigned int q040;  // 0x40
     unsigned int q054;  // 0x54

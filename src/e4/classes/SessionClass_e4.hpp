@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct SessionClass {
-// --- flat members (BEGIN) ---
 struct MPGameModeClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -19,6 +16,9 @@ struct ObjectClass;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct MixFileClass;  // fix_fwd_type_supply
+
+struct SessionClass {
+// --- flat members (BEGIN) ---
     char GameMode[4];  // 0x0
     MPGameModeClass* MPGameMode;  // 0x4
     unsigned int SessionClass_field_08;  // 0x8

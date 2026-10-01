@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct PlayerClass {
 // --- flat members (BEGIN) ---
@@ -22,7 +23,6 @@ struct PlayerClass {
     unsigned char q02C;  // 0x2C
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     bool IsValidIndex(int a1);
     char AssignPlayerIndex();
     int SetHouse(int a2);

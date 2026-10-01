@@ -21,6 +21,9 @@ struct Rect {
     BOOLInflate(LPRECT lprc, int dx, int dy);
     void Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4);
     void Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2);
+    unsigned int *u32_14;  // supplied (C2039)
+    unsigned int *u32_18;  // supplied (C2039)
+    unsigned int *u32_1C;  // supplied (C2039)
 };
 
 } // namespace gamemd

@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct Options {
 // --- flat members (BEGIN) ---
-struct AbstractClass;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     AbstractClass * q008;  // 0x8
     void* q00C;  // 0xC

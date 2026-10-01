@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_cptr_MultiMission {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,8 +16,6 @@ struct VectorClass_cptr_MultiMission {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     int j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7);  // 0x5EF190
     unsigned int * j_vt00(char a2);  // 0x5EF290
     void Destroy(void *a1_1);  // 0x5EEBB0

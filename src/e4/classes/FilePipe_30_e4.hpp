@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct FilePipe_30 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -22,8 +24,6 @@ struct FilePipe_30 {
     unsigned int *__pad_0;
     unsigned int Capacity;
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void ddtor();  // 0x4778A0
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x477A70
     char Release(int a2, unsigned int * a3);  // 0x478140

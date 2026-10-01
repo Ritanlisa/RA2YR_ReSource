@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct InfantryTypeClass {
-// --- flat members (BEGIN) ---
 struct Color;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -25,6 +22,9 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 struct InfantryClass;  // fix_fwd_type_supply
+
+struct InfantryTypeClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -1012,12 +1012,12 @@ struct InfantryClass;  // fix_fwd_type_supply
     unsigned int qDF8;  // 0xDF8
     unsigned int qDFC;  // 0xDFC
     char qE00[4];  // 0xE00
-    void* ;  // 0xE04
-    void* ;  // 0xE08
-    void* ;  // 0xE0C
+    void* pE04;  // regen name
+    void* pE08;  // regen name
+    void* pE0C;  // regen name
     void* qE10;  // 0xE10
-    void* ;  // 0xE14
-    void* ;  // 0xE18
+    void* pE14;  // regen name
+    void* pE18;  // regen name
     unsigned char u8_E1C;  // 0xE1C
     unsigned int EliteOccupyWeapon;  // 0xE20
     unsigned int u32_E24;  // 0xE24

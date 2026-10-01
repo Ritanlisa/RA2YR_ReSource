@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TypeList_flat;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct TypeList_cptr_TerrainTypeClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,8 +17,6 @@ struct TypeList_cptr_TerrainTypeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct TypeList_flat;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     void GetClassIdentifier();  // 0x67A930
     unsigned int GetIndex(int a2);  // 0x67A960
     int SaveToINI(int a2);  // 0x67A980

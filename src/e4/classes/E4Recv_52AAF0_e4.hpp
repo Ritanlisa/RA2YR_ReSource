@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_52AAF0 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_10;  // 0x10
@@ -22,7 +23,6 @@ struct E4Recv_52AAF0 {
     AbstractClass * q304;  // 0x304
     AbstractClass * q774;  // 0x774
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     void sub_52AAF0();  // 0x52AAF0
 };
 } // namespace gamemd

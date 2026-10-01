@@ -3,9 +3,9 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
-struct DynamicVector;  // fix_fwd_type_supply
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_InfantryPtr {
     void* vfptr;  // minimal E2 declaration
     DynamicVector * Destruct(unsigned int * Block, char a2);  // 0x45AAB0

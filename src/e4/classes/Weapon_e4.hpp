@@ -5,12 +5,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct Weapon {
 // --- flat members (BEGIN) ---
     char Weapon_field_00[4];  // 0x0
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     AbstractClass * * DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4);
 };
 

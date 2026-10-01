@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct Color;  // fix_fwd_type_supply
 struct Rules {
 // --- flat members (BEGIN) ---
-struct Color;  // fix_fwd_type_supply
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char u8_D;  // 0xD

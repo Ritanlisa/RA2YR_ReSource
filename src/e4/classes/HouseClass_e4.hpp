@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct HouseClass {
-// --- flat members (BEGIN) ---
 struct BuildingClass;  // fix_fwd_type_supply
 struct StartingTechnoStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -29,6 +26,9 @@ struct TimerStruct;  // fix_fwd_type_supply
 struct CellStruct;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorCursor;  // fix_fwd_type_supply
+
+struct HouseClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8

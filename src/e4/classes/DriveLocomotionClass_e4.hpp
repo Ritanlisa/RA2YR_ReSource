@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ILocomotion;  // fix_fwd_type_supply
 
 struct DriveLocomotionClass {
 // --- flat members (BEGIN) ---
-struct ILocomotion;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     unsigned int u32_8;  // 0x8

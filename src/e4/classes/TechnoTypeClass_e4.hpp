@@ -7,9 +7,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct TechnoTypeClass {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
@@ -25,6 +22,9 @@ struct ObjectTypeClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct DynamicVectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+
+struct TechnoTypeClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -910,7 +910,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
     unsigned int qD9D;  // 0xD9D
     int ZFudgeBridge;  // 0xDA0
     char PaletteFile;  // 0xDA4
-    void* ;  // 0xDA8
+    void* pDA8;  // regen name
     unsigned int qDAC;  // 0xDAC
     WeaponTypeClass* qDB0;  // 0xDB0
     unsigned int u32_DB4;  // 0xDB4

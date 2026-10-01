@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 
 struct MoveFeedback {
 // --- flat members (BEGIN) ---
@@ -31,7 +32,6 @@ struct MoveFeedback {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     void Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
     DynamicVector * QueryInterface(char a2);
     char AddRef(int a2);

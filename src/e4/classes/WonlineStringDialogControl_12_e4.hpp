@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct CreateGameDialogControl;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
+struct DynamicVector;  // fix_fwd_type_supply
 struct WonlineStringDialogControl_12 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -22,9 +25,6 @@ struct WonlineStringDialogControl_12 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct CreateGameDialogControl;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
-struct DynamicVector;  // fix_fwd_type_supply
     void * Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2);  // 0x7AC630
     void ClearBuffer(void *a1_1);  // 0x7AC970
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x7AC9C0

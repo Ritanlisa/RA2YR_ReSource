@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct ThemeClass {
 // --- flat members (BEGIN) ---
@@ -31,7 +32,6 @@ struct ThemeClass {
     unsigned char u8_289;
     unsigned int Audio;
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
     int ClearQueues();
     int ReadThemeEntry(uint8_t *** a2, void *a2);
     int RequestBuffer(void *a1);

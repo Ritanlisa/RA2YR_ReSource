@@ -5,9 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DropListClass;  // fix_fwd_type_supply
 struct E4Recv_4B4E10 {
 // --- flat members (BEGIN) ---
-struct DropListClass;  // fix_fwd_type_supply
     unsigned int vfptr;  // 0x0
     unsigned int M24;  // 0x18
     unsigned int u32_20;  // 0x20

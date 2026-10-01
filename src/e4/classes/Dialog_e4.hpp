@@ -5,11 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct Dialog {
-// --- flat members (BEGIN) ---
 struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+struct Dialog {
+// --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8

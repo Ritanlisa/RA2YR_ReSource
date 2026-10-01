@@ -6,9 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct ParticleSystemTypeClass {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
@@ -18,6 +15,9 @@ struct ConnectionPointClass;  // fix_fwd_type_supply
 struct SomeVoxelCache;  // fix_fwd_type_supply
 struct ParticleSystemClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
+
+struct ParticleSystemTypeClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
@@ -270,8 +270,8 @@ struct Color;  // fix_fwd_type_supply
     double u64_2F8;  // 0x2F8
     Color* q300;  // 0x300
     Color* q304;  // 0x304
-    void* ;  // 0x308
-    void* ;  // 0x30A
+    void* p308;  // regen name
+    void* p30A;  // regen name
     unsigned char u8_30B;  // 0x30B
     unsigned int ParticleSystemTypeClass_field_0x0;
     unsigned int ParticleSystemTypeClass_field_0x294;

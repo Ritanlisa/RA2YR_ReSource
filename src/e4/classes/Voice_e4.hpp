@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct BufferIOFileClass;  // fix_fwd_type_supply
 
 struct Voice {
 // --- flat members (BEGIN) ---
-struct BufferIOFileClass;  // fix_fwd_type_supply
     unsigned int u32_C;  // 0xC
     unsigned int u32_18;  // 0x18
     unsigned char q024;  // 0x24

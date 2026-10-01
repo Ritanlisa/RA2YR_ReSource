@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct CoopCampaignVector {
 // --- flat members (BEGIN) ---
@@ -24,7 +25,6 @@ struct CoopCampaignVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     void Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);

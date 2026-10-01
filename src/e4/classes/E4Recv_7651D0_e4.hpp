@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AudioController;  // fix_fwd_type_supply
 struct E4Recv_7651D0 {
 // --- flat members (BEGIN) ---
     AudioController * ptr_48;  // 0x48
@@ -13,7 +14,6 @@ struct E4Recv_7651D0 {
     AudioController * q1584;  // 0x1584
     AudioController * q5508;  // 0x5508
 // --- flat members (END) ---
-struct AudioController;  // fix_fwd_type_supply
     AbstractClass * * sub_7651D0();  // 0x7651D0
 };
 } // namespace gamemd

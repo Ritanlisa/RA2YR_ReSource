@@ -6,12 +6,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-
-struct LightConvertClass {
-// --- flat members (BEGIN) ---
 struct ConvertClass;  // fix_fwd_type_supply
 struct MapClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
+
+struct LightConvertClass {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8

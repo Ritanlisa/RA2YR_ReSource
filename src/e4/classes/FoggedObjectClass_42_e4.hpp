@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct FoggedObjectClass_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -15,7 +16,6 @@ struct FoggedObjectClass_42 {
     unsigned char q00E;  // 0xE
     int Count;  // 0x10
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int FindItem(unsigned int * a2);  // 0x4E07B0
     unsigned int * loc_4E0D30(unsigned int * Block, char a2);  // 0x4E0D30
     void ClearBuffer(void *a1_1);  // 0x4E01F0

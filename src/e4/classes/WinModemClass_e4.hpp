@@ -5,10 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
 
 struct WinModemClass {
 // --- flat members (BEGIN) ---
-struct AbstractClass;  // fix_fwd_type_supply
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8

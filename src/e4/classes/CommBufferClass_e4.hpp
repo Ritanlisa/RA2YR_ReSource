@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct AbstractClass;  // fix_fwd_type_supply
+struct CampaignClass;  // fix_fwd_type_supply
 struct CommBufferClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -20,8 +22,6 @@ struct CommBufferClass {
     AbstractClass * ptr_30;  // 0x30
     CampaignClass* q034;  // 0x34
 // --- flat members (END) ---
-struct AbstractClass;  // fix_fwd_type_supply
-struct CampaignClass;  // fix_fwd_type_supply
     AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);  // 0x48B0E0
     void sub_48B1F0();  // 0x48B1F0
 };

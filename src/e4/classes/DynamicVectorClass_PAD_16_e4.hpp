@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVectorClass_PAD_16 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -15,7 +16,6 @@ struct DynamicVectorClass_PAD_16 {
     unsigned char q00E;  // 0xE
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Get(int a2, void *a2_2);  // 0x49EA00
     char Add(int a2, void *a2_2, void *a3_1);  // 0x49EB50
     char Release(int a2, unsigned int * a3);  // 0x49EB90

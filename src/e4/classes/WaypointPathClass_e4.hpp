@@ -27,7 +27,7 @@ struct WaypointPathClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned char q034;  // 0x34
-    void* ;  // 0x35
+    void* p35;  // regen name
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B

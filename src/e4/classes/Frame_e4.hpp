@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct TechnoTypeClass;  // fix_fwd_type_supply
 
 struct Frame {
 // --- flat members (BEGIN) ---
@@ -14,7 +15,6 @@ struct Frame {
     void* q018;  // 0x18
     void* q024;  // 0x24
 // --- flat members (END) ---
-struct TechnoTypeClass;  // fix_fwd_type_supply
     TechnoTypeClass * Present(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8);
     TechnoTypeClass * Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
 };

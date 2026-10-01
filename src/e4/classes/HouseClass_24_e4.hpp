@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct HouseClass_24 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -13,7 +14,6 @@ struct HouseClass_24 {
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4F28A0
     char AddRef(int a2);  // 0x4F28E0
     char Release(int a2, unsigned int * a3);  // 0x4F2920

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ushort {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -15,7 +16,6 @@ struct VectorClass_ushort {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
     void Destroy(void *a1_1);  // 0x42D5A0
     unsigned int GetItemIndex(int a2);  // 0x42D5D0
     short Clear(int a2);  // 0x42D5F0

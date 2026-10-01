@@ -5,12 +5,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct EventClass {
-// --- flat members (BEGIN) ---
 struct AbstractClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+struct EventClass {
+// --- flat members (BEGIN) ---
     AbstractClass* q000;  // 0x0
     unsigned int u32_3;  // 0x3
     void* q004;  // 0x4

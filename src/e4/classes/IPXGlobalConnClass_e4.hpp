@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct HashTable_flat;  // fix_fwd_type_supply
 
 struct IPXGlobalConnClass {
 // --- flat members (BEGIN) ---
@@ -33,7 +34,6 @@ struct IPXGlobalConnClass {
     unsigned int *__pad_0;
     unsigned char IPXGlobalConnClass_field_0x20;  // 0x20
 // --- flat members (END) ---
-struct HashTable_flat;  // fix_fwd_type_supply
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);
     IPXGlobalConnClass * QueryInterface(char a2);
     int CheckStatus();

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct DynamicVector;  // fix_fwd_type_supply
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct MSPCXAnim_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -20,8 +22,6 @@ struct MSPCXAnim_42 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct DynamicVector;  // fix_fwd_type_supply
-struct VectorClass_flat;  // fix_fwd_type_supply
     AbstractClass * * AllocCopyData_8B(int a2, unsigned int * a3);  // 0x5D09C0
     void FreeData();  // 0x5D05A0
     unsigned int GetCount_8B(int a2);  // 0x5D05D0

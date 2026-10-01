@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_rc_ptr_WDTTerritory {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -14,7 +15,6 @@ struct VectorClass_rc_ptr_WDTTerritory {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Release(int a2, unsigned int * a3);  // 0x76B8C0
     unsigned int * loc_76B6C0(WDTState * aP1, int a3);  // 0x76B6C0
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x76B760

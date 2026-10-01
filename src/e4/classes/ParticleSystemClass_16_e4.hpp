@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct ParticleSystemClass_16 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -17,7 +18,6 @@ struct ParticleSystemClass_16 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Write(int a2);  // 0x4E87D0
     char AddRef(int a2);  // 0x4EB260
     char Release(int a2, unsigned int * a3);  // 0x4EB2A0

@@ -6,8 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct CreateTeamCommand {
-// --- flat members (BEGIN) ---
 struct ObjectClass;  // fix_fwd_type_supply
 struct CommandClass;  // fix_fwd_type_supply
 struct SelectTeamCommand;  // fix_fwd_type_supply
@@ -20,6 +18,8 @@ struct CursorPositionCommandClass;  // fix_fwd_type_supply
 struct DeleteCommandClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct CHAR;  // fix_fwd_type_supply
+struct CreateTeamCommand {
+// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct CheckListClass;  // fix_fwd_type_supply
 struct E4Recv_488280 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -17,7 +18,6 @@ struct E4Recv_488280 {
     unsigned int q1488;  // 0x1488
     unsigned int q2178;  // 0x2178
 // --- flat members (END) ---
-struct CheckListClass;  // fix_fwd_type_supply
     CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);  // 0x488280
 };
 } // namespace gamemd

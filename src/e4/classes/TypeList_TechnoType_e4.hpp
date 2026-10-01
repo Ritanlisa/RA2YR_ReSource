@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct VectorClass_flat;  // fix_fwd_type_supply
 struct TypeList_TechnoType {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
@@ -18,7 +19,6 @@ struct TypeList_TechnoType {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-struct VectorClass_flat;  // fix_fwd_type_supply
     int Clear(int a2);  // 0x4778F0
     char AddRef(int a2);  // 0x477FC0
     char Remove(int a2, unsigned int * a3);  // 0x478000
