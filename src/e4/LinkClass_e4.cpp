@@ -19,7 +19,7 @@
 
 // 0x4E1480
 namespace gamemd {
-void LinkClass::Destroy(void *a1)
+int LinkClass::Destroy(void *a1)
 {
 
   (*(void (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
@@ -29,7 +29,7 @@ void LinkClass::Destroy(void *a1)
 } // namespace gamemd
 // 0x5565A0
 namespace gamemd {
-void LinkClass::Destruct(void *a1, void *a2)
+int LinkClass::Destruct(void *a1, void *a2)
 {
 
   LinkClass *Prev; // edi

@@ -42,7 +42,7 @@ int DialogControl::IsHidden()
 } // namespace gamemd
 // 0x623340
 namespace gamemd {
-void DialogControl::Constructor(void *a1, void *a2, void *a3)
+_DWORD * DialogControl::Constructor(void *a1, void *a2, void *a3)
 {
 
   unsigned int *v2; // eax

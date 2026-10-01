@@ -43,7 +43,7 @@
 
 // 0x730A90
 namespace gamemd {
-void AddMessageListPlayerMessage(CellStruct * a1, int a2)
+int AddMessageListPlayerMessage(CellStruct * a1, int a2)
 {
   int v2; // eax
 

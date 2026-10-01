@@ -73,8 +73,8 @@ public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
     bool initConnection();  // 0x48BE60
     bool closeConnection();  // 0x69BC20
-    bool send(const uint8_t*, int32_t);  // 0x53F5D0
-    int32_t receive(uint8_t*, int32_t);  // 0x53F650
+    bool send(int a2, int a3, int a4, int a5, int a6, int a7);
+    int receive(int a2, int a3, int *a4, int **a5, int a6, int a7);
 
     uint32_t  Socket;
     uint32_t  RemoteAddress[3];
@@ -97,7 +97,7 @@ public:
     int32_t ReceivePacket(uint8_t*, int32_t);                          // 0x541070
     bool IsIPXAvailable() const;
 
-    void init();  // 0x48BA90
+    int init();  // 0x48BA90
     void processPacket();                                             // 0x5409F0
     IPXConnClass* createConnection();                                 // 0x540D40
     void destroyConnection(IPXConnClass*);                             // 0x540D60

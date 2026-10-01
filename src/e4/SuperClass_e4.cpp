@@ -74,7 +74,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 }
 // 0x6CAEC0
 namespace gamemd {
-void SuperClass::Constructor(void *a1, void *a2, void *a3)
+int SuperClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   int v2; // eax

@@ -38,7 +38,7 @@ struct Mouse {
     int SetBounds(void* aP1, void *a2_1);  // 0x4A8BF0
     int SetCursor(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x5BDC80
     HWND ReleaseCapture(void *a1_1);  // 0x6938C0
-    AbstractClass * * DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4, void *a4_2);  // 0x7B93F0
+    void DrawCursor(int *a2, int a3, int a4);
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
     BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400

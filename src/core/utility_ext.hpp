@@ -180,11 +180,11 @@ public:
     // IDA 0x52AEE0
     void DestroyPipe();  // 0x52AEE0
     // IDA 0x631D10
-    void Dispatch();  // 0x631D10
+    int Dispatch();  // 0x631D10
     // IDA 0x6C95E0
     int32_t GetField();  // 0x6C95E0
     // IDA 0x6C9890
-    void Set(int32_t value);  // 0x6C9890
+    _DWORD * Set(int32_t value);  // 0x6C9890
     // IDA 0x6C98E0
     void Invoke();  // 0x6C98E0
 
@@ -280,9 +280,9 @@ public:
     Rect(int32_t x, int32_t y, int32_t w, int32_t h);
 
     // IDA 0x4D9C00 area
-    void Set(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x42E410
+    _DWORD * Set(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x42E410
     // IDA 0x4D9C00 area
-    void Construct(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x45A130
+    _DWORD * Construct(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x45A130
     // IDA 0x4D9C00 area
     void Union(const Rect& other);  // 0x487F40
     // IDA 0x4D9C00 area
@@ -404,14 +404,14 @@ class EventQueue
 {
 public:
     // IDA 0x54F000
-     void Process(void* bink_player);  // 0x54F000
+     __int16 Process(void* bink_player);  // 0x54F000
     // IDA 0x54F000 area
      void Read();  // 0x54F050
     // IDA 0x54F000 area
      bool Check();  // 0x54F650
     // IDA 0x54F000 area
     // design: static function, no direct binary match in IDA
-     void Clear();
+     int Clear();
 
     static int32_t  s_EventCount;   // 0x00
     static void*    s_Queue;        // 0x04
@@ -441,7 +441,7 @@ class Selection
 {
 public:
     // IDA 0x724BD0 area
-    void SetCurrent(ObjectClass* obj);  // 0x731D00
+    int SetCurrent(ObjectClass* obj);  // 0x731D00
     // IDA 0x724BD0 area
     bool GetFlag() const;  // 0x732D00
     // IDA 0x724BD0 area
@@ -568,7 +568,7 @@ class Process
 {
 public:
     // IDA 0x54F000 area
-     void WaitForExit();  // 0x664610
+     bool WaitForExit();  // 0x664610
 
     int32_t     Process_field_00;       // 0x00
 };
@@ -678,7 +678,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AllocCallback() = default;
 
-    virtual void Dispatch(); // 0x7BE5D0
+    virtual int Dispatch(); // 0x7BE5D0
 
 };
 // 22 methods in IDA
@@ -755,7 +755,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_10() = default;
 
-    virtual void Construct(); // 0x6BFBC0
+    virtual _DWORD * Construct(); // 0x6BFBC0
 
 };
 // 1 methods in IDA
@@ -766,7 +766,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_3() = default;
 
-    virtual void Construct(); // 0x6BF140
+    virtual _DWORD * Construct(); // 0x6BF140
 
 };
 // 1 methods in IDA
@@ -777,7 +777,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_4() = default;
 
-    virtual void Construct(); // 0x6BF2C0
+    virtual _DWORD * Construct(); // 0x6BF2C0
 
 };
 // 1 methods in IDA
@@ -788,7 +788,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_5() = default;
 
-    virtual void Construct(); // 0x6BF440
+    virtual _DWORD * Construct(); // 0x6BF440
 
 };
 // 1 methods in IDA
@@ -799,7 +799,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_6() = default;
 
-    virtual void Construct(); // 0x6BF5C0
+    virtual _DWORD * Construct(); // 0x6BF5C0
 
 };
 // 1 methods in IDA
@@ -810,7 +810,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_7() = default;
 
-    virtual void Construct(); // 0x6BF740
+    virtual _DWORD * Construct(); // 0x6BF740
 
 };
 // 1 methods in IDA
@@ -821,7 +821,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_8() = default;
 
-    virtual void Construct(); // 0x6BF8C0
+    virtual _DWORD * Construct(); // 0x6BF8C0
 
 };
 // 1 methods in IDA
@@ -832,7 +832,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_9() = default;
 
-    virtual void Construct(); // 0x6BFA40
+    virtual _DWORD * Construct(); // 0x6BFA40
 
 };
 // 27 methods in IDA
@@ -1131,7 +1131,7 @@ public:
     virtual ~GraphicMenuItem() = default; // 0x4F3A70
 
     virtual void Constructor(); // 0x4F3A50
-    virtual void Destructor(); // 0x4F3A70
+    virtual int Destructor(); // 0x4F3A70
 
     uint8_t GraphicMenuItem_field_0x04[4];
 };
@@ -1254,7 +1254,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashVector_UInt() = default;
 
-    virtual void Construct(); // 0x58AFF0
+    virtual _DWORD * Construct(); // 0x58AFF0
 
 };
 // 1 methods in IDA
@@ -1401,7 +1401,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Rect_Point() = default;
 
-    virtual void Set(); // 0x4E1A20
+    virtual _DWORD * Set(); // 0x4E1A20
 
 };
 // 1 methods in IDA
@@ -1423,7 +1423,7 @@ public:
     virtual ~SHA1() = default;
 
     virtual void ProcessBlock(); // 0x69D8C0
-    virtual void Process(); // 0x69D960
+    virtual __int16 Process(); // 0x69D960
     virtual void Compute(); // 0x69D9E0
     virtual void Transform(); // 0x69DB30
     virtual void Reset(); // 0x69DFF0
@@ -1539,7 +1539,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Tree() = default;
 
-    virtual void Destructor(); // 0x5B4080
+    virtual int Destructor(); // 0x5B4080
 
 };
 // 1 methods in IDA
@@ -1549,7 +1549,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TypeClass() = default;
 
-    virtual void FindByName(); // 0x41CAA0
+    virtual wchar_t * FindByName(); // 0x41CAA0
 
 };
 // 2 methods in IDA
@@ -1619,7 +1619,7 @@ class VectorCursor
 public:
     virtual ~ddtor() = default;  // 0x76F190
 
-    virtual void Construct(); // 0x76F0C0
+    virtual _DWORD * Construct(); // 0x76F0C0
     virtual void HasNext(); // 0x76F0E0
     virtual void initCursor(); // 0x76F100
     virtual void updateCursor(); // 0x76F120

@@ -396,7 +396,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioThread() = default;
 
-    virtual void UpdateStats(); // 0x403920
+    virtual int UpdateStats(__int64 a2);
 
 };
 // 1 methods in IDA

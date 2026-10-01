@@ -50,7 +50,7 @@
 
 // 0x52B6D0
 namespace gamemd {
-void sub_52B6D0(int a1, int a2, int * a3)
+int sub_52B6D0(int a1, int a2, int * a3)
 {
   int v3; // esi
   int v4; // ebx
@@ -181,7 +181,7 @@ void sub_6470F0()
 }
 // 0x725070
 namespace gamemd {
-void sub_725070(int a1, int a2, unsigned int * a3)
+int sub_725070(int a1, int a2, unsigned int * a3)
 {
   int v3; // esi
   unsigned int v4; // ebx

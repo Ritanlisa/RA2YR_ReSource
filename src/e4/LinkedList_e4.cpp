@@ -345,7 +345,7 @@ int LinkedList_flat::RemoveNode()
 } // namespace gamemd
 // 0x623460
 namespace gamemd {
-void LinkedList_flat::Remove(unsigned int * a2)
+int LinkedList_flat::Remove(unsigned int * a2)
 {
 
   int result; // eax

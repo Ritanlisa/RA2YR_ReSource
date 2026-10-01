@@ -97,9 +97,9 @@ struct Object {
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
 // --- flat members (END) ---
-    int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1);  // 0x47C3D0
+    int FindClosestObjectCell(_DWORD *a2, char a3, int a4);
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
-    int IsAlliedWithObjectHouse(IUnknown * aP1, void *a2_1);  // 0x4F9A90
+    int IsAlliedWithObjectHouse(int a2);
     int IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int * FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
     int SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3);  // 0x5FC380

@@ -18,7 +18,7 @@
 
 // 0x4A3370
 namespace gamemd {
-void DDraw::ReleaseSurfaces(void *a1)
+int DDraw::ReleaseSurfaces(void *a1)
 {
 
   int v2; // eax
@@ -123,7 +123,7 @@ LABEL_7:
 } // namespace gamemd
 // 0x4A4830
 namespace gamemd {
-void DDraw::WaitForIdle(void *a1)
+int DDraw::WaitForIdle(void *a1)
 {
 
   int result; // eax

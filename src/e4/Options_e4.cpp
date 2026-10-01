@@ -460,7 +460,7 @@ int Options::DeleteAndZero()
 }
 // 0x6248A0
 namespace gamemd {
-void Options::EnsureCapacity(void *a1_1, void *a2_1)
+char Options::EnsureCapacity(void *a1_1, void *a2_1)
 {
 
   void * v2;

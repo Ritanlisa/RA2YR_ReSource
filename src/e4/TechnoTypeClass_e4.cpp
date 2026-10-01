@@ -64,7 +64,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {
-void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
+double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
   double result; // st7

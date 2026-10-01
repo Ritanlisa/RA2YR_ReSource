@@ -10,7 +10,7 @@
 
 // 0x664610
 namespace gamemd {
-void Process::WaitForExit(DWORD dwMilliseconds, CellStruct * aP2, void *a3)
+bool Process::WaitForExit(DWORD dwMilliseconds, CellStruct * aP2, void *a3)
 {
 
   const HANDLE *v3; // esi

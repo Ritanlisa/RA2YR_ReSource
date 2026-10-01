@@ -17,7 +17,7 @@
 
 // 0x682780
 namespace gamemd {
-void sub_682780(int a1, int a2, wchar_t * String)
+int sub_682780(int a1, int a2, wchar_t * String)
 {
   unsigned int * v3;
   unsigned int *v4; // eax
@@ -79,7 +79,7 @@ void sub_682780(int a1, int a2, wchar_t * String)
 }
 // 0x6829A0
 namespace gamemd {
-void sub_6829A0(int * a1, int a2, int a3)
+int sub_6829A0(int * a1, int a2, int a3)
 {
   int v3; // eax
   int v4; // esi

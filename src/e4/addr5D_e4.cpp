@@ -146,7 +146,7 @@ void ObjectClass::j_DeleteAndZero()
 }
 // 0x5D2350
 namespace gamemd {
-void sub_5D2350(int a1, int * a2)
+int sub_5D2350(int a1, int * a2)
 {
   int result; // eax
   int v3; // eax

@@ -42,13 +42,13 @@ struct String {
     void* ptr_4;
     void* ptr_8;
 // --- flat members (END) ---
-    void AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
+    int AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
     void * AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
     int Release(void *a1_1);  // 0x5BD5A0
     ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     ControlClass * * To_Waypoint();  // 0x763690
-    void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
+    int TrimLeft(ObjectClass * aP1);  // 0x7B51D0
     unsigned int Length(void *a1_1);  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10

@@ -9,7 +9,7 @@
 
 // 0x535FC0
 namespace gamemd {
-void SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
+_DWORD * SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
@@ -20,7 +20,7 @@ void SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *
 } // namespace gamemd
 // 0x535FE0
 namespace gamemd {
-void SelectTeamCommand::AddRef(void *a1)
+char * SelectTeamCommand::AddRef(void *a1)
 {
 
   sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x535fee*/
@@ -30,7 +30,7 @@ void SelectTeamCommand::AddRef(void *a1)
 } // namespace gamemd
 // 0x536000
 namespace gamemd {
-void SelectTeamCommand::Release(void *a1)
+wchar_t * SelectTeamCommand::Release(void *a1)
 {
 
   wchar_t *StringCSF; // eax

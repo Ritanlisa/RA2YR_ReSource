@@ -61,7 +61,7 @@ void Player::BuildListString(wchar_t * Destination)
 } // namespace gamemd
 // 0x5E8BF0
 namespace gamemd {
-void Player::FindByName(wchar_t * String2)
+wchar_t * Player::FindByName(wchar_t * String2)
 {
 
   int v3; // ebp
@@ -100,7 +100,7 @@ void Player::FindByName(wchar_t * String2)
 } // namespace gamemd
 // 0x5E9440
 namespace gamemd {
-void Player::IsObserver(void *a1)
+int Player::IsObserver(void *a1)
 {
 
   return this /*0x5e9461*/

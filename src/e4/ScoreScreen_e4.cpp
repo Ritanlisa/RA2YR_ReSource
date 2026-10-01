@@ -26,7 +26,7 @@
 
 // 0x690A10
 namespace gamemd {
-void ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
+_DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
 {
 
   void *v3; // eax
@@ -108,7 +108,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 } // namespace gamemd
 // 0x690F30
 namespace gamemd {
-void ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
+_DWORD * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 {
 
   this->ScoreScreen_field_0x08 = (unsigned int)(a3);

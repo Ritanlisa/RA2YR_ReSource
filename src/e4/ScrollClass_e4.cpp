@@ -27,7 +27,7 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
-void ScrollClass::Read(char * Block, char a2)
+char * ScrollClass::Read(char * Block, char a2)
 {
 
   int *v3; // esi

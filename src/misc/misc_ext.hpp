@@ -163,7 +163,7 @@ class Explosion
 {
 public:
     // IDA 0x48B2A0 area
-     void RemoveItem(int32_t index);  // 0x53DDA0
+     char RemoveItem(int32_t index);  // 0x53DDA0
 
     int32_t     Explosion_field_00;       // 0x00
 };
@@ -287,7 +287,7 @@ class AnimSystem
 {
 public:
     // IDA 0x48B2A0 area
-     void Init();  // 0x75A790
+     int Init();  // 0x75A790
 
     static int32_t  s_AnimationCount;   // 0x00
 };
@@ -354,7 +354,7 @@ public:
     // IDA 0x5AE860
      void Identity(float* m);  // 0x5AE860
     // IDA 0x5AE860 area
-     void Translate(float* m, float x, float y, float z);  // 0x5AE980
+     int Translate(float* m, float x, float y, float z);  // 0x5AE980
     // IDA 0x5AE860 area
      CellStruct TransformCell(const float* m, const CellStruct& cell);  // 0x6D2360
 
@@ -396,8 +396,8 @@ public:
     virtual void GetClassIdentifier(); // 0x41E500
     virtual void LoadTypeData(); // 0x41E540
     virtual void SaveToINI(); // 0x41E5C0
-    virtual void ProcessPower(); // 0x41E5E0
-    virtual void EnemyHouseOwns(); // 0x41EAF0
+    virtual int ProcessPower(int *a2);
+    virtual bool EnemyHouseOwns(int a2, _DWORD *a3);
     // +11 more virtual methods
 
     uint8_t AITriggerTypeClass_field_0x04[4];
@@ -441,7 +441,7 @@ public:
     virtual void Release(); // 0x426790
     virtual void Load(); // 0x426A50
     virtual void ddtor(); // 0x426A90
-    virtual void Check(); // 0x426DD0
+    virtual int Check(); // 0x426DD0
     // +2 more virtual methods
 
     uint8_t AnimFile_field_0x04[4];
@@ -473,7 +473,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AnimTypeList() = default;
 
-    virtual void Constructor(); // 0x67A470
+    virtual int Constructor(); // 0x67A470
 
 };
 // 1 methods in IDA
@@ -483,7 +483,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AnimTypeVector() = default;
 
-    virtual void Constructor(); // 0x525680
+    virtual int Constructor(); // 0x525680
 
 };
 // 3 methods in IDA
@@ -582,7 +582,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CoordBounds() = default;
 
-    virtual void Constructor(); // 0x403870
+    virtual int Constructor(); // 0x403870
 
 };
 // 1 methods in IDA
@@ -603,7 +603,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CoordinateTables() = default;
 
-    virtual void Init(); // 0x561910
+    virtual int Init(); // 0x561910
 
 };
 // 1 methods in IDA
@@ -614,7 +614,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DamageAnimClass() = default;
 
-    virtual void Constructor(); // 0x7493B0
+    virtual int Constructor(); // 0x7493B0
 
 };
 // 8 methods in IDA
@@ -662,9 +662,9 @@ public:
     virtual ~FileExtension() = default;
 
     virtual void MapHandler(); // 0x6263D0
-    virtual void Constructor(); // 0x628240
+    virtual int Constructor(); // 0x628240
     virtual void CheckExtensionMatch(); // 0x628D10
-    virtual void Check(); // 0x628DD0
+    virtual int Check(); // 0x628DD0
 
     uint8_t FileExtension_field_0x04[4];
     uint8_t FileExtension_field_0x08[4];
@@ -711,7 +711,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FileStraw() = default;
 
-    virtual void Open(); // 0x525A10
+    virtual _DWORD * Open(); // 0x525A10
     virtual void Destructor(); // 0x7BA590
 
     uint8_t FileStraw_field_0x04[4];
@@ -746,7 +746,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FileTreeNode() = default;
 
-    virtual void Destroy(); // 0x69E500
+    virtual int Destroy(); // 0x69E500
 
 };
 // 8 methods in IDA
@@ -760,7 +760,7 @@ public:
     virtual void Release(); // 0x512C80
     virtual void AddType(); // 0x512D60
     virtual void Remove(); // 0x512DA0
-    virtual void Construct(); // 0x512DC0
+    virtual _DWORD * Construct(); // 0x512DC0
     // +3 more virtual methods
 
     uint8_t InfantryTypeVector_field_0x04[4];
@@ -884,7 +884,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapCoords() = default;
 
-    virtual void Init(); // 0x6B5240
+    virtual int Init(); // 0x6B5240
 
 };
 // 1 methods in IDA
@@ -928,7 +928,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapPreview() = default;
 
-    virtual void Check(); // 0x5D63E0
+    virtual int Check(); // 0x5D63E0
     virtual void Upload(); // 0x5E7EB0
 
     uint8_t MapPreview_field_0x04[4];
@@ -940,7 +940,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapResourceClass() = default;
 
-    virtual void Constructor(); // 0x595740
+    virtual int Constructor(); // 0x595740
 
 };
 // 9 methods in IDA
@@ -980,7 +980,7 @@ class MapSeedClass
 public:
     virtual ~MapSeedClass() = default;  // 0x597D50
 
-    virtual void Constructor(); // 0x595680
+    virtual int Constructor(); // 0x595680
     virtual void Release(); // 0x597760
     virtual void AddRef(); // 0x597A30
     virtual void ddtor(); // 0x597D50
@@ -1206,7 +1206,7 @@ public:
     virtual ~ScoreScreen() = default;
 
     virtual void Display(); // 0x68CD20
-    virtual void Check(); // 0x68EC00
+    virtual int Check(); // 0x68EC00
     virtual void AccumulateScoreStats(); // 0x68EF20
     virtual void DisplayTimeText(); // 0x68F9B0
     virtual void LoadAudio(); // 0x690640
@@ -1225,7 +1225,7 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* LoadScoreFont(int a1);  // 0x690a10 -- ScoreScreen::LoadScoreFont
     void* LoadCountryFlags(int a1);  // 0x690ae0 -- ScoreScreen::LoadCountryFlags
-    void RemoveItem(int a1, int a2, int a3, int a4, int a5);  // 0x7712c0 -- ScoreScreen::RemoveItem
+    char RemoveItem(int a1, int a2, int a3, int a4, int a5);  // 0x7712c0 -- ScoreScreen::RemoveItem
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
@@ -1272,7 +1272,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SpawnControlVector() = default;
 
-    virtual void Constructor(); // 0x6B8880
+    virtual int Constructor(); // 0x6B8880
 
 };
 // 1 methods in IDA
@@ -1282,7 +1282,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SuperClassVector() = default;
 
-    virtual void Construct(); // 0x510500
+    virtual _DWORD * Construct(); // 0x510500
 
 };
 // 5 methods in IDA
@@ -1469,7 +1469,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AircraftTypeVector() = default;
 
-    virtual void Constructor(); // 0x513990
+    virtual int Constructor(); // 0x513990
 
 };
 // 10 methods in IDA
@@ -1480,7 +1480,7 @@ public:
     virtual ~AlphaShapeClass() = default;  // 0x421730
 
     virtual void CTOR(); // 0x420960
-    virtual void Constructor(); // 0x420AF0
+    virtual int Constructor(); // 0x420AF0
     virtual void SD_vt03(); // 0x420D40
     virtual void SD_vt11(); // 0x420D80
     virtual void SD_vt12(); // 0x420D90
@@ -1503,7 +1503,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AngerVector() = default;
 
-    virtual void Construct(); // 0x5106E0
+    virtual _DWORD * Construct(); // 0x5106E0
 
 };
 // 1 methods in IDA
@@ -1694,7 +1694,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BoolVector() = default;
 
-    virtual void Construct(); // 0x510920
+    virtual _DWORD * Construct(); // 0x510920
 
 };
 // 1 methods in IDA
@@ -1942,7 +1942,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ClassFactory_CStream() = default;
 
-    virtual void Construct(); // 0x6BEE40
+    virtual _DWORD * Construct(); // 0x6BEE40
 
 };
 // 1 methods in IDA
@@ -1953,7 +1953,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ClassFactory_Wave() = default;
 
-    virtual void Construct(); // 0x6BEFC0
+    virtual _DWORD * Construct(); // 0x6BEFC0
 
 };
 // 1 methods in IDA
@@ -2081,7 +2081,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ConnectionPointVector() = default;
 
-    virtual void Construct(); // 0x5105F0
+    virtual _DWORD * Construct(); // 0x5105F0
 
 };
 // 3 methods in IDA
@@ -2126,7 +2126,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DListNode() = default;
 
-    virtual void Init(); // 0x4072C0
+    virtual int Init(); // 0x4072C0
     virtual void InitEmpty(); // 0x4072D0
 
     uint8_t DListNode_field_0x04[4];
@@ -2138,9 +2138,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Dial8Class() = default;
 
-    virtual void Constructor(); // 0x4A53B0
+    virtual int Constructor(); // 0x4A53B0
     virtual void SetValue(); // 0x4A5660
-    virtual void GetValue(); // 0x4A57B0
+    virtual int GetValue(); // 0x4A57B0
     virtual void QueryInterface(); // 0x4A59A0
 
     uint8_t Dial8Class_field_0x04[4];
@@ -2199,7 +2199,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DistributionVector_BuildingType() = default;
 
-    virtual void Construct(); // 0x510970
+    virtual _DWORD * Construct(); // 0x510970
 
 };
 // 5 methods in IDA
@@ -2249,7 +2249,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicVectorArray() = default;
 
-    virtual void Constructor(); // 0x628070
+    virtual int Constructor(); // 0x628070
 
 };
 // 1 methods in IDA
@@ -2343,7 +2343,7 @@ public:
     virtual ~GaugeClass() = default;
 
     virtual void SetValue(); // 0x4E2580
-    virtual void GetValue(); // 0x4E25A0
+    virtual int GetValue(); // 0x4E25A0
     virtual void GetRange(); // 0x4E25D0
     virtual void SetColor(); // 0x4E2650
     virtual void SetRange(); // 0x4E29A0
@@ -2467,7 +2467,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~INISectionList() = default;
 
-    virtual void Constructor(); // 0x49E8E0
+    virtual int Constructor(); // 0x49E8E0
 
 };
 // 6 methods in IDA
@@ -2478,7 +2478,7 @@ public:
 
     virtual void DragEnter(); // 0x7C89F2
     virtual void BeginDrag(); // 0x7C89F8
-    virtual void Destroy(); // 0x7C89FE
+    virtual int Destroy(); // 0x7C89FE
     virtual void EndDrag(); // 0x7C8A04
     virtual void DragMove(); // 0x7C8A0A
     // +1 more virtual methods
@@ -2524,7 +2524,7 @@ public:
     virtual ~IntDynamicVector() = default;
 
     virtual void QueryInterface(); // 0x477B10
-    virtual void Construct(); // 0x717BD0
+    virtual _DWORD * Construct(); // 0x717BD0
 
     uint8_t IntDynamicVector_field_0x04[4];
 };
@@ -2560,7 +2560,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~KeyValuePair() = default;
 
-    virtual void Init(); // 0x52AEC0
+    virtual int Init(); // 0x52AEC0
 
 };
 // 1 methods in IDA
@@ -2605,7 +2605,7 @@ class LCWPipe
 public:
     virtual ~LCWPipe() = default; // 0x552060
 
-    virtual void Constructor(); // 0x551FF0
+    virtual int Constructor(); // 0x551FF0
     virtual void Destructor(); // 0x552060
 
     uint8_t LCWPipe_field_0x04[4];
@@ -2628,7 +2628,7 @@ class LCWStraw
 public:
     virtual ~LCWStraw() = default; // 0x552450
 
-    virtual void Constructor(); // 0x5523E0
+    virtual int Constructor(); // 0x5523E0
     virtual void Destructor(); // 0x552450
 
     uint8_t LCWStraw_field_0x04[4];
@@ -2649,7 +2649,7 @@ class LZOPipe
 public:
     virtual ~LZOPipe() = default; // 0x55C310
 
-    virtual void Constructor(); // 0x55C2B0
+    virtual int Constructor(); // 0x55C2B0
     virtual void Destructor(); // 0x55C310
 
     uint8_t LZOPipe_field_0x04[4];
@@ -2672,7 +2672,7 @@ class LZOStraw
 public:
     virtual ~LZOStraw() = default; // 0x55C780
 
-    virtual void Constructor(); // 0x55C720
+    virtual int Constructor(); // 0x55C720
     virtual void Destructor(); // 0x55C780
 
     uint8_t LZOStraw_field_0x04[4];
@@ -2738,7 +2738,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MPCombatTeam() = default;
 
-    virtual void Constructor(); // 0x5C9470
+    virtual int Constructor(); // 0x5C9470
     virtual void MPTeam(); // 0x5CAE10
     virtual void Constructor2(); // 0x5CAEB0
     virtual void AddToList(); // 0x5D8D10
@@ -2779,7 +2779,7 @@ public:
     virtual ~MSBinkAnim() = default;
 
     virtual void Pause(); // 0x5CC850
-    virtual void Stop(); // 0x5CC880
+    virtual int Stop(); // 0x5CC880
     virtual void Load(); // 0x5CC8A0
     virtual void Play(); // 0x5CC970
     virtual void QueryInterface(); // 0x5CEC70
@@ -2797,7 +2797,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSBitPrintAnim() = default;
 
-    virtual void Construct(); // 0x5CD330
+    virtual _DWORD * Construct(); // 0x5CD330
     virtual void Update(); // 0x5CD3D0
     virtual void Stub(); // 0x5CD400
     virtual void SetText(); // 0x5CD410
@@ -2879,7 +2879,7 @@ public:
     virtual void Load(); // 0x5CB880
     virtual void Draw(); // 0x5CBB80
     virtual void Update(); // 0x5CBCB0
-    virtual void Init(); // 0x5CC250
+    virtual int Init(); // 0x5CC250
     virtual void AddRef(); // 0x5CEAC0
     // +2 more virtual methods
 
@@ -2902,7 +2902,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSPCXAnim() = default;
 
-    virtual void Construct(); // 0x5CE640
+    virtual _DWORD * Construct(); // 0x5CE640
     virtual void Load(); // 0x5CE7D0
     virtual void Draw(); // 0x5CE8C0
     virtual void SetPalette();
@@ -2963,7 +2963,7 @@ class MSShapeAnim
 public:
     virtual ~MSShapeAnim() = default;  // 0x5CEBD0
 
-    virtual void Constructor(); // 0x5CB6D0
+    virtual int Constructor(); // 0x5CB6D0
     virtual void Destruct(); // 0x5CEBD0
 
     uint8_t MSShapeAnim_field_0x04[4];
@@ -2976,11 +2976,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSVQAnim() = default;
 
-    virtual void Construct(); // 0x5CCA20
+    virtual _DWORD * Construct(); // 0x5CCA20
     virtual void ConstructMSVQAnimHidden(); // 0x5CCC30
     virtual void Load(); // 0x5CCE90
     virtual void Play(); // 0x5CD0E0
-    virtual void Stop(); // 0x5CD240
+    virtual int Stop(); // 0x5CD240
     // +3 more virtual methods
 
     uint8_t MSVQAnim_field_0x04[4];
@@ -3077,7 +3077,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MultiMissionVector() = default;
 
-    virtual void Constructor(); // 0x5EF0B0
+    virtual int Constructor(); // 0x5EF0B0
 
 };
 // 1 methods in IDA
@@ -3440,7 +3440,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~RateScaler() = default;
 
-    virtual void Init(); // 0x4A51F0
+    virtual int Init(); // 0x4A51F0
 
 };
 // 1 methods in IDA
@@ -3460,7 +3460,7 @@ class ResultNode
 public:
     virtual ~ResultNode() = default; // 0x625AB0
 
-    virtual void Init(); // 0x4CB890
+    virtual int Init(); // 0x4CB890
     virtual void CleanupList(); // 0x625AB0
 
     uint8_t ResultNode_field_0x04[4];
@@ -3518,7 +3518,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoutVector() = default;
 
-    virtual void Construct(); // 0x510780
+    virtual _DWORD * Construct(); // 0x510780
 
 };
 // 1 methods in IDA
@@ -3582,8 +3582,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ShapeButtonClass() = default;
 
-    virtual void Init(); // 0x69DCF0
-    virtual void Constructor(); // 0x69DD30
+    virtual int Init(); // 0x69DCF0
+    virtual int Constructor(); // 0x69DD30
     virtual void Destructor(); // 0x69DDC0
 
     uint8_t ShapeButtonClass_field_0x04[4];
@@ -3616,7 +3616,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SimpleDialogControl() = default;
 
-    virtual void Constructor(); // 0x624110
+    virtual int Constructor(); // 0x624110
 
 };
 // 1 methods in IDA
@@ -3627,7 +3627,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SlaveControlVector() = default;
 
-    virtual void Constructor(); // 0x6B1AB0
+    virtual int Constructor(); // 0x6B1AB0
 
 };
 // 1 methods in IDA
@@ -3650,7 +3650,7 @@ public:
     virtual void Release(); // 0x67AEB0
     virtual void AddSmudge(); // 0x67AF90
     virtual void Remove(); // 0x67AFD0
-    virtual void Construct(); // 0x67AFF0
+    virtual _DWORD * Construct(); // 0x67AFF0
     virtual void Add(); // 0x67B100
     // +1 more virtual methods
 
@@ -3745,7 +3745,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StartingTechnoVector() = default;
 
-    virtual void Construct(); // 0x510690
+    virtual _DWORD * Construct(); // 0x510690
 
 };
 // 1 methods in IDA
@@ -3811,7 +3811,7 @@ public:
     virtual ~Subzone() = default;
 
     virtual void BuildGraph(); // 0x581F90
-    virtual void Constructor(); // 0x589100
+    virtual int Constructor(); // 0x589100
     virtual void CopyDataFrom(); // 0x58A500
 
     uint8_t Subzone_field_0x04[4];
@@ -3838,7 +3838,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SubzoneHashVector() = default;
 
-    virtual void Construct(); // 0x58B070
+    virtual _DWORD * Construct(); // 0x58B070
 
 };
 // 1 methods in IDA
@@ -4888,7 +4888,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TagClassVector() = default;
 
-    virtual void Construct(); // 0x510640
+    virtual _DWORD * Construct(); // 0x510640
 
 };
 // 1 methods in IDA
@@ -4919,8 +4919,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TechnoTypeVector() = default;
 
-    virtual void Constructor(); // 0x4CABF0
-    virtual void Construct(); // 0x68C200
+    virtual int Constructor(); // 0x4CABF0
+    virtual _DWORD * Construct(); // 0x68C200
 
     uint8_t TechnoTypeVector_field_0x04[4];
 };
@@ -4941,7 +4941,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TerrainTypeVector() = default;
 
-    virtual void Construct(); // 0x67B370
+    virtual _DWORD * Construct(); // 0x67B370
 
 };
 // 1 methods in IDA
@@ -4972,7 +4972,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TileData() = default;
 
-    virtual void Constructor(); // 0x58BDC0
+    virtual int Constructor(); // 0x58BDC0
 
 };
 // 1 methods in IDA
@@ -4996,7 +4996,7 @@ public:
     virtual void LookupMapTile(); // 0x58D0A0
     virtual void BuildNodes(); // 0x58D620
     virtual void AnalyzeTileConnectivity(); // 0x58E5D0
-    virtual void Constructor(); // 0x5AD740
+    virtual int Constructor(); // 0x5AD740
 
     uint8_t TileSystem_field_0x04[4];
     uint8_t TileSystem_field_0x08[4];
@@ -5022,7 +5022,7 @@ public:
     virtual ~ToggleClass() = default;
 
     virtual void QueryInterface(); // 0x4B5810
-    virtual void Construct(); // 0x723E60
+    virtual _DWORD * Construct(); // 0x723E60
 
     uint8_t ToggleClass_field_0x04[4];
 };
@@ -5054,7 +5054,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~UnitTypeList() = default;
 
-    virtual void Constructor(); // 0x67A740
+    virtual int Constructor(); // 0x67A740
 
 };
 // 7 methods in IDA
@@ -5068,7 +5068,7 @@ public:
     virtual void Release(); // 0x513050
     virtual void Add(); // 0x513130
     virtual void Remove(); // 0x513170
-    virtual void Construct(); // 0x513190
+    virtual _DWORD * Construct(); // 0x513190
     // +2 more virtual methods
 
     uint8_t UnitTypeVector_field_0x04[4];
@@ -5113,8 +5113,8 @@ class VeinholeMonsterClass
 public:
     virtual ~VeinholeMonsterClass() = default;  // 0x74F2D0
 
-    virtual void Construct(); // 0x74C420
-    virtual void Constructor(); // 0x74C5B0
+    virtual _DWORD * Construct(); // 0x74C420
+    virtual int Constructor(); // 0x74C5B0
     virtual void UpdateGrowth(); // 0x74CE50
     virtual void ProcessExpansion(); // 0x74D5D0
     virtual void PlaceGrowth(); // 0x74E930
@@ -5211,7 +5211,7 @@ public:
     virtual void ToggleTeamMode(); // 0x7693F0
     virtual void ProcessTerritorySelection(); // 0x76D180
     virtual void ReviewHistory(); // 0x76E4F0
-    virtual void Constructor(); // 0x76F030
+    virtual int Constructor(); // 0x76F030
 
     uint8_t WDTGame_field_0x04[4];
     uint8_t WDTGame_field_0x08[4];
@@ -5271,7 +5271,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WaypointPath() = default;
 
-    virtual void Constructor(); // 0x5A9A70
+    virtual int Constructor(); // 0x5A9A70
 
 };
 // 1 methods in IDA
@@ -5301,11 +5301,11 @@ class WinModemClass
 public:
     virtual ~WinModemClass() = default;  // 0x7754A0
 
-    virtual void Construct(); // 0x774120
+    virtual _DWORD * Construct(); // 0x774120
     virtual void AddRef(); // 0x774410
     virtual void Release(); // 0x7748A0
     virtual void GetClassIdentifier(); // 0x7748B0
-    virtual void Init(); // 0x774900
+    virtual int Init(); // 0x774900
     // +10 more virtual methods
 
     uint8_t WinModemClass_field_0x04[4];
@@ -5352,7 +5352,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WordVector() = default;
 
-    virtual void Constructor(); // 0x42DD60
+    virtual int Constructor(); // 0x42DD60
 
 };
 // 1 methods in IDA

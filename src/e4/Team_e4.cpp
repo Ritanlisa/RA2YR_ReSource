@@ -449,7 +449,7 @@ void ** E4Recv_637640::sub_637640()
 }
 // 0x638B70
 namespace gamemd {
-void sub_638B70(int * a1, int a2, char a3, char a4)
+char sub_638B70(int * a1, int a2, char a3, char a4)
 {
   int v6; // edi
   int v7; // edx

@@ -111,7 +111,7 @@ class AsyncIO
 {
 public:
     // IDA 0x48B2A0 area
-     void Shutdown();  // 0x5BF450
+     char Shutdown();  // 0x5BF450
     // IDA 0x48B2A0 area
      int32_t Read(const char* filename, void* buffer, int32_t size);  // 0x5BF500
     // IDA 0x48B2A0 area
@@ -168,7 +168,7 @@ class Byte
 {
 public:
     // IDA 0x48B2A0 area
-     void Zero(void* ptr, int32_t count);  // 0x4F4C20
+     _BYTE * Zero(void* ptr, int32_t count);  // 0x4F4C20
 
     int32_t     Byte_field_00;       // 0x00
 };
@@ -181,7 +181,7 @@ class TextBuffer
 {
 public:
     // IDA 0x5BCC90
-     void Init(int32_t buffer);  // 0x5BCC90
+     _DWORD * Init(int32_t buffer);  // 0x5BCC90
 
     static char*    s_Buffer;       // 0x00
     static int32_t  s_BufferSize;   // 0x04
@@ -274,11 +274,11 @@ public:
     uint8_t CStreamClass_field_0x4C[4];
     uint8_t CStreamClass_field_0x50[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    bool IsEmpty();  // 0x4A31F0
+    BOOL IsEmpty(int a2);
     void ClearBuffer();  // 0x4A4AD0
     int PointerToIndex(int a1);  // 0x4A4B00
     int CopyItems(int a1, void* a2);  // 0x4A4CB0
-    int FindItem(void* a1);  // 0x4A4D60
+    int FindItem(_DWORD *a2);
     void* Constructor_VectorClass__DDSURFACEDESC___(int a1);  // 0x4A4DE0
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
@@ -314,7 +314,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StreamWrapper() = default;
 
-    virtual void Read(); // 0x5C5D40
+    virtual int Read(); // 0x5C5D40
     virtual void Write(); // 0x5C5D90
     virtual void Seek(); // 0x5C5DD0
     virtual void readData(); // 0x5D6620

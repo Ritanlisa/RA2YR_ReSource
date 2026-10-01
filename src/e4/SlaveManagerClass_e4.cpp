@@ -19,7 +19,7 @@
 
 // 0x522D00
 namespace gamemd {
-void SlaveManagerClass::Check(void *a1, void *a2, void *a3)
+int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
 {
 
   int result; // eax
@@ -163,7 +163,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 
 // 0x6AF360
 namespace gamemd {
-void SlaveManagerClass::Constructor(void *a1, void *a2, void *a3)
+int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   SlaveManagerClass * v2;
@@ -292,7 +292,7 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
 
 // 0x6AF5F0
 namespace gamemd {
-void SlaveManagerClass::UpdateSlaves()
+char SlaveManagerClass::UpdateSlaves()
 {
 
   int *v2; // edi

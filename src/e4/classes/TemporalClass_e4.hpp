@@ -38,7 +38,7 @@ struct TemporalClass {
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
     void Constructor(void *a1, void *a2, void *a3);
-    void GetWarpPerStep(int a2, void *a2_2);
+    int GetWarpPerStep(int a2, void *a2_2);
     int LoadTemporal(AbstractClass * aP0, int aP1);
     int SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetTarget(AbstractClass * aP1);

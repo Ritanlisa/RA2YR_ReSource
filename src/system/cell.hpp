@@ -137,7 +137,7 @@ public:
     void SetWallOwner();  // 0x47D210
     // wrapper: delegates to CellClass::SetWallOwner at 0x47D210
     bool IsShrouded() const;
-    void Unshroud();  // 0x4876F0
+    int Unshroud();  // 0x4876F0
     // wrapper: delegates to CellClass::Unshroud at 0x4876F0
     void SetupLAT();
     void Setup(uint32_t unk);
@@ -266,13 +266,13 @@ public:
     void MarkForRedraw();
     // design: no binary equivalent found in IDA
     void ChainReaction();
-    void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x48e5a0
+    int Draw(int a2, _DWORD *a3, int a4) const;
     void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4E2830
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
     RectangleStruct* GetScreenRect(RectangleStruct* out) const;  // 0x47FF80
     void RegisterForRedraw();  // 0x7235A0
     void DrawWrapper(void* a1, int a2, int a3, int a4);  // 0x653F50 (forwards to UpdateTerrainAndWaypoints@0x565C10)
-    bool QuickPassable() const;  // 0x487950
+    int QuickPassable() const;
     // wrapper: delegates to CellClass::QuickPassable at 0x487950
     CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
     CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
@@ -455,7 +455,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* GetHeight(int a1, int a2);  // 0x4265b0 -- Cell::GetHeight
     int PosToIndex();  // 0x42b1c0 -- Cell::PosToIndex
     void* IsBridge();  // 0x47c520 -- Cell::IsBridge
-    void ApplyDamage(int a1, int a2, int a3, int a4);  // 0x481670 -- Cell::ApplyDamage
+    void ApplyDamage(int a2, int a3, int a4, char a5);
     void* GetNeighbourContent(int a1);  // 0x481810 -- Cell::GetNeighbourContent
     int IsValidHeight();  // 0x485060 -- Cell::IsValidHeight
     bool IsEmpty();  // 0x486380 -- Cell::IsEmpty
@@ -464,7 +464,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool IsInRange2();  // 0x486770 -- Cell::IsInRange2
     bool IsShore();  // 0x4867b0 -- Cell::IsShore
     int IsBuildableAdvanced();  // 0x486ff0 -- Cell::IsBuildableAdvanced
-    int HasOccupierBit();  // 0x4870b0 -- Cell::HasOccupierBit
+    int HasOccupierBit(char a2);
     int IsPassableOffset();  // 0x4870d0 -- Cell::IsPassableOffset
     int SearchEnemies(int a1);  // 0x487a10 -- Cell::SearchEnemies
     int GetTraversability();  // 0x487cb0 -- Cell::GetTraversability
@@ -473,8 +473,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool IsValidDestination(int a1);  // 0x4dce80 -- Cell::IsValidDestination
     bool Exists(int a1);  // 0x5657e0 -- Cell::Exists
     int DecodeFlags();  // 0x56cb80 -- Cell::DecodeFlags
-    int CoordToIndex(int a1);  // 0x56d430 -- Cell::CoordToIndex
-    int SetRadar(int a1);  // 0x56d460 -- Cell::SetRadar
+    int CoordToIndex(__int16 *a2);
+    int SetRadar(__int16 *a2);
     int GetTerrainMask(int a1, int a2);  // 0x57b210 -- Cell::GetTerrainMask
     void* Clear();  // 0x5a9940 -- Cell::Clear
     void* GetWorldCoords(int a1, int a2);  // 0x68bd00 -- Cell::GetWorldCoords

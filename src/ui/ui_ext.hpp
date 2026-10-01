@@ -246,9 +246,9 @@ public:
     virtual ~LinkClass();
 
     // IDA 0x48B2A0 area
-    void Destroy();  // 0x4E1480
+    int Destroy();  // 0x4E1480
     void Destru_vt00();  // 0x4E1AD0
-    void Destruct();  // 0x5565A0
+    int Destruct();  // 0x5565A0
 
     LinkClass*  m_Next;         // 0x04 (after vtable)
     LinkClass*  m_Prev;         // 0x08
@@ -833,7 +833,7 @@ public:
 
     virtual void Constructor(); // 0x4E2500
     virtual void Construct(); // 0x557230
-    virtual void Destruct(); // 0x557600
+    virtual int Destruct(); // 0x557600
     virtual void AddItem(); // 0x5576A0
     virtual void RemoveItem(); // 0x557730
     // +3 more virtual methods

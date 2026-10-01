@@ -406,7 +406,7 @@ int Cell::IsValidHeight(void *a1_1)
 }
 // 0x486380
 namespace gamemd {
-void Cell::IsEmpty(void *a1_1)
+int Cell::IsEmpty(void *a1_1)
 {
 
   int result; // eax
@@ -465,7 +465,7 @@ int Cell::IsInRange2(void *a1_1)
 }
 // 0x4867B0
 namespace gamemd {
-void Cell::IsShore(void *a1_1)
+int Cell::IsShore(void *a1_1)
 {
 
   int result; // eax

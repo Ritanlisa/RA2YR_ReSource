@@ -98,7 +98,7 @@ public:
     // Exit coordinates
     virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const override;  // 0x447AC0
     CoordStruct* GetAdjustedExitCoords(CoordStruct* out) const;  // 0x4500A0
-    CoordStruct* GetFactoryPosition(CoordStruct* out) const;  // 0x44F640
+    int GetFactoryPosition() const;
     CoordStruct* CalcExitCoords(CoordStruct* out, int dir) const;  // 0x4FD150
     CoordStruct* GetRallyPointCoord(CoordStruct* out) const;  // 0x6B0690
     CoordStruct* GetBuildCoordsAdjusted(CoordStruct* out) const;  // 0x459EF0
@@ -206,7 +206,7 @@ public:
 
     // Capture / Occupancy / Infiltration
     int ProcessCapture() override;  // 0x712130
-    bool CaptureBuilding(HouseClass* newOwner);  // 0x44D5D0
+    int CaptureBuilding();
     void Capture();  // 0x4FCE80
     void DisableTemporal();  // 0x4521C0
     void Infiltrate();  // 0x4571E0
@@ -279,7 +279,7 @@ public:
     void ProcessDamageAnim();  // 0x454930
     void UpdateDamageAnim();  // 0x459470
     void CreateIdleAnim();  // 0x486920
-    void PlayUpgradeAnim();  // 0x451750
+    int PlayUpgradeAnim(int a2, int a3, int a4, void *a5);
     void SyncCrateVisuals();  // 0x451F60
     void MarkUpgradeComponentUsed();  // 0x42F260
     void AnimController();  // 0x629720

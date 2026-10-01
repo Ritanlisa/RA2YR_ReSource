@@ -21,7 +21,7 @@
 
 // 0x5BF450
 namespace gamemd {
-void AsyncIO::Shutdown(void *a1)
+char AsyncIO::Shutdown(void *a1)
 {
 
   unsigned int * v1;
@@ -109,7 +109,7 @@ int AsyncIO::WaitCompletion(void *a1)
 } // namespace gamemd
 // 0x5BF500
 namespace gamemd {
-void AsyncIO::Read(void *a1, void *a2)
+int AsyncIO::Read(void *a1, void *a2)
 {
 
   int result; // eax

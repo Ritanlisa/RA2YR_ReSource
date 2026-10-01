@@ -8,7 +8,7 @@
 
 // 0x4F4C20
 namespace gamemd {
-void Byte::Zero(void *a1)
+_BYTE * Byte::Zero(void *a1)
 {
 
   LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/

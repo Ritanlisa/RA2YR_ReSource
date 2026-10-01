@@ -243,7 +243,7 @@ public:
     // design: pure virtual function, no binary implementation
     virtual void DrawRadialIndicator(uint32_t unknown) = 0;
     // [77] 0x5F4D10 ObjectClass::MarkForRedraw
-    virtual void MarkForRedraw();  // 0x5F4D10
+    virtual int MarkForRedraw();
 
     // --- Selection ---
     // [78] 0x5F6C30 ObjectClass::IsPlayerOwnedAndCheck
@@ -569,9 +569,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetBoundingSize();  // 0x5f6bd0 -- ObjectClass::GetBoundingSize
     int IsAboveScreenMargin();  // 0x5f6c10 -- ObjectClass::IsAboveScreenMargin
     int CreateInstance();  // 0x5f6dc0 -- ObjectClass::CreateInstance
-    int FindClosestObjectCell(int a1, int a2, int a3);  // 0x47c3d0 -- Object::FindClosestObjectCell
+    int FindClosestObjectCell(_DWORD *a2, char a3, int a4);
     int FindObjectCell(int a1, int a2);  // 0x47c5a0 -- Object::FindObjectCell
-    bool IsAlliedWithObjectHouse(int a1);  // 0x4f9a90 -- Object::IsAlliedWithObjectHouse
+    int IsAlliedWithObjectHouse(int a2);
     bool IsAlliedWithObjectSimpleHouse(int a1);  // 0x4f9af0 -- Object::IsAlliedWithObjectSimpleHouse
     void* RemoveObjectArray();  // 0x53e420 -- Object::RemoveObjectArray
     void* FindNearestObjectAtCell(int a1);  // 0x56c210 -- Object::FindNearestObjectAtCell

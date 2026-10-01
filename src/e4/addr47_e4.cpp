@@ -512,7 +512,7 @@ LABEL_9:
 
 // 0x47A920
 namespace gamemd {
-void DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
+int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
 {
   int v3; // ebp
   char v4; // bl

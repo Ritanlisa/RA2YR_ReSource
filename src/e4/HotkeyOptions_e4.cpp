@@ -78,7 +78,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
 
 // 0x5FC120
 namespace gamemd {
-void sub_5FC120(int a1, int a2, int * a3)
+int sub_5FC120(int a1, int a2, int * a3)
 {
   int v3; // esi
   int v4; // ebx

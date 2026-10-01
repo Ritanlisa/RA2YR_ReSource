@@ -53,11 +53,11 @@ public:
 protected:
     CampaignClass() noexcept; // 0x46CB60
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int GetMapData(void* a1);  // 0x46CCD0
-    int Stat(void* a1);  // 0x46CFC0
+    char GetMapData(unsigned __int8 ***a2);
+    int Stat(int *a2);
     int LoadFromINI();  // 0x49DB00
     int FindMission(void* a1, void* a2);  // 0x49E400
-    int GetValue(void* a1);  // 0x49E4F0
+    int GetValue(_DWORD *a2);
     void* Constructor(int a1, int a2);  // 0x49ECD0
     void* Constructor_0(int a1, int a2);  // 0x49F090
     int LoadMovieDisplay(int a1);  // 0x5AE220

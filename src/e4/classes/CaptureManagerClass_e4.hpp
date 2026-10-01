@@ -65,7 +65,7 @@ struct CaptureManagerClass {
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char SetCapacity(int a2, unsigned int * a3);
-    void CanCapture(unsigned int * a2, void *a2_2);
+    bool CanCapture(unsigned int * a2, void *a2_2);
     int CannotControlAnyMore();
     int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);

@@ -63,7 +63,7 @@ int MovementAI::IsProgressAtEnd()
 } // namespace gamemd
 // 0x4A5360
 namespace gamemd {
-void MovementAI::Check(void *a1, void *a2, void *a3)
+char MovementAI::Check(void *a1, void *a2, void *a3)
 {
 
   char result; // al

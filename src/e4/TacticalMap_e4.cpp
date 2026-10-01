@@ -125,7 +125,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
 } // namespace gamemd
 // 0x4F4480
 namespace gamemd {
-void TacticalMap::Redraw(void *a1)
+int TacticalMap::Redraw(void *a1)
 {
 
   AudioStream *v1; // ebp
@@ -198,7 +198,7 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1, void *a2)
 } // namespace gamemd
 // 0x5D49A0
 namespace gamemd {
-void TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
+char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
 {
 
   char result; // al

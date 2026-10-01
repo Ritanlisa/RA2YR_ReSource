@@ -175,7 +175,7 @@ bool TagClass::ShouldReplace() const
 }
 
 // 0x6e5230
-void TagClass::Destroy()
+int TagClass::Destroy()
 {
   int result; // eax
 
@@ -196,7 +196,7 @@ void TagClass::Destroy()
   return result; /*0x6e528a*/
 }
 // 0x6e55c0
-void TagClass::AddTrigger(TriggerClass* trigger)
+int TagClass::AddTrigger(TriggerClass* trigger)
 {
   trigger->nextTrigger = *(&this->vtable20); /*0x6e55c7*/
   *(&this->vtable20) = trigger; /*0x6e55ca*/

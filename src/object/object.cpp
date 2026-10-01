@@ -98,7 +98,7 @@ AbstractClass * * ObjectClass::Destroy()
   return result; /*0x5f6680*/
 }
 // 0x5f4d10
-void ObjectClass::MarkForRedraw()
+int ObjectClass::MarkForRedraw()
 {
   int result; // eax
 

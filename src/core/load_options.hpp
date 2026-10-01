@@ -46,7 +46,7 @@ public:
     void Construct();
 
     // IDA 0x558790: Cleanup — free entries, reset vector
-    void Cleanup();  // 0x558790
+    int Cleanup();  // 0x558790
 
     // IDA 0x55A0D0: vt00 (QueryInterface) — scoped destruction
     // wrapper: delegates to LoadOptions::QueryInterface at 0x55A0D0
@@ -61,7 +61,7 @@ public:
     int Run();  // 0x5587F0
 
     // IDA 0x559C20: Check — scan directory for save files
-    bool Check();  // 0x559C20
+    char Check();
 
     // IDA 0x559D60: AddRef (vt01) — load saved game
     bool LoadGame(const char* filename);

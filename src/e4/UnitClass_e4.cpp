@@ -9,7 +9,7 @@
 
 // 0x6B7BB0
 namespace gamemd {
-void UnitClass::ProcessIdleOrders()
+int UnitClass::ProcessIdleOrders()
 {
 
   int result; // eax

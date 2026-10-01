@@ -9,7 +9,7 @@
 
 // 0x537B40
 namespace gamemd {
-void ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
+_DWORD * ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
 {
 
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
@@ -19,7 +19,7 @@ void ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
 } // namespace gamemd
 // 0x537B50
 namespace gamemd {
-void ScreenCaptureCommandClass::AddRef(void *a1)
+char ScreenCaptureCommandClass::AddRef(void *a1)
 {
 
   return aScreencapture; /*0x537b55*/

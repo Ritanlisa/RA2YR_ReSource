@@ -153,7 +153,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x432BD0
 namespace gamemd {
-void BinkMovieHandle::Check(int a2, void *a2_2, void *a3)
+int BinkMovieHandle::Check(int a2, void *a2_2, void *a3)
 {
 
   int result; // eax
@@ -198,7 +198,7 @@ void BinkMovieHandle::AddRef(void *a1)
 } // namespace gamemd
 // 0x5C0590
 namespace gamemd {
-void BinkMovieHandle::Release(void *a1)
+int BinkMovieHandle::Release(void *a1)
 {
 
   int height; // esi

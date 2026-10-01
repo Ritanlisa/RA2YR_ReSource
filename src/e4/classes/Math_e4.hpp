@@ -77,7 +77,7 @@ struct Math {
     unsigned int u32_40;
     unsigned int u32_41;
 // --- flat members (END) ---
-    void Hypotenuse2D();  // 0x41C350
+    int Hypotenuse2D();  // 0x41C350
     int Sin(double a1);  // 0x4CAD50
     void BuildRotationMatrix(float * a2, float a3, void *a3_2);  // 0x5AE750
     int DistSq2D(TechnoClass * aP1);  // 0x5F6560
@@ -97,7 +97,7 @@ struct Math {
     double ArcTan(double a1);  // interim stub
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
-    void Hypotenuse2D(void *a1_1);  // interim stub
+    int Hypotenuse2D(void *a1_1);  // interim stub
     int Sin(double a1);  // interim stub
 };
 } // namespace gamemd

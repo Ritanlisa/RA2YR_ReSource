@@ -87,7 +87,7 @@ LABEL_14:
 }
 // 0x504790
 namespace gamemd {
-void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
+int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
   IUnknown * v4;
   IUnknown * v5;

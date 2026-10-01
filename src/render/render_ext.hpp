@@ -28,7 +28,7 @@ public:
     // IDA 0x48B2A0 area
     void ComputeScreenTint();  // 0x484680
     // IDA 0x48B2A0 area
-    void Redraw();  // 0x4F4480
+    int Redraw();  // 0x4F4480
     // IDA 0x48B2A0 area
     void MultiplyByScalar(float scalar);  // 0x5AEA10
     // IDA 0x48B2A0 area
@@ -78,7 +78,7 @@ class DDraw
 {
 public:
     // IDA 0x48B2A0 area
-     void ReleaseSurfaces();  // 0x4A3370
+     int ReleaseSurfaces();  // 0x4A3370
     // IDA 0x48B2A0 area
      bool Init(HWND hWnd);  // 0x4A3640
     // IDA 0x48B2A0 area
@@ -298,7 +298,7 @@ public:
     // IDA 0x48B2A0 area
     void Scroll(int32_t dx, int32_t dy);  // 0x6922E0
     // IDA 0x48B2A0 area
-    void Read(int32_t* x, int32_t* y);  // 0x6938F0
+    char * Read(int32_t* x, int32_t* y);  // 0x6938F0
 
     int32_t     m_ScrollX;      // 0x00
     int32_t     m_ScrollY;      // 0x04
@@ -819,8 +819,8 @@ public:
 
     virtual void RenderBuildingPlacementShadow(); // 0x430650
     virtual void RenderBuildingPlacementPreview(); // 0x47EC90
-    virtual void ValidateType(); // 0x480510
-    virtual void IsPlacementFlagSet(); // 0x481130
+    virtual int ValidateType(int a2, int a3);
+    virtual bool IsPlacementFlagSet(unsigned int a2, char a3);
     virtual void HandleClick(); // 0x4E2690
     // +4 more virtual methods
 
@@ -871,9 +871,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingQueue() = default;
 
-    virtual void IsCellSuitable(); // 0x42E780
-    virtual void AllocSlot(); // 0x42EB20
-    virtual void FindFreeSlot(); // 0x42EB50
+    virtual int IsCellSuitable(int a2);
+    virtual int AllocSlot(int a2);
+    virtual int FindFreeSlot(int a2);
 
     uint8_t BuildingQueue_field_0x04[4];
     uint8_t BuildingQueue_field_0x08[4];
@@ -885,8 +885,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ColorListClass() = default;
 
-    virtual void GetIndex(); // 0x488850
-    virtual void AddColor(); // 0x4888B0
+    virtual int GetIndex(int a2, int a3);
+    virtual int AddColor(int a2);
     virtual void GetCount(); // 0x488910
     virtual void SetIndex(); // 0x488960
     virtual void DrawColorRect(); // 0x488980
@@ -929,7 +929,7 @@ public:
     virtual void Seek(); // 0x4D2980
     virtual void Release(); // 0x4D2A10
     virtual void ddtor();  // 0x4D2B20
-    virtual void Read(); // 0x4D2B50
+    virtual char * Read(); // 0x4D2B50
     virtual void Write(); // 0x4D2BA0
     // +1 more virtual methods
 

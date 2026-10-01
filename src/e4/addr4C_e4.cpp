@@ -56,7 +56,7 @@
 
 // 0x4C1440
 namespace gamemd {
-void sub_4C1440()
+int sub_4C1440()
 {
   int result; // eax
   unsigned int v2[79]; // [esp+8h] [ebp-13Ch] BYREF
@@ -186,7 +186,7 @@ void sub_4C14D0()
 }
 // 0x4C1600
 namespace gamemd {
-void sub_4C1600()
+int sub_4C1600()
 {
   int result; // eax
   unsigned int v2[79]; // [esp+20h] [ebp-13Ch] BYREF

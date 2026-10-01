@@ -79,7 +79,7 @@ public:
     void Destroy();  // 0x6E5230
     // unmatched: no callgraph reference and no git history record
     bool HasBeenDestroyed() const;
-    void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
+    int AddTrigger(TriggerClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(TriggerClass* trigger);
     // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
     bool ContainsTrigger(TriggerClass* trigger) const;

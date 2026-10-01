@@ -102,7 +102,7 @@ public:
 
     // design: static function, no direct binary match in IDA
     static void UpdateCellLighting();
-    static void UpdateLighting(); // 0x53C280
+    static int UpdateLighting(); // 0x53C280
     // unmatched: no callgraph reference and no git history record
     static void RecalcLighting(int r, int g, int b, uint32_t unk);
 

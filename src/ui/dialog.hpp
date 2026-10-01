@@ -95,7 +95,7 @@ int OptionIDToIndex(int option_id);  // 0x4E59A0
 int SideIDToIndex(int side_id);  // 0x4E4EC0
 
 // IDA 0x5EE350 -- Dialog::RefreshDialogsGame
-void RefreshDialogsGame();  // 0x5EE350
+int RefreshDialogsGame();  // 0x5EE350
 
 void HandleLauncherMessage(int msg_data);
 

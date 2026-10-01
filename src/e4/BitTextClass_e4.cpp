@@ -65,7 +65,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
 } // namespace gamemd
 // 0x434AD0
 namespace gamemd {
-void BitTextClass::LoadFont()
+_DWORD * BitTextClass::LoadFont()
 {
 
   int v2; // eax

@@ -17,7 +17,7 @@
 
 // 0x5862C0
 namespace gamemd {
-void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
+char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 {
   int v3; // edi
   int v4; // eax

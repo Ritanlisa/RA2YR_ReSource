@@ -30,8 +30,8 @@ struct Vector {
 // --- flat members (END) ---
     void Cleanup(void *a1_1);  // 0x512D30
     void Destructor(void *a1_1);  // 0x513100
-    void MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
-    void Cleanup2();  // 0x67ABE0
+    int MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
+    int Cleanup2();  // 0x67ABE0
     unsigned short * ToFacingMath(unsigned short * a2);  // 0x41C2E0
     void Clear(void *a1_1);  // 0x43AE50
     int RemoveAt(AbstractClass * aP1, void *a2_1);  // 0x45AE10

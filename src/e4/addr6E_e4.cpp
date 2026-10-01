@@ -292,7 +292,7 @@ LABEL_7:
 }
 // 0x6E4090
 namespace gamemd {
-void sub_6E4090(int a1, int a2, int a3, int a4)
+char sub_6E4090(int a1, int a2, int a3, int a4)
 {
   int v4; // edi
   int v5; // esi

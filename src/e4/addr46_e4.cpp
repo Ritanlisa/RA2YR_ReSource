@@ -290,7 +290,7 @@ void sub_46DA70()
 }
 // 0x46DCC0
 namespace gamemd {
-void sub_46DCC0(HWND hDlg, bool a2)
+BOOL sub_46DCC0(HWND hDlg, bool a2)
 {
   int i; // edi
   BOOL result; // eax

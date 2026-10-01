@@ -205,7 +205,7 @@ int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
 }
 // 0x4D2F00
 namespace gamemd {
-void sub_4D2F00(int a1, int a2, int * a3)
+int sub_4D2F00(int a1, int a2, int * a3)
 {
   int v3; // esi
   int v4; // ebx

@@ -38,7 +38,7 @@ unsigned int * FindNext();
 unsigned int * FindPrev();
 void * MoveNode(void * a2);
 void RelinkNode(int a2);
-void Remove(unsigned int * a2);
+int Remove(unsigned int * a2);
 };
 
 } // namespace gamemd

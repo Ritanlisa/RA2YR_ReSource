@@ -53,7 +53,7 @@ bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
 // ============================================================
 
 // 0x734F50: RestartNetworkSession
-void RestartNetworkSession(int mode) {
+int RestartNetworkSession(int mode) {
 {
   int result; // eax
 
@@ -85,7 +85,7 @@ retn
 }
 
 // 0x734F80: ToggleNetworkSession
-void ToggleNetworkSession(int enable) {
+int ToggleNetworkSession(int enable) {
 {
   int result; // eax
 
@@ -117,7 +117,7 @@ retn
 }
 
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
-void ResetIntroFlags(int* obj) {
+unsigned int ResetIntroFlags(int* obj) {
 {
   unsigned int result; // eax
 

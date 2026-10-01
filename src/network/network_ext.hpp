@@ -442,8 +442,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~NetworkID() = default;
 
-    virtual void Assign(); // 0x53ED20
-    virtual void Compare(); // 0x53EF30
+    virtual __int16 Assign(_DWORD *a2, int a3, __int16 a4);
+    virtual int Compare(int a2);
 
     uint8_t NetworkID_field_0x04[4];
 };
@@ -523,7 +523,7 @@ public:
 
     virtual void GetQueueSize(); // 0x7B2F90
     virtual void Flush(); // 0x7B2FF0
-    virtual void Send(); // 0x7B30B0
+    virtual int Send(); // 0x7B30B0
     virtual void SetAddress(); // 0x7B31E0
     virtual void GetAddress(); // 0x7B3430
     // +9 more virtual methods
@@ -576,7 +576,7 @@ public:
     virtual void UpdatePlayerStats(); // 0x77A7C0
     virtual void Check(); // 0x77A840
     virtual void PopulateLobbyLists(); // 0x7A3100
-    virtual void EnsureCapacity(); // 0x7ADA70
+    virtual char EnsureCapacity(); // 0x7ADA70
     virtual void GrowBuffer(); // 0x7AE020
 
     uint8_t WOLGameList_field_0x04[4];

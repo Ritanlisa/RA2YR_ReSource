@@ -1136,7 +1136,7 @@ LABEL_39:
 }
 // 0x731BF0
 namespace gamemd {
-void sub_731BF0()
+char sub_731BF0()
 {
   bool v1; // bl
   bool IsButtonDown; // al
@@ -1328,7 +1328,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
 }
 // 0x6CA940
 namespace gamemd {
-void sub_6CA940(int a1, unsigned short * a2, int a3)
+char sub_6CA940(int a1, unsigned short * a2, int a3)
 {
   int v4; // esi
   unsigned short *v5; // ebp

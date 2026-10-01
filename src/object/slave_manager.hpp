@@ -54,7 +54,7 @@ public:
     bool CheckIsOne() const;                                     // 0x522D30
     void VtableDispatch();                                       // 0x522D20
     void SetOwner(HouseClass*);                                  // 0x6AF580
-    void UpdateSlaves();                                         // 0x6AF5F0
+    char UpdateSlaves();                                         // 0x6AF5F0
     void CreateSlave(FootClass*);                                // 0x6AF650
     void ProcessSlaves();                                        // 0x6AF6C0
     void LostSlave(FootClass*);                                  // 0x6B0A20

@@ -279,7 +279,7 @@ void sub_600AF0()
 }
 // 0x600C70
 namespace gamemd {
-void NavigateDialogTab(HWND hCtl, bool a2)
+int NavigateDialogTab(HWND hCtl, bool a2)
 {
   HWND Parent; // eax
   int result; // eax

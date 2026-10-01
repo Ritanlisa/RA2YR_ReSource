@@ -44,7 +44,7 @@ struct BaseClass
     HouseClass*     owner;            // +0x4C
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x42E6F0
-    int ProcessPowerTimer(void* a1);  // 0x42F180
+    int ProcessPowerTimer(unsigned int *a2);
     void* Construct(int a1);  // 0x42F1E0
     void ddtor();  // 0x42F3A0
     int Write(int a1);  // 0x42F3D0

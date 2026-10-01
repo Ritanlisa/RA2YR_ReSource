@@ -37,6 +37,6 @@ struct E4Recv_4B0DF0 {
     unsigned int q6408;  // 0x6408
     unsigned int q030;  // 0x30
 // --- flat members (END) ---
-    char sub_4B0DF0(IUnknown * aP1);  // 0x4B0DF0
+    char sub_4B0DF0(_DWORD *a2);
 };
 } // namespace gamemd

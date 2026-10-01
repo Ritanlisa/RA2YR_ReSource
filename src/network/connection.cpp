@@ -283,7 +283,7 @@ void IPXManagerClass::Init(int a1, int a2, int a3, int a4, int a5)
   return result; /*0x54300d*/
 }
 // 0x48ba90
-void IPXManagerClass::init()
+int IPXManagerClass::init()
 {
   return *((unsigned int *)this + 8); /*0x48ba93*/
 }

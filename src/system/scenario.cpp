@@ -225,7 +225,7 @@ void ScenarioClass::UpdateCellLighting()
 }
 
 // 0x53c280
-void ScenarioClass::UpdateLighting()
+int ScenarioClass::UpdateLighting()
 {
   if ( NukeFlash_Status == 1 || ChronoScreenEffect_Status ) /*0x53c297*/
   {

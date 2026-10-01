@@ -235,7 +235,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
 }
 // 0x610B50
 namespace gamemd {
-void sub_610B50()
+char sub_610B50()
 {
   unsigned int v2[2]; // [esp+4h] [ebp-20h] BYREF
   int64_t v3; // [esp+Ch] [ebp-18h]

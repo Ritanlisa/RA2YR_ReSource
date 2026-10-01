@@ -35,7 +35,7 @@ public:
     virtual bool Exists(bool writeShared = false) = 0;
     // design: pure virtual function, no binary implementation
     virtual bool HasHandle() = 0;
-    virtual bool Open(FileAccessMode access) = 0;  // 0x65CBF0
+    virtual int Open(int a2) = 0;
     // unmatched: no callgraph reference and no git history record
     virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
     virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;

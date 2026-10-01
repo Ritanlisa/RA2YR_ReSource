@@ -582,7 +582,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
 }
 // 0x4BE9D0
 namespace gamemd {
-void Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
+int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 {
   int v4; // esi
   int v5; // edx

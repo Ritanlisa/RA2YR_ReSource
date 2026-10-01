@@ -466,7 +466,7 @@ int CChatEventSink::ProcessChatEvent()
 } // namespace gamemd
 // 0x7AEE90
 namespace gamemd {
-void CChatEventSink::Check(unsigned int * a2, int a3, void *a3_2)
+char CChatEventSink::Check(unsigned int * a2, int a3, void *a3_2)
 {
 
   if ( a3 < 0 || a3 >= *(unsigned int *)this->__pad_0 ) /*0x7aee9a*/
@@ -499,7 +499,7 @@ int CChatEventSink::ComputeBucketMask(int a2)
 } // namespace gamemd
 // 0x7AEDD0
 namespace gamemd {
-void CChatEventSink::EnsureCapacity(int a2, void *a2_2)
+char CChatEventSink::EnsureCapacity(int a2, void *a2_2)
 {
 
   int v3; // esi

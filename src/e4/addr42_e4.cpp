@@ -629,7 +629,7 @@ AbstractClass * * ObjectClass::CreateUnitOnCompletion(583 B)
 }
 // 0x4251F0
 namespace gamemd {
-void sub_4251F0(int a1, short * a2)
+int sub_4251F0(int a1, short * a2)
 {
   int v2; // ecx
   int v3; // eax

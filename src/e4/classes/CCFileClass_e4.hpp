@@ -44,7 +44,7 @@ struct CCFileClass {
 // --- flat members (END) ---
     AudioController * * Close(void *a1, void *a2);
     void Destruct(void *a1, void *a2);
-    void GetFileSize(void *a1, void *a2);
+    int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
     bool Open(int mode, void *a2 = 0, void *a1 = 0);  // open file with mode

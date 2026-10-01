@@ -246,7 +246,7 @@ void int_0x7D06BE(__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__c
 }
 // 0x7D0703
 namespace gamemd {
-void _filbuf(MouseClass * aP0)
+int _filbuf(MouseClass * aP0)
 {
   int flag; // eax
   int v2; // eax
@@ -898,7 +898,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
 }
 // 0x7D1311
 namespace gamemd {
-void _isctype(int C, int Type)
+int _isctype(int C, int Type)
 {
   int v2; // ecx
   int v3; // eax
@@ -932,7 +932,7 @@ void _isctype(int C, int Type)
 }
 // 0x7D15A0
 namespace gamemd {
-void strlen(const char * Str)
+int strlen(const char * Str)
 {
   const char *v1; // ecx
   int v3; // eax

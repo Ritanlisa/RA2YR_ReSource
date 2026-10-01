@@ -56,7 +56,7 @@ public:
     virtual void Execute(uint32_t context) const = 0;    // vt[8]
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool executeAction(void* a1);  // 0x724FA0
-    int BinarySearchAction();  // 0x724FC0
+    int BinarySearchAction(unsigned int *a2);
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===

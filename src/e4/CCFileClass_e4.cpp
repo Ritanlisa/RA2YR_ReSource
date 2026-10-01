@@ -66,7 +66,7 @@ void CCFileClass::Destruct(void *a1, void *a2)
 } // namespace gamemd
 // 0x65D0D0
 namespace gamemd {
-void CCFileClass::GetFileSize(void *a1, void *a2)
+int CCFileClass::GetFileSize(void *a1, void *a2)
 {
 
   DWORD FileSize; // edi

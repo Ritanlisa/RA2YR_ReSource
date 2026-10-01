@@ -54,7 +54,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
 } // namespace gamemd
 // 0x69D770
 namespace gamemd {
-void MapFile::Constructor(int a2, int a3, void *a3_2)
+_DWORD * MapFile::Constructor(int a2, int a3, void *a3_2)
 {
 
   this->MapFile_field_0x04 = 0; /*0x69d77b*/

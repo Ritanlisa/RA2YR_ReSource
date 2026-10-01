@@ -189,7 +189,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
 }
 // 0x62D5E0
 namespace gamemd {
-void ParticleClass::AdjustHeight()
+int ParticleClass::AdjustHeight()
 {
 
   int v2; // eax

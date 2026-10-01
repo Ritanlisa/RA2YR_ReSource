@@ -19,7 +19,7 @@
 
 // 0x49B760
 namespace gamemd {
-void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
+int String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
 {
 
   char *v4; // edi
@@ -187,7 +187,7 @@ ControlClass * * String::To_Waypoint()
 }
 // 0x7B51D0
 namespace gamemd {
-void String::TrimLeft(ObjectClass * aP1)
+int String::TrimLeft(ObjectClass * aP1)
 {
 
   int result; // eax

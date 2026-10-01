@@ -546,7 +546,7 @@ bool CellClass::IsShrouded() const
 }
 
 // 0x4876f0
-void CellClass::Unshroud()
+int CellClass::Unshroud()
 {
   int copyFlags; // eax
   int result; // eax

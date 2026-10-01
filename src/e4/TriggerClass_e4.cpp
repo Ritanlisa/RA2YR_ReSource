@@ -106,7 +106,7 @@ char TriggerClass::FindByEventType(char a1)
 }
 // 0x71FA30
 namespace gamemd {
-void TriggerClass::GetValue(void *a1, void *a2)
+int TriggerClass::GetValue(void *a1, void *a2)
 {
 
   return *((unsigned int *)this + 21); /*0x71fa33*/

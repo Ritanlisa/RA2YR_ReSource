@@ -142,7 +142,7 @@ struct Cell {
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex(void *a1_1);  // 0x42B1C0
     int CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
-    int ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4);  // 0x481670
+    void ApplyDamage(int a2, int a3, int a4, char a5);
     int GetNeighbourContent(unsigned int a2, void *a2_2);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, void *a8_1);  // 0x4834A0
     int IsValidHeight(void *a1_1);  // 0x485060
@@ -152,15 +152,15 @@ struct Cell {
     int IsInRange2(void *a1_1);  // 0x486770
     void IsShore(void *a1_1);  // 0x4867B0
     int IsBuildableAdvanced(void *a1_1);  // 0x486FF0
-    int HasOccupierBit(IUnknown * aP1);  // 0x4870B0
+    int HasOccupierBit(char a2);
     int SearchEnemies(IUnknown * aP1);  // 0x487A10
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex(void *a1_1);  // 0x487D50
     int IsBridge2();  // 0x487DF0
     Coord * * IsValidDestination(short * a2);  // 0x4DCE80
     int Exists(MouseClass * aP1);  // 0x5657E0
-    int CoordToIndex(IUnknown * aP1);  // 0x56D430
-    int SetRadar(IUnknown * aP1);  // 0x56D460
+    int CoordToIndex(__int16 *a2);
+    int SetRadar(__int16 *a2);
     AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
     ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
     int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0

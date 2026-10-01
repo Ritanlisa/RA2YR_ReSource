@@ -30,7 +30,7 @@
 
 // 0x574600
 namespace gamemd {
-void sub_574600(int a1, int a2, int a3)
+bool sub_574600(int a1, int a2, int a3)
 {
   char v3; // bl
   int v4; // edx

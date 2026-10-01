@@ -12,7 +12,7 @@
 
 // 0x731D00
 namespace gamemd {
-void Selection::SetCurrent()
+int Selection::SetCurrent()
 {
 
   int result; // eax
