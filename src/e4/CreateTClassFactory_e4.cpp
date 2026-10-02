@@ -965,7 +965,7 @@ int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass(void * a1, void * a2, void 
 
 // 0x6C3C50
 namespace gamemd {
-int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass()
+int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass(const void *a2, unsigned int *a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -985,7 +985,7 @@ int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass()
 
 // 0x6C3DD0
 namespace gamemd {
-int E4Recv_6C3DD0::CreateTClassFactory_HouseClass()
+int E4Recv_6C3DD0::CreateTClassFactory_HouseClass(const void *a2, unsigned int *a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
