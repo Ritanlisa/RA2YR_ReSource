@@ -40,6 +40,7 @@ struct AudioStream {
     void* q064;  // 0x64
     void* q068;  // 0x68
     void* q070;  // 0x70
+    unsigned int AudioStream_field_0x58;  // 0x58
     unsigned int u32_74;  // 0x74
     unsigned int u32_78;  // 0x78
     unsigned int u32_80;  // 0x80
@@ -56,6 +57,7 @@ struct AudioStream {
     void* q0AC;  // 0xAC
     void* q0B0;  // 0xB0
     unsigned char q0B4;  // 0xB4
+    unsigned char AudioStream_field_0x98;  // 0x98
     unsigned int u32_BC;  // 0xBC
     unsigned int u32_C0;  // 0xC0
     unsigned char q0C4;  // 0xC4

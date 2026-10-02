@@ -44,6 +44,7 @@ struct ParticleTypeClass {
     int EndStateAI;  // 0x36
     int Velocity;  // 0x38
     unsigned char q03A;  // 0x3A
+    unsigned int ParticleTypeClass_field_0x10;  // 0x10
     unsigned int q03B;  // 0x3B
     int ParticleTypeClass_field_2C4;  // 0x3C
     unsigned int UINameLabel;  // 0x3D
@@ -268,6 +269,7 @@ struct ParticleTypeClass {
     void* q2E4;  // 0x2E4
     unsigned int q2E8;  // 0x2E8
     unsigned int q2EC;  // 0x2EC
+    unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
     unsigned int q2F0;  // 0x2F0
     bool q2F4;  // 0x2F4
     bool Gas;  // 0x2F5

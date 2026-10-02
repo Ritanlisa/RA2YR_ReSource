@@ -438,6 +438,9 @@ public:
     uint8_t CheckListClass_field_0x48[4];
     uint8_t CheckListClass_field_0x4C[4];
     uint8_t CheckListClass_field_0x50[4];
+    unsigned char __pad_0;  // 0x0
+    unsigned int u32_16C;  // 0x16C
+    unsigned int u32_174;  // 0x174
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetItem(int a1, void* a2, int a3);  // 0x4884A0
     int SelectItem(int a1);  // 0x4886C0
@@ -631,6 +634,13 @@ public:
     uint8_t DropListClass_field_0x48[4];
     uint8_t DropListClass_field_0x4C[4];
     uint8_t DropListClass_field_0x50[4];
+    unsigned int q02C;  // 0x2C
+    unsigned int q0446;  // 0x446
+    unsigned char __pad_0;  // 0x0
+    unsigned int q030;  // 0x30
+    unsigned int u32_BC;  // 0xBC
+    unsigned int u32_C4;  // 0xC4
+    unsigned int u32_C8;  // 0xC8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetFocus(void* a1);  // 0x4B4FB0
     int KillFocus();  // 0x4B4FF0
@@ -978,6 +988,9 @@ public:
     uint8_t ToolTipClass_field_0x2C[4];
     uint8_t ToolTipClass_field_0x30[4];
     uint8_t ToolTipClass_field_0x34[4];
+    unsigned char m_1[4];  // 0x1
+    int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int seek(int a1);  // 0x724C80
     int addRef(int a1);  // 0x724C90

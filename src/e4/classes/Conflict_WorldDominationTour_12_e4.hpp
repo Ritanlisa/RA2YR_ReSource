@@ -23,6 +23,8 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    void* Constructor;  // 0x0 (no offset truth)
+    void* Constructor_0;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Release(int a2, unsigned int * a3);  // 0x766C10
     AbstractClass * * Constructor_1(int a2, unsigned int * a3);  // 0x766DC0

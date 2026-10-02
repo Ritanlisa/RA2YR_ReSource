@@ -60,6 +60,7 @@ struct VoxelAnimClass {
     unsigned int q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
     unsigned int q050;  // 0x50
+    unsigned char VoxelAnimClass_field_0x1C[1];  // 0x1C
     unsigned int q054;  // 0x54
     unsigned int q058;  // 0x58
     unsigned int q05A;  // 0x5A
@@ -700,6 +701,7 @@ struct VoxelAnimClass {
     unsigned int VoxelAnimClass_field_0x140;
     unsigned int *__pad_110;
     unsigned int Undeploy;
+    void* VoxelAnimClass_Update;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);

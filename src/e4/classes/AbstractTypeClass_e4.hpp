@@ -73,6 +73,9 @@ struct AbstractTypeClass {
     unsigned int vtable46;
     unsigned int *__pad_8;
     unsigned int UIName;
+    void* houseTypes;  // 0x0 (no offset truth)
+    void* AbstractClass;  // 0x0 (no offset truth)
+    void* houseTypesCount;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractTypeClass * ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
     BOOL NameEquals(void *a2);

@@ -222,13 +222,13 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
   p_vtable1 = (AbstractClass *)&((unsigned int *)a1)[0]; /*0x517d9a*/
-  a1->vtable1 = &vt_InfantryClass; /*0x517d9d*/
+  ((gamemd::InfantryClass*)a1)->vtable1 = &vt_InfantryClass; /*0x517d9d*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_InfantryClass); /*0x517da3*/
   ((unsigned int *)a1)[0] = (unsigned int)(&off_7EB02C); /*0x517daa*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_InfantryClass); /*0x517db1*/
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
-    Type = a1->Type; /*0x517dc4*/
+    Type = ((gamemd::InfantryClass*)a1)->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
       if ( ((HouseClass *)(((unsigned int *)a1)[0]))->CanBuild((int)Type, 0, 0) == -1 ) /*0x517de3*/
@@ -250,9 +250,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       if ( !((unsigned int *)a1)[0] ) /*0x517e33*/
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
       (*(void (**)(int))(*(unsigned int *)((unsigned int *)a1)[0] + 172))(((unsigned int *)a1)[0]); /*0x517e4e*/
-      a1->unknown_int_6E8 = 2; /*0x517e56*/
-      a1->Crawling = 0; /*0x517e60*/
-      a1->SequenceAnim[0] = 0; /*0x517e66*/
+      ((gamemd::WinAPI*)a1)->unknown_int_6E8 = 2; /*0x517e56*/
+      ((gamemd::InfantryClass*)a1)->Crawling = 0; /*0x517e60*/
+      ((gamemd::InfantryClass*)a1)->SequenceAnim[0] = 0; /*0x517e66*/
       ((TechnoClass *)((FootClass *)a1))->CleanupDirection(); /*0x517e6c*/
     }
   }

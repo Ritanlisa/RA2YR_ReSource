@@ -333,7 +333,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       else
         v5 = 0; /*0x42f72d*/
     }
-    LOBYTE(this->m_C) = 1; /*0x42f73c*/
+    LOBYTE(this->IsInitialized) = 1; /*0x42f73c*/
     if ( v5 ) /*0x42f740*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x42f74b*/
@@ -343,7 +343,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x42f759*/
         for ( i = 0; i < m_8; v5[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x42f75f*/
           ++i; /*0x42f764*/
-        if ( BYTE1(this->m_C) ) /*0x42f771*/
+        if ( BYTE1(this->IsInitialized) ) /*0x42f771*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x42f77c*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x42f784*/
@@ -351,7 +351,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x42f78d*/
       this->m_8 = a2; /*0x42f795*/
-      BYTE1(this->m_C) = (unsigned char)((gamemd::AbstractClass **)(a3 == 0)); /*0x42f798*/
+      BYTE1(this->IsInitialized) = (unsigned char)((gamemd::AbstractClass **)(a3 == 0)); /*0x42f798*/
       return (gamemd::AbstractClass **)(1); /*0x42f79e*/
     }
     else
@@ -623,12 +623,12 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5ad01c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5ad022*/
+    LOBYTE(this->IsInitialized) = 0; /*0x5ad022*/
     if ( a3 ) /*0x5ad028*/
       v4 = a3; /*0x5ad03e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
-    LOBYTE(this->m_C) = 1; /*0x5ad042*/
+    LOBYTE(this->IsInitialized) = 1; /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x5ad048*/

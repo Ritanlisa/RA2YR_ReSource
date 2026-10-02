@@ -40,6 +40,7 @@ struct VectorClass_flat {
     unsigned int vtable0;
     unsigned int IsInitialized;
     unsigned int Items;
+    void* RemoveObjectById;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);
 VectorClass_flat *  vt00(unsigned int * Block, char a2);

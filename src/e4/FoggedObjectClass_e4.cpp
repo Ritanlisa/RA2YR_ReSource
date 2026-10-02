@@ -851,7 +851,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   if ( a2 ) /*0x4d2bce*/
   {
     v5 = a3; /*0x4d2bd4*/
-    LOBYTE(this->m_C) = 0; /*0x4d2bd8*/
+    LOBYTE(this->qC) = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( a2 - 1 >= 0 ) /*0x4d2c1a*/
@@ -897,7 +897,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         v5 = 0; /*0x4d2c11*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4d2c33*/
+    LOBYTE(this->qC) = 1; /*0x4d2c33*/
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4d2c3d*/
@@ -922,7 +922,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         while ( v11 ); /*0x4d2c75*/
         v3 = a2; /*0x4d2c77*/
       }
-      if ( BYTE1(this->m_C) ) /*0x4d2c7d*/
+      if ( BYTE1(this->qC) ) /*0x4d2c7d*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4d2c86*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x4d2c8e*/
@@ -930,7 +930,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     }
     *(unsigned int *)&this->m_1[3] = v5; /*0x4d2c99*/
     *(unsigned int *)&this->__pad_5[3] = v3; /*0x4d2c9f*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4d2ca2*/
+    BYTE1(this->qC) = a3 == 0; /*0x4d2ca2*/
   }
   else
   {
@@ -1180,7 +1180,7 @@ char FoggedObjectClass_42::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4e0582*/
+  m_8 = this->Capacity; /*0x4e0582*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4e058d*/
   {
     v3 = 0; /*0x4e058f*/
@@ -1212,30 +1212,30 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e05cc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4e05d6*/
+    LOBYTE(this->IsInitialized) = 0; /*0x4e05d6*/
     if ( a3 ) /*0x4e05dc*/
       v4 = a3; /*0x4e05f2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e05ee*/
-    LOBYTE(this->m_C) = 1; /*0x4e05f6*/
+    LOBYTE(this->IsInitialized) = 1; /*0x4e05f6*/
     if ( v4 ) /*0x4e05fa*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x4e0605*/
       {
-        m_8 = this->m_8; /*0x4e060c*/
+        m_8 = this->Capacity; /*0x4e060c*/
         if ( a2 < m_8 ) /*0x4e0611*/
           m_8 = a2; /*0x4e0613*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e0619*/
           ++i; /*0x4e061e*/
-        if ( BYTE1(this->m_C) ) /*0x4e062b*/
+        if ( BYTE1(this->IsInitialized) ) /*0x4e062b*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e0636*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x4e063e*/
         }
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x4e0647*/
-      this->m_8 = a2; /*0x4e064f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4e0652*/
+      this->Capacity = a2; /*0x4e064f*/
+      BYTE1(this->IsInitialized) = a3 == 0; /*0x4e0652*/
       return 1; /*0x4e0658*/
     }
     else

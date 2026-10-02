@@ -401,7 +401,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
   while ( 1 ) /*0x68c9f6*/
   {
     v8 = (gamemd::AbstractClass **)(_strcmpi((const char *)(aP0),(const char *)(*(const void **)(v7[v6] + 772))) == 0);
-    v7 = (unsigned int *)((gamemd::gamemd::AbstractClass **)(dword_B054D4));
+    v7 = (unsigned int *)((gamemd::AbstractClass **)(dword_B054D4));
     if ( v8 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v6) + 784) == a5 ) /*0x68ca08*/
       return (gamemd::AbstractClass **)(v6); /*0x68ca40*/
     if ( ++v6 >= dword_B054E0 ) /*0x68ca13*/

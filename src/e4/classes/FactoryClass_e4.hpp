@@ -74,6 +74,7 @@ struct FactoryClass {
     unsigned int queuedObjects;
     unsigned int Debug;
     unsigned int balance;
+    void* RemoveItemAt;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag();

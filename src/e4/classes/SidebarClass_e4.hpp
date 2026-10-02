@@ -617,6 +617,7 @@ struct SidebarClass {
     unsigned int u32_53A6;
     unsigned int u32_53A7;
     unsigned int InitButtons;
+    void* GetProductionState;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     static GadgetClass * LoadResources(void *a1);
     static int CalcBounds(char a1);

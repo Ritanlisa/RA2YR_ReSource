@@ -1279,7 +1279,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
 
-  this->m_0 = (int)&vt_Animate; /*0x427279*/
+  this->vtable1 = (int)&vt_Animate; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     __3_YAXPAX_Z(this); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/

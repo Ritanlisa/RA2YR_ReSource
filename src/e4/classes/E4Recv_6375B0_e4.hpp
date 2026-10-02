@@ -8,6 +8,7 @@ struct E4Recv_6375B0 {
 // --- flat members (BEGIN) ---
     unsigned int u32_1B0;  // 0x1B0
     unsigned int q1074;  // 0x1074
+    void* health;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_6375B0();  // 0x6375B0
 };

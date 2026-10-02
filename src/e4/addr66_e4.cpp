@@ -715,7 +715,7 @@ LABEL_38:
           v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
           ((AnimClass*)(void **)v25)->ctor(*(CoordStruct **)(*(unsigned int *)&(&stru_89E138)[90140] + 4 * (unsigned int)v27), &v131, (CoordStruct *)2, (CoordStruct *)1, (void *)0x600, (void *)0xFFFFFFF6, 0);
         }
-        v21->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
+        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = v126;
         *(unsigned int *)(a1 + 56) = 24;
         v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
@@ -769,7 +769,7 @@ LABEL_47:
           ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
         }
         edx50 = v126;
-        v21->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
+        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = edx50;
         *(unsigned int *)(a1 + 56) = 0;
         *(unsigned int *)(a1 + 60) = 3;

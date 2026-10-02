@@ -295,7 +295,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
   {
     if ( v4->Piggybackee ) /*0x4b62de*/
     {
-      v6 = *(unsigned int *)v3->__pad_0; /*0x4b62e9*/
+      v6 = *(unsigned int *)((gamemd::IStream*)v3)->__pad_0; /*0x4b62e9*/
       LOBYTE(a3) = 1; /*0x4b62f5*/
       (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4b62fa*/
       Piggybackee = v4->Piggybackee; /*0x4b62fd*/
@@ -328,7 +328,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     }
     else
     {
-      v11 = *(unsigned int *)v3->__pad_0; /*0x4b6381*/
+      v11 = *(unsigned int *)((gamemd::IStream*)v3)->__pad_0; /*0x4b6381*/
       LOBYTE(a3) = 0; /*0x4b638d*/
       return (*(int (**)(IStream *, int *, int, unsigned int))(v11 + 16))(v3, &a3, 1, 0); /*0x4b6392*/
     }

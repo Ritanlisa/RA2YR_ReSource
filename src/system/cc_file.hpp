@@ -58,6 +58,7 @@ public:
     MemoryBuffer Buffer;  // data: 0x8a3a08
     uint32_t FileID = 0;
     uint32_t MixFileIndex = 0;
+    unsigned char tail_19;  // 0x25
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt08(int a1, int a2);  // 0x401980
     void* Destru_vt00(int a1);  // 0x4019A0

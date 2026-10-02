@@ -33,6 +33,7 @@ struct exception;
 namespace gamemd {
     struct Gap2Recv_402F60 {
         int ProcessAudioMixerFrame();
+    void* bombVisible;  // 0x0 (no offset truth)
     };
     struct Gap2Recv_4048B0 {
         int PrefetchAudioSamples();

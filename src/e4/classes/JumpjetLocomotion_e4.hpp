@@ -61,6 +61,7 @@ struct JumpjetLocomotion {
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned char q11F;  // 0x11F
+    unsigned int JumpjetLocomotion_field_0x8C;  // 0x8C
     unsigned char q120;  // 0x120
     unsigned int q124;  // 0x124
     int q128;  // 0x128

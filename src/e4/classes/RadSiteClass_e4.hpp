@@ -52,6 +52,7 @@ struct RadSiteClass {
     void* RadDuration;  // 0x6C
     void* RadTimeLeft;  // 0x70
     unsigned int IntensitySteps;
+    void* Radiate;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);

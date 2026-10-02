@@ -1028,10 +1028,10 @@ LABEL_13:
                   if ( v23 )
                   {
   int v27; // ecx
-                    v80 = (int *)v23->field_60;
+                    v80 = (int *)((gamemd::TechnoTypeClass*)v23)->field_60;
                     char v77 = 0;
-                    if ( (*(int (**)(IUnknown *))(v23->field_0 + 44))(v23) == 7 && v79
-                      || !(*(int (**)(IUnknown *, int, int, int, int))(v23->field_0 + 148))(
+                    if ( (*(int (**)(IUnknown *))(((gamemd::TechnoTypeClass*)v23)->field_0 + 44))(v23) == 7 && v79
+                      || !(*(int (**)(IUnknown *, int, int, int, int))(((gamemd::TechnoTypeClass*)v23)->field_0 + 148))(
                             v23,
                             1,
                             1,
@@ -1039,14 +1039,14 @@ LABEL_13:
                             HouseClass_Player.field_0)
                       || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
   bool v74; // [esp+10h] [ebp-47Ah]
-                          v74 = ((HouseClass *)(HouseClass_Player.field_0))->CanBuild((IUnknown *)v86, 0, 0) == -1,
-                          ShouldDisableCameo = HouseClass::ShouldDisableCameo(HouseClass_Player.field_0, v86),
+                          v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild((IUnknown *)v86, 0, 0) == -1,
+                          ShouldDisableCameo = HouseClass::ShouldDisableCameo(((gamemd::HouseClass*)HouseClass_Player).field_0, v86),
                           v74)
                       || ShouldDisableCameo )
                     {
                       v77 = 1;
                     }
-                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(v23->field_0 + 152))(v23);
+                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(((gamemd::HouseClass*)v23)->field_0 + 152))(v23);
                     v86 = v87[25];
                     if ( !v86 )
                     {

@@ -206,7 +206,7 @@ int CStreamClass::FindItem(unsigned int *a2, int a1, int a3) {
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x4a4d60*/
+  m_10 = this->max_entries; /*0x4a4d60*/
   result = 0; /*0x4a4d63*/
   if ( m_10 <= 0 ) /*0x4a4d68*/
     return -1; /*0x4a4d7f*/

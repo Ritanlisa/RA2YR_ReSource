@@ -777,6 +777,7 @@ struct UnitClass {
     unsigned int q0405;
     unsigned int q0406;
     unsigned int q0407;
+    void* Create;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     void ProcessIdleOrders();
      double Construct(...);  // C2597 interim stub

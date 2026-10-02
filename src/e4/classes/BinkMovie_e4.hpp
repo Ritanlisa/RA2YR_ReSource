@@ -20,6 +20,7 @@ struct BinkMovie {
     void* q020;  // 0x20
     unsigned int BinkMovie_field_0x10;
     unsigned int BinkMovie_field_0x14;
+    void* BinkMovie_field_0x8;  // 0x8
     unsigned int BinkMovie_field_0x20;
     unsigned int *BinkMovie_field_0x4;
     unsigned int BinkMovie_field_0xC;
@@ -45,6 +46,10 @@ struct BinkMovie {
     unsigned int q084;
     unsigned int Audio;
     unsigned int Debug;
+    void* MovieHandle;  // 0x0 (no offset truth)
+    void* currentFrame;  // 0x0 (no offset truth)
+    void* height;  // 0x0 (no offset truth)
+    void* width;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     unsigned int * Close(char *FullPath);  // 0x432690
     wchar_t * Open(char *FullPath, int a3);  // 0x4326C0

@@ -350,7 +350,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   unsigned int v52[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   aP2 = (IUnknown *)(aP2);
-  v7 = (IUnknown *)(aP2->outBuffer);
+  v7 = (IUnknown *)(((gamemd::Terrain*)aP2)->outBuffer);
   v52[2] = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(aP0))));
   v45 = (unsigned int)((IUnknown *)(0));
   aP2 = (IUnknown *)(v7);
@@ -372,22 +372,22 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( (TerrainMask & 0x20) != 0 ) /*0x57a4d5*/
     {
-      v50 = (unsigned int)(aP2->outBuffer);
+      v50 = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       v11 = (int *)((unsigned int)((int16_t)(v50 + 1) + (IDA_SHIWORD(v50) << 9)));
       if ( v11 >= (int *)(0x40000) || (v12 = *(int **)(dword_87F924 + 4 * v11)) == 0 ) /*0x57a513*/
       {
         v12 = unk_ABDC50; /*0x57a519*/
         IDA_LOWORD(v46) = v50 + 1; /*0x57a4ef*/
-        IDA_HIWORD(v46) = IDA_HIWORD(aP2->outBuffer); /*0x57a4ea*/
+        IDA_HIWORD(v46) = IDA_HIWORD(((gamemd::Terrain*)aP2)->outBuffer); /*0x57a4ea*/
         dword_ABDC74 = v46; /*0x57a51e*/
       }
       v52[0] = (unsigned int)(((Cell *)(aP0))->GetTerrainMask((int *)(v12), 0));
-      v51 = (int *)((unsigned int)(aP2->outBuffer));
+      v51 = (int *)((unsigned int)(((gamemd::Terrain*)aP2)->outBuffer));
       v13 = (int *)((int16_t)(v51 + 2) + (IDA_SHIWORD(v51) << 9)); /*0x57a554*/
       if ( v13 >= (int *)(0x40000) || (v14 = *(int **)(dword_87F924 + 4 * v13)) == 0 ) /*0x57a56a*/
       {
         IDA_LOWORD(v47) = v51 + 2; /*0x57a546*/
-        IDA_HIWORD(v47) = IDA_HIWORD(aP2->outBuffer); /*0x57a541*/
+        IDA_HIWORD(v47) = IDA_HIWORD(((gamemd::Terrain*)aP2)->outBuffer); /*0x57a541*/
         dword_ABDC74 = v47; /*0x57a570*/
         v14 = unk_ABDC50; /*0x57a575*/
       }
@@ -397,7 +397,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( ((unsigned int)(v10)& 2) != 0 ) /*0x57a597*/
     {
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       IDA_HIWORD(v48) = IDA_HIWORD(v52[0]); /*0x57a5ac*/
       v16 = (int *)((int16_t)(IDA_LOWORD(v52[0]) - 1) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a5bf*/
       if ( v16 >= (int *)(0x40000) || (v17 = *(int **)(dword_87F924 + 4 * v16)) == 0 ) /*0x57a5d5*/
@@ -407,7 +407,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         v17 = unk_ABDC50; /*0x57a5e0*/
       }
       v18 = (unsigned int)(((Cell *)(aP0))->GetTerrainMask((int *)(v17), 0));
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       IDA_HIWORD(v49) = IDA_HIWORD(v52[0]); /*0x57a600*/
       v19 = (int *)((int16_t)(IDA_LOWORD(v52[0]) - 2) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a613*/
       if ( v19 >= (int *)(0x40000) || (v20 = *(int **)(dword_87F924 + 4 * v19)) == 0 ) /*0x57a629*/
@@ -423,7 +423,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( ((unsigned int)(v10)& 8) != 0 ) /*0x57a658*/
     {
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       v22 = (int *)((unsigned int)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 1) << 9)));
       if ( v22 >= (int *)(0x40000) || (v23 = *(int **)(dword_87F924 + 4 * v22)) == 0 ) /*0x57a695*/
       {
@@ -431,7 +431,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         v23 = unk_ABDC50; /*0x57a6a0*/
       }
       v24 = (unsigned int)(((Cell *)(aP0))->GetTerrainMask((int *)(v23), 0));
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       v25 = (int *)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 2) << 9)); /*0x57a6d2*/
       if ( v25 >= (int *)(0x40000) || (v26 = *(int **)(dword_87F924 + 4 * v25)) == 0 ) /*0x57a6e8*/
       {
@@ -445,7 +445,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( v10 < 0 ) /*0x57a717*/
     {
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
       v28 = (int *)((unsigned int)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 1) << 9)));
       if ( v28 >= (int *)(0x40000) || (v29 = *(int **)(dword_87F924 + 4 * v28)) == 0 ) /*0x57a754*/
       {
@@ -453,7 +453,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         v29 = unk_ABDC50; /*0x57a75f*/
       }
       v30 = (unsigned int)(((Cell *)(aP0))->GetTerrainMask((int *)(v29), 0));
-      v52[0] = aP2->outBuffer; /*0x57a773*/
+      v52[0] = ((gamemd::Terrain*)aP2)->outBuffer; /*0x57a773*/
       v31 = (int *)(IDA_SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 2) << 9)); /*0x57a791*/
       if ( v31 >= (int *)(0x40000) || (v32 = *(int **)(dword_87F924 + 4 * v31)) == 0 ) /*0x57a7a7*/
       {
@@ -467,16 +467,16 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( ((unsigned int)(v10)& 0x88) == 0x88 || ((unsigned int)(v10)& 0x22) == 0x22 || v45 ) /*0x57a7ee*/
     {
-      aP2 = aP2->outBuffer; /*0x57a801*/
+      aP2 = ((gamemd::Terrain*)aP2)->outBuffer; /*0x57a801*/
       v34 = ((MapClass *)(&aP2))->GetTileDataField14(); /*0x57a805*/
       aP1a = aP1a; /*0x57a80a*/
       a5 = a5; /*0x57a80e*/
       if ( v34 > 0 && v34 != aP1a && !(unsigned char)a5 ) /*0x57a81c*/
         return 0; /*0x57a827*/
       g_CellPassabilityLUT = g_CellPassabilityLUT; /*0x57a82a*/
-      aP2->u8_11A = 0; /*0x57a82f*/
-      aP2->q038 = g_CellPassabilityLUT; /*0x57a838*/
-      aP2 = aP2->outBuffer; /*0x57a846*/
+      ((gamemd::Terrain*)aP2)->u8_11A = 0; /*0x57a82f*/
+      ((gamemd::Terrain*)aP2)->q038 = g_CellPassabilityLUT; /*0x57a838*/
+      aP2 = ((gamemd::Terrain*)aP2)->outBuffer; /*0x57a846*/
       if ( a5 ) /*0x57a83b*/
         ((MapClass *)((int16_t *)&aP2))->SetObstruction(0); /*0x57a84b*/
       else

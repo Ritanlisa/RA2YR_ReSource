@@ -44,9 +44,9 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
   *((unsigned int *)this + 12) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_NeuronClass); /*0x43a375*/
-  this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a37b*/
-  this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a382*/
-  this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a389*/
+  this->vtable2 = (int)&vt_NeuronClass; /*0x43a37b*/
+  this->vtable3 = (int)&vt_NeuronClass; /*0x43a382*/
+  this->vtable4 = (int)&vt_NeuronClass; /*0x43a389*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0

@@ -289,6 +289,7 @@ struct BulletTypeClass {
     unsigned char animRate;  // 0x2F6
     bool flat;  // 0x2F7
     unsigned int delay;
+    void* ObjectTypeClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();

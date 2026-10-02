@@ -73,40 +73,40 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     return 0; /*0x644622*/
   INIClass::GetString( /*0x64430f*/
     (INIClass *)aP1,
-    (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
+    (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
     aHoldswhat,
     &g_INI_DefaultBuffer,
     Destination,
     64);
   v3 = (gamemd::ParticleTypeClass **)((int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx()));
-  v4 = _ESI->__pad_298[0]; /*0x64431d*/
-  _ESI->ParticleSystemTypeClass_field_0x294 = (IUnknown *)v3; /*0x644323*/
+  v4 = ((INIClass*)_ESI)->[0]; /*0x64431d*/
+  ((ParticleSystemTypeClass*)_ESI)-> = (IUnknown *)v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
                      (int *)aP1,
-                     (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
+                     (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
                      g_INI_Key_Spawns,
                      v4);
-  ParticleSystemTypeClass_field_0x29C = (int)_ESI->ParticleSystemTypeClass_field_0x29C; /*0x64433f*/
-  _ESI->__pad_298[0] = Bool_Overwrite; /*0x644346*/
-  _ESI->ParticleSystemTypeClass_field_0x29C = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x644351*/
+  ParticleSystemTypeClass_field_0x29C = (int)((ParticleSystemTypeClass*)_ESI)->; /*0x64433f*/
+  ((INIClass*)_ESI)->[0] = Bool_Overwrite; /*0x644346*/
+  ((ParticleSystemTypeClass*)_ESI)-> = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x644351*/
                                                             (bool *)aP1,
-                                                            (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
+                                                            (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
                                                             aSpawnframes,
                                                             ParticleSystemTypeClass_field_0x29C);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644366*/
                     (bool *)aP1,
-                    (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
+                    (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
                     aParticlecap,
-                    LODWORD(_ESI->ParticleSystemTypeClass_field_0x2A4));
-  ParticleSystemTypeClass_field_0x2A8 = _ESI->ParticleSystemTypeClass_field_0x2A8; /*0x64436b*/
-  LODWORD(_ESI->ParticleSystemTypeClass_field_0x2A4) = Int_Overwrite; /*0x644371*/
+                    LODWORD(((ParticleSystemTypeClass*)_ESI)->));
+  ParticleSystemTypeClass_field_0x2A8 = ((ParticleSystemTypeClass*)_ESI)->; /*0x64436b*/
+  LODWORD(((ParticleSystemTypeClass*)_ESI)->) = Int_Overwrite; /*0x644371*/
   v8 = INIClass::ReadInt_Overwrite( /*0x644380*/
          (bool *)aP1,
-         (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
+         (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
          aSpawnradius,
          ParticleSystemTypeClass_field_0x2A8);
   /* asm-debt:__asm { fld dword ptr [esi+2A0h] } */
-  _ESI->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
+  ((ParticleSystemTypeClass*)_ESI)-> = v8; /*0x644390*/
   /* asm-debt:__asm { fstp [esp+68h+var_68]; double } */
   INIClass::ReadDouble_Overwrite( /*0x64439f*/
     (double *)aP1,

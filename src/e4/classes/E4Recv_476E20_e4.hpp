@@ -19,6 +19,7 @@ struct E4Recv_476E20 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
+    void* ambientSoundController;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_476E20();  // 0x476E20
 };

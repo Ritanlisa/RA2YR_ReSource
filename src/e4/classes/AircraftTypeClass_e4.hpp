@@ -918,6 +918,7 @@ struct AircraftTypeClass {
     bool qE0D;  // 0xE0D
     bool qE0E;  // 0xE0E
     unsigned char qE0F;  // 0xE0F
+    void* TechnoTypeClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AircraftTypeClass(char *Source, int aP1, int a1, int a2, int a3, int aP0, int a0);
     AircraftClass * ConstructAircraft(AbstractClass * ppv);

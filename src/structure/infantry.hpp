@@ -169,6 +169,7 @@ public:
 
 protected:
     InfantryClass() noexcept;
+    void* vtable1;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetType();  // 0x484F20
     int ProcessExitQueue();  // 0x4DA030

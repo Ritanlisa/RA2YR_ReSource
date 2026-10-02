@@ -169,7 +169,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
         }
         while ( v22 ); /*0x5d4373*/
       }
-      --*(unsigned int *)this->__pad_C; /*0x5d4375*/
+      --*(unsigned int *)this->q00C; /*0x5d4375*/
     }
     return *(unsigned int *)&this->__pad_C[24]; /*0x5d4378*/
   }

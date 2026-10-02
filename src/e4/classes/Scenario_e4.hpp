@@ -23,10 +23,20 @@ struct Scenario {
     void* q02C;  // 0x2C
     void* q030;  // 0x30
     void* q034;  // 0x34
+    unsigned int Scenario_field_0xC;  // 0xC
     void* q038;  // 0x38
+    unsigned int Scenario_field_0x10;  // 0x10
+    unsigned int Scenario_field_0x14;  // 0x14
+    void* Scenario_field_0x18;  // 0x18
     unsigned char q03C;  // 0x3C
     void* q040;  // 0x40
     void* q044;  // 0x44
+    unsigned int Scenario_field_0x1C;  // 0x1C
+    void* Scenario_field_0x20;  // 0x20
+    void* Scenario_field_0x24;  // 0x24
+    void* Scenario_field_0x28;  // 0x28
+    unsigned int Scenario_field_0x2C;  // 0x2C
+    unsigned int Scenario_field_0x30;  // 0x30
     void* q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q04F;  // 0x4F

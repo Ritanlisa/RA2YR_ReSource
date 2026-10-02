@@ -1133,7 +1133,7 @@ int * DisplayClass::processDisplayMode(char a2)
   Straw::Dtor((Straw *)this); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     __3_YAXPAX_Z(this); /*0x4aec4a*/
-  return (int *)this->__pad_0; /*0x4aec54*/
+  return (int *)this->vtable1; /*0x4aec54*/
 
 }
 } // namespace gamemd

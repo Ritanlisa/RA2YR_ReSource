@@ -17,6 +17,7 @@ struct NetworkLobby {
     unsigned char u8_1A;  // 0x1A
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
+    unsigned char NetworkLobby_field_0x8[1];  // 0x8
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned char q038;  // 0x38
@@ -61,6 +62,7 @@ struct NetworkLobby {
     unsigned int Dialog;
     unsigned int Timer;
     unsigned int Event;
+    void* DlgProc;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350

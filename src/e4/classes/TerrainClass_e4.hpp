@@ -111,6 +111,7 @@ struct TerrainClass {
     AbstractClass* q0D4;  // 0xD4
     void* q0D8;  // 0xD8
     void* q0DC;  // 0xDC
+    void* GenerateTexture;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2);
     int CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2);

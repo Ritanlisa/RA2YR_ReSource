@@ -36,6 +36,7 @@ struct House {
     unsigned int q038;  // 0x38
     AbstractClass * ptr_40;  // 0x40
     void * ptr_44;  // 0x44
+    unsigned char __pad_C[27];  // 0xC
     unsigned int u32_48;  // 0x48
     unsigned char u8_4C;  // 0x4C
     unsigned int q050;  // 0x50
@@ -43,6 +44,7 @@ struct House {
     unsigned int u32_5C;  // 0x5C
     unsigned int q060;  // 0x60
     AbstractClass * q064;  // 0x64
+    unsigned char House_field_0x29[4];  // 0x29
     void * q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned int u32_70;  // 0x70
@@ -64,6 +66,7 @@ struct House {
     unsigned int u32_E4;  // 0xE4
     unsigned int u32_E8;  // 0xE8
     unsigned int u32_EC;  // 0xEC
+    unsigned char __pad_7C[163];  // 0x7C
     unsigned int u32_F0;  // 0xF0
     AbstractClass * q100;  // 0x100
     void * q104;  // 0x104

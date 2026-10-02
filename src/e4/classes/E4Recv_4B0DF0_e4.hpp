@@ -36,6 +36,8 @@ struct E4Recv_4B0DF0 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
     unsigned int q030;  // 0x30
+    void* ambientSoundController;  // 0x0 (no offset truth)
+    void* customSound_controller;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11);
 };

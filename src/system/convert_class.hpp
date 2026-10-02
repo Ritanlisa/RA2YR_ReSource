@@ -95,6 +95,10 @@ public:
 
 private:
     uint8_t align_1B1[3] = {};
+    unsigned int u32_1A0;  // 0x1A0
+    unsigned int u32_1AC;  // 0x1AC
+    unsigned int u8_1B0;  // 0x1B0
+    unsigned char __pad_190[5];  // 0x190
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x555DA0
     // --- gap2 auto-generated stub declarations (END) ---

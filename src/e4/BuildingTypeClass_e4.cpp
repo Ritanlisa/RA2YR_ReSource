@@ -1178,7 +1178,7 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(this->LightRedTint); /*0x464b78*/
   Power::TimerProcess(this->LightGreenTint); /*0x464b86*/
   Power::TimerProcess(this->LightBlueTint); /*0x464b94*/
-  ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_E5C); /*0x464ba2*/
+  ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->BuildupFile_0x10); /*0x464ba2*/
   ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_E88); /*0x464bb0*/
   Power::TimerProcess(this->Adjacent); /*0x464bbe*/
   Power::TimerProcess(this->Factory[0]); /*0x464bcc*/
@@ -1219,9 +1219,9 @@ int BuildingTypeClass::UpdatePower()
   ((Power *)((Power *)v54))->FlagProcess(v12); /*0x464d23*/
   LOBYTE(v13) = this->Unsellable; /*0x464d28*/
   v14 = ((Power *)((Power *)v54))->FlagProcess(v13); /*0x464d31*/
-  LOBYTE(v14) = this->__pad_1624[128]; /*0x464d36*/
+  LOBYTE(v14) = this->RemoveOccupy[128]; /*0x464d36*/
   ((Power *)((Power *)v54))->FlagProcess(v14); /*0x464d3f*/
-  LOBYTE(v15) = this->__pad_1624[129]; /*0x464d44*/
+  LOBYTE(v15) = this->RemoveOccupy[129]; /*0x464d44*/
   ((Power *)((Power *)v54))->FlagProcess(v15); /*0x464d4d*/
   LOBYTE(v16) = this->ChargeAnim; /*0x464d52*/
   v17 = ((Power *)((Power *)v54))->FlagProcess(v16); /*0x464d5b*/

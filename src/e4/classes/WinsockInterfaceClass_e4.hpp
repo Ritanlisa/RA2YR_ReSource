@@ -11,6 +11,7 @@ struct WinsockInterfaceClass {
     unsigned int u32_4;  // 0x4
     unsigned short BoundPort;  // 0x6
     unsigned int u32_8;  // 0x8
+    void* Initialized;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     unsigned int * Destru_vt00(char a2);
     WinsockInterfaceClass();

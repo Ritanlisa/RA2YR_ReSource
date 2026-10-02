@@ -655,6 +655,7 @@ struct SessionClass {
     unsigned char q30D9;  // 0x30D9
     unsigned int *__pad_50;
     unsigned int unknown_14;
+    void* unknown_08;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * BuildLobbyPlayerList();
     AbstractClass * * LoadMapSelection(char **a1);

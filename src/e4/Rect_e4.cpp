@@ -34,28 +34,28 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   }
   else
   {
-    lprcDsta = (LPRECT)aP0->right; /*0x487f6a*/
-    if ( (int)lprcDsta <= 0 || (bottom = aP0->bottom, bottom <= 0) ) /*0x487f79*/
+    lprcDsta = (LPRECT)((gamemd::Rect*)aP0)->right; /*0x487f6a*/
+    if ( (int)lprcDsta <= 0 || (bottom = ((gamemd::Rect*)aP0)->bottom, bottom <= 0) ) /*0x487f79*/
     {
       v5->left = *v3; /*0x487ff0*/
       v5->top = v3[1]; /*0x487ff5*/
-      v5->right = v3[2]; /*0x487ffb*/
-      v5->bottom = v3[3]; /*0x488001*/
+      ((gamemd::Rect*)v5)->right = v3[2]; /*0x487ffb*/
+      ((gamemd::Rect*)v5)->bottom = v3[3]; /*0x488001*/
       return (int)v5; /*0x487fec*/
     }
     else
     {
       v7 = *v3; /*0x487f7b*/
-      left = aP0->left; /*0x487f7d*/
+      left = ((gamemd::Rect*)aP0)->left; /*0x487f7d*/
       v9 = v3[1]; /*0x487f80*/
       v10 = v3[2]; /*0x487f84*/
       v11 = v3[3]; /*0x487f87*/
-      if ( v7 > aP0->left ) /*0x487f8c*/
+      if ( v7 > ((gamemd::Rect*)aP0)->left ) /*0x487f8c*/
       {
         v10 += v7 - left; /*0x487f90*/
-        v7 = aP0->left; /*0x487f92*/
+        v7 = ((gamemd::Rect*)aP0)->left; /*0x487f92*/
       }
-      top = aP0->top; /*0x487f94*/
+      top = ((gamemd::Rect*)aP0)->top; /*0x487f94*/
       if ( v9 > top ) /*0x487f9d*/
       {
         v11 += v9 - top; /*0x487fa1*/

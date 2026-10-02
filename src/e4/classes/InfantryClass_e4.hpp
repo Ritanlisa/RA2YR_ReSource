@@ -686,6 +686,7 @@ struct InfantryClass {
     unsigned char q6E6;  // 0x6E6
     char waterState[4];  // 0x6E8
     unsigned int unused_6EC;  // 0x6EC
+    void* GetCursorOverObject;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
     static int ScanTarget(int * a1);

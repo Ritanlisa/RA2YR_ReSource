@@ -9,6 +9,7 @@ struct E4Recv_5A6BA0 {
     unsigned int vfptr;  // 0x0
     unsigned int M2;  // 0x2
     unsigned int u32_4;  // 0x4
+    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_5A6BA0();  // 0x5A6BA0
 };

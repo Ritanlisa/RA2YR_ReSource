@@ -666,7 +666,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       v3->BehavesLike = &vt_ParticleTypeClass; /*0x6456b0*/
       v3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x6456b7*/
     }
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->ParticleTypeClass_field_0x2E4); /*0x6456ca*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->q2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
     a1 = 0; /*0x6456db*/
     result = (*(int (**)(int *, ParticleTypeClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x6456df*/
@@ -948,7 +948,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
         {
           if ( (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)aP1 + 16))( /*0x6457fa*/
                  aP1,
-                 (char *)aP0->ParticleTypeClass_field_0x2BC + v6,
+                 (char *)aP0->strength + v6,
                  3,
                  0) < 0 )
             break; /*0x6457fa*/

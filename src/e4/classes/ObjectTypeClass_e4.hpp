@@ -298,6 +298,8 @@ struct ObjectTypeClass {
     unsigned int u32_D40;
     unsigned int u32_DC6;
     unsigned int *__pad_0;
+    void* TechnoTypeClass;  // 0x0 (no offset truth)
+    void* AbstractTypeClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

@@ -138,6 +138,11 @@ std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v);
 struct Matrix3D
 {
     float Data[12] = {};  // data: 0x840b4c
+    unsigned char __pad_0;  // 0x0
+    unsigned int q080;  // 0x80
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_28;  // 0x28
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor(float a1, float a2);  // 0x5AE6F0
     void RotateZ(float a1);  // 0x5AF080

@@ -1846,6 +1846,8 @@ struct HouseClass {
     unsigned int u32_54E4;
     unsigned int HouseClass_field_160B4;
     unsigned int CheckWinCondition;
+    void* AccumulateScore;  // 0x0 (no offset truth)
+    void* SaveToINI;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
@@ -1871,6 +1873,8 @@ struct HouseClass {
     int DestroyAllBuildings();
     int DestroyAllNonBuildingsNaval();
     int DestroyAllNonBuildingsNonNaval();
+    int startingAllies;  // 0x90200
+    unsigned int plainName;  // 0x90096
     int FailedToPlaceNode(int a1);
     int GetCameoTypeIndex(int a2);
     int GetInfSelfHealStep();

@@ -13,6 +13,7 @@ struct DynamicVectorClass_flat {
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     int Count;  // 0x10
+    unsigned char m_1[4];  // 0x1
     int CapacityIncrement;  // 0x14
     bool q018;  // 0x18
     unsigned char __pad_01C;  // 0x1C
@@ -39,7 +40,9 @@ unsigned int * BuildingTypeConstructor(int a2, int a3);
 unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6);
 unsigned int * Copy(DynamicVector * aP1, void *a2);
 int Destroy(void *a1);
+    void* VectorClass;  // 0x0 (no offset truth)
 int Destroy_Alt();
+    void* vtable1;  // 0x0 (no offset truth)
 };
 
 } // namespace gamvoid Destroy();

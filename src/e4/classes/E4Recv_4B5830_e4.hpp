@@ -10,6 +10,7 @@ struct E4Recv_4B5830 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
     unsigned int M13;  // 0xD
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf12(int,  ...);    // G6 vtable slot dispatch
     unsigned int * sub_4B5830(unsigned int * a2);  // 0x4B5830

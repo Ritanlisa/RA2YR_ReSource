@@ -541,6 +541,9 @@ struct TechnoClass {
     unsigned int queueUpToEnter;
     unsigned int *__pad_0;
     unsigned int EvaluateTarget;
+    void* GetAudioEntry;  // 0x0 (no offset truth)
+    void* GatherAllBuildings;  // 0x0 (no offset truth)
+    void* IsCapturableByPlayer;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);

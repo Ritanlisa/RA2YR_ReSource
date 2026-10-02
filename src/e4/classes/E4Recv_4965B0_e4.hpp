@@ -10,5 +10,6 @@ struct E4Recv_4965B0 {
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
     int sub_4965B0(unsigned short *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char *a11, int a1, int aP2, int aP3);
+    unsigned char m_1[4];  // 0x1
 };
 } // namespace gamemd

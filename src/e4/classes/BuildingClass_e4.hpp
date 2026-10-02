@@ -723,6 +723,14 @@ struct BuildingClass {
     unsigned int u32_898;
     unsigned int u32_8B4;
     unsigned int ctor;
+    void* GetSellPriority;  // 0x0 (no offset truth)
+    void* CheckBuildability;  // 0x0 (no offset truth)
+    void* Deploy;  // 0x0 (no offset truth)
+    void* FreeUpgradeQueue;  // 0x0 (no offset truth)
+    void* FreeUpgradeQueue2;  // 0x0 (no offset truth)
+    void* IsPoweredOn;  // 0x0 (no offset truth)
+    void* MakeTraversable;  // 0x0 (no offset truth)
+    void* SetType;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
     int AllocAndCtor(BuildingClass * aP0, int aP2);

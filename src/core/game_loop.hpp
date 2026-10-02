@@ -26,6 +26,11 @@ void AudioVideoUpdate();
 class WTFMode {
 bool Init(int* mode);  // 0x69BAB0
      bool Shutdown(int* mode);  // 0x69BB40
+    unsigned int q05C;  // 0x5C
+    unsigned int q050;  // 0x50
+    unsigned int q0E4;  // 0xE4
+    unsigned int q0E8;  // 0xE8
+    unsigned int u8_3D;  // 0x3D
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ResetUnitFlags();  // 0x41DB40
     void* FindObjectByType(int a1);  // 0x47EC40

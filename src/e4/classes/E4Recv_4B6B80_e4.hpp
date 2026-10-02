@@ -25,6 +25,7 @@ struct E4Recv_4B6B80 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
+    void* owningHouseIndex;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char sub_4B6B80();  // 0x4B6B80
 };

@@ -1087,6 +1087,11 @@ public:
 
 protected:
     TechnoClass() noexcept; // 0x6F2B40
+    unsigned int q674;  // 0x674
+    unsigned int q0584;  // 0x584
+    unsigned int q1843;  // 0x1843
+    unsigned int q5A4;  // 0x5A4
+    unsigned int u32_608;  // 0x608
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SmokeUpdate();  // 0x414BB0
     int updateROFTimer();  // 0x41B9E0

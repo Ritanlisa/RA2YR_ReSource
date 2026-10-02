@@ -26,8 +26,10 @@ struct FoggedObjectClass {
     int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
+    unsigned char m_1[4];  // 0x1
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
+    int m_8;  // 0x8
     void *q24;  // 0x24
     unsigned int q28;  // 0x28
     bool q02B;  // 0x2B
@@ -55,6 +57,7 @@ struct FoggedObjectClass {
     unsigned int LastSight;
     unsigned int u32_64;
     unsigned int u32_69;
+    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);

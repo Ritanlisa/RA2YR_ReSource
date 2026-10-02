@@ -44,6 +44,9 @@ struct CStreamClass {
     unsigned char q04F;  // 0x4F
     unsigned char q050;  // 0x50
     unsigned int IsEmpty;
+    void* AddRef;  // 0x0 (no offset truth)
+    void* QueryInterface;  // 0x0 (no offset truth)
+    void* Release;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     CStreamClass * ddtor(int a2, char a3);
     LONG IStreamAddRef(int a1);

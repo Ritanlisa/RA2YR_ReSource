@@ -10,6 +10,7 @@ struct DeleteCommandClass {
     void* vtable1;  // 0x0
     char DeleteCommandClass_field_00[4];  // 0x4
     char DeleteCommandClass_field_04[4];  // 0x8
+    void* CommandClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char * AddRef(void *a1);
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);

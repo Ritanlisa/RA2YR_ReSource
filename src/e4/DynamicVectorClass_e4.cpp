@@ -1184,12 +1184,12 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
 
   v3 = *(void **)&Block->m_1[3]; /*0x49ee13*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x49ee16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x49ee30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x49ee3b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x49ee3b*/
   Block->m_8 = 0; /*0x49ee41*/
   if ( (a2 & 1) != 0 ) /*0x49ee48*/
     __3_YAXPAX_Z(Block); /*0x49ee4b*/
@@ -1252,12 +1252,12 @@ int DynamicVectorClass_flat::Destroy(void *a1)
   int result; // eax
 
   result = *(unsigned int *)&this->m_1[3]; /*0x50ea06*/
-  if ( result && BYTE1(this->m_C) ) /*0x50ea0d*/
+  if ( result && BYTE1(this->IsInitialized) ) /*0x50ea0d*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x50ea13*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x50ea1b*/
   }
-  BYTE1(this->m_C) = 0; /*0x50ea1e*/
+  BYTE1(this->IsInitialized) = 0; /*0x50ea1e*/
   this->m_8 = 0; /*0x50ea21*/
   return result; /*0x50ea24*/
 
@@ -1294,12 +1294,12 @@ int DynamicVectorClass_flat::Destroy_Alt()
   int result; // eax
 
   result = *(unsigned int *)&this->m_1[3]; /*0x5251c6*/
-  if ( result && BYTE1(this->m_C) ) /*0x5251cd*/
+  if ( result && BYTE1(this->IsInitialized) ) /*0x5251cd*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5251d3*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x5251db*/
   }
-  BYTE1(this->m_C) = 0; /*0x5251de*/
+  BYTE1(this->IsInitialized) = 0; /*0x5251de*/
   this->m_8 = 0; /*0x5251e1*/
   return result; /*0x5251e4*/
 
@@ -1596,7 +1596,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c559e*/
+    (*(void (**)(void *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
   v7 = this->Capacity; /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/
@@ -1638,13 +1638,13 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(unsigned int * Block, c
 
   v3 = *(void **)&Block->m_1[3]; /*0x5c58f3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5c58f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5c5900*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x5c5900*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5908*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x5c5910*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5c591b*/
-  Block->m_8 = 0; /*0x5c5921*/
+  BYTE1(Block->IsInitialized) = 0; /*0x5c591b*/
+  Block->Capacity = 0; /*0x5c5921*/
   if ( (a2 & 1) != 0 ) /*0x5c5928*/
     __3_YAXPAX_Z(Block); /*0x5c592b*/
   return Block->__pad_0; /*0x5c5935*/

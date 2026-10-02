@@ -775,12 +775,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x595fd8*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x595fe5*/
   {
-    WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.ComPtr_field_0x08, *(int *)dword_A8B240); /*0x595ff1*/
+    WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.q008, *(int *)dword_A8B240); /*0x595ff1*/
     ((ComPtr *)(&v17))->Set(WDTTerritoryClass[1]); /*0x595ffe*/
-    v17.ComPtr_field_0x08 = (int)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
-    ((ComPtr *)((ComPtr *)&v17.ComPtr_field_0x08))->Release(); /*0x59600b*/
+    v17.q008 = (int)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
+    ((ComPtr *)((ComPtr *)&v17.q008))->Release(); /*0x59600b*/
   }
-  if ( v17.ComPtr_field_0x04 ) /*0x596016*/
+  if ( v17.q004 ) /*0x596016*/
     g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
@@ -803,8 +803,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     if ( ((Surface *)(v6))->LoadToSurfaceSHP(Destination) ) /*0x5960d5*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x5960e7*/
-      CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
+      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x5960e7*/
+      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596101*/
       if ( g_MissionQueueFrame.briefing[451] ) /*0x596109*/
       {
@@ -812,7 +812,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         RA2_OPDEL(v8); /*0x596113*/
       }
       g_MissionQueueFrame.briefing[451] = 0; /*0x59611f*/
-      ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x596125*/
+      ((RawFileClass *)((RawFileClass *)&v17.q010))->Dtor(); /*0x596125*/
       goto LABEL_39; /*0x59612a*/
     }
     v9 = (void *)g_MissionQueueFrame.briefing[451]; /*0x59612f*/
@@ -848,8 +848,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   {
     if ( *(unsigned int *)g_MissionQueueFrame.briefing[451] ) /*0x596215*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x596222*/
-      CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
+      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x596222*/
+      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
       if ( FindFirstFileA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/

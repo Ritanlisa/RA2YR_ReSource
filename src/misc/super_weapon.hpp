@@ -177,6 +177,9 @@ public:
 protected:
     // unmatched: no callgraph reference and no git history record
     explicit SuperClass(noinit_t) noexcept;
+    unsigned int SuperClass_field_0x10;  // 0x10
+    unsigned char __pad_80[17];  // 0x80
+    unsigned int SuperClass_field_0x4;  // 0x4
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessEvent(int a1);  // 0x6CE220
     int SetFieldX();  // 0x6CE270

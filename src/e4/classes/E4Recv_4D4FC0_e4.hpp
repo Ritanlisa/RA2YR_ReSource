@@ -22,6 +22,7 @@ struct E4Recv_4D4FC0 {
     unsigned int q1908;  // 0x1908
     unsigned int q2180;  // 0x2180
     unsigned int AbstractClass;
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf440(int,  ...);    // G6 vtable slot dispatch
     int Vf60(int,  ...);    // G6 vtable slot dispatch

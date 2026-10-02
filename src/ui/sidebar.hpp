@@ -154,6 +154,10 @@ public:
 
 protected:
     initButtons2() = default; // 0x40D270
+    unsigned int u32_539C;  // 0x539C
+    unsigned int u32_F94;  // 0xF94
+    unsigned int u32_53A6;  // 0x53A6
+    unsigned int u32_53A7;  // 0x53A7
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* SetFlashEntry(int a1, int a2, int a3, void* a4);  // 0x4C6B60
     int MarkTabForRebuild(int a1, int a2, int a3);  // 0x5005B0

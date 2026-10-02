@@ -83,6 +83,14 @@ struct E4Recv_431BC0 {
     unsigned int vt_slot_44;
     unsigned int vt_slot_52;
     unsigned int vt_slot_64;
+    void* ambientSoundController;  // 0x0 (no offset truth)
+    void* attachedTag;  // 0x0 (no offset truth)
+    void* nextObject;  // 0x0 (no offset truth)
+    void* customSound_controller;  // 0x0 (no offset truth)
+    void* occupant;  // 0x0 (no offset truth)
+    void* attachedBomb;  // 0x0 (no offset truth)
+    void* owningHouseIndex;  // 0x0 (no offset truth)
+    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf20(int,  ...);    // G6 vtable slot dispatch
     int Vf24(int,  ...);    // G6 vtable slot dispatch

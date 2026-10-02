@@ -149,10 +149,10 @@ int WinModemClass::ReadBytes(unsigned char *a2, int a3, int aP2, int a4, int aP4
     v8 = (void (*)(void))*((unsigned int *)this + 25); /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *(unsigned char *)(*((unsigned int *)this + 21) + this->WinModemClass_field_0x24) != 13 ) /*0x774b78*/
+      if ( *(unsigned char *)(*((unsigned int *)this + 21) + this->q024) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
-    *a2++ = *(unsigned char *)(*((unsigned int *)this + 21) + this->WinModemClass_field_0x24); /*0x774b86*/
+    *a2++ = *(unsigned char *)(*((unsigned int *)this + 21) + this->q024); /*0x774b86*/
     --v7; /*0x774b92*/
     *((unsigned int *)this + 21) = ((uint16_t)*((unsigned int *)this + 21) + 1) & 0x1FFF; /*0x774b93*/
   }

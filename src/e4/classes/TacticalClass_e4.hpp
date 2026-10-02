@@ -285,6 +285,7 @@ struct TacticalClass {
     unsigned int updateVisibility;
     unsigned int vtable46;
     unsigned int SetObserverView;
+    void* TransformPixel;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char StubReturnFalse();
     char StubReturnFalse11();

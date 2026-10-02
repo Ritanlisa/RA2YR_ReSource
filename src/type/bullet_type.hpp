@@ -108,6 +108,7 @@ public:
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x46c730
     int ProcessImpact(int a1);  // 0x69fc10
     // === FUNCS-MOVE (END) ===
+    void* delay;  // 0x0 (no offset truth)
 };
 
 } // namespace gamemd

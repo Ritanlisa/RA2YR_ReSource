@@ -685,6 +685,13 @@ struct FootClass {
     unsigned int Capacity;
     unsigned int FindAITarget;
     unsigned int *__pad_0;
+    void* movementDestination;  // 0x0 (no offset truth)
+    void* HandleCursorWithCheck;  // 0x0 (no offset truth)
+    void* OverrideMission_SyncLog;  // 0x0 (no offset truth)
+    void* TechnoClass;  // 0x0 (no offset truth)
+    void* ValidateMove;  // 0x0 (no offset truth)
+    void* currentSpeed_percentage;  // 0x0 (no offset truth)
+    void* unknown698;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * Destruct();
     int updateThreat();

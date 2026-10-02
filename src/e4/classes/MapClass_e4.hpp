@@ -161,7 +161,9 @@ struct MapClass {
     unsigned char q18C;  // 0x18C
     unsigned char q190;  // 0x190
     unsigned int q194;  // 0x194
+    unsigned int MapClass_field_0x140;  // 0x140
     unsigned char q19B;  // 0x19B
+    unsigned char __pad_144[21];  // 0x144
     bool q1A1;  // 0x1A1
     unsigned int q1A2;  // 0x1A2
     unsigned int q1A5;  // 0x1A5
@@ -506,6 +508,9 @@ struct MapClass {
     unsigned int u32_6F47;
     unsigned int q0D4;
     unsigned int q115C;
+    void* field_0;  // 0x0 (no offset truth)
+    void* field_16C0;  // 0x0 (no offset truth)
+    void* field_4;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1, void *a2);

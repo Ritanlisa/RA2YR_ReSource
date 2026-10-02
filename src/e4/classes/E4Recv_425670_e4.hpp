@@ -7,6 +7,17 @@ namespace gamemd {
 struct E4Recv_425670 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    void* animation;  // 0x0 (no offset truth)
+    void* location;  // 0x0 (no offset truth)
+    void* ironCurtainTimer;  // 0x0 (no offset truth)
+    void* isFallingDown;  // 0x0 (no offset truth)
+    void* missionQueued;  // 0x0 (no offset truth)
+    void* missionStartTime;  // 0x0 (no offset truth)
+    void* missionStatus;  // 0x0 (no offset truth)
+    void* passengers;  // 0x0 (no offset truth)
+    void* missionTimer;  // 0x0 (no offset truth)
+    void* currentMission;  // 0x0 (no offset truth)
+    void* queuedMission;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf108(int,  ...);    // G6 vtable slot dispatch
     int Vf248(int,  ...);    // G6 vtable slot dispatch

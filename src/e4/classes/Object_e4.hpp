@@ -96,6 +96,9 @@ struct Object {
     unsigned char *__pad_C;  // 0xC
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
+    void* attachedTag;  // 0x0 (no offset truth)
+    void* nextObject;  // 0x0 (no offset truth)
+    void* parachute;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0

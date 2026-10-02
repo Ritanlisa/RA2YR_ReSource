@@ -17,6 +17,7 @@ struct StreamClass {
     unsigned int u32_14;
     unsigned int u32_1C;
     unsigned int IsInactive;
+    void* m_Position;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     BOOLIsInactive(void * aP0);
     static char GetDirty(int a1);

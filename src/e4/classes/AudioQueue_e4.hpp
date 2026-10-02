@@ -52,6 +52,7 @@ struct AudioQueue {
     unsigned char u8_45;
     unsigned int Audio;
     unsigned int Timer;
+    void* Socket;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     unsigned int * CreateNode();  // 0x402AF0
     int FindBestChannel(int a1, int a2);  // 0x4035F0

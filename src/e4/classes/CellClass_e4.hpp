@@ -144,6 +144,8 @@ struct CellClass {
     unsigned int vtable48;
     unsigned int estimatedHealth6;
     unsigned int objectTypeFlags;
+    void* FindOpenNeighbor;  // 0x0 (no offset truth)
+    void* RevealFogRect;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int UpdateTerrain(IUnknown * aP0, IUnknown * aP1);
     int UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1);

@@ -25,6 +25,7 @@ struct SortedArray {
     unsigned int *__pad_0;
     unsigned int q0046;
     unsigned int q040;
+    void* BinarySearch2;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);

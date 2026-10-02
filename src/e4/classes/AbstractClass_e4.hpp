@@ -107,9 +107,18 @@ struct AbstractClass {
     unsigned int q0A0;  // 0xA0
     unsigned int NeedsSaveOrLink;
     unsigned int COMStub_AddRef;
+    unsigned int SuperClass_field_0x2C;  // 0x2C
+    unsigned char __pad_3C[17];  // 0x3C
+    unsigned int SuperClass_field_0x68;  // 0x68
     unsigned int COMStub_Release;
     unsigned int ProcessPower;
     unsigned int QueryInterface;
+    void* Buildup;  // 0x0 (no offset truth)
+    void* BuildupLoaded;  // 0x0 (no offset truth)
+    void* AbstractClass_COMStub_133;  // 0x0 (no offset truth)
+    void* AbstractClass_COMStub_137;  // 0x0 (no offset truth)
+    void* BlitterCore;  // 0x0 (no offset truth)
+    void* RLEBlitterCore;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

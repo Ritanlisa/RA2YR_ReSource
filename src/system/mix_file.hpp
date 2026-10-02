@@ -21,6 +21,8 @@ protected:
 public:
     GenericNode* Next = nullptr;
     GenericNode* Previous = nullptr;
+    unsigned char __pad_0;  // 0x0
+    void* Blowfish;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x40E320
     // --- gap2 auto-generated stub declarations (END) ---

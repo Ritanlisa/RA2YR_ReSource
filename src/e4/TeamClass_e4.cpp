@@ -174,7 +174,7 @@ int TeamClass::DeployUnit(int a2, int a3)
       return result; /*0x62a2a0*/
     }
     v6 = *(unsigned int *)&this->__pad_28[4]; /*0x62a2a3*/
-    ParasiteClass_field_34 = this->ParasiteClass_field_34; /*0x62a2a6*/
+    ParasiteClass_field_34 = this->spawnCell; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
       if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/

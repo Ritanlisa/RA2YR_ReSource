@@ -651,7 +651,7 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * 
     for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
       (*(void (**)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
         a2,
-        (char *)&aP0->WarheadTypeClass_field_0x1AC->vtable1 + 4 * k,
+        (char *)&aP0->q1AC->vtable1 + 4 * k,
         4,
         0);
     return 0; /*0x75e399*/
@@ -697,8 +697,8 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
   int v7; // ecx
 
   v3 = a2; /*0x75e440*/
-  if ( (void *)a2 == this->WarheadTypeClass_field_0x140 ) /*0x75e44c*/
-    this->WarheadTypeClass_field_0x140 = 0; /*0x75e44e*/
+  if ( (void *)a2 == this->q140 ) /*0x75e44c*/
+    this->q140 = 0; /*0x75e44e*/
   pad_104 = (char *)(this->__pad_104); /*0x75e459*/
   a2 = v3; /*0x75e463*/
   result = (*(int (**)(char *, int *))(*(unsigned int *)this->__pad_104 + 16))(this->__pad_104, &a2); /*0x75e46c*/

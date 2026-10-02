@@ -8,6 +8,7 @@ struct E4Recv_7ACB90 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
+    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char StartGameWOL_Start_7ACB90(void* aP1, int a3);  // 0x7ACB90
 };

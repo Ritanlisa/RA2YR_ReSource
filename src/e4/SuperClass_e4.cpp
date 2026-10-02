@@ -1204,9 +1204,9 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       ((AbstractClass*)(AbstractClass *)aP0)->Constructor(); /*0x6cdf0e*/
-      aP0->SuperClass_field_0x0 = &vt_SuperClass; /*0x6cdf13*/
-      aP0->SuperClass_field_0x4 = &vt_SuperClass; /*0x6cdf19*/
-      aP0->SuperClass_field_0x8 = &vt_SuperClass; /*0x6cdf20*/
+      aP0->vtable1 = &vt_SuperClass; /*0x6cdf13*/
+      aP0->vtable2 = &vt_SuperClass; /*0x6cdf19*/
+      aP0->vtable3 = &vt_SuperClass; /*0x6cdf20*/
       *(unsigned int *)aP0->__pad_C = (unsigned int)(&vt_SuperClass); /*0x6cdf27*/
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
@@ -1221,7 +1221,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       v3 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x6cdf7d*/
       *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v3) = (unsigned int)(aP0); /*0x6cdf8c*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->SuperClass_field_0x28); /*0x6cdf98*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->DiskLaserClass_field_0x28); /*0x6cdf98*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->SuperClass_field_0x2C); /*0x6cdfa6*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->SuperClass_field_0x68); /*0x6cdfb1*/
     *(unsigned int *)&aP0->__pad_3C[12] = 0; /*0x6cdfb6*/
@@ -1331,7 +1331,7 @@ bool SuperClass::ShouldFlashTab()
   v2 = *((unsigned int *)SuperClass_field_0x28 + 58); /*0x6ce1c4*/
   if ( v2 == -1 ) /*0x6ce1cd*/
     return 1; /*0x6ce1d1*/
-  return v2 && (int)this->SuperClass_field_0x74 + v2 > *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ce1d1*/
+  return v2 && (int)this->q74 + v2 > *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ce1d1*/
 
 }
 } // namespace gamemd

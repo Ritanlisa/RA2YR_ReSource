@@ -67,14 +67,14 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   v10 = 0; /*0x67d05a*/
   if ( !ppstgOpen ) /*0x67d064*/
     WinAPI::Wrapper(-2147467261); /*0x67d06b*/
-  if ( ppstgOpen->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&off_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
+  if ( ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&off_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
   {
     if ( v10 ) /*0x67d095*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d09a*/
     if ( ppstgOpen ) /*0x67d0a3*/
     {
   LABEL_9:
-      ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d0a9*/
+      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d0a9*/
       return 0; /*0x67d0bb*/
     }
     return 0; /*0x67d0a3*/
@@ -97,7 +97,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( v10 ) /*0x67d159*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d15e*/
     if ( ppstgOpen ) /*0x67d167*/
-      ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d16c*/
+      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d16c*/
     return 0; /*0x67d17b*/
   }
   pStm = 0; /*0x67d182*/
@@ -113,7 +113,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/
   {
     if ( pStm ) /*0x67d1dd*/
-      pStm->lpVtbl->Release(pStm); /*0x67d1e2*/
+      ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d1e2*/
     if ( v9 ) /*0x67d1eb*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d1f0*/
     if ( v10 ) /*0x67d1f9*/
@@ -128,27 +128,27 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   v10 = 0; /*0x67d23e*/
   if ( !ppstgOpen ) /*0x67d248*/
     WinAPI::Wrapper(-2147467261); /*0x67d24f*/
-  if ( ppstgOpen->lpVtbl->Commit(ppstgOpen, 0) < 0 ) /*0x67d261*/
+  if ( ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Commit(ppstgOpen, 0) < 0 ) /*0x67d261*/
   {
     if ( pStm ) /*0x67d269*/
-      pStm->lpVtbl->Release(pStm); /*0x67d26e*/
+      ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d26e*/
     if ( v9 ) /*0x67d277*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d27c*/
     if ( v10 ) /*0x67d285*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d28a*/
     if ( ppstgOpen ) /*0x67d293*/
-      ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d298*/
+      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
     ((Debug *)this)->Log();
   if ( pStm ) /*0x67d2bf*/
-    pStm->lpVtbl->Release(pStm); /*0x67d2c4*/
+    ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/
     (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d2d2*/
   if ( v10 ) /*0x67d2db*/
     (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d2e0*/
   if ( ppstgOpen ) /*0x67d2e9*/
-    ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
+    ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
   return v7; /*0x67cf57*/
 }
 }

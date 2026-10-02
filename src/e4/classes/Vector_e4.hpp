@@ -27,6 +27,7 @@ struct Vector {
     unsigned int u32_24;
     // dup-member: unsigned int HasCapacity;
     unsigned int Math_Vector2D_Magnitude;
+    void* Cl;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Cleanup();  // 0x512D30
     void Destructor();  // 0x513100

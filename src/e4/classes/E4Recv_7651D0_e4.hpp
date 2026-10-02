@@ -14,6 +14,7 @@ struct E4Recv_7651D0 {
     AudioController * q630;  // 0x630
     AudioController * q1584;  // 0x1584
     AudioController * q5508;  // 0x5508
+    void* ambientSoundController;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * sub_7651D0();  // 0x7651D0
 };

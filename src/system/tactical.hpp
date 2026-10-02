@@ -223,6 +223,14 @@ public:
 
 protected:
     TacticalClass() noexcept;
+    unsigned int u32_11B;  // 0x11B
+    void* ptr_34;  // 0x0 (no offset truth)
+    unsigned int u32_58C6;  // 0x58C6
+    void* isDisguisedFlag;  // 0x0 (no offset truth)
+    void* lastJumpjetMapCoords;  // 0x0 (no offset truth)
+    unsigned char m_1[4];  // 0x1
+    void* team;  // 0x0 (no offset truth)
+    void* vtable1;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FillScanlinesTransparent(int a1, int a2, int a3, int a4);  // 0x411330
     int ProcessFrame();  // 0x41BFA0

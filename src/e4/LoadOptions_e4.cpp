@@ -91,7 +91,7 @@ char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
     v3 = ppstgOpen; /*0x67fd77*/
   LABEL_4:
     if ( v3 ) /*0x67fd93*/
-      v3->lpVtbl->Release(v3); /*0x67fd98*/
+      ((gamemd::LoadOptions*)v3)->lpVtbl->Release(v3); /*0x67fd98*/
     return 0; /*0x67fda4*/
   }
   v4 = ScenarioPropertyReadCOM(a2, (int)ppstgOpen) < 0; /*0x67fd89*/
@@ -99,7 +99,7 @@ char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
   if ( v4 ) /*0x67fd8f*/
     goto LABEL_4; /*0x67fd8f*/
   if ( ppstgOpen ) /*0x67fda7*/
-    ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
+    ((gamemd::LoadOptions*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
   return 1; /*0x67fd9d*/
 }
 } // namespace gamemd

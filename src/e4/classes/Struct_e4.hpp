@@ -37,6 +37,7 @@ struct Struct {
     unsigned int field_24;
     unsigned int field_34;
     unsigned int field_8;
+    void* Active;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int ClearAllMemberFlags();
     int ZeroInit32();

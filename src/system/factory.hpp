@@ -96,6 +96,9 @@ public:
 
 protected:
     FactoryClass() = default;
+    void* NeedsSaveOrLink8;  // 0x0 (no offset truth)
+    unsigned char u32_288;  // 0x288
+    unsigned int u8_5D;  // 0x5D
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void AccumulateCreditsProgress(int a1, int a2);  // 0x4F9700
     int ClearObjects();  // 0x635120

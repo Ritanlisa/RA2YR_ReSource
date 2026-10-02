@@ -21,6 +21,7 @@ struct MSOverlayAnim {
     unsigned int *__pad_0;
     unsigned int u32_1C;
     unsigned int u32_3C;
+    void* Init;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     MSShapeAnim * QueryInterface(unsigned int * Block, char a2);
     void StubReturnFalse(int a1);

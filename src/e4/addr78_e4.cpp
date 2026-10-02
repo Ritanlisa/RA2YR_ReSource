@@ -471,7 +471,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     && (v6 = *(unsigned int *)(*(unsigned int *)v5->__pad_0
                        + 4
                        * (((int (*)(String *))g_WOL_HashTable->HashTable_field_0x18)(&v23)
-                        & ((1 << v5->HashTable_field_0x0C) - 1)))) != 0 )
+                        & ((1 << v5->q00C) - 1)))) != 0 )
   {
     while ( !(uint8_t)((String *)((String *)v6))->Compare((const char **)&v23) ) /*0x780b24*/
     {

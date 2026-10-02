@@ -32,6 +32,8 @@ public:
     int BufferCursor = 0;
     uint32_t TotalBytesRead = 0;
     uint32_t TotalBytesWritten = 0;
+    void* FileID;  // 0x0 (no offset truth)
+    void* MixFileIndex;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x431B20
     int Dtor();  // 0x431B80

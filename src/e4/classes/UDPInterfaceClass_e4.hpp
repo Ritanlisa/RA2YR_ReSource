@@ -28,6 +28,8 @@ struct UDPInterfaceClass {
     unsigned int u32_3F330;
     unsigned int u32_3F334;
     unsigned int u32_FC1D0;
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
     unsigned int u32_FCC00;
     unsigned int q010;
     unsigned int q018;

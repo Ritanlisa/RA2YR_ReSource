@@ -49,6 +49,7 @@ struct RocketLocomotionClass {
     float CurrentPitch;  // 0x54
     unsigned int RocketLocomotionClass_field_58;  // 0x58
     unsigned int RocketLocomotionClass_field_5C;  // 0x5C
+    void* LocomotionClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     RocketLocomotionClass();
     RocketLocomotionClass * ProcessMove(char a2, int a3);

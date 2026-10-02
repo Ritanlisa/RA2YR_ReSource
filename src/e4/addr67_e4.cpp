@@ -211,14 +211,14 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
          aP1,
          a3,
          &g_INI_DefaultBuffer,
-         (char *)&v17.InfantryTypeVector_field_0x1C,
+         (char *)&v17.q01C,
          128) )
   {
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
     v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
     *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bb6c*/
-    for ( i = strtok((char *)&v17.InfantryTypeVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
+    for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
         break; /*0x67bb82*/

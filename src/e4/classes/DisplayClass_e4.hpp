@@ -45,8 +45,10 @@ struct DisplayClass {
     unsigned int MovementZones;  // 0x34
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
+    unsigned int DisplayClass_field_0x4;  // 0x4
     unsigned int q03B;  // 0x3B
     unsigned int q03C;  // 0x3C
+    unsigned char DisplayClass_field_0xC[1];  // 0xC
     unsigned int q03D;  // 0x3D
     unsigned int q040;  // 0x40
     bool q042;  // 0x42
@@ -477,6 +479,10 @@ struct DisplayClass {
     HWND Render(void *a1, void *a2);
     Tactical * * UpdateCellPassability(short * a1, IUnknown * aP2);
     VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, IUnknown * aP2);
+    unsigned int DisplayClass_field_0x11D4;  // 0x11D4
+    unsigned int DisplayClass_field_0x11D8;  // 0x11D8
+    unsigned int DisplayClass_field_0x11DC;  // 0x11DC
+    unsigned int DisplayClass_field_0x11E0;  // 0x11E0
     bool SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3);
     char ddtor(void *a1);
     int * processDisplayMode(char a2);

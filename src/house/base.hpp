@@ -42,6 +42,16 @@ struct BaseClass
     CellStruct      center;           // +0x28
     uint8_t         unknown54[32];    // +0x2C
     HouseClass*     owner;            // +0x4C
+    unsigned int m_10;  // 0x10
+    unsigned char __pad_0;  // 0x0
+    int Count;  // 0x22
+    unsigned int u32_52;  // 0x52
+    int u32_54;  // 0x54
+    unsigned int u32_5C;  // 0x5C
+    unsigned int u32_64;  // 0x64
+    unsigned char u32_68;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_74;  // 0x74
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x42E6F0
     int ProcessPowerTimer(unsigned int *a2);

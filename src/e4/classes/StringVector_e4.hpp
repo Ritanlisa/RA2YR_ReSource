@@ -10,6 +10,8 @@ struct StringVector {
     char Insert(const char **a2, int a3);  // 0x7ae5d0
     unsigned char __pad_0[87];  // 0x0
     unsigned int m_8;  // 0x8
+    unsigned int StringVector_field_0x14;  // 0x14
+    unsigned int StringVector_field_0x10;  // 0x10
 };
 
 } // namespace gamemd

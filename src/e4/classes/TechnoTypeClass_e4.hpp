@@ -1096,6 +1096,13 @@ struct TechnoTypeClass {
     unsigned int u32_1D84;
     unsigned int u32_1E42;
     unsigned int vtable0;
+    void* ObjectTypeClass;  // 0x0 (no offset truth)
+    void* waypoints;  // 0x0 (no offset truth)
+    void* CheckFlag;  // 0x0 (no offset truth)
+    void* Debris;  // 0x0 (no offset truth)
+    void* Value;  // 0x0 (no offset truth)
+    void* aP2;  // 0x0 (no offset truth)
+    void* houseTypesCount;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     _DWORD * Construct(int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0);
     static AbstractClass * * GetByTypeAndIndex(int a1, int a2);

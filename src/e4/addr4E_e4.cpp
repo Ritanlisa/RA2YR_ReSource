@@ -2379,7 +2379,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
-  *(unsigned int *)this->__pad_0 = &vt_GaugeClass; /*0x4e2a83*/
+  *(unsigned int *)this->vfptr = &vt_GaugeClass; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
@@ -2391,7 +2391,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
   {
     *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
-    (*(void (**)(GaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2aad*/
+    (*(void (**)(GaugeClass *))(*(unsigned int *)this->vfptr + 72))(this); /*0x4e2aad*/
   }
   *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
   *((unsigned char *)this + 46) = aP4 > aP5; /*0x4e2ab9*/
@@ -2399,8 +2399,8 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   *((unsigned int *)this + 14) = 0; /*0x4e2ac0*/
   *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
   *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
-  *(unsigned int *)this->__pad_0 = &vt_TriColorGaugeClass; /*0x4e2ad5*/
-  return (int)this->__pad_0; /*0x4e2add*/
+  *(unsigned int *)this->vfptr = &vt_TriColorGaugeClass; /*0x4e2ad5*/
+  return (int)this->vfptr; /*0x4e2add*/
 
 }
 } // namespace gamemd

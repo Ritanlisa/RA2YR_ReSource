@@ -92,6 +92,35 @@ public:
     AnimClass(AnimTypeClass* pType, const ra2::game::CoordStruct& coords,
               int z_adjust, int loop_delay, double damage,
               HouseClass* owner) noexcept;
+    unsigned char __pad_120[73];  // 0x120
+    unsigned char __pad_194[11];  // 0x194
+    unsigned char __pad_118[4];  // 0x118
+    unsigned int AnimClass_field_0x104;  // 0x104
+    void* AnimClass_field_0x0;  // 0x0
+    unsigned int AnimClass_field_0x100;  // 0x100
+    unsigned int AnimClass_field_0x11C;  // 0x11C
+    unsigned int AnimClass_field_0x184;  // 0x184
+    unsigned int AnimClass_field_0x188;  // 0x188
+    unsigned int AnimClass_field_0x1A0;  // 0x1A0
+    unsigned int AnimClass_field_0x1B4;  // 0x1B4
+    unsigned int AnimClass_field_0x4;  // 0x4
+    unsigned int AnimClass_field_0x8;  // 0x8
+    unsigned int AnimClass_field_0xAC;  // 0xAC
+    unsigned int AnimClass_field_0xB4;  // 0xB4
+    unsigned int AnimClass_field_0xBC;  // 0xBC
+    unsigned int AnimClass_field_0xC0;  // 0xC0
+    unsigned int AnimClass_field_0xC8;  // 0xC8
+    unsigned int AnimClass_field_0xCC;  // 0xCC
+    unsigned char AnimClass_field_0xD0[1];  // 0xD0
+    unsigned int AnimClass_field_0xD4;  // 0xD4
+    unsigned char AnimClass_field_0xFC[1];  // 0xFC
+    unsigned char __pad_178[2];  // 0x178
+    unsigned char __pad_18C;  // 0x18C
+    unsigned char __pad_7C[21];  // 0x7C
+    unsigned char __pad_B0[1];  // 0xB0
+    unsigned char __pad_C;  // 0xC
+    unsigned char __pad_C4;  // 0xC4
+    unsigned char __pad_D8;  // 0xD8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7);  // 0x421EA0
     int SimpleCtor();  // 0x422720

@@ -38,13 +38,26 @@ struct AudioChannel {
 
 struct CampaignScore {
     void* vfptr;
+    unsigned int u32_A2;  // 0xA2
+    unsigned int q08B;  // 0x8B
+    unsigned int q08A;  // 0x8A
+    void* onBridge;  // 0x0 (no offset truth)
+    unsigned char __pad_9[4];  // 0x9
+    void* isFallingDown;  // 0x0 (no offset truth)
+    unsigned char __pad_0;  // 0x0
+    void* inOpenToppedTransport;  // 0x0 (no offset truth)
+    void* wasFallingDown;  // 0x0 (no offset truth)
 };
+    unsigned int m_0;  // 0x0
 
 struct DialogControl_OwnerDraw {
     void* vfptr;
 };
 
 struct DynamicVectorClass {
+    void* vtable1;  // 0x0 (no offset truth)
+    void* VectorClass;  // 0x0 (no offset truth)
+    void* Destroy;  // 0x0 (no offset truth)
     void* vfptr;
     void* Items;  // 0x4
     int Capacity;  // 0x8
@@ -53,9 +66,11 @@ struct DynamicVectorClass {
     int Count;  // 0x10
     int CapacityIncrement;  // 0x14
     unsigned int * Construct(int a2, int a3);  // 0x477db0
+    static int Destroy_Alt(void *aP0);  // A_c2039 R5 static-form sync
     unsigned int * Copy(unsigned int *a2);  // 0x4779e0
     unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
 };
+    void* Dtor;  // 0x0 (no offset truth)
 
 struct FractalNoise {
     void* vfptr;
@@ -295,8 +310,10 @@ struct Gap2Recv_402F60 {
     unsigned int q7892384126200935667144500;  // 0x7892384126200935667144500
     unsigned int q2479905610309400749000693808;  // 0x2479905610309400749000693808
     unsigned int q7764961091878984669135918598;  // 0x7764961091878984669135918598
+    unsigned char __pad_0;  // 0x0
     unsigned int q7764961092133969250445526098;  // 0x7764961092133969250445526098
 };
+    unsigned char HashTable_field_0x04;  // 0x4
 
 struct HashTable {
     void* vfptr;
@@ -305,23 +322,41 @@ struct HashTable {
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
+    static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
+    void* Shrink;  // 0x0 (no offset truth)
+    static int Grow2(void *aP0);  // A_c2039 R5 static-form sync
+    void* CleanupAndResize;  // 0x0 (no offset truth)
     unsigned char q01C;  // 0x1C
+    void* RebuildEx;  // 0x0 (no offset truth)
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
+    void* TimeRemaining;  // 0x0 (no offset truth)
+    void* GetSpeed;  // 0x0 (no offset truth)
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
+    void* vftable;  // 0x0 (no offset truth)
+    void* Reset;  // 0x0 (no offset truth)
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
+    void* FindString;  // 0x0 (no offset truth)
+    void* vftable;  // 0x0 (no offset truth)
+    void* Constructor;  // 0x0 (no offset truth)
     unsigned char q04C;  // 0x4C
+    void* FindOrCreate2;  // 0x0 (no offset truth)
+    static int ComputeHash(void *aP0, int a2);  // A_c2039 R5 static-form sync
     unsigned char q050;  // 0x50
     int LookupAndMark();  // 0x608440
+    static int Get(void *aP0, IUnknown * aP1, IUnknown * aP2);  // A_c2039 R5 static-form sync
     int BinarySearchAlt(int *a2);  // 0x52b4f0
     int BinarySearch(int *a2);  // 0x52b390
     char * DestroyHashTableINIClass();  // 0x5256f0
+    static int FindChunk(void *aP0, char * Str1, void * a2, CCINIClass * aP3);  // A_c2039 R5 static-form sync
+    static int Remove(void *aP0, int a2);  // A_c2039 R5 static-form sync
+    static int Find(void *aP0, const char * a1, ConvertClass * aP2);  // A_c2039 R5 static-form sync
 };
 
 struct KeywordType {
@@ -344,7 +379,9 @@ struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
 };
+    unsigned char __pad_0[29];  // 0x0
 
+    void* vtable1;  // 0x0
 struct ObjectClass {
     void* vfptr;
     void* vtable2;  // 0x4
@@ -428,6 +465,31 @@ struct ObjectClass {
     unsigned char alignmentPadding91;  // 0x91
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
+    void* unknown_libname_74;  // 0x0 (no offset truth)
+    void* unknown_libname_73;  // 0x0 (no offset truth)
+    void* unknown_libname_35;  // 0x0 (no offset truth)
+    void* unknown_libname_27;  // 0x0 (no offset truth)
+    static int sub_770E70(void *aP0, ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);  // A_c2039 R5 static-form sync
+    static int sub_550080(void *aP0, ObjectClass ** Block);  // A_c2039 R5 static-form sync
+    static int sub_47A2D0(void *aP0, DWORD BytesReturned);  // A_c2039 R5 static-form sync
+    static int sub_47A1B0(void *aP0, DWORD BytesReturned);  // A_c2039 R5 static-form sync
+    void* Constructor;  // 0x0 (no offset truth)
+    static int sub_47A080(void *aP0, DWORD a2);  // A_c2039 R5 static-form sync
+    void* nullsub_86;  // 0x0 (no offset truth)
+    void* nullsub_7;  // 0x0 (no offset truth)
+    void* nullsub_5;  // 0x0 (no offset truth)
+    void* nullsub_126;  // 0x0 (no offset truth)
+    void* j_DeleteAndZero;  // 0x0 (no offset truth)
+    static int SaveToStream_Common(void *aP0, IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);  // A_c2039 R5 static-form sync
+    static int ProductionCompletionCallback(void *aP0, 543 B);  // A_c2039 R5 static-form sync
+    static int LoadFromStream_Common(void *aP0, FootClass * aP0, LPSTREAM pStm);  // A_c2039 R5 static-form sync
+    void* IsCliffWall;  // 0x0 (no offset truth)
+    void* IsBelowScreen;  // 0x0 (no offset truth)
+    static int HasLinkedObject(void *aP0, VectorClass_flat * aP0);  // A_c2039 R5 static-form sync
+    void* GetMember09;  // 0x0 (no offset truth)
+    static int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
+    void* Deploy;  // 0x0 (no offset truth)
+    static int CreateUnitOnCompletion(void *aP0, 583 B);  // A_c2039 R5 static-form sync
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
     char location[12];  // 0x9C
@@ -451,24 +513,40 @@ struct ObjectClass {
     int SetAnim(int a2);  // 0x5f6060
     int GetSizeMax();  // 0x4103e0
     int processDamage();  // 0x6a5000
+    void* vtable0;  // 0x0 (no offset truth)
+    void* AbstractClass;  // 0x0 (no offset truth)
+    void* ResizeEx;  // 0x0 (no offset truth)
+    bool IsInitialized;  // 0x12
+    static int HouseClass__vt_02_(void *aP0, int a2, unsigned int * a3);  // A_c2039 R5 static-form sync
+    void* ClearAndFree3;  // 0x0 (no offset truth)
     int SetPositionXY(int a2, int a3);  // 0x4e1a40
     unsigned int * Init(int a2);  // 0x5f3b50
     int IsHeightAboveThreshold();  // 0x5f6b90
     int DistanceTo(int a2);  // 0x5f6360
     int * CalcTargetFacing(int *a2, int a3);  // 0x5f3db0
     unsigned int * ctor();  // 0x5f3900
+    unsigned char ShapeButtonClass_field_0x04;  // 0x4
     int StepCleanup(void *a2);  // 0x5f3e50
     int ClearFlags2();  // 0x401170
+    void* vt_GameOption;  // 0x0 (no offset truth)
+    void* vt_FlagGameOption;  // 0x0 (no offset truth)
+    void* vt_Campaign;  // 0x0 (no offset truth)
+    void* vftable;  // 0x0 (no offset truth)
+    void* GameOption;  // 0x0 (no offset truth)
+    void* Conflict;  // 0x0 (no offset truth)
+    void* CampaignProperties;  // 0x0 (no offset truth)
     int PreDraw();  // 0x6d0f00
     int Cleanup();  // 0x402220
     int FreeResources();  // 0x5f1960
     int Dtor();  // 0x5f3b80
     int Undeploy();  // 0x5f4d30
     char SetReference(int a2);  // 0x5f5b50
+    unsigned char ShapeButtonClass_field_0x08;  // 0x8
 };
 
 struct ReferenceCounted {
     void* vfptr;
+    unsigned char __pad_0;  // 0x0
 };
 
 struct ShapeButtonClass {
@@ -484,6 +562,8 @@ struct State {
     bool SuperWeapons;  // 0x14
     bool BuildOffAlly;  // 0x15
     bool FogOfWar;  // 0x16
+    void* ConstructorWithVtable;  // 0x0 (no offset truth)
+    void* CleanupTyped;  // 0x0 (no offset truth)
     bool MCVRedeploys;  // 0x17
     bool AlliesAllowed;  // 0x18
     bool ShortGame;  // 0x19
@@ -492,10 +572,16 @@ struct State {
     bool Bridies;  // 0x1C
     int ScenIndex;  // 0x20
     int MapIndex;  // 0x24
+    void* vtable1;  // 0x0
+    void* Cleanup3;  // 0x0 (no offset truth)
     int LastSave;  // 0x28
+    void* vt_Anim;  // 0x0 (no offset truth)
 };
 
+    void* ClearAndFree2;  // 0x0 (no offset truth)
+    int Capacity;  // 0x8
 struct VectorClass {
+    void* Items;  // 0x4
     void* vfptr;
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730
@@ -511,8 +597,10 @@ struct VectorClass {
     int EraseAt(int a2);  // 0x63e900
     unsigned int * CopyDefault(unsigned int *a2);  // 0x525060
     int Destroy();  // 0x477d20
+    bool IsAllocated;  // 0x13
     int GetCount();  // 0x49fb60
     unsigned int * CellConstructor(int a2, int a3);  // 0x42fcb0
+    void* vtable0;  // 0x0 (no offset truth)
     unsigned int * Construct(int a2, int a3);  // 0x477be0
     unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
 };

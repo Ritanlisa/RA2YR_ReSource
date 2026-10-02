@@ -553,6 +553,7 @@ public:
 
 protected:
     BuildingClass() noexcept;
+    void* vtable1;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor(int a1);  // 0x43B680
     int HandleFactoryCommand();  // 0x443410

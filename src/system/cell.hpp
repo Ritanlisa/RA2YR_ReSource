@@ -358,6 +358,16 @@ public:
 
 protected:
     CellClass();
+    unsigned char __pad_28;  // 0x28
+    void* estimatedHealth6;  // 0x0 (no offset truth)
+    unsigned int u32_E4;  // 0xE4
+    unsigned int u32_E8;  // 0xE8
+    void* vtable27;  // 0x0 (no offset truth)
+    void* objectTypeFlags;  // 0x0 (no offset truth)
+    unsigned int u32_11E;  // 0x11E
+    void* vtable28;  // 0x0 (no offset truth)
+    void* vtable46;  // 0x0 (no offset truth)
+    void* vtable48;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ClearOccupancyGrid();  // 0x42A5B0
     int setOverlayType(int a1);  // 0x42AC00

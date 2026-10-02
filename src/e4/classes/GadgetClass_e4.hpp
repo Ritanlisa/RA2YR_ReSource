@@ -27,6 +27,7 @@ struct GadgetClass {
     unsigned char ListClass_field_0x10;  // 0x10
     unsigned char ListClass_field_0x14;  // 0x14
     unsigned char ListClass_field_0x18;  // 0x18
+    void* Image;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM);
     AbstractClass * * SetTooltip(void * String);

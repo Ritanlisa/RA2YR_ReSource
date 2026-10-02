@@ -19,6 +19,9 @@ struct TypeList_flat {
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
+    void* DynamicVectorClass;  // 0x0 (no offset truth)
+    void* CopyFull;  // 0x0 (no offset truth)
+    void* unknown_18;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();

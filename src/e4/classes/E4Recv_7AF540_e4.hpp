@@ -34,6 +34,7 @@ struct E4Recv_7AF540 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int AbstractClass;
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf8(int,  ...);    // G6 vtable slot dispatch
     int sub_7AF540(HWND hWnd, int * a3);  // 0x7AF540

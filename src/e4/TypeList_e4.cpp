@@ -694,12 +694,12 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, vo
 
   v3 = *(void **)&Block->m_1[3]; /*0x512e23*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x512e26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x512e30*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x512e30*/
   {
     __3_YAXPAX_Z(v3); /*0x512e38*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x512e40*/
   }
-  BYTE1(Block->m_C) = 0; /*0x512e4b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x512e4b*/
   Block->m_8 = 0; /*0x512e51*/
   if ( (a2 & 1) != 0 ) /*0x512e58*/
     __3_YAXPAX_Z(Block); /*0x512e5b*/
@@ -789,12 +789,12 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
 
   v3 = *(void **)&Block->m_1[3]; /*0x5131f3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5131f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x513200*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x513200*/
   {
     __3_YAXPAX_Z(v3); /*0x513208*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x513210*/
   }
-  BYTE1(Block->m_C) = 0; /*0x51321b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x51321b*/
   Block->m_8 = 0; /*0x513221*/
   if ( (a2 & 1) != 0 ) /*0x513228*/
     __3_YAXPAX_Z(Block); /*0x51322b*/

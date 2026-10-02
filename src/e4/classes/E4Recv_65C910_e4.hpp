@@ -8,6 +8,7 @@ struct E4Recv_65C910 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
+    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_65C910(ObjectClass * aP1, int a3);  // 0x65C910
 };

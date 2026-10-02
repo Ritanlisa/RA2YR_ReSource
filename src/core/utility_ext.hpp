@@ -239,6 +239,9 @@ public:
     static void InitWithValue(void* ptr, int32_t count, int32_t value);
 
     int32_t     Struct_field_00;       // 0x00
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_C;  // 0xC
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Copy6Bytes(int a1);  // 0x53EDE0
     void* WideStringCopy(int a1);  // 0x6247D0
@@ -421,6 +424,8 @@ public:
 
     static int32_t  s_EventCount;   // 0x00
     static void*    s_Queue;        // 0x04
+    unsigned int q314;  // 0x314
+    unsigned int q318;  // 0x318
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool CheckPosition();  // 0x54F6B0
     // --- gap2 auto-generated stub declarations (END) ---
@@ -476,6 +481,7 @@ public:
     static int32_t GetCount();
 
     static int32_t  s_PlayerCount; // 0x00
+    void* q004;  // 0x4
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void RandomAssign();  // 0x69B8C0
     // --- gap2 auto-generated stub declarations (END) ---
@@ -651,6 +657,9 @@ public:
     int32_t     m_Position;     // 0x04
     int32_t     m_Size;         // 0x08
     int32_t     unknown_field_0C;       // 0x0C
+    unsigned char m_1[4];  // 0x1
+    unsigned int m_C;  // 0xC
+    int m_8;  // 0x8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AddRef(int a1);  // 0x589300
     int Release(int a1, void* a2);  // 0x589550
@@ -722,6 +731,7 @@ public:
     uint8_t COMClass_field_0x48[4];
     uint8_t COMClass_field_0x4C[4];
     uint8_t COMClass_field_0x50[4];
+    unsigned char __pad_0;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* invokeMethod(int a1);  // 0x765790
     void* getTypeInfo(int a1);  // 0x7657C0
@@ -876,6 +886,9 @@ public:
     uint8_t COMObject_field_0x48[4];
     uint8_t COMObject_field_0x4C[4];
     uint8_t COMObject_field_0x50[4];
+    void* Hovered;  // 0x0 (no offset truth)
+    void* vfptr;  // 0x0 (no offset truth)
+    void* Image;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ActivateThunk(int a1, int a2, int a3);  // 0x4E1530
     int FindInList(int a1);  // 0x4E1920
@@ -941,6 +954,7 @@ public:
     uint8_t ComPtr_field_0x18[4];
     uint8_t ComPtr_field_0x1C[4];
     uint8_t ComPtr_field_0x20[4];
+    unsigned char __pad_0;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Set(int a1);  // 0x65D480
     int ReleaseSimple();  // 0x67FDD0
@@ -1502,6 +1516,7 @@ public:
     uint8_t StringVector_field_0x10[4];
     uint8_t StringVector_field_0x14[4];
     uint8_t StringVector_field_0x18[4];
+    unsigned char m_1[4];  // 0x1
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(int a1, int a2);  // 0x5AD6F0
     int Insert(void* a1, int a2);  // 0x7AE5D0

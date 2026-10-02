@@ -692,6 +692,8 @@ struct AircraftClass {
     unsigned int q029;
     unsigned int q169;
     unsigned int vtable0;
+    void* FootClass;  // 0x0 (no offset truth)
+    void* Destruct;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AircraftClass * CheckActionStatus(char a2);
     AircraftTypeClass * GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3_2);

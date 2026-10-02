@@ -100,6 +100,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetIfChanged(int a1);  // 0x4F3A90
     // --- gap2 auto-generated stub declarations (END) ---
+    unsigned char __pad_0;  // 0x0
 };
 
 class Map
@@ -141,6 +142,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int IsCellFlag(int a1);  // 0x535be0
     // === FUNCS-MOVE (END) ===
+    unsigned char m_1[4];  // 0x1
 };
 
 class Territory
@@ -222,6 +224,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void SetupMovie();  // 0x5C2500
     // --- gap2 auto-generated stub declarations (END) ---
+    unsigned int q33C;  // 0x33C
 };
 
 class History

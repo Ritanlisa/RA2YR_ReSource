@@ -37,6 +37,7 @@ struct GameClass {
     unsigned int q054;  // 0x54
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
+    unsigned int m_14;  // 0x14
     unsigned char q068;  // 0x68
     unsigned int q06A;  // 0x6A
     unsigned int q06D;  // 0x6D
@@ -45,6 +46,7 @@ struct GameClass {
     unsigned int u32_7C;  // 0x7C
     unsigned int u32_80;  // 0x80
     unsigned int q084;  // 0x84
+    unsigned char GameClass_field_0x39[1];  // 0x39
     unsigned int u32_A8;  // 0xA8
     unsigned int u32_E4;  // 0xE4
     unsigned int u32_F0;  // 0xF0

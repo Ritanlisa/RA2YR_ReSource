@@ -500,6 +500,8 @@ struct ScenarioClass {
     unsigned int *__pad_3566;
     unsigned int __pad_628;
     unsigned int Timer;
+    void* SetFileName;  // 0x0 (no offset truth)
+    void* LoadMap;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     static ScenarioClass * * CopyStartPositions(void *a1);

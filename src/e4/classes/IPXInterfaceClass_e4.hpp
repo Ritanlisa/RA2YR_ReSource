@@ -33,6 +33,7 @@ struct IPXInterfaceClass {
     unsigned int u32_3F2FC;
     unsigned int u32_3F300;
     unsigned int u32_3F304;
+    unsigned short m_10;  // 0x10
     unsigned int u32_3F30A;
     unsigned int u32_7E0F0;
     unsigned int u32_7E60C;

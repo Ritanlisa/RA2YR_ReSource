@@ -17,6 +17,7 @@ struct Surface {
     unsigned int u32_B;  // 0xB
     unsigned int LockCount;
     unsigned int q00C;
+    void* BytesPerPixel;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * LoadToSurfaceSHP(char *Source);
     LPDIRECTDRAW CreateSurfacePalette();

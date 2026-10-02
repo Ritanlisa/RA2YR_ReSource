@@ -136,6 +136,11 @@ public:
 
 protected:
     MouseClass() = default;
+    unsigned char m_1[4];  // 0x1
+    unsigned int m_C;  // 0xC
+    unsigned char __pad_0;  // 0x0
+    int u32_8;  // 0x8
+    unsigned int q010;  // 0x10
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessInput();  // 0x40D280
     void* InitMouse(int a1);  // 0x40D290

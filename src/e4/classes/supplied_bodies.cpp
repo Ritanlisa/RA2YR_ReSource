@@ -150,7 +150,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3) {
     if ( this->ScriptAction_field_0x10[0] < v7 /*0x634024*/
       || (this->__pad_C[1] || !v7)
       && (ScriptAction_field_0x14 = this->q014, ScriptAction_field_0x14 > 0)
-      && (*(uint8_t (__thiscall **)(ScriptAction *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+      && (*(uint8_t (__thiscall **)(ScriptAction *, int, unsigned int))(*(unsigned int *)this->q000 + 8))(
            this,
            v7 + ScriptAction_field_0x14,
            0) )
@@ -380,7 +380,7 @@ int ScriptAction::DecrementRefCount(int a2) {
 namespace gamemd {
 unsigned int * ScriptAction::Constructor(int a2) {
     this->ScriptAction_field_0x8[0] = 0; /*0x635f27*/
-    *(unsigned int *)this->__pad_C = 0; /*0x635f2a*/
+    *(unsigned int *)this->u32_C = 0; /*0x635f2a*/
     IDA_LOBYTE(this->ScriptAction_field_0x10[0]) = 1; /*0x635f2d*/
     IDA_BYTE1(this->ScriptAction_field_0x10[0]) = 0; /*0x635f31*/
     this->ScriptAction_field_0x4[0] = (int)0; /*0x635f34*/
@@ -393,8 +393,8 @@ unsigned int * ScriptAction::Constructor(int a2) {
     this->q08C = (void *)-1; /*0x635f5b*/
     *(unsigned int *)this->__pad_90 = -1; /*0x635f61*/
     this->q094 = (void *)-1; /*0x635f67*/
-    *(unsigned int *)this->__pad_0 = a2; /*0x635f6d*/
-    return this->__pad_0; /*0x635f6f*/
+    *(unsigned int *)this->q000 = a2; /*0x635f6d*/
+    return this->q000; /*0x635f6f*/
 }
 } // namespace gamemd
 
@@ -405,9 +405,9 @@ BOOL ScriptAction::Check() {
     BOOL result; // eax
 
     result = 0; /*0x636586*/
-    if ( this->ScriptAction_field_0x14 > 0 ) /*0x636575*/
+    if ( this->q014 > 0 ) /*0x636575*/
     {
-      ScriptAction_field_0x8C = this->ScriptAction_field_0x8C; /*0x636577*/
+      ScriptAction_field_0x8C = this->q08C; /*0x636577*/
       if ( ScriptAction_field_0x8C == (void *)-1 || (int)ScriptAction_field_0x8C > 0 ) /*0x636584*/
         return 1; /*0x636575*/
     }
@@ -429,9 +429,9 @@ int ScriptAction::ClearBuildingState() {
     int v9; // esi
     int v10; // [esp+10h] [ebp-4h]
 
-    if ( IDA_LOBYTE(this->ScriptAction_field_0x98) ) /*0x636ce1*/
+    if ( IDA_LOBYTE(this->q098) ) /*0x636ce1*/
     {
-      ScriptAction_field_0x94 = this->ScriptAction_field_0x94; /*0x636cf2*/
+      ScriptAction_field_0x94 = this->q094; /*0x636cf2*/
       if ( ScriptAction_field_0x94 != (void *)-1 ) /*0x636cfa*/
       {
         v2 = *(unsigned int **)(this->ScriptAction_field_0x8[0] + 4 * (unsigned int)ScriptAction_field_0x94); /*0x636cff*/
@@ -444,11 +444,11 @@ int ScriptAction::ClearBuildingState() {
           v2[43] = -1; /*0x636d24*/
         }
       }
-      IDA_LOBYTE(this->ScriptAction_field_0x98) = 0; /*0x636d2a*/
+      IDA_LOBYTE(this->q098) = 0; /*0x636d2a*/
     }
-    ScriptAction_field_0x14 = this->ScriptAction_field_0x14; /*0x636d37*/
+    ScriptAction_field_0x14 = this->q014; /*0x636d37*/
     v10 = ScriptAction_field_0x14; /*0x636d3c*/
-    result = this->ScriptAction_field_0x8C != (void *)-1 ? (int)this->ScriptAction_field_0x8C : 0;
+    result = this->q08C != (void *)-1 ? (int)this->q08C : 0;
     for ( j = result; j < ScriptAction_field_0x14; ++j ) /*0x636d4b*/
     {
       result = this->ScriptAction_field_0x8[0]; /*0x636d4d*/
@@ -471,7 +471,7 @@ int ScriptAction::ClearBuildingState() {
         v8[43] = -1; /*0x636d79*/
       }
     }
-    this->ScriptAction_field_0x8C = (void *)-1; /*0x636d84*/
+    this->q08C = (void *)-1; /*0x636d84*/
     return result; /*0x636d8a*/
 }
 } // namespace gamemd
@@ -487,7 +487,7 @@ char ScriptAction::IsBuildingTypeMatch() {
 
     if ( !this ) /*0x638c79*/
       return 0; /*0x638c79*/
-    v2 = (*(int (__thiscall **)(ScriptAction *))(*(unsigned int *)this->__pad_0 + 388))(this); /*0x638c83*/
+    v2 = (*(int (__thiscall **)(ScriptAction *))(*(unsigned int *)this->q000 + 388))(this); /*0x638c83*/
     if ( v2 == 5 ) /*0x638c88*/
       return 1; /*0x638c91*/
     if ( ((WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v6, *((unsigned int **)this + 173)), /*0x638cc0*/

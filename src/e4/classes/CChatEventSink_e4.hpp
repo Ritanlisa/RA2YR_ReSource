@@ -27,6 +27,7 @@ struct CChatEventSink {
     bool q02B;  // 0x2B
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
+    unsigned char CChatEventSink_field_0x0C[6];  // 0xC
     unsigned char q031;  // 0x31
     unsigned int q033;  // 0x33
     unsigned int CChatEventSink_field_0x04;

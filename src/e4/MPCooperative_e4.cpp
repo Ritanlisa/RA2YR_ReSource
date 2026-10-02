@@ -491,7 +491,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   *(unsigned int *)&this->__pad_328[12] = 0; /*0x5c153d*/
   this->MPCooperative_field_0x0 = (unsigned int)(&vt_MPCooperative); /*0x5c1540*/
   this->MPCooperative_field_0x40 = 0; /*0x5c1546*/
-  this->MPCooperative_field_0x44 = 0; /*0x5c1549*/
+  this->q44 = 0; /*0x5c1549*/
   this->q33C = 0; /*0x5c154c*/
   this->MPCooperative_field_0x50 = 0; /*0x5c1552*/
   ((unsigned char*)&this->q004)[0] = 0; /*0x5c1555*/
@@ -802,7 +802,7 @@ LABEL_30:
     v8 = (CampaignClass *)MPCooperative_Copy(v13); /*0x5c1b13*/
     if ( (int)v8 >= 0 ) /*0x5c1b17*/
     {
-      this->MPCooperative_field_0x33C = v8; /*0x5c1bb1*/
+      this->q33C = v8; /*0x5c1bb1*/
       ((Movie*)(int)&g_DDrawSurfaceManager)->GetSection((int)v8, &v16); /*0x5c1bb7*/
       v11 = (int *)this->MPCooperative_field_0x40; /*0x5c1bc2*/
       String2 = 0; /*0x5c1bc5*/
@@ -829,7 +829,7 @@ LABEL_30:
     else
     {
       v9 = (int *)this->MPCooperative_field_0x40; /*0x5c1b23*/
-      this->MPCooperative_field_0x33C = 0; /*0x5c1b26*/
+      this->q33C = 0; /*0x5c1b26*/
       String2 = 0; /*0x5c1b2c*/
       Array::GetElementAt(v9, &String2, 0); /*0x5c1b30*/
       v10 = 0; /*0x5c1b3a*/
@@ -967,7 +967,7 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
   {
     LOBYTE(this->MPCooperative_field_0x48) = 1; /*0x5c1e26*/
 LABEL_16:
-    MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c1eab*/
+    MPCooperative_field_0x33C = this->q33C; /*0x5c1eab*/
     v17 = 0; /*0x5c1ebc*/
     ((Movie*)(int)&g_DDrawSurfaceManager)->GetSection((int)MPCooperative_field_0x33C, &v18); /*0x5c1ec4*/
     if ( v18 ) /*0x5c1ecf*/
@@ -1041,7 +1041,7 @@ int MPCooperative::Revert()
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v7 = 0; /*0x5c1faa*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, (int)this->MPCooperative_field_0x33C, &v8); /*0x5c1fbf*/
+  Movie::GetSection((int)&g_DDrawSurfaceManager, (int)this->q33C, &v8); /*0x5c1fbf*/
   if ( !v8 ) /*0x5c1fca*/
     return -2; /*0x5c1fcc*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1fd6*/

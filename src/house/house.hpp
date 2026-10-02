@@ -571,6 +571,14 @@ protected:
     HouseClass() = default;
     // unmatched: no callgraph reference and no git history record
     HouseClass(HouseTypeClass* pType) noexcept;
+    unsigned int q21C;  // 0x21C
+    void* AbstractClass;  // 0x0 (no offset truth)
+    void* aircraftAltOwner4;  // 0x0 (no offset truth)
+    void* psychicDetectionBuildings6;  // 0x0 (no offset truth)
+    void* relatedTagsCapacity5;  // 0x0 (no offset truth)
+    void* vtable1;  // 0x0
+    void* vtable34;  // 0x0 (no offset truth)
+    void* vtable41;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveTriggerNodeData(void* a1, void* a2);  // 0x42ED60
     int createStartingUnits(int a1);  // 0x431410

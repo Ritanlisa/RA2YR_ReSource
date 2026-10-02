@@ -57,6 +57,13 @@ public:
     int32_t     MovementAI_field_10;       // 0x10
     int32_t     MovementAI_field_14;       // 0x14
     int32_t     MovementAI_field_18;       // 0x18
+    unsigned int q028;  // 0x28
+    unsigned int q0B0;  // 0xB0
+    void* q0048;  // 0x48
+    unsigned int q0049;  // 0x49
+    unsigned int u32_81;  // 0x81
+    unsigned int q024;  // 0x24
+    void* Cell_9;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int MainFootClass(int a1);  // 0x514F70
     int MarkOccupiedPathCell();  // 0x5163B0

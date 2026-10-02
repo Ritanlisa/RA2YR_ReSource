@@ -20,6 +20,7 @@ struct DialogControl {
     unsigned int u32_64;
     unsigned int u32_68;
     unsigned int u32_90;
+    void* Image;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Hide();
     int IsHidden();

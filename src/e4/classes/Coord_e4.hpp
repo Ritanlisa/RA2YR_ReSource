@@ -57,6 +57,7 @@ struct Coord {
     unsigned int u32_1490;
     unsigned int u32_1498;
     unsigned int u32_14A4;
+    unsigned int Coord_field_0x13C;  // 0x13C
     unsigned int u32_14A8;
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0

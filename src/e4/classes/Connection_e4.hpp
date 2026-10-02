@@ -19,6 +19,7 @@ struct Connection {
     void* q048;  // 0x48
     unsigned int Connection_field_0x48;
     unsigned int Initialized;
+    void* Active;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int GetSpeed();  // 0x5422F0
     int Close();  // 0x543090

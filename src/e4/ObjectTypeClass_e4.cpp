@@ -855,103 +855,103 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   int v10; // ecx
   char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
-  __3_YAXPAX_Z((void *)aP0->VoxelCaches[0]); /*0x5f973e*/
-  aP0->VoxelCaches[0] = 0; /*0x5f974e*/
-  aP0->VoxelCaches[1] = 0; /*0x5f9750*/
-  aP0->VoxelCaches[2] = 0; /*0x5f9753*/
-  LOBYTE(aP0->VoxelCaches[3]) = 0; /*0x5f9756*/
-  aP0->VoxelCaches[4] = 0; /*0x5f9759*/
-  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[5]))->FreeLoaderBuffer(); /*0x5f975c*/
-  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[10]))->FreeLoaderBuffer(); /*0x5f9767*/
-  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[15]))->FreeLoaderBuffer(); /*0x5f9772*/
-  v2 = (void *)aP0->MainVoxel[0]; /*0x5f9777*/
+  __3_YAXPAX_Z((void *)((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[0]); /*0x5f973e*/
+  ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[0] = 0; /*0x5f974e*/
+  ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[1] = 0; /*0x5f9750*/
+  ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[2] = 0; /*0x5f9753*/
+  LOBYTE(((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[3]) = 0; /*0x5f9756*/
+  ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[4] = 0; /*0x5f9759*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[5]))->FreeLoaderBuffer(); /*0x5f975c*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[10]))->FreeLoaderBuffer(); /*0x5f9767*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[15]))->FreeLoaderBuffer(); /*0x5f9772*/
+  v2 = (void *)((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0]; /*0x5f9777*/
   if ( v2 ) /*0x5f977f*/
   {
-    WaveClass::Destroy((WaveClass *)aP0->MainVoxel[0]); /*0x5f9783*/
+    WaveClass::Destroy((WaveClass *)((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0]); /*0x5f9783*/
     __3_YAXPAX_Z(v2); /*0x5f9789*/
   }
-  v3 = (String *)aP0->TurretVoxel[0]; /*0x5f9791*/
-  aP0->MainVoxel[0] = 0; /*0x5f9797*/
+  v3 = (String *)((gamemd::ObjectTypeClass*)aP0)->TurretVoxel[0]; /*0x5f9791*/
+  ((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0] = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
   {
     ((String*)v3)->Release(); /*0x5f97a3*/
     __3_YAXPAX_Z(v3); /*0x5f97a9*/
   }
-  v4 = (WaveClass *)aP0->BarrelVoxel[0]; /*0x5f97b1*/
-  aP0->TurretVoxel[0] = 0; /*0x5f97b7*/
+  v4 = (WaveClass *)((gamemd::ObjectTypeClass*)aP0)->BarrelVoxel[0]; /*0x5f97b1*/
+  ((gamemd::ObjectTypeClass*)aP0)->TurretVoxel[0] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
     ((WaveClass*)v4)->Destroy(); /*0x5f97c3*/
     __3_YAXPAX_Z(v4); /*0x5f97c9*/
   }
-  v5 = (String *)aP0->ChargerTurrets[0]; /*0x5f97d1*/
-  aP0->BarrelVoxel[0] = 0; /*0x5f97d7*/
+  v5 = (String *)((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[0]; /*0x5f97d1*/
+  ((gamemd::ObjectTypeClass*)aP0)->BarrelVoxel[0] = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
   {
     ((String*)v5)->Release(); /*0x5f97e3*/
     __3_YAXPAX_Z(v5); /*0x5f97e9*/
   }
-  v6 = (WaveClass *)aP0->ChargerTurrets[1]; /*0x5f97f1*/
-  aP0->ChargerTurrets[0] = 0; /*0x5f97f7*/
+  v6 = (WaveClass *)((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[1]; /*0x5f97f1*/
+  ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[0] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
     ((WaveClass*)v6)->Destroy(); /*0x5f9803*/
     __3_YAXPAX_Z(v6); /*0x5f9809*/
   }
-  v7 = (String *)aP0->ChargerTurrets[2]; /*0x5f9811*/
-  aP0->ChargerTurrets[1] = 0; /*0x5f9817*/
+  v7 = (String *)((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[2]; /*0x5f9811*/
+  ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[1] = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
   {
     ((String*)v7)->Release(); /*0x5f9823*/
     __3_YAXPAX_Z(v7); /*0x5f9829*/
   }
-  aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
+  ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[2] = 0; /*0x5f9833*/
   ((ObjectTypeClass*)(char *)aP0)->CleanupWeapons(); /*0x5f9839*/
   result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x5f9847*/
   if ( result >= 0 ) /*0x5f984e*/
   {
-    aP0->Image = 0; /*0x5f9856*/
-    aP0->ImageAllocated = 0; /*0x5f985c*/
-    aP0->AlphaImage = 0; /*0x5f9862*/
+    ((gamemd::ObjectTypeClass*)aP0)->Image = 0; /*0x5f9856*/
+    ((gamemd::ObjectTypeClass*)aP0)->ImageAllocated = 0; /*0x5f985c*/
+    ((gamemd::ObjectTypeClass*)aP0)->AlphaImage = 0; /*0x5f9862*/
     if ( aP0 != (ObjectTypeClass *)-580 ) /*0x5f9868*/
     {
-      aP0->VoxelCaches[0] = 0; /*0x5f986a*/
-      aP0->VoxelCaches[1] = 0; /*0x5f986c*/
-      aP0->VoxelCaches[2] = 0; /*0x5f986f*/
-      LOBYTE(aP0->VoxelCaches[3]) = 0; /*0x5f9872*/
-      aP0->VoxelCaches[4] = 0; /*0x5f9875*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[0] = 0; /*0x5f986a*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[1] = 0; /*0x5f986c*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[2] = 0; /*0x5f986f*/
+      LOBYTE(((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[3]) = 0; /*0x5f9872*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[4] = 0; /*0x5f9875*/
     }
     if ( aP0 != (ObjectTypeClass *)-600 ) /*0x5f9880*/
     {
-      aP0->VoxelCaches[5] = 0; /*0x5f9882*/
-      aP0->VoxelCaches[6] = 0; /*0x5f9884*/
-      aP0->VoxelCaches[7] = 0; /*0x5f9887*/
-      LOBYTE(aP0->VoxelCaches[8]) = 0; /*0x5f988a*/
-      aP0->VoxelCaches[9] = 0; /*0x5f988d*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[5] = 0; /*0x5f9882*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[6] = 0; /*0x5f9884*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[7] = 0; /*0x5f9887*/
+      LOBYTE(((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[8]) = 0; /*0x5f988a*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[9] = 0; /*0x5f988d*/
     }
     if ( aP0 != (ObjectTypeClass *)-620 ) /*0x5f9898*/
     {
-      aP0->VoxelCaches[10] = 0; /*0x5f989a*/
-      aP0->VoxelCaches[11] = 0; /*0x5f989c*/
-      aP0->VoxelCaches[12] = 0; /*0x5f989f*/
-      LOBYTE(aP0->VoxelCaches[13]) = 0; /*0x5f98a2*/
-      aP0->VoxelCaches[14] = 0; /*0x5f98a5*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[10] = 0; /*0x5f989a*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[11] = 0; /*0x5f989c*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[12] = 0; /*0x5f989f*/
+      LOBYTE(((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[13]) = 0; /*0x5f98a2*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[14] = 0; /*0x5f98a5*/
     }
     if ( aP0 != (ObjectTypeClass *)-640 ) /*0x5f98b0*/
     {
-      aP0->VoxelCaches[15] = 0; /*0x5f98b2*/
-      aP0->VoxelCaches[16] = 0; /*0x5f98b4*/
-      aP0->VoxelCaches[17] = 0; /*0x5f98b7*/
-      LOBYTE(aP0->VoxelCaches[18]) = 0; /*0x5f98ba*/
-      aP0->VoxelCaches[19] = 0; /*0x5f98bd*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[15] = 0; /*0x5f98b2*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[16] = 0; /*0x5f98b4*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[17] = 0; /*0x5f98b7*/
+      LOBYTE(((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[18]) = 0; /*0x5f98ba*/
+      ((gamemd::ObjectTypeClass*)aP0)->VoxelCaches[19] = 0; /*0x5f98bd*/
     }
-    aP0->MainVoxel[0] = 0; /*0x5f98c0*/
-    aP0->TurretVoxel[0] = 0; /*0x5f98c6*/
-    aP0->BarrelVoxel[0] = 0; /*0x5f98cc*/
-    aP0->ChargerTurrets[0] = 0; /*0x5f98d2*/
-    aP0->ChargerTurrets[1] = 0; /*0x5f98d8*/
-    aP0->ChargerTurrets[2] = 0; /*0x5f98de*/
-    v9 = &aP0->ChargerTurrets[4]; /*0x5f98e4*/
+    ((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0] = 0; /*0x5f98c0*/
+    ((gamemd::ObjectTypeClass*)aP0)->TurretVoxel[0] = 0; /*0x5f98c6*/
+    ((gamemd::ObjectTypeClass*)aP0)->BarrelVoxel[0] = 0; /*0x5f98cc*/
+    ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[0] = 0; /*0x5f98d2*/
+    ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[1] = 0; /*0x5f98d8*/
+    ((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[2] = 0; /*0x5f98de*/
+    v9 = &((gamemd::ObjectTypeClass*)aP0)->ChargerTurrets[4]; /*0x5f98e4*/
     v10 = 18; /*0x5f98ea*/
     do /*0x5f9904*/
     {
@@ -963,10 +963,10 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
       --v10; /*0x5f9903*/
     }
     while ( v10 ); /*0x5f9904*/
-    if ( aP0->AlphaImageFile[0] ) /*0x5f9906*/
+    if ( ((gamemd::ObjectTypeClass*)aP0)->AlphaImageFile[0] ) /*0x5f9906*/
     {
-      _makepath(Buffer, 0, 0, aP0->AlphaImageFile, Ext); /*0x5f9923*/
-      aP0->AlphaImage = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x5f9936*/
+      _makepath(Buffer, 0, 0, ((gamemd::ObjectTypeClass*)aP0)->AlphaImageFile, Ext); /*0x5f9923*/
+      ((gamemd::ObjectTypeClass*)aP0)->AlphaImage = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x5f9936*/
     }
     return 0; /*0x5f993c*/
   }

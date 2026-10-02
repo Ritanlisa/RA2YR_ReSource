@@ -24,5 +24,6 @@ struct DynamicVectorClass_ptr_NodeNameType {
     int GetSize(unsigned int * a2);  // 0x5C55C0
     DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5C58F0
     unsigned int Get(int a2, void *a2_2);  // 0x5C50A0
+    unsigned int m_10;  // 0x10
 };
 } // namespace gamemd

@@ -21,6 +21,8 @@ struct E4Recv_70FE50 {
     unsigned int q1544;  // 0x1544
     unsigned int q4384;  // 0x4384
     unsigned int q5444;  // 0x5444
+    void* drainTarget;  // 0x0 (no offset truth)
+    void* drainAnim;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_70FE50();  // 0x70FE50
 };

@@ -939,18 +939,18 @@ LABEL_26:
       dword_ABB10C = (unsigned int)(v21);
     if ( v20 == (INIClass *)v107 )
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] = v21;
-    sprintf((char *const)&aP2.INIClass_field_2C, stru_8292A8, v20);
+    sprintf((char *const)&aP2.q02C, stru_8292A8, v20);
     INIClass::ResetSection(v77);
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (uint8_t *)&aP2.INIClass_field_2C,
+                           (uint8_t *)&aP2.q02C,
                            &unk_82929C,
                            (INIClass *)0xFFFFFFFF);
     if ( v71 == (ObjectClass *)-1 )
       break;
     v26 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                              (int)v77,
-                             (uint8_t *)&aP2.INIClass_field_2C,
+                             (uint8_t *)&aP2.q02C,
                              &unk_82928C,
                              (INIClass *)0xFFFFFFFF);
     v27 = v26;
@@ -980,46 +980,46 @@ LABEL_26:
       v31 = v75;
     }
     v72 = v31;
-    INIClass::GetString(v77, (INIClass *)&aP2.INIClass_field_2C, &unk_82927C, &unk_829284, &aP4, 64);
-    INIClass::GetString(v77, (INIClass *)&aP2.INIClass_field_2C, &unk_829268, &unk_829274, &v183, 64);
+    INIClass::GetString(v77, (INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
+    INIClass::GetString(v77, (INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
     v75 = (CCINIClass *)INIClass::ReadInt_Overwrite(
                           (int)v77,
-                          (uint8_t *)&aP2.INIClass_field_2C,
+                          (uint8_t *)&aP2.q02C,
                           &unk_829258,
                           (INIClass *)0xFFFF);
     v86 = (INIClass *)INIClass::ReadInt_Overwrite(
                         (int)v77,
-                        (uint8_t *)&aP2.INIClass_field_2C,
+                        (uint8_t *)&aP2.q02C,
                         &unk_829244,
                         (INIClass *)0xFFFF);
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829238, 0);
-    char v64 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829228, 1);
-    char v66 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829218, 1);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.q02C, &unk_829238, 0);
+    char v64 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.q02C, &unk_829228, 1);
+    char v66 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.q02C, &unk_829218, 1);
   char v62; // [esp+13h] [ebp-9FDh]
     v62 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (uint8_t *)&aP2.INIClass_field_2C,
+            (uint8_t *)&aP2.q02C,
             (CCINIClass *)&DataGlobal_008291B8.unknown50,
             0);
     var9FC_2 = INIClass::ReadBool_Overwrite(
                  (int)v77,
-                 (uint8_t *)&aP2.INIClass_field_2C,
+                 (uint8_t *)&aP2.q02C,
                  (CCINIClass *)&DataGlobal_008291B8.ownsFile,
                  0);
     v109 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (uint8_t *)&aP2.INIClass_field_2C,
+                              (uint8_t *)&aP2.q02C,
                               (CCINIClass *)&DataGlobal_008291B8.unknown30,
                               (INIClass *)0xFFFFFFFF);
     v111 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (uint8_t *)&aP2.INIClass_field_2C,
+                              (uint8_t *)&aP2.q02C,
                               (CCINIClass *)&DataGlobal_008291B8.sectionCount,
                               (INIClass *)0xFFFFFFFF);
   char v32; // al
     v32 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (uint8_t *)&aP2.INIClass_field_2C,
+            (uint8_t *)&aP2.q02C,
             (CCINIClass *)&DataGlobal_008291B8.headNode[2],
             0);
     char v63 = v32;
@@ -1033,7 +1033,7 @@ LABEL_26:
     if ( v32 )
       v88 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                (int)v77,
-                               (uint8_t *)&aP2.INIClass_field_2C,
+                               (uint8_t *)&aP2.q02C,
                                &DataGlobal_008291B8,
                                0);
     int v34 = INIClass::BinarySearchSection((int)v77, &aP4);

@@ -36,6 +36,7 @@ struct Cell {
     unsigned char q040;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int q048;  // 0x48
+    unsigned char Cell_field_0x18[1];  // 0x18
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned char q064;  // 0x64
@@ -54,6 +55,8 @@ struct Cell {
     unsigned char q098;  // 0x98
     unsigned char q09C;  // 0x9C
     unsigned int u32_A4;  // 0xA4
+    unsigned int Cell_field_0x68;  // 0x68
+    unsigned int Cell_field_0x6C;  // 0x6C
     unsigned int u32_AC;  // 0xAC
     unsigned char q0B0;  // 0xB0
     unsigned char q0B4;  // 0xB4
@@ -78,6 +81,8 @@ struct Cell {
     unsigned int q128;  // 0x128
     void* q12C;  // 0x12C
     unsigned int u32_12E;  // 0x12E
+    unsigned int Cell_field_0xF4;  // 0xF4
+    unsigned int Cell_field_0xF8;  // 0xF8
     unsigned int u32_12F;  // 0x12F
     unsigned char q130;  // 0x130
     unsigned int u32_131;  // 0x131
@@ -97,6 +102,7 @@ struct Cell {
     unsigned char q194;  // 0x194
     unsigned char q198;  // 0x198
     unsigned int u32_1A4;  // 0x1A4
+    unsigned int Cell_field_0x13C;  // 0x13C
     unsigned char q1A8;  // 0x1A8
     unsigned int u32_1AC;  // 0x1AC
     unsigned char q1B0;  // 0x1B0

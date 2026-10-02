@@ -848,13 +848,13 @@ void sub_7331B0()
               if ( *(unsigned int *)&dword_A8B238 ) /*0x7332f7*/
                 IDA_LOBYTE(HeightMap) = ((House*)v14[135])->IsHumanPlayer(); /*0x73330d*/
               else
-                HeightMap = IDA_BYTE1(v14[135]->House_field_0x1EC); /*0x7332ff*/
+                HeightMap = IDA_BYTE1(v14[135]->q1EC); /*0x7332ff*/
               if ( (unsigned char)HeightMap ) /*0x733314*/
               {
                 HeightMap = (*(int (**)(House **))&(*v14)->House_field_0x29[3])(v14); /*0x73331a*/
                 if ( HeightMap != 6 ) /*0x733320*/
                 {
-                  v15 = v12->EventClass_field_0x8; /*0x733322*/
+                  v15 = v12->q008; /*0x733322*/
                   if ( *(unsigned int *)v12->__pad_10 < (int)v15 /*0x73334c*/
                     || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v12->EventClass_field_0xC), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *(unsigned int *)&v12->__pad_10[4], HeightMap > 0)

@@ -31,6 +31,10 @@ struct E4Recv_4E0A00 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q030;  // 0x30
+    void* Items;  // 0x0 (no offset truth)
+    void* IsAllocated;  // 0x0 (no offset truth)
+    void* IsInitialized;  // 0x0 (no offset truth)
+    void* Capacity;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     unsigned int * sub_4E0A00(int a2, unsigned int * a3);  // 0x4E0A00
 };

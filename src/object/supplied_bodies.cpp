@@ -638,7 +638,7 @@ int FootClass::SetField(int a2) {
 } // namespace ra2::game
 
 // 0x7640B0
-namespace gamemd::gamemd::ra2::game {
+namespace ra2::game {
 char AbstractClass::setSWCharge(int a2) {
     int v2; // edi
     int v3; // esi
@@ -668,7 +668,7 @@ char AbstractClass::setSWCharge(int a2) {
     }
     return 0; /*0x7640fa*/
 }
-} // namespace gamemd::gamemd::ra2::game
+} // namespace ra2::game
 
 // 0x402220
 namespace ra2::game {
@@ -711,7 +711,7 @@ int ObjectClass::Cleanup() {
 } // namespace ra2::game
 
 // 0x40DD20
-namespace gamemd::gamemd::ra2::game {
+namespace ra2::game {
 void * AbstractClass::IsTechno() {
     void *result; // eax
 
@@ -730,10 +730,10 @@ void * AbstractClass::IsTechno() {
     }
     return result; /*0x40dd43*/
 }
-} // namespace gamemd::gamemd::ra2::game
+} // namespace ra2::game
 
 // 0x40DD70
-namespace gamemd::gamemd::ra2::game {
+namespace ra2::game {
 void * AbstractClass::IsTechnoType() {
     void *result; // eax
 
@@ -752,7 +752,7 @@ void * AbstractClass::IsTechnoType() {
     }
     return result; /*0x40dd93*/
 }
-} // namespace gamemd::gamemd::ra2::game
+} // namespace ra2::game
 
 // 0x4155F0
 namespace ra2::game {

@@ -12,6 +12,7 @@ struct E4Recv_457A10 {
     unsigned int M1312;  // 0x520
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char sub_457A10();  // 0x457A10
 };

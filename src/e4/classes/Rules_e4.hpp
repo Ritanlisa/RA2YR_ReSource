@@ -21,6 +21,7 @@ struct Rules {
     unsigned int q080;  // 0x80
     unsigned int q128;  // 0x128
     unsigned int q130;  // 0x130
+    unsigned int m_C;  // 0xC
     unsigned int u32_270;  // 0x270
     unsigned int u32_274;  // 0x274
     unsigned int u32_278;  // 0x278

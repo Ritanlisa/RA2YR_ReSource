@@ -8,6 +8,7 @@ struct Flag {
     int IsZero();
     unsigned char __pad_0[87];  // 0x0
     unsigned int Flag_field_0x04;  // 0x4
+    unsigned char Flag_field_0x08;  // 0x8
 };
 
 } // namespace gamemd

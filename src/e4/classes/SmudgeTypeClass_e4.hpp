@@ -252,6 +252,7 @@ struct SmudgeTypeClass {
     int PowerDrainUpdate(int * a2);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
+    unsigned int Crater;  // 0x1650
 };
 
 } // namespace gamemd

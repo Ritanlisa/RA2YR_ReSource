@@ -49,6 +49,8 @@ struct Stream {
     unsigned int u32_544;
     unsigned int u32_548;
     unsigned int u32_54C;
+    void* ReadPacket;  // 0x0 (no offset truth)
+    void* a2;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();

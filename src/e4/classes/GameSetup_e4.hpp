@@ -20,6 +20,7 @@ struct GameSetup {
     unsigned char u8_17;  // 0x17
     unsigned char q018;  // 0x18
     unsigned int q0104;
+    void* DisplayPlayers;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();

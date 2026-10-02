@@ -87,6 +87,7 @@ protected:
     bool       needsSave_flag;            // +0x34 (byte 52)
     uint32_t   unknown38;            // +0x38
     uint32_t   INIClass_field_3C;            // +0x3C
+    unsigned char __pad_0;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* loadFile(int a1);  // 0x43ADC0
     int WriteDigest(int a1, int a2);  // 0x474430

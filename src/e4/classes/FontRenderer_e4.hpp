@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct FontRenderer {
     int InitContext(int *a2);
+    void* DrawTextA;  // 0x0 (no offset truth)
 };
 
 } // namespace gamemd

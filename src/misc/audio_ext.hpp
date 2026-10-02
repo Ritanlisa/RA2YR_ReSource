@@ -51,6 +51,7 @@ public:
     uint32_t    AudioMixer_field_0C;       // 0x0C
     uint32_t    AudioMixer_field_10;       // 0x10
     uint32_t    AudioMixer_field_14;       // 0x14
+    unsigned char u32_80;  // 0x80
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void ProcessAudioFrame();  // 0x408000
     int SetupChannels();  // 0x408A70

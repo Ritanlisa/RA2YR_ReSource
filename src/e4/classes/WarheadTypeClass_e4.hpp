@@ -128,6 +128,7 @@ struct WarheadTypeClass {
     unsigned int q144;  // 0x144
     unsigned char u8_145;  // 0x145
     unsigned int u32_146;  // 0x146
+    unsigned char WarheadTypeClass_field_0x108;  // 0x108
     unsigned char u8_147;  // 0x147
     unsigned char q148;  // 0x148
     bool WarheadTypeClass_field_bool_149;  // 0x149
@@ -192,6 +193,7 @@ struct WarheadTypeClass {
     unsigned int q1B1;  // 0x1B1
     unsigned char u8_1B4;  // 0x1B4
     void* p1B5;  // regen name
+    unsigned char WarheadTypeClass_field_0x190[1];  // 0x190
     unsigned int u32_1B8;  // 0x1B8
     unsigned char q1B9;  // 0x1B9
     void* p1BC;  // regen name

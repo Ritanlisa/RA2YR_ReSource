@@ -934,7 +934,7 @@ int VoxelAnimClass::Reset(void *a1, void *a2)
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C[0] = g_AsyncMovieState; /*0x75aaa1*/
-  *(unsigned int *)this->__pad_20 = g_MovieFrameState1; /*0x75aaaa*/
+  *(unsigned int *)this->needsSave = g_MovieFrameState1; /*0x75aaaa*/
   *(unsigned int *)&this->__pad_20[4] = g_MovieFrameState2; /*0x75aab6*/
   *(unsigned int *)&this->__pad_20[8] = g_AsyncMovieState; /*0x75aabe*/
   *(unsigned int *)&this->__pad_20[12] = g_MovieFrameState1; /*0x75aac6*/
@@ -966,7 +966,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   this->__pad_12C[1] = 0; /*0x75ec04*/
   *(unsigned int *)&this->__pad_12C[4] = 100; /*0x75ec0a*/
   *(unsigned int *)&this->__pad_12C[16] = 0; /*0x75ec14*/
-  *(unsigned int *)this->__pad_144 = 0; /*0x75ec1a*/
+  *(unsigned int *)this->q144 = 0; /*0x75ec1a*/
   *(unsigned int *)&this->__pad_144[4] = 0; /*0x75ec20*/
   *(unsigned int *)&this->__pad_144[8] = 0; /*0x75ec26*/
   *(unsigned int *)&this->__pad_144[92] = 0; /*0x75ec2c*/

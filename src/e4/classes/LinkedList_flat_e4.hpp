@@ -27,6 +27,10 @@ struct LinkedList_flat {
     unsigned int q004;
     unsigned int Debug;
     unsigned int PushFront;
+    void* Prepend;  // 0x0 (no offset truth)
+    void* Attach;  // 0x0 (no offset truth)
+    void* Pop;  // 0x0 (no offset truth)
+    void* RemoveNode;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 AbstractClass * * LoadScenarioMixFiles(int a2@<ebx>, int a3, int a4, int a2, int aP0, int aP1);
 LinkClass * * Append(int a2, void *a2_2);

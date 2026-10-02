@@ -1150,6 +1150,7 @@ struct MouseClass {
     unsigned int field_0;
     unsigned int *__pad_74;
     unsigned int LoadGameAssets;
+    void* HandleClick;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);

@@ -661,13 +661,13 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bc16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40bc20*/
+  if ( v3 && BYTE1(Block->q00C) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x40bc30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40bc3b*/
-  Block->m_8 = 0; /*0x40bc41*/
+  BYTE1(Block->q00C) = 0; /*0x40bc3b*/
+  Block->q008 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
     __3_YAXPAX_Z(Block); /*0x40bc4b*/
   return Block->__pad_0; /*0x40bc55*/
@@ -726,13 +726,13 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x40c113*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c116*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40c120*/
+  if ( v3 && BYTE1(Block->q00C) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x40c130*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40c13b*/
-  Block->m_8 = 0; /*0x40c141*/
+  BYTE1(Block->q00C) = 0; /*0x40c13b*/
+  Block->q008 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
     __3_YAXPAX_Z(Block); /*0x40c14b*/
   return Block->__pad_0; /*0x40c155*/

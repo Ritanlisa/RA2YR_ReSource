@@ -26,6 +26,8 @@ struct MultiplayerGameMode {
     unsigned int q0104;
     unsigned int q0108;
     unsigned int u32_38;
+    void* vt_InitializerBase;  // 0x0 (no offset truth)
+    void* GetFirst;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);

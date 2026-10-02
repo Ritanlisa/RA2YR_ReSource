@@ -1574,6 +1574,13 @@ struct BuildingTypeClass {
     unsigned int q1761;
     unsigned int q8588;
     unsigned int q85C2;
+    int PowerDrain;  // 0x14354
+    int PowerBonus;  // 0x14344
+    unsigned int Foundation;  // 0x14372
+    unsigned int Factory;  // 0x14184
+    int ExtraPowerDrain;  // 0x14368
+    unsigned int BuildingAnimFrame;  // 0x14404
+    int Adjacent;  // 0x14180
     unsigned int q8642;
     unsigned int q8646;
     unsigned int qF04;
@@ -1585,6 +1592,7 @@ struct BuildingTypeClass {
     unsigned int q8604;
     unsigned int q8608;
     unsigned int vtable0;
+    void* Flat_flag;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();

@@ -15,11 +15,13 @@ struct unknown {
     unsigned int *m_1;
     unsigned int m_8;
     unsigned int m_C;
+    void* RoundToInt;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int  Read(unsigned short * a2, void *a2_2);
     int Seek(int a2, int a3, void *a3_2);
     unsigned int Write(int a2);
     wchar_t * ddtor(void *a1);
+    unsigned int m_10;  // 0x10
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 

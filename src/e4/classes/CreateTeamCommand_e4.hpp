@@ -83,6 +83,7 @@ struct CreateTeamCommand {
     unsigned int q0046;
     unsigned int u32_539C;
     unsigned int q00C;
+    void* CommandClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350

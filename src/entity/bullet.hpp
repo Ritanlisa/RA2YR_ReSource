@@ -119,6 +119,16 @@ public:
 
 protected:
     BulletClass() = default; // 0x466380
+    unsigned int q0A4;  // 0xA4
+    unsigned int q674;  // 0x674
+    unsigned int u32_3C6;  // 0x3C6
+    unsigned int q01C2;  // 0x1C2
+    unsigned int q0A0;  // 0xA0
+    unsigned int q0A43;  // 0xA43
+    unsigned int q118;  // 0x118
+    unsigned int q1946;  // 0x1946
+    void* q740;  // 0x740
+    unsigned int u32_345;  // 0x345
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* FlightUpdate(int a1, int a2);  // 0x415EE0
     void NormalizeZeroVector();  // 0x41C3F0

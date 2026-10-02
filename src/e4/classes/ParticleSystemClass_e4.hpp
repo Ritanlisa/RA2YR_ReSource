@@ -134,6 +134,7 @@ struct ParticleSystemClass {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    void* ObjectClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     VectorClass_flat * vt_00_(char a2);
     unsigned int * ddtor(int a2, int a3);

@@ -155,6 +155,7 @@ public:
 
 private:
     uint8_t padding_21[3] = {};
+    void* Dtor;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(int a1);  // 0x65CA80
     void* QueryInterface(int a1);  // 0x65D3A0

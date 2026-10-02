@@ -252,21 +252,21 @@ LABEL_7:
     a2 = v11; /*0x528a8b*/
     if ( v12 ) /*0x528a8f*/
     {
-      HashTable_field_0x10 = (uint8_t **)v13->HashTable_field_0x10; /*0x528a95*/
+      HashTable_field_0x10 = (uint8_t **)v13->u32_10; /*0x528a95*/
       if ( HashTable_field_0x10 && *HashTable_field_0x10 == v11 ) /*0x528a9e*/
       {
 LABEL_13:
         if ( v13->HashTable_field_0x04 ) /*0x528abb*/
         {
-          v16 = (uint8_t **)v13->HashTable_field_0x10; /*0x528ac6*/
+          v16 = (uint8_t **)v13->u32_10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
           v17 = ((HashTable *)(v13))->BinarySearchAlt((int *)&a2); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
-            v13->HashTable_field_0x10 = v17; /*0x528ae5*/
+            v13->u32_10 = v17; /*0x528ae5*/
 LABEL_18:
-            v18 = (int *)(v13->HashTable_field_0x10 + 4); /*0x528ae8*/
+            v18 = (int *)(v13->u32_10 + 4); /*0x528ae8*/
 LABEL_31:
             v24 = *v18; /*0x528b97*/
             if ( v24 ) /*0x528b9b*/
@@ -287,7 +287,7 @@ LABEL_31:
       v15 = ((HashTable *)(v13))->BinarySearchAlt((int *)&a2); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
-        v13->HashTable_field_0x10 = v15; /*0x528ab4*/
+        v13->u32_10 = v15; /*0x528ab4*/
         v11 = a2; /*0x528ab7*/
         goto LABEL_13; /*0x528ab7*/
       }

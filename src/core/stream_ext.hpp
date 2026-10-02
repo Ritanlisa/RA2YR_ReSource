@@ -90,6 +90,14 @@ public:
     int32_t     Stream_field_08;       // 0x08
     int32_t     Stream_field_0C;       // 0x0C
     int32_t     Stream_field_10;       // 0x10
+    unsigned int u32_58;  // 0x58
+    unsigned int u32_38;  // 0x38
+    void* Active0;  // 0x0 (no offset truth)
+    void* PacketsReceived;  // 0x0 (no offset truth)
+    void* PacketsReceived6;  // 0x0 (no offset truth)
+    void* Active;  // 0x0 (no offset truth)
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_54;  // 0x54
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int WriteBlock(int a1, int a2, int a3);  // 0x5F1BF0
     int ReadPacket();  // 0x5F1C60
@@ -273,6 +281,11 @@ public:
     uint8_t CStreamClass_field_0x48[4];
     uint8_t CStreamClass_field_0x4C[4];
     uint8_t CStreamClass_field_0x50[4];
+    unsigned char m_1[4];  // 0x1
+    unsigned int m_C;  // 0xC
+    int m_8;  // 0x8
+    unsigned char __pad_0;  // 0x0
+    unsigned int m_10;  // 0x10
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     BOOL IsEmpty(int a2);
     void ClearBuffer();  // 0x4A4AD0

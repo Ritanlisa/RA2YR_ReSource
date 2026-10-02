@@ -15,6 +15,7 @@ struct MSFont {
     bool q00E;  // 0xE
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
+    void* Constructor_MSFont;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     MSFont * QueryInterface(char a2, int a3);
 };
