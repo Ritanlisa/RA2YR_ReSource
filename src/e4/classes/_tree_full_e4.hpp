@@ -10,10 +10,14 @@ namespace gamemd {
 struct AudioChannel;
 struct CampaignScore;
 struct DialogControl_OwnerDraw;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct DynamicVectorClass;
+#endif
 struct FractalNoise;
 struct Gap2Recv_402F60;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct HashTable;
+#endif
 struct KeywordType;
 struct Locomotor;
 struct MSAnim;
@@ -21,7 +25,9 @@ struct MSShapeAnim;
 struct ReferenceCounted;
 struct ShapeButtonClass;
 struct State;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct VectorClass;
+#endif
 struct VectorCursor_uint_DynamicVectorClass_uint;
 struct WinAPI;
 struct WorldDominationTour;
@@ -55,6 +61,7 @@ struct DialogControl_OwnerDraw {
     unsigned char __pad_9[4];  // 0x9
 };
 
+#ifndef GAMEMD_TREE_UNIVERSE
 struct DynamicVectorClass {
     void* vtable1;  // 0x0 (no offset truth)
     void* vfptr;
@@ -69,6 +76,7 @@ struct DynamicVectorClass {
     unsigned int * Copy(unsigned int *a2);  // 0x4779e0
     unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
 };
+#endif
 
 struct FractalNoise {
     void* vfptr;
@@ -585,6 +593,7 @@ struct State {
     void* vt_Anim;  // 0x0 (no offset truth)
 };
 
+#ifndef GAMEMD_TREE_UNIVERSE
 struct VectorClass {
     void* Items;  // 0x4
     int Capacity;  // 0x8
@@ -612,6 +621,7 @@ struct VectorClass {
     unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
     void* vtable1;  // 0x0 (no offset truth)
 };
+#endif
 
 struct VectorCursor_uint_DynamicVectorClass_uint {
     void* vfptr;
