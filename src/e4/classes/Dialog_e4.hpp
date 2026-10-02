@@ -90,7 +90,7 @@ struct Dialog {
     int RunModemDialing(int a2, int a3, char a4);  // 0x5F2950
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM);  // 0x606800
     int StopBink();  // 0x607FD0
-    AbstractClass * * IdleProcess(ObjectClass *a2@<esi> a2);
+    AbstractClass * * IdleProcess(ObjectClass *a2);
     int HandleTabKey(HWND hWnd, LPARAM);  // 0x60A330
     AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);  // 0x60A5B0
     static AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760

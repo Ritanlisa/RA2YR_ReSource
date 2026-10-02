@@ -249,7 +249,7 @@ bool CaptureManagerClass::CanCapture(unsigned int *a2)
 
 // 0x471D40
 namespace gamemd {
-void CaptureManagerClass::CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1, int a2, int aP1, int aP0)
+void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int a1, int a2, int aP1, int aP0)
 {
 
   char result; // al
@@ -381,7 +381,7 @@ void CaptureManagerClass::CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1
 
 // 0x471FF0
 namespace gamemd {
-char CaptureManagerClass::FreeUnit(int a2@<ebx> a2, int a3@<ebp> a3, unsigned int *a1, int aP1, unsigned int *aP0)
+char CaptureManagerClass::FreeUnit(int a2 a2, int a3 a3, unsigned int *a1, int aP1, unsigned int *aP0)
 {
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
