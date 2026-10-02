@@ -93,8 +93,8 @@ struct Dialog {
     AbstractClass * * IdleProcess(ObjectClass *a2@<esi> a2);
     int HandleTabKey(HWND hWnd, LPARAM);  // 0x60A330
     AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);  // 0x60A5B0
-    AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760
-    AbstractClass * * InitializeControls(HWND hWnd, LPARAM);  // 0x60F9A0
+    static AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760
+    static AbstractClass * * InitializeControls(HWND hWnd, LPARAM);  // 0x60F9A0
     AbstractClass * * DestroyDialogSystem();  // 0x610360
     AbstractClass * * Resize(void *a1_1, void *a2_1, void *a3_1);  // 0x6213A0
     AbstractClass * * DrawBackground(HWND hWnd);  // 0x621E90

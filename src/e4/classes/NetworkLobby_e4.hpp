@@ -73,7 +73,7 @@ struct NetworkLobby {
     static char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290
     wchar_t * DeleteAndZero();  // 0x5EDFC0
-    int GetPlayerCount(char a1);  // 0x5DA080
+    static int GetPlayerCount(char a1);  // 0x5DA080
     char ValidateSerialNumber();  // 0x5DC170
     BOOL IsValidPlayerName();  // 0x5E9470
     bool CheckMinPlayers();  // 0x5E9510

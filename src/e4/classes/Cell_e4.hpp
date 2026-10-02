@@ -161,7 +161,7 @@ struct Cell {
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
     static AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
-    ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
+    static ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
     int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
     static HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210

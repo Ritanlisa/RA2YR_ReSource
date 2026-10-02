@@ -170,7 +170,7 @@ struct Network {
     AbstractClass * * QueueProcessingLoop(void *a1_1);  // 0x6475F0
     int syncGameState(void *a1_1);  // 0x64AC90
     AbstractClass * * ProcessEventList(int a1, int * a2, int a3);  // 0x64C380
-    AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
+    static AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
     int SendUnreachable(void *a1_1);  // 0x6523A0
     void validatePacket();  // 0x663910
     int SendMasterPlayerList();  // 0x6639D0

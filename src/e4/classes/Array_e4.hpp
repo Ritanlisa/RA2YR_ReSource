@@ -95,7 +95,7 @@ struct Array {
     int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
     int Cleanup(void *a1_1);  // 0x49B720
     char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
-    void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
+    static void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
     int Contains(int a2);  // 0x65ad50
 };
 } // namespace gamemd

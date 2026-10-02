@@ -494,7 +494,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetTileData(int a1, int a2);  // 0x56bcd0
     int SetTileType13(int a1, int a2);  // 0x572b80
     int SetTileType14(int a1, int a2);  // 0x572c90
-    int SpiralFindClosest(int a1, int a2, int a3);  // 0x5865f0
+    static int SpiralFindClosest(int a1, int a2, int a3);  // 0x5865f0
     int UpdateTerrain(int a1, int a2);  // 0x56f8b0
     int UpdateTileVariant2(int a1, int a2);  // 0x56fc80
     int UpdateVariant3(int a1, int a2);  // 0x56ef50

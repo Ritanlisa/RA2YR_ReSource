@@ -619,7 +619,7 @@ struct SidebarClass {
     unsigned int InitButtons;
 // --- flat members (END) ---
     static GadgetClass * LoadResources(void *a1);
-    int CalcBounds(char a1);
+    static int CalcBounds(char a1);
     int InitPositions();
     int Redraw(char a2);
     int SwitchTab(int a2);

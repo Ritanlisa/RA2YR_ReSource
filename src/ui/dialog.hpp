@@ -122,7 +122,7 @@ void sub_624BE0();
 bool HandleTabKey(HWND hWnd, LPARAM lParam);  // 0x60A330
 
 // IDA 0x60F760 -- Dialog::InitWindow
-bool InitWindow(HWND hWnd, LPARAM lParam);  // 0x60F760
+static bool InitWindow(HWND hWnd, LPARAM lParam);  // 0x60F760
 
 // IDA 0x60F320 -- Dialog::SubclassEditControl
 bool SubclassEditControl(HWND hWnd, LPARAM lParam);  // 0x60F320
@@ -131,7 +131,7 @@ bool SubclassEditControl(HWND hWnd, LPARAM lParam);  // 0x60F320
 bool DispatchEvent(HWND hWnd, int control_id, int event_code);
 
 // IDA 0x60F9A0 -- Dialog::InitializeControls
-void InitializeControls(HWND hWnd);  // 0x60F9A0
+static void InitializeControls(HWND hWnd);  // 0x60F9A0
 
 // IDA 0x606800 -- Dialog::MapControlToAction
 int MapControlToAction(int control_id);  // 0x606800

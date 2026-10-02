@@ -50,7 +50,7 @@ public:
     bool CanCapture(FootClass*) const;                                 // 0x471C90
     bool Capture(FootClass*);                                          // 0x472D70
     bool CaptureUnit(FootClass*);                                      // 0x471D40
-    void FreeUnit(FootClass*);                                         // 0x471FF0
+    static void FreeUnit(FootClass*);                                         // 0x471FF0
     void HandleOverload();                                             // 0x471A50
     bool IsOverloading() const;                                        // 0x4726C0
     bool CannotControlAnyMore() const;                                 // 0x4722A0

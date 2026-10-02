@@ -27,7 +27,7 @@ struct GameConfig {
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     void* ComputeCRC();  // 0x5e84d0
-    int ComputeHash();  // 0x679d90
+    static int ComputeHash();  // 0x679d90
     // === FUNCS-MOVE (END) ===
 };
 
