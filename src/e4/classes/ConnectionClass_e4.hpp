@@ -20,7 +20,6 @@ struct ConnectionClass {
     unsigned int PhoneNumber;
     unsigned int *__pad_0;
     unsigned int __pad_009;
-    unsigned int queueSendPacket;
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int u32_2C;

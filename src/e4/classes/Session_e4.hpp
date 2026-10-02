@@ -90,7 +90,7 @@ struct Session {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int RemoveTeam(int (__thiscall ***a2)(unsigned int, int) aP1);  // 0x5D1D80
+    int RemoveTeam(int (__thiscall ***aP1)(unsigned int, int));  // 0x5D1D80
     int PrepareGame(HWND hWnd);  // 0x5E74E0
     int GetPlayerOption();  // 0x69B700
     int GetPlayerColor();  // 0x69B720

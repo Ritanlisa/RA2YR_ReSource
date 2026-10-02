@@ -685,7 +685,6 @@ struct FootClass {
     unsigned int Capacity;
     unsigned int FindAITarget;
     unsigned int *__pad_0;
-    unsigned int MissionMoveCarryallLand;
 // --- flat members (END) ---
     AbstractClass * Destruct(void *a1, void *a2);
     int updateThreat();

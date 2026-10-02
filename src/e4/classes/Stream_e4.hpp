@@ -49,7 +49,6 @@ struct Stream {
     unsigned int u32_544;
     unsigned int u32_548;
     unsigned int u32_54C;
-    unsigned int CopyFromTemplate;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();

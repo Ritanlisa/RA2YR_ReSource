@@ -74,7 +74,6 @@ struct FactoryClass {
     unsigned int queuedObjects;
     unsigned int Debug;
     unsigned int balance;
-    unsigned int AbandonProduction;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag(void *a1);

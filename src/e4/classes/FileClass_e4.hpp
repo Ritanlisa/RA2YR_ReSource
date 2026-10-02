@@ -14,7 +14,6 @@ struct FileClass {
     unsigned int FilePointer;
     unsigned int FileTimeDateLo;
     unsigned int Handle;
-    unsigned int Open2;
     unsigned int u32_58;
     unsigned int OpenWithCDSearch;
 // --- flat members (END) ---

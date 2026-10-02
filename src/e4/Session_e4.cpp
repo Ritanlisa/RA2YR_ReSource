@@ -36,7 +36,7 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam(int (__thiscall ***a2)(unsigned int, int) aP1)
+int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
 {
 
   int result; // eax

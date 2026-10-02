@@ -99,7 +99,7 @@ int Debug::AccumFlags(void *a1_1)
 }
 // 0x4068E0
 namespace gamemd {
-int Debug::Log(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1)
+int Debug::Log()
 {
 
   int result; // eax

@@ -1204,7 +1204,6 @@ struct AnimClass {
     unsigned int field_16054;
     unsigned int field_4;
     unsigned int field_8;
-    unsigned int ctor;
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame(void *a1);
     char * sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11);

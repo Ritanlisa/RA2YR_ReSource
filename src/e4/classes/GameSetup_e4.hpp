@@ -19,7 +19,6 @@ struct GameSetup {
     unsigned char u8_16;  // 0x16
     unsigned char u8_17;  // 0x17
     unsigned char q018;  // 0x18
-    unsigned int FormatToString;
     unsigned int q0104;
 // --- flat members (END) ---
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);

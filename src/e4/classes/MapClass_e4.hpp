@@ -504,7 +504,6 @@ struct MapClass {
     unsigned int u32_6F47;
     unsigned int q0D4;
     unsigned int q115C;
-    unsigned int RevealArea2;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1, void *a2);

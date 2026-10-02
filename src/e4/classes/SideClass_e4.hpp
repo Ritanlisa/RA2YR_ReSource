@@ -67,7 +67,6 @@ struct SideClass {
     unsigned int tail_95;  // 0x95
     void* q098;  // 0x98
     char q09C[4];  // 0x9C
-    unsigned int AbstractClass;
     unsigned int u32_A4;
     unsigned int u32_A5;
     unsigned int u32_A8;

@@ -137,7 +137,6 @@ struct Cell {
     unsigned int u32_140;
     unsigned int u32_41A;
     // dup-member: unsigned int HasOccupierBit;
-    unsigned int IsBridge;
 // --- flat members (END) ---
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex(void *a1_1);  // 0x42B1C0

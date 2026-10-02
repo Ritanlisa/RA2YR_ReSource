@@ -43,8 +43,6 @@ struct INIClass {
     unsigned int INISection;
     unsigned int Debug;
     unsigned int Event;
-    unsigned int ReadInt_Overwrite;
-    unsigned int SetInt;
     unsigned int SetString;
 // --- flat members (END) ---
     int ReadCoord(double aP1, int a2, INIClass * aP2, int a4);

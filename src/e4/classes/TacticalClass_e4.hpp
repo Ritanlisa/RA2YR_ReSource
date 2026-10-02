@@ -257,11 +257,9 @@ struct TacticalClass {
     unsigned int DisplayClass_field_0x11DC;
     unsigned int DisplayClass_field_0x11E0;
     unsigned int InitScrollBounds;
-    unsigned int SetView;
     unsigned int UpdateScrollMaxBounds;
     unsigned int *__pad_11B4;
     unsigned int foggedness;
-    unsigned int initTacticalMap;
     unsigned int nextArrayIndex4;
     void* ptr_34;
     unsigned int q00C6;

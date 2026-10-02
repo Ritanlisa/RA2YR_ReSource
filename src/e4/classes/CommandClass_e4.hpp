@@ -8,8 +8,6 @@ namespace gamemd {
 struct CommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int BinarySearchAction;
-    unsigned int executeAction;
     unsigned int q0108;
     unsigned int q244;
     unsigned int u32_234;

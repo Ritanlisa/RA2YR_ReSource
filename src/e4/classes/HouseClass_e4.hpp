@@ -1846,7 +1846,6 @@ struct HouseClass {
     unsigned int u32_54E4;
     unsigned int HouseClass_field_160B4;
     unsigned int CheckWinCondition;
-    unsigned int FindOwner;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
