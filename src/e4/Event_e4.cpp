@@ -181,7 +181,7 @@ void sub_796960()
   IDA_LOBYTE(owningHouseIndex) = dword_A8B238; /*0x796960*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x796970*/
     return owningHouseIndex; /*0x796970*/
-  Waypoint::InitInvalid(v9); /*0x79697a*/
+  ((Waypoint*)v9)->InitInvalid(); /*0x79697a*/
   owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79697f*/
   if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x796987*/
     return owningHouseIndex; /*0x796987*/

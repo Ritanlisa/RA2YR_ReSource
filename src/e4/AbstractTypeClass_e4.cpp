@@ -119,7 +119,7 @@ int AbstractTypeClass::Dtor()
 } // namespace gamemd
 // 0x410A60
 namespace gamemd {
-int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
+int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
 {
 
   int result; // eax
@@ -129,18 +129,13 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
   char v7; // [esp+3Ch] [ebp-404h]
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x410a74*/
   result = ((gamemd::INIClass *)(int))(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); 
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
-    INIClass::GetString( /*0x410aa0*/
-      (INIClass *)aP1,
-      (uint8_t *)this->__pad_24,
-      (uint8_t *)g_INI_Key_Name,
-      this->Name,
-      Source,
-      49);
+    /*0x410aa0*/
+      ((INIClass*)((INIClass *)aP1))->GetString(/*0x410aa0*/ (uint8_t *)this->__pad_24, (uint8_t *)g_INI_Key_Name, this->Name, Source, 49);
     if ( Source ) /*0x410aab*/
     {
       strncpy(Destination, Source, 0x30u); /*0x410abf*/
@@ -156,13 +151,8 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
       (&this->Name)[48] = v7; /*0x410adf*/
     }
     UINameLabel = (char *)(this->UINameLabel);
-    INIClass::GetString( /*0x410afb*/
-      (INIClass *)aP1,
-      (uint8_t *)this->__pad_24,
-      (uint8_t *)g_INI_Key_UIName,
-      this->UINameLabel,
-      Source,
-      32);
+    /*0x410afb*/
+      ((INIClass*)((INIClass *)aP1))->GetString(/*0x410afb*/ (uint8_t *)this->__pad_24, (uint8_t *)g_INI_Key_UIName, this->UINameLabel, Source, 32);
     if ( Source ) /*0x410b06*/
     {
       strncpy(Destination, Source, 0x1Fu); /*0x410b1a*/
@@ -217,7 +207,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
     }
     while ( v3 < dword_A8E978 ); /*0x410c96*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x410c9a*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
   return this; /*0x410cb1*/

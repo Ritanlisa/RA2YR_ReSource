@@ -389,7 +389,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80380] = 0;
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80384] = 0;
   int v158[22]; // [esp+33Ch] [ebp-6D4h] BYREF
-  CCFileClass::Construct(v158, DataGlobal_0082960C);
+  ((CCFileClass*)v158)->Construct(DataGlobal_0082960C);
   if ( lpBuffer )
   {
     RA2_OPDEL(lpBuffer);
@@ -940,7 +940,7 @@ LABEL_26:
     if ( v20 == (INIClass *)v107 )
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] =(unsigned int)v21;
     sprintf((char *const)&aP2.q02C, stru_8292A8, v20);
-    INIClass::ResetSection(v77);
+    ((INIClass*)v77)->ResetSection();
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
                            (uint8_t *)&aP2.q02C,
@@ -980,8 +980,8 @@ LABEL_26:
       v31 = v75;
     }
     v72 = v31;
-    INIClass::GetString(v77, (INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
-    INIClass::GetString(v77, (INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
+    ((INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
+    ((INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
     v75 = (CCINIClass *)INIClass::ReadInt_Overwrite(
                           (int)v77,
                           (uint8_t *)&aP2.q02C,
@@ -1115,13 +1115,7 @@ LABEL_26:
             if ( var9F4_1 )
             {
               sprintf(aP2[0], DataGlobal_00829194, v35);
-              if ( INIClass::GetString(
-                     v77,
-                     &aP4,
-                     (uint8_t *)&aP2,
-                     (INIClass *)&DataGlobal_87F8E4[42624],
-                     &v184,
-                     128) )
+              if ( ((INIClass*)v77)->GetString(&aP4, (uint8_t *)&aP2, (INIClass *)&DataGlobal_87F8E4[42624], &v184, 128) )
               {
                 v42 = AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
                 if ( v42 )
@@ -1149,7 +1143,7 @@ LABEL_26:
           if ( a2 )
           {
   unsigned int v171[22]; // [esp+56Ch] [ebp-4A4h] BYREF
-            CCFileClass::Construct(v171, v182);
+            ((CCFileClass*)v171)->Construct(v182);
             v60 = ((CCFileClass *)(v171))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
@@ -1177,7 +1171,7 @@ LABEL_26:
           if ( a2 )
           {
   unsigned int v174[22]; // [esp+5D8h] [ebp-438h] BYREF
-            CCFileClass::Construct(v174, v182);
+            ((CCFileClass*)v174)->Construct(v182);
             v60 = ((CCFileClass *)(v174))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
@@ -1200,7 +1194,7 @@ LABEL_26:
           if ( a2 )
           {
   unsigned int v165[22]; // [esp+494h] [ebp-57Ch] BYREF
-            CCFileClass::Construct(v165, v182);
+            ((CCFileClass*)v165)->Construct(v182);
             v60 = ((CCFileClass *)(v165))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
@@ -1230,7 +1224,7 @@ LABEL_189:
             goto LABEL_190;
           }
   unsigned int v177[22]; // [esp+644h] [ebp-3CCh] BYREF
-          CCFileClass::Construct(v177, v182);
+          ((CCFileClass*)v177)->Construct(v182);
           v60 = ((CCFileClass *)(v177))->Open(0);
           if ( v60 && !v65 )
             strncpy((char *)v3 + 757, v182, 0xEu);
@@ -1489,7 +1483,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
             {
               if ( !v17->q0A4 ) /*0x546fc0*/
               {
-                v13 += MapClass::LoadFileData(v17); /*0x546fd1*/
+                v13 += ((MapClass*)v17)->LoadFileData(); /*0x546fd1*/
                 ++v12; /*0x546fd3*/
               }
             }

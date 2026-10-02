@@ -1380,7 +1380,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
   v3 = g_CellPassabilityLUT; /*0x57b214*/
   v5 = aP1[9]; /*0x57b224*/
   v30 = g_CellPassabilityLUT + 14; /*0x57b239*/
-  IsValidHeight = Cell::IsValidHeight((Cell *)aP1); /*0x57b248*/
+  IsValidHeight = ((Cell*)((Cell *)aP1))->IsValidHeight(); /*0x57b248*/
   v6 = SHIWORD(v5) + (int16_t)v5; /*0x57b254*/
   if ( v6 <= g_MissionQueueFrame.localVariables[160] /*0x57b271*/
     || (int16_t)v5 - SHIWORD(v5) >= g_MissionQueueFrame.localVariables[160]
@@ -1413,7 +1413,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
     v11 = (int16_t)v5 + (SHIWORD(v5) << 9); /*0x57b2f7*/
     v12 = (Cell *)Cell_field_0x13C[v11 - 513]; /*0x57b2f9*/
     v13 = &Cell_field_0x13C[v11 - 513]; /*0x57b300*/
-    if ( v12 && (uint8_t)Cell::IsValidHeight(v12) ) /*0x57b30b*/
+    if ( v12 && (uint8_t)((Cell*)v12)->IsValidHeight() ) /*0x57b30b*/
     {
       v14 = IsValidHeight; /*0x57b328*/
       v15 = 64; /*0x57b32c*/
@@ -1433,31 +1433,31 @@ int Cell::GetTerrainMask(int *aP1, int a3)
     }
     v16 = (Cell *)v13[1]; /*0x57b341*/
     v17 = v13 + 1; /*0x57b344*/
-    if ( v16 && (uint8_t)Cell::IsValidHeight(v16) || !*v17 && v14 ) /*0x57b35b*/
+    if ( v16 && (uint8_t)((Cell*)v16)->IsValidHeight() || !*v17 && v14 ) /*0x57b35b*/
       v15 |= 0x80u; /*0x57b35d*/
     v18 = (Cell *)v17[1]; /*0x57b363*/
     v19 = v17 + 1; /*0x57b366*/
-    if ( v18 && (uint8_t)Cell::IsValidHeight(v18) || !*v19 && v14 ) /*0x57b37d*/
+    if ( v18 && (uint8_t)((Cell*)v18)->IsValidHeight() || !*v19 && v14 ) /*0x57b37d*/
       v15 |= 1u; /*0x57b37f*/
     v20 = (Cell *)v19[510]; /*0x57b382*/
     v21 = v19 + 510; /*0x57b388*/
-    if ( v20 && (uint8_t)Cell::IsValidHeight(v20) || !*v21 && v14 ) /*0x57b3a2*/
+    if ( v20 && (uint8_t)((Cell*)v20)->IsValidHeight() || !*v21 && v14 ) /*0x57b3a2*/
       v15 |= 0x20u; /*0x57b3a4*/
     v22 = (Cell *)v21[2]; /*0x57b3a7*/
     v23 = v21 + 2; /*0x57b3aa*/
-    if ( v22 && (uint8_t)Cell::IsValidHeight(v22) || !*v23 && v14 ) /*0x57b3c1*/
+    if ( v22 && (uint8_t)((Cell*)v22)->IsValidHeight() || !*v23 && v14 ) /*0x57b3c1*/
       v15 |= 2u; /*0x57b3c3*/
     v24 = (Cell *)v23[510]; /*0x57b3c6*/
     v25 = v23 + 510; /*0x57b3cc*/
-    if ( v24 && (uint8_t)Cell::IsValidHeight(v24) || !*v25 && v14 ) /*0x57b3e6*/
+    if ( v24 && (uint8_t)((Cell*)v24)->IsValidHeight() || !*v25 && v14 ) /*0x57b3e6*/
       v15 |= 0x10u; /*0x57b3e8*/
     v26 = (Cell *)v25[1]; /*0x57b3eb*/
     v27 = v25 + 1; /*0x57b3ee*/
-    if ( v26 && (uint8_t)Cell::IsValidHeight(v26) || !*v27 && v14 ) /*0x57b405*/
+    if ( v26 && (uint8_t)((Cell*)v26)->IsValidHeight() || !*v27 && v14 ) /*0x57b405*/
       v15 |= 8u; /*0x57b407*/
     v28 = (Cell *)v27[1]; /*0x57b40a*/
     v29 = v27 + 1; /*0x57b40d*/
-    if ( v28 && (uint8_t)Cell::IsValidHeight(v28) || !*v29 && v14 ) /*0x57b424*/
+    if ( v28 && (uint8_t)((Cell*)v28)->IsValidHeight() || !*v29 && v14 ) /*0x57b424*/
       return v15 | 4; /*0x57b426*/
     return v15; /*0x57b429*/
   }

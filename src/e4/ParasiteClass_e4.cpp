@@ -850,7 +850,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
     }
     while ( v5 < dword_AC4920 ); /*0x62b045*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x62b049*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
     __3_YAXPAX_Z(Block); /*0x62b056*/
   return Block; /*0x62b060*/
@@ -1290,7 +1290,7 @@ bool ParasiteClass::CanInfect(unsigned int *a2)
                 if ( !(*(int (**)(unsigned int *))(*a2 + 444))(a2) ) /*0x62a950*/
                   return 1; /*0x62a950*/
                 v4 = (Cell *)(*(int (**)(unsigned int *))(*a2 + 444))(a2); /*0x62a95e*/
-                if ( (uint8_t)Cell::IsValidHeight(v4) ) /*0x62a966*/
+                if ( (uint8_t)((Cell*)v4)->IsValidHeight() ) /*0x62a966*/
                   return 1; /*0x62a8ea*/
               }
             }

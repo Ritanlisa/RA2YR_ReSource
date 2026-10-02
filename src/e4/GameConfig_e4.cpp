@@ -112,7 +112,7 @@ int GameConfig::ComputeHash()
   unsigned char v13[12]; // [esp+C0h] [ebp-14h] BYREF
   void ** v14;
 
-  v0 = Hash::ComputeHashSHA1(dword_887048); /*0x679da5*/
+  v0 = ((Hash*)dword_887048)->ComputeHashSHA1(); /*0x679da5*/
   v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
   for ( i = 1; i <= v1; ++i ) /*0x679db7*/
   {
@@ -120,7 +120,7 @@ int GameConfig::ComputeHash()
     if ( v3 ) /*0x679dc2*/
     {
       v4 = (int)(((GameConfig *)(v3))->Constructor());
-      v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
+      v0 += ((Hash*)v4)->ComputeHashSHA1(); /*0x679dd2*/
     }
   }
   if ( byte_B053B8 ) /*0x679ddf*/
@@ -135,9 +135,9 @@ int GameConfig::ComputeHash()
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  CCFileClass::Construct(v12,(void *)(g_Str_File_CoopCampMD_ini)); /*0x679e2b*/
+  ((CCFileClass*)v12)->Construct((void *)(g_Str_File_CoopCampMD_ini)); /*0x679e2b*/
   if ( ((CCINIClass *)(v6))->Load((int)v12, 0, 0) ) /*0x679e3b*/
-    dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
+    dword_B053B4 = ((Hash*)((int)v6))->ComputeHashSHA1(); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
   v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
   v14 = 0; /*0x679e68*/

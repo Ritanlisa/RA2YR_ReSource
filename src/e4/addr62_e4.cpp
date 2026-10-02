@@ -1437,9 +1437,9 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     v17 = SendMessageA(v13, 0x4E8u, 0, v15); /*0x622d54*/
     UI_Assign(&lParam, aP0, v13, v17); /*0x622d5e*/
     WideString::AssignFromPtr(&lParam); /*0x622d6c*/
-    DeleteAndZero::Alt(&lParam); /*0x622d75*/
+    ((DeleteAndZero*)&lParam)->Alt(); /*0x622d75*/
     WideString::Reassign_Alt(v29); /*0x622d83*/
-    DeleteAndZero::Alt(v29); /*0x622d8c*/
+    ((DeleteAndZero*)v29)->Alt(); /*0x622d8c*/
     v18 = (const wchar_t *)WideString::GetOrEmpty(&aP2); /*0x622d9a*/
     if ( !wcscmp(v18, &g_TypeClass_DefaultString) ) /*0x622da0*/
     {
@@ -1448,9 +1448,9 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       v27 = -1; /*0x622dca*/
       SendMessageA(aP0, 0x4E9u, 0, (LPARAM)&lParam); /*0x622dd2*/
       WideString::AssignFromPtr(v28); /*0x622ddd*/
-      DeleteAndZero::Alt(v28); /*0x622de6*/
+      ((DeleteAndZero*)v28)->Alt(); /*0x622de6*/
       WideString::Reassign_Alt(v30); /*0x622df4*/
-      DeleteAndZero::Alt(v30); /*0x622dfd*/
+      ((DeleteAndZero*)v30)->Alt(); /*0x622dfd*/
       v19 = (const wchar_t *)WideString::GetOrEmpty(&aP2); /*0x622e0b*/
       if ( !wcscmp(v19, &g_TypeClass_DefaultString) ) /*0x622e11*/
       {
@@ -1465,7 +1465,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
           WideString::Assign(&g_TypeClass_DefaultString); /*0x622e49*/
         }
         WideString::Reassign_Alt(v25); /*0x622e57*/
-        DeleteAndZero::Alt(v25); /*0x622e60*/
+        ((DeleteAndZero*)v25)->Alt(); /*0x622e60*/
       }
     }
   }
@@ -1475,7 +1475,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
   }
   v21 = WideString::GetOrEmpty_Alt(&aP2); /*0x622e71*/
   v16(hWnda[0], 0x4B2u, 0, v21); /*0x622e83*/
-  DeleteAndZero::Alt(&aP2); /*0x622e89*/
+  ((DeleteAndZero*)&aP2)->Alt(); /*0x622e89*/
   return 0; /*0x622ba9*/
 }
 }
@@ -1862,7 +1862,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
   {
     ShowWindow(Dialog, 1); /*0x624215*/
     SetForegroundWindow((HWND)v4); /*0x62421c*/
-    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x624228*/
+    ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x624228*/
     if ( !(*(uint8_t (**)(LPARAM))(*(unsigned int *)a3 + 8))(a3) ) /*0x624231*/
     {
       while ( !(*(uint8_t (**)(LPARAM))(*(unsigned int *)a3 + 16))(a3) ) /*0x624241*/

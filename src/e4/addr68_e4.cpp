@@ -579,7 +579,7 @@ ScenarioClass * * Mouse_Update()
   }
   IDA_BYTE2((&dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/
-  result = (int)(Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296])); /*0x6842e0*/
+  result = (int)(((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages()); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
   return (gamemd::ScenarioClass **)(result); /*0x6842ef*/
 }
@@ -1147,7 +1147,7 @@ void SaveScenarioToINI()
   v10.vtable1 = (int)&CCINIClass_Vtable; /*0x687d21*/
   if ( byte_A8ED6B ) /*0x687d29*/
   {
-    v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/
+    v4 = ((CCFileClass*)((CCFileClass *)&v10.customSound_controller[3]))->Construct(Source); /*0x687d34*/
     v5 = (*(int (**)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x687d3e*/
     v10.customSound_controller[3] = (int)&CCFileClass_vftable; /*0x687d48*/
     v8 = v5; /*0x687d50*/
@@ -1157,7 +1157,7 @@ void SaveScenarioToINI()
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10.customSound_controller[3]))->Dtor(); /*0x687d6c*/
     if ( v8 ) /*0x687d75*/
     {
-      CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
+      ((CCFileClass*)((CCFileClass *)&v10.customSound_controller[3]))->Construct(Source); /*0x687d7c*/
       ((CCINIClass *)((CCINIClass *)&v10.vtable1))->Load((int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
       v10.customSound_controller[3] = (int)&CCFileClass_vftable; /*0x687d99*/
       v12 = 0; /*0x687da1*/
@@ -1203,7 +1203,7 @@ void SaveScenarioToINI()
   }
   ReadAudioEventINI((INIClass *)&v10.vtable1); /*0x687ebc*/
   SaveTriggerTagsToINI((INIClass *)&v10.vtable1); /*0x687ec5*/
-  RawFileClass::Construct((BufferIOFileClass *)&v13, (int)Source); /*0x687ed2*/
+  ((RawFileClass*)((BufferIOFileClass *)&v13))->Construct((int)Source); /*0x687ed2*/
   INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
   ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
 // 0x5256f0
@@ -1291,7 +1291,7 @@ AbstractClass * * SessionClass_AssignHouses()
       {
         ((WideString *)((wchar_t **)&v29))->Assign((wchar_t *)v7); /*0x687fdc*/
         ToWideStringCharAlt((char **)&v29.DeleteAndZero_field_0x04, (const wchar_t **)&v29); /*0x687fe9*/
-        DeleteAndZero::Alt(&v29); /*0x687ff2*/
+        ((DeleteAndZero*)&v29)->Alt(); /*0x687ff2*/
         v10 = ((String *)((String *)&v29.DeleteAndZero_field_0x04))->GetOrEmpty(); /*0x687ffb*/
         if ( v10 ) /*0x688002*/
         {

@@ -1886,7 +1886,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                 v36 = *v13; /*0x6eafd7*/
                 v37 = v13[1]; /*0x6eafe2*/
                 v38 = v13[2]; /*0x6eafe9*/
-                v14 = Coord::Length(&v36); /*0x6eafed*/
+                v14 = ((Coord*)&v36)->Length(); /*0x6eafed*/
                 if ( v8 == -1 || v14 < v8 ) /*0x6eaff9*/
                 {
                   v8 = v14; /*0x6eaffb*/
@@ -2634,13 +2634,13 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
       while ( firstUnit ); /*0x6ec853*/
       v3 = (TeamClass *)v16[0]; /*0x6ec855*/
     }
-    aP2 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &aP1, *(unsigned int *)(aP1 + 4)); /*0x6ec87d*/
+    aP2 = *((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&aP1, *(unsigned int *)(aP1 + 4)); /*0x6ec87d*/
     v8 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP2); /*0x6ec881*/
     TeamClass::SelectMember((int)v3, (int)v8); /*0x6ec889*/
     if ( !v3->TeamClass_field_7F /*0x6ec8d3*/
       || !(uint8_t)SessionClass::SetField((SessionClass *)v3->currentScript)
       || (Entry = ((SessionClass *)((SessionClass *)v3->currentScript))->GetEntry(v16), *Entry != 3)
-      || (Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &aP1, Entry[1]),
+      || (Waypoint_Location = (int16_t *)((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&aP1, Entry[1]),
           (uint8_t)LayerClass::IsWithinUsableArea(
                              (LayerClass *)&stru_87F5F0.__pad_58[416],
                              Waypoint_Location,

@@ -304,7 +304,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   int v19; // [esp+78h] [ebp-8h]
 
   v3 = a2; /*0x72ade5*/
-  CCFileClass::Construct(&v17, Source); /*0x72adf0*/
+  ((CCFileClass*)&v17)->Construct(Source); /*0x72adf0*/
   v4 = (char *)((CCFileClass *)(&v17))->ReadEntireFile(); /*0x72adfe*/
   if ( v4 ) /*0x72ae06*/
   {

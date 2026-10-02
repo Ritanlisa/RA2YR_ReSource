@@ -92,7 +92,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(&v5,(void *)(aBigfontShp)); /*0x690b32*/
+    ((CCFileClass*)&v5)->Construct((void *)(aBigfontShp)); /*0x690b32*/
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/

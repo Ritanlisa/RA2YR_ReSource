@@ -447,9 +447,8 @@ int E4Recv_5A1C70::sub_5A1C70()
       if ( *(unsigned int *)(v13 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1de2*/
         && (*(unsigned short *)result || *(unsigned short *)(result + 2)) )
       {
-        v15 = (RandomMap *)CellCoord::To_CellObj( /*0x5a1def*/
-                             (CellCoord *)&stru_87F5F0.__pad_58[416],
-                             (int16_t *)(v13 + g_MissionQueueFrame.localVariables[163]));
+        v15 = (RandomMap *)/*0x5a1def*/
+                             ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x5a1def*/ (int16_t *)(v13 + g_MissionQueueFrame.localVariables[163]));
         result = (int)((RandomMap*)v15)->GenerateTerrain(); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           *(unsigned char *)(result + 26) = 0; /*0x5a1dff*/

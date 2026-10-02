@@ -362,7 +362,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   int64_t v45; // [esp+14h] [ebp-26Ch] BYREF
   SuperWeaponTypeClass v46[2]; // [esp+1Ch] [ebp-264h] BYREF
 
-  INIClass::ResetSection((INIClass *)a2); /*0x41f595*/
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x41f595*/
   if ( !((INIClass*)/*0x41f5b9*/
           (INIClass *)a2)->GetString(/*0x41f5b9*/ (uint8_t *)aAitriggertypes, (uint8_t *)&this->AITriggerTypeClass_field_0x24, &g_INI_DefaultBuffer, ((unsigned int *)(v46))[0], 512) )
     return 0; /*0x41f5b9*/
@@ -540,7 +540,7 @@ LABEL_26:
   {
     strncpy((char *)&((unsigned int *)(v46))[0], v34, 0x18u); /*0x41f9a8*/
     ((unsigned int *)&((unsigned int *)(v46))[0])[7] = 0; /*0x41f9b4*/
-    String::Trim((char *)&((unsigned int *)(v46))[0]); /*0x41f9b8*/
+    ((String*)((char *)&((unsigned int *)(v46))[0]))->Trim(); /*0x41f9b8*/
     *((unsigned int *)this + 56) = 0; /*0x41f9bd*/
     if ( _strcmpi((char *)&((unsigned int *)(v46))[0], (char *)off_818114) ) /*0x41f9cf*/
       *((unsigned int *)this + 56) = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0]); /*0x41f9e4*/

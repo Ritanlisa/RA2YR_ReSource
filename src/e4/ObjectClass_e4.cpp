@@ -2202,7 +2202,7 @@ int ObjectClass::GetMember06()
 
 // 0x4135A0
 namespace gamemd {
-bool ObjectClass::HasLinkedObject(VectorClass_flat * aP0)
+bool ObjectClass::HasLinkedObject(int aP0)
 {
 
   int result; // eax
@@ -2624,7 +2624,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
     }
     v8 = IsDlgButtonChecked(hWnd, 1785); /*0x7a2b6c*/
     ReadWOLLobbyOption(v8 != 1); /*0x7a2b7d*/
-    if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2b8e*/
+    if ( !(uint8_t)((MapSeed*)((MapSeed *)&stru_B76AC4))->CheckName() ) /*0x7a2b8e*/
     {
 LABEL_53:
       (*(void (**)(unsigned int, HWND, int))(**(unsigned int **)&v22[4] + 4))(*(unsigned int *)&v22[4], hWnd, 1); /*0x7a2e54*/
@@ -2634,7 +2634,7 @@ LABEL_53:
     v9 = ((String *)((String *)&stru_B76AC4))->GetOrEmpty_Alt(); /*0x7a2ba8*/
     strncpy(&v22[44], v9, 9u); /*0x7a2bb3*/
     (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))(ppv, &v22[8]); /*0x7a2bc8*/
-    if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2bda*/
+    if ( !(uint8_t)((MapSeed*)((MapSeed *)&stru_B76AC4))->CheckName() ) /*0x7a2bda*/
     {
 LABEL_52:
       SendGameListWOL(v21); /*0x7a2e4f*/
@@ -2722,7 +2722,7 @@ LABEL_52:
       v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d78*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v16 + 1; /*0x7a2d83*/
-    if ( String::Length((String *)&g_WindowManager.__pad_14[16]) ) /*0x7a2d88*/
+    if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x7a2d88*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x7a2da6*/
       {

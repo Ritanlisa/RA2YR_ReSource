@@ -255,7 +255,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu),(void *)(v22))); /*0x4f166f*/
+            v23 = (char *)(((EventClass*)((gamemd::AnimClass *)(v30)))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0xDu), (void *)(v22))); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -340,7 +340,7 @@ AbstractClass * * Options::Screen_Save()
       v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
-      Theme::QueueSong((gamemd::IUnknown *)((int)&unk_A83D10),(void *)(v10)); /*0x55fbfa*/
+      ((Theme*)((gamemd::IUnknown *)((int)&unk_A83D10)))->QueueSong((void *)(v10)); /*0x55fbfa*/
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x55fc06*/
     }
   }
@@ -451,8 +451,8 @@ int Options::DeleteAndZero()
     do /*0x62450e*/
     {
       v4 = (char *)this->field_8 + v3; /*0x6244f4*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v4 + 8)); /*0x6244f9*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v4 + 4)); /*0x624501*/
+      ((DeleteAndZero*)((DeleteAndZero *)(v4 + 8)))->Alt(); /*0x6244f9*/
+      ((DeleteAndZero*)((DeleteAndZero *)(v4 + 4)))->Alt(); /*0x624501*/
       result = *(unsigned int *)this->__pad_0; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
@@ -601,7 +601,7 @@ LABEL_12:
   v6 = *(void **)&Block->__pad_34[12]; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*(DeleteAndZero **)&Block->__pad_34[12]); /*0x6255c4*/
+    ((DeleteAndZero*)(*(DeleteAndZero **)&Block->__pad_34[12]))->Alt(); /*0x6255c4*/
     __3_YAXPAX_Z(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
@@ -656,8 +656,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     do /*0x625665*/
     {
       v8 = (char *)v5[2] + v7; /*0x62564b*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 8)); /*0x625650*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 4)); /*0x625658*/
+      ((DeleteAndZero*)((DeleteAndZero *)(v8 + 8)))->Alt(); /*0x625650*/
+      ((DeleteAndZero*)((DeleteAndZero *)(v8 + 4)))->Alt(); /*0x625658*/
       ++v4; /*0x62565f*/
       v7 += 24; /*0x625660*/
     }
@@ -705,8 +705,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&v19.DeleteAndZero_field_0x04); /*0x62575a*/
-  DeleteAndZero::Alt(&v19); /*0x625763*/
+  ((DeleteAndZero*)((DeleteAndZero *)&v19.DeleteAndZero_field_0x04))->Alt(); /*0x62575a*/
+  ((DeleteAndZero*)&v19)->Alt(); /*0x625763*/
   return v3; /*0x62576a*/
 
 }
@@ -920,8 +920,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 
-  DeleteAndZero::Alt((DeleteAndZero *)&this->field_8); /*0x624466*/
-  DeleteAndZero::Alt((DeleteAndZero *)&this->field_4); /*0x62446e*/
+  ((DeleteAndZero*)((DeleteAndZero *)&this->field_8))->Alt(); /*0x624466*/
+  ((DeleteAndZero*)((DeleteAndZero *)&this->field_4))->Alt(); /*0x62446e*/
 
 }
 } // namespace gamemd

@@ -866,7 +866,7 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
 
   if ( !Source || !strlen(Source) ) /*0x6c9b5f*/
     return 0; /*0x6c9b6a*/
-  CCFileClass::Construct(&v8, aSubtitlemdTxt); /*0x6c9b79*/
+  ((CCFileClass*)&v8)->Construct(aSubtitlemdTxt); /*0x6c9b79*/
   if ( !(uint8_t)((CCFileClass *)(&v8))->Open(0) ) /*0x6c9b8a*/
   {
 LABEL_6:

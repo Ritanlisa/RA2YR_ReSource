@@ -283,7 +283,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   int v53[3]; // [esp+58h] [ebp-8Ch] BYREF
   char Destination[128]; // [esp+64h] [ebp-80h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x644f65*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x644f65*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
@@ -333,13 +333,8 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = g_INI_Key_Warhead; /*0x645043*/
   v45 = (uint8_t *)&this->ParticleTypeClass_field_0x24; /*0x645048*/
   this->ParticleTypeClass_field_0x2E8[0] = v9; /*0x64504b*/
-  if ( INIClass::GetString( /*0x645051*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2F8) )
+  if ( /*0x645051*/
+         ((INIClass*)((INIClass *)aP1))->GetString(/*0x645051*/ v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2F8) )
   {
     v11 = (void *)WarheadTypeClass::FindOrCreate(Destination); /*0x64505e*/
   }
@@ -510,13 +505,8 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = aNextparticle; /*0x645307*/
   v45 = (uint8_t *)&this->ParticleTypeClass_field_0x24; /*0x64530c*/
   this->__pad_308[4] = v35; /*0x64530f*/
-  if ( INIClass::GetString( /*0x645315*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2F8) )
+  if ( /*0x645315*/
+         ((INIClass*)((INIClass *)aP1))->GetString(/*0x645315*/ v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2F8) )
   {
     if ( _strcmpi(Source, g_Str__none_) ) /*0x64532c*/
     {
@@ -564,13 +554,8 @@ LABEL_17:
     this->ParticleTypeClass_field_0x310 = v36; /*0x6453b4*/
   }
   Source[0] = 0; /*0x6453cb*/
-  INIClass::GetString( /*0x6453d0*/
-    (INIClass *)aP1,
-    (uint8_t *)&this->ParticleTypeClass_field_0x24,
-    aBehaveslike,
-    0,
-    Source,
-    32);
+  /*0x6453d0*/
+    ((INIClass*)((INIClass *)aP1))->GetString(/*0x6453d0*/ (uint8_t *)&this->ParticleTypeClass_field_0x24, aBehaveslike, 0, Source, 32);
   v41 = 0; /*0x6453d5*/
   v42 = off_8370BC; /*0x6453d7*/
   while ( _strcmpi(Source, *v42) ) /*0x6453ee*/

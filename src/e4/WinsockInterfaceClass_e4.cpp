@@ -115,7 +115,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   Block->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
-    NetworkClass::UnregisterAsync(Block); /*0x7b2796*/
+    ((NetworkClass*)Block)->UnregisterAsync(); /*0x7b2796*/
     (*(void (**)(WinsockInterfaceClass *))(Block->Socket + 4))(Block); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
     *((unsigned char *)Block + 258152) = 0; /*0x7b27a8*/

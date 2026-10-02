@@ -30,7 +30,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
   unsigned int v13;
   int abstractFlags; // ecx
 
-  INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x5b376a*/
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3774*/
     v3 =(unsigned int)g_Str__none_; /*0x5b3776*/
   else

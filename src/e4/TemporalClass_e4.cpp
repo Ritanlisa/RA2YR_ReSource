@@ -390,7 +390,7 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
       ++v3; /*0x71b206*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x71b21a*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
     __3_YAXPAX_Z(Block); /*0x71b227*/
   return Block; /*0x71b231*/

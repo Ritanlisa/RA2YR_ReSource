@@ -1452,7 +1452,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v42 = v35[2]; /*0x57e16f*/
       v36 = CellStruct::Copy(v35, v52); /*0x57e17d*/
       v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57e184*/
-      v38 = Rect::Construct(v55, v37, v42, v43); /*0x57e18e*/
+      v38 = ((Rect*)v55)->Construct(v37, v42, v43); /*0x57e18e*/
       v58 = *v38; /*0x57e19c*/
       v59 = v38[1]; /*0x57e1a3*/
       v60 = v38[2]; /*0x57e1aa*/
@@ -1474,8 +1474,8 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       ((House *)(v51))->AnnounceUpgrade(-1); /*0x57e262*/
       ((House *)((int)v47))->AnnounceUpgrade(-1); /*0x57e26f*/
       v54 = v54; /*0x57e274*/
-      Cell::SearchEnemies(v24, v54); /*0x57e27b*/
-      Cell::SearchEnemies(v51, v54); /*0x57e283*/
+      ((Cell*)v24)->SearchEnemies(v54); /*0x57e27b*/
+      ((Cell*)v51)->SearchEnemies(v54); /*0x57e283*/
 // 0x487a10
       return Cell::SearchEnemies((int)v47, v54); /*0x57e28b*/
     }
@@ -1733,7 +1733,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v45 = v36[2]; /*0x57e664*/
       v37 = CellStruct::Copy(v36, v56); /*0x57e672*/
       v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57e679*/
-      v39 = Rect::Construct(v62, v38, v45, v46); /*0x57e683*/
+      v39 = ((Rect*)v62)->Construct(v38, v45, v46); /*0x57e683*/
       v57 = *v39; /*0x57e691*/
       v58 = v39[1]; /*0x57e698*/
       v59 = v39[2]; /*0x57e69f*/
@@ -1758,9 +1758,9 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v50 = v50; /*0x57e75e*/
       ((House *)(v50))->AnnounceUpgrade(-1); /*0x57e764*/
       v55 = v55; /*0x57e769*/
-      Cell::SearchEnemies((int)v5, v55); /*0x57e770*/
-      Cell::SearchEnemies(v52, v55); /*0x57e778*/
-      IDA_LOBYTE(v2) = Cell::SearchEnemies(v50, v55); /*0x57e780*/
+      ((Cell*)((int)v5))->SearchEnemies(v55); /*0x57e770*/
+      ((Cell*)v52)->SearchEnemies(v55); /*0x57e778*/
+      IDA_LOBYTE(v2) = ((Cell*)v50)->SearchEnemies(v55); /*0x57e780*/
     }
   }
   return v2; /*0x57e785*/
@@ -2018,7 +2018,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v42 = v35[2]; /*0x57ebc9*/
       v36 = CellStruct::Copy(v35, v52); /*0x57ebd7*/
       v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57ebde*/
-      v38 = Rect::Construct(v55, v37, v42, v43); /*0x57ebe8*/
+      v38 = ((Rect*)v55)->Construct(v37, v42, v43); /*0x57ebe8*/
       v58 = *v38; /*0x57ebf6*/
       v59 = v38[1]; /*0x57ebfd*/
       v60 = v38[2]; /*0x57ec04*/
@@ -2040,8 +2040,8 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       ((House *)(v51))->AnnounceUpgrade(-1); /*0x57ecbf*/
       ((House *)((int)v47))->AnnounceUpgrade(-1); /*0x57eccc*/
       v54 = v54; /*0x57ecd1*/
-      Cell::SearchEnemies(v24, v54); /*0x57ecd8*/
-      Cell::SearchEnemies(v51, v54); /*0x57ece0*/
+      ((Cell*)v24)->SearchEnemies(v54); /*0x57ecd8*/
+      ((Cell*)v51)->SearchEnemies(v54); /*0x57ece0*/
 // 0x487a10
       return Cell::SearchEnemies((int)v47, v54); /*0x57ece8*/
     }
@@ -2300,7 +2300,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v45 = v36[2]; /*0x57f0ce*/
       v37 = CellStruct::Copy(v36, v56); /*0x57f0dc*/
       v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57f0e3*/
-      v39 = Rect::Construct(v62, v38, v45, v46); /*0x57f0ed*/
+      v39 = ((Rect*)v62)->Construct(v38, v45, v46); /*0x57f0ed*/
       v57 = *v39; /*0x57f0fb*/
       v58 = v39[1]; /*0x57f102*/
       v59 = v39[2]; /*0x57f109*/
@@ -2325,9 +2325,9 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v50 = v50; /*0x57f1cb*/
       ((House *)(v50))->AnnounceUpgrade(-1); /*0x57f1d1*/
       v55 = v55; /*0x57f1d6*/
-      Cell::SearchEnemies((int)v5, v55); /*0x57f1dd*/
-      Cell::SearchEnemies(v52, v55); /*0x57f1e5*/
-      IDA_LOBYTE(v2) = Cell::SearchEnemies(v50, v55); /*0x57f1ed*/
+      ((Cell*)((int)v5))->SearchEnemies(v55); /*0x57f1dd*/
+      ((Cell*)v52)->SearchEnemies(v55); /*0x57f1e5*/
+      IDA_LOBYTE(v2) = ((Cell*)v50)->SearchEnemies(v55); /*0x57f1ed*/
     }
   }
   return v2; /*0x57f1f2*/
@@ -2602,8 +2602,8 @@ int sub_57A900(unsigned int * a1, signed int a2)
   v4 = v12[a2 / 2]; /*0x57a92f*/
   NeighbourContent = (Cell *)((Cell *)(a1))->GetNeighbourContent(v4); /*0x57a939*/
   v6 = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(a2); /*0x57a945*/
-  v10 = (uint8_t)Cell::IsValidHeight(NeighbourContent) == 0; /*0x57a950*/
-  IsValidHeight = Cell::IsValidHeight(v6); /*0x57a955*/
+  v10 = (uint8_t)((Cell*)NeighbourContent)->IsValidHeight() == 0; /*0x57a950*/
+  IsValidHeight = ((Cell*)v6)->IsValidHeight(); /*0x57a955*/
   if ( v10 ) /*0x57a960*/
   {
     while ( IsValidHeight ) /*0x57a96a*/
@@ -2611,8 +2611,8 @@ int sub_57A900(unsigned int * a1, signed int a2)
       v11 = v3 + 1; /*0x57a970*/
       NeighbourContent = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(v4); /*0x57a97b*/
       v6 = (Cell *)((Cell *)(v6))->GetNeighbourContent(v4); /*0x57a985*/
-      v8 = (uint8_t)Cell::IsValidHeight(NeighbourContent) == 0; /*0x57a990*/
-      IsValidHeight = Cell::IsValidHeight(v6); /*0x57a993*/
+      v8 = (uint8_t)((Cell*)NeighbourContent)->IsValidHeight() == 0; /*0x57a990*/
+      IsValidHeight = ((Cell*)v6)->IsValidHeight(); /*0x57a993*/
       if ( !v8 ) /*0x57a99a*/
         return v11; /*0x57a9a7*/
       v3 = v11; /*0x57a964*/

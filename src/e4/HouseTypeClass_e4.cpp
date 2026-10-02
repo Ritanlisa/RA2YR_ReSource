@@ -31,7 +31,7 @@ namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 
-  AbstractTypeClass::Init((int)this, aP1); /*0x511658*/
+  ((AbstractTypeClass*)((int)this))->Init(aP1); /*0x511658*/
   this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
   *(unsigned int *)&this->prefix = (unsigned int)(&vt_TypeList); /*0x511667*/
   *(unsigned int *)&this->__pad_16D[23] = (unsigned int)(&vt_TypeList); /*0x511671*/
@@ -182,16 +182,16 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
 
   v4 = (gamemd::HouseTypeClass *)(aP1); /*0x51185e*/
   _EBX = v3; /*0x511861*/
-  INIClass::ResetSection((INIClass *)aP1); /*0x511866*/
-  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (uint8_t ***)aP1) ) /*0x51186e*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x511866*/
+  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)_EBX))->LoadFromINI((uint8_t ***)aP1) ) /*0x51186e*/
     return 0; /*0x51215c*/
-  INIClass::GetString((unsigned char *)(INIClass *)aP1, (uint8_t *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
+  ((INIClass*)((unsigned char *)(INIClass *)aP1))->GetString((uint8_t *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy((char *)(_EBX + 416), Source); /*0x5118c3*/
     v4 = (gamemd::HouseTypeClass *)(aP1); /*0x5118cc*/
   }
-  INIClass::GetString((INIClass *)v4, (uint8_t *)(_EBX + 36), aParentcountry, (char *)(_EBX + 36), Source, 25); /*0x5118e2*/
+  ((INIClass*)((INIClass *)v4))->GetString((uint8_t *)(_EBX + 36), aParentcountry, (char *)(_EBX + 36), Source, 25); /*0x5118e2*/
   if ( Source ) /*0x5118ed*/
   {
     strncpy(Destination.__pad_0, Source, 0x18u); /*0x511901*/
@@ -214,7 +214,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
                               *(unsigned int *)(_EBX + 192));
   Source[0] = *(unsigned char *)(_EBX + 420); /*0x51195a*/
   Source[1] = 0; /*0x511966*/
-  INIClass::GetString((unsigned char *)(INIClass *)v4, (uint8_t *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
+  ((INIClass*)((unsigned char *)(INIClass *)v4))->GetString((uint8_t *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   *(unsigned char *)(_EBX + 420) = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aFirepower, *(double *)(_EBX + 200)); /*0x511990*/
   v6 = *(unsigned int *)(_EBX + 212); /*0x511995*/
@@ -368,13 +368,8 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
   /* asm-debt:__asm { fstp dword ptr [ebx+148h] } */
   *(float *)(_EBX + 328) = *(float *)&_RT1; /*0x511d10*/
-  if ( INIClass::GetString( /*0x511d2d*/
-         (INIClass *)v4,
-         (uint8_t *)(_EBX + 36),
-         aVeteraninfantr,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x511d2d*/
+         ((INIClass*)((INIClass *)v4))->GetString(/*0x511d2d*/ (uint8_t *)(_EBX + 36), aVeteraninfantr, &g_INI_DefaultBuffer, String, 128) )
   {
     InfantryTypeVector::Construct(&v82, 0, 0); /*0x511d42*/
     *(unsigned int *)v82.__pad_0 = &vt_TypeList; /*0x511d56*/
@@ -406,13 +401,8 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)Destination.__pad_0 = &vt_VectorClass; /*0x511e05*/
   if ( UnitTypeVector_field_0x04 && BYTE1(Destination.UnitTypeVector_field_0x0C) ) /*0x511e15*/
     __3_YAXPAX_Z(UnitTypeVector_field_0x04); /*0x511e18*/
-  if ( INIClass::GetString( /*0x511e3a*/
-         (INIClass *)v4,
-         (uint8_t *)(_EBX + 36),
-         aVeteranunits,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x511e3a*/
+         ((INIClass*)((INIClass *)v4))->GetString(/*0x511e3a*/ (uint8_t *)(_EBX + 36), aVeteranunits, &g_INI_DefaultBuffer, String, 128) )
   {
     UnitTypeVector::Construct(&Destination, 0, 0); /*0x511e4f*/
     *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511e5e*/
@@ -452,13 +442,8 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)v82.__pad_0 = &vt_VectorClass; /*0x511f3b*/
   if ( InfantryTypeVector_field_0x04 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x511f4b*/
     __3_YAXPAX_Z(InfantryTypeVector_field_0x04); /*0x511f4e*/
-  if ( INIClass::GetString( /*0x511f70*/
-         (INIClass *)v4,
-         (uint8_t *)(_EBX + 36),
-         aVeteranaircraf,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x511f70*/
+         ((INIClass*)((INIClass *)v4))->GetString(/*0x511f70*/ (uint8_t *)(_EBX + 36), aVeteranaircraf, &g_INI_DefaultBuffer, String, 128) )
   {
     HouseTypeClass::readDefaultAlly((HouseTypeClass *)&Destination, 0, 0); /*0x511f85*/
     *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511f94*/
@@ -566,7 +551,7 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_2)
   ((Checksummer *)((Checksummer *)a2))->Add_double(this->rofMult[0], this->rofMult[1]); /*0x51220d*/
   ((Checksummer *)((Checksummer *)a2))->Add_double(this->costMult[0], this->costMult[1]); /*0x512222*/
   ((Checksummer *)((Checksummer *)a2))->Add_double(this->buildtimeMult[0], this->buildtimeMult[1]); /*0x512237*/
-  Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)&this->__pad_16D[51], strlen(&this->__pad_16D[51])); /*0x512252*/
+  ((Checksummer*)((Checksummer *)a2))->Add_Buffer((uint8_t *)&this->__pad_16D[51], strlen(&this->__pad_16D[51])); /*0x512252*/
   LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
   v4 = ((Power *)((Power *)a2))->FinalizeDrain(v3); /*0x512260*/
   LOBYTE(v4) = this->__pad_16D[56]; /*0x512265*/
@@ -742,7 +727,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
   int v22; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
+  if ( ((INIClass*)((INIClass *)edx0))->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
   {
     AircraftTypeVector::Constructor(&v17, 0, 0); /*0x67b931*/
     v22 = 10; /*0x67b93a*/
@@ -843,7 +828,7 @@ int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int 
   unsigned int *i; // edx
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( !INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475712*/
+  if ( !((INIClass*)((INIClass *)this))->GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475712*/
     return a4; /*0x475782*/
   result = HouseTypeClass::Find((HouseTypeClass *)Destination); /*0x47571f*/
   if ( result == -1 ) /*0x475727*/

@@ -1110,13 +1110,8 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   v17 = 0; /*0x69533d*/
   v13[0] = (void*)&INIClass_vftable; /*0x695341*/
   ((FileStraw *)(v13))->Open((int)v18, 0); /*0x695349*/
-  INIClass::GetString( /*0x69536b*/
-    (uint8_t ***)v13,
-    (uint8_t *)g_INI_Key_Digest,
-    (uint8_t *)::aP0,
-    aNoDigestHereMa,
-    Destination,
-    32);
+  /*0x69536b*/
+    ((INIClass*)((uint8_t ***)v13))->GetString(/*0x69536b*/ (uint8_t *)g_INI_Key_Digest, (uint8_t *)::aP0, aNoDigestHereMa, Destination, 32);
   if ( a2 && *a2 && strcmp(a2, Destination) ) /*0x69538f*/
   {
     ((HashTable *)(v13))->DestroyHashTableINIClass(); /*0x6953be*/
@@ -1330,7 +1325,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   if ( v15 ) /*0x695a0e*/
   {
     v16 = v15 + 1; /*0x695a10*/
-    String::Trim(v15 + 1); /*0x695a13*/
+    ((String*)(v15 + 1))->Trim(); /*0x695a13*/
   }
   else
   {
@@ -1369,7 +1364,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
   char v30; // [esp+15Ch] [ebp-58h]
   char v31[64]; // [esp+174h] [ebp-40h] BYREF
 
-  CCFileClass::Construct(&v20, aP0); /*0x699507*/
+  ((CCFileClass*)&v20)->Construct(aP0); /*0x699507*/
   if ( (uint8_t)((CCFileClass *)(&v20))->Open(0) && FileClass::Load(&v20, (const CHAR *)1) ) /*0x699526*/
   {
     v7 = 0; /*0x699533*/
@@ -1423,7 +1418,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v25.Buffer_field_14 = 0; /*0x6996ea*/
               v25.Buffer_field_18 = 0; /*0x6996f1*/
               v25.Buffer_field_10 = (int)&Straw_vftable; /*0x6996f8*/
-              Buffer::Init((Buffer *)&v25.Buffer_field_1C, (int)v8, v19 - (unsigned char *)v8); /*0x699703*/
+              ((Buffer*)((Buffer *)&v25.Buffer_field_1C))->Init((int)v8, v19 - (unsigned char *)v8); /*0x699703*/
               v26 = 0; /*0x69970f*/
               v25.Buffer_field_10 = (int)&BufferStraw_vftable; /*0x699720*/
               CCINIClass::LoadAndVerifyDigest((int *)v27.__pad_0, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
@@ -1437,7 +1432,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v23.Straw_field_0x04 = 0; /*0x69977f*/
               v24 = 0; /*0x699786*/
               *(unsigned int *)v23.__pad_0 = (void*)&Straw_vftable; /*0x69978d*/
-              Buffer::Init(&v25, (int)v14, strlen((const char *)v14) + 1); /*0x699798*/
+              ((Buffer*)&v25)->Init((int)v14, strlen((const char *)v14) + 1); /*0x699798*/
               v25.Buffer_field_0C = 0; /*0x6997ae*/
               *(unsigned int *)v23.__pad_0 = (void*)&BufferStraw_vftable; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
@@ -1451,22 +1446,12 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
                       (uint8_t *)&((char *)&stru_82BA00),
                       aMaxplayers,
                       *a6);
-              INIClass::GetString( /*0x699833*/
-                &v27,
-                (uint8_t *)&((char *)&stru_82BA00),
-                (uint8_t *)g_INI_Key_GameMode,
-                &g_INI_DefaultBuffer,
-                aP3,
-                256);
-              INIClass::GetString( /*0x699858*/
-                &v27,
-                (uint8_t *)&((char *)&stru_82BA00),
-                (uint8_t *)g_INI_Key_Name,
-                g_Str_No_Name,
-                v31,
-                64);
+              /*0x699833*/
+                ((INIClass*)&v27)->GetString(/*0x699833*/ (uint8_t *)&((char *)&stru_82BA00), (uint8_t *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
+              /*0x699858*/
+                ((INIClass*)&v27)->GetString(/*0x699858*/ (uint8_t *)&((char *)&stru_82BA00), (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v31, 64);
               BulkCharToWide(a1, (uint8_t *)v31, -1); /*0x69986a*/
-              INIClass::GetString(&v29, (uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
+              ((INIClass*)&v29)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
               *a4 = INIClass::ReadBool_Overwrite( /*0x6998ba*/
                       (int *)v27.__pad_0,
                       (uint8_t *)&((char *)&stru_82BA00),
@@ -2334,7 +2319,7 @@ HWND E4Recv_696950::sub_696950()
     EnableWindow(v3, 0); /*0x696975*/
     SendMessageA(v3, 0x4B5u, 0x10u, (LPARAM)&((unsigned int *)this)[0]); /*0x696987*/
     HIBYTE(((unsigned int *)this)[0]) = 0; /*0x69698f*/
-    String::Trim((char *)&((unsigned int *)this)[0]); /*0x696993*/
+    ((String*)((char *)&((unsigned int *)this)[0]))->Trim(); /*0x696993*/
     _strupr((char *)&((unsigned int *)this)[0]); /*0x696999*/
     return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &((unsigned int *)this)[0]); /*0x6969ab*/
   }

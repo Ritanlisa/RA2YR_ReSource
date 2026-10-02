@@ -605,7 +605,7 @@ void RunNetworkGameLoop()
       ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v16, &v18, &v17); /*0x6485b7*/
       ((SyncDelayClass*)&v16)->ProcessNetworkSync(); /*0x6485c0*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
-      TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6485d5*/
+      ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x6485d5*/
     }
     v10 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) + 1000; /*0x6485e7*/
     v11 = 0; /*0x6485ed*/
@@ -1239,7 +1239,7 @@ LABEL_162:
                       &a3);
                     SyncDelayClass::ProcessNetworkSync(v134);
                     (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[44976] + 92))(*(unsigned int *)&stru_87C374[44976]);
-                    TacticalMap::Redraw(&stru_87C374[13428]);
+                    ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
                   }
                   ++v118;
                   goto LABEL_4;
@@ -1256,7 +1256,7 @@ LABEL_223:
                     HouseClass_Player[42540] = byte_B04894;
                     MapClass::MarkForRedraw(&stru_87C374[13428], 2);
                     if ( HouseClass_Player[42540] )
-                      TacticalMap::Redraw(&stru_87C374[13428]);
+                      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
                   }
                   if ( (*(int (**)(int *))(*a1 + 16))(a1) > 0 )
                   {
@@ -1399,7 +1399,7 @@ LABEL_148:
                     HouseClass_Player[42540] = byte_B04894;
                     MapClass::MarkForRedraw(&stru_87C374[13428], 2);
                     if ( HouseClass_Player[42540] )
-                      TacticalMap::Redraw(&stru_87C374[13428]);
+                      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
                   }
                 }
                 if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
@@ -1408,7 +1408,7 @@ LABEL_148:
                 return 7;
               }
               MapClass::MarkForRedraw(&stru_87C374[13428], 2);
-              TacticalMap::Redraw(&stru_87C374[13428]);
+              ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               v63 = (ObjectClass *)TimerGetTicks();
               v134[6] = (int)v13;
               v100 = (MSVQAnim *)v13;
@@ -1449,7 +1449,7 @@ LABEL_148:
                 HouseClass_Player[42540] = byte_B04894;
                 MapClass::MarkForRedraw(&stru_87C374[13428], 2);
                 if ( HouseClass_Player[42540] )
-                  TacticalMap::Redraw(&stru_87C374[13428]);
+                  ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               }
             }
             if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
@@ -1467,7 +1467,7 @@ LABEL_148:
                 HouseClass_Player[42540] = byte_B04894;
                 MapClass::MarkForRedraw(&stru_87C374[13428], 2);
                 if ( HouseClass_Player[42540] )
-                  TacticalMap::Redraw(&stru_87C374[13428]);
+                  ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               }
             }
             if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
@@ -1497,7 +1497,7 @@ LABEL_116:
         HouseClass_Player[42540] = byte_B04894;
         MapClass::MarkForRedraw(&stru_87C374[13428], 2);
         if ( HouseClass_Player[42540] )
-          TacticalMap::Redraw(&stru_87C374[13428]);
+          ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       }
     }
     Network::SendUnreachable();
@@ -1507,7 +1507,7 @@ LABEL_116:
     if ( Network_Process_64B410((int)v8, a7) )
     {
       MapClass::MarkForRedraw(&stru_87C374[13428], 2);
-      TacticalMap::Redraw(&stru_87C374[13428]);
+      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       v60 = (ObjectClass *)TimerGetTicks();
       v134[3] = (int)v13;
       v100 = (MSVQAnim *)v13;
@@ -1536,7 +1536,7 @@ LABEL_116:
         HouseClass_Player[42540] = byte_B04894;
         MapClass::MarkForRedraw(&stru_87C374[13428], 2);
         if ( HouseClass_Player[42540] )
-          TacticalMap::Redraw(&stru_87C374[13428]);
+          ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       }
     }
   }
@@ -1841,7 +1841,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                 {
                   if ( dword_A8E2CC != *v12 ) /*0x64a2ef*/
                   {
-                    v22 = EventClass::Add2(v43, *((unsigned int *)dword_A83D4C + 12), 0x28u, *v12); /*0x64a301*/
+                    v22 = ((EventClass*)v43)->Add2(*((unsigned int *)dword_A83D4C + 12), 0x28u, *v12); /*0x64a301*/
                     if ( dword_A802C8 < 128 ) /*0x64a310*/
                     {
                       qmemcpy(&byte_A802D4[111 * dword_A802D0], v22, 0x6Fu); /*0x64a32c*/
@@ -2970,7 +2970,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v106 = *v17; /*0x64cf9b*/
                 v107 = v17[1]; /*0x64cfac*/
                 v108 = v17[2]; /*0x64cfb6*/
-                v18 = Coord::Length((int *)&v106); /*0x64cfbd*/
+                v18 = ((Coord*)((int *)&v106))->Length(); /*0x64cfbd*/
                 v19 = (char *)Block + 4 * v10; /*0x64cfcc*/
                 v20 = v10 + 1000 * v18; /*0x64cfd6*/
                 v21 = v91; /*0x64cfdc*/

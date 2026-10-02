@@ -52,7 +52,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   int v6; // ecx
   char v8; // [esp-Ch] [ebp-14h]
 
-  INIClass::ResetSection((INIClass *)a2); /*0x72048a*/
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x72048a*/
   if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (const char *)((char *)this + 256); /*0x7204a6*/
@@ -113,13 +113,8 @@ void * ThemeClass::InitializeThemes(char * a2)
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2),(gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes),(void *)(v5)); /*0x7205d1*/
-    if ( INIClass::GetString( /*0x7205de*/
-           (uint8_t ***)v2,
-           (uint8_t *)g_INI_Key_Themes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( /*0x7205de*/
+           ((INIClass*)((uint8_t ***)v2))->GetString(/*0x7205de*/ (uint8_t *)g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
@@ -245,7 +240,7 @@ int ThemeClass::ClearQueues()
 } // namespace gamemd
 // 0x752AB0
 namespace gamemd {
-void ThemeClass::GetField(int a1, int a2)
+void ThemeClass::GetField(int a1)
 {
 
   dword_846614 = a1; /*0x752ab6*/

@@ -387,7 +387,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   strcat(Buffer, (const char *)&i); /*0x77517a*/
   ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
-  WinModemClass::ReadBytes(this, v32, 80); /*0x7751a6*/
+  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/
   {
     Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x7751d1*/

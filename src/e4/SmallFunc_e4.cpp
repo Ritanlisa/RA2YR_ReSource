@@ -224,7 +224,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bcfe*/
+  if ( ((INIClass*)((INIClass *)a0))->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bcfe*/
 // 0x4653c0
     return (gamemd::BuildingTypeClass *)(((BuildingTypeClass *)(Destination))->FindOrCreate());
   else
@@ -238,7 +238,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bd9e*/
+  if ( ((INIClass*)((INIClass *)a1))->GetString((unsigned char *)(edx0), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bd9e*/
 // 0x71e2a0
     return (gamemd::TerrainTypeClass *)(((TerrainTypeClass *)(Destination))->FindOrCreate());
   else

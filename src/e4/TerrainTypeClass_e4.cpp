@@ -238,7 +238,7 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
   int v23; // [esp+18h] [ebp-204h] BYREF
   char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x71deb3*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x71deb3*/
   if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x71debb*/
   {
     if ( ((unsigned int *)this)[0] == -1 ) /*0x71decf*/
@@ -542,8 +542,8 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
       ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e201*/
       ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e208*/
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/
+    ((VoxelAnimType*)((char *)aP0))->LoadAnim(); /*0x71e211*/
+    ((ObjectTypeClass*)((char *)aP0))->Load2DArt(); /*0x71e218*/
     aP0->FoundationData = (CellStruct *)(40 * aP0->Foundation + 11595200); /*0x71e22d*/
     return 0; /*0x71e233*/
   }

@@ -570,7 +570,7 @@ LABEL_21:
   if ( (&dword_A8B230)[202].vtable2 == (void *)-1 ) /*0x683e50*/
     ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x683e66*/
   else
-    Theme::QueueSong((int)&unk_A83D10, (int)(&dword_A8B230)[202].vtable2); /*0x683e58*/
+    ((Theme*)((int)&unk_A83D10))->QueueSong((int)(&dword_A8B230)[202].vtable2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 1; /*0x683e75*/
   byte_A8E378 = 1; /*0x683e7f*/
@@ -619,7 +619,7 @@ int ScenarioClass::CleanupTemporary()
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x683f90*/
-  TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x683f9a*/
+  ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x683f9a*/
   return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)stru_887598.lineTrailer + 16))(
            stru_887598.lineTrailer,
            this);
@@ -650,7 +650,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
         }
         result[13730] = 0; /*0x6841ef*/
         *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 0; /*0x6841fc*/
-        Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x684203*/
+        ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x684203*/
         result = dword_A8B230; /*0x684208*/
         dword_B07784 = 0; /*0x68420d*/
       }
@@ -844,13 +844,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)&stru_830620[37112]);
         if ( v10 )
         {
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[37112],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->briefingCsf,
-            32);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[37112], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->briefingCsf, 32);
           if ( strlen((const char *)g_ScenarioClass_Instance->briefingCsf) )
           {
             StringCSF = GetStringCSF((wchar_t *)g_ScenarioClass_Instance->briefingCsf, 0, &stru_830620[53784], 3167);
@@ -869,13 +863,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           v12 = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
         if ( v12 )
         {
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&g_INI_Key_UIName,
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->uiName,
-            32);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&g_INI_Key_UIName, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->uiName, 32);
           if ( strlen(g_ScenarioClass_Instance->uiName) )
           {
             v13 = GetStringCSF((wchar_t *)g_ScenarioClass_Instance->uiName, 0, &stru_830620[53784], 3179);
@@ -901,13 +889,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54792]);
         if ( v15 )
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[54792],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->lsLoadMessage,
-            31);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54792], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->lsLoadMessage, 31);
         g_ScenarioClass_Instance->lsBrief[0] = 0;
         if ( &stru_830620 == (IUnknown *)-54776 )
           int v16 = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
@@ -917,13 +899,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54776]);
         if ( v16 )
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[54776],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->lsBrief,
-            31);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54776], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->lsBrief, 31);
         if ( &stru_830620 == (IUnknown *)-54760 )
           int v17 = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
         else
@@ -985,13 +961,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54696]);
         if ( v21 )
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[54696],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->ls640BkgdName,
-            64);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54696], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls640BkgdName, 64);
         IDA_LOBYTE(g_ScenarioClass_Instance->ls800BkgdName[0]) = 0;
         if ( &stru_830620 == (IUnknown *)-54680 )
           int v22 = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
@@ -1001,13 +971,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54680]);
         if ( v22 )
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[54680],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->ls800BkgdName,
-            64);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54680], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdName, 64);
         IDA_LOBYTE(g_ScenarioClass_Instance->ls800BkgdPal[0]) = 0;
         if ( &stru_830620 == (IUnknown *)-54664 )
           int v23 = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
@@ -1017,13 +981,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54664]);
         if ( v23 )
-          INIClass::GetString(
-            var158,
-            (INIClass *)g_ScenarioClass_Instance->fileName,
-            (uint8_t *)&stru_830620[54664],
-            (INIClass *)&DataGlobal_87F8E4[42624],
-            (INIClass *)g_ScenarioClass_Instance->ls800BkgdPal,
-            64);
+          ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54664], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdPal, 64);
       }
     }
     for ( i = 1120; i < 1136; g_ScenarioClass_Instance->nextScenario[i - 1] = -1 )
@@ -1138,13 +1096,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
   {
     v37 = (INIClass *)INIClass::GetStringByIndex(v33, (CCINIClass *)&stru_830620[53764], k);
     eax102 = atoi(v37->__pad_0);
-    INIClass::GetString(
-      (uint8_t ***)v33,
-      (INIClass *)&stru_830620[53764],
-      (uint8_t *)v37,
-      0,
-      (INIClass *)((char *)&v56[83] + 40 * eax102 + eax102),
-      40);
+    ((INIClass*)((uint8_t ***)v33))->GetString((INIClass *)&stru_830620[53764], (uint8_t *)v37, 0, (INIClass *)((char *)&v56[83] + 40 * eax102 + eax102), 40);
   }
   Event::Dispatch();
   RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
@@ -1185,13 +1137,7 @@ LABEL_124:
   else
   {
     HouseClass::LoadTypeList(a2->__pad_0);
-    INIClass::GetString(
-      (uint8_t ***)a2,
-      (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
-      (uint8_t *)&g_INI_Key_Lighting.sectionCount,
-      (INIClass *)&stru_830620[54652],
-      &Filename,
-      32);
+    ((INIClass*)((uint8_t ***)a2))->GetString((INIClass *)&g_INI_Key_Lighting.sectionHead[1], (uint8_t *)&g_INI_Key_Lighting.sectionCount, (INIClass *)&stru_830620[54652], &Filename, 32);
     int v43 = HouseClass::FindByName(Filename[0]);
     if ( v43 == -1 || v43 > (int)HouseClass_Count )
       v42 = 0;
@@ -1213,13 +1159,7 @@ LABEL_124:
   }
   else
   {
-    INIClass::GetString(
-      (uint8_t ***)a2,
-      (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
-      (uint8_t *)&g_INI_Key_Lighting.sectionCount,
-      (INIClass *)&stru_830620[54652],
-      (INIClass *)Filename[32],
-      32);
+    ((INIClass*)((uint8_t ***)a2))->GetString((INIClass *)&g_INI_Key_Lighting.sectionHead[1], (uint8_t *)&g_INI_Key_Lighting.sectionCount, (INIClass *)&stru_830620[54652], (INIClass *)Filename[32], 32);
     int v44 = HouseClass::FindByName(Filename[32]);
     if ( v44 == -1 || v44 > (int)HouseClass_Count )
       v42 = 0;

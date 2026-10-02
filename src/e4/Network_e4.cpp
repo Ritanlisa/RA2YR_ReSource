@@ -1403,7 +1403,7 @@ void * Network::ReceiveLoop()
   Network v47[2]; // [esp+38h] [ebp-4B4h] BYREF
 
   v47[0].Network_field_0x10 = (void *)1; /*0x541830*/
-  Waypoint::InitInvalid((Waypoint *)v47); /*0x541838*/
+  ((Waypoint*)((Waypoint *)v47))->InitInvalid(); /*0x541838*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x541844*/
   {
     while ( 1 ) /*0x541864*/
@@ -2244,7 +2244,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
   v4 = 4; /*0x5d943f*/
   do /*0x5d944f*/
   {
-    Waypoint::InitInvalid(v3); /*0x5d9446*/
+    ((Waypoint*)v3)->InitInvalid(); /*0x5d9446*/
     v3 = (Waypoint *)((char *)v3 + 12); /*0x5d944b*/
     --v4; /*0x5d944e*/
   }
@@ -2784,7 +2784,7 @@ unsigned short Network::ResolveNetworkAddress(uint16_t a2)
   }
   v19 = **(unsigned int **)v5->h_addr_list; /*0x5da1dd*/
   Debug::Log(); /*0x5da20d*/
-  Waypoint::InitInvalid(&v22); /*0x5da219*/
+  ((Waypoint*)&v22)->InitInvalid(); /*0x5da219*/
   Struct::Copy6Bytes(v22.__pad_0, (int)&v19); /*0x5da227*/
   ((Network *)((Network *)&v22))->SetPort(v4); /*0x5da231*/
   ((Network *)((Network *)&v22))->FormatAddress(0); /*0x5da23c*/
@@ -4325,7 +4325,7 @@ HashTable_flat * * Network::ProcessAddressChange()
   int v5; // [esp+Ch] [ebp-90h] BYREF
   Waypoint v6; // [esp+10h] [ebp-8Ch] BYREF
 
-  Waypoint::InitInvalid((Waypoint *)&v6.__pad_0[12]); /*0x6640ea*/
+  ((Waypoint*)((Waypoint *)&v6.__pad_0[12]))->InitInvalid(); /*0x6640ea*/
   result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6640ef*/
   if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 0 ) /*0x6640f6*/
   {
@@ -4349,7 +4349,7 @@ HashTable_flat * * Network::ProcessAddressChange()
         v2 = BYTE1(dword_B04E9C); /*0x66415e*/
         *(unsigned int *)&v4[1] = *(int *)((char *)&dword_B04E9C + 2); /*0x664169*/
         v4[3] = 0; /*0x664174*/
-        Waypoint::InitInvalid(&v6); /*0x664179*/
+        ((Waypoint*)&v6)->InitInvalid(); /*0x664179*/
         ((NetworkID *)((NetworkID *)&v6))->Assign(&v6.__pad_0[24], (int)&v4[1], 0); /*0x66418e*/
         inited = Network::initConnection(&v6.__pad_0[28], (int)dword_A83D4C->Object_field_0x30, &v6, v2); /*0x6641a7*/
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6641b6*/
@@ -4383,7 +4383,7 @@ void * Network::processAcknowledgment(IUnknown * aP1)
   if ( (byte_B052A8 & 1) == 0 ) /*0x6642b2*/
   {
     byte_B052A8 |= 1u; /*0x6642bd*/
-    Waypoint::InitInvalid(&stru_B052C0); /*0x6642c3*/
+    ((Waypoint*)&stru_B052C0)->InitInvalid(); /*0x6642c3*/
     atexit(nullsub_33); /*0x6642cd*/
   }
   v5 = 0; /*0x6642db*/
@@ -4549,7 +4549,7 @@ AbstractClass * * int sub_79C3A0()
   AnimClass *parachute; // esi
   char v7[108]; // [esp+0h] [ebp-6Ch] BYREF
 
-  if ( String::Length((String *)&g_WindowManager.__pad_14[16]) ) /*0x79c3a8*/
+  if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x79c3a8*/
   {
     result = time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20; /*0x79c3c1*/
     if ( result < 5 ) /*0x79c3c6*/
@@ -5019,7 +5019,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   if ( !*v7 ) /*0x54179a*/
     return 0; /*0x54179a*/
   v8 = *(unsigned short *)(aP0 + 12); /*0x54179d*/
-  Waypoint::InitInvalid(v11); /*0x5417a5*/
+  ((Waypoint*)v11)->InitInvalid(); /*0x5417a5*/
   v10 = *v7; /*0x5417b5*/
   Struct::Copy6Bytes((char *)v11, (int)&v10); /*0x5417b9*/
   ((Network *)(v11))->SetPort(v8); /*0x5417c3*/
@@ -5211,7 +5211,7 @@ short Network::WaitForPacket(int a1, int a2)
   int v17; // [esp+71h] [ebp-193h]
 
   v2 = 0; /*0x5d922d*/
-  Waypoint::InitInvalid(v14); /*0x5d922f*/
+  ((Waypoint*)v14)->InitInvalid(); /*0x5d922f*/
   v3 = 60; /*0x5d9244*/
   Ticks = TimerGetTicks(); /*0x5d924b*/
   v10 = 60; /*0x5d924f*/
@@ -5951,7 +5951,7 @@ int sub_796FC0()
   v1 = RA2_OPNEW(0x85u); /*0x796fca*/
   v2 = v1; /*0x796fcf*/
   if ( v1 ) /*0x796fd6*/
-    Waypoint::InitInvalid((Waypoint *)(v1 + 40)); /*0x796fdb*/
+    ((Waypoint*)((Waypoint *)(v1 + 40)))->InitInvalid(); /*0x796fdb*/
   else
     v2 = 0; /*0x796fe2*/
   BulkCharToWide((unsigned short *)v2, (uint8_t *)aPotatotoo, -1); /*0x796fed*/

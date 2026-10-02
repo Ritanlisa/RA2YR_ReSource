@@ -647,7 +647,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
   result = SearchMIXFile(v3, 0); /*0x4a3985*/
   if ( !result ) /*0x4a398c*/
   {
-    CCFileClass::Construct(v8, v3); /*0x4a3994*/
+    ((CCFileClass*)v8)->Construct(v3); /*0x4a3994*/
     v5 = 0; /*0x4a3999*/
     if ( (*(uint8_t (**)(unsigned int *, unsigned int))(v8[0] + 20))(v8, 0) ) /*0x4a39a4*/
     {
@@ -1627,7 +1627,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
     *(unsigned int *)v15 = &XSurface_Vtable; /*0x4a69bf*/
     *((unsigned int *)v15 + 4) = 1; /*0x4a69c5*/
-    Buffer::Init((Buffer *)(v15 + 20), (int)vtable3, v14 * abstractFlags); /*0x4a69cc*/
+    ((Buffer*)((Buffer *)(v15 + 20)))->Init((int)vtable3, v14 * abstractFlags); /*0x4a69cc*/
     *(unsigned int *)v15 = &BSurface_Vtable; /*0x4a69d1*/
   }
   else
@@ -2544,7 +2544,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
         v64[3] = 0; /*0x4aeed8*/
         v64[0] = (int)&XSurface_Vtable; /*0x4aeee3*/
         v64[4] = 1; /*0x4aeeeb*/
-        Buffer::Init(v65, v26, v45 * v44); /*0x4aeef6*/
+        ((Buffer*)v65)->Init(v26, v45 * v44); /*0x4aeef6*/
         v64[0] = (int)&BSurface_Vtable; /*0x4aeefb*/
         v27 = aP15; /*0x4aef11*/
         v54 = a15; /*0x4aef18*/
@@ -2565,7 +2565,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
             *v29 = &XSurface_Vtable; /*0x4aef92*/
             v35 = v49 * v48; /*0x4aefa5*/
             v29[4] = 1; /*0x4aefaa*/
-            Buffer::Init(v29 + 5, v38, v35); /*0x4aefb1*/
+            ((Buffer*)(v29 + 5))->Init(v38, v35); /*0x4aefb1*/
             *v29 = &BSurface_Vtable; /*0x4aefb6*/
             v39 = (void (***)(unsigned int, int))v29; /*0x4aefbc*/
             v27 = aP15; /*0x4aefc0*/
@@ -3074,7 +3074,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
 
-  Checksummer::Add_Buffer((Checksummer *)&((unsigned int *)this)[0], aP1, aP2); /*0x4a2042*/
+  ((Checksummer*)((Checksummer *)&((unsigned int *)this)[0]))->Add_Buffer(aP1, aP2); /*0x4a2042*/
   return Delegate::Dispatch((Pipe *)this, (int)aP1, aP2); /*0x4a2050*/
 
 }
@@ -3090,7 +3090,7 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
   if ( !aP1 || aP2 < 1 ) /*0x4a20c3*/
     return 0; /*0x4a20e2*/
   v4 = ((Delegate *)((Straw *)this))->Invoke((int)aP1, aP2); /*0x4a20cd*/
-  Checksummer::Add_Buffer((Checksummer *)&((unsigned int *)this)[0], aP1, v4); /*0x4a20d4*/
+  ((Checksummer*)((Checksummer *)&((unsigned int *)this)[0]))->Add_Buffer(aP1, v4); /*0x4a20d4*/
   return v4; /*0x4a20dc*/
 
 }

@@ -739,14 +739,14 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
   {
     if ( a1 ) /*0x74802f*/
     {
-      TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
+      ((TechnoTypeClass*)((int)a1))->Construct((int)&v3); /*0x748038*/
       a1->vtable1 = &vt_UnitTypeClass; /*0x74803d*/
       ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x748043*/
       ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x74804a*/
       ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x748051*/
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
+    ((VoxelAnimType*)((char *)a1))->LoadAnim(); /*0x74805a*/
+    ((ObjectTypeClass*)((char *)a1))->Load2DArt(); /*0x748061*/
     if ( a1->AltImage[0] ) /*0x748066*/
     {
       _makepath(Buffer, 0, 0, a1->__tail_E5E, Ext); /*0x748085*/

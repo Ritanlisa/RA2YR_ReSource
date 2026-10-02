@@ -893,7 +893,7 @@ LABEL_50:
     else
     {
       Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v61)); /*0x54d68b*/
-      FacingClass::Set_SyncLog((char *)(*(unsigned int *)this->__pad_C + 904), Value); /*0x54d692*/
+      ((FacingClass*)((char *)(*(unsigned int *)this->__pad_C + 904)))->Set_SyncLog(Value); /*0x54d692*/
     }
   }
   if ( v55 ) /*0x54d69d*/

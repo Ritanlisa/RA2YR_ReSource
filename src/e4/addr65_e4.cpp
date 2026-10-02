@@ -783,7 +783,7 @@ void sub_6586D0()
 
   Dialog = (Dialog *)CreateDialog(0x73u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Diplomacy::DlgProc, 0); /*0x6586e9*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 1; /*0x6586eb*/
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6586f2*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6586f2*/
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
@@ -798,7 +798,7 @@ void sub_6586D0()
   LABEL_7:
     ((Dialog*)Dialog)->Destroy(); /*0x658733*/
   }
-  Timer::PumpMessages(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]); /*0x658740*/
+  ((Timer*)(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]))->PumpMessages(); /*0x658740*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x658763*/
 }
@@ -1422,7 +1422,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   v12 = a2 != -1; /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
-    Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v48, *(int *)v48); /*0x65d9c7*/
+    Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(v48, *(int *)v48); /*0x65d9c7*/
   else
     Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/

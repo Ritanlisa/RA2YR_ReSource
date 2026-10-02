@@ -443,15 +443,12 @@ void TacticalClass::InterpolateView()
       {
         while ( 1 ) /*0x4ae384*/
         {
-          v11 = Coord::Subtract( /*0x4ae384*/
-                  (Coord *)v30,
-                  v3 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 156),
-                  v4 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 160),
-                  v5 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 164));
+          v11 = /*0x4ae384*/
+                  ((Coord*)((Coord *)v30))->Subtract(/*0x4ae384*/ v3 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 156), v4 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 160), v5 - *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v10) + 164));
           v29[0] = *v11; /*0x4ae38b*/
           v29[1] = v11[1]; /*0x4ae396*/
           v29[2] = v11[2]; /*0x4ae39d*/
-          v12 = Coord::Length((Coord *)v29); /*0x4ae3a1*/
+          v12 = ((Coord*)((Coord *)v29))->Length(); /*0x4ae3a1*/
           if ( v12 > v19 ) /*0x4ae3aa*/
           {
             v19 = v12; /*0x4ae3b2*/
@@ -522,12 +519,12 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
         {
           ((ColorStruct *)(&v6))->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f463d*/
           ((ColorStruct *)(&v7))->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f4655*/
-          Tactical::SetCellTransform(v6.__pad_0, 0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
-          Tactical::SetCellTransform(v6.__pad_0, 1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
-          Tactical::SetCellTransform(v6.__pad_0, 2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
-          Tactical::SetCellTransform(v7.__pad_0, 0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
-          Tactical::SetCellTransform(v7.__pad_0, 1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
-          Tactical::SetCellTransform(v7.__pad_0, 2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
           ((StructTable *)(dword_8A0E10))->Append(&v6); /*0x4f4719*/
           ((StructTable *)(dword_8A0E10))->Append(&v7); /*0x4f4729*/
         }
@@ -772,11 +769,8 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
     visibleCells = this->visibleCells; /*0x6d2e5e*/
     do /*0x6d2f79*/
     {
-      Coord::Subtract( /*0x6d2eaf*/
-        (Coord *)v19,
-        ((((int16_t)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8,
-        ((((int16_t)HIWORD(*(unsigned int *)(*visibleCells + 36)) << 8) + 128) / 256) << 8,
-        0);
+      /*0x6d2eaf*/
+        ((Coord*)((Coord *)v19))->Subtract(/*0x6d2eaf*/ ((((int16_t)*(unsigned int *)(*visibleCells + 36) << 8) + 128) / 256) << 8, ((((int16_t)HIWORD(*(unsigned int *)(*visibleCells + 36)) << 8) + 128) / 256) << 8, 0);
       v20 = v19[0]; /*0x6d2ec0*/
       v21 = v19[1]; /*0x6d2ec4*/
       v22 = v19[2]; /*0x6d2ed4*/

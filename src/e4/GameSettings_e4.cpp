@@ -358,13 +358,8 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
                            g_INI_Key_Network,
                            (uint8_t *)aNetcard,
                            v40);
-  INIClass::GetString( /*0x5facda*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
-    g_INI_Key_Network,
-    (uint8_t *)g_INI_Key_DestNet,
-    &g_INI_DefaultBuffer,
-    (char *)&_ESI[88],
-    64);
+  /*0x5facda*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[36]))->GetString(/*0x5facda*/ g_INI_Key_Network, (uint8_t *)g_INI_Key_DestNet, &g_INI_DefaultBuffer, (char *)&_ESI[88], 64);
   Debug::Log(); /*0x5face4*/
   LOBYTE(v31) = _ESI[29]; /*0x5face9*/
   nullsub_36(v31); /*0x5facf5*/

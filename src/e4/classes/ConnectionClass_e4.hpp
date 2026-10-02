@@ -36,7 +36,7 @@ struct ConnectionClass {
     int serviceSendQueue();
     int initQueue(unsigned int a2);
     void dtor();
-     double queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6, int a7, int a8, int a9, int a1);
+     double queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
 };
 
 } // namespace gamemd

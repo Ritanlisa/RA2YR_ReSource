@@ -59,9 +59,8 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
   *(unsigned int *)&this->RandomMap_field_0x2[2] = 0; /*0x58bf7c*/
   this->RandomMap_field_0x8 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
   this->RandomMap_field_0xC = 0; /*0x58bf8d*/
-  this->RandomMap_field_0x10 =(unsigned int)(void *)*((char *)CellCoord::To_CellObj( /*0x58bfa6*/
-                                                   (CellCoord *)&stru_87F5F0.__pad_58[416],
-                                                   (int16_t *)&a2)
+  this->RandomMap_field_0x10 =(unsigned int)(void *)*((char *)/*0x58bfa6*/
+                                                   ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x58bfa6*/ (int16_t *)&a2)
                                        + 283);
   v3 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2); /*0x58bfa9*/
   IsGroundTypeRange = ((Cell*)v3)->IsGroundTypeRange(); /*0x58bfb0*/
@@ -1241,7 +1240,7 @@ LABEL_20:
           v14 = (void *)v39[4]; /*0x5906c5*/
           if ( *(void **)(v13 + 16) == v14 && v14 == v1->RandomMap_field_0x10 ) /*0x5906cf*/
           {
-            RandomMap::PlaceBuildings(v1, (int)v39, v13); /*0x5906d5*/
+            ((RandomMap*)v1)->PlaceBuildings((int)v39, v13); /*0x5906d5*/
             v5 = g_MissionQueueFrame.briefing[339]; /*0x5906da*/
             v6 = g_MissionQueueFrame.briefing[342]; /*0x5906e0*/
           }
@@ -1359,7 +1358,7 @@ LABEL_57:
             if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(v41, 1) ) /*0x5908cc*/
             {
               v37 = (double)v44 * 0.0099999998; /*0x5908ea*/
-              v40 += RandomMap::CheckCellPlacement(v31, v41, v43, v37) != 0; /*0x590900*/
+              v40 += ((RandomMap*)v31)->CheckCellPlacement(v41, v43, v37) != 0; /*0x590900*/
             }
             v44 = ++v17; /*0x59090f*/
           }
@@ -1530,7 +1529,7 @@ LABEL_89:
           }
           while ( v20 > 1 ); /*0x590c05*/
           LOWORD(a1) = v20 + (unsigned short)a1; /*0x590c07*/
-          v9 = RandomMap::CheckPlacementArea(this, (int16_t *)&v39[1], (int16_t *)&a1, v5); /*0x590c1e*/
+          v9 = ((RandomMap*)this)->CheckPlacementArea((int16_t *)&v39[1], (int16_t *)&a1, v5); /*0x590c1e*/
           if ( !v9 ) /*0x590c22*/
           {
 LABEL_90:
@@ -2466,7 +2465,7 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   v2 = (char *)(a2 + 44); /*0x597d89*/
   if ( !_strcmpi((char *)(a2 + 44), &((char *)&stru_82BA00)) || !_strcmpi(v2, &(unsigned int *)((char *)&stru_82BA00 + 17)) ) /*0x597da8*/
     return 0; /*0x597db2*/
-  CCFileClass::Construct(&v5, v2); /*0x597dbd*/
+  ((CCFileClass*)&v5)->Construct(v2); /*0x597dbd*/
   v4.headNode[0] = 0; /*0x597dc6*/
   v4.headNode[1] = 0; /*0x597dca*/
   ((GenericNode *)((GenericNode *)v4.sectionHead))->Constructor(); /*0x597dce*/
@@ -2556,7 +2555,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   CCFileClass v29; // [esp+54h] [ebp-ECh] BYREF
   char String[128]; // [esp+C0h] [ebp-80h] BYREF
 
-  CCFileClass::Construct(&v29, (char *)&(unsigned int *)((char *)&stru_82BA00 + 1)); /*0x598205*/
+  ((CCFileClass*)&v29)->Construct((char *)&(unsigned int *)((char *)&stru_82BA00 + 1)); /*0x598205*/
   v2 = (INIClass *)__2_YAPAXI_Z(0x58u); /*0x59820c*/
   v3 = v2; /*0x598211*/
   if ( v2 ) /*0x598218*/
@@ -2569,7 +2568,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   {
     v3 = 0; /*0x59822d*/
   }
-  INIClass::ResetSection(v3); /*0x598231*/
+  ((INIClass*)v3)->ResetSection(); /*0x598231*/
   ((CCINIClass *)((CCINIClass *)v3))->Load((int)&v29, 0, 0); /*0x598241*/
   (*(void (**)(char *))(*(unsigned int *)&this->__pad_4C[316] + 12))(&this->__pad_4C[316]); /*0x598254*/
   (*(void (**)(char *))(*((unsigned int *)this + 161) + 12))((char *)this + 644); /*0x598265*/
@@ -2842,7 +2841,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                               off_82B134,
                               (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 16),
                               *((unsigned int *)this + 191));
-  if ( INIClass::GetString(v3, off_82B134, (uint8_t *)&((char *)&stru_82BA00), &g_INI_DefaultBuffer, String, 128) ) /*0x5987a5*/
+  if ( ((INIClass*)v3)->GetString(off_82B134, (uint8_t *)&((char *)&stru_82BA00), &g_INI_DefaultBuffer, String, 128) ) /*0x5987a5*/
   {
     TypeList::BuildingTypeConstructor((TypeList *)&v27); /*0x5987b7*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x5987d3*/
@@ -2867,7 +2866,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *(unsigned int *)(v20 + 24) = v28; /*0x59884d*/
   *(unsigned int *)&v27.__pad_20[4] = &vt_VectorClass; /*0x598850*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.__pad_20[4]); /*0x598854*/
-  if ( INIClass::GetString(v3, off_82B134, (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 15), &g_INI_DefaultBuffer, String, 128) ) /*0x598879*/
+  if ( ((INIClass*)v3)->GetString(off_82B134, (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 15), &g_INI_DefaultBuffer, String, 128) ) /*0x598879*/
   {
     TypeList::BuildingTypeConstructor((TypeList *)&v27); /*0x598886*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x5988a2*/
@@ -5212,7 +5211,7 @@ int RandomMap::PlaceRandomMapTiberium()
             v9 = 0; /*0x5a2435*/
             do /*0x5a2467*/
             {
-              LODWORD(v75) = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v72, v9 + v55); /*0x5a2455*/
+              LODWORD(v75) = *((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(v72, v9 + v55); /*0x5a2455*/
               v8 += WORD1(v75); /*0x5a2459*/
               v3 += LOWORD(v75); /*0x5a245e*/
               ++v9; /*0x5a2464*/
@@ -5360,7 +5359,7 @@ int RandomMap::PlaceRandomMapTiberium()
             do /*0x5a2779*/
             {
               v77 = 0.0; /*0x5a2679*/
-              Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v73, v23 + v55); /*0x5a2694*/
+              Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(v73, v23 + v55); /*0x5a2694*/
               v29 = *_EDI; /*0x5a2699*/
               v30 = *Waypoint_Location; /*0x5a269b*/
               v31 = 0; /*0x5a269d*/
@@ -5456,7 +5455,7 @@ int RandomMap::PlaceRandomMapTiberium()
               }
               LOWORD(v49) = Math::RoundToInt(v1); /*0x5a2801*/
               v51 = v49 + 500; /*0x5a2816*/
-              v50 = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v74, v48); /*0x5a281d*/
+              v50 = (int16_t *)((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(v74, v48); /*0x5a281d*/
               Terrain::PlaceTiberiumTrees(v50, v51, v48 + 1, v63); /*0x5a2827*/
               _EDX = Block; /*0x5a282f*/
               ++_ESI; /*0x5a2833*/
@@ -6508,7 +6507,7 @@ LABEL_9:
       v11 = dword_A8B230; /*0x5b9e3b*/
       strcpy(byte_A8B8E0, &((char *)&stru_82BA00)); /*0x5b9e51*/
       strcpy((char *)&v11[130].abstractFlags, byte_A8B8E0); /*0x5b9e79*/
-      v12 = CCFileClass::Construct(&v17, byte_A8B8E0); /*0x5b9e86*/
+      v12 = ((CCFileClass*)&v17)->Construct(byte_A8B8E0); /*0x5b9e86*/
       v13 = (*(int (**)(unsigned int *, unsigned int))(*v12 + 20))(v12, 0); /*0x5b9e98*/
       *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5b9e9a*/
       v19 = 0; /*0x5b9ea2*/
@@ -6683,7 +6682,7 @@ int RandomMap::RemoveMatching(IUnknown * aP1)
       if ( *((unsigned int *)v11 + 17) == -1 ) /*0x74ef9d*/
       {
         v12 = (int *)(v11 + 36); /*0x74efa3*/
-        v13 = Cell::PosToIndex((Cell *)(v11 + 36)); /*0x74efad*/
+        v13 = ((Cell*)((Cell *)(v11 + 36)))->PosToIndex(); /*0x74efad*/
         if ( v13 >= 0 && v13 < Object::ComputeAllocationSize() ) /*0x74efba*/
         {
           *(unsigned char *)(*(unsigned int *)&v4->__pad_4C[120] + v13) = 0; /*0x74efc2*/
@@ -6774,7 +6773,7 @@ LABEL_39:
       v10 = j + 2; /*0x74f149*/
     }
     v26 = *(unsigned int *)(v2 + 68); /*0x74f15d*/
-    result = Cell::PosToIndex((Cell *)(aP1 + 36)); /*0x74f165*/
+    result = ((Cell*)((Cell *)(aP1 + 36)))->PosToIndex(); /*0x74f165*/
     v27 = result; /*0x74f16a*/
     v40 = result; /*0x74f16e*/
     if ( result >= 0 ) /*0x74f172*/

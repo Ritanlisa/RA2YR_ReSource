@@ -1127,7 +1127,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     }
     v8 = IsDlgButtonChecked(hWnd, 1785); /*0x7a2b6c*/
     ReadWOLLobbyOption(v8 != 1); /*0x7a2b7d*/
-    if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2b8e*/
+    if ( !(uint8_t)((MapSeed*)((MapSeed *)&stru_B76AC4))->CheckName() ) /*0x7a2b8e*/
     {
   LABEL_53:
       (*(void (**)(unsigned int, HWND, int))(**(unsigned int **)&v22[4] + 4))(*(unsigned int *)&v22[4], hWnd, 1); /*0x7a2e54*/
@@ -1137,7 +1137,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     v9 = ((String *)((String *)&stru_B76AC4))->GetOrEmpty_Alt(); /*0x7a2ba8*/
     strncpy(&v22[44], v9, 9u); /*0x7a2bb3*/
     (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))(ppv, &v22[8]); /*0x7a2bc8*/
-    if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2bda*/
+    if ( !(uint8_t)((MapSeed*)((MapSeed *)&stru_B76AC4))->CheckName() ) /*0x7a2bda*/
     {
   LABEL_52:
       SendGameListWOL(v21); /*0x7a2e4f*/
@@ -1225,7 +1225,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
       v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d78*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v16 + 1; /*0x7a2d83*/
-    if ( String::Length((String *)&g_WindowManager.__pad_14[16]) ) /*0x7a2d88*/
+    if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x7a2d88*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x7a2da6*/
       {
@@ -1343,7 +1343,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       v4 = v4->vtable4; /*0x7a4dec*/
       v20[0] = (unsigned int)&off_7F7624; /*0x7a4df3*/
       ((OwnerDrawControl *)(v20))->InitVtable(); /*0x7a4dfb*/
-      DeleteAndZero::Alt(&v18); /*0x7a4e04*/
+      ((DeleteAndZero*)&v18)->Alt(); /*0x7a4e04*/
       if ( !v4 ) /*0x7a4e0b*/
       {
         v15 = GetStringCSF(aTxtGameRestart, 0, g_Str_File_wonline_cpp, 5558); /*0x7a4e28*/
@@ -1357,7 +1357,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
     SetCurrentDirectoryA(Buffer); /*0x7a4e6f*/
     v20[0] = (unsigned int)&off_7F7624; /*0x7a4e79*/
     ((OwnerDrawControl *)(v20))->InitVtable(); /*0x7a4e81*/
-    DeleteAndZero::Alt(&v18); /*0x7a4e8a*/
+    ((DeleteAndZero*)&v18)->Alt(); /*0x7a4e8a*/
     return 0; /*0x7a4e92*/
   }
 }
@@ -1450,7 +1450,7 @@ void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned 
         }
         ((WideString *)((wchar_t **)&a3))->Assign(StringCSF); /*0x7af89f*/
         ((WideString *)((void **)(v4 + 8)))->Reassign_Alt((const wchar_t **)&a3); /*0x7af8ac*/
-        DeleteAndZero::Alt((void **)&a3); /*0x7af8b5*/
+        ((DeleteAndZero*)((void **)&a3))->Alt(); /*0x7af8b5*/
         return 0; /*0x7af8c3*/
       }
     }
@@ -1542,7 +1542,7 @@ AbstractClass * * sub_7AF970()
   v9 = 0; /*0x7af99d*/
   v10 = 0; /*0x7af9a1*/
   v6 = (OwnerDrawControl)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7af9a5*/
-  CCFileClass::Construct(&v12, aWdtfsbsmPcx); /*0x7af9ad*/
+  ((CCFileClass*)&v12)->Construct(aWdtfsbsmPcx); /*0x7af9ad*/
   v8 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7af9cb*/
   *(unsigned int *)v12.CDFileClass = (void*)&CCFileClass_vftable; /*0x7af9cf*/
   v14 = 0; /*0x7af9d3*/
@@ -1551,7 +1551,7 @@ AbstractClass * * sub_7AF970()
   ((BufferIOFileClass *)((BufferIOFileClass *)&v12))->Dtor(); /*0x7af9eb*/
   if ( !v9 ) /*0x7af9f4*/
   {
-    CCFileClass::Construct(&v12, aWdtfsasmPcx); /*0x7af9ff*/
+    ((CCFileClass*)&v12)->Construct(aWdtfsasmPcx); /*0x7af9ff*/
     v3 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa0c*/
     *(unsigned int *)v12.CDFileClass = (void*)&CCFileClass_vftable; /*0x7afa18*/
     v9 = (void (***)(unsigned int, int))v3; /*0x7afa1c*/
@@ -1561,7 +1561,7 @@ AbstractClass * * sub_7AF970()
   }
   if ( !v10 ) /*0x7afa39*/
   {
-    CCFileClass::Construct(&v12, aWdtfsssmPcx); /*0x7afa44*/
+    ((CCFileClass*)&v12)->Construct(aWdtfsssmPcx); /*0x7afa44*/
     v10 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa5a*/
     CCFileClass::Destruct(&v12); /*0x7afa5e*/
   }
@@ -1616,19 +1616,19 @@ int StartWDTCampaign()
     if ( ShowDialogConfirm(v4, 4, (uint8_t (*)(void))Game::ProcessIdle, 1) != 6 /*0x7afc0e*/
       || !Team_Start(v18, 0x1E0u, a2, a3) )
     {
-      DeleteAndZero::Alt(&v19); /*0x7afbf5*/
+      ((DeleteAndZero*)&v19)->Alt(); /*0x7afbf5*/
       return 0; /*0x7afc06*/
     }
     stru_A8EB00.ObjectTypeClass[33] = 640; /*0x7afc32*/
     stru_A8EB00.ObjectTypeClass[34] = 480; /*0x7afc38*/
     ((ScenarioClass *)((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]))->SaveGameOptions(); /*0x7afc42*/
-    DeleteAndZero::Alt(&v19); /*0x7afc4b*/
+    ((DeleteAndZero*)&v19)->Alt(); /*0x7afc4b*/
   }
   v6 = 0; /*0x7afc52*/
   v22 = 0; /*0x7afc5d*/
   v21 = 0; /*0x7afc61*/
   *(unsigned int *)v19.__pad_0 = 0; /*0x7afc65*/
-  v7 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, g_Str_File_WDT_MIX); /*0x7afc69*/
+  v7 = ((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct(g_Str_File_WDT_MIX); /*0x7afc69*/
   v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x7afc82*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afc84*/
   v25 = 0; /*0x7afc88*/
@@ -1643,7 +1643,7 @@ int StartWDTCampaign()
     else
       v22 = 0; /*0x7afcce*/
   }
-  v10 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aWdtvoxMix); /*0x7afcdb*/
+  v10 = ((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct(aWdtvoxMix); /*0x7afcdb*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))(v10, 0); /*0x7afcef*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
@@ -1658,7 +1658,7 @@ int StartWDTCampaign()
     else
       v21 = 0; /*0x7afd3b*/
   }
-  v13 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aLocalMix_1); /*0x7afd48*/
+  v13 = ((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct(aLocalMix_1); /*0x7afd48*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x7afd5c*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/

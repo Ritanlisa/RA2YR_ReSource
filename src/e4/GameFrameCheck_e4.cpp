@@ -74,7 +74,7 @@ int sub_6863E0(void * a1, void * a2)
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x6864d8*/
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6864e3*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6864e3*/
   ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, (&dword_A8B230)[375].uniqueId); /*0x6864fc*/
   ((GameResult*)(GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
   while ( 1 ) /*0x68650f*/
@@ -91,7 +91,7 @@ int sub_6863E0(void * a1, void * a2)
       break; /*0x68652d*/
         ((Event *)0)->Dispatch();
   }
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686536*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x686536*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
     ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x686553*/
 // 0x4f4480
@@ -125,7 +125,7 @@ AbstractClass * * sub_686570()
   }
   ((unsigned int *)(dword_A8B230))[130].vtable3 = (void *)1; /*0x6865b0*/
   ((AsyncIO *)(v9))->Shutdown(); /*0x6865ba*/
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6865c5*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6865c5*/
   (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6865d9*/
     stru_887598.lineTrailer,
     g_DSurface_Hidden,

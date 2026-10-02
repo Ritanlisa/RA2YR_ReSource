@@ -339,7 +339,7 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
     unsigned int * CheckFlag(ObjectTypeClass * aP1);
-    BulletTypeClass * Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    BulletTypeClass * Construct(int aP1);
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);

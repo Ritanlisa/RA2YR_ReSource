@@ -471,7 +471,7 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x727c06*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
+      ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x727c0f*/
       aP0->vtable1 = &vt_TriggerTypeClass; /*0x727c14*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerTypeClass); /*0x727c1a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerTypeClass); /*0x727c21*/

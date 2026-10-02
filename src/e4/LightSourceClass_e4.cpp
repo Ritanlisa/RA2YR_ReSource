@@ -202,7 +202,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     this->Activated = 0; /*0x5551ca*/
     ((TacticalClass *)((TacticalClass *)this))->ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x5551d5*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     __3_YAXPAX_Z(this); /*0x5551e2*/
   return this; /*0x5551ec*/

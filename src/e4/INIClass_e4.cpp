@@ -245,7 +245,7 @@ LABEL_7:
   if ( v10 ) /*0x528a5a*/
   {
     memset(v26, 0, sizeof(v26)); /*0x528a60*/
-    v11 = (uint8_t *)Checksummer::Add_Buffer((Checksummer *)v26, v9, strlen((const char *)v9)); /*0x528a7e*/
+    v11 = (uint8_t *)((Checksummer*)((Checksummer *)v26))->Add_Buffer(v9, strlen((const char *)v9)); /*0x528a7e*/
     v12 = *(unsigned int *)(v10 + 48); /*0x528a83*/
     v13 = (HashTable *)(v10 + 44); /*0x528a86*/
     a2 = v11; /*0x528a8b*/

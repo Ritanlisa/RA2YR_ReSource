@@ -283,7 +283,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   char String[128]; // [esp+4Ch] [ebp-80h] BYREF
 
   v4 = v3; /*0x5240b0*/
-  INIClass::ResetSection((INIClass *)a2); /*0x5240b5*/
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x5240b5*/
   v45 = (int)a2; /*0x5240ba*/
   *(unsigned char *)(v4 + 3215) = 0; /*0x5240bd*/
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((gamemd::CCINIClass *)((TechnoTypeClass *)v45), a2, v46) ) /*0x5240c4*/
@@ -312,13 +312,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   v8 = *(unsigned int *)(v4 + 3616); /*0x52413b*/
   *(unsigned int *)(v4 + 3588) = v7; /*0x524141*/
-  if ( INIClass::GetString( /*0x52415e*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         aEliteoccupywea,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x52415e*/
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x52415e*/ (uint8_t *)(v4 + 36), aEliteoccupywea, &g_INI_DefaultBuffer, String, 128) )
   {
     v9 = (int)(InfantryTypeClass::Find(String)); /*0x52416b*/
   }
@@ -379,13 +374,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
   v48.DynamicVector_field_0x1C = (unsigned int)((AbstractClass *)&vt_VectorClass); /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
-  if ( INIClass::GetString( /*0x5242e9*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         aDeathanims,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x5242e9*/
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x5242e9*/ (uint8_t *)(v4 + 36), aDeathanims, &g_INI_DefaultBuffer, String, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x5242fa*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x524309*/
@@ -439,13 +429,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   ((unsigned int *)&v44)[0] = (int)aLeavewatersoun; /*0x524439*/
   *(unsigned int *)(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52443e*/
   *(unsigned int *)(v4 + 3748) = Index; /*0x524441*/
-  if ( !INIClass::GetString( /*0x52445c*/
-          (INIClass *)a2,
-          *(uint8_t **)(unsigned int *)((char *)&v44 + 3),
-          (uint8_t *)((char *)&v44),
-          (char *)v44.Count,
-          (char *)v44.CapacityIncrement,
-          v45)
+  if ( !/*0x52445c*/
+          ((INIClass*)((INIClass *)a2))->GetString(/*0x52445c*/ *(uint8_t **)(unsigned int *)((char *)&v44 + 3), (uint8_t *)((char *)&v44), (char *)v44.Count, (char *)v44.CapacityIncrement, v45)
     || (v20 = VocClass::FindIndex((VocClass *)String), v20 == -1) )
   {
     v20 = v19; /*0x52445e*/
@@ -962,7 +947,7 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
 
   BuildingTypeClass::ProcessPower((int)this, a2); /*0x524849*/
   Power::TimerProcess(this->Pip[0]); /*0x524857*/
-  Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)this->Sequence[0], 1512); /*0x52486a*/
+  ((Checksummer*)((Checksummer *)a2))->Add_Buffer((uint8_t *)this->Sequence[0], 1512); /*0x52486a*/
   Power::TimerProcess(this->FireUp); /*0x524878*/
   Power::TimerProcess(this->FireProne); /*0x524886*/
   Power::TimerProcess(this->VoiceComment[4]); /*0x524894*/

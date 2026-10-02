@@ -66,7 +66,7 @@ LABEL_13:
       {
         v14 = (int)(__2_YAPAXI_Z(0x40u));
         if ( v14 ) /*0x502250*/
-          v15 = (int)(WaypointPathClass::Construct(v14, v13)); /*0x502255*/
+          v15 = (int)(((WaypointPathClass*)v14)->Construct(v13)); /*0x502255*/
         else
           v15 = 0; /*0x50225c*/
         (&this->padding_18)[v13 + 114] = v15; /*0x50225e*/

@@ -56,7 +56,7 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
     *(unsigned int *)(v10 + 12) = 0; /*0x410d38*/
     *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x410d3b*/
     *(unsigned int *)(v10 + 16) = 2; /*0x410d41*/
-    Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v12 * v11); /*0x410d48*/
+    ((Buffer*)((Buffer *)(v10 + 20)))->Init(0, 2 * v12 * v11); /*0x410d48*/
     *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x410d4d*/
     v13 = (void *)v10; /*0x410d53*/
   }
@@ -184,7 +184,7 @@ bool BSurface::CreateTripleBuffer()
           v13[2] = v15; /*0x7b8dcb*/
           v13[3] = 0; /*0x7b8dce*/
           *v13 = (unsigned int)(&XSurface_Vtable); /*0x7b8dd5*/
-          Buffer::Init(v13 + 5, 0, v15 * v16 * v17); /*0x7b8ddb*/
+          ((Buffer*)(v13 + 5))->Init(0, v15 * v16 * v17); /*0x7b8ddb*/
           *v13 = (unsigned int)(&BSurface_Vtable); /*0x7b8de0*/
         }
         else
@@ -207,7 +207,7 @@ bool BSurface::CreateTripleBuffer()
           v18[2] = v20; /*0x7b8e29*/
           v18[3] = 0; /*0x7b8e2c*/
           *v18 = (unsigned int)(&XSurface_Vtable); /*0x7b8e33*/
-          Buffer::Init(v18 + 5, 0, v20 * v21 * v22); /*0x7b8e39*/
+          ((Buffer*)(v18 + 5))->Init(0, v20 * v21 * v22); /*0x7b8e39*/
           *v18 = (unsigned int)(&BSurface_Vtable); /*0x7b8e3e*/
         }
         else
@@ -268,7 +268,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
     *(unsigned int *)(v10 + 12) = 0; /*0x7bc9c8*/
     *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x7bc9cb*/
     *(unsigned int *)(v10 + 16) = 2; /*0x7bc9d1*/
-    Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v12 * v11); /*0x7bc9d8*/
+    ((Buffer*)((Buffer *)(v10 + 20)))->Init(0, 2 * v12 * v11); /*0x7bc9d8*/
     *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x7bc9dd*/
     v13 = (void *)v10; /*0x7bc9e3*/
   }

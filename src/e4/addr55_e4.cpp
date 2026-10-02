@@ -525,20 +525,20 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     ((Tactical*)(char *)v77)->SetCellTransform(0, v41, v47, v73, 0, 0); /*0x5510d3*/
     *(float *)&v48 = (float)v64; /*0x5510e5*/
     *(float *)&v42 = (float)v63; /*0x5510f4*/
-    Tactical::SetCellTransform((char *)v77, 1, v42, v48, v38, 0, 1065353216); /*0x5510f9*/
+    ((Tactical*)((char *)v77))->SetCellTransform(1, v42, v48, v38, 0, 1065353216); /*0x5510f9*/
     v39 = v72; /*0x5510fe*/
     *(float *)&v49 = (float)IDA_SHIDWORD(v62); /*0x55110f*/
     *(float *)&v43 = (float)(int)v62; /*0x55111e*/
-    Tactical::SetCellTransform((char *)v77, 2, v43, v49, v72, 1065353216, 0); /*0x551123*/
+    ((Tactical*)((char *)v77))->SetCellTransform(2, v43, v49, v72, 1065353216, 0); /*0x551123*/
     *(float *)&v50 = (float)v64; /*0x551135*/
     *(float *)&v44 = (float)v63; /*0x551144*/
-    Tactical::SetCellTransform((char *)v78, 0, v44, v50, v38, 0, 1065353216); /*0x551149*/
+    ((Tactical*)((char *)v78))->SetCellTransform(0, v44, v50, v38, 0, 1065353216); /*0x551149*/
     *(float *)&v51 = (float)IDA_SHIDWORD(v67); /*0x55115e*/
     *(float *)&v45 = (float)(int)v67; /*0x55116d*/
-    Tactical::SetCellTransform((char *)v78, 1, v45, v51, v39, 1065353216, 1065353216); /*0x551172*/
+    ((Tactical*)((char *)v78))->SetCellTransform(1, v45, v51, v39, 1065353216, 1065353216); /*0x551172*/
     *(float *)&v52 = (float)IDA_SHIDWORD(v62); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
-    Tactical::SetCellTransform((char *)v78, 2, v46, v52, v39, 1065353216, 0); /*0x551198*/
+    ((Tactical*)((char *)v78))->SetCellTransform(2, v46, v52, v39, 1065353216, 0); /*0x551198*/
     ((StructTable *)(dword_8A0E10))->Append((void *)(v77)); /*0x5511ab*/
 // 0x4a3840
     return ((StructTable *)(dword_8A0E10))->Append((void *)(v78)); /*0x5511be*/
@@ -2220,12 +2220,12 @@ void GameFrameLoop()
     if ( byte_A8EBA5 ) /*0x55d418*/
     {
       if ( v2 == -1 ) /*0x55d41d*/
-        Theme::QueueSong((int)&unk_A83D10, -2); /*0x55d421*/
+        ((Theme*)((int)&unk_A83D10))->QueueSong(-2); /*0x55d421*/
     }
     else if ( v2 != -3 ) /*0x55d426*/
     {
       ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x55d42f*/
-      Theme::QueueSong((int)&unk_A83D10, -3); /*0x55d43b*/
+      ((Theme*)((int)&unk_A83D10))->QueueSong(-3); /*0x55d43b*/
     }
   }
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x55d447*/
@@ -2403,7 +2403,7 @@ void GameFrameLoop()
     Event::Dispatch(); /*0x55d835*/
     UpdateChronosphereEffect(); /*0x55d83a*/
     (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55d847*/
-    TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55d84f*/
+    ((TacticalMap*)((GScreenClass *)&dword_87F7E8))->Redraw(); /*0x55d84f*/
     SyncDelay::Start((SyncDelay *)v43); /*0x55d854*/
     byte_ABCD58 = 0; /*0x55d866*/
     return byte_A8E9A0 == 0; /*0x55d877*/
@@ -2423,7 +2423,7 @@ void GameFrameLoop()
     if ( ((uint8_t)dword_A8ED84 & 7) == 7 && *(unsigned int *)&dword_A8B238 == 4 ) /*0x55d8dc*/
       IPXManagerClass::ProcessQueue(&unk_A8E9C0); /*0x55d8e3*/
     MarkAllFootOccupancies(v43); /*0x55d8e8*/
-    TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55d8f2*/
+    ((TacticalMap*)((GScreenClass *)&dword_87F7E8))->Redraw(); /*0x55d8f2*/
     v21 = dword_A8D5F8; /*0x55d8f7*/
   }
   byte_A8ED9D = 0; /*0x55d903*/
@@ -2511,7 +2511,7 @@ void GameFrameLoop()
       CCFileClass::Read(&dword_A8D58C, &dword_ABCDFC, 4); /*0x55db98*/
       CCFileClass::Read(&dword_A8D58C, &dword_ABCE00, 4); /*0x55dba9*/
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x55dbb4*/
-      TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x55dbbe*/
+      ((TacticalMap*)((GScreenClass *)&dword_87F7E8))->Redraw(); /*0x55dbbe*/
     }
   }
   ProcessAutoSave(&stru_8A0390); /*0x55dbc8*/

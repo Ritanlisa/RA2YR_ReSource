@@ -317,7 +317,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         aP2 -= v9; /*0x632eb4*/
         *((unsigned int *)this + 80) -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
-          return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632ec1*/
+          return v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2); /*0x632ec1*/
         BigInt::RSAOperation( /*0x632ed6*/
           *(unsigned int *)&this->__pad_24[20],
           (char *)&this->field_3C,
@@ -338,12 +338,12 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         else
           v7 = 0; /*0x632e2b*/
         v8 = BigInt::DecryptBlock(v6, (char *)v12, v7, (char *)&this->field_3C); /*0x632e57*/
-        v5 = Delegate::Dispatch((Pipe *)this, (int)&this->field_3C, v8); /*0x632e65*/
+        v5 = ((Delegate*)((Pipe *)this))->Dispatch((int)&this->field_3C, v8); /*0x632e65*/
         ((GameClass *)((GameClass *)&this->field_14))->processFrame((int)v12, 56); /*0x632e6d*/
       }
       this->__pad_0[12] = 0; /*0x632eea*/
     }
-    return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632f0a*/
+    return v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2); /*0x632f0a*/
   }
   return Delegate::Dispatch((Pipe *)this, (int)Src, aP2); /*0x632f02*/
 
@@ -528,7 +528,7 @@ int GameClass::ReadVersionFile()
 
   if ( (this->__pad_3D[7] & 8) == 0 ) /*0x74f96a*/
   {
-    RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
+    ((RawFileClass*)&v5)->Construct((int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74f988*/
     {
       ((FileClass *)(&v5))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74f99b*/
@@ -569,7 +569,7 @@ int GameClass::ReadVersionFile2()
 
   if ( (this->__pad_3D[7] & 8) == 0 ) /*0x74fa2a*/
   {
-    RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
+    ((RawFileClass*)&v5)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74fa48*/
     {
       ((FileClass *)(&v5))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74fa5b*/
@@ -606,7 +606,7 @@ void GameClass::ReadVersionString()
 
   RawFileClass v2; // [esp+10h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(&v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
+  ((RawFileClass*)&v2)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fc92*/
   if ( (uint8_t)((FileClass *)(&v2))->Open(0) ) /*0x74fc9e*/
   {
     ((FileClass *)(&v2))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74fcb1*/

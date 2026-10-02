@@ -754,7 +754,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     {
       if ( (!v19 || v19 <= j) && (uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(v19) ) /*0x640ba6*/
       {
-        v56 = (unsigned int *)*ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v65, v19); /*0x640bc8*/
+        v56 = (unsigned int *)*((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&v65, v19); /*0x640bc8*/
         v20 = (IDA_SHIWORD(v56) << 8) + 128; /*0x640bde*/
         v21 = ((int16_t)v56 << 8) + 128; /*0x640be4*/
         ((Coord *)((Coord *)&v71))->Subtract(v21, v20, 0); /*0x640bec*/
@@ -811,7 +811,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     v73 = v66 - 2 * v71; /*0x640dee*/
     v33 = (char *)RA2_OPNEW(0x24u); /*0x640df2*/
     if ( v33 ) /*0x640dfc*/
-      v34 = DSurface::Construct(v33, v65, v66, 1, 0); /*0x640e13*/
+      v34 = ((DSurface*)v33)->Construct(v65, v66, 1, 0); /*0x640e13*/
     else
       v34 = 0; /*0x640e17*/
     v35 = (unsigned int *)FileSHP; /*0x640e19*/
@@ -837,7 +837,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
         {
           if ( (uint8_t)((ScenarioClass *)(v39))->Is_Waypoint_Valid(v38) ) /*0x640e8b*/
           {
-            v60 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &a5, v38); /*0x640eb0*/
+            v60 = *((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&a5, v38); /*0x640eb0*/
             v41 = (IDA_SHIWORD(v60) << 8) + 128; /*0x640ec2*/
             ((Coord *)((Coord *)&v74))->Subtract(((int16_t)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
@@ -2117,7 +2117,7 @@ Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
   Block->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6dc480*/
   Block->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6dc487*/
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x6dc498*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
     __3_YAXPAX_Z(Block); /*0x6dc4a5*/
   return Block->__pad_0; /*0x6dc4af*/

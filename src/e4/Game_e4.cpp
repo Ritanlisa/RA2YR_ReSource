@@ -494,7 +494,7 @@ int Game::MakeScreenshot(int a1)
         do /*0x537d6d*/
         {
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
-          v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
+          v7 = ((CCFileClass*)&v19)->Construct(Buffer); /*0x537d27*/
           v8 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0)); /*0x537d3b*/
           *(unsigned int *)v19.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x537d3d*/
           v21 = 0; /*0x537d48*/
@@ -503,7 +503,7 @@ int Game::MakeScreenshot(int a1)
           ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
-        CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
+        ((CCFileClass*)&v16)->Construct(Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.CDFileClass, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
         *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x537d9b*/
         v18 = 0; /*0x537da3*/
@@ -545,7 +545,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   v6 = v5; /*0x5b70c0*/
   if ( v5 ) /*0x5b70ca*/
   {
-    Waypoint::InitInvalid((Waypoint *)(v5 + 40)); /*0x5b70d3*/
+    ((Waypoint*)((Waypoint *)(v5 + 40)))->InitInvalid(); /*0x5b70d3*/
     BulkCharToWide((unsigned short *)v6, (uint8_t *)unk_A8B380, -1); /*0x5b70e0*/
     *(unsigned int *)(v6 + 75) = dword_A8B3AC; /*0x5b70ea*/
     *(unsigned int *)(v6 + 83) = dword_A8B394; /*0x5b70f3*/
@@ -567,7 +567,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   v9 = v8; /*0x5b715f*/
   if ( v8 ) /*0x5b7166*/
   {
-    Waypoint::InitInvalid((Waypoint *)(v8 + 40)); /*0x5b716f*/
+    ((Waypoint*)((Waypoint *)(v8 + 40)))->InitInvalid(); /*0x5b716f*/
     wcscpy((wchar_t *)v9, (const wchar_t *)(this + 32)); /*0x5b7179*/
     *(unsigned int *)(v9 + 75) = *(unsigned int *)(this + 76); /*0x5b7184*/
     *(unsigned int *)(v9 + 83) = *(unsigned int *)(this + 72); /*0x5b718a*/
@@ -696,7 +696,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
   HIBYTE(v11[34]) = stru_A8B250.__pad_0[32]; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])); /*0x5ba85e*/
-  CCFileClass::Construct(&v13, (char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88)); /*0x5ba87f*/
+  ((CCFileClass*)&v13)->Construct((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88)); /*0x5ba87f*/
   *(int *)((char *)&v11[39] + 2) = CCFileClass::GetSize(&v13); /*0x5ba896*/
   strncpy( /*0x5ba8b3*/
     (char *)&v11[40] + 3,
@@ -857,7 +857,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     DeleteAndZero((void **)&OptionSessionClass); /*0x5dbbd6*/
   }
   if ( (v2 & 1) != 0 ) /*0x5dbbde*/
-    DeleteAndZero::Alt(&v17); /*0x5dbbe4*/
+    ((DeleteAndZero*)&v17)->Alt(); /*0x5dbbe4*/
   v16 = dword_A8BB04; /*0x5dbc0a*/
   v14 = (uint8_t)dword_A8BB08; /*0x5dbc0b*/
   v12 = dword_A8BB0C; /*0x5dbc0c*/
@@ -1013,7 +1013,7 @@ LABEL_13:
     if ( g_AsyncIOState ) /*0x657ba2*/
     {
       Debug::Log(); /*0x657ba9*/
-      Mixer::ReleaseChannel((Mixer *)this + 1328); /*0x657bb9*/
+      ((Mixer*)((Mixer *)this + 1328))->ReleaseChannel(); /*0x657bb9*/
       v10 = (unsigned int *)PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1784), 0x2000, 1.0, 0); /*0x657bd8*/
       result = SetAudioSource((int)(unsigned int *)this + 5312, v10, 0); /*0x657be1*/
       *((unsigned int *)this + 1323) = 4; /*0x657be6*/
@@ -1045,7 +1045,7 @@ LABEL_22:
     RadarClass::SetViewMode((int *)this->__pad_0, v11, 0); /*0x657c27*/
     Game_Process(); /*0x657c2c*/
     v16 = 0; /*0x657c37*/
-    Mixer::ReleaseChannel((Mixer *)this + 1328); /*0x657c3d*/
+    ((Mixer*)((Mixer *)this + 1328))->ReleaseChannel(); /*0x657c3d*/
     v12 = (unsigned int *)PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1788), 0x2000, 1.0, 0); /*0x657c5b*/
     SetAudioSource((int)(unsigned int *)this + 5312, v12, 0); /*0x657c64*/
     result = RadarClass::SetGlobal(**(RadarClass ***)&DSurface_ViewBounds.__pad_FC[324]); /*0x657c71*/
@@ -1650,7 +1650,7 @@ void Game::EncodeGameSetupState(char * Buffer)
     DeleteAndZero(&v23); /*0x77e4a6*/
   }
   if ( (v2 & 1) != 0 ) /*0x77e4ae*/
-    DeleteAndZero::Alt(&v22); /*0x77e4b4*/
+    ((DeleteAndZero*)&v22)->Alt(); /*0x77e4b4*/
   v21 = dword_A8BB04; /*0x77e4da*/
   v19 = (uint8_t)dword_A8BB08; /*0x77e4db*/
   v17 = dword_A8BB0C; /*0x77e4dc*/
@@ -1716,7 +1716,7 @@ void Game::EncodeGameSetupState(char * Buffer)
 LABEL_16:
       ((WideString *)((wchar_t **)&v23))->Assign(*(wchar_t **)(dword_A8DA78 + 4 * v5)); /*0x77e635*/
       ToWideStringCharAlt((char **)&v24, (const wchar_t **)&v23); /*0x77e650*/
-      DeleteAndZero::Alt(&v23); /*0x77e659*/
+      ((DeleteAndZero*)&v23)->Alt(); /*0x77e659*/
       v20 = Option2; /*0x77e66d*/
       v18 = Option; /*0x77e672*/
       v16 = PlayerColor; /*0x77e673*/
@@ -2598,7 +2598,7 @@ int Game::CreateAIPlayer()
   v1 = __2_YAPAXI_Z(0x85u); /*0x796dea*/
   v2 = v1; /*0x796def*/
   if ( v1 ) /*0x796df8*/
-    Waypoint::InitInvalid((Waypoint *)(v1 + 40)); /*0x796dfd*/
+    ((Waypoint*)((Waypoint *)(v1 + 40)))->InitInvalid(); /*0x796dfd*/
   else
     v2 = 0; /*0x796e04*/
   BulkCharToWide((unsigned short *)v2, (uint8_t *)aOlCruddy, -1); /*0x796e0f*/
@@ -2648,7 +2648,7 @@ int Game::CreateAIPlayer_Potato()
   v1 = __2_YAPAXI_Z(0x85u); /*0x796eda*/
   v2 = v1; /*0x796edf*/
   if ( v1 ) /*0x796ee8*/
-    Waypoint::InitInvalid((Waypoint *)(v1 + 40)); /*0x796eed*/
+    ((Waypoint*)((Waypoint *)(v1 + 40)))->InitInvalid(); /*0x796eed*/
   else
     v2 = 0; /*0x796ef4*/
   BulkCharToWide((unsigned short *)v2, (uint8_t *)aPotato, -1); /*0x796eff*/

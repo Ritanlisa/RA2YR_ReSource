@@ -68,16 +68,11 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   char Destination[64]; // [esp+28h] [ebp-40h] BYREF
 
   _ESI = this; /*0x6442de*/
-  INIClass::ResetSection((INIClass *)aP1); /*0x6442e3*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6442e3*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI(aP1) ) /*0x6442eb*/
     return 0; /*0x644622*/
-  INIClass::GetString( /*0x64430f*/
-    (INIClass *)aP1,
-    (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->,
-    aHoldswhat,
-    &g_INI_DefaultBuffer,
-    Destination,
-    64);
+  /*0x64430f*/
+    ((INIClass*)((INIClass *)aP1))->GetString(/*0x64430f*/ (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->, aHoldswhat, &g_INI_DefaultBuffer, Destination, 64);
   v3 = (gamemd::ParticleTypeClass **)((int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx()));
   v4 = ((INIClass*)_ESI)->[0]; /*0x64431d*/
   ((ParticleSystemTypeClass*)_ESI)-> = (IUnknown *)v3; /*0x644323*/
@@ -139,13 +134,8 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                                                 (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24,
                                                 aLifetime,
                                                 ParticleSystemTypeClass_field_0x2B8);
-  INIClass::GetString( /*0x644416*/
-    (INIClass *)aP1,
-    (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24,
-    aBehaveslike,
-    &g_INI_DefaultBuffer,
-    Destination,
-    64);
+  /*0x644416*/
+    ((INIClass*)((INIClass *)aP1))->GetString(/*0x644416*/ (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24, aBehaveslike, &g_INI_DefaultBuffer, Destination, 64);
   v45 = 0; /*0x64441b*/
   v44 = (int)off_836EE0; /*0x644423*/
   while ( 1 ) /*0x64443f*/
@@ -339,7 +329,7 @@ float * ParticleSystemTypeClass::ReadXYZFromINI(float * a2, uint8_t * a3, uint8_
   float v11; // [esp+Ch] [ebp-204h]
   char String[512]; // [esp+10h] [ebp-200h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
+  if ( ((INIClass*)((INIClass *)this))->GetString(a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
   {
     v5 = strtok(String, Str); /*0x476396*/
     atof(v5); /*0x47639c*/

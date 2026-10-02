@@ -375,7 +375,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   }
   BYTE1(Block->waypoints[3]) = 0; /*0x763ec1*/
   Block->waypoints[2] = 0; /*0x763ec5*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x763ecc*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(Block); /*0x763ed9*/
   return Block; /*0x763ee3*/

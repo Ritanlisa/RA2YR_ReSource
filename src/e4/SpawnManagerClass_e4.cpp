@@ -208,7 +208,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   *((unsigned char *)this + 69) = 0; /*0x6b70e3*/
   *((unsigned int *)this + 16) = 0; /*0x6b70e7*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6b70ee*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x6b70ee*/
 
 }
 } // namespace ra2

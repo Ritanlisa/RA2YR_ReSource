@@ -108,22 +108,22 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   *((unsigned int *)this + 3) = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
-  if ( String::Length((String *)&v10) ) /*0x5d03bc*/
+  if ( ((String*)((String *)&v10))->Length() ) /*0x5d03bc*/
     ((String *)((String *)this))->Reassign((const char **)&v10); /*0x5d03cc*/
   v4 = String::Tokenize(aP1, v3, Str, (void **)&v10); /*0x5d03e7*/
-  if ( String::Length((String *)&v10) ) /*0x5d03e9*/
+  if ( ((String*)((String *)&v10))->Length() ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
     *((unsigned int *)this + 1) = v5; /*0x5d03fb*/
   }
   v6 = String::Tokenize(aP1, v4, Str, (void **)&v10); /*0x5d0414*/
-  if ( String::Length((String *)&v10) ) /*0x5d0416*/
+  if ( ((String*)((String *)&v10))->Length() ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
     *((unsigned int *)this + 2) = v7; /*0x5d0428*/
   }
   String::Tokenize(aP1, v6, Str, (void **)&v10); /*0x5d0438*/
-  if ( String::Length((String *)&v10) ) /*0x5d0441*/
+  if ( ((String*)((String *)&v10))->Length() ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
     *((unsigned int *)this + 3) = v8; /*0x5d0453*/
@@ -693,8 +693,8 @@ unsigned int String::ComputeHash(void *a1_1)
   unsigned int i; // edi
   char *v4; // eax
 
-  v2 = String::Length(this); /*0x5e262c*/
-  for ( i = 0; i < String::Length(this); ++i ) /*0x5e2630*/
+  v2 = ((String*)this)->Length(); /*0x5e262c*/
+  for ( i = 0; i < ((String*)this)->Length(); ++i ) /*0x5e2630*/
   {
     v4 = ((String *)(this))->GetOrEmpty(); /*0x5e263b*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x5e2650*/

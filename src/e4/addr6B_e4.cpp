@@ -429,9 +429,8 @@ AbstractClass * * SlaveManager_InitGrid()
           }
           if ( (uint8_t)((MapSeed*)(MapSeed *)&v40.MapSeed_field_0x10)->IsCellInBounds() ) /*0x6b2eb1*/
           {
-            v29 = (ObjectClass *)CellCoord::To_CellObj( /*0x6b2ec4*/
-                                   (CellCoord *)&stru_87F5F0.__pad_58[416],
-                                   (int16_t *)&v40.MapSeed_field_0x10);
+            v29 = (ObjectClass *)/*0x6b2ec4*/
+                                   ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x6b2ec4*/ (int16_t *)&v40.MapSeed_field_0x10);
             if ( !System_Init_6B2520(v29) ) /*0x6b2ecd*/
               v30[4] = 1; /*0x6b2eda*/
           }
@@ -1505,7 +1504,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
     if ( *(unsigned char *)(v4 + 556) ) /*0x6b54b2*/
     {
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x6b54dc*/
-      CCFileClass::Construct(v5, Buffer); /*0x6b54ed*/
+      ((CCFileClass*)v5)->Construct(Buffer); /*0x6b54ed*/
       *(unsigned int *)(v4 + 164) = ((CCFileClass *)(v5))->ReadEntireFile(); /*0x6b54ff*/
       v5[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
@@ -2226,7 +2225,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
   }
   while ( v7 ); /*0x6b9d2b*/
   v60[0] = 0; /*0x6b9d3b*/
-  CCFileClass::Construct(v55, Source); /*0x6b9d42*/
+  ((CCFileClass*)v55)->Construct(Source); /*0x6b9d42*/
   v9 = DecodeFrameSHP(0, 0); /*0x6b9d59*/
   v10 = (unsigned int *)v9; /*0x6b9d5d*/
   if ( v9 ) /*0x6b9d5f*/
@@ -2830,7 +2829,7 @@ LABEL_2:
   {
     if ( !v8 )
       break;
-    *(unsigned int *)v9 = String::Trim(v8);
+    *(unsigned int *)v9 = ((String*)v8)->Trim();
     ++v7;
     v9 += 4;
     v8 = strtok(0, (ObjectClass *)&stru_830620[1012]);
@@ -2845,7 +2844,7 @@ LABEL_2:
     goto LABEL_374;
   unsigned int * v11 = (unsigned int *)operator new(0x24u);
   if ( v11 )
-    v12 = (CCINIClass *)RawFileClass::Construct(v11, (RawFileClass *)&stru_826420[36]);
+    v12 = (CCINIClass *)((RawFileClass*)v11)->Construct((RawFileClass *)&stru_826420[36]);
   CCINIClass *v12 = 0;
   aP1 = v12;
   ((CCINIClass *)(&stru_87C374[44364]))->Load((MultiplayerGameMode *)v12, 0, 0);
@@ -2881,13 +2880,7 @@ LABEL_2:
       Network::GetField(&HouseClass_Player[44148], v14);
   }
   memset(String_v, 0, sizeof(String_v));
-  if ( INIClass::GetString(
-         (uint8_t ***)&stru_87C374[44364],
-         (INIClass *)&stru_830620[10816],
-         (uint8_t *)&stru_830620[10732],
-         0,
-         String_v,
-         512)
+  if ( ((INIClass*)((uint8_t ***)&stru_87C374[44364]))->GetString((INIClass *)&stru_830620[10816], (uint8_t *)&stru_830620[10732], 0, String_v, 512)
     && String_v
     && strlen(String_v[0].__pad_0) )
   {
@@ -3460,18 +3453,12 @@ LABEL_56:
   SetSoundWarning(-2);
   unsigned int * v183 = (unsigned int *)operator new(0x28u);
   if ( v183 )
-    *(unsigned int *)&stru_87C374[35472] = MixFileClass::FromFile(
-                                                  v183,
-                                                  (MixFileClass *)&stru_830620[67388],
-                                                  (int)&stru_87C374[42508]);
+    *(unsigned int *)&stru_87C374[35472] = ((MixFileClass*)v183)->FromFile((MixFileClass *)&stru_830620[67388], (int)&stru_87C374[42508]);
   else
     *(unsigned int *)&stru_87C374[35472] = 0;
   unsigned int * v184 = (unsigned int *)operator new(0x28u);
   if ( v184 )
-    *(unsigned int *)&stru_87C374[35468] = MixFileClass::FromFile(
-                                                  v184,
-                                                  (MixFileClass *)&stru_830620[67372],
-                                                  (int)&stru_87C374[42508]);
+    *(unsigned int *)&stru_87C374[35468] = ((MixFileClass*)v184)->FromFile((MixFileClass *)&stru_830620[67372], (int)&stru_87C374[42508]);
   else
     *(unsigned int *)&stru_87C374[35468] = 0;
   SetSoundWarning(v182);
@@ -5389,8 +5376,8 @@ unsigned int E4Recv_6B94E0::sub_6B94E0()
   unsigned int i; // edi
   char *v4; // eax
 
-  v2 = String::Length((String *)this); /*0x6b94ec*/
-  for ( i = 0; i < String::Length((String *)this); ++i ) /*0x6b94f0*/
+  v2 = ((String*)((String *)this))->Length(); /*0x6b94ec*/
+  for ( i = 0; i < ((String*)((String *)this))->Length(); ++i ) /*0x6b94f0*/
   {
     v4 = ((String *)((String *)this))->GetOrEmpty(); /*0x6b94fb*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x6b9510*/

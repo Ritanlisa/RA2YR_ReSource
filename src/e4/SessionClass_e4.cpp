@@ -380,25 +380,25 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       {
         unknown_libname_73(&v43); /*0x5cf18a*/
         v15 = String::Tokenize((String *)&((char *)&v43), 0, Str, &v43.AbstractClass); /*0x5cf1a7*/
-        if ( String::Length((String *)&v43) ) /*0x5cf1a9*/
+        if ( ((String*)((String *)&v43))->Length() ) /*0x5cf1a9*/
         {
           __1_Timevec_std__QAE_XZ((const char **)&v43); /*0x5cf1b6*/
           uniqueId->Config[0] = v16; /*0x5cf1bb*/
         }
         v17 = String::Tokenize((String *)&((char *)&v43), v15, Str, &v43.AbstractClass); /*0x5cf1d6*/
-        if ( String::Length((String *)&v43) ) /*0x5cf1d8*/
+        if ( ((String*)((String *)&v43))->Length() ) /*0x5cf1d8*/
         {
           __1_Timevec_std__QAE_XZ((const char **)&v43); /*0x5cf1e5*/
           uniqueId->Config[1] = v18; /*0x5cf1ea*/
         }
         v19 = String::Tokenize((String *)&((char *)&v43), v17, Str, &v43.AbstractClass); /*0x5cf205*/
-        if ( String::Length((String *)&v43) ) /*0x5cf207*/
+        if ( ((String*)((String *)&v43))->Length() ) /*0x5cf207*/
         {
           __1_Timevec_std__QAE_XZ((const char **)&v43); /*0x5cf214*/
           uniqueId->Config[2] = v20; /*0x5cf219*/
         }
         String::Tokenize((String *)&((char *)&v43), v19, Str, &v43.AbstractClass); /*0x5cf22b*/
-        if ( String::Length((String *)&v43) ) /*0x5cf234*/
+        if ( ((String*)((String *)&v43))->Length() ) /*0x5cf234*/
         {
           __1_Timevec_std__QAE_XZ((const char **)&v43); /*0x5cf241*/
           uniqueId->Config[3] = v21; /*0x5cf246*/
@@ -425,7 +425,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
         v26 = __2_YAPAXI_Z(0x10u); /*0x5cf306*/
         if ( !v26 ) /*0x5cf310*/
           goto LABEL_17; /*0x5cf310*/
-        v27 = String::SplitComma(v26, (const char **)&((char *)&v43)); /*0x5cf31e*/
+        v27 = ((String*)v26)->SplitComma((const char **)&((char *)&v43)); /*0x5cf31e*/
         if ( !v27 ) /*0x5cf322*/
           goto LABEL_17; /*0x5cf322*/
         v28 = *(unsigned int *)(((char *)&v43) + 52); /*0x5cf328*/
@@ -620,7 +620,7 @@ CampaignClass * * SessionClass::loadSettings()
     v3 = *(DeleteAndZero **)(this->Handle[2] + 4 * i); /*0x5d0084*/
     if ( v3 ) /*0x5d0089*/
     {
-      DeleteAndZero::Alt(v3 + 1); /*0x5d008e*/
+      ((DeleteAndZero*)(v3 + 1))->Alt(); /*0x5d008e*/
       __3_YAXPAX_Z(v3); /*0x5d0094*/
     }
   }
@@ -671,7 +671,7 @@ CampaignClass * * SessionClass::loadSettings()
     --v10; /*0x5d015b*/
   }
   while ( v10 ); /*0x5d015c*/
-  DeleteAndZero::Alt((DeleteAndZero *)this->unknown_10); /*0x5d0161*/
+  ((DeleteAndZero*)((DeleteAndZero *)this->unknown_10))->Alt(); /*0x5d0161*/
   DeleteAndZero((ObjectClass *)this->unknown_0C); /*0x5d0169*/
   DeleteAndZero((ObjectClass *)this->unknown_08); /*0x5d0170*/
   DeleteAndZero((ObjectClass *)this->MPGameMode); /*0x5d0178*/
@@ -1090,7 +1090,7 @@ SessionClass::SessionClass()
   v18 = 8; /*0x6971ca*/
   do /*0x6971e5*/
   {
-    Waypoint::InitInvalid(v8); /*0x6971d4*/
+    ((Waypoint*)v8)->InitInvalid(); /*0x6971d4*/
     v8 += 104; /*0x6971dd*/
     --v18; /*0x6971e1*/
   }
@@ -1102,7 +1102,7 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 420) = &vt_DynamicVectorClass; /*0x697206*/
   *((unsigned int *)this + 425) = 10; /*0x697210*/
   *((unsigned int *)this + 424) = 0; /*0x697216*/
-  Waypoint::InitInvalid((unsigned char *)this + 2276); /*0x69721c*/
+  ((Waypoint*)((unsigned char *)this + 2276))->InitInvalid(); /*0x69721c*/
   *((unsigned int *)this + 573) = 0; /*0x697227*/
   *((unsigned int *)this + 574) = 0; /*0x69722d*/
   *((unsigned char *)this + 2300) = 1; /*0x697233*/
@@ -1111,10 +1111,10 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 577) = 10; /*0x69724a*/
   *((unsigned int *)this + 576) = 0; /*0x697250*/
   SessionClass::saveSettings((unsigned char *)this + 2600); /*0x697256*/
-  Waypoint::InitInvalid((unsigned char *)this + 7876); /*0x697261*/
+  ((Waypoint*)((unsigned char *)this + 7876))->InitInvalid(); /*0x697261*/
   CCFileClass::Construct3((int)((unsigned char *)this + 9044)); /*0x69726c*/
-  Waypoint::InitInvalid((unsigned char *)this + 9160); /*0x697277*/
-  Waypoint::InitInvalid((unsigned char *)this + 9676); /*0x697282*/
+  ((Waypoint*)((unsigned char *)this + 9160))->InitInvalid(); /*0x697277*/
+  ((Waypoint*)((unsigned char *)this + 9676))->InitInvalid(); /*0x697282*/
   *((unsigned int *)this + 2564) = 0; /*0x69728c*/
   *((unsigned int *)this + 2565) = 0; /*0x697292*/
   *((unsigned char *)this + 10264) = 1; /*0x697298*/
@@ -1157,14 +1157,14 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 2635) = &vt_DynamicVectorClass; /*0x69738a*/
   *((unsigned int *)this + 2640) = 10; /*0x697394*/
   *((unsigned int *)this + 2639) = 0; /*0x69739a*/
-  Waypoint::InitInvalid((unsigned char *)this + 10604); /*0x6973a0*/
-  Waypoint::InitInvalid((unsigned char *)this + 10616); /*0x6973ab*/
-  Waypoint::InitInvalid((unsigned char *)this + 10632); /*0x6973b6*/
+  ((Waypoint*)((unsigned char *)this + 10604))->InitInvalid(); /*0x6973a0*/
+  ((Waypoint*)((unsigned char *)this + 10616))->InitInvalid(); /*0x6973ab*/
+  ((Waypoint*)((unsigned char *)this + 10632))->InitInvalid(); /*0x6973b6*/
   v9 = (unsigned char *)this + 10644; /*0x6973bb*/
   v10 = 8; /*0x6973c1*/
   do /*0x6973d1*/
   {
-    Waypoint::InitInvalid(v9); /*0x6973c8*/
+    ((Waypoint*)v9)->InitInvalid(); /*0x6973c8*/
     v9 += 12; /*0x6973cd*/
     --v10; /*0x6973d0*/
   }
@@ -1555,7 +1555,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   v60.INIClass_field_3C = 0; /*0x6999ca*/
   *(unsigned int *)v60.__pad_0 = &vt_INIClass; /*0x6999ce*/
   (*(void (**)(int *))(v3 + 12))(v4); /*0x6999d6*/
-  CCFileClass::Construct(&v63, aMissionsmdPkt); /*0x6999e2*/
+  ((CCFileClass*)&v63)->Construct(aMissionsmdPkt); /*0x6999e2*/
   if ( (uint8_t)((CCFileClass *)(&v63))->Open(0) ) /*0x6999ec*/
   {
     ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699a03*/
@@ -1566,7 +1566,7 @@ AbstractClass * * SessionClass::LoadMissionList()
       while ( 1 ) /*0x699a3f*/
       {
         StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v60.__pad_0, g_INI_Key_MultiMaps, v6); /*0x699a3f*/
-        if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, StringByIndex, &g_INI_DefaultBuffer, v66, 64) ) /*0x699a4e*/
+        if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, StringByIndex, &g_INI_DefaultBuffer, v66, 64) ) /*0x699a4e*/
         {
           v8 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699a5c*/
           if ( v8 ) /*0x699a66*/
@@ -1610,7 +1610,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           for ( i = 0; i < v15; ++i )
           {
             v17 = (uint8_t *)INIClass::GetStringByIndex(v60.__pad_0, g_INI_Key_MultiMaps, i); /*0x699b90*/
-            if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, v17, &g_INI_DefaultBuffer, v66, 64) )
+            if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, v17, &g_INI_DefaultBuffer, v66, 64) )
             {
               v18 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699bad*/
               v19 = v18 ? MapFile::LoadDescription(v18, (uint8_t ***)&v60, v66) : 0;
@@ -1684,7 +1684,7 @@ AbstractClass * * SessionClass::LoadMissionList()
                 for ( j = 0; j < v62; ++j ) /*0x699dfd*/
                 {
                   v33 = (uint8_t *)INIClass::GetStringByIndex(v60.__pad_0, g_INI_Key_MultiMaps, v32); /*0x699e1c*/
-                  if ( INIClass::GetString(&v60, g_INI_Key_MultiMaps, v33, &g_INI_DefaultBuffer, v66, 64) ) /*0x699e2b*/
+                  if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, v33, &g_INI_DefaultBuffer, v66, 64) ) /*0x699e2b*/
                   {
                     v34 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699e3d*/
                     if ( v34 ) /*0x699e47*/
@@ -1759,14 +1759,9 @@ AbstractClass * * SessionClass::LoadMissionList()
         v45 = FindFileData.cAlternateFileName; /*0x69a041*/
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x69a048*/
           v45 = FindFileData.cFileName; /*0x69a04f*/
-        INIClass::GetString( /*0x69a073*/
-          &v60,
-          (uint8_t *)&((char *)&stru_82BA00),
-          (uint8_t *)g_INI_Key_Name,
-          g_Str_No_Name,
-          v66,
-          64);
-        INIClass::GetString(&v60, (uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
+        /*0x69a073*/
+          ((INIClass*)&v60)->GetString(/*0x69a073*/ (uint8_t *)&((char *)&stru_82BA00), (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v66, 64);
+        ((INIClass*)&v60)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
         BulkCharToWide(v71, (uint8_t *)v66, -1); /*0x69a0aa*/
         v56[0] = INIClass::ReadBool_Overwrite( /*0x69a0c8*/
                    (int *)v60.__pad_0,
@@ -1891,7 +1886,7 @@ ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Sourc
   if ( a5 ) /*0x69ab14*/
   {
     ((String *)((String *)&Source))->Assign(a5); /*0x69ab1f*/
-    if ( String::Length((String *)&Source) ) /*0x69ab28*/
+    if ( ((String*)((String *)&Source))->Length() ) /*0x69ab28*/
     {
       unknown_libname_73(&aP4); /*0x69ab39*/
       for ( i = String::Tokenize((String *)&Source, 0, Str, (void **)&aP4); /*0x69ab58*/
@@ -1902,7 +1897,7 @@ ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Sourc
         String::TrimLeft((String *)&aP4, (const char **)&aP2); /*0x69ab75*/
         DeleteAndZero((ObjectClass *)&aP2); /*0x69ab7e*/
         ((String *)((String *)&aP3))->Assign(asc_830A14); /*0x69ab8c*/
-        String::TrimRight((String *)&aP4, (const char **)&aP3); /*0x69ab9a*/
+        ((String*)((String *)&aP4))->TrimRight((const char **)&aP3); /*0x69ab9a*/
         DeleteAndZero((ObjectClass *)&aP3); /*0x69aba3*/
         v21 = v10[2]; /*0x69aba8*/
         if ( v10[4] >= v21 ) /*0x69abb0*/

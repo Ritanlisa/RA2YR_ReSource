@@ -720,7 +720,7 @@ LABEL_75:
       goto LABEL_45;
     case 1344: /*0x5de7d6*/
       ReadChatMessage((wchar_t **)&v37, (HWND)lParam); /*0x5de7e3*/
-      DeleteAndZero::Alt(&v37); /*0x5de7ec*/
+      ((DeleteAndZero*)&v37)->Alt(); /*0x5de7ec*/
       if ( HIWORD(nIDDlgItem) != 1281 ) /*0x5de7fa*/
         return 0; /*0x5de7fa*/
       SendNetworkLobbyChatMessage(hDlg, (int)Math::InitDegToRad, 61680); /*0x5de80f*/
@@ -831,7 +831,7 @@ LABEL_16:
           int v4 = operator new(0x85u);
           int v5 = v4;
           if ( v4 )
-            Waypoint::InitInvalid((unsigned char *)(v4 + 40));
+            ((Waypoint*)((unsigned char *)(v4 + 40)))->InitInvalid();
           else
             v5 = 0;
           char * v12 = CharToWideString(&HouseClass_Player[39152]);
@@ -967,7 +967,7 @@ LABEL_55:
           int v20 = operator new(0x85u);
           int v21 = v20;
           if ( v20 )
-            Waypoint::InitInvalid((unsigned char *)(v20 + 40));
+            ((Waypoint*)((unsigned char *)(v20 + 40)))->InitInvalid();
           else
             v21 = 0;
           memset((void *)v21, 0, 0x84u);
@@ -1062,7 +1062,7 @@ LABEL_79:
           int v28 = operator new(0x85u);
           int v29 = v28;
           if ( v28 )
-            Waypoint::InitInvalid((unsigned char *)(v28 + 40));
+            ((Waypoint*)((unsigned char *)(v28 + 40)))->InitInvalid();
           else
             v29 = 0;
           memset((void *)v29, 0, 0x84u);
@@ -1359,7 +1359,7 @@ LABEL_230:
               int v73 = operator new(0x85u);
               int v74 = v73;
               if ( v73 )
-                Waypoint::InitInvalid((unsigned char *)(v73 + 40));
+                ((Waypoint*)((unsigned char *)(v73 + 40)))->InitInvalid();
               else
                 v74 = 0;
               char * v78 = CharToWideString(&HouseClass_Player[39152]);
@@ -1601,7 +1601,7 @@ LABEL_276:
                     int v93 = operator new(0x85u);
                     int v94 = v93;
                     if ( v93 )
-                      Waypoint::InitInvalid((unsigned char *)(v93 + 40));
+                      ((Waypoint*)((unsigned char *)(v93 + 40)))->InitInvalid();
                     else
                       v94 = 0;
                     memset((void *)v94, 0, 0x84u);
@@ -1958,7 +1958,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
     {
       ((WideString *)((wchar_t **)&v25))->Assign(i); /*0x5e8f93*/
       v12 = NetworkLobby::DeleteAndZero((NetworkLobby *)&v25); /*0x5e8fa5*/
-      DeleteAndZero::Alt(&v25); /*0x5e8fa7*/
+      ((DeleteAndZero*)&v25)->Alt(); /*0x5e8fa7*/
       if ( !v12 ) /*0x5e8fae*/
       {
         v12 = Player::FindByName((Player *)i); /*0x5e8fb7*/

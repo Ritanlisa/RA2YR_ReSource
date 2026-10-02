@@ -394,7 +394,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v23 = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d2bf5*/
           v22 = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6d2bfa*/
           v8 = ((Coord2D *)(&v28))->Sub(v29,(unsigned int *)(&v25)); /*0x6d2c05*/
-          v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
+          v9 = ((Rect*)&v35)->Construct(v8, v22, v23); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
           v34[1] = v9[1]; /*0x6d2c21*/
           v34[2] = v9[2]; /*0x6d2c28*/

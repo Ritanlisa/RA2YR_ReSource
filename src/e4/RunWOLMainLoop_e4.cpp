@@ -57,12 +57,12 @@ Coord * * sub_77E110()
     {
   LABEL_5:
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x77e16a*/
-      IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10),(void *)(-2)); /*0x77e176*/
+      IDA_LOBYTE(v1) = ((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong((void *)(-2)); /*0x77e176*/
     }
   }
   else
   {
-    IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10),(void *)(-3)); /*0x77e1c2*/
+    IDA_LOBYTE(v1) = ((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong((void *)(-3)); /*0x77e1c2*/
   }
   return (gamemd::Coord **)(v1);
 }
@@ -183,7 +183,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   IDA_LOBYTE(v12.Flag_field_0x04) = 0; /*0x798df1*/
   ReadRegistryOptionsWOL((ObjectClass *)&v12); /*0x798df6*/
   Screen::Capture(1, 0, v2, a2); /*0x798dff*/
-  if ( g_UIPointerTable && strlen(stru_B76188.__pad_20) && String::Length((String *)&g_WindowManager.__pad_EC[684]) ) /*0x798e27*/
+  if ( g_UIPointerTable && strlen(stru_B76188.__pad_20) && ((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x798e27*/
   {
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
@@ -341,7 +341,7 @@ int sub_799D30()
     }
     else
     {
-      if ( g_UIPointerTable && strlen(stru_B76188.__pad_20) && String::Length((String *)&g_WindowManager.__pad_EC[684]) ) /*0x799dd2*/
+      if ( g_UIPointerTable && strlen(stru_B76188.__pad_20) && ((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x799dd2*/
       {
         v6 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v11 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/

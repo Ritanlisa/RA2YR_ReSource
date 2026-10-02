@@ -69,7 +69,7 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri
   char v29; // al
   int v30; // ecx
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x6b8caa*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6b8caa*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b8cc5*/
                      aP1,
                      off_8401CC,

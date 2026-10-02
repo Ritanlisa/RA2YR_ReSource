@@ -187,7 +187,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5c1*/
   v3 = (&this->scenario)[7]; /*0x49c5d4*/
   if ( !LOBYTE(g_DDrawSurfaceManager.scenario[14]) ) /*0x49c5d9*/
-    CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49c5e0*/
+    ((CampaignClass*)&g_DDrawSurfaceManager)->LoadFromINI(); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= g_DDrawSurfaceManager.scenario[13] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = g_DDrawSurfaceManager.scenario[12] + 76 * v3; /*0x49c60d*/

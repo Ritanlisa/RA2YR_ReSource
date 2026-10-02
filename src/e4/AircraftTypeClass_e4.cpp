@@ -311,8 +311,8 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
       *(unsigned int *)aP0[12] = (unsigned int *)(&vt_AircraftTypeClass); /*0x41ce58*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 896); /*0x41ce6b*/
-    VoxelAnimType::LoadAnim(aP0->TechnoTypeClass); /*0x41ce72*/
-    ObjectTypeClass::Load2DArt(aP0->TechnoTypeClass); /*0x41ce79*/
+    ((VoxelAnimType*)(aP0->TechnoTypeClass))->LoadAnim(); /*0x41ce72*/
+    ((ObjectTypeClass*)(aP0->TechnoTypeClass))->Load2DArt(); /*0x41ce79*/
     return 0; /*0x41ce7e*/
   }
   return result; /*0x41ce80*/

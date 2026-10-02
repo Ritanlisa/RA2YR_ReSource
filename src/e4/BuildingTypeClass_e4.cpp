@@ -409,7 +409,7 @@ namespace gamemd {
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass * aP1)
 {
 
-  TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
+  ((TechnoTypeClass*)((int)this))->Construct(aP1); /*0x45e528*/
   this->Buildup[0] = 0; /*0x45e52f*/
   *(unsigned int *)&this->__pad_1714[116] = 0; /*0x45e535*/
   *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
@@ -608,7 +608,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         *(unsigned int *)(v8 + 4) = v9 + 16; /*0x45eb80*/
         *(unsigned int *)(v8 + 8) = v9 + 16; /*0x45eb8b*/
         *(unsigned int *)(v8 + 16) = 1; /*0x45eb8e*/
-        Buffer::Init((Buffer *)(v8 + 20), 0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
+        ((Buffer*)((Buffer *)(v8 + 20)))->Init(0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
         *(unsigned int *)v8 = (unsigned int)(&BSurface_Vtable); /*0x45eb9a*/
         dword_89DDC0 = (unsigned int)((Draw *)v8); /*0x45eba0*/
       }
@@ -682,13 +682,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 963) = v4; /*0x45f30a*/
     }
   }
-  INIClass::GetString( /*0x45f32d*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aDeployinganim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f32d*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f32d*/ (uint8_t *)((char *)this + 504), aDeployinganim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f336*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f357*/
@@ -714,13 +709,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1337) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f3e2*/
     }
   }
-  INIClass::GetString( /*0x45f405*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aRoofdeployinga,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f405*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f405*/ (uint8_t *)((char *)this + 504), aRoofdeployinga, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f40e*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f42f*/
@@ -746,13 +736,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1343) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f4be*/
     }
   }
-  INIClass::GetString( /*0x45f4e1*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aDooranim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f4e1*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f4e1*/ (uint8_t *)((char *)this + 504), aDooranim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f4ea*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f507*/
@@ -765,13 +750,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1347) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f548*/
     }
   }
-  INIClass::GetString( /*0x45f565*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aUnderdooranim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f565*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f565*/ (uint8_t *)((char *)this + 504), aUnderdooranim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f56e*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f58f*/
@@ -804,13 +784,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     *((unsigned int *)this + 1341) = 0; /*0x45f643*/
     *v14 = 0; /*0x45f649*/
   }
-  INIClass::GetString( /*0x45f668*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aRubble,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f668*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f668*/ (uint8_t *)((char *)this + 504), aRubble, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f671*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f68e*/
@@ -829,13 +804,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1341) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f6ee*/
     }
   }
-  INIClass::GetString( /*0x45f711*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aUnderroofdoora,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f711*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f711*/ (uint8_t *)((char *)this + 504), aUnderroofdoora, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f71a*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f73b*/
@@ -861,13 +831,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1345) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f7c6*/
     }
   }
-  INIClass::GetString( /*0x45f7e9*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aSpecialzoverla,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f7e9*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f7e9*/ (uint8_t *)((char *)this + 504), aSpecialzoverla, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f7f2*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f80f*/
@@ -880,13 +845,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1348) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f850*/
     }
   }
-  INIClass::GetString( /*0x45f86d*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    aBibshape,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f86d*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f86d*/ (uint8_t *)((char *)this + 504), aBibshape, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f876*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f897*/
@@ -912,13 +872,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1350) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f922*/
     }
   }
-  INIClass::GetString( /*0x45f945*/
-    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-    (uint8_t *)((char *)this + 504),
-    (uint8_t *)g_INI_Key_Image,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  /*0x45f945*/
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f945*/ (uint8_t *)((char *)this + 504), (uint8_t *)g_INI_Key_Image, &g_INI_DefaultBuffer, Filename, 64);
   if ( !*((unsigned char *)this + 556) || aP1 == -1 ) /*0x45f95c*/
     v21 = (const char *)(::Ext); /*0x45f97a*/
   else
@@ -998,7 +953,7 @@ void BuildingTypeClass::LoadVoxel()
     v2 = _strupr(String_v); /*0x45fb0e*/
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
-      CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/
+      ((CCFileClass*)&v25)->Construct(Buffer); /*0x45fb3b*/
       if ( (uint8_t)((CCFileClass *)(&v25))->Open(0) ) /*0x45fb48*/
       {
         v3 = (void *)((unsigned int *)this)[0]; /*0x45fb55*/
@@ -1014,7 +969,7 @@ void BuildingTypeClass::LoadVoxel()
           FileVXL = 0; /*0x45fb8c*/
         ((unsigned int *)this)[0] = (int)FileVXL; /*0x45fb8e*/
         _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__HVA)); /*0x45fbab*/
-        CCFileClass::Construct(&v22, Buffer); /*0x45fbbf*/
+        ((CCFileClass*)&v22)->Construct(Buffer); /*0x45fbbf*/
         v6 = (void *)((unsigned int *)this)[0]; /*0x45fbc4*/
         if ( v6 ) /*0x45fbcc*/
         {
@@ -1061,7 +1016,7 @@ void BuildingTypeClass::LoadVoxel()
       strncpy(Destination,(const char *)(this->__pad_1714), 0x80u); /*0x45fccb*/
     }
     _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__VXL)); /*0x45fcea*/
-    CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
+    ((CCFileClass*)&v28)->Construct(Buffer); /*0x45fd01*/
     if ( (uint8_t)((CCFileClass *)(&v28))->Open(0) ) /*0x45fd0e*/
     {
       v13 = (void *)((unsigned int *)this)[1]; /*0x45fd1b*/
@@ -1077,7 +1032,7 @@ void BuildingTypeClass::LoadVoxel()
         v15 = 0; /*0x45fd55*/
       ((unsigned int *)this)[1] = (int)v15; /*0x45fd63*/
       _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__HVA)); /*0x45fd74*/
-      CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
+      ((CCFileClass*)&v22)->Construct(Buffer); /*0x45fd88*/
       v16 = (void *)((unsigned int *)this)[2]; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
@@ -1191,8 +1146,8 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(this->OccupyHeight); /*0x464c2e*/
   Power::TimerProcess(this->MidPoint); /*0x464c3c*/
   Power::TimerProcess(this->DoorStages); /*0x464c4a*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)this->BuildingAnimFrame, 72); /*0x464c5a*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)&(&this->BuildingAnim)[12], 1428); /*0x464c6d*/
+  ((Checksummer*)v54)->Add_Buffer((uint8_t *)this->BuildingAnimFrame, 72); /*0x464c5a*/
+  ((Checksummer*)v54)->Add_Buffer((uint8_t *)&(&this->BuildingAnim)[12], 1428); /*0x464c6d*/
   Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1392]); /*0x464c7b*/
   v2 = Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1444]); /*0x464c89*/
   LOBYTE(v2) = this->HoverPad; /*0x464c8e*/
@@ -1294,10 +1249,10 @@ int BuildingTypeClass::UpdatePower()
   ((Power *)((Power *)v54))->FlagProcess(v48); /*0x464f45*/
   ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_1714); /*0x464f53*/
   ((Checksummer *)(v54))->Add_double(*(unsigned int *)&this->__pad_1714[20], *(unsigned int *)&this->__pad_1714[24]); /*0x464f68*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[28], 12); /*0x464f78*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[40], 12); /*0x464f88*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[52], 12); /*0x464f98*/
-  v49 = Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[64], 12); /*0x464fa8*/
+  ((Checksummer*)v54)->Add_Buffer((uint8_t *)&this->__pad_1714[28], 12); /*0x464f78*/
+  ((Checksummer*)v54)->Add_Buffer((uint8_t *)&this->__pad_1714[40], 12); /*0x464f88*/
+  ((Checksummer*)v54)->Add_Buffer((uint8_t *)&this->__pad_1714[52], 12); /*0x464f98*/
+  v49 = ((Checksummer*)v54)->Add_Buffer((uint8_t *)&this->__pad_1714[64], 12); /*0x464fa8*/
   LOBYTE(v49) = this->__pad_1714[83]; /*0x464fad*/
   ((Power *)((Power *)v54))->FlagProcess(v49); /*0x464fb6*/
   LOBYTE(v50) = this->__pad_1714[84]; /*0x464fbb*/
@@ -1398,7 +1353,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
       {
 LABEL_32:
         ((BuildingTypeClass *)((BuildingTypeClass *)v1))->LoadVoxel(); /*0x4651ed*/
-        ObjectTypeClass::Load2DArt((char *)v1); /*0x4651f6*/
+        ((ObjectTypeClass*)((char *)v1))->Load2DArt(); /*0x4651f6*/
         SpeedType = v1[1].ChargerTurrets[15]; /*0x4651fb*/
         v1[1].UIName = 0; /*0x465210*/
         SpeedType *= 120; /*0x465219*/
@@ -1880,7 +1835,7 @@ void* BuildingTypeClass::ProcessPower(int *aP1)
   Power::TimerProcess(*((unsigned int *)this + 373)); /*0x717220*/
   Power::TimerProcess(*((unsigned int *)this + 254)); /*0x71722e*/
   Power::TimerProcess(*((unsigned int *)this + 208)); /*0x71723c*/
-  Checksummer::Add_Buffer((unsigned int *)aP1, (uint8_t *)((char *)this + 844), 16); /*0x71724c*/
+  ((Checksummer*)((unsigned int *)aP1))->Add_Buffer((uint8_t *)((char *)this + 844), 16); /*0x71724c*/
   Checksummer::Add_double(*((unsigned int *)this + 216), *((unsigned int *)this + 217)); /*0x717261*/
   Checksummer::Add_double(*((unsigned int *)this + 218), *((unsigned int *)this + 219)); /*0x717276*/
   Checksummer::Add_double(*((unsigned int *)this + 220), *((unsigned int *)this + 221)); /*0x71728b*/
@@ -2425,13 +2380,8 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
   bool v6; // zf
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  INIClass::GetString( /*0x474aba*/
-    (INIClass *)this,
-    aP1,
-    a2,
-    *(char **)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * aP3) + 772),
-    Destination,
-    32);
+  /*0x474aba*/
+    ((INIClass*)((INIClass *)this))->GetString(/*0x474aba*/ aP1, a2, *(char **)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * aP3) + 772), Destination, 32);
   v4 = 0; /*0x474ac4*/
   if ( *(int *)stru_B054D0.__tail_10 <= 0 ) /*0x474ac8*/
     return aP3; /*0x474b06*/

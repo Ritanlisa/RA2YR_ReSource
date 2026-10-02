@@ -245,7 +245,7 @@ unsigned int * File::LoadFileHVA(int a2)
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x5bd577*/
   *(unsigned int *)&this->__pad_6[2] = 0; /*0x5bd57a*/
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x5bd57d*/
-  if ( !File::ParseFileHVA((int)this, a2) ) /*0x5bd585*/
+  if ( !((File*)((int)this))->ParseFileHVA(a2) ) /*0x5bd585*/
     this->__pad_0[0] = 1; /*0x5bd58e*/
   return this->__pad_0; /*0x5bd593*/
 

@@ -424,7 +424,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v27 ) /*0x4f1fff*/
     ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
   ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
-  Int = INIClass::ReadInt((gamemd::String *)(gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags),(gamemd::INIClass *)((char **)&v38.vtable1), 100); /*0x4f202c*/
+  Int = ((INIClass*)((gamemd::String *)(gamemd::ObjectClass *)(uniqueId)))->ReadInt((gamemd::ReferenceCounted *)(abstractFlags), (gamemd::INIClass *)((char **)&v38.vtable1), 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
   v29 = 0; /*0x4f203b*/
@@ -510,7 +510,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     1);
   v17 = 0; /*0x4f235d*/
   v4 = 0; /*0x4f2362*/
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x4f2364*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x4f2364*/
   v5 = *((unsigned int *)this + 21); /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     ((MSEngine *)((MSEngine *)((char *)this + 4)))->ProcessEvents(v5, 300000); /*0x4f2379*/
@@ -622,7 +622,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   if ( v4 ) /*0x4f2605*/
     (*(void (**)(State *, int))(*(unsigned int *)v4->__pad_0 + 12))(v4, (char *)this + 4); /*0x4f260c*/
   UI_Process(v16); /*0x4f260f*/
-  Theme::QueueSong((int)&unk_A83D10, -3); /*0x4f261b*/
+  ((Theme*)((int)&unk_A83D10))->QueueSong(-3); /*0x4f261b*/
   if ( v4 ) /*0x4f2622*/
     return v4->Players; /*0x4f2624*/
   else
@@ -694,7 +694,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
     ((INIClass *)(a2))->ReadString((char **)Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
-    if ( String::Length((String *)&v19.q4) ) /*0x4f2d77*/
+    if ( ((String*)((String *)&v19.q4))->Length() ) /*0x4f2d77*/
     {
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
@@ -727,7 +727,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.__pad_0[0] = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       ((String *)((String *)&a4))->Assign(g_INI_Key_Rate); /*0x4f2e95*/
-      v17 = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&a4, 5); /*0x4f2ead*/
+      v17 = ((INIClass*)((bool *)a2->__pad_0))->ReadInt(Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
       v18 = (GraphicMenuAnimItem *)RA2_OPNEW(0x28u); /*0x4f2eb6*/
       if ( v18 ) /*0x4f2ec0*/
@@ -788,7 +788,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   int v29; // [esp+4Ch] [ebp-4h]
 
   ((String *)(&v22))->Assign(ValueName); /*0x4f3153*/
-  Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v22, -1); /*0x4f3167*/
+  Int = ((INIClass*)((bool *)a2->__pad_0))->ReadInt(Source, (char **)&v22, -1); /*0x4f3167*/
   *(unsigned int *)&v22.q4 = Int; /*0x4f316d*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f3171*/
   if ( Int == -1 ) /*0x4f3179*/
@@ -912,7 +912,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   unknown_libname_73((char *)this + 52); /*0x4f34aa*/
   v15 = aP8; /*0x4f34af*/
   *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
-  if ( String::Length(v15) && (aP2 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
+  if ( ((String*)v15)->Length() && (aP2 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
     ((String *)((char **)&aP1))->Assign(aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
@@ -927,7 +927,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
     DeleteAndZero((void **)&aP1); /*0x4f3508*/
   ((String *)((char **)((char *)this + 52)))->Reassign(a9); /*0x4f3515*/
   v17 = aP6; /*0x4f351a*/
-  v18 = String::Length(aP6); /*0x4f3520*/
+  v18 = ((String*)aP6)->Length(); /*0x4f3520*/
   v19 = a3; /*0x4f3525*/
   if ( v18 )
   {
@@ -941,7 +941,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
     }
   }
   v22 = a5; /*0x4f3569*/
-  if ( String::Length(a5) )
+  if ( ((String*)a5)->Length() )
   {
     v23 = __2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
     v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
@@ -950,7 +950,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
       ((PriorityQueue *)(v12))->Add((int)v24); /*0x4f35a3*/
   }
   v25 = a7; /*0x4f35a8*/
-  if ( String::Length(a7) ) /*0x4f35ae*/
+  if ( ((String*)a7)->Length() ) /*0x4f35ae*/
   {
     v26 = __2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/
@@ -1070,7 +1070,7 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
   String v10; // [esp+10h] [ebp-8h] BYREF
 
   v4 = ((String *)((String *)&v10.q4))->Assign(ValueName); /*0x4f3b95*/
-  Int = INIClass::ReadInt((bool *)edx0->__pad_0, a1, v4, -1); /*0x4f3ba7*/
+  Int = ((INIClass*)((bool *)edx0->__pad_0))->ReadInt(a1, v4, -1); /*0x4f3ba7*/
   DeleteAndZero((ObjectClass *)&v10.m_3[1]); /*0x4f3ba9*/
   if ( Int == -1 ) /*0x4f3bb1*/
     return 0; /*0x4f3bb5*/
@@ -1126,7 +1126,7 @@ int E4Recv_4F3D40::sub_4F3D40()
     BYTE1(v1) |= 1u; /*0x4f3e06*/
     ((String *)(&v8))->Erase(0, 6); /*0x4f3e09*/
   }
-  v2 = String::Length(&v8); /*0x4f3e12*/
+  v2 = ((String*)&v8)->Length(); /*0x4f3e12*/
   if ( v2 ) /*0x4f3e1a*/
   {
     if ( v2 == 1 ) /*0x4f3e1d*/
@@ -1770,7 +1770,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   v3->vtable1 = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
-  if ( String::Length((String *)&a2) ) /*0x4f3ca1*/
+  if ( ((String*)((String *)&a2))->Length() ) /*0x4f3ca1*/
   {
     do /*0x4f3d19*/
     {
@@ -1793,7 +1793,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
       if ( v5 == -1 ) /*0x4f3d0a*/
         DeleteAndZero::Alt2((DeleteAndZero *)&a2); /*0x4f3d10*/
     }
-    while ( String::Length((String *)&a2) ); /*0x4f3d19*/
+    while ( ((String*)((String *)&a2))->Length() ); /*0x4f3d19*/
     v3 = this; /*0x4f3d22*/
   }
   DeleteAndZero((ObjectClass *)&a2); /*0x4f3d2a*/

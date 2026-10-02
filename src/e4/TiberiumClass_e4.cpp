@@ -256,8 +256,8 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   DynamicVector v25; // [esp+28h] [ebp-9Ch] BYREF
 
   v5 = v4; /*0x721a5f*/
-  INIClass::ResetSection((INIClass *)aP1); /*0x721a63*/
-  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)v5, (uint8_t ***)aP1) ) /*0x721a6b*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x721a63*/
+  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)v5))->LoadFromINI((uint8_t ***)aP1) ) /*0x721a6b*/
     return 0; /*0x721cea*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/
                     (bool *)aP1,

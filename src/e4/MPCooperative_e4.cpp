@@ -2795,7 +2795,7 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
         v6 = v5; /*0x5c4d19*/
         if ( v5 ) /*0x5c4d20*/
         {
-          Waypoint::InitInvalid((Waypoint *)(v5 + 40)); /*0x5c4d25*/
+          ((Waypoint*)((Waypoint *)(v5 + 40)))->InitInvalid(); /*0x5c4d25*/
           v8 = v6; /*0x5c4d2a*/
         }
         else

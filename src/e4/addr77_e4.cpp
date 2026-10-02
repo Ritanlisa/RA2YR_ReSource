@@ -1148,31 +1148,31 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((INIClass *)((INIClass *)&((char *)&v17)))->ReadString((char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778bcf*/
       DeleteAndZero(&v17); /*0x778bd8*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Locale); /*0x778be6*/
-      Int = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, 0); /*0x778c03*/
+      Int = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
       v7 = (uint8_t *)((String *)((String *)&((char *)&v17)))->GetOrEmpty(); /*0x778c14*/
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&((char *)&v17), v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
       IDA_LOBYTE(v17.customSound_controller[4]) = Bool_Overwrite; /*0x778c2e*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Country); /*0x778c32*/
-      v9 = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -2); /*0x778c50*/
+      v9 = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -2); /*0x778c50*/
       DeleteAndZero(&v17); /*0x778c52*/
       ((String *)((String *)&v17))->Assign(&(unsigned int *)((char *)&stru_81AF8C + 95)); /*0x778c60*/
-      v10 = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -2); /*0x778c7e*/
+      v10 = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -2); /*0x778c7e*/
       DeleteAndZero(&v17); /*0x778c80*/
       ((String *)((String *)&v17))->Assign(aRank); /*0x778c8e*/
-      v17.customSound_controller[3] = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778cac*/
+      v17.customSound_controller[3] = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -1); /*0x778cac*/
       DeleteAndZero(&v17); /*0x778cb0*/
       ((String *)((String *)&v17))->Assign((const char *)&(unsigned int *)((char *)&g_INI_Key_TRUCKA + 82)); /*0x778cbe*/
-      *(unsigned int *)&v17.isOnMap = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778cdc*/
+      *(unsigned int *)&v17.isOnMap = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -1); /*0x778cdc*/
       DeleteAndZero(&v17); /*0x778ce3*/
       ((String *)((String *)&v17))->Assign(aWins); /*0x778cf1*/
-      v17.customSound = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d0f*/
+      v17.customSound = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -1); /*0x778d0f*/
       DeleteAndZero(&v17); /*0x778d13*/
       ((String *)((String *)&v17))->Assign(aLosses); /*0x778d21*/
-      v17.health = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d3f*/
+      v17.health = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -1); /*0x778d3f*/
       DeleteAndZero(&v17); /*0x778d43*/
       ((String *)((String *)&v17))->Assign(aDisconnects); /*0x778d51*/
-      v17.customSound_controller[2] = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d6f*/
+      v17.customSound_controller[2] = ((INIClass*)((bool *)&((char *)&v17)))->ReadInt((char **)&((char *)&v17), (char **)&v17, -1); /*0x778d6f*/
       DeleteAndZero(&v17); /*0x778d73*/
       v11 = (uint8_t *)((String *)((String *)&((char *)&v17)))->GetOrEmpty(); /*0x778d83*/
       IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite(&((char *)&v17), v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
@@ -1214,8 +1214,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((ComPtr *)(*(ComPtr **)&v17.bombVisible))->Constructor(); /*0x778ebf*/
       *(unsigned int *)v16->__pad_0 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x778ec6*/
       ((ComPtr *)(v16))->Set((int)AccountInfoWOL_Load); /*0x778ecd*/
-      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v17)); /*0x778ed6*/
-      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v17)); /*0x778edf*/
+      ((DeleteAndZero*)((DeleteAndZero *)&((char *)&v17)))->Alt(); /*0x778ed6*/
+      ((DeleteAndZero*)((DeleteAndZero *)&((char *)&v17)))->Alt(); /*0x778edf*/
       DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778ee8*/
       DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778ef1*/
       DeleteAndZero((ObjectClass *)&((char *)&v17)); /*0x778efa*/
@@ -1522,7 +1522,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v29 = (char *)WideString::GetOrEmpty(v43); /*0x77962d*/
   v30 = ToWideStringChar(v29); /*0x779634*/
   ((String *)(a2))->Assign_Bool(v30); /*0x77963c*/
-  DeleteAndZero::Alt((DeleteAndZero *)v43); /*0x779645*/
+  ((DeleteAndZero*)((DeleteAndZero *)v43))->Alt(); /*0x779645*/
 }
 }
 // 0x77B2A0
@@ -1555,18 +1555,18 @@ int RunWOLMainLoop(char a1)
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
     v2 = dword_A83D18; /*0x77b2e2*/
   if ( v2 == ((StringList *)((StringList *)&unk_A83D10))->Find(g_INI_Key_INTRO) ) /*0x77b2f9*/
-    Theme::QueueSong((int)&unk_A83D10, -3); /*0x77b302*/
+    ((Theme*)((int)&unk_A83D10))->QueueSong(-3); /*0x77b302*/
   ReadWOLAccountINI(); /*0x77b307*/
   v3 = byte_A83D22; /*0x77b30c*/
   byte_A83D22 = 1; /*0x77b312*/
   v18 = v3; /*0x77b319*/
   RunWOLMainLoop_Find(v15); /*0x77b31d*/
-  if ( !String::Length((String *)&g_WindowManager.__pad_EC[684]) ) /*0x77b327*/
+  if ( !((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x77b327*/
   {
     AutoLoginWOL = ReadAutoLoginWOL((ObjectClass *)&v19); /*0x77b334*/
     ((String *)((String *)&g_WindowManager.__pad_EC[684]))->Reassign((const char **)AutoLoginWOL); /*0x77b33f*/
     DeleteAndZero((ObjectClass *)&v19); /*0x77b348*/
-    if ( !String::Length((String *)&g_WindowManager.__pad_EC[684]) ) /*0x77b352*/
+    if ( !((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x77b352*/
     {
       IDA_LODWORD(v20) = 0; /*0x77b361*/
       IDA_BYTE4(v20) = 0; /*0x77b365*/
@@ -2385,14 +2385,14 @@ int sub_77D840()
 
   Dialog = (HWND)CreateDialog(0xCFu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))OnlineLobbyDlgProcWOL, 0); /*0x77d858*/
   byte_A8ED9C = 1; /*0x77d85a*/
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x77d861*/
+  ((Timer*)((HWND *)dword_87F770))->PumpMessages(); /*0x77d861*/
   ShowWindow(Dialog, 1); /*0x77d869*/
   GameUI = Dialog::FindGameUI(); /*0x77d86f*/
   v2 = Dialog::UpdateGameUI; /*0x77d87c*/
   if ( !GameUI ) /*0x77d881*/
     v2 = Dialog::PumpMessages; /*0x77d883*/
   MessageDialogLoopAlt(Dialog, (uint8_t (*)(void))v2, 0, 1, 1); /*0x77d88a*/
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x77d895*/
+  ((Timer*)((HWND *)dword_87F770))->PumpMessages(); /*0x77d895*/
   byte_A8ED9C = *((unsigned char *)dword_A8B230 + 13730); /*0x77d8a7*/
   return MapClass::MarkForRedraw(&dword_87F7E8, 2); /*0x77d8b7*/
 }
@@ -2507,7 +2507,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   DeleteAndZero v24; // [esp+1Ch] [ebp-78h] BYREF
   unsigned char v25[108]; // [esp+28h] [ebp-6Ch] BYREF
 
-  v4 = String::Length(a1) == 0; /*0x77e913*/
+  v4 = ((String*)a1)->Length() == 0; /*0x77e913*/
   v5 = (const char **)a1; /*0x77e915*/
   if ( v4 ) /*0x77e917*/
     v5 = (const char **)&g_WindowManager.__pad_EC[684]; /*0x77e919*/
@@ -2552,7 +2552,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     {
       ((WideString *)((wchar_t **)&v24))->Assign((wchar_t *)dword_A8DA78[v12]); /*0x77e9e9*/
       ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
-      DeleteAndZero::Alt(&v24); /*0x77e9ff*/
+      ((DeleteAndZero*)&v24)->Alt(); /*0x77e9ff*/
       v13 = ((String *)(&v23))->ToLowerCopy((char **)&v24.DeleteAndZero_field_0x08); /*0x77ea12*/
       v14 = ((String *)((String *)v13))->Compare((const char **)&v24.DeleteAndZero_field_0x04); /*0x77ea22*/
       DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x08); /*0x77ea24*/
@@ -2656,7 +2656,7 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
   {
     ((WideString *)((wchar_t **)&v28))->Assign(*v7); /*0x77ed26*/
     ToWideStringCharAlt((char **)&v26, (const wchar_t **)&v28); /*0x77ed33*/
-    DeleteAndZero::Alt(&v28); /*0x77ed3c*/
+    ((DeleteAndZero*)&v28)->Alt(); /*0x77ed3c*/
     v8 = ((String *)((const char **)&v26))->ToLowerCopy((char **)&v30); /*0x77ed4a*/
     v9 = ((String *)((const char **)&v27))->Compare((const char **)v8); /*0x77ed5d*/
     DeleteAndZero(&v30); /*0x77ed5f*/
@@ -2848,7 +2848,7 @@ char RequestChannelListWOL()
   String = GetStringCSF(aTxtReqChanlist, 0, g_Str_File_wonline_cpp, 2298); /*0x77f136*/
   ((WideString *)((wchar_t **)&v15))->Assign(String); /*0x77f140*/
   ShowUIMessage(0); /*0x77f150*/
-  DeleteAndZero::Alt(&v15); /*0x77f159*/
+  ((DeleteAndZero*)&v15)->Alt(); /*0x77f159*/
   v1 = 0; /*0x77f16a*/
   while ( 1 ) /*0x77f179*/
   {
@@ -4472,7 +4472,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
   referenceCount = (char *)((unsigned int *)this)[0]; /*0x7767f7*/
   if ( !referenceCount ) /*0x7767fc*/
     return 0; /*0x776873*/
-  String::Trim(referenceCount); /*0x776801*/
+  ((String*)referenceCount)->Trim(); /*0x776801*/
   strcpy((char *)dword_B73080, referenceCount); /*0x77681e*/
   lParam[1] = ((unsigned int *)this)[0]; /*0x776835*/
   lParam[0] = 1; /*0x776847*/
@@ -6524,7 +6524,7 @@ int sub_77D1A0()
 namespace gamemd {
 int unknown_libname_53()
 {
-  DeleteAndZero::Alt(&unk_B76230); /*0x77d1c5*/
+  ((DeleteAndZero*)&unk_B76230)->Alt(); /*0x77d1c5*/
 }
 } // namespace gamemd
 
@@ -6769,7 +6769,7 @@ void sub_77DFD0()
 {
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(v0, (int)aRa2mdIni); /*0x77dfdc*/
+  ((RawFileClass*)v0)->Construct((int)aRa2mdIni); /*0x77dfdc*/
   ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aAllowpage, dword_B76234, 0); /*0x77dff8*/
   ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aAllowfind, dword_B779F0, 0); /*0x77e015*/
   ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)g_INI_Key_WOnline, aLangfilter, dword_B779BC, 0); /*0x77e032*/

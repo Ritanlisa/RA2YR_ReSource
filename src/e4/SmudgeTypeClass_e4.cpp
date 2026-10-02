@@ -151,7 +151,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   int Width; // [esp-8h] [ebp-210h]
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6b56e3*/
   if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x6b56eb*/
   {
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrater, this->Crater); /*0x6b570b*/

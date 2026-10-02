@@ -2916,19 +2916,15 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           ((WideString *)((WideString *)&v30.DeleteAndZero_field_0x08))->AssignFromPtr(ecx0); /*0x5cda2b*/
           WideString::Erase((WideString *)&v30.DeleteAndZero_field_0x08, 0, v3); /*0x5cda37*/
           v18 = ((WideString *)((WideString *)&v35.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cda4f*/
-          v19 = WideString::ConcatAlloc( /*0x5cda5e*/
-                  (WideString *)&v31,
-                  (wchar_t **)&v35.DeleteAndZero_field_0x04,
-                  (const wchar_t **)v18);
-          v20 = WideString::ConcatAlloc( /*0x5cda65*/
-                  (WideString *)v19,
-                  (wchar_t **)&v35,
-                  (const wchar_t **)&v30.DeleteAndZero_field_0x08);
+          v19 = /*0x5cda5e*/
+                  ((WideString*)((WideString *)&v31))->ConcatAlloc(/*0x5cda5e*/ (wchar_t **)&v35.DeleteAndZero_field_0x04, (const wchar_t **)v18);
+          v20 = /*0x5cda65*/
+                  ((WideString*)((WideString *)v19))->ConcatAlloc(/*0x5cda65*/ (wchar_t **)&v35, (const wchar_t **)&v30.DeleteAndZero_field_0x08);
           ((WideString *)((WideString *)ecx0))->Reassign_Alt((const wchar_t **)v20); /*0x5cda6d*/
-          DeleteAndZero::Alt(&v35); /*0x5cda76*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x04); /*0x5cda7f*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x08); /*0x5cda88*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v30.DeleteAndZero_field_0x08); /*0x5cda91*/
+          ((DeleteAndZero*)&v35)->Alt(); /*0x5cda76*/
+          ((DeleteAndZero*)((DeleteAndZero *)&v35.DeleteAndZero_field_0x04))->Alt(); /*0x5cda7f*/
+          ((DeleteAndZero*)((DeleteAndZero *)&v35.DeleteAndZero_field_0x08))->Alt(); /*0x5cda88*/
+          ((DeleteAndZero*)((DeleteAndZero *)&v30.DeleteAndZero_field_0x08))->Alt(); /*0x5cda91*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v31; /*0x5cda96*/
         }
         else
@@ -2938,19 +2934,17 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           ((WideString *)((WideString *)&v30))->AssignFromPtr(ecx0); /*0x5cdb06*/
           WideString::Erase((WideString *)&v30, 0, v3); /*0x5cdb12*/
           v23 = ((WideString *)((WideString *)&v34.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cdb2a*/
-          v24 = WideString::ConcatAlloc( /*0x5cdb39*/
-                  (WideString *)&v30.DeleteAndZero_field_0x04,
-                  (wchar_t **)&v34.DeleteAndZero_field_0x04,
-                  (const wchar_t **)v23);
-          v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
+          v24 = /*0x5cdb39*/
+                  ((WideString*)((WideString *)&v30.DeleteAndZero_field_0x04))->ConcatAlloc(/*0x5cdb39*/ (wchar_t **)&v34.DeleteAndZero_field_0x04, (const wchar_t **)v23);
+          v25 = ((WideString*)((WideString *)v24))->ConcatAlloc((wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
           ((WideString *)((WideString *)ecx0))->Reassign_Alt((const wchar_t **)v25); /*0x5cdb48*/
-          DeleteAndZero::Alt(&v34); /*0x5cdb51*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x04); /*0x5cdb5a*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x08); /*0x5cdb63*/
-          DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
+          ((DeleteAndZero*)&v34)->Alt(); /*0x5cdb51*/
+          ((DeleteAndZero*)((DeleteAndZero *)&v34.DeleteAndZero_field_0x04))->Alt(); /*0x5cdb5a*/
+          ((DeleteAndZero*)((DeleteAndZero *)&v34.DeleteAndZero_field_0x08))->Alt(); /*0x5cdb63*/
+          ((DeleteAndZero*)&v30)->Alt(); /*0x5cdb6c*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.DeleteAndZero_field_0x04; /*0x5cdb71*/
         }
-        DeleteAndZero::Alt(p_DeleteAndZero_field_0x04); /*0x5cda9a*/
+        ((DeleteAndZero*)p_DeleteAndZero_field_0x04)->Alt(); /*0x5cda9a*/
       }
       if ( v7 > *(int *)&v31.m_3[1] ) /*0x5cdaa3*/
         *(unsigned int *)&v31.m_3[1] = v7; /*0x5cdaa5*/
@@ -3010,7 +3004,7 @@ LABEL_5:
   ((unsigned int *)this)[0] = TimerGetTicks(); /*0x5ce108*/
   ((unsigned int *)this)[0] = v18; /*0x5ce10f*/
   ((unsigned int *)this)[0] = fallRate; /*0x5ce112*/
-  if ( ((unsigned int *)this)[0] >= WideString::Length((const wchar_t **)&((unsigned int *)this)[0]) ) /*0x5ce122*/
+  if ( ((unsigned int *)this)[0] >= ((WideString*)((const wchar_t **)&((unsigned int *)this)[0]))->Length() ) /*0x5ce122*/
   {
     LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/

@@ -219,7 +219,7 @@ void CellClass::DrawWrapper(unsigned int *a2, int jj, char a4, char a5, int a3, 
 
 // 0x68BCC0
 namespace gamemd {
-unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
     *a2 = *(unsigned int *)(this + 4 * a3 + 1586); /*0x68bccf*/
     return a2; /*0x68bcd1*/
 }

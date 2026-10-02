@@ -190,14 +190,9 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   char v7; // [esp+38h] [ebp-84h]
   char String[128]; // [esp+3Ch] [ebp-80h] BYREF
 
-  INIClass::ResetSection((INIClass *)a2); /*0x6e6093*/
-  if ( !INIClass::GetString( /*0x6e60b4*/
-          (INIClass *)a2,
-          (uint8_t *)&stru_842C2C.SuperWeaponClass_field_0x10,
-          (uint8_t *)&this->arrayIndex,
-          &g_INI_DefaultBuffer,
-          String,
-          128) )
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x6e6093*/
+  if ( !/*0x6e60b4*/
+          ((INIClass*)((INIClass *)a2))->GetString(/*0x6e60b4*/ (uint8_t *)&stru_842C2C.SuperWeaponClass_field_0x10, (uint8_t *)&this->arrayIndex, &g_INI_DefaultBuffer, String, 128) )
     return 0; /*0x6e6151*/
   strtok(String, Str); /*0x6e60cb*/
   *((unsigned int *)this + 39) = atoi(String); /*0x6e60e1*/
@@ -347,7 +342,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e6426*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
+      ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x6e642f*/
       aP0->vtable1 = &vt_TagTypeClass; /*0x6e6434*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e643a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/

@@ -764,7 +764,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v5; /*0x71fb6f*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x71fb83*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
     __3_YAXPAX_Z(Block); /*0x71fb90*/
   return Block; /*0x71fb9a*/

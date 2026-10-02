@@ -167,7 +167,7 @@ LONG Campaign::Screen(char a1)
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x60d3a1*/
     ShowWindow((HWND)Dialog, 1); /*0x60d3aa*/
     SetForegroundWindow((HWND)Dialog); /*0x60d3b1*/
-    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x60d3bd*/
+    ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x60d3bd*/
     if ( a1 ) /*0x60d3c8*/
       BINK::Background_Setup(Dialog); /*0x60d3cc*/
     while ( !dwNewLong ) /*0x60d3d7*/

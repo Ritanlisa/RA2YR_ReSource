@@ -512,7 +512,7 @@ int AnimTypeClass::GetDamage()
     {
       TheaterObjectTypeClassSpecificID(Buffer, (&dword_A8B230)[130].uniqueId); /*0x428cf3*/
     }
-    CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
+    ((CCFileClass*)&v7)->Construct(Buffer); /*0x428d04*/
     v4 = (SHPStruct *)((CCFileClass *)(&v7))->ReadEntireFile(); /*0x428d0d*/
     ((unsigned int *)this)[0] = (unsigned int)(v4); /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
@@ -522,7 +522,7 @@ int AnimTypeClass::GetDamage()
     else
     {
       ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x428d2c*/
-      CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
+      ((CCFileClass*)&v10)->Construct(Buffer); /*0x428d3d*/
       v5 = (SHPStruct *)((CCFileClass *)(&v10))->ReadEntireFile(); /*0x428d46*/
       ((unsigned int *)this)[0] = (unsigned int)(v5); /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
@@ -789,7 +789,7 @@ int AnimTypeClass::ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsi
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = globalHelper_08E090(a3); /*0x47706d*/
-  if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x477085*/
+  if ( ((INIClass*)((INIClass *)this))->GetString(aP1, a2, v5, Destination, 128) ) /*0x477085*/
     return AnimTypeClass::LookupByName((AnimTypeClass *)Destination); /*0x477092*/
   else
     return a3; /*0x4770a2*/

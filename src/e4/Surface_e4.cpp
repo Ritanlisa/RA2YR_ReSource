@@ -379,7 +379,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   int v10[3]; // [esp+70h] [ebp-14h] BYREF
   int v11; // [esp+7Ch] [ebp-8h]
 
-  CCFileClass::Construct(&v9, Source); /*0x641dc0*/
+  ((CCFileClass*)&v9)->Construct(Source); /*0x641dc0*/
   if ( !(uint8_t)((CCFileClass *)(&v9))->Open(0) ) /*0x641dcb*/
     goto LABEL_11; /*0x641dcb*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x641dd8*/
@@ -395,7 +395,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     {
       v8 = (*(int (**)(unsigned int *))(*v3 + 128))(v3); /*0x641e45*/
       v5 = (*(int (**)(unsigned int *))(*v3 + 124))(v3); /*0x641e48*/
-      v6 = (char *)(DSurface::Construct(v4, v5, v8, 1, 0)); /*0x641e4e*/
+      v6 = (char *)(((DSurface*)v4)->Construct(v5, v8, 1, 0)); /*0x641e4e*/
     }
     else
     {
@@ -1171,7 +1171,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   v38 = 0; /*0x7074b8*/
   *(unsigned int *)v37.__pad_0 = (unsigned int)(&XSurface_Vtable); /*0x7074c0*/
   v39 = 1; /*0x7074c8*/
-  Buffer::Init((Buffer *)v40, (int)v41, v8 * v9); /*0x7074d0*/
+  ((Buffer*)((Buffer *)v40))->Init((int)v41, v8 * v9); /*0x7074d0*/
   v11 = *(unsigned int *)this->__pad_0; /*0x7074d9*/
   *(unsigned int *)v37.__pad_0 = (unsigned int)(&BSurface_Vtable); /*0x7074dd*/
   v12 = aP4 & 0xFFFFFFEF; /*0x7074e5*/

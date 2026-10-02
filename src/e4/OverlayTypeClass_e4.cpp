@@ -138,7 +138,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x5fe783*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x5fe783*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
@@ -173,13 +173,8 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aOverrides, v10); /*0x5fe862*/
   DamageLevels = this->DamageLevels; /*0x5fe867*/
   this->RadarColor[0] = v11; /*0x5fe884*/
-  if ( INIClass::GetString( /*0x5fe88a*/
-         (INIClass *)aP1,
-         (uint8_t *)((unsigned int *)this)[0],
-         aCellanim,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( /*0x5fe88a*/
+         ((INIClass*)((INIClass *)aP1))->GetString(/*0x5fe88a*/ (uint8_t *)((unsigned int *)this)[0], aCellanim, &g_INI_DefaultBuffer, Destination, 128) )
   {
     v13 = AnimTypeClass::FindOrCreate(Destination); /*0x5fe897*/
   }
@@ -256,8 +251,8 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb2e*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb35*/
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
+    ((VoxelAnimType*)((char *)a1))->LoadAnim(); /*0x5feb3e*/
+    ((ObjectTypeClass*)((char *)a1))->Load2DArt(); /*0x5feb45*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->DamageLevels); /*0x5feb56*/
     if ( !a1->DrawFlat ) /*0x5feb5b*/
     {
@@ -304,7 +299,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
-    CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
+    ((CCFileClass*)&v4)->Construct(Buffer); /*0x5fee9f*/
     v3 = (SHPStruct *)((CCFileClass *)(&v4))->ReadEntireFile(); /*0x5feead*/
     ((unsigned int *)this)[0] = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
@@ -392,7 +387,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = sub_48DFD0(a4); /*0x4754cd*/
-  if ( INIClass::GetString((INIClass *)this, a2, a3, v5, Destination, 128) ) /*0x4754e5*/
+  if ( ((INIClass*)((INIClass *)this))->GetString(a2, a3, v5, Destination, 128) ) /*0x4754e5*/
     return OverlayTypeClass::LookupByName((OverlayTypeClass *)Destination); /*0x4754f2*/
   else
     return a4; /*0x475502*/

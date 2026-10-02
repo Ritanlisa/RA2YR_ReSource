@@ -1011,7 +1011,7 @@ AbstractClass * * sub_4267F0()
       v10->vtable4 = 0; /*0x426935*/
       *(unsigned int *)v10 = &XSurface_Vtable; /*0x42693c*/
       v10->uniqueId = 1; /*0x426942*/
-      Buffer::Init((Buffer *)(v10 + 20), 0, v12 * v11); /*0x426949*/
+      ((Buffer*)((Buffer *)(v10 + 20)))->Init(0, v12 * v11); /*0x426949*/
       *(unsigned int *)v10 = &BSurface_Vtable; /*0x42694e*/
     }
     else

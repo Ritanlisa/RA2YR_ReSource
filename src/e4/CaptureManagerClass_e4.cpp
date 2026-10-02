@@ -1088,7 +1088,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   }
   BYTE1(Block->owner) = 0; /*0x472a4f*/
   Block->controlNodeCapacity = 0; /*0x472a53*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x472a5a*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
     __3_YAXPAX_Z(Block); /*0x472a67*/
   return Block; /*0x472a71*/

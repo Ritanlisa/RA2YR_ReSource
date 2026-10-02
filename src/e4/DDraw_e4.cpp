@@ -62,7 +62,7 @@ int DDraw::CapabilityCheck()
   unsigned int v6[4]; // [esp+18h] [ebp-34h] BYREF
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
-  DSurface::Construct((char *)v7, 64, 64, 0, 0); /*0x4a3e51*/
+  ((DSurface*)((char *)v7))->Construct(64, 64, 0, 0); /*0x4a3e51*/
   Debug::Log(aCheckingHardwa); /*0x4a3e5b*/
   byte_8205D4 = 1; /*0x4a3e67*/
   XSurface::Fill(v7, 0); /*0x4a3e6f*/

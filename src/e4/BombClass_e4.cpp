@@ -237,7 +237,7 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR((gamemd::AbstractClass *)this); /*0x439462*/
+  ((AbstractClass*)((gamemd::AbstractClass *)this))->DTOR(); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     __3_YAXPAX_Z(this); /*0x43946f*/
   return this; /*0x439479*/

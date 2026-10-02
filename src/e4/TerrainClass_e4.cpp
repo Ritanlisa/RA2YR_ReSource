@@ -141,7 +141,7 @@ LABEL_162:
       ++*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
       int v76 = *(unsigned int *)((unsigned int)(a1)+ 48);
       if ( v76 )
-        TeamClass::CreateOneOf(v76, 0);
+        ((TeamClass*)v76)->CreateOneOf(0);
       --*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
       return 1;
     case 5:
@@ -244,7 +244,7 @@ LABEL_162:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
     case 0x14:
-      Theme::QueueSong((gamemd::IUnknown *)((int)&g_BuildingTypeClass_Count), *(IUnknown **)((unsigned int)(a1)+ 144));
+      ((Theme*)((gamemd::IUnknown *)((int)&g_BuildingTypeClass_Count)))->QueueSong(*(IUnknown **)((unsigned int)(a1)+ 144));
       return 1;
     case 0x15:
       UpdateThemeManager(*(unsigned int *)((unsigned int)(a1)+ 144), 2, -1);
@@ -445,10 +445,7 @@ LABEL_157:
       UpdateMouse();
       return 1;
     case 0x30:
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            &v130,
-                            *(unsigned int *)(a1 + 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
       v82 = (CellStruct **)CoordStruct::Set2(&v131, (IUnknown *)&v112, 0);
       v113 = *v82;
       v128 = v82[1];
@@ -470,21 +467,21 @@ LABEL_157:
                                                                                + 1360);
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 196) = *(unsigned int *)(v83 + 4);
       HouseClass_Player[45136] = 1;
-      Timer::PumpMessages(*(HWND **)&stru_87C374[13308]);
+      ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
       ((Mouse *)(&stru_87C374[13428]))->ReleaseCapture();
       MapClass::MarkForRedraw(&stru_87C374[13428], 0);
-      TacticalMap::Redraw(&stru_87C374[13428]);
+      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       Sleep(0x3E8u);
       return 1;
     case 0x32:
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 192) = 0;
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 196) = 1072693248;
-      Timer::PumpMessages(*(HWND **)&stru_87C374[13308]);
+      ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       HouseClass_Player[45136] = *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13730);
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
       MapClass::MarkForRedraw(&stru_87C374[13428], 0);
-      TacticalMap::Redraw(&stru_87C374[13428]);
+      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       return 1;
     case 0x33:
       TActionClass::executeRepairAction(&stru_87C374[13428], (int)aP1);
@@ -546,10 +543,7 @@ LABEL_157:
       while ( v95 < *(int *)&HouseClass_Player[44460] );
       return 1;
     case 0x37:
-      Waypoint_Location = (IUnknown **)ScenarioClass::Get_Waypoint_Location(
-                                         *(char **)&HouseClass_Player[29924],
-                                         &v130,
-                                         *(unsigned int *)(a1 + 68));
+      Waypoint_Location = (IUnknown **)((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
   int v98; // edx
       CreateTriggerClassIfFarEnough(*(IUnknown **)(a1 + 144), v98, *Waypoint_Location);
       return 1;
@@ -562,10 +556,7 @@ LABEL_157:
     case 0x3A:
       return TActionClass::SpawnMeteorShower((int *)a1, aP1, (int)v9, (int)a5, aP4);
     case 0x3B:
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            &v130,
-                            *(unsigned int *)(a1 + 144));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 144));
       MapClass::TriggerEVA((IUnknown *)&v112);
       return 1;
     case 0x3C:
@@ -823,10 +814,7 @@ LABEL_60:
       *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13480) = *(unsigned char *)(a1 + 144);
       return 1;
     case 0x58:
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            &v130,
-                            *(unsigned int *)(a1 + 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
   unsigned int v135[3]; // [esp+34h] [ebp-21Ch] BYREF
       v101 = (CellStruct **)CoordStruct::Set2(v135, (IUnknown *)&v112, 0);
       v113 = *v101;
@@ -848,10 +836,7 @@ LABEL_60:
       return 1;
     case 0x59:
       int v103 = 0;
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            &v130,
-                            *(unsigned int *)(a1 + 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
       if ( g_GameCleanupState <= 0 )
         return 1;
       do
@@ -868,10 +853,7 @@ LABEL_60:
       while ( v103 < g_GameCleanupState );
       return 1;
     case 0x5A:
-      v106 = (IUnknown **)ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            v134,
-                            *(unsigned int *)(a1 + 68));
+      v106 = (IUnknown **)((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(v134, *(unsigned int *)(a1 + 68));
       LightningStorm::Strike(*v106);
       return 1;
     case 0x5B:
@@ -901,15 +883,8 @@ LABEL_60:
       return v14;
     case 0x5E:
   unsigned int *v11; // eax
-      v11 = ScenarioClass::Get_Waypoint_Location(
-              *(char **)&HouseClass_Player[29924],
-              &v130,
-              *(unsigned int *)(a1 + 68));
-      Coord::Subtract(
-        &v131,
-        (IUnknown *)(((int16_t)*v11 << 8) + 128),
-        (IUnknown *)(((int16_t)IDA_HIWORD(*v11) << 8) + 128),
-        0);
+      v11 = ((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
+      ((Coord*)&v131)->Subtract((IUnknown *)(((int16_t)*v11 << 8) + 128), (IUnknown *)(((int16_t)IDA_HIWORD(*v11) << 8) + 128), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
@@ -937,10 +912,7 @@ LABEL_60:
         if ( ((ScenarioClass *)(*(char **)&HouseClass_Player[29924]))->Is_Waypoint_Valid(v66) )
         {
           ++v65;
-          *(unsigned int *)v67->__pad_0 = *ScenarioClass::Get_Waypoint_Location(
-                                       *(char **)&HouseClass_Player[29924],
-                                       &v130,
-                                       v66);
+          *(unsigned int *)v67->__pad_0 = *((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, v66);
           v67 = (AbstractClass *)((char *)v67 + 4);
           if ( v65 == 400 )
             break;
@@ -972,10 +944,7 @@ LABEL_60:
     case 0x65:
       return TActionClass::executeScatterAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x66:
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            &v130,
-                            *(unsigned int *)(a1 + 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
       ((Coord *)(&v131))->Subtract((IUnknown *)(((int16_t)v112 << 8) + 128), (IUnknown *)((IDA_SHIWORD(v112) << 8) + 128), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
@@ -1071,10 +1040,7 @@ LABEL_290:
         return 0;
       return ExecuteScriptTypeClassActions(ecx293, edx294);
     case 0x6C:
-      v114 = (IUnknown **)ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            v134,
-                            *(unsigned int *)(a1 + 68));
+      v114 = (IUnknown **)((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(v134, *(unsigned int *)(a1 + 68));
       return BuildingClass::SearchPlacement(&stru_87C374[13428], *v114, *(MouseClass **)(a1 + 144));
     case 0x6D:
       return TActionClass::executeParadropAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
@@ -1088,10 +1054,7 @@ LABEL_290:
         return v115;
       break;
     case 0x70:
-      v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
-                            *(char **)&HouseClass_Player[29924],
-                            v134,
-                            *(unsigned int *)(a1 + 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(v134, *(unsigned int *)(a1 + 68));
       v119 = (CellStruct **)CoordStruct::Set2(v135, (IUnknown *)&v112, 0);
       v113 = *v119;
       v128 = v119[1];

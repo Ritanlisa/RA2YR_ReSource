@@ -349,7 +349,7 @@ void* sub_5F33B0()
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x5f33d7*/
+  ((Timer*)((HWND *)dword_87F770))->PumpMessages(); /*0x5f33d7*/
   if ( v1 != 27 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
   g_NetworkTestFlag = (int)((void *)(1));
@@ -718,7 +718,7 @@ AbstractClass * * GenerateRangeRingTextures()
           *(unsigned int *)v4[1].__pad_0 = 0; /*0x5ff46d*/
           *(unsigned int *)v4->__pad_0 = &XSurface_Vtable; /*0x5ff476*/
           v4[1].Width = 1; /*0x5ff47c*/
-          Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
+          ((Buffer*)((Buffer *)&v4[1].Height))->Init(0, 0x8000); /*0x5ff47f*/
           *(unsigned int *)v4->__pad_0 = &BSurface_Vtable; /*0x5ff484*/
         }
         else
@@ -732,7 +732,7 @@ AbstractClass * * GenerateRangeRingTextures()
       v31.LockCount = 0; /*0x5ff4b1*/
       *(unsigned int *)v31.Surface = (unsigned int)(&XSurface_Vtable); /*0x5ff4bb*/
       v32 = 1; /*0x5ff4c3*/
-      Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff4c7*/
+      ((Buffer*)((Buffer *)v33))->Init(0, 0x10000); /*0x5ff4c7*/
       *(unsigned int *)v31.Surface = (unsigned int)(&BSurface_Vtable); /*0x5ff4d0*/
       XSurface::Fill(&v31, 0); /*0x5ff4d9*/
       v5 = i; /*0x5ff4de*/
@@ -788,7 +788,7 @@ AbstractClass * * GenerateRangeRingTextures()
           *(unsigned int *)v13[1].__pad_0 = 0; /*0x5ff5e0*/
           *(unsigned int *)v13->__pad_0 = &XSurface_Vtable; /*0x5ff5e9*/
           v13[1].Width = 1; /*0x5ff5ef*/
-          Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
+          ((Buffer*)((Buffer *)&v13[1].Height))->Init(0, 0x8000); /*0x5ff5f6*/
           *(unsigned int *)v13->__pad_0 = &BSurface_Vtable; /*0x5ff5fb*/
         }
         else
@@ -802,7 +802,7 @@ AbstractClass * * GenerateRangeRingTextures()
       v31.LockCount = 0; /*0x5ff626*/
       *(unsigned int *)v31.Surface = (unsigned int)(&XSurface_Vtable); /*0x5ff630*/
       v32 = 1; /*0x5ff638*/
-      Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
+      ((Buffer*)((Buffer *)v33))->Init(0, 0x10000); /*0x5ff640*/
       *(unsigned int *)v31.Surface = (unsigned int)(&BSurface_Vtable); /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
       v21 = 60 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1960); /*0x5ff684*/

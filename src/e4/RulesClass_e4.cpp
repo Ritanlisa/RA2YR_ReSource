@@ -212,13 +212,8 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
     v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
-      result = INIClass::GetString( /*0x673ed0*/
-                 (INIClass *)v13,
-                 (uint8_t *)aPowerups,
-                 (&off_7E523C)[v2],
-                 a0None,
-                 String,
-                 128);
+      result = /*0x673ed0*/
+                 ((INIClass*)((INIClass *)v13))->GetString(/*0x673ed0*/ (uint8_t *)aPowerups, (&off_7E523C)[v2], a0None, String, 128);
       if ( result ) /*0x673ed7*/
       {
         v4 = strtok(String, Str); /*0x673ee7*/
@@ -375,7 +370,7 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v7->__pad_0, (uint8_t *)aMovies, i); /*0x6745a4*/
-      result = INIClass::GetString(v7, (uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
+      result = ((INIClass*)v7)->GetString((uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
       {
         result = LookupNameIndex((ObjectClass *)Source); /*0x6745c0*/
@@ -979,13 +974,8 @@ int RulesClass::readCrateRules(void * aInfantrytypes)
   for ( i = 0; i < KeyCount; ++i ) /*0x67229d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aInfantrytypes, i); /*0x6722b5*/
-    if ( INIClass::GetString( /*0x6722c3*/
-           v6,
-           (uint8_t *)aInfantrytypes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( /*0x6722c3*/
+           ((INIClass*)v6)->GetString(/*0x6722c3*/ (uint8_t *)aInfantrytypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordType::FindOrCreate2(Destination); /*0x6722d0*/
     }
@@ -1009,13 +999,8 @@ int RulesClass::readRadiation(void * aAircrafttypes)
   for ( i = 0; i < KeyCount; ++i ) /*0x6723ed*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aAircrafttypes, i); /*0x672405*/
-    if ( INIClass::GetString( /*0x672413*/
-           v6,
-           (uint8_t *)aAircrafttypes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( /*0x672413*/
+           ((INIClass*)v6)->GetString(/*0x672413*/ (uint8_t *)aAircrafttypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordClass::FindOrCreate(Destination); /*0x672420*/
     }
@@ -1039,13 +1024,8 @@ int RulesClass::ReadSidesList(void * aSuperweapontyp)
   for ( i = 0; i < KeyCount; ++i ) /*0x67260d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aSuperweapontyp, i); /*0x672625*/
-    if ( INIClass::GetString( /*0x672633*/
-           v6,
-           (uint8_t *)aSuperweapontyp,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( /*0x672633*/
+           ((INIClass*)v6)->GetString(/*0x672633*/ (uint8_t *)aSuperweapontyp, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       WeaponTypeClass::Process(Destination); /*0x672640*/
     }

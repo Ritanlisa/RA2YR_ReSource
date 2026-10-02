@@ -1732,7 +1732,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   int Instance; // ebx
 
   GadgetClass::Construct((ShpButtonClass *)this, aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
-  Buffer::Init((Buffer *)((char *)this + 36), 0, 0); /*0x6c656c*/
+  ((Buffer*)((Buffer *)((char *)this + 36)))->Init(0, 0); /*0x6c656c*/
   *((unsigned int *)this + 12) = 0; /*0x6c657e*/
   *((unsigned int *)this + 13) = a4; /*0x6c6585*/
   *(unsigned int *)this->__pad_0 = &vt_StaticButtonClass; /*0x6c6588*/

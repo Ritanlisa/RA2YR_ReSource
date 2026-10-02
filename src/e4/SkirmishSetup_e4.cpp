@@ -316,14 +316,14 @@ LABEL_28:
               {
                 word_AC0EC8 = 0; /*0x5e6da4*/
                 byte_AC11C9 = 0; /*0x5e6dad*/
-                DeleteAndZero::Alt((DeleteAndZero *)&aP0); /*0x5e6db4*/
+                ((DeleteAndZero*)((DeleteAndZero *)&aP0))->Alt(); /*0x5e6db4*/
                 return 0; /*0x5e6dbc*/
               }
               else
               {
                 wcscpy((wchar_t *)(&word_AC0EC8), v27); /*0x5e6d7c*/
                 byte_AC11C9 = 0; /*0x5e6d88*/
-                DeleteAndZero::Alt((DeleteAndZero *)&aP0); /*0x5e6d8f*/
+                ((DeleteAndZero*)((DeleteAndZero *)&aP0))->Alt(); /*0x5e6d8f*/
                 return 0; /*0x5e6d97*/
               }
             }
@@ -336,7 +336,7 @@ LABEL_28:
                 byte_AC11C9 = 1; /*0x5e6de2*/
               }
               SendDlgItemMessageA((HWND)v15, 1771, 0x186u, 0, 0); /*0x5e6df6*/
-              DeleteAndZero::Alt((DeleteAndZero *)&aP0); /*0x5e6dfc*/
+              ((DeleteAndZero*)((DeleteAndZero *)&aP0))->Alt(); /*0x5e6dfc*/
               return 0; /*0x5e6e04*/
             }
           }

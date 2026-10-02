@@ -801,7 +801,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     if ( ((Surface *)(v6))->LoadToSurfaceSHP(Destination) ) /*0x5960d5*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x5960e7*/
+      ((RawFileClass*)((RawFileClass *)&v17.q010))->Construct((int)ExistingFileName); /*0x5960e7*/
       CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596101*/
       if ( g_MissionQueueFrame.briefing[451] ) /*0x596109*/
@@ -846,7 +846,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   {
     if ( *(unsigned int *)g_MissionQueueFrame.briefing[451] ) /*0x596215*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x596222*/
+      ((RawFileClass*)((RawFileClass *)&v17.q010))->Construct((int)ExistingFileName); /*0x596222*/
       CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
       if ( FindFirstFileA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/

@@ -133,7 +133,7 @@ AbstractClass * * MapSeed::InsertName()
   const char *v11; // [esp+8h] [ebp-70h] BYREF
   char v12[108]; // [esp+Ch] [ebp-6Ch] BYREF
 
-  if ( (uint8_t)MapSeed::CheckName(this) ) /*0x79c656*/
+  if ( (uint8_t)((MapSeed*)this)->CheckName() ) /*0x79c656*/
   {
     ((String *)((String *)&v11))->AssignFromPtr((const char **)this); /*0x79c668*/
     v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c66d*/
@@ -217,7 +217,7 @@ AbstractClass * * MapSeed::InsertName()
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
-    if ( String::Length((String *)&g_WindowManager.__pad_14[16]) ) /*0x79c807*/
+    if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x79c807*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x79c825*/
       {

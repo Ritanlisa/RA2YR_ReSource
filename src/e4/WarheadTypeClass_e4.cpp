@@ -874,7 +874,7 @@ void* WarheadTypeClass_ReadINI()
   char Source[20]; // [esp+4Ch] [ebp-94h] BYREF
   char String[128]; // [esp+60h] [ebp-80h] BYREF
 
-  INIClass::ResetSection(a3); /*0x772095*/
+  ((INIClass*)a3)->ResetSection(); /*0x772095*/
   if ( !INIClass::BinarySearchSection((int)a3, (uint8_t *)(a1 + 36)) ) /*0x7720a0*/
     return 0; /*0x7729d9*/
   *(unsigned int *)(a1 + 152) = INIClass::ReadInt_Overwrite(a1 + 36, aAmbientdamage, *(unsigned int *)(a1 + 152)); /*0x7720c6*/
@@ -959,13 +959,8 @@ void* WarheadTypeClass_ReadINI()
   v65 = (void*)&VectorClass_int_vftable; /*0x772447*/
   if ( Block && v67 ) /*0x772457*/
     RA2_OPDEL(Block); /*0x77245a*/
-  if ( INIClass::GetString( /*0x772479*/
-         a3,
-         (uint8_t *)(a1 + 36),
-         (uint8_t *)aAnim_0,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x772479*/
+         ((INIClass*)a3)->GetString(/*0x772479*/ (uint8_t *)(a1 + 36), (uint8_t *)aAnim_0, &g_INI_DefaultBuffer, String, 128) )
   {
     ((DynamicVectorClass *)(&v65))->AnimTypeConstructor(0, 0); /*0x77248e*/
     v65 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x77249d*/
@@ -996,13 +991,8 @@ void* WarheadTypeClass_ReadINI()
   if ( v15 && v69 ) /*0x772554*/
     RA2_OPDEL(v15); /*0x772557*/
   v16 = *(unsigned int *)(a1 + 276); /*0x77255f*/
-  if ( INIClass::GetString( /*0x77257c*/
-         a3,
-         (uint8_t *)(a1 + 36),
-         (uint8_t *)aAssaultanim,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x77257c*/
+         ((INIClass*)a3)->GetString(/*0x77257c*/ (uint8_t *)(a1 + 36), (uint8_t *)aAssaultanim, &g_INI_DefaultBuffer, String, 128) )
   {
     v17 = AnimTypeClass::FindOrCreate(String); /*0x772589*/
   }
@@ -1016,19 +1006,14 @@ void* WarheadTypeClass_ReadINI()
   p_IntList = aOccupantanim; /*0x7725a1*/
   *(unsigned int *)(a1 + 276) = v17; /*0x7725a6*/
   v18 = *(unsigned int *)(a1 + 272); /*0x7725ac*/
-  if ( INIClass::GetString(a3, (uint8_t *)(a1 + 36), (uint8_t *)p_IntList, v61, v62, v63) ) /*0x7725b5*/
+  if ( ((INIClass*)a3)->GetString((uint8_t *)(a1 + 36), (uint8_t *)p_IntList, v61, v62, v63) ) /*0x7725b5*/
     v19 = AnimTypeClass::FindOrCreate(String); /*0x7725c2*/
   else
     v19 = v18; /*0x7725c9*/
   *(unsigned int *)(a1 + 272) = v19; /*0x7725cb*/
   v20 = *(unsigned int *)(a1 + 280); /*0x7725d1*/
-  if ( INIClass::GetString( /*0x7725ee*/
-         a3,
-         (uint8_t *)(a1 + 36),
-         (uint8_t *)aOpentoppedanim,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x7725ee*/
+         ((INIClass*)a3)->GetString(/*0x7725ee*/ (uint8_t *)(a1 + 36), (uint8_t *)aOpentoppedanim, &g_INI_DefaultBuffer, String, 128) )
   {
     v21 = AnimTypeClass::FindOrCreate(String); /*0x7725fb*/
   }
@@ -1140,18 +1125,13 @@ void* WarheadTypeClass_ReadINI()
   *(unsigned int *)(a1 + 344) = v51; /*0x7728f6*/
   *(unsigned char *)(a1 + 348) = INIClass::ReadBool_Overwrite(v61, v62, v63); /*0x772901*/
   Source[0] = 0; /*0x77291b*/
-  INIClass::GetString(a3, (uint8_t *)(a1 + 36), (uint8_t *)aAttachedpartic, Source, Source, 20); /*0x772920*/
+  ((INIClass*)a3)->GetString((uint8_t *)(a1 + 36), (uint8_t *)aAttachedpartic, Source, Source, 20); /*0x772920*/
   v52 = WarheadTypeClass::applyDamage(Source); /*0x772929*/
   if ( v52 != -1 ) /*0x772931*/
     *(unsigned int *)(a1 + 284) = *((unsigned int *)dword_A83D6C + v52); /*0x77293c*/
   v53 = *(unsigned int *)(a1 + 172); /*0x772942*/
-  if ( INIClass::GetString( /*0x77295f*/
-         a3,
-         (uint8_t *)(a1 + 36),
-         (uint8_t *)g_INI_Key_Warhead,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( /*0x77295f*/
+         ((INIClass*)a3)->GetString(/*0x77295f*/ (uint8_t *)(a1 + 36), (uint8_t *)g_INI_Key_Warhead, &g_INI_DefaultBuffer, String, 128) )
   {
     v54 = WarheadTypeClass::FindOrCreate(String); /*0x77296c*/
   }
@@ -1166,7 +1146,7 @@ void* WarheadTypeClass_ReadINI()
   p_IntList = aProjectile; /*0x77298a*/
   v59 = (uint8_t *)(a1 + 36); /*0x77298f*/
   *(unsigned int *)(a1 + 172) = v54; /*0x772992*/
-  if ( INIClass::GetString(a3, v59, (uint8_t *)p_IntList, v61, v62, v63) ) /*0x772998*/
+  if ( ((INIClass*)a3)->GetString(v59, (uint8_t *)p_IntList, v61, v62, v63) ) /*0x772998*/
     *(unsigned int *)(a1 + 160) = ObjectTypeClass::FindOrCreate(String); /*0x7729aa*/
   else
     *(unsigned int *)(a1 + 160) = v55; /*0x7729c1*/
@@ -1373,7 +1353,7 @@ int WarheadTypeClass::LoadType()
   for ( i = 0; i < KeyCount; ++i ) /*0x6729ac*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, g_INI_Key_Warheads, i); /*0x6729c2*/
-    if ( INIClass::GetString(v6, g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
+    if ( ((INIClass*)v6)->GetString(g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
       WarheadTypeClass::FindOrCreate(Destination); /*0x6729dc*/
   }
   return KeyCount > 0; /*0x6729e8*/

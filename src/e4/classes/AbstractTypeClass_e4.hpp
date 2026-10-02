@@ -85,7 +85,7 @@ struct AbstractTypeClass {
     int GetData(void *a1);
     int GetType(int a1);
     int Init(int aP1);
-    int LoadFromINI(AbstractTypeClass * aP1, void *a2);
+    int LoadFromINI(unsigned __int8 ***aP1);
     int ProcessPower(int *aP1);
     int SetType();
     int StubReturnFalse();

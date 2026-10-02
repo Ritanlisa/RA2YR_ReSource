@@ -199,7 +199,7 @@ LABEL_61:
 LABEL_58:
   Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
-  v19 = CCFileClass::Construct((CCFileClass *)((char *)&v24), Source); /*0x4795f5*/
+  v19 = ((CCFileClass*)((CCFileClass *)((char *)&v24)))->Construct(Source); /*0x4795f5*/
   v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0)); /*0x479609*/
   *(unsigned int *)v24.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x47960b*/
   v27 = 0; /*0x47960f*/

@@ -466,12 +466,8 @@ LABEL_67:
     {
   char v146[12]; // [esp+F0h] [ebp-30h] BYREF
       eax64 = (unsigned int *)((IUnknown *)((unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v26 + 164))(v26, v146)));
-      v43 = Coord::Subtract(
-  int v147[3]; // [esp+FCh] [ebp-24h] BYREF
-              v147,
-              (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax64),
-              (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax64[1]),
-              (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax64[2]));
+      v43 = ((Coord*)(int v147[3]; // [esp+FCh] [ebp-24h] BYREF
+              v147))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax64), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax64[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax64[2]));
       v135 = ((gamemd::Coord*)v43)->field_0;
       v44 = (BuildingTypeClass *)((gamemd::Coord*)v43)->field_4;
       st7_63 = (double)v135;
@@ -1365,7 +1361,7 @@ void MainGame()
     dword_A8E7AC = 0; /*0x48cdf0*/
     g_MenuReturnState = 1; /*0x48cdf6*/
     FadePalette(&FileSystem_TEMPERAT_PAL, 15, 0); /*0x48cdfd*/
-    Timer::PumpMessages((Timer *)dword_87F770); /*0x48ce08*/
+    ((Timer*)((Timer *)dword_87F770))->PumpMessages(); /*0x48ce08*/
     if ( (dword_A8D5F8 & 2) != 0 ) /*0x48ce14*/
     {
       (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x48ce1e*/

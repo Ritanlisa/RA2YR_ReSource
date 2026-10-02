@@ -811,7 +811,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
 
   Ticks = TimerGetTicks(); /*0x663dc6*/
   v19 = 0; /*0x663dca*/
-  Waypoint::InitInvalid(&v23); /*0x663dd2*/
+  ((Waypoint*)&v23)->InitInvalid(); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA((LPSTARTUPINFOA)&v23.__pad_0[28]); /*0x663de9*/
   if ( !(*(int (**)(unsigned int *))(*dword_887628 + 72))(dword_887628) ) /*0x663df7*/

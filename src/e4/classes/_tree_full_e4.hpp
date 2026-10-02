@@ -487,7 +487,7 @@ struct ObjectClass {
     static int LoadFromStream_Common(void *aP0, FootClass * aP1, LPSTREAM pStm);  // A_c2039 R5 static-form sync
     void* IsCliffWall;  // 0x0 (no offset truth)
     void* IsBelowScreen;  // 0x0 (no offset truth)
-    static int HasLinkedObject(void *aP0, VectorClass_flat * aP1);  // A_c2039 R5 static-form sync
+    static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
     void* GetMember09;  // 0x0 (no offset truth)
     static int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
     void* Deploy;  // 0x0 (no offset truth)

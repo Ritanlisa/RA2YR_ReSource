@@ -36,7 +36,7 @@ struct ThemeClass {
     int RequestBuffer();
     int GetValue();
     void * InitializeThemes(char * a2);
-    bool GetField(int a1, int a2);
+    bool GetField(int a1);
     int Play(int a2);  // 0x720bb0
 };
 

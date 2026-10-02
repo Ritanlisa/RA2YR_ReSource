@@ -119,7 +119,7 @@ int AudioMixer::PlaySample()
 } // namespace gamemd
 // 0x401000
 namespace gamemd {
-int AudioMixer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int AudioMixer::Init()
 {
 
   SetupSampleAudioMixer((int *)(&this->AudioMixer_field_00),(gamemd::ObjectClass *)(0x4000)); /*0x40100a*/

@@ -1672,7 +1672,7 @@ char sub_437290(int * a1, int a2, int * a3)
   v15 = 0; /*0x4372d9*/
   v12 = &XSurface_Vtable; /*0x4372e1*/
   v16 = v7; /*0x4372e9*/
-  Buffer::Init(v17, v6, v7 * v8 * v13); /*0x4372ed*/
+  ((Buffer*)v17)->Init(v6, v7 * v8 * v13); /*0x4372ed*/
   v9 = *(unsigned int *)(a2 + 12); /*0x4372f5*/
   v10 = *a1; /*0x4372f8*/
   v11[2] = *(unsigned int *)(a2 + 8); /*0x4372fa*/

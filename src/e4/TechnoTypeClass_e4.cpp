@@ -766,7 +766,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-void TechnoTypeClass::Construct(int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0)
+void TechnoTypeClass::Construct(int aP1)
 {
 
   int v3; // eax
@@ -1374,46 +1374,26 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&((unsigned int *)aP0)[1716] + 4 * i17)); /*0x716c40*/
     _makepath(Buffer, 0, 0, &((unsigned int *)aP0)[276], Ext); /*0x716c66*/
     aP0->ObjectTypeClass[41] = (int)SearchMIXFile(Buffer, 0); /*0x716c96*/
-    INIClass::GetString( /*0x716c9c*/
-      (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-      &((unsigned int *)aP0)[276],
-      (uint8_t *)&((char *)&g_INI_Key_TRUCKA),
-      &g_INI_Key_TRUCKA.__pad_1714[80],
-      Filename,
-      256);
+    /*0x716c9c*/
+      ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716c9c*/ &((unsigned int *)aP0)[276], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);
     if ( !_strcmpi(Filename, &g_INI_Key_TRUCKA.__pad_1714[80]) ) /*0x716cab*/
-      INIClass::GetString( /*0x716cd4*/
-        (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-        (uint8_t *)aP0[9],
-        (uint8_t *)&((char *)&g_INI_Key_TRUCKA),
-        &g_INI_Key_TRUCKA.__pad_1714[80],
-        Filename,
-        256);
+      /*0x716cd4*/
+        ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716cd4*/ (uint8_t *)aP0[9], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);
     _makepath(Buffer, 0, 0, Filename, Ext); /*0x716ced*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = 0; /*0x716cfe*/
     v35 = SearchMIXFile(Buffer, 0); /*0x716d04*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = v35; /*0x716d0b*/
     if ( !v35 ) /*0x716d11*/
       *(unsigned int *)&((unsigned int *)aP0)[1548] = SearchMIXFile(&(unsigned int *)((char *)&stru_820320 + 143), 0); /*0x716d1f*/
-    INIClass::GetString( /*0x716d3f*/
-      (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-      &((unsigned int *)aP0)[276],
-      (uint8_t *)&((char *)&g_INI_Key_TRUCKA),
-      &g_INI_DefaultBuffer,
-      Filename,
-      256);
+    /*0x716d3f*/
+      ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716d3f*/ &((unsigned int *)aP0)[276], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_DefaultBuffer, Filename, 256);
     _makepath(Buffer, 0, 0, Filename, Ext); /*0x716d58*/
     *(unsigned int *)&((unsigned int *)aP0)[1580] = 0; /*0x716d69*/
     *(unsigned int *)&((unsigned int *)aP0)[1580] = SearchMIXFile(Buffer, 0); /*0x716d8d*/
-    INIClass::GetString( /*0x716d93*/
-      (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-      &((unsigned int *)aP0)[276],
-      (uint8_t *)g_INI_Key_Palette,
-      &g_INI_DefaultBuffer,
-      (char *)&((unsigned int *)aP0)[0] + 1,
-      32);
+    /*0x716d93*/
+      ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716d93*/ &((unsigned int *)aP0)[276], (uint8_t *)g_INI_Key_Palette, &g_INI_DefaultBuffer, (char *)&((unsigned int *)aP0)[0] + 1, 32);
     if ( BYTE1(((unsigned int *)aP0)[0]) ) /*0x716d98*/
-      *(int *)((char *)&((unsigned int *)aP0)[0] + 1) = FileExtension::MapHandler((const char *)&((unsigned int *)aP0)[0] + 1); /*0x716da4*/
+      *(int *)((char *)&((unsigned int *)aP0)[0] + 1) = ((FileExtension*)((const char *)&((unsigned int *)aP0)[0] + 1))->MapHandler(); /*0x716da4*/
     return 0; /*0x716daa*/
   }
   return result; /*0x716dac*/

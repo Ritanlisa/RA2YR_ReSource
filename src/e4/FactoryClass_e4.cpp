@@ -606,7 +606,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   }
   Block->__pad_42[11] = 0; /*0x4ca85f*/
   *(unsigned int *)&Block->__pad_42[6] = 0; /*0x4ca863*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x4ca86a*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     __3_YAXPAX_Z(Block); /*0x4ca877*/
   return Block; /*0x4ca881*/

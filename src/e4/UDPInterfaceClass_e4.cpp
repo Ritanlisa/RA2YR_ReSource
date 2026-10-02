@@ -907,7 +907,7 @@ int UDPInterfaceClass_Destru::Receive()
   int result; // eax
   int v6; // [esp+0h] [ebp-Ch]
 
-  if ( IPXInterfaceClass::Receive((WinsockInterfaceClass *)this) && (v2 = 0, *((int *)this + 64716) > 0) ) /*0x7b38a8*/
+  if ( ((IPXInterfaceClass*)((WinsockInterfaceClass *)this))->Receive() && (v2 = 0, *((int *)this + 64716) > 0) ) /*0x7b38a8*/
   {
     v3 = (AnimClass **)((unsigned int *)this + 32352); /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
@@ -938,7 +938,7 @@ namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::CheckStatus()
 {
 
-  NetworkClass::UnregisterAsync((WinsockInterfaceClass *)this); /*0x7b3903*/
+  ((NetworkClass*)((WinsockInterfaceClass *)this))->UnregisterAsync(); /*0x7b3903*/
   return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
 
 }

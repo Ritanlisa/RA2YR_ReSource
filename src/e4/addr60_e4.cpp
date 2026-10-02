@@ -1715,7 +1715,7 @@ LABEL_6:
   v62 = (HWND)v2;
   if ( !g_DialogHashMap_Count )
     goto LABEL_17;
-  int v5 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  int v5 = ((HashTable_flat*)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v6 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v5);
   if ( !v6 )
@@ -1737,7 +1737,7 @@ LABEL_17:
   v62 = (HWND)v2;
   if ( !g_DialogHashMap_Count )
     goto LABEL_23;
-  int v9 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
+  int v9 = ((HashTable_flat*)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v10 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v9);
   if ( !v10 )
@@ -4155,9 +4155,9 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
   lParam[1] = v10; /*0x60401a*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x60401e*/
   ((WideString *)((WideString *)&a5))->AssignFromPtr((const wchar_t **)&v9); /*0x604029*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v9); /*0x604032*/
+  ((DeleteAndZero*)((DeleteAndZero *)&v9))->Alt(); /*0x604032*/
   ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&a5); /*0x60403e*/
-  DeleteAndZero::Alt(&a5); /*0x604047*/
+  ((DeleteAndZero*)&a5)->Alt(); /*0x604047*/
   return a1; /*0x60404e*/
 }
 } // namespace gamemd

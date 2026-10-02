@@ -858,12 +858,12 @@ ScenarioClass * * ComputeMapCameraBounds()
     {
       if ( !(uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(i) ) /*0x58b851*/
         break; /*0x58b858*/
-      Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &k, i); /*0x58b86a*/
+      Waypoint_Location = (int16_t *)((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&k, i); /*0x58b86a*/
       v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(Waypoint_Location); /*0x58b87e*/
       v6 = (*(int (**)(void *))(*(unsigned int *)v5 + 72))(v5); /*0x58b88f*/
       v7 = (int *)(*(int (**)(void *, char *, unsigned int))(*(unsigned int *)v5 + 72))(v5, v30, *(unsigned int *)(v6 + 4)); /*0x58b89f*/
       IsoCoord::ToScreenOffset(*v7, (int)v29, &v25, &v26); /*0x58b8ab*/
-      v8 = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v28, i); /*0x58b8bc*/
+      v8 = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(v28, i); /*0x58b8bc*/
       v9 = g_MissionQueueFrame.localVariables[162]; /*0x58b8c1*/
       v25 = v25; /*0x58b8c9*/
       *(unsigned int *)&g_MissionQueueFrame.globalVariables[4 * g_MissionQueueFrame.localVariables[162] + 132] = *v8; /*0x58b8d2*/
@@ -1217,9 +1217,8 @@ AbstractClass * * sub_58EF10()
         v17[1] = 0; /*0x58eff8*/
         if ( (uint8_t)Coord::Compare2D((Coord *)(v7 + g_MissionQueueFrame.localVariables[163]), v17) ) /*0x58effd*/
         {
-          v9 = (RandomMap *)CellCoord::To_CellObj( /*0x58f014*/
-                              (CellCoord *)&stru_87F5F0.__pad_58[416],
-                              (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
+          v9 = (RandomMap *)/*0x58f014*/
+                              ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x58f014*/ (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
           Terrain = ((RandomMap*)v9)->GenerateTerrain(); /*0x58f01b*/
           if ( Terrain ) /*0x58f022*/
             *((unsigned char *)Terrain + 26) = 0; /*0x58f024*/

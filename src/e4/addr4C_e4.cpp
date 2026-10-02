@@ -2787,7 +2787,7 @@ char sub_4C9160()
   unsigned char v3[12]; // [esp+5Ch] [ebp-14h] BYREF
   int v4; // [esp+68h] [ebp-8h]
 
-  CCFileClass::Construct(v2, aExpandDat); /*0x4c916d*/
+  ((CCFileClass*)v2)->Construct(aExpandDat); /*0x4c916d*/
   v0 = ((CCFileClass *)(v2))->Open(0); /*0x4c9181*/
   v2[0] = (void*)&CCFileClass_vftable; /*0x4c9183*/
   v4 = 0; /*0x4c918b*/

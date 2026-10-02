@@ -323,7 +323,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = ((Coord2D *)(&v27))->Add(v52, v44); /*0x70547d*/
-    v15 = (int *)(Rect::Construct(v54, v14, 3, 3)); /*0x70548a*/
+    v15 = (int *)(((Rect*)v54)->Construct(v14, 3, 3)); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15[1]; /*0x70549c*/
     v37 = v15[2]; /*0x7054a8*/
@@ -353,7 +353,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   }
   v27 = v29 - 2; /*0x705583*/
   v28 = v30 - 2; /*0x70558b*/
-  v18 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705597*/
+  v18 = (int *)(((Rect*)v54)->Construct(&v27, 3, 3)); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
@@ -366,7 +366,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
-  v20 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705623*/
+  v20 = (int *)(((Rect*)v54)->Construct(&v27, 3, 3)); /*0x705623*/
   v35 = *v20; /*0x70562c*/
   v36 = v20[1]; /*0x705635*/
   v37 = v20[2]; /*0x70563c*/
@@ -1753,7 +1753,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   *v3 = 0; /*0x5c0699*/
   GameOptionsClass::UnlockMovieIfNeeded_MoviesList(dword_A8EB60, Source); /*0x5c06a3*/
   strcpy(v3,(const char *)(aBik_0)); /*0x5c06c9*/
-  v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
+  v5 = ((CCFileClass*)v11)->Construct(Source); /*0x5c06d6*/
   v6 = (*(int (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0); /*0x5c06e8*/
   v11[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
@@ -1763,7 +1763,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   if ( !v6 ) /*0x5c0712*/
   {
     strcpy(v3,(const char *)(aVqa)); /*0x5c0735*/
-    v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
+    v7 = ((CCFileClass*)v11)->Construct(Source); /*0x5c0742*/
     v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x5c0754*/
     v11[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x5c0756*/
     v13 = 0; /*0x5c075e*/

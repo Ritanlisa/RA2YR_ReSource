@@ -116,8 +116,8 @@ int AnimClass::Destruct(void * a2, void *a2_2)
   v8 = (AnimClass *)a2->AnimClass_field_0xC8; /*0x422a18*/
   if ( v8 ) /*0x422a20*/
     AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
-  Mixer::ReleaseChannel((Mixer *)a2->AnimClass_field_0x1A0); /*0x422a2f*/
-  Mixer::ReleaseChannel((Mixer *)&a2->AnimClass_field_0x1B4); /*0x422a3c*/
+  ((Mixer*)((Mixer *)a2->AnimClass_field_0x1A0))->ReleaseChannel(); /*0x422a2f*/
+  ((Mixer*)((Mixer *)&a2->AnimClass_field_0x1B4))->ReleaseChannel(); /*0x422a3c*/
   AudioFileClass::Release((AudioFileClass *)a2->AnimClass_field_0x1A0); /*0x422a43*/
   AudioFileClass::Release((AudioFileClass *)&a2->AnimClass_field_0x1B4); /*0x422a4a*/
   a2->AnimClass_field_0xCC = 0; /*0x422a52*/
@@ -358,12 +358,12 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v19 = *(unsigned int *)v100; /*0x422ef3*/
     ((Tactical*)v110.__pad_0)->SetCellTransform(0, *(int *)v100, v88, v104, 0, 0); /*0x422efa*/
     *(float *)v100 = (float)v107; /*0x422f0f*/
-    Tactical::SetCellTransform(v110.__pad_0, 1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform(1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
     *(float *)&v89 = (float)v106; /*0x422f37*/
-    Tactical::SetCellTransform(v110.__pad_0, 2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
-    Tactical::SetCellTransform(v111.__pad_0, 0, v19, v18, v104, 0, 0); /*0x422f5c*/
-    Tactical::SetCellTransform(v111.__pad_0, 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
-    Tactical::SetCellTransform(v111.__pad_0, 2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform(2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform(0, v19, v18, v104, 0, 0); /*0x422f5c*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform(1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform(2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v110); /*0x422fa7*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v111); /*0x422fba*/
     return; /*0x422fc9*/

@@ -95,7 +95,7 @@ LABEL_23:
       ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v24, v26, &v25); /*0x55e253*/
       ((SyncDelayClass*)&v24)->ProcessNetworkSync(); /*0x55e25c*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55e269*/
-      TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x55e271*/
+      ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }
 LABEL_18:

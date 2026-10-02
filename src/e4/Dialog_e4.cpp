@@ -1635,7 +1635,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   v5 = *(void **)&v15[60]; /*0x61042a*/
   if ( *(unsigned int *)&v15[60] ) /*0x610430*/
   {
-    DeleteAndZero::Alt(*(DeleteAndZero **)&v15[60]); /*0x610434*/
+    ((DeleteAndZero*)(*(DeleteAndZero **)&v15[60]))->Alt(); /*0x610434*/
     __3_YAXPAX_Z(v5); /*0x61043a*/
   }
   if ( *(unsigned int *)&g_DialogPool.__pad_0[4] ) /*0x610449*/
@@ -2251,7 +2251,7 @@ LABEL_7:
           *(unsigned int *)(v7 + 12) = 0; /*0x621f7c*/
           *(unsigned int *)v7 = &XSurface_Vtable; /*0x621f7f*/
           *(unsigned int *)(v7 + 16) = 2; /*0x621f85*/
-          Buffer::Init((Buffer *)(v7 + 20), 0, 2 * v9 * v8); /*0x621f8c*/
+          ((Buffer*)((Buffer *)(v7 + 20)))->Init(0, 2 * v9 * v8); /*0x621f8c*/
           *(unsigned int *)v7 = &BSurface_Vtable; /*0x621f91*/
         }
         else
@@ -2462,7 +2462,7 @@ int Dialog::Destroy()
   int v7; // eax
   Dialog *v8; // [esp+0h] [ebp-8h]
 
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x62272a*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x62272a*/
   Dialog::IdleProcess(v8, (ObjectClass *)this); /*0x622731*/
   DestroyWindow((HWND)this); /*0x622737*/
   result = 0; /*0x622745*/
@@ -2540,7 +2540,7 @@ LABEL_12:
   Dialog_field_0x3C = (DeleteAndZero *)this->Dialog_field_0x3C; /*0x6233fa*/
   if ( Dialog_field_0x3C ) /*0x6233ff*/
   {
-    DeleteAndZero::Alt(Dialog_field_0x3C); /*0x623403*/
+    ((DeleteAndZero*)Dialog_field_0x3C)->Alt(); /*0x623403*/
     __3_YAXPAX_Z(Dialog_field_0x3C); /*0x623409*/
   }
 

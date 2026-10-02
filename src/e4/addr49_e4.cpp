@@ -1947,7 +1947,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   }
   (&g_IsWindowed)[v12] = 0; /*0x49c256*/
   strcat(v28, g_IsWindowed); /*0x49c278*/
-  CCFileClass::Construct(v29, g_Str_File_coopsave_ini); /*0x49c28d*/
+  ((CCFileClass*)v29)->Construct(g_Str_File_coopsave_ini); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/
   v24[2] = 0; /*0x49c29c*/
   INISectionList::Constructor(v25); /*0x49c2a0*/
@@ -1993,7 +1993,7 @@ LABEL_44:
   v20 = *((unsigned int *)this + 17); /*0x49c448*/
   *((unsigned int *)this + 26) = Int_Overwrite; /*0x49c44b*/
   if ( !byte_89F578 ) /*0x49c455*/
-    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c45c*/
+    ((CampaignClass*)((int)&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49c45c*/
   if ( v20 < 0 || v20 >= dword_89F574 ) /*0x49c46f*/
   {
     *((unsigned int *)this + 16) = 0; /*0x49c550*/
@@ -2006,13 +2006,8 @@ LABEL_44:
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c4b9*/
     *(unsigned int *)(*((unsigned int *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
-    INIClass::GetString( /*0x49c4f3*/
-      (uint8_t ***)v24,
-      (uint8_t *)v28,
-      (uint8_t *)Buffer,
-      g_Str_undefined,
-      *(char **)(*((unsigned int *)this + 15) + 4 * j),
-      260);
+    /*0x49c4f3*/
+      ((INIClass*)((uint8_t ***)v24))->GetString(/*0x49c4f3*/ (uint8_t *)v28, (uint8_t *)Buffer, g_Str_undefined, *(char **)(*((unsigned int *)this + 15) + 4 * j), 260);
   }
   *((unsigned char *)this + 108) = 1; /*0x49c505*/
   ((HashTable *)(v24))->DestroyHashTableINIClass(); /*0x49c509*/
@@ -2053,7 +2048,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
   int v33; // [esp+14h] [ebp+4h]
 
   if ( !byte_89F578 ) /*0x49ccfd*/
-    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cd04*/
+    ((CampaignClass*)((int)&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cd04*/
   if ( a2 >= 0 && a2 < dword_89F574 ) /*0x49cd1d*/
   {
     v12 = dword_89F570; /*0x49cd23*/
@@ -2318,7 +2313,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v3 = (unsigned char *)this + 28; /*0x49d3a8*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d3a5*/
     return 0; /*0x49d3ad*/
-  CCFileClass::Construct(v17, g_Str_File_coopsave_ini); /*0x49d3bc*/
+  ((CCFileClass*)v17)->Construct(g_Str_File_coopsave_ini); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
   v20[2] = 0; /*0x49d3cc*/
   INISectionList::Constructor(v21); /*0x49d3d3*/
@@ -2401,13 +2396,8 @@ LABEL_5:
   strcat(v25, g_IsWindowed); /*0x49d59f*/
   IntOverwriteINIClass = INIClass::ReadInt_Overwrite(v25, g_INI_Key_CurrentMap, 0); /*0x49d5bd*/
   sprintf(Buffer, "Map%d", IntOverwriteINIClass + 1); /*0x49d5d1*/
-  INIClass::GetString( /*0x49d602*/
-    (uint8_t ***)v20,
-    (uint8_t *)v25,
-    (uint8_t *)Buffer,
-    g_Str_undefined,
-    aP1,
-    260);
+  /*0x49d602*/
+    ((INIClass*)((uint8_t ***)v20))->GetString(/*0x49d602*/ (uint8_t *)v25, (uint8_t *)Buffer, g_Str_undefined, aP1, 260);
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d644*/
@@ -2454,7 +2444,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
     return 0; /*0x49d68b*/
   v3 = *((unsigned int *)this + 17); /*0x49d6a3*/
   if ( !byte_89F578 ) /*0x49d6a8*/
-    CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49d6af*/
+    ((CampaignClass*)((int)&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
   if ( v3 < 0 || v3 >= dword_89F574 ) /*0x49d6c0*/
     return 0; /*0x49d694*/

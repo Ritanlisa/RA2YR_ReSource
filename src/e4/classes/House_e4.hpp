@@ -190,7 +190,7 @@ struct House {
     AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2, void *a2_2);  // 0x544BE0
     int LoadMapFileData(int a2, char a3);  // 0x544C20
-    void Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);  // 0x69E090
+    void Constructor();  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };
 } // namespace gamemd

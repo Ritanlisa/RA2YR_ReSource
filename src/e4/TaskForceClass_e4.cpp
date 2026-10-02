@@ -229,8 +229,8 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   int v6; // eax
   TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
 
-  INIClass::ResetSection((INIClass *)aP1); /*0x6e8433*/
-  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x6e843b*/
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6e8433*/
+  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI(aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
   this->TaskForceClass_field_0x9C[0] = 0; /*0x6e844f*/

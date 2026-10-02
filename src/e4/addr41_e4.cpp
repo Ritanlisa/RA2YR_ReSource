@@ -758,14 +758,14 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
   unsigned int v40[3]; // [esp+24h] [ebp-8Ch] BYREF
   char String[128]; // [esp+30h] [ebp-80h] BYREF
 
-  INIClass::ResetSection(a1); /*0x41b119*/
+  ((INIClass*)a1)->ResetSection(); /*0x41b119*/
   result = (gamemd::INIClass **)(INIClass::GetKeyCount(a1->__pad_0, aAircraft)); /*0x41b126*/
   v4 = 0; /*0x41b12b*/
   v39 = result; /*0x41b12f*/
   for ( i = 0; i < (int)(v39); ++i ) /*0x41b137*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
-    INIClass::GetString(a1, aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
+    ((INIClass*)a1)->GetString(aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
     v6 = strtok(String, Str); /*0x41b173*/
     v7 = ((HouseClass*)v6)->FindByName(); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/

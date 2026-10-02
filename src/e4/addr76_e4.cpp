@@ -1519,7 +1519,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     ((FileStraw *)((FileStraw *)&v4.m_3[1]))->Open((int)&v16, 0); /*0x764aae*/
     ((CCFileClass *)((BufferIOFileClass *)&v16))->Close(); /*0x764ab7*/
     ((String *)(&v4))->Assign(g_INI_Key_CampaignID); /*0x764ac5*/
-    Int = INIClass::ReadInt((bool *)&v4.m_3[1], (char **)this, (char **)&v4, -1); /*0x764adf*/
+    Int = ((INIClass*)((bool *)&v4.m_3[1]))->ReadInt((char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
     ((HashTable *)((INIClass *)&v4.m_3[1]))->DestroyHashTableINIClass(); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764af3*/
@@ -1893,15 +1893,15 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   ConcatStringAlloc((char **)&a3, (const char **)&((unsigned int *)this)[0], v6); /*0x767343*/
   DeleteAndZero((ObjectClass *)&v14); /*0x76734c*/
   v7 = a4; /*0x767351*/
-  if ( WideString::Length(a4) ) /*0x767357*/
+  if ( ((WideString*)a4)->Length() ) /*0x767357*/
   {
     ((WideString *)((wchar_t **)&a4))->Assign((wchar_t *)L", "); /*0x76736a*/
     v8 = ((String *)((String *)&a3))->GetOrEmpty(); /*0x76737a*/
     StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
     WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF); /*0x7673a0*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v14); /*0x7673a9*/
-    DeleteAndZero::Alt((DeleteAndZero *)&a4); /*0x7673b2*/
+    ((DeleteAndZero*)((DeleteAndZero *)&v14))->Alt(); /*0x7673a9*/
+    ((DeleteAndZero*)((DeleteAndZero *)&a4))->Alt(); /*0x7673b2*/
   }
   else
   {

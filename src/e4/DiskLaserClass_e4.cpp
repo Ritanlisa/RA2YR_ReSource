@@ -87,7 +87,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
     }
     while ( v3 < dword_8A0218 ); /*0x4a7cf6*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x4a7cfa*/
+  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
     __3_YAXPAX_Z(Block); /*0x4a7d07*/
   return Block->__pad_0; /*0x4a7d11*/

@@ -383,7 +383,7 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301)
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5307) )
             {
-              result = (char *)(EventClass::Add2(v2, (int)dword_A83D4C->Object_field_0x30, 3u, (int)result));
+              result = (char *)(((EventClass*)v2)->Add2((int)dword_A83D4C->Object_field_0x30, 3u, (int)result));
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, result, 0x6Fu); /*0x7319c9*/
@@ -1067,7 +1067,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
   lParam[1] = a4; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
   ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&v8); /*0x603f3c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
+  ((DeleteAndZero*)((DeleteAndZero *)&v8))->Alt(); /*0x603f45*/
   return a1; /*0x603f4c*/
 }
 } // namespace gamemd

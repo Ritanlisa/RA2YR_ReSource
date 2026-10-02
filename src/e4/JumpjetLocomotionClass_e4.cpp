@@ -988,7 +988,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
           (*((void (**)(FootClass *, int *))Owner->vtable1 + 109))(Owner, v19); /*0x4b617f*/
           v14 = ((unsigned int *)v4)[0]; /*0x4b6185*/
           LOWORD(a1) = 0x8000; /*0x4b6193*/
-          FacingClass::Set_SyncLog((char *)((unsigned int *)v14)[0], &a1); /*0x4b619a*/
+          ((FacingClass*)((char *)((unsigned int *)v14)[0]))->Set_SyncLog(&a1); /*0x4b619a*/
           result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b61a4*/
           if ( result ) /*0x4b61ae*/
             return AnimClass::ctor( /*0x4b61d1*/
@@ -1411,7 +1411,7 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
     {
       LOWORD(v7) = *((ProgressTimer *)((ProgressTimer *)((unsigned int *)this)[0]))->GetValue(&v8) /*0x4ce5ee*/
                  + ((uint16_t)*(unsigned int *)&this->__pad_50[4] << 8);
-      FacingClass::Set_SyncLog((char *)((unsigned int *)this)[0], &v7); /*0x4ce605*/
+      ((FacingClass*)((char *)((unsigned int *)this)[0]))->Set_SyncLog(&v7); /*0x4ce605*/
       v2 = *(unsigned int *)&this->__pad_50[4]; /*0x4ce60a*/
       v3 = abs32(v2); /*0x4ce612*/
       if ( v3 >= 1 ) /*0x4ce617*/
@@ -4716,7 +4716,7 @@ int JumpjetLocomotionClass::InitMovementParams(int a1, int a2)
   LOWORD(a1) = 0x4000; /*0x54ae21*/
   FacingClass::Update(v3->__pad_50, &a1); /*0x54ae26*/
   LOWORD(a1) = 0x4000; /*0x54ae33*/
-  FacingClass::Set_SyncLog(v3->__pad_50, &a1); /*0x54ae38*/
+  ((FacingClass*)(v3->__pad_50))->Set_SyncLog(&a1); /*0x54ae38*/
   return StreamClass::ResetPosition((LocomotionClass *)v3, v2); /*0x54ae44*/
 
 }

@@ -124,7 +124,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
 
   v2 = (gamemd::INIClass *)(a1);
   v57 = (gamemd::INIClass *)(a1);
-  INIClass::ResetSection(a1); /*0x74327f*/
+  ((INIClass*)a1)->ResetSection(); /*0x74327f*/
   Block = 0; /*0x74328e*/
   v49 = 1; /*0x743292*/
   v46 = (void*)&DynamicVectorClass_int_vftable; /*0x743297*/
@@ -141,7 +141,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
     while ( 1 ) /*0x7432dd*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2->__pad_0, (uint8_t *)aUnits, v4); /*0x7432dd*/
-      INIClass::GetString(v2, (uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
+      ((INIClass*)v2)->GetString((uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Str); /*0x743305*/
       v7 = ((HouseClass *)(v6))->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
@@ -1189,7 +1189,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 
   if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
   {
-    RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fafa*/
+    ((RawFileClass*)&v9)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fafa*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fb04*/
     {
       ((FileClass *)(&v9))->Read((gamemd::BufferIOFileClass *)((char *)&this->owningHouseIndex + 2), 16); /*0x74fb17*/
@@ -1223,7 +1223,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   }
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 320)) & 8) == 0 ) /*0x74fb8b*/
   {
-    RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
+    ((RawFileClass*)&v9)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fba4*/
     {
       ((FileClass *)(&v9))->Read((char *)((unsigned int *)((char *)&stru_A8EB00 + 294)), 16); /*0x74fbb8*/
@@ -1423,7 +1423,7 @@ int sub_7473E0()
       *(unsigned int *)(v1 + 12) = 0; /*0x74740f*/
       *(unsigned int *)v1 = (unsigned int)(&XSurface_Vtable); /*0x747416*/
       *(unsigned int *)(v1 + 16) = 1; /*0x74741c*/
-      Buffer::Init((Buffer *)(v1 + 20), 0, 0x10000); /*0x747423*/
+      ((Buffer*)((Buffer *)(v1 + 20)))->Init(0, 0x10000); /*0x747423*/
       *(unsigned int *)v1 = &BSurface_Vtable; /*0x747428*/
       v2 = v1; /*0x74742e*/
     }

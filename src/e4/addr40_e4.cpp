@@ -499,7 +499,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     v4[v10 + 7] = (int)v8; /*0x402d27*/
     v8[116] = *(unsigned int *)(v12 + 36); /*0x402d34*/
     DListNode::Init(v8 + 62); /*0x402d3a*/
-    AudioMixer::Init(v8 + 26); /*0x402d42*/
+    ((AudioMixer*)(v8 + 26))->Init(); /*0x402d42*/
     v8[65] = 0; /*0x402d47*/
     v8[67] = (int)ProcessAudioMixerFrame; /*0x402d4d*/
     v8[68] = 0; /*0x402d57*/
@@ -650,7 +650,7 @@ void sub_403FA0()
             v4 = (RefCount **)(v2 + 40); /*0x403fdd*/
             do /*0x403ff9*/
             {
-              RefCount::Decrement(*v4); /*0x403fe2*/
+              ((RefCount*)(*v4))->Decrement(); /*0x403fe2*/
               *v4 = 0; /*0x403fe7*/
               ++v1; /*0x403ff3*/
               ++v4; /*0x403ff4*/
@@ -893,7 +893,7 @@ void Audio_Process()
         v19 = (RefCount **)(v2 + 40); /*0x4043ea*/
         do /*0x404402*/
         {
-          RefCount::Decrement(*v19); /*0x4043ef*/
+          ((RefCount*)(*v19))->Decrement(); /*0x4043ef*/
           *v19 = 0; /*0x4043f4*/
           ++v18; /*0x4043fc*/
           ++v19; /*0x4043fd*/
@@ -1265,7 +1265,7 @@ LABEL_19:
               v6 = (RefCount **)(vtable0 + 40); /*0x405f80*/
               do /*0x405f98*/
               {
-                RefCount::Decrement(*v6); /*0x405f85*/
+                ((RefCount*)(*v6))->Decrement(); /*0x405f85*/
                 *v6 = 0; /*0x405f8a*/
                 ++v5; /*0x405f92*/
                 ++v6; /*0x405f93*/
@@ -1339,21 +1339,21 @@ int E4Recv_406B10::InitializeAudioSubsystem()
   int v16; // [esp+8Ch] [ebp-8h]
 
   sub_409360(); /*0x406b1a*/
-  AudioMixer::Init(&g_MixerBuffer1); /*0x406b24*/
+  ((AudioMixer*)&g_MixerBuffer1)->Init(); /*0x406b24*/
   g_MixerChannel_SFX = (ObjectClass *)&g_MixerBuffer1; /*0x406b2e*/
-  AudioMixer::Init(&g_MixerBuffer2); /*0x406b38*/
+  ((AudioMixer*)&g_MixerBuffer2)->Init(); /*0x406b38*/
   g_MixerChannel_Theme = (ObjectClass *)&g_MixerBuffer2; /*0x406b42*/
-  AudioMixer::Init(&g_MixerBuffer3); /*0x406b4c*/
+  ((AudioMixer*)&g_MixerBuffer3)->Init(); /*0x406b4c*/
   g_MixerChannel_Voice = (ObjectClass *)&g_MixerBuffer3; /*0x406b56*/
-  AudioMixer::Init(&g_MixerBuffer4); /*0x406b60*/
+  ((AudioMixer*)&g_MixerBuffer4)->Init(); /*0x406b60*/
   g_MixerChannel_Score = (ObjectClass *)&g_MixerBuffer4; /*0x406b6a*/
-  AudioMixer::Init(&g_MixerBuffer5); /*0x406b74*/
+  ((AudioMixer*)&g_MixerBuffer5)->Init(); /*0x406b74*/
   g_MixerChannel_Misc = (ObjectClass *)&g_MixerBuffer5; /*0x406b7e*/
-  AudioMixer::Init(&g_MixerBuffer6); /*0x406b88*/
+  ((AudioMixer*)&g_MixerBuffer6)->Init(); /*0x406b88*/
   g_MixerChannel_Stream = (ObjectClass *)&g_MixerBuffer6; /*0x406b92*/
-  AudioMixer::Init(&g_MixerBuffer7); /*0x406b9c*/
+  ((AudioMixer*)&g_MixerBuffer7)->Init(); /*0x406b9c*/
   g_MixerChannel_Ambient = (ObjectClass *)&g_MixerBuffer7; /*0x406ba6*/
-  AudioMixer::Init(&g_MixerBuffer8); /*0x406bb0*/
+  ((AudioMixer*)&g_MixerBuffer8)->Init(); /*0x406bb0*/
   g_MixerState = (ObjectClass *)&g_MixerBuffer8; /*0x406bb7*/
   if ( this ) /*0x406bc3*/
   {
@@ -1375,7 +1375,7 @@ LABEL_11:
       goto LABEL_12; /*0x406cf6*/
     }
     g_MixerChannel_SFX = (ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
-    v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
+    v3 = ((CCFileClass*)&v14)->Construct(aAudiomdMix); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
@@ -1593,7 +1593,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   if ( !a3 )
   {
     v6 = (BufferIOFileClass *)RA2_OPNEW(0x24u); /*0x407bb3*/
-    v7 = v6 ? RawFileClass::Construct(v6, (int)a2) : 0;
+    v7 = v6 ? ((RawFileClass*)v6)->Construct((int)a2) : 0;
     a1[31] = v7; /*0x407bcd*/
     if ( v7 ) /*0x407bd0*/
     {
@@ -1610,7 +1610,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   {
     v9 = (CCFileClass *)RA2_OPNEW(0x6Cu); /*0x407bf5*/
     if ( v9 ) /*0x407bff*/
-      v10 = CCFileClass::Construct(v9, a2); /*0x407c04*/
+      v10 = ((CCFileClass*)v9)->Construct(a2); /*0x407c04*/
     else
       v10 = 0; /*0x407c0b*/
     a1[31] = v10; /*0x407c0d*/
@@ -3370,7 +3370,7 @@ int sub_402940()
   DListNode::Init((DListNode *)((char *)off_815E98 + 12)); /*0x402953*/
   *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x40295e*/
   dword_87DE30 = (int)off_815E98[4].__pad_0; /*0x40296e*/
-  AudioMixer::Init((AudioMixer *)&off_815E98[4]); /*0x402974*/
+  ((AudioMixer*)((AudioMixer *)&off_815E98[4]))->Init(); /*0x402974*/
   dword_87DE2C = 1; /*0x402979*/
   return 0; /*0x402985*/
 }
@@ -3683,7 +3683,7 @@ int sub_403ED0(int a1, int a2)
   DListNode::Init(stru_87E250); /*0x403ee5*/
   dword_87E294 = a2; /*0x403eef*/
   dword_87E29C = a1; /*0x403ef5*/
-  AudioMixer::Init(stru_87E1B8); /*0x403efb*/
+  ((AudioMixer*)stru_87E1B8)->Init(); /*0x403efb*/
   v4 = dword_87E294; /*0x403f00*/
   dword_87E290 = 0; /*0x403f0f*/
   dword_87E28C = 0; /*0x403f15*/

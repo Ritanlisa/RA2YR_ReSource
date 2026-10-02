@@ -66,7 +66,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v11.LockCount = 0; /*0x437219*/
   *(unsigned int *)v11.Surface =(unsigned int)(&XSurface_Vtable); /*0x437221*/
   v12 = v7; /*0x437229*/
-  Buffer::Init((int)(Buffer *)v13, v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
+  ((Buffer*)((int)(Buffer *)v13))->Init(v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
   *(unsigned int *)v11.Surface =(unsigned int)(&BSurface_Vtable); /*0x43724b*/

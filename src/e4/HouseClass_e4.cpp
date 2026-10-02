@@ -3783,7 +3783,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
   {
     (*(void (**)(void *, unsigned int, int))(*(unsigned int *)((unsigned int *)this)[0] + 1348))(((unsigned int *)this)[0], 0, 1072693248); /*0x54b9a4*/
     Value = ((ProgressTimer *)((ProgressTimer *)((char *)((unsigned int *)this)[0] + 904)))->GetValue(&v6); /*0x54b9b8*/
-    FacingClass::Set_SyncLog((char *)&this->repairStationsCount, Value); /*0x54b9c1*/
+    ((FacingClass*)((char *)&this->repairStationsCount))->Set_SyncLog(Value); /*0x54b9c1*/
     v4 = this->relatedTags[0]; /*0x54b9c6*/
     this->absorbersCapacity = 0; /*0x54b9cc*/
     this->bunkersCount = 0; /*0x54b9cf*/

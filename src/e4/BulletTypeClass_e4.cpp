@@ -68,7 +68,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
         v3[2] = (unsigned int)(v1 + 16);
         *v3 = (unsigned int)(&XSurface_Vtable);
         v3[4] = (unsigned int)(1);
-        Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
+        ((Buffer*)(v3 + 5))->Init(0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
         *v3 = (unsigned int)(&BSurface_Vtable); /*0x4654cb*/
         dword_89DDC0 = (int)v3; /*0x4654d1*/
       }
@@ -83,13 +83,8 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   {
     v6 = *((unsigned int *)dword_A83C6C + i); /*0x4654f7*/
     Destination[0] = 0; /*0x465500*/
-    INIClass::GetString( /*0x46550e*/
-      (uint8_t ***)dword_887048,
-      (uint8_t *)(v6 + 36),
-      (uint8_t *)aTotile,
-      0,
-      Destination,
-      60);
+    /*0x46550e*/
+      ((INIClass*)((uint8_t ***)dword_887048))->GetString(/*0x46550e*/ (uint8_t *)(v6 + 36), (uint8_t *)aTotile, 0, Destination, 60);
     v7 = Entity_Read(Destination); /*0x465517*/
     if ( v7 >= 0 && v7 < dword_A8ED38 ) /*0x465526*/
       *(unsigned int *)(v6 + 3672) = *((unsigned int *)dword_A8ED2C + v7); /*0x465531*/
@@ -115,13 +110,8 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
   {
     v3 = *((unsigned int *)dword_A83C6C + i); /*0x465cdc*/
     Destination[0] = 0; /*0x465cef*/
-    INIClass::GetString( /*0x465cf5*/
-      *(INIClass **)&DSurface_ViewBounds.__pad_34[116],
-      (uint8_t *)(v3 + 36),
-      aTotile,
-      0,
-      Destination,
-      60);
+    /*0x465cf5*/
+      ((INIClass*)(*(INIClass **)&DSurface_ViewBounds.__pad_34[116]))->GetString(/*0x465cf5*/ (uint8_t *)(v3 + 36), aTotile, 0, Destination, 60);
     v4 = Entity_Read((ObjectClass *)Destination); /*0x465cfe*/
     if ( v4 >= 0 && v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x465d0d*/
       *(unsigned int *)(v3 + 3672) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v4); /*0x465d18*/
@@ -266,7 +256,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
 
   v4 = v3; /*0x46beef*/
-  INIClass::ResetSection((INIClass *)a2); /*0x46bef3*/
+  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x46bef3*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x46befb*/
     return 0; /*0x46c42a*/
   *(unsigned int *)(v4 + 752) = INIClass::ReadInt_Overwrite( /*0x46bf21*/
@@ -422,22 +412,12 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                            (uint8_t *)(v4 + 36),
                            (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 7),
                            *(unsigned char *)(v4 + 748));
-  if ( INIClass::GetString( /*0x46c1ef*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         (uint8_t *)g_INI_Key_Image,
-         &g_INI_DefaultBuffer,
-         (char *)(v4 + 504),
-         25) > 0 )
+  if ( /*0x46c1ef*/
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x46c1ef*/ (uint8_t *)(v4 + 36), (uint8_t *)g_INI_Key_Image, &g_INI_DefaultBuffer, (char *)(v4 + 504), 25) > 0 )
   {
     v39 = *(unsigned int **)(v4 + 728); /*0x46c20a*/
-    if ( INIClass::GetString( /*0x46c219*/
-           (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-           (uint8_t *)(v4 + 504),
-           aTrailer,
-           &g_INI_DefaultBuffer,
-           Destination,
-           128) )
+    if ( /*0x46c219*/
+           ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x46c219*/ (uint8_t *)(v4 + 504), aTrailer, &g_INI_DefaultBuffer, Destination, 128) )
     {
       v22 = AnimTypeClass::FindOrCreate(Destination); /*0x46c226*/
     }
@@ -465,13 +445,8 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                              v36);
   }
   v40 = *(unsigned int *)(v4 + 688); /*0x46c2ad*/
-  if ( INIClass::GetString( /*0x46c2b9*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 1),
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( /*0x46c2b9*/
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x46c2b9*/ (uint8_t *)(v4 + 36), (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 1), &g_INI_DefaultBuffer, Destination, 128) )
   {
     v24 = InfantryTypeClass::Find(Destination); /*0x46c2c6*/
   }
@@ -481,13 +456,8 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
   }
   *(unsigned int *)(v4 + 688) = v24; /*0x46c2db*/
   v41 = *(unsigned int *)(v4 + 692); /*0x46c2f4*/
-  if ( INIClass::GetString( /*0x46c2f8*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         (uint8_t *)((char *)&stru_81AF8C),
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( /*0x46c2f8*/
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x46c2f8*/ (uint8_t *)(v4 + 36), (uint8_t *)((char *)&stru_81AF8C), &g_INI_DefaultBuffer, Destination, 128) )
   {
     v25 = InfantryTypeClass::Find(Destination); /*0x46c305*/
   }
@@ -943,8 +913,8 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
       *(unsigned int *)aP0[8] = &vt_BulletTypeClass; /*0x46c6d1*/
       *(unsigned int *)aP0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
     }
-    VoxelAnimType::LoadAnim(aP0->ObjectTypeClass); /*0x46c6e1*/
-    ObjectTypeClass::Load2DArt(aP0->ObjectTypeClass); /*0x46c6e8*/
+    ((VoxelAnimType*)(aP0->ObjectTypeClass))->LoadAnim(); /*0x46c6e1*/
+    ((ObjectTypeClass*)(aP0->ObjectTypeClass))->Load2DArt(); /*0x46c6e8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/

@@ -266,7 +266,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x41ddba*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
     __3_YAXPAX_Z(this); /*0x41ddc7*/
   return this; /*0x41ddd1*/

@@ -386,7 +386,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
   v18.Pipe_field_0x04 = 0; /*0x4ad956*/
   v18.Pipe_field_0x08 = 0; /*0x4ad95a*/
   *(unsigned int *)v18.__pad_0 = (unsigned int)(&vt_Pipe); /*0x4ad95e*/
-  Buffer::Init((Buffer *)&v18.Pipe_field_0x0C, v10, v9); /*0x4ad966*/
+  ((Buffer*)((Buffer *)&v18.Pipe_field_0x0C))->Init(v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
   *(unsigned int *)v18.__pad_0 = (unsigned int)(&vt_BufferPipe); /*0x4ad979*/
   v11 = (int)(MapClass::DecompressCellData((MapClass *)&stru_87F5F0.__pad_58[416], (int)&v18)); /*0x4ad990*/
@@ -527,7 +527,7 @@ ObjectClass * * MapClass::LoadFileData()
   int v13[3]; // [esp+64h] [ebp-14h] BYREF
   int v14; // [esp+70h] [ebp-8h]
 
-  CCFileClass::Construct(&v12, &this->__pad_298[93]); /*0x547033*/
+  ((CCFileClass*)&v12)->Construct(&this->__pad_298[93]); /*0x547033*/
   Size = CCFileClass::GetSize(&v12); /*0x547041*/
   if ( *(unsigned int *)&this->__pad_5C[72] ) /*0x547043*/
     __3_YAXPAX_Z(*(void **)&this->__pad_5C[72]); /*0x54704e*/
@@ -2015,8 +2015,8 @@ int MapClass::ProcessRegion()
                 (uint8_t)InfantryClass::IsInBounds(v9)) )
           {
             v42 = *(unsigned int *)(InfantryClass::GetType((InfantryClass *)v5) + 40); /*0x56d7cd*/
-            v10 = Cell::PosToIndex((Cell *)&v42); /*0x56d7dc*/
-            if ( Cell::PosToIndex((Cell *)(v5 + 36)) < v10 ) /*0x56d7e5*/
+            v10 = ((Cell*)((Cell *)&v42))->PosToIndex(); /*0x56d7dc*/
+            if ( ((Cell*)((Cell *)(v5 + 36)))->PosToIndex() < v10 ) /*0x56d7e5*/
             {
               v11 = *(unsigned int *)(InfantryClass::GetType((InfantryClass *)v5) + 40); /*0x56d7f2*/
               v12 = p_MapClass_field_0x50[2]; /*0x56d7f5*/
@@ -4347,7 +4347,7 @@ char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
 
 }
 // 0x48DC90
-int MapClass::UnselectAll_ClearLimboLaunchers(void *a1)
+int MapClass::UnselectAll_ClearLimboLaunchers()
 {
 
   int result; // eax

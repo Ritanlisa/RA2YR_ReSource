@@ -207,7 +207,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       v10[1] = (unsigned int)(v7);
       v10[2] = (unsigned int)(v8);
       *v10 = (unsigned int)(&XSurface_Vtable);
-      Buffer::Init(v10 + 5, (int)v65, v7 * v8 * v9); /*0x630444*/
+      ((Buffer*)(v10 + 5))->Init((int)v65, v7 * v8 * v9); /*0x630444*/
       v12 = v11; /*0x630449*/
       *v11 = (unsigned int)(&BSurface_Vtable); /*0x63044f*/
       v55 = v11; /*0x630455*/
@@ -230,7 +230,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     v13[2] = v8; /*0x630497*/
     v13[3] = 0; /*0x63049a*/
     *v13 = (unsigned int)(&XSurface_Vtable); /*0x6304a1*/
-    Buffer::Init(v13 + 5, 0, v7 * v8 * v9); /*0x6304a7*/
+    ((Buffer*)(v13 + 5))->Init(0, v7 * v8 * v9); /*0x6304a7*/
     *v14 = (unsigned int)(&BSurface_Vtable); /*0x6304ac*/
     v12 = v14; /*0x6304b2*/
     v55 = v14; /*0x6304b4*/
@@ -2255,7 +2255,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     v17[0] = v5; /*0x63a5fd*/
     v7 = (unsigned int **)*((unsigned int *)dword_AC4B34 + v6); /*0x63a601*/
     v17[1] = v4; /*0x63a604*/
-    ScreenPosScriptAction = ScriptAction::GetScreenPos(v7, &v18); /*0x63a60a*/
+    ScreenPosScriptAction = ((ScriptAction*)v7)->GetScreenPos(&v18); /*0x63a60a*/
     v9 = ComputeBounds(v27, 8, *ScreenPosScriptAction, ScreenPosScriptAction[1]); /*0x63a61f*/
     v22 = *v9; /*0x63a626*/
     v23 = v9[1]; /*0x63a62d*/
@@ -2676,7 +2676,7 @@ void RenderScriptActionHighlight()
     v24 = Viewport[1]; /*0x63b369*/
     v25 = Viewport[2]; /*0x63b370*/
     v26 = Viewport[3]; /*0x63b37e*/
-    ScreenPos = ScriptAction::GetScreenPos(v1, &v15); /*0x63b382*/
+    ScreenPos = ((ScriptAction*)v1)->GetScreenPos(&v15); /*0x63b382*/
     v6 = ComputeBounds(v27, 8, *ScreenPos, ScreenPos[1]); /*0x63b397*/
     v7 = v6[1] - 4; /*0x63b3a6*/
     v8 = v6[2] + 8; /*0x63b3ac*/

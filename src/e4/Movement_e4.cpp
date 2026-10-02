@@ -117,11 +117,11 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     *(unsigned short *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
     v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b217e*/
     LOWORD(v86) = 0x2000; /*0x5b2182*/
-    if ( Math::Abs16Cmp((Math *)&v85, &v86, aP4) ) /*0x5b2189*/
+    if ( ((Math*)((Math *)&v85))->Abs16Cmp(&v86, aP4) ) /*0x5b2189*/
     {
       LOWORD(v85.Movement_field_00) = v86; /*0x5b2197*/
     }
-    else if ( *(int16_t *)Math::Sub16((Math *)&v86, &v89, &v85) >= 0 ) /*0x5b21b5*/
+    else if ( *(int16_t *)((Math*)((Math *)&v86))->Sub16(&v89, &v85) >= 0 ) /*0x5b21b5*/
     {
       LOWORD(v85.Movement_field_00) += *aP4; /*0x5b21c4*/
     }
@@ -248,18 +248,15 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   LOWORD(v34) = Math::RoundToInt(a3); /*0x5b237f*/
   HIDWORD(v92) = v34; /*0x5b2384*/
   LOWORD(v35) = Math::RoundToInt(a3); /*0x5b2388*/
-  v36 = Coord::Subtract( /*0x5b23a6*/
-          (Coord *)&v90,
-          *(unsigned int *)a2->__pad_0 + v33,
-          a2->Vector3_field_0x04 + HIDWORD(v92),
-          a2->Vector3_field_0x08 + v35);
+  v36 = /*0x5b23a6*/
+          ((Coord*)((Coord *)&v90))->Subtract(/*0x5b23a6*/ *(unsigned int *)a2->__pad_0 + v33, a2->Vector3_field_0x04 + HIDWORD(v92), a2->Vector3_field_0x08 + v35);
   v37 = (void *)((unsigned int)((void *)(v36[1])));
   v38 = v36[2]; /*0x5b23b5*/
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/
   a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
   v39 = ((Vector3 *)(a2))->Subtract((int *)&v90, aP3); /*0x5b23c7*/
-  v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
+  v40 = ((Coord*)((Coord *)v39))->Length(); /*0x5b23ce*/
   v41 = (void *)(*aP3); /*0x5b23d3*/
   v42 = (void *)(aP3[1]); /*0x5b23d5*/
   LODWORD(v89) = v40; /*0x5b23d8*/
@@ -275,11 +272,8 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
   v49 = (unsigned int)aP3[1]; /*0x5b2411*/
   v88.field_4 = v50; /*0x5b2414*/
-  v51 = (double *)Coord::Subtract( /*0x5b242c*/
-                    (Coord *)&v90,
-                    (int)*aP3 - *(unsigned int *)a2->__pad_0,
-                    v49 - a2->Vector3_field_0x04,
-                    v47 - Vector3_field_0x08);
+  v51 = (double *)/*0x5b242c*/
+                    ((Coord*)((Coord *)&v90))->Subtract(/*0x5b242c*/ (int)*aP3 - *(unsigned int *)a2->__pad_0, v49 - a2->Vector3_field_0x04, v47 - Vector3_field_0x08);
   v92 = *v51; /*0x5b2433*/
   /* asm-debt:__asm { fild dword ptr [esp+98h+var_30] } */
   v93[0] = *((unsigned int *)v51 + 2); /*0x5b2449*/
@@ -319,11 +313,11 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
   /* asm-debt:__asm { fmul ds:dbl_7E2818 } */
   *(unsigned short *)v87 = Math::RoundToInt(v46); /*0x5b2510*/
-  if ( Math::Abs16Cmp((Math *)&v86, v87, aP4) ) /*0x5b2515*/
+  if ( ((Math*)((Math *)&v86))->Abs16Cmp(v87, aP4) ) /*0x5b2515*/
   {
     LOWORD(v86) = *(unsigned short *)v87; /*0x5b2523*/
   }
-  else if ( *(int16_t *)Math::Sub16((Math *)v87, &v88, &v86) >= 0 ) /*0x5b2541*/
+  else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16(&v88, &v86) >= 0 ) /*0x5b2541*/
   {
     LOWORD(v86) = *aP4 + v86; /*0x5b2550*/
   }
@@ -376,7 +370,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     {
       LOWORD(v89) = 256; /*0x5b28b6*/
       v68 = (Movement *)Movement::Check((Movement *)aP4, &v88, &v89); /*0x5b28bd*/
-      v69 = Movement::DivideAndStoreScaled(v68, (int *)&v88.field_4, 2); /*0x5b28c4*/
+      v69 = ((Movement*)v68)->DivideAndStoreScaled((int *)&v88.field_4, 2); /*0x5b28c4*/
       v70 = (int16_t *)((Vector *)((int *)v87))->ToFacingMath(v69); /*0x5b28d6*/
       Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
     }
@@ -395,11 +389,8 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   HIDWORD(v90) = v59; /*0x5b2672*/
   LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
   v61 = ((Coord *)((Coord *)&v88.field_4))->Subtract(6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
-  v62 = (double *)Coord::Subtract( /*0x5b26b9*/
-                    (Coord *)v87,
-                    *(unsigned int *)a2->__pad_0 + *v61,
-                    a2->Vector3_field_0x04 + v61[1],
-                    a2->Vector3_field_0x08 + v61[2]);
+  v62 = (double *)/*0x5b26b9*/
+                    ((Coord*)((Coord *)v87))->Subtract(/*0x5b26b9*/ *(unsigned int *)a2->__pad_0 + *v61, a2->Vector3_field_0x04 + v61[1], a2->Vector3_field_0x08 + v61[2]);
   v90 = *v62; /*0x5b26c0*/
   LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
@@ -443,11 +434,11 @@ LABEL_34:
         *(unsigned short *)v88.__pad_0 = 18432; /*0x5b27ff*/
         LOWORD(v89) = *aP4 / 2; /*0x5b2812*/
         *(unsigned int *)v87 = LODWORD(v89); /*0x5b281f*/
-        if ( Math::Abs16Cmp((Math *)&v85, &v88, (int16_t *)v87) ) /*0x5b2829*/
+        if ( ((Math*)((Math *)&v85))->Abs16Cmp(&v88, (int16_t *)v87) ) /*0x5b2829*/
         {
           LOWORD(v85.Movement_field_00) = *(unsigned short *)v88.__pad_0; /*0x5b2837*/
         }
-        else if ( *(int16_t *)Math::Sub16(&v88, &v89, &v85) >= 0 ) /*0x5b2858*/
+        else if ( *(int16_t *)((Math*)&v88)->Sub16(&v89, &v85) >= 0 ) /*0x5b2858*/
         {
           LOWORD(v85.Movement_field_00) += *(unsigned short *)v87; /*0x5b286b*/
         }
@@ -462,11 +453,11 @@ LABEL_34:
       *(unsigned short *)v87 = 0x2000; /*0x5b2778*/
       LOWORD(v89) = *aP4 / 2; /*0x5b278b*/
       *(unsigned int *)v88.__pad_0 = LODWORD(v89); /*0x5b2798*/
-      if ( Math::Abs16Cmp((Math *)&v85, v87, (int16_t *)v88.__pad_0) ) /*0x5b27a2*/
+      if ( ((Math*)((Math *)&v85))->Abs16Cmp(v87, (int16_t *)v88.__pad_0) ) /*0x5b27a2*/
       {
         LOWORD(v85.Movement_field_00) = *(unsigned short *)v87; /*0x5b27b0*/
       }
-      else if ( *(int16_t *)Math::Sub16((Math *)v87, &v89, &v85) >= 0 ) /*0x5b27d1*/
+      else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16(&v89, &v85) >= 0 ) /*0x5b27d1*/
       {
         LOWORD(v85.Movement_field_00) += *(unsigned short *)v88.__pad_0; /*0x5b27e7*/
       }

@@ -1740,7 +1740,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   {
     v8 = (char *)RA2_OPNEW(0x24u); /*0x5340ec*/
     if ( v8 ) /*0x5340f6*/
-      v9 = DSurface::Construct(v8, a1->Height, a1->LockCount, 0, 0); /*0x534104*/
+      v9 = ((DSurface*)v8)->Construct(a1->Height, a1->LockCount, 0, 0); /*0x534104*/
     else
       v9 = 0; /*0x53410b*/
     g_DSurface_Hidden = (int)v9; /*0x53410d*/
@@ -1754,7 +1754,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   {
     v11 = (char *)RA2_OPNEW(0x24u); /*0x534152*/
     if ( v11 ) /*0x53415c*/
-      v12 = DSurface::Construct(v11, aP1->vtable3, aP1->vtable4, v7, 1); /*0x534172*/
+      v12 = ((DSurface*)v11)->Construct(aP1->vtable3, aP1->vtable4, v7, 1); /*0x534172*/
     else
       v12 = 0; /*0x534179*/
     DSurface_Composite = (int)v12; /*0x53417b*/
@@ -1768,7 +1768,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   {
     v14 = (char *)RA2_OPNEW(0x24u); /*0x5341c8*/
     if ( v14 ) /*0x5341d2*/
-      v15 = DSurface::Construct(v14, aP2->vtable3, aP2->vtable4, v7, 1); /*0x5341e8*/
+      v15 = ((DSurface*)v14)->Construct(aP2->vtable3, aP2->vtable4, v7, 1); /*0x5341e8*/
     else
       v15 = 0; /*0x5341ef*/
     DSurface_Tile = (int)v15; /*0x5341f1*/
@@ -1787,12 +1787,12 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
     Debug::Log(aMovingTilesurf); /*0x534273*/
     v17 = (char *)RA2_OPNEW(0x24u); /*0x53427a*/
     if ( v17 ) /*0x534286*/
-      DSurface_Composite = (int)DSurface::Construct(v17, aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/
+      DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/
     else
       DSurface_Composite = 0; /*0x5342a2*/
     v18 = (char *)RA2_OPNEW(0x24u); /*0x5342aa*/
     if ( v18 ) /*0x5342b4*/
-      DSurface_Tile = (int)DSurface::Construct(v18, aP2->vtable3, aP2->vtable4, 1, 1); /*0x5342c9*/
+      DSurface_Tile = (int)((DSurface*)v18)->Construct(aP2->vtable3, aP2->vtable4, 1, 1); /*0x5342c9*/
     else
       DSurface_Tile = 0; /*0x5342d0*/
   }
@@ -1800,7 +1800,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   {
     v19 = (char *)RA2_OPNEW(0x24u); /*0x5342eb*/
     if ( v19 ) /*0x5342f5*/
-      v20 = DSurface::Construct(v19, *(unsigned int *)(a4 + 8), *(unsigned int *)(a4 + 12), v29, 0); /*0x53430f*/
+      v20 = ((DSurface*)v19)->Construct(*(unsigned int *)(a4 + 8), *(unsigned int *)(a4 + 12), v29, 0); /*0x53430f*/
     else
       v20 = 0; /*0x534316*/
     DSurface_Sidebar = (int)v20; /*0x534318*/
@@ -1818,7 +1818,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
     {
       v22 = (char *)RA2_OPNEW(0x24u); /*0x53436e*/
       if ( v22 ) /*0x534378*/
-        v23 = DSurface::Construct(v22, a1->Height, a1->LockCount, 0, 0); /*0x534388*/
+        v23 = ((DSurface*)v22)->Construct(a1->Height, a1->LockCount, 0, 0); /*0x534388*/
       else
         v23 = 0; /*0x53438f*/
       g_DSurface_Hidden = (int)v23; /*0x534391*/
@@ -1833,7 +1833,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   {
     v25 = (char *)RA2_OPNEW(0x24u); /*0x5343db*/
     if ( v25 ) /*0x5343e5*/
-      v26 = DSurface::Construct(v25, a1->Height, a1->LockCount, 1, 0); /*0x5343f5*/
+      v26 = ((DSurface*)v25)->Construct(a1->Height, a1->LockCount, 1, 0); /*0x5343f5*/
     else
       v26 = 0; /*0x5343fc*/
     DSurface_Alternate = (int)v26; /*0x5343fe*/
@@ -2288,7 +2288,7 @@ char sub_538F20(int a1, int a2, char * Source)
   {
     if ( Source ) /*0x538f50*/
     {
-      CCFileClass::Construct(&v20, Source); /*0x538f57*/
+      ((CCFileClass*)&v20)->Construct(Source); /*0x538f57*/
       if ( (uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538f62*/
       {
         FileClass::Load(&v20, (const CHAR *)1); /*0x538f71*/
@@ -2307,7 +2307,7 @@ char sub_538F20(int a1, int a2, char * Source)
   }
   if ( Source ) /*0x538fcf*/
   {
-    CCFileClass::Construct(&v20, Source); /*0x538fd6*/
+    ((CCFileClass*)&v20)->Construct(Source); /*0x538fd6*/
     if ( !(uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538fe1*/
     {
       FileClass::Load(&v20, (const CHAR *)2); /*0x538ff0*/
@@ -2702,7 +2702,7 @@ void sub_53B460(int a1)
     {
       v6 = (*(int (**)(AudioStream *))(*(unsigned int *)DSurface_Composite->__pad_0 + 128))(DSurface_Composite); /*0x53b4ae*/
       v4 = (*(int (**)(AudioStream *))(*(unsigned int *)DSurface_Composite->__pad_0 + 124))(DSurface_Composite); /*0x53b4b1*/
-      v5 = DSurface::Construct(v3, v4, v6, 1, 0); /*0x53b4b7*/
+      v5 = ((DSurface*)v3)->Construct(v4, v6, 1, 0); /*0x53b4b7*/
     }
     else
     {
@@ -2758,13 +2758,13 @@ AnimClass * * UpdateChronosphereEffect()
         DSurface_Composite = g_ChronoEffectState; /*0x53b654*/
         ChronoScreenEffect_Status = 0; /*0x53b65a*/
         byte_A9FA94 = 1; /*0x53b664*/
-        TacticalMap::Redraw(&MapClass_Instance); /*0x53b66b*/
+        ((TacticalMap*)&MapClass_Instance)->Redraw(); /*0x53b66b*/
         ChronoScreenEffect_Duration = dword_A9FAA8; /*0x53b67b*/
         byte_A9FA94 = 0; /*0x53b683*/
         DSurface_Composite = dword_A9FAAC; /*0x53b68a*/
         ChronoScreenEffect_Status = 3; /*0x53b68f*/
         SetVocClassEnabled(1); /*0x53b699*/
-        Mixer::ReleaseChannel((int **)&dword_A9F9B8); /*0x53b6a3*/
+        ((Mixer*)((int **)&dword_A9F9B8))->ReleaseChannel(); /*0x53b6a3*/
         PlayVocClass(((unsigned int *)g_RulesClass_Instance)[0], 0x2000, 1.0, (int)&dword_A9F9B8); /*0x53b6c2*/
         SetVocClassEnabled(0); /*0x53b6c9*/
       }
@@ -2774,7 +2774,7 @@ AnimClass * * UpdateChronosphereEffect()
       if ( !--ChronoScreenEffect_Duration ) /*0x53b6e0*/
       {
         ScenarioClass::ProcessIntroTimer(); /*0x53b6e6*/
-        Mixer::ReleaseChannel((int **)&dword_A9F9B8); /*0x53b6f0*/
+        ((Mixer*)((int **)&dword_A9F9B8))->ReleaseChannel(); /*0x53b6f0*/
         SetAudioSource((int)&dword_A9F9B8, 0, 0); /*0x53b6fe*/
         AudioFileClass::Release(&dword_A9F9B8); /*0x53b708*/
         SetVocClassEnabled(1); /*0x53b70f*/
@@ -3108,7 +3108,7 @@ void GenerateLightningStormGlow()
         *(unsigned int *)(v4 + 12) = 0; /*0x53d3ac*/
         *(unsigned int *)v4 = &XSurface_Vtable; /*0x53d3b3*/
         *(unsigned int *)(v4 + 16) = 1; /*0x53d3b9*/
-        Buffer::Init((Buffer *)(v4 + 20), 0, 0x20000); /*0x53d3c0*/
+        ((Buffer*)((Buffer *)(v4 + 20)))->Init(0, 0x20000); /*0x53d3c0*/
         *(unsigned int *)v5 = &BSurface_Vtable; /*0x53d3c5*/
       }
       else
@@ -3607,7 +3607,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   int v3[3]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(&v2, (char *)Source); /*0x538c48*/
+  ((CCFileClass*)&v2)->Construct((char *)Source); /*0x538c48*/
   if ( (uint8_t)((CCFileClass *)(&v2))->Open(0) ) /*0x538c53*/
   {
     FileClass::Load(&v2, (const CHAR *)1); /*0x538c62*/
@@ -3633,7 +3633,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   int v3[3]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(&v2, (char *)Source); /*0x538cc8*/
+  ((CCFileClass*)&v2)->Construct((char *)Source); /*0x538cc8*/
   if ( !(uint8_t)((CCFileClass *)(&v2))->Open(0) ) /*0x538cd3*/
   {
     FileClass::Load(&v2, (const CHAR *)2); /*0x538ce2*/

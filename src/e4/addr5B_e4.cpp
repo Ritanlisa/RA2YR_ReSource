@@ -682,7 +682,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
     *(unsigned int *)v15.__pad_0 = (void*)&Pipe_vftable; /*0x5bb44c*/
-    Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer_v); /*0x5bb454*/
+    ((Buffer*)((Buffer *)&v15.Pipe_field_0x0C))->Init((int)v6, 4 * Buffer_v); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
     *(unsigned int *)v15.__pad_0 = (void*)&BufferPipe_vftable; /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
@@ -690,7 +690,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer_v); /*0x5bb499*/
     v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
-    RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
+    ((RawFileClass*)((RawFileClass *)v18))->Construct((int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)((FileClass *)((RawFileClass *)v18))->Open(0) ) /*0x5bb4c1*/
       ((FileClass *)((RawFileClass *)v18))->Delete(); /*0x5bb4ce*/
     ((FileClass *)((RawFileClass *)v18))->Open2((const CHAR *)2); /*0x5bb4d9*/
@@ -1308,7 +1308,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->q044 = 0; /*0x5bfb0a*/
   v15->u8_45 = 0; /*0x5bfb0e*/
   v15->q048 = 0; /*0x5bfb11*/
-  v16 = CCFileClass::Construct(&v53, Source); /*0x5bfb14*/
+  v16 = ((CCFileClass*)&v53)->Construct(Source); /*0x5bfb14*/
   v17 = (*(int (**)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
   *(unsigned int *)v53.CDFileClass = (void*)&CCFileClass_vftable; /*0x5bfb2a*/
   v45 = v17 == 0; /*0x5bfb32*/

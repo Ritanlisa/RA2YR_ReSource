@@ -566,7 +566,7 @@ bool ScriptAction::HitTest(int a1, int a2) {
         while ( 1 ) /*0x63a936*/
         {
           v6 = (ScriptAction *)*((unsigned int *)stru_AC4B30.Array_field_0x4 + v4); /*0x63a936*/
-          ScreenPos = ScriptAction::GetScreenPos(v6, &v14); /*0x63a93b*/
+          ScreenPos = ((ScriptAction*)v6)->GetScreenPos(&v14); /*0x63a93b*/
           v8 = ComputeBounds(v22, 8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
           v18 = *v8; /*0x63a957*/
           v19 = v8[1]; /*0x63a95e*/
@@ -718,7 +718,7 @@ char ScriptAction::ProcessIdleAction() {
       v75[54] = *(unsigned short *)v9; /*0x63b698*/
       IDA_LOBYTE(v75[55]) = v9[2]; /*0x63b69e*/
       v55 = *(Coord3D *)GetScenarioClassActionCoords(&v63, v75); /*0x63b6a6*/
-      v10 = Coord3D::Set(&v60, -1, -1, -1); /*0x63b6c2*/
+      v10 = ((Coord3D*)&v60)->Set(-1, -1, -1); /*0x63b6c2*/
       if ( (uint8_t)Coord3D::Equals(&v55, v10) && this ) /*0x63b6d7*/
       {
         v11 = (unsigned int *)(*(int (__thiscall **)(ScriptAction *, ArrayClass **))(*(unsigned int *)this->__pad_0 + 88))(this, &v70); /*0x63b6e3*/
@@ -940,7 +940,7 @@ char ScriptAction::ProcessIdleAction() {
   LABEL_55:
     v46 = (ArrayClass *)ArrayClass::GetAt_Wrap(Type, 0); /*0x63bd25*/
     v70 = v46; /*0x63bd37*/
-    ScreenPos = ScriptAction::GetScreenPos((ScriptAction *)v46, &v55); /*0x63bd3b*/
+    ScreenPos = ((ScriptAction*)((ScriptAction *)v46))->GetScreenPos(&v55); /*0x63bd3b*/
     v48 = *ScreenPos; /*0x63bd40*/
     v61 = *ScreenPos; /*0x63bd45*/
     v62 = ScreenPos[1]; /*0x63bd4c*/
@@ -1221,7 +1221,7 @@ unsigned int * ScriptAction::ReadParameter() {
     v5[1] = v2; /*0x6e1856*/
     if ( (unsigned short)v1 == *(unsigned short *)dword_B0E680 && (unsigned short)v2 == *(unsigned short *)&dword_B0E680[2] ) /*0x6e1875*/
       return 0; /*0x6e189e*/
-    v3 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v5); /*0x6e1886*/
+    v3 = (Cell *)((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v5); /*0x6e1886*/
     result = Cell::IsBridge(v3); /*0x6e188a*/
     if ( !result ) /*0x6e1891*/
       return CellClass::FindInfantry((CellClass *)v3, 0); /*0x6e1896*/

@@ -558,7 +558,7 @@ struct MapClass {
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int  TriggerEVA(IUnknown * aP0);
-    static int UnselectAll_ClearLimboLaunchers(void *a1);
+    static int UnselectAll_ClearLimboLaunchers();
     int UpdateLightingPostProcess();
     int isCellShrouded(uint16_t a2);
     int isLocationShrouded(uint16_t a2);

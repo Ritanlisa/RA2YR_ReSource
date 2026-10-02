@@ -627,13 +627,8 @@ int CCINIClass::InitFromINIEVA()
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1),(gamemd::CCINIClass *)(g_INI_Key_DialogList), (void *)v4); /*0x753060*/
-      KeyCount = INIClass::GetString( /*0x75306d*/
-                   (INIClass *)v1,
-                   g_INI_Key_DialogList,
-                   StringByIndex,
-                   &g_INI_DefaultBuffer,
-                   Destination,
-                   200);
+      KeyCount = /*0x75306d*/
+                   ((INIClass*)((INIClass *)v1))->GetString(/*0x75306d*/ g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200);
       if ( KeyCount ) /*0x753074*/
       {
         if ( &v11 == (int *)-28 ) /*0x753080*/
@@ -2870,7 +2865,7 @@ int sub_7539D0()
   dword_B2D934 = 0; /*0x7539ee*/
   dword_B2D928 = (int)&XSurface_Vtable; /*0x7539f8*/
   dword_B2D938 = 1; /*0x753a02*/
-  Buffer::Init(stru_B2D93C, (int)g_VoxelRenderBuffer, 0x10000); /*0x753a0c*/
+  ((Buffer*)stru_B2D93C)->Init((int)g_VoxelRenderBuffer, 0x10000); /*0x753a0c*/
   dword_B2D928 = (int)&BSurface_Vtable; /*0x753a16*/
   return atexit(sub_753A30); /*0x753a26*/
 }
@@ -2894,7 +2889,7 @@ int sub_753A50()
   dword_B2D7FC = 0; /*0x753a6e*/
   dword_B2D7F0 = (int)&XSurface_Vtable; /*0x753a78*/
   dword_B2D800 = 1; /*0x753a82*/
-  Buffer::Init(stru_B2D804, (int)byte_B1D5E0, 0x10000); /*0x753a8c*/
+  ((Buffer*)stru_B2D804)->Init((int)byte_B1D5E0, 0x10000); /*0x753a8c*/
   dword_B2D7F0 = (int)&BSurface_Vtable; /*0x753a96*/
   return atexit(sub_753AB0); /*0x753aa6*/
 }

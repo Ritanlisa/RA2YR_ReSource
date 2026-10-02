@@ -590,7 +590,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
 {
 
-  AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
+  ((AbstractTypeClass*)((int)this))->Init(aP1); /*0x771f08*/
   this->Report[0] = (int)&vt_TypeList; /*0x771f12*/
   this->DownReport[0] = (int)&vt_TypeList; /*0x771f18*/
   this->Anim[0] = (int)&vt_TypeList; /*0x771f1e*/

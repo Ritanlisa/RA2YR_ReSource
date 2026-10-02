@@ -125,7 +125,7 @@ int Scenario::ReadTeams()
   char String[128]; // [esp+64h] [ebp-80h] BYREF
 
   v1 = (gamemd::INIClass *)((int)(this));
-  INIClass::ResetSection(this); /*0x44f82d*/
+  ((INIClass*)this)->ResetSection(); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
   result = (gamemd::INIClass *)(INIClass::GetKeyCount((gamemd::INIClass *)(v1->__pad_0), (uint8_t *)aStructures)); /*0x44f84a*/
   v3 = 0; /*0x44f84f*/
@@ -136,7 +136,7 @@ int Scenario::ReadTeams()
     while ( 1 ) /*0x44f874*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v1->__pad_0),(gamemd::CCINIClass *)((uint8_t *)aStructures), v3); /*0x44f874*/
-      INIClass::GetString(v1, (uint8_t *)aStructures,(gamemd::INIClass *)(StringByIndex), 0, String, 128); /*0x44f88f*/
+      ((INIClass*)v1)->GetString((uint8_t *)aStructures, (gamemd::INIClass *)(StringByIndex), 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
       v6 = ((HouseClass *)(v5))->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
@@ -993,7 +993,7 @@ int Scenario::ClearScreen(void *a1_1)
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x684261*/
   BYTE2(dword_A8B230[381].vtable3) = 1; /*0x68426c*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 1; /*0x684278*/
-  result = Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x68427d*/
+  result = ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x68427d*/
   dword_B07784 = 0; /*0x684282*/
   return result; /*0x68428c*/
 
@@ -1379,7 +1379,7 @@ void Scenario_EndGameFlow()
   Movie::PlayWrapper((int)dword_A8B230[143].NeedsSaveOrLink, -1, 3, 1, 1, 1); /*0x685915*/
   if ( (dword_A8D5F8 & 2) != 0 ) /*0x685934*/
     goto LABEL_64; /*0x685934*/
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x685940*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x685940*/
   if ( !IDA_BYTE2(dword_A8B230[374].abstractFlags) ) /*0x68594b*/
   {
     __0Iostream_init_QAE_XZ_5((Iostream_init *)((char *)&v29 + 3)); /*0x685959*/
@@ -1425,7 +1425,7 @@ void Scenario_EndGameFlow()
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x685a81*/
     }
   }
-  Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x685a84*/
+  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x685a84*/
   LABEL_64:
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x685a8f*/
   Scenario::CopyLocalScenarioData((Scenario *)&stru_8A38E0); /*0x685a9f*/
@@ -1476,7 +1476,7 @@ void Scenario_EndGameFlow()
       *(unsigned int *)&stru_A8B250.__pad_0[i * 4 + 108] = v23; /*0x685bfa*/
       dword_A8DA90[i] = v24; /*0x685c00*/
     }
-    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x685c14*/
+    ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x685c14*/
   }
   byte_A8E9A0 = CopyProtection::CheckProtectedData(); /*0x685c23*/
   if ( !byte_A8E9A0 ) /*0x685c28*/
@@ -1517,7 +1517,7 @@ void Scenario_EndGameFlow()
   GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x685d7a*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x685d87*/
     ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x685d90*/
-  TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x685d9a*/
+  ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
 }
@@ -1720,7 +1720,7 @@ void Scenario_EndGame()
       *(unsigned int *)&stru_A8B250.__pad_0[i * 4 + 108] = v22; /*0x68625e*/
       dword_A8DA90[i] = v23; /*0x686264*/
     }
-    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686278*/
+    ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x686278*/
   LABEL_65:
     ScenarioClass::LoadScenarioAndStart((char *)&dword_A8B230[130].abstractFlags, 0, v2, dword_A8B230[375].uniqueId); /*0x686282*/
     if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x6862be*/
@@ -1753,7 +1753,7 @@ void Scenario_EndGame()
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/
     if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x6863a7*/
       ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x6863af*/
-    IDA_LOBYTE(v15) = TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6863b9*/
+    IDA_LOBYTE(v15) = ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x6863b9*/
     goto LABEL_60; /*0x6863be*/
   }
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x6861fd*/
@@ -1777,7 +1777,7 @@ int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCI
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
+  if ( ((INIClass*)((INIClass *)this))->GetString(a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
     return ((StringList *)((StringList *)&unk_A83D10))->Find(Destination); /*0x475925*/
   else
     return aP3; /*0x475933*/

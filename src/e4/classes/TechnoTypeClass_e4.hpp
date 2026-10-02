@@ -1101,7 +1101,7 @@ struct TechnoTypeClass {
     void* aP2;  // 0x0 (no offset truth)
     void* houseTypesCount;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    _DWORD * Construct(int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0);
+    _DWORD * Construct(int aP1);
     static AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);

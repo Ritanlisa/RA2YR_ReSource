@@ -34,7 +34,7 @@ ConnectionClass::ConnectionClass() noexcept
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 // 0x48b410
-int ConnectionClass::queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6, int a7, int a8, int a9, int a1)
+int ConnectionClass::queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6)
 {
   int PlayerIndex; // eax
   int v8; // esi
