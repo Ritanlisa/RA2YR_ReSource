@@ -10,6 +10,7 @@ struct FileEntryClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_CORE_OWNS_LOADOPTIONS  // G42.4: core owns in mixed TUs
 struct LoadOptions {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -77,5 +78,6 @@ struct LoadOptions {
     unsigned int *m_C;  // supplied (C2039)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
 };
+#endif  // GAMEMD_CORE_OWNS_LOADOPTIONS
 
 } // namespace gamemd

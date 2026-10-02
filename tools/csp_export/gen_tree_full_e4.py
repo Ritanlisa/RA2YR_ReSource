@@ -111,6 +111,11 @@ EXCLUDE = tree_special | MATHNAMES | {'CellCoord'}  # CellCoord owned by
 # _tree_alias_e4.hpp; MATHNAMES (math/enums plain structs like Matrix3D)
 # were computed but NOT excluded at r57 -- every TU seeing both math.hpp and
 # _tree_full got C2011 redefinitions (607 hits in r73).
+# G42.4: corpus flattens these tree *template* names into concrete flat
+# classes (static-call form `VectorClass::Remove(...)`); e4 universe is
+# include-isolated from core headers (0 non-e4 TUs see _tree_full), so flat
+# defs cannot C2011-clash.  Pointer members still degrade via tree_special.
+FLAT_OK = {'VectorClass', 'HashTable', 'DynamicVectorClass'}
 def cpptype(t, size, own):
     t = (t or '').strip()
     if not t:
@@ -132,15 +137,21 @@ def cpptype(t, size, own):
 
 targets = sorted(n for n in need
                  if n in mtab and n not in have and not n.isupper()
-                 and n not in EXCLUDE)
+                 and n not in (EXCLUDE - FLAT_OK))
 # always include the persistent top offenders
-for n in ('CellCoord', 'Random', 'DeleteAndZero', 'WinAPI', 'INIClass',
-          'CCFileClass', 'HouseClass', 'BuildingClass', 'TechnoClass',
-          'ObjectClass', 'AnimClass', 'UnitClass', 'LoadOptions',
-          'LightConvertClass', 'FileClass', 'TacticalMap', 'FactoryClass',
-          'ConnectionClass', 'InfantryClass', 'AircraftClass'):
+PERSIST = ('CellCoord', 'Random', 'DeleteAndZero', 'WinAPI', 'INIClass',
+           'CCFileClass', 'HouseClass', 'BuildingClass', 'TechnoClass',
+           'ObjectClass', 'AnimClass', 'UnitClass', 'LoadOptions',
+           'LightConvertClass', 'FileClass', 'TacticalMap', 'FactoryClass',
+           'ConnectionClass', 'InfantryClass', 'AircraftClass',
+           # G42.4 C-bucket: g131 C2027 heavyweights not caught by need-mining
+           'HashTable', 'VectorClass', 'State', 'ShapeButtonClass',
+           'DynamicVectorClass')
+for n in PERSIST:
+    if n == 'CellCoord':
+        continue
     if (n in mtab and n not in have and n not in targets
-            and n not in EXCLUDE):
+            and n not in (EXCLUDE - FLAT_OK)):
         targets.append(n)
 targets = sorted(set(targets))
 

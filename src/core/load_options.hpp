@@ -36,6 +36,7 @@ struct FileEntryClass {
 // Used by: Options::DlgProc, CampaignMenu::DlgProc, MenuSelect, SkirmishMapGen
 // ============================================================================
 // CSP: LoadOptions matched via T1+T3
+#define GAMEMD_CORE_OWNS_LOADOPTIONS 1  // G42.4: e4 flat def yields
 class LoadOptions {
 public:
     const char ** GetExtension(); // 0x558740
