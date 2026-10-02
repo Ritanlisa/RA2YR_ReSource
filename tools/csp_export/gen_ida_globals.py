@@ -24,7 +24,7 @@ SRC = ROOT / 'src'
 APPLY = '--apply' in sys.argv
 
 LABEL = re.compile(
-    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword)'
+    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword|asc|flt)'
     r'_[0-9A-Fa-f]{5,8}'
     r'|g_[A-Za-z]\w*'
     r'|[A-Z]\w*_Instance'
@@ -34,7 +34,10 @@ TYPE = {'dword': 'unsigned int', 'word': 'unsigned short',
         'byte': 'unsigned char', 'qword': 'unsigned long long',
         'float': 'float', 'double': 'double', 'dbl': 'double', 'off': 'void*',
         'unk': 'unsigned char', 'stru': 'unsigned char',
-        'xmmword': 'xmmword_t'}
+        'xmmword': 'xmmword_t',
+        # G42.21: asc_ string labels (e4_globals G41.47 uses unsigned int)
+        # and flt_ float labels were outside LABEL/TYPE -> 35 missing externs
+        'asc': 'unsigned int', 'flt': 'float'}
 
 
 def gtype(name):
@@ -45,7 +48,7 @@ def gtype(name):
 
 
 DECL = re.compile(
-    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword)'
+    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword|asc|flt)'
     r'_[0-9A-Fa-f]{5,8}'
     r'|g_[A-Za-z]\w*'
     r'|[A-Z]\w*_Instance'
