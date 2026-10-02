@@ -42,6 +42,25 @@ print("C2065 aN/aP site files:", len(sites))
 MARKER = re.compile(r'^//\s*0x[0-9A-Fa-f]{5,8}\s*$')
 
 
+def balanced_sig(zone):
+    """Extract the (...) parameter list from a (possibly wrapped) head
+    zone via paren balancing; returns the inner text or None."""
+    start = zone.find('(')
+    if start < 0:
+        return None
+    depth = 0
+    for i in range(start, len(zone)):
+        if zone[i] == '(':
+            depth += 1
+        elif zone[i] == ')':
+            depth -= 1
+            if depth == 0:
+                inner = zone[start + 1:i]
+                m = re.match(r'^(.*)$', inner, re.S)
+                return m
+    return None
+
+
 def cache_params(addr):
     for cand in ("func_0x%08X.json" % int(addr, 16),
                  "func_0x%X.json" % int(addr, 16)):
@@ -50,11 +69,19 @@ def cache_params(addr):
             dec = json.load(open(p, encoding="utf-8")).get("decompiled", "")
             if not dec:
                 return None
-            first = dec.split("\n")[0]
-            pm = re.search(r"\((.*)\)\s*$", first)
+            # G42.29g: IDA wraps long signatures across lines (first line
+            # may end mid-param). Take the prefix up to the body '{', then
+            # balanced-paren the parameter list.
+            head_zone = dec.split("{", 1)[0]
+            pm = balanced_sig(head_zone)
+            if pm is None:
+                # legacy single-line fallback
+                first = dec.split("\n")[0]
+                pm = re.search(r"\((.*)\)\s*$", first)
             if not pm:
                 return None
-            raw = pm.group(1).strip()
+            # wrapped signatures carry newlines inside params -- normalize
+            raw = ' '.join(pm.group(1).split())
             if not raw:
                 return []
             # top-level comma split
@@ -121,7 +148,8 @@ for f, lines_set in sites.items():
         head = lines[hj].rstrip("\r\n")
         # G42.27: general gate -- any qualified def head whose params differ
         # from cache truth (E4Recv 0-param is the flagship form)
-        hm = re.match(r'^(.*?\b(?:E4Recv_[0-9A-Fa-f]+|[A-Za-z_]\w*)::\w+)\((.*)\)\s*$', head)
+        # G42.29g: tolerate a trailing '{' (brace-on-same-line defs)
+        hm = re.match(r'^(.*?\b(?:E4Recv_[0-9A-Fa-f]+|[A-Za-z_]\w*)::\w+)\((.*)\)\s*\{?\s*$', head)
         if not hm or ';' in head:
             stats['not-e4recv'] += 1
             continue
