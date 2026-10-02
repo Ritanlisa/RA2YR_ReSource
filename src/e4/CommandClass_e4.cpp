@@ -76,7 +76,7 @@ int CommandClass::BuildBar()
     (unsigned int)(v2)+= 8; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
-  (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, &stru_B0CCB0); /*0x6d122f*/
+  (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, (GadgetClass *)&stru_B0CCB0); /*0x6d122f*/
   v3 = (&g_ObjectTrackingPool)[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
@@ -236,7 +236,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
     if ( *((char *)this + 145) < v7 /*0x724641*/
       || (*((unsigned char *)this + 577) || !v7)
       && (v8 = *((char *)this + 146), v8 > 0)
-      && (*(uint8_t (**)(int *, int, unsigned int))(*((char *)this + 141) + 8))((char *)this + 141, v7 + v8, 0) )
+      && (*(uint8_t (**)(int *, int, unsigned int))(*((char *)this + 141) + 8))((int *)(char *)this + 141, v7 + v8, 0) )
     {
       v9 = (unsigned int)(*((char *)this + 145));
       v10 = (unsigned int)(*((char *)this + 142));

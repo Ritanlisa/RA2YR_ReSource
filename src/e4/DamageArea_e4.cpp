@@ -123,7 +123,7 @@ int DamageArea::CheckOccupancyEligibility()
     v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
     {
-      v5 = (**v3)(v3, &unk_822410, &v9); /*0x4d0204*/
+      v5 = (**v3)((unsigned int)v3, &unk_822410, &v9); /*0x4d0204*/
       if ( v5 >= 0 ) /*0x4d0208*/
       {
         v6 = v9; /*0x4d021c*/

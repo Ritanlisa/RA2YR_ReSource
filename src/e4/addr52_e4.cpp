@@ -86,7 +86,7 @@ int E4Recv_522100::sub_522100()
   v7 = 0; /*0x522124*/
   if ( !v2 ) /*0x52212c*/
     goto LABEL_11; /*0x52212c*/
-  v3 = (**v2)(v2, &unk_818858, &v8); /*0x52213d*/
+  v3 = (**v2)((unsigned int)v2, &unk_818858, &v8); /*0x52213d*/
   if ( v3 >= 0 ) /*0x522141*/
   {
     v5 = v8; /*0x522150*/
@@ -670,7 +670,7 @@ ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
     return 0; /*0x52a4e0*/
   memset(v17, 0, sizeof(v17)); /*0x52a4ed*/
   v3 = ((Checksummer*)(Checksummer *)v17)->Add_Buffer(a2, strlen((const char *)a2)); /*0x52a504*/
-  nextObject = this->nextObject; /*0x52a509*/
+  nextObject =(gamemd::ObjectClass *)this->nextObject; /*0x52a509*/
   v5 = v3; /*0x52a50c*/
   v18 = (uint8_t *)v3; /*0x52a510*/
   if ( !nextObject ) /*0x52a514*/
@@ -684,15 +684,15 @@ ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
     this->ambientSoundController[0] = 0; /*0x52a53e*/
     LOBYTE(this->attachedBomb) = 1; /*0x52a541*/
   }
-  v7 = this->nextObject; /*0x52a545*/
-  fallRate = this->fallRate; /*0x52a54d*/
+  v7 =(gamemd::ObjectClass *)this->nextObject; /*0x52a545*/
+  fallRate =(int)this->fallRate; /*0x52a54d*/
   *(unsigned int *)v17 = v5; /*0x52a550*/
   v9 = UI_Find(fallRate, (int)v7, (int *)v17); /*0x52a554*/
   if ( !v9 ) /*0x52a55b*/
     return 0; /*0x52a5f8*/
   this->ambientSoundController[0] = v9; /*0x52a561*/
 LABEL_9:
-  v10 = this->nextObject; /*0x52a564*/
+  v10 =(gamemd::ObjectClass *)this->nextObject; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
     return (gamemd::ObjectClass **)(unk_B78830); /*0x52a56a*/
   v11 = (unsigned int *)this->ambientSoundController[0]; /*0x52a56c*/
@@ -704,8 +704,8 @@ LABEL_9:
     this->ambientSoundController[0] = 0; /*0x52a590*/
     LOBYTE(this->attachedBomb) = 1; /*0x52a593*/
   }
-  v12 = this->nextObject; /*0x52a597*/
-  v13 = this->fallRate; /*0x52a59a*/
+  v12 =(gamemd::ObjectClass *)this->nextObject; /*0x52a597*/
+  v13 =(int)this->fallRate; /*0x52a59a*/
   if ( (int)v12 <= 0 ) /*0x52a59f*/
     return (gamemd::ObjectClass **)(unk_B78830); /*0x52a59f*/
   while ( 1 ) /*0x52a5ac*/

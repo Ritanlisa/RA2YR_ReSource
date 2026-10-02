@@ -257,7 +257,7 @@ int BuildingClass::SetConnectedBuildingMission(int a2) {
     v3 = a2; /*0x45217b*/
     if ( a2 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x45218b*/
       v3 = 16; /*0x45218d*/
-    Anims = this->Anims; /*0x452192*/
+    Anims =(int *)this->Anims; /*0x452192*/
     v5 = 21; /*0x452198*/
     do /*0x4521ad*/
     {

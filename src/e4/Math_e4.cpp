@@ -53,13 +53,13 @@ int Math_Sqrt(void * a1)
   void * v7;
 
   v2 = (double)(a1);
-  v3 = (void *)(a1 < (void *)(0.0));
+  v3 = (void *)(a1 < 0.0);
   v4 = 0; /*0x4cac44*/
-  v5 = a1 == (void *)(0.0); /*0x4cac44*/
+  v5 = a1 == 0.0; /*0x4cac44*/
   IDA_LOWORD(result) = v1; /*0x4cac4a*/
-  if ( a1 != (void *)(0.0) ) /*0x4cac4f*/
+  if ( a1 != 0.0 ) /*0x4cac4f*/
   {
-    if ( a1 <= (void *)(0.0) ) /*0x4cac65*/
+    if ( a1 <= 0.0 ) /*0x4cac65*/
       v2 = (unsigned int)(a1)* -1.0; /*0x4cac67*/
     v7 = v2; /*0x4cac6d*/
     return (((int16_t)((IDA_LODWORD(v7) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
@@ -156,15 +156,15 @@ int Math_CalcAngle(void * a1, void * a2)
   v3 = v19; /*0x4cae4b*/
   if ( v4 ) /*0x4cae54*/
   {
-    v5 = v3 < (void *)(0.0); /*0x4cae56*/
+    v5 = v3 < 0.0; /*0x4cae56*/
     v6 = 0; /*0x4cae56*/
-    v7 = v3 == (void *)(0.0); /*0x4cae56*/
+    v7 = v3 == 0.0; /*0x4cae56*/
     IDA_LOWORD(result) = v2; /*0x4cae5c*/
-    if ( v3 != (void *)(0.0) ) /*0x4cae61*/
+    if ( v3 != 0.0 ) /*0x4cae61*/
     {
-      v10 = v19 < (void *)(0.0); /*0x4cae6f*/
+      v10 = v19 < 0.0; /*0x4cae6f*/
       v11 = 0; /*0x4cae6f*/
-      v12 = v19 == (void *)(0.0); /*0x4cae6f*/
+      v12 = v19 == 0.0; /*0x4cae6f*/
       IDA_LOWORD(result) = v9; /*0x4cae75*/
     }
   }
@@ -172,9 +172,9 @@ int Math_CalcAngle(void * a1, void * a2)
   {
     IDA_LOWORD(v13) = Math::RoundToInt((unsigned int)(v3)/ v18 / flt_8650B8); /*0x4cae96*/
     result = abs32(v13); /*0x4cae9e*/
-    v15 = v19 < (void *)(0.0); /*0x4caed1*/
+    v15 = v19 < 0.0; /*0x4caed1*/
     v16 = 0; /*0x4caed1*/
-    v17 = v19 == (void *)(0.0); /*0x4caed1*/
+    v17 = v19 == 0.0; /*0x4caed1*/
     IDA_LOWORD(result) = v14; /*0x4caed7*/
   }
   return result; /*0x4cae6a*/

@@ -124,7 +124,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       v2->vtable2 = &vt_WaypointPathClass; /*0x763cb4*/
       v2->vtable3 = &vt_WaypointPathClass; /*0x763cbb*/
     }
-    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
+    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, (WaypointPathClass **)&a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
       p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/
@@ -356,7 +356,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763e41*/
   v6 = (gamemd::WaypointPathClass *)(Block); /*0x763e56*/
-  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
+  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))((int *)&dword_B72608, &v6); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
   {
     do /*0x763e8d*/

@@ -173,8 +173,8 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
   {
     if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v73)->flags[0] & 0x100) == 0 /*0x718c6e*/
       || (v12 = (int *)(v6[3] + 156),
-          v75 = *v12,
-          v76 = v12[1],
+          v75 =(int *)*v12,
+          v76 =(int *)v12[1],
           v13 = v12[2],
           v65 = 1,
           v13 <= (int)(3 * *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + Cell::GetGroundHeight(v73))) )
@@ -185,7 +185,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     {
       v14 = v6[3]; /*0x718c86*/
       IDA_LOBYTE(aP0) = 0; /*0x718c89*/
-      if ( (*(uint8_t (**)(int, int, int))(*(unsigned int *)v14 + 512))(v14, a3, a2) ) /*0x718c90*/
+      if ( (*(uint8_t (**)(int, int, int))(*(unsigned int *)v14 + 512))(v14, (int)a3, (int)a2) ) /*0x718c90*/
         (*(void (**)(unsigned int))(*(unsigned int *)v6[3] + 492))(v6[3]); /*0x718c9f*/
       if ( (*(int (**)(unsigned int))(*(unsigned int *)v6[3] + 388))(v6[3]) == 8 /*0x718ce3*/
         || (*(int (**)(unsigned int))(*(unsigned int *)v6[3] + 388))(v6[3]) == 9
@@ -250,7 +250,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         v6[12] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718ead*/
       }
       v27 = (gamemd::CellClass *)(((Coord *)((Coord *)&((unsigned int *)(stru_87F5F0.__pad_58))[416]))->To_Cell(&v76));
-      (*(void (**)(CellClass *, int *))((&v27->mapCoords)[0] + 72))(v27, &v79); /*0x718ec8*/
+      (*(void (**)(CellClass *, int *))((&v27->mapCoords)[0] + 72))(v27, (int *)&v79); /*0x718ec8*/
       if ( *v8 == g_BuildingLoadQueue_Array.q008 /*0x718ef5*/
         && v6[11] == g_BuildingLoadQueue_Array.q008
         && v6[12] == g_BuildingLoadQueue_Array.q008 )

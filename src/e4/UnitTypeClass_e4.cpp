@@ -115,7 +115,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   *((unsigned int *)this + 1) = (unsigned int)(&vt_UnitTypeClass); /*0x7471c5*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_UnitTypeClass); /*0x7471cb*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_UnitTypeClass); /*0x7471d2*/
-  AbstractClass::GenerateUniqueID((char *)this + 4); /*0x7471d9*/
+  AbstractClass::GenerateUniqueID((int)(char *)this + 4); /*0x7471d9*/
   *((unsigned int *)this + 454) = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
   if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
@@ -129,7 +129,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
         !v4) )
   {
     dword_A83CF0 = v3 + 1; /*0x74722b*/
-    *((unsigned int *)dword_A83CE4 + v3) = this; /*0x747235*/
+    *((unsigned int *)dword_A83CE4 + v3) =(unsigned int)this; /*0x747235*/
     v3 = dword_A83CF0; /*0x747238*/
   }
   v5 = 0; /*0x74723d*/
@@ -513,7 +513,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3, void * aAltimag
   }
   while ( v35 < 4 ); /*0x747b47*/
   strcpy(Source, (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
-  INIClass::GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
+  INIClass::GetString(p_occupant, (unsigned char *)aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
   _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2,(const char *)(Ext)); /*0x747ba6*/
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
   if ( ((AbstractTypeClass *)((int)v83))->NameEquals(((char *)&g_INI_Key_TRUCKA)) ) /*0x747bca*/
@@ -570,7 +570,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3, void * aAltimag
     v69 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aGuardianturret_0, -1); /*0x747e82*/
     ((BuildingClass *)(v83))->SetSlot(v68, v69); /*0x747e8b*/
   }
-  return 1; /*0x747e92*/
+return (void *)1; /*0x747e92*/
 }
 }
 // 0x74B960
@@ -632,8 +632,8 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
   a1->TechnoTypeClass = (void *)256; /*0x7475e7*/
-  ((unsigned int *)a1)[0] = (void *)256; /*0x7475e9*/
-  ((unsigned int *)a1)[0] = v1; /*0x7475ec*/
+  ((unsigned int *)a1)[0] =(unsigned int)(void *)256; /*0x7475e9*/
+  ((unsigned int *)a1)[0] =(unsigned int)v1; /*0x7475ec*/
   return (unsigned int *)a1; /*0x7475ef*/
 
 }
@@ -657,8 +657,8 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
   if ( v7 < GroundHeight ) /*0x747ee0*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x747ef1*/
   a1->TechnoTypeClass = v5; /*0x747efe*/
-  ((unsigned int *)a1)[0] = v6; /*0x747f04*/
-  ((unsigned int *)a1)[0] = v3; /*0x747f08*/
+  ((unsigned int *)a1)[0] =(unsigned int)v6; /*0x747f04*/
+  ((unsigned int *)a1)[0] =(unsigned int)v3; /*0x747f08*/
   return (unsigned int *)a1; /*0x747f0b*/
 
 }
@@ -734,16 +734,16 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
   char v3; // [esp+7h] [ebp-105h] BYREF
   char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
 
-  result = TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)a1, a2); /*0x748024*/
+  result =(int)TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)a1, a2); /*0x748024*/
   if ( result >= 0 ) /*0x74802b*/
   {
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
       a1->vtable1 = &vt_UnitTypeClass; /*0x74803d*/
-      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748043*/
-      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x74804a*/
-      ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748051*/
+      ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x748043*/
+      ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x74804a*/
+      ((unsigned int *)a1)[0] =(unsigned int)(&vt_UnitTypeClass); /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/

@@ -196,7 +196,7 @@ void AnimFile::Release()
   this->u32_84 = 0; /*0x4267b5*/
   if ( v2 ) /*0x4267bd*/
   {
-    (**v2)(v2, 1); /*0x4267c3*/
+    (**v2)((unsigned int)v2, 1); /*0x4267c3*/
     this->u32_E0C = 0; /*0x4267c5*/
   }
   if ( this->u32_E10 ) /*0x4267cb*/

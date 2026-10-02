@@ -100,7 +100,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
       v7 = i + *((unsigned int *)this + 92); /*0x5579ad*/
       if ( *((unsigned int *)this + 17) > v7 ) /*0x5579b1*/
         (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
-          this,
+          (ListClass *)this,
           v7,
           this->ListClass_field_0x0C + 1,
           i * *((unsigned int *)this + 19) + this->ListClass_field_0x10 + 1,

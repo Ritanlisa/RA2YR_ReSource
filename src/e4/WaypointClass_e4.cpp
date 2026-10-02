@@ -35,7 +35,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   signed int v16; // [esp+10h] [ebp-Ch]
   int16_t v18; // [esp+1Ah] [ebp-2h]
 
-  v2 = &(&this->padding_18)[114]; /*0x502171*/
+  v2 =(int *)&(&this->padding_18)[114]; /*0x502171*/
   v3 = *a2 / 256; /*0x50218e*/
   v4 = 0; /*0x502194*/
   v18 = a2[1] / 256; /*0x502196*/

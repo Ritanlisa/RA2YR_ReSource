@@ -73,43 +73,43 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 2: /*0x759fc6*/
       goto LABEL_13;
     case 3: /*0x759fc6*/
-      v6 = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 32))((char *)this + 4, a3, 1) != 0; /*0x759fdf*/
+      v6 = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 32))((int)(char *)this + 4, a3, 1) != 0; /*0x759fdf*/
       *((unsigned char *)this + 112) = v6; /*0x759fe4*/
       result = !v6; /*0x759fec*/
       break; /*0x759fef*/
     case 4: /*0x759fc6*/
-      (*(void (**)(int))(*((unsigned int *)this + 1) + 52))((char *)this + 4); /*0x75a0cf*/
+      (*(void (**)(int))(*((unsigned int *)this + 1) + 52))((int)(char *)this + 4); /*0x75a0cf*/
       *((unsigned char *)this + 112) = 0; /*0x75a0d4*/
       result = 0; /*0x75a0d2*/
       break; /*0x75a0d2*/
     case 5: /*0x759fc6*/
       v7 = a4; /*0x759ffc*/
-      result = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 36))((char *)this + 4, a3, a4) != v7; /*0x75a00c*/
+      result = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 36))((int)(char *)this + 4, a3, a4) != v7; /*0x75a00c*/
       break; /*0x75a00f*/
     case 6: /*0x759fc6*/
       result = 1; /*0x75a012*/
       break; /*0x75a018*/
     case 7: /*0x759fc6*/
-      result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((char *)this + 4, a4, a3) == 0; /*0x75a033*/
+      result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4, a3) == 0; /*0x75a033*/
       break; /*0x75a034*/
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
         v9 = (char *)((int)((char *)((int)((char *)((int)((char *)this + 4))))));
-        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((char *)this + 4, a4, a3) == 0; /*0x75a086*/
+        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4, a3) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
-          result = (*(int (**)(int, int *, int))(*(unsigned int *)v9 + 36))(v9, &a4, 1) != 1; /*0x75a09c*/
+          result = (*(int (**)(int, int *, int))(*(unsigned int *)v9 + 36))((int)v9, &a4, 1) != 1; /*0x75a09c*/
           if ( !result ) /*0x75a09e*/
-            result = (*(int (**)(int, int, int))(*(unsigned int *)v9 + 40))(v9, -1, 1) == 0; /*0x75a0b0*/
+            result = (*(int (**)(int, int, int))(*(unsigned int *)v9 + 40))((int)v9, -1, 1) == 0; /*0x75a0b0*/
         }
       }
       else
       {
         v8 = (char *)((int)((char *)((int)((char *)((int)((char *)this + 4))))));
-        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((char *)this + 4, a4 - 1, a3) == 0; /*0x75a055*/
+        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
-          result = (*(int (**)(int, int *, int))(*(unsigned int *)v8 + 36))(v8, &a4, 1) != 1; /*0x75a06c*/
+          result = (*(int (**)(int, int *, int))(*(unsigned int *)v8 + 36))((int)v8, &a4, 1) != 1; /*0x75a06c*/
       }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/

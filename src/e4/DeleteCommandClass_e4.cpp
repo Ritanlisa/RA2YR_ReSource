@@ -27,8 +27,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
-  *(unsigned int *)this->CommandClass = &vt_DeleteCommandClass; /*0x537f12*/
-  return this->CommandClass; /*0x537f18*/
+  *(unsigned int *)this->CommandClass =(unsigned int)(&vt_DeleteCommandClass); /*0x537f12*/
+return (unsigned int *)this->CommandClass; /*0x537f18*/
 
 }
 }  // G42.18c ns repair
@@ -186,7 +186,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c602*/
+    (*(void (**)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))((_VectorClass_PBVAnimClass *)this); /*0x53c602*/
     return 1; /*0x53c608*/
   }
 
@@ -286,7 +286,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c72e*/
+    (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))((_DynamicVectorClass_PBVAnimClass *)this); /*0x53c72e*/
   }
   v7 = this->m_8; /*0x53c731*/
   if ( v7 < this->m_10 ) /*0x53c739*/

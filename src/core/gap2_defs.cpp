@@ -185,7 +185,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a4d21*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4a4d2a*/
+    *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x4a4d2a*/
     this->q008 = a1; /*0x4a4d32*/
     IDA_BYTE1(this->q00C) = a2 == 0; /*0x4a4d35*/
   }
@@ -224,7 +224,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
-  *(unsigned int *)this->__pad_0 = (void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
   if ( v3 && IDA_BYTE1(this->q00C) ) /*0x4a4df0*/
   {
     RA2_OPDEL(v3); /*0x4a4df8*/
@@ -374,7 +374,7 @@ int Stream::ReadPacket() {
     v7 = &v5[v4]; /*0x5f1d36*/
     if ( *(unsigned short *)&v5[v4 + 4] == 0xDEAF ) /*0x5f1d39*/
     {
-      v10 = this->Active; /*0x5f1d6a*/
+      v10 =(int)this->Active; /*0x5f1d6a*/
       v11 = *((uint16_t *)v7 + 1); /*0x5f1d6d*/
       if ( v11 <= v10 ) /*0x5f1d75*/
       {
@@ -392,7 +392,7 @@ int Stream::ReadPacket() {
         {
           if ( !(*(int (**)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 12))( /*0x5f1e58*/
                   this->u32_38,
-                  this->PacketsReceived + v4 + 6,
+                  (int)this->PacketsReceived + v4 + 6,
                   v11) )
             ++this->u32_6C; /*0x5f1e5f*/
           memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
@@ -475,16 +475,16 @@ void* StreamWrapper::QueryInterface(int a2) {
   void (__thiscall ***v4)(unsigned int, int); // ecx
   void (__thiscall ***v5)(unsigned int, int); // ecx
 
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
+  v3 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
   *(unsigned int *)this->__pad_0 = (void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
-    (**v3)(v3, 1); /*0x7b0454*/
-  v4 = (void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
+    (**v3)((unsigned int)v3, 1); /*0x7b0454*/
+  v4 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
   if ( v4 ) /*0x7b045b*/
-    (**v4)(v4, 1); /*0x7b0461*/
-  v5 = (void (***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
+    (**v4)((unsigned int)v4, 1); /*0x7b0461*/
+  v5 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
   if ( v5 ) /*0x7b0468*/
-    (**v5)(v5, 1); /*0x7b046e*/
+    (**v5)((unsigned int)v5, 1); /*0x7b046e*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
   if ( (a2 & 1) != 0 ) /*0x7b047c*/
     RA2_OPDEL(this); /*0x7b047f*/
@@ -499,7 +499,7 @@ int Stream::GetField() {
 
   v1 = (int (***)(unsigned int, int))this->u32_14; /*0x7bcae0*/
   if ( v1 ) /*0x7bcae5*/
-    return (**v1)(v1, 1); /*0x7bcaeb*/
+    return (**v1)((unsigned int)v1, 1); /*0x7bcaeb*/
   return result; /*0x7bcaed*/
 }
 }

@@ -148,7 +148,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-  v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))(&dword_B0E780, &v10); /*0x6e5d8d*/
+  v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))((int *)&dword_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/

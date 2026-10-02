@@ -26,7 +26,7 @@ _DWORD * RadioClass::Release(void *a1)
   LOBYTE((&this->radioLinks)[3]) = 1; /*0x65a76e*/
   BYTE1((&this->radioLinks)[3]) = 0; /*0x65a775*/
   (&this->radioLinks)[0] = (int)&vt_VectorClass; /*0x65a77c*/
-  (&this->radioLinks)[1] = __2_YAPAXI_Z(4u); /*0x65a78b*/
+  (&this->radioLinks)[1] =(unsigned int)__2_YAPAXI_Z(4u); /*0x65a78b*/
   BYTE1((&this->radioLinks)[3]) = 1; /*0x65a791*/
   this->vtable1 = (void *)((unsigned int)(&vt_RadioClass)); /*0x65a798*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a79e*/
@@ -113,10 +113,10 @@ int RadioClass::LoadState(int aP1, int aP2)
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
       *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
     }
-    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
+    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
     {
-      (*(void (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))(v3 + 224, aP2, 0); /*0x65abde*/
+      (*(void (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))((int)v3 + 224, aP2, 0); /*0x65abde*/
       v7 = (int)((gamemd::ObjectClass *)(0)); /*0x65abe1*/
       v8 = (gamemd::ObjectClass *)(aP2); /*0x65abe3*/
       if ( aP2 <= 0 ) /*0x65abe9*/
@@ -137,7 +137,7 @@ LABEL_8:
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP1, 4, 0));
+          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP1, 4, 0));
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
           *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)((gamemd::ObjectClass *)((unsigned int)(aP1))); /*0x65ac08*/
@@ -212,7 +212,7 @@ void RadioClass::SetLinkCount(int a2)
   v3 = (&this->radioLinks)[2]; /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
-    (*(void (**)(int *, int, unsigned int))((&this->radioLinks)[0] + 8))(this->radioLinks, a2, 0); /*0x65ae82*/
+    (*(void (**)(int *, int, unsigned int))((&this->radioLinks)[0] + 8))((int *)this->radioLinks, a2, 0); /*0x65ae82*/
     v4 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
@@ -267,9 +267,9 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a0),(gamemd::ObjectTypeClass *)(aP1),(gamemd::ObjectTypeClass *)(aP2)); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
-    v4 = (int)(*aP1);
+    v4 = *(int *)aP1;
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))((int *)aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
       v5 = 0; /*0x65ac7c*/

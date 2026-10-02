@@ -251,7 +251,7 @@ int TechnoClass::SmokeUpdate() {
           && (*(unsigned char *)(v6 + 20) & 1) != 0
           && !(uint8_t)Object::IsAlliedWithObjectSimpleHouse(v6)
           && (v7 = (unsigned int *)this->target, v7[136] == 2)
-          && !(*(uint8_t (**)(unsigned int *, unsigned int))(*v7 + 812))(v7, this->owner) )
+          && !(*(uint8_t (**)(unsigned int *, unsigned int))(*v7 + 812))(v7, (unsigned int)this->owner) )
         {
           (*(void (**)(char *, unsigned int))(*(unsigned int *)&this->targetingTimer8))(this, 0); /*0x414d9b*/
         }
@@ -269,11 +269,11 @@ int TechnoClass::SmokeUpdate() {
           v33 = v30; /*0x414ddf*/
           v31 = this->locationZ; /*0x414dea*/
           v34 = v31 - 5; /*0x414df4*/
-          (*(void (**)(char *, int *))(v8 + 436))(this, &v32); /*0x414df8*/
+          (*(void (**)(char *, int *))(v8 + 436))((char *)this, &v32); /*0x414df8*/
           if ( (*(int (**)(char *))(*(unsigned int *)&this->queuedMission6))(this) < -400 ) /*0x414e0d*/
           {
-            (*(void (**)(char *, unsigned int))(*(unsigned int *)&this->q0584))(this, 0); /*0x414e15*/
-            IDA_LOBYTE(v4) = (*(int (**)(char *))(((unsigned int)(this->u32_608))))(this); /*0x414e1f*/
+            (*(void (**)(char *, unsigned int))(*(unsigned int *)&this->q0584))((char *)this, 0); /*0x414e15*/
+            IDA_LOBYTE(v4) = (*(int (**)(char *))(((unsigned int)(this->u32_608))))((char *)this); /*0x414e1f*/
             return v4; /*0x414e2c*/
           }
           if ( ((uint8_t)g_CurrentFrame & 3) == 0 ) /*0x414e34*/

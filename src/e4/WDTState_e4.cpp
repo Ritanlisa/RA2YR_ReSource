@@ -84,7 +84,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       {
         v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
-          (**v11)(v11, 3); /*0x76bb42*/
+          (**v11)((unsigned int)v11, 3); /*0x76bb42*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x76bb44*/
       }
       m_8 = a2; /*0x76bb4b*/
@@ -116,7 +116,7 @@ int WDTState_4::ddtor()
   this->m_10 = 0; /*0x76b719*/
   if ( v2 && BYTE1(this->m_C) ) /*0x76b720*/
   {
-    result = (**v2)(v2, 3); /*0x76b72d*/
+    result = (**v2)((unsigned int)v2, 3); /*0x76b72d*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76b72f*/
   }
   BYTE1(this->m_C) = 0; /*0x76b732*/
@@ -172,7 +172,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76bc16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76bc20*/
   {
-    (**v3)(v3, 3); /*0x76bc2f*/
+    (**v3)((unsigned int)v3, 3); /*0x76bc2f*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x76bc31*/
   }
   BYTE1(Block->m_C) = 0; /*0x76bc3c*/

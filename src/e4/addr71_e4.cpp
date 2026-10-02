@@ -748,7 +748,7 @@ int sub_71A3D0()
   dword_B0EC60 = (int)&DynamicVectorClass_TemporalClass___vftable; /*0x71a3ed*/
   dword_B0EC74 = 10; /*0x71a3f7*/
   dword_B0EC70 = 0; /*0x71a401*/
-  return atexit(sub_71A410); /*0x71a40c*/
+  return atexit((void (__cdecl *)(void))sub_71A410); /*0x71a40c*/
 }
 } // namespace gamemd
 
@@ -1229,7 +1229,7 @@ int sub_71E620()
   dword_B0F1A0 = (int)&DynamicVectorClass_TEventClass___vftable; /*0x71e63d*/
   dword_B0F1B4 = 10; /*0x71e647*/
   dword_B0F1B0 = 0; /*0x71e651*/
-  return atexit(sub_71E660); /*0x71e65c*/
+  return atexit((void (__cdecl *)(void))sub_71E660); /*0x71e65c*/
 }
 } // namespace gamemd
 

@@ -275,21 +275,21 @@ int ProcessGameResults(char a1)
   v21 = (IUnknown *)g_Rules_Bases;
   char * v22 = (char *)operator new(0x10u);
   if ( v22 )
-    char * v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72396]), v21);
+    char * v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72396]), (int)v21);
   else
     v23 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v23);
   bool v24 = (unsigned char)ShortGame != 0;
   char * v25 = (char *)operator new(0x10u);
   if ( v25 )
-    char * v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72388]), (IUnknown *)v24);
+    char * v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72388]), (int)(IUnknown *)v24);
   else
     v26 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v26);
   bool v27 = (unsigned char)SWAllowed != 0;
   char * v28 = (char *)operator new(0x10u);
   if ( v28 )
-    char * v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72380]), (IUnknown *)v27);
+    char * v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72380]), (int)(IUnknown *)v27);
   else
     v29 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v29);
@@ -303,7 +303,7 @@ int ProcessGameResults(char a1)
   v33 = (IUnknown *)(((unsigned char)MCVRedeploy == 1) + 2 * ((unsigned char)g_Rules_ShortGame == 1));
   char * v34 = (char *)operator new(0x10u);
   if ( v34 )
-    char * v35 = TerrainInitMap(v34, (RandomStruct *)&((unsigned int *)(stru_830620))[72364], v33);
+    char * v35 = TerrainInitMap(v34, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72364], v33);
   else
     v35 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v35);
@@ -317,21 +317,21 @@ int ProcessGameResults(char a1)
   bool v38 = (unsigned char)Crates != 0;
   char * v39 = (char *)operator new(0x10u);
   if ( v39 )
-    char * v40 = TerrainInitMap(v39, (RandomStruct *)&((unsigned int *)(stru_830620))[72348], (IUnknown *)v38);
+    char * v40 = TerrainInitMap(v39, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72348], (IUnknown *)v38);
   else
     v40 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v40);
   v41 = (IUnknown *)g_Rules_AlliesAllowed;
   char * v42 = (char *)operator new(0x10u);
   if ( v42 )
-    char * v43 = TerrainInitMap(v42, (RandomStruct *)&((unsigned int *)(stru_830620))[72340], v41);
+    char * v43 = TerrainInitMap(v42, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72340], v41);
   else
     v43 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v43);
   v44 = (IUnknown *)g_Rules_MultiEngineer;
   char * v45 = (char *)operator new(0x10u);
   if ( v45 )
-    char * v46 = TerrainInitMap(v45, (RandomStruct *)&((unsigned int *)(stru_830620))[59868], v44);
+    char * v46 = TerrainInitMap(v45, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[59868], v44);
   else
     v46 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v46);
@@ -344,7 +344,7 @@ int ProcessGameResults(char a1)
   v49 = (IUnknown *)dword_B77780;
   char * v50 = (char *)operator new(0x10u);
   if ( v50 )
-    char * v51 = TerrainInitMap(v50, (RandomStruct *)&((unsigned int *)(stru_830620))[72324], v49);
+    char * v51 = TerrainInitMap(v50, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72324], v49);
   else
     v51 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v51);
@@ -357,7 +357,7 @@ int ProcessGameResults(char a1)
   LinkedList_flat::PushFront(v262, (IUnknown *)v54);
   if ( (int)HouseClass_Count > 0 )
   {
-    v55 = HouseClass_Array;
+    v55 =(IUnknown *)HouseClass_Array;
     v57 = (CampaignScore *)*(&g_MatrixTransformState + 2274);
     ecx71 = (CampaignScore **)&v282;
     v59 = HouseClass_Count;
@@ -370,8 +370,8 @@ int ProcessGameResults(char a1)
         *ecx71++ = eax72;
         aP2 = (ObjectClass *)&v60->__pad_0[1];
       }
-      v55 = (unsigned int)((HouseClass *)((char *)v55 + 4));
-      v59 = (IUnknown *)((char *)v59 - 1);
+      v55 =(IUnknown *)(unsigned int)((HouseClass *)((char *)v55 + 4));
+      v59 =(unsigned int)(IUnknown *)((char *)v59 - 1);
     }
     while ( v59 );
   }

@@ -198,7 +198,7 @@ int StringTable::Lookup() {
     char **v3; // esi
 
     v2 = 0; /*0x40dce5*/
-    v3 = &off_816EE0; /*0x40dce7*/
+    v3 =(char **)&off_816EE0; /*0x40dce7*/
     while ( _strcmpi(*v3, this->__pad_0) ) /*0x40dcfa*/
     {
       v3 += 2; /*0x40dcfc*/
@@ -218,7 +218,7 @@ int StreamObj::Release() {
 
     v2 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 5); /*0x410e53*/
     if ( v2 ) /*0x410e58*/
-      result = (**v2)(v2, 1); /*0x410e5e*/
+      result = (**v2)((unsigned int)v2, 1); /*0x410e5e*/
     *((unsigned int *)this + 5) = 0; /*0x410e60*/
     return result; /*0x410e67*/
 }

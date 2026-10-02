@@ -55,7 +55,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
   if ( this->nextObject ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
   if ( (*((uint8_t (**)(ObjectClass *, unsigned int))this->vtable1 + 5))(this, 0) ) /*0x431bef*/
-    this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->vtable1 + 11))(this); /*0x431bfd*/
+    this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->vtable1 + 11))((gamemd::ObjectClass *)this); /*0x431bfd*/
   else
     this->ambientSoundController[3] = 0; /*0x431c02*/
   v5 = a2; /*0x431c05*/
@@ -65,7 +65,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     {
       v5 = 1024; /*0x431c1b*/
       if ( a3 ) /*0x431c20*/
-        (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 22, 0, 0); /*0x431c2a*/
+        (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))((gamemd::ObjectClass *)this, 22, 0, 0); /*0x431c2a*/
     }
     this->attachedTag = (TagClass *)v5; /*0x431c2f*/
     if ( v5 ) /*0x431c32*/
@@ -86,7 +86,7 @@ LABEL_14:
     this->nextObject = (ObjectClass *)__2_YAPAXI_Z((size_t)this->attachedTag); /*0x431c61*/
   if ( !this->nextObject ) /*0x431c67*/
   {
-    (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 12, 0, 0); /*0x431d7d*/
+    (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))((gamemd::ObjectClass *)this, 12, 0, 0); /*0x431d7d*/
     return 0; /*0x431d7d*/
   }
   v6 = this->ambientSoundController[3]; /*0x431c6d*/
@@ -104,8 +104,8 @@ LABEL_14:
     v11 = 0; /*0x431c9b*/
     attachedTag = (TagClass *)v6; /*0x431c9f*/
     if ( v6 > (int)this->attachedTag ) /*0x431ca3*/
-      attachedTag = this->attachedTag; /*0x431ca5*/
-    v8 = (*((uint8_t (**)(ObjectClass *))this->vtable1 + 6))(this) == 0; /*0x431cb0*/
+      attachedTag =(gamemd::TagClass *)this->attachedTag; /*0x431ca5*/
+    v8 = (*((uint8_t (**)(ObjectClass *))this->vtable1 + 6))((gamemd::ObjectClass *)this) == 0; /*0x431cb0*/
     vtable0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
@@ -117,7 +117,7 @@ LABEL_14:
     }
     else
     {
-      v7 = (BombClass *)vtable0[10](this, 0); /*0x431cbe*/
+      v7 = (BombClass *)vtable0[10]((gamemd::ObjectClass *)this, 0); /*0x431cbe*/
       if ( ((unsigned int *)this)[0] == -1 ) /*0x431cc5*/
         this->customSound_controller[0] = (int)v7; /*0x431cd6*/
       else
@@ -130,24 +130,24 @@ LABEL_14:
       else
       {
         if ( v7 ) /*0x431ce5*/
-          (*((void (**)(ObjectClass *, unsigned int, unsigned int))this->vtable1 + 10))(this, 0, 0); /*0x431ced*/
+          (*((void (**)(ObjectClass *, unsigned int, unsigned int))this->vtable1 + 10))((gamemd::ObjectClass *)this, 0, 0); /*0x431ced*/
         this->attachedBomb = v7; /*0x431cf0*/
         this->ambientSoundController[4] = (int)v7; /*0x431cf3*/
       }
     }
-    if ( (TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->vtable1 + 9))( /*0x431d30*/
+    if ( (gamemd::ObjectClass *)(TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->vtable1 + 9))( /*0x431d30*/
                        this,
                        this->nextObject,
                        attachedTag) != attachedTag )
-      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 5, 0, 0); /*0x431d3a*/
+      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))((gamemd::ObjectClass *)this, 5, 0, 0); /*0x431d3a*/
     if ( v11 ) /*0x431d41*/
     {
-      (*((void (**)(ObjectClass *))this->vtable1 + 13))(this); /*0x431d47*/
+      (*((void (**)(ObjectClass *))this->vtable1 + 13))((gamemd::ObjectClass *)this); /*0x431d47*/
       HIBYTE(this->occupant) = 1; /*0x431d4a*/
       BYTE1(this->owningHouseIndex) = 1; /*0x431d4e*/
       return 1; /*0x431d58*/
     }
-    (*((void (**)(ObjectClass *, BombClass *, unsigned int))this->vtable1 + 10))(this, v7, 0); /*0x431d61*/
+    (*((void (**)(ObjectClass *, BombClass *, unsigned int))this->vtable1 + 10))((gamemd::ObjectClass *)this, v7, 0); /*0x431d61*/
     HIBYTE(this->occupant) = 1; /*0x431d64*/
   }
   BYTE1(this->owningHouseIndex) = 1; /*0x431d68*/
@@ -219,11 +219,11 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   aP5 = (gamemd::XSurface *)((int)(aP5));
   v76[0] = (gamemd::XSurface *)(*aP5);
   aP0 = (gamemd::XSurface *)((int)(aP0));
-  v14 = (int)(aP5[1]);
+  v14 = ((int *)aP5)[1];
   IDA_LOBYTE(aP5) = 0; /*0x4373cc*/
   v76[1] = v14; /*0x4373d1*/
   v62 = 0; /*0x4373d5*/
-  v15 = (int)(aP5[2]); /*0x4373d9*/
+  v15 = ((int *)aP5)[2]; /*0x4373d9*/
   v63 = 0; /*0x4373dc*/
   v15 = (char)(v15);
   aP2 = (gamemd::XSurface *)((char)(aP2));
@@ -250,7 +250,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   {
     if ( g_VisibleSurfaceDescriptor ) /*0x43747c*/
     {
-      v23 = (int)(*aP1);
+      v23 = *(int *)aP1;
       v24 = *((unsigned int *)g_VisibleSurfaceDescriptor + 1); /*0x43748d*/
       v71 = v73 + aP1[1]; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
@@ -308,13 +308,13 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v34 = (int)(v17 * v15);
       if ( v17 * v15 >= v20 * v19 ) /*0x4375ee*/
         v34 = v20 * v19; /*0x4375f0*/
-      v35 = (int)(*aP6); /*0x4375fc*/
+      v35 = *(int *)aP6; /*0x4375fc*/
       if ( (unsigned char)aP5 ) /*0x4375fe*/
         aP6->Blit(v62,(void **)(aP2), v34, 0, 0, 0, 1000); /*0x437616*/
       else
         (*(void (**)(int, int *, int, unsigned int, unsigned int, unsigned int, int, unsigned int))(v35 + 4))( /*0x437636*/
           v62,
-          aP2,
+          (int *)aP2,
           v34,
           0,
           0,
@@ -493,7 +493,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             if ( v64 >= (void *)(v68) ) /*0x437939*/
             {
               v18 += aP8->q010; /*0x43793f*/
-              v64 = (unsigned int)(v59)- v68; /*0x437944*/
+              v64 =(void *)(unsigned int)(v59)- v68; /*0x437944*/
             }
           }
           if ( g_VisibleSurfaceDescriptor ) /*0x437950*/
@@ -513,7 +513,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
     }
     (*(void (**)(int *))(*v30 + 96))(v30); /*0x437982*/
     (*(void (**)(int *))(*aP3 + 96))(aP3); /*0x43798b*/
-    return 1; /*0x43798e*/
+return (gamemd::MouseClass **)1; /*0x43798e*/
   }
   return (gamemd::MouseClass **)(result);
 }

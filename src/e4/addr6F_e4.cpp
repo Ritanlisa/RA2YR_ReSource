@@ -271,7 +271,7 @@ v3 = (void ***)((int)((void ***)(0)));
   LABEL_71:
     for ( i = 0; i < v60; v31 = Block ) /*0x6f0e4b*/
     {
-      v39 = v31[i++]; /*0x6f0e4d*/
+      v39 =(unsigned int *)v31[i++]; /*0x6f0e4d*/
       *(unsigned char *)(v39 + 169) = 1; /*0x6f0e51*/
     }
     v40 = (unsigned int)((int)v55);
@@ -825,7 +825,7 @@ int sub_6F2AB0()
 {
   dword_B0EA80 = (int)dword_A8ED84; /*0x6f2aba*/
   dword_B0EA88 = 0; /*0x6f2abf*/
-  return atexit(sub_6F2AD0); /*0x6f2acf*/
+  return atexit((void (__cdecl *)(void))sub_6F2AD0); /*0x6f2acf*/
 }
 } // namespace gamemd
 
@@ -844,7 +844,7 @@ int sub_6F2AF0()
 {
     g_abs_B0EA70 = ((gamemd::Timer *)this->this)->GetTicks();
   dword_B0EA78 = 0; /*0x6f2b04*/
-  return atexit(sub_6F2B20); /*0x6f2b14*/
+  return atexit((void (__cdecl *)(void))sub_6F2B20); /*0x6f2b14*/
 }
 } // namespace gamemd
 

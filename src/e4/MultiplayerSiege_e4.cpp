@@ -384,7 +384,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/
-  return &this->MultiplayerSiege_field_00; /*0x5cabf0*/
+return (gamemd::MultiplayerSiege *)&this->MultiplayerSiege_field_00; /*0x5cabf0*/
 
 }
 } // namespace gamemd

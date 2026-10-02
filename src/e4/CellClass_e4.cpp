@@ -1810,7 +1810,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
       v10[1] = 0; /*0x586674*/
       result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0); /*0x58667e*/
       if ( result ) /*0x586685*/
-        result = (*(int (**)(int, int))(*(unsigned int *)result + 408))(result, aP1); /*0x586690*/
+        result = (*(int (**)(int, int))(*(unsigned int *)result + 408))(result, (int)aP1); /*0x586690*/
     }
     ++v5; /*0x586696*/
     v4 += 2; /*0x586698*/

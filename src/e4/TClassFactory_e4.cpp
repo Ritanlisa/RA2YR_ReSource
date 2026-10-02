@@ -73,7 +73,7 @@ int TClassFactory_CampaignClass::ddtor(int a2, int a3, unsigned int *a4, int a1)
   v7 = v6; /*0x6c02d6*/
   if ( !v6 ) /*0x6c02da*/
     return -2147024882; /*0x6c02dd*/
-  v8 = (**v6)(v6, a4, v9); /*0x6c02f1*/
+  v8 = (**v6)((unsigned int)v6, a4, v9); /*0x6c02f1*/
   if ( v8 < 0 ) /*0x6c02f5*/
     ((void (*)(int (***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c02fd*/
   return v8; /*0x6c029a*/
@@ -133,7 +133,7 @@ int TClassFactory_MechLocomotionClass::ddtor(int a2, int a3, unsigned int *a4)
   v7 = v6; /*0x6c4dd1*/
   if ( !v6 ) /*0x6c4dd5*/
     return -2147024882; /*0x6c4dd8*/
-  v8 = (**v6)(v6, a4, v9); /*0x6c4dec*/
+  v8 = (**v6)((unsigned int)v6, a4, v9); /*0x6c4dec*/
   if ( v8 < 0 ) /*0x6c4df0*/
     ((void (*)(int (***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4df8*/
   return v8; /*0x6c4d9a*/

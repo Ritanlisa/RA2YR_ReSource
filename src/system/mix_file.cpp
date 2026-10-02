@@ -480,7 +480,7 @@ MixFileClass * * MixFileClass::Bootstrap()
     g_MixFile_RA2MD = 0; /*0x5302de*/
     return 0; /*0x5302de*/
   }
-  g_MixFile_RA2MD = (int)((MixFileClass*)v7)->FromFile(aRa2mdMix, (int)dword_886980); /*0x5302b1*/
+  g_MixFile_RA2MD = ((void *)int)((MixFileClass*)v7)->FromFile(aRa2mdMix, (int)dword_886980); /*0x5302b1*/
   if ( !g_MixFile_RA2MD ) /*0x5302b6*/
     return 0; /*0x5302b6*/
   v8 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5302ba*/

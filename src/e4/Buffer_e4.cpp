@@ -518,7 +518,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         return 0; /*0x6c8af2*/
       }
       qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
-      v13 = (int)(*aP1); /*0x6c8ac2*/
+      v13 = *(int *)aP1; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/

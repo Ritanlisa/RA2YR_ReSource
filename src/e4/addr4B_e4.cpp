@@ -96,7 +96,7 @@ char JumpjetLocomotionClass_Process(int a1)
     if ( movementDestination /*0x4b06ad*/
       && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))(movementDestination) == 11
       && (v12 = ((unsigned int *)v1)[0],
-          v13 = v12->movementDestination + 1,
+          v13 =(gamemd::AbstractClass *)v12->movementDestination + 1,
           v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vtable1 + 110))(
                            v12,
                            &a1),
@@ -154,13 +154,13 @@ char JumpjetLocomotionClass_Process(int a1)
             }
             else
             {
-              v24 = v23->movementDestination; /*0x4b0971*/
+              v24 =(gamemd::AbstractClass *)v23->movementDestination; /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
                 v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vtable1 + 19))( /*0x4b0987*/
                                   v24,
                                   &v30,
-                                  ((unsigned int *)v1)[0]);
+                                  (gamemd::FootClass *)((unsigned int *)v1)[0]);
                 (*(void (**)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x4b09a3*/
                                                                                       + 68))(
                   v1,
@@ -650,7 +650,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
   void *vtable3; // [esp-4h] [ebp-10h]
 
   v2 = g_DDraw_ClipRect; /*0x4b0df1*/
-  v4 = &this->ambientSoundController[1]; /*0x4b0dfd*/
+  v4 =(int *)&this->ambientSoundController[1]; /*0x4b0dfd*/
   if ( this->ambientSoundController[1] != g_DDraw_ClipRect /*0x4b0e0f*/
     || *(unsigned long long *)&this->ambientSoundController[2] != qword_8A0794 )
   {
@@ -668,11 +668,11 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
     v6 = (int)(aP1[2]); /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
-    vtable3 = ((unsigned int *)this)[0]; /*0x4b0e7a*/
+    vtable3 =(void *)((unsigned int *)this)[0]; /*0x4b0e7a*/
     v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
     if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
-      JumpjetLocomotion::MoveTo((int)this, aP1, 1); /*0x4b0ea3*/
+      JumpjetLocomotion::MoveTo((IUnknown *)(int)this, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
     if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x4b0eb3*/
@@ -724,10 +724,10 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   Instance = (int)(TextRenderer::GetInstance()); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
   this->M24 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
-  (*(void (**)(char *, DropListClass *))(v13 + 132))((char *)this + 176, this); /*0x4b4ec4*/
+  (*(void (**)(char *, DropListClass *))(v13 + 132))((char *)this + 176, (DropListClass *)this); /*0x4b4ec4*/
   (*(void (**)(int *, DropListClass *))(this->q050 + 132))( /*0x4b4ecf*/
-    &this->q050,
-    this);
+    (int *)&this->q050,
+    (DropListClass *)this);
   return (gamemd::DropListClass *)((int)this->__pad_0); /*0x4b4ed7*/
 
 }
@@ -772,8 +772,8 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   sub_557380((int)((unsigned int *)this + 44), a2 + 176); /*0x4b54af*/
   v3 = *((unsigned int *)this + 44); /*0x4b54b4*/
   *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
-  (*(void (**)(EditClass *, EditClass *))(v3 + 132))((unsigned int *)this + 44, this); /*0x4b54bf*/
-  (*(void (**)(EditClass *, EditClass *))(*((unsigned int *)this + 20) + 132))((unsigned int *)this + 20, this); /*0x4b54ca*/
+  (*(void (**)(EditClass *, EditClass *))(v3 + 132))((EditClass *)(unsigned int *)this + 44, (EditClass *)this); /*0x4b54bf*/
+  (*(void (**)(EditClass *, EditClass *))(*((unsigned int *)this + 20) + 132))((EditClass *)(unsigned int *)this + 20, (EditClass *)this); /*0x4b54ca*/
   return (int)this; /*0x4b54d3*/
 
 }
@@ -842,32 +842,32 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
   int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x4b583a*/
-    return this; /*0x4b583a*/
-  (*((void (**)(ObjectClass *))this->vtable1 + 3))(this); /*0x4b583e*/
+return (unsigned int *)this; /*0x4b583a*/
+  (*((void (**)(ObjectClass *))this->vtable1 + 3))((gamemd::ObjectClass *)this); /*0x4b583e*/
   v3 = (void *)a2[2]; /*0x4b5841*/
   ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
   {
     ((unsigned int *)this)[0] = 0; /*0x4b588a*/
     BYTE1(((unsigned int *)this)[0]) = 0; /*0x4b5891*/
-    return this; /*0x4b5895*/
+return (unsigned int *)this; /*0x4b5895*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x4b5853*/
-  ((unsigned int *)this)[0] = v4; /*0x4b585b*/
+  ((unsigned int *)this)[0] =(unsigned int)v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
-    return this; /*0x4b5860*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x4b5862*/
+return (unsigned int *)this; /*0x4b5860*/
+  vtable2 =(void *)((unsigned int *)this)[0]; /*0x4b5862*/
   v6 = 0; /*0x4b5865*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x4b5869*/
   if ( (int)vtable2 <= 0 ) /*0x4b586d*/
-    return this; /*0x4b586d*/
+return (unsigned int *)this; /*0x4b586d*/
   do /*0x4b5881*/
   {
     *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x4b5878*/
     ++v6; /*0x4b587e*/
   }
   while ( v6 < (int)((unsigned int *)this)[0] ); /*0x4b5881*/
-  return this; /*0x4b5885*/
+return (unsigned int *)this; /*0x4b5885*/
 
 }
 } // namespace gamemd

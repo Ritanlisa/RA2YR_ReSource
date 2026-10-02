@@ -163,7 +163,7 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    v6 = &(&this->customSound_controller)[2]; /*0x6a880b*/
+    v6 =(int *)&(&this->customSound_controller)[2]; /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/

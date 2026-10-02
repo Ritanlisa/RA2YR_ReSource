@@ -209,7 +209,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
   this->m_8 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     __3_YAXPAX_Z(this); /*0x40bceb*/
-  return this->__pad_0; /*0x40bcf5*/
+return (gamemd::DynamicVector *)this->__pad_0; /*0x40bcf5*/
 
 }
 } // namespace gamemd
@@ -283,7 +283,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
+    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))((_DynamicVectorClass_PBVCommandClass *)this); /*0x40c0be*/
   }
   v7 = this->m_8; /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/

@@ -1815,7 +1815,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
     while ( 1 ) /*0x7d21ec*/
     {
       if ( v51 < 0 ) /*0x7d21ef*/
-        return v51; /*0x7d21ef*/
+return (gamemd::AbstractClass **)v51; /*0x7d21ef*/
       if ( v5 < 0x20u || v5 > 0x78u ) /*0x7d2201*/
         v7 = 0; /*0x7d2211*/
       else
@@ -2205,7 +2205,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
           v33 = v56++; /*0x7d28ce*/
           v5 = *v33; /*0x7d28d7*/
           if ( !*v33 ) /*0x7d28d7*/
-            return v51; /*0x7d28dd*/
+return (gamemd::AbstractClass **)v51; /*0x7d28dd*/
           v4 = v42; /*0x7d21e9*/
           break; /*0x7d21e9*/
         default:
@@ -2213,7 +2213,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
       }
     }
   }
-  return v51; /*0x7d28e6*/
+return (gamemd::AbstractClass **)v51; /*0x7d28e6*/
 }
 }
 // 0x7D2C36
@@ -2396,7 +2396,7 @@ unsigned int * _getstream()
         goto LABEL_13; /*0x7d2dfd*/
     }
     v3 = 4 * v1; /*0x7d2e08*/
-    *(unsigned int *)(v3 + dword_B78BC4) = malloc(0x38u); /*0x7d2e17*/
+    *(unsigned int *)(v3 + dword_B78BC4) =(unsigned int)malloc(0x38u); /*0x7d2e17*/
     v4 = *(unsigned int *)(v3 + dword_B78BC4); /*0x7d2e1f*/
     if ( !v4 ) /*0x7d2e24*/
       goto LABEL_13; /*0x7d2e24*/

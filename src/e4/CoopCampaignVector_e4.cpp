@@ -60,7 +60,7 @@ _DWORD * CoopCampaignVector::Construct(int aP1, int aP2)
       this->CoopCampaignVector_field_0x04 = (unsigned int)(aP2);
       return this->__pad_0; /*0x5c5aae*/
     }
-    this->CoopCampaignVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
+    this->CoopCampaignVector_field_0x04 =(unsigned int)__2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
     BYTE1(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5ac0*/
   }
   return this->__pad_0; /*0x5c5aad*/

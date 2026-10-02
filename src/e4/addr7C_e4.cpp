@@ -327,7 +327,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
                     8,
                     0,
                     *(unsigned int *)(a1 + 1788) + *(unsigned int *)(a1 + 1792)) == 0,
-            result = -6,
+            result =(gamemd::DSurface *)-6,
             v36) )
       {
         result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)))))))))))))))))))))))));
@@ -3976,7 +3976,7 @@ void int shortsort(AbstractClass * aP0, unsigned int a2, int a3, int (__cdecl *a
   result = a1; /*0x7c8c9f*/
   for ( i = a2; i > a1; i -= a3 ) /*0x7c8ca8*/
   {
-    v6 = a1; /*0x7c8cb4*/
+    v6 =(char *)a1; /*0x7c8cb4*/
     for ( j = &a1[a3]; j <= i; j += a3 ) /*0x7c8cb7*/
     {
       if ( a4(j) > 0 ) /*0x7c8cc7*/
@@ -4149,10 +4149,10 @@ void * strncpy(char * Destination, const char * Source, IUnknown * aP2)
   int v11; // eax
   int v12; // edx
 
-  v3 = aP2; /*0x7c91d0*/
+  v3 =(size_t)aP2; /*0x7c91d0*/
   if ( !aP2 ) /*0x7c91d7*/
     return Destination; /*0x7c9258*/
-  v4 = aP2; /*0x7c91db*/
+  v4 =(size_t)aP2; /*0x7c91db*/
   v5 = Source; /*0x7c91dd*/
   v6 = Destination; /*0x7c91e7*/
   if ( ((uint8_t)Source & 3) == 0 ) /*0x7c91eb*/

@@ -1512,7 +1512,7 @@ int sub_471750()
   dword_89E0F0 = (int)&DynamicVectorClass_CaptureManagerClass___vftable; /*0x47176d*/
   dword_89E104 = 10; /*0x471777*/
   dword_89E100 = 0; /*0x471781*/
-  return atexit(sub_471790); /*0x47178c*/
+  return atexit((void (__cdecl *)(void))sub_471790); /*0x47178c*/
 }
 } // namespace gamemd
 
@@ -2434,7 +2434,7 @@ bool sub_47A560(HANDLE hDevice, DWORD BytesReturned)
   v4[1] = 0; /*0x47a58d*/
   CDROM::DeviceIoControl(hDevice, BytesReturned); /*0x47a591*/
   InBuffer[0] = v2; /*0x47a59d*/
-  InBuffer[1] = v4; /*0x47a5ac*/
+  InBuffer[1] =(unsigned int)v4; /*0x47a5ac*/
   v4[0] = 0; /*0x47a5bd*/
   InBuffer[3] = 17421; /*0x47a5c2*/
   InBuffer[2] = 2120; /*0x47a5ca*/

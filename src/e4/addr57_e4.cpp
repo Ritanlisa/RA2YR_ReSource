@@ -475,7 +475,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         return 0; /*0x57a827*/
       g_CellPassabilityLUT = g_CellPassabilityLUT; /*0x57a82a*/
       ((gamemd::Terrain*)aP2)->u8_11A = 0; /*0x57a82f*/
-      ((gamemd::Terrain*)aP2)->q038 = g_CellPassabilityLUT; /*0x57a838*/
+      ((gamemd::Terrain*)aP2)->q038 =(void *)g_CellPassabilityLUT; /*0x57a838*/
       aP2 = ((gamemd::Terrain*)aP2)->outBuffer; /*0x57a846*/
       if ( a5 ) /*0x57a83b*/
         ((MapClass *)((int16_t *)&aP2))->SetObstruction(0); /*0x57a84b*/
@@ -1267,7 +1267,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   int v64[4]; // [esp+ACh] [ebp-30h] BYREF
   int v65[4]; // [esp+CCh] [ebp-10h] BYREF
 
-  v1 = aP0; /*0x57dd5d*/
+  v1 =(int16_t *)aP0; /*0x57dd5d*/
   result = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0) + 17); /*0x57dd6c*/
   if ( result >= 74 && result <= 101 ) /*0x57dd7b*/
   {
@@ -1281,7 +1281,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     {
       v6 = *(unsigned int *)aP0; /*0x57ddac*/
       v49 = (int)&unk_ABDC50; /*0x57ddaf*/
-      v5 = &unk_ABDC50; /*0x57ddb7*/
+      v5 =(gamemd::CellClass *)&unk_ABDC50; /*0x57ddb7*/
       unk_ABDC50.smudgeTypeIndex = v6; /*0x57ddbb*/
     }
     v46 = *(unsigned int *)aP0 - 0x10000; /*0x57ddcf*/
@@ -1302,12 +1302,12 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     }
     else
     {
-      v47 = &unk_ABDC50; /*0x57de3f*/
+      v47 =(gamemd::CellClass *)&unk_ABDC50; /*0x57de3f*/
       unk_ABDC50.smudgeTypeIndex = *(unsigned int *)aP0 + 0x10000; /*0x57de47*/
     }
     IDA_LOBYTE(v54) = 0; /*0x57de54*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57de62*/
-    StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57de67*/
+    StartCoords =(int *)((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57de67*/
     if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57de7c*/
     {
       v19 = *PlacementRect; /*0x57df02*/
@@ -1349,7 +1349,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
         if ( v17 + v15 < v50[0] + v52[0] ) /*0x57dee3*/
           v17 = v50[0] + v52[0] - v15 + 1; /*0x57dee8*/
         v19 = v13; /*0x57deea*/
-        v1 = aP0; /*0x57deec*/
+        v1 =(int16_t *)aP0; /*0x57deec*/
       }
     }
     v58 = v19; /*0x57df0d*/
@@ -1373,7 +1373,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     if ( v20 >= 0x40000 || (v21 = *(CellClass **)(dword_87F924 + 4 * v20)) == 0 ) /*0x57dfc4*/
     {
       unk_ABDC50.smudgeTypeIndex = *(unsigned int *)v1; /*0x57dfc9*/
-      v21 = &unk_ABDC50; /*0x57dfcf*/
+      v21 =(gamemd::CellClass *)&unk_ABDC50; /*0x57dfcf*/
     }
     v22 = *(unsigned int *)&v21->__pad_28[28]; /*0x57dfd4*/
     if ( result > 0 ) /*0x57dfd9*/
@@ -1401,7 +1401,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       *(unsigned int *)&v47->__pad_28[28] = v23; /*0x57e01b*/
       v62[1] = dword_886FA4; /*0x57e029*/
       v62[0] = DSurface_ViewBounds; /*0x57e034*/
-      v26 = (struct tagRECT *)((House *)(v24))->GetStartCoords(v65); /*0x57e04a*/
+      v26 = (struct tagRECT *)((House *)(v24))->GetStartCoords((unsigned int *)v65); /*0x57e04a*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect(v24, v64); /*0x57e04c*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57e061*/
       {
@@ -1463,7 +1463,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
         IDA_LOBYTE(v54) = 1; /*0x57e1e8*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57e1ec*/
         right = 0x10000; /*0x57e1fd*/
-        v50[0] = *((CellStruct *)(v1))->Add(v52, &right); /*0x57e21a*/
+        v50[0] =(int)*((CellStruct *)(v1))->Add(v52, &right); /*0x57e21a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
         v39 = ((CellStruct *)(v52))->Set(0, 1); /*0x57e22a*/
         v50[0] = *((CellStruct *)(v1))->Sub(&right, v39); /*0x57e248*/

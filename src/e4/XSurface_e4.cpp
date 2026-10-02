@@ -253,8 +253,8 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thi
   int v40; // [esp+50h] [ebp+8h]
   int v41; // [esp+54h] [ebp+Ch]
 
-  v5 = (int *)(*(unsigned int *)this->Surface);
-  v28 = (int *)(this);
+  v5 =(int)(int *)(*(unsigned int *)this->Surface);
+  v28 =(gamemd::XSurface *)(int *)(this);
   v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
   v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v26),(const RectangleStruct *)((int *)a2),(const RectangleStruct *)(v6), 0, 0)); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
@@ -377,7 +377,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thi
       }
     }
     (*(void (**)(XSurface *))(*(unsigned int *)v28->Surface + 96))(v28); /*0x7bad80*/
-    return 1; /*0x7bad86*/
+return (void *)1; /*0x7bad86*/
   }
   return result; /*0x7bac0f*/
 
@@ -855,7 +855,7 @@ XSurface * XSurface::BlitPart(void **a2, void **a3, void **arg8, void **a4, int 
   unsigned char v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
   v6 = (void **)(a3);
-  v8 = (int (__cdecl **)(void **,unsigned char *))((*((int (**)(void **, unsigned char *))*a3 + 30))(a3, v14)); /*0x7bbbaa*/
+  v8 =(int)(int (__cdecl **)(void **,unsigned char *))((*((int (**)(void **, unsigned char *))*a3 + 30))(a3, v14)); /*0x7bbbaa*/
   v9 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v15); /*0x7bbbb3*/
   v13[0] = (int)*a2; /*0x7bbbbd*/
   v13[1] = (int)a2[1]; /*0x7bbbc4*/

@@ -31,14 +31,14 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   CellClass *v10; // eax
   int v12; // [esp+14h] [ebp+4h]
 
-  v3 = (int)(aP0[1]);
+  v3 = ((int *)aP0)[1];
   v4 = a2 + v3; /*0x5862d2*/
   v5 = v3 - a2; /*0x5862d4*/
   if ( v5 > v4 ) /*0x5862d8*/
     return 0; /*0x58633f*/
   while ( 1 ) /*0x5862e3*/
   {
-    v6 = (int)(*aP0);
+    v6 = *(int *)aP0;
     v7 = a2 + v6; /*0x5862e5*/
     v8 = v6 - a2; /*0x5862e7*/
     if ( v8 <= v7 ) /*0x5862eb*/
@@ -69,7 +69,7 @@ namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), (gamemd::ObjectTypeClass *)a1, aP2); /*0x74eef4*/
 
 }
 }  // G42.18c ns repair

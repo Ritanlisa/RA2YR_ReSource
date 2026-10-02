@@ -573,7 +573,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
     __3_YAXPAX_Z(this); /*0x7b42a6*/
-  return (void ***)this; /*0x7b42b0*/
+return (gamemd::CampaignClass **)(void ***)this; /*0x7b42b0*/
 
 }
 } // namespace gamemd
@@ -748,7 +748,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
         v11 = *((unsigned int *)this + 64857); /*0x7b35ae*/
         if ( v11 <= 0 /*0x7b35be*/
           || !(*(uint8_t (**)(UDPInterfaceClass *, int, unsigned int))(*((unsigned int *)this + 64852) + 8))(
-                (unsigned int *)this + 32426,
+                (UDPInterfaceClass *)(unsigned int *)this + 32426,
                 v10 + v11,
                 0) )
         {
@@ -885,7 +885,7 @@ void UDPInterfaceClass_Destru_Connect()
       a2 = 2; /*0x7b3841*/
       v21 = v15; /*0x7b3845*/
       v20 = (*(int (**)(int))(*(unsigned int *)v7 + 56))(v7); /*0x7b3848*/
-      SendMessageA(g_hWnd, v20, v21, 0); /*0x7b3852*/
+      SendMessageA((HWND)g_hWnd, v20, v21, 0); /*0x7b3852*/
       MessageLoop(); /*0x7b3858*/
       result = *(unsigned int *)(v7 + 258888); /*0x7b3861*/
       ++v24; /*0x7b386d*/

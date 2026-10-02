@@ -381,26 +381,26 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
   int v17; // [esp+24h] [ebp-4h]
 
   result = (unsigned int *)((int)(aP0));
-  v6 = (int)(*aP2);
-  v7 = (int)(aP2[1]);
-  v16 = (int)(aP2[2]);
-  v17 = (int)(aP2[3]);
-  v8 = (int)(aP1[2]);
+  v6 = *(int *)aP2;
+  v7 = ((int *)aP2)[1];
+  v16 = ((int *)aP2)[2];
+  v17 = ((int *)aP2)[3];
+  v8 = ((int *)aP1)[2];
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
-  v15 = (int)(aP1[3]); /*0x421b92*/
+  v15 = ((int *)aP1)[3]; /*0x421b92*/
   if ( v15 <= 0 || aP2[2] <= 0 || aP2[3] <= 0 ) /*0x421bac*/
     goto LABEL_23; /*0x421bac*/
-  v9 = (int)(*aP1); /*0x421bb2*/
+  v9 = *(int *)aP1; /*0x421bb2*/
   if ( v6 < *aP1 ) /*0x421bb6*/
   {
     v10 = (int)(v6 - v9 + v16);
-    v6 = (int)(*aP1);
+    v6 = *(int *)aP1;
     v16 = v10; /*0x421bc2*/
   }
   if ( v16 < 1 ) /*0x421bcb*/
     goto LABEL_23; /*0x421bcb*/
-  v11 = (int)(aP1[1]); /*0x421bd1*/
+  v11 = ((int *)aP1)[1]; /*0x421bd1*/
   if ( v7 < v11 ) /*0x421bda*/
   {
     v12 = v7 - v11 + v17; /*0x421be2*/
@@ -711,13 +711,13 @@ int E4Recv_425670::ConstructionPositionTracker()
 
   if ( !BYTE2(this->ironCurtainTimer[2]) ) /*0x425679*/
   {
-    this->queuedMission = (int)dword_A8ED84; /*0x425690*/
+    this->queuedMission =(void *)(int)dword_A8ED84; /*0x425690*/
     v3 = v55; /*0x425692*/
     this->missionStartTime = 0; /*0x425696*/
     *(unsigned int *)this->missionQueued = v3; /*0x42569c*/
     this->missionStatus = 0; /*0x42569f*/
   }
-  v4 = &this->animation[4]; /*0x4256ad*/
+  v4 =(int *)&this->animation[4]; /*0x4256ad*/
   if ( this->animation[4] == Map_InvalidCoord_X /*0x4256d4*/
     && this->animation[5] == Map_InvalidCoord_Y
     && this->animation[6] == Map_InvalidCoord_Z
@@ -738,10 +738,10 @@ int E4Recv_425670::ConstructionPositionTracker()
         BYTE2(this->ironCurtainTimer[2]) = 1; /*0x425bbd*/
         this->animation[6] = (wchar_t *)(v40); /*0x425bc4*/
         v41 = (wchar_t *)(dword_A8ED84); /*0x425bc7*/
-        this->missionStartTime = 1; /*0x425bd7*/
-        this->queuedMission = (int)v41; /*0x425bdd*/
+        this->missionStartTime =(void *)1; /*0x425bd7*/
+        this->queuedMission =(void *)(int)v41; /*0x425bdd*/
         *(unsigned int *)this->missionQueued = v55; /*0x425be3*/
-        this->missionStatus = 1; /*0x425be6*/
+        this->missionStatus =(void *)1; /*0x425be6*/
         this->currentMission = 8 * *(unsigned int *)(this->missionTimer[0] + 848) + 1; /*0x425bfc*/
       }
       else
@@ -754,7 +754,7 @@ int E4Recv_425670::ConstructionPositionTracker()
   }
   else
   {
-    location = this->location; /*0x4256e2*/
+    location =(int *)this->location; /*0x4256e2*/
     v6 = this->location[0]; /*0x4256ee*/
     v7 = this->location[1]; /*0x4256f0*/
     v56 = this->location[2]; /*0x4256f6*/
@@ -771,8 +771,8 @@ int E4Recv_425670::ConstructionPositionTracker()
       vtable0 = (int)(this->vtable1); /*0x4258f7*/
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
-      v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))(this, &v54); /*0x42590a*/
-      v23 = *(unsigned int *)((Cell *)((Cell *)&v49))->GetHeight((gamemd::BuildingTypeClass *)(v22), &this->animation[4]); /*0x425917*/
+      v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))((TechnoClass *)this, &v54); /*0x42590a*/
+      v23 = *(unsigned int *)((Cell *)((Cell *)&v49))->GetHeight((int *)(gamemd::BuildingTypeClass *)(v22), &this->animation[4]); /*0x425917*/
       v54 = *location; /*0x42591d*/
       v55 = this->location[1]; /*0x425924*/
       v56 = this->location[2]; /*0x425938*/
@@ -793,7 +793,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         GroundHeight = Cell::GetGroundHeight(&v51); /*0x4259cf*/
       v27 = (int)(this->vtable1); /*0x4259eb*/
       v53 = GroundHeight; /*0x4259ed*/
-      (*(void (**)(TechnoClass *, int *))(v27 + 436))(this, &v51); /*0x4259f8*/
+      (*(void (**)(TechnoClass *, int *))(v27 + 436))((TechnoClass *)this, &v51); /*0x4259f8*/
     }
     else
     {
@@ -804,9 +804,9 @@ int E4Recv_425670::ConstructionPositionTracker()
       v51 = *v9; /*0x425765*/
       v52 = v9[1]; /*0x42576c*/
       v53 = v9[2]; /*0x425773*/
-      v11 = (((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&this->animation[4])->landType == 2 /*0x4257ab*/
+      v11 = ((unsigned int *)((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&this->animation[4])->landType == 2 /*0x4257ab*/
           || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&this->animation[4])->landType == 6)
-         && (*(int (**)(TechnoClass *))(this->vtable1 + 456))(this) <= Map_CellHeight;
+         && (*(int (**)(TechnoClass *))(this->vtable1 + 456))((TechnoClass *)this) <= Map_CellHeight;
       if ( v10 == Map_InvalidCoord_X && v52 == Map_InvalidCoord_Y && v53 == Map_InvalidCoord_Z /*0x4257ec*/
         || (v12 = this->passengers[0], v12 >= 7)
         || v11 )
@@ -815,13 +815,13 @@ int E4Recv_425670::ConstructionPositionTracker()
         this->animation[5] = Map_InvalidCoord_Y; /*0x425898*/
         this->animation[6] = Map_InvalidCoord_Z; /*0x4258a1*/
         BYTE2(this->ironCurtainTimer[2]) = 1; /*0x4258a4*/
-        this->queuedMission = (int)dword_A8ED84; /*0x4258bc*/
+        this->queuedMission =(void *)(int)dword_A8ED84; /*0x4258bc*/
         v18 = v55; /*0x4258be*/
-        this->missionStartTime = 1; /*0x4258c2*/
+        this->missionStartTime =(void *)1; /*0x4258c2*/
         *(unsigned int *)this->missionQueued = v18; /*0x4258c8*/
-        this->missionStatus = 1; /*0x4258cb*/
+        this->missionStatus =(void *)1; /*0x4258cb*/
         v19 = 8 * *(unsigned int *)(this->missionTimer[0] + 848) + 1; /*0x4258da*/
-        this->currentMission = v19; /*0x4258e1*/
+        this->currentMission =(void *)v19; /*0x4258e1*/
         return v19; /*0x4258ed*/
       }
       this->passengers[0] = v12 + 1; /*0x4257f5*/
@@ -835,9 +835,9 @@ int E4Recv_425670::ConstructionPositionTracker()
         v14 = Map_MaxHeight + Cell::GetGroundHeight(&v49); /*0x42585d*/
       else
         v14 = Cell::GetGroundHeight(&v49); /*0x425847*/
-      v15 = this->vtable1; /*0x425863*/
+      v15 =(int)this->vtable1; /*0x425863*/
       v50 = v14; /*0x425865*/
-      (*(void (**)(TechnoClass *, double *))(v15 + 436))(this, &v49); /*0x425870*/
+      (*(void (**)(TechnoClass *, double *))(v15 + 436))((TechnoClass *)this, &v49); /*0x425870*/
       v16 = v52; /*0x42587a*/
       *v4 = v51; /*0x425880*/
       v17 = v53; /*0x425882*/

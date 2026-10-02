@@ -59,7 +59,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
   *(unsigned int *)&this->RandomMap_field_0x2[2] = 0; /*0x58bf7c*/
   this->RandomMap_field_0x8 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
   this->RandomMap_field_0xC = 0; /*0x58bf8d*/
-  this->RandomMap_field_0x10 = (void *)*((char *)CellCoord::To_CellObj( /*0x58bfa6*/
+  this->RandomMap_field_0x10 =(unsigned int)(void *)*((char *)CellCoord::To_CellObj( /*0x58bfa6*/
                                                    (CellCoord *)&stru_87F5F0.__pad_58[416],
                                                    (int16_t *)&a2)
                                        + 283);
@@ -912,7 +912,7 @@ LABEL_12:
   v19.vtable0 = &vt_VectorClass; /*0x58eb93*/
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
     __3_YAXPAX_Z(v19.Items); /*0x58eba9*/
-  return 1; /*0x58eb91*/
+return (gamemd::AbstractClass **)1; /*0x58eb91*/
 
 }
 }
@@ -965,7 +965,7 @@ void* RandomMap::CollectBorderCells()
   {
     v3 = 0; /*0x58f0fe*/
   }
-  *(unsigned int *)&v1->RandomMap_field_0x2[2] = v3; /*0x58f100*/
+  *(unsigned int *)&v1->RandomMap_field_0x2[2] =(unsigned int)v3; /*0x58f100*/
   v4 = __2_YAPAXI_Z(g_MissionQueueFrame.localVariables[164]); /*0x58f114*/
   v5 = 0; /*0x58f119*/
   for ( Block = (unsigned char *)v4; v5 < g_MissionQueueFrame.localVariables[164]; ++v5 ) /*0x58f121*/
@@ -1033,7 +1033,7 @@ void* RandomMap::CollectBorderCells()
   v24 = g_MapCellWidth * g_MapCellWidth; /*0x58f265*/
   if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x58f26a*/
   {
-    RandomMap_field_0x8 = v1->RandomMap_field_0x8; /*0x58f26c*/
+    RandomMap_field_0x8 =(void *)v1->RandomMap_field_0x8; /*0x58f26c*/
     v26 = g_MissionQueueFrame.localVariables[163]; /*0x58f26f*/
     do /*0x58f29b*/
     {
@@ -1309,18 +1309,18 @@ LABEL_37:
             }
             while ( v25 > 2 ); /*0x5907ea*/
           }
-          RandomMap_field_0x10 = this->RandomMap_field_0x10; /*0x5907f8*/
+          RandomMap_field_0x10 =(void *)this->RandomMap_field_0x10; /*0x5907f8*/
           v45 = v25 + 1; /*0x5907fc*/
           v27 = *(unsigned int *)(v22 + 16); /*0x590800*/
           v44 = 0; /*0x590805*/
           if ( v27 <= (int)RandomMap_field_0x10 ) /*0x590809*/
-            RandomMap_field_0x8 = this->RandomMap_field_0x8; /*0x590810*/
+            RandomMap_field_0x8 =(void *)this->RandomMap_field_0x8; /*0x590810*/
           else
             RandomMap_field_0x8 = *(void **)(v22 + 8); /*0x59080b*/
           if ( v27 <= (int)RandomMap_field_0x10 ) /*0x590815*/
             v43 = *(void **)(v22 + 8); /*0x590823*/
           else
-            v43 = this->RandomMap_field_0x8; /*0x59081a*/
+            v43 =(void *)this->RandomMap_field_0x8; /*0x59081a*/
           v29 = 0; /*0x59082d*/
           if ( g_MissionQueueFrame.briefing[342] <= 0 ) /*0x590831*/
           {

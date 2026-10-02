@@ -65,7 +65,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 10); /*0x5cecb3*/
   *(unsigned int *)Block->__pad_0 = &vt_MSVQAnim; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
-    (**v3)(v3, 1); /*0x5cecc4*/
+    (**v3)((unsigned int)v3, 1); /*0x5cecc4*/
   MSVQAnim_field_0x1C = (MovieContext *)Block->MSVQAnim_field_0x1C; /*0x5cecc6*/
   if ( MSVQAnim_field_0x1C ) /*0x5ceccc*/
   {

@@ -39,7 +39,7 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
   result = this->HashTable_field_0x04; /*0x624764*/
   if ( result ) /*0x624769*/
   {
-    result = *(unsigned int *)(*(unsigned int *)this->__pad_0 /*0x62478a*/
+    result = *(unsigned int *)((unsigned int *)*(unsigned int *)this->__pad_0 /*0x62478a*/
                        + 4
                        * (((int (*)(unsigned int *))this->HashTable_field_0x18)(aP1)
                         & ((1 << this->HashTable_field_0x0C) - 1)));
@@ -92,10 +92,10 @@ AbstractClass * * HashTable_flat::Grow2()
   if ( LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x624fc8*/
   {
     HashTable_field_0x08 = (unsigned int)(this->HashTable_field_0x08);
-    v3 = (unsigned int)(*(unsigned int **)this->__pad_0); /*0x624fd3*/
+    v3 =(unsigned int *)(unsigned int)(*(unsigned int **)this->__pad_0); /*0x624fd3*/
     v4 = this->HashTable_field_0x0C + 1; /*0x624fdc*/
     this->HashTable_field_0x08 = 2 * HashTable_field_0x08; /*0x624fdd*/
-    v13 = v3; /*0x624fe0*/
+    v13 =(unsigned int)v3; /*0x624fe0*/
     this->HashTable_field_0x0C = v4; /*0x624fe8*/
     v5 = (void *)__2_YAPAXI_Z(8 * HashTable_field_0x08); /*0x624ff3*/
     v6 = 4 * this->HashTable_field_0x08; /*0x624ff8*/
@@ -125,7 +125,7 @@ AbstractClass * * HashTable_flat::Grow2()
         --v8; /*0x62504c*/
       }
       while ( v8 ); /*0x62504d*/
-      v3 = v13; /*0x62504f*/
+      v3 =(unsigned int *)v13; /*0x62504f*/
     }
     __3_YAXPAX_Z(v3); /*0x625054*/
   }
@@ -466,7 +466,7 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
       if ( !HashTable_field_0x04 ) /*0x625fd2*/
         goto LABEL_4; /*0x625fd2*/
     }
-    v6 = (int)(*aP3);
+    v6 = *(int *)aP3;
     if ( *(uint16_t *)(HashTable_field_0x04 + 6) < (int)*aP3 ) /*0x625ff2*/
       v6 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x625ff4*/
     result = v6; /*0x625ff9*/
@@ -1088,7 +1088,7 @@ LABEL_13:
   Block = v9; /*0x7247b2*/
   if ( (void *)HashTable_field_0x04 == v9 && HashTable_field_0x04 ) /*0x7247ba*/
   {
-    (*(void (**)(HashTable *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->HashTable_field_0x18); /*0x7247c5*/
+    (*(void (**)(HashTable *, int *))(*(unsigned int *)this->__pad_0 + 8))((HashTable *)this, (int *)&this->HashTable_field_0x18); /*0x7247c5*/
     v9 = Block; /*0x7247c8*/
   }
   v11 = (unsigned int *)v9; /*0x7247cd*/

@@ -22,7 +22,7 @@ int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
   int IndexByName; // eax
   TypeClass Destination[32]; // [esp+4h] [ebp-80h] BYREF
 
-  ((INIClass*)(INIClass *)this)->GetString(aP1, (gamemd::INIClass *)(a2), g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
+  ((INIClass*)(INIClass *)this)->GetString(aP1, (unsigned char *)(gamemd::INIClass *)(a2), g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
   ExitCellByName = ((Factory*)(Factory *)Destination)->FindExitCellByName(); /*0x476ede*/
   if ( ExitCellByName != -1 ) /*0x476ee6*/
     return *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x476eef*/

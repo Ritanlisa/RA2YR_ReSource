@@ -185,7 +185,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ResetSection((INIClass *)aP1); /*0x511866*/
   if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (uint8_t ***)aP1) ) /*0x51186e*/
     return 0; /*0x51215c*/
-  INIClass::GetString((INIClass *)aP1, (uint8_t *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
+  INIClass::GetString((unsigned char *)(INIClass *)aP1, (uint8_t *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy((char *)(_EBX + 416), Source); /*0x5118c3*/
@@ -214,7 +214,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
                               *(unsigned int *)(_EBX + 192));
   Source[0] = *(unsigned char *)(_EBX + 420); /*0x51195a*/
   Source[1] = 0; /*0x511966*/
-  INIClass::GetString((INIClass *)v4, (uint8_t *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
+  INIClass::GetString((unsigned char *)(INIClass *)v4, (uint8_t *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   *(unsigned char *)(_EBX + 420) = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aFirepower, *(double *)(_EBX + 200)); /*0x511990*/
   v6 = *(unsigned int *)(_EBX + 212); /*0x511995*/

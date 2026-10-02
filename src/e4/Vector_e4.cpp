@@ -187,7 +187,7 @@ int Vector::RemoveAt(int aP1)
     }
     LOBYTE(result) = 1; /*0x45ae37*/
   }
-  return result; /*0x45ae39*/
+return (int)result; /*0x45ae39*/
 
 }
 } // namespace gamemd

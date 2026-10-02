@@ -417,7 +417,7 @@ int BuildingClass::Dtor()
     this->LightSource = 0; /*0x43bd5d*/
   }
   IDA_LOBYTE(v3) = 1; /*0x43bd63*/
-  AbstractClass::AnnounceExpiredPointer(this, v3); /*0x43bd67*/
+  AbstractClass::AnnounceExpiredPointer((int)this, v3); /*0x43bd67*/
   ((BuildingClass*)this)->Sell(); /*0x43bd6e*/
   Vtable3 = (int)this; /*0x43bd83*/
   v6 = (*(int (**)(int *, int *))(stru_A8EB00.ObjectTypeClass[16] + 16))( /*0x43bd87*/
@@ -426,12 +426,12 @@ int BuildingClass::Dtor()
   if ( v6 != -1 ) /*0x43bd8d*/
     Vector::RemoveAt((Vector *)&stru_A8EB00.ObjectTypeClass[16], v6); /*0x43bd95*/
   Vtable3 = (int)this; /*0x43bdaa*/
-  v7 = (*(int (**)(char *, int *))(*(unsigned int *)&((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &Vtable3); /*0x43bdae*/
+  v7 = (*(int (**)(char *, int *))(*(unsigned int *)&((char *)&FootClass_Array) + 16))((char *)&((char *)&FootClass_Array), &Vtable3); /*0x43bdae*/
   if ( v7 != -1 ) /*0x43bdb4*/
     Vector::RemoveAt((Vector *)&((char *)&FootClass_Array), v7); /*0x43bdbc*/
   BuildingClass::ClearAnims(this, -2); /*0x43bdc5*/
   ((BuildingTypeClass*)this->Type)->IsPowered(); /*0x43bdd0*/
-  DamageFireAnims = this->DamageFireAnims; /*0x43bdd5*/
+  DamageFireAnims =(int *)this->DamageFireAnims; /*0x43bdd5*/
   v9 = 8; /*0x43bddb*/
   do /*0x43bdf4*/
   {
@@ -479,7 +479,7 @@ int BuildingClass::Dtor()
       IDA_LOBYTE(((unsigned int *)this)[0]->HouseClass_field_timer_B[2]) = 1; /*0x43bf11*/
     if ( byte_A8E9A0 && this->Type ) /*0x43bf21*/
     {
-      owner = ((unsigned int *)this)[0]; /*0x43bf29*/
+      owner =(gamemd::HouseClass *)((unsigned int *)this)[0]; /*0x43bf29*/
       if ( owner ) /*0x43bf31*/
         HouseClass::DecrementUnitCount(owner, this); /*0x43bf34*/
       ((BuildingClass*)this)->Sell(); /*0x43bf3b*/
@@ -491,7 +491,7 @@ int BuildingClass::Dtor()
   this->Factory = 0; /*0x43bf51*/
   Vtable3 = (int)this; /*0x43bf67*/
   v18 = (*(int (**)(int *, int *))(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 16))( /*0x43bf6b*/
-          ((char *)&g_BuildingLoadQueue_Array),
+          (int *)((char *)&g_BuildingLoadQueue_Array),
           &Vtable3);
   if ( v18 != -1 ) /*0x43bf70*/
     DynamicVector::RemoveItem((DynamicVector *)((char *)&g_BuildingLoadQueue_Array), v18); /*0x43bf78*/
@@ -501,7 +501,7 @@ int BuildingClass::Dtor()
           &Vtable3);
   if ( v19 != -1 ) /*0x43bf96*/
     DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.Buildup, v19); /*0x43bf9e*/
-  Vtable3 = AbstractClass::GetVtable3((AbstractClass *)&((unsigned int *)this)[0]); /*0x43bfac*/
+  Vtable3 = AbstractClass::GetVtable3((int)(AbstractClass *)&((unsigned int *)this)[0]); /*0x43bfac*/
   v20 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, &Vtable3); /*0x43bfba*/
   if ( v20 ) /*0x43bfc1*/
   {
@@ -517,7 +517,7 @@ int BuildingClass::Dtor()
         *(v24 - 2) = *v24; /*0x43bfe8*/
         *(v24 - 1) = v24[1]; /*0x43bfee*/
       }
-      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = i - 1; /*0x43c003*/
+      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] =(unsigned int)i - 1; /*0x43c003*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x43c008*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = 0; /*0x43c018*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x43c01c*/

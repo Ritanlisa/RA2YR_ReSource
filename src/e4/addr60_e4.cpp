@@ -1914,11 +1914,11 @@ LABEL_23:
         int v37 = v64 - *((unsigned int *)Block + v70);
         if ( v37 < 0 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, (gamemd::ConvertClass *)v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v37 >= 6 && !a2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, (gamemd::ConvertClass *)v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v61 )
@@ -1950,7 +1950,7 @@ LABEL_23:
           DrawToSurfaceSHP(
             DSurface_Alternate,
             v32,
-            (int)v105,
+            (gamemd::ConvertClass *)(int)v105,
             v86 + v68 * v39,
             &v76,
             v72,
@@ -1981,7 +1981,7 @@ LABEL_68:
           DrawToSurfaceSHP(
             DSurface_Alternate,
             v32,
-            (int)v73,
+            (gamemd::ConvertClass *)(int)v73,
             v89 + v68 * v43,
             v103,
             v72,
@@ -2000,7 +2000,7 @@ LABEL_68:
         if ( v43 < 6 )
           goto LABEL_68;
         if ( a2 )
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, (gamemd::ConvertClass *)v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_69:
       if ( v74 > 0 )
@@ -2016,15 +2016,15 @@ LABEL_69:
           v90[1] = v45;
           if ( v46 < 0 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else if ( v46 >= 6 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           ++v44;
           v45 += v84;
@@ -2052,7 +2052,7 @@ LABEL_69:
             if ( v50 != -1 )
               break;
           }
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_89:
           v47 += v84;
           --v48;
@@ -2062,11 +2062,11 @@ LABEL_89:
         }
         if ( v50 != -2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_89;
         }
 LABEL_87:
-        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_89;
       }
 LABEL_90:
@@ -2085,14 +2085,14 @@ LABEL_90:
         if ( v53 == -1 )
         {
 LABEL_94:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_98;
         }
         if ( v53 == -2 )
 LABEL_96:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         else
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_98:
       char v54 = v63;
@@ -2130,7 +2130,7 @@ LABEL_98:
           v57 = DataGlobal_B0FB34;
         }
 LABEL_106:
-        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, (gamemd::ConvertClass *)v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
       if ( g_DDraw_Active >= 800 )
@@ -2138,7 +2138,7 @@ LABEL_106:
       DrawToSurfaceSHP(
         DSurface_Alternate,
         (int)v62,
-        (int)v80,
+        (gamemd::ConvertClass *)(int)v80,
         v88 + v68 * v56,
         v69,
         v72,
@@ -2226,7 +2226,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         if ( v7 ) /*0x608704*/
         {
   LABEL_31:
-          v6 = RA2_OPNEW(0x10u); /*0x608706*/
+          v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608706*/
           if ( !v6 ) /*0x608715*/
             return 0; /*0x608715*/
           *v6 = 103; /*0x60871b*/

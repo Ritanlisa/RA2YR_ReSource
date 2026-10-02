@@ -35,7 +35,7 @@ int ToolTipManager::ddtor(char a2)
   if ( result ) /*0x724b95*/
     return (*(int (**)(ToolTipManager *, int *))(*(unsigned int *)&this->IsVisible + 16))( /*0x724b9f*/
              this,
-             &this->DisplayTimer[1]);
+             (int *)&this->DisplayTimer[1]);
   return result; /*0x724ba2*/
 
 }

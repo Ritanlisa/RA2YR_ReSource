@@ -111,7 +111,7 @@ int LoadGame::LoadTriggerEvents()
       if ( ++v9 >= v13 ) /*0x660932*/
         return (*(int (**)(LoadGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660932*/
                  this,
-                 &word_B04D78,
+                 (int16_t *)&word_B04D78,
                  4,
                  0) >= 0;
     }
@@ -119,7 +119,7 @@ int LoadGame::LoadTriggerEvents()
   }
   return (*(int (**)(LoadGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x6608df*/
            this,
-           &word_B04D78,
+           (int16_t *)&word_B04D78,
            4,
            0) >= 0;
 
@@ -451,7 +451,7 @@ int LoadGame::LoadPointArray(int a2)
         LoadGame_field_0x20 = v12->LoadGame_field_0x20; /*0x54e840*/
         if ( LoadGame_field_0x20 <= 0 /*0x54e850*/
           || !(*(uint8_t (**)(int *, int, unsigned int))(*p_LoadGame_field_0x0C + 8))(
-                &v12->LoadGame_field_0x0C,
+                (int *)&v12->LoadGame_field_0x0C,
                 LoadGame_field_0x14 + LoadGame_field_0x20,
                 0) )
         {

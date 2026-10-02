@@ -279,7 +279,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   v103 = v37[1];
   v104 = v37[2];
   if ( v104 >= v36 + 2 * DataGlobal_A8F1C0 + DataGlobal_A8F1C0 )
-    this->q0B0 = DataGlobal_A8F1B4 + v36;
+    this->q0B0 =(unsigned int)DataGlobal_A8F1B4 + v36;
   int v93 = this->m_State;
   unsigned int * v38 = (unsigned int *)(Coord::To_Cell(&DataGlobal_87F7E8, this + 9));
   if ( !CrateClass::ProcessPickup(v38, v93) )
@@ -308,7 +308,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   if ( !*(unsigned char *)(v40 + 144) || *(unsigned char *)(v40 + 129) || *(unsigned char *)(v40 + 141) )
     return 7;
   int *v41; // eax
-  v41 = ((Coord*)&v108)->Subtract(DataGlobal_89F6D8[2 * v34] + *(unsigned int *)(v40 + 156), *(unsigned int *)(v40 + 160) + DataGlobal_89F6DC[2 * v34], *(unsigned int *)(v40 + 164));
+  v41 =(int *)((Coord*)&v108)->Subtract(DataGlobal_89F6D8[2 * v34] + *(unsigned int *)(v40 + 156), *(unsigned int *)(v40 + 160) + DataGlobal_89F6DC[2 * v34], *(unsigned int *)(v40 + 164));
   v102 = *v41;
   v103 = v41[1];
   v104 = v41[2];
@@ -341,7 +341,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       if ( !v65[144] || v65[129] || v65[141] )
         return 7;
       if ( v65[981] )
-        (*(void (**)(unsigned char *, int *))(*(unsigned int *)v65 + 240))(v65, this + 9);
+        (*(void (**)(unsigned char *, int *))(*(unsigned int *)v65 + 240))(v65, (int *)this + 9);
       qmemcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu);
       *(unsigned int *)(this->m_State + 1596) = -1;
       IDA_LOWORD(v97) = this->q024 / 256;
@@ -425,7 +425,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         v80[2] = v81;
       }
       unsigned int * v82 = (unsigned int *)this->m_State;
-      v83 = g_CurrentFrame;
+      v83 =(void *)g_CurrentFrame;
       int v84 = v82[400];
       int v85 = v82[402];
       if ( v84 == -1 )
@@ -438,7 +438,7 @@ LABEL_90:
       {
 LABEL_91:
         v82[376] = -1;
-        v83 = g_CurrentFrame;
+        v83 =(void *)g_CurrentFrame;
       }
       int v86 = this->m_State;
       if ( !*(unsigned char *)(v86 + 1719) )
@@ -458,7 +458,7 @@ LABEL_98:
       else
 LABEL_97:
         v90 = 1;
-      MovementAI::StepFootClass(this, (v90 != 0) + 1);
+      MovementAI::StepFootClass((int)this, (v90 != 0) + 1);
       return v96;
     case 3:
       *v3 = g_ScoreDisplayState1;

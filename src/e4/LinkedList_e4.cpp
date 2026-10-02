@@ -123,7 +123,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     dword_884E34 = 0; /*0x479381*/
   }
   if ( !Map_Load_751C30() ) /*0x479387*/
-    return 1; /*0x47939b*/
+return (gamemd::AbstractClass **)1; /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
     v9 = ((MixFileClass *)(v8))->FromFile((char *)(aMainMix), (int)dword_886980); /*0x4793b8*/
@@ -168,7 +168,7 @@ LABEL_61:
   MixFileClass_MULTI = (int)((MixFileClass *)(v14))->FromFile((char *)(aMultiMix), (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = ((CCFileClass*)&v24)->Construct((void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
+  v15 = ((CCFileClass*)&v24)->Construct((char *)(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
   v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
   ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
@@ -225,7 +225,7 @@ LABEL_60:
   g_MixFile_MOVIES = (int)((MixFileClass *)(v21))->FromFile(Buffer, (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
-  return Map_Load_751C30(); /*0x479390*/
+return (gamemd::AbstractClass **)Map_Load_751C30(); /*0x479390*/
 
 }
 } // namespace gamemd

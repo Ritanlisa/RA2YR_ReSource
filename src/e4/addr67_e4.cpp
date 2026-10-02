@@ -67,7 +67,7 @@ int sub_679CC0()
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
     v1[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679d14*/
-    ((CCFileClass*)v7)->Construct((void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
+    ((CCFileClass*)v7)->Construct((char *)(void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
     if ( ((CCINIClass *)((int)(v1)))->Load((int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = ((Hash*)(int)v1)->ComputeHashSHA1(); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
@@ -129,7 +129,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0->IsInitialized = (unsigned int)(1);
     aP0->IsAllocated = (unsigned int)(0);
     aP0->vtable1 = (void *)((unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable));
-    ((VectorClass *)(aP0))->CopyBuilding(&v17); /*0x67b640*/
+    ((unsigned int *)(VectorClass *)(aP0))->CopyBuilding(&v17); /*0x67b640*/
     aP0->vtable1 = (void *)((unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable)); /*0x67b645*/
     v17.vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/
@@ -339,7 +339,7 @@ int ArtINI_Load()
   int v3; // [esp+64h] [ebp-8h]
 
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
-  ((CCFileClass *)(v1))->Construct(aArtmdIni); /*0x679efa*/
+  ((CCFileClass *)(v1))->Construct((char *)aArtmdIni); /*0x679efa*/
   ((CCINIClass *)((int)(&dword_887180)))->Load((int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679f16*/
   v3 = 0; /*0x679f1e*/

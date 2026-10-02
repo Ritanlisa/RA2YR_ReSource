@@ -98,9 +98,9 @@ int SessionClass::initInternet()
   if ( v3 ) /*0x540e90*/
   {
     v4 = (unsigned int *)((char *)(dword_A8DA78));
-    v5 = (char *)((&this->unknown_14)[0]);
+    v5 =(int)(char *)((&this->unknown_14)[0]);
     v6 = (char *)(CharToWideString(aMulticast));
-    result = (int)IPXConnClass::constructor( /*0x540ebf*/
+    result = ((int)int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
                     v5,
@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
-        PlayerSide = (void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
+        PlayerSide =(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
         return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
       }
       else
@@ -320,9 +320,9 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   unknown_libname_73(((char *)&v43)); /*0x5cef52*/
   ((SessionClass *)(uniqueId))->Destruct(); /*0x5cef59*/
   (*(void (**)(int *, char *))(v43.customSound_controller[2] + 8))( /*0x5cef6b*/
-    &v43.customSound_controller[2],
-    aMapselmdIni);
-  (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
+    (int *)&v43.customSound_controller[2],
+    (char *)aMapselmdIni);
+  (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))((int *)&v43.customSound_controller[2], 1); /*0x5cef78*/
   if ( !((FileStraw *)((FileStraw *)((char *)&v43)))->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/
@@ -406,7 +406,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
         DeleteAndZero(&v43); /*0x5cf24d*/
       }
       ((String *)((String *)&v43))->Assign(0); /*0x5cf259*/
-      ((String *)((String *)&((char *)&v43)))->Assign(g_INI_Key_Palette); /*0x5cf267*/
+      ((String *)((String *)&((char *)&v43)))->Assign((const char *)g_INI_Key_Palette); /*0x5cf267*/
       v22 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf28f*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf292*/
       DeleteAndZero(&v43); /*0x5cf29b*/
@@ -416,7 +416,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       do /*0x5cf36a*/
       {
         ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf2bc*/
-        v24 = FromStringInt((char **)&v43, v23); /*0x5cf2d1*/
+        v24 = FromStringInt((IUnknown *)(char **)&v43, v23); /*0x5cf2d1*/
         v25 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), v24, (char **)&((char *)&v43), (int)&((char *)&v43)) == 0; /*0x5cf2eb*/
         DeleteAndZero(&v43); /*0x5cf2ee*/
         DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf2f7*/

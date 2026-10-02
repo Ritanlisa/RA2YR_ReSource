@@ -79,7 +79,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
         !v4) )
   {
     dword_A8EC28 = v3 + 1; /*0x6b5327*/
-    *((unsigned int *)dword_A8EC1C + v3) = this; /*0x6b5331*/
+    *((unsigned int *)dword_A8EC1C + v3) =(unsigned int)this; /*0x6b5331*/
     v3 = dword_A8EC28; /*0x6b5334*/
   }
   v5 = 0; /*0x6b5339*/
@@ -173,7 +173,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
     if ( ((unsigned int *)this)[0] ) /*0x6b5764*/
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x6b57b4*/
     else
-      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), Ext); /*0x6b5784*/
+      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), (const char *)Ext); /*0x6b5784*/
     result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
     ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)result); /*0x6b57c7*/
     LOBYTE(result) = 1; /*0x6b57ce*/
@@ -208,7 +208,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a3), 1); /*0x6b61a0*/
   v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
   v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
-         (unsigned int *)((char *)&stru_A8EB00 + 52),
+         (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 52),
          &v6);
   if ( v4 != -1 && v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
   {
@@ -293,7 +293,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), (gamemd::ObjectTypeClass *)aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
     if ( aP0 ) /*0x6b5866*/
@@ -319,7 +319,7 @@ int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x6b58bf*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, (gamemd::TechnoTypeClass *)aP2); /*0x6b58bf*/
   if ( result >= 0 ) /*0x6b58c6*/
     return 0; /*0x6b58c8*/
   return result; /*0x6b58ca*/

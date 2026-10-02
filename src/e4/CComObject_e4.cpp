@@ -380,15 +380,15 @@ LABEL_20:
   }
   if ( !dword_B77EA4 ) /*0x7a5442*/
   {
-    (*(void (**)(LPVOID, int *))(*(unsigned int *)ppv + 132))(ppv, &a2); /*0x7a5457*/
+    (*(void (**)(LPVOID, int *))(*(unsigned int *)ppv + 132))((LPVOID)ppv, &a2); /*0x7a5457*/
     v6 = (char *)__2_YAPAXI_Z(strlen((const char *)a2) + 32); /*0x7a5477*/
     strcpy(v6, (const char *)a2); /*0x7a5493*/
-    strcat(v6, a1018); /*0x7a54bb*/
+    strcat(v6, (const char *)a1018); /*0x7a54bb*/
     for ( i = strtok(v6, Str); i; i = strtok(0, Str) ) /*0x7a54ce*/
     {
       v8 = atol(i); /*0x7a54dd*/
       (*(void (**)(LPVOID, int, int, int *, int *, char *, unsigned char *))(*(unsigned int *)ppv + 92))( /*0x7a54ff*/
-        ppv,
+        (LPVOID)ppv,
         v8,
         dword_84A1C0,
         &v10,
@@ -461,7 +461,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       memset(Buffer, 0, sizeof(Buffer)); /*0x7a5813*/
       GameConfig::BuildChecksum(Buffer); /*0x7a5819*/
       Buffer[40] = 0; /*0x7a5827*/
-      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 168))((LPVOID)ppv, Buffer); /*0x7a5830*/
     }
     v11 = (HWND)(gamemd::Dialog *)0xC4->FindByHandle(); /*0x7a583b*/
     if ( v11 ) /*0x7a5845*/
@@ -696,7 +696,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7a7f84*/
   {
     CharStringToWide((wchar_t **)&v23, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a7f93*/
-    v10 = ((WideString*)(wchar_t **)&v23)->GetOrEmpty(); /*0x7a7f9c*/
+    v10 =(wchar_t *)((WideString*)(wchar_t **)&v23)->GetOrEmpty(); /*0x7a7f9c*/
     v11 = (int *)((Player*)(wchar_t *)((Player *)v10))->FindByName(); /*0x7a7fa3*/
     v12 = (SessionClass *)v11; /*0x7a7fa8*/
     if ( v11 /*0x7a7fed*/
@@ -706,7 +706,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       && *Source <= 57
       && g_WOL_UserList.owningHouseIndex == 2 )
     {
-      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))((LPVOID)ppv, (char *)g_INI_Key_A1); /*0x7a7ffc*/
     }
     ((DeleteAndZero*)&v23)->Alt(); /*0x7a8003*/
     return 0; /*0x7a8014*/
@@ -778,7 +778,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       sprintf((char *const)Buffer, "P%s", byte_A8B8E0); /*0x7a81cf*/
       if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a81de*/
         qmemcpy(v25, g_WOL_UserList.nextObject, sizeof(v25)); /*0x7a81ef*/
-      (*(void (**)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
+      (*(void (**)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))((LPVOID)ppv, v25, Buffer); /*0x7a8203*/
       Debug::Log(); /*0x7a820b*/
       Event_Play(v5); /*0x7a8213*/
     }
@@ -855,8 +855,8 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         v10 = (char *)(v7 + 36); /*0x7a8e8b*/
         if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7a8e94*/
         {
-          v11 = ((WideString*)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8ea4*/
-          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (size_t)aHsS_1, v10, v11); /*0x7a8eb1*/
+          v11 =(wchar_t *)((WideString*)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8ea4*/
+          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (gamemd::CampaignScore *)(size_t)aHsS_1, v10, v11); /*0x7a8eb1*/
         }
         ((DeleteAndZero*)(DeleteAndZero *)&a2)->Alt(); /*0x7a8ebd*/
       }
@@ -903,8 +903,8 @@ LABEL_21:
         v10 = (char *)(v6 + 36); /*0x7a8f81*/
         if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7a8f8a*/
         {
-          v11 = ((WideString*)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8f9a*/
-          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (size_t)aHsS_1, v10, v11); /*0x7a8fa7*/
+          v11 =(wchar_t *)((WideString*)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8f9a*/
+          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (gamemd::CampaignScore *)(size_t)aHsS_1, v10, v11); /*0x7a8fa7*/
         }
       }
     }

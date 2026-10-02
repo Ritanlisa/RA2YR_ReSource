@@ -613,7 +613,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   {
     if ( ++v8 >= lastBuiltInfantryType ) /*0x6efd15*/
     {
-      *(unsigned char *)(v20 + 128) = 1; /*0x6efd1e*/
+      *(unsigned char *)(v20 + 128) =(int)1; /*0x6efd1e*/
       return; /*0x6efd28*/
     }
   }

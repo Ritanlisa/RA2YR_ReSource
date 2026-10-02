@@ -106,7 +106,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   *((unsigned int *)this + 12) = 10; /*0x4a08b0*/
   *((unsigned int *)this + 11) = 0; /*0x4a08b7*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionPointClass); /*0x4a08ba*/
-  (*(void (**)(int))(*(unsigned int *)aP2 + 4))(aP2); /*0x4a08c3*/
+  (*(void (**)(int))(*(unsigned int *)aP2 + 4))((int)aP2); /*0x4a08c3*/
   return this->__pad_0; /*0x4a08c8*/
 
 }

@@ -23,12 +23,12 @@ int ObjectVector::Construct(int aP1, int aP2)
     if ( aP2 ) /*0x4d0466*/
     {
       this->ObjectVector_field_0x04 = (unsigned int)(aP2);
-      return this->__pad_0; /*0x4d046e*/
+return (int)this->__pad_0; /*0x4d046e*/
     }
-    this->ObjectVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4d047d*/
+    this->ObjectVector_field_0x04 =(unsigned int)__2_YAPAXI_Z(4 * aP1); /*0x4d047d*/
     BYTE1(this->ObjectVector_field_0x0C) = 1; /*0x4d0480*/
   }
-  return this->__pad_0; /*0x4d046d*/
+return (int)this->__pad_0; /*0x4d046d*/
 
 }
 } // namespace gamemd

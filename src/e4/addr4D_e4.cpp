@@ -53,7 +53,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int v17; // [esp+18h] [ebp-4h] BYREF
 
   *(unsigned int *)v16 = (unsigned int)(aP0); /*0x4d1684*/
-  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
+  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))((int *)&dword_8B3D10, v16); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
   {
     do /*0x4d16bb*/
@@ -258,7 +258,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
     WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
     WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
-  (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x4db8fc*/
+  (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))(ppv, (TechnoClass *)this); /*0x4db8fc*/
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
@@ -446,7 +446,7 @@ int sub_4D0750()
   dword_8B3D10 = (int)&DynamicVectorClass_FoggedObjectClass___vftable; /*0x4d076d*/
   dword_8B3D24 = 10; /*0x4d0777*/
   g_FootClassConfig = 0; /*0x4d0781*/
-  return atexit(sub_4D0790); /*0x4d078c*/
+  return atexit((void (__cdecl *)(void))sub_4D0790); /*0x4d078c*/
 }
 } // namespace gamemd
 
@@ -481,7 +481,7 @@ int sub_4D07F0()
   dword_8B3CC8 = 0; /*0x4d0801*/
   byte_8B3CCC = 0; /*0x4d0806*/
   dword_8B3CD0 = 0; /*0x4d080b*/
-  return atexit(sub_4D0820); /*0x4d0816*/
+  return atexit((void (__cdecl *)(void))sub_4D0820); /*0x4d0816*/
 }
 } // namespace gamemd
 
@@ -649,7 +649,7 @@ int sub_4D3160()
   FootClass_Array = (int)&off_7E8C28; /*0x4d317d*/
   dword_8B3DD4 = 10; /*0x4d3187*/
   dword_8B3DD0 = 0; /*0x4d3191*/
-  return atexit(sub_4D31A0); /*0x4d319c*/
+  return atexit((void (__cdecl *)(void))sub_4D31A0); /*0x4d319c*/
 }
 } // namespace gamemd
 
@@ -686,7 +686,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))(this, v11); /*0x4d4fd4*/
+    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))((gamemd::ObjectClass *)this, v11); /*0x4d4fd4*/
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
@@ -714,7 +714,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 namespace gamemd {
 unsigned int * globalHelper_0DA020(unsigned int *a0, AbstractClass * aP1)
 {
-  *a0 = (unsigned int)(*aP1);
+  *a0 = *(unsigned int *)aP1;
   return a0; /*0x4da02c*/
 }
 } // namespace gamemd

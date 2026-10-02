@@ -112,7 +112,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     *v5 = 0; /*0x654685*/
     if ( v6 ) /*0x654687*/
     {
-      (**v6)(v6, 1); /*0x65468d*/
+      (**v6)((unsigned int)v6, 1); /*0x65468d*/
       v3[1160] = 0.0; /*0x65468f*/
     }
     if ( *((unsigned int *)v3 + 1167) ) /*0x654695*/
@@ -126,7 +126,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v3[1181] = 0.0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v3, v19, v5, v5, 1); /*0x6546d3*/
-    v7 = (*(int (**)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), a2); /*0x6546e0*/
+    v7 = (*(int (**)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), (int)a2); /*0x6546e0*/
     v8 = *((unsigned int *)v3 + 1160); /*0x6546e3*/
     *((unsigned int *)v3 + 1321) = v7; /*0x6546e9*/
     v9 = (*(int (**)(int))(v8->q080)(v8); /*0x6546f1*/
@@ -143,7 +143,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     v13 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 1159); /*0x65474a*/
     if ( v13 ) /*0x654752*/
     {
-      (**v13)(v13, 1); /*0x654758*/
+      (**v13)((unsigned int)v13, 1); /*0x654758*/
       v3[1159] = 0.0; /*0x65475a*/
     }
     v14 = (char *)RA2_OPNEW(0x24u); /*0x654767*/
@@ -350,8 +350,8 @@ LABEL_74:
     return 1; /*0x6a869b*/
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
-  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
+  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, (void *)dword_A83D4C); /*0x6a86bf*/
+  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, (void *)dword_A83D4C); /*0x6a86c9*/
   if ( v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
   if ( v30 > v31 ) /*0x6a86df*/

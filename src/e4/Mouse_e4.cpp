@@ -142,7 +142,7 @@ int Mouse::SetCursor(int aP1, char aP2)
     (*(void (**)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
       dword_887640,
       &v13,
-      dword_ABF294,
+      (void *)dword_ABF294,
       v9);
     result = (gamemd::ObjectClass *)((unsigned char)(aP1));
     *((unsigned int *)this + 5464) = (unsigned int)(aP1); /*0x5bdd9f*/
@@ -205,7 +205,7 @@ AbstractClass * * Mouse::DrawCursor(int *aP1, int aP2, int a4)
     v20[2] = (int)(v7); /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
     v20[4] = 1; /*0x7b9468*/
-    Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
+    Buffer::Init((int)(Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
     v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
     if ( aP1 == *(int **)((unsigned int)(v13)+ 36) ) /*0x7b9488*/
     {

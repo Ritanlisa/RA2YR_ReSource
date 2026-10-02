@@ -127,7 +127,7 @@ void ConnectionClass::dtor()
   __3_YAXPAX_Z(v2); /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/
-    (**PlayerIndex)(PlayerIndex, 1); /*0x48bf01*/
+    (**PlayerIndex)((unsigned int)PlayerIndex, 1); /*0x48bf01*/
 
 }
 } // namespace gamemd
@@ -156,7 +156,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     ((gamemd::Debug *)this)->Log(); /*0x48bfc1*/
     return 0; /*0x48bfcd*/
   }
-  qmemcpy((void *)(*((unsigned int *)this + 8) + 14), aP1, aP2); /*0x48bfe5*/
+  qmemcpy((void *)(*((unsigned int *)this + 8) + 14), aP1, (size_t)aP2); /*0x48bfe5*/
   if ( !ConnectionClass::queueSendPacket(*((unsigned int *)this + 8), aP2 + 14, 0, 0, 0) ) /*0x48c006*/
     return 0; /*0x48c006*/
   if ( aP3 ) /*0x48c00e*/
@@ -253,7 +253,7 @@ LABEL_40:
         v26 = dword_A8EA0C; /*0x48c2cb*/
         LOBYTE(v26) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c2d7*/
         (*(void (**)(ModemConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
-          this,
+          (ModemConnectionClass *)this,
           &v27,
           14,
           0,
@@ -457,7 +457,7 @@ int ConnectionClass::serviceSendQueue()
         LOBYTE(v11) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c4cb*/
         (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
                                                                                                  + 36))(
-          this,
+          (ModemConnectionClass *)this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),
           *(unsigned int *)(v8 + 28),

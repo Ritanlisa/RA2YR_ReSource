@@ -230,7 +230,7 @@ CellStruct * * sub_730D60()
         {
           v4 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)(*(unsigned int *)v3)));
           v5 = (gamemd::CellStruct **)((char)((gamemd::CellStruct **)((int)((gamemd::CellStruct **)((*(int (**)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0))))));
-          result = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)((*(int (**)(unsigned char *, int, int))(v4 + 888))(v3, 11, v5))))));
+          result = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)((*(int (**)(unsigned char *, int, int))(v4 + 888))(v3, 11, (int)v5))))));
           v2 = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)(result)))));
           if ( !result ) /*0x730df5*/
             return result; /*0x730df5*/
@@ -246,7 +246,7 @@ CellStruct * * sub_730D60()
         {
           v6 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)(*(unsigned int *)v3)));
           v7 = (gamemd::CellStruct **)((char)((gamemd::CellStruct **)((int)((gamemd::CellStruct **)((*(int (**)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0))))));
-          result = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)((*(int (**)(unsigned char *, int, int))(v6 + 888))(v3, 11, v7))))));
+          result = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)((*(int (**)(unsigned char *, int, int))(v6 + 888))(v3, 11, (int)v7))))));
           v2 = (gamemd::CellStruct **)((unsigned int)((gamemd::CellStruct **)((char)((gamemd::CellStruct **)(result)))));
           if ( !result ) /*0x730e60*/
             return result; /*0x730e60*/
@@ -975,11 +975,11 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     {
       if ( v18 == 1 ) /*0x733490*/
       {
-        StringCSF = GetStringCSF(aMsgHeavilydama, 0, g_Str_File_UICmnds_cpp, 1606); /*0x7334a8*/
+        StringCSF = GetStringCSF((wchar_t *)aMsgHeavilydama, 0, g_Str_File_UICmnds_cpp, 1606); /*0x7334a8*/
       }
       else if ( v18 == 2 ) /*0x7334af*/
       {
-        StringCSF = GetStringCSF(aMsgHealthy, 0, g_Str_File_UICmnds_cpp, 1608); /*0x7334c7*/
+        StringCSF = GetStringCSF((wchar_t *)aMsgHealthy, 0, g_Str_File_UICmnds_cpp, 1608); /*0x7334c7*/
       }
       else
       {
@@ -988,7 +988,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     }
     else
     {
-      StringCSF = GetStringCSF(aMsgCritical, 0, g_Str_File_UICmnds_cpp, 1604); /*0x733489*/
+      StringCSF = GetStringCSF((wchar_t *)aMsgCritical, 0, g_Str_File_UICmnds_cpp, 1604); /*0x733489*/
     }
     v10 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x7334d2*/
     if ( v10 ) /*0x7334dc*/
@@ -1019,7 +1019,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x733541*/
           goto LABEL_42; /*0x733541*/
       }
-      StringCSF = GetStringCSF(g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1583); /*0x73355b*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1583); /*0x73355b*/
     }
 LABEL_42:
     if ( v11 ) /*0x73355f*/
@@ -1139,7 +1139,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
       }
       else
       {
-        StringCSF = &g_TypeClass_DefaultString; /*0x73380f*/
+        StringCSF =(wchar_t *)&g_TypeClass_DefaultString; /*0x73380f*/
       }
     }
     else

@@ -184,7 +184,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         || ((&this->isSinking)[0] || !v14)
         && (v15 = *(unsigned int *)this->isALoaner, v15 > 0)
         && (*(uint8_t (**)(int *, int, unsigned int))((&this->targetLaserTimer)[1] + 8))(
-             &(&this->targetLaserTimer)[1],
+             (int *)&(&this->targetLaserTimer)[1],
              v14 + v15,
              0) )
       {

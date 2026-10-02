@@ -93,20 +93,20 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   v34[1] = v14; /*0x4b9790*/
   v31 = v14; /*0x4b9794*/
   v34[0] = (int)(v13); /*0x4b9798*/
-  v15 = (int)(*aP2); /*0x4b979c*/
+  v15 = *(int *)aP2; /*0x4b979c*/
   v30 = v13; /*0x4b979e*/
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
-  v16 = (*(int (**)(int *))(v15 + 124))(aP2); /*0x4b97b5*/
+  v16 = (*(int (**)(int *))(v15 + 124))((int *)aP2); /*0x4b97b5*/
   v17 = (int)((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden)); /*0x4b97b9*/
-  v18 = (int)(*aP2); /*0x4b97c5*/
+  v18 = *(int *)aP2; /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
-  v19 = (*(int (**)(int *))(v18 + 128))(aP2); /*0x4b97df*/
+  v19 = (*(int (**)(int *))(v18 + 128))((int *)aP2); /*0x4b97df*/
   v31 += ((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
   v28 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
   BlitterDrawSHP((int *)g_DSurface_Hidden, _6C, aP2, &v30, &v28, v34, 0, a8, 0, 0, 1000, 0, 0); /*0x4b9832*/
-  v20 = FindBuildingAnimByName(aYellow, 1); /*0x4b9847*/
+  v20 = FindBuildingAnimByName((gamemd::AbstractClass *)aYellow, 1); /*0x4b9847*/
   v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 120))( /*0x4b985f*/
                     g_DSurface_Hidden,
                     v35,
@@ -179,7 +179,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
     v14 = Default + 4; /*0x642d7c*/
     if ( v19 > 1 ) /*0x642d82*/
       v14 *= v19; /*0x642d87*/
-    Viewport = ((Display*)v21)->GetViewport(); /*0x642d8d*/
+    Viewport =(int *)((Display*)v21)->GetViewport(); /*0x642d8d*/
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
     *((char *)this + 26) = v16 / 2; /*0x642dbb*/

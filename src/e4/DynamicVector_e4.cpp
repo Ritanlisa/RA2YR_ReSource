@@ -24,7 +24,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
   if ( this == (DynamicVector *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
   (*(void (**)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ac43e*/
-  v3 = (int)(aP1[2]); /*0x5ac441*/
+  v3 = ((int *)aP1)[2]; /*0x5ac441*/
   this->DynamicVector_field_0x8 = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
   {
@@ -32,7 +32,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
     this->__pad_C[1] = 0; /*0x5ac49d*/
 LABEL_8:
     this->DynamicVector_field_0x10 = (void *)((unsigned int)((void *)aP1[4])); /*0x5ac4a1*/
-    *(unsigned int *)this->__pad_14 = (unsigned int)(aP1[5]); /*0x5ac4aa*/
+    *(unsigned int *)this->__pad_14 = ((unsigned int *)aP1)[5]; /*0x5ac4aa*/
     return this->__pad_0; /*0x5ac4ad*/
   }
   v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x5ac453*/
@@ -51,7 +51,7 @@ LABEL_8:
   }
   while ( v6 < this->DynamicVector_field_0x8 ); /*0x5ac481*/
   this->DynamicVector_field_0x10 = (void *)((unsigned int)((void *)aP1[4])); /*0x5ac486*/
-  *(unsigned int *)this->__pad_14 = (unsigned int)(aP1[5]); /*0x5ac48c*/
+  *(unsigned int *)this->__pad_14 = ((unsigned int *)aP1)[5]; /*0x5ac48c*/
   return this->__pad_0; /*0x5ac491*/
 
 }
@@ -107,7 +107,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   {
     if ( aP2 ) /*0x42f69a*/
     {
-      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = aP2; /*0x42f69d*/
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] =(unsigned int)aP2; /*0x42f69d*/
     }
     else
     {
@@ -289,7 +289,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x5387b5*/
   v7 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x5387b8*/
   this->DynamicVector_field_0x10 = (unsigned int)((char *)DynamicVector_field_0x10 + 1); /*0x5387be*/
-  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = (unsigned int)(*aP1); /*0x5387c8*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *(unsigned int *)aP1; /*0x5387c8*/
   return 1; /*0x5387b1*/
 
 }
@@ -318,7 +318,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
     result = (int)this->DynamicVector_field_0x10; /*0x5ad805*/
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x5ad808*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x5ad80e*/
-    *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x5ad818*/
+    *(unsigned int *)(v5 + 4 * result) = *(unsigned int *)aP1; /*0x5ad818*/
     LOBYTE(result) = 1; /*0x5ad81b*/
   }
   else
@@ -373,7 +373,7 @@ int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
 
   v3 = (void *)(*aP1); /*0x67a52c*/
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a539*/
-  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))((int *)aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
   result = (int)DynamicVector_field_0x10; /*0x67a540*/
   for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a548*/
   {
@@ -401,7 +401,7 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 
   v3 = (void *)(*aP1); /*0x67a6ec*/
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a6f9*/
-  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))((int *)aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
   result = (int)DynamicVector_field_0x10; /*0x67a700*/
   for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a708*/
   {
@@ -435,7 +435,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
     }
     else
     {
-      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = __2_YAPAXI_Z(4 * a2); /*0x67acac*/
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] =(unsigned int)__2_YAPAXI_Z(4 * a2); /*0x67acac*/
       this->__pad_C[1] = 1; /*0x67acaf*/
     }
   }
@@ -570,7 +570,7 @@ char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x6c6435*/
   v7 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x6c6438*/
   this->DynamicVector_field_0x10 = (unsigned int)((char *)DynamicVector_field_0x10 + 1); /*0x6c643e*/
-  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = (unsigned int)(*aP1); /*0x6c6448*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *(unsigned int *)aP1; /*0x6c6448*/
   return 1; /*0x6c6431*/
 
 }
@@ -594,7 +594,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
     }
     else
     {
-      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = __2_YAPAXI_Z(4 * a2); /*0x73430c*/
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] =(unsigned int)__2_YAPAXI_Z(4 * a2); /*0x73430c*/
       this->__pad_C[1] = 1; /*0x73430f*/
     }
   }

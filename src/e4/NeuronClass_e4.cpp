@@ -44,15 +44,15 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
   *((unsigned int *)this + 12) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_NeuronClass); /*0x43a375*/
-  this->vtable2 = (int)&vt_NeuronClass; /*0x43a37b*/
-  this->vtable3 = (int)&vt_NeuronClass; /*0x43a382*/
-  this->vtable4 = (int)&vt_NeuronClass; /*0x43a389*/
+  this->vtable2 =(void *)(int)&vt_NeuronClass; /*0x43a37b*/
+  this->vtable3 =(void *)(int)&vt_NeuronClass; /*0x43a382*/
+  this->vtable4 =(void *)(int)&vt_NeuronClass; /*0x43a389*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
     && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
-         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
-         ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
+         (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+         (int)((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
          0) )
   {
     v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x43a3d2*/
@@ -104,8 +104,8 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   }
   v6 = (unsigned int *)((unsigned int)(Block));
   v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
-         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
-         &v6);
+         (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+         (NeuronClass **)&v6);
   if ( v4 != -1 && v4 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x43aa4c*/
   {
     --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x43aa51*/

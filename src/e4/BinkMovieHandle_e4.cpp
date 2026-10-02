@@ -275,7 +275,7 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
   *(unsigned int *)Block->MovieHandle = &vt_MovieHandle; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
     __3_YAXPAX_Z(this); /*0x5c0a60*/
-  return this->MovieHandle; /*0x5c0a6a*/
+return (gamemd::BinkMovieHandle *)this->MovieHandle; /*0x5c0a6a*/
 
 }
 } // namespace gamemd

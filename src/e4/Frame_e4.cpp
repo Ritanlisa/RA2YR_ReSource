@@ -69,7 +69,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
 
   if ( !a5 ) /*0x4f4790*/
   {
-    v9 = (int *)(*(int (**)(int, int *))(*(unsigned int *)a1 + 120))(a1, &v46); /*0x4f479b*/
+    v9 = (int *)(*(int (**)(int, int *))(*(unsigned int *)a1 + 120))((int)a1, &v46); /*0x4f479b*/
     v39 = *v9; /*0x4f47a0*/
     v40 = v9[1]; /*0x4f47a7*/
     v41 = v9[2]; /*0x4f47b6*/
@@ -82,8 +82,8 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
     result = ClientToScreen((HWND)(g_hWnd), (LPPOINT)&v38[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
-      v11 = (*(int (**)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
-      v12 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4817*/
+      v11 = (*(int (**)(int, int, int, int))(*(unsigned int *)a1 + 128))((int)a1, (int)a4, (int)a3, (int)a2); /*0x4f4811*/
+      v12 = (*(int (**)(int))(*(unsigned int *)a1 + 124))((int)a1); /*0x4f4817*/
       v13 = dword_87F7F0; /*0x4f4828*/
       v45 = v40; /*0x4f4830*/
       v46 = v41; /*0x4f4834*/
@@ -139,7 +139,7 @@ LABEL_18:
             v45 = v19; /*0x4f48f1*/
           }
           v20 = (void *)((unsigned int)((void *)((LONG)(*(unsigned int *)(a8)))));
-          v21 = (LONG)((int)(a8[1]));
+          v21 = (LONG)(((int *)a8)[1]);
           v22 = (LONG)((void *)(a8[2]));
           Rect.right = (void *)(a8[3]);
           v49 = (unsigned int)((void *)(v20));
@@ -149,8 +149,8 @@ LABEL_18:
             && (((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0
              || ((unsigned int *)(g_TacticalClass_Instance))[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
           {
-            v51 = (void *)((int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1))));
-            v23 = (void *)((int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1))));
+            v51 = (void *)((int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))((int)a1))));
+            v23 = (void *)((int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))((int)a1))));
             v24 = (LPPERSISTSTREAM)((void *)((double)v51));
             v25 = (LPPERSISTSTREAM)((void *)(g_TacticalClass_Instance));
             *(unsigned int *)v38 = (unsigned int)(v23); /*0x4f4959*/
@@ -196,7 +196,7 @@ LABEL_47:
 LABEL_51:
               if ( dword_87F7EC ) /*0x4f4a5e*/
               {
-                v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
+                v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))((int)a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
                 HIDWORD(v42) = v41; /*0x4f4a82*/
                 v44 = v31; /*0x4f4a86*/
                 v43 = abs32(dword_87F7EC); /*0x4f4a91*/
@@ -216,7 +216,7 @@ LABEL_51:
               if ( v13 ) /*0x4f4ada*/
               {
                 v34 = abs32(v13); /*0x4f4ae7*/
-                v43 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
+                v43 = (*(int (**)(int))(*(unsigned int *)a1 + 124))((int)a1); /*0x4f4af0*/
                 LODWORD(v42) = v40; /*0x4f4af9*/
                 v44 = v34; /*0x4f4aff*/
                 if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
@@ -232,18 +232,18 @@ LABEL_51:
                 (*(void (**)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && dword_887640 ) /*0x4f4b50*/
-                (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x4f4b57*/
+                (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, (int)a1, 0); /*0x4f4b57*/
               result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
                          g_DSurface_Primary,
                          &v45,
-                         a1);
+                         (int)a1);
               if ( v37 ) /*0x4f4b83*/
               {
                 result = dword_887640; /*0x4f4b85*/
                 if ( dword_887640 ) /*0x4f4b8c*/
                 {
                   Sleep(0x32u); /*0x4f4b90*/
-                  return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x4f4ba1*/
+                  return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, (int)a1, 0); /*0x4f4ba1*/
                 }
               }
               return (gamemd::TechnoTypeClass *)(result);

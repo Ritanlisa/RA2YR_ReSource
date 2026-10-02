@@ -290,7 +290,7 @@ CampaignClass * MSEngine::Destruct()
   {
     v7 = *(void (****)(unsigned int, int))(*((unsigned int *)this + 7) + 4 * i); /*0x5d1b80*/
     if ( v7 ) /*0x5d1b85*/
-      (**v7)(v7, 1); /*0x5d1b8b*/
+      (**v7)((unsigned int)v7, 1); /*0x5d1b8b*/
   }
   v8 = (char *)this + 24; /*0x5d1b98*/
   (*(void (**)(char *))(*((unsigned int *)this + 6) + 12))((char *)this + 24); /*0x5d1b9d*/

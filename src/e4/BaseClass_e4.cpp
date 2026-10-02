@@ -40,7 +40,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
   unsigned int v22[4]; // [esp+8Ch] [ebp-10h] BYREF
 
   v2 = a2; /*0x42ee3a*/
-  if ( (*(int (**)(int, BaseClass *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, aP0, 120, 0) >= 0 ) /*0x42ee4b*/
+  if ( (*(int (**)(int, BaseClass *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, (BaseClass *)aP0, 120, 0) >= 0 ) /*0x42ee4b*/
   {
     if ( aP0 ) /*0x42ee53*/
     {
@@ -49,7 +49,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
       aP0->cells24Capacity = 10; /*0x42ee70*/
       aP0->cells24Count = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((gamemd::ObjectClass *)((DynamicVector *)&aP0->cells38Count), 0, 0); 
-      DynamicVector::Constructor_Cell((DynamicVector *)&(&aP0->unknown54)[3], 0, 0); /*0x42ee8a*/
+      DynamicVector::Constructor_Cell((gamemd::ObjectClass *)(DynamicVector *)&(&aP0->unknown54)[3], 0, 0); /*0x42ee8a*/
       aP0->baseNodes = (unsigned int)((BaseNodeClass *)&vt_BaseClass); /*0x42ee8f*/
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
@@ -83,11 +83,11 @@ LABEL_34:
                     || (BYTE1((&aP0->unknown54)[6]) || !v16)
                     && (owner = aP0->owner, (int)owner > 0)
                     && (*(uint8_t (**)(int *, int, unsigned int))((&aP0->unknown54)[3] + 8))(
-                         &(&aP0->unknown54)[3],
+                         (int *)&(&aP0->unknown54)[3],
                          (int)owner + v16,
                          0) )
                   {
-                    v18 = (&aP0->unknown54)[7]; /*0x42f028*/
+                    v18 =(gamemd::HouseClass *)(&aP0->unknown54)[7]; /*0x42f028*/
                     v19 = (&aP0->unknown54)[4]; /*0x42f02b*/
                     (&aP0->unknown54)[7] = v18 + 1; /*0x42f031*/
                     *(unsigned int *)(v19 + 4 * v18) = v21; /*0x42f038*/
@@ -107,7 +107,7 @@ LABEL_34:
                 || (BYTE1((&aP0->unknown54)[0]) || !v11)
                 && (v12 = (&aP0->unknown54)[2], v12 > 0)
                 && (*(uint8_t (**)(int *, int, unsigned int))(aP0->cells38Count + 8))(
-                     &aP0->cells38Count,
+                     (int *)&aP0->cells38Count,
                      v11 + v12,
                      0) )
               {
@@ -131,7 +131,7 @@ LABEL_34:
             || (BYTE1(aP0->cells24) || !percentBuilt)
             && (cells24Capacity = aP0->cells24Capacity, cells24Capacity > 0)
             && (*(uint8_t (**)(int *, int, unsigned int))(aP0->baseNodeCount + 8))(
-                 &aP0->baseNodeCount,
+                 (int *)&aP0->baseNodeCount,
                  percentBuilt + cells24Capacity,
                  0) )
           {
@@ -170,7 +170,7 @@ int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
   int v10; // ebx
 
   v2 = a2; /*0x42f073*/
-  if ( (*(int (**)(int, BaseClass *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, a1, 120, 0) >= 0 ) /*0x42f089*/
+  if ( (*(int (**)(int, BaseClass *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (BaseClass *)a1, 120, 0) >= 0 ) /*0x42f089*/
   {
     v3 = *(unsigned int *)v2; /*0x42f092*/
     a2 = a1->a2; /*0x42f09e*/

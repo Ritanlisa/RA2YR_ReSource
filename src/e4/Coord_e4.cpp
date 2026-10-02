@@ -93,7 +93,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
-      && (result = (*(int (**)(char *, int, unsigned int))(*(unsigned int *)v21 + 8))((unsigned char *)this + 24 * v16, result + v22, 0),
+      && (result = (*(int (**)(char *, int, unsigned int))(*(unsigned int *)v21 + 8))((char *)(unsigned char *)this + 24 * v16, result + v22, 0),
           (unsigned char)result) )
     {
       result = *((unsigned int *)v21 + 4); /*0x413a11*/
@@ -240,8 +240,8 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   int v10; // ecx
   int v11; // edi
 
-  v4 = (int)(*aP2); /*0x6557f7*/
-  v5 = (int)(aP2[1]); /*0x6557f9*/
+  v4 = *(int *)aP2; /*0x6557f7*/
+  v5 = ((int *)aP2)[1]; /*0x6557f9*/
   LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (*((unsigned int *)this + 1316) << 8) - v5) * *((float *)this + 1314) * 0.00390625); /*0x655820*/
   v8 = v7; /*0x65582b*/
   LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (*((unsigned int *)this + 1318) << 8)) * *((float *)this + 1314) * 0.00390625); /*0x655848*/

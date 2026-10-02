@@ -19,7 +19,7 @@ unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2)
   *((unsigned int *)this + 1) = (aP1[(unsigned int)(1])<< 8) + 128; /*0x642759*/
   *((unsigned int *)this + 2) = (unsigned int)(aP2); /*0x642766*/
   this->vfptr = (void *)(v4 + 128); /*0x642769*/
-  return &this->vfptr; /*0x64276b*/
+return (unsigned int *)&this->vfptr; /*0x64276b*/
 
 }
 }

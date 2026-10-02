@@ -326,7 +326,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   if ( *((unsigned int *)this + 24) ) /*0x774f87*/
   {
     ((gamemd::Debug *)this)->Log(); /*0x774fd5*/
-    strcat(Buffer, aP); /*0x775002*/
+    strcat(Buffer, (const char *)aP); /*0x775002*/
   }
   else
   {

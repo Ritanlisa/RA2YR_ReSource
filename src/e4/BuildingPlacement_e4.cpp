@@ -241,7 +241,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c7ba*/
   if ( !LOBYTE((&v12->sensorsOfHouses)[4]) ) /*0x54c7bd*/
   {
-    v27 = &(&v12->sensorsOfHouses)[8]; /*0x54c7c7*/
+    v27 =(int *)&(&v12->sensorsOfHouses)[8]; /*0x54c7c7*/
     v48 = *v27; /*0x54c7ce*/
     v49 = v27[1]; /*0x54c7da*/
     v50 = v27[2]; /*0x54c7e6*/

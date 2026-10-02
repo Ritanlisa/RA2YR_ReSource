@@ -256,7 +256,7 @@ void InitializeRadialGradientTexture()
              dword_8A0DF4,
              &unk_7F80B0,
              AudioStream_field_0x1C,
-             &g_DrawColorState);
+             (int64_t *)&g_DrawColorState);
   if ( !result ) /*0x4c16d6*/
   {
     if ( sub_4C14D0(v17) ) /*0x4c16dc*/

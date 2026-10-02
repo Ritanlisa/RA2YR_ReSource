@@ -57,7 +57,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f6f*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f76*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x6e4f84*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)a1, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 376)) ) /*0x6e4f9d*/
@@ -223,7 +223,7 @@ LABEL_45:
     }
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
-  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x6e5212*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)a1, 1); /*0x6e5212*/
   return AbstractClass::DTOR((AbstractClass *)a1); /*0x6e521e*/
 
 }

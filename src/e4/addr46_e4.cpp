@@ -645,7 +645,7 @@ int sub_4662E0()
   dword_89DE18 = (int)&off_7E4678; /*0x4662fd*/
   dword_89DE2C = 10; /*0x466307*/
   dword_89DE28 = 0; /*0x466311*/
-  return atexit(sub_466320); /*0x46631c*/
+  return atexit((void (__cdecl *)(void))sub_466320); /*0x46631c*/
 }
 } // namespace gamemd
 

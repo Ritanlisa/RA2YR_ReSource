@@ -227,7 +227,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
   *((unsigned int *)Block + 10) = 0; /*0x55a133*/
   if ( (a2 & 1) != 0 ) /*0x55a13a*/
     __3_YAXPAX_Z(this); /*0x55a13d*/
-  return (char *)this; /*0x55a147*/
+return (gamemd::LoadOptions *)(char *)this; /*0x55a147*/
 
 }
 } // namespace gamemd
@@ -375,7 +375,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   this->m_8 = 0; /*0x55a441*/
   if ( (a2 & 1) != 0 ) /*0x55a448*/
     __3_YAXPAX_Z(this); /*0x55a44b*/
-  return this->__pad_0; /*0x55a455*/
+return (gamemd::VectorClass_flat *)this->__pad_0; /*0x55a455*/
 
 }
 } // namespace gamemd
@@ -398,7 +398,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
   this->m_8 = 0; /*0x55a491*/
   if ( (a2 & 1) != 0 ) /*0x55a498*/
     __3_YAXPAX_Z(this); /*0x55a49b*/
-  return this->__pad_0; /*0x55a4a5*/
+return (gamemd::DynamicVector *)this->__pad_0; /*0x55a4a5*/
 
 }
 } // namespace gamemd

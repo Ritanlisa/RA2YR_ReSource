@@ -237,8 +237,8 @@ void ParasiteClass::DeploySquad()
                   || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
                   && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
                   && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-                       ((char *)(int *)&g_BuildingLoadQueue_Array),
-                       *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + ((char *)&g_BuildingLoadQueue_Array),
+                       (int *)((char *)(int *)&g_BuildingLoadQueue_Array),
+                       (int)*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + ((char *)&g_BuildingLoadQueue_Array),
                        0) )
                 {
                   v16 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x629960*/

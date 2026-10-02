@@ -351,16 +351,16 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
   {
     if ( a3 == 1 ) /*0x4e3527*/
     {
-      result = (HWND *)HashTable::Find(g_DialogHashTable, off_844B1C[0], 0); /*0x4e3532*/
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B1C[0], 0); /*0x4e3532*/
     }
     else if ( a3 == 2 ) /*0x4e3537*/
     {
-      result = (HWND *)HashTable::Find(g_DialogHashTable, off_844B20[0], 0); /*0x4e3547*/
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B20[0], 0); /*0x4e3547*/
     }
   }
   else
   {
-    result = (HWND *)HashTable::Find(g_DialogHashTable, off_844B18[0], 0); /*0x4e3522*/
+    result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B18[0], 0); /*0x4e3522*/
   }
   if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x4e354f*/
     return CacheDialogInvalidate(DlgItem, (HWND)result); /*0x4e3555*/
@@ -730,7 +730,7 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
     else
       v12 = -2; /*0x4e4142*/
   }
-  Default = (HWND *)((HWND)((BuildingType*)(void *)v12)->FindDefault()); /*0x4e4149*/
+  Default =(HWND)(HWND *)((HWND)((BuildingType*)(void *)v12)->FindDefault()); /*0x4e4149*/
   return (HWND *)(CacheDialogInvalidate(DlgItem, Default)); /*0x4e4157*/
 }
 }
@@ -1782,7 +1782,7 @@ int sub_4E6860()
   dword_A8ED40 = (int)&off_7E4678; /*0x4e687d*/
   dword_A8ED54 = 10; /*0x4e6887*/
   dword_A8ED50 = 0; /*0x4e6891*/
-  return atexit(sub_4E68A0); /*0x4e689c*/
+  return atexit((void (__cdecl *)(void))sub_4E68A0); /*0x4e689c*/
 }
 }
 // 0x4E6CE0
@@ -1796,7 +1796,7 @@ int sub_4E6CE0()
   dword_A80228 = (int)&DynamicVectorClass_HouseClass___vftable; /*0x4e6cfd*/
   dword_A8023C = 10; /*0x4e6d07*/
   dword_A80238 = 0; /*0x4e6d11*/
-  return atexit(sub_4E6D20); /*0x4e6d1c*/
+  return atexit((void (__cdecl *)(void))sub_4E6D20); /*0x4e6d1c*/
 }
 }
 // 0x4E6D20
@@ -1824,7 +1824,7 @@ int sub_4E7460()
   dword_A83CE0 = (int)&DynamicVectorClass_UnitTypeClass___vftable; /*0x4e747d*/
   dword_A83CF4 = 10; /*0x4e7487*/
   dword_A83CF0 = 0; /*0x4e7491*/
-  return atexit(sub_4E74A0); /*0x4e749c*/
+  return atexit((void (__cdecl *)(void))sub_4E74A0); /*0x4e749c*/
 }
 }
 // 0x4E74A0
@@ -1852,7 +1852,7 @@ int sub_4E75E0()
   dword_A83C80 = (int)&DynamicVectorClass_BulletTypeClass___vftable; /*0x4e75fd*/
   dword_A83C94 = 10; /*0x4e7607*/
   dword_A83C90 = 0; /*0x4e7611*/
-  return atexit(sub_4E7620); /*0x4e761c*/
+  return atexit((void (__cdecl *)(void))sub_4E7620); /*0x4e761c*/
 }
 }
 // 0x4E7620
@@ -1911,14 +1911,14 @@ void unknown_libname_18()
       goto LABEL_10; /*0x5f168a*/
     ((SerialPort*)(HANDLE *)g_ClipboardBuffer)->Close(); /*0x5f168c*/
     if ( g_ClipboardBuffer ) /*0x5f1699*/
-      (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f169f*/
+      (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f169f*/
     g_ClipboardBuffer = 0; /*0x5f16a1*/
     unk_A8EAB0 = -1; /*0x5f16ad*/
     ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f16b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f16bd*/
   {
-    (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f16c3*/
+    (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f16c3*/
     g_ClipboardBuffer = 0; /*0x5f16c5*/
   }
   LABEL_10:
@@ -2379,7 +2379,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
-  *(unsigned int *)this->vfptr = &vt_GaugeClass; /*0x4e2a83*/
+  *(unsigned int *)this->vfptr =(unsigned int)(&vt_GaugeClass); /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
@@ -2391,7 +2391,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
   {
     *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
-    (*(void (**)(GaugeClass *))(*(unsigned int *)this->vfptr + 72))(this); /*0x4e2aad*/
+    (*(void (**)(GaugeClass *))(*(unsigned int *)this->vfptr + 72))((GaugeClass *)this); /*0x4e2aad*/
   }
   *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
   *((unsigned char *)this + 46) = aP4 > aP5; /*0x4e2ab9*/
@@ -2399,7 +2399,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   *((unsigned int *)this + 14) = 0; /*0x4e2ac0*/
   *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
   *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
-  *(unsigned int *)this->vfptr = &vt_TriColorGaugeClass; /*0x4e2ad5*/
+  *(unsigned int *)this->vfptr =(unsigned int)(&vt_TriColorGaugeClass); /*0x4e2ad5*/
   return (int)this->vfptr; /*0x4e2add*/
 
 }
@@ -2562,7 +2562,7 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
   v11 = !ShowWindow(DlgItem, 0); /*0x4e3a2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3a30*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3a3c*/
-  StringCSF = GetStringCSF(aGuiRandomex, 0, g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiRandomex, 0, g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
   v4 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3a5d*/
   SendMessageA(DlgItem, 0x151u, v4, -2); /*0x4e3a68*/
   v5 = dword_A83CA8; /*0x4e3a6a*/
@@ -2607,7 +2607,7 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
   v3 = !ShowWindow(DlgItem, 0); /*0x4e3b2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3b2e*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3b3a*/
-  StringCSF = GetStringCSF(aGuiObserver, 0, g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiObserver, 0, g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3b5b*/
   SendMessageA(DlgItem, 0x151u, v5, -3); /*0x4e3b66*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3b72*/
@@ -2648,9 +2648,9 @@ LPARAM * InitGameDropdownColors()
   LPARAM *result; // eax
   int v3; // edx
 
-  ((unsigned int *)&FootClass_Array)[0] = (TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
-  ((unsigned int *)&FootClass_Array)[0] = (int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
-  *((unsigned int *)((char *)&FootClass_Array + 2)) = (int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
+  ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
+  *((unsigned int *)((char *)&FootClass_Array + 2)) = ((wchar_t *)int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
   ((unsigned int *)&FootClass_Array)[0] = (int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
   ((unsigned int *)&FootClass_Array)[0] = (FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
   ((unsigned int *)&FootClass_Array)[0] = (AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/

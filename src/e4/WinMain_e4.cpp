@@ -130,7 +130,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v19 = (unsigned int)(dword_ABF168);
   do /*0x5bc24f*/
   {
-    v4 = (unsigned int)((unsigned char *)(RA2_OPNEW(0x2738u)));
+    v4 =(unsigned char *)(unsigned int)((unsigned char *)(RA2_OPNEW(0x2738u)));
     v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -250,16 +250,16 @@ int WinMain::Constructor_VectorClass_Wstring_()
       __3_YAXPAX_Z((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (**)(WinMain *))(*((unsigned int *)this + 420) + 12))((unsigned int *)this + 1680); /*0x69a277*/
+  (*(void (**)(WinMain *))(*((unsigned int *)this + 420) + 12))((WinMain *)(unsigned int *)this + 1680); /*0x69a277*/
   for ( j = 0; j < *((unsigned int *)this + 2633); ++j ) /*0x69a284*/
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 2630) + 4 * j)); /*0x69a290*/
-  (*(void (**)(WinMain *))(*((unsigned int *)this + 2629) + 12))((unsigned int *)this + 10516); /*0x69a2af*/
+  (*(void (**)(WinMain *))(*((unsigned int *)this + 2629) + 12))((WinMain *)(unsigned int *)this + 10516); /*0x69a2af*/
   for ( k = 0; k < *((unsigned int *)this + 2627); ++k ) /*0x69a2bc*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 2624) + 4 * k) ) /*0x69a2c4*/
       __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 2624) + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (**)(WinMain *))(*((unsigned int *)this + 2623) + 12))((unsigned int *)this + 10492); /*0x69a2ee*/
+  return (*(int (**)(WinMain *))(*((unsigned int *)this + 2623) + 12))((WinMain *)(unsigned int *)this + 10492); /*0x69a2ee*/
 
 }
 }  // G42.18c ns repair
@@ -372,7 +372,7 @@ char sub_5D7E50()
     }
     v3 = *(void (****)(unsigned int, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
     if ( v3 ) /*0x5d7f0c*/
-      (**v3)(v3, 1); /*0x5d7f12*/
+      (**v3)((unsigned int)v3, 1); /*0x5d7f12*/
   }
   return result; /*0x5d7f1a*/
 }

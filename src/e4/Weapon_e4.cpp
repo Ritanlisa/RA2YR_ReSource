@@ -180,7 +180,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   v56 = v5[1]; /*0x70c6c4*/
   _ECX = aP2; /*0x70c6c8*/
   v7 = *((float *)v5 + 2); /*0x70c6ca*/
-  v8 = (int)(*aP2); /*0x70c6cd*/
+  v8 = *(int *)aP2; /*0x70c6cd*/
   v57 = LODWORD(v7); /*0x70c6cf*/
   v44 = v8; /*0x70c6d3*/
   __asm { fild [esp+0C4h+var_94] } /*0x70c6d7*/

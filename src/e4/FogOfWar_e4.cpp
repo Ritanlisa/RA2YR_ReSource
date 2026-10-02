@@ -127,23 +127,23 @@ LABEL_25:
 LABEL_26:
     if ( v34 ) /*0x655e84*/
     {
-      v15 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), aP1); /*0x655e93*/
+      v15 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x655e93*/
       (*(void (**)(unsigned int, int *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))( /*0x655f40*/
         *((unsigned int *)this + 1159),
-        aP1,
+        (int *)aP1,
         ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_BitShift_Red) << g_BitShift_Green_0) >> 1) >> g_BitShift_Green_0 << g_BitShift_Red)
       | ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_BitMask_Green) << g_BitMask_Blue) >> 1) >> g_BitMask_Blue << g_BitMask_Green)
       | ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_BitShift_Blue) << g_BitMask_Red) >> 1) >> g_BitMask_Red << g_BitShift_Blue));
     }
     else if ( v42 ) /*0x65605e*/
     {
-      (*(void (**)(int *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, 0); /*0x65608c*/
+      (*(void (**)(int *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))((int *)aP1, 0); /*0x65608c*/
     }
     else
     {
       v20 = **(unsigned int **)((char *)this + 4636); /*0x65606f*/
-      v21 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), aP1); /*0x656071*/
-      (*(void (**)(unsigned int, int *, int))(v20 + 36))(*((unsigned int *)this + 1159), aP1, v21); /*0x65607c*/
+      v21 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x656071*/
+      (*(void (**)(unsigned int, int *, int))(v20 + 36))(*((unsigned int *)this + 1159), (int *)aP1, v21); /*0x65607c*/
     }
     goto LABEL_45; /*0x655f43*/
   }
@@ -167,7 +167,7 @@ LABEL_26:
 LABEL_37:
     if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
-    (*(void (**)(unsigned int, int *, int))(**(unsigned int **)((char *)this + 4636) + 36))(*((unsigned int *)this + 1159), aP1, ~v17); /*0x656048*/
+    (*(void (**)(unsigned int, int *, int))(**(unsigned int **)((char *)this + 4636) + 36))(*((unsigned int *)this + 1159), (int *)aP1, ~v17); /*0x656048*/
   }
   else
   {
@@ -177,7 +177,7 @@ LABEL_37:
       goto LABEL_37; /*0x656008*/
     }
 LABEL_41:
-    (*(void (**)(int *, int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, v17); /*0x65604d*/
+    (*(void (**)(int *, int))(**(unsigned int **)((char *)this + 4636) + 36))((int *)aP1, v17); /*0x65604d*/
   }
 LABEL_45:
   v22 = *((unsigned int *)this + 1319); /*0x65608f*/
@@ -353,13 +353,13 @@ AbstractClass * FogOfWar::RevealCell(IUnknown * aP1)
       if ( *((unsigned int *)this + 1179) < v6 /*0x656376*/
         || (*((unsigned char *)this + 4713) || !v6)
         && (v7 = *((unsigned int *)this + 1180), v7 > 0)
-        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 1175) + 8))((char *)this + 4700, v6 + v7, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 1175) + 8))((int)(char *)this + 4700, v6 + v7, 0) )
       {
         v8 = *((unsigned int *)this + 1179); /*0x65637d*/
         v9 = *((unsigned int *)this + 1176); /*0x656380*/
         *((unsigned int *)this + 1179) = v8 + 1; /*0x656386*/
-        *(unsigned int *)(v9 + 8 * v8) = (unsigned int)(*aP1); /*0x65638b*/
-        *(unsigned int *)(v9 + 8 * v8 + 4) = (unsigned int)(aP1[1]); /*0x656391*/
+        *(unsigned int *)(v9 + 8 * v8) = *(unsigned int *)aP1; /*0x65638b*/
+        *(unsigned int *)(v9 + 8 * v8 + 4) = ((unsigned int *)aP1)[1]; /*0x656391*/
       }
       *((unsigned char *)this + 5337) = 1; /*0x656395*/
     }
@@ -448,7 +448,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v3 = (unsigned int)((int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9));
     if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(dword_87F924 + 4 * v3)) == 0 ) /*0x58651e*/
     {
-      IDA_LOWORD(v11) = v8 - v2; /*0x5864fa*/
+      IDA_LOWORD(v11) =(unsigned int)v8 - v2; /*0x5864fa*/
       IDA_HIWORD(v11) = v10 - v2; /*0x5864f5*/
       dword_ABDC74 = v11; /*0x586524*/
       v4 = unk_ABDC50; /*0x586529*/

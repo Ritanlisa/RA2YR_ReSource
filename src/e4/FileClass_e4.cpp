@@ -30,7 +30,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   {
     v4 = this->FileClass; /*0x473aeb*/
     v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 4))(this); /*0x473aed*/
-    (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))(this, 13, 0, v5); /*0x473af7*/
+    (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))((CCFileClass *)this, 13, 0, v5); /*0x473af7*/
   }
   return FileClass::BufferedWriter(int a1,(char *) aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 
@@ -96,7 +96,7 @@ LABEL_13:
     v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
-    result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
+    result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))((RawFileClass *)this, LastError, 0, v6); /*0x65cc8a*/
     goto LABEL_13; /*0x65cc8a*/
   }
 LABEL_14:
@@ -306,7 +306,7 @@ LABEL_27: v16 = (void *)(this->FileName);
                   v19 = *(unsigned int *)this->FileClass; /*0x65d03a*/
                   v26 = *(unsigned int *)&this->FileNameAllocated; /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
-                  (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v19 + 64))(this, LastError, 0, v26); /*0x65d048*/
+                  (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v19 + 64))((RawFileClass *)this, LastError, 0, v26); /*0x65d048*/
                   v18 = 0; /*0x65d04b*/
                 }
                 return v18 - (unsigned int)this->Handle; /*0x65d04d*/
@@ -326,7 +326,7 @@ LABEL_27: v16 = (void *)(this->FileName);
           v14 = *(unsigned int *)this->FileClass; /*0x65cfde*/
           v25 = *(unsigned int *)&this->FileNameAllocated; /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
-          (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v14 + 64))(this, v15, 0, v25); /*0x65cfec*/
+          (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v14 + 64))((RawFileClass *)this, v15, 0, v25); /*0x65cfec*/
         }
         else
         {
@@ -342,7 +342,7 @@ LABEL_27: v16 = (void *)(this->FileName);
       v9 = *(unsigned int *)this->FileClass; /*0x65cf95*/
       v24 = *(unsigned int *)&this->FileNameAllocated; /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
-      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v9 + 64))(this, v10, 0, v24); /*0x65cfa3*/
+      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v9 + 64))((RawFileClass *)this, v10, 0, v24); /*0x65cfa3*/
     }
     else
     {
@@ -379,7 +379,7 @@ LABEL_27: v16 = (void *)(this->FileName);
       v22 = *(unsigned int *)this->FileClass; /*0x65d0b3*/
       v27 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
-      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v22 + 64))(this, v23, 0, v27); /*0x65d0c1*/
+      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v22 + 64))((RawFileClass *)this, v23, 0, v27); /*0x65d0c1*/
       return 0; /*0x65d0c4*/
     }
   }

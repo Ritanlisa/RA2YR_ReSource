@@ -383,7 +383,7 @@ char Options::Screen_Dialog()
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&unk_ABCE70, dword_A8EB60, 0xB8u); /*0x55fcb1*/
+        qmemcpy(&unk_ABCE70, (const void *)dword_A8EB60, 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         v0 = (HWND)CreateDialog(0); /*0x55fcc1*/
         v1 = v0; /*0x55fcc6*/
@@ -637,7 +637,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   v2 = (unsigned int *)((unsigned int)((unsigned int *)((unsigned int)(aP1)))); /*0x6255f5*/
   v3 = (int *)((void **)((int *)this)); /*0x6255fb*/
   v4 = (int)((void *)((int)((void *)(0)))); /*0x625600*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(*aP1); /*0x625602*/
+  *(unsigned int *)this->__pad_0 = *(unsigned int *)aP1; /*0x625602*/
   v5 = (void **)(&this->field_8); /*0x625607*/
   this->field_4 = (void *)aP1[1]; /*0x62560a*/
   this->field_8 = 0; /*0x625615*/
@@ -697,7 +697,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       ++v10; /*0x625739*/
       *v5 = (char *)*v5 + 1; /*0x62573a*/
       v11 = v16 + 24; /*0x625740*/
-      v9 = (int)(aP1[2]); /*0x625743*/
+      v9 = ((int *)aP1)[2]; /*0x625743*/
       v16 += 24; /*0x625746*/
       if ( v10 >= v9 ) /*0x62574c*/
         break; /*0x62574c*/

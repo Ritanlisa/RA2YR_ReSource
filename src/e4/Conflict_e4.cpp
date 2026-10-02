@@ -90,7 +90,7 @@ LABEL_14:
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766ce3*/
       if ( v12 ) /*0x766ce8*/
-        (**v12)(v12, 3); /*0x766cee*/
+        (**v12)((unsigned int)v12, 3); /*0x766cee*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x766cf0*/
     }
     m_8 = a2; /*0x766cf7*/
@@ -179,7 +179,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
       {
         v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766e87*/
         if ( v11 ) /*0x766e8c*/
-          (**v11)(v11, 3); /*0x766e92*/
+          (**v11)((unsigned int)v11, 3); /*0x766e92*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x766e94*/
       }
       m_8 = a2; /*0x766e9b*/
@@ -212,7 +212,7 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer(void *a1_1, void *a2_1)
   this->m_10 = 0; /*0x766809*/
   if ( v2 && BYTE1(this->m_C) ) /*0x766810*/
   {
-    result = (**v2)(v2, 3); /*0x76681d*/
+    result = (**v2)((unsigned int)v2, 3); /*0x76681d*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76681f*/
   }
   BYTE1(this->m_C) = 0; /*0x766822*/
@@ -348,7 +348,7 @@ int Conflict_WorldDominationTour_12::ddtor()
   v2 = *(int (****)(unsigned int, int))((char *)this + 4); /*0x766d36*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x766d3d*/
   {
-    result = (**v2)(v2, 3); /*0x766d4a*/
+    result = (**v2)((unsigned int)v2, 3); /*0x766d4a*/
     *((unsigned int *)this + 1) = 0; /*0x766d4c*/
   }
   *((unsigned char *)this + 13) = 0; /*0x766d4f*/
@@ -428,7 +428,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x766fc6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x766fd0*/
   {
-    (**v3)(v3, 3); /*0x766fdf*/
+    (**v3)((unsigned int)v3, 3); /*0x766fdf*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x766fe1*/
   }
   BYTE1(Block->m_C) = 0; /*0x766fec*/
@@ -451,7 +451,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x767086*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x767090*/
   {
-    (**v3)(v3, 3); /*0x76709f*/
+    (**v3)((unsigned int)v3, 3); /*0x76709f*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x7670a1*/
   }
   BYTE1(Block->m_C) = 0; /*0x7670ac*/

@@ -50,7 +50,7 @@ LABEL_10:
     if ( !byte_AC4C08 ) /*0x63a008*/
     {
       byte_AC4C08 = (unsigned char)((wchar_t *)(1));
-      v3 = (unsigned int)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoStop), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
+      v3 =(wchar_t *)(unsigned int)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoStop), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }

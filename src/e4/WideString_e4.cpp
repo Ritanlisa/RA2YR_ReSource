@@ -76,7 +76,7 @@ LABEL_18:
     a0[v9] = 0; /*0x5d4bbc*/
   }
   memcpy(v6, &v6[v9], 2 * (v7 + 0x7FFFFFFF * v9) + 2); /*0x5d4bdc*/
-  return v9; /*0x5d4b2b*/
+return (int)v9; /*0x5d4b2b*/
 
 }
 }
@@ -518,7 +518,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
   v6 = (wchar_t *)*aP2; /*0x7b6ce0*/
   if ( *aP2 || (v6 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6ced*/
   {
-    v7 = v4; /*0x7b6cf0*/
+    v7 =(wchar_t *)v4; /*0x7b6cf0*/
     v8 = wcslen(v6) + 1; /*0x7b6cfc*/
     if ( v4 ) /*0x7b6cff*/
       v8 += wcslen(v4); /*0x7b6d0a*/

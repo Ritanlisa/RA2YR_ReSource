@@ -50,7 +50,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
     Index = ((BuildingTypeClass *)((BuildingTypeClass *)&v10))->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (unsigned int *)(((TypeClass*)&v10)->FindByName());
+      v8 =(int)(unsigned int *)(((TypeClass*)&v10)->FindByName());
       if ( v8 != -1 ) /*0x4c4f77*/
         this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
       return this->__pad_0; /*0x4c4f85*/
@@ -138,7 +138,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
+      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
@@ -167,7 +167,7 @@ LABEL_11:
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
-    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, a1); /*0x6e831a*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, (INIClass *)a1); /*0x6e831a*/
     v10[40] = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
@@ -251,7 +251,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     ++v3; /*0x6e84c7*/
   }
   while ( v3 < 6 ); /*0x6e84cb*/
-  this->TaskForceClass_field_0x98 = (AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
+  this->TaskForceClass_field_0x98 =(unsigned int)(AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
                                                        (bool *)aP1,
                                                        (uint8_t *)&this->TaskForceClass_field_0x24,
                                                        (uint8_t *)g_INI_Key_Group,

@@ -178,7 +178,7 @@ int WebBrowser::GoForward()
   {
     ((gamemd::Debug *)this)->Log(); /*0x7740c2*/
     (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
-      this->WebBrowser_field_0x8,
+      (void *)this->WebBrowser_field_0x8,
       this);
     (*(void (**))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
   }
@@ -308,7 +308,7 @@ int WebBrowser::Write()
       *(unsigned int *)(v2 + 8),
       v2 + 12,
       0,
-      aMain);
+      (wchar_t *)aMain);
   return 0; /*0x773b32*/
 
 }

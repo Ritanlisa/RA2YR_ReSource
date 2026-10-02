@@ -29,7 +29,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *(unsigned int *)v4 = (unsigned int)(*aP0); /*0x488012*/
+    *(unsigned int *)v4 = *(unsigned int *)aP0; /*0x488012*/
     return (int)v4; /*0x488026*/
   }
   else
@@ -97,7 +97,7 @@ _DWORD * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
   this->Y = aP1[1]; /*0x45a141*/
   this->Width = aP2; /*0x45a148*/
   this->Height = aP3; /*0x45a14b*/
-  return &this->X; /*0x45a14e*/
+return (_DWORD *)&this->X; /*0x45a14e*/
 
 }
 } // namespace gamemd

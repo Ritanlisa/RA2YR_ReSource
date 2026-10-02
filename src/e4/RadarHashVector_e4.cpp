@@ -287,7 +287,7 @@ char * RadarHashVector::Destructor(char a2)
     v4 = (char *)this - 4; /*0x658c70*/
     v5 = 3 * v3; /*0x658c73*/
     v6 = v3 - 1; /*0x658c76*/
-    v7 = &this->__pad_0[8 * v5]; /*0x658c77*/
+    v7 =(char *)&this->__pad_0[8 * v5]; /*0x658c77*/
     if ( v6 >= 0 ) /*0x658c7a*/
     {
       v8 = v6 + 1; /*0x658c7d*/
@@ -324,7 +324,7 @@ char * RadarHashVector::Destructor(char a2)
     this->m_8 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
       __3_YAXPAX_Z(this); /*0x658cf4*/
-    return this->__pad_0; /*0x658cfc*/
+return (char *)this->__pad_0; /*0x658cfc*/
   }
 
 }

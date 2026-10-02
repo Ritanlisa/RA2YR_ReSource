@@ -87,7 +87,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -132,7 +132,7 @@ LABEL_7:
     {
       v6 = *((unsigned int *)dword_A83CFC + v5); /*0x46cf5d*/
     }
-    result = (*(int (**)(int, INIClass *))(*(unsigned int *)v6 + 100))(v6, this); /*0x46cf65*/
+    result = (*(int (**)(int, INIClass *))(*(unsigned int *)v6 + 100))(v6, (INIClass *)this); /*0x46cf65*/
   }
   return result; /*0x46cf75*/
 
@@ -193,7 +193,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v27 = g_DDrawSurfaceManager.scenario[12] + 76 * v3; /*0x49c60d*/
   if ( (&this->scenario)[6] == (&this->scenario)[4] ) /*0x49c616*/
     return (gamemd::AbstractClass **)(1); /*0x49c61b*/
-  ((CCFileClass*)&v33)->Construct((void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
+  ((CCFileClass*)&v33)->Construct((char *)(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
   ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
@@ -274,7 +274,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   (&g_IsWindowed)[v14] = 0; /*0x49c7bd*/
   strcat(Block,(const char *)(g_IsWindowed)); /*0x49c7df*/
   CCFileClass::Construct3((int)&v30); /*0x49c7ef*/
-  (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))(&v30, g_Str_File_coopsave_ini); /*0x49c807*/
+  (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))(&v30, (char *)g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v30.CDFileClass + 28))(&v30, 2); /*0x49c81a*/
   INIClass::ClearSection((int *)v28.INIClass, (int)Block, 0); /*0x49c828*/
   ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, g_INI_Key_CurrentMap, (&this->scenario)[4], 0); /*0x49c841*/
@@ -386,7 +386,7 @@ int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x46d05f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), (gamemd::ObjectTypeClass *)aP2); /*0x46d05f*/
   if ( result >= 0 ) /*0x46d066*/
     return 0; /*0x46d068*/
   return result; /*0x46d06a*/

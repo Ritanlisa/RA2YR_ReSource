@@ -440,7 +440,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   ((WideString*)(WideString *)v4)->AssignConcat((wchar_t **)&v23.q4, (wchar_t *)L" : ");
   ((DeleteAndZero*)(DeleteAndZero *)&v26)->Alt(); /*0x780acd*/
   ((String *)(&v23))->ToLower(); /*0x780ad6*/
-  v5 = g_WOL_HashTable; /*0x780adb*/
+  v5 =(gamemd::HashTable *)g_WOL_HashTable; /*0x780adb*/
   memset(v29, 0, sizeof(v29)); /*0x780aee*/
   if ( g_WOL_HashTable /*0x780b14*/
     && g_WOL_HashTable->HashTable_field_0x04
@@ -458,13 +458,13 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     v11 = (const void *)(v6 + 4); /*0x780c0f*/
     if ( v11 ) /*0x780c14*/
       qmemcpy(v29, v11, sizeof(v29)); /*0x780c1f*/
-    v22 = FormatWideString((wchar_t **)&v24.q4, v29[7]); /*0x780c36*/
-    v21 = ((WideString *)((WideString *)&v25))->Assign((wchar_t *)asc_82083C); /*0x780c49*/
-    StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
-    v13 = ((WideString *)(&v28))->Assign(StringCSF); /*0x780c63*/
-    v14 = ((WideString*)(WideString *)v13)->ConcatAlloc(&v27, (const wchar_t **)v21); /*0x780c6a*/
+    v22 =(wchar_t **)FormatWideString((wchar_t **)&v24.q4, v29[7]); /*0x780c36*/
+    v21 =(wchar_t **)((WideString *)((WideString *)&v25))->Assign((wchar_t *)asc_82083C); /*0x780c49*/
+    StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
+    v13 =(wchar_t **)((WideString *)(&v28))->Assign(StringCSF); /*0x780c63*/
+    v14 = ((WideString*)(WideString *)v13)->ConcatAlloc(&v27, (gamemd::ObjectClass *)(const wchar_t **)v21); /*0x780c6a*/
     v15 = WideString::ConcatAlloc((WideString *)v14, &v26, (const wchar_t **)v22); /*0x780c71*/
-    WideString::Append((WideString *)&v23.q4, (const wchar_t **)v15); /*0x780c7b*/
+    WideString::Append((gamemd::CampaignScore *)(WideString *)&v23.q4, (const wchar_t **)v15); /*0x780c7b*/
     DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780c84*/
     DeleteAndZero::Alt((DeleteAndZero *)&v27); /*0x780c8d*/
     DeleteAndZero::Alt((DeleteAndZero *)&v28); /*0x780c96*/
@@ -474,7 +474,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   else
   {
   LABEL_6:
-    v7 = GetStringCSF(g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939); /*0x780b31*/
+    v7 = GetStringCSF((wchar_t *)g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939); /*0x780b31*/
     ((WideString *)((WideString *)&v23.q4))->Append2(v7); /*0x780b4c*/
   }
   ((String *)(&v24))->Assign(a2 + 46); /*0x780b59*/
@@ -483,8 +483,8 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   if ( String::Length(&v24) ) /*0x780b7c*/
   {
     v8 = CharStringToWide(&v25, (const char **)&v24); /*0x780b8d*/
-    v9 = FormatWideStringPrefix((wchar_t **)&v24.q4, asc_84A69C, v8); /*0x780b9c*/
-    WideString::Append((WideString *)&v23.q4, (const wchar_t **)v9); /*0x780ba6*/
+    v9 = FormatWideStringPrefix((gamemd::CampaignScore *)(wchar_t **)&v24.q4, asc_84A69C, v8); /*0x780b9c*/
+    WideString::Append((gamemd::CampaignScore *)(WideString *)&v23.q4, (const wchar_t **)v9); /*0x780ba6*/
     DeleteAndZero::Alt((DeleteAndZero *)&v24.q4); /*0x780baf*/
     DeleteAndZero::Alt((DeleteAndZero *)&v25); /*0x780bb8*/
   }
@@ -515,9 +515,9 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
             v17 = *(unsigned int *)(v16 + 4); /*0x780d16*/
             if ( v17 )
             {
-              v18 = FormatLocaleStringWOL(&v25, v17); /*0x780d22*/
-              v19 = FormatWideStringPrefix((wchar_t **)&v24.q4, L" : ", v18);
-              WideString::Append((WideString *)&v23.q4, (const wchar_t **)v19); /*0x780d3b*/
+              v18 =(wchar_t **)FormatLocaleStringWOL(&v25, v17); /*0x780d22*/
+              v19 = FormatWideStringPrefix((gamemd::CampaignScore *)(wchar_t **)&v24.q4, L" : ", v18);
+              WideString::Append((gamemd::CampaignScore *)(WideString *)&v23.q4, (const wchar_t **)v19); /*0x780d3b*/
               DeleteAndZero::Alt((DeleteAndZero *)&v24.q4); /*0x780d44*/
               DeleteAndZero::Alt((DeleteAndZero *)&v25); /*0x780d4d*/
             }
@@ -577,12 +577,12 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   v6 = ((String *)(&v13))->GetOrEmpty(); /*0x780ed5*/
   strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/
   FormatWOLPlayerInfo((wchar_t **)&v12, v18); /*0x780ef0*/
-  v7 = ((WideString *)((WideString *)&v12.DeleteAndZero_field_0x04))->Assign((wchar_t *)L", "); /*0x780efe*/
-  WideString::Append((WideString *)&v12, (const wchar_t **)v7); /*0x780f08*/
+  v7 =(wchar_t **)((WideString *)((WideString *)&v12.DeleteAndZero_field_0x04))->Assign((wchar_t *)L", "); /*0x780efe*/
+  WideString::Append((gamemd::CampaignScore *)(WideString *)&v12, (const wchar_t **)v7); /*0x780f08*/
   DeleteAndZero::Alt((DeleteAndZero *)&v12.DeleteAndZero_field_0x04); /*0x780f11*/
   if ( v19[10] == (wchar_t *)-1 ) /*0x780f20*/
   {
-    v11 = GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
+    v11 = GetStringCSF((wchar_t *)g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
     ((WideString *)((WideString *)&v12))->Append2(v11); /*0x780f6f*/
   }
   else
@@ -606,7 +606,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
     if ( WideString::Length((WideString *)&v12.DeleteAndZero_field_0x04) ) /*0x780ff5*/
     {
       ((WideString *)((WideString *)&v12))->Append2((wchar_t *)L", "); /*0x781007*/
-      WideString::Append((WideString *)&v12, (const wchar_t **)&v12.DeleteAndZero_field_0x04); /*0x781015*/
+      WideString::Append((gamemd::CampaignScore *)(WideString *)&v12, (const wchar_t **)&v12.DeleteAndZero_field_0x04); /*0x781015*/
     }
     DeleteAndZero::Alt((DeleteAndZero *)&v12.DeleteAndZero_field_0x04); /*0x78101e*/
   }

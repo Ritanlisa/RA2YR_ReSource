@@ -58,13 +58,13 @@ int Stream::ReadIntArray(int a2)
   v2 = a2; /*0x49fb72*/
   result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
              a2,
-             &this->Stream_field_10,
+             (int *)&this->Stream_field_10,
              4,
              0);
   if ( result >= 0 ) /*0x49fb89*/
   {
     v5 = *(unsigned int *)v2; /*0x49fb8e*/
-    a2 = this->a2; /*0x49fb9a*/
+    a2 =(int)this->a2; /*0x49fb9a*/
     result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
@@ -79,7 +79,7 @@ int Stream::ReadIntArray(int a2)
         {
           result = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x49fbbd*/
                      v2,
-                     this->Stream_field_04 + 4 * v6,
+                     (int)this->Stream_field_04 + 4 * v6,
                      4,
                      0);
           if ( result < 0 ) /*0x49fbc2*/
@@ -104,9 +104,9 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int i; // esi
   int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = (int)(*aP1);
+  v3 = *(int *)aP1;
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
-  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
+  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))((int *)aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
   result = Stream_field_10; /*0x67a4c0*/
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {

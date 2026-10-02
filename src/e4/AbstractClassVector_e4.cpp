@@ -60,12 +60,12 @@ int AbstractClassVector::Construct(int aP1, int aP2)
     if ( aP2 ) /*0x4e0ea6*/
     {
       this->AbstractClassVector_field_0x04 = (unsigned char)(aP2);
-      return this->__pad_0; /*0x4e0eae*/
+return (int)this->__pad_0; /*0x4e0eae*/
     }
     this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4e0ebd*/
     BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
   }
-  return this->__pad_0; /*0x4e0ead*/
+return (int)this->__pad_0; /*0x4e0ead*/
 
 }
 } // namespace gamemd

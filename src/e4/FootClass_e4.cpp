@@ -64,7 +64,7 @@ AbstractClass * FootClass::Destruct()
     FootClass::RemoveFromPointerArray(&FootClass_Array, v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
   v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/
-         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+         (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
     ((DynamicVector *)((DynamicVector *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)))->RemoveItem(v4); /*0x4d3616*/
@@ -243,7 +243,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         dword_B0EA94,
         v29);
       v15 = *v6; /*0x7101b6*/
-      v16 = (*(int (**)(int *, int *))(*v6 + 72))(v6, &v28.StreamClass_field_0C); /*0x7101bf*/
+      v16 = (*(int (**)(int *, int *))(*v6 + 72))(v6, (int *)&v28.StreamClass_field_0C); /*0x7101bf*/
       (*(void (**)(int *, int))(v15 + 244))(v6, v16); /*0x7101c5*/
       v17 = *v6; /*0x7101cb*/
       *((unsigned char *)v6 + 1718) = 1; /*0x7101cf*/
@@ -262,7 +262,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         WinAPI::Wrapper(InstanceCOM); /*0x710224*/
       if ( !a1 ) /*0x71022f*/
         WinAPI::Wrapper(-2147467261); /*0x710236*/
-      (*(void (**)(int, int *))(*(unsigned int *)a1 + 12))(a1, v6); /*0x710243*/
+      (*(void (**)(int, int *))(*(unsigned int *)a1 + 12))((int)a1, v6); /*0x710243*/
       v28.m_Position = 0; /*0x71024a*/
       if ( a1 ) /*0x710250*/
       {
@@ -272,7 +272,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       }
       ((COMObject *)((COMObject *)&v28.m_Data))->SwapReference(v28.m_Position); /*0x71027a*/
       if ( v28.m_Position ) /*0x710285*/
-        (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))(v28.m_Position); /*0x71028a*/
+        (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))((int)v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
       {
         m_Size = (int)(v28.m_Size); /*0x710297*/
@@ -282,7 +282,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           TechnoClass::EjectPassengers((TechnoClass *)v6, 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
-        (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))(v28.m_Data, *v10); /*0x7102d8*/
+        (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
         if ( *v10 != a1 ) /*0x7102e3*/
         {
@@ -315,9 +315,9 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         }
       }
       if ( a1 ) /*0x7103e1*/
-        (*(void (**)(int))(*(unsigned int *)a1 + 8))(a1); /*0x7103e6*/
+        (*(void (**)(int))(*(unsigned int *)a1 + 8))((int)a1); /*0x7103e6*/
       if ( v28.m_Data ) /*0x7103ef*/
-        (*(void (**)(int))(*(unsigned int *)v28.m_Data + 8))(v28.m_Data); /*0x7103f4*/
+        (*(void (**)(int))(*(unsigned int *)v28.m_Data + 8))((int)v28.m_Data); /*0x7103f4*/
     }
     if ( *(unsigned int *)v28.__pad_0 ) /*0x7103fd*/
       (*(void (**)(unsigned int))(**(unsigned int **)v28.__pad_0 + 8))(*(unsigned int *)v28.__pad_0); /*0x710402*/

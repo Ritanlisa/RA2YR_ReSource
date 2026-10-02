@@ -143,7 +143,7 @@ int E4Recv_542F30::sub_542F30()
   {
     for ( i = &this->owningHouseIndex; ; ++i ) /*0x542f4d*/
     {
-      v5 = 0; /*0x542f52*/
+      v5 =(int *)0; /*0x542f52*/
       v6 = *(unsigned int *)(*i + 4); /*0x542f54*/
       if ( *(int *)(v6 + 40) <= 0 ) /*0x542f5c*/
         goto LABEL_12; /*0x542f5c*/
@@ -850,65 +850,65 @@ LABEL_26:
     if ( v20 == (INIClass *)Int_Overwrite )
       g_CellTileLookup = (int)(v21);
     if ( v20 == var8A0 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80412] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80412] =(unsigned int)v21;
     if ( v20 == (INIClass *)v129 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80480] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80480] =(unsigned int)v21;
     if ( v20 == (INIClass *)v94 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80500] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80500] =(unsigned int)v21;
     if ( v20 == (INIClass *)v115 )
       dword_ABC2B8 = (int)v21;
     if ( v20 == (INIClass *)v96 )
       dword_ABB104 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v116 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79836] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79836] =(unsigned int)v21;
     if ( v20 == (INIClass *)v98 )
       dword_ABC2B0 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v118 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80488] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80488] =(unsigned int)v21;
     if ( v20 == (INIClass *)v100 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80632] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80632] =(unsigned int)v21;
     if ( v20 == (INIClass *)v120 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79848] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79848] =(unsigned int)v21;
     if ( v20 == var930 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78092] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78092] =(unsigned int)v21;
     if ( v20 == (INIClass *)v122 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80492] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80492] =(unsigned int)v21;
     if ( v20 == v104 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78088] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78088] =(unsigned int)v21;
     if ( v20 == (INIClass *)v124 )
       dword_ABC2CC = (unsigned int)(v21);
     if ( v20 == v108 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79852] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79852] =(unsigned int)v21;
     if ( v20 == (INIClass *)v126 )
       g_TerrainBridgeIndex = (int)v21;
     if ( v20 == var918 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80356] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80356] =(unsigned int)v21;
     if ( v20 == (INIClass *)v128 )
       dword_ABAD28 = (int)v21;
     if ( v20 == (INIClass *)v110 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78076] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78076] =(unsigned int)v21;
     if ( v20 == (INIClass *)v130 )
       g_TerrainTypeTable2 = (int)(v21);
     if ( v20 == (INIClass *)v112 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80476] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80476] =(unsigned int)v21;
     if ( v20 == (INIClass *)v132 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80360] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80360] =(unsigned int)v21;
     if ( v20 == (INIClass *)v114 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80504] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80504] =(unsigned int)v21;
     if ( v20 == (INIClass *)v92 )
       dword_ABAD2C = (unsigned int)(v21);
     if ( v20 == v138 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80408] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80408] =(unsigned int)v21;
     if ( v20 == (INIClass *)v117 )
       dword_ABB108 = (unsigned int)(v21);
     if ( v20 == v141 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78080] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[78080] =(unsigned int)v21;
     if ( v20 == (INIClass *)v119 )
       dword_ABB110 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v131 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80484] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80484] =(unsigned int)v21;
     if ( v20 == (INIClass *)v121 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80404] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80404] =(unsigned int)v21;
     if ( v20 == (INIClass *)v139 )
       dword_ABBEBC = (unsigned int)(v21);
     if ( v20 == (INIClass *)v123 )
@@ -916,29 +916,29 @@ LABEL_26:
     if ( v20 == (INIClass *)v133 )
       dword_ABBEC4 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v125 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79844] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79844] =(unsigned int)v21;
     if ( v20 == v145 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79840] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[79840] =(unsigned int)v21;
     if ( v20 == var8CC )
       dword_ABAD20 = (unsigned int)(v21);
     if ( v20 == v137 )
       dword_ABC1D4 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v93 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80496] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80496] =(unsigned int)v21;
     if ( v20 == (INIClass *)v95 )
       dword_ABC2C8 = (int)v21;
     if ( v20 == (INIClass *)v97 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80352] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80352] =(unsigned int)v21;
     if ( v20 == (INIClass *)v99 )
       dword_ABAD24 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v101 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80472] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80472] =(unsigned int)v21;
     if ( v20 == (INIClass *)v103 )
       dword_ABBEC0 = (unsigned int)(v21);
     if ( v20 == (INIClass *)v105 )
       dword_ABB10C = (unsigned int)(v21);
     if ( v20 == (INIClass *)v107 )
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] = v21;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] =(unsigned int)v21;
     sprintf((char *const)&aP2.q02C, stru_8292A8, v20);
     INIClass::ResetSection(v77);
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite(
@@ -964,18 +964,18 @@ LABEL_26:
       int v29 = (char *)v71 - (char *)v27;
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
-      v28->field_0 = (int)&v72->__pad_0[(unsigned int)v27];
+      v28->field_0 =(void *)(int)&v72->__pad_0[(unsigned int)v27];
       v28->field_4 = (void *)v29;
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
         && *(int *)&(&g_NetworkPlayerBuffer)[80464] > 0
         && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&(&g_NetworkPlayerBuffer)[80444] + 8))(
-             &(&g_NetworkPlayerBuffer)[80444],
+             (char *)&(&g_NetworkPlayerBuffer)[80444],
              *(unsigned int *)&(&g_NetworkPlayerBuffer)[80464] + *(unsigned int *)&(&g_NetworkPlayerBuffer)[80452],
              0) )
       {
         int v30 = (*(unsigned int *)&(&g_NetworkPlayerBuffer)[80460])++;
-        *(unsigned int *)(*(unsigned int *)&(&g_NetworkPlayerBuffer)[80448] + 4 * v30) = v76;
+        *(unsigned int *)(*(unsigned int *)&(&g_NetworkPlayerBuffer)[80448] + 4 * v30) =(unsigned int)v76;
       }
       v31 = v75;
     }
@@ -1036,7 +1036,7 @@ LABEL_26:
                                (uint8_t *)&aP2.q02C,
                                &DataGlobal_008291B8,
                                0);
-    int v34 = INIClass::BinarySearchSection((int)v77, &aP4);
+    int v34 = INIClass::BinarySearchSection((gamemd::INIClass *)(int)v77, &aP4);
     v69 = 0;
     var9F4_1 = v34 != 0;
     if ( (int)v71 > 0 )
@@ -1092,8 +1092,8 @@ LABEL_26:
               *((unsigned char *)v3 + 148) = v154;
             }
             v38 = v86;
-            v3[166] = v75;
-            v3[167] = v38;
+            v3[166] =(unsigned int)v75;
+            v3[167] =(unsigned int)v38;
             *((unsigned char *)v3 + 738) = v64;
             *((unsigned char *)v3 + 736) = Bool_Overwrite;
             *((unsigned char *)v3 + 739) = var9FC_2;
@@ -1103,8 +1103,8 @@ LABEL_26:
             v39 = (INIClass *)v111;
             v3[41] = 0;
             *((unsigned char *)v3 + 168) = 0;
-            v3[176] = ecx147a;
-            v3[177] = v39;
+            v3[176] =(unsigned int)ecx147a;
+            v3[177] =(unsigned int)v39;
             if ( v63 && v88 )
               *((unsigned char *)v3 + 737) = v63;
             if ( a2 )

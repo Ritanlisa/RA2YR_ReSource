@@ -155,7 +155,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3) {
            v7 + ScriptAction_field_0x14,
            0) )
     {
-      v9 = (unsigned int)(this->ScriptAction_field_0x10[0]); /*0x63402b*/
+      v9 =(int)(unsigned int)(this->ScriptAction_field_0x10[0]); /*0x63402b*/
       v10 = this->ScriptAction_field_0x4[0]; /*0x63402e*/
       this->ScriptAction_field_0x10[0] = (int)(v9 + 1); /*0x634034*/
       *(unsigned int *)(v10 + 4 * v9) = (unsigned int)(v5); /*0x634037*/
@@ -446,7 +446,7 @@ int ScriptAction::ClearBuildingState() {
       }
       IDA_LOBYTE(this->q098) = 0; /*0x636d2a*/
     }
-    ScriptAction_field_0x14 = this->q014; /*0x636d37*/
+    ScriptAction_field_0x14 =(int)this->q014; /*0x636d37*/
     v10 = ScriptAction_field_0x14; /*0x636d3c*/
     result = this->q08C != (void *)-1 ? (int)this->q08C : 0;
     for ( j = result; j < ScriptAction_field_0x14; ++j ) /*0x636d4b*/
@@ -692,7 +692,7 @@ char ScriptAction::ProcessIdleAction() {
     v6 = (BuildingClass *)v5; /*0x63b60e*/
   LABEL_7:
     if ( Type ) /*0x63b612*/
-      v7 = Type->field_14; /*0x63b618*/
+      v7 =(void *)Type->field_14; /*0x63b618*/
     else
       v7 = 0; /*0x63b614*/
     v53 = (int)v7 > 0; /*0x63b622*/
@@ -702,7 +702,7 @@ char ScriptAction::ProcessIdleAction() {
     v57 = 4; /*0x63b657*/
     if ( Type && (*(unsigned int *)(*(unsigned int *)Type->__pad_0 + 172) == 28 || *(unsigned int *)(*(unsigned int *)Type->__pad_0 + 180) == 28) ) /*0x63b67a*/
     {
-      v9 = &Type->__pad_18[5]; /*0x63b680*/
+      v9 =(char *)&Type->__pad_18[5]; /*0x63b680*/
       qmemcpy(v75, v9, 0x6Cu); /*0x63b696*/
       v9 += 108; /*0x63b696*/
       v75[54] = *(unsigned short *)v9; /*0x63b698*/
@@ -718,7 +718,7 @@ char ScriptAction::ProcessIdleAction() {
       }
       else
       {
-        Coord3D_field_0x08 = v55.Coord3D_field_0x08; /*0x63b6f8*/
+        Coord3D_field_0x08 =(int)v55.Coord3D_field_0x08; /*0x63b6f8*/
       }
       v68 = Coord3D_field_0x08; /*0x63b704*/
       v67 = *(Coord2D *)v55.__pad_0; /*0x63b708*/

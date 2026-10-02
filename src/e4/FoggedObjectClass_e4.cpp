@@ -207,9 +207,9 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cbf*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cc6*/
   v6 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1)); /*0x4d0ccd*/
-  v7 = (int)(aP1[1]); /*0x4d0cd4*/
-  v8 = (int)(aP1[2]); /*0x4d0cd7*/
-  v23[0] = (unsigned int)(*aP1); /*0x4d0cda*/
+  v7 = ((int *)aP1)[1]; /*0x4d0cd4*/
+  v8 = ((int *)aP1)[2]; /*0x4d0cd7*/
+  v23[0] = *(unsigned int *)aP1; /*0x4d0cda*/
   v23[1] = v7; /*0x4d0cde*/
   v24 = v8; /*0x4d0ce2*/
   v9 = dword_8B3D68 * v6->level; /*0x4d0ced*/
@@ -344,16 +344,16 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0ef9*/
   *((unsigned int *)this + 9) = (int)(-1); /*0x4d0f02*/
-  v4 = (int)(aP1[135]); /*0x4d0f0c*/
+  v4 = ((int *)aP1)[135]; /*0x4d0f0c*/
   *((unsigned int *)this + 11) = 0; /*0x4d0f12*/
   *((unsigned int *)this + 10) = v4; /*0x4d0f19*/
   *((unsigned int *)this + 12) = (unsigned int)(6); /*0x4d0f24*/
-  *((unsigned int *)this + 13) = (unsigned int)(aP1[39]); /*0x4d0f2f*/
-  *((unsigned int *)this + 14) = (unsigned int)(aP1[40]); /*0x4d0f34*/
-  *((unsigned int *)this + 15) = (unsigned int)((int)((unsigned int)(aP1[41]))); /*0x4d0f3a*/
-  v5 = (int)((unsigned int)((int)(aP1[40]))); /*0x4d0f3f*/
-  v49[0] = (unsigned int)((int)((unsigned int)(aP1[39]))); /*0x4d0f42*/
-  v6 = (int)(aP1[41]); /*0x4d0f46*/
+  *((unsigned int *)this + 13) = ((unsigned int *)aP1)[39]; /*0x4d0f2f*/
+  *((unsigned int *)this + 14) = ((unsigned int *)aP1)[40]; /*0x4d0f34*/
+  *((unsigned int *)this + 15) = (unsigned int)((int)(((unsigned int *)aP1)[41])); /*0x4d0f3a*/
+  v5 = (int)((unsigned int)(((int *)aP1)[40])); /*0x4d0f3f*/
+  v49[0] = (unsigned int)((int)(((unsigned int *)aP1)[39])); /*0x4d0f42*/
+  v6 = ((int *)aP1)[41]; /*0x4d0f46*/
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = (char *)this + 92; /*0x4d0f67*/
@@ -406,7 +406,7 @@ LABEL_11:
   }
   *((unsigned char *)aP1 + 1767) = 1; /*0x4d10d5*/
   ProductionFrame = (int)(BuildingClass::GetProductionFrame(aP1)); /*0x4d10dc*/
-  v13 = (int)(aP1[328]); /*0x4d10e1*/
+  v13 = ((int *)aP1)[328]; /*0x4d10e1*/
   v57 = (int)(ProductionFrame); /*0x4d10e7*/
   if ( *(unsigned char *)(v13 + 5823) && ((v14 = aP1[390], v14 == 12) || v14 == 8) /*0x4d1112*/
     || (v15 = *(unsigned char *)(v13 + 5824), LOBYTE(v53) = 0, v15) )
@@ -417,7 +417,7 @@ LABEL_11:
   if ( *((unsigned int *)this + 27) < v16 /*0x4d113e*/
     || (*((unsigned char *)this + 105) || !v16)
     && (v17 = *((unsigned int *)this + 28), v17 > 0)
-    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v16 + v17, 0) )
+    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((int)(char *)this + 92, v16 + v17, 0) )
   {
     v18 = *((unsigned int *)this + 27); /*0x4d1145*/
     *((unsigned int *)this + 27) = v18 + 1; /*0x4d114b*/
@@ -504,7 +504,7 @@ LABEL_41:
     if ( v35 < v37 /*0x4d12cb*/
       || (*((unsigned char *)this + 105) || !v37)
       && (v38 = *((unsigned int *)this + 28), v38 > 0)
-      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v37 + v38, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((int)(char *)this + 92, v37 + v38, 0) )
     {
       v39 = *((unsigned int *)this + 27); /*0x4d12d2*/
       *((unsigned int *)this + 27) = v39 + 1; /*0x4d12dc*/
@@ -526,7 +526,7 @@ LABEL_47:
   Cell::CreateCrater(*((unsigned int *)this + 16), *((unsigned int *)this + 17), *((unsigned int *)this + 18), *((unsigned int *)this + 19), 0); /*0x4d1338*/
   *((unsigned int *)this + 16) += (&g_TacticalClass_Instance)[44].__tail_0; /*0x4d134d*/
   *((unsigned int *)this + 17) += (&g_TacticalClass_Instance)[45].__tail_0; /*0x4d135f*/
-  return this; /*0x4d1364*/
+return (gamemd::AbstractClass *)this; /*0x4d1364*/
 
 }
 } // namespace gamemd
@@ -705,7 +705,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
   a1 = 0; /*0x4d2590*/
-  result = (*(int (**)(int *, FoggedObjectClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x4d2594*/
+  result = (*(int (**)(int *, FoggedObjectClass **, int, unsigned int))(v5 + 12))(v2, (FoggedObjectClass **)&a1, 4, 0); /*0x4d2594*/
   a2 = result; /*0x4d2599*/
   if ( result < 0 ) /*0x4d259d*/
     return result; /*0x4d259d*/
@@ -765,12 +765,12 @@ LABEL_22:
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
-    vtable1 = (int)(v3[2]); /*0x4d25de*/
+    vtable1 = ((int *)v3)[2]; /*0x4d25de*/
     if ( (int)v3[2] < (int)vtable1 /*0x4d2605*/
       || (BYTE1(v3[2]) || !vtable1)
       && (uniqueId = v3[2], uniqueId > 0)
       && (*(uint8_t (**)(int *, int, unsigned int))(v3[1].Cell[0] + 8))(
-           v3[1].Cell,
+           (int *)v3[1].Cell,
            (int)vtable1 + uniqueId,
            0) )
     {
@@ -928,7 +928,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4d2c8e*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x4d2c99*/
+    *(unsigned int *)&this->m_1[3] =(unsigned int)v5; /*0x4d2c99*/
     *(unsigned int *)&this->__pad_5[3] = v3; /*0x4d2c9f*/
     BYTE1(this->qC) = a3 == 0; /*0x4d2ca2*/
   }
@@ -974,7 +974,7 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  uniqueId = this->uniqueId; /*0x4e07b0*/
+  uniqueId =(int)this->uniqueId; /*0x4e07b0*/
   result = 0; /*0x4e07b3*/
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
@@ -997,7 +997,7 @@ int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x4d24b3*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), (gamemd::ObjectTypeClass *)a1, aP2); /*0x4d24b3*/
   if ( result >= 0 ) /*0x4d24ba*/
   {
     v4 = *a1; /*0x4d24bf*/
@@ -1082,7 +1082,7 @@ char FoggedObjectClass::AddRef(int a2)
   unsigned int *v6; // ecx
   int v7; // edx
 
-  m_8 = this->vtable3; /*0x4d29bb*/
+  m_8 =(int)this->vtable3; /*0x4d29bb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
     v3 = 0; /*0x4d29c2*/
@@ -1233,7 +1233,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x4e063e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4e0647*/
+      *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x4e0647*/
       this->Capacity = a2; /*0x4e064f*/
       BYTE1(this->IsInitialized) = a3 == 0; /*0x4e0652*/
       return 1; /*0x4e0658*/
@@ -1328,7 +1328,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4e07aa*/
     if ( this->vtable1 ) /*0x4e0738*/
     {
-      vtable2 = this->vtable2; /*0x4e073f*/
+      vtable2 =(int)this->vtable2; /*0x4e073f*/
       if ( a2 < vtable2 ) /*0x4e0744*/
         vtable2 = a2; /*0x4e0746*/
       for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
@@ -1339,17 +1339,17 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
         this->vtable1 = 0; /*0x4e0771*/
       }
     }
-    this->vtable1 = (int)v4; /*0x4e077a*/
-    this->vtable2 = a2; /*0x4e0782*/
+    this->vtable1 =(void *)(int)v4; /*0x4e077a*/
+    this->vtable2 =(void *)a2; /*0x4e0782*/
     BYTE1(this->vtable3) = a3 == 0; /*0x4e0785*/
   }
   else
   {
-    (*(void (**)(FoggedObjectClass *))(this->vtable1 + 12))(this); /*0x4e078e*/
+    (*(void (**)(FoggedObjectClass *))(this->vtable1 + 12))((FoggedObjectClass *)this); /*0x4e078e*/
   }
-  v7 = this->vtable2; /*0x4e0791*/
+  v7 =(int)this->vtable2; /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/
-    this->uniqueId = v7; /*0x4e079b*/
+    this->uniqueId =(void *)v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
 
 }

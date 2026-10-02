@@ -162,7 +162,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
   v42 = (int *)(v23[3]);
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, v20); /*0x704d11*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, (int)v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = (int *)(-2); /*0x704d21*/
   v24 = ((Coord2D *)(&v35))->Add(v37,(unsigned int *)(&v29)); /*0x704d35*/
@@ -176,7 +176,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v40 = (int *)(v26[1]); /*0x704d83*/
   v41 = (int *)(v26[2]); /*0x704d90*/
   v42 = (int *)(v26[3]); /*0x704d97*/
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, v20); /*0x704da2*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, (int)v20); /*0x704da2*/
   if ( a8 ) /*0x704dae*/
   {
     v27 = (0x7FFFFFFF - (int)dword_A8ED84) % 15; /*0x704dc9*/
@@ -186,7 +186,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
                DSurface_Composite,
                &v31,
                &v29,
-               v20,
+               (int)v20,
                &unk_843128,
                v27,
                0);
@@ -199,7 +199,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
                DSurface_Composite,
                &v31,
                &v29,
-               v20);
+               (int)v20);
   }
   return result; /*0x704dfb*/
 }
@@ -591,7 +591,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
     v37 = 0; /*0x7095fe*/
     ((VectorClass *)(&v30))->Construct(0, 0); /*0x709602*/
     v11 = v3[288]; /*0x709607*/
-    v30.vtable0 = (int)&DynamicVectorClass_int_vftable; /*0x70960d*/
+    v30.vtable0 =(void *)(int)&DynamicVectorClass_int_vftable; /*0x70960d*/
     v32 = 10; /*0x709617*/
     v31 = 0; /*0x70961b*/
     if ( v11 > 0 ) /*0x70961f*/
@@ -669,7 +669,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
       }
       (*(void (**)(unsigned int *))(*v3 + 968))(v3); /*0x70975d*/
     }
-    v30.vtable0 = (int)&VectorClass_int_vftable; /*0x7097a0*/
+    v30.vtable0 =(void *)(int)&VectorClass_int_vftable; /*0x7097a0*/
     if ( v30.Items && v30.IsAllocated[0] ) /*0x7097b0*/
     {
       RA2_OPDEL((void *)v30.Items); /*0x7097b3*/
@@ -962,7 +962,7 @@ int E4Recv_7011A0::sub_7011A0()
   vtable0 = (int (**)(ObjectClass *, unsigned char *))this->AbstractClass; /*0x7011db*/
   v12 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6208); /*0x7011dd*/
   v13 = v4; /*0x7011e5*/
-  v6 = (unsigned int *)vtable0[18](this, v14); /*0x7011ec*/
+  v6 = (unsigned int *)vtable0[18]((gamemd::ObjectClass *)this, v14); /*0x7011ec*/
   LOWORD(v10) = *v6 / 256; /*0x7011ff*/
   HIWORD(v10) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
@@ -1005,7 +1005,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = (ObjectClass *)((char *)this + 384); /*0x70f74c*/
-  v2->AbstractClass = (unsigned int)(*(void **)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x70f752*/
+  v2->AbstractClass =(void *)(unsigned int)(*(void **)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x70f752*/
   ((unsigned int *)v2)[0] = (unsigned int)((void *)v4); /*0x70f758*/
   ((unsigned int *)v2)[0] = (unsigned int)((void *)a2); /*0x70f75b*/
   return v4; /*0x70f75e*/
@@ -1032,13 +1032,13 @@ int E4Recv_70FE50::sub_70FE50()
   int drainAnim; // ecx
   int result; // eax
 
-  drainAnim = this->drainAnim; /*0x70fe53*/
+  drainAnim =(int)this->drainAnim; /*0x70fe53*/
   if ( drainAnim ) /*0x70fe5b*/
   {
     (*(void (**)(int))(*(unsigned int *)drainAnim + 248))(drainAnim); /*0x70fe5f*/
     this->drainAnim = 0; /*0x70fe65*/
   }
-  result = this->drainTarget; /*0x70fe6f*/
+  result =(int)this->drainTarget; /*0x70fe6f*/
   if ( result ) /*0x70fe77*/
   {
     *(unsigned int *)(result + 464) = 0; /*0x70fe79*/

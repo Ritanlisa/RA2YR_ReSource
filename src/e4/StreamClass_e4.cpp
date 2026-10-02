@@ -88,7 +88,7 @@ int StreamClass::Set(unsigned int *aP1)
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (int (__cdecl ***)(unsigned int,int *,unsigned int **))((**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, (unsigned int *)((char *)&stru_818E00 + 17), &aP1)); /*0x45af3d*/
+    v3 =(int)(int (__cdecl ***)(unsigned int,int *,unsigned int **))((**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, (unsigned int *)((char *)&stru_818E00 + 17), &aP1)); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
       v5 = (unsigned int *)((unsigned int)(aP1));

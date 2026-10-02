@@ -259,7 +259,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     v8 = (**(int (***)(ILocomotion *, void *, WalkLocomotionClass **))Piggybackee)( /*0x75c75e*/
            Piggybackee,
            &unk_820270,
-           &a1);
+           (gamemd::WalkLocomotionClass **)&a1);
     if ( v8 >= 0 ) /*0x75c762*/
     {
       v9 = (int *)a1; /*0x75c77b*/
@@ -301,13 +301,13 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   *(unsigned int *)Block->LocomotionClass = &vt_WalkLocomotionClass; /*0x75cbe3*/
   *(unsigned int *)&Block->LocomotionClass[4] = &vt_WalkLocomotionClass; /*0x75cbe9*/
   *(unsigned int *)Block->__pad_18 = &vt_WalkLocomotionClass; /*0x75cbf0*/
-  Piggybackee = this->Piggybackee; /*0x75cbf7*/
+  Piggybackee =(gamemd::ILocomotion *)this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
   ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
     __3_YAXPAX_Z(this); /*0x75cc13*/
-  return this->LocomotionClass; /*0x75cc1d*/
+return (gamemd::WalkLocomotionClass *)this->LocomotionClass; /*0x75cc1d*/
 
 }
 } // namespace gamemd

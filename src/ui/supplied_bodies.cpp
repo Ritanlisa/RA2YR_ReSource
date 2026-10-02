@@ -277,7 +277,7 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
         IDA_HIBYTE(v16) = (uint8_t)(v10 >> g_BitMask_Green) << g_BitMask_Blue; /*0x43459b*/
         IDA_LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
         IDA_BYTE2(v17.Color_field_00) = (uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
-        ((Color*)&v17)->Lerp(v12, (uint8_t *)&stru_A80220); /*0x4345be*/
+        ((Color*)&v17)->Lerp(v12, (int)(uint8_t *)&stru_A80220); /*0x4345be*/
         IDA_LOWORD(v13) = (uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red); /*0x4345ee*/
         v11 = a6; /*0x43460e*/
         *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/

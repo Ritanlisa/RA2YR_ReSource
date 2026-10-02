@@ -158,14 +158,14 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
       goto LABEL_10; /*0x5f368a*/
     ((SerialPort*)(SerialPort *)g_ClipboardBuffer)->Close(); /*0x5f368c*/
     if ( g_ClipboardBuffer ) /*0x5f3699*/
-      (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
+      (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
     *((unsigned int *)Block + 16) = -1; /*0x5f36ad*/
     ((ObjectClass *)((ObjectClass *)this))->FreeResources(); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
-    (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f36c3*/
+    (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f36c3*/
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
 LABEL_10:

@@ -617,7 +617,7 @@ byte_B05584 = 0; /*0x69036b*/
     {
       v5 = *(void (****)(unsigned int, int))(*((unsigned int *)this + 8) + 4 * i); /*0x6903bc*/
       if ( v5 ) /*0x6903c1*/
-        (**v5)(v5, 1); /*0x6903c7*/
+        (**v5)((unsigned int)v5, 1); /*0x6903c7*/
       v6 = *((unsigned int *)this + 11); /*0x6903c9*/
       if ( i < v6 ) /*0x6903ce*/
       {

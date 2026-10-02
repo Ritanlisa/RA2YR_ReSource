@@ -59,7 +59,7 @@ int InfantryClass::ScanTarget(int * a1)
     vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
     PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((gamemd::IUnknown *)((char *)a1),(gamemd::IUnknown *)(&v17),(void *)((int)a1)); /*0x4d4df4*/
     v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
-    vtable0[288](a1, v4, 1); /*0x4d4e07*/
+    vtable0[288]((gamemd::FootClass *)a1, v4, 1); /*0x4d4e07*/
   }
   if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
   {
@@ -67,7 +67,7 @@ int InfantryClass::ScanTarget(int * a1)
     v5 = (int (**)(FootClass *, int, int *, unsigned int))a1->TechnoClass; /*0x4d4e25*/
     v18 = ((unsigned int *)a1)[1]; /*0x4d4e2a*/
     v19 = ((unsigned int *)a1)[2]; /*0x4d4e36*/
-    v6 = v5[241](a1, 1, &v17, 0); /*0x4d4e3e*/
+    v6 = v5[241]((gamemd::FootClass *)a1, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {
       (*((void (**)(FootClass *, int))a1->vtable1 + 242))(a1, v6); /*0x4d4e4d*/
@@ -131,7 +131,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   int v14; // [esp+Ch] [ebp-10h] BYREF
   unsigned int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->vtable1 + 33))(a1) + 1748) /*0x4d5392*/
+  if ( (gamemd::FootClass *)*(unsigned char *)((*((int (**)(FootClass *))a1->vtable1 + 33))(a1) + 1748) /*0x4d5392*/
     || (v15[0] = ((unsigned int *)a1)[0],
         v2 = a1->TechnoClass,
         v15[1] = ((unsigned int *)a1)[1],
@@ -153,7 +153,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
           ((FactoryClass *)(slaveManager))->ResetProductionTimers(); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d554c*/
         v9 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v13); /*0x4d555a*/
-        vtable0[288](a1, v9, 1); /*0x4d5562*/
+        vtable0[288]((gamemd::FootClass *)a1, v9, 1); /*0x4d5562*/
         (*((void (**)(FootClass *, int, int))a1->vtable1 + 122))(a1, 2, 1); /*0x4d5570*/
       }
     }

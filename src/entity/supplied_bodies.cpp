@@ -67,7 +67,7 @@ int AnimClass::SimpleCtor() {
     this->AnimClass_field_0x0 = 0; /*0x422847*/
     this->AnimClass_field_0x4 = 0; /*0x42284d*/
     this->AnimClass_field_0x8 = 0; /*0x422854*/
-    *(unsigned int *)this->__pad_C = &off_7E3328; /*0x42285b*/
+    *(unsigned int *)this->__pad_C =(unsigned int)(&off_7E3328); /*0x42285b*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
       || (byte_A8E9B5 || !dword_A8E9B0)
       && dword_A8E9BC > 0
@@ -77,7 +77,7 @@ int AnimClass::SimpleCtor() {
            0) )
     {
       v3 = dword_A8E9B8++; /*0x4228a3*/
-      *((unsigned int *)dword_A8E9AC + v3) = this; /*0x4228b2*/
+      *((unsigned int *)dword_A8E9AC + v3) =(unsigned int)this; /*0x4228b2*/
     }
     AudioController::Init((AudioController *)this->AnimClass_field_0x1A0); /*0x4228bb*/
     AudioController::Init((AudioController *)&this->AnimClass_field_0x1B4); /*0x4228c6*/
@@ -198,7 +198,7 @@ int AnimClass::UpdateProjectileTrajectory() {
     char v27[12]; // [esp+40h] [ebp-18h] BYREF
     int v28[3]; // [esp+4Ch] [ebp-Ch] BYREF
 
-    v3 = &this->__pad_120[8]; /*0x423939*/
+    v3 =(char *)&this->__pad_120[8]; /*0x423939*/
     v4 = JumpjetLocomotionClass::Update2((double *)&this->__pad_120[8], v1); /*0x423946*/
     AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x423948*/
     v24 = v4; /*0x42394e*/
@@ -272,7 +272,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3) {
         *(unsigned int *)a2 = 0; /*0x4252bb*/
         *(unsigned int *)(a2 + 4) = 0; /*0x4252c1*/
         *(unsigned int *)(a2 + 8) = 0; /*0x4252c8*/
-        *(unsigned int *)(a2 + 12) = &off_7E3328; /*0x4252cf*/
+        *(unsigned int *)(a2 + 12) =(unsigned int)(&off_7E3328); /*0x4252cf*/
       }
       AudioController::Init((AudioController *)(a2 + 416)); /*0x4252dc*/
       AudioController::Init((AudioController *)(a2 + 436)); /*0x4252e7*/

@@ -132,7 +132,7 @@ int SaveGame::SaveTriggerEvents()
       if ( ++v4 >= LoadGame_field_0x10 ) /*0x660820*/
         return (*(int (**)(SaveGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x660820*/
                  this,
-                 &word_B04D78,
+                 (int16_t *)&word_B04D78,
                  4,
                  0) >= 0;
     }
@@ -140,7 +140,7 @@ int SaveGame::SaveTriggerEvents()
   }
   return (*(int (**)(SaveGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x6607f1*/
            this,
-           &word_B04D78,
+           (int16_t *)&word_B04D78,
            4,
            0) >= 0;
 
@@ -225,21 +225,21 @@ int SaveGame::LoadMainGameState()
 
   result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f7f1*/
              this,
-             (unsigned int *)((char *)&stru_A8EB00 + 404),
+             (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 404),
              4,
              0);
   if ( result >= 0 )
   {
     result = (*(int (**)(SaveGame *, Object **, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f808*/
                this,
-               &dword_A83D4C,
+               (Object **)&dword_A83D4C,
                4,
                0);
     if ( result >= 0 )
     {
       result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f81f*/
                  this,
-                 (unsigned int *)((char *)&stru_A8EB00 + 416),
+                 (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 416),
                  4,
                  0);
       if ( result >= 0 )
@@ -293,14 +293,14 @@ LABEL_13:
 LABEL_17:
                       result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f93a*/
                                  this,
-                                 dword_81DA8C,
+                                 (int *)dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
                         result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f959*/
                                    this,
-                                   dword_81DAD8,
+                                   (int *)dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
@@ -323,7 +323,7 @@ LABEL_17:
                             {
                               result = (*(int (**)(SaveGame *, MissionClass *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f998*/
                                          this,
-                                         &stru_A8E3A8,
+                                         (MissionClass *)&stru_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
@@ -581,7 +581,7 @@ int SaveGame::SaveIteratedData(int a2)
   v3 = 0; /*0x413858*/
   for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
   {
-    v5 = *(unsigned int *)v2; /*0x413860*/
+    v5 =(char *)*(unsigned int *)v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/
     result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
     if ( result < 0 ) /*0x413875*/
@@ -644,7 +644,7 @@ HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x67fe03*/
+  lpVtbl =(gamemd::SaveGame_Start::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe03*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67fe09*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67fe0d*/
   if ( result >= 0 ) /*0x67fe12*/
@@ -662,7 +662,7 @@ HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x67fe21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67fe39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x67fe3d*/
           break; /*0x67fe3d*/
@@ -692,7 +692,7 @@ HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x67fe83*/
+  lpVtbl =(gamemd::SaveGame_Start_67FE70::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe83*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67fe89*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67fe8d*/
   if ( result >= 0 ) /*0x67fe92*/
@@ -710,7 +710,7 @@ HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x67fea1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67feb9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x67febd*/
           break; /*0x67febd*/
@@ -740,7 +740,7 @@ HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x67ff03*/
+  lpVtbl =(gamemd::SaveGame_Start_67FEF0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff03*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67ff09*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67ff0d*/
   if ( result >= 0 ) /*0x67ff12*/
@@ -758,7 +758,7 @@ HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x67ff21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ff39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x67ff3d*/
           break; /*0x67ff3d*/
@@ -788,7 +788,7 @@ HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x67ff83*/
+  lpVtbl =(gamemd::SaveGame_Start_67FF70::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff83*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67ff89*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67ff8d*/
   if ( result >= 0 ) /*0x67ff92*/
@@ -806,7 +806,7 @@ HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x67ffa1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ffb9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x67ffbd*/
           break; /*0x67ffbd*/
@@ -836,7 +836,7 @@ HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680003*/
+  lpVtbl =(gamemd::SaveGame_Start_67FFF0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680003*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680009*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68000d*/
   if ( result >= 0 ) /*0x680012*/
@@ -854,7 +854,7 @@ HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680021*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680039*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68003d*/
           break; /*0x68003d*/
@@ -884,7 +884,7 @@ HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680083*/
+  lpVtbl =(gamemd::SaveGame_Start_680070::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680083*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680089*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68008d*/
   if ( result >= 0 ) /*0x680092*/
@@ -902,7 +902,7 @@ HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6800a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6800b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6800bd*/
           break; /*0x6800bd*/
@@ -932,7 +932,7 @@ HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680103*/
+  lpVtbl =(gamemd::SaveGame_Start_6800F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680103*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680109*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68010d*/
   if ( result >= 0 ) /*0x680112*/
@@ -950,7 +950,7 @@ HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680121*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680139*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68013d*/
           break; /*0x68013d*/
@@ -980,7 +980,7 @@ HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680183*/
+  lpVtbl =(gamemd::SaveGame_Start_680170::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680183*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680189*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68018d*/
   if ( result >= 0 ) /*0x680192*/
@@ -998,7 +998,7 @@ HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6801a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6801b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6801bd*/
           break; /*0x6801bd*/
@@ -1028,7 +1028,7 @@ HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680203*/
+  lpVtbl =(gamemd::SaveGame_Start_6801F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680203*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680209*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68020d*/
   if ( result >= 0 ) /*0x680212*/
@@ -1046,7 +1046,7 @@ HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680221*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680239*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68023d*/
           break; /*0x68023d*/
@@ -1076,7 +1076,7 @@ HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680283*/
+  lpVtbl =(gamemd::SaveGame_Start_680270::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680283*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680289*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68028d*/
   if ( result >= 0 ) /*0x680292*/
@@ -1094,7 +1094,7 @@ HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6802a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6802b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6802bd*/
           break; /*0x6802bd*/
@@ -1124,7 +1124,7 @@ HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680303*/
+  lpVtbl =(gamemd::SaveGame_Start_6802F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680303*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680309*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68030d*/
   if ( result >= 0 ) /*0x680312*/
@@ -1142,7 +1142,7 @@ HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680321*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680339*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68033d*/
           break; /*0x68033d*/
@@ -1172,7 +1172,7 @@ HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680383*/
+  lpVtbl =(gamemd::SaveGame_Start_680370::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680383*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680389*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68038d*/
   if ( result >= 0 ) /*0x680392*/
@@ -1190,7 +1190,7 @@ HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6803a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6803b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6803bd*/
           break; /*0x6803bd*/
@@ -1220,7 +1220,7 @@ HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680403*/
+  lpVtbl =(gamemd::SaveGame_Start_6803F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680403*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680409*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68040d*/
   if ( result >= 0 ) /*0x680412*/
@@ -1238,7 +1238,7 @@ HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680421*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680439*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68043d*/
           break; /*0x68043d*/
@@ -1268,7 +1268,7 @@ HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680483*/
+  lpVtbl =(gamemd::SaveGame_Start_680470::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680483*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680489*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68048d*/
   if ( result >= 0 ) /*0x680492*/
@@ -1286,7 +1286,7 @@ HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6804a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6804b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6804bd*/
           break; /*0x6804bd*/
@@ -1316,7 +1316,7 @@ HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680503*/
+  lpVtbl =(gamemd::SaveGame_Start_6804F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680503*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680509*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68050d*/
   if ( result >= 0 ) /*0x680512*/
@@ -1334,7 +1334,7 @@ HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680521*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680539*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68053d*/
           break; /*0x68053d*/
@@ -1364,7 +1364,7 @@ HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680583*/
+  lpVtbl =(gamemd::SaveGame_Start_680570::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680583*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680589*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68058d*/
   if ( result >= 0 ) /*0x680592*/
@@ -1382,7 +1382,7 @@ HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6805a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6805b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6805bd*/
           break; /*0x6805bd*/
@@ -1412,7 +1412,7 @@ HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680603*/
+  lpVtbl =(gamemd::SaveGame_Start_6805F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680603*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680609*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68060d*/
   if ( result >= 0 ) /*0x680612*/
@@ -1430,7 +1430,7 @@ HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680621*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680639*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68063d*/
           break; /*0x68063d*/
@@ -1460,7 +1460,7 @@ HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl = ((gamemd::IStream*)pStm)->__pad_0; /*0x680683*/
+  lpVtbl =(gamemd::SaveGame_Start_680670::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680683*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680689*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68068d*/
   if ( result >= 0 ) /*0x680692*/
@@ -1478,7 +1478,7 @@ HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6806a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6806b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6806bd*/
           break; /*0x6806bd*/
@@ -1526,7 +1526,7 @@ HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680721*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680739*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68073d*/
           break; /*0x68073d*/
@@ -1574,7 +1574,7 @@ HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6807a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6807b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6807bd*/
           break; /*0x6807bd*/
@@ -1622,7 +1622,7 @@ HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680821*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680839*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68083d*/
           break; /*0x68083d*/
@@ -1670,7 +1670,7 @@ HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6808a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6808b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6808bd*/
           break; /*0x6808bd*/

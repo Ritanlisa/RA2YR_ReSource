@@ -659,7 +659,7 @@ LABEL_123:
       __3_YAXPAX_Z(v43); /*0x5f8a9c*/
       *((unsigned int *)this + 45) = 0; /*0x5f8aa4*/
     }
-    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 /*0x5f8ac1*/
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))((char *)this) == 40 /*0x5f8ac1*/
       && (uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       && !*((unsigned char *)this + 3285) )
     {

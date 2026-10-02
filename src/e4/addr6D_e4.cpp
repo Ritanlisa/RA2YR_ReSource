@@ -384,7 +384,7 @@ int sub_6D1A60()
   dword_B0CE78 = (int)&off_7F429C; /*0x6d1a7d*/
   dword_B0CE8C = 10; /*0x6d1a87*/
   g_CraterCreationState = 0; /*0x6d1a91*/
-  return atexit(sub_6D1AA0); /*0x6d1a9c*/
+  return atexit((void (__cdecl *)(void))sub_6D1AA0); /*0x6d1a9c*/
 }
 } // namespace gamemd
 
@@ -421,7 +421,7 @@ int sub_6D1B10()
   dword_B0CDE8 = (int)&DynamicVectorClass_ShadowControlClass___vftable; /*0x6d1b2d*/
   dword_B0CDFC = 10; /*0x6d1b37*/
   dword_B0CDF8 = 0; /*0x6d1b41*/
-  return atexit(sub_6D1B50); /*0x6d1b4c*/
+  return atexit((void (__cdecl *)(void))sub_6D1B50); /*0x6d1b4c*/
 }
 } // namespace gamemd
 
@@ -591,7 +591,7 @@ char ClampCoordMap(AbstractClass * aP0)
   v1 = (int)(dword_886FA8 / 2 + 30 * (2 * dword_87F8E4 - dword_87F8DC));
   v2 = (int)(v1 + 60 * dword_87F8EC - dword_886FA8);
   v3 = (int)(dword_886FAC / 2 + 15 * (dword_87F8DC + 2 * dword_87F8E8 - 5));
-  v4 = (int)(aP0[1]);
+  v4 = ((int *)aP0)[1];
   v5 = 0; /*0x6d86ba*/
   v6 = v3 + (60 * dword_87F8F0 + 270) / 2 - dword_886FAC; /*0x6d86bc*/
   if ( v4 >= v3 ) /*0x6d86c0*/
@@ -855,7 +855,7 @@ int sub_6DCF80()
   dword_B0E658 = (int)&off_7F43D0; /*0x6dcf9d*/
   dword_B0E66C = 10; /*0x6dcfa7*/
   dword_B0E668 = 0; /*0x6dcfb1*/
-  return atexit(sub_6DCFC0); /*0x6dcfbc*/
+  return atexit((void (__cdecl *)(void))sub_6DCFC0); /*0x6dcfbc*/
 }
 } // namespace gamemd
 

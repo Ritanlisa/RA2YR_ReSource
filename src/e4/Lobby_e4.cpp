@@ -362,7 +362,7 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const 
         {
           v25 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AIEasy), 0,(const char *)(g_Str_File_netshare_cpp), 5504));
           v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
-          SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
+          SendMessageA(DlgItem, 0x151u, (WPARAM)v26, g_Lobby_PlayerTeam); /*0x5eb590*/
           v27 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_AINormal), 0,(const char *)(g_Str_File_netshare_cpp), 5510)); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
           SendMessageA(DlgItem, 0x151u, v28, g_Lobby_PlayerSide); /*0x5eb5c1*/
@@ -554,7 +554,7 @@ int Lobby::BuildPlayerList()
     ++v1; /*0x77dc65*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x77dc6e*/
-  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, ((char *)(int *)&v7)); /*0x77dc84*/
+  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))((LPVOID)ppv, (int *)((char *)(int *)&v7)); /*0x77dc84*/
 
 }
 } // namespace gamemd

@@ -668,7 +668,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->q2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
     a1 = 0; /*0x6456db*/
-    result = (*(int (**)(int *, ParticleTypeClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x6456df*/
+    result = (*(int (**)(int *, ParticleTypeClass **, int, unsigned int))(v5 + 12))(v2, (ParticleTypeClass **)&a1, 4, 0); /*0x6456df*/
     if ( result >= 0 ) /*0x6456e4*/
     {
       v14 = 0; /*0x6456ee*/
@@ -740,10 +740,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  this->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
-  this->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
-  this->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
-  this->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
+  this->ArrayIndex =(unsigned int)(&vt_ParticleTypeClass); /*0x645956*/
+  this->ParticleTypeClass_field_28C =(unsigned int)(&vt_ParticleTypeClass); /*0x64595c*/
+  this->BehavesLike =(unsigned int)(&vt_ParticleTypeClass); /*0x645963*/
+  this->ParticleTypeClass_field_0xC =(unsigned int)(&vt_ParticleTypeClass); /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
   v7 = (gamemd::ParticleTypeClass *)(this); /*0x645986*/
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
@@ -787,7 +787,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   ((ObjectTypeClass *)((int)this))->Destruct(); /*0x645a4c*/
   if ( (a2 & 1) != 0 ) /*0x645a56*/
     __3_YAXPAX_Z(this); /*0x645a59*/
-  return &this->ArrayIndex; /*0x645a63*/
+return (gamemd::ParticleTypeClass *)&this->ArrayIndex; /*0x645a63*/
 
 }
 } // namespace gamemd

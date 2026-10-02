@@ -105,7 +105,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x691fc1*/
   v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
-  v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
+  v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))((int *)&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)((char *)&FootClass_Array) ) /*0x691fea*/
   {
     --*(unsigned int *)((char *)&FootClass_Array); /*0x691fef*/
@@ -143,7 +143,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
-    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Buffer, 32); /*0x6e8380*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
@@ -158,7 +158,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
       ((String*)Buffer)->Trim(); /*0x6e83e1*/
       INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
-      (*(void (**)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, a1); /*0x6e8400*/
+      (*(void (**)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, (INIClass *)a1); /*0x6e8400*/
     }
     result = dword_A8E8E0; /*0x6e8403*/
   }

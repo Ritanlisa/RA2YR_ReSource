@@ -89,7 +89,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x4b0baf*/
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0bbf*/
                                *((unsigned int *)this + 3),
-                               aP1);
+                               (unsigned int *)aP1);
                 return (gamemd::AbstractClass *)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
@@ -888,7 +888,7 @@ LABEL_50:
        && (v51 = *(unsigned int *)this->__pad_C, *(unsigned int *)(v51 + 692))) )
     {
       v53 = ((ObjectClass *)((ObjectClass *)v51))->CalcTargetFacing((int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
-      ((FacingClass*)&this->__pad_48[12])->Set_SyncLog(v53); /*0x54d679*/
+      ((FacingClass*)&this->__pad_48[12])->Set_SyncLog((unsigned int *)v53); /*0x54d679*/
     }
     else
     {

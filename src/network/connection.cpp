@@ -185,7 +185,7 @@ bool IPXConnClass::receive(int a2, int a3, int *a4, int **a5, int a6, int a7)
   if ( a5 ) /*0x53f682*/
   {
     ((Network*)(Network *)a4)->CopyAddress(&a4, (int)v17); /*0x53f68e*/
-    a4 = (void *)(*(unsigned int *)(a5)); /*0x53f69f*/
+    a4 =(int *)(void *)(*(unsigned int *)(a5)); /*0x53f69f*/
     ((NetworkID*)&qword_A8DBA4)->Assign(&a4, (int)v17, 0); /*0x53f6a9*/
   }
   v9 = 0; /*0x53f6b2*/
@@ -317,19 +317,19 @@ int IPXManagerClass::processPacket()
   v3 = (void (__thiscall ***)(unsigned int,int))((void (***)(unsigned int, int))((unsigned char *)(this) + 0x048)); /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
   {
-    (**v3)(v3, 1); /*0x540a17*/
+    (**v3)((unsigned int)v3, 1); /*0x540a17*/
     ((unsigned char *)(this) + 0x048) = 0; /*0x540a19*/
   }
   v4 = (void (***)(unsigned int, int))this->q04C; /*0x540a1c*/
   if ( v4 ) /*0x540a21*/
   {
-    (**v4)(v4, 1); /*0x540a27*/
+    (**v4)((unsigned int)v4, 1); /*0x540a27*/
     this->q04C = 0; /*0x540a29*/
   }
   v5 = (void (***)(unsigned int, int))this->q050; /*0x540a2c*/
   if ( v5 ) /*0x540a31*/
   {
-    (**v5)(v5, 1); /*0x540a37*/
+    (**v5)((unsigned int)v5, 1); /*0x540a37*/
     this->q050 = 0; /*0x540a39*/
   }
   result = this->q044; /*0x540a3c*/

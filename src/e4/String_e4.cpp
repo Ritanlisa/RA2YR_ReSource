@@ -179,7 +179,7 @@ ControlClass * * String::To_Waypoint()
   int v2; // esi
 
   v2 = (int)(-1); /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper((int)(*this)) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
+  if ( isalpha(*this) && (v2 = toupper(*(int *)this) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
     return (gamemd::ControlClass **)(toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39); /*0x7636db*/
   else
     return (gamemd::ControlClass **)(v2); /*0x7636e0*/
@@ -662,8 +662,8 @@ namespace gamemd {
 char * String::CopyChecked(const char *a2)
 {
 
-  strcpy(this, a2); /*0x4f4ccc*/
-  return this; /*0x4f4cd7*/
+  strcpy((char *)this, a2); /*0x4f4ccc*/
+return (char *)this; /*0x4f4cd7*/
 
 }
 } // namespace gamemd

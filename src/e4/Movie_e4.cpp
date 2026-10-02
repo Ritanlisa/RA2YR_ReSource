@@ -51,7 +51,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
 
   if ( !byte_89F578 ) /*0x49cafc*/
     ((gamemd::CampaignClass *)(&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cb03*/
-  v3 = aP1; /*0x49cb08*/
+  v3 =(gamemd::CCINIClass *)aP1; /*0x49cb08*/
   if ( aP1 < 0 || aP1 >= (gamemd::CCINIClass *)(dword_89F574) ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
   v4 = dword_89F570; /*0x49cb29*/
@@ -189,7 +189,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( a7 ) /*0x5bf045*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
-            Frame::Present((void *)((int)g_DSurface_Hidden), 0, v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
           }
           if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf067*/
           {
@@ -221,7 +221,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( a5 == 1 ) /*0x5bf130*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
-            Frame::Present((void *)((int)g_DSurface_Hidden), 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, v9, 0, v19, v20, v21); /*0x5bf147*/
           }
           (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5bf15e*/
@@ -274,7 +274,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       if ( a5 == 1 ) /*0x5beeb1*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
-        Frame::Present((void *)((int)g_DSurface_Hidden), 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
+        Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
       Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/

@@ -103,7 +103,7 @@ int Delegate::Dispatch(Pipe * aP1, Pipe * aP2, void *a3, void *a4, void *a5)
 
   Pipe_field_0x04 = this->Pipe_field_0x04; /*0x631d10*/
   if ( Pipe_field_0x04 ) /*0x631d15*/
-    return (*(int (**)(int, int, int))(*(unsigned int *)Pipe_field_0x04 + 16))(Pipe_field_0x04, aP1, aP2); /*0x631d23*/
+    return (*(int (**)(int, int, int))(*(unsigned int *)Pipe_field_0x04 + 16))(Pipe_field_0x04, (int)aP1, (int)aP2); /*0x631d23*/
   else
     return aP2; /*0x631d29*/
 
@@ -279,7 +279,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
     __3_YAXPAX_Z(this); /*0x52ae57*/
-  return this->__pad_0; /*0x52ae61*/
+return (gamemd::GenericNode *)this->__pad_0; /*0x52ae61*/
 
 }
 } // namespace gamemd

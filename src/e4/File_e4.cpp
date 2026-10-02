@@ -701,12 +701,12 @@ LABEL_25:
       HashTable::FindString((HashTable *)PaletteData, aCyln, (unsigned int *)this + 7); /*0x76ad80*/
       ++*(unsigned int *)v5; /*0x76ad85*/
     }
-    HashTable::FindChunk((HashTable *)PaletteData, aWurl, 0, &v17); /*0x76ad94*/
-    HashTable::FindChunk((HashTable *)PaletteData, aSdsc, 0, &Size); /*0x76ada6*/
-    HashTable::FindChunk((HashTable *)PaletteData, aLdsc, 0, &v16); /*0x76adb8*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aWurl, 0, &v17); /*0x76ad94*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aSdsc, 0, &Size); /*0x76ada6*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aLdsc, 0, &v16); /*0x76adb8*/
     if ( !*((unsigned char *)this + 72) ) /*0x76adbd*/
-      HashTable::FindChunk((HashTable *)PaletteData, aMpvc, 0, &v13); /*0x76adcf*/
-    HashTable::FindChunk((HashTable *)PaletteData, aHsvc, 0, &v14); /*0x76ade1*/
+      HashTable::FindChunk((HashTable *)PaletteData, (char *)aMpvc, 0, &v13); /*0x76adcf*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aHsvc, 0, &v14); /*0x76ade1*/
     *((unsigned int *)this + 2) = (unsigned int)(__2_YAPAXI_Z(Size)); /*0x76adf0*/
     v7 = (int)(__2_YAPAXI_Z(v16)); /*0x76adf8*/
     v8 = v17; /*0x76adfd*/
@@ -731,13 +731,13 @@ LABEL_25:
       *((unsigned int *)this + 10) = 0; /*0x76aed2*/
     else
       HashTable::FindString((HashTable *)PaletteData, aTicc, (unsigned int *)this + 10); /*0x76aee2*/
-    HashTable::FindChunk((HashTable *)PaletteData, aSdsc, *((void **)this + 2), &Size); /*0x76aef7*/
-    HashTable::FindChunk((HashTable *)PaletteData, aLdsc, *((void **)this + 3), &v16); /*0x76af0c*/
-    HashTable::FindChunk((HashTable *)PaletteData, aWurl, *((void **)this + 4), &v17); /*0x76af21*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aSdsc, *((void **)this + 2), &Size); /*0x76aef7*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aLdsc, *((void **)this + 3), &v16); /*0x76af0c*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aWurl, *((void **)this + 4), &v17); /*0x76af21*/
     if ( !*((unsigned char *)this + 72) ) /*0x76af26*/
-      HashTable::FindChunk((HashTable *)PaletteData, aMpvc, v20, &v13); /*0x76af3c*/
+      HashTable::FindChunk((HashTable *)PaletteData, (char *)aMpvc, v20, &v13); /*0x76af3c*/
     v11 = Block; /*0x76af41*/
-    HashTable::FindChunk((HashTable *)PaletteData, aHsvc, Block, &v14); /*0x76af52*/
+    HashTable::FindChunk((HashTable *)PaletteData, (char *)aHsvc, Block, &v14); /*0x76af52*/
     if ( *((unsigned char *)this + 72) ) /*0x76af57*/
       *((unsigned int *)this + 8) = 30; /*0x76af6f*/
     else

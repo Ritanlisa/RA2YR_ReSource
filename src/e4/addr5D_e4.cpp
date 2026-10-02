@@ -219,7 +219,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d264a*/
     }
   }
-  v8 = (gamemd::TagClass *)((&this->ambientSoundController)[1]);
+  v8 =(int)(gamemd::TagClass *)((&this->ambientSoundController)[1]);
   attachedTag = (gamemd::TagClass *)(this->attachedTag);
   (&this->ambientSoundController)[1] = v8 + 1; /*0x5d263a*/
   *((unsigned int *)attachedTag + v8) = (unsigned int)(v5); /*0x5d263d*/
@@ -311,10 +311,10 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         DisableIME(); /*0x5d455d*/
         if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4562*/
         {
-          v8 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4569*/
+          v8 =(void (__cdecl ***)(unsigned int,int))*(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4569*/
           *(unsigned char *)(aP0 + 25) = 0; /*0x5d456c*/
           if ( v8 ) /*0x5d4572*/
-            (**v8)(v8, 1); /*0x5d4578*/
+            (**v8)((unsigned int)v8, 1); /*0x5d4578*/
           nullsub_48(); /*0x5d457a*/
           if ( *(unsigned char *)(aP0 + 26) ) /*0x5d457f*/
           {
@@ -440,10 +440,10 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d47a1*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d47a6*/
       goto LABEL_77; /*0x5d47a6*/
-    v22 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
+    v22 =(void (__cdecl ***)(unsigned int,int))*(void (**)(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d47b4*/
     if ( v22 ) /*0x5d47ba*/
-      (**v22)(v22, 1); /*0x5d47c0*/
+      (**v22)((unsigned int)v22, 1); /*0x5d47c0*/
     nullsub_48(); /*0x5d47c2*/
     if ( !*(unsigned char *)(aP0 + 26) ) /*0x5d47c7*/
     {
@@ -491,10 +491,10 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d4857*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d485c*/
       goto LABEL_77; /*0x5d485c*/
-    v30 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4863*/
+    v30 =(void (__cdecl ***)(unsigned int,int))*(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4863*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d4866*/
     if ( v30 ) /*0x5d486c*/
-      (**v30)(v30, 1); /*0x5d4872*/
+      (**v30)((unsigned int)v30, 1); /*0x5d4872*/
     nullsub_48(); /*0x5d4874*/
     if ( !*(unsigned char *)(aP0 + 26) ) /*0x5d4879*/
       goto LABEL_77; /*0x5d487e*/
@@ -526,10 +526,10 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   DisableIME(); /*0x5d48e9*/
   if ( *(unsigned char *)(aP0 + 25) ) /*0x5d48ee*/
   {
-    v35 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
+    v35 =(void (__cdecl ***)(unsigned int,int))*(void (**)(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d48f8*/
     if ( v35 ) /*0x5d48fe*/
-      (**v35)(v35, 1); /*0x5d4904*/
+      (**v35)((unsigned int)v35, 1); /*0x5d4904*/
     nullsub_48(); /*0x5d4906*/
     if ( *(unsigned char *)(aP0 + 26) ) /*0x5d490b*/
     {
@@ -722,7 +722,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
   v2 = (char **)(a1);
   v19.customSound = edx0; /*0x5d759a*/
   v19.customSound_controller[3] = (int)a1; /*0x5d75aa*/
-  ((CCFileClass*)(CCFileClass *)&v19.lineTrailer)->Construct((void *)(aMpmodesmdIni)); /*0x5d75ae*/
+  ((CCFileClass*)(CCFileClass *)&v19.lineTrailer)->Construct((char *)(void *)(aMpmodesmdIni)); /*0x5d75ae*/
   if ( (uint8_t)((CCFileClass *)((int)((CCFileClass *)&v19.lineTrailer)))->Open(0) ) /*0x5d75bd*/
   {
     v19.health = 0; /*0x5d75ce*/
@@ -771,7 +771,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.fallRate); /*0x5d772d*/
         j_DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
         v7 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d7749*/
-        StringCSF = GetStringCSF((wchar_t *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
+        StringCSF = GetStringCSF((wchar_t *)v7, 0, (const char *)aDRa2mdpostMult, 1030); /*0x5d7752*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign(StringCSF); /*0x5d775c*/
         unknown_libname_73(((char *)&v19)); /*0x5d7765*/
         v9 = String::Tokenize((String *)&v19, v6, Str, &((char *)&v19)); /*0x5d7782*/
@@ -789,7 +789,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
         j_DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
         v10 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d77e9*/
-        v11 = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
+        v11 = GetStringCSF((wchar_t *)v10, 0, (const char *)aDRa2mdpostMult, 1041); /*0x5d77f2*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign(v11); /*0x5d77fc*/
         unknown_libname_73(((char *)&v19)); /*0x5d7805*/
         v12 = String::Tokenize((String *)&v19, v9, Str, &((char *)&v19)); /*0x5d7822*/
@@ -826,7 +826,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         if ( String::Length((String *)&((char *)&v19)) ) /*0x5d7954*/
         {
           v14 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d7966*/
-          IDA_LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
+          IDA_LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, (const char *)g_Str_false) != 0; /*0x5d7979*/
         }
         if ( WideString::Length((const wchar_t **)&((char *)&v19)) /*0x5d79a3*/
 // 0x7b54b0

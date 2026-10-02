@@ -296,7 +296,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = (int)(*a2 + 2 * (v7 + 8));
     *(unsigned int *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
     v106 = v10; /*0x422d40*/
-    v11 = (int)(a2[1]); /*0x422d47*/
+    v11 = ((int *)a2)[1]; /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
     v104 = (v8 - v7) << 8; /*0x422d5e*/
@@ -512,7 +512,7 @@ LABEL_78:
   if ( this->__pad_194[0] ) /*0x423358*/
   {
     v34 = ZCoordToScreenY((int)((gamemd::IUnknown *)(*(int *)v101))); 
-    v35 = (int)(*a2); /*0x423384*/
+    v35 = *(int *)a2; /*0x423384*/
     v36 = *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
@@ -646,8 +646,8 @@ LABEL_99:
   if ( v62[2].__pad_C[207] ) /*0x423636*/
   {
     FoundationSize = Building::GetFoundationSize((unsigned int *)(&v108), 0); 
-    v64 = (int)(*a2); /*0x423657*/
-    v65 = (int)(a2[1]); /*0x423659*/
+    v64 = *(int *)a2; /*0x423657*/
+    v65 = ((int *)a2)[1]; /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
     v66 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x423663*/
     v108 = v64; /*0x423667*/
@@ -693,8 +693,8 @@ LABEL_99:
   else if ( v62[2].__pad_C[221] ) /*0x423728*/
   {
     v109 = *(unsigned int *)&v62[2].__pad_C[184]; /*0x42373c*/
-    v71 = (int)(a2[1]); /*0x423742*/
-    *(unsigned int *)v101 = (unsigned int)(*a2); /*0x42374c*/
+    v71 = ((int *)a2)[1]; /*0x423742*/
+    *(unsigned int *)v101 = *(unsigned int *)a2; /*0x42374c*/
     v82 = v106; /*0x423756*/
     v72 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42375e*/
     v102 = v109 + v71; /*0x423766*/
@@ -707,7 +707,7 @@ LABEL_99:
     DrawToSurfaceSHP( /*0x4237a9*/
       (int)g_DSurface_Hidden_2,
       v105[0],
-      v103,
+      (gamemd::ConvertClass *)v103,
       v104,
       (int *)v101,
       aP5,
@@ -724,7 +724,7 @@ LABEL_99:
   }
   else
   {
-    v74 = (int)(*a2); /*0x4237b9*/
+    v74 = *(int *)a2; /*0x4237b9*/
     v102 = *(unsigned int *)&v62[2].__pad_C[184] + a2[1]; /*0x4237bb*/
     *(unsigned int *)v101 = v74; /*0x4237cb*/
     v83 = v106; /*0x4237d2*/
@@ -735,7 +735,7 @@ LABEL_99:
     DrawToSurfaceSHP( /*0x423827*/
       (int)g_DSurface_Hidden_2,
       v105[0],
-      v103,
+      (gamemd::ConvertClass *)v103,
       v104,
       (int *)v101,
       aP5,
@@ -757,7 +757,7 @@ LABEL_99:
       DrawToSurfaceSHP( /*0x42389e*/
         (int)g_DSurface_Hidden_2,
         v105[0],
-        v103,
+        (gamemd::ConvertClass *)v103,
         v104 + v78 / 2,
         a2,
         aP5,

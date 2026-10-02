@@ -424,7 +424,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v27 ) /*0x4f1fff*/
     ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
   ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
-  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags),(gamemd::INIClass *)((char **)&v38.vtable1), 100); /*0x4f202c*/
+  Int = INIClass::ReadInt((gamemd::String *)(gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags),(gamemd::INIClass *)((char **)&v38.vtable1), 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
   v29 = 0; /*0x4f203b*/
@@ -683,7 +683,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
   unknown_libname_73(&v19); /*0x4f2cba*/
   ((String *)(&v21))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2cc8*/
   ((String *)(&v20))->Assign((const char *)(g_INI_Key_Image)); /*0x4f2cd6*/
-  ((INIClass *)(a2))->ReadString(Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
+  ((INIClass *)(a2))->ReadString((char **)Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( ((String*)&v19)->Length() ) /*0x4f2d08*/
@@ -691,7 +691,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
     unknown_libname_73(&v19.q4); /*0x4f2d29*/
     ((String *)(&v20))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2d37*/
     ((String *)(&v21))->Assign((const char *)(g_INI_Key_Palette)); /*0x4f2d45*/
-    ((INIClass *)(a2))->ReadString(Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
+    ((INIClass *)(a2))->ReadString((char **)Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( String::Length((String *)&v19.q4) ) /*0x4f2d77*/
@@ -699,8 +699,8 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
-      ((String *)(&v21))->Assign(aOrigin); /*0x4f2db1*/
-      CoordPair = ((INIClass *)(a2))->GetCoordPair(&v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
+      ((String *)(&v21))->Assign((const char *)aOrigin); /*0x4f2db1*/
+      CoordPair =(int *)((INIClass *)(a2))->GetCoordPair(&v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair[1]; /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
@@ -715,7 +715,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v23 += v14; /*0x4f2e0d*/
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
-      ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f2e19*/
+      ((String *)((String *)&a4))->Assign((const char *)aActiverect); /*0x4f2e19*/
       Rect = INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/

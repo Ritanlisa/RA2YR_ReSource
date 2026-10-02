@@ -143,7 +143,7 @@ int BombClass::InitPool()
   dword_89C668 = (int)&vt_DynamicVectorClass; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
-  return atexit(globalHelper_038590); /*0x43858c*/
+  return atexit((void (__cdecl *)(void))globalHelper_038590); /*0x43858c*/
 
 }
 } // namespace gamemd
@@ -181,7 +181,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x438b51*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)aP0, aP1); /*0x438b51*/
   if ( Prefix_0 >= 0 ) /*0x438b55*/
   {
     if ( aP0 ) /*0x438b59*/
@@ -227,7 +227,7 @@ BombClass * BombClass::CopyTo(char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
   v5 = (gamemd::BombClass *)(Block); /*0x439427*/
-  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
+  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))((int *)&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/

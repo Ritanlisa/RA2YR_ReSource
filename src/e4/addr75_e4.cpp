@@ -626,7 +626,7 @@ int CCINIClass::InitFromINIEVA()
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1),(gamemd::CCINIClass *)(g_INI_Key_DialogList), v4); /*0x753060*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1),(gamemd::CCINIClass *)(g_INI_Key_DialogList), (void *)v4); /*0x753060*/
       KeyCount = INIClass::GetString( /*0x75306d*/
                    (INIClass *)v1,
                    g_INI_Key_DialogList,
@@ -719,7 +719,7 @@ int E4Recv_7531A0::EVA_LoadINI()
     if ( *(unsigned int *)g_InfantryRenderPool ) /*0x7531de*/
     {
       v4 = *(ObjectClass **)g_InfantryRenderPool; /*0x7531f4*/
-      v3 = (*(int (**)(int *, ObjectClass **))(dword_B1D4A0 + 16))(&dword_B1D4A0, &v4); /*0x7531f8*/
+      v3 = (*(int (**)(int *, ObjectClass **))(dword_B1D4A0 + 16))((int *)&dword_B1D4A0, &v4); /*0x7531f8*/
       if ( v3 != -1 && v3 < g_InfantrySelectState && v3 < --g_InfantrySelectState ) /*0x753213*/
       {
         do /*0x75322b*/
@@ -963,22 +963,22 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   }
   aP0[2] = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754447*/
   v20 = (int)(Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4)); /*0x754456*/
-  v21 = (int)(aP0[2]); /*0x75445b*/
+  v21 = ((int *)aP0)[2]; /*0x75445b*/
   aP0[3] = v20; /*0x75445e*/
   v22 = (int)(v33); /*0x754467*/
-  v23 = (int)(aP0[3]); /*0x754476*/
+  v23 = ((int *)aP0)[3]; /*0x754476*/
   *aP0 = 128 - v21 / 2; /*0x754478*/
   v24 = 128 - v23 / 2; /*0x754487*/
   aP0[3] = (int)(v23 + 8); /*0x754489*/
-  v25 = (int)(*aP0); /*0x75448c*/
+  v25 = *(int *)aP0; /*0x75448c*/
   aP0[1] = v24; /*0x75448e*/
   aP0[2] = v21 + 8; /*0x75449c*/
   *aP0 = v25 - 4; /*0x75449f*/
   aP0[1] = v24 - 4; /*0x7544a1*/
-  dword_B2FB60 = (unsigned int)(*aP0); /*0x7544a6*/
-  dword_B2FB64 = (unsigned int)(aP0[1]); /*0x7544af*/
-  dword_B2FB68 = (unsigned int)(aP0[2]); /*0x7544b8*/
-  dword_B2FB6C = (unsigned int)(aP0[3]); /*0x7544c1*/
+  dword_B2FB60 = *(unsigned int *)aP0; /*0x7544a6*/
+  dword_B2FB64 = ((unsigned int *)aP0)[1]; /*0x7544af*/
+  dword_B2FB68 = ((unsigned int *)aP0)[2]; /*0x7544b8*/
+  dword_B2FB6C = ((unsigned int *)aP0)[3]; /*0x7544c1*/
   v26 = aP0[2] / 2; /*0x7544cf*/
   v27 = Math::RoundToInt(v22); /*0x7544d1*/
   v28 = v34; /*0x7544dc*/
@@ -1024,7 +1024,7 @@ void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
   int16_t v32; // [esp+34h] [ebp-8h]
   int v33; // [esp+38h] [ebp-4h]
 
-  v4 = a4; /*0x757120*/
+  v4 =(int *)a4; /*0x757120*/
   (&g_VoxelOffsetTable)[0] = 0; /*0x757127*/
   v5 = 1; /*0x757141*/
   if ( *((unsigned char *)a4 + 50) > 1u ) /*0x757146*/
@@ -1117,7 +1117,7 @@ void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
                   while ( !v19 ); /*0x7572bd*/
                 }
                 IDA_HIWORD(v11) = IDA_HIWORD(v22); /*0x7572bf*/
-                v12 = v16 + 1; /*0x7572c3*/
+                v12 =(unsigned char *)v16 + 1; /*0x7572c3*/
               }
               while ( v22 ); /*0x7572c6*/
             }

@@ -54,7 +54,7 @@ void * GameOption::SetDigest(char *aP1)
   else
   {
     result = (char *)(strlen((const char *)(g_Str_No_Digest)) + 1); /*0x69adb3*/
-    qmemcpy((unsigned char *)this + 348, g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
+    qmemcpy((unsigned char *)this + 348, (const void *)g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 

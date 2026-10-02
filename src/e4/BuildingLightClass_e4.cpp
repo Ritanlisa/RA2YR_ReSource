@@ -148,7 +148,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   if ( (uint8_t)((ObjectClass *)(Block))->Undeploy() ) /*0x4370df*/
     ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)Block); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
-  v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
+  v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))((int *)&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
     do /*0x43713a*/
@@ -248,7 +248,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v21 = (unsigned char *)(((unsigned int *)this)[0]); /*0x513e70*/
   v22 = v21[116]; /*0x513e74*/
   v21[116] = 0; /*0x513e77*/
-  (*(void (**)(void *, int))(*(unsigned int *)((unsigned int *)this)[0] + 460))(((unsigned int *)this)[0], v20); /*0x513e7f*/
+  (*(void (**)(void *, int))(*(unsigned int *)((unsigned int *)this)[0] + 460))((void *)((unsigned int *)this)[0], v20); /*0x513e7f*/
   result = (signed int)((unsigned int *)this)[0]; /*0x513e85*/
   *(unsigned char *)(result + 116) = v22; /*0x513e8c*/
   v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/

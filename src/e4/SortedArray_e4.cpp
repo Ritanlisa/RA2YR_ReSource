@@ -83,7 +83,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   if ( *((unsigned int *)this + 1) + 1 <= v4 ) /*0x5387e0*/
   {
 LABEL_9:
-    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = (unsigned int)(*aP1); /*0x53885b*/
+    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = *(unsigned int *)aP1; /*0x53885b*/
     *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1) + 4) = *a2; /*0x538875*/
     v11 = *((unsigned int *)this + 1) + 1; /*0x53887c*/
     *((unsigned char *)this + 12) = 0; /*0x53887d*/
@@ -149,7 +149,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   }
   v4 = (int)(*((unsigned int *)this + 1));
   v5 = (unsigned int *)((int)(*(unsigned int **)this));
-  v15 = (int)(*aP1);
+  v15 = *(int *)aP1;
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/

@@ -651,7 +651,7 @@ int E4Recv_517110::sub_517110()
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))(((unsigned int *)this)[0], v8); /*0x517167*/
+    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))((void *)((unsigned int *)this)[0], v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }

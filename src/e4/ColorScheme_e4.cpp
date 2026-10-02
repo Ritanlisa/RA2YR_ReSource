@@ -20,7 +20,7 @@ int ColorScheme::Destructor(void *a1)
   v2 = (void (***)(unsigned int, int))(&this->data)[195]; /*0x68c8e7*/
   (&this->data)[193] = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
-    (**v2)(v2, 1); /*0x68c8ff*/
+    (**v2)((unsigned int)v2, 1); /*0x68c8ff*/
   (&this->data)[195] = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
   result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/

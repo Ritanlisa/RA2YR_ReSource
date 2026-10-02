@@ -141,7 +141,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a262*/
+    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))((_VectorClass_PBVParticleSystemTypeClass *)this); /*0x45a262*/
     return 1; /*0x45a268*/
   }
 
@@ -225,7 +225,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a38e*/
+    (*(void (**)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))((_DynamicVectorClass_PBVParticleSystemTypeClass *)this); /*0x45a38e*/
   }
   v7 = this->m_8; /*0x45a391*/
   if ( v7 < this->m_10 ) /*0x45a399*/
@@ -543,24 +543,24 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
   {
     ((unsigned int *)this)[0] = 0; /*0x47877a*/
     ((unsigned int *)this)[0] = 0; /*0x478781*/
-    return &this->DynamicVectorClass; /*0x478785*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x478785*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x478743*/
   ((unsigned int *)this)[0] = (unsigned int)(v4); /*0x47874b*/
   if ( !v4 ) /*0x478750*/
-    return &this->DynamicVectorClass; /*0x478750*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x478750*/
   Capacity = ((unsigned int *)this)[0]; /*0x478752*/
   v6 = 0; /*0x478755*/
   ((unsigned int *)this)[0] = 1; /*0x478759*/
   if ( Capacity <= 0 ) /*0x47875d*/
-    return &this->DynamicVectorClass; /*0x47875d*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x47875d*/
   do /*0x478771*/
   {
     *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x478768*/
     ++v6; /*0x47876e*/
   }
   while ( v6 < ((unsigned int *)this)[0] ); /*0x478771*/
-  return &this->DynamicVectorClass; /*0x478775*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x478775*/
 
 }
 }  // G42.18c ns repair
@@ -579,12 +579,12 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
     if ( a3 ) /*0x4787b6*/
     {
       ((unsigned int *)this)[0] = (unsigned int)((void *)a3); /*0x4787b8*/
-      return &this->DynamicVectorClass; /*0x4787be*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x4787be*/
     }
     ((unsigned int *)this)[0] = (unsigned int)((void *)__2_YAPAXI_Z(4 * a2)); /*0x4787cd*/
     ((unsigned int *)this)[0] = 1; /*0x4787d0*/
   }
-  return &this->DynamicVectorClass; /*0x4787bd*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x4787bd*/
 
 }
 }  // G42.18c ns repair
@@ -747,7 +747,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x512efe*/
+    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))((_DynamicVectorClass_PBVInfantryTypeClass *)this); /*0x512efe*/
   }
   v7 = (int)(this->m_8); /*0x512f01*/
   if ( v7 < this->m_10 ) /*0x512f09*/
@@ -844,7 +844,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
     ((Vector*)(_VectorClass_PBVUnitTypeClass *)this)->Destructor(); /*0x513762*/
-    v3 = (int)(aP1[2]); /*0x513768*/
+    v3 = ((int *)aP1)[2]; /*0x513768*/
     ((unsigned int *)this)[0] = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
@@ -872,10 +872,10 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
       ((unsigned int *)this)[0] = 0; /*0x5137ab*/
     }
   }
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[4]); /*0x5137b1*/
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[5]); /*0x5137b7*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[4]; /*0x5137b1*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[5]; /*0x5137b7*/
   this->DynamicVectorClass = &vt_TypeList; /*0x5137ba*/
-  return &this->DynamicVectorClass; /*0x5137c2*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x5137c2*/
 
 }
 }  // G42.18c ns repair
@@ -897,7 +897,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)this); /*0x525612*/
-    v3 = (int)(aP1[2]); /*0x525618*/
+    v3 = ((int *)aP1)[2]; /*0x525618*/
     ((unsigned int *)this)[0] = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
@@ -925,10 +925,10 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
       ((unsigned int *)this)[0] = 0; /*0x52565b*/
     }
   }
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[4]); /*0x525661*/
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[5]); /*0x525667*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[4]; /*0x525661*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[5]; /*0x525667*/
   this->DynamicVectorClass = &vt_TypeList; /*0x52566a*/
-  return &this->DynamicVectorClass; /*0x525672*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x525672*/
 
 }
 }  // G42.18c ns repair
@@ -944,7 +944,7 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
   ((unsigned int *)this)[0] = 10; /*0x5ac411*/
   ((unsigned int *)this)[0] = 0; /*0x5ac418*/
   this->DynamicVectorClass = &vt_TypeList; /*0x5ac41b*/
-  return &this->DynamicVectorClass; /*0x5ac421*/
+return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x5ac421*/
 
 }
 }  // G42.18c ns repair
@@ -989,7 +989,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x5ad680*/
   {
     DynamicVectorClass::Destroy((HWND)((_VectorClass_PBVBuildingTypeClass *)this)); /*0x5ad682*/
-    v3 = (int)(aP1[2]); /*0x5ad688*/
+    v3 = ((int *)aP1)[2]; /*0x5ad688*/
     ((unsigned int *)this)[0] = v3; /*0x5ad68d*/
     if ( v3 ) /*0x5ad690*/
     {
@@ -1017,10 +1017,10 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
       ((unsigned int *)this)[0] = 0; /*0x5ad6cb*/
     }
   }
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[4]); /*0x5ad6d1*/
-  ((unsigned int *)this)[0] = (unsigned int)(aP1[5]); /*0x5ad6d7*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[4]; /*0x5ad6d1*/
+  ((unsigned int *)this)[0] = ((unsigned int *)aP1)[5]; /*0x5ad6d7*/
   this->DynamicVectorClass = &vt_TypeList; /*0x5ad6da*/
-  return &this->DynamicVectorClass; /*0x5ad6e2*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x5ad6e2*/
 
 }
 }  // G42.18c ns repair
@@ -1109,7 +1109,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
     if ( v3 ) /*0x67a129*/
     {
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67a133*/
-      ((unsigned int *)this)[0] = v4; /*0x67a13b*/
+      ((unsigned int *)this)[0] =(unsigned int)v4; /*0x67a13b*/
       if ( v4 ) /*0x67a140*/
       {
         Capacity = ((unsigned int *)this)[0]; /*0x67a142*/
@@ -1157,7 +1157,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
     if ( v3 ) /*0x67a2a9*/
     {
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67a2b3*/
-      ((unsigned int *)this)[0] = v4; /*0x67a2bb*/
+      ((unsigned int *)this)[0] =(unsigned int)v4; /*0x67a2bb*/
       if ( v4 ) /*0x67a2c0*/
       {
         Capacity = ((unsigned int *)this)[0]; /*0x67a2c2*/
@@ -1199,7 +1199,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
   ((unsigned int *)this)[0] = 10; /*0x67a3a1*/
   ((unsigned int *)this)[0] = 0; /*0x67a3a8*/
   this->DynamicVectorClass = &vt_TypeList; /*0x67a3ab*/
-  return &this->DynamicVectorClass; /*0x67a3b1*/
+return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x67a3b1*/
 
 }
 }  // G42.18c ns repair
@@ -1258,7 +1258,7 @@ DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4,
   ((unsigned int *)this)[0] = 10; /*0x67a501*/
   ((unsigned int *)this)[0] = 0; /*0x67a508*/
   this->DynamicVectorClass = &vt_TypeList; /*0x67a50b*/
-  return &this->DynamicVectorClass; /*0x67a511*/
+return (gamemd::DynamicVector *)&this->DynamicVectorClass; /*0x67a511*/
 
 }
 }  // G42.18c ns repair
@@ -1274,7 +1274,7 @@ CCINIClass * TypeList_flat::ConstructSmudge()
   ((unsigned int *)this)[0] = 10; /*0x67a611*/
   ((unsigned int *)this)[0] = 0; /*0x67a618*/
   this->DynamicVectorClass = &vt_TypeList; /*0x67a61b*/
-  return &this->DynamicVectorClass; /*0x67a621*/
+return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x67a621*/
 
 }
 }  // G42.18c ns repair
@@ -1332,7 +1332,7 @@ unsigned int * TypeList_flat::InfantryConstructor()
   ((unsigned int *)this)[0] = 10; /*0x67a831*/
   ((unsigned int *)this)[0] = 0; /*0x67a838*/
   this->DynamicVectorClass = &vt_TypeList; /*0x67a83b*/
-  return &this->DynamicVectorClass; /*0x67a841*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x67a841*/
 
 }
 }  // G42.18c ns repair

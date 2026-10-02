@@ -63,7 +63,7 @@ int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
         }
       }
       if ( aP1 ) /*(unsigned int *)(0x5d1dd6)*/
-        return (**aP1)(aP1, 1); /*0x5d1ddc*/
+        return (**aP1)((unsigned int)aP1, 1); /*0x5d1ddc*/
     }
   }
   return result; /*0x5d1dde*/
@@ -196,7 +196,7 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = ((CCFileClass*)(CCFileClass *)Str)->Construct((void *)(byte_A8B8E0)); /*0x5e7845*/
+      v13 = ((CCFileClass*)(CCFileClass *)Str)->Construct((char *)(void *)(byte_A8B8E0)); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/

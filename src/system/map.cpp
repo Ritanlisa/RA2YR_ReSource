@@ -324,8 +324,8 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct& s
   double v45; // [esp+30h] [ebp-18h]
   double v46; // [esp+40h] [ebp-8h]
 
-  v4 = (int)(*end);
-  v5 = (int)(*start);
+  v4 = *(int *)end;
+  v5 = *(int *)start;
   if ( *start != *end || start[1] != end[1] || start[2] != end[2] )
   {
     IDA_LODWORD(v34) = v5 / 256; /*0x5880f3*/

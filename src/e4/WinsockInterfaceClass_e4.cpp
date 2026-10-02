@@ -32,7 +32,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   if ( v2 ) /*0x7b1ac4*/
   {
     ((NetworkClass*)(SOCKET *)this)->UnregisterAsync(); /*0x7b1ac6*/
-    (*(void (**)(int))(*(unsigned int *)this + 4))(this); /*0x7b1ad0*/
+    (*(void (**)(int))(*(unsigned int *)this + 4))((int)this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     *((unsigned char *)this + 258152) = 0; /*0x7b1ad8*/
   }

@@ -61,7 +61,7 @@ void* GenericNode::Constructor() {
 
   this->Previous = 0; /*0x40e324*/
   *(unsigned int *)this->Blowfish = 0; /*0x40e327*/
-  *(unsigned int *)this->__pad_0 = &vt_GenericNode; /*0x40e32a*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(&vt_GenericNode); /*0x40e32a*/
   return this->__pad_0; /*0x40e330*/
 
 }

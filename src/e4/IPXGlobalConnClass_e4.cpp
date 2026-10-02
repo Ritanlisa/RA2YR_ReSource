@@ -128,7 +128,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   if ( aP4 ) /*0x540425*/
   {
     ((Network *)((Network *)a3))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x540431*/
-    v15 = (int)(*aP4); /*0x540442*/
+    v15 = *(int *)aP4; /*0x540442*/
     ((NetworkID *)(&v18))->Assign((unsigned int *)(&v15), (int)v17, 0); /*0x54044c*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) ) /*0x540477*/

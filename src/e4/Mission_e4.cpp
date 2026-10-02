@@ -326,7 +326,7 @@ char Mission::ProcessUnitMissionAI()
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
-    v13 = (**v12)(v12, &unk_818858, v24); /*0x5211a6*/
+    v13 = (**v12)((unsigned int)v12, &unk_818858, v24); /*0x5211a6*/
     if ( v13 >= 0 ) /*0x5211aa*/
     {
       v15 = *(unsigned int *)v24; /*0x5211b9*/

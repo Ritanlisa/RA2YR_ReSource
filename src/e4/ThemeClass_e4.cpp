@@ -28,7 +28,7 @@ namespace gamemd {
 int ThemeClass::RequestBuffer()
 {
 
-  return RequestBufferMixer((unsigned int *)((&this->m_Name)[3] + 16), 0);
+  return RequestBufferMixer((gamemd::VolumeStruct *)(unsigned int *)((&this->m_Name)[3] + 16), 0);
 
 }
 } // namespace gamemd

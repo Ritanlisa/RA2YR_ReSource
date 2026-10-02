@@ -101,7 +101,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   AbstractClass::DTOR((AbstractClass *)this); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     __3_YAXPAX_Z(this); /*0x4217f0*/
-  return this->__pad_0; /*0x4217fa*/
+return (gamemd::AlphaShapeClass *)this->__pad_0; /*0x4217fa*/
 
 }
 } // namespace gamemd

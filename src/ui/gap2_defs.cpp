@@ -130,7 +130,7 @@ void* MouseClass::applyCursorSettings(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40d853*/
-  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_MixFileClass___vftable; /*0x40d856*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass_MixFileClass___vftable; /*0x40d856*/
   if ( v3 && ((unsigned char*)&this->q00C)[1] ) /*0x40d860*/
   {
     RA2_OPDEL(v3); /*0x40d868*/
@@ -235,7 +235,7 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
 
   if ( this->u32_174 ) /*0x4884a3*/
     return 0; /*0x4884ad*/
-  v6 = ((CellClass*)(ListClass *)this)->DrawWithFlags(a1, a2, 0); /*0x4884cb*/
+  v6 = ((CellClass*)(ListClass *)this)->DrawWithFlags(a1, (unsigned int *)a2, 0); /*0x4884cb*/
   if ( (a1 & 1) != 0 ) /*0x4884cd*/
   {
     Clamped = ((Array*)(int)((ListClass *)this))->GetClamped(this->u32_16C); /*0x4884d8*/
@@ -276,7 +276,7 @@ namespace gamemd {
 void* CheckListClass::QueryInterface(int a2) {
   void *Clamped; // edi
 
-  *(unsigned int *)this->__pad_0 = (void *)&CheckListClass_vftable; /*0x4886e3*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&CheckListClass_vftable; /*0x4886e3*/
   while ( this->CheckListClass_field_0x44 ) /*0x4886e9*/
   {
     Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
@@ -294,7 +294,7 @@ namespace gamemd {
 int DropListClass::SetFocus(void* a1) {
   wcsncpy((wchar_t *)this->DropListClass_field_0x34,(const wchar_t *)(a1),(size_t)(this->DropListClass_field_0x38)); /*0x4b4fc1*/
   (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b4fcd*/
-  return (*(int (**)(char *, wchar_t *))(this->q02C + 136))((char *)this + 176, a1); /*0x4b4fe3*/
+  return (*(int (**)(char *, wchar_t *))(this->q02C + 136))((char *)this + 176, (wchar_t *)a1); /*0x4b4fe3*/
 }
 }
 // 0x4B4FF0
@@ -352,7 +352,7 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
       DropListClass_field_0x10 = (int)(this->DropListClass_field_0x10); /*0x4b5101*/
       DropListClass_field_0x14 = (int)(this->DropListClass_field_0x14); /*0x4b5104*/
       v8 = this->q02C; /*0x4b5108*/
-      this->u32_BC = this->DropListClass_field_0x0C; /*0x4b510e*/
+      this->u32_BC =(unsigned int)this->DropListClass_field_0x0C; /*0x4b510e*/
       DropListClass_field_0x4C = (int)(this->DropListClass_field_0x4C); /*0x4b5114*/
       this->q030 = DropListClass_field_0x10 + 18; /*0x4b511b*/
       v10 = *(unsigned int *)this->__pad_0; /*0x4b5121*/
@@ -387,8 +387,8 @@ int DropListClass::RemoveItem(int a1, int a2) {
     a1,
     a2 + *(int16_t *)(this->u32_A8 + 4));
   return (*(int (**)(int *, int, int))(this->DropListClass_field_0x50 + 100))( /*0x4b5521*/
-           &this->DropListClass_field_0x50,
-           a1 + this->DropListClass_field_0x14,
+           (int *)&this->DropListClass_field_0x50,
+           (int)a1 + this->DropListClass_field_0x14,
            a2);
 }
 }
@@ -431,7 +431,7 @@ int DropListClass::ScrollDown(int a1) {
 // 0x4B55F0
 namespace gamemd { 
 void* DropListClass::QueryInterface(int a2) {
-  *(unsigned int *)this->__pad_0 = (void *)&DropListClass_vftable; /*0x4b55f9*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&DropListClass_vftable; /*0x4b55f9*/
   ListClass::Destruct((ListClass *)((char *)&this->q0446)); /*0x4b55ff*/
   ShapeButtonClass::Destructor((int)&this->DropListClass_field_0x50); /*0x4b5607*/
   DropListClass::Constructor(this); /*0x4b560e*/
@@ -443,7 +443,7 @@ void* DropListClass::QueryInterface(int a2) {
 // 0x4C30B0
 namespace gamemd { 
 int DropListClass::Constructor() {
-  *(unsigned int *)this->__pad_0 = (void *)&EditClass_vftable; /*0x4c30b3*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&EditClass_vftable; /*0x4c30b3*/
   if ( COMObject::IsPrimaryInstance((GadgetClass *)this) ) /*0x4c30b9*/
     COMObject::DeactivateGlobal((ShpButtonClass *)this); /*0x4c30c4*/
 // 0x4e1390
@@ -458,7 +458,7 @@ int DropListClass::SelectItem(void* a1, int a2) {
 
   *(&this->u32_43) = (int)a1; /*0x4c30ed*/
   *(&this->u32_44) = a2 - 1; /*0x4c30f0*/
-  v4 = wcslen(a1); /*0x4c30f3*/
+  v4 = wcslen((const wchar_t *)a1); /*0x4c30f3*/
   v5 = *this; /*0x4c30f8*/
   *(&this->u32_45) = v4; /*0x4c30ff*/
   return this->MarkDirty(); /*0x4c3105*/

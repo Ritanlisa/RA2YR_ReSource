@@ -35,7 +35,7 @@ unsigned int * ConnectionClass::QueryInterface(char a2) {
     RA2_OPDEL(v3); /*0x48c65d*/
     PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48c662*/
     if ( PlayerIndex ) /*0x48c66a*/
-      (**PlayerIndex)(PlayerIndex, 1); /*0x48c670*/
+      (**PlayerIndex)((unsigned int)PlayerIndex, 1); /*0x48c670*/
     if ( (a2 & 1) != 0 ) /*0x48c677*/
       RA2_OPDEL(this); /*0x48c67a*/
     return this->__pad_0; /*0x48c684*/

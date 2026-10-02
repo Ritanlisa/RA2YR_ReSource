@@ -291,7 +291,7 @@ LABEL_72:
               }
               DeleteAndZero((char)((ObjectClass *)&v33[28])); /*0x7aad3b*/
             }
-            v25 = g_WOL_HashTable; /*0x7aad40*/
+            v25 =(gamemd::HashTable *)g_WOL_HashTable; /*0x7aad40*/
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
                             + 4
                             * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v33)

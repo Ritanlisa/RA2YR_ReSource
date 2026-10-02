@@ -42,7 +42,7 @@ HouseClass * * FactoryClass::AbandonProduction() {
     return 0; /*0x4ca116*/
   v3 = (*(int (**)(int))(*(unsigned int *)v2 + 136))(v2); /*0x4ca007*/
   Debug::Log("Abandoning production of %s\n", (const char *)(v3 + 100)); /*0x4ca016*/
-  v4 = (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 136))(((unsigned char *)(this) + 0x058)); /*0x4ca023*/
+  v4 = (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 136))((unsigned int)((unsigned char *)(this) + 0x058)); /*0x4ca023*/
   v5 = (*(int (**)(int, unsigned int))(*(unsigned int *)v4 + 132))(v4, *(unsigned int *)(((unsigned char *)(this) + 0x058) + 540)); /*0x4ca037*/
   ((HouseClass*)*(unsigned int **)(&this->u32_288))->AddPower(v5 - this->balance); /*0x4ca046*/
   v6 = this->specialItem; /*0x4ca04b*/
@@ -60,13 +60,13 @@ HouseClass * * FactoryClass::AbandonProduction() {
   this->u8_5D = 1; /*0x4ca07e*/
   if ( !(uint8_t)((House*)v8)->IsCurrentPlayer() ) /*0x4ca082*/
   {
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))(((unsigned char *)(this) + 0x058)) == 15 ) /*0x4ca096*/
+    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))((unsigned int)((unsigned char *)(this) + 0x058)) == 15 ) /*0x4ca096*/
       this->owner->baseDefenseTeamCount = -1; /*0x4ca09b*/
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))(((unsigned char *)(this) + 0x058)) == 1 ) /*0x4ca0ac*/
+    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))((unsigned int)((unsigned char *)(this) + 0x058)) == 1 ) /*0x4ca0ac*/
       this->owner->ratioTeamBuildings = -1; /*0x4ca0b1*/
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))(((unsigned char *)(this) + 0x058)) == 2 ) /*0x4ca0c2*/
+    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))((unsigned int)((unsigned char *)(this) + 0x058)) == 2 ) /*0x4ca0c2*/
       this->owner->dropshipData = -1; /*0x4ca0c7*/
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))(((unsigned char *)(this) + 0x058)) == 6 ) /*0x4ca0d8*/
+    if ( (*(int (**)(unsigned int))(**(unsigned int **)(&this->NeedsSaveOrLink8) + 44))((unsigned int)((unsigned char *)(this) + 0x058)) == 6 ) /*0x4ca0d8*/
       this->owner->ratioTeamInfantry = -1; /*0x4ca0dd*/
   }
   ++dword_A8E7AC; /*0x4ca0eb*/

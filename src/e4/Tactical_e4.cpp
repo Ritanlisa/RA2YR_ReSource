@@ -259,10 +259,10 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   {
     HIDWORD(v15) = (unsigned int)(&a4); /*0x4840b2*/
     LODWORD(v15) = (unsigned int)(&aP5); /*0x4840b7*/
-    Tactical::CalculateTacticalLighting((int *)(this),(IUnknown *)(v7),(int *)(v11), v8, v12, v9, &v16, v15); /*0x4840c4*/
+    Tactical::CalculateTacticalLighting((int *)(this),(IUnknown *)(v7),(int *)(v11), v8, (IUnknown *)v12, v9, &v16, v15); /*0x4840c4*/
     if ( *(unsigned int *)this->__pad_34 /*0x484125*/
       && (a1 = (unsigned int *)v16,
-          aP2 = (unsigned int *)aP5,
+          aP2 =(IUnknown *)(unsigned int *)aP5,
           a3 = (int *)a4,
           QuantizeColorRGB((int *)&a1, (int *)&aP2, (int *)&a3),
           v13 = *(unsigned int *)this->__pad_34,
@@ -270,7 +270,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
       && *(unsigned int **)(v13 + 412) == (unsigned int *)(aP2)
       && (result = *(unsigned int *)(v13 + 416), (int *)result == a3) )
     {
-      *a2 = v13; /*0x48412c*/
+      *a2 =(int *)v13; /*0x48412c*/
     }
     else
     {

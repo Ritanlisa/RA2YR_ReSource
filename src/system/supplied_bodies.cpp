@@ -126,7 +126,7 @@ unsigned int * INIClass::sectionExists() {
     int v5; // edi
     int v6; // edi
 
-    result = (int *)(this->__pad_0); /*0x52af50*/
+    result =(unsigned int *)(int *)(this->__pad_0); /*0x52af50*/
     sectionHead = (int *)(this->sectionHead); /*0x52af59*/
     this->headNode[1] = 0; /*0x52af5f*/
     this->headNode[2] = 0; /*0x52af62*/
