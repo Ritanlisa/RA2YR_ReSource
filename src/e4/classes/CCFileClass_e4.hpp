@@ -50,7 +50,7 @@ struct CCFileClass {
      double Read(...);  // C2597 interim stub
     void * ReadEntireFile();  // was C2597 interim stub, := truth 0x0x4a3890
     static double Reset(...);  // C2597 interim stub
-    static double GetSize(...);  // C2597 interim stub
+static int GetSize(...);  // C2597 interim stub
     void Construct2(char **a2);  // init file object with name
      _DWORD * Construct(char *Source);
     LONG Load();  // 0x595bc0

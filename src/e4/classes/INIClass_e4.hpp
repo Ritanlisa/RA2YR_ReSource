@@ -82,7 +82,7 @@ struct INIClass {
     static double SetIntFormat(...);  // C2597 interim stub
     static double ReadTokenizedPair(...);  // C2597 interim stub
     static double SaveToPipe(...);  // C2597 interim stub
-    static double WriteToString(...);  // C2597 interim stub
+static int WriteToString(...);  // C2597 interim stub
     char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
     static int SetInt(...);  // 0x5275c0
     int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00

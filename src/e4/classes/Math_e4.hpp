@@ -87,11 +87,11 @@ struct Math {
     IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);  // 0x5B2950
     bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);  // 0x5B2990
     static double ArcTan2(...);  // C2597 interim stub
-    static double CalcAngle(...);  // C2597 interim stub
+static int CalcAngle(...);  // C2597 interim stub
     static double InitDegToRad(...);  // C2597 interim stub
     static double SinCos(...);  // C2597 interim stub
     static double RoundToInt(...);  // C2597/C2039 interim stub
-    static double Sqrt(...);  // C2597/C2039 interim stub
+static int Sqrt(...);  // C2597/C2039 interim stub
     static double Cos(...);  // C2597/C2039 interim stub
     double ArcTan(double a1);  // interim stub
     static double Dist2D(...);  // interim stub

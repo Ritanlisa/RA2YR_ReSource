@@ -751,7 +751,7 @@ struct BuildingClass {
     static double FindBySWType(...);  // C2597 interim stub
     static double GetHealthRatio(...);  // C2597 interim stub
     static double GetPlacementCoords(...);  // C2597 interim stub
-    static double GetPlacementRect(...);  // C2597 interim stub
+static int * GetPlacementRect(...);  // C2597 interim stub
     static double GetType_Thunk(...);  // C2597 interim stub
     static double IsCellPlaceable(...);  // C2597 interim stub
     static double IsTiberiumSiloEligible(...);  // C2597 interim stub
@@ -767,7 +767,7 @@ struct BuildingClass {
     static double PowerOff(...);  // C2597 interim stub
     static double GetProductionFrame(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
-    static double GetSHPFrame(...);  // C2597 interim stub
+static int GetSHPFrame(...);  // C2597 interim stub
     static double UpdateFloatPosition(...);  // C2597 interim stub
     static int CreatePlacementCrater(...);  // 0x486e70
     void UnloadUnits(char a2, char a3);  // 0x457de0

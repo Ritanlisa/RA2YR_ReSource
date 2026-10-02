@@ -49,7 +49,7 @@ struct Main {
     char Main_field_00[4];  // 0x0
     unsigned int Debug;
 // --- flat members (END) ---
-    void CreateDialog();
+int CreateDialog();
 };
 
 } // namespace gamemd

@@ -166,7 +166,7 @@ struct CellClass {
     int StubReturn11();
     int StubReturn328();
     static double DetermineTileType(...);  // C2597 interim stub
-    static double GetCoords(...);  // C2597 interim stub
+static int * GetCoords(...);  // C2597 interim stub
     int GetTerrainFlag(int a2);  // was C2597 interim stub, := truth 0x0x5471f0
      double IsBuildable(...);  // C2597 interim stub
     static double IsTerrainType(...);  // C2597 interim stub

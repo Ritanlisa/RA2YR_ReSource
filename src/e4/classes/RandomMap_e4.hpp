@@ -153,7 +153,7 @@ struct RandomMap {
     void* CollectBorderCells();  // 0x58F0C0
     void* PlaceBuildings(int a2, int a3);  // 0x58F2C0
     int AllocateArea();  // 0x5905D0
-    int CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x590970
+char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x590970
     int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4);  // 0x590FD0
     ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2);  // 0x592440
     CampaignClass * * CleanupRandomMapData();  // 0x5958E0

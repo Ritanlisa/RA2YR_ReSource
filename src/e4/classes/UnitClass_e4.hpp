@@ -777,7 +777,7 @@ struct UnitClass {
 
 // --- flat members (END) ---
     int ProcessIdleOrders();
-     double Construct(...);  // C2597 interim stub
+int Construct(...);  // C2597 interim stub
     void ** Create(void *a2, _DWORD *a3, int a4); // N_fix R5 supply (cache truth)
 };
 
