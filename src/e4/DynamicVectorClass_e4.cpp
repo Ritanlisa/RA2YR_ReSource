@@ -40,12 +40,12 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
 
   if ( a2 ) /*0x52511c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x525126*/
+    LOBYTE(this->IsInitialized) = 0; /*0x525126*/
     if ( a3 ) /*0x52512c*/
       v4 = a3; /*0x525142*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x52513e*/
-    LOBYTE(this->m_C) = 1; /*0x525146*/
+    LOBYTE(this->IsInitialized) = 1; /*0x525146*/
     if ( v4 ) /*0x52514a*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x525155*/
@@ -55,7 +55,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
           m_8 = a2; /*0x525163*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x525169*/
           ++i; /*0x52516e*/
-        if ( BYTE1(this->m_C) ) /*0x52517b*/
+        if ( BYTE1(this->IsInitialized) ) /*0x52517b*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x525186*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x52518e*/
@@ -63,7 +63,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x525197*/
       this->m_8 = a2; /*0x52519f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x5251a2*/
+      BYTE1(this->IsInitialized) = a3 == 0; /*0x5251a2*/
       return (gamemd::AbstractClass **)(1); /*0x5251a8*/
     }
     else
@@ -101,7 +101,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
   if ( a2 ) /*0x58919e*/
   {
     v5 = a3; /*0x5891a4*/
-    LOBYTE(this->m_C) = 0; /*0x5891a8*/
+    LOBYTE(this->IsInitialized) = 0; /*0x5891a8*/
     if ( a3 ) /*0x5891ad*/
     {
       v9 = a3; /*0x5891e3*/
@@ -143,7 +143,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
         v5 = 0; /*0x5891dc*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x5891f7*/
+    LOBYTE(this->IsInitialized) = 1; /*0x5891f7*/
     if ( !v5 ) /*0x5891fb*/
       return 0; /*0x589284*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x589201*/
@@ -164,7 +164,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
         while ( v12 < v11 ); /*0x589232*/
         v3 = a2; /*0x589234*/
       }
-      if ( BYTE1(this->m_C) ) /*0x58923a*/
+      if ( BYTE1(this->IsInitialized) ) /*0x58923a*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x589243*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x58924b*/
@@ -172,7 +172,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x589256*/
     *(unsigned int *)&this->__pad_5[3] = v3; /*0x58925c*/
-    BYTE1(this->m_C) = a3 == 0; /*0x58925f*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x58925f*/
   }
   else
   {
@@ -216,7 +216,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   if ( a2 ) /*0x6284ae*/
   {
     v5 = a3; /*0x6284b4*/
-    LOBYTE(this->m_C) = 0; /*0x6284b8*/
+    LOBYTE(this->IsInitialized) = 0; /*0x6284b8*/
     if ( a3 ) /*0x6284bd*/
     {
       if ( a2 - 1 >= 0 ) /*0x6284f6*/
@@ -260,7 +260,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
         v5 = 0; /*0x6284ed*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x62850c*/
+    LOBYTE(this->IsInitialized) = 1; /*0x62850c*/
     if ( !v5 ) /*0x628510*/
       return 0; /*0x628592*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x628512*/
@@ -283,7 +283,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
         while ( m_8 ); /*0x628540*/
         v3 = a2; /*0x628542*/
       }
-      if ( BYTE1(this->m_C) ) /*0x628548*/
+      if ( BYTE1(this->IsInitialized) ) /*0x628548*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x628551*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x628559*/
@@ -291,7 +291,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x628564*/
     this->m_8 = v3; /*0x62856a*/
-    BYTE1(this->m_C) = a3 == 0; /*0x62856d*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x62856d*/
   }
   else
   {
@@ -327,7 +327,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   if ( aP1 ) /*0x628bbf*/
   {
     v5 = (Byte *)a2; /*0x628bc5*/
-    LOBYTE(this->m_C) = 0; /*0x628bc9*/
+    LOBYTE(this->IsInitialized) = 0; /*0x628bc9*/
     if ( a2 ) /*0x628bcf*/
     {
       if ( aP1 - 1 >= 0 ) /*0x628c25*/
@@ -367,7 +367,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         v16 = 0; /*0x628c16*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x628c46*/
+    LOBYTE(this->IsInitialized) = 1; /*0x628c46*/
     if ( !v16 ) /*0x628c4c*/
       return 0; /*0x628cfa*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x628c52*/
@@ -392,7 +392,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         while ( v17 ); /*0x628c9c*/
         v3 = (int)(aP1); /*0x628c9e*/
       }
-      if ( BYTE1(this->m_C) ) /*0x628ca2*/
+      if ( BYTE1(this->IsInitialized) ) /*0x628ca2*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x628cad*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x628cb5*/
@@ -400,7 +400,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v16); /*0x628cc2*/
     this->m_8 = v3; /*0x628cce*/
-    BYTE1(this->m_C) = a2 == 0; /*0x628cd1*/
+    BYTE1(this->IsInitialized) = a2 == 0; /*0x628cd1*/
   }
   else
   {
@@ -422,12 +422,12 @@ void DynamicVectorClass_uint::ddtor(void *a1_1)
 
   v2 = *(void **)&this->m_1[3]; /*0x42d546*/
   this->m_10 = 0; /*0x42d549*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x42d550*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x42d550*/
   {
     __3_YAXPAX_Z(v2); /*0x42d556*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42d55e*/
   }
-  BYTE1(this->m_C) = 0; /*0x42d561*/
+  BYTE1(this->IsInitialized) = 0; /*0x42d561*/
   this->m_8 = 0; /*0x42d564*/
 
 }
@@ -485,12 +485,12 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42d64c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x42d656*/
+    LOBYTE(this->IsInitialized) = 0; /*0x42d656*/
     if ( a3 ) /*0x42d65c*/
       v4 = a3; /*0x42d672*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x42d66e*/
-    LOBYTE(this->m_C) = 1; /*0x42d676*/
+    LOBYTE(this->IsInitialized) = 1; /*0x42d676*/
     if ( v4 ) /*0x42d67a*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x42d685*/
@@ -500,7 +500,7 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
           m_8 = a2; /*0x42d693*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x42d699*/
           ++i; /*0x42d69e*/
-        if ( BYTE1(this->m_C) ) /*0x42d6ab*/
+        if ( BYTE1(this->IsInitialized) ) /*0x42d6ab*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x42d6b6*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x42d6be*/
@@ -508,7 +508,7 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x42d6c7*/
       this->m_8 = a2; /*0x42d6cf*/
-      BYTE1(this->m_C) = a3 == 0; /*0x42d6d2*/
+      BYTE1(this->IsInitialized) = a3 == 0; /*0x42d6d2*/
       return 1; /*0x42d6d8*/
     }
     else
@@ -530,12 +530,12 @@ namespace gamemd {
 void DynamicVectorClass_uint::Clear_0()
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x42d6fd*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->IsInitialized) ) /*0x42d6fd*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x42d703*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42d70b*/
   }
-  BYTE1(this->m_C) = 0; /*0x42d70e*/
+  BYTE1(this->IsInitialized) = 0; /*0x42d70e*/
   this->m_8 = 0; /*0x42d711*/
 
 }
@@ -550,7 +550,7 @@ int DynamicVectorClass_uint::FindItemIndex(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x42d720*/
+  if ( !LOBYTE(this->IsInitialized) ) /*0x42d720*/
     return 0; /*0x42d728*/
   m_8 = this->m_8; /*0x42d72e*/
   result = 0; /*0x42d731*/
@@ -571,7 +571,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_uint::GetCapacity(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x42d760*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x42d760*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x42d775*/
   else
     return 0; /*0x42d767*/
@@ -591,12 +591,12 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42d78c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x42d792*/
+    LOBYTE(this->IsInitialized) = 0; /*0x42d792*/
     if ( a3 ) /*0x42d798*/
       v4 = a3; /*0x42d7ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x42d7aa*/
-    LOBYTE(this->m_C) = 1; /*0x42d7b2*/
+    LOBYTE(this->IsInitialized) = 1; /*0x42d7b2*/
     if ( !v4 ) /*0x42d7b6*/
       return 0; /*0x42d82a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x42d7b8*/
@@ -606,7 +606,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
         m_8 = a2; /*0x42d7c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x42d7cc*/
         ++i; /*0x42d7d1*/
-      if ( BYTE1(this->m_C) ) /*0x42d7de*/
+      if ( BYTE1(this->IsInitialized) ) /*0x42d7de*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x42d7e9*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x42d7f1*/
@@ -614,7 +614,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x42d7fa*/
     this->m_8 = a2; /*0x42d802*/
-    BYTE1(this->m_C) = a3 == 0; /*0x42d805*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x42d805*/
   }
   else
   {
@@ -659,12 +659,12 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
 
   v3 = *(void **)&Block->m_1[3]; /*0x42db13*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x42db16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x42db20*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x42db20*/
   {
     __3_YAXPAX_Z(v3); /*0x42db28*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x42db30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x42db3b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x42db3b*/
   Block->m_8 = 0; /*0x42db41*/
   if ( (a2 & 1) != 0 ) /*0x42db48*/
     __3_YAXPAX_Z(Block); /*0x42db4b*/
@@ -682,12 +682,12 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
 
   v3 = *(void **)&Block->m_1[3]; /*0x42db63*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x42db66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x42db70*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x42db70*/
   {
     __3_YAXPAX_Z(v3); /*0x42db78*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x42db80*/
   }
-  BYTE1(Block->m_C) = 0; /*0x42db8b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x42db8b*/
   Block->m_8 = 0; /*0x42db91*/
   if ( (a2 & 1) != 0 ) /*0x42db98*/
     __3_YAXPAX_Z(Block); /*0x42db9b*/
@@ -787,12 +787,12 @@ void DynamicVectorClass_PAD::ddtor(void *a1_1)
 
   v2 = *(void **)&this->m_1[3]; /*0x49e956*/
   this->m_10 = 0; /*0x49e959*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x49e960*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x49e960*/
   {
     __3_YAXPAX_Z(v2); /*0x49e966*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49e96e*/
   }
-  BYTE1(this->m_C) = 0; /*0x49e971*/
+  BYTE1(this->IsInitialized) = 0; /*0x49e971*/
   this->m_8 = 0; /*0x49e974*/
 
 }
@@ -803,7 +803,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_PAD::Get(int a2, void *a2_2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x49e980*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x49e980*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x49e995*/
   else
     return 0; /*0x49e987*/
@@ -830,12 +830,12 @@ void DynamicVectorClass_PAD::Clear_49E9B0()
 
   v2 = *(void **)&this->m_1[3]; /*0x49e9b6*/
   this->m_10 = 0; /*0x49e9b9*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x49e9c0*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x49e9c0*/
   {
     __3_YAXPAX_Z(v2); /*0x49e9c6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49e9ce*/
   }
-  BYTE1(this->m_C) = 0; /*0x49e9d1*/
+  BYTE1(this->IsInitialized) = 0; /*0x49e9d1*/
   this->m_8 = 0; /*0x49e9d4*/
 
 }
@@ -846,7 +846,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_PAD::GetCount(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x49e9e0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x49e9e0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x49e9f5*/
   else
     return 0; /*0x49e9e7*/
@@ -907,12 +907,12 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x49ea7c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x49ea82*/
+    LOBYTE(this->IsInitialized) = 0; /*0x49ea82*/
     if ( a3 ) /*0x49ea88*/
       v4 = a3; /*0x49ea9e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x49ea9a*/
-    LOBYTE(this->m_C) = 1; /*0x49eaa2*/
+    LOBYTE(this->IsInitialized) = 1; /*0x49eaa2*/
     if ( !v4 ) /*0x49eaa6*/
       return 0; /*0x49eb1a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x49eaa8*/
@@ -922,7 +922,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
         m_8 = a2; /*0x49eab6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49eabc*/
         ++i; /*0x49eac1*/
-      if ( BYTE1(this->m_C) ) /*0x49eace*/
+      if ( BYTE1(this->IsInitialized) ) /*0x49eace*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ead9*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x49eae1*/
@@ -930,7 +930,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49eaea*/
     this->m_8 = a2; /*0x49eaf2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x49eaf5*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x49eaf5*/
   }
   else
   {
@@ -1008,12 +1008,12 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x49eb9c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x49eba6*/
+    LOBYTE(this->IsInitialized) = 0; /*0x49eba6*/
     if ( a3 ) /*0x49ebac*/
       v4 = a3; /*0x49ebc2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x49ebbe*/
-    LOBYTE(this->m_C) = 1; /*0x49ebc6*/
+    LOBYTE(this->IsInitialized) = 1; /*0x49ebc6*/
     if ( v4 ) /*0x49ebca*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x49ebd5*/
@@ -1023,7 +1023,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x49ebe3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49ebe9*/
           ++i; /*0x49ebee*/
-        if ( BYTE1(this->m_C) ) /*0x49ebfb*/
+        if ( BYTE1(this->IsInitialized) ) /*0x49ebfb*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ec06*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x49ec0e*/
@@ -1031,7 +1031,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49ec17*/
       this->m_8 = a2; /*0x49ec1f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x49ec22*/
+      BYTE1(this->IsInitialized) = a3 == 0; /*0x49ec22*/
       return 1; /*0x49ec28*/
     }
     else
@@ -1053,12 +1053,12 @@ namespace gamemd {
 void DynamicVectorClass_PAD_16::Remove(void *a1_1)
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x49ec4d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->IsInitialized) ) /*0x49ec4d*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ec53*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49ec5b*/
   }
-  BYTE1(this->m_C) = 0; /*0x49ec5e*/
+  BYTE1(this->IsInitialized) = 0; /*0x49ec5e*/
   this->m_8 = 0; /*0x49ec61*/
 
 }
@@ -1073,7 +1073,7 @@ int DynamicVectorClass_PAD_16::GetSize(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x49ec70*/
+  if ( !LOBYTE(this->IsInitialized) ) /*0x49ec70*/
     return 0; /*0x49ec78*/
   m_8 = (int)(this->m_8); /*0x49ec7e*/
   result = 0; /*0x49ec81*/
@@ -1094,7 +1094,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_PAD_16::GetCapacity(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x49ecb0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x49ecb0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x49ecc5*/
   else
     return 0; /*0x49ecb7*/
@@ -1114,12 +1114,12 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x49ed3c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x49ed42*/
+    LOBYTE(this->IsInitialized) = 0; /*0x49ed42*/
     if ( a3 ) /*0x49ed48*/
       v4 = a3; /*0x49ed5e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x49ed5a*/
-    LOBYTE(this->m_C) = 1; /*0x49ed62*/
+    LOBYTE(this->IsInitialized) = 1; /*0x49ed62*/
     if ( !v4 ) /*0x49ed66*/
       return 0; /*0x49edda*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x49ed68*/
@@ -1129,7 +1129,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x49ed76*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49ed7c*/
         ++i; /*0x49ed81*/
-      if ( BYTE1(this->m_C) ) /*0x49ed8e*/
+      if ( BYTE1(this->IsInitialized) ) /*0x49ed8e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ed99*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x49eda1*/
@@ -1137,7 +1137,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49edaa*/
     this->m_8 = a2; /*0x49edb2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x49edb5*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x49edb5*/
   }
   else
   {
@@ -1183,12 +1183,12 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
 
   v3 = *(void **)&Block->m_1[3]; /*0x49ee13*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x49ee16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x49ee30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x49ee3b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x49ee3b*/
   Block->m_8 = 0; /*0x49ee41*/
   if ( (a2 & 1) != 0 ) /*0x49ee48*/
     __3_YAXPAX_Z(Block); /*0x49ee4b*/
@@ -1206,12 +1206,12 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
 
   v3 = *(void **)&Block->m_1[3]; /*0x49eff3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClassDynamicVectorClass; /*0x49eff6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x49f000*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x49f000*/
   {
     __3_YAXPAX_Z(v3); /*0x49f008*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x49f010*/
   }
-  BYTE1(Block->m_C) = 0; /*0x49f01b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x49f01b*/
   Block->m_8 = 0; /*0x49f021*/
   if ( (a2 & 1) != 0 ) /*0x49f028*/
     __3_YAXPAX_Z(Block); /*0x49f02b*/
@@ -1229,12 +1229,12 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 
   v3 = *(void **)&Block->m_1[3]; /*0x49f043*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClassDynamicVectorClass; /*0x49f046*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x49f050*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x49f050*/
   {
     __3_YAXPAX_Z(v3); /*0x49f058*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x49f060*/
   }
-  BYTE1(Block->m_C) = 0; /*0x49f06b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x49f06b*/
   Block->m_8 = 0; /*0x49f071*/
   if ( (a2 & 1) != 0 ) /*0x49f078*/
     __3_YAXPAX_Z(Block); /*0x49f07b*/
@@ -1251,12 +1251,12 @@ void DynamicVectorClass_flat::Destroy(void *a1)
   int result; // eax
 
   result = *(unsigned int *)&this->m_1[3]; /*0x50ea06*/
-  if ( result && BYTE1(this->m_C) ) /*0x50ea0d*/
+  if ( result && BYTE1(this->IsInitialized) ) /*0x50ea0d*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x50ea13*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x50ea1b*/
   }
-  BYTE1(this->m_C) = 0; /*0x50ea1e*/
+  BYTE1(this->IsInitialized) = 0; /*0x50ea1e*/
   this->m_8 = 0; /*0x50ea21*/
   return result; /*0x50ea24*/
 
@@ -1271,12 +1271,12 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a
 
   v3 = *(void **)&Block->m_1[3]; /*0x525013*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x525016*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x525020*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x525020*/
   {
     __3_YAXPAX_Z(v3); /*0x525028*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x525030*/
   }
-  BYTE1(Block->m_C) = 0; /*0x52503b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x52503b*/
   Block->m_8 = 0; /*0x525041*/
   if ( (a2 & 1) != 0 ) /*0x525048*/
     __3_YAXPAX_Z(Block); /*0x52504b*/
@@ -1293,12 +1293,12 @@ void DynamicVectorClass_flat::Destroy_Alt()
   int result; // eax
 
   result = *(unsigned int *)&this->m_1[3]; /*0x5251c6*/
-  if ( result && BYTE1(this->m_C) ) /*0x5251cd*/
+  if ( result && BYTE1(this->IsInitialized) ) /*0x5251cd*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5251d3*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x5251db*/
   }
-  BYTE1(this->m_C) = 0; /*0x5251de*/
+  BYTE1(this->IsInitialized) = 0; /*0x5251de*/
   this->m_8 = 0; /*0x5251e1*/
   return result; /*0x5251e4*/
 
@@ -1313,7 +1313,7 @@ int  DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x5251f0*/
+  if ( !LOBYTE(this->IsInitialized) ) /*0x5251f0*/
     return 0; /*0x5251f8*/
   m_8 = this->m_8; /*0x5251fe*/
   result = 0; /*0x525201*/
@@ -1334,7 +1334,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_AnimType::Remove(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x525230*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x525230*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x525245*/
   else
     return 0; /*0x525237*/
@@ -1380,12 +1380,12 @@ DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(unsigned int * Block,
 
   v3 = *(void **)&Block->m_1[3]; /*0x5252b3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5252b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5252c0*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x5252c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5252c8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x5252d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5252db*/
+  BYTE1(Block->IsInitialized) = 0; /*0x5252db*/
   Block->m_8 = 0; /*0x5252e1*/
   if ( (a2 & 1) != 0 ) /*0x5252e8*/
     __3_YAXPAX_Z(Block); /*0x5252eb*/
@@ -1399,7 +1399,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_SubzoneConn::Remove(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x588cc0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x588cc0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x588cd5*/
   else
     return 0; /*0x588cc7*/
@@ -1416,12 +1416,12 @@ DynamicVector * DynamicVectorClass_SubzoneConn::Add(unsigned int * Block, char a
 
   v3 = *(void **)&Block->m_1[3]; /*0x5890b3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5890b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5890c0*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x5890c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5890c8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x5890d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5890db*/
+  BYTE1(Block->IsInitialized) = 0; /*0x5890db*/
   *(unsigned int *)&Block->__pad_5[3] = 0; /*0x5890e1*/
   if ( (a2 & 1) != 0 ) /*0x5890e8*/
     __3_YAXPAX_Z(Block); /*0x5890eb*/
@@ -1491,12 +1491,12 @@ void DynamicVectorClass_ptr_NodeNameType::ddtor(void *a1_1)
 
   v2 = *(void **)&this->m_1[3]; /*0x5c5076*/
   this->m_10 = 0; /*0x5c5079*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x5c5080*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x5c5080*/
   {
     __3_YAXPAX_Z(v2); /*0x5c5086*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x5c508e*/
   }
-  BYTE1(this->m_C) = 0; /*0x5c5091*/
+  BYTE1(this->IsInitialized) = 0; /*0x5c5091*/
   this->m_8 = 0; /*0x5c5094*/
 
 }
@@ -1507,7 +1507,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_ptr_NodeNameType::Get(int a2, void *a2_2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x5c50a0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x5c50a0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5c50b5*/
   else
     return 0; /*0x5c50a7*/
@@ -1568,12 +1568,12 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5c551c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5c5522*/
+    LOBYTE(this->IsInitialized) = 0; /*0x5c5522*/
     if ( a3 ) /*0x5c5528*/
       v4 = a3; /*0x5c553e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5c553a*/
-    LOBYTE(this->m_C) = 1; /*0x5c5542*/
+    LOBYTE(this->IsInitialized) = 1; /*0x5c5542*/
     if ( !v4 ) /*0x5c5546*/
       return 0; /*0x5c55ba*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x5c5548*/
@@ -1583,7 +1583,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
         m_8 = a2; /*0x5c5556*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5c555c*/
         ++i; /*0x5c5561*/
-      if ( BYTE1(this->m_C) ) /*0x5c556e*/
+      if ( BYTE1(this->IsInitialized) ) /*0x5c556e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5c5579*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x5c5581*/
@@ -1591,7 +1591,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x5c558a*/
     this->m_8 = a2; /*0x5c5592*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5c5595*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x5c5595*/
   }
   else
   {
@@ -1637,12 +1637,12 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(unsigned int * Block, c
 
   v3 = *(void **)&Block->m_1[3]; /*0x5c58f3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5c58f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5c5900*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x5c5900*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5908*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x5c5910*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5c591b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x5c591b*/
   Block->m_8 = 0; /*0x5c5921*/
   if ( (a2 & 1) != 0 ) /*0x5c5928*/
     __3_YAXPAX_Z(Block); /*0x5c592b*/
@@ -1686,12 +1686,12 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20()
 
   v2 = *(void **)&this->m_1[3]; /*0x627d26*/
   this->m_10 = 0; /*0x627d29*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x627d30*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x627d30*/
   {
     __3_YAXPAX_Z(v2); /*0x627d36*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x627d3e*/
   }
-  BYTE1(this->m_C) = 0; /*0x627d41*/
+  BYTE1(this->IsInitialized) = 0; /*0x627d41*/
   this->m_8 = 0; /*0x627d44*/
 
 }
@@ -1702,7 +1702,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetCount(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x627d50*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x627d50*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x627d65*/
   else
     return 0; /*0x627d57*/
@@ -1719,12 +1719,12 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80()
 
   v2 = *(void **)&this->m_1[3]; /*0x627d86*/
   this->m_10 = 0; /*0x627d89*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x627d90*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x627d90*/
   {
     __3_YAXPAX_Z(v2); /*0x627d96*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x627d9e*/
   }
-  BYTE1(this->m_C) = 0; /*0x627da1*/
+  BYTE1(this->IsInitialized) = 0; /*0x627da1*/
   this->m_8 = 0; /*0x627da4*/
 
 }
@@ -1735,7 +1735,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x627db0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x627db0*/
     return (a2 - *(unsigned int *)&this->m_1[3]) / 3u; /*0x627dce*/
   else
     return 0; /*0x627db7*/
@@ -1770,12 +1770,12 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int 
 
   if ( a2 ) /*0x627f9c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x627fa2*/
+    LOBYTE(this->IsInitialized) = 0; /*0x627fa2*/
     if ( a3 ) /*0x627fa8*/
       v4 = a3; /*0x627fbe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x627fba*/
-    LOBYTE(this->m_C) = 1; /*0x627fc2*/
+    LOBYTE(this->IsInitialized) = 1; /*0x627fc2*/
     if ( !v4 ) /*0x627fc6*/
       return 0; /*0x62803a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x627fc8*/
@@ -1785,7 +1785,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int 
         m_8 = a2; /*0x627fd6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x627fdc*/
         ++i; /*0x627fe1*/
-      if ( BYTE1(this->m_C) ) /*0x627fee*/
+      if ( BYTE1(this->IsInitialized) ) /*0x627fee*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x627ff9*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x628001*/
@@ -1793,7 +1793,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int 
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x62800a*/
     this->m_8 = a2; /*0x628012*/
-    BYTE1(this->m_C) = a3 == 0; /*0x628015*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x628015*/
   }
   else
   {
@@ -1881,12 +1881,12 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
   v3 = *(void **)&Block->m_1[3]; /*0x628643*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x628646*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x628650*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x628650*/
   {
     __3_YAXPAX_Z(v3); /*0x628658*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x628660*/
   }
-  BYTE1(Block->m_C) = 0; /*0x62866b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x62866b*/
   Block->m_8 = 0; /*0x628671*/
   if ( (a2 & 1) != 0 ) /*0x628678*/
     __3_YAXPAX_Z(Block); /*0x62867b*/
@@ -1943,12 +1943,12 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(unsigned i
   {
     v11 = *(void **)&Block->m_1[3]; /*0x6286f5*/
     *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x6286fc*/
-    if ( v11 && BYTE1(Block->m_C) ) /*0x628704*/
+    if ( v11 && BYTE1(Block->IsInitialized) ) /*0x628704*/
     {
       __3_YAXPAX_Z(v11); /*0x62870a*/
       *(unsigned int *)&Block->m_1[3] = 0; /*0x628712*/
     }
-    BYTE1(Block->m_C) = 0; /*0x628719*/
+    BYTE1(Block->IsInitialized) = 0; /*0x628719*/
     Block->m_8 = 0; /*0x62871e*/
     if ( (a2 & 1) != 0 ) /*0x628721*/
       __3_YAXPAX_Z(Block); /*0x628724*/
@@ -1967,12 +1967,12 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
   v3 = *(void **)&Block->m_1[3]; /*0x6287b3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6287b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6287c0*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x6287c0*/
   {
     __3_YAXPAX_Z(v3); /*0x6287c8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x6287d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6287db*/
+  BYTE1(Block->IsInitialized) = 0; /*0x6287db*/
   Block->m_8 = 0; /*0x6287e1*/
   if ( (a2 & 1) != 0 ) /*0x6287e8*/
     __3_YAXPAX_Z(Block); /*0x6287eb*/
@@ -1990,12 +1990,12 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor(void *a1_1
 
   v2 = *(void **)&this->m_1[3]; /*0x628806*/
   this->m_10 = 0; /*0x628809*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x628810*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x628810*/
   {
     __3_YAXPAX_Z(v2); /*0x628816*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x62881e*/
   }
-  BYTE1(this->m_C) = 0; /*0x628821*/
+  BYTE1(this->IsInitialized) = 0; /*0x628821*/
   this->m_8 = 0; /*0x628824*/
 
 }
@@ -2006,7 +2006,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Get(int a2, void *a2_2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x628830*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x628830*/
     return (a2 - *(unsigned int *)&this->m_1[3]) / 0x104u; /*0x62884e*/
   else
     return 0; /*0x628837*/
@@ -2067,12 +2067,12 @@ DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(unsigned int * B
 
   v3 = *(void **)&Block->m_1[3]; /*0x67c063*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x67c066*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x67c070*/
+  if ( v3 && BYTE1(Block->IsInitialized) ) /*0x67c070*/
   {
     __3_YAXPAX_Z(v3); /*0x67c078*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x67c080*/
   }
-  BYTE1(Block->m_C) = 0; /*0x67c08b*/
+  BYTE1(Block->IsInitialized) = 0; /*0x67c08b*/
   Block->m_8 = 0; /*0x67c091*/
   if ( (a2 & 1) != 0 ) /*0x67c098*/
     __3_YAXPAX_Z(Block); /*0x67c09b*/

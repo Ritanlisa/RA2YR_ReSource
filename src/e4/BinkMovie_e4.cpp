@@ -515,7 +515,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
   {
     v7 = (*(    v7 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
     v8 = (*(    v8 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 128)))(aP1); 
-    BinkMovie_field_0x8 = (unsigned int)this->BinkMovie_field_0x8; /*0x433232*/
+    BinkMovie_field_0x8 = (unsigned int)this->q008; /*0x433232*/
     if ( a5 ) /*0x433237*/
       BinkMovie_field_0x8 |= 0x80000000; /*0x433239*/
     BinkCopyToBuffer(this->BinkMovie_field_0x4[0], v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
@@ -926,7 +926,7 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
         v7 = *(unsigned int **)(*(unsigned int *)(v4 + 4) + 4 * v5); /*0x6c9c88*/
         if ( *v7 > aP1 ) /*0x6c9c8d*/
           break; /*0x6c9c8d*/
-        this->BinkMovie_field_0x8 = v7; /*0x6c9c90*/
+        this->q008 = v7; /*0x6c9c90*/
         this->BinkMovie_field_0x4[0] = v5 + 1; /*0x6c9c93*/
         BinkMovie_field_0xC = (void (*)(void))this->BinkMovie_field_0xC; /*0x6c9c96*/
         if ( BinkMovie_field_0xC ) /*0x6c9c9b*/
@@ -943,13 +943,13 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
       }
       while ( v5 < *(unsigned int *)(*(unsigned int *)this->__pad_0 + 16) ); /*0x6c9cb3*/
     }
-    result = (int)this->BinkMovie_field_0x8; /*0x6c9cb5*/
+    result = (int)this->q008; /*0x6c9cb5*/
     if ( result ) /*0x6c9cba*/
     {
       if ( aP1 >= *(unsigned int *)result + *(unsigned int *)(result + 4) ) /*0x6c9cc5*/
       {
         result = (int)this->BinkMovie_field_0xC; /*0x6c9cc7*/
-        this->BinkMovie_field_0x8 = 0; /*0x6c9cca*/
+        this->q008 = 0; /*0x6c9cca*/
         if ( !result ) /*0x6c9ccf*/
         {
           v9 = this->BinkMovie_field_0x10[0]; /*0x6c9cd1*/
@@ -961,7 +961,7 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
             v6 = 1; /*0x6c9ce7*/
             *(unsigned int *)v11->__pad_0 = *BinkMovie_field_0x14; /*0x6c9ceb*/
             v11->BinkMovie_field_0x4[0] = BinkMovie_field_0x14[1]; /*0x6c9cf0*/
-            v11->BinkMovie_field_0x8 = (void *)BinkMovie_field_0x14[2]; /*0x6c9cf6*/
+            v11->q008 = (void *)BinkMovie_field_0x14[2]; /*0x6c9cf6*/
             result = BinkMovie_field_0x14[3]; /*0x6c9cf9*/
             v11->BinkMovie_field_0xC = (void *)result; /*0x6c9cfc*/
             *BinkMovie_field_0x14 = 0; /*0x6c9cff*/

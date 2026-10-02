@@ -98,7 +98,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
   HIBYTE(this->SuperClass_field_0x6C) = 0; /*0x6caf07*/
   LOBYTE(this->SuperClass_field_0x70) = 0; /*0x6caf0a*/
   this->SuperClass_field_0x7C = (unsigned int)((void *)-1); /*0x6caf0d*/
-  this->SuperClass_field_0x0 = (unsigned int)(&vt_SuperClass); /*0x6caf10*/
+  this->vtable1 = (unsigned int)(&vt_SuperClass); /*0x6caf10*/
   this->SuperClass_field_0x4 = (unsigned int)(&vt_SuperClass); /*0x6caf16*/
   this->SuperClass_field_0x8 = (unsigned int)(&vt_SuperClass); /*0x6caf1d*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_SuperClass); /*0x6caf24*/
@@ -1208,7 +1208,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x6cdf0e*/
-      aP0->SuperClass_field_0x0 = &vt_SuperClass; /*0x6cdf13*/
+      aP0->vtable1 = &vt_SuperClass; /*0x6cdf13*/
       aP0->SuperClass_field_0x4 = &vt_SuperClass; /*0x6cdf19*/
       aP0->SuperClass_field_0x8 = &vt_SuperClass; /*0x6cdf20*/
       *(unsigned int *)aP0->__pad_C = &vt_SuperClass; /*0x6cdf27*/

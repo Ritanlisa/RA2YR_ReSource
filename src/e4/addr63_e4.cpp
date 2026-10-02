@@ -1382,7 +1382,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
     {
       v10 = (ScriptAction *)*((unsigned int *)stru_AC4B30.Array_field_0x4 + v9); /*0x6381a9*/
       if ( ((ScriptAction *)(v10))->GetActionCoordinates(v39, v40, v41) /*0x6381d5*/
-        && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->ScriptAction_field_0x18[0]) )
+        && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->u32_18[0]) )
       {
         v11 = (TeamClass *)((Function *)(v10))->Method_6342D0(0); /*0x6381db*/
         LeaderIndex = ((TeamClass *)(v11))->GetLeaderIndex(); /*0x6381e2*/

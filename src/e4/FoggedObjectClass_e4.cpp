@@ -851,7 +851,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   if ( a2 ) /*0x4d2bce*/
   {
     v5 = a3; /*0x4d2bd4*/
-    LOBYTE(this->m_C) = 0; /*0x4d2bd8*/
+    LOBYTE(this->qC) = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( a2 - 1 >= 0 ) /*0x4d2c1a*/
@@ -897,7 +897,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         v5 = 0; /*0x4d2c11*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4d2c33*/
+    LOBYTE(this->qC) = 1; /*0x4d2c33*/
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4d2c3d*/
@@ -922,7 +922,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         while ( v11 ); /*0x4d2c75*/
         v3 = a2; /*0x4d2c77*/
       }
-      if ( BYTE1(this->m_C) ) /*0x4d2c7d*/
+      if ( BYTE1(this->qC) ) /*0x4d2c7d*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4d2c86*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x4d2c8e*/
@@ -930,7 +930,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     }
     *(unsigned int *)&this->m_1[3] = v5; /*0x4d2c99*/
     *(unsigned int *)&this->__pad_5[3] = v3; /*0x4d2c9f*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4d2ca2*/
+    BYTE1(this->qC) = a3 == 0; /*0x4d2ca2*/
   }
   else
   {
@@ -1114,12 +1114,12 @@ DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x4d2d63*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4d2d70*/
+  if ( v3 && BYTE1(Block->qC) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x4d2d80*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4d2d8b*/
+  BYTE1(Block->qC) = 0; /*0x4d2d8b*/
   *(unsigned int *)&Block->__pad_5[3] = 0; /*0x4d2d91*/
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
     __3_YAXPAX_Z(Block); /*0x4d2d9b*/
@@ -1212,12 +1212,12 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e05cc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4e05d6*/
+    LOBYTE(this->qC) = 0; /*0x4e05d6*/
     if ( a3 ) /*0x4e05dc*/
       v4 = a3; /*0x4e05f2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e05ee*/
-    LOBYTE(this->m_C) = 1; /*0x4e05f6*/
+    LOBYTE(this->qC) = 1; /*0x4e05f6*/
     if ( v4 ) /*0x4e05fa*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x4e0605*/
@@ -1227,7 +1227,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4e0613*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e0619*/
           ++i; /*0x4e061e*/
-        if ( BYTE1(this->m_C) ) /*0x4e062b*/
+        if ( BYTE1(this->qC) ) /*0x4e062b*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e0636*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x4e063e*/
@@ -1235,7 +1235,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x4e0647*/
       this->m_8 = a2; /*0x4e064f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4e0652*/
+      BYTE1(this->qC) = a3 == 0; /*0x4e0652*/
       return 1; /*0x4e0658*/
     }
     else
@@ -1257,12 +1257,12 @@ namespace gamemd {
 void FoggedObjectClass_42::ddtor(void *a1_1, void *a2_1)
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e067d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->qC) ) /*0x4e067d*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e0683*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4e068b*/
   }
-  BYTE1(this->m_C) = 0; /*0x4e068e*/
+  BYTE1(this->qC) = 0; /*0x4e068e*/
   this->m_8 = 0; /*0x4e0691*/
 
 }
@@ -1277,7 +1277,7 @@ int FoggedObjectClass_42::Read(unsigned int * a2, void *a2_2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4e06a0*/
+  if ( !LOBYTE(this->qC) ) /*0x4e06a0*/
     return 0; /*0x4e06a8*/
   m_8 = this->m_8; /*0x4e06ae*/
   result = 0; /*0x4e06b1*/
@@ -1298,7 +1298,7 @@ namespace gamemd {
 unsigned int FoggedObjectClass_42::Write(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x4e06e0*/
+  if ( LOBYTE(this->qC) ) /*0x4e06e0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e06f5*/
   else
     return 0; /*0x4e06e7*/
@@ -1364,12 +1364,12 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
 
   v3 = *(void **)&Block->m_1[3]; /*0x4e0ce3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4e0ce6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
+  if ( v3 && BYTE1(Block->qC) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x4e0d00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4e0d0b*/
+  BYTE1(Block->qC) = 0; /*0x4e0d0b*/
   Block->m_8 = 0; /*0x4e0d11*/
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
     __3_YAXPAX_Z(Block); /*0x4e0d1b*/

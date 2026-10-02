@@ -425,7 +425,7 @@ int Mission::SetAndCall(int a2, int a3, void *a3_2)
 
   int (**MouseClass_field_0x0)(int, int); // edx
 
-  MouseClass_field_0x0 = (int (**)(int, int))this->MouseClass_field_0x0; /*0x5bda84*/
+  MouseClass_field_0x0 = (int (**)(int, int))this->q000; /*0x5bda84*/
   *((unsigned int *)this + 5465) = a2; /*0x5bda8d*/
   return MouseClass_field_0x0[19](a2, a3); /*0x5bda96*/
 

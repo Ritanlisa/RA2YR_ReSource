@@ -702,7 +702,7 @@ LABEL_14:
             ParticleTypeClass_field_0x2C8 = v3->ParticleTypeClass_field_0x2C8; /*0x64574e*/
             v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->vtable1 + 1); /*0x645751*/
             v11 = 3 * (unsigned int)ParticleTypeClass_field_0x2C8; /*0x645754*/
-            ParticleTypeClass_field_0x2BC = v3->ParticleTypeClass_field_0x2BC; /*0x645757*/
+            ParticleTypeClass_field_0x2BC = v3->strength; /*0x645757*/
             v3->ParticleTypeClass_field_0x2C8 = v10; /*0x64575a*/
             v13 = (char *)ParticleTypeClass_field_0x2BC + v11; /*0x64575d*/
             *(unsigned short *)v13 = a2; /*0x645764*/
@@ -777,12 +777,12 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
       ++v4; /*0x6459f6*/
     }
   }
-  ParticleTypeClass_field_0x2BC = Block->ParticleTypeClass_field_0x2BC; /*0x645a08*/
+  ParticleTypeClass_field_0x2BC = Block->strength; /*0x645a08*/
   Block->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && Block->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
-    Block->ParticleTypeClass_field_0x2BC = 0; /*0x645a2f*/
+    Block->strength = 0; /*0x645a2f*/
   }
   Block->__pad_2C0[5] = 0; /*0x645a3b*/
   *(unsigned int *)Block->__pad_2C0 = 0; /*0x645a42*/
@@ -949,7 +949,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
         {
           if ( (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)aP1 + 16))( /*0x6457fa*/
                  aP1,
-                 (char *)aP0->ParticleTypeClass_field_0x2BC + v6,
+                 (char *)aP0->strength + v6,
                  3,
                  0) < 0 )
             break; /*0x6457fa*/
