@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioTimer {
-    int * DecrementAll();
+    static int * DecrementAll();
 };
 
 } // namespace gamemd

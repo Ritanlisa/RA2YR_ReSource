@@ -513,7 +513,7 @@ struct MapClass {
     MapClass * * GrowLayer(int a2, int a3, int a4);
     MapClass * * RemoveTriggerRef(AbstractClass * aP1, int a3);
     MapClass * Destru_vt04(char a2);
-    MapClass *  SetObstruction(int16_t * a0, MapClass * aP1);
+    static MapClass *  SetObstruction(int16_t * a0, MapClass * aP1);
     ObjectClass * * CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8);
     ObjectClass * * LoadFileData(void *a1);
     TechnoTypeClass * * PostProcessReveal(char a2);
@@ -557,7 +557,7 @@ struct MapClass {
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int  TriggerEVA(IUnknown * aP0);
-    int UnselectAll_ClearLimboLaunchers(void *a1);
+    static int UnselectAll_ClearLimboLaunchers(void *a1);
     int UpdateLightingPostProcess();
     int isCellShrouded(uint16_t a2);
     int isLocationShrouded(uint16_t a2);

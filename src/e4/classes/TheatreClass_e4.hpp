@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TheatreClass {
-    int InitView();
+    static int InitView();
 };
 
 } // namespace gamemd

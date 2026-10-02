@@ -19,9 +19,9 @@ struct StreamClass {
     unsigned int IsInactive;
 // --- flat members (END) ---
     BOOLIsInactive(void * aP0);
-    char GetDirty(int a1);
+    static char GetDirty(int a1);
     int ClearDirty(unsigned char * a1);
-    int ResetPosition(LocomotionClass * aP0, int a2);
+    static int ResetPosition(LocomotionClass * aP0, int a2);
     int Set(unsigned int *aP1);
     int Set2(unsigned int * a2);
     int SetDirty(unsigned char * a1);

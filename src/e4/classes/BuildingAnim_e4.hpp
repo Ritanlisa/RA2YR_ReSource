@@ -9,7 +9,7 @@ struct BuildingAnim {
 // --- flat members (BEGIN) ---
     char BuildingAnim_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int GetType();
+    static int GetType();
 };
 
 } // namespace gamemd

@@ -502,7 +502,7 @@ struct ScenarioClass {
     unsigned int Timer;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
-    ScenarioClass * * CopyStartPositions(void *a1);
+    static ScenarioClass * * CopyStartPositions(void *a1);
     TimerStruct * * Constructor(void *a1, void *a2, void *a3);
     char ClearFlag();
     char MissionStubReturnZero2(MPCooperative * aP0);

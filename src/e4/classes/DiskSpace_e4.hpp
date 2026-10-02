@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct DiskSpace {
-    DWORD CheckAvailable();
+    static DWORD CheckAvailable();
 };
 
 } // namespace gamemd

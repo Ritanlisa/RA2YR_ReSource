@@ -91,7 +91,7 @@ struct GameClass {
     void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     int initPlayerData(const char **a2);  // 0x69AE10
-    ObjectClass * * Shutdown(void *a1_1);  // 0x6BEC60
+    static ObjectClass * * Shutdown(void *a1_1);  // 0x6BEC60
     int ReadVersionFile();  // 0x74F960
     int ReadVersionFile2();  // 0x74FA20
     void ReadVersionString();  // 0x74FC80

@@ -95,7 +95,7 @@ for p in hpp:
         encoding='utf-8', errors='replace').split('\n'))
     changed = False
     for i, ln in enumerate(lines):
-        m = re.match(r'^(\s*)void\s+(~?([A-Za-z_]\w*))\s*\(', ln)
+        m = re.match(r'^(\s*)(?:extern\s+)?void\s+(~?([A-Za-z_]\w*))\s*\(', ln)
         if not m:
             continue
         short = m.group(3)

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct FileTree {
-    void CleanupAll();
+    static void CleanupAll();
 };
 
 } // namespace gamemd

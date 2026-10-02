@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AssetClass {
-    char ReleaseAndReload();
+    static char ReleaseAndReload();
 };
 
 } // namespace gamemd

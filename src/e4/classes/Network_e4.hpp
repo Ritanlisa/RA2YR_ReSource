@@ -194,8 +194,8 @@ struct Network {
     HWND handleTimeout(HWND hDlg);  // 0x5EFF70
     AbstractClass * * handleDisconnect(IUnknown * aP1);  // 0x664390
     int checkTimeout(int a2);  // 0x6643E0
-    bool IsMultiplayerActive();  // 0x77D940
-    char IsLobbyFeature();  // 0x77D970
+    static bool IsMultiplayerActive();  // 0x77D940
+    static char IsLobbyFeature();  // 0x77D970
     static double ShutdownInterface(...);  // C2597 interim stub
 };
 } // namespace gamemd

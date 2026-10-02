@@ -314,7 +314,7 @@ struct ObjectTypeClass {
     int DeserializeArrays();
     int FindByName();
     int FreeLoaderBuffer();
-    int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
+    static int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
     int LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2);
     int ReadBool3(INIClass * aP1, unsigned char * a2, void * a4);
     int ReadDestroyAnim();

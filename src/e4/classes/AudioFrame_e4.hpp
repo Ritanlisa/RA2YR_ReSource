@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioFrame {
-    int CounterInc();
+    static int CounterInc();
 };
 
 } // namespace gamemd

@@ -110,7 +110,7 @@ struct Dialog {
     BOOL GetField(void *a1_1, void *a2_1);  // 0x775BA0
     int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
-    int FindGameUI();  // 0x5E26C0
+    static int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
     HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);    // 0x5E2790
     LRESULT ShowPlayerName(void *a1_1);  // 0x5E2F60

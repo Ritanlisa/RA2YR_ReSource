@@ -1885,8 +1885,8 @@ struct HouseClass {
     int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
     int QueryInterface_Dispatch();
     int QueryInterface_Helper();
-    int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
-    int RevealShroudForAllies(char a1, int a2);
+    static int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
+    static int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
     int UpdatePower();
     int sub_5092F0(int a2);

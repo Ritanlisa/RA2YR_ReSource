@@ -26,7 +26,7 @@ struct FileSystem {
 // --- flat members (END) ---
     int ProcessNextFileExtension();
     void CleanupTrees();
-    void InitPipShapes();
+    static void InitPipShapes();
     static double FlushTempFiles(...);  // C2597 interim stub
     int readFile();  // 0x628740
 };

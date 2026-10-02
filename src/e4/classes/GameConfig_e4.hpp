@@ -26,7 +26,7 @@ struct GameConfig {
 // --- flat members (END) ---
      void Constructor();  // 0x5D67B0
     int  BuildChecksum(char * Buffer);  // 0x77E7A0
-    char * ComputeCRC();
+    static char * ComputeCRC();
     int ComputeHash();
 };
 

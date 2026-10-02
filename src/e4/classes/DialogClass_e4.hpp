@@ -27,7 +27,7 @@ struct DialogClass {
 // --- flat members (END) ---
     ATOMRegisterWinClasses();
     int GetFlag(void *a1);
-    int Reposition(int hWnd, int a2);
+    static int Reposition(int hWnd, int a2);
 };
 
 } // namespace gamemd

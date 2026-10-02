@@ -22,7 +22,7 @@ struct AudioMixer {
     unsigned int AudioStream;
 // --- flat members (END) ---
     int Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
-    int PlayBuffer(unsigned int * a1, unsigned int a2);
+    static int PlayBuffer(unsigned int * a1, unsigned int a2);
     int PlaySample(void *a1);
     int Pump();
     int RequestOrEndBuffer(int a1, unsigned int a2);

@@ -688,7 +688,7 @@ struct InfantryClass {
     unsigned int unused_6EC;  // 0x6EC
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
-    int ScanTarget(int * a1);
+    static int ScanTarget(int * a1);
     void* Destruct(IUnknown * a1, AbstractClass * edx0);
     static double IsInBounds(...);  // C2597 interim stub
      double Construct(...);  // C2597 interim stub

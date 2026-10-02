@@ -130,7 +130,7 @@ struct Game {
     CellStruct * * SerializeGameSaveState();  // 0x67F9C0
     int validateScenario(unsigned int *a2);  // 0x680F70
     void EncodeGameSetupState(char * Buffer);  // 0x77E430
-    Coord * * ProcessIdle(void *a1_1);  // 0x77F900
+    static Coord * * ProcessIdle(void *a1_1);  // 0x77F900
     AbstractClass * * SetupWOLTournament();  // 0x7A2330
     char LoadMultiplayerScoreAssets();  // 0x72D730
     int CreateAIPlayer();  // 0x796DE0

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Cliff {
-    char __stdcall ProcessTransitions(int a1, int a2);
+    static char __stdcall ProcessTransitions(int a1, int a2);
 };
 
 } // namespace gamemd

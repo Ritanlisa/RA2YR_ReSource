@@ -160,15 +160,15 @@ struct Cell {
     int Exists(MouseClass * aP1);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
+    static AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
     ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
     int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
-    HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
+    static HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     void * Clear(void *a1_1);  // 0x5A9940
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     void* CreateCrater(IUnknown aP2, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790
-    CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
+    static CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
     unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
     BOOL IsPassableOffset(int aP1);  // 0x4870D0

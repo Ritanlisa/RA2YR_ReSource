@@ -70,7 +70,7 @@ struct NetworkLobby {
     int InitLobbyDropdowns(SessionClass * hDlg);  // 0x5E9E00
     void * Dispatch();  // 0x5EA2A0
     int SetupPlayerSlotControls(HWND hDlg);  // 0x5EB660
-    char FillOptionCombo();  // 0x5EE3A0
+    static char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290
     wchar_t * DeleteAndZero();  // 0x5EDFC0
     int GetPlayerCount(char a1);  // 0x5DA080

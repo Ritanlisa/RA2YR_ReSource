@@ -66,7 +66,7 @@ struct GameSettings {
     void* ptr_10;
 // --- flat members (END) ---
     short Read(void *a1, void *a2);
-    char * FindFlagged();
+    static char * FindFlagged();
     void * ParseNetworkAddress();
     void SetScoreVolume(int volume, void *a2, void *a3);
 };

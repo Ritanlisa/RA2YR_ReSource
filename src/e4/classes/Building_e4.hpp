@@ -39,6 +39,6 @@ struct Building {
     AnimClass * * ComputePosition(int *aP1);  // 0x425D10
     int GetNthOfType();  // 0x485020
     int GetRenderType();  // 0x772A90
-    unsigned int * GetFoundationSize(unsigned int * a1, unsigned int a2);  // 0x69E7E0
+    static unsigned int * GetFoundationSize(unsigned int * a1, unsigned int a2);  // 0x69E7E0
 };
 } // namespace gamemd

@@ -101,9 +101,9 @@ struct Audio {
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
     void Shutdown(void *a1_1);  // 0x406D40
     static int IsSoundEnabled();  // 0x407000
-    void * GetEnabled();  // 0x407010
+    static void * GetEnabled();  // 0x407010
     int GetFlag(void *a1_1);  // 0x407070
-    int Callback();  // 0x4093B0
+    static int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     static int IsPlaying(...);  // 0x7529E0
     static double SetScoreVolume(...);  // C2597 interim stub

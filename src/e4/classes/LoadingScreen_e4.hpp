@@ -29,11 +29,11 @@ struct LoadingScreen {
     char * GetOverlayImage(ScenarioClass * aP1);
     char FreeResources3();
     char Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
-    char FreeResources(void *a1);
+    static char FreeResources(void *a1);
     int GetColorScheme();
     int ReleaseAnimObjects(char * Source);
     void * * LoadSHPs();
-    char CleanupObjects(void *a1);
+    static char CleanupObjects(void *a1);
     void DestroyFileTrees();
     void FreeResources2();
 };

@@ -13,7 +13,7 @@ struct SkirmishDialog {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     int ResizeDialogAndEnum(void *a1, void *a2);
-     double Show(...);  // C2597 interim stub
+     static double Show(...);  // C2597 interim stub
     static double FillComboBoxes(...);  // C2597 interim stub
 };
 

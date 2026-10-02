@@ -136,7 +136,7 @@ struct RadioClass {
     int LoadState(int aP1, int aP2);
     int PowerDrainUpdate(AbstractClass * aP1);
     int ProcessCmd();
-    int SaveState(int * a0, RadioClass * aP1, int aP2);
+    static int SaveState(int * a0, RadioClass * aP1, int aP2);
     _DWORD * Release(void *a1);
     void SetLinkCount(int a2);
      double Constructor(...);  // C2597 interim stub

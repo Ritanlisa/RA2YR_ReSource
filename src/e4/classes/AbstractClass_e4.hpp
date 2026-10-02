@@ -211,16 +211,16 @@ struct AbstractClass {
     RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
     GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
     FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
-    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
+    static int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     unsigned int updateLayer();  // 0x425520
     int GetType();  // 0x4CA160
     int checkPassability();  // 0x50E370
     void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
-    int GetVtable3(AbstractClass * aP0);  // 0x410220
-    int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
+    static int GetVtable3(AbstractClass * aP0);  // 0x410220
+    static int GenerateUniqueID(int a1);  // 0x410230
+    static int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -277,7 +277,7 @@ struct AbstractClass {
     int COMStub_Return0_93();  // 0x5F43A0
     int COMStub_Return0_104();  // 0x5F4400
     int COMStub_Return0_105();  // 0x5F6B50
-    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5F9950
+    static int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5F9950
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
     int compareType(int a1);  // 0x487E50

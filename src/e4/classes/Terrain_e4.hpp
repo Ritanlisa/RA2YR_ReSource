@@ -79,7 +79,7 @@ struct Terrain {
     AbstractClass * * ProcessCellModification(IUnknown * aP1);  // 0x570050
     AbstractClass * * RecursiveModify(IUnknown * aP1);  // 0x573540
     int CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x576770
-    VectorClass_flat * * SelectTileType(Random * aP0, IUnknown * aP1);  // 0x579620
+    static VectorClass_flat * * SelectTileType(Random * aP0, IUnknown * aP1);  // 0x579620
     void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName();  // 0x71DD80
