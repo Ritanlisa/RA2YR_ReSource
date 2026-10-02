@@ -239,17 +239,17 @@ void sub_46DA70()
     {
       v3 = g_CampaignScoreFlags++; /*0x46dacf*/
       v4 = 28 * v3; /*0x46dae1*/
-      dword_A8D228[28 * v3] = 0; /*0x46daea*/
+      (&dword_A8D228)[28 * v3] = 0; /*0x46daea*/
       wcscpy((wchar_t *)&unk_A8D1FC + 56 * v3, (const wchar_t *)(v2 + 90154)); /*0x46daf5*/
       v5 = 0; /*0x46dafa*/
-      dword_A8D22C[28 * v3] = 0; /*0x46daff*/
-      dword_A8D23C[28 * v3] = 0; /*0x46db05*/
-      dword_A8D24C[28 * v3] = 0; /*0x46db0b*/
-      dword_A8D25C[28 * v3] = 0; /*0x46db11*/
-      dword_A8D224[28 * v3] = v2->q16054; /*0x46db1d*/
+      (&dword_A8D22C)[28 * v3] = 0; /*0x46daff*/
+      (&dword_A8D23C)[28 * v3] = 0; /*0x46db05*/
+      (&dword_A8D24C)[28 * v3] = 0; /*0x46db0b*/
+      (&dword_A8D25C)[28 * v3] = 0; /*0x46db11*/
+      (&dword_A8D224)[28 * v3] = v2->q16054; /*0x46db1d*/
       if ( !v2->u8_1F5 ) /*0x46db23*/
       {
-        ++dword_A8D228[28 * v3]; /*0x46db34*/
+        ++(&dword_A8D228)[28 * v3]; /*0x46db34*/
         v3 = v3; /*0x46db3a*/
       }
       v6 = (int *)(v2 + 21476); /*0x46db40*/

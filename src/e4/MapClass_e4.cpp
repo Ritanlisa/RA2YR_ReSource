@@ -348,7 +348,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   v4 = (CellCoord *)this; /*0x4ad7f2*/
   v16 = this; /*0x4ad7f8*/
   INIClass::ClearSection((int *)a2, (int)&off_81FFF0, 0); /*0x4ad7fc*/
-  MapClass::loadTheaterINI((gamemd::INIClass *)(a2), &off_81FFF0, g_INI_Key_Theater, dword_A8B230[130].uniqueId); /*0x4ad81b*/
+  MapClass::loadTheaterINI((gamemd::INIClass *)(a2), &off_81FFF0, g_INI_Key_Theater, (&dword_A8B230)[130].uniqueId); /*0x4ad81b*/
   INIClass::SetRect(a2, &off_81FFF0, (char *)g_Str_EVA_CannotDeployHere.Type, &v4[59]); /*0x4ad835*/
   INIClass::SetRect(a2, &off_81FFF0, &g_Str_EVA_CannotDeployHere.RussianVoice[3], &v4[63]); /*0x4ad84f*/
   ((ScenarioClass *)((ScenarioClass *)dword_A8B230))->Write_Waypoints(a2); /*0x4ad85b*/

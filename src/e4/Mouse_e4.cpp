@@ -101,7 +101,7 @@ int Mouse::SetCursor(int aP1, char aP2)
   int v14; // [esp+14h] [ebp-8h]
 
   result = (gamemd::ObjectClass *)((int)(aP1));
-  if ( dword_82D034[7 * aP1] == -1 ) /*0x5bdca6*/
+  if ( (&dword_82D034)[7 * aP1] == -1 ) /*0x5bdca6*/
   {
     v5 = 0; /*0x5bdca8*/
     aP2 = 0; /*0x5bdcaa*/
@@ -117,22 +117,22 @@ int Mouse::SetCursor(int aP1, char aP2)
   else
   {
     byte_ABF2DD = 1; /*0x5bdce4*/
-    v6 = dword_82D030[7 * aP1]; /*0x5bdceb*/
+    v6 = (&dword_82D030)[7 * aP1]; /*0x5bdceb*/
     Ticks = ((Timer *)this)->GetTicks(); /*0x5bdcf2*/
     v8 = 0; /*0x5bdcfb*/
     dword_ABF2A0 = Ticks; /*0x5bdcfd*/
     dword_ABF2A4 = v14; /*0x5bdd02*/
     dword_ABF2A8 = v6; /*0x5bdd08*/
     *((unsigned int *)this + 5466) = 0; /*0x5bdd0e*/
-    if ( !v5 || (v9 = dword_82D034[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
-      v9 = dword_82D028[7 * aP1]; /*0x5bdd20*/
-    v10 = dword_82D03C[7 * aP1]; /*0x5bdd22*/
+    if ( !v5 || (v9 = (&dword_82D034)[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
+      v9 = (&dword_82D028)[7 * aP1]; /*0x5bdd20*/
+    v10 = (&dword_82D03C)[7 * aP1]; /*0x5bdd22*/
     v11 = 0; /*0x5bdd25*/
     if ( v10 == 12345 ) /*0x5bdd31*/
       v11 = *((int16_t *)dword_ABF294 + 1) / 2; /*0x5bdd42*/
     if ( v10 == 54321 ) /*0x5bdd50*/
       v11 = *((int16_t *)dword_ABF294 + 1); /*0x5bdd52*/
-    v12 = unk_82D040[7 * aP1]; /*0x5bdd56*/
+    v12 = (&unk_82D040)[7 * aP1]; /*0x5bdd56*/
     if ( v12 == 12345 ) /*0x5bdd5f*/
       v8 = *((int16_t *)dword_ABF294 + 2) / 2; /*0x5bdd6a*/
     if ( v12 == 54321 ) /*0x5bdd72*/
@@ -240,7 +240,7 @@ SHORT Mouse::GetKeyState(uint8_t vKey)
 {
 
   if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
-    return word_AA0168[(uint8_t)vKey]; /*0x53eca7*/
+    return (&word_AA0168)[(uint8_t)vKey]; /*0x53eca7*/
   else
     return GetAsyncKeyState((uint8_t)vKey); /*0x53ec9a*/
 

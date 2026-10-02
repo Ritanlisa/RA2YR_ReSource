@@ -95,13 +95,13 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
         v12 = (int)(*a2);
         a2[165] = (int)(this);
         (*(void (**)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
-        *((unsigned char *)a2 + 1784) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&dword_8871E0[1])[10] + ((unsigned int *)&dword_8871E0[1])[10]); /*0x41d9b8*/
-        *((unsigned char *)a2 + 1785) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&dword_8871E0[1])[10] /*0x41d9d5*/
-                                                                  + ((unsigned int *)&dword_8871E0[1])[10]
+        *((unsigned char *)a2 + 1784) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] + ((unsigned int *)&(&dword_8871E0)[1])[10]); /*0x41d9b8*/
+        *((unsigned char *)a2 + 1785) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] /*0x41d9d5*/
+                                                                  + ((unsigned int *)&(&dword_8871E0)[1])[10]
                                                                   + 1);
         v13 = *a2; /*0x41d9f1*/
-        *((unsigned char *)a2 + 1786) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&dword_8871E0[1])[10] /*0x41d9f5*/
-                                                                  + ((unsigned int *)&dword_8871E0[1])[10]
+        *((unsigned char *)a2 + 1786) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] /*0x41d9f5*/
+                                                                  + ((unsigned int *)&(&dword_8871E0)[1])[10]
                                                                   + 2);
         a2[447] = 1; /*0x41d9fb*/
         return (*(int (**)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/

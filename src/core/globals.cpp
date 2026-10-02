@@ -621,9 +621,9 @@ void InitSkirmishSettings() {
 {
 
   int v1; // [esp+4h] [ebp-4h] BYREF
-  dword_A8ED54[127989] = TimerGetTicks();
-  dword_A8ED54[127990] = v1;
-  IDA_LOBYTE(dword_A8ED54[128024]) = 1;
+  (&dword_A8ED54)[127989] = TimerGetTicks();
+  (&dword_A8ED54)[127990] = v1;
+  IDA_LOBYTE((&dword_A8ED54)[128024]) = 1;
   return v1;
 }
 
@@ -941,7 +941,7 @@ void NetworkShutdownInterface() {
       Destination[i++] = v18; /*0x5f9fd1*/
     }
     for ( j = 0; j < v4; ++j ) /*0x5f9ff1*/
-      Destination[j] = ~byte_832C0C[j & 7] & (Destination[j] | byte_832C14[j & 7]); /*0x5fa00e*/
+      (&Destination)[j] = ~(&byte_832C0C)[j & 7] & ((&Destination)[j] | (&byte_832C14)[j & 7]); /*0x5fa00e*/
     for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 ) /*0x5fa01b*/
     {
       v12 = Destination[k]; /*0x5fa01d*/
@@ -1001,7 +1001,7 @@ void NetworkShutdownInterface() {
     Destination[i++] = v18;
   }
   for ( j = 0; j < v4; ++j )
-    Destination[j] = ~byte_832C0C[j & 7] & (Destination[j] | byte_832C14[j & 7]);
+    (&Destination)[j] = ~(&byte_832C0C)[j & 7] & ((&Destination)[j] | (&byte_832C14)[j & 7]);
   char v15; // cl
   char v16; // si
   char v17; // al

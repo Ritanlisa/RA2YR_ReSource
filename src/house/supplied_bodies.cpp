@@ -283,7 +283,7 @@ void HouseClass::Update_TogglePower(double a2) {
     }
     if ( v3[33].__pad_B0[41] ) /*0x4f84f1*/
     {
-      if ( !dword_A8B538[0] ) /*0x4f8501*/
+      if ( !(&dword_A8B538)[0] ) /*0x4f8501*/
         HouseClass::CanTogglePower((HouseClass *)v3); /*0x4f8505*/
       HouseClass::ToggleGapGeneratorReveal((HouseClass *)v3); /*0x4f850c*/
     }

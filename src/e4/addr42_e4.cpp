@@ -299,7 +299,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
                     v46 = v35; /*0x4212d8*/
                     v36 = *v33++; /*0x4212dc*/
                     if ( v36 != 32 ) /*0x4212e2*/
-                      *v25 = (uint8_t)byte_88A118[256 * v46 + (uint16_t)*v25]; /*0x4212ff*/
+                      *v25 = (uint8_t)(&byte_88A118)[256 * v46 + (uint16_t)*v25]; /*0x4212ff*/
                     ++v25; /*0x421302*/
                     --v34; /*0x421305*/
                   }
@@ -330,7 +330,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
                   v32 = *v28++; /*0x421246*/
                   if ( v32 != 32 ) /*0x42124d*/
                   {
-                    *v25 = (uint8_t)byte_88A118[256 * v45 + (uint16_t)*v25]; /*0x42126a*/
+                    *v25 = (uint8_t)(&byte_88A118)[256 * v45 + (uint16_t)*v25]; /*0x42126a*/
                     v26 = dword_87E8A4; /*0x42126d*/
                   }
                   if ( (unsigned int)++v25 >= ((unsigned int *)(v26))[7] ) /*0x42127b*/

@@ -538,10 +538,10 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   Debug::Log(); /*0x5b69e9*/
   stru_A8B250.__pad_0[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
   dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
-  v5 = dword_A8E960[0]; /*0x5b6a18*/
-  IDA_BYTE1(v5) = IDA_BYTE1(dword_A8E960[0]) & 0x7F; /*0x5b6a22*/
+  v5 = (&dword_A8E960)[0]; /*0x5b6a18*/
+  IDA_BYTE1(v5) = IDA_BYTE1((&dword_A8E960)[0]) & 0x7F; /*0x5b6a22*/
   stru_A8B250.__pad_0[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
-  dword_A8E960[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
+  (&dword_A8E960)[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
   stru_A8B250.__pad_0[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
   byte_A8B31F = (aP0->wasFallingDown & 8) != 0; /*0x5b6a5c*/
   byte_A8B31D = (aP0->wasFallingDown & 2) != 0; /*0x5b6a6f*/

@@ -148,7 +148,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     {
       if ( (uint8_t)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
       {
-        v7 = (unsigned int)((void *)(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7))); /*0x54c5d6*/
+        v7 = (unsigned int)((void *)(Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 7))); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
         NeighbourContent = (void *)(((Cell *)(v8))->GetNeighbourContent(v7)); /*0x54c5ea*/

@@ -763,10 +763,10 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   v79 = v81; /*0x4bed5f*/
   v33 = ((StreamClass *)(*(int **)&stru_87E790.__pad_D8[60]))->ReadAndSeek(v80, v81 - v32); /*0x4bed67*/
   v34 = (unsigned short *)v33; /*0x4bed7a*/
-  LOWORD(v33) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4bed87*/
+  LOWORD(v33) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD((&g_ZBufferDescriptor)[1].Stream_field_10); /*0x4bed87*/
   v67 = -1; /*0x4bed8b*/
   v102 = (int)&v89[v33 - v81 - v85]; /*0x4bed99*/
-  pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4beda3*/
+  pad_0 = (int)(&g_ZBufferDescriptor)[2].m_Stream->__pad_0; /*0x4beda3*/
   if ( !v101 ) /*0x4bedb3*/
     return 0; /*0x4bf63e*/
   v35 = 256 - a6; /*0x4bedd0*/
@@ -822,10 +822,10 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
           {
             ++SamplePosition; /*0x4bf4f9*/
             v55 += 2; /*0x4bf4fc*/
-            Stream_field_08 = g_ZBufferDescriptor[1].Stream_field_08; /*0x4bf4ff*/
+            Stream_field_08 = (&g_ZBufferDescriptor)[1].Stream_field_08; /*0x4bf4ff*/
             v75[0] = v55; /*0x4bf502*/
             if ( (unsigned int)SamplePosition >= Stream_field_08 ) /*0x4bf508*/
-              SamplePosition = (unsigned short *)((char *)SamplePosition - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf50a*/
+              SamplePosition = (unsigned short *)((char *)SamplePosition - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf50a*/
             if ( (unsigned int)++v34 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x4bf518*/
               v34 = (unsigned short *)((char *)v34 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x4bf51a*/
             v96 -= v98; /*0x4bf52d*/
@@ -842,19 +842,19 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
           if ( pad_0 <= 0 ) /*0x4bf5ab*/
           {
             v76 = (unsigned short *)v59; /*0x4bf5cd*/
-            if ( v59 >= g_ZBufferDescriptor[1].Stream_field_04 ) /*0x4bf5d4*/
+            if ( v59 >= (&g_ZBufferDescriptor)[1].Stream_field_04 ) /*0x4bf5d4*/
               v60 = (int)v76; /*0x4bf5dd*/
             else
-              v60 = v59 + g_ZBufferDescriptor[1].Stream_field_0C; /*0x4bf5d9*/
+              v60 = v59 + (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x4bf5d9*/
             SamplePosition = (unsigned short *)v60; /*0x4bf5e1*/
           }
           else
           {
             v76 = (unsigned short *)v59; /*0x4bf5b3*/
-            if ( v59 < g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4bf5ba*/
+            if ( v59 < (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4bf5ba*/
               SamplePosition = v76; /*0x4bf5c1*/
             else
-              SamplePosition = (unsigned short *)(v59 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf5bc*/
+              SamplePosition = (unsigned short *)(v59 - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf5bc*/
           }
           v34 += pad_0; /*0x4bf5e7*/
           v102 += v67; /*0x4bf5e9*/
@@ -906,13 +906,13 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
             if ( pad_0 <= 0 ) /*0x4bf2cb*/
             {
               v53 = SamplePosition; /*0x4bf2e3*/
-              if ( (unsigned int)SamplePosition < g_ZBufferDescriptor[1].Stream_field_04 ) /*0x4bf2e8*/
-                v53 = (unsigned short *)((char *)SamplePosition + g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf2ed*/
+              if ( (unsigned int)SamplePosition < (&g_ZBufferDescriptor)[1].Stream_field_04 ) /*0x4bf2e8*/
+                v53 = (unsigned short *)((char *)SamplePosition + (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf2ed*/
               SamplePosition = v53; /*0x4bf2ef*/
             }
-            else if ( (unsigned int)SamplePosition >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4bf2d6*/
+            else if ( (unsigned int)SamplePosition >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4bf2d6*/
             {
-              SamplePosition = (unsigned short *)((char *)SamplePosition - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf2d8*/
+              SamplePosition = (unsigned short *)((char *)SamplePosition - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf2d8*/
             }
             v50 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x4bf2f5*/
             v102 += v67; /*0x4bf2fb*/
@@ -936,8 +936,8 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
           }
           v95 += v98; /*0x4bf360*/
           v63 += v93; /*0x4bf373*/
-          if ( (unsigned int)++SamplePosition >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4bf37d*/
-            SamplePosition = (unsigned short *)((char *)SamplePosition - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf37f*/
+          if ( (unsigned int)++SamplePosition >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4bf37d*/
+            SamplePosition = (unsigned short *)((char *)SamplePosition - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf37f*/
           if ( (unsigned int)++v34 >= *(unsigned int *)(v50 + 28) ) /*0x4bf38a*/
             v34 = (unsigned short *)((char *)v34 - *(unsigned int *)(v50 + 32)); /*0x4bf38c*/
           v75[0] = ++v49; /*0x4bf396*/
@@ -982,13 +982,13 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
         if ( pad_0 <= 0 ) /*0x4bf039*/
         {
           v44 = SamplePosition; /*0x4bf050*/
-          if ( (unsigned int)SamplePosition < g_ZBufferDescriptor[1].Stream_field_04 ) /*0x4bf055*/
-            v44 = (unsigned short *)((char *)SamplePosition + g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf05a*/
+          if ( (unsigned int)SamplePosition < (&g_ZBufferDescriptor)[1].Stream_field_04 ) /*0x4bf055*/
+            v44 = (unsigned short *)((char *)SamplePosition + (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf05a*/
           SamplePosition = v44; /*0x4bf05c*/
         }
-        else if ( (unsigned int)SamplePosition >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4bf043*/
+        else if ( (unsigned int)SamplePosition >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4bf043*/
         {
-          SamplePosition = (unsigned short *)((char *)SamplePosition - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf045*/
+          SamplePosition = (unsigned short *)((char *)SamplePosition - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf045*/
         }
         v40 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x4bf065*/
         v34 += pad_0; /*0x4bf06b*/
@@ -1004,8 +1004,8 @@ LABEL_45:
           ++SamplePosition; /*0x4bf0c1*/
           v41 += 2; /*0x4bf0c4*/
           v73 = v41; /*0x4bf0ca*/
-          if ( (unsigned int)SamplePosition >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4bf0ce*/
-            SamplePosition = (unsigned short *)((char *)SamplePosition - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4bf0d0*/
+          if ( (unsigned int)SamplePosition >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4bf0ce*/
+            SamplePosition = (unsigned short *)((char *)SamplePosition - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4bf0d0*/
           if ( (unsigned int)++v34 >= *(unsigned int *)(v40 + 28) ) /*0x4bf0db*/
             v34 = (unsigned short *)((char *)v34 - *(unsigned int *)(v40 + 32)); /*0x4bf0dd*/
           v94 -= v93; /*0x4bf0e7*/

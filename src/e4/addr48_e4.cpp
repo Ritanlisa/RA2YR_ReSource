@@ -258,7 +258,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   if ( Cell::GetGroundHeight((unsigned int *)((IUnknown *)&v143)) < *(unsigned int *)&aP0->__pad_0[8] )
   {
     int v11 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus);
-    AircraftTrackerClass::FillCurrentVector((int)&stru_87C374[46356], aP1a, v11);
+    AircraftTrackerClass::FillCurrentVector((int)&(&stru_87C374)[46356], aP1a, v11);
     int v12 = VectorClass_flat::RemoveObjectById((int)&((unsigned int *)(stru_87C374))[46356]);
     if ( v12 )
     {
@@ -314,7 +314,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
     }
   }
   if ( ((int)aP1a[20].vtable0 & 0x100) != 0
-    && *(unsigned int *)&aP0->__pad_0[8] > *(unsigned int *)&stru_89E138[1836] / 2 + Cell::GetGroundHeight((unsigned int *)((IUnknown *)aP0)) )
+    && *(unsigned int *)&aP0->__pad_0[8] > *(unsigned int *)&(&stru_89E138)[1836] / 2 + Cell::GetGroundHeight((unsigned int *)((IUnknown *)aP0)) )
   {
     varC2 = 1;
   }
@@ -331,8 +331,8 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   int v26; // esi
     while ( 1 )
     {
-      ax29 = IDA_HIWORD(v115) + IDA_HIWORD(dword_ABD490[v110]);
-      IDA_LOWORD(v138) = v115 + IDA_LOWORD(dword_ABD490[v110]);
+      ax29 = IDA_HIWORD(v115) + IDA_HIWORD((&dword_ABD490)[v110]);
+      IDA_LOWORD(v138) = v115 + IDA_LOWORD((&dword_ABD490)[v110]);
       IDA_HIWORD(v138) = ax29;
       j = v138;
       v22 = (TechnoClass *)((CellCoord *)(&((unsigned int *)(stru_87C374))[13428]))->To_CellObj((int16_t *)&j);
@@ -365,7 +365,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
       if ( v26 )
         break;
 LABEL_81:
-      if ( ++v110 >= dword_7ED3D0[((unsigned int *)(v122))[0]] )
+      if ( ++v110 >= (&dword_7ED3D0)[((unsigned int *)(v122))[0]] )
         goto LABEL_82;
       v8 = (gamemd::ObjectClass *)(aP3);
     }

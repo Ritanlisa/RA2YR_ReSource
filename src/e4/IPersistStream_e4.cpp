@@ -37,7 +37,7 @@ char IPersistStream::SetField(int a1)
   if ( a1 == -1 ) /*0x5b36e3*/
     return 1; /*0x5b36e5*/
   else
-    return byte_A8E3AE[32 * a1]; /*0x5b36eb*/
+    return (&byte_A8E3AE)[32 * a1]; /*0x5b36eb*/
 
 }
 } // namespace gamemd

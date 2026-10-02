@@ -770,7 +770,7 @@ CampaignClass * * MPCooperative::CopyTo()
     if ( v5 ) /*0x5c1aab*/
     {
       if ( dword_A8DA84 == 2 ) /*0x5c1ab4*/
-        ((String *)(v5))->AssignWideToChar((gamemd::CampaignScore *)((char *)*dword_A8DA78), (char *)dword_A8DA78[1]); /*0x5c1ac2*/
+        ((String *)(v5))->AssignWideToChar((gamemd::CampaignScore *)((char *)*dword_A8DA78), (char *)(&dword_A8DA78)[1]); /*0x5c1ac2*/
       else
         ((String *)(v5))->AssignWideToChar((char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c1ace*/
     }

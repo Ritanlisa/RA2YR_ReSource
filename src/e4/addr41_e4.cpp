@@ -72,7 +72,7 @@ int sub_4116A0(unsigned int a1)
   v1 = a1; /*0x4116a5*/
   v2 = *(unsigned int *)(a1 + 52); /*0x4116a9*/
   v3 = 188 * v2 + 8943480; /*0x4116bd*/
-  if ( (dword_8877A0[47 * v2] & 1) != 0 ) /*0x4116c4*/
+  if ( ((&dword_8877A0)[47 * v2] & 1) != 0 ) /*0x4116c4*/
   {
         ((Debug *)0)->Log();
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
@@ -175,13 +175,13 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
             ((Debug *)0)->Log();
       LockCount = dwUser[2].LockCount; /*0x411880*/
       v6 = 188 * LockCount + 8943480; /*0x411894*/
-      if ( byte_887778[188 * LockCount] == 1 ) /*0x41189b*/
+      if ( (&byte_887778)[188 * LockCount] == 1 ) /*0x41189b*/
       {
-        if ( dword_887804[47 * LockCount] ) /*0x4118a1*/
+        if ( (&dword_887804)[47 * LockCount] ) /*0x4118a1*/
         {
                     ((Debug *)0)->Log();
           v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
-          if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
+          if ( (&dword_887804)[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
             EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x4118de*/
             (*(void (**)(unsigned int))(**(unsigned int **)(v7 + 140) + 72))(*(unsigned int *)(v7 + 140)); /*0x4118ed*/
@@ -229,7 +229,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       break; /*0x4119f7*/
     case 7: /*0x411835*/
       v15 = 188 * dwUser[2].LockCount + 8943480; /*0x411aad*/
-      if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x411aa4*/
+      if ( (&dword_887804)[47 * dwUser[2].LockCount] ) /*0x411aa4*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x411abd*/
         (*(void (**)(unsigned int))(**(unsigned int **)(v15 + 140) + 72))(*(unsigned int *)(v15 + 140)); /*0x411acc*/
@@ -246,7 +246,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
     case 8: /*0x411835*/
       v12 = dwUser[2].LockCount; /*0x4119fe*/
       v13 = 188 * v12 + 8943480; /*0x411a12*/
-      if ( byte_887778[188 * v12] && dword_887804[47 * v12] ) /*0x411a1b*/
+      if ( (&byte_887778)[188 * v12] && (&dword_887804)[47 * v12] ) /*0x411a1b*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * v12 + 8943640)); /*0x411a2a*/
         if ( (*(int (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v13 + 140) + 48))( /*0x411a3d*/
@@ -374,7 +374,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 
   LockCount = lpCriticalSection[2].LockCount; /*0x411df7*/
   v3 = 188 * LockCount + 8943480; /*0x411e0c*/
-  if ( (dword_8877A0[47 * LockCount] & 1) == 0 ) /*0x411e13*/
+  if ( ((&dword_8877A0)[47 * LockCount] & 1) == 0 ) /*0x411e13*/
   {
     lpCriticalSectiona = (struct _RTL_CRITICAL_SECTION *)(188 * LockCount + 8943640); /*0x411e9b*/
     EnterCriticalSection(lpCriticalSectiona); /*0x411e9f*/
@@ -441,7 +441,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     LeaveCriticalSection(lpCriticalSectiona); /*0x411f73*/
     return -13; /*0x411f82*/
   }
-  if ( !byte_887778[188 * LockCount] || !dword_887804[47 * LockCount] ) /*0x411e1e*/
+  if ( !(&byte_887778)[188 * LockCount] || !(&dword_887804)[47 * LockCount] ) /*0x411e1e*/
     return -13; /*0x411e26*/
   EnterCriticalSection((LPCRITICAL_SECTION)(188 * LockCount + 8943640)); /*0x411e33*/
   if ( (*(int (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v3 + 140) + 48))( /*0x411e48*/
@@ -541,7 +541,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
   *(unsigned int *)(v5 + 4 * v10 + 80) = (unsigned int)(v4); /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = (unsigned int)(v12); /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
-  v13 = dword_887804[47 * *(unsigned int *)(v3 + 52)]; /*0x4120ef*/
+  v13 = (&dword_887804)[47 * *(unsigned int *)(v3 + 52)]; /*0x4120ef*/
   v14 = 188 * *(unsigned int *)(v3 + 52) + 8943480; /*0x4120f8*/
   if ( v13 ) /*0x4120ff*/
   {

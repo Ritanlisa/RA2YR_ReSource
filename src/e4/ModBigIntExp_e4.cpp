@@ -164,7 +164,7 @@ void sub_5C7EC0(const void * a1, int a2)
     }
   }
   IDA_LOWORD(dword_ABF6B4) = IDA_HIWORD(dword_ABF5A4); /*0x5c8091*/
-  IDA_LOWORD(dword_ABF5A0[0]) = dword_ABF5A4; /*0x5c8091*/
+  IDA_LOWORD((&dword_ABF5A0)[0]) = dword_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
 }
 }

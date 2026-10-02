@@ -576,17 +576,17 @@ void sub_5C98A0()
     {
       v3 = g_CampaignScoreFlags++; /*0x5c98f6*/
       v4 = 28 * v3; /*0x5c990e*/
-      dword_A8D228[28 * v3] = 0; /*0x5c9917*/
+      (&dword_A8D228)[28 * v3] = 0; /*0x5c9917*/
       wcscpy((wchar_t *)&unk_A8D1FC + 56 * v3, (const wchar_t *)(v2 + 90154)); /*0x5c9922*/
       v5 = 0; /*0x5c9927*/
-      dword_A8D22C[28 * v3] = 0; /*0x5c992c*/
-      dword_A8D23C[28 * v3] = 0; /*0x5c9932*/
-      dword_A8D24C[28 * v3] = 0; /*0x5c9938*/
-      dword_A8D25C[28 * v3] = 0; /*0x5c993e*/
-      dword_A8D224[28 * v3] = *(unsigned int *)(v2 + 90196); /*0x5c994a*/
+      (&dword_A8D22C)[28 * v3] = 0; /*0x5c992c*/
+      (&dword_A8D23C)[28 * v3] = 0; /*0x5c9932*/
+      (&dword_A8D24C)[28 * v3] = 0; /*0x5c9938*/
+      (&dword_A8D25C)[28 * v3] = 0; /*0x5c993e*/
+      (&dword_A8D224)[28 * v3] = *(unsigned int *)(v2 + 90196); /*0x5c994a*/
       if ( !*(unsigned char *)(v2 + 501) ) /*0x5c9950*/
       {
-        ++dword_A8D228[28 * v3]; /*0x5c9961*/
+        ++(&dword_A8D228)[28 * v3]; /*0x5c9961*/
         dword_A8D584 = v3; /*0x5c9967*/
       }
       v6 = (int *)(v2 + 21476); /*0x5c996d*/

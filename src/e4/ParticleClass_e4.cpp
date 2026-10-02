@@ -99,7 +99,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                 v28[0] = v29; /*0x62d0d9*/
                 v16 = ZCoordToScreenY(*(unsigned int *)&this->__pad_28[124]); /*0x62d0e8*/
                 v17 = (uint16_t)(LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
-                                       + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
+                                       + LOWORD((&g_ZBufferDescriptor)[1].Stream_field_10)
                                        - v30)
                     - v16
                     - 50;

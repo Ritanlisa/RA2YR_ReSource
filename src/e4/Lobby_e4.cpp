@@ -201,7 +201,7 @@ LABEL_26:
       }
       if ( (int)v36 > PlayerCountMap ) /*0x5eb1a5*/
       {
-        v5 = dword_A8DA90[(unsigned int)v36]; /*0x5eb1a7*/
+        v5 = (&dword_A8DA90)[(unsigned int)v36]; /*0x5eb1a7*/
         if ( v5 != g_HouseClass_ObserverFlags /*0x5eb1d2*/
           && (!v5 || v5 != g_Lobby_PlayerTeam && v5 != g_Lobby_PlayerSide && v5 != g_Lobby_PlayerColor) )
         {
@@ -250,7 +250,7 @@ LABEL_26:
     DlgItem = GetDlgItem((HWND)HIDWORD(v38), v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
-    v9 = (wchar_t *)dword_A8DA90[(unsigned int)v36]; /*0x5eb291*/
+    v9 = (wchar_t *)(&dword_A8DA90)[(unsigned int)v36]; /*0x5eb291*/
     v10 = v9; /*0x5eb29a*/
     if ( v9 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eb29c*/
     {
@@ -474,7 +474,7 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
       ResourceID2CSF = (HWND)GetResourceID2CSF((int)(v1)); /*0x5ebad4*/
       ResourceID3CSF = GetResourceID3CSF((int)(v1)); /*0x5ebadf*/
       ResourceID4CSF = GetResourceID4CSF((int)(v1)); /*0x5ebae3*/
-      v6 = dword_A8DA90[(unsigned int)v1]; /*0x5ebae8*/
+      v6 = (&dword_A8DA90)[(unsigned int)v1]; /*0x5ebae8*/
       v19 = ResourceID4CSF; /*0x5ebaef*/
       v11 = v6 == g_Lobby_MaxPlayers /*0x5ebb24*/
          || v6

@@ -151,7 +151,7 @@ void sub_647040()
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x6470a1*/
-  dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6470b4*/
+  (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6470b4*/
   ++stru_A80220.lineTrailer; /*0x6470cb*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6470d0*/
   return 1; /*0x6470d8*/
@@ -174,7 +174,7 @@ void sub_6470F0()
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x647151*/
-  dword_A83A54[dword_A802D0] = timeGetTime(); /*0x647164*/
+  (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x647164*/
   ++stru_A80220.lineTrailer; /*0x64717b*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x647180*/
   return 1; /*0x647188*/
@@ -289,7 +289,7 @@ void * sub_730F30()
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v2, 0x6Fu); /*0x730f99*/
-        dword_A83A54[dword_A802D0] = timeGetTime(); /*0x730fac*/
+        (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x730fac*/
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x730fc3*/
         ++stru_A80220.lineTrailer; /*0x730fc9*/
       }
@@ -375,7 +375,7 @@ AbstractClass * * sub_7318F0()
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, result, 0x6Fu); /*0x7319c9*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x7319dc*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x7319dc*/
                 result = (char *)stru_A80220.lineTrailer + 1; /*0x7319f2*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x7319f3*/
                 ++stru_A80220.lineTrailer; /*0x7319f9*/
@@ -800,7 +800,7 @@ void sub_6D0FD0()
     ++v1; /*0x6d10a2*/
   }
   while ( v1 < 25 ); /*0x6d10a6*/
-  v7 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d10b5*/
+  v7 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d10b5*/
   if ( v7 <= 0x18 ) /*0x6d10be*/
   {
     v8 = (char *)&stru_B0C1C0 + 96 * v7; /*0x6d10cb*/

@@ -157,7 +157,7 @@ LABEL_5:
                 for ( v17[55] = v11; v12 < dword_A8DA84; ++v12 ) /*0x4313b1*/
                 {
                   Debug::Log(); /*0x4313c2*/
-                  Network::SendMessage(&unk_A8E9C0.Socket, (int)&v16, 61, 1, dword_A8DA78[v12] + 40, 0, 0); /*0x4313e9*/
+                  Network::SendMessage(&unk_A8E9C0.Socket, (int)&v16, 61, 1, (&dword_A8DA78)[v12] + 40, 0, 0); /*0x4313e9*/
                   result = dword_A8DA84; /*0x4313ee*/
                 }
               }
@@ -282,7 +282,7 @@ LABEL_5:
           for ( i = 1; i < dword_A8DA84; ++i ) /*0x4315f3*/
           {
             Debug::Log(); /*0x431608*/
-            Network::SendMessage(&unk_A8E9C0.Socket, (int)&v20, 455, 1, dword_A8DA78[i] + 40, 0, 0); /*0x431632*/
+            Network::SendMessage(&unk_A8E9C0.Socket, (int)&v20, 455, 1, (&dword_A8DA78)[i] + 40, 0, 0); /*0x431632*/
             result = dword_A8DA84; /*0x431637*/
           }
         }
@@ -425,16 +425,16 @@ LABEL_10:
               v46 = v5; /*0x48d31e*/
               if ( !v7 ) /*0x48d322*/
               {
-                ToWideStringChar((char *)dword_A8DA78[v6]); /*0x48d331*/
+                ToWideStringChar((char *)(&dword_A8DA78)[v6]); /*0x48d331*/
                 Debug::Log(); /*0x48d33c*/
-                Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, dword_A8DA78[v6] + 40, v46, 0); /*0x48d366*/
+                Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, (&dword_A8DA78)[v6] + 40, v46, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/
                 ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x48d375*/
                 v42 = 0; /*0x48d37a*/
                 v8 = (char **)dword_A8DA90; /*0x48d382*/
                 while ( 1 ) /*0x48d38d*/
                 {
-                  v9 = (char *)dword_A8DA78[v6]; /*0x48d38d*/
+                  v9 = (char *)(&dword_A8DA78)[v6]; /*0x48d38d*/
                   v10 = ToWideStringChar((IUnknown *)(*v8)); /*0x48d399*/
                   v11 = ToWideStringChar((IUnknown *)(v9)); /*0x48d39b*/
                   if ( !_strcmpi(v10, v11) ) /*0x48d3a2*/
@@ -447,17 +447,17 @@ LABEL_10:
                 v12 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x48d3cc*/
                 if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x48d3d5*/
                   v12 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
-                if ( v12 - dword_A8E284[v42] > 2400 ) /*0x48d3fa*/
+                if ( v12 - (&dword_A8E284)[v42] > 2400 ) /*0x48d3fa*/
                 {
-                  ToWideStringChar((char *)dword_A8DA78[v6]); /*0x48d404*/
+                  ToWideStringChar((char *)(&dword_A8DA78)[v6]); /*0x48d404*/
                   Debug::Log(); /*0x48d40f*/
-                  v13 = dword_A8DA78[v6]; /*0x48d41d*/
+                  v13 = (&dword_A8DA78)[v6]; /*0x48d41d*/
                   v14 = *(unsigned short *)(v13 + 131); /*0x48d420*/
                   if ( v14 != (unsigned short)v46 && v14 >= 0x400u ) /*0x48d432*/
                   {
                     ToWideStringChar((IUnknown *)((char *)v13)); /*0x48d434*/
                     Debug::Log(); /*0x48d43f*/
-                    v15 = dword_A8DA78[v6]; /*0x48d44d*/
+                    v15 = (&dword_A8DA78)[v6]; /*0x48d44d*/
                     LOWORD(v16) = *(unsigned short *)(v15 + 131); /*0x48d456*/
                     Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, v15 + 40, v16, 0); /*0x48d46c*/
                   }
@@ -562,9 +562,9 @@ LABEL_25:
             {
               while ( 1 ) /*0x48da6e*/
               {
-                if ( (uint8_t)((NetworkID *)((bool *)(dword_A8DA78[v38] + 40)))->Compare((int)dword_A8D804) ) /*0x48da6e*/
+                if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v38] + 40)))->Compare((int)dword_A8D804) ) /*0x48da6e*/
                 {
-                  v39 = ToWideStringChar((char *)dword_A8DA78[v38]); /*0x48da85*/
+                  v39 = ToWideStringChar((char *)(&dword_A8DA78)[v38]); /*0x48da85*/
                   if ( !_strcmpi(v39, &stru_A8D600.__pad_34[8]) ) /*0x48da8b*/
                     break; /*0x48da8b*/
                 }
@@ -647,16 +647,16 @@ LABEL_25:
               v43 = (uint16_t *)(&dword_A8E2B2); /*0x48d64c*/
               do /*0x48d788*/
               {
-                if ( (uint8_t)((NetworkID *)((bool *)(dword_A8DA78[v23] + 40)))->Compare((int)dword_A8D804) ) /*0x48d665*/
+                if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v23] + 40)))->Compare((int)dword_A8D804) ) /*0x48d665*/
                 {
-                  v24 = ToWideStringChar((char *)dword_A8DA78[v23]); /*0x48d680*/
+                  v24 = ToWideStringChar((char *)(&dword_A8DA78)[v23]); /*0x48d680*/
                   if ( !_strcmpi(v24, &stru_A8D600.__pad_34[8]) ) /*0x48d686*/
                   {
                     v45 = 0; /*0x48d696*/
                     v25 = (char **)dword_A8DA90; /*0x48d69a*/
                     while ( 1 ) /*0x48d6a6*/
                     {
-                      v26 = (char *)dword_A8DA78[v23]; /*0x48d6a6*/
+                      v26 = (char *)(&dword_A8DA78)[v23]; /*0x48d6a6*/
                       v27 = ToWideStringChar((IUnknown *)(*v25)); /*0x48d6b0*/
                       v28 = ToWideStringChar((IUnknown *)(v26)); /*0x48d6b2*/
                       if ( !_strcmpi(v27, v28) ) /*0x48d6b9*/
@@ -669,16 +669,16 @@ LABEL_25:
                     v29 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x48d6e0*/
                     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x48d6e9*/
                       v29 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d6fb*/
-                    dword_A8E284[v45] = v29; /*0x48d701*/
+                    (&dword_A8E284)[v45] = v29; /*0x48d701*/
 LABEL_56:
                     v30 = *(unsigned short *)dword_A8D804; /*0x48d708*/
-                    if ( *(unsigned short *)dword_A8D804 != *(unsigned short *)(dword_A8DA78[v23] + 40) || *(unsigned short *)dword_A8D804 != *v43 ) /*0x48d724*/
+                    if ( *(unsigned short *)dword_A8D804 != *(unsigned short *)((&dword_A8DA78)[v23] + 40) || *(unsigned short *)dword_A8D804 != *v43 ) /*0x48d724*/
                     {
                       Debug::Log(); /*0x48d72b*/
                       if ( !v30 ) /*0x48d73f*/
                         v30 = 1234; /*0x48d741*/
                       *v43 = v30; /*0x48d746*/
-                      ((Network *)((Network *)(dword_A8DA78[v23] + 40)))->SetPort(v30); /*0x48d756*/
+                      ((Network *)((Network *)((&dword_A8DA78)[v23] + 40)))->SetPort(v30); /*0x48d756*/
                       Debug::Log(); /*0x48d76d*/
                     }
                   }

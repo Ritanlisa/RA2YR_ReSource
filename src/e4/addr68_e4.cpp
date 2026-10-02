@@ -722,11 +722,11 @@ void PostLoadInitScenario()
     if ( !*(unsigned int *)&dword_A8B238 ) /*0x684c94*/
     {
       if ( stru_8A38E0 ) /*0x684ca7*/
-        nextArrayIndex = dword_A8B230[14].nextArrayIndex; /*0x684ca9*/
+        nextArrayIndex = (&dword_A8B230)[14].nextArrayIndex; /*0x684ca9*/
       else
-        nextArrayIndex = dword_A8B230[14].abstractFlags; /*0x684cb1*/
-      v4 = *(void **)((char *)&dword_A8B230[44].vtable0 + 4 * nextArrayIndex + 2); /*0x684cb7*/
-      *(void **)((char *)&dword_A8B230[374].vtable0 + 2) = v4; /*0x684cbe*/
+        nextArrayIndex = (&dword_A8B230)[14].abstractFlags; /*0x684cb1*/
+      v4 = *(void **)((char *)&(&dword_A8B230)[44].vtable0 + 4 * nextArrayIndex + 2); /*0x684cb7*/
+      *(void **)((char *)&(&dword_A8B230)[374].vtable0 + 2) = v4; /*0x684cbe*/
       *(void **)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = *(void **)((char *)&dword_A8B230[374].vtable0 + 2); /*0x684cd4*/
       *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2); /*0x684ce9*/
       *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = *(int *)((char *)&dword_A8B230[373].referenceCount + 2); /*0x684d03*/

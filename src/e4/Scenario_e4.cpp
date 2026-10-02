@@ -384,7 +384,7 @@ int Scenario::CopyLocalScenarioData()
   this->Scenario_field_0x38 = (unsigned char)(abstractFlags);
   result = *(unsigned int *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
   *(unsigned int *)this->__pad_3C = result; /*0x4c61ec*/
-  *(unsigned short *)&this->__pad_3C[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
+  *(unsigned short *)&this->__pad_3C[4] = (&dword_A8B230)[381].vtable3; /*0x4c61fc*/
   return result; /*0x4c6200*/
 
 }

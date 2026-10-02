@@ -179,7 +179,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
     v4 = 23; /*0x51d8ee*/
   }
   v12 = this->SequenceAnim[0]; /*0x51d90b*/
-  if ( v4 == v12 || v12 != -1 && !a3 && !byte_7EAF7C[4 * v12] ) /*0x51d925*/
+  if ( v4 == v12 || v12 != -1 && !a3 && !(&byte_7EAF7C)[4 * v12] ) /*0x51d925*/
     return 0; /*0x51d92e*/
   if ( v4 == 27 ) /*0x51d937*/
   {
@@ -207,14 +207,14 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
   {
     ProductionTimeMult = (int)Rules::GetProductionTimeMult( /*0x51da02*/
                                 (Rules *)&stru_A8EB00.ObjectTypeClass[24],
-                                (uint8_t)byte_7EAF7F[4 * v4]);
+                                (uint8_t)(&byte_7EAF7F)[4 * v4]);
     v18 = (int *)(&((unsigned int *)this)[2]); /*0x51da0d*/
     ((unsigned int *)this)[2] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51da13*/
     v19 = v25; /*0x51da19*/
   }
   else
   {
-    ProductionTimeMult = (uint8_t)byte_7EAF7F[4 * v4]; /*0x51da27*/
+    ProductionTimeMult = (uint8_t)(&byte_7EAF7F)[4 * v4]; /*0x51da27*/
     v18 = (int *)(&((unsigned int *)this)[2]); /*0x51da2e*/
     ((unsigned int *)this)[2] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51da34*/
     v19 = v25; /*0x51da3a*/
@@ -227,7 +227,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
     v20 = *(unsigned int *)(this->Type->Sequence[0] + 36 * v4 + 4); /*0x51da61*/
     if ( v20 <= 1 ) /*0x51da68*/
       v20 = 1; /*0x51da6a*/
-    ((unsigned int *)this)[0] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v20 - 1); /*0x51da84*/
+    ((unsigned int *)this)[0] = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v20 - 1); /*0x51da84*/
   }
   else
   {
@@ -353,7 +353,7 @@ AnimClass * InfantryClass::CanInitiateDeploy()
     return 0; /*0x521be7*/
   }
   v3 = this->SequenceAnim[0]; /*0x521bf1*/
-  return v3 == -1 || byte_7EAF7C[4 * v3]; /*0x521c0b*/
+  return v3 == -1 || (&byte_7EAF7C)[4 * v3]; /*0x521c0b*/
 }
 // 0x5221d0
 AnimClass * InfantryClass::CanDeployAtCell(void * a1, void * a2, void * a3)

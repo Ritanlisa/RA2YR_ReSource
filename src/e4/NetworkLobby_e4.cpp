@@ -374,12 +374,12 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
             g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
-            *(unsigned int *)(dword_A8DA90[0] + 107) = 0; /*0x5ded15*/
+            *(unsigned int *)((&dword_A8DA90)[0] + 107) = 0; /*0x5ded15*/
             v21 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x5ded20*/
-            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerOption(v21); /*0x5ded2a*/
-            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerColor(-2); /*0x5ded37*/
-            ((SessionClass *)((int *)dword_A8DA90[0]))->SetOption(-2); /*0x5ded44*/
-            ((SessionClass *)((int *)dword_A8DA90[0]))->SetOption2(-2); /*0x5ded51*/
+            ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerOption(v21); /*0x5ded2a*/
+            ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerColor(-2); /*0x5ded37*/
+            ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetOption(-2); /*0x5ded44*/
+            ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetOption2(-2); /*0x5ded51*/
             ((Lobby *)((Lobby *)hDlg))->FillPlayerFactions(); /*0x5ded58*/
           }
           SetupSkirmishPlayerSlots(hDlg, 0, (HWND)1); /*0x5ded63*/
@@ -388,8 +388,8 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
             && dword_A8B23C
             && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
           {
-            ((SessionClass *)((int *)dword_A8DA90[0]))->SetPlayerOption(-3); /*0x5ded9e*/
-            *(unsigned int *)(dword_A8DA90[0] + 107) = -1; /*0x5deda8*/
+            ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerOption(-3); /*0x5ded9e*/
+            *(unsigned int *)((&dword_A8DA90)[0] + 107) = -1; /*0x5deda8*/
           }
           ((NetworkLobby *)((NetworkLobby *)hDlg))->Dispatch(); /*0x5dedb1*/
           SetDialogPlayerName(hDlg, (int)dword_A8B23C); /*0x5dedbe*/
@@ -398,7 +398,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
-            || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+            || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
           {
             vtable2 = (void *)PlayerCountMap; /*0x5dee00*/
           }

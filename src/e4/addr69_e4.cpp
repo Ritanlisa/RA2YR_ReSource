@@ -705,7 +705,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
         while ( 1 ) /*0x6948c0*/
         {
           Event::Dispatch(); /*0x6948c0*/
-          if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)dword_A8DA78[v8]) ) /*0x6948e3*/
+          if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)(&dword_A8DA78)[v8]) ) /*0x6948e3*/
             goto LABEL_12; /*0x6948ea*/
           v9 = 3600; /*0x6948f0*/
           if ( Ticks == -1 ) /*0x6948f6*/
@@ -754,7 +754,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694930*/
       Debug::Log(); /*0x69494b*/
-      if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)dword_A8DA78[byte_A8BB10[v11]]) ) /*0x694978*/
+      if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[v11]]) ) /*0x694978*/
         goto LABEL_20; /*0x69497f*/
       v12 = 3600; /*0x694985*/
       if ( Ticks == -1 ) /*0x69498b*/
@@ -974,7 +974,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694ef6*/
               {
-                v38 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220, 1, (wchar_t *)dword_A8DA78[i])); /*0x694eed*/
+                v38 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220, 1, (wchar_t *)(&dword_A8DA78)[i])); /*0x694eed*/
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -991,7 +991,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
                         (int)&v57.__pad_0[12],
                         220,
                         1,
-                        (wchar_t *)dword_A8DA78[byte_A8BB10[j]]);
+                        (wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[j]]);
                 Event::Dispatch(); /*0x694f3b*/
               }
               while ( !v40 ); /*0x694f42*/

@@ -790,11 +790,11 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   char v6 = *v5;
   if ( *v5 == 90 )
   {
-    *(unsigned int *)v198 = &stru_830620[5004];
+    *(unsigned int *)v198 = &(&stru_830620)[5004];
     Debug::Log();
     if ( v5[1] == 49 )
     {
-      v12 = (SessionClass *)&HouseClass_Player[40260];
+      v12 = (SessionClass *)&(&HouseClass_Player)[40260];
       do
       {
         char * v14 = ToWideStringChar((IUnknown *)v12->GameMode[0]);
@@ -806,7 +806,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
         }
         v12 = (SessionClass *)((char *)v12 + 4);
       }
-      while ( (int)v12 < (int)&HouseClass_Player[40292] );
+      while ( (int)v12 < (int)&(&HouseClass_Player)[40292] );
     }
     else
     {
@@ -827,7 +827,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
           ShowWindow(DlgItem, 1);
           v10 = GetDlgItem(v7, 1128);
           ShowWindow(v10, 0);
-          StringCSF = GetStringCSF((wchar_t *)&stru_830620[4984], 0, &stru_830620[4536], 1326);
+          StringCSF = GetStringCSF((wchar_t *)&(&stru_830620)[4984], 0, &(&stru_830620)[4536], 1326);
           SendMessageA(v9, 0x4B2u, 0, (LPARAM)StringCSF);
           *(unsigned int *)v198 = *(unsigned int *)&v198[40];
           goto LABEL_102;
@@ -836,13 +836,13 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
     }
     goto LABEL_13;
   }
-  if ( *(unsigned int *)&HouseClass_Player[29932] == 4 && (g_NetworkLobby_Init || g_NetworkLobbyState) )
+  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 && (g_NetworkLobby_Init || g_NetworkLobbyState) )
     goto LABEL_101;
   switch ( v6 )
   {
     case 'W':
       *(unsigned int *)v198 = (unsigned int)(v5);
-      v197 = (ObjectClass *)&stru_830620[4960];
+      v197 = (ObjectClass *)&(&stru_830620)[4960];
       Debug::Log();
       int v15 = 0;
       *(unsigned int *)&v198[32] = 0;

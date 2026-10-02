@@ -388,7 +388,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int *a2)
   v7 = Crash_high - SHIWORD(smudgeTypeIndex); /*0x4848de*/
   v8 = Crash_low - (int16_t)smudgeTypeIndex; /*0x4848e6*/
   v9 = Crash_low == (int16_t)smudgeTypeIndex; /*0x4848ec*/
-  result = dword_81CD5C[Crash_low + 3 * v7 - (int16_t)smudgeTypeIndex]; /*0x4848ee*/
+  result = (&dword_81CD5C)[Crash_low + 3 * v7 - (int16_t)smudgeTypeIndex]; /*0x4848ee*/
   v19 = result; /*0x4848f5*/
   if ( !v9 && v7 ) /*0x484901*/
   {

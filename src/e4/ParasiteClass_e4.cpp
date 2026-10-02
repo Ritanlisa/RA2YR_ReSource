@@ -256,7 +256,7 @@ void ParasiteClass::DeploySquad()
       case 1u: /*0x6298bc*/
         if ( ((BuildingClass *)((BuildingClass *)_ESI))->AnimController() ) /*0x62998d*/
         {
-          v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
+          v17 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           _ESI[1] = 0; /*0x6299b7*/
           _ESI[1] = (gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           _ESI[1] = 0; /*0x6299bd*/

@@ -868,7 +868,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     v24 = *(unsigned int *)(v29 + 660) - dword_ABAD28; /*0x57b605*/
     if ( !Cell::IsEmpty(v14) ) /*0x57b60e*/
     {
-      if ( v23 < 0 || v24 < 0 || v23 > 41 || v24 > 41 || dword_82A7F4[v23] != dword_82A7F4[v24] ) /*0x57b703*/
+      if ( v23 < 0 || v24 < 0 || v23 > 41 || v24 > 41 || (&dword_82A7F4)[v23] != (&dword_82A7F4)[v24] ) /*0x57b703*/
       {
         *aP4 = 0; /*0x57b718*/
         return 0; /*0x57b721*/
@@ -887,7 +887,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     v20 = *(unsigned int *)(v29 + 660) - dword_ABAD28; /*0x57b5a1*/
     if ( v19 >= 0 && v20 >= 0 && v19 <= 41 && v20 <= 41 ) /*0x57b5b7*/
     {
-      v21 = dword_82A89C[v19] - dword_82A89C[v20]; /*0x57b5c9*/
+      v21 = (&dword_82A89C)[v19] - (&dword_82A89C)[v20]; /*0x57b5c9*/
       v22 = (IDA_HIDWORD(v21) ^ v21) - IDA_HIDWORD(v21); /*0x57b5cc*/
       if ( v22 >= 3 && v22 <= 5 ) /*0x57b5d6*/
       {

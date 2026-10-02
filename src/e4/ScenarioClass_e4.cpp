@@ -466,7 +466,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   dword_A8B230[375].uniqueId = a4; /*0x683b0a*/
   Debug::Log(); /*0x683b10*/
   Debug::Log(); /*0x683b21*/
-  strcpy((char *)&dword_A8B230[130].abstractFlags, v4); /*0x683b47*/
+  strcpy((char *)&(&dword_A8B230)[130].abstractFlags, v4); /*0x683b47*/
   _strupr((char *)&dword_A8B230[130].abstractFlags); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x683b73*/

@@ -213,28 +213,28 @@ AbstractClass * * CampaignClass::SaveProgress()
         break; /*0x49c695*/
       if ( isalnum(*v6) )
       {
-        g_IsWindowed[v5] = *v6; /*0x49c703*/
+        (&g_IsWindowed)[v5] = *v6; /*0x49c703*/
       }
       else
       {
-        g_IsWindowed[v5] = 61; /*0x49c6a7*/
+        (&g_IsWindowed)[v5] = 61; /*0x49c6a7*/
         v7 = v5 + 1; /*0x49c6ae*/
         v8 = *v6 >> 4; /*0x49c6b2*/
         if ( (unsigned int)v8 >= 0x10 )
           v9 = 0; /*0x49c6c9*/
         else
           v9 = v8 >= 10 ? v8 + 55 : v8 + 48;
-        g_IsWindowed[v7] = v9; /*0x49c6cb*/
+        (&g_IsWindowed)[v7] = v9; /*0x49c6cb*/
         v5 = v7 + 1; /*0x49c6d3*/
         v10 = *v6 & 0xF; /*0x49c6d4*/
         if ( v10 > 0xFu )
         {
-          g_IsWindowed[v5] = 0; /*0x49c6f9*/
+          (&g_IsWindowed)[v5] = 0; /*0x49c6f9*/
         }
         else
         {
           v11 = (*v6 & 0xFu) >= 0xA ? v10 + 55 : v10 + 48;
-          g_IsWindowed[v5] = v11; /*0x49c6e5*/
+          (&g_IsWindowed)[v5] = v11; /*0x49c6e5*/
         }
       }
       v12 = v6[1]; /*0x49c709*/
@@ -243,7 +243,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     }
     while ( v12 );
   }
-  g_IsWindowed[v5] = 0; /*0x49c720*/
+  (&g_IsWindowed)[v5] = 0; /*0x49c720*/
   strcpy(Block,(const char *)(g_IsWindowed)); /*0x49c73a*/
   v13 = (char *)&((unsigned int *)this)[0]; /*0x49c743*/
   v14 = 0; /*0x49c745*/
@@ -253,25 +253,25 @@ AbstractClass * * CampaignClass::SaveProgress()
       break; /*0x49c753*/
     if ( isalnum(i) )
     {
-      g_IsWindowed[v14] = *v13; /*0x49c7a4*/
+      (&g_IsWindowed)[v14] = *v13; /*0x49c7a4*/
     }
     else
     {
-      g_IsWindowed[v14] = 61; /*0x49c765*/
+      (&g_IsWindowed)[v14] = 61; /*0x49c765*/
       v16 = v14 + 1; /*0x49c76c*/
       v17 = *v13 >> 4; /*0x49c770*/
       if ( (unsigned int)v17 >= 0x10 )
         v18 = 0; /*0x49c787*/
       else
         v18 = v17 >= 10 ? v17 + 55 : v17 + 48;
-      g_IsWindowed[v16] = v18; /*0x49c789*/
+      (&g_IsWindowed)[v16] = v18; /*0x49c789*/
       v14 = v16 + 1; /*0x49c794*/
-      g_IsWindowed[v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
+      (&g_IsWindowed)[v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
     }
     i = v13[1]; /*0x49c7aa*/
     ++v14; /*0x49c7ad*/
   }
-  g_IsWindowed[v14] = 0; /*0x49c7bd*/
+  (&g_IsWindowed)[v14] = 0; /*0x49c7bd*/
   strcat(Block,(const char *)(g_IsWindowed)); /*0x49c7df*/
   CCFileClass::Construct3((int)&v30); /*0x49c7ef*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))(&v30, g_Str_File_coopsave_ini); /*0x49c807*/
@@ -305,9 +305,9 @@ AbstractClass * * CampaignClass::SaveProgress()
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)((SessionClass *)((int *)dword_A8DA78[v23]))->GetPlayerSide(); /*0x49c925*/
+    v25 = (void *)((SessionClass *)((int *)(&dword_A8DA78)[v23]))->GetPlayerSide(); /*0x49c925*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse2, v25); /*0x49c939*/
-    v26 = ((SessionClass *)((SessionClass *)dword_A8DA78[v23]))->GetPlayerColor(); /*0x49c949*/
+    v26 = ((SessionClass *)((SessionClass *)(&dword_A8DA78)[v23]))->GetPlayerColor(); /*0x49c949*/
     ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block,(char *)(aColor2), v26, 0); /*0x49c95d*/
   }
 LABEL_47:

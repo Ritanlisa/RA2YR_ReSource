@@ -335,7 +335,7 @@ int CellClass::setOverlayType(int a2) {
   this->attachedTag = (gamemd::TagClass *)((int)((TagClass *)__2_YAPAXI_Z(v3))); /*0x42ac7f*/
   this->smudgeTypeIndex = (int)(__2_YAPAXI_Z(v3)); /*0x42ac88*/
   this->overlayTypeIndex = (int)(__2_YAPAXI_Z(v3)); /*0x42ac90*/
-  dword_89A304[0] = -g_MapCellWidth; /*0x42aca1*/
+  (&dword_89A304)[0] = -g_MapCellWidth; /*0x42aca1*/
   dword_89A310 = g_MapCellWidth + 1; /*0x42acac*/
   dword_89A308 = 1 - g_MapCellWidth; /*0x42acb8*/
   dword_89A30C = 1; /*0x42acc4*/

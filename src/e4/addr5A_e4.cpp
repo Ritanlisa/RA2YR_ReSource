@@ -520,8 +520,8 @@ void GenerateTerrainHeightMapInternal()
       {
         v11 = j & 7; /*0x5a3529*/
         v16 = i[9]; /*0x5a352c*/
-        v12 = IDA_HIWORD(v16) + IDA_HIWORD(dword_89F688[v11]); /*0x5a3543*/
-        IDA_LOWORD(v18) = v16 + IDA_LOWORD(dword_89F688[v11]); /*0x5a354b*/
+        v12 = IDA_HIWORD(v16) + IDA_HIWORD((&dword_89F688)[v11]); /*0x5a3543*/
+        IDA_LOWORD(v18) = v16 + IDA_LOWORD((&dword_89F688)[v11]); /*0x5a354b*/
         IDA_HIWORD(v18) = v12; /*0x5a3550*/
         v16 = v18; /*0x5a3559*/
         v13 = v12; /*0x5a3560*/
@@ -727,8 +727,8 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       do /*0x5a4a61*/
       {
         v25 = v24 & 7; /*0x5a48cc*/
-        v26 = v39[1] + IDA_HIWORD(dword_89F688[v25]); /*0x5a48de*/
-        IDA_LOWORD(v25) = *v39 + IDA_LOWORD(dword_89F688[v25]); /*0x5a48e5*/
+        v26 = v39[1] + IDA_HIWORD((&dword_89F688)[v25]); /*0x5a48de*/
+        IDA_LOWORD(v25) = *v39 + IDA_LOWORD((&dword_89F688)[v25]); /*0x5a48e5*/
         IDA_HIWORD(v43) = v26; /*0x5a48ee*/
         v27 = (int16_t)v25; /*0x5a48f3*/
         IDA_LOWORD(v43) = v25; /*0x5a48f9*/

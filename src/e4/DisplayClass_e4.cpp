@@ -813,8 +813,8 @@ int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
 
   if ( (byte_B0CDE0 & 1) == 0 ) /*0x6d8541*/
   {
-    dword_B0CE38[0] = 0; /*0x6d854e*/
-    dword_B0CE3C[0] = -1; /*0x6d8553*/
+    (&dword_B0CE38)[0] = 0; /*0x6d854e*/
+    (&dword_B0CE3C)[0] = -1; /*0x6d8553*/
     dword_B0CE40 = 1; /*0x6d855e*/
     dword_B0CE44 = -1; /*0x6d8563*/
     dword_B0CE48 = 1; /*0x6d8569*/

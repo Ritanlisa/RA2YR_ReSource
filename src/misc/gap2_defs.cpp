@@ -223,9 +223,9 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       v96 = v97->ptr_24;
       v95 = v96;
       int v13 = (int16_t)v96 << 8;
-      IDA_LOWORD(v96) = v96 + IDA_LOWORD(Direction_X_Offsets[v12]);
+      IDA_LOWORD(v96) = v96 + IDA_LOWORD((&Direction_X_Offsets)[v12]);
       int v14 = (IDA_SHIWORD(v96) << 8) + 128;
-      IDA_HIWORD(v96) = IDA_HIWORD(v95) + IDA_HIWORD(Direction_X_Offsets[v12]);
+      IDA_HIWORD(v96) = IDA_HIWORD(v95) + IDA_HIWORD((&Direction_X_Offsets)[v12]);
       unsigned int * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v96);
       Coords = CellClass::GetCoords(v15, &v108);
       int v17 = Coords[1];
@@ -267,8 +267,8 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   }
   unsigned short * v33 = (unsigned short *)(*(int (**)(int *, int *))(*v5 + 440))(v5, &v97);
   int v34 = v96 & 7;
-  v35 = v33[1] + IDA_HIWORD(Direction_X_Offsets[v34]);
-  *v3 = ((int16_t)(IDA_LOWORD(Direction_X_Offsets[v34]) + *v33) << 8) + 128;
+  v35 = v33[1] + IDA_HIWORD((&Direction_X_Offsets)[v34]);
+  *v3 = ((int16_t)(IDA_LOWORD((&Direction_X_Offsets)[v34]) + *v33) << 8) + 128;
   this->q028 = (v35 << 8) + 128;
   this->q0B0 = 0;
   int v36 = this->Cell_9.GetGroundHeight();

@@ -228,7 +228,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
       v13 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x75f497*/
-      Owner = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99); /*0x75f4a3*/
+      Owner = (void *)Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 99); /*0x75f4a3*/
       if ( (int)Owner < v13 ) /*0x75f4aa*/
         LOBYTE(Owner) = LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v14, (int)v6); /*0x75f4b2*/
     }

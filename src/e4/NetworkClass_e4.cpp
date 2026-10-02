@@ -101,7 +101,7 @@ AbstractClass * * NetworkClass::RecordEvent()
       v3 += 108; /*0x6ffe7c*/
       *(unsigned short *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/
-      dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
+      (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
       result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
     }

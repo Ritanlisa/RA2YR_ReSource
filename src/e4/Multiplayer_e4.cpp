@@ -75,7 +75,7 @@ void * Multiplayer::FindStartPositions()
   v27 = 10; /*0x6883ad*/
   v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  v6 = (void **)((char *)&dword_A8B230[44].vtable0 + 2); /*0x6883b7*/
+  v6 = (void **)((char *)&(&dword_A8B230)[44].vtable0 + 2); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -143,10 +143,10 @@ LABEL_24:
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
+        v14 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
         LOWORD(v22) = *(unsigned short *)&stru_87F5F0.__pad_58[708] /*0x688573*/
                     + Random::Range(
-                        (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                        (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink,
                         10,
                         *(unsigned int *)&stru_87F5F0.__pad_58[716] - 10);
         HIWORD(v22) = v14 + *(unsigned short *)&stru_87F5F0.__pad_58[712] + 10; /*0x688588*/
@@ -275,7 +275,7 @@ void Multiplayer::ShowProgress(int a2)
   if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
-    if ( BYTE1(dword_A8B230[375].vtable0) ) /*0x69aeb8*/
+    if ( BYTE1((&dword_A8B230)[375].vtable0) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }

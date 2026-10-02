@@ -341,7 +341,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     }
     v16 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x422e2d*/
     v17 = LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x422e87*/
-        + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
+        + LOWORD((&g_ZBufferDescriptor)[1].Stream_field_10)
         - *((unsigned short *)a2 + 2)
         - LOWORD(DSurface_ViewBounds.field_4)
         + this->AnimClass_field_0x100
@@ -464,7 +464,7 @@ LABEL_47:
   v106 = 1000; /*0x42311a*/
   if ( v25[2].__pad_C[201] ) /*0x423122*/
   {
-    v105[0] = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4]) /*0x42314b*/
+    v105[0] = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]) /*0x42314b*/
                         + 780);
     if ( v25[2].__pad_C[209] ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/

@@ -177,7 +177,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       case 1895: /*0x7932f4*/
       case 1896: /*0x7932f4*/
       case 1897: /*0x7932f4*/
-        if ( byte_B757EB[(uint16_t)a3] ) /*0x7932fb*/
+        if ( (&byte_B757EB)[(uint16_t)a3] ) /*0x7932fb*/
         {
           if ( !SendDlgItemMessageA(hWnd, (uint16_t)a3, 0xF0u, 0, 0) ) /*0x79331a*/
             SendDlgItemMessageA(hWnd, (uint16_t)a3, 0xF1u, 1u, 0); /*0x79332a*/
@@ -509,7 +509,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       do /*0x793fd4*/
       {
         v17 = *(unsigned int *)(v16); /*0x793f5f*/
-        v18 = (unsigned int *)(dword_A8DA90[*(unsigned int *)(v16)] + 40); /*0x793f68*/
+        v18 = (unsigned int *)((&dword_A8DA90)[*(unsigned int *)(v16)] + 40); /*0x793f68*/
         *(unsigned int *)v84 = *v18; /*0x793f6d*/
         v19 = dword_A8DA90[v3] + 40; /*0x793f7e*/
         v85 = v18[1]; /*0x793f81*/
@@ -706,7 +706,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
             if ( v96 != 41 ) /*0x794476*/
               goto LABEL_89; /*0x794476*/
             Debug::Log(); /*0x794481*/
-            if ( (uint8_t)((NetworkID *)((bool *)(dword_A8DA78[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
+            if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
             {
               v45 = (char *)(ToWideStringChar((char *)dword_A8DA90[v3])); /*0x7944bd*/
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
@@ -725,13 +725,13 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
                   v47 = v46; /*0x794582*/
                   if ( v46 ) /*0x794586*/
                   {
-                    DlgItem = GetDlgItem(v46, dword_84A1F0[v62]); /*0x794591*/
+                    DlgItem = GetDlgItem(v46, (&dword_84A1F0)[v62]); /*0x794591*/
                     *((unsigned char *)&dword_B75F54 + v62) = 1; /*0x794597*/
                     SendMessageA(DlgItem, 0xF1u, 1u, 0); /*0x7945a8*/
                     PostMessageA(v47, 0xFu, 0, 0); /*0x7945b5*/
                   }
                 }
-                dword_A8E1A4[dword_A8E224] = v3; /*0x7945c4*/
+                (&dword_A8E1A4)[dword_A8E224] = v3; /*0x7945c4*/
                 v76 = TimerGetTicks(); /*0x7945d6*/
                 v57 = 1; /*0x7945df*/
                 v42 = 1; /*0x7945e7*/
@@ -749,13 +749,13 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           if ( !v42 ) /*0x794631*/
             goto LABEL_89; /*0x794631*/
         }
-        if ( dword_A8DE4C[v70] == 11 ) /*0x79463f*/
+        if ( (&dword_A8DE4C)[v70] == 11 ) /*0x79463f*/
         {
           Debug::Log(); /*0x79469c*/
           goto LABEL_100; /*0x7946a4*/
         }
   LABEL_89:
-        v50 = dword_A8DE4C[v70]; /*0x794641*/
+        v50 = (&dword_A8DE4C)[v70]; /*0x794641*/
         if ( v50 >= 1 && v50 < 11 ) /*0x794654*/
         {
           v51 = v50 - 1; /*0x794656*/
@@ -786,7 +786,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     }
     v42 = v57; /*0x7946bb*/
   LABEL_100:
-    if ( v42 && dword_A8DE4C[v70] == 11 || v61 >= a3 ) /*0x7946e2*/
+    if ( v42 && (&dword_A8DE4C)[v70] == 11 || v61 >= a3 ) /*0x7946e2*/
       break; /*0x7946e2*/
     ++v61; /*0x7946f2*/
     v54 = (char *)(ToWideStringChar((char *)dword_A8DA90[v3])); /*0x7946f6*/

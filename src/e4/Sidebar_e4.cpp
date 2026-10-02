@@ -915,7 +915,7 @@ void Sidebar_UpdateProductionDisplay()
   int v82; // [esp+1Ah] [ebp-470h] BYREF
       v70 = a2;
       *(unsigned char *)(a1 + 60) = 0;
-      stru_B05488[24720] = 1;
+      (&stru_B05488)[24720] = 1;
       *(unsigned int *)aP3[0] = 0;
       *(unsigned int *)&aP3.field_2[2] = 0;
       *(unsigned int *)&aP3[8] = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 124))(*(unsigned int *)&stru_87C374[44940]);
@@ -948,7 +948,7 @@ LABEL_13:
   int v12; // eax
       v12 = (*(unsigned char *)(a1 + 63) != 0)
           + (*(unsigned int *)&stru_87C374[44072]
-           - *(unsigned int *)&stru_B05488[24688]
+           - *(unsigned int *)&(&stru_B05488)[24688]
            - v11
            + *(unsigned int *)&stru_87C374[44064]
            - 7)

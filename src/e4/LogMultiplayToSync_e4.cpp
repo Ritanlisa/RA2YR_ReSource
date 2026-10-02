@@ -118,7 +118,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf((FILE *const )(v5), "Latency setting: %d\n", g_NetworkHostState);
     fprintf((FILE *const )(v5), "Game speed setting: %d\n", *(unsigned int *)g_GameModeOptions);
     fprintf((FILE *const )(v5), "FrameSendRate: %d\n", g_ScenarioLoadState);
-    fprintf((FILE *const )(v5), "\nFrame: %d\n", dword_AC6664[207 * a1 + 1]);
+    fprintf((FILE *const )(v5), "\nFrame: %d\n", (&dword_AC6664)[207 * a1 + 1]);
     fprintf((FILE *const )(v5), "Slot: %d\n", a1);
     if ( g_NetworkInterface )
     {

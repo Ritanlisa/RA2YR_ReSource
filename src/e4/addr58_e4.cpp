@@ -363,25 +363,25 @@ void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
   v30 = v18; /*0x586117*/
   v27 = *(unsigned int *)(a1 /*0x586174*/
                   + 4
-                  * ((int16_t)(IDA_LOWORD(((unsigned int *)(dword_ABD460))[dword_82A984[2 * v18]]) + v8) / 4
-                   + 130 * ((int16_t)(v9 + IDA_HIWORD(dword_ABD460[dword_82A984[2 * v18]])) / 4))
+                  * ((int16_t)(IDA_LOWORD(((unsigned int *)(dword_ABD460))[(&dword_82A984)[2 * v18]]) + v8) / 4
+                   + 130 * ((int16_t)(v9 + IDA_HIWORD((&dword_ABD460)[(&dword_82A984)[2 * v18]])) / 4))
                   + 23024);
   v19 = ((unsigned int *)(dword_82A988))[2 * v18]; /*0x586178*/
   v20 = v8 + IDA_LOWORD(((unsigned int *)(dword_ABD460))[v19]); /*0x58618e*/
-  IDA_LOWORD(v19) = v9 + IDA_HIWORD(dword_ABD460[v19]); /*0x586195*/
+  IDA_LOWORD(v19) = v9 + IDA_HIWORD((&dword_ABD460)[v19]); /*0x586195*/
   v22 = *(unsigned int *)(a1 + 4 * (v20 / 4 + 130 * ((int16_t)v19 / 4)) + 23024); /*0x5861be*/
   v25 = v27; /*0x5861cb*/
   if ( v27 >= v22 ) /*0x5861cf*/
     v25 = v22; /*0x5861d1*/
   v23 = *(unsigned int *)(a1 /*0x58622a*/
                   + 4
-                  * ((int16_t)(v14 + IDA_LOWORD(dword_ABD460[dword_82A9C4[2 * v30]])) / 4
-                   + 130 * ((int16_t)(v15 + IDA_HIWORD(dword_ABD460[dword_82A9C4[2 * v30]])) / 4))
+                  * ((int16_t)(v14 + IDA_LOWORD((&dword_ABD460)[(&dword_82A9C4)[2 * v30]])) / 4
+                   + 130 * ((int16_t)(v15 + IDA_HIWORD((&dword_ABD460)[(&dword_82A9C4)[2 * v30]])) / 4))
                   + 23024);
   v24 = *(unsigned int *)(a1 /*0x58626d*/
                   + 4
-                  * ((int16_t)(IDA_LOWORD(((unsigned int *)(dword_ABD460))[dword_82A9C8[2 * v30]]) + v14) / 4
-                   + 130 * ((int16_t)(v15 + IDA_HIWORD(dword_ABD460[dword_82A9C8[2 * v30]])) / 4))
+                  * ((int16_t)(IDA_LOWORD(((unsigned int *)(dword_ABD460))[(&dword_82A9C8)[2 * v30]]) + v14) / 4
+                   + 130 * ((int16_t)(v15 + IDA_HIWORD((&dword_ABD460)[(&dword_82A9C8)[2 * v30]])) / 4))
                   + 23024);
   if ( v23 >= v24 ) /*0x586276*/
     v23 = v24; /*0x586278*/
@@ -774,16 +774,16 @@ int  unknown::Read(unsigned short * a2, void *a2_2)
 namespace gamemd {
 void sub_58B670()
 {
-  *(double *)&unk_ABECA0[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
+  *(double *)&(&unk_ABECA0)[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
 }
 }
 // 0x58B6E0
 namespace gamemd {
 int sub_58B6E0()
 {
-  *(unsigned int *)&unk_ABECA0[24] = 0; /*0x58b6e2*/
-  *(unsigned int *)&unk_ABECA0[28] = 0; /*0x58b6e7*/
-  *(unsigned int *)&unk_ABECA0[32] = 0; /*0x58b6ec*/
+  *(unsigned int *)&(&unk_ABECA0)[24] = 0; /*0x58b6e2*/
+  *(unsigned int *)&(&unk_ABECA0)[28] = 0; /*0x58b6e7*/
+  *(unsigned int *)&(&unk_ABECA0)[32] = 0; /*0x58b6ec*/
   return 0; /*0x58b6f1*/
 }
 }

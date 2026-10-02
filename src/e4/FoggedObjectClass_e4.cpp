@@ -524,8 +524,8 @@ LABEL_47:
   }
   while ( !v43 ); /*0x4d130a*/
   Cell::CreateCrater(*((unsigned int *)this + 16), *((unsigned int *)this + 17), *((unsigned int *)this + 18), *((unsigned int *)this + 19), 0); /*0x4d1338*/
-  *((unsigned int *)this + 16) += g_TacticalClass_Instance[44].__tail_0; /*0x4d134d*/
-  *((unsigned int *)this + 17) += g_TacticalClass_Instance[45].__tail_0; /*0x4d135f*/
+  *((unsigned int *)this + 16) += (&g_TacticalClass_Instance)[44].__tail_0; /*0x4d134d*/
+  *((unsigned int *)this + 17) += (&g_TacticalClass_Instance)[45].__tail_0; /*0x4d135f*/
   return this; /*0x4d1364*/
 
 }
@@ -587,8 +587,8 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 18) = v5[2]; /*0x4d1446*/
   *((unsigned int *)this + 19) = v5[3]; /*0x4d144c*/
   v6 = *((unsigned int *)this + 17); /*0x4d1460*/
-  *((unsigned int *)this + 16) += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d1463*/
-  *((unsigned int *)this + 17) = *(unsigned int *)&g_TacticalClass_Instance[45] + v6; /*0x4d1473*/
+  *((unsigned int *)this + 16) += *(unsigned int *)&(&g_TacticalClass_Instance)[44]; /*0x4d1463*/
+  *((unsigned int *)this + 17) = *(unsigned int *)&(&g_TacticalClass_Instance)[45] + v6; /*0x4d1473*/
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d14ab*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0

@@ -102,7 +102,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
     if ( (int)v5 >= (int)&off_81B9D8 ) /*0x474989*/
       return 0; /*0x474992*/
   }
-  return dword_81B9B4[2 * v4]; /*0x47498b*/
+  return (&dword_81B9B4)[2 * v4]; /*0x47498b*/
 
 }
 } // namespace gamemd
@@ -596,7 +596,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
       if ( v15 >= 65 && v15 <= 90 ) /*0x5f91aa*/
         v5 = v15 + 32; /*0x5f91af*/
       if ( (v4 == 103 || v4 == 110 || v4 == 99 || v4 == 121) && (v5 == 97 || v5 == 116) ) /*0x5f91c9*/
-        v15 = byte_7E1BCE[112 * v3]; /*0x5f91dd*/
+        v15 = (&byte_7E1BCE)[112 * v3]; /*0x5f91dd*/
     }
   }
   if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f91eb*/

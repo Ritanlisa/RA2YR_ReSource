@@ -382,11 +382,11 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
       if ( v17 ) /*0x550d33*/
       {
         v18 = (gamemd::BuildingTypeClass *)((int)((gamemd::BuildingTypeClass *)(4 * v16)));
-        v19 = (gamemd::BuildingTypeClass *)(dword_ABC7F8[4 * v16]);
-        v20 = (gamemd::BuildingTypeClass *)(dword_ABC7FC[4 * v16]);
+        v19 = (gamemd::BuildingTypeClass *)((&dword_ABC7F8)[4 * v16]);
+        v20 = (gamemd::BuildingTypeClass *)((&dword_ABC7FC)[4 * v16]);
         v68 += v19; /*0x550d52*/
         v69 += v20; /*0x550d5a*/
-        v21 = dword_ABC800[4 * v16]; /*0x550d5e*/
+        v21 = (&dword_ABC800)[4 * v16]; /*0x550d5e*/
         v22 = ((unsigned int *)(dword_ABC804))[v18]; /*0x550d64*/
         v63 += v21; /*0x550d6c*/
         v64 += v22; /*0x550d76*/
@@ -401,8 +401,8 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
       }
       else if ( (v70 & 1) != 0 ) /*0x550db3*/
       {
-        v25 = dword_ABC7F8[4 * v16]; /*0x550dbc*/
-        v26 = dword_ABC804[4 * v16]; /*0x550dc2*/
+        v25 = (&dword_ABC7F8)[4 * v16]; /*0x550dbc*/
+        v26 = (&dword_ABC804)[4 * v16]; /*0x550dc2*/
         v68 += v25; /*0x550dca*/
         v64 += v26; /*0x550dd4*/
         IDA_LODWORD(v62) = v25 + v62; /*0x550de4*/
@@ -410,8 +410,8 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
       }
       else
       {
-        v27 = dword_ABC7FC[4 * v16]; /*0x550df5*/
-        v28 = dword_ABC800[4 * v16]; /*0x550dfb*/
+        v27 = (&dword_ABC7FC)[4 * v16]; /*0x550df5*/
+        v28 = (&dword_ABC800)[4 * v16]; /*0x550dfb*/
         v69 += v27; /*0x550e03*/
         v63 += v28; /*0x550e0d*/
         IDA_HIDWORD(v62) += v27; /*0x550e1d*/

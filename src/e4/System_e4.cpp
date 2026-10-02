@@ -413,10 +413,10 @@ int sub_5BDB90(int a1, char a2)
   int result; // eax
 
   if ( !a2 ) /*0x5bdbaa*/
-    return dword_82D028[7 * a1]; /*0x5bdbaa*/
-  result = dword_82D034[7 * a1]; /*0x5bdbac*/
+    return (&dword_82D028)[7 * a1]; /*0x5bdbaa*/
+  result = (&dword_82D034)[7 * a1]; /*0x5bdbac*/
   if ( result == -1 ) /*0x5bdbb2*/
-    return dword_82D028[7 * a1]; /*0x5bdbb4*/
+    return (&dword_82D028)[7 * a1]; /*0x5bdbb4*/
   return result; /*0x5bdbb6*/
 }
 } // namespace gamemd

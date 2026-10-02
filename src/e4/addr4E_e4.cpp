@@ -1626,7 +1626,7 @@ void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   while ( (int)v7 < (int)&dword_8B3FF0 ); /*0x4e5c41*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5c4d*/
   SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5c59*/
-  result = dword_A8B238[0]; /*0x4e5c5b*/
+  result = (&dword_A8B238)[0]; /*0x4e5c5b*/
   if ( dword_A8B238[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5c67*/
   {
     ShowWindow(DlgItem, 0); /*0x4e5c79*/

@@ -1025,7 +1025,7 @@ void RenderVoxels()
   int v33; // [esp+38h] [ebp-4h]
 
   v4 = a4; /*0x757120*/
-  g_VoxelOffsetTable[0] = 0; /*0x757127*/
+  (&g_VoxelOffsetTable)[0] = 0; /*0x757127*/
   v5 = 1; /*0x757141*/
   if ( *((unsigned char *)a4 + 50) > 1u ) /*0x757146*/
   {

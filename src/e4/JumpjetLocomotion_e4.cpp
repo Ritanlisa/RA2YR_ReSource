@@ -61,7 +61,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
       v5 = *((unsigned int *)this + 22); /*0x4b0b13*/
       if ( v5 != -1 ) /*0x4b0b19*/
       {
-        v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
+        v5 = (&byte_7E7B28)[12 * v5]; /*0x4b0b22*/
         if ( v5 ) /*0x4b0b2c*/
         {
           v7 = 4 * v5; /*0x4b0b32*/
@@ -247,7 +247,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   char *JumpjetLocomotion_field_0x44; // ecx
 
   v4 = (int)(*aP3);
-  v5 = (int)(dword_7E7B30[3 * (int)this->JumpjetLocomotion_field_0x58]);
+  v5 = (int)((&dword_7E7B30)[3 * (int)this->JumpjetLocomotion_field_0x58]);
   v6 = (int)(*aP2);
   v7 = (int)(aP2[1]);
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/

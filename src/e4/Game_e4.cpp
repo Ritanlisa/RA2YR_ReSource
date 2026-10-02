@@ -557,7 +557,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
            0) )
     {
       v7 = dword_A8DA84++; /*0x5b713d*/
-      dword_A8DA78[v7] = v6; /*0x5b714c*/
+      (&dword_A8DA78)[v7] = v6; /*0x5b714c*/
     }
     ++dword_A8B54C; /*0x5b714f*/
   }
@@ -579,7 +579,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
            0) )
     {
       v10 = dword_A8DA84++; /*0x5b71d4*/
-      dword_A8DA78[v10] = v9; /*0x5b71e3*/
+      (&dword_A8DA78)[v10] = v9; /*0x5b71e3*/
     }
     ++dword_A8B54C; /*0x5b71e6*/
   }
@@ -617,15 +617,15 @@ LABEL_31:
     Dialog::Destroy(v13); /*0x5b72ca*/
   ((EventClass *)((EventClass *)&unk_A8EA70))->CheckFlag(); /*0x5b72d4*/
   BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5b72e4*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
+  (&dword_A8B230)[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
-  v17 = dword_A8E960[0]; /*0x5b7311*/
-  BYTE1(v17) = BYTE1(dword_A8E960[0]) & 0x77; /*0x5b7319*/
+  v17 = (&dword_A8E960)[0]; /*0x5b7311*/
+  BYTE1(v17) = BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5b7319*/
   v18 = v17 | ((byte_A8B31D & 1 | (16 * (stru_A8B250.__pad_0[16] & 1))) << 11); /*0x5b731f*/
-  LOBYTE(v18) = LOBYTE(dword_A8E960[0]) | 0xC0; /*0x5b7326*/
+  LOBYTE(v18) = LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5b7326*/
   *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x5b7329*/
   dword_A8B24C = 2; /*0x5b7333*/
-  dword_A8E960[0] = v18; /*0x5b733d*/
+  (&dword_A8E960)[0] = v18; /*0x5b733d*/
   nullsub_37(a2); /*0x5b7343*/
   return (gamemd::HashTable_flat **)(1); /*0x5b709d*/
 
@@ -666,7 +666,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   *(int *)((char *)&v11[7] + 2) = NetworkBuffer::GetField2(); /*0x5ba6db*/
   Field3 = NetworkBuffer::GetField3(); /*0x5ba6df*/
   *(int *)((char *)&v11[36] + 2) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432); /*0x5ba6f0*/
-  *(int *)((char *)&v11[37] + 2) = dword_A8E960[0]; /*0x5ba6fd*/
+  *(int *)((char *)&v11[37] + 2) = (&dword_A8E960)[0]; /*0x5ba6fd*/
   *(int *)((char *)&v11[8] + 2) = Field3; /*0x5ba70a*/
   BYTE2(v11[40]) = stru_A8B250.__pad_0[24]; /*0x5ba71b*/
   v7 = *(int *)((char *)&v11[35] + 2); /*0x5ba739*/

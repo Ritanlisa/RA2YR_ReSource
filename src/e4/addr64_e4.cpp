@@ -424,7 +424,7 @@ AbstractClass * * ProcessNetworkEvents()
           byte_A802D5[111 * dword_A802CC] &= ~1u; /*0x647504*/
           if ( dword_8B41F8 < 0x4000 ) /*0x647515*/
           {
-            v4 = &byte_A802D4[111 * dword_A802CC]; /*0x647522*/
+            v4 = &(&byte_A802D4)[111 * dword_A802CC]; /*0x647522*/
             v5 = &byte_8B4204[111 * dword_8B4200]; /*0x647539*/
             qmemcpy(v5, v4, 0x6Cu); /*0x647540*/
             v4 += 108; /*0x647540*/
@@ -825,9 +825,9 @@ LABEL_9:
     strncpy(Destination, v16,(size_t)((IUnknown *)0x14));
     IDA_HIWORD(v17) = *(unsigned short *)&HouseClass_Player[40538];
     int v170 = *(unsigned int *)(HouseClass_Player.field_0 + 48);
-    var69C = *(unsigned int *)&HouseClass_Player[40536];
-    IDA_LOWORD(v17) = *(unsigned short *)&HouseClass_Player[40560];
-    v127 = *(ObjectClass **)&HouseClass_Player[40544];
+    var69C = *(unsigned int *)&(&HouseClass_Player)[40536];
+    IDA_LOWORD(v17) = *(unsigned short *)&(&HouseClass_Player)[40560];
+    v127 = *(ObjectClass **)&(&HouseClass_Player)[40544];
     v126 = *(MouseClass **)&HouseClass_Player[40540];
     ((Network *)(&var69C))->SetPort(v17);
     int v18 = 1;
@@ -899,15 +899,15 @@ LABEL_27:
     if ( v23 )
       goto LABEL_34;
   }
-  if ( *(unsigned int *)&HouseClass_Player[29932] == 1
-    || *(unsigned int *)&HouseClass_Player[29932] == 2
+  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 1
+    || *(unsigned int *)&(&HouseClass_Player)[29932] == 2
     || HouseClass_Player[40532] )
   {
     Debug::Log();
-    if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+    if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
       ((Network *)(&HouseClass_Player[44148]))->Disconnect();
     Multiplayer::ShowProgress(
-      &HouseClass_Player[29932],
+      &(&HouseClass_Player)[29932],
       *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13501) != 0 ? 200 : 100);
     v148 = (ObjectClass *)TimerGetTicks();
     var620 = 180;
@@ -928,7 +928,7 @@ LABEL_34:
   if ( v25 )
     goto LABEL_93;
 LABEL_38:
-  if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
     ((Network *)(&HouseClass_Player[44148]))->Disconnect();
   int v28 = *v8;
   BOOL v29 = v94 == 0;

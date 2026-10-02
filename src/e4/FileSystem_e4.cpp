@@ -181,7 +181,7 @@ LABEL_36:
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = FileSystem::openFile(*(FileSystem **)&g_FileExtensionState[12], v25->__pad_0); /*0x626fcb*/
+            v26 = FileSystem::openFile(*(FileSystem **)&(&g_FileExtensionState)[12], v25->__pad_0); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }

@@ -21,7 +21,7 @@ void AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6
   for ( i = 0; i < 18; ++i ) /*0x75a791*/
   {
     v1 = i >> 3; /*0x75a79e*/
-    v2 = ~(1 << (i & 7)) & byte_B45BA8[i >> 3]; /*0x75a7a9*/
+    v2 = ~(1 << (i & 7)) & (&byte_B45BA8)[i >> 3]; /*0x75a7a9*/
     ((unsigned int *)(byte_B45BA8))[v1] = v2; /*0x75a7af*/
   }
   result = ((unsigned int *)(byte_B45BA8))[0] | 0x40; /*0x75a7bd*/

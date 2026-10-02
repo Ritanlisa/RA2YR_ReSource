@@ -65,7 +65,7 @@ int Mission::ExecuteTechnoMissionAction()
           v4 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          v5 = (unsigned int)((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State() /*0x520c2d*/
+          v5 = (unsigned int)((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State() /*0x520c2d*/
              % *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3680);
           v6 = (char *)v19; /*0x520c37*/
           v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3668) + 4 * v5); /*0x520c3b*/
@@ -79,7 +79,7 @@ int Mission::ExecuteTechnoMissionAction()
           {
             v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 292) /*0x520c91*/
                           + 4
-                          * ((unsigned int)((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()
+                          * ((unsigned int)((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State()
                            % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 304)));
             v8 = *(unsigned int *)this->__pad_0; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
@@ -466,9 +466,9 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
       {
         v7 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v19)); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
-          v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
+          v8 = ((unsigned int *)&(&dword_8871E0)[1])[1]; /*0x6ed867*/
         else
-          v8 = ((unsigned int *)&dword_8871E0[1])[0]; /*0x6ed85a*/
+          v8 = ((unsigned int *)&(&dword_8871E0)[1])[0]; /*0x6ed85a*/
         if ( ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= v8 ) /*0x6ed87a*/
         {
           *((unsigned char *)i + 1673) = 1; /*0x6ed8b2*/
@@ -495,8 +495,8 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               {
                 if ( i[361]
                   || ((v9 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v20)), v9 == 54) || v9 == 53
-                    ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
-                    : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
+                    ? (v10 = ((unsigned int *)&(&dword_8871E0)[1])[1])
+                    : (v10 = ((unsigned int *)&(&dword_8871E0)[1])[0]),
                       ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )
                 {
                   v3 = i[173]; /*0x6eda11*/
@@ -571,7 +571,7 @@ int Mission::GetMissionDelay(void *a1_1)
     result = dword_A8E7AC; /*0x70f79e*/
     if ( !dword_A8E7AC ) /*0x70f7a5*/
     {
-      result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
+      result = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
       *p_Mission_field_0x180 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/
       p_Mission_field_0x180[2] = result; /*0x70f7ca*/

@@ -73,7 +73,7 @@ namespace gamemd {
 int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 
-  HIBYTE(dword_A8B230[374].vtable3) = this->isAliveFlag; /*0x6e025c*/
+  HIBYTE((&dword_A8B230)[374].vtable3) = this->isAliveFlag; /*0x6e025c*/
   return 1; /*0x6e0264*/
 
 }
@@ -93,7 +93,7 @@ namespace gamemd {
 int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
 
-  LOBYTE(dword_A8B230[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
+  LOBYTE((&dword_A8B230)[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
   return 1; /*0x6e02a4*/
 
 }

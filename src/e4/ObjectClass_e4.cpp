@@ -224,9 +224,9 @@ LABEL_52:
       aP3 = (int16_t *)((gamemd::FootClass *)(*(int16_t **)(Type + 40)));
       v35 = v34 & 7; /*0x4d81e7*/
       v37 = 0; /*0x4d81ea*/
-      v36 = (unsigned short)aP3 + LOWORD(dword_89F688[v35]); /*0x4d81fb*/
+      v36 = (unsigned short)aP3 + LOWORD((&dword_89F688)[v35]); /*0x4d81fb*/
       vtable0 = this->vtable0; /*0x4d81fe*/
-      LOWORD(v35) = HIWORD(dword_89F688[v35]); /*0x4d8200*/
+      LOWORD(v35) = HIWORD((&dword_89F688)[v35]); /*0x4d8200*/
       LOWORD(aP4) = v36; /*0x4d8204*/
       HIWORD(aP4) = HIWORD(aP3) + v35; /*0x4d8213*/
       *(unsigned int *)v40 = (unsigned int)(aP4); /*0x4d821c*/

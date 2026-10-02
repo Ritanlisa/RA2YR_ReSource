@@ -103,7 +103,7 @@ int TabClass::DrawPower(void *a1)
     {
       v12 = GetDlgItem((HWND)a1, *(&dword_83923C + (unsigned int)v29)); /*0x6584ae*/
       hWnd = v12; /*0x6584ba*/
-      if ( dword_A8B538[0] ) /*0x6584c0*/
+      if ( (&dword_A8B538)[0] ) /*0x6584c0*/
       {
         EnableWindow(v12, 0); /*0x6584c5*/
         v12 = hWnd; /*0x6584cb*/
@@ -125,7 +125,7 @@ int TabClass::DrawPower(void *a1)
       v14 = GetDlgItem((HWND)a1, *(&dword_83925C + (unsigned int)v29)); /*0x65853f*/
       ShowWindow(v14, 0); /*0x658548*/
     }
-    else if ( dword_A8B538[0] ) /*0x658557*/
+    else if ( (&dword_A8B538)[0] ) /*0x658557*/
     {
       v15 = GetDlgItem((HWND)a1, *(&dword_83925C + (unsigned int)v29)); /*0x658571*/
       SendMessageA(v15, 0xF1u, 1u, 0); /*0x65857b*/

@@ -726,7 +726,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       v15 = (gamemd::Skirmish *)(g_UIControlState); /*0x7a8070*/
       if ( (!g_UIControlState || !*(unsigned int *)g_UIControlState) && !byte_B77E2C ) /*0x7a8085*/
       {
-        if ( !byte_A8B8E0[0] /*0x7a80a8*/
+        if ( !(&byte_A8B8E0)[0] /*0x7a80a8*/
           || (LOBYTE(v15) = dword_A8BB08, FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), (int)v15, 0)) )
         {
           dword_B78608 = TimerGetTicks(); /*0x7a80d2*/

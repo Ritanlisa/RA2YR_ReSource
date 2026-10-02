@@ -77,7 +77,7 @@ int CommandClass::BuildBar()
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
   (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, &stru_B0CCB0); /*0x6d122f*/
-  v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
+  v3 = (&g_ObjectTrackingPool)[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
     v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3);
@@ -98,7 +98,7 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d12a3*/
     }
   }
-  v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
+  v9 = (&g_ObjectTrackingPool)[dword_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
     v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9);
@@ -119,7 +119,7 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1318*/
     }
   }
-  v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
+  v15 = (&g_ObjectTrackingPool)[dword_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
     v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15);
@@ -140,7 +140,7 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d138e*/
     }
   }
-  v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
+  v21 = (&g_ObjectTrackingPool)[dword_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
     v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21);
@@ -167,7 +167,7 @@ int CommandClass::BuildBar()
   else
     v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
   PushCommandClass::Execute((unsigned int *)(v28), (int)aTipGuard); /*0x6d1435*/
-  v29 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1440*/
+  v29 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else

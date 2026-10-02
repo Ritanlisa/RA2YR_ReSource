@@ -63,7 +63,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    dword_A8B230[130].vtable0 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53af1b*/
+    (&dword_A8B230)[130].vtable0 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53af1b*/
     v7->vtable1 = (void *)v9[1]; /*0x53af21*/
     v7->vtable2 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/

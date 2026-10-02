@@ -372,12 +372,12 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       if ( ((unsigned int *)a1)[0] ) /*0x4288db*/
       {
-        _makepath(&v3[1], 0, 0, (const char *)((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428910*/
+        _makepath(&v3[1], 0, 0, (const char *)((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x428910*/
         ((unsigned int *)a1)[0] = (unsigned int)((SHPStruct *)SearchMIXFile(&v3[1], 1)); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( ((unsigned int *)a1)[0] ) /*0x428935*/
-        (*((void (**)(AnimTypeClass *, int))a1->ObjectTypeClass + 40))(a1, dword_A8B230[130].uniqueId); /*0x42894f*/
+        (*((void (**)(AnimTypeClass *, int))a1->ObjectTypeClass + 40))(a1, (&dword_A8B230)[130].uniqueId); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
@@ -503,7 +503,7 @@ int AnimTypeClass::GetDamage()
     _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); /*0x428c8b*/
     if ( ((unsigned int *)this)[0] ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428ccc*/
+      _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x428ccc*/
     }
     else if ( ((unsigned int *)this)[0] ) /*0x428cd6*/
     {

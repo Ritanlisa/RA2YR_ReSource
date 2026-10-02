@@ -222,7 +222,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
     else
       v3 = 0x3FFF; /*0x652270*/
     v3 = v3; /*0x65227b*/
-    qmemcpy(&byte_8B4204[111 * v3], (const void *)this, 0x6Fu); /*0x652290*/
+    qmemcpy(&(&byte_8B4204)[111 * v3], (const void *)this, 0x6Fu); /*0x652290*/
     ((unsigned int *)(dword_A70204))[v3] = timeGetTime(); /*0x6522a3*/
     return (gamemd::AbstractClass **)(++dword_8B41F8); /*0x6522af*/
   }
@@ -890,7 +890,7 @@ LABEL_158:
           case 1u: /*0x7c7d52*/
             LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7e33*/
             v31 -= 14; /*0x7c7e35*/
-            LOBYTE(v34) = g_ScreenRenderFlag[v37] | v34; /*0x7c7e38*/
+            LOBYTE(v34) = (&g_ScreenRenderFlag)[v37] | v34; /*0x7c7e38*/
             goto LABEL_158; /*0x7c7e3e*/
           case 2u: /*0x7c7d52*/
             goto LABEL_176;
@@ -898,7 +898,7 @@ LABEL_158:
             LOWORD(v40) = 16 * *(unsigned short *)v32; /*0x7c7e61*/
             LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7e65*/
             v31 -= 10; /*0x7c7e67*/
-            LOBYTE(v34) = g_ScreenRenderFlag[v37] | v34; /*0x7c7e6a*/
+            LOBYTE(v34) = (&g_ScreenRenderFlag)[v37] | v34; /*0x7c7e6a*/
             goto LABEL_150; /*0x7c7e70*/
           case 4u: /*0x7c7d52*/
             goto LABEL_178;
@@ -908,7 +908,7 @@ LABEL_158:
             v40 = v42 >> 4; /*0x7c7e9d*/
             LOBYTE(v37) = 16 * *(unsigned short *)v32; /*0x7c7ea0*/
             v31 -= 6; /*0x7c7ea3*/
-            LOBYTE(v34) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ea6*/
+            LOBYTE(v34) = (&g_ScreenRenderFlag)[v37] | v34; /*0x7c7ea6*/
             goto LABEL_142; /*0x7c7eac*/
           case 6u: /*0x7c7d52*/
             goto LABEL_180;
@@ -916,7 +916,7 @@ LABEL_158:
             v41 = 16 * *(unsigned int *)v32; /*0x7c7edc*/
             LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7edf*/
             v31 -= 2; /*0x7c7ee1*/
-            LOBYTE(v34) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ee4*/
+            LOBYTE(v34) = (&g_ScreenRenderFlag)[v37] | v34; /*0x7c7ee4*/
             goto LABEL_134; /*0x7c7eea*/
         }
       }
@@ -946,7 +946,7 @@ LABEL_62:
             v14 = v17 >> 8; /*0x7c7729*/
             --v8; /*0x7c772c*/
             v9 -= 2; /*0x7c772f*/
-            LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c7732*/
+            LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c7732*/
             goto LABEL_19; /*0x7c7738*/
           case 2: /*0x7c73ef*/
             v44 = a5 - 8; /*0x7c740b*/
@@ -957,7 +957,7 @@ LABEL_60:
             LOBYTE(v11) = *(unsigned short *)v8; /*0x7c76e5*/
             v9 -= 4; /*0x7c76e7*/
             v8 -= 2; /*0x7c76ea*/
-            LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c76ed*/
+            LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c76ed*/
             goto LABEL_27; /*0x7c76f3*/
           case 3: /*0x7c73ef*/
             v44 = a5 - 4; /*0x7c741b*/
@@ -967,7 +967,7 @@ LABEL_58:
             LOBYTE(v11) = *(unsigned char *)v8; /*0x7c76ac*/
             v9 -= 6; /*0x7c76b2*/
             v8 -= 3; /*0x7c76b5*/
-            LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c76b8*/
+            LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c76b8*/
             goto LABEL_35; /*0x7c76be*/
         }
       }
@@ -979,7 +979,7 @@ LABEL_58:
       {
         v15 = *(unsigned int *)v8; /*0x7c75a3*/
         LOBYTE(v11) = *(unsigned int *)v8; /*0x7c75a5*/
-        LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c75a7*/
+        LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c75a7*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7428*/
         LOWORD(v7) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c742f*/
         if ( v6 > 0x7FFF ) /*0x7c743b*/
@@ -990,7 +990,7 @@ LABEL_58:
         {
           v6 = -32768; /*0x7c75e0*/
         }
-        LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c744c*/
+        LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c744c*/
         *v9 = v6; /*0x7c7452*/
 LABEL_15:
         LOBYTE(v11) = BYTE1(v15); /*0x7c7455*/
@@ -1004,7 +1004,7 @@ LABEL_15:
         {
           v6 = -32768; /*0x7c75f8*/
         }
-        LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c747b*/
+        LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c747b*/
         v9[1] = v6; /*0x7c7481*/
         v14 = HIWORD(v15); /*0x7c7485*/
 LABEL_19:
@@ -1018,7 +1018,7 @@ LABEL_19:
         {
           v6 = -32768; /*0x7c7610*/
         }
-        LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c74ac*/
+        LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c74ac*/
         v9[2] = v6; /*0x7c74b2*/
 LABEL_23:
         LOBYTE(v11) = v14; /*0x7c74b6*/
@@ -1032,7 +1032,7 @@ LABEL_23:
         {
           v6 = -32768; /*0x7c7628*/
         }
-        LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c74dc*/
+        LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c74dc*/
         v9[3] = v6; /*0x7c74e2*/
 LABEL_27:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74e6*/
@@ -1045,7 +1045,7 @@ LABEL_27:
         {
           v6 = -32768; /*0x7c7640*/
         }
-        LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c750a*/
+        LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c750a*/
         v9[4] = v6; /*0x7c7510*/
 LABEL_31:
         LOBYTE(v11) = BYTE1(v14); /*0x7c7514*/
@@ -1059,7 +1059,7 @@ LABEL_31:
         {
           v6 = -32768; /*0x7c7658*/
         }
-        LOBYTE(v7) = g_ScreenRenderMask[v11] | v7; /*0x7c753a*/
+        LOBYTE(v7) = (&g_ScreenRenderMask)[v11] | v7; /*0x7c753a*/
         v9[5] = v6; /*0x7c7540*/
 LABEL_35:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7544*/
@@ -1072,7 +1072,7 @@ LABEL_35:
         {
           v6 = -32768; /*0x7c7670*/
         }
-        LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c7568*/
+        LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c7568*/
         v9[6] = v6; /*0x7c756e*/
 LABEL_39:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7572*/
@@ -1099,7 +1099,7 @@ LABEL_39:
           case 1u: /*0x7c75ba*/
             LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c769b*/
             v9 -= 7; /*0x7c769d*/
-            LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c76a0*/
+            LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c76a0*/
             goto LABEL_39; /*0x7c76a6*/
           case 2u: /*0x7c75ba*/
             goto LABEL_58;
@@ -1107,7 +1107,7 @@ LABEL_39:
             LOWORD(v14) = 16 * *(unsigned short *)v8; /*0x7c76c9*/
             LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c76cd*/
             v9 -= 5; /*0x7c76cf*/
-            LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c76d2*/
+            LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c76d2*/
             goto LABEL_31; /*0x7c76d8*/
           case 4u: /*0x7c75ba*/
             goto LABEL_60;
@@ -1117,7 +1117,7 @@ LABEL_39:
             v14 = v16 >> 4; /*0x7c7705*/
             LOBYTE(v11) = 16 * *(unsigned short *)v8; /*0x7c7708*/
             v9 -= 3; /*0x7c770b*/
-            LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c770e*/
+            LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c770e*/
             goto LABEL_23; /*0x7c7714*/
           case 6u: /*0x7c75ba*/
             goto LABEL_62;
@@ -1125,7 +1125,7 @@ LABEL_39:
             v15 = 16 * *(unsigned int *)v8; /*0x7c7744*/
             LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c7747*/
             --v9; /*0x7c7749*/
-            LOBYTE(v7) = g_ScreenRenderFlag[v11] | v7; /*0x7c774c*/
+            LOBYTE(v7) = (&g_ScreenRenderFlag)[v11] | v7; /*0x7c774c*/
             goto LABEL_15; /*0x7c7752*/
         }
       }

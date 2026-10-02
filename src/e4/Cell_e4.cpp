@@ -946,7 +946,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
     {
       v14 = v12 & 7; /*0x56eaeb*/
       v15 = 4 * v14 + 9041544; /*0x56eaee*/
-      LOWORD(v14) = *aP0 + LOWORD(dword_89F688[v14]); /*0x56eb05*/
+      LOWORD(v14) = *aP0 + LOWORD((&dword_89F688)[v14]); /*0x56eb05*/
       HIWORD(a3) = aP0[1] + *(unsigned short *)(v15 + 2); /*0x56eb08*/
       LOWORD(a3) = v14; /*0x56eb0d*/
       v16 = SHIWORD(a3) << 9; /*0x56eb1c*/
@@ -1036,7 +1036,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
     do /*0x56ed23*/
     {
       v14 = v13 & 7; /*0x56ec9f*/
-      v15 = dword_89F688[v14]; /*0x56eca2*/
+      v15 = (&dword_89F688)[v14]; /*0x56eca2*/
       LOWORD(v14) = v5[1] + HIWORD(dword_89F688[v14]); /*0x56ecb8*/
       LOWORD(a5) = *v5 + v15; /*0x56ecbc*/
       HIWORD(a5) = v14; /*0x56ecc4*/

@@ -107,7 +107,7 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
       if ( (unsigned char)result ) /*0x4adf3b*/
         break; /*0x4adf3b*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4adfa5*/
-        && HIBYTE(dword_8871E0[1][2])
+        && HIBYTE((&dword_8871E0)[1][2])
         && (uint8_t)HouseClass::IsAlliedWith(*(void **)(v5 + 540), dword_A83D4C) )
       {
         result = (*(int (**)(int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v5 + 1164))(v5, 0, a2, 0, 0); /*0x4adfb9*/
@@ -160,7 +160,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
           (*((void (**)(void **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
       else if ( (*((int (**)(void **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
-             && HIBYTE(dword_8871E0[1][2])
+             && HIBYTE((&dword_8871E0)[1][2])
              && (uint8_t)HouseClass::IsAlliedWith(v4[135], dword_A83D4C) )
       {
         (*((void (**)(void **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
@@ -303,7 +303,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((char *)this + 91) = (int)&vt_DynamicVectorClass; /*0x4f562b*/
   *((char *)this + 96) = 10; /*0x4f5631*/
   *((char *)this + 95) = 0; /*0x4f5634*/
-  *((char *)this + 97) = (int)dword_A8B230[43].vtable1; /*0x4f5648*/
+  *((char *)this + 97) = (int)(&dword_A8B230)[43].vtable1; /*0x4f5648*/
   *((char *)this + 98) = 0; /*0x4f564e*/
   *((char *)this + 99) = 1072693248; /*0x4f5654*/
   *((char *)this + 100) = 0; /*0x4f565a*/

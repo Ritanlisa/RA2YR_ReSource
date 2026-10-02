@@ -73,7 +73,7 @@ int Skirmish::FillPlayerNames()
     if ( ShowWindow(DlgItem, 0) ) /*0x46f647*/
     {
       v3 = GetDlgItem((HWND)this, v2); /*0x46f65e*/
-      v4 = dword_A8DA90[i]; /*0x46f664*/
+      v4 = (&dword_A8DA90)[i]; /*0x46f664*/
       if ( v4 ) /*0x46f66d*/
       {
         SendDlgItemMessageA((HWND)this, v2, 0x14Bu, 0, 0); /*0x46f67e*/
@@ -113,7 +113,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
   if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46f90a*/
   {
     ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46f90e*/
-    v4 = (SessionClass *)dword_A8DA90[(unsigned int)v1]; /*0x46f913*/
+    v4 = (SessionClass *)(&dword_A8DA90)[(unsigned int)v1]; /*0x46f913*/
     v5 = ResourceIDCSF; /*0x46f91a*/
     if ( (uint8_t)((Player *)((Player *)v4))->IsObserver() ) /*0x46f91e*/
     {
@@ -289,7 +289,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
                              &Randomizer_Global,
                              *((unsigned int *)&stru_82ADA8.BounceAnim + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], dword_82B120[aP1]); /*0x59729f*/
+  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
   *((unsigned int *)this + 24) = Random::Range( /*0x5972bc*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
@@ -419,7 +419,7 @@ int Skirmish::RenderPreview(HWND aP1)
     BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(&(unsigned int *)((char *)&stru_820320 + 12)), 1); /*0x6408c7*/
     v15 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6408cc*/
     v16 = BuildingAnimByName; /*0x6408d2*/
-    result = dword_A8B230[122].abstractFlags; /*0x6408d4*/
+    result = (&dword_A8B230)[122].abstractFlags; /*0x6408d4*/
     if ( result > 0 && result <= 8 ) /*0x6408e5*/
     {
       v17 = 0; /*0x6408eb*/
@@ -478,7 +478,7 @@ int Skirmish::RenderPreview(HWND aP1)
                         25);
         v15 = (gamemd::AbstractClass *)(dword_A8B230); /*0x640a1a*/
       }
-      while ( v17 < dword_A8B230[122].abstractFlags ); /*0x640a29*/
+      while ( v17 < (&dword_A8B230)[122].abstractFlags ); /*0x640a29*/
     }
   }
   return result; /*0x640a2f*/
@@ -958,7 +958,7 @@ LABEL_44:
   dword_A8B23C = (unsigned int)((ObjectClass *)v28); /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
   if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C) /*0x6aec07*/
-    || (vtable2 = dword_A8B230[127].vtable2, (int)vtable2 > PlayerCountMap) )
+    || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
   {
     vtable2 = (void *)PlayerCountMap; /*0x6aec09*/
   }

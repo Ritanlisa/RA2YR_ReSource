@@ -138,7 +138,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
     v9 = v4->MovementSpeed[1]; /*0x6a3fa2*/
     if ( v9 != -1 ) /*0x6a3fa8*/
     {
-      v10 = byte_7F2A40[12 * v9]; /*0x6a3fb1*/
+      v10 = (&byte_7F2A40)[12 * v9]; /*0x6a3fb1*/
       if ( v10 ) /*0x6a3fbb*/
       {
         v11 = 4 * v10; /*0x6a3fc1*/

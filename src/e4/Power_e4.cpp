@@ -451,7 +451,7 @@ int Power::FinalizeDrain(int a2)
     v7 = 4; /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
-      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1c7a*/
+      v6 = (&CRC32_Table)[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1c7a*/
       p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1c7c*/
       --v7; /*0x4a1c7d*/
     }

@@ -351,7 +351,7 @@ int CRC32::Compute(const void* data, uint32_t size)
     v6 = v4 + 1; /*0x4a1fbf*/
     do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*this++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      v5 = (&CRC32_Table)[*this++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
       --v6; /*0x4a1fdd*/
     }
     while ( v6 ); /*0x4a1fde*/

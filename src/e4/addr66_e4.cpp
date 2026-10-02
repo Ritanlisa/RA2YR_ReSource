@@ -371,7 +371,7 @@ LABEL_17:
         if ( v9 )
         {
           aP2 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v11 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
+          v11 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v9,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v11),
@@ -449,12 +449,12 @@ LABEL_63:
                            *(unsigned int *)(a1 + 8),
                            v128);
         if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
-          ((GadgetGrid *)(&stru_87C374[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
+          ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
         v43 = (AnimClass *)new AnimClass;
         if ( v43 )
         {
           v129 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v45 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
+          v45 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v43,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v45),
@@ -611,7 +611,7 @@ LABEL_116:
         if ( v96 )
         {
           v124 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37776]))->FindIndex();
+          v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37776]))->FindIndex();
           AnimClass::ctor(
             (void **)v96,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98),
@@ -662,7 +662,7 @@ LABEL_119:
         IDA_LOWORD(v116) = v106 / 256;
         IDA_HIWORD(v116) = v129.Y / 256;
         desiredFacing = v116;
-        if ( ((LayerClass *)(&stru_87C374[13428]))->CoordinatesLegal((IUnknown *)&desiredFacing) )
+        if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal((IUnknown *)&desiredFacing) )
           (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &v124);
         v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 440))(
                                  *(unsigned int *)(a1 + 8),
@@ -732,14 +732,14 @@ LABEL_119:
       bool v19 = objectTypeFlags && VeterancyStruct::IsElite((float *)(objectTypeFlags + 336));
       v21 = (IUnknown *)(a1 + 48);
       *(unsigned char *)(a1 + 77) = v19;
-      v22 = *(IUnknown **)&HouseClass_Player[45112];
+      v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
       edx34 = *(unsigned int *)(a1 + 48);
       int v23 = *(unsigned int *)(a1 + 56);
       if ( edx34 == -1 )
         goto LABEL_37;
-      if ( *(unsigned int *)&HouseClass_Player[45112] - edx34 >= v23 )
+      if ( *(unsigned int *)&(&HouseClass_Player)[45112] - edx34 >= v23 )
         goto LABEL_38;
-      v23 -= *(unsigned int *)&HouseClass_Player[45112] - edx34;
+      v23 -= *(unsigned int *)&(&HouseClass_Player)[45112] - edx34;
 LABEL_37:
       if ( !v23 )
       {
@@ -748,10 +748,10 @@ LABEL_38:
         if ( v25 )
         {
           v131 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
+          v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v25,
-            *(CoordStruct **)(*(unsigned int *)&stru_89E138[90140] + 4 * (unsigned int)v27),
+            *(CoordStruct **)(*(unsigned int *)&(&stru_89E138)[90140] + 4 * (unsigned int)v27),
             &v131,
             (CoordStruct *)2,
             (CoordStruct *)1,
@@ -759,10 +759,10 @@ LABEL_38:
             (void *)0xFFFFFFF6,
             0);
         }
-        v21->field_0 = *(unsigned int *)&HouseClass_Player[45112];
+        v21->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = v126;
         *(unsigned int *)(a1 + 56) = 24;
-        v22 = *(IUnknown **)&HouseClass_Player[45112];
+        v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
       }
       int v26 = *(unsigned int *)(a1 + 8) + 156;
       IDA_LODWORD(var74_4) = *(unsigned int *)v26;

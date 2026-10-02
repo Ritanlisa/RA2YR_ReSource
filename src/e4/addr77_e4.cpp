@@ -215,8 +215,8 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
 
   v5 = g_DialogTrackingList; /*0x775700*/
   v6 = (HWND *)(8 * g_DialogTrackingList + 12004648); /*0x775708*/
-  stru_B72D28[2 * g_DialogTrackingList] = 0; /*0x775718*/
-  dword_B72D2C[2 * v5] = 0; /*0x775720*/
+  (&stru_B72D28)[2 * g_DialogTrackingList] = 0; /*0x775718*/
+  (&dword_B72D2C)[2 * v5] = 0; /*0x775720*/
   result = (const DLGTEMPLATE *)FindResource((uint16_t)a2, (const CHAR *)5); /*0x77572b*/
   if ( result ) /*0x775732*/
   {
@@ -301,7 +301,7 @@ void Dialog_Close(HWND a1, int a2)
       if ( v5 ) /*0x77587d*/
       {
         v8 = (HWND)(*(&g_ClipboardBuffer + 2 * v5));
-        v9 = dword_B72D24[2 * v5]; /*0x775886*/
+        v9 = (&dword_B72D24)[2 * v5]; /*0x775886*/
         SetForegroundWindow(v8); /*0x77588e*/
         InvalidateRect(v8, 0, 0); /*0x775897*/
         UpdateWindow(v8); /*0x77589e*/

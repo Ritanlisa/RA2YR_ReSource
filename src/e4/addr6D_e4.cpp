@@ -704,7 +704,7 @@ void nullsub_44()
 namespace gamemd {
 int Map_GetCoordData(int a1)
 {
-  return dword_B0CEC8[3 * a1]; /*0x6dc43e*/
+  return (&dword_B0CEC8)[3 * a1]; /*0x6dc43e*/
 }
 } // namespace gamemd
 

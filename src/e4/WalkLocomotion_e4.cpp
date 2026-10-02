@@ -63,7 +63,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
       v5 = *((unsigned int *)this + 22); /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
-        v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
+        v5 = (&byte_7F2A40)[12 * v5]; /*0x6a01f2*/
         if ( v5 ) /*0x6a01fc*/
         {
           v7 = 4 * v5; /*0x6a0202*/
@@ -249,7 +249,7 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
   char *WalkLocomotion_field_0x44; // ecx
 
   v4 = (int)(*aP3);
-  v5 = (int)(dword_7F2A48[3 * (int)this->WalkLocomotion_field_0x58]);
+  v5 = (int)((&dword_7F2A48)[3 * (int)this->WalkLocomotion_field_0x58]);
   v6 = (int)(*aP2);
   v7 = (int)(aP2[1]);
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/

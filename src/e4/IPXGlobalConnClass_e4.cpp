@@ -144,7 +144,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v10 = 0; /*0x5404df*/
       if ( dword_A8DA84 > 0 ) /*0x5404e3*/
       {
-        while ( !(uint8_t)((GUID *)((char *)(dword_A8DA78[v10] + 40)))->Compare((int)&v20) ) /*0x5404fd*/
+        while ( !(uint8_t)((GUID *)((char *)((&dword_A8DA78)[v10] + 40)))->Compare((int)&v20) ) /*0x5404fd*/
         {
           if ( ++v10 >= dword_A8DA84 ) /*0x540507*/
             goto LABEL_13; /*0x540507*/

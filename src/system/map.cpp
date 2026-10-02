@@ -584,12 +584,12 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     result = 10; /*0x567a54*/
     radius = 10; /*0x567a59*/
   }
-  v22 = dword_7ED3D0[result]; /*0x567a63*/
+  v22 = (&dword_7ED3D0)[result]; /*0x567a63*/
   v44 = &g_MissionQueueFrame.waypoints[2150]; /*0x567a6a*/
   v23 = &g_MissionQueueFrame.waypoints[822]; /*0x567a72*/
   if ( !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6126) && arg4 && result > 2 ) /*0x567a8c*/
   {
-    v24 = dword_7ED3C4[result]; /*0x567a8e*/
+    v24 = (&dword_7ED3C4)[result]; /*0x567a8e*/
     v22 -= v24; /*0x567a95*/
     v23 = (char *)(4 * v24 + 11259744); /*0x567a9e*/
     v44 = (char *)(4 * v24 + 11261072); /*0x567aa5*/

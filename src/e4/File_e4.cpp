@@ -484,7 +484,7 @@ LABEL_42:
         v2 = Size; /*0x734a4f*/
       }
       v3 = (char *)dword_B1CF74; /*0x734a53*/
-      byte_B1BF38[v2] = 0; /*0x734a59*/
+      (&byte_B1BF38)[v2] = 0; /*0x734a59*/
       strcpy(&v3[v1],(const char *)(byte_B1BF38)); /*0x734a7b*/
       if ( (int)Size > dword_B1CF58 ) /*0x734a90*/
         dword_B1CF58 = Size; /*0x734a92*/
@@ -508,10 +508,10 @@ LABEL_42:
             CCFileClass::Read(&v23, dword_B17F24, 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
-          dword_B17F24[v7] = 0; /*0x734b1e*/
+          (&dword_B17F24)[v7] = 0; /*0x734b1e*/
           v8 = *(unsigned int *)dword_B17F24; /*0x734b26*/
           v9 = (wchar_t *)(dword_B17F24); /*0x734b2e*/
-          if ( dword_B17F24[0] ) /*0x734b33*/
+          if ( (&dword_B17F24)[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
             {
@@ -521,7 +521,7 @@ LABEL_42:
               ++v9; /*0x734b3e*/
             }
             while ( (unsigned short)v8 ); /*0x734b44*/
-            LOWORD(v8) = dword_B17F24[0]; /*0x734b46*/
+            LOWORD(v8) = (&dword_B17F24)[0]; /*0x734b46*/
           }
           v10 = 0; /*0x734b4b*/
           v11 = 1; /*0x734b50*/
@@ -572,7 +572,7 @@ LABEL_31:
               CCFileClass::Read(&v23, byte_B1BF38, Size); /*0x734c18*/
               v15 = Size; /*0x734c1d*/
             }
-            byte_B1BF38[v15] = 0; /*0x734c23*/
+            (&byte_B1BF38)[v15] = 0; /*0x734c23*/
             if ( v15 ) /*0x734c29*/
             {
               *(unsigned int *)((char *)dword_B1CF7C + v6) = (unsigned int)(__2_YAPAXI_Z(v15 + 1)); /*0x734c43*/

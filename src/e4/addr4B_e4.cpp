@@ -380,7 +380,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
     if ( (int)vtable1 > 0 ) /*0x4b6ae9*/
     {
       while ( *(unsigned int *)(((unsigned int *)(dword_A8B230))[375].referenceCount + 4 * v5) != *(&((unsigned int *)this)[0] + a2) /*0x4b6b05*/
-           || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v5) == -1 )
+           || *(unsigned int *)((&dword_A8B230)[376].abstractFlags + 4 * v5) == -1 )
       {
         if ( ++v5 >= (int)((unsigned int *)(dword_A8B230))[376].vtable1 ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/

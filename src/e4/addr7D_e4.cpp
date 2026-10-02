@@ -282,7 +282,7 @@ int _filbuf(MouseClass * aP0)
   v3 = aP0->_flag; /*0x7d075f*/
   if ( (v3 & 0x82) == 0 )
   {
-    v4 = aP0->_file == -1 ? &unk_87C928 : (unsigned char *)(dword_B78A80[aP0->_file >> 5] + 36 * (aP0->_file & 0x1F));
+    v4 = aP0->_file == -1 ? &unk_87C928 : (unsigned char *)((&dword_B78A80)[aP0->_file >> 5] + 36 * (aP0->_file & 0x1F));
     if ( (v4[4] & 0x82) == 0x82 ) /*0x7d0796*/
     {
       IDA_BYTE1(v3) |= 0x20u; /*0x7d0798*/
@@ -334,7 +334,7 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
   if ( nNumberOfBytesToRead ) /*0x7d085a*/
   {
     v5 = 36 * (FileHandle & 0x1F); /*0x7d087c*/
-    v6 = v5 + dword_B78A80[FileHandle >> 5]; /*0x7d087f*/
+    v6 = v5 + (&dword_B78A80)[FileHandle >> 5]; /*0x7d087f*/
     v7 = *(unsigned char *)(v6 + 4); /*0x7d0881*/
     if ( (v7 & 2) == 0 ) /*0x7d0887*/
     {
@@ -345,14 +345,14 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
         {
           --nNumberOfBytesToRead; /*0x7d0899*/
           *lpBuffer = v8; /*0x7d089c*/
-          v9 = dword_B78A80[FileHandle >> 5]; /*0x7d089e*/
+          v9 = (&dword_B78A80)[FileHandle >> 5]; /*0x7d089e*/
           v4 = lpBuffer + 1; /*0x7d08a0*/
           v22 = 1; /*0x7d08a3*/
           *(unsigned char *)(v9 + v5 + 5) = 10; /*0x7d08aa*/
         }
       }
       if ( !ReadFile( /*0x7d08be*/
-              *(HANDLE *)(dword_B78A80[FileHandle >> 5] + 36 * (FileHandle & 0x1F)),
+              *(HANDLE *)((&dword_B78A80)[FileHandle >> 5] + 36 * (FileHandle & 0x1F)),
               v4,
               nNumberOfBytesToRead,
               &NumberOfBytesRead,
@@ -372,7 +372,7 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
         }
         return 0; /*0x7d08ec*/
       }
-      v12 = dword_B78A80[FileHandle >> 5]; /*0x7d0901*/
+      v12 = (&dword_B78A80)[FileHandle >> 5]; /*0x7d0901*/
       v22 += NumberOfBytesRead; /*0x7d0906*/
       v13 = (char *)(v12 + v5 + 4); /*0x7d0909*/
       v14 = *v13; /*0x7d090d*/
@@ -394,7 +394,7 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
             v18 = *nNumberOfBytesToReada; /*0x7d0943*/
             if ( *nNumberOfBytesToReada == 26 ) /*0x7d0947*/
             {
-              v20 = (unsigned char *)(dword_B78A80[FileHandle >> 5] + v5 + 4); /*0x7d09fd*/
+              v20 = (unsigned char *)((&dword_B78A80)[FileHandle >> 5] + v5 + 4); /*0x7d09fd*/
               if ( (*v20 & 0x40) == 0 ) /*0x7d0a05*/
                 *v20 |= 2u; /*0x7d0a09*/
               return v3 - lpBuffer; /*0x7d0a09*/
@@ -405,7 +405,7 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
               {
                 ++nNumberOfBytesToReada; /*0x7d0980*/
                 if ( !ReadFile( /*0x7d09a6*/
-                        *(HANDLE *)(dword_B78A80[FileHandle >> 5] + 36 * (FileHandle & 0x1F)),
+                        *(HANDLE *)((&dword_B78A80)[FileHandle >> 5] + 36 * (FileHandle & 0x1F)),
                         &Buffer,
                         1u,
                         &NumberOfBytesRead,
@@ -417,13 +417,13 @@ void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
                   *v3 = 13; /*0x7d09e9*/
                   goto LABEL_36; /*0x7d09e9*/
                 }
-                if ( (*(unsigned char *)(dword_B78A80[FileHandle >> 5] + v5 + 4) & 0x48) != 0 ) /*0x7d09af*/
+                if ( (*(unsigned char *)((&dword_B78A80)[FileHandle >> 5] + v5 + 4) & 0x48) != 0 ) /*0x7d09af*/
                 {
                   v19 = Buffer; /*0x7d09b1*/
                   if ( Buffer == 10 ) /*0x7d09b6*/
                     goto LABEL_33; /*0x7d09b6*/
                   *v3++ = 13; /*0x7d09b8*/
-                  *(unsigned char *)(dword_B78A80[FileHandle >> 5] + v5 + 5) = v19; /*0x7d09be*/
+                  *(unsigned char *)((&dword_B78A80)[FileHandle >> 5] + v5 + 5) = v19; /*0x7d09be*/
                 }
                 else
                 {
@@ -664,7 +664,7 @@ void _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToW
   v5 = 36 * (FileHandle & 0x1F); /*0x7d0df2*/
   if ( (*(unsigned char *)(((unsigned int *)(dword_B78A80))[FileHandle >> 5] + v5 + 4) & 0x20) != 0 ) /*0x7d0dfa*/
     _lseek_lk(FileHandle, 0, 2u); /*0x7d0e02*/
-  v6 = v5 + dword_B78A80[FileHandle >> 5]; /*0x7d0e0c*/
+  v6 = v5 + (&dword_B78A80)[FileHandle >> 5]; /*0x7d0e0c*/
   if ( *(char *)(v6 + 4) >= 0 ) /*0x7d0e12*/
   {
     if ( WriteFile(*(HANDLE *)v6, lpBuffer, nNumberOfBytesToWrite, &NumberOfBytesWritten, 0) ) /*0x7d0ee6*/
