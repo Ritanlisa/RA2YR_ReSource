@@ -33,7 +33,6 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
-    unsigned int v8 = 0;  /* G37 hoist */
 
   unsigned int *v2; // esi
   int v3; // eax

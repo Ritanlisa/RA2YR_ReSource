@@ -264,7 +264,6 @@ AbstractClass * Voxel::RenderFrame()
 namespace gamemd {
 int Voxel::Projection_Setup()
 {
-    unsigned int v66 = 0;  /* G37 hoist */
 
   float *v1; // eax
   float *v2; // eax

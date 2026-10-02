@@ -56,24 +56,6 @@
 namespace gamemd {
 unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
   unsigned char *result; // eax
   uint8_t v5; // bl
   unsigned int v6; // esi

@@ -635,7 +635,6 @@ struct SidebarClass {
     int AddCameo(int a2, int a3);  // 0x6a6300
     int LoadButtonSHPs();  // 0x6d02b0
     int ReadButtonList();  // 0x674650
-    unsigned int u32_53A6;  // 0x53A6
 };
 
 } // namespace gamemd

@@ -46,7 +46,6 @@ int sub_6F2040()
 namespace gamemd {  // G42.18c ns repair
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
-    unsigned int v11 = 0;  /* G37 hoist */
 
   int v6; // ebx
   int v7; // eax

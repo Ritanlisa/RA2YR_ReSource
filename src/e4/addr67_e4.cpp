@@ -45,7 +45,6 @@
 namespace gamemd {
 int sub_679CC0()
 {
-    unsigned int v2 = 0;  /* G37 hoist */
   void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
   unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
   char v3; // [esp+38h] [ebp-90h]
@@ -86,7 +85,6 @@ int sub_679CC0()
 namespace gamemd {
 int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
 {
-    unsigned int v17 = 0;  /* G37 hoist */
   char *i; // eax
   int v7; // edi
   int v8; // eax

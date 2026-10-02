@@ -65,8 +65,6 @@ int Theme::QueueSong(int aP1)
 namespace gamemd {
 int Theme::Stop(char aP1)
 {
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v5 = 0;  /* G37 hoist */
 
   int result; // eax
   AudioSample *v4; // ecx

@@ -149,7 +149,6 @@ LABEL_151:
               v61 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
               if ( *(&g_MatrixTransformState + 2257) )
               {
-    unsigned int v65 = 0;  /* G37 hoist */
                 ((ComPtr*)*(&g_MatrixTransformState + 2257))->Dtor();
                 RA2_OPDEL(v61);
               }

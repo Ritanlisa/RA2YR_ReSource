@@ -103,7 +103,6 @@
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-    unsigned int v4 = 0;  /* G37 hoist */
   unsigned int v3;
   unsigned char * v4;
   unsigned char *v5; // esi

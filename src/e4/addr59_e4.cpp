@@ -113,7 +113,6 @@ char PlaceCabhutMap(FootClass * aP0)
 namespace gamemd {
 void sub_594190(int * a1, int a2)
 {
-    unsigned int v15 = 0;  /* G37 hoist */
   int *v2; // ebp
   int v3; // esi
   int result; // eax
@@ -365,7 +364,6 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
 namespace gamemd {
 ObjectClass * * RandomMap_DistributeTerrain()
 {
-    unsigned int v45 = 0;  /* G37 hoist */
   double v1; // st7
   int v2; // eax
   int v3; // eax

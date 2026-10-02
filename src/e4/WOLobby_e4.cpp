@@ -87,11 +87,6 @@ v2 = (LPVOID)(ppv);
 namespace gamemd {  // G42.18c ns repair
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v28 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v25 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
 
   int result; // eax
   int v5; // ecx

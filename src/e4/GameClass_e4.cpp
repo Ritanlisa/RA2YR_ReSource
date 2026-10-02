@@ -109,7 +109,6 @@ unsigned int * GameClass::updateUI(int a2, int a3, void *a3_2)
 namespace gamemd {
 int GameClass::loadScenarioFiles(int aP1)
 {
-    unsigned int v9 = 0;  /* G37 hoist */
 
   int result; // eax
   ObjectClass * v4;

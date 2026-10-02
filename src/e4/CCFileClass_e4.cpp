@@ -23,7 +23,6 @@
 namespace gamemd {
 AudioController * * CCFileClass::Close(void * a1)
 {
-    unsigned int v3 = 0;  /* G37 hoist */
 
   char result; // al
   AudioController ** v3;

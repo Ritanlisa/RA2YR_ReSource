@@ -49,7 +49,6 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
 namespace gamemd {
 int IPXInterfaceClass::initSocket(int aP1, int aP2)
 {
-    unsigned int v4 = 0;  /* G37 hoist */
 
   SOCKET v4; // esi
   int v6; // eax
@@ -113,7 +112,6 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
 namespace gamemd {
 AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
-    unsigned int v11 = 0;  /* G37 hoist */
 
   Network *v7; // esi
   int v8; // eax

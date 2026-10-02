@@ -89,10 +89,6 @@ public:
     unsigned char IntList_F_Embed[28];               // 1156
     unsigned char IntList_G_Embed[28];               // 1184
     unsigned char IntList_H_Embed[28];               // 1212
-    void* Cameo;                    // 1776
-    unsigned char CameoAllocated;   // 1780
-    void* AltCameo;                 // 1808
-    unsigned char AltCameoAllocated;// 1812
     void* VoxelAnimList_Items;      // 792
     int VoxelAnimList_Capacity;     // 796
     unsigned char VoxelAnimList_FlagByte; // 801

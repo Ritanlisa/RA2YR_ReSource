@@ -113,7 +113,7 @@ void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
 // IDA 0x60D430 -- Init::StubPlaceholder
 void InitStubPlaceholder() {}
 // IDA 0x72AA40 -- LoadMouseClassResources
-void LoadMouseClassResources() {}
+unsigned char LoadMouseClassResources() { return 0; }
 // IDA 0x406B10 -- InitializeAudioSubsystem: mixer channels, AUDIO.MIX, DirectSound
 int  InitializeAudioSubsystem(void* hwnd) {
     LOG_DEBUG("InitializeAudioSubsystem");

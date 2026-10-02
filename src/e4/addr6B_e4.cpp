@@ -84,7 +84,6 @@ unsigned int * sub_6B2430(int * a1, int a2)
 namespace gamemd {
 CellClass * * InitializeBuildabilityGrid(int a1)
 {
-    unsigned int v24 = 0;  /* G37 hoist */
   int v1; // esi
   char *v2; // eax
   unsigned char *v3; // ecx

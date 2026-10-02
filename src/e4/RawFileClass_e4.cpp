@@ -11,7 +11,6 @@
 namespace gamemd {
 int RawFileClass::Dtor()
 {
-    unsigned int v3 = 0;  /* G37 hoist */
 
   int result; // eax
   FileClass v3; // edi

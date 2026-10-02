@@ -55,10 +55,6 @@ struct COMObject {
     int SetField(int);
     int TrackCurrent(int);
     void * ScalarDtor(int);
-    unsigned int *__pad_0;  // supplied (C2039)
-    unsigned int *q01C;  // supplied (C2039)
-    unsigned int *__pad_31;  // supplied (C2039)
-    unsigned int *m_2D;  // supplied (C2039)
     int * SwapReference(int a2);  // 0x5233a0
 };
 

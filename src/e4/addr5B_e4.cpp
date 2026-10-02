@@ -84,17 +84,6 @@
 namespace gamemd {
 void sub_5B3B10()
 {
-    unsigned int v1 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v1 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v1 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v1 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v1 = 0;  /* G37 hoist */
   int v0; // edx
   int v1; // edi
   int v2; // ecx

@@ -47,30 +47,6 @@
 namespace gamemd {
 void WOL_ResetSystem()
 {
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
   void * AccountInfoWOL;
   int v2; // esi
   unsigned int v3; // eax

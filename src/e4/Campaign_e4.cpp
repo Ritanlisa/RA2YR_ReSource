@@ -30,7 +30,6 @@
 namespace gamemd {
 int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
-    unsigned int v5 = 0;  /* G37 hoist */
 
   int m_8; // ebp
   int *v5; // eax

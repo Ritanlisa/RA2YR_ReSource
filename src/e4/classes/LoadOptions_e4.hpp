@@ -73,9 +73,6 @@ struct LoadOptions {
     void SetMode(uint32_t);
      double Cleanup(...);  // C2597 interim stub
     static double Run(...);  // C2597 interim stub
-    unsigned int *m_1;  // supplied (C2039)
-    unsigned int *m_8;  // supplied (C2039)
-    unsigned int *m_C;  // supplied (C2039)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     char Check();  // 0x559c20
 };

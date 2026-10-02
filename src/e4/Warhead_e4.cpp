@@ -107,7 +107,6 @@ int Warhead::RemoveFromDamageList(int a2)
 namespace gamemd {
 int Warhead::ApplyDamage(ObjectClass * aP1)
 {
-    unsigned int v12 = 0;  /* G37 hoist */
 
   double v2; // st7
   int v4; // eax

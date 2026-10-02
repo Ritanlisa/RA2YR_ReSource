@@ -64,7 +64,6 @@ v4 = (int)((unsigned int *)(a2));
 namespace gamemd {  // G42.18c ns repair
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
-    unsigned int v19 = 0;  /* G37 hoist */
 
   int v5; // ecx
   int v6; // edi

@@ -147,7 +147,6 @@ int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
 {
-    unsigned int v22 = 0;  /* G37 hoist */
   ObjectClass *i; // eax
   ObjectClass *_751520; // eax
   int _7515C0; // edi

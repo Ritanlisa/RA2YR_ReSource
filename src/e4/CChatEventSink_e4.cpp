@@ -21,7 +21,6 @@
 namespace gamemd {
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
-    unsigned int v25 = 0;  /* G37 hoist */
 
   int referenceCount; // eax
   int v4; // ebx

@@ -38,21 +38,6 @@ int IsNonNullPtr(int* ptr) {
 // 0x402F60
 namespace gamemd { 
 int Gap2Recv_402F60::ProcessAudioMixerFrame() {
-    unsigned int v8 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v8 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v8 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v8 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v8 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
 
   int64_t v3; // rax
   uint64_t v4; // kr00_8
@@ -132,7 +117,6 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 // 0x403A80
 namespace gamemd { 
 int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
-    unsigned int v16 = 0;  /* G37 hoist */
 
   void (*v4)(char *); // edi
   int Next; // esi
@@ -234,8 +218,6 @@ int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
 // 0x4048B0
 namespace gamemd { 
 int Gap2Recv_4048B0::PrefetchAudioSamples() {
-    unsigned int v20 = 0;  /* G37 hoist */
-    unsigned int v19 = 0;  /* G37 hoist */
 
   int result; // eax
   unsigned int *occupant; // edi

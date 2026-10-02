@@ -20,7 +20,6 @@
 namespace gamemd {
 int Socket::ConfigureBuffers(SOCKET aP1)
 {
-    unsigned int v2 = 0;  /* G37 hoist */
 
   AnimClass * v2;
   int result; // eax

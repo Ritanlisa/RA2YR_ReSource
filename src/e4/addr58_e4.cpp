@@ -51,7 +51,6 @@
 namespace gamemd {
 VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
-    unsigned int v18 = 0;  /* G37 hoist */
   unsigned int v3; // eax
   int *v4; // eax
   int *v5; // ecx
