@@ -211,7 +211,7 @@ CellStruct * * sub_730D60()
   unsigned int v8;
 
   if ( FactoryClass::GetFlag() ) /*0x730d65*/
-    return System_Get(); /*0x730d6e*/
+    return (gamemd::CellStruct **)(System_Get()); /*0x730d6e*/
   result = (gamemd::CellStruct **)((char)g_SelectionManager); /*0x730d79*/
   if ( (int)g_SelectionManager > 0 )
   {
@@ -599,7 +599,7 @@ int SelectAllOfType()
   LABEL_36: DynamicVector_field_0x10 = (void *)(v6->DynamicVector_field_0x10);
   for ( k = 0; k < (int)DynamicVector_field_0x10; ++k ) /*0x732b26*/
   {
-    v19 = *(void **)(*(unsigned int *)&v6->DynamicVector_field_0x1[3] + 4 * k); /*0x732b2b*/
+    v19 = *(void **)(*(unsigned int *)&(&v6->DynamicVector_field_0x1)[3] + 4 * k); /*0x732b2b*/
     if ( IDTechnoClassMatches(v19, (int)v24) ) /*0x732b34*/
       (*(void (**)(void *))(*(unsigned int *)v19 + 332))(v19); /*0x732b41*/
   }
@@ -866,9 +866,9 @@ void sub_7331B0()
                         (unsigned char)HeightMap) )
                   {
                     HeightMap = *(unsigned int *)v12->__pad_10; /*0x73334e*/
-                    v16 = v12->EventClass_field_0x4; /*0x733351*/
+                    v16 = (unsigned int *)(v12->EventClass_field_0x4); /*0x733351*/
                     *(unsigned int *)v12->__pad_10 = HeightMap + 1; /*0x733357*/
-                    v16[HeightMap] = v14; /*0x73335a*/
+                    v16[HeightMap] = (unsigned int)(v14); /*0x73335a*/
                   }
                 }
               }
@@ -910,9 +910,9 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
   int v19; // [esp+10h] [ebp-204h] BYREF
   wchar_t Destination[256]; // [esp+14h] [ebp-200h] BYREF
 
-  result = dword_A8B538[0]; /*0x733380*/
+  result = (&dword_A8B538)[0]; /*0x733380*/
   v2 = 0; /*0x73338c*/
-  if ( !dword_A8B538[0] ) /*0x733390*/
+  if ( !(&dword_A8B538)[0] ) /*0x733390*/
   {
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] == 3 ) /*0x73339d*/
     {
@@ -983,7 +983,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
       }
       else
       {
-        StringCSF = &g_TypeClass_DefaultString; /*0x7334cb*/
+        StringCSF = (wchar_t *)(&g_TypeClass_DefaultString); /*0x7334cb*/
       }
     }
     else

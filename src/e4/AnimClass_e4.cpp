@@ -513,7 +513,7 @@ LABEL_78:
   {
     v34 = ZC    v34 = ZCoordToScreenY((int)((gamemd::IUnknown *)(*(int *)v101))); 
     v35 = (int)(*a2); /*0x423384*/
-    v36 = *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
+    v36 = *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     *(unsigned int *)v101 = v35; /*0x4233a2*/
@@ -528,7 +528,7 @@ LABEL_78:
       aP5,
       9729,
       0,
-      *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - v39,
+      *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184] - v39,
       0,
       1000,
       0,
@@ -657,13 +657,13 @@ LABEL_99:
     v86 = 0; /*0x423679*/
     v68 = v66[116](this); /*0x42367e*/
     v69 = this->AnimClass_field_0x100 /*0x4236a1*/
-        + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
+        + *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184]
         - ZCoordToScreenY((int)((gamemd::IUnknown *)(v68)))
         - 50;
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x4236a4*/
     do /*0x423719*/
     {
-      v70 = v67 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]; /*0x4236bb*/
+      v70 = v67 + *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184]; /*0x4236bb*/
       v105[0] = v108; /*0x4236bd*/
       v105[1] = v70; /*0x4236c1*/
       DrawToSurfaceSHP( /*0x4236f7*/
@@ -701,7 +701,7 @@ LABEL_99:
     v73 = v72[116](this); /*0x42376a*/
     BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x42379b*/
     v80 = this->AnimClass_field_0x100 /*0x42379e*/
-        + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
+        + *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184]
         - ZCoordToScreenY((int)((gamemd::IUnknown *)(v73)))
         - 3;
     DrawToSurfaceSHP( /*0x4237a9*/
@@ -729,7 +729,7 @@ LABEL_99:
     *(unsigned int *)v101 = v74; /*0x4237cb*/
     v83 = v106; /*0x4237d2*/
     v75 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x4237d7*/
-    v76 = this->AnimClass_field_0x100 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
+    v76 = this->AnimClass_field_0x100 + *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
     v77 = AnimClass_field_0x190; /*0x423801*/
     BYTE1(v77) = BYTE1(AnimClass_field_0x190) | 0x20; /*0x423806*/
     DrawToSurfaceSHP( /*0x423827*/
@@ -749,7 +749,7 @@ LABEL_99:
       0,
       0,
       0);
-    if ( this->AnimClass_field_0xC8[2].__pad_C[230] ) /*0x423832*/
+    if ( (&this->AnimClass_field_0xC8)[2].__pad_C[230] ) /*0x423832*/
     {
       v78 = *(int16_t *)(v103 + 6); /*0x423845*/
       v79 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x423857*/

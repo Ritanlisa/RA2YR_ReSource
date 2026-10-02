@@ -690,7 +690,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3), aP4, a6, aP7); /*0x46b0a6*/
+  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3),(int)(aP4), a6, aP7); /*0x46b0a6*/
   return (LPVOID)((int)v10); /*0x46b07c*/
 }
 } // namespace gamemd

@@ -89,17 +89,17 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup(void *a1)
 {
 
-  this->PhoneNumber[7] = 0; /*0x48bf12*/
-  this->PhoneNumber[8] = 0; /*0x48bf15*/
-  this->PhoneNumber[9] = 0; /*0x48bf18*/
-  this->PhoneNumber[10] = 0; /*0x48bf1b*/
+  (&this->PhoneNumber)[7] = 0; /*0x48bf12*/
+  (&this->PhoneNumber)[8] = 0; /*0x48bf15*/
+  (&this->PhoneNumber)[9] = 0; /*0x48bf18*/
+  (&this->PhoneNumber)[10] = 0; /*0x48bf1b*/
   *(unsigned int *)this->Active = 0; /*0x48bf1e*/
   this->LastPacketTime = 0; /*0x48bf21*/
   this->PacketsSent = 0; /*0x48bf24*/
   this->PacketsReceived = 0; /*0x48bf27*/
-  this->PhoneNumber[0] = 0; /*0x48bf2a*/
-  this->PhoneNumber[11] = -1; /*0x48bf30*/
-  this->PhoneNumber[12] = -1; /*0x48bf33*/
+  (&this->PhoneNumber)[0] = 0; /*0x48bf2a*/
+  (&this->PhoneNumber)[11] = -1; /*0x48bf30*/
+  (&this->PhoneNumber)[12] = -1; /*0x48bf33*/
   return ((Struct *)((Struct *)this->PlayerIndex))->ClearAllMemberFlags();
 
 }

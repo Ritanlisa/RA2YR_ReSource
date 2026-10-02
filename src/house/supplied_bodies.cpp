@@ -72,7 +72,7 @@ int HouseClass::createStartingUnits(int a2) {
     {
       result = 3 * a2; /*0x431421*/
       v4 = 0; /*0x431424*/
-      v5 = this + 3 * a2; /*0x431426*/
+      v5 = (void **)(this + 3 * a2); /*0x431426*/
       do /*0x43143f*/
       {
         if ( *v5 ) /*0x43142a*/
@@ -474,7 +474,7 @@ void HouseClass::Update_TogglePower(double a2) {
         if ( v29 ) /*0x4f88e6*/
         {
           if ( *(unsigned int *)(v29 + 304) != 1 || (*(unsigned char *)(v29 + 300) & 0x18) != 0 ) /*0x4f88f8*/
-            Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
+            Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
         }
       }
     }

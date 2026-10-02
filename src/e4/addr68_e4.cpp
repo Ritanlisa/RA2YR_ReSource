@@ -510,10 +510,10 @@ void * * ScenarioClass_SetTimer(int a1)
     v3 = (char *)((void **)((char *)dword_A8B230 + 1568));
     *((unsigned int *)dword_A8B230 + 392) = Ticks; /*0x68408c*/
     *((unsigned int *)v3 + 1) = v9; /*0x684092*/
-    *((unsigned int *)v3 + 2) = (void **)(60 * a1); /*0x684099*/
+    *((unsigned int *)v3 + 2) = (unsigned int)((void **)(60 * a1)); /*0x684099*/
     result = dword_A8B230; /*0x68409c*/
     if ( *((unsigned char *)dword_A8B230 + 1584) ) /*0x6840a1*/
-      return result; /*0x6840a9*/
+      return (void **)(result); /*0x6840a9*/
     *((unsigned char *)dword_A8B230 + 1584) = 1; /*0x6840af*/
   }
   if ( !*((unsigned int *)dword_A8B230 + 395) ) /*0x6840bc*/
@@ -537,7 +537,7 @@ void * * ScenarioClass_SetTimer(int a1)
       ((Mouse *)(&dword_87F7E8))->ReleaseCapture(); /*0x684127*/
       if ( !(*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x684134*/
         (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
-      *((unsigned char *)dword_A8B230 + 13730) = (void **)(1); /*0x68414c*/
+      *((unsigned char *)dword_A8B230 + 13730) = (unsigned char)((void **)(1)); /*0x68414c*/
       byte_A8ED9C = 1; /*0x684159*/
       Timer::PumpMessages((HWND *)dword_87F770); /*0x684160*/
       dword_B07784 = 0; /*0x684165*/
@@ -545,7 +545,7 @@ void * * ScenarioClass_SetTimer(int a1)
   }
   result = (unsigned int)((void **)((unsigned int)((void **)(dword_A8B230))));
   ++*((unsigned int *)dword_A8B230 + 395); /*0x684174*/
-  return result; /*0x68417a*/
+  return (void **)(result); /*0x68417a*/
 }
 }
 // 0x684290
@@ -554,18 +554,18 @@ ScenarioClass * * Mouse_Update()
 {
   int result; // eax
 
-  if ( IDA_BYTE2(dword_A8B230[381].vtable3) == 1 /*0x6842a6*/
+  if ( IDA_BYTE2((&dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
     && (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) )
   {
     do /*0x6842c0*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6842b5*/
     while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ); /*0x6842c0*/
   }
-  IDA_BYTE2(dword_A8B230[381].vtable3) = 0; /*0x6842cc*/
-  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (gamemd::ScenarioClass **)(0); /*0x6842d9*/
+  IDA_BYTE2((&dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/
   result = (int)(Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296])); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
-  return result; /*0x6842ef*/
+  return (gamemd::ScenarioClass **)(result); /*0x6842ef*/
 }
 }
 // 0x684370
@@ -651,12 +651,12 @@ char WaitForMultiplayerLoadSync()
     if ( ((Progress *)((int)g_UIManager))->GetWeighted(v0) < 0.999 ) /*0x68455b*/
     {
       v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
-      ToWideStringChar(v10); /*0x684567*/
-      ToWideStringChar(v10); /*0x684570*/
+      ToWideStringChar((IUnknown *)(v10)); /*0x684567*/
+      ToWideStringChar((IUnknown *)(v10)); /*0x684570*/
             Debug::Log();
       v11 = *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
-      HandleNetworkPlayerDisconnect(v11, 1); /*0x684596*/
-      if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(void **)&HouseClass_Array->gap0[4 * v11]) ) /*0x6845aa*/
+      HandleNetworkPlayerDisconnect((wchar_t *)(v11), 1); /*0x684596*/
+      if ( SessionClass::IsValidHouse((void *)((int)g_GameMode_Current), *(void **)&HouseClass_Array->gap0[4 * v11]) ) /*0x6845aa*/
       {
         dword_A8E2AC = -1; /*0x6845bf*/
         memset(word_A8E258, 0, 0x28u, unsigned int a1); /*0x6845c9*/
@@ -727,14 +727,14 @@ void PostLoadInitScenario()
         nextArrayIndex = (&dword_A8B230)[14].abstractFlags; /*0x684cb1*/
       v4 = *(void **)((char *)&(&dword_A8B230)[44].vtable0 + 4 * nextArrayIndex + 2); /*0x684cb7*/
       *(void **)((char *)&(&dword_A8B230)[374].vtable0 + 2) = v4; /*0x684cbe*/
-      *(void **)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = *(void **)((char *)&dword_A8B230[374].vtable0 + 2); /*0x684cd4*/
-      *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2); /*0x684ce9*/
-      *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = *(int *)((char *)&dword_A8B230[373].referenceCount + 2); /*0x684d03*/
+      *(void **)((char *)&(&dword_A8B230)[373].NeedsSaveOrLink + 2) = *(void **)((char *)&(&dword_A8B230)[374].vtable0 + 2); /*0x684cd4*/
+      *(int *)((char *)&(&dword_A8B230)[373].referenceCount + 2) = *(int *)((char *)&(&dword_A8B230)[373].NeedsSaveOrLink + 2); /*0x684ce9*/
+      *(int *)((char *)&(&dword_A8B230)[373].nextArrayIndex + 2) = *(int *)((char *)&(&dword_A8B230)[373].referenceCount + 2); /*0x684d03*/
       v36 = ((int16_t)v4 << 8) + 128; /*0x684d09*/
       v37 = (IDA_SHIWORD(v4) << 8) + 128; /*0x684d21*/
       GroundHeight = 0; /*0x684d2b*/
       GroundHeight = Cell::GetGroundHeight(&v36); /*0x684d3e*/
-      TacticalClass::SetPositionThunk((RadarClass *)&v36); /*0x684d42*/
+      TacticalClass::SetPositionThunk((gamemd::MouseClass *)((RadarClass *)&v36)); /*0x684d42*/
     }
   }
   v5 = g_MultiplayerCleanup; /*0x684d47*/
@@ -767,7 +767,7 @@ void PostLoadInitScenario()
              (char *)((char *)&FootClass_Array) + *((unsigned int *)((char *)&FootClass_Array + 0)),
              0) )
       {
-        v11 = ((char *)&FootClass_Array)++; /*0x684e20*/
+        v11 = (gamemd::ParticleSystemClass *)(((char *)&FootClass_Array)++); /*0x684e20*/
         *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + (unsigned int)v11) = v10; /*0x684e2f*/
       }
     }
@@ -809,7 +809,7 @@ void PostLoadInitScenario()
     }
     while ( v19 < g_MultiplayerCleanup ); /*0x684efb*/
   }
-  if ( IDA_BYTE2(dword_A8B230[374].nextArrayIndex) ) /*0x684f02*/
+  if ( IDA_BYTE2((&dword_A8B230)[374].nextArrayIndex) ) /*0x684f02*/
   {
     v22 = 0; /*0x684f12*/
     for ( k = 0; v22 < ((char *)&stru_A80220); k = v22 ) /*0x684f1a*/
@@ -883,14 +883,14 @@ void PostLoadInitScenario()
       if ( ((Building *)(n))->GetNthOfType() ) /*0x68507a*/
       {
         if ( !Random::Range( /*0x68509e*/
-                (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink,
                 0,
                 *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6252) - 1) )
         {
           v31 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x6850b1*/
           if ( v31 ) /*0x6850b8*/
           {
-                        v31 = (int *)(*(int (**)(int, int *))(*(unsigned int *)n + 72))(n, &v34);
+                        v31 = (gamemd::AnimClass *)((int *)(*(int (**)(int, int *))(*(unsigned int *)n + 72))(n, &v34));
             AnimClass::ctor( /*0x6850e0*/
               v31,
               *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6256),
@@ -932,7 +932,7 @@ void ScenarioClass_Reset()
   *((unsigned int *)g_ScenarioClass_Instance + 133) = 1000000; /*0x6851fc*/
   *((unsigned char *)g_ScenarioClass_Instance + 536) = 1; /*0x68520c*/
   dword_83D834 = 0x4000; /*0x685219*/
-  EndBufferMixer((int *)g_MixerState, 0x4000); /*0x68521f*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x68521f*/
   AudioQueue::DrainAll(); /*0x685224*/
   HouseClass_Player = 0; /*0x685231*/
   ScenarioClass::InitTimer((int)g_ScenarioClass_Instance); /*0x685237*/
@@ -994,7 +994,7 @@ void ScenarioClass_Reset()
   v6 = 0; /*0x685354*/
   for ( j = 0; j < 2050; j += 41 ) /*0x685356*/
   {
-    v8 = g_ScenarioClass_Instance; /*0x685358*/
+    v8 = (unsigned char *)(g_ScenarioClass_Instance); /*0x685358*/
     if ( (unsigned int)j < 0x802 && *((unsigned char *)g_ScenarioClass_Instance + j + 7344) ) /*0x685365*/
     {
       *((unsigned char *)g_ScenarioClass_Instance + j + 7344) = 0; /*0x68536e*/
@@ -1012,7 +1012,7 @@ void ScenarioClass_Reset()
     v10 = (IPersistStream *)TacticalMap::Construct((int)v9); /*0x6853b4*/
   else
     v10 = 0; /*0x6853bb*/
-  g_TacticalClass_Instance = v10; /*0x6853bf*/
+  g_TacticalClass_Instance = (int)(v10); /*0x6853bf*/
   Map_Setup_6DA980(v10); /*0x6853c4*/
   byte_829AE4 = 0; /*0x6853ce*/
   while ( g_PlacementCellPool ) /*0x6853d6*/

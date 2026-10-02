@@ -295,7 +295,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
-      *(unsigned int *)(v4 + 164) = ((CCFileClass *)(v5))->ReadEntireFile(); /*0x71dd3b*/
+      *(unsigned int *)(v4 + 164) = (unsigned int)(((CCFileClass *)(v5))->ReadEntireFile()); /*0x71dd3b*/
       v5[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       ((Vector *)((int)v6))->Clear(); /*0x71dd4d*/
@@ -1279,11 +1279,11 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   int Instance; // ebx
 
   ToggleClass::Construct((int)this, aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
-  this->__pad_0[53] = aP9; /*0x71ff52*/
+  this->__pad_0[53] = (unsigned char)(aP9); /*0x71ff52*/
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->field_38 = (gamemd::CampaignScore *)(a3); /*0x71ff5f*/
   *((unsigned int *)this + 15) = a4; /*0x71ff62*/
-  *(unsigned int *)this->__pad_0 = &vt_TextButtonClass; /*0x71ff65*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_TextButtonClass); /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = (int)(TextRenderer::GetInstance()); /*0x71ff7a*/

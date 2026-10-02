@@ -204,11 +204,11 @@ LABEL_14:
   v17 = *((unsigned char *)this + 1324); /*0x7593d7*/
   *((unsigned int *)this + 113) = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
-    *((unsigned int *)this + 94) = sub_75A2B0; /*0x7593e7*/
+    *((unsigned int *)this + 94) = (unsigned int)(sub_75A2B0); /*0x7593e7*/
   else
-    *((unsigned int *)this + 94) = sub_75A100; /*0x7593f3*/
-  *((unsigned int *)this + 95) = sub_75A2F0; /*0x759402*/
-  *((unsigned int *)this + 96) = sub_75A350; /*0x75940c*/
+    *((unsigned int *)this + 94) = (unsigned int)(sub_75A100); /*0x7593f3*/
+  *((unsigned int *)this + 95) = (unsigned int)(sub_75A2F0); /*0x759402*/
+  *((unsigned int *)this + 96) = (unsigned int)(sub_75A350); /*0x75940c*/
   if ( TestBitArray(4) ) /*0x759416*/
   {
     *((unsigned int *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
@@ -216,11 +216,11 @@ LABEL_14:
   }
   else
   {
-    *((unsigned int *)this + 98) = sub_4116A0; /*0x759435*/
+    *((unsigned int *)this + 98) = (unsigned int)(sub_4116A0); /*0x759435*/
     *((unsigned int *)this + 108) = 60; /*0x75943f*/
     *((unsigned int *)this + 127) = (uint16_t)unk_A8EBA8; /*0x759455*/
   }
-  *((unsigned int *)this + 100) = ManageMultimediaTimer; /*0x759463*/
+  *((unsigned int *)this + 100) = (unsigned int)(ManageMultimediaTimer); /*0x759463*/
   *((unsigned int *)this + 117) = 0x2000; /*0x75946d*/
   *((unsigned int *)this + 321) = 0; /*0x759477*/
   *((unsigned int *)this + 339) = 0; /*0x75947d*/

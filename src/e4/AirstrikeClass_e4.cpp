@@ -356,10 +356,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  *(unsigned int *)this = &vt_AirstrikeClass; /*0x41d389*/
-  *((unsigned int *)this + 1) = &vt_AirstrikeClass; /*0x41d38f*/
-  *((unsigned int *)this + 2) = &vt_AirstrikeClass; /*0x41d396*/
-  *((unsigned int *)this + 3) = &vt_AirstrikeClass; /*0x41d39d*/
+  *(unsigned int *)this = (unsigned int)(&vt_AirstrikeClass); /*0x41d389*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_AirstrikeClass); /*0x41d38f*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_AirstrikeClass); /*0x41d396*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_AirstrikeClass); /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -369,7 +369,7 @@ AirstrikeClass::AirstrikeClass(int a2)
          0) )
   {
     v3 = dword_889FC8++; /*0x41d3e6*/
-    *((unsigned int *)dword_889FBC + v3) = this; /*0x41d3f5*/
+    *((unsigned int *)dword_889FBC + v3) = (unsigned int)(this); /*0x41d3f5*/
   }
   *((unsigned char *)this + 60) = 0; /*0x41d3fc*/
   *((unsigned int *)this + 19) = a2; /*0x41d3ff*/

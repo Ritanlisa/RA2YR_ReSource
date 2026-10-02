@@ -493,7 +493,7 @@ LABEL_82:
     v50 = eax83[1];
     if ( (*eax83)->Name[44]
       && ((*(int (**)(BuildingTypeClass *))(v51->vtable1 + 44))(v51) != 6
-       || !*(unsigned char *)(v51->DieSound[4] + 5889))
+       || !*(unsigned char *)((&v51->DieSound)[4] + 5889))
       && (!v114
        || v51
        && (IDA_HIBYTE(v116) = v51->abstractFlags & 1) != 0
@@ -504,10 +504,10 @@ LABEL_82:
       {
         v50 = (BuildingTypeClass *)((int)v50 / 2);
       }
-      if ( *(int *)&v51->Name[8] > 0 && v51->Name[16] && !v51->Name[29] && (int)v50 <= v134 )
+      if ( *(int *)&(&v51->Name)[8] > 0 && (&v51->Name)[16] && !(&v51->Name)[29] && (int)v50 <= v134 )
       {
-        int v53 = v51->vtable1;
-        v122[0] = v120;
+        int v53 = (int)(v51->vtable1);
+        v122[0] = (unsigned int)(v120);
         (*(void (**)(BuildingTypeClass *, unsigned int *, BuildingTypeClass *, ObjectClass *, unsigned int *, unsigned int, unsigned int, int))(v53 + 364))(
           v51,
           v122,
@@ -520,7 +520,7 @@ LABEL_82:
         v118 = 1;
       }
     }
-    v49 = v121;
+    v49 = (IUnknown *)(v121);
   }
   int v54 = 0;
   if ( (int)v49 > 0 )
@@ -547,7 +547,7 @@ LABEL_82:
     v141 = 4.0;
   else
     v141 = v57;
-  v58 = aP3;
+  v58 = (gamemd::ObjectClass *)(aP3);
   if ( IDA_BYTE2(aP3[1].location[1]) )
   {
     if ( v141 > 0.3 )
@@ -565,14 +565,14 @@ LABEL_82:
             {
               IDA_LOWORD(v134) = v59;
               IDA_HIWORD(v134) = (unsigned short)ebx112;
-              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v134)
+              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v134)
                                    + 58);
             }
             else
             {
               IDA_LOWORD(v138) = v59;
               IDA_HIWORD(v138) = (unsigned short)ebx112;
-              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v138)
+              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v138)
                                    + 57);
             }
             v60 = v61;
@@ -655,20 +655,20 @@ LABEL_82:
           v112 = ++v59;
         }
         while ( v59 <= (int16_t)v115 + 3 );
-        v58 = aP3;
+        v58 = (gamemd::ObjectClass *)(aP3);
       }
     }
   }
-  bool v107 = v58 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080);
-  v71 = (IUnknown *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v115);
-  if ( (IDA_BYTE1(**(unsigned int **)&HouseClass_Player[29924]) & 0x80u) != 0 && v58[1].isInLogic )
+  bool v107 = v58 == *(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080);
+  v71 = (IUnknown *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v115);
+  if ( (IDA_BYTE1(**(unsigned int **)&(&HouseClass_Player)[29924]) & 0x80u) != 0 && v58[1].isInLogic )
   {
     v72 = (ParticleSystemClass *)v71->field_140;
     int v75 = v71->field_38 - unk_AA0E28 + 1;
     unsigned int * v113 = 0;
     if ( (IDA_BYTE1(v72) & 1) != 0
       && ((char)v72 >= 0 ? (v122[0] = *(unsigned int *)(*(unsigned int *)&v71->__pad_28[4] + 36)) : (v122[0] = v71->field_24),
-          (eax137 = ((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)v122), (v113 = eax137) != 0)
+          (eax137 = ((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)v122), (v113 = eax137) != 0)
        && ((eax138 = eax137[17], eax138 == 24) || eax138 == 25)) )
     {
       v76 = (AbstractClass *)g_TerrainSoundTable2;
@@ -705,7 +705,7 @@ LABEL_166:
             {
               if ( aP3[1].isInLogic )
               {
-                if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
+                if ( aP3 == *(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)
   int v88; // eax
                   || (v88 = Random::Range(
                               (unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536),

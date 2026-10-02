@@ -98,13 +98,13 @@ int SessionClass::initInternet()
   if ( v3 ) /*0x540e90*/
   {
     v4 = (unsigned int *)((char *)(dword_A8DA78));
-    v5 = (char *)(this->unknown_14[0]);
+    v5 = (char *)((&this->unknown_14)[0]);
     v6 = (char *)(CharToWideString(aMulticast));
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
                     v5,
-                    this->unknown_10[0],
+                    (&this->unknown_10)[0],
                     this->Config[2],
                     (unsigned int *)(*v4 + 40),
                     -1,
@@ -143,13 +143,13 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(aLoadmdMix), (v2 = __2_YAPAXI_Z(0x28u)) == 0)
       ? (result = 0)
-      : (result = ((MixFileClass *)(v2))->FromFile(aLoadmdMix_0, (int)dword_886980)),
+      : (result = ((MixFileClass *)(v2))->FromFile((char *)(aLoadmdMix_0), (int)dword_886980)),
         (*((unsigned int *)this + 2) = result) != 0) )
   {
     if ( *((unsigned int *)this + 1)
       || ((v4 = __2_YAPAXI_Z(0x28u)) == 0
         ? (result = 0)
-        : (result = ((MixFileClass *)(v4))->FromFile(aLoadMix, (int)dword_886980)),
+        : (result = ((MixFileClass *)(v4))->FromFile((char *)(aLoadMix), (int)dword_886980)),
           (*((unsigned int *)this + 1) = result) != 0) )
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
@@ -338,21 +338,21 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     v6 = (MSChoiceClass *)__2_YAPAXI_Z(0x6Cu); /*0x5cefef*/
     if ( !v6 ) /*0x5ceff9*/
       goto LABEL_17; /*0x5ceff9*/
-    v7 = ((MSChoiceClass *)(v6))->LoadFromINI(&((char *)&v43), (const char **)&((char *)&v43)); /*0x5cf00c*/
+    v7 = ((MSChoiceClass *)(v6))->LoadFromINI((unsigned int *)(&((char *)&v43)), (const char **)&((char *)&v43)); /*0x5cf00c*/
     if ( !v7 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
     v8 = uniqueId->unknown_08[0]; /*0x5cf012*/
-    if ( uniqueId->unknown_10[0] < v8 /*0x5cf038*/
-      || (BYTE1(uniqueId->unknown_0C[0]) || !v8)
-      && (v9 = uniqueId->unknown_14[0], v9 > 0)
+    if ( (&uniqueId->unknown_10)[0] < v8 /*0x5cf038*/
+      || (BYTE1((&uniqueId->unknown_0C)[0]) || !v8)
+      && (v9 = (&uniqueId->unknown_14)[0], v9 > 0)
       && (*(uint8_t (**)(SessionClass *, int, unsigned int))(uniqueId->GameMode[0] + 8))(
            uniqueId,
            v8 + v9,
            0) )
     {
-      v10 = uniqueId->unknown_10[0]; /*0x5cf03f*/
+      v10 = (&uniqueId->unknown_10)[0]; /*0x5cf03f*/
       v11 = uniqueId->MPGameMode[0]; /*0x5cf042*/
-      uniqueId->unknown_10[0] = v10 + 1; /*0x5cf048*/
+      (&uniqueId->unknown_10)[0] = v10 + 1; /*0x5cf048*/
       *(unsigned int *)(v11 + 4 * v10) = (unsigned int)(v7); /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
@@ -362,7 +362,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     }
     v3 = 0; /*0x5cf054*/
   }
-  if ( uniqueId->unknown_10[0] ) /*0x5cf073*/
+  if ( (&uniqueId->unknown_10)[0] ) /*0x5cf073*/
   {
     ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf0e0*/
     ((String *)((String *)&v43))->Assign((const char *)(aAnims)); /*0x5cf0ee*/

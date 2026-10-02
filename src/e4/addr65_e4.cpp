@@ -159,7 +159,7 @@ int Trigger_AllocateLog(int a1)
       int v18 = *(unsigned int *)(v16 + 160);
       v86 = *(unsigned int *)(v16 + 164);
       *(unsigned int *)v15 = v17 / 10 + ((v18 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v16 + 388))(v16);
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v16 + 1728) + 3576);
       *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v16 + 1400) * 256.0);
@@ -226,8 +226,8 @@ int Trigger_AllocateLog(int a1)
         int v30 = *(unsigned int *)(v28 + 160);
         v86 = *(unsigned int *)(v28 + 164);
         *(unsigned int *)v15 = v29 / 10 + ((v30 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
-        *(unsigned char *)(v15 + 101) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue(v85) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 101) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v28 + 388))(v28);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v28 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
@@ -307,7 +307,7 @@ int Trigger_AllocateLog(int a1)
         int v42 = *(unsigned int *)(v40 + 160);
         v86 = *(unsigned int *)(v40 + 164);
         *(unsigned int *)v15 = v41 / 10 + ((v42 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v40 + 388))(v40);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v40 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v40 + 1400) * 256.0);
@@ -376,7 +376,7 @@ int Trigger_AllocateLog(int a1)
       int v55 = *(unsigned int *)(v53 + 160);
       v86 = *(unsigned int *)(v53 + 164);
       *(unsigned int *)v15 = v54 / 10 + ((v55 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v53 + 388))(v53);
       int v56 = 0;
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v53 + 1312) + 3576);
@@ -594,7 +594,7 @@ char RenderScoreboardSidebar(void * a1, void * a2)
                   DSurface_Sidebar,
                   &v49,
                   0);
-    DrawToSurfaceSHP((int)DSurface_Sidebar, v5,(gamemd::ConvertClass *)(dword_B04A38), 0x20u,(gamemd::ConvertClass *)(&v43), v6, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
+    DrawToSurfaceSHP((int)DSurface_Sidebar, v5,(gamemd::ConvertClass *)(dword_B04A38), 0x20u,(gamemd::ConvertClass *)(&v43),(gamemd::ConvertClass *)(v6), 0, 0, 0, 1000, 0, 0, 0, 0, 0, v41); /*0x65400b*/
     v7 = v4[1149] + 2; /*0x65401c*/
     v43 = v4[1148]; /*0x65401f*/
     v44 = v7; /*0x654031*/
@@ -796,7 +796,7 @@ void sub_6586D0()
     Dialog::Destroy(Dialog); /*0x658733*/
   }
   Timer::PumpMessages(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]); /*0x658740*/
-  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2(dword_A8B230[381].vtable3); /*0x658758*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x658763*/
 }
 }
@@ -1225,10 +1225,10 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
         do /*0x65c9d5*/
         {
           v16 = vtable1; /*0x65c995*/
-          v17 = vtable1 ^ dword_839644[v15++]; /*0x65c997*/
+          v17 = vtable1 ^ (&dword_839644)[v15++]; /*0x65c997*/
           v18 = v14 /*0x65c9cc*/
               ^ ((uint16_t)v17 * (v17 >> 16)
-               + (dword_839690[v15]
+               + ((&dword_839690)[v15]
                 ^ ((((uint16_t)v17 * (uint16_t)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
                  | (((uint16_t)v17 * (uint16_t)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
           vtable1 = v18; /*0x65c9d1*/
@@ -1395,10 +1395,10 @@ bool DeployScriptActionPlane(int a1, int edx0)
     {
       v6 = (ScriptTypeClass *)RA2_OPNEW(0x234u); /*0x65d933*/
       if ( v6 ) /*0x65d93d*/
-        v7 = (unsigned int)(((ScriptTypeClass *)(v6))->Constructor(0)); /*0x65d942*/
+        v7 = (unsigned int *)((unsigned int)(((ScriptTypeClass *)(v6))->Constructor(0))); /*0x65d942*/
       else
         v7 = 0; /*0x65d949*/
-      *(unsigned int *)(v3 + 224) = v7; /*0x65d94b*/
+      *(unsigned int *)(v3 + 224) = (unsigned int)(v7); /*0x65d94b*/
     }
     v8 = *(unsigned int *)(v3 + 224); /*0x65d951*/
     v9 = v8->q0A0; /*0x65d957*/
@@ -1421,7 +1421,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   if ( v12 ) /*0x65d9b5*/
     Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v48, *(int *)v48); /*0x65d9c7*/
   else
-    Waypoint_Location = ((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords(v48); /*0x65d9d5*/
+    Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
   v45 = (ScriptActionQueue)v14; /*0x65d9e2*/
   if ( !v43 && IDA___PAIR32__(*(uint16_t *)&v45.__tail_0[2], v14) != dword_B04C38 ) /*0x65d9f3*/

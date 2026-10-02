@@ -133,7 +133,7 @@ int Scenario::ReadTeams()
   {
     while ( 1 ) /*0x44f874*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v1->__pad_0), (uint8_t *)aStructures, v3); /*0x44f874*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v1->__pad_0),(gamemd::CCINIClass *)((uint8_t *)aStructures), v3); /*0x44f874*/
       INIClass::GetString(v1, (uint8_t *)aStructures,(gamemd::INIClass *)(StringByIndex), 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
       v6 = ((HouseClass *)(v5))->FindByName(); /*0x44f8a8*/
@@ -221,7 +221,7 @@ int Scenario::ReadTeams()
                   {
                     v31 = (void *)((int)(((TeamClass *)(v30))->FindOrCreate()));
                     if ( v31 ) /*0x44fb45*/
-                      ((ObjectClass *)((ObjectClass *)v29))->SetReference(v31); /*0x44fb4a*/
+                      ((ObjectClass *)((ObjectClass *)v29))->SetReference((int)(v31)); /*0x44fb4a*/
                   }
                   *(unsigned char *)(v29 + 1756) = v58; /*0x44fb5b*/
                   *(unsigned char *)(v29 + 1738) = v57; /*0x44fb61*/
@@ -516,7 +516,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x552beb*/
   {
-    v6 = Copy8Bytes(&v11, (int *)&this->Scenario_field_0x1C); /*0x552c3b*/
+    v6 = (int *)(Copy8Bytes(&v11, (int *)&this->Scenario_field_0x1C)); /*0x552c3b*/
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
@@ -639,7 +639,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       {
         if ( (uint8_t)((TeamClass *)(v3))->Update_0(50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
           goto LABEL_22; /*0x55b011*/
-        v2 = dword_A8B230; /*0x55b017*/
+        v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b017*/
       }
       if ( BYTE2(v2[374].uniqueId) ) /*0x55b01d*/
       {
@@ -650,7 +650,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
         {
           goto LABEL_22; /*0x55b097*/
         }
-        v2 = dword_A8B230; /*0x55b09d*/
+        v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b09d*/
       }
       if ( HIBYTE(v2[374].uniqueId) /*0x55b10f*/
         && ((uint8_t)((TeamClass *)(v3))->Update_0(45, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
@@ -660,11 +660,11 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       {
         goto LABEL_22; /*0x55b116*/
       }
-      v2 = dword_A8B230; /*0x55b118*/
-      if ( dword_A8B230[127].vtable3 != (void *)-1 ) /*0x55b124*/
+      v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b118*/
+      if ( (&dword_A8B230)[127].vtable3 != (void *)-1 ) /*0x55b124*/
       {
-        vtable3 = dword_A8B230[127].vtable3; /*0x55b126*/
-        abstractFlags = dword_A8B230[127].abstractFlags; /*0x55b12c*/
+        vtable3 = (&dword_A8B230)[127].vtable3; /*0x55b126*/
+        abstractFlags = (&dword_A8B230)[127].abstractFlags; /*0x55b12c*/
         if ( vtable3 != (void *)-1 ) /*0x55b134*/
         {
           if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x55b140*/
@@ -681,7 +681,7 @@ LABEL_23:
     }
     ((TeamClass *)(v3))->Update_0(14, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0); /*0x55b148*/
 LABEL_22:
-    v2 = dword_A8B230; /*0x55b15e*/
+    v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b15e*/
     goto LABEL_23; /*0x55b15e*/
   }
 LABEL_24:
@@ -705,12 +705,12 @@ LABEL_24:
         *p_vtable3 = (void *)-1; /*0x55b1c4*/
       }
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x55b1cd*/
-      v2 = dword_A8B230; /*0x55b1d2*/
+      v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b1d2*/
     }
   }
   BYTE2(v2[374].uniqueId) = 0; /*0x55b1d8*/
-  BYTE1(dword_A8B230[374].uniqueId) = 0; /*0x55b1e4*/
-  HIBYTE(dword_A8B230[374].uniqueId) = 0; /*0x55b1f1*/
+  BYTE1((&dword_A8B230)[374].uniqueId) = 0; /*0x55b1e4*/
+  HIBYTE((&dword_A8B230)[374].uniqueId) = 0; /*0x55b1f1*/
   BYTE2(dword_A8B230[375].vtable0) = 0; /*0x55b1fe*/
   v13 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b205*/
   if ( !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6128) /*0x55b226*/

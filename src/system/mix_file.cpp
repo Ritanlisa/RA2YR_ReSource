@@ -489,7 +489,7 @@ MixFileClass * * MixFileClass::Bootstrap()
     g_MixFile_RA2 = 0; /*0x5302ef*/
     return 0; /*0x5302fd*/
   }
-  v9 = MixFileClass::FromFile(v8, aRa2Mix, (int)dword_886980); /*0x5302d2*/
+  v9 = (unsigned int *)(MixFileClass::FromFile(v8, aRa2Mix, (int)dword_886980)); /*0x5302d2*/
   g_MixFile_RA2 = (int)v9; /*0x5302d7*/
   if ( !v9 ) /*0x530300*/
     return 0; /*0x530300*/
@@ -510,7 +510,7 @@ MixFileClass * * MixFileClass::Bootstrap()
     g_MixFile_CACHE = 0; /*0x530385*/
     return 0; /*0x530393*/
   }
-  v13 = MixFileClass::FromFile(v12, aCacheMix_0, (int)dword_886980); /*0x530368*/
+  v13 = (unsigned int *)(MixFileClass::FromFile(v12, aCacheMix_0, (int)dword_886980)); /*0x530368*/
   g_MixFile_CACHE = (int)v13; /*0x53036d*/
   if ( !v13 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCacheMix_0) ) /*0x5303a3*/
     return 0; /*0x5303a3*/
@@ -530,7 +530,7 @@ MixFileClass * * MixFileClass::Bootstrap()
     g_MixFile_LOCAL = 0; /*0x53041d*/
     return 0; /*0x53042b*/
   }
-  v16 = MixFileClass::FromFile(v15, aLocalMix, (int)dword_886980); /*0x530400*/
+  v16 = (unsigned int *)(MixFileClass::FromFile(v15, aLocalMix, (int)dword_886980)); /*0x530400*/
   g_MixFile_LOCAL = (int)v16; /*0x530405*/
   if ( !v16 ) /*0x53042e*/
     return 0; /*0x5302ed*/

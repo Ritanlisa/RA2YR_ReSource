@@ -119,7 +119,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_VoxelAnimClass; /*0x7499fc*/
   this->VoxelAnimClass_field_0x8 = (unsigned int)(&vt_VoxelAnimClass); /*0x749a03*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_VoxelAnimClass); /*0x749a0a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x749a11*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(int)((gamemd::AbstractClass *)(1))); /*0x749a11*/
   v6 = this; /*0x749a26*/
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad_1C[64] + 16))( /*0x749a2a*/
          &stru_88732C.__pad_1C[64],
@@ -214,7 +214,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     || (v27 = *(unsigned int *)&this->__pad_98[4],
         v28 = *(unsigned int *)&this->__pad_98[8],
         v29 = *(unsigned int *)&this->__pad_98[12],
-        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((IUnknown *)((int)&v27)),
+        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((int)((IUnknown *)((int)&v27))),
         !(unsigned char)VoxelAnimClass_field_0x104) )
   {
     v6 = a2[1]; /*0x749bcb*/
@@ -833,7 +833,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v103 = i->location[2]; /*0x74a8ca*/
         v75 = (unsigned int *)Coord::GetCoords(&v108, v86); /*0x74a8ce*/
         v76 = abs32(*v75 - v74) + abs32(v75[1] - v102); /*0x74a8ee*/
-        v77 = v1->VoxelAnimClass_field_0x104; /*0x74a8f0*/
+        v77 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a8f0*/
         if ( v76 <= v77[189] ) /*0x74a8fc*/
         {
           vtable0 = i->AbstractClass; /*0x74a904*/
@@ -914,7 +914,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   v8 = ((Power *)((Power *)a2))->FlagProcess(v7); /*0x74aa9f*/
   LOBYTE(v8) = this->__pad_12C[16]; /*0x74aaa4*/
   ((Power *)((Power *)a2))->FlagProcess(v8); /*0x74aaad*/
-  return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
+  return (gamemd::AbstractClass **)(Power::TimerProcess(this->VoxelAnimClass_field_0x140)); /*0x74aac0*/
 
 }
 }

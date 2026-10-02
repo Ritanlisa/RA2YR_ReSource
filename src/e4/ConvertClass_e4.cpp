@@ -45,7 +45,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   int v30; // [esp+14h] [ebp-Ch]
   int v31; // [esp+1Ah] [ebp-6h]
 
-  *(unsigned int *)&this->ConvertClass_field_0x2[2] = (*(int (**)(int))(*(unsigned int *)a4 + 112))(a4); /*0x48e753*/
+  *(unsigned int *)&(&this->ConvertClass_field_0x2)[2] = (*(int (**)(int))(*(unsigned int *)a4 + 112))(a4); /*0x48e753*/
   *(unsigned int *)&this->__pad_6[2] = 0; /*0x48e756*/
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x48e759*/
   *(unsigned int *)&this->__pad_6[10] = 0; /*0x48e75c*/
@@ -146,7 +146,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConvertClass); /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(unsigned int *)&this->__pad_6[358] = 1; /*0x48e943*/
-  if ( *(unsigned int *)&this->ConvertClass_field_0x2[2] == 1 ) /*0x48e94f*/
+  if ( *(unsigned int *)&(&this->ConvertClass_field_0x2)[2] == 1 ) /*0x48e94f*/
   {
     v10 = (CampaignClass *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
     this->ConvertClass_field_0x178 = (unsigned int)(v10); /*0x48e95f*/
@@ -172,7 +172,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     if ( v16 == 1 ) /*0x48ea16*/
     {
       LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
-      v17 = (char *)v15 + 1; /*0x48ea1a*/
+      v17 = (unsigned char *)((char *)v15 + 1); /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = ((Palette *)((int)((char *)a3)))->FindClosestColor((gamemd::Palette *)(a2 + 2 * (i % 256) + i % 256)); /*0x48ea40*/
     }

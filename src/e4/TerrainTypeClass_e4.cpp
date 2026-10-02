@@ -130,7 +130,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   ((unsigned int *)this)[0] = 1; /*0x5449de*/
   ((unsigned int *)this)[0] = 1; /*0x5449e5*/
   ((unsigned int *)this)[0] = 0; /*0x5449ec*/
-  return this; /*0x5449c4*/
+  return (unsigned int *)(this); /*0x5449c4*/
 
 }
 } // namespace gamemd
@@ -243,7 +243,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
     if ( ((unsigned int *)this)[0] == -1 ) /*0x71decf*/
       ((unsigned int *)this)[0] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4420); /*0x71dedc*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aIsveinhole, this->IsVeinhole); /*0x71def6*/
-    this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
+    this->IsVeinhole = (void *)(Bool_Overwrite); /*0x71defd*/
     if ( Bool_Overwrite ) /*0x71df03*/
     {
       ((unsigned int *)this)[0] = 0; /*0x71df05*/
@@ -264,18 +264,18 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
     v10 = 5 * v9; /*0x71df7e*/
     this->Foundation = v9; /*0x71df81*/
     LOBYTE(v9) = ((unsigned int *)this)[0]; /*0x71df87*/
-    this->FoundationData = (CellStruct *)(8 * v10 + 11595200); /*0x71df96*/
+    this->FoundationData = (unsigned int)((CellStruct *)(8 * v10 + 11595200)); /*0x71df96*/
     if ( !(unsigned char)v9 ) /*0x71df9c*/
     {
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x71dfad*/
-      ((unsigned int *)this)[0] = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x71dfc0*/
+      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), Ext); /*0x71dfad*/
+      ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)SearchMIXFile(Buffer, 0)); /*0x71dfc0*/
     }
     v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))this->vtable1 + 39))(this); /*0x71dfca*/
     if ( v11 ) /*0x71dfd2*/
     {
       PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0); /*0x71dfdd*/
       *(unsigned short *)this->RadarColor = *(unsigned short *)PixelData; /*0x71dfeb*/
-      this->RadarColor[2] = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
+      (&this->RadarColor)[2] = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
     }
     Coord = INIClass::GetCoord( /*0x71e00c*/
               (INIClass *)aP1,
@@ -285,7 +285,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
               (uint8_t *)this->RadarColor);
     IsAnimated = this->IsAnimated; /*0x71e014*/
     *(unsigned short *)this->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
-    this->RadarColor[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
+    (&this->RadarColor)[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
     v15 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aIsanimated, IsAnimated); /*0x71e02d*/
     AnimationRate = this->AnimationRate; /*0x71e03a*/
     this->IsAnimated = v15; /*0x71e041*/

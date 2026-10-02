@@ -296,7 +296,7 @@ LABEL_50:
           if ( aP6 && v51 >= (int)(aP6) ) /*0x435127*/
           {
 LABEL_57:
-            result = ((BufferIO *)(v24))->Cleanup(aP1); /*0x43514d*/
+            result = ((BufferIO *)(v24))->Cleanup((int)(aP1)); /*0x43514d*/
             LOBYTE(result) = 1; /*0x43515a*/
             return result; /*0x435160*/
           }
@@ -374,7 +374,7 @@ LABEL_59:
       }
     }
 LABEL_73:
-    result = ((BufferIO *)((unsigned int *)aP0))->Cleanup(aP1); /*0x4352ed*/
+    result = ((BufferIO *)((unsigned int *)aP0))->Cleanup((int)(aP1)); /*0x4352ed*/
     LOBYTE(result) = 1; /*0x4352fe*/
   }
   else

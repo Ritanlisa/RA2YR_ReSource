@@ -503,7 +503,7 @@ namespace gamemd {
 void E4Recv_6D4E00::sub_6D4E00()
 {
 
-  this->location[2] = -1; /*0x6d4e00*/
+  (&this->location)[2] = -1; /*0x6d4e00*/
   LOWORD(this->occupant) = 0; /*0x6d4e0a*/
 
 }

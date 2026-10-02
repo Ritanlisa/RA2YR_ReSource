@@ -74,7 +74,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  LOBYTE(v6) = ((XSurface *)(&v11))->BlitPart(v10, a1, (void **)a2, 0, 1); /*0x437270*/
+  LOBYTE(v6) = (unsigned char)(((XSurface *)(&v11))->BlitPart(v10, a1, (void **)a2, 0, 1)); /*0x437270*/
   ((Vector *)((int)v13))->Clear(); /*0x437272*/
   return v6; /*0x4371e7*/
 
@@ -103,7 +103,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
   v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d81bc*/
 // 0x5c6150
-    return MPBattleClass::MPManBattleClass((const wchar_t **)(v6),(gamemd::MultiplayerManBattle *)(a1),(const char **)(a2),(gamemd::MultiplayerManBattle *)(a3), a4, a5, a6); /*0x5d81de*/
+    return MPBattleClass::MPManBattleClass((const wchar_t **)(v6),(gamemd::MultiplayerManBattle *)(a1),(const char **)(a2),(gamemd::MultiplayerManBattle *)(a3),(char)(a4), a5, a6); /*0x5d81de*/
   else
     return 0; /*0x5d81e6*/
 }

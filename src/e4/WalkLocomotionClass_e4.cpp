@@ -135,7 +135,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
     return 0; /*0x6a3f89*/
   if ( !LOBYTE(v4->TrackIndex) ) /*0x6a3f97*/
   {
-    v9 = v4->MovementSpeed[1]; /*0x6a3fa2*/
+    v9 = (&v4->MovementSpeed)[1]; /*0x6a3fa2*/
     if ( v9 != -1 ) /*0x6a3fa8*/
     {
       v10 = (&byte_7F2A40)[12 * v9]; /*0x6a3fb1*/

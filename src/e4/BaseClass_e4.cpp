@@ -49,7 +49,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
       aP0->cells24Capacity = 10; /*0x42ee70*/
       aP0->cells24Count = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((gamemd::ObjectClass *)((DynamicVector *)&aP0->cells38Count), 0, 0); 
-      DynamicVector::Constructor_Cell((DynamicVector *)&aP0->unknown54[3], 0, 0); /*0x42ee8a*/
+      DynamicVector::Constructor_Cell((DynamicVector *)&(&aP0->unknown54)[3], 0, 0); /*0x42ee8a*/
       aP0->baseNodes = (unsigned int)((BaseNodeClass *)&vt_BaseClass); /*0x42ee8f*/
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
@@ -78,18 +78,18 @@ LABEL_34:
               {
                 while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
                 {
-                  v16 = aP0->unknown54[5]; /*0x42eff9*/
-                  if ( aP0->unknown54[7] < v16 /*0x42f021*/
-                    || (BYTE1(aP0->unknown54[6]) || !v16)
+                  v16 = (&aP0->unknown54)[5]; /*0x42eff9*/
+                  if ( (&aP0->unknown54)[7] < v16 /*0x42f021*/
+                    || (BYTE1((&aP0->unknown54)[6]) || !v16)
                     && (owner = aP0->owner, (int)owner > 0)
-                    && (*(uint8_t (**)(int *, int, unsigned int))(aP0->unknown54[3] + 8))(
-                         &aP0->unknown54[3],
+                    && (*(uint8_t (**)(int *, int, unsigned int))((&aP0->unknown54)[3] + 8))(
+                         &(&aP0->unknown54)[3],
                          (int)owner + v16,
                          0) )
                   {
-                    v18 = aP0->unknown54[7]; /*0x42f028*/
-                    v19 = aP0->unknown54[4]; /*0x42f02b*/
-                    aP0->unknown54[7] = v18 + 1; /*0x42f031*/
+                    v18 = (&aP0->unknown54)[7]; /*0x42f028*/
+                    v19 = (&aP0->unknown54)[4]; /*0x42f02b*/
+                    (&aP0->unknown54)[7] = v18 + 1; /*0x42f031*/
                     *(unsigned int *)(v19 + 4 * v18) = v21; /*0x42f038*/
                   }
                   if ( ++v15 >= a2 ) /*0x42f042*/
@@ -102,18 +102,18 @@ LABEL_34:
           {
             while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
             {
-              v11 = aP0->center[0]; /*0x42ef7a*/
-              if ( aP0->unknown54[1] < v11 /*0x42efa2*/
-                || (BYTE1(aP0->unknown54[0]) || !v11)
-                && (v12 = aP0->unknown54[2], v12 > 0)
+              v11 = (&aP0->center)[0]; /*0x42ef7a*/
+              if ( (&aP0->unknown54)[1] < v11 /*0x42efa2*/
+                || (BYTE1((&aP0->unknown54)[0]) || !v11)
+                && (v12 = (&aP0->unknown54)[2], v12 > 0)
                 && (*(uint8_t (**)(int *, int, unsigned int))(aP0->cells38Count + 8))(
                      &aP0->cells38Count,
                      v11 + v12,
                      0) )
               {
-                v13 = aP0->unknown54[1]; /*0x42efa9*/
+                v13 = (&aP0->unknown54)[1]; /*0x42efa9*/
                 cells38Capacity = aP0->cells38Capacity; /*0x42efac*/
-                aP0->unknown54[1] = v13 + 1; /*0x42efb2*/
+                (&aP0->unknown54)[1] = v13 + 1; /*0x42efb2*/
                 *(unsigned int *)(cells38Capacity + 4 * v13) = v21; /*0x42efb9*/
               }
               if ( ++v10 >= a2 ) /*0x42efc3*/

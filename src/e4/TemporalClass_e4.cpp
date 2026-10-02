@@ -81,9 +81,9 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->vtable1 = &vt_TemporalClass; /*0x71a501*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a507*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a50e*/
-  ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a515*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a507*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a50e*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a529*/
@@ -100,7 +100,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
          0) )
   {
     v3 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))++; /*0x71a576*/
-    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v3) = this; /*0x71a585*/
+    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v3) = (unsigned int)(this); /*0x71a585*/
   }
   *((unsigned int *)this + 18) = 0; /*0x71a588*/
   *((unsigned int *)this + 19) = 0; /*0x71a58b*/
@@ -428,7 +428,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->vtable1 = (unsigned int)(&vt_TemporalClass); /*0x71a687*/
+      aP0->vtable1 = (void *)((unsigned int)(&vt_TemporalClass)); /*0x71a687*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a69b*/

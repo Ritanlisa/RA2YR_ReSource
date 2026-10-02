@@ -681,7 +681,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
   v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v78); /*0x4beae2*/
-  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(&v76), aP1, v8, 0, 0)); /*0x4beaf5*/
+  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(&v76),(const RectangleStruct *)(aP1), v8, 0, 0)); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
   v11 = v9[1]; /*0x4beb02*/
@@ -1509,7 +1509,7 @@ int AudioStream::UpdateCountdowners()
           LODWORD(v0) = (unsigned int)(v1[86]); /*0x40507e*/
           if ( !(unsigned int)v0 ) /*0x405086*/
           {
-            LODWORD(v0) = v1[7]; /*0x405088*/
+            LODWORD(v0) = (unsigned int)(v1[7]); /*0x405088*/
             if ( (unsigned int)v0 == 2 ) /*0x40508e*/
             {
               LODWORD(v3) = Audio::Callback(); /*0x405090*/
@@ -1547,10 +1547,10 @@ char * AudioStream::Constructor(uint64_t a2)
     LODWORD(a2) = 7000; /*0x407896*/
     v3 = 0; /*0x40789a*/
   }
-  v4 = __2_YAPAXI_Z(0xF8u); /*0x4078a6*/
+  v4 = (int)(__2_YAPAXI_Z(0xF8u)); /*0x4078a6*/
   memset((void *)v4, 0, 0xF8u); /*0x4078b1*/
   ((DListNode *)((DListNode *)v4))->InitEmpty(); /*0x4078b8*/
-  *(unsigned int *)(v4 + 16) = this; /*0x4078c6*/
+  *(unsigned int *)(v4 + 16) = (unsigned int)(this); /*0x4078c6*/
   v5 = sub_4036C0((int)this, 4096); /*0x4078c9*/
   *(unsigned int *)(v4 + 20) = v5; /*0x4078ce*/
   *(unsigned int *)(v5 + 148) = 0; /*0x4078d1*/

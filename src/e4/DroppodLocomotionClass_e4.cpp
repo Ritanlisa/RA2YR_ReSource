@@ -295,7 +295,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
   int v11; // edx
 
   v3 = (IStream *)pPStm; /*0x4b62c5*/
-  v4 = a1; /*0x4b62ca*/
+  v4 = (gamemd::DropPodLocomotionClass *)(a1); /*0x4b62ca*/
   result = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4b62d1*/
   if ( result >= 0 ) /*0x4b62d8*/
   {

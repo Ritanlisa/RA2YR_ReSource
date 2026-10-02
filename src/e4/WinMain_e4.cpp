@@ -282,7 +282,7 @@ dword_B1CF74 = 0; /*0x734df7*/
 
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
-    dword_B1CF8C = *i; /*0x734d40*/
+    dword_B1CF8C = (unsigned int)(*i); /*0x734d40*/
     __3_YAXPAX_Z(i); /*0x734d46*/
   }
   v2 = (void **)dword_B1CF78; /*0x734d57*/
@@ -316,10 +316,10 @@ dword_B1CF74 = 0; /*0x734df7*/
   }
   if ( dword_B1CF74 ) /*0x734dec*/
   {
-    __3_YAXPAX_Z(dword_B1CF74); /*0x734def*/
+    __3_YAXPAX_Z((void *)(dword_B1CF74)); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
-  result = dword_B1CF88; /*0x734dfd*/
+  result = (unsigned int *)(dword_B1CF88); /*0x734dfd*/
   if ( dword_B1CF88 ) /*0x734e04*/
   {
     do /*0x734e15*/

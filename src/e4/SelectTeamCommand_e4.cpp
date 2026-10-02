@@ -14,7 +14,7 @@ _DWORD * SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, vo
 
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_SelectTeamCommandClass); /*0x535fc9*/
-  return this->CommandClass; /*0x535fcf*/
+  return (_DWORD *)(this->CommandClass); /*0x535fcf*/
 
 }
 } // namespace gamemd

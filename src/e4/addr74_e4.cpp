@@ -717,7 +717,7 @@ void * globalHelper_04BB20(ObjectClass * Source, int a2)
     v5 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74bb73*/
     if ( v5 ) /*0x74bb82*/
 // 0x74ad80
-      return ((VoxelAnimTypeClass *)(v5))->Constructor(Source); /*0x74bb8f*/
+      return ((VoxelAnimTypeClass *)(v5))->Constructor((char *)(Source)); /*0x74bb8f*/
     return 0; /*0x74bb82*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v4) + 36),(const char *)(Source)) ) /*0x74bb69*/
@@ -759,7 +759,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *((unsigned char *)p_vtable3 + 13) = 0; /*0x74bc82*/
 LABEL_8:
     this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bc85*/
-    return this; /*0x74bc8d*/
+    return (unsigned int *)(this); /*0x74bc8d*/
   }
   v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bc3e*/
   p_vtable3[1] = (void *)v5; /*0x74bc48*/
@@ -777,7 +777,7 @@ LABEL_8:
   }
   while ( v7 < (int)p_vtable3[2] ); /*0x74bc6c*/
   this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bc74*/
-  return this; /*0x74bc78*/
+  return (unsigned int *)(this); /*0x74bc78*/
 
 }
 }
@@ -811,7 +811,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     BYTE1(((unsigned int *)this)[0]) = 0; /*0x74bd33*/
 LABEL_10:
     this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bd37*/
-    return this; /*0x74bd39*/
+    return (unsigned int *)(this); /*0x74bd39*/
   }
   v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bcef*/
   ((unsigned int *)this)[0] = v5; /*0x74bcf7*/
@@ -829,7 +829,7 @@ LABEL_10:
   }
   while ( v7 < ((unsigned int *)this)[0] ); /*0x74bd1d*/
   this->AbstractClass = (unsigned int)(*(void **)a2); /*0x74bd23*/
-  return this; /*0x74bd25*/
+  return (unsigned int *)(this); /*0x74bd25*/
 
 }
 }
@@ -1225,10 +1225,10 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fba4*/
     {
-      ((FileClass *)(&v9))->Read((unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
+      ((FileClass *)(&v9))->Read((char *)((unsigned int *)((char *)&stru_A8EB00 + 294)), 16); /*0x74fbb8*/
       for ( *((unsigned int *)((char *)&stru_A8EB00 + 309)) = 0; /*0x74fbd9*/
-            ((unsigned int *)&stru_A8EB00)[strlen((unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
-            ((unsigned int *)&stru_A8EB00)[strlen((unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )
+            ((unsigned int *)&stru_A8EB00)[strlen((const char *)((unsigned int *)((char *)&stru_A8EB00 + 294))) + 293] == 13;
+            ((unsigned int *)&stru_A8EB00)[strlen((const char *)((unsigned int *)((char *)&stru_A8EB00 + 294))) + 293] = 0 )
       {
         ; /*0x74fbee*/
       }
@@ -1254,7 +1254,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   }
   p_vtable3 = (char *)&((unsigned int *)this)[0]; /*0x74fc60*/
   sprintf(p_vtable3, "%d.%3.3d", v6, vtable2_high); /*0x74fc6a*/
-  return p_vtable3; /*0x74fc74*/
+  return (gamemd::AbstractClass **)(p_vtable3); /*0x74fc74*/
 
 }
 }

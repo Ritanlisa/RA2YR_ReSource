@@ -383,7 +383,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
       {
         v18 = (gamemd::BuildingTypeClass *)((int)((gamemd::BuildingTypeClass *)(4 * v16)));
         v19 = (gamemd::BuildingTypeClass *)((&dword_ABC7F8)[4 * v16]);
-        v20 = (gamemd::BuildingTypeClass *)((&dword_ABC7FC)[4 * v16]);
+        v20 = (int)((gamemd::BuildingTypeClass *)((&dword_ABC7FC)[4 * v16]));
         v68 += v19; /*0x550d52*/
         v69 += v20; /*0x550d5a*/
         v21 = (&dword_ABC800)[4 * v16]; /*0x550d5e*/
@@ -1083,7 +1083,7 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
 
   if ( a2 != 4526 ) /*0x55440a*/
     return 0; /*0x554428*/
-  v3 = this->customSound_controller[4]; /*0x55440c*/
+  v3 = (&this->customSound_controller)[4]; /*0x55440c*/
   if ( v3 ) /*0x554417*/
     (*((void (**)(ObjectClass *, int, unsigned int, int))g_DSurface_Hidden->vtable1 + 1))( /*0x554420*/
       g_DSurface_Hidden,
@@ -1149,7 +1149,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24,(gamemd::IUnknown *)(&v25), &v26, &v27,(IUnknown *)((int)&v28), (int)&v29); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24,(gamemd::IUnknown *)(&v25), &v26, &v27,(IUnknown *)((int)&v28),(void *)((int)&v29)); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1258,7 +1258,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 228) = *(unsigned char *)(a2 + 228); /*0x55746e*/
   *((unsigned char *)this + 229) = *(unsigned char *)(a2 + 229); /*0x557474*/
   *((unsigned int *)this + 58) = *(unsigned int *)(a2 + 232); /*0x55747a*/
-  *((unsigned int *)this + 46) = &vt_ToggleClass; /*0x55747d*/
+  *((unsigned int *)this + 46) = (unsigned int)(&vt_ToggleClass); /*0x55747d*/
   *((unsigned char *)this + 236) = *(unsigned char *)(a2 + 236); /*0x557486*/
   *((unsigned int *)this + 60) = *(unsigned int *)(a2 + 240); /*0x55748c*/
   *((unsigned int *)this + 61) = *(unsigned int *)(a2 + 244); /*0x557492*/
@@ -1271,7 +1271,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 269) = *(unsigned char *)(a2 + 269); /*0x5574bc*/
   *((unsigned int *)this + 68) = *(unsigned int *)(a2 + 272); /*0x5574c6*/
   *((unsigned char *)this + 276) = *(unsigned char *)(a2 + 276); /*0x5574d2*/
-  *((unsigned int *)this + 46) = &vt_ShapeButtonClass; /*0x5574de*/
+  *((unsigned int *)this + 46) = (unsigned int)(&vt_ShapeButtonClass); /*0x5574de*/
   sub_5581A0((char *)this + 280, a2 + 280); /*0x5574e4*/
   *((unsigned int *)this + 85) = *(unsigned int *)(a2 + 340); /*0x5574fa*/
   *((unsigned int *)this + 86) = *(unsigned int *)(a2 + 344); /*0x557500*/
@@ -1279,15 +1279,15 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 88) = *(unsigned int *)(a2 + 352); /*0x55750c*/
   *((unsigned int *)this + 89) = *(unsigned int *)(a2 + 356); /*0x557512*/
   *((unsigned int *)this + 90) = *(unsigned int *)(a2 + 360); /*0x55751c*/
-  *((unsigned int *)this + 70) = &vt_SliderClass; /*0x55751f*/
+  *((unsigned int *)this + 70) = (unsigned int)(&vt_SliderClass); /*0x55751f*/
   *((unsigned int *)this + 91) = *(unsigned int *)(a2 + 364); /*0x55752c*/
   v3 = *((unsigned int *)this + 22); /*0x557538*/
   *((unsigned int *)this + 92) = *(unsigned int *)(a2 + 368); /*0x55753c*/
-  *(unsigned int *)this = &vt_ListClass; /*0x557542*/
+  *(unsigned int *)this = (unsigned int)(&vt_ListClass); /*0x557542*/
   (*(void (**)(int, int))(v3 + 132))((char *)this + 88, this); /*0x557548*/
   (*(void (**)(int, int))(*((unsigned int *)this + 46) + 132))((char *)this + 184, this); /*0x557553*/
   (*(void (**)(int, int))(*((unsigned int *)this + 70) + 132))((char *)this + 280, this); /*0x55755f*/
-  return this; /*0x557566*/
+  return (int)(this); /*0x557566*/
 
 }
 }
@@ -1315,7 +1315,7 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
     v7 = (*(int (**)(char *))(*((unsigned int *)this + 70) + 144))((char *)this + 280); /*0x557b55*/
     return (*(char (**)(ListClass *, int))(v6 + 192))(this, v7); /*0x557b5e*/
   }
-  return result; /*0x557b64*/
+  return (gamemd::ControlClass **)(result); /*0x557b64*/
 
 }
 // 0x558810
@@ -1325,11 +1325,11 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
 
   char *p_referenceCount; // eax
 
-  p_referenceCount = aP1; /*0x558810*/
+  p_referenceCount = (char *)(aP1); /*0x558810*/
   *((unsigned int *)this + 1) = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
-    p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
-  *((unsigned int *)this + 3) = p_referenceCount; /*0x558829*/
+    p_referenceCount = (char *)&(&dword_A8B230)[137].referenceCount; /*0x558824*/
+  *((unsigned int *)this + 3) = (unsigned int)(p_referenceCount); /*0x558829*/
   return SaveLoadDialog::DlgProc((SaveLoadDialog *)this); /*0x558831*/
 
 }
@@ -1361,9 +1361,9 @@ int E4Recv_55B720::sub_55B720()
     goto LABEL_8; /*0x55b74a*/
   }
   v3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
-  nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b757*/
-  p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b75d*/
-  NeedsSaveOrLink = (char *)dword_A8B230[128].NeedsSaveOrLink; /*0x55b766*/
+  nextArrayIndex = (&dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
+  p_nextArrayIndex = &(&dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
+  NeedsSaveOrLink = (char *)(&dword_A8B230)[128].NeedsSaveOrLink; /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
     if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/

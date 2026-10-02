@@ -226,7 +226,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     while ( v20 ) /*0x5a5565*/
     {
-      *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v20) + 14) = dword_ABC2B0; /*0x5a557c*/
+      *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(v20)) + 14) = dword_ABC2B0; /*0x5a557c*/
       v26 = v24[2]; /*0x5a557f*/
       if ( v24[4] < v26 /*0x5a55a2*/
         || (*((unsigned char *)v24 + 13) || !v26)

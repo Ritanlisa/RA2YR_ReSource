@@ -408,7 +408,7 @@ namespace gamemd {
 char * LoadOptions::GetData(void *a1)
 {
 
-  return (unsigned char *)this + 264; /*0x681106*/
+  return (char *)((unsigned char *)this + 264); /*0x681106*/
 
 }
 } // namespace gamemd

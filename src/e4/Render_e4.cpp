@@ -284,8 +284,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
 
   v31 = 0; /*0x70527a*/
   v32 = 0; /*0x705282*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v29); /*0x70529b*/
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v33); /*0x7052b3*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a1), &v29); /*0x70529b*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a4), &v33); /*0x7052b3*/
   v30 += dword_886FA4; /*0x7052ce*/
   v34 += dword_886FA4; /*0x70530d*/
   v8 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x705348*/
@@ -305,12 +305,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
     v11 = ((Coord2D *)(&v27))->Add(v52, v43); /*0x7053e6*/
-    v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
+    v12 = (int *)(Rect::Construct(v53, v11, 3, 3)); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
     v42 = v12[3]; /*0x70541e*/
-    v13 = ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0); /*0x705428*/
+    v13 = (int *)(ClipRectIntersection((RectangleStruct *)(v54), &DSurface_ViewBounds, &v39, 0, 0)); /*0x705428*/
     v35 = *v13; /*0x705430*/
     v36 = v13[1]; /*0x705437*/
     v37 = v13[2]; /*0x70543e*/
@@ -319,19 +319,19 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = ((Coord2D *)(&v27))->Add(v52, v44); /*0x70547d*/
-    v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
+    v15 = (int *)(Rect::Construct(v54, v14, 3, 3)); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15[1]; /*0x70549c*/
     v37 = v15[2]; /*0x7054a8*/
     v38 = v15[3]; /*0x7054bb*/
-    v16 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7054bf*/
+    v16 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
     v40 = v16[1]; /*0x7054cd*/
     v41 = v16[2]; /*0x7054d4*/
     v42 = v16[3]; /*0x7054e1*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
   }
-  v51[0] = DSurface_ViewBounds; /*0x705501*/
+  v51[0] = (int)(DSurface_ViewBounds); /*0x705501*/
   v51[1] = dword_886FA4; /*0x70550b*/
   v51[2] = dword_886FA8; /*0x705511*/
   v51[3] = dword_886FAC; /*0x705518*/
@@ -349,12 +349,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   }
   v27 = v29 - 2; /*0x705583*/
   v28 = v30 - 2; /*0x70558b*/
-  v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
+  v18 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
   v38 = v18[3]; /*0x7055c2*/
-  v19 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7055cc*/
+  v19 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
   v40 = v19[1]; /*0x7055db*/
   v41 = v19[2]; /*0x7055e2*/
@@ -362,12 +362,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
-  v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
+  v20 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705623*/
   v35 = *v20; /*0x70562c*/
   v36 = v20[1]; /*0x705635*/
   v37 = v20[2]; /*0x70563c*/
   v38 = v20[3]; /*0x70564e*/
-  v21 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x705658*/
+  v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x705658*/
   v39 = *v21; /*0x705660*/
   v40 = v21[1]; /*0x705667*/
   v41 = v21[2]; /*0x70566e*/
@@ -384,8 +384,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
     v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
     v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
-    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v45, &v29); /*0x705732*/
-    ((Coord *)(g_TacticalClass_Instance))->To_Screen(&v48, &v33); /*0x705747*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v45), &v29); /*0x705732*/
+    ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v48), &v33); /*0x705747*/
     v30 += dword_886FA4; /*0x705761*/
     v34 += dword_886FA4; /*0x70576e*/
     if ( ClipLine(&v29, &v33, v51) ) /*0x705772*/
@@ -413,7 +413,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v47 = v50; /*0x70583d*/
   }
   while ( v22 <= 64 ); /*0x705841*/
-  return result; /*0x705847*/
+  return (gamemd::AbstractClass **)(result); /*0x705847*/
 
 }
 }  // G42.18c ns repair
@@ -1442,7 +1442,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   }
   Rect::Inflate(v10, v11, dy); /*0x554252*/
 // 0x621b80
-  return DSurface::FillRectWithColor(v14,(gamemd::ObjectClass *)(a2), 0, 0x9Fu); /*0x554269*/
+  return DSurface::FillRectWithColor(v14,(int)((gamemd::ObjectClass *)(a2)), 0, 0x9Fu); /*0x554269*/
 }
 }
 // 0x554280
@@ -1520,11 +1520,11 @@ int sub_642BB0(unsigned int a1)
 
   result = 0; /*0x642bba*/
   if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) && *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * a1) + 107) == -1 ) /*0x642bd8*/
-    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((gamemd::ObjectClass *)(0xFFFFFFFE))); /*0x642bed*/
+    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((unsigned int)((gamemd::ObjectClass *)(0xFFFFFFFE)))); /*0x642bed*/
   if ( a1 < 8 ) /*0x642bf5*/
   {
     PlayerColor = ((SessionClass *)(*(unsigned int *)(dword_A8DA78 + 4 * a1)))->GetPlayerColor(); /*0x642bff*/
-    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((gamemd::ObjectClass *)(PlayerColor))); /*0x642c15*/
+    return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme((unsigned int)((gamemd::ObjectClass *)(PlayerColor)))); /*0x642c15*/
   }
   return result; /*0x642bec*/
 }
@@ -1713,7 +1713,7 @@ void sub_556D40()
 namespace gamemd {
 int sub_5BE970(int a1)
 {
-  return dword_82D028[7 * a1]; /*0x5be984*/
+  return (&dword_82D028)[7 * a1]; /*0x5be984*/
 }
 } // namespace gamemd
 
@@ -1721,7 +1721,7 @@ int sub_5BE970(int a1)
 namespace gamemd {
 int sub_5BE990(int a1)
 {
-  return dword_82D02C[7 * a1]; /*0x5be9a4*/
+  return (&dword_82D02C)[7 * a1]; /*0x5be9a4*/
 }
 } // namespace gamemd
 
@@ -1748,20 +1748,20 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   }
   *v3 = 0; /*0x5c0699*/
   GameOptionsClass::UnlockMovieIfNeeded_MoviesList(dword_A8EB60, Source); /*0x5c06a3*/
-  strcpy(v3, aBik_0); /*0x5c06c9*/
+  strcpy(v3,(const char *)(aBik_0)); /*0x5c06c9*/
   v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
   v6 = (*(int (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0); /*0x5c06e8*/
-  v11[0] = (void*)&CCFileClass_vftable; /*0x5c06ea*/
+  v11[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
   ((Vector *)((int)v12))->Clear(); /*0x5c06fa*/
   v11[0] = (unsigned int)&off_7E1668; /*0x5c0703*/
   ((BufferIOFileClass *)(v11))->Dtor(); /*0x5c070b*/
   if ( !v6 ) /*0x5c0712*/
   {
-    strcpy(v3, aVqa); /*0x5c0735*/
+    strcpy(v3,(const char *)(aVqa)); /*0x5c0735*/
     v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
     v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x5c0754*/
-    v11[0] = (void*)&CCFileClass_vftable; /*0x5c0756*/
+    v11[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
     ((Vector *)((int)v12))->Clear(); /*0x5c0766*/
     v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/
@@ -1779,7 +1779,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
 namespace gamemd {
 bool sub_5E8740(int a1)
 {
-  return wcscmp(*(const wchar_t **)(dword_A8DA78 + 4 * a1), word_A8D610) == 0; /*0x5e875b*/
+  return wcscmp(*(const wchar_t **)(dword_A8DA78 + 4 * a1),(const wchar_t *)(word_A8D610)) == 0; /*0x5e875b*/
 }
 } // namespace gamemd
 
@@ -1794,7 +1794,7 @@ char sub_5FFFA0()
 
   result = dword_AC1688; /*0x5fffa0*/
   for ( i = dword_AC1688 - 1; i >= 0; --i ) /*0x5fffab*/
-    result = BuildingLight::CalculateShading(v4, v1); /*0x5fffb6*/
+    result = (char)(BuildingLight::CalculateShading(v4, v1)); /*0x5fffb6*/
   return result; /*0x5fffbe*/
 }
 } // namespace gamemd
@@ -1810,7 +1810,7 @@ unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
   int *v8; // ecx
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, a2); /*0x63ca90*/
+  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v10, a2)); /*0x63ca90*/
   v5 = *ScenarioClassActionCoords; /*0x63ca92*/
   v6 = ScenarioClassActionCoords[1]; /*0x63ca97*/
   v7 = ScenarioClassActionCoords[2]; /*0x63ca9a*/
@@ -1861,7 +1861,7 @@ int Render_Get(ScoreScreen * aP0)
   {
     do /*0x68ee21*/
     {
-      v4 = *(unsigned int *)dword_A8022C[4 * v10]; /*0x68edad*/
+      v4 = *(unsigned int *)(&dword_A8022C)[4 * v10]; /*0x68edad*/
       if ( (uint8_t)HouseClass::IsAlliedWith(aP0, (void *)v4) /*0x68edca*/
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )
@@ -1962,7 +1962,7 @@ int sub_72B500()
 namespace gamemd {
 ObjectClass * Render_Render_72B520()
 {
-  return dword_B0FBA0; /*0x72b525*/
+  return (gamemd::ObjectClass *)(dword_B0FBA0); /*0x72b525*/
 }
 } // namespace gamemd
 
@@ -1970,7 +1970,7 @@ ObjectClass * Render_Render_72B520()
 namespace gamemd {
 void Render_Draw(int a1, int *a2, char a3)
 {
-  RenderScoreScreen(a1, a2, a3); /*0x72e82b*/
+  RenderScoreScreen((gamemd::ConvertClass *)(a1), a2, a3); /*0x72e82b*/
   UI_Draw_72E730(a1, a2, dword_B0FBCC, (int)dword_B0FB50, (int)dword_B0FA04); /*0x72e848*/
 }
 } // namespace gamemd
@@ -1981,14 +1981,14 @@ void * sub_72EB50()
 {
   void *result; // eax
 
-  dword_B0FAC4 = LoadFileSHP(off_844CD4, (bool *)&byte_B0FC95); /*0x72eb6b*/
-  dword_B0F9DC = LoadFileSHP(off_844CD8, (bool *)&byte_B0FC96); /*0x72eb80*/
-  dword_B0FAC0 = LoadFileSHP(off_844CDC, (bool *)&byte_B0FC97); /*0x72eb95*/
-  dword_B0FB50 = LoadFileSHP(off_844CE0, (bool *)&byte_B0FC98); /*0x72ebaa*/
-  dword_B0FA04 = LoadFileSHP(off_844CE4, (bool *)&byte_B0FC99); /*0x72ebbf*/
-  dword_B0FAF8 = LoadFileSHP(off_844CE8, (bool *)&byte_B0FC9A); /*0x72ebd4*/
-  dword_B0FA74 = LoadFileSHP(off_844CEC, (bool *)&byte_B0FC9B); /*0x72ebe9*/
-  dword_B0FA38 = LoadFileSHP(off_844CF0, (bool *)&byte_B0FC9C); /*0x72ebfe*/
+  dword_B0FAC4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD4), (bool *)&byte_B0FC95)); /*0x72eb6b*/
+  dword_B0F9DC = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD8), (bool *)&byte_B0FC96)); /*0x72eb80*/
+  dword_B0FAC0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CDC), (bool *)&byte_B0FC97)); /*0x72eb95*/
+  dword_B0FB50 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE0), (bool *)&byte_B0FC98)); /*0x72ebaa*/
+  dword_B0FA04 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE4), (bool *)&byte_B0FC99)); /*0x72ebbf*/
+  dword_B0FAF8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE8), (bool *)&byte_B0FC9A)); /*0x72ebd4*/
+  dword_B0FA74 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CEC), (bool *)&byte_B0FC9B)); /*0x72ebe9*/
+  dword_B0FA38 = LoadFileSHP((gamemd::ConvertClass *)(off_844CF0), (bool *)&byte_B0FC9C); /*0x72ebfe*/
   dword_B0FAE8 = LoadFileSHP(off_844CF4, (bool *)&byte_B0FC9D); /*0x72ec13*/
   result = LoadFileSHP(off_844CF8, (bool *)&byte_B0FC9E); /*0x72ec18*/
   dword_B0FA54 = result; /*0x72ec1d*/

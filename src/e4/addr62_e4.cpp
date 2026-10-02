@@ -1282,7 +1282,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     if ( a2 > 0x497 ) /*0x622ea0*/
     {
       if ( a2 == 1260 ) /*0x6230be*/
-        EnumChildWindows(aP0, sub_60AA60, 0); /*0x6230c8*/
+        EnumChildWindows((HWND)(aP0), sub_60AA60, 0); /*0x6230c8*/
       return 0; /*0x6230c8*/
     }
     if ( a2 == 1175 ) /*0x622ea6*/
@@ -1303,13 +1303,13 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       DialogClass::RegisterWinClasses(); /*0x622efe*/
       v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
       dword_AC48A8 = (int)aP0; /*0x622f09*/
-      EnumChildWindows(aP0, Dialog::InitWindow, 1); /*0x622f17*/
-      Dialog::InitWindow(aP0, 1); /*0x622f1c*/
-      EnumChildWindows(aP0, Dialog::SubclassEditControl, 1); /*0x622f29*/
-      EnumChildWindows(aP0, Dialog::InitializeControls, 0); /*0x622f32*/
-      Dialog::InitializeControls(aP0, 0); /*0x622f36*/
-      EnumChildWindows(aP0, Dialog::InitWindow, 0); /*0x622f42*/
-      Dialog::InitWindow(aP0, 0); /*0x622f46*/
+      EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 1); /*0x622f17*/
+      Dialog::InitWindow((int)(aP0), 1); /*0x622f1c*/
+      EnumChildWindows((HWND)(aP0), Dialog::SubclassEditControl, 1); /*0x622f29*/
+      EnumChildWindows((HWND)(aP0), Dialog::InitializeControls, 0); /*0x622f32*/
+      Dialog::InitializeControls((HWND)(aP0), 0); /*0x622f36*/
+      EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 0); /*0x622f42*/
+      Dialog::InitWindow((int)(aP0), 0); /*0x622f46*/
       Dialog::GetField(aP0); /*0x622f4d*/
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x622f60*/

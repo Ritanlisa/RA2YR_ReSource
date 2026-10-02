@@ -185,10 +185,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
                   0) )
       {
         v19 = v21.DynamicVector_field_0x10++; /*0x477375*/
-        *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v19) = -6; /*0x477380*/
+        *(unsigned int *)(*(unsigned int *)&(&v21.DynamicVector_field_0x1)[3] + 4 * v19) = -6; /*0x477380*/
       }
     }
-    ((DynamicVectorClass *)(a1))->Copy(&v21); /*0x4773cb*/
+    ((DynamicVectorClass *)(a1))->Copy((unsigned int *)(&v21)); /*0x4773cb*/
     a1->vtable1 = (int)&TypeList_int_vftable; /*0x4773d9*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x4773df*/
     ((VectorClass *)((int)&v21))->Destroy(); /*0x4773e3*/
@@ -198,7 +198,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   }
   else
   {
-    ((VectorClass *)(a1))->Copy(&a5); /*0x477413*/
+    ((VectorClass *)(a1))->Copy((unsigned int *)(&a5)); /*0x477413*/
     a5 = (void*)&VectorClass_int_vftable; /*0x47741f*/
     ((VectorClass *)((int)&a5))->Destroy(); /*0x47742a*/
     return (gamemd::VectorClass_flat **)(a1); /*0x47742f*/
@@ -2033,7 +2033,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     20);
   v5 = INIClass::WriteToString((INIClass *)this, aP1); /*0x47460a*/
   INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
-  return v5; /*0x474561*/
+  return (gamemd::CCINIClass *)(v5); /*0x474561*/
 
 }
 } // namespace gamemd
@@ -2349,7 +2349,7 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
   Debug::Log(); /*0x47a1bc*/
   Debug::Log(); /*0x47a1d6*/
   LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a1e0*/
-  FileA = CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a203*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a203*/
   Debug::Log(); /*0x47a205*/
   if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a218*/
   {
@@ -2390,7 +2390,7 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
   Debug::Log(); /*0x47a2dc*/
   Debug::Log(); /*0x47a2f6*/
   LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a300*/
-  FileA = CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a323*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a323*/
   Debug::Log(); /*0x47a325*/
   if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a338*/
   {

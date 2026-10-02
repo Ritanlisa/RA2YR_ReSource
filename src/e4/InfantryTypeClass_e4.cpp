@@ -167,14 +167,14 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
 
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  this->DeadBodies[0] = (int)&vt_TypeList; /*0x523992*/
-  this->DeathAnims[0] = (int)&vt_TypeList; /*0x523998*/
-  this->VoiceComment[0] = (int)&vt_TypeList; /*0x52399e*/
+  (&this->DeadBodies)[0] = (int)&vt_TypeList; /*0x523992*/
+  (&this->DeathAnims)[0] = (int)&vt_TypeList; /*0x523998*/
+  (&this->VoiceComment)[0] = (int)&vt_TypeList; /*0x52399e*/
   this->vtable1 = &vt_InfantryTypeClass; /*0x5239a8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239ae*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239b5*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239bc*/
-  return this; /*0x5239c5*/
+  return (unsigned int *)(this); /*0x5239c5*/
 
 }
 } // namespace gamemd
@@ -415,7 +415,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   ((InfantryTypeClass *)((InfantryTypeClass *)(v4 + 3692)))->CopyDataArray(&v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&vt_VectorClass; /*0x52439c*/
+  v48.DynamicVector_field_0x1C = (unsigned int)((AbstractClass *)&vt_VectorClass); /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int *)a2,
@@ -640,7 +640,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
     if ( v5 != (InfantryTypeClass *)-3720 ) /*0x5249c1*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->VoiceComment))->Construct(0, 0); /*0x5249c7*/
-      v5->VoiceComment[0] = (int)&TypeList_int_vftable; /*0x5249cc*/
+      (&v5->VoiceComment)[0] = (int)&TypeList_int_vftable; /*0x5249cc*/
     }
     (*(void (**)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))(v7, &aP0, 4, 0, v4); /*0x5249de*/
     if ( a2 > 0 ) /*0x5249e7*/
@@ -656,7 +656,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
     if ( v5 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->DeadBodies))->AnimTypeConstructor(0, 0); /*0x524a1b*/
-      v5->DeadBodies[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
+      (&v5->DeadBodies)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524a33*/
     for ( i = 0; i < a2; ++i ) /*0x524a3e*/
@@ -664,7 +664,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x524a4c*/
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4(&a3); /*0x524a56*/
     }
-    for ( j = 0; j < v5->DeadBodies[4]; ++j ) /*0x524a6c*/
+    for ( j = 0; j < (&v5->DeadBodies)[4]; ++j ) /*0x524a6c*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeadBodies[1] + 4 * j)); /*0x524a7d*/
     if ( v5 != (InfantryTypeClass *)-3692 ) /*0x524a95*/
     {

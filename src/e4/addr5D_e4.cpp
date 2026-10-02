@@ -84,20 +84,20 @@ LABEL_6:
     DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
     return 0; /*0x5d0210*/
   }
-  while ( !(uint8_t)((String *)(*(String **)(this->customSound_controller[2] + 4 * v3)))->NotEquals(0) ) /*0x5d01c4*/
+  while ( !(uint8_t)((String *)(*(String **)((&this->customSound_controller)[2] + 4 * v3)))->NotEquals(0) ) /*0x5d01c4*/
   {
 LABEL_5:
     if ( ++v3 >= this->customSound ) /*0x5d0200*/
       goto LABEL_6; /*0x5d0200*/
   }
-  ((String *)((String *)&a2))->AssignFromPtr(*(const char ***)(this->customSound_controller[2] + 4 * v3)); /*0x5d01d1*/
+  ((String *)((String *)&a2))->AssignFromPtr(*(const char ***)((&this->customSound_controller)[2] + 4 * v3)); /*0x5d01d1*/
   ((String *)((String *)&a2))->ToLower(); /*0x5d01da*/
   if ( !(uint8_t)((String *)((String *)&v6))->Compare(&a2) ) /*0x5d01e8*/
   {
     DeleteAndZero((ObjectClass *)&a2); /*0x5d01f5*/
     goto LABEL_5; /*0x5d01f5*/
   }
-  v5 = *(unsigned int *)(this->customSound_controller[2] + 4 * v3); /*0x5d021a*/
+  v5 = *(unsigned int *)((&this->customSound_controller)[2] + 4 * v3); /*0x5d021a*/
   DeleteAndZero((ObjectClass *)&a2); /*0x5d021d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x5d0226*/
   return v5; /*0x5d020b*/
@@ -124,7 +124,7 @@ LABEL_5:
   }
   else
   {
-    v5 = this->customSound_controller[2]; /*0x5d024c*/
+    v5 = (&this->customSound_controller)[2]; /*0x5d024c*/
     v6 = v5; /*0x5d0253*/
     while ( a3 != *(unsigned char *)(*(unsigned int *)v6 + 4) ) /*0x5d025a*/
     {
@@ -205,11 +205,11 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   v4 = (Audio *)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
   v5 = v4 ? ((Audio *)(v4))->SetSoundFileName(Source, a3) : 0;
   attachedBomb = (gamemd::BombClass *)(this->attachedBomb);
-  if ( this->ambientSoundController[1] >= (int)attachedBomb ) /*0x5d260d*/
+  if ( (&this->ambientSoundController)[1] >= (int)attachedBomb ) /*0x5d260d*/
   {
-    if ( !BYTE1(this->ambientSoundController[0]) && attachedBomb ) /*0x5d2618*/
+    if ( !BYTE1((&this->ambientSoundController)[0]) && attachedBomb ) /*0x5d2618*/
       return 0; /*0x5d2618*/
-    v7 = this->ambientSoundController[2]; /*0x5d261a*/
+    v7 = (&this->ambientSoundController)[2]; /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
       || !((uint8_t (*)(ObjectClass **, char *, unsigned int))this->((unsigned int *)nextObject)[0])(
             &this->nextObject,
@@ -219,10 +219,10 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d264a*/
     }
   }
-  v8 = (gamemd::TagClass *)(this->ambientSoundController[1]);
+  v8 = (gamemd::TagClass *)((&this->ambientSoundController)[1]);
   attachedTag = (gamemd::TagClass *)(this->attachedTag);
-  this->ambientSoundController[1] = v8 + 1; /*0x5d263a*/
-  *((unsigned int *)attachedTag + v8) = v5; /*0x5d263d*/
+  (&this->ambientSoundController)[1] = v8 + 1; /*0x5d263a*/
+  *((unsigned int *)attachedTag + v8) = (unsigned int)(v5); /*0x5d263d*/
   return 1; /*0x5d2640*/
 
 }
@@ -240,11 +240,11 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
     if ( ((gamemd::Audio *)this)->IsSoundEnabled() ) /*0x5d265e*/
     {
       v4 = 0; /*0x5d266a*/
-      if ( this->ambientSoundController[1] > 0 ) /*0x5d266e*/
+      if ( (&this->ambientSoundController)[1] > 0 ) /*0x5d266e*/
       {
         while ( _strcmpi((char *)a2, **((char ***)&this->attachedTag->AbstractClass + v4)) ) /*0x5d2684*/
         {
-          if ( ++v4 >= this->ambientSoundController[1] ) /*0x5d268c*/
+          if ( ++v4 >= (&this->ambientSoundController)[1] ) /*0x5d268c*/
             return; /*0x5d268c*/
         }
         LOWORD(v5) = Math::RoundToInt((double)a3 * *(float *)&stru_A8EB00.ObjectTypeClass[38]); /*0x5d269f*/

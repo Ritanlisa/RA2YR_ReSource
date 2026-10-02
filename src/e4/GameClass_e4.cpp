@@ -528,17 +528,17 @@ int GameClass::ReadVersionFile()
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74f988*/
     {
-      ((FileClass *)(&v5))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74f99b*/
+      ((FileClass *)(&v5))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74f99b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74f9b5*/
-            this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
-            this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
+            this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] == 13;
+            this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] = 0 )
       {
         ; /*0x74f9c5*/
       }
     }
     else
     {
-      this->GameClass_field_0x2A[0] = 0; /*0x74f9d9*/
+      (&this->GameClass_field_0x2A)[0] = 0; /*0x74f9d9*/
     }
     ((RawFileClass *)(&v5))->Dtor(); /*0x74f9e0*/
     v2 = *(unsigned int *)&this->__pad_3D[7]; /*0x74f9e5*/
@@ -569,17 +569,17 @@ int GameClass::ReadVersionFile2()
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74fa48*/
     {
-      ((FileClass *)(&v5))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74fa5b*/
+      ((FileClass *)(&v5))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74fa5b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74fa75*/
-            this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
-            this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
+            this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] == 13;
+            this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] = 0 )
       {
         ; /*0x74fa85*/
       }
     }
     else
     {
-      this->GameClass_field_0x2A[0] = 0; /*0x74fa99*/
+      (&this->GameClass_field_0x2A)[0] = 0; /*0x74fa99*/
     }
     ((RawFileClass *)(&v5))->Dtor(); /*0x74faa0*/
     v2 = *(unsigned int *)&this->__pad_3D[7]; /*0x74faa5*/
@@ -606,17 +606,17 @@ void GameClass::ReadVersionString()
   RawFileClass::Construct(&v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
   if ( (uint8_t)((FileClass *)(&v2))->Open(0) ) /*0x74fc9e*/
   {
-    ((FileClass *)(&v2))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74fcb1*/
+    ((FileClass *)(&v2))->Read((char *)((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A)), 16); /*0x74fcb1*/
     for ( this->GameClass_field_0x39[0] = 0; /*0x74fccb*/
-          this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
-          this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
+          this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] == 13;
+          this->__pad_8[strlen((const char *)(this->GameClass_field_0x2A)) + 33] = 0 )
     {
       ; /*0x74fcdb*/
     }
   }
   else
   {
-    this->GameClass_field_0x2A[0] = 0; /*0x74fcfe*/
+    (&this->GameClass_field_0x2A)[0] = 0; /*0x74fcfe*/
   }
   ((RawFileClass *)(&v2))->Dtor(); /*0x74fd05*/
 
@@ -676,7 +676,7 @@ void GameClass::InitDifficultyButtons()
 
   signed int v0; // edx
 
-  if ( dword_A8B238[0] == 4 ) /*0x5e8ae7*/
+  if ( (&dword_A8B238)[0] == 4 ) /*0x5e8ae7*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5e8af2*/
       v0 = 6; /*0x5e8b02*/
@@ -704,11 +704,11 @@ wchar_t * GameClass::GetDifficultyString()
   if ( this == (GameClass *)g_Lobby_PlayerCount ) /*0x5e99e5*/
     return GetStringCSF(aSttPlayerclose, 0, g_Str_File_netshare_cpp, 4950); /*0x5e99f8*/
   if ( this == (GameClass *)g_Lobby_PlayerTeam ) /*0x5e9a04*/
-    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI), 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
   if ( this == (GameClass *)g_Lobby_PlayerSide ) /*0x5e9a23*/
-    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI), 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
   if ( this == (GameClass *)g_Lobby_PlayerColor ) /*0x5e9a42*/
-    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI), 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
   if ( this == (GameClass *)g_Lobby_MaxPlayers ) /*0x5e9a61*/
     return GetStringCSF(aSttPlayeropeno, 0, g_Str_File_netshare_cpp, 4958); /*0x5e9a74*/
   return GetStringCSF(aSttPlayerhuman, 0, g_Str_File_netshare_cpp, 4960); /*0x5e99de*/
@@ -721,7 +721,7 @@ namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &vt_PixelFXClass; /*0x631f49*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_PixelFXClass); /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     __3_YAXPAX_Z(this); /*0x631f52*/
   return this->__pad_0; /*0x631f5c*/
@@ -817,8 +817,8 @@ int GameClass::FindPlayerName(int a1)
   while ( 1 ) /*0x69bc74*/
   {
     v3 = *v2; /*0x69bc74*/
-    v4 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * a1)); /*0x69bc80*/
-    v5 = ToWideStringChar(v3); /*0x69bc82*/
+    v4 = ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * a1))); /*0x69bc80*/
+    v5 = ToWideStringChar((IUnknown *)(v3)); /*0x69bc82*/
     if ( !_strcmpi(v4, v5) ) /*0x69bc89*/
       break; /*0x69bc89*/
     ++v2; /*0x69bc95*/

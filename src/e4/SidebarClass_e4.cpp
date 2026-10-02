@@ -703,10 +703,10 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
   VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&g_SidebarFlag); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
   v6 = 26; /*0x6abf1d*/
-  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6abf15*/
+  if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x6abf15*/
     v6 = 18; /*0x6abf24*/
-  v7 = &stru_B07E80; /*0x6abf44*/
-  v25 = &stru_B07E80; /*0x6abf4d*/
+  v7 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf44*/
+  v25 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf4d*/
   v8 = (g_DSurface_ViewBounds - v6 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50; /*0x6abf5d*/
   v26 = 2 * v8; /*0x6abf62*/
   do /*0x6abfc2*/
@@ -785,7 +785,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
     v31 = dword_B07E10; /*0x6ac0c6*/
     v33 = 0; /*0x6ac0d0*/
     v27 = 102; /*0x6ac0d5*/
-    v32 = aTxtSellMode; /*0x6ac0dd*/
+    v32 = (wchar_t *)(aTxtSellMode); /*0x6ac0dd*/
     v29 = dword_B07E08; /*0x6ac0e5*/
     v30 = dword_B07E0C; /*0x6ac0e9*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 102); /*0x6ac0ed*/
@@ -793,7 +793,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
     v28 = dword_B0B3AC; /*0x6ac113*/
     v29 = dword_B0B3B0; /*0x6ac11c*/
     v27 = 101; /*0x6ac128*/
-    v32 = aTxtRepairMode; /*0x6ac130*/
+    v32 = (wchar_t *)(aTxtRepairMode); /*0x6ac130*/
     v30 = dword_B0B3B4; /*0x6ac138*/
     v31 = dword_B0B3B8; /*0x6ac13c*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 101); /*0x6ac140*/
@@ -815,7 +815,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 201); /*0x6ac1e6*/
     return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac1f6*/
   }
-  return result; /*0x6ac1fb*/
+  return (gamemd::GadgetClass *)(result); /*0x6ac1fb*/
 
 }
 } // namespace gamemd

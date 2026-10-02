@@ -150,25 +150,25 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v11.ObjectVector_field_0x10 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
+    v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
     v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
     vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
+    v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
     v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
     vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d00ee*/
   }
   vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
 LABEL_45:
-  *(unsigned int *)v10.__pad_0 = &vt_VectorClass; /*0x4d0121*/
+  *(unsigned int *)v10.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d0121*/
   if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
   {
     __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
     v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
   }
-  *(unsigned int *)v11.__pad_0 = &vt_VectorClass; /*0x4d0149*/
+  *(unsigned int *)v11.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d0149*/
   BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
   v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
   if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/

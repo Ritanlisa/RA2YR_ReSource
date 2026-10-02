@@ -16,5 +16,5 @@
 // 0x45EC90
 namespace gamemd { 
 short BuildingTypeClass::GetFoundationWidth() const {
-  return stru_81926C.Type[this->Foundation[0]]; /*0x45ec9d*/
+  return (&stru_81926C.Type)[(&this->Foundation)[0]]; /*0x45ec9d*/
 }

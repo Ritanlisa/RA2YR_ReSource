@@ -96,10 +96,10 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
       v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
-      aP0->RadLevelTimer[2] = 0; /*0x65b3fd*/
-      aP0->RadLevelTimer[0] = v3; /*0x65b404*/
-      aP0->RadLightTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
-      aP0->RadLightTimer[2] = 0; /*0x65b40f*/
+      (&aP0->RadLevelTimer)[2] = 0; /*0x65b3fd*/
+      (&aP0->RadLevelTimer)[0] = v3; /*0x65b404*/
+      (&aP0->RadLightTimer)[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
+      (&aP0->RadLightTimer)[2] = 0; /*0x65b40f*/
       aP0->vtable1 = &vt_RadSiteClass; /*0x65b416*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b41c*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b423*/

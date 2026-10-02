@@ -35,7 +35,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   RadarClass *RadarClass_field_0x149C; // edi
   int v16; // eax
 
-  ((ShroudClass *)((MapClass *)this))->UpdateVisibility(aP1); /*0x65449d*/
+  ((ShroudClass *)((MapClass *)this))->UpdateVisibility((int *)(aP1)); /*0x65449d*/
   v3 = *(unsigned int *)&this->__pad_C0[60]; /*0x6544a2*/
   v4 = *(unsigned int *)&this->__pad_C0[64]; /*0x6544a8*/
   *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/

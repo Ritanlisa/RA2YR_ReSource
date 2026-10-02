@@ -188,7 +188,7 @@ int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
       {
         v9 = aStd; /*0x403bd0*/
         if ( v8 != 1 ) /*0x403bd5*/
-          v9 = asc_815F24; /*0x403bd7*/
+          v9 = (const char *)(asc_815F24); /*0x403bd7*/
       }
       else
       {

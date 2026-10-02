@@ -98,7 +98,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     }
     result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x722a00*/
   }
-  return result; /*0x722a11*/
+  return (gamemd::BuildingTypeClass **)(result); /*0x722a11*/
 
 }
 }

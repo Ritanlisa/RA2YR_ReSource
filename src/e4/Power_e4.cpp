@@ -494,7 +494,7 @@ int Power::FlagProcess(int a2)
     v7 = 4; /*0x4a1cf5*/
     do /*0x4a1d16*/
     {
-      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1d12*/
+      v6 = (&CRC32_Table)[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1d12*/
       p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1d14*/
       --v7; /*0x4a1d15*/
     }

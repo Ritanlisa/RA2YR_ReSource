@@ -256,7 +256,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       ((TechnoClass *)((FootClass *)a1))->CleanupDirection(); /*0x517e6c*/
     }
   }
-  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x517e75*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a1), 1); /*0x517e75*/
   v17[0] = (int)a1; /*0x517e89*/
   v7 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/
          &stru_A83D50.__pad_80[24],

@@ -68,7 +68,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
     *((unsigned char *)this + 52) = 1; /*0x526881*/
   }
   v15[0] = (unsigned int)((gamemd::ObjectClass **)(v5));
-  v7 = (gamemd::ObjectClass **)(System_Search(v15));
+  v7 = (int)((gamemd::ObjectClass **)(System_Search(v15)));
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
   *((unsigned int *)this + 14) = v7; /*0x5268a1*/

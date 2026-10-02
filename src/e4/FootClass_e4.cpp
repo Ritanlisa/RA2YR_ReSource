@@ -74,7 +74,7 @@ AbstractClass * FootClass::Destruct()
     (*((void (**)(ParasiteClass *, int))parasiteImUsing->vtable1 + 8))(parasiteImUsing, 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
-  if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
+  if ( (&this->currentJumpjetMapCoords)[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
     v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
@@ -82,11 +82,11 @@ AbstractClass * FootClass::Destruct()
   }
   Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
-  v7 = this->locomotor[0]; /*0x4d3683*/
+  v7 = (&this->locomotor)[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (**)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))((&this->locomotor)[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
-  this->FootClass_field_abstract_array_5AC[0] = (int)&vt_VectorClass; /*0x4d36a0*/
+  (&this->FootClass_field_abstract_array_5AC)[0] = (int)&vt_VectorClass; /*0x4d36a0*/
   if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
@@ -95,7 +95,7 @@ AbstractClass * FootClass::Destruct()
   this->__pad_5B0[9] = 0; /*0x4d36bf*/
   *(unsigned int *)&this->__pad_5B0[4] = 0; /*0x4d36c5*/
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
-  this->unknownAbstractArray588[0] = (int)&vt_VectorClass; /*0x4d36d1*/
+  (&this->unknownAbstractArray588)[0] = (int)&vt_VectorClass; /*0x4d36d1*/
   if ( v9 && this->__pad_58C[9] ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/

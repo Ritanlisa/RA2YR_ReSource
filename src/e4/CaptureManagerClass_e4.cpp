@@ -41,14 +41,14 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   *((unsigned int *)this + 10) = 0; /*0x4717e6*/
   *((unsigned int *)this + 11) = 0; /*0x4717e9*/
   *((unsigned char *)this + 49) = 0; /*0x4717ec*/
-  *((unsigned int *)this + 9) = &vt_DynamicVectorClass; /*0x4717ef*/
+  *((unsigned int *)this + 9) = (unsigned int)(&vt_DynamicVectorClass); /*0x4717ef*/
   *((unsigned int *)this + 14) = 10; /*0x4717f6*/
   *((unsigned int *)this + 13) = 0; /*0x4717fd*/
   *((unsigned int *)this + 18) = a2; /*0x471800*/
-  *(unsigned int *)this = &vt_CaptureManagerClass; /*0x471807*/
-  *((unsigned int *)this + 1) = &vt_CaptureManagerClass; /*0x47180d*/
-  *((unsigned int *)this + 2) = &vt_CaptureManagerClass; /*0x471814*/
-  *((unsigned int *)this + 3) = &vt_CaptureManagerClass; /*0x47181b*/
+  *(unsigned int *)this = (unsigned int)(&vt_CaptureManagerClass); /*0x471807*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_CaptureManagerClass); /*0x47180d*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_CaptureManagerClass); /*0x471814*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_CaptureManagerClass); /*0x47181b*/
   *((unsigned int *)this + 15) = a3; /*0x471822*/
   *((unsigned char *)this + 64) = a4; /*0x471825*/
   *((unsigned char *)this + 65) = 0; /*0x471828*/
@@ -63,7 +63,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
          0) )
   {
     v5 = dword_89E100++; /*0x471875*/
-    *((unsigned int *)dword_89E0F4 + v5) = this; /*0x471884*/
+    *((unsigned int *)dword_89E0F4 + v5) = (unsigned int)(this); /*0x471884*/
   }
   return this; /*0x471889*/
 
@@ -300,7 +300,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
     if ( *(unsigned int *)((unsigned int)(a1)+ 60) == 1 ) /*0x471d85*/
     {
       for ( i = *(unsigned int *)((unsigned int)(a1)+ 52) - 1; i >= 0; --i ) /*0x471d8b*/
-        CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
+        CaptureManagerClass::FreeUnit((IUnknown *)(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i)), a1, a2, v29, v30, v31); /*0x471d98*/
     }
     v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x471da4*/
     v8 = *v5; /*0x471daa*/
@@ -617,7 +617,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
       ((TeamClass *)(v5))->LiberateMember_Start(aP1, 0xFFFFFFFF, 0); /*0x4723df*/
   }
   v6 = *(FactoryClass **)(aP1 + 628); /*0x4723e4*/
-  if ( v6 && v6->production[1] ) /*0x4723ee*/
+  if ( v6 && (&v6->production)[1] ) /*0x4723ee*/
     ((FactoryClass *)(v6))->CompleteItem(); /*0x4723f3*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)aP1 + 132))(aP1) + 1508) ) /*0x472402*/
     ((CCINIClass *)((CCINIClass *)aP1))->IterateNodes(0); /*0x47240f*/

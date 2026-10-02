@@ -145,7 +145,7 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::Open(void *a1_1, void *a2_1, void *a3_1)
 {
 
-  return (uint8_t)((gamemd::Audio *)this)->IsPlaying() == 0; /*0x7719ca*/
+  return (unsigned int *)((uint8_t)((gamemd::Audio *)this)->IsPlaying() == 0); /*0x7719ca*/
 
 }
 } // namespace gamemd

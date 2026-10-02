@@ -97,7 +97,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cad*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cb4*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e5cbb*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e5cc2*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x6e5cc2*/
   v2 = (unsigned int *)*((unsigned int *)this + 40); /*0x6e5cc7*/
   *((unsigned int *)this + 40) = 0; /*0x6e5ccd*/
   if ( v2 ) /*0x6e5cd9*/

@@ -103,7 +103,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fac*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fb3*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x691fc1*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x691fc1*/
   v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
   v3 = (*(int ((int *)(**))(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&((char *)&FootClass_Array) ) /*0x691fea*/

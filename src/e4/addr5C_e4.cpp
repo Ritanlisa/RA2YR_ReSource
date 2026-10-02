@@ -144,7 +144,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
         Debug::Log(aPlayMovieAsBin);
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
-      v9 = ((BinkMovie *)(v8))->Open(Str, (int)a2); /*0x5c087d*/
+      v9 = (unsigned int *)(((BinkMovie *)(v8))->Open(Str, (int)a2)); /*0x5c087d*/
     else
       v9 = 0; /*0x5c0881*/
     result = (unsigned int *)RA2_OPNEW(0x14u); /*0x5c0885*/
@@ -359,7 +359,7 @@ unsigned int sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
     IDA_BYTE1(a3) = (unsigned char)(a3); /*0x5c642d*/
     v9 = (void *)((unsigned int)(a3)<< 16); /*0x5c6435*/
     IDA_LOWORD(v9) = (unsigned short)(a3); /*0x5c6438*/
-    memset32(a2, v9, v8 >> 2); /*0x5c643f*/
+    memset32(a2,(unsigned int)(v9), v8 >> 2); /*0x5c643f*/
     memset(&a2[4 * (v8 >> 2)],(int)(a3), v8 & 3); /*0x5c644a*/
     v6 = (unsigned char *)(&a2[v8]); /*0x5c6450*/
   }
@@ -1434,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))))));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36))))))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
@@ -2524,7 +2524,7 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
       v24 = (unsigned int *)(*aP0 + *(unsigned int *)((char *)v29 + v30)); /*0x5c8fc5*/
       v31 = (char *)v24 + v35; /*0x5c8fcd*/
       v35 = (unsigned int)v24 < *aP0 || (IDA_LOBYTE(v24) = v35) != 0 && !v31; /*0x5c8ffa*/
-      *v29 = v31; /*0x5c8fff*/
+      *v29 = (unsigned int)(v31); /*0x5c8fff*/
       ++aP0; /*0x5c9001*/
       ++v29; /*0x5c9004*/
       --v22; /*0x5c9007*/
@@ -2580,7 +2580,7 @@ char ModCryptoExp(char * a1, int edx0)
   if ( v8 > 1 || IDA_HIDWORD(v4) > (uint16_t)dword_82FCE0 ) /*0x5c9072*/
   {
   LABEL_17:
-    v14 = &unk_82E174; /*0x5c90bb*/
+    v14 = (unsigned short *)(&unk_82E174); /*0x5c90bb*/
     while ( 1 ) /*0x5c90c0*/
     {
       IDA_WORD2(v4) = *v14; /*0x5c90c0*/
@@ -2590,7 +2590,7 @@ char ModCryptoExp(char * a1, int edx0)
       {
         qmemcpy(v24, v2, 4 * ((unsigned int)(4 * edx0) >> 2)); /*0x5c90f9*/
         v15 = edx0; /*0x5c90fd*/
-        v16 = v24; /*0x5c9102*/
+        v16 = (int *)(v24); /*0x5c9102*/
         if ( v24[0]-- == 0 ) /*0x5c910d*/
         {
           do /*0x5c9126*/
@@ -2608,7 +2608,7 @@ char ModCryptoExp(char * a1, int edx0)
         {
           memset(v26, 0, 4 * ((unsigned int)(4 * edx0) >> 2)); /*0x5c9145*/
           v26[0] = *v19; /*0x5c916b*/
-          ModBigIntExp(v25, v26, (char *)v24, a1, edx0); /*0x5c9172*/
+          ModBigIntExp(v25,(gamemd::AbstractClass *)(v26), (char *)v24, a1, edx0); /*0x5c9172*/
           if ( v25[0] != 1 ) /*0x5c917f*/
             break; /*0x5c917f*/
           v20 = &v24[edx0 + 63]; /*0x5c918c*/
@@ -2633,7 +2633,7 @@ char ModCryptoExp(char * a1, int edx0)
     return 0; /*0x5c90d6*/
   }
   v10 = *(unsigned short *)v2; /*0x5c9074*/
-  v11 = &unk_82E174; /*0x5c9077*/
+  v11 = (unsigned short *)(&unk_82E174); /*0x5c9077*/
   v12 = 3511; /*0x5c907c*/
   do /*0x5c90a6*/
   {
@@ -2644,7 +2644,7 @@ char ModCryptoExp(char * a1, int edx0)
     {
       if ( IDA_WORD2(v4) == v10 ) /*0x5c9098*/
         goto LABEL_15; /*0x5c9098*/
-      v11 = v13 + 2; /*0x5c909a*/
+      v11 = (unsigned short *)(v13 + 2); /*0x5c909a*/
       v12 += -1 - v12 / 2; /*0x5c90a2*/
     }
     else

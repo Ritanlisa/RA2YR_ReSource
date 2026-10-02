@@ -730,10 +730,10 @@ LABEL_123:
   *((unsigned char *)this + 652) = 0; /*0x5f8c8f*/
   *((unsigned int *)this + 164) = 0; /*0x5f8c95*/
 LABEL_146:
-  *(unsigned int *)v58.CDFileClass = &vt_CCFileClass; /*0x5f8c9b*/
+  *(unsigned int *)v58.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8c9b*/
   v60 = 0; /*0x5f8cad*/
   ((Vector *)((int)v59))->Clear(); /*0x5f8cb4*/
-  *(unsigned int *)v58.CDFileClass = &off_7E1668; /*0x5f8cc0*/
+  *(unsigned int *)v58.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8cc0*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v58))->Dtor(); /*0x5f8cd0*/
 
 }

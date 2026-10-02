@@ -319,7 +319,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
     -1);
   ((gamemd::Debug *)this)->Log(); /*0x5f2a2c*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, a2); /*0x5f2a44*/
-  (*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
+  (*(void (*  ((HWND)(*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36)))(g_ClipboardBuffer, PumpEventLoop); 
   g_NetworkTestFlag = 0; /*0x5f2a57*/
   v11 = *(unsigned int *)&this->__pad_10[20]; /*0x5f2a5e*/
   ((gamemd::Debug *)this)->Log(); /*0x5f2a66*/
@@ -1169,12 +1169,12 @@ LABEL_74:
   if ( (v6 == 259 || v6 == 3015) && v7 == 1780 ) /*0x60a6ae*/
   {
     v4[36] = *((unsigned int *)dword_8871E0 + 433); /*0x60a6bd*/
-    return 1; /*0x60a6c4*/
+    return (gamemd::AbstractClass **)(1); /*0x60a6c4*/
   }
   else
   {
     v4[36] = -1; /*0x60a6d2*/
-    return 1; /*0x60a6d9*/
+    return (gamemd::AbstractClass **)(1); /*0x60a6d9*/
   }
 
 }
@@ -1206,7 +1206,7 @@ AbstractClass * * Dialog::InitWindow(int a1, int a2)
         goto LABEL_5; /*0x60f7b1*/
     }
     *(unsigned int *)(v3 + 36) = a2; /*0x60f7fa*/
-    return 1; /*0x60f7fd*/
+    return (gamemd::AbstractClass **)(1); /*0x60f7fd*/
   }
   else
   {
@@ -1223,7 +1223,7 @@ LABEL_5:
     v13[16] = 0; /*0x60f818*/
     v13[23] = 0; /*0x60f81c*/
     v13[36] = (void *)-1; /*0x60f820*/
-    v7 = __2_YAPAXI_Z(0x208u); /*0x60f82b*/
+    v7 = (unsigned int *)(__2_YAPAXI_Z(0x208u)); /*0x60f82b*/
     v8 = v7; /*0x60f830*/
     if ( v7 ) /*0x60f837*/
       DialogControl::Constructor(v7 + 1); /*0x60f83c*/
@@ -1234,7 +1234,7 @@ LABEL_5:
     v8[129] = 0; /*0x60f862*/
     v9 = dword_AC1B18(&a1) & ((1 << dword_AC1B0C) - 1); /*0x60f882*/
     v10 = *((unsigned int *)dword_AC1B00 + v9); /*0x60f884*/
-    *((unsigned int *)dword_AC1B00 + v9) = v8; /*0x60f887*/
+    *((unsigned int *)dword_AC1B00 + v9) = (unsigned int)(v8); /*0x60f887*/
     if ( v10 ) /*0x60f88c*/
       v8[129] = v10; /*0x60f88e*/
     if ( (double)(unsigned int)++dword_AC1B04 / (double)dword_AC1B08 >= dbl_AC1B28 ) /*0x60f8c9*/
@@ -1264,7 +1264,7 @@ LABEL_22:
     if ( v13[15] ) /*0x60f959*/
       DeleteAndZero::OrFree(v13[15], 1); /*0x60f95d*/
     *(unsigned int *)(v2 + 32) = a2; /*0x60f96e*/
-    return 1; /*0x60f962*/
+    return (gamemd::AbstractClass **)(1); /*0x60f962*/
   }
 
 }

@@ -78,7 +78,7 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
             return FillRectangle((IUnknown *)(/*0x488675*/                v19),                (int)v22,                (int)g_DSurface_Hidden_2,                v15,                (int)v20,                v16,                0,                ListClass_field_0x0C,                a5,                v18);
     }
   }
-  return result; /*0x48867d*/
+  return (size_t)(result); /*0x48867d*/
 }
 }
 // 0x4886B0

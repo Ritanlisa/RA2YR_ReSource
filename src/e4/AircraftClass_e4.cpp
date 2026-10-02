@@ -84,7 +84,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
 LABEL_9:
     ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
     ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
-    Value = ((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue(&v18); /*0x41400d*/
+    Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue((int)(&v18))); /*0x41400d*/
     FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*(unsigned int *)v3[433] + 188))(v3[433]); /*0x414024*/
@@ -241,7 +241,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
 
   v3 = (int *)((int)(a3));
   v4 = (int *)((int)(aP1));
-  result = (int)(InfantryClass::GetCursorOverObject((IUnknown *)((FootClass *)this),(IUnknown *)((int)aP1), (char)a3));
+  result = (int)(InfantryClass::GetCursorOverObject((IUnknown *)((FootClass *)this),(IUnknown *)((int)aP1),(void *)((char)a3)));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
     return (gamemd::AircraftTypeClass *)(result); /*0x417cdd*/
@@ -385,7 +385,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   if ( ((unsigned int *)this)[0] ) /*0x419777*/
     return 0; /*0x419777*/
   v10 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 72))(a2, v11); /*0x41978a*/
-  if ( !(uint8_t)Cell::IsPassable((IUnknown *)(v10)) ) /*0x419793*/
+  if ( !(uint8_t)Cell::IsPassable((unsigned int *)((IUnknown *)(v10))) ) /*0x419793*/
     return 0; /*0x4197ac*/
   else
     return 7; /*0x41979e*/
@@ -708,7 +708,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
       *p_vtable1 = &vt_AircraftClass; /*0x41b4e7*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_AircraftClass); /*0x41b4ed*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_AircraftClass); /*0x41b4f4*/
-      *(unsigned int *)v2->__pad_6C0 = &vt_AircraftClass; /*0x41b4fb*/
+      *(unsigned int *)v2->__pad_6C0 = (unsigned int)(&vt_AircraftClass); /*0x41b4fb*/
     }
     v11 = ((unsigned int *)v2)[0]; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/
@@ -978,7 +978,7 @@ int AircraftClass::CheckReloadTimer()
 
   int result; // eax
 
-  LOBYTE(result) = this->isDisguisedFlag; /*0x41c020*/
+  LOBYTE(result) = (unsigned char)(this->isDisguisedFlag); /*0x41c020*/
   return result; /*0x41c026*/
 
 }

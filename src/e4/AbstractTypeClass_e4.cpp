@@ -153,7 +153,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
     if ( Destination != Name ) /*0x410ad2*/
     {
       qmemcpy(Name, Destination, 0x30u); /*0x410add*/
-      this->Name[48] = v7; /*0x410adf*/
+      (&this->Name)[48] = v7; /*0x410adf*/
     }
     UINameLabel = (char *)(this->UINameLabel);
     INIClass::GetString( /*0x410afb*/
@@ -264,7 +264,7 @@ char AbstractTypeClass::WriteINI(char *aP1)
   pad_24 = (uint8_t *)this->__pad_24; /*0x410b9b*/
   INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
   INIClass::SetString(aP1, pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
-  if ( this->UINameLabel[0] ) /*0x410bb7*/
+  if ( (&this->UINameLabel)[0] ) /*0x410bb7*/
     INIClass::SetString(aP1, pad_24, g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
   return 1; /*0x410bcf*/
 

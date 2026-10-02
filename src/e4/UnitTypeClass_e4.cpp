@@ -140,7 +140,7 @@ LABEL_11:
   }
   else
   {
-    v6 = dword_A83CE4; /*0x747243*/
+    v6 = (unsigned int *)(dword_A83CE4); /*0x747243*/
     while ( *v6 != this ) /*0x74724b*/
     {
       ++v5; /*0x74724d*/

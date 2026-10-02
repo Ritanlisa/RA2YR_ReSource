@@ -110,7 +110,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     {
 LABEL_40:
       Debug::Log(); /*0x4fa533*/
-      return 3; /*0x4fa550*/
+      return (gamemd::AbstractClass **)(3); /*0x4fa550*/
     }
     v24 = 1; /*0x4fa465*/
   }
@@ -221,7 +221,7 @@ LABEL_55:
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( *(unsigned int *)(v10 + 80) || *(unsigned int *)(v10 + 88) ) /*0x4fa6d9*/
-    return 3; /*0x4fa807*/
+    return (gamemd::AbstractClass **)(3); /*0x4fa807*/
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
@@ -248,7 +248,7 @@ LABEL_55:
     case 1u: /*0x4fa782*/
     case 2u: /*0x4fa782*/
       *((unsigned int *)this + 5355) = 0; /*0x4fa801*/
-      return 3; /*0x4fa801*/
+      return (gamemd::AbstractClass **)(3); /*0x4fa801*/
     case 5u: /*0x4fa782*/
     case 6u: /*0x4fa782*/
       if ( v22 == 5 ) /*0x4fa7d5*/
@@ -265,7 +265,7 @@ LABEL_55:
     default:
       return (gamemd::AbstractClass **)(3);
   }
-  return result; /*0x4fa4a0*/
+  return (gamemd::AbstractClass **)(result); /*0x4fa4a0*/
 
 }
 }
@@ -276,7 +276,7 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
 
   char result; // al
 
-  result = aP1 - 1; /*0x5007a5*/
+  result = (char)(aP1 - 1); /*0x5007a5*/
   switch ( aP1 ) /*0x5007b7*/
   {
     case 1: /*0x5007b7*/
@@ -331,7 +331,7 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
               (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
               this) )
     {
-      result = (gamemd::CreateTeamCommand **)(dword_87F668); /*0x533fa1*/
+      result = (int)((gamemd::CreateTeamCommand **)(dword_87F668)); /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
         return (gamemd::CreateTeamCommand **)(result); /*0x533fa9*/
     }
@@ -339,7 +339,7 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
              *((unsigned int *)dword_87F65C + v2),
              0);
   }
-  return result; /*0x533fab*/
+  return (gamemd::CreateTeamCommand **)(result); /*0x533fab*/
 
 }
 }
@@ -374,7 +374,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       v6 = 0; /*0x63633e*/
     else
       v6 = (void *)*((unsigned int *)v4->Array_field_0x4 + Value); /*0x636345*/
-    Block = v6; /*0x63634a*/
+    Block = (int *)(v6); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
       FactoryClass::FinishProduction((int *)v4->__pad_0, (int)v6); /*0x636353*/
@@ -465,13 +465,13 @@ char Sidebar::RemoveItem(int a2, void *a2_2)
   if ( a2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
     return (unsigned int)(0); /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
-  this->Sidebar_field_0x10 = v4; /*0x63f04e*/
+  this->Sidebar_field_0x10 = (unsigned int)(v4); /*0x63f04e*/
   if ( a2 < (int)v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(unsigned int *)(this->Sidebar_field_0x4[0] + 4 * v3 - 4) = *(unsigned int *)(this->Sidebar_field_0x4[0] + 4 * v3); /*0x63f05b*/
+      *(unsigned int *)((&this->Sidebar_field_0x4)[0] + 4 * v3 - 4) = *(unsigned int *)((&this->Sidebar_field_0x4)[0] + 4 * v3); /*0x63f05b*/
     }
     while ( v3 < (int)this->Sidebar_field_0x10 ); /*0x63f064*/
   }
@@ -505,11 +505,11 @@ ObjectClass * * Sidebar::Render(char a2)
   {
     LOBYTE(this->field_150C) = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
-    if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x63fb5d*/
+    if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    NeedsSaveOrLink = (int)dword_A8B230[374].NeedsSaveOrLink; /*0x63fb78*/
+    NeedsSaveOrLink = (int)(&dword_A8B230)[374].NeedsSaveOrLink; /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
     v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
                   DSurface_Sidebar,
@@ -550,7 +550,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    v10 = *(unsigned int *)&this->__pad_1510[12]; /*0x63fc26*/
+    v10 = *(unsigned int *)&(&this->__pad_1510)[12]; /*0x63fc26*/
     v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
@@ -673,7 +673,7 @@ ObjectClass * * Sidebar::Render(char a2)
     }
   }
   LOBYTE(result) = ((RadarClass *)((RadarClass *)this))->Destru_vt16(a2); /*0x63fdac*/
-  return result; /*0x63fdb1*/
+  return (gamemd::ObjectClass **)(result); /*0x63fdb1*/
 
 }
 }
@@ -720,10 +720,10 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 
   if ( !*((unsigned char *)this + 21413) || !byte_A8E9A0 || !((unsigned int *)&stru_A8EB00)[376] ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
-  GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
+  GetClientRect((HWND)(g_hWnd), &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
   Point.y = Rect.top; /*0x6a7137*/
-  ClientToScreen(g_hWnd, &Point); /*0x6a713d*/
+  ClientToScreen((HWND)(g_hWnd), &Point); /*0x6a713d*/
   if ( g_TooltipActive || a2 ) /*0x6a7153*/
   {
     g_TooltipActive = 1; /*0x6a723a*/
@@ -917,9 +917,9 @@ void Sidebar_UpdateProductionDisplay()
       *(unsigned char *)(a1 + 60) = 0;
       (&stru_B05488)[24720] = 1;
       *(unsigned int *)aP3[0] = 0;
-      *(unsigned int *)&aP3.field_2[2] = 0;
-      *(unsigned int *)&aP3[8] = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 124))(*(unsigned int *)&stru_87C374[44940]);
-      int v5 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 128))(*(unsigned int *)&stru_87C374[44940]);
+      *(unsigned int *)&(&aP3.field_2)[2] = 0;
+      *(unsigned int *)&aP3[8] = (*(int (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[44940] + 124))(*(unsigned int *)&(&stru_87C374)[44940]);
+      int v5 = (*(int (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[44940] + 128))(*(unsigned int *)&(&stru_87C374)[44940]);
       v6 = (IUnknown *)HouseClass_Player.field_0;
       v7 = (IUnknown *)*(&g_MatrixTransformState + 2274);
       *(unsigned int *)&aP3[12] = v5;
@@ -942,15 +942,15 @@ void Sidebar_UpdateProductionDisplay()
       }
 LABEL_13:
       int v11 = 26;
-      if ( *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 13496) )
+      if ( *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13496) )
         v11 = 18;
       int v85 = 0;
   int v12; // eax
       v12 = (*(unsigned char *)(a1 + 63) != 0)
-          + (*(unsigned int *)&stru_87C374[44072]
+          + (*(unsigned int *)&(&stru_87C374)[44072]
            - *(unsigned int *)&(&stru_B05488)[24688]
            - v11
-           + *(unsigned int *)&stru_87C374[44064]
+           + *(unsigned int *)&(&stru_87C374)[44064]
            - 7)
           / 50;
       int v92 = v12;
@@ -970,17 +970,17 @@ LABEL_13:
               BufferCount = 0;
               int v14 = *(unsigned int *)(v84 + 32);
               int v90 = i + 2 * (v13 + v85);
-              int v15 = v14 + i * *(unsigned int *)&stru_B05488[24692] - *(unsigned int *)&stru_87C374[44060];
+              int v15 = v14 + i * *(unsigned int *)&(&stru_B05488)[24692] - *(unsigned int *)&(&stru_87C374)[44060];
               char v16 = 0;
               v73 = 0;
-              int v17 = v85 * *(unsigned int *)&stru_B05488[24696] + *(unsigned int *)(v84 + 36) + 1;
+              int v17 = v85 * *(unsigned int *)&(&stru_B05488)[24696] + *(unsigned int *)(v84 + 36) + 1;
               int v18 = *(unsigned int *)(v84 + 56);
               IsCliffWall = 0;
               int v94 = v17;
               int v19 = 56 * (i + 2 * v85 + 60 * v18) + 11566720;
               if ( *(unsigned char *)(v84 + 63) )
               {
-                v17 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&stru_B05488[24696];
+                v17 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&(&stru_B05488)[24696];
                 v94 = v17;
               }
               int v20 = *(unsigned int *)(v84 + 84);
@@ -992,7 +992,7 @@ LABEL_13:
               }
               else
               {
-                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player[45136]) )
+                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, (&HouseClass_Player)[45136]) )
                   IDA_HIBYTE(v73) = 0;
                 int v21 = *(unsigned int *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
@@ -1000,9 +1000,9 @@ LABEL_13:
                 if ( v21 == 31 )
                 {
                   unsigned int v31 = v22[22];
-                  int v32 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[42472] + 4 * v31);
+                  int v32 = *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
-                  if ( v31 >= *(unsigned int *)&HouseClass_Player[42484] )
+                  if ( v31 >= *(unsigned int *)&(&HouseClass_Player)[42484] )
                     aP2 = 0;
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
@@ -1088,7 +1088,7 @@ LABEL_13:
                     IDA_LOBYTE(v73) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((unsigned int *)v86);
                     if ( IsCliffWall )
-                      BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_830620[62628], 3411);
+                      BufferCount = (size_t)GetStringCSF((wchar_t *)(g_Str_TXT_READY), 0, &(&stru_830620)[62628], 3411);
                     else
                       v78 = 1;
                     Member09 = 0;

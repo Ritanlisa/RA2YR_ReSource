@@ -103,8 +103,8 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     *((unsigned int *)this + 16) = *(char *)(v5 + 8); /*0x49cc32*/
     *((unsigned int *)this + 14) = 0; /*0x49cc35*/
   }
-  *((unsigned int *)this + 17) = (gamemd::AbstractClass **)((unsigned int)(v3)); /*0x49cc39*/
-  return 1; /*0x49cc3d*/
+  *((unsigned int *)this + 17) = (unsigned int)((gamemd::AbstractClass **)((unsigned int)(v3))); /*0x49cc39*/
+  return (gamemd::AbstractClass **)(1); /*0x49cc3d*/
 
 }
 }
@@ -150,11 +150,11 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
   BinkMovie v23; // [esp+1Ch] [ebp-134h] BYREF
   char Str[256]; // [esp+50h] [ebp-100h] BYREF
 
-  if ( Render_Play(a4, Str, 1) && !*(unsigned int *)&dword_A8B238 ) /*0x5bed6a*/
+  if ( Render_Play((const char *)(a4), Str, 1) && !*(unsigned int *)&dword_A8B238 ) /*0x5bed6a*/
   {
     Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5bed76*/
     v8 = strrchr(Str, 46); /*0x5bed82*/
-    if ( !v8 || _strcmpi(v8, aBik) ) /*0x5bed98*/
+    if ( !v8 || _strcmpi(v8,(const char *)(aBik)) ) /*0x5bed98*/
     {
       Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5bef0b*/
       v9 = 0; /*0x5bef1e*/
@@ -177,7 +177,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
               {
                 v15 = (double)*(int *)&DSurface_ViewBounds.__pad_8[16]; /*0x5befee*/
                 v13[15] = *(MovieContext *)&DSurface_ViewBounds.__pad_8[16]; /*0x5beff4*/
-                *(unsigned short *)v16.__tail_0 = (gamemd::MovieContext)(Math::RoundToInt(v15 / (double)v9)); /*0x5bf001*/
+                *(unsigned short *)v16.__tail_0 = (unsigned short)((gamemd::MovieContext)(Math::RoundToInt(v15 / (double)v9))); /*0x5bf001*/
                 v13[13] = (gamemd::MovieContext)(0); /*0x5bf008*/
                 v13[16] = (gamemd::MovieContext)(v16); /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
@@ -189,7 +189,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           if ( a7 ) /*0x5bf045*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
-            Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
           }
           if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf067*/
           {
@@ -197,7 +197,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
             ((AudioQueue *)this)->IncrementPriority(); /*0x5bf06e*/
             ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bf073*/
             RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x2000); /*0x5bf083*/
-            RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bf093*/
+            RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x2000); /*0x5bf093*/
             LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a1) = 1; /*0x5bf098*/
           }
           sub_406EA0(); /*0x5bf09f*/
@@ -211,7 +211,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
             ProcessAudioTimer(); /*0x5bf0db*/
             ((Mixer *)this)->RequestAllBuffers(); /*0x5bf0e0*/
             RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); /*0x5bf0f0*/
-            RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf100*/
+            RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x4000); /*0x5bf100*/
             ((AudioMixer *)this)->Pump(); /*0x5bf105*/
             LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf10a*/
           }
@@ -221,7 +221,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           if ( a5 == 1 ) /*0x5bf130*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
-            Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
           }
           (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5bf15e*/
@@ -253,7 +253,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
         ((AudioQueue *)this)->IncrementPriority(); /*0x5bee0d*/
         ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bee12*/
         RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x2000); /*0x5bee22*/
-        RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bee32*/
+        RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x2000); /*0x5bee32*/
         LOBYTE(g_MissionQueueFrame.localVariables[566]) = 1; /*0x5bee37*/
       }
       sub_406EA0(); /*0x5bee3e*/
@@ -267,14 +267,14 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
         ProcessAudioTimer(); /*0x5bee74*/
         ((Mixer *)this)->RequestAllBuffers(); /*0x5bee79*/
         RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); /*0x5bee89*/
-        RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bee99*/
+        RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x4000); /*0x5bee99*/
         ((AudioMixer *)this)->Pump(); /*0x5bee9e*/
         LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a3) = 0; /*0x5beea3*/
       }
       if ( a5 == 1 ) /*0x5beeb1*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
-        Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
+        Frame::Present((void *)((int)g_DSurface_Hidden), 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
       Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
@@ -295,7 +295,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
   {
     v6 = byte_A8E378; /*0x5bf275*/
     byte_A8E378 = 0; /*0x5bf289*/
-    Movie::Play(-1, a2, a3, a4, a5, a6, 0); /*0x5bf296*/
+    Movie::Play((gamemd::CCINIClass *)(-1), a2, a3, a4, a5, a6, 0); /*0x5bf296*/
     byte_A8E378 = v6; /*0x5bf29b*/
   }
 }
@@ -317,7 +317,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x7209ed*/
       if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x7209f4*/
       {
-        IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
+        IsSoundEnabled = (void *)(this->Movie_field_0xC); /*0x7209fa*/
         if ( (int)IsSoundEnabled > 0 ) /*0x7209ff*/
         {
           v3 = *(AudioSample **)&this->__pad_28[4]; /*0x720a01*/

@@ -300,7 +300,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4a0b2a*/
     return -2147467261; /*0x4a0b2d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a0b3d*/
+  v3 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4a0b3d*/
   if ( !v3 ) /*0x4a0b44*/
     return -2147024882; /*0x4a0c13*/
   *(unsigned int *)(v3 + 4) = a1->EnumConnectionPointsClass_field_0x04; /*0x4a0b59*/
@@ -317,7 +317,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     *(unsigned int *)(v3 + 20) = EnumConnectionPointsClass_field_0x14; /*0x4a0b83*/
     if ( EnumConnectionPointsClass_field_0x14 ) /*0x4a0b86*/
     {
-      v5 = __2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x14); /*0x4a0b90*/
+      v5 = (int)(__2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x14)); /*0x4a0b90*/
       *(unsigned int *)(v3 + 16) = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -541,7 +541,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   memset(&((unsigned int *)this)[0], 0, 0x6Cu); /*0x4a329e*/
   ((unsigned int *)this)[0] = (unsigned int)((void *)108); /*0x4a32a4*/
   ((unsigned int *)this)[0] = (unsigned int)((void *)7); /*0x4a32aa*/
-  this->health = dword_81FC60[a4]; /*0x4a32b8*/
+  this->health = (&dword_81FC60)[a4]; /*0x4a32b8*/
   ((unsigned int *)this)[0] = a2; /*0x4a32bf*/
   ((unsigned int *)this)[0] = (unsigned int)((void *)a3); /*0x4a32c2*/
   if ( a4 == 1 ) /*0x4a32c5*/
@@ -615,7 +615,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
         ((Vector *)((int)v9))->Clear(); /*0x4a3948*/
         *(unsigned int *)v8.CDFileClass = (unsigned int)((gamemd::AbstractClass **)(&off_7E1668)); /*0x4a3951*/
         ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x4a3959*/
-        return (void *)v5; /*0x4a395e*/
+        return (gamemd::AbstractClass **)((void *)v5); /*0x4a395e*/
       }
       (*(void (**)(CCFileClass *, int, size_t))(*(unsigned int *)v8.CDFileClass + 36))(&v8, v5, v6); /*0x4a392a*/
     }
@@ -657,7 +657,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         ((Vector *)((int)v9))->Clear(); /*0x4a39ef*/
         v8[0] = (unsigned int)((gamemd::AbstractClass **)((unsigned int)&off_7E1668)); /*0x4a39f8*/
         ((BufferIOFileClass *)(v8))->Dtor(); /*0x4a3a00*/
-        return (int)v5; /*0x4a3a05*/
+        return (gamemd::AbstractClass **)((int)v5); /*0x4a3a05*/
       }
       (*(void (**)(unsigned int *, void *, size_t))(v8[0] + 36))(v8, v5, v6); /*0x4a39d1*/
     }
@@ -949,7 +949,7 @@ unsigned int * GetTextBoundingRect(unsigned int * a1, CampaignScore * a2, int a3
   int v13; // ecx
 
   v7 = g_FogOfWarState; /*0x4a59e4*/
-  v9 = Text::MeasureWidth(a2, 0); /*0x4a59f1*/
+  v9 = Text::MeasureWidth((int)(a2), 0); /*0x4a59f1*/
   v10 = *(unsigned int *)(v7 + 28); /*0x4a59f6*/
   v11 = v9; /*0x4a59f9*/
   v12 = a3; /*0x4a5a06*/
@@ -1447,7 +1447,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
   }
   *v10 = v11; /*0x4a64e2*/
   v10[1] = v27; /*0x4a64e4*/
-  return v10; /*0x4a64e9*/
+  return (gamemd::ControlClass **)(v10); /*0x4a64e9*/
 }
 }
 // 0x4A65C0

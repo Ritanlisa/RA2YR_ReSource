@@ -90,7 +90,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   if ( v5 )
   {
     fprintf((FILE *const )(v5), "RA2 Sync\n"); /*0x651788*/
-    ModuleVersion = GetModuleVersion(); /*0x651790*/
+    ModuleVersion = (char *)(GetModuleVersion()); /*0x651790*/
     fprintf((FILE *const )(v5), "\nVersion %s\n", ModuleVersion); /*0x65179c*/
     ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&g_CoordScatterManager))); /*0x6517a9*/
     fprintf((FILE *const )(v5), "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/

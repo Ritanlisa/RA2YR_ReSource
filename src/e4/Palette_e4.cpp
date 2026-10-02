@@ -289,15 +289,15 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
   int v3; // edx
   int v4; // eax
 
-  v2 = LOBYTE(this->m_Colors[0]) - *a2; /*0x661360*/
+  v2 = LOBYTE((&this->m_Colors)[0]) - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
-    v2 = *a2 - LOBYTE(this->m_Colors[0]); /*0x661364*/
-  v3 = BYTE1(this->m_Colors[0]) - a2[1]; /*0x661370*/
+    v2 = *a2 - LOBYTE((&this->m_Colors)[0]); /*0x661364*/
+  v3 = BYTE1((&this->m_Colors)[0]) - a2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2[1] - BYTE1(this->m_Colors[0]); /*0x661374*/
-  v4 = BYTE2(this->m_Colors[0]) - a2[2]; /*0x661382*/
+    v3 = a2[1] - BYTE1((&this->m_Colors)[0]); /*0x661374*/
+  v4 = BYTE2((&this->m_Colors)[0]) - a2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2[2] - BYTE2(this->m_Colors[0]); /*0x661386*/
+    v4 = a2[2] - BYTE2((&this->m_Colors)[0]); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 
 }
@@ -343,11 +343,11 @@ unsigned char * Palette::ConvertIndices(int a2)
   unsigned short *v5; // esi
   int16_t *v6; // edi
 
-  LOBYTE(this->m_Colors[0]) = 0; /*0x632be9*/
+  LOBYTE((&this->m_Colors)[0]) = 0; /*0x632be9*/
   v3 = Hash_Check_5C61E0(); /*0x632bf1*/
   v4 = Hash_Check(); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/
-    return this; /*0x632c31*/
+    return (unsigned char *)(this); /*0x632c31*/
   v5 = v4; /*0x632c02*/
   v6 = (int16_t *)this->m_Colors + 1; /*0x632c04*/
   do /*0x632c23*/
@@ -359,7 +359,7 @@ unsigned char * Palette::ConvertIndices(int a2)
     --v3; /*0x632c22*/
   }
   while ( v3 ); /*0x632c23*/
-  return this; /*0x632c2b*/
+  return (unsigned char *)(this); /*0x632c2b*/
 
 }
 }  // G42.18c ns repair

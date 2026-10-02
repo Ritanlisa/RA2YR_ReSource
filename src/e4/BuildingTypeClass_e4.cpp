@@ -397,7 +397,7 @@ LABEL_11:
   *((unsigned char *)this + 3479) = (int)(0); /*0x45e4f6*/
   *((unsigned char *)this + 3478) = (int)(0); /*0x45e4fc*/
   *((unsigned char *)this + 3374) = 0; /*0x45e502*/
-  return this; /*0x45e508*/
+  return (int)(this); /*0x45e508*/
 
 }
 } // namespace gamemd
@@ -417,7 +417,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e55e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e565*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e56c*/
-  return this; /*0x45e575*/
+  return (unsigned int *)(this); /*0x45e575*/
 
 }
 } // namespace gamemd
@@ -491,7 +491,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
   v4 = *(void **)&a1->__pad_1714[116]; /*0x45e707*/
-  *(unsigned int *)&a1->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e70d*/
+  *(unsigned int *)&a1->__pad_1714[112] = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e70d*/
   if ( v4 && a1->__pad_1714[125] ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
@@ -812,7 +812,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f68e*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f6a1*/
-    v15 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5368)); /*0x45f6ac*/
+    v15 = LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5368))); /*0x45f6ac*/
     *((unsigned int *)this + 1341) = (unsigned int)(v15); /*0x45f6b3*/
     if ( !v15 ) /*0x45f6b9*/
     {
@@ -844,7 +844,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1345) = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
-    v17 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5384)); /*0x45f784*/
+    v17 = LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5384))); /*0x45f784*/
     *((unsigned int *)this + 1345) = (unsigned int)(v17); /*0x45f78b*/
     if ( !v17 ) /*0x45f791*/
     {
@@ -886,7 +886,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     64);
   if ( strlen(Filename) ) /*0x45f876*/
   {
-    _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f897*/
+    _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f897*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f8aa*/
     v19 = (unsigned char *)((char *)this + 5404); /*0x45f8b5*/
     if ( *((unsigned char *)this + 5404) && *((unsigned int *)this + 1350) ) /*0x45f8bf*/
@@ -895,8 +895,8 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1350) = 0; /*0x45f8d2*/
       *v19 = (unsigned int)(0); /*0x45f8d8*/
     }
-    v20 = LoadFileSHP(Source, (bool *)((char *)this + 5404)); /*0x45f8e0*/
-    *((unsigned int *)this + 1350) = v20; /*0x45f8e7*/
+    v20 = LoadFileSHP((gamemd::ConvertClass *)(Source), (bool *)((char *)this + 5404)); /*0x45f8e0*/
+    *((unsigned int *)this + 1350) = (unsigned int)(v20); /*0x45f8e7*/
     if ( !v20 ) /*0x45f8ed*/
     {
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f8f3*/
@@ -906,7 +906,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1350) = (unsigned int)(0); /*0x45f90f*/
         *v19 = (unsigned int)(0); /*0x45f915*/
       }
-      *((unsigned int *)this + 1350) = SearchMIXFile(Source, 0); /*0x45f922*/
+      *((unsigned int *)this + 1350) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45f922*/
     }
   }
   INIClass::GetString( /*0x45f945*/
@@ -917,7 +917,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     Filename,
     64);
   if ( !*((unsigned char *)this + 556) || aP1 == -1 ) /*0x45f95c*/
-    v21 = ::Ext; /*0x45f97a*/
+    v21 = (const char *)(::Ext); /*0x45f97a*/
   else
     v21 = (const char *)(&off_7E1BC6 + 28 * aP1); /*0x45f96e*/
   strcpy(Ext, v21); /*0x45f993*/
@@ -929,19 +929,19 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   strncpy((char *)((char *)this + 5994), Source, 0x13u); /*0x45f9f3*/
   if ( !*((unsigned char *)this + 5984) ) /*0x45f9f8*/
   {
-    v22 = SearchMIXFile(Source, 0); /*0x45fa0b*/
+    v22 = (int)(SearchMIXFile(Source, 0)); /*0x45fa0b*/
     *((unsigned int *)this + 41) = v22; /*0x45fa12*/
     if ( !v22 ) /*0x45fa18*/
     {
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45fa1e*/
       strncpy((char *)((char *)this + 5994), Source, 0x13u); /*0x45fa2b*/
-      *((unsigned int *)this + 41) = SearchMIXFile(Source, 0); /*0x45fa3e*/
+      *((unsigned int *)this + 41) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45fa3e*/
     }
     if ( !*((unsigned int *)this + 41) ) /*0x45fa44*/
     {
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45fa50*/
       strncpy((char *)((char *)this + 5994), Source, 0x13u); /*0x45fa5d*/
-      *((unsigned int *)this + 41) = SearchMIXFile(Source, 0); /*0x45fa70*/
+      *((unsigned int *)this + 41) = (unsigned int)(SearchMIXFile(Source, 0)); /*0x45fa70*/
     }
   }
   ((BuildingTypeClass *)((BuildingTypeClass *)this))->LoadVoxel(); /*0x45fa78*/
@@ -989,9 +989,9 @@ void BuildingTypeClass::LoadVoxel()
 
   if ( this->TurretAnimIsVoxel || this->BarrelAnimIsVoxel ) /*0x45faa4*/
   {
-    strcpy(Destination, &this->__pad_F70[576]); /*0x45fadf*/
-    _makepath(Buffer, 0, 0, Destination, g_Str_File__VXL); /*0x45faf3*/
-    v20 = _strupr(off_8194A8); /*0x45fb05*/
+    strcpy(Destination,(const char *)(&this->__pad_F70[576])); /*0x45fadf*/
+    _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__VXL)); /*0x45faf3*/
+    v20 = _strupr((char *)(off_8194A8)); /*0x45fb05*/
     v2 = _strupr(String); /*0x45fb0e*/
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
@@ -1010,7 +1010,7 @@ void BuildingTypeClass::LoadVoxel()
         else
           FileVXL = 0; /*0x45fb8c*/
         ((unsigned int *)this)[0] = (int)FileVXL; /*0x45fb8e*/
-        _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fbab*/
+        _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__HVA)); /*0x45fbab*/
         CCFileClass::Construct(&v22, Buffer); /*0x45fbbf*/
         v6 = (void *)((unsigned int *)this)[0]; /*0x45fbc4*/
         if ( v6 ) /*0x45fbcc*/
@@ -1032,16 +1032,16 @@ void BuildingTypeClass::LoadVoxel()
         *(unsigned int *)v22.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         ((Vector *)((int)v23))->Clear(); /*0x45fc36*/
-        *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
+        *(unsigned int *)v22.CDFileClass = (unsigned int)(&off_7E1668); /*0x45fc3f*/
         ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x45fc43*/
       }
-      v21 = _strupr(off_8194A8); /*0x45fc55*/
+      v21 = _strupr((char *)(off_8194A8)); /*0x45fc55*/
       v10 = _strupr(v32); /*0x45fc5e*/
       v11 = strstr(v10, v21); /*0x45fc67*/
       if ( v11 ) /*0x45fc71*/
       {
         *v11 = 66; /*0x45fc73*/
-        v12 = v11 + 1; /*0x45fc76*/
+        v12 = (unsigned char *)(v11 + 1); /*0x45fc76*/
         *v12++ = 65; /*0x45fc77*/
         *v12++ = 82; /*0x45fc7b*/
         *v12 = (unsigned int)(76); /*0x45fc7f*/
@@ -1050,14 +1050,14 @@ void BuildingTypeClass::LoadVoxel()
       *(unsigned int *)v25.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       ((Vector *)((int)v26))->Clear(); /*0x45fc9b*/
-      *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
+      *(unsigned int *)v25.CDFileClass = (unsigned int)(&off_7E1668); /*0x45fca4*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x45fca8*/
     }
     else if ( this->BarrelAnimIsVoxel ) /*0x45fcaf*/
     {
-      strncpy(Destination, this->__pad_1714, 0x80u); /*0x45fccb*/
+      strncpy(Destination,(const char *)(this->__pad_1714), 0x80u); /*0x45fccb*/
     }
-    _makepath(Buffer, 0, 0, Destination, g_Str_File__VXL); /*0x45fcea*/
+    _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__VXL)); /*0x45fcea*/
     CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
     if ( (uint8_t)((CCFileClass *)(&v28))->Open(0) ) /*0x45fd0e*/
     {
@@ -1073,7 +1073,7 @@ void BuildingTypeClass::LoadVoxel()
       else
         v15 = 0; /*0x45fd55*/
       ((unsigned int *)this)[1] = (int)v15; /*0x45fd63*/
-      _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
+      _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__HVA)); /*0x45fd74*/
       CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
       v16 = (void *)((unsigned int *)this)[2]; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
@@ -1095,16 +1095,16 @@ void BuildingTypeClass::LoadVoxel()
           ((Matrix *)((Matrix *)((unsigned int *)this)[2]))->Scale(*(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
+      *(unsigned int *)v22.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       ((Vector *)((int)v23))->Clear(); /*0x45fdff*/
-      *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fe08*/
+      *(unsigned int *)v22.CDFileClass = (unsigned int)(&off_7E1668); /*0x45fe08*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x45fe0c*/
     }
-    *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
+    *(unsigned int *)v28.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     ((Vector *)((int)v29))->Clear(); /*0x45fe2a*/
-    *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
+    *(unsigned int *)v28.CDFileClass = (unsigned int)(&off_7E1668); /*0x45fe36*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v28))->Dtor(); /*0x45fe3d*/
   }
 
@@ -1169,7 +1169,7 @@ int BuildingTypeClass::UpdatePower()
   Checksummer *v54; // [esp+Ch] [ebp+4h]
 
   BuildingTypeClass::ProcessPower((int)this, &v54->crcValue); /*0x464b39*/
-  ((Checksummer *)(v54))->Add_double(this->GateCloseDelay[0], this->GateCloseDelay[1]); /*0x464b4e*/
+  ((Checksummer *)(v54))->Add_double((&this->GateCloseDelay)[0], (&this->GateCloseDelay)[1]); /*0x464b4e*/
   Power::TimerProcess(this->LightVisibility); /*0x464b5c*/
   Power::TimerProcess(this->LightIntensity); /*0x464b6a*/
   Power::TimerProcess(this->LightRedTint); /*0x464b78*/
@@ -1189,7 +1189,7 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(this->MidPoint); /*0x464c3c*/
   Power::TimerProcess(this->DoorStages); /*0x464c4a*/
   Checksummer::Add_Buffer(v54, (uint8_t *)this->BuildingAnimFrame, 72); /*0x464c5a*/
-  Checksummer::Add_Buffer(v54, (uint8_t *)&this->BuildingAnim[12], 1428); /*0x464c6d*/
+  Checksummer::Add_Buffer(v54, (uint8_t *)&(&this->BuildingAnim)[12], 1428); /*0x464c6d*/
   Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1392]); /*0x464c7b*/
   v2 = Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1444]); /*0x464c89*/
   LOBYTE(v2) = this->HoverPad; /*0x464c8e*/

@@ -254,7 +254,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
     if ( v5 ) /*0x750dba*/
       goto LABEL_10; /*0x750dba*/
   LABEL_15:
-    SetAudioSource((gamemd::AudioMixer *)((int)a2), v5, (int)v7); /*0x750e0c*/
+    SetAudioSource((gamemd::AudioMixer *)((int)a2),(unsigned int *)(v5), (int)v7); /*0x750e0c*/
     return v5; /*0x750e16*/
   }
   LABEL_10: v11 = (int *)(v8);
@@ -263,7 +263,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
     v10 = 0x4000; /*0x750dd2*/
   AudioMixer::PlayBuffer((unsigned int *)(v5), v10); /*0x750ddb*/
   ((AudioMixer *)((int)v5))->RequestOrEndBuffer(v12); /*0x750de6*/
-  SetAudioSource((gamemd::AudioMixer *)((int)a2), v5, (int)v7); /*0x750df0*/
+  SetAudioSource((gamemd::AudioMixer *)((int)a2),(unsigned int *)(v5), (int)v7); /*0x750df0*/
   return v5; /*0x750df9*/
 }
 }
@@ -576,10 +576,10 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
   strcpy((char *)this, a2); /*0x752cd4*/
   LOBYTE(this->fallRate) = 0; /*0x752cdf*/
   BYTE1(this->attachedTag) = 0; /*0x752ce2*/
-  BYTE2(this->ambientSoundController[0]) = 0; /*0x752ce5*/
-  this->ambientSoundController[3] = 1; /*0x752ce8*/
-  this->ambientSoundController[4] = 0; /*0x752cef*/
-  this->customSound_controller[0] = 2; /*0x752cf2*/
+  BYTE2((&this->ambientSoundController)[0]) = 0; /*0x752ce5*/
+  (&this->ambientSoundController)[3] = 1; /*0x752ce8*/
+  (&this->ambientSoundController)[4] = 0; /*0x752cef*/
+  (&this->customSound_controller)[0] = 2; /*0x752cf2*/
   if ( g_InfantrySelectState < dword_B1D4A8 /*0x752d2e*/
     || (byte_B1D4AD || !dword_B1D4A8)
     && dword_B1D4B4 > 0
@@ -617,16 +617,16 @@ int CCINIClass::InitFromINIEVA()
 
   v1 = (gamemd::ObjectClass *)(this);
   v13 = (int)this; /*0x753011*/
-  LOBYTE(KeyCount) = INIClass::BinarySearchSection((gamemd::INIClass *)((int)this), g_INI_Key_DialogList) != 0; /*0x75301c*/
+  LOBYTE(KeyCount) = INIClass::BinarySearchSection((gamemd::INIClass *)((int)this),(void *)(g_INI_Key_DialogList)) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = (int)(INIClass::GetKeyCount((gamemd::INIClass *)((char *)v1), g_INI_Key_DialogList));
+    KeyCount = (int)(INIClass::GetKeyCount((gamemd::INIClass *)((char *)v1),(void *)(g_INI_Key_DialogList)));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1), g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1),(gamemd::CCINIClass *)(g_INI_Key_DialogList), v4); /*0x753060*/
       KeyCount = INIClass::GetString( /*0x75306d*/
                    (INIClass *)v1,
                    g_INI_Key_DialogList,
@@ -1066,7 +1066,7 @@ void RenderVoxels()
           v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7571d5*/
           if ( v11 != (int *)-1 ) /*0x7571db*/
           {
-            v12 = (char *)v11 + v4[2]; /*0x7571e4*/
+            v12 = (unsigned char *)((char *)v11 + v4[2]); /*0x7571e4*/
             v11 = (int *)*((uint8_t *)v4 + 50); /*0x7571e8*/
             v22 = v11; /*0x7571ed*/
             if ( *((unsigned char *)v4 + 50) ) /*0x7571e8*/
@@ -1077,9 +1077,9 @@ void RenderVoxels()
                 v13 = v12 + 1; /*0x7571f9*/
                 v14 = (uint8_t)v10; /*0x7571fe*/
                 IDA_LOWORD(v10) = *((unsigned short *)v4 + 23) * (uint8_t)v10; /*0x757206*/
-                IDA_LOWORD(a1) = g_VoxelOffsetTable[v14]; /*0x757210*/
+                IDA_LOWORD(a1) = (&g_VoxelOffsetTable)[v14]; /*0x757210*/
                 a3 += (int)a1; /*0x757218*/
-                IDA_LOWORD(a1) = IDA_HIWORD(g_VoxelOffsetTable[v14]); /*0x75721a*/
+                IDA_LOWORD(a1) = IDA_HIWORD((&g_VoxelOffsetTable)[v14]); /*0x75721a*/
                 a2 += (int)a1; /*0x757222*/
                 a1 = (int *)((char *)a4 + (unsigned int)v10); /*0x757228*/
                 v10 = (int *)((char *)v22 - v14); /*0x75722e*/

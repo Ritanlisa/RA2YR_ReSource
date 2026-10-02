@@ -47,7 +47,7 @@ _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
-  return this; /*0x55481e*/
+  return (_DWORD *)(this); /*0x55481e*/
 
 }
 } // namespace gamemd
@@ -181,7 +181,7 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55515c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x555163*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x555171*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x555171*/
   v5 = (gamemd::LightSourceClass *)(Block); /*0x555186*/
   v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],

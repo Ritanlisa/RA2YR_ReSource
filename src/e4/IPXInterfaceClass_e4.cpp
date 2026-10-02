@@ -60,7 +60,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   struct sockaddr name; // [esp+18h] [ebp-28h] BYREF
   char v12[24]; // [esp+28h] [ebp-18h] BYREF
 
-  v4 = socket((void *)(6),(void *)(2), 1000); /*0x7b0de6*/
+  v4 = socket((void *)(6),(void *)(2),(void *)(1000)); /*0x7b0de6*/
   if ( v4 == -1 ) /*0x7b0deb*/
     return 0; /*0x7b0df5*/
   memset(name.sa_data, 0, 12); /*0x7b0dfe*/
@@ -76,7 +76,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     ((Debug *)this)->Log(); /*0x7b0eae*/
   }
-  else if ( getsockopt((void *)(v4),(void *)(1000), 16397, optval, &optlen) ) /*0x7b0e7a*/
+  else if ( getsockopt((void *)(v4),(void *)(1000),(void *)(16397), optval, &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
     ((Debug *)this)->Log(); /*0x7b0e9f*/
@@ -88,7 +88,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   memset(v12, 0, sizeof(v12)); /*0x7b0ec2*/
   *(unsigned int *)v12 = (unsigned int)(aP1); /*0x7b0ed9*/
   v10 = 24; /*0x7b0edd*/
-  if ( getsockopt((void *)(v4),(void *)(1000), 16391, v12, &v10) == -1 ) /*0x7b0eee*/
+  if ( getsockopt((void *)(v4),(void *)(1000),(void *)(16391), v12, &v10) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
     ((Debug *)this)->Log(); /*0x7b0efc*/
@@ -257,8 +257,8 @@ LABEL_6:
   qmemcpy(&v18[4], (char *)this + 258168, v26 - 4); /*0x7b1657*/
   if ( (*(uint8_t (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
-    ((NetworkID *)(v18))->Assign(&a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = *(unsigned int *)&this->LocalNode[4]; /*0x7b16d5*/
+    ((NetworkID *)(v18))->Assign((unsigned int *)(&a3), (int)&v27, 0); /*0x7b16d0*/
+    v19 = *(unsigned int *)&(&this->LocalNode)[4]; /*0x7b16d5*/
     v20 = *((unsigned int *)this + 6); /*0x7b16d8*/
     p_LocalNetwork = (int *)(&this->LocalNetwork); /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
@@ -590,7 +590,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x7b2a91*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x7b2a9a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x7b2a9a*/
     this->m_8 = a2; /*0x7b2aa2*/
     BYTE1(this->m_C) = a3 == 0; /*0x7b2aa5*/
   }
@@ -717,9 +717,9 @@ int IPXInterfaceClass::GetAddress(SOCKET s, void *a2, void *a3, void *a4)
   WinsockInterfaceClass *v1; // esi
   int optlen; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = s; /*0x7b25e6*/
+  v1 = (gamemd::WinsockInterfaceClass *)(s); /*0x7b25e6*/
   optlen = 4; /*0x7b25fb*/
-  getsockopt((SOCKET)s, 0xFFFF, 4103, (char *)&s, &optlen); /*0x7b2603*/
+  getsockopt((void *)((SOCKET)s), 0xFFFF, 4103, (char *)&s, &optlen); /*0x7b2603*/
   s = 0; /*0x7b261d*/
   return setsockopt((SOCKET)v1, 0xFFFF, 4103, (const char *)&s, optlen); /*0x7b262a*/
 

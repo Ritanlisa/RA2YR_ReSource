@@ -342,7 +342,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
   this->missionTimer[2] = 0; /*0x683307*/
   this->missionTimer[0] = v2; /*0x68330d*/
-  LOBYTE(this->missionTimer_text[0]) = 0; /*0x683313*/
+  LOBYTE((&this->missionTimer_text)[0]) = 0; /*0x683313*/
   v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683319*/
   this->shroudRegrowTimer[2] = 0; /*0x68331f*/
   this->shroudRegrowTimer[0] = v3; /*0x683325*/
@@ -376,8 +376,8 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   ScenarioClass::ResetIntroFlags(this); /*0x6833ee*/
   this->techLevel = 1; /*0x6833f3*/
   this->campaignIndex = -1; /*0x6833fd*/
-  LOBYTE(this->nextScenario[1]) = 0; /*0x683407*/
-  LOBYTE(this->altNextScenario[1]) = 0; /*0x68340a*/
+  LOBYTE((&this->nextScenario)[1]) = 0; /*0x683407*/
+  LOBYTE((&this->altNextScenario)[1]) = 0; /*0x68340a*/
   waypoints = this->waypoints; /*0x683410*/
   v7 = 702; /*0x683416*/
   do /*0x683427*/
@@ -463,15 +463,15 @@ int ScenarioClass::LoadScenarioAndStart(char *Source@<ecx>, char a2@<dl>, double
     else
       v4 = (char *)(*((unsigned int *)dword_A83CFC + a4) + 156); /*0x683af8*/
   }
-  dword_A8B230[375].uniqueId = a4; /*0x683b0a*/
+  (&dword_A8B230)[375].uniqueId = a4; /*0x683b0a*/
   Debug::Log(); /*0x683b10*/
   Debug::Log(); /*0x683b21*/
   strcpy((char *)&(&dword_A8B230)[130].abstractFlags, v4); /*0x683b47*/
-  _strupr((char *)&dword_A8B230[130].abstractFlags); /*0x683b5d*/
+  _strupr((char *)&(&dword_A8B230)[130].abstractFlags); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x683b73*/
   {
-    uniqueId = dword_A8B230[375].uniqueId; /*0x683b7b*/
+    uniqueId = (&dword_A8B230)[375].uniqueId; /*0x683b7b*/
     if ( uniqueId == -1 ) /*0x683b84*/
       goto LABEL_14; /*0x683b84*/
     Field = *(unsigned int *)(*((unsigned int *)dword_A83CFC + uniqueId) + 152); /*0x683b8f*/
@@ -505,7 +505,7 @@ LABEL_21:
   *((unsigned int *)((char *)&v19 + 2)) = (int)&vt_List; /*0x683c29*/
   memset((unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
   memset(&((char *)&v19), 0, 9); /*0x683c42*/
-  *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x683c4e*/
+  *(unsigned int *)v19.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
   if ( ((CCINIClass *)(&v19))->Load((int)&v20, 1, 0) ) /*0x683c67*/
   {
@@ -526,10 +526,10 @@ LABEL_21:
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
-  *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x683cc9*/
+  *(unsigned int *)v20.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
   ((Vector *)((int)v21))->Clear(); /*0x683cd8*/
-  *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x683ce1*/
+  *(unsigned int *)v20.CDFileClass = (unsigned int)(&off_7E1668); /*0x683ce1*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x683ce9*/
   ((HashTable *)((INIClass *)&v19))->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
@@ -540,13 +540,13 @@ LABEL_21:
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x683d32*/
     goto LABEL_21; /*0x683d32*/
   }
-  referenceCount = dword_A8B230[143].referenceCount; /*0x683d5e*/
+  referenceCount = (&dword_A8B230)[143].referenceCount; /*0x683d5e*/
   if ( referenceCount != -1 ) /*0x683d67*/
     wsprintfA(v23, "%s.VQA", *(const char **)(g_MissionQueueFrame.localVariables[580] + 4 * referenceCount)); /*0x683d80*/
-  if ( dword_A8B230[375].abstractFlags > 0 ) /*0x683d95*/
+  if ( (&dword_A8B230)[375].abstractFlags > 0 ) /*0x683d95*/
     LoadScreen::RenderLoop(v15); /*0x683d97*/
   if ( a2 ) /*0x683da0*/
-    Movie::PlayWrapper((int)dword_A8B230[144].vtable1, (int)v4, v9, 1, 1, 1); /*0x683db6*/
+    Movie::PlayWrapper((int)(&dword_A8B230)[144].vtable1, (int)v4, v9, 1, 1, 1); /*0x683db6*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[33] /*0x683dd6*/
     || *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[34] )
   {
@@ -557,20 +557,20 @@ LABEL_21:
   AudioOptionsClass::ApplySettings((AudioOptionsClass *)&stru_A8EB00.ObjectTypeClass[24]); /*0x683e02*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x683e10*/
   Frame::Present((int)g_DSurface_Hidden, 0, (int)v4, v9, 0, (int)v15, v16, v17); /*0x683e1c*/
-  if ( dword_A8B230[43].vtable2 == (void *)-1 ) /*0x683e35*/
+  if ( (&dword_A8B230)[43].vtable2 == (void *)-1 ) /*0x683e35*/
   {
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x683e26*/
+    p_vtable2 = &(&dword_A8B230)[43].vtable2; /*0x683e26*/
     *p_vtable2 = TimerGetTicks(); /*0x683e3f*/
   }
-  if ( dword_A8B230[202].vtable2 == (void *)-1 ) /*0x683e50*/
+  if ( (&dword_A8B230)[202].vtable2 == (void *)-1 ) /*0x683e50*/
     ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x683e66*/
   else
-    Theme::QueueSong((int)&unk_A83D10, (int)dword_A8B230[202].vtable2); /*0x683e58*/
+    Theme::QueueSong((int)&unk_A83D10, (int)(&dword_A8B230)[202].vtable2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 1; /*0x683e75*/
   byte_A8E378 = 1; /*0x683e7f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x683e86*/
-    ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x683e8f*/
+    ChatMessageWOL(0,(wchar_t *)(&g_TypeClass_DefaultString)); /*0x683e8f*/
   return 1; /*0x683d4a*/
 
 }
@@ -588,15 +588,15 @@ int ScenarioClass::CleanupTemporary()
 
   sub_406F00(); /*0x683eb1*/
   dword_83D834 = sub_4072B0(g_MixerState); /*0x683ecc*/
-  EndBufferMixer((int *)g_MixerState, 0x4000); /*0x683ed1*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x683ed1*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x683ee2*/
   {
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x683eff*/
+    if ( (&dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683eff*/
       TimerGetTicks(); /*0x683f04*/
     Debug::Log(); /*0x683f13*/
     v1 = (AsyncIO *)dword_A8B230; /*0x683f18*/
-    p_vtable2 = &dword_A8B230[43].vtable2; /*0x683f27*/
-    if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x683f31*/
+    p_vtable2 = &(&dword_A8B230)[43].vtable2; /*0x683f27*/
+    if ( (&dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683f31*/
     {
       Ticks = TimerGetTicks(); /*0x683f36*/
       v4 = (char *)p_vtable2[2]; /*0x683f3d*/
@@ -628,16 +628,16 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
 
   unsigned char *result; // eax
 
-  result = dword_A8B230[43].NeedsSaveOrLink; /*0x684186*/
+  result = (&dword_A8B230)[43].NeedsSaveOrLink; /*0x684186*/
   if ( result ) /*0x68418e*/
   {
-    dword_A8B230[43].NeedsSaveOrLink = result - 1; /*0x684195*/
-    result = dword_A8B230; /*0x68419b*/
-    if ( !dword_A8B230[43].NeedsSaveOrLink ) /*0x6841a0*/
+    (&dword_A8B230)[43].NeedsSaveOrLink = result - 1; /*0x684195*/
+    result = (unsigned char *)(dword_A8B230); /*0x68419b*/
+    if ( !(&dword_A8B230)[43].NeedsSaveOrLink ) /*0x6841a0*/
     {
       if ( !byte_B054CC ) /*0x6841b6*/
       {
-        if ( BYTE2(dword_A8B230[381].vtable3) == 1 ) /*0x6841bf*/
+        if ( BYTE2((&dword_A8B230)[381].vtable3) == 1 ) /*0x6841bf*/
         {
           while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x6841c9*/
             (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6841d8*/

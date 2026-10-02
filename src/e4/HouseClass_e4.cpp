@@ -43,7 +43,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   else
     v9 = 0; /*0x43b64b*/
   BuildingClass::SetField95((BuildingClass *)v9, arg0); /*0x43b654*/
-  ((Function *)((Function *)v9))->Method_424CA0(aP0); /*0x43b65c*/
+  ((Function *)((Function *)v9))->Method_424CA0((int)(aP0)); /*0x43b65c*/
   *((unsigned char *)v9 + 413) = 1; /*0x43b661*/
   return v9; /*0x43b66a*/
 
@@ -585,7 +585,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((char *)this + 11) = (int)&vt_HouseClass; /*0x4f5dfb*/
   if ( &g_INI_DefaultBuffer ) /*0x4f5e04*/
   {
-    strncpy(Destination, &g_INI_DefaultBuffer, 0x1Fu); /*0x4f5e18*/
+    strncpy(Destination,(const char *)(&g_INI_DefaultBuffer), 0x1Fu); /*0x4f5e18*/
     Destination[31] = 0; /*0x4f5e20*/
   }
   else
@@ -595,7 +595,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   if ( Destination != (char *)this + 90121 ) /*0x4f5e30*/
     qmemcpy((char *)this + 90121, Destination, 0x20u); /*0x4f5e41*/
   *((unsigned short *)this + 45077) = 0; /*0x4f5e46*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)((char *)this + 1)); /*0x4f5e4e*/
+  AbstractClass::GenerateUniqueID((int)((AbstractClass *)((char *)this + 1))); /*0x4f5e4e*/
   v11 = *((char *)this + 13); /*0x4f5e53*/
   if ( v11 ) /*0x4f5e58*/
     *((char *)this + 22549) = *(unsigned int *)(v11 + 192); /*0x4f5e60*/
@@ -630,7 +630,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
          0) )
   {
     v14 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 7))++; /*0x4f5f4c*/
-    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v14) = this; /*0x4f5f5b*/
+    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 4)) + 4 * v14) = (unsigned int)(this); /*0x4f5f5b*/
   }
   if ( *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32) < *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24) /*0x4f5f92*/
     || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 29)) || !*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24))

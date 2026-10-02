@@ -1539,7 +1539,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                   break; /*0x7d2004*/
               }
               ++v76; /*0x7d2009*/
-              v16 = fgetc_0(Stream); /*0x7d2011*/
+              v16 = fgetc_0((FILE *)(Stream)); /*0x7d2011*/
               C = v16; /*0x7d2014*/
             }
           }
@@ -1562,7 +1562,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         }
         if ( v75 > 0 ) /*0x7d1b5e*/
           v68 = 1; /*0x7d1b60*/
-        v30 = asc_87C920; /*0x7d1b64*/
+        v30 = (char *)(asc_87C920); /*0x7d1b64*/
         goto LABEL_140; /*0x7d1b69*/
       case 'd': /*0x7d1910*/
         goto LABEL_181; /*0x7d1922*/
@@ -1586,7 +1586,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
       v19 = Stream; /*0x7d198c*/
       --v74; /*0x7d198f*/
       ++v76; /*0x7d1992*/
-      v17 = fgetc_0(Stream); /*0x7d199b*/
+      v17 = fgetc_0((FILE *)(Stream)); /*0x7d199b*/
       C = v17; /*0x7d199e*/
   LABEL_70:
       if ( !v64 || v74 > 349 ) /*0x7d19b3*/
@@ -1598,7 +1598,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         ++v65; /*0x7d19ea*/
         *v18++ = v17; /*0x7d19ed*/
         ++v76; /*0x7d19f0*/
-        v17 = fgetc_0(v19); /*0x7d19f9*/
+        v17 = fgetc_0((FILE *)(v19)); /*0x7d19f9*/
         C = v17; /*0x7d19fc*/
       }
       if ( ::SrcCh == (unsigned char)v17 )
@@ -1606,7 +1606,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         if ( v74-- )
         {
           ++v76; /*0x7d1a13*/
-          v17 = fgetc_0(v19); /*0x7d1a1c*/
+          v17 = fgetc_0((FILE *)(v19)); /*0x7d1a1c*/
           *v18 = ::SrcCh; /*0x7d1a23*/
           C = v17; /*0x7d1a26*/
           ++v18; /*0x7d1a29*/
@@ -1617,7 +1617,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
             ++v65; /*0x7d1a58*/
             *v18++ = v17; /*0x7d1a5b*/
             ++v76; /*0x7d1a5e*/
-            v17 = fgetc_0(v19); /*0x7d1a67*/
+            v17 = fgetc_0((FILE *)(v19)); /*0x7d1a67*/
             C = v17; /*0x7d1a6a*/
           }
         }
@@ -1628,7 +1628,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         {
           *v18++ = 101; /*0x7d1a91*/
           ++v76; /*0x7d1a95*/
-          v26 = fgetc_0(v19); /*0x7d1a99*/
+          v26 = fgetc_0((FILE *)(v19)); /*0x7d1a99*/
           v17 = v26; /*0x7d1a9e*/
           C = v26; /*0x7d1aa4*/
           if ( v26 == 45 ) /*0x7d1aa7*/
@@ -1655,7 +1655,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
             *v18++ = v17; /*0x7d1b02*/
   LABEL_97:
             ++v76; /*0x7d1ac2*/
-            v17 = fgetc_0(v19); /*0x7d1acb*/
+            v17 = fgetc_0((FILE *)(v19)); /*0x7d1acb*/
             C = v17; /*0x7d1ace*/
           }
         }
@@ -1712,8 +1712,8 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
   LABEL_257:
       result = v60; /*0x7d2119*/
       if ( !v60 && !v69 ) /*0x7d2123*/
-        return -1; /*0x7d2125*/
-      return result; /*0x7d2128*/
+        return (gamemd::ControlClass **)(-1); /*0x7d2125*/
+      return (gamemd::ControlClass **)(result); /*0x7d2128*/
     }
   LABEL_251:
     v4 = *v3; /*0x7d20d7*/
@@ -1727,7 +1727,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
   LABEL_256:
   if ( C == -1 ) /*0x7d2117*/
     goto LABEL_257; /*0x7d2117*/
-  return v60; /*0x7d212d*/
+  return (gamemd::ControlClass **)(v60); /*0x7d212d*/
 }
 }
 // 0x7D2132
@@ -1804,9 +1804,9 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
   int v55; // [esp+458h] [ebp-4h]
   wchar_t *v56; // [esp+468h] [ebp+Ch]
 
-  v56 = aP1 + 1; /*0x7d21ca*/
+  v56 = (wchar_t *)(aP1 + 1); /*0x7d21ca*/
   v4 = 0; /*0x7d21cf*/
-  v5 = *aP1; /*0x7d21d1*/
+  v5 = (wchar_t)(*aP1); /*0x7d21d1*/
   v6 = *aP1 == 0; /*0x7d21d5*/
   j = 0; /*0x7d21d9*/
   v51 = 0; /*0x7d21dc*/
@@ -1819,8 +1819,8 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
       if ( v5 < 0x20u || v5 > 0x78u ) /*0x7d2201*/
         v7 = 0; /*0x7d2211*/
       else
-        v7 = byte_7F97CC[v5] & 0xF; /*0x7d220c*/
-      v42 = byte_7F97EC[8 * v7 + v4] >> 4; /*0x7d2221*/
+        v7 = (&byte_7F97CC)[v5] & 0xF; /*0x7d220c*/
+      v42 = (&byte_7F97EC)[8 * v7 + v4] >> 4; /*0x7d2221*/
       switch ( v42 ) /*0x7d222c*/
       {
         case 0: /*0x7d222c*/
@@ -1972,7 +1972,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
                   v52 = 1; /*0x7d272a*/
                 if ( !v22 ) /*0x7d273b*/
                   v50 = 0; /*0x7d273d*/
-                v53 = v36; /*0x7d2747*/
+                v53 = (char *)(v36); /*0x7d2747*/
                 while ( 1 ) /*0x7d274a*/
                 {
                   v23 = v52--; /*0x7d274a*/
@@ -1987,7 +1987,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
                   v26 = v53--; /*0x7d278b*/
                   *v26 = v24; /*0x7d2791*/
                 }
-                v27 = v36 - v53++; /*0x7d279b*/
+                v27 = (unsigned char *)(v36 - v53++); /*0x7d279b*/
                 j = v27; /*0x7d27a5*/
                 if ( (v55 & 0x200) != 0 && (*v53 != 48 || !j) ) /*0x7d27b6*/
                 {
@@ -2048,8 +2048,8 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
               }
               else
               {
-                v53 = off_87C4C8; /*0x7d2519*/
-                v17 = strlen(off_87C4C8); /*0x7d251d*/
+                v53 = (char *)(off_87C4C8); /*0x7d2519*/
+                v17 = strlen((const char *)(off_87C4C8)); /*0x7d251d*/
               }
               goto LABEL_81; /*0x7d2509*/
             }
@@ -2137,8 +2137,8 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
               }
               if ( !v11 ) /*0x7d23eb*/
               {
-                v12 = off_87C4C8; /*0x7d23ed*/
-                v53 = off_87C4C8; /*0x7d23f3*/
+                v12 = (char *)(off_87C4C8); /*0x7d23ed*/
+                v53 = (char *)(off_87C4C8); /*0x7d23f3*/
               }
               for ( j = 0; j < v10; ++j ) /*0x7d23fc*/
               {

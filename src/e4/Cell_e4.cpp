@@ -745,7 +745,7 @@ Coord * * Cell::IsValidDestination(short * a2)
       v16[2] = GroundHeight; /*0x4dcefa*/
       v16[0] = v7; /*0x4dcf0b*/
       v16[1] = (v6 << 8) + 128; /*0x4dcf15*/
-      if ( (uint8_t)Cell::IsPassable((IUnknown *)(v16)) ) /*0x4dcf19*/
+      if ( (uint8_t)Cell::IsPassable((unsigned int *)((IUnknown *)(v16))) ) /*0x4dcf19*/
         return 0; /*0x4dcf19*/
     }
   }
@@ -961,7 +961,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
         v7 = (unsigned int *)(&unk_ABDC50); /*0x56eb41*/
       }
       if ( v7[14] == v23 ) /*0x56eb4f*/
-        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)(&aP1), v9, 1)); /*0x56eb5d*/
+        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)(&aP1),(IUnknown *)(v9), 1)); /*0x56eb5d*/
       v12 = (v12 + 1) & 7; /*0x56eb63*/
       --v13; /*0x56eb66*/
     }
@@ -1025,7 +1025,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
     v12 = v8[14]; /*0x56ec58*/
     v10 = (int)(aP1); /*0x56ec5b*/
     if ( aP1 == v12 ) /*0x56ec61*/
-      return result; /*0x56ec61*/
+      return (gamemd::ObjectClass **)(result); /*0x56ec61*/
   }
   if ( v8[14] != v10 ) /*0x56ec70*/
   {
@@ -1039,26 +1039,26 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
     {
       v14 = v13 & 7; /*0x56ec9f*/
       v15 = (&dword_89F688)[v14]; /*0x56eca2*/
-      LOWORD(v14) = v5[1] + HIWORD(dword_89F688[v14]); /*0x56ecb8*/
+      LOWORD(v14) = v5[1] + HIWORD((&dword_89F688)[v14]); /*0x56ecb8*/
       LOWORD(a5) = *v5 + v15; /*0x56ecbc*/
       HIWORD(a5) = v14; /*0x56ecc4*/
       v16 = (int16_t)v14 << 9; /*0x56ecd0*/
       v17 = (int16_t)a5 + v16 < 0; /*0x56ecd3*/
       v18 = (int16_t)a5 + v16; /*0x56ecd3*/
-      aP0 = (int16_t *)a5; /*0x56ecd5*/
+      aP0 = (IUnknown *)((int16_t *)a5); /*0x56ecd5*/
       if ( v17 || v18 >= 0x40000 || (v19 = *(unsigned int **)(dword_87F924 + 4 * v18)) == 0 ) /*0x56eced*/
       {
         dword_ABDC74 = a5; /*0x56ecef*/
-        v19 = &unk_ABDC50; /*0x56ecf5*/
+        v19 = (unsigned int *)(&unk_ABDC50); /*0x56ecf5*/
       }
       if ( v19[14] == v12 ) /*0x56ecfd*/
-        Cell::SetTileType(&aP0, v10, v12, aP3, 1); /*0x56ed11*/
+        Cell::SetTileType((IUnknown *)(&aP0), v10, v12, aP3, 1); /*0x56ed11*/
       v13 = (v13 + 1) & 7; /*0x56ed1b*/
-      result = --aP1; /*0x56ed1e*/
+      result = (char)(--aP1); /*0x56ed1e*/
     }
     while ( aP1 ); /*0x56ed23*/
   }
-  return result; /*0x56ed29*/
+  return (gamemd::ObjectClass **)(result); /*0x56ed29*/
 
 }
 }
@@ -1075,7 +1075,7 @@ int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(dword_87F924 + 4 * v2)) == 0 ) /*0x578af4*/
   {
     dword_ABDC74 = *(unsigned int *)aP1; /*0x578af8*/
-    v3 = &unk_ABDC50; /*0x578afd*/
+    v3 = (unsigned int *)(&unk_ABDC50); /*0x578afd*/
   }
   v4 = v3[57]; /*0x578b03*/
   if ( !v4 ) /*0x578b0c*/
@@ -1089,7 +1089,7 @@ LABEL_10:
     if ( !v4 ) /*0x578b52*/
       return 1; /*0x578b52*/
   }
-  if ( !((Object *)(*(unsigned int **)(v4 + 540)))->IsAlliedWithObjectHouse(aP0) ) /*0x578b39*/
+  if ( !((Object *)(*(unsigned int **)(v4 + 540)))->IsAlliedWithObjectHouse((int)(aP0)) ) /*0x578b39*/
   {
     if ( (uint8_t)BuildingClass::IsPoweredOn(v4) ) /*0x578b44*/
       return 1; /*0x578b4b*/
@@ -1149,8 +1149,8 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   int16_t v44[4]; // [esp+30h] [ebp-8h] BYREF
 
   v35 = *(char *)(aP0 + 283); /*0x579b89*/
-  aP0 = *(unsigned int *)(aP0 + 36); /*0x579b8d*/
-  *(unsigned int *)v44 = aP0; /*0x579b91*/
+  aP0 = (gamemd::MouseClass *)(*(unsigned int *)(aP0 + 36)); /*0x579b8d*/
+  *(unsigned int *)v44 = (unsigned int)(aP0); /*0x579b91*/
   if ( SHIWORD(aP0) + (int16_t)aP0 <= dword_87F8DC /*0x579bdf*/
     || (int16_t)aP0 - SHIWORD(aP0) >= dword_87F8DC
     || SHIWORD(aP0) - (int16_t)aP0 >= dword_87F8DC
@@ -1171,7 +1171,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v36 = (char *)&unk_ABDC50; /*0x579c33*/
-    dword_ABDC74 = aP0; /*0x579c3b*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579c3b*/
   }
   LOWORD(aP0) = v44[0] + 1; /*0x579c45*/
   v4 = v44[1] << 9; /*0x579c4d*/
@@ -1181,7 +1181,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v6 >= 0x40000 || (v7 = *(char **)(dword_87F924 + 4 * v6)) == 0 ) /*0x579c65*/
   {
     v38 = (char *)&unk_ABDC50; /*0x579c71*/
-    dword_ABDC74 = aP0; /*0x579c79*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579c79*/
   }
   else
   {
@@ -1198,9 +1198,9 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v41 = (char *)&unk_ABDC50; /*0x579cb3*/
-    dword_ABDC74 = aP0; /*0x579cbb*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579cbb*/
   }
-  aP0 = *(unsigned int *)v44 + 0x10000; /*0x579cc8*/
+  aP0 = (gamemd::MouseClass *)(*(unsigned int *)v44 + 0x10000); /*0x579cc8*/
   v11 = v8 << 9; /*0x579cd3*/
   v5 = v44[0] + v11 < 0; /*0x579cd6*/
   v12 = v44[0] + v11; /*0x579cd6*/
@@ -1208,7 +1208,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v12 >= 0x40000 || (v13 = *(char **)(dword_87F924 + 4 * v12)) == 0 ) /*0x579cea*/
   {
     v40 = (char *)&unk_ABDC50; /*0x579cf6*/
-    dword_ABDC74 = aP0; /*0x579cfe*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579cfe*/
   }
   else
   {
@@ -1225,7 +1225,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v17 >= 0x40000 || (v18 = *(char **)(dword_87F924 + 4 * v17)) == 0 ) /*0x579d2a*/
   {
     v39 = (char *)&unk_ABDC50; /*0x579d36*/
-    dword_ABDC74 = aP0; /*0x579d3e*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579d3e*/
   }
   else
   {
@@ -1239,7 +1239,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v20 >= 0x40000 || !*(unsigned int *)(dword_87F924 + 4 * v20) ) /*0x579d63*/
   {
     v37 = (char *)&unk_ABDC50; /*0x579d74*/
-    dword_ABDC74 = aP0; /*0x579d7c*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579d7c*/
   }
   else
   {
@@ -1255,7 +1255,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v23 = (char *)&unk_ABDC50; /*0x579db5*/
-    dword_ABDC74 = aP0; /*0x579dba*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579dba*/
   }
   HIWORD(aP0) = v42; /*0x579dc6*/
   LOWORD(aP0) = v44[0]; /*0x579dcb*/
@@ -1267,7 +1267,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v26 = (char *)&unk_ABDC50; /*0x579df0*/
-    dword_ABDC74 = aP0; /*0x579df5*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579df5*/
   }
   v27 = v14 + (int16_t)v42; /*0x579e07*/
   if ( v27 <= dword_87F8DC /*0x579e27*/
@@ -1286,23 +1286,23 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     else
       v29 = 64; /*0x579e46*/
   }
-  aP0 = *(unsigned int *)v44 - 0x10000; /*0x579e6a*/
+  aP0 = (gamemd::MouseClass *)(*(unsigned int *)v44 - 0x10000); /*0x579e6a*/
   if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x579e9a*/
     && v26[283] == v28 + 4
     && !CellLand::IsBuildable((int)v26) )
   {
     v29 |= 0x80u; /*0x579ea3*/
   }
-  aP0 = -65535; /*0x579eba*/
-  v43 = *((CellStruct *)(v44))->Add(&v42, &aP0); /*0x579ed7*/
+  aP0 = (gamemd::MouseClass *)(-65535); /*0x579eba*/
+  v43 = (int)(*((CellStruct *)(v44))->Add((unsigned int *)(&v42), &aP0)); /*0x579ed7*/
   if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&v43) /*0x579ef6*/
     && v36[283] == v28 + 4
     && !CellLand::IsBuildable((int)v36) )
   {
     v29 |= 1u; /*0x579eff*/
   }
-  aP0 = 0xFFFF; /*0x579f10*/
-  v43 = *((CellStruct *)(v44))->Add(&v42, &aP0); /*0x579f2d*/
+  aP0 = (gamemd::MouseClass *)(0xFFFF); /*0x579f10*/
+  v43 = (int)(*((CellStruct *)(v44))->Add((unsigned int *)(&v42), &aP0)); /*0x579f2d*/
   if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&v43) /*0x579f4c*/
     && v37[283] == v28 + 4
     && !CellLand::IsBuildable((int)v37) )

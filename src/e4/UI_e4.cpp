@@ -881,7 +881,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
     else
       v6 = 8; /*0x5ebe1b*/
     if ( (int)a2 > v6 ) /*0x5ebe22*/
-      a2 = (ObjectClass *)v6; /*0x5ebe24*/
+      a2 = (int)((ObjectClass *)v6); /*0x5ebe24*/
   }
   if ( a4 && !(*(uint8_t (**)(int))(*(unsigned int *)a4 + 64))(a4) || Network::IsMultiplayerActive() ) /*0x5ebe37*/
   {
@@ -912,7 +912,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   }
   else
   {
-    UpdateMultiplayerLobbySlots((HWND)aP0, a2, v8 - (unsigned int)a2); /*0x5ebe8b*/
+    UpdateMultiplayerLobbySlots((HWND)aP0,(gamemd::ObjectClass *)(a2), v8 - (unsigned int)a2); /*0x5ebe8b*/
     Lobby::SetupPlayerWidgets(aP0); /*0x5ebe92*/
   }
 }
@@ -938,11 +938,11 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
   v6 = (char **)&dword_A8DA90; /*0x79395c*/
   do /*0x79399d*/
   {
-    v7 = ToWideStringChar(*v6); /*0x793964*/
-    if ( !_strcmpi(v7, a1) ) /*0x79396a*/
+    v7 = ToWideStringChar((IUnknown *)(*v6)); /*0x793964*/
+    if ( !_strcmpi(v7,(const char *)(a1)) ) /*0x79396a*/
       v13 = v5; /*0x793976*/
-    v8 = ToWideStringChar(*v6); /*0x79397d*/
-    result = (unsigned int *)_strcmpi(v8, a2); /*0x793983*/
+    v8 = ToWideStringChar((IUnknown *)(*v6)); /*0x79397d*/
+    result = (unsigned int *)_strcmpi(v8,(const char *)(a2)); /*0x793983*/
     if ( !result ) /*0x79398d*/
       v12 = v5; /*0x79398f*/
     ++v6; /*0x793993*/
@@ -958,7 +958,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
       v11 = *(result - 1); /*0x7939b0*/
       if ( v11 == v13 && *result == v12 ) /*0x7939c3*/
       {
-        dword_A8DE4C[2 * v10] = a3; /*0x7939e8*/
+        (&dword_A8DE4C)[2 * v10] = a3; /*0x7939e8*/
         return result; /*0x7939f3*/
       }
       if ( v11 == v12 && *result == v13 ) /*0x7939cd*/
@@ -968,7 +968,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
       if ( v10 >= dword_A8E04C ) /*0x7939d5*/
         return result; /*0x7939d5*/
     }
-    dword_A8DE50[2 * v10] = a3; /*0x7939fa*/
+    (&dword_A8DE50)[2 * v10] = a3; /*0x7939fa*/
     return (unsigned int *)a3; /*0x7939f6*/
   }
   return result; /*0x7939d7*/
@@ -991,7 +991,7 @@ HWND sub_5E2340()
   HWND result; // eax
   wchar_t *StringCSF; // eax
 
-  Current = Dialog::GetCurrent(); /*0x5e2341*/
+  Current = (HWND)(Dialog::GetCurrent()); /*0x5e2341*/
   DlgItem = GetDlgItem(Current, 1439); /*0x5e2354*/
   result = (HWND)SendMultiplayerStartSignal_Start(0); /*0x5e2356*/
   if ( result != (HWND)1 ) /*0x5e235e*/
@@ -1019,8 +1019,8 @@ LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
   signed int Counta; // [esp+28h] [ebp+4h]
 
   memset(&word_AC029C, 0, 0x400u); /*0x5e29b5*/
-  wcsncpy(&word_AC029C, Source, Count); /*0x5e29c2*/
-  v5 = wcschr(&word_AC029C, 0xDu); /*0x5e29ce*/
+  wcsncpy((wchar_t *)(&word_AC029C), Source, Count); /*0x5e29c2*/
+  v5 = (wchar_t *)(wcschr(&word_AC029C, 0xDu)); /*0x5e29ce*/
   if ( v5 || (v5 = wcschr(&word_AC029C, 0xAu)) != 0 ) /*0x5e29eb*/
     *v5 = 0; /*0x5e29ed*/
   v11 = SendMessageA(hWnd, 0x49Du, 0, 1); /*0x5e2a0e*/
@@ -1073,8 +1073,8 @@ bool UI_Connect(HWND hWnd, LONG a2, LONG a3)
   v10 = *(struct tagPOINT *)&g_DisplayWidth; /*0x623185*/
   Point.x = 0; /*0x623198*/
   Point.y = 0; /*0x6231a2*/
-  ClientToScreen(g_hWnd, &Point); /*0x6231ae*/
-  ClientToScreen(g_hWnd, &v10); /*0x6231bc*/
+  ClientToScreen((HWND)(g_hWnd), &Point); /*0x6231ae*/
+  ClientToScreen((HWND)(g_hWnd), &v10); /*0x6231bc*/
   GetWindowRect(hWnd, &Rect); /*0x6231c4*/
   Rect.right -= Rect.left; /*0x6231d8*/
   Rect.bottom -= Rect.top; /*0x6231e5*/
@@ -1143,10 +1143,10 @@ int sub_63A120(char a1, char a2)
   else
     v2 = 2; /*0x63a130*/
   if ( a1 ) /*0x63a137*/
-    result = dword_AC4BF4[v2] + 1; /*0x63a140*/
+    result = (&dword_AC4BF4)[v2] + 1; /*0x63a140*/
   else
     result = 1; /*0x63a143*/
-  if ( dword_AC4BF4[v2] < result ) /*0x63a153*/
+  if ( (&dword_AC4BF4)[v2] < result ) /*0x63a153*/
   {
     if ( a2 ) /*0x63a157*/
     {
@@ -1159,9 +1159,9 @@ int sub_63A120(char a1, char a2)
     {
       v4 = aMsgPlanningmod_11; /*0x63a185*/
     }
-    StringCSF = GetStringCSF(v4, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a18a*/
+    StringCSF = GetStringCSF(v4, 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a18a*/
     result = AddMessageListPlayerMessage(StringCSF, 480); /*0x63a196*/
-    ++dword_AC4BF4[v2]; /*0x63a19b*/
+    ++(&dword_AC4BF4)[v2]; /*0x63a19b*/
   }
   return result; /*0x63a1a2*/
 }
@@ -1182,9 +1182,9 @@ char UI_Handle(MouseClass * aP0, int a2)
     result = (char)dword_A8ECC8; /*0x63aae1*/
     if ( (int)dword_A8ECC8 <= 0 ) /*0x63aae8*/
     {
-      dword_AC4C68 = aP0; /*0x63aaf2*/
+      dword_AC4C68 = (unsigned int)(aP0); /*0x63aaf2*/
       dword_AC4C6C = a2; /*0x63aaf7*/
-      return aP0; /*0x63aaea*/
+      return (char)(aP0); /*0x63aaea*/
     }
   }
   return result; /*0x63aafd*/
@@ -1223,7 +1223,7 @@ char sub_63AB00(int a1, int a2)
 namespace gamemd {
 IUnknown * UI_Delete_Delete_63AC60()
 {
-  return dword_AC4BF0; /*0x63ac65*/
+  return (IUnknown *)(dword_AC4BF0); /*0x63ac65*/
 }
 } // namespace gamemd
 
@@ -1285,11 +1285,11 @@ int sub_642E80(int * a1, unsigned int * a2)
   int16_t v9; // [esp+32h] [ebp-2h]
 
   Instance = TextRenderer::GetInstance(); /*0x642e97*/
-  v4 = v8; /*0x642e99*/
+  v4 = (unsigned short *)(v8); /*0x642e99*/
   v5 = 15; /*0x642e9d*/
   do /*0x642eb6*/
   {
-    *v4++ = *(unsigned short *)CharToWideString(g_Str_W); /*0x642eaf*/
+    *v4++ = *(unsigned short *)CharToWideString((unsigned char *)(g_Str_W)); /*0x642eaf*/
     --v5; /*0x642eb5*/
   }
   while ( v5 ); /*0x642eb6*/
@@ -1317,11 +1317,11 @@ int * E4Recv_643670::UI_Render_643670()
   int16_t v14; // [esp+42h] [ebp-2h]
 
   Instance = TextRenderer::GetInstance(); /*0x643680*/
-  v6 = v13; /*0x643682*/
+  v6 = (unsigned short *)(v13); /*0x643682*/
   v7 = 15; /*0x643686*/
   do /*0x64369f*/
   {
-    *v6++ = *(unsigned short *)CharToWideString(g_Str_W); /*0x643698*/
+    *v6++ = *(unsigned short *)CharToWideString((unsigned char *)(g_Str_W)); /*0x643698*/
     --v7; /*0x64369e*/
   }
   while ( v7 ); /*0x64369f*/

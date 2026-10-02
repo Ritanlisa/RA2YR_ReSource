@@ -313,7 +313,7 @@ int __thiscall UnitClass::GetExitCell(int a1,unsigned int *a2,unsigned int *a3)
     result = a1->referenceCount; /*0x54e4b8*/
     v14 = a1->uniqueId; /*0x54e4bb*/
     a1->referenceCount = result + 1; /*0x54e4c1*/
-    *(unsigned int *)(v14 + 4 * result) = v6; /*0x54e4c4*/
+    *(unsigned int *)(v14 + 4 * result) = (unsigned int)(v6); /*0x54e4c4*/
   }
   return result; /*0x54e3d8*/
 }
@@ -683,7 +683,7 @@ int UnitClass::Deploy(void * a1)
         v36 = (unsigned int)((AnimClass *)RA2_OPNEW(0x1C8u)); /*0x719747*/
         if ( v36 ) /*0x719751*/
         {
-          v37 = ((unsigned int *)v2)[0]; /*0x719758*/
+          v37 = (int *)(((unsigned int *)v2)[0]); /*0x719758*/
           v56 = *v37; /*0x71976b*/
           v57 = v37[1]; /*0x719772*/
           v58 = v37[2]; /*0x71977e*/
@@ -710,10 +710,10 @@ int UnitClass::Deploy(void * a1)
       (*(void (**)(char *))(*((unsigned int *)a1 - 1) + 40))((char *)a1 - 4); /*0x719b99*/
       return 0; /*0x719bac*/
     case 2: /*0x719806*/
-      v38 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x71982c*/
+      v38 = (unsigned int)((AnimClass *)RA2_OPNEW(0x1C8u)); /*0x71982c*/
       if ( v38 ) /*0x719836*/
       {
-        v39 = ((unsigned int *)v2)[0]; /*0x71983c*/
+        v39 = (int *)(((unsigned int *)v2)[0]); /*0x71983c*/
         v56 = *v39; /*0x71984d*/
         v57 = v39[1]; /*0x719854*/
         v58 = v39[2]; /*0x719860*/
@@ -728,11 +728,11 @@ int UnitClass::Deploy(void * a1)
           0);
       }
       (*((void (**)(FootClass *, unsigned int))((unsigned int *)v2)[0]->vtable1 + 73))(((unsigned int *)v2)[0], 0); /*0x71987e*/
-      v40 = ((unsigned int *)v2)[0]; /*0x719884*/
+      v40 = (ra2::game::FootClass *)(((unsigned int *)v2)[0]); /*0x719884*/
       v41 = *(unsigned int *)((*((int (**)(FootClass *))v40->vtable1 + 33))(v40) + 1400); /*0x719891*/
       if ( v41 != -1 || (v41 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 540), v41 != -1) ) /*0x7198ab*/
       {
-        v42 = ((unsigned int *)v40)[0]; /*0x7198ad*/
+        v42 = (int *)(((unsigned int *)v40)[0]); /*0x7198ad*/
         v56 = *v42; /*0x7198b6*/
         v57 = v42[1]; /*0x7198bd*/
         v58 = v42[2]; /*0x7198c6*/

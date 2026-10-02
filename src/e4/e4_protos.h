@@ -855,8 +855,8 @@ class MSG;
 class WCHAR;
 
 
-// G41.46: fwd for supply-proto types (in-place visibility)
-class FILE;
+// G41.46/G42.29j: FILE is a typedef -- using, not a class fwd (::FILE shadow fix)
+using ::FILE;
 
 
 // G41.48 class fwd supply (visibility-corrected rerun)

@@ -770,7 +770,7 @@ CampaignClass * * MPCooperative::CopyTo()
     if ( v5 ) /*0x5c1aab*/
     {
       if ( dword_A8DA84 == 2 ) /*0x5c1ab4*/
-        ((String *)(v5))->AssignWideToChar((gamemd::CampaignScore *)((char *)*dword_A8DA78), (char *)(&dword_A8DA78)[1]); /*0x5c1ac2*/
+        ((String *)(v5))->AssignWideToChar((char *)((gamemd::CampaignScore *)((char *)*dword_A8DA78)), (char *)(&dword_A8DA78)[1]); /*0x5c1ac2*/
       else
         ((String *)(v5))->AssignWideToChar((char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c1ace*/
     }
@@ -786,14 +786,14 @@ LABEL_30:
       Campaign::SetupMovie((Campaign *)this, (HWND)result); /*0x5c1c90*/
       return CampaignCoop::Setup((CampaignCoop *)this, v12, 1); /*0x5c1c9a*/
     }
-    return result; /*0x5c1c9a*/
+    return (gamemd::CampaignClass **)(result); /*0x5c1c9a*/
   }
   v6 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1ae2*/
   if ( v6 ) /*0x5c1aec*/
     result = (int)((MissionClass *)(v6))->Init(); /*0x5c1af0*/
   else
     result = 0; /*0x5c1af7*/
-  this->MPCooperative_field_0x40 = (void *)result; /*0x5c1afb*/
+  this->MPCooperative_field_0x40 = (unsigned int)((void *)result); /*0x5c1afb*/
   if ( result ) /*0x5c1afe*/
   {
     Movie::SetupScreen(result, 0); /*0x5c1b07*/
@@ -850,7 +850,7 @@ LABEL_25:
     }
     goto LABEL_30; /*0x5c1ba1*/
   }
-  return result; /*0x5c1c9f*/
+  return (gamemd::CampaignClass **)(result); /*0x5c1c9f*/
 
 }
 }
@@ -877,7 +877,7 @@ int MPCooperative::InitSession()
   v2 = 0; /*0x5c1ccd*/
   v6 = 0; /*0x5c1cd5*/
   String2 = 0; /*0x5c1cd9*/
-  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v6); /*0x5c1cdd*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&v6)); /*0x5c1cdd*/
   if ( !v6 ) /*0x5c1ce6*/
     return -1; /*0x5c1ce6*/
   if ( !this->MPCooperative_field_0x40 ) /*0x5c1ce8*/
@@ -887,7 +887,7 @@ int MPCooperative::InitSession()
       v4 = ((MissionClass *)(v3))->Init(); /*0x5c1cfd*/
     else
       v4 = 0; /*0x5c1d04*/
-    this->MPCooperative_field_0x40 = v4; /*0x5c1d06*/
+    this->MPCooperative_field_0x40 = (unsigned int)(v4); /*0x5c1d06*/
   }
   Movie::SetupScreen((int)this->MPCooperative_field_0x40, 0); /*0x5c1d0d*/
   Array::GetElementAt((int *)this->MPCooperative_field_0x40, &String2, 0); /*0x5c1d1b*/
@@ -932,29 +932,29 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
 
   if ( !this->MPCooperative_field_0x40 ) /*0x5c1dc8*/
     return 0; /*0x5c1dd7*/
-  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v19); /*0x5c1de2*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&v19)); /*0x5c1de2*/
   v3 = MPCooperative_Helper(); /*0x5c1dec*/
   if ( v3 < v19 ) /*0x5c1df4*/
   {
     if ( Dialog::GetCurrentType() == 107 ) /*0x5c1e34*/
     {
-      MPCooperative_field_0x40 = this->MPCooperative_field_0x40; /*0x5c1e36*/
+      MPCooperative_field_0x40 = (void *)(this->MPCooperative_field_0x40); /*0x5c1e36*/
       if ( MPCooperative_field_0x40 ) /*0x5c1e3b*/
       {
         Array::Cleanup((Array *)this->MPCooperative_field_0x40); /*0x5c1e3f*/
         __3_YAXPAX_Z(MPCooperative_field_0x40); /*0x5c1e45*/
       }
-      this->MPCooperative_field_0x40 = *(void **)(*(unsigned int *)this->__pad_328 + 4 * v3); /*0x5c1e58*/
+      this->MPCooperative_field_0x40 = (unsigned int)(*(void **)(*(unsigned int *)this->__pad_328 + 4 * v3)); /*0x5c1e58*/
       v5 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1e5b*/
       if ( v5 ) /*0x5c1e65*/
         v6 = ((MissionClass *)(v5))->Init(); /*0x5c1e69*/
       else
         v6 = 0; /*0x5c1e70*/
-      *(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3) = v6; /*0x5c1e79*/
+      *(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3) = (unsigned int)(v6); /*0x5c1e79*/
       Movie::SetupScreen(*(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3), v3); /*0x5c1e85*/
-      this->MPCooperative_field_0x4C = (void *)v3; /*0x5c1e8a*/
+      this->MPCooperative_field_0x4C = (unsigned int)((void *)v3); /*0x5c1e8a*/
       if ( dword_A8DA84 == 2 ) /*0x5c1e95*/
-        ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1ea6*/
+        ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)(&dword_A8DA78)[1]); /*0x5c1ea6*/
     }
     goto LABEL_16; /*0x5c1ea6*/
   }

@@ -311,7 +311,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
   if ( dword_A802C8 >= 128 ) /*0x646fdc*/
     return 0; /*0x647036*/
   qmemcpy(&((unsigned int *)(byte_A802D4))[111 * dword_A802D0], v7, 0x6Fu); /*0x646ff8*/
-  dword_A83A54[dword_A802D0] = timeGetTime(); /*0x647009*/
+  (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x647009*/
   ++dword_A802C8; /*0x647020*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x647025*/
   return 1; /*0x64702d*/
@@ -355,7 +355,7 @@ AbstractClass * * ProcessNetworkEvents()
     dword_AC5200 = (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x647317*/
     ComputeNetworkFrameCRC(v6); /*0x64731c*/
     v1 = (int)dword_A8ED84; /*0x647321*/
-    dword_B04474[(uint8_t)dword_A8ED84] = *(unsigned int *)dword_AC51FC; /*0x647334*/
+    (&dword_B04474)[(uint8_t)dword_A8ED84] = *(unsigned int *)dword_AC51FC; /*0x647334*/
     if ( v1 >= dword_A8E30C ) /*0x647342*/
     {
       if ( byte_B04880 ) /*0x64734b*/
@@ -389,12 +389,12 @@ AbstractClass * * ProcessNetworkEvents()
         v8[1] &= ~1u; /*0x647414*/
         if ( dword_8B41F8 < 0x4000 ) /*0x647418*/
         {
-          v3 = &byte_8B4204[111 * dword_8B4200]; /*0x64742e*/
+          v3 = &(&byte_8B4204)[111 * dword_8B4200]; /*0x64742e*/
           qmemcpy(v3, v8, 0x6Cu); /*0x647435*/
           v3 += 108; /*0x647435*/
           *(unsigned short *)v3 = v9; /*0x647437*/
           v3[2] = v10; /*0x647439*/
-          dword_A70204[dword_8B4200] = timeGetTime(); /*0x647442*/
+          (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x647442*/
           dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64745c*/
           ++dword_8B41F8; /*0x647462*/
         }
@@ -421,17 +421,17 @@ AbstractClass * * ProcessNetworkEvents()
       case 5: /*0x6474d5*/
         while ( dword_A802C8 ) /*0x6474e3*/
         {
-          byte_A802D5[111 * dword_A802CC] &= ~1u; /*0x647504*/
+          (&byte_A802D5)[111 * dword_A802CC] &= ~1u; /*0x647504*/
           if ( dword_8B41F8 < 0x4000 ) /*0x647515*/
           {
-            v4 = &(&byte_A802D4)[111 * dword_A802CC]; /*0x647522*/
-            v5 = &byte_8B4204[111 * dword_8B4200]; /*0x647539*/
+            v4 = (char *)(&(&byte_A802D4)[111 * dword_A802CC]); /*0x647522*/
+            v5 = &(&byte_8B4204)[111 * dword_8B4200]; /*0x647539*/
             qmemcpy(v5, v4, 0x6Cu); /*0x647540*/
             v4 += 108; /*0x647540*/
             v5 += 108; /*0x647540*/
             *(unsigned short *)v5 = *(unsigned short *)v4; /*0x647542*/
             v5[2] = v4[2]; /*0x647544*/
-            dword_A70204[dword_8B4200] = timeGetTime(); /*0x64754d*/
+            (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64754d*/
             dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64755f*/
             ++dword_8B41F8; /*0x64756a*/
           }
@@ -751,7 +751,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   int * v8 = a1;
   v9 = 0;
   char v95 = 0;
-  var6E4 = *(CCINIClass ***)&stru_87C374[44948];
+  var6E4 = *(CCINIClass ***)&(&stru_87C374)[44948];
   TimerGetTicks();
   TimerGetTicks();
   TimerGetTicks();
@@ -795,7 +795,7 @@ LABEL_4:
     v10 = (ObjectClass *)arg4;
   }
   v13 = (ObjectClass *)arg0;
-  ((EventQueue *)(*(unsigned int **)&stru_87C374[13308]))->Process();
+  ((EventQueue *)(*(unsigned int **)&(&stru_87C374)[13308]))->Process();
   v14 = (ObjectClass *)v100;
   if ( Ticks == (ObjectClass *)-1 )
   {
@@ -816,27 +816,27 @@ LABEL_9:
   v152 = (ObjectClass *)arg0;
   v100 = (MSVQAnim *)arg0;
   SendNetworkFrameSync(v8, arg10);
-  if ( *(unsigned int *)&HouseClass_Player[29932] == 4 && HouseClass_Player[40532] )
+  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 && (&HouseClass_Player)[40532] )
   {
-    ((Network *)(&HouseClass_Player[44148]))->Disconnect();
+    ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
     Debug::Log();
     int v168 = 39;
-    char * v16 = ToWideStringChar(**(IUnknown ***)&HouseClass_Player[40236]);
+    char * v16 = ToWideStringChar(**(IUnknown ***)&(&HouseClass_Player)[40236]);
     strncpy(Destination, v16,(size_t)((IUnknown *)0x14));
-    IDA_HIWORD(v17) = *(unsigned short *)&HouseClass_Player[40538];
+    IDA_HIWORD(v17) = *(unsigned short *)&(&HouseClass_Player)[40538];
     int v170 = *(unsigned int *)(HouseClass_Player.field_0 + 48);
     var69C = *(unsigned int *)&(&HouseClass_Player)[40536];
     IDA_LOWORD(v17) = *(unsigned short *)&(&HouseClass_Player)[40560];
     v127 = *(ObjectClass **)&(&HouseClass_Player)[40544];
-    v126 = *(MouseClass **)&HouseClass_Player[40540];
-    ((Network *)(&var69C))->SetPort(v17);
+    v126 = *(MouseClass **)&(&HouseClass_Player)[40540];
+    ((Network *)(&var69C))->SetPort((int16_t)(v17));
     int v18 = 1;
     int var69C = var69C;
     v126 = v126;
     v127 = v127;
-    if ( *(int *)&HouseClass_Player[40248] > 1 )
+    if ( *(int *)&(&HouseClass_Player)[40248] > 1 )
     {
-      int v19 = *(unsigned int *)&HouseClass_Player[40236];
+      int v19 = *(unsigned int *)&(&HouseClass_Player)[40236];
       unsigned short * v20 = (unsigned short *)(&HouseClass_Player + 42344);
       do
       {
@@ -845,19 +845,19 @@ LABEL_9:
         {
           IDA_LOWORD(v21) = *v20;
           Network::SendMessage(
-            (int)&HouseClass_Player[44148],
+            (int)&(&HouseClass_Player)[44148],
             (int)&v168,
             91,
             0,
             *(unsigned int *)(v19 + 4 * v18) + 40,
             v21,
             0);
-          v19 = *(unsigned int *)&HouseClass_Player[40236];
+          v19 = *(unsigned int *)&(&HouseClass_Player)[40236];
         }
         ++v18;
         ++v20;
       }
-      while ( v18 < *(int *)&HouseClass_Player[40248] );
+      while ( v18 < *(int *)&(&HouseClass_Player)[40248] );
     }
     Event::Dispatch();
     v13 = (ObjectClass *)arg0;
@@ -901,14 +901,14 @@ LABEL_27:
   }
   if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 1
     || *(unsigned int *)&(&HouseClass_Player)[29932] == 2
-    || HouseClass_Player[40532] )
+    || (&HouseClass_Player)[40532] )
   {
     Debug::Log();
     if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
-      ((Network *)(&HouseClass_Player[44148]))->Disconnect();
+      ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
     Multiplayer::ShowProgress(
       &(&HouseClass_Player)[29932],
-      *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13501) != 0 ? 200 : 100);
+      *(unsigned char *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13501) != 0 ? 200 : 100);
     v148 = (ObjectClass *)TimerGetTicks();
     var620 = 180;
     v109 = v148;
@@ -929,7 +929,7 @@ LABEL_34:
     goto LABEL_93;
 LABEL_38:
   if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
-    ((Network *)(&HouseClass_Player[44148]))->Disconnect();
+    ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
   int v28 = *v8;
   BOOL v29 = v94 == 0;
   var690 = aP0 == 0;
@@ -953,21 +953,21 @@ LABEL_38:
   }
   if ( v29 )
   {
-    byte_B04894 = HouseClass_Player[42540];
-    HouseClass_Player[42540] = 0;
+    byte_B04894 = (&HouseClass_Player)[42540];
+    (&HouseClass_Player)[42540] = 0;
     dword_B04468 = -1;
     Indirect = (SkirmishDialog *)CreateDialogIndirect(g_hInstance, (HWND)0xEA, g_hWnd, NetworkScore::DlgProc, 0);
-    *(&g_MatrixTransformState + 7698) = (CoordStruct *)Indirect;
+    *(&g_MatrixTransformState + 7698) = (int)((CoordStruct *)Indirect);
     if ( !Indirect )
       goto LABEL_50;
     SetWindowLongA((HWND)Indirect, 8, (LONG)&dword_B04468);
-    SetupDialog(*(&g_MatrixTransformState + 7698), 234);
+    SetupDialog((gamemd::Dialog *)(*(&g_MatrixTransformState + 7698)), 234);
     ShowWindow((HWND)*(&g_MatrixTransformState + 7698), 1);
     SendMessageA((HWND)*(&g_MatrixTransformState + 7698), 0x4A9u, 0, 1);
-    byte_B04470 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 28))(*(unsigned int *)&stru_87C374[45772]);
+    byte_B04470 = (*(int (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 28))(*(unsigned int *)&(&stru_87C374)[45772]);
     if ( byte_B04470 )
-      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 20))(*(unsigned int *)&stru_87C374[45772]);
-    (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
+      (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 20))(*(unsigned int *)&(&stru_87C374)[45772]);
+    (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 16))(*(unsigned int *)&(&stru_87C374)[45772]);
   }
   Indirect = (SkirmishDialog *)*(&g_MatrixTransformState + 7698);
 LABEL_50:
@@ -975,25 +975,25 @@ LABEL_50:
   {
     CloseDialog((HWND)Indirect, 0);
     if ( byte_B04470 )
-      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
-    HouseClass_Player[42540] = byte_B04894;
-    MapClass::MarkForRedraw(&stru_87C374[13428], 2);
+      (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
+    (&HouseClass_Player)[42540] = byte_B04894;
+    MapClass::MarkForRedraw(&(&stru_87C374)[13428], 2);
     if ( v94 )
     {
       v76 = (ObjectClass *)Dialog::FindByHandle((void *)0xEA);
       if ( v76 )
       {
         if ( byte_B04470 )
-          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
         CloseDialog((HWND)v76, 0);
-        HouseClass_Player[42540] = byte_B04894;
-        MapClass::MarkForRedraw(&stru_87C374[13428], 2);
-        if ( HouseClass_Player[42540] )
-          TacticalMap::Redraw(&stru_87C374[13428]);
+        (&HouseClass_Player)[42540] = byte_B04894;
+        MapClass::MarkForRedraw(&(&stru_87C374)[13428], 2);
+        if ( (&HouseClass_Player)[42540] )
+          TacticalMap::Redraw(&(&stru_87C374)[13428]);
       }
     }
-    if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-      ((Connection *)(&HouseClass_Player[44148]))->Close();
+    if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
+      ((Connection *)(&(&HouseClass_Player)[44148]))->Close();
     if ( byte_B04878 )
     {
       Network::SendUnreachable();
@@ -1012,12 +1012,12 @@ LABEL_50:
   {
     v29 = v94 == 0;
 LABEL_54:
-    dword_B04898 = (wchar_t *)(RemainingMs / 60);
+    dword_B04898 = (unsigned int)((wchar_t *)(RemainingMs / 60));
     DlgItem = GetDlgItem((HWND)*(&g_MatrixTransformState + 7698), 1616);
     if ( DlgItem )
     {
       v87 = (MSVQAnim *)dword_B04898;
-      StringCSF = GetStringCSF((wchar_t *)&stru_830620[28916], 0, &stru_830620[28288], 3853);
+      StringCSF = GetStringCSF((wchar_t *)&(&stru_830620)[28916], 0, &(&stru_830620)[28288], 3853);
       swprintf(lParam, (const size_t)StringCSF, (const wchar_t *const)v87, (CampaignScore *)v92);
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam);
     }

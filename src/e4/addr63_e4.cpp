@@ -850,7 +850,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
   v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
   v7 = (int *)(ToCoordPixel((unsigned int *)(&v14), v15)); /*0x6355ba*/
-  v8 = ComputeBounds((gamemd::AbstractClass *)(v22), 8, *v7, v7[1]); /*0x6355cf*/
+  v8 = ComputeBounds((gamemd::AbstractClass *)(v22),(gamemd::ObjectClass *)(8), *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
   v11 = v8[2] + 8; /*0x6355ee*/
@@ -923,7 +923,7 @@ int E4Recv_635680::sub_635680(int a2)
   v10[1] = Coords[1]; /*0x6356c6*/
   v10[2] = Coords[2]; /*0x6356d1*/
   v5 = (int *)(ToCoordPixel((unsigned int *)(&v9), v10)); /*0x6356d5*/
-  v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v21), 8, *v5, v5[1])); /*0x6356ea*/
+  v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v21),(gamemd::ObjectClass *)(8), *v5, v5[1])); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/
@@ -1075,7 +1075,7 @@ char ExecutePlanningQueue()
     do /*0x6373d0*/
     {
       v6 = *(Array **)(v4->vtable2 + 4 * v5); /*0x6372cb*/
-      Value = ((Array *)(v6))->FindValue(v4->vtable1); /*0x6372d4*/
+      Value = ((Array *)(v6))->FindValue((int)(v4->vtable1)); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -1146,7 +1146,7 @@ char ExecutePlanningQueue()
       if ( v17 && !*(unsigned char *)(v17 + 28) ) /*0x6373ad*/
       {
         *(unsigned char *)(v17 + 28) = 1; /*0x6373b8*/
-        ((VectorClass *)((DynamicVectorClass *)&dword_AC4C98))->Append(&v33); /*0x6373c2*/
+        ((VectorClass *)((DynamicVectorClass *)&dword_AC4C98))->Append((unsigned int *)(&v33)); /*0x6373c2*/
       }
       ((TeamClass *)(v4))->Cleanup(v5); /*0x6373ca*/
   LABEL_34:
@@ -1191,7 +1191,7 @@ char ExecutePlanningQueue()
         if ( !byte_AC4C08 ) /*0x6374cb*/
         {
           byte_AC4C08 = 1; /*0x6374de*/
-          StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostContinualCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6374e5*/
+          StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostContinualCommand), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x6374e5*/
           AddMessageListPlayerMessage(StringCSF, 480); /*0x6374f1*/
           result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x63750e*/
         }
@@ -1207,7 +1207,7 @@ char ExecutePlanningQueue()
       if ( !byte_AC4C08 ) /*0x637473*/
       {
         byte_AC4C08 = 1; /*0x63748a*/
-        v27 = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x637491*/
+        v27 = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x637491*/
         AddMessageListPlayerMessage(v27, 480); /*0x63749d*/
         result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x6374b8*/
       }
@@ -1432,7 +1432,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
       if ( !stru_AC4B30.__pad_70[104] ) /*0x63829e*/
       {
         stru_AC4B30.__pad_70[104] = 1; /*0x6382a4*/
-        StringCSF = GetStringCSF(g_Str_MSG_PostTerminatingCommand, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6382bb*/
+        StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6382bb*/
         AddMessageListPlayerMessage(StringCSF, 480); /*0x6382c7*/
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792), 0x2000, 1.0, 0); /*0x6382e4*/
         return 0; /*0x6382f2*/
@@ -1444,7 +1444,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     stru_AC4B30.__pad_70[104] = 1; /*0x638309*/
     *(unsigned int *)&v33[108] = 3233; /*0x63830f*/
     *(unsigned int *)&v33[104] = g_Str_File_PlanMgr_cpp; /*0x638314*/
-    v19 = g_Str_MSG_PostContinualCommand; /*0x63831b*/
+    v19 = (wchar_t *)(g_Str_MSG_PostContinualCommand); /*0x63831b*/
   LABEL_67:
     v31 = GetStringCSF(v19, 0, *(const char **)&v33[104], *(int *)&v33[108]); /*0x638506*/
     AddMessageListPlayerMessage(v31, 480); /*0x638512*/
@@ -1456,7 +1456,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
   {
     v21 = (ScriptAction *)RA2_OPNEW(0x9Cu); /*0x638337*/
     if ( v21 ) /*0x638341*/
-      *(unsigned int *)v36 = ((ScriptAction *)(v21))->Constructor((int)v38); /*0x63834b*/
+      *(unsigned int *)v36 = (unsigned int)(((ScriptAction *)(v21))->Constructor((int)v38)); /*0x63834b*/
     else
       *(unsigned int *)v36 = 0; /*0x638351*/
     ScriptActionVector::PushBack((ScriptActionVector *)&stru_AC4B30.__pad_EC[92], v36); /*0x638363*/
@@ -1496,7 +1496,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     v19 = (wchar_t *)aMsgPostloop; /*0x6383f8*/
     goto LABEL_67; /*0x6383fd*/
   }
-  abstractFlags = Type->abstractFlags; /*0x638402*/
+  abstractFlags = (int)(Type->abstractFlags); /*0x638402*/
   if ( abstractFlags ) /*0x638407*/
   {
     if ( abstractFlags == 16 ) /*0x6384df*/
@@ -1506,7 +1506,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
       *(unsigned int *)&v33[108] = 3233; /*0x6384ee*/
       stru_AC4B30.__pad_70[104] = 1; /*0x6384f3*/
       *(unsigned int *)&v33[104] = g_Str_File_PlanMgr_cpp; /*0x6384fa*/
-      v19 = g_Str_MSG_NodeMaximum; /*0x638501*/
+      v19 = (wchar_t *)(g_Str_MSG_NodeMaximum); /*0x638501*/
       goto LABEL_67; /*0x638501*/
     }
   }
@@ -1551,7 +1551,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     {
       v35 = 0; /*0x63853d*/
     }
-    ((VectorClass *)((VectorClass *)&stru_AC4B30))->Append(&v35); /*0x63854f*/
+    ((VectorClass *)((VectorClass *)&stru_AC4B30))->Append((unsigned int *)(&v35)); /*0x63854f*/
     v2 = v37; /*0x638554*/
     v14 = v38; /*0x638558*/
   }
@@ -1592,7 +1592,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
   }
   else
   {
-    ((ScriptAction *)(v35))->CreatePlacementAction(v14, v2); /*0x63858e*/
+    ((ScriptAction *)(v35))->CreatePlacementAction((unsigned int *)(v14), v2); /*0x63858e*/
   }
   if ( v22 ) /*0x638595*/
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 472), 0x2000, 1.0, 0); /*0x6385ae*/
@@ -1719,8 +1719,8 @@ AbstractClass * * sub_638E60()
       while ( 1 ) /*0x638ea7*/
       {
         v4 = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v3); /*0x638ea7*/
-        ScreenPos = ScriptAction::GetScreenPos((ScriptAction *)v4, &v8); /*0x638eac*/
-        v6 = ComputeBounds(v13, 8, *ScreenPos, ScreenPos[1]); /*0x638ec1*/
+        ScreenPos = (int *)(ScriptAction::GetScreenPos((ScriptAction *)v4, &v8)); /*0x638eac*/
+        v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v13), 8, *ScreenPos, ScreenPos[1])); /*0x638ec1*/
         v9 = *v6; /*0x638ec8*/
         v10 = v6[1]; /*0x638ecf*/
         v11 = v6[2]; /*0x638ed6*/

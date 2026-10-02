@@ -43,7 +43,7 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
   *((unsigned int *)this + 12) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
-  *(unsigned int *)this->__pad_0 = &vt_NeuronClass; /*0x43a375*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_NeuronClass); /*0x43a375*/
   this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a37b*/
   this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a382*/
   this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a389*/
@@ -56,7 +56,7 @@ NeuronClass::NeuronClass()
          0) )
   {
     v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x43a3d2*/
-    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v2) = this; /*0x43a3e1*/
+    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v2) = (unsigned int)(this); /*0x43a3e1*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a41b*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)

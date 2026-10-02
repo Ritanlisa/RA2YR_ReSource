@@ -39,7 +39,7 @@ v5 = (void *)((int)(RA2_OPNEW(0x14u)));
   }
   ((ComPtr *)(a1))->Constructor(); /*0x76f4df*/
   *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_State_vftable); /*0x76f4e6*/
-  ((ComPtr *)(a1))->Set(v6); /*0x76f4ee*/
+  ((ComPtr *)(a1))->Set((int)(v6)); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }
 } // namespace gamemd

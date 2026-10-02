@@ -896,7 +896,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b95a8*/
         ((gamemd::Debug *)this)->Log(); /*0x7b95b9*/
-      FoundationSize = Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0]); /*0x7b95cd*/
+      FoundationSize = (int *)(Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0])); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       abstractFlags = ((unsigned int *)this)[0]; /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
@@ -904,24 +904,24 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       v10 = FoundationSize[3]; /*0x7b95dd*/
       nextArrayIndex = ((unsigned int *)this)[0]; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
-      v2 = abstractFlags - this->ambientSoundController[0] + v7; /*0x7b95f2*/
-      v3 = nextArrayIndex - this->ambientSoundController[1] + v9; /*0x7b95fa*/
+      v2 = abstractFlags - (&this->ambientSoundController)[0] + v7; /*0x7b95f2*/
+      v3 = nextArrayIndex - (&this->ambientSoundController)[1] + v9; /*0x7b95fa*/
       ReleaseMutex((HANDLE)(hMutex)); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
     v12 = (int)((gamemd::ObjectClass *)(v2 + this->fallRate));
-    this->ambientSoundController[3] = v2; /*0x7b9610*/
+    (&this->ambientSoundController)[3] = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
     nextObject = (gamemd::ObjectClass *)(this->nextObject); /*0x7b961a*/
-    this->ambientSoundController[4] = v3; /*0x7b961d*/
+    (&this->ambientSoundController)[4] = v3; /*0x7b961d*/
     v14 = (char *)nextObject + v3; /*0x7b9620*/
-    v15 = this->ambientSoundController[2]; /*0x7b9622*/
+    v15 = (&this->ambientSoundController)[2]; /*0x7b9622*/
     v18[2] = v4; /*0x7b9625*/
-    this->customSound_controller[0] = v4; /*0x7b9629*/
+    (&this->customSound_controller)[0] = v4; /*0x7b9629*/
     v18[3] = v5; /*0x7b962c*/
     v18[1] = (unsigned int)(v14); /*0x7b9630*/
     v19[2] = v4; /*0x7b9634*/
-    this->customSound_controller[1] = v5; /*0x7b9638*/
+    (&this->customSound_controller)[1] = v5; /*0x7b9638*/
     v19[0] = 0; /*0x7b963d*/
     v19[1] = 0; /*0x7b9641*/
     occupant = this->occupant; /*0x7b964e*/
@@ -1035,7 +1035,7 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     aP0[1] = v20[1]; /*0x7bbf83*/
     aP0[2] = v20[2]; /*0x7bbf89*/
     aP0[3] = v20[3]; /*0x7bbf93*/
-    v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP2), (int *)a4, 0, 0)); /*0x7bbf9d*/
+    v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP2),(const RectangleStruct *)((int *)a4), 0, 0)); /*0x7bbf9d*/
     *aP2 = *v21; /*0x7bbfa6*/
     aP2[1] = v21[1]; /*0x7bbfab*/
     aP2[2] = v21[2]; /*0x7bbfb1*/
@@ -1068,12 +1068,12 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   unsigned int v27[2]; // [esp+20h] [ebp-8h] BYREF
 
   v9 = ecx0; /*0x7bc049*/
-  v10 = a1; /*0x7bc04f*/
+  v10 = (gamemd::CellStruct *)(a1); /*0x7bc04f*/
   *a6 = 0; /*0x7bc05a*/
   *a7 = 0; /*0x7bc05d*/
   *a8 = 0; /*0x7bc063*/
   v11 = *(unsigned int *)aP2->__pad_8; /*0x7bc069*/
-  v26[0] = a1; /*0x7bc06f*/
+  v26[0] = (unsigned int)(a1); /*0x7bc06f*/
   v25[0] = ecx0; /*0x7bc073*/
   if ( v11 <= 0 /*0x7bc0d8*/
     || *(int *)&aP2->__pad_8[4] <= 0

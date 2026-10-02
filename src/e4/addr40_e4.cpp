@@ -590,7 +590,7 @@ ObjectClass * * sub_403210()
       for ( i = (AudioStream *)v4; v4; i = (AudioStream *)v4 ) /*0x403294*/
       {
         v4 = (AudioQueue *)((AudioQueue *)(v4))->GetNextAlt(); /*0x40329f*/
-        AudioStream::Destructor(i); /*0x4032a1*/
+        AudioStream::Destructor((unsigned int *)(i)); /*0x4032a1*/
       }
       (*(void (**)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 12) + 32))(v2); /*0x4032b4*/
       *(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 4 * *(unsigned int *)&v2[1].__pad_0[4] + 28) = 0; /*0x4032bd*/
@@ -613,7 +613,7 @@ ObjectClass * * sub_403210()
     result = off_815E98; /*0x4032fd*/
     *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x403302*/
   }
-  return result; /*0x403305*/
+  return (gamemd::ObjectClass **)(result); /*0x403305*/
 }
 }
 // 0x403FA0
@@ -666,7 +666,7 @@ void sub_403FA0()
         LinkedList::Init((LinkedList *)v2); /*0x404020*/
         *(unsigned int *)(v2 + 312) = 0; /*0x404025*/
         if ( v2->nextArrayIndex >= 0 ) /*0x404030*/
-          PushFrontLinkedListAlt(dword_87E2A8, v2); /*0x404045*/
+          PushFrontLinkedListAlt((unsigned int *)(dword_87E2A8), v2); /*0x404045*/
         else
           RA2_OPDEL((void *)v2); /*0x404033*/
         v2 = (int)v3; /*0x404050*/

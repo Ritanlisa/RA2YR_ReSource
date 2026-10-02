@@ -69,9 +69,9 @@ int TActionClass::executeMoveAction(int a2)
   int result; // eax
   unsigned int *v5; // esi
 
-  for ( i = *(unsigned int *)&this->pad_6E[10] - 1; i >= 0; --i ) /*0x50d2d8*/
+  for ( i = *(unsigned int *)&(&this->pad_6E)[10] - 1; i >= 0; --i ) /*0x50d2d8*/
   {
-    result = *(unsigned int *)&this->pad_55[23]; /*0x50d2e0*/
+    result = *(unsigned int *)&(&this->pad_55)[23]; /*0x50d2e0*/
     v5 = *(unsigned int **)(result + 4 * i); /*0x50d2e3*/
     if ( v5[184] == a2 ) /*0x50d2ec*/
     {
@@ -409,7 +409,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
   int v15; // esi
   int v16; // eax
 
-  v5 = *(HouseClass **)&this->pad_6E[34]; /*0x6e0b63*/
+  v5 = *(HouseClass **)&(&this->pad_6E)[34]; /*0x6e0b63*/
   v6 = 0; /*0x6e0b6d*/
   if ( !a3 ) /*0x6e0b71*/
     return 0; /*0x6e0b71*/
@@ -480,7 +480,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     }
     while ( v14 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x6e0c89*/
   }
-  return v6; /*0x6e0ba6*/
+  return (gamemd::AbstractClass **)(v6); /*0x6e0ba6*/
 
 }
 }
@@ -519,7 +519,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
     + 408) = 1;
   else
     MEMORY[0x198] = 1; /*0x6e1da3*/
-  return 1; /*0x6e1d9b*/
+  return (gamemd::AnimClass **)(1); /*0x6e1d9b*/
 
 }
 }
@@ -548,7 +548,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
   if ( v6 ) /*0x6e233d*/
     *((unsigned char *)AnimClass::ctor( /*0x6e2368*/
                  v6,
-                 *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * *(unsigned int *)&this->pad_6E[34]),
+                 *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * *(unsigned int *)&(&this->pad_6E)[34]),
                  v10,
                  0,
                  1,
@@ -558,7 +558,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
     + 408) = 1;
   else
     MEMORY[0x198] = 1; /*0x6e237b*/
-  return 1; /*0x6e2371*/
+  return (gamemd::AnimClass **)(1); /*0x6e2371*/
 
 }
 }
@@ -590,11 +590,11 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   {
     GroundHeight += dword_B0E6D4; /*0x6e242d*/
   }
-  v6 = (gamemd::CellClass *)(*(unsigned int *)&this->pad_6E[34]);
+  v6 = (gamemd::CellClass *)(*(unsigned int *)&(&this->pad_6E)[34]);
   v7 = *((unsigned int *)g_WeaponTypeConfig + v6); /*0x6e2440*/
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
   v9 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v16); /*0x6e244f*/
-  WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v8, *(unsigned int *)(v7 + 172), v9->landType, &v16); /*0x6e246d*/
+  WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v8, *(unsigned int *)(v7 + 172), v9->landType,(gamemd::BulletClass *)(&v16)); /*0x6e246d*/
   if ( WarheadVersusMultiplier ) /*0x6e2471*/
   {
     v11 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6e247d*/
@@ -605,8 +605,8 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
     }
   }
   CreateSmokeEffectAt(v8, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), v16, v17, GroundHeight, 0, 0); /*0x6e24ea*/
-  PlaySoundEffectAt(&v16, v8, 0, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), 1, 0); /*0x6e250b*/
-  return 1; /*0x6e2510*/
+  PlaySoundEffectAt((gamemd::TechnoClass *)(&v16), v8, 0, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), 1, 0); /*0x6e250b*/
+  return (gamemd::AbstractClass **)(1); /*0x6e2510*/
 
 }
 }
@@ -644,18 +644,18 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   {
     GroundHeight += dword_B0E6D4; /*0x6e2cdc*/
   }
-  v6 = dword_842AFC[*(unsigned int *)&this->pad_6E[34]] /*0x6e2d0a*/
-     + (int)abs32(((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()) % 3;
+  v6 = (&dword_842AFC)[*(unsigned int *)&(&this->pad_6E)[34]] /*0x6e2d0a*/
+     + (int)abs32(((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State()) % 3;
   String = GlobalArray::FindString(&stru_842C20); /*0x6e2d1b*/
   v19 = GlobalArray::FindString(&stru_842C14); /*0x6e2d22*/
   v8 = 70 * v6; /*0x6e2d32*/
   if ( v6 <= 0 ) /*0x6e2d36*/
-    return 1; /*0x6e2e0e*/
+    return (gamemd::ScenarioClass **)(1); /*0x6e2e0e*/
   v18 = v6; /*0x6e2d3d*/
   do /*0x6e2dfa*/
   {
-    p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x6e2d46*/
-    v10 = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State() % v8; /*0x6e2d58*/
+    p_NeedsSaveOrLink = (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink; /*0x6e2d46*/
+    v10 = ((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State() % v8; /*0x6e2d58*/
     v11 = ((Random *)(p_NeedsSaveOrLink))->State(); /*0x6e2d5a*/
     v23[0] = v10 + v20; /*0x6e2d6d*/
     v24 = GroundHeight; /*0x6e2d77*/
@@ -664,7 +664,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
     v12 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6e2d9c*/
     if ( v12 ) /*0x6e2da3*/
     {
-      v14 = abs32(((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()) & 0x80000001; /*0x6e2dba*/
+      v14 = abs32(((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State()) & 0x80000001; /*0x6e2dba*/
       v13 = v14 == 0; /*0x6e2dba*/
       if ( v14 < 0 ) /*0x6e2dbf*/
         v13 = (((unsigned char)v14 - 1) | 0xFFFFFFFE) == -1; /*0x6e2dc5*/
@@ -676,7 +676,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
     --v18; /*0x6e2df6*/
   }
   while ( v18 ); /*0x6e2dfa*/
-  return 1; /*0x6e2e01*/
+  return (gamemd::ScenarioClass **)(1); /*0x6e2e01*/
 
 }
 }
@@ -762,7 +762,7 @@ AbstractClass * * TActionClass::executeGeneticMutatorAction(int a2, int a3, int 
   v6 = stru_A8EB00.ObjectTypeClass[4] - 1; /*0x6e4160*/
   if ( stru_A8EB00.ObjectTypeClass[4] - 1 >= 0 ) /*0x6e416b*/
   {
-    p_TActionClass_field_54 = &this->TActionClass_field_54; /*0x6e4172*/
+    p_TActionClass_field_54 = (char *)(&this->TActionClass_field_54); /*0x6e4172*/
     v8 = stru_A8EB00.ObjectTypeClass[1] + 4 * v6; /*0x6e4175*/
     while ( strcmp((const char *)(*(unsigned int *)v8 + 36), p_TActionClass_field_54) ) /*0x6e41ab*/
     {
@@ -782,8 +782,8 @@ LABEL_7:
   TActionClass::executeHarvestAction( /*0x6e41e9*/
     (TActionClass *)&stru_87F5F0.__pad_58[416],
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v5),
-    *(unsigned int *)&this->pad_6E[34]);
-  return 1; /*0x6e41c3*/
+    *(unsigned int *)&(&this->pad_6E)[34]);
+  return (gamemd::AbstractClass **)(1); /*0x6e41c3*/
 
 }
 }
@@ -797,7 +797,7 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
 
   if ( !a2 ) /*0x6e42d6*/
     return 0; /*0x6e42d6*/
-  v5 = *(unsigned int *)&this->pad_6E[34]; /*0x6e42d8*/
+  v5 = *(unsigned int *)&(&this->pad_6E)[34]; /*0x6e42d8*/
   if ( v5 < 0 ) /*0x6e42e0*/
     return 0; /*0x6e42e0*/
   if ( v5 > *(unsigned int *)(a2 + 612) ) /*0x6e42ec*/
@@ -819,7 +819,7 @@ int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 
   if ( !a2 ) /*0x6e4326*/
     return 0; /*0x6e4326*/
-  v5 = *(unsigned int *)&this->pad_6E[34]; /*0x6e4328*/
+  v5 = *(unsigned int *)&(&this->pad_6E)[34]; /*0x6e4328*/
   if ( v5 < 0 || v5 > *(unsigned int *)(a2 + 612) ) /*0x6e433c*/
     return 0; /*0x6e4355*/
   SuperClass::SetRechargeTime(*(SuperClass **)(*(unsigned int *)(a2 + 600) + 4 * v5), (int)this->TActionClass_field_48); /*0x6e434b*/
@@ -847,9 +847,9 @@ TActionClass::TActionClass()
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(unsigned int *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
   this->vtable1 = &vt_TEventClass; /*0x71e6c1*/
-  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6c7*/
-  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6ce*/
-  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6d5*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TEventClass); /*0x71e6c7*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TEventClass); /*0x71e6ce*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TEventClass); /*0x71e6d5*/
   v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)); /*0x71e6dc*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 52)) /*0x71e71a*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 53))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
@@ -862,7 +862,7 @@ TActionClass::TActionClass()
         v3) )
   {
     *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)) = v2 + 1; /*0x71e71f*/
-    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * v2) = this; /*0x71e72b*/
+    *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * v2) = (unsigned int)(this); /*0x71e72b*/
     v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)); /*0x71e72e*/
   }
   v4 = 0; /*0x71e734*/
@@ -967,7 +967,7 @@ char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnkno
   int v11; // esi
   LinkedList *v12; // ecx
 
-  v5 = *(HouseClass **)&this->pad_6E[34]; /*0x6e0aa1*/
+  v5 = *(HouseClass **)&(&this->pad_6E)[34]; /*0x6e0aa1*/
   if ( !a3 ) /*0x6e0aae*/
     return 0; /*0x6e0aae*/
   if ( v5 == (HouseClass *)8997 ) /*0x6e0ab6*/

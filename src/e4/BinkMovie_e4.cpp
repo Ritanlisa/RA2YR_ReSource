@@ -77,7 +77,7 @@ int BinkMovie::Stop()
   }
   if ( this->BinkMovie_field_0x4[0] ) /*0x432722*/
   {
-    BinkClose(this->BinkMovie_field_0x4[0]); /*0x43272a*/
+    BinkClose((void *)(this->BinkMovie_field_0x4[0])); /*0x43272a*/
     this->BinkMovie_field_0x4[0] = 0; /*0x432730*/
   }
   result = *((unsigned int *)this + 10); /*0x432737*/
@@ -135,7 +135,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   }
   if ( *((unsigned int *)this + 1) ) /*0x432775*/
   {
-    BinkClose(*((unsigned int *)this + 1)); /*0x43277d*/
+    BinkClose((void *)(*((unsigned int *)this + 1))); /*0x43277d*/
     *((unsigned int *)this + 1) = 0; /*0x432783*/
   }
   if ( *((unsigned int *)this + 10) != -1 ) /*0x43278c*/
@@ -146,7 +146,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   *((unsigned int *)this + 12) = 0; /*0x43279c*/
   if ( ((gamemd::Audio *)this)->IsSoundEnabled() ) /*0x43279f*/
   {
-    v5 = ((gamemd::Audio *)this)->GetDirectSound(); /*0x4327a8*/
+    v5 = (int)(((gamemd::Audio *)this)->GetDirectSound()); /*0x4327a8*/
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
@@ -155,7 +155,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   ((RawFileClass *)(v32))->Dtor(); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
   {
-    v9 = BinkOpen(v6, 0); /*0x4327e4*/
+    v9 = (int)(BinkOpen(v6, 0)); /*0x4327e4*/
 LABEL_14:
     *((unsigned int *)this + 1) = v9; /*0x43284f*/
     goto LABEL_15; /*0x43284f*/
@@ -178,7 +178,7 @@ LABEL_15:
   {
     dword_89C490 = flt_A8EB9C; /*0x43287c*/
     v13 = Math::RoundToInt(*(float *)&flt_A8EB9C * 32768.0); /*0x43288d*/
-    BinkSetVolume(*((unsigned int *)this + 1), v13); /*0x432897*/
+    BinkSetVolume((void *)(*((unsigned int *)this + 1)), v13); /*0x432897*/
     *((unsigned int *)this + 9) = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(unsigned int *)(*((unsigned int *)this + 1) + 20)
                                           / *(unsigned int *)(*((unsigned int *)this + 1) + 24));
@@ -261,7 +261,7 @@ LABEL_40:
     *((unsigned int *)this + 5) = (unsigned int)(v22); /*0x432a2c*/
     *((unsigned int *)this + 6) = v27; /*0x432a2f*/
     *((unsigned int *)this + 7) = bottom; /*0x432a32*/
-    *((unsigned int *)this + 2) = (gamemd::AbstractClass **)(BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28))); /*0x432a44*/
+    *((unsigned int *)this + 2) = (unsigned int)((gamemd::AbstractClass **)(BinkDDSurfaceType((void *)(*(unsigned int *)(g_DSurface_Primary + 28))))); /*0x432a44*/
     return (gamemd::AbstractClass **)(1); /*0x432a4a*/
   }
   else
@@ -278,7 +278,7 @@ namespace gamemd {
 int BinkMovie::Pause(unsigned char a2)
 {
 
-  return BinkPause(this->BinkMovie_field_0x4[0], a2); /*0x432c44*/
+  return BinkPause((void *)(this->BinkMovie_field_0x4[0]), a2); /*0x432c44*/
 
 }
 }
@@ -415,7 +415,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
   {
     dword_89C490 = LODWORD(flt_A8EB9C); /*0x432e5f*/
     LOWORD(v5) = Math::RoundToInt(flt_A8EB9C * 32768.0); /*0x432e70*/
-    BinkSetVolume(*((unsigned int *)this + 1), v5); /*0x432e7a*/
+    BinkSetVolume((void *)(*((unsigned int *)this + 1)), v5); /*0x432e7a*/
   }
   v6 = *((unsigned int *)this + 44); /*0x432e87*/
   if ( byte_A8ED80 ) /*0x432e8a*/
@@ -425,7 +425,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       ((gamemd::Debug *)this)->Log(); /*0x432ebf*/
       v8 = *((unsigned int *)this + 1); /*0x432ec4*/
       *((unsigned int *)this + 44) = 1; /*0x432eca*/
-      BinkPause(v8, 0); /*0x432ed1*/
+      BinkPause((void *)(v8), 0); /*0x432ed1*/
       v9 = (DSurface *)*((unsigned int *)this + 3); /*0x432ed7*/
       if ( v9 == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x432ee2*/
       {
@@ -449,13 +449,13 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
     Debug::Log(); /*0x432e99*/
     v7 = *((unsigned int *)this + 1); /*0x432e9e*/
     *((unsigned int *)this + 44) = 0; /*0x432ea4*/
-    BinkPause(v7, 1); /*0x432eab*/
+    BinkPause((void *)(v7), 1); /*0x432eab*/
   }
-  if ( *((unsigned int *)this + 45) || (result = BinkWait(*((unsigned int *)this + 1)), LOBYTE(result) = result == 0, (unsigned char)result) ) /*0x432f4e*/
+  if ( *((unsigned int *)this + 45) || (result = BinkWait((void *)(*((unsigned int *)this + 1))), LOBYTE(result) = result == 0, (unsigned char)result) ) /*0x432f4e*/
   {
     do /*0x43300d*/
     {
-      BinkDoFrame(*((unsigned int *)this + 1)); /*0x432f62*/
+      BinkDoFrame((void *)(*((unsigned int *)this + 1))); /*0x432f62*/
       v12 = (BinkMovie *)*((unsigned int *)this + 8); /*0x432f68*/
       v13 = 0; /*0x432f6b*/
       *((unsigned int *)this + 45) = 0; /*0x432f6f*/
@@ -473,14 +473,14 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
         v16 = *((unsigned int *)this + 2); /*0x432fb9*/
         if ( v13 ) /*0x432fbe*/
           v16 |= 0x80000000; /*0x432fc0*/
-        BinkCopyToBuffer(*((unsigned int *)this + 1), v19, v14, v15, a3, a4, v16); /*0x432fdc*/
+        BinkCopyToBuffer((void *)(*((unsigned int *)this + 1)), v19, v14, v15, a3, a4, v16); /*0x432fdc*/
         (*(v        ((int)(*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
       }
       BinkMo      ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget(aP1); 
       v17 = *((unsigned int *)this + 1); /*0x432ff4*/
       *((unsigned int *)this + 12) = *(unsigned int *)(v17 + 12); /*0x432ff8*/
-      BinkNextFrame(v17); /*0x432ffb*/
-      result = BinkWait(*((unsigned int *)this + 1)); /*0x433005*/
+      BinkNextFrame((void *)(v17)); /*0x432ffb*/
+      result = BinkWait((void *)(*((unsigned int *)this + 1))); /*0x433005*/
     }
     while ( !result ); /*0x43300d*/
     LOBYTE(result) = 1; /*0x433016*/
@@ -518,7 +518,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     BinkMovie_field_0x8 = (unsigned int)this->BinkMovie_field_0x8; /*0x433232*/
     if ( a5 ) /*0x433237*/
       BinkMovie_field_0x8 |= 0x80000000; /*0x433239*/
-    BinkCopyToBuffer(this->BinkMovie_field_0x4[0], v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
+    BinkCopyToBuffer((void *)(this->BinkMovie_field_0x4[0]), v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
     (*(void     ((int)(*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
   }
   return (in  return ((gamemd::DSurface *)(int))((BinkMovie *)(this))->BlitToTarget(aP1); 
@@ -564,8 +564,8 @@ unsigned int * BinkMovie::BlitToTarget(int aP1)
         v15[3] = v4[3]; /*0x4332ea*/
         v10 = (v9 - v13) / 2 + v7; /*0x4332fd*/
         v11 = *(unsigned int *)&this->__pad_18[4] - v14 + v8; /*0x433309*/
-        v12 = this->BinkMovie_field_0x14[0]; /*0x43330b*/
-        v15[0] = this->BinkMovie_field_0x10[0] + v10; /*0x43330e*/
+        v12 = (&this->BinkMovie_field_0x14)[0]; /*0x43330b*/
+        v15[0] = (&this->BinkMovie_field_0x10)[0] + v10; /*0x43330e*/
         v15[1] = v12 + v11; /*0x43331c*/
         return (unsigned int *)(*(int (**)(int, unsigned int *, int, int *, int, int))(*(unsigned int *)aP1 + 8))( /*0x433323*/
                            aP1,
@@ -620,8 +620,8 @@ int BinkMovie::AdjustSurfaceFormat(int aP1)
         v6 = v5[3]; /*0x433392*/
         v7 = *(unsigned int *)this->__pad_18 - v5[2]; /*0x43339a*/
         v8 = *(unsigned int *)&this->__pad_18[4] - v6 + v10; /*0x4333b0*/
-        v9 += this->BinkMovie_field_0x10[0] + (((int)v7 - HIDWORD(v7)) >> 1); /*0x4333bb*/
-        v10 = this->BinkMovie_field_0x14[0] + v8; /*0x4333c5*/
+        v9 += (&this->BinkMovie_field_0x10)[0] + (((int)v7 - HIDWORD(v7)) >> 1); /*0x4333bb*/
+        v10 = (&this->BinkMovie_field_0x14)[0] + v8; /*0x4333c5*/
         return (*(int (**)(int, int *, unsigned int))(*(unsigned int *)aP1 + 20))(aP1, &v9, 0); /*0x4333cf*/
       }
     }
@@ -801,8 +801,8 @@ namespace gamemd {
 void BinkMovie::Destroy(void *a1_1)
 {
 
-  if ( this->BinkMovie_field_0x14[0] ) /*0x6c9930*/
-    __3_YAXPAX_Z((void *)this->BinkMovie_field_0x14[0]); /*0x6c9938*/
+  if ( (&this->BinkMovie_field_0x14)[0] ) /*0x6c9930*/
+    __3_YAXPAX_Z((void *)(&this->BinkMovie_field_0x14)[0]); /*0x6c9938*/
 
 }
 }
@@ -840,7 +840,7 @@ int BinkMovie::FreeSurfaceTracker(void *a1_1)
     if ( *(unsigned int *)this->__pad_0 ) /*0x6c9b17*/
       result = (***(int (****)(unsigned int, int))this->__pad_0)(*(unsigned int *)this->__pad_0, 1); /*0x6c9b22*/
   }
-  v6 = (int (***)(unsigned int, int))this->BinkMovie_field_0x10[0]; /*0x6c9b24*/
+  v6 = (int (***)(unsigned int, int))(&this->BinkMovie_field_0x10)[0]; /*0x6c9b24*/
   if ( v6 ) /*0x6c9b2a*/
     return (**v6)(v6, 1); /*0x6c9b30*/
   return result; /*0x6c9b27*/

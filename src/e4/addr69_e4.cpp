@@ -705,7 +705,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         while ( 1 ) /*0x6948c0*/
         {
           Event::Dispatch(); /*0x6948c0*/
-          if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)(&dword_A8DA78)[v8]) ) /*0x6948e3*/
+          if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455,(wchar_t *)(1), (wchar_t *)(&dword_A8DA78)[v8]) ) /*0x6948e3*/
             goto LABEL_12; /*0x6948ea*/
           v9 = 3600; /*0x6948f0*/
           if ( Ticks == -1 ) /*0x6948f6*/
@@ -754,7 +754,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694930*/
       Debug::Log(); /*0x69494b*/
-      if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455, 1, (wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[v11]]) ) /*0x694978*/
+      if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455,(wchar_t *)(1), (wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[v11]]) ) /*0x694978*/
         goto LABEL_20; /*0x69497f*/
       v12 = 3600; /*0x694985*/
       if ( Ticks == -1 ) /*0x69498b*/
@@ -974,7 +974,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694ef6*/
               {
-                v38 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220, 1, (wchar_t *)(&dword_A8DA78)[i])); /*0x694eed*/
+                v38 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220,(wchar_t *)(1), (wchar_t *)(&dword_A8DA78)[i])); /*0x694eed*/
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -1022,10 +1022,10 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
     ((IPXManagerClass *)(&unk_A8E9C0))->destroyConnection(); /*0x695183*/
   Debug::Log(); /*0x69519c*/
-  *(unsigned int *)v54.CDFileClass = (void*)&CCFileClass_vftable; /*0x6951ab*/
+  *(unsigned int *)v54.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x6951ab*/
   v56 = 0; /*0x6951b3*/
   ((Vector *)((int)v55))->Clear(); /*0x6951be*/
-  *(unsigned int *)v54.CDFileClass = &off_7E1668; /*0x6951c7*/
+  *(unsigned int *)v54.CDFileClass = (unsigned int)(&off_7E1668); /*0x6951c7*/
   result = ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x6951cf*/
   IDA_LOBYTE(result) = v42; /*0x6951d4*/
   return result; /*0x6947de*/
@@ -1051,12 +1051,12 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   char Destination[32]; // [esp+CCh] [ebp-20h] BYREF
 
   v5 = aP0; /*0x6951fa*/
-  if ( !_strcmpi(aP0, aRandmapSed) ) /*0x69520a*/
+  if ( !_strcmpi((const char *)(aP0), aRandmapSed) ) /*0x69520a*/
     return 0; /*0x69520a*/
   v6 = 0; /*0x695221*/
   if ( dword_A8B8D8 <= 0 ) /*0x695225*/
     return 0; /*0x69540d*/
-  while ( _strcmpi((const void *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88), v5) ) /*0x695249*/
+  while ( _strcmpi((const char *)((const void *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88)), v5) ) /*0x695249*/
   {
   LABEL_17:
     if ( ++v6 >= dword_A8B8D8 ) /*0x6953fb*/
@@ -1099,7 +1099,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   v13[1] = 0; /*0x69530a*/
   v13[2] = 0; /*0x69530e*/
   GenericList::Constructor(v14); /*0x695312*/
-  v14[0] = (void*)&List_INIClass_INISection___vftable; /*0x695321*/
+  v14[0] = (unsigned int)((void*)&List_INIClass_INISection___vftable); /*0x695321*/
   memset(&v14[7], 0, 12); /*0x695329*/
   v15 = 0; /*0x695335*/
   v16 = 0; /*0x695339*/
@@ -1152,7 +1152,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   LRESULT wParama; // [esp+14h] [ebp+8h]
   LRESULT wParamb; // [esp+14h] [ebp+8h]
 
-  result = BaseDialogProc(hWnd, wParam, a3, (unsigned int)a4); /*0x695777*/
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), wParam, a3, (unsigned int)a4)); /*0x695777*/
   if ( result ) /*0x69577e*/
     return result; /*0x69577e*/
   WindowLongA = GetWindowLongA(hWnd, 8); /*0x69578e*/
@@ -1322,7 +1322,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
     return 0; /*0x6959e7*/
   ShowWindow(v13, 5); /*0x6959f0*/
   EnableWindow(v14, 1); /*0x6959f9*/
-  v15 = strchr(v12, 45); /*0x695a02*/
+  v15 = (char *)(strchr(v12, 45)); /*0x695a02*/
   if ( v15 ) /*0x695a0e*/
   {
     v16 = v15 + 1; /*0x695a10*/
@@ -1330,7 +1330,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   }
   else
   {
-    v16 = &g_INI_DefaultBuffer; /*0x695a1a*/
+    v16 = (char *)(&g_INI_DefaultBuffer); /*0x695a1a*/
   }
   v11(v14, 0x4B4u, 0, (LPARAM)v16); /*0x695a28*/
   SetFocus(v14); /*0x695a2b*/

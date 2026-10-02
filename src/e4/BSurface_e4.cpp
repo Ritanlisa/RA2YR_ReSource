@@ -81,7 +81,7 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
   Buffer = this->Buffer; /*0x410da3*/
   *((unsigned int *)this + 7) = v18; /*0x410da6*/
   (*(void (**)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x410dab*/
-  return this->XSurface; /*0x410db0*/
+  return (_DWORD *)(this->XSurface); /*0x410db0*/
 
 }
 }

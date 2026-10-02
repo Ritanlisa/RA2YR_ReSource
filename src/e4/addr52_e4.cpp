@@ -140,7 +140,7 @@ int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
     v3 += -1 - v3 / 2; /*0x52346e*/
     goto LABEL_7; /*0x52346e*/
   }
-  return aP0 + 8 * (v3 / 2); /*0x523474*/
+  return (int)(aP0 + 8 * (v3 / 2)); /*0x523474*/
 }
 }
 // 0x525430
@@ -695,7 +695,7 @@ ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
 LABEL_9:
   v10 = this->nextObject; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
-    return unk_B78830; /*0x52a56a*/
+    return (gamemd::ObjectClass **)(unk_B78830); /*0x52a56a*/
   v11 = (unsigned int *)this->ambientSoundController[0]; /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
     return *(unsigned int *)(this->ambientSoundController[0] + 4); /*0x52a5f3*/
@@ -708,7 +708,7 @@ LABEL_9:
   v12 = this->nextObject; /*0x52a597*/
   v13 = this->fallRate; /*0x52a59a*/
   if ( (int)v12 <= 0 ) /*0x52a59f*/
-    return unk_B78830; /*0x52a59f*/
+    return (gamemd::ObjectClass **)(unk_B78830); /*0x52a59f*/
   while ( 1 ) /*0x52a5ac*/
   {
     v14 = *(uint8_t **)(v13 + 8 * ((int)v12 / 2)); /*0x52a5ac*/
@@ -718,7 +718,7 @@ LABEL_9:
     v12 = (ObjectClass *)((int)v12 / 2); /*0x52a5b8*/
 LABEL_19:
     if ( (int)v12 <= 0 ) /*0x52a5ca*/
-      return unk_B78830; /*0x52a5ca*/
+      return (gamemd::ObjectClass **)(unk_B78830); /*0x52a5ca*/
   }
   if ( v14 != v18 ) /*0x52a5bc*/
   {
@@ -731,7 +731,7 @@ LABEL_19:
     this->ambientSoundController[0] = v15; /*0x52a5e1*/
     return *(unsigned int *)(this->ambientSoundController[0] + 4); /*0x52a5e1*/
   }
-  return unk_B78830; /*0x52a5d2*/
+  return (gamemd::ObjectClass **)(unk_B78830); /*0x52a5d2*/
 
 }
 }

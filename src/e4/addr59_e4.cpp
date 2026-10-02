@@ -819,7 +819,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_82ADA8 + 31) = a2; /*0x596154*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_82ADA8 + 31) = (unsigned int)(a2); /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x596175*/
@@ -829,7 +829,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x5961aa*/
   if ( g_MissionQueueFrame.briefing[450] ) /*0x5961b7*/
     (**(void (***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5961bd*/
-  v10 = RA2_OPNEW(0x178u); /*0x5961c4*/
+  v10 = (int)(RA2_OPNEW(0x178u)); /*0x5961c4*/
   if ( v10 ) /*0x5961ce*/
     v11 = (int *)MapSeedClass::Constructor(v10); /*0x5961d2*/
   else

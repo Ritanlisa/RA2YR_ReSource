@@ -28,7 +28,7 @@ namespace gamemd {
 int ThemeClass::RequestBuffer()
 {
 
-  return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
+  return RequestBufferMixer((unsigned int *)((&this->m_Name)[3] + 16), 0);
 
 }
 } // namespace gamemd
@@ -37,7 +37,7 @@ namespace gamemd {
 int ThemeClass::GetValue()
 {
 
-  return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
+  return *(unsigned long long *)&(&this->m_Name)[6]; /*0x408146*/
 
 }
 } // namespace gamemd
@@ -112,7 +112,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2),(gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes), v5); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2),(gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes),(void *)(v5)); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
            (uint8_t ***)v2,
            (uint8_t *)g_INI_Key_Themes,
@@ -178,7 +178,7 @@ LABEL_10:
   result = ((gamemd::Audio *)this)->GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = (unsigned int)(((gamemd::Audio *)this)->GetEnabled());
+    Enabled = (void *)((unsigned int)(((gamemd::Audio *)this)->GetEnabled()));
     result = (void *)((unsigned int)(((AudioStream *)(Enabled))->Constructor(0x4E20u)));
     *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/

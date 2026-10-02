@@ -54,7 +54,7 @@ unsigned int * AudioQueue::CreateNode()
   InsertAfterDListNode((int)off_815E98, v2); /*0x402b67*/
   if ( (this->__pad_0[8] & 2) != 0 ) /*0x402b70*/
     dword_87DE28 = 1; /*0x402b72*/
-  return v2->__pad_0; /*0x402b44*/
+  return (unsigned int *)(v2->__pad_0); /*0x402b44*/
 
 }
 }

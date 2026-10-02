@@ -73,7 +73,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         || (v29 = *(unsigned int *)&this->__pad_28[116],
             v30 = *(unsigned int *)&this->__pad_28[120],
             v31 = *(unsigned int *)&this->__pad_28[124],
-            !(uint8_t)Game::Stub3((IUnknown *)((int)&v29))) )
+            !(uint8_t)Game::Stub3((int)((IUnknown *)((int)&v29)))) )
       {
         v5 = *((unsigned int *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/

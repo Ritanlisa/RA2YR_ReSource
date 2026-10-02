@@ -141,11 +141,11 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
   this->houseTypes = &vt_TypeList; /*0x6a458c*/
-  this->vtable1 = (unsigned int)(&vt_SideClass); /*0x6a4597*/
+  this->vtable1 = (void *)((unsigned int)(&vt_SideClass)); /*0x6a4597*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a459d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45a3*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((gamemd::AbstractClass *)&((unsigned int *)this)[0]); /*0x6a45b1*/
+  AbstractClass::GenerateUniqueID((int)((gamemd::AbstractClass *)&((unsigned int *)this)[0])); /*0x6a45b1*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !((unsigned int *)&FootClass_Array)[1])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
@@ -260,7 +260,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a493c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a4943*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x6a4951*/
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
   v3 = (*(int ((int *)(**))(int *, SideClass **))(((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/

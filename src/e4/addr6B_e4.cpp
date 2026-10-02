@@ -1372,7 +1372,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   v30 = v7; /*0x6b3ef1*/
   v28 = v7 + 2; /*0x6b3ef5*/
   if ( __OFSUB__(v7, v7 + 2) ) /*0x6b3ef9*/
-    return 1; /*0x6b4036*/
+    return (gamemd::AbstractClass **)(1); /*0x6b4036*/
   v9 = (int)(v6 + 2); /*0x6b3eff*/
   while ( 1 ) /*0x6b3f02*/
   {
@@ -1383,7 +1383,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   LABEL_27:
     v30 = ++v7; /*0x6b4023*/
     if ( v7 >= v8 ) /*0x6b4027*/
-      return 1; /*0x6b4027*/
+      return (gamemd::AbstractClass **)(1); /*0x6b4027*/
   }
   while ( 1 ) /*0x6b3f10*/
   {
@@ -1507,7 +1507,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x6b54dc*/
       CCFileClass::Construct(v5, Buffer); /*0x6b54ed*/
       *(unsigned int *)(v4 + 164) = ((CCFileClass *)(v5))->ReadEntireFile(); /*0x6b54ff*/
-      v5[0] = (void*)&CCFileClass_vftable; /*0x6b5505*/
+      v5[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
       ((Vector *)((int)v6))->Clear(); /*0x6b5515*/
       v5[0] = (unsigned int)&off_7E1668; /*0x6b551e*/
@@ -1552,7 +1552,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   int v35; // [esp+40h] [ebp-4h]
 
   v4 = (unsigned int *)((void **)(a0));
-  aP1 = (void **)(aP1);
+  aP1 = (IUnknown *)((void **)(aP1));
   a0 = a0; /*0x6b59aa*/
   if ( IDA___PAIR32__(a0[1] / 256, *a0 / 256) == Map_BottomRightCell ) /*0x6b59d5*/
     return 0; /*0x6b59e6*/

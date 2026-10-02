@@ -259,7 +259,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   {
     HIDWORD(v15) = (unsigned int)(&a4); /*0x4840b2*/
     LODWORD(v15) = (unsigned int)(&aP5); /*0x4840b7*/
-    Tactical::CalculateTacticalLighting((int *)(this),(IUnknown *)(v7), v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
+    Tactical::CalculateTacticalLighting((int *)(this),(IUnknown *)(v7),(int *)(v11), v8, v12, v9, &v16, v15); /*0x4840c4*/
     if ( *(unsigned int *)this->__pad_34 /*0x484125*/
       && (a1 = (unsigned int *)v16,
           aP2 = (unsigned int *)aP5,

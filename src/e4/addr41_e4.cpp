@@ -210,7 +210,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       result = InitializeSoundBufferPlayback(dwUser); /*0x41197f*/
       break; /*0x41198b*/
     case 5: /*0x411835*/
-      result = SubmitDirectSoundBufferData((unsigned int)(dwUser), a3, a4); /*0x41199b*/
+      result = SubmitDirectSoundBufferData((unsigned int)(dwUser),(char *)(a3), a4); /*0x41199b*/
       break; /*0x4119a7*/
     case 6: /*0x411835*/
       v8 = dwUser[2].LockCount; /*0x4119ac*/
@@ -2114,7 +2114,7 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
   int v8; // esi
   int TileIndex; // edi
 
-  v3 = aP0; /*0x41fee2*/
+  v3 = (int)(aP0); /*0x41fee2*/
   if ( *(unsigned char *)(aP0 + 240) ) /*0x41fee6*/
   {
     v4 = a2; /*0x41fef4*/
@@ -2123,7 +2123,7 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
       a2 = (unsigned int *)*HouseClass::GetCurrentOption(a1, &a1); /*0x41ff14*/
       CurrentOption = HouseClass::GetCurrentOption(v4, &a1); /*0x41ff1b*/
       v6 = *(unsigned int *)(v3 + 236); /*0x41ff22*/
-      aP0 = *CurrentOption; /*0x41ff28*/
+      aP0 = (IUnknown *)(*CurrentOption); /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/
       {
         TileIndex = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&aP0, v6, 0); /*0x41ffa2*/

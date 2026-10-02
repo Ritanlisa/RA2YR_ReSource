@@ -39,7 +39,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511681*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511688*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x51168f*/
-  return this; /*0x511698*/
+  return (unsigned int *)(this); /*0x511698*/
 
 }
 }
@@ -58,7 +58,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116ad*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116b4*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x5116bb*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5116c2*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x5116c2*/
   v7 = this; /*0x5116d7*/
   v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
   if ( v2 != -1 && v2 < dword_A83CA8 && v2 < --dword_A83CA8 ) /*0x5116f6*/

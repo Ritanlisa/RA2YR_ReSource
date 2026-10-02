@@ -27,14 +27,14 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
-  this->waypoints[1] = 0; /*0x763741*/
-  this->waypoints[2] = 0; /*0x763744*/
-  LOBYTE(this->waypoints[3]) = 1; /*0x763747*/
-  BYTE1(this->waypoints[3]) = 0; /*0x76374b*/
-  this->waypoints[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
-  this->waypoints[5] = 10; /*0x763755*/
-  this->waypoints[4] = 0; /*0x76375c*/
-  this->vtable1 = (unsigned int)(&vt_WaypointPathClass); /*0x76375f*/
+  (&this->waypoints)[1] = 0; /*0x763741*/
+  (&this->waypoints)[2] = 0; /*0x763744*/
+  LOBYTE((&this->waypoints)[3]) = 1; /*0x763747*/
+  BYTE1((&this->waypoints)[3]) = 0; /*0x76374b*/
+  (&this->waypoints)[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
+  (&this->waypoints)[5] = 10; /*0x763755*/
+  (&this->waypoints)[4] = 0; /*0x76375c*/
+  this->vtable1 = (void *)((unsigned int)(&vt_WaypointPathClass)); /*0x76375f*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763765*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x76376c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763773*/
@@ -132,7 +132,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vtable1 ) /*0x763cdd*/
       {
         ((WaypointPathClass *)(p_vtable1))->computePath(0, 0); /*0x763ce3*/
-        p_vtable1->vtable1 = (unsigned int)(&vt_DynamicVectorClass); /*0x763ce8*/
+        p_vtable1->vtable1 = (void *)((unsigned int)(&vt_DynamicVectorClass)); /*0x763ce8*/
         ((unsigned int *)p_vtable1)[0] = 10; /*0x763cee*/
         ((unsigned int *)p_vtable1)[0] = 0; /*0x763cf5*/
       }
@@ -197,9 +197,9 @@ _DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
   ((unsigned int *)this)[0] = (unsigned int)((void *)a2); /*0x764770*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x764773*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x764777*/
-  this->vtable1 = (unsigned int)(&vt_VectorClass); /*0x76477a*/
+  this->vtable1 = (void *)((unsigned int)(&vt_VectorClass)); /*0x76477a*/
   if ( !a2 ) /*0x764780*/
-    return this; /*0x764780*/
+    return (_DWORD *)(this); /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
     v7 = (int *)__2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
@@ -222,7 +222,7 @@ _DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
         while ( v10 ); /*0x7647e4*/
         ((unsigned int *)this)[0] = (unsigned int)(v8); /*0x7647e6*/
         BYTE1(((unsigned int *)this)[0]) = 1; /*0x7647e9*/
-        return this; /*0x7647f2*/
+        return (_DWORD *)(this); /*0x7647f2*/
       }
     }
     else
@@ -231,7 +231,7 @@ _DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
     }
     ((unsigned int *)this)[0] = (unsigned int)(v8); /*0x7647f7*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x7647fa*/
-    return this; /*0x7647fe*/
+    return (_DWORD *)(this); /*0x7647fe*/
   }
   *a3 = a2; /*0x764790*/
   v4 = a3 + 1; /*0x764794*/
@@ -249,7 +249,7 @@ _DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
     while ( v5 ); /*0x7647a5*/
   }
   ((unsigned int *)this)[0] = (unsigned int)(a3 + 1); /*0x7647a7*/
-  return this; /*0x7647ac*/
+  return (_DWORD *)(this); /*0x7647ac*/
 
 }
 }
@@ -260,7 +260,7 @@ int WaypointPathClass::PowerDrainUpdate(int a2)
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
-  return Power::TimerProcess(this->waypoints[4]); /*0x763c24*/
+  return Power::TimerProcess((&this->waypoints)[4]); /*0x763c24*/
 
 }
 } // namespace gamemd

@@ -177,10 +177,10 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3
   *((unsigned char *)this + 757) = 0; /*0x46bcd4*/
   *((unsigned char *)this + 758) = 0; /*0x46bcda*/
   *((unsigned char *)this + 759) = 0; /*0x46bce0*/
-  *(unsigned int *)this->vtable1 = &vt_BulletTypeClass; /*0x46bce6*/
-  *(unsigned int *)this[4] = &vt_BulletTypeClass; /*0x46bcec*/
-  *(unsigned int *)this[8] = &vt_BulletTypeClass; /*0x46bcf2*/
-  *(unsigned int *)this[12] = &vt_BulletTypeClass; /*0x46bcf9*/
+  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_BulletTypeClass); /*0x46bce6*/
+  *(unsigned int *)this[4] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcec*/
+  *(unsigned int *)this[8] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcf2*/
+  *(unsigned int *)this[12] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((AbstractClass *)this[4]); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
@@ -439,7 +439,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
     {
       v22 = v39; /*0x46c22d*/
     }
-    *(unsigned int *)(v4 + 728) = v22; /*0x46c231*/
+    *(unsigned int *)(v4 + 728) = (unsigned int)(v22); /*0x46c231*/
     *(unsigned int *)(v4 + 740) = INIClass::ReadInt_Overwrite( /*0x46c24e*/
                               (bool *)&DSurface_ViewBounds.__pad_FC[228],
                               (uint8_t *)(v4 + 504),
@@ -541,7 +541,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
     ObjectTypeClass::Load2DArt((char *)v4); /*0x46c406*/
   if ( *(unsigned char *)(v4 + 566) ) /*0x46c40b*/
     VoxelAnimType::LoadAnim((char *)v4); /*0x46c417*/
-  return 1; /*0x46c41c*/
+  return (gamemd::WeaponTypeClass **)(1); /*0x46c41c*/
 
 }
 } // namespace gamemd
@@ -617,11 +617,11 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block->vtable1 = &vt_BulletTypeClass; /*0x46c896*/
-  *(unsigned int *)Block[4] = &vt_BulletTypeClass; /*0x46c89c*/
-  *(unsigned int *)Block[8] = &vt_BulletTypeClass; /*0x46c8a3*/
-  *(unsigned int *)Block[12] = &vt_BulletTypeClass; /*0x46c8aa*/
-  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x46c8b1*/
-  v6 = Block; /*0x46c8c6*/
+  *(unsigned int *)Block[4] = (unsigned int)(&vt_BulletTypeClass); /*0x46c89c*/
+  *(unsigned int *)Block[8] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8a3*/
+  *(unsigned int *)Block[12] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8aa*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block), 1); /*0x46c8b1*/
+  v6 = (gamemd::BulletTypeClass *)(Block); /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -636,7 +636,7 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x46c8ed*/
     }
   }
-  v6 = Block; /*0x46c90f*/
+  v6 = (gamemd::BulletTypeClass *)(Block); /*0x46c90f*/
   v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
   if ( v4 != -1 && v4 < dword_A83C90 && v4 < --dword_A83C90 ) /*0x46c92e*/
   {
@@ -684,7 +684,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   int v24; // [esp+14h] [ebp-Ch]
   int v25; // [esp+18h] [ebp-8h]
 
-  v1 = a1; /*0x69fc16*/
+  v1 = (gamemd::ShipLocomotionClass *)(a1); /*0x69fc16*/
   v2 = (char *)a1 - 4; /*0x69fc28*/
   v3 = *(uint8_t *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x69fc31*/
   v4 = *((unsigned int *)v2 + 7); /*0x69fc33*/
@@ -715,7 +715,7 @@ int BulletTypeClass::ProcessImpact(int a1)
     }
     else
     {
-      Owner = ((unsigned int *)v1)[0]; /*0x69fd7f*/
+      Owner = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x69fd7f*/
       if ( ((unsigned int *)Owner)[0] != 5 /*0x69fddc*/
         || HIBYTE(v1->TrackIndex)
         || v1->SlopeTimer[3] == g_OverlayTypeConfig && *(unsigned long long *)v1->Dest == qword_B077FC
@@ -732,7 +732,7 @@ int BulletTypeClass::ProcessImpact(int a1)
         {
           BYTE2(v1->TrackIndex) = 0; /*0x69ff62*/
           (*((void (**)(FootClass *, unsigned int))((unsigned int *)v1)[0]->vtable1 + 99))(((unsigned int *)v1)[0], 0); /*0x69ff6b*/
-          v16 = ((unsigned int *)v1)[0]; /*0x69ff71*/
+          v16 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x69ff71*/
           if ( !((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] ) /*0x69ff84*/
             return 0; /*0x69ff95*/
         }
@@ -744,7 +744,7 @@ int BulletTypeClass::ProcessImpact(int a1)
         }
         if ( !(*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x69ffcd*/
         {
-          v17 = ((unsigned int *)v1)[0]; /*0x69ffd8*/
+          v17 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x69ffd8*/
           if ( v17->pathDirections[0] == -1 ) /*0x69ffe1*/
           {
             if ( ((unsigned int *)v17)[0] ) /*0x69ffe7*/
@@ -778,7 +778,7 @@ int BulletTypeClass::ProcessImpact(int a1)
             goto LABEL_32; /*0x6a0032*/
           }
         }
-        v20 = ((unsigned int *)v1)[0]; /*0x6a0074*/
+        v20 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x6a0074*/
         if ( ((unsigned int *)v20)[0] /*0x6a00ab*/
           && (*((int (**)(FootClass *))v20->vtable1 + 97))(v20) != 7
           && (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)

@@ -1132,7 +1132,7 @@ char sub_63AB60(int a1, int a2)
   v9[0] = *Coords; /*0x63abaa*/
   v9[1] = Coords[1]; /*0x63abb5*/
   v9[2] = Coords[2]; /*0x63abc0*/
-  v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
+  v5 = (unsigned int *)(ToCoordPixel((unsigned int *)(&v8), v9)); /*0x63abc4*/
   ((Rect *)(v11))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
   v10[0] = v11[0]; /*0x63abf9*/
   v6 = v11[1] - 4; /*0x63ac00*/
@@ -1152,10 +1152,10 @@ char sub_63AB60(int a1, int a2)
   if ( v7 == v3 ) /*0x63ac3f*/
   {
   LABEL_17:
-    Mission::SetAndCall((int *)&dword_87F7E8, 0, 1); /*0x63ac45*/
+    Mission::SetAndCall((int)((int *)&dword_87F7E8), 0, 1); /*0x63ac45*/
     return 1; /*0x63ac4e*/
   }
-  Mission::SetAndCall((int *)&dword_87F7E8, 0, 0); /*0x63ac43*/
+  Mission::SetAndCall((int)((int *)&dword_87F7E8), 0, 0); /*0x63ac43*/
   return 1; /*0x63ab6f*/
 }
 }
@@ -1281,7 +1281,7 @@ int sub_682240(int a1, int a2, unsigned short * a3)
   a3 = 0; /*0x68224a*/
   v4 = 0; /*0x682252*/
   *v3 = 0; /*0x682254*/
-  v5 = &unk_83D658; /*0x682259*/
+  v5 = (unsigned int *)(&unk_83D658); /*0x682259*/
   while ( *v5 != a2 ) /*0x682260*/
   {
     v5 += 2; /*0x682262*/
@@ -1292,7 +1292,7 @@ int sub_682240(int a1, int a2, unsigned short * a3)
       goto LABEL_5; /*0x68226d*/
     }
   }
-  v6 = (&off_83D65C)[2 * v4]; /*0x6822a0*/
+  v6 = (void **)((&off_83D65C)[2 * v4]); /*0x6822a0*/
   LABEL_5:
   v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned short **))(*(unsigned int *)a1 + 16))( /*0x68226f*/
          a1,
@@ -1339,7 +1339,7 @@ void sub_6824B0(int a1, int a2, unsigned int * a3)
   a3 = 0; /*0x6824ba*/
   v4 = 0; /*0x6824c2*/
   *v3 = 0; /*0x6824c4*/
-  v5 = &unk_83D658; /*0x6824ca*/
+  v5 = (unsigned int *)(&unk_83D658); /*0x6824ca*/
   while ( *v5 != a2 ) /*0x6824d1*/
   {
     v5 += 2; /*0x6824d3*/
@@ -1350,7 +1350,7 @@ void sub_6824B0(int a1, int a2, unsigned int * a3)
       goto LABEL_5; /*0x6824de*/
     }
   }
-  v6 = (&off_83D65C)[2 * v4]; /*0x682511*/
+  v6 = (void **)((&off_83D65C)[2 * v4]); /*0x682511*/
   LABEL_5:
   v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x6824e0*/
          a1,
@@ -1464,7 +1464,7 @@ int sub_660C50()
 {
   dword_B04D88 = -1; /*0x660c54*/
   dword_B04DD8 = -1; /*0x660c59*/
-  memset32(dword_B04D48, dword_B04D68, 8u); /*0x660c6d*/
+  memset32((void *)(dword_B04D48), dword_B04D68, 8u); /*0x660c6d*/
   return dword_B04D68; /*0x660c6f*/
 }
 }

@@ -157,13 +157,13 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   int v5; // ecx
   int *v6; // eax
 
-  v4 = this->customSound_controller[1]; /*0x6a87f5*/
+  v4 = (&this->customSound_controller)[1]; /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
   v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    v6 = &this->customSound_controller[2]; /*0x6a880b*/
+    v6 = &(&this->customSound_controller)[2]; /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/
@@ -177,7 +177,7 @@ LABEL_7:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a882b*/
     ((VoxClass *)(&stru_83FA64))->FindAndPlay(-1); /*0x6a8837*/
   ((TabCameoListClass *)((TabCameoListClass *)this))->AddCameo_ReplaceItAll(a2, a3); /*0x6a8840*/
-  LOBYTE(this->ambientSoundController[0]) = 1; /*0x6a8848*/
+  LOBYTE((&this->ambientSoundController)[0]) = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
 
@@ -205,9 +205,9 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
-    if ( this->ambientSoundController[2] ) /*0x6a8a58*/
+    if ( (&this->ambientSoundController)[2] ) /*0x6a8a58*/
     {
-      this->ambientSoundController[3] -= v3; /*0x6a8a72*/
+      (&this->ambientSoundController)[3] -= v3; /*0x6a8a72*/
       return 1; /*0x6a8a76*/
     }
     else
@@ -225,12 +225,12 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     {
       v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
       v8 = (gamemd::ObjectClass *)(this);
-      if ( this->ambientSoundController[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
+      if ( (&this->ambientSoundController)[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else
     {
-      if ( 2 * (v6 + this->ambientSoundController[2]) >= this->customSound_controller[1] ) /*0x6a8ae2*/
+      if ( 2 * (v6 + (&this->ambientSoundController)[2]) >= (&this->customSound_controller)[1] ) /*0x6a8ae2*/
         return 0; /*0x6a8aed*/
       v8 = (gamemd::ObjectClass *)(this); /*0x6a8af0*/
     }
@@ -761,7 +761,7 @@ int TechnoClass::ProcessDeployAction()
                                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
                                         1);
           v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2((unsigned int *)(&v33), *(int *)v29); /*0x6b0100*/
-          v16 = ((CellStruct *)((CellStruct *)&v30))->Sub((unsigned int *)(&v34), v29); /*0x6b0104*/
+          v16 = (unsigned int *)(((CellStruct *)((CellStruct *)&v30))->Sub((unsigned int *)(&v34),(unsigned short *)(v29))); /*0x6b0104*/
           v17 = *((int16_t *)v16 + 1); /*0x6b0109*/
           v18 = *(int16_t *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/

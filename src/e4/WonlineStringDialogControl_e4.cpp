@@ -422,7 +422,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   SendDlgItemMessageA(Current, 1478, 0x402u, 100 * a3 / a4, 0); /*0x7ad4bd*/
   if ( v12 <= 0 ) /*0x7ad4cc*/
   {
-    StringCSF = GetStringCSF((wchar_t *)(aTxtBytesWoTime), 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtBytesWoTime), 0,(const char *)(g_Str_File_wonline_cpp), 5172); /*0x7ad50a*/
     swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)a3, a4); /*0x7ad515*/
   }
   else

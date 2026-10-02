@@ -145,7 +145,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 
   v5 = *(unsigned int *)this->isUseless; /*0x7714c4*/
   v6 = v5 - 1; /*0x7714c6*/
-  if ( v5 > this->targetLaserTimer[0] ) /*0x7714c9*/
+  if ( v5 > (&this->targetLaserTimer)[0] ) /*0x7714c9*/
   {
     do /*0x77150b*/
     {
@@ -156,45 +156,45 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         v9 = v6; /*0x7714d6*/
         for ( *(unsigned int *)this->isUseless = v8; v9 < *(unsigned int *)this->isUseless; ++v9 ) /*0x7714e0*/
           String::Reassign( /*0x7714f0*/
-            (String *)(this->targetLaserTimer[2] + 4 * v9),
-            (const char **)(this->targetLaserTimer[2] + 4 * v9 + 4));
+            (String *)((&this->targetLaserTimer)[2] + 4 * v9),
+            (const char **)((&this->targetLaserTimer)[2] + 4 * v9 + 4));
       }
       v10 = v6--; /*0x771506*/
     }
-    while ( v10 > this->targetLaserTimer[0] ); /*0x77150b*/
+    while ( v10 > (&this->targetLaserTimer)[0] ); /*0x77150b*/
   }
-  if ( !this->targetLaserTimer[0] ) /*0x77150d*/
+  if ( !(&this->targetLaserTimer)[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
-  vtable0 = this->vtable1; /*0x77152b*/
+  vtable0 = (int)(this->vtable1); /*0x77152b*/
   DeleteAndZero::Alt2(&v17); /*0x77153b*/
-  v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
+  v12 = (&this->primaryFacing)[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
-    if ( Map_Remove_770CE0(vtable0, *(unsigned int *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
+    if ( Map_Remove_770CE0(vtable0, *(unsigned int *)((&this->barrelFacing)[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(uint8_t)Audio::IsPlaying() ) /*0x77157c*/
       {
-        this->secondaryFacing[3] = TimerGetTicks(); /*0x771598*/
-        this->secondaryFacing[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
-        this->secondaryFacing[5] = a4; /*0x7715a5*/
+        (&this->secondaryFacing)[3] = TimerGetTicks(); /*0x771598*/
+        (&this->secondaryFacing)[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
+        (&this->secondaryFacing)[5] = a4; /*0x7715a5*/
       }
       v14 = *(unsigned int *)this->unknown_short_3C8; /*0x7715a8*/
       if ( *(unsigned int *)this->isUseless < v14 /*0x7715d9*/
-        || (this->isSinking[0] || !v14)
+        || ((&this->isSinking)[0] || !v14)
         && (v15 = *(unsigned int *)this->isALoaner, v15 > 0)
-        && (*(uint8_t (**)(int *, int, unsigned int))(this->targetLaserTimer[1] + 8))(
-             &this->targetLaserTimer[1],
+        && (*(uint8_t (**)(int *, int, unsigned int))((&this->targetLaserTimer)[1] + 8))(
+             &(&this->targetLaserTimer)[1],
              v14 + v15,
              0) )
       {
         v16 = *(unsigned int *)this->isUseless; /*0x7715e0*/
         *(unsigned int *)this->isUseless = v16 + 1; /*0x7715eb*/
-        ((String *)((String *)(this->targetLaserTimer[2] + 4 * v16)))->Reassign((const char **)&v17); /*0x7715f4*/
+        ((String *)((String *)((&this->targetLaserTimer)[2] + 4 * v16)))->Reassign((const char **)&v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
-        ++this->targetLaserTimer[0]; /*0x771601*/
+        ++(&this->targetLaserTimer)[0]; /*0x771601*/
     }
   }
   DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/

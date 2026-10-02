@@ -271,7 +271,7 @@ int Dialog_Close(HWND a1, int a2)
       if ( ++result >= (gamemd::ObjectClass *)(g_DialogTrackingList) ) /*0x77581b*/
       {
         IDA_LOBYTE(result) = 0; /*0x77581e*/
-        return result; /*0x775822*/
+        return (int)(result); /*0x775822*/
       }
     }
     v5 = (gamemd::ObjectClass *)((int)(result));
@@ -324,7 +324,7 @@ int Dialog_Close(HWND a1, int a2)
   {
     IDA_LOBYTE(result) = 0; /*0x775801*/
   }
-  return result; /*0x775800*/
+  return (int)(result); /*0x775800*/
 }
 }
 // 0x7759E0
@@ -583,7 +583,7 @@ int E4Recv_776320::sub_776320(LPARAM lParam)
   if ( !byte_B7309C ) /*0x776330*/
     return 0; /*0x776480*/
   ImageList_DragShowNolock(0); /*0x77633b*/
-  qmemcpy(v7, HitDialogTest((void *)((unsigned int)lParam), v2, v7), sizeof(v7)); /*0x776359*/
+  qmemcpy(v7, HitDialogTest((void *)((unsigned int)lParam),(void *)(v2), v7), sizeof(v7)); /*0x776359*/
   qmemcpy(wParam, v7, sizeof(wParam)); /*0x77636c*/
   if ( SendMessageA((HWND)v7[0].y, 0x4C8u, (WPARAM)wParam, (LPARAM)lParam) ) /*0x776379*/
   {
@@ -605,7 +605,7 @@ int E4Recv_776320::sub_776320(LPARAM lParam)
   ImageList_Destroy(himl); /*0x7763f8*/
   himl = 0; /*0x776405*/
   byte_B7309C = 0; /*0x77640f*/
-  qmemcpy(v7, HitDialogTest((void *)((unsigned int)lParam), (int)v7, v7), sizeof(v7)); /*0x776426*/
+  qmemcpy(v7, HitDialogTest((void *)((unsigned int)lParam),(void *)((int)v7), v7), sizeof(v7)); /*0x776426*/
   qmemcpy(v10, v7, sizeof(v10)); /*0x776435*/
   if ( v4 ) /*0x77643c*/
     SendMessageA((HWND)v7[0].y, 0x4CAu, (WPARAM)v10, (LPARAM)lParam); /*0x77644e*/
@@ -803,7 +803,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         {
           MainWindowProc_Helper_724000(v17, (int)v13); /*0x7777a3*/
           *((unsigned int *)v18 + 153) = 7; /*0x7777a8*/
-          *(unsigned int *)v18 = (void*)&CCToolTip_vftable; /*0x7777b2*/
+          *(unsigned int *)v18 = (unsigned int)((void*)&CCToolTip_vftable); /*0x7777b2*/
           *(unsigned int *)&stru_88732C.__pad_1C[32] = v18; /*0x7777b8*/
         }
         else
@@ -838,7 +838,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         }
         if ( *((unsigned int *)((char *)&stru_A8EB00 + 376)) == 1 ) /*0x777709*/
         {
-          v15 = DSurface_Composite; /*0x77770b*/
+          v15 = (gamemd::AudioStream *)(DSurface_Composite); /*0x77770b*/
           (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 28))(); /*0x777710*/
           Frame::Present((int)v15, 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x777717*/
           ((Sidebar *)((Sidebar *)&stru_87F5F0.__pad_58[416]))->FlushSidebarTooltip(1); /*0x777723*/
@@ -853,7 +853,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         {
           if ( !Render_Draw_774070() ) /*0x777750*/
           {
-            v16 = g_DSurface_Hidden; /*0x77775f*/
+            v16 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x77775f*/
             (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer); /*0x777768*/
             Frame::Present((int)v16, 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x77776f*/
           }
@@ -879,9 +879,9 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     if ( !byte_B73561 ) /*0x77798b*/
     {
       byte_B73561 = 1; /*0x777991*/
-      v20 = aSidebardown; /*0x77799e*/
+      v20 = (const char *)(aSidebardown); /*0x77799e*/
       if ( (wParam & 0x80000000) == 0 ) /*0x7779a3*/
-        v20 = aSidebarup; /*0x7779a5*/
+        v20 = (const char *)(aSidebarup); /*0x7779a5*/
       Sidebar::ScrollSidebarSkipGame(v20); /*0x7779aa*/
       byte_B73561 = 0; /*0x7779af*/
   LABEL_69:
@@ -948,7 +948,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     return 0; /*0x7779da*/
   if ( Msg == 646 )
   {
-    v21 = wcslen(&word_B730EC); /*0x7779f2*/
+    v21 = wcslen((const wchar_t *)(&word_B730EC)); /*0x7779f2*/
     if ( IDA_BYTE1(wParam) ) /*0x7779fe*/
     {
       *(unsigned short *)((char *)&hWnd + 1) = (uint8_t)wParam; /*0x777a02*/
@@ -959,8 +959,8 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
       IDA_LOWORD(hWnd) = (uint8_t)wParam; /*0x777a13*/
     }
     v22 = MultiByteToWideChar(0, 0, (LPCCH)&hWnd, strlen((const char *)&hWnd), WideCharStr, 1); /*0x777a38*/
-    *(&word_B730EC + v21) = v22 == 1 ? WideCharStr[0] : 0;
-    word_B730EE[v21] = 0; /*0x777a53*/
+    *(&word_B730EC + v21) = v22 == 1 ? (&WideCharStr)[0] : 0;
+    (&word_B730EE)[v21] = 0; /*0x777a53*/
     return 0; /*0x777a53*/
   }
   return DefWindowProcA(v13, Msg, wParam, (LPARAM)lParam); /*0x777624*/

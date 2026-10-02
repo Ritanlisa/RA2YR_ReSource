@@ -281,7 +281,7 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = &this->__pad_14D[11]; /*0x5f734b*/
+  v5 = &(&this->__pad_14D)[11]; /*0x5f734b*/
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -291,31 +291,31 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
     --v6; /*0x5f735e*/
   }
   while ( v6 ); /*0x5f735f*/
-  this->VoxelCaches[0] = 0; /*0x5f7361*/
-  this->VoxelCaches[1] = 0; /*0x5f7367*/
-  this->VoxelCaches[2] = 0; /*0x5f736d*/
-  LOBYTE(this->VoxelCaches[3]) = 0; /*0x5f7373*/
-  this->VoxelCaches[4] = 0; /*0x5f7379*/
-  this->VoxelCaches[5] = 0; /*0x5f737f*/
-  this->VoxelCaches[6] = 0; /*0x5f7385*/
-  this->VoxelCaches[7] = 0; /*0x5f738b*/
-  LOBYTE(this->VoxelCaches[8]) = 0; /*0x5f7391*/
-  this->VoxelCaches[9] = 0; /*0x5f7397*/
-  this->VoxelCaches[10] = 0; /*0x5f739d*/
-  this->VoxelCaches[11] = 0; /*0x5f73a3*/
-  this->VoxelCaches[12] = 0; /*0x5f73a9*/
-  LOBYTE(this->VoxelCaches[13]) = 0; /*0x5f73af*/
-  this->VoxelCaches[14] = 0; /*0x5f73b5*/
-  this->VoxelCaches[15] = 0; /*0x5f73bb*/
-  this->VoxelCaches[16] = 0; /*0x5f73c1*/
-  this->VoxelCaches[17] = 0; /*0x5f73c7*/
-  LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
-  this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->vtable1 = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73d9*/
+  (&this->VoxelCaches)[0] = 0; /*0x5f7361*/
+  (&this->VoxelCaches)[1] = 0; /*0x5f7367*/
+  (&this->VoxelCaches)[2] = 0; /*0x5f736d*/
+  LOBYTE((&this->VoxelCaches)[3]) = 0; /*0x5f7373*/
+  (&this->VoxelCaches)[4] = 0; /*0x5f7379*/
+  (&this->VoxelCaches)[5] = 0; /*0x5f737f*/
+  (&this->VoxelCaches)[6] = 0; /*0x5f7385*/
+  (&this->VoxelCaches)[7] = 0; /*0x5f738b*/
+  LOBYTE((&this->VoxelCaches)[8]) = 0; /*0x5f7391*/
+  (&this->VoxelCaches)[9] = 0; /*0x5f7397*/
+  (&this->VoxelCaches)[10] = 0; /*0x5f739d*/
+  (&this->VoxelCaches)[11] = 0; /*0x5f73a3*/
+  (&this->VoxelCaches)[12] = 0; /*0x5f73a9*/
+  LOBYTE((&this->VoxelCaches)[13]) = 0; /*0x5f73af*/
+  (&this->VoxelCaches)[14] = 0; /*0x5f73b5*/
+  (&this->VoxelCaches)[15] = 0; /*0x5f73bb*/
+  (&this->VoxelCaches)[16] = 0; /*0x5f73c1*/
+  (&this->VoxelCaches)[17] = 0; /*0x5f73c7*/
+  LOBYTE((&this->VoxelCaches)[18]) = 0; /*0x5f73cd*/
+  (&this->VoxelCaches)[19] = 0; /*0x5f73d3*/
+  this->vtable1 = (void *)((unsigned int)(&vt_ObjectTypeClass)); /*0x5f73d9*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73df*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73e6*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73ed*/
-  return this; /*0x5f73f6*/
+  return (gamemd::BulletTypeClass *)(this); /*0x5f73f6*/
 
 }
 } // namespace gamemd
@@ -730,9 +730,9 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
   this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aBombable, Bombable); /*0x5f9431*/
-  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
+  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aNospawnalt, (&this->__pad_14D)[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
-  this->__pad_14D[155] = v9; /*0x5f9451*/
+  (&this->__pad_14D)[155] = v9; /*0x5f9451*/
   v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
@@ -817,10 +817,10 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   this->Voxel = v25; /*0x5f9634*/
   if ( !v25 && (*((int (**)(ObjectTypeClass *))this->vtable1 + 11))(this) != 5 ) /*0x5f9649*/
     ObjectTypeClass::Load2DArt((char *)this); /*0x5f964d*/
-  if ( this->AlphaImageFile[0] ) /*0x5f9652*/
+  if ( (&this->AlphaImageFile)[0] ) /*0x5f9652*/
   {
-    _makepath((char *)&Destination.Name[5], 0, 0, this->AlphaImageFile, Ext); /*0x5f9674*/
-    this->AlphaImage = (SHPStruct *)SearchMIXFile((char *)&Destination.Name[5], 0); /*0x5f968a*/
+    _makepath((char *)&(&Destination.Name)[5], 0, 0, this->AlphaImageFile, Ext); /*0x5f9674*/
+    this->AlphaImage = (SHPStruct *)SearchMIXFile((char *)&(&Destination.Name)[5], 0); /*0x5f968a*/
   }
   return (void *)(1); /*0x5f9690*/
 
@@ -906,7 +906,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   }
   aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
   ObjectTypeClass::CleanupWeapons((char *)aP0); /*0x5f9839*/
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x5f9847*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x5f9847*/
   if ( result >= 0 ) /*0x5f984e*/
   {
     aP0->Image = 0; /*0x5f9856*/

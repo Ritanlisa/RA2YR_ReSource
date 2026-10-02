@@ -449,7 +449,7 @@ LABEL_63:
                            *(unsigned int *)(a1 + 8),
                            v128);
         if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
-          ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
+          ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem((int)(*(ObjectClass **)(a1 + 8)));
         v43 = (AnimClass *)new AnimClass;
         if ( v43 )
         {
@@ -777,8 +777,8 @@ LABEL_38:
         v123 = (ObjectClass *)((char *)v123 + v113->abstractFlags);
         IDA_LOWORD(v115) = IDA_SLODWORD(var74_4) / 256;
         IDA_HIWORD(v115) = IDA_SHIDWORD(var74_4) / 256;
-        IDA_LODWORD(var64_4) = v115;
-        if ( ((LayerClass *)(&stru_87C374[13428]))->CoordinatesLegal((IUnknown *)&var64_4) )
+        IDA_LODWORD(var64_4) = (unsigned int)(v115);
+        if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal((IUnknown *)&var64_4) )
           (*(void (**)(unsigned int, double *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &var74_4);
       }
       else
@@ -797,11 +797,11 @@ LABEL_47:
           v130[1] = v35->location[1];
           v130[2] = v35->location[2];
           int v34 = (*(int (**)(ObjectClass *))(*(unsigned int *)v35->__pad_0 + 132))(v35);
-          StartAudioControllerAt(*(AudioController **)(v34 + 1324), (int)v130, 0);
-          ((GadgetGrid *)(&stru_87C374[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
+          StartAudioControllerAt((int)(*(AudioController **)(v34 + 1324)), (int)v130, 0);
+          ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
         }
         edx50 = v126;
-        v21->field_0 = *(unsigned int *)&HouseClass_Player[45112];
+        v21->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = edx50;
         *(unsigned int *)(a1 + 56) = 0;
         *(unsigned int *)(a1 + 60) = 3;

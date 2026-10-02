@@ -1907,44 +1907,44 @@ LABEL_23:
       if ( v60 )
       {
   int v116; // [esp+1A4h] [ebp-20h] BYREF
-        int * v36 = Copy8Bytes(&v116, v107);
+        int * v36 = (int *)(Copy8Bytes(&v116, v107));
   int v102[2]; // [esp+FCh] [ebp-C8h] BYREF
         v102[0] = *v36;
         v102[1] = v36[1];
         int v37 = v64 - *((unsigned int *)Block + v70);
         if ( v37 < 0 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32, v35, a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v37 >= 6 && !a2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32, v35, 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v61 )
       {
   int v114; // [esp+194h] [ebp-30h] BYREF
-        int * v38 = Copy8Bytes(&v114, &v97);
+        int * v38 = (int *)(Copy8Bytes(&v114, &v97));
         int v76 = *v38;
         int v77 = v38[1];
         int v39 = v64 - *((unsigned int *)Block + v101);
         if ( v39 < 0 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v79), a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v39 >= 6 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, a2 != 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v79), a2 != 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else
         {
   int v118; // [esp+1B4h] [ebp-10h] BYREF
-          int * v40 = Copy8Bytes(&v118, v109);
+          int * v40 = (int *)(Copy8Bytes(&v118, v109));
           v76 = *v40;
           v77 = v40[1];
-          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, 1u, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v79), 1u, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   int v117; // [esp+1ACh] [ebp-18h] BYREF
-          int * v41 = Copy8Bytes(&v117, &v97);
+          int * v41 = (int *)(Copy8Bytes(&v117, &v97));
           v76 = *v41;
           v77 = v41[1];
           DrawToSurfaceSHP(
@@ -1969,7 +1969,7 @@ LABEL_23:
       if ( v60 )
       {
   int v119; // [esp+1BCh] [ebp-8h] BYREF
-        int * v42 = Copy8Bytes(&v119, v107);
+        int * v42 = (int *)(Copy8Bytes(&v119, v107));
   int v103[2]; // [esp+104h] [ebp-C0h] BYREF
         v103[0] = *v42;
         v103[1] = v42[1];
@@ -2000,12 +2000,12 @@ LABEL_68:
         if ( v43 < 6 )
           goto LABEL_68;
         if ( a2 )
-          DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v73, 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_69:
       if ( v74 > 0 )
       {
-        unsigned int * v44 = Block;
+        unsigned int * v44 = (unsigned int *)(Block);
         int v45 = v81;
         v65 = (int *)v74;
         do
@@ -2016,15 +2016,15 @@ LABEL_69:
           v90[1] = v45;
           if ( v46 < 0 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else if ( v46 >= 6 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           ++v44;
           v45 += v84;
@@ -2052,7 +2052,7 @@ LABEL_69:
             if ( v50 != -1 )
               break;
           }
-          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_89:
           v47 += v84;
           --v48;
@@ -2062,11 +2062,11 @@ LABEL_89:
         }
         if ( v50 != -2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_89;
         }
 LABEL_87:
-        DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_89;
       }
 LABEL_90:
@@ -2085,21 +2085,21 @@ LABEL_90:
         if ( v53 == -1 )
         {
 LABEL_94:
-          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_98;
         }
         if ( v53 == -2 )
 LABEL_96:
-          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         else
-          DrawToSurfaceSHP(DSurface_Alternate, v31, v33, v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_98:
       char v54 = v63;
       if ( !v63 )
         goto LABEL_116;
   int v115; // [esp+19Ch] [ebp-28h] BYREF
-      int * v55 = Copy8Bytes(&v115, &v93);
+      int * v55 = (int *)(Copy8Bytes(&v115, &v93));
       v69[0] = *v55;
       v69[1] = v55[1];
       int v56 = v64 - *((unsigned int *)Block + v70 + 2);
@@ -2130,7 +2130,7 @@ LABEL_98:
           v57 = DataGlobal_B0FB34;
         }
 LABEL_106:
-        DrawToSurfaceSHP(DSurface_Alternate, (int)v62, (int)v57, 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
       if ( g_DDraw_Active >= 800 )
@@ -2181,11 +2181,11 @@ LABEL_116:
   }
   RA2_OPDEL(Block);
   if ( !a2 )
-    return SendMessageA(hWnd, 0x4EDu, 0, 0);
+    return (gamemd::AbstractClass **)(SendMessageA(hWnd, 0x4EDu, 0, 0));
   PlayVocClass(*((unsigned int *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
   while ( (*(int (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
     (*(void (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
-  return SendMessageA(hWnd, 0x4ECu, 0, 0);
+  return (gamemd::AbstractClass **)(SendMessageA(hWnd, 0x4ECu, 0, 0));
 }
 } // namespace gamemd
 

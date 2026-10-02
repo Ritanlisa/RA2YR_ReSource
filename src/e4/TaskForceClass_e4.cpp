@@ -188,7 +188,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
   *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
   *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(gamemd::AbstractClass *)(1)); /*0x6e8811*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
   v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
   v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/

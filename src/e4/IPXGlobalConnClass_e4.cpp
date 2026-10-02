@@ -129,7 +129,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   {
     ((Network *)((Network *)a3))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x540431*/
     v15 = (int)(*aP4); /*0x540442*/
-    ((NetworkID *)(&v18))->Assign(&v15, (int)v17, 0); /*0x54044c*/
+    ((NetworkID *)(&v18))->Assign((unsigned int *)(&v15), (int)v17, 0); /*0x54044c*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) ) /*0x540477*/
   {
@@ -139,7 +139,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
       ((Network *)((Network *)&v20))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x5404ba*/
-      ((NetworkID *)(&v20))->Assign(&v15, (int)v17, aP3); /*0x5404d2*/
+      ((NetworkID *)(&v20))->Assign((unsigned int *)(&v15), (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
       if ( dword_A8DA84 > 0 ) /*0x5404e3*/

@@ -406,7 +406,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
   if ( !*((unsigned int *)v7 + 17) ) /*0x7c2656*/
     *((unsigned int *)v7 + 17) = (unsigned int)(AllocCallback::Dispatch); /*0x7c265d*/
   if ( !*v9 ) /*0x7c2664*/
-    *v9 = sub_7BF240; /*0x7c266a*/
+    *v9 = (unsigned int)(sub_7BF240); /*0x7c266a*/
   if ( ((int (*)(unsigned short *, int, const char *, unsigned int))*v9)(v7, 3, v25, 0) ) /*0x7c267b*/
   {
     (*((void (**)(unsigned short *, int, unsigned short *, int))v7 + 17))(v7, 5, v7, 2012); /*0x7c268e*/
@@ -3939,7 +3939,7 @@ int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNo
           --Basea; /*0x7c8bad*/
           if ( v17 < 0 ) /*0x7c8bb5*/
             return result; /*0x7c8bb5*/
-          aP0 = *NumOfElementsa; /*0x7c8bbe*/
+          aP0 = (gamemd::AbstractClass *)(*NumOfElementsa); /*0x7c8bbe*/
           v6 = *Basea; /*0x7c8bc3*/
         }
         else
@@ -3958,7 +3958,7 @@ int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNo
       }
       if ( result >= (unsigned int)v6 ) /*0x7c8c5a*/
         goto LABEL_6; /*0x7c8c5a*/
-      aP0 = (void *)result; /*0x7c8c60*/
+      aP0 = (gamemd::AbstractClass *)((void *)result); /*0x7c8c60*/
     }
   }
   return result; /*0x7c8c97*/
@@ -4073,7 +4073,7 @@ void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t Si
   char NumOfElementsb; // [esp+1Ch] [ebp+10h]
   size_t NumOfElementsa; // [esp+1Ch] [ebp+10h]
 
-  v5 = aP2; /*0x7c8e28*/
+  v5 = (size_t)(aP2); /*0x7c8e28*/
   v6 = (char *)Base + SizeOfElements * (aP2 - 1); /*0x7c8e38*/
   if ( Base > v6 ) /*0x7c8e3f*/
     return 0; /*0x7c8e3f*/

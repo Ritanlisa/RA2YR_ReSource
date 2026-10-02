@@ -343,7 +343,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
-    if ( !Cell::IsPassable((IUnknown *)(&v15)) /*0x47e9cf*/
+    if ( !Cell::IsPassable((unsigned int *)((IUnknown *)(&v15))) /*0x47e9cf*/
       && (v19 = this->u32_24,
           v13 = 128,
           v14 = 128,
@@ -351,7 +351,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v15 = ((int16_t)v19 << 8) + 128,
           v16 = (IDA_SHIWORD(v19) << 8) + 128,
           v17 = v8,
-          !Game::Stub3((IUnknown *)((int)&v15)))
+          !Game::Stub3((int)((IUnknown *)((int)&v15))))
       || ((unsigned int *)(dword_A8B238))[0] )
     {
       (*(void (**)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/

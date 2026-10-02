@@ -811,7 +811,7 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
   Power::TimerProcess(*((unsigned int *)this + 20)); /*0x4d2892*/
   Power::TimerProcess(*((unsigned int *)this + 21)); /*0x4d289d*/
   Power::TimerProcess(*((unsigned int *)this + 22)); /*0x4d28a8*/
-  return Power::TimerProcess(*((unsigned int *)this + 27)); /*0x4d28b8*/
+  return (gamemd::HouseClass **)(Power::TimerProcess(*((unsigned int *)this + 27))); /*0x4d28b8*/
 
 }
 } // namespace gamemd
@@ -997,7 +997,7 @@ int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4d24b3*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x4d24b3*/
   if ( result >= 0 ) /*0x4d24ba*/
   {
     v4 = *a1; /*0x4d24bf*/

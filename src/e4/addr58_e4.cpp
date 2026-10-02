@@ -897,16 +897,16 @@ ScenarioClass * * ComputeMapCameraBounds()
       }
     }
     g_MissionQueueFrame.briefing[354] = v25; /*0x58b9fa*/
-    result = dword_A8B230; /*0x58ba01*/
+    result = (void *)(dword_A8B230); /*0x58ba01*/
     g_MissionQueueFrame.briefing[355] = v12; /*0x58ba06*/
     g_MissionQueueFrame.localVariables[131] = v2 - v12; /*0x58ba0e*/
     g_MissionQueueFrame.localVariables[147] = v13 - v25; /*0x58ba14*/
     if ( dword_A8B230 ) /*0x58ba1a*/
     {
       v18 = 0; /*0x58ba26*/
-      dword_A8B230[122].abstractFlags = g_MissionQueueFrame.localVariables[162]; /*0x58ba28*/
-      v19 = dword_A8B230; /*0x58ba2e*/
-      if ( dword_A8B230[122].abstractFlags > 0 ) /*0x58ba3c*/
+      (&dword_A8B230)[122].abstractFlags = (&g_MissionQueueFrame.localVariables)[162]; /*0x58ba28*/
+      v19 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58ba2e*/
+      if ( (&dword_A8B230)[122].abstractFlags > 0 ) /*0x58ba3c*/
       {
         v20 = 4416; /*0x58ba3e*/
         v21 = &g_MissionQueueFrame.waypoints[1470]; /*0x58ba48*/
@@ -929,19 +929,19 @@ ScenarioClass * * ComputeMapCameraBounds()
           *(void **)((char *)&dword_A8B230->vtable1 + v20) = v24; /*0x58ba8d*/
           v20 += 8; /*0x58ba9b*/
           *(unsigned int *)((char *)dword_A8B230 + v22 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
-          v19 = dword_A8B230; /*0x58baa2*/
-          if ( v18 >= dword_A8B230[122].abstractFlags ) /*0x58baae*/
+          v19 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58baa2*/
+          if ( v18 >= (&dword_A8B230)[122].abstractFlags ) /*0x58baae*/
             break; /*0x58baae*/
         }
       }
       v19[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
-      dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bac7*/
-      dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bad8*/
+      (&dword_A8B230)[122].vtable2 = (void *)(&g_MissionQueueFrame.briefing)[354]; /*0x58bac7*/
+      (&dword_A8B230)[122].vtable3 = (void *)(&g_MissionQueueFrame.localVariables)[131]; /*0x58bad8*/
       result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bae4*/
-      dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bae9*/
+      (&dword_A8B230)[122].uniqueId = (&g_MissionQueueFrame.localVariables)[147]; /*0x58bae9*/
     }
   }
-  return result; /*0x58baef*/
+  return (gamemd::ScenarioClass **)(result); /*0x58baef*/
 }
 }
 // 0x58EBC0
@@ -1115,7 +1115,7 @@ AbstractClass * * BuildRandomMapTiles()
             }
           }
           v29 = *(void **)(v27 + 44); /*0x58ee5e*/
-          *(unsigned int *)(v27 + 40) = (void*)&VectorClass_Cell_vftable; /*0x58ee61*/
+          *(unsigned int *)(v27 + 40) = (unsigned int)((void*)&VectorClass_Cell_vftable); /*0x58ee61*/
           if ( v29 ) /*0x58ee66*/
           {
             if ( *(unsigned char *)(v27 + 53) ) /*0x58ee68*/
@@ -1133,7 +1133,7 @@ AbstractClass * * BuildRandomMapTiles()
     }
     result = g_MissionQueueFrame.briefing[342]; /*0x58edf1*/
   }
-  return result; /*0x58ee90*/
+  return (gamemd::AbstractClass **)(result); /*0x58ee90*/
 }
 }
 // 0x58EF10
@@ -1266,14 +1266,14 @@ AbstractClass * * sub_58EF10()
       while ( v13 < g_MissionQueueFrame.briefing[342] ); /*0x58f0aa*/
     }
   }
-  return 1; /*0x58f0ac*/
+  return (gamemd::AbstractClass **)(1); /*0x58f0ac*/
 }
 }
 // 0x585EE0
 namespace gamemd {
 int sub_585EE0()
 {
-  dword_ABD460[0] = 0; /*0x585ef6*/
+  (&dword_ABD460)[0] = 0; /*0x585ef6*/
   dword_ABD464 = 4; /*0x585f17*/
   dword_ABD468 = 0x40000; /*0x585f2b*/
   dword_ABD46C = 262148; /*0x585f31*/
@@ -1300,13 +1300,13 @@ int sub_5889F0(int a1, int a2)
   v13 = -1; /*0x588a01*/
   v12 = 0; /*0x588a09*/
   v10 = 0; /*0x588a0d*/
-  v2 = dword_82A594; /*0x588a11*/
+  v2 = (int *)(dword_82A594); /*0x588a11*/
   do /*0x588aa9*/
   {
-    v3 = &dword_82A594[8 * a2]; /*0x588a28*/
+    v3 = &(&dword_82A594)[8 * a2]; /*0x588a28*/
     v4 = 1; /*0x588a2e*/
     v9 = 0; /*0x588a30*/
-    v5 = &dword_82A594[8 * a1]; /*0x588a34*/
+    v5 = &(&dword_82A594)[8 * a1]; /*0x588a34*/
     v11 = 8; /*0x588a3a*/
     do /*0x588a7c*/
     {
@@ -1837,7 +1837,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
   while ( !*v4 && !v4[1] ); /*0x58be88*/
   v5 = 80 * v3; /*0x58be8e*/
   this->AbstractClass = *(void **)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x58be97*/
-  return this; /*0x58be8d*/
+  return (unsigned int *)(this); /*0x58be8d*/
 
 }
 } // namespace gamemd
@@ -1881,13 +1881,13 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       v8[0] = 0; /*0x58bf42*/
       v8[1] = 0; /*0x58bf47*/
       this->AbstractClass = 0; /*0x58bf51*/
-      return this; /*0x58bf5c*/
+      return (unsigned int *)(this); /*0x58bf5c*/
     }
     v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v8); /*0x58bf2d*/
   }
   while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58bf34*/
   this->AbstractClass = *(void **)v8; /*0x58bf62*/
-  return this; /*0x58bf50*/
+  return (unsigned int *)(this); /*0x58bf50*/
 
 }
 } // namespace gamemd

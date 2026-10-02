@@ -260,7 +260,7 @@ void DDraw::LogError(void * a1, void * a2)
   }
   else if ( a2 ) /*0x4a3dd9*/
   {
-    return MessageBoxA((HWND)(g_hWnd),(LPCSTR)(::Text), Caption, 0); /*0x4a3dec*/
+    return MessageBoxA((HWND)(g_hWnd),(LPCSTR)(::Text),(LPCSTR)(Caption), 0); /*0x4a3dec*/
   }
   return result; /*0x4a3df2*/
 

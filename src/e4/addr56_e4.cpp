@@ -168,7 +168,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     v30[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[20]; /*0x560ff3*/
     v30[0] = 0; /*0x561006*/
     v30[1] = 0; /*0x56100a*/
-    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8],(gamemd::ObjectClass *)((int)v30), (int)v29, (int)&rc, 0); /*0x56100e*/
+    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8],(gamemd::ObjectClass *)((int)v30),(gamemd::ObjectClass *)((int)v29), (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
         Debug::Log();
     sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red,(short)(BitShift_Blue)); /*0x561046*/
@@ -318,7 +318,7 @@ int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsi
     }
     if ( dword_82A288 != dword_82A284 ) /*0x56164e*/
     {
-      SetDialogParent((HWND)(aP0), g_hWnd); /*0x561658*/
+      SetDialogParent((HWND)(aP0),(HWND)(g_hWnd)); /*0x561658*/
       v16 = GetDlgItem((HWND)(aP0), 1497); /*0x561663*/
       if ( v16 ) /*0x561667*/
       {
@@ -651,7 +651,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     }
     else if ( a2 == 1175 ) /*0x56138d*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiConfirmmode), 0, g_Str_File_MainOpt_cpp, 1501); /*0x5613ab*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiConfirmmode), 0,(const char *)(g_Str_File_MainOpt_cpp), 1501); /*0x5613ab*/
       DlgItem = GetDlgItem(hWnd, 1499); /*0x5613ad*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5613bc*/
       return 0; /*0x5613c7*/
@@ -945,7 +945,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
   v2 = 0; /*0x56b0fa*/
   v3 = 0; /*0x56b0fc*/
   v4 = a2; /*0x56b0ff*/
-  v16 = this; /*0x56b105*/
+  v16 = (gamemd::ObjectClass *)(this); /*0x56b105*/
   for ( i = 0; v3 < v16[1].lastLayer; i = v3 ) /*0x56b10d*/
   {
     v5 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * v3); /*0x56b11d*/
@@ -974,7 +974,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
         }
       }
     }
-    this = v16; /*0x56b203*/
+    this = (gamemd::E4Recv_56B0F0 *)(v16); /*0x56b203*/
     v3 = i + 1; /*0x56b20b*/
   }
   v13 = *v4; /*0x56b225*/
@@ -1012,15 +1012,15 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   int v7; // eax
 
   v2 = a2 & 7; /*0x56ed49*/
-  v3 = dword_89F688[v2]; /*0x56ed4c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD(dword_89F688[v2]); /*0x56ed62*/
+  v3 = (&dword_89F688)[v2]; /*0x56ed4c*/
+  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ed62*/
   IDA_LOWORD(a2) = *aP0 + v3; /*0x56ed66*/
   IDA_HIWORD(a2) = v2; /*0x56ed6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ed7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ed97*/
   {
     dword_ABDC74 = a2; /*0x56ed99*/
-    v5 = unk_ABDC50; /*0x56ed9f*/
+    v5 = (unsigned int *)(unk_ABDC50); /*0x56ed9f*/
   }
   if ( *((char *)v5 + 320) < 0 ) /*0x56edab*/
   {
@@ -1037,15 +1037,15 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56edde*/
   if ( v7 == dword_ABC1E8 || v7 == dword_AA0E38 ) /*0x56ede9*/
   {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&a2, 1, 0); /*0x56ee37*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&a2), 1, 0)); /*0x56ee37*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56edf3*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainBridgeIndex + g_TerrainSoundTable2, -1, -1, 0); /*0x56ee03*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainBridgeIndex + g_TerrainSoundTable2, -1, -1, 0)); /*0x56ee03*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x56ee13*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56ee25*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0)); /*0x56ee25*/
   }
   return v7; /*0x56ee08*/
 }
@@ -1063,15 +1063,15 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
   int v7; // eax
 
   v2 = a2 & 7; /*0x56ee49*/
-  v3 = dword_89F688[v2]; /*0x56ee4c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD(dword_89F688[v2]); /*0x56ee62*/
+  v3 = (&dword_89F688)[v2]; /*0x56ee4c*/
+  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ee62*/
   IDA_LOWORD(a2) = *aP0 + v3; /*0x56ee66*/
   IDA_HIWORD(a2) = v2; /*0x56ee6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ee7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ee97*/
   {
     dword_ABDC74 = a2; /*0x56ee99*/
-    v5 = unk_ABDC50; /*0x56ee9f*/
+    v5 = (unsigned int *)(unk_ABDC50); /*0x56ee9f*/
   }
   if ( *((char *)v5 + 320) < 0 ) /*0x56eeab*/
   {
@@ -1088,15 +1088,15 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56eede*/
   if ( v7 == dword_ABC2B4 || v7 == dword_AA1130 ) /*0x56eee9*/
   {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&a2, 1, 0); /*0x56ef39*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&a2), 1, 0)); /*0x56ef39*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56eef3*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1, -1, -1, 0); /*0x56ef05*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1, -1, -1, 0)); /*0x56ef05*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x56ef15*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56ef27*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0)); /*0x56ef27*/
   }
   return v7; /*0x56ef0a*/
 }
@@ -1114,15 +1114,15 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   int v7; // eax
 
   v2 = aP1 & 7; /*0x56f699*/
-  v3 = dword_89F688[v2]; /*0x56f69c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD(dword_89F688[v2]); /*0x56f6b2*/
+  v3 = (&dword_89F688)[v2]; /*0x56f69c*/
+  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f6b2*/
   IDA_LOWORD(aP1) = *aP0 + v3; /*0x56f6b6*/
   IDA_HIWORD(aP1) = v2; /*0x56f6be*/
   v4 = (int16_t)aP1 + ((int16_t)v2 << 9); /*0x56f6cd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56f6e7*/
   {
-    dword_ABDC74 = aP1; /*0x56f6e9*/
-    v5 = unk_ABDC50; /*0x56f6ef*/
+    dword_ABDC74 = (unsigned int)(aP1); /*0x56f6e9*/
+    v5 = (unsigned int *)(unk_ABDC50); /*0x56f6ef*/
   }
   if ( *((char *)v5 + 320) < 0 ) /*0x56f6fb*/
   {
@@ -1142,15 +1142,15 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f733*/
   if ( v7 == dword_ABC1D0 || v7 == dword_AA1540 ) /*0x56f73e*/
   {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&aP1, 1, 0); /*0x56f78c*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&aP1), 1, 0)); /*0x56f78c*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f748*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&aP1, g_TerrainBridgeIndex + g_TerrainSoundConfig, -1, -1, 0); /*0x56f758*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&aP1), g_TerrainBridgeIndex + g_TerrainSoundConfig, -1, -1, 0)); /*0x56f758*/
   }
   else if ( v7 == g_TerrainSoundConfig + 2 ) /*0x56f768*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&aP1, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f77a*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&aP1), g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0)); /*0x56f77a*/
   }
   return v7; /*0x56f75d*/
 }
@@ -1168,15 +1168,15 @@ char sub_56F7A0(unsigned short * a1, int a2)
   int v7; // eax
 
   v2 = a2 & 7; /*0x56f7a9*/
-  v3 = dword_89F688[v2]; /*0x56f7ac*/
-  IDA_LOWORD(v2) = a1[1] + IDA_HIWORD(dword_89F688[v2]); /*0x56f7c2*/
+  v3 = (&dword_89F688)[v2]; /*0x56f7ac*/
+  IDA_LOWORD(v2) = a1[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f7c2*/
   IDA_LOWORD(a2) = *a1 + v3; /*0x56f7c6*/
   IDA_HIWORD(a2) = v2; /*0x56f7ce*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56f7dd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56f7f7*/
   {
     dword_ABDC74 = a2; /*0x56f7f9*/
-    v5 = unk_ABDC50; /*0x56f7ff*/
+    v5 = (unsigned int *)(unk_ABDC50); /*0x56f7ff*/
   }
   if ( *((char *)v5 + 320) < 0 ) /*0x56f80b*/
   {
@@ -1196,15 +1196,15 @@ char sub_56F7A0(unsigned short * a1, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f843*/
   if ( v7 == dword_AA1548 || v7 == dword_AA0740 ) /*0x56f84e*/
   {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&a2, 1, 0); /*0x56f89e*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&a2), 1, 0)); /*0x56f89e*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f858*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0); /*0x56f86a*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundConfig + g_TerrainBridgeIndex + 1, -1, -1, 0)); /*0x56f86a*/
   }
   else if ( v7 == g_TerrainSoundConfig + 1 ) /*0x56f87a*/
   {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f88c*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0)); /*0x56f88c*/
   }
   return v7; /*0x56f86f*/
 }

@@ -47,7 +47,7 @@ int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
   result = (int)aP1; /*0x5d1d80*/
   if ( aP1 ) /*0x5d1d87*/
   {
-    v3 = &this->field_18; /*0x5d1d8c*/
+    v3 = (void **)(&this->field_18); /*0x5d1d8c*/
     result = (*((int (**)(void **, unsigned int))this->field_18 + 4))(&this->field_18, &aP1); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
@@ -110,7 +110,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = ((gamemd::Timer *)this)->GetTicks(); /*0x5e7774*/
+      result = (void **)(((gamemd::Timer *)this)->GetTicks()); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
@@ -119,11 +119,11 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         {
           result = ((gamemd::Timer *)this)->GetTicks() - v17; /*0x5e779e*/
           if ( result >= (void **)(1800) ) /*0x5e77a4*/
-            return result; /*0x5e77a4*/
+            return (int)(result); /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
         }
         if ( !v9 ) /*0x5e77ae*/
-          return result; /*0x5e7812*/
+          return (int)(result); /*0x5e7812*/
         v10 = ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
         for ( result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue()); /*0x5e77d8*/
               result > 0;
@@ -143,12 +143,12 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
           ((gamemd::Event *)this)->Dispatch(); /*0x5e77fd*/
         }
         if ( v10 ) /*0x5e7812*/
-          return result; /*0x5e7812*/
+          return (int)(result); /*0x5e7812*/
         v9 = 1800; /*0x5e778b*/
       }
     case 3: /*0x5e7521*/
       if ( ((gamemd::Dialog *)this)->GetCurrentType() != 189 /*0x5e7550*/
-        || FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
+        || FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) )
       {
         goto LABEL_42; /*0x5e7557*/
       }
@@ -210,7 +210,7 @@ LABEL_44:
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = 0; /*0x5e78e4*/
-          return result; /*0x5e78f4*/
+          return (int)(result); /*0x5e78f4*/
         }
         result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
         g_UIControlState = (int)((Skirmish *)result); /*0x5e78a5*/
@@ -224,11 +224,11 @@ LABEL_44:
         }
         else
         {
-          ((PreviewClass *)((PreviewClass *)g_UIControlState))->ReadPreview(byte_A8B8E0); /*0x5e78cb*/
+          ((PreviewClass *)((PreviewClass *)g_UIControlState))->ReadPreview((char *)(byte_A8B8E0)); /*0x5e78cb*/
           return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78d3*/
         }
       }
-      return result;
+      return (int)(result);
   }
   while ( 1 ) /*0x5e757e*/
   {
@@ -248,7 +248,7 @@ LABEL_44:
     {
       for ( result = ((Network *)(&unk_A8E9C0))->GetQueueCount(); result; result = ((Network *)(&unk_A8E9C0))->GetQueueCount() ) /*0x5e75e0*/
         ((gamemd::Event *)this)->Dispatch(); /*0x5e75e6*/
-      return result; /*0x5e75f7*/
+      return (int)(result); /*0x5e75f7*/
     }
 LABEL_12:
     ((gamemd::Event *)this)->Dispatch(); /*0x5e75cd*/

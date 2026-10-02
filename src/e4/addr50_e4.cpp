@@ -142,7 +142,7 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   else
   LABEL_18:
     *(unsigned int *)(v5 + 22016) = -1; /*0x50484f*/
-  return v5; /*0x50483f*/
+  return (int)(v5); /*0x50483f*/
 }
 }
 // 0x5004E0

@@ -250,7 +250,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         v6[12] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718ead*/
       }
       v27 = (gamemd::CellClass *)(((Coord *)((Coord *)&((unsigned int *)(stru_87F5F0.__pad_58))[416]))->To_Cell(&v76));
-      (*(void (**)(CellClass *, int *))(v27->mapCoords[0] + 72))(v27, &v79); /*0x718ec8*/
+      (*(void (**)(CellClass *, int *))((&v27->mapCoords)[0] + 72))(v27, &v79); /*0x718ec8*/
       if ( *v8 == g_BuildingLoadQueue_Array.q008 /*0x718ef5*/
         && v6[11] == g_BuildingLoadQueue_Array.q008
         && v6[12] == g_BuildingLoadQueue_Array.q008 )

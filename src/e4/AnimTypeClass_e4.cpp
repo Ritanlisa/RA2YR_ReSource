@@ -71,7 +71,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
     v3 = (unsigned int)(dword_A8B210++);
     *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
-  return this; /*0x41e473*/
+  return (unsigned int *)(this); /*0x41e473*/
 
 }
 }
@@ -91,8 +91,8 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   this->MiddleFrameHeight = 0; /*0x427550*/
   *(unsigned int *)this->__pad_2A0 = 0; /*0x427556*/
   this->AnimTypeClass_field_2A4 = 0; /*0x42755c*/
-  this->Damage[0] = 0; /*0x427562*/
-  this->Damage[1] = 0; /*0x427568*/
+  (&this->Damage)[0] = 0; /*0x427562*/
+  (&this->Damage)[1] = 0; /*0x427568*/
   this->Rate = 1; /*0x42756e*/
   this->Start = 0; /*0x427578*/
   this->LoopStart = 0; /*0x42757e*/
@@ -117,14 +117,14 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   this->ExpireAnim = 0; /*0x4275f0*/
   this->TrailerAnim = 0; /*0x4275f6*/
   this->TrailerSeperation = 0; /*0x4275fc*/
-  this->Elasticity[0] = -1610612736; /*0x427602*/
-  this->Elasticity[1] = 1072273817; /*0x42760c*/
-  this->MinZVel[0] = 0; /*0x42761b*/
-  this->MinZVel[1] = 1074528256; /*0x427621*/
-  this->AnimTypeClass_field_double_320[0] = 0; /*0x427627*/
-  this->AnimTypeClass_field_double_320[1] = 1074528256; /*0x42762d*/
-  this->MaxXYVel[0] = 0; /*0x427633*/
-  this->MaxXYVel[1] = 1076756480; /*0x427639*/
+  (&this->Elasticity)[0] = -1610612736; /*0x427602*/
+  (&this->Elasticity)[1] = 1072273817; /*0x42760c*/
+  (&this->MinZVel)[0] = 0; /*0x42761b*/
+  (&this->MinZVel)[1] = 1074528256; /*0x427621*/
+  (&this->AnimTypeClass_field_double_320)[0] = 0; /*0x427627*/
+  (&this->AnimTypeClass_field_double_320)[1] = 1074528256; /*0x42762d*/
+  (&this->MaxXYVel)[0] = 0; /*0x427633*/
+  (&this->MaxXYVel)[1] = 1076756480; /*0x427639*/
   this->Warhead = 0; /*0x427643*/
   this->DamageRadius = 0; /*0x427649*/
   this->TiberiumSpawnType = 0; /*0x42764f*/
@@ -426,7 +426,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v12); 
   Power::TimerProcess((int)((void *)(this->MiddleFrameWidth))); 
-  ((Checksummer *)((Checksummer *)a2))->Add_double(this->Damage[0], this->Damage[1]); /*0x428a96*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double((&this->Damage)[0], (&this->Damage)[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v13); 
   Power::TimerProcess((int)((void *)(this->Rate))); 
@@ -507,11 +507,11 @@ int AnimTypeClass::GetDamage()
     }
     else if ( ((unsigned int *)this)[0] ) /*0x428cd6*/
     {
-      TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
+      TheaterObjectTypeClassSpecificID(Buffer, (&dword_A8B230)[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
     v4 = (SHPStruct *)((CCFileClass *)(&v7))->ReadEntireFile(); /*0x428d0d*/
-    ((unsigned int *)this)[0] = v4; /*0x428d14*/
+    ((unsigned int *)this)[0] = (unsigned int)(v4); /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
       ((unsigned int *)this)[0] = 1; /*0x428d1c*/
@@ -521,7 +521,7 @@ int AnimTypeClass::GetDamage()
       ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
       v5 = (SHPStruct *)((CCFileClass *)(&v10))->ReadEntireFile(); /*0x428d46*/
-      ((unsigned int *)this)[0] = v5; /*0x428d4d*/
+      ((unsigned int *)this)[0] = (unsigned int)(v5); /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         ((unsigned int *)this)[0] = 1; /*0x428d55*/
       *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
@@ -530,8 +530,8 @@ int AnimTypeClass::GetDamage()
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x428d87*/
     }
-    (*((void (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
-    Image = ((unsigned int *)this)[0]; /*0x428da2*/
+    (*((void (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, (&dword_A8B230)[130].uniqueId); /*0x428d9c*/
+    Image = (gamemd::SHPStruct *)(((unsigned int *)this)[0]); /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     ((Vector *)((int)v8))->Clear(); /*0x428dbc*/
@@ -553,10 +553,10 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->vtable1 = &vt_AnimTypeClass; /*0x428ead*/
-  ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428eb3*/
-  ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428eba*/
-  ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428ec1*/
-  v6 = Block; /*0x428ecf*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428eb3*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428eba*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428ec1*/
+  v6 = (gamemd::AnimTypeClass *)(Block); /*0x428ecf*/
   v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -571,7 +571,7 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
       ++v3; /*0x428ef6*/
     }
   }
-  v6 = Block; /*0x428f18*/
+  v6 = (gamemd::AnimTypeClass *)(Block); /*0x428f18*/
   v4 = (*(int (**)(int *, AnimTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 16))((unsigned int *)((char *)&FootClass_Array + 2), &v6); /*0x428f1c*/
   if ( v4 != -1 && v4 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x428f2c*/
   {
@@ -602,7 +602,7 @@ int AnimTypeClass::LookupByName()
   if ( !this ) /*0x48e057*/
     return -1; /*0x48e07c*/
   v2 = 0; /*0x48e059*/
-  v3 = off_81DA78; /*0x48e05b*/
+  v3 = (char **)(off_81DA78); /*0x48e05b*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48e06e*/
   {
     ++v3; /*0x48e070*/
@@ -635,13 +635,13 @@ char AnimTypeClass::GetLoopCount(int a2)
     {
       if ( ((unsigned int *)this)[0] && ((unsigned int *)this)[0] ) /*0x427ac4*/
       {
-        __3_YAXPAX_Z(((unsigned int *)this)[0]); /*0x427acf*/
+        __3_YAXPAX_Z((void *)(((unsigned int *)this)[0])); /*0x427acf*/
         ((unsigned int *)this)[0] = 0; /*0x427ad7*/
       }
       ((unsigned int *)this)[0] = 0; /*0x427af6*/
       _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
-      ((unsigned int *)this)[0] = v2; /*0x427b1a*/
+      ((unsigned int *)this)[0] = (unsigned int)(v2); /*0x427b1a*/
     }
   }
   return (char)v2; /*0x427b20*/
@@ -678,7 +678,7 @@ int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x42897f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x42897f*/
   if ( result >= 0 ) /*0x428986*/
     return 0; /*0x428988*/
   return result; /*0x42898a*/

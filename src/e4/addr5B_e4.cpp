@@ -552,7 +552,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   *(unsigned int *)&stru_A8B250.__pad_0[32] = aP0->q08B; /*0x5b6aaa*/
   *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
-  dword_A8E960[0] = v6; /*0x5b6ac4*/
+  (&dword_A8E960)[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
   *(unsigned int *)&stru_A8B250.__pad_0[24] = aP0->u32_A2; /*0x5b6ad1*/
   stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x5b6ad7*/
@@ -560,41 +560,41 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   stru_A8B250.__pad_0[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
   stru_A8B250.__pad_0[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
-  dword_A8E960[0] = v6; /*0x5b6b1c*/
+  (&dword_A8E960)[0] = v6; /*0x5b6b1c*/
   stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable1; /*0x5b6b2f*/
   IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5b6b31*/
   dword_A8B230->vtable1 = vtable0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/
-  if ( _strcmpi(byte_A8B8E0, (char *)(aP0 + 163)) /*0x5b6ba4*/
-    || _strcmpi(&byte_A8BAE2, (char *)(aP0 + 176))
+  if ( _strcmpi((const char *)(byte_A8B8E0), (char *)(aP0 + 163)) /*0x5b6ba4*/
+    || _strcmpi((const char *)(&byte_A8BAE2), (char *)(aP0 + 176))
     || v9 != ((aP0->inOpenToppedTransport & 0x10) != 0)
     || dword_A8BB04 != *(unsigned int *)(aP0 + 158)
     || !g_abs_A8B322[0] )
   {
     Debug::Log(); /*0x5b6baf*/
-    strcpy(byte_A8B8E0, (const char *)(aP0 + 163)); /*0x5b6bce*/
-    strcpy(&byte_A8BAE2, (const char *)(aP0 + 176)); /*0x5b6bf4*/
+    strcpy((char *)(byte_A8B8E0), (const char *)(aP0 + 163)); /*0x5b6bce*/
+    strcpy((char *)(&byte_A8BAE2), (const char *)(aP0 + 176)); /*0x5b6bf4*/
     v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
     v9 = v9; /*0x5b6c12*/
     dword_A8BB04 = *(unsigned int *)(aP0 + 158); /*0x5b6c1d*/
-    if ( !strcmp(byte_A8B8E0, &((char *)&stru_82BA00)) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
+    if ( !strcmp((const char *)(byte_A8B8E0), &((char *)&stru_82BA00)) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
     {
   LABEL_33:
-      wcscpy(g_abs_A8B322, (const wchar_t *)(aP0 + 38)); /*0x5b6c86*/
+      wcscpy((wchar_t *)(g_abs_A8B322), (const wchar_t *)(aP0 + 38)); /*0x5b6c86*/
     }
     else
     {
       while ( 1 ) /*0x5b6c64*/
       {
         v11 = *(unsigned int *)(dword_A8B8CC + 4 * v10); /*0x5b6c64*/
-        if ( !_strcmpi(byte_A8B8E0, (char *)(v11 + 88)) ) /*0x5b6c70*/
+        if ( !_strcmpi((const char *)(byte_A8B8E0), (char *)(v11 + 88)) ) /*0x5b6c70*/
           break; /*0x5b6c70*/
         if ( ++v10 >= dword_A8B8D8 ) /*0x5b6c84*/
           goto LABEL_33; /*0x5b6c84*/
       }
-      wcscpy(g_abs_A8B322, (const wchar_t *)v11); /*0x5b6cc4*/
+      wcscpy((wchar_t *)(g_abs_A8B322), (const wchar_t *)v11); /*0x5b6cc4*/
     }
     g_UIControlState = g_UIControlState; /*0x5b6c94*/
     if ( g_UIControlState ) /*0x5b6c9f*/
@@ -604,7 +604,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
       g_UIControlState = 0; /*0x5b6cb1*/
     }
   }
-  return 1; /*0x5b69dc*/
+  return (gamemd::AbstractClass **)(1); /*0x5b69dc*/
 }
 }
 // 0x5BB290
@@ -636,7 +636,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
 
   Ticks = TimerGetTicks(); /*0x5bb2af*/
   v13 = 0; /*0x5bb2b3*/
-  if ( !_strcmpi(byte_A8B8E0, aRandmapSed) ) /*0x5bb2b7*/
+  if ( !_strcmpi((const char *)(byte_A8B8E0), aRandmapSed) ) /*0x5bb2b7*/
   {
     Debug::Log(); /*0x5bb2cc*/
     memset(v20, 0, sizeof(v20)); /*0x5bb2e2*/

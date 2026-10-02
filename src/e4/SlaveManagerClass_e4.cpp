@@ -174,7 +174,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3)
   this->slaveVectorCapacity = 0; /*0x6af374*/
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   BYTE1(this->creationFrame) = 0; /*0x6af37b*/
-  this->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
+  (&this->slaves)[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6af385*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
   *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/

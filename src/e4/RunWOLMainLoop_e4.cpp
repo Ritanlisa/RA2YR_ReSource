@@ -159,7 +159,7 @@ int sub_785EA0()
     if ( result ) /*0x786069*/
       return (int, unsigned int a2)SetFocus((HWND)result); /*0x78606c*/
   }
-  return result; /*0x786072*/
+  return (int)(result); /*0x786072*/
 }
 }
 // 0x798DE0
@@ -320,7 +320,7 @@ int sub_799D30()
   int v12; // [esp+24h] [ebp-1Ch]
   DeleteAndZero v13; // [esp+30h] [ebp-10h] BYREF
 
-  result = (wchar_t *)(LoginFlowWOL_Reset(v1));
+  result = (int)((wchar_t *)(LoginFlowWOL_Reset(v1)));
   if ( result == 1 ) /*0x799d3b*/
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_FETCHING_SERVLIST), 0,(const char *)(g_Str_File_wonline_cpp), 24300));

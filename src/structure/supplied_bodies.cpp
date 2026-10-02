@@ -192,9 +192,9 @@ int BuildingClass::GetFactoryPosition() {
     int *v11; // [esp+14h] [ebp+4h]
 
     Type = this->Type; /*0x44f640*/
-    if ( Type->ExitCoord[0] == g_BuildingClassPool /*0x44f676*/
-      && Type->ExitCoord[1] == dword_89C84C
-      && Type->ExitCoord[2] == dword_89C850 )
+    if ( (&Type->ExitCoord)[0] == g_BuildingClassPool /*0x44f676*/
+      && (&Type->ExitCoord)[1] == dword_89C84C
+      && (&Type->ExitCoord)[2] == dword_89C850 )
     {
       v9 = (int *)(*((int (__thiscall **)(BuildingClass *, char *))this->vtable1 + 18))(this, v10); /*0x44f6bf*/
       *v11 = *v9; /*0x44f6c9*/

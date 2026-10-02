@@ -379,7 +379,7 @@ LABEL_151:
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
             CopyWideToChar((unsigned char *)(&((unsigned int *)(HouseClass_Player))[30260]), lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((HWND)((ReferenceCounted *)hWnd), 1697, 0xFFFFFFFF);
-            ((SessionClass *)(&(&HouseClass_Player)[29932]))->AssignSide(ComboBoxSelected, (MPCooperative *)1);
+            ((SessionClass *)(&(&HouseClass_Player)[29932]))->AssignSide(ComboBoxSelected,(char)((MPCooperative *)1));
             int v30 = 0;
             do
             {
@@ -506,7 +506,7 @@ LABEL_151:
                 v43 = 4;
               }
               *(unsigned int *)&Formatb[-1].IsInitialized = v43;
-              Formatb->vtable1 = (unsigned int)((void *)v41);
+              Formatb->vtable1 = (void *)((unsigned int)((void *)v41));
               Formatb->Items = (unsigned int)((void *)ComboBoxSelectedRaw);
               Formatb = (VectorClass_flat *)((char *)Formatb + 12);
             }

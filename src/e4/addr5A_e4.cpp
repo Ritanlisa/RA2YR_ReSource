@@ -963,7 +963,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-        v39 = *((CellStruct *)(v40))->Add((unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544)); /*0x5a4d44*/
+        v39 = (int)(*((CellStruct *)(v40))->Add((unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
         v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04
@@ -1114,10 +1114,10 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   StringVector::Construct(&v40, 0, 0); /*0x5a65ac*/
   v7 = v42; /*0x5a65b1*/
   v8 = 10; /*0x5a65b5*/
-  v40 = (void*)&DynamicVectorClass_char___vftable; /*0x5a65ba*/
+  v40 = (void **)((void*)&DynamicVectorClass_char___vftable); /*0x5a65ba*/
   v45 = 10; /*0x5a65c2*/
   v44 = 0; /*0x5a65c6*/
-  v9 = off_82B138; /*0x5a65ca*/
+  v9 = (char **)(off_82B138); /*0x5a65ca*/
   while ( 1 ) /*0x5a65d5*/
   {
     if ( v44 < v7 ) /*0x5a65d9*/
@@ -1128,7 +1128,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       {
   LABEL_10:
         v10 = v44++; /*0x5a65fe*/
-        *((unsigned int *)Block + v10) = *v9; /*0x5a660f*/
+        *((unsigned int *)Block + v10) = (unsigned int)(*v9); /*0x5a660f*/
       }
       v7 = v42; /*0x5a6612*/
     }
@@ -1232,7 +1232,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       v6 = v33; /*0x5a6640*/
     }
   }
-  v40 = (void*)&VectorClass_char___vftable; /*0x5a68f5*/
+  v40 = (void **)((void*)&VectorClass_char___vftable); /*0x5a68f5*/
   if ( Block ) /*0x5a6903*/
   {
     if ( v43 ) /*0x5a690b*/
@@ -1446,7 +1446,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
   unsigned short *v19; // [esp+14h] [ebp-8h]
   int v20; // [esp+18h] [ebp-4h]
 
-  v19 = aP1; /*0x5a6c1a*/
+  v19 = (unsigned short *)(aP1); /*0x5a6c1a*/
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + aP0); /*0x5a6c1e*/
   result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a6c26*/
   v20 = result; /*0x5a6c2e*/
@@ -1476,7 +1476,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
             }
             else
             {
-              v12 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16); /*0x5a6cc4*/
+              v12 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16)); /*0x5a6cc4*/
               v6 = v17; /*0x5a6ccf*/
               v13 = i + v17 * v4[185]; /*0x5a6cda*/
               v14 = *(unsigned int *)(v20 + 4 * v13 + 16); /*0x5a6cdc*/
@@ -1567,8 +1567,8 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
       break; /*0x5a6e3f*/
     v9 = a4 & 7; /*0x5a6e45*/
-    IDA_LOWORD(v29) = v20 + IDA_LOWORD(dword_89F688[v9]); /*0x5a6e65*/
-    IDA_HIWORD(v29) = IDA_HIWORD(v20) + IDA_HIWORD(dword_89F688[v9]); /*0x5a6e6a*/
+    IDA_LOWORD(v29) = v20 + IDA_LOWORD((&dword_89F688)[v9]); /*0x5a6e65*/
+    IDA_HIWORD(v29) = IDA_HIWORD(v20) + IDA_HIWORD((&dword_89F688)[v9]); /*0x5a6e6a*/
     v20 = v29; /*0x5a6e73*/
   }
   v11 = v20; /*0x5a6e99*/
@@ -1583,11 +1583,11 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     IDA_HIDWORD(v25) = v23 + IDA_SHIWORD(v20); /*0x5a6ece*/
     v26 = v6 + v21; /*0x5a6edc*/
     v27 = v7 + v22; /*0x5a6ee4*/
-    if ( IsAreaClearMap((int *)&v25, v24, v24) ) /*0x5a6eed*/
+    if ( IsAreaClearMap((gamemd::MapClass *)((int *)&v25), v24, v24) ) /*0x5a6eed*/
       break; /*0x5a6eed*/
     v12 = a4 & 7; /*0x5a6efa*/
-    IDA_HIWORD(v30) = IDA_HIWORD(v20) + IDA_HIWORD(dword_89F688[v12]); /*0x5a6f23*/
-    v11 = v20 + IDA_LOWORD(dword_89F688[v12]); /*0x5a6f28*/
+    IDA_HIWORD(v30) = IDA_HIWORD(v20) + IDA_HIWORD((&dword_89F688)[v12]); /*0x5a6f23*/
+    v11 = v20 + IDA_LOWORD((&dword_89F688)[v12]); /*0x5a6f28*/
     IDA_LOWORD(v30) = v11; /*0x5a6f1e*/
     v20 = v30; /*0x5a6f2c*/
   }
@@ -1620,7 +1620,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
         IDA_HIDWORD(v25) = v23 + IDA_SHIWORD(v31); /*0x5a7022*/
         v26 = v16; /*0x5a7026*/
         v27 = v17; /*0x5a702a*/
-        if ( !IsAreaClearMap((int *)&v25, 0, 0) ) /*0x5a702e*/
+        if ( !IsAreaClearMap((gamemd::MapClass *)((int *)&v25), 0, 0) ) /*0x5a702e*/
           break; /*0x5a702e*/
         v19 = v31; /*0x5a703b*/
         v20 = v31; /*0x5a7040*/
@@ -1698,16 +1698,16 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
     v24 = v17 + IDA_SHIWORD(v21); /*0x5a712d*/
     v25 = v5 + v18; /*0x5a713b*/
     v26 = v6 + v19; /*0x5a7143*/
-    if ( !IsAreaClearMap(&v23, a4 == 4, a4 == 4) ) /*0x5a714c*/
+    if ( !IsAreaClearMap((gamemd::MapClass *)(&v23), a4 == 4, a4 == 4) ) /*0x5a714c*/
       break; /*0x5a714c*/
     v7 = a4 & 7; /*0x5a7159*/
-    IDA_LOWORD(v4) = v4 + IDA_LOWORD(dword_89F688[v7]); /*0x5a7185*/
-    IDA_HIWORD(v21) += IDA_HIWORD(dword_89F688[v7]); /*0x5a7189*/
+    IDA_LOWORD(v4) = v4 + IDA_LOWORD((&dword_89F688)[v7]); /*0x5a7185*/
+    IDA_HIWORD(v21) += IDA_HIWORD((&dword_89F688)[v7]); /*0x5a7189*/
   }
   v8 = ((unsigned char)a4 - 4) & 7; /*0x5a719d*/
   v9 = (int16_t *)(4 * v8 + 9041544); /*0x5a71ac*/
-  IDA_HIWORD(v27) = IDA_HIWORD(v21) + IDA_HIWORD(dword_89F688[v8]); /*0x5a71c1*/
-  IDA_LOWORD(v27) = v4 + IDA_LOWORD(dword_89F688[v8]); /*0x5a71c6*/
+  IDA_HIWORD(v27) = IDA_HIWORD(v21) + IDA_HIWORD((&dword_89F688)[v8]); /*0x5a71c1*/
+  IDA_LOWORD(v27) = v4 + IDA_LOWORD((&dword_89F688)[v8]); /*0x5a71c6*/
   v10 = v27; /*0x5a71cb*/
   v11 = (int16_t)v27 - *a1; /*0x5a71d7*/
   v22 = IDA_HIWORD(v27); /*0x5a71db*/
@@ -1737,7 +1737,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
     }
   }
   *aP0 = v10; /*0x5a723d*/
-  return aP0; /*0x5a723f*/
+  return (unsigned int *)(aP0); /*0x5a723f*/
 }
 }
 // 0x5A7250

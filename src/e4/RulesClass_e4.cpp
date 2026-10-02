@@ -74,10 +74,10 @@ RulesClass::RulesClass()
   this->LargeVisceroid = 0; /*0x66567c*/
   this->SmallVisceroid = 0; /*0x66567f*/
   this->AttackingAircraftSightRange = 5; /*0x665682*/
-  this->TunnelSpeed[0] = 0; /*0x665685*/
-  this->TunnelSpeed[1] = 1072693248; /*0x665688*/
-  this->TiberiumHeal[0] = 286331153; /*0x66568f*/
-  this->TiberiumHeal[1] = 1066471697; /*0x66569b*/
+  (&this->TunnelSpeed)[0] = 0; /*0x665685*/
+  (&this->TunnelSpeed)[1] = 1072693248; /*0x665688*/
+  (&this->TiberiumHeal)[0] = 286331153; /*0x66568f*/
+  (&this->TiberiumHeal)[1] = 1066471697; /*0x66569b*/
   this->SelfHealInfantryFrames = 1000; /*0x6656a7*/
   this->SelfHealInfantryAmount = 1; /*0x6656aa*/
   this->SelfHealUnitFrames = 1000; /*0x6656ad*/
@@ -149,7 +149,7 @@ void* RulesClass::readAudioVisual()
   double v9; // [esp-8h] [ebp-10h]
   bool *v10; // [esp+Ch] [ebp+4h]
 
-  result = INIClass::BinarySearchSection((int)v10, (uint8_t *)aElevationmodel); /*0x66d160*/
+  result = (int)(INIClass::BinarySearchSection((gamemd::INIClass *)((int)v10), (uint8_t *)aElevationmodel)); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/
@@ -159,11 +159,11 @@ void* RulesClass::readAudioVisual()
                       this->ColorAdd[9]);
     v4 = this->ColorAdd[11]; /*0x66d188*/
     this->ColorAdd[9] = Int_Overwrite; /*0x66d18e*/
-    HIDWORD(v9) = this->LaserTargetColor; /*0x66d1a0*/
+    HIDWORD(v9) = (unsigned int)(this->LaserTargetColor); /*0x66d1a0*/
     LODWORD(v9) = v4; /*0x66d1a1*/
     INIClass::ReadDouble_Overwrite((double *)v10, (uint8_t *)aElevationmodel, aElevationincre_0, v9); /*0x66d1aa*/
-    BerserkColor = this->BerserkColor; /*0x66d1af*/
-    IronCurtainColor = this->IronCurtainColor; /*0x66d1b5*/
+    BerserkColor = (int)(this->BerserkColor); /*0x66d1af*/
+    IronCurtainColor = (int)(this->IronCurtainColor); /*0x66d1b5*/
     __asm { fstp qword ptr [esi+1840h] } /*0x66d1bb*/
     *(double *)&this->ColorAdd[11] = _RT1; /*0x66d1bb*/
     result = INIClass::ReadDouble_Overwrite( /*0x66d1d1*/
@@ -222,28 +222,28 @@ INIClass * * RulesClass::ReadPowerupsSection()
         if ( v4 ) /*0x673ef3*/
         {
           String::Trim(v4); /*0x673ef7*/
-          dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
+          (&dword_81DA8C)[v2] = atoi(v5); /*0x673f05*/
         }
         v6 = strtok(0, Str); /*0x673f13*/
         v7 = (GlobalArray *)v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           String::Trim(v6); /*0x673f23*/
-          dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
+          (&dword_81DAD8)[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
         v8 = strtok(0, Str); /*0x673f3d*/
         v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
           String::Trim(v8); /*0x673f4d*/
-          if ( _strcmpi(v9, off_825BF8) ) /*0x673f58*/
+          if ( _strcmpi(v9,(const char *)(off_825BF8)) ) /*0x673f58*/
           {
-            if ( !_strcmpi(v9, g_Str_no) ) /*0x673f73*/
-              byte_89ECC0[v2] = 0; /*0x673f7f*/
+            if ( !_strcmpi(v9,(const char *)(g_Str_no)) ) /*0x673f73*/
+              (&byte_89ECC0)[v2] = 0; /*0x673f7f*/
           }
           else
           {
-            byte_89ECC0[v2] = 1; /*0x673f64*/
+            (&byte_89ECC0)[v2] = 1; /*0x673f64*/
           }
         }
         result = (int)strtok(0, Str); /*0x673f8c*/
@@ -274,7 +274,7 @@ INIClass * * RulesClass::ReadPowerupsSection()
   {
     LOBYTE(result) = 0; /*0x673feb*/
   }
-  return result; /*0x673fe2*/
+  return (gamemd::INIClass **)(result); /*0x673fe2*/
 
 }
 }  // G42.18c ns repair
@@ -346,7 +346,7 @@ INIClass * * RulesClass::readDifficulty()
   {
     LOBYTE(result) = 0; /*0x6744ec*/
   }
-  return result; /*0x6744e4*/
+  return (gamemd::INIClass **)(result); /*0x6744e4*/
 
 }
 }  // G42.18c ns repair
@@ -400,7 +400,7 @@ INIClass * * RulesClass::ReadMovies()
   {
     LOBYTE(result) = 0; /*0x674643*/
   }
-  return result; /*0x67463c*/
+  return (gamemd::INIClass **)(result); /*0x67463c*/
 
 }
 }  // G42.18c ns repair
@@ -497,7 +497,7 @@ void *  RulesClass::readAircraftTypes(int * a2)
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
+      v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a1b3*/
       this->DetailMinFrameRateMovie = v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
@@ -545,7 +545,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
+      v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a233*/
       this->DetailMinFrameRateMovie = v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
@@ -593,7 +593,7 @@ void * RulesClass::readBuildingTypes(int * a2)
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
+      v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a333*/
       this->DetailMinFrameRateMovie = v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
@@ -702,7 +702,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
-    v17 = &vt_TypeList; /*0x67be2c*/
+    v17 = (void **)(&vt_TypeList); /*0x67be2c*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
@@ -722,9 +722,9 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67beb0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67beb3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67beb7*/
-    *(unsigned int *)a1 = &vt_VectorClass; /*0x67beba*/
+    *(unsigned int *)a1 = (unsigned int)(&vt_VectorClass); /*0x67beba*/
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
-    *(unsigned int *)a1 = &vt_TypeList; /*0x67bec5*/
+    *(unsigned int *)a1 = (unsigned int)(&vt_TypeList); /*0x67bec5*/
     v17 = &vt_VectorClass; /*0x67becb*/
     v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
@@ -743,7 +743,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67bf1c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67bf1f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67bf23*/
-    *(unsigned int *)a1 = &vt_VectorClass; /*0x67bf26*/
+    *(unsigned int *)a1 = (unsigned int)(&vt_VectorClass); /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
@@ -751,7 +751,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
       *(unsigned int *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
       {
-        v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
+        v14 = (int)(__2_YAPAXI_Z(4 * v13)); /*0x67bf48*/
         *(unsigned int *)(a1 + 4) = v14; /*0x67bf52*/
         if ( v14 ) /*0x67bf55*/
         {
@@ -777,7 +777,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(unsigned int *)a1 = &vt_TypeList; /*0x67bf8c*/
+    *(unsigned int *)a1 = (unsigned int)(&vt_TypeList); /*0x67bf8c*/
   }
   return (void *)a1; /*0x67bf02*/
 
@@ -800,7 +800,7 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
       this->DetailMinFrameRateMovie = a3; /*0x67c458*/
       return &this->DetailMinFrameRateNormal; /*0x67c45e*/
     }
-    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x67c46d*/
+    this->DetailMinFrameRateMovie = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x67c46d*/
     BYTE1(this->AmmoCrateDamage) = 1; /*0x67c470*/
   }
   return &this->DetailMinFrameRateNormal; /*0x67c45d*/
@@ -846,7 +846,7 @@ int RulesClass::readSpecialWeapons()
                        this->ForceShieldColor);
     FallBackCoefficient = this->FallBackCoefficient; /*0x66d228*/
     LOBYTE(this->ForceShieldColor) = Bool_Overwrite; /*0x66d22e*/
-    HIDWORD(v6) = this->CrewCount; /*0x66d240*/
+    HIDWORD(v6) = (unsigned int)(this->CrewCount); /*0x66d240*/
     *(float *)&v6 = FallBackCoefficient; /*0x66d241*/
     result = INIClass::ReadDouble_Overwrite((double *)v7, (uint8_t *)aWallmodel, aWallpenetrator, v6); /*0x66d24a*/
     __asm { fstp qword ptr [esi+1858h] } /*0x66d24f*/

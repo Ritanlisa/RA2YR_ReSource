@@ -221,26 +221,26 @@ int VectorClass_flat::RemoveElement()
   v1 = v19; /*0x65a974*/
   if ( !v19 ) /*0x65a97c*/
   {
-    v1 = *(int **)this->radioLinks[1]; /*0x65a984*/
+    v1 = *(int **)(&this->radioLinks)[1]; /*0x65a984*/
     if ( !v1 ) /*0x65a988*/
       return 0; /*0x65a990*/
   }
   if ( v17 == 3 ) /*0x65a99a*/
   {
-    v4 = this->radioLinks[2]; /*0x65a99c*/
+    v4 = (&this->radioLinks)[2]; /*0x65a99c*/
     v5 = 0; /*0x65a9a2*/
     if ( v4 > 0 ) /*0x65a9a6*/
     {
       do /*0x65a9c7*/
       {
-        v6 = this->radioLinks[1]; /*0x65a9a8*/
+        v6 = (&this->radioLinks)[1]; /*0x65a9a8*/
         v7 = *(int **)(v6 + 4 * v5); /*0x65a9ae*/
         v8 = (unsigned int *)(v6 + 4 * v5); /*0x65a9b1*/
         if ( v7 == v1 ) /*0x65a9b6*/
           *v8 = 0; /*0x65a9b8*/
         ++v5; /*0x65a9c4*/
       }
-      while ( v5 < this->radioLinks[2] ); /*0x65a9c7*/
+      while ( v5 < (&this->radioLinks)[2] ); /*0x65a9c7*/
     }
     goto LABEL_9; /*0x65a9c7*/
   }
@@ -251,12 +251,12 @@ LABEL_9:
     v10 = AbstractClass::IsTechnoType((AbstractClass *)this); /*0x65a9d3*/
     return (*(int (**)(int *, void *, int, int))(v9 + 404))(v1, v10, v17, v18); /*0x65a9e5*/
   }
-  v11 = this->radioLinks[2]; /*0x65a9ed*/
+  v11 = (&this->radioLinks)[2]; /*0x65a9ed*/
   v12 = -1; /*0x65a9f3*/
   v13 = 0; /*0x65a9f6*/
   if ( v11 > 0 ) /*0x65a9fa*/
   {
-    v14 = (int **)this->radioLinks[1]; /*0x65a9fc*/
+    v14 = (int **)(&this->radioLinks)[1]; /*0x65a9fc*/
     while ( 1 ) /*0x65aa02*/
     {
       if ( v12 == -1 && !*v14 ) /*0x65aa07*/
@@ -276,14 +276,14 @@ LABEL_9:
   (*((void (**)(RadioClass *, int, unsigned int))this->vtable1 + 158))( /*0x65aa1f*/
     this,
     3,
-    *(unsigned int *)this->radioLinks[1]);
+    *(unsigned int *)(&this->radioLinks)[1]);
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
   v16 = AbstractClass::IsTechnoType((AbstractClass *)this); /*0x65aa41*/
   if ( (*(int (**)(int *, void *, int, int))(v15 + 404))(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
   {
-    *(unsigned int *)(this->radioLinks[1] + 4 * v12) = v1; /*0x65aa5a*/
+    *(unsigned int *)((&this->radioLinks)[1] + 4 * v12) = v1; /*0x65aa5a*/
     return 1; /*0x65aa66*/
   }
   return 10; /*0x65a98a*/
@@ -675,9 +675,9 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   this->Items = 0; /*0x4a0c2f*/
   this->Capacity = 0; /*0x4a0c32*/
   this->Count = 0; /*0x4a0c37*/
-  this->CapacityIncrement[0] = 0; /*0x4a0c3a*/
-  this->__tail_18[0] = 1; /*0x4a0c3d*/
-  this->__tail_18[1] = (unsigned int)(0); /*0x4a0c41*/
+  (&this->CapacityIncrement)[0] = 0; /*0x4a0c3a*/
+  (&this->__tail_18)[0] = 1; /*0x4a0c3d*/
+  (&this->__tail_18)[1] = (unsigned int)(0); /*0x4a0c41*/
   *(unsigned int *)&this->IsInitialized = (unsigned int)(&vt_VectorClass); /*0x4a0c44*/
   if ( &this->IsInitialized != (char *)aP1 ) /*0x4a0c4a*/
   {
@@ -714,7 +714,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   *((unsigned int *)p_IsInitialized + 5) = (unsigned int)(aP1[5]); /*0x4a0ca3*/
   *(unsigned int *)p_IsInitialized = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0ca6*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_EnumConnectionPointsClass); /*0x4a0cac*/
-  for ( i = 0; i < *(unsigned int *)&this->__tail_18[4]; ++i ) /*0x4a0cb9*/
+  for ( i = 0; i < *(unsigned int *)&(&this->__tail_18)[4]; ++i ) /*0x4a0cb9*/
   {
     v10 = *((unsigned int *)this->Count + i); /*0x4a0cc1*/
     (*(void (**)(int))(*(unsigned int *)v10 + 4))(v10); /*0x4a0cc4*/

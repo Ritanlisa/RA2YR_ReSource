@@ -412,7 +412,7 @@ void* BufferIOFileClass::Constructor() {
   *(unsigned int *)this->FileNameAllocated = 0; /*0x431b3a*/
   *(unsigned short *)this->BufferDirty = 0; /*0x431b3d*/
   *(unsigned short *)this->BufferWritePending = 0; /*0x431b41*/
-  this->CacheReadAhead[0] = 0; /*0x431b45*/
+  (&this->CacheReadAhead)[0] = 0; /*0x431b45*/
   this->BufferOffset = 0; /*0x431b48*/
   LOBYTE(this->BufferSize) = 0; /*0x431b54*/
   BYTE1(this->BufferSize) = 0; /*0x431b57*/

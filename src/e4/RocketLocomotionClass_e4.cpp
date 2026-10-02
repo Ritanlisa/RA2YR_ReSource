@@ -30,9 +30,9 @@ RocketLocomotionClass::RocketLocomotionClass()
   v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
   this->TrailerTimer[2] = 0; /*0x661efd*/
   this->TrailerTimer[0] = v2; /*0x661f00*/
-  this->CurrentSpeed[0] = 0; /*0x661f03*/
+  (&this->CurrentSpeed)[0] = 0; /*0x661f03*/
   this->MissionState = 0; /*0x661f06*/
-  this->CurrentSpeed[1] = 0; /*0x661f09*/
+  (&this->CurrentSpeed)[1] = 0; /*0x661f09*/
   this->SpawnerIsElite = 0; /*0x661f0c*/
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/

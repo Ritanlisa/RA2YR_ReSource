@@ -86,8 +86,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
           Type = a1->Type; /*0x451443*/
           if ( (BuildingTypeClass *)((char *)Type + v5 * 4) != (BuildingTypeClass *)-3916 ) /*0x451452*/
           {
-            if ( IDA_LOBYTE(Type->BuildingAnim[v5 + 12]) ) /*0x451454*/
-              BuildingClass::PlayAnim(a1, edx0, &Type->BuildingAnim[v5 + 12], v4, 0, 0, 0); /*0x451463*/
+            if ( IDA_LOBYTE((&Type->BuildingAnim)[v5 + 12]) ) /*0x451454*/
+              BuildingClass::PlayAnim(a1, edx0, &(&Type->BuildingAnim)[v5 + 12], v4, 0, 0, 0); /*0x451463*/
           }
         }
         v5 += 17; /*0x451468*/
@@ -119,8 +119,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
                 v14 = (gamemd::BuildingTypeClass *)(*(unsigned int *)(a1 + 1312));
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
-          if ( IDA_LOBYTE(v14->BuildingAnim[v12 + 12]) ) /*0x4514c9*/
-            BuildingClass::PlayAnim(a1, _EDX, &v14->BuildingAnim[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
+          if ( IDA_LOBYTE((&v14->BuildingAnim)[v12 + 12]) ) /*0x4514c9*/
+            BuildingClass::PlayAnim(a1, _EDX, &(&v14->BuildingAnim)[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
         }
       }
       v12 += 17; /*0x4514dd*/
@@ -965,7 +965,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
   if ( *(unsigned char *)(a1 + 1766) != (unsigned char)aP4 ) /*0x451eed*/
   {
     v5 = 0; /*0x451ef2*/
-    *(unsigned char *)(a1 + 1766) = aP4; /*0x451ef4*/
+    *(unsigned char *)(a1 + 1766) = (unsigned char)(aP4); /*0x451ef4*/
     v6 = 0; /*0x451efa*/
     v7 = (unsigned int *)(a1 + 1372); /*0x451efc*/
     do /*0x451f4f*/
@@ -986,7 +986,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
           if ( *v8 ) /*0x451f2b*/
           {
             BuildingClass::PlayAnim((unsigned int *)a1, a2, v8, v5, v4, 0, 0); /*0x451f39*/
-            v4 = aP4; /*0x451f3e*/
+            v4 = (int)(aP4); /*0x451f3e*/
           }
         }
       }
@@ -1329,7 +1329,7 @@ char sub_45E8F0()
   IDA_LOBYTE(SubFile) = (unsigned char)dword_89DDBC; /*0x45e8f0*/
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
-    dword_89DDBC = (void *)SearchMIXFile(aBuildngzSha, 0); /*0x45e90d*/
+    dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0)); /*0x45e90d*/
     Building::GetFoundationSize(v6, 0); /*0x45e917*/
     SubFile = MixFileClass::GetSubFile((char **)dword_89DDBC, 0); /*0x45e924*/
     v1 = *((int16_t *)dword_89DDBC + 1); /*0x45e92f*/

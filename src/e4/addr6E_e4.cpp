@@ -195,7 +195,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  *(unsigned int *)v6 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->ambientSoundController[2])); /*0x6e27ab*/
+  *(unsigned int *)v6 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, (&this->ambientSoundController)[2])); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
@@ -585,7 +585,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v23[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = (TechnoClass *)this->customSound_controller[1]; /*0x6efc76*/
+  v3 = (TechnoClass *)(&this->customSound_controller)[1]; /*0x6efc76*/
   v4 = -1; /*0x6efc79*/
   v20 = (int)this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1] ) /*0x6efc85*/

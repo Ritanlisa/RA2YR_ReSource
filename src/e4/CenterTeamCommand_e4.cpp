@@ -18,7 +18,7 @@ _DWORD * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, vo
 
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_CenterTeamCommandClass); /*0x5361a9*/
-  return this->CommandClass; /*0x5361af*/
+  return (_DWORD *)(this->CommandClass); /*0x5361af*/
 
 }
 } // namespace gamemd

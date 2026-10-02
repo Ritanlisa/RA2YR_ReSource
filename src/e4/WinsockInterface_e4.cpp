@@ -125,7 +125,7 @@ int WinsockInterface::Init()
     if ( dword_B780A0 > 0 && !byte_B7809C ) /*0x7b1e2d*/
     {
       byte_B7809C = 1; /*0x7b1e41*/
-      MessageBoxA((HWND)(g_hWnd), aWarningPacketL, Caption, 0); /*0x7b1e48*/
+      MessageBoxA((HWND)(g_hWnd), aWarningPacketL,(LPCSTR)(Caption), 0); /*0x7b1e48*/
     }
     v3 = (int)(__2_YAPAXI_Z(0x590u)); /*0x7b1e53*/
     v4 = *(unsigned int *)this->__pad_0; /*0x7b1e58*/

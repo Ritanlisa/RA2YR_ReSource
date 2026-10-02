@@ -1374,8 +1374,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v14 += 2 * v20; /*0x496d9a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496dfe*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496e06*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496e08*/
+    if ( v14 >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x496e06*/
+      v14 -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x496e08*/
   }
   return result; /*0x496e13*/
 
@@ -1400,7 +1400,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
   v14 = a7; /*0x496e70*/
   if ( a5 <= 0 ) /*0x496e85*/
   {
-    v18 = aP3; /*0x496eb8*/
+    v18 = (int)(aP3); /*0x496eb8*/
   }
   else
   {
@@ -1413,11 +1413,11 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
     }
     while ( result > 0 ); /*0x496e9c*/
     v17 = -result; /*0x496ea2*/
-    v18 = aP3 - v17; /*0x496ea4*/
+    v18 = (int)(aP3 - v17); /*0x496ea4*/
     v12 = &a1[v17]; /*0x496ea6*/
     result = a7 + 2 * v17; /*0x496ea9*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496eaf*/
-      result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496eb1*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x496eaf*/
+      result -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x496eb1*/
     v14 = result; /*0x496eb4*/
   }
   while ( v18 > 0 ) /*0x496ebe*/
@@ -1441,8 +1441,8 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v14 += 2 * v20; /*0x496eea*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496f47*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496f4f*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496f51*/
+    if ( v14 >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x496f4f*/
+      v14 -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x496f51*/
   }
   return result; /*0x496f5c*/
 
@@ -1467,7 +1467,7 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   v14 = a7; /*0x496fc0*/
   if ( a5 <= 0 ) /*0x496fd5*/
   {
-    v18 = aP3; /*0x497008*/
+    v18 = (int)(aP3); /*0x497008*/
   }
   else
   {
@@ -1480,11 +1480,11 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
     }
     while ( result > 0 ); /*0x496fec*/
     v17 = -result; /*0x496ff2*/
-    v18 = aP3 - v17; /*0x496ff4*/
+    v18 = (int)(aP3 - v17); /*0x496ff4*/
     v12 = arg0 + 2 * v17; /*0x496ff6*/
     result = a7 + 2 * v17; /*0x496ff9*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496fff*/
-      result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x497001*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x496fff*/
+      result -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x497001*/
     v14 = result; /*0x497004*/
   }
   while ( v18 > 0 ) /*0x49700e*/
@@ -1509,8 +1509,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v14 += 2 * v20; /*0x49703a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x49709e*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4970a6*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x4970a8*/
+    if ( v14 >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4970a6*/
+      v14 -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x4970a8*/
   }
   return result; /*0x4970b3*/
 
@@ -1534,7 +1534,7 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
   v13 = arg0; /*0x49710c*/
   if ( a5 <= 0 ) /*0x49711f*/
   {
-    v18 = aP3; /*0x497154*/
+    v18 = (int)(aP3); /*0x497154*/
   }
   else
   {
@@ -1547,11 +1547,11 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
     }
     while ( v11 > 0 ); /*0x497134*/
     v17 = -v11; /*0x49713a*/
-    v18 = aP3 - v17; /*0x49713c*/
+    v18 = (int)(aP3 - v17); /*0x49713c*/
     v13 = arg0 + 2 * v17; /*0x49713e*/
     result = &a6[v17]; /*0x497141*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49714d*/
-      result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49714f*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x49714d*/
+      result = (unsigned short *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x49714f*/
   }
   while ( v18 > 0 ) /*0x49715a*/
   {
@@ -1576,8 +1576,8 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
       v13 += 2 * v20; /*0x497183*/
       result += v20; /*0x497185*/
     }
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4971d7*/
-      result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4971d9*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4971d7*/
+      result = (unsigned short *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4971d9*/
   }
   return result; /*0x4971e0*/
 
@@ -1624,8 +1624,8 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
     v18 = a4 - v17; /*0x497277*/
     v14 = arg0 + 2 * v17; /*0x497279*/
     result = &a6[v17]; /*0x49727c*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x497288*/
-      result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49728a*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x497288*/
+      result = (uint16_t *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x49728a*/
   }
   while ( v18 > 0 ) /*0x497295*/
   {
@@ -1661,8 +1661,8 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       v14 += v21; /*0x4972c4*/
       result = (uint16_t *)((char *)result + v21); /*0x4972c6*/
     }
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49732c*/
-      result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49732e*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x49732c*/
+      result = (uint16_t *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x49732e*/
   }
   return result; /*0x497339*/
 
@@ -1681,7 +1681,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
   uint8_t v20; // dl
   int16_t v21; // dx
 
-  v11 = aP4; /*0x497391*/
+  v11 = (int)(aP4); /*0x497391*/
   v13 = a1; /*0x49739c*/
   result = a6; /*0x4973a9*/
   if ( aP4 <= 0 ) /*0x4973b1*/
@@ -1702,8 +1702,8 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
     v18 = a4 - v17; /*0x4973ce*/
     v13 = &a1[v17]; /*0x4973d0*/
     result = &a6[v17]; /*0x4973d3*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4973df*/
-      result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4973e1*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x4973df*/
+      result = (uint16_t *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x4973e1*/
   }
   while ( v18 > 0 ) /*0x4973ec*/
   {
@@ -1733,8 +1733,8 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       v13 += v20; /*0x49740d*/
       result += v20; /*0x49740f*/
     }
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49745c*/
-      result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49745e*/
+    if ( (unsigned int)result >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x49745c*/
+      result = (uint16_t *)((char *)result - (&g_ZBufferDescriptor)[1].Stream_field_0C); /*0x49745e*/
   }
   return result; /*0x497465*/
 
@@ -1776,7 +1776,7 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
       return result; /*0x49b824*/
   }
   *((unsigned int *)Destination + 11) = 0; /*0x49b831*/
-  wcscpy(Destination, (const wchar_t *)(v6 + 90154)); /*0x49b836*/
+  wcscpy((wchar_t *)(Destination), (const wchar_t *)(v6 + 90154)); /*0x49b836*/
   *((unsigned int *)Destination + 12) = 0; /*0x49b83b*/
   *((unsigned int *)Destination + 16) = 0; /*0x49b83e*/
   *((unsigned int *)Destination + 20) = 0; /*0x49b841*/
@@ -1814,7 +1814,7 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
   v16 = *(unsigned int *)(v6 + 21736); /*0x49b8e2*/
   if ( v16 > 0 ) /*0x49b8ea*/
     *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
-  ToWideStringChar((char *)Destination); /*0x49b902*/
+  ToWideStringChar((IUnknown *)((char *)Destination)); /*0x49b902*/
 // 0x4068e0
   return Debug::Log(); /*0x49b826*/
 }

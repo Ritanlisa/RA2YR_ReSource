@@ -140,7 +140,7 @@ int WinModemClass::ReadBytes(unsigned char *a3, int a2)
   v4 = *((unsigned int *)this + 22) - *((unsigned int *)this + 21); /*0x774b46*/
   v5 = v4 + (v4 < 0 ? 0x2000 : 0);
   if ( v5 > a3 ) /*0x774b56*/
-    v5 = a3; /*0x774b58*/
+    v5 = (int)(a3); /*0x774b58*/
   if ( v5 <= 0 ) /*0x774b5c*/
     return v5; /*0x774ba2*/
   v7 = v5; /*0x774b63*/

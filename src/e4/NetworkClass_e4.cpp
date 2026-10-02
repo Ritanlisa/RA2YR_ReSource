@@ -129,7 +129,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
     if ( v2 ) /*0x7b1c87*/
       return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
-  return result; /*0x7b1c7f*/
+  return (gamemd::AnimClass **)(result); /*0x7b1c7f*/
 
 }
 }

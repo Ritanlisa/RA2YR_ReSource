@@ -20,7 +20,9 @@ APPLY = '--apply' in sys.argv
 PROTOS = os.path.join(ROOT, 'src', 'e4', 'e4_protos.h')
 
 SDK_NAMES = {'IUnknown', 'IDispatch', 'IStream', 'IMalloc', 'HWND', 'HDC',
-             'MSG', 'FILE', 'IDirectDrawSurface', 'IDirectDraw'}
+             'MSG', 'IDirectDrawSurface', 'IDirectDraw'}
+# G42.29j: FILE is a typedef not a class -- a class fwd shadows
+# ::FILE (C2440/C2664 storm); emit using ::FILE instead.
 
 CENSUS = os.environ.get('CENSUS_SRC') or '.omo/tu_errors.json'
 d = json.load(open(os.path.join(ROOT, CENSUS)))

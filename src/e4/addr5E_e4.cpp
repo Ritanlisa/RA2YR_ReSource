@@ -507,7 +507,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
         if ( a2 == (void *)(2) ) /*0x5e3a71*/
         {
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
-          String = GetStringCSF((wchar_t *)(aGuiHostmaptran), 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
+          String = GetStringCSF((wchar_t *)(aGuiHostmaptran), 0,(const char *)(g_Str_File_netshare_cpp), 1173); /*0x5e3a93*/
 // 0x5e2700
           return Dialog::ShowMessage((gamemd::ObjectClass *)(-1),(gamemd::CampaignScore *)((size_t)String), v11, 11055906); /*0x5e3a9b*/
         }
@@ -790,7 +790,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   char v6 = *v5;
   if ( *v5 == 90 )
   {
-    *(unsigned int *)v198 = &(&stru_830620)[5004];
+    *(unsigned int *)v198 = (unsigned int)(&(&stru_830620)[5004]);
     Debug::Log();
     if ( v5[1] == 49 )
     {
@@ -827,7 +827,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
           ShowWindow(DlgItem, 1);
           v10 = GetDlgItem(v7, 1128);
           ShowWindow(v10, 0);
-          StringCSF = GetStringCSF((wchar_t *)&(&stru_830620)[4984], 0, &(&stru_830620)[4536], 1326);
+          StringCSF = GetStringCSF((wchar_t *)&(&stru_830620)[4984], 0,(const char *)(&(&stru_830620)[4536]), 1326);
           SendMessageA(v9, 0x4B2u, 0, (LPARAM)StringCSF);
           *(unsigned int *)v198 = *(unsigned int *)&v198[40];
           goto LABEL_102;
@@ -881,24 +881,24 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       }
       if ( v26 )
       {
-        if ( *(unsigned int *)&HouseClass_Player[29924] )
+        if ( *(unsigned int *)&(&HouseClass_Player)[29924] )
         {
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4404) = *(unsigned int *)&v198[32];
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4408) = *(unsigned int *)&v198[36];
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4396) = *(unsigned int *)&v198[24];
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4400) = v3;
+          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4404) = *(unsigned int *)&v198[32];
+          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4408) = *(unsigned int *)&v198[36];
+          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4396) = *(unsigned int *)&v198[24];
+          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4400) = v3;
           unsigned int v27 = 0;
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4412) = v15;
+          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4412) = v15;
           for ( j = 4416; j < 4480; j += 8 )
           {
             int v29 = *(unsigned int *)&aP0_160[0][v27];
             int v30 = *(unsigned int *)&v198[v27 + 56];
             v27 += 4;
-            *(unsigned int *)(j + *(unsigned int *)&HouseClass_Player[29924]) = v29;
-            *(unsigned int *)(j + *(unsigned int *)&HouseClass_Player[29924] + 4) = v30;
+            *(unsigned int *)(j + *(unsigned int *)&(&HouseClass_Player)[29924]) = v29;
+            *(unsigned int *)(j + *(unsigned int *)&(&HouseClass_Player)[29924] + 4) = v30;
             *(unsigned short *)&v198[24] = *(unsigned short *)&v198[v27 + 104];
             *(unsigned short *)&v198[26] = aP0_160.sectionHead[v27 / 4 + 3];
-            *(unsigned int *)(v27 + *(unsigned int *)&HouseClass_Player[29924] + 4540) = *(unsigned int *)&v198[24];
+            *(unsigned int *)(v27 + *(unsigned int *)&(&HouseClass_Player)[29924] + 4540) = *(unsigned int *)&v198[24];
           }
           eax42 = (HWND)Dialog::FindByHandle((void *)0xC9);
           if ( eax42 || (eax42 = (HWND)Dialog::FindByHandle((void *)0xBD)) != 0 )
@@ -914,20 +914,20 @@ LABEL_102:
       if ( v31 || (v31 = (VectorClass_flat *)Dialog::FindByHandle((void *)0xBD)) != 0 )
       {
         al49 = v5[1];
-        v33 = *(INIClass **)&stru_830620[4228];
+        v33 = *(INIClass **)&(&stru_830620)[4228];
         if ( al49 == 56 )
           int v35 = -1;
         else
           v35 = al49 - 48;
-        *(unsigned int *)&stru_830620[4228] = v35;
+        *(unsigned int *)&(&stru_830620)[4228] = v35;
         if ( (INIClass *)v35 == v33 )
           goto LABEL_98;
         Lobby::SetupPlayerWidgets((HWND)v31);
-        char * v36 = CharToWideString(v5 + 2);
+        char * v36 = CharToWideString((unsigned char *)(v5 + 2));
         wcscpy((wchar_t *)Destination, (const wchar_t *)v36);
         if ( !*(unsigned short *)Destination[0].__pad_0 )
         {
-          v35 = *(unsigned int *)&stru_830620[4228];
+          v35 = *(unsigned int *)&(&stru_830620)[4228];
           goto LABEL_98;
         }
         ((WideString *)((wchar_t **)&v198[24]))->Assign(Destination);

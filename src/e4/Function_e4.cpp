@@ -13,7 +13,7 @@ int Function::Function_643E80(void * a2)
 {
 
   this->Function_field_0x04 = a2; /*0x643e84*/
-  return a2; /*0x643e87*/
+  return (int)(a2); /*0x643e87*/
 
 }
 }

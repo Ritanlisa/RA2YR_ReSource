@@ -359,7 +359,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a1018
   {
     if ( a2 == -2147221384 ) /*0x7a538c*/
     {
-      v4 = GetStringCSF((wchar_t *)(aTxtSkuserialmi), 0, g_Str_File_wonline_cpp, 5773); /*0x7a53d6*/
+      v4 = GetStringCSF((wchar_t *)(aTxtSkuserialmi), 0,(const char *)(g_Str_File_wonline_cpp), 5773); /*0x7a53d6*/
       wcscpy((wchar_t *)(&word_B77AD0), v4); /*0x7a53e1*/
       SetEvent((void *)(Handles)); /*0x7a53ef*/
       return 0; /*0x7a53fa*/
@@ -856,7 +856,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7a8e94*/
         {
           v11 = WideString::GetOrEmpty((wchar_t **)&a2); /*0x7a8ea4*/
-          Dialog::ShowMessage(v9, (size_t)aHsS_1, v10, v11); /*0x7a8eb1*/
+          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (size_t)aHsS_1, v10, v11); /*0x7a8eb1*/
         }
         DeleteAndZero::Alt((DeleteAndZero *)&a2); /*0x7a8ebd*/
       }
@@ -901,10 +901,10 @@ LABEL_21:
         if ( (*v6 & 1) != 0 ) /*0x7a8f79*/
           v9 = 16776960; /*0x7a8f7b*/
         v10 = (char *)(v6 + 36); /*0x7a8f81*/
-        if ( _strcmpi(unk_A8B380, v10) ) /*0x7a8f8a*/
+        if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7a8f8a*/
         {
           v11 = WideString::GetOrEmpty((wchar_t **)&a2); /*0x7a8f9a*/
-          Dialog::ShowMessage(v9, (size_t)aHsS_1, v10, v11); /*0x7a8fa7*/
+          Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (size_t)aHsS_1, v10, v11); /*0x7a8fa7*/
         }
       }
     }

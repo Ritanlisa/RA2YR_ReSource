@@ -278,14 +278,14 @@ void WOL_ResetSystem()
   *(unsigned int *)&g_WindowManager.__pad_EC[648] = GetStringCSF((wchar_t *)(aTxtLob1), 0,(const char *)(g_Str_File_wonline_cpp), 2752); /*0x78055c*/
   *(unsigned int *)&g_WindowManager.__pad_EC[652] = GetStringCSF((wchar_t *)(aTxtLob2), 0,(const char *)(g_Str_File_wonline_cpp), 2753); /*0x780577*/
   *(unsigned int *)&g_WindowManager.__pad_EC[656] = GetStringCSF((wchar_t *)(aTxtLob3), 0,(const char *)(g_Str_File_wonline_cpp), 2754); /*0x780592*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[660] = GetStringCSF((wchar_t *)(aTxtLob4), 0, g_Str_File_wonline_cpp, 2755); /*0x7805ad*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[664] = GetStringCSF((wchar_t *)(aTxtLob5), 0, g_Str_File_wonline_cpp, 2756); /*0x7805c8*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[668] = GetStringCSF((wchar_t *)(aTxtLob6), 0, g_Str_File_wonline_cpp, 2757); /*0x7805d2*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[672] = GetStringCSF((wchar_t *)(aTxtLob7), 0, g_Str_File_wonline_cpp, 2758); /*0x7805fe*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[676] = GetStringCSF(aTxtLob8, 0, g_Str_File_wonline_cpp, 2759); /*0x780608*/
-  memset(g_WOL_RequestObject, 0xFFu, sizeof(g_WOL_RequestObject)); /*0x780619*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[660] = GetStringCSF((wchar_t *)(aTxtLob4), 0,(const char *)(g_Str_File_wonline_cpp), 2755); /*0x7805ad*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[664] = GetStringCSF((wchar_t *)(aTxtLob5), 0,(const char *)(g_Str_File_wonline_cpp), 2756); /*0x7805c8*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[668] = GetStringCSF((wchar_t *)(aTxtLob6), 0,(const char *)(g_Str_File_wonline_cpp), 2757); /*0x7805d2*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[672] = GetStringCSF((wchar_t *)(aTxtLob7), 0,(const char *)(g_Str_File_wonline_cpp), 2758); /*0x7805fe*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[676] = GetStringCSF((wchar_t *)(aTxtLob8), 0, g_Str_File_wonline_cpp, 2759); /*0x780608*/
+  memset((void *)(g_WOL_RequestObject), 0xFFu, sizeof(g_WOL_RequestObject)); /*0x780619*/
   ppv = 0; /*0x780627*/
-  memset(byte_B77A94, 0, sizeof(byte_B77A94)); /*0x78062d*/
+  memset((void *)(byte_B77A94), 0, sizeof(byte_B77A94)); /*0x78062d*/
   g_UIPointerTable = 0; /*0x780634*/
   dword_AC1174 = 0; /*0x78063a*/
   dword_B77E54 = 0; /*0x780640*/
@@ -360,9 +360,9 @@ AbstractClass * * PopulateWOLLobbyListBox()
         {
           if ( v6 >= 0 && v5 < *(int *)&g_WindowManager.__pad_EC[636] ) /*0x78075a*/
             qmemcpy(&v18[44], (const void *)(v6 + *(unsigned int *)&g_WindowManager.__pad_EC[644]), 0x10Cu); /*0x78076e*/
-          if ( !strncmp(&v18[96], g_Str_Lob_41_, strlen(g_Str_Lob_41_)) ) /*0x78078a*/
+          if ( !strncmp(&v18[96], g_Str_Lob_41_, strlen((const char *)(g_Str_Lob_41_))) ) /*0x78078a*/
           {
-            v7 = atol(&v18[strlen(g_Str_Lob_41_) + 96]); /*0x7807b1*/
+            v7 = atol((const char *)(&v18[strlen((const char *)(g_Str_Lob_41_)) + 96])); /*0x7807b1*/
             *(unsigned int *)&v18[8] = v7; /*0x7807b6*/
             v16 = strcmp(&v18[96], &stru_B76AC4.needsRedraw) == 0; /*0x7807f7*/
             v8 = v7 % 8; /*0x780810*/
@@ -389,7 +389,7 @@ AbstractClass * * PopulateWOLLobbyListBox()
                 qmemcpy(v20, (const void *)(*(unsigned int *)&g_WindowManager.__pad_EC[644] + 268 * v11), sizeof(v20)); /*0x7808b3*/
                 v9 = *(unsigned int *)&v18[12]; /*0x7808b5*/
               }
-              v12 = atol(&v20[strlen(g_Str_Lob_41_) + 52]); /*0x7808d0*/
+              v12 = atol(&v20[strlen((const char *)(g_Str_Lob_41_)) + 52]); /*0x7808d0*/
               if ( v12 > *(int *)&v18[8] ) /*0x7808de*/
                 break; /*0x7808de*/
             }
@@ -397,8 +397,8 @@ AbstractClass * * PopulateWOLLobbyListBox()
             SendMessageA(DlgItem, 0x19Au, v13, v17); /*0x78090b*/
             Gadget::InitProperties((Gadget *)&v18[20]); /*0x780911*/
             *(unsigned int *)&v18[20] = 1; /*0x780922*/
-            WideString::Reassign((void **)&v18[24], Buffer); /*0x78092a*/
-            WideString::Reassign((void **)&v18[28], &g_TypeClass_DefaultString); /*0x780938*/
+            WideString::Reassign((wchar_t *)((void **)&v18[24]), Buffer); /*0x78092a*/
+            WideString::Reassign((wchar_t *)((void **)&v18[28]), &g_TypeClass_DefaultString); /*0x780938*/
             SendMessageA( /*0x780962*/
               DlgItem,
               0x4A8u,
@@ -460,7 +460,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   const wchar_t *v29[27]; // [esp+30h] [ebp-6Ch] BYREF
 
   ((String *)(&v23))->Assign(a2 + 36); /*0x780aa6*/
-  v4 = CharStringToWide(&v26, (const char **)&v23); /*0x780abd*/
+  v4 = CharStringToWide((gamemd::ObjectClass *)(&v26), (const char **)&v23); /*0x780abd*/
   WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.q4, (wchar_t *)L" : ");
   DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780acd*/
   ((String *)(&v23))->ToLower(); /*0x780ad6*/

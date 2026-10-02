@@ -53,25 +53,25 @@ unsigned int * RadBeam::InitState(int aP1)
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x659415*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x659418*/
   BYTE2(((unsigned int *)this)[0]) = 0; /*0x65941b*/
-  this->range[0] = 0; /*0x65941e*/
-  this->range[1] = 0; /*0x659421*/
-  this->data[0] = 0; /*0x659424*/
-  this->data[1] = 0; /*0x659427*/
-  this->data[2] = 0; /*0x65942a*/
-  this->data[3] = 0; /*0x65942d*/
-  this->data[5] = 0; /*0x659430*/
-  this->data[7] = 0; /*0x659433*/
-  this->data[4] = 0; /*0x659436*/
-  this->data[6] = 0; /*0x659439*/
-  this->data[8] = 0; /*0x65943c*/
-  this->data[9] = 0; /*0x65943f*/
-  this->data[10] = 1; /*0x659442*/
-  LOBYTE(this->data[11]) = 0; /*0x659445*/
-  this->data[20] = 0; /*0x659448*/
-  LOBYTE(this->data[37]) = 0; /*0x65944b*/
-  BYTE1(this->data[37]) = 0; /*0x659451*/
-  BYTE2(this->data[37]) = 0; /*0x659457*/
-  return this; /*0x65945d*/
+  (&this->range)[0] = 0; /*0x65941e*/
+  (&this->range)[1] = 0; /*0x659421*/
+  (&this->data)[0] = 0; /*0x659424*/
+  (&this->data)[1] = 0; /*0x659427*/
+  (&this->data)[2] = 0; /*0x65942a*/
+  (&this->data)[3] = 0; /*0x65942d*/
+  (&this->data)[5] = 0; /*0x659430*/
+  (&this->data)[7] = 0; /*0x659433*/
+  (&this->data)[4] = 0; /*0x659436*/
+  (&this->data)[6] = 0; /*0x659439*/
+  (&this->data)[8] = 0; /*0x65943c*/
+  (&this->data)[9] = 0; /*0x65943f*/
+  (&this->data)[10] = 1; /*0x659442*/
+  LOBYTE((&this->data)[11]) = 0; /*0x659445*/
+  (&this->data)[20] = 0; /*0x659448*/
+  LOBYTE((&this->data)[37]) = 0; /*0x65944b*/
+  BYTE1((&this->data)[37]) = 0; /*0x659451*/
+  BYTE2((&this->data)[37]) = 0; /*0x659457*/
+  return (unsigned int *)(this); /*0x65945d*/
 
 }
 } // namespace ra2

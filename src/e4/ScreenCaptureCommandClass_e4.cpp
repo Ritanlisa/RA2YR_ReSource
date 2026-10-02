@@ -22,7 +22,7 @@ namespace gamemd {
 char ScreenCaptureCommandClass::AddRef(void *a1)
 {
 
-  return aScreencapture; /*0x537b55*/
+  return (char)(aScreencapture); /*0x537b55*/
 
 }
 } // namespace gamemd

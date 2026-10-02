@@ -101,8 +101,8 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v11 = **(uint16_t **)(dword_87F6C4 + 372); /*0x704a69*/
     v36 = (int *)(-2); /*0x704a77*/
     v35 = (unsigned int)((int *)(-2));
-    v12 = (int)(((Coord2D *)(&v35))->Add(v37, v34));
-    v13 = (int)(Rect::Construct(v47, v12, 3, 3));
+    v12 = (unsigned int *)((int)(((Coord2D *)(&v35))->Add(v37,(unsigned int *)(v34))));
+    v13 = (int *)((int)(Rect::Construct(v47, v12, 3, 3)));
     v39 = (int *)(*v13);
     v40 = (int *)(v13[1]);
     v41 = (int *)(v13[2]);
@@ -119,8 +119,8 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v15 = **(uint16_t **)(dword_87F6C4 + 372); /*0x704b1d*/
     v35 = -2; /*0x704b29*/
     v36 = (int *)(-2); /*0x704b2d*/
-    v16 = ((Coord2D *)(&v35))->Add(v37, v33); /*0x704b41*/
-    v17 = Rect::Construct(v48, v16, 3, 3); /*0x704b4e*/
+    v16 = ((Coord2D *)(&v35))->Add(v37,(unsigned int *)(v33)); /*0x704b41*/
+    v17 = (int *)(Rect::Construct(v48, v16, 3, 3)); /*0x704b4e*/
     v43 = (int *)(*v17); /*0x704b57*/
     v44 = (int *)(v17[1]); /*0x704b60*/
     v45 = (int *)(v17[2]); /*0x704b6c*/
@@ -152,7 +152,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
   v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))))))))))))))))));
   v36 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))));
-  v21 = (int *)(((Coord2D *)(&v35))->Add(v37, &v31));
+  v21 = (unsigned int *)((int *)(((Coord2D *)(&v35))->Add(v37,(unsigned int *)(&v31))));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
   v44 = (int *)(v22[1]);
@@ -166,8 +166,8 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = (int *)(-2); /*0x704d21*/
-  v24 = ((Coord2D *)(&v35))->Add(v37, &v29); /*0x704d35*/
-  v25 = Rect::Construct(v48, v24, 3, 3); /*0x704d42*/
+  v24 = ((Coord2D *)(&v35))->Add(v37,(unsigned int *)(&v29)); /*0x704d35*/
+  v25 = (int *)(Rect::Construct(v48, v24, 3, 3)); /*0x704d42*/
   v43 = (int *)(*v25); /*0x704d49*/
   v44 = (int *)(v25[1]); /*0x704d52*/
   v45 = (int *)(v25[2]); /*0x704d5f*/
@@ -276,7 +276,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
-  v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
+  v10 = (int *)(Rect::Construct(v46, &v28, 3, 3)); /*0x704fb1*/
   v30 = *v10; /*0x704fba*/
   v31 = (int)(v10[1]);
   v32 = (void *)((unsigned int)(v10[2]));

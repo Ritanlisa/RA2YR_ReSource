@@ -484,7 +484,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x40b7be*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x40b7c7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40b7c7*/
       this->m_8 = a2; /*0x40b7cf*/
       BYTE1(this->m_C) = a3 == 0; /*0x40b7d2*/
       return 1; /*0x40b7d8*/
@@ -536,7 +536,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x40b8f1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40b8fa*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40b8fa*/
     this->m_8 = a2; /*0x40b902*/
     BYTE1(this->m_C) = a3 == 0; /*0x40b905*/
   }
@@ -584,7 +584,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x40ba1e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x40ba27*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40ba27*/
       this->m_8 = a2; /*0x40ba2f*/
       BYTE1(this->m_C) = a3 == 0; /*0x40ba32*/
       return 1; /*0x40ba38*/
@@ -636,7 +636,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
         *(unsigned int *)&this->m_1[3] = 0; /*0x40bb51*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40bb5a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40bb5a*/
     this->m_8 = a2; /*0x40bb62*/
     BYTE1(this->m_C) = a3 == 0; /*0x40bb65*/
   }
@@ -786,7 +786,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x40c481*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40c48a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x40c48a*/
     this->m_8 = a2; /*0x40c492*/
     BYTE1(this->m_C) = a3 == 0; /*0x40c495*/
   }
@@ -824,7 +824,7 @@ SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 
   HIWORD(result) = HIWORD(stru_AA0398.AudioStream_field_0xAC); /*0x53ec70*/
   if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec77*/
-    LOWORD(result) = word_AA0168[(uint8_t)nVirtKey]; /*0x53ec87*/
+    LOWORD(result) = (&word_AA0168)[(uint8_t)nVirtKey]; /*0x53ec87*/
   else
     LOWORD(result) = GetKeyState((uint8_t)nVirtKey); /*0x53ec7a*/
   return result; /*0x53ec80*/

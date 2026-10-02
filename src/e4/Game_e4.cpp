@@ -724,7 +724,7 @@ int Game::GetMultiplayerScoreScreenBar()
 
   void *NeedsSaveOrLink; // eax
 
-  NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x5ca115*/
+  NeedsSaveOrLink = (&dword_A8B230)[374].NeedsSaveOrLink; /*0x5ca115*/
   if ( NeedsSaveOrLink ) /*0x5ca11d*/
   {
     if ( NeedsSaveOrLink == (void *)1 ) /*0x5ca21f*/

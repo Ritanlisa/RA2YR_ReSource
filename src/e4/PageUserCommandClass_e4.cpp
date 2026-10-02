@@ -45,7 +45,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Release(void *a1)
 {
 
-  return GetStringCSF(aTxtPageuser, 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
+  return GetStringCSF((wchar_t *)(aTxtPageuser), 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
 
 }
 }  // G42.18c ns repair
@@ -54,7 +54,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::ddtor()
 {
 
-  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
+  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
 
 }
 }  // G42.18c ns repair
@@ -63,7 +63,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
 
-  return GetStringCSF(aTxtPageuserDes, 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
+  return GetStringCSF((wchar_t *)(aTxtPageuserDes), 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
 
 }
 }  // G42.18c ns repair

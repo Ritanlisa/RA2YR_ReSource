@@ -72,7 +72,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   {
     if ( !byte_8B3CCC ) /*0x4d1728*/
     {
-      qsort(g_MissionPool, g_MissionState, 8u, globalHelper_0D2ED0); /*0x4d1739*/
+      qsort((void *)(g_MissionPool), g_MissionState, 8u, globalHelper_0D2ED0); /*0x4d1739*/
       dword_8B3CD0 = 0; /*0x4d1747*/
       byte_8B3CCC = 1; /*0x4d174d*/
     }

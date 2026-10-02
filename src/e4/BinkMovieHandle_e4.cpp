@@ -128,7 +128,7 @@ _DWORD * BinkMovieHandle::CopyFrameToSurface(void *a1)
     {
       v10 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
       v5 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
-      BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
+      BinkCopyToBuffer(this->tempPath,(void *)(v12), v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
 LABEL_6:
       (*((void (**)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
     }
@@ -143,7 +143,7 @@ LABEL_6:
     {
       v11 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
       v8 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
-      BinkCopyToBuffer(this->tempPath, v7, v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
+      BinkCopyToBuffer(this->tempPath,(void *)(v7), v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }
   }
@@ -205,7 +205,7 @@ int BinkMovieHandle::Release(void *a1)
   int result; // eax
 
   height = this->height; /*0x433021*/
-  result = BinkWait(*(unsigned int *)(height + 4)); /*0x433027*/
+  result = BinkWait((void *)(*(unsigned int *)(height + 4))); /*0x433027*/
   if ( !result ) /*0x43302f*/
     *(unsigned char *)(height + 45) = 1; /*0x433031*/
   return result; /*0x433036*/

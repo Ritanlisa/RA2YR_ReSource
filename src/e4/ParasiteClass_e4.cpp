@@ -77,11 +77,11 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   *((unsigned int *)this + 13) = 0; /*0x6292c9*/
   *((unsigned int *)this + 14) = dword_A8ED84; /*0x6292d2*/
   *((unsigned int *)this + 16) = 0; /*0x6292d5*/
-  *(unsigned int *)this = &vt_ParasiteClass; /*0x6292d8*/
-  *((unsigned int *)this + 1) = &vt_ParasiteClass; /*0x6292de*/
-  *((unsigned int *)this + 2) = &vt_ParasiteClass; /*0x6292e5*/
-  *((unsigned int *)this + 3) = &vt_ParasiteClass; /*0x6292ec*/
-  *((unsigned int *)this + 9) = aP1; /*0x6292f3*/
+  *(unsigned int *)this = (unsigned int)(&vt_ParasiteClass); /*0x6292d8*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_ParasiteClass); /*0x6292de*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_ParasiteClass); /*0x6292e5*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_ParasiteClass); /*0x6292ec*/
+  *((unsigned int *)this + 9) = (unsigned int)(aP1); /*0x6292f3*/
   *((unsigned int *)this + 10) = 0; /*0x6292f6*/
   *((unsigned int *)this + 14) = dword_A8ED84; /*0x629303*/
   *((unsigned int *)this + 15) = v6; /*0x62930a*/
@@ -104,7 +104,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
          0) )
   {
     v4 = dword_AC4920++; /*0x62936d*/
-    *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
+    *((unsigned int *)dword_AC4914 + v4) = (unsigned int)(this); /*0x62937c*/
   }
   return this; /*0x629381*/
 
@@ -314,7 +314,7 @@ LABEL_20:
             fsub ds:dbl_7E2808
             fstp [esp+70h+var_34+4]
           }
-          if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) ) /*0x629aee*/
+          if ( Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1) ) /*0x629aee*/
             __asm { fld ds:dbl_7EF8F0 } /*0x629af7*/
           else
             __asm { fld qword ptr [esp+68h+var_3C+4] } /*0x629aff*/

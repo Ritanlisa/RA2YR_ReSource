@@ -75,7 +75,7 @@ int FileSystem::ProcessNextFileExtension()
       if ( v3 ) /*0x626ddb*/
       {
         StringVector::Construct((int)(v3), 0, 0); /*0x626de1*/
-        *(unsigned int *)v4->__pad_0 = &vt_DynamicVectorClass; /*0x626de6*/
+        *(unsigned int *)v4->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x626de6*/
         v4->StringVector_field_0x14 = 10; /*0x626dec*/
         v4->StringVector_field_0x10 = 0; /*0x626df3*/
       }
@@ -92,7 +92,7 @@ int FileSystem::ProcessNextFileExtension()
       *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
       v7 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v7 ) /*0x626e27*/
-        *(unsigned int *)&v1[12] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626e39*/
+        *(unsigned int *)&v1[12] = (unsigned int)(DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31)); /*0x626e39*/
       else
         *(unsigned int *)&v1[12] = 0; /*0x626e40*/
     }

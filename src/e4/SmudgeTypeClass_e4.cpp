@@ -134,7 +134,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
     v10 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a6); /*0x6b5674*/
     v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
+    DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13],(gamemd::ConvertClass *)(v7), 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 
 }
@@ -171,11 +171,11 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
                      (uint8_t *)g_INI_Key_Height,
                      this->Height);
     if ( ((unsigned int *)this)[0] ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
+      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x6b57b4*/
     else
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x6b5784*/
+      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), Ext); /*0x6b5784*/
     result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
-    ((unsigned int *)this)[0] = (SHPStruct *)result; /*0x6b57c7*/
+    ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)result); /*0x6b57c7*/
     LOBYTE(result) = 1; /*0x6b57ce*/
   }
   else
@@ -195,18 +195,18 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   int v4; // eax
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Image = ((unsigned int *)a3)[0]; /*0x6b6164*/
+  Image = (gamemd::SHPStruct *)(((unsigned int *)a3)[0]); /*0x6b6164*/
   a3->vtable1 = &vt_SmudgeTypeClass; /*0x6b616a*/
-  ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6172*/
-  ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6179*/
-  ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6180*/
+  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6172*/
+  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6179*/
+  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6180*/
   if ( Image ) /*0x6b6187*/
   {
     __3_YAXPAX_Z(Image); /*0x6b618a*/
     ((unsigned int *)a3)[0] = 0; /*0x6b6192*/
   }
-  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x6b61a0*/
-  v6 = a3; /*0x6b61b5*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a3), 1); /*0x6b61a0*/
+  v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
   v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
          (unsigned int *)((char *)&stru_A8EB00 + 52),
          &v6);
@@ -222,8 +222,8 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   }
   ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
-    __3_YAXPAX_Z(a3); /*0x6b61fd*/
-  return a3; /*0x6b6207*/
+    __3_YAXPAX_Z((void *)(a3)); /*0x6b61fd*/
+  return (gamemd::SmudgeTypeClass *)(a3); /*0x6b6207*/
 
 }
 }  // G42.18c ns repair
@@ -293,16 +293,16 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
       aP0->vtable1 = &vt_SmudgeTypeClass; /*0x6b5874*/
-      ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b587a*/
-      ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b5881*/
-      ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b5888*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b587a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5881*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/
@@ -319,7 +319,7 @@ int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x6b58bf*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, aP2); /*0x6b58bf*/
   if ( result >= 0 ) /*0x6b58c6*/
     return 0; /*0x6b58c8*/
   return result; /*0x6b58ca*/

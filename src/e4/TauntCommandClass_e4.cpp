@@ -27,7 +27,7 @@ _DWORD * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, vo
 
   this->TauntCommandClass_field_00 = a2; /*0x536296*/
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_TauntCommandClass); /*0x536299*/
-  return this->CommandClass; /*0x53629f*/
+  return (_DWORD *)(this->CommandClass); /*0x53629f*/
 
 }
 } // namespace gamemd

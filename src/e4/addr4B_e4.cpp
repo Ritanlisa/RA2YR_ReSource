@@ -503,7 +503,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v40 = (v10 - v9) / 2; /*0x4b9909*/
   *(unsigned int *)v44.__pad_0 = 450; /*0x4b9912*/
   v41 = v8; /*0x4b992b*/
-  v11 = ((Coord2D *)(&v44))->Add((unsigned int *)(&v42), &v40); /*0x4b992f*/
+  v11 = ((Coord2D *)(&v44))->Add((unsigned int *)(&v42),(unsigned int *)(&v40)); /*0x4b992f*/
   v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12[1]; /*0x4b994b*/
@@ -726,16 +726,16 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4e62*/
   this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
-  ((ListClass *)((int)(unsigned int *)this + 176))->Construct(0, aP5, aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  *(unsigned int *)this->__pad_0 = &vt_DropListClass; /*0x4b4eac*/
-  Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
+  ((ListClass *)((int)(unsigned int *)this + 176))->Construct(0,(int)(aP5), aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DropListClass); /*0x4b4eac*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
   this->DropListClass_field_0x18 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
   (*(void (**)(char *, DropListClass *))(v13 + 132))((char *)this + 176, this); /*0x4b4ec4*/
   (*(void (**)(int *, DropListClass *))(this->DropListClass_field_0x50 + 132))( /*0x4b4ecf*/
     &this->DropListClass_field_0x50,
     this);
-  return (int)this->__pad_0; /*0x4b4ed7*/
+  return (gamemd::DropListClass *)((int)this->__pad_0); /*0x4b4ed7*/
 
 }
 } // namespace gamemd
@@ -762,7 +762,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   *((unsigned char *)this + 124) = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   *((unsigned char *)this + 125) = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   *((unsigned int *)this + 32) = *(EditClass *)(a2 + 128); /*0x4b544f*/
-  *((unsigned int *)this + 20) = &vt_ToggleClass; /*0x4b5452*/
+  *((unsigned int *)this + 20) = (unsigned int)(&vt_ToggleClass); /*0x4b5452*/
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x4b545c*/
   *((unsigned int *)this + 34) = *(EditClass *)(a2 + 136); /*0x4b5462*/
   *((unsigned int *)this + 35) = *(EditClass *)(a2 + 140); /*0x4b5468*/
@@ -775,7 +775,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   *((unsigned char *)this + 165) = *(unsigned char *)(a2 + 165); /*0x4b5492*/
   *((unsigned int *)this + 42) = *(EditClass *)(a2 + 168); /*0x4b5498*/
   *((unsigned char *)this + 172) = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
-  *((unsigned int *)this + 20) = &vt_ShapeButtonClass; /*0x4b54a9*/
+  *((unsigned int *)this + 20) = (unsigned int)(&vt_ShapeButtonClass); /*0x4b54a9*/
   sub_557380((int)((unsigned int *)this + 44), a2 + 176); /*0x4b54af*/
   v3 = *((unsigned int *)this + 44); /*0x4b54b4*/
   *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
@@ -814,7 +814,7 @@ int E4Recv_4B56E0::sub_4B56E0(int a2)
   *((unsigned int *)this + 18) = *(unsigned int *)(a2 + 72); /*0x4b5763*/
   *((unsigned int *)this + 19) = *(unsigned int *)(a2 + 76); /*0x4b5769*/
   *((unsigned int *)this + 20) = *(unsigned int *)(a2 + 80); /*0x4b576f*/
-  return this; /*0x4b5774*/
+  return (int)(this); /*0x4b5774*/
 
 }
 } // namespace gamemd
@@ -833,7 +833,7 @@ int E4Recv_4B5780::sub_4B5780(int a2)
   *((unsigned char *)this + 29) = *(unsigned char *)(a2 + 29); /*0x4b57af*/
   *((unsigned char *)this + 30) = *(unsigned char *)(a2 + 30); /*0x4b57b5*/
   *((unsigned int *)this + 8) = *(unsigned int *)(a2 + 32); /*0x4b57bb*/
-  return this; /*0x4b57c0*/
+  return (int)(this); /*0x4b57c0*/
 
 }
 } // namespace gamemd
@@ -852,7 +852,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     return this; /*0x4b583a*/
   (*((void (**)(ObjectClass *))this->vtable1 + 3))(this); /*0x4b583e*/
   v3 = (void *)a2[2]; /*0x4b5841*/
-  ((unsigned int *)this)[0] = v3; /*0x4b5846*/
+  ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
   {
     ((unsigned int *)this)[0] = 0; /*0x4b588a*/

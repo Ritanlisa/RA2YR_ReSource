@@ -147,7 +147,7 @@ int System_Search(ObjectClass * aP0, int edx0, int * a2)
     v3 += -1 - v3 / 2; /*0x52b77e*/
     goto LABEL_7; /*0x52b77e*/
   }
-  return aP0 + 8 * (v3 / 2); /*0x52b784*/
+  return (int)(aP0 + 8 * (v3 / 2)); /*0x52b784*/
 }
 }
 // 0x6269A0
@@ -178,7 +178,7 @@ int sub_6269A0()
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct((int)(v4), 0, 0); /*0x6269df*/
-        *(unsigned int *)v5->__pad_0 = (void*)&DynamicVectorClass_char___vftable; /*0x6269e4*/
+        *(unsigned int *)v5->__pad_0 = (unsigned int)((void*)&DynamicVectorClass_char___vftable); /*0x6269e4*/
         v5->StringVector_field_0x14 = 10; /*0x6269ea*/
         v5->StringVector_field_0x10 = 0; /*0x6269f1*/
       }
@@ -203,7 +203,7 @@ int sub_6269A0()
       *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
       v8 = (DynamicVectorArray *)RA2_OPNEW(0x10u); /*0x626a37*/
       if ( v8 ) /*0x626a41*/
-        *(unsigned int *)&v3[12] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626a53*/
+        *(unsigned int *)&v3[12] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626a53*/
       else
         *(unsigned int *)&v3[12] = 0; /*0x626a5c*/
       v1 = v3; /*0x626a56*/
@@ -292,7 +292,7 @@ char sub_626AB0(const char * a1, int a2)
       v3[2] = (int)(v7);
       v8 = (int *)RA2_OPNEW(0x10u); /*0x626b51*/
       if ( v8 ) /*0x626b5b*/
-        v3[3] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626b6c*/
+        v3[3] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626b6c*/
       else
         v3[3] = 0; /*0x626b79*/
       g_FileExtensionState = (int)(v3); /*0x626b6f*/

@@ -337,7 +337,7 @@ LABEL_9:
       *(unsigned int *)(v10 + 112) = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
       {
-        aP1 = Block; /*0x634145*/
+        aP1 = (gamemd::TechnoClass *)(Block); /*0x634145*/
         if ( Block ) /*0x634149*/
         {
           if ( !LOBYTE(((unsigned int *)Block)[0]) ) /*0x63414b*/
@@ -365,7 +365,7 @@ LABEL_9:
     if ( !((unsigned int *)Block)[0] && Block ) /*0x6341c6*/
     {
       ((FactoryClass *)((FactoryClass *)Block))->ClearObjects(); /*0x6341ce*/
-      aP1 = Block; /*0x6341e3*/
+      aP1 = (gamemd::TechnoClass *)(Block); /*0x6341e3*/
       v15 = (*(int (**)(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x6341e7*/
               &stru_AC4B30.__pad_EC[124],
               &aP1);
@@ -701,8 +701,8 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   this->countObjects[2] = -1; /*0x6362ec*/
   this->countObjects[3] = -1; /*0x6362f2*/
   LOBYTE(this->countObjects[4]) = 0; /*0x6362f8*/
-  BYTE1(this->countObjects[4]) = (gamemd::TechnoClass **)(0); /*0x6362ff*/
-  return result; /*0x636306*/
+  BYTE1(this->countObjects[4]) = (unsigned char)((gamemd::TechnoClass **)(0)); /*0x6362ff*/
+  return (gamemd::TechnoClass **)(result); /*0x636306*/
 
 }
 }
@@ -967,7 +967,7 @@ LABEL_13:
       }
     }
   }
-  return result; /*0x636b38*/
+  return (gamemd::TeamClass **)(result); /*0x636b38*/
 
 }
 }
@@ -1055,9 +1055,9 @@ LABEL_4:
     {
       ((FactoryClass *)((FactoryClass *)v8))->ClearObjects(); /*0x636c75*/
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
-      *(unsigned int *)(v8 + 32) = &vt_VectorClass; /*0x636c84*/
+      *(unsigned int *)(v8 + 32) = (unsigned int)(&vt_VectorClass); /*0x636c84*/
       ((VectorClass *)(v8 + 32))->Cleanup2(); /*0x636c8a*/
-      *(unsigned int *)v8 = &vt_VectorClass; /*0x636c91*/
+      *(unsigned int *)v8 = (unsigned int)(&vt_VectorClass); /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/
     }
@@ -1070,7 +1070,7 @@ LABEL_4:
     for ( ((unsigned int *)this)[0] = v15; result < ((unsigned int *)this)[0]; *((unsigned int *)((unsigned int *)this)[0] + result - 1) = *((unsigned int *)((unsigned int *)this)[0] + result) ) /*0x636cb8*/
       ++result; /*0x636cbd*/
   }
-  return result; /*0x636ccc*/
+  return (gamemd::CampaignClass **)(result); /*0x636ccc*/
 
 }
 }
@@ -1088,7 +1088,7 @@ void * TeamClass::FindOrCreate()
   if ( g_GameObjectCleanup <= 0 ) /*0x6e52ae*/
   {
 LABEL_5:
-    v5 = __2_YAPAXI_Z(0x38u); /*0x6e52c5*/
+    v5 = (int)(__2_YAPAXI_Z(0x38u)); /*0x6e52c5*/
     if ( v5 ) /*0x6e52d1*/
       return TeknoClass::GetType(v5, (int)this); /*0x6e52d6*/
     else
@@ -1108,7 +1108,7 @@ LABEL_5:
         goto LABEL_5; /*0x6e52c3*/
     }
   }
-  return result; /*0x6e52db*/
+  return (void *)(result); /*0x6e52db*/
 
 }
 }
@@ -1191,7 +1191,7 @@ LABEL_14:
     }
     if ( v13 ) /*0x6e54e9*/
     {
-      AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e54ef*/
+      AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x6e54ef*/
       result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e54f4*/
       if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e552f*/
         || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
@@ -1233,8 +1233,8 @@ void TeamClass::Destructor(void * a2)
 
   v2 = 0; /*0x6e8de5*/
   a2->vtable1 = &vt_TeamClass; /*0x6e8de7*/
-  ((unsigned int *)a2)[0] = &vt_TeamClass; /*0x6e8ded*/
-  ((unsigned int *)a2)[0] = &vt_TeamClass; /*0x6e8df4*/
+  ((unsigned int *)a2)[0] = (unsigned int)(&vt_TeamClass); /*0x6e8ded*/
+  ((unsigned int *)a2)[0] = (unsigned int)(&vt_TeamClass); /*0x6e8df4*/
   for ( ((unsigned int *)a2)[0] = &vt_TeamClass; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = *((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
@@ -1265,12 +1265,12 @@ void TeamClass::Destructor(void * a2)
     if ( tag ) /*0x6e8e9d*/
     {
       if ( !tag->instanceCount ) /*0x6e8e9f*/
-        TagClass::Destroy(tag); /*0x6e8ea6*/
+        TagClass::Destroy((HWND)(tag)); /*0x6e8ea6*/
       a2->tag = 0; /*0x6e8eab*/
     }
   }
-  AbstractClass::AnnounceExpiredPointer(a2, 1); /*0x6e8eb6*/
-  v15 = a2; /*0x6e8ecb*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a2), 1); /*0x6e8eb6*/
+  v15 = (gamemd::TeamClass *)(a2); /*0x6e8ecb*/
   v8 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.unknown__ + 16))( /*0x6e8ecf*/
          &g_BuildingLoadQueue_Array.unknown__,
          &v15);
@@ -1285,7 +1285,7 @@ void TeamClass::Destructor(void * a2)
       ++v8; /*0x6e8ef2*/
     }
   }
-  v15 = a2; /*0x6e8f14*/
+  v15 = (gamemd::TeamClass *)(a2); /*0x6e8f14*/
   v9 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x6e8f18*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v15);
@@ -1300,7 +1300,7 @@ void TeamClass::Destructor(void * a2)
       ++v9; /*0x6e8f3b*/
     }
   }
-  v15 = a2; /*0x6e8f5d*/
+  v15 = (gamemd::TeamClass *)(a2); /*0x6e8f5d*/
   v10 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e8f61*/
           &g_BuildingLoadQueue_Array.LightVisibility,
           &v15);
@@ -1315,7 +1315,7 @@ void TeamClass::Destructor(void * a2)
       ++v10; /*0x6e8f84*/
     }
   }
-  v15 = a2; /*0x6e8fa6*/
+  v15 = (gamemd::TeamClass *)(a2); /*0x6e8fa6*/
   v11 = (*(int (**)(char *, TeamClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 16))( /*0x6e8faa*/
           &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16),
           &v15);

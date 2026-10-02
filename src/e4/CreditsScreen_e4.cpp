@@ -58,7 +58,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
   String = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SHORT_TITLE), 0,(const char *)(g_Str_File_Init_CPP), 5680)); /*0x531a75*/
   SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
-  ModuleVersion = GetModuleVersion(); /*0x531a8b*/
+  ModuleVersion = (char *)(GetModuleVersion()); /*0x531a8b*/
   sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531ab0*/
   ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&dword_A8ECE0))); /*0x531ab7*/

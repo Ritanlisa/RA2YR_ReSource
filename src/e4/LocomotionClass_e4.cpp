@@ -54,7 +54,7 @@ int LocomotionClass::Initialize()
   *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
   *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_DriveLocomotionClass); /*0x4af5c2*/
-  *(unsigned int *)&this->ILocomotion[4] = &vt_DriveLocomotionClass; /*0x4af5c8*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_DriveLocomotionClass; /*0x4af5c8*/
   *((unsigned int *)this + 6) = (unsigned int)(&off_7E7E8C); /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
@@ -158,7 +158,7 @@ int LocomotionClass::ProcessData()
   *((unsigned int *)this + 27) = 0; /*0x513c8b*/
   *((unsigned char *)this + 112) = 0; /*0x513c8e*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_HoverLocomotionClass); /*0x513c91*/
-  *(unsigned int *)&this->ILocomotion[4] = &vt_HoverLocomotionClass; /*0x513c97*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_HoverLocomotionClass; /*0x513c97*/
   return (int)this->ILocomotion; /*0x513ca0*/
 
 }
@@ -172,12 +172,12 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x54ac46*/
-  this->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
-  this->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
+  (&this->DestinationCoords)[0] = dword_ABC5A8; /*0x54ac59*/
+  (&this->DestinationCoords)[1] = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/
   this->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
-  this->DestinationCoords[2] = v2; /*0x54ac70*/
+  (&this->DestinationCoords)[2] = v2; /*0x54ac70*/
   FrameSnapshot::InitMax( /*0x54ac82*/
     (FrameSnapshot *)&this->__pad_50[4],
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
@@ -224,7 +224,7 @@ void LocomotionClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5
 {
 
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6f0*/
-  *(unsigned int *)&this->ILocomotion[4] = &vt_LocomotionClass; /*0x55a6f6*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_LocomotionClass; /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
 
 }

@@ -65,7 +65,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->__pad_4C[0] = 1; /*0x4c98e0*/
   this->__pad_4C[1] = 0; /*0x4c98e3*/
-  this->taskForce[0] = (int)&vt_DynamicVectorClass; /*0x4c98e6*/
+  (&this->taskForce)[0] = (int)&vt_DynamicVectorClass; /*0x4c98e6*/
   *(unsigned int *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
   *(unsigned int *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -548,7 +548,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
           v34);
   v36 = *((unsigned int *)this + 53); /*0x6f140d*/
   *((unsigned char *)this + 245) = v35; /*0x6f141a*/
-  v37 = (char *)(Waypoint::To_String((gamemd::CCINIClass *)(v36))); /*0x6f1420*/
+  v37 = (char *)(Waypoint::To_String((int)((gamemd::CCINIClass *)(v36)))); /*0x6f1420*/
   if ( INIClass::GetString( /*0x6f1435*/
          (INIClass *)aP1,
          (uint8_t *)&this->TeamTypeClass_field_24,
@@ -557,7 +557,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          v53,
          64) > 0 )
     *((unsigned int *)this + 53) = (unsigned int)(((String *)(v53))->To_Waypoint()); /*0x6f1440*/
-  v38 = (char *)(Waypoint::To_String((gamemd::CCINIClass *)(*((unsigned int *)this + 54)))); /*0x6f1453*/
+  v38 = (char *)(Waypoint::To_String((int)((gamemd::CCINIClass *)(*((unsigned int *)this + 54))))); /*0x6f1453*/
   if ( INIClass::GetString( /*0x6f1468*/
          (INIClass *)aP1,
          (uint8_t *)&this->TeamTypeClass_field_24,
@@ -575,14 +575,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          Destination,
          128) )
   {
-    ScriptType = TeamTypeClass::CreateScriptType(Destination); /*0x6f14a3*/
+    ScriptType = (int *)(TeamTypeClass::CreateScriptType(Destination)); /*0x6f14a3*/
   }
   else
   {
     ScriptType = v39; /*0x6f14aa*/
   }
   v41 = (unsigned int *)*((unsigned int *)this + 57); /*0x6f14ac*/
-  *((unsigned int *)this + 56) = ScriptType; /*0x6f14c9*/
+  *((unsigned int *)this + 56) = (unsigned int)(ScriptType); /*0x6f14c9*/
   if ( INIClass::GetString( /*0x6f14cf*/
          (INIClass *)aP1,
          (uint8_t *)&this->TeamTypeClass_field_24,
@@ -591,13 +591,13 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          Destination,
          128) )
   {
-    TaskForce = TeamTypeClass::FindOrCreateTaskForce(Destination); /*0x6f14dc*/
+    TaskForce = (unsigned int *)(TeamTypeClass::FindOrCreateTaskForce(Destination)); /*0x6f14dc*/
   }
   else
   {
     TaskForce = v41; /*0x6f14e3*/
   }
-  *((unsigned int *)this + 57) = TaskForce; /*0x6f14e6*/
+  *((unsigned int *)this + 57) = (unsigned int)(TaskForce); /*0x6f14e6*/
   if ( !TaskForce ) /*0x6f14ef*/
   {
     if ( dword_A8E8E0 <= 0 ) /*0x6f14f8*/
@@ -605,11 +605,11 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
     *((unsigned int *)this + 57) = *(unsigned int *)dword_A8E8D4; /*0x6f1501*/
   }
   if ( *((unsigned int *)this + 56) ) /*0x6f1507*/
-    return 1; /*0x6f1532*/
+    return (gamemd::AbstractClass **)(1); /*0x6f1532*/
   if ( *(int *)&((char *)&FootClass_Array) > 0 ) /*0x6f1518*/
   {
     *((unsigned int *)this + 56) = *(unsigned int *)((unsigned int *)&FootClass_Array)[5]; /*0x6f1522*/
-    return 1; /*0x6f1522*/
+    return (gamemd::AbstractClass **)(1); /*0x6f1522*/
   }
   return 0; /*0x6f1528*/
 
@@ -629,7 +629,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   int v9; // eax
   int v10; // esi
 
-  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI(aP1) ) /*0x6f1559*/
+  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI((char *)(aP1)) ) /*0x6f1559*/
     return 0; /*0x6f185b*/
   v3 = *((unsigned int *)this + 49); /*0x6f1566*/
   v4 = -1; /*0x6f156d*/
@@ -641,7 +641,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   {
     v4 = *((unsigned int *)this + 50); /*0x6f158f*/
   }
-  p_TeamTypeClass_field_24 = &this->TeamTypeClass_field_24; /*0x6f159d*/
+  p_TeamTypeClass_field_24 = (int *)(&this->TeamTypeClass_field_24); /*0x6f159d*/
   INIClass::SetInt( /*0x6f15a9*/
     aP1,
     (uint8_t *)&this->TeamTypeClass_field_24,
@@ -791,7 +791,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   v10 = *((unsigned int *)this + 57); /*0x6f1836*/
   if ( v10 ) /*0x6f183e*/
     INIClass::SetString(aP1, (uint8_t *)p_TeamTypeClass_field_24, aTaskforce, (char *)(v10 + 36)); /*0x6f184c*/
-  return 1; /*0x6f1853*/
+  return (gamemd::AbstractClass **)(1); /*0x6f1853*/
 
 }
 }

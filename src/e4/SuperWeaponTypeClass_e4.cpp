@@ -222,7 +222,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   SuperWeaponTypeClass **v7; // edx
   SuperWeaponTypeClass **v8; // ecx
 
-  ((gamemd::AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x5113fa*/
+  ((gamemd::AbstractTypeClass *)((int *)this))->Constructor((char *)(aP1)); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
   LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -230,12 +230,12 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   this->ActionValue[0] = -1; /*0x511416*/
   this->SpecialSound = 0; /*0x51141c*/
   this->AuxBuilding = 0; /*0x511427*/
-  this->SidebarImageFile[0] = 1072693248; /*0x51142d*/
-  this->SidebarImageFile[1] = 0; /*0x511433*/
-  this->SidebarImageFile[2] = 1072693248; /*0x511439*/
-  this->SidebarImageFile[3] = 0; /*0x51143f*/
-  this->SidebarImageFile[4] = 1072693248; /*0x511445*/
-  this->SidebarImageFile[5] = 0; /*0x51144b*/
+  (&this->SidebarImageFile)[0] = 1072693248; /*0x51142d*/
+  (&this->SidebarImageFile)[1] = 0; /*0x511433*/
+  (&this->SidebarImageFile)[2] = 1072693248; /*0x511439*/
+  (&this->SidebarImageFile)[3] = 0; /*0x51143f*/
+  (&this->SidebarImageFile)[4] = 1072693248; /*0x511445*/
+  (&this->SidebarImageFile)[5] = 0; /*0x51144b*/
   *(unsigned int *)&this->zero_E4 = 1072693248; /*0x511451*/
   this->FlashSidebarTabFrames = 0; /*0x511457*/
   this->PreDependent = 0; /*0x51145d*/
@@ -276,7 +276,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   *((unsigned int *)this + 97) = (unsigned int)(&vt_TypeList); /*0x51154c*/
   *((unsigned int *)this + 105) = 16777281; /*0x511552*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/
-  this->vtable1 = (unsigned int)(&vt_HouseTypeClass); /*0x511572*/
+  this->vtable1 = (void *)((unsigned int)(&vt_HouseTypeClass)); /*0x511572*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511578*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x51157f*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511586*/

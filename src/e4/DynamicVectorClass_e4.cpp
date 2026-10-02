@@ -714,11 +714,11 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   if ( this != (DynamicVectorClass *)aP1 ) /*0x477a00*/
   {
     ((VectorClass *)((int)this))->Destroy(); /*0x477a02*/
-    v3 = aP1[2]; /*0x477a08*/
+    v3 = (int)(aP1[2]); /*0x477a08*/
     *(unsigned int *)&((unsigned int *)this)[3] = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x477a16*/
+      v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x477a16*/
       *(unsigned int *)&((unsigned int *)this)[3] = v4; /*0x477a20*/
       if ( v4 ) /*0x477a23*/
       {
@@ -742,8 +742,8 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
       BYTE1(((unsigned int *)this)[0]) = 0; /*0x477a4b*/
     }
   }
-  this->Count = aP1[4]; /*0x477a51*/
-  this->CapacityIncrement = aP1[5]; /*0x477a57*/
+  this->Count = (int)(aP1[4]); /*0x477a51*/
+  this->CapacityIncrement = (int)(aP1[5]); /*0x477a57*/
   *(unsigned int *)this->vtable1 = &vt_DynamicVectorClass; /*0x477a5a*/
   return this->VectorClass; /*0x477a62*/
 
@@ -767,7 +767,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
     }
     else
     {
-      *(unsigned int *)&((unsigned int *)this)[3] = __2_YAPAXI_Z(4 * a2); /*0x477dec*/
+      *(unsigned int *)&((unsigned int *)this)[3] = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x477dec*/
       BYTE1(((unsigned int *)this)[0]) = 1; /*0x477def*/
     }
   }
@@ -1348,7 +1348,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
 {
 
   *(unsigned int *)&((unsigned int *)this)[3] = 0; /*0x525259*/
-  *(unsigned int *)&((unsigned int *)this)[3] = aP1; /*0x525260*/
+  *(unsigned int *)&((unsigned int *)this)[3] = (unsigned int)(aP1); /*0x525260*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x525263*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x525267*/
   *(unsigned int *)this->vtable1 = &vt_VectorClass; /*0x52526b*/
@@ -1356,7 +1356,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   {
     if ( aP2 ) /*0x525279*/
     {
-      *(unsigned int *)&((unsigned int *)this)[3] = aP2; /*0x52527b*/
+      *(unsigned int *)&((unsigned int *)this)[3] = (unsigned int)(aP2); /*0x52527b*/
     }
     else
     {
@@ -1471,7 +1471,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
     }
     else
     {
-      *(unsigned int *)&((unsigned int *)this)[3] = __2_YAPAXI_Z(4 * a2); /*0x5ac93c*/
+      *(unsigned int *)&((unsigned int *)this)[3] = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x5ac93c*/
       BYTE1(((unsigned int *)this)[0]) = 1; /*0x5ac93f*/
     }
   }
@@ -1589,7 +1589,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x5c5581*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5c558a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5c558a*/
     this->m_8 = a2; /*0x5c5592*/
     BYTE1(this->m_C) = a3 == 0; /*0x5c5595*/
   }

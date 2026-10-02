@@ -169,9 +169,9 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
     *(unsigned int *)&this->m_1[3] = 0; /*0x67a5d6*/
     BYTE1(this->m_C) = 0; /*0x67a5dd*/
 LABEL_8:
-    *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
+    *(unsigned int *)this->__tail_10 = (unsigned int)(aP1[4]); /*0x67a5e1*/
     *((unsigned int *)this + 5) = (unsigned int)(aP1[5]); /*0x67a5ea*/
-    return this->__pad_0; /*0x67a5ed*/
+    return (unsigned int *)(this->__pad_0); /*0x67a5ed*/
   }
   v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a593*/
   *(unsigned int *)&this->m_1[3] = v4; /*0x67a59b*/
@@ -188,9 +188,9 @@ LABEL_8:
     ++v6; /*0x67a5be*/
   }
   while ( v6 < *(unsigned int *)&this->m_5[3] ); /*0x67a5c1*/
-  *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
+  *(unsigned int *)this->__tail_10 = (unsigned int)(aP1[4]); /*0x67a5c6*/
   *((unsigned int *)this + 5) = (unsigned int)(aP1[5]); /*0x67a5cc*/
-  return this->__pad_0; /*0x67a5d1*/
+  return (unsigned int *)(this->__pad_0); /*0x67a5d1*/
 
 }
 }

@@ -471,22 +471,22 @@ int Voxel::Projection_Setup()
     v62 = 1065353216; /*0x7553a7*/
     v63 = 0; /*0x7553af*/
     v64 = 0; /*0x7553b7*/
-    v30 = &flt_B432D8[v29]; /*0x7553bf*/
+    v30 = &(&flt_B432D8)[v29]; /*0x7553bf*/
     v31 = TransformMatrix3x4Point(v57, (float *)v76.m_Data, (float *)&v62); /*0x7553c5*/
     *v30 = *v31; /*0x7553d4*/
     v32 = *((unsigned int *)v31 + 1); /*0x7553d6*/
     v61 = 0; /*0x7553d9*/
     *((unsigned int *)v30 + 1) = v32; /*0x7553e1*/
     v30[2] = v31[2]; /*0x7553e7*/
-    v33 = &flt_B444A0[v29]; /*0x7553f8*/
+    v33 = &(&flt_B444A0)[v29]; /*0x7553f8*/
     *(float *)&v59 = *(float *)(v29 * 4 + 11809500) - 0.0; /*0x7553fa*/
-    v34 = 0.0 - flt_B432D8[v29]; /*0x755402*/
+    v34 = 0.0 - (&flt_B432D8)[v29]; /*0x755402*/
     *v33 = *(float *)&v59; /*0x755404*/
     v60 = v34; /*0x755406*/
     v33[1] = v60; /*0x75540e*/
     *((unsigned int *)v33 + 2) = v61; /*0x755415*/
-    Math::BuildRotationMatrix((float *)v66.__pad_0, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
-    v35 = TransformMatrix3x4Point(v58, (float *)v66.__pad_0, &flt_B432D8[v29]); /*0x755432*/
+    Math::BuildRotationMatrix((float *)v66.__pad_0, &(&flt_B444A0)[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
+    v35 = TransformMatrix3x4Point(v58, (float *)v66.__pad_0, &(&flt_B432D8)[v29]); /*0x755432*/
     v29 += 3; /*0x755439*/
     *v30 = *v35; /*0x75543c*/
     v30[1] = v35[1]; /*0x755441*/

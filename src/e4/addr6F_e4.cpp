@@ -107,7 +107,7 @@ v3 = (void ***)((int)((void ***)(0)));
   v56 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
-    v54 = *(unsigned int *)dword_A8022C[4 * v5]; /*0x6f0aee*/
+    v54 = *(unsigned int *)(&dword_A8022C)[4 * v5]; /*0x6f0aee*/
   if ( Random::Range((unsigned int *)dword_A8B230 + 134, 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
   {
     v6 = 0; /*0x6f0b26*/
@@ -525,7 +525,7 @@ char E4Recv_6F03F0::sub_6F03F0()
 
   int *v1; // esi
 
-  v1 = (int *)this->customSound_controller[1]; /*0x6f03f2*/
+  v1 = (int *)(&this->customSound_controller)[1]; /*0x6f03f2*/
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
   while ( *(int *)((*(int (**)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/

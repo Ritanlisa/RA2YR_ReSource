@@ -932,7 +932,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     SuperClass_field_0x24 = (void *)*((unsigned int *)this->SuperClass_field_0x28 + 44); /*0x6ce146*/
   *result = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ce156*/
   *(unsigned int *)this->__pad_34 = v12[2]; /*0x6ce15d*/
-  this->SuperClass_field_0x38 = SuperClass_field_0x24; /*0x6ce160*/
+  this->SuperClass_field_0x38 = (unsigned int)(SuperClass_field_0x24); /*0x6ce160*/
   if ( !v8 ) /*0x6ce163*/
   {
     v9 = *result; /*0x6ce165*/
@@ -952,7 +952,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
       }
     }
   }
-  return result; /*0x6ce18b*/
+  return (gamemd::AbstractClass **)(result); /*0x6ce18b*/
 
 }
 }
@@ -968,7 +968,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   SuperClass *v9; // [esp+4h] [ebp-10h] BYREF
   int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  SuperClass_field_0x68 = this->SuperClass_field_0x68; /*0x6cb3a6*/
+  SuperClass_field_0x68 = (unsigned char *)(this->SuperClass_field_0x68); /*0x6cb3a6*/
   if ( SuperClass_field_0x68 ) /*0x6cb3ab*/
   {
     SuperClass_field_0x68[405] = 0; /*0x6cb3ad*/
@@ -993,8 +993,8 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
   if ( result ) /*0x6cb423*/
   {
-    v10[0] = aP1; /*0x6cb444*/
-    v10[1] = aP2; /*0x6cb455*/
+    v10[0] = (int)(aP1); /*0x6cb444*/
+    v10[1] = (int)(aP2); /*0x6cb455*/
     v10[2] = a4 + 5; /*0x6cb459*/
     result = AnimClass::ctor( /*0x6cb467*/
                (AnimClass *)result,
@@ -1007,7 +1007,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
                0);
     if ( result ) /*0x6cb470*/
     {
-      this->SuperClass_field_0x68 = result; /*0x6cb472*/
+      this->SuperClass_field_0x68 = (unsigned int)(result); /*0x6cb472*/
       result = (void **)((char *)&g_BuildingLoadQueue_Array); /*0x6cb475*/
       if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x6cb4ae*/
         || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
@@ -1019,7 +1019,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
             (unsigned char)result) )
       {
         result = (void **)((unsigned int *)&g_BuildingLoadQueue_Array)[1]++; /*0x6cb4b6*/
-        *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * (unsigned int)result) = this; /*0x6cb4c5*/
+        *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * (unsigned int)result) = (unsigned int)(this); /*0x6cb4c5*/
       }
     }
   }
@@ -1088,7 +1088,7 @@ namespace gamemd {
 int SuperClass::SetRechargeTime(int a2)
 {
 
-  this->SuperClass_field_0x24 = (void *)a2; /*0x6cc284*/
+  this->SuperClass_field_0x24 = (unsigned int)((void *)a2); /*0x6cc284*/
   return a2; /*0x6cc287*/
 
 }
@@ -1099,7 +1099,7 @@ namespace gamemd {
 void SuperClass::ResetRechargeTime()
 {
 
-  this->SuperClass_field_0x24 = (void *)-1; /*0x6cc290*/
+  this->SuperClass_field_0x24 = (unsigned int)((void *)-1); /*0x6cc290*/
 
 }
 } // namespace gamemd
@@ -1132,7 +1132,7 @@ wchar_t * SuperClass::NameReadiness()
       }
       else
       {
-        return GetStringCSF(g_Str_TXT_READY, 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 922); /*0x6cc301*/
+        return GetStringCSF((wchar_t *)(g_Str_TXT_READY), 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 922); /*0x6cc301*/
       }
     }
     else
@@ -1148,7 +1148,7 @@ wchar_t * SuperClass::NameReadiness()
   {
     if ( !HIBYTE(this->SuperClass_field_0x6C) ) /*0x6cc323*/
       return 0; /*0x6cc323*/
-    return GetStringCSF(g_Str_TXT_READY, 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 944); /*0x6cc336*/
+    return GetStringCSF((wchar_t *)(g_Str_TXT_READY), 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 944); /*0x6cc336*/
   }
 
 }
@@ -1202,7 +1202,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
   int result; // eax
   int v3; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6cdefb*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x6cdefb*/
   if ( result >= 0 ) /*0x6cdf02*/
   {
     if ( aP0 ) /*0x6cdf0a*/
@@ -1211,7 +1211,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       aP0->SuperClass_field_0x0 = &vt_SuperClass; /*0x6cdf13*/
       aP0->SuperClass_field_0x4 = &vt_SuperClass; /*0x6cdf19*/
       aP0->SuperClass_field_0x8 = &vt_SuperClass; /*0x6cdf20*/
-      *(unsigned int *)aP0->__pad_C = &vt_SuperClass; /*0x6cdf27*/
+      *(unsigned int *)aP0->__pad_C = (unsigned int)(&vt_SuperClass); /*0x6cdf27*/
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
       && (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array)
@@ -1223,7 +1223,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
             0)) )
     {
       v3 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x6cdf7d*/
-      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v3) = aP0; /*0x6cdf8c*/
+      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v3) = (unsigned int)(aP0); /*0x6cdf8c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->SuperClass_field_0x28); /*0x6cdf98*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->SuperClass_field_0x2C); /*0x6cdfa6*/
@@ -1244,7 +1244,7 @@ int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6cdfdf*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6cdfdf*/
   if ( result >= 0 ) /*0x6cdfe6*/
     return 0; /*0x6cdfe8*/
   return result; /*0x6cdfea*/
@@ -1322,7 +1322,7 @@ bool SuperClass::ShouldFlashTab()
 
   if ( LOBYTE(this->SuperClass_field_0x70) ) /*0x6ce1a0*/
     return 0; /*0x6ce1a5*/
-  SuperClass_field_0x28 = this->SuperClass_field_0x28; /*0x6ce1a7*/
+  SuperClass_field_0x28 = (unsigned char *)(this->SuperClass_field_0x28); /*0x6ce1a7*/
   if ( SuperClass_field_0x28[229] ) /*0x6ce1aa*/
   {
     if ( !this->SuperClass_field_0x7C ) /*0x6ce1b9*/

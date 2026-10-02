@@ -35,7 +35,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   signed int v16; // [esp+10h] [ebp-Ch]
   int16_t v18; // [esp+1Ah] [ebp-2h]
 
-  v2 = &this->padding_18[114]; /*0x502171*/
+  v2 = &(&this->padding_18)[114]; /*0x502171*/
   v3 = *a2 / 256; /*0x50218e*/
   v4 = 0; /*0x502194*/
   v18 = a2[1] / 256; /*0x502196*/
@@ -46,7 +46,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
     {
       v5 = (int)(__2_YAPAXI_Z(0x40u));
       if ( v5 ) /*0x5021b1*/
-        v6 = WaypointPathClass::Construct(v5, v4); /*0x5021b6*/
+        v6 = (int)(WaypointPathClass::Construct(v5, v4)); /*0x5021b6*/
       else
         v6 = 0; /*0x5021bd*/
       *v2 = v6; /*0x5021bf*/
@@ -61,17 +61,17 @@ LABEL_13:
     v16 = v4; /*0x502225*/
     if ( v4 >= 12 ) /*0x502229*/
     {
-      v13 = this->padding_18[113]; /*0x502233*/
-      if ( !this->padding_18[v13 + 114] ) /*0x502239*/
+      v13 = (&this->padding_18)[113]; /*0x502233*/
+      if ( !(&this->padding_18)[v13 + 114] ) /*0x502239*/
       {
         v14 = (int)(__2_YAPAXI_Z(0x40u));
         if ( v14 ) /*0x502250*/
-          v15 = WaypointPathClass::Construct(v14, v13); /*0x502255*/
+          v15 = (int)(WaypointPathClass::Construct(v14, v13)); /*0x502255*/
         else
           v15 = 0; /*0x50225c*/
-        this->padding_18[v13 + 114] = v15; /*0x50225e*/
+        (&this->padding_18)[v13 + 114] = v15; /*0x50225e*/
       }
-      return WaypointClass_Find((ObjectClass *)this->padding_18[this->padding_18[113] + 114], a2); /*0x502277*/
+      return WaypointClass_Find((ObjectClass *)(&this->padding_18)[(&this->padding_18)[113] + 114], a2); /*0x502277*/
     }
   }
   while ( 1 ) /*0x5021cf*/
@@ -82,7 +82,7 @@ LABEL_13:
     if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/
     {
       result = (gamemd::WaypointPathClass **)((char)((gamemd::WaypointPathClass **)(v16)));
-      if ( v16 != this->padding_18[113] ) /*0x50220f*/
+      if ( v16 != (&this->padding_18)[113] ) /*0x50220f*/
         return result; /*0x50227c*/
     }
     v7 = (Array *)*v2; /*0x502211*/

@@ -625,7 +625,7 @@ void E4Recv_513D00::sub_513D00()
 {
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d00*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x513d06*/
+  *(unsigned int *)&(&this->LocomotionClass)[4] = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct((gamemd::LocomotionClass *)this); /*0x513d0d*/
 
 }
@@ -656,8 +656,8 @@ int E4Recv_517110::sub_517110()
       v5 = 0; /*0x517138*/
   }
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x51717f*/
-  this->ambientSoundController[3] = 0; /*0x517182*/
-  this->ambientSoundController[4] = 1072693248; /*0x517189*/
+  (&this->ambientSoundController)[3] = 0; /*0x517182*/
+  (&this->ambientSoundController)[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   result = ((MovementAI *)((MovementAI *)this))->StepFootClass(0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/

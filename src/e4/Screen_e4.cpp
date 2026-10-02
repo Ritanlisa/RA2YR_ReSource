@@ -231,8 +231,8 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v17 = (int)aP1; /*0x68f2d8*/
   v18 = 1; /*0x68f2df*/
   v63 = 1; /*0x68f2e7*/
-  v74 = aP2; /*0x68f2eb*/
-  v75 = aP1; /*0x68f2ef*/
+  v74 = (wchar_t *)(aP2); /*0x68f2eb*/
+  v75 = (wchar_t *)(aP1); /*0x68f2ef*/
   v53 = v7 - 1; /*0x68f2f3*/
   while ( 1 ) /*0x68f2f7*/
   {
@@ -256,7 +256,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     }
     if ( v18 > v19 ) /*0x68f347*/
     {
-      v54 = g_DSurface_Hidden; /*0x68f414*/
+      v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f414*/
       swprintf(v79, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v17); /*0x68f418*/
       v28 = (unsigned int *)*((unsigned int *)this + 3); /*0x68f41d*/
       v29 = v7 - v28[2] - v61; /*0x68f430*/
@@ -284,7 +284,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         0,
         1);
       v22 = (int)v75 / v60; /*0x68f38d*/
-      v54 = g_DSurface_Hidden; /*0x68f391*/
+      v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f391*/
       if ( (int)v75 / v60 >= v17 ) /*0x68f397*/
         v22 = v17; /*0x68f399*/
       swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v22); /*0x68f3a9*/
@@ -316,7 +316,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         1);
     if ( v63 > v59 ) /*0x68f4aa*/
     {
-      v54 = g_DSurface_Hidden; /*0x68f585*/
+      v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f585*/
       swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f589*/
       v41 = (unsigned int *)*((unsigned int *)this + 3); /*0x68f58e*/
       v42 = v7 - v41[2] - v59; /*0x68f5a3*/
@@ -352,9 +352,9 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         0,
         1);
       v34 = (const wchar_t *)((int)v74 / v60); /*0x68f4f4*/
-      v54 = g_DSurface_Hidden; /*0x68f4f8*/
+      v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f4f8*/
       if ( (int)v74 / v60 >= (int)aP2 ) /*0x68f505*/
-        v34 = aP2; /*0x68f507*/
+        v34 = (const wchar_t *)(aP2); /*0x68f507*/
       swprintf(v78, (const size_t)g_Str_Fmt_PctD, v34); /*0x68f517*/
       v35 = (unsigned int *)*((unsigned int *)this + 3); /*0x68f51c*/
       v36 = v32 - v35[2]; /*0x68f529*/
@@ -381,7 +381,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       {
         for ( i = 0; i < *((unsigned int *)this + 17); ++i ) /*0x68f5fd*/
         {
-          if ( !_strcmpi(g_INI_Key_BarGraph, **(char ***)(*((unsigned int *)this + 14) + 4 * i)) ) /*0x68f60d*/
+          if ( !_strcmpi((const char *)(g_INI_Key_BarGraph), **(char ***)(*((unsigned int *)this + 14) + 4 * i)) ) /*0x68f60d*/
             break; /*0x68f617*/
         }
       }
@@ -417,7 +417,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     &v55,
     0,
     1);
-  v54 = g_DSurface_Hidden; /*0x68f6f2*/
+  v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f6f2*/
   swprintf(v76, (const size_t)g_Str_Fmt_PctD, (const wchar_t *const)v17); /*0x68f6f6*/
   (*(void (**)(unsigned int, ObjectClass *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f71f*/
     *((unsigned int *)this + 3),
@@ -457,7 +457,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     &v55,
     0,
     1);
-  v50 = g_DSurface_Hidden; /*0x68f7f0*/
+  v50 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f7f0*/
   swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f801*/
   (*(void (**)(unsigned int, ObjectClass *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f821*/
     *((unsigned int *)this + 3),
@@ -467,7 +467,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v7 - *(unsigned int *)(*((unsigned int *)this + 3) + 8) - v59,
     2);
   (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(*((unsigned int *)this + 3), v76); /*0x68f82e*/
-  v51 = DSurface_Alternate; /*0x68f838*/
+  v51 = (gamemd::DSurface *)(DSurface_Alternate); /*0x68f838*/
   swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f849*/
   (*(void (**)(DSurface *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f86b*/
     v51,

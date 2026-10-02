@@ -186,10 +186,10 @@ TechnoClass::TechnoClass() noexcept
     std::memset(&turretRecoil, 0, sizeof(turretRecoil));
     std::memset(&barrelRecoil, 0, sizeof(barrelRecoil));
     std::memset(&storedTiberium, 0, sizeof(storedTiberium));
-    std::memset(&audioController3, 0, sizeof(audioController3));
-    std::memset(&audioController4, 0, sizeof(audioController4));
-    std::memset(&audioController5, 0, sizeof(audioController5));
-    std::memset(&audioController6, 0, sizeof(audioController6));
+    std::memset((void *)(&audioController3), 0, sizeof(audioController3));
+    std::memset((void *)(&audioController4), 0, sizeof(audioController4));
+    std::memset((void *)(&audioController5), 0, sizeof(audioController5));
+    std::memset((void *)(&audioController6), 0, sizeof(audioController6));
 
     abstractFlags |= 0x1u;
 }

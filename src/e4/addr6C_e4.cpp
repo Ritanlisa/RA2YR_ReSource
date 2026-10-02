@@ -301,35 +301,35 @@ int ProcessGameResults(char a1)
   v19 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(g_OverlayTypeConfig))[17744] / 0x3Cu);
   eax31 = (char *)operator new(0x10u);
   if ( eax31 )
-    char * v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72404]), (IUnknown *)v19);
+    char * v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72404]),(int)((IUnknown *)v19));
   else
     v20 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v20);
   v21 = (IUnknown *)g_Rules_Bases;
   char * v22 = (char *)operator new(0x10u);
   if ( v22 )
-    char * v23 = TerrainInitMap(v22, (RandomStruct *)&((unsigned int *)(stru_830620))[72396], v21);
+    char * v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72396]), v21);
   else
     v23 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v23);
   bool v24 = (unsigned char)ShortGame != 0;
   char * v25 = (char *)operator new(0x10u);
   if ( v25 )
-    char * v26 = TerrainInitMap(v25, (RandomStruct *)&((unsigned int *)(stru_830620))[72388], (IUnknown *)v24);
+    char * v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72388]), (IUnknown *)v24);
   else
     v26 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v26);
   bool v27 = (unsigned char)SWAllowed != 0;
   char * v28 = (char *)operator new(0x10u);
   if ( v28 )
-    char * v29 = TerrainInitMap(v28, (RandomStruct *)&((unsigned int *)(stru_830620))[72380], (IUnknown *)v27);
+    char * v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72380]), (IUnknown *)v27);
   else
     v29 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v29);
   v30 = g_ScenarioFlags;
   char * v31 = (char *)operator new(0x10u);
   if ( v31 )
-    char * v32 = TerrainInitMap(v31, (RandomStruct *)&((unsigned int *)(stru_830620))[72372], v30);
+    char * v32 = TerrainInitMap(v31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72372]), v30);
   else
     v32 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v32);

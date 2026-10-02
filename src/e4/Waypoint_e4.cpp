@@ -32,7 +32,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     {
       v4 = (void *)((int)(__2_YAPAXI_Z(0x40u)));
       if ( v4 ) /*0x5023d6*/
-        v5 = WaypointPathClass::Construct((int)v4, v2); /*0x5023db*/
+        v5 = (int)(WaypointPathClass::Construct((int)v4, v2)); /*0x5023db*/
       else
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/

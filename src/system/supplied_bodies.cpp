@@ -112,7 +112,7 @@ int CellClass::QuickPassable() {
     v6[0] = v1; /*0x487989*/
     v6[1] = v2; /*0x487993*/
     v6[2] = inited; /*0x487997*/
-    return Cell::IsPassable((IUnknown *)(v6)); /*0x4879a0*/
+    return Cell::IsPassable((unsigned int *)((IUnknown *)(v6))); /*0x4879a0*/
 }
 } // namespace gamemd
 

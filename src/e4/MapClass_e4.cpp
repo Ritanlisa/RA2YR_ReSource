@@ -238,7 +238,7 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2)
   LOWORD(result) = (unsigned short)(*aP1); /*0x4a95aa*/
   if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
   {
-    v6 = *(int16_t **)&this->__pad_1170[12]; /*0x4a95c4*/
+    v6 = *(int16_t **)&(&this->__pad_1170)[12]; /*0x4a95c4*/
     v7 = (char)a2; /*0x4a95ca*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a95db*/
     {
@@ -248,7 +248,7 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2)
       LOWORD(v8) = v4[1] + v8[1]; /*0x4a95ed*/
       LOWORD(a2) = *v4 + v9; /*0x4a95f1*/
       HIWORD(a2) = (unsigned short)v8; /*0x4a95f6*/
-      aP1 = (IUnknown *)(a2); /*0x4a9603*/
+      aP1 = (unsigned short *)((IUnknown *)(a2)); /*0x4a9603*/
       result = ((LayerClass *)((LayerClass *)this))->CoordinatesLegal((int16_t *)&aP1); /*0x4a960a*/
       if ( (unsigned char)result ) /*0x4a9611*/
       {
@@ -348,7 +348,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   v4 = (CellCoord *)this; /*0x4ad7f2*/
   v16 = this; /*0x4ad7f8*/
   INIClass::ClearSection((int *)a2, (int)&off_81FFF0, 0); /*0x4ad7fc*/
-  MapClass::loadTheaterINI((gamemd::INIClass *)(a2), &off_81FFF0, g_INI_Key_Theater, (&dword_A8B230)[130].uniqueId); /*0x4ad81b*/
+  MapClass::loadTheaterINI((gamemd::INIClass *)(a2),(char *)(&off_81FFF0), g_INI_Key_Theater, (&dword_A8B230)[130].uniqueId); /*0x4ad81b*/
   INIClass::SetRect(a2, &off_81FFF0, (char *)g_Str_EVA_CannotDeployHere.Type, &v4[59]); /*0x4ad835*/
   INIClass::SetRect(a2, &off_81FFF0, &g_Str_EVA_CannotDeployHere.RussianVoice[3], &v4[63]); /*0x4ad84f*/
   ((ScenarioClass *)((ScenarioClass *)dword_A8B230))->Write_Waypoints(a2); /*0x4ad85b*/
@@ -383,10 +383,10 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
           0);
   v18.Pipe_field_0x04 = 0; /*0x4ad956*/
   v18.Pipe_field_0x08 = 0; /*0x4ad95a*/
-  *(unsigned int *)v18.__pad_0 = &vt_Pipe; /*0x4ad95e*/
+  *(unsigned int *)v18.__pad_0 = (unsigned int)(&vt_Pipe); /*0x4ad95e*/
   Buffer::Init((Buffer *)&v18.Pipe_field_0x0C, v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
-  *(unsigned int *)v18.__pad_0 = &vt_BufferPipe; /*0x4ad979*/
+  *(unsigned int *)v18.__pad_0 = (unsigned int)(&vt_BufferPipe); /*0x4ad979*/
   v11 = (int)(MapClass::DecompressCellData((MapClass *)&stru_87F5F0.__pad_58[416], (int)&v18)); /*0x4ad990*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
@@ -918,14 +918,14 @@ int MapClass::InitCellVector()
   char *v2; // ecx
   int result; // eax
 
-  v2 = &this->__pad_134[4]; /*0x565aa3*/
+  v2 = (char *)(&this->__pad_134[4]); /*0x565aa3*/
   if ( v2 ) /*0x565aab*/
   {
     *((unsigned int *)v2 + 1) = 0; /*0x565aad*/
     *((unsigned int *)v2 + 2) = 0; /*0x565ab4*/
     v2[12] = 1; /*0x565abb*/
     v2[13] = 0; /*0x565abf*/
-    *(unsigned int *)v2 = &vt_VectorClass; /*0x565ac3*/
+    *(unsigned int *)v2 = (unsigned int)(&vt_VectorClass); /*0x565ac3*/
   }
   (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *(unsigned int *)&this->__pad_144[16], 0); /*0x565ad4*/
   for ( result = 0; result < *(unsigned int *)&this->__pad_144[16]; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
@@ -955,7 +955,7 @@ unsigned int * MapClass::InitAllCells()
     {
       if ( v2 < this->MapClass_field_0x140 ) /*0x565bdb*/
       {
-        result = this->MapClass_field_0x13C; /*0x565bdd*/
+        result = (unsigned int *)(this->MapClass_field_0x13C); /*0x565bdd*/
         v6 = (CellClass *)result[v3]; /*0x565be3*/
         if ( v6 ) /*0x565be8*/
           result = CellClass::Construct(v6); /*0x565bea*/
@@ -1025,9 +1025,9 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   char v56; // [esp+6Ch] [ebp+10h]
 
   v44 = aP1[2] / g_MissionQueueFrame.briefing[272]; /*0x5673b7*/
-  v51 = *aP1; /*0x5673bf*/
-  v52 = aP1[1]; /*0x5673c6*/
-  v53 = aP1[2]; /*0x5673cd*/
+  v51 = (int)(*aP1); /*0x5673bf*/
+  v52 = (int)(aP1[1]); /*0x5673c6*/
+  v53 = (int)(aP1[2]); /*0x5673cd*/
   v11 = ZCoordToScreenY(v53); /*0x5673d1*/
   v51 += (((unsigned int)(((uint64_t)(2004318071LL * v11) >> 32) - v11) >> 31) /*0x5673f8*/
         + ((int)(((uint64_t)(2004318071LL * v11) >> 32) - v11) >> 4)) << 8;
@@ -1042,7 +1042,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   v49 = v45 - v47[0] - 2; /*0x56749b*/
   v50 = v46 - v47[1] - 2; /*0x5674a7*/
   result = v46; /*0x5674af*/
-  MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x5674b2*/
+  MapClass_field_0xF4 = (void *)(this->MapClass_field_0xF4); /*0x5674b2*/
   v16 = v46 + v45; /*0x5674b8*/
   if ( v16 <= (int)MapClass_field_0xF4 ) /*0x5674bd*/
     return result; /*0x5674bd*/
@@ -1054,17 +1054,17 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   result = *(unsigned int *)this->__pad_F8; /*0x5674d9*/
   if ( v16 > (int)MapClass_field_0xF4 + 2 * result ) /*0x5674e4*/
     return result; /*0x5674e4*/
-  result = aP2; /*0x5674ea*/
+  result = (int)(aP2); /*0x5674ea*/
   if ( !aP2 ) /*0x5674f0*/
     return result; /*0x5674f0*/
   if ( aP2 >= 11 ) /*0x5674f9*/
-    aP2 = 10; /*0x567500*/
+    aP2 = (gamemd::MouseClass *)(10); /*0x567500*/
   v39 = &g_MissionQueueFrame.waypoints[2150]; /*0x567512*/
   v54 = (int *)&g_MissionQueueFrame.waypoints[822]; /*0x56751a*/
-  v17 = dword_7ED3D0[aP2]; /*0x567528*/
+  v17 = (int)(dword_7ED3D0[aP2]); /*0x567528*/
   if ( !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6126) && aP4 && aP2 > 2 ) /*0x56753e*/
   {
-    v18 = dword_7ED3C4[aP2]; /*0x567540*/
+    v18 = (int)(dword_7ED3C4[aP2]); /*0x567540*/
     v17 -= v18; /*0x567547*/
     v39 = (char *)(4 * v18 + 11261072); /*0x567557*/
     v54 = (int *)(4 * v18 + 11259744); /*0x56755b*/
@@ -1081,7 +1081,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
     if ( ((1 << *((unsigned int *)dword_A83D4C->Object_field_0x34 + 46)) & *((unsigned int *)aP3 + 5433)) != 0 ) /*0x567595*/
     {
       v19 = (void *)dword_A83D4C; /*0x567597*/
-      aP3 = dword_A83D4C; /*0x567599*/
+      aP3 = (gamemd::HouseClass *)(dword_A83D4C); /*0x567599*/
     }
     if ( v19 != (void *)dword_A83D4C ) /*0x56759f*/
     {
@@ -1090,7 +1090,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
       {
         result = (int)dword_A83D4C; /*0x5675bc*/
         v19 = (void *)dword_A83D4C; /*0x5675c1*/
-        aP3 = dword_A83D4C; /*0x5675c3*/
+        aP3 = (gamemd::HouseClass *)(dword_A83D4C); /*0x5675c3*/
         goto LABEL_22; /*0x5675c7*/
       }
 LABEL_21:

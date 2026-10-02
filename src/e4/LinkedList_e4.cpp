@@ -126,7 +126,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
     return 1; /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
-    v9 = ((MixFileClass *)(v8))->FromFile(aMainMix, (int)dword_886980); /*0x4793b8*/
+    v9 = ((MixFileClass *)(v8))->FromFile((char *)(aMainMix), (int)dword_886980); /*0x4793b8*/
   else
     v9 = 0; /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/
@@ -155,7 +155,7 @@ LABEL_61:
   ((gamemd::Debug *)this)->Log(); /*0x479496*/
   v13 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
-    g_MixFile_MULTIMD = (int)((MixFileClass *)(v13))->FromFile(g_Str_File_MULTIMD_MIX, (int)dword_886980); /*0x4794ba*/
+    g_MixFile_MULTIMD = (int)((MixFileClass *)(v13))->FromFile((char *)(g_Str_File_MULTIMD_MIX), (int)dword_886980); /*0x4794ba*/
   else
     g_MixFile_MULTIMD = 0; /*0x4794c1*/
   ((gamemd::Debug *)this)->Log(); /*0x4794cc*/
@@ -165,7 +165,7 @@ LABEL_61:
     MixFileClass_MULTI = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  MixFileClass_MULTI = (int)((MixFileClass *)(v14))->FromFile(aMultiMix, (int)dword_886980); /*0x4794f2*/
+  MixFileClass_MULTI = (int)((MixFileClass *)(v14))->FromFile((char *)(aMultiMix), (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24,(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
@@ -181,7 +181,7 @@ LABEL_61:
     v17 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
-      g_MixFile_THEME = (int)((MixFileClass *)(v17))->FromFile(g_Str_File_THEMEMD_MIX, (int)dword_886980); /*0x479590*/
+      g_MixFile_THEME = (int)((MixFileClass *)(v17))->FromFile((char *)(g_Str_File_THEMEMD_MIX), (int)dword_886980); /*0x479590*/
       goto LABEL_58; /*0x479595*/
     }
   }
@@ -191,7 +191,7 @@ LABEL_61:
     v18 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
-      g_MixFile_THEME = (int)((MixFileClass *)(v18))->FromFile(g_Str_File_THEME_MIX, (int)dword_886980); /*0x4795bb*/
+      g_MixFile_THEME = (int)((MixFileClass *)(v18))->FromFile((char *)(g_Str_File_THEME_MIX), (int)dword_886980); /*0x4795bb*/
       goto LABEL_58; /*0x4795c0*/
     }
   }
@@ -440,11 +440,11 @@ int LinkedList_flat::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void
 
   int result; // eax
 
-  *(unsigned int *)this->Tail[0] = *(unsigned int *)this->__pad_0; /*0x407455*/
+  *(unsigned int *)(&this->Tail)[0] = *(unsigned int *)this->__pad_0; /*0x407455*/
   result = *(unsigned int *)this->__pad_0; /*0x407457*/
-  *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4) = this->Tail[0]; /*0x40745c*/
+  *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4) = (&this->Tail)[0]; /*0x40745c*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(this); /*0x40745f*/
-  this->Tail[0] = (int)this; /*0x407461*/
+  (&this->Tail)[0] = (int)this; /*0x407461*/
   return result; /*0x407464*/
 
 }

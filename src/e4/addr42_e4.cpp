@@ -768,7 +768,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     if ( (int)Coord::Length((Coord *)&v54) > 18 ) /*0x42573d*/
     {
       v54 = *location; /*0x4258f3*/
-      vtable0 = this->vtable1; /*0x4258f7*/
+      vtable0 = (int)(this->vtable1); /*0x4258f7*/
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
       v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))(this, &v54); /*0x42590a*/
@@ -791,7 +791,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         GroundHeight = Map_MaxHeight + Cell::GetGroundHeight(&v51); /*0x4259e5*/
       else
         GroundHeight = Cell::GetGroundHeight(&v51); /*0x4259cf*/
-      v27 = this->vtable1; /*0x4259eb*/
+      v27 = (int)(this->vtable1); /*0x4259eb*/
       v53 = GroundHeight; /*0x4259ed*/
       (*(void (**)(TechnoClass *, int *))(v27 + 436))(this, &v51); /*0x4259f8*/
     }
@@ -799,7 +799,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     {
       if ( this->isFallingDown[0] ) /*0x425743*/
         goto LABEL_41; /*0x42574b*/
-      v9 = ((Building *)((Building *)this))->ComputePosition(&v54); /*0x425758*/
+      v9 = (int *)(((Building *)((Building *)this))->ComputePosition(&v54)); /*0x425758*/
       v10 = *v9; /*0x42575d*/
       v51 = *v9; /*0x425765*/
       v52 = v9[1]; /*0x42576c*/

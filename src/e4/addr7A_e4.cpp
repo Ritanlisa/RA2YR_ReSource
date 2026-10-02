@@ -306,7 +306,7 @@ char WOL_RequestMatch(void * a1)
   *(unsigned int *)&v31[16] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7a09bb*/
   ((ComPtr *)((ComPtr *)&v31[16]))->Release(); /*0x7a09bf*/
   LABEL_35:
-  StringCSF = GetStringCSF((wchar_t *)(aWolRequestingm), 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
+  StringCSF = GetStringCSF((wchar_t *)(aWolRequestingm), 0,(const char *)(g_Str_File_wonline_cpp), 28395); /*0x7a09c9*/
   Dialog::ShowMessage(16744576, (size_t)StringCSF); /*0x7a09e6*/
   ((String *)((String *)v31))->AssignFromPtr((const char **)&v31[32]); /*0x7a09f7*/
   ((String *)((String *)v31))->Append(aCou); /*0x7a0a05*/
@@ -744,21 +744,21 @@ ObjectClass * * HandleWOLMatchMessage()
       StringCSF = GetStringCSF((wchar_t *)aWolMatchfail, 0, g_Str_File_wonline_cpp, 28671); /*0x7a16e3*/
   LABEL_10:
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)StringCSF); /*0x7a17a2*/
-      SetEvent(dword_B736C8); /*0x7a17b6*/
+      SetEvent((void *)(dword_B736C8)); /*0x7a17b6*/
       return; /*0x7a17be*/
     }
     if ( !_strnicmp(String1, aPingfail, 8u) ) /*0x7a16f0*/
     {
       v5 = GetStringCSF(aWolMatchfailpi, 0, g_Str_File_wonline_cpp, 28677); /*0x7a170d*/
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v5); /*0x7a1718*/
-      SetEvent(dword_B736C8); /*0x7a1727*/
+      SetEvent((void *)(dword_B736C8)); /*0x7a1727*/
       return; /*0x7a172f*/
     }
     if ( !_strnicmp(String1, aRankfail, 8u) ) /*0x7a1738*/
     {
       v6 = GetStringCSF(aWolMatchfailra, 0, g_Str_File_wonline_cpp, 28683); /*0x7a1755*/
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v6); /*0x7a1760*/
-      SetEvent(dword_B736C8); /*0x7a176f*/
+      SetEvent((void *)(dword_B736C8)); /*0x7a176f*/
       return; /*0x7a1777*/
     }
     if ( !_strnicmp(String1, aWdtsidefail, 0xBu) ) /*0x7a1780*/
@@ -769,10 +769,10 @@ ObjectClass * * HandleWOLMatchMessage()
   }
   if ( !_strnicmp(String1, aExit_0, 4u) ) /*0x7a17c7*/
   {
-    v7 = GetStringCSF(g_Str_WOL_MatchFailExit, 0, g_Str_File_wonline_cpp, 28695); /*0x7a17e4*/
+    v7 = GetStringCSF((wchar_t *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28695); /*0x7a17e4*/
     Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v7); /*0x7a17ef*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7a17ff*/
-    v8 = GetStringCSF(g_Str_WOL_MatchFailExit, 0, g_Str_File_wonline_cpp, 28698); /*0x7a181a*/
+    v8 = GetStringCSF((wchar_t *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28698); /*0x7a181a*/
     ShowDialogConfirm(v8, 0, (int)GameLoop::Thunk, 0); /*0x7a1823*/
     SetEvent(Handles); /*0x7a182f*/
   }

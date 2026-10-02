@@ -51,8 +51,8 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   HIBYTE(this->nextObject) = 50; /*0x76ab73*/
   BYTE2(this->attachedTag) = 50; /*0x76ab76*/
   this->attachedBomb = (unsigned int)((BombClass *)-1); /*0x76ab79*/
-  this->ambientSoundController[0] = -1; /*0x76ab7c*/
-  return this; /*0x76ab7f*/
+  (&this->ambientSoundController)[0] = -1; /*0x76ab7c*/
+  return (unsigned int *)(this); /*0x76ab7f*/
 
 }
 } // namespace gamemd
