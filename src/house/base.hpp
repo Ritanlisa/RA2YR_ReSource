@@ -59,7 +59,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void ddtor();  // 0x42F3A0
     int Write(int a1);  // 0x42F3D0
     int Seek(int a1, int a2);  // 0x42F3F0
-    int AddRef(int a1);  // 0x42F490
+    char AddRef(int a1);  // 0x42F490
     int Release(int a1, void* a2);  // 0x42F4F0
     int Read(int a1);  // 0x42F5E0
     void* QueryInterface(int a1);  // 0x42F970

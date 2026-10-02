@@ -250,7 +250,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void ClearVector();  // 0x5C0A70
     int ProbeCalling(int a1);  // 0x5C0AA0
     int ProbeCalling2(int a1);  // 0x5C0AC0
-    int CompareVector(int a1);  // 0x5C0AD0
+    char CompareVector(int a1);  // 0x5C0AD0
     int ReallocVector(int a1, void* a2);  // 0x5C0C50
     int FindInVector(void* a1);  // 0x5C0D00
     void* DestroyVector(int a1);  // 0x5C0D80

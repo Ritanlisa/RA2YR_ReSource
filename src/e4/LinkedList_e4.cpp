@@ -549,7 +549,7 @@ unsigned int * LinkedList_flat::FindNext()
 } // namespace gamemd
 // 0x625AE0
 namespace gamemd {
-int LinkedList_flat::PushFront(IUnknown * aP1)
+int LinkedList_flat::PushFront(int aP1)
 {
 
   *(unsigned int *)(aP1 + 12) = this->Tail[0]; /*0x625ae7*/

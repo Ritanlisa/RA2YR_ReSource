@@ -21,7 +21,7 @@ namespace gamemd
 {
 
 // 0x41e500
-void AITriggerTypeClass::GetClassIdentifier(unsigned int *a2, int a3, int aP0, int a1)
+int AITriggerTypeClass::GetClassIdentifier(unsigned int * a2)
 {
   if ( !a2 ) /*0x41e506*/
     return -2147467261; /*0x41e508*/
@@ -65,7 +65,7 @@ void AITriggerTypeClass::SaveToINI(int *a2, int a3, int aP0, int a1)
   return result; /*0x41e5da*/
 }
 // 0x41e5e0
-void AITriggerTypeClass::ProcessPower(int * a2)
+int AITriggerTypeClass::ProcessPower(int * a2)
 {
   int v3; // ecx
   int v4; // edx
@@ -108,7 +108,7 @@ void AITriggerTypeClass::ProcessPower(int * a2)
   return Power::FlagProcess(a2, v7, unsigned int a3); /*0x41e6f5*/
 }
 // 0x41eaf0
-void AITriggerTypeClass::EnemyHouseOwns( int a2, unsigned int * a3)
+bool AITriggerTypeClass::EnemyHouseOwns(int a2, unsigned int * a3)
 {
   int v4; // esi
   int v5; // ebp

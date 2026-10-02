@@ -85,7 +85,7 @@ bool ObjectClass::Remove()
   return result; /*0x5f4518*/
 }
 // 0x5f65f0
-AbstractClass * * ObjectClass::Destroy()
+int ObjectClass::Destroy()
 {
   ObjectClass *attachedBomb; // ecx
   int result; // eax

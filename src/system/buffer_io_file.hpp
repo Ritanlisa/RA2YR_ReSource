@@ -42,8 +42,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Open(const CHAR *a2);
     int SeekInternal();  // 0x4324B0
     int SetSize();  // 0x4325A0
-    void* QueryInterface(int a1);  // 0x432610
-    void* Constructor_BitFont(int a1);  // 0x434A40
+    unsigned int * QueryInterface(char a1);  // 0x432610
+    void *** Constructor_BitFont(char a1);  // 0x434A40
     void* Constructor_BitText(int a1);  // 0x435560
     int Seek();  // 0x473BA0
     // --- gap2 auto-generated stub declarations (END) ---

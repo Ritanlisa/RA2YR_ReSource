@@ -325,7 +325,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioList() = default;
 
-    virtual void GetNextEntry(); // 0x407480
+    virtual int GetNextEntry(); // 0x407480
 
 };
 // 1 methods in IDA
@@ -335,7 +335,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioNode() = default;
 
-    virtual void Release(); // 0x408600
+    virtual int Release(); // 0x408600
 
 };
 // 1 methods in IDA
@@ -376,8 +376,8 @@ public:
     virtual ~AudioSample() = default;
 
     virtual int ResetState(); // 0x4024A0
-    virtual void Destructor(); // 0x407A90
-    virtual void IsBuffering(); // 0x4080D0
+    virtual int Destructor(); // 0x407A90
+    virtual int IsBuffering(); // 0x4080D0
     virtual void InitLinkedList(); // 0x408840
     virtual void SetField(); // 0x408930
 

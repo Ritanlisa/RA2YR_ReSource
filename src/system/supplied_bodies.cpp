@@ -24,7 +24,7 @@ using ra2::game::AbstractClass;
 
 // 0x41C150
 namespace gamemd {
-unsigned int * TacticalClass::ProcessTick2(unsigned int *a2, int a4, int a5, int a3) {
+unsigned int * TacticalClass::ProcessTick2(unsigned int * a2) {
     *a2 = this->lastJumpjetMapCoords[0]; /*0x41c15a*/
     return a2; /*0x41c15c*/
 }
@@ -32,7 +32,7 @@ unsigned int * TacticalClass::ProcessTick2(unsigned int *a2, int a4, int a5, int
 
 // 0x478220
 namespace gamemd {
-unsigned int * INIClass::parseKeyValue(unsigned int *a2, int a4, int a5, int a3) {
+unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
     int v3; // edi
     int v4; // eax
     unsigned char *v5; // ecx
@@ -201,7 +201,7 @@ char TacticalClass::CompareVector(int a2) {
 
 // 0x5C0FE0
 namespace gamemd {
-unsigned int * ScenarioClass::initAI(char a2, int a4, int a5, int a3, int a6, int a7, int a8) {
+unsigned int * ScenarioClass::initAI(char a2) {
     this->m_0 = (int)0; /*0x5c0fe3*/
     MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
     if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
@@ -212,7 +212,7 @@ unsigned int * ScenarioClass::initAI(char a2, int a4, int a5, int a3, int a6, in
 
 // 0x653F50
 namespace gamemd {
-void CellClass::DrawWrapper(unsigned int *a2, int jj, char a4, char a5, int a3, int a6, int a7, int a8) {
+void CellClass::DrawWrapper(unsigned int * a2, int jj, char a4, char a5) {
     CellClass::UpdateTerrainAndWaypoints((MapClass *)this, a2, jj, a4, a5); /*0x653f64*/
 }
 } // namespace gamemd
@@ -251,7 +251,7 @@ int CellClass::ClearCrateStateForAll() {
 
 // 0x432610
 namespace gamemd {
-unsigned int * BufferIOFileClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+unsigned int * BufferIOFileClass::QueryInterface(char a2) {
     void *FileBaseOffset; // eax
 
     FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
@@ -270,7 +270,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2, int a3, int a4, int a5
     IDA_HIBYTE(this->BufferOffset) = 0; /*0x43263f*/
     IDA_LOBYTE(this->BufferSize) = 0; /*0x432642*/
     IDA_BYTE1(this->BufferSize) = 0; /*0x432645*/
-    RawFileClass::Dtor(this); /*0x432648*/
+    ((RawFileClass *)this)->Dtor(); /*0x432648*/
     if ( (a2 & 1) != 0 ) /*0x432652*/
       RA2_OPDEL(this); /*0x432655*/
     return &this->FileClass; /*0x43265f*/

@@ -123,7 +123,7 @@ int HouseClass::GetFactoryProducing(int a2) {
 
 // 0x4F8440
 namespace gamemd {
-void HouseClass::Update_TogglePower(double a2) {
+void HouseClass::Update_TogglePower(double a2@<st0> a2) {
     int v2; // ecx
     Object *v3; // esi
     int v4; // ecx

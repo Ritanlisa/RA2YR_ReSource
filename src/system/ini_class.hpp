@@ -106,7 +106,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int WriteSuperWeaponList(void* a1, void* a2, int a3, void* a4, int a5, int a6, int a7, int a8, int a9);  // 0x476A20
     int ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10);  // 0x476B20
     void* parseSection(void* a1);  // 0x477F40
-    void* parseKeyValue(void* a1);  // 0x478220
+    unsigned int * parseKeyValue(unsigned int * a1);  // 0x478220
     void* writeSection(void* a1);  // 0x4787E0
     int readSection();  // 0x48DE70
     void* ClearContents();  // 0x49E510
@@ -154,7 +154,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadTimeString(void* a1, void* a2, int a3);  // 0x52A760
     int SaveTimeField(void* a1, void* a2, int a3);  // 0x52A940
     void* findSection(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x52AF00
-    void* sectionExists();  // 0x52AF50
+    unsigned int * sectionExists();  // 0x52AF50
     void* getValue();  // 0x52B080
     int setValue(void* a1, void* a2);  // 0x52B0A0
     int deleteSection(void* a1);  // 0x52B2B0

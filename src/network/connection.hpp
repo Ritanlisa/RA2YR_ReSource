@@ -103,8 +103,8 @@ public:
     void destroyConnection(IPXConnClass*);                             // 0x540D60
     void release();  // 0x5414C0
     int32_t GetConnectionCount();                                      // 0x542330
-    const char* GetAddress(char*);  // 0x542350
-    void SetAddress(const char*);                                     // 0x5423C0
+    int GetAddress(int a2);  // 0x542350
+    int SetAddress(int a2);                                     // 0x5423C0
     uint32_t GetQueueSize();                                          // 0x542450
     int32_t CheckStatus();  // 0x5424A0
     void ProcessQueue();                                              // 0x542520

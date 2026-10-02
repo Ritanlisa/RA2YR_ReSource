@@ -73,6 +73,6 @@ struct AudioQueue {
     int * IncrementPriority();  // 0x408200
     int ReleaseBuffers();  // 0x408270
     int DrainAll();  // 0x750FA0
-    int StopAllVoices(int a2);
+    int StopAllVoices();
 };
 } // namespace gamemd

@@ -86,7 +86,7 @@ public:
     CoordStruct* GetPlacementCoords(CoordStruct* out) const;  // 0x45F160
     RectangleStruct* GetPlacementRect(RectangleStruct* out) const;  // 0x47FDE0
     char CheckOverlapWithOthers();  // 0x44E3A0
-    bool IsFootprintBlocked();  // 0x4578C0
+    int IsFootprintBlocked();  // 0x4578C0
     // wrapper: delegates to BuildingClass::IsFootprintBlocked at 0x4578C0
     void DamageFactoryBibCells();
     void ClearFactoryBib();  // 0x44D880

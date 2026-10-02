@@ -37,7 +37,7 @@ using ra2::game::AbstractClass;
 
 // 0x41FB10
 namespace gamemd {
-char TriggerTypeClass::SaveToINI(char *a2, int a3) {
+char TriggerTypeClass::SaveToINI(char * a2) {
     void *v3; // ebp
     int v4; // eax
     int v5; // eax

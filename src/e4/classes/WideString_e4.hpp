@@ -37,7 +37,7 @@ struct WideString {
     char RemoveChar(wchar_t a2);  // 0x7B6E20
     int GetOrEmpty();  // 0x7B7100
     int GetOrEmpty_Alt();  // 0x7B7140
-         wchar_t GetChar(void * aP1);  // 0x7B7180
+         int GetChar(size_t aP1);  // 0x7B7180
     int Length();  // 0x7B71B0
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
     char IsASCII();  // 0x7B7D90

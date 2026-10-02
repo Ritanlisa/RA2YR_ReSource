@@ -27,8 +27,8 @@ struct Conflict_WorldDominationTour_12 {
     int Release(int a2, unsigned int * a3);  // 0x766C10
     AbstractClass * * Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);  // 0x766850
-    rc_ptr * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x766960
-    rc_ptr * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x766990
+    unsigned int * Constructor(char a2);  // 0x766960
+    unsigned int * Constructor_0(char a2);  // 0x766990
     char AddRef(int a2);  // 0x766BC0
     int ddtor();  // 0x766D30
     int Read(int a2, void *a2_2);  // 0x766D60

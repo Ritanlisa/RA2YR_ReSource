@@ -276,7 +276,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessAmbientEffects(int a1, int a2);  // 0x55BB40
     int CalcMinShroudLevel();  // 0x588990
     int Load(int a1);  // 0x5AE100
-    void* initAI(int a1);  // 0x5C0FE0
+    unsigned int * initAI(char a1);  // 0x5C0FE0
     void* executeTriggerActions(int a1);  // 0x5C5E40
     int AdvanceSHPAnimationFrame(void* a1, void* a2);  // 0x5CBDA0
     void DrawConstructionFrame(int a1, void* a2);  // 0x5CC110
@@ -315,7 +315,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadLocalVariables(void* a1);  // 0x689B20
     int ReadWaypoint(void* a1);  // 0x689C60
     int SaveToINI(void* a1, int a2);  // 0x68AD70
-    void* Get_Waypoint_Location(void* a1, int a2);  // 0x68BCC0
+    unsigned int * Get_Waypoint_Location(unsigned int * a1, int a2);  // 0x68BCC0
     void* GetCellFromArray(int a1);  // 0x68BCE0
     void* ClearAllWaypoints();  // 0x68BD60
     bool Is_Waypoint_Valid(int a1);  // 0x68BD80

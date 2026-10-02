@@ -79,7 +79,7 @@ int NetworkID::Compare(int a2) {
 
 // 0x53F850
 namespace gamemd {
-unsigned int * IPXConnClass::QueryInterface(char a2, int a3, int a4, int a5) {
+unsigned int * IPXConnClass::QueryInterface(char a2) {
     *(unsigned int *)this->ConnectionClass = 0; /*0x53f853*/
     ConnectionClass::dtor((ConnectionClass *)this); /*0x53f859*/
     if ( (a2 & 1) != 0 ) /*0x53f863*/
@@ -222,7 +222,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
 
 // 0x540030
 namespace gamemd {
-unsigned int * IPXGlobalConnClass::Disconnect(int a2, int a3) {
+unsigned int * IPXGlobalConnClass::Disconnect(int a2) {
     Terrain *IPXGlobalConnClass_field_0x04; // ecx
     unsigned int *result; // eax
 

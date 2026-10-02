@@ -390,7 +390,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CampaignSelect() = default;
 
-    virtual void LookupByName(); // 0x46CC90
+    virtual int LookupByName(); // 0x46CC90
     virtual void DlgProc(); // 0x52EC00
 
     uint8_t CampaignSelect_field_0x04[4];
@@ -993,7 +993,7 @@ public:
     unsigned int m_C;  // 0xC
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int seek(int a1);  // 0x724C80
-    int addRef(int a1);  // 0x724C90
+    char addRef(int a1);  // 0x724C90
     int readString(int a1, void* a2);  // 0x724CD0
     void writeString();  // 0x724D80
     int seekString(void* a1);  // 0x724DB0

@@ -120,7 +120,7 @@ protected:
     TriggerClass() = default;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int EvaluateCondition(void* a1, int a2, int a3);  // 0x41E720
-    int ValidateTeamTriggerConditions(int a1);  // 0x509610
+    char ValidateTeamTriggerConditions(int a1);  // 0x509610
     bool EvaluateObjectForTrigger(int a1, int a2);  // 0x6F1E20
     int UnlinkTags();  // 0x71AD40
     int Construct(int a1);  // 0x725FA0
@@ -208,7 +208,7 @@ public:
 protected:
     TriggerTypeClass() = default;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int SaveToINI(void* a1);  // 0x41FB10
+    char SaveToINI(char * a1);  // 0x41FB10
     int Dispatch();  // 0x6E3EE0
     void* ParseActionData();  // 0x71F4E0
     int GetActionCategoryFlags();  // 0x71F680

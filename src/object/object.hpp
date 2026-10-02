@@ -289,7 +289,7 @@ public:
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);
     // [92] 0x4264A0 AbstractClass::COMStub_Return0_92 (stub retn)
-    virtual void Destroy();  // 0x5F65F0
+    virtual int Destroy();  // 0x5F65F0
     // [93] 0x5F43A0 AbstractClass::COMStub_Return0_93
     virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
     // [94] 0x5F43B0 AircraftClass::StubReturnFalse3

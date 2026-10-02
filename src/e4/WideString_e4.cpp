@@ -653,7 +653,7 @@ int WideString::GetOrEmpty_Alt()
 
 // 0x7B7180
 namespace gamemd {
-wchar_t WideString::GetChar(ObjectClass * aP1)
+int WideString::GetChar(size_t aP1)
 {
 
   int result; // eax

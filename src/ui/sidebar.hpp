@@ -180,7 +180,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessInput(int a1, void* a2, int a3);  // 0x6AAD00
     int saveLoadPrefix(int a1);  // 0x6AC5D0
     int saveLoadPrefix2(int a1);  // 0x6AC5E0
-    void* queryInterface(int a1);  // 0x6AC780
+    unsigned int * queryInterface(char a1);  // 0x6AC780
     void* initButtons();  // 0x6AC870
     int GetProductionState();  // 0x6CBEE0
     int findEntryIndexByName();  // 0x6CFCC0

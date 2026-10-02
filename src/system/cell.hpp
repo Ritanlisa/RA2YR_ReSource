@@ -277,7 +277,7 @@ public:
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
     RectangleStruct* GetScreenRect(RectangleStruct* out) const;  // 0x47FF80
     void RegisterForRedraw();  // 0x7235A0
-    void DrawWrapper(void* a1, int a2, int a3, int a4);  // 0x653F50 (forwards to UpdateTerrainAndWaypoints@0x565C10)
+    void DrawWrapper(unsigned int * a1, int a2, char a3, char a4);  // 0x653F50 (forwards to UpdateTerrainAndWaypoints@0x565C10)
     int QuickPassable() const;
     // wrapper: delegates to CellClass::QuickPassable at 0x487950
     CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
