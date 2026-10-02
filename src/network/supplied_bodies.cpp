@@ -113,7 +113,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2 a2, signed int a3 a3, in
       v21 = a4[1]; /*0x53fda2*/
       v22 = a4[2]; /*0x53fda9*/
       if ( (unsigned short)a5 ) /*0x53fdad*/
-        Network::SetPort((gamemd::IPXManagerClass *)((Network *)v20),(void *)(a5)); /*0x53fdb4*/
+        ((Network*)(gamemd::IPXManagerClass *)((Network *)v20))->SetPort((void *)(a5)); /*0x53fdb4*/
       v12 = 0; /*0x53fdbf*/
       if ( *((int *)this + 53) <= 0 ) /*0x53fdc3*/
       {
@@ -186,7 +186,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2 a2, signed int a3 a3, in
       v21 = a4[1]; /*0x53fd4c*/
       v22 = a4[2]; /*0x53fd53*/
       if ( (unsigned short)a5 ) /*0x53fd5e*/
-        Network::SetPort((Network *)v20, a5); /*0x53fd65*/
+        ((Network*)(Network *)v20)->SetPort(a5); /*0x53fd65*/
       ConnectionClass::allocPacketSlot((ConnectionClass *)this->IPXGlobalConnClass_field_0x04, a2, a3, v20, 12); /*0x53fd7a*/
       return 1; /*0x53fd8b*/
     }

@@ -301,11 +301,11 @@ struct BulletTypeClass {
     int GetTypeIdentifier();
     int GetWarhead(int a2, int a3);
     int ProcessImpact(int a1);
-    int ProcessPower(int * a2, void *a2_2);
+    int ProcessPower(int *aP1);
     int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned char * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    unsigned char * Construct(char *aP1);
     unsigned int * GetROF(unsigned int * a1, int * a2);
 };
 

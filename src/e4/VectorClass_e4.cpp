@@ -1290,7 +1290,7 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
 }
 // 0x4E1960
 namespace gamemd {
-void VectorClass_ptr_ConvertClass::MarkDirty(void *a1_1)
+void VectorClass_ptr_ConvertClass::MarkDirty()
 {
 
   int result; // eax
@@ -27722,7 +27722,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
 
 // 0x5AC790
 namespace gamemd {
-void VectorClass_ptr_MapRegionClass::Remove(void *a1_1)
+void VectorClass_ptr_MapRegionClass::Remove()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x5ac79d*/
@@ -31760,7 +31760,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
 
 // 0x63DE30
 namespace gamemd {
-void VectorClass_ptr_PlanningMemberClass::Remove(void *a1_1)
+void VectorClass_ptr_PlanningMemberClass::Remove()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x63de3d*/

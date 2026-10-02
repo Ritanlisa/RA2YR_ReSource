@@ -359,7 +359,7 @@ char WOL_RequestMatch(void * a1)
   }
   LABEL_50:
   ((String *)((String *)v31))->Append(aRat); /*0x7a0b67*/
-  v19 = Performance::Profile(v29); /*0x7a0b75*/
+  v19 = ((Performance*)v29)->Profile(); /*0x7a0b75*/
   v20 = FromStringInt((gamemd::IUnknown *)((char **)&v31[4]), v19); /*0x7a0b80*/
   ((String *)((String *)v31))->Append2(v20); /*0x7a0b8a*/
   j_DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/

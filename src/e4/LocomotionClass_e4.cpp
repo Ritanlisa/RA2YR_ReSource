@@ -178,9 +178,8 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   this->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
   (&this->DestinationCoords)[2] = v2; /*0x54ac70*/
-  FrameSnapshot::InitMax( /*0x54ac82*/
-    (FrameSnapshot *)&this->__pad_50[4],
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
+  ((FrameSnapshot*)/*0x54ac82*/
+    (FrameSnapshot *)&this->__pad_50[4])->InitMax(/*0x54ac82*/ *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
   this->CurrentHeight = 0; /*0x54ac87*/
   *(unsigned int *)&this->__pad_74[4] = 0; /*0x54ac8a*/
   *(unsigned int *)&this->DestinationReached = 0; /*0x54ac8d*/
@@ -197,7 +196,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update((unsigned short *)(&this->__pad_50[4]), &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
-  FacingClass::Set_SyncLog(&this->__pad_50[4], &v4); /*0x54aced*/
+  ((FacingClass*)&this->__pad_50[4])->Set_SyncLog(&v4); /*0x54aced*/
   return (int)this->LocomotionClass; /*0x54acf4*/
 
 }

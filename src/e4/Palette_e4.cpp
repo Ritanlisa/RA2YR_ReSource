@@ -99,7 +99,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v7 = *(unsigned int *)a1->m_Colors; /*0x64214b*/
   v8 = (*(int (**)(int))(*(unsigned int *)v7 + 128))(v7); /*0x642153*/
   v9 = (*(int (**)(int, int))(*(unsigned int *)v7 + 124))(v7, v8 / 2); /*0x642163*/
-  DSurface::Construct((char *)&v61.Width, v9 / 2, 0, 0, v41); /*0x642170*/
+  ((DSurface*)(char *)&v61.Width)->Construct(v9 / 2, 0, 0, v41); /*0x642170*/
   v59 = 0; /*0x642181*/
   v10 = *(unsigned int *)a1->m_Colors; /*0x642185*/
   Height = v61.Height; /*0x642187*/

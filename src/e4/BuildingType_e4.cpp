@@ -25,7 +25,7 @@
 
 // 0x4E3560
 namespace gamemd {
-int BuildingType::FindDefault(void *a1_1)
+int BuildingType::FindDefault()
 {
 
   int result; // eax
@@ -62,7 +62,7 @@ int BuildingType::FindDefault(void *a1_1)
 
 // 0x510ED0
 namespace gamemd {
-int BuildingType::FindOwnerHouse(void *a1_1)
+int BuildingType::FindOwnerHouse()
 {
 
   int v1; // eax
@@ -110,7 +110,7 @@ int BuildingType::FindOwnerHouse(void *a1_1)
 
 // 0x510F60
 namespace gamemd {
-int BuildingType::IsSpecialType(void *a1_1)
+int BuildingType::IsSpecialType()
 {
 
   int result; // eax

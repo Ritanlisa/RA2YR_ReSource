@@ -18,7 +18,7 @@ bool CopyProtection::CheckLauncher()
   HANDLE MutexA; // esi
   bool v1; // bl
 
-  Debug::Log(aCopyprotection_0); /*0x49f5c8*/
+  ((Debug*)aCopyprotection_0)->Log(); /*0x49f5c8*/
   MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/

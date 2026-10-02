@@ -8,7 +8,7 @@
 
 // 0x6CC260
 namespace gamemd {
-int Super::GetDefaultTimer(void *a1_1)
+int Super::GetDefaultTimer()
 {
 
   int result; // eax

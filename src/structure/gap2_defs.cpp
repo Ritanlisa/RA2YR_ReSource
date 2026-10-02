@@ -249,7 +249,7 @@ void* BuildingLightClass::CTOR(int a1) {
     v37 = a1->q0A0; /*0x435940*/
     v30 = g_RulesClass_Instance->BuildPower[1]; /*0x43594d*/
     v38 = (unsigned int *)(a1->q0A4); /*0x435951*/
-    Value = (unsigned int *)(ProgressTimer::GetValue((unsigned short *)(a1 + 904), (unsigned int *)&v34 + 1)); /*0x435967*/
+    Value = (unsigned int *)(((ProgressTimer*)(unsigned short *)(a1 + 904))->GetValue((unsigned int *)&v34 + 1)); /*0x435967*/
     v38 = v38; /*0x43597d*/
     v6 = (double)(*(int16_t *)Value - 0x3FFF) * -0.00009587672516830327; /*0x435998*/
     v31 = (double)v30; /*0x43599a*/

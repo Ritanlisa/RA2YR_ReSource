@@ -49,7 +49,7 @@ int ScriptAction::ClassifyAction(int *a1, char *a2) {
     if ( v6 <= 0 ) /*0x638d3b*/
       return -1; /*0x638d3b*/
     v7 = *(Array **)(Type[2] + 4 * v6 - 4); /*0x638d43*/
-    Value = Array::FindValue(v7, *Type); /*0x638d49*/
+    Value = ((Array*)v7)->FindValue(*Type); /*0x638d49*/
     if ( Value == -1 ) /*0x638d51*/
       v9 = 0; /*0x638d53*/
     else
@@ -100,7 +100,7 @@ int AudioQueue::StopAllVoices() {
         result = ((AudioQueue*)v5)->GetNextAlt(); /*0x40374a*/
         v5 = (AudioQueue *)result; /*0x403752*/
         if ( v3 == -1 || *(unsigned int *)(v6 + 12) == v3 ) /*0x403759*/
-          result = Voice::Stop(v7); /*0x40375d*/
+          result = ((Voice*)v7)->Stop(); /*0x40375d*/
         v6 = (int)v5; /*0x403764*/
       }
       while ( v5 ); /*0x403766*/
@@ -315,7 +315,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
         v8 = v5 - 1; /*0x634d07*/
         if ( v8 < 0 ) /*0x634d08*/
           v8 = v7 - 1; /*0x634d0a*/
-        v6 = (gamemd::ScriptAction *)((int)((ScriptAction *)ArrayClass::GetAt_Wrap((ArrayClass *)Type, v8))); /*0x634d15*/
+        v6 = (gamemd::ScriptAction *)((int)((ScriptAction *)((ArrayClass*)(ArrayClass *)Type)->GetAt_Wrap(v8))); /*0x634d15*/
       }
     }
     v9 = (int)(BuildingClass::GetType((BuildingClass *)a2)); /*0x634d19*/
@@ -326,7 +326,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
       v11 = 0; /*0x634d24*/
     if ( v6 != v11 )
     {
-      Value = Array::FindValue((Array *)v6, (int)a2); /*0x634d39*/
+      Value = ((Array*)(Array *)v6)->FindValue((int)a2); /*0x634d39*/
       v13 = Value == -1 ? 0 : *(unsigned int *)(v6->ScriptAction_field_0x4[0] + 4 * Value);
       v14 = *(unsigned char **)(v13 + 4); /*0x634d4d*/
       qmemcpy(v28, v14, sizeof(v28)); /*0x634d59*/
@@ -536,7 +536,7 @@ bool ScriptAction::HitTest(int a1 a1, int a2 a2) {
     v4 = 0; /*0x63a90c*/
     v13 = *(unsigned int *)&stru_AC4B30.__pad_EC[28]; /*0x63a910*/
     if ( !*(unsigned int *)&stru_AC4B30.__pad_EC[176] /*0x63aa32*/
-      || (v9 = ScriptAction::GetScreenPos(*(ScriptAction **)&stru_AC4B30.__pad_EC[176], &v12),
+      || (v9 = ((ScriptAction*)*(ScriptAction **)&stru_AC4B30.__pad_EC[176])->GetScreenPos(&v12),
           v10 = ComputeBounds(&v18, 8, *v9, v9[1]),
           v14 = *v10,
           v15 = v10[1],

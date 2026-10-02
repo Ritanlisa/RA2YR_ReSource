@@ -161,7 +161,7 @@ char BuildingClass::CheckOverlapWithOthers() {
       IDA_HIWORD(v7) = IDA_HIWORD(v2) + v3[1]; /*0x44e3f8*/
       *(unsigned int *)v8 = v7; /*0x44e401*/
       v3 += 2; /*0x44e40a*/
-      v4 = (BuildingClass *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v8) + 57); /*0x44e412*/
+      v4 = (BuildingClass *)*((unsigned int *)((CellCoord*)(CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(v8) + 57); /*0x44e412*/
       if ( v4 ) /*0x44e41a*/
       {
         while ( this == v4 ) /*0x44e41e*/

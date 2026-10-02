@@ -108,7 +108,7 @@ int BuildingQueue::IsCellSuitable(int a2) {
     v5 = *((unsigned int *)dword_A83C6C + result); /*0x42e7af*/
     if ( !*(unsigned char *)(v5 + 5489) ) /*0x42e7b2*/
       goto LABEL_9; /*0x42e7b2*/
-    result = (int)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)(v4 + 4)); /*0x42e7c5*/
+    result = (int)((CellCoord*)(CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj((int16_t *)(v4 + 4)); /*0x42e7c5*/
     if ( *(unsigned int *)(result + 68) == *(unsigned int *)(*(unsigned int *)(v5 + 3668) + 660) ) /*0x42e7d9*/
     {
       IDA_LOBYTE(result) = 1; /*0x42e7dc*/
@@ -164,7 +164,7 @@ int BuildingQueue::FindFreeSlot(int a2) {
       goto LABEL_11; /*0x42eb6d*/
     if ( !*(unsigned int *)&dword_A8B238 || !*(unsigned char *)(v4 + this->BuildingQueue_field_0x08 + 8) ) /*0x42eb84*/
       return v3; /*0x42eb89*/
-    if ( !TechnoClass::ProcessTarget(*((TechnoClass **)this + 29), v4 + this->BuildingQueue_field_0x08) ) /*0x42eb8f*/
+    if ( !((TechnoClass*)*((TechnoClass **)this + 29))->ProcessTarget(v4 + this->BuildingQueue_field_0x08) ) /*0x42eb8f*/
       goto LABEL_11; /*0x42eb96*/
     *(unsigned int *)(16 * v3 + this->BuildingQueue_field_0x08 + 4) = dword_89C310; /*0x42ebd1*/
     return v3; /*0x42ebb9*/

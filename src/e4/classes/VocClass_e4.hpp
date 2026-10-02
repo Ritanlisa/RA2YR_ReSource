@@ -67,7 +67,7 @@ struct VocClass {
     unsigned int u32_278;
 // --- flat members (END) ---
     char * GetSampleNameByIndex(int a1);
-    int FindByName(void *a1);
+    int FindByName();
     int Release();
      double Check(...);  // C2597 interim stub
     static double FindIndex(...);  // C2597 interim stub

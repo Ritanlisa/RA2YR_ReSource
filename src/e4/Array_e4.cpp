@@ -205,7 +205,7 @@ int Array::GetElement(int aP1)
 }
 // 0x7ACD30
 namespace gamemd {
-int Array::CleanupArrayWOL(void *a1_1)
+int Array::CleanupArrayWOL()
 {
 
   int i; // edi
@@ -348,7 +348,7 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int))
 
 // 0x49B720
 namespace gamemd {
-int Array::Cleanup(void *a1_1)
+int Array::Cleanup()
 {
 
   int result; // eax

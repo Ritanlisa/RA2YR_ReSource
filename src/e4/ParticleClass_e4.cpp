@@ -89,10 +89,8 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v13 = a3[1]; /*0x62d08c*/
             if ( (int)v12 >= v13 && (int)v12 < v13 + a3[3] ) /*0x62d09e*/
             {
-              v14 = *(uint16_t *)StreamClass::ReadAndSeek( /*0x62d0b6*/
-                                           *(int **)&stru_87E790.__pad_D8[60],
-                                           v29,
-                                           (int)&v12[-*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4)]);
+              v14 = *(uint16_t *)((StreamClass*)/*0x62d0b6*/
+                                           *(int **)&stru_87E790.__pad_D8[60])->ReadAndSeek(/*0x62d0b6*/ v29, (int)&v12[-*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4)]);
               if ( (unsigned short)v14 ) /*0x62d0bb*/
               {
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/

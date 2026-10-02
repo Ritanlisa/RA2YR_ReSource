@@ -181,14 +181,8 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           v27[2] = v13 + 100; /*0x471be6*/
           v17 = (int *)__2_YAPAXI_Z(0x100u); /*0x471bea*/
           if ( v17 ) /*0x471bf4*/
-            ParticleSystemClass::Constructor( /*0x471c15*/
-              v17,
-              *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4128),
-              v27,
-              0,
-              0,
-              &dword_89E138,
-              0);
+            ((ParticleSystemClass*)/*0x471c15*/
+              v17)->Constructor(/*0x471c15*/ *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4128), v27, 0, 0, &dword_89E138, 0);
           --v22; /*0x471c1f*/
         }
         while ( v22 ); /*0x471c23*/
@@ -366,15 +360,8 @@ void CaptureManagerClass::CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1
       v34 = v26; /*0x471f1b*/
       v27 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x471f1f*/
       if ( v27 ) /*0x471f29*/
-        v28 = (BuildingClass *)AnimClass::ctor( /*0x471f4c*/
-                                 v27,
-                                 *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 800),
-                                 &v32,
-                                 0,
-                                 1,
-                                 (void *)0x600,
-                                 0,
-                                 0);
+        v28 = (BuildingClass *)((AnimClass*)/*0x471f4c*/
+                                 v27)->ctor(/*0x471f4c*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 800), &v32, 0, 1, (void *)0x600, 0, 0);
       else
         v28 = 0; /*0x471f53*/
       v5[178] = (unsigned int)(v28); /*0x471f57*/

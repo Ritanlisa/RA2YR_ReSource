@@ -267,9 +267,8 @@ LABEL_5:
         v5 = v4 - 1; /*0x771683*/
         v6 = 0; /*0x771684*/
         for ( *((unsigned int *)this + 244) = v5; v6 < *((unsigned int *)this + 244); ++v6 ) /*0x77168e*/
-          String::Reassign( /*0x77169e*/
-            (String *)(*((unsigned int *)this + 241) + 4 * v6),
-            (const char **)(*((unsigned int *)this + 241) + 4 * v6 + 4));
+          ((String*)/*0x77169e*/
+            (String *)(*((unsigned int *)this + 241) + 4 * v6))->Reassign(/*0x77169e*/ (const char **)(*((unsigned int *)this + 241) + 4 * v6 + 4));
       }
       v7 = *((unsigned int *)this + 239); /*0x7716ae*/
       if ( v7 > 0 ) /*0x7716b6*/

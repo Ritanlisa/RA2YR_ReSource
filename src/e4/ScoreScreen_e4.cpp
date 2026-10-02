@@ -51,7 +51,7 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
-    CCFileClass::Construct(&v5,(void *)(g_Str_File_FULLFNT3_SHP)); /*0x690a62*/
+    ((CCFileClass*)&v5)->Construct((void *)(g_Str_File_FULLFNT3_SHP)); /*0x690a62*/
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
@@ -161,9 +161,8 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
         v10 = v9 - 1; /*0x7712e6*/
         v11 = v8; /*0x7712e7*/
         for ( *((unsigned int *)this + 244) = v10; v11 < *((unsigned int *)this + 244); ++v11 ) /*0x7712f1*/
-          String::Reassign( /*0x771301*/
-            (String *)(*((unsigned int *)this + 241) + 4 * v11),
-            (const char **)(*((unsigned int *)this + 241) + 4 * v11 + 4));
+          ((String*)/*0x771301*/
+            (String *)(*((unsigned int *)this + 241) + 4 * v11))->Reassign(/*0x771301*/ (const char **)(*((unsigned int *)this + 241) + 4 * v11 + 4));
       }
       v12 = v8--; /*0x771317*/
     }
@@ -269,7 +268,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   unsigned char v41[20]; // [esp+CCh] [ebp-14h] BYREF
   void *retaddr; // [esp+E0h] [ebp+0h] BYREF
 
-  CCFileClass::Construct(&v38,(void *)(Source)); /*0x77821f*/
+  ((CCFileClass*)&v38)->Construct((void *)(Source)); /*0x77821f*/
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
@@ -287,7 +286,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       *(unsigned int *)((unsigned int)(v10)+ 12) = 0; /*0x778294*/
       *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x77829b*/
       *(unsigned int *)((unsigned int)(v10)+ 16) = 2; /*0x7782a1*/
-      Buffer::Init((Buffer *)((unsigned int)(v10)+ 20), 0, 2 * v28 * v9); /*0x7782a8*/
+      ((Buffer*)(Buffer *)((unsigned int)(v10)+ 20))->Init(0, 2 * v28 * v9); /*0x7782a8*/
       *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x7782ad*/
     }
     else

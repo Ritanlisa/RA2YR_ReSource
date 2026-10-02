@@ -9,7 +9,7 @@
 
 // 0x6E5820
 namespace gamemd {
-int TriggerActionQueue::ProcessAll(void *a1)
+int TriggerActionQueue::ProcessAll()
 {
 
   int result; // eax

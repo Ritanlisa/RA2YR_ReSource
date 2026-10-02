@@ -906,9 +906,7 @@ LABEL_27:
     Debug::Log();
     if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
       ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
-    Multiplayer::ShowProgress(
-      &(&HouseClass_Player)[29932],
-      *(unsigned char *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13501) != 0 ? 200 : 100);
+    ((Multiplayer*)&(&HouseClass_Player)[29932])->ShowProgress(*(unsigned char *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13501) != 0 ? 200 : 100);
     v148 = (ObjectClass *)TimerGetTicks();
     var620 = 180;
     v109 = v148;

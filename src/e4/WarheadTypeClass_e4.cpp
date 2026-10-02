@@ -314,7 +314,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
 LABEL_6:
     v3 = (OverlayTypeClass *)__2_YAPAXI_Z(0x310u); /*0x644683*/
     if ( v3 ) /*0x644692*/
-      v4 = OverlayTypeClass::Construct(v3, Source); /*0x644697*/
+      v4 = ((OverlayTypeClass*)v3)->Construct(Source); /*0x644697*/
     else
       v4 = 0; /*0x6446a4*/
     v6 = 0; /*0x6446ac*/
@@ -522,7 +522,7 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(this->WarheadTypeClass_field_0x180); /*0x75dff6*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x184); /*0x75e004*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x188); /*0x75e012*/
-  Checksummer::Add_Buffer((uint8_t *)((Checksummer *)a2), (uint8_t *)&(&this->Parasite)[3], 16); /*0x75e022*/
+  ((Checksummer*)(uint8_t *)((Checksummer *)a2))->Add_Buffer((uint8_t *)&(&this->Parasite)[3], 16); /*0x75e022*/
   v18 = (int *)&this->__pad_44[92]; /*0x75e027*/
   v20 = 11; /*0x75e02d*/
   do /*0x75e04f*/
@@ -562,7 +562,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
   {
     if ( v2 ) /*0x75e0ff*/
     {
-      AbstractTypeClass::Init((int)v2, (int)&a1); /*0x75e108*/
+      ((AbstractTypeClass*)(int)v2)->Init((int)&a1); /*0x75e108*/
       ((DynamicVectorClass *)((DynamicVectorClass *)v2->__pad_104))->AnimTypeConstructor(0, 0); /*0x75e117*/
       *(unsigned int *)v2->__pad_104 = (unsigned int)(&vt_TypeList); /*0x75e120*/
       ((WarheadTypeClass *)((WarheadTypeClass *)DebrisTypes))->checkImmunity((int)&a1); /*0x75e12d*/

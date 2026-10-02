@@ -1609,7 +1609,7 @@ struct BuildingTypeClass {
     int GetTypeIdentifier();
     int IsPlacementValid(IUnknown * aP1, IUnknown * aP2);
     int ProcessData(unsigned int * a2, short * a3);
-    int SaveLoad_Prefix_0();
+    int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);
     int UpdatePower();
     int ddtor(void *a1);
     size_t Dequeue(int *aP1);
@@ -1621,7 +1621,7 @@ struct BuildingTypeClass {
     void IsPowered();
     void LoadVoxel();
     void* LoadAnimations(int aP1);
-    void* ProcessPower(AbstractClass * aP1, void *a2);
+    void* ProcessPower(int *aP1);
     int GetFoundationHeight(char a2);  // 0x45eca0
 };
 

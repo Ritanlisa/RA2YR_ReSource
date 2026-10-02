@@ -130,7 +130,7 @@ struct Game {
     CellStruct * * SerializeGameSaveState();  // 0x67F9C0
     int validateScenario(unsigned int *a2);  // 0x680F70
     void EncodeGameSetupState(char * Buffer);  // 0x77E430
-    static Coord * * ProcessIdle(void *a1_1);  // 0x77F900
+    static Coord * * ProcessIdle();  // 0x77F900
     AbstractClass * * SetupWOLTournament();  // 0x7A2330
     char LoadMultiplayerScoreAssets();  // 0x72D730
     int CreateAIPlayer();  // 0x796DE0
@@ -141,8 +141,8 @@ struct Game {
     void processStartup();
     char ResetFlags();  // 0x5E8B40
     int ResetReadyStates();  // 0x5E9850
-    int readIniSettings(void *a1_1);  // 0x67FDE0
-    char InitializeToolTipColor(void *a1_1);  // 0x72F440
+    int readIniSettings();  // 0x67FDE0
+    char InitializeToolTipColor();  // 0x72F440
     static int Stub3(int a1);  // 0x5865E0
 };
 } // namespace gamemd

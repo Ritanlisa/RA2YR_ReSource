@@ -196,7 +196,7 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = CCFileClass::Construct((CCFileClass *)Str,(void *)(byte_A8B8E0)); /*0x5e7845*/
+      v13 = ((CCFileClass*)(CCFileClass *)Str)->Construct((void *)(byte_A8B8E0)); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/

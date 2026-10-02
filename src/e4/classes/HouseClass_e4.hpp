@@ -1888,7 +1888,7 @@ struct HouseClass {
     static int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
     static int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
-    int UpdatePower();
+    int UpdatePower(double a2);
     int sub_5092F0(int a2);
     int vt_04_(int * a2);
     int vt_placeholder_00();
@@ -1902,7 +1902,7 @@ struct HouseClass {
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    int Construct(int a2, int a3, int a4, int a5, int a6);
+    int Construct(int aP1);
     void LostPoweredCenter(int a2, void *a2_2);
     int ResetObjectOrders(char a1, int a2);
     void vt_03_();

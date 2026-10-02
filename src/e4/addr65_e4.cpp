@@ -1531,7 +1531,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   *(unsigned char *)(v31 + 980) = 1; /*0x65dbf2*/
   if ( *(unsigned char *)(v3 + 177) ) /*0x65dbf9*/
   {
-    TransportWaypoint = TeamTypeClass::GetTransportWaypoint((TeamTypeClass *)v3, &v46); /*0x65dc0a*/
+    TransportWaypoint = ((TeamTypeClass*)(TeamTypeClass *)v3)->GetTransportWaypoint(&v46); /*0x65dc0a*/
   }
   else
   {
@@ -1569,7 +1569,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     (*(void (**)(int))(*(unsigned int *)v31 + 492))(v31); /*0x65dcf9*/
     v3 = (int)v47; /*0x65dcff*/
   LABEL_49:
-    if ( Techno::GetOwnerHouse(v3) ) /*0x65db71*/
+    if ( ((Techno*)v3)->GetOwnerHouse() ) /*0x65db71*/
     {
       v41 = (void *)dword_A83D4C; /*0x65db80*/
       OwnerHouse = (void *)Techno::GetOwnerHouse(v3); /*0x65db83*/
@@ -1697,7 +1697,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   }
   else
   {
-    if ( !Techno::GetOwnerHouse(v4) || (v8 = *(unsigned int *)(Techno::GetOwnerHouse(v4) + 480), v8 == -1) ) /*0x65e0b2*/
+    if ( !((Techno*)v4)->GetOwnerHouse() || (v8 = *(unsigned int *)(Techno::GetOwnerHouse(v4) + 480), v8 == -1) ) /*0x65e0b2*/
       v8 = 0; /*0x65e0b4*/
     v9 = 2 * v8; /*0x65e0b6*/
     v10 = v51; /*0x65e0b9*/

@@ -141,7 +141,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   v7 = strrchr(Str, 46); /*0x5c083a*/
   if ( v7 && !_strcmpi(v7,(const char *)(aBik)) ) /*0x5c084c*/
   {
-        Debug::Log(aPlayMovieAsBin);
+        ((Debug*)aPlayMovieAsBin)->Log();
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
       v9 = (unsigned int *)(((BinkMovie *)(v8))->Open(Str, (int)a2)); /*0x5c087d*/
@@ -256,7 +256,7 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
 
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(aDRa2mdpostMpla), 108));
   v3 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(aDRa2mdpostMpla), 108));
-  return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
+  return ((Dialog*)lParam)->ShowMessageBox(v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 
 }
 }

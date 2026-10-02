@@ -134,7 +134,7 @@ void * Coord::Subtract(int aP1, int aP2, int aP3)
 }
 // 0x41C380
 namespace gamemd {
-int Coord::Length(void *a1_1)
+int Coord::Length()
 {
 
   double Coord_field_0x8; // st7

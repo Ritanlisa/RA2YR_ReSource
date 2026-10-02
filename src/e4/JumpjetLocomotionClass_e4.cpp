@@ -4924,7 +4924,7 @@ bool JumpjetLocomotionClass::CheckCompositeState(int a1)
 }  // G42.18c ns repair
 // 0x54D820
 namespace gamemd {  // G42.18c ns repair
-int JumpjetLocomotionClass::GetFloorZSetContext(void *a1)
+int JumpjetLocomotionClass::GetFloorZSetContext()
 {
 
   int *location; // eax

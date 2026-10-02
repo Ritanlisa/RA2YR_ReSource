@@ -778,7 +778,7 @@ int Network::SendOffer()
 }
 // 0x52F3F0
 namespace gamemd {
-AbstractClass * * Network::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
+AbstractClass * * Network::Init()
 {
 
   int v0; // ecx
@@ -3613,7 +3613,7 @@ int Network::AddFrameEvent()
 }
 // 0x6475F0
 namespace gamemd {
-AbstractClass * * Network::QueueProcessingLoop(void *a1_1)
+AbstractClass * * Network::QueueProcessingLoop()
 {
 
   int v1; // eax
@@ -4146,7 +4146,7 @@ AbstractClass * * Network::RecordEvent(long long a1, int a2, int a3, int a4, int
 }
 // 0x6523A0
 namespace gamemd {
-int Network::SendUnreachable(void *a1_1)
+int Network::SendUnreachable()
 {
 
   int result; // eax
@@ -4435,7 +4435,7 @@ void * Network::reconnect(DynamicVector * aP1, short a3)
 }
 // 0x69B540
 namespace gamemd {
-unsigned int * Network::processGameEvent(void *a1_1)
+unsigned int * Network::processGameEvent()
 {
 
   unsigned int *result; // eax
@@ -4457,7 +4457,7 @@ unsigned int * Network::processGameEvent(void *a1_1)
 }
 // 0x792F10
 namespace gamemd {
-AbstractClass * * Network::SyncPlayerList(void *a1_1)
+AbstractClass * * Network::SyncPlayerList()
 {
 
   int owningHouseIndex; // eax

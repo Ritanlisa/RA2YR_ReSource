@@ -2143,7 +2143,7 @@ LABEL_56:
 
 // 0x508C30
 namespace gamemd {
-int HouseClass::UpdatePower()
+int HouseClass::UpdatePower(double a2)
 {
 
   int v2; // ecx

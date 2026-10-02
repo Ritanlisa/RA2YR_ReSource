@@ -207,7 +207,7 @@ LABEL_14:
                             v120,
                             v103);
           unsigned int * v33 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v32));
-          Cell::ApplyDamage(v33, 1, 0, 0, v98);
+          ((Cell*)v33)->ApplyDamage(1, 0, 0, v98);
           if ( v20->vt_slot_24() )
           {
             int v34 = (int)(*this);
@@ -287,7 +287,7 @@ LABEL_54:
             int v107 = (int)(((unsigned char *)(this) + 0x029));
             unsigned int * v46 = (unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord();
             unsigned int * v47 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v46));
-            Cell::ApplyDamage(v47, (int)v119, (int)&v105, 1, 0);
+            ((Cell*)v47)->ApplyDamage((int)v119, (int)&v105, 1, 0);
             if ( !((unsigned char *)(this) + 0x0BF) )
               goto LABEL_107;
             this->missionStatus = *(unsigned char *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
@@ -367,7 +367,7 @@ LABEL_54:
                           0,
                           0);
         unsigned int * v54 = (unsigned int *)(Coord::To_Cell(DataGlobal_87F7E8, v53));
-        Cell::ApplyDamage(v54, v89, v94, v98, v99);
+        ((Cell*)v54)->ApplyDamage(v89, v94, v98, v99);
         this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
         int v55 = (int)(*this);
         this->missionStatus = 7;

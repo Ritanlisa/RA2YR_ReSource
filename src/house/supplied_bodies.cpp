@@ -76,7 +76,7 @@ int HouseClass::createStartingUnits(int a2) {
       do /*0x43143f*/
       {
         if ( *v5 ) /*0x43142a*/
-          result = Network::SendBeaconDelete((Network *)this, a2, v4); /*0x431433*/
+          result = ((Network*)(Network *)this)->SendBeaconDelete(a2, v4); /*0x431433*/
         ++v4; /*0x431438*/
         ++v5; /*0x431439*/
       }
@@ -278,13 +278,13 @@ void HouseClass::Update_TogglePower(double a2@<st0> a2) {
   LABEL_11:
     if ( v3[33].__pad_B0[40] ) /*0x4f84d9*/
     {
-      HouseClass::UpdatePower(v116, a2); /*0x4f84e5*/
+      ((HouseClass*)v116)->UpdatePower(a2); /*0x4f84e5*/
       v3[33].__pad_B0[41] = 1; /*0x4f84ea*/
     }
     if ( v3[33].__pad_B0[41] ) /*0x4f84f1*/
     {
       if ( !(&dword_A8B538)[0] ) /*0x4f8501*/
-        HouseClass::CanTogglePower((HouseClass *)v3); /*0x4f8505*/
+        ((HouseClass*)(HouseClass *)v3)->CanTogglePower(); /*0x4f8505*/
       HouseClass::ToggleGapGeneratorReveal((HouseClass *)v3); /*0x4f850c*/
     }
     v10 = (int)dword_A8ED84 % 100; /*0x4f851c*/
@@ -463,7 +463,7 @@ void HouseClass::Update_TogglePower(double a2@<st0> a2) {
       if ( (byte_A8F03C & 1) == 0 ) /*0x4f8873*/
       {
         byte_A8F03C |= 1u; /*0x4f8882*/
-        dword_A8EFE8 = Random::Range(&Randomizer_Global, 0, 1); /*0x4f888d*/
+        dword_A8EFE8 = ((Random*)&Randomizer_Global)->Range(0, 1); /*0x4f888d*/
       }
       if ( !Random::Range(&Randomizer_Global, 0, 2) )
       {

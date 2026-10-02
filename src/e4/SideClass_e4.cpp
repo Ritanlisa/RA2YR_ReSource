@@ -193,7 +193,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   {
     if ( v2 ) /*0x6a47a4*/
     {
-      AbstractTypeClass::Init((int)v2, (int)&aP1); /*0x6a47ad*/
+      ((AbstractTypeClass*)(int)v2)->Init((int)&aP1); /*0x6a47ad*/
       v2->houseTypesCount = 0; /*0x6a47b2*/
       v2[1].AbstractClass = 0; /*0x6a47b8*/
       LOBYTE(v2[1]) = 1; /*0x6a47be*/

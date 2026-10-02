@@ -708,8 +708,8 @@ struct SuperClass {
     char SetReadiness(char a2);
     int AnnounceReady(DynamicVector * aP1, void *a2);
     int ClickFire(int a2, short * a3);
-    _DWORD * Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6);
-    void Constructor(void *a1, void *a2, void *a3);
+    _DWORD * Construct(int aP1);
+    void Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);
     int LoadFromStream(AbstractClass * aP0, int aP1);
     int Lose();
     int PowerDrainUpdate(int * a2);

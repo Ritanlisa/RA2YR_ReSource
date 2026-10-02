@@ -32,7 +32,7 @@ void AITriggerTypeClass::LoadTypeData(int a2, int a3, int aP0, int a1)
   {
     if ( this ) /*0x41e556*/
     {
-      AbstractTypeClass::Init((int)this, (int)&a2); /*0x41e55f*/
+      ((AbstractTypeClass*)(int)this)->Init((int)&a2); /*0x41e55f*/
       *(unsigned int *)((unsigned char *)(this) + 0x0) =(unsigned int)&AITriggerTypeClass_vftable; /*0x41e564*/
       this->AITriggerTypeClass_field_0x04 = (int)(void *)&AITriggerTypeClass_vftable; /*0x41e56a*/
       this->AITriggerTypeClass_field_0x08 = (int)(void *)&AITriggerTypeClass_vftable; /*0x41e571*/
@@ -64,7 +64,7 @@ void AITriggerTypeClass::ProcessPower(int * a2)
   int v6; // ecx
   int v7; // eax
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x41e5e9*/
+  ((AbstractTypeClass*)(char *)this)->ProcessPower(a2); /*0x41e5e9*/
   Power::TimerProcess(this->q098); /*0x41e5f7*/
   Power::TimerProcess(this->q09C); /*0x41e605*/
   Power::TimerProcess(this->q0A0); /*0x41e613*/
@@ -86,7 +86,7 @@ void AITriggerTypeClass::ProcessPower(int * a2)
   Checksummer::Add_double(this->q0C0, this->q0C4); /*0x41e687*/
   Checksummer::Add_double(this->q0C8, this->q0CC); /*0x41e69c*/
   IDA_LOBYTE(v3) = this->q0D0; /*0x41e6a1*/
-  Power::FlagProcess(a2, v3); /*0x41e6aa*/
+  ((Power*)a2)->FlagProcess(v3); /*0x41e6aa*/
   IDA_LOBYTE(v4) = this->u8_D2; /*0x41e6af*/
   v5 = Power::FlagProcess(a2, v4); /*0x41e6b8*/
   IDA_LOBYTE(v5) = this->u8_D3; /*0x41e6bd*/
@@ -119,7 +119,7 @@ void AITriggerTypeClass::EnemyHouseOwns( int a2, unsigned int * a3)
     switch ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) ) /*0x41eb38*/
     {
       case 3: /*0x41eb38*/
-        v6 = DynamicVector::GetOrGrow((unsigned int)(a3)+ 5475, v5); /*0x41eb91*/
+        v6 = ((DynamicVector*)(unsigned int)(a3)+ 5475)->GetOrGrow(v5); /*0x41eb91*/
         goto LABEL_8; /*0x41eb91*/
       case 7: /*0x41eb38*/
         v7 = DynamicVector::GetOrGrow((unsigned int)(a3)+ 5460, v5); /*0x41eb4a*/

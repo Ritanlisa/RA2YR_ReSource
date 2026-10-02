@@ -338,7 +338,7 @@ int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
           if ( *v7 /*0x431794*/
             && (*(unsigned char *)(v8 + 12) & 1) != 0
 // 0x4f9a10
-            && HouseClass::IsAllied(HouseClass_Player, *(unsigned int *)(v8 + 272))
+            && ((HouseClass*)HouseClass_Player)->IsAllied(*(unsigned int *)(v8 + 272))
             && (uint8_t)HouseClass::IsAlliedWith(
                                   *(void **)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)],
                                   HouseClass_Player)
@@ -418,7 +418,7 @@ int HouseClass::Add() {
   {
     v3 = *((unsigned int *)this + i + 378); /*0x4575c7*/
     v4 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v3 + 184))(v3, this->q21C, 1); /*0x4575d7*/
-    HouseClass::AddPower(*((unsigned int **)&this->relatedTagsCapacity5), v4); /*0x4575e4*/
+    ((HouseClass*)*((unsigned int **)&this->relatedTagsCapacity5))->AddPower(v4); /*0x4575e4*/
     BuildingClass::ClearSuperWeaponAnim((int)this); /*0x4575eb*/
     this->q21C->q5778 = 1; /*0x4575f6*/
     this->q21C->u8_5779 = 1; /*0x457602*/
@@ -447,7 +447,7 @@ int HouseClass::Process() {
       v4 = *(unsigned int *)(this->builtInfantryTypes[126] + 5468); /*0x4587a0*/
       if ( v4 <= 0 ) /*0x4587a8*/
 // 0x4f9790
-        return HouseClass::ProcessPowerDrain((int *)this->planningPaths[3], -v4); /*0x4587c4*/
+        return ((HouseClass*)(int *)this->planningPaths[3])->ProcessPowerDrain(-v4); /*0x4587c4*/
       else
 // 0x4f9950
         return HouseClass::AddPower((HouseClass *)this->planningPaths[3], v4); /*0x4587b1*/

@@ -135,7 +135,7 @@ struct Network {
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0
     void * initConnection(int a2, unsigned int * a3, char a4);  // 0x4C6C50
     int SendOffer();  // 0x4FC980
-    AbstractClass * * Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x52F3F0
+    AbstractClass * * Init();  // 0x52F3F0
     int GetAddress(unsigned int *a1, int aP2, unsigned short *a3);  // 0x53ED60
     void * CopyAddress(unsigned int *a2, int a3);  // 0x53EDA0
     int IsBroadcastAddr();  // 0x53EE00
@@ -167,18 +167,18 @@ struct Network {
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
     int AddFrameEvent();  // 0x6471A0
-    AbstractClass * * QueueProcessingLoop(void *a1_1);  // 0x6475F0
+    AbstractClass * * QueueProcessingLoop();  // 0x6475F0
     int syncGameState(void *a1_1);  // 0x64AC90
     AbstractClass * * ProcessEventList(int a1, int * a2, int a3);  // 0x64C380
     static AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
-    int SendUnreachable(void *a1_1);  // 0x6523A0
+    int SendUnreachable();  // 0x6523A0
     void validatePacket();  // 0x663910
     int SendMasterPlayerList();  // 0x6639D0
     HashTable_flat * * ProcessAddressChange();  // 0x6640E0
     void * processAcknowledgment(IUnknown * aP1);  // 0x6642A0
     void * reconnect(DynamicVector * aP1, short a3);  // 0x664400
-    unsigned int * processGameEvent(void *a1_1);  // 0x69B540
-    AbstractClass * * SyncPlayerList(void *a1_1);  // 0x792F10
+    unsigned int * processGameEvent();  // 0x69B540
+    AbstractClass * * SyncPlayerList();  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
     char * FormatAddress(uint16_t *aP1);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040

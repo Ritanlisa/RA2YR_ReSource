@@ -50,7 +50,7 @@ int AnimClass::SimpleCtor() {
     *(unsigned int *)&this->__pad_120[12] = 0; /*0x4227d3*/
     *(unsigned int *)&this->__pad_120[20] = 0; /*0x4227d9*/
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x4227df*/
-    Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x4227e5*/
+    ((Int4*)(Int4 *)&this->__pad_120[56])->Set(0, 0, 0, 1065353216); /*0x4227e5*/
     Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x4227f8*/
     this->q188 = 0; /*0x4227fd*/
     this->__pad_178[1] = 0; /*0x422803*/

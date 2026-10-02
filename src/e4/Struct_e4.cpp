@@ -118,7 +118,7 @@ unsigned char * Struct::Zero3()
 } // namespace gamemd
 // 0x4085A0
 namespace gamemd {
-int Struct::ZeroInit32(void *a1)
+int Struct::ZeroInit32()
 {
 
   memset(this, 0, 0x20u); /*0x4085aa*/

@@ -87,7 +87,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -193,7 +193,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v27 = g_DDrawSurfaceManager.scenario[12] + 76 * v3; /*0x49c60d*/
   if ( (&this->scenario)[6] == (&this->scenario)[4] ) /*0x49c616*/
     return (gamemd::AbstractClass **)(1); /*0x49c61b*/
-  CCFileClass::Construct(&v33,(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
+  ((CCFileClass*)&v33)->Construct((void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
   ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
@@ -366,7 +366,7 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x46d016*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
+      ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x46d01f*/
       aP0->vtable1 = (void *)((unsigned int)(&vt_CampaignClass)); /*0x46d024*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d02a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d031*/

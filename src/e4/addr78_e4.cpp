@@ -221,7 +221,7 @@ void WOL_ResetSystem()
     {
       v23 = CChatEventSink_field_0x0C; /*0x7803ad*/
       CChatEventSink_field_0x0C = (CChatEventSink *)CChatEventSink_field_0x0C[5].CChatEventSink_field_0x0C; /*0x7803af*/
-      CChatEventSink::DeleteAndZero(v23, 1); /*0x7803bb*/
+      ((CChatEventSink*)v23)->DeleteAndZero(1); /*0x7803bb*/
     }
     ++k; /*0x7803ca*/
     *(unsigned int *)(((char *)&stru_B765EC) + 4 * k - 4) = 0; /*0x7803cb*/
@@ -461,8 +461,8 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
 
   ((String *)(&v23))->Assign(a2 + 36); /*0x780aa6*/
   v4 = CharStringToWide((gamemd::ObjectClass *)(&v26), (const char **)&v23); /*0x780abd*/
-  WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.q4, (wchar_t *)L" : ");
-  DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780acd*/
+  ((WideString*)(WideString *)v4)->AssignConcat((wchar_t **)&v23.q4, (wchar_t *)L" : ");
+  ((DeleteAndZero*)(DeleteAndZero *)&v26)->Alt(); /*0x780acd*/
   ((String *)(&v23))->ToLower(); /*0x780ad6*/
   v5 = g_WOL_HashTable; /*0x780adb*/
   memset(v29, 0, sizeof(v29)); /*0x780aee*/
@@ -486,7 +486,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     v21 = ((WideString *)((WideString *)&v25))->Assign((wchar_t *)asc_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
     v13 = ((WideString *)(&v28))->Assign(StringCSF); /*0x780c63*/
-    v14 = WideString::ConcatAlloc((WideString *)v13, &v27, (const wchar_t **)v21); /*0x780c6a*/
+    v14 = ((WideString*)(WideString *)v13)->ConcatAlloc(&v27, (const wchar_t **)v21); /*0x780c6a*/
     v15 = WideString::ConcatAlloc((WideString *)v14, &v26, (const wchar_t **)v22); /*0x780c71*/
     WideString::Append((WideString *)&v23.q4, (const wchar_t **)v15); /*0x780c7b*/
     DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780c84*/

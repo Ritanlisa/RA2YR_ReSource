@@ -196,7 +196,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   {
     if ( (int)(Size / v7 - 1) < v8 ) /*0x6303f7*/
       v8 = Size / v7 - 1; /*0x6303f9*/
-    Buffer::Init(v65, a3, Size); /*0x630408*/
+    ((Buffer*)v65)->Init(a3, Size); /*0x630408*/
     v10 = (unsigned int *)(RA2_OPNEW(0x20u)); /*0x63040f*/
     v11 = v10; /*0x630414*/
     if ( v10 ) /*0x63041d*/
@@ -1644,7 +1644,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
               Block = v11; /*0x638763*/
               if ( v11 ) /*0x638767*/
               {
-                FactoryClass::FinishProduction((int *)v9->__pad_0, (int)v11); /*0x63876c*/
+                ((FactoryClass*)(int *)v9->__pad_0)->FinishProduction((int)v11); /*0x63876c*/
                 RA2_OPDEL(*((void **)Block + 1)); /*0x638779*/
                 FactoryClass::RemoveItemAt((FactoryClass *)v9, (int)&Block); /*0x638788*/
                 RA2_OPDEL(Block); /*0x638792*/
@@ -1719,7 +1719,7 @@ AbstractClass * * sub_638E60()
       while ( 1 ) /*0x638ea7*/
       {
         v4 = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v3); /*0x638ea7*/
-        ScreenPos = (int *)(ScriptAction::GetScreenPos((ScriptAction *)v4, &v8)); /*0x638eac*/
+        ScreenPos = (int *)(((ScriptAction*)(ScriptAction *)v4)->GetScreenPos(&v8)); /*0x638eac*/
         v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v13), 8, *ScreenPos, ScreenPos[1])); /*0x638ec1*/
         v9 = *v6; /*0x638ec8*/
         v10 = v6[1]; /*0x638ecf*/

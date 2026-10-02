@@ -431,12 +431,8 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       {
         GetClientRect((HWND)(g_hWnd), &Rect); 
         ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
-        BinkMovie::RenderSingleFrame( /*0x432f22*/
-          (BinkMovie *)this,
-          *((unsigned int *)this + 3),
-          Rect.left + *((unsigned int *)this + 4),
-          Rect.top + *((unsigned int *)this + 5),
-          1);
+        ((BinkMovie*)/*0x432f22*/
+          (BinkMovie *)this)->RenderSingleFrame(/*0x432f22*/ *((unsigned int *)this + 3), Rect.left + *((unsigned int *)this + 4), Rect.top + *((unsigned int *)this + 5), 1);
       }
       else
       {
@@ -879,7 +875,7 @@ LABEL_6:
   v6[3] = (int)&v8; /*0x6c9ba4*/
   v7 = 0; /*0x6c9ba8*/
   v6[0] = (int)&vt_FileStraw; /*0x6c9bac*/
-  BinkMovie::VtableDispatch(&v11, (int)v6); /*0x6c9bb4*/
+  ((BinkMovie*)&v11)->VtableDispatch((int)v6); /*0x6c9bb4*/
   v3 = ParseMovieSubtitles(v11.__pad_0, Source); /*0x6c9bc1*/
   *(unsigned int *)this->__pad_0 = v3; /*0x6c9bc8*/
   if ( !v3 ) /*0x6c9bd2*/
@@ -935,7 +931,7 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
         }
         else
         {
-          BinkMovie::ProcessKeyframe(this, v7); /*0x6c9ca4*/
+          ((BinkMovie*)this)->ProcessKeyframe(v7); /*0x6c9ca4*/
           v6 = 1; /*0x6c9ca9*/
         }
         v4 = *(unsigned int *)this->__pad_0; /*0x6c9cab*/

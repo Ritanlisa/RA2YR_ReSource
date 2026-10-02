@@ -259,7 +259,7 @@ LABEL_13:
 }
 // 0x731060
 namespace gamemd {
-void CreateTeamCommand::performAction_246(void *a1_1)
+void CreateTeamCommand::performAction_246()
 {
 
   int v1; // ebx

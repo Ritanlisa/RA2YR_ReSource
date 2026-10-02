@@ -658,7 +658,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( v3 ) /*0x645680*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
+      ((ObjectTypeClass*)(ObjectTypeClass *)v3)->Construct((int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor((ParticleTypeClass *)&v3->ParticleTypeClass_field_0x2B8, 0, 0); /*0x645698*/
       v3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_TypeList; /*0x64569d*/
       v3->ArrayIndex = &vt_ParticleTypeClass; /*0x6456a3*/

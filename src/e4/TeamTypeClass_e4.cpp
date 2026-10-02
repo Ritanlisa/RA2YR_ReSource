@@ -44,7 +44,7 @@
 
 // 0x4C98B0
 namespace gamemd {
-int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int TeamTypeClass::Construct()
 {
 
   int v2; // eax

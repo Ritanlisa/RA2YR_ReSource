@@ -225,7 +225,7 @@ void sub_600AF0()
         LinkedList::Remove((unsigned int *)(v3 + 4), k); /*0x600b3e*/
       v5 = *(void ***)(v3 + 64); /*0x600b4a*/
       if ( v5 ) /*0x600b4f*/
-        DeleteAndZero::OrFree(v5, 1); /*0x600b53*/
+        ((DeleteAndZero*)v5)->OrFree(1); /*0x600b53*/
       RA2_OPDEL((void *)v3); /*0x600b59*/
     }
     i = ++v1; /*0x600b70*/
@@ -1693,7 +1693,7 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   v62 = a1;
   if ( !g_DialogHashMap_Count )
     goto LABEL_6;
-  int v3 = HashTable_flat::ComputeHash((unsigned int *)((int)&g_DialogHashMap_Base), (int)&v62);
+  int v3 = ((HashTable_flat*)(unsigned int *)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v3);
   if ( !v4 )

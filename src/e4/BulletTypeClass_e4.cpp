@@ -127,7 +127,7 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
 } // namespace gamemd
 // 0x46BBC0
 namespace gamemd {
-unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+unsigned char * BulletTypeClass::Construct(char *aP1)
 {
 
   int v3; // eax

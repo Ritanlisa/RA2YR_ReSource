@@ -94,7 +94,7 @@ void Campaign::SetupMovie() {
         v9 = (int *)v5[16]; /*0x5c2554*/
         if ( v9 ) /*0x5c2559*/
         {
-          if ( (uint8_t)Movie::GetState(v9, &v13) ) /*0x5c2560*/
+          if ( (uint8_t)((Movie*)v9)->GetState(&v13) ) /*0x5c2560*/
           {
             result = v13; /*0x5c2579*/
           }
@@ -119,12 +119,12 @@ void Campaign::SetupMovie() {
             do /*0x5c260f*/
             {
               ResourceID2CSF = GetResourceID2CSF(v4); /*0x5c25ab*/
-              MovieClass::ReadConfig(v16, v3, ResourceID2CSF); /*0x5c25af*/
+              ((MovieClass*)v16)->ReadConfig(v3, ResourceID2CSF); /*0x5c25af*/
               if ( v17 <= 1 ) /*0x5c25b9*/
               {
                 v12 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v14->abstractFlags + 4 * v13) + 4)); /*0x5c25ee*/
                 SetupLobbyCountryCombo(hDlg, ResourceID2CSF, v12); /*0x5c25f3*/
-                SessionClass::SetPlayerOption(*v10, v12); /*0x5c25fc*/
+                ((SessionClass*)*v10)->SetPlayerOption(v12); /*0x5c25fc*/
                 v3 = hDlg; /*0x5c2601*/
               }
               else

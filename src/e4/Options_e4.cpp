@@ -188,7 +188,7 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
-          v15 = (char *)(EventClass::AddEvent((int)(v29), *((unsigned int *)dword_A83D4C + 12),(void *)(0x1Du))); /*0x4f13e5*/
+          v15 = (char *)(((EventClass*)(int)(v29))->AddEvent(*((unsigned int *)dword_A83D4C + 12), (void *)(0x1Du))); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -237,7 +237,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = (unsigned int)((void (__cdecl *)(v24[1])); /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u),(void *)((int)v19))); /*0x4f15c6*/
+            v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (void *)((int)v19))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             ((gamemd::Debug *)this)->Log(); /*0x4f15dc*/
           }

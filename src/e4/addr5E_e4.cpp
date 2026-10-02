@@ -931,8 +931,8 @@ LABEL_102:
           goto LABEL_98;
         }
         ((WideString *)((wchar_t **)&v198[24]))->Assign(Destination);
-        v37 = NetworkLobby::DeleteAndZero((const wchar_t **)&v198[24]);
-        DeleteAndZero::Alt((void **)&v198[24]);
+        v37 = ((NetworkLobby*)(const wchar_t **)&v198[24])->DeleteAndZero();
+        ((DeleteAndZero*)(void **)&v198[24])->Alt();
         if ( v37 || (v37 = Player::FindByName((wchar_t *)Destination)) != 0 )
         {
           if ( v37 != (wchar_t *)*(&g_MatrixTransformState + 2281)

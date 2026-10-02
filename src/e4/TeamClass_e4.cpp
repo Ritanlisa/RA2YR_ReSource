@@ -1140,13 +1140,8 @@ int TeamClass::Update_0(int aP1, int aP2, int aP3, char aP4, int aP5)
     currentScript = (TeamClass *)this->currentScript; /*0x6e53de*/
     for ( BYTE1(this->spawnCell) = 1; currentScript; currentScript = (TeamClass *)currentScript->currentScript ) /*0x6e53ec*/
     {
-      if ( TriggerClass::RegisterEvent( /*0x6e5414*/
-             (int)currentScript,
-             aP1,
-             aP2,
-             aP4,
-             *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28 == 2,
-             aP5) )
+      if ( ((TriggerClass*)/*0x6e5414*/
+             (int)currentScript)->RegisterEvent(/*0x6e5414*/ aP1, aP2, aP4, *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28 == 2, aP5) )
       {
         v10 = *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28; /*0x6e5420*/
         if ( !v10 ) /*0x6e5429*/

@@ -383,7 +383,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         do /*0x628c9c*/
         {
           v12 = v10 + *(unsigned int *)&this->m_1[3]; /*0x628c73*/
-          String::CopyChecked(v11, (const char *)v12); /*0x628c76*/
+          ((String*)v11)->CopyChecked((const char *)v12); /*0x628c76*/
           *((unsigned int *)v11 + 64) = *(unsigned int *)(v12 + 256); /*0x628c85*/
           v10 += 260; /*0x628c8b*/
           v11 += 260; /*0x628c91*/
@@ -1846,9 +1846,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo(int a2
     if ( m_8 <= 0 ) /*0x628208*/
       return 1; /*0x628231*/
     for ( i = 0; /*0x62820a*/
-          !DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(
-             (DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode *)(i + *(unsigned int *)&this->m_1[3]),
-             (unsigned char *)(i + *(unsigned int *)(a2 + 4)));
+          !((DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode*)(DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode *)(i + *(unsigned int *)&this->m_1[3]))->HashEntryCompare((unsigned char *)(i + *(unsigned int *)(a2 + 4)));
           i += 3 )
     {
       if ( ++v4 >= this->m_8 ) /*0x628229*/

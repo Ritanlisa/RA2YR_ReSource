@@ -262,7 +262,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   }
   if ( v96 == -1 )
   {
-    MovementAI::StepFootClass(this, 0);
+    ((MovementAI*)this)->StepFootClass(0);
     return 0;
   }
   unsigned short * v33 = (unsigned short *)(*(int (**)(int *, int *))(*v5 + 440))(v5, &v97);
@@ -308,11 +308,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   if ( !*(unsigned char *)(v40 + 144) || *(unsigned char *)(v40 + 129) || *(unsigned char *)(v40 + 141) )
     return 7;
   int *v41; // eax
-  v41 = Coord::Subtract(
-          &v108,
-          DataGlobal_89F6D8[2 * v34] + *(unsigned int *)(v40 + 156),
-          *(unsigned int *)(v40 + 160) + DataGlobal_89F6DC[2 * v34],
-          *(unsigned int *)(v40 + 164));
+  v41 = ((Coord*)&v108)->Subtract(DataGlobal_89F6D8[2 * v34] + *(unsigned int *)(v40 + 156), *(unsigned int *)(v40 + 160) + DataGlobal_89F6DC[2 * v34], *(unsigned int *)(v40 + 164));
   v102 = *v41;
   v103 = v41[1];
   v104 = v41[2];
@@ -377,7 +373,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         v49[1] = v109;
         v49[2] = 0;
         *(unsigned int *)(this->m_State + 1504) = -1;
-        MovementAI::StepFootClass(this, 0);
+        ((MovementAI*)this)->StepFootClass(0);
         v96 = MovementAI::MainFootClass(0);
       }
       if ( v96 )

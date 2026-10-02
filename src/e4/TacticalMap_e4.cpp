@@ -134,7 +134,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
 } // namespace gamemd
 // 0x4F4480
 namespace gamemd {
-int TacticalMap::Redraw(void *a1)
+int TacticalMap::Redraw()
 {
 
   AudioStream *v1; // ebp

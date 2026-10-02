@@ -623,7 +623,7 @@ v3 = (char)((wchar_t *)(0));
 
 // 0x7B7100
 namespace gamemd {
-int WideString::GetOrEmpty(void *a1_1)
+int WideString::GetOrEmpty()
 {
 
   wchar_t *result; // eax
@@ -638,7 +638,7 @@ int WideString::GetOrEmpty(void *a1_1)
 
 // 0x7B7140
 namespace gamemd {
-int WideString::GetOrEmpty_Alt(void *a1_1)
+int WideString::GetOrEmpty_Alt()
 {
 
   wchar_t *result; // eax
@@ -669,7 +669,7 @@ wchar_t WideString::GetChar(ObjectClass * aP1)
 
 // 0x7B71B0
 namespace gamemd {
-int WideString::Length(void *a1_1)
+int WideString::Length()
 {
 
   const wchar_t *result; // eax

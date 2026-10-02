@@ -80,7 +80,7 @@ void Debug::ScrollText(const char *aP1)
 }
 // 0x6E61F0
 namespace gamemd {
-int Debug::AccumFlags(void *a1_1)
+int Debug::AccumFlags()
 {
 
   TriggerTypeClass *Debug_field_0xA0; // esi

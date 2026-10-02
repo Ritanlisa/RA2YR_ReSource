@@ -113,7 +113,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 }
 // 0x4C66C0
 namespace gamemd {
-int EventClass::AddEvent(int a2, unsigned __int8 a3, int aP1, int aP3, int aP4, int aP5, int a4, int a5, int a6, int aP2)
+int EventClass::AddEvent(int a2, unsigned __int8 a3)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
@@ -136,7 +136,7 @@ int EventClass::AddEvent(int a2, unsigned __int8 a3, int aP1, int aP3, int aP4, 
 }
 // 0x4C6720
 namespace gamemd {
-int EventClass::Add2(int a2, unsigned __int8 a3, int a4, int aP1, int aP3, int aP4, int aP5, int a5, int a6, int aP2)
+int EventClass::Add2(int a3, unsigned __int8 aP1, int aP3)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c673c*/

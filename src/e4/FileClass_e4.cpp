@@ -441,7 +441,7 @@ char FileClass::Stub(int a1)
 } // namespace gamemd
 // 0x76F020
 namespace gamemd {
-int FileClass::GetState(void *a1)
+int FileClass::GetState()
 {
 
   return this->FilePointer; /*0x76f023*/

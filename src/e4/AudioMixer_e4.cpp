@@ -27,7 +27,7 @@ int AudioMixer::SetVolume()
 } // namespace gamemd
 // 0x4071C0
 namespace gamemd {
-int AudioMixer::PlaySample(void *a1)
+int AudioMixer::PlaySample()
 {
 
   int AudioMixer_field_08; // eax
@@ -180,7 +180,7 @@ int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 } // namespace gamemd
 // 0x406E80
 namespace gamemd {
-int AudioMixer::Shutdown(void *a1)
+int AudioMixer::Shutdown()
 {
 
   if ( g_Audio_Enabled ) /*0x406e88*/

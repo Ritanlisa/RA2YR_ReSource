@@ -161,15 +161,8 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
       if ( v17 ) /*0x4b5db8*/
-        AnimClass::ctor( /*0x4b5dd8*/
-          v17,
-          *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 76),
-          &v36,
-          0,
-          1,
-          (void *)0x600,
-          0,
-          0);
+        ((AnimClass*)/*0x4b5dd8*/
+          v17)->ctor(/*0x4b5dd8*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 76), &v36, 0, 1, (void *)0x600, 0, 0);
       if ( a1->__pad_18[0] ) /*0x4b5ddd*/
       {
         v18 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5de9*/

@@ -11,7 +11,7 @@ struct Mixer {
     unsigned int u32_4;
     unsigned int u32_8;
 // --- flat members (END) ---
-    int ReleaseChannel(void *a1);
+    int ReleaseChannel();
     int RequestAllBuffers();
 };
 

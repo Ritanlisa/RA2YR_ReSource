@@ -20,7 +20,7 @@ struct Theme {
     unsigned int ThemeClass;
 // --- flat members (END) ---
     bool IsPlaying();
-    int QueueSong(IUnknown * aP1, void *a2);
+    int QueueSong(int aP1);
     int Stop(char aP1);
 };
 

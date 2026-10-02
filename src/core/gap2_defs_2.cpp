@@ -553,7 +553,7 @@ void Player::RandomAssign() {
         if ( v5 ) /*0x69b915*/
           v3->q12C = (*(int (**)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
         else
-          v3->q12C = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 9); /*0x69b935*/
+          v3->q12C = ((Random*)(Random *)&(&dword_A8B230)[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b935*/
       }
       if ( v3->q15C == -2 ) /*0x69b941*/
       {

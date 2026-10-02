@@ -56,7 +56,7 @@ int AudioStream::Stop()
 }
 // 0x4026F0
 namespace gamemd {
-int AudioStream::ReleaseChannel(void *a1_1)
+int AudioStream::ReleaseChannel()
 {
 
   (*(void (**)(void))(this->AudioStream_field_0xD4[0] + 40))(); /*0x4026f9*/
@@ -424,7 +424,7 @@ int AudioStream::ProcessCallback(void *a1_1)
 }
 // 0x4084E0
 namespace gamemd {
-void AudioStream::InitNodeFields(void *a1_1)
+void AudioStream::InitNodeFields()
 {
 
   *(unsigned int *)this->__pad_0 = 0; /*0x4084e2*/
@@ -1035,7 +1035,7 @@ LABEL_52:
 }
 // 0x7BD270
 namespace gamemd {
-int AudioStream::SetFlag4C(void *a1_1)
+int AudioStream::SetFlag4C()
 {
 
   int result; // eax
@@ -1364,7 +1364,7 @@ int AudioStream::ProcessStream()
 }
 // 0x7C3960
 namespace gamemd {
-unsigned int AudioStream::GetPosition(void *a1_1)
+unsigned int AudioStream::GetPosition()
 {
 
   return (unsigned int)(60 * ((int (*)(AudioStream *))this->AudioStream_field_0x50)(this)) /*0x7c3982*/

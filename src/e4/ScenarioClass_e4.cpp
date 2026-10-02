@@ -506,14 +506,11 @@ LABEL_21:
   memset((unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
   memset(((char *)&v19), 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x683c4e*/
-  CCFileClass::Construct(&v20, v4); /*0x683c56*/
+  ((CCFileClass*)&v20)->Construct(v4); /*0x683c56*/
   if ( ((CCINIClass *)(&v19))->Load((int)&v20, 1, 0) ) /*0x683c67*/
   {
-    Bool = INIClass::GetBool( /*0x683c85*/
-             (INIClass *)&v19,
-             (uint8_t *)((char *)&stru_82BA00),
-             (uint8_t *)g_INI_Key_Intro,
-             -1);
+    Bool = ((INIClass*)/*0x683c85*/
+             (INIClass *)&v19)->GetBool(/*0x683c85*/ (uint8_t *)((char *)&stru_82BA00), (uint8_t *)g_INI_Key_Intro, -1);
     if ( Bool != -1 /*0x683ca5*/
       || (Bool = INIClass::GetBool(
                    (INIClass *)&v19,
@@ -681,7 +678,7 @@ void ScenarioClass_Construct()
     ((unsigned int *)&v5)[0] = 0; /*0x68678d*/
     v5.ownsFile = 0; /*0x686792*/
     *(unsigned int *)v5.INIClass = &CCINIClass_Vtable; /*0x686797*/
-    CCFileClass::Construct(&v6, Source); /*0x68679f*/
+    ((CCFileClass*)&v6)->Construct(Source); /*0x68679f*/
     Debug::Log(); /*0x6867aa*/
     if ( ((CCINIClass *)(&v5))->Load((int)&v6, 1, 0) ) /*0x6867be*/
     {

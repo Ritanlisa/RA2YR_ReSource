@@ -11,7 +11,7 @@
 
 // 0x40DCB0
 namespace gamemd {
-char * AbstractType::FindName(void *a1_1)
+char * AbstractType::FindName()
 {
 
   int v1; // edx

@@ -15,7 +15,7 @@
 
 // 0x406060
 namespace gamemd {
-int Mixer::ReleaseChannel(void *a1)
+int Mixer::ReleaseChannel()
 {
 
   int result; // eax

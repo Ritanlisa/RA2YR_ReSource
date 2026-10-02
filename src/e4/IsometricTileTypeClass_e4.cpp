@@ -80,7 +80,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   {
     if ( a1 ) /*0x549cce*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
+      ((ObjectTypeClass*)(ObjectTypeClass *)a1)->Construct((int)&a2); /*0x549cd8*/
       ((IsometricTileTypeClass *)((IsometricTileTypeClass *)((char *)a1 + 676)))->Constructor_0(0, 0); /*0x549ce9*/
       *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/

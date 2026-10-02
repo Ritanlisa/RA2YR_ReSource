@@ -22,7 +22,7 @@
 
 // 0x720B20
 namespace gamemd {
-int Theme::QueueSong(IUnknown * aP1, void *a2)
+int Theme::QueueSong(int aP1)
 {
 
   int IsSoundEnabled; // eax

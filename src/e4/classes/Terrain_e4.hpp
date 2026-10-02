@@ -75,7 +75,7 @@ struct Terrain {
     int GetTileType(int aP1);  // 0x48B9E0
     AbstractClass * * PlaceCliffs(int a2, int a3, IUnknown * aP3);  // 0x568E40
     AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
-    int FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3, void *a4_1);  // 0x56CB90
+    int FloodFillConnectivity(unsigned __int8 *a1, int aP2, unsigned int *aP3);  // 0x56CB90
     AbstractClass * * ProcessCellModification(IUnknown * aP1);  // 0x570050
     AbstractClass * * RecursiveModify(IUnknown * aP1);  // 0x573540
     int CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x576770

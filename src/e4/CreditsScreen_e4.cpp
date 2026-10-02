@@ -91,7 +91,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
 } // namespace gamemd
 // 0x4A3C00
 namespace gamemd {
-void CreditsScreen::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+void CreditsScreen::Init()
 {
 
   *(unsigned int *)this = 0; /*0x4a3c00*/

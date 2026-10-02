@@ -9,7 +9,7 @@
 
 // 0x486730
 namespace gamemd {
-int Value::InRange(void *a1)
+int Value::InRange()
 {
 
   int v1; // eax

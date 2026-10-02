@@ -142,8 +142,8 @@ LABEL_151:
             LoadScenarioClassByIndex((int)v60);
             ((Session*)(HWND)hWnd)->PrepareGame();
             ShowWindow((HWND)hWnd, 5);
-            if ( IsRandMap::Sed(*(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[31616]
-                                          + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960])) )
+            if ( ((IsRandMap*)*(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[31616]
+                                          + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960]))->Sed() )
             {
               v61 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
               if ( *(&g_MatrixTransformState + 2257) )
@@ -282,7 +282,7 @@ LABEL_151:
                 v86 = (gamemd::CampaignScore *)(&stru_82083C);
                 v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1080));
   int v73; // [esp+0h] [ebp-260h]
-                Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
+                ((Dialog*)(int)Destination)->ShowMessageBox(v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v13, 1);
                 return;
@@ -294,7 +294,7 @@ LABEL_151:
                 v85 = (gamemd::CampaignScore *)(&stru_82083C);
                 v15 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1088));
   int v74; // [esp+0h] [ebp-260h]
-                Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
+                ((Dialog*)(int)Destination)->ShowMessageBox(v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v16, 1);
                 return;
@@ -344,7 +344,7 @@ LABEL_151:
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = (gamemd::CampaignScore *)(&stru_82083C);
                     v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1112));
-                    Dialog::ShowMessageBox((int)Destination, v23, 0, 0, 0, _0c);
+                    ((Dialog*)(int)Destination)->ShowMessageBox(v23, 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
                     return;

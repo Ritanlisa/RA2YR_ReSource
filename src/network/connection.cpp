@@ -104,12 +104,12 @@ int ConnectionClass::connect()
   {
     do /*0x48c5e7*/
     {
-      TileType = Terrain::GetTileType(PlayerIndex, v2); /*0x48c5b1*/
+      TileType = ((Terrain*)PlayerIndex)->GetTileType(v2); /*0x48c5b1*/
       if ( (*(unsigned char *)TileType & 2) != 0 ) /*0x48c5b9*/
       {
         v5 = *(unsigned int *)(TileType + 12); /*0x48c5bb*/
         if ( *(unsigned char *)(v5 + 2) == 1 || *(unsigned int *)(v5 + 4) < this->PhoneNumber[11] ) /*0x48c5cc*/
-          PacketQueue::ReleaseEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0); /*0x48c5da*/
+          ((PacketQueue*)(PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, v2--, 0, 0); /*0x48c5da*/
       }
       PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5e0*/
       ++v2; /*0x48c5e3*/
@@ -184,9 +184,9 @@ bool IPXConnClass::receive(int a2, int a3, int *a4, int **a5, int a6, int a7)
   v19 = a4[2]; /*0x53f67e*/
   if ( a5 ) /*0x53f682*/
   {
-    Network::CopyAddress((Network *)a4, &a4, (int)v17); /*0x53f68e*/
+    ((Network*)(Network *)a4)->CopyAddress(&a4, (int)v17); /*0x53f68e*/
     a4 = (void *)(*(unsigned int *)(a5)); /*0x53f69f*/
-    NetworkID::Assign(&qword_A8DBA4, &a4, (int)v17, 0); /*0x53f6a9*/
+    ((NetworkID*)&qword_A8DBA4)->Assign(&a4, (int)v17, 0); /*0x53f6a9*/
   }
   v9 = 0; /*0x53f6b2*/
   if ( (unsigned char)a6 || !byte_A8DBA0 ) /*0x53f6c3*/
@@ -208,8 +208,8 @@ bool IPXConnClass::receive(int a2, int a3, int *a4, int **a5, int a6, int a7)
   qword_A8DBA4 = qword_A8DBA4; /*0x53f706*/
   v9 = *(unsigned int *)&dword_841F3C; /*0x53f710*/
   v19 = dword_A8DBAC; /*0x53f71a*/
-  if ( (uint8_t)GUID::Compare(qword_A8DBB0.__pad_0, *(unsigned int *)(dword_A8DA78) + 40) /*0x53f742*/
-    && (uint8_t)NetworkID::Compare((bool *)qword_A8DBA4.__pad_0, *(unsigned int *)(dword_A8DA78) + 40) )
+  if ( (uint8_t)((GUID*)qword_A8DBB0.__pad_0)->Compare(*(unsigned int *)(dword_A8DA78) + 40) /*0x53f742*/
+    && (uint8_t)((NetworkID*)(bool *)qword_A8DBA4.__pad_0)->Compare(*(unsigned int *)(dword_A8DA78) + 40) )
   {
     goto LABEL_13; /*0x53f749*/
   }
@@ -241,7 +241,7 @@ bool IPXConnClass::receive(int a2, int a3, int *a4, int **a5, int a6, int a7)
   LABEL_23:
     if ( v13 >= Network::GetSendCount(&unk_A8E9C0) ) /*0x53f7cb*/
       goto LABEL_27; /*0x53f7cb*/
-    ConnectionSpeed = Network::GetConnectionSpeed(&unk_A8E9C0, v13); /*0x53f7d3*/
+    ConnectionSpeed = ((Network*)&unk_A8E9C0)->GetConnectionSpeed(v13); /*0x53f7d3*/
     IDA_LOWORD(v15) = IPXConnClass::closeConnection((IPXConnClass *)&dword_A8B238, ConnectionSpeed); /*0x53f7de*/
   LABEL_26:
     v9 = v15; /*0x53f7ef*/
@@ -284,7 +284,7 @@ void IPXManagerClass::Init(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6
 
   if ( a2 == (void *)(-1) ) /*0x542fe7*/
 // 0x48bad0
-    return EventClass::SetData(*(EventClass **)(this->u32_48 + 4), a3, a4, a5, a6, a7); /*0x543008*/
+    return ((EventClass*)*(EventClass **)(this->u32_48 + 4))->SetData(a3, a4, a5, a6, a7); /*0x543008*/
   result = *((unsigned int *)this + a2 + 10); /*0x543010*/
   if ( result ) /*0x543016*/
 // 0x48bad0

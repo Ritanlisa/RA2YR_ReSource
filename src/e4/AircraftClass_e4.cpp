@@ -85,7 +85,7 @@ LABEL_9:
     ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
     ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
     Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue((int)(&v18))); /*0x41400d*/
-    FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
+    ((FacingClass*)(char *)v3 + 928)->Set_SyncLog(Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*(unsigned int *)v3[433] + 188))(v3[433]); /*0x414024*/
     (*(void (**)(int *, int))(v12 + 460))(v3, v13); /*0x41402d*/

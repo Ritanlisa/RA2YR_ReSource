@@ -221,7 +221,7 @@ struct CampaignClass {
 // --- flat members (END) ---
     AbstractClass * * SaveProgress();
     CampaignClass(ObjectClass * aP1);
-    CampaignClass * DTOR(char a2);
+    CampaignClass * DTOR();
     int LoadFromINIList();
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn10();

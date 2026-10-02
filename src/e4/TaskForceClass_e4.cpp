@@ -138,7 +138,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = INIClass::GetString((gamemd::INIClass *)(a1),(unsigned char *)(g_INI_Key_TaskForces),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
+      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
@@ -237,13 +237,8 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   do /*0x6e84cb*/
   {
     sprintf((char *const )(v8.__pad_8), "%d", v3); /*0x6e8460*/
-    if ( INIClass::GetString( /*0x6e8486*/
-           (INIClass *)aP1,
-           (uint8_t *)&this->TaskForceClass_field_0x24,
-           (uint8_t *)v8.__pad_8,
-           &g_INI_DefaultBuffer,
-           v8.__pad_28,
-           128) > 0 )
+    if ( ((INIClass*)/*0x6e8486*/
+           (INIClass *)aP1)->GetString(/*0x6e8486*/ (uint8_t *)&this->TaskForceClass_field_0x24, (uint8_t *)v8.__pad_8, &g_INI_DefaultBuffer, v8.__pad_28, 128) > 0 )
     {
       v4 = ((TaskForceClass *)(&v8))->ParseUnitCountAndType((char *)(v8.__pad_28)); /*0x6e8491*/
       v5 = this->TaskForceClass_field_0x9C[0]; /*0x6e8496*/
@@ -336,7 +331,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e86b6*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
+      ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x6e86bf*/
       *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_TaskForceClass); /*0x6e86c4*/
       aP0->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e86ca*/
       *(unsigned int *)aP0->__pad_8 = (unsigned int)(&vt_TaskForceClass); /*0x6e86d1*/

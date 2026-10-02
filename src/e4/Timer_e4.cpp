@@ -59,7 +59,7 @@ DWORD * Timer::Init(DWORD a2)
 }
 // 0x4F1B20
 namespace gamemd {
-int Timer::GetRemainingMs(void *a1_1)
+int Timer::GetRemainingMs()
 {
 
   int v1; // edi
@@ -78,7 +78,7 @@ int Timer::GetRemainingMs(void *a1_1)
 }
 // 0x54F720
 namespace gamemd {
-DWORD * Timer::PumpMessages(void *a1_1)
+DWORD * Timer::PumpMessages()
 {
 
   int v2; // eax
@@ -104,7 +104,7 @@ DWORD * Timer::PumpMessages(void *a1_1)
 }
 // 0x5B1E40
 namespace gamemd {
-int Timer::GetHighPrecision(void *a1_1)
+int Timer::GetHighPrecision()
 {
 
   int result; // eax

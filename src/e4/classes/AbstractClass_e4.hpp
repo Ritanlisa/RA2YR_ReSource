@@ -120,7 +120,7 @@ struct AbstractClass {
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     static void AnnounceExpiredPointer(AbstractClass *a1, int a2);
     int getMapCoords();  // 0x426A80
-    void DTOR(void *a1_1);  // 0x4101F0
+    void DTOR();  // 0x4101F0
     MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
     DynamicVector *  resetScriptState(unsigned int * Block, char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
@@ -262,7 +262,7 @@ struct AbstractClass {
     unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
     unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
-    int COMStub_Return0_38(void *a1_1);  // 0x5F42C0
+    int COMStub_Return0_38();  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
     int COMStub_Return0_40();  // 0x5F42E0
     int COMStub_Return0_56();  // 0x5F42F0

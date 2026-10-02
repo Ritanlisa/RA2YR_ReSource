@@ -105,7 +105,7 @@ int WebBrowser::ShowDialog()
   v1 = (const char *)(this);
   v9 = (const char *)(this);
   if ( !this || !strlen((const char *)(this)) ) /*0x773eaa*/
-    return (int)((HWND)Debug::Log(aDowebpagedialo)); /*0x774060*/
+    return (int)((HWND)((Debug*)aDowebpagedialo)->Log()); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
   result = (HWND)CreateDialog(0x131u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
   v3 = result; /*0x773ed4*/

@@ -15,7 +15,7 @@ struct LinkClass {
 // --- flat members (END) ---
     LinkClass * Destru_vt00(unsigned int * Block, char a2);
     int Destroy(void *a1);
-    int Destruct(void *a1, void *a2);
+    int Destruct();
 };
 
 } // namespace gamemd

@@ -196,7 +196,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       ++dword_A8DAB4; /*0x6522e4*/
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_Queue_CPP), 8878)); /*0x65230f*/
       v5 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_QUEUE_FULL), 0,(const char *)(g_Str_File_Queue_CPP), 8878); /*0x65231a*/
-      Dialog::ShowMessageBox(v5, StringCSF, 0, 0, 0, v7); /*0x652324*/
+      ((Dialog*)v5)->ShowMessageBox(StringCSF, 0, 0, 0, v7); /*0x652324*/
       dword_A8B8B8 = 0; /*0x652335*/
       --dword_A8DAB4; /*0x652341*/
       dword_A8B8BC = 0; /*0x652347*/
@@ -305,7 +305,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
     v11 = ((Coord2D *)(&v27))->Add(v52, v43); /*0x7053e6*/
-    v12 = (int *)(Rect::Construct(v53, v11, 3, 3)); /*0x7053f3*/
+    v12 = (int *)(((Rect*)v53)->Construct(v11, 3, 3)); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
@@ -1794,7 +1794,7 @@ char sub_5FFFA0()
 
   result = dword_AC1688; /*0x5fffa0*/
   for ( i = dword_AC1688 - 1; i >= 0; --i ) /*0x5fffab*/
-    result = (char)(BuildingLight::CalculateShading(v4, v1)); /*0x5fffb6*/
+    result = (char)(((BuildingLight*)v4)->CalculateShading(v1)); /*0x5fffb6*/
   return result; /*0x5fffbe*/
 }
 } // namespace gamemd

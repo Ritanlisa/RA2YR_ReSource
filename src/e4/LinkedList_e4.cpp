@@ -168,7 +168,7 @@ LABEL_61:
   MixFileClass_MULTI = (int)((MixFileClass *)(v14))->FromFile((char *)(aMultiMix), (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = CCFileClass::Construct(&v24,(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
+  v15 = ((CCFileClass*)&v24)->Construct((void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
   v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
   ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/

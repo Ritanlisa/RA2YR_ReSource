@@ -61,7 +61,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
-    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)((char *)&g_INI_Key_TRUCKA),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Source), 32); /*0x6f19f4*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Source), 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
@@ -210,7 +210,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67b51e*/
+  if ( ((INIClass*)(INIClass *)a1)->GetString((unsigned char *)(edx0), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67b51e*/
 // 0x75e3b0
     return WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination)); /*0x67b52b*/
   else

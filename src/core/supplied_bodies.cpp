@@ -47,11 +47,11 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2, int a3, int a4) {
 
     NullGuard::Call((GraphicMenuItem *)this, (int)a2); /*0x4f37ad*/
     v3 = (unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
-    v4 = (unsigned int *)(CCFileClass::Construct2(&v7, v3)); /*0x4f37ba*/
+    v4 = (unsigned int *)(((CCFileClass*)&v7)->Construct2(v3)); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
     *(unsigned int *)v7.CDFileClass = 0; /*0x4f37ce*/
     v9 = 0; /*0x4f37d6*/
-    Vector::Clear((int)v8); /*0x4f37de*/
+    ((Vector*)(int)v8)->Clear(); /*0x4f37de*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f37e7*/
     result = (unsigned int *)((BufferIOFileClass*)(BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
     if ( v5 ) /*0x4f37f6*/
@@ -61,7 +61,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2, int a3, int a4) {
       {
         result = MSVQAnim::ConstructMSVQAnimHidden((MSVQAnim *)result, v3, (int *)DSurface_Alternate, (int)(a2 + 6), 1); /*0x4f3816*/
         if ( result ) /*0x4f381d*/
-          return (unsigned int *)MSEngine::ProcessEvents((MSEngine *)a2, (char)result, 300000); /*0x4f3827*/
+          return (unsigned int *)((MSEngine*)(MSEngine *)a2)->ProcessEvents((char)result, 300000); /*0x4f3827*/
       }
     }
     return result; /*0x4f382c*/
@@ -110,7 +110,7 @@ unsigned int * COMClass::releaseInterface() {
 namespace gamemd {
 unsigned int * COMClass::marshalInterface(char a2, int a3, int a4) {
     *(unsigned int *)this->__pad_0 = 0; /*0x767c53*/
-    ComPtr::Release((ComPtr *)this); /*0x767c59*/
+    ((ComPtr*)(ComPtr *)this)->Release(); /*0x767c59*/
     if ( (a2 & 1) != 0 ) /*0x767c63*/
       RA2_OPDEL(this); /*0x767c66*/
     return this->__pad_0; /*0x767c70*/

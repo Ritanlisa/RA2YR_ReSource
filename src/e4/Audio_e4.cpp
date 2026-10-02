@@ -248,7 +248,7 @@ LABEL_10:
 }
 // 0x4070B0
 namespace gamemd {
-int Audio::WaitForCallback(void *a1_1)
+int Audio::WaitForCallback()
 {
 
   int v2; // ebx
@@ -317,7 +317,7 @@ int Audio::CalcRate(int a2, int a3)
 }
 // 0x409320
 namespace gamemd {
-int Audio::GetSampleSize(void *a1_1)
+int Audio::GetSampleSize()
 {
 
   return (char *)this->Audio_field_0x34 - (char *)this->Audio_field_0x38; /*0x409328*/
@@ -2467,7 +2467,7 @@ int sub_7C3860(int a1, int a2)
 }
 // 0x401080
 namespace gamemd {
-int Audio::InitChannels(void *a1_1)
+int Audio::InitChannels()
 {
 
   ((void (*)(void))AudioMixer::PlaySample)(); /*0x401083*/
@@ -2558,7 +2558,7 @@ void * Audio::GetEnabled()
 
 // 0x407070
 namespace gamemd {
-int Audio::GetFlag(void *a1_1)
+int Audio::GetFlag()
 {
 
   return RequestBufferMixer((unsigned int *)this, 0);

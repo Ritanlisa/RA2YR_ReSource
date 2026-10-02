@@ -1108,11 +1108,11 @@ struct TechnoTypeClass {
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
-    int DTOR(void *a1);
+    int DTOR();
     void Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5);
     int GetThreatMultiplier(TechnoTypeClass * aP1);
     int  SaveLoadDataArray(TechnoTypeClass * aP1);
-    int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
+    int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(int a2);
     unsigned int * LoadBase(char *aP1);

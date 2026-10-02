@@ -287,13 +287,8 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
                             (uint8_t *)(v5 + 36),
                             (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95),
                             v22);
-  if ( INIClass::GetString( /*0x721b57*/
-         (INIClass *)aP1,
-         (uint8_t *)(v5 + 36),
-         aDebris,
-         &g_INI_DefaultBuffer,
-         (char *)&v25.DynamicVector_field_0x1C,
-         128) )
+  if ( ((INIClass*)/*0x721b57*/
+         (INIClass *)aP1)->GetString(/*0x721b57*/ (uint8_t *)(v5 + 36), aDebris, &g_INI_DefaultBuffer, (char *)&v25.DynamicVector_field_0x1C, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v25))->AnimTypeConstructor(0, 0); /*0x721b6c*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_TypeList); /*0x721b7b*/
@@ -428,7 +423,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( v2 ) /*0x721f92*/
     {
-      AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
+      ((AbstractTypeClass*)(int)v2)->Init((int)&a1); /*0x721f9b*/
       ((DynamicVectorClass *)((DynamicVectorClass *)&(&v2->GrowthPercentage)[1]))->AnimTypeConstructor(0, 0); /*0x721fa4*/
       (&v2->GrowthPercentage)[1] = (int)&vt_TypeList; /*0x721fb0*/
       ((Timer *)((Timer *)v2->SpreadTimer))->Start(0); /*0x721fb6*/

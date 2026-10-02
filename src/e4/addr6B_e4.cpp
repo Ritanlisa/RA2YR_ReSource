@@ -421,9 +421,8 @@ AbstractClass * * SlaveManager_InitGrid()
                                         (CellStruct *)&v40.MapSeed_field_0x10,
                                         &v40.MapSeed_field_0x0C,
                                         v37);
-            v28 = (ObjectClass *)CellCoord::To_CellObj( /*0x6b2e93*/
-                                   (CellCoord *)&stru_87F5F0.__pad_58[416],
-                                   (int16_t *)&v40.MapSeed_field_0x08);
+            v28 = (ObjectClass *)((CellCoord*)/*0x6b2e93*/
+                                   (CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(/*0x6b2e93*/ (int16_t *)&v40.MapSeed_field_0x08);
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
@@ -592,7 +591,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   v79 = 0x7FFF; /*0x6b2ff4*/
   v80 = 0; /*0x6b2ff9*/
   v81 = 0; /*0x6b2ffe*/
-  ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
+  ((ObjectVector*)&v101)->Construct(0, 0); /*0x6b3003*/
   v8 = v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
   v101 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x6b3010*/

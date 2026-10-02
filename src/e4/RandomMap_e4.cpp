@@ -103,7 +103,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
 }
 // 0x58C800
 namespace gamemd {
-int RandomMap::GenerateTerrain(void *a1_1)
+int RandomMap::GenerateTerrain()
 {
 
   int v2; // esi
@@ -808,7 +808,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
 }
 // 0x58E9B0
 namespace gamemd {
-AbstractClass * * RandomMap::PlaceRandomMapTerrain(void *a1_1)
+AbstractClass * * RandomMap::PlaceRandomMapTerrain()
 {
 
   unsigned int *v1; // esi

@@ -196,17 +196,8 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
       ((CellClass *)((CellClass *)v6))->GetTerrainFlag(BYTE2(this->visibleCells[13])); /*0x4802cd*/
   }
   if ( *(unsigned char *)(v6 + 737) ) /*0x4802e4*/
-    TacticalClass::DrawCellOverlay( /*0x480339*/
-      v6,
-      v5,
-      (int)g_DSurface_Hidden_2,
-      *a2,
-      a2[1] - 15 * SHIBYTE(this->visibleCells[13]),
-      *a3,
-      a3[1],
-      a3[2],
-      a3[3],
-      58 - 15 * SHIBYTE(this->visibleCells[13]));
+    ((TacticalClass*)/*0x480339*/
+      v6)->DrawCellOverlay(/*0x480339*/ v5, (int)g_DSurface_Hidden_2, *a2, a2[1] - 15 * SHIBYTE(this->visibleCells[13]), *a3, a3[1], a3[2], a3[3], 58 - 15 * SHIBYTE(this->visibleCells[13]));
 
 }
 }

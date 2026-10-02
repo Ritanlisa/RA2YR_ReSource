@@ -139,18 +139,18 @@ struct Cell {
     // dup-member: unsigned int HasOccupierBit;
 // --- flat members (END) ---
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
-    int PosToIndex(void *a1_1);  // 0x42B1C0
+    int PosToIndex();  // 0x42B1C0
     int CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
     void ApplyDamage(int aP1, int a3, int a4, char aP4);
     int GetNeighbourContent(unsigned int a2);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
-    int IsValidHeight(void *a1_1);  // 0x485060
-    void IsEmpty(void *a1_1);  // 0x486380
-    int IsGroundTypeRange(void *a1_1);  // 0x4865D0
-    int IsInRange(void *a1_1);  // 0x486750
-    int IsInRange2(void *a1_1);  // 0x486770
-    void IsShore(void *a1_1);  // 0x4867B0
-    int IsBuildableAdvanced(void *a1_1);  // 0x486FF0
+    int IsValidHeight();  // 0x485060
+    void IsEmpty();  // 0x486380
+    int IsGroundTypeRange();  // 0x4865D0
+    int IsInRange();  // 0x486750
+    int IsInRange2();  // 0x486770
+    void IsShore();  // 0x4867B0
+    int IsBuildableAdvanced();  // 0x486FF0
     int HasOccupierBit(char aP1);
     int SearchEnemies(IUnknown * aP1);  // 0x487A10
     long long GetTraversability();  // 0x487CB0

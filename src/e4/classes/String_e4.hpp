@@ -44,12 +44,12 @@ struct String {
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760
     void * AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
-    int Release(void *a1_1);  // 0x5BD5A0
+    int Release();  // 0x5BD5A0
     ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     ControlClass * * To_Waypoint();  // 0x763690
     int TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5);
-    unsigned int Length(void *a1_1);  // 0x7B54B0
+    unsigned int Length();  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     AbstractClass * * Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
@@ -57,10 +57,10 @@ struct String {
     ObjectClass * CopyConstant(char * Destination);  // 0x777B60
     char * CopyUpper(char * String, ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char * a2, void *a2_2);  // 0x4F4C70
-    char * CopyChecked(const char *a2, int aP1, int a3);
+    char * CopyChecked(const char *a2);
     bool Equals(ObjectClass * aP1, void *a2_1);  // 0x4F4CE0
     unsigned int ComputeHash(void *a1_1);  // 0x5E2620
-    char * Trim(void *a1_1);  // 0x727CF0
+    char * Trim();  // 0x727CF0
     char ** Assign(const char *a2);  // 0x7B4630
     char ** AssignFromPtr(const char **a2);  // 0x7B4690
     bool Equals_Alt(const char *a2);  // 0x7B4710

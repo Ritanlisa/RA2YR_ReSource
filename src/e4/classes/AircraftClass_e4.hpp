@@ -717,7 +717,7 @@ struct AircraftClass {
     int RevealSight(int a2, int a3);
     int UpdateDocking(int a2);
     int ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6);
-    AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
+    AircraftTypeClass * Update(int a2);
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
      double Construct(...);  // C2597 interim stub
 };

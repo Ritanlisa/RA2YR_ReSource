@@ -183,7 +183,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 
   v36 = 0; /*0x693b86*/
   ((Waypoint*)v39)->InitInvalid(); /*0x693b8a*/
-  Debug::Log(aGettingFileFro); /*0x693b94*/
+  ((Debug*)aGettingFileFro)->Log(); /*0x693b94*/
     ((Timer *)0)->GetTicks();
   Debug::Log(aRequestingFile); /*0x693bb2*/
     Ticks = ((Timer *)0)->GetTicks();
@@ -250,7 +250,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
-      Debug::Log(aTimeoutWaiting); /*0x693d5d*/
+      ((Debug*)aTimeoutWaiting)->Log(); /*0x693d5d*/
       return 0; /*0x693d76*/
     }
     v10 = 3600 - v11; /*0x693d57*/
@@ -311,7 +311,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     strcpy(a1, v51); /*0x693e84*/
   }
   v36 = v17; /*0x693f18*/
-  Debug::Log(aHostRespondedW); /*0x693f1c*/
+  ((Debug*)aHostRespondedW)->Log(); /*0x693f1c*/
   Debug::Log("File name is %s\n", a1); /*0x693f2b*/
   LABEL_50:
   v20 = 3600; /*0x693f33*/
@@ -393,7 +393,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
-      Debug::Log(aTimeoutWaiting_1); /*0x694141*/
+      ((Debug*)aTimeoutWaiting_1)->Log(); /*0x694141*/
       return 0; /*0x69415a*/
     }
     v28 = 3600 - v29; /*0x69413b*/
@@ -676,7 +676,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   TimerGetTicks(); /*0x694776*/
   v47 = 0; /*0x69478b*/
   Debug::Log(); /*0x694790*/
-  CCFileClass::Construct(&v54, Source); /*0x69479d*/
+  ((CCFileClass*)&v54)->Construct(Source); /*0x69479d*/
   if ( !(uint8_t)((CCFileClass *)(&v54))->Open((int)(0)) ) /*0x6947a7*/
   {
     *(unsigned int *)v54.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x6947b7*/
@@ -1062,7 +1062,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
     if ( ++v6 >= dword_A8B8D8 ) /*0x6953fb*/
       return 0; /*0x6953fb*/
   }
-  CCFileClass::Construct(v18, (char *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88)); /*0x695260*/
+  ((CCFileClass*)v18)->Construct((char *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88)); /*0x695260*/
   if ( !((CCFileClass *)(v18))->Open(0) && a5 == 1 ) /*0x69527b*/
   {
     v7 = *(unsigned int *)(dword_A8B8CC + 4 * v6); /*0x695283*/

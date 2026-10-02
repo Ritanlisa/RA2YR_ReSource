@@ -384,7 +384,7 @@ LABEL_164:
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345)
     && a0
     && (((unsigned int *)a0)[0] & 4) != 0
-    && !ParasiteClass::CanInfect(*((ParasiteClass **)a0 + 423), (((unsigned int *)v25)[0] & 4) != 0 ? v25 : 0) )
+    && !((ParasiteClass*)*((ParasiteClass **)a0 + 423))->CanInfect((((unsigned int *)v25)[0] & 4) != 0 ? v25 : 0) )
   {
     return 5; /*0x6fcac2*/
   }

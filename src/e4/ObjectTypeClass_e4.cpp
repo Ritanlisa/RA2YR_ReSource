@@ -261,7 +261,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
-BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+BulletTypeClass * ObjectTypeClass::Construct(int aP1)
 {
 
   int *v3; // eax
@@ -533,7 +533,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 } // namespace gamemd
 // 0x5F9070
 namespace gamemd {
-AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
+AbstractClass * * ObjectTypeClass::Load2DArt()
 {
 
   char *v2; // edi
@@ -1521,7 +1521,7 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 } // namespace gamemd
 // 0x5F8080
 namespace gamemd {
-void ObjectTypeClass::CleanupWeapons(void *a1)
+void ObjectTypeClass::CleanupWeapons()
 {
 
   char *v1; // esi

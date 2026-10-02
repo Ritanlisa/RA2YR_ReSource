@@ -178,7 +178,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 }
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * MSEngine::Destructor(void *a1_1)
+CampaignClass * MSEngine::Destructor()
 {
 
   void *v2; // eax

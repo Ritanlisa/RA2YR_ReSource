@@ -377,7 +377,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = (int *)(v6); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
-      FactoryClass::FinishProduction((int *)v4->__pad_0, (int)v6); /*0x636353*/
+      ((FactoryClass*)(int *)v4->__pad_0)->FinishProduction((int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Block + 1)); /*0x636360*/
       v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))(v4, &Block); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/

@@ -68,9 +68,9 @@ int sub_679CC0()
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
     v1[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679d14*/
-    CCFileClass::Construct(v7,(void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
+    ((CCFileClass*)v7)->Construct((void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
     if ( ((CCINIClass *)((int)(v1)))->Load((int)v7, 0, 0) ) /*0x679d2c*/
-      dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
+      dword_B053B4 = ((Hash*)(int)v1)->ComputeHashSHA1(); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679d51*/
     v9 = 0; /*0x679d59*/
@@ -102,7 +102,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(String), 128) ) /*0x67b57c*/
+  if ( ((INIClass*)(INIClass *)edx0)->GetString((unsigned char *)(aP2), (gamemd::INIClass *)(a3), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(String), 128) ) /*0x67b57c*/
   {
     ((VectorClass *)(&v17))->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -320,7 +320,7 @@ int RulesClass::sub_674500()
 namespace gamemd {
 int unknown_libname_29()
 {
-  return Hash::ComputeHashSHA1((int)&dword_887180);
+  return ((Hash*)(int)&dword_887180)->ComputeHashSHA1();
 }
 } // namespace gamemd
 
@@ -358,7 +358,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bade*/
+  if ( ((INIClass*)(INIClass *)a0)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else

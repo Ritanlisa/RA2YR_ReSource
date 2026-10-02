@@ -386,7 +386,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         }
       }
     }
-    Screen::TransitionLoop(this, 1); /*0x68f625*/
+    ((Screen*)this)->TransitionLoop(1); /*0x68f625*/
     v63 += 2; /*0x68f646*/
     v53 -= 2; /*0x68f651*/
     v75 += (int)aP1; /*0x68f660*/

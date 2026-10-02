@@ -181,9 +181,8 @@ int CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
       return 0; /*0x4713e4*/
     while ( 1 ) /*0x47102c*/
     {
-      v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776),
-              (int)v57);
+      v21 = ((Color*)/*0x47102c*/
+              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776))->ConvertToRGB(/*0x47102c*/ (int)v57);
       IDA_LOWORD(v56) = *(unsigned short *)v21; /*0x471034*/
       IDA_BYTE2(v56) = *(unsigned char *)(v21 + 2); /*0x47103c*/
       v22 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471067*/

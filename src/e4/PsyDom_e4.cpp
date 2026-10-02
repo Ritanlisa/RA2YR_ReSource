@@ -141,15 +141,8 @@ void PsyDom::Fire()
           v34[2] = v16 + v20; /*0x53b2d8*/
           v21 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x53b2dc*/
           if ( v21 ) /*0x53b2e6*/
-            v22 = (BuildingClass *)AnimClass::ctor( /*0x53b306*/
-                                     v21,
-                                     *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 804),
-                                     v34,
-                                     0,
-                                     1,
-                                     (void *)0x600,
-                                     0,
-                                     0);
+            v22 = (BuildingClass *)((AnimClass*)/*0x53b306*/
+                                     v21)->ctor(/*0x53b306*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 804), v34, 0, 1, (void *)0x600, 0, 0);
           else
             v22 = 0; /*0x53b30d*/
           *(unsigned int *)(i + 712) = (unsigned int)(v22); /*0x53b311*/

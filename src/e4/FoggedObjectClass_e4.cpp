@@ -150,7 +150,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     goto LABEL_27; /*0x4d0bdf*/
   if ( !dword_8B3CC8 ) /*0x4d0be3*/
     v21 = 10; /*0x4d0be5*/
-  if ( Vector::ReallocDynamic((int)&g_MissionPool, v21) ) /*0x4d0bf0*/
+  if ( ((Vector*)(int)&g_MissionPool)->ReallocDynamic(v21) ) /*0x4d0bf0*/
   {
 LABEL_27:
     *((unsigned int *)g_MissionPool + 2 * g_MissionState) = v22; /*0x4d0c04*/

@@ -40,7 +40,7 @@ struct TagTypeClass {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
-    AbstractTypeClass * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    AbstractTypeClass * Construct(char *aP1);
     AbstractTypeClass * FindOrCreate(ObjectClass * Source);
     TagTypeClass * ddtor(char a2);
     TriggerTypeClass * * FindOrCreateTriggerType(char *Source);

@@ -46,7 +46,7 @@ void* CCFileClass::Destru_vt00(char a2, int a3, int a4, int a5, int a1, int aP1)
 
   *(unsigned int *)Block->CDFileClass = &vt_CCFileClass; /*0x4019a6*/
   *((unsigned int *)Block + 25) = 0; /*0x4019ac*/
-  Vector::Clear((int)Block + 88); /*0x4019b3*/
+  ((Vector*)(int)Block + 88)->Clear(); /*0x4019b3*/
   *(unsigned int *)Block->CDFileClass = &off_7E1668; /*0x4019ba*/
   ((BufferIOFileClass*)(BufferIOFileClass *)Block)->Dtor(); /*0x4019c0*/
   if ( (a2 & 1) != 0 ) /*0x4019ca*/
@@ -367,7 +367,7 @@ void CCFileClass::Create() {
   RawFileClass v5; // [esp+4h] [ebp-48h] BYREF
   RawFileClass v6; // [esp+28h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(&v6, (int)aPbeaconShp); /*0x4309df*/
+  ((RawFileClass*)&v6)->Construct((int)aPbeaconShp); /*0x4309df*/
   EntireFile = (int16_t *)((CCFileClass*)(CCFileClass *)&v6)->ReadEntireFile(); /*0x4309e8*/
   dword_89C474 = (int)EntireFile; /*0x4309ef*/
   if ( EntireFile || (EntireFile = (int16_t *)SearchMIXFile(aPbeaconShp, 0), (dword_89C474 = (int)EntireFile) != 0) ) /*0x430a09*/

@@ -99,7 +99,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
     while ( v4 ); /*0x61064d*/
   }
   if ( v15[15] ) /*0x610655*/
-    DeleteAndZero::OrFree((void **)v15[15], 1); /*0x610659*/
+    ((DeleteAndZero*)(void **)v15[15])->OrFree(1); /*0x610659*/
   if ( unk_AC18C4 ) /*0x610666*/
   {
     v14 = (unsigned int)(unk_AC18C4 - 1); /*0x610671*/
@@ -484,7 +484,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
           v9[1] = v11; /*0x61d810*/
           *v9 = (unsigned int)(&XSurface_Vtable); /*0x61d81e*/
           v9[4] = (unsigned int)(2); /*0x61d824*/
-          Buffer::Init(v9 + 5, 0, 2 * v10 * v11); /*0x61d82b*/
+          ((Buffer*)v9 + 5)->Init(0, 2 * v10 * v11); /*0x61d82b*/
           *v9 = (unsigned int)(&BSurface_Vtable); /*0x61d830*/
           v12 = v9; /*0x61d836*/
         }
@@ -587,7 +587,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
                 v11[3] = (unsigned int)(0);
                 *v11 = (unsigned int)(&XSurface_Vtable);
                 v11[4] = (unsigned int)(2);
-                Buffer::Init(v11 + 5, 0, 2 * v13 * v12); /*0x61ee62*/
+                ((Buffer*)v11 + 5)->Init(0, 2 * v13 * v12); /*0x61ee62*/
                 *v11 = (unsigned int)(&BSurface_Vtable); /*0x61ee67*/
                 v14 = v11; /*0x61ee6d*/
               }

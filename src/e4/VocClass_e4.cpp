@@ -81,7 +81,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
 } // namespace gamemd
 // 0x753250
 namespace gamemd {
-int VocClass::FindByName(void *a1)
+int VocClass::FindByName()
 {
 
   int v3; // esi

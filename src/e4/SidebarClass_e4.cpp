@@ -209,13 +209,8 @@ void * SidebarClass::LoadAssets()
   }
   v2 = (ConvertClass *)__2_YAPAXI_Z(0x188u); /*0x6a5880*/
   if ( v2 ) /*0x6a588a*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[132] = ConvertClass::Construct( /*0x6a58ad*/
-                                              v2,
-                                              (int)v14,
-                                              (int)v14,
-                                              (int)g_DSurface_Primary,
-                                              1,
-                                              0);
+    *(unsigned int *)&stru_87F5F0.__pad_58[132] = ((ConvertClass*)/*0x6a58ad*/
+                                              v2)->Construct(/*0x6a58ad*/ (int)v14, (int)v14, (int)g_DSurface_Primary, 1, 0);
   else
     *(unsigned int *)&stru_87F5F0.__pad_58[132] = 0; /*0x6a58b4*/
   dword_B0B484 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aGclock2Shp),(gamemd::ConvertClass *)((bool *)&byte_B0B48F))); /*0x6a58d4*/
@@ -606,9 +601,8 @@ int SidebarClass::SwitchTab(int a2)
       do /*0x6a76c8*/
       {
         ((Hash*)(LinkClass *)(56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720))->Reset(); /*0x6a769d*/
-        Hash::InsertOrdered( /*0x6a76c0*/
-          (GScreenClass *)&stru_87F5F0.__pad_58[416],
-          56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720);
+        ((Hash*)/*0x6a76c0*/
+          (GScreenClass *)&stru_87F5F0.__pad_58[416])->InsertOrdered(/*0x6a76c0*/ 56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720);
         ++v8; /*0x6a76c5*/
       }
       while ( v8 < v9 ); /*0x6a76c8*/

@@ -26,7 +26,7 @@ void Vector::Math_Vector2D_Magnitude()
 }
 // 0x512D30
 namespace gamemd {
-int Vector::Cleanup(void *a1_1)
+int Vector::Cleanup()
 {
 
   int result; // eax
@@ -45,7 +45,7 @@ int Vector::Cleanup(void *a1_1)
 }
 // 0x513100
 namespace gamemd {
-int Vector::Destructor(void *a1_1)
+int Vector::Destructor()
 {
 
   int result; // eax

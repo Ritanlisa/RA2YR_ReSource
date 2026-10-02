@@ -825,7 +825,7 @@ void PostLoadInitScenario()
           {
             if ( (*(int (**)(int *))(v23->arrayIndex + 28))(&v23->arrayIndex) <= 0 ) /*0x684f4d*/
               break; /*0x684f4d*/
-            HouseClass::GiveTiberium_Storage(v23, 1.0, 0); /*0x684f58*/
+            ((HouseClass*)v23)->GiveTiberium_Storage(1.0, 0); /*0x684f58*/
             v26 = *(unsigned int *)(v25 + 184); /*0x684f5d*/
             v24 -= v26; /*0x684f63*/
             __asm { fstp st } /*0x684f67*/
@@ -838,7 +838,7 @@ void PostLoadInitScenario()
     }
   }
   Radar::UpdateReveal(1, 0); /*0x684f89*/
-  Voxel::InitDistanceTable(v34); /*0x684f8e*/
+  ((Voxel*)v34)->InitDistanceTable(); /*0x684f8e*/
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x684f98*/
   for ( m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x684fa9*/
         m;

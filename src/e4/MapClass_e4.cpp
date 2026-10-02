@@ -509,7 +509,7 @@ int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass_flat * aP2, int *
 } // namespace gamemd
 // 0x547020
 namespace gamemd {
-ObjectClass * * MapClass::LoadFileData(void *a1)
+ObjectClass * * MapClass::LoadFileData()
 {
 
   int Size; // ebx
@@ -585,7 +585,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
 } // namespace gamemd
 // 0x5652C0
 namespace gamemd {
-void* MapClass::Destruct(void *a1, void *a2)
+void* MapClass::Destruct()
 {
 
   unsigned int *v2; // edi
@@ -4563,7 +4563,7 @@ int MapClass::IsCellPassable(int a1, int a2)
 
 }
 // 0x565B00
-int MapClass::FreeAllCells(void *a1)
+int MapClass::FreeAllCells()
 {
 
   int i; // ecx

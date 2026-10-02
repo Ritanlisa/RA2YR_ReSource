@@ -784,7 +784,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   RA2_OPDEL(v5); /*0x596060*/
   strncat(Destination, (const char *)(unsigned int *)((char *)&stru_82BA00 + 11), 0x80u); /*0x596077*/
-  CCFileClass::Construct(&v18, Destination); /*0x59608b*/
+  ((CCFileClass*)&v18)->Construct(Destination); /*0x59608b*/
   if ( (uint8_t)((CCFileClass *)(&v18))->Open((int)(0)) ) /*0x596097*/
   {
     v6 = (Surface *)g_MissionQueueFrame.briefing[451]; /*0x5960a4*/
@@ -823,7 +823,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x596175*/
-  RandomMap::Generate((RandomMap *)&g_MissionQueueFrame.briefing[356], 1, hDlg); /*0x596182*/
+  ((RandomMap*)(RandomMap *)&g_MissionQueueFrame.briefing[356])->Generate(1, hDlg); /*0x596182*/
   MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x59618d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5961a2*/
     MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x5961aa*/

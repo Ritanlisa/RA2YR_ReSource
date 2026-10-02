@@ -285,15 +285,8 @@ char JumpjetLocomotionClass_Process(int a1)
             v30 = *location; /*0x4b07fd*/
             v31 = location[1]; /*0x4b0804*/
             v32 = location[2]; /*0x4b0810*/
-            AnimClass::ctor( /*0x4b0823*/
-              v19,
-              *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148),
-              &v30,
-              0,
-              1,
-              (void *)0x600,
-              0,
-              0);
+            ((AnimClass*)/*0x4b0823*/
+              v19)->ctor(/*0x4b0823*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148), &v30, 0, 1, (void *)0x600, 0, 0);
           }
         }
       }
@@ -504,7 +497,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   *(unsigned int *)v44.__pad_0 = 450; /*0x4b9912*/
   v41 = v8; /*0x4b992b*/
   v11 = ((Coord2D *)(&v44))->Add((unsigned int *)(&v42),(unsigned int *)(&v40)); /*0x4b992f*/
-  v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
+  v12 = ((Rect*)&v47)->Construct(v11, 190, 80); /*0x4b9939*/
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12[1]; /*0x4b994b*/
   v46[2] = v12[2]; /*0x4b9958*/

@@ -101,7 +101,7 @@ short EventQueue::Read()
 } // namespace gamemd
 // 0x54F650
 namespace gamemd {
-__int16 EventQueue::Check(void *a1, void *a2, void *a3)
+__int16 EventQueue::Check()
 {
 
   int v1; // eax

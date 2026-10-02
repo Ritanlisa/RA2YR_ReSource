@@ -999,7 +999,7 @@ int Scenario::ClearScreen(void *a1_1)
 }
 // 0x684620
 namespace gamemd {
-int Scenario::LoadWithProgress()
+int Scenario::LoadWithProgress(const char *this, double a2)
 {
 
   char v2; // al

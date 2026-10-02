@@ -102,7 +102,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v36 = (int *)(-2); /*0x704a77*/
     v35 = (unsigned int)((int *)(-2));
     v12 = (unsigned int *)((int)(((Coord2D *)(&v35))->Add(v37,(unsigned int *)(v34))));
-    v13 = (int *)((int)(Rect::Construct(v47, v12, 3, 3)));
+    v13 = (int *)((int)(((Rect*)v47)->Construct(v12, 3, 3)));
     v39 = (int *)(*v13);
     v40 = (int *)(v13[1]);
     v41 = (int *)(v13[2]);
@@ -120,7 +120,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v35 = -2; /*0x704b29*/
     v36 = (int *)(-2); /*0x704b2d*/
     v16 = ((Coord2D *)(&v35))->Add(v37,(unsigned int *)(v33)); /*0x704b41*/
-    v17 = (int *)(Rect::Construct(v48, v16, 3, 3)); /*0x704b4e*/
+    v17 = (int *)(((Rect*)v48)->Construct(v16, 3, 3)); /*0x704b4e*/
     v43 = (int *)(*v17); /*0x704b57*/
     v44 = (int *)(v17[1]); /*0x704b60*/
     v45 = (int *)(v17[2]); /*0x704b6c*/
@@ -263,7 +263,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v7 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704f1e*/
      | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)
      | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue);
-  v8 = (int *)(Rect::Construct(v45, &v28, 3, 3));
+  v8 = (int *)(((Rect*)v45)->Construct(&v28, 3, 3));
   v34 = (int)(*v8);
   v35 = (int)(v8[1]);
   v36 = (int *)(v8[2]);
@@ -586,7 +586,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
         }
       }
     }
-    AbstractClassVector::Construct((AbstractClassVector *)&v33, 0, 0); /*0x7095e2*/
+    ((AbstractClassVector*)(AbstractClassVector *)&v33)->Construct(0, 0); /*0x7095e2*/
     v33 = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x7095f2*/
     v38 = 10; /*0x7095fa*/
     v37 = 0; /*0x7095fe*/

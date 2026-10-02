@@ -372,15 +372,7 @@ LABEL_17:
         {
           aP2 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
           v11 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
-          AnimClass::ctor(
-            (void **)v9,
-            *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v11),
-            &aP2,
-            (CoordStruct *)2,
-            (CoordStruct *)1,
-            (void *)0x600,
-            (void *)0xFFFFFFF6,
-            0);
+          ((AnimClass*)(void **)v9)->ctor(*(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v11), &aP2, (CoordStruct *)2, (CoordStruct *)1, (void *)0x600, (void *)0xFFFFFFF6, 0);
         }
         edx19 = v126;
         *(unsigned int *)(a1 + 48) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
@@ -455,15 +447,7 @@ LABEL_63:
         {
           v129 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
           v45 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
-          AnimClass::ctor(
-            (void **)v43,
-            *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v45),
-            &v129,
-            (CoordStruct *)2,
-            (CoordStruct *)1,
-            (void *)0x600,
-            (void *)0xFFFFFFF6,
-            0);
+          ((AnimClass*)(void **)v43)->ctor(*(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v45), &v129, (CoordStruct *)2, (CoordStruct *)1, (void *)0x600, (void *)0xFFFFFFF6, 0);
         }
         v46 = *(ObjectClass **)(a1 + 8);
         v124 = *(CoordStruct *)v46->location;
@@ -612,15 +596,7 @@ LABEL_116:
         {
           v124 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
           v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37776]))->FindIndex();
-          AnimClass::ctor(
-            (void **)v96,
-            *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98),
-            &v124,
-            0,
-            (CoordStruct *)1,
-            (void *)0x600,
-            0,
-            0);
+          ((AnimClass*)(void **)v96)->ctor(*(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98), &v124, 0, (CoordStruct *)1, (void *)0x600, 0, 0);
         }
         edx118 = v126;
         *(unsigned int *)(a1 + 48) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
@@ -641,9 +617,7 @@ LABEL_119:
         v121 = (IUnknown *)v103;
         st7_120a = Math::ArcTan2((IUnknown *)IDA_LODWORD(aP0));
         IDA_LODWORD(var64_4) = Math::RoundToInt(st7_120a * desiredFacing_4);
-        desiredFacing = (ObjectClass *)(*(int16_t *)ProgressTimer::GetValue(
-                                                      (unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904),
-                                                      (IUnknown *)v128)
+        desiredFacing = (ObjectClass *)(*(int16_t *)((ProgressTimer*)(unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904))->GetValue((IUnknown *)v128)
                                       - 0x3FFF);
         *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
         var64_4 = (double)IDA_SLODWORD(var64_4);
@@ -737,15 +711,7 @@ LABEL_38:
         {
           v131 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
           v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
-          AnimClass::ctor(
-            (void **)v25,
-            *(CoordStruct **)(*(unsigned int *)&(&stru_89E138)[90140] + 4 * (unsigned int)v27),
-            &v131,
-            (CoordStruct *)2,
-            (CoordStruct *)1,
-            (void *)0x600,
-            (void *)0xFFFFFFF6,
-            0);
+          ((AnimClass*)(void **)v25)->ctor(*(CoordStruct **)(*(unsigned int *)&(&stru_89E138)[90140] + 4 * (unsigned int)v27), &v131, (CoordStruct *)2, (CoordStruct *)1, (void *)0x600, (void *)0xFFFFFFF6, 0);
         }
         v21->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = v126;

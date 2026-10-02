@@ -44,6 +44,6 @@ struct File {
     unsigned int * LoadFileVXL(int a2, int a3);  // 0x755CD0
     AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
     AbstractClass * * LoadWDTDecompress(int aP1, int a3);  // 0x76B0A0
-    int ParseAudioFileRIFF(void *a1_1);  // 0x7C12B0
+    int ParseAudioFileRIFF();  // 0x7C12B0
 };
 } // namespace gamemd

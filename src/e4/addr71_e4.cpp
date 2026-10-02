@@ -294,7 +294,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       }
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/
-      CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
+      ((CCFileClass*)v5)->Construct(Buffer); /*0x71dd29*/
       *(unsigned int *)(v4 + 164) = (unsigned int)(((CCFileClass *)(v5))->ReadEntireFile()); /*0x71dd3b*/
       v5[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x71dd41*/
       v7 = 0; /*0x71dd49*/

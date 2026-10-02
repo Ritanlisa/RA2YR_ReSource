@@ -139,7 +139,7 @@ int AbstractClass::AbstractClass_COMStub_137()
 
   MissionClass *v2; // [esp+4h] [ebp+4h]
 
-  return AircraftClass::CheckMissionStatus(v2);
+  return ((AircraftClass*)v2)->CheckMissionStatus();
 
 }
 } // namespace gamemd
@@ -761,7 +761,7 @@ int AbstractClass::GenerateUniqueID(int a1)
 
   if ( dword_A8B230 ) /*0x410238*/
   {
-    result = AbstractClass::updateAITimer(dword_A8B230); /*0x410246*/
+    result = ((AbstractClass*)dword_A8B230)->updateAITimer(); /*0x410246*/
     a1->vtable3 = (void *)result; /*0x41024f*/
   }
   else

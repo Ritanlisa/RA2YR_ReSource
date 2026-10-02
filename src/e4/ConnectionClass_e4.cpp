@@ -430,7 +430,7 @@ int ConnectionClass::serviceSendQueue()
             v6 += ((gamemd::Timer *)this)->GetTicks() - dword_887338; /*0x48c434*/
           ((ConnectionClass *)((ConnectionClass *)this->PlayerIndex))->initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
-        PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
+        ((PacketQueue*)(PacketQueue *)this->PlayerIndex)->ExtractEntry(0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }
       PlayerIndex = (int)(this->PlayerIndex);
       ++v2; /*0x48c45b*/

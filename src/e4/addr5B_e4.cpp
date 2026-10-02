@@ -181,7 +181,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   strcpy(Str, Source); /*0x5b40dd*/
   _strupr(Str); /*0x5b40ee*/
   memset(&v14, 0, 12); /*0x5b4110*/
-  v3 = Checksummer::Add_Buffer(&v14, (uint8_t *)Str, strlen(Str)); /*0x5b4127*/
+  v3 = ((Checksummer*)&v14)->Add_Buffer((uint8_t *)Str, strlen(Str)); /*0x5b4127*/
   v4 = dword_ABF00C; /*0x5b4129*/
   if ( !dword_ABF00C ) /*0x5b4130*/
     goto LABEL_9; /*0x5b4130*/
@@ -276,7 +276,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
   strcpy(String, a1); /*0x5b4462*/
   _strupr(String); /*0x5b4470*/
   memset(v14, 0, sizeof(v14)); /*0x5b4490*/
-  v5 = Checksummer::Add_Buffer(v14, (uint8_t *)String, strlen(String)); /*0x5b449c*/
+  v5 = ((Checksummer*)v14)->Add_Buffer((uint8_t *)String, strlen(String)); /*0x5b449c*/
   v6 = (unsigned int *)dword_ABEFE0; /*0x5b44a1*/
   LABEL_3:
   while ( 2 ) /*0x5b44c0*/

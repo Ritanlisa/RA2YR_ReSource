@@ -165,11 +165,8 @@ LABEL_4:
               goto LABEL_73; /*0x434ddd*/
             if ( v20 < (gamemd::AbstractClass *)(int)(aP9) ) /*0x434de7*/
             {
-              v23 = Palette::SixBitTo16Bit( /*0x434e2e*/
-                      v48,
-                      (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0,
-                      (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue,
-                      (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
+              v23 = ((Palette*)/*0x434e2e*/
+                      v48)->SixBitTo16Bit(/*0x434e2e*/ (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0, (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue, (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
               v55 = *(unsigned short *)v23; /*0x434e3b*/
               v56 = v23[2]; /*0x434e4c*/
               ((Color *)((uint8_t *)&v55))->Lerp(v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
@@ -179,7 +176,7 @@ LABEL_18:
             if ( v22 == -1 ) /*0x434e84*/
               goto LABEL_73; /*0x434e84*/
             v44 = *v12++; /*0x434e99*/
-            xLeft = (gamemd::AbstractClass *)(FontClass::RenderGlyph(aP0, v44, xLeft, aP4, v22)); /*0x434ea6*/
+            xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v44, xLeft, aP4, v22)); /*0x434ea6*/
             if ( v12 < (unsigned short *)(aP2) ) /*0x434eb0*/
             {
               v19 = (gamemd::AbstractClass *)((int)(aP8));
@@ -278,7 +275,7 @@ LABEL_26:
         if ( v35 == -1 ) /*0x4350bf*/
           break; /*0x4350bf*/
         v45 = *v12++; /*0x4350d4*/
-        xLeft = (gamemd::AbstractClass *)(FontClass::RenderGlyph(aP0, v45, xLeft, aP4, v35)); /*0x4350e1*/
+        xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v45, xLeft, aP4, v35)); /*0x4350e1*/
         if ( v12 >= (unsigned short *)(aP2) ) /*0x4350eb*/
         {
           v28 = v52; /*0x4350f1*/
@@ -365,7 +362,7 @@ LABEL_59:
           if ( v43 == -1 ) /*0x43529c*/
             break; /*0x43529c*/
           v46 = *v12++; /*0x4352ad*/
-          xLeft = (gamemd::AbstractClass *)(FontClass::RenderGlyph(aP0, v46, xLeft, aP4, v43)); /*0x4352ba*/
+          xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v46, xLeft, aP4, v43)); /*0x4352ba*/
           if ( v12 >= (unsigned short *)(aP2) ) /*0x4352c4*/
             break; /*0x4352c4*/
           v17 = v49; /*0x4352c6*/

@@ -116,7 +116,7 @@ LABEL_17:
 }
 // 0x754510
 namespace gamemd {
-AbstractClass * Voxel::RenderFrame(void *a1_1)
+AbstractClass * Voxel::RenderFrame()
 {
 
   int v1; // edi

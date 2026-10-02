@@ -203,7 +203,7 @@ int sub_6269A0()
       *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
       v8 = (DynamicVectorArray *)RA2_OPNEW(0x10u); /*0x626a37*/
       if ( v8 ) /*0x626a41*/
-        *(unsigned int *)&v3[12] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626a53*/
+        *(unsigned int *)&v3[12] = (unsigned int)(((DynamicVectorArray*)v8)->Constructor(10, 31, (int)HashStringMod31)); /*0x626a53*/
       else
         *(unsigned int *)&v3[12] = 0; /*0x626a5c*/
       v1 = v3; /*0x626a56*/
@@ -292,7 +292,7 @@ char sub_626AB0(const char * a1, int a2)
       v3[2] = (int)(v7);
       v8 = (int *)RA2_OPNEW(0x10u); /*0x626b51*/
       if ( v8 ) /*0x626b5b*/
-        v3[3] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626b6c*/
+        v3[3] = (unsigned int)(((DynamicVectorArray*)v8)->Constructor(10, 31, (int)HashStringMod31)); /*0x626b6c*/
       else
         v3[3] = 0; /*0x626b79*/
       g_FileExtensionState = (int)(v3); /*0x626b6f*/

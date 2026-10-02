@@ -253,7 +253,7 @@ int IPXGlobalConnClass::Send(void *a1, void *a2, void *a3, void *a4, void *a5)
         ((Waypoint*)&v10)->InitInvalid(); /*0x5402fd*/
         v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
         v8 = 12; /*0x54031c*/
-        PacketQueue::ExtractEntry(v6, &v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
+        ((PacketQueue*)v6)->ExtractEntry(&v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
       IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54032b*/

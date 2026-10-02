@@ -220,7 +220,7 @@ struct MPCooperative {
     int BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     int WriteCoopSaveINI();  // 0x49BE40
     int ReadCoopSaveINI();  // 0x49D120
-    unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6);  // 0x5C1470
+    unsigned int * ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x5C1470
     int Read(void *a1_1, void *a2_1);  // 0x5C18A0
     CampaignClass * * CopyTo();  // 0x5C1A10
     // dup-decl removed: COM Stub();  // 0x5C1CB0

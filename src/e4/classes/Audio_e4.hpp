@@ -86,23 +86,23 @@ struct Audio {
     int UpdatePlaybackPosition();  // 0x4054A0
     void * ProcessMixerOutput(char * Source);  // 0x4063B0
     int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
-    int WaitForCallback(void *a1_1);  // 0x4070B0
+    int WaitForCallback();  // 0x4070B0
     int Release();  // 0x407F40
     int IsSoundPlaying();  // 0x408070
     int CalcRate(int a2, int a3);  // 0x408540
-    int GetSampleSize(void *a1_1);  // 0x409320
+    int GetSampleSize();  // 0x409320
     ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
     char ** SetSoundFileName(char *Source, int a3);  // 0x5D5820
     int LoadWAVFiles(void *a1_1);  // 0x7207F0
     int InitFromINI(double a2@<st1>, double a3@<st0>, int a2, int a3, int a1, int aP1, int aP2);
     void * LoadSoundINI();  // 0x7513F0
     unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
-    int InitChannels(void *a1_1);  // 0x401080
+    int InitChannels();  // 0x401080
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
     void Shutdown(void *a1_1);  // 0x406D40
     static int IsSoundEnabled();  // 0x407000
     static void * GetEnabled();  // 0x407010
-    int GetFlag(void *a1_1);  // 0x407070
+    int GetFlag();  // 0x407070
     static int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     static int IsPlaying(...);  // 0x7529E0

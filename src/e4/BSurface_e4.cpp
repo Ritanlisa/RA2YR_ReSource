@@ -161,7 +161,7 @@ bool BSurface::CreateTripleBuffer()
           v8[2] = v10; /*0x7b8d6d*/
           v8[3] = 0; /*0x7b8d70*/
           *v8 = (unsigned int)(&XSurface_Vtable); /*0x7b8d77*/
-          Buffer::Init(v8 + 5, 0, v10 * v11 * v12); /*0x7b8d7d*/
+          ((Buffer*)v8 + 5)->Init(0, v10 * v11 * v12); /*0x7b8d7d*/
           *v8 = (unsigned int)(&BSurface_Vtable); /*0x7b8d82*/
         }
         else

@@ -155,9 +155,8 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         v8 = v7 - 1; /*0x7714d5*/
         v9 = v6; /*0x7714d6*/
         for ( *(unsigned int *)this->isUseless = v8; v9 < *(unsigned int *)this->isUseless; ++v9 ) /*0x7714e0*/
-          String::Reassign( /*0x7714f0*/
-            (String *)((&this->targetLaserTimer)[2] + 4 * v9),
-            (const char **)((&this->targetLaserTimer)[2] + 4 * v9 + 4));
+          ((String*)/*0x7714f0*/
+            (String *)((&this->targetLaserTimer)[2] + 4 * v9))->Reassign(/*0x7714f0*/ (const char **)((&this->targetLaserTimer)[2] + 4 * v9 + 4));
       }
       v10 = v6--; /*0x771506*/
     }

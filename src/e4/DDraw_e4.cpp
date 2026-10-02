@@ -201,7 +201,7 @@ int DDraw::CleanupSurfaces()
 } // namespace gamemd
 // 0x5D2530
 namespace gamemd {
-int DDraw::HandleSuspend(void *a1)
+int DDraw::HandleSuspend()
 {
 
   int result; // eax

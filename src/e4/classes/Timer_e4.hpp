@@ -86,9 +86,9 @@ struct Timer {
     void * Start(int aP1);  // 0x46B640
     int StartDouble(double a2);  // 0x4A5240
     DWORD * Init(DWORD a2);  // 0x4F1B00
-    int GetRemainingMs(void *a1_1);  // 0x4F1B20
-    DWORD * PumpMessages(void *a1_1);  // 0x54F720
-    int GetHighPrecision(void *a1_1);  // 0x5B1E40
+    int GetRemainingMs();  // 0x4F1B20
+    DWORD * PumpMessages();  // 0x54F720
+    int GetHighPrecision();  // 0x5B1E40
     int GetElapsed();  // 0x5F1390
     void * EnableHighPrecision();  // 0x5D5870
     MMRESULT DisableHighPrecision();  // 0x5D5880

@@ -944,7 +944,7 @@ int FactoryClass::GetState(void *a1)
 
 // 0x637AA0
 namespace gamemd {
-char FactoryClass::GetFlag(void *a1)
+char FactoryClass::GetFlag()
 {
 
   int result; // eax

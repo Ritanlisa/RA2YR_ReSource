@@ -315,7 +315,7 @@ int Warhead::ProcessDamageArea()
   {
     v22 = (gamemd::LightSourceClass *)((unsigned int)((LightSourceClass *)__2_YAPAXI_Z(0x4Cu)));
     if ( v22 ) /*0x65b788*/
-      v23 = LightSourceClass::Construct(v22, v31, v33, v34, v30, v8, v26, v13, v17); /*0x65b7b2*/
+      v23 = ((LightSourceClass*)v22)->Construct(v31, v33, v34, v30, v8, v26, v13, v17); /*0x65b7b2*/
     else
       v23 = 0; /*0x65b7b9*/
     *((unsigned int *)this + 9) = (unsigned int)(v23); /*0x65b7bb*/

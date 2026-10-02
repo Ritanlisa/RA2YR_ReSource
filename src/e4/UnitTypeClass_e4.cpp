@@ -383,11 +383,8 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   v19 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aPassive, v18); /*0x747829*/
   v75 = *(unsigned int *)&v4[1].__pad_6B8[4]; /*0x747836*/
   v4[1].__pad_6B8[20] = v19; /*0x74783d*/
-  *(unsigned int *)&v4[1].__pad_6B8[4] = OverlayTypeClass::ReadINIString( /*0x747848*/
-                                     (OverlayTypeClass *)this,
-                                     (uint8_t *)&((unsigned int *)v4)[0],
-                                     aMovementrestri,
-                                     v75);
+  *(unsigned int *)&v4[1].__pad_6B8[4] = ((OverlayTypeClass*)/*0x747848*/
+                                     (OverlayTypeClass *)this)->ReadINIString(/*0x747848*/ (uint8_t *)&((unsigned int *)v4)[0], aMovementrestri, v75);
   v20 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&((unsigned int *)v4)[0], aCanbeach, v4[1].__pad_6B8[31]); /*0x74785d*/
   v21 = v4[1].__pad_6B8[32]; /*0x747862*/
   v4[1].__pad_6B8[31] = v20; /*0x747868*/

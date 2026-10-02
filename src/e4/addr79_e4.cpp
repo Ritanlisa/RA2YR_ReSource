@@ -745,7 +745,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
               }
             }
           }
-          Network::receiveData((int)&unk_A8E9C0, v66); /*0x79462a*/
+          ((Network*)(int)&unk_A8E9C0)->receiveData(v66); /*0x79462a*/
           if ( !v42 ) /*0x794631*/
             goto LABEL_89; /*0x794631*/
         }

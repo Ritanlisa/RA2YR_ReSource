@@ -106,8 +106,8 @@ struct EventClass {
     int serializeEvent(void *a1_1);  // 0x48B390
     int SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
     void * Add(AbstractClass * aP1, unsigned char a3, int a4, char a5);  // 0x4C65E0
-    int AddEvent(int a2, unsigned __int8 a3, int aP1, int aP3, int aP4, int aP5, int a4, int a5, int a6, int aP2);
-    int Add2(int a2, unsigned __int8 a3, int a4, int aP1, int aP3, int aP4, int aP5, int a5, int a6, int aP2);
+    int AddEvent(int a2, unsigned __int8 a3);
+    int Add2(int a3, unsigned __int8 aP1, int aP3);
     int AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5);  // 0x4C6970
     int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1);  // 0x4C6AE0
     AbstractClass * * ProcessEvent();  // 0x4C6CB0

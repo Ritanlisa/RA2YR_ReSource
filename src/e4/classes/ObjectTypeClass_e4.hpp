@@ -299,7 +299,7 @@ struct ObjectTypeClass {
     unsigned int u32_DC6;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    AbstractClass * * Load2DArt(void *a1);
+    AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();
     BulletTypeClass * FindOrCreate(ObjectClass * Source);
     ObjectTypeClass * Destru_vt08(char a2);
@@ -345,7 +345,7 @@ struct ObjectTypeClass {
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
     unsigned int * vt_entry_7C(unsigned int * a1);
-    void CleanupWeapons(void *a1);
+    void CleanupWeapons();
     void ReleaseWaveAndString(void *a1);
     int SetRTTI71();
     void UnloadPipsSHP();

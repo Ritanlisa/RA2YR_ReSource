@@ -53,7 +53,7 @@ struct MSEngine {
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);  // 0x5ACD30
     AbstractClass * * SetCapacity(int a2, char * a3);  // 0x5ACED0
-    CampaignClass * Destructor(void *a1_1);  // 0x5CEE60
+    CampaignClass * Destructor();  // 0x5CEE60
     CampaignClass * Construct();  // 0x5D1AA0
     CampaignClass * Destruct();  // 0x5D1B30
     int ProcessEvents(char aP1, int a3);  // 0x5D1DF0

@@ -600,7 +600,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
   result = (void *)SearchMIXFile((char *)(aP0), 0); /*0x4a38de*/
   if ( !result ) /*0x4a38e5*/
   {
-    CCFileClass::Construct(&v8, aP0); /*0x4a38ed*/
+    ((CCFileClass*)&v8)->Construct(aP0); /*0x4a38ed*/
     v5 = 0; /*0x4a38f2*/
     if ( (*(uint8_t (**)(CCFileClass *, unsigned int))(*(unsigned int *)v8.CDFileClass + 20))(&v8, 0) ) /*0x4a38fd*/
     {

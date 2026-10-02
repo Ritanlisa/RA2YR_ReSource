@@ -105,8 +105,8 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   }
   LABEL_29:
   if ( !dword_A8E7AC && absType != 31 ) /*0x6a6409*/
-    VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a6415*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)&((unsigned char *)(this) + 0xCD2)[3988 * v24 + 2162], absType, idxType); /*0x6a641e*/
+    ((VoxClass*)&stru_83FA64)->FindAndPlay(-1); /*0x6a6415*/
+  ((TabCameoListClass*)(TabCameoListClass *)&((unsigned char *)(this) + 0xCD2)[3988 * v24 + 2162])->AddCameo_ReplaceItAll(absType, idxType); /*0x6a641e*/
   *((unsigned char *)&this->u32_F94 * v24 + 5504) = 1; /*0x6a6423*/
   v10 = 0; /*0x6a6427*/
   g_CameoRenderFlag = 1; /*0x6a6429*/
@@ -170,9 +170,8 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
       {
         ((Hash*)(LinkClass *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720))->Reset(); /*0x6a6590*/
-        Hash::InsertOrdered( /*0x6a65b3*/
-          (GScreenClass *)&stru_87F5F0.__pad_58[416],
-          56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720);
+        ((Hash*)/*0x6a65b3*/
+          (GScreenClass *)&stru_87F5F0.__pad_58[416])->InsertOrdered(/*0x6a65b3*/ 56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720);
       }
       g_CameoRenderFlag = 1; /*0x6a65bf*/
       ((Tactical*)(Tactical *)this)->UpdateUIVisibility(); /*0x6a65c6*/

@@ -227,7 +227,7 @@ int CellClass::Draw(int a1, int a2, void * a3) const
   if ( v6 ) /*0x48e5da*/
     (*(void (**)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
 // 0x4e1530
-  return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
+  return ((COMObject*)(GadgetClass *)this)->ActivateThunk(a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
 int CellClass::RegisterForRedraw(__int16 *a2, int a1, int a5, int a6)
@@ -339,7 +339,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v18 = this->smudgeTypeIndex; /*0x47e929*/
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
-    inited = (int)(Isometric::InitTables((IUnknown *)(this), &v13)); /*0x47e953*/
+    inited = (int)(((Isometric*)(IUnknown *)(this))->InitTables(&v13)); /*0x47e953*/
     v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
@@ -711,8 +711,8 @@ void CellClass::ReduceTiberium(int amount)
   char v31[16]; // [esp+2Ch] [ebp-20h] BYREF
   char v32[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  PlacementRect = (int *)(BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31));
-  StartCoords = (int *)(House::GetStartCoords((House *)this, v32)); /*0x480a9c*/
+  PlacementRect = (int *)(((BuildingClass*)(BuildingClass *)this)->GetPlacementRect((int *)v31));
+  StartCoords = (int *)(((House*)(House *)this)->GetStartCoords(v32)); /*0x480a9c*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x480ab1*/
   {
     v12 = *PlacementRect; /*0x480b44*/
@@ -778,9 +778,9 @@ void CellClass::ReduceTiberium(int amount)
     v16 = *((uint8_t *)&this->estimatedHealth6); /*0x480bc8*/
     *(&this->vtable27) = -1; /*0x480bce*/
     this->powerup = 0; /*0x480bd5*/
-    House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
+    ((House*)(int)this)->AnnounceUpgrade(-1); /*0x480bdc*/
     v18 = &this->objectTypeFlags; /*0x480be1*/
-    BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v18); /*0x480bea*/
+    ((BuildingClass*)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade((int)v18); /*0x480bea*/
     CellClass::ClearCrateStateForAll((CellClass *)v18); /*0x480bf1*/
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {

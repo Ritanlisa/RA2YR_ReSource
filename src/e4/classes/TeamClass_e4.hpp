@@ -138,7 +138,7 @@ struct TeamClass {
     void * FindOrCreate();
     void Destructor(void * a2);
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
-    void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
+    void Update(int a2);
     void* AttackCoordinator();
     static double AddToBuildQueue(...);  // C2597 interim stub
     static double CreateOneOf(...);  // C2597 interim stub

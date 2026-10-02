@@ -29,7 +29,7 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 
   result = g_DDraw_Force3D; /*0x6bb8e0*/
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
-    result = DDraw::CleanupSurfaces(v2); /*0x6bb8ec*/
+    result = ((DDraw*)v2)->CleanupSurfaces(); /*0x6bb8ec*/
   if ( !byte_B0BCF5 ) /*0x6bb8f7*/
   {
     if ( g_DSurface_Hidden ) /*0x6bb905*/

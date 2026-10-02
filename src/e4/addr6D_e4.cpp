@@ -537,7 +537,7 @@ long long sub_6D6A90(unsigned int * a1)
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
 // 0x47b3a0
-  return Isometric::InitTables((gamemd::IUnknown *)((int)v1), v4); /*0x6d6abc*/
+  return ((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables(v4); /*0x6d6abc*/
 }
 } // namespace gamemd
 

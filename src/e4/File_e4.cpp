@@ -839,7 +839,7 @@ LABEL_15:
 }
 // 0x7C12B0
 namespace gamemd {
-int File::ParseAudioFileRIFF(void *a1_1)
+int File::ParseAudioFileRIFF()
 {
 
   File *v3; // edi

@@ -177,15 +177,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         {
           v18 = (Trigger *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v18 ) /*0x76d6c8*/
-            inited = Trigger::initTrigger( /*0x76d6ec*/
-                       v18,
-                       *(char ***)(this + 1136),
-                       v16,
-                       v17,
-                       *(unsigned int *)(this + 1132),
-                       3,
-                       512,
-                       this + 24);
+            inited = ((Trigger*)/*0x76d6ec*/
+                       v18)->initTrigger(/*0x76d6ec*/ *(char ***)(this + 1136), v16, v17, *(unsigned int *)(this + 1132), 3, 512, this + 24);
           if ( (int)v28.attachedBomb < (int)v28.nextObject /*0x76d71b*/
             || (BYTE1(v28.attachedTag) || !v28.nextObject)
             && v28.ambientSoundController[0] > 0

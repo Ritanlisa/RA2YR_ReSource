@@ -114,7 +114,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
   LABEL_52:
           g_BuildingPlacementState = -1; /*0x50b190*/
   LABEL_53:
-        Sidebar::ActivateTab((int)&MapClass_Instance, Status); /*0x50b19a*/
+        ((Sidebar*)(int)&MapClass_Instance)->ActivateTab(Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
       }
       if ( v4 ) /*0x50b100*/

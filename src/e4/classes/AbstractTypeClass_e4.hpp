@@ -82,7 +82,7 @@ struct AbstractTypeClass {
     int Dtor();
     int GetData(void *a1);
     int GetType(int a1);
-    int Init(int a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
+    int Init(int aP1);
     int LoadFromINI(AbstractTypeClass * aP1, void *a2);
     int ProcessPower(int *aP1);
     int SetType();

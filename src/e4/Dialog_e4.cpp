@@ -31,7 +31,7 @@
 
 // 0x49F740
 namespace gamemd {
-void Dialog::MapDialogResource(void *a1_1)
+void Dialog::MapDialogResource()
 {
 
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
@@ -130,7 +130,7 @@ int Dialog::InitializeGameSettings()
 }
 // 0x5D3490
 namespace gamemd {
-int Dialog::ShowMessageBox(unsigned short *lParam, unsigned short *a3, unsigned short *a4, unsigned short *a5, int a6, int a2, int aP2, int aP3, int aP4, int a1)
+int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6)
 {
 
   int v6; // ebp
@@ -251,7 +251,7 @@ int Dialog::GetMode3()
 }
 // 0x5EE350
 namespace gamemd {
-int Dialog::RefreshDialogsGame(void *a1_1)
+int Dialog::RefreshDialogsGame()
 {
 
   ObjectClass *v1; // eax
@@ -708,7 +708,7 @@ LABEL_208:
 }
 // 0x607FD0
 namespace gamemd {
-int Dialog::StopBink(void *a1_1)
+int Dialog::StopBink()
 {
 
   int result; // eax
@@ -2083,7 +2083,7 @@ AbstractClass * * Dialog_TabControlPaint()
 }
 // 0x6213A0
 namespace gamemd {
-AbstractClass * * Dialog::Resize(void *a1_1, void *a2_1, void *a3_1)
+AbstractClass * * Dialog::Resize()
 {
 
   LONG result; // eax
@@ -2446,7 +2446,7 @@ LABEL_72:
 }
 // 0x622720
 namespace gamemd {
-int Dialog::Destroy(void *a1_1)
+int Dialog::Destroy()
 {
 
   int result; // eax
@@ -3001,7 +3001,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
 }
 // 0x775940
 namespace gamemd {
-int Dialog::FindByHandle(void *a1_1)
+int Dialog::FindByHandle()
 {
 
   int v1; // eax
@@ -3204,7 +3204,7 @@ HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignSco
 
 // 0x5E2F60
 namespace gamemd {
-LRESULT Dialog::ShowPlayerName(void *a1_1)
+LRESULT Dialog::ShowPlayerName()
 {
 
   HWND DlgItem; // eax
@@ -3269,7 +3269,7 @@ unsigned int Dialog::CheckButtonState()
 
 // 0x602AE0
 namespace gamemd {
-BOOL Dialog::IsSpecialTemplate(void *a1_1)
+BOOL Dialog::IsSpecialTemplate()
 {
 
   return this == (Dialog *)293 /*0x602b7a*/
@@ -3379,7 +3379,7 @@ HWND Dialog::Show()
 
 // 0x623120
 namespace gamemd {
-char Dialog::PumpMessages(void *a1_1)
+char Dialog::PumpMessages()
 {
 
   int result; // eax
@@ -3406,7 +3406,7 @@ char Dialog::PumpMessages(void *a1_1)
 
 // 0x7759B0
 namespace gamemd {
-int Dialog::FindByPtr(void *a1_1)
+int Dialog::FindByPtr()
 {
 
   int v1; // eax
@@ -3427,7 +3427,7 @@ int Dialog::FindByPtr(void *a1_1)
 
 // 0x775BA0
 namespace gamemd {
-BOOL Dialog::GetField(void *a1_1, void *a2_1)
+BOOL Dialog::GetField()
 {
 
   EnumChildWindows((HWND)this, DialogClass::Reposition, 1); /*0x775bab*/
@@ -3438,7 +3438,7 @@ BOOL Dialog::GetField(void *a1_1, void *a2_1)
 
 // 0x777060
 namespace gamemd {
-HWND Dialog::RestoreParent(void *a1_1)
+HWND Dialog::RestoreParent()
 {
 
   int result; // eax

@@ -1663,7 +1663,7 @@ int Object::ComputeAllocationSize()
 
 // 0x53E420
 namespace gamemd {
-void ** Object::RemoveObjectArray(void *a1_1)
+void ** Object::RemoveObjectArray()
 {
 
   void **result; // eax

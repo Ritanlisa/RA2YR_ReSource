@@ -295,7 +295,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x7C1730
 namespace gamemd {
-int Buffer::AllocateCodecFrameBuffers(void *a1)
+int Buffer::AllocateCodecFrameBuffers()
 {
 
   unsigned int *v3; // ebx

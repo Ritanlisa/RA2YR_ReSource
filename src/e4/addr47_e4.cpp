@@ -83,7 +83,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v19; // eax
   DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a2,(unsigned char *)(a3),(gamemd::INIClass *)(a4), &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
+  if ( ((INIClass*)(INIClass *)a2)->GetString((unsigned char *)(a3), (gamemd::INIClass *)(a4), &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/

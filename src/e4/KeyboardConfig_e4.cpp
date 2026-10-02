@@ -47,7 +47,7 @@ int KeyboardConfig::LoadINI()
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
   *(unsigned int *)v9.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x533d3f*/
-  CCFileClass::Construct(&v10,(void *)(aKeyboardmdIni)); /*0x533d47*/
+  ((CCFileClass*)&v10)->Construct((void *)(aKeyboardmdIni)); /*0x533d47*/
   if ( ((CCINIClass *)((int)(&v9)))->Load((int)&v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(*(void **)&stru_87F5F0.__pad_58[56]); /*0x533d6c*/

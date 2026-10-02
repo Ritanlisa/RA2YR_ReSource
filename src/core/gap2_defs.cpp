@@ -270,8 +270,8 @@ void* Matrix3D::Constructor(float a1, float a2) {
   *(unsigned int *)this->__pad_0 = 1065353216; /*0x5ae719*/
   *((unsigned int *)this + 5) = 1065353216; /*0x5ae71b*/
   *((unsigned int *)this + 10) = 1065353216; /*0x5ae71e*/
-  Matrix2D::Rotate((int *)this->__pad_0, a1); /*0x5ae724*/
-  Matrix3x3::RotateX((int *)this->__pad_0, a2); /*0x5ae730*/
+  ((Matrix2D*)(int *)this->__pad_0)->Rotate(a1); /*0x5ae724*/
+  ((Matrix3x3*)(int *)this->__pad_0)->RotateX(a2); /*0x5ae730*/
   v5 = -a1; /*0x5ae73e*/
   Matrix2D::Rotate((int *)this->__pad_0, v5); /*0x5ae741*/
   return (int *)this->__pad_0; /*0x5ae748*/

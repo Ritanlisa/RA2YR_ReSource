@@ -861,7 +861,7 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
       v7[3] = (unsigned int)(0);
       *v7 = (unsigned int)(&XSurface_Vtable);
       v7[4] = (unsigned int)(2);
-      Buffer::Init(v7 + 5, 0, 2 * v9 * v8); /*0x62156f*/
+      ((Buffer*)v7 + 5)->Init(0, 2 * v9 * v8); /*0x62156f*/
       *v7 = (unsigned int)(&BSurface_Vtable); /*0x621574*/
     }
     else

@@ -279,7 +279,7 @@ struct DSurface {
     unsigned char DSurface_field_0x8;  // 0x8
     unsigned char DSurface_field_0x14;  // 0x14
 // --- flat members (END) ---
-    AbstractClass * Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a5_2, void *a6);
+    AbstractClass * Construct(int aP1, int aP2, char aP3, char a5);
     AbstractClass * * Process(void* aP1, int * a2);
     Coord * * DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12);
     Coord * * DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9);
@@ -302,7 +302,7 @@ struct DSurface {
     int RestoreIfLost();
     long long ConstructFromHandle();
     unsigned int * CreateBackBuffer(int a2);
-    AbstractClass * * CreatePrimary(void *a1);
+    AbstractClass * * CreatePrimary();
     void * loc_4C1AC0(std::codecvt_base *a1);
     static void BlitStretch(int a1, int a2, int a3);
     void* DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8);

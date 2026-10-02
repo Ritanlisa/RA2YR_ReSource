@@ -90,9 +90,9 @@ struct TeamTypeClass {
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
     int Check(int a2, void *a2_2, void *a3);
-    int Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    int Construct();
     int DestroyAllInstances();
-    int FindByName(void *a1);
+    int FindByName();
     int FindFirstInstance();
     int FlashAllInstances(AnimClass * aP1);
     int GetAuxField();

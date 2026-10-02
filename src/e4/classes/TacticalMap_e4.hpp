@@ -58,7 +58,7 @@ struct TacticalMap {
     _DWORD * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
     void DrawCursor(void *a1, void *a2, void *a3, void *a4);
     int DrawOccupiedRegion();
-    void Redraw(void *a1);
+    void Redraw();
     int RenderAllObjects(int a2);
     unsigned int FillScanlinesOpaque(int a2, int a3, int aP3, int a5);
     void MultiplyByScalar(ObjectClass * aP1, void *a2);

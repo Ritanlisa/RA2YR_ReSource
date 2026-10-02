@@ -1396,10 +1396,8 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       v10 = *((unsigned int *)this + 115); /*0x7603bf*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {
-        SamplePosition = (unsigned short *)Audio::GetSamplePosition( /*0x7606be*/
-                                    (int *)g_ZBufferDescriptor,
-                                    0,
-                                    v8 - (char *)DSurface_ViewBounds.field_4);
+        SamplePosition = (unsigned short *)((Audio*)/*0x7606be*/
+                                    (int *)g_ZBufferDescriptor)->GetSamplePosition(/*0x7606be*/ 0, v8 - (char *)DSurface_ViewBounds.field_4);
         v35 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x7606c4*/
         HIWORD(v36) = HIWORD(g_ZBufferDescriptor); /*0x7606c7*/
         v81 = v9 - (unsigned int)v8; /*0x7606d8*/
@@ -1436,7 +1434,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 for ( i = abs32(v56 - v76 - *((unsigned int *)this + 52)); v50 >= v60; --v68 ) /*0x760925*/
                 {
                   if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v84, v51) > (uint16_t)v88 ) /*0x760940*/
-                    Voxel::BlendColor((Voxel *)this, v50, v57, i, v68); /*0x760950*/
+                    ((Voxel*)(Voxel *)this)->BlendColor(v50, v57, i, v68); /*0x760950*/
                   --v50; /*0x76095e*/
                   --v84; /*0x76095f*/
                 }
@@ -1549,7 +1547,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                   while ( 1 ) /*0x760622*/
                   {
                     if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v82, v33) > v86 ) /*0x76063b*/
-                      Voxel::BlendColor((Voxel *)this, v32, v57, v34, v65); /*0x76064b*/
+                      ((Voxel*)(Voxel *)this)->BlendColor(v32, v57, v34, v65); /*0x76064b*/
                     ++v32; /*0x760659*/
                     ++v82; /*0x76065a*/
                     ++v65; /*0x760667*/

@@ -1743,7 +1743,7 @@ LABEL_16:
 }
 // 0x77F900
 namespace gamemd {
-Coord * * Game::ProcessIdle(void *a1_1)
+Coord * * Game::ProcessIdle()
 {
 
   signed int v1; // ebx
@@ -2446,7 +2446,7 @@ int Game::ResetReadyStates()
 
 // 0x67FDE0
 namespace gamemd {
-int Game::readIniSettings(void *a1_1)
+int Game::readIniSettings()
 {
 
   int result; // eax
@@ -2534,7 +2534,7 @@ void * Game::shutdownGame()
 
 // 0x72F440
 namespace gamemd {
-char Game::InitializeToolTipColor(void *a1_1)
+char Game::InitializeToolTipColor()
 {
 
   char result; // al

@@ -29,7 +29,7 @@
 
 // 0x4A60D0
 namespace gamemd {
-void * TextRenderer::GetInstance(void *a1)
+void * TextRenderer::GetInstance()
 {
 
   return (void *)(g_FogOfWarState); /*0x4a60d5*/

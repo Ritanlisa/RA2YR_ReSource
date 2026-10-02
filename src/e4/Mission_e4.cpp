@@ -127,7 +127,7 @@ LABEL_20:
           if ( v10 != -1 ) /*0x520d01*/
           {
             LOWORD(v18) = (unsigned short)v10 << 13; /*0x520d11*/
-            FacingClass::Set_SyncLog(&this->__pad_18C[508], &v18); /*0x520d16*/
+            ((FacingClass*)&this->__pad_18C[508])->Set_SyncLog(&v18); /*0x520d16*/
           }
         }
         if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520d1b*/

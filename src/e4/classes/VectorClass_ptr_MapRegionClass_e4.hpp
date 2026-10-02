@@ -21,7 +21,7 @@ struct VectorClass_ptr_MapRegionClass {
     int Get(int a2, void *a2_2);  // 0x5AC3F0
     char Add(int a2, void *a2_2, void *a3_1);  // 0x5AC6A0
     char Release(int a2, unsigned int * a3);  // 0x5AC6E0
-    void Remove(void *a1_1);  // 0x5AC790
+    void Remove();  // 0x5AC790
     int GetSize(unsigned int * a2);  // 0x5AC7C0
     unsigned int GetCapacity(int a2);  // 0x5AC800
     char SetCapacity(int a2, unsigned int * a3);  // 0x5AC820

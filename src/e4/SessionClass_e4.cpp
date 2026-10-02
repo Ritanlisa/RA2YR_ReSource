@@ -141,7 +141,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
   char *v7; // ecx
 
   if ( *((unsigned int *)this + 2)
-    || ((Debug::Log_0(aLoadmdMix), (v2 = __2_YAPAXI_Z(0x28u)) == 0)
+    || ((((Debug*)aLoadmdMix)->Log_0(), (v2 = __2_YAPAXI_Z(0x28u)) == 0)
       ? (result = 0)
       : (result = ((MixFileClass *)(v2))->FromFile((char *)(aLoadmdMix_0), (int)dword_886980)),
         (*((unsigned int *)this + 2) = result) != 0) )

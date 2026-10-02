@@ -322,7 +322,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
 }  // G42.18c ns repair
 // 0x6440A0
 namespace gamemd {  // G42.18c ns repair
-unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+unsigned int *  OverlayTypeClass::Construct(char *aP1)
 {
 
   void *v3; // eax

@@ -166,7 +166,7 @@ namespace gamemd {
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
 
-  TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
+  ((TechnoTypeClass*)(int)this)->Construct(aP1); /*0x523988*/
   (&this->DeadBodies)[0] = (int)&vt_TypeList; /*0x523992*/
   (&this->DeathAnims)[0] = (int)&vt_TypeList; /*0x523998*/
   (&this->VoiceComment)[0] = (int)&vt_TypeList; /*0x52399e*/
@@ -299,13 +299,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   ((unsigned int *)&v44)[0] = (int)aOccupyweapon; /*0x524117*/
   *(unsigned int *)(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52411c*/
   *(unsigned int *)(v4 + 3584) = PipIdx; /*0x52411f*/
-  if ( INIClass::GetString( /*0x524125*/
-         (INIClass *)a2,
-         *(uint8_t **)(unsigned int *)((char *)&v44 + 3),
-         (uint8_t *)((char *)&v44),
-         (char *)v44.Count,
-         (char *)v44.CapacityIncrement,
-         v45) )
+  if ( ((INIClass*)/*0x524125*/
+         (INIClass *)a2)->GetString(/*0x524125*/ *(uint8_t **)(unsigned int *)((char *)&v44 + 3), (uint8_t *)((char *)&v44), (char *)v44.Count, (char *)v44.CapacityIncrement, v45) )
   {
     v7 = (int)(InfantryTypeClass::Find(String)); /*0x524132*/
   }
@@ -353,13 +348,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
   *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5241d7*/
   ((VectorClass *)((HWND)((int)&v48)))->Destroy(); /*0x5241df*/
-  if ( INIClass::GetString( /*0x5241fb*/
-         (INIClass *)a2,
-         (uint8_t *)(v4 + 36),
-         aDeadbodies,
-         &g_INI_DefaultBuffer,
-         String,
-         128) )
+  if ( ((INIClass*)/*0x5241fb*/
+         (INIClass *)a2)->GetString(/*0x5241fb*/ (uint8_t *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x52421f*/
@@ -434,13 +424,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( *(unsigned char *)(v4 + 3756) ) /*0x5243dd*/
     *(unsigned char *)(v4 + 3215) = 1; /*0x5243e7*/
   v17 = *(unsigned int *)(v4 + 3748); /*0x5243ee*/
-  if ( !INIClass::GetString( /*0x524420*/
-          (INIClass *)a2,
-          (uint8_t *)(v4 + 36),
-          aEnterwatersoun,
-          &g_INI_DefaultBuffer,
-          String,
-          128)
+  if ( !((INIClass*)/*0x524420*/
+          (INIClass *)a2)->GetString(/*0x524420*/ (uint8_t *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String, 128)
     || (Index = VocClass::FindIndex((VocClass *)String), Index == -1) )
   {
     Index = v17; /*0x524422*/
@@ -634,7 +619,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
   if ( result >= 0 ) /*0x524994*/
   {
     if ( v5 ) /*0x52499c*/
-      InfantryTypeClass::Constructor_523980(v5, (int)&aP0); /*0x5249a5*/
+      ((InfantryTypeClass*)v5)->Constructor_523980((int)&aP0); /*0x5249a5*/
     ((VoxelAnimType*)(char *)v5)->LoadAnim(); /*0x5249ad*/
     ((ObjectTypeClass*)(char *)v5)->Load2DArt(); /*0x5249b4*/
     if ( v5 != (InfantryTypeClass *)-3720 ) /*0x5249c1*/

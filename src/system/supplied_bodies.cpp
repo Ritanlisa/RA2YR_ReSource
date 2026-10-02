@@ -108,7 +108,7 @@ int CellClass::QuickPassable() {
     v2 = ((int16_t)IDA_HIWORD(this->smudgeTypeIndex) << 8) + 128; /*0x487971*/
     v5[0] = 128; /*0x487973*/
     v5[1] = 128; /*0x487977*/
-    inited = Isometric::InitTables((int)this, v5); /*0x487980*/
+    inited = ((Isometric*)(int)this)->InitTables(v5); /*0x487980*/
     v6[0] = v1; /*0x487989*/
     v6[1] = v2; /*0x487993*/
     v6[2] = inited; /*0x487997*/
@@ -219,7 +219,7 @@ unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3, in
 // 0x68BCE0
 namespace gamemd {
 void * ScenarioClass::GetCellFromArray(int a2) {
-    return CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&this->waypoints[4 * a2]); /*0x68bcf6*/
+    return ((CellCoord*)(CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj((int16_t *)&this->waypoints[4 * a2]); /*0x68bcf6*/
 }
 } // namespace gamemd
 

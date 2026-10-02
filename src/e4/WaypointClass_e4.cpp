@@ -46,7 +46,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
     {
       v5 = (int)(__2_YAPAXI_Z(0x40u));
       if ( v5 ) /*0x5021b1*/
-        v6 = (int)(WaypointPathClass::Construct(v5, v4)); /*0x5021b6*/
+        v6 = (int)(((WaypointPathClass*)v5)->Construct(v4)); /*0x5021b6*/
       else
         v6 = 0; /*0x5021bd*/
       *v2 = v6; /*0x5021bf*/

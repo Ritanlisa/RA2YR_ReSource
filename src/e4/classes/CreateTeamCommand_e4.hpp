@@ -91,7 +91,7 @@ struct CreateTeamCommand {
     AbstractClass * * performAction_241(int a2, unsigned int * a3);  // 0x5386A0
     void * performAction_243(rc_ptr_base * Block, char a2);  // 0x538A20
     int performAction_245(char a2, int a3);  // 0x6A6A00
-    void performAction_246(void *a1_1);  // 0x731060
+    void performAction_246();  // 0x731060
     unsigned int * Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x535C00
     ObjectClass * AddRef(void *a1_1);  // 0x535C20
     CreateTeamCommand * performAction_0(char a2);  // 0x535CD0

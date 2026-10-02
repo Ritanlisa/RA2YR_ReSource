@@ -138,7 +138,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
     do /*0x6a7570*/
     {
       ((Hash*)(LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720))->Reset(); /*0x6a7545*/
-      Hash::InsertOrdered((GScreenClass *)&stru_87F5F0.__pad_58[416], 56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
+      ((Hash*)(GScreenClass *)&stru_87F5F0.__pad_58[416])->InsertOrdered(56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
       ++v5; /*0x6a756d*/
     }
     while ( v5 < v6 ); /*0x6a7570*/
@@ -264,9 +264,8 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
     do /*0x6a9494*/
     {
       ((Hash*)(LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720))->Reset(); /*0x6a9465*/
-      LOBYTE(v5) = Hash::InsertOrdered( /*0x6a948c*/
-                     (GScreenClass *)&stru_87F5F0.__pad_58[416],
-                     56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
+      LOBYTE(v5) = ((Hash*)/*0x6a948c*/
+                     (GScreenClass *)&stru_87F5F0.__pad_58[416])->InsertOrdered(/*0x6a948c*/ 56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
       ++v3; /*0x6a9491*/
     }
     while ( v3 < v6 ); /*0x6a9494*/

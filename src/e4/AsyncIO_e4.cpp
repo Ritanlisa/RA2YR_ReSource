@@ -21,7 +21,7 @@
 
 // 0x5BF450
 namespace gamemd {
-char AsyncIO::Shutdown(void *a1)
+char AsyncIO::Shutdown()
 {
 
   unsigned int * v1;

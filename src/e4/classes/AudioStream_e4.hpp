@@ -128,7 +128,7 @@ struct AudioStream {
 // --- flat members (END) ---
     int ReleaseSubsystem();  // 0x401910
     int Stop();  // 0x4026B0
-    int ReleaseChannel(void *a1_1);  // 0x4026F0
+    int ReleaseChannel();  // 0x4026F0
     void DestroyAll(void * Block);  // 0x4033C0
     int Reset();  // 0x403820
     int ResetChannel(int a2, int a3);  // 0x4038A0
@@ -139,15 +139,15 @@ struct AudioStream {
     int ReadStreamAndSyncPosition();  // 0x4079C0
     int SetPlaybackCallback();  // 0x407A30
     int ProcessCallback(void *a1_1);  // 0x407A60
-    void InitNodeFields(void *a1_1);  // 0x4084E0
+    void InitNodeFields();  // 0x4084E0
     int GetChannel();  // 0x408D50
     int ReadStreamAndReturn(void *a1_1);  // 0x409310
     int ReadSamples(const void * a2, void *a2_2);  // 0x4A33A0
     MouseClass * * DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);  // 0x4BEAC0
-    int SetFlag4C(void *a1_1);  // 0x7BD270
+    int SetFlag4C();  // 0x7BD270
     int CalcReadPos();
     int ProcessStream();  // 0x7BEA80
-    unsigned int GetPosition(void *a1_1);  // 0x7C3960
+    unsigned int GetPosition();  // 0x7C3960
     void Destructor(unsigned int * Block);  // 0x402550
     int CheckFormatChanged(int a1, const void * a2);  // 0x402800
     int InitListAndCounters(void *a1_1);  // 0x4028B0

@@ -202,7 +202,7 @@ size_t BitmapClass::ProcessFrame(char *a2, signed int Size, int a5, int a6, int 
         }
         if ( !v8 ) /*0x42e03c*/
           break; /*0x42e03c*/
-        v14 = Delegate::Invoke((Straw *)this, (int)v5, v18); /*0x42e04b*/
+        v14 = ((Delegate*)(Straw *)this)->Invoke((int)v5, v18); /*0x42e04b*/
         v15 = *((unsigned int *)this + 3)
             ? DecodeBitmapRGB((uint8_t *)v5, v14, v6, v7)
             : EncodeBitmapRGB(v5->__pad_0, v14, v6, v7);
@@ -255,7 +255,7 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
   LABEL_8:
       if ( v6 != 13 && v6 != 10 ) /*0x434637*/
       {
-        v14 = FontClass::RenderGlyph((int)this, v6, xLeft, yTop, -1); /*0x434648*/
+        v14 = ((FontClass*)(int)this)->RenderGlyph(v6, xLeft, yTop, -1); /*0x434648*/
         v11 = a6; /*0x43464d*/
         xLeft = v14; /*0x434651*/
       }
@@ -277,7 +277,7 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
         IDA_HIBYTE(v16) = (uint8_t)(v10 >> g_BitMask_Green) << g_BitMask_Blue; /*0x43459b*/
         IDA_LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
         IDA_BYTE2(v17.Color_field_00) = (uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
-        Color::Lerp(&v17, v12, (uint8_t *)&stru_A80220); /*0x4345be*/
+        ((Color*)&v17)->Lerp(v12, (uint8_t *)&stru_A80220); /*0x4345be*/
         IDA_LOWORD(v13) = (uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red); /*0x4345ee*/
         v11 = a6; /*0x43460e*/
         *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/

@@ -110,7 +110,7 @@ struct Object {
     int LoadObject(ObjectClass * aP1, int aP1a);  // 0x5FD8F0
     SessionClass * DtorWithDelete(void ** Block, char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0
-    void ** RemoveObjectArray(void *a1_1);  // 0x53E420
+    void ** RemoveObjectArray();  // 0x53E420
     int Unlink();  // 0x5F5230
     char CheckState(IUnknown * aP1, int a3);  // 0x5FD270
     int SaveObject(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5FD950

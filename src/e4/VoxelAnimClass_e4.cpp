@@ -528,17 +528,10 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v97 = v12; /*0x74a064*/
         v98 = v13; /*0x74a068*/
         v99 = v14 + 5; /*0x74a081*/
-        AnimClass::ctor( /*0x74a099*/
-          v11,
-          *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3012)
+        ((AnimClass*)/*0x74a099*/
+          v11)->ctor(/*0x74a099*/ *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3012)
                    + 4 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3024)
-                   - 4),
-          &v97,
-          0,
-          1,
-          (void *)0x600,
-          0,
-          0);
+                   - 4), &v97, 0, 1, (void *)0x600, 0, 0);
       }
     }
     else

@@ -722,7 +722,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   v2 = (char **)(a1);
   v19.customSound = edx0; /*0x5d759a*/
   v19.customSound_controller[3] = (int)a1; /*0x5d75aa*/
-  CCFileClass::Construct((CCFileClass *)&v19.lineTrailer,(void *)(aMpmodesmdIni)); /*0x5d75ae*/
+  ((CCFileClass*)(CCFileClass *)&v19.lineTrailer)->Construct((void *)(aMpmodesmdIni)); /*0x5d75ae*/
   if ( (uint8_t)((CCFileClass *)((int)((CCFileClass *)&v19.lineTrailer)))->Open(0) ) /*0x5d75bd*/
   {
     v19.health = 0; /*0x5d75ce*/
@@ -746,12 +746,8 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
           ((String *)((String *)&v19.attachedBomb))->Assign(&g_INI_DefaultBuffer); /*0x5d768d*/
-          String = INIClass::ReadString( /*0x5d76b2*/
-                     (INIClass *)&v19.bombVisible,
-                     v2,
-                     (char **)((char *)&v19),
-                     (char **)&v19.attachedBomb,
-                     (int)&v19);
+          String = ((INIClass*)/*0x5d76b2*/
+                     (INIClass *)&v19.bombVisible)->ReadString(/*0x5d76b2*/ v2, (char **)((char *)&v19), (char **)&v19.attachedBomb, (int)&v19);
           j_DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
           if ( String <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
@@ -783,7 +779,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         {
   LABEL_47:
           j_DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c3e*/
-          DeleteAndZero::Alt((DeleteAndZero *)((char *)&v19)); /*0x5d7c4b*/
+          ((DeleteAndZero*)(DeleteAndZero *)((char *)&v19))->Alt(); /*0x5d7c4b*/
           goto LABEL_48; /*0x5d7c4b*/
         }
         ((String *)((String *)&v19.ambientSoundController[4]))->Assign(asc_830A14); /*0x5d779a*/

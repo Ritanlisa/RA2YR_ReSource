@@ -507,15 +507,8 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   }
   v5 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6e1d60*/
   if ( v5 ) /*0x6e1d6a*/
-    *((unsigned char *)AnimClass::ctor( /*0x6e1d92*/
-                 v5,
-                 *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5244),
-                 v9,
-                 0,
-                 1,
-                 (void *)0x600,
-                 0,
-                 0)
+    *((unsigned char *)((AnimClass*)/*0x6e1d92*/
+                 v5)->ctor(/*0x6e1d92*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5244), v9, 0, 1, (void *)0x600, 0, 0)
     + 408) = 1;
   else
     MEMORY[0x198] = 1; /*0x6e1da3*/
@@ -712,15 +705,8 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
     v19[2] = v9 + 5; /*0x6e373b*/
     v19[0] = v7; /*0x6e3752*/
     v19[1] = v8; /*0x6e3756*/
-    AnimClass::ctor( /*0x6e3764*/
-      v10,
-      *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 840),
-      v19,
-      0,
-      1,
-      (void *)0x600,
-      0,
-      0);
+    ((AnimClass*)/*0x6e3764*/
+      v10)->ctor(/*0x6e3764*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 840), v19, 0, 1, (void *)0x600, 0, 0);
   }
   v11 = &g_MissionQueueFrame.waypoints[2150]; /*0x6e3772*/
   v12 = 9; /*0x6e3777*/
@@ -1040,7 +1026,7 @@ char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IU
   }
   if ( !Field11 ) /*0x6e0cde*/
     return 0; /*0x6e0cde*/
-  TActionClass::executeAttackAction((TActionClass *)a1, Field11); /*0x6e0ceb*/
+  ((TActionClass*)(TActionClass *)a1)->executeAttackAction(Field11); /*0x6e0ceb*/
   return 1; /*0x6e0ce2*/
 
 }
@@ -1072,7 +1058,7 @@ char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int
   }
   if ( !Field11 ) /*0x6e0d3e*/
     return 0; /*0x6e0d3e*/
-  TActionClass::executeMoveAction((TActionClass *)a1, Field11); /*0x6e0d4b*/
+  ((TActionClass*)(TActionClass *)a1)->executeMoveAction(Field11); /*0x6e0d4b*/
   return 1; /*0x6e0d42*/
 
 }

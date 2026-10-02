@@ -63,7 +63,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a5_2, void *a6)
+AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
 {
 
   unsigned int *v6; // ebp
@@ -150,7 +150,7 @@ AbstractClass * * DSurface::Destroy()
 } // namespace gamemd
 // 0x4BA770
 namespace gamemd {
-AbstractClass * * DSurface::CreatePrimary(void *a1)
+AbstractClass * * DSurface::CreatePrimary()
 {
 
   char v1; // bl

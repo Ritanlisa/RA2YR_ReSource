@@ -220,15 +220,8 @@ LABEL_10:
             v41 = *v23; /*0x71a8e3*/
             v42 = v23[1]; /*0x71a8ea*/
             v43 = v23[2]; /*0x71a8f6*/
-            result = AnimClass::ctor( /*0x71a909*/
-                       (AnimClass *)result,
-                       *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 832),
-                       &v41,
-                       0,
-                       1,
-                       (void *)0x600,
-                       0,
-                       0);
+            result = ((AnimClass*)/*0x71a909*/
+                       (AnimClass *)result)->ctor(/*0x71a909*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 832), &v41, 0, 1, (void *)0x600, 0, 0);
           }
         }
         else

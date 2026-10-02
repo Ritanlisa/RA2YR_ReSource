@@ -270,7 +270,7 @@ LABEL_8:
 }
 // 0x631D30
 namespace gamemd {
-int GameClass::GetRelatedObject(void *a1_1)
+int GameClass::GetRelatedObject()
 {
 
   int Pipe_field_0x04; // ecx

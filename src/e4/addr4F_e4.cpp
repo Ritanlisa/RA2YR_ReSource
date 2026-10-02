@@ -310,12 +310,8 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   unknown_libname_73(&v38.vtable2); /*0x4f1d42*/
   ((String *)((String *)&v38.vtable3))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f1d50*/
   ((String *)((String *)&v38))->Assign((const char *)(aBackground)); /*0x4f1d5e*/
-  v10 = INIClass::ReadString( /*0x4f1d86*/
-          (INIClass *)v38.uniqueId,
-          (char **)v38.abstractFlags,
-          (char **)&v38,
-          (char **)&v38.vtable3,
-          (int)&v38.vtable2) > 0;
+  v10 = ((INIClass*)/*0x4f1d86*/
+          (INIClass *)v38.uniqueId)->ReadString(/*0x4f1d86*/ (char **)v38.abstractFlags, (char **)&v38, (char **)&v38.vtable3, (int)&v38.vtable2) > 0;
   DeleteAndZero(&v38); /*0x4f1d89*/
   DeleteAndZero((ObjectClass *)&v38.vtable3); /*0x4f1d92*/
   ((String *)((String *)&v38.vtable2))->Concat2((char **)&v38.nextArrayIndex, g_Str_File__PCX); /*0x4f1da5*/
@@ -679,7 +675,7 @@ void ParseINIAnimGadgetDefinition()
   int v27; // [esp+40h] [ebp-4h]
 
   ((String *)(&v20))->Assign((const char *)(ValueName)); /*0x4f2c83*/
-  Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v20, -1); /*0x4f2c97*/
+  Int = ((INIClass*)(bool *)a2->__pad_0)->ReadInt(Source, (char **)&v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.q4 = Int; /*0x4f2c9d*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( Int == -1 ) /*0x4f2ca9*/

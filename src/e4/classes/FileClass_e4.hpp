@@ -19,7 +19,7 @@ struct FileClass {
 // --- flat members (END) ---
     char Stub(int a1);
     int Close();
-    int GetState(void *a1);
+    int GetState();
     int Open(int a2);
     int Read(char *aP1, signed int aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);

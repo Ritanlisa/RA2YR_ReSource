@@ -697,9 +697,9 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
   int v22; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
+  if ( ((INIClass*)(INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
   {
-    RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
+    ((RulesClass*)(RulesClass *)&v17)->readIQ(0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
     v17 = (void **)(&vt_TypeList); /*0x67be2c*/

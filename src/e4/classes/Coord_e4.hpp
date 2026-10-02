@@ -62,7 +62,7 @@ struct Coord {
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
     unsigned int * ToCell(IUnknown * aP1);  // 0x413A30
     void * Subtract(int aP1, int aP2, int aP3);  // 0x41C230
-    int Length(void *a1_1);  // 0x41C380
+    int Length();  // 0x41C380
     unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0
     void * Scale(float aP1);  // 0x43A0D0
     void * To_Cell(unsigned int *aP1);  // 0x565730

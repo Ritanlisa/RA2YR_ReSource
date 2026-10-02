@@ -250,7 +250,7 @@ char TagClass::HasValidHouse()
 }
 // 0x71ADE0
 namespace gamemd {
-int TagClass::Unlink(void *a1)
+int TagClass::Unlink()
 {
 
   int v2; // eax

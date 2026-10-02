@@ -1824,7 +1824,7 @@ LABEL_5:
 } // namespace gamemd
 // 0x7171A0
 namespace gamemd {
-void* BuildingTypeClass::ProcessPower(AbstractClass * aP1, void *a2)
+void* BuildingTypeClass::ProcessPower(int *aP1)
 {
 
   int v3; // ecx

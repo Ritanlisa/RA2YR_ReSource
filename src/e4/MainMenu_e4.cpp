@@ -87,7 +87,7 @@ long MainMenu_Screen(void * a1, void * a2)
           {
             v11[0] = (unsigned char)(a1);
             v11[1] = 0; /*0x531e42*/
-            Debug::Log_0(v11); /*0x531e47*/
+            ((Debug*)v11)->Log_0(); /*0x531e47*/
             v7 = strlen((const char *)(byte_A8F7B8)); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {

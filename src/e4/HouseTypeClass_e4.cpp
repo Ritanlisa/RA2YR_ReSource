@@ -1767,7 +1767,7 @@ int HouseTypeClass::readLoadoutData(int a1)
 
 // 0x6A46D0
 namespace gamemd {
-int HouseTypeClass::Find(void *a1)
+int HouseTypeClass::Find()
 {
 
   int v1; // esi

@@ -513,16 +513,13 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     v36 = (v58 * IDA_HIBYTE(v60)) >> 8; /*0x551089*/
     v37 = (v58 * (uint8_t)v60) >> 8; /*0x55108c*/
     *(float *)&v72 = (double)v72 * 0.000015259022; /*0x55108f*/
-    ColorStruct::SetRGB( /*0x55109d*/
-      v77,
-      (uint16_t)(v58 * (uint8_t)v60) >> 8,
-      (uint16_t)(v58 * IDA_HIBYTE(v60)) >> 8,
-      (uint16_t)(v58 * v61) >> 8);
+    ((ColorStruct*)/*0x55109d*/
+      v77)->SetRGB(/*0x55109d*/ (uint16_t)(v58 * (uint8_t)v60) >> 8, (uint16_t)(v58 * IDA_HIBYTE(v60)) >> 8, (uint16_t)(v58 * v61) >> 8);
     ((ColorStruct *)(v78))->SetRGB(v37, v36, v35); /*0x5510ac*/
     v38 = v73; /*0x5510b1*/
     *(float *)&v47 = (float)v69; /*0x5510bf*/
     *(float *)&v41 = (float)v68; /*0x5510ce*/
-    Tactical::SetCellTransform((char *)v77, 0, v41, v47, v73, 0, 0); /*0x5510d3*/
+    ((Tactical*)(char *)v77)->SetCellTransform(0, v41, v47, v73, 0, 0); /*0x5510d3*/
     *(float *)&v48 = (float)v64; /*0x5510e5*/
     *(float *)&v42 = (float)v63; /*0x5510f4*/
     Tactical::SetCellTransform((char *)v77, 1, v42, v48, v38, 0, 1065353216); /*0x5510f9*/

@@ -163,13 +163,8 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                             aCustomrotor,
                             v16);
   v19 = *(unsigned int *)(v4 + 3584); /*0x41cd15*/
-  if ( INIClass::GetString( /*0x41cd19*/
-         (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-         (uint8_t *)(v4 + 504),
-         aTrailer,
-         &g_INI_DefaultBuffer,
-         Destination,
-         128) )
+  if ( ((INIClass*)/*0x41cd19*/
+         (INIClass *)&DSurface_ViewBounds.__pad_FC[228])->GetString(/*0x41cd19*/ (uint8_t *)(v4 + 504), aTrailer, &g_INI_DefaultBuffer, Destination, 128) )
   {
     v10 = (int)(((AnimTypeClass *)(Destination))->FindOrCreate());
   }
@@ -310,7 +305,7 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x41ce36*/
     {
-      TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
+      ((TechnoTypeClass*)(int)aP0)->Construct((int)&aP1); /*0x41ce3f*/
       *(unsigned int *)aP0->vtable1 = (unsigned int)(&vt_AircraftTypeClass); /*0x41ce44*/
       *(unsigned int *)aP0[4] = (unsigned int *)(&vt_AircraftTypeClass); /*0x41ce4a*/
       *(unsigned int *)aP0[8] = (unsigned int *)(&vt_AircraftTypeClass); /*0x41ce51*/

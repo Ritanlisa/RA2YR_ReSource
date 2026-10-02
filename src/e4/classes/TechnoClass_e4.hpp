@@ -561,7 +561,7 @@ struct TechnoClass {
     int checkMovementRestrictions();
     int processPowerDrain();
     TechnoClass(AbstractClass * aP1);
-    unsigned int * Update(BuildingClass * aP0, FootClass * aP1, void * a1, void * a2);
+    unsigned int * Update(int a2);
     bool GetField(void *a1, void *a2);
     void updateSightRange(IUnknown * aP1, int a3);
     static double GetTileAnimationData(...);  // C2597 interim stub

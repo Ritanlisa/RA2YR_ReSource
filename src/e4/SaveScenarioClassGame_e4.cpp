@@ -63,7 +63,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   Map_Save_681280(v15, &FileTime); /*0x67d022*/
   Map_Save_681200(v15, &FileTime); /*0x67d033*/
   Map_Save_681240(v15, &FileTime); /*0x67d044*/
-  GameOptions::SaveLoad((int)v15, (int *)ppstgOpen); /*0x67d055*/
+  ((GameOptions*)(int)v15)->SaveLoad((int *)ppstgOpen); /*0x67d055*/
   v10 = 0; /*0x67d05a*/
   if ( !ppstgOpen ) /*0x67d064*/
     WinAPI::Wrapper(-2147467261); /*0x67d06b*/

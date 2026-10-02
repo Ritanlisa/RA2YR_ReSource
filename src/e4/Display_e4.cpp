@@ -24,7 +24,7 @@ long long Display::CalculateDefaultSize()
 
 // 0x72AD20
 namespace gamemd {
-int Display::GetViewport(void *a1_1)
+int Display::GetViewport()
 {
 
   int *result; // eax

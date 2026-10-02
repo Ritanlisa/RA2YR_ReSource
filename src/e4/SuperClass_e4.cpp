@@ -996,15 +996,8 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     v10[0] = (int)(aP1); /*0x6cb444*/
     v10[1] = (int)(aP2); /*0x6cb455*/
     v10[2] = a4 + 5; /*0x6cb459*/
-    result = AnimClass::ctor( /*0x6cb467*/
-               (AnimClass *)result,
-               *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 816),
-               v10,
-               0,
-               1,
-               (void *)0x600,
-               0,
-               0);
+    result = ((AnimClass*)/*0x6cb467*/
+               (AnimClass *)result)->ctor(/*0x6cb467*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 816), v10, 0, 1, (void *)0x600, 0, 0);
     if ( result ) /*0x6cb470*/
     {
       this->SuperClass_field_0x68 = (unsigned int)(result); /*0x6cb472*/

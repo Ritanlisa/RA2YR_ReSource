@@ -75,7 +75,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       {
         sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__VXL)); /*0x5f8d4c*/
-        CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
+        ((CCFileClass*)&v26)->Construct(Source); /*0x5f8d63*/
         if ( (uint8_t)((CCFileClass *)((int)(&v26)))->Open(0) ) /*0x5f8d70*/
         {
           v3 = (void *)*((unsigned int *)this + 46); /*0x5f8d7d*/
@@ -94,7 +94,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           {
             sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__HVA)); /*0x5f8df9*/
-            CCFileClass::Construct(&v20, Source); /*0x5f8e0d*/
+            ((CCFileClass*)&v20)->Construct(Source); /*0x5f8e0d*/
             v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {

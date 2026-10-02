@@ -499,7 +499,7 @@ struct DisplayClass {
     unsigned int * loc_4AEB50(MouseClass * aP1);
     unsigned int * updateRenderState(char a2);
     void * Draw(int a2);
-    void Update(PowerClass * aP1, int a3, void *a3_2, void *a4);
+    void Update(int a2);
 };
 
 } // namespace gamemd

@@ -230,7 +230,7 @@ struct JumpjetLocomotionClass {
     int GetField_0x54(int a1);
     int GetField_0x58(int a1);
     int GetField_0x78(int a1, const void * a2, int * a3);
-    int GetFloorZSetContext(void *a1);
+    int GetFloorZSetContext();
     int GetInterface(int a1, const void * a2, unsigned int * a3);
     int InitMovementParams(int a1, int a2);
     int InitMultiFieldArray(unsigned int * a1, int a2, int a3, int a4);

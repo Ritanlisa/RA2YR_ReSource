@@ -87,7 +87,7 @@ struct GameClass {
     int loadScenarioFiles(int aP1);  // 0x5D2260
     int FrameLoop(int a2);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
-    int GetRelatedObject(void *a1_1);  // 0x631D30
+    int GetRelatedObject();  // 0x631D30
     void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     int initPlayerData(const char **a2);  // 0x69AE10

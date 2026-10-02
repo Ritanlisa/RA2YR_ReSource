@@ -39,7 +39,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 
   v3 = Src; /*0x42ddb4*/
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
-    return Delegate::Dispatch((Pipe *)this, (int)Src, a3); /*0x42df25*/
+    return ((Delegate*)(Pipe *)this)->Dispatch((int)Src, a3); /*0x42df25*/
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
   {

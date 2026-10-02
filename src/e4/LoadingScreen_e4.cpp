@@ -250,7 +250,7 @@ int LoadingScreen::ReleaseAnimObjects(char * Source)
 } // namespace gamemd
 // 0x72CF40
 namespace gamemd {
-char LoadingScreen::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+char LoadingScreen::Init()
 {
 
   char result; // al

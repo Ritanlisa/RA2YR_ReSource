@@ -289,9 +289,9 @@ int __thiscall UnitClass::GetExitCell(unsigned int *a2, unsigned int *a3, int a1
   *v6 = (unsigned int)(a2); /*0x54e3f3*/
   if ( v9 ) /*0x54e3f5*/
   {
-    v10 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a2 + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
+    v10 = ((unsigned int)((*((ProgressTimer*)(unsigned short *)a2 + 452)->GetValue(&a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
     v11 = (unsigned int *)(*(int (**)(unsigned int *))(*a2 + 444))(a2); /*0x54e417*/
-    v6[1] = Cell::GetNeighbourContent(v11, v10); /*0x54e425*/
+    v6[1] = ((Cell*)v11)->GetNeighbourContent(v10); /*0x54e425*/
   }
   else
   {

@@ -235,10 +235,10 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
 
   if ( this->u32_174 ) /*0x4884a3*/
     return 0; /*0x4884ad*/
-  v6 = CellClass::DrawWithFlags((ListClass *)this, a1, a2, 0); /*0x4884cb*/
+  v6 = ((CellClass*)(ListClass *)this)->DrawWithFlags(a1, a2, 0); /*0x4884cb*/
   if ( (a1 & 1) != 0 ) /*0x4884cd*/
   {
-    Clamped = Array::GetClamped((int)((ListClass *)this), this->u32_16C); /*0x4884d8*/
+    Clamped = ((Array*)(int)((ListClass *)this))->GetClamped(this->u32_16C); /*0x4884d8*/
     if ( Clamped ) /*0x4884df*/
       v8 = *(unsigned char *)(Clamped + 4); /*0x4884e1*/
     else
@@ -268,7 +268,7 @@ int CheckListClass::SelectItem(int a1) {
 namespace gamemd { 
 int CheckListClass::SetFocus(int a1) {
 // 0x557f40
-  return ColorListClass::Clear((ListClass *)this, a1); /*0x4886da*/
+  return ((ColorListClass*)(ListClass *)this)->Clear(a1); /*0x4886da*/
 }
 }
 // 0x4886E0

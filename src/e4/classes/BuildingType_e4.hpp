@@ -6,9 +6,9 @@
 namespace gamemd {
 struct BuildingType {
     void* vfptr;  // minimal E2 declaration
-    int FindDefault(void *a1_1);  // 0x4E3560
-    int FindOwnerHouse(void *a1_1);  // 0x510ED0
-    int IsSpecialType(void *a1_1);  // 0x510F60
+    int FindDefault();  // 0x4E3560
+    int FindOwnerHouse();  // 0x510ED0
+    int IsSpecialType();  // 0x510F60
     int Init(unsigned int a2);  // 0x68C030
 };
 } // namespace gamemd

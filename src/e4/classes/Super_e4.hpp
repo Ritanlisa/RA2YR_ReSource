@@ -21,6 +21,6 @@ struct Super {
     unsigned int field_24;
     unsigned int field_28;
 // --- flat members (END) ---
-    int GetDefaultTimer(void *a1_1);  // 0x6CC260
+    int GetDefaultTimer();  // 0x6CC260
 };
 } // namespace gamemd

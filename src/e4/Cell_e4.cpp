@@ -97,7 +97,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 }
 // 0x42B1C0
 namespace gamemd {
-int Cell::PosToIndex(void *a1_1)
+int Cell::PosToIndex()
 {
 
   return ((SLOWORD(this->Cell_field_0x0) - SHIWORD(this->Cell_field_0x0) + *(unsigned int *)&stru_87F5F0.__pad_58[660] - 1) >> 1) /*0x42b1e3*/
@@ -398,7 +398,7 @@ LABEL_39:
 }
 // 0x485060
 namespace gamemd {
-int Cell::IsValidHeight(void *a1_1)
+int Cell::IsValidHeight()
 {
 
   int Cell_field_0x38; // eax
@@ -410,7 +410,7 @@ int Cell::IsValidHeight(void *a1_1)
 }
 // 0x486380
 namespace gamemd {
-int Cell::IsEmpty(void *a1_1)
+int Cell::IsEmpty()
 {
 
   int result; // eax
@@ -423,7 +423,7 @@ int Cell::IsEmpty(void *a1_1)
 }
 // 0x4865D0
 namespace gamemd {
-int Cell::IsGroundTypeRange(void *a1_1)
+int Cell::IsGroundTypeRange()
 {
 
   int result; // eax
@@ -441,7 +441,7 @@ int Cell::IsGroundTypeRange(void *a1_1)
 }
 // 0x486750
 namespace gamemd {
-int Cell::IsInRange(void *a1_1)
+int Cell::IsInRange()
 {
 
   int result; // eax
@@ -455,7 +455,7 @@ int Cell::IsInRange(void *a1_1)
 }
 // 0x486770
 namespace gamemd {
-int Cell::IsInRange2(void *a1_1)
+int Cell::IsInRange2()
 {
 
   int result; // eax
@@ -469,7 +469,7 @@ int Cell::IsInRange2(void *a1_1)
 }
 // 0x4867B0
 namespace gamemd {
-int Cell::IsShore(void *a1_1)
+int Cell::IsShore()
 {
 
   int result; // eax
@@ -482,7 +482,7 @@ int Cell::IsShore(void *a1_1)
 }
 // 0x486FF0
 namespace gamemd {
-int Cell::IsBuildableAdvanced(void *a1_1)
+int Cell::IsBuildableAdvanced()
 {
 
   int result; // eax

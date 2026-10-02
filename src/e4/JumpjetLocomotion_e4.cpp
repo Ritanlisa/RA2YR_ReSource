@@ -888,7 +888,7 @@ LABEL_50:
        && (v51 = *(unsigned int *)this->__pad_C, *(unsigned int *)(v51 + 692))) )
     {
       v53 = ((ObjectClass *)((ObjectClass *)v51))->CalcTargetFacing((int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
-      FacingClass::Set_SyncLog(&this->__pad_48[12], v53); /*0x54d679*/
+      ((FacingClass*)&this->__pad_48[12])->Set_SyncLog(v53); /*0x54d679*/
     }
     else
     {

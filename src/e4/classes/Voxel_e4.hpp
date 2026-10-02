@@ -170,7 +170,7 @@ struct Voxel {
     void* q2D8;  // 0x2D8
 // --- flat members (END) ---
     int BuildIndexTable();  // 0x748220
-    AbstractClass * RenderFrame(void *a1_1);  // 0x754510
+    AbstractClass * RenderFrame();  // 0x754510
     int Projection_Setup();  // 0x754CB0
     AbstractClass * * SortDepth(ObjectClass * aP1, int a3, void *a3_2);  // 0x755DB0
     int ProcessColor(unsigned int *a2, float *a3);  // 0x756590

@@ -26,7 +26,7 @@ struct VectorClass_ptr_PlanningMemberClass {
     unsigned int GetItemIndex_0(int a2);  // 0x63DBF0
     char Add(int a2, void *a2_2, void *a3_1);  // 0x63DD40
     char Release(int a2, unsigned int * a3);  // 0x63DD80
-    void Remove(void *a1_1);  // 0x63DE30
+    void Remove();  // 0x63DE30
     int GetSize(unsigned int * a2);  // 0x63DE60
     unsigned int GetCapacity(int a2);  // 0x63DEA0
     char SetCapacity(int a2, unsigned int * a3);  // 0x63DF20

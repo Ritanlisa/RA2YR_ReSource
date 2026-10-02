@@ -772,7 +772,7 @@ void TechnoTypeClass::Construct(int a2, int aP1, int a3, int a4, int a5, int a6,
   int v4; // ecx
   unsigned int *v5; // edx
 
-  ObjectTypeClass::Construct((unsigned int *)this, aP1); /*0x71184b*/
+  ((ObjectTypeClass*)(unsigned int *)this)->Construct(aP1); /*0x71184b*/
   TechnoTypeClass::Constructor_0(aP1); /*0x711859*/
   *((unsigned int *)this + 197) = (unsigned int)(&vt_TypeList); /*0x71185e*/
   IntDynamicVector::Construct((unsigned int *)((char *)this + 816), aP1); /*0x71186d*/

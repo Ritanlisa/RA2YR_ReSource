@@ -1885,7 +1885,7 @@ BuildingTypeClass * * TacticalClass::CalcViewportCells()
   return result; /*0x6d8bea*/
 }
 // 0x483e30
-int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_height)
+int TacticalClass::SetView(int a2, int a3, __int16 a4, __int16 a5, __int16 a6, __int16 a7)
 {
   int v7; // eax
   int v9; // ecx

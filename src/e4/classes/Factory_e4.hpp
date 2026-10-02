@@ -27,7 +27,7 @@ struct Factory {
     unsigned int field_8;
 // --- flat members (END) ---
     int GetLinkedIndex(int aP1);  // 0x663D60
-    int FindExitCellByName(void *a1_1);  // 0x523C90
+    int FindExitCellByName();  // 0x523C90
     int IdleHandler();  // 0x731CD0
 };
 } // namespace gamemd

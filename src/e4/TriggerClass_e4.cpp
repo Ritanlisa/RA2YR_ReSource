@@ -62,7 +62,7 @@ char TriggerClass::FindByEventType(char a1)
       v2[3] = (unsigned int)(0);
       *v2 = (unsigned int)(&XSurface_Vtable); /*0x6109b4*/
       v2[4] = 2; /*0x6109ba*/
-      Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
+      ((Buffer*)v2 + 5)->Init(0, 2 * v4 * v3); /*0x6109c1*/
       *v2 = (unsigned int)(&BSurface_Vtable); /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
     }

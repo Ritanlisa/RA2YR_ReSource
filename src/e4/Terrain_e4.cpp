@@ -1676,7 +1676,7 @@ LABEL_133:
             v76[0] = v32; /*0x5709ed*/
             v76[1] = v81[1] - 2; /*0x5709fd*/
             *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570a06*/
-            Terrain::ProcessCellModification(v58, v77); /*0x570a0d*/
+            ((Terrain*)v58)->ProcessCellModification(v77); /*0x570a0d*/
             v72 = v81[0] + (v81[1] << 9); /*0x570a21*/
             if ( v72 >= 0x40000 || (v73 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v72)) == 0 ) /*0x570a37*/
             {

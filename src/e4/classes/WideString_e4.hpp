@@ -37,10 +37,10 @@ struct WideString {
     wchar_t ** ConcatAlloc(wchar_t ** a1, ObjectClass * aP2);  // 0x7B6CB0
     short Erase(int a2, int a3, void *a3_2);  // 0x7B6D90
     char RemoveChar(wchar_t a2);  // 0x7B6E20
-    int GetOrEmpty(void *a1_1);  // 0x7B7100
-    int GetOrEmpty_Alt(void *a1_1);  // 0x7B7140
+    int GetOrEmpty();  // 0x7B7100
+    int GetOrEmpty_Alt();  // 0x7B7140
          wchar_tGetChar(void * aP1);  // 0x7B7180
-    int Length(void *a1_1);  // 0x7B71B0
+    int Length();  // 0x7B71B0
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
     char IsASCII();  // 0x7B7D90
     int Hash(wchar_t * Source);  // def-aligned

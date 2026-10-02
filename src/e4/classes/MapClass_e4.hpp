@@ -515,7 +515,7 @@ struct MapClass {
     MapClass * Destru_vt04(char a2);
     static MapClass *  SetObstruction(int16_t * a0, MapClass * aP1);
     ObjectClass * * CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8);
-    ObjectClass * * LoadFileData(void *a1);
+    ObjectClass * * LoadFileData();
     TechnoTypeClass * * PostProcessReveal(char a2);
     VectorClass_flat * * Destru_vt05();
     VectorClass_flat * InitCellVe_vt00(char a2);
@@ -532,7 +532,7 @@ struct MapClass {
     int ClearRegions(IUnknown * aP1);
     int FindPassableNeighbor();
     int  FindSubzoneConnectionIndex(unsigned short * a2);
-    int FreeAllCells(void *a1);
+    int FreeAllCells();
     static int GetScrollMode(...);
     static int GetTileDataField14(short *a1);
     int GetTileIndex(int16_t *aP1, int aP2, char aP3);
@@ -583,7 +583,7 @@ struct MapClass {
     void allocateCellArrays();
     void checkCellBounds();
     void* ApplyTerrainDamage(IUnknown *a1, IUnknown);
-    void* Destruct(void *a1, void *a2);
+    void* Destruct();
     void*  InitTileData(MouseClass * aP0, int aP3);
     int RevealArea2(int *a1, int a2, int a3, int a4);  // 0x567da0
 };

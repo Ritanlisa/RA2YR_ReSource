@@ -23,11 +23,11 @@ struct AudioMixer {
 // --- flat members (END) ---
     int Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     static int PlayBuffer(unsigned int * a1, unsigned int a2);
-    int PlaySample(void *a1);
+    int PlaySample();
     int Pump();
     int RequestOrEndBuffer(int a1, unsigned int a2);
     int SetVolume();
-    int Shutdown(void *a1);
+    int Shutdown();
     unsigned int u32_80;  // 0x80
 };
 

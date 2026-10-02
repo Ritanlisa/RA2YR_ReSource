@@ -24,7 +24,7 @@ struct EventQueue {
     unsigned int CheckPosition;
     unsigned int u32_4;
 // --- flat members (END) ---
-    void Check(void *a1, void *a2, void *a3);
+    void Check();
     void Process();
     short Read();
 };

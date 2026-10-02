@@ -465,7 +465,7 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
   v11 = v9 + v10; /*0x7bb0bd*/
   v12 = a3[2]; /*0x7bb0c0*/
   v52 = v11; /*0x7bb0c3*/
-  v13 = (int *)(Rect::Construct(&v44, &v51, v12, a3[3])); /*0x7bb0cf*/
+  v13 = (int *)(((Rect*)&v44)->Construct(&v51, v12, a3[3])); /*0x7bb0cf*/
   v45[0] = *v13; /*0x7bb0d8*/
   v45[1] = v13[1]; /*0x7bb0e0*/
   v45[2] = v13[2]; /*0x7bb0e6*/

@@ -455,7 +455,7 @@ MixFileClass * * MixFileClass::Bootstrap()
       v4 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5301ff*/
       if ( v4 ) /*0x530209*/
       {
-        v5 = (unsigned int *)(MixFileClass::FromFile(v4, Buffer, (int)dword_886980));
+        v5 = (unsigned int *)(((MixFileClass*)v4)->FromFile(Buffer, (int)dword_886980));
         if ( v5 ) /*0x530220*/
         {
           if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530258*/
@@ -480,7 +480,7 @@ MixFileClass * * MixFileClass::Bootstrap()
     g_MixFile_RA2MD = 0; /*0x5302de*/
     return 0; /*0x5302de*/
   }
-  g_MixFile_RA2MD = (int)MixFileClass::FromFile(v7, aRa2mdMix, (int)dword_886980); /*0x5302b1*/
+  g_MixFile_RA2MD = (int)((MixFileClass*)v7)->FromFile(aRa2mdMix, (int)dword_886980); /*0x5302b1*/
   if ( !g_MixFile_RA2MD ) /*0x5302b6*/
     return 0; /*0x5302b6*/
   v8 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5302ba*/

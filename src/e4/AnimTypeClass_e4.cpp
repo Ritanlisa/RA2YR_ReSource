@@ -77,7 +77,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
 }
 // 0x427530
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+AnimTypeClass * AnimTypeClass::Construct(char *aP1)
 {
 
   int v3; // eax

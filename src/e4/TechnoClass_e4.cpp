@@ -350,7 +350,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
 
 // 0x6F3F40
 namespace gamemd {
-unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * a1, void * a2)
+unsigned int * TechnoClass::Update(int a2)
 {
 
   int v2; // ecx

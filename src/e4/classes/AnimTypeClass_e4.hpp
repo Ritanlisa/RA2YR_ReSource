@@ -350,7 +350,7 @@ struct AnimTypeClass {
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
-    AnimTypeClass * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    AnimTypeClass * Construct(char *aP1);
     unsigned int * Construct2(char *Source);
     void* GetWarhead(int a2);
 };

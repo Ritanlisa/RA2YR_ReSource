@@ -231,7 +231,7 @@ LABEL_2:
     }
     if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
-    Bytes = WinModemClass::ReadBytes(v5, &Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
+    Bytes = ((WinModemClass*)v5)->ReadBytes(&Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
     if ( Bytes ) /*0x774da0*/
     {
       v6 += Bytes; /*0x774da6*/
@@ -385,7 +385,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   LOWORD(i) = a3; /*0x77512a*/
   strcpy(Buffer, a2); /*0x77514b*/
   strcat(Buffer, (const char *)&i); /*0x77517a*/
-  WinModemClass::ReadBytes(this, v32, 80); /*0x77518d*/
+  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
   WinModemClass::ReadBytes(this, v32, 80); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/

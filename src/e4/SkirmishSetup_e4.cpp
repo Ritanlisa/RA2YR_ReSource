@@ -186,7 +186,7 @@ LABEL_5:
       switch ( (uint16_t)a4 ) /*0x5e69cd*/
       {
         case 0x6C5u: /*0x5e69cd*/
-          HandleMultiplayerMapSelection((ObjectClass *)aP0); /*0x5e6b67*/
+          ((HandleMultiplayerMapSelection*)(ObjectClass *)aP0)->HandleMultiplayerMapSelection(); /*0x5e6b67*/
           return 0; /*0x5e6b75*/
         case 0x583u: /*0x5e69cd*/
           v9 = (Session *)aP0; /*0x5e69fd*/
@@ -546,7 +546,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v7 = GameConfig::ComputeCRC(); /*0x5e8655*/
     v8 = (SessionClass *)RA2_OPNEW(0x1BCu); /*0x5e8662*/
     if ( v8 ) /*0x5e866c*/
-      v9 = (wchar_t *)(SessionClass::ParseGameInfo(v8, aRandmapSed, &unk_ABE050, v7, 1, 0, 2, 4)); /*0x5e8688*/
+      v9 = (wchar_t *)(((SessionClass*)v8)->ParseGameInfo(aRandmapSed, &unk_ABE050, v7, 1, 0, 2, 4)); /*0x5e8688*/
     else
       v9 = 0; /*0x5e868c*/
     if ( dword_A8B8D8 < dword_A8B8D0 /*0x5e86c5*/

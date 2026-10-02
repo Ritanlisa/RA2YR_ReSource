@@ -76,7 +76,7 @@ struct FactoryClass {
     unsigned int balance;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
-    char GetFlag(void *a1);
+    char GetFlag();
     char RemoveOneFromQueue(char a2);
     int CountType(IUnknown * aP1);
     int DemandProduction(int a2, void * a3, char a4);

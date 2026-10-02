@@ -282,7 +282,7 @@ struct TerrainTypeClass {
     int PowerDrainUpdate(int * a2);
     int  SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2);
+    unsigned int * Construct(char *aP1);
     unsigned int *  GetWidth(unsigned int * a1, int * a2);
     TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0);
 };

@@ -58,13 +58,13 @@ namespace gamemd {
 char SuperClass::Get(int a2, int a3, int a4, int a5) {
     int Status; // eax
 
-    SuperClass::StartTimer(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]), 0, 0, 0); /*0x6e1c5d*/
+    ((SuperClass*)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]))->StartTimer(0, 0, 0); /*0x6e1c5d*/
     *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]) + 96) = 0; /*0x6e1c71*/
     if ( dword_A83D4C == (Object *)a2 ) /*0x6e1c7c*/
     {
       SidebarClass::AddCameo((SidebarClass *)&stru_87F5F0.__pad_58[416], 31, *(unsigned int *)&this->__pad_80[16]); /*0x6e1c8c*/
       Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e*/
-      Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x6e1ca9*/
+      ((Sidebar*)(int *)&stru_87F5F0.__pad_58[416])->ActivateTab(Status); /*0x6e1ca9*/
     }
     return 1; /*0x6e1cae*/
 }

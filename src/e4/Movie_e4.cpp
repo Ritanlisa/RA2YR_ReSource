@@ -36,7 +36,7 @@
 
 // 0x49CAF0
 namespace gamemd {
-AbstractClass * * Movie::SetupScreen(int a2, int aP1, int aP2, int a1, int a3, int a4, int a5, int a6, int a7, int a8)
+AbstractClass * * Movie::SetupScreen(int aP1)
 {
 
   CCINIClass * v3;

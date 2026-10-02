@@ -172,11 +172,11 @@ struct HouseTypeClass {
     unsigned int *__pad_16D;
 // --- flat members (END) ---
     AbstractClass * Dtor(void *a1);
-    AbstractClass * * ProcessPower(int * a2, void *a2_2);
+    AbstractClass * * ProcessPower(int *aP1);
     HouseTypeClass * Destructor(char a2);
     char readPowerPlants(TypeList_flat * aP1);
     int AddRef(int a1);
-    int Find(void *a1);
+    int Find();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();

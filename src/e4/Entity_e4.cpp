@@ -44,7 +44,7 @@ char sub_5C0080(char ** a1, unsigned char * a2)
   if ( dword_ABF3F4 ) /*0x5c0087*/
     return 0; /*0x5c0089*/
   dword_ABF3F4 = (int)a1; /*0x5c008c*/
-  result = VQAClass::AdvanceFrame(*a1, a2); /*0x5c0095*/
+  result = ((VQAClass*)*a1)->AdvanceFrame(a2); /*0x5c0095*/
   dword_ABF3F4 = 0; /*0x5c009a*/
   return result; /*0x5c008b*/
 }

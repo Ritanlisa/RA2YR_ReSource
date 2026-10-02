@@ -964,7 +964,7 @@ bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
   {
     if ( !a3 ) /*0x4a9859*/
     {
-      result = DisplayClass::GetCoordDelta((DisplayClass *)g_TacticalClass_Instance, (int)aP0); /*0x4a9866*/
+      result = ((DisplayClass*)(DisplayClass *)g_TacticalClass_Instance)->GetCoordDelta((int)aP0); /*0x4a9866*/
       LOBYTE(result) = result != -1; /*0x4a9873*/
       return result; /*0x4a9875*/
     }
@@ -974,7 +974,7 @@ bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
     LOBYTE(result) = 0; /*0x4a9852*/
     return result; /*0x4a9854*/
   }
-  result = DisplayClass::ScrollTacticalView((DisplayClass *)g_TacticalClass_Instance, (int)aP0, *aP1); /*0x4a9884*/
+  result = ((DisplayClass*)(DisplayClass *)g_TacticalClass_Instance)->ScrollTacticalView((int)aP0, *aP1); /*0x4a9884*/
   LOBYTE(result) = 1; /*0x4a9889*/
   return result; /*0x4a9854*/
 
