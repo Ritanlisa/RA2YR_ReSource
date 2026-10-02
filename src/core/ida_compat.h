@@ -144,7 +144,8 @@ inline unsigned int IDA___ROR4__(unsigned int v, unsigned int n) { n &= 31; retu
 inline bool IDA___CFADD__(unsigned int a, unsigned int b) {
     return (unsigned long long)a + (unsigned long long)b > 0xFFFFFFFFull;
 }
-inline double IDA___FYL2X__(double y, double x) { return y * log2(x); }
+#include <cmath>
+inline double IDA___FYL2X__(double y, double x) { return y * std::log2(x); }
 // bit-field extraction family (IDA_ prefix forms)
 #define IDA_SLOWORD(x)      (*((signed short*)&(x)))
 #define IDA_SBYTE1(x)       (*((signed char*)&(x) + 1))
