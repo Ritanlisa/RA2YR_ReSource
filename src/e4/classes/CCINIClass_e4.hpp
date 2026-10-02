@@ -6,7 +6,6 @@
 
 namespace gamemd {
 struct AITriggerTypeClass;  // fix_fwd_type_supply
-struct IUnknown;  // fix_fwd_type_supply
 struct MultiplayerGameMode;  // fix_fwd_type_supply
 
 struct CCINIClass {
