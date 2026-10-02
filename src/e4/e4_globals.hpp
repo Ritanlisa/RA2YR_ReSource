@@ -15197,3 +15197,6 @@ extern const char aWeeder[];
 extern const char aWolRequestingm[];
 extern const char aYriiShp[];
 extern const char aYrm[];
+
+// G42.16: orphan global-func supply wiring (C3861 bare names)
+#include "_generated/global_funcs_variad.hpp"
