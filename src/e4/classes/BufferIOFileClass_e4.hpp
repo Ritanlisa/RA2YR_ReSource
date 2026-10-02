@@ -38,7 +38,7 @@ struct BufferIOFileClass {
     unsigned int TotalBytesWritten;  // 0x48
     unsigned int RawFileClass;
 // --- flat members (END) ---
-    int Destruct();
+    int Destruct();  // def-aligned
     void StubReturnFalse(int a1, int a2, int a3);
      double Constructor(...);  // C2597 interim stub
 int Dtor();
