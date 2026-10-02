@@ -667,9 +667,9 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
         abstractFlags = (&dword_A8B230)[127].abstractFlags; /*0x55b12c*/
         if ( vtable3 != (void *)-1 ) /*0x55b134*/
         {
-          if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x55b140*/
+          if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x55b140*/
             break; /*0x55b140*/
-          abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x55b142*/
+          abstractFlags -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x55b142*/
         }
         if ( !abstractFlags ) /*0x55b146*/
           break; /*0x55b146*/
@@ -690,13 +690,13 @@ LABEL_24:
   if ( v6 != (void *)-1 ) /*0x55b18b*/
   {
     v8 = v2[127].abstractFlags; /*0x55b18d*/
-    v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v6; /*0x55b19e*/
-    if ( (signed int)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v2[127].vtable3) >= v8 || v8 == v9 ) /*0x55b1a4*/
+    v9 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v6; /*0x55b19e*/
+    if ( (signed int)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v2[127].vtable3) >= v8 || v8 == v9 ) /*0x55b1a4*/
     {
       if ( *p_vtable3 != (void *)-1 ) /*0x55b1ae*/
       {
         v10 = v2[127].abstractFlags; /*0x55b1b0*/
-        v11 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)*p_vtable3; /*0x55b1b3*/
+        v11 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)*p_vtable3; /*0x55b1b3*/
         if ( v11 >= v10 ) /*0x55b1b9*/
           v12 = 0; /*0x55b1bf*/
         else
@@ -720,13 +720,13 @@ LABEL_24:
     goto LABEL_41; /*0x55b28e*/
   }
   v14 = dword_A8B230; /*0x55b228*/
-  v15 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b22e*/
+  v15 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b22e*/
   nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b234*/
   NeedsSaveOrLink = (char *)dword_A8B230[128].NeedsSaveOrLink; /*0x55b23a*/
   p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b240*/
   if ( nextArrayIndex == -1 ) /*0x55b249*/
     goto LABEL_38; /*0x55b249*/
-  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/
+  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/
   {
     NeedsSaveOrLink -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex; /*0x55b253*/
 LABEL_38:

@@ -437,10 +437,10 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   {
     if ( *(unsigned int *)a3 ) /*0x7a572c*/
     {
-      memset(&((char *)&g_WOL_LoginObject), 0, 0x940u); /*0x7a576f*/
+      memset(((char *)&g_WOL_LoginObject), 0, 0x940u); /*0x7a576f*/
       v9 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x7a577b*/
       v10 = (TagClass *)dword_A8B3AC; /*0x7a5788*/
-      strcpy((char *)&((char *)&g_WOL_LoginObject), v9); /*0x7a5799*/
+      strcpy((char *)((char *)&g_WOL_LoginObject), v9); /*0x7a5799*/
       g_WOL_LoginObject.attachedTag = v10; /*0x7a57a8*/
       g_WOL_LoginObject.attachedBomb = 0; /*0x7a57ad*/
       g_WOL_LoginObject.nextObject = (ObjectClass *)dword_A8B394; /*0x7a57b7*/

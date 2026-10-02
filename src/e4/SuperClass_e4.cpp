@@ -1335,7 +1335,7 @@ bool SuperClass::ShouldFlashTab()
   v2 = *((unsigned int *)SuperClass_field_0x28 + 58); /*0x6ce1c4*/
   if ( v2 == -1 ) /*0x6ce1cd*/
     return 1; /*0x6ce1d1*/
-  return v2 && (int)this->SuperClass_field_0x74 + v2 > *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ce1d1*/
+  return v2 && (int)this->SuperClass_field_0x74 + v2 > *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ce1d1*/
 
 }
 } // namespace gamemd

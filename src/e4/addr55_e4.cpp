@@ -1360,13 +1360,13 @@ int E4Recv_55B720::sub_55B720()
   {
     goto LABEL_8; /*0x55b74a*/
   }
-  v3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
+  v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
   nextArrayIndex = (&dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
   p_nextArrayIndex = &(&dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
   NeedsSaveOrLink = (char *)(&dword_A8B230)[128].NeedsSaveOrLink; /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
+    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
     {
 LABEL_7:
       LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0); /*0x55b779*/
@@ -1376,10 +1376,10 @@ LABEL_7:
       ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->ProcessVisibilityFlags(); /*0x55b79b*/
       v1 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b7a0*/
 LABEL_8:
-      v3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b7a6*/
+      v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b7a6*/
       goto LABEL_9; /*0x55b7a6*/
     }
-    NeedsSaveOrLink -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex; /*0x55b773*/
+    NeedsSaveOrLink -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex; /*0x55b773*/
   }
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/

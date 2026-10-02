@@ -233,7 +233,7 @@ void WOL_ResetSystem()
     {
       if ( IDA_LOBYTE(stru_B765EC.nextObject) ) /*0x7803ee*/
         break; /*0x7803ee*/
-      HashTable::Shrink((HashTable *)&((char *)&stru_B765EC)); /*0x7803f5*/
+      HashTable::Shrink((HashTable *)((char *)&stru_B765EC)); /*0x7803f5*/
     }
     while ( stru_B765EC.occupant > (unsigned int)stru_B765EC.ambientSoundController[4] ); /*0x780407*/
   }

@@ -142,12 +142,12 @@ int Buffer::UpdateVolumeSettings() {
     v2 = (unsigned int **)*((unsigned int *)this + 86); /*0x40a6da*/
     (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 60))( /*0x40a6fd*/
       v2[25],
-      dword_816380[(unsigned int)(100 * IDA_HIWORD(*((unsigned int *)this + 55))) >> 14]);
+      (&dword_816380)[(unsigned int)(100 * IDA_HIWORD(*((unsigned int *)this + 55))) >> 14]);
     v3 = ((unsigned int)(200 * IDA_HIWORD(*((unsigned int *)this + 75))) >> 14) - 100; /*0x40a715*/
     if ( v3 >= 0 ) /*0x40a718*/
-      (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 64))(v2[25], -dword_816510[-v3]); /*0x40a743*/
+      (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 64))(v2[25], -(&dword_816510)[-v3]); /*0x40a743*/
     else
-      (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 64))(v2[25], dword_816510[v3]); /*0x40a728*/
+      (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 64))(v2[25], (&dword_816510)[v3]); /*0x40a728*/
     v4 = sub_401190((int)this + 216, (*v2)[97]); /*0x40a755*/
     (*(void (__stdcall **)(unsigned int *, int))(*v2[25] + 68))(v2[25], v4); /*0x40a761*/
     return 0; /*0x40a766*/
@@ -206,7 +206,7 @@ int StringTable::Lookup() {
       if ( (int)v3 >= (int)&dword_817130 ) /*0x40dd06*/
         return 0; /*0x40dd0d*/
     }
-    return dword_816EE4[2 * v2]; /*0x40dd08*/
+    return (&dword_816EE4)[2 * v2]; /*0x40dd08*/
 }
 } // namespace gamemd
 

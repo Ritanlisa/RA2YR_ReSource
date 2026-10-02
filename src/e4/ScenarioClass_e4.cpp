@@ -504,20 +504,20 @@ LABEL_21:
   GenericList::Constructor((GenericList *)(unsigned int *)((char *)&v19 + 2)); /*0x683c20*/
   *((unsigned int *)((char *)&v19 + 2)) = (int)&vt_List; /*0x683c29*/
   memset((unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
-  memset(&((char *)&v19), 0, 9); /*0x683c42*/
+  memset(((char *)&v19), 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
   if ( ((CCINIClass *)(&v19))->Load((int)&v20, 1, 0) ) /*0x683c67*/
   {
     Bool = INIClass::GetBool( /*0x683c85*/
              (INIClass *)&v19,
-             (uint8_t *)&((char *)&stru_82BA00),
+             (uint8_t *)((char *)&stru_82BA00),
              (uint8_t *)g_INI_Key_Intro,
              -1);
     if ( Bool != -1 /*0x683ca5*/
       || (Bool = INIClass::GetBool(
                    (INIClass *)&v19,
-                   (uint8_t *)&((char *)&stru_82BA00),
+                   (uint8_t *)((char *)&stru_82BA00),
                    (uint8_t *)g_INI_Key_Brief,
                    -1),
           Bool != -1) )
@@ -533,7 +533,7 @@ LABEL_21:
   ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x683ce9*/
   ((HashTable *)((INIClass *)&v19))->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
-  v11 = ((StringList *)((StringList *)&unk_A83D10))->Find(&((char *)&stru_82BA00)); /*0x683d0f*/
+  v11 = ((StringList *)((StringList *)&unk_A83D10))->Find(((char *)&stru_82BA00)); /*0x683d0f*/
   ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
@@ -672,10 +672,10 @@ void ScenarioClass_Construct()
   result = (void*)&CD_vftable(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x686765*/
+    *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x686765*/
     *((unsigned int *)((char *)&v5 + 0)) = 0; /*0x68676b*/
     *((unsigned int *)((char *)&v5 + 1)) = 0; /*0x68676f*/
-    GenericList::Constructor((GenericList *)&(unsigned int *)((char *)&v5 + 2)); /*0x686773*/
+    GenericList::Constructor((GenericList *)(unsigned int *)((char *)&v5 + 2)); /*0x686773*/
     *((unsigned int *)((char *)&v5 + 2)) = (int)&List_INIClass_INISection___vftable; /*0x68677c*/
     Node::Init((Node *)&(unsigned int *)((char *)&v5 + 8)); /*0x686784*/
     ((unsigned int *)&v5)[0] = 0; /*0x68678d*/
@@ -746,7 +746,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
 
   bool v51 = g_GameMode_Current == 0;
   v3 = a2;
-  ++*(unsigned int *)&g_NetworkPlayerBuffer[4464];
+  ++*(unsigned int *)&(&g_NetworkPlayerBuffer)[4464];
   Debug::Log();
   while ( 1 )
   {
@@ -759,7 +759,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
       int v6 = g_ScenarioClass_Instance->nextScenario[0];
       IDA_BYTE1(v6) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v6 | (((uint8_t)FOW & 1) << 12);
-      v7 = *(ObjectClass **)&g_NetworkPlayerBuffer[4900];
+      v7 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
       IDA_BYTE1(v7) = g_NetworkPlayerBuffer[4901] & 0xEF;
       *(unsigned int *)&g_NetworkPlayerBuffer[4900] = (unsigned int)v7 | (((uint8_t)FOW & 1) << 12);
     }

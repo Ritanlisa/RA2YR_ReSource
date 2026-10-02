@@ -376,9 +376,9 @@ AbstractClass * * SlaveManager_InitGrid()
               || v20[17] != -1
               || v20[57]
               || (v40.MapSeed_field_0x04 = v20[9], ((Tactical *)((Tactical *)&v40.MapSeed_field_0x04))->GetCellData()[69])
-              || (v21 = v20[14], v21 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))
+              || (v21 = v20[14], v21 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340))
               && v21 != 0xFFFF
-              && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v21) + 736) )
+              && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v21) + 736) )
             {
               v30[4] = 1; /*0x6b2d5c*/
             }
@@ -400,9 +400,9 @@ AbstractClass * * SlaveManager_InitGrid()
               || v24[17] != -1
               || v24[57]
               || (*(unsigned int *)v32 = v24[9], ((Tactical *)((Tactical *)v32))->GetCellData()[69])
-              || (v25 = v24[14], v25 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))
+              || (v25 = v24[14], v25 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340))
               && v25 != 0xFFFF
-              && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v25) + 736) )
+              && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v25) + 736) )
             {
               v30[4] = 1; /*0x6b2e2f*/
             }
@@ -1068,9 +1068,9 @@ char ProcessSlaveManagerTerrain()
           if ( !((Tactical *)((Tactical *)&v23))->GetCellData()[69] ) /*0x6b398a*/
           {
             v13 = *(unsigned int *)(i + 56); /*0x6b3995*/
-            if ( v13 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) /*0x6b39b2*/
+            if ( v13 >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) /*0x6b39b2*/
               || v13 == 0xFFFF
-              || *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v13) + 736) )
+              || *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v13) + 736) )
             {
               v14 = 4; /*0x6b39c5*/
               v15 = &v24; /*0x6b39d8*/

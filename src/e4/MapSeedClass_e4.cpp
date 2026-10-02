@@ -512,7 +512,7 @@ namespace gamemd {
 wchar_t * MapSeedClass::GetCell()
 {
 
-  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 2), 0,(const char *)(&(unsigned int *)((char *)&stru_82BA00 + 11)), 5578); /*0x597fb6*/
+  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 2), 0,(const char *)((unsigned int *)((char *)&stru_82BA00 + 11)), 5578); /*0x597fb6*/
 
 }
 } // namespace gamemd
@@ -521,7 +521,7 @@ namespace gamemd {
 wchar_t * MapSeedClass::SetCell()
 {
 
-  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 6), 0,(const char *)(&(unsigned int *)((char *)&stru_82BA00 + 11)), 5584); /*0x597fd6*/
+  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 6), 0,(const char *)((unsigned int *)((char *)&stru_82BA00 + 11)), 5584); /*0x597fd6*/
 
 }
 } // namespace gamemd
@@ -530,7 +530,7 @@ namespace gamemd {
 wchar_t * MapSeedClass::Validate()
 {
 
-  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 11), 0,(const char *)(&(unsigned int *)((char *)&stru_82BA00 + 11)), 5590); /*0x597ff6*/
+  return GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 11), 0,(const char *)((unsigned int *)((char *)&stru_82BA00 + 11)), 5590); /*0x597ff6*/
 
 }
 } // namespace gamemd

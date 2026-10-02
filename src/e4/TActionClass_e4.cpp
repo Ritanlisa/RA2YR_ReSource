@@ -466,7 +466,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
               {
                 (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14) /*0x6e0c72*/
                                                             + 980))(
-                  *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14),
+                  *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14),
                   v8,
                   0);
                 ((Animation*)(Animation *)v15)->UpdateBuildingAnimations(); /*0x6e0c7a*/
@@ -478,7 +478,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
       }
       ++v14; /*0x6e0c86*/
     }
-    while ( v14 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x6e0c89*/
+    while ( v14 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x6e0c89*/
   }
   return (gamemd::AbstractClass **)(v6); /*0x6e0ba6*/
 
@@ -855,7 +855,7 @@ TActionClass::TActionClass()
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 53))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[52])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 55)) > 0
     && (v3 = (*(int (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50)) + 8))(
-               &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50),
+               (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50),
                *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 52)) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 55)),
                0),
         v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)),
@@ -987,9 +987,9 @@ char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnkno
   if ( !Field11 ) /*0x6e0ae1*/
     return 0; /*0x6e0ae1*/
   v9 = 0; /*0x6e0af1*/
-  for ( i = 0; i < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); ++i ) /*0x6e0af7*/
+  for ( i = 0; i < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164); ++i ) /*0x6e0af7*/
   {
-    v11 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x6e0afe*/
+    v11 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x6e0afe*/
     if ( *(unsigned char *)(v11 + 144) ) /*0x6e0b01*/
     {
       if ( *(unsigned char *)(v11 + 116) ) /*0x6e0b0b*/
@@ -1022,7 +1022,7 @@ char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IU
   HouseClass *v5; // esi
   int Field11; // eax
 
-  v5 = *(HouseClass **)&this->pad_6E[34]; /*0x6e0ca1*/
+  v5 = *(HouseClass **)&(&this->pad_6E)[34]; /*0x6e0ca1*/
   if ( !a3 ) /*0x6e0cad*/
     return 0; /*0x6e0cad*/
   if ( v5 == (HouseClass *)8997 ) /*0x6e0cb5*/
@@ -1054,7 +1054,7 @@ char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int
   HouseClass *v5; // esi
   int Field11; // eax
 
-  v5 = *(HouseClass **)&this->pad_6E[34]; /*0x6e0d01*/
+  v5 = *(HouseClass **)&(&this->pad_6E)[34]; /*0x6e0d01*/
   if ( !a3 ) /*0x6e0d0d*/
     return 0; /*0x6e0d0d*/
   if ( v5 == (HouseClass *)8997 ) /*0x6e0d15*/
@@ -1092,7 +1092,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
 
   if ( dword_A83D4C->__pad_140[256] ) /*0x6e0fe8*/
     return 1; /*0x6e116a*/
-  *(unsigned int *)v11 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v8, *(unsigned int *)&this->pad_6E[34]); /*0x6e101b*/
+  *(unsigned int *)v11 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v8, *(unsigned int *)&(&this->pad_6E)[34]); /*0x6e101b*/
   if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v11) + 80) & 0x100) != 0 /*0x6e1047*/
     || (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v11) + 80) & 0x400) != 0 )
   {

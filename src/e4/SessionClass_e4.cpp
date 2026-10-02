@@ -316,29 +316,29 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   v43.customSound_controller[0] = 0; /*0x5cef39*/
   v43.customSound_controller[1] = 0; /*0x5cef3d*/
   ((unsigned int *)&v43)[0] = (int)&vt_INIClass; /*0x5cef41*/
-  unknown_libname_73(&((char *)&v43)); /*0x5cef49*/
-  unknown_libname_73(&((char *)&v43)); /*0x5cef52*/
+  unknown_libname_73(((char *)&v43)); /*0x5cef49*/
+  unknown_libname_73(((char *)&v43)); /*0x5cef52*/
   ((SessionClass *)(uniqueId))->Destruct(); /*0x5cef59*/
   (*(void (**)(int *, char *))(v43.customSound_controller[2] + 8))( /*0x5cef6b*/
     &v43.customSound_controller[2],
     aMapselmdIni);
   (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
-  if ( !((FileStraw *)((FileStraw *)&((char *)&v43)))->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
+  if ( !((FileStraw *)((FileStraw *)((char *)&v43)))->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/
   while ( 1 ) /*0x5cefa2*/
   {
     ((String *)((String *)&v43))->Assign(0); /*0x5cefa2*/
-    v42 = FromStringInt((IUnknown *)((char **)&((char *)&v43)), v4); /*0x5cefbc*/
-    v5 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, v42, (char **)&v43, (int)&((char *)&v43)) == 0; /*0x5cefd4*/
-    DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cefd7*/
+    v42 = FromStringInt((IUnknown *)((char **)((char *)&v43)), v4); /*0x5cefbc*/
+    v5 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString(a1, v42, (char **)&v43, (int)((char *)&v43)) == 0; /*0x5cefd4*/
+    DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cefd7*/
     DeleteAndZero(&v43); /*0x5cefe0*/
     if ( v5 ) /*0x5cefe7*/
       break; /*0x5cefe7*/
     v6 = (MSChoiceClass *)__2_YAPAXI_Z(0x6Cu); /*0x5cefef*/
     if ( !v6 ) /*0x5ceff9*/
       goto LABEL_17; /*0x5ceff9*/
-    v7 = ((MSChoiceClass *)(v6))->LoadFromINI((unsigned int *)(&((char *)&v43)), (const char **)&((char *)&v43)); /*0x5cf00c*/
+    v7 = ((MSChoiceClass *)(v6))->LoadFromINI((unsigned int *)(((char *)&v43)), (const char **)((char *)&v43)); /*0x5cf00c*/
     if ( !v7 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
     v8 = uniqueId->unknown_08[0]; /*0x5cf012*/
@@ -364,17 +364,17 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   }
   if ( (&uniqueId->unknown_10)[0] ) /*0x5cf073*/
   {
-    ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf0e0*/
+    ((String *)((String *)((char *)&v43)))->Assign(0); /*0x5cf0e0*/
     ((String *)((String *)&v43))->Assign((const char *)(aAnims)); /*0x5cf0ee*/
-    v13 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, (char **)&v43, (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf119*/
+    v13 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString(a1, (char **)&v43, (char **)((char *)&v43), (int)((char *)&v43)) > 0; /*0x5cf119*/
     DeleteAndZero(&v43); /*0x5cf11c*/
-    DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf125*/
+    DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf125*/
     if ( v13 ) /*0x5cf12c*/
     {
       ((String *)((String *)&v43))->Assign(0); /*0x5cf137*/
-      ((String *)((String *)&((char *)&v43)))->Assign((const char *)(aTextrect)); /*0x5cf145*/
-      v14 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf16d*/
-      DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf170*/
+      ((String *)((String *)((char *)&v43)))->Assign((const char *)(aTextrect)); /*0x5cf145*/
+      v14 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString((char **)((char *)&v43), (char **)((char *)&v43), (char **)&v43, (int)((char *)&v43)) > 0; /*0x5cf16d*/
+      DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf170*/
       DeleteAndZero(&v43); /*0x5cf179*/
       if ( v14 ) /*0x5cf180*/
       {

@@ -1335,40 +1335,40 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
     v1[1].vtable2 = 0; /*0x465038*/
     LOBYTE(v1[1].vtable3) = 0; /*0x46503e*/
   }
-  if ( v1[1].CanBeHidden[0] && v1[1].TurretOffset ) /*0x46504c*/
+  if ( (&v1[1].CanBeHidden)[0] && v1[1].TurretOffset ) /*0x46504c*/
   {
     __3_YAXPAX_Z((void *)v1[1].TurretOffset); /*0x465057*/
     v1[1].TurretOffset = 0; /*0x46505f*/
-    v1[1].CanBeHidden[0] = 0; /*0x465065*/
+    (&v1[1].CanBeHidden)[0] = 0; /*0x465065*/
   }
-  if ( LOBYTE(v1[1].Cameo) && *(unsigned int *)&v1[1].CameoFile[22] ) /*0x465073*/
+  if ( LOBYTE(v1[1].Cameo) && *(unsigned int *)&(&v1[1].CameoFile)[22] ) /*0x465073*/
   {
-    __3_YAXPAX_Z(*(void **)&v1[1].CameoFile[22]); /*0x46507e*/
-    *(unsigned int *)&v1[1].CameoFile[22] = 0; /*0x465086*/
+    __3_YAXPAX_Z(*(void **)&(&v1[1].CameoFile)[22]); /*0x46507e*/
+    *(unsigned int *)&(&v1[1].CameoFile)[22] = 0; /*0x465086*/
     LOBYTE(v1[1].Cameo) = 0; /*0x46508c*/
   }
-  if ( v1[1].AltCameoFile[3] && *(unsigned int *)v1[1].CameoAllocated ) /*0x46509a*/
+  if ( (&v1[1].AltCameoFile)[3] && *(unsigned int *)v1[1].CameoAllocated ) /*0x46509a*/
   {
     __3_YAXPAX_Z(*(void **)v1[1].CameoAllocated); /*0x4650a5*/
     *(unsigned int *)v1[1].CameoAllocated = 0; /*0x4650ad*/
-    v1[1].AltCameoFile[3] = 0; /*0x4650b3*/
+    (&v1[1].AltCameoFile)[3] = 0; /*0x4650b3*/
   }
-  if ( v1[1].AltCameoFile[11] && *(unsigned int *)&v1[1].AltCameoFile[7] ) /*0x4650c1*/
+  if ( (&v1[1].AltCameoFile)[11] && *(unsigned int *)&(&v1[1].AltCameoFile)[7] ) /*0x4650c1*/
   {
-    __3_YAXPAX_Z(*(void **)&v1[1].AltCameoFile[7]); /*0x4650cc*/
-    *(unsigned int *)&v1[1].AltCameoFile[7] = 0; /*0x4650d4*/
-    v1[1].AltCameoFile[11] = 0; /*0x4650da*/
+    __3_YAXPAX_Z(*(void **)&(&v1[1].AltCameoFile)[7]); /*0x4650cc*/
+    *(unsigned int *)&(&v1[1].AltCameoFile)[7] = 0; /*0x4650d4*/
+    (&v1[1].AltCameoFile)[11] = 0; /*0x4650da*/
   }
-  if ( v1[1].AltCameoFile[19] && *(unsigned int *)&v1[1].AltCameoFile[15] ) /*0x4650e8*/
+  if ( (&v1[1].AltCameoFile)[19] && *(unsigned int *)&(&v1[1].AltCameoFile)[15] ) /*0x4650e8*/
   {
-    __3_YAXPAX_Z(*(void **)&v1[1].AltCameoFile[15]); /*0x4650f3*/
-    *(unsigned int *)&v1[1].AltCameoFile[15] = 0; /*0x4650fb*/
-    v1[1].AltCameoFile[19] = 0; /*0x465101*/
+    __3_YAXPAX_Z(*(void **)&(&v1[1].AltCameoFile)[15]); /*0x4650f3*/
+    *(unsigned int *)&(&v1[1].AltCameoFile)[15] = 0; /*0x4650fb*/
+    (&v1[1].AltCameoFile)[19] = 0; /*0x465101*/
   }
-  if ( LOBYTE(v1[1].AltCameo) && *(unsigned int *)&v1[1].AltCameoFile[23] ) /*0x46510f*/
+  if ( LOBYTE(v1[1].AltCameo) && *(unsigned int *)&(&v1[1].AltCameoFile)[23] ) /*0x46510f*/
   {
-    __3_YAXPAX_Z(*(void **)&v1[1].AltCameoFile[23]); /*0x46511a*/
-    *(unsigned int *)&v1[1].AltCameoFile[23] = 0; /*0x465122*/
+    __3_YAXPAX_Z(*(void **)&(&v1[1].AltCameoFile)[23]); /*0x46511a*/
+    *(unsigned int *)&(&v1[1].AltCameoFile)[23] = 0; /*0x465122*/
     LOBYTE(v1[1].AltCameo) = 0; /*0x465128*/
   }
   v2 = v14; /*0x46512e*/

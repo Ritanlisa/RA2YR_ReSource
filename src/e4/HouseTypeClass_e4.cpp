@@ -219,7 +219,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aFirepower, *(double *)(_EBX + 200)); /*0x511990*/
   v6 = *(unsigned int *)(_EBX + 212); /*0x511995*/
   v7 = *(unsigned int *)(_EBX + 208); /*0x51199b*/
-  __asm { fstp qword ptr [ebx+0C8h] } /*0x5119a1*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0C8h] } */
   *(double *)(_EBX + 200) = _RT1; /*0x5119a1*/
   INIClass::ReadDouble_Overwrite( /*0x5119b1*/
     (double *)v4,
@@ -228,7 +228,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     COERCE_DOUBLE(__PAIR64__(v6, v7)));
   v9 = *(unsigned int *)(_EBX + 220); /*0x5119b6*/
   v10 = *(unsigned int *)(_EBX + 216); /*0x5119bc*/
-  __asm { fstp qword ptr [ebx+0D0h] } /*0x5119c2*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0D0h] } */
   *(double *)(_EBX + 208) = _RT1; /*0x5119c2*/
   INIClass::ReadDouble_Overwrite( /*0x5119d2*/
     (double *)v4,
@@ -236,12 +236,12 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     aAirspeed,
     COERCE_DOUBLE(__PAIR64__(v9, v10)));
   v12 = *(double *)(_EBX + 224); /*0x5119dd*/
-  __asm { fstp qword ptr [ebx+0D8h] } /*0x5119e3*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0D8h] } */
   *(double *)(_EBX + 216) = _RT1; /*0x5119e3*/
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), g_INI_Key_Armor, v12); /*0x5119f3*/
   v14 = *(unsigned int *)(_EBX + 236); /*0x5119f8*/
   v15 = *(unsigned int *)(_EBX + 232); /*0x5119fe*/
-  __asm { fstp qword ptr [ebx+0E0h] } /*0x511a04*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0E0h] } */
   *(double *)(_EBX + 224) = _RT1; /*0x511a04*/
   INIClass::ReadDouble_Overwrite( /*0x511a14*/
     (double *)v4,
@@ -250,7 +250,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     COERCE_DOUBLE(__PAIR64__(v14, v15)));
   v17 = *(unsigned int *)(_EBX + 244); /*0x511a19*/
   v18 = *(unsigned int *)(_EBX + 240); /*0x511a1f*/
-  __asm { fstp qword ptr [ebx+0E8h] } /*0x511a25*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0E8h] } */
   *(double *)(_EBX + 232) = _RT1; /*0x511a25*/
   INIClass::ReadDouble_Overwrite( /*0x511a35*/
     (double *)v4,
@@ -258,11 +258,11 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     g_INI_Key_Cost,
     COERCE_DOUBLE(__PAIR64__(v17, v18)));
   v20 = *(double *)(_EBX + 248); /*0x511a40*/
-  __asm { fstp qword ptr [ebx+0F0h] } /*0x511a46*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0F0h] } */
   *(double *)(_EBX + 240) = _RT1; /*0x511a46*/
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtime, v20); /*0x511a56*/
   v22 = *(unsigned char *)(_EBX + 421); /*0x511a5b*/
-  __asm { fstp qword ptr [ebx+0F8h] } /*0x511a61*/
+  /* asm-debt:__asm { fstp qword ptr [ebx+0F8h] } */
   *(double *)(_EBX + 248) = _RT1; /*0x511a61*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)v4, (uint8_t *)(_EBX + 36), aMultiplay, v22); /*0x511a70*/
   v79 = *(unsigned char *)(_EBX + 422); /*0x511a7d*/
@@ -272,101 +272,101 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v26 = *(unsigned char *)(_EBX + 424); /*0x511aa9*/
   *(unsigned char *)(_EBX + 423) = v25; /*0x511aaf*/
   v27 = INIClass::ReadBool_Overwrite((int *)v4, (uint8_t *)(_EBX + 36), aSmartai, v26); /*0x511abe*/
-  __asm { fld dword ptr [ebx+100h] } /*0x511ac3*/
+  /* asm-debt:__asm { fld dword ptr [ebx+100h] } */
   *(unsigned char *)(_EBX + 424) = v27; /*0x511ace*/
-  __asm { fstp [esp+0F8h+var_F8]; double } /*0x511ad4*/
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aArmorinfantrym, v60); /*0x511add*/
-  __asm { fstp dword ptr [ebx+100h] } /*0x511ae2*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+100h] } */
   *(float *)(_EBX + 256) = *(float *)&_RT1; /*0x511ae2*/
-  __asm { fld dword ptr [ebx+104h] } /*0x511ae8*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+104h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aArmorunitsmult, v61); /*0x511afc*/
-  __asm { fstp dword ptr [ebx+104h] } /*0x511b01*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+104h] } */
   *(float *)(_EBX + 260) = *(float *)&_RT1; /*0x511b01*/
-  __asm { fld dword ptr [ebx+108h] } /*0x511b07*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+108h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aArmoraircraftm, v62); /*0x511b1b*/
-  __asm { fstp dword ptr [ebx+108h] } /*0x511b20*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+108h] } */
   *(float *)(_EBX + 264) = *(float *)&_RT1; /*0x511b20*/
-  __asm { fld dword ptr [ebx+10Ch] } /*0x511b26*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+10Ch] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aArmorbuildings, v63); /*0x511b3a*/
-  __asm { fstp dword ptr [ebx+10Ch] } /*0x511b3f*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+10Ch] } */
   *(float *)(_EBX + 268) = *(float *)&_RT1; /*0x511b3f*/
-  __asm { fld dword ptr [ebx+110h] } /*0x511b45*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+110h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aArmordefensesm, v64); /*0x511b59*/
-  __asm { fstp dword ptr [ebx+110h] } /*0x511b5e*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+110h] } */
   *(float *)(_EBX + 272) = *(float *)&_RT1; /*0x511b5e*/
-  __asm { fld dword ptr [ebx+114h] } /*0x511b64*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+114h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aCostinfantrymu, v65); /*0x511b78*/
-  __asm { fstp dword ptr [ebx+114h] } /*0x511b7d*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+114h] } */
   *(float *)(_EBX + 276) = *(float *)&_RT1; /*0x511b7d*/
-  __asm { fld dword ptr [ebx+118h] } /*0x511b83*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+118h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aCostunitsmult, v66); /*0x511b97*/
-  __asm { fstp dword ptr [ebx+118h] } /*0x511b9c*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+118h] } */
   *(float *)(_EBX + 280) = *(float *)&_RT1; /*0x511b9c*/
-  __asm { fld dword ptr [ebx+11Ch] } /*0x511ba2*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+11Ch] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aCostaircraftmu, v67); /*0x511bb6*/
-  __asm { fstp dword ptr [ebx+11Ch] } /*0x511bbb*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+11Ch] } */
   *(float *)(_EBX + 284) = *(float *)&_RT1; /*0x511bbb*/
-  __asm { fld dword ptr [ebx+120h] } /*0x511bc1*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+120h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aCostbuildingsm, v68); /*0x511bd5*/
-  __asm { fstp dword ptr [ebx+120h] } /*0x511bda*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+120h] } */
   *(float *)(_EBX + 288) = *(float *)&_RT1; /*0x511bda*/
-  __asm { fld dword ptr [ebx+124h] } /*0x511be0*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+124h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aCostdefensesmu, v69); /*0x511bf4*/
-  __asm { fstp dword ptr [ebx+124h] } /*0x511bf9*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+124h] } */
   *(float *)(_EBX + 292) = *(float *)&_RT1; /*0x511bf9*/
-  __asm { fld dword ptr [ebx+128h] } /*0x511bff*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+128h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aSpeedinfantrym, v70); /*0x511c13*/
-  __asm { fstp dword ptr [ebx+128h] } /*0x511c18*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+128h] } */
   *(float *)(_EBX + 296) = *(float *)&_RT1; /*0x511c18*/
-  __asm { fld dword ptr [ebx+12Ch] } /*0x511c1e*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+12Ch] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aSpeedunitsmult, v71); /*0x511c32*/
-  __asm { fstp dword ptr [ebx+12Ch] } /*0x511c37*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+12Ch] } */
   *(float *)(_EBX + 300) = *(float *)&_RT1; /*0x511c37*/
-  __asm { fld dword ptr [ebx+130h] } /*0x511c3d*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+130h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aSpeedaircraftm, v72); /*0x511c51*/
-  __asm { fstp dword ptr [ebx+130h] } /*0x511c56*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+130h] } */
   *(float *)(_EBX + 304) = *(float *)&_RT1; /*0x511c56*/
-  __asm { fld dword ptr [ebx+134h] } /*0x511c5c*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+134h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtimeinfan, v73); /*0x511c70*/
-  __asm { fstp dword ptr [ebx+134h] } /*0x511c75*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+134h] } */
   *(float *)(_EBX + 308) = *(float *)&_RT1; /*0x511c75*/
-  __asm { fld dword ptr [ebx+138h] } /*0x511c7b*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+138h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtimeunits, v74); /*0x511c8f*/
-  __asm { fstp dword ptr [ebx+138h] } /*0x511c94*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+138h] } */
   *(float *)(_EBX + 312) = *(float *)&_RT1; /*0x511c94*/
-  __asm { fld dword ptr [ebx+13Ch] } /*0x511c9a*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+13Ch] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtimeaircr, v75); /*0x511cae*/
-  __asm { fstp dword ptr [ebx+13Ch] } /*0x511cb3*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+13Ch] } */
   *(float *)(_EBX + 316) = *(float *)&_RT1; /*0x511cb3*/
-  __asm { fld dword ptr [ebx+140h] } /*0x511cb9*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+140h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtimebuild, v76); /*0x511ccd*/
-  __asm { fstp dword ptr [ebx+140h] } /*0x511cd2*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+140h] } */
   *(float *)(_EBX + 320) = *(float *)&_RT1; /*0x511cd2*/
-  __asm { fld dword ptr [ebx+144h] } /*0x511cd8*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+144h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aBuildtimedefen, v77); /*0x511cec*/
-  __asm { fstp dword ptr [ebx+144h] } /*0x511cf1*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+144h] } */
   *(float *)(_EBX + 324) = *(float *)&_RT1; /*0x511cf1*/
-  __asm { fld dword ptr [ebx+148h] } /*0x511cf7*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  /* asm-debt:__asm { fld dword ptr [ebx+148h] } */
+  /* asm-debt:__asm { fstp [esp+0F8h+var_F8]; double } */
   INIClass::ReadDouble_Overwrite((double *)v4, (uint8_t *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
-  __asm { fstp dword ptr [ebx+148h] } /*0x511d10*/
+  /* asm-debt:__asm { fstp dword ptr [ebx+148h] } */
   *(float *)(_EBX + 328) = *(float *)&_RT1; /*0x511d10*/
   if ( INIClass::GetString( /*0x511d2d*/
          (INIClass *)v4,

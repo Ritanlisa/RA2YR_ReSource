@@ -959,7 +959,7 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
     goto LABEL_16; /*0x5c1ea6*/
   }
   if ( dword_A8DA84 == 2 ) /*0x5c1dfd*/
-    ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1e0e*/
+    ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)(&dword_A8DA78)[1]); /*0x5c1e0e*/
   result = LoadCampaignCoopSave((char *)this->MPCooperative_field_0x40); /*0x5c1e16*/
   if ( result ) /*0x5c1e1d*/
   {
@@ -991,17 +991,17 @@ LABEL_16:
           for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c1f3b*/
           {
             MPCooperative_field_0x0 = (uint8_t (**)(MPCooperative *, int))this->MPCooperative_field_0x0; /*0x5c1f43*/
-            PlayerSide = ((SessionClass *)((int *)dword_A8DA78[i]))->GetPlayerSide(); /*0x5c1f48*/
+            PlayerSide = ((SessionClass *)((int *)(&dword_A8DA78)[i]))->GetPlayerSide(); /*0x5c1f48*/
             if ( !MPCooperative_field_0x0[7](this, PlayerSide) ) /*0x5c1f50*/
             {
               if ( v10 <= 1 ) /*0x5c1f5a*/
               {
                 v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(*(unsigned int *)(v18 + 20) + 4 * v17) + 4)); /*0x5c1f78*/
-                ((SessionClass *)((int *)dword_A8DA78[i]))->SetPlayerOption(v16); /*0x5c1f82*/
+                ((SessionClass *)((int *)(&dword_A8DA78)[i]))->SetPlayerOption(v16); /*0x5c1f82*/
               }
               else
               {
-                ((SessionClass *)((int *)dword_A8DA78[i]))->SetPlayerOption(-2); /*0x5c1f5e*/
+                ((SessionClass *)((int *)(&dword_A8DA78)[i]))->SetPlayerOption(-2); /*0x5c1f5e*/
               }
             }
           }

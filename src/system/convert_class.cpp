@@ -208,7 +208,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *(unsigned short **)(&((unsigned char *)(this) + 0x0908)); /*0x55621e*/
+    v14 = *(unsigned short **)(((unsigned char *)(this) + 0x0908)); /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/

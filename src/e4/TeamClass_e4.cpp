@@ -1316,15 +1316,15 @@ void TeamClass::Destructor(void * a2)
     }
   }
   v15 = (gamemd::TeamClass *)(a2); /*0x6e8fa6*/
-  v11 = (*(int (**)(char *, TeamClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 16))( /*0x6e8faa*/
-          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16),
+  v11 = (*(int (**)(char *, TeamClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 16))( /*0x6e8faa*/
+          (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16),
           &v15);
-  if ( v11 != -1 && v11 < *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32) ) /*0x6e8fba*/
+  if ( v11 != -1 && v11 < *(int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32) ) /*0x6e8fba*/
   {
-    --*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32); /*0x6e8fbf*/
+    --*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32); /*0x6e8fbf*/
     for ( ; /*0x6e8fc5*/
-          v11 < *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32);
-          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * v11 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20)
+          v11 < *(int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32);
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * v11 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20)
                                                                                              + 4 * v11) )
     {
       ++v11; /*0x6e8fcd*/

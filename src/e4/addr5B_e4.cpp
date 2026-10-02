@@ -579,7 +579,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
     v9 = v9; /*0x5b6c12*/
     dword_A8BB04 = *(unsigned int *)(aP0 + 158); /*0x5b6c1d*/
-    if ( !strcmp((const char *)(byte_A8B8E0), &((char *)&stru_82BA00)) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
+    if ( !strcmp((const char *)(byte_A8B8E0), ((char *)&stru_82BA00)) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
     {
   LABEL_33:
       wcscpy((wchar_t *)(g_abs_A8B322), (const wchar_t *)(aP0 + 38)); /*0x5b6c86*/

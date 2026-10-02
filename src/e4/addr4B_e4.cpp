@@ -532,7 +532,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     }
     else
     {
-      swprintf(v49, (const size_t)&((char *)&stru_820320), v32); /*0x4b9a35*/
+      swprintf(v49, (const size_t)((char *)&stru_820320), v32); /*0x4b9a35*/
     }
     swprintf(&v51, (const size_t)(unsigned int *)((char *)&stru_820320 + 17), (&off_7E5210)[((unsigned int *)a3)[0]]); /*0x4b9a58*/
     v17 = (char *)((unsigned int *)((char *)&stru_820320 + 9)); /*0x4b9a6e*/

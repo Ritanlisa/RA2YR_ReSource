@@ -462,13 +462,13 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   int v6; // edi
   Network *v7; // [esp+0h] [ebp-4h]
 
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 500) = 1; /*0x6bec72*/
+  *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) = 1; /*0x6bec72*/
   PostMessageA((HWND)(g_hWnd), 2u, 0, 0); /*0x6bec78*/
   if ( g_hWnd ) /*0x6bec85*/
   {
     do /*0x6bec9b*/
       MessageLoop(); /*0x6bec87*/
-    while ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 500) == 1 && g_hWnd ); /*0x6bec9b*/
+    while ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) == 1 && g_hWnd ); /*0x6bec9b*/
   }
   if ( dwRegister != -1 ) /*0x6beca5*/
   {

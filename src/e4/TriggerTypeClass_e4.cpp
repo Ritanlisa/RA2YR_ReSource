@@ -33,7 +33,7 @@
 namespace gamemd {
 TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
-    unsigned int v8 = 0;  /* G37 hoist */
+    /* dropped G37-hoist dup decl of v8 (C2040 collision) */
 
   TemporalClass *temporalUsing; // eax
   void **v8; // ebp

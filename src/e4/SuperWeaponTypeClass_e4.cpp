@@ -458,12 +458,12 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   {
     v20 = v19; /*0x6cebd8*/
   }
-  __asm { fld dword ptr [ebp+0F8h] } /*0x6cebda*/
+  /* asm-debt:__asm { fld dword ptr [ebp+0F8h] } */
   *(unsigned int *)(_EBP + 196) = v20; /*0x6cebe5*/
-  __asm { fstp qword ptr [esp+408h+var_408]; double } /*0x6cebeb*/
+  /* asm-debt:__asm { fstp qword ptr [esp+408h+var_408]; double } */
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(_EBP + 36), g_INI_Key_Range, v34); /*0x6cebf4*/
   v21 = *(unsigned int *)(_EBP + 252); /*0x6cebf9*/
-  __asm { fstp dword ptr [ebp+0F8h] } /*0x6cec01*/
+  /* asm-debt:__asm { fstp dword ptr [ebp+0F8h] } */
   *(float *)(_EBP + 248) = _ET1; /*0x6cec01*/
   *(unsigned int *)(_EBP + 252) = INIClass::ReadInt_Overwrite( /*0x6cec13*/
                               (bool *)aP1,
@@ -534,18 +534,18 @@ LABEL_25:
                              aManualcontrol,
                              v38);
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
-  __asm /*0x6ced73*/
+  /* asm-debt:__asm */
   {
     fcom ds:dbl_7E2800
     fnstsw ax
   }
   if ( (_AX & 0x4000) != 0 ) /*0x6ced7e*/
   {
-    __asm { fstp st } /*0x6ced93*/
+    /* asm-debt:__asm { fstp st } */
   }
   else
   {
-    __asm { fmul ds:flt_7F4100 } /*0x6ced80*/
+    /* asm-debt:__asm { fmul ds:flt_7F4100 } */
     LOWORD(v30) = Math::RoundToInt(a3); /*0x6ced86*/
     *(unsigned int *)(_EBP + 176) = v30; /*0x6ced8b*/
   }

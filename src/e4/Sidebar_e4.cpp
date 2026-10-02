@@ -1120,8 +1120,8 @@ LABEL_59:
                   *(unsigned int *)&aP3[128] = v15;
                   *(unsigned int *)&aP3[132] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374[44940],
-                    *(int *)&stru_87C374[13116],
+                    *(int *)&(&stru_87C374)[44940],
+                    *(int *)&(&stru_87C374)[13116],
                     aP2,
                     0,
                     (ConvertClass *)&aP3[128],
@@ -1143,11 +1143,11 @@ LABEL_59:
                   *(unsigned int *)&aP3[156] = v17;
                   *(unsigned int *)&aP3[160] = 60;
                   *(unsigned int *)&aP3[164] = 48;
-                  IDA_BYTE2(v82) = stru_B05488[42390];
-                  int v33 = **(unsigned int **)&stru_87C374[44940];
-                  IDA_LOWORD(v82) = *(unsigned short *)&stru_B05488[42388];
+                  IDA_BYTE2(v82) = (&stru_B05488)[42390];
+                  int v33 = **(unsigned int **)&(&stru_87C374)[44940];
+                  IDA_LOWORD(v82) = *(unsigned short *)&(&stru_B05488)[42388];
                   (*(void (**)(unsigned int, char *, char *, int))(v33 + 84))(
-                    *(unsigned int *)&stru_87C374[44940],
+                    *(unsigned int *)&(&stru_87C374)[44940],
                     &aP3[88],
                     &aP3[152],
                     ((uint8_t)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])

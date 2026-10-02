@@ -174,7 +174,7 @@ LABEL_61:
   v28 = 0; /*0x479545*/
   ((Vector *)((int)v26))->Clear(); /*0x47954c*/
   ((unsigned int *)&v24)[0] = (int)&off_7E1668; /*0x47955a*/
-  ((BufferIOFileClass *)((BufferIOFileClass *)&((char *)&v24)))->Dtor(); /*0x47955e*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)((char *)&v24)))->Dtor(); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
     ((gamemd::Debug *)this)->Log(); /*0x47956c*/
@@ -199,7 +199,7 @@ LABEL_61:
 LABEL_58:
   Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
-  v19 = CCFileClass::Construct((CCFileClass *)&((char *)&v24), Source); /*0x4795f5*/
+  v19 = CCFileClass::Construct((CCFileClass *)((char *)&v24), Source); /*0x4795f5*/
   v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0)); /*0x479609*/
   *(unsigned int *)v24.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x47960b*/
   v27 = 0; /*0x47960f*/

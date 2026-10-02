@@ -24,7 +24,7 @@ namespace gamemd {
 char * AddTeamCommand::AddRef(void *a1)
 {
 
-  sprintf((char *const )(&(unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
+  sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
   return (unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5360eb*/
 
 }

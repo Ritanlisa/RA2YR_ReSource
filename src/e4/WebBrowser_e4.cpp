@@ -134,7 +134,7 @@ int WebBrowser::ShowDialog()
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
       *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
-      if ( CoCreateInstance((const IID &)(&stru_7F7C60), 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
+      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
         Debug::Log(g_Str_Starting_up_WOLBrowser); /*0x773fd4*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/

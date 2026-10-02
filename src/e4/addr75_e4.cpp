@@ -1097,12 +1097,12 @@ void RenderVoxels()
                     v17 = IDA_BYTE1(a3); /*0x757260*/
                     v18 = v17 | a2 & 0xFF00; /*0x757263*/
                     v16 += 2; /*0x757276*/
-                    if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)byte_B1D5E0[v18] ) /*0x75727c*/
+                    if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)(&byte_B1D5E0)[v18] ) /*0x75727c*/
                     {
-                      byte_B1D5E0[v18] = IDA_BYTE1(a4); /*0x757282*/
-                      g_VoxelRenderBuffer[v18] = v23; /*0x757288*/
-                      g_VoxelDepthBuffer[v18] = v23; /*0x75728e*/
-                      byte_B1D5E1[v18] = IDA_BYTE1(a4); /*0x757294*/
+                      (&byte_B1D5E0)[v18] = IDA_BYTE1(a4); /*0x757282*/
+                      (&g_VoxelRenderBuffer)[v18] = v23; /*0x757288*/
+                      (&g_VoxelDepthBuffer)[v18] = v23; /*0x75728e*/
+                      (&byte_B1D5E1)[v18] = IDA_BYTE1(a4); /*0x757294*/
                     }
                     IDA_LOWORD(v18) = *((unsigned short *)v4 + 21); /*0x75729a*/
                     IDA_LOWORD(v17) = *((unsigned short *)v4 + 22); /*0x75729e*/

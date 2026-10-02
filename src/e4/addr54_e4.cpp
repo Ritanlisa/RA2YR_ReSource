@@ -966,16 +966,16 @@ LABEL_26:
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
       v28->field_0 = (int)&v72->__pad_0[(unsigned int)v27];
       v28->field_4 = (void *)v29;
-      if ( *(int *)&g_NetworkPlayerBuffer[80460] < *(int *)&g_NetworkPlayerBuffer[80452]
-        || (g_NetworkPlayerBuffer[80457] || !*(unsigned int *)&g_NetworkPlayerBuffer[80452])
-        && *(int *)&g_NetworkPlayerBuffer[80464] > 0
-        && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_NetworkPlayerBuffer[80444] + 8))(
-             &g_NetworkPlayerBuffer[80444],
-             *(unsigned int *)&g_NetworkPlayerBuffer[80464] + *(unsigned int *)&g_NetworkPlayerBuffer[80452],
+      if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
+        || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
+        && *(int *)&(&g_NetworkPlayerBuffer)[80464] > 0
+        && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&(&g_NetworkPlayerBuffer)[80444] + 8))(
+             &(&g_NetworkPlayerBuffer)[80444],
+             *(unsigned int *)&(&g_NetworkPlayerBuffer)[80464] + *(unsigned int *)&(&g_NetworkPlayerBuffer)[80452],
              0) )
       {
-        int v30 = (*(unsigned int *)&g_NetworkPlayerBuffer[80460])++;
-        *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[80448] + 4 * v30) = v76;
+        int v30 = (*(unsigned int *)&(&g_NetworkPlayerBuffer)[80460])++;
+        *(unsigned int *)(*(unsigned int *)&(&g_NetworkPlayerBuffer)[80448] + 4 * v30) = v76;
       }
       v31 = v75;
     }

@@ -98,12 +98,12 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
-    && (*(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 332)
+    && (*(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 332)
      || (*((unsigned int *)((char *)&stru_A8EB00 + 337)) || !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 332))
      && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 344) > 0
      && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 324) + 8))(
           (unsigned int *)((char *)&stru_A8EB00 + 324),
-          *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 332) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 344),
+          *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 332) + *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 344),
           0)) )
   {
     v8 = (*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 340))++; /*0x54497d*/
@@ -147,9 +147,9 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x71da89*/
   this->ArrayIndex = -1; /*0x71da90*/
   this->Foundation = 0; /*0x71da9a*/
-  this->RadarColor[0] = 0; /*0x71daa5*/
-  this->RadarColor[1] = 0; /*0x71daab*/
-  this->RadarColor[2] = 0; /*0x71dab1*/
+  (&this->RadarColor)[0] = 0; /*0x71daa5*/
+  (&this->RadarColor)[1] = 0; /*0x71daab*/
+  (&this->RadarColor)[2] = 0; /*0x71dab1*/
   this->TemperateOccupationBits = 7; /*0x71dab7*/
   this->SnowOccupationBits = 7; /*0x71dabd*/
   this->AnimationRate = 0; /*0x71dac7*/

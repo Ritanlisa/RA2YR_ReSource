@@ -277,7 +277,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   v10 = Vtable3; /*0x517ece*/
   if ( ((char *)&g_BuildingLoadQueue_Array) ) /*0x517ed2*/
   {
-    if ( !LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x517ede*/
+    if ( !*((unsigned char *)&g_BuildingLoadQueue_Array) ) /*0x517ede*/
     {
       qsort( /*0x517eee*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -286,7 +286,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = ((char *)&g_BuildingLoadQueue_Array); /*0x517ef3*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x517efc*/
-      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x517f02*/
+      *((unsigned char *)&g_BuildingLoadQueue_Array) = 1; /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
     v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, v17); /*0x517f18*/

@@ -952,7 +952,7 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
         this->q008 = 0; /*0x6c9cca*/
         if ( !result ) /*0x6c9ccf*/
         {
-          v9 = this->BinkMovie_field_0x10[0]; /*0x6c9cd1*/
+          v9 = (&this->BinkMovie_field_0x10)[0]; /*0x6c9cd1*/
           if ( v9 ) /*0x6c9cd6*/
           {
             BinkMovie_field_0x14 = this->BinkMovie_field_0x14; /*0x6c9cda*/
@@ -1007,7 +1007,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
   unsigned int v20[4]; // [esp+20h] [ebp-10h] BYREF
 
   v18 = this; /*0x6c9d46*/
-  v3 = this->BinkMovie_field_0x10[0]; /*0x6c9d4a*/
+  v3 = (&this->BinkMovie_field_0x10)[0]; /*0x6c9d4a*/
   if ( v3 ) /*0x6c9d4f*/
   {
     BinkMovie_field_0x14 = this->BinkMovie_field_0x14; /*0x6c9d5a*/
@@ -1018,8 +1018,8 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
       ((int)(uint8_t)aP1[2] >> g_BitMask_Red << g_BitShift_Blue)
     | ((uint8_t)BYTE2(aP1[2]) >> g_BitShift_Green_0 << g_BitShift_Red)
     | ((uint8_t)BYTE1(aP1[2]) >> g_BitMask_Blue << g_BitMask_Green));
-    v6 = (*(int (**)(int))(*(unsigned int *)this->BinkMovie_field_0x10[0] + 124))(this->BinkMovie_field_0x10[0]); /*0x6c9dca*/
-    v16 = (*(int (**)(int))(*(unsigned int *)this->BinkMovie_field_0x10[0] + 128))(this->BinkMovie_field_0x10[0]); /*0x6c9dd6*/
+    v6 = (*(int (**)(int))(*(&(unsigned int *)this->BinkMovie_field_0x10)[0] + 124))((&this->BinkMovie_field_0x10)[0]); /*0x6c9dca*/
+    v16 = (*(int (**)(int))(*(&(unsigned int *)this->BinkMovie_field_0x10)[0] + 128))((&this->BinkMovie_field_0x10)[0]); /*0x6c9dd6*/
     v20[3] = v16; /*0x6c9ddc*/
     v20[0] = 0; /*0x6c9de4*/
     v20[1] = 0; /*0x6c9de8*/
@@ -1041,7 +1041,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
 LABEL_7:
         v13 = v6; /*0x6c9e52*/
         pad_0 = v18->__pad_0; /*0x6c9e66*/
-        Font::Print((int)v5, v18->BinkMovie_field_0x10[0], v17, v14, v8, v13, v16, 0, 0, 0); /*0x6c9e78*/
+        Font::Print((int)v5, (&v18->BinkMovie_field_0x10)[0], v17, v14, v8, v13, v16, 0, 0, 0); /*0x6c9e78*/
         pad_0 += 9; /*0x6c9e7f*/
         *pad_0 = *BinkMovie_field_0x14; /*0x6c9e85*/
         pad_0[1] = BinkMovie_field_0x14[1]; /*0x6c9e8a*/

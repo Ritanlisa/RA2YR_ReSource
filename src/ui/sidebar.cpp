@@ -51,7 +51,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   if ( ((unsigned int *)&stru_A8EB00)[391] ) /*0x6a630e*/
     goto LABEL_57; /*0x6a630e*/
   v5 = 0; /*0x6a6314*/
-  v6 = (int *)((char *)&((unsigned char *)(this) + 0x2288)); /*0x6a6316*/
+  v6 = (int *)((char *)((unsigned char *)(this) + 0x2288)); /*0x6a6316*/
   while ( *v6 <= 0 ) /*0x6a631f*/
   {
     ++v5; /*0x6a6321*/
@@ -111,7 +111,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   v10 = 0; /*0x6a6427*/
   g_CameoRenderFlag = 1; /*0x6a6429*/
   v11 = 0; /*0x6a6430*/
-  v12 = (int *)((char *)&((unsigned char *)(this) + 0x2288)); /*0x6a6432*/
+  v12 = (int *)((char *)((unsigned char *)(this) + 0x2288)); /*0x6a6432*/
   while ( *v12 <= 0 ) /*0x6a643a*/
   {
     ++v11; /*0x6a643c*/
@@ -136,7 +136,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   (*((void (**)(SidebarClass *, int))((unsigned char *)(this) + 0x0) + 54))(this, 1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
-    v14 = (int *)((char *)&((unsigned char *)(this) + 0x2288)); /*0x6a64b0*/
+    v14 = (int *)((char *)((unsigned char *)(this) + 0x2288)); /*0x6a64b0*/
     while ( *v14 <= 0 ) /*0x6a64b9*/
     {
       ++v10; /*0x6a64bb*/

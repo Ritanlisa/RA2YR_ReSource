@@ -105,34 +105,34 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
          (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
          aSpawnradius,
          ParticleSystemTypeClass_field_0x2A8);
-  __asm { fld dword ptr [esi+2A0h] } /*0x644385*/
+  /* asm-debt:__asm { fld dword ptr [esi+2A0h] } */
   _ESI->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
-  __asm { fstp [esp+68h+var_68]; double } /*0x644396*/
+  /* asm-debt:__asm { fstp [esp+68h+var_68]; double } */
   INIClass::ReadDouble_Overwrite( /*0x64439f*/
     (double *)aP1,
     (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
     aSlowdown,
     v37);
-  __asm { fstp dword ptr [esi+2A0h] } /*0x6443a4*/
+  /* asm-debt:__asm { fstp dword ptr [esi+2A0h] } */
   *(float *)&_ESI->ParticleSystemTypeClass_field_0x2A0 = _ET1; /*0x6443a4*/
-  __asm { fld dword ptr [esi+2ACh] } /*0x6443aa*/
-  __asm { fstp [esp+68h+var_68]; double }
+  /* asm-debt:__asm { fld dword ptr [esi+2ACh] } */
+  /* asm-debt:__asm { fstp [esp+68h+var_68]; double } */
   INIClass::ReadDouble_Overwrite( /*0x6443be*/
     (double *)aP1,
     (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
     aSpawncutoff,
     v38);
-  __asm { fstp dword ptr [esi+2ACh] } /*0x6443c3*/
+  /* asm-debt:__asm { fstp dword ptr [esi+2ACh] } */
   *(float *)&_ESI->ParticleSystemTypeClass_field_0x2AC = _ET1; /*0x6443c3*/
-  __asm { fld dword ptr [esi+2B0h] } /*0x6443c9*/
-  __asm { fstp [esp+68h+var_68]; double }
+  /* asm-debt:__asm { fld dword ptr [esi+2B0h] } */
+  /* asm-debt:__asm { fstp [esp+68h+var_68]; double } */
   INIClass::ReadDouble_Overwrite( /*0x6443dd*/
     (double *)aP1,
     (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
     aSpawntransluce,
     v39);
   ParticleSystemTypeClass_field_0x2B8 = _ESI->ParticleSystemTypeClass_field_0x2B8; /*0x6443e2*/
-  __asm { fstp dword ptr [esi+2B0h] } /*0x6443ea*/
+  /* asm-debt:__asm { fstp dword ptr [esi+2B0h] } */
   *(float *)&_ESI->DamageDelay = _ET1; /*0x6443ea*/
   _ESI->ParticleSystemTypeClass_field_0x2B8 = INIClass::ReadInt_Overwrite( /*0x6443fc*/
                                                 (bool *)aP1,
@@ -179,7 +179,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     aParticlesperco,
     v40);
   v16 = *(double *)&_ESI->ParticleSystemTypeClass_field_0x2D0; /*0x6444bb*/
-  __asm { fstp qword ptr [esi+2C8h] } /*0x6444c1*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2C8h] } */
   *(double *)&_ESI->Beam = _RT1; /*0x6444c1*/
   INIClass::ReadDouble_Overwrite( /*0x6444d1*/
     (double *)aP1,
@@ -188,7 +188,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     v16);
   v18 = *(unsigned int *)&_ESI->__pad_2D8[4]; /*0x6444d6*/
   v19 = *(unsigned int *)_ESI->__pad_2D8; /*0x6444dc*/
-  __asm { fstp qword ptr [esi+2D0h] } /*0x6444e2*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2D0h] } */
   *(double *)&_ESI->ParticleSystemTypeClass_field_0x2D0 = _RT1; /*0x6444e2*/
   INIClass::ReadDouble_Overwrite( /*0x6444f2*/
     (double *)aP1,
@@ -197,7 +197,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     COERCE_DOUBLE(__PAIR64__(v18, v19)));
   ParticleSystemTypeClass_field_0x2E4 = _ESI->ParticleSystemTypeClass_field_0x2E4; /*0x6444f7*/
   v22 = *(unsigned int *)&_ESI->__pad_2D8[8]; /*0x6444fd*/
-  __asm { fstp qword ptr [esi+2D8h] } /*0x644503*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2D8h] } */
   *(double *)_ESI->__pad_2D8 = _RT1; /*0x644503*/
   INIClass::ReadDouble_Overwrite( /*0x644513*/
     (double *)aP1,
@@ -205,7 +205,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     aPositionpertur,
     COERCE_DOUBLE(__PAIR64__((unsigned int)ParticleSystemTypeClass_field_0x2E4, v22)));
   v24 = *(double *)&_ESI->ParticleSystemTypeClass_field_0x2E8; /*0x64451e*/
-  __asm { fstp qword ptr [esi+2E0h] } /*0x644524*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2E0h] } */
   *(double *)&_ESI->__pad_2D8[8] = _RT1; /*0x644524*/
   INIClass::ReadDouble_Overwrite( /*0x644534*/
     (double *)aP1,
@@ -214,7 +214,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     v24);
   v26 = *(unsigned int *)&_ESI->__pad_2EC[8]; /*0x644539*/
   v27 = *(unsigned int *)&_ESI->__pad_2EC[4]; /*0x64453f*/
-  __asm { fstp qword ptr [esi+2E8h] } /*0x644545*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2E8h] } */
   *(double *)&_ESI->ParticleSystemTypeClass_field_0x2E8 = _RT1; /*0x644545*/
   INIClass::ReadDouble_Overwrite( /*0x644555*/
     (double *)aP1,
@@ -222,7 +222,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     aVelocitypertur,
     COERCE_DOUBLE(__PAIR64__(v26, v27)));
   ParticleSystemTypeClass_field_0x308_high = HIBYTE(_ESI->ParticleSystemTypeClass_field_0x308); /*0x64455a*/
-  __asm { fstp qword ptr [esi+2F0h] } /*0x644562*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2F0h] } */
   *(double *)&_ESI->__pad_2EC[4] = _RT1; /*0x644562*/
   HIBYTE(_ESI->ParticleSystemTypeClass_field_0x308) = INIClass::ReadBool_Overwrite( /*0x644574*/
                                                         (int *)aP1,
@@ -262,7 +262,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     (uint8_t *)&_ESI->ParticleSystemTypeClass_field_0x24,
     aSpawnsparkperc,
     v41);
-  __asm { fstp qword ptr [esi+2F8h] } /*0x64460f*/
+  /* asm-debt:__asm { fstp qword ptr [esi+2F8h] } */
   *(double *)&_ESI->__pad_2EC[12] = _RT1; /*0x64460f*/
   return 1; /*0x644617*/
 
@@ -343,13 +343,13 @@ float * ParticleSystemTypeClass::ReadXYZFromINI(float * a2, uint8_t * a3, uint8_
   {
     v5 = strtok(String, Str); /*0x476396*/
     atof(v5); /*0x47639c*/
-    __asm { fstp [esp+21Ch+var_20C] } /*0x4763a1*/
+    /* asm-debt:__asm { fstp [esp+21Ch+var_20C] } */
     v6 = strtok(0, Str); /*0x4763ac*/
     atof(v6); /*0x4763b2*/
-    __asm { fstp [esp+228h+var_208] } /*0x4763b7*/
+    /* asm-debt:__asm { fstp [esp+228h+var_208] } */
     v7 = strtok(0, Str); /*0x4763c2*/
     atof(v7); /*0x4763c8*/
-    __asm { fstp [esp+234h+var_204] } /*0x4763d8*/
+    /* asm-debt:__asm { fstp [esp+234h+var_204] } */
     *a2 = v9; /*0x4763e1*/
     a2[1] = v10; /*0x4763e8*/
     a2[2] = v11; /*0x4763ef*/

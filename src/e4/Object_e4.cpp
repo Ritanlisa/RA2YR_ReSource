@@ -697,7 +697,7 @@ void * Object::DrawObject(void ** Block, char a2)
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
     for ( ; /*0x5fdfc5*/
           v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 124);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3) )
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3) )
     {
       ++v3; /*0x5fdfcd*/
     }

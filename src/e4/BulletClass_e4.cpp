@@ -60,12 +60,12 @@ BulletClass::BulletClass()
   this->BulletClass_field_0x140 = 0; /*0x466456*/
   *(unsigned int *)this->__pad_144 = 0; /*0x46645c*/
   *(unsigned int *)&this->__pad_144[4] = 0; /*0x466462*/
-  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 356) /*0x46649b*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 356) /*0x46649b*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 361)) || !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 356))
     && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 368) > 0
     && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 348) + 8))(
          (unsigned int *)((char *)&stru_A8EB00 + 348),
-         *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 356) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 368),
+         *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 356) + *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 368),
          0) )
   {
     v2 = (*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 364))++; /*0x4664a8*/
@@ -119,7 +119,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 364); /*0x466630*/
     for ( ; /*0x466636*/
           v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3) )
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3) )
     {
       ++v3; /*0x46663e*/
     }

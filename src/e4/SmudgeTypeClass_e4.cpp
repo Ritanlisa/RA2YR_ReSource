@@ -215,7 +215,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
     for ( ; /*0x6b61d4*/
           v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
     }

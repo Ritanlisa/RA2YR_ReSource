@@ -146,7 +146,7 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)&((char *)&FootClass_Array)->ObjectClass + i6) + 52))( /*0x67c982*/
       *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + i6),
       &v53);
-  for ( i7 = 0; i7 < *(int *)&((char *)&FootClass_Array); ++i7 ) /*0x67c998*/
+  for ( i7 = 0; i7 < *(int *)((char *)&FootClass_Array); ++i7 ) /*0x67c998*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7) + 52))( /*0x67c9aa*/
       *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7),
       &v53);
@@ -239,8 +239,8 @@ unsigned int * Power::UpdateAll()
       *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * i29),
       &v53);
   for ( i30 = 0; i30 < *((unsigned int *)((char *)&FootClass_Array + 2)); ++i30 ) /*0x67cd30*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&((char *)&FootClass_Array) + 4 * i30) + 52))( /*0x67cd42*/
-      *(unsigned int *)(*(unsigned int *)&((char *)&FootClass_Array) + 4 * i30),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30) + 52))( /*0x67cd42*/
+      *(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30),
       &v53);
   for ( i31 = 0; i31 < *((unsigned int *)((char *)&FootClass_Array + 0)); ++i31 ) /*0x67cd58*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31) + 52))( /*0x67cd6a*/

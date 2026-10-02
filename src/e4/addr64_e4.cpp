@@ -1025,13 +1025,13 @@ LABEL_54:
       PostMessageA((HWND)*(&g_MatrixTransformState + 7698), 0xFu, 0, 0);
     if ( v29 )
     {
-      while ( *(unsigned int *)&HouseClass_Player[32236] )
+      while ( *(unsigned int *)&(&HouseClass_Player)[32236] )
       {
-        RA2_OPDEL(**(void ***)&HouseClass_Player[32224]);
-        Network_Process_652560(&HouseClass_Player[32220], 0);
+        RA2_OPDEL(**(void ***)&(&HouseClass_Player)[32224]);
+        Network_Process_652560(&(&HouseClass_Player)[32220], 0);
       }
-      memset(&HouseClass_Player[32244], 0, 0x20u);
-      memset(&HouseClass_Player[32276], 0xFFu, 0x100u);
+      memset(&(&HouseClass_Player)[32244], 0, 0x20u);
+      memset(&(&HouseClass_Player)[32276], 0xFFu, 0x100u);
       v38 = (ObjectClass *)GetDlgItem((HWND)*(&g_MatrixTransformState + 7698), 1617);
       if ( v38 )
       {
@@ -1055,60 +1055,60 @@ LABEL_54:
             }
             while ( (int)v41 < v30 );
           }
-          if ( *(unsigned int *)&HouseClass_Player[29932] == 3
-            || *(unsigned int *)&HouseClass_Player[29932] == 4 )
+          if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 3
+            || *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
           {
-            ConnectionSpeed = ((Network *)(&HouseClass_Player[44148]))->GetConnectionSpeed(v40);
-            Class = (MSVQAnim *)((Network *)((int *)&HouseClass_Player[44148]))->GetClass(ConnectionSpeed);
-            _FFFFFFFEa = GetStringCSF((wchar_t *)&stru_830620[28896], 0, &stru_830620[28288], 3908);
+            ConnectionSpeed = ((Network *)(&(&HouseClass_Player)[44148]))->GetConnectionSpeed(v40);
+            Class = (MSVQAnim *)((Network *)((int *)&(&HouseClass_Player)[44148]))->GetClass(ConnectionSpeed);
+            _FFFFFFFEa = GetStringCSF((wchar_t *)&(&stru_830620)[28896], 0, &(&stru_830620)[28288], 3908);
             swprintf(lParam, (const size_t)_FFFFFFFEa, (const wchar_t *const)Class, (CampaignScore *)v92);
           }
           else
           {
-            v88 = *(MSVQAnim **)(*(unsigned int *)&HouseClass_Player[40236] + 4);
-            v86 = GetStringCSF((wchar_t *)&stru_830620[28896], 0, &stru_830620[28288], 3914);
+            v88 = *(MSVQAnim **)(*(unsigned int *)&(&HouseClass_Player)[40236] + 4);
+            v86 = GetStringCSF((wchar_t *)&(&stru_830620)[28896], 0, &(&stru_830620)[28288], 3914);
             swprintf(lParam, (const size_t)v86, (const wchar_t *const)v88, (CampaignScore *)v92);
           }
           DrawDialogText((ObjectClass *)0xFFFFFFFF, lParam, (HWND)v38);
-          DrawDialogText((ObjectClass *)0xFFFFFFFF, (const wchar_t *)&stru_87C374[46016], (HWND)v38);
-          v44 = *(CellStruct **)&HouseClass_Player[29932];
-          if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+          DrawDialogText((ObjectClass *)0xFFFFFFFF, (const wchar_t *)&(&stru_87C374)[46016], (HWND)v38);
+          v44 = *(CellStruct **)&(&HouseClass_Player)[29932];
+          if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
           {
-            v46 = GetStringCSF((wchar_t *)&stru_830620[28876], 0, &stru_830620[28288], 3928);
+            v46 = GetStringCSF((wchar_t *)&(&stru_830620)[28876], 0, &(&stru_830620)[28288], 3928);
             wcscpy(lParam, v46);
             wcscat(lParam, &stru_82083C);
-            v47 = GetStringCSF((wchar_t *)&stru_830620[28852], 0, &stru_830620[28288], 3930);
+            v47 = GetStringCSF((wchar_t *)&(&stru_830620)[28852], 0, &(&stru_830620)[28288], 3930);
             wcscat(lParam, (CampaignScore *)v47);
             wcscat(lParam, &stru_82083C);
-            v48 = GetStringCSF((wchar_t *)&stru_830620[28828], 0, &stru_830620[28288], 3932);
+            v48 = GetStringCSF((wchar_t *)&(&stru_830620)[28828], 0, &(&stru_830620)[28288], 3932);
             wcscat(lParam, (CampaignScore *)v48);
             DrawDialogText((ObjectClass *)0xFFFFFFFF, lParam, (HWND)v38);
-            DrawDialogText((ObjectClass *)0xFFFFFFFF, (const wchar_t *)&stru_87C374[46016], (HWND)v38);
-            v44 = *(CellStruct **)&HouseClass_Player[29932];
-            if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+            DrawDialogText((ObjectClass *)0xFFFFFFFF, (const wchar_t *)&(&stru_87C374)[46016], (HWND)v38);
+            v44 = *(CellStruct **)&(&HouseClass_Player)[29932];
+            if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
               goto LABEL_75;
           }
           if ( v44 == (CellStruct *)3 )
           {
 LABEL_75:
-            v49 = GetStringCSF((wchar_t *)&stru_830620[28808], 0, &stru_830620[28288], 3939);
+            v49 = GetStringCSF((wchar_t *)&(&stru_830620)[28808], 0, &(&stru_830620)[28288], 3939);
             wcscpy(lParam, v49);
             wcscat(lParam, &stru_82083C);
-            if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+            if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
             {
               v90 = (MSVQAnim *)GetStringCSF(
-                                  (wchar_t *)&stru_830620[28784],
+                                  (wchar_t *)&(&stru_830620)[28784],
                                   0,
-                                  &stru_830620[28288],
+                                  &(&stru_830620)[28288],
                                   3943);
               wcscat(lParam, (CampaignScore *)v90);
             }
-            else if ( *(unsigned int *)&HouseClass_Player[29932] == 3 )
+            else if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 3 )
             {
               v91 = (MSVQAnim *)GetStringCSF(
-                                  (wchar_t *)&stru_830620[28764],
+                                  (wchar_t *)&(&stru_830620)[28764],
                                   0,
-                                  &stru_830620[28288],
+                                  &(&stru_830620)[28288],
                                   3945);
               wcscat(lParam, (CampaignScore *)v91);
             }

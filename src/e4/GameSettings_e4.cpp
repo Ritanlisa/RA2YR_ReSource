@@ -184,104 +184,104 @@ void GameSettings::Read(void *a1, void *a2)
                         g_INI_Key_Video,
                         aAllowvramsideb,
                         *(unsigned char *)&_ESI[54]);
-  __asm { fld dword ptr [esi+38h] } /*0x5fa9ad*/
+  /* asm-debt:__asm { fld dword ptr [esi+38h] } */
   _ESI[54] = v10; /*0x5fa9b8*/
-  __asm { fstp [esp+1A8h+var_1A8]; double } /*0x5fa9bb*/
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8]; double } */
   INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
     (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
     (uint8_t *)aSoundvolume,
     v34);
-  __asm /*0x5fa9cd*/
+  /* asm-debt:__asm */
   {
     fcom ds:dbl_7E1718
     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5fa9d8*/
   {
-    __asm /*0x5fa9da*/
+    /* asm-debt:__asm */
     {
       fstp st
       fld ds:dbl_7E1718
     }
   }
-  __asm { fst dword ptr [esi+38h] } /*0x5fa9e2*/
+  /* asm-debt:__asm { fst dword ptr [esi+38h] } */
   *(float *)&_ESI[56] = _ET1; /*0x5fa9e2*/
-  __asm { fmul ds:flt_7EF38C } /*0x5fa9e5*/
+  /* asm-debt:__asm { fmul ds:flt_7EF38C } */
   LOWORD(v13) = Math::RoundToInt(v1); /*0x5fa9eb*/
   EndBufferMixer((int *)g_MixerChannel_Score, v13); /*0x5fa9f8*/
-  __asm { fld dword ptr [esi+38h] } /*0x5fa9fd*/
-  __asm { fstp [esp+1A8h+var_1A8] }
+  /* asm-debt:__asm { fld dword ptr [esi+38h] } */
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8] } */
   Debug::Log(); /*0x5faa0b*/
-  __asm { fld dword ptr [esi+3Ch] } /*0x5faa10*/
-  __asm { fstp [esp+1A8h+var_1A8]; double }
+  /* asm-debt:__asm { fld dword ptr [esi+3Ch] } */
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8]; double } */
   INIClass::ReadDouble_Overwrite( /*0x5faa28*/
     (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
     (uint8_t *)aVoicevolume,
     v36);
-  __asm /*0x5faa2d*/
+  /* asm-debt:__asm */
   {
     fcom ds:dbl_7E1718
     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5faa38*/
   {
-    __asm /*0x5faa3a*/
+    /* asm-debt:__asm */
     {
       fstp st
       fld ds:dbl_7E1718
     }
   }
-  __asm { fst dword ptr [esi+3Ch] } /*0x5faa42*/
+  /* asm-debt:__asm { fst dword ptr [esi+3Ch] } */
   *(float *)&_ESI[60] = _ET1; /*0x5faa42*/
-  __asm { fmul ds:dbl_7EAA50 } /*0x5faa45*/
+  /* asm-debt:__asm { fmul ds:dbl_7EAA50 } */
   LOWORD(v16) = Math::RoundToInt(v1); /*0x5faa4b*/
   ThemeClass::GetField(v16); /*0x5faa52*/
-  __asm /*0x5faa57*/
+  /* asm-debt:__asm */
   {
     fld dword ptr [esi+3Ch]
     fmul ds:flt_7EF38C
   }
   LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
   EndBufferMixer((int *)g_MixerChannel_Voice, v17); /*0x5faa6d*/
-  __asm { fld dword ptr [esi+3Ch] } /*0x5faa72*/
-  __asm { fstp [esp+1A8h+var_1A8] }
+  /* asm-debt:__asm { fld dword ptr [esi+3Ch] } */
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8] } */
   Debug::Log(); /*0x5faa80*/
-  __asm { fld dword ptr [esi+40h] } /*0x5faa85*/
-  __asm { fstp [esp+1A8h+var_1A8]; double }
+  /* asm-debt:__asm { fld dword ptr [esi+40h] } */
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8]; double } */
   INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
     (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
     (uint8_t *)aScorevolume,
     v38);
-  __asm /*0x5faaa2*/
+  /* asm-debt:__asm */
   {
     fcom ds:dbl_7E1718
     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5faaad*/
   {
-    __asm /*0x5faaaf*/
+    /* asm-debt:__asm */
     {
       fstp st
       fld ds:dbl_7E1718
     }
   }
-  __asm { fst dword ptr [esi+40h] } /*0x5faab7*/
+  /* asm-debt:__asm { fst dword ptr [esi+40h] } */
   *(float *)&_ESI[64] = _ET1; /*0x5faab7*/
-  __asm { fmul ds:flt_7EF38C } /*0x5faaba*/
+  /* asm-debt:__asm { fmul ds:flt_7EF38C } */
   LOWORD(v20) = Math::RoundToInt(v1); /*0x5faac0*/
   EndBufferMixer((int *)g_MixerChannel_Theme, v20); /*0x5faacd*/
-  __asm /*0x5faad2*/
+  /* asm-debt:__asm */
   {
     fld dword ptr [esi+40h]
     fmul ds:dbl_7EAA50
   }
   LOWORD(v21) = Math::RoundToInt(v1); /*0x5faadb*/
   TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v21); /*0x5faae6*/
-  __asm { fld dword ptr [esi+40h] } /*0x5faaeb*/
-  __asm { fstp [esp+1A8h+var_1A8] }
+  /* asm-debt:__asm { fld dword ptr [esi+40h] } */
+  /* asm-debt:__asm { fstp [esp+1A8h+var_1A8] } */
   Debug::Log(); /*0x5faaf9*/
   v22 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fab14*/
                         (int *)&DSurface_ViewBounds.__pad_FC[36],

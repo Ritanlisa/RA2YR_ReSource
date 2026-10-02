@@ -173,12 +173,12 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f080a*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f0811*/
   v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 204); /*0x6f0818*/
-  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 196) /*0x6f0857*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 196) /*0x6f0857*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 201)) || !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 196))
     && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 208) > 0
     && (v4 = (*(int (**)(unsigned char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 188) + 8))(
                (unsigned int *)((char *)&stru_A8EB00 + 188),
-               *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 196) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 208),
+               *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 196) + *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 208),
                0),
         v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 204),
         v4) )

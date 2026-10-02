@@ -978,7 +978,7 @@ void * E4Recv_777BB0::sub_777BB0(char * Buffer)
   char Buffer[128]; // [esp+84h] [ebp-80h] BYREF
 
   sprintf(Buffer, "%d", dword_822D1C); /*0x777bcc*/
-  v4 = g_Str_gsmallwoo[0]; /*0x777bde*/
+  v4 = (&g_Str_gsmallwoo)[0]; /*0x777bde*/
   v5 = 0; /*0x777be2*/
   v6 = 0; /*0x777be7*/
   v2 = strchr(g_Str_gsmallwoo, 95); /*0x777bec*/

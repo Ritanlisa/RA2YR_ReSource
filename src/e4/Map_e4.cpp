@@ -306,8 +306,8 @@ int E4Recv_5ADD10::Map_Delete()
   ((MSEngine *)(&v7))->Destruct(); /*0x5add86*/
   if ( v2 )
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (const char *)&((char *)&stru_82BA00), 134)); /*0x5addba*/
-    v3 = (int *)GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addc5*/
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (const char *)((char *)&stru_82BA00), 134)); /*0x5addba*/
+    v3 = (int *)GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)((char *)&stru_82BA00), 134); /*0x5addc5*/
     Dialog::ShowMessageBox(v3, StringCSF, 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }

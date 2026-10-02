@@ -494,48 +494,48 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
   *(unsigned int *)(v4 + 696) = INIClass::ReadInt_Overwrite( /*0x46c32a*/
                             a2->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&((char *)&stru_81AF8C),
+                            (uint8_t *)((char *)&stru_81AF8C),
                             v37);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46c33f*/
                     a2->ObjectTypeClass,
                     (uint8_t *)(v4 + 36),
-                    (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 40),
+                    (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 40),
                     *(unsigned int *)(v4 + 700));
   v27 = *(unsigned char *)(v4 + 704); /*0x46c344*/
   *(unsigned int *)(v4 + 700) = Int_Overwrite; /*0x46c34a*/
   v28 = INIClass::ReadBool_Overwrite( /*0x46c359*/
           (int *)a2,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 28),
+          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 28),
           v27);
   v38 = *(unsigned char *)(v4 + 681); /*0x46c366*/
   *(unsigned char *)(v4 + 704) = v28; /*0x46c36d*/
   *(unsigned char *)(v4 + 681) = INIClass::ReadBool_Overwrite( /*0x46c378*/
                            (int *)a2,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 12),
+                           (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 12),
                            v38);
   *(unsigned char *)(v4 + 756) = INIClass::ReadInt_Overwrite( /*0x46c399*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 4),
+                           (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 4),
                            *(uint8_t *)(v4 + 756));
   v29 = INIClass::ReadInt_Overwrite( /*0x46c3b1*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
           (uint8_t *)(v4 + 504),
-          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 31),
+          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 31),
           *(uint8_t *)(v4 + 757));
   v30 = *(uint8_t *)(v4 + 758); /*0x46c3bd*/
   *(unsigned char *)(v4 + 757) = v29; /*0x46c3c3*/
   *(unsigned char *)(v4 + 758) = INIClass::ReadInt_Overwrite( /*0x46c3d5*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 19),
+                           (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 19),
                            v30);
   *(unsigned char *)(v4 + 680) = INIClass::ReadBool_Overwrite( /*0x46c3f2*/
                            (int *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 7),
+                           (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 7),
                            *(unsigned char *)(v4 + 680));
   if ( !*(unsigned char *)(v4 + 670) ) /*0x46c3f8*/
     ((ObjectTypeClass*)(char *)v4)->Load2DArt(); /*0x46c406*/

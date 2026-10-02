@@ -137,7 +137,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v28.owningHouseIndex = (int)&vt_DynamicVectorClass; /*0x76d561*/
   v28.ambientSoundController[0] = 10; /*0x76d565*/
   v28.attachedBomb = 0; /*0x76d569*/
-  ((Trigger *)((Trigger *)&((char *)&v28)))->checkCondition(0, 0); /*0x76d56d*/
+  ((Trigger *)((Trigger *)((char *)&v28)))->checkCondition(0, 0); /*0x76d56d*/
   v10 = *(unsigned int *)(this + 1116); /*0x76d572*/
   ((unsigned int *)&v28)[0] = (int)&vt_DynamicVectorClass; /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
@@ -227,7 +227,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           *(Trigger **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4),
           (int)v21);
         if ( (int)((char *)&v28) < ((char *)&v28) /*0x76d821*/
-          || (BYTE1(((char *)&v28)) || !((char *)&v28))
+          || (((unsigned char *)&v28)[1] || !((char *)&v28))
           && v28.occupant > 0
           && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
         {
@@ -245,10 +245,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   p_owningHouseIndex = (int *)(&v28.owningHouseIndex); /*0x76d88b*/
   v27 = 0; /*0x76d897*/
   v25.VectorCursor_field_0x18 = (unsigned int)((int)&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d89b*/
-  ((unsigned int *)&v28)[0] = (unsigned int)(&((char *)&v28)); /*0x76d89f*/
+  ((unsigned int *)&v28)[0] = (unsigned int)(((char *)&v28)); /*0x76d89f*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d8a3*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d8a7*/
-  if ( CampaignProperties_WorldDominationTour_22::AddRef(&((char *)&v28)) ) /*0x76d8ab*/
+  if ( CampaignProperties_WorldDominationTour_22::AddRef(((char *)&v28)) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
     {
@@ -301,14 +301,14 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v25.VectorCursor_field_0x18 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76da6a*/
   v25.VectorCursor_field_0x0C = (int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76da76*/
   ((unsigned int *)&v28)[0] = (int)&vt_VectorClass; /*0x76da7e*/
-  if ( ((char *)&v28) && BYTE1(((char *)&v28)) ) /*0x76da8b*/
+  if ( ((char *)&v28) && ((unsigned char *)&v28)[1] ) /*0x76da8b*/
   {
     __3_YAXPAX_Z((void *)((char *)&v28)); /*0x76da8e*/
     ((unsigned int *)&v28)[0] = 0; /*0x76da96*/
   }
   v28.owningHouseIndex = (int)&vt_VectorClass; /*0x76da9e*/
   ((unsigned int *)&v28)[0] = 0; /*0x76daa2*/
-  BYTE1(((char *)&v28)) = 0; /*0x76daa9*/
+  ((unsigned char *)&v28)[1] = 0; /*0x76daa9*/
   if ( v28.fallRate ) /*0x76daaf*/
   {
     if ( BYTE1(v28.attachedTag) ) /*0x76dab7*/

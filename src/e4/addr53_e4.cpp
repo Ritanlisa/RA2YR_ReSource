@@ -723,16 +723,16 @@ CreateTeamCommand * * InitCommands()
   {
     v31 = 0; /*0x5325bd*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x5325f3*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5325f3*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v32 = dword_87F5D8[36]++; /*0x532600*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v32) = v31; /*0x53260f*/
+    CreateTeamCommand *v32 = (&dword_87F5D8)[36]++; /*0x532600*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v32) = v31; /*0x53260f*/
   }
   v33 = (unsigned int *)operator new(4); /*0x532614*/
   if ( v33 ) /*0x53261e*/
@@ -743,16 +743,16 @@ CreateTeamCommand * * InitCommands()
   {
     v173 = 0; /*0x53262c*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x532664*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532664*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v34 = dword_87F5D8[36]++; /*0x532675*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v34) = v173; /*0x532684*/
+    CreateTeamCommand *v34 = (&dword_87F5D8)[36]++; /*0x532675*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v34) = v173; /*0x532684*/
   }
   v35 = (unsigned int *)operator new(4); /*0x532689*/
   if ( v35 ) /*0x532693*/
@@ -763,16 +763,16 @@ CreateTeamCommand * * InitCommands()
   {
     v36 = 0; /*0x53269f*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x5326d4*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5326d4*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v37 = dword_87F5D8[36]++; /*0x5326e1*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v37) = v36; /*0x5326f0*/
+    CreateTeamCommand *v37 = (&dword_87F5D8)[36]++; /*0x5326e1*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v37) = v36; /*0x5326f0*/
   }
   v38 = (unsigned int *)operator new(4); /*0x5326f5*/
   if ( v38 ) /*0x5326ff*/
@@ -783,16 +783,16 @@ CreateTeamCommand * * InitCommands()
   {
     v39 = 0; /*0x53270b*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x532741*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532741*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v40 = dword_87F5D8[36]++; /*0x53274e*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v40) = v39; /*0x53275d*/
+    CreateTeamCommand *v40 = (&dword_87F5D8)[36]++; /*0x53274e*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v40) = v39; /*0x53275d*/
   }
   v41 = (unsigned int *)operator new(4); /*0x532762*/
   if ( v41 ) /*0x53276c*/
@@ -803,16 +803,16 @@ CreateTeamCommand * * InitCommands()
   {
     v174 = 0; /*0x53277a*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x5327b2*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5327b2*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v42 = dword_87F5D8[36]++; /*0x5327c3*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v42) = v174; /*0x5327d2*/
+    CreateTeamCommand *v42 = (&dword_87F5D8)[36]++; /*0x5327c3*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v42) = v174; /*0x5327d2*/
   }
   v43 = (unsigned int *)operator new(4); /*0x5327d7*/
   if ( v43 ) /*0x5327e1*/
@@ -823,16 +823,16 @@ CreateTeamCommand * * InitCommands()
   {
     v44 = 0; /*0x5327ed*/
   }
-  if ( dword_87F5D8[36] < dword_87F5D8[34] /*0x532822*/
-    || (IDA_BYTE1(dword_87F5D8[35]) || !dword_87F5D8[34])
-    && dword_87F5D8[37] > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_87F5D8[32] + 8))(
-         &dword_87F5D8[32],
-         dword_87F5D8[34] + dword_87F5D8[37],
+  if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532822*/
+    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    && (&dword_87F5D8)[37] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
+         &(&dword_87F5D8)[32],
+         (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v45 = dword_87F5D8[36]++; /*0x53282f*/
-    *(unsigned int *)(dword_87F5D8[33] + 4 * v45) = v44; /*0x53283e*/
+    CreateTeamCommand *v45 = (&dword_87F5D8)[36]++; /*0x53282f*/
+    *(unsigned int *)((&dword_87F5D8)[33] + 4 * v45) = v44; /*0x53283e*/
   }
   v46 = (unsigned int *)operator new(4); /*0x532843*/
   if ( v46 ) /*0x53284d*/

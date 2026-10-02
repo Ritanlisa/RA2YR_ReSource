@@ -1828,11 +1828,11 @@ void sub_639130()
   v2 = 0; /*0x639157*/
   if ( Object_field_0x30 < 0x18 ) /*0x63915d*/
     v2 = *(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12]; /*0x63915f*/
-  v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x639166*/
+  v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x639166*/
   v4 = 0; /*0x63916c*/
   for ( i = 0; i < v3; ++i ) /*0x639172*/
   {
-    v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * i); /*0x63917a*/
+    v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * i); /*0x63917a*/
     if ( v6 ) /*0x63917f*/
     {
       if ( (*(unsigned char *)(v6 + 20) & 1) != 0 ) /*0x63918b*/

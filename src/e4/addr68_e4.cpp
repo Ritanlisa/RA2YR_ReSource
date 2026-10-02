@@ -763,7 +763,7 @@ void PostLoadInitScenario()
         || (IDA_BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
         && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))((char *)&FootClass_Array))(
-             &((char *)&FootClass_Array),
+             ((char *)&FootClass_Array),
              (char *)((char *)&FootClass_Array) + *((unsigned int *)((char *)&FootClass_Array + 0)),
              0) )
       {

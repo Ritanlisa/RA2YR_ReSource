@@ -731,7 +731,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 LABEL_18:
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = v12; /*0x41b56d*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = v2; /*0x41b57b*/
-      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x41b585*/
+      *((unsigned char *)&g_BuildingLoadQueue_Array) = 0; /*0x41b585*/
       ++((char *)&g_BuildingLoadQueue_Array); /*0x41b58c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->Type); /*0x41b59d*/

@@ -687,7 +687,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   LPVOID ppv; // [esp+8h] [ebp-4h] BYREF
 
   ppv = (LPVOID)(0);
-  if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
+  if ( CoCreateInstance(*(const IID *)&rclsid, 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
   ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3),(int)(aP4), a6, aP7); /*0x46b0a6*/
@@ -1100,7 +1100,7 @@ __int64 sub_46D480(void * a1, void * a2)
 {
   int64_t result; // rax
 
-  *((unsigned char *)&(unsigned int)(g_GameModeOptionState)+ a2) = IDA_BYTE4(result); /*0x46d480*/
+  *((unsigned char *)&g_GameModeOptionState+ a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
 }
 }

@@ -900,7 +900,7 @@ int DisplayClass::GetCoordDelta(AbstractClass * aP1)
         v7 = v9; /*0x6da323*/
       }
     }
-    return dword_84291C[2 * (*(unsigned int *)&this->__pad_41E[2378] - v7) /*0x6da33c*/
+    return (&dword_84291C)[2 * (*(unsigned int *)&this->__pad_41E[2378] - v7) /*0x6da33c*/
                       + *(unsigned int *)&this->__pad_41E[2374]
                       - v6
                       + *(unsigned int *)&this->__pad_41E[2378]

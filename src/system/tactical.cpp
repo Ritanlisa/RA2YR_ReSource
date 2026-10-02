@@ -319,10 +319,10 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
     goto LABEL_11; /*0x4803ff*/
   }
   v7 = (int *)*((unsigned int *)g_FrameCounter + v6); /*0x48039d*/
-  v15 = *(uint8_t *)(&((unsigned char *)(this) + 0x0702)); /*0x4803ae*/
+  v15 = *(uint8_t *)(((unsigned char *)(this) + 0x0702)); /*0x4803ae*/
   if ( v7[188] > 1 ) /*0x4803b5*/
   {
-    if ( CellClass::GetTerrainFlag(v7, *(uint8_t *)(&((unsigned char *)(this) + 0x0702))) ) /*0x4803ba*/
+    if ( CellClass::GetTerrainFlag(v7, *(uint8_t *)(((unsigned char *)(this) + 0x0702))) ) /*0x4803ba*/
       inited = (((unsigned char *)(this) + 0x140) >> 13) & 1; /*0x4803cc*/
     else
       inited = CellClass::InitRandomOffsets((int)(this), this->field38, v7[188]); /*0x4803dc*/
@@ -347,7 +347,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
                    ((unsigned int *)(flags))[2],
                    ((unsigned int *)(flags))[3],
                    this->u32_11B,
-                   *(int16_t *)(&((unsigned char *)(this) + 0x0688)),
+                   *(int16_t *)(((unsigned char *)(this) + 0x0688)),
                    1,
                    v17,
                    0,
@@ -366,9 +366,9 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
                    *((unsigned int *)FactoryClass_Array + v13),
                    v16,
                    flags,
-                   *(uint8_t *)(&((unsigned char *)(this) + 0x0707)),
+                   *(uint8_t *)(((unsigned char *)(this) + 0x0707)),
                    dword_89E7C0 * this->u32_11B,
-                   &((unsigned char *)(this) + 0x00C6));
+                   ((unsigned char *)(this) + 0x00C6));
   }
   return v4; /*0x4804fb*/
 }

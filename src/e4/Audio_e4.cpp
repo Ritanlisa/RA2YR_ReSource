@@ -1327,9 +1327,9 @@ void Audio_Helper_7C7F20()
             IDA_LOBYTE(v21) = v20; /*0x7c8043*/
             v23 = v21 >> 2; /*0x7c8045*/
             IDA_LOBYTE(v23) = v23 & 3; /*0x7c8048*/
-            IDA_LOBYTE(v24) = byte_7C80F2[v23] + v24; /*0x7c804b*/
+            IDA_LOBYTE(v24) = (&byte_7C80F2)[v23] + v24; /*0x7c804b*/
             v25 = __readeflags(); /*0x7c8051*/
-            if ( byte_7C80F2[v23] < 0 ) /*0x7c8059*/
+            if ( (&byte_7C80F2)[v23] < 0 ) /*0x7c8059*/
             {
               __writeeflags(v25); /*0x7c8062*/
               if ( !v18 ) /*0x7c8063*/
@@ -1346,9 +1346,9 @@ void Audio_Helper_7C7F20()
             IDA_LOBYTE(v23) = v20; /*0x7c806c*/
             v26 = v23 >> 4; /*0x7c806e*/
             IDA_LOBYTE(v26) = v26 & 3; /*0x7c8071*/
-            IDA_LOBYTE(v27) = byte_7C80F2[v26] + v27; /*0x7c8074*/
+            IDA_LOBYTE(v27) = (&byte_7C80F2)[v26] + v27; /*0x7c8074*/
             v28 = __readeflags(); /*0x7c807a*/
-            if ( byte_7C80F2[v26] < 0 ) /*0x7c8082*/
+            if ( (&byte_7C80F2)[v26] < 0 ) /*0x7c8082*/
             {
               __writeeflags(v28); /*0x7c808b*/
               if ( !v18 ) /*0x7c808c*/
@@ -1365,9 +1365,9 @@ void Audio_Helper_7C7F20()
             IDA_LOBYTE(v26) = v20; /*0x7c8095*/
             v29 = v26 >> 6; /*0x7c8097*/
             IDA_LOBYTE(v29) = v29 & 3; /*0x7c809a*/
-            IDA_LOBYTE(v30) = byte_7C80F2[v29] + v30; /*0x7c809d*/
+            IDA_LOBYTE(v30) = (&byte_7C80F2)[v29] + v30; /*0x7c809d*/
             v31 = __readeflags(); /*0x7c80a3*/
-            if ( byte_7C80F2[v29] < 0 ) /*0x7c80ab*/
+            if ( (&byte_7C80F2)[v29] < 0 ) /*0x7c80ab*/
             {
               __writeeflags(v31); /*0x7c80b4*/
               if ( !v18 ) /*0x7c80b5*/

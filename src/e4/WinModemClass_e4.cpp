@@ -459,7 +459,7 @@ LABEL_21:
       Str,
       80,
       a8);
-    if ( !strcmp(Str, (const char *)&((char *)&stru_82BA00)) ) /*0x77531d*/
+    if ( !strcmp(Str, (const char *)((char *)&stru_82BA00)) ) /*0x77531d*/
       return (gamemd::AbstractClass **)(3); /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
       return (gamemd::AbstractClass **)(2); /*0x775337*/

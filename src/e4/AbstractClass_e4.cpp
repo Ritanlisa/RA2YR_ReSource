@@ -670,11 +670,11 @@ LABEL_20:
             aP1);
         break; /*0x725b23*/
       case 44: /*0x725ab1*/
-        for ( kk = 0; kk < *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32); ++kk ) /*0x725ac1*/
-          (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) /*0x725ad0*/
+        for ( kk = 0; kk < *(int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32); ++kk ) /*0x725ac1*/
+          (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) /*0x725ad0*/
                                                                              + 4 * kk)
                                                                + 40))(
-            *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * kk),
+            *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * kk),
             aP0,
             aP1);
         MapClass::RemoveTriggerRef((MapClass *)&stru_87F5F0.__pad_58[416], (int)aP0, 1); /*0x725ae5*/

@@ -665,7 +665,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4(&a3); /*0x524a56*/
     }
     for ( j = 0; j < (&v5->DeadBodies)[4]; ++j ) /*0x524a6c*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeadBodies[1] + 4 * j)); /*0x524a7d*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)((&v5->DeadBodies)[1] + 4 * j)); /*0x524a7d*/
     if ( v5 != (InfantryTypeClass *)-3692 ) /*0x524a95*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->DeathAnims))->AnimTypeConstructor(0, 0); /*0x524a9d*/

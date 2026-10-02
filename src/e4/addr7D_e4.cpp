@@ -2434,7 +2434,7 @@ void _putwc_lk(wchar_t WCh, FILE * File)
   if ( (File->_flag & 0x40) != 0
     || (File->_file == -1
       ? (v3 = (char *)&unk_87C928)
-      : (v3 = (char *)(dword_B78A80[File->_file >> 5] + 36 * (File->_file & 0x1F))),
+      : (v3 = (char *)((&dword_B78A80)[File->_file >> 5] + 36 * (File->_file & 0x1F))),
         v3[4] >= 0) )
   {
     v6 = File->_cnt - 2 < 0; /*0x7d309e*/

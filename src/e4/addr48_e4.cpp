@@ -701,7 +701,7 @@ LABEL_166:
               || (v86 = SHIBYTE(v71->field_118),
                   v85 = (BuildingTypeClass *)aP2->Z,
                   (int)v85 <= *(unsigned int *)&stru_89E138[1836] + *(unsigned int *)&stru_89E138[1848] * (v86 + 1))
-              && (int)v85 > *(unsigned int *)&stru_89E138[1836] + *(unsigned int *)&stru_89E138[1848] * (v86 - 2) )
+              && (int)v85 > *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v86 - 2) )
             {
               if ( aP3[1].isInLogic )
               {
@@ -724,11 +724,11 @@ LABEL_189:
                     while ( v107 && v89 > 0 )
                     {
                       --v89;
-                      if ( CellClass::SetTerrainType(&stru_87C374[13428], (IUnknown *)&v115) )
+                      if ( CellClass::SetTerrainType(&(&stru_87C374)[13428], (IUnknown *)&v115) )
                         goto LABEL_189;
                     }
                   }
-                  ((Coord *)(*(unsigned int **)&stru_87C374[44976]))->To_Screen(aP2, (IUnknown *)v122);
+                  ((Coord *)(*(unsigned int **)&(&stru_87C374)[44976]))->To_Screen(aP2, (IUnknown *)v122);
                   ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                     v122[0] - 96,
                     v122[1] - 96,

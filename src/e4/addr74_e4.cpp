@@ -1244,13 +1244,13 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   }
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 320)) & 2) != 0 ) /*0x74fc2f*/
   {
-    v6 = *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 260); /*0x74fc31*/
+    v6 = *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 260); /*0x74fc31*/
   }
   else
   {
-    *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 260) = 1; /*0x74fc3e*/
+    *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 260) = 1; /*0x74fc3e*/
     v6 = 1; /*0x74fc49*/
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320) |= 2u; /*0x74fc4e*/
+    *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 320) |= 2u; /*0x74fc4e*/
   }
   p_vtable3 = (char *)&((unsigned int *)this)[0]; /*0x74fc60*/
   sprintf(p_vtable3, "%d.%3.3d", v6, vtable2_high); /*0x74fc6a*/

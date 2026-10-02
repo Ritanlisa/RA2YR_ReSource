@@ -782,12 +782,12 @@ void sub_7331B0()
   {
     v3 = 0; /*0x7331f8*/
   }
-  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7331fa*/
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733202*/
+  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7331fa*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733202*/
   {
     do /*0x73325b*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v1); /*0x73320a*/
+      v5 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v1); /*0x73320a*/
       if ( v5 && (*(unsigned char *)(v5 + 20) & 1) != 0 ) /*0x73321b*/
       {
                 v5 = *(unsigned int *)(v2 + 8);
@@ -995,15 +995,15 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1)
       v11 = (DynamicVector *)((DynamicVector *)(v10))->Constructor_Techno(0, 0); /*0x7334e7*/
     else
       v11 = 0; /*0x7334eb*/
-    v12 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7334ed*/
-    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x7334f5*/
+    v12 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7334ed*/
+    if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x7334f5*/
     {
       do /*0x733522*/
       {
-        v13 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x7334fc*/
+        v13 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x7334fc*/
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x73350d*/
         {
-          v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x733516*/
+          v19 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x733516*/
           ((DynamicVector *)(v11))->AddItem(&v19); /*0x73351a*/
         }
         ++v2; /*0x73351f*/
@@ -1014,7 +1014,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1)
     v15 = 0; /*0x733527*/
     if ( DynamicVector_field_0x10 > 0 ) /*0x73352b*/
     {
-      while ( BuildingClass::GetSellPriority(*(BuildingClass **)(*(unsigned int *)&v11->DynamicVector_field_0x1[3] + 4 * v15)) == v18 ) /*0x73353c*/
+      while ( BuildingClass::GetSellPriority(*(BuildingClass **)(*(unsigned int *)&(&v11->DynamicVector_field_0x1)[3] + 4 * v15)) == v18 ) /*0x73353c*/
       {
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x733541*/
           goto LABEL_42; /*0x733541*/
@@ -1027,7 +1027,7 @@ LABEL_42:
     FillUnitTooltipUI(Destination, StringCSF); /*0x73356f*/
     v16 = 3; /*0x73357a*/
     if ( dword_A83D4C ) /*0x733584*/
-      v16 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x733586*/
+      v16 = *(unsigned int *)&(&dword_A83D4C[134].__pad_90)[4]; /*0x733586*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x7335a7*/
     dword_845560 = v18; /*0x7335b6*/
     result = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] + 16); /*0x7335bc*/

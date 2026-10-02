@@ -358,13 +358,13 @@ AbstractClass * * sub_7318F0()
     result = (char *)dword_A83D4C; /*0x731900*/
     if ( !dword_A83D4C->__pad_140[181] ) /*0x731905*/
     {
-      result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73191d*/
+      result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73191d*/
       if ( result != (char *)dword_A83D4C ) /*0x731926*/
       {
-        result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x731935*/
+        result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x731935*/
         if ( result[492] ) /*0x731938*/
         {
-          result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 56))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73194f*/
+          result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 56))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
           {
             if ( ((int)dword_A8B230->vtable1 & 0x400) == 0 /*0x731981*/
@@ -1784,8 +1784,8 @@ int sub_731A50(char a1)
   int result; // eax
   ObjectClass *v3; // [esp+0h] [ebp-4h]
 
-  result = dword_A8B538[0]; /*0x731a50*/
-  if ( !dword_A8B538[0] ) /*0x731a5a*/
+  result = (&dword_A8B538)[0]; /*0x731a50*/
+  if ( !(&dword_A8B538)[0] ) /*0x731a5a*/
   {
     UI_Create_731A50_Create(v3); /*0x731a5c*/
     return UI_Create_731A50_Create_63A120(a1, 1); /*0x731a65*/

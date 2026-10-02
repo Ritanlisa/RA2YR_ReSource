@@ -349,7 +349,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
 
   ((unsigned int *)&v7)[0] = 0; /*0x7651e1*/
   ((unsigned int *)&v7)[0] = 0; /*0x7651e5*/
-  ((GenericNode *)((GenericNode *)&((char *)&v7)))->Constructor(); /*0x7651e9*/
+  ((GenericNode *)((GenericNode *)((char *)&v7)))->Constructor(); /*0x7651e9*/
   ((GenericNode *)((GenericNode *)&v7.occupant))->Constructor(); /*0x7651f2*/
   LinkedList::Prepend((LinkedList *)&((char *)&v7), (int)&v7.occupant); /*0x765208*/
   ((unsigned int *)&v7)[0] = (int)&vt_List; /*0x765211*/
@@ -365,29 +365,29 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765269*/
     ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen((char *)(g_Str_File_WDTHist_ini), (CHAR *)1); /*0x765279*/
   }
-  ((FileStraw *)((FileStraw *)&((char *)&v7)))->Open((int)&v7.ambientSoundController[3], 0); /*0x765288*/
+  ((FileStraw *)((FileStraw *)((char *)&v7)))->Open((int)&v7.ambientSoundController[3], 0); /*0x765288*/
   ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Dtor(); /*0x7652a2*/
   ((String *)((String *)&v7))->Assign((const char *)(g_INI_Key_CampaignID)); /*0x7652b0*/
   v2 = (char **)&this->ambientSoundController[3]; /*0x7652ba*/
-  INIClass::SetIntFormat((char *)&((char *)&v7), (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
+  INIClass::SetIntFormat((char *)((char *)&v7), (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
-    v4 = ((String *)((String *)&((char *)&v7)))->Assign((const char *)(g_INI_Key_LastDay)); /*0x7652ea*/
+    v4 = ((String *)((String *)((char *)&v7)))->Assign((const char *)(g_INI_Key_LastDay)); /*0x7652ea*/
     ((String *)((String *)v4))->Concat((char **)&v7, RegionStringWOL); /*0x7652f1*/
-    DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x7652fa*/
-    INIClass::SetIntFormat((char *)&((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
+    DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x7652fa*/
+    INIClass::SetIntFormat((char *)((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
   ((BufferIOFile *)((BufferIOFile *)&v7.location[1]))->Init(); /*0x765326*/
   ((CCFileClass *)((CDFileClass *)&v7.location[1]))->Reopen(g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
-  INIClass::SaveToPipe((INIClass *)&((char *)&v7), (int)&v7.location[1]); /*0x76534a*/
+  INIClass::SaveToPipe((INIClass *)((char *)&v7), (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v7.location[1]))->Dtor(); /*0x765361*/
-  return (gamemd::AbstractClass **)(((HashTable *)((INIClass *)&((char *)&v7)))->DestroyHashTableINIClass()); /*0x76536f*/
+  return (gamemd::AbstractClass **)(((HashTable *)((INIClass *)((char *)&v7)))->DestroyHashTableINIClass()); /*0x76536f*/
 
 }
 }

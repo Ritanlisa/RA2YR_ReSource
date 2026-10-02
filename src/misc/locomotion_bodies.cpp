@@ -48,7 +48,7 @@ HRESULT __stdcall LocomotionClass::Load(IStream* stream) { return S_OK; }
 
 HRESULT __stdcall LocomotionClass::Save(IStream* stream, int clear_dirty) {
         if (!stream) return E_POINTER;
-        HRESULT hr = stream->Write((const char*)&((unsigned char *)(this) + 0x020), Size(), nullptr);
+        HRESULT hr = stream->Write((const char*)((unsigned char *)(this) + 0x020), Size(), nullptr);
         if (SUCCEEDED(hr) && clear_dirty) Dirty = false;
         return hr;
     }

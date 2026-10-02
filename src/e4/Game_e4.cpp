@@ -124,14 +124,14 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 44],
         *(unsigned int *)&v14[4 * i + 76],
         *(unsigned int *)&v14[4 * i + 108]);
-      v8 = (int)(MEMORY[0xA8B2BC][i]);
-      v9 = (int)(MEMORY[0xA8B27C][i]);
-      *(unsigned int *)&v14[4 * i + 140] = MEMORY[0xA8B29C][i]; /*0x46d596*/
-      v10 = MEMORY[0xA8B2DC][i]; /*0x46d59d*/
+      v8 = (int)(MEMORY[0xA8B2BC + i]);
+      v9 = (int)(MEMORY[0xA8B27C + i]);
+      *(unsigned int *)&v14[4 * i + 140] = MEMORY[0xA8B29C + i]; /*0x46d596*/
+      v10 = MEMORY[0xA8B2DC + i]; /*0x46d59d*/
       *(unsigned int *)&v14[4 * i + 172] = v8; /*0x46d5a4*/
       *(unsigned int *)&v14[4 * i + 204] = v9; /*0x46d5ab*/
       *(unsigned int *)&v14[4 * i + 236] = v10; /*0x46d5b2*/
-      v11 = MEMORY[0xA8B2FC][i]; /*0x46d5b9*/
+      v11 = MEMORY[0xA8B2FC + i]; /*0x46d5b9*/
       *(unsigned int *)&v14[4 * i + 268] = v11; /*0x46d5c0*/
       result = Debug::Log(
                  "AI %i: Difficulty %i, Country %i, Color %i, Start %i, Ally %i\n",

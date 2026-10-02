@@ -1870,28 +1870,28 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
         break; /*0x49c109*/
       if ( isalnum(*v4) )
       {
-        g_IsWindowed[v3] = *v4; /*0x49c177*/
+        (&g_IsWindowed)[v3] = *v4; /*0x49c177*/
       }
       else
       {
-        g_IsWindowed[v3] = 61; /*0x49c11b*/
+        (&g_IsWindowed)[v3] = 61; /*0x49c11b*/
         v5 = v3 + 1; /*0x49c122*/
         v6 = *v4 >> 4; /*0x49c126*/
         if ( (unsigned int)v6 >= 0x10 )
           v7 = 0; /*0x49c13d*/
         else
           v7 = v6 >= 10 ? v6 + 55 : v6 + 48;
-        g_IsWindowed[v5] = v7; /*0x49c13f*/
+        (&g_IsWindowed)[v5] = v7; /*0x49c13f*/
         v3 = v5 + 1; /*0x49c147*/
         v8 = *v4 & 0xF; /*0x49c148*/
         if ( v8 > 0xFu )
         {
-          g_IsWindowed[v3] = 0; /*0x49c16d*/
+          (&g_IsWindowed)[v3] = 0; /*0x49c16d*/
         }
         else
         {
           v9 = (*v4 & 0xFu) >= 0xA ? v8 + 55 : v8 + 48;
-          g_IsWindowed[v3] = v9; /*0x49c159*/
+          (&g_IsWindowed)[v3] = v9; /*0x49c159*/
         }
       }
       v10 = v4[1]; /*0x49c17d*/
@@ -1900,7 +1900,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
     }
     while ( v10 );
   }
-  g_IsWindowed[v3] = 0; /*0x49c194*/
+  (&g_IsWindowed)[v3] = 0; /*0x49c194*/
   strcpy(v28, g_IsWindowed); /*0x49c1ae*/
   v11 = (unsigned char *)this + 28; /*0x49c1b7*/
   v12 = 0; /*0x49c1b9*/
@@ -1910,34 +1910,34 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
       break; /*0x49c1cb*/
     if ( isalnum(i) )
     {
-      g_IsWindowed[v12] = *v11; /*0x49c239*/
+      (&g_IsWindowed)[v12] = *v11; /*0x49c239*/
     }
     else
     {
-      g_IsWindowed[v12] = 61; /*0x49c1dd*/
+      (&g_IsWindowed)[v12] = 61; /*0x49c1dd*/
       v14 = v12 + 1; /*0x49c1e4*/
       v15 = *v11 >> 4; /*0x49c1e8*/
       if ( (unsigned int)v15 >= 0x10 )
         v16 = 0; /*0x49c1ff*/
       else
         v16 = v15 >= 10 ? v15 + 55 : v15 + 48;
-      g_IsWindowed[v14] = v16; /*0x49c201*/
+      (&g_IsWindowed)[v14] = v16; /*0x49c201*/
       v12 = v14 + 1; /*0x49c209*/
       v17 = *v11 & 0xF; /*0x49c20a*/
       if ( v17 > 0xFu )
       {
-        g_IsWindowed[v12] = 0; /*0x49c22f*/
+        (&g_IsWindowed)[v12] = 0; /*0x49c22f*/
       }
       else
       {
         v18 = (*v11 & 0xFu) >= 0xA ? v17 + 55 : v17 + 48;
-        g_IsWindowed[v12] = v18; /*0x49c21b*/
+        (&g_IsWindowed)[v12] = v18; /*0x49c21b*/
       }
     }
     i = v11[1]; /*0x49c23f*/
     ++v12; /*0x49c242*/
   }
-  g_IsWindowed[v12] = 0; /*0x49c256*/
+  (&g_IsWindowed)[v12] = 0; /*0x49c256*/
   strcat(v28, g_IsWindowed); /*0x49c278*/
   CCFileClass::Construct(v29, g_Str_File_coopsave_ini); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/

@@ -321,7 +321,7 @@ char WOL_RequestMatch(void * a1)
   if ( *(unsigned char *)(*(unsigned int *)&v31[28] + 56) ) /*0x7a0a6b*/
     ((String *)((String *)v31))->Append((const char *)a1); /*0x7a0a77*/
   else
-    ((String *)((String *)v31))->Append((const char *)&((char *)&stru_82BA00)); /*0x7a0a82*/
+    ((String *)((String *)v31))->Append((const char *)((char *)&stru_82BA00)); /*0x7a0a82*/
   ((String *)((String *)&v31[12]))->AssignFromPtr((const char **)&g_WindowManager.__pad_EC[684]); /*0x7a0a90*/
   ((String *)((String *)&v31[12]))->ToLower(); /*0x7a0a99*/
   v15 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7a0abd*/
@@ -512,7 +512,7 @@ Coord * * WOL_ProcessPingRequests()
                 (const void *)(((char *)&stru_B76AC4) + 4 * (unsigned int)(v11 + 1)),
                 4 * ((int)((char *)&stru_B76AC4) + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
               if ( 3 * (int)--((char *)&stru_B76AC4) <= ((char *)&stru_B76AC4) ) /*0x7a12ef*/
-                ((VectorClass *)((VectorClass *)&((char *)&stru_B76AC4)))->Shrink(); /*0x7a12f6*/
+                ((VectorClass *)((VectorClass *)((char *)&stru_B76AC4)))->Shrink(); /*0x7a12f6*/
             }
           }
           goto LABEL_36; /*0x7a12f6*/
@@ -538,7 +538,7 @@ Coord * * WOL_ProcessPingRequests()
           if ( (int)((char *)&stru_B76AC4) > 0 ) /*0x7a1204*/
           {
             ((String *)(&v13))->Reassign((const char **)((char *)&stru_B76AC4)); /*0x7a1210*/
-            ((DynamicArray *)((DynamicArray *)&((char *)&stru_B76AC4)))->Remove(0); /*0x7a121c*/
+            ((DynamicArray *)((DynamicArray *)((char *)&stru_B76AC4)))->Remove(0); /*0x7a121c*/
           }
   LABEL_36:
           ((String *)(&v13))->GetOrEmpty(); /*0x7a12fb*/
@@ -555,7 +555,7 @@ Coord * * WOL_ProcessPingRequests()
       if ( (int)((char *)&stru_B76AC4) > 0 ) /*0x7a1246*/
       {
         ((String *)(&v13))->Reassign((const char **)((char *)&stru_B76AC4)); /*0x7a1253*/
-        ((DynamicArray *)((DynamicArray *)&((char *)&stru_B76AC4)))->Remove(0); /*0x7a125f*/
+        ((DynamicArray *)((DynamicArray *)((char *)&stru_B76AC4)))->Remove(0); /*0x7a125f*/
       }
       goto LABEL_36; /*0x7a125f*/
     }

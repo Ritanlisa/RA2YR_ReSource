@@ -1088,14 +1088,14 @@ void sub_57DAF0(int a1)
   v2 = a1; /*0x57db05*/
   do /*0x57db67*/
   {
-    v3 = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F688[0]); /*0x57db15*/
-    IDA_LOWORD(v15) = IDA_LOWORD(dword_89F688[0]) + v2; /*0x57db1a*/
-    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F688[0]); /*0x57db25*/
-    v2 += IDA_LOWORD(dword_89F688[0]); /*0x57db2a*/
-    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD(dword_89F688[0])) << 9; /*0x57db2e*/
+    v3 = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57db15*/
+    IDA_LOWORD(v15) = IDA_LOWORD((&dword_89F688)[0]) + v2; /*0x57db1a*/
+    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57db25*/
+    v2 += IDA_LOWORD((&dword_89F688)[0]); /*0x57db2a*/
+    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0])) << 9; /*0x57db2e*/
     v5 = v2 + v4 < 0; /*0x57db31*/
     v6 = v2 + v4; /*0x57db31*/
-    IDA_HIWORD(a1) += IDA_HIWORD(dword_89F688[0]); /*0x57db33*/
+    IDA_HIWORD(a1) += IDA_HIWORD((&dword_89F688)[0]); /*0x57db33*/
     if ( v5 || v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x57db4b*/
     {
       dword_ABDC74 = v15; /*0x57db4d*/
@@ -1125,8 +1125,8 @@ void sub_57DAF0(int a1)
     v13 = v12[17]; /*0x57dbd6*/
   }
   while ( v13 >= 205 && v13 <= 232 ); /*0x57dbe5*/
-  IDA_LOWORD(v18) = IDA_LOWORD(dword_89F688[0]) + v16; /*0x57dbf0*/
-  IDA_HIWORD(v18) = IDA_HIWORD(dword_89F688[0]) + v9; /*0x57dbf5*/
+  IDA_LOWORD(v18) = IDA_LOWORD((&dword_89F688)[0]) + v16; /*0x57dbf0*/
+  IDA_HIWORD(v18) = IDA_HIWORD((&dword_89F688)[0]) + v9; /*0x57dbf5*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dc0d*/
 }
 }

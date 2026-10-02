@@ -945,11 +945,11 @@ LABEL_102:
              || *(unsigned int *)((char *)v37 + 107) != -1) )
           {
   int v39; // eax
-            ResourceID2CSF = GetResourceID2CSF(*(void **)&stru_830620[4228]);
+            ResourceID2CSF = GetResourceID2CSF(*(void **)&(&stru_830620)[4228]);
             FillComboBoxRandomOnly((HWND)v31, ResourceID2CSF);
-            if ( *(unsigned int *)&stru_830620[4228] )
+            if ( *(unsigned int *)&(&stru_830620)[4228] )
             {
-              switch ( *(unsigned int *)&stru_830620[4228] )
+              switch ( *(unsigned int *)&(&stru_830620)[4228] )
               {
                 case 1:
                   v39 = 1042;
@@ -970,7 +970,7 @@ LABEL_102:
                   v39 = 1047;
                   break;
                 default:
-                  v39 = *(unsigned int *)&stru_830620[4228] != 7 ? -1 : 1048;
+                  v39 = *(unsigned int *)&(&stru_830620)[4228] != 7 ? -1 : 1048;
                   break;
               }
             }
@@ -980,18 +980,18 @@ LABEL_102:
             }
             v40 = GetDlgItem((HWND)v31, v39);
             SendMessageA(v40, 0x4F1u, 0, 0);
-            ResourceIDCSF = GetResourceIDCSF(*(void **)&stru_830620[4228]);
+            ResourceIDCSF = GetResourceIDCSF(*(void **)&(&stru_830620)[4228]);
             FillComboBoxFactions((HWND)v31, ResourceIDCSF);
             *(unsigned int *)v198 = -2;
           }
           else
           {
   int v44; // eax
-            v41 = *(INIClass **)&stru_830620[4228];
+            v41 = *(INIClass **)&(&stru_830620)[4228];
             *(unsigned int *)&HouseClass_Player[21864][4 * *(unsigned int *)&stru_830620[4228] + 18396] = v37;
             int v43 = GetResourceID2CSF(v41);
             SetupComboBoxObserver((HWND)v31, v43);
-            if ( *(unsigned int *)&stru_830620[4228] )
+            if ( *(unsigned int *)&(&stru_830620)[4228] )
             {
               switch ( *(unsigned int *)&stru_830620[4228] )
               {
