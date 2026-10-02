@@ -877,3 +877,75 @@ namespace gamemd {
 extern int TimerGetTicks();  // 0x6C8C40
 extern int DDraw_GetStatus();  // 0x4BBC90
 }
+
+// ---- G42.12 shim pack (import-table-verified / internal-fn truth) ----
+namespace gamemd {
+// binkw32.dll imports (std names, @bytes == corpus arity, verified):
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkCopyToBuffer(void* bink, void* dest, unsigned int pitch, unsigned int height, unsigned int x, unsigned int y, unsigned int flags);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkGoto(void* bink, unsigned int frame, unsigned int flags);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkSetSoundSystem(void* link_proc, unsigned int extra);
+extern "C" __declspec(dllimport) void __stdcall BinkSetVolume(void* bink, unsigned int vol);
+extern "C" __declspec(dllimport) void* __stdcall BinkOpen(const void* name, unsigned int flags);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkPause(void* bink, unsigned int pause);
+extern "C" __declspec(dllimport) void __stdcall BinkClose(void* bink);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkNextFrame(void* bink);
+extern "C" __declspec(dllimport) void __stdcall BinkDoFrame(void* bink);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkWait(void* bink);
+extern "C" __declspec(dllimport) unsigned int __stdcall BinkDDSurfaceType(void* bink);
+extern "C" __declspec(dllimport) void* __stdcall BinkOpenDirectSound(void* snd);
+extern "C" __declspec(dllimport) const char* __stdcall BinkGetError();
+// internal exe function (NOT an import -- ida_cache 0x753C70 truth)
+extern "C" int* Miles_DriverGet();
+// missing typedefs / fwd declarations (vN cascade killers)
+typedef unsigned int SOCKET;
+struct IsoCoord;
+struct SkirmishSetup;
+} // namespace gamemd
+
+// G42.12 F1: mangled template pseudo-types used in vtable casts
+namespace gamemd {
+struct _DynamicVectorClass_PAUControlNode;
+struct _DynamicVectorClass_PAVVoxClass;
+struct _DynamicVectorClass_PBVAircraftTypeClass;
+struct _DynamicVectorClass_PBVAnimClass;
+struct _DynamicVectorClass_PBVAnimTypeClass;
+struct _DynamicVectorClass_PBVBuildingTypeClass;
+struct _DynamicVectorClass_PBVCommandClass;
+struct _DynamicVectorClass_PBVInfantryTypeClass;
+struct _DynamicVectorClass_PBVMultiMission;
+struct _DynamicVectorClass_PBVParticleSystemTypeClass;
+struct _DynamicVectorClass_PBVSmudgeTypeClass;
+struct _DynamicVectorClass_PBVTeamTypeClass;
+struct _DynamicVectorClass_PBVTerrainTypeClass;
+struct _DynamicVectorClass_PBVToolTip;
+struct _DynamicVectorClass_PBVUnitTypeClass;
+struct _DynamicVectorClass_PBVVoxelAnimTypeClass;
+struct _VectorClass_PAUControlNode;
+struct _VectorClass_PAVCCINIClass;
+struct _VectorClass_PAVColorScheme;
+struct _VectorClass_PAVMSSfxEntry;
+struct _VectorClass_PAVMapRegionClass;
+struct _VectorClass_PAVObjectClass;
+struct _VectorClass_PAVParticleClass;
+struct _VectorClass_PAVPlanningMemberClass;
+struct _VectorClass_PAVPlanningNodeClass;
+struct _VectorClass_PAVTechnoClass;
+struct _VectorClass_PAVTechnoTypeClass;
+struct _VectorClass_PBVAircraftTypeClass;
+struct _VectorClass_PBVAnimClass;
+struct _VectorClass_PBVAnimTypeClass;
+struct _VectorClass_PBVBuildingTypeClass;
+struct _VectorClass_PBVCommandClass;
+struct _VectorClass_PBVInfantryTypeClass;
+struct _VectorClass_PBVMultiMission;
+struct _VectorClass_PBVParticleSystemTypeClass;
+struct _VectorClass_PBVSmudgeTypeClass;
+struct _VectorClass_PBVTeamTypeClass;
+struct _VectorClass_PBVTechnoTypeClass;
+struct _VectorClass_PBVTerrainTypeClass;
+struct _VectorClass_PBVToolTip;
+struct _VectorClass_PBVUnitTypeClass;
+struct _VectorClass_PBVVoxelAnimTypeClass;
+struct _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem;
+struct _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry;
+} // namespace gamemd

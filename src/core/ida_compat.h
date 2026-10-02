@@ -130,3 +130,56 @@ inline unsigned char __CF__(int) { return 0; }
 #endif
 
 #include "core/missing_globals_compat.h"
+
+// ---- G42.12 IDA decompiler macro shims (compile-verified round-2) ----
+// missing base forms (semantics per ida.hpp; OFSUB must compute in 32-bit)
+#define IDA___SPAIR64__(high, low) \
+    ((long long)(((unsigned long long)(unsigned int)(high) << 32) | (unsigned int)(low)))
+inline bool IDA___OFSUB__(int a, int b) {
+    int r = (unsigned int)a - (unsigned int)b;
+    return ((a ^ b) & (a ^ r)) < 0;
+}
+inline unsigned int IDA___ROL4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v << n) | (v >> (32 - n)) : v; }
+inline unsigned int IDA___ROR4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v >> n) | (v << (32 - n)) : v; }
+inline bool IDA___CFADD__(unsigned int a, unsigned int b) {
+    return (unsigned long long)a + (unsigned long long)b > 0xFFFFFFFFull;
+}
+inline double IDA___FYL2X__(double y, double x) { return y * log2(x); }
+// bit-field extraction family (IDA_ prefix forms)
+#define IDA_SLOWORD(x)      (*((signed short*)&(x)))
+#define IDA_SBYTE1(x)       (*((signed char*)&(x) + 1))
+#define IDA_SBYTE2(x)       (*((signed char*)&(x) + 2))
+#define IDA_SBYTE3(x)       (*((signed char*)&(x) + 3))
+#define IDA_SHIBYTE(x)      (*((signed char*)&(x) + sizeof(x) - 1))
+#define IDA_DWORD1(x)       (((unsigned int*)&(x))[1])
+#define IDA_DWORD2(x)       (((unsigned int*)&(x))[2])
+// bare-name aliases (no SDK conflicts; SWORD1/SLODWORD/SBYTE* undefined SDK-wide)
+#define SWORD1(x)  IDA_SWORD1(x)
+#define SWORD2(x)  IDA_SWORD2(x)
+#define SWORD3(x)  IDA_SWORD3(x)
+#define SLODWORD(x) IDA_SLODWORD(x)
+#define SLOBYTE(x) IDA_SLOBYTE(x)
+#define SBYTE1(x) IDA_SBYTE1(x)
+#define SBYTE2(x) IDA_SBYTE2(x)
+#define SHIBYTE(x) IDA_SHIBYTE(x)
+#define BYTE4(x)  IDA_BYTE4(x)
+#define DWORD1(x) IDA_DWORD1(x)
+#define DWORD2(x) IDA_DWORD2(x)
+// 64-bit pair assembly / flag intrinsics / x87 helpers
+#define __PAIR64__(h,l) IDA___PAIR64__(h,l)
+#define __PAIR32__(h,l) IDA___PAIR32__(h,l)
+#define __SPAIR64__(h,l) IDA___SPAIR64__(h,l)
+#define __OFSUB__(a,b)  IDA___OFSUB__(a,b)
+#define __ROL4__(v,n) IDA___ROL4__(v,n)
+#define __ROR4__(v,n) IDA___ROR4__(v,n)
+#define __CFADD__(a,b) IDA___CFADD__(a,b)
+#define __FYL2X__(y,x) IDA___FYL2X__(y,x)
+// absolute byte-addressing pseudo-array
+#define MEMORY ((unsigned char*)nullptr)
+// Hex-Rays inline惯用形: memset32 = rep stosd (@410eae disasm truth)
+inline void* memset32(void* dst, unsigned int value, unsigned int dword_count) {
+    unsigned int* p = (unsigned int*)dst;
+    for (unsigned int i = 0; i < dword_count; ++i) p[i] = value;
+    return dst;
+}
+inline int abs16(int v) { short s = (short)v; return s < 0 ? -s : s; }
