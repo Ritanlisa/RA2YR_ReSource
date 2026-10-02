@@ -77,7 +77,7 @@ int BuildingClass::CanBeSold() {
         }
       }
     }
-    if ( !this->Type->FirestormWall || this->?->firestormActive ) /*0x449528*/
+    if ( !this->Type->FirestormWall || this->owner->firestormActive ) /*0x449528*/
   LABEL_11:
       IDA_LOBYTE(result) = 0; /*0x449536*/
     else
@@ -96,10 +96,10 @@ int BuildingClass::CaptureBuilding() {
     {
       if ( !dword_A8E7AC ) /*0x44d5ed*/
       {
-        this->?->lastBuiltVehicleType = this->Type->ArrayIndex; /*0x44d601*/
-        this->?->unknownBool246 = 1; /*0x44d60d*/
+        this->owner->lastBuiltVehicleType = this->Type->ArrayIndex; /*0x44d601*/
+        this->owner->unknownBool246 = 1; /*0x44d60d*/
       }
-      this->?->recheckTechTree = 1; /*0x44d61a*/
+      this->owner->recheckTechTree = 1; /*0x44d61a*/
       if ( !(uint8_t)Team::AllMembersValid((Team *)this) /*0x44d682*/
         && (uint8_t)House::IsCurrentPlayer((House *)this->?)
         && (*((int (__thiscall **)(BuildingClass *))this->TechnoClass + 97))(this) != 18
@@ -5306,7 +5306,7 @@ int BuildingClass::ProcessActiveUpdate() {
       }
       while ( 1 ) /*0x44b37d*/
       {
-        v36 = *(ObjectClass **)(this->?->absorbersCount + 4 * v66[1]); /*0x44b37d*/
+        v36 = *(ObjectClass **)(this->owner->absorbersCount + 4 * v66[1]); /*0x44b37d*/
         if ( v36 && v36->isAliveFlag && v36[7].health == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1176) ) /*0x44b3a8*/
         {
           v37 = v36[4].ambientSoundController[0]; /*0x44b3ae*/
@@ -6546,7 +6546,7 @@ int BuildingClass::ClearFactoryBib() {
           this->? = 1; /*0x44e300*/
           this->HasExtraPowerDrain = 1; /*0x44e306*/
   LABEL_124:
-          IDA_LOBYTE(this->?->HouseClass_field_timer_B[2]) = 1; /*0x44e365*/
+          IDA_LOBYTE(this->owner->HouseClass_field_timer_B[2]) = 1; /*0x44e365*/
           goto LABEL_125; /*0x44e36b*/
         }
         v75 = (void (__thiscall **)(BuildingClass *))this->TechnoClass; /*0x44e31d*/
@@ -6693,7 +6693,7 @@ int BuildingClass::ClearFactoryBib() {
     v33 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], p_m_Position); /*0x44dc41*/
     (*(void (__thiscall **)(int, void *))(v32 + 1152))(v4, v33); /*0x44dc49*/
     if ( this->Type->ExtraPowerBonus > 0 ) /*0x44dc5d*/
-      IDA_LOBYTE(this->?->HouseClass_field_timer_B[2]) = 1; /*0x44dc65*/
+      IDA_LOBYTE(this->owner->HouseClass_field_timer_B[2]) = 1; /*0x44dc65*/
   LABEL_35:
     _EAX = MissionClass::GetMissionControl((MissionClass *)this); /*0x44dc84*/
     __asm /*0x44dc8b*/
@@ -7015,7 +7015,7 @@ int BuildingClass::Disappear_PrismForward() {
           }
           this->? = inLimbo; /*0x44ecc4*/
         }
-        primaryUnused1 = (AbstractClass *)this->?->primaryUnused1; /*0x44ecd0*/
+        primaryUnused1 = (AbstractClass *)this->owner->primaryUnused1; /*0x44ecd0*/
         if ( primaryUnused1 ) /*0x44ecd8*/
         {
           v16 = AbstractClass::GetType(primaryUnused1); /*0x44ecda*/
@@ -7039,7 +7039,7 @@ int BuildingClass::Disappear_PrismForward() {
           }
           this->? = v17; /*0x44ed45*/
         }
-        primaryUnused2 = (AbstractClass *)this->?->primaryUnused2; /*0x44ed51*/
+        primaryUnused2 = (AbstractClass *)this->owner->primaryUnused2; /*0x44ed51*/
         if ( primaryUnused2 ) /*0x44ed59*/
         {
           v23 = AbstractClass::GetType(primaryUnused2); /*0x44ed5b*/
@@ -7063,7 +7063,7 @@ int BuildingClass::Disappear_PrismForward() {
           }
           this->? = v24; /*0x44edc6*/
         }
-        primaryUnused3 = (AbstractClass *)this->?->primaryUnused3; /*0x44edd2*/
+        primaryUnused3 = (AbstractClass *)this->owner->primaryUnused3; /*0x44edd2*/
         if ( primaryUnused3 ) /*0x44edda*/
         {
           v30 = AbstractClass::GetType(primaryUnused3); /*0x44eddc*/
@@ -7087,7 +7087,7 @@ int BuildingClass::Disappear_PrismForward() {
           }
           this->? = v31; /*0x44ee47*/
         }
-        primaryForDefenses = (AbstractClass *)this->?->primaryForDefenses; /*0x44ee53*/
+        primaryForDefenses = (AbstractClass *)this->owner->primaryForDefenses; /*0x44ee53*/
         if ( !primaryForDefenses ) /*0x44ee5b*/
           goto LABEL_33; /*0x44ee5b*/
         v37 = AbstractClass::GetType(primaryForDefenses); /*0x44ee5d*/
@@ -7664,8 +7664,8 @@ char BuildingClass::PowerOff() {
         this->HasPower = 0; /*0x452393*/
         this->? = 1; /*0x45239a*/
         IDA_LOBYTE(owner->HouseClass_field_timer_B[2]) = 1; /*0x4523a0*/
-        IDA_BYTE1(this->?->HouseClass_field_timer_B[2]) = 1; /*0x4523ac*/
-        this->?->recheckTechTree = 1; /*0x4523b8*/
+        IDA_BYTE1(this->owner->HouseClass_field_timer_B[2]) = 1; /*0x4523ac*/
+        this->owner->recheckTechTree = 1; /*0x4523b8*/
         BuildingClass::Deactivate(this); /*0x4523c0*/
         if ( (uint8_t)House::IsHumanPlayer((House *)this->?) ) /*0x4523cb*/
           VoxClass::FindAndPlay((VoxClass *)&stru_818E00.TrailerAnim, -1); /*0x4523de*/
@@ -9102,7 +9102,7 @@ int BuildingClass::ScanCircleForTiberium() {
     int v13; // [esp+30h] [ebp+4h]
 
     DetectDisguiseRange = this->Type->?; /*0x455991*/
-    result = this->?->relatedTagsCount; /*0x4559a1*/
+    result = this->owner->relatedTagsCount; /*0x4559a1*/
     v10 = result; /*0x4559a9*/
     if ( (unsigned short)v13 == (unsigned short)g_TerrainTypeTable ) /*0x4559b4*/
     {
@@ -9164,7 +9164,7 @@ int BuildingClass::UpdateTerrainEffect() {
     if ( (unsigned char)result ) /*0x455a92*/
     {
       DetectDisguiseRange = this->Type->?; /*0x455aa4*/
-      result = this->?->relatedTagsCount; /*0x455abf*/
+      result = this->owner->relatedTagsCount; /*0x455abf*/
       v11 = result; /*0x455ac2*/
       if ( v14 == g_TerrainTypeTable ) /*0x455ac6*/
       {
@@ -9305,7 +9305,7 @@ int BuildingClass::DrawDeployCircle() {
               byte_89C802 = -1; /*0x4567c4*/
               atexit(nullsub_103); /*0x4567cb*/
             }
-            v4 = (char *)&this->?->base[4] + 1; /*0x4567d9*/
+            v4 = (char *)&this->owner->base[4] + 1; /*0x4567d9*/
             IDA_LOWORD(v22.Color_field_00) = *(unsigned short *)v4; /*0x4567e2*/
             IDA_BYTE2(v22.Color_field_00) = v4[2]; /*0x4567ea*/
             Time = timeGetTime(); /*0x4567ee*/
@@ -11840,15 +11840,15 @@ int * BuildingClass::ValidatePlacementEx(int a2, int a3, int *a4, int *a5) {
     char v18; // [esp+30h] [ebp-10h] BYREF
 
     v13 = 0; /*0x4deea1*/
-    if ( !DynamicVector::GetOrGrow((DynamicVector *)this->?->ownedBuildingTypes, *(unsigned int *)(a2 + 3576)) ) /*0x4deea5*/
+    if ( !DynamicVector::GetOrGrow((DynamicVector *)this->owner->ownedBuildingTypes, *(unsigned int *)(a2 + 3576)) ) /*0x4deea5*/
       return 0; /*0x4deea5*/
     v6 = 0; /*0x4deeb8*/
-    bunkersCount = this->?->bunkersCount; /*0x4deebf*/
+    bunkersCount = this->owner->bunkersCount; /*0x4deebf*/
     if ( bunkersCount <= 0 ) /*0x4deec3*/
       return 0; /*0x4df02f*/
     do /*0x4df01b*/
     {
-      v7 = *(unsigned int *)(this->?->absorbersCount + 4 * v6); /*0x4deed7*/
+      v7 = *(unsigned int *)(this->owner->absorbersCount + 4 * v6); /*0x4deed7*/
       if ( v7 /*0x4def0c*/
         && !*(unsigned char *)(v7 + 129)
         && *(unsigned int *)(v7 + 1312) == a2

@@ -2029,9 +2029,9 @@ int FootClass::ProcessDemolish() {
       this->?[0] = 0; /*0x44162a*/
       if ( Type->__pad_1624[128] ) /*0x441630*/
       {
-        this->?->radarVisibleTo[0] = 0; /*0x441640*/
+        this->owner->radarVisibleTo[0] = 0; /*0x441640*/
         v6 = 0; /*0x44164c*/
-        bunkersCount = this->?->bunkersCount; /*0x44164e*/
+        bunkersCount = this->owner->bunkersCount; /*0x44164e*/
         if ( bunkersCount > 0 ) /*0x441653*/
         {
           do /*0x441694*/
@@ -2188,7 +2188,7 @@ int FootClass::ProcessDemolish() {
     {
       FloatPositive = FirstFloatPositive(&this->?); /*0x441b5b*/
       Float::SubtractClamped((int *)&this->?, 1.0, FloatPositive); /*0x441b65*/
-      Float::SubtractClamped(this->?->ownedTiberium, 1.0, FloatPositive); /*0x441b7e*/
+      Float::SubtractClamped(this->owner->ownedTiberium, 1.0, FloatPositive); /*0x441b7e*/
       v39 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 256, 768); /*0x441b9a*/
       v66 = this->?[0]; /*0x441ba6*/
       v67 = this->?[1]; /*0x441bad*/
@@ -2530,7 +2530,7 @@ int FootClass::ProcessPrimarySelect() {
         return result; /*0x448252*/
       }
       v4 = 0; /*0x448195*/
-      bunkersCount = this->?->bunkersCount; /*0x44819c*/
+      bunkersCount = this->owner->bunkersCount; /*0x44819c*/
       if ( bunkersCount <= 0 ) /*0x4481a0*/
       {
   LABEL_13:
@@ -2544,7 +2544,7 @@ int FootClass::ProcessPrimarySelect() {
       }
       while ( 1 ) /*0x4481ac*/
       {
-        v5 = *(unsigned int *)(this->?->absorbersCount + 4 * v4); /*0x4481ac*/
+        v5 = *(unsigned int *)(this->owner->absorbersCount + 4 * v4); /*0x4481ac*/
         if ( *(unsigned char *)(v5 + 129) ) /*0x4481af*/
           goto LABEL_12; /*0x4481af*/
         v6 = *(unsigned int *)(v5 + 1312); /*0x4481b9*/
@@ -2770,7 +2770,7 @@ int FootClass::ScanCircleForUnits() {
     int v19; // [esp+34h] [ebp+4h]
 
     CloakRadiusInCells = this->Type->CloakRadiusInCells; /*0x4556e1*/
-    relatedTagsCount = this->?->relatedTagsCount; /*0x4556ea*/
+    relatedTagsCount = this->owner->relatedTagsCount; /*0x4556ea*/
     v3 = CloakRadiusInCells * CloakRadiusInCells; /*0x4556ed*/
     v16 = CloakRadiusInCells * CloakRadiusInCells; /*0x4556fd*/
     v15 = relatedTagsCount; /*0x455701*/
@@ -2842,7 +2842,7 @@ int FootClass::ScanCircleForUnits2() {
     if ( (unsigned char)result ) /*0x455832*/
     {
       SensorsSight = this->Type->?; /*0x455844*/
-      relatedTagsCount = this->?->relatedTagsCount; /*0x455862*/
+      relatedTagsCount = this->owner->relatedTagsCount; /*0x455862*/
       if ( v17 == g_TerrainTypeTable ) /*0x455866*/
       {
         v4 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, unsigned char *))this->TechnoClass + 18))(this, v16); /*0x45587f*/
@@ -4441,7 +4441,7 @@ int FootClass::HandleTargetDestroyed(int *a2, int *a3) {
           {
             v10 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(*v4 + 72))(v4, v24); /*0x4d9a3d*/
             v11 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v10); /*0x4d9a46*/
-            v9 = (uint8_t)Cell::IsPassableOffset((Cell *)v11, this->?->relatedTagsCount) == 0; /*0x4d9a60*/
+            v9 = (uint8_t)Cell::IsPassableOffset((Cell *)v11, this->owner->relatedTagsCount) == 0; /*0x4d9a60*/
           }
         }
       }
@@ -5831,7 +5831,7 @@ int FootClass::IsTargetInRange(int a2) {
     v3 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->TechnoClass + 33))(this) + 1520); /*0x4de7c0*/
     v16 = v3; /*0x4de7ce*/
     v17 = v3 * v3; /*0x4de7d8*/
-    relatedTagsCount = this->?->relatedTagsCount; /*0x4de7e1*/
+    relatedTagsCount = this->owner->relatedTagsCount; /*0x4de7e1*/
     if ( a2 == g_FootClass_Pool ) /*0x4de7ec*/
     {
       v4 = (unsigned int *)(*((int (__thiscall **)(FootClass *, char *))this->TechnoClass + 18))(this, v21); /*0x4de805*/

@@ -2660,7 +2660,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
       if ( firstUnit ) /*0x6ee40b*/
       {
         v5 = 0; /*0x6ee420*/
-        enemyHouseIndex = firstUnit->?->enemyHouseIndex; /*0x6ee43b*/
+        enemyHouseIndex = firstUnit->owner->enemyHouseIndex; /*0x6ee43b*/
         if ( enemyHouseIndex != -1 ) /*0x6ee444*/
           v5 = (void *)*((unsigned int *)stru_A80220.? + enemyHouseIndex); /*0x6ee44c*/
         v7 = DamageMapClassArea( /*0x6ee462*/
