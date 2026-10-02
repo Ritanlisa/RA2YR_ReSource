@@ -860,7 +860,6 @@ class FILE;
 
 
 // G41.48 class fwd supply (visibility-corrected rerun)
-class DSurface_ViewBounds;
 
 } // namespace gamemd
 

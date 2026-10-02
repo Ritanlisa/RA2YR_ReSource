@@ -753,7 +753,17 @@ extern int DSurface_Composite;  // data: 0x88731C
 extern int DSurface_Sidebar;  // data: 0x887300
 extern int DSurface_SidebarBounds;  // data: 0x886F90
 extern int DSurface_Tile;  // data: 0x8872FC
-extern int DSurface_ViewBounds;  // data: 0x886FA0
+// G42.3: DSurface::ViewBounds static-object flat host (data: 0x886FA0)
+// -- offsets honor the corpus pad naming (__pad_N at +N); covers max indexed
+//    access __pad_FC[324] = +0x240
+struct DSurface_ViewBounds_flat {
+    unsigned int field_0;                   // +0x0
+    unsigned int field_4;                   // +0x4
+    unsigned char __pad_8[0x34 - 0x8];      // +0x8  (idx<=20)
+    unsigned char __pad_34[0xFC - 0x34];    // +0x34 (idx<=116)
+    unsigned char __pad_FC[0x240 - 0xFC];   // +0xFC (idx<=324)
+};
+extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0
 extern int DSurface_WindowBounds;  // data: 0x886FB0
 extern int dwInitParam;  // data: 0xB72F54
 extern int dword_A8ED54;  // data: 0xA8ED54
