@@ -297,7 +297,17 @@ for qname, ecount in sorted(pairs.items(), key=lambda kv: -kv[1]):
     if already:
         # the class hpp declares it, but the calling TU may not include it
         inc = 'e4/classes/%s_e4.hpp' % cls
+        # G42.5b: the header must actually exist (CellCoord lives in
+        # _tree_alias_e4.hpp, not a dedicated file) and the TU must be in
+        # the e4 universe (mixed TUs carry core defs -- C2011 incident)
+        inc_path = os.path.join(ROOT, 'src', inc.replace('/', os.sep))
+        if not os.path.exists(inc_path):
+            stats['skip-no-dedicated-hpp'] += 1
+            continue
         for st in site_tus.get((cls, name), ()):
+            if '/e4/' not in st.replace('\\', '/'):
+                stats['skip-non-e4-tu'] += 1
+                continue
             if st not in _line_cache and os.path.exists(st):
                 get_lines(st)
             if st not in _line_cache:
