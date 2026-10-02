@@ -51,7 +51,7 @@ public:
 
     // Construction / destruction lifecycle
 int Construct(int,int);  // 0x43B740
-    void Dtor();  // 0x43BCF0
+    int Dtor();  // 0x43BCF0
     int ScalarDtor() override;  // 0x459F20
     int Activate() override;  // 0x452480
     int Deactivate() override;   // 0x452480

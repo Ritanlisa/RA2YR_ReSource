@@ -379,7 +379,7 @@ public:
     virtual int Destructor(); // 0x407A90
     virtual int IsBuffering(); // 0x4080D0
     virtual void InitLinkedList(); // 0x408840
-    virtual void SetField(); // 0x408930
+    virtual int SetField(); // 0x408930
 
     uint8_t AudioSample_field_0x04[4];
     uint8_t AudioSample_field_0x08[4];

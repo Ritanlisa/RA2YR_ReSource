@@ -343,7 +343,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
       IDA_BYTE1(this->headNode[2]) = 0; /*0x477fb1*/
       return this->__pad_0; /*0x477fb4*/
     }
-    v4 = RA2_OPNEW(4 * v3); /*0x477f76*/
+    v4 =(int)RA2_OPNEW(4 * v3); /*0x477f76*/
     this->headNode[0] = v4; /*0x477f80*/
     if ( !v4 ) /*0x477f83*/
       return this->__pad_0; /*0x477f83*/

@@ -203,7 +203,7 @@ LABEL_44:
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       ((Vector *)((int)&Str[88]))->Clear(); /*0x5e7876*/
       *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
-      result = ((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
+      result =(void **)((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
         result = (void **)(__2_YAPAXI_Z(4u)); /*0x5e7892*/

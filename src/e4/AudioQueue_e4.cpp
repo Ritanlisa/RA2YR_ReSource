@@ -139,7 +139,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
 }
 // 0x403730
 namespace gamemd {
-int AudioQueue::StopAllVoices(int a2)
+int AudioQueue::StopAllVoices()
 {
 
   int v1; // edx

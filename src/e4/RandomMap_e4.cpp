@@ -2131,7 +2131,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
           v42 = 0; /*0x5929f4*/
         }
       }
-      return 1; /*0x592adb*/
+return (gamemd::ObjectClass **)1; /*0x592adb*/
     }
     else
     {

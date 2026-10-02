@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
-        PlayerSide =(unsigned int *)(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
+        PlayerSide =(unsigned int)(unsigned int *)(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
         return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
       }
       else

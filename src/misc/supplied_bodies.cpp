@@ -500,7 +500,7 @@ void AudioSample::InitLinkedList() {
       v8 = (int *)*p_AudioSample_field_0x04; /*0x4088b2*/
       do /*0x4088d5*/
       {
-        v9 = v8 + 9; /*0x4088b4*/
+        v9 =(unsigned int *)v8 + 9; /*0x4088b4*/
         v10 = 2; /*0x4088b7*/
         do /*0x4088cb*/
         {

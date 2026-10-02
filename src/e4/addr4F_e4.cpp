@@ -916,7 +916,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   {
     ((String *)((char **)&aP1))->Assign((const char *)aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
-    v16 =(int)((Audio*)((int)aP2))->ParseVolume((const char **)&aP1, v15); /*0x4f34f3*/
+    v16 =(int)((Audio*)((int)aP2))->ParseVolume((const char **)&aP1, (gamemd::ObjectClass *)v15); /*0x4f34f3*/
   }
   else
   {
@@ -945,14 +945,14 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   {
     v23 =(unsigned int *)__2_YAPAXI_Z(0x3Cu); /*0x4f357a*/
     v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
-    *((unsigned int *)this + 9) = v24; /*0x4f359b*/
+    *((unsigned int *)this + 9) =(unsigned int)v24; /*0x4f359b*/
     if ( v24 ) /*0x4f359e*/
       ((PriorityQueue *)(v12))->Add((int)v24); /*0x4f35a3*/
   }
   v25 = a7; /*0x4f35a8*/
   if ( ((String*)a7)->Length() ) /*0x4f35ae*/
   {
-    v26 = __2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
+    v26 =(unsigned int *)__2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/
       v27 = MSPCXAnim::Construct(v26, v25, (int)(v12 + 6), v19, 1); /*0x4f35cf*/
     else

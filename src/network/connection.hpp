@@ -107,7 +107,7 @@ int release(int,int,int,int);  // 0x5414C0
     int SetAddress(int a2);                                     // 0x5423C0
     uint32_t GetQueueSize();                                          // 0x542450
     int32_t CheckStatus();  // 0x5424A0
-    void ProcessQueue();                                              // 0x542520
+    int ProcessQueue();                                              // 0x542520
     void Flush();                                                     // 0x542EC0
     int32_t getPlayerName();                                          // 0x543100
 

@@ -48,7 +48,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
     int v9; // [esp+70h] [ebp-8h]
 
     NullGuard::Call((GraphicMenuItem *)this, (int)a2); /*0x4f37ad*/
-    v3 = (unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
+    v3 =(char **)(unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
     v4 = (unsigned int *)(((CCFileClass*)&v7)->Construct2(v3)); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
     *(unsigned int *)v7.CDFileClass = 0; /*0x4f37ce*/

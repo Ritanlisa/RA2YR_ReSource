@@ -147,7 +147,7 @@ int BuildingClass::Construct(int a2, int a3)
   int Vtable3; // [esp+18h] [ebp+4h]
 
   TechnoClass::TechnoClass((unsigned int *)this, a3); /*0x43b74b*/
-  this->Type = a2; /*0x43b756*/
+  this->Type =(gamemd::BuildingTypeClass *)a2; /*0x43b756*/
   this->Factory = 0; /*0x43b75c*/
   this->C4Timer = g_CurrentFrame; /*0x43b76b*/
   this->q530 = 0; /*0x43b771*/
@@ -245,7 +245,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->PrismStage = 0; /*0x43b9e8*/
   this->DelayBeforeFiring = 0; /*0x43b9ee*/
   this->BunkerState = 0; /*0x43b9f4*/
-  *(unsigned int *)this = &BuildingClass_Vtable; /*0x43b9fa*/
+  *(unsigned int *)this =(unsigned int)(&BuildingClass_Vtable); /*0x43b9fa*/
   this->vtable2 = &BuildingClass_Vtable2; /*0x43ba00*/
   this->vtable3 = &BuildingClass_Vtable3; /*0x43ba07*/
   this->vtable4 = &BuildingClass_Vtable4; /*0x43ba0e*/
@@ -255,7 +255,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->q5F0 = 0; /*0x43ba2a*/
   this->q5F4 = 0; /*0x43ba30*/
   this->PrismTargetCoords = 0; /*0x43ba36*/
-  v7 = this->Type; /*0x43ba38*/
+  v7 =(int)this->Type; /*0x43ba38*/
   this->q70C = 0; /*0x43ba3e*/
   this->u32_710 = 0; /*0x43ba43*/
   if ( v7 ) /*0x43ba46*/
@@ -281,24 +281,24 @@ int BuildingClass::Construct(int a2, int a3)
     || (byte_A8EB4D || !dword_A8EB48)
     && dword_A8EB54 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(BuildingClass_Array + 8))(
-         &BuildingClass_Array,
+         (int *)&BuildingClass_Array,
          dword_A8EB54 + dword_A8EB48,
          0) )
   {
     v8 = g_BuildingProductionState++; /*0x43bb15*/
-    *((unsigned int *)g_BuildingClass_InstanceCount + v8) = this; /*0x43bb24*/
+    *((unsigned int *)g_BuildingClass_InstanceCount + v8) =(unsigned int)this; /*0x43bb24*/
   }
   BuildingClass::Update((void *)this); /*0x43bb29*/
   if ( dword_B0F650 < dword_B0F648 /*0x43bb62*/
     || (byte_B0F64D || !dword_B0F648)
     && dword_B0F654 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F640 + 8))(
-         &dword_B0F640,
+         (int *)&dword_B0F640,
          dword_B0F654 + dword_B0F648,
          0) )
   {
     v9 = dword_B0F650++; /*0x43bb6f*/
-    *((unsigned int *)dword_B0F644 + v9) = this; /*0x43bb7e*/
+    *((unsigned int *)dword_B0F644 + v9) =(unsigned int)this; /*0x43bb7e*/
   }
   if ( g_BuildingTypeInstanceCount < dword_B0F5C0 /*0x43bbb5*/
     || (byte_B0F5C5 || !dword_B0F5C0)
@@ -309,7 +309,7 @@ int BuildingClass::Construct(int a2, int a3)
          0) )
   {
     v10 = g_BuildingTypeInstanceCount++; /*0x43bbc2*/
-    *((unsigned int *)g_BuildingClassPoolManager + v10) = this; /*0x43bbd1*/
+    *((unsigned int *)g_BuildingClassPoolManager + v10) =(unsigned int)this; /*0x43bbd1*/
   }
   Vtable3 = this->vtable2.GetVtable3(); /*0x43bbe0*/
   if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x43bbec*/
@@ -346,24 +346,24 @@ int BuildingClass::Construct(int a2, int a3)
     g_BuildingLoadQueue_Active = 0; /*0x43bc7a*/
   LABEL_29:
     *((unsigned int *)v12 + 2 * g_BuildingLoadQueue_Count) = Vtable3; /*0x43bc80*/
-    *((unsigned int *)v12 + 2 * g_BuildingLoadQueue_Count + 1) = this; /*0x43bc9e*/
+    *((unsigned int *)v12 + 2 * g_BuildingLoadQueue_Count + 1) =(unsigned int)this; /*0x43bc9e*/
     g_BuildingLoadQueue_Dirty = 0; /*0x43bca8*/
     ++g_BuildingLoadQueue_Count; /*0x43bcae*/
   }
   LABEL_30:
-  v15 = this->Type; /*0x43bcb3*/
+  v15 =(int)this->Type; /*0x43bcb3*/
   if ( v15 ) /*0x43bcbb*/
   {
     v16 = *(unsigned int *)(v15 + 6016); /*0x43bcbd*/
     if ( v16 < 1 ) /*0x43bcc6*/
       v16 = 1; /*0x43bcc8*/
     RadioClass::SetLinkCount(v16); /*0x43bcd0*/
-    return this; /*0x43bcd5*/
+return (int)this; /*0x43bcd5*/
   }
   else
   {
     RadioClass::SetLinkCount(1); /*0x43bce2*/
-    return this; /*0x43bce7*/
+return (int)this; /*0x43bce7*/
   }
 }
 // 0x43bcf0

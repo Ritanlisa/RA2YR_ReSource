@@ -213,12 +213,12 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
       if ( a3 ) /*0x49f0b6*/
       {
         this->? = (void *)a3; /*0x49f0b8*/
-        return this; /*0x49f0be*/
+return (unsigned int *)this; /*0x49f0be*/
       }
       this->? = (void *)RA2_OPNEW(4 * a2); /*0x49f0cd*/
       IDA_BYTE1(this->?) = 1; /*0x49f0d0*/
     }
-    return this; /*0x49f0bd*/
+return (unsigned int *)this; /*0x49f0bd*/
 }
 } // namespace gamemd
 
@@ -330,13 +330,13 @@ int CampaignClass::DeleteAndZero(const char **a2) {
       String::ToLower((String *)&a2); /*0x5cf7aa*/
       if ( (uint8_t)String::Compare((String *)&v7, (const char **)&a2) ) /*0x5cf7b8*/
         break; /*0x5cf7b8*/
-      DeleteAndZero((ObjectClass *)&a2); /*0x5cf7c5*/
-      DeleteAndZero((ObjectClass *)&v7); /*0x5cf7ce*/
+      DeleteAndZero((const char **)(ObjectClass *)&a2); /*0x5cf7c5*/
+      DeleteAndZero((const char **)(ObjectClass *)&v7); /*0x5cf7ce*/
       if ( ++v4 >= this->? ) /*0x5cf7d9*/
         return 0; /*0x5cf7d9*/
     }
     v6 = *((unsigned int *)this->? + v4); /*0x5cf7eb*/
-    DeleteAndZero((ObjectClass *)&a2); /*0x5cf7ee*/
+    DeleteAndZero((const char **)(ObjectClass *)&a2); /*0x5cf7ee*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5cf7f7*/
     return v6; /*0x5cf7db*/
 }

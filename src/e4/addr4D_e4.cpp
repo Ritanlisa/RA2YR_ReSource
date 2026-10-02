@@ -132,7 +132,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   aP0->u8_69 = 0; /*0x4d1873*/
   aP0->q064 = 0; /*0x4d1876*/
 // 0x4101f0
-  return ((AbstractClass*)aP0)->DTOR(); /*0x4d187e*/
+return (void *)((AbstractClass*)aP0)->DTOR(); /*0x4d187e*/
 }
 }
 // 0x4D2370

@@ -547,7 +547,7 @@ LABEL_135:
     v91 = TerrainInitMap(v90, (RandomStruct *)&stru_830620[72276], v89);
   else
     v91 = 0;
-  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v91);
+  ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v91);
   ModuleInternalVersion = GetModuleInternalVersion((int)&g_NetworkPlayerBuffer[5796]);
   wsprintfA(v286, &stru_830620[72272], ModuleInternalVersion);
   v93 = (char *)operator new(0x10u);
@@ -555,7 +555,7 @@ LABEL_135:
     v94 = BuildResultPacket(v93, &stru_830620[72264], (IUnknown *)v286);
   else
     v94 = 0;
-  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v94);
+  ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v94);
   GetModuleFileNameA((HMODULE)g_hInstance, Filename, 0x118u);
   v273 = 0;
   v274 = 1;
@@ -611,7 +611,7 @@ LABEL_156:
     goto LABEL_156;
   v98 = TerrainInitMap(v97, (RandomStruct *)&stru_830620[72248], (IUnknown *)2);
 LABEL_157:
-  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v98);
+  ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v98);
 LABEL_158:
   if ( g_GameStateFlags )
   {

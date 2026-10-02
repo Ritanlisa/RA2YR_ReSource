@@ -87,7 +87,7 @@ LABEL_34:
                          (int)owner + v16,
                          0) )
                   {
-                    v18 =(gamemd::HouseClass *)(int)(gamemd::HouseClass *)(&aP0->unknown54)[7]; /*0x42f028*/
+                    v18 =(int)(gamemd::HouseClass *)(int)(gamemd::HouseClass *)(&aP0->unknown54)[7]; /*0x42f028*/
                     v19 = (&aP0->unknown54)[4]; /*0x42f02b*/
                     (&aP0->unknown54)[7] = v18 + 1; /*0x42f031*/
                     *(unsigned int *)(v19 + 4 * v18) = v21; /*0x42f038*/

@@ -822,7 +822,7 @@ void BrainClass::sub_43A600()
   }
   (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((BrainClass *)(unsigned int *)this + 1); /*0x43a63c*/
   v5 = (void *)*((unsigned int *)this + 2); /*0x43a63f*/
-  *((unsigned int *)this + 1) = &vt_VectorClass; /*0x43a642*/
+  *((unsigned int *)this + 1) =(unsigned int)(&vt_VectorClass); /*0x43a642*/
   if ( v5 && *((unsigned char *)this + 17) ) /*0x43a64c*/
   {
     __3_YAXPAX_Z(v5); /*0x43a652*/
@@ -858,9 +858,9 @@ unsigned int * BrainClass::sub_43AA90(char a2)
     }
     while ( v3 < v4 ); /*0x43aac3*/
   }
-  (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((unsigned int *)this + 1); /*0x43aacd*/
+  (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((BrainClass *)(unsigned int *)this + 1); /*0x43aacd*/
   v6 = (void *)*((unsigned int *)this + 2); /*0x43aad0*/
-  *((unsigned int *)this + 1) = &vt_VectorClass; /*0x43aad3*/
+  *((unsigned int *)this + 1) =(unsigned int)(&vt_VectorClass); /*0x43aad3*/
   if ( v6 && *((unsigned char *)this + 17) ) /*0x43aadd*/
   {
     __3_YAXPAX_Z(v6); /*0x43aae5*/

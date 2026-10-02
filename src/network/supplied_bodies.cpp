@@ -201,7 +201,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
     }
     if ( *((unsigned char *)a2 + 2) != 2 ) /*0x53fce3*/
       return 1; /*0x53fce3*/
-    IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x53fce9*/
+    IPXGlobalConnClass_field_0x04 =(int)this->IPXGlobalConnClass_field_0x04; /*0x53fce9*/
     v8 = 0; /*0x53fcec*/
     if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x53fcf3*/
       return 1; /*0x53fefb*/
@@ -211,7 +211,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v10 = TileIndex[5]; /*0x53fcff*/
       if ( *((unsigned int *)a2 + 1) == *(unsigned int *)(v10 + 4) && !*(unsigned char *)(v10 + 2) ) /*0x53fd0a*/
         break; /*0x53fd0a*/
-      IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x53fd11*/
+      IPXGlobalConnClass_field_0x04 =(int)this->IPXGlobalConnClass_field_0x04; /*0x53fd11*/
       if ( ++v8 >= *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ) /*0x53fd18*/
         return 1; /*0x53fd26*/
     }

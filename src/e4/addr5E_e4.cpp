@@ -1314,7 +1314,7 @@ LABEL_171:
         }
         goto LABEL_101;
       case 'K':
-        if ( ((Dialog*)((void *)0xC2))->FindByHandle() || Dialog::FindByHandle((void *)0xBC) )
+        if ( ((Dialog*)((void *)0xC2))->FindByHandle() || ((Dialog*)((void *)0xBC))->FindByHandle() )
         {
           if ( v5[1] == 49 )
           {

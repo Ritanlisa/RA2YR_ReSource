@@ -347,6 +347,6 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   ((Vector *)((int)v39))->Clear(); /*0x778474*/
   *(unsigned int *)v38.CDFileClass = (unsigned int)(&off_7E1668); /*0x77847d*/
 // 0x431b80
-  return ((BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
+return (gamemd::AbstractClass **)((BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
 }
 }

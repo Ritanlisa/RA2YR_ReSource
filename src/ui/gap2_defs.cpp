@@ -101,7 +101,7 @@ char MouseClass::selectCursor(int a2, unsigned int * a3) {
         *(unsigned int *)&this->m_1[3] = 0; /*0x40d791*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40d79a*/
+    *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x40d79a*/
     this->m_8 = a2; /*0x40d7a2*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x40d7a5*/
   }
@@ -519,7 +519,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
     return CellClass::Draw((int)this, 0, a2, 0); /*0x4c31f5*/
   }
   v7 = (uint8_t)Keyboard::MapKey((int)g_BinkMoviePlayer, *a2); /*0x4c3209*/
-  v8 = *a2; /*0x4c320b*/
+  v8 =(int)*a2; /*0x4c320b*/
   if ( (*a2 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
   {
     IDA_BYTE1(v8) &= ~0x10u; /*0x4c3221*/

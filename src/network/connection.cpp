@@ -466,7 +466,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
   v11 = 0; /*0x54155e*/
   if ( v6 > 0 ) /*0x541562*/
   {
-    v12 = &this->Active; /*0x541568*/
+    v12 =(gamemd::IPXManagerClass *)&this->Active; /*0x541568*/
     do /*0x541588*/
     {
       (*(void (**)(int, int, int, int, unsigned int))(*(unsigned int *)v12->Socket + 8))(v12->Socket, a2, a3, a4, 0); /*0x54157c*/

@@ -238,7 +238,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
       }
       if ( !*(unsigned char *)(*(unsigned int *)&stru_87F5F0.__pad_E12[1422] + 3720) ) /*0x47edc8*/
       {
-        if ( !stru_87F5F0.__pad_E12[1382] /*0x47eeb1*/
+        if ( (int)!stru_87F5F0.__pad_E12[1382] /*0x47eeb1*/
           || !*(unsigned int *)&stru_87F5F0.__pad_E12[1422]
           || (*(int (**)(void))(**(unsigned int **)&stru_87F5F0.__pad_E12[1422] + 44))() != 7
           || !(uint8_t)CellClass::IsPassable(
@@ -288,7 +288,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
         if ( !v11 ) /*0x47ee44*/
           goto LABEL_43; /*0x47ee44*/
       }
-      if ( (*(int (__thiscall **)(bool *))(*(unsigned int *)v11 + 44))(v11) == 6 /*0x47ee61*/
+      if ( (int)(*(int (__thiscall **)(bool *))(*(unsigned int *)v11 + 44))(v11) == 6 /*0x47ee61*/
         && (uint8_t)BuildingClass::CanAcceptType(v11, *(int *)&stru_87F5F0.__pad_E12[1422], (int)dword_A83D4C) )
       {
   LABEL_42:

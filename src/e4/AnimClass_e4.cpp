@@ -715,7 +715,7 @@ LABEL_99:
       0,
       v80,
       0,
-      v82,
+      (gamemd::ConvertClass *)v82,
       SLODWORD(v41),
       0,
       0,

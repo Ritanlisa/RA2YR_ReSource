@@ -275,7 +275,7 @@ public:
     int Draw(int a2, _DWORD *a3, int a4) const;
     void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4E2830
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
-    RectangleStruct* GetScreenRect(RectangleStruct* out) const;  // 0x47FF80
+    int * GetScreenRect(int * out);  // 0x47FF80
     void RegisterForRedraw();  // 0x7235A0
     void DrawWrapper(unsigned int * a1, int a2, char a3, char a4);  // 0x653F50 (forwards to UpdateTerrainAndWaypoints@0x565C10)
     int QuickPassable() const;

@@ -490,7 +490,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~NetworkSession() = default;
 
-    virtual void ResetState(); // 0x54EE60
+    virtual unsigned int * ResetState(); // 0x54EE60
     virtual void IsPlayerInGame(); // 0x69B600
 
     uint8_t NetworkSession_field_0x04[4];

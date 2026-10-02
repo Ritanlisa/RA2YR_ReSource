@@ -1001,7 +1001,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a
   v5 = a3; /*0x7a913c*/
   if ( a3 ) /*0x7a9142*/
   {
-    if ( (*a3 & 1) != 0 || ((Dialog*)((Dialog *)0xC2))->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a915c*/
+    if ( (*a3 & 1) != 0 || ((Dialog*)((Dialog *)0xC2))->FindByHandle() || ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7a915c*/
       goto LABEL_21; /*0x7a915c*/
     v6 = (uint8_t)WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a916e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a9170*/
@@ -1066,7 +1066,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
   DeleteAndZero((ObjectClass *)&v26.DeleteAndZero_field_0x04); /*0x7a923d*/
   if ( !a3 ) /*0x7a924b*/
     goto LABEL_12; /*0x7a924b*/
-  if ( (*a3 & 1) == 0 && !((Dialog*)((Dialog *)0xC2))->FindByHandle() && !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a9266*/
+  if ( (*a3 & 1) == 0 && !((Dialog*)((Dialog *)0xC2))->FindByHandle() && !((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7a9266*/
   {
     v5 = (uint8_t)WideString::IsASCII((const wchar_t **)&v26) == 0; /*0x7a9278*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a927a*/

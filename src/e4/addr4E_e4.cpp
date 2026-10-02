@@ -2652,11 +2652,11 @@ LPARAM * InitGameDropdownColors()
   ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
   *((unsigned int *)((char *)&FootClass_Array + 2)) = ((wchar_t *)int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
   ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF((wchar_t *)aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF((wchar_t *)aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF((wchar_t *)aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF((wchar_t *)aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF((wchar_t *)aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF((wchar_t *)aGuiOrangeabbre, 0, (const char *)g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF((wchar_t *)aGuiSkyblueabbr, 0, (const char *)g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF((wchar_t *)aGuiPurpleabbre, 0, (const char *)g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF((wchar_t *)aGuiPinkabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF((wchar_t *)aGuiGrayabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
   p_owningHouseIndex0 =(int *)&((char *)&FootClass_Array); /*0x4e44b3*/
   result =(LPARAM *)dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
@@ -3260,7 +3260,7 @@ int sub_4E6760()
   dword_8B4138 = (int)&DynamicVectorClass_TubeClass___vftable; /*0x4e677d*/
   dword_8B414C = 10; /*0x4e6787*/
   dword_8B4148 = 0; /*0x4e6791*/
-  return atexit(sub_4E67A0); /*0x4e679c*/
+  return atexit((void (__cdecl *)(void))sub_4E67A0); /*0x4e679c*/
 }
 } // namespace gamemd
 
@@ -3290,7 +3290,7 @@ int sub_4E67E0()
   dword_A8EC38 = (int)&DynamicVectorClass_WaveClass___vftable; /*0x4e67fd*/
   dword_A8EC4C = 10; /*0x4e6807*/
   dword_A8EC48 = 0; /*0x4e6811*/
-  return atexit(sub_4E6820); /*0x4e681c*/
+  return atexit((void (__cdecl *)(void))sub_4E6820); /*0x4e681c*/
 }
 } // namespace gamemd
 
@@ -3335,7 +3335,7 @@ int sub_4E68E0()
   dword_A8EC50 = (int)&DynamicVectorClass_OverlayClass___vftable; /*0x4e68fd*/
   dword_A8EC64 = 10; /*0x4e6907*/
   dword_A8EC60 = 0; /*0x4e6911*/
-  return atexit(sub_4E6920); /*0x4e691c*/
+  return atexit((void (__cdecl *)(void))sub_4E6920); /*0x4e691c*/
 }
 } // namespace gamemd
 
@@ -3365,7 +3365,7 @@ int sub_4E6960()
   dword_A83DC8 = (int)&DynamicVectorClass_ParticleClass___vftable; /*0x4e697d*/
   dword_A83DDC = 10; /*0x4e6987*/
   dword_A83DD8 = 0; /*0x4e6991*/
-  return atexit(sub_4E69A0); /*0x4e699c*/
+  return atexit((void (__cdecl *)(void))sub_4E69A0); /*0x4e699c*/
 }
 } // namespace gamemd
 
@@ -3395,7 +3395,7 @@ int sub_4E69E0()
   dword_A8B1E0 = (int)&DynamicVectorClass_SmudgeClass___vftable; /*0x4e69fd*/
   dword_A8B1F4 = 10; /*0x4e6a07*/
   dword_A8B1F0 = 0; /*0x4e6a11*/
-  return atexit(sub_4E6A20); /*0x4e6a1c*/
+  return atexit((void (__cdecl *)(void))sub_4E6A20); /*0x4e6a1c*/
 }
 } // namespace gamemd
 

@@ -959,7 +959,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore * a1)
   {
     g_WOL_GameListRender = 0; /*0x7815a3*/
   }
-  v7 = ((char *)&stru_B76AC4); /*0x7815a9*/
+  v7 =(int)((char *)&stru_B76AC4); /*0x7815a9*/
   v8 = 0; /*0x7815b4*/
   memset(v58, 0, sizeof(v58)); /*0x7815bc*/
   if ( ((char *)&stru_B76AC4) > 0 ) /*0x7815be*/

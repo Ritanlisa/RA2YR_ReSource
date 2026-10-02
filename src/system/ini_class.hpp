@@ -105,7 +105,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10);  // 0x4767C0
     int WriteSuperWeaponList(void* a1, void* a2, int a3, void* a4, int a5, int a6, int a7, int a8, int a9);  // 0x476A20
     int ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10);  // 0x476B20
-    void* parseSection(void* a1);  // 0x477F40
+    unsigned int * parseSection(unsigned int * a1);  // 0x477F40
     unsigned int * parseKeyValue(unsigned int * a1);  // 0x478220
     void* writeSection(void* a1);  // 0x4787E0
     int readSection();  // 0x48DE70

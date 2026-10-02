@@ -835,7 +835,7 @@ char ScriptAction::ProcessIdleAction() {
       v33 = (Coord2D *)Display::GetViewport(&v72.X); /*0x63b9ac*/
       v67 = *v33; /*0x63b9b3*/
       v68 = *(unsigned int *)v33[1].__pad_0; /*0x63b9ca*/
-      Coord2D_field_0x04 = v33[1].Coord2D_field_0x04; /*0x63b9d6*/
+      Coord2D_field_0x04 =(int)v33[1].Coord2D_field_0x04; /*0x63b9d6*/
       v34 = (Coord3D *)ComputeBounds(&v72, 6, v31, (int)v32); /*0x63b9da*/
       v55 = *v34; /*0x63b9e1*/
       v56 = *(unsigned int *)v34[1].__pad_0; /*0x63b9fd*/
@@ -849,7 +849,7 @@ char ScriptAction::ProcessIdleAction() {
     v35 = (Coord2D *)Display::GetViewport(&v72.X); /*0x63ba1f*/
     v67 = *v35; /*0x63ba26*/
     v68 = *(unsigned int *)v35[1].__pad_0; /*0x63ba34*/
-    Coord2D_field_0x04 = v35[1].Coord2D_field_0x04; /*0x63ba44*/
+    Coord2D_field_0x04 =(int)v35[1].Coord2D_field_0x04; /*0x63ba44*/
     v36 = (Coord3D *)ComputeBounds(&v72, 6, v61, v62); /*0x63ba55*/
     v55 = *v36; /*0x63ba5c*/
     v56 = *(unsigned int *)v36[1].__pad_0; /*0x63ba78*/

@@ -2953,7 +2953,7 @@ char sub_6096A0(int a1, HWND a2)
     if ( !v4 ) /*0x6096fa*/
       return 0; /*0x6096fa*/
   }
-  v6 = v4 + 1; /*0x609706*/
+  v6 =(unsigned int *)v4 + 1; /*0x609706*/
   if ( v6 && !v6[26] ) /*0x60970d*/
     return IsDialogControlVisible(a1, a2); /*0x609718*/
   else
@@ -3091,7 +3091,7 @@ bool sub_609AA0(int a1, HWND a2)
     if ( !v4 ) /*0x609afa*/
       return 0; /*0x609afa*/
   }
-  v6 = v4 + 1; /*0x609b06*/
+  v6 =(unsigned int *)v4 + 1; /*0x609b06*/
   if ( v6 && !v6[26] ) /*0x609b0d*/
     return GetDialogDefaultButton(a1, a2); /*0x609b18*/
   else
@@ -3157,7 +3157,7 @@ bool sub_609BC0(int a1, HWND a2)
           if ( !v4 ) /*0x609c2f*/
             goto LABEL_7; /*0x609c2f*/
         }
-        v7 = v4 + 1; /*0x609c95*/
+        v7 =(unsigned int *)v4 + 1; /*0x609c95*/
         if ( v7 ) /*0x609c9a*/
         {
           if ( !v7[26] && (uint8_t)IsDialogControlVisible(a1, a2) ) /*0x609ca7*/
@@ -3181,7 +3181,7 @@ bool sub_609BC0(int a1, HWND a2)
     if ( !v5 ) /*0x609c88*/
       return 0; /*0x609c90*/
   }
-  v8 = v5 + 1; /*0x609cbb*/
+  v8 =(unsigned int *)v5 + 1; /*0x609cbb*/
   return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton(a1, a2); /*0x609cd8*/
 }
 }
@@ -3211,7 +3211,7 @@ bool sub_609CF0(int a1, HWND a2)
           if ( !v4 ) /*0x609d5f*/
             goto LABEL_7; /*0x609d5f*/
         }
-        v7 = v4 + 1; /*0x609dc5*/
+        v7 =(unsigned int *)v4 + 1; /*0x609dc5*/
         if ( v7 ) /*0x609dca*/
         {
           if ( !v7[26] && (uint8_t)IsDialogControlVisible(a1, a2) ) /*0x609dd7*/

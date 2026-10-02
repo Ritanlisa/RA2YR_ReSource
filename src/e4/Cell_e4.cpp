@@ -509,7 +509,7 @@ int Cell::IsBuildableAdvanced()
     goto LABEL_20; /*0x487048*/
   for ( i = this->Cell_field_0xE4; i; i = (unsigned int *)i[12] ) /*0x487052*/
   {
-    result =(unsigned int *)(int)(unsigned int *)(*(int (**)(unsigned int *))(*i + 44))(i); /*0x487058*/
+    result =(int)(unsigned int *)(int)(unsigned int *)(*(int (**)(unsigned int *))(*i + 44))(i); /*0x487058*/
     if ( result == 6 ) /*0x48705e*/
       goto LABEL_21; /*0x48705e*/
   }
