@@ -70,7 +70,7 @@ struct FogOfWar {
     void* ptr_1220;
 // --- flat members (END) ---
     AbstractClass * RevealCell(IUnknown * aP1);
-    MapClass * * RevealArea(RadarClass * aP1);
+    MapClass * * RevealArea(int *a2);
     int RenderCell();
     int Render();  // 0x657ce0
 };

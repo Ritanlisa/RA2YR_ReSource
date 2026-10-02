@@ -35,7 +35,7 @@ struct Vector {
     unsigned short * ToFacingMath(unsigned short *a2);  // 0x41C2E0
     void Clear();  // 0x43AE50
     int RemoveAt(int aP1);  // 0x45AE10
-    void ReallocDynamic(int a2 a2);
+    void ReallocDynamic(int a2);
     int Find(unsigned int * a2);  // 0x4E0550
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0

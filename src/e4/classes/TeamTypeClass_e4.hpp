@@ -84,7 +84,7 @@ struct TeamTypeClass {
     unsigned char u8_B3;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    AbstractClass * * FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1);
+    AbstractClass * * FindOrCreateTaskForce(char *Source);
     AbstractClass * * GetMaxCount(CCINIClass * aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
@@ -106,7 +106,7 @@ struct TeamTypeClass {
     int ProcessTaskForce();
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
-    void * CreateScriptType(char *Source, int a2, int a3, int aP1);
+    void * CreateScriptType(char *Source);
     static double vftable(...);  // C2597 interim stub
 };
 

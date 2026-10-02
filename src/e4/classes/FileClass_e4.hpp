@@ -20,7 +20,7 @@ struct FileClass {
     char Stub(int a1);
     int Close();
     int GetState(void *a1);
-    int Open(int a2, int a1, int aP1, int aP2);
+    int Open(int a2);
     int Read(char *aP1, signed int aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
     const char* SetFileName(char *aP1);

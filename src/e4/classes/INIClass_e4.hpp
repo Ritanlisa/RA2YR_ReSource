@@ -52,11 +52,11 @@ struct INIClass {
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(uint8_t *aP1, uint8_t *a2, int a4);
     int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);
-    int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
+    int ReadInt(String *a2, String *a3, int a4);
     int WOLobby_Play(const char *a1, const char *a2, int a3);
     int sub_44FE60();
     INIClass();
-    static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
+    static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count);
     void SetGameOptionsPing();
     static double ClearSection(...);  // C2597 interim stub
     static double GetBase64Data(...);  // C2597 interim stub

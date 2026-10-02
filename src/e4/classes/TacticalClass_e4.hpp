@@ -310,7 +310,7 @@ struct TacticalClass {
     void * IsOccupiedByTechno(unsigned int * a2);
     void CleanupResources();
     void DrawBuildingPlacement(IUnknown * aP1, int * a2);
-    void DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10);
+    void DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     void DrawCellTerrainOverlay(int * a2, int * a3);
     void InterpolateView();
     void StubReturnTrue();

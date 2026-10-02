@@ -37,7 +37,7 @@ struct File {
     AbstractClass * LoadFont(char *Source);  // 0x433990
     char Dispatch();  // 0x4CB920
     unsigned int * LoadFileHVA(int a2);  // 0x5BD570
-    AbstractClass * * ParseFileHVA(int a2, int aP1, int a3);
+    AbstractClass * * ParseFileHVA(int a2);
     File * * LoadPaletteData(unsigned short *aP1);  // 0x625AF0
     int FindByPrefix(char *Str1, unsigned char *a3);  // 0x625DB0
     AbstractClass * * ParseCSFString(char * Source);  // 0x734990

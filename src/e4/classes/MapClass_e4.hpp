@@ -549,7 +549,7 @@ struct MapClass {
     int ProcessTile();
     int ProcessVisibilityFlags();
     int RemoveCellReference(int a2);
-    int RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9_2);
+    int RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9);
     int ScrollOnce(AbstractClass * aP1);
     int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2);
     int SetCellOverlayFlag();

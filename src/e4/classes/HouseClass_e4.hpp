@@ -1902,7 +1902,7 @@ struct HouseClass {
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    int Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    int Construct(int a2);
     void LostPoweredCenter(int a2, void *a2_2);
     int ResetObjectOrders(char a1, int a2);
     void vt_03_();

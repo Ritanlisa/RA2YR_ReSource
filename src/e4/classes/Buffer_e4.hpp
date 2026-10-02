@@ -39,7 +39,7 @@ struct Buffer {
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers(void *a1);
     int AppendCellData(AbstractClass * aP1, int a3);
-    char Init(int a2, int Size, int aP2, int a3, int aP1);
+    char Init(int a2, int Size);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
     int Cleanup();  // 0x42f7c0
 };

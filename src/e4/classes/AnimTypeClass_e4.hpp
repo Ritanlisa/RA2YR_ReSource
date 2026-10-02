@@ -331,7 +331,7 @@ struct AnimTypeClass {
     unsigned int Image;
     unsigned int q2A0;
 // --- flat members (END) ---
-    static AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
+    static AnimTypeClass * * FindOrCreate(char *Source);
     AnimTypeClass * ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
     char GetLoopCount(int a2);

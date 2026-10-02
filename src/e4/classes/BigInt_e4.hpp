@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct BigInt {
-    int __thiscall DecryptBlock(char * Src, int a3, char * a4);
-    int __thiscall RSAOperation(char * Src, int a3, char * a4);
+    int __thiscall DecryptBlock(char *Src, int a3, char *a4);
+    int __thiscall RSAOperation(char *Src, int a3, char *a4);
 };
 
 } // namespace gamemd

@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct GameOptions {
     char GameSpeedChanged();
-    int __thiscall SaveLoad(int * a2);
+    int __thiscall SaveLoad(int *a2);
 };
 
 } // namespace gamemd

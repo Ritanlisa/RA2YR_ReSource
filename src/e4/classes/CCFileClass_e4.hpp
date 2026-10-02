@@ -53,7 +53,7 @@ struct CCFileClass {
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(char **a2);  // init file object with name
-     _DWORD * Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a1 = 0);
+     _DWORD * Construct(char *Source);
     LONG Load();  // 0x595bc0
     int Reopen(char *Source, CHAR *a3);  // 0x47af10
 };
