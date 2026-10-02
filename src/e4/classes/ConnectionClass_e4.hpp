@@ -31,7 +31,7 @@ struct ConnectionClass {
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5);
     int StubReturnFalse();
-    static int allocPacketSlot(const void *a2, signed int a3, const void *a4, signed int a5, int aP1, int aP2, int aP3, int aP4);
+    int allocPacketSlot(const void *a2, signed int a3, const void *a4, signed int a5, int aP1, int aP2, int aP3, int aP4);
     int processTileUpdate(void *a2, signed int *a3);
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
