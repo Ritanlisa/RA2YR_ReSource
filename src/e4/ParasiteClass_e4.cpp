@@ -751,8 +751,6 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 // 0x62AB40
 namespace gamemd {  // G42.18c ns repair
 int ParasiteClass::CanExistOnVictimCell()
-int ParasiteClass::CanExistOnVictimCell()
-}  // G42.18c ns repair
 {
 
   int v2; // ecx

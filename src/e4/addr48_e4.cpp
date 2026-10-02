@@ -2867,3 +2867,4 @@ void sub_48E6E0()
   }
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

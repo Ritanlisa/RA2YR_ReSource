@@ -520,7 +520,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   int v7; // eax
   int v8; // esi
   int v9; // [esp+10h] [ebp-204h]
-  char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
+  char Buffer_v[512]; // [esp+14h] [ebp-200h] BYREF
 
   v2 = v1; /*0x45e97a*/
   ProcessDataCCFileClass(); /*0x45e97c*/
@@ -548,8 +548,8 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         }
         else
         {
-          _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea08*/
-          *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 0)); /*0x45ea1b*/
+          _makepath(Buffer_v, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea08*/
+          *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer_v, 0)); /*0x45ea1b*/
         }
         if ( *(unsigned char *)(v4 + 5985) ) /*0x45ea42*/
         {
@@ -562,8 +562,8 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         }
         else
         {
-          _makepath(Buffer, 0, 0, (const char *)(v4 + 3676), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea6b*/
-          *(unsigned int *)(v4 + 3584) = (unsigned int)(SearchMIXFile(Buffer, 0)); /*0x45ea7e*/
+          _makepath(Buffer_v, 0, 0, (const char *)(v4 + 3676), (const char *)&off_7E1BC6 + 112 * v2); /*0x45ea6b*/
+          *(unsigned int *)(v4 + 3584) = (unsigned int)(SearchMIXFile(Buffer_v, 0)); /*0x45ea7e*/
         }
         v5 = *(unsigned int *)(v4 + 3584); /*0x45eaa5*/
         if ( v5 ) /*0x45eaad*/
@@ -988,14 +988,14 @@ void BuildingTypeClass::LoadVoxel()
   char Destination[4]; // [esp+14Ch] [ebp-180h] BYREF
   char v32[124]; // [esp+150h] [ebp-17Ch] BYREF
   char Buffer[4]; // [esp+1CCh] [ebp-100h] BYREF
-  char String[252]; // [esp+1D0h] [ebp-FCh] BYREF
+  char String_v[252]; // [esp+1D0h] [ebp-FCh] BYREF
 
   if ( this->TurretAnimIsVoxel || this->BarrelAnimIsVoxel ) /*0x45faa4*/
   {
     strcpy(Destination,(const char *)(&this->__pad_F70[576])); /*0x45fadf*/
     _makepath(Buffer, 0, 0, Destination,(const char *)(g_Str_File__VXL)); /*0x45faf3*/
     v20 = _strupr((char *)(off_8194A8)); /*0x45fb05*/
-    v2 = _strupr(String); /*0x45fb0e*/
+    v2 = _strupr(String_v); /*0x45fb0e*/
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
       CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/

@@ -1745,14 +1745,14 @@ int TechnoClass::ComputeTargetAngle() {
           Math::Sqrt(v46); /*0x43ea5c*/
           __asm /*0x43ea61*/
           {
-            fstp qword ptr [esp+58h+var_38]
-            fild [esp+58h+var_20]
-            fild [esp+58h+var_1C]
-            fild [esp+58h+var_24]
-            fld st
-            fmul st, st(1)
-            fld st(2)
-            fmul st, st(3)
+//L-fix             fstp qword ptr [esp+58h+var_38]
+//L-fix             fild [esp+58h+var_20]
+//L-fix             fild [esp+58h+var_1C]
+//L-fix             fild [esp+58h+var_24]
+//L-fix             fld st
+//L-fix             fmul st, st(1)
+//L-fix             fld st(2)
+//L-fix             fmul st, st(3)
             faddp st(1), st
             fld st(3)
             fmul st, st(4)
@@ -4925,11 +4925,11 @@ int FootClass::BeginPowerUpdate(int *a2) {
     v38 = SLOWORD(_ESI->currentMapCoords[0]); /*0x4dbb14*/
     __asm /*0x4dbb18*/
     {
-      fild [esp+18h+var_4]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+18h+var_4]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+18h+var_18]; double
       fstp st
@@ -7957,11 +7957,11 @@ int FootClass::CreateWakes(int a2, int a3, int a4) {
       IDA_LODWORD(v13) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -64, 64); /*0x629f33*/
       __asm /*0x629f37*/
       {
-        fild [esp+40h+var_30]
-        fld [esp+40h+var_28]
-        fmul [esp+40h+var_18]
-        fld st(1)
-        fmul [esp+40h+var_20]
+//L-fix         fild [esp+40h+var_30]
+//L-fix         fld [esp+40h+var_28]
+//L-fix         fmul [esp+40h+var_18]
+//L-fix         fld st(1)
+//L-fix         fmul [esp+40h+var_20]
         fsubp st(1), st
       }
       IDA_LOWORD(v6) = Math::RoundToInt(v4); /*0x629f4b*/
@@ -8988,7 +8988,7 @@ int TechnoClass::CountPassengers() {
 
 // 0x6EB380
 namespace ra2::game {
-void FootClass::LinkToTransporter(int this, int a2, int a3, AbstractClass *a4) {
+void FootClass::LinkToTransporter(int a2, int a3, AbstractClass *a4) {
     int v5; // ecx
     AbstractClass *abstractFlags; // eax
     AbstractClass *v7; // ecx
@@ -10805,12 +10805,12 @@ char TechnoClass::CheckTargetLOS(int *a2, int *a3, unsigned int *a4) {
       v42 = v13 - v11; /*0x6f73af*/
       __asm /*0x6f73b6*/
       {
-        fild [esp+40h+var_4]
-        fild [esp+40h+var_C]
-        fld st
-        fmul st, st(1)
-        fld st(2)
-        fmul st, st(3)
+//L-fix         fild [esp+40h+var_4]
+//L-fix         fild [esp+40h+var_C]
+//L-fix         fld st
+//L-fix         fmul st, st(1)
+//L-fix         fld st(2)
+//L-fix         fmul st, st(3)
         faddp st(1), st
         fld st(3)
         fmul st, st(4)
@@ -10891,12 +10891,12 @@ char TechnoClass::CheckTargetLOS(int *a2, int *a3, unsigned int *a4) {
         v36 = a2[1] - v38; /*0x6f75c5*/
         __asm /*0x6f75cc*/
         {
-          fild [esp+40h+var_1C]
-          fild [esp+40h+var_20]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild [esp+40h+var_1C]
+//L-fix           fild [esp+40h+var_20]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fstp [esp+40h+var_44+4]; double
         }
@@ -10910,12 +10910,12 @@ char TechnoClass::CheckTargetLOS(int *a2, int *a3, unsigned int *a4) {
         v42 = v23 - GroundHeight; /*0x6f758c*/
         __asm /*0x6f7593*/
         {
-          fild [esp+40h+var_4]
-          fild [esp+40h+var_C]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild [esp+40h+var_4]
+//L-fix           fild [esp+40h+var_C]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fld st(3)
           fmul st, st(4)
@@ -15839,14 +15839,14 @@ int TechnoClass::ComputeAimVector() {
         Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v7, v8))); /*0x70b35a*/
         __asm /*0x70b35f*/
         {
-          fstp [esp+68h+var_C]
-          fld [esp+68h+var_1C]
-          fld [esp+68h+var_20]
-          fld [esp+68h+var_24]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fstp [esp+68h+var_C]
+//L-fix           fld [esp+68h+var_1C]
+//L-fix           fld [esp+68h+var_20]
+//L-fix           fld [esp+68h+var_24]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
         }
         __asm
         {
@@ -15926,11 +15926,11 @@ int TechnoClass::ComputeAimVector() {
             {
               __asm /*0x70b43c*/
               {
-                fld [esp+58h+var_18]
-                fdiv st, st(1)
-                fstp [esp+58h+var_38]
-                fld [esp+58h+var_14]
-                fdiv st, st(1)
+//L-fix                 fld [esp+58h+var_18]
+//L-fix                 fdiv st, st(1)
+//L-fix                 fstp [esp+58h+var_38]
+//L-fix                 fld [esp+58h+var_14]
+//L-fix                 fdiv st, st(1)
               }
               __asm { fstp [esp+58h+var_38+4] }
               __asm { fdivr ds:dbl_7E2800 }
@@ -15953,21 +15953,21 @@ int TechnoClass::ComputeAimVector() {
               fld [esp+60h+var_1C]
               fmul [esp+60h+var_3C]
               fchs
-              fstp [esp+60h+var_18]
-              fld [esp+60h+var_1C]
-              fmul [esp+60h+var_C]
-              fstp [esp+60h+var_14]
-              fld [esp+60h+var_24]
-              fmul [esp+60h+var_3C]
-              fld [esp+60h+var_20]
-              fmul [esp+60h+var_C]
+//L-fix               fstp [esp+60h+var_18]
+//L-fix               fld [esp+60h+var_1C]
+//L-fix               fmul [esp+60h+var_C]
+//L-fix               fstp [esp+60h+var_14]
+//L-fix               fld [esp+60h+var_24]
+//L-fix               fmul [esp+60h+var_3C]
+//L-fix               fld [esp+60h+var_20]
+//L-fix               fmul [esp+60h+var_C]
               fsubp st(1), st
-              fld [esp+60h+var_14]
-              fld [esp+60h+var_18]
-              fld st
-              fmul st, st(1)
-              fld st(2)
-              fmul st, st(3)
+//L-fix               fld [esp+60h+var_14]
+//L-fix               fld [esp+60h+var_18]
+//L-fix               fld st
+//L-fix               fmul st, st(1)
+//L-fix               fld st(2)
+//L-fix               fmul st, st(3)
               faddp st(1), st
               fld st(3)
               fmul st, st(4)
@@ -19852,7 +19852,7 @@ int TechnoClass::GetWeaponRange(void *a2) {
 
 // 0x4DE580
 namespace ra2::game {
-int FootClass::ValidateFoundation(int this) {
+int FootClass::ValidateFoundation() {
     int result; // eax
     IUnknown *Element; // eax
     IUnknown *v4; // eax

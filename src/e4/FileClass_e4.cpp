@@ -404,7 +404,7 @@ int FileClass::Close()
   (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d155*/
   if ( !(*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 2) ) /*0x65d15e*/
     return 0; /*0x65d184*/
-  if ( this->FileName != (unsigned int)((void *))-1 ) /*0x65d169*/
+  if ( this->FileName != (unsigned int)(void *)-1 ) /*0x65d169*/
     (*(void (**)(RawFileClass *, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 40))(this, 0, 0); /*0x65d173*/
   (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d17a*/
   return 1; /*0x65d182*/

@@ -3361,11 +3361,11 @@ bool DSurface::DrawLineZBuf(
     IDA_HIDWORD(v87) = v25 - v91[1]; /*0x4bfe44*/
     __asm /*0x4bfe48*/
     {
-      fild [esp+7Ch+var_40]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+7Ch+var_40]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+7Ch+var_80+4]; double
       fstp st
@@ -3379,13 +3379,13 @@ bool DSurface::DrawLineZBuf(
     IDA_HIDWORD(v87) = v25 - v88[2]; /*0x4bfe86*/
     __asm /*0x4bfe8a*/
     {
-      fild [esp+7Ch+var_40]
-      fild [esp+7Ch+arg_10]
-      fstp [esp+7Ch+var_48+4]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+7Ch+var_40]
+//L-fix       fild [esp+7Ch+arg_10]
+//L-fix       fstp [esp+7Ch+var_48+4]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+7Ch+var_80+4]; double
       fstp st
@@ -3416,11 +3416,11 @@ bool DSurface::DrawLineZBuf(
   IDA_HIDWORD(v87) = v90 - v88[2]; /*0x4bff26*/
   __asm /*0x4bff2a*/
   {
-    fild [esp+7Ch+var_40]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+7Ch+var_40]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+7Ch+var_80+4]; double
     fstp st
@@ -3434,13 +3434,13 @@ bool DSurface::DrawLineZBuf(
   IDA_HIDWORD(v87) = v25 - v88[2]; /*0x4bff64*/
   __asm /*0x4bff68*/
   {
-    fild [esp+7Ch+var_40]
-    fild [esp+7Ch+arg_14]
-    fstp qword ptr [esp+7Ch+var_34+4]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+7Ch+var_40]
+//L-fix     fild [esp+7Ch+arg_14]
+//L-fix     fstp qword ptr [esp+7Ch+var_34+4]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+7Ch+var_80+4]; double
     fstp st
@@ -3951,12 +3951,12 @@ bool DSurface::DrawLineModulated(
         v94 = v97 - v95[2]; /*0x4bbe56*/
         __asm /*0x4bbe5a*/
         {
-          fild dword ptr [esp+80h+var_4C.__pad_C]
-          fild [esp+80h+var_4C.Vector_field_0x8]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild dword ptr [esp+80h+var_4C.__pad_C]
+//L-fix           fild [esp+80h+var_4C.Vector_field_0x8]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fstp [esp+80h+var_84+4]; double
           fstp st
@@ -3969,14 +3969,14 @@ bool DSurface::DrawLineModulated(
         v94 = v24 - v95[2]; /*0x4bbe94*/
         __asm /*0x4bbe98*/
         {
-          fild dword ptr [esp+80h+var_4C.__pad_C]
-          fild [esp+80h+var_4C.Vector_field_0x8]
-          fild [esp+80h+arg_14]
-          fstp qword ptr [esp+50h]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild dword ptr [esp+80h+var_4C.__pad_C]
+//L-fix           fild [esp+80h+var_4C.Vector_field_0x8]
+//L-fix           fild [esp+80h+arg_14]
+//L-fix           fstp qword ptr [esp+50h]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fstp [esp+80h+var_84+4]; double
           fstp st
@@ -4464,11 +4464,11 @@ bool DSurface::DrawLineZBufColored(
     *(unsigned int *)&v93[8] = v29 - v97[1]; /*0x4be0a8*/
     __asm /*0x4be0ac*/
     {
-      fild [esp+84h+var_3C]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+84h+var_3C]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+84h+var_88+4]; double
       fstp st
@@ -4482,13 +4482,13 @@ bool DSurface::DrawLineZBufColored(
     *(unsigned int *)&v93[8] = v29 - v94[2]; /*0x4be0ea*/
     __asm /*0x4be0ee*/
     {
-      fild [esp+84h+var_3C]
-      fild [esp+84h+arg_18]
-      fstp [esp+84h+var_44+4]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+84h+var_3C]
+//L-fix       fild [esp+84h+arg_18]
+//L-fix       fstp [esp+84h+var_44+4]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+84h+var_88+4]; double
       fstp st
@@ -4519,11 +4519,11 @@ bool DSurface::DrawLineZBufColored(
     *(unsigned int *)&v93[8] = v96 - v94[2]; /*0x4be190*/
     __asm /*0x4be194*/
     {
-      fild [esp+84h+var_3C]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+84h+var_3C]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+84h+var_88+4]; double
       fstp st
@@ -4537,13 +4537,13 @@ bool DSurface::DrawLineZBufColored(
     *(unsigned int *)&v93[8] = v29 - v94[2]; /*0x4be1ce*/
     __asm /*0x4be1d2*/
     {
-      fild [esp+84h+var_3C]
-      fild [esp+84h+arg_10]
-      fstp qword ptr [esp+84h+var_34+4]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+84h+var_3C]
+//L-fix       fild [esp+84h+arg_10]
+//L-fix       fstp qword ptr [esp+84h+var_34+4]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+84h+var_88+4]; double
       fstp st
@@ -4848,3 +4848,4 @@ REVERSE(0x4BC750, "DSurface::DrawLineFaded: Complex gradient line with stipple/Z
 bool DSurface::DrawLineFaded(
 // 0x7ba610
         return XSurface::DrawLineEx(
+}  // L-fix: close namespace tail 1

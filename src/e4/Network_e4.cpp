@@ -2988,7 +2988,7 @@ namespace gamemd {
 AbstractClass * * Network_ModemConnectionDialog()
 {
   int v1; // edi
-  HWND Dialog; // ebx
+  HWND Dialog_v; // ebx
   int v3; // eax
   LONG v4; // eax
   void (__stdcall *v5)(HWND); // esi
@@ -3067,14 +3067,14 @@ AbstractClass * * Network_ModemConnectionDialog()
 
   dwNewLong = -1; /*0x5ef4f7*/
   v53 = -1; /*0x5ef4fb*/
-  Dialog = (HWND)CreateDialog(0xECu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_5EFF00, 0); /*0x5ef504*/
-  hWnd = Dialog; /*0x5ef508*/
-  if ( !Dialog ) /*0x5ef50c*/
+  Dialog_v = (HWND)CreateDialog(0xECu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_5EFF00, 0); /*0x5ef504*/
+  hWnd = Dialog_v; /*0x5ef508*/
+  if ( !Dialog_v ) /*0x5ef50c*/
     return 0; /*0x5efed7*/
-  SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5ef51a*/
+  SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x5ef51a*/
   v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x5ef528*/
-  UI_Connect(Dialog, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
-  ((Dialog *)((Dialog *)Dialog))->Show(); /*0x5ef549*/
+  UI_Connect(Dialog_v, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
+  ((Dialog *)((Dialog *)Dialog_v))->Show(); /*0x5ef549*/
   if ( !dword_A8DAC0 || dword_A8DAC4 == -1 || dword_A8DAC8 == -1 || Modem::OpenPort((Modem *)&unk_A8EA70, &dword_A8DAC0) ) /*0x5ef571*/
   {
     v4 = 1618; /*0x5ef57a*/
@@ -3106,15 +3106,15 @@ AbstractClass * * Network_ModemConnectionDialog()
     switch ( v4 ) /*0x5ef5dd*/
     {
       case 1618: /*0x5ef5dd*/
-        v6(Dialog, 0); /*0x5efe70*/
+        v6(Dialog_v, 0); /*0x5efe70*/
         v5(g_hWnd); /*0x5efe79*/
         if ( ((Network *)((LONG)v78))->sendGameEvent(&dword_A8DAC0) ) /*0x5efe87*/
           SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x5efe95*/
-        Network::handleTimeout((Network *)Dialog); /*0x5efe9c*/
-        v6(Dialog, 5); /*0x5efea4*/
+        Network::handleTimeout((Network *)Dialog_v); /*0x5efe9c*/
+        v6(Dialog_v, 5); /*0x5efea4*/
         goto LABEL_121; /*0x5efea6*/
       case 1619: /*0x5ef5dd*/
-        v6(Dialog, 0); /*0x5ef5e6*/
+        v6(Dialog_v, 0); /*0x5ef5e6*/
         v5(g_hWnd); /*0x5ef5ee*/
         if ( !Network::resetConnectionState((Network *)v76) ) /*0x5ef5fe*/
           goto LABEL_34; /*0x5ef5fe*/
@@ -3143,7 +3143,7 @@ AbstractClass * * Network_ModemConnectionDialog()
           v18 = (int *)GetStringCSF(g_Str_TXT_SELECT_SETTINGS, 0, g_Str_File_NullDlg_CPP, 5798); /*0x5ef793*/
           Dialog::ShowMessageBox(v18, StringCSF, 0, 0, 0, v52); /*0x5ef79d*/
   LABEL_34:
-          ShowWindow(Dialog, 5); /*0x5ef7a2*/
+          ShowWindow(Dialog_v, 5); /*0x5ef7a2*/
           goto LABEL_121; /*0x5ef7ab*/
         }
         Modem_field_0x04 = v9[1].Modem_field_0x04; /*0x5ef67f*/
@@ -3173,10 +3173,10 @@ AbstractClass * * Network_ModemConnectionDialog()
           v53 = 0; /*0x5ef73f*/
         }
         EventClass::GetState(0); /*0x5ef74a*/
-        ShowWindow(Dialog, 5); /*0x5ef752*/
+        ShowWindow(Dialog_v, 5); /*0x5ef752*/
         goto LABEL_121; /*0x5ef758*/
       case 1620: /*0x5ef5dd*/
-        v6(Dialog, 0); /*0x5ef7b2*/
+        v6(Dialog_v, 0); /*0x5ef7b2*/
         v5(g_hWnd); /*0x5ef7ba*/
         if ( g_ClipboardBuffer ) /*0x5ef7c4*/
           (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5ef7ca*/
@@ -3201,7 +3201,7 @@ AbstractClass * * Network_ModemConnectionDialog()
             v53 = 0; /*0x5ef860*/
           }
           EventClass::GetState(0); /*0x5ef86a*/
-          v6(Dialog, 5); /*0x5ef872*/
+          v6(Dialog_v, 5); /*0x5ef872*/
         }
         else
         {
@@ -3209,11 +3209,11 @@ AbstractClass * * Network_ModemConnectionDialog()
           v49 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 5833); /*0x5ef8a1*/
           v21 = (int *)GetStringCSF(g_Str_TXT_SELECT_SETTINGS, 0, g_Str_File_NullDlg_CPP, 5833); /*0x5ef8ac*/
           Dialog::ShowMessageBox(v21, v49, 0, 0, 0, v52); /*0x5ef8b6*/
-          v6(Dialog, 5); /*0x5ef8be*/
+          v6(Dialog_v, 5); /*0x5ef8be*/
         }
         goto LABEL_121; /*0x5ef874*/
       case 1621: /*0x5ef5dd*/
-        v6(Dialog, 0); /*0x5ef8c7*/
+        v6(Dialog_v, 0); /*0x5ef8c7*/
         v5(g_hWnd); /*0x5ef8cf*/
         if ( !NullModemClass::Init((int *)&unk_A8EA70, dword_A8DAC0, dword_A8DAC4, byte_A8DAF0, dword_A8DAC8, 0, 8, 1) ) /*0x5ef8fb*/
         {
@@ -3221,7 +3221,7 @@ AbstractClass * * Network_ModemConnectionDialog()
           v51 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 5877); /*0x5efe4d*/
           v46 = (int *)GetStringCSF(g_Str_TXT_SELECT_SETTINGS, 0, g_Str_File_NullDlg_CPP, 5877); /*0x5efe58*/
           Dialog::ShowMessageBox(v46, v51, 0, 0, 0, v52); /*0x5efe62*/
-          v6(Dialog, 5); /*0x5efe6a*/
+          v6(Dialog_v, 5); /*0x5efe6a*/
           goto LABEL_121; /*0x5efe6c*/
         }
         v22 = 0; /*0x5ef907*/
@@ -3443,7 +3443,7 @@ AbstractClass * * Network_ModemConnectionDialog()
     dwNewLong = -1; /*0x5efeb6*/
     if ( v53 == -1 ) /*0x5efeba*/
     {
-      Dialog = hWnd; /*0x5ef59b*/
+      Dialog_v = hWnd; /*0x5ef59b*/
       v6 = (void (*)(HWND, int))ShowWindow; /*0x5ef59f*/
       v5 = (void (*)(HWND))UpdateWindow; /*0x5ef5a5*/
       v7 = 0; /*0x5ef5ab*/
@@ -3460,17 +3460,17 @@ namespace gamemd {
 void Network::Network_resetConnectionState()
 {
 
-  HWND Dialog; // eax
+  HWND Dialog_v; // eax
   TechnoTypeClass *v3; // ecx
   int v5; // [esp+0h] [ebp-4h]
 
-  Dialog = (HWND)CreateDialog(0xEEu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))PhoneEditorDialogProc, 0); /*0x630b9f*/
-  this->Network_field_0x0 = (int)Dialog; /*0x630ba6*/
-  if ( Dialog ) /*0x630ba8*/
+  Dialog_v = (HWND)CreateDialog(0xEEu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))PhoneEditorDialogProc, 0); /*0x630b9f*/
+  this->Network_field_0x0 = (int)Dialog_v; /*0x630ba6*/
+  if ( Dialog_v ) /*0x630ba8*/
   {
     LOBYTE(this->Network_field_0x8) = 0; /*0x630bae*/
     this->Network_field_0x4 = (void *)-1; /*0x630bb2*/
-    SetWindowLongA(Dialog, 8, (LONG)this); /*0x630bb9*/
+    SetWindowLongA(Dialog_v, 8, (LONG)this); /*0x630bb9*/
     ((PhoneEditor *)((PhoneEditor *)this))->PopulateList(); /*0x630bc1*/
     ((Dialog *)((Dialog *)this->Network_field_0x0))->Show(); /*0x630bc8*/
     while ( (int)this->Network_field_0x4 < 0 ) /*0x630bd2*/
@@ -5767,17 +5767,17 @@ namespace gamemd {
 bool Network::sendGameEvent(unsigned int *aP0)
 {
 
-  HWND Dialog; // eax
+  HWND Dialog_v; // eax
   TechnoTypeClass *v4; // ecx
   bool v5; // zf
   int v7; // [esp+0h] [ebp-8h]
 
   *((unsigned int *)aP0 + 1) = -1; /*0x6956e0*/
-  Dialog = (HWND)CreateDialog(0xEDu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))DlgProcLoadGame, 0); /*0x6956e7*/
-  *(unsigned int *)aP0 = Dialog; /*0x6956ee*/
-  if ( !Dialog ) /*0x6956f1*/
+  Dialog_v = (HWND)CreateDialog(0xEDu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))DlgProcLoadGame, 0); /*0x6956e7*/
+  *(unsigned int *)aP0 = Dialog_v; /*0x6956ee*/
+  if ( !Dialog_v ) /*0x6956f1*/
     return *((unsigned int *)aP0 + 1) == 1; /*0x6956f1*/
-  SetWindowLongA(Dialog, 8, (LONG)aP0); /*0x6956f7*/
+  SetWindowLongA(Dialog_v, 8, (LONG)aP0); /*0x6956f7*/
   NetworkDialog::InitModemSettings((NetworkDialog *)aP0, _10); /*0x695704*/
   ((Dialog *)(*(Dialog **)aP0))->Show(); /*0x69570c*/
   while ( *((int *)aP0 + 1) < 0 ) /*0x695716*/

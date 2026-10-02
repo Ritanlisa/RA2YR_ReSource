@@ -508,7 +508,7 @@ char ScriptAction::IsBuildingTypeMatch() {
 
 // 0x63A8E0
 namespace gamemd {
-bool ScriptAction::HitTest(int a1 a1, int a2 a2) {
+bool ScriptAction::HitTest(int a1, int a2) {
     int v3; // esi
     int v4; // edi
     void *Array_field_0x10; // ebp

@@ -78,7 +78,7 @@ int sub_4116A0(unsigned int a1)
         ((Debug *)0)->Log();
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
-    v5 = this->((Time *)0)->GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
+    v5 = ((Time *)this->0)->GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
   v17 = *(unsigned int *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(unsigned int *)(v3 + 140); /*0x41170b*/

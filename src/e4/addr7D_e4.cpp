@@ -5797,11 +5797,11 @@ int unknown_libname_77()
   LABEL_14:
       __asm /*0x7d806e*/
       {
-        fxch st(1); jumptable 007D7FFD case 12
-        fstp [esp+arg_8]; _TBYTE
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(1); jumptable 007D7FFD case 12
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d807d*/
       __asm { fld [esp+arg_1C] } /*0x7d8082*/
@@ -5834,11 +5834,11 @@ int unknown_libname_77()
     case 0x10: /*0x7d7ffd*/
       __asm /*0x7d80be*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 16
-        fxch st(1)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 16
+//L-fix         fxch st(1)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d80cd*/
       __asm /*0x7d80d2*/
@@ -5874,12 +5874,12 @@ int unknown_libname_77()
   LABEL_22:
       __asm /*0x7d8102*/
       {
-        fxch st(2); jumptable 007D7FFD case 20
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(1)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(2); jumptable 007D7FFD case 20
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(1)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d8113*/
       __asm /*0x7d8118*/
@@ -5925,11 +5925,11 @@ int unknown_libname_77()
     case 0x18: /*0x7d7ffd*/
       __asm /*0x7d8162*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 24
-        fxch st(2)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 24
+//L-fix         fxch st(2)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d8171*/
       __asm /*0x7d8176*/
@@ -5965,12 +5965,12 @@ int unknown_libname_77()
   LABEL_30:
       __asm /*0x7d81a6*/
       {
-        fxch st(3); jumptable 007D7FFD case 28
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(2)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(3); jumptable 007D7FFD case 28
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(2)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d81b7*/
       __asm /*0x7d81bc*/
@@ -6016,11 +6016,11 @@ int unknown_libname_77()
     case 0x20: /*0x7d7ffd*/
       __asm /*0x7d8206*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 32
-        fxch st(3)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 32
+//L-fix         fxch st(3)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d8215*/
       __asm /*0x7d821a*/
@@ -6056,12 +6056,12 @@ int unknown_libname_77()
   LABEL_38:
       __asm /*0x7d824a*/
       {
-        fxch st(4); jumptable 007D7FFD case 36
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(3)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(4); jumptable 007D7FFD case 36
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(3)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d825b*/
       __asm /*0x7d8260*/
@@ -6107,11 +6107,11 @@ int unknown_libname_77()
     case 0x28: /*0x7d7ffd*/
       __asm /*0x7d82aa*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 40
-        fxch st(4)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 40
+//L-fix         fxch st(4)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d82b9*/
       __asm /*0x7d82be*/
@@ -6147,12 +6147,12 @@ int unknown_libname_77()
   LABEL_46:
       __asm /*0x7d82ee*/
       {
-        fxch st(5); jumptable 007D7FFD case 44
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(4)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(5); jumptable 007D7FFD case 44
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(4)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d82ff*/
       __asm /*0x7d8304*/
@@ -6198,11 +6198,11 @@ int unknown_libname_77()
     case 0x30: /*0x7d7ffd*/
       __asm /*0x7d834e*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 48
-        fxch st(5)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 48
+//L-fix         fxch st(5)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d835d*/
       __asm /*0x7d8362*/
@@ -6238,12 +6238,12 @@ int unknown_libname_77()
   LABEL_54:
       __asm /*0x7d8392*/
       {
-        fxch st(6); jumptable 007D7FFD case 52
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(5)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(6); jumptable 007D7FFD case 52
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(5)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d83a3*/
       __asm /*0x7d83a8*/
@@ -6289,11 +6289,11 @@ int unknown_libname_77()
     case 0x38: /*0x7d7ffd*/
       __asm /*0x7d83f2*/
       {
-        fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 56
-        fxch st(6)
-        fld st
-        fstp [esp+2Ch+var_2C]; _TBYTE
-        fstp [esp+2Ch+var_C]
+//L-fix         fstp [esp+2Ch+var_20]; jumptable 007D7FFD case 56
+//L-fix         fxch st(6)
+//L-fix         fld st
+//L-fix         fstp [esp+2Ch+var_2C]; _TBYTE
+//L-fix         fstp [esp+2Ch+var_C]
       }
       unknown_libname_76(v1, v2); /*0x7d8401*/
       __asm /*0x7d8406*/
@@ -6329,12 +6329,12 @@ int unknown_libname_77()
   LABEL_62:
       __asm /*0x7d8436*/
       {
-        fxch st(7); jumptable 007D7FFD case 60
-        fstp [esp+arg_8]; _TBYTE
-        fxch st(6)
-        fld st
-        fstp tbyte ptr [esp+0]; _TBYTE
-        fstp [esp+arg_1C]
+//L-fix         fxch st(7); jumptable 007D7FFD case 60
+//L-fix         fstp [esp+arg_8]; _TBYTE
+//L-fix         fxch st(6)
+//L-fix         fld st
+//L-fix         fstp tbyte ptr [esp+0]; _TBYTE
+//L-fix         fstp [esp+arg_1C]
       }
       unknown_libname_76(v17, v18); /*0x7d8447*/
       __asm /*0x7d844c*/
@@ -16292,3 +16292,5 @@ int sub_7DF9B7(int * a1)
   return Voxel::FacePixelBuffer(a1);
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 2
+}  // L-fix: close namespace tail 2

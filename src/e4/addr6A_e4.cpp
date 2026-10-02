@@ -516,7 +516,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
   int v2; // ebx
   ObjectClass *v3; // esi
   int i; // esi
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   LONG j; // eax
   TechnoTypeClass *v7; // ecx
   Skirmish *v8; // esi
@@ -532,12 +532,12 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
       *((unsigned int *)dword_A83C9C + i),
       *(unsigned int *)&DSurface_ViewBounds.__pad_34[116]);
   LoadingScreen::Init(); /*0x6ae317*/
-  Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
-  if ( Dialog ) /*0x6ae331*/
+  Dialog_v = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
+  if ( Dialog_v ) /*0x6ae331*/
   {
-    dword_B0B59C = (unsigned int)(Dialog);
-    SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
-    ((gamemd::Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
+    dword_B0B59C = (unsigned int)(Dialog_v);
+    SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x6ae341*/
+    ((gamemd::Dialog *)((Dialog *)Dialog_v))->Show(); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
@@ -547,7 +547,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
       Process(v7, v10); /*0x6ae36b*/
     }
-    ((Dialog*)(gamemd::Dialog *)Dialog)->Destroy(); /*0x6ae37d*/
+    ((Dialog*)(gamemd::Dialog *)Dialog_v)->Destroy(); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
   v8 = (gamemd::Skirmish *)(g_UIControlState);
@@ -768,11 +768,11 @@ int TechnoClass::ProcessDeployAction()
           v31 = v18; /*0x6b011b*/
           __asm /*0x6b011f*/
           {
-            fild [esp+38h+var_20]
-            fld st
-            fmul st, st(1)
-            fld st(2)
-            fmul st, st(3)
+//L-fix             fild [esp+38h+var_20]
+//L-fix             fld st
+//L-fix             fmul st, st(1)
+//L-fix             fld st(2)
+//L-fix             fmul st, st(3)
             faddp st(1), st
             fstp [esp+38h+var_38]; double
             fstp st
@@ -790,11 +790,11 @@ int TechnoClass::ProcessDeployAction()
           v31 = v22; /*0x6b0176*/
           __asm /*0x6b017a*/
           {
-            fild [esp+38h+var_20]
-            fld st
-            fmul st, st(1)
-            fld st(2)
-            fmul st, st(3)
+//L-fix             fild [esp+38h+var_20]
+//L-fix             fld st
+//L-fix             fmul st, st(1)
+//L-fix             fld st(2)
+//L-fix             fmul st, st(3)
             faddp st(1), st
             fstp [esp+38h+var_38]; double
             fstp st

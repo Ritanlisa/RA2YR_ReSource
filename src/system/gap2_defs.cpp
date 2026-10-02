@@ -7647,11 +7647,11 @@ LABEL_60:
           aP7 = v55; /*0x4aa9af*/
           __asm /*0x4aa9b6*/
           {
-            fild dword ptr [esp+68h+arg_14]
-            fld st
-            fmul st, st(1)
-            fld st(2)
-            fmul st, st(3)
+//L-fix             fild dword ptr [esp+68h+arg_14]
+//L-fix             fld st
+//L-fix             fmul st, st(1)
+//L-fix             fld st(2)
+//L-fix             fmul st, st(3)
             faddp st(1), st
             fstp [esp+68h+var_68]; double
             fstp st
@@ -10262,7 +10262,7 @@ int INIClass::ReadBase64Data(uint8_t * Block, ObjectClass * aP2, ObjectClass * a
   unsigned int v10[4]; // [esp+1Ch] [ebp-94h] BYREF
   int v11[7]; // [esp+2Ch] [ebp-84h] BYREF
   char Source[72]; // [esp+48h] [ebp-68h] BYREF
-  char Buffer[32]; // [esp+90h] [ebp-20h] BYREF
+  char Buffer_v[32]; // [esp+90h] [ebp-20h] BYREF
 
   if ( !Block || !aP2 || aP3 < 1 ) /*0x526eb4*/
     return 0; /*0x526fa4*/
@@ -10282,8 +10282,8 @@ int INIClass::ReadBase64Data(uint8_t * Block, ObjectClass * aP2, ObjectClass * a
   {
     do /*0x526f75*/
     {
-      sprintf(Buffer, "%d", v5); /*0x526f41*/
-      INIClass::SetString(this, Block, Buffer, Source); /*0x526f59*/
+      sprintf(Buffer_v, "%d", v5); /*0x526f41*/
+      INIClass::SetString(this, Block, Buffer_v, Source); /*0x526f59*/
       ++v5; /*0x526f69*/
       v7 = BitmapClass::ProcessFrame(Source, 0x46u); /*0x526f6a*/
       Source[v7] = 0; /*0x526f71*/
@@ -23403,18 +23403,18 @@ int ScenarioClass::SaveGameOptions() {
 namespace gamemd { 
 bool CD::CreateDialog(LPARAM lParam) {
 
-  HWND Dialog; // eax
+  HWND Dialog_v; // eax
   Dialog *v3; // esi
   HWND DlgItem; // eax
   ObjectClass *v6; // [esp+0h] [ebp-Ch]
   LONG dwNewLong; // [esp+8h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x623ce1*/
-  Dialog = (HWND)CreateDialog(0x10Du, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_623DA0, 0); /*0x623ce9*/
-  v3 = (Dialog *)Dialog; /*0x623cee*/
-  if ( Dialog ) /*0x623cf2*/
+  Dialog_v = (HWND)CreateDialog(0x10Du, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_623DA0, 0); /*0x623ce9*/
+  v3 = (Dialog *)Dialog_v; /*0x623cee*/
+  if ( Dialog_v ) /*0x623cf2*/
   {
-    DlgItem = GetDlgItem(Dialog, 1456); /*0x623cfe*/
+    DlgItem = GetDlgItem(Dialog_v, 1456); /*0x623cfe*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x623d0d*/
     SetWindowLongA((HWND)v3, 8, (LONG)&dwNewLong); /*0x623d1b*/
     ShowWindow((HWND)v3, 1); /*0x623d24*/
@@ -23501,7 +23501,7 @@ void FileSystem::InitExtensionState() {
   int v24; // [esp+14h] [ebp-10Ch]
   char v25; // [esp+18h] [ebp-108h]
   FileSystem *v26; // [esp+1Ch] [ebp-104h]
-  char String[256]; // [esp+20h] [ebp-100h] BYREF
+  char String_v[256]; // [esp+20h] [ebp-100h] BYREF
 
   v1 = g_FileExtensionState; /*0x6267aa*/
   v2 = this; /*0x6267b0*/
@@ -23628,8 +23628,8 @@ LABEL_25:
       }
       for ( ; v20; v20 = (Flag *)FileSystem::closeFile(*(FileSystem **)&v1[12], &v23) ) /*0x626948*/
       {
-        String::CopyUpper(String, v20->__pad_0); /*0x62694f*/
-        v21 = *(unsigned int *)FileSystem::openFile(*(FileSystem **)&v1[12], String); /*0x626961*/
+        String::CopyUpper(String_v, v20->__pad_0); /*0x62694f*/
+        v21 = *(unsigned int *)FileSystem::openFile(*(FileSystem **)&v1[12], String_v); /*0x626961*/
         v22 = MIXFile::Load((MIXFile *)v1, v20->__pad_0); /*0x62696d*/
         FileSystem::mountDrive((FileSystem *)v21); /*0x62696f*/
         *(unsigned int *)(v21 + 256) = v22; /*0x626978*/
@@ -30700,3 +30700,12 @@ void INIClass::ReadTokenizedPair(ObjectClass * aP1, ObjectClass * aP2, ObjectCla
 
 }
 }
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9
+}  // L-fix: close namespace tail 9

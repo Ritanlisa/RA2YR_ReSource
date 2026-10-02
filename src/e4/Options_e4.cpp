@@ -235,7 +235,7 @@ LABEL_39:
           {
             ((gamemd::Timer *)(v24))->Init(0x384u); /*0x4f1590*/
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
-            dword_A8EE44 = (unsigned int)((void (__cdecl *)(v24[1])); /*0x4f15b0*/
+            dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (void *)((int)v19))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
@@ -253,7 +253,7 @@ LABEL_39:
           {
             ((gamemd::Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
-            dword_A8EE34 = (unsigned int)((void (__cdecl *)(v25[1])); /*0x4f1658*/
+            dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
             v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu),(void *)(v22))); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/

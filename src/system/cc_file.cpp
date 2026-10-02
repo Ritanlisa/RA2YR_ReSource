@@ -27,7 +27,7 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
 // Searches MIX pool first, then falls back to disk
 REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
-int CCFileClass::Open(int a2 a2)
+int CCFileClass::Open(int a2)
 {
   int result; // eax
   const char *v4; // eax
@@ -102,3 +102,4 @@ int CCFileClass::Reset()
   IDA_LOBYTE(result) = CCFileClass::Close(this); /*0x473cfc*/
   return result; /*0x473d01*/
 }
+}  // L-fix: close namespace tail 1

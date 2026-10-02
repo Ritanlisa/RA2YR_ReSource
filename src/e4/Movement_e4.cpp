@@ -132,17 +132,17 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     *(unsigned int *)v88.__pad_0 = *(int16_t *)((Vector *)((int *)&v89))->ToFacingMath(v84) - 0x3FFF; /*0x5b21de*/
     /* asm-debt:__asm */
     {
-      fild dword ptr [esp+98h+var_64.__pad_0]
-      fmul ds:dbl_7E2810
-      fstp qword ptr [esp+98h+var_50]
+//L-fix       fild dword ptr [esp+98h+var_64.__pad_0]
+//L-fix       fmul ds:dbl_7E2810
+//L-fix       fstp qword ptr [esp+98h+var_50]
     }
     ((Vector3 *)((int *)_ESI))->Magnitude(); /*0x5b21f2*/
     /* asm-debt:__asm */
     {
-      fstp qword ptr [esp+98h+var_64.field_4]
-      fld qword ptr [esp+98h+var_50]
-      fcomp ds:dbl_7E2800
-      fnstsw ax
+//L-fix       fstp qword ptr [esp+98h+var_64.field_4]
+//L-fix       fld qword ptr [esp+98h+var_50]
+//L-fix       fcomp ds:dbl_7E2800
+//L-fix       fnstsw ax
     }
     if ( (_AX & 0x4000) == 0 ) /*0x5b220a*/
     {
@@ -160,9 +160,9 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     *(unsigned int *)v88.__pad_0 = SLOWORD(v85.Movement_field_00) - 0x3FFF; /*0x5b2241*/
     /* asm-debt:__asm */
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
-      fmul ds:dbl_7E2810
-      fstp [esp+0A0h+var_A0]; double
+//L-fix       fild dword ptr [esp+0A0h+var_64.__pad_0]
+//L-fix       fmul ds:dbl_7E2810
+//L-fix       fstp [esp+0A0h+var_A0]; double
     }
     Math::ArcTan2(v75); /*0x5b2252*/
     /* asm-debt:__asm { fmul qword ptr [esi] } */
@@ -172,9 +172,9 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     *(unsigned int *)v88.__pad_0 = Movement_field_00_low - 0x3FFF; /*0x5b2266*/
     /* asm-debt:__asm */
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
-      fmul ds:dbl_7E2810
-      fstp [esp+0A0h+var_A0]; double
+//L-fix       fild dword ptr [esp+0A0h+var_64.__pad_0]
+//L-fix       fmul ds:dbl_7E2810
+//L-fix       fstp [esp+0A0h+var_A0]; double
     }
     Math::ArcTan2(v76); /*0x5b2277*/
     /* asm-debt:__asm { fmul qword ptr [esi+8] } */
@@ -184,9 +184,9 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     *(unsigned int *)v88.__pad_0 = v18 - 0x3FFF; /*0x5b228c*/
     /* asm-debt:__asm */
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
-      fmul ds:dbl_7E2810
-      fstp [esp+0A0h+var_A0]; double
+//L-fix       fild dword ptr [esp+0A0h+var_64.__pad_0]
+//L-fix       fmul ds:dbl_7E2810
+//L-fix       fstp [esp+0A0h+var_A0]; double
     }
     Math::SinCos(v77); /*0x5b229d*/
     /* asm-debt:__asm { fmul qword ptr [esp+0A0h+var_64.field_4] } */
@@ -213,24 +213,24 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     a2->Vector3_field_0x08 = v29; /*0x5b2313*/
     /* asm-debt:__asm */
     {
-      fld qword ptr [esi+10h]
-      fld qword ptr [esi+8]
-      fld qword ptr [esi]
-      fld st(1)
-      fmul st, st(2)
-      fld st(1)
-      fmul st, st(2)
+//L-fix       fld qword ptr [esi+10h]
+//L-fix       fld qword ptr [esi+8]
+//L-fix       fld qword ptr [esi]
+//L-fix       fld st(1)
+//L-fix       fmul st, st(2)
+//L-fix       fld st(1)
+//L-fix       fmul st, st(2)
       faddp st(1), st
-      fld st(3)
+//L-fix       fld st(3)
       fmul st, st(4, void * a1, void * a2)
       faddp st(1), st
     }
     /* asm-debt:__asm */
     {
-      fstp [esp+0A0h+var_A0]; double
-      fstp st
-      fstp st
-      fstp st
+//L-fix       fstp [esp+0A0h+var_A0]; double
+//L-fix       fstp st
+//L-fix       fstp st
+//L-fix       fstp st
     }
     Math::Sqrt(v79); /*0x5b233a*/
     LOWORD(result, unsigned int a2) = Math::RoundToInt(a3); /*0x5b2342*/
@@ -285,15 +285,15 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v93[0] = *((unsigned int *)v51 + 2); /*0x5b2449*/
   /* asm-debt:__asm */
   {
-    fstp qword ptr [esp+98h+var_48]
-    fild dword ptr [esp+98h+var_30+4]
+//L-fix     fstp qword ptr [esp+98h+var_48]
+//L-fix     fild dword ptr [esp+98h+var_30+4]
   }
   *(double *)v87 = v90; /*0x5b2464*/
   /* asm-debt:__asm { fstp [esp+98h+var_40] } */
   /* asm-debt:__asm */
   {
-    fild [esp+98h+var_28]
-    fstp [esp+98h+var_70]
+//L-fix     fild [esp+98h+var_28]
+//L-fix     fstp [esp+98h+var_70]
   }
   *(double *)&v87[8] = v91; /*0x5b2489*/
   qmemcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
@@ -302,7 +302,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   /* asm-debt:__asm */
   {
     fchs
-    fstp [esp+0A8h+var_A8]; double
+//L-fix     fstp [esp+0A8h+var_A8]; double
   }
   Math::CalcAngle(v72, **(double **)v88.__pad_0); /*0x5b24a5*/
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
@@ -313,7 +313,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   /* asm-debt:__asm */
   {
     fchs
-    fstp [esp+0A8h+var_A8]; double
+//L-fix     fstp [esp+0A8h+var_A8]; double
   }
   Math::CalcAngle(v73, v94[0]); /*0x5b24ea*/
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
@@ -337,9 +337,9 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   *(unsigned int *)v88.__pad_0 = (int16_t)v86 - 0x3FFF; /*0x5b2575*/
   /* asm-debt:__asm */
   {
-    fild dword ptr [esp+0A0h+var_64.__pad_0]
-    fmul ds:dbl_7E2810
-    fstp [esp+0A0h+var_A0]; double
+//L-fix     fild dword ptr [esp+0A0h+var_64.__pad_0]
+//L-fix     fmul ds:dbl_7E2810
+//L-fix     fstp [esp+0A0h+var_A0]; double
   }
   Math::ArcTan2(v80); /*0x5b2586*/
   /* asm-debt:__asm { fmul qword ptr [esp+0A0h+var_88.field_8] } */
@@ -349,16 +349,16 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   *(unsigned int *)v88.__pad_0 = v53 - 0x3FFF; /*0x5b259c*/
   /* asm-debt:__asm */
   {
-    fild dword ptr [esp+0A0h+var_64.__pad_0]
-    fmul ds:dbl_7E2810
-    fstp [esp+0A0h+var_A0]; double
+//L-fix     fild dword ptr [esp+0A0h+var_64.__pad_0]
+//L-fix     fmul ds:dbl_7E2810
+//L-fix     fstp [esp+0A0h+var_A0]; double
   }
   Math::SinCos(v81); /*0x5b25ad*/
   /* asm-debt:__asm { fmul qword ptr [esp+0A0h+var_88.field_8] } */
   /* asm-debt:__asm */
   {
     fchs
-    fstp qword ptr [esi+8]
+//L-fix     fstp qword ptr [esi+8]
   }
   *(double *)(_ESI + 8) = _RT1; /*0x5b25bd*/
   Math::Hypotenuse2D((int *)_ESI); /*0x5b25c0*/

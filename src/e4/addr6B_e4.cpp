@@ -1834,7 +1834,7 @@ namespace gamemd {
 void sub_6B6230()
 {
   uint16_t v0; // cx
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   int v2; // ecx
   LONG dwNewLong; // [esp+0h] [ebp-4h] BYREF
 
@@ -1844,11 +1844,11 @@ void sub_6B6230()
   v0 = 214; /*0x6b6270*/
   if ( byte_A8E9A0 ) /*0x6b6275*/
     v0 = 184; /*0x6b6277*/
-  Dialog = (HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))AudioSettings::DlgProc, 0); /*0x6b6281*/
-  if ( Dialog ) /*0x6b6285*/
+  Dialog_v = (HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))AudioSettings::DlgProc, 0); /*0x6b6281*/
+  if ( Dialog_v ) /*0x6b6285*/
   {
-    SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6b628f*/
-    ((Dialog *)(Dialog))->Show(); /*0x6b6297*/
+    SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x6b628f*/
+    ((Dialog *)(Dialog_v))->Show(); /*0x6b6297*/
     while ( dwNewLong == -1 ) /*0x6b62a0*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x6b62a9*/
@@ -1859,7 +1859,7 @@ void sub_6B6230()
         ScreenSaver::Process(v2); /*0x6b62be*/
       }
     }
-    Dialog::Destroy(Dialog); /*0x6b62cb*/
+    Dialog::Destroy(Dialog_v); /*0x6b62cb*/
   }
   Debug::Log(); /*0x6b62e9*/
 }
@@ -2694,7 +2694,7 @@ void WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int 
   LPVOID ppv[2]; // [esp+400h] [ebp-A3Ch] BYREF
   DynamicVector dwRegister; // [esp+408h] [ebp-A34h] BYREF
   int16_t v216; // [esp+434h] [ebp-A08h]
-  INIClass String[8]; // [esp+444h] [ebp-9F8h] BYREF
+  INIClass String_v[8]; // [esp+444h] [ebp-9F8h] BYREF
   ObjectClass aP2; // [esp+680h] [ebp-7BCh] BYREF
   CCINIClass *aP1; // [esp+730h] [ebp-70Ch]
   char Drive[4]; // [esp+73Ch] [ebp-700h] BYREF
@@ -2880,19 +2880,19 @@ LABEL_2:
     if ( v14 >= 0x4000 && v14 < 0x8000 )
       Network::GetField(&HouseClass_Player[44148], v14);
   }
-  memset(String, 0, sizeof(String));
+  memset(String_v, 0, sizeof(String_v));
   if ( INIClass::GetString(
          (uint8_t ***)&stru_87C374[44364],
          (INIClass *)&stru_830620[10816],
          (uint8_t *)&stru_830620[10732],
          0,
-         String,
+         String_v,
          512)
-    && String
-    && strlen(String[0].__pad_0) )
+    && String_v
+    && strlen(String_v[0].__pad_0) )
   {
     int v15 = 0;
-    for ( i = strtok(String[0].__pad_0, &stru_826598); i; i = strtok(0, &stru_826598) )
+    for ( i = strtok(String_v[0].__pad_0, &stru_826598); i; i = strtok(0, &stru_826598) )
     {
       sscanf(i, (const char *const)&stru_825BAC.owningHouseIndex, dwRegister[32]);
       dwRegister[32][v15++ + 4] = dwRegister[32];

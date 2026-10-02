@@ -226,12 +226,12 @@ void* TacticalClass::ProcessScroll(int * a2)
       v12 = (void *)(v7 - (unsigned int)this->DisplayClass_field_0x11D8); /*0x4ac467*/
       __asm /*0x4ac46b*/
       {
-        fild [esp+20h+var_C]
-        fild [esp+20h+var_10]
-        fld st
-        fmul st, st(1)
-        fld st(2)
-        fmul st, st(3)
+//L-fix         fild [esp+20h+var_C]
+//L-fix         fild [esp+20h+var_10]
+//L-fix         fld st
+//L-fix         fmul st, st(1)
+//L-fix         fld st(2)
+//L-fix         fmul st, st(3)
         faddp st(1), st
         fstp [esp+20h+var_20]; double
         fstp st

@@ -79,7 +79,7 @@ int AudioChannel::IsActive() {
 
 // 0x401640
 namespace gamemd {
-unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1 a1, int a2 a2, unsigned int *a3 a3) {
+unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3) {
     unsigned int *v3; // ecx
     unsigned int *result; // eax
 
@@ -1932,11 +1932,11 @@ int PathfindingClass::FindPath(unsigned int *a2) {
     v26 = v18; /*0x4ffcac*/
     __asm /*0x4ffcb0*/
     {
-      fisub [esp+3Ch+var_18]
-      fstp [esp+3Ch+var_34]; double
-      fild [esp+3Ch+var_14]
-      fisub dword ptr [esi+4]
-      fstp [esp+3Ch+var_3C]; double
+//L-fix       fisub [esp+3Ch+var_18]
+//L-fix       fstp [esp+3Ch+var_34]; double
+//L-fix       fild [esp+3Ch+var_14]
+//L-fix       fisub dword ptr [esi+4]
+//L-fix       fstp [esp+3Ch+var_3C]; double
     }
     Math::CalcAngle(v21, v22); /*0x4ffcc2*/
     __asm { fsub ds:dbl_7E2820 } /*0x4ffcc7*/

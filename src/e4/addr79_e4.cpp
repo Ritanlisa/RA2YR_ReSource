@@ -230,7 +230,7 @@ AbstractClass * * HandleWOLForwardingError()
         return (gamemd::AbstractClass **)(result); /*0x7934d4*/
     }
     result = (int)&g_WebBrowserConfig.occupant; /*0x7934e0*/
-    if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x7934e7*/
+    if ( &g_WebBrowserConfig != (int *)(ObjectClass *)-36 ) /*0x7934e7*/
     {
       v3 = -1; /*0x7934f2*/
       v4 = 0; /*0x7934f5*/
@@ -6273,7 +6273,7 @@ Coord * * WOL_JoinLobby()
   int v13; // esi
   TechnoTypeClass *v14; // ecx
   DWORD i; // esi
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   wchar_t *v17; // eax
   wchar_t *v18; // eax
   int j; // esi
@@ -6488,13 +6488,13 @@ Coord * * WOL_JoinLobby()
         break; /*0x7a0089*/
       if ( MatchGameWOL(v34) && dword_A8B244 == 3 ) /*0x7a009f*/
       {
-        Dialog = (HWND)CreateDialog(0x11Fu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_7A2600, 0); /*0x7a00b5*/
+        Dialog_v = (HWND)CreateDialog(0x11Fu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_7A2600, 0); /*0x7a00b5*/
         g_WOL_GameListState = 0; /*0x7a00b7*/
         g_WOL_IdleHandler = 10; /*0x7a00be*/
         g_WOL_GameProcessState = 180; /*0x7a00c8*/
         g_WOL_GameListPool = time(0); /*0x7a00da*/
-        SendMessageA(Dialog, 0x4A9u, 0, 1); /*0x7a00e8*/
-        ShowWindow(Dialog, 1); /*0x7a00f1*/
+        SendMessageA(Dialog_v, 0x4A9u, 0, 1); /*0x7a00e8*/
+        ShowWindow(Dialog_v, 1); /*0x7a00f1*/
       }
     }
   }

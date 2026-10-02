@@ -258,9 +258,9 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
         else
           v28 &= ~8u; /*0x7c0c28*/
         result = (gamemd::DSurface *)(FillAudioStreamBuffer(a1, v28)); /*0x7c0c2f*/
-        if ( result != (unsigned int)((gamemd::DSurface *))(-1) ) /*0x7c0c37*/
+        if ( result != (unsigned int)(gamemd::DSurface *)(-1) ) /*0x7c0c37*/
         {
-          if ( !arg8 || result != (unsigned int)((gamemd::DSurface *))(-9) && result != -11 ) /*0x7c0c49*/
+          if ( !arg8 || result != (unsigned int)(gamemd::DSurface *)(-9) && result != -11 ) /*0x7c0c49*/
             return result; /*0x7c0c49*/
           result = (gamemd::DSurface *)(-1); /*0x7c0c4b*/
         }
@@ -286,7 +286,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     return -6; /*0x7c0c6a*/
   }
   v24 = *(uint16_t **)(a1 + 1820); /*0x7c0a1a*/
-  v25 = 0; /*(gamemd::DSurface *)((gamemd::DSurface *))(0x7c0a20)*/
+  v25 = 0; /*(gamemd::DSurface *)(gamemd::DSurface *)(0x7c0a20)*/
   while ( aP1 != *v24 ) /*0x7c0a2d*/
   {
     ++v25; /*0x7c0a33*/
@@ -339,7 +339,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     goto LABEL_75; /*0x7c0c05*/
   result = (gamemd::DSurface *)(-6); /*0x7c0c0b*/
   LABEL_82:
-  if ( arg8 && (result == (unsigned int)((gamemd::DSurface *))(-9) || result == -11) ) /*0x7c0bda*/
+  if ( arg8 && (result == (unsigned int)(gamemd::DSurface *)(-9) || result == -11) ) /*0x7c0bda*/
     return -1; /*0x7c0be3*/
   return result; /*0x7c0be0*/
 }

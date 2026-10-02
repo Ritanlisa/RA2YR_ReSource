@@ -38,7 +38,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
   if ( a5 ) /*0x5d4b53*/
   {
     v9 = (gamemd::CampaignScore *)((int)(v8));
-    if ( v8 >= (unsigned int)((gamemd::CampaignScore *))(a3) ) /*0x5d4b7b*/
+    if ( v8 >= (unsigned int)(gamemd::CampaignScore *)(a3) ) /*0x5d4b7b*/
     {
       v11 = (wchar_t *)(&aP1[v8 - 1]);
       while ( !*v11 || *v11 > 0x20u ) /*0x5d4b8d*/

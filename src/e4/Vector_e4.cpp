@@ -117,12 +117,12 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   _ESI = v2; /*0x41c2e4*/
   __asm /*0x41c2e9*/
   {
-    fld qword ptr [esi+8]
-    fld qword ptr [esi]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fld qword ptr [esi+8]
+//L-fix     fld qword ptr [esi]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+14h+var_14]; double
     fstp st

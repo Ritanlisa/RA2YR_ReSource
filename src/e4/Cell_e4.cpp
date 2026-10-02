@@ -277,8 +277,6 @@ LABEL_25:
 // 0x481810
 namespace gamemd {  // G42.18c ns repair
 int Cell::GetNeighbourContent(unsigned int a2)
-int Cell::GetNeighbourContent(unsigned int a2)
-}  // G42.18c ns repair
 {
 
   void *result; // eax
@@ -372,7 +370,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
     {
       if ( *(unsigned char *)(v13 + 680) ) /*0x483598*/
       {
-        if ( aP5 != (IUnknown *)(2) && (IUnknown *)(aP5) != (IUnknown *)((IUnknown *))(3) && aP5 != 8 && (aP5 != (IUnknown *)(1) && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 ) /*0x4835c8*/
+        if ( aP5 != (IUnknown *)(2) && (IUnknown *)(aP5) != (IUnknown *)(IUnknown *)(3) && aP5 != 8 && (aP5 != (IUnknown *)(1) && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 ) /*0x4835c8*/
         {
           LOBYTE(result) = 0; /*0x4835cd*/
           return result; /*0x4835d0*/
@@ -1894,11 +1892,11 @@ unsigned short * Cell::GetHeight(int *aP1, int *a2)
   __asm { fild dword ptr [ecx] } /*0x4265d1*/
   __asm
   {
-    fisub dword ptr [eax]
-    fstp [esp+18h+var_10]; double
-    fild dword ptr [eax+4]
-    fisub dword ptr [ecx+4]
-    fstp [esp+18h+var_18]; double
+//L-fix     fisub dword ptr [eax]
+//L-fix     fstp [esp+18h+var_10]; double
+//L-fix     fild dword ptr [eax+4]
+//L-fix     fisub dword ptr [ecx+4]
+//L-fix     fstp [esp+18h+var_18]; double
   }
   Math::CalcAngle(v8, v9); /*0x4265e8*/
   __asm { fsub ds:dbl_7E2820 } /*0x4265ed*/

@@ -1534,7 +1534,7 @@ void FileExtension::MapHandler()
   int i; // ebx
   int v26; // edi
   char *v28; // [esp+14h] [ebp-208h] BYREF
-  char String[256]; // [esp+18h] [ebp-204h] BYREF
+  char String_v[256]; // [esp+18h] [ebp-204h] BYREF
 
   v1 = g_FileExtensionState; /*0x6263da*/
   if ( !g_FileExtensionState ) /*0x6263e8*/
@@ -1574,9 +1574,9 @@ void FileExtension::MapHandler()
     }
     g_FileExtensionState = v1; /*0x62648a*/
   }
-  String::CopyUpper(String, this); /*0x626495*/
+  String::CopyUpper(String_v, this); /*0x626495*/
   v7 = v1[3]; /*0x62649a*/
-  v8 = *(unsigned int *)v7 + 24 * ((*(int (**)(char *))(v7 + 4))(String) % *(unsigned int *)(v7 + 8)); /*0x6264b1*/
+  v8 = *(unsigned int *)v7 + 24 * ((*(int (**)(char *))(v7 + 4))(String_v) % *(unsigned int *)(v7 + 8)); /*0x6264b1*/
   v9 = *(unsigned int *)(v8 + 16) - 1; /*0x6264b4*/
   if ( v9 < 0 ) /*0x6264b5*/
     goto LABEL_21; /*0x6264b5*/
@@ -1584,7 +1584,7 @@ void FileExtension::MapHandler()
   while ( 1 ) /*0x6264c6*/
   {
     v11 = *(unsigned int *)(v8 + 4) + v10; /*0x6264c6*/
-    if ( String::Equals((const char *)v11, String) ) /*0x6264cf*/
+    if ( String::Equals((const char *)v11, String_v) ) /*0x6264cf*/
       break; /*0x6264cf*/
     --v9; /*0x6264d8*/
     v10 -= 260; /*0x6264d9*/
@@ -1607,20 +1607,20 @@ void FileExtension::MapHandler()
     {
       v28 = 0; /*0x626553*/
     }
-    String::CopyUpper(String, this); /*0x626564*/
+    String::CopyUpper(String_v, this); /*0x626564*/
     v16 = v13[3]; /*0x626569*/
-    v17 = *(unsigned int *)v16 + 24 * ((*(int (**)(char *))(v16 + 4))(String) % *(unsigned int *)(v16 + 8)); /*0x626580*/
+    v17 = *(unsigned int *)v16 + 24 * ((*(int (**)(char *))(v16 + 4))(String_v) % *(unsigned int *)(v16 + 8)); /*0x626580*/
     v18 = *(unsigned int *)(v17 + 16) - 1; /*0x626583*/
     if ( v18 < 0 ) /*0x626584*/
     {
   LABEL_28:
-      v20 = FileExtension::Check(String, &v28); /*0x6265ae*/
+      v20 = FileExtension::Check(String_v, &v28); /*0x6265ae*/
       FileExtension::CheckExtensionMatch(v20); /*0x6265c7*/
     }
     else
     {
       v19 = 260 * v18; /*0x62658d*/
-      while ( !String::Equals((const char *)(v19 + *(unsigned int *)(v17 + 4)), String) ) /*0x6265a1*/
+      while ( !String::Equals((const char *)(v19 + *(unsigned int *)(v17 + 4)), String_v) ) /*0x6265a1*/
       {
         --v18; /*0x6265a3*/
         v19 -= 260; /*0x6265a4*/
@@ -1629,16 +1629,16 @@ void FileExtension::MapHandler()
       }
     }
     v21 = g_FileExtensionState; /*0x6265cc*/
-    String::CopyUpper(String, this); /*0x6265d7*/
+    String::CopyUpper(String_v, this); /*0x6265d7*/
     v22 = v21[3]; /*0x6265dc*/
-    v23 = *(unsigned int *)v22 + 24 * ((*(int (**)(char *))(v22 + 4))(String) % *(unsigned int *)(v22 + 8)); /*0x6265f3*/
+    v23 = *(unsigned int *)v22 + 24 * ((*(int (**)(char *))(v22 + 4))(String_v) % *(unsigned int *)(v22 + 8)); /*0x6265f3*/
     v24 = *(unsigned int *)(v23 + 16) - 1; /*0x6265f6*/
     if ( v24 < 0 ) /*0x6265f7*/
       return 0; /*0x6265f7*/
     for ( i = 260 * v24; ; i -= 260 ) /*0x626600*/
     {
       v26 = i + *(unsigned int *)(v23 + 4); /*0x62660a*/
-      if ( String::Equals((const char *)v26, String) ) /*0x62660f*/
+      if ( String::Equals((const char *)v26, String_v) ) /*0x62660f*/
         break; /*0x62660f*/
       if ( --v24 < 0 ) /*0x626621*/
         return 0; /*0x62662f*/
@@ -3777,12 +3777,12 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
   v76 = v11[2]; /*0x4c1fb1*/
   __asm /*0x4c1fb5*/
   {
-    fild [esp+410h+var_3BC]
-    fild [esp+410h+var_3C4]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+410h+var_3BC]
+//L-fix     fild [esp+410h+var_3C4]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fld st(3)
     fmul st, st(4)
@@ -4300,7 +4300,7 @@ void MapData::InitHeights()
   return Array::ForEach((int)&dword_89D2DC, 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x45c2df*/
 }
 // 0x69a3b0
-void MapFile::LoadDescription(wchar_t * String, uint8_t *** a2, INIClass * aP1)
+void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1)
 {
   MapFile *v4; // ebp
   int v5; // edx
@@ -4325,7 +4325,7 @@ void MapFile::LoadDescription(wchar_t * String, uint8_t *** a2, INIClass * aP1)
   INIClass v25; // [esp+BCh] [ebp-158h] BYREF
   char v26; // [esp+FCh] [ebp-118h]
   char Source[128]; // [esp+114h] [ebp-100h] BYREF
-  char String[128]; // [esp+194h] [ebp-80h] BYREF
+  char String_v[128]; // [esp+194h] [ebp-80h] BYREF
 
   v4 = this + 14; /*0x69a3bc*/
   this->MapFile_E.Constructor(0, 0); /*0x69a3c8*/
@@ -4378,10 +4378,10 @@ void MapFile::LoadDescription(wchar_t * String, uint8_t *** a2, INIClass * aP1)
            v6,
            (uint8_t *)&((unsigned int *)&stru_81AF8C)[1],
            &g_INI_DefaultBuffer,
-           String,
+           String_v,
            128) )
     {
-      v11 = strtok(String, Str); /*0x69a5a3*/
+      v11 = strtok(String_v, Str); /*0x69a5a3*/
       while ( v11 ) /*0x69a5ad*/
       {
         if ( !*v11 ) /*0x69a5af*/
@@ -4707,7 +4707,7 @@ void MapPreview::Upload()
   int v32; // [esp+5Ch] [ebp-52Ch]
   Waypoint v33; // [esp+60h] [ebp-528h] BYREF
   char v34[64]; // [esp+B8h] [ebp-4D0h] BYREF
-  char Buffer[256]; // [esp+F8h] [ebp-490h] BYREF
+  char Buffer_v[256]; // [esp+F8h] [ebp-490h] BYREF
   int v36[113]; // [esp+1F8h] [ebp-390h] BYREF
   int16_t v37; // [esp+3BCh] [ebp-1CCh]
   char v38; // [esp+3BEh] [ebp-1CAh]
@@ -4723,7 +4723,7 @@ void MapPreview::Upload()
       if ( dword_A8B230 ) /*0x5e7ef6*/
       {
         sprintf( /*0x5e7f2e*/
-          Buffer,
+          Buffer_v,
           "%c%d,%d,%d,%d,%d",
           87,
           dword_A8B230[122].vtable3,
@@ -4742,18 +4742,18 @@ void MapPreview::Upload()
             v7 = dword_AC0B90; /*0x5e7f6d*/
           Size[1] = v7; /*0x5e7f72*/
           sprintf(v34, ",%d,%d,%d,%d", v5, v6, (int16_t)v7, IDA_SHIWORD(v7)); /*0x5e7f8f*/
-          strcat(Buffer, v34); /*0x5e7fc1*/
+          strcat(Buffer_v, v34); /*0x5e7fc1*/
         }
-        Network::SendOptionsGame(Buffer); /*0x5e7fdb*/
+        Network::SendOptionsGame(Buffer_v); /*0x5e7fdb*/
       }
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e7fe7*/
       {
         if ( dword_ABFEC8 && (dword_ABFEC8 & 1) == 0 ) /*0x5e7ff8*/
         {
   LABEL_21:
-          strcpy(Buffer, "Z3"); /*0x5e808f*/
+          strcpy(Buffer_v, "Z3"); /*0x5e808f*/
           Debug::Log(); /*0x5e80b4*/
-          return (*(int (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, Buffer); /*0x5e80d9*/
+          return (*(int (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, Buffer_v); /*0x5e80d9*/
         }
         v8 = 1; /*0x5e8003*/
         if ( dword_A8DA84 > 1 ) /*0x5e8007*/
@@ -6480,12 +6480,12 @@ void Matrix2D::Rotate(float aP1)
   result = Math::SinCos(v10); /*0x5af1c5*/
   __asm /*0x5af1ca*/
   {
-    fld dword ptr [esi]
-    fld dword ptr [esi+4]
-    fld st
-    fmul st, st(3)
-    fld st(2)
-    fmul [esp+24h+arg_0]
+//L-fix     fld dword ptr [esi]
+//L-fix     fld dword ptr [esi+4]
+//L-fix     fld st
+//L-fix     fmul st, st(3)
+//L-fix     fld st(2)
+//L-fix     fmul [esp+24h+arg_0]
   }
   __asm { faddp st(1), st }
   __asm { fstp dword ptr [esi] }
@@ -6501,12 +6501,12 @@ void Matrix2D::Rotate(float aP1)
   _ESI[1] = _ET1; /*0x5af1eb*/
   __asm /*0x5af1ee*/
   {
-    fld dword ptr [esi+10h]
-    fld dword ptr [esi+14h]
-    fld st
-    fmul st, st(3)
-    fld st(2)
-    fmul [esp+10h+arg_0]
+//L-fix     fld dword ptr [esi+10h]
+//L-fix     fld dword ptr [esi+14h]
+//L-fix     fld st
+//L-fix     fmul st, st(3)
+//L-fix     fld st(2)
+//L-fix     fmul [esp+10h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+10h]
   }
@@ -6522,12 +6522,12 @@ void Matrix2D::Rotate(float aP1)
   _ESI[5] = _ET1; /*0x5af20d*/
   __asm /*0x5af210*/
   {
-    fld dword ptr [esi+20h]
-    fld dword ptr [esi+24h]
-    fld st
-    fmul st, st(3)
-    fld st(2)
-    fmul [esp+10h+arg_0]
+//L-fix     fld dword ptr [esi+20h]
+//L-fix     fld dword ptr [esi+24h]
+//L-fix     fld st
+//L-fix     fmul st, st(3)
+//L-fix     fld st(2)
+//L-fix     fmul [esp+10h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
@@ -6614,12 +6614,12 @@ void Matrix3x3::RotateX(float aP1)
   result = Math::ArcTan2(v10); /*0x5aef85*/
   __asm /*0x5aef8a*/
   {
-    fld dword ptr [esi+4]
-    fld dword ptr [esi+8]
-    fld st(1)
-    fmul st, st(3)
-    fld st(1)
-    fmul [esp+24h+arg_0]
+//L-fix     fld dword ptr [esi+4]
+//L-fix     fld dword ptr [esi+8]
+//L-fix     fld st(1)
+//L-fix     fmul st, st(3)
+//L-fix     fld st(1)
+//L-fix     fmul [esp+24h+arg_0]
   }
   __asm { faddp st(1), st }
   __asm { fstp dword ptr [esi+4] }
@@ -6635,12 +6635,12 @@ void Matrix3x3::RotateX(float aP1)
   _ESI[2] = _ET1; /*0x5aefad*/
   __asm /*0x5aefb0*/
   {
-    fld dword ptr [esi+14h]
-    fld dword ptr [esi+18h]
-    fld st(1)
-    fmul st, st(3)
-    fld st(1)
-    fmul [esp+10h+arg_0]
+//L-fix     fld dword ptr [esi+14h]
+//L-fix     fld dword ptr [esi+18h]
+//L-fix     fld st(1)
+//L-fix     fmul st, st(3)
+//L-fix     fld st(1)
+//L-fix     fmul [esp+10h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
@@ -6656,12 +6656,12 @@ void Matrix3x3::RotateX(float aP1)
   _ESI[6] = _ET1; /*0x5aefcf*/
   __asm /*0x5aefd2*/
   {
-    fld dword ptr [esi+24h]
-    fld dword ptr [esi+28h]
-    fld st(1)
-    fmul st, st(3)
-    fld st(1)
-    fmul [esp+10h+arg_0]
+//L-fix     fld dword ptr [esi+24h]
+//L-fix     fld dword ptr [esi+28h]
+//L-fix     fld st(1)
+//L-fix     fmul st, st(3)
+//L-fix     fld st(1)
+//L-fix     fmul [esp+10h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+24h]
   }
@@ -12130,7 +12130,7 @@ void CChatEventSink::HandleServerList(int a1, int a2, int a3)
   int v48; // [esp+20h] [ebp-304h]
   char v49[128]; // [esp+24h] [ebp-300h] BYREF
   char v50[128]; // [esp+A4h] [ebp-280h] BYREF
-  char String[128]; // [esp+124h] [ebp-200h] BYREF
+  char String_v[128]; // [esp+124h] [ebp-200h] BYREF
   char v52[128]; // [esp+1A4h] [ebp-180h] BYREF
   char v53[128]; // [esp+224h] [ebp-100h] BYREF
   char v54[128]; // [esp+2A4h] [ebp-80h] BYREF
@@ -12287,9 +12287,9 @@ void CChatEventSink::HandleServerList(int a1, int a2, int a3)
         v8 = g_WOL_UserList; /*0x7a44ec*/
       }
       g_WOL_UserList = v8 + 1; /*0x7a44f5*/
-      strcpy(String, (const char *)(v4 + 24)); /*0x7a451a*/
+      strcpy(String_v, (const char *)(v4 + 24)); /*0x7a451a*/
       v22 = -1; /*0x7a452a*/
-      v23 = strtok(String, Delimiter); /*0x7a4533*/
+      v23 = strtok(String_v, Delimiter); /*0x7a4533*/
       if ( v23 ) /*0x7a453a*/
       {
         while ( 1 ) /*0x7a4542*/
@@ -16465,7 +16465,7 @@ void ExceptionHandler::GenerateReport()
   int v57; // [esp+4Ch] [ebp-4B0h]
   int v58; // [esp+50h] [ebp-4ACh] BYREF
   HMODULE hLibModule; // [esp+54h] [ebp-4A8h]
-  CHAR String[256]; // [esp+58h] [ebp-4A4h] BYREF
+  CHAR String_v[256]; // [esp+58h] [ebp-4A4h] BYREF
   CHAR String2[32]; // [esp+158h] [ebp-3A4h] BYREF
   unsigned int v62[64]; // [esp+178h] [ebp-384h] BYREF
   char Buffer[128]; // [esp+278h] [ebp-284h] BYREF
@@ -16548,10 +16548,10 @@ void ExceptionHandler::GenerateReport()
     lstrcatA(::Buffer, ::String2); /*0x4c8807*/
   if ( **(unsigned int **)v55 == -1073741819 ) /*0x4c881b*/
   {
-    wsprintfA(String, "Access address:%08X ", v56); /*0x4c8830*/
+    wsprintfA(String_v, "Access address:%08X ", v56); /*0x4c8830*/
     v14 = lstrlenA(::Buffer); /*0x4c883c*/
-    if ( lstrlenA(String) + v14 < 0xFFFF ) /*0x4c884d*/
-      lstrcatA(::Buffer, String); /*0x4c8859*/
+    if ( lstrlenA(String_v) + v14 < 0xFFFF ) /*0x4c884d*/
+      lstrcatA(::Buffer, String_v); /*0x4c8859*/
     if ( v52 ) /*0x4c8865*/
     {
       v15 = lstrlenA(::String); /*0x4c886e*/
@@ -16578,7 +16578,7 @@ void ExceptionHandler::GenerateReport()
          && (v46 = *(unsigned int *)(*(unsigned int *)&v6 + 184), v17 = GetCurrentProcess(), dword_8B3A8C(v17, v46, &v53, v62)) )
   {
     wsprintfA( /*0x4c894d*/
-      String,
+      String_v,
       "Exception occurred at %08X - %s + %08X\r\n",
       *(unsigned int *)(*(unsigned int *)&v6 + 184),
       (const char *)&v62[5],
@@ -16592,29 +16592,29 @@ void ExceptionHandler::GenerateReport()
       GetLastError(); /*0x4c896c*/
       Debug::Log(); /*0x4c8978*/
     }
-    wsprintfA(String, "Exception occurred at %08X\r\n", *(unsigned int *)(*(unsigned int *)&v6 + 184)); /*0x4c8991*/
+    wsprintfA(String_v, "Exception occurred at %08X\r\n", *(unsigned int *)(*(unsigned int *)&v6 + 184)); /*0x4c8991*/
   }
   v18 = lstrlenA(::Buffer); /*0x4c89b0*/
-  if ( lstrlenA(String) + v18 < 0xFFFF ) /*0x4c89bd*/
-    lstrcatA(::Buffer, String); /*0x4c89c9*/
+  if ( lstrlenA(String_v) + v18 < 0xFFFF ) /*0x4c89bd*/
+    lstrcatA(::Buffer, String_v); /*0x4c89c9*/
   ModuleVersion = GetModuleVersion(); /*0x4c89cf*/
-  wsprintfA(String, "\r\nVersion %s\r\n", ModuleVersion); /*0x4c89df*/
+  wsprintfA(String_v, "\r\nVersion %s\r\n", ModuleVersion); /*0x4c89df*/
   v20 = lstrlenA(::Buffer); /*0x4c89ef*/
-  if ( lstrlenA(String) + v20 < 0xFFFF ) /*0x4c89fc*/
-    lstrcatA(::Buffer, String); /*0x4c8a08*/
+  if ( lstrlenA(String_v) + v20 < 0xFFFF ) /*0x4c89fc*/
+    lstrcatA(::Buffer, String_v); /*0x4c8a08*/
   ModuleInternalVersion = GetModuleInternalVersion((ObjectClass *)&((unsigned int *)&stru_A8EB00)[252]); /*0x4c8a13*/
-  wsprintfA(String, "Internal Version %s\r\n", ModuleInternalVersion); /*0x4c8a23*/
+  wsprintfA(String_v, "Internal Version %s\r\n", ModuleInternalVersion); /*0x4c8a23*/
   v22 = lstrlenA(::Buffer); /*0x4c8a33*/
-  if ( lstrlenA(String) + v22 < 0xFFFF ) /*0x4c8a40*/
-    lstrcatA(::Buffer, String); /*0x4c8a4c*/
+  if ( lstrlenA(String_v) + v22 < 0xFFFF ) /*0x4c8a40*/
+    lstrcatA(::Buffer, String_v); /*0x4c8a4c*/
   Buffer[0] = 0; /*0x4c8a5e*/
   Time::FormatDate(Buffer); /*0x4c8a66*/
   v48 = String::CopyConstant(Destination); /*0x4c8a90*/
   v23 = String::FormatDword(v66); /*0x4c8a91*/
-  wsprintfA(String, "Release Build: %s by %s - %s\r\n", v23, v48, Buffer);
+  wsprintfA(String_v, "Release Build: %s by %s - %s\r\n", v23, v48, Buffer);
   v24 = lstrlenA(::Buffer); /*0x4c8ab1*/
-  if ( lstrlenA(String) + v24 < 0xFFFF ) /*0x4c8abe*/
-    lstrcatA(::Buffer, String); /*0x4c8aca*/
+  if ( lstrlenA(String_v) + v24 < 0xFFFF ) /*0x4c8abe*/
+    lstrcatA(::Buffer, String_v); /*0x4c8aca*/
   v58 = 5; /*0x4c8adc*/
   v51 = 0; /*0x4c8ae4*/
   GetVersionString(&v58, &v51, 0, 0); /*0x4c8ae9*/
@@ -16623,47 +16623,47 @@ void ExceptionHandler::GenerateReport()
     v25 = g_INI_Key_No; /*0x4c8afb*/
   v25 = v25; /*0x4c8b05*/
   Name = PlayerType::GetName(); /*0x4c8b06*/
-  wsprintfA(String, "CPU %s, MMX %s, Vendor: %s\r\n", Name, v25, Source);
+  wsprintfA(String_v, "CPU %s, MMX %s, Vendor: %s\r\n", Name, v25, Source);
   v27 = lstrlenA(::Buffer); /*0x4c8b26*/
-  if ( lstrlenA(String) + v27 < 0xFFFF ) /*0x4c8b33*/
-    lstrcatA(::Buffer, String); /*0x4c8b3f*/
+  if ( lstrlenA(String_v) + v27 < 0xFFFF ) /*0x4c8b33*/
+    lstrcatA(::Buffer, String_v); /*0x4c8b3f*/
   v28 = lstrlenA(aDetails); /*0x4c8b4c*/
   if ( lstrlenA(::Buffer) + v28 < 0xFFFF ) /*0x4c8b5d*/
     lstrcatA(::Buffer, aDetails); /*0x4c8b69*/
   Debug::Log(); /*0x4c8b74*/
   wsprintfA( /*0x4c8b98*/
-    String,
+    String_v,
     "Eip:%08X\tEsp:%08X\tEbp:%08X\r\n",
     *(unsigned int *)(*(unsigned int *)&v6 + 184),
     *(unsigned int *)(*(unsigned int *)&v6 + 196),
     *(unsigned int *)(*(unsigned int *)&v6 + 180));
   v29 = lstrlenA(::Buffer); /*0x4c8ba8*/
-  if ( lstrlenA(String) + v29 < 0xFFFF ) /*0x4c8bb5*/
-    lstrcatA(::Buffer, String); /*0x4c8bc1*/
+  if ( lstrlenA(String_v) + v29 < 0xFFFF ) /*0x4c8bb5*/
+    lstrcatA(::Buffer, String_v); /*0x4c8bc1*/
   wsprintfA( /*0x4c8be6*/
-    String,
+    String_v,
     "Eax:%08X\tEbx:%08X\tEcx:%08X\r\n",
     *(unsigned int *)(*(unsigned int *)&v6 + 176),
     *(unsigned int *)(*(unsigned int *)&v6 + 164),
     *(unsigned int *)(*(unsigned int *)&v6 + 172));
   v30 = lstrlenA(::Buffer); /*0x4c8bf6*/
-  if ( lstrlenA(String) + v30 < 0xFFFF ) /*0x4c8c03*/
-    lstrcatA(::Buffer, String); /*0x4c8c0f*/
+  if ( lstrlenA(String_v) + v30 < 0xFFFF ) /*0x4c8c03*/
+    lstrcatA(::Buffer, String_v); /*0x4c8c0f*/
   wsprintfA( /*0x4c8c34*/
-    String,
+    String_v,
     "Edx:%08X\tEsi:%08X\tEdi:%08X\r\n",
     *(unsigned int *)(*(unsigned int *)&v6 + 168),
     *(unsigned int *)(*(unsigned int *)&v6 + 160),
     *(unsigned int *)(*(unsigned int *)&v6 + 156));
   v31 = lstrlenA(::Buffer); /*0x4c8c44*/
-  if ( lstrlenA(String) + v31 < 0xFFFF ) /*0x4c8c51*/
-    lstrcatA(::Buffer, String); /*0x4c8c5d*/
-  wsprintfA(String, "EFlags:%08X \r\n", *(unsigned int *)(*(unsigned int *)&v6 + 192)); /*0x4c8c74*/
+  if ( lstrlenA(String_v) + v31 < 0xFFFF ) /*0x4c8c51*/
+    lstrcatA(::Buffer, String_v); /*0x4c8c5d*/
+  wsprintfA(String_v, "EFlags:%08X \r\n", *(unsigned int *)(*(unsigned int *)&v6 + 192)); /*0x4c8c74*/
   v32 = lstrlenA(::Buffer); /*0x4c8c80*/
-  if ( lstrlenA(String) + v32 < 0xFFFF ) /*0x4c8c91*/
-    lstrcatA(::Buffer, String); /*0x4c8c9d*/
+  if ( lstrlenA(String_v) + v32 < 0xFFFF ) /*0x4c8c91*/
+    lstrcatA(::Buffer, String_v); /*0x4c8c9d*/
   wsprintfA( /*0x4c8cd7*/
-    String,
+    String_v,
     "CS:%04x  SS:%04x  DS:%04x  ES:%04x  FS:%04x  GS:%04x\r\n",
     *(unsigned int *)(*(unsigned int *)&v6 + 188),
     *(unsigned int *)(*(unsigned int *)&v6 + 200),
@@ -16672,31 +16672,31 @@ void ExceptionHandler::GenerateReport()
     *(unsigned int *)(*(unsigned int *)&v6 + 144),
     *(unsigned int *)(*(unsigned int *)&v6 + 140));
   v33 = lstrlenA(::Buffer); /*0x4c8ce3*/
-  if ( lstrlenA(String) + v33 < 0xFFFF ) /*0x4c8cf4*/
-    lstrcatA(::Buffer, String); /*0x4c8d00*/
+  if ( lstrlenA(String_v) + v33 < 0xFFFF ) /*0x4c8cf4*/
+    lstrcatA(::Buffer, String_v); /*0x4c8d00*/
   Debug::Log(); /*0x4c8d0b*/
-  wsprintfA(String, "\r\nBytes at CS:EIP (%08X)  : ", *(unsigned int *)(*(unsigned int *)&v6 + 184));
+  wsprintfA(String_v, "\r\nBytes at CS:EIP (%08X)  : ", *(unsigned int *)(*(unsigned int *)&v6 + 184));
   v34 = *(uint8_t **)(*(unsigned int *)&v6 + 184); /*0x4c8d23*/
   v52 = 32; /*0x4c8d2c*/
   do /*0x4c8d81*/
   {
     if ( IsBadReadPtr(v34, 1u) ) /*0x4c8d37*/
     {
-      lstrcatA(String, asc_821DE0); /*0x4c8d4b*/
+      lstrcatA(String_v, asc_821DE0); /*0x4c8d4b*/
     }
     else
     {
       wsprintfA(String2, "%02X ", *v34); /*0x4c8d5f*/
-      lstrcatA(String, String2); /*0x4c8d71*/
+      lstrcatA(String_v, String2); /*0x4c8d71*/
     }
     ++v34; /*0x4c8d77*/
     --v52; /*0x4c8d7d*/
   }
   while ( v52 ); /*0x4c8d81*/
-  lstrcatA(String, asc_821DD0); /*0x4c8d8d*/
+  lstrcatA(String_v, asc_821DD0); /*0x4c8d8d*/
   v35 = lstrlenA(::Buffer); /*0x4c8d9e*/
-  if ( lstrlenA(String) + v35 < 0xFFFF ) /*0x4c8dab*/
-    lstrcatA(::Buffer, String); /*0x4c8db7*/
+  if ( lstrlenA(String_v) + v35 < 0xFFFF ) /*0x4c8dab*/
+    lstrcatA(::Buffer, String_v); /*0x4c8db7*/
   Debug::Log(); /*0x4c8dc2*/
   v36 = lstrlenA(aStackDumpIndic); /*0x4c8dd1*/
   if ( lstrlenA(::Buffer) + v36 < 0xFFFF ) /*0x4c8de2*/
@@ -16708,8 +16708,8 @@ void ExceptionHandler::GenerateReport()
   {
     if ( IsBadReadPtr(v37, 4u) )
     {
-      wsprintfA(String, "%08X: ", v37);
-      v38(String, asc_821D78); /*0x4c8e2f*/
+      wsprintfA(String_v, "%08X: ", v37);
+      v38(String_v, asc_821D78); /*0x4c8e2f*/
     }
     else
     {
@@ -16717,7 +16717,7 @@ void ExceptionHandler::GenerateReport()
       v50 = *v37; /*0x4c8e41*/
       if ( v39 )
       {
-        wsprintfA(String, "%08X: %08X", v37, v50);
+        wsprintfA(String_v, "%08X: %08X", v37, v50);
         if ( v54 ) /*0x4c8e78*/
         {
           v62[0] = 256; /*0x4c8e83*/
@@ -16731,31 +16731,31 @@ void ExceptionHandler::GenerateReport()
             if ( dword_8B3A8C(v40, v47, &v53, v62) ) /*0x4c8ec8*/
             {
               wsprintfA(Filename, " - %s + %08X", (const char *)&v62[5], v53); /*0x4c8eec*/
-              v38(String, Filename); /*0x4c8efe*/
+              v38(String_v, Filename); /*0x4c8efe*/
             }
           }
         }
         else
         {
-          v38(String, asc_821D40); /*0x4c8f0a*/
+          v38(String_v, asc_821D40); /*0x4c8f0a*/
         }
-        v38(String, ::String2); /*0x4c8f16*/
+        v38(String_v, ::String2); /*0x4c8f16*/
       }
       else
       {
-        wsprintfA(String, "%08X: %08X ", v37, v50);
-        v38(String, aDataPtr); /*0x4c8e5e*/
+        wsprintfA(String_v, "%08X: %08X ", v37, v50);
+        v38(String_v, aDataPtr); /*0x4c8e5e*/
       }
     }
     v41 = lstrlenA(::Buffer); /*0x4c8f23*/
-    if ( lstrlenA(String) + v41 >= 0xFFFF ) /*0x4c8f30*/
+    if ( lstrlenA(String_v) + v41 >= 0xFFFF ) /*0x4c8f30*/
     {
       v38 = (void (*)(LPSTR, LPCSTR))lstrcatA; /*0x4c8f46*/
     }
     else
     {
       v38 = (void (*)(LPSTR, LPCSTR))lstrcatA; /*0x4c8f32*/
-      lstrcatA(::Buffer, String); /*0x4c8f42*/
+      lstrcatA(::Buffer, String_v); /*0x4c8f42*/
     }
     ++v37; /*0x4c8f50*/
     --v52; /*0x4c8f54*/
@@ -22669,11 +22669,11 @@ void ObserverClass::FindStartingCell(unsigned int * a1, int a2, int a3, int a4)
               v27 = (int16_t)(*(unsigned short *)(v19 + 4 * v16 + 2) - *(unsigned short *)(v19 + 4 * v18 + 2)); /*0x5d6ae5*/
               __asm /*0x5d6ae9*/
               {
-                fild [esp+28h+var_4]
-                fld st
-                fmul st, st(1)
-                fld st(2)
-                fmul st, st(3)
+//L-fix                 fild [esp+28h+var_4]
+//L-fix                 fld st
+//L-fix                 fmul st, st(1)
+//L-fix                 fld st(2)
+//L-fix                 fmul st, st(3)
                 faddp st(1), st
                 fstp [esp+28h+var_28]; double
                 fstp st
@@ -33425,3 +33425,4 @@ DiskLaserClass::DiskLaserClass() {}
 NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {}
+}  // L-fix: close namespace tail 1

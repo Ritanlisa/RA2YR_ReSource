@@ -536,8 +536,8 @@ LABEL_25:
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
   /* asm-debt:__asm */
   {
-    fcom ds:dbl_7E2800
-    fnstsw ax
+//L-fix     fcom ds:dbl_7E2800
+//L-fix     fnstsw ax
   }
   if ( (_AX & 0x4000) != 0 ) /*0x6ced7e*/
   {

@@ -131,7 +131,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-AbstractClass * BuildingClass::Construct(int a2 a2, int a3 a3)
+AbstractClass * BuildingClass::Construct(int a2, int a3)
 {
   int16_t v6; // cx
   int v7; // eax
@@ -379,7 +379,7 @@ int BuildingClass::Dtor()
   int v9; // ebx
   BuildingTypeClass *Type; // eax
   char CloakRadius; // cl
-  int SuperWeapon; // eax
+  int SuperWeapon_v; // eax
   int v13; // eax
   int SuperWeapon2; // eax
   int v15; // eax
@@ -461,9 +461,9 @@ int BuildingClass::Dtor()
       }
     }
   }
-  SuperWeapon = this->Type->SuperWeapon; /*0x43be50*/
-  if ( (SuperWeapon == -1 /*0x43bee8*/
-     || (v13 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + SuperWeapon) + 40) + 200)) == 0
+  SuperWeapon_v = this->Type->SuperWeapon; /*0x43be50*/
+  if ( (SuperWeapon_v == -1 /*0x43bee8*/
+     || (v13 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + SuperWeapon_v) + 40) + 200)) == 0
      || DynamicVector::GetOrGrow((DynamicVector *)((unsigned int *)this)[0]->ownedInfantryTypes2, *(unsigned int *)(v13 + 3576)))
     && this->Type->SuperWeapon != -1
     || ((SuperWeapon2 = this->Type->SuperWeapon2, SuperWeapon2 == -1)
@@ -15447,11 +15447,11 @@ void BuildingClass::UpdateBunker() {}
           __asm { fild [esp+88h+var_6C] } /*0x459090*/
           __asm
           {
-            fisub [esp+98h+var_70]
-            fstp [esp+98h+var_90]; double
-            fild dword ptr [eax+4]
-            fisub dword ptr [edi+4]
-            fstp [esp+98h+var_98]; double
+//L-fix             fisub [esp+98h+var_70]
+//L-fix             fstp [esp+98h+var_90]; double
+//L-fix             fild dword ptr [eax+4]
+//L-fix             fisub dword ptr [edi+4]
+//L-fix             fstp [esp+98h+var_98]; double
           }
           Math::CalcAngle(v38, v39); /*0x4590ab*/
           __asm { fsub ds:dbl_7E2820 } /*0x4590b0*/

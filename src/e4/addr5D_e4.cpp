@@ -702,7 +702,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
   char **v2; // esi
   int v3; // eax
   int v4; // edi
-  int String; // esi
+  int String_v; // esi
   int v6; // esi
   char *v7; // eax
   wchar_t *StringCSF; // eax
@@ -746,10 +746,10 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
           ((String *)((String *)&v19.attachedBomb))->Assign(&g_INI_DefaultBuffer); /*0x5d768d*/
-          String = ((INIClass*)/*0x5d76b2*/
+          String_v = ((INIClass*)/*0x5d76b2*/
                      (INIClass *)&v19.bombVisible)->ReadString(/*0x5d76b2*/ v2, (char **)((char *)&v19), (char **)&v19.attachedBomb, (int)&v19);
           j_DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
-          if ( String <= 0 ) /*0x5d76bb*/
+          if ( String_v <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
           unknown_libname_73(((char *)&v19)); /*0x5d76c5*/
           v6 = String::Tokenize((String *)&v19, 0, Str, &((char *)&v19)); /*0x5d76e2*/

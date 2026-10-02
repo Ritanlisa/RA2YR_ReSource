@@ -25,8 +25,6 @@
 // 0x597730
 namespace gamemd {  // G42.18c ns repair
 int MapSeed::ValidateName(int a2)
-int MapSeed::ValidateName(int a2)
-}  // G42.18c ns repair
 {
 
   int result; // eax

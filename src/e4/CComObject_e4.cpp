@@ -463,7 +463,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       Buffer[40] = 0; /*0x7a5827*/
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
     }
-    v11 = (HWND)((Dialog*)(gamemd::Dialog *)0xC4)->FindByHandle(); /*0x7a583b*/
+    v11 = (HWND)(gamemd::Dialog *)0xC4->FindByHandle(); /*0x7a583b*/
     if ( v11 ) /*0x7a5845*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~4u; /*0x7a5850*/
@@ -481,7 +481,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/
-    v4 = (HWND)((Dialog*)(gamemd::Dialog *)0xC4)->FindByHandle(); /*0x7a56da*/
+    v4 = (HWND)(gamemd::Dialog *)0xC4->FindByHandle(); /*0x7a56da*/
     if ( v4 ) /*0x7a56e1*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~4u; /*0x7a56ec*/
@@ -583,10 +583,10 @@ LABEL_16:
   {
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7a7cd9*/
     {
-      v11 = (HWND)((Dialog*)(gamemd::Dialog *)0x117)->FindByHandle(); /*0x7a7ce0*/
+      v11 = (HWND)(gamemd::Dialog *)0x117->FindByHandle(); /*0x7a7ce0*/
       CloseDialog(v11, 0); /*0x7a7ce9*/
     }
-    v12 = (HWND)((Dialog*)(gamemd::Dialog *)0xCF)->FindByHandle(); /*0x7a7cf3*/
+    v12 = (HWND)(gamemd::Dialog *)0xCF->FindByHandle(); /*0x7a7cf3*/
     CloseDialog(v12, 0); /*0x7a7cfc*/
     *(unsigned int *)&g_WOL_BuddyList.__pad_20[4] = a5; /*0x7a7d14*/
     *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
@@ -623,7 +623,7 @@ LABEL_16:
         if ( v15 >= g_WOL_UserList.owningHouseIndex ) /*0x7a7e4e*/
           goto LABEL_41; /*0x7a7e4e*/
       }
-      if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x7a7e59*/
+      if ( &g_WebBrowserConfig != (int *)(ObjectClass *)-36 ) /*0x7a7e59*/
         BulkCharToWide(word_A8E258, (uint8_t *)&g_WebBrowserConfig.ambientSoundController[3], -1); /*0x7a7e67*/
     }
 LABEL_41:
@@ -826,11 +826,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         {
           v8 = 1; /*0x7a8e0e*/
         }
-        else if ( ((Dialog*)(gamemd::Dialog *)0xC2)->FindByHandle() ) /*0x7a8e17*/
+        else if ( (gamemd::Dialog *)0xC2->FindByHandle() ) /*0x7a8e17*/
         {
           v8 = 1; /*0x7a8e20*/
         }
-        else if ( ((Dialog*)(gamemd::Dialog *)0xC9)->FindByHandle() ) /*0x7a8e29*/
+        else if ( (gamemd::Dialog *)0xC9->FindByHandle() ) /*0x7a8e29*/
         {
           v8 = 1; /*0x7a8e32*/
         }
@@ -886,7 +886,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
   v6 = a4; /*0x7a8efc*/
   if ( a4 ) /*0x7a8f02*/
   {
-    if ( (*a4 & 1) != 0 || ((Dialog*)(gamemd::Dialog *)0xC2)->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
+    if ( (*a4 & 1) != 0 || (gamemd::Dialog *)0xC2->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
     v7 = (uint8_t)((WideString*)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a8f30*/
@@ -1046,7 +1046,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
   Dialog *Current; // esi
   wchar_t *v15; // eax
   wchar_t *v16; // eax
-  HWND Dialog; // eax
+  HWND Dialog_v; // eax
   wchar_t *v18; // eax
   HWND DlgItem; // eax
   String *ChatCommand; // ebx
@@ -1121,11 +1121,11 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
 LABEL_22:
         ReleaseCapture(); /*0x7a945a*/
         Screen::Capture(1, 0, (int)(a3 + 36), (int)a3); /*0x7a9464*/
-        Dialog = (HWND)CreateDialog(0x11Eu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))ChatDialog::DlgProc, 0); /*0x7a9475*/
-        Current = (Dialog *)Dialog; /*0x7a947a*/
-        if ( Dialog ) /*0x7a947e*/
+        Dialog_v = (HWND)CreateDialog(0x11Eu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))ChatDialog::DlgProc, 0); /*0x7a9475*/
+        Current = (Dialog *)Dialog_v; /*0x7a947a*/
+        if ( Dialog_v ) /*0x7a947e*/
         {
-          SetFocus(Dialog); /*0x7a9481*/
+          SetFocus(Dialog_v); /*0x7a9481*/
           v18 = WideString::GetOrEmpty((wchar_t **)&v26); /*0x7a948b*/
           Dialog::ShowMessage(0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, v18); /*0x7a949e*/
           ShowWindow((HWND)Current, 1); /*0x7a94a9*/

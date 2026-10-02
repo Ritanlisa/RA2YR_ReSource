@@ -173,7 +173,7 @@ int BuildingQueue::FindFreeSlot(int a2) {
 
 // 0x47EC90
 namespace gamemd {
-char BuildingPlacement::RenderBuildingPlacementPreview(int this, unsigned int *a2, int *a3, char a4) {
+char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3, char a4) {
     int v5; // eax
     unsigned int *v6; // edi
     int v7; // ebp
@@ -530,7 +530,7 @@ int ColorListClass::SetIndex(int a2, int a3) {
 
 // 0x488980
 namespace gamemd {
-unsigned int * ColorListClass::DrawColorRect(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6) {
+unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int a6) {
     int v7; // edi
     int v8; // eax
     unsigned int *result; // eax
@@ -1824,7 +1824,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
     int v31; // [esp+14h] [ebp-114h]
     int j; // [esp+14h] [ebp-114h]
     int v34; // [esp+1Ch] [ebp-10Ch]
-    char String[256]; // [esp+28h] [ebp-100h] BYREF
+    char String_v[256]; // [esp+28h] [ebp-100h] BYREF
 
     v2 = (unsigned int *)*((unsigned int *)this + 3); /*0x627b2f*/
     *this = (ColorSchemeClass)a2; /*0x627b32*/
@@ -1859,9 +1859,9 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
       {
         do /*0x627d0c*/
         {
-          String::CopyUpper(String, v28); /*0x627bc0*/
+          String::CopyUpper(String_v, v28); /*0x627bc0*/
           v9 = *((unsigned int *)this + 3); /*0x627bc9*/
-          v10 = (*(int (__thiscall **)(char *))(v9 + 4))(String); /*0x627bd0*/
+          v10 = (*(int (__thiscall **)(char *))(v9 + 4))(String_v); /*0x627bd0*/
           v11 = 3 * (v10 % *(unsigned int *)(v9 + 8)); /*0x627bd9*/
           v12 = *(unsigned int *)v9 + 24 * (v10 % *(unsigned int *)(v9 + 8)); /*0x627be0*/
           v13 = *(unsigned int *)(*(unsigned int *)v9 + 8 * v11 + 16) - 1; /*0x627be3*/
@@ -1877,7 +1877,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
             while ( 1 ) /*0x627bff*/
             {
               v15 = (const char *)(*(unsigned int *)(v12 + 4) + v14); /*0x627bff*/
-              if ( (uint8_t)String::Equals(v15, String) ) /*0x627c08*/
+              if ( (uint8_t)String::Equals(v15, String_v) ) /*0x627c08*/
                 break; /*0x627c08*/
               --v13; /*0x627c15*/
               v14 -= 260; /*0x627c16*/

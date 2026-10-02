@@ -194,15 +194,15 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
     v34);
   /* asm-debt:__asm */
   {
-    fcom ds:dbl_7E1718
-    fnstsw ax
+//L-fix     fcom ds:dbl_7E1718
+//L-fix     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5fa9d8*/
   {
     /* asm-debt:__asm */
     {
-      fstp st
-      fld ds:dbl_7E1718
+//L-fix       fstp st
+//L-fix       fld ds:dbl_7E1718
     }
   }
   /* asm-debt:__asm { fst dword ptr [esi+38h] } */
@@ -222,15 +222,15 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
     v36);
   /* asm-debt:__asm */
   {
-    fcom ds:dbl_7E1718
-    fnstsw ax
+//L-fix     fcom ds:dbl_7E1718
+//L-fix     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5faa38*/
   {
     /* asm-debt:__asm */
     {
-      fstp st
-      fld ds:dbl_7E1718
+//L-fix       fstp st
+//L-fix       fld ds:dbl_7E1718
     }
   }
   /* asm-debt:__asm { fst dword ptr [esi+3Ch] } */
@@ -240,8 +240,8 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
   ThemeClass::GetField(v16); /*0x5faa52*/
   /* asm-debt:__asm */
   {
-    fld dword ptr [esi+3Ch]
-    fmul ds:flt_7EF38C
+//L-fix     fld dword ptr [esi+3Ch]
+//L-fix     fmul ds:flt_7EF38C
   }
   LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
   EndBufferMixer((int *)g_MixerChannel_Voice, v17); /*0x5faa6d*/
@@ -257,15 +257,15 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
     v38);
   /* asm-debt:__asm */
   {
-    fcom ds:dbl_7E1718
-    fnstsw ax
+//L-fix     fcom ds:dbl_7E1718
+//L-fix     fnstsw ax
   }
   if ( (_AX & 0x100) == 0 ) /*0x5faaad*/
   {
     /* asm-debt:__asm */
     {
-      fstp st
-      fld ds:dbl_7E1718
+//L-fix       fstp st
+//L-fix       fld ds:dbl_7E1718
     }
   }
   /* asm-debt:__asm { fst dword ptr [esi+40h] } */
@@ -275,8 +275,8 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
   EndBufferMixer((int *)g_MixerChannel_Theme, v20); /*0x5faacd*/
   /* asm-debt:__asm */
   {
-    fld dword ptr [esi+40h]
-    fmul ds:dbl_7EAA50
+//L-fix     fld dword ptr [esi+40h]
+//L-fix     fmul ds:dbl_7EAA50
   }
   LOWORD(v21) = Math::RoundToInt(v1); /*0x5faadb*/
   TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v21); /*0x5faae6*/

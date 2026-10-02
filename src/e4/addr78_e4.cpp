@@ -546,14 +546,14 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   const wchar_t *v10; // [esp-4h] [ebp-2B4h]
   wchar_t *v11; // [esp-4h] [ebp-2B4h]
   DeleteAndZero v12; // [esp+10h] [ebp-2A0h] BYREF
-  String v13; // [esp+1Ch] [ebp-294h] BYREF
+  String_v v13; // [esp+1Ch] [ebp-294h] BYREF
   int v14; // [esp+24h] [ebp-28Ch] BYREF
   int v15; // [esp+28h] [ebp-288h] BYREF
   int v16; // [esp+2Ch] [ebp-284h] BYREF
   int v17; // [esp+30h] [ebp-280h] BYREF
   char v18[108]; // [esp+34h] [ebp-27Ch] BYREF
   wchar_t *v19[67]; // [esp+A0h] [ebp-210h] BYREF
-  char String[132]; // [esp+1ACh] [ebp-104h] BYREF
+  char String_v[132]; // [esp+1ACh] [ebp-104h] BYREF
   wchar_t Buffer[64]; // [esp+230h] [ebp-80h] BYREF
 
   if ( wParam == -1 ) /*0x780e46*/
@@ -592,14 +592,14 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
     swprintf(Buffer, (const size_t)v8, v10); /*0x780f42*/
     ((WideString *)((WideString *)&v12))->Append2(Buffer); /*0x780f52*/
   }
-  strncpy(String, (const char *)&v19[56], 0x80u); /*0x780f89*/
+  strncpy(String_v, (const char *)&v19[56], 0x80u); /*0x780f89*/
   v14 = 0; /*0x780f95*/
   v15 = 0; /*0x780f99*/
   *(unsigned int *)&v13.q4 = 0; /*0x780f9d*/
   v17 = 0; /*0x780fa1*/
   v16 = 0; /*0x780fa5*/
   unknown_libname_73(&v12.DeleteAndZero_field_0x08); /*0x780fa9*/
-  ParseStringCommaInts(String, &v14, &v15, (int *)&v13.q4, &v17, &v16, (void **)&v12.DeleteAndZero_field_0x08); /*0x780fd2*/
+  ParseStringCommaInts(String_v, &v14, &v15, (int *)&v13.q4, &v17, &v16, (void **)&v12.DeleteAndZero_field_0x08); /*0x780fd2*/
   if ( String::Length((String *)&v12.DeleteAndZero_field_0x08) ) /*0x780fdb*/
   {
     Render_Format((wchar_t **)&v12.DeleteAndZero_field_0x04, (String *)&v12.DeleteAndZero_field_0x08); /*0x780fec*/
@@ -4415,7 +4415,7 @@ void CreateGameWOL()
   int Flag_field_0x08; // ecx
   HWND v40; // eax
   HWND v41; // edi
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   String v43; // [esp+18h] [ebp-1ACh] BYREF
   DeleteAndZero v44; // [esp+20h] [ebp-1A4h] BYREF
   ComPtr v45; // [esp+2Ch] [ebp-198h] BYREF
@@ -4711,12 +4711,12 @@ void CreateGameWOL()
     }
     Screen::Capture(1, 0, (uint8_t)v30, (int)v37); /*0x78a3ad*/
     LoadingScreen::Init(); /*0x78a3b2*/
-    Dialog = (HWND)CreateDialog(0xC2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
+    Dialog_v = (HWND)CreateDialog(0xC2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
     (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 39))(dword_A8B23C); /*0x78a3d2*/
     (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 8))(dword_A8B23C); /*0x78a3e0*/
     (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 6))(dword_A8B23C); /*0x78a3eb*/
     (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 31))(dword_A8B23C); /*0x78a3f6*/
-    ShowWindow(Dialog, 1); /*0x78a402*/
+    ShowWindow(Dialog_v, 1); /*0x78a402*/
     if ( v41 ) /*0x78a406*/
       ShowWindow(v41, 0); /*0x78a40b*/
   }

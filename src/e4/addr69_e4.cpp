@@ -519,7 +519,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
-    this->((gamemd::Debug *)this)->Log(); /*0x6945b1*/
+    ((gamemd::Debug *)this->this)->Log(); /*0x6945b1*/
     qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
@@ -541,7 +541,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v19 = v35; /*0x694629*/
     if ( Ticks != -1 ) /*0x694634*/
     {
-      v20 = this->((gamemd::Timer *)this)->GetTicks() - Ticks; /*0x69463f*/
+      v20 = ((gamemd::Timer *)this->this)->GetTicks() - Ticks; /*0x69463f*/
       if ( v20 >= v19 ) /*0x694645*/
         goto LABEL_53; /*0x694645*/
       v19 -= v20; /*0x694647*/
@@ -550,7 +550,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
       goto LABEL_53; /*0x69464b*/
   }
   MessageLoop(); /*0x6943a3*/
-  this->((gamemd::Event *)this)->Dispatch(); /*0x6943a8*/
+  ((gamemd::Event *)this->this)->Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
   if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/

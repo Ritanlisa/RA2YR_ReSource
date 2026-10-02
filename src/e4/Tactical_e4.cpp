@@ -2375,3 +2375,4 @@ VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
 
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

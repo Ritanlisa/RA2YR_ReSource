@@ -172,7 +172,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     }
   }
   *((unsigned int *)this + 8) = (unsigned int)(&vt_GenericNode); /*0x52ac5c*/
-  if ( this != (gamemd::WarheadTypeClass *)((char *))-32 ) /*0x52ac62*/
+  if ( this != (gamemd::WarheadTypeClass *)(char *)-32 ) /*0x52ac62*/
   {
     v8 = *((unsigned int *)this + 9); /*0x52ac64*/
     if ( v8 ) /*0x52ac69*/
@@ -189,7 +189,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   }
   result = (char *)((unsigned char *)this + 20);
   *((unsigned int *)this + 5) = (unsigned int)(&vt_GenericNode); /*0x52ac89*/
-  if ( this != (gamemd::WarheadTypeClass *)((char *))-20 ) /*0x52ac8f*/
+  if ( this != (gamemd::WarheadTypeClass *)(char *)-20 ) /*0x52ac8f*/
   {
     v11 = *((unsigned int *)this + 6); /*0x52ac91*/
     if ( v11 ) /*0x52ac96*/
@@ -259,7 +259,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
     }
   }
   this->WarheadTypeClass_field_0x10 = &vt_GenericNode; /*0x52b007*/
-  if ( this != (unsigned int *)((WarheadTypeClass *))-16 ) /*0x52b00d*/
+  if ( this != (unsigned int *)(WarheadTypeClass *)-16 ) /*0x52b00d*/
   {
     v6 = this->AnimList[0]; /*0x52b00f*/
     if ( v6 ) /*0x52b014*/

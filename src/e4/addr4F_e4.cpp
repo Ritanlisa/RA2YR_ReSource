@@ -120,15 +120,15 @@ int InGameUI_Open()
 namespace gamemd {
 long sub_4F1840()
 {
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = 0; /*0x4f184e*/
-  Dialog = (HWND)CreateDialog(0xB6u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_4F18B0, 0); /*0x4f185b*/
-  if ( Dialog ) /*0x4f185f*/
+  Dialog_v = (HWND)CreateDialog(0xB6u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_4F18B0, 0); /*0x4f185b*/
+  if ( Dialog_v ) /*0x4f185f*/
   {
-    SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4f1869*/
-    ((gamemd::Dialog *)(Dialog))->Show(); /*0x4f1871*/
+    SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x4f1869*/
+    ((gamemd::Dialog *)(Dialog_v))->Show(); /*0x4f1871*/
     if ( !dwNewLong ) /*0x4f187c*/
     {
             while ( ((gamemd::Dialog *)0)->PumpMessages() != 1 )
@@ -139,7 +139,7 @@ long sub_4F1840()
       dwNewLong = 1; /*0x4f1891*/
     }
   LABEL_7:
-    ((Dialog*)Dialog)->Destroy(); /*0x4f1899*/
+    ((Dialog*)Dialog_v)->Destroy(); /*0x4f1899*/
   }
   return dwNewLong; /*0x4f18a4*/
 }

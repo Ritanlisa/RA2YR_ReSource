@@ -159,7 +159,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       *(unsigned int *)Str = 27; /*0x5e7576*/
       break; /*0x5e7576*/
     case 4: /*0x5e7521*/
-      if ( !((Dialog*)(gamemd::Dialog *)0xC9)->FindByHandle() ) /*0x5e7609*/
+      if ( !(gamemd::Dialog *)0xC9->FindByHandle() ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) ) /*0x5e7630*/
@@ -264,7 +264,7 @@ int Session::GetPlayerOption()
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( this->field_178 != (unsigned int)((void *))-2 ) /*0x69b70d*/
+  if ( this->field_178 != (unsigned int)(void *)-2 ) /*0x69b70d*/
     return (int)this->(unsigned int)(field_174); /*0x69b70f*/
   return result; /*0x69b715*/
 
@@ -278,7 +278,7 @@ int Session::GetPlayerColor()
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( this->field_160 != (unsigned int)((void *))-2 ) /*0x69b72d*/
+  if ( this->field_160 != (unsigned int)(void *)-2 ) /*0x69b72d*/
     return (int)this->(unsigned int)(field_15C); /*0x69b72f*/
   return result; /*0x69b735*/
 

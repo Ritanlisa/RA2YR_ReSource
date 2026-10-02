@@ -81,7 +81,7 @@ unsigned int * IPXConnClass::QueryInterface(char a2, int a3, int a4, int a5) {
 
 // 0x53FCB0
 namespace gamemd {
-int IPXGlobalConnClass::GetQueueSize(unsigned short *a2 a2, signed int a3 a3, int *a4 a4, int a5 a5) {
+int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4, int a5) {
     int IPXGlobalConnClass_field_0x04; // ecx
     int v8; // edi
     unsigned int *TileIndex; // eax
@@ -725,7 +725,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl) {
 // 0x5B49B0
 namespace gamemd {
 char ModemGuest::Dialog() {
-    HWND Dialog; // eax
+    HWND Dialog_v; // eax
     int v3; // edi
     int v4; // edi
     TechnoTypeClass *v5; // ecx
@@ -735,15 +735,15 @@ char ModemGuest::Dialog() {
 
     Debug::Log(); /*0x5b49c1*/
     this->ModemGuest_field_0x04 = -1; /*0x5b49d7*/
-    Dialog = (HWND)CreateDialog(0xF2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameSetupDialogProc, 0); /*0x5b49da*/
-    *(unsigned int *)this->__pad_0 = Dialog; /*0x5b49e1*/
-    if ( !Dialog ) /*0x5b49e3*/
+    Dialog_v = (HWND)CreateDialog(0xF2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameSetupDialogProc, 0); /*0x5b49da*/
+    *(unsigned int *)this->__pad_0 = Dialog_v; /*0x5b49e1*/
+    if ( !Dialog_v ) /*0x5b49e3*/
     {
   LABEL_16:
       v7 = 0; /*0x5b4af1*/
       goto LABEL_17; /*0x5b4af1*/
     }
-    SetWindowLongA(Dialog, 8, (LONG)this); /*0x5b49ee*/
+    SetWindowLongA(Dialog_v, 8, (LONG)this); /*0x5b49ee*/
     ModemGuest::InitDialog(this); /*0x5b49f6*/
     Dialog::Show(*(Dialog **)this->__pad_0); /*0x5b49fd*/
     IDA_LOBYTE(this->ModemGuest_field_0x08) = 0; /*0x5b4a02*/
@@ -1473,7 +1473,7 @@ void ModemGame::ReceiveMapPreview() {
 namespace gamemd {
 char ModemHost::Dialog() {
     int v1; // edi
-    HWND Dialog; // eax
+    HWND Dialog_v; // eax
     int v4; // edi
     int v5; // edi
     TechnoTypeClass *v6; // ecx
@@ -1483,12 +1483,12 @@ char ModemHost::Dialog() {
     v9 = 0; /*0x5b77ed*/
     Debug::Log(); /*0x5b77f1*/
     this->ModemHost_field_0x04 = -1; /*0x5b7807*/
-    Dialog = (HWND)CreateDialog(0xF1u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))NetworkGameSetup::DlgProc, 0); /*0x5b780a*/
-    *(unsigned int *)this->__pad_0 = Dialog; /*0x5b7811*/
-    if ( Dialog ) /*0x5b7813*/
+    Dialog_v = (HWND)CreateDialog(0xF1u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))NetworkGameSetup::DlgProc, 0); /*0x5b780a*/
+    *(unsigned int *)this->__pad_0 = Dialog_v; /*0x5b7811*/
+    if ( Dialog_v ) /*0x5b7813*/
     {
       v8 = v1; /*0x5b7819*/
-      SetWindowLongA(Dialog, 8, (LONG)this); /*0x5b781e*/
+      SetWindowLongA(Dialog_v, 8, (LONG)this); /*0x5b781e*/
       ModemHost::InitDialog(this); /*0x5b7826*/
       Dialog::Show(*(Dialog **)this->__pad_0); /*0x5b782d*/
       IDA_LOBYTE(this->ModemHost_field_0x08) = 0; /*0x5b7832*/
@@ -1931,7 +1931,7 @@ int NetworkGameSetup::ReadRulesEngineerCount() {
 
 // 0x5BA060
 namespace gamemd {
-char ModemGuest::ProcessPacket(int this, char a2) {
+char ModemGuest::ProcessPacket(char a2) {
     int v3; // esi
     int v4; // eax
     int *v5; // eax
@@ -2155,7 +2155,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
 
 // 0x5BAC60
 namespace gamemd {
-char ModemHost::StartGame(int this, char a2) {
+char ModemHost::StartGame(char a2) {
     int v3; // eax
     int v4; // esi
     char *v5; // eax
@@ -4360,7 +4360,7 @@ int NetworkEventQueueClass::WaitForResponse() {
 
 // 0x6646C0
 namespace gamemd {
-char NetworkManager::RemovePlayer(int this, int a2) {
+char NetworkManager::RemovePlayer(int a2) {
     int i; // esi
     char *v3; // eax
     char result; // al
@@ -4660,7 +4660,7 @@ int NetworkBuffer::GetField3() {
 
 // 0x77A4A0
 namespace gamemd {
-uint8_t WOLOption::SetValue(int this, const char **a2) {
+uint8_t WOLOption::SetValue(const char **a2) {
     uint8_t result; // al
 
     result = String::Compare(a2, (const char **)(this + 12)); /*0x77a4af*/
@@ -4685,15 +4685,15 @@ int16_t WOLPersona::FormatDateTime() {
     int16_t result; // ax
     int v9; // [esp-4h] [ebp-68h]
     __time32_t Time; // [esp+10h] [ebp-54h] BYREF
-    char String[16]; // [esp+14h] [ebp-50h] BYREF
+    char String_v[16]; // [esp+14h] [ebp-50h] BYREF
     unsigned char v12[64]; // [esp+24h] [ebp-40h] BYREF
 
     Time = time(0); /*0x77a4e0*/
     v2 = localtime(&Time); /*0x77a4f6*/
     SafeDelete::Ptr((SafeDelete *)this + 8); /*0x77a4f8*/
-    String::Wrapper5to4((int)String, 16, (int)aM, (int)v2); /*0x77a50a*/
-    v3 = atoi(String); /*0x77a519*/
-    String::Wrapper5to4((int)String, 16, (int)g_Str_Trace, (int)v2); /*0x77a528*/
+    String::Wrapper5to4((int)String_v, 16, (int)aM, (int)v2); /*0x77a50a*/
+    v3 = atoi(String_v); /*0x77a519*/
+    String::Wrapper5to4((int)String_v, 16, (int)g_Str_Trace, (int)v2); /*0x77a528*/
     switch ( v3 ) /*0x77a533*/
     {
       case 1: /*0x77a533*/
@@ -4740,11 +4740,11 @@ int16_t WOLPersona::FormatDateTime() {
     }
     WideString::Reassign((void **)this + 16, StringCSF); /*0x77a66f*/
     WString::Append((WString *)this + 8, (wchar_t *)asc_82083C); /*0x77a67e*/
-    v5 = CharToWideString(String); /*0x77a687*/
+    v5 = CharToWideString(String_v); /*0x77a687*/
     WString::Append((WString *)this + 8, (wchar_t *)v5); /*0x77a68f*/
     WString::Append((WString *)this + 8, (wchar_t *)asc_82083C); /*0x77a69b*/
-    String::Wrapper5to4((int)String, 16, (int)aY_0, (int)v2); /*0x77a6ad*/
-    v6 = CharToWideString(String); /*0x77a6b9*/
+    String::Wrapper5to4((int)String_v, 16, (int)aY_0, (int)v2); /*0x77a6ad*/
+    v6 = CharToWideString(String_v); /*0x77a6b9*/
     WString::Append((WString *)this + 8, (wchar_t *)v6); /*0x77a6c1*/
     v12[0] = 0; /*0x77a6d3*/
     String::Wrapper5to4((int)v12, 64, (int)aHMS, (int)v2); /*0x77a6d8*/
@@ -5144,7 +5144,7 @@ int WOLGameList::PopulateLobbyLists(int a2, int ***a3, int a4, int a5, int a6) {
     char v53[108]; // [esp+1E8h] [ebp-2944h] BYREF
     char v54[108]; // [esp+254h] [ebp-28D8h] BYREF
     char v55[108]; // [esp+2C0h] [ebp-286Ch] BYREF
-    wchar_t String[5120]; // [esp+32Ch] [ebp-2800h] BYREF
+    wchar_t String_v[5120]; // [esp+32Ch] [ebp-2800h] BYREF
     int v57; // [esp+2B44h] [ebp+18h]
 
     if ( a3 ) /*0x7a3117*/
@@ -5332,8 +5332,8 @@ int WOLGameList::PopulateLobbyLists(int a2, int ***a3, int a4, int a5, int a6) {
           v29 = *(uint16_t *)&v51[4] << 16; /*0x7a34bc*/
           v10(v11, 0x4A8u, v29 | (uint16_t)dword_B779D8, (LPARAM)&v51[32]); /*0x7a34c8*/
           *(unsigned int *)&v51[32] = 1; /*0x7a34d6*/
-          BulkCharToWide(String, (uint8_t *)(v6 + 64), -1); /*0x7a34de*/
-          WideString::Reassign(&v51[36], String); /*0x7a34ef*/
+          BulkCharToWide(String_v, (uint8_t *)(v6 + 64), -1); /*0x7a34de*/
+          WideString::Reassign(&v51[36], String_v); /*0x7a34ef*/
           v10(v11, 0x4A8u, v29 | (uint16_t)dword_B73E08, (LPARAM)&v51[32]); /*0x7a350e*/
           swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v6 + 16)); /*0x7a3521*/
           WideString::Reassign(&v51[36], Buffer); /*0x7a3535*/

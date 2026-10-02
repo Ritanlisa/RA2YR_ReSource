@@ -5192,3 +5192,4 @@ int sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   return result; /*0x55f9f2*/
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

@@ -1182,8 +1182,8 @@ bool TechnoClass::EnterGrinder() { return false; }
 bool TechnoClass::EnterBioReactor() { return false; }
 bool TechnoClass::EnterTankBunker() { return false; }
 bool TechnoClass::EnterBattleBunker() { return false; }
-bool TechnoClass::GarrisonStructure() { return false; 
-bool TechnoClass::CanDeploySlashUnload() const { return false; 
+bool TechnoClass::GarrisonStructure() { return false; }  // L-fix: close stub
+bool TechnoClass::CanDeploySlashUnload() const { return false; }  // L-fix: close stub
 
 void TechnoClass::AddPassenger(FootClass* passenger)
 {
@@ -4532,7 +4532,7 @@ add     esp, 8
 retn    4
 */
 // 0x6f3820
-int TechnoClass::CanTargetHouse() const { return false; 
+int TechnoClass::CanTargetHouse() const { return false; }  // L-fix: close stub
   unsigned int *v1; // esi
   int result; // eax
   char v4; // bl
@@ -4584,13 +4584,13 @@ int TechnoClass::CanTargetHouse() const { return false;
     *(unsigned char *)(v2 + 152) = 0; /*0x638a03*/
     *(unsigned char *)(v2 + 153) = 0; /*0x638a0a*/
   return result; /*0x638a12*/
-int TechnoClass::sub_7441B0() { return 0; 
-int TechnoClass::sub_744180() { return 0; 
-int TechnoClass::sub_744210() { return 0; 
-int TechnoClass::sub_744270() { return 0; 
-int TechnoClass::sub_744720() { return 0; 
-int TechnoClass::sub_7440B0() { return 0; 
-int TechnoClass::sub_744100() { return 0; 
+int TechnoClass::sub_7441B0() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_744180() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_744210() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_744270() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_744720() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_7440B0() { return 0; }  // L-fix: close stub
+int TechnoClass::sub_744100() { return 0; }  // L-fix: close stub
 // 0x743190
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
 // 0x732050

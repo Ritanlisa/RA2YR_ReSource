@@ -2043,11 +2043,11 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       __asm { fild [esp+24h+var_10] } /*0x54bc0a*/
       __asm
       {
-        fisub [esp+34h+var_C]
-        fstp [esp+34h+var_30+4]; double
-        fild [esp+34h+var_8]
-        fisub dword ptr [esi+44h]
-        fstp [esp+34h+var_38+4]; double
+//L-fix         fisub [esp+34h+var_C]
+//L-fix         fstp [esp+34h+var_30+4]; double
+//L-fix         fild [esp+34h+var_8]
+//L-fix         fisub dword ptr [esi+44h]
+//L-fix         fstp [esp+34h+var_38+4]; double
       }
       Math::CalcAngle(v28, v29); /*0x54bc26*/
       __asm { fsub ds:dbl_7E2820 } /*0x54bc2b*/

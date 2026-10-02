@@ -1759,3 +1759,4 @@ unsigned int ScenarioClass::ResetIntroFlags(void *a1)
 
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

@@ -658,12 +658,12 @@ LABEL_5:
                 v46 = v16 - v43; /*0x4fd6c4*/
                 __asm /*0x4fd6c8*/
                 {
-                  fild [esp+48h+var_10]
-                  fild [esp+48h+var_18]
-                  fld st
-                  fmul st, st(1)
-                  fld st(2)
-                  fmul st, st(3)
+//L-fix                   fild [esp+48h+var_10]
+//L-fix                   fild [esp+48h+var_18]
+//L-fix                   fld st
+//L-fix                   fmul st, st(1)
+//L-fix                   fld st(2)
+//L-fix                   fmul st, st(3)
                   faddp st(1), st
                   fld st(3)
                   fmul st, st(4)
@@ -1014,12 +1014,12 @@ LABEL_24:
   v38 = smudgeTypeIndex_high - v19; /*0x50dd06*/
   __asm /*0x50dd0a*/
   {
-    fild [esp+40h+var_20]
-    fild [esp+40h+var_24]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+40h+var_20]
+//L-fix     fild [esp+40h+var_24]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+40h+var_44+4]; double
     fstp st
@@ -1036,12 +1036,12 @@ LABEL_24:
   v38 = smudgeTypeIndex_high - v23; /*0x50dd70*/
   __asm /*0x50dd74*/
   {
-    fild [esp+40h+var_20]
-    fild [esp+40h+var_24]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+40h+var_20]
+//L-fix     fild [esp+40h+var_24]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+40h+var_44+4]; double
     fstp st
@@ -1058,12 +1058,12 @@ LABEL_24:
   v38 = smudgeTypeIndex_high - v27; /*0x50dde1*/
   __asm /*0x50dde5*/
   {
-    fild [esp+40h+var_20]
-    fild [esp+40h+var_24]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+40h+var_20]
+//L-fix     fild [esp+40h+var_24]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+40h+var_44+4]; double
     fstp st
@@ -1080,12 +1080,12 @@ LABEL_24:
   v38 = smudgeTypeIndex_high - v30; /*0x50de47*/
   __asm /*0x50de4b*/
   {
-    fild [esp+40h+var_20]
-    fild [esp+40h+var_24]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+40h+var_20]
+//L-fix     fild [esp+40h+var_24]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fstp [esp+40h+var_44+4]; double
     fstp st

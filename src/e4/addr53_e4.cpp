@@ -3203,11 +3203,11 @@ void GenerateLightningStormGlow()
       __asm /*0x53d4f0*/
       {
         fld dbl_A9FF80
-        fmul ds:dbl_7E5190
-        fadd [esp+38h+var_8]
-        fst [esp+38h+var_8]
-        fcomp qword ptr [esp+38h+var_14+4]
-        fnstsw ax
+//L-fix         fmul ds:dbl_7E5190
+//L-fix         fadd [esp+38h+var_8]
+//L-fix         fst [esp+38h+var_8]
+//L-fix         fcomp qword ptr [esp+38h+var_14+4]
+//L-fix         fnstsw ax
       }
       if ( (_AX & 0x4100) == 0 ) /*0x53d50d*/
         v25 = v24; /*0x53d517*/

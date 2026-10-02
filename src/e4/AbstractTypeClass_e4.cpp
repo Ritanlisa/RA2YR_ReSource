@@ -60,7 +60,7 @@ LABEL_8:
     *((unsigned char *)this + 60) = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
-  if ( this == (gamemd::AbstractTypeClass *)((int *))-36 ) /*0x4108ba*/
+  if ( this == (gamemd::AbstractTypeClass *)(int *)-36 ) /*0x4108ba*/
   {
     Destination[0] = 0; /*0x4108bc*/
   }

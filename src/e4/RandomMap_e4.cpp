@@ -4670,11 +4670,11 @@ LABEL_49:
       v20 = (RandomMap *)((char *)v20 + 8); /*0x5a0b76*/
       __asm /*0x5a0b79*/
       {
-        fmul ds:dbl_7ED898
-        fld qword ptr [esp+58h+var_18]
-        fmul ds:dbl_7ED798
-        fxch st(1)
-        fmul ds:dbl_7ED790
+//L-fix         fmul ds:dbl_7ED898
+//L-fix         fld qword ptr [esp+58h+var_18]
+//L-fix         fmul ds:dbl_7ED798
+//L-fix         fxch st(1)
+//L-fix         fmul ds:dbl_7ED790
       }
       ++v91; /*0x5a0b91*/
       v96 = (int)v30; /*0x5a0b95*/
@@ -4906,11 +4906,11 @@ LABEL_51:
               v60 = v90[1]; /*0x5a0f2b*/
               __asm /*0x5a0f30*/
               {
-                fmul ds:dbl_7ED898
-                fld [esp+58h+var_2C+4]
-                fmul ds:dbl_7ED798
-                fxch st(1)
-                fmul ds:dbl_7ED790
+//L-fix                 fmul ds:dbl_7ED898
+//L-fix                 fld [esp+58h+var_2C+4]
+//L-fix                 fmul ds:dbl_7ED798
+//L-fix                 fxch st(1)
+//L-fix                 fmul ds:dbl_7ED790
               }
               v61 = v90[0]; /*0x5a0f48*/
               __asm /*0x5a0f4d*/
@@ -5639,11 +5639,11 @@ VectorClass_flat * * RandomMap::PlaceResources()
         v72 = 20.0; /*0x5a3d6d*/
         __asm /*0x5a3d7d*/
         {
-          fstp [esp+68h+var_30]
-          fld [esp+68h+var_30]
-          fsub ds:dbl_7E44C8
-          fcomp ds:dbl_7EDAC8
-          fnstsw ax
+//L-fix           fstp [esp+68h+var_30]
+//L-fix           fld [esp+68h+var_30]
+//L-fix           fsub ds:dbl_7E44C8
+//L-fix           fcomp ds:dbl_7EDAC8
+//L-fix           fnstsw ax
         }
         if ( (_AX & 0x4100) == 0 ) /*0x5a3d96*/
           goto LABEL_23; /*0x5a3d96*/
@@ -5667,11 +5667,11 @@ LABEL_23:
             Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a3dd4*/
             __asm /*0x5a3dd9*/
             {
-              fmul [esp+68h+var_28]
-              fadd [esp+68h+var_30]
-              fst [esp+68h+var_48]
-              fcomp ds:dbl_7E3CC8
-              fnstsw ax
+//L-fix               fmul [esp+68h+var_28]
+//L-fix               fadd [esp+68h+var_30]
+//L-fix               fst [esp+68h+var_48]
+//L-fix               fcomp ds:dbl_7E3CC8
+//L-fix               fnstsw ax
             }
           }
           while ( (_AX & 0x100) != 0 ); /*0x5a3df0*/
@@ -5704,11 +5704,11 @@ LABEL_23:
         v73 = 20.0; /*0x5a3e49*/
         __asm /*0x5a3e59*/
         {
-          fstp [esp+68h+var_30]
-          fld [esp+68h+var_30]
-          fsub ds:dbl_7E44C8
-          fcomp ds:dbl_7EDAC8
-          fnstsw ax
+//L-fix           fstp [esp+68h+var_30]
+//L-fix           fld [esp+68h+var_30]
+//L-fix           fsub ds:dbl_7E44C8
+//L-fix           fcomp ds:dbl_7EDAC8
+//L-fix           fnstsw ax
         }
         if ( (_AX & 0x4100) == 0 ) /*0x5a3e72*/
           goto LABEL_30; /*0x5a3e72*/
@@ -5732,11 +5732,11 @@ LABEL_30:
             Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a3eb0*/
             __asm /*0x5a3eb5*/
             {
-              fmul [esp+68h+var_20]
-              fadd [esp+68h+var_30]
-              fst [esp+68h+var_48]
-              fcomp ds:dbl_7E3CC8
-              fnstsw ax
+//L-fix               fmul [esp+68h+var_20]
+//L-fix               fadd [esp+68h+var_30]
+//L-fix               fst [esp+68h+var_48]
+//L-fix               fcomp ds:dbl_7E3CC8
+//L-fix               fnstsw ax
             }
           }
           while ( (_AX & 0x100) != 0 ); /*0x5a3ecc*/
@@ -5767,11 +5767,11 @@ LABEL_35:
     v70 = 20.0; /*0x5a3c92*/
     __asm /*0x5a3ca2*/
     {
-      fstp [esp+68h+var_30]
-      fld [esp+68h+var_30]
-      fsub ds:dbl_7E44C8
-      fcomp ds:dbl_7EDAC8
-      fnstsw ax
+//L-fix       fstp [esp+68h+var_30]
+//L-fix       fld [esp+68h+var_30]
+//L-fix       fsub ds:dbl_7E44C8
+//L-fix       fcomp ds:dbl_7EDAC8
+//L-fix       fnstsw ax
     }
     if ( (_AX & 0x4100) == 0 ) /*0x5a3cbb*/
       goto LABEL_16; /*0x5a3cbb*/
@@ -5795,11 +5795,11 @@ LABEL_16:
         Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a3cf9*/
         __asm /*0x5a3cfe*/
         {
-          fmul [esp+68h+var_38]
-          fadd [esp+68h+var_30]
-          fst [esp+68h+var_48]
-          fcomp ds:dbl_7E3CC8
-          fnstsw ax
+//L-fix           fmul [esp+68h+var_38]
+//L-fix           fadd [esp+68h+var_30]
+//L-fix           fst [esp+68h+var_48]
+//L-fix           fcomp ds:dbl_7E3CC8
+//L-fix           fnstsw ax
         }
       }
       while ( (_AX & 0x100) != 0 ); /*0x5a3d15*/
@@ -5830,11 +5830,11 @@ LABEL_37:
   }
   __asm /*0x5a3f41*/
   {
-    fild dword ptr [esi+64h]
-    fmul ds:dbl_7E3860
-    fadd ds:dbl_7EDAC0
-    fild dword ptr [esi+5Ch]
-    fmul ds:dbl_7E3808
+//L-fix     fild dword ptr [esi+64h]
+//L-fix     fmul ds:dbl_7E3860
+//L-fix     fadd ds:dbl_7EDAC0
+//L-fix     fild dword ptr [esi+5Ch]
+//L-fix     fmul ds:dbl_7E3808
     fmulp st(1), st
     fimul dword ptr [esi+2FCh]
   }
@@ -5879,11 +5879,11 @@ LABEL_49:
           Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a4010*/
           __asm /*0x5a4015*/
           {
-            fmul ds:dbl_7E3860
-            fadd ds:dbl_7E3548
-            fst [esp+68h+var_20]
-            fcomp ds:dbl_7E8AE8
-            fnstsw ax
+//L-fix             fmul ds:dbl_7E3860
+//L-fix             fadd ds:dbl_7E3548
+//L-fix             fst [esp+68h+var_20]
+//L-fix             fcomp ds:dbl_7E8AE8
+//L-fix             fnstsw ax
           }
         }
         while ( (_AX & 0x100) != 0 ); /*0x5a4030*/
@@ -5902,11 +5902,11 @@ LABEL_49:
           Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a4048*/
           __asm /*0x5a404d*/
           {
-            fmul ds:dbl_7E44A8
-            fadd ds:dbl_7EDAB8
-            fst [esp+68h+var_28]
-            fcomp ds:dbl_7E44A8
-            fnstsw ax
+//L-fix             fmul ds:dbl_7E44A8
+//L-fix             fadd ds:dbl_7EDAB8
+//L-fix             fst [esp+68h+var_28]
+//L-fix             fcomp ds:dbl_7E44A8
+//L-fix             fnstsw ax
           }
         }
         while ( (_AX & 0x100) != 0 ); /*0x5a4068*/
@@ -6111,11 +6111,11 @@ int RandomMap::GenerateRandomMapTerrain()
                 Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a4389*/
                 __asm /*0x5a438e*/
                 {
-                  fmul ds:dbl_7ECE60
-                  fadd ds:dbl_7E44C8
-                  fst [esp+50h+var_20]
-                  fcomp ds:dbl_7E3CC8
-                  fnstsw ax
+//L-fix                   fmul ds:dbl_7ECE60
+//L-fix                   fadd ds:dbl_7E44C8
+//L-fix                   fst [esp+50h+var_20]
+//L-fix                   fcomp ds:dbl_7E3CC8
+//L-fix                   fnstsw ax
                 }
               }
               while ( (_AX & 0x100) != 0 ); /*0x5a43a9*/
@@ -6147,11 +6147,11 @@ int RandomMap::GenerateRandomMapTerrain()
   }
   __asm /*0x5a441d*/
   {
-    fild dword ptr [edi+64h]
-    fmul ds:dbl_7E3860
-    fadd ds:dbl_7EDAC0
-    fild dword ptr [edi+5Ch]
-    fmul ds:dbl_7E3808
+//L-fix     fild dword ptr [edi+64h]
+//L-fix     fmul ds:dbl_7E3860
+//L-fix     fadd ds:dbl_7EDAC0
+//L-fix     fild dword ptr [edi+5Ch]
+//L-fix     fmul ds:dbl_7E3808
     fmulp st(1), st
     fimul dword ptr [edi+2FCh]
   }
@@ -6214,11 +6214,11 @@ LABEL_27:
           Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a4522*/
           __asm /*0x5a4527*/
           {
-            fmul ds:dbl_7E3860
-            fadd ds:dbl_7E3548
-            fst [esp+50h+var_20]
-            fcomp ds:dbl_7E8AE8
-            fnstsw ax
+//L-fix             fmul ds:dbl_7E3860
+//L-fix             fadd ds:dbl_7E3548
+//L-fix             fst [esp+50h+var_20]
+//L-fix             fcomp ds:dbl_7E8AE8
+//L-fix             fnstsw ax
           }
         }
         while ( (_AX & 0x100) != 0 ); /*0x5a4542*/
@@ -6237,11 +6237,11 @@ LABEL_27:
           Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x5a455a*/
           __asm /*0x5a455f*/
           {
-            fmul ds:dbl_7E44A8
-            fadd ds:dbl_7EDAB8
-            fst [esp+50h+var_18]
-            fcomp ds:dbl_7E44A8
-            fnstsw ax
+//L-fix             fmul ds:dbl_7E44A8
+//L-fix             fadd ds:dbl_7EDAB8
+//L-fix             fst [esp+50h+var_18]
+//L-fix             fcomp ds:dbl_7E44A8
+//L-fix             fnstsw ax
           }
         }
         while ( (_AX & 0x100) != 0 ); /*0x5a457a*/

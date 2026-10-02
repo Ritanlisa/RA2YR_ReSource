@@ -1707,14 +1707,14 @@ LABEL_36:
   {
     __asm /*0x50738c*/
     {
-      fild [esp+164h+var_154]
-      fstp [esp+164h+var_148]
-      fild [esp+164h+var_C0]
-      fdiv [esp+164h+var_148]
-      fild [esp+164h+var_144]
-      fdiv [esp+164h+var_148]
-      fild [esp+164h+var_150]
-      fdiv [esp+164h+var_148]
+//L-fix       fild [esp+164h+var_154]
+//L-fix       fstp [esp+164h+var_148]
+//L-fix       fild [esp+164h+var_C0]
+//L-fix       fdiv [esp+164h+var_148]
+//L-fix       fild [esp+164h+var_144]
+//L-fix       fdiv [esp+164h+var_148]
+//L-fix       fild [esp+164h+var_150]
+//L-fix       fdiv [esp+164h+var_148]
     }
   }
   else
@@ -1733,16 +1733,16 @@ LABEL_36:
   }
   __asm
   {
-    fstp [esp+16Ch+var_144]
-    fld dword ptr [ebp+1609Ch]
-    fsub st, st(2)
-    fstp [esp+16Ch+var_148]
-    fld dword ptr [ebp+160A4h]
-    fsub st, st(1)
-    fstp [esp+16Ch+var_150]
-    fstp st
-    fstp st
-    fstp st
+//L-fix     fstp [esp+16Ch+var_144]
+//L-fix     fld dword ptr [ebp+1609Ch]
+//L-fix     fsub st, st(2)
+//L-fix     fstp [esp+16Ch+var_148]
+//L-fix     fld dword ptr [ebp+160A4h]
+//L-fix     fsub st, st(1)
+//L-fix     fstp [esp+16Ch+var_150]
+//L-fix     fstp st
+//L-fix     fstp st
+//L-fix     fstp st
   }
   CollectSuperWeaponBuildingTypes((ObjectClass *)_EBP, (int)&v142, (int)&v126); /*0x5073fc*/
   HouseClass::CollectInfantryBuildCandidates((HouseClass *)_EBP, (int)&v147, (int)&v126); /*0x507410*/
@@ -3823,3 +3823,5 @@ int HouseClass::GetStatus(int aP1)
 
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 2
+}  // L-fix: close namespace tail 2

@@ -278,7 +278,7 @@ IPXManagerClass::IPXManagerClass() noexcept
 }
 
 // 0x542fe0
-void IPXManagerClass::Init(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7)
+void IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
 {
   int result; // eax
 
@@ -479,3 +479,4 @@ void IPXManagerClass::release(int a5, int a2, int a3, int a4)
 }
 // 0x542330
 int32_t IPXManagerClass::GetConnectionCount() { return 0; }
+}  // L-fix: close namespace tail 1

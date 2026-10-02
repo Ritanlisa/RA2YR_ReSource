@@ -89,7 +89,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
         IDA_HIBYTE(v9) = v8; /*0x4201c5*/
         *v7++ = v9; /*0x4201c7*/
       }
-      while ( v5 <= (unsigned short *)((gamemd::CCINIClass *))(0xFFFF) ); /*0x4201d3*/
+      while ( v5 <= (unsigned short *)(gamemd::CCINIClass *)(0xFFFF) ); /*0x4201d3*/
     }
     else
     {
@@ -4288,3 +4288,4 @@ void sub_42FFF0()
   dbl_89C450 = 1.0 / dbl_89C468; /*0x42fffc*/
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

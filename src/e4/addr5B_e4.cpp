@@ -612,7 +612,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
   int v7; // esi
   DWORD v8; // esi
   size_t *v9; // [esp+0h] [ebp-290h]
-  signed int Buffer; // [esp+10h] [ebp-280h] BYREF
+  signed int Buffer_v; // [esp+10h] [ebp-280h] BYREF
   int Ticks; // [esp+14h] [ebp-27Ch]
   int v12; // [esp+18h] [ebp-278h]
   int v13; // [esp+1Ch] [ebp-274h]
@@ -675,26 +675,26 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
         return; /*0x5bb3f5*/
       }
     }
-    Buffer = 0; /*0x5bb403*/
-    v5 = Palette::Preview_Generate((Palette *)g_UIControlState, 64, (int)&Buffer, v9); /*0x5bb410*/
+    Buffer_v = 0; /*0x5bb403*/
+    v5 = Palette::Preview_Generate((Palette *)g_UIControlState, 64, (int)&Buffer_v, v9); /*0x5bb410*/
     Debug::Log(); /*0x5bb418*/
-    v6 = (void *)RA2_OPNEW(4 * Buffer); /*0x5bb435*/
+    v6 = (void *)RA2_OPNEW(4 * Buffer_v); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
     *(unsigned int *)v15.__pad_0 = (void*)&Pipe_vftable; /*0x5bb44c*/
-    Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
+    Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer_v); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
     *(unsigned int *)v15.__pad_0 = (void*)&BufferPipe_vftable; /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
     ((Pipe *)(&v19))->SetDelegate((int)&v15); /*0x5bb47d*/
-    v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer); /*0x5bb499*/
+    v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer_v); /*0x5bb499*/
     v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)((FileClass *)((RawFileClass *)v18))->Open(0) ) /*0x5bb4c1*/
       ((FileClass *)((RawFileClass *)v18))->Delete(); /*0x5bb4ce*/
     ((FileClass *)((RawFileClass *)v18))->Open2((const CHAR *)2); /*0x5bb4d9*/
-    ((FileClass *)((RawFileClass *)v18))->Write2(&Buffer, 4u); /*0x5bb4e9*/
+    ((FileClass *)((RawFileClass *)v18))->Write2(&Buffer_v, 4u); /*0x5bb4e9*/
     ((FileClass *)((RawFileClass *)v18))->Write2(v6, v8); /*0x5bb4f4*/
     ((FileClass *)((RawFileClass *)v18))->CloseHandle(); /*0x5bb4fd*/
     RA2_OPDEL(v6); /*0x5bb503*/

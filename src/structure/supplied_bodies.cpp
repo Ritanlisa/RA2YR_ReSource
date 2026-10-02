@@ -1310,7 +1310,7 @@ int BuildingClass::IsCellPlaceable(int16_t *a2) {
 
 // 0x429A90
 namespace gamemd::Math {
-int * BuildingClass::UpdatePowerAnimation(int this, int a2, int16_t *a3, unsigned int *a4, int a5, int a6, char a7) {
+int * BuildingClass::UpdatePowerAnimation(int a2, int16_t *a3, unsigned int *a4, int a5, int a6, char a7) {
     int16_t *v7; // edi
     int v8; // ebp
     int v10; // ecx
@@ -2244,12 +2244,12 @@ int BuildingClass::MissionController() {
         v57 = v47 - v48; /*0x43cd8c*/
         __asm /*0x43cd90*/
         {
-          fild [esp+58h+var_34]
-          fild [esp+58h+var_3C]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild [esp+58h+var_34]
+//L-fix           fild [esp+58h+var_3C]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fld st(3)
           fmul st, st(4)
@@ -2377,12 +2377,12 @@ int BuildingClass::MissionController() {
               v57 = v30 - v31; /*0x43c9b7*/
               __asm /*0x43c9bb*/
               {
-                fild [esp+58h+var_34]
-                fild [esp+58h+var_3C]
-                fld st
-                fmul st, st(1)
-                fld st(2)
-                fmul st, st(3)
+//L-fix                 fild [esp+58h+var_34]
+//L-fix                 fild [esp+58h+var_3C]
+//L-fix                 fld st
+//L-fix                 fmul st, st(1)
+//L-fix                 fld st(2)
+//L-fix                 fmul st, st(3)
                 faddp st(1), st
                 fld st(3)
                 fmul st, st(4)
@@ -5335,15 +5335,15 @@ int BuildingClass::ProcessActiveUpdate() {
               IDA_LODWORD(v67) = v74 - v41; /*0x44b44a*/
               __asm /*0x44b44e*/
               {
-                fild dword ptr [esp+80h+var_60]
-                fstp [esp+80h+var_28]
-                fstp [esp+80h+var_48]
-                fld [esp+80h+var_28]
-                fstp [esp+80h+var_60]
-                fld st
-                fmul st, st(1)
-                fld [esp+80h+var_60]
-                fmul [esp+80h+var_60]
+//L-fix                 fild dword ptr [esp+80h+var_60]
+//L-fix                 fstp [esp+80h+var_28]
+//L-fix                 fstp [esp+80h+var_48]
+//L-fix                 fld [esp+80h+var_28]
+//L-fix                 fstp [esp+80h+var_60]
+//L-fix                 fld st
+//L-fix                 fmul st, st(1)
+//L-fix                 fld [esp+80h+var_60]
+//L-fix                 fmul [esp+80h+var_60]
                 faddp st(1), st
                 fld [esp+80h+var_48]
                 fmul [esp+80h+var_48]
@@ -5940,11 +5940,11 @@ int BuildingClass::ProcessSuperWeaponEffects() {
               }
               __asm
               {
-                fstp [esp+0F0h+var_A0]
-                fld [esp+0F0h+var_D0]
-                fmul [esp+0F0h+var_D0]
-                fld st(1)
-                fmul st, st(2)
+//L-fix                 fstp [esp+0F0h+var_A0]
+//L-fix                 fld [esp+0F0h+var_D0]
+//L-fix                 fmul [esp+0F0h+var_D0]
+//L-fix                 fld st(1)
+//L-fix                 fmul st, st(2)
                 faddp st(1), st
                 fld st(2)
                 fmul st, st(3)
@@ -5958,16 +5958,16 @@ int BuildingClass::ProcessSuperWeaponEffects() {
               v42 = this->TechnoClass; /*0x44d1c8*/
               __asm /*0x44d1d9*/
               {
-                fld st
-                fmul [esp+0F0h+var_D0]
-                fstp [esp+0F0h+var_D0]
-                fld [esp+0F0h+var_C8]
-                fmul st, st(1)
-                fstp [esp+0F0h+var_C8]
-                fld [esp+0F0h+var_C0]
-                fmul st, st(1)
-                fstp [esp+0F0h+var_C0]
-                fstp st
+//L-fix                 fld st
+//L-fix                 fmul [esp+0F0h+var_D0]
+//L-fix                 fstp [esp+0F0h+var_D0]
+//L-fix                 fld [esp+0F0h+var_C8]
+//L-fix                 fmul st, st(1)
+//L-fix                 fstp [esp+0F0h+var_C8]
+//L-fix                 fld [esp+0F0h+var_C0]
+//L-fix                 fmul st, st(1)
+//L-fix                 fstp [esp+0F0h+var_C0]
+//L-fix                 fstp st
               }
               v43 = (int *)(*((int (__thiscall **)(BuildingClass *, unsigned char *, unsigned int))v42 + 192))(this, v94, 0); /*0x44d1f9*/
               v82[0] = *v43; /*0x44d201*/
@@ -6026,13 +6026,13 @@ int BuildingClass::ProcessSuperWeaponEffects() {
               IDA_LODWORD(v78) = (int16_t)Math::RoundToInt(v1) - 0x3FFF; /*0x44d365*/
               __asm /*0x44d369*/
               {
-                fild dword ptr [esp+0F0h+var_B8]
-                fmul ds:dbl_7E2810
-                fstp [esp+0F0h+var_B8]
-                fld [esp+0F0h+var_C8]
-                fmul [esp+0F0h+var_C8]
-                fld [esp+0F0h+var_C0]
-                fmul [esp+0F0h+var_C0]
+//L-fix                 fild dword ptr [esp+0F0h+var_B8]
+//L-fix                 fmul ds:dbl_7E2810
+//L-fix                 fstp [esp+0F0h+var_B8]
+//L-fix                 fld [esp+0F0h+var_C8]
+//L-fix                 fmul [esp+0F0h+var_C8]
+//L-fix                 fld [esp+0F0h+var_C0]
+//L-fix                 fmul [esp+0F0h+var_C0]
                 faddp st(1), st
                 fld [esp+0F0h+var_D0]
                 fmul [esp+0F0h+var_D0]
@@ -8580,7 +8580,7 @@ unsigned int * BuildingClass::CalcBarrelFlashPosition(unsigned int *a2, int a3, 
 
 // 0x453D60
 namespace gamemd::Math {
-int BuildingClass::MarkCellOccupied(void *this) {
+int BuildingClass::MarkCellOccupied() {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
     int v3; // ecx
@@ -8601,7 +8601,7 @@ int BuildingClass::MarkCellOccupied(void *this) {
 
 // 0x453DC0
 namespace gamemd::Math {
-int BuildingClass::ClearCellOccupied(void *this) {
+int BuildingClass::ClearCellOccupied() {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
     int v3; // ecx
@@ -10279,7 +10279,7 @@ int BuildingClass::GetPlacementCoords(int *a2, unsigned int *a3) {
 
 // 0x47F6A0
 namespace gamemd::Math {
-int BuildingClass::Draw_0(int this, unsigned int *a2, int *a3) {
+int BuildingClass::Draw_0(unsigned int *a2, int *a3) {
     int result; // eax
     unsigned int *v5; // eax
     int v6; // ecx
@@ -12686,11 +12686,11 @@ int BuildingClass::DrawSelectionBlip(int a2, int a3, int a4, int a5) {
     v11 = a3 - a5; /*0x63d589*/
     __asm /*0x63d590*/
     {
-      fild [esp+48h+var_2C]
-      fld st
-      fmul st, st(1)
-      fld st(2)
-      fmul st, st(3)
+//L-fix       fild [esp+48h+var_2C]
+//L-fix       fld st
+//L-fix       fmul st, st(1)
+//L-fix       fld st(2)
+//L-fix       fmul st, st(3)
       faddp st(1), st
       fstp [esp+48h+var_48]; double
       fstp st

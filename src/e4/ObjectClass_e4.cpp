@@ -2167,8 +2167,7 @@ void ObjectClass::ObjectClass_GetTypeVt41_2()
 
 }
 }
-int ObjectClass::processDeath()
-int ObjectClass::processDeath()
+namespace gamemd {  // L-fix ns repair
 int ObjectClass::processDeath()
 {
 
@@ -2263,8 +2262,7 @@ int ObjectClass::GetMember09()
 }
 } // namespace gamemd
 
-int ObjectClass::updateStateFlags()
-int ObjectClass::updateStateFlags()
+namespace gamemd {  // L-fix ns repair
 int ObjectClass::updateStateFlags()
 {
 
@@ -2455,8 +2453,7 @@ int ObjectClass::GetMember01()
 }
 } // namespace gamemd
 
-int ObjectClass::processDamage()
-int ObjectClass::processDamage()
+namespace gamemd {  // L-fix ns repair
 int ObjectClass::processDamage()
 {
 

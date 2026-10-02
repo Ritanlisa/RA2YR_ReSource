@@ -396,3 +396,4 @@ int TagTypeClass::objectSize() const { return 0; }
 void TagTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

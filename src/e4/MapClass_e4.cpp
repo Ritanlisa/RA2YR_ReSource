@@ -1141,11 +1141,11 @@ LABEL_22:
         v43 = (int16_t)(v48 - v45); /*0x5676c5*/
         __asm /*0x5676c9*/
         {
-          fild [esp+5Ch+var_38]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
+//L-fix           fild [esp+5Ch+var_38]
+//L-fix           fld st
+//L-fix           fmul st, st(1)
+//L-fix           fld st(2)
+//L-fix           fmul st, st(3)
           faddp st(1), st
           fstp [esp+5Ch+var_5C]; double
           fstp st
@@ -5074,3 +5074,5 @@ int MapClass::ClearCellOverlayFlag()
   return result; /*0x5f616e*/
 
 }
+}  // L-fix: close namespace tail 2
+}  // L-fix: close namespace tail 2

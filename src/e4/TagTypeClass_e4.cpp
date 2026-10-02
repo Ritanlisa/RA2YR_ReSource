@@ -38,7 +38,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   *((unsigned int *)this + 1) = (unsigned int)(&vt_TagTypeClass); /*0x6e5b95*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_TagTypeClass); /*0x6e5b9c*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_TagTypeClass); /*0x6e5ba3*/
-  if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
+  if ( this == (gamemd::TagTypeClass *)(char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
   }

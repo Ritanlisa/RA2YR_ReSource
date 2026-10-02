@@ -1772,7 +1772,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
 
 // 0x4E2500
 namespace gamemd {
-int ListClass::Constructor(int this, int a2, int a3, int a4, int a5, int a6) {
+int ListClass::Constructor(int a2, int a3, int a4, int a5, int a6) {
     int v7; // ecx
     int v8; // eax
 
@@ -2075,7 +2075,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
 
 // 0x557230
 namespace gamemd {
-int ListClass::Construct(int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+int ListClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
     int v10; // ecx
     int v11; // eax
     int v12; // edi
@@ -2290,7 +2290,7 @@ wchar_t ** ListBox::Constructor() {
 
 // 0x5D2E90
 namespace gamemd {
-char FontClass::LoadFontResources(int this, int16_t a2) {
+char FontClass::LoadFontResources(int16_t a2) {
     int v3; // eax
     char *EntireFile; // eax
     unsigned char *v5; // esi

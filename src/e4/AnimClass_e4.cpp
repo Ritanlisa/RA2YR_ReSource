@@ -791,11 +791,11 @@ LABEL_99:
 //DUPDEF   aP4 = (CoordStruct *)((char *)v90 + v21[57].Z); /*0x42305d*/
 //DUPDEF   if ( *((unsigned char *)this + 281) ) /*0x423061*/
 //DUPDEF   {
-    if ( IDA_LOBYTE(v21[72].Z) ) /*0x42306b*/
-      v22 |= 6u; /*0x423075*/
-    else
-      v22 |= 4u; /*0x42307a*/
-  }
+//L-fix     if ( IDA_LOBYTE(v21[72].Z) ) /*0x42306b*/
+//L-fix       v22 |= 6u; /*0x423075*/
+//L-fix     else
+//L-fix       v22 |= 4u; /*0x42307a*/
+//L-fix   }
   if ( v21[60].Z <= *(int *)&HouseClass_Player.__pad_5568[22724] ) /*0x42308b*/
   {
     if ( !IDA_BYTE2(v21[72].Z) ) /*0x423095*/

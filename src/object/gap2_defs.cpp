@@ -10030,3 +10030,6 @@ void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } }
   this->u32_708 = -1; /*0x7c3659*/
   this->u32_70C = -1; /*0x7c365f*/
   return -1; /*0x7c3665*/
+}  // L-fix: close namespace tail 3
+}  // L-fix: close namespace tail 3
+}  // L-fix: close namespace tail 3

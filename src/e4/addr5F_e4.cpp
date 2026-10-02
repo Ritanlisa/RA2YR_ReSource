@@ -72,14 +72,14 @@ char sub_5F0070()
     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
-            v1 += this->((Timer *)0)->GetTicks() - g_abs_887338;
+            v1 += ((Timer *)this->0)->GetTicks() - g_abs_887338;
     while ( 1 ) /*0x5f00e4*/
     {
       IDA_LOBYTE(v0) = dword_887338; /*0x5f00e4*/
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
-                v0 = this->((Timer *)0)->GetTicks() - g_abs_887338;
+                v0 = ((Timer *)this->0)->GetTicks() - g_abs_887338;
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
@@ -432,16 +432,16 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 namespace gamemd {
 char sub_5FBEF0()
 {
-  HWND Dialog; // esi
+  HWND Dialog_v; // esi
   int v1; // ecx
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x5fbefe*/
-  Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
-  if ( Dialog ) /*0x5fbf0f*/
+  Dialog_v = (HWND)CreateDialog(0xA3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
+  if ( Dialog_v ) /*0x5fbf0f*/
   {
-    SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5fbf19*/
-    ((Dialog *)(Dialog))->Show(); /*0x5fbf21*/
+    SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x5fbf19*/
+    ((Dialog *)(Dialog_v))->Show(); /*0x5fbf21*/
     while ( dwNewLong < 0 ) /*0x5fbf2c*/
     {
       if ( ((Dialog *)0)->PumpMessages() == 1 ) /*0x5fbf35*/
@@ -452,7 +452,7 @@ char sub_5FBEF0()
         Process(v1); /*0x5fbf4a*/
       }
     }
-    Dialog::Destroy(Dialog); /*0x5fbf59*/
+    Dialog::Destroy(Dialog_v); /*0x5fbf59*/
   }
   return 1; /*0x5fbf60*/
 }

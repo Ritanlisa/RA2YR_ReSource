@@ -350,3 +350,4 @@ int ParticleClass::GetTypeIdentifier()
 
 }
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

@@ -387,3 +387,4 @@ int TriggerTypeClass::objectSize() const { return 0; }
 void TriggerTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd
+}  // L-fix: close namespace tail 1

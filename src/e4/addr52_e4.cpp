@@ -1792,7 +1792,7 @@ void MenuSelect()
   LONG v16; // eax
   IUnknown *v17; // eax
   Movie *v18; // eax
-  HWND Dialog; // eax
+  HWND Dialog_v; // eax
   Frame *v21; // ecx
   unsigned int *Options; // eax
   int *p_visibilityFlags; // eax
@@ -2044,14 +2044,14 @@ LABEL_40:
           *(unsigned int *)&HouseClass_Player[47700] = 0;
           *(unsigned int *)&HouseClass_Player[47704] = 0;
           *(unsigned int *)&HouseClass_Player[47708] = 0;
-          Dialog = (HWND)CreateDialog(
+          Dialog_v = (HWND)CreateDialog(
                            0x94u,
                            (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))CampaignSelect::DlgProc,
                            0);
-          j = (int)Dialog;
-          if ( Dialog )
+          j = (int)Dialog_v;
+          if ( Dialog_v )
           {
-            SetWindowLongA(Dialog, 8, (LONG)&dwNewLong);
+            SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong);
             SetDialogParent((HWND)j, g_hWnd);
             ((Dialog *)((HWND)j))->Show();
             while ( !(unsigned char)v57 )

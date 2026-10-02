@@ -4257,23 +4257,23 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   _ESI = this; /*0x5af564*/
   __asm /*0x5af566*/
   {
-    fstp [esp+28h+var_18]
-    fld dword ptr [eax+4]
-    fsub dword ptr [edi+4]
-    fstp [esp+28h+arg_4]
-    fld dword ptr [eax+8]
-    fsub dword ptr [edi+8]
-    fst [esp+28h+var_14]
-    fmul [esp+28h+var_14]
-    fstp [esp+28h+var_C]
-    fld [esp+28h+var_18]
-    fmul [esp+28h+var_18]
-    fstp [esp+28h+var_10]
-    fld [esp+28h+arg_4]
-    fmul [esp+28h+arg_4]
-    fadd [esp+28h+var_10]
-    fadd [esp+28h+var_C]
-    fstp [esp+28h+var_28]; double
+//L-fix     fstp [esp+28h+var_18]
+//L-fix     fld dword ptr [eax+4]
+//L-fix     fsub dword ptr [edi+4]
+//L-fix     fstp [esp+28h+arg_4]
+//L-fix     fld dword ptr [eax+8]
+//L-fix     fsub dword ptr [edi+8]
+//L-fix     fst [esp+28h+var_14]
+//L-fix     fmul [esp+28h+var_14]
+//L-fix     fstp [esp+28h+var_C]
+//L-fix     fld [esp+28h+var_18]
+//L-fix     fmul [esp+28h+var_18]
+//L-fix     fstp [esp+28h+var_10]
+//L-fix     fld [esp+28h+arg_4]
+//L-fix     fmul [esp+28h+arg_4]
+//L-fix     fadd [esp+28h+var_10]
+//L-fix     fadd [esp+28h+var_C]
+//L-fix     fstp [esp+28h+var_28]; double
   }
   Math::Sqrt(v18); /*0x5af5a5*/
   __asm /*0x5af5aa*/
@@ -4299,12 +4299,12 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   {
     __asm /*0x5af5d2*/
     {
-      fld [esp+20h+arg_4]
-      fdiv [esp+20h+arg_0]
-      fstp [esp+20h+var_8]
-      fld st
-      fdiv [esp+20h+arg_0]
-      fstp [esp+20h+var_10]
+//L-fix       fld [esp+20h+arg_4]
+//L-fix       fdiv [esp+20h+arg_0]
+//L-fix       fstp [esp+20h+var_8]
+//L-fix       fld st
+//L-fix       fdiv [esp+20h+arg_0]
+//L-fix       fstp [esp+20h+var_10]
     }
   }
   __asm /*0x5af5fa*/
@@ -4322,13 +4322,13 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   {
     __asm /*0x5af607*/
     {
-      fld [esp+20h+var_18]
-      fdiv st, st(1)
-      fstp [esp+20h+var_C]
-      fld [esp+20h+var_14]
-      fdiv st, st(1)
-      fstp [esp+20h+arg_0]
-      fstp st
+//L-fix       fld [esp+20h+var_18]
+//L-fix       fdiv st, st(1)
+//L-fix       fstp [esp+20h+var_C]
+//L-fix       fld [esp+20h+var_14]
+//L-fix       fdiv st, st(1)
+//L-fix       fstp [esp+20h+arg_0]
+//L-fix       fstp st
     }
   }
   _ESI->AbstractClass = (void *)1065353216; /*0x5af638*/
@@ -4996,11 +4996,11 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
   ((unsigned int *)this)[0] = _ET1; /*0x5aecec*/
   __asm /*0x5aecef*/
   {
-    fstp st
-    fld [esp+30h+var_24]
-    fmul st, st(1)
-    fld [esp+30h+var_20]
-    fmul [esp+30h+arg_0]
+//L-fix     fstp st
+//L-fix     fld [esp+30h+var_24]
+//L-fix     fmul st, st(1)
+//L-fix     fld [esp+30h+var_20]
+//L-fix     fmul [esp+30h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
@@ -5237,11 +5237,11 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   ((unsigned int *)this)[0] = _ET1; /*0x5aeefa*/
   __asm /*0x5aeefd*/
   {
-    fstp st
-    fld [esp+30h+var_24]
-    fmul st, st(1)
-    fld [esp+30h+var_20]
-    fmul [esp+30h+arg_0]
+//L-fix     fstp st
+//L-fix     fld [esp+30h+var_24]
+//L-fix     fmul st, st(1)
+//L-fix     fld [esp+30h+var_20]
+//L-fix     fmul [esp+30h+arg_0]
     faddp st(1), st
     fstp dword ptr [esi+10h]
   }

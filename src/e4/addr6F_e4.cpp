@@ -842,7 +842,7 @@ void sub_6F2AD0()
 namespace gamemd {
 int sub_6F2AF0()
 {
-    g_abs_B0EA70 = this->((gamemd::Timer *)this)->GetTicks();
+    g_abs_B0EA70 = ((gamemd::Timer *)this->this)->GetTicks();
   dword_B0EA78 = 0; /*0x6f2b04*/
   return atexit(sub_6F2B20); /*0x6f2b14*/
 }
