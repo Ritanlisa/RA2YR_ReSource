@@ -386,7 +386,7 @@ v3 = (void ***)((int)((void ***)(0)));
 }
 // 0x6F8960
 namespace gamemd {
-AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9, void * a1, void * a3, void * a4, void * a5, void * a6, void * a8)
+AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9, void * a1, void * a3, void * a4, void * a5, void * a6, void * a8, void * a10)
 {
   unsigned int *v11; // ebx
   int v12; // eax

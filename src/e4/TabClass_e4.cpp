@@ -33,7 +33,7 @@ unsigned int * TabClass::initStripClass()
 } // namespace gamemd
 // 0x658330
 namespace gamemd {
-int TabClass::DrawPower(void *a1)
+int TabClass::DrawPower(void *a1, void * aGrey)
 {
 
   int v2; // ebp

@@ -1247,7 +1247,7 @@ int SHP_DrawBuildingTiles(int * a1, int a2, char a3)
 }
 // 0x4A5EB0
 namespace gamemd {
-void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass)
+void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, void * a1, void * a3, void * a4, void * a5, void * a6, void * a8)
 {
   unsigned int *v9; // edi
   Char *v10; // ebx
@@ -1321,7 +1321,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass)
 }
 // 0x4A6010
 namespace gamemd {
-void globalHelper_0A6010()
+void globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int v11; // eax
   int *v12; // eax
@@ -1487,7 +1487,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
 }
 // 0x4A66D0
 namespace gamemd {
-void globalHelper_0A66D0()
+void globalHelper_0A66D0(void * a2, void * a3, void * a4, void * a5, void * a9)
 {
   int *v12; // eax
   int v14; // eax

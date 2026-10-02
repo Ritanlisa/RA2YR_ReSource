@@ -78,6 +78,11 @@
 #include "e4/classes/E4Recv_492C00_e4.hpp"
 #include "e4/classes/E4Recv_492C90_e4.hpp"
 #include "e4/classes/E4Recv_492CC0_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/INISectionList_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_492CF0_e4.hpp"
 #include "e4/classes/E4Recv_492D20_e4.hpp"
 #include "e4/classes/E4Recv_492D80_e4.hpp"
@@ -1821,7 +1826,7 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
 }
 // 0x49C0D0
 namespace gamemd {
-AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
+AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
 {
 
   char *v2; // ebx

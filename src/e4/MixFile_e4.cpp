@@ -80,7 +80,7 @@ MixFileClass * * MixFile::LoadAll()
 }
 // 0x534FA0
 namespace gamemd {
-AbstractClass * * MixFile::LoadSide()
+AbstractClass * * MixFile::LoadSide(void * aUimdIni)
 {
 
   int v1; // esi

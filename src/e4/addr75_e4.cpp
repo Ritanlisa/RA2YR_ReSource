@@ -991,7 +991,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
 }
 // 0x757120
 namespace gamemd {
-void RenderVoxels()
+void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
 {
   int *v4; // ecx
   unsigned int v5; // esi

@@ -21,6 +21,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x465450
 namespace gamemd {

@@ -23,6 +23,7 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x41E350
 namespace gamemd {

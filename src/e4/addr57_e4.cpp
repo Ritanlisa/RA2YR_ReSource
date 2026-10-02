@@ -27,6 +27,7 @@
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x574600
 namespace gamemd {

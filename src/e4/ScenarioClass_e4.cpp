@@ -433,7 +433,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
 }
 // 0x683AB0
 namespace gamemd {
-int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP1)
+int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP1, void * a4)
 {
 
   char *v4; // ebp
@@ -657,7 +657,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
 }
 // 0x686730
 namespace gamemd {
-void ScenarioClass_Construct()
+void ScenarioClass_Construct(void * a2)
 {
   char result; // al
   char Map; // bl
@@ -709,7 +709,7 @@ void ScenarioClass_Construct()
 }
 // 0x686B20
 namespace gamemd {
-ScenarioClass * * ScenarioClass_LoadMap()
+ScenarioClass * * ScenarioClass_LoadMap(void * a2)
 {
   CCINIClass *v3; // ebp
   ObjectClass *v5; // eax

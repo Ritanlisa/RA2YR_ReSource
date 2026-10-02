@@ -47,6 +47,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4112D0
 namespace gamemd {
@@ -323,7 +324,7 @@ int MapClass::ToggleZoom(int a2)
 } // namespace gamemd
 // 0x4AD7E0
 namespace gamemd {
-INIClass * * MapClass::SaveCellTagsToINI(char * a2)
+INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * aIsomappack2, void * aIsomappack3, void * aIsomappack4, void * aIsomappack5)
 {
 
   int16_t v3; // bp

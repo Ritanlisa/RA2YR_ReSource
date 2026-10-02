@@ -22,6 +22,7 @@
 #include "e4/classes/E4Recv_438A60_e4.hpp"
 #include "e4/classes/CountdownTimer_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {

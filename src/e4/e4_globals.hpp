@@ -15200,3 +15200,17 @@ extern const char aYrm[];
 
 // G42.16: orphan global-func supply wiring (C3861 bare names)
 #include "_generated/global_funcs_variad.hpp"
+
+
+// G42.31 C2065 data supply (per-name guarded, idempotent):
+extern int byte_A8ED64;  // data: 0xA8ED64
+extern int byte_AC4E78;  // data: 0xAC4E78
+extern int byte_B05584;  // data: 0xB05584
+extern int dword_A8ECE0;  // data: 0xA8ECE0
+extern int dword_AC1474;  // data: 0xAC1474
+extern int dword_AC4E74;  // data: 0xAC4E74
+extern int dword_B0FB9C;  // data: 0xB0FB9C
+extern int dword_B0FBA0;  // data: 0xB0FBA0
+extern int g_DDraw_PrimarySurface;
+extern int word_AA06D0;  // data: 0xAA06D0
+extern int word_AA06D2;  // data: 0xAA06D2

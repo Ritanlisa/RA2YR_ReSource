@@ -48,6 +48,11 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x52B6D0
 namespace gamemd {
@@ -984,7 +989,7 @@ bool sub_53BAE0()
 
 // 0x5E2340
 namespace gamemd {
-HWND sub_5E2340()
+HWND sub_5E2340(void * aGuiHostgamesta_0)
 {
   HWND Current; // eax
   HWND DlgItem; // esi
@@ -1062,7 +1067,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
 
 // 0x623170
 namespace gamemd {
-bool UI_Connect(HWND hWnd, LONG, LONG)
+bool UI_Connect(HWND hWnd, LONG, LONG, void * a2, void * a3)
 {
   LONG v5; // ecx
   LONG v6; // eax
@@ -1341,7 +1346,7 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
 
 // 0x6AC480
 namespace gamemd {
-void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
+void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
 {
   char result; // al
   int v5; // ebx

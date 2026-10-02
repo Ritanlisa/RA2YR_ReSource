@@ -1530,7 +1530,7 @@ int AudioStream::UpdateCountdowners()
 
 // 0x407860
 namespace gamemd {
-char * AudioStream::Constructor(uint64_t)
+char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
 {
 
   int v3; // esi

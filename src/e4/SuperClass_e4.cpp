@@ -29,6 +29,7 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/PsyDom_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {
@@ -721,7 +722,7 @@ LABEL_11:
 }
 // 0x6CC080
 namespace gamemd {
-int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2)
+int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea)
 {
 
   char result; // al
@@ -1099,7 +1100,7 @@ void SuperClass::ResetRechargeTime()
 
 // 0x6CC2B0
 namespace gamemd {
-wchar_t * SuperClass::NameReadiness()
+wchar_t * SuperClass::NameReadiness(void * aTxtHold)
 {
 
   char *SuperClass_field_0x7C; // ecx

@@ -35,6 +35,8 @@
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {

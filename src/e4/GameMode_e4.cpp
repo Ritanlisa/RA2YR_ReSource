@@ -37,7 +37,7 @@ int GameMode::IsValid(unsigned int a2)
 }
 // 0x6B8CA0
 namespace gamemd {
-unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
+unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids)
 {
 
   char Bool_Overwrite; // al

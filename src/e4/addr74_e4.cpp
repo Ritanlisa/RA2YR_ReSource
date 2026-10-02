@@ -58,7 +58,7 @@
 
 // 0x743270
 namespace gamemd {
-Coord * * PlaceScenarioUnits(void * a1, void * a2)
+Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
 {
   INIClass *v2; // esi
   int KeyCount; // eax

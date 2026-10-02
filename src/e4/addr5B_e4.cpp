@@ -609,7 +609,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 }
 // 0x5BB290
 namespace gamemd {
-LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
+LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
 {
   int v1; // esi
   int v2; // eax

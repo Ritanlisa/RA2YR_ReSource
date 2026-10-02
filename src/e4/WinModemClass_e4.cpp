@@ -315,7 +315,7 @@ LABEL_38:
 } // namespace gamemd
 // 0x774F50
 namespace gamemd {
-int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
+int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
 {
 
   unsigned int v3; // kr18_4

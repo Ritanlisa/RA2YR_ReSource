@@ -40,6 +40,7 @@
 #include "e4/classes/Techno_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -71,7 +72,7 @@ void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 }
 // 0x4770E0
 namespace gamemd {
-VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass, int a6, int a7, int a8, void * a4)
+VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass, int a6, int a7, int a8, void * a4, void * a5)
 {
   char *i; // esi
   char v13; // bl

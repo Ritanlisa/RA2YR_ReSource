@@ -1265,7 +1265,7 @@ int E4Recv_6C5150::CreateTClassFactory_FactoryClass(const void *a3, unsigned int
 
 // 0x6C52D0
 namespace gamemd {
-int E4Recv_6C52D0::CreateTClassFactory_WarheadTypeClass()
+int E4Recv_6C52D0::CreateTClassFactory_WarheadTypeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1285,7 +1285,7 @@ int E4Recv_6C52D0::CreateTClassFactory_WarheadTypeClass()
 
 // 0x6C5450
 namespace gamemd {
-int E4Recv_6C5450::CreateTClassFactory_WeaponTypeClass()
+int E4Recv_6C5450::CreateTClassFactory_WeaponTypeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1305,7 +1305,7 @@ int E4Recv_6C5450::CreateTClassFactory_WeaponTypeClass()
 
 // 0x6C55D0
 namespace gamemd {
-int E4Recv_6C55D0::CreateTClassFactory_ParticleClass()
+int E4Recv_6C55D0::CreateTClassFactory_ParticleClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1325,7 +1325,7 @@ int E4Recv_6C55D0::CreateTClassFactory_ParticleClass()
 
 // 0x6C5750
 namespace gamemd {
-int E4Recv_6C5750::CreateTClassFactory_ParticleTypeClass()
+int E4Recv_6C5750::CreateTClassFactory_ParticleTypeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1345,7 +1345,7 @@ int E4Recv_6C5750::CreateTClassFactory_ParticleTypeClass()
 
 // 0x6C58D0
 namespace gamemd {
-int E4Recv_6C58D0::CreateTClassFactory_ParticleSystemClass()
+int E4Recv_6C58D0::CreateTClassFactory_ParticleSystemClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1365,7 +1365,7 @@ int E4Recv_6C58D0::CreateTClassFactory_ParticleSystemClass()
 
 // 0x6C5A50
 namespace gamemd {
-int E4Recv_6C5A50::CreateTClassFactory_ParticleSystemTypeClass()
+int E4Recv_6C5A50::CreateTClassFactory_ParticleSystemTypeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1385,7 +1385,7 @@ int E4Recv_6C5A50::CreateTClassFactory_ParticleSystemTypeClass()
 
 // 0x6C5BD0
 namespace gamemd {
-int E4Recv_6C5BD0::CreateTClassFactory_AITriggerTypeClass()
+int E4Recv_6C5BD0::CreateTClassFactory_AITriggerTypeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1405,7 +1405,7 @@ int E4Recv_6C5BD0::CreateTClassFactory_AITriggerTypeClass()
 
 // 0x6C5D50
 namespace gamemd {
-int E4Recv_6C5D50::CreateTClassFactory_NeuronClass()
+int E4Recv_6C5D50::CreateTClassFactory_NeuronClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1425,7 +1425,7 @@ int E4Recv_6C5D50::CreateTClassFactory_NeuronClass()
 
 // 0x6C5ED0
 namespace gamemd {
-int E4Recv_6C5ED0::CreateTClassFactory_FoggedObjectClass()
+int E4Recv_6C5ED0::CreateTClassFactory_FoggedObjectClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1445,7 +1445,7 @@ int E4Recv_6C5ED0::CreateTClassFactory_FoggedObjectClass()
 
 // 0x6C6050
 namespace gamemd {
-int E4Recv_6C6050::CreateTClassFactory_AlphaShapeClass()
+int E4Recv_6C6050::CreateTClassFactory_AlphaShapeClass(void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]

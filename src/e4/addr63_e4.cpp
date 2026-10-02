@@ -1752,7 +1752,7 @@ AbstractClass * * sub_638E60()
 }
 // 0x639040
 namespace gamemd {
-void sub_639040()
+void sub_639040(void * aMsgPlanningmod_2)
 {
   wchar_t *v1; // ebp
   int v2; // eax
@@ -1811,7 +1811,7 @@ void sub_639040()
 }
 // 0x639130
 namespace gamemd {
-void sub_639130()
+void sub_639130(void * aMsgPlannermaxi)
 {
   unsigned int Object_field_0x30; // ecx
   int v2; // ebp

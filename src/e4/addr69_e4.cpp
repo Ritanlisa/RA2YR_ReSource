@@ -78,6 +78,7 @@
 #include "e4/classes/ProgressAnim_e4.hpp"
 #include "e4/classes/SHPClass_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
 #include "e4/classes/LoadScreen_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
@@ -1033,7 +1034,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
 }
 // 0x6951F0
 namespace gamemd {
-char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, char a5)
+char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, char a5, void * aNoDigestHereMa)
 {
   const void *v5; // esi
   int v6; // ebp

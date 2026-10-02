@@ -28,6 +28,9 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/E4Recv_5EE200_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DialogControl_e4.hpp"
+#include "e4/classes/TimerPool_e4.hpp"
 
 // 0x49F740
 namespace gamemd {
@@ -416,7 +419,7 @@ LABEL_36:
 }
 // 0x606800
 namespace gamemd {
-AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM)
+AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM, void * a2)
 {
 
   HWND v2; // ebp

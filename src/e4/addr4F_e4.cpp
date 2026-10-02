@@ -650,7 +650,7 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int))
 }
 // 0x4F2C70
 namespace gamemd {
-void ParseINIAnimGadgetDefinition()
+void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void * aOrigin)
 {
   int Int; // ebx
   int *v8; // ebp

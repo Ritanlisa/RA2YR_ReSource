@@ -33,6 +33,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/BuildingLightQueue_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x430980
 namespace gamemd {

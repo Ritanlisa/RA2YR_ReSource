@@ -43,7 +43,7 @@ int ThemeClass::GetValue()
 } // namespace gamemd
 // 0x720480
 namespace gamemd {
-int ThemeClass::ReadThemeEntry(uint8_t ***a2)
+int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, void * aSide, void * aSound)
 {
 
   const char *v3; // edi
@@ -156,7 +156,7 @@ LABEL_10:
         if ( *((unsigned int *)this + 9) < v10 /*0x7206d1*/
           || (*((unsigned char *)this + 33) || !v10)
           && (v11 = *((unsigned int *)this + 10), v11 > 0)
-          && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 5) + 8))((char *)this + 20, v10 + v11, 0) )
+          && (*(uint8_t (**, void * aMusicStream)(int, int, unsigned int))(*((unsigned int *)this + 5) + 8))((char *)this + 20, v10 + v11, 0) )
         {
           v12 = *((unsigned int *)this + 9); /*0x7206d8*/
           v13 = *((unsigned int *)this + 6); /*0x7206db*/

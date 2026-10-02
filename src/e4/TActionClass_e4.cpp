@@ -36,6 +36,7 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {

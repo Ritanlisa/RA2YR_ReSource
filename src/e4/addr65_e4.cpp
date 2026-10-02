@@ -59,6 +59,8 @@
 #include "e4/classes/ScriptTypeClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x650A90
 namespace gamemd {
@@ -1339,7 +1341,7 @@ void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
 }
 // 0x65D8E0
 namespace gamemd {
-bool DeployScriptActionPlane(int a1, int edx0)
+bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
 {
   int v3; // edi
   int v5; // eax

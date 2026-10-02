@@ -33,6 +33,8 @@ struct Type;  // fix_tu_missing_types
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x413F80
 namespace gamemd {

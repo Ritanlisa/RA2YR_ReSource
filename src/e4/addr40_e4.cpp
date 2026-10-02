@@ -78,6 +78,8 @@
 #include "e4/classes/AudioNode_e4.hpp"
 #include "e4/classes/DListNode_e4.hpp"
 #include "e4/classes/IDXContainer_e4.hpp"
+#include "e4/classes/RefCount_e4.hpp"
+#include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/Queue_e4.hpp"
 
 // 0x4011C0

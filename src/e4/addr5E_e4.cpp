@@ -43,10 +43,12 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {
-int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd)
+int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd, void * aP0)
 {
   wchar_t *v3; // esi
   wint_t * v4;

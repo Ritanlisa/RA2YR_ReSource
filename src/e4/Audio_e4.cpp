@@ -677,7 +677,7 @@ int Audio::LoadWAVFiles(void *a1_1)
 }
 // 0x7510D0
 namespace gamemd {
-int Audio::InitFromINI(double a2@<st1>, double a3@<st0>, int a2, int a3, int a1, int aP1, int aP2)
+int Audio::InitFromINI(double a2@<st1>, double a3@<st0>, int a2, int a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority)
 {
 
   double *v3; // ecx
@@ -1169,7 +1169,7 @@ int sub_7C2250(int a1, int a2)
 }
 // 0x7C7F20
 namespace gamemd {
-void Audio_Helper_7C7F20()
+void Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4; // kr00_4
   unsigned short *v5; // esi

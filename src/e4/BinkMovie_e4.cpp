@@ -845,7 +845,7 @@ int BinkMovie::FreeSurfaceTracker(void *a1_1)
 }
 // 0x6C9B40
 namespace gamemd {
-int BinkMovie::InitKeyframeTracking(char * Source)
+int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
 {
 
   int v3; // eax

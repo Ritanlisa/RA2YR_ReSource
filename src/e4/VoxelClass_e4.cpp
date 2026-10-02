@@ -254,7 +254,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       ((Matrix3x3 *)(v71))->Multiply(v67); /*0x73cba5*/
       ((Matrix3x3 *)(v71))->Multiply(&v68); /*0x73cbb6*/
       if ( (((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
-        || (v52 = 1, (((unsigned int, void * a1)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
+        || (v52 = 1, (((unsigned int, void * a1, void * a10, void * a12)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
         v52 = 0; /*0x73cbfa*/
       }

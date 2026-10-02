@@ -44,6 +44,9 @@
 #include "e4/classes/GameSetup_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {
@@ -276,7 +279,7 @@ int NetworkLobby::CreateGame()
 
 // 0x5DE520
 namespace gamemd {
-int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam)
+int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam, void * a2)
 {
 
   wchar_t *StringCSF; // ebp
@@ -398,7 +401,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C)
-            || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
+            || (vtable2 = (&dword_A8B230, void * a2)[127].vtable2, (int)vtable2 > PlayerCountMap) )
           {
             vtable2 = (void *)PlayerCountMap; /*0x5dee00*/
           }

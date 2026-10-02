@@ -51,6 +51,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x52FF90
 namespace gamemd {
@@ -1624,7 +1625,7 @@ void sub_6603B0()
 }
 // 0x7760B0
 namespace gamemd {
-void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5)
+void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void * a3)
 {
   HFONT v7; // eax
   HFONT v8; // esi

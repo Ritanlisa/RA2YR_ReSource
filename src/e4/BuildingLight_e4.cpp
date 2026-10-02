@@ -81,7 +81,7 @@ Coord * * BuildingLight::CalculateShading(__m64)
   v43 = v2; /*0x5ff85c*/
   v4 = v2[5] & 0xF; /*0x5ff863*/
   if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
-    || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
+    || (v5 = PingPongBuffer::GetWriteOffset(, void * a2), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
   {
     LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/

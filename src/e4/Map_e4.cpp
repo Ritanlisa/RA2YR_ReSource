@@ -67,6 +67,7 @@
 #include "e4/classes/NetworkEventQueueClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x539760
 namespace gamemd {
@@ -1161,7 +1162,7 @@ char sub_63AB60(int a1, int a2)
 }
 // 0x76FD40
 namespace gamemd {
-void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, int a6)
+void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, int a6, void * a2, void * a5)
 {
   int v7; // ecx
   int v8; // ebp

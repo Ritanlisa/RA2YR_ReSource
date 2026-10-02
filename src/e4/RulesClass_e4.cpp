@@ -20,6 +20,7 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x48ACF0
 namespace gamemd {
@@ -185,7 +186,7 @@ void* RulesClass::readAudioVisual()
 }  // G42.18c ns repair
 // 0x673E80
 namespace gamemd {  // G42.18c ns repair
-INIClass * * RulesClass::ReadPowerupsSection()
+INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
 {
 
   int result; // eax
@@ -280,7 +281,7 @@ INIClass * * RulesClass::ReadPowerupsSection()
 }  // G42.18c ns repair
 // 0x6743D0
 namespace gamemd {  // G42.18c ns repair
-INIClass * * RulesClass::readDifficulty()
+INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, void * aJumpjetcontrol, void * aTurnrate, void * aWobbledeviatio, void * aWobblesperseco)
 {
 
   int result; // eax
@@ -352,7 +353,7 @@ INIClass * * RulesClass::readDifficulty()
 }  // G42.18c ns repair
 // 0x674550
 namespace gamemd {  // G42.18c ns repair
-INIClass * * RulesClass::ReadMovies()
+INIClass * * RulesClass::ReadMovies(void * aMovies)
 {
 
   int result; // eax
@@ -827,7 +828,7 @@ int RulesClass::readCombatDamage(int a2)
 }  // G42.18c ns repair
 // 0x66D1F0
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::readSpecialWeapons()
+int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, void * aWallpenetrator)
 {
 
   int result; // eax
@@ -863,7 +864,7 @@ int RulesClass::readSpecialWeapons()
 }  // G42.18c ns repair
 // 0x66D3A0
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::ReadColors()
+int RulesClass::ReadColors(void * aColors)
 {
 
   char *v1; // ebp
@@ -907,7 +908,7 @@ int RulesClass::ReadColors()
 }  // G42.18c ns repair
 // 0x66D480
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::ReadColorAdd()
+int RulesClass::ReadColorAdd(void * aColoradd)
 {
 
   INIClass *v1; // edi
@@ -962,7 +963,7 @@ int RulesClass::ReadColorAdd()
 }  // G42.18c ns repair
 // 0x672280
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::readCrateRules()
+int RulesClass::readCrateRules(void * aInfantrytypes)
 {
 
   int KeyCount; // ebx
@@ -992,7 +993,7 @@ int RulesClass::readCrateRules()
 }  // G42.18c ns repair
 // 0x6723D0
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::readRadiation()
+int RulesClass::readRadiation(void * aAircrafttypes)
 {
 
   int KeyCount; // ebx
@@ -1022,7 +1023,7 @@ int RulesClass::readRadiation()
 }  // G42.18c ns repair
 // 0x6725F0
 namespace gamemd {  // G42.18c ns repair
-int RulesClass::ReadSidesList()
+int RulesClass::ReadSidesList(void * aSuperweapontyp)
 {
 
   int KeyCount; // ebx

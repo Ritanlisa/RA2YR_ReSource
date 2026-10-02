@@ -30,6 +30,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/SuperClass_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -862,7 +864,7 @@ LABEL_25:
 }
 // 0x6A9540
 namespace gamemd {
-void Sidebar_UpdateProductionDisplay()
+void Sidebar_UpdateProductionDisplay(void * a1, void * a3)
 {
   char result; // al
   IUnknown *v6; // ebx

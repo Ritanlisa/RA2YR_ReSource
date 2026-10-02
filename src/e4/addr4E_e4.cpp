@@ -36,6 +36,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/FileFind_e4.hpp"
 
 // 0x4E0A00
 namespace gamemd {

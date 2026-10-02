@@ -37,6 +37,8 @@
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/Straw_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -428,7 +430,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
 }
 // 0x69AE10
 namespace gamemd {
-int GameClass::initPlayerData(const char **a2)
+int GameClass::initPlayerData(const char **a2, void * aStandard_0)
 {
 
   int v3; // eax
@@ -696,7 +698,7 @@ void GameClass::InitDifficultyButtons()
 
 // 0x5E99C0
 namespace gamemd {
-wchar_t * GameClass::GetDifficultyString()
+wchar_t * GameClass::GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno)
 {
 
   if ( this == (GameClass *)g_HouseClass_ObserverFlags ) /*0x5e99c6*/

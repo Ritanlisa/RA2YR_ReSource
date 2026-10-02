@@ -23,6 +23,7 @@
 #include "e4/classes/SyncDelay_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
+#include "e4/classes/LightConvertClass_e4.hpp"
 
 // 0x411580
 namespace gamemd {
@@ -35,7 +36,7 @@ int Surface::IsLocked()
 } // namespace gamemd
 // 0x5D1FD0
 namespace gamemd {
-unsigned int * Surface::CopyRect(int *aP1)
+unsigned int * Surface::CopyRect(int *aP1, void * a1)
 {
 
   unsigned int *result; // eax

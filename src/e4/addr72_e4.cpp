@@ -42,6 +42,9 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/AssetClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {

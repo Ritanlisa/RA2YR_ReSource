@@ -58,6 +58,7 @@
 #include "e4/classes/Text_e4.hpp"
 #include "e4/classes/Font_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/Control_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -634,7 +635,7 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
 }
 // 0x621040
 namespace gamemd {
-int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9, void * a10)
 {
   int *v10; // esi
   void * v11;

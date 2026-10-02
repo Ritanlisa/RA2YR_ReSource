@@ -72,6 +72,12 @@
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -842,7 +848,7 @@ void PostLoadInitScenario()
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x684f98*/
   for ( m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x684fa9*/
         m;
-        m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
+        m = ((LayerClass *, void * aGascloudsys)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }

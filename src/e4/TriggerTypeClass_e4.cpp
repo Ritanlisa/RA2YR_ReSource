@@ -28,6 +28,7 @@
 #include "e4/classes/IPersistStream_e4.hpp"
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x6FC0B0
 namespace gamemd {

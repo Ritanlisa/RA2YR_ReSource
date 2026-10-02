@@ -737,7 +737,7 @@ LABEL_19:
 }
 // 0x52A610
 namespace gamemd {
-ObjectClass * * E4Recv_52A610::sub_52A610(void * a2)
+ObjectClass * * E4Recv_52A610::sub_52A610(void * a2, void * aPrivatekey, void * aPublickey)
 {
 
   signed int v3; // eax

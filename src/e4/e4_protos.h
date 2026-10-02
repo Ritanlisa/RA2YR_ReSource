@@ -948,4 +948,7 @@ struct _VectorClass_PBVUnitTypeClass;
 struct _VectorClass_PBVVoxelAnimTypeClass;
 struct _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem;
 struct _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry;
+
+// G42.31 C2065 type supply (per-name guarded, idempotent):
+struct _VectorClass_VWstring;
 } // namespace gamemd

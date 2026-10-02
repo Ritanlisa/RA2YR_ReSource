@@ -60,6 +60,9 @@
 #include "e4/classes/TileNode_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
+#include "e4/classes/StringVector_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {

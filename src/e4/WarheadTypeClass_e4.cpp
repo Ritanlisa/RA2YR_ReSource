@@ -29,6 +29,7 @@
 #include "e4/classes/GenericList_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x474810
 namespace gamemd {
@@ -616,7 +617,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 } // namespace gamemd
 // 0x75E2C0
 namespace gamemd {
-int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
+int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * a4)
 {
   int v5; // ebx
   int result; // eax

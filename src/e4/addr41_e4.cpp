@@ -716,7 +716,7 @@ bool sub_413CD0(int a1)
 }
 // 0x41B110
 namespace gamemd {
-INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
+INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
 {
   INIClass ** result;
   int v4; // ecx
@@ -1736,7 +1736,7 @@ int sub_41C890()
 
 // 0x41CAF0
 namespace gamemd {
-int sub_41CAF0()
+int sub_41CAF0(void * aLrotorShp, void * aRrotorShp)
 {
   int result; // eax
 

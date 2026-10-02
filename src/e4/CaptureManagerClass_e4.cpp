@@ -450,7 +450,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         v17 = i; /*0x47210f*/
         for ( v7->originalOwner = v16; /*0x472116*/
               v17 < (int)v7->originalOwner;
-              *(unsigned int *)(v7->controlNodeCount + 4 * v17 - 4) = *(unsigned int *)(v7->controlNodeCount + 4 * v17) )
+              *(unsigned int *, void * aP0)(v7->controlNodeCount + 4 * v17 - 4) = *(unsigned int *)(v7->controlNodeCount + 4 * v17) )
         {
           ++v17; /*0x47211b*/
         }

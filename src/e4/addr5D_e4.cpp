@@ -697,7 +697,7 @@ char sub_5D6000(HWND hWnd, int a2)
 }
 // 0x5D7590
 namespace gamemd {
-Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
+Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdpostMult)
 {
   char **v2; // esi
   int v3; // eax

@@ -26,7 +26,7 @@
 
 // 0x5FA620
 namespace gamemd {
-void GameSettings::Read(void *a1, void *a2)
+void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllowmodetoggl, void * aAllowvramsideb)
 {
 
   double v1; // st7

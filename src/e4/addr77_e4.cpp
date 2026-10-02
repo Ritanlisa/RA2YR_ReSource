@@ -67,10 +67,13 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Window_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
-void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass)
+void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3)
 {
 
   unsigned int v5;
@@ -738,7 +741,7 @@ BOOL SetDialogParent(HWND hWnd, HWND a2)
 }
 // 0x7775C0
 namespace gamemd {
-int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPARAM lParam)
+int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPARAM lParam, void * a3, void * a4, void * a5)
 {
   int v10; // eax
   HWND v11; // esi

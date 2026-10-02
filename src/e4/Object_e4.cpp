@@ -36,6 +36,7 @@
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/Vector3_e4.hpp"
 #include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {

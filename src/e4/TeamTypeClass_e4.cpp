@@ -282,7 +282,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 }
 // 0x6F1090
 namespace gamemd {
-AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
+AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint)
 {
 
   int v3; // ecx
@@ -617,7 +617,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 }
 // 0x6F1550
 namespace gamemd {
-AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
+AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce, void * aWaypoint)
 {
 
   int v3; // eax

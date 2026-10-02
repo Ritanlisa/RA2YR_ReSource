@@ -725,7 +725,7 @@ Coord * * UpdateWOLLobbyPings()
 }
 // 0x7A16B0
 namespace gamemd {
-ObjectClass * * HandleWOLMatchMessage()
+ObjectClass * * HandleWOLMatchMessage(void * a2, void * aExit_0, void * aFail, void * aPingfail, void * aRankfail, void * aWdtsidefail, void * aWolMatchfail, void * aWolMatchfailpi, void * aWolMatchfailra, void * aWolMatchfailwd, void * aWorking)
 {
   wchar_t *StringCSF; // eax
   wchar_t *v5; // eax

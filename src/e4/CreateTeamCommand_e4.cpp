@@ -37,6 +37,8 @@
 #include "e4/classes/E4Recv_6C2D50_e4.hpp"
 #include "e4/classes/E4Recv_6C34D0_e4.hpp"
 #include "e4/classes/E4Recv_6C2450_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x535CF0
 namespace gamemd {
@@ -331,7 +333,7 @@ ObjectClass * CreateTeamCommand::AddRef(void *a1_1)
 
 // 0x535C40
 namespace gamemd {
-wchar_t * CreateTeamCommand::Release(void *a1_1)
+wchar_t * CreateTeamCommand::Release(void *a1_1, void * aTxtCreateTeam)
 {
 
   wchar_t *StringCSF; // eax
@@ -357,7 +359,7 @@ wchar_t * CreateTeamCommand::ddtor()
 
 // 0x535C90
 namespace gamemd {
-wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1)
+wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1, void * aTxtCreateTeamD)
 {
 
   wchar_t *StringCSF; // eax
@@ -419,7 +421,7 @@ char * CreateTeamCommand::performAction_2()
 
 // 0x535D30
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_3()
+wchar_t * CreateTeamCommand::performAction_3(void * aTxtStructureTa)
 {
 
   return GetStringCSF(aTxtStructureTa, 0, g_Str_File_Init_CPP, 6186); /*0x535d46*/
@@ -439,7 +441,7 @@ wchar_t * CreateTeamCommand::performAction_4()
 
 // 0x535D70
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_5()
+wchar_t * CreateTeamCommand::performAction_5(void * aTxtStructureTa_0)
 {
 
   return GetStringCSF(aTxtStructureTa_0, 0, g_Str_File_Init_CPP, 6190); /*0x535d86*/
@@ -485,7 +487,7 @@ char * CreateTeamCommand::performAction_7()
 
 // 0x535DF0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_8()
+wchar_t * CreateTeamCommand::performAction_8(void * aTxtDefenseTab)
 {
 
   return GetStringCSF(aTxtDefenseTab, 0, g_Str_File_Init_CPP, 6212); /*0x535e06*/
@@ -713,7 +715,7 @@ char * CreateTeamCommand::performAction_26()
 
 // 0x5365B0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_27()
+wchar_t * CreateTeamCommand::performAction_27(void * aTxtNextObject)
 {
 
   return GetStringCSF(aTxtNextObject, 0, g_Str_File_Init_CPP, 6526); /*0x5365c6*/

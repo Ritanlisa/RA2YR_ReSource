@@ -42,6 +42,8 @@
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Cliff_e4.hpp"
+#include "e4/classes/TileNode_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {

@@ -28,6 +28,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/Straw_e4.hpp"
 
 // 0x487630
 namespace gamemd {

@@ -607,7 +607,7 @@ void unknown_libname_37()
 }
 // 0x769550
 namespace gamemd {
-int WDTMap_LoadAsset(const char ** a1, int a2)
+int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
 {
   void *vtable0; // ebp
   int *v4; // eax

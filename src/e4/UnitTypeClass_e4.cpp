@@ -221,7 +221,7 @@ void UnitTypeClass::UnitTypeClass_ConstructUnit( int * a2)
 }
 // 0x747620
 namespace gamemd {
-void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
+void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3, void * aAltimage, void * aBrainblastturr, void * aBrainblastturr_0, void * aChronoturretin, void * aChronoturretwe, void * aCowturretindex, void * aCowturretweapo, void * aExplodeturreti, void * aExplodeturretw, void * aFlakturretinde, void * aFlakturretweap, void * aInitiateturret, void * aInitiateturret_0, void * aMachinegunturr, void * aMachinegunturr_0, void * aMaxdeathcounte, void * aNormalturretin, void * aNormalturretwe, void * aPistolturretin, void * aPistolturretwe, void * aRadcannonturre, void * aRadcannonturre_0, void * aRepairturretin, void * aRepairturretwe, void * aShockturretind, void * aShockturretwea, void * aSniperturretin, void * aSniperturretwe, void * aStartdeathfram, void * aStartfiringfra, void * aTerroristexplo, void * aTerroristexplo_0)
 {
   BuildingClass *v3; // ecx
   BuildingClass *v4; // edi
