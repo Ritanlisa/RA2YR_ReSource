@@ -210,7 +210,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   float v40[12]; // [esp+50h] [ebp-60h] BYREF
   float v41[12]; // [esp+80h] [ebp-30h] BYREF
 
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 /*0x749bb6*/
+  if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0 /*0x749bb6*/
     || (v27 = *(unsigned int *)&this->__pad_98[4],
         v28 = *(unsigned int *)&this->__pad_98[8],
         v29 = *(unsigned int *)&this->__pad_98[12],

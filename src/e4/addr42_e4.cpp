@@ -463,14 +463,14 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
   char v21[12]; // [esp+18h] [ebp-18h] BYREF
   char v22[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  (*(void (**)(TechnoClass *, int))(this->vtable0 + 292))(this, 2); /*0x424ceb*/
+  (*(void (**)(TechnoClass *, int))(this->vtable1 + 292))(this, 2); /*0x424ceb*/
   if ( LOBYTE(this->ironCurtainTimer[2]) || *(unsigned int *)(this->missionTimer[0] + 760) == -1 ) /*0x424d08*/
   {
     ((AudioController *)((AudioController *)&this->ironTintTimer[1]))->Stop(); /*0x424d38*/
   }
   else
   {
-    v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, &v18); /*0x424d1a*/
+    v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, &v18); /*0x424d1a*/
     StartAudioControllerAt(*(unsigned int *)(this->missionTimer[0] + 760), v2, (int **)&this->ironTintTimer[1]); /*0x424d2b*/
   }
   ((AudioController *)((AudioController *)&this->airstrikeTimer[2]))->Stop(); /*0x424d43*/
@@ -482,19 +482,19 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
     LOBYTE(v3) = *(unsigned char *)(this->missionTimer[0] + 855); /*0x424d73*/
     if ( (unsigned char)v3 ) /*0x424d7b*/
     {
-      v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))(this->vtable0 + 72))(this, v21); /*0x424d8a*/
+      v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))(this->vtable1 + 72))(this, v21); /*0x424d8a*/
       v5 = ((Coord *)((Coord *)&dword_87F7E8))->To_Cell(v4); /*0x424d98*/
       v3 = BuildingClass::FindByCellHash((BuildingClass *)v5); /*0x424d9c*/
       if ( v3 != -1 ) /*0x424da4*/
       {
-        v6 = (unsigned int *)*(&dword_B0F4EC->vtable0 + v3); /*0x424db3*/
+        v6 = (unsigned int *)*(&dword_B0F4EC->vtable1 + v3); /*0x424db3*/
         CellClass::ReduceTiberium(&v5->mapCoords, (uint8_t)v5->powerup[0] + 1); /*0x424dc0*/
         if ( (int)v6[53] > 0 && !((int)abs32(((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()) % 3) ) /*0x424def*/
         {
           v7 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x424e04*/
           if ( v7 ) /*0x424e0b*/
           {
-            v8 = (int *)(*(int (**)(TechnoClass *, char *))(this->vtable0 + 72))(this, v22); /*0x424e16*/
+            v8 = (int *)(*(int (**)(TechnoClass *, char *))(this->vtable1 + 72))(this, v22); /*0x424e16*/
             v9 = *v8; /*0x424e19*/
             v10 = v8[1]; /*0x424e1b*/
             v11 = v8[2]; /*0x424e1e*/
@@ -560,12 +560,12 @@ AbstractClass * * ObjectClass::CreateUnitOnCompletion(583 B)
   int *v21; // [esp+1Ch] [ebp-14h]
   int v22[4]; // [esp+20h] [ebp-10h] BYREF
 
-  v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x424f12*/
+  v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, v22); /*0x424f12*/
   LOWORD(v17) = *v2 / 256; /*0x424f25*/
   HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
   *(unsigned int *)v19 = v17; /*0x424f4b*/
   v3 = (int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v19); /*0x424f50*/
-  vtable0 = this->vtable0; /*0x424f55*/
+  vtable0 = this->vtable1; /*0x424f55*/
   v5 = 30; /*0x424f57*/
   v21 = v3; /*0x424f5e*/
   v18 = 30; /*0x424f62*/
@@ -593,7 +593,7 @@ AbstractClass * * ObjectClass::CreateUnitOnCompletion(583 B)
       v9 = this->missionTimer[0]; /*0x42503e*/
     }
   }
-  v11 = (*(int (**)(TechnoClass *))(this->vtable0 + 456))(this); /*0x425051*/
+  v11 = (*(int (**)(TechnoClass *))(this->vtable1 + 456))(this); /*0x425051*/
   if ( v11 < 30 ) /*0x42505a*/
   {
     v12 = this->missionTimer[0]; /*0x425060*/
@@ -608,19 +608,19 @@ AbstractClass * * ObjectClass::CreateUnitOnCompletion(583 B)
         CellClass::ReduceTiberium(v21, 6); /*0x4250e7*/
         if ( *(unsigned char *)(this->missionTimer[0] + 878) ) /*0x4250f2*/
         {
-          v14 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x42510c*/
+          v14 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, v22); /*0x42510c*/
           LOBYTE(v11) = TimedCreateUnitAtCoords(v14, 300, 300, 1); /*0x425116*/
         }
         else
         {
-          v15 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x425133*/
+          v15 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, v22); /*0x425133*/
           LOBYTE(v11) = TimedCreateUnitAtCoords(v15, v5, v18, 0); /*0x42513a*/
         }
       }
     }
     else
     {
-      v13 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, v22); /*0x4250bd*/
+      v13 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, v22); /*0x4250bd*/
       LOBYTE(v11) = StandardCreateUnitAtCoords(v13, v5, v18, 0); /*0x4250c4*/
     }
   }
@@ -768,7 +768,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     if ( (int)Coord::Length((Coord *)&v54) > 18 ) /*0x42573d*/
     {
       v54 = *location; /*0x4258f3*/
-      vtable0 = this->vtable0; /*0x4258f7*/
+      vtable0 = this->vtable1; /*0x4258f7*/
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
       v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))(this, &v54); /*0x42590a*/
@@ -791,7 +791,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         GroundHeight = Map_MaxHeight + Cell::GetGroundHeight(&v51); /*0x4259e5*/
       else
         GroundHeight = Cell::GetGroundHeight(&v51); /*0x4259cf*/
-      v27 = this->vtable0; /*0x4259eb*/
+      v27 = this->vtable1; /*0x4259eb*/
       v53 = GroundHeight; /*0x4259ed*/
       (*(void (**)(TechnoClass *, int *))(v27 + 436))(this, &v51); /*0x4259f8*/
     }
@@ -806,7 +806,7 @@ int E4Recv_425670::ConstructionPositionTracker()
       v53 = v9[2]; /*0x425773*/
       v11 = (((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&this->animation[4])->landType == 2 /*0x4257ab*/
           || ((Coord *)((Coord *)&dword_87F7E8))->To_Cell(&this->animation[4])->landType == 6)
-         && (*(int (**)(TechnoClass *))(this->vtable0 + 456))(this) <= Map_CellHeight;
+         && (*(int (**)(TechnoClass *))(this->vtable1 + 456))(this) <= Map_CellHeight;
       if ( v10 == Map_InvalidCoord_X && v52 == Map_InvalidCoord_Y && v53 == Map_InvalidCoord_Z /*0x4257ec*/
         || (v12 = this->passengers[0], v12 >= 7)
         || v11 )
@@ -835,7 +835,7 @@ int E4Recv_425670::ConstructionPositionTracker()
         v14 = Map_MaxHeight + Cell::GetGroundHeight(&v49); /*0x42585d*/
       else
         v14 = Cell::GetGroundHeight(&v49); /*0x425847*/
-      v15 = this->vtable0; /*0x425863*/
+      v15 = this->vtable1; /*0x425863*/
       v50 = v14; /*0x425865*/
       (*(void (**)(TechnoClass *, double *))(v15 + 436))(this, &v49); /*0x425870*/
       v16 = v52; /*0x42587a*/
@@ -892,7 +892,7 @@ LABEL_41:
       || this->animation[5] != Map_InvalidCoord_Y
       || this->animation[6] != Map_InvalidCoord_Z )
     {
-      v43 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, &v54); /*0x425c40*/
+      v43 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, &v54); /*0x425c40*/
       v44 = *v43; /*0x425c45*/
       LODWORD(v48) = *v4; /*0x425c47*/
       LODWORD(v49) = v44; /*0x425c4b*/
@@ -907,9 +907,9 @@ LABEL_41:
     return v19; /*0x425cda*/
   }
 LABEL_47:
-  v19 = *(int16_t *)((*(int (**)(TechnoClass *))(this->vtable0 + 108))(this) + 6) / 2 - 1; /*0x425cdb*/
+  v19 = *(int16_t *)((*(int (**)(TechnoClass *))(this->vtable1 + 108))(this) + 6) / 2 - 1; /*0x425cdb*/
   if ( this->currentMission >= v19 ) /*0x425cf4*/
-    LOBYTE(v19) = (*(bool (**)(TechnoClass *))(this->vtable0 + 248))(this); /*0x425cfa*/
+    LOBYTE(v19) = (*(bool (**)(TechnoClass *))(this->vtable1 + 248))(this); /*0x425cfa*/
   return v19; /*0x4258bb*/
 
 }
@@ -938,7 +938,7 @@ void sub_4261D0()
       v5 = BuildingClass::FindByCellHash((BuildingClass *)v4); /*0x42622b*/
       if ( v5 != -1 ) /*0x426233*/
       {
-        v6 = *(&dword_B0F4EC->vtable0 + v5); /*0x42623b*/
+        v6 = *(&dword_B0F4EC->vtable1 + v5); /*0x42623b*/
         if ( v6 ) /*0x426240*/
           v3[53] = *(unsigned int *)(*((unsigned int *)dword_B054D4 + *(unsigned int *)(v6 + 192)) + 780); /*0x426256*/
       }

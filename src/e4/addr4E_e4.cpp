@@ -54,7 +54,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a1c*/
+  this->vtable1 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -103,10 +103,10 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a8a*/
+  this->vtable1 = &vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a8a*/
   *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
   *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
-  return &this->vtable0; /*0x4e0aa0*/
+  return &this->vtable1; /*0x4e0aa0*/
 
 }
 }

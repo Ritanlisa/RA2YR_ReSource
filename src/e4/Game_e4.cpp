@@ -298,8 +298,8 @@ AbstractClass * * Game::DestroyAllObjects()
   ProcessExpiredPointers(v17); /*0x534697*/
   while ( dword_A80238 ) /*0x5346a2*/
   {
-    if ( dword_A8022C->vtable0 ) /*0x5346a9*/
-      (*(void (**)(int, int))(*(unsigned int *)dword_A8022C->vtable0 + 32))(dword_A8022C->vtable0, 1); /*0x5346b3*/
+    if ( dword_A8022C->vtable1 ) /*0x5346a9*/
+      (*(void (**)(int, int))(*(unsigned int *)dword_A8022C->vtable1 + 32))(dword_A8022C->vtable1, 1); /*0x5346b3*/
   }
   ProcessExpiredPointers(v18); /*0x5346be*/
   while ( dword_A8E9B8 ) /*0x5346c9*/

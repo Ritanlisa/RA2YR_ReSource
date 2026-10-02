@@ -192,7 +192,7 @@ void sub_6269A0()
       if ( v6 ) /*0x626a0d*/
       {
         ((VectorClass *)(v6))->ConstructHSV(0, 0); /*0x626a15*/
-        v7->vtable0 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x626a1a*/
+        v7->vtable1 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].vtable0 = 0; /*0x626a27*/
       }

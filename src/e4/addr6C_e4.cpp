@@ -3024,9 +3024,9 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  this->vtable0 = &vt_VectorClass; /*0x6cf90a*/
+  this->vtable1 = &vt_VectorClass; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
-    return &this->vtable0; /*0x6cf910*/
+    return &this->vtable1; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
     v7 = (unsigned int *)__2_YAPAXI_Z(8 * a2); /*0x6cf942*/
@@ -3046,7 +3046,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
         while ( v9 ); /*0x6cf961*/
         this->Items = v7; /*0x6cf963*/
         this->IsAllocated = 1; /*0x6cf966*/
-        return &this->vtable0; /*0x6cf96f*/
+        return &this->vtable1; /*0x6cf96f*/
       }
     }
     else
@@ -3055,7 +3055,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     }
     this->Items = v7; /*0x6cf974*/
     this->IsAllocated = 1; /*0x6cf977*/
-    return &this->vtable0; /*0x6cf97b*/
+    return &this->vtable1; /*0x6cf97b*/
   }
   v4 = a3; /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
@@ -3071,7 +3071,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     while ( v5 ); /*0x6cf92d*/
   }
   this->Items = a3; /*0x6cf92f*/
-  return &this->vtable0; /*0x6cf934*/
+  return &this->vtable1; /*0x6cf934*/
 
 }
 } // namespace gamemd

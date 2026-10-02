@@ -790,7 +790,7 @@ LABEL_21:
           v15 = v14; /*0x75134b*/
           if ( v14 ) /*0x751352*/
           {
-            v14->vtable0 = 0; /*0x751354*/
+            v14->vtable1 = 0; /*0x751354*/
             if ( g_VocPlayState < dword_B1D380 /*0x75138f*/
               || (byte_B1D385 || !dword_B1D380)
               && dword_B1D38C > 0
@@ -802,7 +802,7 @@ LABEL_21:
               v16 = g_VocPlayState++; /*0x75139c*/
               *((unsigned int *)g_VocAudioConfig + v16) = v15; /*0x7513ab*/
             }
-            v15->vtable0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
+            v15->vtable1 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
           }
           else
           {

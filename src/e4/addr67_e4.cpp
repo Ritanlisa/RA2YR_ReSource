@@ -138,9 +138,9 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
     aP0->Capacity = (unsigned int)(0);
     aP0->IsInitialized = (unsigned int)(1);
     aP0->IsAllocated = (unsigned int)(0);
-    aP0->vtable0 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
+    aP0->vtable1 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
     ((VectorClass *)(aP0))->CopyBuilding(&v17); /*0x67b640*/
-    aP0->vtable0 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable); /*0x67b645*/
+    aP0->vtable1 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable); /*0x67b645*/
     v17.vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/
     aP0[1].vtable0 = (unsigned int)((void *)v18); /*0x67b65b*/
@@ -159,7 +159,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
     aP0->Capacity = (unsigned int)(0);
     aP0->IsInitialized = (unsigned int)(1);
     aP0->IsAllocated = (unsigned int)(0);
-    aP0->vtable0 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
+    aP0->vtable1 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
     if ( aP0 != (gamemd::INIClass *)(a4) ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
@@ -193,7 +193,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
     }
     aP0[1].vtable0 = (unsigned int)(a4[1].vtable0);
     aP0[1].Items = (unsigned int)(a4[1].Items);
-    aP0->vtable0 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable);
+    aP0->vtable1 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable);
   }
   return aP0; /*0x67b682*/
 }

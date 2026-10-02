@@ -103,7 +103,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       && *(unsigned char *)(v4 + 144)
       && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
       && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
-      && (((int)dword_A8B230->vtable0 & 0x800) == 0
+      && (((int)dword_A8B230->vtable1 & 0x800) == 0
        || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 1
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {

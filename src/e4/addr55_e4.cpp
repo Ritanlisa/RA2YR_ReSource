@@ -1384,7 +1384,7 @@ LABEL_8:
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/
 LABEL_9:
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 && *(double *)(v1 + 5704) != 0.0 ) /*0x55b7ca*/
+  if ( ((int)dword_A8B230->vtable1 & 0x1000) != 0 && *(double *)(v1 + 5704) != 0.0 ) /*0x55b7ca*/
   {
     vtable0 = dword_A8B230[129].vtable0; /*0x55b7cc*/
     vtable2 = (char *)dword_A8B230[129].vtable2; /*0x55b7d2*/
@@ -1395,7 +1395,7 @@ LABEL_9:
       {
 LABEL_15:
         LOWORD(v11) = Math::RoundToInt(*(double *)(v1 + 5704) * 900.0); /*0x55b7f1*/
-        v10->vtable0 = v3; /*0x55b806*/
+        v10->vtable1 = v3; /*0x55b806*/
         v10->vtable1 = v15; /*0x55b808*/
         v10->vtable2 = v11; /*0x55b810*/
         MapClass::ProcessFogTransition((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b813*/
@@ -2019,7 +2019,7 @@ AbstractClass * * Game_Frame_Check()
         v3 = *(unsigned int *)&dword_A8B238; /*0x55d0cb*/
         if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x55d0dd*/
         {
-          (*(void (**)(int))(dword_A8B23C->vtable0 + 160))(v2); /*0x55d0e2*/
+          (*(void (**)(int))(dword_A8B23C->vtable1 + 160))(v2); /*0x55d0e2*/
           IDA_LOBYTE(v2) = byte_A83D49; /*0x55d0e8*/
           v3 = *(unsigned int *)&dword_A8B238; /*0x55d0ed*/
         }
@@ -2123,7 +2123,7 @@ AbstractClass * * Game_Frame_Check()
           }
         }
         if ( !dword_A8B23C /*0x55d335*/
-          || !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable0 + 8))(dword_A8B23C) )
+          || !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
         {
           Network::SendUnreachable(v10); /*0x55d33c*/
         }
@@ -2559,7 +2559,7 @@ void GameFrameLoop()
   {
     if ( dword_A8B23C ) /*0x55ddc1*/
     {
-      if ( !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C) ) /*0x55ddc5*/
+      if ( !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) ) /*0x55ddc5*/
       {
         v40 = *(unsigned int *)((dword_87F8DC << 11) + dword_87F924 + 10268); /*0x55dde1*/
         if ( v40 ) /*0x55dde5*/

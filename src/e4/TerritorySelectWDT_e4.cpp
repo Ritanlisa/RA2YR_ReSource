@@ -166,7 +166,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
-  vtable0 = this->vtable0; /*0x77152b*/
+  vtable0 = this->vtable1; /*0x77152b*/
   DeleteAndZero::Alt2(&v17); /*0x77153b*/
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )

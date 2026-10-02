@@ -102,7 +102,7 @@ int BuildingType::FindOwnerHouse(void *a1_1)
     v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(7u); /*0x510f34*/
   }
   if ( v1 >= 0 && v1 < dword_A80238 ) /*0x510f43*/
-    return *(&dword_A8022C->vtable0 + v1); /*0x510f4e*/
+    return *(&dword_A8022C->vtable1 + v1); /*0x510f4e*/
   return 0; /*0x510f4e*/
 
 }

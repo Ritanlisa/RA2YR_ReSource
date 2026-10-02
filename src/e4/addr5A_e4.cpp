@@ -2883,8 +2883,8 @@ unsigned int * InitializePathData()
   dword_ABE374 = (TechnoTypeClass *)v2;
   *(unsigned int *)v2 = 0;
   *(unsigned int *)(v2 + 4) = 0;
-  *(unsigned int *)&dword_ABE374->vtable0[8] = v118;
-  *(unsigned int *)&dword_ABE374->vtable0[12] = 1;
+  *(unsigned int *)&dword_ABE374->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE374->vtable1[12] = 1;
   v118 = 0;
   dword_ABE384 = 0;
   dword_ABE37C = 2;
@@ -2902,9 +2902,9 @@ unsigned int * InitializePathData()
   dword_ABE380 = (TechnoTypeClass *)v5;
   *(unsigned int *)v5 = v118;
   v5->u32_4 = 0;
-  *(unsigned int *)&dword_ABE380->vtable0[8] = 1;
+  *(unsigned int *)&dword_ABE380->vtable1[8] = 1;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE380->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE380->vtable1[12] = 2;
   IDA_HIWORD(v120) = 1;
   dword_ABE390 = 0;
   dword_ABE388 = 2;
@@ -2922,8 +2922,8 @@ unsigned int * InitializePathData()
   dword_ABE38C = (TechnoTypeClass *)v7;
   v7->vfptr = 0;
   v7[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE38C->vtable0[8] = v120;
-  *(unsigned int *)&dword_ABE38C->vtable0[12] = 3;
+  *(unsigned int *)&dword_ABE38C->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE38C->vtable1[12] = 3;
   v118 = 0;
   dword_ABE39C = 0;
   dword_ABE394 = 2;
@@ -2941,8 +2941,8 @@ unsigned int * InitializePathData()
   dword_ABE398 = (TechnoTypeClass *)v9;
   v9->vfptr = v118;
   v9[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE398->vtable0[8] = 1;
-  *(unsigned int *)&dword_ABE398->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE398->vtable1[8] = 1;
+  *(unsigned int *)&dword_ABE398->vtable1[12] = 5;
   v118 = 0;
   dword_ABE3A8 = 0;
   dword_ABE3A0 = 2;
@@ -2960,8 +2960,8 @@ unsigned int * InitializePathData()
   dword_ABE3A4 = (TechnoTypeClass *)v11;
   v11->vfptr = v118;
   v11[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE3A4->vtable0[8] = 0;
-  *(unsigned int *)&dword_ABE3A4->vtable0[12] = 6;
+  *(unsigned int *)&dword_ABE3A4->vtable1[8] = 0;
+  *(unsigned int *)&dword_ABE3A4->vtable1[12] = 6;
   v118 = (rc_ptr_base *)1;
   dword_ABE3B4 = 0;
   dword_ABE3AC = 2;
@@ -2979,8 +2979,8 @@ unsigned int * InitializePathData()
   dword_ABE3B0 = (TechnoTypeClass *)v13;
   v13->vfptr = v118;
   v13[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE3B0->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE3B0->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE3B0->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE3B0->vtable1[12] = 7;
   v118 = (rc_ptr_base *)1;
   dword_ABE3C0 = 0;
   dword_ABE3B8 = 2;
@@ -2998,8 +2998,8 @@ unsigned int * InitializePathData()
   dword_ABE3BC = (TechnoTypeClass *)v15;
   v15->vfptr = v118;
   v15[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3BC->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE3BC->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE3BC->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE3BC->vtable1[12] = 2;
   v118 = (rc_ptr_base *)1;
   dword_ABE3CC = 0;
   dword_ABE3C4 = 2;
@@ -3017,8 +3017,8 @@ unsigned int * InitializePathData()
   dword_ABE3C8 = (TechnoTypeClass *)v17;
   v17->vfptr = v118;
   v17[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3C8->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE3C8->vtable0[12] = 3;
+  *(unsigned int *)&dword_ABE3C8->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE3C8->vtable1[12] = 3;
   v118 = (rc_ptr_base *)1;
   dword_ABE3D8 = 0;
   dword_ABE3D0 = 2;
@@ -3036,8 +3036,8 @@ unsigned int * InitializePathData()
   dword_ABE3D4 = (TechnoTypeClass *)v19;
   v19->vfptr = v118;
   v19[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3D4->vtable0[8] = 0x10000;
-  *(unsigned int *)&dword_ABE3D4->vtable0[12] = 4;
+  *(unsigned int *)&dword_ABE3D4->vtable1[8] = 0x10000;
+  *(unsigned int *)&dword_ABE3D4->vtable1[12] = 4;
   v118 = (rc_ptr_base *)1;
   dword_ABE3E4 = 0;
   dword_ABE3DC = 2;
@@ -3055,8 +3055,8 @@ unsigned int * InitializePathData()
   dword_ABE3E0 = (TechnoTypeClass *)v21;
   v21->vfptr = v118;
   v21[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3E0->vtable0[8] = 0;
-  *(unsigned int *)&dword_ABE3E0->vtable0[12] = 6;
+  *(unsigned int *)&dword_ABE3E0->vtable1[8] = 0;
+  *(unsigned int *)&dword_ABE3E0->vtable1[12] = 6;
   v118 = (rc_ptr_base *)2;
   dword_ABE3F0 = 0;
   dword_ABE3E8 = 2;
@@ -3074,8 +3074,8 @@ unsigned int * InitializePathData()
   dword_ABE3EC = (TechnoTypeClass *)v23;
   v23->vfptr = v118;
   v23[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3EC->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE3EC->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE3EC->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE3EC->vtable1[12] = 7;
   v118 = (rc_ptr_base *)2;
   dword_ABE3FC = 0;
   dword_ABE3F4 = 2;
@@ -3093,8 +3093,8 @@ unsigned int * InitializePathData()
   dword_ABE3F8 = (TechnoTypeClass *)v25;
   v25->vfptr = v118;
   v25[1].vfptr = (void *)1;
-  *(unsigned int *)&dword_ABE3F8->vtable0[8] = 0;
-  *(unsigned int *)&dword_ABE3F8->vtable0[12] = 0;
+  *(unsigned int *)&dword_ABE3F8->vtable1[8] = 0;
+  *(unsigned int *)&dword_ABE3F8->vtable1[12] = 0;
   v118 = (rc_ptr_base *)1;
   dword_ABE408 = 0;
   dword_ABE400 = 2;
@@ -3112,8 +3112,8 @@ unsigned int * InitializePathData()
   dword_ABE404 = (TechnoTypeClass *)v27;
   v27->vfptr = v118;
   v27[1].vfptr = (void *)2;
-  *(unsigned int *)&dword_ABE404->vtable0[8] = 131073;
-  *(unsigned int *)&dword_ABE404->vtable0[12] = 3;
+  *(unsigned int *)&dword_ABE404->vtable1[8] = 131073;
+  *(unsigned int *)&dword_ABE404->vtable1[12] = 3;
   v118 = (rc_ptr_base *)1;
   dword_ABE414 = 0;
   dword_ABE40C = 2;
@@ -3131,8 +3131,8 @@ unsigned int * InitializePathData()
   dword_ABE410 = (TechnoTypeClass *)v29;
   v29->vfptr = v118;
   v29[1].vfptr = (void *)2;
-  *(unsigned int *)&dword_ABE410->vtable0[8] = 0x10000;
-  *(unsigned int *)&dword_ABE410->vtable0[12] = 4;
+  *(unsigned int *)&dword_ABE410->vtable1[8] = 0x10000;
+  *(unsigned int *)&dword_ABE410->vtable1[12] = 4;
   v118 = (rc_ptr_base *)1;
   dword_ABE420 = 0;
   dword_ABE418 = 2;
@@ -3150,8 +3150,8 @@ unsigned int * InitializePathData()
   dword_ABE41C = (TechnoTypeClass *)v31;
   v31->vfptr = v118;
   v31[1].vfptr = (void *)2;
-  *(unsigned int *)&dword_ABE41C->vtable0[8] = 1;
-  *(unsigned int *)&dword_ABE41C->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE41C->vtable1[8] = 1;
+  *(unsigned int *)&dword_ABE41C->vtable1[12] = 5;
   v118 = (rc_ptr_base *)1;
   dword_ABE42C = 0;
   dword_ABE424 = 2;
@@ -3169,8 +3169,8 @@ unsigned int * InitializePathData()
   dword_ABE428 = (TechnoTypeClass *)v33;
   v33->vfptr = v118;
   v33[1].vfptr = (void *)2;
-  *(unsigned int *)&dword_ABE428->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE428->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE428->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE428->vtable1[12] = 7;
   v118 = (rc_ptr_base *)65538;
   dword_ABE438 = 0;
   dword_ABE430 = 2;
@@ -3188,8 +3188,8 @@ unsigned int * InitializePathData()
   dword_ABE434 = (TechnoTypeClass *)v35;
   v35->vfptr = v118;
   v35[1].vfptr = (void *)3;
-  *(unsigned int *)&dword_ABE434->vtable0[8] = 0x10000;
-  *(unsigned int *)&dword_ABE434->vtable0[12] = 4;
+  *(unsigned int *)&dword_ABE434->vtable1[8] = 0x10000;
+  *(unsigned int *)&dword_ABE434->vtable1[12] = 4;
   v118 = (rc_ptr_base *)65537;
   dword_ABE444 = 0;
   dword_ABE43C = 2;
@@ -3207,8 +3207,8 @@ unsigned int * InitializePathData()
   dword_ABE440 = (TechnoTypeClass *)v37;
   v37->vfptr = v118;
   v37[1].vfptr = (void *)3;
-  *(unsigned int *)&dword_ABE440->vtable0[8] = 1;
-  *(unsigned int *)&dword_ABE440->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE440->vtable1[8] = 1;
+  *(unsigned int *)&dword_ABE440->vtable1[12] = 5;
   v118 = (rc_ptr_base *)65537;
   dword_ABE450 = 0;
   dword_ABE448 = 2;
@@ -3226,8 +3226,8 @@ unsigned int * InitializePathData()
   dword_ABE44C = (TechnoTypeClass *)v39;
   v39->vfptr = v118;
   v39[1].vfptr = (void *)3;
-  *(unsigned int *)&dword_ABE44C->vtable0[8] = 0;
-  *(unsigned int *)&dword_ABE44C->vtable0[12] = 6;
+  *(unsigned int *)&dword_ABE44C->vtable1[8] = 0;
+  *(unsigned int *)&dword_ABE44C->vtable1[12] = 6;
   v118 = (rc_ptr_base *)65537;
   dword_ABE45C = 0;
   dword_ABE454 = 2;
@@ -3245,8 +3245,8 @@ unsigned int * InitializePathData()
   dword_ABE458 = (TechnoTypeClass *)v41;
   v41->vfptr = v118;
   v41[1].vfptr = (void *)4;
-  *(unsigned int *)&dword_ABE458->vtable0[8] = 1;
-  *(unsigned int *)&dword_ABE458->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE458->vtable1[8] = 1;
+  *(unsigned int *)&dword_ABE458->vtable1[12] = 5;
   v118 = (rc_ptr_base *)0x10000;
   dword_ABE468 = 0;
   dword_ABE460 = 2;
@@ -3264,8 +3264,8 @@ unsigned int * InitializePathData()
   dword_ABE464 = (TechnoTypeClass *)v43;
   v43->vfptr = v118;
   v43[1].vfptr = (void *)4;
-  *(unsigned int *)&dword_ABE464->vtable0[8] = 0;
-  *(unsigned int *)&dword_ABE464->vtable0[12] = 6;
+  *(unsigned int *)&dword_ABE464->vtable1[8] = 0;
+  *(unsigned int *)&dword_ABE464->vtable1[12] = 6;
   v118 = (rc_ptr_base *)0x10000;
   dword_ABE474 = 0;
   dword_ABE46C = 2;
@@ -3283,8 +3283,8 @@ unsigned int * InitializePathData()
   dword_ABE470 = (TechnoTypeClass *)v45;
   v45->vfptr = v118;
   v45[1].vfptr = (void *)4;
-  *(unsigned int *)&dword_ABE470->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE470->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE470->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE470->vtable1[12] = 7;
   v118 = (rc_ptr_base *)65537;
   dword_ABE480 = 0;
   dword_ABE478 = 2;
@@ -3302,8 +3302,8 @@ unsigned int * InitializePathData()
   dword_ABE47C = (TechnoTypeClass *)v47;
   v47->vfptr = v118;
   v47[1].vfptr = (void *)5;
-  *(unsigned int *)&dword_ABE47C->vtable0[8] = 65537;
-  *(unsigned int *)&dword_ABE47C->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE47C->vtable1[8] = 65537;
+  *(unsigned int *)&dword_ABE47C->vtable1[12] = 7;
   v118 = (rc_ptr_base *)0x10000;
   dword_ABE48C = 0;
   dword_ABE484 = 2;
@@ -3321,9 +3321,9 @@ unsigned int * InitializePathData()
   dword_ABE488 = (TechnoTypeClass *)v49;
   v49->vfptr = v118;
   v49[1].vfptr = (void *)6;
-  *(unsigned int *)&dword_ABE488->vtable0[8] = 65537;
+  *(unsigned int *)&dword_ABE488->vtable1[8] = 65537;
   IDA_LOWORD(aP2.vfptr) = 0;
-  *(unsigned int *)&dword_ABE488->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE488->vtable1[12] = 7;
   IDA_HIWORD(aP2.vfptr) = 1;
   v118 = 0;
   dword_ABE498 = 0;
@@ -3342,8 +3342,8 @@ unsigned int * InitializePathData()
   dword_ABE494 = (TechnoTypeClass *)v51;
   v51->vfptr = v118;
   v51[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE494->vtable0[8] = 1;
-  *(unsigned int *)&dword_ABE494->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE494->vtable1[8] = 1;
+  *(unsigned int *)&dword_ABE494->vtable1[12] = 2;
   dword_ABE494->uniqueId = (int)aP2.vfptr;
   IDA_LOWORD(v118) = 0;
   dword_ABE494->abstractFlags = 4;
@@ -3363,11 +3363,11 @@ unsigned int * InitializePathData()
     vfptr = 0;
   }
   dword_ABE4A0 = vfptr;
-  *(unsigned int *)vfptr->vtable0 = v120;
-  *(unsigned int *)&vfptr->vtable0[4] = 2;
-  *(unsigned int *)&dword_ABE4A0->vtable0[8] = v118;
+  *(unsigned int *)vfptr->vtable1 = v120;
+  *(unsigned int *)&vfptr->vtable1[4] = 2;
+  *(unsigned int *)&dword_ABE4A0->vtable1[8] = v118;
   IDA_LOWORD(v118) = 0;
-  *(unsigned int *)&dword_ABE4A0->vtable0[12] = 4;
+  *(unsigned int *)&dword_ABE4A0->vtable1[12] = 4;
   dword_ABE4A0->uniqueId = 0;
   dword_ABE4A0->abstractFlags = 6;
   IDA_HIWORD(v118) = 1;
@@ -3386,11 +3386,11 @@ unsigned int * InitializePathData()
     v55 = 0;
   }
   dword_ABE4AC = v55;
-  *(unsigned int *)v55->vtable0 = v120;
-  *(unsigned int *)&v55->vtable0[4] = 0;
-  *(unsigned int *)&dword_ABE4AC->vtable0[8] = v118;
+  *(unsigned int *)v55->vtable1 = v120;
+  *(unsigned int *)&v55->vtable1[4] = 0;
+  *(unsigned int *)&dword_ABE4AC->vtable1[8] = v118;
   IDA_LOWORD(v118) = 1;
-  *(unsigned int *)&dword_ABE4AC->vtable0[12] = 4;
+  *(unsigned int *)&dword_ABE4AC->vtable1[12] = 4;
   dword_ABE4AC->uniqueId = 0;
   dword_ABE4AC->abstractFlags = 6;
   IDA_HIWORD(v118) = 0;
@@ -3409,11 +3409,11 @@ unsigned int * InitializePathData()
     v57 = 0;
   }
   dword_ABE4B8 = v57;
-  *(unsigned int *)v57->vtable0 = v120;
-  *(unsigned int *)&v57->vtable0[4] = 0;
-  *(unsigned int *)&dword_ABE4B8->vtable0[8] = v118;
+  *(unsigned int *)v57->vtable1 = v120;
+  *(unsigned int *)&v57->vtable1[4] = 0;
+  *(unsigned int *)&dword_ABE4B8->vtable1[8] = v118;
   IDA_LOWORD(aP1.vfptr) = 0;
-  *(unsigned int *)&dword_ABE4B8->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE4B8->vtable1[12] = 2;
   IDA_HIWORD(aP1.vfptr) = 0;
   dword_ABE4B8->uniqueId = 0;
   dword_ABE4B8->abstractFlags = 6;
@@ -3433,11 +3433,11 @@ unsigned int * InitializePathData()
     v59 = 0;
   }
   dword_ABE4C4 = v59;
-  *(unsigned int *)v59->vtable0 = v120;
-  *(unsigned int *)&v59->vtable0[4] = 0;
-  *(unsigned int *)&dword_ABE4C4->vtable0[8] = v118;
+  *(unsigned int *)v59->vtable1 = v120;
+  *(unsigned int *)&v59->vtable1[4] = 0;
+  *(unsigned int *)&dword_ABE4C4->vtable1[8] = v118;
   IDA_LOWORD(v118) = 1;
-  *(unsigned int *)&dword_ABE4C4->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE4C4->vtable1[12] = 2;
   IDA_HIWORD(v118) = 1;
   dword_ABE4C4->uniqueId = 0x10000;
   IDA_LOWORD(v120) = 2;
@@ -3461,11 +3461,11 @@ unsigned int * InitializePathData()
     v61 = 0;
   }
   dword_ABE4D0 = v61;
-  *(rc_ptr_base *)v61->vtable0 = aP2;
-  *(unsigned int *)&v61->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE4D0->vtable0[8] = v120;
+  *(rc_ptr_base *)v61->vtable1 = aP2;
+  *(unsigned int *)&v61->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE4D0->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE4D0->vtable0[12] = 3;
+  *(unsigned int *)&dword_ABE4D0->vtable1[12] = 3;
   v62 = v118;
   IDA_LOWORD(v118) = 2;
   dword_ABE4D0->uniqueId = (int)v62;
@@ -3487,11 +3487,11 @@ unsigned int * InitializePathData()
     v64 = 0;
   }
   dword_ABE4DC = v64;
-  *(rc_ptr_base *)v64->vtable0 = aP2;
-  *(unsigned int *)&v64->vtable0[4] = 7;
-  *(unsigned int *)&dword_ABE4DC->vtable0[8] = v120;
+  *(rc_ptr_base *)v64->vtable1 = aP2;
+  *(unsigned int *)&v64->vtable1[4] = 7;
+  *(unsigned int *)&dword_ABE4DC->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE4DC->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE4DC->vtable1[12] = 5;
   v65 = v118;
   IDA_LOWORD(v118) = 1;
   dword_ABE4DC->uniqueId = (int)v65;
@@ -3513,11 +3513,11 @@ unsigned int * InitializePathData()
     v67 = 0;
   }
   dword_ABE4E8 = v67;
-  *(rc_ptr_base *)v67->vtable0 = aP2;
-  *(unsigned int *)&v67->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE4E8->vtable0[8] = v120;
+  *(rc_ptr_base *)v67->vtable1 = aP2;
+  *(unsigned int *)&v67->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE4E8->vtable1[8] = v120;
   IDA_LOWORD(v120) = 2;
-  *(unsigned int *)&dword_ABE4E8->vtable0[12] = 7;
+  *(unsigned int *)&dword_ABE4E8->vtable1[12] = 7;
   v68 = v118;
   IDA_LOWORD(v118) = 2;
   dword_ABE4E8->uniqueId = (int)v68;
@@ -3539,10 +3539,10 @@ unsigned int * InitializePathData()
     v70 = 0;
   }
   dword_ABE4F4 = v70;
-  *(rc_ptr_base *)v70->vtable0 = aP2;
-  *(unsigned int *)&v70->vtable0[4] = 7;
-  *(unsigned int *)&dword_ABE4F4->vtable0[8] = v120;
-  *(unsigned int *)&dword_ABE4F4->vtable0[12] = 1;
+  *(rc_ptr_base *)v70->vtable1 = aP2;
+  *(unsigned int *)&v70->vtable1[4] = 7;
+  *(unsigned int *)&dword_ABE4F4->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE4F4->vtable1[12] = 1;
   dword_ABE4F4->uniqueId = (int)v118;
   IDA_LOWORD(v118) = 2;
   dword_ABE4F4->abstractFlags = 3;
@@ -3563,11 +3563,11 @@ unsigned int * InitializePathData()
     v72 = 0;
   }
   dword_ABE500 = v72;
-  *(rc_ptr_base *)v72->vtable0 = aP2;
-  *(unsigned int *)&v72->vtable0[4] = 7;
-  *(unsigned int *)&dword_ABE500->vtable0[8] = v120;
+  *(rc_ptr_base *)v72->vtable1 = aP2;
+  *(unsigned int *)&v72->vtable1[4] = 7;
+  *(unsigned int *)&dword_ABE500->vtable1[8] = v120;
   IDA_LOWORD(v120) = 3;
-  *(unsigned int *)&dword_ABE500->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE500->vtable1[12] = 5;
   v73 = v118;
   IDA_LOWORD(v118) = 0;
   dword_ABE500->uniqueId = (int)v73;
@@ -3592,11 +3592,11 @@ unsigned int * InitializePathData()
     v75 = 0;
   }
   dword_ABE50C = v75;
-  *(rc_ptr_base *)v75->vtable0 = aP2;
-  *(unsigned int *)&v75->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE50C->vtable0[8] = v120;
+  *(rc_ptr_base *)v75->vtable1 = aP2;
+  *(unsigned int *)&v75->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE50C->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE50C->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE50C->vtable1[12] = 2;
   IDA_HIWORD(v120) = 2;
   dword_ABE50C->uniqueId = (int)v118;
   IDA_LOWORD(aP2.vfptr) = 3;
@@ -3616,11 +3616,11 @@ unsigned int * InitializePathData()
     v77 = 0;
   }
   dword_ABE518 = v77;
-  *(rc_ptr_base *)v77->vtable0 = aP2;
-  *(unsigned int *)&v77->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE518->vtable0[8] = v120;
+  *(rc_ptr_base *)v77->vtable1 = aP2;
+  *(unsigned int *)&v77->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE518->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE518->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE518->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE528 = 0;
@@ -3637,11 +3637,11 @@ unsigned int * InitializePathData()
     v79 = 0;
   }
   dword_ABE524 = v79;
-  *(rc_ptr_base *)v79->vtable0 = aP2;
-  *(unsigned int *)&v79->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE524->vtable0[8] = v120;
+  *(rc_ptr_base *)v79->vtable1 = aP2;
+  *(unsigned int *)&v79->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE524->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE524->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE524->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE534 = 0;
@@ -3658,11 +3658,11 @@ unsigned int * InitializePathData()
     v81 = 0;
   }
   dword_ABE530 = v81;
-  *(rc_ptr_base *)v81->vtable0 = aP2;
-  *(unsigned int *)&v81->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE530->vtable0[8] = v120;
+  *(rc_ptr_base *)v81->vtable1 = aP2;
+  *(unsigned int *)&v81->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE530->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE530->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE530->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE540 = 0;
@@ -3679,11 +3679,11 @@ unsigned int * InitializePathData()
     v83 = 0;
   }
   dword_ABE53C = v83;
-  *(rc_ptr_base *)v83->vtable0 = aP2;
-  *(unsigned int *)&v83->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE53C->vtable0[8] = v120;
+  *(rc_ptr_base *)v83->vtable1 = aP2;
+  *(unsigned int *)&v83->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE53C->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE53C->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE53C->vtable1[12] = 5;
   IDA_HIWORD(v120) = 1;
   aP2.vfptr = (void *)2;
   dword_ABE54C = 0;
@@ -3700,11 +3700,11 @@ unsigned int * InitializePathData()
     v85 = 0;
   }
   dword_ABE548 = v85;
-  *(rc_ptr_base *)v85->vtable0 = aP2;
-  *(unsigned int *)&v85->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE548->vtable0[8] = v120;
+  *(rc_ptr_base *)v85->vtable1 = aP2;
+  *(unsigned int *)&v85->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE548->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE548->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE548->vtable1[12] = 5;
   IDA_HIWORD(v120) = 0;
   aP2.vfptr = (void *)1;
   dword_ABE558 = 0;
@@ -3721,11 +3721,11 @@ unsigned int * InitializePathData()
     v87 = 0;
   }
   dword_ABE554 = v87;
-  *(rc_ptr_base *)v87->vtable0 = aP2;
-  *(unsigned int *)&v87->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE554->vtable0[8] = v120;
+  *(rc_ptr_base *)v87->vtable1 = aP2;
+  *(unsigned int *)&v87->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE554->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE554->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE554->vtable1[12] = 5;
   IDA_HIWORD(v120) = 0;
   aP2.vfptr = (void *)1;
   dword_ABE564 = 0;
@@ -3742,11 +3742,11 @@ unsigned int * InitializePathData()
     v89 = 0;
   }
   dword_ABE560 = v89;
-  *(rc_ptr_base *)v89->vtable0 = aP2;
-  *(unsigned int *)&v89->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE560->vtable0[8] = v120;
+  *(rc_ptr_base *)v89->vtable1 = aP2;
+  *(unsigned int *)&v89->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE560->vtable1[8] = v120;
   IDA_LOWORD(aP2.vfptr) = 1;
-  *(unsigned int *)&dword_ABE560->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE560->vtable1[12] = 5;
   IDA_HIWORD(aP2.vfptr) = 2;
   dword_ABE570 = 0;
   dword_ABE568 = (IUnknown *)1;
@@ -3865,11 +3865,11 @@ unsigned int * InitializePathData()
     v103 = 0;
   }
   dword_ABE5B4 = v103;
-  *(rc_ptr_base *)v103->vtable0 = aP2;
-  *(unsigned int *)&v103->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE5B4->vtable0[8] = v120;
+  *(rc_ptr_base *)v103->vtable1 = aP2;
+  *(unsigned int *)&v103->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE5B4->vtable1[8] = v120;
   IDA_LOWORD(v120) = 1;
-  *(unsigned int *)&dword_ABE5B4->vtable0[12] = 5;
+  *(unsigned int *)&dword_ABE5B4->vtable1[12] = 5;
   IDA_HIWORD(v120) = 3;
   v119 = 5;
   aP2.vfptr = (void *)2;
@@ -3887,11 +3887,11 @@ unsigned int * InitializePathData()
     v105 = 0;
   }
   dword_ABE5C0 = v105;
-  *(rc_ptr_base *)v105->vtable0 = aP2;
-  *(unsigned int *)&v105->vtable0[4] = 1;
-  *(unsigned int *)&dword_ABE5C0->vtable0[8] = v120;
+  *(rc_ptr_base *)v105->vtable1 = aP2;
+  *(unsigned int *)&v105->vtable1[4] = 1;
+  *(unsigned int *)&dword_ABE5C0->vtable1[8] = v120;
   IDA_LOWORD(v120) = 3;
-  *(unsigned int *)&dword_ABE5C0->vtable0[12] = v119;
+  *(unsigned int *)&dword_ABE5C0->vtable1[12] = v119;
   dword_ABE5C8 = 0;
   dword_ABE5CC = 0;
   IDA_HIWORD(v120) = 0;
@@ -3910,11 +3910,11 @@ unsigned int * InitializePathData()
     v107 = 0;
   }
   dword_ABE5D8 = v107;
-  *(rc_ptr_base *)v107->vtable0 = aP2;
-  *(unsigned int *)&v107->vtable0[4] = 6;
-  *(unsigned int *)&dword_ABE5D8->vtable0[8] = v120;
+  *(rc_ptr_base *)v107->vtable1 = aP2;
+  *(unsigned int *)&v107->vtable1[4] = 6;
+  *(unsigned int *)&dword_ABE5D8->vtable1[8] = v120;
   IDA_LOWORD(v120) = 3;
-  *(unsigned int *)&dword_ABE5D8->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE5D8->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
   aP2.vfptr = 0;
   dword_ABE5E8 = 0;
@@ -3931,11 +3931,11 @@ unsigned int * InitializePathData()
     v109 = 0;
   }
   dword_ABE5E4 = v109;
-  *(rc_ptr_base *)v109->vtable0 = aP2;
-  *(unsigned int *)&v109->vtable0[4] = 6;
-  *(unsigned int *)&dword_ABE5E4->vtable0[8] = v120;
+  *(rc_ptr_base *)v109->vtable1 = aP2;
+  *(unsigned int *)&v109->vtable1[4] = 6;
+  *(unsigned int *)&dword_ABE5E4->vtable1[8] = v120;
   IDA_LOWORD(v120) = 3;
-  *(unsigned int *)&dword_ABE5E4->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE5E4->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
   aP2.vfptr = 0;
   dword_ABE5F4 = 0;
@@ -3952,11 +3952,11 @@ unsigned int * InitializePathData()
     v111 = 0;
   }
   dword_ABE5F0 = v111;
-  *(rc_ptr_base *)v111->vtable0 = aP2;
-  *(unsigned int *)&v111->vtable0[4] = 6;
-  *(unsigned int *)&dword_ABE5F0->vtable0[8] = v120;
+  *(rc_ptr_base *)v111->vtable1 = aP2;
+  *(unsigned int *)&v111->vtable1[4] = 6;
+  *(unsigned int *)&dword_ABE5F0->vtable1[8] = v120;
   IDA_LOWORD(v120) = 3;
-  *(unsigned int *)&dword_ABE5F0->vtable0[12] = 2;
+  *(unsigned int *)&dword_ABE5F0->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
   aP2.vfptr = 0;
   dword_ABE600 = 0;

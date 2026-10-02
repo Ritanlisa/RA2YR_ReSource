@@ -359,7 +359,7 @@ LABEL_36:
   }
   if ( v30 ) /*0x4a9c55*/
     CellClass::SpiralFindClosest((gamemd::IUnknown *)((int)v5),(gamemd::MouseClass *)(aP2), v39); /*0x4a9c67*/
-  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4a9c88*/
+  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4a9c88*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4a9c8c*/
   return (gamemd::Tactical **)(v30); /*0x4a9c91*/
 
@@ -473,7 +473,7 @@ LABEL_13:
   }
   if ( v29 ) /*0x4a9fff*/
     CellClass::SpiralFindClosest((gamemd::IUnknown *)((int)v5),(gamemd::MouseClass *)(aP2), v28); /*0x4aa011*/
-  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4aa032*/
+  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4aa032*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4aa036*/
   return (gamemd::VectorClass_flat **)(v29); /*0x4aa03b*/
 
@@ -776,7 +776,7 @@ int DisplayClass::InsertPriorityText(int a2)
   }
   for ( i = 0; i < *(unsigned int *)this->__pad_10; ++i ) /*0x551ad2*/
   {
-    if ( ((DisplayClass *)(*((DisplayClass **)&this->DisplayClass_field_0x4->vtable0 + i)))->checkScreenBounds(a2) ) /*0x551adb*/
+    if ( ((DisplayClass *)(*((DisplayClass **)&this->DisplayClass_field_0x4->vtable1 + i)))->checkScreenBounds(a2) ) /*0x551adb*/
       break; /*0x551ae2*/
   }
   for ( j = *(unsigned int *)this->__pad_10 - 1; /*0x551af2*/
@@ -785,7 +785,7 @@ int DisplayClass::InsertPriorityText(int a2)
   {
     --j; /*0x551af7*/
   }
-  *((unsigned int *)&this->DisplayClass_field_0x4->vtable0 + i) = a2; /*0x551b07*/
+  *((unsigned int *)&this->DisplayClass_field_0x4->vtable1 + i) = a2; /*0x551b07*/
   ++*(unsigned int *)this->__pad_10; /*0x551b0f*/
   return 1; /*0x551ac1*/
 

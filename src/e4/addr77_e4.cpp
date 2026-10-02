@@ -3811,7 +3811,7 @@ void E4Recv_771A00::sub_771A00()
   void *Items; // eax
 
   Items = this->Items; /*0x771a06*/
-  this->vtable0 = &vt_VectorClass; /*0x771a09*/
+  this->vtable1 = &vt_VectorClass; /*0x771a09*/
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/

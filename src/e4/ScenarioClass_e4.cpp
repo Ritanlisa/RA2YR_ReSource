@@ -87,7 +87,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
           v7 = *(void **)&v5[v4]; /*0x58bb95*/
           v8 = *(void **)&v5[v4 + 4]; /*0x58bb98*/
         }
-        *(void **)((char *)&v2->vtable0 + v4) = v7; /*0x58bba2*/
+        *(void **)((char *)&v2->vtable1 + v4) = v7; /*0x58bba2*/
         ++v3; /*0x58bbab*/
         v6 += 4; /*0x58bbac*/
         *(void **)((char *)&dword_A8B230->vtable1 + v4) = v8; /*0x58bbaf*/
@@ -1693,9 +1693,9 @@ char ScenarioClass::ClearFlag()
 
   void *vtable0; // ecx
 
-  vtable0 = dword_A8B230->vtable0; /*0x5d6795*/
-  BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5d6797*/
-  dword_A8B230->vtable0 = vtable0; /*0x5d679a*/
+  vtable0 = dword_A8B230->vtable1; /*0x5d6795*/
+  BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5d6797*/
+  dword_A8B230->vtable1 = vtable0; /*0x5d679a*/
   return 1; /*0x5d679e*/
 
 }

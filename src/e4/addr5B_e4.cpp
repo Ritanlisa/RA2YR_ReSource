@@ -562,9 +562,9 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
   dword_A8E960[0] = v6; /*0x5b6b1c*/
   stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
-  vtable0 = dword_A8B230->vtable0; /*0x5b6b2f*/
-  IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
-  dword_A8B230->vtable0 = vtable0; /*0x5b6b34*/
+  vtable0 = dword_A8B230->vtable1; /*0x5b6b2f*/
+  IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5b6b31*/
+  dword_A8B230->vtable1 = vtable0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/
   if ( _strcmpi(byte_A8B8E0, (char *)(aP0 + 163)) /*0x5b6ba4*/

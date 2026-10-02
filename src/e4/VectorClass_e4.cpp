@@ -5527,25 +5527,25 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
   this->Capacity = aP1; /*0x42fcc1*/
   this->IsInitialized = 1; /*0x42fcc4*/
   this->IsAllocated = 0; /*0x42fcc8*/
-  this->vtable0 = &vt_VectorClass; /*0x42fccc*/
+  this->vtable1 = &vt_VectorClass; /*0x42fccc*/
   if ( aP1 ) /*0x42fcd2*/
   {
     if ( aP2 ) /*0x42fcda*/
     {
       this->Items = (void *)aP2; /*0x42fcdd*/
-      return &this->vtable0; /*0x42fce8*/
+      return &this->vtable1; /*0x42fce8*/
     }
     v5 = (void *)__2_YAPAXI_Z(4 * aP1); /*0x42fcf3*/
     if ( v5 ) /*0x42fcfd*/
     {
       this->Items = v5; /*0x42fd00*/
       this->IsAllocated = 1; /*0x42fd07*/
-      return &this->vtable0; /*0x42fd0f*/
+      return &this->vtable1; /*0x42fd0f*/
     }
     this->IsAllocated = 1; /*0x42fd14*/
     this->Items = 0; /*0x42fd18*/
   }
-  return &this->vtable0; /*0x42fce6*/
+  return &this->vtable1; /*0x42fce6*/
 
 }
 }  // G42.18c ns repair
@@ -6229,18 +6229,18 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
   this->Capacity = aP1; /*0x45ad8e*/
   this->IsInitialized = 1; /*0x45ad91*/
   this->IsAllocated = 0; /*0x45ad95*/
-  this->vtable0 = &vt_VectorClass; /*0x45ad98*/
+  this->vtable1 = &vt_VectorClass; /*0x45ad98*/
   if ( aP1 ) /*0x45ad9e*/
   {
     if ( aP2 ) /*0x45ada6*/
     {
       this->Items = (void *)aP2; /*0x45ada8*/
-      return &this->vtable0; /*0x45adae*/
+      return &this->vtable1; /*0x45adae*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * aP1); /*0x45adbd*/
     this->IsAllocated = 1; /*0x45adc0*/
   }
-  return &this->vtable0; /*0x45adad*/
+  return &this->vtable1; /*0x45adad*/
 
 }
 }  // G42.18c ns repair
@@ -7119,7 +7119,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   this->Capacity = 0; /*0x4777c0*/
   this->IsInitialized[0] = 1; /*0x4777c3*/
   this->IsAllocated[0] = 0; /*0x4777c7*/
-  this->vtable0 = (int)&vt_VectorClass; /*0x4777ca*/
+  this->vtable1 = (int)&vt_VectorClass; /*0x4777ca*/
   if ( this != (DynamicVectorClass *)aP1 ) /*0x4777d0*/
   {
     ((VectorClass *)((int)this))->Destroy(); /*0x4777d2*/
@@ -7153,8 +7153,8 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   }
   this->Count = aP1[4]; /*0x477821*/
   this->CapacityIncrement = aP1[5]; /*0x477827*/
-  this->vtable0 = (int)&vt_TypeList; /*0x47782a*/
-  return &this->vtable0; /*0x477832*/
+  this->vtable1 = (int)&vt_TypeList; /*0x47782a*/
+  return &this->vtable1; /*0x477832*/
 
 }
 }  // G42.18c ns repair
@@ -7176,18 +7176,18 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4,
   this->Capacity = a2; /*0x477bee*/
   this->IsInitialized = 1; /*0x477bf1*/
   this->IsAllocated = 0; /*0x477bf5*/
-  this->vtable0 = &vt_VectorClass; /*0x477bf8*/
+  this->vtable1 = &vt_VectorClass; /*0x477bf8*/
   if ( a2 ) /*0x477bfe*/
   {
     if ( a3 ) /*0x477c06*/
     {
       this->Items = (void *)a3; /*0x477c08*/
-      return &this->vtable0; /*0x477c0e*/
+      return &this->vtable1; /*0x477c0e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x477c1d*/
     this->IsAllocated = 1; /*0x477c20*/
   }
-  return &this->vtable0; /*0x477c0d*/
+  return &this->vtable1; /*0x477c0d*/
 
 }
 }  // G42.18c ns repair
@@ -8332,7 +8332,7 @@ char VectorClass_flat::AppendCopy(DynamicVector * aP1)
   if ( result < Capacity /*0x4a800d*/
     || (this->IsAllocated[0] || !Capacity)
     && (result = this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
                    this,
                    Capacity + result,
                    0),
@@ -21373,7 +21373,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
       return 0; /*0x50eb86*/
     CapacityIncrement = this->CapacityIncrement; /*0x50eb88*/
     if ( CapacityIncrement <= 0 /*0x50eb98*/
-      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -23325,18 +23325,18 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
   this->Capacity = a2; /*0x51055e*/
   this->IsInitialized = 1; /*0x510561*/
   this->IsAllocated = 0; /*0x510565*/
-  this->vtable0 = &vt_VectorClass; /*0x510568*/
+  this->vtable1 = &vt_VectorClass; /*0x510568*/
   if ( a2 ) /*0x51056e*/
   {
     if ( a3 ) /*0x510576*/
     {
       this->Items = (void *)a3; /*0x510578*/
-      return &this->vtable0; /*0x51057e*/
+      return &this->vtable1; /*0x51057e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x51058d*/
     this->IsAllocated = 1; /*0x510590*/
   }
-  return &this->vtable0; /*0x51057d*/
+  return &this->vtable1; /*0x51057d*/
 
 }
 }  // G42.18c ns repair
@@ -23349,18 +23349,18 @@ unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, 
   this->Capacity = aP1; /*0x5105ae*/
   this->IsInitialized = 1; /*0x5105b1*/
   this->IsAllocated = 0; /*0x5105b5*/
-  this->vtable0 = &vt_VectorClass; /*0x5105b8*/
+  this->vtable1 = &vt_VectorClass; /*0x5105b8*/
   if ( aP1 ) /*0x5105be*/
   {
     if ( aP2 ) /*0x5105c6*/
     {
       this->Items = (void *)aP2; /*0x5105c8*/
-      return &this->vtable0; /*0x5105ce*/
+      return &this->vtable1; /*0x5105ce*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * aP1); /*0x5105dd*/
     this->IsAllocated = 1; /*0x5105e0*/
   }
-  return &this->vtable0; /*0x5105cd*/
+  return &this->vtable1; /*0x5105cd*/
 
 }
 }  // G42.18c ns repair
@@ -23485,32 +23485,32 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
   int v6; // eax
 
   if ( this == (VectorClass *)aP1 ) /*0x512faa*/
-    return &this->vtable0; /*0x512faa*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this); /*0x512fae*/
+    return &this->vtable1; /*0x512faa*/
+  (*((void (**)(VectorClass *))this->vtable1 + 3))(this); /*0x512fae*/
   v3 = aP1[2]; /*0x512fb1*/
   this->Capacity = v3; /*0x512fb6*/
   if ( !v3 ) /*0x512fb9*/
   {
     this->Items = 0; /*0x512ffa*/
     this->IsAllocated = 0; /*0x513001*/
-    return &this->vtable0; /*0x513005*/
+    return &this->vtable1; /*0x513005*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x512fc3*/
   this->Items = v4; /*0x512fcb*/
   if ( !v4 ) /*0x512fd0*/
-    return &this->vtable0; /*0x512fd0*/
+    return &this->vtable1; /*0x512fd0*/
   Capacity = this->Capacity; /*0x512fd2*/
   v6 = 0; /*0x512fd5*/
   this->IsAllocated = 1; /*0x512fd9*/
   if ( Capacity <= 0 ) /*0x512fdd*/
-    return &this->vtable0; /*0x512fdd*/
+    return &this->vtable1; /*0x512fdd*/
   do /*0x512ff1*/
   {
     *((unsigned int *)this->Items + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x512fe8*/
     ++v6; /*0x512fee*/
   }
   while ( v6 < this->Capacity ); /*0x512ff1*/
-  return &this->vtable0; /*0x512ff5*/
+  return &this->vtable1; /*0x512ff5*/
 
 }
 }  // G42.18c ns repair
@@ -23531,7 +23531,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
       return 0; /*0x513306*/
     CapacityIncrement = this->CapacityIncrement; /*0x513308*/
     if ( CapacityIncrement <= 0 /*0x513318*/
-      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -23573,32 +23573,32 @@ unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
   int v6; // eax
 
   if ( this == (VectorClass *)aP1 ) /*0x52506a*/
-    return &this->vtable0; /*0x52506a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this); /*0x52506e*/
+    return &this->vtable1; /*0x52506a*/
+  (*((void (**)(VectorClass *))this->vtable1 + 3))(this); /*0x52506e*/
   v3 = aP1[2]; /*0x525071*/
   this->Capacity = v3; /*0x525076*/
   if ( !v3 ) /*0x525079*/
   {
     this->Items = 0; /*0x5250ba*/
     this->IsAllocated = 0; /*0x5250c1*/
-    return &this->vtable0; /*0x5250c5*/
+    return &this->vtable1; /*0x5250c5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x525083*/
   this->Items = v4; /*0x52508b*/
   if ( !v4 ) /*0x525090*/
-    return &this->vtable0; /*0x525090*/
+    return &this->vtable1; /*0x525090*/
   Capacity = this->Capacity; /*0x525092*/
   v6 = 0; /*0x525095*/
   this->IsAllocated = 1; /*0x525099*/
   if ( Capacity <= 0 ) /*0x52509d*/
-    return &this->vtable0; /*0x52509d*/
+    return &this->vtable1; /*0x52509d*/
   do /*0x5250b1*/
   {
     *((unsigned int *)this->Items + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5250a8*/
     ++v6; /*0x5250ae*/
   }
   while ( v6 < this->Capacity ); /*0x5250b1*/
-  return &this->vtable0; /*0x5250b5*/
+  return &this->vtable1; /*0x5250b5*/
 
 }
 }  // G42.18c ns repair
@@ -25777,7 +25777,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
   result = aP1; /*0x55bae0*/
   if ( *(unsigned char *)(aP1 + 152) ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(DynamicVectorClass *, int *))(this->vtable0 + 16))(this, &aP1); /*0x55bafa*/
+    v4 = (*(int (**)(DynamicVectorClass *, int *))(this->vtable1 + 16))(this, &aP1); /*0x55bafa*/
     if ( v4 != -1 ) /*0x55bb00*/
     {
       Count = this->Count; /*0x55bb02*/
@@ -26148,10 +26148,10 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
           do /*0x5897bf*/
           {
             VectorClass::ConstructSubzone(v6, 0, 0); /*0x589799*/
-            v6->vtable0 = &vt_DynamicVectorClass; /*0x58979e*/
+            v6->vtable1 = &vt_DynamicVectorClass; /*0x58979e*/
             v6[1].Items = (void *)10; /*0x5897a4*/
             v6[1].vtable0 = 0; /*0x5897a7*/
-            (*((void (**)(VectorClass *))v6->vtable0 + 3))(v6); /*0x5897ae*/
+            (*((void (**)(VectorClass *))v6->vtable1 + 3))(v6); /*0x5897ae*/
             LOWORD(v6[1].Capacity) = 0; /*0x5897b1*/
             *(unsigned int *)&v6[1].IsInitialized = 0; /*0x5897b5*/
             v6[2].vtable0 = 0; /*0x5897b8*/
@@ -27433,9 +27433,9 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
   this->Capacity = a2; /*0x58ac80*/
   this->IsInitialized = 1; /*0x58ac83*/
   this->IsAllocated = 0; /*0x58ac87*/
-  this->vtable0 = &vt_VectorClass; /*0x58ac8a*/
+  this->vtable1 = &vt_VectorClass; /*0x58ac8a*/
   if ( !a2 ) /*0x58ac90*/
-    return &this->vtable0; /*0x58ac90*/
+    return &this->vtable1; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
   {
     v7 = (char *)__2_YAPAXI_Z(8 * a2); /*0x58acc2*/
@@ -27455,7 +27455,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
         while ( v9 ); /*0x58ace1*/
         this->Items = v7; /*0x58ace3*/
         this->IsAllocated = 1; /*0x58ace6*/
-        return &this->vtable0; /*0x58acef*/
+        return &this->vtable1; /*0x58acef*/
       }
     }
     else
@@ -27464,7 +27464,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
     }
     this->Items = v7; /*0x58acf4*/
     this->IsAllocated = 1; /*0x58acf7*/
-    return &this->vtable0; /*0x58acfb*/
+    return &this->vtable1; /*0x58acfb*/
   }
   v4 = a3; /*0x58ac9d*/
   if ( a2 - 1 >= 0 ) /*0x58aca1*/
@@ -27480,7 +27480,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
     while ( v5 ); /*0x58acad*/
   }
   this->Items = (void *)a3; /*0x58acaf*/
-  return &this->vtable0; /*0x58acb4*/
+  return &this->vtable1; /*0x58acb4*/
 
 }
 }  // G42.18c ns repair
@@ -31179,9 +31179,9 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
   this->Capacity = a2; /*0x628e00*/
   this->IsInitialized = 1; /*0x628e03*/
   this->IsAllocated = 0; /*0x628e07*/
-  this->vtable0 = &vt_VectorClass; /*0x628e0a*/
+  this->vtable1 = &vt_VectorClass; /*0x628e0a*/
   if ( !a2 ) /*0x628e10*/
-    return &this->vtable0; /*0x628e70*/
+    return &this->vtable1; /*0x628e70*/
   if ( !a3 ) /*0x628e18*/
   {
     v8 = __2_YAPAXI_Z(3 * a2); /*0x628e42*/
@@ -31205,7 +31205,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
     }
     this->Items = v4; /*0x628e69*/
     this->IsAllocated = 1; /*0x628e6c*/
-    return &this->vtable0; /*0x628e6c*/
+    return &this->vtable1; /*0x628e6c*/
   }
   if ( a2 - 1 >= 0 ) /*0x628e1f*/
   {
@@ -31222,7 +31222,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
     while ( v6 ); /*0x628e31*/
   }
   this->Items = (void *)a3; /*0x628e33*/
-  return &this->vtable0; /*0x628e38*/
+  return &this->vtable1; /*0x628e38*/
 
 }
 }  // G42.18c ns repair
@@ -31560,7 +31560,7 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
   if ( result < Capacity /*0x63027d*/
     || (this->IsAllocated[0] || !Capacity)
     && (result = this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
                    this,
                    Capacity + result,
                    0),
@@ -32058,7 +32058,7 @@ char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
   if ( result < Capacity /*0x63e56d*/
     || (this->IsAllocated[0] || !Capacity)
     && (result = this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+    && (result = (*(int (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
                    this,
                    Capacity + result,
                    0),
@@ -32087,7 +32087,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int Count; // ecx
   int v5; // ecx
 
-  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable0 + 16))(this, aP1); /*0x63e90c*/
+  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable1 + 16))(this, aP1); /*0x63e90c*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x63e919*/
   {
     LOBYTE(result) = 0; /*0x63e93b*/
@@ -32369,25 +32369,25 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
   this->Capacity = aP1; /*0x658d71*/
   this->IsInitialized = 1; /*0x658d74*/
   this->IsAllocated = 0; /*0x658d78*/
-  this->vtable0 = &vt_VectorClass; /*0x658d7c*/
+  this->vtable1 = &vt_VectorClass; /*0x658d7c*/
   if ( aP1 ) /*0x658d82*/
   {
     if ( aP2 ) /*0x658d8a*/
     {
       this->Items = (void *)aP2; /*0x658d8d*/
-      return &this->vtable0; /*0x658d98*/
+      return &this->vtable1; /*0x658d98*/
     }
     v5 = (void *)__2_YAPAXI_Z(8 * aP1); /*0x658da3*/
     if ( v5 ) /*0x658dad*/
     {
       this->Items = v5; /*0x658db0*/
       this->IsAllocated = 1; /*0x658db7*/
-      return &this->vtable0; /*0x658dbf*/
+      return &this->vtable1; /*0x658dbf*/
     }
     this->IsAllocated = 1; /*0x658dc4*/
     this->Items = 0; /*0x658dc8*/
   }
-  return &this->vtable0; /*0x658d96*/
+  return &this->vtable1; /*0x658d96*/
 
 }
 }  // G42.18c ns repair
@@ -33290,7 +33290,7 @@ void VectorClass_flat::Dtor()
   void *Items; // eax
 
   Items = this->Items; /*0x679f76*/
-  this->vtable0 = &vt_VectorClass; /*0x679f79*/
+  this->vtable1 = &vt_VectorClass; /*0x679f79*/
   if ( Items && this->IsAllocated ) /*0x679f83*/
   {
     __3_YAXPAX_Z(Items); /*0x679f89*/
@@ -33358,32 +33358,32 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
   int v6; // eax
 
   if ( this == (VectorClass *)aP1 ) /*0x67aa8a*/
-    return &this->vtable0; /*0x67aa8a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this); /*0x67aa8e*/
+    return &this->vtable1; /*0x67aa8a*/
+  (*((void (**)(VectorClass *))this->vtable1 + 3))(this); /*0x67aa8e*/
   v3 = aP1[2]; /*0x67aa91*/
   this->Capacity = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
   {
     this->Items = 0; /*0x67aada*/
     this->IsAllocated = 0; /*0x67aae1*/
-    return &this->vtable0; /*0x67aae5*/
+    return &this->vtable1; /*0x67aae5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67aaa3*/
   this->Items = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
-    return &this->vtable0; /*0x67aab0*/
+    return &this->vtable1; /*0x67aab0*/
   Capacity = this->Capacity; /*0x67aab2*/
   v6 = 0; /*0x67aab5*/
   this->IsAllocated = 1; /*0x67aab9*/
   if ( Capacity <= 0 ) /*0x67aabd*/
-    return &this->vtable0; /*0x67aabd*/
+    return &this->vtable1; /*0x67aabd*/
   do /*0x67aad1*/
   {
     *((unsigned int *)this->Items + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67aac8*/
     ++v6; /*0x67aace*/
   }
   while ( v6 < this->Capacity ); /*0x67aad1*/
-  return &this->vtable0; /*0x67aad5*/
+  return &this->vtable1; /*0x67aad5*/
 
 }
 }  // G42.18c ns repair
@@ -33398,32 +33398,32 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
   int v6; // eax
 
   if ( this == (VectorClass *)aP1 ) /*0x67ae0a*/
-    return &this->vtable0; /*0x67ae0a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this); /*0x67ae0e*/
+    return &this->vtable1; /*0x67ae0a*/
+  (*((void (**)(VectorClass *))this->vtable1 + 3))(this); /*0x67ae0e*/
   v3 = aP1[2]; /*0x67ae11*/
   this->Capacity = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
   {
     this->Items = 0; /*0x67ae5a*/
     this->IsAllocated = 0; /*0x67ae61*/
-    return &this->vtable0; /*0x67ae65*/
+    return &this->vtable1; /*0x67ae65*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67ae23*/
   this->Items = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
-    return &this->vtable0; /*0x67ae30*/
+    return &this->vtable1; /*0x67ae30*/
   Capacity = this->Capacity; /*0x67ae32*/
   v6 = 0; /*0x67ae35*/
   this->IsAllocated = 1; /*0x67ae39*/
   if ( Capacity <= 0 ) /*0x67ae3d*/
-    return &this->vtable0; /*0x67ae3d*/
+    return &this->vtable1; /*0x67ae3d*/
   do /*0x67ae51*/
   {
     *((unsigned int *)this->Items + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67ae48*/
     ++v6; /*0x67ae4e*/
   }
   while ( v6 < this->Capacity ); /*0x67ae51*/
-  return &this->vtable0; /*0x67ae55*/
+  return &this->vtable1; /*0x67ae55*/
 
 }
 }  // G42.18c ns repair
@@ -33453,32 +33453,32 @@ unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
   int v6; // eax
 
   if ( this == (VectorClass *)aP1 ) /*0x67b18a*/
-    return &this->vtable0; /*0x67b18a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this); /*0x67b18e*/
+    return &this->vtable1; /*0x67b18a*/
+  (*((void (**)(VectorClass *))this->vtable1 + 3))(this); /*0x67b18e*/
   v3 = aP1[2]; /*0x67b191*/
   this->Capacity = v3; /*0x67b196*/
   if ( !v3 ) /*0x67b199*/
   {
     this->Items = 0; /*0x67b1da*/
     this->IsAllocated = 0; /*0x67b1e1*/
-    return &this->vtable0; /*0x67b1e5*/
+    return &this->vtable1; /*0x67b1e5*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67b1a3*/
   this->Items = v4; /*0x67b1ab*/
   if ( !v4 ) /*0x67b1b0*/
-    return &this->vtable0; /*0x67b1b0*/
+    return &this->vtable1; /*0x67b1b0*/
   Capacity = this->Capacity; /*0x67b1b2*/
   v6 = 0; /*0x67b1b5*/
   this->IsAllocated = 1; /*0x67b1b9*/
   if ( Capacity <= 0 ) /*0x67b1bd*/
-    return &this->vtable0; /*0x67b1bd*/
+    return &this->vtable1; /*0x67b1bd*/
   do /*0x67b1d1*/
   {
     *((unsigned int *)this->Items + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67b1c8*/
     ++v6; /*0x67b1ce*/
   }
   while ( v6 < this->Capacity ); /*0x67b1d1*/
-  return &this->vtable0; /*0x67b1d5*/
+  return &this->vtable1; /*0x67b1d5*/
 
 }
 }  // G42.18c ns repair
@@ -33499,7 +33499,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
       return 0; /*0x691176*/
     CapacityIncrement = this->CapacityIncrement; /*0x691178*/
     if ( CapacityIncrement <= 0 /*0x691188*/
-      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))(
+      || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable1 + 8))(
             this,
             Capacity + CapacityIncrement,
             0) )
@@ -34698,9 +34698,9 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x69d7d3*/
   this->IsInitialized = 1; /*0x69d7d6*/
   this->IsAllocated = 0; /*0x69d7da*/
-  this->vtable0 = &vt_VectorClass; /*0x69d7de*/
+  this->vtable1 = &vt_VectorClass; /*0x69d7de*/
   if ( !a2 ) /*0x69d7e4*/
-    return &this->vtable0; /*0x69d7e4*/
+    return &this->vtable1; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
   {
     v7 = (int *)__2_YAPAXI_Z(4 * a2 + 4); /*0x69d820*/
@@ -34719,7 +34719,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
         while ( v3 ); /*0x69d848*/
         this->Items = v8; /*0x69d84a*/
         this->IsAllocated = 1; /*0x69d84d*/
-        return &this->vtable0; /*0x69d857*/
+        return &this->vtable1; /*0x69d857*/
       }
     }
     else
@@ -34728,7 +34728,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
     }
     this->Items = v8; /*0x69d85c*/
     this->IsAllocated = 1; /*0x69d85f*/
-    return &this->vtable0; /*0x69d863*/
+    return &this->vtable1; /*0x69d863*/
   }
   *a3 = a2; /*0x69d7ee*/
   v5 = a3 + 1; /*0x69d7f6*/
@@ -34742,7 +34742,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
     while ( v3 ); /*0x69d80a*/
   }
   this->Items = a3 + 1; /*0x69d80c*/
-  return &this->vtable0; /*0x69d811*/
+  return &this->vtable1; /*0x69d811*/
 
 }
 }  // G42.18c ns repair
@@ -36854,7 +36854,7 @@ char VectorClass_flat::RemoveAt(int a2, void *a2_2)
   int Count; // ecx
   int v5; // ecx
 
-  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable0 + 16))(this, a2); /*0x6ce2dc*/
+  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable1 + 16))(this, a2); /*0x6ce2dc*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x6ce2e9*/
   {
     LOBYTE(result) = 0; /*0x6ce30b*/
@@ -37827,7 +37827,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   this->Capacity = 0; /*0x717d30*/
   this->IsInitialized[0] = 1; /*0x717d33*/
   this->IsAllocated[0] = 0; /*0x717d37*/
-  this->vtable0 = (int)&vt_VectorClass; /*0x717d3a*/
+  this->vtable1 = (int)&vt_VectorClass; /*0x717d3a*/
   if ( this != (DynamicVectorClass *)aP1 ) /*0x717d40*/
   {
     VectorClass::Cleanup((int)this); /*0x717d42*/
@@ -37861,8 +37861,8 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   }
   this->Count = aP1[4]; /*0x717d91*/
   this->CapacityIncrement = aP1[5]; /*0x717d97*/
-  this->vtable0 = (int)&vt_TypeList; /*0x717d9a*/
-  return &this->vtable0; /*0x717da2*/
+  this->vtable1 = (int)&vt_TypeList; /*0x717d9a*/
+  return &this->vtable1; /*0x717da2*/
 
 }
 }  // G42.18c ns repair
@@ -40574,7 +40574,7 @@ char VectorClass_flat::Shrink()
   const void *Capacity; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  vtable0 = this->vtable0; /*0x7ae735*/
+  vtable0 = this->vtable1; /*0x7ae735*/
   Items = (int)this->Items; /*0x7ae738*/
   result = 3 * (unsigned int)vtable0; /*0x7ae73b*/
   if ( result <= Items ) /*0x7ae740*/
@@ -40589,7 +40589,7 @@ char VectorClass_flat::Shrink()
       Capacity = (const void *)this->Capacity; /*0x7ae773*/
       v8 = (int)v6; /*0x7ae77b*/
       if ( Capacity ) /*0x7ae77f*/
-        qmemcpy(v6, Capacity, 4 * (int)this->vtable0); /*0x7ae78f*/
+        qmemcpy(v6, Capacity, 4 * (int)this->vtable1); /*0x7ae78f*/
       __3_YAXPAX_Z((void *)this->Capacity); /*0x7ae79d*/
       this->Capacity = v8; /*0x7ae7a9*/
       this->Items = (void *)v5; /*0x7ae7ac*/

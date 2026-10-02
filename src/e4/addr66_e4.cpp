@@ -1646,7 +1646,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable0 = (int)&vt_VectorClass; /*0x6639a6*/
+  this->vtable1 = (int)&vt_VectorClass; /*0x6639a6*/
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/

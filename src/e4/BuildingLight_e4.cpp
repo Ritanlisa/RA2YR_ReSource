@@ -86,7 +86,7 @@ Coord * * BuildingLight::CalculateShading()
     LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((IUnknown *)((int)v3)), !(unsigned char)v5) ) /*0x5ff8b2*/
+      if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((IUnknown *)((int)v3)), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = (int)((gamemd::AudioStream *)(v47[0] - 128));
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/

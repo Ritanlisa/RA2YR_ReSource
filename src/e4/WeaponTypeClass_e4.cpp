@@ -451,7 +451,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vtable0 = &vt_WeaponTypeClass; /*0x7730f7*/
+  v2->vtable1 = &vt_WeaponTypeClass; /*0x7730f7*/
   v2->vtable1 = &vt_WeaponTypeClass; /*0x7730fd*/
   v2->vtable2 = &vt_WeaponTypeClass; /*0x773104*/
   v2->vtable3 = &vt_WeaponTypeClass; /*0x77310b*/

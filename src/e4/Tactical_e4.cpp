@@ -842,7 +842,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
             ((Coord *)((Coord *)&v74))->Subtract(((int16_t)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
-            v42 = *(int *)((char *)&dword_A8B230->vtable0 + v40); /*0x640f3a*/
+            v42 = *(int *)((char *)&dword_A8B230->vtable1 + v40); /*0x640f3a*/
             if ( v42 != -1 ) /*0x640f40*/
             {
               v43 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x640f66*/

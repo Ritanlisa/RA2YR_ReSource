@@ -140,7 +140,7 @@ AbstractClass * * ProcessSelectionExperience()
       v6 = (TechnoClass *)*((unsigned int *)dword_A8ECBC + v5); /*0x730b95*/
       if ( v6 ) /*0x730b9a*/
       {
-        if ( (*(int (**)(unsigned int))(v6->vtable0 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
+        if ( (*(int (**)(unsigned int))(v6->vtable1 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
 // 0x5224e0
           && TechnoClass::GetTypeFlag() )
         {
@@ -153,7 +153,7 @@ AbstractClass * * ProcessSelectionExperience()
         }
         else
         {
-          v1 = (*(int (**)(TechnoClass *))(v6->vtable0 + 44))(v6); /*0x730be0*/
+          v1 = (*(int (**)(TechnoClass *))(v6->vtable1 + 44))(v6); /*0x730be0*/
           if ( v1 == 1 ) /*0x730be6*/
           {
             IDA_LOBYTE(v1) = *(unsigned char *)(v6[1].ironTintTimer[2] + 3603); /*0x730bee*/
@@ -2471,7 +2471,7 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(TechnoClass *))(this->vtable0 + 388))(this) != 5 ) /*0x736c21*/
+  if ( (*(int (**)(TechnoClass *))(this->vtable1 + 388))(this) != 5 ) /*0x736c21*/
     return 0; /*0x736c21*/
   v4[0] = this->location[0]; /*0x736c2f*/
   v4[1] = this->location[1]; /*0x736c3b*/
@@ -2481,8 +2481,8 @@ char E4Recv_736C10::sub_736C10()
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 928))(this); /*0x736c73*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 248))(this); /*0x736c7d*/
+  (*(void (**)(TechnoClass *))(this->vtable1 + 928))(this); /*0x736c73*/
+  (*(void (**)(TechnoClass *))(this->vtable1 + 248))(this); /*0x736c7d*/
   return 1; /*0x736c85*/
 
 }

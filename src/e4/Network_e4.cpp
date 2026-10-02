@@ -3816,7 +3816,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
   v11 = dword_A83ED4; /*0x64c4dc*/
   while ( 1 ) /*0x64c4ec*/
   {
-    v12 = *(&dword_A8022C->vtable0 + v46); /*0x64c4ec*/
+    v12 = *(&dword_A8022C->vtable1 + v46); /*0x64c4ec*/
     v47 = v12; /*0x64c4f1*/
     if ( v12 ) /*0x64c4f5*/
     {
@@ -3934,7 +3934,7 @@ LABEL_96:
   v17 = byte_8B4204[111 * v15]; /*0x64c63d*/
   if ( v17 == 19 ) /*0x64c647*/
   {
-    vtable3 = &dword_A8022C->vtable0; /*0x64c7bf*/
+    vtable3 = &dword_A8022C->vtable1; /*0x64c7bf*/
     v25 = 0; /*0x64c7cc*/
     while ( 1 ) /*0x64c7d3*/
     {

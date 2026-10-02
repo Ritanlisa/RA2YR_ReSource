@@ -3393,7 +3393,7 @@ void ComputeNetworkFrameCRC()
     v16 = dword_A8022C; /*0x64dcbd*/
     do /*0x64dce2*/
     {
-      vtable0 = v16->vtable0; /*0x64dcc3*/
+      vtable0 = v16->vtable1; /*0x64dcc3*/
       v16 = (HouseClass *)((char *)v16 + 4); /*0x64dcc7*/
       v1 = *(uint8_t *)(vtable0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
       --v15; /*0x64dcdc*/

@@ -484,7 +484,7 @@ void sub_683FB0()
     Debug::Log();
   if ( dword_887368 ) /*0x68401d*/
     ((Tooltip *)(dword_887368))->Enable(byte_A8EB80); /*0x684026*/
-  EndBufferMixer(&g_MixerState->vtable0, dword_83D834); /*0x684037*/
+  EndBufferMixer(&g_MixerState->vtable1, dword_83D834); /*0x684037*/
   IDA_LOBYTE(v2) = 0; /*0x68403c*/
   dword_83D834 = 0x4000; /*0x68403e*/
   ((AsyncIO *)(v2))->Read(); /*0x684048*/

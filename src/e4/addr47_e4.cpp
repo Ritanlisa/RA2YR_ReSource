@@ -189,7 +189,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     ((DynamicVectorClass *)(a1))->Copy(&v21); /*0x4773cb*/
-    a1->vtable0 = (int)&TypeList_int_vftable; /*0x4773d9*/
+    a1->vtable1 = (int)&TypeList_int_vftable; /*0x4773d9*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x4773df*/
     ((VectorClass *)((int)&v21))->Destroy(); /*0x4773e3*/
     a5 = (void*)&VectorClass_int_vftable; /*0x4773ef*/

@@ -758,9 +758,9 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
   v3 = v1; /*0x658657*/
   for ( i = dword_A80238; v2 < i; ++v2 ) /*0x658661*/
   {
-    v4 = *(&dword_A8022C->vtable0 + v2); /*0x658668*/
+    v4 = *(&dword_A8022C->vtable1 + v2); /*0x658668*/
     if ( v4 /*0x658683*/
-      && ((uint8_t)House::IsHumanPlayer(*((House **)&dword_A8022C->vtable0 + v2))
+      && ((uint8_t)House::IsHumanPlayer(*((House **)&dword_A8022C->vtable1 + v2))
        || !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422)) )
     {
       ((TabClass *)(v3))->DrawPower(hDlg); /*0x658692*/

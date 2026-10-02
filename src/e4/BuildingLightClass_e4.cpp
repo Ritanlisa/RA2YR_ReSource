@@ -141,7 +141,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable0 = (int)&vt_BuildingLightClass; /*0x4370c4*/
+  Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370c4*/
   Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370ca*/
   Block->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
   Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/

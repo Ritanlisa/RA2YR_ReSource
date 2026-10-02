@@ -931,7 +931,7 @@ ScenarioClass * * ComputeMapCameraBounds()
             v23 = *(void **)&v21[v20]; /*0x58ba73*/
             v24 = *(void **)&v21[v20 + 4]; /*0x58ba76*/
           }
-          *(void **)((char *)&v19->vtable0 + v20) = v23; /*0x58ba80*/
+          *(void **)((char *)&v19->vtable1 + v20) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           v22 += 4; /*0x58ba8a*/
           *(void **)((char *)&dword_A8B230->vtable1 + v20) = v24; /*0x58ba8d*/

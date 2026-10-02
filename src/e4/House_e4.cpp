@@ -645,7 +645,7 @@ LABEL_5:
         {
           do
           {
-            v12 = *(&dword_A8022C->vtable0 + *(unsigned int *)v38); /*0x4fd60b*/
+            v12 = *(&dword_A8022C->vtable1 + *(unsigned int *)v38); /*0x4fd60b*/
             if ( (House *)v12 != this )
             {
               v10 = *(unsigned int *)(v12 + 52); /*0x4fd616*/
@@ -714,7 +714,7 @@ LABEL_30:
   v21 = *((unsigned int *)this + 5504); /*0x4fd723*/
   if ( v21 != -1 ) /*0x4fd72c*/
   {
-    v22 = *(&dword_A8022C->vtable0 + v21); /*0x4fd734*/
+    v22 = *(&dword_A8022C->vtable1 + v21); /*0x4fd734*/
     if ( *(unsigned char *)(v22 + 501) ) /*0x4fd737*/
     {
       v23 = *((unsigned int *)this + 5509); /*0x4fd741*/

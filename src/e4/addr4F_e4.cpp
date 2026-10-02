@@ -1627,18 +1627,18 @@ unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
   this->Capacity = a2; /*0x4f2c0e*/
   this->IsInitialized = 1; /*0x4f2c11*/
   this->IsAllocated = 0; /*0x4f2c15*/
-  this->vtable0 = &vt_VectorClass; /*0x4f2c18*/
+  this->vtable1 = &vt_VectorClass; /*0x4f2c18*/
   if ( a2 ) /*0x4f2c1e*/
   {
     if ( a3 ) /*0x4f2c26*/
     {
       this->Items = (void *)a3; /*0x4f2c28*/
-      return &this->vtable0; /*0x4f2c2e*/
+      return &this->vtable1; /*0x4f2c2e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x4f2c3d*/
     this->IsAllocated = 1; /*0x4f2c40*/
   }
-  return &this->vtable0; /*0x4f2c2d*/
+  return &this->vtable1; /*0x4f2c2d*/
 
 }
 } // namespace gamemd

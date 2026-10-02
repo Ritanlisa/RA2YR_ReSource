@@ -700,7 +700,7 @@ LABEL_14:
                  0) )
           {
             ParticleTypeClass_field_0x2C8 = v3->ParticleTypeClass_field_0x2C8; /*0x64574e*/
-            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->vtable0 + 1); /*0x645751*/
+            v10 = (VectorClass *)((char *)&ParticleTypeClass_field_0x2C8->vtable1 + 1); /*0x645751*/
             v11 = 3 * (unsigned int)ParticleTypeClass_field_0x2C8; /*0x645754*/
             ParticleTypeClass_field_0x2BC = v3->ParticleTypeClass_field_0x2BC; /*0x645757*/
             v3->ParticleTypeClass_field_0x2C8 = v10; /*0x64575a*/

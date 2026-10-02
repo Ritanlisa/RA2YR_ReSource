@@ -2909,7 +2909,7 @@ LABEL_34:
           v27 = (*(int (**)(int))(*(unsigned int *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a1; /*0x5d73eb*/
           *a1 -= v27; /*0x5d73f3*/
-          if ( ((int)dword_A8B230->vtable0 & 0x200) != 0 ) /*0x5d7400*/
+          if ( ((int)dword_A8B230->vtable1 & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (uint8_t)((House *)((House *)aP0))->IsCurrentPlayer() ) /*0x5d7411*/
             (*(void (**)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/

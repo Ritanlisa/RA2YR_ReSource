@@ -280,7 +280,7 @@ LABEL_151:
             }
             while ( v6 < 7 );
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29992] = (unsigned int)(v75);
-            v10 = (CampaignScore *)((char *)&v75->vtable0 + 1);
+            v10 = (CampaignScore *)((char *)&v75->vtable1 + 1);
             if ( var244 == 1559 )
             {
               if ( (int)Format < (int)v10 )
@@ -514,7 +514,7 @@ LABEL_151:
                 v43 = 4;
               }
               *(unsigned int *)&Formatb[-1].IsInitialized = v43;
-              Formatb->vtable0 = (unsigned int)((void *)v41);
+              Formatb->vtable1 = (unsigned int)((void *)v41);
               Formatb->Items = (unsigned int)((void *)ComboBoxSelectedRaw);
               Formatb = (VectorClass_flat *)((char *)Formatb + 12);
             }

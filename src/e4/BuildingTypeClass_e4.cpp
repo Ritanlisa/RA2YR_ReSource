@@ -1436,7 +1436,7 @@ LABEL_32:
           result = (*(int (**)(int, int *, int, unsigned int))(v6 + 12))(v2, &v10, 12, 0); /*0x4651b2*/
           if ( result < 0 ) /*0x4651b7*/
             break; /*0x4651b7*/
-          v7 = (int *)((char *)&v13->vtable0 + *(unsigned int *)&v1[1].Weapon[248]); /*0x4651cb*/
+          v7 = (int *)((char *)&v13->vtable1 + *(unsigned int *)&v1[1].Weapon[248]); /*0x4651cb*/
           v8 = (TechnoTypeClass *)&v13->vtable3; /*0x4651cd*/
           ++v5; /*0x4651d0*/
           *v7 = v10; /*0x4651d1*/

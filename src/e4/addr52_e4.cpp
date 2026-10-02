@@ -2876,15 +2876,15 @@ char E4Recv_520260::sub_520260()
     *(unsigned char *)(v2 + 130) = 1; /*0x52027a*/
   if ( *((unsigned int *)this + 373) ) /*0x520281*/
     return 0; /*0x520281*/
-  if ( (*(int (**)(TechnoClass *))(this->vtable0 + 388))(this) != 5 ) /*0x520298*/
+  if ( (*(int (**)(TechnoClass *))(this->vtable1 + 388))(this) != 5 ) /*0x520298*/
     return 0; /*0x520298*/
   v4[0] = this->location[0]; /*0x5202a6*/
   v4[1] = this->location[1]; /*0x5202b2*/
   v4[2] = this->location[2]; /*0x5202b9*/
   if ( (uint8_t)Tactical::IsCellVisible((Tactical *)&dword_87F7E8, v4) ) /*0x5202c2*/
     return 0; /*0x5202e6*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 928))(this); /*0x5202cf*/
-  (*(void (**)(TechnoClass *))(this->vtable0 + 248))(this); /*0x5202d9*/
+  (*(void (**)(TechnoClass *))(this->vtable1 + 928))(this); /*0x5202cf*/
+  (*(void (**)(TechnoClass *))(this->vtable1 + 248))(this); /*0x5202d9*/
   return 1; /*0x5202e1*/
 
 }

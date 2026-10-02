@@ -69,7 +69,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
     {
       if ( *((unsigned int *)((char *)&stru_A8EB00 + 391)) /*0x62cf58*/
         || !g_hWnd
-        || ((int)dword_A8B230->vtable0 & 0x1000) == 0
+        || ((int)dword_A8B230->vtable1 & 0x1000) == 0
         || (v29 = *(unsigned int *)&this->__pad_28[116],
             v30 = *(unsigned int *)&this->__pad_28[120],
             v31 = *(unsigned int *)&this->__pad_28[124],

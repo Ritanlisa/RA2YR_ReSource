@@ -1541,10 +1541,10 @@ unsigned int * E4Recv_720440::sub_720440()
   BYTE1(this->chronoDestCoords[0]) = 0; /*0x720457*/
   BYTE2(this->chronoDestCoords[0]) = 0; /*0x72045d*/
   this->chronoDestCoords[1] = -1; /*0x720463*/
-  LOBYTE(this->vtable0) = 0; /*0x72046d*/
+  LOBYTE(this->vtable1) = 0; /*0x72046d*/
   LOBYTE(this->animation[2]) = 0; /*0x72046f*/
   LOWORD(this->reloadTimer[1]) = 0; /*0x720475*/
-  return &this->vtable0; /*0x72047c*/
+  return &this->vtable1; /*0x72047c*/
 
 }
 } // namespace gamemd

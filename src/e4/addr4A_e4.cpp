@@ -3631,18 +3631,18 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
   this->Capacity = a2; /*0x4a4e3e*/
   this->IsInitialized = 1; /*0x4a4e41*/
   this->IsAllocated = 0; /*0x4a4e45*/
-  this->vtable0 = &vt_VectorClass; /*0x4a4e48*/
+  this->vtable1 = &vt_VectorClass; /*0x4a4e48*/
   if ( a2 ) /*0x4a4e4e*/
   {
     if ( a3 ) /*0x4a4e56*/
     {
       this->Items = (void *)a3; /*0x4a4e58*/
-      return &this->vtable0; /*0x4a4e5e*/
+      return &this->vtable1; /*0x4a4e5e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
     this->IsAllocated = 1; /*0x4a4e70*/
   }
-  return &this->vtable0; /*0x4a4e5d*/
+  return &this->vtable1; /*0x4a4e5d*/
 
 }
 } // namespace gamemd

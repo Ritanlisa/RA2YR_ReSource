@@ -2100,13 +2100,13 @@ void* TeamClass::AttackCoordinator()
   }
   focus = v1->focus; /*0x6eb51a*/
   if ( focus
-    && (*((int (**)(AbstractClass *))focus->vtable0 + 11))(focus) == 11
+    && (*((int (**)(AbstractClass *))focus->vtable1 + 11))(focus) == 11
     && v1->firstUnit
     && (*((int (**)(FootClass *))v4->vtable1 + 11))(v4) != 2 )
   {
     v7 = v1->focus; /*0x6eb53e*/
     if ( v7 )
-      v8 = (*((int (**)(AbstractClass *))v7->vtable0 + 11))(v7) == 11 ? (Object *)v7 : 0;
+      v8 = (*((int (**)(AbstractClass *))v7->vtable1 + 11))(v7) == 11 ? (Object *)v7 : 0;
     else
       v8 = 0; /*0x6eb547*/
     v19 = 0; /*0x6eb567*/
@@ -2126,7 +2126,7 @@ void* TeamClass::AttackCoordinator()
     if ( vtable0[240](v4, v1->focus, v10) == 5 ) /*0x6eb5d0*/
       v1->unknown81 = 1; /*0x6eb5d2*/
   }
-  p_vtable0 = &v1->focus->vtable0; /*0x6eb5d9*/
+  p_vtable0 = &v1->focus->vtable1; /*0x6eb5d9*/
   if ( !p_vtable0 /*0x6eb605*/
     || (p_vtable0 = ((SessionClass *)((SessionClass *)v1->currentScript))->GetEntry(v21),
         v12 = v1->firstUnit,

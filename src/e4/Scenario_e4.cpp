@@ -751,7 +751,7 @@ LABEL_42:
     v13 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b2b8*/
     v15 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b2be*/
   }
-  if ( ((int)v14->vtable0 & 0x1000) != 0 && *(double *)(v13 + 5704) != 0.0 ) /*0x55b2dd*/
+  if ( ((int)v14->vtable1 & 0x1000) != 0 && *(double *)(v13 + 5704) != 0.0 ) /*0x55b2dd*/
   {
     vtable0 = v14[129].vtable0; /*0x55b2df*/
     vtable2 = (char *)v14[129].vtable2; /*0x55b2e5*/
@@ -1212,7 +1212,7 @@ int Scenario::LoadWithProgress()
       LoadProgressMgr::ReleaseBuffer(v29); /*0x684c00*/
     }
     for ( j = dword_A80238 - 1; j >= 0; --j ) /*0x684c10*/
-      Scenario::ProcessSidebarUnits(*((Scenario **)&dword_A8022C->vtable0 + j)); /*0x684c1b*/
+      Scenario::ProcessSidebarUnits(*((Scenario **)&dword_A8022C->vtable1 + j)); /*0x684c1b*/
     return 1; /*0x684c24*/
   }
   else

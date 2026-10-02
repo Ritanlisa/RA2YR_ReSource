@@ -2749,7 +2749,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
 
   result = (void *)aP1; /*0x577f30*/
   if ( aP1 ) /*0x577f3a*/
-    *(unsigned char *)(*(&dword_A8022C->vtable0 + *(unsigned int *)(aP1 + 48)) + 577) = 1; /*0x577f48*/
+    *(unsigned char *)(*(&dword_A8022C->vtable1 + *(unsigned int *)(aP1 + 48)) + 577) = 1; /*0x577f48*/
   if ( (Object *)aP1 == dword_A83D4C ) /*0x577f55*/
   {
     if ( aP1 ) /*0x577f63*/
@@ -2763,7 +2763,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
 LABEL_8:
   v4 = (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x577f94*/
     && dword_A8B23C
-    && !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C);
+    && !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C);
   result = dword_A83D4C; /*0x577f9a*/
   if ( !dword_A83D4C->__pad_140[256] ) /*0x577f9f*/
   {
@@ -3951,7 +3951,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           ((VectorClass *)(v11))->CellConstructor(0, 0); /*0x5a051b*/
-          v12->vtable0 = &vt_DynamicVectorClass; /*0x5a0520*/
+          v12->vtable1 = &vt_DynamicVectorClass; /*0x5a0520*/
           v12[1].Items = (void *)10; /*0x5a0526*/
           v12[1].vtable0 = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
@@ -3993,7 +3993,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
                     if ( (int)v13[1].vtable0 < Capacity /*0x5a060e*/
                       || (v13->IsAllocated || !Capacity)
                       && (v24 = (int)v13[1].Items, v24 > 0)
-                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v13->vtable0 + 2))(
+                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v13->vtable1 + 2))(
                            v13,
                            Capacity + v24,
                            0) )
@@ -4016,7 +4016,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
           while ( v35 >= 0 ); /*0x5a0650*/
         }
         if ( v6 ) /*0x5a065a*/
-          (*(void (**)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0663*/
+          (*(void (**)(VectorClass *, int))v6->vtable1)(v6, 1); /*0x5a0663*/
         v29 = v13; /*0x5a0665*/
         v6 = v13; /*0x5a0669*/
         v4 = v36; /*0x5a066b*/
@@ -4027,7 +4027,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
     v5 = a3; /*0x5a0684*/
   }
   if ( v6 ) /*0x5a0688*/
-    (*(void (**)(VectorClass *, int))v6->vtable0)(v6, 1); /*0x5a0691*/
+    (*(void (**)(VectorClass *, int))v6->vtable1)(v6, 1); /*0x5a0691*/
   if ( v5 > 1 ) /*0x5a0696*/
   {
     ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x5a069d*/

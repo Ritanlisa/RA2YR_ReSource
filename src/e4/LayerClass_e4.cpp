@@ -530,7 +530,7 @@ void * LayerClass::Reveal(int a2)
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
-    *(unsigned char *)(*(&dword_A8022C->vtable0 + *(unsigned int *)(a2 + 48)) + 577) = 1; /*0x577db0*/
+    *(unsigned char *)(*(&dword_A8022C->vtable1 + *(unsigned int *)(a2 + 48)) + 577) = 1; /*0x577db0*/
   if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
@@ -544,7 +544,7 @@ void * LayerClass::Reveal(int a2)
 LABEL_8:
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x577df4*/
     || !dword_A8B23C
-    || (v8 = 1, (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C)) )
+    || (v8 = 1, (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)) )
   {
     v8 = 0; /*0x577dff*/
   }

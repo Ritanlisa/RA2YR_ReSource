@@ -940,7 +940,7 @@ int E4Recv_4517D0::sub_4517D0()
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vtable0 + 172))(this, v16); /*0x4517e2*/
+  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vtable1 + 172))(this, v16); /*0x4517e2*/
   v3 = 0; /*0x4517ea*/
   v13 = *v2; /*0x4517ec*/
   v14 = v2[1]; /*0x4517f3*/
@@ -1041,7 +1041,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v14; // [esp+24h] [ebp-8h]
   int v15; // [esp+28h] [ebp-4h]
 
-  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, &v13); /*0x4528b2*/
+  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, &v13); /*0x4528b2*/
   v5 = *v4; /*0x4528b5*/
   v6 = v4[1]; /*0x4528bb*/
   v7 = v4[2]; /*0x4528c0*/
@@ -1144,7 +1144,7 @@ char E4Recv_457A10::sub_457A10()
   int v5; // [esp+Ch] [ebp-8h]
   int16_t v6[2]; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vtable0 + 440))(this, v6); /*0x457a2d*/
+  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vtable1 + 440))(this, v6); /*0x457a2d*/
   for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int **)this + 328) + 144))( /*0x457a42*/
                        *((unsigned int *)this + 328),
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )

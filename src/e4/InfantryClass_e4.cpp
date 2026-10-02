@@ -178,7 +178,7 @@ LABEL_14:
   }
   if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) /*0x4d5428*/
     || (target = ((unsigned int *)a1)[0]) == 0
-    || (*((int (**)(AbstractClass *))target->vtable0 + 11))(target) != 6 )
+    || (*((int (**)(AbstractClass *))target->vtable1 + 11))(target) != 6 )
   {
     if ( !*(unsigned char *)(v4[432] + 3782) ) /*0x4d547a*/
     {

@@ -1820,7 +1820,7 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
         v30 = location[1]; /*0x54b0ac*/
         v31 = location[2]; /*0x54b0bd*/
         if ( (uint8_t)Cell::IsPassable(&v29) /*0x54b0fe*/
-          || ((int)dword_A8B230->vtable0 & 0x1000) != 0
+          || ((int)dword_A8B230->vtable1 & 0x1000) != 0
           && (v21 = ((unsigned int *)a1)[0], v29 = *v21, v30 = v21[1], v31 = v21[2], (uint8_t)Game::Stub3((int)&v29)) )
         {
           (*((void (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 84))(((unsigned int *)a1)[0]); /*0x54b10c*/

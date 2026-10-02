@@ -1345,7 +1345,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
+    (*(void (**)(FoggedObjectClass *))(this->vtable1 + 12))(this); /*0x4e078e*/
   }
   v7 = this->vtable2; /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/

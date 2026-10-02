@@ -813,7 +813,7 @@ UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
   UnitTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (UnitTypeClass *)v2; /*0x748192*/
-  v2->vtable0 = &vt_UnitTypeClass; /*0x748196*/
+  v2->vtable1 = &vt_UnitTypeClass; /*0x748196*/
   v2->vtable1 = &vt_UnitTypeClass; /*0x74819c*/
   v2->vtable2 = &vt_UnitTypeClass; /*0x7481a3*/
   v2->vtable3 = &vt_UnitTypeClass; /*0x7481aa*/

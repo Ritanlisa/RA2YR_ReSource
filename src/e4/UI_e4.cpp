@@ -367,7 +367,7 @@ AbstractClass * * sub_7318F0()
           result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 56))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
           {
-            if ( ((int)dword_A8B230->vtable0 & 0x400) == 0 /*0x731981*/
+            if ( ((int)dword_A8B230->vtable1 & 0x400) == 0 /*0x731981*/
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301)
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5307) )
             {

@@ -485,7 +485,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
         {
           ((VectorClass *)(v10))->CellConstructor(0, 0); /*0x58d26d*/
           v11[1].vtable0 = 0; /*0x58d272*/
-          v11->vtable0 = &vt_DynamicVectorClass; /*0x58d275*/
+          v11->vtable1 = &vt_DynamicVectorClass; /*0x58d275*/
           v11[1].Items = (void *)10; /*0x58d27b*/
           v12 = v11; /*0x58d282*/
         }
@@ -521,7 +521,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                     if ( (int)v12[1].vtable0 < Capacity /*0x58d35b*/
                       || (v12->IsAllocated || !Capacity)
                       && (v21 = (int)v12[1].Items, v21 > 0)
-                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v12->vtable0 + 2))(
+                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v12->vtable1 + 2))(
                            v12,
                            Capacity + v21,
                            0) )
@@ -603,7 +603,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   if ( v1 ) /*0x58d428*/
   {
     ((VectorClass *)(v1))->CellConstructor(0, 0); /*0x58d430*/
-    v2->vtable0 = &vt_DynamicVectorClass; /*0x58d435*/
+    v2->vtable1 = &vt_DynamicVectorClass; /*0x58d435*/
     v2[1].Items = (void *)10; /*0x58d43b*/
     v2[1].vtable0 = 0; /*0x58d442*/
     v3 = v2; /*0x58d449*/
@@ -616,7 +616,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x58d458*/
   v4 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
-    return &v3->vtable0; /*0x58d592*/
+    return &v3->vtable1; /*0x58d592*/
   do
   {
     v5 = *(unsigned int *)(v4 + 36); /*0x58d478*/
@@ -655,7 +655,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
         if ( (int)v3[1].vtable0 < Capacity /*0x58d55d*/
           || (v3->IsAllocated || !Capacity)
           && (v12 = (int)v3[1].Items, v12 > 0)
-          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
+          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v3->vtable1 + 2))(v3, Capacity + v12, 0) )
         {
           vtable0 = (unsigned int *)(v3[1].vtable0); /*0x58d564*/
           Items = (unsigned int *)(v3->Items); /*0x58d567*/
@@ -667,7 +667,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
     v4 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58d57d*/
   }
   while ( v4 );
-  return &v3->vtable0; /*0x58d588*/
+  return &v3->vtable1; /*0x58d588*/
 
 }
 }
@@ -713,7 +713,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     if ( v2 ) /*0x58e774*/
     {
       ((VectorClass *)(v2))->CellConstructor(0, 0); /*0x58e77a*/
-      v3->vtable0 = &vt_DynamicVectorClass; /*0x58e77f*/
+      v3->vtable1 = &vt_DynamicVectorClass; /*0x58e77f*/
       v3[1].Items = (void *)10; /*0x58e785*/
       v3[1].vtable0 = 0; /*0x58e78c*/
       v4 = v3; /*0x58e78f*/
@@ -760,7 +760,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
                 if ( (int)v4[1].vtable0 < Capacity /*0x58e8d8*/
                   || (v4->IsAllocated || !Capacity)
                   && (v18 = (int)v4[1].Items, v18 > 0)
-                  && (*((uint8_t (**)(VectorClass *, int, unsigned int))v4->vtable0 + 2))(
+                  && (*((uint8_t (**)(VectorClass *, int, unsigned int))v4->vtable1 + 2))(
                        v4,
                        Capacity + v18,
                        0) )
@@ -779,7 +779,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
                 if ( p_vtable0 ) /*0x58e98c*/
                   (*(void (**)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e992*/
                 if ( v4 ) /*0x58e996*/
-                  (*(void (**)(VectorClass *, int))v4->vtable0)(v4, 1); /*0x58e99f*/
+                  (*(void (**)(VectorClass *, int))v4->vtable1)(v4, 1); /*0x58e99f*/
                 return 0; /*0x58e9a4*/
               }
             }
@@ -798,7 +798,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     }
     if ( v5 ) /*0x58e94b*/
       (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x58e951*/
-    p_vtable0 = &v4->vtable0; /*0x58e95c*/
+    p_vtable0 = &v4->vtable1; /*0x58e95c*/
   }
   if ( p_vtable0 ) /*0x58e972*/
     (*(void (**)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
@@ -957,7 +957,7 @@ void* RandomMap::CollectBorderCells()
   if ( v2 ) /*0x58f0db*/
   {
     ((VectorClass *)(v2))->Construct(0, 0); /*0x58f0e3*/
-    v3->vtable0 = &vt_DynamicVectorClass; /*0x58f0e8*/
+    v3->vtable1 = &vt_DynamicVectorClass; /*0x58f0e8*/
     v3[1].Items = (void *)10; /*0x58f0ee*/
     v3[1].vtable0 = 0; /*0x58f0f5*/
   }
@@ -2886,7 +2886,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   else
   {
     DynamicVector_field_0x1C = v27.DynamicVector_field_0x1C; /*0x5988fa*/
-    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->vtable0); /*0x598903*/
+    TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_20[4], &v27.DynamicVector_field_0x1C->vtable1); /*0x598903*/
   }
   DynamicVector::Copy((DynamicVector *)DynamicVector_field_0x1C, &v27.__pad_20[4]); /*0x59890f*/
   *(unsigned int *)&v27.__pad_20[4] = &vt_VectorClass; /*0x598918*/
@@ -4319,7 +4319,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
   if ( v3 ) /*0x5a0718*/
   {
     ((VectorClass *)(v3))->CellConstructor(0, 0); /*0x5a071e*/
-    v4->vtable0 = &vt_DynamicVectorClass; /*0x5a0723*/
+    v4->vtable1 = &vt_DynamicVectorClass; /*0x5a0723*/
     v4[1].Items = (void *)10; /*0x5a0729*/
     v4[1].vtable0 = 0; /*0x5a0730*/
   }
@@ -4331,7 +4331,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
   v4[1].Items = (void *)(*(unsigned int *)&this->__pad_4C[308] * *(unsigned int *)&this->__pad_4C[312]); /*0x5a0748*/
   v5 = g_MapCellWidth; /*0x5a074b*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x5a0758*/
-    return &v4->vtable0; /*0x5a08c1*/
+    return &v4->vtable1; /*0x5a08c1*/
   v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a075f*/
   v24 = 0; /*0x5a0765*/
   v25 = g_MapCellWidth * g_MapCellWidth; /*0x5a0769*/
@@ -4387,7 +4387,7 @@ LABEL_23:
       Items = (int)v23[1].Items; /*0x5a086e*/
       if ( Items > 0 ) /*0x5a0873*/
       {
-        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v23->vtable0 + 2))( /*0x5a087e*/
+        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v23->vtable1 + 2))( /*0x5a087e*/
                v23,
                Capacity + Items,
                0) )
@@ -4410,7 +4410,7 @@ LABEL_33:
       v5 = g_MapCellWidth; /*0x5a076f*/
       continue; /*0x5a076f*/
     }
-    return &v4->vtable0; /*0x5a08b5*/
+    return &v4->vtable1; /*0x5a08b5*/
   }
 
 }

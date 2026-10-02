@@ -702,12 +702,12 @@ int BulletTypeClass::ProcessImpact(int a1)
   {
     movementDestination = ((unsigned int *)v1)[0]->movementDestination; /*0x69fd16*/
     if ( movementDestination /*0x69fd54*/
-      && (*((int (**)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))(movementDestination) == 11
       && (v6 = ((unsigned int *)v1)[0],
           v7 = v6->movementDestination + 1,
           v8 = (unsigned short *)(*((int (**)(FootClass *, ShipLocomotionClass **))v6->vtable1 + 110))(v6, &a1),
-          *v8 == LOWORD(v7->vtable0))
-      && v8[1] == HIWORD(v7->vtable0) )
+          *v8 == LOWORD(v7->vtable1))
+      && v8[1] == HIWORD(v7->vtable1) )
     {
       v9 = (FootClass *)*((unsigned int *)v2 + 3); /*0x69fd56*/
       if ( !*(unsigned int *)&v9->__pad_58C[12] ) /*0x69fd59*/
@@ -763,7 +763,7 @@ int BulletTypeClass::ProcessImpact(int a1)
               v18 = v17->movementDestination; /*0x6a0037*/
               if ( v18 ) /*0x6a003f*/
               {
-                v19 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
+                v19 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v18->vtable1 + 19))( /*0x6a004d*/
                                   v18,
                                   &v23,
                                   ((unsigned int *)v1)[0]);

@@ -367,7 +367,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
   v12 = *((unsigned int *)this + 17); /*0x483583*/
   if ( v12 != -1 ) /*0x483589*/
   {
-    v13 = *(&dword_A83D84->vtable0 + v12); /*0x483591*/
+    v13 = *(&dword_A83D84->vtable1 + v12); /*0x483591*/
     if ( v13 ) /*0x483596*/
     {
       if ( *(unsigned char *)(v13 + 680) ) /*0x483598*/

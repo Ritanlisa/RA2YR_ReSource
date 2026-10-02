@@ -124,7 +124,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
       v2[1].vtable1 = &vt_DynamicVectorClass; /*0x763ca0*/
-      v2->vtable0 = &vt_WaypointPathClass; /*0x763ca7*/
+      v2->vtable1 = &vt_WaypointPathClass; /*0x763ca7*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763cad*/
       v2->vtable2 = &vt_WaypointPathClass; /*0x763cb4*/
       v2->vtable3 = &vt_WaypointPathClass; /*0x763cbb*/

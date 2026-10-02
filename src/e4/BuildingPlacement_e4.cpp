@@ -466,7 +466,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   if ( v7 ) /*0x594fd8*/
   {
     ((VectorClass *)(v7))->CellConstructor(0, 0); /*0x594fde*/
-    v8->vtable0 = &vt_DynamicVectorClass; /*0x594fe3*/
+    v8->vtable1 = &vt_DynamicVectorClass; /*0x594fe3*/
     v8[1].Items = (void *)10; /*0x594fe9*/
     v8[1].vtable0 = 0; /*0x594ff0*/
     v39 = v8; /*0x594ff3*/
@@ -551,7 +551,7 @@ LABEL_26:
       Items = (int)v8[1].Items; /*0x59516a*/
       if ( Items <= 0 ) /*0x59516f*/
         goto LABEL_38; /*0x59516f*/
-      if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
+      if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
       {
 LABEL_36:
         vtable0 = v8[1].vtable0; /*0x595181*/
@@ -651,7 +651,7 @@ LABEL_39:
         v32 = (int)v8[1].Items; /*0x5953a8*/
         if ( v32 <= 0 ) /*0x5953ad*/
           goto LABEL_74; /*0x5953ad*/
-        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
+        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
         {
 LABEL_72:
           v33 = v8[1].vtable0; /*0x5953bf*/
@@ -663,25 +663,25 @@ LABEL_72:
 LABEL_74:
         v20 = (int)v8[1].vtable0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
-          return &v8->vtable0; /*0x5953e3*/
+          return &v8->vtable1; /*0x5953e3*/
       }
     }
-    return &v8->vtable0; /*0x5951a4*/
+    return &v8->vtable1; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = *(unsigned int **)(v5 + 4); /*0x5951e7*/
   if ( (int)v8[1].vtable0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
-    && (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, v21 + v23, 0) )
+    && (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, v21 + v23, 0) )
   {
     v24 = v8[1].vtable0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
     v8[1].vtable0 = (char *)v24 + 1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
-    return &v8->vtable0; /*0x595235*/
+    return &v8->vtable1; /*0x595235*/
   }
-  return &v8->vtable0; /*0x594fbd*/
+  return &v8->vtable1; /*0x594fbd*/
 
 }
 } // namespace gamemd

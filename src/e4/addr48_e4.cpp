@@ -130,7 +130,7 @@ void Network_SendTimestamp(int a1, int a2, int a3, int a4)
   float v11; // [esp+Ch] [ebp-8h]
 
   v4 = a1; /*0x489184*/
-  if ( !a1 || (dword_A8B230->vtable0 & 0x20) != 0 || !a2 ) /*0x4891a5*/
+  if ( !a1 || (dword_A8B230->vtable1 & 0x20) != 0 || !a2 ) /*0x4891a5*/
     return 0; /*0x489263*/
   if ( a1 < 0 )
     return a4 >= 8 ? 0 : a1;
@@ -404,7 +404,7 @@ LABEL_58:
       if ( !v110 )
       {
         if ( *(unsigned int *)&aP0->__pad_0[8]
-           - *(unsigned int *)((*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable0 + 18))(aP1a, &v143) + 8) <= 2 * *(unsigned int *)&((unsigned int *)(stru_89E138))[1848] )
+           - *(unsigned int *)((*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable1 + 18))(aP1a, &v143) + 8) <= 2 * *(unsigned int *)&((unsigned int *)(stru_89E138))[1848] )
         {
     unsigned int v148 = 0;  /* G37 hoist */
     unsigned int v148 = 0;  /* G37 hoist */
@@ -418,7 +418,7 @@ LABEL_58:
           v31[1] = 0;
           goto LABEL_67;
         }
-        eax61a = (unsigned int *)(*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable0 + 18))(aP1a, &v130);
+        eax61a = (unsigned int *)(*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable1 + 18))(aP1a, &v130);
         v32 = (IUnknown *)(((Coord *)(int v148[3]; v148))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2])));
         IDA_LODWORD(v132) = v32->field_0;
         v34 = (BuildingTypeClass *)v32->field_8;
@@ -465,7 +465,7 @@ LABEL_67:
         goto LABEL_80;
       }
   char v149[12]; // [esp+114h] [ebp-Ch] BYREF
-      eax63 = (unsigned int *)(*((int (**)(VectorClass_flat *, char *))aP1a->vtable0 + 18))(aP1a, v149);
+      eax63 = (unsigned int *)(*((int (**)(VectorClass_flat *, char *))aP1a->vtable1 + 18))(aP1a, v149);
       v37 = (IUnknown *)(((Coord *)(int v145[3]; v145))->Subtract((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2])));
       IDA_LODWORD(v139) = v37->field_0;
       st7_63 = (double)(int)v139;
@@ -506,21 +506,21 @@ LABEL_82:
     v51 = *eax83;
     v50 = eax83[1];
     if ( (*eax83)->Name[44]
-      && ((*(int (**)(BuildingTypeClass *))(v51->vtable0 + 44))(v51) != 6
+      && ((*(int (**)(BuildingTypeClass *))(v51->vtable1 + 44))(v51) != 6
        || !*(unsigned char *)(v51->DieSound[4] + 5889))
       && (!v114
        || v51
        && (IDA_HIBYTE(v116) = v51->abstractFlags & 1) != 0
-       && (*(uint8_t (**)(BuildingTypeClass *))(v51->vtable0 + 352))(v51)) )
+       && (*(uint8_t (**)(BuildingTypeClass *))(v51->vtable1 + 352))(v51)) )
     {
-      if ( (*(int (**)(BuildingTypeClass *))(v51->vtable0 + 44))(v51) == 2
-        && (*(uint8_t (**)(BuildingTypeClass *))(v51->vtable0 + 84))(v51) )
+      if ( (*(int (**)(BuildingTypeClass *))(v51->vtable1 + 44))(v51) == 2
+        && (*(uint8_t (**)(BuildingTypeClass *))(v51->vtable1 + 84))(v51) )
       {
         v50 = (BuildingTypeClass *)((int)v50 / 2);
       }
       if ( *(int *)&v51->Name[8] > 0 && v51->Name[16] && !v51->Name[29] && (int)v50 <= v134 )
       {
-        int v53 = v51->vtable0;
+        int v53 = v51->vtable1;
         v122[0] = v120;
         (*(void (**)(BuildingTypeClass *, unsigned int *, BuildingTypeClass *, ObjectClass *, unsigned int *, unsigned int, unsigned int, int))(v53 + 364))(
           v51,
@@ -2208,18 +2208,18 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
   this->Capacity = a2; /*0x48b07e*/
   this->IsInitialized = 1; /*0x48b081*/
   this->IsAllocated = 0; /*0x48b085*/
-  this->vtable0 = &vt_VectorClass; /*0x48b088*/
+  this->vtable1 = &vt_VectorClass; /*0x48b088*/
   if ( a2 ) /*0x48b08e*/
   {
     if ( a3 ) /*0x48b096*/
     {
       this->Items = (void *)a3; /*0x48b098*/
-      return &this->vtable0; /*0x48b09e*/
+      return &this->vtable1; /*0x48b09e*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
     this->IsAllocated = 1; /*0x48b0b0*/
   }
-  return &this->vtable0; /*0x48b09d*/
+  return &this->vtable1; /*0x48b09d*/
 
 }
 } // namespace gamemd

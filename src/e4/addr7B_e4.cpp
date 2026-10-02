@@ -2817,16 +2817,16 @@ short E4Recv_7B6EE0::sub_7B6EE0(const wchar_t ** a2)
 
   for ( i = 0; ; ++i ) /*0x7b6ee9*/
   {
-    vtable0 = (wchar_t *)this->vtable0; /*0x7b6eeb*/
-    if ( !this->vtable0 ) /*0x7b6eeb*/
+    vtable0 = (wchar_t *)this->vtable1; /*0x7b6eeb*/
+    if ( !this->vtable1 ) /*0x7b6eeb*/
       break; /*0x7b6eeb*/
-    vtable0 = (wchar_t *)wcslen((const wchar_t *)this->vtable0); /*0x7b6ef2*/
+    vtable0 = (wchar_t *)wcslen((const wchar_t *)this->vtable1); /*0x7b6ef2*/
     if ( i >= (unsigned int)vtable0 ) /*0x7b6efc*/
       break; /*0x7b6efc*/
     v5 = (wchar_t *)*a2; /*0x7b6efe*/
     if ( !*a2 ) /*0x7b6efe*/
       v5 = &g_TypeClass_DefaultString; /*0x7b6f04*/
-    vtable0 = wcschr(v5, *(unsigned short *)(this->vtable0 + 2 * i)); /*0x7b6f11*/
+    vtable0 = wcschr(v5, *(unsigned short *)(this->vtable1 + 2 * i)); /*0x7b6f11*/
     if ( !vtable0 ) /*0x7b6f1b*/
       break; /*0x7b6f1b*/
   }

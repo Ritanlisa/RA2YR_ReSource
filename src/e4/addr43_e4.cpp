@@ -2430,7 +2430,7 @@ int E4Recv_43EE50::sub_43EE50()
   int result; // eax
   int v5; // [esp+8h] [ebp-4h] BYREF
 
-  if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 1020))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
+  if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable1 + 1020))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
     return 0; /*0x43eea7*/
   Value = ((ProgressTimer *)((ProgressTimer *)this->primaryFacing))->GetValue(&v5); /*0x43ee76*/
   v3 = *((unsigned int *)this + 352); /*0x43ee7d*/

@@ -1069,13 +1069,13 @@ void ExecutePlanningQueue()
   {
     v4 = (TeamClass *)*((unsigned int *)dword_AC4C7C + v2); /*0x6372b4*/
     v5 = v4->abstractFlags - 1; /*0x6372bd*/
-    vtable0 = (BuildingClass *)v4->vtable0; /*0x6372be*/
+    vtable0 = (BuildingClass *)v4->vtable1; /*0x6372be*/
     if ( v5 < 0 ) /*0x6372c2*/
       goto LABEL_36; /*0x6372c2*/
     do /*0x6373d0*/
     {
       v6 = *(Array **)(v4->vtable2 + 4 * v5); /*0x6372cb*/
-      Value = ((Array *)(v6))->FindValue(v4->vtable0); /*0x6372d4*/
+      Value = ((Array *)(v6))->FindValue(v4->vtable1); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -3153,7 +3153,7 @@ int ParticleSystemClass__vt_06_(int * a1, int * a2, int a3)
   int v4; // edx
   int i; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix(&a1->vtable0, a2, a3); /*0x6300a2*/
+  result = AbstractClass::SaveLoad_Prefix(&a1->vtable1, a2, a3); /*0x6300a2*/
   if ( result >= 0 ) /*0x6300a9*/
   {
     v4 = *a2; /*0x6300b1*/

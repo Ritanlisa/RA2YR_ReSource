@@ -94,14 +94,14 @@ void JumpjetLocomotionClass_Process(int a1)
   {
     movementDestination = ((unsigned int *)v1)[0]->movementDestination; /*0x4b066f*/
     if ( movementDestination /*0x4b06ad*/
-      && (*((int (**)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))(movementDestination) == 11
       && (v12 = ((unsigned int *)v1)[0],
           v13 = v12->movementDestination + 1,
           v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vtable1 + 110))(
                            v12,
                            &a1),
-          *v14 == IDA_LOWORD(v13->vtable0))
-      && v14[1] == IDA_HIWORD(v13->vtable0) )
+          *v14 == IDA_LOWORD(v13->vtable1))
+      && v14[1] == IDA_HIWORD(v13->vtable1) )
     {
       v15 = (FootClass *)*((unsigned int *)v2 + 3); /*0x4b06af*/
       if ( !*(unsigned int *)&v15->__pad_58C[12] ) /*0x4b06b2*/
@@ -157,7 +157,7 @@ void JumpjetLocomotionClass_Process(int a1)
               v24 = v23->movementDestination; /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
-                v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vtable0 + 19))( /*0x4b0987*/
+                v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vtable1 + 19))( /*0x4b0987*/
                                   v24,
                                   &v30,
                                   ((unsigned int *)v1)[0]);
@@ -239,9 +239,9 @@ void JumpjetLocomotionClass_Process(int a1)
       v6 = ((unsigned int *)v1)[0]->movementDestination; /*0x4b05e4*/
       if ( v6 ) /*0x4b05ec*/
       {
-        if ( (*((int (**)(AbstractClass *))v6->vtable0 + 11))(v6) == 15 ) /*0x4b05f6*/
+        if ( (*((int (**)(AbstractClass *))v6->vtable1 + 11))(v6) == 15 ) /*0x4b05f6*/
         {
-          v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))((unsigned int *)v1)[0]->movementDestination->vtable0 /*0x4b060f*/
+          v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))((unsigned int *)v1)[0]->movementDestination->vtable1 /*0x4b060f*/
                        + 19))(
                         ((unsigned int *)v1)[0]->movementDestination,
                         &v30,

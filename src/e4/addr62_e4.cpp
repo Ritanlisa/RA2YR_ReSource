@@ -2898,7 +2898,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   this->Capacity = a2; /*0x628b13*/
   this->IsInitialized = 1; /*0x628b16*/
   this->IsAllocated = 0; /*0x628b1a*/
-  this->vtable0 = &vt_VectorClassHashObject; /*0x628b1e*/
+  this->vtable1 = &vt_VectorClassHashObject; /*0x628b1e*/
   if ( a2 ) /*0x628b24*/
   {
     if ( a3 ) /*0x628b2c*/
@@ -2941,10 +2941,10 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
       this->IsAllocated = 1; /*0x628b8b*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClassHashObject; /*0x628b8f*/
+  this->vtable1 = &vt_DynamicVectorClassHashObject; /*0x628b8f*/
   *((unsigned int *)this + 5) = 10; /*0x628b95*/
   *((unsigned int *)this + 4) = 0; /*0x628b9c*/
-  return &this->vtable0; /*0x628ba5*/
+  return &this->vtable1; /*0x628ba5*/
 
 }
 } // namespace gamemd
