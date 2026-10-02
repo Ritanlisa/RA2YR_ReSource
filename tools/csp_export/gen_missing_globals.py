@@ -140,8 +140,8 @@ CRT_GLOBAL = [
     '__4type_info_AAEAAV0_ABV0__Z',
     '____F_m_badAllocExceptionPtr_tr1_std__A__YAXXZ',
 ]
-hdr += ['// G42.22 CRT internal/FLIRT names (global scope; static CRT in-exe)',
-        'extern "C" int %s(...);' % n for n in CRT_GLOBAL]
+hdr += ['// G42.22 CRT internal/FLIRT names (global scope; static CRT in-exe)']
+hdr += ['extern "C" int %s(...);' % n for n in CRT_GLOBAL]
 hdr += ['', 'namespace gamemd {',
         '']
 hdr += ['extern %s %s;' % (ctype(n), n) for n in sorted(names)]

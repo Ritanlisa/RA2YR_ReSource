@@ -4,10 +4,36 @@
 #ifndef _G38_MISSING_GLOBALS_COMPAT_
 #define _G38_MISSING_GLOBALS_COMPAT_
 
+// G42.22 CRT internal/FLIRT names (global scope; static CRT in-exe)
+extern "C" int _un_inc(...);
+extern "C" int _fload_withFB(...);
+extern "C" int _powhlp(...);
+extern "C" int _strgtold12(...);
+extern "C" int _ld12cvt(...);
+extern "C" int _cfltcvt_init(...);
+extern "C" int _getbuf(...);
+extern "C" int _dosmaperr(...);
+extern "C" int _mbsnccnt(...);
+extern "C" int _read(...);
+extern "C" int _lseek_lk(...);
+extern "C" int _setdefaultprecision(...);
+extern "C" int _ms_p5_mp_test_fdiv(...);
+extern "C" int _startTwoArgErrorHandling(...);
+extern "C" int _check_range_exit(...);
+extern "C" int _hextodec(...);
+extern "C" int _whiteout(...);
+extern "C" int _lock(...);
+extern "C" int _unlock(...);
+extern "C" int __sbh_free_block(...);
+extern "C" int __crtGetStringTypeA(...);
+extern "C" int __1_Timevec_std__QAE_XZ(...);
+extern "C" int __0Iostream_init_QAE_XZ_1(...);
+extern "C" int _raw_name_type_info__QBEPBDXZ(...);
+extern "C" int __4type_info_AAEAAV0_ABV0__Z(...);
+extern "C" int ____F_m_badAllocExceptionPtr_tr1_std__A__YAXXZ(...);
+
 namespace gamemd {
 
-extern double flt_A8EB9C;
-extern unsigned char * stru_B782B8;
 
 // CRT/RTTI/FILE compat stubs (blockers #30/#31/#33/#35)
 // IDA pseudo-intrinsics (bit-reinterpretation; value-safe casts)
