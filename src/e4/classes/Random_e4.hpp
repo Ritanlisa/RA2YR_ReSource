@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct Random {
     int __thiscall AdvanceRandomBytes(char a2);
-    int Range(int a2, int a3);
+    static int Range(...);
     int State();
 };
 

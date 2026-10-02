@@ -22,8 +22,8 @@ struct RawFileClass {
     unsigned int Write;
 // --- flat members (END) ---
     int Close(int a2, int a3);
-    int Dtor();
-     double Construct(...);  // C2597 interim stub
+    static int Dtor(...);
+     static double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

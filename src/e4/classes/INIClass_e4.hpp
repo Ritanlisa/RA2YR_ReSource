@@ -55,7 +55,7 @@ struct INIClass {
     int WOLobby_Play();
     int sub_44FE60();
     INIClass();
-    unsigned int GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count, void *a6);
+    static unsigned int GetString(...);
     void SetGameOptionsPing();
     static double ClearSection(...);  // C2597 interim stub
     static double GetBase64Data(...);  // C2597 interim stub
@@ -79,9 +79,9 @@ struct INIClass {
     static double SaveToPipe(...);  // C2597 interim stub
     static double WriteToString(...);  // C2597 interim stub
     char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
-    int SetInt(uint8_t *aP1, char *aP2, int aP3, int a5);  // 0x5275c0
+    static int SetInt(...);  // 0x5275c0
     int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
-    int ReadInt_Overwrite(uint8_t *a1, uint8_t *aP2, int aP3);  // 0x5276d0
+    static int ReadInt_Overwrite(...);  // 0x5276d0
     unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
 };
 

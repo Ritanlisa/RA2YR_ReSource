@@ -35,6 +35,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {

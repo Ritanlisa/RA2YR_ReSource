@@ -1856,7 +1856,7 @@ struct HouseClass {
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
     char DroppedFlag(UnitClass * aP1, int a3);
-    char IonSensitivesShouldBeOffline();
+    static char IonSensitivesShouldBeOffline(...);
     char PickedUpFlag(ObjectClass * aP1, char a3);
     char ReshroudMap();
     char Set(void *a1, void *a2, void *a3);
@@ -1875,7 +1875,7 @@ struct HouseClass {
     int GetCameoTypeIndex(int a2);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
-    int GetStatus(int aP1);
+    static int GetStatus(...);
     int GetUnitSelfHealStep();
     int InitAlliances();
     int IsAlliedWith();

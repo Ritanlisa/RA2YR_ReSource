@@ -174,7 +174,7 @@ struct Cell {
     BOOL IsPassableOffset(int aP1);  // 0x4870D0
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80
-    int GetGroundHeight(unsigned int * a1);  // 0x578080
+    static int GetGroundHeight(...);  // 0x578080
     static int IsPassable(unsigned int *a1);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
 };

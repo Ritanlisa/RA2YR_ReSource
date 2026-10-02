@@ -105,7 +105,7 @@ struct Audio {
     int GetFlag(void *a1_1);  // 0x407070
     int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
-    int IsPlaying();  // 0x7529E0
+    static int IsPlaying(...);  // 0x7529E0
     static double SetScoreVolume(...);  // C2597 interim stub
     static double SetSoundVolume(...);  // C2597 interim stub
     static double SetVoiceVolume(...);  // C2597 interim stub

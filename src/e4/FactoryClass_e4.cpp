@@ -28,6 +28,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Connection_e4.hpp"
 #include "e4/classes/E4Recv_426620_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {

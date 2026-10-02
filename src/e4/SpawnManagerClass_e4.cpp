@@ -11,6 +11,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SpawnControlVector_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp_e4.hpp"
 
 // 0x6B6C90
 namespace gamemd {

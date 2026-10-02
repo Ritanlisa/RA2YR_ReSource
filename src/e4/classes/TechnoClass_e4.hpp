@@ -577,7 +577,7 @@ struct TechnoClass {
     static double CreateFireEffect(...);  // C2597 interim stub
     static double CreateRadarBlip(...);  // C2597 interim stub
     bool ProcessTarget(int a2);  // 0x50cad0
-    int CleanupAll(int a2);  // 0x707cb0
+    static int CleanupAll(...);  // 0x707cb0
     int IsOwnedByHuman();  // 0x732580
     int CalcFlashAlpha(int a2);  // 0x70e4b0
     int CleanupDirection();  // 0x4db260

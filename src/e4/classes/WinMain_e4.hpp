@@ -43,7 +43,7 @@ struct WinMain {
 // --- flat members (END) ---
     LSTATUS CleanupResource();
     int Constructor_VectorClass_Wstring_();
-    unsigned int * ShutdownCleanup();
+    static unsigned int * ShutdownCleanup(...);
 };
 
 } // namespace gamemd

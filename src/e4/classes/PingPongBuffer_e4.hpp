@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PingPongBuffer {
-    int GetWriteOffset();
+    static int GetWriteOffset(...);
 };
 
 } // namespace gamemd

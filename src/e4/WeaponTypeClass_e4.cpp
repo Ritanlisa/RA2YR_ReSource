@@ -27,6 +27,7 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp_e4.hpp"
 
 // 0x512680
 namespace gamemd {

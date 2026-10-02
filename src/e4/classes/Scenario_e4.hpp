@@ -130,7 +130,7 @@ struct Scenario {
     int LoadOrReloadOptions(IUnknown * aP1);  // 0x597A10
     int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
-    int ClearScreen(void *a1_1);  // 0x684240
+    static int ClearScreen(...);  // 0x684240
     int LoadWithProgress();  // 0x684620
     int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);  // 0x4758F0
     void * ResetDisplayArrays();  // 0x5C9700

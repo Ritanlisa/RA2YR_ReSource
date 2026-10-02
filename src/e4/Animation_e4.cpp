@@ -31,6 +31,7 @@
 #include "e4/classes/CaptureManager_e4.hpp"
 #include "e4/classes/StaticString_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {

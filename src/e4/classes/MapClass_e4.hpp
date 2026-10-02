@@ -532,7 +532,7 @@ struct MapClass {
     int FindPassableNeighbor();
     int  FindSubzoneConnectionIndex(unsigned short * a2);
     int FreeAllCells(void *a1);
-    int GetScrollMode();
+    static int GetScrollMode(...);
     static int GetTileDataField14(short *a1);
     int GetTileIndex(int16_t *aP1, int aP2, char aP3);
     int  InitCellVe_vt04(unsigned int * a2);
@@ -542,7 +542,7 @@ struct MapClass {
     int IsAreaFree(int *a2, int a3);
     int IsCellPassable(int a1, int a2);
     int LoadTerrainData(MapClass * aP1);
-    int MarkForRedraw(int a2, void *a2_2);
+    static int MarkForRedraw(...);
     int ProcessFogTransition();
     int ProcessRegion();
     int ProcessTile();
@@ -552,7 +552,7 @@ struct MapClass {
     int ScrollOnce(AbstractClass * aP1);
     int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2);
     int SetCellOverlayFlag();
-    int SetScrollMode(int aP1);
+    static int SetScrollMode(...);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int  TriggerEVA(IUnknown * aP0);

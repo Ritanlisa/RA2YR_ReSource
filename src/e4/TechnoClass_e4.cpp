@@ -34,6 +34,7 @@
 #include "e4/classes/E4Recv_634B20_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp_e4.hpp"
 
 // 0x41A9E0
 namespace gamemd {

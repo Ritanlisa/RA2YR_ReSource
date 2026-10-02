@@ -16,7 +16,7 @@ struct Pathfinding {
     unsigned char q018;  // 0x18
 // --- flat members (END) ---
     unsigned int * ExpandNode(short * a1, int a2);
-    int CalcDistance(int16_t *a2, int16_t *a3, int a4, int a5, int a6, signed int a7);  // 0x42d170
+    static int CalcDistance(...);  // 0x42d170
 };
 
 } // namespace gamemd

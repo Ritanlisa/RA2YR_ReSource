@@ -39,7 +39,7 @@ struct GameOption {
     unsigned int field_18C;
     unsigned int u32_949;
 // --- flat members (END) ---
-    char CheckDuplicate();
+    static char CheckDuplicate(...);
     int GetField();
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
     void * SetDigest(char *aP1);

@@ -33,6 +33,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/SuperWeapon_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp_e4.hpp"
 
 // 0x453E20
 namespace gamemd {

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ObjectPtr {
-    int __stdcall RegisterForTracking(int a1, int * a2);
+    static int __stdcall RegisterForTracking(...);
 };
 
 } // namespace gamemd

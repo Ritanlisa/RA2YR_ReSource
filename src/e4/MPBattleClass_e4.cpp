@@ -29,6 +29,7 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Main_e4.hpp"
+#include "e4/classes/Math_e4.hpp_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {

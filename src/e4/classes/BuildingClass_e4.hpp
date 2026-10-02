@@ -766,7 +766,7 @@ struct BuildingClass {
     static double GetType(...);  // C2597 interim stub
     static double GetSHPFrame(...);  // C2597 interim stub
     static double UpdateFloatPosition(...);  // C2597 interim stub
-    int CreatePlacementCrater();  // 0x486e70
+    static int CreatePlacementCrater(...);  // 0x486e70
     void UnloadUnits(char a2, char a3);  // 0x457de0
     unsigned int * FindPlacementCells2(unsigned int *a2, int a3);  // 0x6b0300
     int ExecuteTriggers(int a2, char a3);  // 0x7265c0
