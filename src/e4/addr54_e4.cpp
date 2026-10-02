@@ -372,7 +372,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   ((GenericNode *)(v78))->Constructor();
   unsigned int v79[6]; // [esp+54h] [ebp-9BCh] BYREF
   ((GenericNode *)(v79))->Constructor();
-  LinkedList_flat::Prepend(v78, (int)v79);
+  ((LinkedList_flat *)v78)->Prepend((int)v79);
   v77[3] = (uint8_t **)&vt_List_INIClass_INISection;
   memset(&v79[3], 0, 12);
   var9A4 = 0;

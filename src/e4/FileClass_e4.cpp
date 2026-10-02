@@ -48,7 +48,7 @@ const char* FileClass::SetFileName(char *aP1)
 } // namespace gamemd
 // 0x65CBF0
 namespace gamemd {
-const char* FileClass::Open(int a2)
+int FileClass::Open(int a2)
 {
 
   int result; // eax

@@ -42,7 +42,7 @@ int DDraw::ReleaseSurfaces()
 } // namespace gamemd
 // 0x4A3640
 namespace gamemd {
-void DDraw::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+void DDraw::Init()
 {
 
   *((unsigned int *)this + 24576) = 0; /*0x4a3640*/
@@ -123,7 +123,7 @@ LABEL_7:
 } // namespace gamemd
 // 0x4A4830
 namespace gamemd {
-int DDraw::WaitForIdle(void *a1)
+int DDraw::WaitForIdle()
 {
 
   int result; // eax

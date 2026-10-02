@@ -24,7 +24,7 @@ struct SortedArray {
     unsigned int *__pad_0;
     unsigned int q0046;
     unsigned int q040;
-    void* BinarySearch2;  // 0x0 (no offset truth)
+
 // --- flat members (END) ---
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);
@@ -33,6 +33,7 @@ struct SortedArray {
     static double CheckCache(...);  // C2597 interim stub
      double FindValue(...);  // C2597 interim stub
     int Find(int *a2);  // 0x52b170
+    void * BinarySearch2(int *a2); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

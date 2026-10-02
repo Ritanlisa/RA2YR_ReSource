@@ -33,7 +33,7 @@ struct BinkMovieHandle {
     BinkMovieHandle * QueryInterface(char a2);
     char AddRef(void *a1);
     int AdjustSurfaceFormat(int a2, void *a2_2);
-    void Check(int a2, void *a2_2, void *a3);
+    int Check(int a2);
     int InitFromFile(void *a1, void *a2);
     int Pause(int a2, int a3);
     int Release(void *a1);
@@ -41,7 +41,7 @@ struct BinkMovieHandle {
     int RenderLoop(int a2, void *a2_2, void *a3, void *a4);
     int _vt03(unsigned char a2);
     unsigned int * Close(void *a1, void *a2);
-    void CopyFrameToSurface(void *a1);
+    unsigned int * CopyFrameToSurface();
     unsigned int BlitToTarget(void *a1, void *a2);
 };
 

@@ -61,9 +61,9 @@ struct SlaveManagerClass {
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);
     int AssignTask(AbstractClass * aP1);
-    void Check(void *a1, void *a2, void *a3);
+    int Check();
     int CheckIsOne();
-    void Constructor(void *a1, void *a2, void *a3);
+    int Constructor();
     int IsMasterHarvester();
     int LostSlave(int aP1);
     int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);
@@ -71,7 +71,7 @@ struct SlaveManagerClass {
     int ShouldWakeUpNow();
     int StubReturn100();
     int StubReturn72();
-    void UpdateSlaves();
+    char UpdateSlaves();
     int VtableDispatch();
     int ddtor(int a1, unsigned int * a2);
     long long Calc2DDistance();

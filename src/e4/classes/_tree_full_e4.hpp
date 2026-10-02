@@ -473,10 +473,10 @@ struct ObjectClass {
     void* unknown_libname_27;  // 0x0 (no offset truth)
     static int sub_770E70(void *aP0, ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);  // A_c2039 R5 static-form sync
     static int sub_550080(void *aP0, ObjectClass ** Block);  // A_c2039 R5 static-form sync
-    static int sub_47A2D0(void *aP0, DWORD BytesReturned);  // A_c2039 R5 static-form sync
-    static int sub_47A1B0(void *aP0, DWORD BytesReturned);  // A_c2039 R5 static-form sync
+    char sub_47A2D0(DWORD BytesReturned);  // A_c2039 R5 static-form sync
+    char sub_47A1B0(DWORD BytesReturned);  // A_c2039 R5 static-form sync
     void* Constructor;  // 0x0 (no offset truth)
-    static int sub_47A080(void *aP0, DWORD a2);  // A_c2039 R5 static-form sync
+    void sub_47A080(DWORD a2);  // A_c2039 R5 static-form sync
     void* nullsub_86;  // 0x0 (no offset truth)
     void* nullsub_7;  // 0x0 (no offset truth)
     void* nullsub_5;  // 0x0 (no offset truth)

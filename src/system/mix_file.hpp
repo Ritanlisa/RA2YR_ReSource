@@ -121,7 +121,7 @@ public:
     static MixFileClass& MULTI;
     static GenericMixFiles& Generics;
 
-    static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool  // 0x5301A0
+    char Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool  // 0x5301A0
 
     // unmatched: no callgraph reference and no git history record
     static uint32_t ComputeID(const char* filename);

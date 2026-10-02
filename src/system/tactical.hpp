@@ -236,7 +236,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessFrame();  // 0x41BFA0
     int CheckAction();  // 0x41C030
     bool ProcessTick();  // 0x41C050
-    void* ProcessTick2(int *a1);  // 0x41C150
+    unsigned int * ProcessTick2(unsigned int * a1);  // 0x41C150
     int ProcessTick3(int a1);  // 0x41C160
     int initTacticalMap(void* a1, void* a2);  // 0x45F1D0
     int DispatchMode(int a1);  // 0x4AAD30

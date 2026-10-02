@@ -797,7 +797,7 @@ namespace gamemd {
 HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x4d2819*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x4d2819*/
   Power::TimerProcess(this->LastSight); /*0x4d2824*/
   Power::TimerProcess(this->Cell[0]); /*0x4d282f*/
   Power::TimerProcess(*((unsigned int *)this + 12)); /*0x4d283a*/
@@ -1254,7 +1254,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
 // 0x4E0670
 namespace gamemd {
-void FoggedObjectClass_42::ddtor(void *a1_1, void *a2_1)
+void FoggedObjectClass_42::ddtor()
 {
 
   if ( *(unsigned int *)&this->Items && BYTE1(this->IsInitialized) ) /*0x4e067d*/

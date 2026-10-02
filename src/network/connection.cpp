@@ -166,7 +166,7 @@ bool IPXConnClass::send(int a2, int a3, int a4, int a5, int a6, int a7)
            0);
 }
 // 0x53f650
-bool IPXConnClass::receive(int a2, int a3, int *a4, int **a5, int a6, int a7)
+int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
 {
   int v9; // edi
   int v10; // ebp
@@ -278,7 +278,7 @@ IPXManagerClass::IPXManagerClass() noexcept
 }
 
 // 0x542fe0
-void IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
+int IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
 {
   int result; // eax
 
@@ -408,7 +408,7 @@ bool IPXManagerClass::IsIPXAvailable() const
 }
 
 // 0x5414c0
-void IPXManagerClass::release(int a5, int a2, int a3, int a4)
+int IPXManagerClass::release(int a5, int a2, int a3, int a4)
 {
   int v6; // ecx
   unsigned int *v7; // ecx

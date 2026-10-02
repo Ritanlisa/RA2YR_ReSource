@@ -76,7 +76,7 @@ public:
 
     // --- Vector management (compat wrappers for original DynamicVectorClass) ---
     // IDA 0x55A1F0: CopyItems — resize vector, copy existing entries
-    bool CopyItems(uint32_t new_size, FileEntryClass** out_buffer = nullptr);  // 0x55A1F0
+    char CopyItems(int new_size, unsigned int * out_buffer = nullptr);  // 0x55A1F0
 
     // IDA 0x55A2A0: ClearBuffer — free entry memory, reset count
     void ClearBuffer();  // 0x55A2A0

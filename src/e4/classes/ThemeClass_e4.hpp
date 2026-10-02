@@ -32,7 +32,7 @@ struct ThemeClass {
     unsigned int Audio;
 // --- flat members (END) ---
     static int ClearQueues();
-    int ReadThemeEntry(uint8_t ***a2);
+    char ReadThemeEntry(unsigned __int8 *** a2);
     int RequestBuffer();
     int GetValue();
     void * InitializeThemes(char * a2);

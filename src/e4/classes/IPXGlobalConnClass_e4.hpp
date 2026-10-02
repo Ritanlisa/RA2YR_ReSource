@@ -39,7 +39,7 @@ struct IPXGlobalConnClass {
     int CheckStatus();
     int Connect(void * a2, signed int * a3);
     int Release(const void * a1, AnimClass * aP2, int aP3, char aP4);
-    void Send(void *a1, void *a2, void *a3, void *a4, void *a5);
+    int Send();
     int SendPacket(int a2, short a3);
     int ddtor(int a2, int a3);
     void ReceivePacket(int a2);

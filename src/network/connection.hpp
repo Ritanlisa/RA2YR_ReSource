@@ -46,7 +46,7 @@ public:
     void receivePacket();                                                                     // 0x48C040
     void processTileUpdate();                                                                 // 0x48C320
     void serviceSendQueue();                                                                  // 0x48C3E0
-    bool connect();                                                                           // 0x48C5A0
+    int connect();                                                                           // 0x48C5A0
 
     static ConnectionClass* Instance;                                                         // data: 0xA8B7C0
 

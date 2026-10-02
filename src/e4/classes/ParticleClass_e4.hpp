@@ -573,7 +573,7 @@ struct ParticleClass {
     int GetObjectSize();
     int GetTypeIdentifier();
     int LoadParticleData(ObjectClass * aP1, int aP1a);
-    void AdjustHeight();
+    int AdjustHeight();
     void DrawParticle(int * a2, int * a3);
 };
 

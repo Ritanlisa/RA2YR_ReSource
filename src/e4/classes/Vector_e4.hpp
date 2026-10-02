@@ -30,11 +30,11 @@ struct Vector {
     void* Cl;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Cleanup();  // 0x512D30
-    void Destructor();  // 0x513100
+    int Destructor();  // 0x513100
     int MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
     int Cleanup2();  // 0x67ABE0
     unsigned short * ToFacingMath(unsigned short *a2);  // 0x41C2E0
-    void Clear();  // 0x43AE50
+    int Clear();  // 0x43AE50
     int RemoveAt(int aP1);  // 0x45AE10
     void ReallocDynamic(int a2);
     int Find(unsigned int * a2);  // 0x4E0550

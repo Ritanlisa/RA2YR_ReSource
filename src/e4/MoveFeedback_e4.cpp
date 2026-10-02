@@ -215,7 +215,7 @@ return (gamemd::DynamicVector *)this->__pad_0; /*0x40bcf5*/
 } // namespace gamemd
 // 0x40BE50
 namespace gamemd {
-void MoveFeedback::Destroy(void *a1)
+void MoveFeedback::Destroy()
 {
 
   void *v2; // eax

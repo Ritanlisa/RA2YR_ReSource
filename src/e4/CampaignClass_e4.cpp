@@ -281,7 +281,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aCampaigntype, (&this->scenario)[7], 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        INIClass::SetString(v28.INIClass, (uint8_t *)Block, Buffer, *(char **)((&this->scenario)[5] + 4 * j++)) )
+        ((INIClass *)v28.INIClass)->SetString((uint8_t *)Block, Buffer, *(char **)((&this->scenario)[5] + 4 * j++)) )
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c87d*/
   }
@@ -416,7 +416,7 @@ int CampaignClass::StubReturn10()
 
 // 0x46D090
 namespace gamemd {
-CampaignClass * CampaignClass::DTOR(char a2)
+void ** CampaignClass::DTOR(char a2)
 {
 
   int v3; // eax

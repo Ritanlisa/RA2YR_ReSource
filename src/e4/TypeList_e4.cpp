@@ -1205,7 +1205,7 @@ return (gamemd::CCINIClass *)&this->DynamicVectorClass; /*0x67a3b1*/
 }  // G42.18c ns repair
 // 0x67A410
 namespace gamemd {
-void TypeList_VoxelAnim::ddtor(void *a1_1)
+void TypeList_VoxelAnim::ddtor()
 {
 
   void *v2; // eax

@@ -219,7 +219,7 @@ int LocomotionClass::Init()
 } // namespace gamemd
 // 0x55A6F0
 namespace gamemd {
-void LocomotionClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+void LocomotionClass::Construct()
 {
 
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6f0*/

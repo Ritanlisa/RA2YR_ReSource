@@ -106,12 +106,12 @@ struct AbstractClass {
     unsigned int q098;  // 0x98
     unsigned int q0A0;  // 0xA0
     unsigned int NeedsSaveOrLink;
-    unsigned int COMStub_AddRef;
+
     unsigned int SuperClass_field_0x2C;  // 0x2C
     unsigned char __pad_3C[17];  // 0x3C
     unsigned int SuperClass_field_0x68;  // 0x68
-    unsigned int COMStub_Release;
-    unsigned int ProcessPower;
+
+
     unsigned int QueryInterface;
     void* Buildup;  // 0x0 (no offset truth)
     void* BuildupLoaded;  // 0x0 (no offset truth)
@@ -332,6 +332,9 @@ struct AbstractClass {
     static double InitVtables(...);  // C2597 interim stub
     static double IsTechnoType(...);  // C2597 interim stub
     int processDetection(int a2);  // 0x439150
+    int COMStub_Release(); // N_fix R5 supply (cache truth)
+    int COMStub_AddRef(); // N_fix R5 supply (cache truth)
+    int ProcessPower(); // N_fix R5 supply (cache truth)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

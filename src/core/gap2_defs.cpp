@@ -123,7 +123,7 @@ void* WTFMode::FindObjectByType(int a1) {
 }
 // 0x4A31F0
 namespace gamemd { 
-bool CStreamClass::IsEmpty(int a2) {
+int CStreamClass::IsEmpty(int a2) {
   if ( a2 ) /*0x4a31f9*/
     WinAPI::Wrapper(-2147467261); /*0x4a3200*/
   return *(unsigned int *)this->__pad_0 == 0; /*0x4a320e*/
@@ -201,7 +201,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 }
 // 0x4A4D60
 namespace gamemd { 
-int CStreamClass::FindItem(unsigned int *a2, int a1, int a3) {
+int CStreamClass::FindItem(unsigned int * a2) {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx

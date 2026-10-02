@@ -85,7 +85,7 @@ public:
     void VisualizePlacement();  // 0x485AF0
     CoordStruct* GetPlacementCoords(CoordStruct* out) const;  // 0x45F160
     RectangleStruct* GetPlacementRect(RectangleStruct* out) const;  // 0x47FDE0
-    bool CheckOverlapWithOthers();  // 0x44E3A0
+    char CheckOverlapWithOthers();  // 0x44E3A0
     bool IsFootprintBlocked();  // 0x4578C0
     // wrapper: delegates to BuildingClass::IsFootprintBlocked at 0x4578C0
     void DamageFactoryBibCells();
@@ -109,7 +109,7 @@ public:
     // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
     void ReassignFlagPosition();
     virtual bool TogglePrimaryFactory();  // 0x447E90
-    bool IsFactorySelectable();  // 0x457620
+    int IsFactorySelectable();  // 0x457620
 
     // Construction update (vtable[8])
     // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
@@ -139,7 +139,7 @@ public:
     // wrapper: delegates to BuildingClass::Sell at 0x445880
     void CompleteSell();
     void ProcessSell();  // 0x739EC0
-    bool CanBeSold();  // 0x4494C0
+    int CanBeSold();  // 0x4494C0
     bool CanBeSoldCheck();  // 0x44F5C0
     void ToggleSellMode();  // 0x447110
     int GetSellPriority();  // 0x5F5DD0
@@ -152,7 +152,7 @@ public:
     void ProcessRepair();  // 0x44B780
     bool CanRepair(TechnoClass* repairer);  // 0x457CE0
     void ToggleRepairMode();  // 0x446FF0
-    bool CheckHealthForRepair();  // 0x452630
+    int CheckHealthForRepair();  // 0x452630
     bool IsBeingRepairedOrCaptured();  // 0x7105E0
 
     // Missile / Super weapons
@@ -160,7 +160,7 @@ public:
     virtual int Mission_Missile() override;
     virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);
     void ProcessSuperWeaponEffects();   // 0x44C980
-    bool SWAvailable();  // 0x457630
+    int SWAvailable();  // 0x457630
     bool SW2Available();  // 0x457690
     static BuildingClass* FindBySWType(int sw_type);  // 0x505310
     char ClearSuperWeaponAnim();  // 0x451690
@@ -189,7 +189,7 @@ public:
     int GetPowerDrain();  // 0x44E880
     void PowerUpdate();  // 0x4FF700
     int UpdatePowerDrain() override;  // 0x4544A0
-    bool IsPoweredOn();  // 0x4525F0
+    int IsPoweredOn();  // 0x4525F0
     bool IsPoweredActive();  // 0x4555D0
     bool CheckPowerFlags();  // 0x4A51B0
     bool CheckFlag24();  // 0x4A5130

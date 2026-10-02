@@ -185,8 +185,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetFieldX();  // 0x6CE270
     void AdvanceCountdown();  // 0x6CE280
     void* SetCurrentFrame();  // 0x6CE2C0
-    int RemoveFromPointerArray(int a1);  // 0x6CE320
-    int Get(int a1, int a2, int a3, int a4);  // 0x6E1C40
+    char RemoveFromPointerArray(int a1);  // 0x6CE320
+    char Get(int a1, int a2, int a3, int a4);  // 0x6E1C40
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===

@@ -207,7 +207,7 @@ int ProcessGameResults(char a1)
     inited = TerrainInitMap(v3,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72452]), v2);
   else
     inited = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)inited);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)inited);
   if ( g_GameMode_Current == (int)((CellStruct *))4 && g_GameOptionsFlags == 3 )
   {
     unsigned int v23 = 0;  /* G37 hoist */
@@ -227,7 +227,7 @@ int ProcessGameResults(char a1)
       unsigned int v7 =
     else
       v7 = 0;
-    LinkedList_flat::PushFront(v262, (IUnknown *)v7);
+    ((LinkedList_flat *)v262)->PushFront((IUnknown *)v7);
     v8 = dword_B77D6C;
     if ( !a1 )
       v8 = dword_B73814;
@@ -241,14 +241,14 @@ int ProcessGameResults(char a1)
     char * v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72436]),(int)((IUnknown *)v8));
   else
     v10 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v10);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v10);
   v11 = dword_B779C4;
   char * v12 = (char *)operator new(0x10u);
   if ( v12 )
     char * v13 = TerrainInitMap(v12,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72428]), v11);
   else
     v13 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v13);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v13);
   if ( g_GameMode_Current == (int)((CellStruct *))4 && g_GameOptionsFlags == 3 && a1 )
     dword_B779C4 = 0;
   IDA_LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
@@ -257,104 +257,104 @@ int ProcessGameResults(char a1)
     char * v15 = (char *)(((String *)(v14))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72420], (IUnknown *)v264.vfptr));
   else
     v15 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v15);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v15);
   IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1 == (unsigned char [58523])(1);
   char * v16 = (char *)operator new(0x10u);
   if ( v16 )
     char * v17 = (char *)(((String *)(v16))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72412], (IUnknown *)v264.vfptr));
   else
     v17 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v17);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v17);
   v19 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(g_OverlayTypeConfig))[17744] / 0x3Cu);
   eax31 = (char *)operator new(0x10u);
   if ( eax31 )
     char * v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72404]),(int)((IUnknown *)v19));
   else
     v20 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v20);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v20);
   v21 = (IUnknown *)g_Rules_Bases;
   char * v22 = (char *)operator new(0x10u);
   if ( v22 )
     char * v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72396]), (int)v21);
   else
     v23 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v23);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v23);
   bool v24 = (unsigned char)ShortGame != 0;
   char * v25 = (char *)operator new(0x10u);
   if ( v25 )
     char * v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72388]), (int)(IUnknown *)v24);
   else
     v26 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v26);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v26);
   bool v27 = (unsigned char)SWAllowed != 0;
   char * v28 = (char *)operator new(0x10u);
   if ( v28 )
     char * v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72380]), (int)(IUnknown *)v27);
   else
     v29 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v29);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v29);
   v30 = g_ScenarioFlags;
   char * v31 = (char *)operator new(0x10u);
   if ( v31 )
     char * v32 = TerrainInitMap(v31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72372]), v30);
   else
     v32 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v32);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v32);
   v33 = (IUnknown *)(((unsigned char)MCVRedeploy == 1) + 2 * ((unsigned char)g_Rules_ShortGame == 1));
   char * v34 = (char *)operator new(0x10u);
   if ( v34 )
     char * v35 = TerrainInitMap(v34, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72364], v33);
   else
     v35 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v35);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v35);
   IDA_LOBYTE(v264.vfptr) = (unsigned char)Bases != 0;
   char * v36 = (char *)operator new(0x10u);
   if ( v36 )
     char * v37 = String::AllocAndCopy(v36, (RandomStruct *)&((unsigned int *)(stru_830620))[72356], (IUnknown *)v264.vfptr);
   else
     v37 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v37);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v37);
   bool v38 = (unsigned char)Crates != 0;
   char * v39 = (char *)operator new(0x10u);
   if ( v39 )
     char * v40 = TerrainInitMap(v39, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72348], (IUnknown *)v38);
   else
     v40 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v40);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v40);
   v41 = (IUnknown *)g_Rules_AlliesAllowed;
   char * v42 = (char *)operator new(0x10u);
   if ( v42 )
     char * v43 = TerrainInitMap(v42, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72340], v41);
   else
     v43 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v43);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v43);
   v44 = (IUnknown *)g_Rules_MultiEngineer;
   char * v45 = (char *)operator new(0x10u);
   if ( v45 )
     char * v46 = TerrainInitMap(v45, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[59868], v44);
   else
     v46 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v46);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v46);
   char * v47 = (char *)operator new(0x10u);
   if ( v47 )
     char * v48 = BuildResultPacket(v47, &((unsigned int *)(stru_830620))[72332], (IUnknown *)&Destination);
   else
     v48 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v48);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v48);
   v49 = (IUnknown *)dword_B77780;
   char * v50 = (char *)operator new(0x10u);
   if ( v50 )
     char * v51 = TerrainInitMap(v50, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72324], v49);
   else
     v51 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v51);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v51);
   v52 = (IUnknown *)dword_B77CE0;
   char * v53 = (char *)operator new(0x10u);
   if ( v53 )
     char * v54 = TerrainInitMap(v53, (RandomStruct *)&stru_830620[72316], v52);
   else
     v54 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v54);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v54);
   if ( (int)HouseClass_Count > 0 )
   {
     v55 =(IUnknown *)HouseClass_Array;
@@ -447,13 +447,13 @@ LABEL_95:
     char * v76 = TerrainInitMap(v75, (RandomStruct *)&stru_830620[72308], v68);
   else
     v76 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v76);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v76);
   char * v77 = (char *)operator new(0x10u);
   if ( v77 )
     char * v78 = TerrainInitMap(v77, (RandomStruct *)&stru_830620[72300], v269);
   else
     v78 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v78);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v78);
   if ( dword_B779C4 == (IUnknown *)1 )
   {
     LoadPlayerProfile(&v264, (const char **)&g_WebBrowser);
@@ -517,7 +517,7 @@ LABEL_95:
     char * v84 = NetMessage::Pack4(v83, (RandomStruct *)&stru_830620[72292], v82);
   else
     v84 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v84);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v84);
   if ( *(unsigned int *)&g_OverlayTypeConfig[17744] / 60 )
   {
     v86 = (IUnknown *)(*(unsigned int *)&g_NetworkPlayerBuffer[5960]
@@ -540,7 +540,7 @@ LABEL_95:
   }
   v87 = 0;
 LABEL_135:
-  LinkedList_flat::PushFront(v262, (IUnknown *)v87);
+  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v87);
   v89 = *(IUnknown **)&g_NetworkPlayerBuffer[5412];
   v90 = (char *)operator new(0x10u);
   if ( v90 )

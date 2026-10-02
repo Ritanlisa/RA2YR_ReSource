@@ -28,8 +28,8 @@ struct AsyncIO {
     unsigned int u32_1C6;
     unsigned int Timer;
 // --- flat members (END) ---
-    void Shutdown();
-    short Read();
+    char Shutdown();
+    int Read();
     int WaitCompletion();
 };
 

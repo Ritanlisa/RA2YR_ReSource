@@ -8,7 +8,7 @@
 
 // 0x6CC2A0
 namespace gamemd {
-int SuperWeapon::GetField10()
+char SuperWeapon::GetField10()
 {
 
   return *(unsigned char *)(*((unsigned int *)this + 10) + 230); /*0x6cc2a9*/

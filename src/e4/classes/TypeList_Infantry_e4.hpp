@@ -18,7 +18,7 @@ struct TypeList_Infantry {
     void* Count;  // 0x10
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    wchar_t * ddtor();  // 0x5128A0
+    void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0
     int Clear(int a2);  // 0x5128F0
     TypeList_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5129F0

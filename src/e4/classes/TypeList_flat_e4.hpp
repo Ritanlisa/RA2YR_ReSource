@@ -45,7 +45,7 @@ unsigned int * ParticleConstructor(int a2, int a3);
 unsigned int * TechnoTypeConstructor(int a2, int a3);
 unsigned int GetCapacity(int a2);
 void InfantryCleanup();
-wchar_t * ddtor();
+void ddtor();
 };
 
 } // namespace gamemd

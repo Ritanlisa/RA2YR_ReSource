@@ -19,7 +19,7 @@
 
 // 0x763730
 namespace gamemd {
-int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int WaypointPathClass::Init()
 {
 
   int v2; // eax
@@ -257,7 +257,7 @@ namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x763c09*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
   return Power::TimerProcess((&this->waypoints)[4]); /*0x763c24*/
 

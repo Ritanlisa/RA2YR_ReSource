@@ -361,7 +361,7 @@ public:
     virtual bool canAttackOnTheMove() const;
     // wrapper: delegates to TerrainClass::ProcessSpawnAnim at 0x71D000
     virtual bool canTarget() const;
-    virtual bool selectTarget();  // 0x41BEF0
+    virtual int selectTarget();  // 0x41BEF0
     // wrapper: delegates to TechnoClass::selectTarget at 0x41BEF0
     virtual void onTargetChange();
     virtual bool canFire();

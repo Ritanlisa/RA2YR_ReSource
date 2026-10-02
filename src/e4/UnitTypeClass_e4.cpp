@@ -55,7 +55,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
         v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
         sprintf(Buffer, "%d", v7); /*0x6b4e37*/
         sprintf(Source, "%s,%d,%d,%d", (const char *)(v5 + 36), i, v1, *((uint8_t *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (uint8_t *)unk_81732C, Buffer, Source); /*0x6b4e71*/
+        LOBYTE(v4) = ((INIClass *)v9)->SetString((uint8_t *)unk_81732C, Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }

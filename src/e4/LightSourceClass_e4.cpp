@@ -53,7 +53,7 @@ _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int
 } // namespace gamemd
 // 0x554830
 namespace gamemd {
-int LightSourceClass::Constructor(void *a1, void *a2, void *a3)
+int LightSourceClass::Constructor()
 {
 
   int v2; // edx
@@ -94,7 +94,7 @@ namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
 
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x55507a*/
+  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x55507a*/
 
 }
 } // namespace gamemd

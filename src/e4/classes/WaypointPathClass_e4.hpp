@@ -46,7 +46,7 @@ struct WaypointPathClass {
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
     _DWORD * Construct(unsigned int aP1);
-    char Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
+    int Init();
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);

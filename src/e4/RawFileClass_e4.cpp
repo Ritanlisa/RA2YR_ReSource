@@ -18,7 +18,7 @@ int RawFileClass::Dtor()
   int v5; // [esp-8h] [ebp-Ch]
 
   this->FileClass = (FileClass)&vt_RawFileClass; /*0x65ca03*/
-  result = RawFileClass::Write(this); /*0x65ca09*/
+  result = ((RawFileClass *)this)->Write(); /*0x65ca09*/
   if ( (unsigned char)result ) /*0x65ca11*/
   {
     result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65ca17*/

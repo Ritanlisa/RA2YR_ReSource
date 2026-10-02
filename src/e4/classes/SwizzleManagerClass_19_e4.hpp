@@ -26,7 +26,7 @@ struct SwizzleManagerClass_19 {
     void ClearBuffer(void *a1_1);  // 0x6CF4F0
     unsigned int * Lookup(unsigned int * a2, int a3);  // 0x6CF540
     char AddRef(int a2);  // 0x6CF560
-    wchar_t * ddtor();  // 0x6CF690
+    void ddtor();  // 0x6CF690
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x6CF6C0
     int FindItem(unsigned int * a2);  // 0x6CF820
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6CF850

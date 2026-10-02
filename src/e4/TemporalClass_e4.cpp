@@ -39,7 +39,7 @@
 
 // 0x71A450
 namespace gamemd {
-int TemporalClass::Constructor(void *a1, void *a2, void *a3)
+int TemporalClass::Constructor()
 {
 
   int v2; // eax
@@ -403,7 +403,7 @@ namespace gamemd {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
 
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x71a65a*/
+  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x71a65a*/
 
 }
 } // namespace gamemd

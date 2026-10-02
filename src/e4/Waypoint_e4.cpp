@@ -63,7 +63,7 @@ LABEL_12:
 }
 // 0x53ECB0
 namespace gamemd {
-void * Waypoint::InitInvalid(void *a1_1)
+unsigned char * Waypoint::InitInvalid()
 {
 
   this->__pad_0[0] = -1; /*0x53ecb4*/

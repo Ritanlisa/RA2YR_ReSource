@@ -9,7 +9,7 @@
 
 // 0x537B40
 namespace gamemd {
-_DWORD * ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
+_DWORD * ScreenCaptureCommandClass::Constructor()
 {
 
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/

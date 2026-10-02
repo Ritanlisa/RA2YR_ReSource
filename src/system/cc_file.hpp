@@ -47,9 +47,9 @@ public:
     // wrapper: delegates to CCFileClass::Destruct at 0x535A70
     explicit CCFileClass(const char* pFileName) noexcept;
 
-    bool  Open(const char* pFileName);  // 0x473C50
+    int Open(int pFileName);  // 0x473C50
     void* ReadEntireFile();  // 0x4A3890
-    void  Reset();  // 0x473CE0
+    int Reset();  // 0x473CE0
 
 protected:
     explicit CCFileClass(const noinit_t&) noexcept;
@@ -61,8 +61,8 @@ public:
     unsigned char tail_19;  // 0x25
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt08(int a1, int a2);  // 0x401980
-    void* Destru_vt00(int a1);  // 0x4019A0
-    HWND Create();  // 0x4309D0
+    unsigned int * Destru_vt00(char a1);  // 0x4019A0
+    void Create();  // 0x4309D0
     int SetName(char *Source);
     void* Construct(void* a1);  // 0x4739F0
     void* Construct2(void* a1);  // 0x473A30

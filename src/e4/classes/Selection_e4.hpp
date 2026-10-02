@@ -15,7 +15,7 @@ struct Selection {
 // --- flat members (END) ---
     bool GetFlag(void *a1);
     int ClearGlobals();
-    void SetCurrent();
+    int SetCurrent();
 };
 
 } // namespace gamemd

@@ -11,7 +11,7 @@ struct CursorPositionCommandClass {
     char CursorPositionCommandClass_field_00[4];  // 0x4
     unsigned int CommandClass;
 // --- flat members (END) ---
-    void Constructor(void *a1, void *a2, void *a3);
+    unsigned int * Constructor();
 };
 
 } // namespace gamemd

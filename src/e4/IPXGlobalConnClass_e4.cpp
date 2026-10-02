@@ -228,7 +228,7 @@ int IPXGlobalConnClass::CheckStatus()
 } // namespace gamemd
 // 0x5402D0
 namespace gamemd {
-int IPXGlobalConnClass::Send(void *a1, void *a2, void *a3, void *a4, void *a5)
+int IPXGlobalConnClass::Send()
 {
 
   int v2; // ebx

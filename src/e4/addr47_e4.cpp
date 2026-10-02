@@ -471,7 +471,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
 }
 // 0x47A080
 namespace gamemd {
-AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
+void ObjectClass::sub_47A080(DWORD a2)
 {
 
   char v2; // bl
@@ -2044,7 +2044,7 @@ namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 
-  return INIClass::SetDouble((char *)this, Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
+  return ((INIClass *)(char *)this)->SetDouble(Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
 
 }
 } // namespace gamemd

@@ -414,7 +414,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
     if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x529f02*/
     {
-      v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x529f1a*/
+      v12 = *(unsigned int *)((SortedArray *)(int)v11)->BinarySearch2((int *)&a4); /*0x529f1a*/
       if ( v12 ) /*0x529f1e*/
       {
         v13 = *(char **)(v12 + 16); /*0x529f20*/
@@ -505,7 +505,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     v11 = vtable2 + 11; /*0x52a17a*/
     if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x52a184*/
     {
-      v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x52a199*/
+      v12 = *(unsigned int *)((SortedArray *)(int)v11)->BinarySearch2((int *)&a4); /*0x52a199*/
       if ( v12 ) /*0x52a19d*/
       {
         v13 = *(char **)(v12 + 16); /*0x52a19f*/
@@ -608,7 +608,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x52a37b*/
     if ( (uint8_t)((SortedArray *)(v11))->Find((int *)&a4) ) /*0x52a382*/
     {
-      v12 = *(unsigned int *)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x52a39a*/
+      v12 = *(unsigned int *)((SortedArray *)(int)v11)->BinarySearch2((int *)&a4); /*0x52a39a*/
       if ( v12 ) /*0x52a39e*/
       {
         v13 = *(float *)(v12 + 16); /*0x52a3a0*/

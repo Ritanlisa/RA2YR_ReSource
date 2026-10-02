@@ -125,13 +125,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7);  // 0x421EA0
     int SimpleCtor();  // 0x422720
     int SetAnimSpeed();  // 0x422BC0
-    void* UpdateZAdjust(void* a1);  // 0x422BE0
-    int CheckLayerFlags(int a1, int a2, int a3);  // 0x422C70
+    int * UpdateZAdjust(int * a1);  // 0x422BE0
+    char CheckLayerFlags(int a1, int a2, int a3);  // 0x422C70
     bool UpdateMirrorState(int a1);  // 0x4238B0
     int UpdateProjectileTrajectory();  // 0x423930
     int ClearTargetReferences(int a1, int a2);  // 0x425150
     int SaveLoad_Prefix(int a1, int a2);  // 0x425280
-    int ProcessPower(void* a1);  // 0x425410
+    int ProcessPower(int * a1);  // 0x425410
     int CheckEndOfSequence();  // 0x425510
     int Undeploy();  // 0x425530
     int ProcessCraterFormation();  // 0x4255B0

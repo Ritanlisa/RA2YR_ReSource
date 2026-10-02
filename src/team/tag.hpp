@@ -76,7 +76,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     bool ShouldReplace() const;
-    void Destroy();  // 0x6E5230
+    int Destroy();  // 0x6E5230
     // unmatched: no callgraph reference and no git history record
     bool HasBeenDestroyed() const;
     int AddTrigger(TriggerClass* trigger);  // 0x6E55C0

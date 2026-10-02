@@ -107,7 +107,7 @@ LoadOptions::~LoadOptions() {
 
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
-void LoadOptions::Cleanup() {
+int LoadOptions::Cleanup() {
   int v2; // edi
   int v3; // edx
   char *p_is_active; // esi
@@ -154,7 +154,7 @@ int LoadOptions::Run() {
   return result;
 }
 // 0x559c20
-bool LoadOptions::Check() {
+char LoadOptions::Check() {
   char v2; // bl
   const char *v3; // eax
   HANDLE FirstFileA; // edi
@@ -386,7 +386,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
-AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
+char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
   unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax

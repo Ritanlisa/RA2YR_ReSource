@@ -133,7 +133,7 @@ struct SuperWeapon {
     unsigned int q5788;  // 0x5788
     void* q6120;  // 0x6120
 // --- flat members (END) ---
-    static int GetField10(...);
+    char GetField10();
     char FireSuperWeaponHouseClass(int a2, int a3);  // 0x4fae50
     int UpdateSuperWeaponsOwnedHouseClass();  // 0x50af10
 };

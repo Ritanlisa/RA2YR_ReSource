@@ -20,7 +20,7 @@ namespace gamemd {
 int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x43a5d9*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x43a5d9*/
   return Power::TimerProcess(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
 
 }

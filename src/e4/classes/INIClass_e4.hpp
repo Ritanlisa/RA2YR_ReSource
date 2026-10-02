@@ -38,16 +38,16 @@ struct INIClass {
     unsigned int q0146;
     unsigned int sectionHead0;
     unsigned int vtable0;
-    unsigned int ReadDifficultyModifiers;
+
     unsigned int unknown38;
     unsigned int INISection;
     unsigned int Debug;
     unsigned int Event;
-    unsigned int SetString;
-    void* FindKey;  // 0x0 (no offset truth)
-    void* GetRect;  // 0x0 (no offset truth)
+
+
+
     void* LookupEnum;  // 0x0 (no offset truth)
-    void* SetDouble;  // 0x0 (no offset truth)
+
     void* vt_INISection;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
@@ -88,6 +88,11 @@ struct INIClass {
     int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
     static int ReadInt_Overwrite(...);  // 0x5276d0
     unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
+    int ReadDifficultyModifiers(); // N_fix R5 supply (cache truth)
+    int FindKey(char **a2); // N_fix R5 supply (cache truth)
+    unsigned int * GetRect(_DWORD *a2, char **a3, char **a4, int *a5); // N_fix R5 supply (cache truth)
+    int SetDouble(unsigned __int8 *Block, char *a3, double a4); // N_fix R5 supply (cache truth)
+    char SetString(unsigned __int8 *Block, char *a3, char *Source); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

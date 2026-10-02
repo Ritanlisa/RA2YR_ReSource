@@ -153,11 +153,11 @@ struct Cell {
     int GetNeighbourContent(unsigned int a2);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
     int IsValidHeight();  // 0x485060
-    void IsEmpty();  // 0x486380
+    int IsEmpty();  // 0x486380
     int IsGroundTypeRange();  // 0x4865D0
     int IsInRange();  // 0x486750
     int IsInRange2();  // 0x486770
-    void IsShore();  // 0x4867B0
+    int IsShore();  // 0x4867B0
     int IsBuildableAdvanced();  // 0x486FF0
     int HasOccupierBit(char aP1);
     int SearchEnemies(IUnknown * aP1);  // 0x487A10

@@ -41,9 +41,9 @@ struct Delegate {
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
-    bool GetField(void *a1, void *a2);
-    void Dispatch(int aP1, int aP2);
-    void Set(AbstractTypeClass * aP1, void *a2, void *a3);
+    unsigned int * GetField();
+    int Dispatch(int aP1, int aP2);
+    int Set(int a2);
 };
 
 } // namespace gamemd

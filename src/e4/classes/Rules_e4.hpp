@@ -103,7 +103,7 @@ struct Rules {
     int ReadMiscINI();  // 0x6691E0
     IUnknown * * ReadCombatINI();  // 0x66BBB0
     unsigned int * CopyDataArray(VectorClass_flat * aP1);  // 0x67A570
-    static char * GetProductionTimeMult(...);  // 0x5FB2E0
+    char * GetProductionTimeMult(int a2);  // 0x5FB2E0
     unsigned char m_5[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };

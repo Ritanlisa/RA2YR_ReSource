@@ -164,7 +164,7 @@ LABEL_6:
 }
 // 0x481670
 namespace gamemd {
-int Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
+void Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
 {
 
   AbstractClass *Cell_field_0xE4; // esi
@@ -1089,11 +1089,11 @@ LABEL_10:
   }
   if ( !((Object *)(*(unsigned int **)(v4 + 540)))->IsAlliedWithObjectHouse((int)(aP0)) ) /*0x578b39*/
   {
-    if ( (uint8_t)BuildingClass::IsPoweredOn(v4) ) /*0x578b44*/
+    if ( (uint8_t)((BuildingClass *)v4)->IsPoweredOn() ) /*0x578b44*/
       return 1; /*0x578b4b*/
     goto LABEL_10; /*0x578b4b*/
   }
-  return BuildingClass::MakeTraversable(v4); /*0x578b58*/
+  return ((BuildingClass *)v4)->MakeTraversable(); /*0x578b58*/
 
 }
 }

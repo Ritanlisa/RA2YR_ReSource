@@ -19,7 +19,7 @@ int BufferIOFile::Constructor(char *Source)
   ((BufferIOFileClass*)(gamemd::BufferIOFileClass *)this)->Constructor(); /*0x47a9d3*/
   LOBYTE(this->m_54) = 0; /*0x47a9df*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7E1668); /*0x47a9e3*/
-  FileClass::OpenWithCDSearch((CDFileClass *)this, Source); /*0x47a9e9*/
+  ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch(Source); /*0x47a9e9*/
   return (int)(this->__pad_0); /*0x47a9f0*/
 
 }

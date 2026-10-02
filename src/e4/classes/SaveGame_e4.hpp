@@ -35,7 +35,7 @@ struct SaveGame {
     int LoadArrayData(int * a2);  // 0x4391C0
     int WriteDataArray(int * a2);  // 0x54E750
     int SaveTriggerEvents();  // 0x6607D0
-    signed int Start();  // 0x67D300
+    char Start();  // 0x67D300
     int LoadMainGameState();  // 0x67F7E0
     int LoadVeinholeData();  // 0x74ED60
     int SaveAudioQueueItems();  // 0x751620

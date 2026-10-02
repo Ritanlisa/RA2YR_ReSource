@@ -49,7 +49,7 @@ struct Stream {
     unsigned int u32_544;
     unsigned int u32_548;
     unsigned int u32_54C;
-    void* ReadPacket;  // 0x0 (no offset truth)
+
     void* a2;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int FlushAndReset();
@@ -59,6 +59,7 @@ struct Stream {
     void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
     static double CopyFromTemplate(...);  // C2597 interim stub
     int WriteBlock(int a1, int a2, int a3);  // 0x5f1bf0
+    int ReadPacket(); // N_fix R5 supply (cache truth)
     BlowStraw * u32_58;  // 0x58
     unsigned char u32_54;  // 0x54
     void * u32_3C;  // 0x3C

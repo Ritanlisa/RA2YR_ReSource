@@ -106,7 +106,7 @@ int BombClass::Stat(int * a2)
   int BombClass_field_2C; // eax
   int v9; // eax
 
-  AbstractClass::ProcessPower((gamemd::AbstractClass *)this); /*0x438a99*/
+  ((AbstractClass *)(gamemd::AbstractClass *)this)->ProcessPower(); /*0x438a99*/
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {

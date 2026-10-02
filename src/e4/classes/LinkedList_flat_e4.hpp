@@ -25,8 +25,8 @@ struct LinkedList_flat {
     unsigned int Tail;
     unsigned int q004;
     unsigned int Debug;
-    unsigned int PushFront;
-    void* Prepend;  // 0x0 (no offset truth)
+
+
     void* Attach;  // 0x0 (no offset truth)
     void* Pop;  // 0x0 (no offset truth)
     void* RemoveNode;  // 0x0 (no offset truth)
@@ -42,6 +42,8 @@ unsigned int * FindPrev();
 void * MoveNode(void * a2);
 void RelinkNode(int a2);
 int Remove(unsigned int * a2);
+    int PushFront(int a2); // N_fix R5 supply (cache truth)
+    int Prepend(int a2); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

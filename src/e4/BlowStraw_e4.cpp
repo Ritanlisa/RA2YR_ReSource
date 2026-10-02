@@ -184,7 +184,7 @@ LABEL_6:
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
           TacticalClass::ResetView(v13); /*0x6d0813*/
         else
-          TacticalClass::SetObserverView(v13); /*0x6d081d*/
+          ((TacticalClass *)v13)->SetObserverView(); /*0x6d081d*/
       }
       else
       {

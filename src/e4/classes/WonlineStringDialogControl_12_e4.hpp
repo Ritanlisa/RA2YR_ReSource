@@ -30,7 +30,7 @@ struct WonlineStringDialogControl_12 {
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x7AC9C0
     char AddRef(int a2);  // 0x7AD090
     char Release(int a2, unsigned int * a3);  // 0x7AD0D0
-    wchar_t * ddtor();  // 0x7AD180
+    void ddtor();  // 0x7AD180
     int Read(unsigned int * a2, void *a2_2);  // 0x7AD1B0
     char SetCapacity(int a2, unsigned int * a3);  // 0x7AD210
     int FindItem(unsigned int * a2);  // 0x7AD2C0

@@ -306,9 +306,9 @@ int RulesClass::sub_674500()
   int result; // eax
   RulesClass *v2; // [esp+Ch] [ebp+4h]
 
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
-  result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
+  ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
+  ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
+  result = ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
   LOBYTE(result) = 1; /*0x67453f*/
   return result; /*0x67453e*/
 

@@ -67,7 +67,7 @@ struct ParasiteClass {
     bool CanInfect(unsigned int * a2);
     int Attach(int * a2);
     int CanExistOnVictimCell();
-    void Constructor(void *a1, void *a2, void *a3);
+    int Constructor();
     int LoadParasite(int * a0, AbstractClass * aP1);
     int SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2);
     int ddtor(int a1, unsigned int * a2);

@@ -19,11 +19,12 @@ struct RawFileClass {
     unsigned char tail_19;  // 0x19
     unsigned int CacheReadAhead;
     unsigned int FileClass;
-    unsigned int Write;
+
 // --- flat members (END) ---
     int Close(int a2, int a3);
-    int Dtor(...);
+    int Dtor();
      double Construct(...);  // C2597 interim stub
+    int Write(); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

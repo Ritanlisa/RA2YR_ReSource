@@ -153,7 +153,7 @@ struct SuperWeaponTypeClass {
     unsigned int vtable46;
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
-    SuperWeaponTypeClass * SDDTOR(char a2);
+    unsigned int * SDDTOR(char a2);
     int FindByName();
     int FindFirstOfAction();
     int FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3);

@@ -142,7 +142,7 @@ void ParticleSystemClass::initParticleArray()
 
 // 0x4E87E0
 namespace gamemd {
-void ParticleSystemClass_32::Destroy(void *a1_1)
+void ParticleSystemClass_32::Destroy()
 {
 
   void *v2; // eax
@@ -371,7 +371,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4EB350
 namespace gamemd {
-void ParticleSystemClass_16::ddtor(void *a1_1, void *a2_1)
+void ParticleSystemClass_16::ddtor()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb35d*/
@@ -507,7 +507,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
 
 // 0x4EB5B0
 namespace gamemd {
-void ParticleSystemClass_32::ddtor(void *a1_1)
+void ParticleSystemClass_32::ddtor()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4eb5bd*/

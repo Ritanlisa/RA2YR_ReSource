@@ -42,10 +42,10 @@ struct ScoreScreen {
     unsigned int Debug;
     unsigned int Timer;
 // --- flat members (END) ---
-    void Constructor(ScoreAnimClass * aP1, int a3, int a4);
+    unsigned int * Constructor(int aP1, int a3, int a4);
     unsigned int * LoadCountryFlags(int a2);
-    void LoadScoreFont(ScoreFontClass * aP1);
-    char RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6);
+    unsigned int * LoadScoreFont(int aP1);
+    int RemoveItem(int a2, int a3, char aP3, char a5, int a6);
     static double DrawSHPBackground(...);  // C2597 interim stub
     static double LoadAudio(...);  // C2597 interim stub
 };

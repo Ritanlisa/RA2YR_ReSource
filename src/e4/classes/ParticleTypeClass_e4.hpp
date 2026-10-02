@@ -327,7 +327,7 @@ struct ParticleTypeClass {
     int GetObjectSize();
     int GetType(int a2, int a3);
     int GetTypeIdentifier();
-    int Init(int aP1);
+    int Init(unsigned char * aP1);
     int ProcessPower(int *a2);
     int SaveLoad_Prefix(int a1, int a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2);

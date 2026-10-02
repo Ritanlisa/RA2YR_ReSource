@@ -15,7 +15,7 @@ struct FileClass {
     unsigned int FileTimeDateLo;
     unsigned int Handle;
     unsigned int u32_58;
-    unsigned int OpenWithCDSearch;
+
 // --- flat members (END) ---
     char Stub(int a1);
     int Close();
@@ -33,6 +33,7 @@ struct FileClass {
     int Open2(const CHAR *a2);  // 0x65cb50
     int Delete();  // 0x65d190
     int CloseHandle();  // 0x65cca0
+    int OpenWithCDSearch(char *Source); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

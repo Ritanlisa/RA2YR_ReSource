@@ -284,7 +284,7 @@ struct TacticalClass {
     unsigned int u32_58C6;
     unsigned int updateVisibility;
     unsigned int vtable46;
-    unsigned int SetObserverView;
+
     void* TransformPixel;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char StubReturnFalse();
@@ -334,6 +334,7 @@ struct TacticalClass {
     int Initialize();  // 0x4ae450
     int ResetScrollBounds();  // 0x6da160
     int ScrollView(char aP1);  // 0x554af0
+    AnimClass * SetObserverView(); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

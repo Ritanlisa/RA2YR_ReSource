@@ -23,14 +23,14 @@ struct ParticleSystemClass_32 {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x4E82F0
-    int Destroy(void *a1_1);  // 0x4E87E0
+    void Destroy();  // 0x4E87E0
     int Write(int a2);  // 0x4E8830
     void ReleaseBuffer(void *a1_1, void *a2_1);  // 0x4E8840
     char SetCapacity(int a2, unsigned int * a3);  // 0x4E95E0
     int FindItem(unsigned int * a2);  // 0x4E9690
     char AddRef(int a2);  // 0x4EB4C0
     char Release(int a2, unsigned int * a3);  // 0x4EB500
-    wchar_t * ddtor(void *a1_1);  // 0x4EB5B0
+    void ddtor();  // 0x4EB5B0
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x4EB5E0
     char CopyParticles2(int a2, unsigned int * a3);  // 0x4EB640
     int FindParticle2(unsigned int * a2);  // 0x4EB6F0

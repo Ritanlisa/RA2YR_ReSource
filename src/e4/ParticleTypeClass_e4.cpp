@@ -901,7 +901,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a
 
 // 0x4785F0
 namespace gamemd {
-int ParticleTypeClass::Init(unsigned char * a2, void *a2_2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int ParticleTypeClass::Init(unsigned char * a2)
 {
 
   int m_10; // esi

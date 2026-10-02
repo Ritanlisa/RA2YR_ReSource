@@ -25,7 +25,7 @@ namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x420da9*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x420da9*/
   Power::TimerProcess((int)((void *)(*((unsigned int *)this + 10)))); 
   Power::TimerProcess((int)((void *)(*((unsigned int *)this + 11)))); 
   Power::TimerProcess((int)((void *)(*((unsigned int *)this + 12)))); 

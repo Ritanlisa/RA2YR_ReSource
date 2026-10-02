@@ -17,7 +17,7 @@ struct ComPtr {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned int *__pad_0;
-    unsigned int ReleaseSimple;
+
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
      unsigned int * Constructor();  // was C2597 interim stub, := truth 0x0x65d430
@@ -25,6 +25,7 @@ struct ComPtr {
     static double Release_Alt(...);  // C2597 interim stub
      int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480
     unsigned int * Release();  // 0x65d460
+    int ReleaseSimple(); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

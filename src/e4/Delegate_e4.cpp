@@ -96,7 +96,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 } // namespace gamemd
 // 0x631D10
 namespace gamemd {
-int Delegate::Dispatch(Pipe * aP1, Pipe * aP2, void *a3, void *a4, void *a5)
+int Delegate::Dispatch(int aP1, int aP2)
 {
 
   int Pipe_field_0x04; // ecx
@@ -111,7 +111,7 @@ int Delegate::Dispatch(Pipe * aP1, Pipe * aP2, void *a3, void *a4, void *a5)
 } // namespace gamemd
 // 0x6C95E0
 namespace gamemd {
-_DWORD * Delegate::GetField(void *a1, void *a2)
+_DWORD * Delegate::GetField()
 {
 
   this->m_items = 0; /*0x6c95e6*/
@@ -124,7 +124,7 @@ _DWORD * Delegate::GetField(void *a1, void *a2)
 } // namespace gamemd
 // 0x6C9890
 namespace gamemd {
-int Delegate::Set(AbstractTypeClass * aP1, void *a2, void *a3)
+int Delegate::Set(int aP1)
 {
 
   int result; // eax

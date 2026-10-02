@@ -41,8 +41,8 @@ struct CCFileClass {
     unsigned int FileClass;
     unsigned int u32_68;
 // --- flat members (END) ---
-    AudioController * * Close();
-    int Destruct(void *a1, void *a2);
+    char Close();
+    int Destruct();
     int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub

@@ -102,7 +102,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 } // namespace gamemd
 // 0x549DD0
 namespace gamemd {
-int IsometricTileTypeClass::GetTileIndex(int a2, int a3, void *a3_2, void *a4)
+int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
 
   int result; // eax

@@ -403,7 +403,7 @@ namespace gamemd {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
 
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x41d6ea*/
+  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x41d6ea*/
 
 }
 } // namespace gamemd

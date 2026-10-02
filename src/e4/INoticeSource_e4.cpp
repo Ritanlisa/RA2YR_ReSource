@@ -15,7 +15,7 @@ int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 
   AbstractClass *v1; // ecx
 
-  return AbstractClass::COMStub_AddRef(v1);
+  return ((AbstractClass *)v1)->COMStub_AddRef();
 
 }
 } // namespace gamemd

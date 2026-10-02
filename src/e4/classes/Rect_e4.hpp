@@ -15,7 +15,7 @@ struct Rect {
     unsigned int u32_14;
     unsigned int u32_18;
     unsigned int u32_1C;
-    unsigned int SetRedraw;
+
     int left;  // 0x0
     int top;  // 0x4
     int right;  // 0x8
@@ -23,8 +23,9 @@ struct Rect {
 // --- flat members (END) ---
     _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);
-    void Set(int aP1, int aP2, int aP3, int aP4);
+    unsigned int * Set(int aP1, int aP2, int aP3, int aP4);
     int Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2);
+    int SetRedraw(char a2); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

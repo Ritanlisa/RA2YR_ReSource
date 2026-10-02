@@ -11,7 +11,7 @@
 
 // 0x5AE860
 namespace gamemd {
-int Matrix3x4::Identity(void *a1)
+int Matrix3x4::Identity()
 {
 
   this->m_Data[0] = 1065353216; /*0x5ae867*/

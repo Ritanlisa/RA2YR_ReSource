@@ -220,7 +220,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
     ((Debug *)this)->Log(); /*0x5adfc3*/
     return 0; /*0x5adfd4*/
   }
-  ScenarioClass::SetFileName((char *)aP1, &g_INI_DefaultBuffer); /*0x5ae013*/
+  ((ScenarioClass *)(char *)aP1)->SetFileName(&g_INI_DefaultBuffer); /*0x5ae013*/
   v9 = 0; /*0x5ae01b*/
   if ( *(int *)(v8 + 100) <= 0 ) /*0x5ae01f*/
     goto LABEL_17; /*0x5ae01f*/
@@ -245,7 +245,7 @@ LABEL_14:
     goto LABEL_14; /*0x5ae089*/
   }
   v12 = (char *)((gamemd::MixFileClass *)(((String *)((String *)(v11 + 4)))->GetOrEmpty_Alt()));
-  ScenarioClass::SetFileName((char *)aP1, v12); /*0x5ae0a7*/
+  ((ScenarioClass *)(char *)aP1)->SetFileName(v12); /*0x5ae0a7*/
   *(unsigned short *)(aP1 + 13728) = Network_Load((ObjectClass *)pad_50, v11); /*0x5ae0b8*/
   j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
   j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae0c8*/

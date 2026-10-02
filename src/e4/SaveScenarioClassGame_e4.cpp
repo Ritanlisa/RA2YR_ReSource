@@ -43,11 +43,11 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     ((Debug *)this)->Log();
   ppstgOpen = 0; /*0x67cf1b*/
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67cf1f*/
-  ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67cf29*/
+  ((ComPtr *)(int *)&ppstgOpen)->ReleaseSimple(); /*0x67cf29*/
   ppstgOpen = 0; /*0x67cf3e*/
   if ( StgCreateDocfile(WideCharStr, 0x1012u, 0, &ppstgOpen) < 0 ) /*0x67cf4a*/
   {
-    ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67cf50*/
+    ((ComPtr *)(int *)&ppstgOpen)->ReleaseSimple(); /*0x67cf50*/
     return 0; /*0x67cf61*/
   }
   ((GameState*)v15)->Reset(); /*0x67cf6b*/

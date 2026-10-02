@@ -55,7 +55,7 @@ struct Waypoint {
     unsigned int field_38;
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0
-    void * InitInvalid();  // 0x53ECB0
+    unsigned char * InitInvalid();  // 0x53ECB0
     int FindCell(unsigned int * a2);  // 0x763A50
     static char * To_String(int aP0);
 };

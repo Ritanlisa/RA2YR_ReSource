@@ -44,7 +44,7 @@ int CCFileClass::Destru_vt08(int a2, int a3) {
 }
 // 0x4019A0
 namespace gamemd { 
-void* CCFileClass::Destru_vt00(char a2, int a3, int a4, int a5, int a1, int aP1) {
+unsigned int * CCFileClass::Destru_vt00(char a2) {
 
   *(unsigned int *)Block->CDFileClass = &vt_CCFileClass; /*0x4019a6*/
   *((unsigned int *)Block + 25) = 0; /*0x4019ac*/
@@ -215,7 +215,7 @@ bool TacticalClass::ProcessTick()
 }
 // 0x41C150
 namespace gamemd {
-void *TacticalClass::ProcessTick2(unsigned int *a2, int a1, int aP1, int a3)
+unsigned int * TacticalClass::ProcessTick2(unsigned int * a2)
 {
 
   *a2 = this->lastJumpjetMapCoords[0]; /*0x41c15a*/

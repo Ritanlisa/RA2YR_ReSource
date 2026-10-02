@@ -499,7 +499,7 @@ struct ScenarioClass {
     unsigned int *__pad_3566;
     unsigned int __pad_628;
     unsigned int Timer;
-    void* SetFileName;  // 0x0 (no offset truth)
+
     void* LoadMap;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
@@ -560,6 +560,7 @@ struct ScenarioClass {
     int SaveGameOptions();  // 0x5fad10
     int Is_Waypoint_Valid(unsigned int a2);  // 0x68bd80
     char Write_Waypoints(char *a2);  // 0x68be90
+    char * SetFileName(char *Source); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

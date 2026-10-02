@@ -24,7 +24,7 @@ int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 
   AbstractClass *v3; // ecx
 
-  return AbstractClass::QueryInterface(v3);
+  return ((AbstractClass *)v3)->QueryInterface();
 
 }
 } // namespace gamemd

@@ -42,7 +42,7 @@ public:
     void Resume();
     static bool IsSoundEnabled();
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* Constructor();  // 0x402040
+    int * Constructor();  // 0x402040
     int AdvanceQueue();  // 0x4022C0
     int UpdatePlayback();  // 0x402330
     int CleanupStream();  // 0x4023F0

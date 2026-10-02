@@ -33,7 +33,7 @@ _DWORD * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, vo
 } // namespace gamemd
 // 0x5362B0
 namespace gamemd {
-char * TauntCommandClass::AddRef(void *a1)
+char * TauntCommandClass::AddRef()
 {
 
   sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
@@ -43,7 +43,7 @@ char * TauntCommandClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x5362D0
 namespace gamemd {
-wchar_t * TauntCommandClass::Release(void *a1)
+wchar_t * TauntCommandClass::Release()
 {
 
   wchar_t *StringCSF; // eax

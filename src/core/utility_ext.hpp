@@ -739,7 +739,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int unregisterObject(int a1);  // 0x765B10
     void* createInstance(int a1);  // 0x765BB0
     void* getInterface(int a1);  // 0x765C20
-    void* releaseInterface();  // 0x765C70
+    unsigned int * releaseInterface();  // 0x765C70
     void* connectPoint(int a1);  // 0x7669C0
     int enumConnections(int a1);  // 0x766A80
     void* adviseConnection(void* a1, int a2, void* a3);  // 0x766AA0
@@ -747,7 +747,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int unlockServer(int a1);  // 0x7674E0
     void* coInitialize(void* a1, int a2, void* a3);  // 0x767500
     void* coUninitialize(int a1);  // 0x767880
-    void* marshalInterface(int a1);  // 0x767C50
+    unsigned int * marshalInterface(char a1);  // 0x767C50
     // --- gap2 auto-generated stub declarations (END) ---
 };
 // 2 methods in IDA
@@ -1492,7 +1492,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringTable() = default;
 
-    virtual void Lookup(); // 0x40DCE0
+    virtual int Lookup(); // 0x40DCE0
     virtual void Find(); // 0x5CF6B0
 
     uint8_t StringTable_field_0x04[4];
@@ -1662,7 +1662,7 @@ public:
 
     virtual void AddRef(); // 0x4F3FC0
     virtual void Release(); // 0x4F3FF0
-    virtual void ddtor(); // 0x4F4000
+    virtual unsigned int * ddtor(); // 0x4F4000
 
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x04[4];
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];

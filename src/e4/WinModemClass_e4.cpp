@@ -127,7 +127,7 @@ int WinModemClass::ReadSerial()
 } // namespace gamemd
 // 0x774B30
 namespace gamemd {
-int WinModemClass::ReadBytes(unsigned char *a2, int a3, int aP2, int a4, int aP4, int a6, int a7, int a8, int aP1, int a5)
+int WinModemClass::ReadBytes(unsigned char * a2, int a3)
 {
 
   int v4; // ebx

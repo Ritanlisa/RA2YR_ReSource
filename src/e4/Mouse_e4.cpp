@@ -171,7 +171,7 @@ HWND Mouse::ReleaseCapture()
 }
 // 0x7B93F0
 namespace gamemd {
-AbstractClass * * Mouse::DrawCursor(int *aP1, int aP2, int a4)
+void Mouse::DrawCursor(int * aP1, int aP2, int a4)
 {
 
   MixFileClass *v5; // ecx

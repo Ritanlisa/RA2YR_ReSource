@@ -30,7 +30,7 @@
 
 // 0x690A10
 namespace gamemd {
-_DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
+_DWORD * ScoreScreen::LoadScoreFont(int aP1)
 {
 
   void *v3; // eax
@@ -112,7 +112,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 } // namespace gamemd
 // 0x690F30
 namespace gamemd {
-_DWORD * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
+_DWORD * ScoreScreen::Constructor(int aP1, int a3, int a4)
 {
 
   this->ScoreScreen_field_0x08 = (unsigned int)(a3);
@@ -127,7 +127,7 @@ _DWORD * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 } // namespace gamemd
 // 0x7712C0
 namespace gamemd {
-void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
+int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
 {
 
   int v7; // eax

@@ -38,7 +38,7 @@ int NullModemClass::Flush(int a2)
 
   result = *((unsigned int *)this + 14); /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
-    return Rect::SetRedraw(*(Rect **)(result + 4), 1); /*0x5f1f0c*/
+    return ((Rect *)*(Rect **)(result + 4))->SetRedraw(1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 
 }
@@ -109,7 +109,7 @@ int NullModemClass::CheckStatus()
 } // namespace gamemd
 // 0x5F3610
 namespace gamemd {
-int NullModemClass::GetAddress(int a2, void *a2_2, void *a3, void *a4)
+int NullModemClass::GetAddress(int a2)
 {
 
   int v2; // eax
@@ -302,7 +302,7 @@ int NullModemClass::COMStub_Return0(int a1)
 } // namespace gamemd
 // 0x5F3530
 namespace gamemd {
-int NullModemClass::Send(int a1, void *a2, void *a3, void *a4, void *a5)
+int NullModemClass::Send()
 {
 
   return 0; /*0x5f3532*/

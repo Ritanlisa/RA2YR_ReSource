@@ -27,9 +27,9 @@ struct DDraw {
     int GetStatus();
     int HandleSuspend();
     void LogError(UINT, int a2);
-    void ReleaseSurfaces();
-    static int WaitForIdle(DDraw * a1);
-    char Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
+    int ReleaseSurfaces();
+    int WaitForIdle();
+    void Init();
 };
 
 } // namespace gamemd

@@ -232,9 +232,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioChannel() = default;
 
-    virtual void IsActive(); // 0x4010A0
-    virtual void DeactivatePlay(); // 0x402600
-    virtual void ActivatePlay(); // 0x402650
+    virtual int IsActive(); // 0x4010A0
+    virtual int DeactivatePlay(); // 0x402600
+    virtual int ActivatePlay(); // 0x402650
 
     uint8_t AudioChannel_field_0x04[4];
     uint8_t AudioChannel_field_0x08[4];
@@ -280,7 +280,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioFile() = default;
 
-    virtual void GetCallback(); // 0x4026A0
+    virtual int GetCallback(); // 0x4026A0
     virtual void Stop(); // 0x405FD0
 
     uint8_t AudioFile_field_0x04[4];
@@ -292,7 +292,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioFileClass() = default;
 
-    virtual void Release(); // 0x405C00
+    virtual unsigned int * Release(); // 0x405C00
 
 };
 // 2 methods in IDA
@@ -365,7 +365,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioPool() = default;
 
-    virtual void ProcessQueue(); // 0x405190
+    virtual int * ProcessQueue(); // 0x405190
 
 };
 // 5 methods in IDA
@@ -375,7 +375,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioSample() = default;
 
-    virtual void ResetState(); // 0x4024A0
+    virtual int ResetState(); // 0x4024A0
     virtual void Destructor(); // 0x407A90
     virtual void IsBuffering(); // 0x4080D0
     virtual void InitLinkedList(); // 0x408840
@@ -393,7 +393,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioSource() = default;
 
-    virtual void Get(); // 0x406130
+    virtual int * Get(); // 0x406130
 
 };
 // 1 methods in IDA

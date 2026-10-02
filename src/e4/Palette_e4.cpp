@@ -152,7 +152,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     }
     while ( v42 < (int)(v61.Height) ); /*0x6422f7*/
   }
-  DSurface::Unlock((DSurface *)&v61); /*0x642301*/
+  ((DSurface *)(DSurface *)&v61)->Unlock(); /*0x642301*/
   v21 = a2; /*0x642306*/
   v22 = RA2_OPNEW(2 * a2); /*0x642311*/
   Blocka = (unsigned short *)v22; /*0x642319*/
@@ -261,7 +261,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     }
   }
   LABEL_38:
-  DSurface::Unlock((DSurface *)&v61); /*0x64252f*/
+  ((DSurface *)(DSurface *)&v61)->Unlock(); /*0x64252f*/
   v38 = 2 * v21 + 12 + (unsigned int)(v61.Height)* v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
   v39 = (int *)RA2_OPNEW(v38); /*0x642551*/

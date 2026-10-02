@@ -1849,7 +1849,7 @@ struct HouseClass {
     unsigned int HouseClass_field_160B4;
     unsigned int CheckWinCondition;
     void* AccumulateScore;  // 0x0 (no offset truth)
-    void* SaveToINI;  // 0x0 (no offset truth)
+
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
@@ -1940,6 +1940,7 @@ struct HouseClass {
     char SetAlliance(HouseClass *a2, char a3);  // 0x4f9f90
     int HandleAlliance(int a2, char a3);  // 0x4f9b70
     unsigned int * ClearStatArray();  // 0x748fd0
+    int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

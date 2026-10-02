@@ -19,7 +19,7 @@
 
 // 0x522D00
 namespace gamemd {
-int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
+int SlaveManagerClass::Check()
 {
 
   int result; // eax
@@ -163,7 +163,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 
 // 0x6AF360
 namespace gamemd {
-int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3)
+int SlaveManagerClass::Constructor()
 {
 
   SlaveManagerClass * v2;

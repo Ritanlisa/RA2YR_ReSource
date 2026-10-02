@@ -31,7 +31,7 @@
 
 // 0x629210
 namespace gamemd {
-int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
+int ParasiteClass::Constructor()
 {
 
   int v2; // ecx
@@ -120,7 +120,7 @@ int ParasiteClass::Attach(int * a2)
   int v4; // eax
   int v5; // edx
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6294d9*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6294d9*/
   v3 = *((unsigned int *)this + 17); /*0x6294de*/
   if ( v3 ) /*0x6294e3*/
   {

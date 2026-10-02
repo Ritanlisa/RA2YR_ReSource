@@ -23,7 +23,7 @@ int Control::DispatchClick(int aP1)
   v3 = *((unsigned int *)this + 10); /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
-  return GadgetClass::ClearState((ShpButtonClass *)this, aP1); /*0x48e63d*/
+  return ((GadgetClass *)(ShpButtonClass *)this)->ClearState(aP1); /*0x48e63d*/
 
 }
 } // namespace gamemd

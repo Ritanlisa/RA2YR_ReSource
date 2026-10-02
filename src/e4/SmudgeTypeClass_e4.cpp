@@ -245,7 +245,7 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
     v5 = a2[1]; /*0x6b5578*/
     v7[0] = (*a2 << 8) + 128; /*0x6b5585*/
     v7[1] = (v5 << 8) + 128; /*0x6b559a*/
-    if ( UnitClass::Create(v4, this, v7, -1) ) /*0x6b559e*/
+    if ( ((UnitClass *)v4)->Create(this, v7, -1) ) /*0x6b559e*/
       return 1; /*0x6b5565*/
   }
   return result; /*0x6b55a9*/
@@ -261,7 +261,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 
   v3 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
-    return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
+    return ((UnitClass *)v3)->Create(this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
     return 0; /*0x6b55e7*/
 

@@ -716,7 +716,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
       ((String *)((String *)&a4))->Assign((const char *)aActiverect); /*0x4f2e19*/
-      Rect = INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
+      Rect = ((INIClass *)a2)->GetRect(&v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
       v26 = Rect[2]; /*0x4f2e45*/

@@ -181,7 +181,7 @@ void LoadGame::RemoveItem(int a2)
 } // namespace gamemd
 // 0x67E730
 namespace gamemd {
-void LoadGame::Start(LPSTREAM pStm, void *a2)
+char LoadGame::Start()
 {
 
   char result; // al

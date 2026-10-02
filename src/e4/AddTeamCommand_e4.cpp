@@ -21,7 +21,7 @@ _DWORD * AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void 
 } // namespace gamemd
 // 0x5360D0
 namespace gamemd {
-char * AddTeamCommand::AddRef(void *a1)
+char * AddTeamCommand::AddRef()
 {
 
   sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
@@ -31,7 +31,7 @@ char * AddTeamCommand::AddRef(void *a1)
 } // namespace gamemd
 // 0x5360F0
 namespace gamemd {
-wchar_t * AddTeamCommand::Release(void *a1)
+wchar_t * AddTeamCommand::Release()
 {
 
   wchar_t *StringCSF; // eax

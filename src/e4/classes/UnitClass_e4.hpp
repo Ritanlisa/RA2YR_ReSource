@@ -774,10 +774,11 @@ struct UnitClass {
     unsigned int q0405;
     unsigned int q0406;
     unsigned int q0407;
-    void* Create;  // 0x0 (no offset truth)
+
 // --- flat members (END) ---
-    void ProcessIdleOrders();
+    int ProcessIdleOrders();
      double Construct(...);  // C2597 interim stub
+    void ** Create(void *a2, _DWORD *a3, int a4); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

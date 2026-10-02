@@ -77,7 +77,7 @@ struct Power {
     unsigned int * UpdateAll();  // 0x67C6E0
     void* ComputeHousePowerChecksum(unsigned int * a2, void *a2_2);  // 0x68B940
     int FinalizeDrain(int a2);  // 0x4A1C10
-    static int FlagProcess(int Power_field_0x8);
+    int FlagProcess(int Power_field_0x8);
     static int TimerProcess(int a1);
     char ChangedHouse(char a2);  // 0x750090
 };

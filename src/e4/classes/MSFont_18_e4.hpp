@@ -25,10 +25,10 @@ struct MSFont_18 {
     AbstractClass * * SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     void ClearBuffer(void *a1_1);  // 0x5D5080
     int GetSize(int a2);  // 0x5D50D0
-    int Destroy(void *a1_1);  // 0x5D50E0
+    void Destroy();  // 0x5D50E0
     char AddRef(int a2);  // 0x5D5150
     char Release(int a2, unsigned int * a3);  // 0x5D5190
-    wchar_t * ddtor();  // 0x5D5240
+    void ddtor();  // 0x5D5240
     int Create(unsigned int * a2);  // 0x5D5270
     char SetCapacity(int a2, unsigned int * a3);  // 0x5D52D0
     int FindItem(unsigned int * a2);  // 0x5D5380

@@ -319,7 +319,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StreamObj() = default;
 
-    virtual void Release(); // 0x410E50
+    virtual int Release(); // 0x410E50
 
 };
 // 6 methods in IDA

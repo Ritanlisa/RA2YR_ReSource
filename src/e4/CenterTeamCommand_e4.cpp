@@ -24,7 +24,7 @@ _DWORD * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, vo
 } // namespace gamemd
 // 0x5361C0
 namespace gamemd {
-char * CenterTeamCommand::AddRef(void *a1)
+char * CenterTeamCommand::AddRef()
 {
 
   sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamCenter_%d", *(unsigned int *)&this->m_1[3]); /*0x5361ce*/
@@ -34,7 +34,7 @@ char * CenterTeamCommand::AddRef(void *a1)
 } // namespace gamemd
 // 0x5361E0
 namespace gamemd {
-wchar_t * CenterTeamCommand::Release(void *a1)
+wchar_t * CenterTeamCommand::Release()
 {
 
   wchar_t *StringCSF; // eax

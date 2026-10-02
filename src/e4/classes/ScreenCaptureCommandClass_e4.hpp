@@ -12,7 +12,7 @@ struct ScreenCaptureCommandClass {
     unsigned int CommandClass;
 // --- flat members (END) ---
     char AddRef(void *a1);
-    void Constructor(void *a1, void *a2, void *a3);
+    unsigned int * Constructor();
     wchar_t * Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7);
     int Release(void *a1);
     wchar_t * ddtor();

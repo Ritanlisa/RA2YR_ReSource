@@ -176,7 +176,7 @@ int MSFont_18::GetSize(int a2)
 
 // 0x5D50E0
 namespace gamemd {
-void MSFont_18::Destroy(void *a1_1)
+void MSFont_18::Destroy()
 {
 
   void *v2; // eax

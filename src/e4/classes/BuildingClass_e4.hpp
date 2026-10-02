@@ -718,13 +718,13 @@ struct BuildingClass {
     unsigned int u32_898;
     unsigned int u32_8B4;
     unsigned int ctor;
-    void* GetSellPriority;  // 0x0 (no offset truth)
+
     void* CheckBuildability;  // 0x0 (no offset truth)
     void* Deploy;  // 0x0 (no offset truth)
     void* FreeUpgradeQueue;  // 0x0 (no offset truth)
     void* FreeUpgradeQueue2;  // 0x0 (no offset truth)
-    void* IsPoweredOn;  // 0x0 (no offset truth)
-    void* MakeTraversable;  // 0x0 (no offset truth)
+
+
     void* SetType;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
@@ -785,6 +785,9 @@ struct BuildingClass {
     void VisualizePlacement();  // 0x485af0
     int CheckAdjacentCells();  // 0x485460
     int SetSlot(int a2, int a3);  // 0x717890
+    int GetSellPriority(); // N_fix R5 supply (cache truth)
+    char MakeTraversable(); // N_fix R5 supply (cache truth)
+    int IsPoweredOn(); // N_fix R5 supply (cache truth)
 };
 
 } // namespace gamemd

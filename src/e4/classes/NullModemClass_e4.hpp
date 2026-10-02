@@ -34,11 +34,11 @@ struct NullModemClass {
     int CheckStatus();
     int Disconnect(int a2, int a3, int a4);
     int Flush(int a2);
-    void GetAddress(int a2, void *a2_2, void *a3, void *a4);
+    int GetAddress(int a2);
     int GetMember23();
     int Receive();
     int Release(int a2, int a3, int a4, int a5);
-    void Send(int a1, void *a2, void *a3, void *a4, void *a5);
+    int Send();
     int SetAddress(int a2);
     int ddtor(int a2, int a3, int a4);
     int receiveData();

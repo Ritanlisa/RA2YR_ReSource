@@ -964,7 +964,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
       do /*0x733467*/
       {
         v8 = *(BuildingClass **)(*(unsigned int *)(v5 + 4) + 4 * v6); /*0x73344a*/
-        if ( BuildingClass::GetSellPriority(v8) == v18 ) /*0x733458*/
+        if ( ((BuildingClass *)v8)->GetSellPriority() == v18 ) /*0x733458*/
           (*((void (**)(BuildingClass *))v8->vtable1 + 83))(v8); /*0x73345e*/
         ++v6; /*0x733464*/
       }
@@ -1014,7 +1014,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     v15 = 0; /*0x733527*/
     if ( DynamicVector_field_0x10 > 0 ) /*0x73352b*/
     {
-      while ( BuildingClass::GetSellPriority(*(BuildingClass **)(*(unsigned int *)&(&v11->DynamicVector_field_0x1)[3] + 4 * v15)) == v18 ) /*0x73353c*/
+      while ( ((BuildingClass *)*(BuildingClass **)(*(unsigned int *)&(&v11->DynamicVector_field_0x1)[3] + 4 * v15))->GetSellPriority() == v18 ) /*0x73353c*/
       {
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x733541*/
           goto LABEL_42; /*0x733541*/

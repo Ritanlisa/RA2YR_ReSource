@@ -421,7 +421,7 @@ DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
 
 REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
-MixFileClass * * MixFileClass::Bootstrap()
+char MixFileClass::Bootstrap()
 {
   int i; // edi
   unsigned int *v2; // eax
