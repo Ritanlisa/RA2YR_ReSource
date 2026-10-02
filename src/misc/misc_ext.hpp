@@ -411,7 +411,7 @@ class AITriggerTypeClass
 public:
     virtual ~AITriggerTypeClass() = default;  // 0x41FFF0
 
-    virtual void GetClassIdentifier(); // 0x41E500
+virtual void GetClassIdentifier(unsigned int *,int,int,int);  // 0x41E500
     virtual void LoadTypeData(); // 0x41E540
     virtual void SaveToINI(); // 0x41E5C0
     virtual int ProcessPower(int *a2);

@@ -101,7 +101,7 @@ class Voice
 {
 public:
     // IDA 0x407150 area
-     void Stop(int32_t channel);  // 0x4025B0
+int Stop(void);  // 0x4025B0
     // IDA 0x407150 area
     static void DetachChannel(AudioController* ctrl);  // 0x404140
 

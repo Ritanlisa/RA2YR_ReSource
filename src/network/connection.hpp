@@ -70,7 +70,7 @@ public:
     virtual ~IPXConnClass();
     virtual bool Open() override; // 0x69BC20
 
-    virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
+virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
     bool initConnection();  // 0x48BE60
     bool closeConnection();  // 0x69BC20
     bool send(int a2, int a3, int a4, int a5, int a6, int a7);
@@ -89,7 +89,7 @@ public:
     IPXManagerClass() noexcept;
     static IPXManagerClass* Instance;                                  // data: 0xA8EBE4
 
-    void Init();  // 0x48BA90
+int Init(int,int,int,int,int,int);  // 0x48BA90
     // wrapper: delegates to IPXManagerClass::init at 0x48BA90
     bool OpenSession();
     void CloseSession();
@@ -101,7 +101,7 @@ public:
     int processPacket();                                             // 0x5409F0
     IPXConnClass* createConnection();                                 // 0x540D40
     void destroyConnection(IPXConnClass*);                             // 0x540D60
-    void release();  // 0x5414C0
+int release(int,int,int,int);  // 0x5414C0
     int32_t GetConnectionCount();                                      // 0x542330
     int GetAddress(int a2);  // 0x542350
     int SetAddress(int a2);                                     // 0x5423C0

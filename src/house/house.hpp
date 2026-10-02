@@ -621,7 +621,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destruct();  // 0x4F7140
     int CanBuild(int a1, int a2, int a3);  // 0x4F7870
     int GetFactoryProducing(int a1);  // 0x4F83C0
-    void Update_TogglePower();  // 0x4F8440
+void Update_TogglePower(double);  // 0x4F8440
     int Update();  // 0x4F9370
     int NotifyUnderAttack(void* a1);  // 0x4F93E0
     int ProcessPowerDrain(int a1);  // 0x4F9790

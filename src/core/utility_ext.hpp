@@ -1135,7 +1135,7 @@ public:
     virtual void Release(); // 0x4F3640
     virtual void Load(); // 0x4F3690
     virtual void Draw(); // 0x4F3720
-    virtual void ddtor(); // 0x4F37A0
+virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
     virtual void QueryInterface(); // 0x4F3840
 
     uint8_t GraphicMenuImageItem_field_0x04[4];

@@ -112,7 +112,7 @@ public:
     virtual void vt_entry_514();  // 0x41C0F0
     virtual bool StubReturnFalse();  // 0x41c100
     virtual void StubReturnVoid(); // 0x41C110
-    virtual void vt_entry_534();  // 0x41C130
+virtual void vt_entry_534(int);  // 0x41C130
     virtual void vt_entry_540();  // 0x41C140
     virtual int GetTurretAngle() const;  // 0x43ED40
     virtual void ProcessDemolish();  // 0x4415F0

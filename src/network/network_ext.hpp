@@ -140,9 +140,9 @@ public:
     virtual ~IPXGlobalConnClass() = default;  // 0x540630
 
     virtual void Flush(); // 0x53FBD0
-    virtual void GetQueueSize(); // 0x53FCB0
+virtual int GetQueueSize(unsigned short *,int,int *,int);  // 0x53FCB0
     virtual void ConnectToHost(); // 0x53FF10
-    virtual void Disconnect(); // 0x540030
+virtual unsigned int * Disconnect(int,int);  // 0x540030
     virtual void GetAddress(); // 0x540050
     // +9 more virtual methods
 

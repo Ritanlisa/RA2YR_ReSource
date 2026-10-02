@@ -50,7 +50,7 @@ public:
     virtual int objectSize() const override;
 
     // Construction / destruction lifecycle
-    void Construct();  // 0x43B740
+int Construct(int,int);  // 0x43B740
     void Dtor();  // 0x43BCF0
     int ScalarDtor() override;  // 0x459F20
     int Activate() override;  // 0x452480
@@ -124,7 +124,7 @@ public:
     void ProductionDisplayUpdate();  // 0x43F180
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
-    bool CanAcceptType(int type_index);  // 0x452670
+int CanAcceptType(int,int);  // 0x452670
     bool CanAbsorbUnits();  // 0x4598A0
     void AddToProductionQueue(int type_index);  // 0x4DA0E0
     void SetProduction(int type_index);  // 0x6395B0

@@ -343,7 +343,7 @@ public:
 
     // --- Cell / Coordinate queries ---
     // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
-    virtual int GetCellCoords_Alt(CellStruct* out) const = 0;
+virtual int GetCellCoords_Alt(void) const;
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
     // [112] 0x5F69C0 ObjectClass::CoordToCell

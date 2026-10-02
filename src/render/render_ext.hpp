@@ -824,7 +824,7 @@ public:
     virtual ~BuildingPlacement() = default;
 
     virtual void RenderBuildingPlacementShadow(); // 0x430650
-    virtual void RenderBuildingPlacementPreview(); // 0x47EC90
+virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47EC90
     virtual int ValidateType(int a2, int a3);
     virtual bool IsPlacementFlagSet(unsigned int a2, char a3);
     virtual void HandleClick(); // 0x4E2690
@@ -895,7 +895,7 @@ public:
     virtual int AddColor(int a2);
     virtual void GetCount(signed int a2);
     virtual int SetIndex(int a2, int a3);
-    virtual void DrawColorRect(); // 0x488980
+virtual unsigned int * DrawColorRect(int,int,int,int,int);  // 0x488980
     // +5 more virtual methods
 
     uint8_t ColorListClass_field_0x04[4];

@@ -300,7 +300,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BitmapClass() = default;
 
-    virtual void ProcessFrame(); // 0x42DF90
+virtual size_t ProcessFrame(char *,int,int,int,int);  // 0x42DF90
 
 };
 // 1 methods in IDA
@@ -707,8 +707,8 @@ public:
     virtual ~FontClass() = default;
 
     virtual void RenderGlyph(); // 0x434120
-    virtual void RenderText(); // 0x434500
-    virtual void GetPixelData(); // 0x4349B0
+virtual int RenderText(unsigned short *,int,int,int,int);  // 0x434500
+virtual int GetPixelData(unsigned short,int);  // 0x4349B0
     virtual void LoadFontResources(); // 0x5D2E90
     virtual void CreateGlyphColor(); // 0x68C3B0
     // +1 more virtual methods
@@ -729,7 +729,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FontRenderer() = default;
 
-    virtual void InitContext(); // 0x4348F0
+virtual int InitContext(int *,int);  // 0x4348F0
     virtual void DrawText(); // 0x434B90
 
     uint8_t FontRenderer_field_0x04[4];
