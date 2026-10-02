@@ -6,6 +6,7 @@ namespace gamemd {
 struct Coord3D {
     unsigned int * Set(int aP1, int aP2, int a4);
     unsigned int Coord3D_field_0x08;  // 0x8
+    unsigned char __pad_0;  // 0x0
 };
 
 } // namespace gamemd

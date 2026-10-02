@@ -447,6 +447,27 @@ public:
     bool IronCurtainCharged(int a1, int a2);  // 0x41f0d0
     bool ChronoSphereCharged(int a1, int a2);  // 0x41f180
     // === FUNCS-MOVE (END) ===
+    unsigned int q098;  // 0x98
+    unsigned int q09C;  // 0x9C
+    unsigned int q0A0;  // 0xA0
+    unsigned int q0A8;  // 0xA8
+    unsigned int q0AC;  // 0xAC
+    unsigned int q0B8;  // 0xB8
+    unsigned int q0BC;  // 0xBC
+    unsigned int q0C0;  // 0xC0
+    unsigned int q0C4;  // 0xC4
+    unsigned int q0C8;  // 0xC8
+    unsigned int q0CC;  // 0xCC
+    unsigned int q0D0;  // 0xD0
+    unsigned int q0E4;  // 0xE4
+    unsigned int q0E8;  // 0xE8
+    unsigned char u8_D1;  // 0xD1
+    unsigned char u8_D2;  // 0xD2
+    unsigned char u8_D3;  // 0xD3
+    unsigned char u8_D4;  // 0xD4
+    unsigned int q0144;  // 0x144
+    unsigned int q0147;  // 0x147
+    unsigned int q0148;  // 0x148
 };
 // 7 methods in IDA
 // CSP: AnimFile matched via T1

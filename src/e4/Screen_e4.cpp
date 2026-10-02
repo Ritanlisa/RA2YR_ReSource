@@ -475,7 +475,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v7 - *(unsigned int *)(*((unsigned int *)this + 3) + 8) - v59,
     2);
   (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(*((unsigned int *)this + 3), v76); /*0x68f878*/
-  return Screen::TransitionLoop(int a1,20) ; /*0x68f884*/
+  return Screen::TransitionLoop(20) ; /*0x68f884*/
 
 }
 }  // G42.18c ns repair

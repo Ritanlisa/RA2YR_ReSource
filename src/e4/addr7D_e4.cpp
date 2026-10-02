@@ -554,7 +554,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
   {
     if ( ((uint8_t)a0 & 3) != 0 ) /*0x7d0a46*/
     {
-      if ( aP2 >= (gamemd::AbstractClass *)(4) ) /*0x7d0a66*/
+      if ( aP2 >= (AbstractClass *)(4) ) /*0x7d0a66*/
         __asm { jmp dword ptr ds:loc_7D0A7C+4[eax*4] } /*0x7d0a6d*/
       __asm { jmp dword ptr ds:TrailUp0_0[ecx*4]; jumptable 007D0A55 case 0 } /*0x7d0a74*/
     }
@@ -787,7 +787,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
         v6 = *((unsigned int *)aP0 - 1) - 1; /*0x7d0fc5*/
         if ( v6 >= v3 ) /*0x7d0fc8*/
           v6 = v3; /*0x7d0fca*/
-        memcpy_0(v4, aP0,(gamemd::AbstractClass *)(v6)); /*0x7d0fcf*/
+        memcpy_0(v4, aP0,(AbstractClass *)(v6)); /*0x7d0fcf*/
         __sbh_free_block(Sizea, aP0); /*0x7d0fd8*/
         goto LABEL_22; /*0x7d0fd8*/
       }
@@ -801,7 +801,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
       v7 = *((unsigned int *)aP0 - 1) - 1; /*0x7d1009*/
       if ( v7 >= v3 ) /*0x7d100c*/
         v7 = v3; /*0x7d100e*/
-      memcpy_0(v4, aP0,(gamemd::AbstractClass *)(v7)); /*0x7d1013*/
+      memcpy_0(v4, aP0,(AbstractClass *)(v7)); /*0x7d1013*/
       __sbh_free_block(Sizea, aP0); /*0x7d101c*/
     }
     goto LABEL_22; /*0x7d101c*/
@@ -893,7 +893,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     if ( !v17 ) /*0x7d12d9*/
       return 0; /*0x7d12d9*/
   }
-  return (gamemd::ControlClass **)(v14);
+  return (ControlClass **)(v14);
 }
 }
 // 0x7D1311
@@ -1712,8 +1712,8 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
   LABEL_257:
       result = v60; /*0x7d2119*/
       if ( !v60 && !v69 ) /*0x7d2123*/
-        return (gamemd::ControlClass **)(-1); /*0x7d2125*/
-      return (gamemd::ControlClass **)(result); /*0x7d2128*/
+        return (ControlClass **)(-1); /*0x7d2125*/
+      return (ControlClass **)(result); /*0x7d2128*/
     }
   LABEL_251:
     v4 = *v3; /*0x7d20d7*/
@@ -1727,7 +1727,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
   LABEL_256:
   if ( C == -1 ) /*0x7d2117*/
     goto LABEL_257; /*0x7d2117*/
-  return (gamemd::ControlClass **)(v60); /*0x7d212d*/
+  return (ControlClass **)(v60); /*0x7d212d*/
 }
 }
 // 0x7D2132
@@ -1815,7 +1815,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
     while ( 1 ) /*0x7d21ec*/
     {
       if ( v51 < 0 ) /*0x7d21ef*/
-return (gamemd::AbstractClass **)v51; /*0x7d21ef*/
+return (AbstractClass **)v51; /*0x7d21ef*/
       if ( v5 < 0x20u || v5 > 0x78u ) /*0x7d2201*/
         v7 = 0; /*0x7d2211*/
       else
@@ -2205,7 +2205,7 @@ return (gamemd::AbstractClass **)v51; /*0x7d21ef*/
           v33 = v56++; /*0x7d28ce*/
           v5 = *v33; /*0x7d28d7*/
           if ( !*v33 ) /*0x7d28d7*/
-return (gamemd::AbstractClass **)v51; /*0x7d28dd*/
+return (AbstractClass **)v51; /*0x7d28dd*/
           v4 = v42; /*0x7d21e9*/
           break; /*0x7d21e9*/
         default:
@@ -2213,7 +2213,7 @@ return (gamemd::AbstractClass **)v51; /*0x7d28dd*/
       }
     }
   }
-return (gamemd::AbstractClass **)v51; /*0x7d28e6*/
+return (AbstractClass **)v51; /*0x7d28e6*/
 }
 }
 // 0x7D2C36

@@ -135,20 +135,20 @@ void CStreamClass::ClearBuffer() {
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x4a4ad6*/
-  this->q010 = 0; /*0x4a4ad9*/
-  if ( v2 && IDA_BYTE1(this->q00C) ) /*0x4a4ae0*/
+  *(unsigned int *)&this->CStreamClass_field_0x10 = 0; /*0x4a4ad9*/
+  if ( v2 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4ae0*/
   {
     RA2_OPDEL(v2); /*0x4a4ae6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
   }
-  IDA_BYTE1(this->q00C) = 0; /*0x4a4af1*/
-  this->q008 = 0; /*0x4a4af4*/
+  IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4af1*/
+  *(unsigned int *)&this->CStreamClass_field_0x08 = 0; /*0x4a4af4*/
 }
 }
 // 0x4A4B00
 namespace gamemd { 
 int CStreamClass::PointerToIndex(int a2) {
-  if ( IDA_LOBYTE(this->q00C) ) /*0x4a4b00*/
+  if ( IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4b00*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a4b15*/
   else
     return 0; /*0x4a4b07*/
@@ -164,38 +164,38 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 
   if ( a1 ) /*0x4a4cbc*/
   {
-    IDA_LOBYTE(this->q00C) = 0; /*0x4a4cc2*/
+    IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4cc2*/
     if ( a2 ) /*0x4a4cc8*/
       v4 = (unsigned int *)(a2); /*0x4a4cde*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4a4cda*/
-    IDA_LOBYTE(this->q00C) = 1; /*0x4a4ce2*/
+    IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) = 1; /*0x4a4ce2*/
     if ( !v4 ) /*0x4a4ce6*/
       return 0; /*0x4a4d5a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4a4ce8*/
     {
-      m_8 = this->q008; /*0x4a4cef*/
+      m_8 = *(unsigned int *)&this->CStreamClass_field_0x08; /*0x4a4cef*/
       if ( a1 < m_8 ) /*0x4a4cf4*/
         m_8 = a1; /*0x4a4cf6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a4cfc*/
         ++i; /*0x4a4d01*/
-      if ( IDA_BYTE1(this->q00C) ) /*0x4a4d0e*/
+      if ( IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4d0e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a4d19*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a4d21*/
       }
     }
     *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x4a4d2a*/
-    this->q008 = a1; /*0x4a4d32*/
-    IDA_BYTE1(this->q00C) = a2 == 0; /*0x4a4d35*/
+    *(unsigned int *)&this->CStreamClass_field_0x08 = a1; /*0x4a4d32*/
+    IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = a2 == 0; /*0x4a4d35*/
   }
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
   }
-  v7 = this->q008; /*0x4a4d41*/
-  if ( v7 < this->q010 ) /*0x4a4d49*/
-    this->q010 = v7; /*0x4a4d4b*/
+  v7 = *(unsigned int *)&this->CStreamClass_field_0x08; /*0x4a4d41*/
+  if ( v7 < *(unsigned int *)&this->CStreamClass_field_0x10 ) /*0x4a4d49*/
+    *(unsigned int *)&this->CStreamClass_field_0x10 = v7; /*0x4a4d4b*/
   return 1; /*0x4a4d4e*/
 }
 }
@@ -225,13 +225,13 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
 
   v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
   *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
-  if ( v3 && IDA_BYTE1(this->q00C) ) /*0x4a4df0*/
+  if ( v3 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4df0*/
   {
     RA2_OPDEL(v3); /*0x4a4df8*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/
   }
-  IDA_BYTE1(this->q00C) = 0; /*0x4a4e0b*/
-  this->q008 = 0; /*0x4a4e11*/
+  IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4e0b*/
+  *(unsigned int *)&this->CStreamClass_field_0x08 = 0; /*0x4a4e11*/
   if ( (a2 & 1) != 0 ) /*0x4a4e18*/
     RA2_OPDEL(this); /*0x4a4e1b*/
   return this->__pad_0; /*0x4a4e25*/
@@ -367,7 +367,7 @@ int Stream::ReadPacket() {
     memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
     v6 = this->u32_38; /*0x5f1ce0*/
     this->u32_58 = 1; /*0x5f1ce3*/
-    return (*(int (**)(int))(v6->abstractFlags)(v6); /*0x5f1cef*/
+    return (*(int (**)(int))(v6->abstractFlags))(v6); /*0x5f1cef*/
   }
   else if ( v3 - v4 >= 6 ) /*0x5f1d05*/
   {
@@ -407,7 +407,7 @@ int Stream::ReadPacket() {
           memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
           v15 = this->u32_38; /*0x5f1e32*/
           this->u32_58 -= v14; /*0x5f1e3a*/
-          return (*(int (**)(int))(v15->abstractFlags)(v15); /*0x5f1e3f*/
+          return (*(int (**)(int))(v15->abstractFlags))(v15); /*0x5f1e3f*/
         }
       }
       else
@@ -417,7 +417,7 @@ int Stream::ReadPacket() {
         memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
         v13 = this->u32_38; /*0x5f1d9d*/
         this->u32_58 -= v12; /*0x5f1da5*/
-        return (*(int (**)(int))(v13->abstractFlags)(v13); /*0x5f1daa*/
+        return (*(int (**)(int))(v13->abstractFlags))(v13); /*0x5f1daa*/
       }
     }
     else
@@ -426,7 +426,7 @@ int Stream::ReadPacket() {
       memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
       v9 = this->u32_38; /*0x5f1d4e*/
       this->u32_58 -= v8; /*0x5f1d56*/
-      return (*(int (**)(int))(v9->abstractFlags)(v9); /*0x5f1d5b*/
+      return (*(int (**)(int))(v9->abstractFlags))(v9); /*0x5f1d5b*/
     }
   }
   else

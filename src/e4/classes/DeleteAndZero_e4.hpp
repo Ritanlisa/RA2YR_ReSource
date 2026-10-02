@@ -13,6 +13,7 @@ struct DeleteAndZero {
     unsigned int DeleteAndZero_field_0x08;  // 0x8
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* customSound_controller;  // 0x0 (no offset truth)
+    void* AbstractClass;  // 0x0 (base-subobject vocab, no offset truth)
 };
 
 } // namespace gamemd

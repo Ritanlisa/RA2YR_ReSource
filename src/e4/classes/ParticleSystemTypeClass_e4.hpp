@@ -297,6 +297,8 @@ struct ParticleSystemTypeClass {
     unsigned int SpawnCount;
     unsigned int q308;
     unsigned int q30A;
+    unsigned int ParticleSystemTypeClass_field_0x24;  // 0x24
+    unsigned char __pad_2D8[16];  // 0x2D8
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);

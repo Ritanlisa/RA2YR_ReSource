@@ -266,10 +266,10 @@ int CellClass::ClearOccupancyGrid() {
   *(unsigned int *)this->__pad_28 = result; /*0x42a5ff*/
   if ( !result ) /*0x42a602*/
   {
-    for ( k = g_MapCellWidth * g_MapCellWidth - 1; k >= 0; *((unsigned int *)&this->((unsigned int *)rubble)[0] + k) = 0 ) /*0x42a611*/
+    for ( k = g_MapCellWidth * g_MapCellWidth - 1; k >= 0; *((unsigned int *)&((unsigned int *)this->rubble)[0] + k) = 0 ) /*0x42a611*/
     {
       --k; /*0x42a616*/
-      *((unsigned int *)&this->((unsigned int *)attachedTag)[0] + k) = 0; /*0x42a617*/
+      *((unsigned int *)&((unsigned int *)this->attachedTag)[0] + k) = 0; /*0x42a617*/
     }
     v7 = (int *)(&stru_87F5F0.__pad_58[456] - (char *)this); /*0x42a62a*/
     p_CellClass_field_4C = (int *)(&this->CellClass_field_4C); /*0x42a62d*/
@@ -4748,7 +4748,7 @@ int Crate::FindPlacement(IUnknown * aP1, int a3) {
           v5,
           *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                     + 4
-                    * ((int)v4->altObject + (unsigned int)v4->((unsigned int *)jumpjet)[0] + 2 * *(uint8_t *)((char *)this + 284) + v6)
+                    * ((int)v4->altObject + (unsigned int)((unsigned int *)v4->jumpjet)[0] + 2 * *(uint8_t *)((char *)this + 284) + v6)
                     - 8),
           (int16_t *)&v46,
           -1);
@@ -4763,7 +4763,7 @@ int Crate::FindPlacement(IUnknown * aP1, int a3) {
         v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x487266*/
         Object::SpawnAtCell( /*0x48728c*/
           v7,
-          *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v4->((unsigned int *)jumpjet)[0] + v8)),
+          *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)((unsigned int *)v4->jumpjet)[0] + v8)),
           (int16_t *)&v46,
           -1);
       }

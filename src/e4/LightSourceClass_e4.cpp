@@ -177,12 +177,12 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   int v3; // eax
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_LightSourceClass; /*0x555156*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55515c*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x555163*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x555171*/
-  v5 = (gamemd::LightSourceClass *)(Block); /*0x555186*/
+  this->vtable1 = &vt_LightSourceClass; /*0x555156*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55515c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x555163*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x555171*/
+  v5 = (gamemd::LightSourceClass *)(this); /*0x555186*/
   v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],
          &v5);
@@ -197,15 +197,15 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
       ++v3; /*0x5551ad*/
     }
   }
-  if ( Block->Activated ) /*0x5551bf*/
+  if ( this->Activated ) /*0x5551bf*/
   {
-    Block->Activated = 0; /*0x5551ca*/
-    ((TacticalClass *)((TacticalClass *)Block))->ScrollView(0); /*0x5551ce*/
+    this->Activated = 0; /*0x5551ca*/
+    ((TacticalClass *)((TacticalClass *)this))->ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x5551d5*/
+  AbstractClass::DTOR((AbstractClass *)this); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
-    __3_YAXPAX_Z(Block); /*0x5551e2*/
-  return Block; /*0x5551ec*/
+    __3_YAXPAX_Z(this); /*0x5551e2*/
+  return this; /*0x5551ec*/
 
 }
 } // namespace gamemd

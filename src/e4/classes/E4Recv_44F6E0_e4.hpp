@@ -19,6 +19,7 @@ struct E4Recv_44F6E0 {
     unsigned int q5170;  // 0x5170
     unsigned int q5508;  // 0x5508
     unsigned int AbstractClass;
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
     unsigned int * sub_44F6E0(unsigned int * a2, int a3);  // 0x44F6E0

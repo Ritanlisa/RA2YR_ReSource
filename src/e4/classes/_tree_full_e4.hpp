@@ -33,6 +33,7 @@ struct AudioChannel {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     int DeactivatePlay();  // 0x402600
+    unsigned char __pad_0;  // 0x0
 };
 
 struct CampaignScore {
@@ -47,10 +48,11 @@ struct CampaignScore {
     void* inOpenToppedTransport;  // 0x0 (no offset truth)
     void* wasFallingDown;  // 0x0 (no offset truth)
 };
-    unsigned int m_0;  // 0x0
 
 struct DialogControl_OwnerDraw {
     void* vfptr;
+    unsigned int m_0;  // 0x0
+    unsigned char __pad_9[4];  // 0x9
 };
 
 struct DynamicVectorClass {
@@ -310,10 +312,10 @@ struct Gap2Recv_402F60 {
     unsigned char __pad_0;  // 0x0
     unsigned int q7764961092133969250445526098;  // 0x7764961092133969250445526098
 };
-    unsigned char HashTable_field_0x04;  // 0x4
 
 struct HashTable {
     void* vfptr;
+    unsigned char HashTable_field_0x04;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned int u32_10;  // 0x10
@@ -352,10 +354,12 @@ struct HashTable {
     static int FindChunk(void *aP0, char * Str1, void * a2, CCINIClass * aP3);  // A_c2039 R5 static-form sync
     static int Remove(void *aP0, int a2);  // A_c2039 R5 static-form sync
     static int Find(void *aP0, const char * a1, ConvertClass * aP2);  // A_c2039 R5 static-form sync
+    unsigned char __pad_0;  // 0x0
 };
 
 struct KeywordType {
     void* vfptr;
+    void* FindOrCreate2;  // 0x0 (no offset truth)
 };
 
 struct Locomotor {
@@ -368,18 +372,20 @@ struct MSAnim {
     void* vtable1;  // 0x0
     int GetField(unsigned int a2);  // 0x5cb840
     int SetField(unsigned int a2);  // 0x5cb860
+    void* vftable;  // 0x0 (no offset truth)
 };
 
 struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
+    void* vftable;  // 0x0 (no offset truth)
 };
-    unsigned char __pad_0[29];  // 0x0
 
-    void* vtable1;  // 0x0
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
     void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char __pad_0[29];  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
@@ -548,6 +554,10 @@ struct ReferenceCounted {
 
 struct ShapeButtonClass {
     void* vfptr;
+    unsigned char __pad_0;  // 0x0
+    unsigned int ShapeButtonClass_field_0x04;  // 0x4
+    unsigned int ShapeButtonClass_field_0x08;  // 0x8
+    void* Constructor;  // 0x0 (no offset truth)
 };
 
 struct State {
@@ -575,10 +585,10 @@ struct State {
     void* vt_Anim;  // 0x0 (no offset truth)
 };
 
-    void* ClearAndFree2;  // 0x0 (no offset truth)
-    int Capacity;  // 0x8
 struct VectorClass {
     void* Items;  // 0x4
+    int Capacity;  // 0x8
+    void* ClearAndFree2;  // 0x0 (no offset truth)
     void* vfptr;
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730
@@ -600,19 +610,28 @@ struct VectorClass {
     void* vtable0;  // 0x0 (no offset truth)
     unsigned int * Construct(int a2, int a3);  // 0x477be0
     unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
+    void* vtable1;  // 0x0 (no offset truth)
 };
 
 struct VectorCursor_uint_DynamicVectorClass_uint {
     void* vfptr;
+    unsigned char __pad_0;  // 0x0
 };
 
 struct WinAPI {
     void* vfptr;
     static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites
+    void* lpVtbl;  // 0x0 (vtable slot)
 };
 
 struct WorldDominationTour {
     void* vfptr;
+    void* vt_GameOption;  // 0x0 (no offset truth)
+    void* vt_FlagGameOption;  // 0x0 (no offset truth)
+    void* vftable;  // 0x0 (no offset truth)
+    void* CampaignProperties;  // 0x0 (no offset truth)
+    void* Conflict;  // 0x0 (no offset truth)
+    void* GameOption;  // 0x0 (no offset truth)
 };
 
 struct _ {
@@ -627,4 +646,58 @@ struct _ {
 };
 
 
+
+struct _BlitPlainXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitPlainXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitPlainXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransDarkenZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransDarkenZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransDarken_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent25ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent25ZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent25ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent25_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent50ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent50ZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent50ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent50_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent75ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent75ZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent75ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransLucent75_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlatAlphaZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlatAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlatWriteAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransZRemapXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransZRemapXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTransZRemapXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTrans_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTranslucent50NonzeroAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTranslucent50ZeroAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _BlitTranslucentWriteAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _DynamicVectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransDarkenZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransDarkenZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransDarken_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent25ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent25ZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent25ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent25_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent50ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent50ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent50_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent75ZReadWarp_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent75ZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransLucent75_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransZRemapXlatAlpha_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransZRemapXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransZRemapXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _RLEBlitTransZRemapXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+struct _VectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
 } // namespace gamemd

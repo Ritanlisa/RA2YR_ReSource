@@ -47,13 +47,13 @@ void DisplayClass::vt_entry_B0() {
 // 0x4D2B20
 namespace gamemd {
 void FoggedObject_DrawVector::ddtor() {
-    if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4d2b2d*/
+    if ( *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 && IDA_BYTE1(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2b2d*/
     {
-      RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4d2b33*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x4d2b3b*/
+      RA2_OPDEL(*(void **)&this->FoggedObject_DrawVector_field_0x04); /*0x4d2b33*/
+      *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = 0; /*0x4d2b3b*/
     }
-    IDA_BYTE1(this->m_C) = 0; /*0x4d2b3e*/
-    this->m_8 = 0; /*0x4d2b41*/
+    IDA_BYTE1(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) = 0; /*0x4d2b3e*/
+    *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08 = 0; /*0x4d2b41*/
 }
 } // namespace gamemd
 
@@ -1178,7 +1178,7 @@ namespace gamemd {
 int FoggedObject_DrawVector::Seek(int a2, int a3) {
     int v3; // edx
 
-    v3 = *(unsigned int *)&this->m_1[3] + 16 * a3; /*0x4d298a*/
+    v3 = *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 + 16 * a3; /*0x4d298a*/
     *(unsigned int *)a2 = *(unsigned int *)v3; /*0x4d2992*/
     *(unsigned int *)(a2 + 4) = *(unsigned int *)(v3 + 4); /*0x4d2997*/
     *(unsigned char *)(a2 + 8) = *(unsigned char *)(v3 + 8); /*0x4d299d*/
@@ -1206,7 +1206,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
     if ( a2 ) /*0x4d2a1e*/
     {
       v5 = a3; /*0x4d2a24*/
-      IDA_LOBYTE(this->m_C) = 0; /*0x4d2a28*/
+      IDA_LOBYTE(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) = 0; /*0x4d2a28*/
       if ( a3 ) /*0x4d2a2d*/
       {
         if ( a2 - 1 >= 0 ) /*0x4d2a6a*/
@@ -1252,12 +1252,12 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
           v5 = 0; /*0x4d2a61*/
         }
       }
-      IDA_LOBYTE(this->m_C) = 1; /*0x4d2a83*/
+      IDA_LOBYTE(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) = 1; /*0x4d2a83*/
       if ( v5 ) /*0x4d2a87*/
       {
-        if ( *(unsigned int *)&this->m_1[3] ) /*0x4d2a92*/
+        if ( *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 ) /*0x4d2a92*/
         {
-          m_8 = this->m_8; /*0x4d2a97*/
+          m_8 = *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08; /*0x4d2a97*/
           if ( a2 < m_8 ) /*0x4d2a9c*/
             m_8 = a2; /*0x4d2a9e*/
           if ( m_8 > 0 ) /*0x4d2aa2*/
@@ -1265,7 +1265,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
             v13 = 0; /*0x4d2aa4*/
             do /*0x4d2aca*/
             {
-              v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + v13); /*0x4d2aab*/
+              v14 = (unsigned int *)(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 + v13); /*0x4d2aab*/
               v15 = &v5[v13]; /*0x4d2aad*/
               v13 += 16; /*0x4d2ab0*/
               --m_8; /*0x4d2ab3*/
@@ -1277,15 +1277,15 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
             while ( m_8 ); /*0x4d2aca*/
             v3 = a2; /*0x4d2acc*/
           }
-          if ( IDA_BYTE1(this->m_C) ) /*0x4d2ad2*/
+          if ( IDA_BYTE1(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2ad2*/
           {
-            RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4d2adb*/
-            *(unsigned int *)&this->m_1[3] = 0; /*0x4d2ae3*/
+            RA2_OPDEL(*(void **)&this->FoggedObject_DrawVector_field_0x04); /*0x4d2adb*/
+            *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = 0; /*0x4d2ae3*/
           }
         }
-        *(unsigned int *)&this->m_1[3] = v5; /*0x4d2aee*/
-        this->m_8 = v3; /*0x4d2af4*/
-        IDA_BYTE1(this->m_C) = a3 == 0; /*0x4d2af7*/
+        *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = v5; /*0x4d2aee*/
+        *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08 = v3; /*0x4d2af4*/
+        IDA_BYTE1(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) = a3 == 0; /*0x4d2af7*/
         return 1; /*0x4d2afd*/
       }
       else
@@ -1308,13 +1308,13 @@ int FoggedObject_DrawVector::Read(unsigned int *a2) {
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->m_C) ) /*0x4d2b50*/
+    if ( !IDA_LOBYTE(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2b50*/
       return 0; /*0x4d2b5e*/
-    m_8 = this->m_8; /*0x4d2b64*/
+    m_8 = *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08; /*0x4d2b64*/
     result = 0; /*0x4d2b67*/
     if ( m_8 <= 0 ) /*0x4d2b6b*/
       return -1; /*0x4d2b8c*/
-    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2b71*/
+    for ( i = *(unsigned int **)&this->FoggedObject_DrawVector_field_0x04; *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2b71*/
     {
       if ( ++result >= m_8 ) /*0x4d2b8a*/
         return -1; /*0x4d2b8a*/
@@ -1326,8 +1326,8 @@ int FoggedObject_DrawVector::Read(unsigned int *a2) {
 // 0x4D2BA0
 namespace gamemd {
 unsigned int FoggedObject_DrawVector::Write(int a2) {
-    if ( IDA_LOBYTE(this->m_C) ) /*0x4d2ba0*/
-      return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x4d2bb5*/
+    if ( IDA_LOBYTE(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2ba0*/
+      return (unsigned int)(a2 - *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04) >> 4; /*0x4d2bb5*/
     else
       return 0; /*0x4d2ba7*/
 }

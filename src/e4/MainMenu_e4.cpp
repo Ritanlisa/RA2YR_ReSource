@@ -60,7 +60,7 @@ long MainMenu_Screen(void * a1, void * a2)
       if ( g_DisplayWidth == 640 ) /*0x531d9a*/
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
       else
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM, unsigned int a1, unsigned int a2)aRa2tsL); /*0x531db0*/
+        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
     }
     do /*0x531f04*/
     {
@@ -101,7 +101,7 @@ long MainMenu_Screen(void * a1, void * a2)
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
-              if ( (int, unsigned int a1, unsigned int a2)v9 >= (int)off_825C6C ) /*0x531ea2*/
+              if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
             *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/

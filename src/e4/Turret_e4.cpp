@@ -192,7 +192,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 
   Matrix3x4::Identity(&v8); /*0x55a739*/
   v3 = (gamemd::LocomotionClass *)(a1); /*0x55a73e*/
-  a1 = (LocomotionClass *)((((unsigned int)((*((ProgressTimer *)((ProgressTimer *)a1->((unsigned int *)Owner)[0]))->GetValue(&v7) >> 10) + 1) >> 1) /*0x55a763*/
+  a1 = (LocomotionClass *)((((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)a1->Owner)[0]))->GetValue(&v7) >> 10) + 1) >> 1) /*0x55a763*/
                             & 0x1F)
                            - 8);
   v6 = (double)(int)a1 * -0.1963495408493621; /*0x55a776*/
@@ -201,7 +201,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
   if ( a3 && *a3 != -1 ) /*0x55a78b*/
   {
     *a3 *= 32; /*0x55a790*/
-    *v4 |= ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)v3->((unsigned int *)Owner)[0]))->GetValue(&a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
+    *v4 |= ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v3->Owner)[0]))->GetValue(&a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
   }
   result = a2; /*0x55a7b6*/
   qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/

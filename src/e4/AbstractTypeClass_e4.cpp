@@ -202,11 +202,11 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
   int v3; // eax
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_AbstractTypeClass; /*0x410c3d*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c43*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c4a*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c51*/
-  v5 = (gamemd::AbstractTypeClass *)(Block); /*0x410c5f*/
+  this->vtable1 = &vt_AbstractTypeClass; /*0x410c3d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c43*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c4a*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c51*/
+  v5 = (gamemd::AbstractTypeClass *)(this); /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/
   {
@@ -217,10 +217,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
     }
     while ( v3 < dword_A8E978 ); /*0x410c96*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x410c9a*/
+  AbstractClass::DTOR((AbstractClass *)this); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
-    __3_YAXPAX_Z(Block); /*0x410ca7*/
-  return Block; /*0x410cb1*/
+    __3_YAXPAX_Z(this); /*0x410ca7*/
+  return this; /*0x410cb1*/
 
 }
 } // namespace gamemd

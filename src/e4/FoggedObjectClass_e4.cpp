@@ -1114,12 +1114,12 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 
   v3 = *(void **)&this->m_1[3]; /*0x4d2d63*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x4d2d70*/
+  if ( v3 && BYTE1(this->qC) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x4d2d80*/
   }
-  BYTE1(this->m_C) = 0; /*0x4d2d8b*/
+  BYTE1(this->qC) = 0; /*0x4d2d8b*/
   *(unsigned int *)&Block->__pad_5[3] = 0; /*0x4d2d91*/
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
     __3_YAXPAX_Z(this); /*0x4d2d9b*/
@@ -1165,7 +1165,7 @@ namespace gamemd {
 int FoggedObjectClass_42::Seek(int a2, void *a2_2, void *a3_1)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e024a*/
+  return *(unsigned int *)(*(unsigned int *)&this->Items + 4 * a2); /*0x4e024a*/
 
 }
 } // namespace gamemd
@@ -1186,7 +1186,7 @@ char FoggedObjectClass_42::AddRef(int a2)
     v3 = 0; /*0x4e058f*/
     if ( m_8 <= 0 ) /*0x4e0593*/
       return 1; /*0x4e05b3*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4e0595*/
+    v4 = *(unsigned int **)&this->Items; /*0x4e0595*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4e059b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4e05a4*/
     {
@@ -1220,20 +1220,20 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
     LOBYTE(this->IsInitialized) = 1; /*0x4e05f6*/
     if ( v4 ) /*0x4e05fa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4e0605*/
+      if ( *(unsigned int *)&this->Items ) /*0x4e0605*/
       {
         m_8 = this->Capacity; /*0x4e060c*/
         if ( a2 < m_8 ) /*0x4e0611*/
           m_8 = a2; /*0x4e0613*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e0619*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Items + 4 * i - 4) ) /*0x4e0619*/
           ++i; /*0x4e061e*/
         if ( BYTE1(this->IsInitialized) ) /*0x4e062b*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e0636*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4e063e*/
+          __3_YAXPAX_Z(*(void **)&this->Items); /*0x4e0636*/
+          *(unsigned int *)&this->Items = 0; /*0x4e063e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x4e0647*/
+      *(unsigned int *)&this->Items =(unsigned int)v4; /*0x4e0647*/
       this->Capacity = a2; /*0x4e064f*/
       BYTE1(this->IsInitialized) = a3 == 0; /*0x4e0652*/
       return 1; /*0x4e0658*/
@@ -1257,13 +1257,13 @@ namespace gamemd {
 void FoggedObjectClass_42::ddtor(void *a1_1, void *a2_1)
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e067d*/
+  if ( *(unsigned int *)&this->Items && BYTE1(this->IsInitialized) ) /*0x4e067d*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e0683*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4e068b*/
+    __3_YAXPAX_Z(*(void **)&this->Items); /*0x4e0683*/
+    *(unsigned int *)&this->Items = 0; /*0x4e068b*/
   }
-  BYTE1(this->m_C) = 0; /*0x4e068e*/
-  this->m_8 = 0; /*0x4e0691*/
+  BYTE1(this->IsInitialized) = 0; /*0x4e068e*/
+  this->Capacity = 0; /*0x4e0691*/
 
 }
 } // namespace gamemd
@@ -1277,13 +1277,13 @@ int FoggedObjectClass_42::Read(unsigned int * a2, void *a2_2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4e06a0*/
+  if ( !LOBYTE(this->IsInitialized) ) /*0x4e06a0*/
     return 0; /*0x4e06a8*/
-  m_8 = this->m_8; /*0x4e06ae*/
+  m_8 = this->Capacity; /*0x4e06ae*/
   result = 0; /*0x4e06b1*/
   if ( m_8 <= 0 ) /*0x4e06b5*/
     return -1; /*0x4e06cc*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e06bb*/
+  for ( i = *(unsigned int **)&this->Items; *i != *a2; ++i ) /*0x4e06bb*/
   {
     if ( ++result >= m_8 ) /*0x4e06ca*/
       return -1; /*0x4e06ca*/
@@ -1298,8 +1298,8 @@ namespace gamemd {
 unsigned int FoggedObjectClass_42::Write(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x4e06e0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e06f5*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x4e06e0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->Items) >> 2; /*0x4e06f5*/
   else
     return 0; /*0x4e06e7*/
 

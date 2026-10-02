@@ -184,6 +184,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_1;  // supplied (C2039)
     unsigned int *m_8;  // supplied (C2039)
     unsigned int *m_C;  // supplied (C2039)
+    unsigned int u32_188;  // 0x188
+    unsigned int u32_18C;  // 0x18C
+    unsigned int u32_3F0;  // 0x3F0
 };
 
 // ============================================================================

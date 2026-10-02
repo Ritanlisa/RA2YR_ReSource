@@ -221,12 +221,12 @@ BombClass * BombClass::CopyTo(char a2)
   int v3; // eax
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_BombClass; /*0x4393f7*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
-  AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
-  v5 = (gamemd::BombClass *)(Block); /*0x439427*/
+  this->vtable1 = &vt_BombClass; /*0x4393f7*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
+  AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
+  v5 = (gamemd::BombClass *)(this); /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))((int *)&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
@@ -237,10 +237,10 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR((gamemd::AbstractClass *)Block); /*0x439462*/
+  AbstractClass::DTOR((gamemd::AbstractClass *)this); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(Block); /*0x43946f*/
-  return Block; /*0x439479*/
+    __3_YAXPAX_Z(this); /*0x43946f*/
+  return this; /*0x439479*/
 
 }
 } // namespace gamemd

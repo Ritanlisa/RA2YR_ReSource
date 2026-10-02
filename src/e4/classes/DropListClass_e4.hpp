@@ -33,6 +33,12 @@ struct DropListClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
+    unsigned int q0104;  // 0x104
+    unsigned int q0B0;  // 0xB0
+    unsigned int u32_43;  // 0x43
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_45;  // 0x45
+    unsigned int u32_A8;  // 0xA8
 // --- flat members (END) ---
     int COMStub();
     unsigned int u32_C4;  // 0xC4

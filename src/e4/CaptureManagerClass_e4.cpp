@@ -141,7 +141,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
       {
         overloadCount = this->overloadCount; /*0x471adc*/
         this->overloadLimit = 10; /*0x471adf*/
-        (*(void (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)overloadCount /*0x471b04*/
+        (*(void (**)(int))(*(unsigned int *)overloadCount /*0x471b04*/
                                                                                            + 364))(
           overloadCount,
           &v23,
@@ -318,7 +318,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       if ( *(unsigned int *)((unsigned int)(a1)+ 52) < v14 /*0x471e18*/
         || (*(unsigned char *)(a1 + 49) || !v14)
         && (v15 = *(unsigned int *)(a1 + 56), v15 > 0)
-        && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
+        && (*(uint8_t (**)(int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
       {
         v16 = *(unsigned int *)((unsigned int)(a1)+ 52); /*0x471e1f*/
         v17 = *(unsigned int *)((unsigned int)(a1)+ 40); /*0x471e22*/

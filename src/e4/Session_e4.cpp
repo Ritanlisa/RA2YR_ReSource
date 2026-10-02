@@ -265,7 +265,7 @@ int Session::GetPlayerOption()
 
   result = -2; /*0x69b706*/
   if ( this->field_178 != (unsigned int)(void *)-2 ) /*0x69b70d*/
-    return (int)this->(unsigned int)(field_174); /*0x69b70f*/
+    return (int)(unsigned int)this->field_174; /*0x69b70f*/
   return result; /*0x69b715*/
 
 }
@@ -279,7 +279,7 @@ int Session::GetPlayerColor()
 
   result = -2; /*0x69b726*/
   if ( this->field_160 != (unsigned int)(void *)-2 ) /*0x69b72d*/
-    return (int)this->(unsigned int)(field_15C); /*0x69b72f*/
+    return (int)(unsigned int)this->field_15C; /*0x69b72f*/
   return result; /*0x69b735*/
 
 }

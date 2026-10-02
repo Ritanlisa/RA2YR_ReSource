@@ -62,6 +62,7 @@ struct WinsockInterface {
     unsigned char u8_3F068;
     unsigned int Audio;
     unsigned int Timer;
+    unsigned int m_3F068;  // 0x3F068
 // --- flat members (END) ---
     void * ProcessPacket(int a2);  // 0x770270
     int Init();  // 0x7B1DE0

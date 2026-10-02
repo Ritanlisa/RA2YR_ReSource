@@ -34,6 +34,8 @@ struct E4Recv_4E6070 {
     unsigned int q5444;  // 0x5444
     unsigned int q5460;  // 0x5460
     unsigned int q6408;  // 0x6408
+    void* bombVisible;  // 0x0 (no offset truth)
+    unsigned int health;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_4E6070();  // 0x4E6070
 };

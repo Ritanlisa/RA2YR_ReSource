@@ -39,7 +39,7 @@ int Hash::InsertOrdered(void* table, const void* entry)
   }
   else if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] ) /*0x4f442c*/
   {
-    result = ((int)(*(int (**)(int, unsigned int))(*(unsigned int *)entry + 16)))(entry, *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]); 
+    result = ((int)(*(int (**)(int))(*(unsigned int *)entry + 16)))(entry, *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]); 
     IDA_LOBYTE(result) = 1; /*0x4f4436*/
   }
   else
@@ -75,7 +75,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
       while ( v6 ); /*0x69d9bb*/
     }
     data = (const void *)((int)v5);
-    return (int, unsigned int a1, unsigned int a2)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
+    return (int)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
   }
 }
 // 0x69d9e0
@@ -235,7 +235,7 @@ void SHA1::Transform(int *a1, unsigned int *a2)
     v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
     v11 = v31 + 1; /*0x69dc6e*/
     v12 = v15; /*0x69dc72*/
-    v21 = (unsigned int, unsigned int a2)(v31 + 1) < 0x50; /*0x69dc74*/
+    v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
     v15 = v20; /*0x69dc77*/
     ++v31; /*0x69dc79*/
     ++v29; /*0x69dc7d*/

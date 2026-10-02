@@ -141,13 +141,13 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370c4*/
-  Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370ca*/
-  Block->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
-  Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
-  if ( (uint8_t)((ObjectClass *)(Block))->Undeploy() ) /*0x4370df*/
-    ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)Block); /*0x4370ee*/
-  v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
+  this->vtable1 = (int)&vt_BuildingLightClass; /*0x4370c4*/
+  this->vtable1 = (int)&vt_BuildingLightClass; /*0x4370ca*/
+  this->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
+  this->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
+  if ( (uint8_t)((ObjectClass *)(this))->Undeploy() ) /*0x4370df*/
+    ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)this); /*0x4370ee*/
+  v5 = (gamemd::BuildingLightClass *)(this); /*0x437103*/
   v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))((int *)&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
@@ -158,10 +158,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ((ObjectClass *)(Block))->Dtor(); /*0x43713e*/
+  ((ObjectClass *)(this))->Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
-    __3_YAXPAX_Z(Block); /*0x43714b*/
-  return Block; /*0x437155*/
+    __3_YAXPAX_Z(this); /*0x43714b*/
+  return this; /*0x437155*/
 
 }
 } // namespace gamemd

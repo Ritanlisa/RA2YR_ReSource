@@ -34,6 +34,7 @@ struct ArrayClass {
     unsigned int field_14;
     unsigned int field_8;
     unsigned int field_94;
+    unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     int GetAt_Wrap(int a2);  // 0x636E60
 };

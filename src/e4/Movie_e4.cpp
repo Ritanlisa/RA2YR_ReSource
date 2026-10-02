@@ -242,7 +242,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       if ( a7 ) /*0x5bedc7*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
-        Frame::Present((int, unsigned int a8)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
+        Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
       ((BinkMovie *)(&v23))->Close(Str); /*0x5bedec*/
       if ( a8 == (void *)(1) ) /*0x5bedf9*/

@@ -79,6 +79,8 @@ struct IPXInterfaceClass {
     unsigned int __pad_04C;
     unsigned int q048;
     unsigned int u32_204;
+    unsigned int m_C;  // 0xC
+    unsigned int m_8;  // 0x8
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);

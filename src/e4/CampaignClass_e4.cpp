@@ -422,12 +422,12 @@ CampaignClass * CampaignClass::DTOR(char a2)
   int v3; // eax
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_CampaignClass; /*0x46d096*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d09c*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0a3*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0aa*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x46d0b1*/
-  v5 = (gamemd::CampaignClass *)(Block); /*0x46d0c6*/
+  this->vtable1 = &vt_CampaignClass; /*0x46d096*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d09c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0a3*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d0aa*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x46d0b1*/
+  v5 = (gamemd::CampaignClass *)(this); /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
   if ( v3 != -1 && v3 < dword_A83D08 && v3 < --dword_A83D08 ) /*0x46d0e5*/
   {
@@ -438,10 +438,10 @@ CampaignClass * CampaignClass::DTOR(char a2)
     }
     while ( v3 < dword_A83D08 ); /*0x46d0fd*/
   }
-  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x46d101*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
-    __3_YAXPAX_Z(Block); /*0x46d10e*/
-  return Block; /*0x46d118*/
+    __3_YAXPAX_Z(this); /*0x46d10e*/
+  return this; /*0x46d118*/
 
 }
 } // namespace gamemd

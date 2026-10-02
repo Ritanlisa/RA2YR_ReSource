@@ -8,7 +8,7 @@
 
 // 0x753580
 namespace gamemd {
-public:
+// R-fix: removed stray public:
 public:
     int ChronoScreenEffect::DecrementCounter(void *a1, void *a2)
 {

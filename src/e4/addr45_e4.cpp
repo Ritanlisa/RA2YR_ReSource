@@ -70,7 +70,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   int *v25; // ecx
   char v26[64]; // [esp+10h] [ebp-40h] BYREF
 
-  Strength = a1->((unsigned int *)Type)[0]; /*0x451412*/
+  Strength = ((unsigned int *)a1->Type)[0]; /*0x451412*/
   if ( ((unsigned int *)a1)[0] != Strength ) /*0x45141a*/
   {
     ((unsigned int *)a1)[0] = Strength; /*0x451420*/

@@ -13,6 +13,7 @@ struct E4Recv_6A6AF0 {
     unsigned int q3988;  // 0x3988
     unsigned int M21404;  // 0x539C
     unsigned int AbstractClass;
+    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Vf56(int,  ...);    // G6 vtable slot dispatch
     int sub_6A6AF0(ObjectClass * aP1, int a3);  // 0x6A6AF0

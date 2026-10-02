@@ -17,6 +17,7 @@ struct E4Recv_47AA00 {
     unsigned int q1634;  // 0x1634
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
+    void* BufferIOFileClass;  // 0x0 (base-subobject vocab, no offset truth)
 // --- flat members (END) ---
     CDFileClass * sub_47AA00(char ** a2);  // 0x47AA00
 };

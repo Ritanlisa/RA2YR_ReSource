@@ -251,11 +251,11 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
   int v3; // eax
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_AirstrikeClass; /*0x41dd5d*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd63*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
-  v5 = (gamemd::AirstrikeClass *)(Block); /*0x41dd7f*/
+  this->vtable1 = &vt_AirstrikeClass; /*0x41dd5d*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd63*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
+  v5 = (gamemd::AirstrikeClass *)(this); /*0x41dd7f*/
   v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
@@ -266,10 +266,10 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x41ddba*/
+  AbstractClass::DTOR((AbstractClass *)this); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
-    __3_YAXPAX_Z(Block); /*0x41ddc7*/
-  return Block; /*0x41ddd1*/
+    __3_YAXPAX_Z(this); /*0x41ddc7*/
+  return this; /*0x41ddd1*/
 
 }
 } // namespace ra2
@@ -472,7 +472,7 @@ char AirstrikeClass::StartMission(int * a2)
 
   result = (char)a2; /*0x41d835*/
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
-    return AirstrikeClass::SpawnAircraft(int a1,a2) ; /*0x41d83c*/
+    return AirstrikeClass::SpawnAircraft(a2) ; /*0x41d83c*/
   if ( a2 != *(int **)((char *)a1 + 80) ) /*0x41d847*/
     return A    return AirstrikeClass::ReassignTarget(a1,(void *)((int)a2)); 
   return result; /*0x41d841*/

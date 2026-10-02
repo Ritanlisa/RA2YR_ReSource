@@ -109,6 +109,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int WriteIntArray(int a1);  // 0x67a4a0 -- Stream::WriteIntArray
     // === SYMBOL-ANCHOR (END) ===
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_6C;  // 0x6C
+    unsigned int u32_70;  // 0x70
 };
 
 // ============================================================================
@@ -342,6 +345,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* QueryInterface(int a1);  // 0x7B0440
     // --- gap2 auto-generated stub declarations (END) ---
+    unsigned char __pad_0;  // 0x0
 };
 // 4 methods in IDA
 class Text

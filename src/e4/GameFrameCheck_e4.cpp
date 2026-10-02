@@ -35,7 +35,7 @@
 
 // 0x6863E0
 namespace gamemd {
-int sub_6863E0(, void * a1, void * a2)
+int sub_6863E0(void * a1, void * a2)
 {
   void **p_vtable2; // esi
   int Ticks; // eax
@@ -138,13 +138,13 @@ AbstractClass * * sub_686570()
   ((Audio*)(Audio *)g_MixerState)->WaitForCallback(); /*0x686621*/
   v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68662b*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686634*/
-        v4 += ((gamemd::Timer *)this->this)->GetTicks() - g_abs_887338;
+        v4 += ((gamemd::Timer *)this)->GetTicks() - g_abs_887338;
   v6 = v5 + 300; /*0x686649*/
     while ( (uint8_t)((Audio *)0)->IsPlaying() )
   {
     v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68665d*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686666*/
-            v6 += ((gamemd::Timer *)this->this)->GetTicks() - g_abs_887338;
+            v6 += ((gamemd::Timer *)this)->GetTicks() - g_abs_887338;
     if ( v6 <= v7 ) /*0x68667c*/
       break; /*0x68667c*/
         ((Event *)0)->Dispatch();

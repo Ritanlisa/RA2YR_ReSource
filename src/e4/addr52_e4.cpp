@@ -328,7 +328,7 @@ LABEL_29:
         }
         a2 = v16; /*0x528341*/
         if ( (uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch((int *)&a2) ) /*0x528348*/
-          p_vtable1 = &this->((unsigned int *)attachedBomb)[0]; /*0x528354*/
+          p_vtable1 = &((unsigned int *)this->attachedBomb)[0]; /*0x528354*/
         else
           p_vtable1 = (void **)&unk_B7882C; /*0x528359*/
         vtable2 = (unsigned int *)(*p_vtable1); /*0x52835e*/

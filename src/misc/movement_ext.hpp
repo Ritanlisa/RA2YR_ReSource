@@ -70,6 +70,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int StepFootClass(int a1);  // 0x5164D0
     int Begin();  // 0x6F9E50
     // --- gap2 auto-generated stub declarations (END) ---
+    unsigned int q01C;  // 0x1C
+    void *ptr_24;  // 0x24
 };
 
 // ============================================================================

@@ -637,14 +637,14 @@ int SaveGame::WriteObject(int a1, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe03*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe03*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67fe09*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67fe0d*/
   if ( result >= 0 ) /*0x67fe12*/
@@ -685,14 +685,14 @@ HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_67FE70::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe83*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe83*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67fe89*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67fe8d*/
   if ( result >= 0 ) /*0x67fe92*/
@@ -733,14 +733,14 @@ HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_67FEF0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff03*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff03*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67ff09*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67ff0d*/
   if ( result >= 0 ) /*0x67ff12*/
@@ -781,14 +781,14 @@ HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_67FF70::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff83*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67ff83*/
   v9 = *(unsigned int *)(a2 + 16); /*0x67ff89*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67ff8d*/
   if ( result >= 0 ) /*0x67ff92*/
@@ -829,14 +829,14 @@ HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_67FFF0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680003*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680003*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680009*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68000d*/
   if ( result >= 0 ) /*0x680012*/
@@ -877,14 +877,14 @@ HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680070::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680083*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680083*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680089*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68008d*/
   if ( result >= 0 ) /*0x680092*/
@@ -925,14 +925,14 @@ HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6800F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680103*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680103*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680109*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68010d*/
   if ( result >= 0 ) /*0x680112*/
@@ -973,14 +973,14 @@ HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680170::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680183*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680183*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680189*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68018d*/
   if ( result >= 0 ) /*0x680192*/
@@ -1021,14 +1021,14 @@ HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6801F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680203*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680203*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680209*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68020d*/
   if ( result >= 0 ) /*0x680212*/
@@ -1069,14 +1069,14 @@ HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680270::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680283*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680283*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680289*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68028d*/
   if ( result >= 0 ) /*0x680292*/
@@ -1117,14 +1117,14 @@ HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6802F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680303*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680303*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680309*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68030d*/
   if ( result >= 0 ) /*0x680312*/
@@ -1165,14 +1165,14 @@ HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680370::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680383*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680383*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680389*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68038d*/
   if ( result >= 0 ) /*0x680392*/
@@ -1213,14 +1213,14 @@ HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6803F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680403*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680403*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680409*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68040d*/
   if ( result >= 0 ) /*0x680412*/
@@ -1261,14 +1261,14 @@ HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680470::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680483*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680483*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680489*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68048d*/
   if ( result >= 0 ) /*0x680492*/
@@ -1309,14 +1309,14 @@ HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6804F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680503*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680503*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680509*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68050d*/
   if ( result >= 0 ) /*0x680512*/
@@ -1357,14 +1357,14 @@ HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680570::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680583*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680583*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680589*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68058d*/
   if ( result >= 0 ) /*0x680592*/
@@ -1405,14 +1405,14 @@ HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_6805F0::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680603*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680603*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680609*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68060d*/
   if ( result >= 0 ) /*0x680612*/
@@ -1453,14 +1453,14 @@ HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
   LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
   int v9; // [esp+20h] [ebp-4h] BYREF
 
-  lpVtbl =(gamemd::SaveGame_Start_680670::IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680683*/
+  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x680683*/
   v9 = *(unsigned int *)(a2 + 16); /*0x680689*/
   result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x68068d*/
   if ( result >= 0 ) /*0x680692*/
@@ -1501,7 +1501,7 @@ HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1549,7 +1549,7 @@ HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1597,7 +1597,7 @@ HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1645,7 +1645,7 @@ HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1693,7 +1693,7 @@ HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1741,7 +1741,7 @@ HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1789,7 +1789,7 @@ HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1837,7 +1837,7 @@ HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1885,7 +1885,7 @@ HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1933,7 +1933,7 @@ HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -1981,7 +1981,7 @@ HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2029,7 +2029,7 @@ HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2077,7 +2077,7 @@ HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2125,7 +2125,7 @@ HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2173,7 +2173,7 @@ HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2221,7 +2221,7 @@ HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax
@@ -2269,7 +2269,7 @@ HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
 {
-  struct IStreamVtbl *lpVtbl; // ecx
+  IStreamVtbl *lpVtbl; // ecx
   HRESULT result; // eax
   int v6; // esi
   int v7; // eax

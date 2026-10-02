@@ -27,6 +27,8 @@ struct IPXConnClass {
     unsigned int u32_58;
     unsigned int u32_5C;
     unsigned int u32_64;
+    unsigned int q130;  // 0x130
+    unsigned int PacketsSent0;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9);
     static double initConnection(int a2, int a3, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a1);
