@@ -15214,3 +15214,91 @@ extern int dword_B0FBA0;  // data: 0xB0FBA0
 extern int g_DDraw_PrimarySurface;
 extern int word_AA06D0;  // data: 0xAA06D0
 extern int word_AA06D2;  // data: 0xAA06D2
+
+// G42.32 M C2065 data supply: CRT statics (per-name guarded, idempotent):
+extern double _RT1;   // G42.32: x87 st0 result placeholder (asm-debt vocab, no addr)
+extern double _ET1;   // G42.32: x87 st1 result placeholder
+extern double _ST6;   // G42.32: x87 st(6) pseudo-register (CIpow body read/write)
+extern void* __0Iostream_init_QAE_XZ_2;  // CRT static, fn-ptr cast use
+extern void* __0Iostream_init_QAE_XZ_6;  // CRT static, fn-ptr cast use
+extern void* __0Iostream_init_QAE_XZ_8;  // CRT static, fn-ptr cast use
+extern void* __strgtold12;  // CRT static
+extern void* __3_YAXPAX_Z;  // CRT static (operator delete mangled)
+
+// G42.32 M C2065 data supply: DataGlobal raw globals, bare/addr use-forms only
+// (member-form DataGlobal_008291B8 excluded -- needs typed struct, adjudication)
+extern unsigned int DataGlobal_00829174;  // data: 0x00829174
+extern unsigned int DataGlobal_00829184;  // data: 0x00829184
+extern unsigned int DataGlobal_00829194;  // data: 0x00829194
+extern unsigned int DataGlobal_008291A4;  // data: 0x008291A4
+extern unsigned int DataGlobal_008291B0;  // data: 0x008291B0
+extern unsigned int DataGlobal_008291B8;  // data: 0x008291B8
+extern unsigned int DataGlobal_008292B4;  // data: 0x008292B4
+extern unsigned int DataGlobal_008292C4;  // data: 0x008292C4
+extern unsigned int DataGlobal_008292D4;  // data: 0x008292D4
+extern unsigned int DataGlobal_008292E8;  // data: 0x008292E8
+extern unsigned int DataGlobal_008292FC;  // data: 0x008292FC
+extern unsigned int DataGlobal_0082930C;  // data: 0x0082930C
+extern unsigned int DataGlobal_0082931C;  // data: 0x0082931C
+extern unsigned int DataGlobal_00829330;  // data: 0x00829330
+extern unsigned int DataGlobal_00829344;  // data: 0x00829344
+extern unsigned int DataGlobal_008295F4;  // data: 0x008295F4
+extern unsigned int DataGlobal_00829600;  // data: 0x00829600
+extern unsigned int DataGlobal_0082960C;  // data: 0x0082960C
+extern unsigned int DataGlobal_008358FC;  // data: 0x008358FC
+extern unsigned int DataGlobal_00835908;  // data: 0x00835908
+extern unsigned int DataGlobal_00835920;  // data: 0x00835920
+extern unsigned int DataGlobal_008359AC;  // data: 0x008359AC
+extern unsigned int DataGlobal_008359B8;  // data: 0x008359B8
+extern unsigned int DataGlobal_008359C8;  // data: 0x008359C8
+extern unsigned int DataGlobal_008359D4;  // data: 0x008359D4
+extern unsigned int DataGlobal_008359E4;  // data: 0x008359E4
+extern unsigned int DataGlobal_008359F0;  // data: 0x008359F0
+extern unsigned int DataGlobal_00835A00;  // data: 0x00835A00
+extern unsigned int DataGlobal_008360F8;  // data: 0x008360F8
+extern unsigned int DataGlobal_00836104;  // data: 0x00836104
+extern unsigned int DataGlobal_00836110;  // data: 0x00836110
+extern unsigned int DataGlobal_0083611C;  // data: 0x0083611C
+extern unsigned int DataGlobal_00836128;  // data: 0x00836128
+extern unsigned int DataGlobal_00836164;  // data: 0x00836164
+extern unsigned int DataGlobal_00836174;  // data: 0x00836174
+extern unsigned int DataGlobal_00836184;  // data: 0x00836184
+extern unsigned int DataGlobal_00836190;  // data: 0x00836190
+extern unsigned int DataGlobal_0083619C;  // data: 0x0083619C
+extern unsigned int DataGlobal_008361A8;  // data: 0x008361A8
+extern unsigned int DataGlobal_008361B4;  // data: 0x008361B4
+extern unsigned int DataGlobal_008361C0;  // data: 0x008361C0
+extern unsigned int DataGlobal_008361CC;  // data: 0x008361CC
+extern unsigned int DataGlobal_008361D8;  // data: 0x008361D8
+extern unsigned int DataGlobal_008361E4;  // data: 0x008361E4
+extern unsigned int DataGlobal_008361F0;  // data: 0x008361F0
+extern unsigned int DataGlobal_008361FC;  // data: 0x008361FC
+extern unsigned int DataGlobal_00836208;  // data: 0x00836208
+extern unsigned int DataGlobal_00836214;  // data: 0x00836214
+extern unsigned int DataGlobal_00836220;  // data: 0x00836220
+extern unsigned int DataGlobal_0083622C;  // data: 0x0083622C
+extern unsigned int DataGlobal_0083623C;  // data: 0x0083623C
+extern unsigned int DataGlobal_0083624C;  // data: 0x0083624C
+extern unsigned int DataGlobal_0083625C;  // data: 0x0083625C
+extern unsigned int DataGlobal_0083626C;  // data: 0x0083626C
+extern unsigned int DataGlobal_00836278;  // data: 0x00836278
+extern unsigned int DataGlobal_00836284;  // data: 0x00836284
+extern unsigned int DataGlobal_00836290;  // data: 0x00836290
+extern unsigned int DataGlobal_0083629C;  // data: 0x0083629C
+extern unsigned int DataGlobal_008362A8;  // data: 0x008362A8
+extern unsigned int DataGlobal_008362B4;  // data: 0x008362B4
+extern unsigned int DataGlobal_008362C0;  // data: 0x008362C0
+extern unsigned int DataGlobal_008362CC;  // data: 0x008362CC
+extern unsigned int DataGlobal_008362DC;  // data: 0x008362DC
+extern unsigned int DataGlobal_008362E8;  // data: 0x008362E8
+extern unsigned int DataGlobal_008362F8;  // data: 0x008362F8
+extern unsigned int DataGlobal_00836308;  // data: 0x00836308
+extern unsigned int DataGlobal_00836318;  // data: 0x00836318
+extern unsigned int DataGlobal_00836328;  // data: 0x00836328
+extern unsigned int DataGlobal_00836334;  // data: 0x00836334
+extern unsigned int DataGlobal_008363AC;  // data: 0x008363AC
+extern unsigned int DataGlobal_008363B8;  // data: 0x008363B8
+extern unsigned int DataGlobal_008363C4;  // data: 0x008363C4
+extern unsigned int DataGlobal_0089DC50;  // data: 0x0089DC50
+extern unsigned int DataGlobal_0089DC54;  // data: 0x0089DC54
+extern unsigned int DataGlobal_00A8B8C2;  // data: 0x00A8B8C2

@@ -71,6 +71,7 @@ struct DynamicVectorClass {
 
 struct FractalNoise {
     void* vfptr;
+    static void Dtor(void *aP0);  // G42.32 R5-style static sync
 };
 
 struct Gap2Recv_402F60 {

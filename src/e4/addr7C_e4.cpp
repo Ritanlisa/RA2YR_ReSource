@@ -4115,12 +4115,12 @@ void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t Si
 namespace gamemd {
 int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
 {
-  off_87C4D4[0] = (void (__noreturn *)())_cropzeros; /*0x7c8f63*/
-  off_87C4D0[0] = (void (__noreturn *)())_cfltcvt; /*0x7c8f6d*/
-  off_87C4D8[0] = (void (__noreturn *)())_fassign; /*0x7c8f72*/
-  off_87C4DC[0] = (void (__noreturn *)())_forcdecpt; /*0x7c8f7c*/
-  off_87C4E0[0] = (void (__noreturn *)())_positive; /*0x7c8f86*/
-  off_87C4E4 = (void (__noreturn *)())_cfltcvt; /*0x7c8f90*/
+  off_87C4D4[0] = (void (*)())_cropzeros; /*0x7c8f63*/
+  off_87C4D0[0] = (void (*)())_cfltcvt; /*0x7c8f6d*/
+  off_87C4D8[0] = (void (*)())_fassign; /*0x7c8f72*/
+  off_87C4DC[0] = (void (*)())_forcdecpt; /*0x7c8f7c*/
+  off_87C4E0[0] = (void (*)())_positive; /*0x7c8f86*/
+  off_87C4E4 = (void (*)())_cfltcvt; /*0x7c8f90*/
   return _cfltcvt; /*0x7c8f95*/
 }
 }

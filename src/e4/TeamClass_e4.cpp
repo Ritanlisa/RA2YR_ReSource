@@ -74,7 +74,7 @@ int TeamClass::CheckCohesion()
         v11 = v8[2] - v7[2],
         Math::Sqrt(
           (double)(*v8 - *v7) * (double)(*v8 - *v7)
-        + (double, void * a1, void * a2)(v8[1] - v7[1]) * (double)(v8[1] - v7[1])
+        + (double)(v8[1] - v7[1]) * (double)(v8[1] - v7[1])
         + (double)v11 * (double)v11),
         LOWORD(v9) = Math::RoundToInt(a2),
         v9 < 128) )

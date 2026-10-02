@@ -94,7 +94,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
             || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
             || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)
             || (v12 = (AudioChannel *)v8->location[0]) != 0 && AudioChannel::IsActive(v12)
-            || (v13 = *(AudioChannel **, void * a1, void * a2, void * a3, void * aAudioDeviceDum)&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
+            || (v13 = *(AudioChannel **)&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
           {
             ObjectClass::Cleanup(v8); /*0x403163*/
             (*(void (**)(ObjectClass *))(((unsigned int *)(v8))[1].owningHouseIndex + 32))(v8); /*0x403170*/

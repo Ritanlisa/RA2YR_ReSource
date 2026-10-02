@@ -32,7 +32,7 @@ struct LinkedList_flat {
     void* Pop;  // 0x0 (no offset truth)
     void* RemoveNode;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-AbstractClass * * LoadScenarioMixFiles(int a2, int a3, int a4, int a2, int aP0, int aP1);
+AbstractClass * * LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1);
 LinkClass * * Append(int a2, void *a2_2);
 LinkClass * * InsertAfter(int a2);
 int * Next();

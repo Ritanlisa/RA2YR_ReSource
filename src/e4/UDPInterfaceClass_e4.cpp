@@ -169,7 +169,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
 } // namespace gamemd
 // 0x7B3AA0
 namespace gamemd {
-AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5, int a3, int aP1, int aP5, int a7, int a8)
+AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, unsigned int a5, int a3, int aP1, int aP5, int a7, int a8)
 {
 
   SOCKET v6; // ebx
@@ -208,7 +208,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
   int fromlen; // [esp+14h] [ebp-1Ch] BYREF
   int v41; // [esp+18h] [ebp-18h]
   struct sockaddr netshort; // [esp+20h] [ebp-10h] BYREF
-  SOCKET sa; // [esp+38h] [ebp+8h]
+  void * sa; // [esp+38h] [ebp+8h]
   int16_t v44; // [esp+3Ch] [ebp+Ch]
   unsigned int v45; // [esp+40h] [ebp+10h]
 

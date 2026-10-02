@@ -8,6 +8,7 @@
 namespace gamemd {
 struct VectorCursor;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
+struct rc_ptr;  // G42.32 fwd supply
 struct Campaign_WorldDominationTour_16 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

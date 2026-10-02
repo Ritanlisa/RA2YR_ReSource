@@ -51,7 +51,7 @@ struct INIClass {
     void* SetDouble;  // 0x0 (no offset truth)
     void* vt_INISection;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int a1, int a2, int aP2, int aP1, int aP3);
+    int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
     ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
     VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);

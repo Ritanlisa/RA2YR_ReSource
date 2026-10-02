@@ -351,7 +351,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5241d7*/
   ((VectorClass *)((HWND)((int)&v48)))->Destroy(); /*0x5241df*/
   if ( ((INIClass*)/*0x5241fb*/
-         (INIClass *, void * aCyborg, void * aNothuman)a2)->GetString(/*0x5241fb*/ (uint8_t *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String, 128) )
+         (INIClass *)a2)->GetString(/*0x5241fb*/ (uint8_t *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x52421f*/
@@ -428,7 +428,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v17 = *(unsigned int *)(v4 + 3748); /*0x5243ee*/
   if ( !((INIClass*)/*0x524420*/
           (INIClass *)a2)->GetString(/*0x524420*/ (uint8_t *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String, 128)
-    || (Index = VocClass::FindIndex((VocClass *, void * aEnterwatersoun)String), Index == -1) )
+    || (Index = VocClass::FindIndex((VocClass *)String), Index == -1) )
   {
     Index = v17; /*0x524422*/
   }
@@ -446,7 +446,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
           (char *)v44.Count,
           (char *)v44.CapacityIncrement,
           v45)
-    || (v20 = VocClass::FindIndex((VocClass *, void * aAgent, void * aAssaulter, void * aC4, void * aCrawls, void * aDeployedcrusha, void * aDeployer, void * aDetectiondista, void * aDoggie, void * aEngineer, void * aFearless, void * aFireprone, void * aFireup, void * aFraidycat, void * aHarvestrate, void * aInfiltrate, void * aIvan, void * aJumpjetturn, void * aLeavewatersoun, void * aOccupier, void * aSecondaryfire, void * aThief, void * aTiberiumproof, void * aUseownname, void * aVehiclethief)String), v20 == -1) )
+    || (v20 = VocClass::FindIndex((VocClass *)String), v20 == -1) )
   {
     v20 = v19; /*0x52445e*/
   }

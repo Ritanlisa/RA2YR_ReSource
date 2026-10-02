@@ -220,10 +220,10 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
 //L-fix       fmul st, st(2)
 //L-fix       fld st(1)
 //L-fix       fmul st, st(2)
-      faddp st(1), st
+      // faddp st(1), st
 //L-fix       fld st(3)
-      fmul st, st(4, void * a1, void * a2)
-      faddp st(1), st
+      // fmul st, st(4, void * a1, void * a2)
+      // faddp st(1), st
     }
     /* asm-debt:__asm */
     {
@@ -301,7 +301,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   /* asm-debt:__asm { fld qword ptr [esi+8] } */
   /* asm-debt:__asm */
   {
-    fchs
+    // fchs
 //L-fix     fstp [esp+0A8h+var_A8]; double
   }
   Math::CalcAngle(v72, **(double **)v88.__pad_0); /*0x5b24a5*/
@@ -312,7 +312,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v86 = *(unsigned int *)v88.__pad_0; /*0x5b24e1*/
   /* asm-debt:__asm */
   {
-    fchs
+    // fchs
 //L-fix     fstp [esp+0A8h+var_A8]; double
   }
   Math::CalcAngle(v73, v94[0]); /*0x5b24ea*/
@@ -357,7 +357,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   /* asm-debt:__asm { fmul qword ptr [esp+0A0h+var_88.field_8] } */
   /* asm-debt:__asm */
   {
-    fchs
+    // fchs
 //L-fix     fstp qword ptr [esi+8]
   }
   *(double *)(_ESI + 8) = _RT1; /*0x5b25bd*/

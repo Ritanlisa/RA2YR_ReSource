@@ -19,7 +19,7 @@ struct Rect {
     void* Inflate;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
-    BOOLInflate(LPRECT lprc, int dx, int dy);
+    BOOL Inflate(LPRECT lprc, int dx, int dy);
     void Set(int aP1, int aP2, int aP3, int aP4);
     int Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2);
 };

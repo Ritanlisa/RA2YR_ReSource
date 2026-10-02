@@ -523,7 +523,7 @@ char DSurface::BlitCore(
      && dst->Surface->IsLost() == DDERR_SURFACELOST)
     {
         if (FAILED(dst->Surface->Restore())
-         || dst->Surface->IsLost(void * a1, void * a2) == DDERR_SURFACELOST)
+         || dst->Surface->IsLost() == DDERR_SURFACELOST)
             return 0;
 
         int saved_locks = dst->LockCount;

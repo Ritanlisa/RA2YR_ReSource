@@ -7,8 +7,8 @@ struct VeterancyStruct {
     unsigned int IsElite;
     unsigned int IsVeteran;
     void* vfptr;
-    BOOLIsElite();
-    BOOLIsVeteran();
+    BOOL IsElite();
+    BOOL IsVeteran();
 };
 
 } // namespace gamemd

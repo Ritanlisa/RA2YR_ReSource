@@ -35,7 +35,7 @@
 
 // 0x6863E0
 namespace gamemd {
-int sub_6863E0()
+int sub_6863E0(, void * a1, void * a2)
 {
   void **p_vtable2; // esi
   int Ticks; // eax
@@ -47,7 +47,7 @@ int sub_6863E0()
 
     ((MouseClass *)0)->LoadCursors();
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] /*0x686404*/
-    && *(unsigned int *, void * a1, void * a2)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )
+    && *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )
   {
         ((Debug *)0)->Log();
     ChangeVideoMode(stru_A8EB00.ObjectTypeClass[35], stru_A8EB00.ObjectTypeClass[36]); /*0x68641f*/

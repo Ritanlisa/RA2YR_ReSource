@@ -858,7 +858,7 @@ void PostLoadInitScenario()
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x684f98*/
   for ( m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x684fa9*/
         m;
-        m = ((LayerClass *, void * aGascloudsys)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
+        m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }

@@ -16,7 +16,7 @@ struct MSPrintAnim {
     unsigned int *__pad_0;
     unsigned int GetCharAt;
 // --- flat members (END) ---
-    wchar_tGetCharAt(size_t a2);
+    wchar_t GetCharAt(size_t a2);
 };
 
 } // namespace gamemd

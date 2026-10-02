@@ -11,7 +11,7 @@ struct UnholyAlliance {
     char UnholyAlliance_field_04[4];  // 0x4
     void* Write;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    BOOLWrite(void * aP0);
+    BOOL Write(void * aP0);
     UnholyAlliance * QueryInterface(unsigned int * Block, char a2);
     char Read(void *a1, void *a2);
     char Seek(void *a1, void *a2, void *a3);

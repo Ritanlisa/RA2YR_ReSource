@@ -794,7 +794,7 @@ CoordStruct* MapClass::RevealArea2(int *a1, int a2, int a3, int a4)
     v11 = (int)(a2[2]);
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
     v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
-          + ((int, void * a1, void * a2, void * a3, void * a4, void * a5)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
+          + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
         + v9;
     v14 = ZCoordToScreenY(v11); /*0x567e40*/
     v15 = (int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/

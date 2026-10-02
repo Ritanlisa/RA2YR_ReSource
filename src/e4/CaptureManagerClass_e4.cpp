@@ -249,7 +249,7 @@ bool CaptureManagerClass::CanCapture(unsigned int *a2)
 
 // 0x471D40
 namespace gamemd {
-void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int a1, int a2, int aP1, int aP0)
+void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
 {
 
   char result; // al
@@ -316,8 +316,8 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int a1, int a2, in
       *v12 = (unsigned int)(v5);
       v14 = *(unsigned int *)((unsigned int)(a1)+ 44); /*0x471df3*/
       if ( *(unsigned int *)((unsigned int)(a1)+ 52) < v14 /*0x471e18*/
-        || (*(unsigned char *, void * a1)(a1 + 49) || !v14)
-        && (v15 = *(unsigned int *, void * a1)(a1 + 56), v15 > 0)
+        || (*(unsigned char *)(a1 + 49) || !v14)
+        && (v15 = *(unsigned int *)(a1 + 56), v15 > 0)
         && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
       {
         v16 = *(unsigned int *)((unsigned int)(a1)+ 52); /*0x471e1f*/
@@ -450,7 +450,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         v17 = i; /*0x47210f*/
         for ( v7->originalOwner = v16; /*0x472116*/
               v17 < (int)v7->originalOwner;
-              *(unsigned int *, void * aP0)(v7->controlNodeCount + 4 * v17 - 4) = *(unsigned int *)(v7->controlNodeCount + 4 * v17) )
+              *(unsigned int *)(v7->controlNodeCount + 4 * v17 - 4) = *(unsigned int *)(v7->controlNodeCount + 4 * v17) )
         {
           ++v17; /*0x47211b*/
         }

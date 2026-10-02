@@ -113,7 +113,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
     WinAPI::Wrapper(-2147467261); /*0x73c688*/
   if ( (*(uint8_t (**)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
-    || (v18 = *((unsigned int *, void * a1)a1 + 433), *(unsigned int *)(v18 + 664)) )
+    || (v18 = *((unsigned int *)a1 + 433), *(unsigned int *)(v18 + 664)) )
   {
     v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
     v22 = v16 * *(char *)(v18 + 3676) + *((unsigned int *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
@@ -198,7 +198,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                         - 8)
           * -0.1963495408493621;
       v47 = v54 /*0x73c91f*/
-          - (double, void * a1)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
+          - (double)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
                         - 8)
           * -0.1963495408493621;
       ((Matrix2D *)(v70))->Rotate(v47); /*0x73c922*/
@@ -254,7 +254,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       ((Matrix3x3 *)(v71))->Multiply(v67); /*0x73cba5*/
       ((Matrix3x3 *)(v71))->Multiply(&v68); /*0x73cbb6*/
       if ( (((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
-        || (v52 = 1, (((unsigned int, void * a1, void * a10, void * a12)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
+        || (v52 = 1, (((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
         v52 = 0; /*0x73cbfa*/
       }

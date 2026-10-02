@@ -345,7 +345,7 @@ struct AnimTypeClass {
     int LoadFromINI(uint8_t *** a2, void *a2_2);
     int LookupByName();
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(INIClass * aP1, unsigned char * a2, Layer);
+    int ReadINIString(INIClass * aP1, unsigned char * a2, void * Layer);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();

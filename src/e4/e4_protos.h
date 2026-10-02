@@ -952,3 +952,23 @@ struct _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry;
 // G42.31 C2065 type supply (per-name guarded, idempotent):
 struct _VectorClass_VWstring;
 } // namespace gamemd
+
+// G42.32 M C3861 free-fn proto supply (per-name guarded, idempotent; `(...)` interim)
+int get_int_arg_0(void * aP0);   // G42.32: generator vararg helper leak (addr7D body)
+int BlitterDrawSHP(...);         // G42.32: 13-arg global blitter (E4Recv_4AF2A0 wrap)
+unsigned char IsKnownPointer(void * aP0);  // G42.32: 0x5E93F0 free-form call
+int Event_Process_746D90(...);   // G42.32: addr73 body
+int sub_406310(...);             // G42.32: addr75 body
+
+// G42.32 M C2065 supply: nullsub stubs (fn-ptr cast use-form only)
+void nullsub_10();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_108();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_109();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_13();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_14();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_190();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_214();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_23();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_265();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_39();  // G42.32: IDA null stub, fn-ptr cast use
+void nullsub_56();  // G42.32: IDA null stub, fn-ptr cast use

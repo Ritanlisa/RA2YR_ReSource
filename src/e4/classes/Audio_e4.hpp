@@ -94,7 +94,7 @@ struct Audio {
     ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
     char ** SetSoundFileName(char *Source, int a3);  // 0x5D5820
     int LoadWAVFiles(void *a1_1);  // 0x7207F0
-    int InitFromINI(double a2, double a3, int a2, int a3, int a1, int aP1, int aP2);
+    int InitFromINI(double a2, double a3, int a1, int aP1, int aP2);
     void * LoadSoundINI();  // 0x7513F0
     unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
     int InitChannels();  // 0x401080

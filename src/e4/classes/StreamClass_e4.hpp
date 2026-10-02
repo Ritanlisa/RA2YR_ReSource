@@ -19,7 +19,7 @@ struct StreamClass {
     unsigned int IsInactive;
     void* m_Position;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    BOOLIsInactive(void * aP0);
+    BOOL IsInactive(void * aP0);
     static char GetDirty(int a1);
     int ClearDirty(unsigned char * a1);
     static int ResetPosition(LocomotionClass * aP0, int a2);

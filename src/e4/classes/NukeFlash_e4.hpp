@@ -7,8 +7,8 @@ struct NukeFlash {
     unsigned int IsActive;
     unsigned int ProcessEffect;
     void* vfptr;
-    BOOLIsActive();
-    BOOLProcessEffect();
+    BOOL IsActive();
+    BOOL ProcessEffect();
 };
 
 } // namespace gamemd

@@ -22,7 +22,7 @@
 
 // 0x5FF850
 namespace gamemd {
-Coord * * BuildingLight::CalculateShading(__m64)
+Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
 {
 
   unsigned int *v2; // ecx
@@ -81,7 +81,7 @@ Coord * * BuildingLight::CalculateShading(__m64)
   v43 = v2; /*0x5ff85c*/
   v4 = v2[5] & 0xF; /*0x5ff863*/
   if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
-    || (v5 = PingPongBuffer::GetWriteOffset(, void * a2), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
+    || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
   {
     LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
@@ -247,7 +247,7 @@ LABEL_23:
                       if ( v27 > 255 ) /*0x5ffee1*/
                         v27 = 255; /*0x5ffee3*/
                       *v10 = (v26 >> g_BitMask_Red << g_BitShift_Blue) /*0x5fff14*/
-                           | (v29 >> g_BitMask_Blue << g_BitMask_Green, void * a1, void * a2)
+                           | (v29 >> g_BitMask_Blue << g_BitMask_Green)
                            | (v27 >> g_BitShift_Green_0 << g_BitShift_Red);
                       v23 = v49; /*0x5fff17*/
                       v9 = v36; /*0x5fff1b*/
