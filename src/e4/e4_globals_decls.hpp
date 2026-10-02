@@ -1034,7 +1034,7 @@ extern int g_INI_Key_DetailLevel;  // data: 0x81855C
 extern int g_INI_Key_DialogList;  // data: 0x8467D4
 extern int g_INI_Key_Digest;  // data: 0x81BFE0
 extern int g_INI_Key_Easy;  // data: 0x818134
-extern int g_INI_Key_Edit;  // data: 0x833728
+extern char g_INI_Key_Edit[5];  // data: 0x833728  (declsync G42.31: core twin)
 extern int g_INI_Key_Efficiency;  // data: 0x83E3FC
 extern int g_INI_Key_Elasticity;  // data: 0x8184F4
 extern int g_INI_Key_Emblem;  // data: 0x83E410
@@ -1388,7 +1388,7 @@ extern int g_SlaveMgrPool;  // data: 0xB0B660
 extern int g_SpawnModeActive;  // data: 0xA8ED5D
 extern int g_Str_______FAILED_;  // data: 0x83D584
 extern int g_Str_____vwin32;  // data: 0x81C5AC
-extern int g_Str__none_;  // data: 0x817474
+extern char g_Str__none_[7];  // data: 0x817474  (declsync G42.31: core twin)
 extern int g_Str__Player___A_;  // data: 0x825070
 extern int g_Str__Player___B_;  // data: 0x825060
 extern int g_Str__Player___C_;  // data: 0x825050
@@ -1406,7 +1406,7 @@ extern int g_Str_DirectDrawCreate_failed_;  // data: 0x81FD44
 extern int g_Str_DSurface__Create_Primary_done;  // data: 0x82061C
 extern int g_Str_EVA_BuildingInfiltrated;  // data: 0x819198
 extern int g_Str_EVA_CannotDeployHere;  // data: 0x82012C
-extern int g_Str_EVA_ChronosphereReady;  // data: 0x842458
+extern char g_Str_EVA_ChronosphereReady[22];  // data: 0x842458  (declsync G42.31: core twin)
 extern int g_Str_EVA_ForceShieldReady;  // data: 0x8424A4
 extern int g_Str_EVA_GeneticMutatorReady;  // data: 0x842414
 extern int g_Str_EVA_IronCurtainReady;  // data: 0x8424BC
@@ -1447,7 +1447,7 @@ extern int g_Str_File_GOptions_CPP;  // data: 0x8240BC
 extern int g_Str_File_gt18_pcx;  // data: 0x836070
 extern int g_Str_File_House_CPP;  // data: 0x824724
 extern int g_Str_File_Ini_CPP;  // data: 0x825BDC
-extern int g_Str_File_Init_CPP;  // data: 0x825FB8
+extern char g_Str_File_Init_CPP[22];  // data: 0x825fb8  (declsync G42.31: core twin)
 extern int g_Str_File_Ion_cpp;  // data: 0x828034
 extern int g_Str_File_japi_pcx;  // data: 0x836394
 extern int g_Str_File_lati_pcx;  // data: 0x83634C
@@ -1466,7 +1466,7 @@ extern int g_Str_File_MPScore_cpp;  // data: 0x82FE24
 extern int g_Str_File_MPSiege_cpp;  // data: 0x82FF2C
 extern int g_Str_File_MULTIMD_MIX;  // data: 0x81C284
 extern int g_Str_File_netdlg2_cpp;  // data: 0x831288
-extern int g_Str_File_netshare_cpp;  // data: 0x8317D8
+extern char g_Str_File_netshare_cpp[26];  // data: 0x8317d8  (declsync G42.31: core twin)
 extern int g_Str_File_NullDlg_CPP;  // data: 0x831E84
 extern int g_Str_File_NullMgr_CPP;  // data: 0x832730
 extern int g_Str_File_number0_pcx;  // data: 0x835FC8
@@ -1478,7 +1478,7 @@ extern int g_Str_File_PhoneEd_cpp;  // data: 0x836778
 extern int g_Str_File_pingg_pcx;  // data: 0x835CA8
 extern int g_Str_File_pingr_pcx;  // data: 0x835C90
 extern int g_Str_File_pingy_pcx;  // data: 0x835C9C
-extern int g_Str_File_PlanMgr_cpp;  // data: 0x836BD4
+extern char g_Str_File_PlanMgr_cpp[25];  // data: 0x836bd4  (declsync G42.31: core twin)
 extern int g_Str_File_Preview_bin;  // data: 0x82CC50
 extern int g_Str_File_PROGBARM_SHP;  // data: 0x83DA30
 extern int g_Str_File_Queue_CPP;  // data: 0x8374A0
@@ -1490,7 +1490,7 @@ extern int g_Str_File_Score_CPP;  // data: 0x83E3C4
 extern int g_Str_File_SerialEd_cpp;  // data: 0x83EC28
 extern int g_Str_File_Session_CPP;  // data: 0x83EEB8
 extern int g_Str_File_Sidebar_CPP;  // data: 0x83FAC4
-extern int g_Str_File_Skirmish_cpp;  // data: 0x83FC4C
+extern char g_Str_File_Skirmish_cpp[26];  // data: 0x83fc4c  (declsync G42.31: core twin)
 extern int g_Str_File_Startup_CPP;  // data: 0x840E0C
 extern int g_Str_File_Super_CPP;  // data: 0x842510
 extern int g_Str_File_tab_tlu_pcx;  // data: 0x835944
@@ -1518,7 +1518,7 @@ extern int g_Str_File_wolpriv_pcx;  // data: 0x8360A8
 extern int g_Str_File_wolreslk_pcx;  // data: 0x835D14
 extern int g_Str_File_wolrslkob_pcx;  // data: 0x83608C
 extern int g_Str_File_woltrny_pcx;  // data: 0x8360D0
-extern int g_Str_File_wonline_cpp;  // data: 0x84A430
+extern char g_Str_File_wonline_cpp[25];  // data: 0x84a430  (declsync G42.31: core twin)
 extern int g_Str_File_WorldDom_cpp;  // data: 0x84D818
 extern int g_Str_File_wouact_pcx;  // data: 0x836158
 extern int g_Str_File_wouref_pcx;  // data: 0x836140
@@ -1559,7 +1559,7 @@ extern int g_Str_MSG_SelAcrossScreen;  // data: 0x8455B4
 extern int g_Str_no;  // data: 0x825BF4
 extern int g_Str_No_Digest;  // data: 0x83F3E4
 extern int g_Str_No_Name;  // data: 0x829284
-extern int g_Str_none;  // data: 0x817694
+extern char g_Str_none[5];  // data: 0x817694  (declsync G42.31: core twin)
 extern int g_Str_None;  // data: 0x8373A4
 extern int g_Str_RMG__Recalculating_cell_attrib;  // data: 0x82BE9C
 extern int g_Str_SOFTWARE_Westwood_WOLAPI_;  // data: 0x8254E4
