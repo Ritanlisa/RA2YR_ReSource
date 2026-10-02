@@ -753,7 +753,7 @@ int Dialog::StopBink(void *a1_1)
 }
 // 0x608070
 namespace gamemd {
-AbstractClass * * Dialog::IdleProcess(ObjectClass *a2@<esi>)
+AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
 {
 
   HWND v2; // ecx

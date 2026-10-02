@@ -82,7 +82,7 @@ struct CaptureManagerClass {
     unsigned int LoadTypeData(int a2);
     unsigned int PointerToIndex(int a2);
     int Destroy(void *a1);
-    void* CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1, int a2, int aP1, int aP0);
+    void* CaptureUnit(int a1, int a2, int a3, int a1, int a2, int aP1, int aP0);
 };
 
 } // namespace gamemd

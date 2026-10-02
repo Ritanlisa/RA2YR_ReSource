@@ -190,11 +190,11 @@ AbstractClass * * sub_725C70()
       if ( result ) /*0x725ced*/
       {
         v4 = __RTtypeid(v8); /*0x725cf8*/
-        if ( __8type_info_QBEHABV0__Z((const char *)&BuildingClass `RTTI Type Descriptor', v4) /*0x725d61*/
-          || (v5 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)&UnitClass `RTTI Type Descriptor', v5))
-          || (v6 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)&InfantryClass `RTTI Type Descriptor', v6))
+        if ( __8type_info_QBEHABV0__Z((const char *)0, v4) /*0x725d61*/
+          || (v5 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v5))
+          || (v6 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v6))
           || (v7 = __RTtypeid(v8),
-              (result = __8type_info_QBEHABV0__Z((const char *)&AircraftClass `RTTI Type Descriptor', v7)) != 0) )
+              (result = __8type_info_QBEHABV0__Z((const char *)0, v7)) != 0) )
         {
           result = (int)v8; /*0x725d63*/
           *((unsigned char *)v8 + 144) = 1; /*0x725d67*/

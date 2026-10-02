@@ -1299,7 +1299,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
 // 0x471500
 namespace gamemd {
 std::locale::facet * CampaignScore::Constructor_CampaignScoreClass(char a2) {
-    *(unsigned int *)this->__pad_0 = &CampaignScoreClass::`vftable'; /*0x471509*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x471509*/
     if ( (a2 & 1) != 0 ) /*0x47150f*/
       RA2_OPDEL(this); /*0x471512*/
     return (std::locale::facet *)this; /*0x47151c*/
@@ -1309,7 +1309,7 @@ std::locale::facet * CampaignScore::Constructor_CampaignScoreClass(char a2) {
 // 0x471520
 namespace gamemd {
 std::locale::facet * CampaignScore::Constructor_CampaignEndScoreClass(char a2) {
-    *(unsigned int *)this->__pad_0 = &CampaignEndScoreClass::`vftable'; /*0x471529*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x471529*/
     if ( (a2 & 1) != 0 ) /*0x47152f*/
       RA2_OPDEL(this); /*0x471532*/
     return (std::locale::facet *)this; /*0x47153c*/
@@ -1420,7 +1420,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
     GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
     *((unsigned int *)this + 10) = 0; /*0x48e54c*/
     *((unsigned int *)this + 9) = a2; /*0x48e553*/
-    *(unsigned int *)this->__pad_0 = &ControlClass::`vftable'; /*0x48e556*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x48e556*/
     return this->__pad_0; /*0x48e55e*/
 }
 } // namespace gamemd
@@ -1431,7 +1431,7 @@ unsigned int * ControlClass::CtorFromData(int a2) {
     ControlClass::Constructor(this, a2); /*0x48e579*/
     *((unsigned int *)this + 9) = *(unsigned int *)(a2 + 36); /*0x48e581*/
     *((unsigned int *)this + 10) = *(unsigned int *)(a2 + 40); /*0x48e587*/
-    *(unsigned int *)this->__pad_0 = &ControlClass::`vftable'; /*0x48e58a*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x48e58a*/
     return this->__pad_0; /*0x48e592*/
 }
 } // namespace gamemd
@@ -1523,7 +1523,7 @@ namespace gamemd {
 unsigned int * ControlClass::Constructor(int a2) {
     this->ControlClass_field_0x04 = 0; /*0x4e1344*/
     this->ControlClass_field_0x08 = 0; /*0x4e1347*/
-    *(unsigned int *)this->__pad_0 = &LinkClass::`vftable'; /*0x4e134e*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4e134e*/
     this->ControlClass_field_0x0C = *(unsigned int *)(a2 + 12); /*0x4e1357*/
     *((unsigned int *)this + 4) = *(unsigned int *)(a2 + 16); /*0x4e135d*/
     *((unsigned int *)this + 5) = *(unsigned int *)(a2 + 20); /*0x4e1363*/
@@ -1532,7 +1532,7 @@ unsigned int * ControlClass::Constructor(int a2) {
     *((unsigned char *)this + 29) = *(unsigned char *)(a2 + 29); /*0x4e1375*/
     *((unsigned char *)this + 30) = *(unsigned char *)(a2 + 30); /*0x4e137b*/
     *((unsigned int *)this + 8) = *(unsigned int *)(a2 + 32); /*0x4e1381*/
-    *(unsigned int *)this->__pad_0 = &GadgetClass::`vftable'; /*0x4e1384*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4e1384*/
     return this->__pad_0; /*0x4e138a*/
 }
 } // namespace gamemd
@@ -1747,7 +1747,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
     ShpButtonClass *v3; // eax
     int v4; // eax
 
-    *(unsigned int *)this->__pad_0 = &GadgetClass::`vftable'; /*0x4e1a65*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4e1a65*/
     v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
     if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
     {
@@ -1778,7 +1778,7 @@ int ListClass::Constructor(int this, int a2, int a3, int a4, int a5, int a6) {
 
     ControlClass::Construct((ControlClass *)this, a2, a3, a4, a5, a6, 7, 1); /*0x4e2524*/
     v7 = *(unsigned int *)(this + 48); /*0x4e2529*/
-    *(unsigned int *)this = &GaugeClass::`vftable'; /*0x4e2533*/
+    *(unsigned int *)this = 0; /*0x4e2533*/
     if ( v7 != 255 ) /*0x4e2539*/
     {
       *(unsigned int *)(this + 48) = 255; /*0x4e253d*/
@@ -2104,7 +2104,7 @@ int ListClass::Construct(int this, int a2, int a3, int a4, int a5, int a6, int a
     *(unsigned int *)(this + 196) -= v10; /*0x5572e2*/
     v14 = *(unsigned int *)(this + 208); /*0x5572e8*/
     *(unsigned int *)(this + 100) = v12 - v11; /*0x5572f2*/
-    *(unsigned int *)this = &ListClass::`vftable'; /*0x5572f7*/
+    *(unsigned int *)this = 0; /*0x5572f7*/
     *(unsigned int *)(this + 200) = v13 - v14; /*0x5572fd*/
     v15 = v11; /*0x557303*/
     if ( v11 <= v10 ) /*0x557305*/
@@ -2137,7 +2137,7 @@ int ListClass::Destruct() {
     void *v4; // eax
 
     v2 = *((unsigned char *)this + 84); /*0x557606*/
-    *(unsigned int *)this->__pad_0 = &ListClass::`vftable'; /*0x557609*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x557609*/
     if ( v2 ) /*0x557611*/
     {
       v3 = *((unsigned int *)this + 70); /*0x55761c*/
@@ -2276,7 +2276,7 @@ wchar_t ** ListBox::Constructor() {
       v1 = 1; /*0x5c1054*/
       v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
       MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-      *(unsigned int *)v3->__pad_0 = &MultiplayerBattleTeam::`vftable'; /*0x5c1067*/
+      *(unsigned int *)v3->__pad_0 = 0; /*0x5c1067*/
     }
     else
     {
@@ -2360,7 +2360,7 @@ char FontClass::LoadFontResources(int this, int16_t a2) {
       if ( !v13 ) /*0x5d303f*/
       {
   LABEL_15:
-        v16[0] = &CCFileClass::`vftable'; /*0x5d3045*/
+        v16[0] = 0; /*0x5d3045*/
         v18 = 0; /*0x5d304d*/
         Vector::Clear((int)v17); /*0x5d3051*/
         v16[0] = &off_7E1668; /*0x5d305a*/
@@ -2372,7 +2372,7 @@ char FontClass::LoadFontResources(int this, int16_t a2) {
       *(unsigned int *)(this + 8) = *(int16_t *)(v15 + 4); /*0x5d3080*/
     }
     Audio::IsSoundEnabled(); /*0x5d3083*/
-    v16[0] = &CCFileClass::`vftable'; /*0x5d308c*/
+    v16[0] = 0; /*0x5d308c*/
     v18 = 0; /*0x5d3094*/
     Vector::Clear((int)v17); /*0x5d3098*/
     v16[0] = &off_7E1668; /*0x5d30a1*/
@@ -2914,7 +2914,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     int v33; // [esp-10h] [ebp-30h]
 
     ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-    *(unsigned int *)this->__pad_0 = &SliderClass::`vftable'; /*0x6b1b51*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6b1b51*/
     *((unsigned char *)this + 68) = a7 != 0; /*0x6b1b5c*/
     *((unsigned int *)this + 15) = 0; /*0x6b1b5f*/
     *((unsigned int *)this + 16) = 0; /*0x6b1b62*/
@@ -3009,7 +3009,7 @@ int SliderClass::Destructor() {
     void (__thiscall ***v3)(unsigned int, int); // ecx
 
     v2 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 15); /*0x6b1d03*/
-    *(unsigned int *)this->__pad_0 = &SliderClass::`vftable'; /*0x6b1d06*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6b1d06*/
     if ( v2 ) /*0x6b1d0e*/
     {
       (**v2)(v2, 1); /*0x6b1d14*/
@@ -3063,7 +3063,7 @@ void ToolTipClass::updateString() {
     void *v5; // eax
 
     ToolTipClass_field_0x08 = (HWND)this->ToolTipClass_field_0x08; /*0x7240ba*/
-    *(unsigned int *)this->__pad_0 = &ToolTipManager::`vftable'; /*0x7240bd*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x7240bd*/
     KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
     if ( this->ToolTipClass_field_0x04 ) /*0x7240ca*/
       (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->ToolTipClass_field_0x18); /*0x7240db*/
@@ -3323,7 +3323,7 @@ namespace gamemd {
 void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
     void (__thiscall ***v3)(unsigned int, int); // ecx
 
-    *this = (Campaign_WorldDominationTour)&WorldDominationTour::Campaign::`vftable'; /*0x765606*/
+    *this = (Campaign_WorldDominationTour)0; /*0x765606*/
     DeleteAndZero((ObjectClass *)(this + 18)); /*0x76560c*/
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 7); /*0x765611*/
     *((unsigned int *)this + 6) = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765614*/

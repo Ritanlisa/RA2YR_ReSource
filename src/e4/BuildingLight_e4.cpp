@@ -22,7 +22,7 @@
 
 // 0x5FF850
 namespace gamemd {
-Coord * * BuildingLight::CalculateShading(__m64 a2@<mm0>)
+Coord * * BuildingLight::CalculateShading(__m64 a2)
 {
 
   unsigned int *v2; // ecx

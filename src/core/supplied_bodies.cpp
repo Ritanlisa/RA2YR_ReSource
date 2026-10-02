@@ -49,7 +49,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2, int a3, int a4) {
     v3 = (unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
     v4 = (unsigned int *)(CCFileClass::Construct2(&v7, v3)); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
-    *(unsigned int *)v7.CDFileClass = &CCFileClass::`vftable'; /*0x4f37ce*/
+    *(unsigned int *)v7.CDFileClass = 0; /*0x4f37ce*/
     v9 = 0; /*0x4f37d6*/
     Vector::Clear((int)v8); /*0x4f37de*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f37e7*/
@@ -93,7 +93,7 @@ unsigned int * VectorCursor_uint_DynamicVectorClass_uint::ddtor() {
 // 0x65D660
 namespace gamemd {
 void ReferenceCounted::Constructor() {
-    *this = (ReferenceCounted)&ReferenceCounted::`vftable'; /*0x65d660*/
+    *this = (ReferenceCounted)0; /*0x65d660*/
 }
 } // namespace gamemd
 
@@ -1607,7 +1607,7 @@ LONG EnumConnectionsClass::Release() {
     result = InterlockedDecrement((volatile LONG *)this + 8); /*0x4a0027*/
     if ( !result && this ) /*0x4a0035*/
     {
-      *(unsigned int *)this->__pad_0 = &EnumConnectionsClass::`vftable'; /*0x4a0037*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x4a0037*/
       for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0045*/
       {
         v4 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a004d*/
@@ -1724,7 +1724,7 @@ LONG EnumConnectionPointsClass::Release() {
     result = InterlockedDecrement(&this->EnumConnectionPointsClass_field_0x08); /*0x4a09c7*/
     if ( !result && this ) /*0x4a09d5*/
     {
-      *(unsigned int *)this->__pad_0 = &EnumConnectionPointsClass::`vftable'; /*0x4a09d7*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x4a09d7*/
       for ( i = 0; i < this->EnumConnectionPointsClass_field_0x1C; ++i ) /*0x4a09e5*/
       {
         v4 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a09ed*/
@@ -2404,8 +2404,8 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     v10 = __RTDynamicCast( /*0x4abad5*/
             (void **)this->DisplayClass_field_0x11A8,
             0,
-            &ObjectTypeClass `RTTI Type Descriptor',
-            &TechnoTypeClass `RTTI Type Descriptor',
+            0,
+            0,
             0);
     if ( !v10 || (v11 = v10[3278], IDA_LOBYTE(v56[0]) = 1, !v11) ) /*0x4abaee*/
       IDA_LOBYTE(v56[0]) = 0; /*0x4abaf0*/
@@ -2655,7 +2655,7 @@ void *** GraphicMenuAnimItem::QueryInterface(char a2) {
     void (__thiscall ***v3)(unsigned int, int); // ecx
 
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 9); /*0x4f30e3*/
-    *(unsigned int *)this->__pad_0 = &GraphicMenuAnimItem::`vftable'; /*0x4f30e6*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4f30e6*/
     if ( v3 ) /*0x4f30ee*/
       (**v3)(v3, 1); /*0x4f30f4*/
     GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f30f8*/
@@ -2762,7 +2762,7 @@ unsigned int * GraphicMenuItem::Constructor(int a2) {
     *((unsigned char *)this + 8) = 0; /*0x4f3a5b*/
     *((unsigned char *)this + 9) = 1; /*0x4f3a5e*/
     *((unsigned int *)this + 3) = 0; /*0x4f3a62*/
-    *(unsigned int *)this->__pad_0 = &GraphicMenuItem::`vftable'; /*0x4f3a65*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4f3a65*/
     return this->__pad_0; /*0x4f3a6b*/
 }
 } // namespace gamemd
@@ -2787,7 +2787,7 @@ void *** GraphicMenuItem_Destru::QueryInterface(char a2) {
     ObjectClass *v3; // edi
 
     v3 = (ObjectClass *)*((unsigned int *)this + 3); /*0x4f3b24*/
-    *(unsigned int *)this->__pad_0 = &GraphicMenuItem::`vftable'; /*0x4f3b27*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4f3b27*/
     if ( v3 ) /*0x4f3b2f*/
     {
       j_DeleteAndZero(v3); /*0x4f3b33*/
@@ -2829,7 +2829,7 @@ namespace gamemd {
 unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
     void *v3; // eax
 
-    *(unsigned int *)this->__pad_0 = &GraphicMenuShortcutItem::`vftable'; /*0x4f3f63*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x4f3f63*/
     v3 = (void *)*((unsigned int *)this + 5); /*0x4f3f69*/
     *((unsigned int *)this + 4) = &VectorClass<unsigned int>::`vftable'; /*0x4f3f6e*/
     if ( v3 && *((unsigned char *)this + 29) ) /*0x4f3f77*/
@@ -4097,7 +4097,7 @@ int RandomStraw::AdvanceState() {
 namespace gamemd {
 unsigned int * ComPtr::Constructor() {
     this->ComPtr_field_0x04 = 0; /*0x65d432*/
-    *(unsigned int *)this->__pad_0 = &rc_ptr_base::`vftable'; /*0x65d439*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x65d439*/
     return this->__pad_0; /*0x65d43f*/
 }
 } // namespace gamemd
@@ -4121,7 +4121,7 @@ int COMClass::ReleaseRef() {
 // 0x65D6A0
 namespace gamemd {
 unsigned int * COMClass::initInterface(char a2) {
-    *this = (ReferenceCounted)&ReferenceCounted::`vftable'; /*0x65d6a9*/
+    *this = (ReferenceCounted)0; /*0x65d6a9*/
     if ( (a2 & 1) != 0 ) /*0x65d6af*/
       RA2_OPDEL(this); /*0x65d6b2*/
     return this; /*0x65d6bc*/
@@ -4155,7 +4155,7 @@ int RandomStraw::Release(int a2, int a3) {
 // 0x661C70
 namespace gamemd {
 int * RandomStraw::QueryInterface(char a2) {
-    *(unsigned int *)this->__pad_0 = &RandomStraw::`vftable'; /*0x661c7e*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x661c7e*/
     *((unsigned int *)this + 3) = 0; /*0x661c84*/
     *((unsigned int *)this + 4) = 0; /*0x661c87*/
     memset((char *)this + 20, 0, 0x100u); /*0x661c8a*/
@@ -4468,7 +4468,7 @@ namespace gamemd {
 void ** COMClass::coUninitialize(char a2) {
     DeleteAndZero((ObjectClass *)&this->field_18); /*0x767886*/
     DeleteAndZero((ObjectClass *)&this->__pad_0[20]); /*0x76788e*/
-    *(unsigned int *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x767895*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x767895*/
     ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x76789b*/
     if ( (a2 & 1) != 0 ) /*0x7678a5*/
       RA2_OPDEL(this); /*0x7678a8*/
@@ -4499,7 +4499,7 @@ unsigned int * VectorCursor::drawCursor(char a2) {
 // 0x77B030
 namespace gamemd {
 void ** PlayerProfile::QueryInterface(char a2) {
-    *this = (PlayerProfile)&PlayerProfile::`vftable'; /*0x77b036*/
+    *this = (PlayerProfile)0; /*0x77b036*/
     DeleteAndZero::Alt((DeleteAndZero *)(this + 16)); /*0x77b03c*/
     DeleteAndZero::Alt((DeleteAndZero *)this + 5); /*0x77b044*/
     DeleteAndZero((ObjectClass *)(this + 3)); /*0x77b04c*/

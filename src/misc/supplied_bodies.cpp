@@ -79,7 +79,7 @@ int AudioChannel::IsActive() {
 
 // 0x401640
 namespace gamemd {
-unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1 a1, int a2 a2, unsigned int *a3 a3) {
+unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3) {
     unsigned int *v3; // ecx
     unsigned int *result; // eax
 
@@ -2135,14 +2135,14 @@ void * BuildingLoadQueue::GetNext() {
             return __RTDynamicCast( /*0x6e6ecf*/
                      *v5,
                      0,
-                     &AbstractClass `RTTI Type Descriptor',
-                     &AbstractClass `RTTI Type Descriptor',
+                     0,
+                     0,
                      0);
           }
         }
       }
       v5 = (void ***)&unk_B78828; /*0x6e6ead*/
-      return __RTDynamicCast(*v5, 0, &AbstractClass `RTTI Type Descriptor', &AbstractClass `RTTI Type Descriptor', 0); /*0x6e6ead*/
+      return __RTDynamicCast(*v5, 0, 0, 0, 0); /*0x6e6ead*/
     }
     if ( BuildingLoadQueue_field_0x04 != 11 ) /*0x6e6ed2*/
       return 0; /*0x6e6f0f*/
@@ -2231,7 +2231,7 @@ int BuildingLoadQueue::FindObject() {
     {
   LABEL_17:
       v7 = (void ***)(uniqueId + 4); /*0x6e70b3*/
-      return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0); /*0x6e70b6*/
+      return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e70b6*/
     }
     if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e7026*/
     {
@@ -2272,7 +2272,7 @@ int BuildingLoadQueue::FindObject() {
     }
   LABEL_13:
     v7 = (void ***)&unk_B78828; /*0x6e7087*/
-    return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0); /*0x6e70a7*/
+    return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e70a7*/
 }
 } // namespace gamemd
 

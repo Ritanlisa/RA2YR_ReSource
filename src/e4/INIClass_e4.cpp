@@ -369,7 +369,7 @@ INIClass::INIClass()
 }
 // 0x474620
 namespace gamemd {
-int INIClass::ReadCoord(double *a1@<ecx>, double a2@<st0>, unsigned __int8 *a4, unsigned __int8 *a2, int a5)
+int INIClass::ReadCoord(double *a1, double a2, unsigned __int8 *a4, unsigned __int8 *a2, int a5)
 {
 
   int result; // eax

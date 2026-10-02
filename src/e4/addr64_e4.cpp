@@ -4317,7 +4317,7 @@ ObjectClass * E4Recv_6458D0::sub_6458D0()
   {
     ++v3; /*0x6458ec*/
     ++v2; /*0x6458ef*/
-    if ( (int)v3 >= (int)&ParticleTypeClass `RTTI Type Descriptor' ) /*0x6458f6*/
+    if ( (int)v3 >= (int)0 ) /*0x6458f6*/
       return -1; /*0x6458fe*/
   }
   return v2; /*0x6458f8*/

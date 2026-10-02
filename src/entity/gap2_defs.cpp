@@ -4847,7 +4847,7 @@ int TiberiumClass::Grow(void* a1) {
             }
             Math::Sqrt(v82); /*0x59cffa*/
             __asm { fstp dword ptr [esp+78h+var_20] } /*0x59cfff*/
-            v97 = (unsigned long long)((unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552])); /*0x59d010*/
+            v97 = (unsigned long)((unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552])); /*0x59d010*/
             __asm { fild [esp+70h+var_8] } /*0x59d01c*/
             __asm
             {

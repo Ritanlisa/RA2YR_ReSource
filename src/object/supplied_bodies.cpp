@@ -1123,7 +1123,7 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3) {
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], a3) ) /*0x41961d*/
         break; /*0x41961d*/
   LABEL_7:
-      if ( (int)++v5 >= (int)&IFlyControl `RTTI Type Descriptor' ) /*0x419692*/
+      if ( (int)++v5 >= (int)0 ) /*0x419692*/
         return 0; /*0x419692*/
     }
     v9 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v15); /*0x419631*/
@@ -3769,10 +3769,10 @@ unsigned int * FootClass::PostLoadInit(int a2) {
     this->unknownAbstractArray588[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d3552*/
     this->FootClass_field_abstract_array_5AC[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d3558*/
     this->locomotor[0] = 0; /*0x4d355e*/
-    this->TechnoClass = &FootClass::`vftable'; /*0x4d3568*/
-    this->? = &FootClass::`vftable'; /*0x4d356e*/
-    this->? = &FootClass::`vftable'; /*0x4d3575*/
-    this->? = &FootClass::`vftable'; /*0x4d357c*/
+    this->TechnoClass = 0; /*0x4d3568*/
+    this->? = 0; /*0x4d356e*/
+    this->? = 0; /*0x4d3575*/
+    this->? = 0; /*0x4d357c*/
     return this; /*0x4d3585*/
 }
 } // namespace ra2::game
@@ -7107,10 +7107,10 @@ int * FootClass::FindNearestApproachableCell(int *a2, int16_t *a3, int16_t *a4) 
 namespace ra2::game {
 unsigned int * ObjectClass::Init(int a2) {
     AbstractClass::InitVtables((AbstractClass *)this, a2); /*0x5f3b58*/
-    this->AbstractClass = &ObjectClass::`vftable'; /*0x5f3b5d*/
-    this->? = &ObjectClass::`vftable'; /*0x5f3b63*/
-    this->? = &ObjectClass::`vftable'; /*0x5f3b6a*/
-    this->? = &ObjectClass::`vftable'; /*0x5f3b71*/
+    this->AbstractClass = 0; /*0x5f3b5d*/
+    this->? = 0; /*0x5f3b63*/
+    this->? = 0; /*0x5f3b6a*/
+    this->? = 0; /*0x5f3b71*/
     return this; /*0x5f3b7a*/
 }
 } // namespace ra2::game

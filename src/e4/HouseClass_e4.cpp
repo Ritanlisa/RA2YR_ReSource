@@ -2900,8 +2900,8 @@ LABEL_34:
         v24 = (int *)__RTDynamicCast( /*0x5d73b4*/
                        v23,
                        0,
-                       &ObjectClass `RTTI Type Descriptor',
-                       &TechnoClass `RTTI Type Descriptor',
+                       0,
+                       0,
                        0);
         CurrentOption = (int16_t *)HouseClass::GetCurrentOption((HouseClass *)aP0, &v29); /*0x5d73bb*/
         if ( FindInfantryDeployPosition(v24, CurrentOption, 4) ) /*0x5d73c4*/

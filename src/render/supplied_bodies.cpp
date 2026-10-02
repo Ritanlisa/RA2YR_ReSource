@@ -530,7 +530,7 @@ int ColorListClass::SetIndex(int a2, int a3) {
 
 // 0x488980
 namespace gamemd {
-unsigned int * ColorListClass::DrawColorRect(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6) {
+unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int a6) {
     int v7; // edi
     int v8; // eax
     unsigned int *result; // eax
@@ -827,7 +827,7 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitPlainXlatAlpha<unsigned short>::`vftable'; /*0x49a20b*/
     FractalNoise::Dtor(v3); /*0x49a212*/
     *((unsigned int *)this + 2) = 0; /*0x49a21b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a224*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a224*/
     if ( (a2 & 1) != 0 ) /*0x49a22a*/
       RA2_OPDEL(this); /*0x49a22d*/
     return this->__pad_0; /*0x49a237*/
@@ -843,7 +843,7 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49a28b*/
     FractalNoise::Dtor(m_C); /*0x49a292*/
     this->m_C = 0; /*0x49a29b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a2a4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a2a4*/
     if ( (a2 & 1) != 0 ) /*0x49a2aa*/
       RA2_OPDEL(this); /*0x49a2ad*/
     return this->__pad_0; /*0x49a2b7*/
@@ -859,7 +859,7 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent75Alpha<unsigned short>::`vftable'; /*0x49a2cb*/
     FractalNoise::Dtor(m_8); /*0x49a2d2*/
     this->m_8 = 0; /*0x49a2db*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a2e4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a2e4*/
     if ( (a2 & 1) != 0 ) /*0x49a2ea*/
       RA2_OPDEL(this); /*0x49a2ed*/
     return this->__pad_0; /*0x49a2f7*/
@@ -875,7 +875,7 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent50Alpha<unsigned short>::`vftable'; /*0x49a30b*/
     FractalNoise::Dtor(m_8); /*0x49a312*/
     this->m_8 = 0; /*0x49a31b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a324*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a324*/
     if ( (a2 & 1) != 0 ) /*0x49a32a*/
       RA2_OPDEL(this); /*0x49a32d*/
     return this->__pad_0; /*0x49a337*/
@@ -891,7 +891,7 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransZRemapXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a46b*/
     FractalNoise::Dtor(m_C); /*0x49a472*/
     this->m_C = 0; /*0x49a47b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a484*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a484*/
     if ( (a2 & 1) != 0 ) /*0x49a48a*/
       RA2_OPDEL(this); /*0x49a48d*/
     return this->__pad_0; /*0x49a497*/
@@ -907,7 +907,7 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZRead<unsigned short>::`vftable'; /*0x49a4ab*/
     FractalNoise::Dtor(m_8); /*0x49a4b2*/
     this->m_8 = 0; /*0x49a4bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a4c4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a4c4*/
     if ( (a2 & 1) != 0 ) /*0x49a4ca*/
       RA2_OPDEL(this); /*0x49a4cd*/
     return this->__pad_0; /*0x49a4d7*/
@@ -923,7 +923,7 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZRead<unsigned short>::`vftable'; /*0x49a4eb*/
     FractalNoise::Dtor(v3); /*0x49a4f2*/
     *((unsigned int *)this + 2) = 0; /*0x49a4fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a504*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a504*/
     if ( (a2 & 1) != 0 ) /*0x49a50a*/
       RA2_OPDEL(this); /*0x49a50d*/
     return this->__pad_0; /*0x49a517*/
@@ -939,7 +939,7 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent25AlphaZRead<unsigned short>::`vftable'; /*0x49a52b*/
     FractalNoise::Dtor(m_8); /*0x49a532*/
     this->m_8 = 0; /*0x49a53b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a544*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a544*/
     if ( (a2 & 1) != 0 ) /*0x49a54a*/
       RA2_OPDEL(this); /*0x49a54d*/
     return this->__pad_0; /*0x49a557*/
@@ -955,7 +955,7 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a56b*/
     FractalNoise::Dtor(m_8); /*0x49a572*/
     this->m_8 = 0; /*0x49a57b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a584*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a584*/
     if ( (a2 & 1) != 0 ) /*0x49a58a*/
       RA2_OPDEL(this); /*0x49a58d*/
     return this->__pad_0; /*0x49a597*/
@@ -971,7 +971,7 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a5ab*/
     FractalNoise::Dtor(m_8); /*0x49a5b2*/
     this->m_8 = 0; /*0x49a5bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a5c4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a5c4*/
     if ( (a2 & 1) != 0 ) /*0x49a5ca*/
       RA2_OPDEL(this); /*0x49a5cd*/
     return this->__pad_0; /*0x49a5d7*/
@@ -987,7 +987,7 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent25AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a5eb*/
     FractalNoise::Dtor(m_8); /*0x49a5f2*/
     this->m_8 = 0; /*0x49a5fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a604*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a604*/
     if ( (a2 & 1) != 0 ) /*0x49a60a*/
       RA2_OPDEL(this); /*0x49a60d*/
     return this->__pad_0; /*0x49a617*/
@@ -1003,7 +1003,7 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransXlatAlphaZReadWrite<unsigned short>::`vftable'; /*0x49a62b*/
     FractalNoise::Dtor(v3); /*0x49a632*/
     *((unsigned int *)this + 2) = 0; /*0x49a63b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a644*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a644*/
     if ( (a2 & 1) != 0 ) /*0x49a64a*/
       RA2_OPDEL(this); /*0x49a64d*/
     return this->__pad_0; /*0x49a657*/
@@ -1019,7 +1019,7 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a6ab*/
     FractalNoise::Dtor(m_8); /*0x49a6b2*/
     this->m_8 = 0; /*0x49a6bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a6c4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a6c4*/
     if ( (a2 & 1) != 0 ) /*0x49a6ca*/
       RA2_OPDEL(this); /*0x49a6cd*/
     return this->__pad_0; /*0x49a6d7*/
@@ -1035,7 +1035,7 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2) {
     *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a6eb*/
     FractalNoise::Dtor(m_8); /*0x49a6f2*/
     this->m_8 = 0; /*0x49a6fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a704*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49a704*/
     if ( (a2 & 1) != 0 ) /*0x49a70a*/
       RA2_OPDEL(this); /*0x49a70d*/
     return this->__pad_0; /*0x49a717*/
@@ -1051,7 +1051,7 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &RLEBlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49aa0b*/
     FractalNoise::Dtor(v3); /*0x49aa12*/
     *((unsigned int *)this + 2) = 0; /*0x49aa1b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aa24*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49aa24*/
     if ( (a2 & 1) != 0 ) /*0x49aa2a*/
       RA2_OPDEL(this); /*0x49aa2d*/
     return this->__pad_0; /*0x49aa37*/
@@ -1067,7 +1067,7 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent75Alpha<unsigned short>::`vftable'; /*0x49aa8b*/
     FractalNoise::Dtor(v3); /*0x49aa92*/
     *((unsigned int *)this + 2) = 0; /*0x49aa9b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aaa4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49aaa4*/
     if ( (a2 & 1) != 0 ) /*0x49aaaa*/
       RA2_OPDEL(this); /*0x49aaad*/
     return this->__pad_0; /*0x49aab7*/
@@ -1083,7 +1083,7 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent50Alpha<unsigned short>::`vftable'; /*0x49aacb*/
     FractalNoise::Dtor(m_8); /*0x49aad2*/
     this->m_8 = 0; /*0x49aadb*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aae4*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49aae4*/
     if ( (a2 & 1) != 0 ) /*0x49aaea*/
       RA2_OPDEL(this); /*0x49aaed*/
     return this->__pad_0; /*0x49aaf7*/
@@ -1099,7 +1099,7 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent25Alpha<unsigned short>::`vftable'; /*0x49ab0b*/
     FractalNoise::Dtor(v3); /*0x49ab12*/
     *((unsigned int *)this + 2) = 0; /*0x49ab1b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49ab24*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49ab24*/
     if ( (a2 & 1) != 0 ) /*0x49ab2a*/
       RA2_OPDEL(this); /*0x49ab2d*/
     return this->__pad_0; /*0x49ab37*/
@@ -1115,7 +1115,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = &RLEBlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49ab4b*/
     FractalNoise::Dtor(v3); /*0x49ab52*/
     *((unsigned int *)this + 2) = 0; /*0x49ab5b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49ab64*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49ab64*/
     if ( (a2 & 1) != 0 ) /*0x49ab6a*/
       RA2_OPDEL(this); /*0x49ab6d*/
     return this->__pad_0; /*0x49ab77*/
@@ -1642,7 +1642,7 @@ unsigned int * PaletteClass::Load() {
     CCFileClass::Construct2(&v11, (char **)this); /*0x5cb5a6*/
     if ( !(uint8_t)CCFileClass::Open(&v11, 0) || (v2 = (char *)CCFileClass::ReadEntireFile(&v11)) == 0 ) /*0x5cb5c5*/
     {
-      *(unsigned int *)v11.CDFileClass = &CCFileClass::`vftable'; /*0x5cb5cb*/
+      *(unsigned int *)v11.CDFileClass = 0; /*0x5cb5cb*/
       v13 = 0; /*0x5cb5d3*/
       Vector::Clear((int)v12); /*0x5cb5db*/
       *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb5e4*/
@@ -1669,7 +1669,7 @@ unsigned int * PaletteClass::Load() {
       v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
     else
       v9 = 0; /*0x5cb681*/
-    *(unsigned int *)v11.CDFileClass = &CCFileClass::`vftable'; /*0x5cb687*/
+    *(unsigned int *)v11.CDFileClass = 0; /*0x5cb687*/
     v13 = 0; /*0x5cb68f*/
     Vector::Clear((int)v12); /*0x5cb697*/
     *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb6a0*/
@@ -2255,7 +2255,7 @@ int BuildingLoadQueue::FindBuilding() {
     {
   LABEL_17:
       v7 = (void ***)(uniqueId + 4); /*0x6e7b43*/
-      return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0); /*0x6e7b46*/
+      return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e7b46*/
     }
     if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e7ab6*/
     {
@@ -2296,7 +2296,7 @@ int BuildingLoadQueue::FindBuilding() {
     }
   LABEL_13:
     v7 = (void ***)&unk_B78828; /*0x6e7b17*/
-    return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0); /*0x6e7b37*/
+    return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e7b37*/
 }
 } // namespace gamemd
 

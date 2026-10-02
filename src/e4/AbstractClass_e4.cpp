@@ -210,7 +210,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   this = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
                             &v6->vtable1,
                             0,
-                            &AbstractClass `RTTI Type Descriptor',
+                            0,
                             (struct TypeDescriptor *)stru_8249A0.Priority,
                             0);
   if ( this ) /*0x4fb9e5*/
@@ -625,8 +625,8 @@ LABEL_20:
   if ( __RTDynamicCast( /*0x725a5a*/
          &aP0->vtable1,
          0,
-         &AbstractClass `RTTI Type Descriptor',
-         &AbstractTypeClass `RTTI Type Descriptor',
+         0,
+         0,
          0) )
   {
     for ( m = 0; m < g_BuildingLoadQueue_Array.LightBlueTint; ++m ) /*0x725a6f*/

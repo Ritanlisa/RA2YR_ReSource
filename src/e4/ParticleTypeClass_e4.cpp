@@ -578,7 +578,7 @@ LABEL_17:
   {
     ++v42; /*0x6453f0*/
     ++v41; /*0x6453f3*/
-    if ( (int)v42 >= (int)&ParticleTypeClass `RTTI Type Descriptor' ) /*0x6453fa*/
+    if ( (int)v42 >= (int)0 ) /*0x6453fa*/
     {
       v41 = -1; /*0x6453fc*/
       break; /*0x6453fc*/

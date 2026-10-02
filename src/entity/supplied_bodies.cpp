@@ -64,9 +64,9 @@ int AnimClass::SimpleCtor() {
     this->__pad_194[8] = 1; /*0x422834*/
     this->__pad_194[9] = 0; /*0x42283b*/
     this->__pad_194[10] = 0; /*0x422841*/
-    this->AnimClass_field_0x0 = &AnimClass::`vftable'; /*0x422847*/
-    this->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x42284d*/
-    this->AnimClass_field_0x8 = &AnimClass::`vftable'; /*0x422854*/
+    this->AnimClass_field_0x0 = 0; /*0x422847*/
+    this->AnimClass_field_0x4 = 0; /*0x42284d*/
+    this->AnimClass_field_0x8 = 0; /*0x422854*/
     *(unsigned int *)this->__pad_C = &off_7E3328; /*0x42285b*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
       || (byte_A8E9B5 || !dword_A8E9B0)
@@ -269,9 +269,9 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3) {
       {
         ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
         __4type_info_AAEAAV0_ABV0__Z((void *)(a2 + 180), (int)&a3); /*0x4252b6*/
-        *(unsigned int *)a2 = &AnimClass::`vftable'; /*0x4252bb*/
-        *(unsigned int *)(a2 + 4) = &AnimClass::`vftable'; /*0x4252c1*/
-        *(unsigned int *)(a2 + 8) = &AnimClass::`vftable'; /*0x4252c8*/
+        *(unsigned int *)a2 = 0; /*0x4252bb*/
+        *(unsigned int *)(a2 + 4) = 0; /*0x4252c1*/
+        *(unsigned int *)(a2 + 8) = 0; /*0x4252c8*/
         *(unsigned int *)(a2 + 12) = &off_7E3328; /*0x4252cf*/
       }
       AudioController::Init((AudioController *)(a2 + 416)); /*0x4252dc*/
@@ -599,9 +599,9 @@ void ** AnimClass::ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7,
     this->__pad_194[8] = 1; /*0x422009*/
     this->__pad_194[9] = 0; /*0x422010*/
     this->__pad_194[10] = 0; /*0x422016*/
-    this->AnimClass_field_0x0 = (int)&AnimClass::`vftable'; /*0x42201c*/
-    this->AnimClass_field_0x4 = (int)&AnimClass::`vftable'; /*0x422022*/
-    this->AnimClass_field_0x8 = (int)&AnimClass::`vftable'; /*0x422028*/
+    this->AnimClass_field_0x0 = (int)0; /*0x42201c*/
+    this->AnimClass_field_0x4 = (int)0; /*0x422022*/
+    this->AnimClass_field_0x8 = (int)0; /*0x422028*/
     *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
     this->__pad_D8[4] = 0; /*0x422037*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/

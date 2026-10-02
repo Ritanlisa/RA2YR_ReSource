@@ -353,10 +353,10 @@ AbstractClass * ScriptClass::Construct(int a2) {
     this->field28 = 0; /*0x6913cc*/
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
-    this->AbstractClass = &ScriptClass::`vftable'; /*0x6913dd*/
-    this->? = &ScriptClass::`vftable'; /*0x6913e3*/
-    this->? = &ScriptClass::`vftable'; /*0x6913ea*/
-    this->? = &ScriptClass::`vftable'; /*0x6913f1*/
+    this->AbstractClass = 0; /*0x6913dd*/
+    this->? = 0; /*0x6913e3*/
+    this->? = 0; /*0x6913ea*/
+    this->? = 0; /*0x6913f1*/
     if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
       || (byte_8872BD || !dword_8872B8)
       && dword_8872C4 > 0
@@ -1107,10 +1107,10 @@ unsigned int * TriggerTypeClass::Construct(char *Source) {
     this->NextTrigger = 0; /*0x726cc0*/
     this->FirstEvent = 0; /*0x726cc6*/
     this->FirstAction = 0; /*0x726ccc*/
-    this->AbstractClass = &TriggerTypeClass::`vftable'; /*0x726cd2*/
-    this->? = &TriggerTypeClass::`vftable'; /*0x726cd8*/
-    this->? = &TriggerTypeClass::`vftable'; /*0x726cdf*/
-    this->? = &TriggerTypeClass::`vftable'; /*0x726ce6*/
+    this->AbstractClass = 0; /*0x726cd2*/
+    this->? = 0; /*0x726cd8*/
+    this->? = 0; /*0x726cdf*/
+    this->? = 0; /*0x726ce6*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
       || (IDA_BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
@@ -1161,10 +1161,10 @@ int TriggerClass::ProcessEvents() {
     int v8; // eax
     AbstractClass *v10; // [esp+10h] [ebp-4h] BYREF
 
-    this->vtable0 = &TriggerTypeClass::`vftable'; /*0x726e06*/
-    this->vtable1 = &TriggerTypeClass::`vftable'; /*0x726e0c*/
-    this->vtable2 = &TriggerTypeClass::`vftable'; /*0x726e13*/
-    this->vtable3 = &TriggerTypeClass::`vftable'; /*0x726e1a*/
+    this->vtable0 = 0; /*0x726e06*/
+    this->vtable1 = 0; /*0x726e0c*/
+    this->vtable2 = 0; /*0x726e13*/
+    this->vtable3 = 0; /*0x726e1a*/
     AbstractClass::AnnounceExpiredPointer(this, 1); /*0x726e21*/
     v10 = this; /*0x726e36*/
     v2 = (*(int (__thiscall **)(int *, AbstractClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v10); /*0x726e3a*/
@@ -1667,7 +1667,7 @@ int CampaignClass::LoadFromINI() {
       *(unsigned int *)&this->scenario[52] = 0; /*0x49db33*/
       *(unsigned int *)&this->scenario[48] = 0; /*0x49db36*/
       this->scenario[56] = 0; /*0x49db39*/
-      v71.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x49db3c*/
+      v71.FileClass = (FileClass)0; /*0x49db3c*/
       v73 = 0; /*0x49db44*/
       Vector::Clear((int)v72); /*0x49db4b*/
       v71.FileClass = (FileClass)&off_7E1668; /*0x49db54*/
@@ -1982,7 +1982,7 @@ int CampaignClass::LoadFromINI() {
     *(unsigned int *)&this->scenario[48] = 0; /*0x49db84*/
   LABEL_80:
     this->scenario[56] = 1; /*0x49e36f*/
-    v71.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x49e37a*/
+    v71.FileClass = (FileClass)0; /*0x49e37a*/
     v73 = 0; /*0x49e382*/
     Vector::Clear((int)v72); /*0x49e389*/
     v71.FileClass = (FileClass)&off_7E1668; /*0x49e392*/
@@ -2023,7 +2023,7 @@ unsigned char * CampaignClass::Constructor_1(int16_t a2) {
     IDA_LOBYTE(this->?) = 0; /*0x5d2e05*/
     IDA_BYTE1(this->?) = 0; /*0x5d2e08*/
     IDA_BYTE2(this->?) = 0; /*0x5d2e0b*/
-    this->AbstractClass = &MSFont::`vftable'; /*0x5d2e13*/
+    this->AbstractClass = 0; /*0x5d2e13*/
     FontClass::LoadFontResources((int)this, a2); /*0x5d2e19*/
     ++*(unsigned int *)&g_MissionQueueFrame.underParMessage[25]; /*0x5d2e24*/
     return this; /*0x5d2e2b*/
@@ -2065,10 +2065,10 @@ unsigned int * ScriptTypeClass::Constructor(char *Source) {
     AbstractTypeClass::Constructor((int *)this, Source); /*0x6916b8*/
     this->scriptActions[27] = 0; /*0x6916bd*/
     this->scriptActions[28] = 0; /*0x6916c7*/
-    this->AbstractClass = &ScriptTypeClass::`vftable'; /*0x6916d1*/
-    this->? = &ScriptTypeClass::`vftable'; /*0x6916d7*/
-    this->? = &ScriptTypeClass::`vftable'; /*0x6916de*/
-    this->? = &ScriptTypeClass::`vftable'; /*0x6916e5*/
+    this->AbstractClass = 0; /*0x6916d1*/
+    this->? = 0; /*0x6916d7*/
+    this->? = 0; /*0x6916de*/
+    this->? = 0; /*0x6916e5*/
     v3 = *(unsigned int *)&FootClass_Array.?; /*0x6916ec*/
     if ( *(int *)&FootClass_Array.? < FootClass_Array.?[6] /*0x69172e*/
       || (IDA_BYTE1(FootClass_Array.?[7]) || !FootClass_Array.?[6])
@@ -2174,10 +2174,10 @@ void ** ScriptClass::ProcessEvent(char a2) {
     int v3; // eax
     ScriptClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-    this->AbstractClass = &ScriptClass::`vftable'; /*0x691ee6*/
-    this->? = &ScriptClass::`vftable'; /*0x691eec*/
-    this->? = &ScriptClass::`vftable'; /*0x691ef3*/
-    this->? = &ScriptClass::`vftable'; /*0x691efa*/
+    this->AbstractClass = 0; /*0x691ee6*/
+    this->? = 0; /*0x691eec*/
+    this->? = 0; /*0x691ef3*/
+    this->? = 0; /*0x691efa*/
     AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691f01*/
     v5 = this; /*0x691f16*/
     v3 = (*(int (__thiscall **)(int *, ScriptClass **))(dword_8872B0 + 16))(&dword_8872B0, &v5); /*0x691f1a*/
@@ -2221,10 +2221,10 @@ int TActionClass::ctor() {
     this->TActionClass_field_4C = 0; /*0x6dd02d*/
     this->TActionClass_field_50 = 0; /*0x6dd030*/
     this->TActionClass_field_54 = 0; /*0x6dd033*/
-    this->AbstractClass = &TActionClass::`vftable'; /*0x6dd036*/
-    this->? = &TActionClass::`vftable'; /*0x6dd03c*/
-    this->? = &TActionClass::`vftable'; /*0x6dd043*/
-    this->? = &TActionClass::`vftable'; /*0x6dd04a*/
+    this->AbstractClass = 0; /*0x6dd036*/
+    this->? = 0; /*0x6dd03c*/
+    this->? = 0; /*0x6dd043*/
+    this->? = 0; /*0x6dd04a*/
     v2 = dword_B0E668; /*0x6dd051*/
     if ( dword_B0E668 < dword_B0E660 /*0x6dd08f*/
       || (byte_B0E665 || !dword_B0E660)
@@ -2294,10 +2294,10 @@ void ** TActionClass::Destructor(char a2) {
     int v5; // eax
     TActionClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-    this->AbstractClass = &TActionClass::`vftable'; /*0x6e4666*/
-    this->? = &TActionClass::`vftable'; /*0x6e466c*/
-    this->? = &TActionClass::`vftable'; /*0x6e4673*/
-    this->? = &TActionClass::`vftable'; /*0x6e467a*/
+    this->AbstractClass = 0; /*0x6e4666*/
+    this->? = 0; /*0x6e466c*/
+    this->? = 0; /*0x6e4673*/
+    this->? = 0; /*0x6e467a*/
     AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e4681*/
     v7 = this; /*0x6e4696*/
     v3 = (*(int (__thiscall **)(int *, TActionClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e469a*/
@@ -3306,10 +3306,10 @@ int TriggerClass::Construct(int this, int a2) {
     *(unsigned int *)(this + 52) = v3; /*0x725fc4*/
     *(unsigned int *)(this + 64) = 0; /*0x725fc7*/
     *(unsigned char *)(this + 68) = 1; /*0x725fca*/
-    *(unsigned int *)this = &TriggerClass::`vftable'; /*0x725fce*/
-    *(unsigned int *)(this + 4) = &TriggerClass::`vftable'; /*0x725fd4*/
-    *(unsigned int *)(this + 8) = &TriggerClass::`vftable'; /*0x725fdb*/
-    *(unsigned int *)(this + 12) = &TriggerClass::`vftable'; /*0x725fe2*/
+    *(unsigned int *)this = 0; /*0x725fce*/
+    *(unsigned int *)(this + 4) = 0; /*0x725fd4*/
+    *(unsigned int *)(this + 8) = 0; /*0x725fdb*/
+    *(unsigned int *)(this + 12) = 0; /*0x725fe2*/
     if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
       || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -3395,10 +3395,10 @@ void ** TriggerClass::CheckCondition(char a2) {
     int v5; // eax
     TriggerClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-    this->AbstractClass = &TriggerClass::`vftable'; /*0x726956*/
-    this->? = &TriggerClass::`vftable'; /*0x72695c*/
-    this->? = &TriggerClass::`vftable'; /*0x726963*/
-    this->? = &TriggerClass::`vftable'; /*0x72696a*/
+    this->AbstractClass = 0; /*0x726956*/
+    this->? = 0; /*0x72695c*/
+    this->? = 0; /*0x726963*/
+    this->? = 0; /*0x72696a*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x726971*/
     v7 = this; /*0x726986*/
     v3 = (*(int (__thiscall **)(unsigned int *, TriggerClass **))(dword_A8EAE8 + 16))(&dword_A8EAE8, &v7); /*0x72698a*/

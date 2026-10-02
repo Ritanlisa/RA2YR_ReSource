@@ -27724,8 +27724,8 @@ LABEL_17:
     return (int)__RTDynamicCast( /*0x6e73f6*/
                   *v7,
                   0,
-                  &AbstractClass `RTTI Type Descriptor',
-                  &TechnoTypeClass `RTTI Type Descriptor',
+                  0,
+                  0,
                   0);
   }
   if ( !LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x6e7366*/
@@ -27767,7 +27767,7 @@ LABEL_12:
   }
 LABEL_13:
   v7 = (void ***)&unk_B78828; /*0x6e73c7*/
-  return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &TechnoTypeClass `RTTI Type Descriptor', 0); /*0x6e73e7*/
+  return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e73e7*/
 
 }
 }

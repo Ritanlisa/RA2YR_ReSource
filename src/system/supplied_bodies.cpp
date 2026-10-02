@@ -130,11 +130,11 @@ unsigned int * INIClass::sectionExists() {
     sectionHead = (int *)(this->sectionHead); /*0x52af59*/
     this->headNode[1] = 0; /*0x52af5f*/
     this->headNode[2] = 0; /*0x52af62*/
-    this->headNode[0] = (int)&GenericNode::`vftable'; /*0x52af65*/
+    this->headNode[0] = (int)0; /*0x52af65*/
     this->sectionHead[1] = 0; /*0x52af6b*/
     this->sectionHead[2] = 0; /*0x52af6e*/
-    this->sectionHead[0] = (int)&GenericNode::`vftable'; /*0x52af71*/
-    *(unsigned int *)this->__pad_0 = &GenericList::`vftable'; /*0x52af77*/
+    this->sectionHead[0] = (int)0; /*0x52af71*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x52af77*/
     if ( this != (INIClass *)-16 ) /*0x52af7d*/
     {
       v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -193,7 +193,7 @@ char TacticalClass::CompareVector(int a2) {
 // 0x5C0FE0
 namespace gamemd {
 unsigned int * ScenarioClass::initAI(char a2) {
-    this->m_0 = (int)&MultiplayerBattle::`vftable'; /*0x5c0fe3*/
+    this->m_0 = (int)0; /*0x5c0fe3*/
     MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
     if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
       RA2_OPDEL(this); /*0x5c0ff6*/
@@ -246,7 +246,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
     void *FileBaseOffset; // eax
 
     FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
-    this->FileClass = (FileClass)&BufferIOFileClass::`vftable'; /*0x432619*/
+    this->FileClass = (FileClass)0; /*0x432619*/
     if ( FileBaseOffset ) /*0x432621*/
     {
       if ( IDA_LOBYTE(this->BufferOffset) ) /*0x432623*/
@@ -275,7 +275,7 @@ void *** BufferIOFileClass::Constructor_BitFont(char a2) {
     void **FilePointer; // esi
 
     FileSize = (void *)this->?; /*0x434a43*/
-    *(unsigned int *)this->RawFileClass = &BitFont::`vftable'; /*0x434a46*/
+    *(unsigned int *)this->RawFileClass = 0; /*0x434a46*/
     if ( FileSize ) /*0x434a4e*/
       free(FileSize); /*0x434a51*/
     FilePointer = (void **)this->?; /*0x434a5a*/
@@ -298,7 +298,7 @@ namespace gamemd {
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
-    *(unsigned int *)this->RawFileClass = &BitText::`vftable'; /*0x435564*/
+    *(unsigned int *)this->RawFileClass = 0; /*0x435564*/
     v3 = g_FogOfWarState; /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
@@ -443,11 +443,11 @@ unsigned int * GenericList::Constructor() {
     v2 = this + 4; /*0x52ace9*/
     *((unsigned int *)this + 2) = 0; /*0x52acef*/
     *((unsigned int *)this + 3) = 0; /*0x52acf2*/
-    *((unsigned int *)this + 1) = &GenericNode::`vftable'; /*0x52acf5*/
+    *((unsigned int *)this + 1) = 0; /*0x52acf5*/
     *((unsigned int *)this + 5) = 0; /*0x52acfb*/
     *((unsigned int *)this + 6) = 0; /*0x52acfe*/
-    *((unsigned int *)this + 4) = &GenericNode::`vftable'; /*0x52ad01*/
-    this->vtable = &GenericList::`vftable'; /*0x52ad07*/
+    *((unsigned int *)this + 4) = 0; /*0x52ad01*/
+    this->vtable = 0; /*0x52ad07*/
     if ( this != (GenericList *)-16 ) /*0x52ad0d*/
     {
       v3 = *((unsigned int *)this + 5); /*0x52ad0f*/
@@ -486,7 +486,7 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
     *(unsigned int *)this->__pad_20 = a8; /*0x52af2e*/
     this->sectionCount = a7; /*0x52af31*/
     *(unsigned int *)&this->__pad_20[4] = a6; /*0x52af38*/
-    *(unsigned int *)this->__pad_0 = &INIClass::INIEntry::`vftable'; /*0x52af3b*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x52af3b*/
     return this->__pad_0; /*0x52af41*/
 }
 } // namespace gamemd

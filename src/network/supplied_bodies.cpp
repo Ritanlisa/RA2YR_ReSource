@@ -31,7 +31,7 @@ unsigned int * ConnectionClass::QueryInterface(char a2) {
     void (__thiscall ***PlayerIndex)(unsigned int, int); // ecx
 
     v3 = (void *)*((unsigned int *)this + 8); /*0x48c653*/
-    *(unsigned int *)this->__pad_0 = &ConnectionClass::`vftable'; /*0x48c656*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x48c656*/
     RA2_OPDEL(v3); /*0x48c65d*/
     PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48c662*/
     if ( PlayerIndex ) /*0x48c66a*/
@@ -71,7 +71,7 @@ int NetworkID::Compare(int a2) {
 // 0x53F850
 namespace gamemd {
 unsigned int * IPXConnClass::QueryInterface(char a2, int a3, int a4, int a5) {
-    *(unsigned int *)this->ConnectionClass = &IPXConnClass::`vftable'; /*0x53f853*/
+    *(unsigned int *)this->ConnectionClass = 0; /*0x53f853*/
     ConnectionClass::dtor((ConnectionClass *)this); /*0x53f859*/
     if ( (a2 & 1) != 0 ) /*0x53f863*/
       RA2_OPDEL(this); /*0x53f866*/
@@ -81,7 +81,7 @@ unsigned int * IPXConnClass::QueryInterface(char a2, int a3, int a4, int a5) {
 
 // 0x53FCB0
 namespace gamemd {
-int IPXGlobalConnClass::GetQueueSize(unsigned short *a2 a2, signed int a3 a3, int *a4 a4, int a5 a5) {
+int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4, int a5) {
     int IPXGlobalConnClass_field_0x04; // ecx
     int v8; // edi
     unsigned int *TileIndex; // eax
@@ -447,7 +447,7 @@ int IPXManagerClass::Flush(char a2) {
 // 0x543100
 namespace gamemd {
 unsigned int * IPXManagerClass::getPlayerName(char a2) {
-    this->m_0 = (int)&ConnManClass::`vftable'; /*0x543109*/
+    this->m_0 = (int)0; /*0x543109*/
     if ( (a2 & 1) != 0 ) /*0x54310f*/
       RA2_OPDEL(this); /*0x543112*/
     return &this->m_0; /*0x54311c*/
@@ -1434,7 +1434,7 @@ void ModemGame::ReceiveMapPreview() {
       v13 = 0; /*0x5b74cc*/
       Buffer::Init(&v14, (int)(v4 + 4), FileSize); /*0x5b74de*/
       v14.Buffer_field_0C = 0; /*0x5b74ee*/
-      *(unsigned int *)v12.__pad_0 = &BufferStraw::`vftable'; /*0x5b74f2*/
+      *(unsigned int *)v12.__pad_0 = 0; /*0x5b74f2*/
       LZOStraw::Constructor((LZOStraw *)v15, 1, 0x2000); /*0x5b74fa*/
       Delegate::Set(v15, (int)&v12); /*0x5b7508*/
       v6 = (char *)RA2_OPNEW(2 * v5); /*0x5b7519*/
@@ -2446,7 +2446,7 @@ char MultiplayerSiegeDefenderTeam::AddRef() {
 // 0x5CAF10
 namespace gamemd {
 void ** MultiplayerSiegeDefenderTeam::QueryInterface(char a2) {
-    *(unsigned int *)this->__pad_0 = &MultiplayerSiegeDefenderTeam::`vftable'; /*0x5caf13*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5caf13*/
     MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf19*/
     if ( (a2 & 1) != 0 ) /*0x5caf23*/
       RA2_OPDEL(this); /*0x5caf26*/
@@ -2457,7 +2457,7 @@ void ** MultiplayerSiegeDefenderTeam::QueryInterface(char a2) {
 // 0x5CAF40
 namespace gamemd {
 void ** MultiplayerSiegeAttackerTeam::QueryInterface(char a2) {
-    *this = (MultiplayerSiegeAttackerTeam)&MultiplayerSiegeAttackerTeam::`vftable'; /*0x5caf43*/
+    *this = (MultiplayerSiegeAttackerTeam)0; /*0x5caf43*/
     MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf49*/
     if ( (a2 & 1) != 0 ) /*0x5caf53*/
       RA2_OPDEL(this); /*0x5caf56*/
@@ -2529,7 +2529,7 @@ unsigned int * MultiplayerModeVector2::Destruct(char a2) {
 namespace gamemd {
 wchar_t ** MultiplayerTeam::Constructor(const wchar_t **a2, wchar_t *a3) {
     WideString::AssignFromPtr((wchar_t **)&this->MultiplayerTeam_field_0x04, a2); /*0x5d8c5b*/
-    *(unsigned int *)this->__pad_0 = &MultiplayerTeam::`vftable'; /*0x5d8c64*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d8c64*/
     *((unsigned int *)this + 2) = a3; /*0x5d8c6a*/
     return (wchar_t **)this; /*0x5d8c6f*/
 }
@@ -2538,7 +2538,7 @@ wchar_t ** MultiplayerTeam::Constructor(const wchar_t **a2, wchar_t *a3) {
 // 0x5D8C80
 namespace gamemd {
 void MultiplayerTeam::Destructor() {
-    *(unsigned int *)this->__pad_0 = &MultiplayerTeam::`vftable'; /*0x5d8c80*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d8c80*/
     DeleteAndZero::Alt((DeleteAndZero *)&this->MultiplayerTeam_field_0x04); /*0x5d8c89*/
 }
 } // namespace gamemd
@@ -2546,7 +2546,7 @@ void MultiplayerTeam::Destructor() {
 // 0x5D8D50
 namespace gamemd {
 void ** MultiplayerTeam_Destru::QueryInterface(char a2) {
-    *(unsigned int *)this->__pad_0 = &MultiplayerTeam::`vftable'; /*0x5d8d56*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d8d56*/
     DeleteAndZero::Alt((DeleteAndZero *)&this->MultiplayerTeam_field_0x04); /*0x5d8d5c*/
     if ( (a2 & 1) != 0 ) /*0x5d8d66*/
       RA2_OPDEL(this); /*0x5d8d69*/
@@ -3041,7 +3041,7 @@ unsigned int * NullModemClass::initConnection(int a2, int a3, int a4, int16_t a5
 
     IPXConnClass::initConnection((ModemConnectionClass *)this, a2, a3, a4, a5, 60, -1, 1200, 0); /*0x5ef124*/
     v6 = *((unsigned int *)this + 7); /*0x5ef129*/
-    *(unsigned int *)this->__pad_0 = &NullModemConnClass::`vftable'; /*0x5ef12c*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5ef12c*/
     *((unsigned int *)this + 19) = -1; /*0x5ef135*/
     *((unsigned int *)this + 20) = RA2_OPNEW(v6 + 11); /*0x5ef145*/
     return this->__pad_0; /*0x5ef14a*/

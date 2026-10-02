@@ -517,7 +517,7 @@ int Game::MakeScreenshot(int a1)
 }
 // 0x5B7090
 namespace gamemd {
-HashTable_flat * * Game::StartModemMultiplayer(int this@<ecx>, ObjectClass *a2@<ebp>, char a3)
+HashTable_flat * * Game::StartModemMultiplayer(int this, ObjectClass *a2, char a3)
 {
 
   int v5; // eax
