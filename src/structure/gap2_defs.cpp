@@ -20,7 +20,7 @@
 
 // 0x517CC0
 namespace gamemd { 
-int InfantryClass::PerFrameUpdate() {
+int InfantryClass::PerFrameUpdate(int a2@<edi>)
   int v2; // ecx
   unsigned int *result; // eax
   BuildingClass *v5; // ecx

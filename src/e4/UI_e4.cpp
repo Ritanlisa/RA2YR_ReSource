@@ -1229,7 +1229,7 @@ IUnknown * UI_Delete_Delete_63AC60()
 
 // 0x642E00
 namespace gamemd {
-unsigned int * E4Recv_642E00::UI_Render()
+unsigned int * E4Recv_642E00::UI_Render(unsigned int *a1, unsigned int *a2)
 {
 
   unsigned int *FoundationSize; // eax
@@ -1247,7 +1247,7 @@ unsigned int * E4Recv_642E00::UI_Render()
 
 // 0x642E40
 namespace gamemd {
-int E4Recv_642E40::UI_Render_642E40()
+int E4Recv_642E40::UI_Render_642E40(unsigned int *a1, int *a2)
 {
 
   int Default; // eax
@@ -1303,7 +1303,7 @@ int sub_642E80(int * a1, unsigned int * a2)
 
 // 0x643670
 namespace gamemd {
-int * E4Recv_643670::UI_Render_643670()
+int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
 {
 
   int Instance; // ebx

@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_642E00 {
     void* vfptr;  // minimal E2 declaration
-    unsigned int * UI_Render();  // 0x642E00
+    unsigned int * UI_Render(unsigned int *a1, unsigned int *a2);
 };
 } // namespace gamemd

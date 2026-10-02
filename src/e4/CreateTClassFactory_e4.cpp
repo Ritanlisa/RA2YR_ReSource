@@ -1005,7 +1005,7 @@ int E4Recv_6C3DD0::CreateTClassFactory_HouseClass(const void *a2, unsigned int *
 
 // 0x6C3F50
 namespace gamemd {
-int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass()
+int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1025,7 +1025,7 @@ int E4Recv_6C3F50::CreateTClassFactory_DriveLocomotionClass()
 
 // 0x6C40D0
 namespace gamemd {
-int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass()
+int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1045,7 +1045,7 @@ int E4Recv_6C40D0::CreateTClassFactory_JumpjetLocomotionClass()
 
 // 0x6C4250
 namespace gamemd {
-int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass()
+int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1065,7 +1065,7 @@ int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass()
 
 // 0x6C43D0
 namespace gamemd {
-int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
+int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1085,7 +1085,7 @@ int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
 
 // 0x6C4550
 namespace gamemd {
-int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
+int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1105,7 +1105,7 @@ int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
 
 // 0x6C46D0
 namespace gamemd {
-int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
+int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1125,7 +1125,7 @@ int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
 
 // 0x6C4850
 namespace gamemd {
-int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass()
+int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1145,7 +1145,7 @@ int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass()
 
 // 0x6C49D0
 namespace gamemd {
-int E4Recv_6C49D0::CreateTClassFactory_FlyLocomotionClass()
+int E4Recv_6C49D0::CreateTClassFactory_FlyLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1165,7 +1165,7 @@ int E4Recv_6C49D0::CreateTClassFactory_FlyLocomotionClass()
 
 // 0x6C4B50
 namespace gamemd {
-int E4Recv_6C4B50::CreateTClassFactory_TeleportLocomotionClass()
+int E4Recv_6C4B50::CreateTClassFactory_TeleportLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1185,7 +1185,7 @@ int E4Recv_6C4B50::CreateTClassFactory_TeleportLocomotionClass()
 
 // 0x6C4CD0
 namespace gamemd {
-int E4Recv_6C4CD0::CreateTClassFactory_MechLocomotionClass()
+int E4Recv_6C4CD0::CreateTClassFactory_MechLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1205,7 +1205,7 @@ int E4Recv_6C4CD0::CreateTClassFactory_MechLocomotionClass()
 
 // 0x6C4E50
 namespace gamemd {
-int E4Recv_6C4E50::CreateTClassFactory_ShipLocomotionClass()
+int E4Recv_6C4E50::CreateTClassFactory_ShipLocomotionClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -1245,7 +1245,7 @@ int E4Recv_6C4FD0::CreateTClassFactory_BulletClass(const void *a3, unsigned int 
 
 // 0x6C5150
 namespace gamemd {
-int E4Recv_6C5150::CreateTClassFactory_FactoryClass()
+int E4Recv_6C5150::CreateTClassFactory_FactoryClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]

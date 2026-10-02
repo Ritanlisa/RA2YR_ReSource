@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C4B50 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_TeleportLocomotionClass();  // 0x6C4B50
+    int CreateTClassFactory_TeleportLocomotionClass(const void *a2, unsigned int *a3);
 };
 } // namespace gamemd

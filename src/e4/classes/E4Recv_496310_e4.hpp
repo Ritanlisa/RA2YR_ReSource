@@ -10,7 +10,7 @@ struct E4Recv_496310 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    int sub_496310();  // 0x496310
+    int sub_496310(int a2, int a3, unsigned __int8 *a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     unsigned char m_4[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

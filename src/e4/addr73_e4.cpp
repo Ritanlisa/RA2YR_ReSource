@@ -886,7 +886,7 @@ void sub_7331B0()
 }
 // 0x733380
 namespace gamemd {
-int E4Recv_733380::UpdateUnitHealthTooltip()
+int E4Recv_733380::UpdateUnitHealthTooltip(char a1)
 {
 
   int result; // eax

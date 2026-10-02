@@ -133,7 +133,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
 }
 // 0x4A1470
 namespace gamemd { 
-int EnumConnectionPointsClass::FindItem(void* a1) {
+int EnumConnectionPointsClass::FindItem(unsigned int *a2)
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx
@@ -652,7 +652,7 @@ void* Struct::Zero25() {
 }
 // 0x6D9FF0
 namespace gamemd { 
-int PlayerClass::ProcessOccupancyUpdate(void* a1) {
+int PlayerClass::ProcessOccupancyUpdate(void (__thiscall *a2)(unsigned char *))
   int result; // eax
   int v4; // edx
   int v5; // eax

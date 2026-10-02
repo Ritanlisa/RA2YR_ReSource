@@ -130,7 +130,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 }
 // 0x403A80
 namespace gamemd { 
-int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
+int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
     unsigned int v16 = 0;  /* G37 hoist */
 
   void (*v4)(char *); // edi

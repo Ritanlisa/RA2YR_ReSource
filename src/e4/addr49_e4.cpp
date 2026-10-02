@@ -851,7 +851,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 }
 // 0x496310
 namespace gamemd {
-int E4Recv_496310::sub_496310()
+int E4Recv_496310::sub_496310(int a5, int a2, unsigned __int8 *a4, int a3, int a1, int aP2, int a6, int a7, int a8, int a9, int a10)
 {
 
   int v12; // esi
@@ -912,7 +912,7 @@ int E4Recv_496310::sub_496310()
 }
 // 0x4964D0
 namespace gamemd {
-int E4Recv_4964D0::sub_4964D0()
+int E4Recv_4964D0::sub_4964D0(int a5, int a2, unsigned __int8 *a4, int a3, int a1, int aP2, int a6, int a7, int a8, int a9, int a10)
 {
 
   int v12; // esi

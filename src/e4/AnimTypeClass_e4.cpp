@@ -779,7 +779,7 @@ int AnimTypeClass::StubReturnFalse(int a1)
 
 // 0x477050
 namespace gamemd {
-int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
+int AnimTypeClass::ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsigned int a2)
 {
 
   char *v5; // eax
