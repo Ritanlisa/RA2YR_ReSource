@@ -250,14 +250,14 @@ LABEL_4:
       return; /*0x77164e*/
     goto LABEL_5; /*0x77164e*/
   }
-  v3 = ((Timer *)this)->GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
+  v3 = ((gamemd::Timer *)this)->GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
   if ( v3 < v2 ) /*0x771648*/
   {
     v2 -= v3; /*0x77164a*/
     goto LABEL_4; /*0x77164a*/
   }
 LABEL_5:
-  if ( *((int *)this + 244) > 0 && !(uint8_t)((Audio *)this)->IsPlaying() ) /*0x771662*/
+  if ( *((int *)this + 244) > 0 && !(uint8_t)((gamemd::Audio *)this)->IsPlaying() ) /*0x771662*/
   {
     if ( !*((unsigned char *)this + 952) ) /*0x77166f*/
     {

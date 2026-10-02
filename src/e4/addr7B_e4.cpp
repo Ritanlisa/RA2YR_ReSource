@@ -885,7 +885,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b954c*/
-    ((Debug *)this)->Log(); /*0x7b955d*/
+    ((gamemd::Debug *)this)->Log(); /*0x7b955d*/
   if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->occupant ) /*0x7b9574*/
   {
     v2 = 0; /*0x7b9585*/
@@ -895,7 +895,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     if ( ((unsigned int *)this)[0] ) /*0x7b957f*/
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b95a8*/
-        ((Debug *)this)->Log(); /*0x7b95b9*/
+        ((gamemd::Debug *)this)->Log(); /*0x7b95b9*/
       FoundationSize = Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0]); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       abstractFlags = ((unsigned int *)this)[0]; /*0x7b95d4*/

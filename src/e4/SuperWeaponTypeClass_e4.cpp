@@ -222,7 +222,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   SuperWeaponTypeClass **v7; // edx
   SuperWeaponTypeClass **v8; // ecx
 
-  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x5113fa*/
+  ((gamemd::AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
   LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -383,7 +383,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 
   _EBP = v4; /*0x6cea2f*/
   INIClass::ResetSection((INIClass *)aP1); /*0x6cea33*/
-  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBP, (uint8_t ***)aP1) ) /*0x6cea3b*/
+  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((gamemd::AbstractTypeClass *)_EBP, (uint8_t ***)aP1) ) /*0x6cea3b*/
     return 0; /*0x6cee51*/
   v6 = *(unsigned int *)(_EBP + 156); /*0x6cea4a*/
   if ( INIClass::GetString( /*0x6cea6d*/

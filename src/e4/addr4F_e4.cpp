@@ -128,10 +128,10 @@ long sub_4F1840()
   if ( Dialog ) /*0x4f185f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4f1869*/
-    ((Dialog *)(Dialog))->Show(); /*0x4f1871*/
+    ((gamemd::Dialog *)(Dialog))->Show(); /*0x4f1871*/
     if ( !dwNewLong ) /*0x4f187c*/
     {
-            while ( ((Dialog *)0)->PumpMessages() != 1 )
+            while ( ((gamemd::Dialog *)0)->PumpMessages() != 1 )
       {
         if ( dwNewLong ) /*0x4f188d*/
           goto LABEL_7; /*0x4f188d*/

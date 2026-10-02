@@ -29,7 +29,7 @@ AudioController * * CCFileClass::Close()
   AudioController ** v3;
 
   if ( !BYTE1(this->BufferSize) ) /*0x4325c3*/
-    return ((FileClass *)(int a1))->CloseHandle() ; /*0x432607*/
+    return ((gamemd::FileClass *)(int a1))->CloseHandle() ; /*0x432607*/
   ((BufferIO *)((BufferIO *)a1))->Flush(); /*0x4325ca*/
   result = BYTE2(a1->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
@@ -44,7 +44,7 @@ AudioController * * CCFileClass::Close()
       BYTE1(a1->BufferOffset) = (gamemd::AudioController **)(0); /*0x4325f0*/
       return (gamemd::AudioController **)(result); /*0x4325f5*/
     }
-    result = ((FileClass *)(a1))->CloseHandle(); /*0x4325f8*/
+    result = ((gamemd::FileClass *)(a1))->CloseHandle(); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
   BYTE1(this->BufferOffset) = (unsigned char)((gamemd::AudioController **)(0)); /*0x432601*/

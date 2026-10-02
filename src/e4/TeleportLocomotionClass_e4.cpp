@@ -21,7 +21,7 @@ TeleportLocomotionClass::TeleportLocomotionClass()
 
   int v2; // ecx
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
+  LocomotionClass::Init((gamemd::LocomotionClass *)this); /*0x718003*/
   this->MovingDestination[0] = ((char *)&g_BuildingLoadQueue_Array); /*0x718011*/
   this->MovingDestination[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71801a*/
   this->MovingDestination[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718026*/

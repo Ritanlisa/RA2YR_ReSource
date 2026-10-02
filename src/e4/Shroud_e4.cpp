@@ -64,7 +64,7 @@ LABEL_17:
       if ( !result ) /*0x654637*/
         return (gamemd::RadarClass **)(result); /*0x654637*/
     }
-    if ( this->RadarClass_field_0x1498 == (unsigned int)((MapClass *))-1 ) /*0x65457f*/
+    if ( this->RadarClass_field_0x1498 == (unsigned int)((gamemd::MapClass *))-1 ) /*0x65457f*/
       this->RadarClass_field_0x1498 = (MapClass *)(*(int16_t *)(v9 + 36) + *(int16_t *)(v9 + 38)); /*0x65458b*/
     RadarClass_field_0x1490 = (gamemd::MapClass *)(this->RadarClass_field_0x1490); /*0x654594*/
     RadarClass_field_0x1498 = (gamemd::MapClass *)(this->RadarClass_field_0x1498); /*0x65459a*/

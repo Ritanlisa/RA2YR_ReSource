@@ -117,44 +117,44 @@ AbstractClass * * MixFile::LoadSide()
     YRCD = AlwaysFindYRCD(); /*0x534fd1*/
     if ( YRCD >= 2 ) /*0x534fda*/
     {
-      ((Debug *)this)->Log(); /*0x534fe6*/
+      ((gamemd::Debug *)this)->Log(); /*0x534fe6*/
       return 0; /*0x534ffa*/
     }
     v16 = (Game *)YRCD; /*0x534ffb*/
     v2 = YRCD; /*0x534fff*/
   }
-  ((Debug *)this)->Log(); /*0x53500b*/
+  ((gamemd::Debug *)this)->Log(); /*0x53500b*/
   if ( dword_884E68 ) /*0x53501a*/
   {
-    ((Debug *)this)->Log(); /*0x535025*/
+    ((gamemd::Debug *)this)->Log(); /*0x535025*/
     if ( dword_884E68 ) /*0x535035*/
       (**(void (***)(int, int))dword_884E68)(dword_884E68, 1); /*0x53503b*/
     dword_884E68 = 0; /*0x53503d*/
   }
   if ( dword_884E74 ) /*0x53504a*/
   {
-    ((Debug *)this)->Log(); /*0x535055*/
+    ((gamemd::Debug *)this)->Log(); /*0x535055*/
     if ( dword_884E74 ) /*0x535065*/
       (**(void (***)(int, int))dword_884E74)(dword_884E74, 1); /*0x53506b*/
     dword_884E74 = 0; /*0x53506d*/
   }
   if ( dword_884E70 ) /*0x53507a*/
   {
-    ((Debug *)this)->Log(); /*0x535085*/
+    ((gamemd::Debug *)this)->Log(); /*0x535085*/
     if ( dword_884E70 ) /*0x535095*/
       (**(void (***)(int, int))dword_884E70)(dword_884E70, 1); /*0x53509b*/
     dword_884E70 = 0; /*0x53509d*/
   }
   if ( dword_884E78 ) /*0x5350aa*/
   {
-    ((Debug *)this)->Log(); /*0x5350b5*/
+    ((gamemd::Debug *)this)->Log(); /*0x5350b5*/
     if ( dword_884E78 ) /*0x5350c5*/
       (**(void (***)(int, int))dword_884E78)(dword_884E78, 1); /*0x5350cb*/
     dword_884E78 = 0; /*0x5350cd*/
   }
   v5 = (unsigned int *)(v2 + 1);
   sprintf(Buffer, "SIDEC%02dMD.MIX", v2 + 1); /*0x5350e1*/
-  ((Debug *)this)->Log(); /*0x5350f0*/
+  ((gamemd::Debug *)this)->Log(); /*0x5350f0*/
   v6 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x535101*/
   v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
   v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x535117*/
@@ -172,7 +172,7 @@ AbstractClass * * MixFile::LoadSide()
   }
   ReturnTrue(0); /*0x535174*/
   sprintf(Buffer, "SIDEC%02d.MIX", v5); /*0x535184*/
-  ((Debug *)this)->Log(); /*0x535193*/
+  ((gamemd::Debug *)this)->Log(); /*0x535193*/
   v9 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x5351a4*/
   v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
   v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x5351ba*/
@@ -186,7 +186,7 @@ AbstractClass * * MixFile::LoadSide()
     if ( !v11 ) /*0x5351eb*/
     {
       dword_884E74 = 0; /*0x53520a*/
-      ((Debug *)this)->Log(); /*0x535210*/
+      ((gamemd::Debug *)this)->Log(); /*0x535210*/
       return 0; /*0x535224*/
     }
     v12 = (unsigned int *)(((MixFileClass *)(v11))->FromFile(Buffer, (int)dword_886980));
@@ -200,7 +200,7 @@ AbstractClass * * MixFile::LoadSide()
   {
     ReturnTrue(0); /*0x53524b*/
     sprintf(Buffer, "SIDENC%02d.MIX", v5); /*0x53525b*/
-    ((Debug *)this)->Log(); /*0x53526a*/
+    ((gamemd::Debug *)this)->Log(); /*0x53526a*/
     v13 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x53527b*/
     v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
     v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x535296*/
@@ -232,7 +232,7 @@ AbstractClass * * MixFile::LoadSide()
     }
     else
     {
-      ((Debug *)this)->Log(); /*0x53538b*/
+      ((gamemd::Debug *)this)->Log(); /*0x53538b*/
       v21.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       ((Vector *)((int)v22))->Clear(); /*0x5353a8*/
@@ -243,7 +243,7 @@ AbstractClass * * MixFile::LoadSide()
   }
   else
   {
-    ((Debug *)this)->Log(); /*0x535233*/
+    ((gamemd::Debug *)this)->Log(); /*0x535233*/
     return 0; /*0x53523b*/
   }
 

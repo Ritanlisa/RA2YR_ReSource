@@ -122,14 +122,14 @@ LABEL_11:
     if ( (byte_A8EDF8 & 1) == 0 ) /*0x4f12be*/
     {
       byte_A8EDF8 |= 1u; /*0x4f12ca*/
-      dword_A8EE30 = ((Timer *)this)->GetTicks(); /*0x4f12da*/
+      dword_A8EE30 = ((gamemd::Timer *)this)->GetTicks(); /*0x4f12da*/
       dword_A8EE38 = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
     if ( (byte_A8EDF8 & 2) == 0 ) /*0x4f12f8*/
     {
       byte_A8EDF8 |= 2u; /*0x4f1303*/
-      ((Timer *)((DWORD *)&dword_A8EE40))->Init(0); /*0x4f1308*/
+      ((gamemd::Timer *)((DWORD *)&dword_A8EE40))->Init(0); /*0x4f1308*/
       atexit(nullsub_13); /*0x4f1312*/
     }
     if ( (uint16_t)a3 <= 0x521u ) /*0x4f1326*/
@@ -229,17 +229,17 @@ LABEL_39:
         {
           if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
           {
-            ((Debug *)this)->Log(); /*0x4f15eb*/
+            ((gamemd::Debug *)this)->Log(); /*0x4f15eb*/
           }
           else
           {
-            ((Timer *)(v24))->Init(0x384u); /*0x4f1590*/
+            ((gamemd::Timer *)(v24))->Init(0x384u); /*0x4f1590*/
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = (unsigned int)((void (__cdecl *)(char *))(v24[1])); /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u),(void *)((int)v19))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
-            ((Debug *)this)->Log(); /*0x4f15dc*/
+            ((gamemd::Debug *)this)->Log(); /*0x4f15dc*/
           }
         }
       }
@@ -251,7 +251,7 @@ LABEL_39:
         {
           if ( !Timer::GetRemainingMs(&dword_A8EE30) ) /*0x4f1628*/
           {
-            ((Timer *)(v25))->Init(0x384u); /*0x4f163a*/
+            ((gamemd::Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = (unsigned int)((void (__cdecl *)(char *))(v25[1])); /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
@@ -260,7 +260,7 @@ LABEL_39:
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          ((Debug *)this)->Log(); /*0x4f169e*/
+          ((gamemd::Debug *)this)->Log(); /*0x4f169e*/
         }
       }
     }
@@ -390,10 +390,10 @@ char Options::Screen_Dialog()
       }
       while ( !v0 ); /*0x55fcca*/
       SetWindowLongA(v0, 8, (LONG)&dwNewLong); /*0x55fcd4*/
-      ((Dialog *)(v1))->Show(); /*0x55fcd8*/
+      ((gamemd::Dialog *)(v1))->Show(); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fcec*/
+        if ( (uint8_t)((gamemd::Dialog *)this)->PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
         LOBYTE(v2) = 0; /*0x55fcee*/
         Process(v2); /*0x55fcf0*/
@@ -409,10 +409,10 @@ char Options::Screen_Dialog()
       if ( v3 ) /*0x55fd4b*/
       {
         SetWindowLongA(v3, 8, (LONG)&v9); /*0x55fd59*/
-        ((Dialog *)(v4))->Show(); /*0x55fd5d*/
+        ((gamemd::Dialog *)(v4))->Show(); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fd71*/
+          if ( (uint8_t)((gamemd::Dialog *)this)->PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
           LOBYTE(v5) = 0; /*0x55fd73*/
           Process(v5); /*0x55fd75*/

@@ -192,7 +192,7 @@ int NullModemClass::sendData()
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
-  ((Debug *)this)->Log(); /*0x77467d*/
+  ((gamemd::Debug *)this)->Log(); /*0x77467d*/
   PurgeComm(*((HANDLE *)this + 23), 0xFu); /*0x77468b*/
   ResetEvent(*((HANDLE *)this + 14)); /*0x77469b*/
   ResetEvent(*((HANDLE *)this + 19)); /*0x7746a1*/
@@ -209,13 +209,13 @@ int NullModemClass::sendData()
     *((unsigned int *)&DCB + 2) = *((unsigned int *)&DCB + 2) & 0xFFFF88C0 | 0x1011; /*0x7746ec*/
     if ( !SetCommState(v2, &DCB) ) /*0x7746f0*/
     {
-      ((Debug *)this)->Log(); /*0x774700*/
+      ((gamemd::Debug *)this)->Log(); /*0x774700*/
       return 0; /*0x774710*/
     }
   }
   else
   {
-    ((Debug *)this)->Log(); /*0x774717*/
+    ((gamemd::Debug *)this)->Log(); /*0x774717*/
   }
   GetCommMask(*((HANDLE *)this + 23), &EvtMask); /*0x774728*/
   (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
@@ -223,7 +223,7 @@ int NullModemClass::sendData()
   if ( !EscapeCommFunction(*((HANDLE *)this + 23), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
-    ((Debug *)this)->Log(); /*0x77475b*/
+    ((gamemd::Debug *)this)->Log(); /*0x77475b*/
   }
   if ( ClearCommError(*((HANDLE *)this + 23), &Errors, &Stat) ) /*0x774771*/
   {
@@ -253,7 +253,7 @@ int NullModemClass::receiveData()
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
-  ((Debug *)this)->Log(); /*0x7747cd*/
+  ((gamemd::Debug *)this)->Log(); /*0x7747cd*/
   PurgeComm(*((HANDLE *)this + 23), 0xFu); /*0x7747db*/
   ResetEvent(*((HANDLE *)this + 14)); /*0x7747eb*/
   ResetEvent(*((HANDLE *)this + 19)); /*0x7747f1*/
@@ -261,11 +261,11 @@ int NullModemClass::receiveData()
   *((unsigned char *)this + 80) = 0; /*0x774800*/
   *((unsigned char *)this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
-    ((Debug *)this)->Log(); /*0x774816*/
+    ((gamemd::Debug *)this)->Log(); /*0x774816*/
   if ( !EscapeCommFunction(*((HANDLE *)this + 23), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
-    ((Debug *)this)->Log(); /*0x77483b*/
+    ((gamemd::Debug *)this)->Log(); /*0x77483b*/
   }
   if ( ClearCommError(*((HANDLE *)this + 23), &Errors, &Stat) ) /*0x774851*/
   {

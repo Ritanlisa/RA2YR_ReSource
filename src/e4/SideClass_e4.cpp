@@ -145,7 +145,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a459d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45a3*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x6a45b1*/
+  AbstractClass::GenerateUniqueID((gamemd::AbstractClass *)&((unsigned int *)this)[0]); /*0x6a45b1*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !((unsigned int *)&FootClass_Array)[1])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0

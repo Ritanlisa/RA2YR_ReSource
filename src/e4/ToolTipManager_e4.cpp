@@ -45,7 +45,7 @@ namespace gamemd {
 void ToolTipManager::read(int a1)
 {
 
-  ((Debug *)this)->Log(); /*0x724bbd*/
+  ((gamemd::Debug *)this)->Log(); /*0x724bbd*/
 
 }
 } // namespace gamemd

@@ -114,12 +114,12 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
       goto LABEL_13; /*0x561225*/
     v12 = a3; /*0x56122f*/
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x561234*/
-    ((Dialog *)(Dialog))->Show(); /*0x56123c*/
+    ((gamemd::Dialog *)(Dialog))->Show(); /*0x56123c*/
         Ticks = ((Timer *)0)->GetTicks();
     v23 = 600; /*0x561254*/
     while ( dwNewLong < 0 ) /*0x56125c*/
     {
-            if ( ((Dialog *)0)->PumpMessages() == 1 )
+            if ( ((gamemd::Dialog *)0)->PumpMessages() == 1 )
         break; /*0x56126b*/
       IDA_LOBYTE(v9) = 0; /*0x56126d*/
       Process(v9, v12); /*0x56126f*/
@@ -344,7 +344,7 @@ Game * * E4Recv_634B20::sub_634B20()
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634b60*/
-      ((Debug *)this)->Log(); /*0x634b7d*/
+      ((gamemd::Debug *)this)->Log(); /*0x634b7d*/
       uniqueId = ((unsigned int *)this)[0]; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
@@ -356,7 +356,7 @@ Game * * E4Recv_634B20::sub_634B20()
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
           v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))(v7, v16); /*0x634bc3*/
-          ((Debug *)this)->Log(); /*0x634bd7*/
+          ((gamemd::Debug *)this)->Log(); /*0x634bd7*/
           v5 = i; /*0x634bdc*/
           uniqueId = v14; /*0x634be0*/
         }
@@ -370,7 +370,7 @@ Game * * E4Recv_634B20::sub_634B20()
   {
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634c24*/
-    ((Debug *)this)->Log(); /*0x634c43*/
+    ((gamemd::Debug *)this)->Log(); /*0x634c43*/
     v8 = ((unsigned int *)this)[0]; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
@@ -381,7 +381,7 @@ Game * * E4Recv_634B20::sub_634B20()
         v11 = *(unsigned int *)v10; /*0x634c65*/
         (*(int (**)(unsigned int))(**(unsigned int **)v10 + 136))(*(unsigned int *)v10); /*0x634c6b*/
         (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))(v11, v16); /*0x634c7f*/
-        ((Debug *)this)->Log(); /*0x634c9b*/
+        ((gamemd::Debug *)this)->Log(); /*0x634c9b*/
         v8 = j; /*0x634ca0*/
       }
     }

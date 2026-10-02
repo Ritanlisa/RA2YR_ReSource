@@ -48,7 +48,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     while ( v2 <= *v3 ); /*0x7228de*/
   }
   *v3 = 0; /*0x7228e0*/
-  for ( i = ((Object *)this)->ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(*((unsigned int *)this + 62) + i + 1) = 0 ) /*0x7228ec*/
+  for ( i = ((gamemd::Object *)this)->ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(*((unsigned int *)this + 62) + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x722901*/
   result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x72290b*/

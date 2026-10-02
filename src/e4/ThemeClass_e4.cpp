@@ -175,10 +175,10 @@ LABEL_10:
     }
     ++v5; /*0x720707*/
   }
-  result = ((Audio *)this)->GetEnabled(); /*0x720714*/
+  result = ((gamemd::Audio *)this)->GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = (unsigned int)(((Audio *)this)->GetEnabled());
+    Enabled = (unsigned int)(((gamemd::Audio *)this)->GetEnabled());
     result = (void *)((unsigned int)(((AudioStream *)(Enabled))->Constructor(0x4E20u)));
     *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/

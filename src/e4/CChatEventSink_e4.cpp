@@ -79,7 +79,7 @@ LABEL_103:
       }
       if ( *(unsigned int *)&v33[8] ) /*0x7aa90e*/
       {
-        ((Debug *)this)->Log(); /*0x7aa91d*/
+        ((gamemd::Debug *)this)->Log(); /*0x7aa91d*/
         memset(&v33[32], 0, 0x10Cu); /*0x7aa930*/
         referenceCount = (int)(((char *)&stru_B76AC4)); /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
@@ -141,7 +141,7 @@ LABEL_103:
                   if ( v9 >= ((char *)&stru_B76AC4) ) /*0x7aaa40*/
                     goto LABEL_88; /*0x7aaa40*/
                 }
-                ((Debug *)this)->Log(); /*0x7aaa54*/
+                ((gamemd::Debug *)this)->Log(); /*0x7aaa54*/
                 *(unsigned int *)(v8 + 40) = *((unsigned int *)a3 + 10); /*0x7aaa5f*/
               }
             }
@@ -169,7 +169,7 @@ LABEL_103:
               }
               v6 = a3; /*0x7aaaec*/
               v15 = *(unsigned int *)&v33[72]; /*0x7aaaf3*/
-              ((Debug *)this)->Log(); /*0x7aab01*/
+              ((gamemd::Debug *)this)->Log(); /*0x7aab01*/
               *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
 LABEL_43:
@@ -367,7 +367,7 @@ LABEL_88:
     SetEvent((void *)(dword_B73690)); /*0x7aaef2*/
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7aaf0a*/
     {
-      ((Debug *)this)->Log(); /*0x7aaf18*/
+      ((gamemd::Debug *)this)->Log(); /*0x7aaf18*/
     }
     else
     {

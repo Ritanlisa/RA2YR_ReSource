@@ -133,7 +133,7 @@ void TimerClass::StartIfIdle()
 {
 
   if ( *((unsigned int *)this + 4) == -1 ) /*0x5ceb27*/
-    *((unsigned int *)this + 4) = ((Timer *)this)->GetTicks(); /*0x5ceb31*/
+    *((unsigned int *)this + 4) = ((gamemd::Timer *)this)->GetTicks(); /*0x5ceb31*/
 
 }
 }

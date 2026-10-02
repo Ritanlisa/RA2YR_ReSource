@@ -118,7 +118,7 @@ int Mouse::SetCursor(int aP1, char aP2)
   {
     byte_ABF2DD = 1; /*0x5bdce4*/
     v6 = (&dword_82D030)[7 * aP1]; /*0x5bdceb*/
-    Ticks = ((Timer *)this)->GetTicks(); /*0x5bdcf2*/
+    Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x5bdcf2*/
     v8 = 0; /*0x5bdcfb*/
     dword_ABF2A0 = Ticks; /*0x5bdcfd*/
     dword_ABF2A4 = v14; /*0x5bdd02*/
@@ -160,7 +160,7 @@ HWND Mouse::ReleaseCapture()
 
   int result; // eax
 
-  DisplayClass::ExitMode((DisplayClass *)this); /*0x6938c3*/
+  DisplayClass::ExitMode((gamemd::DisplayClass *)this); /*0x6938c3*/
   *((unsigned char *)this + 21850) = 0; /*0x6938c8*/
   result = (int)GetCapture(); /*0x6938cf*/
   if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/

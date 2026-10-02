@@ -76,12 +76,12 @@ int AsyncIO::WaitCompletion()
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
-  Ticks = ((Timer *)this)->GetTicks(); /*0x774bcf*/
+  Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x774bcf*/
   v2 = *((unsigned char *)this + 81); /*0x774bd3*/
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
-    Ticks = ((Timer *)this)->GetTicks(); /*0x774bf4*/
+    Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x774bf4*/
     v8 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
@@ -94,7 +94,7 @@ int AsyncIO::WaitCompletion()
       v3 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = ((Timer *)this)->GetTicks() - Ticks; /*0x774c41*/
+        v4 = ((gamemd::Timer *)this)->GetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v3 ) /*0x774c47*/
           break; /*0x774c47*/
         v3 -= v4; /*0x774c49*/

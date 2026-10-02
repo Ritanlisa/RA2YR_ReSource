@@ -133,7 +133,7 @@ int DisplayClass::SetSize()
   LayerClass *v2; // esi
   int result; // eax
 
-  MapClass::Destru_vt07((MapClass *)this); /*0x4a88c3*/
+  MapClass::Destru_vt07((gamemd::MapClass *)this); /*0x4a88c3*/
   *(unsigned int *)&this->__pad_1198[12] = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/

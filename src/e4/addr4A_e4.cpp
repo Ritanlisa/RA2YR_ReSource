@@ -384,7 +384,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
   if ( (unsigned char)this || (result = *(unsigned char *)(v3 + 8)) != 0 ) /*0x4a2383*/
   {
     v7 = (*((int (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar, a2); /*0x4a239f*/
-    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x4a23aa*/
+    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x4a23aa*/
     {
       UI_Draw_6D0E60(v4); /*0x4a23b5*/
       v19 = v7 / 2; /*0x4a23c2*/

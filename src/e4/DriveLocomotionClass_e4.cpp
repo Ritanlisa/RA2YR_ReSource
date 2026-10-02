@@ -144,7 +144,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x4b4d26*/
+  LocomotionClass::Construct((gamemd::LocomotionClass *)Block); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
     __3_YAXPAX_Z(Block); /*0x4b4d33*/
   return Block->LocomotionClass; /*0x4b4d3d*/

@@ -55,7 +55,7 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
-    ((Debug *)this)->Log(); /*0x690a85*/
+    ((gamemd::Debug *)this)->Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690a91*/
     v7 = 0; /*0x690a99*/
     ((Vector *)((int)v6))->Clear(); /*0x690a9d*/
@@ -96,7 +96,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
-    ((Debug *)this)->Log(); /*0x690b55*/
+    ((gamemd::Debug *)this)->Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690b61*/
     v7 = 0; /*0x690b69*/
     ((Vector *)((int)v6))->Clear(); /*0x690b6d*/
@@ -117,7 +117,7 @@ _DWORD * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 
   this->ScoreScreen_field_0x08 = (unsigned int)(a3);
   this->ScoreScreen_field_0x04 = (unsigned int)(aP1);
-  this->ScoreScreen_field_0x0C = ((Timer *)this)->GetTicks(); /*0x690f4d*/
+  this->ScoreScreen_field_0x0C = ((gamemd::Timer *)this)->GetTicks(); /*0x690f4d*/
   this->ScoreScreen_field_0x14 = 0; /*0x690f50*/
   this->ScoreScreen_field_0x18 = a4; /*0x690f57*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/
@@ -175,9 +175,9 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   v13 = (char *)(&this->__pad_0[148 * a2 + 48 * a3]); /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this->__pad_0, (int)(v13 + 8), (void **)&v25) )
   {
-    if ( !(uint8_t)((Audio *)this)->IsPlaying() ) /*0x77136a*/
+    if ( !(uint8_t)((gamemd::Audio *)this)->IsPlaying() ) /*0x77136a*/
     {
-      *((unsigned int *)this + 235) = ((Timer *)this)->GetTicks(); /*0x771386*/
+      *((unsigned int *)this + 235) = ((gamemd::Timer *)this)->GetTicks(); /*0x771386*/
       *((unsigned int *)this + 236) = v25.DeleteAndZero_field_0x08; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }

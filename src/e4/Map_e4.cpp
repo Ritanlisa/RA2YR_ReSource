@@ -313,7 +313,7 @@ int E4Recv_5ADD10::Map_Delete()
   }
   else
   {
-    ((Debug *)this)->Log(); /*0x5addf6*/
+    ((gamemd::Debug *)this)->Log(); /*0x5addf6*/
     return strlen((const char *)this + 4700) != 0 ? (unsigned int)(unsigned int *)this + 4700 : 0;
   }
 

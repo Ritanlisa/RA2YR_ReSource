@@ -30,7 +30,7 @@ int BombClass::AbstractClass()
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
+  AbstractClass::Constructor((gamemd::AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->vtable1 = &vt_BombClass; /*0x4385e1*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385e7*/
@@ -105,7 +105,7 @@ int BombClass::Stat(int * a2)
   int BombClass_field_2C; // eax
   int v9; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x438a99*/
+  AbstractClass::ProcessPower((gamemd::AbstractClass *)this); /*0x438a99*/
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
@@ -185,7 +185,7 @@ int BombClass::Write(int aP0)
   {
     if ( aP0 ) /*0x438b59*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
+      AbstractClass::InitVtables((gamemd::AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
       aP0->vtable1 = &vt_BombClass; /*0x438b67*/
       ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b6d*/
       ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b74*/
@@ -236,7 +236,7 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x439462*/
+  AbstractClass::DTOR((gamemd::AbstractClass *)Block); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     __3_YAXPAX_Z(Block); /*0x43946f*/
   return Block; /*0x439479*/

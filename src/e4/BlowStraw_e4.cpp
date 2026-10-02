@@ -116,7 +116,7 @@ LABEL_6:
           (*(void ((gamemd::TabClass *)(**))(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40); /*0x6d0932*/
           HashTable::Remove((HashTable *)dword_887368, 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
-          CommandClass::BuildBar((CommandClass *)this); /*0x6d094d*/
+          CommandClass::BuildBar((gamemd::CommandClass *)this); /*0x6d094d*/
           v18 = this->TabClass_field_0x0; /*0x6d0952*/
           *((unsigned char *)this + 21829) = 1; /*0x6d0958*/
           (*(void ((gamemd::TabClass *)(**))(TabClass *, unsigned int))(v18 + 56))(this, 0); /*0x6d095e*/

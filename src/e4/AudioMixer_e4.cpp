@@ -64,7 +64,7 @@ int AudioMixer::PlaySample(void *a1)
   }
   else
   {
-    v7 = ((Audio *)this)->Callback(); /*0x4071f2*/
+    v7 = ((gamemd::Audio *)this)->Callback(); /*0x4071f2*/
     v8 = *((unsigned int *)this + 6); /*0x4071f7*/
     v9 = *((unsigned int *)this + 7); /*0x4071fa*/
     v10 = v7; /*0x4071fd*/
@@ -185,7 +185,7 @@ int AudioMixer::Shutdown(void *a1)
 
   if ( g_Audio_Enabled ) /*0x406e88*/
     ((AudioQueue *)(g_Audio_Enabled))->StopAllVoices(1); /*0x406e8f*/
-  return ((AudioStream *)this)->CleanupChannels();
+  return ((gamemd::AudioStream *)this)->CleanupChannels();
 
 }
 } // namespace gamemd

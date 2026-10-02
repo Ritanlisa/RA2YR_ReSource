@@ -335,9 +335,9 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   unsigned char *v11; // edi
 
   SeedInitRNG((ObjectClass *)&this->random[1], 0); /*0x6832cf*/
-  this->elapsedTimer[1] = ((Timer *)this)->GetTicks(); /*0x6832e5*/
+  this->elapsedTimer[1] = ((gamemd::Timer *)this)->GetTicks(); /*0x6832e5*/
   this->pauseTimer[0] = 0; /*0x6832eb*/
-  this->pauseTimer[1] = ((Timer *)this)->GetTicks(); /*0x6832f6*/
+  this->pauseTimer[1] = ((gamemd::Timer *)this)->GetTicks(); /*0x6832f6*/
   *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
   v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
   this->missionTimer[2] = 0; /*0x683307*/

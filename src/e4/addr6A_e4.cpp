@@ -78,7 +78,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
   if ( NeedsSaveOrLink ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
   v12 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6b77*/
-  if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6b7b*/
+  if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a6b7b*/
     v12 = 1; /*0x6a6b7d*/
   if ( !aP1 ) /*0x6a6b8b*/
   {
@@ -86,7 +86,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     if ( NeedsSaveOrLink ) /*0x6a6bae*/
       v9 = 18; /*0x6a6bb0*/
     v10 = g_DSurface_ViewBounds - g_SidebarBounds - v9; /*0x6a6bb5*/
-    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6bd0*/
+    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a6bd0*/
     {
       v7 = v14; /*0x6a6bdd*/
       if ( v14[17] + (v10 + g_DSurface_SidebarBounds - 7) / 50 / 2 >= dword_884CF8 ) /*0x6a6be8*/
@@ -144,7 +144,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
     while ( v5 < v6 ); /*0x6a7570*/
   }
   g_CameoRenderFlag = 1; /*0x6a7574*/
-  return ((Tactical *)(this))->UpdateUIVisibility(); /*0x6a7580*/
+  return ((gamemd::Tactical *)(this))->UpdateUIVisibility(); /*0x6a7580*/
 
 }
 }
@@ -201,7 +201,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   if ( NeedsSaveOrLink ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
   v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
-  if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a8a45*/
+  if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
@@ -221,7 +221,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     if ( NeedsSaveOrLink ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
     v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
-    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a8aac*/
+    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a8aac*/
     {
       v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
       v8 = (gamemd::ObjectClass *)(this);
@@ -538,17 +538,17 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
   {
     dword_B0B59C = (unsigned int)(Dialog);
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
-    ((Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
+    ((gamemd::Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
         break; /*0x6ae35e*/
-            if ( ((Dialog *)0)->PumpMessages() == 1 )
+            if ( ((gamemd::Dialog *)0)->PumpMessages() == 1 )
         break; /*0x6ae367*/
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
       Process(v7, v10); /*0x6ae36b*/
     }
-    Dialog::Destroy((Dialog *)Dialog); /*0x6ae37d*/
+    Dialog::Destroy((gamemd::Dialog *)Dialog); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
   v8 = (gamemd::Skirmish *)(g_UIControlState);

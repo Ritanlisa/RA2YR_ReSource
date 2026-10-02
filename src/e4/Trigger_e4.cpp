@@ -67,7 +67,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   *(unsigned int *)this->__pad_8 = a4; /*0x5cbd2c*/
   this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2); /*0x5cbd32*/
   this->__pad_8[4] = 1; /*0x5cbd35*/
-  this->Trigger_field_0x10 = (void *)((Timer *)this)->GetTicks(); /*0x5cbd48*/
+  this->Trigger_field_0x10 = (void *)((gamemd::Timer *)this)->GetTicks(); /*0x5cbd48*/
   *(unsigned int *)this->__pad_18 = 0; /*0x5cbd4f*/
   *(unsigned int *)&this->__pad_18[8] = a5; /*0x5cbd52*/
   *(unsigned int *)&this->__pad_30[8] = a7; /*0x5cbd58*/

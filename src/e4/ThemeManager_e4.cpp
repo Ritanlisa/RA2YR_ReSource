@@ -24,7 +24,7 @@ void ThemeManager::ProcessCallback(void *a1)
   uint64_t v3; // rax
   uint64_t v4; // kr00_8
 
-  v2 = ((Audio *)this)->Callback(); /*0x4080fa*/
+  v2 = ((gamemd::Audio *)this)->Callback(); /*0x4080fa*/
   LODWORD(v3) = *((unsigned int *)this + 5); /*0x4080fc*/
   v4 = *(unsigned long long *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
   while ( (*(unsigned char *)((unsigned int *)this + 12) & 1) != 0 ) /*0x408107*/
@@ -32,10 +32,10 @@ void ThemeManager::ProcessCallback(void *a1)
     LODWORD(v3) = *((unsigned int *)this + 5); /*0x40810d*/
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    LODWORD(v3) = ((Audio *)this)->Callback(); /*0x40811a*/
+    LODWORD(v3) = ((gamemd::Audio *)this)->Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    LOBYTE(v3) = ((Event *)this)->Dispatch(); /*0x408129*/
+    LOBYTE(v3) = ((gamemd::Event *)this)->Dispatch(); /*0x408129*/
   }
   return v3; /*0x408130*/
 
@@ -72,7 +72,7 @@ void ThemeManager::Cleanup(void *a1)
   {
     ((ThemeClass *)(v5))->RequestBuffer(); /*0x7207bb*/
     ThemeManager::ProcessCallback(*((ThemeManager **)this + 11)); /*0x7207c3*/
-    ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x7207cb*/
+    ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x7207cb*/
     AudioSample::Destructor(*((AudioSample **)this + 11)); /*0x7207d3*/
     *((unsigned int *)this + 11) = 0; /*0x7207d8*/
   }

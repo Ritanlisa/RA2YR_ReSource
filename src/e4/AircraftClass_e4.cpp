@@ -363,7 +363,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   team = (gamemd::TeamClass *)(((unsigned int *)this)[0]); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (uint8_t)TechnoClass::IsWaypointHidden((TechnoClass *)team)
-    && !(uint8_t)((Type *)((Type *)&stru_87F5F0.__pad_58[416]))->CheckAmbiguity((int)a2, 1) )
+    && !(uint8_t)((gamemd::Type *)((Type *)&stru_87F5F0.__pad_58[416]))->CheckAmbiguity((int)a2, 1) )
   {
     return 0; /*0x4196d7*/
   }

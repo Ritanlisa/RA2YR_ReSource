@@ -474,7 +474,7 @@ void E4Recv_6D1E80::sub_6D1E80()
   this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6d1e8d*/
   this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/
+  AbstractClass::DTOR((gamemd::AbstractClass *)this); /*0x6d1ea5*/
 
 }
 } // namespace gamemd

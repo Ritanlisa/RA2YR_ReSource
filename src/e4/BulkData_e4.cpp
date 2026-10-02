@@ -29,7 +29,7 @@ void BulkData::InitMissionHashing()
   unsigned int v5; // ebx
   DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
-  SessionClass::LoadMissionList((SessionClass *)this); /*0x697ad7*/
+  SessionClass::LoadMissionList((gamemd::SessionClass *)this); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
@@ -46,7 +46,7 @@ void BulkData::InitMissionHashing()
     }
   }
   *((unsigned int *)this + 81) = Time; /*0x697b41*/
-  ((Debug *)this)->Log(); /*0x697b47*/
+  ((gamemd::Debug *)this)->Log(); /*0x697b47*/
 
 }
 } // namespace gamemd

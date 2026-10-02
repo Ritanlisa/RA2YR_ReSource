@@ -28,7 +28,7 @@ void Main::CreateDialog()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x4e1d1d*/
-  ((Debug *)this)->Log(); /*0x4e1d25*/
+  ((gamemd::Debug *)this)->Log(); /*0x4e1d25*/
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
@@ -37,10 +37,10 @@ void Main::CreateDialog()
   if ( Dialog ) /*0x4e1d50*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
-    ((Dialog *)((Dialog *)this->Main_field_00))->Show(); /*0x4e1d62*/
+    ((gamemd::Dialog *)((Dialog *)this->Main_field_00))->Show(); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
-      if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x4e1d77*/
+      if ( (uint8_t)((gamemd::Dialog *)this)->PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
@@ -53,9 +53,9 @@ void Main::CreateDialog()
       GameOptions::GameSpeedChanged((GameOptions *)this); /*0x4e1da1*/
       ((ScenarioClass *)((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]))->SaveGameOptions(); /*0x4e1dab*/
     }
-    Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/
+    Dialog::Destroy((gamemd::Dialog *)this->Main_field_00); /*0x4e1db2*/
   }
-  ((Debug *)this)->Log(); /*0x4e1dd0*/
+  ((gamemd::Debug *)this)->Log(); /*0x4e1dd0*/
 
 }
 } // namespace gamemd

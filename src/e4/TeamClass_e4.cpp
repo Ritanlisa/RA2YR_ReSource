@@ -116,7 +116,7 @@ int TeamClass::DisbandTeam(int a2)
   }
   if ( !a2 ) /*0x577be2*/
 LABEL_7:
-    ((Debug *)this)->Log(); /*0x577be4*/
+    ((gamemd::Debug *)this)->Log(); /*0x577be4*/
   v4 = *((unsigned int *)this + 61); /*0x577bf1*/
   *((unsigned int *)this + 67) = 1; /*0x577bf7*/
   *((unsigned int *)this + 68) = v4; /*0x577c01*/

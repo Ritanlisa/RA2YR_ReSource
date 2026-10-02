@@ -145,7 +145,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
   Piggybackee = Block->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x6a42d6*/
+  LocomotionClass::Construct((gamemd::LocomotionClass *)Block); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
     __3_YAXPAX_Z(Block); /*0x6a42e3*/
   return Block->LocomotionClass; /*0x6a42ed*/

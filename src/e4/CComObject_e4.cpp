@@ -99,10 +99,10 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
       while ( v19 < dword_A8DA84 - 1 ); /*0x793865*/
     }
   }
-  ((Debug *)this)->Log(); /*0x793897*/
+  ((gamemd::Debug *)this)->Log(); /*0x793897*/
   v9 = 0; /*0x79389c*/
   v20 = 0; /*0x7938a3*/
-  ((Debug *)this)->Log(); /*0x7938a7*/
+  ((gamemd::Debug *)this)->Log(); /*0x7938a7*/
   v10 = dword_A8DA84; /*0x7938ac*/
   if ( dword_A8DA84 > 0 ) /*0x7938b6*/
   {
@@ -122,7 +122,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
           v16 = (unsigned int)(*v14);
           *(unsigned int *)v15 = (unsigned int)(v13); /*0x7938db*/
           *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
-          ((Debug *)this)->Log(); /*0x7938e7*/
+          ((gamemd::Debug *)this)->Log(); /*0x7938e7*/
           v10 = dword_A8DA84; /*0x7938f0*/
           v17 = v20 + 1; /*0x7938f8*/
           v15 += 8; /*0x7938f9*/
@@ -455,7 +455,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     qmemcpy(&stru_B76AC4.ambientSoundController[4], a3, 0x10Cu); /*0x7a57d8*/
     dword_B77E4C = 1; /*0x7a57e0*/
     ++stru_B77D80.HashTable_field_0x50; /*0x7a57eb*/
-    ((Debug *)this)->Log(); /*0x7a57f1*/
+    ((gamemd::Debug *)this)->Log(); /*0x7a57f1*/
     if ( ppv && *(unsigned int *)a3 ) /*0x7a5802*/
     {
       memset(Buffer, 0, sizeof(Buffer)); /*0x7a5813*/
@@ -463,14 +463,14 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       Buffer[40] = 0; /*0x7a5827*/
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
     }
-    v11 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a583b*/
+    v11 = (HWND)Dialog::FindByHandle((gamemd::Dialog *)0xC4); /*0x7a583b*/
     if ( v11 ) /*0x7a5845*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~4u; /*0x7a5850*/
       if ( !stru_B77D80.HashTable_field_0x48 ) /*0x7a5856*/
         CloseDialog(v11, 0); /*0x7a585c*/
     }
-    Current = (HWND)((Dialog *)this)->GetCurrent(); /*0x7a5861*/
+    Current = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7a5861*/
     DlgItem = GetDlgItem(Current, 1344); /*0x7a586c*/
     if ( DlgItem ) /*0x7a5874*/
       SetFocus(DlgItem); /*0x7a5877*/
@@ -481,14 +481,14 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/
-    v4 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a56da*/
+    v4 = (HWND)Dialog::FindByHandle((gamemd::Dialog *)0xC4); /*0x7a56da*/
     if ( v4 ) /*0x7a56e1*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~4u; /*0x7a56ec*/
       if ( !stru_B77D80.HashTable_field_0x48 ) /*0x7a56f2*/
         CloseDialog(v4, 0); /*0x7a56f8*/
     }
-    v5 = (HWND)((Dialog *)this)->GetCurrent(); /*0x7a56fd*/
+    v5 = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7a56fd*/
     v6 = GetDlgItem(v5, 1344); /*0x7a5708*/
     if ( v6 ) /*0x7a5710*/
     {
@@ -529,7 +529,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
   v18 = 1; /*0x7a7b71*/
   v22 = g_WOL_UserList.owningHouseIndex; /*0x7a7b76*/
   v21 = 0; /*0x7a7b7a*/
-  dword_B76478 = ((Timer *)this)->GetTicks(); /*0x7a7b87*/
+  dword_B76478 = ((gamemd::Timer *)this)->GetTicks(); /*0x7a7b87*/
   dword_B7647C = v23; /*0x7a7b90*/
   dword_B76480 = 0; /*0x7a7b9e*/
   if ( byte_B77E27 ) /*0x7a7ba4*/
@@ -583,10 +583,10 @@ LABEL_16:
   {
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7a7cd9*/
     {
-      v11 = (HWND)Dialog::FindByHandle((Dialog *)0x117); /*0x7a7ce0*/
+      v11 = (HWND)Dialog::FindByHandle((gamemd::Dialog *)0x117); /*0x7a7ce0*/
       CloseDialog(v11, 0); /*0x7a7ce9*/
     }
-    v12 = (HWND)Dialog::FindByHandle((Dialog *)0xCF); /*0x7a7cf3*/
+    v12 = (HWND)Dialog::FindByHandle((gamemd::Dialog *)0xCF); /*0x7a7cf3*/
     CloseDialog(v12, 0); /*0x7a7cfc*/
     *(unsigned int *)&g_WOL_BuddyList.__pad_20[4] = a5; /*0x7a7d14*/
     *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
@@ -600,14 +600,14 @@ LABEL_16:
     if ( v14 > 0 && g_WOL_UserList.nextObject ) /*0x7a7d8b*/
       strcpy(byte_B779E0, (const char *)&g_WOL_UserList.nextObject->occupant); /*0x7a7da7*/
     *(unsigned int *)dword_B77788 = time(0); /*0x7a7dbc*/
-    ((Debug *)this)->Log(); /*0x7a7dc1*/
+    ((gamemd::Debug *)this)->Log(); /*0x7a7dc1*/
     if ( a3 ) /*0x7a7dd2*/
       dword_B77DD4 = (uint8_t)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
     byte_B77E26 = 0; /*0x7a7dea*/
     byte_B77E27 = 1; /*0x7a7df1*/
     ((Network *)(v17))->SyncPlayerList(); /*0x7a7df8*/
     g_NetworkLobbyState = 2; /*0x7a7e03*/
-    ((Debug *)this)->Log(); /*0x7a7e0f*/
+    ((gamemd::Debug *)this)->Log(); /*0x7a7e0f*/
     v15 = 0; /*0x7a7e1d*/
     if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a7e21*/
     {
@@ -826,11 +826,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
         {
           v8 = 1; /*0x7a8e0e*/
         }
-        else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7a8e17*/
+        else if ( Dialog::FindByHandle((gamemd::Dialog *)0xC2) ) /*0x7a8e17*/
         {
           v8 = 1; /*0x7a8e20*/
         }
-        else if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8e29*/
+        else if ( Dialog::FindByHandle((gamemd::Dialog *)0xC9) ) /*0x7a8e29*/
         {
           v8 = 1; /*0x7a8e32*/
         }
@@ -886,7 +886,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
   v6 = a4; /*0x7a8efc*/
   if ( a4 ) /*0x7a8f02*/
   {
-    if ( (*a4 & 1) != 0 || Dialog::FindByHandle((Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
+    if ( (*a4 & 1) != 0 || Dialog::FindByHandle((gamemd::Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
     v7 = (uint8_t)WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a8f2e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a8f30*/

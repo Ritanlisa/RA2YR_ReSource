@@ -50,7 +50,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !byte_89F578 ) /*0x49cafc*/
-    ((CampaignClass *)(&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cb03*/
+    ((gamemd::CampaignClass *)(&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
   if ( aP1 < 0 || aP1 >= (gamemd::CCINIClass *)(dword_89F574) ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
@@ -114,7 +114,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 
   if ( !*((unsigned char *)this + 96) ) /*0x49e3b3*/
-    ((CampaignClass *)(this))->LoadFromINI(); /*0x49e3ba*/
+    ((gamemd::CampaignClass *)(this))->LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= *((unsigned int *)this + 23) ) /*0x49e3ca*/
   {
     *(unsigned int *)aP2 = 0; /*0x49e3e9*/
@@ -181,7 +181,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
                 v13[13] = (gamemd::MovieContext)(0); /*0x5bf008*/
                 v13[16] = (gamemd::MovieContext)(v16); /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
-                ((Debug *)this)->Log(); /*0x5bf02b*/
+                ((gamemd::Debug *)this)->Log(); /*0x5bf02b*/
               }
             }
           }
@@ -237,7 +237,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
     }
     else
     {
-      ((Debug *)this)->Log(); /*0x5bedad*/
+      ((gamemd::Debug *)this)->Log(); /*0x5bedad*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
@@ -324,8 +324,8 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( this->__pad_10[1] && !((AudioSample *)(v3))->IsBuffering() ) /*0x720a0f*/
-            ((Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
-          LOBYTE(IsSoundEnabled) = ((Audio *)(*(Audio **)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
+            ((gamemd::Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
+          LOBYTE(IsSoundEnabled) = ((gamemd::Audio *)(*(Audio **)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {
 LABEL_10:

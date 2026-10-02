@@ -144,9 +144,9 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
     *((unsigned int *)this + 10) = -1; /*0x432795*/
   }
   *((unsigned int *)this + 12) = 0; /*0x43279c*/
-  if ( ((Audio *)this)->IsSoundEnabled() ) /*0x43279f*/
+  if ( ((gamemd::Audio *)this)->IsSoundEnabled() ) /*0x43279f*/
   {
-    v5 = ((Audio *)this)->GetDirectSound(); /*0x4327a8*/
+    v5 = ((gamemd::Audio *)this)->GetDirectSound(); /*0x4327a8*/
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
@@ -386,7 +386,7 @@ void BinkMovie::Play(void *a1_1)
   else
   {
     BinkGetError(); /*0x432c7d*/
-    return ((Debug *)this)->Log(); /*0x432c89*/
+    return ((gamemd::Debug *)this)->Log(); /*0x432c89*/
   }
 
 }
@@ -422,7 +422,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
   {
     if ( !v6 ) /*0x432eb8*/
     {
-      ((Debug *)this)->Log(); /*0x432ebf*/
+      ((gamemd::Debug *)this)->Log(); /*0x432ebf*/
       v8 = *((unsigned int *)this + 1); /*0x432ec4*/
       *((unsigned int *)this + 44) = 1; /*0x432eca*/
       BinkPause(v8, 0); /*0x432ed1*/

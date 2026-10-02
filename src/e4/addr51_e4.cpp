@@ -626,7 +626,7 @@ void E4Recv_513D00::sub_513D00()
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d00*/
   *(unsigned int *)&this->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x513d06*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x513d0d*/
+  LocomotionClass::Construct((gamemd::LocomotionClass *)this); /*0x513d0d*/
 
 }
 } // namespace gamemd

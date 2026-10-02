@@ -123,13 +123,13 @@ void Lobby::UpdatePlayerLabels()
   HIDWORD(v38) = (unsigned int)(this); /*0x5eb063*/
   if ( dword_A8B23C /*0x5eb07a*/
     && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C)
-    || (v33 = 1, ((Network *)this)->IsMultiplayerActive()) )
+    || (v33 = 1, ((gamemd::Network *)this)->IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb09d*/
   {
-    if ( !((Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0a8*/
+    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0a8*/
       v1 = 6; /*0x5eb0b8*/
     else
       v1 = 2; /*0x5eb0b1*/
@@ -145,7 +145,7 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_25; /*0x5eb0d7*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb0df*/
   {
-    if ( !((Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0ea*/
+    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0ea*/
       v2 = 6; /*0x5eb0fa*/
     else
       v2 = 2; /*0x5eb0f3*/
@@ -189,11 +189,11 @@ LABEL_26:
         }
         if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb185*/
         {
-          if ( ((Network *)this)->IsLobbyFeature() ) /*0x5eb187*/
+          if ( ((gamemd::Network *)this)->IsLobbyFeature() ) /*0x5eb187*/
           {
             PlayerCountMap &= ~1u; /*0x5eb190*/
           }
-          else if ( ((Network *)this)->IsMultiplayerActive() ) /*0x5eb195*/
+          else if ( ((gamemd::Network *)this)->IsMultiplayerActive() ) /*0x5eb195*/
           {
             PlayerCountMap = 2; /*0x5eb19e*/
           }
@@ -332,11 +332,11 @@ LABEL_79:
             }
             if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb48c*/
             {
-              if ( ((Network *)this)->IsLobbyFeature() ) /*0x5eb48e*/
+              if ( ((gamemd::Network *)this)->IsLobbyFeature() ) /*0x5eb48e*/
               {
                 v17 &= ~1u; /*0x5eb497*/
               }
-              else if ( ((Network *)this)->IsMultiplayerActive() ) /*0x5eb49c*/
+              else if ( ((gamemd::Network *)this)->IsMultiplayerActive() ) /*0x5eb49c*/
               {
                 v17 = 2; /*0x5eb4a5*/
               }
@@ -502,7 +502,7 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
       {
         ShowWindow(v13, 5); /*0x5ebb9f*/
         ShowWindow(nIDDlgItema, 5); /*0x5ebba8*/
-        if ( *(unsigned int *)&dword_A8B238 != 4 || !((Network *)this)->IsLobbyFeature() ) /*0x5ebbb3*/
+        if ( *(unsigned int *)&dword_A8B238 != 4 || !((gamemd::Network *)this)->IsLobbyFeature() ) /*0x5ebbb3*/
         {
           ShowWindow(v9, 5); /*0x5ebbbf*/
           return ShowWindow(v17, 5); /*0x5ebbcf*/

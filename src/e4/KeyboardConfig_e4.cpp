@@ -105,7 +105,7 @@ LABEL_14:
   }
   else
   {
-    ((Debug *)this)->Log(); /*0x533efe*/
+    ((gamemd::Debug *)this)->Log(); /*0x533efe*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     ((Vector *)((int)v11))->Clear(); /*0x533f1c*/

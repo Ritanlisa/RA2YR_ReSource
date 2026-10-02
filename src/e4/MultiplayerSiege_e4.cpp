@@ -33,7 +33,7 @@ void MultiplayerSiege::Read(void *a1, void *a2)
   char result; // al
   int v1; // ecx
 
-  result = ((PlayerClass *)this)->AssignPlayerIndex(); /*0x5ca680*/
+  result = ((gamemd::PlayerClass *)this)->AssignPlayerIndex(); /*0x5ca680*/
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
@@ -195,7 +195,7 @@ LABEL_26:
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
-  ((Debug *)this)->Log(); /*0x5ca8d2*/
+  ((gamemd::Debug *)this)->Log(); /*0x5ca8d2*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   ((HouseClass *)(v7))->SetMapSeed(v8); /*0x5ca8e8*/
@@ -204,7 +204,7 @@ LABEL_26:
     v10 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
-      ((Debug *)this)->Log(); /*0x5ca91c*/
+      ((gamemd::Debug *)this)->Log(); /*0x5ca91c*/
       v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
                      this,
                      &a2,

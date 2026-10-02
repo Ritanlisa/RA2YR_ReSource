@@ -388,7 +388,7 @@ int AudioStream::SetPlaybackCallback()
   v1 = this->AudioStream_field_0xC0[0]; /*0x407a31*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a3b*/
   {
-    *(unsigned int *)(v1 + 32) = ((Audio *)this)->Callback(); /*0x407a42*/
+    *(unsigned int *)(v1 + 32) = ((gamemd::Audio *)this)->Callback(); /*0x407a42*/
     *(unsigned int *)(v1 + 36) = v2; /*0x407a45*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a48*/
@@ -411,7 +411,7 @@ int AudioStream::ProcessCallback(void *a1_1)
   v1 = this->AudioStream_field_0xC0[0]; /*0x407a61*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a6b*/
   {
-    *(unsigned int *)(v1 + 32) = ((Audio *)this)->Callback(); /*0x407a72*/
+    *(unsigned int *)(v1 + 32) = ((gamemd::Audio *)this)->Callback(); /*0x407a72*/
     *(unsigned int *)(v1 + 36) = v2; /*0x407a75*/
   }
   v3 = *(unsigned int *)(v1 + 12); /*0x407a78*/
@@ -524,7 +524,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
               {
                 do /*0x4a353c*/
                 {
-                  SamplePosition = (unsigned short *)((Audio *)(v5))->GetSamplePosition(0, v7 - v5[1]); /*0x4a34d4*/
+                  SamplePosition = (unsigned short *)((gamemd::Audio *)(v5))->GetSamplePosition(0, v7 - v5[1]); /*0x4a34d4*/
                   v10 = (unsigned short *)StreamClass::ReadAndSeek( /*0x4a34df*/
                                    *(int **)&stru_87E790.__pad_D8[60],
                                    0,
@@ -758,7 +758,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     return 0; /*0x4bed2e*/
   Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4bed38*/
   v79 = v81; /*0x4bed3f*/
-  SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v80, v81 - Stream_field_04); /*0x4bed56*/
+  SamplePosition = (unsigned short *)((gamemd::Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v80, v81 - Stream_field_04); /*0x4bed56*/
   v32 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4); /*0x4bed5c*/
   v79 = v81; /*0x4bed5f*/
   v33 = ((StreamClass *)(*(int **)&stru_87E790.__pad_D8[60]))->ReadAndSeek(v80, v81 - v32); /*0x4bed67*/

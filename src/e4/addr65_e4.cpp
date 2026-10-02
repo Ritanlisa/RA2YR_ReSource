@@ -784,9 +784,9 @@ void sub_6586D0()
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
-    ((Dialog *)(Dialog))->Show(); /*0x65870b*/
+    ((gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !this->this->((Dialog *)0)->PumpMessages() )
+        while ( !this->this->((gamemd::Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/

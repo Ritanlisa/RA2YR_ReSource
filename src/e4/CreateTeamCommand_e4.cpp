@@ -240,7 +240,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
     v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
-    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6aae*/
+    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a6aae*/
     {
       if ( *(unsigned int *)&v4->__pad_14[48] + v7 / 2 < dword_884CF8 ) /*0x6a6ac2*/
         goto LABEL_13; /*0x6a6ac2*/

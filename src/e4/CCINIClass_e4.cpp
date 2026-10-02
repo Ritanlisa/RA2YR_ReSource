@@ -158,11 +158,11 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v10[3] = a2; /*0x47421b*/
   v11 = 0; /*0x47421f*/
   v10[0] = (int)&vt_FileStraw; /*0x474223*/
-  File = INIClass::LoadFile((INIClass *)this, (int)v10, a4); /*0x474230*/
+  File = INIClass::LoadFile((gamemd::INIClass *)this, (int)v10, a4); /*0x474230*/
   this->ownsFile = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
-  Base64Data = INIClass::GetBase64Data((INIClass *)this, g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
+  Base64Data = INIClass::GetBase64Data((gamemd::INIClass *)this, g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
   if ( !Base64Data ) /*0x474262*/
   {
     v7 = 2; /*0x474264*/
@@ -180,7 +180,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = (unsigned int)(&vt_SHAPipe); /*0x4742c5*/
-  INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
+  INIClass::WriteToString((gamemd::INIClass *)this, (int)&v12); /*0x4742cd*/
   ((SHA1 *)(&v12))->ComputeThunk((char *)(this->__pad_41)); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/

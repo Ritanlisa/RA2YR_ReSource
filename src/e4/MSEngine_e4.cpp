@@ -185,7 +185,7 @@ CampaignClass * MSEngine::Destructor(void *a1_1)
   void *v3; // eax
   void *MSEngine_field_0x4; // eax
 
-  ((SessionClass *)((SessionClass *)this))->Destruct(); /*0x5cee64*/
+  ((gamemd::SessionClass *)((SessionClass *)this))->Destruct(); /*0x5cee64*/
   v2 = (void *)*((unsigned int *)this + 18); /*0x5cee69*/
   *((unsigned int *)this + 17) = (unsigned int)(&vt_VectorClass); /*0x5cee70*/
   if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/

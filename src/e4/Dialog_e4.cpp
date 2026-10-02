@@ -36,9 +36,9 @@ void Dialog::MapDialogResource(void *a1_1)
 
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
   {
-    ((Debug *)this)->Log(); /*0x49f751*/
+    ((gamemd::Debug *)this)->Log(); /*0x49f751*/
     g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
-    ((Debug *)this)->Log(); /*0x49f77e*/
+    ((gamemd::Debug *)this)->Log(); /*0x49f77e*/
   }
 
 }
@@ -67,7 +67,7 @@ int Dialog::InitializeGameSettings()
   HWND v18; // eax
   HWND v19; // eax
 
-  ((Debug *)this)->Log(); /*0x5b5bcb*/
+  ((gamemd::Debug *)this)->Log(); /*0x5b5bcb*/
   DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1641); /*0x5b5be1*/
   if ( DlgItem ) /*0x5b5bf0*/
     SendMessageA(DlgItem, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[32]); /*0x5b5c00*/
@@ -202,7 +202,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
       SendMessageA(v15, 0x4B2u, 0, (LPARAM)aP3); /*0x5d35ec*/
       v7 = 3; /*0x5d35ee*/
     }
-    ((Dialog *)(v11))->Show(); /*0x5d35f5*/
+    ((gamemd::Dialog *)(v11))->Show(); /*0x5d35f5*/
     if ( v7 <= 0 ) /*0x5d35fd*/
     {
       dwNewLong = 0; /*0x5d3653*/
@@ -295,7 +295,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 
   v5 = (char)((HWND)(1));
   v6 = (int)((HWND)(3));
-  ((Debug *)this)->Log(); /*0x5f2968*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0,(const char *)(g_Str_File_NullMgr_CPP), 1409); /*0x5f298c*/
   else
@@ -308,21 +308,21 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
   ((Dialog *)((Dialog *)MessageBox))->Show(); /*0x5f29df*/
-  ((Debug *)this)->Log(); /*0x5f29e9*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f29e9*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
-  ((Debug *)this)->Log(); /*0x5f2a09*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f2a09*/
   (*(void (**)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2a24*/
     g_ClipboardBuffer,
     60,
     Source,
     81,
     -1);
-  ((Debug *)this)->Log(); /*0x5f2a2c*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f2a2c*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, a2); /*0x5f2a44*/
   (*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
   g_NetworkTestFlag = 0; /*0x5f2a57*/
   v11 = *(unsigned int *)&this->__pad_10[20]; /*0x5f2a5e*/
-  ((Debug *)this)->Log(); /*0x5f2a66*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f2a66*/
   while ( 1 ) /*0x5f2a6e*/
   {
     if ( (uint8_t)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2a82*/
@@ -337,7 +337,7 @@ LABEL_34:
         ((WinModemClass *)((int *)v13))->WriteSerial(&Buffer,(gamemd::WinModemClass *)(2u)); /*0x5f2c99*/
       }
 LABEL_35:
-      ((Debug *)this)->Log(); /*0x5f2c9e*/
+      ((gamemd::Debug *)this)->Log(); /*0x5f2c9e*/
       goto LABEL_36; /*0x5f2ca3*/
     }
     LOBYTE(v12) = (gamemd::Process)(0); /*0x5f2a88*/
@@ -359,13 +359,13 @@ LABEL_35:
     }
     _strupr(Source); /*0x5f2ac4*/
     if ( strlen(Source) ) /*0x5f2acd*/
-      ((Debug *)this)->Log(); /*0x5f2ae6*/
+      ((gamemd::Debug *)this)->Log(); /*0x5f2ae6*/
     if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
     {
       memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2b12*/
       strncpy((char *)(byte_AC1288), Source, 0x4Fu); /*0x5f2b1e*/
       v6 = 0; /*0x5f2b27*/
-      ((Debug *)this)->Log(); /*0x5f2b2f*/
+      ((gamemd::Debug *)this)->Log(); /*0x5f2b2f*/
     }
     else
     {
@@ -387,7 +387,7 @@ LABEL_35:
           goto LABEL_23; /*0x5f2bb9*/
         v6 = 3; /*0x5f2bbb*/
       }
-      ((Debug *)this)->Log(); /*0x5f2bca*/
+      ((gamemd::Debug *)this)->Log(); /*0x5f2bca*/
     }
     v5 = 0; /*0x5f2bd2*/
 LABEL_23:
@@ -396,9 +396,9 @@ LABEL_23:
     if ( v5 != 1 ) /*0x5f2bdb*/
       goto LABEL_36; /*0x5f2bdb*/
   }
-  ((Debug *)this)->Log(); /*0x5f2c1a*/
+  ((gamemd::Debug *)this)->Log(); /*0x5f2c1a*/
   if ( strlen(Source) ) /*0x5f2c2b*/
-    ((Debug *)this)->Log(); /*0x5f2c3c*/
+    ((gamemd::Debug *)this)->Log(); /*0x5f2c3c*/
   if ( g_ClipboardBuffer ) /*0x5f2c4c*/
   {
     Buffer = word_8327A0; /*0x5f2c5c*/

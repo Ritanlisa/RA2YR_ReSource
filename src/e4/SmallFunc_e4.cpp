@@ -188,7 +188,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 
   int v2; // eax
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x5afef3*/
+  LocomotionClass::Init((gamemd::LocomotionClass *)this); /*0x5afef3*/
   this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
   this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
   this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
@@ -302,7 +302,7 @@ namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
+  LocomotionClass::Init((gamemd::LocomotionClass *)this); /*0x728a03*/
   this->CurrentState[0] = 0; /*0x728a0d*/
   this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
   this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/

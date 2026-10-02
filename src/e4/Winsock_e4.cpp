@@ -42,7 +42,7 @@ char Winsock::VerifyCRC(int a1)
       ComputeHash((unsigned int *)(&a1), *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
     if ( a1 == *(WinsockInterfaceClass **)&v1[2].Initialized ) /*0x7b20c5*/
       return 1; /*0x7b20ca*/
-    ((Debug *)this)->Log(); /*0x7b20d2*/
+    ((gamemd::Debug *)this)->Log(); /*0x7b20d2*/
   }
   return 0; /*0x7b20c9*/
 

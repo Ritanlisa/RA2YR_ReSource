@@ -228,7 +228,7 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char 
 
   *(unsigned int *)Block->LocomotionClass = &vt_FlyLocomotionClass; /*0x4d03a3*/
   *(unsigned int *)&Block->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x4d03b0*/
+  LocomotionClass::Construct((gamemd::LocomotionClass *)Block); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(Block); /*0x4d03bd*/
   return Block->LocomotionClass; /*0x4d03c7*/

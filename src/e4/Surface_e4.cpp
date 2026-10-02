@@ -247,7 +247,7 @@ LABEL_16:
     }
     while ( v17 < this->Width ); /*0x5d214f*/
   }
-  return ((Surface *)(int a1))->CopyRect(&v44) ; /*0x5d208c*/
+  return ((gamemd::Surface *)(int a1))->CopyRect(&v44) ; /*0x5d208c*/
 
 }
 } // namespace gamemd
