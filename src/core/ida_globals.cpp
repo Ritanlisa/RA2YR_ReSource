@@ -10489,6 +10489,7 @@ float flt_87D408 = 0;
 float flt_89EA40 = 0;
 float flt_89EA48 = 0;
 float flt_A8EB98 = 0;
+float flt_A8EB9C = 0;
 float flt_A8EBA0 = 0;
 float flt_A9FAA0 = 0;
 float flt_A9FAA4 = 0;

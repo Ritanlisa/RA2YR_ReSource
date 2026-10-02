@@ -38,14 +38,29 @@ out = [
     '',
 ]
 n_extern = n_struct = 0
-for ln in lines:
-    s = ln.rstrip()
+i = 0
+while i < len(lines):
+    s = lines[i].rstrip()
     if s.startswith('extern '):
         out.append(s)
         n_extern += 1
+        i += 1
     elif re.match(r'^struct\s+\w+', s):
+        # copy the WHOLE struct (balanced braces) -- the line-only copy
+        # truncated multi-line hosts (DSurface_ViewBounds_flat), leaving an
+        # unclosed `struct X {` that swallowed every later extern as an
+        # extern-storage member (C2071 storm, G42.29b).
+        depth = s.count('{') - s.count('}')
         out.append(s)
         n_struct += 1
+        i += 1
+        while depth > 0 and i < len(lines):
+            t = lines[i].rstrip()
+            depth += t.count('{') - t.count('}')
+            out.append(t)
+            i += 1
+    else:
+        i += 1
 
 print('externs:', n_extern, 'helper structs:', n_struct)
 if APPLY:

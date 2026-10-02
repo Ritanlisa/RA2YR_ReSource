@@ -10547,6 +10547,7 @@ extern float flt_887430;
 extern float flt_89EA40;
 extern float flt_89EA48;
 extern float flt_A8EB98;
+extern float flt_A8EB9C;
 extern float flt_A8EBA0;
 extern float flt_A9FAA0;
 extern float flt_A9FAA4;

@@ -752,7 +752,14 @@ extern int DSurface_Composite;  // data: 0x88731C
 extern int DSurface_Sidebar;  // data: 0x887300
 extern int DSurface_SidebarBounds;  // data: 0x886F90
 extern int DSurface_Tile;  // data: 0x8872FC
-extern int DSurface_ViewBounds;  // data: 0x886FA0
+struct DSurface_ViewBounds_flat {
+    unsigned int field_0;                   // +0x0
+    unsigned int field_4;                   // +0x4
+    unsigned char __pad_8[0x34 - 0x8];      // +0x8  (idx<=20)
+    unsigned char __pad_34[0xFC - 0x34];    // +0x34 (idx<=116)
+    unsigned char __pad_FC[0x240 - 0xFC];   // +0xFC (idx<=324)
+};
+extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0
 extern int DSurface_WindowBounds;  // data: 0x886FB0
 extern int dwInitParam;  // data: 0xB72F54
 extern int dword_A8ED54;  // data: 0xA8ED54
@@ -14763,137 +14770,398 @@ extern int DataGlobal_B04988;  // data: 0xb04988
 extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
-extern unsigned char vt_Anim[4];
-extern unsigned char vt_Campaign[4];
-extern unsigned char vt_CampaignProperties[4];
-extern unsigned char vt_DialogControl[4];
-extern unsigned char vt_FlagGameOption[4];
-extern unsigned char vt_GameOption[4];
-extern unsigned char vt_INIEntry[4];
-extern unsigned char vt_INISection[4];
-extern unsigned char vt_InitializerBase[4];
-extern unsigned char vt_Map[4];
-extern unsigned char vt_Selection[4];
-extern unsigned char vt_State[4];
-extern unsigned char vt_Territory[4];
-extern unsigned char vt___non_rtti_object[4];  // data: 0x7F95D0
-extern unsigned char vt_ATLCComObject[4];
-extern unsigned char vt_BlitPlain[4];
-extern unsigned char vt_BlitPlainXlat[4];
-extern unsigned char vt_BlitPlainXlatAlpha[4];
-extern unsigned char vt_BlitPlainXlatZRead[4];
-extern unsigned char vt_BlitPlainXlatZReadWrite[4];
-extern unsigned char vt_BlitTrans[4];
-extern unsigned char vt_BlitTransDarken[4];
-extern unsigned char vt_BlitTransDarkenZRead[4];
-extern unsigned char vt_BlitTransDarkenZReadWrite[4];
-extern unsigned char vt_BlitTransLucent25[4];
-extern unsigned char vt_BlitTransLucent25Alpha[4];
-extern unsigned char vt_BlitTransLucent25AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent25AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent25AlphaZReadWrite[4];
-extern unsigned char vt_BlitTransLucent25ZRead[4];
-extern unsigned char vt_BlitTransLucent25ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent25ZReadWrite[4];
-extern unsigned char vt_BlitTransLucent50[4];
-extern unsigned char vt_BlitTransLucent50Alpha[4];
-extern unsigned char vt_BlitTransLucent50AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent50AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent50AlphaZReadWrite[4];
-extern unsigned char vt_BlitTransLucent50ZRead[4];
-extern unsigned char vt_BlitTransLucent50ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent50ZReadWrite[4];
-extern unsigned char vt_BlitTransLucent75[4];
-extern unsigned char vt_BlitTransLucent75Alpha[4];
-extern unsigned char vt_BlitTransLucent75AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent75AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent75AlphaZReadWrite[4];
-extern unsigned char vt_BlitTransLucent75ZRead[4];
-extern unsigned char vt_BlitTransLucent75ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent75ZReadWrite[4];
-extern unsigned char vt_BlitTransRemapDest[4];
-extern unsigned char vt_BlitTransRemapXlat[4];
-extern unsigned char vt_BlitTransXlat[4];
-extern unsigned char vt_BlitTransXlatAlpha[4];
-extern unsigned char vt_BlitTransXlatAlphaZRead[4];
-extern unsigned char vt_BlitTransXlatAlphaZReadWrite[4];
-extern unsigned char vt_BlitTransXlatMultWriteAlpha[4];
-extern unsigned char vt_BlitTransXlatWriteAlpha[4];
-extern unsigned char vt_BlitTransXlatZRead[4];
-extern unsigned char vt_BlitTransXlatZReadWrite[4];
-extern unsigned char vt_BlitTransZRemapXlat[4];
-extern unsigned char vt_BlitTransZRemapXlatAlpha[4];
-extern unsigned char vt_BlitTransZRemapXlatAlphaZRead[4];
-extern unsigned char vt_BlitTransZRemapXlatAlphaZReadWrite[4];
-extern unsigned char vt_BlitTransZRemapXlatZRead[4];
-extern unsigned char vt_BlitTransZRemapXlatZReadWrite[4];
-extern unsigned char vt_BlitTranslucent50NonzeroAlpha[4];
-extern unsigned char vt_BlitTranslucent50ZeroAlpha[4];
-extern unsigned char vt_BlitTranslucentWriteAlpha[4];
-extern unsigned char vt_DynamicVectorClassDiscreteDistributionClassDistributionObject[4];
-extern unsigned char vt_DynamicVectorClassHashObject[4];
-extern unsigned char vt_DynamicVectorClassTRect[4];
-extern unsigned char vt_DynamicVectorClassrc_ptr[4];
-extern unsigned char vt_List[4];
-extern unsigned char vt_Node[4];
-extern unsigned char vt_RLEBlitTransDarken[4];
-extern unsigned char vt_RLEBlitTransDarkenZRead[4];
-extern unsigned char vt_RLEBlitTransDarkenZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent25[4];
-extern unsigned char vt_RLEBlitTransLucent25Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent25ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent25ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent25ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent50[4];
-extern unsigned char vt_RLEBlitTransLucent50Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent50ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent50ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent50ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent75[4];
-extern unsigned char vt_RLEBlitTransLucent75Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent75ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent75ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent75ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransRemapDest[4];
-extern unsigned char vt_RLEBlitTransRemapDestZRead[4];
-extern unsigned char vt_RLEBlitTransRemapDestZReadWrite[4];
-extern unsigned char vt_RLEBlitTransRemapXlat[4];
-extern unsigned char vt_RLEBlitTransRemapXlatZRead[4];
-extern unsigned char vt_RLEBlitTransRemapXlatZReadWrite[4];
-extern unsigned char vt_RLEBlitTransXlat[4];
-extern unsigned char vt_RLEBlitTransXlatAlpha[4];
-extern unsigned char vt_RLEBlitTransXlatAlphaZRead[4];
-extern unsigned char vt_RLEBlitTransXlatAlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransXlatZRead[4];
-extern unsigned char vt_RLEBlitTransXlatZReadWrite[4];
-extern unsigned char vt_RLEBlitTransZRemapXlat[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatAlpha[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZRead[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatZRead[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatZReadWrite[4];
 extern unsigned char vt_TypeList[4];
-extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];
-extern unsigned char vt_VectorClassDynamicVectorClass[4];
-extern unsigned char vt_VectorClassHashObject[4];
-extern unsigned char vt_VectorClassTPoint3D[4];
-extern unsigned char vt_VectorClassTRect[4];
-extern unsigned char vt_VectorClassrc_ptr[4];
-extern unsigned char vt_VectorCursorGraphicMenuItemDynamicVectorClass[4];
-extern unsigned char vt_VectorCursorMSAnimDynamicVectorClass[4];
-extern unsigned char vt_VectorCursorMSSfxEntryDynamicVectorClass[4];
-extern unsigned char vt_VectorCursorTRectVectorClassTRect[4];
-extern unsigned char vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr[4];
-extern unsigned char vt_VectorCursorunsignedintDynamicVectorClass[4];
-extern unsigned char vt_WorldDominationTourValueGameOption[4];
 extern unsigned char vt_rc_ptr[4];
-extern unsigned char vt_rc_ptrWorldDominationTourValueGameOption[4];
+extern unsigned int stru_A8EB00;  // data: 0xA8EB00
+extern unsigned char vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr[4];
+extern unsigned char vt_InitializerBase[4];
+extern unsigned char vt_VectorClassrc_ptr[4];
+extern unsigned char vt_VectorClassTRect[4];
+extern unsigned char vt_VectorClassHashObject[4];
+extern unsigned char vt_VectorCursorMSAnimDynamicVectorClass[4];
+extern unsigned char vt_BlitTrans[4];
+extern unsigned char vt_BlitPlain[4];
+extern unsigned char vt_VectorClassTPoint3D[4];
+extern unsigned char vt_List[4];
+extern unsigned int stru_887598;  // data: 0x887598
+extern int g_DDraw_AllowStretchBlits;
+extern int g_DDraw_Initialized;
+extern unsigned char vt_BlitTransLucent25Alpha[4];
+extern unsigned char vt_BlitTransLucent25AlphaZReadWrite[4];
+extern unsigned char vt_BlitTransXlatAlphaZRead[4];
+extern unsigned char vt_BlitTransXlatAlpha[4];
+extern unsigned int stru_A8D600;  // data: 0xA8D600
+extern unsigned char vt_GameOption[4];
+extern unsigned char vt_FlagGameOption[4];
+extern unsigned int unk_7E989C;  // data: 0x7E989C
+extern unsigned int unk_7E9A7C;  // data: 0x7E9A7C
+extern unsigned char vt_DynamicVectorClassrc_ptr[4];
+extern unsigned char vt_VectorCursorunsignedintDynamicVectorClass[4];
+extern unsigned int off_826960;  // data: 0x826960
+extern unsigned int off_81DA28;  // data: 0x81DA28
+extern unsigned int off_81DA58;  // data: 0x81DA58
+extern unsigned int stru_87F5F0;  // data: 0x87F5F0
+extern unsigned char vt_RLEBlitTransZRemapXlatAlpha[4];
+extern unsigned char vt_DynamicVectorClassHashObject[4];
+extern unsigned int unk_7E9ADC;  // data: 0x7E9ADC
+extern unsigned int stru_82BA00;  // data: 0x82BA00
+extern unsigned int off_7E1BC6;  // data: 0x7E1BC6
+extern unsigned char vt_VectorCursorMSSfxEntryDynamicVectorClass[4];
+extern unsigned int stru_A8B250;  // data: 0xA8B250
+extern unsigned char vt_INISection[4];
+extern unsigned char vt_ATLCComObject[4];
+extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];
+extern unsigned char vt_DynamicVectorClassDiscreteDistributionClassDistributionObject[4];
+extern unsigned int asc_815E74;  // data: 0x815E74
+extern unsigned int asc_818D7C;  // data: 0x818D7C
+extern unsigned int asc_81C8FC;  // data: 0x81C8FC
+extern unsigned int asc_82083C;  // data: 0x82083C
+extern unsigned int asc_8304FC;  // data: 0x8304FC
+extern unsigned int asc_831774;  // data: 0x831774
+extern unsigned int asc_8318B8;  // data: 0x8318B8
+extern unsigned int asc_84968C;  // data: 0x84968C
+extern unsigned int asc_84A480;  // data: 0x84A480
+extern unsigned int asc_84BA18;  // data: 0x84BA18
+extern unsigned int asc_87C918;  // data: 0x87C918
+extern unsigned int dbl_ABFA80;  // data: 0xABFA80
+extern unsigned int dbl_ABFAA0;  // data: 0xABFAA0
+extern unsigned int dbl_ABFAA8;  // data: 0xABFAA8
+extern unsigned int dbl_ABFAB0;  // data: 0xABFAB0
+extern unsigned int dbl_ABFAC8;  // data: 0xABFAC8
+extern unsigned int dbl_ABFB08;  // data: 0xABFB08
+extern unsigned int dbl_ABFB28;  // data: 0xABFB28
+extern unsigned int dbl_ABFB30;  // data: 0xABFB30
+extern unsigned int dbl_ABFB58;  // data: 0xABFB58
+extern unsigned int dbl_ABFB60;  // data: 0xABFB60
+extern unsigned int dbl_ABFB78;  // data: 0xABFB78
+extern unsigned char vt_VectorClassDynamicVectorClass[4];
+extern const char abstractFlags[];
+extern const char ambientSoundController[];
+extern const char audioController3[];
+extern const char audioController4[];
+extern const char audioController5[];
+extern const char audioController6[];
+extern const char aA0[];
+extern const char aAddonShp[];
+extern const char aAdr[];
+extern const char aAidefendagains[];
+extern const char aAirportbound[];
+extern const char aAirspeed[];
+extern const char aAlphaimage[];
+extern const char aAlternatearcti[];
+extern const char aAmbientsound[];
+extern const char aArbiShp[];
+extern const char aAta[];
+extern const char aAttachedsystem[];
+extern const char aAutoscroll[];
+extern const char aBarracks[];
+extern const char aBibshape[];
+extern const char aBigfontShp[];
+extern const char aBombable[];
+extern const char aBounceanim[];
+extern const char aBuildtime[];
+extern const char aBuilt1[];
+extern const char aBuilt2[];
+extern const char aBurn[];
+extern const char aBusy[];
+extern const char aCacheMix_0[];
+extern const char aCachemdMix[];
+extern const char aCampaigntype[];
+extern const char aCampdifficulty[];
+extern const char aCanbeach[];
+extern const char aCarriescrate[];
+extern const char aCarryall[];
+extern const char aCheckingHardwa[];
+extern const char aCheckingOverla[];
+extern const char aCol[];
+extern const char aColor1[];
+extern const char aColor2[];
+extern const char aConnect[];
+extern const char aConnected[];
+extern const char aCou[];
+extern const char aCrategoodie[];
+extern const char aCrater[];
+extern const char aCratesappear[];
+extern const char aCrushable[];
+extern const char aCrushsound[];
+extern const char aCustomrotor[];
+extern const char aDRa2mdpostAbst[];
+extern const char aDRa2mdpostSend[];
+extern const char aDamageradius[];
+extern const char aDeadbodies[];
+extern const char aDeathanims[];
+extern const char aDeathframerate[];
+extern const char aDeathframes[];
+extern const char aDebris[];
+extern const char aDeploytofire[];
+extern const char aDifficulty[];
+extern const char aDisableablefro[];
+extern const char aDjbiShp[];
+extern const char aDooranim[];
+extern const char aDuration[];
+extern const char aEcacheMix[];
+extern const char aElevationbonus[];
+extern const char aElevationincre[];
+extern const char aElevationincre_0[];
+extern const char aElevationmodel[];
+extern const char aEliteoccupywea[];
+extern const char aElocalMix[];
+extern const char aErro[];
+extern const char aEvacuate[];
+extern const char aExpireanim[];
+extern const char aFacings[];
+extern const char aFailed_1[];
+extern const char aFailed_2[];
+extern const char aFighter[];
+extern const char aFiringframes[];
+extern const char aFlashsidebarta[];
+extern const char aFlyback[];
+extern const char aFlyby[];
+extern const char aFr[];
+extern const char aFraiShp[];
+extern const char aGame[];
+extern const char aGbriShp[];
+extern const char aGclock2Shp[];
+extern const char aGeriShp[];
+extern const char aGettingFileFro[];
+extern const char aGroundspeed[];
+extern const char aGrowth[];
+extern const char aGrowthpercenta[];
+extern const char aGuiHostmaptran[];
+extern const char aGuiMaptransfer[];
+extern const char aGuiNone[];
+extern const char aGuiTooltip[];
+extern const char aGuiTrademarkbo[];
+extern const char aGuiTrademarkto[];
+extern const char aGuiVersion[];
+extern const char aGuiWaiting[];
+extern const char aHalfdamagesmok_1[];
+extern const char aHarvester[];
+extern const char aHasradialindic[];
+extern const char aHistory[];
+extern const char aHoldswhat[];
+extern const char aHostRespondedW[];
+extern const char aHouse1[];
+extern const char aHouse2[];
+extern const char aHtml[];
+extern const char aHttpApiregiste_4[];
+extern const char aIgnoresfiresto[];
+extern const char aImmune[];
+extern const char aInsignificant[];
+extern const char aIsmeteor[];
+extern const char aIspowered[];
+extern const char aIssimpledeploy[];
+extern const char aIstiberium[];
+extern const char aIstilter[];
+extern const char aIsveinhole[];
+extern const char aJapiShp[];
+extern const char aKeyboardmdIni[];
+extern const char aKills1[];
+extern const char aKills2[];
+extern const char aLandable[];
+extern const char aLargevisceroid[];
+extern const char aLatiShp[];
+extern const char aLegaltarget[];
+extern const char aLinetrailcolor[];
+extern const char aLinetrailcolor_0[];
+extern const char aLoadMix[];
+extern const char aLoadmdMix[];
+extern const char aLoadmdMix_0[];
+extern const char aLoc[];
+extern const char aLocalMix[];
+extern const char aLocalmdMix[];
+extern const char aLost1[];
+extern const char aLost2[];
+extern const char aMain[];
+extern const char aMainMix[];
+extern const char aMatch[];
+extern const char aMatchwdt[];
+extern const char aMaxangularvelo[];
+extern const char aMaxxyvel[];
+extern const char aMaxzvel[];
+extern const char aMbr[];
+extern const char aMcvrepacks[];
+extern const char aMinangularvelo[];
+extern const char aMinzvel[];
+extern const char aMovementrestri[];
+extern const char aMpmodesmdIni[];
+extern const char aMpr[];
+extern const char aMsgAttackmoveu[];
+extern const char aMsgPlanningmod_12[];
+extern const char aMsgPlanningmod_7[];
+extern const char aMsgPlanningmod_8[];
+extern const char aMultiMix[];
+extern const char aMultiplay[];
+extern const char aMultiplayer[];
+extern const char aMultiplaypassi[];
+extern const char aNat[];
+extern const char aNetstatus[];
+extern const char aNeutral[];
+extern const char aNewtheater[];
+extern const char aNoC[];
+extern const char aNoD[];
+extern const char aNodecount[];
+extern const char aNonvehicle[];
+extern const char aNospawnalt[];
+extern const char aObsalliShp[];
+extern const char aObservermode[];
+extern const char aObsiShp[];
+extern const char aObssoviShp[];
+extern const char aObsyuriShp[];
+extern const char aOccupypip[];
+extern const char aOccupyweapon[];
+extern const char aOk_1[];
+extern const char aOldcycle[];
+extern const char aPageuser[];
+extern const char aParentcountry[];
+extern const char aParticlecap[];
+extern const char aPassive[];
+extern const char aPath[];
+extern const char aPbeaconShp[];
+extern const char aPercentbuilt[];
+extern const char aPipbrdShp[];
+extern const char aPips2Shp[];
+extern const char aPipsShp[];
+extern const char aPlayerE[];
+extern const char aPlayerF[];
+extern const char aPlayerG[];
+extern const char aPostclick[];
+extern const char aPower_0[];
+extern const char aPreclick[];
+extern const char aPrefix[];
+extern const char aPrt[];
+extern const char aRDnShp[];
+extern const char aRUpShp[];
+extern const char aRa2Mix[];
+extern const char aRa2mdIni[];
+extern const char aRa2mdMix[];
+extern const char aRadar[];
+extern const char aRadarinvisible[];
+extern const char aRadialcolor[];
+extern const char aRaniShp[];
+extern const char aRat[];
+extern const char aRdrbeacnShp[];
+extern const char aRepairShp[];
+extern const char aRequestingFile[];
+extern const char aRes[];
+extern const char aRing[];
+extern const char aRotors[];
+extern const char aRubble[];
+extern const char aRusiShp[];
+extern const char aScenindex[];
+extern const char aScore1[];
+extern const char aScore2[];
+extern const char aScrollmethod[];
+extern const char aScrollrate[];
+extern const char aSelectable[];
+extern const char aSellShp[];
+extern const char aSendingFileInf[];
+extern const char aShadow[];
+extern const char aSharebarreldat[];
+extern const char aSharebodydata[];
+extern const char aSharesource[];
+extern const char aShareturretdat[];
+extern const char aShowhidden[];
+extern const char aShowtimer[];
+extern const char aSide1Shp[];
+extern const char aSide2Shp[];
+extern const char aSide3Shp[];
+extern const char aSidebarcameote[];
+extern const char aSmallvisceroid[];
+extern const char aSmartai[];
+extern const char aSpawncount[];
+extern const char aSpawndelay[];
+extern const char aSpawnframes[];
+extern const char aSpawnradius[];
+extern const char aSpecialsound[];
+extern const char aSpecialzoverla[];
+extern const char aSpread[];
+extern const char aSpreadpercenta[];
+extern const char aStandingframes[];
+extern const char aStartbutShp[];
+extern const char aStartstandfram[];
+extern const char aStartwalkframe[];
+extern const char aStatus[];
+extern const char aStrength[];
+extern const char aStretchmovies[];
+extern const char aSttLobbylistus[];
+extern const char aSttPlayernone[];
+extern const char aSuffix[];
+extern const char aSunExe[];
+extern const char aTalkbublShp[];
+extern const char aTerritory[];
+extern const char aTimeoutWaiting[];
+extern const char aTimeoutWaiting_0[];
+extern const char aTimeoutWaiting_1[];
+extern const char aTipAttackmove[];
+extern const char aTipBeacon[];
+extern const char aTipCheer[];
+extern const char aTipDeploy[];
+extern const char aTipGuard[];
+extern const char aTipPlanningmod[];
+extern const char aTipStop[];
+extern const char aTipTeam01[];
+extern const char aTipTeam02[];
+extern const char aTipTeam03[];
+extern const char aTipThumbopen[];
+extern const char aTipTypeselect[];
+extern const char aTitlePcx[];
+extern const char aTitleViewhtmlT[];
+extern const char aToobigtofitund[];
+extern const char aTooltips[];
+extern const char aTrailer[];
+extern const char aTraileranim[];
+extern const char aTranslucent[];
+extern const char aTxtAddSelectTe[];
+extern const char aTxtAnswering[];
+extern const char aTxtBanned[];
+extern const char aTxtBytesWoTime[];
+extern const char aTxtCenterTeam[];
+extern const char aTxtConnectionL[];
+extern const char aTxtDialing[];
+extern const char aTxtDisabled[];
+extern const char aTxtErrorError[];
+extern const char aTxtFailedToTal[];
+extern const char aTxtJustYouAndM[];
+extern const char aTxtLeftGame[];
+extern const char aTxtLobby[];
+extern const char aTxtModemConner[];
+extern const char aTxtModemConner_0[];
+extern const char aTxtNullConnerr[];
+extern const char aTxtPageuser[];
+extern const char aTxtPageuserDes[];
+extern const char aTxtRandomMapDe[];
+extern const char aTxtSelectTeam[];
+extern const char aTxtSerialdup[];
+extern const char aTxtSerialunkno[];
+extern const char aTxtSkuserialmi[];
+extern const char aTxtSystemNotRe[];
+extern const char aTxtTalkHostAbo[];
+extern const char aTxtTaunt[];
+extern const char aTxtTauntNumber[];
+extern const char aTxtThatguysGam[];
+extern const char aTxtThatguysGam_0[];
+extern const char aTxtWaitingForC_0[];
+extern const char aUnderdooranim[];
+extern const char aUnderroofdoora[];
+extern const char aUnitactionline[];
+extern const char aUsaiShp[];
+extern const char aUselinetrail[];
+extern const char aUseturretshado[];
+extern const char aValue[];
+extern const char aVoicecomment[];
+extern const char aVoxel[];
+extern const char aVoxelindex[];
+extern const char aWaitcyloPal[];
+extern const char aWaitcyloShp[];
+extern const char aWalkframes[];
+extern const char aWallowner[];
+extern const char aWarningPacketL[];
+extern const char aWds0[];
+extern const char aWds1[];
+extern const char aWdt[];
+extern const char aWeapontype[];
+extern const char aWeeder[];
+extern const char aWolRequestingm[];
+extern const char aYriiShp[];
+extern const char aYrm[];
