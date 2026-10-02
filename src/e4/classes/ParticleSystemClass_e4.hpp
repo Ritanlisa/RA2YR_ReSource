@@ -6,7 +6,6 @@
 
 namespace gamemd {
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct ParticleSystemClass {

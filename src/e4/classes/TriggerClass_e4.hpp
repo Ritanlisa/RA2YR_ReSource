@@ -8,7 +8,6 @@
 namespace gamemd {
 struct TriggerTypeClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 
 struct TriggerClass {
 // --- flat members (BEGIN) ---

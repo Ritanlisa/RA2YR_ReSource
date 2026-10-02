@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct AITriggerTypeClass {
 // --- flat members (BEGIN) ---

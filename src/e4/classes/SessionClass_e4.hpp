@@ -7,12 +7,10 @@
 
 namespace gamemd {
 struct MPGameModeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct RandomStruct;  // fix_fwd_type_supply
 struct IPXManagerClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct MixFileClass;  // fix_fwd_type_supply

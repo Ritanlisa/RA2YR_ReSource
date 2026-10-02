@@ -10,7 +10,6 @@ struct MissionClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct IsometricTileClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct Surface;  // fix_fwd_type_supply
 struct FileClass;  // fix_fwd_type_supply
 struct Blitter;  // fix_fwd_type_supply
@@ -18,6 +17,7 @@ struct BlitPlainXlat;  // fix_fwd_type_supply
 struct BlitTransXlat;  // fix_fwd_type_supply
 struct RLEBlitter;  // fix_fwd_type_supply
 struct GScreenClass;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE
 struct AbstractClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -333,4 +333,5 @@ struct AbstractClass {
     static double IsTechnoType(...);  // C2597 interim stub
     int processDetection(int a2);  // 0x439150
 };
+#endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

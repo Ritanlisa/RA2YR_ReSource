@@ -694,7 +694,9 @@ struct Object;
 struct IsoCoord;
 struct TEventClass;
 struct Type;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct;
+#endif // GAMEMD_TREE_UNIVERSE
 struct ScriptAction;
 struct AudioQueue;
 struct MapClass_Instance;

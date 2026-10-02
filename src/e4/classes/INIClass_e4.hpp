@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct VoxelStruct;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct INIClass {
 // --- flat members (BEGIN) ---

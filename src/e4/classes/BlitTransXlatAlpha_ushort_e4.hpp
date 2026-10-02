@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
 struct BlitTransXlatAlpha_ushort {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

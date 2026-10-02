@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
 struct MapClass;  // fix_fwd_type_supply
 struct Radar {
 // --- flat members (BEGIN) ---

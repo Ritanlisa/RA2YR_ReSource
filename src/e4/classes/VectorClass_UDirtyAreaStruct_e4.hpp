@@ -7,7 +7,6 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_UDirtyAreaStruct {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

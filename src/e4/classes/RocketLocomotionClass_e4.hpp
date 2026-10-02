@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct ILocomotion;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct RocketLocomotionClass {
 // --- flat members (BEGIN) ---

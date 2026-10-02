@@ -6,15 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct ObjectClass;  // fix_fwd_type_supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ConnectionPointClass;  // fix_fwd_type_supply
 struct TemporalClass;  // fix_fwd_type_supply
-struct FootClass;  // fix_fwd_type_supply
 struct CaptureManagerClass;  // fix_fwd_type_supply
 struct SpawnManagerClass;  // fix_fwd_type_supply
 struct ParticleSystemClass;  // fix_fwd_type_supply

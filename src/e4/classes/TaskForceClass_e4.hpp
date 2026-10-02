@@ -7,8 +7,6 @@
 
 namespace gamemd {
 struct INIClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct CCINIClass;  // fix_fwd_type_supply
 struct TaskForceClass {

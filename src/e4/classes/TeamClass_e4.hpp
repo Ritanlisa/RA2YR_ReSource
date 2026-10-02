@@ -10,11 +10,8 @@ struct TeamTypeClass;  // fix_fwd_type_supply
 struct ScriptClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 struct CellClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
-struct FootClass;  // fix_fwd_type_supply
 struct TagClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 
 struct TeamClass {
 // --- flat members (BEGIN) ---

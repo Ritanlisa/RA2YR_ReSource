@@ -10,8 +10,6 @@ struct Color;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply

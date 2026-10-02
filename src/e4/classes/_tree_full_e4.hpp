@@ -18,7 +18,6 @@ struct KeywordType;
 struct Locomotor;
 struct MSAnim;
 struct MSShapeAnim;
-struct ObjectClass;
 struct ReferenceCounted;
 struct ShapeButtonClass;
 struct State;
@@ -378,6 +377,7 @@ struct MSShapeAnim {
     unsigned char __pad_0[29];  // 0x0
 
     void* vtable1;  // 0x0
+#ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
     void* vfptr;
     void* vtable2;  // 0x4
@@ -539,6 +539,7 @@ struct ObjectClass {
     char SetReference(int a2);  // 0x5f5b50
     unsigned char ShapeButtonClass_field_0x08;  // 0x8
 };
+#endif // GAMEMD_TREE_UNIVERSE
 
 struct ReferenceCounted {
     void* vfptr;

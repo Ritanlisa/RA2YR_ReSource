@@ -8,7 +8,6 @@
 namespace gamemd {
 struct SomeVoxelCache;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct VoxelAnimType {
 // --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8

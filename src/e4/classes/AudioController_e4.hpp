@@ -5,6 +5,7 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_TREE_UNIVERSE
 struct AudioController {
 // --- flat members (BEGIN) ---
     unsigned int AudioController_field_00;  // 0x0
@@ -25,5 +26,6 @@ struct AudioController {
     unsigned int * Stop();  // 0x405d40
     int * Constructor();  // 0x402040
 };
+#endif // GAMEMD_TREE_UNIVERSE
 
 } // namespace gamemd

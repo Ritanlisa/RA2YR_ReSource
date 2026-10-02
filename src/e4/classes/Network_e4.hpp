@@ -6,7 +6,6 @@
 
 namespace gamemd {
 struct WinModemClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct IPXConnClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply
 struct Network {

@@ -6,7 +6,6 @@
 
 namespace gamemd {
 struct Game;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 
 struct GameSettings {
 // --- flat members (BEGIN) ---

@@ -8,12 +8,10 @@
 namespace gamemd {
 struct MultiplayerGameMode;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct IPXManagerClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct MPCooperative {

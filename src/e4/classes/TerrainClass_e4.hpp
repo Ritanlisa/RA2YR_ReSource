@@ -6,7 +6,6 @@
 
 namespace gamemd {
 struct TerrainTypeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 
 struct TerrainClass {
 // --- flat members (BEGIN) ---

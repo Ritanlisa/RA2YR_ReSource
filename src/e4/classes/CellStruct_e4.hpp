@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct {
 // --- flat members (BEGIN) ---
     short X;  // 0x0
@@ -20,4 +21,5 @@ struct CellStruct {
     unsigned int * Set(int16_t a2, int16_t a3);  // 0x42D470
     unsigned int field_4;  // 0x4
 };
+#endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

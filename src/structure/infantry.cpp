@@ -1,3 +1,5 @@
+// G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
+#define GAMEMD_TREE_UNIVERSE 1
 #include "structure/infantry.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"

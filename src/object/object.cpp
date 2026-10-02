@@ -1,3 +1,5 @@
+// G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
+#define GAMEMD_TREE_UNIVERSE 1
 #include "object/object.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"

@@ -28,10 +28,8 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
-struct AbstractClass;  // fix_tu_missing_types
 struct AircraftTypeClass;  // fix_tu_missing_types
 struct BuildingTypeClass;  // fix_tu_missing_types
-struct ObjectClass;  // fix_tu_missing_types
 struct Power;  // fix_tu_missing_types
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"

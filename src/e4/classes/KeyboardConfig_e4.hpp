@@ -3,7 +3,9 @@
 
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_UNIVERSE
 struct AbstractClass;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 
 struct KeyboardConfig {
     unsigned int Debug;

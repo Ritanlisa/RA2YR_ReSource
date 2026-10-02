@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct BuildingClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct Animation {
 // --- flat members (BEGIN) ---

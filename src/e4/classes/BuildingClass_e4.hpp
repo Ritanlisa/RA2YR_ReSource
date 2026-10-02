@@ -9,18 +9,14 @@ namespace gamemd {
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 struct TemporalClass;  // fix_fwd_type_supply
-struct FootClass;  // fix_fwd_type_supply
 struct CaptureManagerClass;  // fix_fwd_type_supply
 struct SpawnManagerClass;  // fix_fwd_type_supply
 struct SlaveManagerClass;  // fix_fwd_type_supply
 struct ParticleSystemClass;  // fix_fwd_type_supply
 struct WaveClass;  // fix_fwd_type_supply
 struct TeamClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct RadBeam;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
@@ -28,7 +24,6 @@ struct FactoryClass;  // fix_fwd_type_supply
 struct InfantryClass;  // fix_fwd_type_supply
 struct BuildingLightClass;  // fix_fwd_type_supply
 struct LightSourceClass;  // fix_fwd_type_supply
-struct AudioController;  // fix_fwd_type_supply
 struct UnitTypeClass;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply
 

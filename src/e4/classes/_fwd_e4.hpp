@@ -60,7 +60,9 @@ struct AbstractC;
 struct AbstractCl;
 struct AbstractCla;
 struct AbstractClas;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct AbstractClass;
+#endif // GAMEMD_TREE_UNIVERSE
 struct AbstractClassV;
 struct AbstractClassVe;
 struct AbstractClassVec;
@@ -397,7 +399,9 @@ struct AudioContro;
 struct AudioControl;
 struct AudioControll;
 struct AudioControlle;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct AudioController;
+#endif // GAMEMD_TREE_UNIVERSE
 struct AudioE;
 struct AudioEv;
 struct AudioEve;
@@ -7319,7 +7323,9 @@ struct FootC;
 struct FootCl;
 struct FootCla;
 struct FootClas;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct FootClass;
+#endif // GAMEMD_TREE_UNIVERSE
 struct Fr;
 struct Fra;
 struct Frac;
@@ -10903,7 +10909,9 @@ struct ObjectC;
 struct ObjectCl;
 struct ObjectCla;
 struct ObjectClas;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass;
+#endif // GAMEMD_TREE_UNIVERSE
 struct ObjectM;
 struct ObjectMa;
 struct ObjectMan;
@@ -14378,7 +14386,9 @@ struct TechnoC;
 struct TechnoCl;
 struct TechnoCla;
 struct TechnoClas;
+#ifndef GAMEMD_TREE_UNIVERSE
 struct TechnoClass;
+#endif // GAMEMD_TREE_UNIVERSE
 struct TechnoT;
 struct TechnoTy;
 struct TechnoTyp;

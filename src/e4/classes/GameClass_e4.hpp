@@ -10,7 +10,6 @@ struct Pipe;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct PKStrawClass;  // fix_fwd_type_supply
 struct GameClass {
 // --- flat members (BEGIN) ---

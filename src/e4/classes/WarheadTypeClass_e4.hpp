@@ -8,7 +8,6 @@
 namespace gamemd {
 struct ParticleTypeClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct CCINIClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply

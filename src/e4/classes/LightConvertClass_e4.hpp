@@ -8,7 +8,6 @@
 namespace gamemd {
 struct ConvertClass;  // fix_fwd_type_supply
 struct MapClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct LightConvertClass {
 // --- flat members (BEGIN) ---

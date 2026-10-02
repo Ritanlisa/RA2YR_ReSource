@@ -8,7 +8,9 @@
 namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 struct DynamicVectorClass_flat;  // fix_fwd_type_supply
 struct Voxel {
 // --- flat members (BEGIN) ---

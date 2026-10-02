@@ -8,7 +8,6 @@
 namespace gamemd {
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVectorClass_uint {
 // --- flat members (BEGIN) ---

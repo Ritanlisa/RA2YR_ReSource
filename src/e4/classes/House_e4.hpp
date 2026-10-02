@@ -8,7 +8,6 @@
 
 namespace gamemd {
 struct HouseClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ProgressTimer;  // fix_fwd_type_supply
 struct ParticleSystemClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply

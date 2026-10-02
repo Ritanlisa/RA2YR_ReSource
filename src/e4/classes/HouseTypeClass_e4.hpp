@@ -8,7 +8,6 @@ namespace gamemd {
 struct InfantryTypeClass;  // fix_fwd_type_supply
 struct UnitTypeClass;  // fix_fwd_type_supply
 struct AircraftTypeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct HouseTypeClass {

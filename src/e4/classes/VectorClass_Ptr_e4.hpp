@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_Ptr {
 // --- flat members (BEGIN) ---
     unsigned char __pad_0[87];  // 0x0

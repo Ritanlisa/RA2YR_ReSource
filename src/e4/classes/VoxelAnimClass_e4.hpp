@@ -6,11 +6,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct ObjectClass;  // fix_fwd_type_supply
 struct TagClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
-struct AudioController;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply

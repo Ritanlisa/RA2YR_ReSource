@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct Coord;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 
 struct CChatEventSink {
 // --- flat members (BEGIN) ---

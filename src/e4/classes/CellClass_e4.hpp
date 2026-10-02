@@ -10,8 +10,6 @@ struct LightConvertClass;  // fix_fwd_type_supply
 struct TagClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
-struct FootClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct RadSiteClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 

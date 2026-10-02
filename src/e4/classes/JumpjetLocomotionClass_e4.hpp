@@ -6,10 +6,8 @@
 
 namespace gamemd {
 struct ILocomotion;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct BuildingClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 struct TeleportLocomotionClass;  // fix_fwd_type_supply
 
 struct JumpjetLocomotionClass {

@@ -5,8 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 
 struct Surface {
 // --- flat members (BEGIN) ---

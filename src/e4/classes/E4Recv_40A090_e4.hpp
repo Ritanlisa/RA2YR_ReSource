@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AudioController;  // fix_fwd_type_supply
 struct E4Recv_40A090 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0

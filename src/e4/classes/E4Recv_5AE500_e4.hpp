@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AudioController;  // fix_fwd_type_supply
 struct E4Recv_5AE500 {
 // --- flat members (BEGIN) ---
     AudioController * ptr_50;  // 0x50

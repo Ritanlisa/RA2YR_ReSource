@@ -8,7 +8,6 @@ namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct MSEngine {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

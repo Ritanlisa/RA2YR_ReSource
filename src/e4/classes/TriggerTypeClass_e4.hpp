@@ -6,11 +6,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct ObjectClass;  // fix_fwd_type_supply
 struct HouseTypeClass;  // fix_fwd_type_supply
 struct TEventClass;  // fix_fwd_type_supply
 struct TActionClass;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 
 struct TriggerTypeClass {
 // --- flat members (BEGIN) ---

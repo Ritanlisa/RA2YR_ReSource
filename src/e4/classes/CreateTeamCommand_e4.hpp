@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct ObjectClass;  // fix_fwd_type_supply
 struct CommandClass;  // fix_fwd_type_supply
 struct SelectTeamCommand;  // fix_fwd_type_supply
 struct AddTeamCommand;  // fix_fwd_type_supply
@@ -18,7 +17,6 @@ struct CursorPositionCommandClass;  // fix_fwd_type_supply
 struct DeleteCommandClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct CHAR;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ToggleSellCommandClass;  // fix_fwd_type_supply
 struct ToggleRepairCommandClass;  // fix_fwd_type_supply
 struct ScatterCommandClass;  // fix_fwd_type_supply

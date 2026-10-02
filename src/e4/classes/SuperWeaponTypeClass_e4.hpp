@@ -8,9 +8,7 @@
 namespace gamemd {
 struct SHPStruct;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 
 struct SuperWeaponTypeClass {
 // --- flat members (BEGIN) ---

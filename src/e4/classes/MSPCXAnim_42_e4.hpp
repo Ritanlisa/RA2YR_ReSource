@@ -7,7 +7,6 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct MSPCXAnim_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

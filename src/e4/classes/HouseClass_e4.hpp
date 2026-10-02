@@ -23,7 +23,9 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct AngerStruct;  // fix_fwd_type_supply
 struct ScoutStruct;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorCursor;  // fix_fwd_type_supply
 

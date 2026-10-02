@@ -1,3 +1,5 @@
+// G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
+#define GAMEMD_TREE_UNIVERSE 1
 #include "misc_ext.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Power_e4.hpp"

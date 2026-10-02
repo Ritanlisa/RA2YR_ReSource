@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
 struct ConvertClass;  // fix_fwd_type_supply
 struct E4Recv_4880F0 {
 // --- flat members (BEGIN) ---

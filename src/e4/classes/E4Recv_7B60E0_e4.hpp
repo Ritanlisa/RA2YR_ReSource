@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractClass;  // fix_fwd_type_supply
 struct E4Recv_7B60E0 {
     unsigned int AbstractClass;
     unsigned int vtable0;

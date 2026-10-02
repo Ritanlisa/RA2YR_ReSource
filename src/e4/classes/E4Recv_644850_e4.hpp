@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct ObjectClass;  // fix_fwd_type_supply
 struct E4Recv_644850 {
     void* vfptr;  // minimal E2 declaration
     ObjectClass * sub_644850();  // 0x644850

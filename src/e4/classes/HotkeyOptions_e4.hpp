@@ -4,7 +4,9 @@
 
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 
 struct HotkeyOptions {
     void* vfptr;

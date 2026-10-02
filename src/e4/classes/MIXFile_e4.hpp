@@ -5,7 +5,6 @@
 
 namespace gamemd {
 struct MixFileClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct MixFile {
     unsigned int Debug;
     void* vfptr;  // minimal E2 declaration

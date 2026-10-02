@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct TechnoTypeClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct ReferenceCounted;  // fix_fwd_type_supply
 

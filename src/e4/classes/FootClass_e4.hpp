@@ -7,12 +7,9 @@
 
 namespace gamemd {
 struct BombClass;  // fix_fwd_type_supply
-struct ObjectClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
-struct TechnoClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 struct ConnectionPointClass;  // fix_fwd_type_supply
 struct TemporalClass;  // fix_fwd_type_supply
 struct AirstrikeClass;  // fix_fwd_type_supply
@@ -27,6 +24,7 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ILocomotion;  // fix_fwd_type_supply
 struct LocomotionClass;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_TREE_UNIVERSE
 struct FootClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -708,5 +706,6 @@ struct FootClass {
     int ClearPathIndex();  // 0x4df0d0
     unsigned int * PostLoadInit(int a2);  // 0x4d3540
 };
+#endif // GAMEMD_TREE_UNIVERSE
 
 } // namespace gamemd

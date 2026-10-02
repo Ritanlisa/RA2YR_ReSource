@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AudioController;  // fix_fwd_type_supply
 
 struct CCFileClass {
 // --- flat members (BEGIN) ---

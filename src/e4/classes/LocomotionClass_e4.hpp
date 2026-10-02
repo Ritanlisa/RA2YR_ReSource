@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct FootClass;  // fix_fwd_type_supply
 
 struct LocomotionClass {
 // --- flat members (BEGIN) ---

@@ -7,7 +7,6 @@
 
 namespace gamemd {
 struct MapClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
 
 struct FogOfWar {
 // --- flat members (BEGIN) ---

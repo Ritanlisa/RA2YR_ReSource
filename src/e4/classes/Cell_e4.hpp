@@ -9,7 +9,9 @@ namespace gamemd {
 struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 struct TechnoClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct Cell {
