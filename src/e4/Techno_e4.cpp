@@ -18,8 +18,8 @@ int Techno::GetOwnerHouse()
   result = *((unsigned int *)this + 49); /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
-    if ( BuildingType::IsSpecialType(*(void **)((char *)this + 200)) ) /*0x6f2083*/
-      return BuildingType::FindOwnerHouse(*(void **)((char *)this + 200)); /*0x6f2093*/
+    if ( ((BuildingType*)*(void **)((char *)this + 200))->IsSpecialType() ) /*0x6f2083*/
+      return ((BuildingType*)*(void **)((char *)this + 200))->FindOwnerHouse(); /*0x6f2093*/
     else
       return 0; /*0x6f2098*/
   }

@@ -15,7 +15,7 @@ HWND sub_792EC0(int a1)
   HWND Current; // eax
   HWND result; // eax
 
-  v2 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x792ec8*/
+  v2 = (HWND)((Dialog*)(void *)0xC4)->FindByHandle(); /*0x792ec8*/
   if ( v2 ) /*0x792ecf*/
   {
     dword_B77DC8 &= ~a1; /*0x792edb*/

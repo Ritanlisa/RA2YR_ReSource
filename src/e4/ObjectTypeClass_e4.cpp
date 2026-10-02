@@ -873,39 +873,39 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   aP0->MainVoxel[0] = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
   {
-    String::Release(v3); /*0x5f97a3*/
+    ((String*)v3)->Release(); /*0x5f97a3*/
     __3_YAXPAX_Z(v3); /*0x5f97a9*/
   }
   v4 = (WaveClass *)aP0->BarrelVoxel[0]; /*0x5f97b1*/
   aP0->TurretVoxel[0] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
-    WaveClass::Destroy(v4); /*0x5f97c3*/
+    ((WaveClass*)v4)->Destroy(); /*0x5f97c3*/
     __3_YAXPAX_Z(v4); /*0x5f97c9*/
   }
   v5 = (String *)aP0->ChargerTurrets[0]; /*0x5f97d1*/
   aP0->BarrelVoxel[0] = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
   {
-    String::Release(v5); /*0x5f97e3*/
+    ((String*)v5)->Release(); /*0x5f97e3*/
     __3_YAXPAX_Z(v5); /*0x5f97e9*/
   }
   v6 = (WaveClass *)aP0->ChargerTurrets[1]; /*0x5f97f1*/
   aP0->ChargerTurrets[0] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
-    WaveClass::Destroy(v6); /*0x5f9803*/
+    ((WaveClass*)v6)->Destroy(); /*0x5f9803*/
     __3_YAXPAX_Z(v6); /*0x5f9809*/
   }
   v7 = (String *)aP0->ChargerTurrets[2]; /*0x5f9811*/
   aP0->ChargerTurrets[1] = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
   {
-    String::Release(v7); /*0x5f9823*/
+    ((String*)v7)->Release(); /*0x5f9823*/
     __3_YAXPAX_Z(v7); /*0x5f9829*/
   }
   aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
-  ObjectTypeClass::CleanupWeapons((char *)aP0); /*0x5f9839*/
+  ((ObjectTypeClass*)(char *)aP0)->CleanupWeapons(); /*0x5f9839*/
   result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x5f9847*/
   if ( result >= 0 ) /*0x5f984e*/
   {

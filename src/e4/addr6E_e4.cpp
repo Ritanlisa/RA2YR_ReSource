@@ -229,8 +229,8 @@ char CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
   {
     if ( v7 == (HouseClass *)-1 ) /*0x6e30e1*/
       return 0; /*0x6e3103*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e30e5*/
-      Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e30f0*/
+    if ( (uint8_t)((BuildingType*)v7)->IsSpecialType() ) /*0x6e30e5*/
+      Field11 = ((BuildingType*)v7)->FindOwnerHouse(); /*0x6e30f0*/
     else
       Field11 = ((HouseClass *)(v7))->FindOwner(); /*0x6e30f7*/
   }
@@ -658,7 +658,7 @@ LABEL_23:
   }
   v21 = 0; /*0x6efe32*/
 LABEL_24:
-  DefaultTimer = Super::GetDefaultTimer((Super *)v11); /*0x6efde5*/
+  DefaultTimer = ((Super*)(Super *)v11)->GetDefaultTimer(); /*0x6efde5*/
   __asm { fild [esp+28h+var_10] } /*0x6efdf3*/
   if ( *(unsigned char *)(v11 + 109) ) /*0x6efdf0*/
   {

@@ -759,7 +759,7 @@ void* JumpjetLocomotion::UpdateFacing()
   }
   else
   {
-    v26 = v19 - JumpjetLocomotionClass::GetFloorZSetContext((JumpjetLocomotionClass *)this); /*0x54d34c*/
+    v26 = v19 - ((JumpjetLocomotionClass*)(JumpjetLocomotionClass *)this)->GetFloorZSetContext(); /*0x54d34c*/
   }
   LODWORD(v61) = v26; /*0x54d358*/
   v57 = 0; /*0x54d35e*/

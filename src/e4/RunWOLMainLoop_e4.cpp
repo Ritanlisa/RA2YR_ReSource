@@ -43,7 +43,7 @@ Coord * * sub_77E110()
     (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))(ppv, *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
     (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, ((char *)&stru_B7622C)); /*0x77e13c*/
   }
-  Dialog::RefreshDialogsGame(0); /*0x77e141*/
+  ((Dialog*)0)->RefreshDialogsGame(); /*0x77e141*/
   if ( ((char *)&stru_B76900) ) /*0x77e153*/
   {
     if ( !((Theme *)((Theme *)&unk_A83D10))->IsPlaying() ) /*0x77e15a*/
@@ -144,10 +144,10 @@ int sub_785EA0()
           break; /*0x78600e*/
       }
     }
-    v12 = (HWND)Dialog::FindByHandle((Dialog *)0x11E); /*0x78601c*/
+    v12 = (HWND)((Dialog*)(Dialog *)0x11E)->FindByHandle(); /*0x78601c*/
     if ( v12 ) /*0x786023*/
       CloseDialog(v12, 0); /*0x786029*/
-    v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x786033*/
+    v13 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x786033*/
     if ( v13 ) /*0x78603a*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x20u; /*0x786045*/
@@ -391,7 +391,7 @@ void sub_7A2970()
   byte_B77DC1 = 0; /*0x7a297a*/
   if ( !byte_B77DC2 && ReadWOLLobbyHouseOption() ) /*0x7a2983*/
   {
-    if ( MapSeed::CheckName((const char **)&stru_B76AC4) ) /*0x7a2991*/
+    if ( ((MapSeed*)(const char **)&stru_B76AC4)->CheckName() ) /*0x7a2991*/
     {
       ((SimpleDialogControl *)(v0))->Constructor(); /*0x7a299e*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/

@@ -697,7 +697,7 @@ public:
     virtual ~FileFind() = default;
 
     virtual void Next(); // 0x47B0C0
-    virtual void CloseHandle(); // 0x47B130
+    int CloseHandle(); // 0x47B130
     virtual void Close(); // 0x5BBED0
     virtual void ReleaseAllHandles(); // 0x5BBEE0
 
@@ -1855,7 +1855,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CDROM() = default;
 
-    virtual void DeviceIoControl(); // 0x47A3F0
+    int DeviceIoControl(); // 0x47A3F0
     virtual void LockVolume(); // 0x47A6F0
 
     uint8_t CDROM_field_0x04[4];
@@ -2782,7 +2782,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSAnim() = default;
 
-    virtual void GetField(); // 0x5CB840
+    bool GetField(); // 0x5CB840
     virtual void SetField(); // 0x5CB860
     virtual void Reset(); // 0x5CC6A0
 
@@ -2872,7 +2872,7 @@ public:
     virtual void Constructor_MSFont(); // 0x5D2E30
     virtual void Release(); // 0x5D3170
     virtual void AddRef(); // 0x5D31D0
-    virtual void Create(); // 0x5D3250
+    HWND Create(); // 0x5D3250
     virtual void ddtor(); // 0x5D3330
     // +1 more virtual methods
 
@@ -3057,7 +3057,7 @@ public:
     virtual ~MovieClass() = default;
 
     virtual void ReadConfig(); // 0x5C23B0
-    virtual void Create(); // 0x5C3EC0
+    HWND Create(); // 0x5C3EC0
     virtual void RenderLoop(); // 0x759940
     virtual void GetWidth(); // 0x759F70
     virtual void GetHeight(); // 0x759F80
@@ -3320,7 +3320,7 @@ public:
     virtual void QueryInterface(); // 0x4AEC80
     virtual void Dtor(); // 0x631C80
     virtual void SetDelegate(); // 0x631CC0
-    virtual void GetField(); // 0x7B7D80
+    bool GetField(); // 0x7B7D80
 
     uint8_t Pipe_field_0x04[4];
     uint8_t Pipe_field_0x08[4];

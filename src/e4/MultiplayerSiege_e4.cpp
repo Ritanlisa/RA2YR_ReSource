@@ -255,7 +255,7 @@ char MultiplayerSiege::CheckStatus(int a1)
 
   v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
   if ( v1 ) /*0x5ca9be*/
-    v2 = MPCombatTeam::Constructor(v1); /*0x5ca9c7*/
+    v2 = ((MPCombatTeam*)v1)->Constructor(); /*0x5ca9c7*/
   else
     v2 = 0; /*0x5ca9cb*/
   MultiplayerSiege_field_08 = a1->MultiplayerSiege_field_08; /*0x5ca9d1*/

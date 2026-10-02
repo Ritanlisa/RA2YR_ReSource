@@ -71,7 +71,7 @@ int VoxelPaletteClass::LoadFromFile()
   dword_B4317C = v4.VoxelPalette_field_0x04; /*0x753baa*/
   dword_B2FB58 = v5; /*0x753bb4*/
   dword_B43178 = v6; /*0x753bba*/
-  VoxelPalette::Reset(&v4); /*0x753bbf*/
+  ((VoxelPalette*)&v4)->Reset(); /*0x753bbf*/
   return v2; /*0x753bc6*/
 
 }

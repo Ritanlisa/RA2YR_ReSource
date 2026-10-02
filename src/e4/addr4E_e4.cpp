@@ -449,7 +449,7 @@ void * sub_4E3690(HWND hDlg, int a2)
     else
       v8 = -2; /*0x4e37a8*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v8); /*0x4e37af*/
+  Default = (HWND)((BuildingType*)(void *)v8)->FindDefault(); /*0x4e37af*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 }
 }
@@ -613,7 +613,7 @@ void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
     else
       v13 = -2; /*0x4e3f47*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v13); /*0x4e3f4e*/
+  Default = (HWND)((BuildingType*)(void *)v13)->FindDefault(); /*0x4e3f4e*/
   return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 }
 }
@@ -729,7 +729,7 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
     else
       v12 = -2; /*0x4e4142*/
   }
-  Default = (HWND *)((HWND)BuildingType::FindDefault((void *)v12)); /*0x4e4149*/
+  Default = (HWND *)((HWND)((BuildingType*)(void *)v12)->FindDefault()); /*0x4e4149*/
   return (HWND *)(CacheDialogInvalidate(DlgItem, Default)); /*0x4e4157*/
 }
 }
@@ -1908,7 +1908,7 @@ void unknown_libname_18()
   {
     if ( !g_ClipboardBuffer ) /*0x5f168a*/
       goto LABEL_10; /*0x5f168a*/
-    SerialPort::Close((HANDLE *)g_ClipboardBuffer); /*0x5f168c*/
+    ((SerialPort*)(HANDLE *)g_ClipboardBuffer)->Close(); /*0x5f168c*/
     if ( g_ClipboardBuffer ) /*0x5f1699*/
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f169f*/
     g_ClipboardBuffer = 0; /*0x5f16a1*/
@@ -2382,7 +2382,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)this); /*0x4e2a90*/
+    ((VectorClass_ptr_ConvertClass*)(GadgetClass *)this)->MarkDirty(); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
   if ( *((int *)this + 12) < 0 ) /*0x4e2a9d*/

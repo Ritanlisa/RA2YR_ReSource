@@ -556,7 +556,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   unsigned int v22[2]; // [esp+10h] [ebp-10h] BYREF
   int v23; // [esp+18h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d1379*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x4d1379*/
   this->LastSight = -1; /*0x4d1384*/
   this->House = 0; /*0x4d138b*/
   this->Cell[0] = 0; /*0x4d1394*/

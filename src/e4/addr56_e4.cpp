@@ -145,9 +145,9 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
             Debug::Log();
       SetWindowPos((HWND)(g_hWnd), 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
             Debug::Log();
-      g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560f18*/
+      g_DSurface_Primary = (int)((DSurface *)((DSurface*)0)->CreatePrimary()); /*0x560f18*/
     }
-    Viewport = Display::GetViewport(v30); /*0x560fa1*/
+    Viewport = ((Display*)v30)->GetViewport(); /*0x560fa1*/
     rc.left = 0; /*0x560fa3*/
     rc.top = (int)(0);
     v9 = (int)(*Viewport);
@@ -204,7 +204,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     TacticalClass::BuildCommandBar((TabClass *)1, v2, v19); /*0x561113*/
     SidebarClass::LoadResources(v20); /*0x56111d*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x561129*/
-        for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)Dialog::FindByPtr(i) )
+        for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)((Dialog*)i)->FindByPtr() )
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
       ResizeDialogAndEnum((HWND)i,(void *)((LPARAM)&lParam)); /*0x561146*/
@@ -238,7 +238,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   }
     Debug::Log();
     Debug::Log();
-  g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560d32*/
+  g_DSurface_Primary = (int)((DSurface *)((DSurface*)0)->CreatePrimary()); /*0x560d32*/
     Debug::Log();
   v4 = (MouseClass *)RA2_OPNEW(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/

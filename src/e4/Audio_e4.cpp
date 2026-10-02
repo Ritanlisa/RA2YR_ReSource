@@ -95,7 +95,7 @@ int Audio::ReleaseChannelRefs()
     v4 = (RefCount **)&this->__pad_18[16]; /*0x404d91*/
     do /*0x404dad*/
     {
-      RefCount::Decrement(*v4); /*0x404d96*/
+      ((RefCount*)*v4)->Decrement(); /*0x404d96*/
       *v4 = 0; /*0x404d9b*/
       result = *(unsigned int *)&this->__pad_3C[108]; /*0x404da1*/
       ++v2; /*0x404da7*/
@@ -336,7 +336,7 @@ void sub_53E1D0()
     EnterCriticalSection(&unk_AA0418); /*0x53e1ed*/
     if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e210*/
     {
-      SampleSize = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e213*/
+      SampleSize = ((Audio*)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e213*/
       WriteAudioStreamToFile(dword_AA0464,(FILE *)(dword_AA0468), SampleSize, 0); /*0x53e225*/
       fflush((FILE *)(dword_AA0468)); /*0x53e230*/
     }
@@ -349,7 +349,7 @@ void sub_53E1D0()
         EnterCriticalSection(&unk_AA0418); /*0x53e265*/
         if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e288*/
         {
-          v1 = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e28b*/
+          v1 = ((Audio*)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e28b*/
           WriteAudioStreamToFile(dword_AA0464,(FILE *)(dword_AA0468), v1, 0); /*0x53e29d*/
           fflush((FILE *)(dword_AA0468)); /*0x53e2a9*/
         }
@@ -650,7 +650,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           *(unsigned char *)(*(unsigned int *)v4 + 650) = ((CCFileClass *)(&v10))->Open(0); /*0x720881*/
           if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)this->__pad_18 + 4 * i) + 650) ) /*0x72088d*/
           {
-            Struct::ZeroInit32(v9); /*0x72089b*/
+            ((Struct*)v9)->ZeroInit32(); /*0x72089b*/
             FileClass::Load(&v10, (const CHAR *)1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)&v10, v9, v8) ) /*0x7208b8*/
             {
@@ -1529,7 +1529,7 @@ void int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
       }
       v11 = *(unsigned int *)(a1 + 296) - v22 - 1; /*0x7beeb1*/
       Audio_Process_7C3950(a1, 60 * v11 / v5); /*0x7beec0*/
-      Position = AudioStream::GetPosition((AudioStream *)a1); /*0x7beec7*/
+      Position = ((AudioStream*)(AudioStream *)a1)->GetPosition(); /*0x7beec7*/
       v9 = 1; /*0x7beeda*/
       v13 = v11 == 0; /*0x7beee6*/
       v7 = v7; /*0x7beee8*/

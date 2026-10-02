@@ -189,7 +189,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4 ) /*0x658124*/
       {
         v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
-        v19 = WideString::GetOrEmpty_Alt((wchar_t **)(dword_A8B23C + 32)); /*0x658139*/
+        v19 = ((WideString*)(wchar_t **)(dword_A8B23C + 32))->GetOrEmpty_Alt(); /*0x658139*/
         SendMessageA(v18, 0x4B2u, 0, (LPARAM)v19); /*0x658147*/
       }
       v20 = GetDlgItem(hDlg, 1819); /*0x658153*/

@@ -47,11 +47,11 @@ public:
     // design: inline accessor, inlined at all call sites
     virtual bool IsRefCountNegative();
     virtual void HideCursor();  // 0x7B9930
-    virtual void ShowCursor();
+    int ShowCursor();
     virtual void ReleaseMouse();  // 0x7B9C30
     virtual void CaptureMouse();  // 0x7B9A60
     virtual uint8_t GetField10();
-    virtual void InvalidateRect(const RectangleStruct& rect);
+    int InvalidateRect(const RectangleStruct& rect);
     // unmatched: no callgraph reference and no git history record
     virtual void CallFunc10();
     // design: inline accessor, inlined at all call sites

@@ -415,7 +415,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     }
     while ( v15 < ((unsigned int *)(v13))[1] ); /*0x706fe5*/
   }
-  v17 = Voxel::RenderFrame(v49); /*0x706fef*/
+  v17 = ((Voxel*)v49)->RenderFrame(); /*0x706fef*/
   v18 = *a1; /*0x706ff4*/
   qmemcpy(v48, v17, sizeof(v48)); /*0x707002*/
   if ( (*(uint8_t (**)(int *))(v18 + 468))(a1)
@@ -436,7 +436,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   {
     v19 = a9; /*0x70706b*/
   }
-  if ( (uint8_t)House::IsHumanPlayer((House *)a1[135]) /*0x707086*/
+  if ( (uint8_t)((House*)(House *)a1[135])->IsHumanPlayer() /*0x707086*/
     && (*(uint8_t (**)(int *))(*a1 + 196))(a1) )
   {
     v19 = (*(int (**)(int *, int))(*a1 + 1084))(a1, v19); /*0x70709c*/

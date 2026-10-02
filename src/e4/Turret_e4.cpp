@@ -81,7 +81,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           v3 = (void *)*((unsigned int *)this + 46); /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
           {
-            WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f8d89*/
+            ((WaveClass*)*((WaveClass **)this + 46))->Destroy(); /*0x5f8d89*/
             __3_YAXPAX_Z(v3); /*0x5f8d8f*/
           }
           v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
@@ -98,7 +98,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
-              String::Release(*((String **)this + 47)); /*0x5f8e1e*/
+              ((String*)*((String **)this + 47))->Release(); /*0x5f8e1e*/
               __3_YAXPAX_Z(v6); /*0x5f8e24*/
             }
             v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
@@ -125,7 +125,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           v11 = (void *)*((unsigned int *)this + 48); /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
-            WaveClass::Destroy(*((WaveClass **)this + 48)); /*0x5f8ef6*/
+            ((WaveClass*)*((WaveClass **)this + 48))->Destroy(); /*0x5f8ef6*/
             __3_YAXPAX_Z(v11); /*0x5f8efc*/
           }
           v12 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
@@ -142,7 +142,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v14 = (void *)*((unsigned int *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
-              String::Release(*((String **)this + 49)); /*0x5f8f88*/
+              ((String*)*((String **)this + 49))->Release(); /*0x5f8f88*/
               __3_YAXPAX_Z(v14); /*0x5f8f8e*/
             }
             v15 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8f98*/

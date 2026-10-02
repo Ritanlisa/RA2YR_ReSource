@@ -39,14 +39,14 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
     ((Dialog *)(MessageBox))->Show(); /*0x559da4*/
   byte_A8ED5C = 0; /*0x559dae*/
   byte_A8E378 = 0; /*0x559db5*/
-  WTFMode::Shutdown(&dword_A8B238); /*0x559dbc*/
+  ((WTFMode*)&dword_A8B238)->Shutdown(); /*0x559dbc*/
   Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
   while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) < v1 ) /*0x559dd9*/
     (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559de3*/
   while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) > v1 ) /*0x559e02*/
     (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e0c*/
   if ( MessageBox ) /*0x559e20*/
-    Dialog::Destroy(MessageBox); /*0x559e24*/
+    ((Dialog*)MessageBox)->Destroy(); /*0x559e24*/
   return Saved; /*0x559e29*/
 
 }
@@ -69,7 +69,7 @@ StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0,(const char 
   v4 = SaveScenarioClassGame_AdjustMPSaveFileName((LPCCH)Source, Sourcea, 0); /*0x559e90*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559e94*/
   if ( MessageBox ) /*0x559e99*/
-    Dialog::Destroy(MessageBox); /*0x559e9d*/
+    ((Dialog*)MessageBox)->Destroy(); /*0x559e9d*/
   return v4; /*0x559ea4*/
 
 }
@@ -132,7 +132,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2)
   v2 = (const CHAR *)(v9 + 44); /*0x559eff*/
   if ( !_strcmpi((char *)(v9 + 44),(const char *)(MultiByteStr)) ) /*0x559f03*/
     return 0; /*0x559f03*/
-  GameState::Reset((GameState *)&v8); /*0x559f17*/
+  ((GameState*)(GameState *)&v8)->Reset(); /*0x559f17*/
   Options_Load = LoadOptions_Load(v2, (int)&v8); /*0x559f27*/
   if ( !Options_Load ) /*0x559f2b*/
     return 0; /*0x55a03f*/

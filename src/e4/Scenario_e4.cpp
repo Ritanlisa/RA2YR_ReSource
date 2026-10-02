@@ -282,7 +282,7 @@ int Scenario::ReadTeams()
                           LOBYTE(v39) = *(unsigned char *)(v43 + 3278); /*0x44fcec*/
                           HouseClass::UpdateProduction(*(unsigned int *)(v29 + 540), v44, v39, 0); /*0x44fcfc*/
                         }
-                        if ( (uint8_t)House::IsHumanPlayer(*(House **)(v29 + 540)) ) /*0x44fd07*/
+                        if ( (uint8_t)((House*)*(House **)(v29 + 540))->IsHumanPlayer() ) /*0x44fd07*/
                           ((VoxClass *)((VoxClass *)&stru_818E00.Next))->FindAndPlay(-1); /*0x44fd1a*/
                       }
                     }

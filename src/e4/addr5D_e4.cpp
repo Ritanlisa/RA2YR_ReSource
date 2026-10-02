@@ -579,7 +579,7 @@ void* Dialog_MessageLoop()
       result = (HWND)IsMessageDialog(&Msg, 0, 0); /*0x5d4da6*/
       if ( !result ) /*0x5d4dad*/
         break; /*0x5d4dad*/
-      Dialog::MapDialogResource(&Msg); /*0x5d4db7*/
+      ((Dialog*)&Msg)->MapDialogResource(); /*0x5d4db7*/
       if ( dword_887368 ) /*0x5d4dc4*/
         HandleToolTipMessage(&Msg); /*0x5d4dcb*/
       v1 = 0; /*0x5d4dd5*/
@@ -684,7 +684,7 @@ char sub_5D6000(HWND hWnd, int a2)
     v5 = *((unsigned int *)dword_ABFDA4 + v3); /*0x5d60cc*/
     if ( !v8 || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 64))(v5) ) /*0x5d60db*/
     {
-      v6 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)));
+      v6 = (wchar_t *)(((WideString*)(wchar_t **)(v5 + 32))->GetOrEmpty_Alt());
       v7 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v6); /*0x5d60f7*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d60ff*/
         SendMessageA(hWnd, 0x14Eu, v7, 0); /*0x5d610a*/
@@ -727,7 +727,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   {
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
-    GenericList::Constructor((GenericList *)&v19.isOnMap); /*0x5d75d6*/
+    ((GenericList*)(GenericList *)&v19.isOnMap)->Constructor(); /*0x5d75d6*/
     *(void **)&v19.isOnMap = (void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
     memset(&v19.isAliveFlag, 0, 13); /*0x5d75f3*/
     v19.location[1] = 0; /*0x5d760f*/

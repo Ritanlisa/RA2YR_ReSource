@@ -83,7 +83,7 @@ char PlaceCabhutMap(FootClass * aP0)
     IDA_HIWORD(aP0) = v2; /*0x5904e6*/
     v4 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP0)); /*0x5904eb*/
     v4 = v4; /*0x5904f0*/
-    if ( v4[17] == -1 && Cell::IsEmpty(v4) && !v4[57] ) /*0x590503*/
+    if ( v4[17] == -1 && ((Cell*)v4)->IsEmpty() && !v4[57] ) /*0x590503*/
       break; /*0x590503*/
     if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
@@ -427,7 +427,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
         i;
         i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
-    if ( (uint8_t)MapSeed::IsCellInBounds((MapSeed *)(i + 36)) /*0x594c2b*/
+    if ( (uint8_t)((MapSeed*)(MapSeed *)(i + 36))->IsCellInBounds() /*0x594c2b*/
       && *(unsigned int *)(80 * (*(int16_t *)(i + 36) + g_MapCellWidth * *(int16_t *)(i + 38))
                    + g_MissionQueueFrame.localVariables[163]
                    + 56) == -1
@@ -451,7 +451,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
         v11 = *(void **)(v9 + 4 * v8); /*0x594c67*/
         if ( v10 ) /*0x594c6b*/
         {
-          TileNode::Cleanup(v10); /*0x594c6d*/
+          ((TileNode*)v10)->Cleanup(); /*0x594c6d*/
           RA2_OPDEL(v11); /*0x594c73*/
           v9 = g_MissionQueueFrame.briefing[339]; /*0x594c78*/
         }
@@ -469,7 +469,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v42 = 0; /*0x594cae*/
   v43 = 0; /*0x594cb3*/
   *(unsigned int *)v45.__tail_10 = 0; /*0x594cb7*/
-  VectorClass_ptr_MapRegionClass::Remove(&v45); /*0x594cbb*/
+  ((VectorClass_ptr_MapRegionClass*)&v45)->Remove(); /*0x594cbb*/
   for ( j = 0; j < g_MissionQueueFrame.briefing[342]; ++j ) /*0x594cc9*/
   {
     v13 = *(unsigned int *)(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * j) + 8) /*0x594ce8*/

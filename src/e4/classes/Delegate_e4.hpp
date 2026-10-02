@@ -41,7 +41,7 @@ struct Delegate {
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
-    void GetField(void *a1, void *a2);
+    bool GetField(void *a1, void *a2);
     void Dispatch(Pipe * aP1, Pipe * aP2, void *a3, void *a4, void *a5);
     void Set(AbstractTypeClass * aP1, void *a2, void *a3);
 };

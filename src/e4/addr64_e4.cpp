@@ -980,7 +980,7 @@ LABEL_50:
     MapClass::MarkForRedraw(&(&stru_87C374)[13428], 2);
     if ( v94 )
     {
-      v76 = (ObjectClass *)Dialog::FindByHandle((void *)0xEA);
+      v76 = (ObjectClass *)((Dialog*)(void *)0xEA)->FindByHandle();
       if ( v76 )
       {
         if ( byte_B04470 )
@@ -989,7 +989,7 @@ LABEL_50:
         (&HouseClass_Player)[42540] = byte_B04894;
         MapClass::MarkForRedraw(&(&stru_87C374)[13428], 2);
         if ( (&HouseClass_Player)[42540] )
-          TacticalMap::Redraw(&(&stru_87C374)[13428]);
+          ((TacticalMap*)&(&stru_87C374)[13428])->Redraw();
       }
     }
     if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
@@ -1005,7 +1005,7 @@ LABEL_50:
       return 8;
     }
   }
-  RemainingMs = Timer::GetRemainingMs((signed int *)&v101);
+  RemainingMs = ((Timer*)(signed int *)&v101)->GetRemainingMs();
   if ( v29 )
     goto LABEL_54;
   if ( (wchar_t *)(RemainingMs / 60) != dword_B04898 )

@@ -79,7 +79,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x6caec3*/
   this->SuperClass_field_0x24 = (unsigned int)((void *)-1); /*0x6caecd*/
   this->SuperClass_field_0x28 = 0; /*0x6caed0*/
   this->SuperClass_field_0x2C = 0; /*0x6caed3*/
@@ -128,7 +128,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x6caf94*/
   *((unsigned int *)this + 10) = a2; /*0x6cafa4*/
   *((unsigned int *)this + 9) = -1; /*0x6cafa7*/
   *((unsigned int *)this + 11) = (unsigned int)(aP2); /*0x6cafaa*/
@@ -280,7 +280,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
       ++v8; /*0x6cb2bf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6cb2d3*/
+  ((AbstractClass*)(AbstractClass *)this)->DTOR(); /*0x6cb2d3*/
 
 }
 }
@@ -401,7 +401,7 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
       {
         *((unsigned int *)this + 30) = -1; /*0x6cb70f*/
         SuperClass::SetCurrentFrame((SuperClass *)((char *)this + 48)); /*0x6cb718*/
-        DefaultTimer = Super::GetDefaultTimer((Super *)this); /*0x6cb71f*/
+        DefaultTimer = ((Super*)(Super *)this)->GetDefaultTimer(); /*0x6cb71f*/
         ((Timer *)((Timer *)&v21))->Start(DefaultTimer); /*0x6cb729*/
         v17 = v22; /*0x6cb732*/
         v18 = v23; /*0x6cb736*/
@@ -1207,7 +1207,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6cdf0a*/
     {
-      AbstractClass::Constructor((AbstractClass *)aP0); /*0x6cdf0e*/
+      ((AbstractClass*)(AbstractClass *)aP0)->Constructor(); /*0x6cdf0e*/
       aP0->SuperClass_field_0x0 = &vt_SuperClass; /*0x6cdf13*/
       aP0->SuperClass_field_0x4 = &vt_SuperClass; /*0x6cdf19*/
       aP0->SuperClass_field_0x8 = &vt_SuperClass; /*0x6cdf20*/

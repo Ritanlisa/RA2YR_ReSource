@@ -217,7 +217,7 @@ AbstractClass * * MixFile::LoadSide()
         dword_884E78 = 0; /*0x5352dd*/
     }
     House_Load(); /*0x5352e3*/
-    Game::InitializeToolTipColor(v16); /*0x5352ec*/
+    ((Game*)v16)->InitializeToolTipColor(); /*0x5352ec*/
     CCFileClass::Construct(&v21, aUimdIni); /*0x5352fd*/
     if ( ((CCINIClass *)(&dword_887208))->Load((int)&v21, 0, 0) ) /*0x535311*/
     {

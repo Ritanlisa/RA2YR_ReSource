@@ -162,7 +162,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int ClearQueues();  // 0x752370
-    void GetField(int a1);  // 0x752ab0
+    bool GetField(int a1);  // 0x752ab0
     // === FUNCS-MOVE (END) ===
 };
 

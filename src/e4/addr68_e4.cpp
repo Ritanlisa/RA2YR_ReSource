@@ -539,7 +539,7 @@ void * * ScenarioClass_SetTimer(int a1)
         (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
       *((unsigned char *)dword_A8B230 + 13730) = (unsigned char)((void **)(1)); /*0x68414c*/
       byte_A8ED9C = 1; /*0x684159*/
-      Timer::PumpMessages((HWND *)dword_87F770); /*0x684160*/
+      ((Timer*)(HWND *)dword_87F770)->PumpMessages(); /*0x684160*/
       dword_B07784 = 0; /*0x684165*/
     }
   }
@@ -734,14 +734,14 @@ void PostLoadInitScenario()
       v37 = (IDA_SHIWORD(v4) << 8) + 128; /*0x684d21*/
       GroundHeight = 0; /*0x684d2b*/
       GroundHeight = Cell::GetGroundHeight(&v36); /*0x684d3e*/
-      TacticalClass::SetPositionThunk((gamemd::MouseClass *)((RadarClass *)&v36)); /*0x684d42*/
+      ((TacticalClass*)(gamemd::MouseClass *)((RadarClass *)&v36))->SetPositionThunk(); /*0x684d42*/
     }
   }
   v5 = g_MultiplayerCleanup; /*0x684d47*/
   for ( j = 0; j < g_MultiplayerCleanup; ++j ) /*0x684d50*/
   {
     v7 = (TeamClass *)*((unsigned int *)dword_B0E784 + j); /*0x684d5c*/
-    if ( (Debug::AccumFlags((Debug *)v7) & 4) != 0 ) /*0x684d68*/
+    if ( (((Debug*)(Debug *)v7)->AccumFlags() & 4) != 0 ) /*0x684d68*/
     {
       v8 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684d77*/
       if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x684da9*/
@@ -756,7 +756,7 @@ void PostLoadInitScenario()
         *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * v9) = v8; /*0x684dc5*/
       }
     }
-    if ( (Debug::AccumFlags((Debug *)v7) & 0x10) != 0 ) /*0x684dd1*/
+    if ( (((Debug*)(Debug *)v7)->AccumFlags() & 0x10) != 0 ) /*0x684dd1*/
     {
       v10 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684de0*/
       if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x684e13*/
@@ -771,7 +771,7 @@ void PostLoadInitScenario()
         *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + (unsigned int)v11) = v10; /*0x684e2f*/
       }
     }
-    if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
+    if ( (((Debug*)(Debug *)v7)->AccumFlags() & 8) != 0 ) /*0x684e3b*/
     {
       v12 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684e44*/
       Owner = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)))->FindOwner(); /*0x684e5b*/
@@ -800,7 +800,7 @@ void PostLoadInitScenario()
     do /*0x684efb*/
     {
       v20 = (TagClass *)*((unsigned int *)dword_B0E784 + v19); /*0x684ec8*/
-      if ( TagClass::HasValidHouse(v20) ) /*0x684ecd*/
+      if ( ((TagClass*)v20)->HasValidHouse() ) /*0x684ecd*/
       {
         v21 = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(v20[2].defaultCoords[0] + 164) + 180)))->FindOwner(); /*0x684ee8*/
         ++*(unsigned int *)(v21 + 636); /*0x684eed*/

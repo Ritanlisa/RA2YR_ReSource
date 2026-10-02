@@ -183,7 +183,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   INIClass::WriteToString((gamemd::INIClass *)this, (int)&v12); /*0x4742cd*/
   ((SHA1 *)(&v12))->ComputeThunk((char *)(this->__pad_41)); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
-  Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
+  ((Pipe*)(Pipe *)&v12)->Dtor(); /*0x4742e7*/
   v8 = memcmp(v20,(const void *)(this->__pad_41), 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/

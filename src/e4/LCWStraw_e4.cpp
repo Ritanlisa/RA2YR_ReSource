@@ -23,7 +23,7 @@ int LCWStraw::Dtor(void *a1)
   *((unsigned int *)this + 5) = 0; /*0x552465*/
   __3_YAXPAX_Z(v3); /*0x55246d*/
   *((unsigned int *)this + 6) = 0; /*0x552477*/
-  return Straw::Dtor((Straw *)this); /*0x552483*/
+  return ((Straw*)(Straw *)this)->Dtor(); /*0x552483*/
 
 }
 } // namespace gamemd

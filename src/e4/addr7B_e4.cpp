@@ -536,7 +536,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
       }
     }
   }
-  UDPInterfaceClass::connect(this); /*0x7b2f04*/
+  ((UDPInterfaceClass*)this)->connect(); /*0x7b2f04*/
   v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
   *((unsigned int *)this + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b2f0f*/
   if ( v8 && *((unsigned char *)this + 259421) ) /*0x7b2f1d*/

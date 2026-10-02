@@ -417,7 +417,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
     {
       *v11 = 0; /*0x683518*/
       this->variablesChanged = 1; /*0x68351c*/
-      TriggerActionQueue::ProcessAll((TriggerActionQueue *)v10); /*0x683523*/
+      ((TriggerActionQueue*)(TriggerActionQueue *)v10)->ProcessAll(); /*0x683523*/
     }
     ++v10; /*0x683528*/
     v11 += 41; /*0x683529*/

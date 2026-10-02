@@ -65,7 +65,7 @@ v2 = (LPVOID)(ppv);
     strcpy((char *)&v8[1],(const char *)(unk_A8B380)); /*0x5e38f6*/
     strcpy((char *)&v8[11] + 3,(const char *)(a2)); /*0x5e3915*/
     dword_A8D7F7 = ((Session *)(dword_A8B238))->GetPlayerColor(); /*0x5e392d*/
-    dword_A8D7FB = WideString::Hash((wchar_t *)(word_A8D610)); /*0x5e3937*/
+    dword_A8D7FB = ((WideString*)(wchar_t *)(word_A8D610))->Hash(); /*0x5e3937*/
     result = dword_A8DA84; /*0x5e393c*/
     for ( i = 1; i < dword_A8DA84; ++i ) /*0x5e3948*/
     {

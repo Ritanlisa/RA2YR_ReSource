@@ -237,7 +237,7 @@ void WOL_ResetSystem()
     }
     while ( stru_B765EC.occupant > (unsigned int)stru_B765EC.ambientSoundController[4] ); /*0x780407*/
   }
-  Array::CleanupArrayWOL(&g_WindowManager); /*0x78040e*/
+  ((Array*)&g_WindowManager)->CleanupArrayWOL(); /*0x78040e*/
   Array::CleanupArrayWOL((Array *)&stru_B76900.needsRedraw); /*0x780418*/
   HashTable::CleanupAndResize((HashTable *)&stru_B76900.isAliveFlag); /*0x780422*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x780437*/
@@ -336,7 +336,7 @@ AbstractClass * * PopulateWOLLobbyListBox()
   wchar_t Buffer[80]; // [esp+144h] [ebp-1ACh] BYREF
   char v20[268]; // [esp+1E4h] [ebp-10Ch] BYREF
 
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7806cc*/
+  v1 = (HWND)((Dialog*)(Dialog *)0x113)->FindByHandle(); /*0x7806cc*/
   if ( v1 ) /*0x7806d3*/
   {
     DlgItem = GetDlgItem(v1, 1341); /*0x7806e5*/

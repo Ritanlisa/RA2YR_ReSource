@@ -226,7 +226,7 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
     if ( DialogIndirectParamA ) /*0x77575f*/
     {
       ++dword_A8ED8C; /*0x77577c*/
-      DialogQueue::PushEntry(DialogIndirectParamA); /*0x775781*/
+      ((DialogQueue*)DialogIndirectParamA)->PushEntry(); /*0x775781*/
       EnumChildWindows(v11, DialogClass::Reposition, 1); /*0x77578e*/
       DialogClass::Reposition((int)(v11), 0); /*0x775797*/
       *v6 = v11; /*0x77579c*/
@@ -289,7 +289,7 @@ int Dialog_Close(HWND a1, int a2)
         v7 = g_DialogTrackingList - v5; /*0x775851*/
         do /*0x775870*/
         {
-          DialogQueue::RemoveEntry(*v6); /*0x775855*/
+          ((DialogQueue*)*v6)->RemoveEntry(); /*0x775855*/
           DestroyWindow((HWND)*v6); /*0x77585d*/
           v6 -= 2; /*0x775865*/
           --v7; /*0x775869*/

@@ -130,7 +130,7 @@ int sub_59B6D0()
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
         NeighbourContent = (unsigned int *)(((Cell *)(i))->GetNeighbourContent(j));
-        if ( Cell::IsEmpty(NeighbourContent) ) /*0x59b706*/
+        if ( ((Cell*)NeighbourContent)->IsEmpty() ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }
     }
@@ -285,8 +285,8 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
   {
     if ( v7 == (HouseClass *)-1 ) /*0x6e3141*/
       return 0; /*0x6e3163*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
-      Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e3150*/
+    if ( (uint8_t)((BuildingType*)v7)->IsSpecialType() ) /*0x6e3145*/
+      Field11 = ((BuildingType*)v7)->FindOwnerHouse(); /*0x6e3150*/
     else
       Field11 = ((HouseClass *)(v7))->FindOwner(); /*0x6e3157*/
   }

@@ -1125,7 +1125,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
   int v29; // [esp+28h] [ebp-Ch] BYREF
   double HighPrecisionTimer; // [esp+2Ch] [ebp-8h]
 
-  HighPrecisionTimer = Timer::GetHighPrecision(&dbl_884D88); /*0x554d6e*/
+  HighPrecisionTimer = ((Timer*)&dbl_884D88)->GetHighPrecision(); /*0x554d6e*/
   ++dword_ABCA74; /*0x554d73*/
   if ( dword_ABCA50 && !byte_ABCA84 ) /*0x554d8e*/
   {
@@ -1137,7 +1137,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       {
         if ( !a2 && (v4 & 0xF) == 0xF ) /*0x554dbe*/
         {
-          v5 = Timer::GetHighPrecision(&dbl_884D88); /*0x554dc5*/
+          v5 = ((Timer*)&dbl_884D88)->GetHighPrecision(); /*0x554dc5*/
           if ( (double)a1 <= v5 - HighPrecisionTimer ) /*0x554dd9*/
             break; /*0x554dd9*/
           v4 = dword_ABCA7C; /*0x554ddf*/
@@ -1167,7 +1167,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA84 = 1; /*0x554edf*/
   }
   v28 = (double)a1; /*0x554eef*/
-  v7 = Timer::GetHighPrecision(&dbl_884D88); /*0x554ef3*/
+  v7 = ((Timer*)&dbl_884D88)->GetHighPrecision(); /*0x554ef3*/
   v8 = v28 - (v7 - HighPrecisionTimer); /*0x554f03*/
   if ( byte_ABCA84 ) /*0x554f07*/
   {
@@ -1198,7 +1198,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       MapClass::MarkForRedraw((int)(&dword_87F7E8),(void *)(1)); /*0x554fdb*/
     }
   }
-  v12 = Timer::GetHighPrecision(&dbl_884D88); /*0x554fe9*/
+  v12 = ((Timer*)&dbl_884D88)->GetHighPrecision(); /*0x554fe9*/
   v13 = v28 - (v12 - HighPrecisionTimer); /*0x554ff5*/
   if ( v13 > 0.0 && dword_ABCA74 > (unsigned int)(dword_ABCA78 + dword_829AE8) ) /*0x55501a*/
   {

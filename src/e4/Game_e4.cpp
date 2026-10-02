@@ -379,7 +379,7 @@ AbstractClass * * Game::DestroyAllObjects()
     v2 = *(void **)dword_AC167C; /*0x5348a5*/
     if ( *(unsigned int *)dword_AC167C ) /*0x5348a5*/
     {
-      BuildingLightQueue::RemoveEntry(*(BuildingLightQueue **)dword_AC167C); /*0x5348ad*/
+      ((BuildingLightQueue*)*(BuildingLightQueue **)dword_AC167C)->RemoveEntry(); /*0x5348ad*/
       __3_YAXPAX_Z(v2); /*0x5348b3*/
     }
   }
@@ -416,7 +416,7 @@ AbstractClass * * Game::DestroyAllObjects()
       g_TacticalClass_Instance,
       1);
   g_TacticalClass_Instance = 0; /*0x53498b*/
-  MapClass::FreeAllCells((MapClass *)&dword_87F7E8); /*0x534991*/
+  ((MapClass*)(MapClass *)&dword_87F7E8)->FreeAllCells(); /*0x534991*/
   ProcessExpiredPointers(v38); /*0x534996*/
   Game::initScenario((Game *)&g_VisibilitySystem); /*0x5349a0*/
   return (gamemd::AbstractClass **)(--dword_A8E7AC); /*0x5349ab*/

@@ -25,7 +25,7 @@ char sub_6DA770()
   if ( ((unsigned int *)(dword_A8B238))[0] ) /*0x6da798*/
   {
     v3 = (void *)(*(int (**)(int *))(v1 + 60))(v0); /*0x6da7a7*/
-    v2 = (uint8_t)House::IsHumanPlayer(v3) == 0; /*0x6da7b1*/
+    v2 = (uint8_t)((House*)v3)->IsHumanPlayer() == 0; /*0x6da7b1*/
   }
   else
   {

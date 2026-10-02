@@ -1001,7 +1001,7 @@ void BuildingTypeClass::LoadVoxel()
         v3 = (void *)((unsigned int *)this)[0]; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
         {
-          WaveClass::Destroy((WaveClass *)((unsigned int *)this)[0]); /*0x45fb61*/
+          ((WaveClass*)(WaveClass *)((unsigned int *)this)[0])->Destroy(); /*0x45fb61*/
           __3_YAXPAX_Z(v3); /*0x45fb67*/
         }
         v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fb71*/
@@ -1064,7 +1064,7 @@ void BuildingTypeClass::LoadVoxel()
       v13 = (void *)((unsigned int *)this)[1]; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
-        WaveClass::Destroy((WaveClass *)((unsigned int *)this)[1]); /*0x45fd27*/
+        ((WaveClass*)(WaveClass *)((unsigned int *)this)[1])->Destroy(); /*0x45fd27*/
         __3_YAXPAX_Z(v13); /*0x45fd2d*/
       }
       v14 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fd37*/

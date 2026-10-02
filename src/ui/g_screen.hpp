@@ -56,7 +56,7 @@ public:
     virtual HRESULT Save(IStream* stream);
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    virtual void CloseWindow();
+    int CloseWindow();
     virtual void vt_entry_8C();
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);

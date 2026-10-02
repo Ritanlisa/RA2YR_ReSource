@@ -171,7 +171,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v51[29] = Math::ArcTan2(*(double *)v53) * v23; /*0x4161cf*/
         v27 = -(Math::SinCos(COERCE_DOUBLE(IDA___PAIR64__(v26, *(unsigned int *)v53))) * v54); /*0x4161e6*/
         v51[30] = v27; /*0x4161e8*/
-        Math::Hypotenuse2D(v59); /*0x4161eb*/
+        ((Math*)v59)->Hypotenuse2D(); /*0x4161eb*/
         v28 = Math::CalcAngle(v60, v27); /*0x416200*/
         v29 = Math::RoundToInt((v28 - 1.570796326794897) * -10430.06004058427); /*0x416219*/
         v52 = (int16_t)*Vector::ToFacingMath(v51 + 29, v53) - 0x3FFF; /*0x416231*/

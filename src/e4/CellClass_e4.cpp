@@ -31,7 +31,7 @@ int CellClass::EnsureFileLoaded()
 {
 
   if ( !(&this->sensorsOfHouses)[10] && *((unsigned char *)this + 756) ) /*0x544c8d*/
-    MapClass::LoadFileData((MapClass *)this); /*0x544c97*/
+    ((MapClass*)(MapClass *)this)->LoadFileData(); /*0x544c97*/
   return (&this->sensorsOfHouses)[10] != 0; /*0x544ca9*/
 
 }

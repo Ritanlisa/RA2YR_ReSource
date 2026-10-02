@@ -143,7 +143,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
         v23 = 300; /*0x5612c9*/
       }
     }
-    Dialog::Destroy(Dialog); /*0x5612d7*/
+    ((Dialog*)Dialog)->Destroy(); /*0x5612d7*/
     if ( dwNewLong == 1 ) /*0x5612e4*/
     {
   LABEL_13:
@@ -576,7 +576,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   if ( !*(unsigned int *)((unsigned int)(a1)+ 4) ) /*0x76ed10*/
     return 0; /*0x76ed20*/
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
-  State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
+  State = ((FileClass*)(unsigned int *)(v13[19] + 8))->GetState(); /*0x76ed3f*/
   ((ScoreText *)(v13))->ShowAlt((const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
@@ -736,7 +736,7 @@ void Team_Start_76ECD0(int a1, ScoreScreen * a2)
 {
   unsigned char v4[1200]; // [esp+8h] [ebp-4B0h] BYREF
 
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x76ece2*/
+  ((Timer*)(HWND *)dword_87F770)->PumpMessages(); /*0x76ece2*/
   ConstructWDTSelection((int)v4, a1, a2); /*0x76eced*/
   Team_Start_76E750((int)v4, a2); /*0x76ecf7*/
   SelectionInitializeWOL((int)v4); /*0x76ed00*/

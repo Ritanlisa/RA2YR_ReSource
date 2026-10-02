@@ -113,7 +113,7 @@ int AbstractTypeClass::Dtor()
     }
     while ( v2 < dword_A8E978 ); /*0x410a26*/
   }
-  return AbstractClass::DTOR((AbstractClass *)this); /*0x410a2f*/
+  return ((AbstractClass*)(AbstractClass *)this)->DTOR(); /*0x410a2f*/
 
 }
 } // namespace gamemd

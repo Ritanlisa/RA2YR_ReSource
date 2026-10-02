@@ -67,19 +67,19 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_UnknownStats), 0,(const char *)(g_Str_File_WOLPersonaInformation_cpp), 892)); /*0x77a933*/
   ((WideString *)((wchar_t **)&v16))->Assign(StringCSF); /*0x77a93d*/
   v6 = GetDlgItem(hDlg, 1776); /*0x77a94e*/
-  v7 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a950*/
+  v7 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a950*/
   SendMessageA(v6, 0x4B2u, 0, (LPARAM)v7); /*0x77a95e*/
   v8 = GetDlgItem(hDlg, 1777); /*0x77a96c*/
-  v9 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a96e*/
+  v9 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a96e*/
   SendMessageA(v8, 0x4B2u, 0, (LPARAM)v9); /*0x77a97c*/
   v10 = GetDlgItem(hDlg, 1793); /*0x77a98a*/
-  v11 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a98c*/
+  v11 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a98c*/
   SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11); /*0x77a99a*/
   v12 = GetDlgItem(hDlg, 1780); /*0x77a9a8*/
-  v13 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a9aa*/
+  v13 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a9aa*/
   SendMessageA(v12, 0x4B2u, 0, (LPARAM)v13); /*0x77a9b8*/
   v14 = GetDlgItem(hDlg, 1781); /*0x77a9c6*/
-  v15 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v16)); /*0x77a9c8*/
+  v15 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a9c8*/
   SendMessageA(v14, 0x4B2u, 0, (LPARAM)v15); /*0x77a9d6*/
   DeleteAndZero::Alt(&v16); /*0x77a9dc*/
 }

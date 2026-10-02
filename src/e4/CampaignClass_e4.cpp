@@ -196,7 +196,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Construct(&v33,(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
-  INISectionList::Constructor((INISectionList *)(unsigned int *)((char *)&v28 + 2)); /*0x49c642*/
+  ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
   Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/

@@ -320,7 +320,7 @@ void AudioStream::CleanupChannels()
             v6 = (RefCount **)(v2 + 40); /*0x404f35*/
             do /*0x404f4d*/
             {
-              RefCount::Decrement(*v6); /*0x404f3a*/
+              ((RefCount*)*v6)->Decrement(); /*0x404f3a*/
               *v6 = 0; /*0x404f3f*/
               ++v5; /*0x404f47*/
               ++v6; /*0x404f48*/
@@ -431,7 +431,7 @@ void AudioStream::InitNodeFields(void *a1_1)
   this->AudioStream_field_0x4[0] = 0; /*0x4084e4*/
   this->AudioStream_field_0x14[0] = 0; /*0x4084e7*/
   this->AudioStream_field_0x18[0] = 0; /*0x4084ea*/
-  DListNode::Init((DListNode *)&this->AudioStream_field_0x8); /*0x4084f0*/
+  ((DListNode*)(DListNode *)&this->AudioStream_field_0x8)->Init(); /*0x4084f0*/
 
 }
 }

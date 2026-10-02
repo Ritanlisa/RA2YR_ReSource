@@ -304,7 +304,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     v30[0] = (*(int (**)(int *))(*v8 + 128))(v8); /*0x7782f5*/
     if ( (*(int (**)(int *))(*(void *)(((unsigned int)(void)*))(a2) + 124))(a2) > 1024 ) /*0x778306*/
     {
-      Viewport = Display::GetViewport(v37); /*0x77830c*/
+      Viewport = ((Display*)v37)->GetViewport(); /*0x77830c*/
       v31[0] = *Viewport; /*0x778319*/
       v31[1] = Viewport[1]; /*0x778320*/
       v11 = (Viewport[2] - v29) / 2; /*0x77833e*/

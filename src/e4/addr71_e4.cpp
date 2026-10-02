@@ -119,7 +119,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
       v16 = (Cell *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v23); /*0x718aa2*/
-      if ( !(uint8_t)Cell::IsGroundTypeRange(v16) /*0x718abd*/
+      if ( !(uint8_t)((Cell*)v16)->IsGroundTypeRange() /*0x718abd*/
         || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
       {
         v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/

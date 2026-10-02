@@ -676,7 +676,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       if ( (int)a1 <= 0 ) /*0x6456f4*/
       {
 LABEL_14:
-        ObjectTypeClass::Load2DArt((char *)v3); /*0x645783*/
+        ((ObjectTypeClass*)(char *)v3)->Load2DArt(); /*0x645783*/
         return 0; /*0x64578a*/
       }
       else

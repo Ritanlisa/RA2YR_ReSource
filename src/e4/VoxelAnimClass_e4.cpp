@@ -143,8 +143,8 @@ int VoxelAnimClass::CleanupMembers(void *a1)
   }
   if ( byte_A8E9A0 ) /*0x749a82*/
     ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x749a86*/
-  Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x114); /*0x749a95*/
-  Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x128); /*0x749aa2*/
+  ((Mixer*)(Mixer *)&this->VoxelAnimClass_field_0x114)->ReleaseChannel(); /*0x749a95*/
+  ((Mixer*)(Mixer *)&this->VoxelAnimClass_field_0x128)->ReleaseChannel(); /*0x749aa2*/
   AudioFileClass::Release((AudioFileClass *)&this->VoxelAnimClass_field_0x114); /*0x749aa9*/
   AudioFileClass::Release((AudioFileClass *)&this->VoxelAnimClass_field_0x128); /*0x749ab0*/
   v6 = this; /*0x749ac5*/

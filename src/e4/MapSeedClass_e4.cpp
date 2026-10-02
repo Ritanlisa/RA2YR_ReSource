@@ -290,7 +290,7 @@ LABEL_18:
                   HIWORD(v32) = WORD1(v20) - 2; /*0x5a6377*/
                   *(unsigned int *)v23 = v32; /*0x5a6386*/
                   NeighbourContent = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v23); /*0x5a638f*/
-                  if ( Value::InRange((Value *)NeighbourContent) && Value::InRange((Value *)NeighbourContent) ) /*0x5a639e*/
+                  if ( ((Value*)(Value *)NeighbourContent)->InRange() && ((Value*)(Value *)NeighbourContent)->InRange() ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
                     {
@@ -298,7 +298,7 @@ LABEL_18:
                       NeighbourContent->__pad_FC[30] = 1; /*0x5a63b4*/
                       NeighbourContent = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(0); /*0x5a63c0*/
                     }
-                    while ( Value::InRange((Value *)NeighbourContent) ); /*0x5a63c4*/
+                    while ( ((Value*)(Value *)NeighbourContent)->InRange() ); /*0x5a63c4*/
                   }
                   v22 = 0; /*0x5a63cd*/
                 }
@@ -463,7 +463,7 @@ LABEL_24:
               v12[1] = v9; /*0x5a7879*/
               v10 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x5a7883*/
               if ( !(uint8_t)CellClass::InBounds(v10) /*0x5a789d*/
-                && !(uint8_t)Cell::IsEmpty((Cell *)v10)
+                && !(uint8_t)((Cell*)(Cell *)v10)->IsEmpty()
                 && !(uint8_t)CellClass::InMapDataRange(v10) )
               {
                 break; /*0x5a789d*/
@@ -490,7 +490,7 @@ LABEL_23:
               v6 = (Value *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x5a7824*/
               Value_field_00 = (int)(v6[14].Value_field_00); /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
-                && !Value::InRange(v6) )
+                && !((Value*)v6)->InRange() )
               {
                 break; /*0x5a783d*/
               }

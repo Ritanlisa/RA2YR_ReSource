@@ -36,7 +36,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
 
   int v5; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x4717d3*/
   *((unsigned char *)this + 48) = 1; /*0x4717e2*/
   *((unsigned int *)this + 10) = 0; /*0x4717e6*/
   *((unsigned int *)this + 11) = 0; /*0x4717e9*/

@@ -349,7 +349,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                        (uint8_t *)&this->TeamTypeClass_field_24,
                        (uint8_t *)&g_INI_Key_Special.SidebarImageFile[1],
                        v4);
-  if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
+  if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6f10e5*/
   {
     *((unsigned int *)this + 50) = (unsigned int)(v5); /*0x6f10ee*/
     *((unsigned int *)this + 49) = 0; /*0x6f10f4*/
@@ -637,7 +637,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   {
     v4 = *(unsigned int *)(*(unsigned int *)(v3 + 52) + 184); /*0x6f1578*/
   }
-  else if ( (uint8_t)BuildingType::IsSpecialType(*((void **)this + 50)) ) /*0x6f1586*/
+  else if ( (uint8_t)((BuildingType*)*((void **)this + 50))->IsSpecialType() ) /*0x6f1586*/
   {
     v4 = *((unsigned int *)this + 50); /*0x6f158f*/
   }

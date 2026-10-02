@@ -121,7 +121,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
 
   v7 = this; /*0x5403f4*/
   v16 = this; /*0x5403fc*/
-  Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
+  ((Waypoint*)(Waypoint *)&v18)->InitInvalid(); /*0x540400*/
   *(unsigned int *)v18.__pad_0 = *a3; /*0x540413*/
   v18.NetworkID_field_0x04 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
@@ -250,7 +250,7 @@ int IPXGlobalConnClass::Send(void *a1, void *a2, void *a3, void *a4, void *a5)
       v5 = *(unsigned int *)((Terrain *)((Terrain *)IPXGlobalConnClass_field_0x04))->GetTileIndex(v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
-        Waypoint::InitInvalid(&v10); /*0x5402fd*/
+        ((Waypoint*)&v10)->InitInvalid(); /*0x5402fd*/
         v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
         v8 = 12; /*0x54031c*/
         PacketQueue::ExtractEntry(v6, &v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
@@ -294,7 +294,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       && (uint8_t)((NetworkID *)((int)(*(bool **)(TileIndex + 28))))->Compare(a2)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
-      Waypoint::InitInvalid(&v13); /*0x540398*/
+      ((Waypoint*)&v13)->InitInvalid(); /*0x540398*/
       v9 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
       PacketQueue::ExtractEntry(v9, &v13.__pad_0[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/

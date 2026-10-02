@@ -133,9 +133,9 @@ AbstractClass * * sub_686570()
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x6865e4*/
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x6865ee*/
   ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x6865fa*/
-  Audio::GetFlag((Audio *)g_MixerState); /*0x686605*/
+  ((Audio*)(Audio *)g_MixerState)->GetFlag(); /*0x686605*/
   ((VoxClass *)(&stru_83DB34))->FindAndPlay(-1); /*0x686616*/
-  Audio::WaitForCallback((Audio *)g_MixerState); /*0x686621*/
+  ((Audio*)(Audio *)g_MixerState)->WaitForCallback(); /*0x686621*/
   v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68662b*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686634*/
         v4 += this->this->((gamemd::Timer *)this)->GetTicks() - g_abs_887338;

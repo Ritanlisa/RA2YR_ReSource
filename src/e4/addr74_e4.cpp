@@ -1033,7 +1033,7 @@ int InitializeVeinholeSystem(char a1)
   result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x74e0a2*/
   for ( n = result; result; n = result ) /*0x74e0ab*/
   {
-    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + Cell::PosToIndex((int16_t *)(n + 36))) ) /*0x74e0c5*/
+    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + ((Cell*)(int16_t *)(n + 36))->PosToIndex()) ) /*0x74e0c5*/
       *(unsigned int *)(n + 68) = -1; /*0x74e0cb*/
     *(unsigned int *)(n + 320) &= ~0x8000u; /*0x74e0da*/
     result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x74e0e5*/

@@ -43,7 +43,7 @@ int Voice::DetachChannel()
   {
     if ( (*(unsigned char *)((unsigned int *)this + 24) & 2) != 0 ) /*0x40415c*/
       ((Voice *)(v4))->Stop(); /*0x40415e*/
-    AudioStream::ReleaseChannel(*((AudioStream **)this + 44)); /*0x404169*/
+    ((AudioStream*)*((AudioStream **)this + 44))->ReleaseChannel(); /*0x404169*/
     *(unsigned int *)(*((unsigned int *)this + 44) + 192) = 0; /*0x404174*/
     *(unsigned int *)(*((unsigned int *)this + 44) + 188) = 0; /*0x404180*/
     *(unsigned int *)(*((unsigned int *)this + 44) + 180) = 0; /*0x40418c*/

@@ -1011,7 +1011,7 @@ bool IsValidActionDialog(int a1, HWND a2)
      || v4 == (void *)184
      || v4 == (void *)214
      || v4 == (void *)259
-     || Dialog::IsSpecialTemplate(v4))
+     || ((Dialog*)v4)->IsSpecialTemplate())
     && DlgCtrlID == 1684 )
   {
     return 1; /*0x60262f*/

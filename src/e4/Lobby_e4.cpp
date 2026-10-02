@@ -378,7 +378,7 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const 
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
-    v32 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v38));
+    v32 = (wchar_t *)(((WideString*)(wchar_t **)&v38)->GetOrEmpty_Alt());
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/

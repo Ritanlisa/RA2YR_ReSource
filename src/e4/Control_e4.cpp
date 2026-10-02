@@ -117,7 +117,7 @@ LABEL_5:
     || v5 == (Dialog *)184
     || v5 == (Dialog *)214
     || v5 == (Dialog *)259
-    || (result = Dialog::IsSpecialTemplate(v5), (unsigned char)result) )
+    || (result = ((Dialog*)v5)->IsSpecialTemplate(), (unsigned char)result) )
   {
     if ( DlgCtrlID == 1684 ) /*0x60bb63*/
     {

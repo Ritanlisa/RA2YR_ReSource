@@ -1254,7 +1254,7 @@ int E4Recv_642E40::UI_Render_642E40(unsigned int *a1, int *a2)
   int v3; // esi
   int result; // eax
 
-  Default = BuildingType::FindDefault(0); /*0x642e43*/
+  Default = ((BuildingType*)0)->FindDefault(); /*0x642e43*/
   v3 = Default; /*0x642e48*/
   if ( Default ) /*0x642e4c*/
   {

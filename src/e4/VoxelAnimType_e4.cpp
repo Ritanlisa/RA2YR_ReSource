@@ -85,7 +85,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     v7 = (void *)*((unsigned int *)this + 2 * a3 + 51); /*0x5f7c13*/
     if ( v7 ) /*0x5f7c1c*/
     {
-      String::Release(*((String **)this + 2 * a3 + 51)); /*0x5f7c20*/
+      ((String*)*((String **)this + 2 * a3 + 51))->Release(); /*0x5f7c20*/
       __3_YAXPAX_Z(v7); /*0x5f7c26*/
       *((unsigned int *)this + 2 * a3 + 51) = 0; /*0x5f7c2e*/
     }
@@ -123,7 +123,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     v15 = (void *)*((unsigned int *)this + 2 * a3 + 51); /*0x5f7d27*/
     if ( v15 ) /*0x5f7d30*/
     {
-      String::Release(*((String **)this + 2 * a3 + 51)); /*0x5f7d34*/
+      ((String*)*((String **)this + 2 * a3 + 51))->Release(); /*0x5f7d34*/
       __3_YAXPAX_Z(v15); /*0x5f7d3a*/
       *((unsigned int *)this + 2 * a3 + 51) = 0; /*0x5f7d42*/
     }
@@ -225,13 +225,13 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       v11 = (void *)*((unsigned int *)this + 2 * a3 + 86); /*0x5f7fe3*/
       if ( v11 ) /*0x5f7fee*/
       {
-        WaveClass::Destroy(*((WaveClass **)this + 2 * a3 + 86)); /*0x5f7ff2*/
+        ((WaveClass*)*((WaveClass **)this + 2 * a3 + 86))->Destroy(); /*0x5f7ff2*/
         __3_YAXPAX_Z(v11); /*0x5f7ff8*/
       }
       v12 = (String *)*((unsigned int *)this + 2 * a3 + 87); /*0x5f8000*/
       if ( v12 ) /*0x5f8009*/
       {
-        String::Release(v12); /*0x5f800d*/
+        ((String*)v12)->Release(); /*0x5f800d*/
         __3_YAXPAX_Z(v12); /*0x5f8013*/
       }
       *(unsigned int *)v17.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8027*/
@@ -333,7 +333,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
     v3 = (void *)*((unsigned int *)this + 44); /*0x5f8169*/
     if ( v3 ) /*0x5f8171*/
     {
-      WaveClass::Destroy(*((WaveClass **)this + 44)); /*0x5f8175*/
+      ((WaveClass*)*((WaveClass **)this + 44))->Destroy(); /*0x5f8175*/
       __3_YAXPAX_Z(v3); /*0x5f817b*/
     }
     v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8185*/
@@ -349,7 +349,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
     v6 = (void *)*((unsigned int *)this + 45); /*0x5f81e1*/
     if ( v6 ) /*0x5f81e9*/
     {
-      String::Release(*((String **)this + 45)); /*0x5f81ed*/
+      ((String*)*((String **)this + 45))->Release(); /*0x5f81ed*/
       __3_YAXPAX_Z(v6); /*0x5f81f3*/
     }
     v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f81fd*/
@@ -391,7 +391,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v26 = (void *)*((unsigned int *)this + 46); /*0x5f86eb*/
         if ( v26 ) /*0x5f86f3*/
         {
-          WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f86f7*/
+          ((WaveClass*)*((WaveClass **)this + 46))->Destroy(); /*0x5f86f7*/
           __3_YAXPAX_Z(v26); /*0x5f86fd*/
         }
         v27 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8707*/
@@ -408,7 +408,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v29 = (void *)*((unsigned int *)this + 47); /*0x5f877d*/
         if ( v29 ) /*0x5f8785*/
         {
-          String::Release(*((String **)this + 47)); /*0x5f8789*/
+          ((String*)*((String **)this + 47))->Release(); /*0x5f8789*/
           __3_YAXPAX_Z(v29); /*0x5f878f*/
         }
         v30 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8799*/
@@ -458,7 +458,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v10 = (void *)*((unsigned int *)this + 46); /*0x5f8327*/
         if ( v10 ) /*0x5f832f*/
         {
-          WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f8333*/
+          ((WaveClass*)*((WaveClass **)this + 46))->Destroy(); /*0x5f8333*/
           __3_YAXPAX_Z(v10); /*0x5f8339*/
         }
         v11 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8343*/
@@ -475,7 +475,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v13 = (void *)*((unsigned int *)this + 47); /*0x5f83b9*/
         if ( v13 ) /*0x5f83c1*/
         {
-          String::Release(*((String **)this + 47)); /*0x5f83c5*/
+          ((String*)*((String **)this + 47))->Release(); /*0x5f83c5*/
           __3_YAXPAX_Z(v13); /*0x5f83cb*/
         }
         v14 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f83d5*/
@@ -515,7 +515,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v17 = (void *)*((unsigned int *)this + 46); /*0x5f84e7*/
         if ( v17 ) /*0x5f84ef*/
         {
-          WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f84f3*/
+          ((WaveClass*)*((WaveClass **)this + 46))->Destroy(); /*0x5f84f3*/
           __3_YAXPAX_Z(v17); /*0x5f84f9*/
         }
         v18 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8503*/
@@ -532,7 +532,7 @@ int VoxelAnimType::LoadAnim(void *a1_1)
         v20 = (void *)*((unsigned int *)this + 47); /*0x5f8579*/
         if ( v20 ) /*0x5f8581*/
         {
-          String::Release(*((String **)this + 47)); /*0x5f8585*/
+          ((String*)*((String **)this + 47))->Release(); /*0x5f8585*/
           __3_YAXPAX_Z(v20); /*0x5f858b*/
         }
         v21 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8595*/
@@ -593,7 +593,7 @@ LABEL_93:
         v35 = (void *)*((unsigned int *)this + 48); /*0x5f8907*/
         if ( v35 ) /*0x5f890f*/
         {
-          WaveClass::Destroy(*((WaveClass **)this + 48)); /*0x5f8913*/
+          ((WaveClass*)*((WaveClass **)this + 48))->Destroy(); /*0x5f8913*/
           __3_YAXPAX_Z(v35); /*0x5f8919*/
         }
         v36 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8923*/
@@ -610,7 +610,7 @@ LABEL_93:
         v38 = (void *)*((unsigned int *)this + 49); /*0x5f8999*/
         if ( v38 ) /*0x5f89a1*/
         {
-          String::Release(*((String **)this + 49)); /*0x5f89a5*/
+          ((String*)*((String **)this + 49))->Release(); /*0x5f89a5*/
           __3_YAXPAX_Z(v38); /*0x5f89ab*/
         }
         v39 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f89b5*/
@@ -648,14 +648,14 @@ LABEL_123:
     v42 = (void *)*((unsigned int *)this + 44); /*0x5f8a6a*/
     if ( v42 ) /*0x5f8a72*/
     {
-      WaveClass::Destroy(*((WaveClass **)this + 44)); /*0x5f8a76*/
+      ((WaveClass*)*((WaveClass **)this + 44))->Destroy(); /*0x5f8a76*/
       __3_YAXPAX_Z(v42); /*0x5f8a7c*/
       *((unsigned int *)this + 44) = 0; /*0x5f8a84*/
     }
     v43 = (void *)*((unsigned int *)this + 45); /*0x5f8a8a*/
     if ( v43 ) /*0x5f8a92*/
     {
-      String::Release(*((String **)this + 45)); /*0x5f8a96*/
+      ((String*)*((String **)this + 45))->Release(); /*0x5f8a96*/
       __3_YAXPAX_Z(v43); /*0x5f8a9c*/
       *((unsigned int *)this + 45) = 0; /*0x5f8aa4*/
     }
@@ -663,21 +663,21 @@ LABEL_123:
       && (uint8_t)((HouseClass *)((HouseClass *)this))->HasPower()
       && !*((unsigned char *)this + 3285) )
     {
-      ObjectTypeClass::CleanupWeapons(this); /*0x5f8acb*/
+      ((ObjectTypeClass*)this)->CleanupWeapons(); /*0x5f8acb*/
     }
     else
     {
       v44 = (void *)*((unsigned int *)this + 46); /*0x5f8ad5*/
       if ( v44 ) /*0x5f8add*/
       {
-        WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f8ae1*/
+        ((WaveClass*)*((WaveClass **)this + 46))->Destroy(); /*0x5f8ae1*/
         __3_YAXPAX_Z(v44); /*0x5f8ae7*/
         *((unsigned int *)this + 46) = 0; /*0x5f8aef*/
       }
       v45 = (void *)*((unsigned int *)this + 47); /*0x5f8af5*/
       if ( v45 ) /*0x5f8afd*/
       {
-        String::Release(*((String **)this + 47)); /*0x5f8b05*/
+        ((String*)*((String **)this + 47))->Release(); /*0x5f8b05*/
         __3_YAXPAX_Z(v45); /*0x5f8b0b*/
         *((unsigned int *)this + 47) = 0; /*0x5f8b13*/
       }

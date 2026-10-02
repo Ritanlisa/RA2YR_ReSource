@@ -101,7 +101,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
     v13 = *(v12 - 1); /*0x655dc4*/
     if ( *v12 != *aP1 || v12[1] != aP1[1] ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
-    if ( (!v42 || (uint8_t)House::IsHumanPlayer(*(void **)(v13 + 540))) /*0x655e10*/
+    if ( (!v42 || (uint8_t)((House*)*(void **)(v13 + 540))->IsHumanPlayer()) /*0x655e10*/
       && (!*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 559)
        || ((Object *)(dword_A83D4C))->IsAlliedWithObjectHouse(v13)) )
     {

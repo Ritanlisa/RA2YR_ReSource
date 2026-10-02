@@ -775,7 +775,7 @@ unsigned int * ScenarioClass_GetActionCoords(unsigned int * a1, unsigned char * 
   {
     if ( a2[18] ) /*0x633bcc*/
     {
-      v3 = (int *)BuildingLoadQueue::GetNext(a2 + 14); /*0x633bd6*/
+      v3 = (int *)((BuildingLoadQueue*)a2 + 14)->GetNext(); /*0x633bd6*/
       if ( v3 ) /*0x633bdd*/
       {
         v4 = *v3; /*0x633bdf*/
@@ -789,7 +789,7 @@ unsigned int * ScenarioClass_GetActionCoords(unsigned int * a1, unsigned char * 
     }
     else if ( a2[28] ) /*0x633be7*/
     {
-      v3 = (int *)BuildingLoadQueue::GetNext(a2 + 24); /*0x633bf1*/
+      v3 = (int *)((BuildingLoadQueue*)a2 + 24)->GetNext(); /*0x633bf1*/
       if ( v3 ) /*0x633bf8*/
       {
         v4 = *v3; /*0x633bfa*/
@@ -798,7 +798,7 @@ unsigned int * ScenarioClass_GetActionCoords(unsigned int * a1, unsigned char * 
     }
     else if ( a2[23] ) /*0x633c02*/
     {
-      v3 = (int *)BuildingLoadQueue::GetNext(a2 + 19); /*0x633c0c*/
+      v3 = (int *)((BuildingLoadQueue*)a2 + 19)->GetNext(); /*0x633c0c*/
       if ( v3 ) /*0x633c13*/
       {
         v4 = *v3; /*0x633c15*/
@@ -838,7 +838,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v21[4]; // [esp+44h] [ebp-20h] BYREF
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
-  Viewport = (int *)(Display::GetViewport(v16));
+  Viewport = (int *)(((Display*)v16)->GetViewport());
   v21[0] = (unsigned int)((int *)(*Viewport));
   v21[1] = (unsigned int)((int *)(Viewport[1]));
   v21[2] = (unsigned int)((int *)(Viewport[2]));
@@ -913,7 +913,7 @@ int E4Recv_635680::sub_635680(int a2)
   unsigned int v20[4]; // [esp+50h] [ebp-20h] BYREF
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
-  Viewport = (int *)(Display::GetViewport(&v16));
+  Viewport = (int *)(((Display*)&v16)->GetViewport());
   v20[0] = (unsigned int)((int *)(*Viewport));
   v20[1] = (unsigned int)((int *)(Viewport[1]));
   v20[2] = (unsigned int)((int *)(Viewport[2]));
@@ -1097,7 +1097,7 @@ char ExecutePlanningQueue()
             goto LABEL_15; /*0x637314*/
           v10 = (BuildingLoadQueue *)&v35[19]; /*0x637316*/
         }
-        if ( BuildingLoadQueue::GetNext(v10) ) /*0x63731a*/
+        if ( ((BuildingLoadQueue*)v10)->GetNext() ) /*0x63731a*/
           goto LABEL_34; /*0x637326*/
       }
   LABEL_15:
@@ -1171,7 +1171,7 @@ char ExecutePlanningQueue()
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
         ScriptAction::PlaceObject((void *)(v21), *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
-      ScriptAction::FindSquadMember((ScriptAction *)v21); /*0x637428*/
+      ((ScriptAction*)(ScriptAction *)v21)->FindSquadMember(); /*0x637428*/
       v24 = ++v20 < v34; /*0x637432*/
       *(unsigned char *)(v21 + 28) = 0; /*0x637434*/
     }
@@ -1289,7 +1289,7 @@ AbstractClass * * sub_637920()
           ScriptAction::PlaceObject((void *)(v3), *(unsigned int **)(*(unsigned int *)(v3 + 4) + 4 * v1++)); /*0x637959*/
         while ( v1 < v4 ); /*0x637961*/
       }
-      ScriptAction::FindSquadMember((ScriptAction *)v3); /*0x637965*/
+      ((ScriptAction*)(ScriptAction *)v3)->FindSquadMember(); /*0x637965*/
       ++v2; /*0x63796e*/
       *(unsigned char *)(v3 + 28) = 0; /*0x637971*/
       if ( v2 >= v5 ) /*0x637975*/

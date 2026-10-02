@@ -156,7 +156,7 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
       goto LABEL_10; /*0x5f368a*/
-    SerialPort::Close((SerialPort *)g_ClipboardBuffer); /*0x5f368c*/
+    ((SerialPort*)(SerialPort *)g_ClipboardBuffer)->Close(); /*0x5f368c*/
     if ( g_ClipboardBuffer ) /*0x5f3699*/
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/

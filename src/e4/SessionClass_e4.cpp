@@ -310,7 +310,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   v3 = 0; /*0x5cef09*/
   ((unsigned int *)&v43)[0] = 0; /*0x5cef0f*/
   ((unsigned int *)&v43)[0] = 0; /*0x5cef13*/
-  GenericList::Constructor((GenericList *)&v43.occupant); /*0x5cef17*/
+  ((GenericList*)(GenericList *)&v43.occupant)->Constructor(); /*0x5cef17*/
   v43.occupant = (int)&vt_List; /*0x5cef20*/
   memset(&v43.ambientSoundController[1], 0, 13); /*0x5cef28*/
   v43.customSound_controller[0] = 0; /*0x5cef39*/

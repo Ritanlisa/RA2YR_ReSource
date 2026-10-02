@@ -150,7 +150,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     v13 = ((WDTClass *)(*(WDTClass **)(a3 + 4)))->GetCellType(v11); /*0x76d5d7*/
     if ( v13 != CellType ) /*0x76d5db*/
     {
-      DDraw::HandleSuspend((DDraw *)this); /*0x76d5df*/
+      ((DDraw*)(DDraw *)this)->HandleSuspend(); /*0x76d5df*/
       while ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x76d5ea*/
       {
         if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read() == 27 ) /*0x76d603*/
@@ -252,7 +252,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   {
     do /*0x76da41*/
     {
-      DDraw::HandleSuspend((DDraw *)this); /*0x76d8c0*/
+      ((DDraw*)(DDraw *)this)->HandleSuspend(); /*0x76d8c0*/
       while ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x76d8cb*/
       {
         if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read() == 27 ) /*0x76d8e4*/

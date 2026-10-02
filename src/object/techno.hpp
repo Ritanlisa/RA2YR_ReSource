@@ -1151,7 +1151,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int updateWeaponCooldown();  // 0x41b840
     int checkAmmo(int a1);  // 0x41b860
     void* Update(int a1, int a2);  // 0x6f3f40
-    void GetField();  // 0x731cf0
+    bool GetField();  // 0x731cf0
     // === FUNCS-MOVE (END) ===
 };
 

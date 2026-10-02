@@ -276,7 +276,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
               v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140))));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
-              Coord::Length((int *)&v143);
+              ((Coord*)(int *)&v143)->Length();
   int v16; // eax
               if ( v16 <= v134 )
               {
@@ -292,7 +292,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164)))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
-                Coord::Length((int *)&v132);
+                ((Coord*)(int *)&v132)->Length();
                 int v18 = v18;
                 if ( (int)v121 < v126
                   || (IDA_BYTE1(v127) || !v126)

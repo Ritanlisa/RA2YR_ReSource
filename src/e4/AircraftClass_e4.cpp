@@ -247,7 +247,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
     return (gamemd::AircraftTypeClass *)(result); /*0x417cdd*/
   if ( result == 26 && this->Type[1].TechnoTypeClass[317] ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
-  if ( this->Type[1].TechnoTypeClass[300] && (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x417d16*/
+  if ( this->Type[1].TechnoTypeClass[300] && (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417d16*/
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
@@ -287,7 +287,7 @@ LABEL_23:
   if ( v7 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->vtable1 + 254))(this, 0) ) /*0x417def*/
     goto LABEL_23; /*0x417df2*/
 LABEL_24:
-  if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x417dfc*/
+  if ( (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417dfc*/
   {
     if ( v7 == 7 && (*(int (**)(int *))(*v4 + 44))(v4) == 6 ) /*0x417e14*/
     {
@@ -870,7 +870,7 @@ int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 
   int v6; // edi
 
-  if ( !(uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x417f89*/
+  if ( !(uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417f89*/
     return 0; /*0x417f92*/
   v6 = FootClass::HandleCursorWithCheck((FootClass *)this, a1, aP2, aP3); /*0x417faf*/
   if ( v6 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->vtable1 + 254))(this, 0) ) /*0x417fc2*/

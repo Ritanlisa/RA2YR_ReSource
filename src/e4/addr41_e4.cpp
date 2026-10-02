@@ -766,11 +766,11 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
     INIClass::GetString(a1, aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
     v6 = strtok(String, Str); /*0x41b173*/
-    v7 = HouseClass::FindByName(v6); /*0x41b182*/
+    v7 = ((HouseClass*)v6)->FindByName(); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/
     {
       v8 = (TypeClass *)strtok(0, Str); /*0x41b194*/
-      v9 = TypeClass::FindByName(v8); /*0x41b1a3*/
+      v9 = ((TypeClass*)v8)->FindByName(); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
         v10 = (IUnknown *)*((unsigned int *)((char *)&stru_A80220) + v7); /*0x41b1b9*/

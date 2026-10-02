@@ -72,7 +72,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   int v4; // eax
   int v6; // [esp+8h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6292b6*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x6292b6*/
   *((unsigned int *)this + 11) = dword_A8ED84; /*0x6292c4*/
   *((unsigned int *)this + 13) = 0; /*0x6292c9*/
   *((unsigned int *)this + 14) = dword_A8ED84; /*0x6292d2*/
@@ -209,7 +209,7 @@ void ParasiteClass::DeploySquad()
   v57 = v4[41]; /*0x629836*/
   v6 = (Cell *)(*(int (**)(int *))(*v4 + 444))(v4); /*0x62983c*/
   v44 = 0x3FF0000000000000LL; /*0x629844*/
-  if ( !v6 || (uint8_t)Cell::IsValidHeight(v6) ) /*0x629854*/
+  if ( !v6 || (uint8_t)((Cell*)v6)->IsValidHeight() ) /*0x629854*/
   {
     v10 = *(unsigned int *)(v5 + 368); /*0x629898*/
     v11 = (unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 1696); /*0x62989e*/

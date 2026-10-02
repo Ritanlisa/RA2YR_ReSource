@@ -52,7 +52,7 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
     }
     while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }
-  AbstractClass::DTOR((AbstractClass *)a3); /*0x4c5b41*/
+  ((AbstractClass*)(AbstractClass *)a3)->DTOR(); /*0x4c5b41*/
   if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
     __3_YAXPAX_Z((void *)(a3)); /*0x4c5b4e*/
   return (gamemd::EMPulseClass *)((void **)a3); /*0x4c5b58*/

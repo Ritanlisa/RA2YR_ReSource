@@ -362,8 +362,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~NetworkBuffer() = default;
 
-    virtual void GetField(); // 0x74FD50
-    virtual void UpdateWindow(); // 0x74FD60
+    bool GetField(); // 0x74FD50
+    int UpdateWindow(); // 0x74FD60
     virtual void GetField2(); // 0x74FDA0
     virtual void GetField3(); // 0x74FDB0
 
@@ -512,7 +512,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~NetworkShare() = default;
 
-    virtual void GetField(); // 0x5E8DA0
+    bool GetField(); // 0x5E8DA0
 
 };
 // 14 methods in IDA

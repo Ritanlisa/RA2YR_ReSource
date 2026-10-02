@@ -216,7 +216,7 @@ LABEL_23: v99[1] = (int)(v27);
               || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->Cell_field_0x11B[0],
                   (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
+              if ( (!aP12 || (uint8_t)((Cell*)v30)->IsBuildableAdvanced()) /*0x56de9d*/
                 && (aP13 || ((int)v30->Cell_field_0x140 & 0x100) == 0)
                 && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v99, -1)) )
               {
@@ -274,7 +274,7 @@ LABEL_44: v98[1] = (int)(v36);
               || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->Cell_field_0x11B[0],
                   (int)((HIDWORD(v40) ^ v40) - HIDWORD(v40)) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
+              if ( (!aP12 || (uint8_t)((Cell*)v39)->IsBuildableAdvanced()) /*0x56e0b3*/
                 && (aP13 || ((int)v39->Cell_field_0x140 & 0x100) == 0)
                 && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v98, -1)) )
               {
@@ -342,7 +342,7 @@ LABEL_67:
               || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->Cell_field_0x11B[0],
                   (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
+              if ( (!aP12 || (uint8_t)((Cell*)v49)->IsBuildableAdvanced()) /*0x56e2f6*/
                 && (aP13 || ((int)v49->Cell_field_0x140 & 0x100) == 0)
                 && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v100, -1)) )
               {
@@ -396,7 +396,7 @@ LABEL_86:
               || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->Cell_field_0x11B[0],
                   (int)((HIDWORD(v57) ^ v57) - HIDWORD(v57)) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
+              if ( (!aP12 || (uint8_t)((Cell*)v56)->IsBuildableAdvanced()) /*0x56e4f8*/
                 && (aP13 || ((int)v56->Cell_field_0x140 & 0x100) == 0)
                 && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v97, -1)) )
               {

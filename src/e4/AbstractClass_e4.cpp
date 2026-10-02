@@ -65,7 +65,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       v5[1].vtable1 = 0; /*0x438ee9*/
       v5[1].vtable2 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
-      AudioController::Init((AudioController *)&v5[1].nextArrayIndex); /*0x438ef2*/
+      ((AudioController*)(AudioController *)&v5[1].nextArrayIndex)->Init(); /*0x438ef2*/
       v5[2].vtable2 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438f03*/
       if ( dword_89C678 < dword_89C670 /*0x438f37*/
         || (byte_89C675 || !dword_89C670)
@@ -108,7 +108,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     *((unsigned int *)this + 12) = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 528) != -1 ) /*0x438fde*/
     {
-      if ( (uint8_t)House::IsHumanPlayer(*((House **)aP1 + 135)) ) /*0x438fe6*/
+      if ( (uint8_t)((House*)*((House **)aP1 + 135))->IsHumanPlayer() ) /*0x438fe6*/
       {
         v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
         v12[1] = (unsigned int)(aP2[40]); /*0x439007*/

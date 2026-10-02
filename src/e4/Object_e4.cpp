@@ -301,7 +301,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
             v26[2] = v18[2]; /*0x56c490*/
-            v16 = Coord::Length((Coord *)v26); /*0x56c494*/
+            v16 = ((Coord*)(Coord *)v26)->Length(); /*0x56c494*/
 LABEL_20:
             if ( v16 >= 0 && (!v21 || v16 < v22) ) /*0x56c4a9*/
             {
@@ -314,7 +314,7 @@ LABEL_20:
           v25[1] = (v10 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
           v15 = ((Vector3 *)((int *)((Vector3 *)a2)))->Subtract(v27,(unsigned int *)(v25)); /*0x56c439*/
-          v16 = Coord::Length((Coord *)v15); /*0x56c440*/
+          v16 = ((Coord*)(Coord *)v15)->Length(); /*0x56c440*/
           if ( v16 <= 181 ) /*0x56c44a*/
             goto LABEL_20; /*0x56c44a*/
         }
@@ -409,7 +409,7 @@ char sub_5902C0(int a1)
             IDA_HIWORD(a1) = v9; /*0x590440*/
             v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x590445*/
             v12 = v11; /*0x59044a*/
-            if ( v11[17] != -1 || *((char *)v11 + 283) != v16 || !Cell::IsEmpty(v11) && !Cell::IsGroundTypeRange(v12) ) /*0x59046c*/
+            if ( v11[17] != -1 || *((char *)v11 + 283) != v16 || !((Cell*)v11)->IsEmpty() && !((Cell*)v12)->IsGroundTypeRange() ) /*0x59046c*/
               break; /*0x59046c*/
             v7 = v1[2]; /*0x590475*/
             v5 = *v1; /*0x590478*/

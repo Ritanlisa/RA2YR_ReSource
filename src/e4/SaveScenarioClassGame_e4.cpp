@@ -50,7 +50,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67cf50*/
     return 0; /*0x67cf61*/
   }
-  GameState::Reset(v15); /*0x67cf6b*/
+  ((GameState*)v15)->Reset(); /*0x67cf6b*/
   Map_Save_681080(v15, dword_83D560); /*0x67cf7d*/
   Map_Save_6810A0(v15, Source); /*0x67cf8a*/
   Map_Save(v15, 1); /*0x67cf98*/
@@ -80,7 +80,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     return 0; /*0x67d0a3*/
   }
   v9 = 0; /*0x67d0c2*/
-  Game::readIniSettings(&v9); /*0x67d0c6*/
+  ((Game*)&v9)->readIniSettings(); /*0x67d0c6*/
   if ( CoCreateInstance((const IID &)(&stru_7E9540), 0, 7u, &riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
     if ( OleRun((LPUNKNOWN)ppv) >= 0 ) /*0x67d0f4*/

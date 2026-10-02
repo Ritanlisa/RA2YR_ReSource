@@ -107,7 +107,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
             v20 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
-            if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
+            if ( (!v18 || v19) && (((Cell*)v20)->IsEmpty() || v19 && ((Cell*)v21)->IsGroundTypeRange()) ) /*0x5a02e6*/
             {
               v22 = v29[2]; /*0x5a02ff*/
               if ( v29[4] < v22 /*0x5a0324*/
@@ -121,7 +121,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
                 *(unsigned int *)(v25 + 4 * v24) = v30; /*0x5a033b*/
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
-              if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
+              if ( a7 && ((Cell*)v21)->IsEmpty() ) /*0x5a034f*/
                 *((unsigned char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/

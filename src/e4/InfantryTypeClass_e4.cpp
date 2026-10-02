@@ -635,8 +635,8 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
   {
     if ( v5 ) /*0x52499c*/
       InfantryTypeClass::Constructor_523980(v5, (int)&aP0); /*0x5249a5*/
-    VoxelAnimType::LoadAnim((char *)v5); /*0x5249ad*/
-    ObjectTypeClass::Load2DArt((char *)v5); /*0x5249b4*/
+    ((VoxelAnimType*)(char *)v5)->LoadAnim(); /*0x5249ad*/
+    ((ObjectTypeClass*)(char *)v5)->Load2DArt(); /*0x5249b4*/
     if ( v5 != (InfantryTypeClass *)-3720 ) /*0x5249c1*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->VoiceComment))->Construct(0, 0); /*0x5249c7*/

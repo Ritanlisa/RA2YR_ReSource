@@ -765,7 +765,7 @@ int E4Recv_425670::ConstructionPositionTracker()
     v54 = *v8; /*0x42571f*/
     v55 = v8[1]; /*0x42572a*/
     v56 = v8[2]; /*0x425731*/
-    if ( (int)Coord::Length((Coord *)&v54) > 18 ) /*0x42573d*/
+    if ( (int)((Coord*)(Coord *)&v54)->Length() > 18 ) /*0x42573d*/
     {
       v54 = *location; /*0x4258f3*/
       vtable0 = (int)(this->vtable1); /*0x4258f7*/

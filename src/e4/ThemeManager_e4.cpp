@@ -73,7 +73,7 @@ void ThemeManager::Cleanup(void *a1)
     ((ThemeClass *)(v5))->RequestBuffer(); /*0x7207bb*/
     ThemeManager::ProcessCallback(*((ThemeManager **)this + 11)); /*0x7207c3*/
     ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x7207cb*/
-    AudioSample::Destructor(*((AudioSample **)this + 11)); /*0x7207d3*/
+    ((AudioSample*)*((AudioSample **)this + 11))->Destructor(); /*0x7207d3*/
     *((unsigned int *)this + 11) = 0; /*0x7207d8*/
   }
 

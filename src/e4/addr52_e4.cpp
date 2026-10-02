@@ -426,7 +426,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   }
 LABEL_11:
   if ( !Source /*0x529f5a*/
-    || (strncpy(Destination, Source, 0x40u), Destination[63] = 0, String::Trim(Destination), !strlen(Destination)) )
+    || (strncpy(Destination, Source, 0x40u), Destination[63] = 0, ((String*)Destination)->Trim(), !strlen(Destination)) )
   {
 LABEL_18:
     v14 = *a5; /*0x52a011*/
@@ -520,7 +520,7 @@ LABEL_11:
   {
     strncpy(Destination, Source, 0x40u); /*0x52a1be*/
     Destination[63] = 0; /*0x52a1ca*/
-    String::Trim(Destination); /*0x52a1cf*/
+    ((String*)Destination)->Trim(); /*0x52a1cf*/
     if ( strlen(Destination) ) /*0x52a1d8*/
     {
       sscanf(Destination, "%f,%f,%f", &a4, &a3, &a5); /*0x52a209*/

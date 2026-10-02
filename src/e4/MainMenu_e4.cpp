@@ -117,7 +117,7 @@ long MainMenu_Screen(void * a1, void * a2)
       ; /*0x531eff*/
     }
     while ( dwNewLong == 18 ); /*0x531f04*/
-    Dialog::Destroy(v2); /*0x531f0e*/
+    ((Dialog*)v2)->Destroy(); /*0x531f0e*/
     GetSystemTime(&SystemTime); /*0x531f18*/
     Random::AdvanceRandomBytes(SystemTime.wMilliseconds); /*0x531f28*/
   }

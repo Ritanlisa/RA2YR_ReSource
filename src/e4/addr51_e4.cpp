@@ -135,7 +135,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       a2 = (void *)(isRecruitableByAlly); /*0x51ffe7*/
       onBridge = (uint8_t)((unsigned int *)v6)[0]; /*0x51ffec*/
       controlGroup = ((unsigned int *)v6)[0]; /*0x51ffef*/
-      Field = FootClass::GetField(((unsigned int *)v6)[0]); /*0x52000b*/
+      Field = ((FootClass*)((unsigned int *)v6)[0])->GetField(); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
       v12 = ((Input *)(&v24))->OffsetToDirection(); /*0x52001c*/
       v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vtable1 + 110))( /*0x52002b*/

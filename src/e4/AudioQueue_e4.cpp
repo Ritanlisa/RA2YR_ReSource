@@ -283,7 +283,7 @@ LABEL_5:
     else
     {
       v8 = ((String *)(*((String **)this + 241)))->GetOrEmpty(); /*0x7716d1*/
-      v9 = VocClass::FindByName((VocClass *)v8); /*0x7716d8*/
+      v9 = ((VocClass*)(VocClass *)v8)->FindByName(); /*0x7716d8*/
       UpdateThemeManager(v9, -1, -1); /*0x7716e2*/
       *((unsigned char *)this + 952) = 0; /*0x7716e7*/
     }

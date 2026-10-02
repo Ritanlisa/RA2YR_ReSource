@@ -64,10 +64,10 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
   }
   v21 = (unsigned int)(1);
   v20 = (unsigned int)(0);
-  v5 = (unsigned int)((HWND)Dialog::FindByHandle((Dialog *)0x10F));
+  v5 = (unsigned int)((HWND)((Dialog*)(Dialog *)0x10F)->FindByHandle());
   if ( v5 /*0x7a3e7a*/
-    || (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x11D), v20 = v5 != 0, v5)
-    || (v21 = 0, (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x114)) != 0) )
+    || (v5 = (HWND)((Dialog*)(Dialog *)0x11D)->FindByHandle(), v20 = v5 != 0, v5)
+    || (v21 = 0, (v5 = (HWND)((Dialog*)(Dialog *)0x114)->FindByHandle()) != 0) )
   {
     DlgItem = GetDlgItem(v5, 1576); /*0x7a3e88*/
     if ( v20 ) /*0x7a3e93*/
@@ -128,7 +128,7 @@ LABEL_16:
   {
     ShowDialogConfirm(aUnknownStatus, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
   }
-  v16 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a4021*/
+  v16 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x7a4021*/
   if ( v16 ) /*0x7a4028*/
   {
     dword_B77DC8 &= ~0x100u; /*0x7a4036*/
@@ -399,7 +399,7 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
     dword_B77E60 = a4; /*0x7a4092*/
     dword_B77E64 = v8; /*0x7a4097*/
   }
-  v4 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a40a2*/
+  v4 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x7a40a2*/
   if ( v4 ) /*0x7a40a9*/
   {
     dword_B77DC8 &= ~0x100u; /*0x7a40b7*/

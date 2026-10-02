@@ -77,7 +77,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x71a4e7*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->vtable1 = &vt_TemporalClass; /*0x71a501*/
@@ -166,7 +166,7 @@ void ** TemporalClass::ProcessTimeWarp()
   {
     v3[158] = 0; /*0x71a77f*/
     *(unsigned char *)(*(unsigned int *)this->__pad_28 + 624) = 0; /*0x71a78a*/
-    return (void **)TagClass::Unlink((TagClass *)this); /*0x71a790*/
+    return (void **)((TagClass*)(TagClass *)this)->Unlink(); /*0x71a790*/
   }
   else
   {

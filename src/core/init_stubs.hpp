@@ -45,7 +45,7 @@ void* BitTextClassLoadFont(void* mem);  // 0x434AD0
 void InitStubPlaceholder();  // 0x60D430
 
 // IDA 0x72AA40 -- LoadMouseClassResources
-void LoadMouseClassResources();  // 0x72AA40
+unsigned char LoadMouseClassResources();  // 0x72AA40
 
 // IDA 0x406B10 -- InitializeAudioSubsystem
 int InitializeAudioSubsystem(void* hwnd_or_flag);  // 0x406B10
@@ -158,7 +158,7 @@ bool InitRules();  // 0x52CD70
 int AudioCallback();  // 0x4093B0
 
 // IDA 0x52CB50 -- PlayIntroSequence
-void PlayIntroSequence();  // 0x52CB50
+char PlayIntroSequence();  // 0x52CB50
 
 // IDA 0x52FC20 -- InitRandomSeed
 void InitRandomSeed();  // 0x52FC20

@@ -167,7 +167,7 @@ char DisplayClass::ddtor(void *a1)
   result = byte_A8ED6B; /*0x4a8938*/
   if ( !byte_A8ED6B ) /*0x4a893f*/
   {
-    Hash::Reset((LinkClass *)&stru_8A06F8); /*0x4a8946*/
+    ((Hash*)(LinkClass *)&stru_8A06F8)->Reset(); /*0x4a8946*/
     return (*(char (**)(DisplayClass *, GadgetClass *))(this->DisplayClass_field_0x0 + 48))( /*0x4a8954*/
              this,
              &stru_8A06F8);

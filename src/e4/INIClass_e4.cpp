@@ -303,7 +303,7 @@ LABEL_36:
   }
   strncpy(v6, v23, Count); /*0x528bd0*/
   v6[Count - 1] = 0; /*0x528bde*/
-  String::Trim(v6); /*0x528be3*/
+  ((String*)v6)->Trim(); /*0x528be3*/
   return strlen(v6); /*0x528bbe*/
 
 }

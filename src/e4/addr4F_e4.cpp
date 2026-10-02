@@ -109,7 +109,7 @@ int InGameUI_Open()
       dwNewLong = 1; /*0x4f1170*/
     }
   LABEL_16:
-    Dialog::Destroy(v2); /*0x4f1178*/
+    ((Dialog*)v2)->Destroy(); /*0x4f1178*/
   }
   if ( dwNewLong == 1004 ) /*0x4f1189*/
     ScenarioClass::ShowMissionBriefing(dword_A8B230); /*0x4f1191*/
@@ -139,7 +139,7 @@ long sub_4F1840()
       dwNewLong = 1; /*0x4f1891*/
     }
   LABEL_7:
-    Dialog::Destroy(Dialog); /*0x4f1899*/
+    ((Dialog*)Dialog)->Destroy(); /*0x4f1899*/
   }
   return dwNewLong; /*0x4f18a4*/
 }
@@ -690,7 +690,7 @@ void ParseINIAnimGadgetDefinition()
   ((INIClass *)(a2))->ReadString(Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
-  if ( String::Length(&v19) ) /*0x4f2d08*/
+  if ( ((String*)&v19)->Length() ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.q4); /*0x4f2d29*/
     ((String *)(&v20))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2d37*/

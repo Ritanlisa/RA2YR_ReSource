@@ -30,7 +30,7 @@ int BombClass::AbstractClass()
 
   int v2; // eax
 
-  AbstractClass::Constructor((gamemd::AbstractClass *)this); /*0x4385d4*/
+  ((AbstractClass*)(gamemd::AbstractClass *)this)->Constructor(); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->vtable1 = &vt_BombClass; /*0x4385e1*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385e7*/
@@ -39,7 +39,7 @@ int BombClass::AbstractClass()
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((AudioController *)&(&this->audioController)[3]); /*0x438605*/
+  ((AudioController*)(AudioController *)&(&this->audioController)[3])->Init(); /*0x438605*/
   *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)

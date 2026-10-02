@@ -369,7 +369,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
       v15 = g_UIControlState; /*0x5b4ead*/
       if ( g_UIControlState ) /*0x5b4eb5*/
       {
-        ComPtr::Dtor(g_UIControlState); /*0x5b4eb9*/
+        ((ComPtr*)g_UIControlState)->Dtor(); /*0x5b4eb9*/
         RA2_OPDEL(v15); /*0x5b4ebf*/
         g_UIControlState = 0; /*0x5b4ec7*/
       }

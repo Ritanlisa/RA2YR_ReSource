@@ -244,7 +244,7 @@ int CellClass::RegisterForRedraw(__int16 *a2, int a1, int a5, int a6)
   int v13; // [esp+Ch] [ebp-4h]
   float v14; // [esp+14h] [ebp+4h]
 
-  v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
+  v13 = ((Cell*)(Cell *)a2)->PosToIndex(); /*0x7235b8*/
   result = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x7235bc*/
   if ( result[286] < 0xBu ) /*0x7235c8*/
   {

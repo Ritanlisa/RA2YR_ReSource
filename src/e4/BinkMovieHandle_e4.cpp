@@ -172,7 +172,7 @@ int BinkMovieHandle::InitFromFile(void *a1, void *a2)
   int result; // eax
 
   g_MissionQueueFrame.localVariables[605] = (int)this; /*0x5c0550*/
-  result = BinkMovie::Play((BinkMovie *)this->height); /*0x5c0559*/
+  result = ((BinkMovie*)(BinkMovie *)this->height)->Play(); /*0x5c0559*/
   g_MissionQueueFrame.localVariables[605] = 0; /*0x5c055e*/
   return result; /*0x5c0568*/
 
@@ -183,7 +183,7 @@ namespace gamemd {
 BOOL BinkMovieHandle::COMStub()
 {
 
-  return BinkMovie::IsAtEnd((BinkMovieHandle *)this->height);
+  return ((BinkMovie*)(BinkMovieHandle *)this->height)->IsAtEnd();
 
 }
 } // namespace gamemd
@@ -192,7 +192,7 @@ namespace gamemd {
 char BinkMovieHandle::AddRef(void *a1)
 {
 
-  return BinkMovie::RenderFrameToSurface((BinkMovieHandle *)this->height);
+  return ((BinkMovie*)(BinkMovieHandle *)this->height)->RenderFrameToSurface();
 
 }
 } // namespace gamemd

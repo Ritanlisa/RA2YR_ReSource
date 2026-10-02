@@ -304,8 +304,8 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5881*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5888*/
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/
+    ((VoxelAnimType*)(char *)aP0)->LoadAnim(); /*0x6b5891*/
+    ((ObjectTypeClass*)(char *)aP0)->Load2DArt(); /*0x6b5898*/
     return 0; /*0x6b589d*/
   }
   return result; /*0x6b589f*/

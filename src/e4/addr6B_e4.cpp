@@ -372,7 +372,7 @@ AbstractClass * * SlaveManager_InitGrid()
             *(unsigned int *)v32 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2ceb*/
             v20 = (int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v32); /*0x6b2cf4*/
             *(unsigned int *)v40.__pad_0 = v20[9]; /*0x6b2cfd*/
-            if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
+            if ( !(uint8_t)((MapSeed*)&v40)->IsCellInBounds() /*0x6b2d4e*/
               || v20[17] != -1
               || v20[57]
               || (v40.MapSeed_field_0x04 = v20[9], ((Tactical *)((Tactical *)&v40.MapSeed_field_0x04))->GetCellData()[69])
@@ -396,7 +396,7 @@ AbstractClass * * SlaveManager_InitGrid()
             v40.MapSeed_field_0x04 = v36; /*0x6b2dbe*/
             v24 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v40.MapSeed_field_0x04); /*0x6b2dc7*/
             *(unsigned int *)v40.__pad_0 = v24[9]; /*0x6b2dd0*/
-            if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
+            if ( !(uint8_t)((MapSeed*)&v40)->IsCellInBounds() /*0x6b2e21*/
               || v24[17] != -1
               || v24[57]
               || (*(unsigned int *)v32 = v24[9], ((Tactical *)((Tactical *)v32))->GetCellData()[69])
@@ -427,7 +427,7 @@ AbstractClass * * SlaveManager_InitGrid()
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
-          if ( (uint8_t)MapSeed::IsCellInBounds((MapSeed *)&v40.MapSeed_field_0x10) ) /*0x6b2eb1*/
+          if ( (uint8_t)((MapSeed*)(MapSeed *)&v40.MapSeed_field_0x10)->IsCellInBounds() ) /*0x6b2eb1*/
           {
             v29 = (ObjectClass *)CellCoord::To_CellObj( /*0x6b2ec4*/
                                    (CellCoord *)&stru_87F5F0.__pad_58[416],

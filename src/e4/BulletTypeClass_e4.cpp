@@ -538,9 +538,9 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 7),
                            *(unsigned char *)(v4 + 680));
   if ( !*(unsigned char *)(v4 + 670) ) /*0x46c3f8*/
-    ObjectTypeClass::Load2DArt((char *)v4); /*0x46c406*/
+    ((ObjectTypeClass*)(char *)v4)->Load2DArt(); /*0x46c406*/
   if ( *(unsigned char *)(v4 + 566) ) /*0x46c40b*/
-    VoxelAnimType::LoadAnim((char *)v4); /*0x46c417*/
+    ((VoxelAnimType*)(char *)v4)->LoadAnim(); /*0x46c417*/
   return (gamemd::WeaponTypeClass **)(1); /*0x46c41c*/
 
 }

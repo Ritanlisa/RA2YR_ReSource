@@ -184,7 +184,7 @@ int MPCooperative::WriteCoopSaveINI()
   CCFileClass::Construct(&v19,(void *)(g_Str_File_coopsave_ini)); /*0x49be70*/
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
-  INISectionList::Constructor((INISectionList *)(unsigned int *)((char *)&v15 + 2)); /*0x49be81*/
+  ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v15 + 2))->Constructor(); /*0x49be81*/
   Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
@@ -333,7 +333,7 @@ int MPCooperative::ReadCoopSaveINI()
   CCFileClass::Construct(v16,(void *)(g_Str_File_coopsave_ini)); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
   v19[2] = 0; /*0x49d15d*/
-  INISectionList::Constructor(v20); /*0x49d164*/
+  ((INISectionList*)v20)->Constructor(); /*0x49d164*/
   Node::Init(v21); /*0x49d170*/
   v21[5] = 0; /*0x49d183*/
   v22 = 0; /*0x49d18a*/
@@ -453,7 +453,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   v9 = 8; /*0x5c14bb*/
   do /*0x5c14cb*/
   {
-    Waypoint::InitInvalid((Waypoint *)p_MPCooperative_field_0xC4); /*0x5c14c2*/
+    ((Waypoint*)(Waypoint *)p_MPCooperative_field_0xC4)->InitInvalid(); /*0x5c14c2*/
     p_MPCooperative_field_0xC4 += 3; /*0x5c14c7*/
     --v9; /*0x5c14ca*/
   }
@@ -503,7 +503,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     v17 = *(void **)(v16 + 4 * i); /*0x5c157a*/
     if ( v17 ) /*0x5c157f*/
     {
-      Array::Cleanup(*(Array **)(v16 + 4 * i)); /*0x5c1583*/
+      ((Array*)*(Array **)(v16 + 4 * i))->Cleanup(); /*0x5c1583*/
       __3_YAXPAX_Z(v17); /*0x5c1589*/
     }
   }
@@ -572,7 +572,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   *(unsigned int *)v2->__pad_0 = (unsigned int)((void*)&MPCooperative_vftable); /*0x5c164a*/
   if ( MultiplayerGameMode_field_0x08 ) /*0x5c1652*/
   {
-    Array::Cleanup(MultiplayerGameMode_field_0x08); /*0x5c1656*/
+    ((Array*)MultiplayerGameMode_field_0x08)->Cleanup(); /*0x5c1656*/
     RA2_OPDEL(MultiplayerGameMode_field_0x08); /*0x5c165c*/
     v3[2].MultiplayerGameMode_field_0x08 = 0; /*0x5c1664*/
   }
@@ -582,7 +582,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     v7 = *(void **)(MultiplayerGameMode_field_0x18 + 4 * i); /*0x5c1677*/
     if ( v7 ) /*0x5c167c*/
     {
-      Array::Cleanup(*(Array **)(MultiplayerGameMode_field_0x18 + 4 * i)); /*0x5c1680*/
+      ((Array*)*(Array **)(MultiplayerGameMode_field_0x18 + 4 * i))->Cleanup(); /*0x5c1680*/
       RA2_OPDEL(v7); /*0x5c1686*/
     }
   }
@@ -652,7 +652,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   }
   IDA_BYTE1(v3[3].MultiplayerGameMode_field_0x10) = 0; /*0x5c1794*/
   v3[3].MultiplayerGameMode_field_0x0C = 0; /*0x5c1797*/
-  MultiplayerGameMode::Dtor(v3); /*0x5c179a*/
+  ((MultiplayerGameMode*)v3)->Dtor(); /*0x5c179a*/
 }
 }
 // 0x5C18A0
@@ -680,7 +680,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     v4 = *(void **)(v3 + 4 * i); /*0x5c18b5*/
     if ( v4 ) /*0x5c18ba*/
     {
-      Array::Cleanup(*(Array **)(v3 + 4 * i)); /*0x5c18be*/
+      ((Array*)*(Array **)(v3 + 4 * i))->Cleanup(); /*0x5c18be*/
       __3_YAXPAX_Z(v4); /*0x5c18c4*/
     }
   }
@@ -748,7 +748,7 @@ CampaignClass * * MPCooperative::CopyTo()
   g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5c1a13*/
   Debug::Log(); /*0x5c1a28*/
   Network::SendOptionsGame((char *)(aO8)); /*0x5c1a35*/
-  if ( Dialog::FindByHandle((Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xBC) ) /*0x5c1a4d*/
+  if ( ((Dialog*)(Dialog *)0xC2)->FindByHandle() || ((Dialog*)(Dialog *)0xBC)->FindByHandle() ) /*0x5c1a4d*/
   {
     MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1a56*/
     if ( MPCooperative_field_0x40 ) /*0x5c1a5b*/
@@ -760,7 +760,7 @@ CampaignClass * * MPCooperative::CopyTo()
         v4 = (void *)(this->MPCooperative_field_0x40); /*0x5c1a88*/
         if ( v4 ) /*0x5c1a8d*/
         {
-          Array::Cleanup((Array *)this->MPCooperative_field_0x40); /*0x5c1a91*/
+          ((Array*)(Array *)this->MPCooperative_field_0x40)->Cleanup(); /*0x5c1a91*/
           __3_YAXPAX_Z(v4); /*0x5c1a97*/
         }
         this->MPCooperative_field_0x40 = 0; /*0x5c1a9f*/

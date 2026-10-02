@@ -94,7 +94,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
         if ( v10 < v9[4] ) /*0x7229e7*/
           v9[4] = v10; /*0x7229e9*/
       }
-      *(unsigned char *)(Cell::PosToIndex(p_occupant) + *((unsigned int *)this + 62)) = 1; /*0x7229f7*/
+      *(unsigned char *)(((Cell*)p_occupant)->PosToIndex() + *((unsigned int *)this + 62)) = 1; /*0x7229f7*/
     }
     result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x722a00*/
   }

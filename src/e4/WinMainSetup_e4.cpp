@@ -83,7 +83,7 @@ void sub_72B130()
     v0 = dword_B0FC80; /*0x72b13d*/
     if ( dword_B0FC80 ) /*0x72b145*/
     {
-      FileTreeNode::Destroy((void *)(dword_B0FC80)); /*0x72b149*/
+      ((FileTreeNode*)(void *)(dword_B0FC80))->Destroy(); /*0x72b149*/
       RA2_OPDEL(v0); /*0x72b14f*/
     }
     byte_B0FC90 = 0; /*0x72b157*/
@@ -94,7 +94,7 @@ void sub_72B130()
     v1 = dword_B0FC84; /*0x72b16c*/
     if ( dword_B0FC84 ) /*0x72b174*/
     {
-      FileTreeNode::Destroy((void *)(dword_B0FC84)); /*0x72b178*/
+      ((FileTreeNode*)(void *)(dword_B0FC84))->Destroy(); /*0x72b178*/
       RA2_OPDEL(v1); /*0x72b17e*/
     }
     byte_B0FC91 = 0; /*0x72b186*/
@@ -105,7 +105,7 @@ void sub_72B130()
     v2 = dword_B0FC88; /*0x72b19b*/
     if ( dword_B0FC88 ) /*0x72b1a3*/
     {
-      FileTreeNode::Destroy((void *)(dword_B0FC88)); /*0x72b1a7*/
+      ((FileTreeNode*)(void *)(dword_B0FC88))->Destroy(); /*0x72b1a7*/
       RA2_OPDEL(v2); /*0x72b1ad*/
     }
     byte_B0FC92 = 0; /*0x72b1b5*/
@@ -116,7 +116,7 @@ void sub_72B130()
     v3 = dword_B0FC8C; /*0x72b1ca*/
     if ( dword_B0FC8C ) /*0x72b1d2*/
     {
-      FileTreeNode::Destroy((void *)(dword_B0FC8C)); /*0x72b1d6*/
+      ((FileTreeNode*)(void *)(dword_B0FC8C))->Destroy(); /*0x72b1d6*/
       RA2_OPDEL(v3); /*0x72b1dc*/
     }
     byte_B0FC93 = 0; /*0x72b1e4*/
@@ -127,7 +127,7 @@ void sub_72B130()
     v4 = dword_B0FACC; /*0x72b1f9*/
     if ( dword_B0FACC ) /*0x72b201*/
     {
-      FileTreeNode::Destroy((void *)(dword_B0FACC)); /*0x72b205*/
+      ((FileTreeNode*)(void *)(dword_B0FACC))->Destroy(); /*0x72b205*/
       RA2_OPDEL(v4); /*0x72b20b*/
     }
     byte_B0FC94 = 0; /*0x72b213*/
@@ -165,10 +165,10 @@ void sub_5B4310()
   if ( dword_ABF00C ) /*0x5b431a*/
   {
     if ( *(unsigned int *)dword_ABF00C ) /*0x5b431c*/
-      Tree::Destructor(*(unsigned int **)dword_ABF00C); /*0x5b4324*/
+      ((Tree*)*(unsigned int **)dword_ABF00C)->Destructor(); /*0x5b4324*/
     v1 = (unsigned int *)((unsigned int *)(v0))[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
-      Tree::Destructor(v1); /*0x5b4330*/
+      ((Tree*)v1)->Destructor(); /*0x5b4330*/
     RA2_OPDEL(v0); /*0x5b4336*/
   }
   dword_ABF00C = 0; /*0x5b433e*/
@@ -184,7 +184,7 @@ void sub_5BE940()
   v0 = dword_ABF294; /*0x5be941*/
   if ( dword_ABF294 ) /*0x5be949*/
   {
-    FileTreeNode::Destroy((void *)(dword_ABF294)); /*0x5be94d*/
+    ((FileTreeNode*)(void *)(dword_ABF294))->Destroy(); /*0x5be94d*/
     RA2_OPDEL(v0); /*0x5be953*/
     byte_ABF2DC = 0; /*0x5be95b*/
   }
@@ -247,7 +247,7 @@ int sub_5E8A20()
     g_Lobby_MaxPlayers = 0; /*0x5e8ac5*/
   }
 // 0x5c6120
-  return PtrVector::Destroy(&stru_A8DA74); /*0x5e8ad0*/
+  return ((PtrVector*)&stru_A8DA74)->Destroy(); /*0x5e8ad0*/
 }
 } // namespace gamemd
 

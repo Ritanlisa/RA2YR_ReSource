@@ -353,7 +353,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TextGroup() = default;
 
-    virtual void SetRect(); // 0x433CA0
+    int SetRect(); // 0x433CA0
 
 };
 

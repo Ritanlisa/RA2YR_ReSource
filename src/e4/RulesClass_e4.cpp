@@ -221,21 +221,21 @@ INIClass * * RulesClass::ReadPowerupsSection()
         v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
-          String::Trim(v4); /*0x673ef7*/
+          ((String*)v4)->Trim(); /*0x673ef7*/
           (&dword_81DA8C)[v2] = atoi(v5); /*0x673f05*/
         }
         v6 = strtok(0, Str); /*0x673f13*/
         v7 = (GlobalArray *)v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
-          String::Trim(v6); /*0x673f23*/
+          ((String*)v6)->Trim(); /*0x673f23*/
           (&dword_81DAD8)[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
         v8 = strtok(0, Str); /*0x673f3d*/
         v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
-          String::Trim(v8); /*0x673f4d*/
+          ((String*)v8)->Trim(); /*0x673f4d*/
           if ( _strcmpi(v9,(const char *)(off_825BF8)) ) /*0x673f58*/
           {
             if ( !_strcmpi(v9,(const char *)(g_Str_no)) ) /*0x673f73*/
@@ -257,7 +257,7 @@ INIClass * * RulesClass::ReadPowerupsSection()
           }
           else
           {
-            String::Trim(v10); /*0x673fbc*/
+            ((String*)v10)->Trim(); /*0x673fbc*/
             result = atof(v10); /*0x673fc2*/
           }
           __asm { fstp qword ptr [ebp+0] } /*0x673fca*/

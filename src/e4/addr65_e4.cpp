@@ -180,7 +180,7 @@ int Trigger_AllocateLog(int a1)
           v21 = v20[18] | (v20[19] << 16);
         }
         void * v22 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v20 + 44))(v20);
-        Name = AbstractType::FindName(v22);
+        Name = ((AbstractType*)v22)->FindName();
         *(unsigned char *)(v15 + 91) = 0;
         *(unsigned int *)(v15 + 64) = v21;
         strncpy((char *)(v15 + 68), Name, 0x17u);
@@ -203,7 +203,7 @@ int Trigger_AllocateLog(int a1)
           v25 = v24[18] | (v24[19] << 16);
         }
         void * v26 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v24 + 44))(v24);
-        char * v27 = AbstractType::FindName(v26);
+        char * v27 = ((AbstractType*)v26)->FindName();
         *(unsigned char *)(v15 + 63) = 0;
         *(unsigned int *)(v15 + 36) = v25;
         strncpy((char *)(v15 + 40), v27, 0x17u);
@@ -256,7 +256,7 @@ int Trigger_AllocateLog(int a1)
             v32 = v31[18] | (v31[19] << 16);
           }
           void * v33 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v31 + 44))(v31);
-          char * v34 = AbstractType::FindName(v33);
+          char * v34 = ((AbstractType*)v33)->FindName();
           *(unsigned char *)(v15 + 91) = 0;
           *(unsigned int *)(v15 + 64) = v32;
           strncpy((char *)(v15 + 68), v34, 0x17u);
@@ -279,7 +279,7 @@ int Trigger_AllocateLog(int a1)
             v36 = v35[18] | (v35[19] << 16);
           }
           void * v37 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v35 + 44))(v35);
-          char * v38 = AbstractType::FindName(v37);
+          char * v38 = ((AbstractType*)v37)->FindName();
           *(unsigned char *)(v15 + 63) = 0;
           *(unsigned int *)(v15 + 36) = v36;
           strncpy((char *)(v15 + 40), v38, 0x17u);
@@ -328,7 +328,7 @@ int Trigger_AllocateLog(int a1)
             v45 = v44[18] | (v44[19] << 16);
           }
           void * v46 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v44 + 44))(v44);
-          char * v47 = AbstractType::FindName(v46);
+          char * v47 = ((AbstractType*)v46)->FindName();
           *(unsigned char *)(v15 + 91) = 0;
           *(unsigned int *)(v15 + 64) = v45;
           strncpy((char *)(v15 + 68), v47, 0x17u);
@@ -351,7 +351,7 @@ int Trigger_AllocateLog(int a1)
             v49 = v48[18] | (v48[19] << 16);
           }
           void * v50 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v48 + 44))(v48);
-          char * v51 = AbstractType::FindName(v50);
+          char * v51 = ((AbstractType*)v50)->FindName();
           *(unsigned char *)(v15 + 63) = 0;
           *(unsigned int *)(v15 + 36) = v49;
           strncpy((char *)(v15 + 40), v51, 0x17u);
@@ -398,7 +398,7 @@ int Trigger_AllocateLog(int a1)
           v56 = v58[18] | (v58[19] << 16);
         }
         void * v59 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v58 + 44))(v58);
-        char * v60 = AbstractType::FindName(v59);
+        char * v60 = ((AbstractType*)v59)->FindName();
         *(unsigned char *)(v15 + 63) = 0;
         *(unsigned int *)(v15 + 36) = v56;
         strncpy((char *)(v15 + 40), v60, 0x17u);
@@ -793,7 +793,7 @@ void sub_6586D0()
     }
     dwNewLong = 1059; /*0x65872b*/
   LABEL_7:
-    Dialog::Destroy(Dialog); /*0x658733*/
+    ((Dialog*)Dialog)->Destroy(); /*0x658733*/
   }
   Timer::PumpMessages(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]); /*0x658740*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x658758*/
@@ -1521,7 +1521,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     return 1; /*0x65dba5*/
   }
   *(ScriptActionQueue *)v48 = v45; /*0x65dbaf*/
-  v30 = *((unsigned int *)dword_A8B21C + TypeClass::FindByName(&g_INI_Key_PDPLANE)); /*0x65dbc8*/
+  v30 = *((unsigned int *)dword_A8B21C + ((TypeClass*)&g_INI_Key_PDPLANE)->FindByName()); /*0x65dbc8*/
   ++dword_A8E7AC; /*0x65dbca*/
   v31 = (*(int (**)(int, unsigned int))(*(unsigned int *)v30 + 140))(v30, v10[135]); /*0x65dbd9*/
   v31 = v31; /*0x65dbe5*/

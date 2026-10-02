@@ -252,7 +252,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   }
   *((unsigned char *)this + 69) = 0; /*0x6af565*/
   *((unsigned int *)this + 16) = 0; /*0x6af569*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6af570*/
+  ((AbstractClass*)(AbstractClass *)this)->DTOR(); /*0x6af570*/
 
 }
 } // namespace ra2

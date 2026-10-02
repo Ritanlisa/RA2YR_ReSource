@@ -120,7 +120,7 @@ int Dialog::InitializeGameSettings()
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    Session::PrepareGame((HWND)(*(Session **)this->__pad_0)); /*0x5b5e48*/
+    ((Session*)(HWND)(*(Session **)this->__pad_0))->PrepareGame(); /*0x5b5e48*/
   v19 = GetDlgItem(*(HWND *)this->__pad_0, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/

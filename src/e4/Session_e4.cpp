@@ -159,7 +159,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       *(unsigned int *)Str = 27; /*0x5e7576*/
       break; /*0x5e7576*/
     case 4: /*0x5e7521*/
-      if ( !Dialog::FindByHandle((gamemd::Dialog *)0xC9) ) /*0x5e7609*/
+      if ( !((Dialog*)(gamemd::Dialog *)0xC9)->FindByHandle() ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) ) /*0x5e7630*/

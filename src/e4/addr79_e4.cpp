@@ -90,7 +90,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4)
       return 0; /*0x792d2d*/
     case 0xFu: /*0x792d16*/
       ((Dialog *)(hWnd))->DrawBackground(); /*0x792d48*/
-      Dialog::StopBink(hWnd); /*0x792d4f*/
+      ((Dialog*)hWnd)->StopBink(); /*0x792d4f*/
       ValidateRect(hWnd, 0); /*0x792d57*/
       return 0; /*0x792d60*/
     case 0x14u: /*0x792d16*/
@@ -440,7 +440,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     ((Timer *)0)->GetTicks();
   v56 = 1; /*0x793d5f*/
   v75[0] = 0; /*0x793d64*/
-  Waypoint::InitInvalid(&v91); /*0x793d68*/
+  ((Waypoint*)&v91)->InitInvalid(); /*0x793d68*/
   v66 = 0; /*0x793d74*/
   v57 = 0; /*0x793d7f*/
     ((Debug *)0)->Log();
@@ -721,7 +721,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
                 (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, v92); /*0x794565*/
                 if ( v62 >= 0 && v62 < dword_A8DA84 ) /*0x794576*/
                 {
-                  v46 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x79457d*/
+                  v46 = (HWND)((Dialog*)(Dialog *)0x130)->FindByHandle(); /*0x79457d*/
                   v47 = v46; /*0x794582*/
                   if ( v46 ) /*0x794586*/
                   {
@@ -851,7 +851,7 @@ char NetworkLobby_WaitForPlayers()
   SessionClass::SetupNetwork((int)dword_A8B238); /*0x794804*/
   if ( dword_A8DA84 > 0 ) /*0x79480f*/
   {
-    v1 = (HWND)Dialog::FindByHandle((void *)0x130); /*0x79481b*/
+    v1 = (HWND)((Dialog*)(void *)0x130)->FindByHandle(); /*0x79481b*/
     if ( v1 ) /*0x79481f*/
     {
       DlgItem = GetDlgItem(v1, (&dword_84A1F0)[0]); /*0x794828*/
@@ -1079,7 +1079,7 @@ AbstractClass * * WOL_StartGame()
         StringCSF = GetStringCSF((wchar_t *)(g_Str_TXT_SCENARIOS_DO_NOT_MATCH), 0, g_Str_File_wonline_cpp, 20292); /*0x794d44*/
         ShowDialogConfirm(StringCSF, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x794d4d*/
       }
-      v8 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x794d57*/
+      v8 = (HWND)((Dialog*)(Dialog *)0x130)->FindByHandle(); /*0x794d57*/
       if ( v8 ) /*0x794d5e*/
         CloseDialog(v8, 0); /*0x794d64*/
       g_NetworkLobbyState = 0; /*0x794d6e*/
@@ -1167,7 +1167,7 @@ AbstractClass * * WOL_StartGame()
       }
   LABEL_52:
       Debug::Log(); /*0x794f23*/
-      v18 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x794f35*/
+      v18 = (HWND)((Dialog*)(Dialog *)0x130)->FindByHandle(); /*0x794f35*/
       if ( v18 ) /*0x794f3e*/
         CloseDialog(v18, 0); /*0x794f44*/
       Debug::Log(); /*0x794f4e*/

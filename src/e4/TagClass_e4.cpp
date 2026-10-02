@@ -65,7 +65,7 @@ TriggerClass * * TagClass::Destructor()
       buildingType = a1->buildingType; /*0x6e4f9f*/
       if ( buildingType ) /*0x6e4fa4*/
       {
-        if ( (Debug::AccumFlags((Debug *)buildingType) & 0x10) != 0 ) /*0x6e4fad*/
+        if ( (((Debug*)(Debug *)buildingType)->AccumFlags() & 0x10) != 0 ) /*0x6e4fad*/
         {
           v3 = 0; /*0x6e4fb5*/
           if ( (int)((char *)&FootClass_Array) <= 0 ) /*0x6e4fb9*/
@@ -101,7 +101,7 @@ LABEL_9:
         v6 = a1->buildingType; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
         {
-          if ( (Debug::AccumFlags((Debug *)v6) & 4) != 0 ) /*0x6e5012*/
+          if ( (((Debug*)(Debug *)v6)->AccumFlags() & 4) != 0 ) /*0x6e5012*/
           {
             v7 = 0; /*0x6e501a*/
             if ( *((unsigned int *)((char *)&FootClass_Array + 0)) <= 0 ) /*0x6e501e*/

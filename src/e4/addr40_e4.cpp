@@ -262,7 +262,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
         }
         if ( *(unsigned int *)(v6 + 4) != v6 ) /*0x401c96*/
           LinkedList::Init((unsigned int **)v6); /*0x401c9a*/
-        for ( i = (unsigned int **)Queue::GetNext((int *)(v6 + 36)); i; i = (unsigned int **)Queue::GetNext((int *)(v6 + 36)) ) /*0x401cad*/
+        for ( i = (unsigned int **)((Queue*)(int *)(v6 + 36))->GetNext(); i; i = (unsigned int **)((Queue*)(int *)(v6 + 36))->GetNext() ) /*0x401cad*/
         {
           LinkedList::Init(i); /*0x401cb1*/
           AudioNode::Release((void *)(i)); /*0x401cb8*/
@@ -283,8 +283,8 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     v5[15] = (int)v2; /*0x401d14*/
     ((DListNode *)(v5))->InitEmpty(); /*0x401d17*/
     v5[3] = 0; /*0x401d1c*/
-    AudioStream::InitNodeFields(v5 + 7); /*0x401d26*/
-    Struct::ZeroInit32(v5 + 16); /*0x401d30*/
+    ((AudioStream*)v5 + 7)->InitNodeFields(); /*0x401d26*/
+    ((Struct*)v5 + 16)->ZeroInit32(); /*0x401d30*/
     v5[12] = (int)(v5 + 16); /*0x401d35*/
     v9 = *(unsigned int *)(*v2 + 284); /*0x401d3a*/
     v9 = v9; /*0x401d42*/
@@ -329,7 +329,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       }
             if ( *(unsigned int *)(v11 + 4) != v11 )
         LinkedList::Init((unsigned int **)v11); /*0x401da6*/
-      for ( j = (unsigned int **)Queue::GetNext((int *)(v11 + 36)); j; j = (unsigned int **)Queue::GetNext((int *)(v11 + 36)) ) /*0x401db9*/
+      for ( j = (unsigned int **)((Queue*)(int *)(v11 + 36))->GetNext(); j; j = (unsigned int **)((Queue*)(int *)(v11 + 36))->GetNext() ) /*0x401db9*/
       {
         LinkedList::Init(j); /*0x401dbd*/
         AudioNode::Release((void *)(j)); /*0x401dc4*/
@@ -345,7 +345,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
   LABEL_38:
     if ( (int *)v5[1] != v5 ) /*0x401e82*/
       LinkedList::Init((unsigned int **)v5); /*0x401e86*/
-    for ( k = (unsigned int **)Queue::GetNext(v5 + 9); k; k = (unsigned int **)Queue::GetNext(v5 + 9) ) /*0x401e99*/
+    for ( k = (unsigned int **)((Queue*)v5 + 9)->GetNext(); k; k = (unsigned int **)((Queue*)v5 + 9)->GetNext() ) /*0x401e99*/
     {
       LinkedList::Init(k); /*0x401e9d*/
       AudioNode::Release((void *)(k)); /*0x401ea4*/
@@ -409,7 +409,7 @@ ObjectClass * * sub_402990()
         do /*0x402a35*/
         {
           v5 = ((AudioQueue *)((AudioQueue *)&v12))->IteratorNext(); /*0x402a2a*/
-          AudioStream::Destructor((unsigned int *)(v4)); /*0x402a2c*/
+          ((AudioStream*)(unsigned int *)(v4))->Destructor(); /*0x402a2c*/
           v4 = (AudioStream *)v5; /*0x402a33*/
         }
         while ( v5 ); /*0x402a35*/

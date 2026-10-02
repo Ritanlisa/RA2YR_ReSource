@@ -99,7 +99,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
         NeighbourContent = (int *)((unsigned int *)((IUnknown *)((int *)((Cell *)(NeighbourContent))->GetNeighbourContent((unsigned int)(v8)))));
         v10 = (unsigned int *)((IUnknown *)(NeighbourContent + 80));
         if ( (NeighbourContent[80] & 0x100) == 0 /*0x5836a5*/
-          && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
+          && (((Cell*)NeighbourContent)->IsInRange() || ((Cell*)NeighbourContent)->IsInRange2())
           && NeighbourContent[59] != 3 )
         {
           aP1 = (IUnknown *)((int16_t *)NeighbourContent[9]);
@@ -111,7 +111,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       v11 = (unsigned int *)(v12 + 80); /*0x5836cc*/
       if ( (v12[80] & 0x100) == 0 ) /*0x5836d2*/
       {
-        if ( (Cell::IsInRange(v12) || Cell::IsInRange2(v12)) && v12[59] != 3 ) /*0x5836f1*/
+        if ( (((Cell*)v12)->IsInRange() || ((Cell*)v12)->IsInRange2()) && v12[59] != 3 ) /*0x5836f1*/
           v21 = v12[9]; /*0x5836f6*/
         if ( (*v11 & 0x100) == 0 ) /*0x5836ff*/
         {
@@ -1217,7 +1217,7 @@ AbstractClass * * sub_58EF10()
           v9 = (RandomMap *)CellCoord::To_CellObj( /*0x58f014*/
                               (CellCoord *)&stru_87F5F0.__pad_58[416],
                               (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
-          Terrain = RandomMap::GenerateTerrain(v9); /*0x58f01b*/
+          Terrain = ((RandomMap*)v9)->GenerateTerrain(); /*0x58f01b*/
           if ( Terrain ) /*0x58f022*/
             *((unsigned char *)Terrain + 26) = 0; /*0x58f024*/
         }
@@ -1885,7 +1885,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
     }
     v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v8); /*0x58bf2d*/
   }
-  while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58bf34*/
+  while ( !(uint8_t)((Cell*)v6)->IsEmpty() ); /*0x58bf34*/
   this->AbstractClass = *(void **)v8; /*0x58bf62*/
   return (unsigned int *)(this); /*0x58bf50*/
 
@@ -2024,7 +2024,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
     }
     v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v9); /*0x58c450*/
   }
-  while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58c457*/
+  while ( !(uint8_t)((Cell*)v6)->IsEmpty() ); /*0x58c457*/
   *a2 = *(unsigned int *)v9; /*0x58c48e*/
   return a2; /*0x58c477*/
 
@@ -2066,7 +2066,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
         v5 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v2); /*0x58c552*/
-        if ( (uint8_t)Cell::IsEmpty(v5) ) /*0x58c559*/
+        if ( (uint8_t)((Cell*)v5)->IsEmpty() ) /*0x58c559*/
           break; /*0x58c559*/
       }
     }

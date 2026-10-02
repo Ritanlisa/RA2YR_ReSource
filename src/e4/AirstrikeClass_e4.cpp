@@ -355,7 +355,7 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v13; // ecx
   int v14; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x41d384*/
   *(unsigned int *)this = (unsigned int)(&vt_AirstrikeClass); /*0x41d389*/
   *((unsigned int *)this + 1) = (unsigned int)(&vt_AirstrikeClass); /*0x41d38f*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_AirstrikeClass); /*0x41d396*/

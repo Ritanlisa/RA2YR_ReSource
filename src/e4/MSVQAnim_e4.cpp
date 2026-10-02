@@ -69,7 +69,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   MSVQAnim_field_0x1C = (MovieContext *)Block->MSVQAnim_field_0x1C; /*0x5cecc6*/
   if ( MSVQAnim_field_0x1C ) /*0x5ceccc*/
   {
-    MovieContext::Cleanup(MSVQAnim_field_0x1C); /*0x5cecce*/
+    ((MovieContext*)MSVQAnim_field_0x1C)->Cleanup(); /*0x5cecce*/
     v5 = (void *)Block->MSVQAnim_field_0x1C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {

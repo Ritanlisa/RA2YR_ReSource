@@ -188,7 +188,7 @@ LABEL_6:
       }
       else
       {
-        CreateTeamCommand::performAction_246(v13); /*0x6d07fe*/
+        ((CreateTeamCommand*)v13)->performAction_246(); /*0x6d07fe*/
       }
     }
   }

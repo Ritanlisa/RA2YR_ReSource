@@ -91,7 +91,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     Audio::InitChannels(&this->bombVisible); /*0x403094*/
     v6 = (char *)*((unsigned int *)this + 58); /*0x403099*/
     if ( v6 ) /*0x4030a1*/
-      Audio::InitChannels(v6); /*0x4030a3*/
+      ((Audio*)v6)->InitChannels(); /*0x4030a3*/
     v7 = (AudioChannel *)*((unsigned int *)this + 58); /*0x4030a8*/
     if ( !v7 || (IsActive = AudioChannel::IsActive(v7)) == 0 ) /*0x4030bd*/
       IsActive = AudioChannel::IsActive((AudioChannel *)&this->bombVisible); /*0x4030c6*/
@@ -103,7 +103,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
         vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
         if ( (v8->location[2] & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
         {
-          if ( (Audio::InitChannels((char *)&((unsigned int *)v8)[0]), IsActive) /*0x403158*/
+          if ( (((Audio*)(char *)&((unsigned int *)v8)[0])->InitChannels(), IsActive) /*0x403158*/
             || AudioChannel::IsActive((AudioChannel *)&((unsigned int *)v8)[0])
             || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
             || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)

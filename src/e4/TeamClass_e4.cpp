@@ -81,7 +81,7 @@ int TeamClass::CheckCohesion()
   }
   else
   {
-    return AbstractClass::COMStub_Return0_38(v3); /*0x4d9f5d*/
+    return ((AbstractClass*)v3)->COMStub_Return0_38(); /*0x4d9f5d*/
   }
 
 }
@@ -200,7 +200,7 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
         {
           --dword_A8E7AC; /*0x62a379*/
           v13 = (int)(this->creationFrame); /*0x62a37f*/
-          if ( *(unsigned char *)(v13 + 1074) && (uint8_t)House::IsHumanPlayer(*(House **)(v13 + 540)) ) /*0x62a390*/
+          if ( *(unsigned char *)(v13 + 1074) && (uint8_t)((House*)*(House **)(v13 + 540))->IsHumanPlayer() ) /*0x62a390*/
           {
             *(unsigned char *)(this->creationFrame + 1074) = 0; /*0x62a39c*/
             (*(void ((int)(**))(int))(*(unsigned int *)this->creationFrame + 332))(this->creationFrame); /*0x62a3a7*/
@@ -266,7 +266,7 @@ int TeamClass::GetLeaderIndex()
 
   v1 = *((unsigned int *)this + 135); /*0x6339b0*/
   v2 = *(unsigned int *)(v1 + 48); /*0x6339b7*/
-  if ( (uint8_t)House::IsHumanPlayer((House *)v1) && dword_A83D4C ) /*0x6339ca*/
+  if ( (uint8_t)((House*)(House *)v1)->IsHumanPlayer() && dword_A83D4C ) /*0x6339ca*/
     return (int)dword_A83D4C->Object_field_0x30; /*0x6339cc*/
   else
     return v2; /*0x6339d1*/
@@ -454,7 +454,7 @@ int TeamClass::FindByMemberType(int a2)
           {
             owner = (gamemd::HouseClass *)(((unsigned int *)v5)[0]); /*0x635acb*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635acd*/
-            if ( (uint8_t)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635ae0*/
+            if ( (uint8_t)((House*)(House *)owner)->IsHumanPlayer() && dword_A83D4C ) /*0x635ae0*/
               relatedTagsCount = dword_A83D4C->Object_field_0x30; /*0x635ae2*/
             v14 = *((unsigned int *)((char *)&stru_A80220) + (unsigned int)relatedTagsCount) + 22265; /*0x635af4*/
             LOWORD(v22[0].Color_field_00) = *(unsigned short *)v14; /*0x635afd*/
@@ -474,7 +474,7 @@ int TeamClass::FindByMemberType(int a2)
         return -1; /*0x635b52*/
       v17 = (gamemd::HouseClass *)(((unsigned int *)v5)[0]); /*0x635b61*/
       Object_field_0x30 = (void *)v17->relatedTagsCount; /*0x635b67*/
-      if ( (uint8_t)House::IsHumanPlayer((House *)v17) ) /*0x635b6a*/
+      if ( (uint8_t)((House*)(House *)v17)->IsHumanPlayer() ) /*0x635b6a*/
       {
         if ( dword_A83D4C ) /*0x635b7a*/
           Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x635b7c*/
@@ -537,7 +537,7 @@ int TeamClass::GetMember(void *a1, void *a2)
           {
             owner = (gamemd::HouseClass *)(((unsigned int *)v4)[0]); /*0x635c71*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635c73*/
-            if ( (uint8_t)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635c86*/
+            if ( (uint8_t)((House*)(House *)owner)->IsHumanPlayer() && dword_A83D4C ) /*0x635c86*/
               relatedTagsCount = dword_A83D4C->Object_field_0x30; /*0x635c88*/
             v9 = *((unsigned int *)((char *)&stru_A80220) + (unsigned int)relatedTagsCount) + 22265; /*0x635c9b*/
             LOWORD(v15.Color_field_00) = *(unsigned short *)v9; /*0x635ca4*/
@@ -556,7 +556,7 @@ int TeamClass::GetMember(void *a1, void *a2)
         return -1; /*0x635c5a*/
       v12 = (gamemd::HouseClass *)(((unsigned int *)v4)[0]); /*0x635cf7*/
       Object_field_0x30 = (void *)v12->relatedTagsCount; /*0x635cfd*/
-      if ( (uint8_t)House::IsHumanPlayer((House *)v12) ) /*0x635d00*/
+      if ( (uint8_t)((House*)(House *)v12)->IsHumanPlayer() ) /*0x635d00*/
       {
         if ( dword_A83D4C ) /*0x635d10*/
           Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x635d12*/
@@ -662,7 +662,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
         *(unsigned int *)(v4 + 32) = (unsigned int)(&vt_VectorClass); /*0x636206*/
         ((VectorClass *)(v4 + 32))->Cleanup2(); /*0x63620c*/
         *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x636213*/
-        VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
+        ((VectorClass_ptr_PlanningMemberClass*)(_VectorClass_PAVPlanningMemberClass *)v4)->Remove(); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
     }
@@ -673,7 +673,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
     vtable0 = this->AbstractClass; /*0x63624c*/
     v11 = vtable0[135]; /*0x636250*/
     Object_field_0x30 = *(unsigned int *)(v11 + 48); /*0x636256*/
-    if ( (uint8_t)House::IsHumanPlayer((House *)v11) && dword_A83D4C ) /*0x636269*/
+    if ( (uint8_t)((House*)(House *)v11)->IsHumanPlayer() && dword_A83D4C ) /*0x636269*/
       Object_field_0x30 = (unsigned int)dword_A83D4C->Object_field_0x30; /*0x63626b*/
     if ( Object_field_0x30 < 0x18 ) /*0x636270*/
       *(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12] = (*(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12] /*0x63628a*/
@@ -1058,7 +1058,7 @@ LABEL_4:
       *(unsigned int *)(v8 + 32) = (unsigned int)(&vt_VectorClass); /*0x636c84*/
       ((VectorClass *)(v8 + 32))->Cleanup2(); /*0x636c8a*/
       *(unsigned int *)v8 = (unsigned int)(&vt_VectorClass); /*0x636c91*/
-      VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
+      ((VectorClass_ptr_PlanningMemberClass*)(_VectorClass_PAVPlanningMemberClass *)v8)->Remove(); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/
     }
   }

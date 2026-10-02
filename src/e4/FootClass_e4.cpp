@@ -80,7 +80,7 @@ AbstractClass * FootClass::Destruct()
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
-  Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
+  ((Mixer*)(Mixer *)this->audioController7)->ReleaseChannel(); /*0x4d3677*/
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
   v7 = (&this->locomotor)[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
@@ -116,7 +116,7 @@ void FootClass::Destroyed(int a2)
   int64_t v3; // rax
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) /*0x4d98dd*/
+  if ( (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() /*0x4d98dd*/
     && !*(unsigned char *)((*((int (**)(FootClass *))this->vtable1 + 33))(this) + 3412) )
   {
     v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->vtable1 + 110))(this, v4); /*0x4d98f0*/

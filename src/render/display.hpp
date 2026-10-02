@@ -32,7 +32,7 @@ public:
 
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    virtual void CloseWindow();
+    int CloseWindow();
     virtual void vt_entry_8C();
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
@@ -62,7 +62,7 @@ public:
     virtual void LoadFromINI(CCINIClass* ini) override;
     // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
-    virtual void CloseWindow() override;
+    int CloseWindow() override;
     // wrapper: delegates to CloseWindow at 0x7C865C
     virtual void vt_entry_8C() override;
     // unmatched: no callgraph reference and no git history record

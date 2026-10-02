@@ -450,11 +450,11 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
           switch ( v27 ) /*0x7c28d8*/
           {
             case 0x4943464Du: /*0x7c28d8*/
-              if ( File::ParseAudioFileRIFF(v7) != -1 ) /*0x7c2939*/
+              if ( ((File*)v7)->ParseAudioFileRIFF() != -1 ) /*0x7c2939*/
                 goto LABEL_113; /*0x7c2939*/
               break;
             case 0x4943534Du: /*0x7c28d8*/
-              if ( Buffer::AllocateCodecFrameBuffers(v7) != -1 ) /*0x7c2924*/
+              if ( ((Buffer*)v7)->AllocateCodecFrameBuffers() != -1 ) /*0x7c2924*/
                 goto LABEL_113; /*0x7c2924*/
               break;
             case 0x50494C43u: /*0x7c28d8*/
@@ -685,9 +685,9 @@ int AudioStream_Process(int a1, int a2, char a3)
     if ( (*(unsigned char *)(a1 + 336) & 0x10) == 0 ) /*0x7c2d30*/
       Audio_Process_7BE4A0((ObjectClass *)a1); /*0x7c2d34*/
     if ( (*(unsigned char *)(a1 + 132) & 1) != 0 && **(unsigned char **)(a1 + 1940) ) /*0x7c2d48*/
-      AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2d4f*/
+      ((AudioStream*)(AudioStream *)a1)->SetFlag4C(); /*0x7c2d4f*/
     CalcAudioStreamOffset(a1, 60 * *(unsigned int *)(*(unsigned int *)(a1 + 416) + 28) / *(unsigned int *)(a1 + 116)); /*0x7c2d6e*/
-    *(unsigned int *)(a1 + 32) = AudioStream::GetPosition((AudioStream *)a1); /*0x7c2d7a*/
+    *(unsigned int *)(a1 + 32) = ((AudioStream*)(AudioStream *)a1)->GetPosition(); /*0x7c2d7a*/
     v6 = *(unsigned int *)(a1 + 336); /*0x7c2d7d*/
     IDA_LOBYTE(v6) = v6 | 8; /*0x7c2d83*/
     *(unsigned int *)(a1 + 336) = v6; /*0x7c2d85*/
@@ -717,7 +717,7 @@ int AudioStream_Process(int a1, int a2, char a3)
       IDA_LOBYTE(v10) = v10 & 0xBF; /*0x7c2dd8*/
       *(unsigned int *)(a1 + 336) = v10; /*0x7c2dda*/
       if ( (*(unsigned char *)(a1 + 132) & 1) != 0 ) /*0x7c2de8*/
-        AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2dec*/
+        ((AudioStream*)(AudioStream *)a1)->SetFlag4C(); /*0x7c2dec*/
       CalcAudioStreamOffset(a1, *(unsigned int *)(a1 + 36)); /*0x7c2df6*/
     }
     v11 = *(unsigned int *)(a1 + 336); /*0x7c2dfb*/
@@ -747,7 +747,7 @@ int AudioStream_Process(int a1, int a2, char a3)
                 IDA_BYTE1(v15) |= 4u; /*0x7c2e9f*/
                 *(unsigned int *)(a1 + 336) = v15; /*0x7c2ea2*/
                 if ( (*(unsigned char *)(a1 + 132) & 1) != 0 ) /*0x7c2eb0*/
-                  AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2eb4*/
+                  ((AudioStream*)(AudioStream *)a1)->SetFlag4C(); /*0x7c2eb4*/
               }
             }
             else
@@ -851,7 +851,7 @@ int AudioStream_Process(int a1, int a2, char a3)
   {
     IDA_LOBYTE(v10) = v10 | 0x40; /*0x7c2fe1*/
     *(unsigned int *)(a1 + 336) = v10; /*0x7c2fe5*/
-    *(unsigned int *)(a1 + 36) = AudioStream::GetPosition((AudioStream *)a1); /*0x7c2ff0*/
+    *(unsigned int *)(a1 + 36) = ((AudioStream*)(AudioStream *)a1)->GetPosition(); /*0x7c2ff0*/
     if ( (*(unsigned char *)(a1 + 1980) & 0x40) != 0 ) /*0x7c2ffb*/
       Audio_Process_7BD290((UnitClass *)a1); /*0x7c2fff*/
   }
@@ -893,7 +893,7 @@ int AudioStream_Process(int a1, int a2, char a3)
   LABEL_80:
   if ( (*(unsigned char *)(a1 + 336) & 6) == 6 || a2 == 3 ) /*0x7c3097*/
   {
-    *(unsigned int *)(a1 + 36) = AudioStream::GetPosition((AudioStream *)a1); /*0x7c30a0*/
+    *(unsigned int *)(a1 + 36) = ((AudioStream*)(AudioStream *)a1)->GetPosition(); /*0x7c30a0*/
     if ( (*(unsigned char *)(a1 + 1980) & 0x40) != 0 ) /*0x7c30ab*/
       Audio_Process_7BD2B0((UnitClass *)a1); /*0x7c30af*/
     return -2; /*0x7c30b4*/

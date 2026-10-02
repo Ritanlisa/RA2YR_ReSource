@@ -182,7 +182,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   char v51[277]; // [esp+4BBh] [ebp-115h] BYREF
 
   v36 = 0; /*0x693b86*/
-  Waypoint::InitInvalid(v39); /*0x693b8a*/
+  ((Waypoint*)v39)->InitInvalid(); /*0x693b8a*/
   Debug::Log(aGettingFileFro); /*0x693b94*/
     ((Timer *)0)->GetTicks();
   Debug::Log(aRequestingFile); /*0x693bb2*/
@@ -453,7 +453,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
     v32.CampaignScore_field_0x04 = ((Timer *)0)->GetTicks();
   v35 = 0; /*0x6941bf*/
-  Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
+  ((Waypoint*)(Waypoint *)v42)->InitInvalid(); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
     ((Debug *)0)->Log();
@@ -816,7 +816,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   }
   if ( !v18 ) /*0x694abb*/
     goto LABEL_38; /*0x694abb*/
-  Waypoint::InitInvalid(&v57); /*0x694b10*/
+  ((Waypoint*)&v57)->InitInvalid(); /*0x694b10*/
   v20 = 0; /*0x694b1c*/
   if ( a3 ) /*0x694b20*/
     v21 = dword_A8DA84 - 1; /*0x694b28*/
@@ -1299,7 +1299,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
         EnableWindow(v10, 0); /*0x6958f0*/
         SendMessageA(v10, 0x4B5u, 0x10u, WindowLongA + 8); /*0x695902*/
         *(unsigned char *)(WindowLongA + 23) = 0; /*0x69590a*/
-        String::Trim((char *)(WindowLongA + 8)); /*0x69590e*/
+        ((String*)(char *)(WindowLongA + 8))->Trim(); /*0x69590e*/
         _strupr((char *)(WindowLongA + 8)); /*0x695914*/
         ListBox::SetCustomEntry((HWND *)WindowLongA, 1625, 3, (void *)(WindowLongA + 8)); /*0x695926*/
         return 0; /*0x695931*/

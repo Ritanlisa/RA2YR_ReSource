@@ -38,7 +38,7 @@ NeuronClass::NeuronClass()
   int v2; // eax
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x43a353*/
   *((unsigned int *)this + 9) = 0; /*0x43a358*/
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
@@ -116,7 +116,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
       ++v4; /*0x43aa5f*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x43aa73*/
+  ((AbstractClass*)(AbstractClass *)Block)->DTOR(); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
     __3_YAXPAX_Z(Block); /*0x43aa80*/
   return Block->__pad_0; /*0x43aa8a*/

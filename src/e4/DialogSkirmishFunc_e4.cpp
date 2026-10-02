@@ -140,7 +140,7 @@ LABEL_151:
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);
             LoadScenarioClassByIndex((int)v60);
-            Session::PrepareGame((HWND)hWnd);
+            ((Session*)(HWND)hWnd)->PrepareGame();
             ShowWindow((HWND)hWnd, 5);
             if ( IsRandMap::Sed(*(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[31616]
                                           + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960])) )
@@ -149,7 +149,7 @@ LABEL_151:
               if ( *(&g_MatrixTransformState + 2257) )
               {
     unsigned int v65 = 0;  /* G37 hoist */
-                ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
+                ((ComPtr*)*(&g_MatrixTransformState + 2257))->Dtor();
                 RA2_OPDEL(v61);
               }
               unsigned int * v62 = (unsigned int *)operator new(4u);
@@ -159,13 +159,13 @@ LABEL_151:
               *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
               ((Surface *)((char **)v63))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
               if ( !(*(&g_MatrixTransformState + 2257))->X )
-                Session::PrepareGame((HWND)hWnd);
+                ((Session*)(HWND)hWnd)->PrepareGame();
               InvalidateRect((HWND)hWnd, 0, 0);
               InvalidateRect((HWND)hWnd, 0, 0);
             }
             else
             {
-              Session::PrepareGame((HWND)hWnd);
+              ((Session*)(HWND)hWnd)->PrepareGame();
               InvalidateRect((HWND)hWnd, 0, 0);
             }
           }
@@ -180,22 +180,22 @@ LABEL_151:
             }
             ResetLobbyFactionTable(v65);
             Lobby::InvalidateFactionCombos((HWND)hWnd);
-            Lobby::InvalidatePlayerSlots((HWND)hWnd);
+            ((Lobby*)(HWND)hWnd)->InvalidatePlayerSlots();
             Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&((unsigned int *)(HouseClass_Player))[29960]);
             ShowWindow((HWND)hWnd, 5);
             if ( LoadScenarioClassByIndex(*(int *)&((unsigned int *)(HouseClass_Player))[29960]) )
             {
-              int v66 = MultiplayerGameMode::Find(*(void **)&((unsigned int *)(HouseClass_Player))[29956]);
+              int v66 = ((MultiplayerGameMode*)*(void **)&((unsigned int *)(HouseClass_Player))[29956])->Find();
               SetDialogPlayerName((HWND)hWnd, v66);
-              Dialog::ShowPlayerName((HWND)hWnd);
-              Skirmish::EnableSpawnButtons(0);
+              ((Dialog*)(HWND)hWnd)->ShowPlayerName();
+              ((Skirmish*)0)->EnableSpawnButtons();
               if ( IsRandMap::Sed(*(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[31616]
                                             + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960])) )
               {
                 v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 if ( *(&g_MatrixTransformState + 2257) )
                 {
-                  ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
+                  ((ComPtr*)*(&g_MatrixTransformState + 2257))->Dtor();
                   RA2_OPDEL(v67);
                   unsigned int * v68 = (unsigned int *)operator new(4u);
                   if ( v68 )
@@ -206,12 +206,12 @@ LABEL_151:
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(unsigned int *)v67->__pad_0 )
-                  Session::PrepareGame((HWND)hWnd);
+                  ((Session*)(HWND)hWnd)->PrepareGame();
                 InvalidateRect((HWND)hWnd, 0, 0);
               }
               else
               {
-                Session::PrepareGame((HWND)hWnd);
+                ((Session*)(HWND)hWnd)->PrepareGame();
               }
             }
             else
@@ -362,7 +362,7 @@ LABEL_151:
               {
                 v83 = (VectorClass_flat *)&stru_82083C;
                 v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1129));
-                v26 = WideString::GetOrEmpty(&v82);
+                v26 = ((WideString*)&v82)->GetOrEmpty();
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v27, 1);
@@ -521,7 +521,7 @@ LABEL_151:
             int v48 = v47;
             if ( v47 )
             {
-              Waypoint::InitInvalid((unsigned char *)(v47 + 40));
+              ((Waypoint*)(unsigned char *)(v47 + 40))->InitInvalid();
               unsigned int v49 = (unsigned int)(wcscpy((wchar_t *)v48, (const wchar_t *)v49));
               *(unsigned int *)(v48 + 75) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30304];
               *(unsigned int *)(v48 + 83) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30280];
@@ -584,7 +584,7 @@ LABEL_151:
             (&HouseClass_Player)[29984] = 0;
             if ( *(&g_MatrixTransformState + 2257) )
             {
-              ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
+              ((ComPtr*)*(&g_MatrixTransformState + 2257))->Dtor();
               RA2_OPDEL(v59);
               *(&g_MatrixTransformState + 2257) = 0;
             }
@@ -613,7 +613,7 @@ LABEL_153:
       case 1308:
       case 1309:
         SetupSkirmishSpawnLocationEntry((SessionClass *)hWnd, nIDDlgItem);
-        Skirmish::EnableSpawnButtons(0);
+        ((Skirmish*)0)->EnableSpawnButtons();
         break;
       case 1296:
       case 1299:

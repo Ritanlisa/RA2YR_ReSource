@@ -88,7 +88,7 @@ AbstractClass * * ProcessSelectionExperience()
         v1 = (*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 44))(*(unsigned int *)dword_A8ECBC),
         v1 != 6)
     || (v1 = (*(int (**)(House **))&(*v2)->__pad_3D7[49])(v2), v1 <= 0)
-    || (IDA_LOBYTE(v1) = House::IsHumanPlayer(v2[135]), !(unsigned char)v1) )
+    || (IDA_LOBYTE(v1) = ((House*)v2[135])->IsHumanPlayer(), !(unsigned char)v1) )
   {
     v4 = dword_A8ECC8; /*0x730b71*/
     v5 = 0; /*0x730b77*/
@@ -281,7 +281,7 @@ int E4Recv_731130::sub_731130()
     if ( v3 && !*(unsigned char *)(v3 + 129) ) /*0x73114e*/
     {
       if ( *(unsigned int *)&dword_A8B238 ) /*0x73115f*/
-        LOBYTE(v4) = House::IsHumanPlayer(*(House **)(v3 + 540)); /*0x731175*/
+        LOBYTE(v4) = ((House*)*(House **)(v3 + 540))->IsHumanPlayer(); /*0x731175*/
       else
         v4 = *(uint8_t *)(*(unsigned int *)(v3 + 540) + 493); /*0x731167*/
       if ( (unsigned char)v4 ) /*0x73117c*/
@@ -456,7 +456,7 @@ int TechnoClass_StepCleanupIfHuman(int a1, void * a2)
   if ( a1 && *(unsigned char *)(a1 + 144) )
   {
     v4 = *(unsigned int *)&dword_A8B238
-       ? House::IsHumanPlayer(*(House **)(a1 + 540))
+       ? ((House*)*(House **)(a1 + 540))->IsHumanPlayer()
        : *(unsigned char *)(*(unsigned int *)(a1 + 540) + 493);
     if ( v4 && (uint8_t)((ObjectClass *)((ObjectClass *)a1))->StepCleanup(a2) ) /*0x7327ad*/
       return 1; /*0x732782*/
@@ -846,7 +846,7 @@ void sub_7331B0()
             if ( (unsigned char)HeightMap ) /*0x7332ee*/
             {
               if ( *(unsigned int *)&dword_A8B238 ) /*0x7332f7*/
-                IDA_LOBYTE(HeightMap) = House::IsHumanPlayer(v14[135]); /*0x73330d*/
+                IDA_LOBYTE(HeightMap) = ((House*)v14[135])->IsHumanPlayer(); /*0x73330d*/
               else
                 HeightMap = IDA_BYTE1(v14[135]->House_field_0x1EC); /*0x7332ff*/
               if ( (unsigned char)HeightMap ) /*0x733314*/

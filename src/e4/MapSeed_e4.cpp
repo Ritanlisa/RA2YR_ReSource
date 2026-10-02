@@ -74,7 +74,7 @@ int MapSeed::CheckName(void *a1)
 
   ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x79c52b*/
   ((String *)(&v8))->ToLower(); /*0x79c534*/
-  if ( !String::Length((String *)this) /*0x79c5aa*/
+  if ( !((String*)(String *)this)->Length() /*0x79c5aa*/
     || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy(&v9),
         v2 = ((String *)(&v8))->ToLowerCopy((char **)&v8.m_3[1]),
         v3 = ((String *)((String *)v2))->Compare((const char **)v7),

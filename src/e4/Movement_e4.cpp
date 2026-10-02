@@ -109,7 +109,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     && aP3[1] == (void *)g_MissionQueueFrame.localVariables[292]
     && aP3[2] == (void *)g_MissionQueueFrame.localVariables[293] )
   {
-    Math::Hypotenuse2D((int *)a1); /*0x5b213c*/
+    ((Math*)(int *)a1)->Hypotenuse2D(); /*0x5b213c*/
     __asm { fstp [esp+0A0h+var_A0]; double } /*0x5b214a*/
     Math::CalcAngle(_ESI[2], v74); /*0x5b214f*/
     __asm { fsub ds:dbl_7E2820 } /*0x5b2154*/

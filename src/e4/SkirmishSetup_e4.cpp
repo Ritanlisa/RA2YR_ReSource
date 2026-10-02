@@ -90,7 +90,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
        || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 188))(v5))
       && (!v8 || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 64))(v5)) )
     {
-      v6 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)));
+      v6 = (wchar_t *)(((WideString*)(wchar_t **)(v5 + 32))->GetOrEmpty_Alt());
       v7 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v6); /*0x5d6280*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d628b*/
         SendMessageA(hWnd, 0x186u, v7, 0); /*0x5d6296*/
@@ -159,10 +159,10 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
       {
         case 0xFu: /*0x5e694c*/
           v8 = (Dialog *)aP0; /*0x5e696b*/
-          Dialog::DrawBackground((HWND)((Dialog *)aP0)); /*0x5e6971*/
+          ((Dialog*)(HWND)((Dialog *)aP0))->DrawBackground(); /*0x5e6971*/
           if ( g_UIControlState ) /*0x5e697e*/
             ((Skirmish *)(g_UIControlState))->RenderPreview((HWND)v8); /*0x5e6981*/
-          Dialog::StopBink(v8); /*0x5e6988*/
+          ((Dialog*)v8)->StopBink(); /*0x5e6988*/
           ValidateRect((HWND)v8, 0); /*0x5e6990*/
           return 0; /*0x5e699f*/
         case 0x14u: /*0x5e694c*/
@@ -228,7 +228,7 @@ LABEL_5:
             SkirmishSetup_Setup_5E70D0((HWND)v9, *(unsigned int *)(dword_A8B8CC + 4 * v10)); /*0x5e6aff*/
           LoadScenarioClassByIndex(v10); /*0x5e6b06*/
           if ( !*(unsigned int *)g_UIControlState ) /*0x5e6b10*/
-            Session::PrepareGame((HWND)(v9)); /*0x5e6b17*/
+            ((Session*)(HWND)(v9))->PrepareGame(); /*0x5e6b17*/
           *(unsigned int *)&stru_A8B250.__pad_0[4] = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
           LOBYTE(v10) = HandleMultiplayerMapSelection((ObjectClass *)v9); /*0x5e6b38*/
@@ -328,7 +328,7 @@ LABEL_28:
             {
               if ( !byte_AC11C9 ) /*0x5e6dcc*/
               {
-                v28 = WideString::GetOrEmpty((wchar_t **)&aP0); /*0x5e6dd4*/
+                v28 = ((WideString*)(wchar_t **)&aP0)->GetOrEmpty(); /*0x5e6dd4*/
                 ShowDialogConfirm(v28, 0, 0, 0); /*0x5e6ddd*/
                 byte_AC11C9 = 1; /*0x5e6de2*/
               }
@@ -430,7 +430,7 @@ LABEL_28:
       v33 = SendDlgItemMessageA((HWND)aP0, 1771, 0x199u, v32, 0); /*0x5e6e7d*/
       if ( v33 ) /*0x5e6e85*/
       {
-        v34 = WideString::GetOrEmpty_Alt((wchar_t **)(v33 + 36)); /*0x5e6e8a*/
+        v34 = ((WideString*)(wchar_t **)(v33 + 36))->GetOrEmpty_Alt(); /*0x5e6e8a*/
         ((WideString *)(v30))->Assign_Alt(v34); /*0x5e6e92*/
       }
     }
@@ -529,7 +529,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   v3 = g_UIControlState; /*0x5e85e7*/
   if ( g_UIControlState ) /*0x5e85ef*/
   {
-    ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e85f3*/
+    ((ComPtr*)(ComPtr *)g_UIControlState)->Dtor(); /*0x5e85f3*/
     RA2_OPDEL(v3); /*0x5e85f9*/
   }
   v4 = (gamemd::ObjectClass *)((int)((ObjectClass *)RA2_OPNEW(4u)));

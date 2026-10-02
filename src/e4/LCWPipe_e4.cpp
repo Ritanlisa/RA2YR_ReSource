@@ -23,7 +23,7 @@ int LCWPipe::Dtor()
   *((unsigned int *)this + 5) = 0; /*0x552075*/
   __3_YAXPAX_Z(v3); /*0x55207d*/
   *((unsigned int *)this + 6) = 0; /*0x552087*/
-  return Pipe::Dtor((Pipe *)this); /*0x552093*/
+  return ((Pipe*)(Pipe *)this)->Dtor(); /*0x552093*/
 
 }
 } // namespace gamemd

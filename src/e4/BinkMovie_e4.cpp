@@ -315,7 +315,7 @@ void BinkMovie::Play(void *a1_1)
 
   if ( this->BinkMovie_field_0x4 ) /*0x432c76*/
   {
-    Timer::PumpMessages((Timer *)dword_87F770); /*0x432c9f*/
+    ((Timer*)(Timer *)dword_87F770)->PumpMessages(); /*0x432c9f*/
     v3 = (void (*)(HWND, LPPOINT))ClientToScreen; /*0x432caa*/
     *((unsigned char *)this + 44) = 1; /*0x432cb0*/
     *((unsigned char *)this + 45) = 0; /*0x432cb4*/
@@ -329,7 +329,7 @@ void BinkMovie::Play(void *a1_1)
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
       {
         if ( !IsMessageDialog(&Msg, 0, 0, 0) ) /*0x432d05*/
-          return Timer::PumpMessages((Timer *)dword_87F770); /*0x432d05*/
+          return ((Timer*)(Timer *)dword_87F770)->PumpMessages(); /*0x432d05*/
         TranslateMessage(&Msg); /*0x432d10*/
         DispatchMessageA(&Msg); /*0x432d1b*/
       }
@@ -377,11 +377,11 @@ void BinkMovie::Play(void *a1_1)
           && !this->__pad_0[0]
           && ((EventQueue *)((EventQueue *)dword_87F770))->Read() == 2075 )
         {
-          return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e21*/
+          return ((Timer*)(Timer *)dword_87F770)->PumpMessages(); /*0x432e21*/
         }
       }
     }
-    return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e27*/
+    return ((Timer*)(Timer *)dword_87F770)->PumpMessages(); /*0x432e27*/
   }
   else
   {

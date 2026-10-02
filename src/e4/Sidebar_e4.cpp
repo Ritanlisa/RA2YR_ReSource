@@ -392,7 +392,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = *(void **)Block->__pad_0; /*0x6363b1*/
     v8 = *((unsigned int *)Block + 135); /*0x6363b5*/
     Object_field_0x30 = *(void **)(v8 + 48); /*0x6363bb*/
-    if ( (uint8_t)House::IsHumanPlayer((House *)v8) && dword_A83D4C ) /*0x6363ce*/
+    if ( (uint8_t)((House*)(House *)v8)->IsHumanPlayer() && dword_A83D4C ) /*0x6363ce*/
       Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x6363d0*/
     DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6363d5*/
     ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[36]))->EraseAt((int)&Block); /*0x6363e4*/

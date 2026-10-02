@@ -132,7 +132,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   if ( !(uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B07C48 + 6 * v24) ) /*0x6a647a*/
     DialogControl::Hide((GadgetClass *)(&stru_B07C48 + 8 * v24)); /*0x6a6485*/
   if ( v24 == this->u32_539C ) /*0x6a6490*/
-    Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a6494*/
+    ((Tactical*)(Tactical *)this)->UpdateUIVisibility(); /*0x6a6494*/
   (*((void (**)(SidebarClass *, int))((unsigned char *)(this) + 0x0) + 54))(this, 1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
@@ -169,13 +169,13 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       v19 = UI_Add_6AC430(v22); /*0x6a6570*/
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
       {
-        Hash::Reset((LinkClass *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720)); /*0x6a6590*/
+        ((Hash*)(LinkClass *)(56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720))->Reset(); /*0x6a6590*/
         Hash::InsertOrdered( /*0x6a65b3*/
           (GScreenClass *)&stru_87F5F0.__pad_58[416],
           56 * (i + 60 * *((unsigned int *)v18 + 14)) + 11566720);
       }
       g_CameoRenderFlag = 1; /*0x6a65bf*/
-      Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a65c6*/
+      ((Tactical*)(Tactical *)this)->UpdateUIVisibility(); /*0x6a65c6*/
       v13 = v24; /*0x6a65cb*/
       this->u32_53A7 = 1; /*0x6a65cf*/
     }

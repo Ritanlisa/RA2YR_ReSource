@@ -137,7 +137,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   {
     do /*0x6a7570*/
     {
-      Hash::Reset((LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720)); /*0x6a7545*/
+      ((Hash*)(LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720))->Reset(); /*0x6a7545*/
       Hash::InsertOrdered((GScreenClass *)&stru_87F5F0.__pad_58[416], 56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
       ++v5; /*0x6a756d*/
     }
@@ -263,7 +263,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   {
     do /*0x6a9494*/
     {
-      Hash::Reset((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720)); /*0x6a9465*/
+      ((Hash*)(LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720))->Reset(); /*0x6a9465*/
       LOBYTE(v5) = Hash::InsertOrdered( /*0x6a948c*/
                      (GScreenClass *)&stru_87F5F0.__pad_58[416],
                      56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
@@ -548,13 +548,13 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
       Process(v7, v10); /*0x6ae36b*/
     }
-    Dialog::Destroy((gamemd::Dialog *)Dialog); /*0x6ae37d*/
+    ((Dialog*)(gamemd::Dialog *)Dialog)->Destroy(); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
   v8 = (gamemd::Skirmish *)(g_UIControlState);
   if ( g_UIControlState ) /*0x6ae394*/
   {
-    ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x6ae398*/
+    ((ComPtr*)(ComPtr *)g_UIControlState)->Dtor(); /*0x6ae398*/
     RA2_OPDEL(v8); /*0x6ae39e*/
     g_UIControlState = 0; /*0x6ae3a6*/
   }

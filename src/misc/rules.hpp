@@ -82,7 +82,7 @@ public:
     static RulesClass* Instance;
 
     void Init(CCINIClass* pINI);
-    void ReadFile(CCINIClass* pINI);
+    int ReadFile(CCINIClass* pINI);
     void ReadGeneral(CCINIClass* pINI);
     void ReadCombatDamage(CCINIClass* pINI);  // 0x661510
     void ReadAudioVisual(CCINIClass* pINI);  // 0x66D150

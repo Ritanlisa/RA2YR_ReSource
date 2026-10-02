@@ -238,7 +238,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   {
     if ( ((unsigned int *)this)[0] ) /*0x427b67*/
     {
-      LOBYTE(v3) = (unsigned char)(ObjectTypeClass::Load2DArt((char *)this)); /*0x427b71*/
+      LOBYTE(v3) = (unsigned char)(((ObjectTypeClass*)(char *)this)->Load2DArt()); /*0x427b71*/
     }
     else
     {
@@ -359,8 +359,8 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42883e*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428845*/
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
+    ((VoxelAnimType*)(char *)a1)->LoadAnim(); /*0x42884e*/
+    ((ObjectTypeClass*)(char *)a1)->Load2DArt(); /*0x428855*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/

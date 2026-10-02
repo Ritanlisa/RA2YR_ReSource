@@ -143,7 +143,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   if ( WindowLongA ) /*0x61075c*/
     RA2_OPDEL(WindowLongA); /*0x61075f*/
   SetWindowLongA(hWnd, -21, 0); /*0x610772*/
-  Object::RemoveObjectArray(hWnd); /*0x61077f*/
+  ((Object*)hWnd)->RemoveObjectArray(); /*0x61077f*/
   return (gamemd::AbstractClass **)(1); /*0x610784*/
 }
 }

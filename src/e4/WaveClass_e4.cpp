@@ -60,7 +60,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
       ((ObjectClass *)((ObjectClass *)v4))->Init((int)&a3); /*0x75f67b*/
       *(unsigned int *)(v4 + 332) = 0; /*0x75f680*/
       *(unsigned int *)(v4 + 424) = (gamemd::Init)(0); /*0x75f68c*/
-      FrameSnapshot::Init((FrameSnapshot *)(v4 + 472)); /*0x75f692*/
+      ((FrameSnapshot*)(FrameSnapshot *)(v4 + 472))->Init(); /*0x75f692*/
       WaveClass::Constructor_7632D0((WaveClass *)(v4 + 496), 0, 0); /*0x75f69f*/
       *(unsigned int *)v4 = (unsigned int)(&vt_WaveClass); /*0x75f6a4*/
       *(unsigned int *)(v4 + 4) = (unsigned int)(&vt_WaveClass); /*0x75f6aa*/

@@ -302,7 +302,7 @@ int E4Recv_5ADD10::Map_Delete()
   *(unsigned int *)v7.__pad_0 = (unsigned int)(&vt_MapSelect); /*0x5add5b*/
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
-  MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
+  ((MSEngine*)(MSEngine *)v8)->Destructor(); /*0x5add7d*/
   ((MSEngine *)(&v7))->Destruct(); /*0x5add86*/
   if ( v2 )
   {
@@ -917,7 +917,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
           v13 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x5a7dba*/
           v14 = *(unsigned int *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
-            && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
+            && (!((Cell*)v13)->IsEmpty() && !sub_4863A0(v13)
              || *((uint8_t *)v13 + 284) != *(char *)(v14 + 42)
              || a3 && *((unsigned char *)dword_ABED10 + 80 * (int16_t)v17 + 80 * g_MapCellWidth * IDA_SHIWORD(v17) + 70)) )
           {

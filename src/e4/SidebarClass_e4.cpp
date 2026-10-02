@@ -605,7 +605,7 @@ int SidebarClass::SwitchTab(int a2)
     {
       do /*0x6a76c8*/
       {
-        Hash::Reset((LinkClass *)(56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720)); /*0x6a769d*/
+        ((Hash*)(LinkClass *)(56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720))->Reset(); /*0x6a769d*/
         Hash::InsertOrdered( /*0x6a76c0*/
           (GScreenClass *)&stru_87F5F0.__pad_58[416],
           56 * (v8 + 60 * *(unsigned int *)(v6 + 56)) + 11566720);
@@ -614,7 +614,7 @@ int SidebarClass::SwitchTab(int a2)
       while ( v8 < v9 ); /*0x6a76c8*/
     }
     g_CameoRenderFlag = 1; /*0x6a76cc*/
-    result = Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a76d3*/
+    result = ((Tactical*)(Tactical *)this)->UpdateUIVisibility(); /*0x6a76d3*/
     *((unsigned char *)this + 21415) = 1; /*0x6a76d9*/
   }
   return result; /*0x6a76e1*/
@@ -669,7 +669,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
     dword_B0B470 = SearchMIXFile(aSidegdi3Shp, 0); /*0x6abd7e*/
   }
   Rect_Point::Set(&stru_B07E58, DSurface_SidebarBounds + 16, (int)DSurface_ViewBounds.field_4); /*0x6abd98*/
-  VectorClass_ptr_ConvertClass::MarkDirty(&stru_B07E58); /*0x6abda2*/
+  ((VectorClass_ptr_ConvertClass*)&stru_B07E58)->MarkDirty(); /*0x6abda2*/
   v2 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdb2*/
   v23 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdbc*/
   if ( LOBYTE(stru_A8EB00.ObjectTypeClass[31]) ) /*0x6abdbd*/
@@ -680,27 +680,27 @@ GadgetClass * SidebarClass::LoadResources(void *a1)
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6abdf5*/
   ((ObjectClass *)(&stru_B07E58))->SetPositionXY(v3, v24); /*0x6abdfe*/
   Rect_Point::Set((GadgetClass *)&stru_B0B3A0, dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
-  VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B0B3A0); /*0x6abe1f*/
+  ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B0B3A0)->MarkDirty(); /*0x6abe1f*/
   dword_B0B3E4 = -DSurface_SidebarBounds; /*0x6abe37*/
   Rect_Point::Set((GadgetClass *)&stru_B07DF8, dword_B0B3AC + dword_B0B4E4, dword_B0B3B0); /*0x6abe4c*/
-  VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B07DF8); /*0x6abe56*/
+  ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B07DF8)->MarkDirty(); /*0x6abe56*/
   v4 = (GadgetClass *)&stru_B07C48; /*0x6abe60*/
   dword_B07E3C = -DSurface_SidebarBounds; /*0x6abe67*/
   v5 = 0; /*0x6abe6c*/
   do /*0x6abea8*/
   {
     Rect_Point::Set(v4, dword_B0B4E8 + v5 * dword_B0B4F0, dword_B0B4EC); /*0x6abe88*/
-    VectorClass_ptr_ConvertClass::MarkDirty(v4); /*0x6abe8f*/
+    ((VectorClass_ptr_ConvertClass*)v4)->MarkDirty(); /*0x6abe8f*/
     v4 = (GadgetClass *)((char *)v4 + 96); /*0x6abe99*/
     *(unsigned int *)v4[-1].__pad_0 = -DSurface_SidebarBounds; /*0x6abe9e*/
     ++v5; /*0x6abea1*/
   }
   while ( (int)v4 < (int)&dword_B07DC8 ); /*0x6abea8*/
   Rect_Point::Set((GadgetClass *)&stru_B0B328, dword_B0B508, dword_B0B50C); /*0x6abebd*/
-  VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B0B328); /*0x6abec7*/
+  ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B0B328)->MarkDirty(); /*0x6abec7*/
   dword_B0B36C = -DSurface_SidebarBounds; /*0x6abedf*/
   Rect_Point::Set((GadgetClass *)&g_SidebarFlag, dword_B0B508 + dword_B0B510, dword_B0B50C); /*0x6abef2*/
-  VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&g_SidebarFlag); /*0x6abefc*/
+  ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&g_SidebarFlag)->MarkDirty(); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
   v6 = 26; /*0x6abf1d*/
   if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x6abf15*/

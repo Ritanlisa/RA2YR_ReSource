@@ -44,13 +44,13 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   this->TaskForceClass_field_0x4 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(Buffer); /*0x4c4f27*/
-  ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
+  ExitCellByName = ((Factory*)(Factory *)&v10)->FindExitCellByName(); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
     Index = ((BuildingTypeClass *)((BuildingTypeClass *)&v10))->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (unsigned int *)(TypeClass::FindByName(&v10));
+      v8 = (unsigned int *)(((TypeClass*)&v10)->FindByName());
       if ( v8 != -1 ) /*0x4c4f77*/
         this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
       return this->__pad_0; /*0x4c4f85*/

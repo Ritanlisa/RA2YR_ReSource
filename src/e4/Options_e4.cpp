@@ -227,7 +227,7 @@ LABEL_39:
         v19 = (wchar_t *)(3 - SendMessageA(v18, 0x400u, 0, 0)); /*0x4f156e*/
         if ( v19 != (wchar_t *)(dword_A8DB9C) ) /*0x4f1577*/
         {
-          if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
+          if ( ((Timer*)&dword_A8EE40)->GetRemainingMs() ) /*0x4f157e*/
           {
             ((gamemd::Debug *)this)->Log(); /*0x4f15eb*/
           }
@@ -249,7 +249,7 @@ LABEL_39:
         v22 = 6 - SendMessageA(v21, 0x400u, 0, 0); /*0x4f1614*/
         if ( *(unsigned int *)dword_A8EB60 != v22 ) /*0x4f161d*/
         {
-          if ( !Timer::GetRemainingMs(&dword_A8EE30) ) /*0x4f1628*/
+          if ( !((Timer*)&dword_A8EE30)->GetRemainingMs() ) /*0x4f1628*/
           {
             ((gamemd::Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
@@ -278,7 +278,7 @@ void Options::PrepareSaveLoadDlg(const char ** dwNewLong)
 
   dwNewLong->field_4 = (void *)3; /*0x558840*/
   dwNewLong->field_C = 0; /*0x558847*/
-  return SaveLoadDialog::DlgProc((SaveLoadDialog *)dwNewLong);
+  return ((SaveLoadDialog*)(SaveLoadDialog *)dwNewLong)->DlgProc();
 
 }
 }
@@ -399,7 +399,7 @@ char Options::Screen_Dialog()
         Process(v2); /*0x55fcf0*/
       }
       ((Options *)(v1))->Screen_Save(); /*0x55fcff*/
-      Dialog::Destroy(v1); /*0x55fd06*/
+      ((Dialog*)v1)->Destroy(); /*0x55fd06*/
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
@@ -417,7 +417,7 @@ char Options::Screen_Dialog()
           LOBYTE(v5) = 0; /*0x55fd73*/
           Process(v5); /*0x55fd75*/
         }
-        Dialog::Destroy(v4); /*0x55fd84*/
+        ((Dialog*)v4)->Destroy(); /*0x55fd84*/
       }
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
@@ -761,7 +761,7 @@ HWND Options::InitDialogControls(HWND hDlg)
   {
     v7 = (LoadOptions *)LoadOptions::LoadOptions(&v10); /*0x4f17dd*/
     v9 = ((LoadOptions *)(v7))->Check(); /*0x4f17ed*/
-    LoadOptions::Cleanup(&v10); /*0x4f17f1*/
+    ((LoadOptions*)&v10)->Cleanup(); /*0x4f17f1*/
     DlgItem = GetDlgItem((HWND)hDlg, 1310); /*0x4f1802*/
     if ( DlgItem ) /*0x4f1810*/
       EnableWindow(DlgItem, v9); /*0x4f181c*/

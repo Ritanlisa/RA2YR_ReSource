@@ -195,7 +195,7 @@ char WOL_RequestMatch(void * a1)
   unsigned char v31[276]; // [esp+10h] [ebp-114h] BYREF
 
   DeleteAndZero::Alt2((DeleteAndZero *)&stru_B76AC4); /*0x7a069f*/
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
+  v1 = (HWND)((Dialog*)(Dialog *)0x11F)->FindByHandle(); /*0x7a06a9*/
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/

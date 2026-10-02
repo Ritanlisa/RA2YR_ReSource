@@ -251,7 +251,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           && v31 <= dword_ABED08 )
         {
           v32 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v73)); /*0x5a563b*/
-          if ( Cell::IsEmpty(v32) && v32[17] == -1 ) /*0x5a5650*/
+          if ( ((Cell*)v32)->IsEmpty() && v32[17] == -1 ) /*0x5a5650*/
           {
             v33 = SHIWORD(v73); /*0x5a5656*/
             v34 = (int16_t)v73; /*0x5a5667*/

@@ -103,7 +103,7 @@ int HouseClass::ResetObjectOrders(char a1, int a2)
         if ( a1 ) /*0x4adf28*/
           goto LABEL_16; /*0x4adf28*/
       }
-      result = House::IsHumanPlayer(*(void **)(v5 + 540)); /*0x4adf34*/
+      result = ((House*)*(void **)(v5 + 540))->IsHumanPlayer(); /*0x4adf34*/
       if ( (unsigned char)result ) /*0x4adf3b*/
         break; /*0x4adf3b*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4adfa5*/
@@ -154,7 +154,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
       && ((unsigned char)v4[5] & 1) != 0
       && ((*((int (**)(unsigned int))*v4 + 11))(*(unsigned int *)(dword_8A0394 + 4 * i)) != 6 || !a1) )
     {
-      if ( (uint8_t)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
+      if ( (uint8_t)((House*)v4[135])->IsHumanPlayer() ) /*0x4ae033*/
       {
         if ( *((unsigned char *)v4 + 1051) ) /*0x4ae03c*/
           (*((void (**)(void **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
@@ -243,7 +243,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   char Destination[32]; // [esp+7Ch] [ebp-20h] BYREF
   int v68; // [esp+A0h] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4f54a9*/
+  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x4f54a9*/
   *((char *)this + 12) = -1; /*0x4f54b8*/
   *((char *)this + 13) = a2; /*0x4f54c2*/
   TagClassVector::Construct((TagClassVector *)this + 14, 0, 0); /*0x4f54c5*/

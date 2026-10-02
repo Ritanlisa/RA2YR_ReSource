@@ -64,7 +64,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
                                                    (int16_t *)&a2)
                                        + 283);
   v3 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2); /*0x58bfa9*/
-  IsGroundTypeRange = Cell::IsGroundTypeRange(v3); /*0x58bfb0*/
+  IsGroundTypeRange = ((Cell*)v3)->IsGroundTypeRange(); /*0x58bfb0*/
   v5 = (void *)a2; /*0x58bfb5*/
   LOBYTE(this->RandomMap_field_0x14) = IsGroundTypeRange; /*0x58bfb9*/
   *(void **)((char *)&this->RandomMap_field_0x14 + 2) = v5; /*0x58bfbe*/
@@ -172,8 +172,8 @@ int RandomMap::GenerateTerrain(void *a1_1)
     v3 = (*(unsigned int *)v54.__tail_10)++; /*0x58c867*/
     *(unsigned int *)(*(unsigned int *)&v54.m_1[3] + 4 * v3) = v2; /*0x58c872*/
   }
-  if ( (uint8_t)Cell::IsGroundTypeRange((Cell *)this) /*0x58c882*/
-    || (LOBYTE(v48) = 0, (uint8_t)Cell::IsShore((Cell *)this)) )
+  if ( (uint8_t)((Cell*)(Cell *)this)->IsGroundTypeRange() /*0x58c882*/
+    || (LOBYTE(v48) = 0, (uint8_t)((Cell*)(Cell *)this)->IsShore()) )
   {
     LOBYTE(v48) = 1; /*0x58c890*/
   }
@@ -211,10 +211,10 @@ int RandomMap::GenerateTerrain(void *a1_1)
           {
             v11 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v46); /*0x58c9f2*/
             v13 = 1; /*0x58ca20*/
-            if ( !(uint8_t)Cell::IsGroundTypeRange(v11) ) /*0x58c9f9*/
+            if ( !(uint8_t)((Cell*)v11)->IsGroundTypeRange() ) /*0x58c9f9*/
             {
               v12 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v46); /*0x58ca0c*/
-              if ( !(uint8_t)Cell::IsShore(v12) ) /*0x58ca13*/
+              if ( !(uint8_t)((Cell*)v12)->IsShore() ) /*0x58ca13*/
                 v13 = 0; /*0x58c9f9*/
             }
             if ( v13 == (uint8_t)v48 /*0x58ca60*/
@@ -330,7 +330,7 @@ int RandomMap::GenerateTerrain(void *a1_1)
           if ( v22[283] != *((unsigned char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v47) + 283) ) /*0x58cbac*/
           {
             v23 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49); /*0x58cbb8*/
-            if ( !(uint8_t)Cell::IsGroundTypeRange(v23) ) /*0x58cbc6*/
+            if ( !(uint8_t)((Cell*)v23)->IsGroundTypeRange() ) /*0x58cbc6*/
             {
               v24 = *((char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49) + 283); /*0x58cbea*/
               ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x58cbf6*/
@@ -752,9 +752,9 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
               v14 = *(void **)(v13 + 56); /*0x58e872*/
               if ( v14 == (void *)-1 /*0x58e8a9*/
                 && ((v15 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v24),
-                     (uint8_t)Cell::IsEmpty(v15))
+                     (uint8_t)((Cell*)v15)->IsEmpty())
                  || (v16 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v24),
-                     (uint8_t)Cell::IsShore(v16))) )
+                     (uint8_t)((Cell*)v16)->IsShore())) )
               {
                 Capacity = (int)(v4->Capacity); /*0x58e8b2*/
                 if ( (int)v4[1].vtable0 < Capacity /*0x58e8d8*/

@@ -404,7 +404,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   }
   (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate); /*0x4ada06*/
   ((Vector *)((int)&v18.Pipe_field_0x0C))->Clear(); /*0x4ada0d*/
-  return Pipe::Dtor(&v18); /*0x4ada1b*/
+  return ((Pipe*)&v18)->Dtor(); /*0x4ada1b*/
 
 }
 int MapClass::SetScrollMode(int aP1)

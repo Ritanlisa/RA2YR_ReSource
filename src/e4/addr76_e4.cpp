@@ -227,7 +227,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   {
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
-    GenericList::Constructor(v30); /*0x764dcf*/
+    ((GenericList*)v30)->Constructor(); /*0x764dcf*/
     v30[0] = (unsigned int)(&vt_List); /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
     LOBYTE(v31) = 0; /*0x764df2*/

@@ -53,7 +53,7 @@ void Main::CreateDialog()
       GameOptions::GameSpeedChanged((GameOptions *)this); /*0x4e1da1*/
       ((ScenarioClass *)((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]))->SaveGameOptions(); /*0x4e1dab*/
     }
-    Dialog::Destroy((gamemd::Dialog *)this->Main_field_00); /*0x4e1db2*/
+    ((Dialog*)(gamemd::Dialog *)this->Main_field_00)->Destroy(); /*0x4e1db2*/
   }
   ((gamemd::Debug *)this)->Log(); /*0x4e1dd0*/
 
