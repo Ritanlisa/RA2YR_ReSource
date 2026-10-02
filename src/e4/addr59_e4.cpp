@@ -441,7 +441,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
                    + 56) == -1
       && !*(unsigned int *)(i + 76)
 // 0x56d230
-      && MapClass::GetTileIndex( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)&stru_87F5F0.__pad_58[416], (int16_t *)(i + 36), v4, 0) == v5 )
+      && MapClass::GetTileIndex(__int16 *a2, int a3, char a4)
     {
       FloodFillRandomMapTerrain(i, v4, v5); /*0x594c32*/
     }

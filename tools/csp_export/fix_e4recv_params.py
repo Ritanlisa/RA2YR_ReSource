@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 APPLY = "--apply" in sys.argv
-CEN = ROOT / ".omo/tu_errors_g136.json"
+CEN = ROOT / ".omo/tu_errors_g137.json"
 CACHE = ROOT / ".omo/ida_cache"
 
 census = json.load(open(CEN, encoding="utf-8"))
@@ -119,8 +119,10 @@ for f, lines_set in sites.items():
             stats['no-marker'] += 1
             continue
         head = lines[hj].rstrip("\r\n")
-        hm = re.match(r'^(.*?\bE4Recv_[0-9A-Fa-f]+::\w+)\(\)\s*$', head)
-        if not hm:
+        # G42.27: general gate -- any qualified def head whose params differ
+        # from cache truth (E4Recv 0-param is the flagship form)
+        hm = re.match(r'^(.*?\b(?:E4Recv_[0-9A-Fa-f]+|[A-Za-z_]\w*)::\w+)\((.*)\)\s*$', head)
+        if not hm or ';' in head:
             stats['not-e4recv'] += 1
             continue
         params = cache_params(addr)
@@ -128,7 +130,11 @@ for f, lines_set in sites.items():
             stats['no-cache'] += 1
             continue
         params = [norm_ida(x) for x in params]
-        new_head = hm.group(1) + '(' + ', '.join(params) + ')'
+        want = ', '.join(params)
+        if hm.group(2).strip() == want:
+            stats['already'] = stats.get('already', 0) + 1
+            continue
+        new_head = hm.group(1) + '(' + want + ')'
         lines[hj] = lines[hj].replace(head, new_head, 1)
         stats['aligned'] += 1
         changed = True

@@ -389,7 +389,7 @@ unsigned int * ComStreamClass::getStreamSize()
 } // namespace gamemd
 // 0x7A4070
 namespace gamemd {
-int ComStreamClass::Seek(void *a1, void *a2, void *a3)
+int ComStreamClass::Seek(int a2, int a3, int a4)
 {
 
   HWND v4; // eax
@@ -421,7 +421,7 @@ int ComStreamClass::Seek(void *a1, void *a2, void *a3)
 } // namespace gamemd
 // 0x7A40F0
 namespace gamemd {
-int ComStreamClass::ddtor()
+int ComStreamClass::ddtor(int a1, int a2, unsigned int a3, int a4, int a5)
 {
 
   if ( g_NetworkLobby_Init && *(unsigned int *)dword_B77780 ) /*0x7a4100*/

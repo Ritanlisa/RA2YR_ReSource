@@ -310,7 +310,7 @@ LABEL_42:
 }
 // 0x7A5290
 namespace gamemd {
-Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
+Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3)
 {
 
   wchar_t *StringCSF; // eax

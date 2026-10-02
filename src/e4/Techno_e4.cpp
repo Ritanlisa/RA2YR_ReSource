@@ -29,7 +29,7 @@ int Techno::GetOwnerHouse()
 }
 // 0x70E360
 namespace gamemd {
-BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
+BuildingTypeClass * Techno::StartInvulnerability(int a2)
 {
 
   int v3; // eax

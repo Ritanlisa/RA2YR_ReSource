@@ -17,6 +17,6 @@ struct E4Recv_4F2640 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_4F2640();
+    int sub_4F2640(int (__thiscall ***a2)(unsigned int, int));
 };
 } // namespace gamemd

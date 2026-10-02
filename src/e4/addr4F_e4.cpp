@@ -636,7 +636,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
 }
 // 0x4F2640
 namespace gamemd {
-int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int) a1)
+int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int))
 {
 
   int (***v3)(unsigned int, int); // eax
