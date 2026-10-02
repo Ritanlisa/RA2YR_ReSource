@@ -218,7 +218,6 @@ struct CampaignClass {
     int q324;  // 0x324
     unsigned int q328;  // 0x328
     unsigned int *__pad_0;
-    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * SaveProgress();
     CampaignClass(ObjectClass * aP1);

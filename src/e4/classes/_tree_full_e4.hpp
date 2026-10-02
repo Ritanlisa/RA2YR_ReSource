@@ -56,7 +56,6 @@ struct DialogControl_OwnerDraw {
 
 struct DynamicVectorClass {
     void* vtable1;  // 0x0 (no offset truth)
-    void* VectorClass;  // 0x0 (no offset truth)
     void* vfptr;
     void* Items;  // 0x4
     int Capacity;  // 0x8

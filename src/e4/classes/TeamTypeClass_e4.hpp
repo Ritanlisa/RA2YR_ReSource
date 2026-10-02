@@ -83,7 +83,6 @@ struct TeamTypeClass {
     unsigned int q0B4;
     unsigned char u8_B3;
     unsigned int *__pad_0;
-    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * FindOrCreateTaskForce(char *Source);
     AbstractClass * * GetMaxCount(CCINIClass * aP1);

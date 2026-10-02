@@ -57,7 +57,6 @@ struct FoggedObjectClass {
     unsigned int LastSight;
     unsigned int u32_64;
     unsigned int u32_69;
-    void* AbstractClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);

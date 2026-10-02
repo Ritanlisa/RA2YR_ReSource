@@ -688,7 +688,6 @@ struct FootClass {
     void* movementDestination;  // 0x0 (no offset truth)
     void* HandleCursorWithCheck;  // 0x0 (no offset truth)
     void* OverrideMission_SyncLog;  // 0x0 (no offset truth)
-    void* TechnoClass;  // 0x0 (no offset truth)
     void* ValidateMove;  // 0x0 (no offset truth)
     void* currentSpeed_percentage;  // 0x0 (no offset truth)
     void* unknown698;  // 0x0 (no offset truth)

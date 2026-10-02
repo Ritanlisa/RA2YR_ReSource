@@ -1096,7 +1096,6 @@ struct TechnoTypeClass {
     unsigned int u32_1D84;
     unsigned int u32_1E42;
     unsigned int vtable0;
-    void* ObjectTypeClass;  // 0x0 (no offset truth)
     void* waypoints;  // 0x0 (no offset truth)
     void* CheckFlag;  // 0x0 (no offset truth)
     void* Debris;  // 0x0 (no offset truth)
