@@ -42,19 +42,19 @@ void MouseClass::initCursor() {
 
   v2 = *(void **)&this->m_1[3]; /*0x40d546*/
   this->q010 = 0; /*0x40d549*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x40d550*/
+  if ( v2 && ((unsigned char*)&this->q00C)[1] ) /*0x40d550*/
   {
     RA2_OPDEL(v2); /*0x40d556*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x40d55e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40d561*/
+  ((unsigned char*)&this->q00C)[1] = 0; /*0x40d561*/
   this->u32_8 = 0; /*0x40d564*/
 }
 }
 // 0x40D570
 namespace gamemd { 
 int MouseClass::updateCursorState(int a2) {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x40d570*/
+  if ( ((unsigned char*)&this->q00C)[0] ) /*0x40d570*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40d585*/
   else
     return 0; /*0x40d577*/
@@ -131,12 +131,12 @@ void* MouseClass::applyCursorSettings(int a2) {
 
   v3 = *(void **)&this->m_1[3]; /*0x40d853*/
   *(unsigned int *)this->__pad_0 = (void *)&VectorClass_MixFileClass___vftable; /*0x40d856*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40d860*/
+  if ( v3 && ((unsigned char*)&this->q00C)[1] ) /*0x40d860*/
   {
     RA2_OPDEL(v3); /*0x40d868*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x40d870*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40d87b*/
+  ((unsigned char*)&this->q00C)[1] = 0; /*0x40d87b*/
   this->u32_8 = 0; /*0x40d881*/
   if ( (a2 & 1) != 0 ) /*0x40d888*/
     RA2_OPDEL(this); /*0x40d88b*/

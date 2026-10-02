@@ -597,12 +597,12 @@ void TypeList_Infantry::ddtor()
 
   v2 = *(void **)&this->m_1[3]; /*0x5128a6*/
   this->m_10 = 0; /*0x5128a9*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x5128b0*/
+  if ( v2 && ((unsigned char*)&this->IsInitialized)[1] ) /*0x5128b0*/
   {
     __3_YAXPAX_Z(v2); /*0x5128b6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x5128be*/
   }
-  BYTE1(this->m_C) = 0; /*0x5128c1*/
+  ((unsigned char*)&this->IsInitialized)[1] = 0; /*0x5128c1*/
   this->m_8 = 0; /*0x5128c4*/
 
 }
@@ -613,7 +613,7 @@ namespace gamemd {
 unsigned int TypeList_Infantry::GetIndex(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x5128d0*/
+  if ( ((unsigned char*)&this->IsInitialized)[0] ) /*0x5128d0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5128e5*/
   else
     return 0; /*0x5128d7*/
@@ -720,12 +720,12 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x512e7c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x512e82*/
+    ((unsigned char*)&this->IsInitialized)[0] = 0; /*0x512e82*/
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x512e9a*/
-    LOBYTE(this->m_C) = 1; /*0x512ea2*/
+    ((unsigned char*)&this->IsInitialized)[0] = 1; /*0x512ea2*/
     if ( !v4 ) /*0x512ea6*/
       return 0; /*0x512f1a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x512ea8*/
@@ -735,7 +735,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
         m_8 = a2; /*0x512eb6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
-      if ( BYTE1(this->m_C) ) /*0x512ece*/
+      if ( ((unsigned char*)&this->IsInitialized)[1] ) /*0x512ece*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x512ed9*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x512ee1*/
@@ -743,7 +743,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x512eea*/
     this->m_8 = a2; /*0x512ef2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x512ef5*/
+    ((unsigned char*)&this->IsInitialized)[1] = a3 == 0; /*0x512ef5*/
   }
   else
   {

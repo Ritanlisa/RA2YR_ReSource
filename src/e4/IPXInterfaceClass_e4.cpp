@@ -600,8 +600,8 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
                                                                                              + 12))(this);
   }
   v7 = this->LocalNetwork; /*0x7b2ab1*/
-  if ( v7 < this->m_10 ) /*0x7b2ab9*/
-    this->m_10 = v7; /*0x7b2abb*/
+  if ( v7 < this->Count ) /*0x7b2ab9*/
+    this->Count = v7; /*0x7b2abb*/
   return (gamemd::AbstractClass **)(1); /*0x7b2abe*/
 
 }
@@ -752,7 +752,7 @@ void IPXInterfaceClass::getSocketCount()
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x7b2846*/
-  this->m_10 = 0; /*0x7b2849*/
+  this->Count = 0; /*0x7b2849*/
   if ( v2 && BYTE1(this->LocalNode) ) /*0x7b2850*/
   {
     __3_YAXPAX_Z(v2); /*0x7b2856*/
@@ -784,7 +784,7 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x7b2ad0*/
+  m_10 = this->Count; /*0x7b2ad0*/
   result = 0; /*0x7b2ad3*/
   if ( m_10 <= 0 ) /*0x7b2ad8*/
     return -1; /*0x7b2aef*/

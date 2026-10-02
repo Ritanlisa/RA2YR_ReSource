@@ -628,7 +628,7 @@ int ParticleTypeClass::ProcessPower(int *a2)
   return Checksummer::Add_double( /*0x645611*/
            (Checksummer *)a2,
            (int)this->ParticleTypeClass_field_0x2B0,
-           (int)this->ParticleTypeClass_field_0x2B4);
+           (int)this->q2B4);
 
 }
 }
@@ -724,9 +724,9 @@ int ParticleTypeClass::GetType(int a2, int a3)
 
   int result; // eax
 
-  result = (int)this->ParticleTypeClass_field_0x2E4; /*0x6458b0*/
+  result = (int)this->q2E4; /*0x6458b0*/
   if ( result == a2 ) /*0x6458bc*/
-    this->ParticleTypeClass_field_0x2E4 = 0; /*0x6458be*/
+    this->q2E4 = 0; /*0x6458be*/
   return result; /*0x6458c8*/
 
 }
@@ -859,7 +859,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2)
   }
   this->ArrayIndex = (unsigned int)(&vt_DynamicVectorClass); /*0x645aec*/
   this->Damage = 10; /*0x645af2*/
-  this->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
+  this->q010 = 0; /*0x645af9*/
   return &this->ArrayIndex; /*0x645afe*/
 
 }

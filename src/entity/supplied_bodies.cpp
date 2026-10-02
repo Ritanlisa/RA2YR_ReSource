@@ -23,26 +23,26 @@ int AnimClass::SimpleCtor() {
     int v3; // eax
 
     ObjectClass::ctor((ObjectClass *)this); /*0x422724*/
-    this->AnimClass_field_0xAC = 0; /*0x422730*/
+    this->q0AC = 0; /*0x422730*/
     this->__pad_B0[0] = 0; /*0x422736*/
     v2 = *(IUnknown **)&stru_A8EB00.?[416]; /*0x42273c*/
-    this->AnimClass_field_0xBC = 0; /*0x422741*/
-    this->AnimClass_field_0xB4 = v2; /*0x422747*/
-    this->AnimClass_field_0xC0 = 0; /*0x422750*/
+    this->q0BC = 0; /*0x422741*/
+    this->q0B4 = v2; /*0x422747*/
+    this->q0C0 = 0; /*0x422750*/
     *(unsigned int *)this->__pad_C4 = 1; /*0x422756*/
-    this->AnimClass_field_0xC8 = 0; /*0x422761*/
-    this->AnimClass_field_0xCC = 0; /*0x422767*/
+    this->q0C8 = 0; /*0x422761*/
+    this->q0CC = 0; /*0x422767*/
     this->AnimClass_field_0xD0[0] = -1; /*0x42276d*/
-    this->AnimClass_field_0xD4 = 0; /*0x422773*/
+    this->q0D4 = 0; /*0x422773*/
     *(unsigned int *)this->__pad_D8 = -1; /*0x422779*/
     this->AnimClass_field_0xFC[0] = 1000; /*0x42277f*/
-    this->AnimClass_field_0x100 = 0; /*0x422789*/
-    this->AnimClass_field_0x104 = 0; /*0x42278f*/
+    this->q100 = 0; /*0x422789*/
+    this->q104 = 0; /*0x42278f*/
     this->__pad_118[0] = 0; /*0x422795*/
     this->__pad_118[1] = 0; /*0x42279b*/
     this->__pad_118[2] = 0; /*0x4227a1*/
     this->__pad_118[3] = 0; /*0x4227a7*/
-    this->AnimClass_field_0x11C = 0; /*0x4227ad*/
+    this->q11C = 0; /*0x4227ad*/
     this->__pad_120[0] = 0; /*0x4227b3*/
     *(unsigned int *)&this->__pad_120[8] = 0; /*0x4227ba*/
     *(unsigned int *)&this->__pad_120[16] = 0; /*0x4227c0*/
@@ -52,9 +52,9 @@ int AnimClass::SimpleCtor() {
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x4227df*/
     Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x4227e5*/
     Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x4227f8*/
-    this->AnimClass_field_0x188 = 0; /*0x4227fd*/
+    this->q188 = 0; /*0x4227fd*/
     this->__pad_178[1] = 0; /*0x422803*/
-    this->AnimClass_field_0x184 = 0; /*0x422809*/
+    this->q184 = 0; /*0x422809*/
     *(unsigned int *)this->__pad_18C = 0; /*0x42280f*/
     this->__pad_194[0] = 0; /*0x422815*/
     this->__pad_194[1] = 1; /*0x42281b*/

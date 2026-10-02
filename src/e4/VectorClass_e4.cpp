@@ -386,7 +386,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   if ( a2 ) /*0x4e084c*/
   {
     v4 = a3; /*0x4e0852*/
-    LOBYTE(this->m_C) = 0; /*0x4e0856*/
+    ((unsigned char*)&this->IsInitialized)[0] = 0; /*0x4e0856*/
     if ( a3 ) /*0x4e085c*/
     {
       *a3 = a2; /*0x4e0897*/
@@ -429,7 +429,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         v6 = 0; /*0x4e0890*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4e08b2*/
+    ((unsigned char*)&this->IsInitialized)[0] = 1; /*0x4e08b2*/
     if ( v6 ) /*0x4e08b6*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x4e08c1*/
@@ -450,7 +450,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
           while ( v13 < m_8 ); /*0x4e08ed*/
           v4 = a3; /*0x4e08ef*/
         }
-        if ( BYTE1(this->m_C) ) /*0x4e08f3*/
+        if ( ((unsigned char*)&this->IsInitialized)[1] ) /*0x4e08f3*/
         {
           v15 = *(unsigned int *)&this->m_1[3]; /*0x4e08fa*/
           if ( v15 ) /*0x4e08ff*/
@@ -460,7 +460,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e091a*/
       this->m_8 = a2; /*0x4e0922*/
-      BYTE1(this->m_C) = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
+      ((unsigned char*)&this->IsInitialized)[1] = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
       return (gamemd::AbstractClass **)(1); /*0x4e092b*/
     }
     else
@@ -498,7 +498,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   if ( a2 ) /*0x4e0b1c*/
   {
     v4 = a3; /*0x4e0b22*/
-    LOBYTE(this->m_C) = 0; /*0x4e0b26*/
+    ((unsigned char*)&this->IsInitialized)[0] = 0; /*0x4e0b26*/
     if ( a3 ) /*0x4e0b2c*/
     {
       *a3 = a2; /*0x4e0b67*/
@@ -541,7 +541,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         v6 = 0; /*0x4e0b60*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4e0b83*/
+    ((unsigned char*)&this->IsInitialized)[0] = 1; /*0x4e0b83*/
     if ( !v6 ) /*0x4e0b87*/
       return 0; /*0x4e0c27*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4e0b8d*/
@@ -562,7 +562,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         while ( v12 < m_8 ); /*0x4e0bb9*/
         v4 = a3; /*0x4e0bbb*/
       }
-      if ( BYTE1(this->m_C) ) /*0x4e0bbf*/
+      if ( ((unsigned char*)&this->IsInitialized)[1] ) /*0x4e0bbf*/
       {
         v14 = *(int **)&this->m_1[3]; /*0x4e0bc6*/
         if ( v14 ) /*0x4e0bcb*/
@@ -577,7 +577,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e0bf7*/
     this->m_8 = a2; /*0x4e0bff*/
-    BYTE1(this->m_C) = v4 == 0; /*0x4e0c02*/
+    ((unsigned char*)&this->IsInitialized)[1] = v4 == 0; /*0x4e0c02*/
   }
   else
   {

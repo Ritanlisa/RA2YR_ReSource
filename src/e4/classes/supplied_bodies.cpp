@@ -149,7 +149,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3) {
     v7 = this->ScriptAction_field_0x8[0]; /*0x634000*/
     if ( this->ScriptAction_field_0x10[0] < v7 /*0x634024*/
       || (this->__pad_C[1] || !v7)
-      && (ScriptAction_field_0x14 = this->ScriptAction_field_0x14, ScriptAction_field_0x14 > 0)
+      && (ScriptAction_field_0x14 = this->q014, ScriptAction_field_0x14 > 0)
       && (*(uint8_t (__thiscall **)(ScriptAction *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
            this,
            v7 + ScriptAction_field_0x14,
@@ -333,7 +333,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
       v14 += 108; /*0x634d59*/
       v29 = *(unsigned short *)v14; /*0x634d5b*/
       v30 = v14[2]; /*0x634d5d*/
-      ScriptAction_field_0x30 = this->ScriptAction_field_0x30; /*0x634d63*/
+      ScriptAction_field_0x30 = this->q030; /*0x634d63*/
       v15 = (int)ScriptAction_field_0x30; /*0x634d5e*/
       if ( ScriptAction_field_0x30 ) /*0x634d67*/
       {
@@ -343,7 +343,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
         v25 = ScenarioClassActionCoords[1]; /*0x634d83*/
         for ( i = ScenarioClassActionCoords[2]; v18 < v15; ++v18 ) /*0x634d8e*/
         {
-          v19 = *(unsigned int **)(v24->ScriptAction_field_0x24 + 4 * v18); /*0x634d97*/
+          v19 = *(unsigned int **)(v24->q024 + 4 * v18); /*0x634d97*/
           if ( v19[28] ) /*0x634d9a*/
           {
             qmemcpy(v31, v19, sizeof(v31)); /*0x634dad*/
@@ -368,10 +368,10 @@ int ScriptAction::DecrementRefCount(int a2) {
     int result; // eax
 
     *(unsigned char *)(a2 + 12) = 0; /*0x6351e4*/
-    result = (int)this->ScriptAction_field_0xA8 - 1; /*0x6351ee*/
-    this->ScriptAction_field_0xA8 = (void *)result; /*0x6351ef*/
+    result = (int)this->q0A8 - 1; /*0x6351ee*/
+    this->q0A8 = (void *)result; /*0x6351ef*/
     if ( !result ) /*0x6351f5*/
-      this->ScriptAction_field_0xB0 = (void *)-1; /*0x6351f7*/
+      this->q0B0 = (void *)-1; /*0x6351f7*/
     return result; /*0x635201*/
 }
 } // namespace gamemd
@@ -385,14 +385,14 @@ unsigned int * ScriptAction::Constructor(int a2) {
     IDA_BYTE1(this->ScriptAction_field_0x10[0]) = 0; /*0x635f31*/
     this->ScriptAction_field_0x4[0] = (int)0; /*0x635f34*/
     this->ScriptAction_field_0x18[0] = 10; /*0x635f3b*/
-    this->ScriptAction_field_0x14 = 0; /*0x635f42*/
+    this->q014 = 0; /*0x635f42*/
     this->__pad_1C[0] = 0; /*0x635f45*/
     this->__pad_1C[1] = 0; /*0x635f48*/
-    IDA_LOBYTE(this->ScriptAction_field_0x98) = 0; /*0x635f4b*/
-    IDA_BYTE1(this->ScriptAction_field_0x98) = 0; /*0x635f51*/
-    this->ScriptAction_field_0x8C = (void *)-1; /*0x635f5b*/
+    ((unsigned char*)&this->q098)[0] = 0; /*0x635f4b*/
+    ((unsigned char*)&this->q098)[1] = 0; /*0x635f51*/
+    this->q08C = (void *)-1; /*0x635f5b*/
     *(unsigned int *)this->__pad_90 = -1; /*0x635f61*/
-    this->ScriptAction_field_0x94 = (void *)-1; /*0x635f67*/
+    this->q094 = (void *)-1; /*0x635f67*/
     *(unsigned int *)this->__pad_0 = a2; /*0x635f6d*/
     return this->__pad_0; /*0x635f6f*/
 }

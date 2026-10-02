@@ -1552,7 +1552,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (int16_t)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*((unsigned int *)this->Terrain_field_0x13C + v34) ) /*0x570401*/
+      if ( !*((unsigned int *)this->q13C + v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v34)) != 0 ) /*0x57041d*/
       {

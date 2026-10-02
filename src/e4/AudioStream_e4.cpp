@@ -1040,7 +1040,7 @@ int AudioStream::SetFlag4C(void *a1_1)
 
   int result; // eax
 
-  ((void (*)(AudioStream *, int, unsigned int, unsigned int))this->AudioStream_field_0x58)(this, 4, 0, 0); /*0x7bd27a*/
+  ((void (*)(AudioStream *, int, unsigned int, unsigned int))this->q058)(this, 4, 0, 0); /*0x7bd27a*/
   result = *((unsigned int *)this + 495); /*0x7bd27d*/
   LOBYTE(result) = result | 0x40; /*0x7bd286*/
   *((unsigned int *)this + 495) = result; /*0x7bd288*/
@@ -1093,7 +1093,7 @@ int AudioStream::CalcReadPos()
   }
   if ( v17 > v8 ) /*0x7bd36a*/
   {
-    v13 = (unsigned int)this->AudioStream_field_0x98 - v4; /*0x7bd3cd*/
+    v13 = (unsigned int)this->q098 - v4; /*0x7bd3cd*/
     qmemcpy((void *)(*((unsigned int *)this + 483) + v4), v6, v13); /*0x7bd3e4*/
     qmemcpy(*((void **)this + 483), &v6[v13], v7 - v13); /*0x7bd404*/
     v14 = v17; /*0x7bd40f*/

@@ -34,20 +34,20 @@ char SuperClass::RemoveFromPointerArray(int a2) {
     int v3; // eax
     char *v4; // edx
 
-    SuperClass_field_0x10 = (char *)this->SuperClass_field_0x10; /*0x6ce320*/
+    SuperClass_field_0x10 = (char *)this->q010; /*0x6ce320*/
     v3 = a2; /*0x6ce323*/
     if ( a2 >= (int)SuperClass_field_0x10 ) /*0x6ce329*/
       return 0; /*0x6ce34c*/
     v4 = SuperClass_field_0x10 - 1; /*0x6ce32b*/
-    this->SuperClass_field_0x10 = v4; /*0x6ce32e*/
+    this->q010 = v4; /*0x6ce32e*/
     if ( a2 < (int)v4 ) /*0x6ce331*/
     {
       do /*0x6ce344*/
       {
         ++v3; /*0x6ce337*/
-        *((unsigned int *)this->SuperClass_field_0x4 + v3 - 1) = *((unsigned int *)this->SuperClass_field_0x4 + v3); /*0x6ce33b*/
+        *((unsigned int *)this->vtable2 + v3 - 1) = *((unsigned int *)this->vtable2 + v3); /*0x6ce33b*/
       }
-      while ( v3 < (int)this->SuperClass_field_0x10 ); /*0x6ce344*/
+      while ( v3 < (int)this->q010 ); /*0x6ce344*/
     }
     return 1; /*0x6ce349*/
 }

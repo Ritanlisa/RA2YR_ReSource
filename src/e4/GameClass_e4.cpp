@@ -392,7 +392,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
       BigInt::RSAOperation(v8, Src, v9, (char *)&this->m_3C); /*0x6331f4*/
-      GameClass::updateUI((GameClass *)&this->m_14, (int)&this->m_3C, 56); /*0x6331fc*/
+      GameClass::updateUI((GameClass *)&this->ptr_14, (int)&this->m_3C, 56); /*0x6331fc*/
     }
     else
     {
@@ -406,7 +406,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)&this->m_3C); /*0x63324d*/
       this->m_140 = v14; /*0x633258*/
       this->u32_13C = v14; /*0x63325e*/
-      GameClass::updateUI((GameClass *)&this->m_14, (int)Src, 56); /*0x633268*/
+      GameClass::updateUI((GameClass *)&this->ptr_14, (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
     LOBYTE(this->m_C) = 0; /*0x633274*/

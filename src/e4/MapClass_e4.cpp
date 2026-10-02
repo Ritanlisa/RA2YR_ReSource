@@ -953,7 +953,7 @@ unsigned int * MapClass::InitAllCells()
     v4 = 512; /*0x565bd0*/
     do /*0x565bf4*/
     {
-      if ( v2 < this->MapClass_field_0x140 ) /*0x565bdb*/
+      if ( v2 < this->q140 ) /*0x565bdb*/
       {
         result = (unsigned int *)(this->MapClass_field_0x13C); /*0x565bdd*/
         v6 = (CellClass *)result[v3]; /*0x565be3*/

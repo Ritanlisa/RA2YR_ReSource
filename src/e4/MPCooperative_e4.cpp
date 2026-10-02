@@ -447,9 +447,9 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
   AbstractClass::updateAnimationState((AbstractClass *)&this->MPCooperative_field_0x58, 0, 0); /*0x5c14a0*/
   this->MPCooperative_field_0x58 = (unsigned int)(&vt_DynamicVectorClass); /*0x5c14a5*/
-  this->MPCooperative_field_0x6C = (void *)10; /*0x5c14ab*/
+  this->q06C = (void *)10; /*0x5c14ab*/
   this->MPCooperative_field_0x68 = 0; /*0x5c14b2*/
-  p_MPCooperative_field_0xC4 = &this->MPCooperative_field_0xC4; /*0x5c14b5*/
+  p_MPCooperative_field_0xC4 = &this->q0C4; /*0x5c14b5*/
   v9 = 8; /*0x5c14bb*/
   do /*0x5c14cb*/
   {
@@ -470,7 +470,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     --v11; /*0x5c14f4*/
   }
   while ( v11 ); /*0x5c14f5*/
-  p_MPCooperative_field_0x264 = (VectorClass *)&this->MPCooperative_field_0x264; /*0x5c14f7*/
+  p_MPCooperative_field_0x264 = (VectorClass *)&this->q264; /*0x5c14f7*/
   v13 = 8; /*0x5c14fd*/
   do /*0x5c151f*/
   {
@@ -482,21 +482,21 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     --v13; /*0x5c151e*/
   }
   while ( v13 ); /*0x5c151f*/
-  p_MPCooperative_field_0x324 = &this->MPCooperative_field_0x324; /*0x5c1521*/
-  CoopCampaignVector::Construct((CoopCampaignVector *)&this->MPCooperative_field_0x324, 0, 0); /*0x5c152b*/
-  this->MPCooperative_field_0x324 = (int)&vt_DynamicVectorClass; /*0x5c1530*/
+  p_MPCooperative_field_0x324 = &this->q324; /*0x5c1521*/
+  CoopCampaignVector::Construct((CoopCampaignVector *)&this->q324, 0, 0); /*0x5c152b*/
+  this->q324 = (int)&vt_DynamicVectorClass; /*0x5c1530*/
   *(unsigned int *)&this->__pad_328[16] = (unsigned int)(10); /*0x5c1536*/
   *(unsigned int *)&this->__pad_328[12] = 0; /*0x5c153d*/
   this->MPCooperative_field_0x0 = (unsigned int)(&vt_MPCooperative); /*0x5c1540*/
   this->MPCooperative_field_0x40 = 0; /*0x5c1546*/
   this->MPCooperative_field_0x44 = 0; /*0x5c1549*/
-  this->MPCooperative_field_0x33C = 0; /*0x5c154c*/
+  this->q33C = 0; /*0x5c154c*/
   this->MPCooperative_field_0x50 = 0; /*0x5c1552*/
-  LOBYTE(this->MPCooperative_field_0x4) = 0; /*0x5c1555*/
+  ((unsigned char*)&this->q004)[0] = 0; /*0x5c1555*/
   LOBYTE(this->MPCooperative_field_0x48) = 0; /*0x5c1559*/
   BYTE1(this->MPCooperative_field_0x48) = 0; /*0x5c155d*/
   this->MPCooperative_field_0x4C = 0; /*0x5c1561*/
-  LOBYTE(this->MPCooperative_field_0x340) = 1; /*0x5c1564*/
+  ((unsigned char*)&this->q340)[0] = 1; /*0x5c1564*/
   for ( i = *(unsigned int *)&this->__pad_328[12] - 1; i >= 0; --i ) /*0x5c1572*/
   {
     v16 = *(unsigned int *)this->__pad_328; /*0x5c1574*/
@@ -508,9 +508,9 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     }
   }
   v18 = *(unsigned int *)&this->__pad_328[4]; /*0x5c1598*/
-  (*(void (**)(int *))(*p_MPCooperative_field_0x324 + 12))(&this->MPCooperative_field_0x324); /*0x5c159d*/
+  (*(void (**)(int *))(*p_MPCooperative_field_0x324 + 12))(&this->q324); /*0x5c159d*/
   (*(void (**)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))( /*0x5c15a6*/
-    &this->MPCooperative_field_0x324,
+    &this->q324,
     v18,
     0);
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
@@ -530,7 +530,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
       v22 = *(unsigned int *)&this->__pad_328[16]; /*0x5c1600*/
       if ( v22 <= 0 /*0x5c160f*/
         || !(*(uint8_t (**)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))(
-              &this->MPCooperative_field_0x324,
+              &this->q324,
               v21 + v22,
               0) )
       {
@@ -685,10 +685,10 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     }
   }
   v5 = *(unsigned int *)&this->__pad_328[4]; /*0x5c18d5*/
-  p_MPCooperative_field_0x324 = &this->MPCooperative_field_0x324; /*0x5c18db*/
-  (*(void (**)(int *))(this->MPCooperative_field_0x324 + 12))(&this->MPCooperative_field_0x324); /*0x5c18e3*/
-  (*(void (**)(int *, int, unsigned int))(this->MPCooperative_field_0x324 + 8))( /*0x5c18ed*/
-    &this->MPCooperative_field_0x324,
+  p_MPCooperative_field_0x324 = &this->q324; /*0x5c18db*/
+  (*(void (**)(int *))(this->q324 + 12))(&this->q324); /*0x5c18e3*/
+  (*(void (**)(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
+    &this->q324,
     v5,
     0);
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&v15)); /*0x5c18fa*/
@@ -778,7 +778,7 @@ CampaignClass * * MPCooperative::CopyTo()
   if ( this->MPCooperative_field_0x40 ) /*0x5c1ad3*/
   {
 LABEL_30:
-    LOBYTE(this->MPCooperative_field_0x340) = 1; /*0x5c1c7b*/
+    ((unsigned char*)&this->q340)[0] = 1; /*0x5c1c7b*/
     result = Dialog::FindGameUI(); /*0x5c1c82*/
     v12 = (HWND)result; /*0x5c1c87*/
     if ( result ) /*0x5c1c8b*/

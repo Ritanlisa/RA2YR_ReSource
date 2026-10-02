@@ -464,11 +464,11 @@ Game * * Scenario::ComputeDisplayPosition()
     if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = (int)*(&g_DisplayWidth + 1); /*0x552baa*/
-    this->Scenario_field_0x24 = v2; /*0x552baf*/
-    this->Scenario_field_0x28 = (void *)v9; /*0x552bb4*/
-    this->Scenario_field_0x20 = (void *)((v10 - v9) / 2); /*0x552bc6*/
+    this->q024 = v2; /*0x552baf*/
+    this->q028 = (void *)v9; /*0x552bb4*/
+    this->q020 = (void *)((v10 - v9) / 2); /*0x552bc6*/
     result = (int)&v1->__pad_0[-v2] / 2; /*0x552bc9*/
-    this->Scenario_field_0x1C = (void *)result; /*0x552bcd*/
+    this->q01C = (void *)result; /*0x552bcd*/
   }
   else
   {
@@ -477,21 +477,21 @@ Game * * Scenario::ComputeDisplayPosition()
       v3 = 600; /*0x552b46*/
     v4 = (void *)(v3 - 80); /*0x552b4b*/
     v5 = (char *)&(*(&g_DisplayWidth + 1))[1].LoadingScreen_field_0x10 - v3; /*0x552b5c*/
-    this->Scenario_field_0x14 = (void *)v2; /*0x552b5e*/
-    this->Scenario_field_0x24 = v2; /*0x552b64*/
+    this->q014 = (void *)v2; /*0x552b5e*/
+    this->q024 = v2; /*0x552b64*/
     v6 = (int)(v5 - 80) / 2; /*0x552b6f*/
-    this->Scenario_field_0x10 = (void *)v6; /*0x552b71*/
+    this->q010 = (void *)v6; /*0x552b71*/
     v6 += 40; /*0x552b74*/
     v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
     this->Scenario_field_0x34 = (unsigned char)((void *)v2); /*0x552b78*/
-    this->Scenario_field_0xC = (void *)v7; /*0x552b7b*/
-    this->Scenario_field_0x1C = (void *)v7; /*0x552b7e*/
-    this->Scenario_field_0x20 = (void *)v6; /*0x552b81*/
-    this->Scenario_field_0x2C = (void *)v7; /*0x552b84*/
+    this->q00C = (void *)v7; /*0x552b7b*/
+    this->q01C = (void *)v7; /*0x552b7e*/
+    this->q020 = (void *)v6; /*0x552b81*/
+    this->q02C = (void *)v7; /*0x552b84*/
     result = (int)v4 + v6; /*0x552b88*/
-    this->Scenario_field_0x28 = v4; /*0x552b8b*/
-    this->Scenario_field_0x18 = (unsigned char)((void *)40); /*0x552b8f*/
-    this->Scenario_field_0x30 = (void *)result; /*0x552b92*/
+    this->q028 = v4; /*0x552b8b*/
+    this->q018 = (unsigned char)((void *)40); /*0x552b8f*/
+    this->q030 = (void *)result; /*0x552b92*/
     this->Scenario_field_0x38 = (unsigned char)((gamemd::Game **)((void *)40)); /*0x552b95*/
   }
   return (gamemd::Game **)(result); /*0x552b87*/
@@ -516,7 +516,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x552beb*/
   {
-    v6 = (int *)(Copy8Bytes(&v11, (int *)&this->Scenario_field_0x1C)); /*0x552c3b*/
+    v6 = (int *)(Copy8Bytes(&v11, (int *)&this->q01C)); /*0x552c3b*/
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
@@ -535,8 +535,8 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   }
   else
   {
-    Scenario_field_0x2C = (char *)this->Scenario_field_0x2C; /*0x552bf8*/
-    Scenario_field_0x30 = (char *)this->Scenario_field_0x30; /*0x552bff*/
+    Scenario_field_0x2C = (char *)this->q02C; /*0x552bf8*/
+    Scenario_field_0x30 = (char *)this->q030; /*0x552bff*/
     result = a2; /*0x552c02*/
     if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x552bfd*/
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/

@@ -778,7 +778,7 @@ int Cell::Exists(MouseClass * aP1)
   int result; // eax
 
   result = (int)(*aP1); /*0x5657ee*/
-  LOBYTE(result) = *((unsigned int *)this->Cell_field_0x13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
+  LOBYTE(result) = *((unsigned int *)this->q13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
   return result; /*0x5657fd*/
 
 }
@@ -788,7 +788,7 @@ namespace gamemd {
 int Cell::CoordToIndex(int16_t *aP1)
 {
 
-  return *aP1 + aP1[1] * ((int)this->Cell_field_0xF8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d450*/
+  return *aP1 + aP1[1] * ((int)this->q0F8 + (unsigned int)this->q0F4 + 1); /*0x56d450*/
 
 }
 }
@@ -815,10 +815,10 @@ int Cell::SetRadar(int16_t *aP1)
   unsigned int v17[8]; // [esp+14h] [ebp-20h] BYREF
   int v18; // [esp+38h] [ebp+4h]
 
-  v2 = *aP1 + aP1[1] * ((int)this->Cell_field_0xF8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d484*/
+  v2 = *aP1 + aP1[1] * ((int)this->q0F8 + (unsigned int)this->q0F4 + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
-    Cell_field_0x6C = this->Cell_field_0x6C; /*0x56d48c*/
+    Cell_field_0x6C = this->q06C; /*0x56d48c*/
     if ( v2 >= (int)Cell_field_0x6C ) /*0x56d491*/
       v2 = (signed int)Cell_field_0x6C - 1; /*0x56d493*/
   }
@@ -826,7 +826,7 @@ int Cell::SetRadar(int16_t *aP1)
   {
     v2 = 0; /*0x56d488*/
   }
-  Cell_field_0x68 = (char *)this->Cell_field_0x68; /*0x56d496*/
+  Cell_field_0x68 = (char *)this->q068; /*0x56d496*/
   v17[2] = 1; /*0x56d499*/
   v17[6] = -1; /*0x56d4a1*/
   v5 = &Cell_field_0x68[4 * v2]; /*0x56d4a9*/

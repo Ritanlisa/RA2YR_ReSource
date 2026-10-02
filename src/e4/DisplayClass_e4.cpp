@@ -611,11 +611,11 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
         if ( !DisplayClass_field_0x11A8 ) /*0x4ac33f*/
         {
           LOBYTE(this->DisplayClass_field_0x11D0) = 1; /*0x4ac345*/
-          this->DisplayClass_field_0x11D4 = (void *)*a2; /*0x4ac34e*/
-          this->DisplayClass_field_0x11D8 = (void *)a2[1]; /*0x4ac357*/
-          this->DisplayClass_field_0x11DC = (void *)*a2; /*0x4ac35f*/
+          this->q11D4 = (void *)*a2; /*0x4ac34e*/
+          this->q11D8 = (void *)a2[1]; /*0x4ac357*/
+          this->q11DC = (void *)*a2; /*0x4ac35f*/
           DisplayClass_field_0x11A8 = (void *)a2[1]; /*0x4ac365*/
-          this->DisplayClass_field_0x11E0 = DisplayClass_field_0x11A8; /*0x4ac368*/
+          this->q11E0 = DisplayClass_field_0x11A8; /*0x4ac368*/
         }
       }
     }
@@ -776,16 +776,16 @@ int DisplayClass::InsertPriorityText(int a2)
   }
   for ( i = 0; i < *(unsigned int *)this->__pad_10; ++i ) /*0x551ad2*/
   {
-    if ( ((DisplayClass *)(*((DisplayClass **)&this->DisplayClass_field_0x4->vtable1 + i)))->checkScreenBounds(a2) ) /*0x551adb*/
+    if ( ((DisplayClass *)(*((DisplayClass **)&this->ptr_4->vtable1 + i)))->checkScreenBounds(a2) ) /*0x551adb*/
       break; /*0x551ae2*/
   }
   for ( j = *(unsigned int *)this->__pad_10 - 1; /*0x551af2*/
         j >= i;
-        *((unsigned int *)&this->DisplayClass_field_0x4->vtable2 + j) = *((unsigned int *)&this->DisplayClass_field_0x4->vtable1 + j) )
+        *((unsigned int *)&this->ptr_4->vtable2 + j) = *((unsigned int *)&this->ptr_4->vtable1 + j) )
   {
     --j; /*0x551af7*/
   }
-  *((unsigned int *)&this->DisplayClass_field_0x4->vtable1 + i) = a2; /*0x551b07*/
+  *((unsigned int *)&this->ptr_4->vtable1 + i) = a2; /*0x551b07*/
   ++*(unsigned int *)this->__pad_10; /*0x551b0f*/
   return 1; /*0x551ac1*/
 

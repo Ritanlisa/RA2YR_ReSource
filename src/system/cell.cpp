@@ -311,9 +311,9 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
 
   IDA_LOBYTE(v3) = on_bridge; /*0x47e8a0*/
   if ( on_bridge ) /*0x47e8ae*/
-    v5 = this->u32_E8; /*0x47e8b0*/
+    v5 = this->altObject; /*0x47e8b0*/
   else
-    v5 = this->u32_E4; /*0x47e8b8*/
+    v5 = this->firstObject; /*0x47e8b8*/
   if ( content ) /*0x47e8c4*/
   {
     if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
@@ -328,13 +328,13 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
       if ( !v5 || v5->Wobbles != content ) /*0x47e906*/
       {
         content[12] = v5; /*0x47e908*/
-        this->u32_E8 = content; /*0x47e90b*/
+        this->altObject = content; /*0x47e90b*/
       }
     }
     else if ( !v5 || v5->Wobbles != content ) /*0x47e91a*/
     {
       content[12] = v5; /*0x47e91c*/
-      this->u32_E4 = content; /*0x47e91f*/
+      this->firstObject = content; /*0x47e91f*/
     }
     v18 = this->smudgeTypeIndex; /*0x47e929*/
     v13 = 128; /*0x47e94b*/

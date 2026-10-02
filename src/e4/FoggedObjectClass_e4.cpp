@@ -1082,7 +1082,7 @@ char FoggedObjectClass::AddRef(int a2)
   unsigned int *v6; // ecx
   int v7; // edx
 
-  m_8 = this->m_8; /*0x4d29bb*/
+  m_8 = this->vtable3; /*0x4d29bb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
     v3 = 0; /*0x4d29c2*/

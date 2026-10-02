@@ -602,12 +602,12 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/
       ObjectPtr_RegisterForTracking( /*0x75e260*/
         (int)&SwizzleManagerClass_Instance,
-        (int *)(v2->WarheadTypeClass_field_0x108 + 4 * m));
+        (int *)(v2->q108 + 4 * m));
     for ( n = 0; n < (&v2->unused_1CC)[0]; ++n ) /*0x75e27a*/
       ObjectPtr_RegisterForTracking( /*0x75e28b*/
         (int)&SwizzleManagerClass_Instance,
         (int *)(v2->WarheadTypeClass_field_0x190[0] + 4 * n));
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->WarheadTypeClass_field_0x140); /*0x75e2a7*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->q140); /*0x75e2a7*/
     return 0; /*0x75e2ac*/
   }
   return result; /*0x75e2ae*/
@@ -634,7 +634,7 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
     WarheadTypeClass_field_0x114 = (int *)aP0->WarheadTypeClass_field_0x114; /*0x75e2f1*/
     (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
     for ( i = 0; i < a4; ++i ) /*0x75e300*/
-      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->q108 + 4 * i, 4, 0); /*0x75e313*/
     v9 = *a2; /*0x75e323*/
     a4 = (&aP0->unused_1CC)[0]; /*0x75e32f*/
     (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/

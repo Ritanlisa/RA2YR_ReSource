@@ -144,7 +144,7 @@ void BaseClass::ddtor() {
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x42f3a6*/
-  this->m_10 = 0; /*0x42f3a9*/
+  this->cells24 = 0; /*0x42f3a9*/
   if ( v2 && IDA_BYTE1(this->percentBuilt) ) /*0x42f3b0*/
   {
     RA2_OPDEL(v2); /*0x42f3b6*/
@@ -234,8 +234,8 @@ int BaseClass::Release(int a1, void* a2) {
     (*(void (**)(_DynamicVectorClass_VBaseNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42f5b7*/
   }
   v12 = this->baseNodeCapacity; /*0x42f5ba*/
-  if ( v12 < this->m_10 ) /*0x42f5c2*/
-    this->m_10 = v12; /*0x42f5c4*/
+  if ( v12 < this->cells24 ) /*0x42f5c2*/
+    this->cells24 = v12; /*0x42f5c4*/
   return 1; /*0x42f5c7*/
 }
 }
@@ -246,7 +246,7 @@ int BaseClass::Read(int a2) {
   int result; // eax
   int i; // ecx
 
-  m_10 = this->m_10; /*0x42f5e0*/
+  m_10 = this->cells24; /*0x42f5e0*/
   result = 0; /*0x42f5e4*/
   if ( m_10 <= 0 ) /*0x42f5ea*/
     return -1; /*0x42f615*/
