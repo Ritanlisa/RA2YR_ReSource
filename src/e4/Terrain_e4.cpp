@@ -3007,7 +3007,7 @@ LABEL_49:
         goto LABEL_67; /*0x5a2cbc*/
       v36 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x5a2cd1*/
       v58 = (int)v36; /*0x5a2cd5*/
-      if ( Cell::IsEmpty(v36) ) /*0x5a2cd9*/
+      if ( ((Cell*)v36)->IsEmpty() ) /*0x5a2cd9*/
       {
         if ( v36[17] == -1 ) /*0x5a2cea*/
         {

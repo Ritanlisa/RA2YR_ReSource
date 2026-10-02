@@ -886,7 +886,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
   v6 = a4; /*0x7a8efc*/
   if ( a4 ) /*0x7a8f02*/
   {
-    if ( (*a4 & 1) != 0 || (gamemd::Dialog *)0xC2->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
+    if ( (*a4 & 1) != 0 || (gamemd::Dialog *)0xC2->FindByHandle() || ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
     v7 = (uint8_t)((WideString*)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a8f30*/
@@ -938,11 +938,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL_DispatchStub_17()
       {
         v7 = 1; /*0x7a9047*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7a9050*/
+      else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7a9050*/
       {
         v7 = 1; /*0x7a9059*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a9062*/
+      else if ( ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7a9062*/
       {
         v7 = 1; /*0x7a906b*/
       }
@@ -1001,7 +1001,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a
   v5 = a3; /*0x7a913c*/
   if ( a3 ) /*0x7a9142*/
   {
-    if ( (*a3 & 1) != 0 || Dialog::FindByHandle((Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a915c*/
+    if ( (*a3 & 1) != 0 || ((Dialog*)((Dialog *)0xC2))->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a915c*/
       goto LABEL_21; /*0x7a915c*/
     v6 = (uint8_t)WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a916e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a9170*/
@@ -1066,7 +1066,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
   DeleteAndZero((ObjectClass *)&v26.DeleteAndZero_field_0x04); /*0x7a923d*/
   if ( !a3 ) /*0x7a924b*/
     goto LABEL_12; /*0x7a924b*/
-  if ( (*a3 & 1) == 0 && !Dialog::FindByHandle((Dialog *)0xC2) && !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a9266*/
+  if ( (*a3 & 1) == 0 && !((Dialog*)((Dialog *)0xC2))->FindByHandle() && !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a9266*/
   {
     v5 = (uint8_t)WideString::IsASCII((const wchar_t **)&v26) == 0; /*0x7a9278*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a927a*/
@@ -1187,11 +1187,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     {
       v6 = 1; /*0x7a9594*/
     }
-    else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7a959d*/
+    else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7a959d*/
     {
       v6 = 1; /*0x7a95a6*/
     }
-    else if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a95af*/
+    else if ( ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7a95af*/
     {
       v6 = 1; /*0x7a95b8*/
     }
@@ -1379,7 +1379,7 @@ void CComObject_CChatEventSink___ATL_DispatchStub_19()
     }
     else
     {
-      if ( Dialog::FindByHandle((Dialog *)0x113) ) /*0x7aa7e8*/
+      if ( ((Dialog*)((Dialog *)0x113))->FindByHandle() ) /*0x7aa7e8*/
       {
         v8 = GetStringCSF(aTxtYoureDiscon, 0, g_Str_File_wonline_cpp, 8478); /*0x7aa809*/
         ShowDialogConfirm(v8, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7aa812*/
@@ -1590,7 +1590,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
     }
     if ( stru_B76AC4.ambientSoundController[4] ) /*0x7ab7f0*/
     {
-      v13 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7ab829*/
+      v13 = (HWND)((Dialog*)((Dialog *)0x113))->FindByHandle(); /*0x7ab829*/
       if ( v13 ) /*0x7ab830*/
       {
         DlgItem = GetDlgItem(v13, 1343); /*0x7ab83e*/
@@ -2124,7 +2124,7 @@ LABEL_19:
     }
 LABEL_21:
     SendGameListWOL(v15); /*0x7ac410*/
-    v8 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7ac41a*/
+    v8 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x7ac41a*/
     if ( v8 ) /*0x7ac422*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x200u; /*0x7ac430*/
@@ -2135,7 +2135,7 @@ LABEL_21:
     DlgItem = GetDlgItem(Current, 1344); /*0x7ac452*/
     if ( DlgItem ) /*0x7ac456*/
       SetFocus(DlgItem); /*0x7ac459*/
-    v11 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x7ac464*/
+    v11 = (ObjectClass *)((Dialog*)((Dialog *)0x116))->FindByHandle(); /*0x7ac464*/
     v12 = (HWND)v11; /*0x7ac469*/
     if ( v11 ) /*0x7ac46d*/
     {
@@ -2333,13 +2333,13 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
       {
         v6 = 1; /*0x7aafeb*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7aaff4*/
+      else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7aaff4*/
       {
         v6 = 1; /*0x7aaffd*/
       }
       else
       {
-        v6 = Dialog::FindByHandle((Dialog *)0xC9) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab00d*/
+        v6 = ((Dialog*)((Dialog *)0xC9))->FindByHandle() || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab00d*/
       }
     }
     else
@@ -2389,11 +2389,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
       {
         v6 = 1; /*0x7ab0db*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7ab0e4*/
+      else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7ab0e4*/
       {
         v6 = 1; /*0x7ab0ed*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7ab0f6*/
+      else if ( ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7ab0f6*/
       {
         v6 = 1; /*0x7ab0ff*/
       }
@@ -2445,13 +2445,13 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
       {
         v7 = 1; /*0x7ab1ab*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7ab1b4*/
+      else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7ab1b4*/
       {
         v7 = 1; /*0x7ab1bd*/
       }
       else
       {
-        v7 = Dialog::FindByHandle((Dialog *)0xC9) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab1cd*/
+        v7 = ((Dialog*)((Dialog *)0xC9))->FindByHandle() || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab1cd*/
       }
     }
     else
@@ -2501,11 +2501,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, con
       {
         v7 = 1; /*0x7ab29b*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC2) ) /*0x7ab2a4*/
+      else if ( ((Dialog*)((Dialog *)0xC2))->FindByHandle() ) /*0x7ab2a4*/
       {
         v7 = 1; /*0x7ab2ad*/
       }
-      else if ( Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7ab2b6*/
+      else if ( ((Dialog*)((Dialog *)0xC9))->FindByHandle() ) /*0x7ab2b6*/
       {
         v7 = 1; /*0x7ab2bf*/
       }

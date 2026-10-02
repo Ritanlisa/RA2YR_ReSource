@@ -1950,7 +1950,7 @@ char HandleWOLRematch()
   *(unsigned int *)&v9[1] = 455; /*0x7967e0*/
   if ( !((Network *)((int)&unk_A8E9C0))->SendPacketThunk(0, (int)&v11, (int)&v9[1], (int)v10, (int)v9, 0) || v11 != 25 ) /*0x796803*/
     return 0; /*0x796803*/
-  v3 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x79680e*/
+  v3 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x79680e*/
   if ( v3 ) /*0x796815*/
   {
     DlgItem = GetDlgItem(v3, 1128); /*0x79681f*/
@@ -2390,7 +2390,7 @@ int sub_797640(int a1)
   LABEL_21:
   v3 = 0; /*0x797792*/
   LABEL_22:
-  v4 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x797794*/
+  v4 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x797794*/
   if ( v4 ) /*0x7977a0*/
   {
     dword_B77DC8 = 0; /*0x7977a6*/
@@ -2489,7 +2489,7 @@ ObjectClass * * WOL_FetchData()
   LABEL_25:
       v15 = GetStringCSF(g_Str_TXT_WDT_NET_ERR, 0, g_Str_File_wonline_cpp, 24480); /*0x797a00*/
       ShowDialogConfirm(v15, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x797a20*/
-      v16 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797a2a*/
+      v16 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797a2a*/
       if ( v16 ) /*0x797a31*/
       {
         stru_B77D80.HashTable_field_0x48 = 0; /*0x797a37*/
@@ -2510,7 +2510,7 @@ ObjectClass * * WOL_FetchData()
     switch ( v8 ) /*0x797936*/
     {
       case 0u: /*0x797936*/
-        v9 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797956*/
+        v9 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797956*/
         if ( v9 ) /*0x79795d*/
         {
           stru_B77D80.HashTable_field_0x48 = 0; /*0x797963*/
@@ -2524,7 +2524,7 @@ ObjectClass * * WOL_FetchData()
       case 5u: /*0x797936*/
         v12 = GetStringCSF(g_Str_TXT_WDT_NET_ERR, 0, g_Str_File_wonline_cpp, 24474); /*0x7979ad*/
         ShowDialogConfirm(v12, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7979b6*/
-        v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7979c0*/
+        v13 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x7979c0*/
         if ( v13 ) /*0x7979c7*/
         {
           stru_B77D80.HashTable_field_0x48 = 0; /*0x7979cd*/
@@ -2548,7 +2548,7 @@ ObjectClass * * WOL_FetchData()
   Debug::Log(); /*0x797a8a*/
   if ( v18 ) /*0x797a94*/
   {
-    v19 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797a9b*/
+    v19 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797a9b*/
     if ( v19 ) /*0x797aa2*/
     {
       stru_B77D80.HashTable_field_0x48 = 0; /*0x797aa8*/
@@ -2576,7 +2576,7 @@ ObjectClass * * WOL_FetchData()
       {
         v25 = GetStringCSF(g_Str_TXT_WDT_NET_ERR, 0, g_Str_File_wonline_cpp, 24507); /*0x797b82*/
         ShowDialogConfirm(v25, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x797b8b*/
-        v26 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797b95*/
+        v26 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797b95*/
         if ( v26 ) /*0x797b9c*/
         {
           stru_B77D80.HashTable_field_0x48 = 0; /*0x797ba2*/
@@ -2590,7 +2590,7 @@ ObjectClass * * WOL_FetchData()
       }
       if ( i == 11 ) /*0x797b22*/
       {
-        v29 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797bd6*/
+        v29 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797bd6*/
         if ( v29 ) /*0x797bdd*/
         {
           stru_B77D80.HashTable_field_0x48 = 0; /*0x797be3*/
@@ -2603,7 +2603,7 @@ ObjectClass * * WOL_FetchData()
         return 1; /*0x797c0d*/
       }
     }
-    v23 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x797b2f*/
+    v23 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797b2f*/
     if ( v23 ) /*0x797b36*/
     {
       stru_B77D80.HashTable_field_0x48 = 0; /*0x797b3c*/
@@ -3717,7 +3717,7 @@ LABEL_133:
       unknown_libname_73(&hCtl);
       v76 = GetDlgItem(v5, 1576);
       GetDialogText(v76, (void **)&hCtl);
-      if ( ((String*)((const char **)&hCtl))->Length() && String::Length((const char **)&g_WebBrowserConfig) == 8 )
+      if ( ((String*)((const char **)&hCtl))->Length() && ((String*)((const char **)&g_WebBrowserConfig))->Length() == 8 )
       {
         v77 = GetDlgItem(v5, 1337);
         PostMessageA(v77, 0xF5u, 0, 0);
@@ -3992,7 +3992,7 @@ LABEL_123:
     }
     if ( (uint16_t)v7 == 1698 )
     {
-      if ( Dialog::FindByHandle((void *)0x11D) && dword_B75E4C )
+      if ( ((Dialog*)((void *)0x11D))->FindByHandle() && dword_B75E4C )
       {
         v37 = -2;
         v38 = GetDlgItem(v5, 1698);
@@ -4009,7 +4009,7 @@ LABEL_123:
       switch ( (uint16_t)v7 )
       {
         case 0x62Au:
-          if ( Dialog::FindByHandle((void *)0x11D) && dword_B75E4C )
+          if ( ((Dialog*)((void *)0x11D))->FindByHandle() && dword_B75E4C )
           {
             v31 = GetDlgItem(v5, 1578);
             v32 = SendMessageA(v31, 0x147u, 0, 0);
@@ -4024,7 +4024,7 @@ LABEL_123:
           (*(void (**)(LONG, HWND, int))(*(unsigned int *)WindowLongA + 4))(WindowLongA, v5, 1337);
           return 0;
         case 0x628u:
-          bool v11 = Dialog::FindByHandle((void *)0x11D) != 0;
+          bool v11 = ((Dialog*)((void *)0x11D))->FindByHandle() != 0;
           if ( IDA_HIWORD(v7) == 1 )
           {
             if ( !v11 )
@@ -4158,7 +4158,7 @@ LABEL_44:
           }
           break;
         default:
-          if ( (uint16_t)v7 == 1577 && Dialog::FindByHandle((void *)0x11D) && dword_B75E4C )
+          if ( (uint16_t)v7 == 1577 && ((Dialog*)((void *)0x11D))->FindByHandle() && dword_B75E4C )
           {
             unknown_libname_73(&hCtl);
             v10 = GetDlgItem(v5, 1577);
@@ -4176,7 +4176,7 @@ LABEL_44:
       (*(void (**)(LONG, HWND, int))(*(unsigned int *)WindowLongA + 4))(WindowLongA, v5, 2);
       return 0;
     }
-    if ( (uint16_t)v7 != 1697 || !Dialog::FindByHandle((void *)0x11D) || !dword_B75E4C )
+    if ( (uint16_t)v7 != 1697 || !((Dialog*)((void *)0x11D))->FindByHandle() || !dword_B75E4C )
       return 0;
     v34 = -2;
     v35 = GetDlgItem(v5, 1697);
@@ -5874,7 +5874,7 @@ Coord * * WOL_GameOptionsScreen()
       Sleep(0x64u); /*0x79f240*/
       Game::ProcessIdle(v4); /*0x79f242*/
     }
-    v5 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x79f256*/
+    v5 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x79f256*/
     if ( v5 ) /*0x79f25d*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x40u; /*0x79f268*/
@@ -5994,7 +5994,7 @@ Coord * * WOL_GameOptionsScreen()
         {
           Debug::Log(); /*0x79f441*/
         }
-        v21 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x79f4dc*/
+        v21 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x79f4dc*/
         if ( v21 ) /*0x79f4e3*/
         {
           stru_B77D80.HashTable_field_0x48 = 0; /*0x79f4e9*/
@@ -6213,7 +6213,7 @@ Coord * * WOL_GameOptionsScreen()
       break; /*0x79f3c1*/
     if ( m == 5 ) /*0x79f3ca*/
     {
-      v42 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x79f933*/
+      v42 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x79f933*/
       if ( v42 ) /*0x79f93a*/
       {
         stru_B77D80.HashTable_field_0x48 = 0; /*0x79f940*/
@@ -6233,7 +6233,7 @@ Coord * * WOL_GameOptionsScreen()
     if ( (uint8_t)ObjectClass::Release(&v50) ) /*0x79f3db*/
       goto LABEL_33; /*0x79f3e2*/
   }
-  v38 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x79f8be*/
+  v38 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x79f8be*/
   if ( v38 ) /*0x79f8c5*/
   {
     stru_B77D80.HashTable_field_0x48 = 0; /*0x79f8cb*/
@@ -6456,7 +6456,7 @@ Coord * * WOL_JoinLobby()
               Sleep(0x64u); /*0x7a01d1*/
               Game::ProcessIdle(v20); /*0x7a01d3*/
             }
-            v21 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a01e7*/
+            v21 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x7a01e7*/
             if ( v21 ) /*0x7a01ee*/
             {
               stru_B77D80.HashTable_field_0x48 &= ~0x40u; /*0x7a01f9*/
@@ -6506,7 +6506,7 @@ Coord * * WOL_JoinLobby()
   LABEL_73:
   CloseDialog(*(HWND *)&String2[8], 0); /*0x7a02ce*/
   JoinLobbyWOL_Destroy(v34); /*0x7a02d9*/
-  v25 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a02e3*/
+  v25 = (HWND)((Dialog*)((Dialog *)0x11F))->FindByHandle(); /*0x7a02e3*/
   if ( v25 ) /*0x7a02ea*/
     CloseDialog(v25, 0); /*0x7a02f0*/
   if ( g_WOL_IdleHandler != 11 ) /*0x7a02fc*/
@@ -6532,7 +6532,7 @@ Coord * * WOL_JoinLobby()
       Sleep(0x64u); /*0x7a03aa*/
       Game::ProcessIdle(v28); /*0x7a03ac*/
     }
-    v29 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a03c0*/
+    v29 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x7a03c0*/
     if ( v29 ) /*0x7a03c7*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x40u; /*0x7a03d2*/
@@ -6567,7 +6567,7 @@ char ShowUIMessage(int a1, wchar_t **a2, char a3)
   wchar_t *v11; // eax
   char result; // al
 
-  DialogIndirect = (DLGTEMPLATE *)Dialog::FindByHandle((Dialog *)0xC4); /*0x792bf6*/
+  DialogIndirect = (DLGTEMPLATE *)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x792bf6*/
   if ( DialogIndirect ) /*0x792bfa*/
   {
     dword_B77DC8 |= a1; /*0x792c06*/

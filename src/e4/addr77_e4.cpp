@@ -2514,7 +2514,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   ((String *)((String *)&v23.q4))->AssignFromPtr(v5); /*0x77e923*/
   if ( (uint8_t)((String *)((String *)&v23.q4))->Compare((const char **)&g_WindowManager.__pad_EC[684]) && !a2 ) /*0x77e93c*/
   {
-    v6 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x77e943*/
+    v6 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x77e943*/
     EnablePlayerSlotControls(v6, 1u); /*0x77e94c*/
   }
   owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e951*/
@@ -2679,9 +2679,9 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
   }
   else
   {
-    v11 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x77edb6*/
+    v11 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle(); /*0x77edb6*/
     if ( !v11 ) /*0x77edba*/
-      v11 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x77edc6*/
+      v11 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle(); /*0x77edc6*/
     v12 = *(&dword_A8DA90 + v5); /*0x77edc8*/
     if ( ((SessionClass *)(v12))->GetOption() != a4 ) /*0x77ede1*/
     {
@@ -2858,7 +2858,7 @@ char RequestChannelListWOL()
   LABEL_5:
     if ( v2 == -1 ) /*0x77f1ad*/
     {
-      v5 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x77f227*/
+      v5 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x77f227*/
       if ( v5 ) /*0x77f22e*/
       {
         dword_B77DC8 &= ~1u; /*0x77f239*/
@@ -2879,7 +2879,7 @@ char RequestChannelListWOL()
     ResetEvent(*(&Handles + v2)); /*0x77f1cb*/
     if ( v2 == 5 || !v2 ) /*0x77f1d8*/
     {
-      v8 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x77f280*/
+      v8 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x77f280*/
       if ( v8 ) /*0x77f287*/
       {
         dword_B77DC8 &= ~1u; /*0x77f292*/
@@ -2894,7 +2894,7 @@ char RequestChannelListWOL()
     }
     if ( v2 == 3 ) /*0x77f1e1*/
     {
-      v11 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x77f2cc*/
+      v11 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x77f2cc*/
       if ( v11 ) /*0x77f2d3*/
       {
         dword_B77DC8 &= ~1u; /*0x77f2de*/

@@ -310,7 +310,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   memset(&this->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/
   *(unsigned short *)&this->__pad_10[20] = 0; /*0x6d1d77*/
   *(unsigned int *)&this->__pad_34[112] = -1; /*0x6d1d7d*/
-  Matrix3x4::Identity((Matrix3x4 *)&this->Tactical_field_0xDB4); /*0x6d1d87*/
+  ((Matrix3x4*)((Matrix3x4 *)&this->Tactical_field_0xDB4))->Identity(); /*0x6d1d87*/
   v3 = dbl_B0CD88; /*0x6d1d95*/
   ((Matrix3x3 *)((int *)&this->Tactical_field_0xDB4))->RotateX(v3); /*0x6d1d98*/
   v4 = dbl_B0CE98; /*0x6d1da6*/

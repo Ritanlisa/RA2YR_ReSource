@@ -67,7 +67,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      if ( CChatEventSink::Check((CChatEventSink *)&stru_B76510.StringVector_field_0x10, &v33[8], 0) ) /*0x7aa8e4*/
+      if ( ((CChatEventSink*)((CChatEventSink *)&stru_B76510.StringVector_field_0x10))->Check(&v33[8], 0) ) /*0x7aa8e4*/
         CChatEventSink::EnsureCapacity((CChatEventSink *)&stru_B76510.StringVector_field_0x10, 0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {

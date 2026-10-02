@@ -265,13 +265,13 @@ int Dialog::RefreshDialogsGame()
 
   if ( this ) /*0x5ee352*/
     UpdateObserveButtonWOL((ObjectClass *)this); /*0x5ee354*/
-  v1 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x5ee35e*/
+  v1 = (ObjectClass *)((Dialog*)((Dialog *)0x116))->FindByHandle(); /*0x5ee35e*/
   if ( v1 ) /*0x5ee365*/
     UpdateObserveButtonWOL(v1); /*0x5ee369*/
-  v2 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x113); /*0x5ee373*/
+  v2 = (ObjectClass *)((Dialog*)((Dialog *)0x113))->FindByHandle(); /*0x5ee373*/
   if ( v2 ) /*0x5ee37a*/
     UpdateObserveButtonWOL(v2); /*0x5ee37e*/
-  result = Dialog::FindByHandle((Dialog *)0xBB); /*0x5ee388*/
+  result = ((Dialog*)((Dialog *)0xBB))->FindByHandle(); /*0x5ee388*/
   if ( result ) /*0x5ee38f*/
     UpdateObserveButtonWOL((ObjectClass *)result); /*0x5ee393*/
   return result; /*0x5ee398*/
@@ -3105,13 +3105,13 @@ int Dialog::FindGameUI()
 
   int result; // eax
 
-  result = Dialog::FindByHandle((void *)0xC2); /*0x5e26c5*/
+  result = ((Dialog*)((void *)0xC2))->FindByHandle(); /*0x5e26c5*/
   if ( !result ) /*0x5e26cc*/
   {
-    result = Dialog::FindByHandle((void *)0xC9); /*0x5e26d3*/
+    result = ((Dialog*)((void *)0xC9))->FindByHandle(); /*0x5e26d3*/
     if ( !result ) /*0x5e26da*/
     {
-      result = Dialog::FindByHandle((void *)0xBC); /*0x5e26e1*/
+      result = ((Dialog*)((void *)0xBC))->FindByHandle(); /*0x5e26e1*/
       if ( !result ) /*0x5e26e8*/
         return Dialog::FindByHandle((void *)0xBD); /*0x5e26ef*/
     }

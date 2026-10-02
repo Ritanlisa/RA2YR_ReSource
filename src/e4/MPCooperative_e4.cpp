@@ -3076,7 +3076,7 @@ char MPCooperative::ValidateSettings()
   HWND GameUI; // eax
 
   GameUI = (HWND)Dialog::FindGameUI(); /*0x5c2cb3*/
-  if ( GameUI || (GameUI = (HWND)Dialog::FindByHandle((Dialog *)0xBC6)) != 0 ) /*0x5c2cc8*/
+  if ( GameUI || (GameUI = (HWND)((Dialog*)((Dialog *)0xBC6))->FindByHandle()) != 0 ) /*0x5c2cc8*/
     CampaignCoop::Setup((CampaignCoop *)this, GameUI, 1); /*0x5c2ccf*/
   return 1; /*0x5c2cd6*/
 

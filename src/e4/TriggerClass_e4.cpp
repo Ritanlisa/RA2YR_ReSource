@@ -140,8 +140,8 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
           Owner = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(*((unsigned int *)this + 9) + 164) + 180)))->FindOwner(),
           ((TEventClass *)((TEventClass *)v8))->Execute((int)(aP1), Owner,(int)(aP2), (int *)((char *)this + 52), (int)&a5, v11)) )
     {
-      if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        *((unsigned int *)this + 11) = (unsigned int)(TriggerClass::GetValue(v8)); /*0x726561*/
+      if ( ((TriggerClass*)v8)->GetValue() ) /*0x726551*/
+        *((unsigned int *)this + 11) = (unsigned int)(((TriggerClass*)v8)->GetValue()); /*0x726561*/
       if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
         *((unsigned int *)this + 16) |= 1 << v7; /*0x726582*/
     }

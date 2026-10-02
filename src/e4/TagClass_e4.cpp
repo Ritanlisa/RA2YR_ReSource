@@ -265,14 +265,14 @@ int TagClass::Unlink()
   {
     if ( *(TagClass **)(v2 + 64) == this ) /*0x71ae05*/
       *(unsigned int *)(v2 + 64) = 0; /*0x71ae07*/
-    TagClass::Unlink(*((TagClass **)this + 17)); /*0x71ae0d*/
+    ((TagClass*)(*((TagClass **)this + 17)))->Unlink(); /*0x71ae0d*/
   }
   result = *((unsigned int *)this + 16); /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
     if ( *(TagClass **)(result + 68) == this ) /*0x71ae1c*/
       *(unsigned int *)(result + 68) = 0; /*0x71ae1e*/
-    result = (int)(TagClass::Unlink(*((TagClass **)this + 16))); /*0x71ae24*/
+    result = (int)(((TagClass*)(*((TagClass **)this + 16)))->Unlink()); /*0x71ae24*/
   }
   buildingType = this->buildingType; /*0x71ae29*/
   *((unsigned int *)this + 17) = 0; /*0x71ae2c*/

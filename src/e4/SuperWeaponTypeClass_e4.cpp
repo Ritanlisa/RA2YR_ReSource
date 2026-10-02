@@ -212,7 +212,7 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass
 }
 // 0x5113F0
 namespace gamemd {
-int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int SuperWeaponTypeClass::Construct(char *aP1)
 {
 
   BuildingTypeClass *v3; // ebx
@@ -664,14 +664,14 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
   if ( !((INIClass*)((INIClass *)this))->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475563*/
 return (int)aP3; /*0x4755f8*/
   v4 = (void *)PlayerSlot::NameToDialogID(Destination); /*0x475579*/
-  if ( (uint8_t)BuildingType::IsSpecialType(v4) ) /*0x47557d*/
+  if ( (uint8_t)((BuildingType*)v4)->IsSpecialType() ) /*0x47557d*/
     return (int)v4; /*0x475586*/
   result = ((SuperWeaponTypeClass *)((SuperWeaponTypeClass *)Destination))->FindByName(); /*0x475596*/
   if ( result == -1 ) /*0x47559e*/
   {
     v6 = (SuperWeaponTypeClass *)__2_YAPAXI_Z(0x1B0u); /*0x4755a5*/
     if ( v6 ) /*0x4755af*/
-      v7 =(unsigned char *)SuperWeaponTypeClass::Construct(v6, Destination); /*0x4755b8*/
+      v7 =(unsigned char *)((SuperWeaponTypeClass*)v6)->Construct(Destination); /*0x4755b8*/
     else
       v7 = 0; /*0x4755bf*/
     v8 = 0; /*0x4755c7*/

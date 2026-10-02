@@ -528,7 +528,7 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x74b82a*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
+      ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x74b833*/
       aP0->vtable1 = &vt_VoxelAnimTypeClass; /*0x74b838*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b83e*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b845*/

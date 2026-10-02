@@ -2116,7 +2116,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
   }
   while ( !*v3 && !v3[1] /*0x58c67e*/
        || ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)v6 + 18, 0, 0) != a2
-       || !Cell::IsEmpty(v7)
+       || !((Cell*)v7)->IsEmpty()
        || a3 != -1 && *((unsigned int *)v3 + 14) != a3 );
   *a1 = *(unsigned int *)v3; /*0x58c6ac*/
   return a1; /*0x58c697*/

@@ -834,8 +834,8 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
   {
     if ( a3 ) /*0x5140a0*/
       *a3 = -1; /*0x5140a2*/
-    Matrix3x4::Identity(&v39); /*0x5140af*/
-    Matrix3x4::Identity(&v37); /*0x5140b8*/
+    ((Matrix3x4*)&v39)->Identity(); /*0x5140af*/
+    ((Matrix3x4*)&v37)->Identity(); /*0x5140b8*/
     v11 = *(double *)((*(int (**)(int))(*(unsigned int *)a1->vtable2 + 132))(a1->vtable2) + 864); /*0x5140cb*/
     v29 = v11; /*0x5140d3*/
     v31 = *(double *)((*(int (**)(int))(*(unsigned int *)a1->vtable2 + 132))(a1->vtable2) + 872); /*0x5140e9*/
@@ -2510,7 +2510,7 @@ int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
     return ((Property *)(a0))->GetField11(); /*0x6e45fa*/
   if ( aP1 == (void *)-1 ) /*0x6e4606*/
     return 0; /*0x6e4608*/
-  if ( BuildingType::IsSpecialType(aP1) ) /*0x6e4610*/
+  if ( ((BuildingType*)aP1)->IsSpecialType() ) /*0x6e4610*/
     return BuildingType::FindOwnerHouse(aP1); /*0x6e461b*/
   return ((HouseClass *)(aP1))->FindOwner(); /*0x6e45ea*/
 

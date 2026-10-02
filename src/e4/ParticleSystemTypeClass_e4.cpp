@@ -379,7 +379,7 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
-    ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
+    ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x6447ff*/
     aP0->ParticleSystemTypeClass_field_0x0 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x644804*/
     aP0->ParticleSystemTypeClass_field_0x4 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x64480a*/
     aP0->ParticleSystemTypeClass_field_0x8 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x644811*/

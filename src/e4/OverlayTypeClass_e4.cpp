@@ -245,7 +245,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( a1 ) /*0x5feb13*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
+      ((ObjectTypeClass*)((ObjectTypeClass *)a1))->Construct((int)v3); /*0x5feb1c*/
       a1->vtable1 = &vt_OverlayTypeClass; /*0x5feb21*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb27*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb2e*/

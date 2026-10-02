@@ -77,7 +77,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
-  if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
+  if ( !((GadgetClass*)((GadgetClass *)this))->ClearState(aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
   (*(void (**)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
     stru_887598.lineTrailer,

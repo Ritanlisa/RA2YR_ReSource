@@ -954,7 +954,7 @@ LABEL_3:
   while ( (int)v22 < (int)&stru_B1D188[77041] );
   *(float *)&stru_87C374[45224] = 0.95990276;
   stru_87C374[45220] = 1;
-  Matrix3x4::Identity(&stru_87C374[45244]);
+  ((Matrix3x4*)(&stru_87C374[45244]))->Identity();
   Voxel::SetProjectionAngle(0.785375);
   dword_B43184 = 1;
   dword_B43180 = 0;

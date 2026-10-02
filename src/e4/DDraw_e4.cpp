@@ -149,7 +149,7 @@ int DDraw::CleanupSurfaces()
   v1 = (gamemd::StructTable *)(dword_8A0E10);
   if ( dword_8A0E10 ) /*0x4c19bc*/
   {
-    DDraw::Init((DDraw *)dword_8A0E10); /*0x4c19c0*/
+    ((DDraw*)((DDraw *)dword_8A0E10))->Init(); /*0x4c19c0*/
     __3_YAXPAX_Z(v1); /*0x4c19c6*/
     dword_8A0E10 = 0; /*0x4c19ce*/
   }

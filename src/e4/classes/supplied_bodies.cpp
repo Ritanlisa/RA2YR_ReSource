@@ -224,7 +224,7 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int *a2) {
     v6[0] = *ScenarioClassActionCoords; /*0x634416*/
     v6[1] = ScenarioClassActionCoords[1]; /*0x63441d*/
     v6[2] = ScenarioClassActionCoords[2]; /*0x634434*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x634438*/
+    ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x634438*/
     v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x634452*/
     *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x634458*/
     a2[1] = (unsigned int)(v3); /*0x63445a*/
@@ -680,7 +680,7 @@ char ScriptAction::ProcessIdleAction() {
     v74[0] = *v4; /*0x63b576*/
     v74[1] = v4[1]; /*0x63b580*/
     v74[2] = v4[2]; /*0x63b59d*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, v74, &v61); /*0x63b5a4*/
+    ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(v74, &v61); /*0x63b5a4*/
     v62 += (int)DSurface_ViewBounds.field_4; /*0x63b5c1*/
     v60.Coord3D_field_0x04 = v62; /*0x63b5c5*/
     v61 += DSurface_ViewBounds.field_0; /*0x63b5ce*/
@@ -732,7 +732,7 @@ char ScriptAction::ProcessIdleAction() {
       }
       v68 = Coord3D_field_0x08; /*0x63b704*/
       v67 = *(Coord2D *)v55.__pad_0; /*0x63b708*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v67, &v57); /*0x63b720*/
+      ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(&v67, &v57); /*0x63b720*/
       v13 = (char *)DSurface_ViewBounds.field_4 + v58; /*0x63b739*/
       v14 = (ArrayClass *)(DSurface_ViewBounds.field_0 + v57); /*0x63b73f*/
       v58 += (int)DSurface_ViewBounds.field_4; /*0x63b741*/
@@ -797,7 +797,7 @@ char ScriptAction::ProcessIdleAction() {
           v64 = v23[1]; /*0x63b86f*/
           v65 = v23[2]; /*0x63b878*/
           v66 = v23[3]; /*0x63b886*/
-          Rect::Set(&v73, v21, v22, 21, 21); /*0x63b88a*/
+          ((Rect*)&v73)->Set(v21, v22, 21, 21); /*0x63b88a*/
           (*(void (__thiscall **)(AudioStream *, int *, Rect *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63b8a5*/
                                                                                 + 84))(
             DSurface_Composite,
@@ -824,7 +824,7 @@ char ScriptAction::ProcessIdleAction() {
     v63 = *v29; /*0x63b957*/
     v64 = v29[1]; /*0x63b95e*/
     v65 = v29[2]; /*0x63b975*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v63, &v57); /*0x63b979*/
+    ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(&v63, &v57); /*0x63b979*/
     v30 = this->__pad_78[9]; /*0x63b992*/
     v31 = DSurface_ViewBounds.field_0 + v57; /*0x63b998*/
     v32 = (char *)DSurface_ViewBounds.field_4 + v58; /*0x63b99a*/
@@ -888,7 +888,7 @@ char ScriptAction::ProcessIdleAction() {
           v41 = (*(unsigned int *)v55.__pad_0 + *(unsigned int *)v67.__pad_0) / 2 - 10; /*0x63bb61*/
           v42 = (v67.Coord2D_field_0x04 + v55.Coord3D_field_0x04) / 2 - 10; /*0x63bb64*/
           v73 = *(Rect *)Display::GetViewport(&v61); /*0x63bb6e*/
-          Rect::Set(&v72, v41, v42, 21, 21); /*0x63bba0*/
+          ((Rect*)&v72)->Set(v41, v42, 21, 21); /*0x63bba0*/
           (*(void (__thiscall **)(AudioStream *, Rect *, Rect *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63bbbb*/
                                                                                  + 84))(
             DSurface_Composite,
@@ -912,7 +912,7 @@ char ScriptAction::ProcessIdleAction() {
     if ( v54 ) /*0x63bc43*/
     {
       v55 = *(Coord3D *)(*(int (__thiscall **)(ScriptAction *, Coord2D *))(*(unsigned int *)this->__pad_0 + 1208))(this, &v67); /*0x63bc5b*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v55, (int *)v60.__pad_0); /*0x63bc7d*/
+      ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(&v55, (int *)v60.__pad_0); /*0x63bc7d*/
       v45 = DSurface_ViewBounds.field_0 + *(unsigned int *)v60.__pad_0; /*0x63bc98*/
       v60.Coord3D_field_0x04 += (int)DSurface_ViewBounds.field_4; /*0x63bc9a*/
       DrawTacticalFillScanline( /*0x63bcad*/
@@ -991,7 +991,7 @@ int ScriptAction::DrawPlacementMarker() {
     v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
     v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
     v9[2] = ScenarioClassActionCoords[2]; /*0x63cea3*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, v9, v8); /*0x63cea7*/
+    ((Coord*)((Coord *)g_TacticalClass_Instance))->To_Screen(v9, v8); /*0x63cea7*/
     v8[0] += DSurface_ViewBounds.field_0; /*0x63cec7*/
     v11[0] = v8[0] - 4 + 1; /*0x63cedb*/
     v11[1] = (char *)DSurface_ViewBounds.field_4 + v8[1] - 3; /*0x63cedf*/

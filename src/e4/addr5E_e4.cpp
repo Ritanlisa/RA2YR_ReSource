@@ -903,8 +903,8 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
             *(unsigned short *)&v198[26] = aP0_160.sectionHead[v27 / 4 + 3];
             *(unsigned int *)(v27 + *(unsigned int *)&(&HouseClass_Player)[29924] + 4540) = *(unsigned int *)&v198[24];
           }
-          eax42 = (HWND)Dialog::FindByHandle((void *)0xC9);
-          if ( eax42 || (eax42 = (HWND)Dialog::FindByHandle((void *)0xBD)) != 0 )
+          eax42 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
+          if ( eax42 || (eax42 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle()) != 0 )
             InvalidateRect(eax42, 0, 0);
         }
       }
@@ -913,8 +913,8 @@ LABEL_102:
       free(*(void **)v198);
       return 0;
     case 'O':
-      v31 = (VectorClass_flat *)Dialog::FindByHandle((void *)0xC9);
-      if ( v31 || (v31 = (VectorClass_flat *)Dialog::FindByHandle((void *)0xBD)) != 0 )
+      v31 = (VectorClass_flat *)((Dialog*)((void *)0xC9))->FindByHandle();
+      if ( v31 || (v31 = (VectorClass_flat *)((Dialog*)((void *)0xBD))->FindByHandle()) != 0 )
       {
         al49 = v5[1];
         v33 = *(INIClass **)&(&stru_830620)[4228];
@@ -1068,7 +1068,7 @@ LABEL_101:
         DeleteAndZero((int)&v198[24]);
         v76 = WideString::GetOrEmpty((wchar_t **)&v198[32]);
         NetworkLobby::SetupPlayers((wchar_t *)v76);
-        v77 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v77 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( v77 )
         {
           if ( !*(unsigned int *)&HouseClass_Player[40248] )
@@ -1304,7 +1304,7 @@ LABEL_171:
         ((DeleteAndZero*)((void **)&v198[32]))->Alt();
         return 0;
       case 'G':
-        if ( Dialog::FindByHandle((void *)0xC9) )
+        if ( ((Dialog*)((void *)0xC9))->FindByHandle() )
         {
           HouseClass_Player[40292] = 1;
           if ( *(&g_MatrixTransformState + 2263) )
@@ -1314,7 +1314,7 @@ LABEL_171:
         }
         goto LABEL_101;
       case 'K':
-        if ( Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xBC) )
+        if ( ((Dialog*)((void *)0xC2))->FindByHandle() || Dialog::FindByHandle((void *)0xBC) )
         {
           if ( v5[1] == 49 )
           {
@@ -1377,15 +1377,15 @@ LABEL_171:
     *(unsigned int *)&v198[32] = CurrentType;
     if ( CurrentType != 188 && CurrentType != 189 )
     {
-      v109 = (HWND)Dialog::FindByHandle((void *)0xC2);
+      v109 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v109 )
       {
-        v109 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v109 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v109 )
         {
-          v109 = (HWND)Dialog::FindByHandle((void *)0xBC);
+          v109 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v109 )
-            v109 = (HWND)Dialog::FindByHandle((void *)0xBD);
+            v109 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       SendDlgItemMessageA(v109, 1342, 0x49Du, 0, 1);
@@ -1506,15 +1506,15 @@ LABEL_171:
       v198[23] = 0;
     if ( *(unsigned int *)&v198[32] == 189 || *(unsigned int *)&v198[32] == 201 )
     {
-      v136 = (SkirmishDialog *)Dialog::FindByHandle((void *)0xC2);
+      v136 = (SkirmishDialog *)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v136 )
       {
-        v136 = (SkirmishDialog *)Dialog::FindByHandle((void *)0xC9);
+        v136 = (SkirmishDialog *)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v136 )
         {
-          v136 = (SkirmishDialog *)Dialog::FindByHandle((void *)0xBC);
+          v136 = (SkirmishDialog *)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v136 )
-            v136 = (SkirmishDialog *)Dialog::FindByHandle((void *)0xBD);
+            v136 = (SkirmishDialog *)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       UI_Setup_5EBDD0(v136, *(int *)&v198[44], *(int *)&HouseClass_Player[32192], esi338);
@@ -1591,15 +1591,15 @@ LABEL_519:
       (*((void (**)(wchar_t **))*ebp366 + 31))(ebp366);
       NetworkLobby::FillOptionCombo();
     }
-    v141 = (HWND)Dialog::FindByHandle((void *)0xC2);
+    v141 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
     if ( !v141 )
     {
-      v141 = (HWND)Dialog::FindByHandle((void *)0xC9);
+      v141 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
       if ( !v141 )
       {
-        v141 = (HWND)Dialog::FindByHandle((void *)0xBC);
+        v141 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
         if ( !v141 )
-          v141 = (HWND)Dialog::FindByHandle((void *)0xBD);
+          v141 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
       }
     }
     v142 = GetDlgItem;
@@ -1630,38 +1630,38 @@ LABEL_519:
     Debug::Log();
     if ( HouseClass_Player[32188] && !v198[31] && _strcmpi(&HouseClass_Player[31636], aRandmapSed) )
     {
-      if ( Dialog::FindByHandle((void *)0xC2)
-        || Dialog::FindByHandle((void *)0xC9)
-        || Dialog::FindByHandle((void *)0xBC)
-        || Dialog::FindByHandle((void *)0xBD) )
+      if ( ((Dialog*)((void *)0xC2))->FindByHandle()
+        || ((Dialog*)((void *)0xC9))->FindByHandle()
+        || ((Dialog*)((void *)0xBC))->FindByHandle()
+        || ((Dialog*)((void *)0xBD))->FindByHandle() )
       {
         *(unsigned int *)v198 = 11055906;
         v147 = GetStringCSF((wchar_t *)&stru_830620[4688], 0, &stru_830620[4536], 2068);
         Dialog::ShowMessage((ObjectClass *)0xFFFFFFFF, (CampaignScore *)v147, *(ObjectClass *)v198);
       }
       *((unsigned char *)&g_MatrixTransformState + 9138) = 0;
-      v148 = (HWND)Dialog::FindByHandle((void *)0xC2);
+      v148 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v148 )
       {
-        v148 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v148 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v148 )
         {
-          v148 = (HWND)Dialog::FindByHandle((void *)0xBC);
+          v148 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v148 )
-            v148 = (HWND)Dialog::FindByHandle((void *)0xBD);
+            v148 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       v149 = v142(v148, 1439);
       EnableWindow(v149, 0);
-      v150 = (HWND)Dialog::FindByHandle((void *)0xC2);
+      v150 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v150 )
       {
-        v150 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v150 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v150 )
         {
-          v150 = (HWND)Dialog::FindByHandle((void *)0xBC);
+          v150 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v150 )
-            v150 = (HWND)Dialog::FindByHandle((void *)0xBD);
+            v150 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       v151 = v142(v150, 1439);
@@ -1671,28 +1671,28 @@ LABEL_519:
     else
     {
       *((unsigned char *)&g_MatrixTransformState + 9138) = 1;
-      v153 = (HWND)Dialog::FindByHandle((void *)0xC2);
+      v153 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v153 )
       {
-        v153 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v153 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v153 )
         {
-          v153 = (HWND)Dialog::FindByHandle((void *)0xBC);
+          v153 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v153 )
-            v153 = (HWND)Dialog::FindByHandle((void *)0xBD);
+            v153 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       v154 = v142(v153, 1439);
       EnableWindow(v154, 1);
-      v155 = (HWND)Dialog::FindByHandle((void *)0xC2);
+      v155 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
       if ( !v155 )
       {
-        v155 = (HWND)Dialog::FindByHandle((void *)0xC9);
+        v155 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
         if ( !v155 )
         {
-          v155 = (HWND)Dialog::FindByHandle((void *)0xBC);
+          v155 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
           if ( !v155 )
-            v155 = (HWND)Dialog::FindByHandle((void *)0xBD);
+            v155 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
         }
       }
       v156 = v142(v155, 1439);
@@ -1705,10 +1705,10 @@ LABEL_519:
       }
       else
       {
-        if ( Dialog::FindByHandle((void *)0xC2)
-          || Dialog::FindByHandle((void *)0xC9)
-          || Dialog::FindByHandle((void *)0xBC)
-          || Dialog::FindByHandle((void *)0xBD) )
+        if ( ((Dialog*)((void *)0xC2))->FindByHandle()
+          || ((Dialog*)((void *)0xC9))->FindByHandle()
+          || ((Dialog*)((void *)0xBC))->FindByHandle()
+          || ((Dialog*)((void *)0xBD))->FindByHandle() )
         {
           *(unsigned int *)v198 = 11055906;
           v157 = GetStringCSF((wchar_t *)&stru_830620[4660], 0, &stru_830620[4536], 2084);
@@ -1718,15 +1718,15 @@ LABEL_519:
       }
     }
     Network::SendOptionsGame(v152);
-    v158 = (HWND)Dialog::FindByHandle((void *)0xC2);
+    v158 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
     if ( !v158 )
     {
-      v158 = (HWND)Dialog::FindByHandle((void *)0xC9);
+      v158 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
       if ( !v158 )
       {
-        v158 = (HWND)Dialog::FindByHandle((void *)0xBC);
+        v158 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
         if ( !v158 )
-          v158 = (HWND)Dialog::FindByHandle((void *)0xBD);
+          v158 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
       }
     }
     Session::PrepareGame(v158);
@@ -1825,15 +1825,15 @@ LABEL_463:
       free(*(void **)&v198[40]);
       if ( *(unsigned int *)&HouseClass_Player[29932] != 4 || !UI_Setup_77CF40() )
       {
-        v191 = (HWND)Dialog::FindByHandle((void *)0xC2);
+        v191 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
         if ( !v191 )
         {
-          v191 = (HWND)Dialog::FindByHandle((void *)0xC9);
+          v191 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
           if ( !v191 )
           {
-            v191 = (HWND)Dialog::FindByHandle((void *)0xBC);
+            v191 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
             if ( !v191 )
-              v191 = (HWND)Dialog::FindByHandle((void *)0xBD);
+              v191 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
           }
         }
         InitSkirmishDialogControls(v191, 0);
@@ -1860,15 +1860,15 @@ LABEL_463:
         SendMultiplayerStartSignal();
       if ( *(unsigned int *)&v198[32] != 188 && *(unsigned int *)&v198[32] != 189 )
       {
-        v192 = (HWND)Dialog::FindByHandle((void *)0xC2);
+        v192 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle();
         if ( !v192 )
         {
-          v192 = (HWND)Dialog::FindByHandle((void *)0xC9);
+          v192 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
           if ( !v192 )
           {
-            v192 = (HWND)Dialog::FindByHandle((void *)0xBC);
+            v192 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle();
             if ( !v192 )
-              v192 = (HWND)Dialog::FindByHandle((void *)0xBD);
+              v192 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
           }
         }
         SendDlgItemMessageA(v192, 1342, 0x49Du, 0, 0);
@@ -2735,15 +2735,15 @@ LABEL_32:
   (*(void (**)(LRESULT))(*(unsigned int *)v7 + 24))(v7); /*0x5e739a*/
   (*(void (**)(LRESULT))(*(unsigned int *)v7 + 124))(v7); /*0x5e73a1*/
   CloseDialog((HWND)this, 1); /*0x5e73ad*/
-  v20 = (HWND)Dialog::FindByHandle((Dialog *)0xC2); /*0x5e73bc*/
+  v20 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e73bc*/
   if ( !v20 ) /*0x5e73c0*/
   {
-    v20 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e73cc*/
+    v20 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x5e73cc*/
     if ( !v20 ) /*0x5e73d0*/
     {
-      v20 = (HWND)Dialog::FindByHandle((Dialog *)0xBC); /*0x5e73dc*/
+      v20 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5e73dc*/
       if ( !v20 ) /*0x5e73e0*/
-        v20 = (HWND)Dialog::FindByHandle((Dialog *)0xBD); /*0x5e73ec*/
+        v20 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5e73ec*/
     }
   }
   if ( v7 ) /*0x5e73f6*/
@@ -5330,11 +5330,11 @@ int Lobby_RefreshPlayerSlots(unsigned int a1)
   char *v12; // [esp+8h] [ebp-8h]
   int v13; // [esp+Ch] [ebp-4h]
 
-  v2 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5ee521*/
+  v2 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle(); /*0x5ee521*/
   if ( v2 /*0x5ee555*/
-    || (v2 = (HWND)Dialog::FindByHandle((void *)0xC9)) != 0
-    || (v2 = (HWND)Dialog::FindByHandle((void *)0xBC)) != 0
-    || (result = Dialog::FindByHandle((void *)0xBD), (v2 = (HWND)result) != 0) )
+    || (v2 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle()) != 0
+    || (v2 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle()) != 0
+    || (result = ((Dialog*)((void *)0xBD))->FindByHandle(), (v2 = (HWND)result) != 0) )
   {
     result = dword_A8B23C; /*0x5ee55b*/
     if ( dword_A8B23C ) /*0x5ee562*/
@@ -5984,7 +5984,7 @@ void E4Recv_5EE200::UpdateObserveButtonWOL(HWND hDlg)
       {
         v9 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6762); /*0x5ee2f5*/
       }
-      else if ( (ObjectClass *)Dialog::FindByHandle((Dialog *)0x113) == hDlg ) /*0x5ee303*/
+      else if ( (ObjectClass *)((Dialog*)((Dialog *)0x113))->FindByHandle() == hDlg ) /*0x5ee303*/
       {
         v9 = GetStringCSF((wchar_t *)aGuiJoingame, 0, g_Str_File_netshare_cpp, 6766); /*0x5ee316*/
       }

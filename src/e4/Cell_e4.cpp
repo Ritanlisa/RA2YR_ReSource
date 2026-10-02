@@ -1398,7 +1398,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
         return 0; /*0x57b2b9*/
     }
   }
-  else if ( !(uint8_t)Cell::IsEmpty((Cell *)aP1) ) /*0x57b289*/
+  else if ( !(uint8_t)((Cell*)((Cell *)aP1))->IsEmpty() ) /*0x57b289*/
   {
     return 0; /*0x57b29b*/
   }

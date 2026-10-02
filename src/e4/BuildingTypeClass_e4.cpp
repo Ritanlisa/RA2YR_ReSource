@@ -1587,7 +1587,7 @@ LABEL_15:
             if ( (void *)result != ((unsigned int *)this)[0] && result != v12 ) /*0x59413b*/
               break; /*0x59413b*/
             v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x594147*/
-            result = Cell::IsEmpty(v14); /*0x59414e*/
+            result = ((Cell*)v14)->IsEmpty(); /*0x59414e*/
             if ( !(unsigned char)result ) /*0x594155*/
               break; /*0x594155*/
             ++v13; /*0x59415c*/

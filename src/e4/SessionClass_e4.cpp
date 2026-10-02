@@ -480,7 +480,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
               {
                 v36 = __2_YAPAXI_Z(0x10u); /*0x5cf4e4*/
                 if ( v36 ) /*0x5cf4ee*/
-                  v37 = (ObjectClass *)Audio::ParseVolume(v36, (const char **)&v43, (const char **)&((char *)&v43)); /*0x5cf501*/
+                  v37 = (ObjectClass *)((Audio*)v36)->ParseVolume((const char **)&v43, (const char **)&((char *)&v43)); /*0x5cf501*/
                 else
                   v37 = 0; /*0x5cf505*/
                 if ( (uint8_t)((String *)((String *)v37))->Equals_Alt(0) ) /*0x5cf50b*/

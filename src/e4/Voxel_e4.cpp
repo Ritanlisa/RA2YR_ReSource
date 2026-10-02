@@ -402,7 +402,7 @@ int Voxel::Projection_Setup()
   v69[0] = 0.0; /*0x754ef6*/
   v69[1] = -1.0; /*0x754f01*/
   v69[2] = 0.0; /*0x754f0c*/
-  Matrix3x4::Identity(&stru_B43F10); /*0x754f17*/
+  ((Matrix3x4*)&stru_B43F10)->Identity(); /*0x754f17*/
   v11 = v65; /*0x754f1c*/
   qmemcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
   qmemcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
@@ -453,10 +453,10 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B44438, v57, v27); /*0x7552d5*/
   v28 = FromQuaternionAxisAngle(v58, v69, v11); /*0x7552e6*/
   Float4::Copy(flt_B44448, v57, v28); /*0x7552f6*/
-  Matrix3x4::Identity(&stru_B44240); /*0x755300*/
-  Matrix3x4::Identity(&stru_B44270); /*0x75530a*/
-  Matrix3x4::Identity(&stru_B442A0); /*0x755314*/
-  Matrix3x4::Identity(&stru_B442D0); /*0x75531e*/
+  ((Matrix3x4*)&stru_B44240)->Identity(); /*0x755300*/
+  ((Matrix3x4*)&stru_B44270)->Identity(); /*0x75530a*/
+  ((Matrix3x4*)&stru_B442A0)->Identity(); /*0x755314*/
+  ((Matrix3x4*)&stru_B442D0)->Identity(); /*0x75531e*/
   v29 = 0; /*0x755323*/
   ((Int4 *)(&stru_B44458))->Set2(0, 0, 0, 1065353216); /*0x755332*/
   ((Int4 *)(&stru_B44468))->Set2(0, 0, 0, 1065353216); /*0x755344*/
@@ -465,7 +465,7 @@ int Voxel::Projection_Setup()
   v65 = 0.0; /*0x75536d*/
   do /*0x755459*/
   {
-    Matrix3x4::Identity(&v76); /*0x755378*/
+    ((Matrix3x4*)&v76)->Identity(); /*0x755378*/
     v54 = (double)SLODWORD(v65) * 0.024542969; /*0x75538f*/
     ((Matrix2D *)(v76.m_Data))->Rotate(v54); /*0x755392*/
     v62 = 1065353216; /*0x7553a7*/
@@ -494,7 +494,7 @@ int Voxel::Projection_Setup()
     ++LODWORD(v65); /*0x755455*/
   }
   while ( v29 < 768 ); /*0x755459*/
-  Matrix3x4::Identity(&stru_B45188); /*0x755464*/
+  ((Matrix3x4*)&stru_B45188)->Identity(); /*0x755464*/
   qmemcpy(&unk_B451B8, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755485*/
   qmemcpy(&unk_B451E8, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x7554a2*/
   qmemcpy(&unk_B45218, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x7554bf*/
@@ -544,22 +544,22 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B43278, v57, v50); /*0x75582c*/
   v51 = FromQuaternionAxisAngle(v58, v71, v11); /*0x75583d*/
   Float4::Copy(flt_B43288, v57, v51); /*0x75584d*/
-  Matrix3x4::Identity(&stru_B454B8); /*0x755857*/
-  Matrix3x4::Identity(&stru_B454E8); /*0x755861*/
-  Matrix3x4::Identity(&stru_B45518); /*0x75586b*/
-  Matrix3x4::Identity(&stru_B45548); /*0x755875*/
+  ((Matrix3x4*)&stru_B454B8)->Identity(); /*0x755857*/
+  ((Matrix3x4*)&stru_B454E8)->Identity(); /*0x755861*/
+  ((Matrix3x4*)&stru_B45518)->Identity(); /*0x75586b*/
+  ((Matrix3x4*)&stru_B45548)->Identity(); /*0x755875*/
   ((Int4 *)(&stru_B43298))->Set2(0, 0, 0, 1065353216); /*0x75588a*/
   ((Int4 *)(&stru_B432A8))->Set2(0, 0, 0, 1065353216); /*0x75589f*/
   ((Int4 *)(&stru_B432B8))->Set2(0, 0, 0, 1065353216); /*0x7558b4*/
   ((Int4 *)(&stru_B432C8))->Set2(0, 0, 0, 1065353216); /*0x7558c9*/
-  Matrix3x4::Identity(&stru_B44318); /*0x7558d3*/
+  ((Matrix3x4*)&stru_B44318)->Identity(); /*0x7558d3*/
   v55 = -dbl_B43F00; /*0x7558e6*/
   ((Matrix3x3 *)(stru_B44318.m_Data))->RotateX(v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
   ((Matrix2D *)(stru_B44318.m_Data))->Rotate(v56); /*0x7558ff*/
   v52 = &stru_B450B8; /*0x755904*/
   do /*0x755919*/
-    result = Matrix3x4::Identity(v52++); /*0x75590b*/
+    result = ((Matrix3x4*)(v52++))->Identity(); /*0x75590b*/
   while ( (int)v52 < (int)&dword_B45178 ); /*0x755919*/
   stru_B450B8.m_Data[5] = -1082130432; /*0x75591e*/
   dword_B450E8 = 0; /*0x755928*/
@@ -2639,7 +2639,7 @@ int Voxel::SectionProject(int * a2, int a3)
       fstp [esp+0C8h+var_B4+4]
     }
   }
-  Matrix3x4::Identity(&v89); /*0x761dd2*/
+  ((Matrix3x4*)&v89)->Identity(); /*0x761dd2*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x761dd7*/
   __asm { fstp [esp+0CCh+var_D0+4]; float }
   ((Matrix2D *)(v89.m_Data))->Rotate(v55); /*0x761de6*/
@@ -3222,7 +3222,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
       fstp [esp+0C8h+var_B4+4]
     }
   }
-  Matrix3x4::Identity(&v89); /*0x762853*/
+  ((Matrix3x4*)&v89)->Identity(); /*0x762853*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x762858*/
   __asm { fstp [esp+0CCh+var_D0+4]; float }
   ((Matrix2D *)(v89.m_Data))->Rotate(v55); /*0x762867*/
@@ -4013,7 +4013,7 @@ int Voxel::SetProjectionAngle(float a1)
   float v4[3]; // [esp+Ch] [ebp-3Ch] BYREF
   float v5[12]; // [esp+18h] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(v5); /*0x754c07*/
+  ((Matrix3x4*)v5)->Identity(); /*0x754c07*/
   dword_88746C = a1; /*0x754c12*/
   Matrix3D::RotateZ(v5, a1); /*0x754c1c*/
   v3[0] = -0.70710599; /*0x754c2e*/

@@ -2058,7 +2058,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   this->DynamicVectorClass = &vt_VectorClass; /*0x67c20a*/
   if ( this != (TypeList *)aP1 ) /*0x67c210*/
   {
-    Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x67c212*/
+    ((Vector*)((_VectorClass_PBVVoxelAnimTypeClass *)this))->Cleanup2(); /*0x67c212*/
     v3 = aP1[2]; /*0x67c218*/
     ((unsigned int *)this)[0] = v3; /*0x67c21d*/
     if ( v3 ) /*0x67c220*/

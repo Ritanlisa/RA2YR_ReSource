@@ -890,7 +890,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore * a1)
   wchar_t Buffer[80]; // [esp+178h] [ebp-124h] BYREF
   char Destination[132]; // [esp+218h] [ebp-84h] BYREF
 
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x78148d*/
+  v1 = (HWND)((Dialog*)((Dialog *)0x113))->FindByHandle(); /*0x78148d*/
   v2 = 0; /*0x781492*/
   v57 = v1; /*0x781494*/
   if ( !v1 ) /*0x78149a*/
@@ -2418,7 +2418,7 @@ Coord * * WOL_HandleLogout()
     RA2_OPDEL(v1); /*0x786099*/
     g_UIControlState = 0; /*0x7860a1*/
   }
-  v2 = (HWND)Dialog::FindByHandle((Dialog *)0x11E); /*0x7860ac*/
+  v2 = (HWND)((Dialog*)((Dialog *)0x11E))->FindByHandle(); /*0x7860ac*/
   if ( v2 ) /*0x7860b3*/
     IDA_LOBYTE(v2) = CloseDialog(v2, 0); /*0x7860b9*/
   if ( byte_B77E75 ) /*0x7860c4*/
@@ -2755,7 +2755,7 @@ void WOL_LoginFlow()
                        (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))OptionsDlgProcWOL,
                        (LPARAM)&v43.Flag_field_0x08);
   ((Dialog *)(Dialog))->Show(); /*0x787424*/
-  if ( !((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() || String::Length((String *)&g_WebBrowserConfig) ) /*0x78743c*/
+  if ( !((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() || ((String*)((String *)&g_WebBrowserConfig))->Length() ) /*0x78743c*/
     DlgItem = GetDlgItem((HWND)Dialog, 1576); /*0x787452*/
   else
     DlgItem = GetDlgItem((HWND)Dialog, 1836); /*0x78744a*/
@@ -2778,7 +2778,7 @@ void WOL_LoginFlow()
     v43.Flag_field_0x08 = (int)&off_7F7624; /*0x787704*/
     ((OwnerDrawControl *)((OwnerDrawControl *)&v43.Flag_field_0x08))->InitVtable(); /*0x78770c*/
   LABEL_98:
-    v31 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x787711*/
+    v31 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x787711*/
     if ( v31 ) /*0x78771d*/
     {
       stru_B77D80.HashTable_field_0x48 = 0; /*0x787723*/
@@ -3102,7 +3102,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
     RefreshGameListWOL((ObjectClass *)v63.StringVector_field_0x0C); /*0x787be7*/
     dword_84A1BC = 41; /*0x787bfd*/
     v20 = GetStringCSF(aTxtReqChanlist, 0, g_Str_File_wonline_cpp, 10408); /*0x787c11*/
-    v21 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x787c13*/
+    v21 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x787c13*/
     if ( v21 ) /*0x787c20*/
       SendDlgItemMessageA(v21, 1458, 0x4B2u, 0, (LPARAM)v20); /*0x787c30*/
     if ( !stru_B76510.StringVector_field_0x10 || RequestChannelListWOL() ) /*0x787c41*/
@@ -3129,7 +3129,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
         if ( RequestChannelListWOL() ) /*0x787cab*/
         {
           v23 = GetStringCSF(g_Str_TXT_JOINLOB, 0, g_Str_File_wonline_cpp, 10415); /*0x787cd3*/
-          v24 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x787cd5*/
+          v24 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x787cd5*/
           if ( v24 ) /*0x787cdc*/
             SendDlgItemMessageA(v24, 1458, 0x4B2u, 0, (LPARAM)v23); /*0x787cec*/
           v25 = JoinGameLobbyWOL(); /*0x787d1a*/
@@ -3156,7 +3156,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
             {
               g_WOL_ChannelLeaveState = 0; /*0x787d91*/
               PostMessageA(hWnd, 0x593u, 0, 0); /*0x787d97*/
-              v28 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x787da2*/
+              v28 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x787da2*/
               if ( v28 ) /*0x787da9*/
               {
                 stru_B77D80.HashTable_field_0x48 = 0; /*0x787daf*/
@@ -3257,7 +3257,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
       }
     }
   LABEL_88:
-    v47 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x787f98*/
+    v47 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x787f98*/
     if ( v47 ) /*0x787fa6*/
     {
       stru_B77D80.HashTable_field_0x48 = 0; /*0x787fac*/
@@ -3565,7 +3565,7 @@ int sub_788710(int a1, char a2)
       Sleep(0x64u); /*0x788797*/
       Game::ProcessIdle(); /*0x788799*/
     }
-    v6 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7887ad*/
+    v6 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x7887ad*/
     if ( v6 ) /*0x7887b4*/
     {
       dword_B77DC8 &= ~0x40u; /*0x7887bf*/
@@ -3617,7 +3617,7 @@ Coord * * WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
       Sleep(0x64u); /*0x788904*/
       Game::ProcessIdle(); /*0x788906*/
     }
-    v6 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x78891a*/
+    v6 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x78891a*/
     if ( v6 ) /*0x788921*/
     {
       dword_B77DC8 &= ~0x40u; /*0x78892c*/
@@ -3685,7 +3685,7 @@ int WOL_JoinGameLobby()
   }
   else
   {
-    v6 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x788ac1*/
+    v6 = (HWND)((Dialog*)((Dialog *)0x113))->FindByHandle(); /*0x788ac1*/
     if ( v6 ) /*0x788ac8*/
     {
       DlgItem = GetDlgItem(v6, 1344); /*0x788ad0*/
@@ -3793,7 +3793,7 @@ Coord * * CreateAccountWOL()
     ResetEvent(*(&Handles + i)); /*0x788c36*/
   }
   while ( i > 1 ); /*0x788c3a*/
-  v8 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x788c46*/
+  v8 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x788c46*/
   if ( v8 ) /*0x788c4d*/
   {
     stru_B77D80.HashTable_field_0x48 = 0; /*0x788c53*/
@@ -4585,7 +4585,7 @@ void CreateGameWOL()
   {
     v18 = GetStringCSF(aTxtBadChankey, 0, g_Str_File_wonline_cpp, 11789); /*0x78a0e4*/
     ShowDialogConfirm(v18, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x78a0ed*/
-    v19 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x78a0f7*/
+    v19 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x78a0f7*/
     if ( v19 ) /*0x78a0fe*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x80u; /*0x78a10c*/
@@ -4602,7 +4602,7 @@ void CreateGameWOL()
   {
     v22 = GetStringCSF(aTxtCantcreateC, 0, g_Str_File_wonline_cpp, 11795); /*0x78a15d*/
     ShowDialogConfirm(v22, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x78a166*/
-    v23 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x78a170*/
+    v23 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x78a170*/
     if ( v23 ) /*0x78a177*/
     {
       stru_B77D80.HashTable_field_0x48 &= ~0x80u; /*0x78a185*/
@@ -4629,7 +4629,7 @@ void CreateGameWOL()
   v25 = GetStringCSF(aGuiCreatingcha, 0, g_Str_File_wonline_cpp, 11803); /*0x78a1cc*/
   ((WideString *)((wchar_t **)&v46))->Assign(v25); /*0x78a1d6*/
   ShowUIMessage(4, (wchar_t **)&v46, 0); /*0x78a1e5*/
-  v26 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x78a1ef*/
+  v26 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x78a1ef*/
   if ( v26 ) /*0x78a1f6*/
   {
     stru_B77D80.HashTable_field_0x48 &= ~0x80u; /*0x78a204*/

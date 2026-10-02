@@ -2057,7 +2057,7 @@ char sub_5DB650(int a1, char a2, char a3)
 {
   HWND v5; // eax
 
-  v5 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5db65b*/
+  v5 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle(); /*0x5db65b*/
   return Map_Handle_5EC880(v5, a1, a2, a3); /*0x5db66f*/
 }
 } // namespace gamemd
@@ -3008,7 +3008,7 @@ char sub_7A2800(int a1, char a2, char a3)
 {
   HWND v5; // eax
 
-  v5 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x7a280b*/
+  v5 = (HWND)((Dialog*)((void *)0xC2))->FindByHandle(); /*0x7a280b*/
   return Map_Handle_5EC880(v5, a1, a2, a3); /*0x7a281f*/
 }
 } // namespace gamemd

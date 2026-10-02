@@ -907,7 +907,7 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x46c6b6*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
+      ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x46c6bf*/
       *(unsigned int *)aP0->vtable1 = &vt_BulletTypeClass; /*0x46c6c4*/
       *(unsigned int *)aP0[4] = &vt_BulletTypeClass; /*0x46c6ca*/
       *(unsigned int *)aP0[8] = &vt_BulletTypeClass; /*0x46c6d1*/

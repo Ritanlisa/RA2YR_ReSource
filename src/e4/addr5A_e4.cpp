@@ -1821,7 +1821,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
               if ( !a3 ) /*0x5a73da*/
                 goto LABEL_31; /*0x5a73da*/
             }
-            else if ( !(uint8_t)Cell::IsEmpty(v12) && !(uint8_t)CellClass::InMapDataRange(v12) ) /*0x5a73eb*/
+            else if ( !(uint8_t)((Cell*)v12)->IsEmpty() && !(uint8_t)CellClass::InMapDataRange(v12) ) /*0x5a73eb*/
             {
               result = CellClass::InBounds(v12); /*0x5a73f6*/
               if ( !(unsigned char)result ) /*0x5a73fd*/
@@ -1915,7 +1915,7 @@ void MapClass_IsAreaUniform(int * a1, char a2)
               if ( !a2 ) /*0x5a760d*/
                 return 0; /*0x5a760d*/
             }
-            else if ( !Cell::IsEmpty(v11) /*0x5a7603*/
+            else if ( !((Cell*)v11)->IsEmpty() /*0x5a7603*/
                    && !(uint8_t)CellClass::InMapDataRange(v11)
                    && !(uint8_t)CellClass::InBounds(v11) )
             {

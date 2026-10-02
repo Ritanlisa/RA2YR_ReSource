@@ -1025,7 +1025,7 @@ LABEL_55:
           }
 LABEL_79:
           Game::ResetReadyStates();
-          v26 = (HWND)Dialog::FindByHandle((void *)0xBD);
+          v26 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
           EnablePlayerSlotControls(v26, 1);
           Debug::Log();
           v110 = 1;
@@ -1164,8 +1164,8 @@ LABEL_79:
             aP1 = 0;
             if ( v53 )
               aP1 = (SessionClass *)atol(v53);
-            if ( !Dialog::FindByHandle((void *)0xBC) )
-              Dialog::FindByHandle((void *)0xBD);
+            if ( !((Dialog*)((void *)0xBC))->FindByHandle() )
+              ((Dialog*)((void *)0xBD))->FindByHandle();
             PlayerSide = ((SessionClass *)(*(unsigned int *)&HouseClass_Player[21864][4 * edi148 + 18396]))->GetPlayerSide();
             bool v114 = PlayerSide != (unsigned int)v48;
             if ( (SkirmishDialog *)PlayerSide != v48 )
@@ -1311,7 +1311,7 @@ LABEL_151:
           if ( !v62 )
             goto LABEL_222;
           Game::ResetReadyStates();
-          v68 = (HWND)Dialog::FindByHandle((void *)0xBD);
+          v68 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
           EnablePlayerSlotControls(v68, 1);
           if ( Dialog::GetCurrentType() != 107 )
           {
@@ -1975,15 +1975,15 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
          || v12 == (wchar_t *)g_Lobby_PlayerColor
          || *(unsigned int *)((char *)v12 + 107) != -1) )
       {
-        v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC2); /*0x5e9017*/
+        v13 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e9017*/
         if ( !v13 ) /*0x5e901b*/
         {
-          v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e9027*/
+          v13 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x5e9027*/
           if ( !v13 ) /*0x5e902b*/
           {
-            v13 = (HWND)Dialog::FindByHandle((Dialog *)0xBC); /*0x5e9037*/
+            v13 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5e9037*/
             if ( !v13 ) /*0x5e903b*/
-              v13 = (HWND)Dialog::FindByHandle((Dialog *)0xBD); /*0x5e9047*/
+              v13 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5e9047*/
           }
         }
         if ( v25.__pad_0[(unsigned int)v10 + 4] )
@@ -2037,15 +2037,15 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
       }
       else
       {
-        v18 = (HWND)Dialog::FindByHandle((Dialog *)0xC2); /*0x5e911c*/
+        v18 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e911c*/
         if ( !v18 ) /*0x5e9120*/
         {
-          v18 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e912c*/
+          v18 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x5e912c*/
           if ( !v18 ) /*0x5e9130*/
           {
-            v18 = (HWND)Dialog::FindByHandle((Dialog *)0xBC); /*0x5e913c*/
+            v18 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5e913c*/
             if ( !v18 ) /*0x5e9140*/
-              v18 = (HWND)Dialog::FindByHandle((Dialog *)0xBD); /*0x5e914c*/
+              v18 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5e914c*/
           }
         }
         if ( !v25.__pad_0[(unsigned int)v10 + 4] )
@@ -2328,11 +2328,11 @@ char NetworkLobby::FillOptionCombo()
   int v10; // [esp+8h] [ebp-4h]
 
   v8 = 1; /*0x5ee3a8*/
-  hDlg = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5ee3b4*/
+  hDlg = (HWND)((Dialog*)((void *)0xC2))->FindByHandle(); /*0x5ee3b4*/
   if ( hDlg /*0x5ee3ee*/
-    || (hDlg = (HWND)Dialog::FindByHandle((void *)0xC9)) != 0
-    || (hDlg = (HWND)Dialog::FindByHandle((void *)0xBC)) != 0
-    || (ResourceID4 = (HWND)Dialog::FindByHandle((void *)0xBD), (hDlg = ResourceID4) != 0) )
+    || (hDlg = (HWND)((Dialog*)((void *)0xC9))->FindByHandle()) != 0
+    || (hDlg = (HWND)((Dialog*)((void *)0xBC))->FindByHandle()) != 0
+    || (ResourceID4 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle(), (hDlg = ResourceID4) != 0) )
   {
     if ( dword_A8B23C ) /*0x5ee3fb*/
       v8 = *(unsigned char *)(dword_A8B23C + 60); /*0x5ee400*/

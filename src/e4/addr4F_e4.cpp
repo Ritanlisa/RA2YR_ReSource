@@ -916,7 +916,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   {
     ((String *)((char **)&aP1))->Assign((const char *)aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
-    v16 =(int)Audio::ParseVolume((int)aP2, (const char **)&aP1, v15); /*0x4f34f3*/
+    v16 =(int)((Audio*)((int)aP2))->ParseVolume((const char **)&aP1, v15); /*0x4f34f3*/
   }
   else
   {
@@ -1021,7 +1021,7 @@ void sub_4F38B0()
       {
         ((String *)(&a3))->Assign(aSelectsound); /*0x4f39fa*/
         v10 = 1; /*0x4f3a0b*/
-        v11 = Audio::ParseVolume(v9, (const char **)&a3, (const char **)&a4); /*0x4f3a10*/
+        v11 = ((Audio*)v9)->ParseVolume((const char **)&a3, (const char **)&a4); /*0x4f3a10*/
       }
       else
       {

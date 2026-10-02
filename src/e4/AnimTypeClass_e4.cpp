@@ -356,7 +356,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( a1 ) /*0x428823*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
+      ((ObjectTypeClass*)((ObjectTypeClass *)a1))->Construct((int)v3); /*0x42882c*/
       a1->vtable1 = &vt_AnimTypeClass; /*0x428831*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428837*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42883e*/

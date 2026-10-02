@@ -547,7 +547,7 @@ LABEL_135:
     v91 = TerrainInitMap(v90, (RandomStruct *)&stru_830620[72276], v89);
   else
     v91 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v91);
+  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v91);
   ModuleInternalVersion = GetModuleInternalVersion((int)&g_NetworkPlayerBuffer[5796]);
   wsprintfA(v286, &stru_830620[72272], ModuleInternalVersion);
   v93 = (char *)operator new(0x10u);
@@ -555,7 +555,7 @@ LABEL_135:
     v94 = BuildResultPacket(v93, &stru_830620[72264], (IUnknown *)v286);
   else
     v94 = 0;
-  LinkedList_flat::PushFront(v262, (IUnknown *)v94);
+  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v94);
   GetModuleFileNameA((HMODULE)g_hInstance, Filename, 0x118u);
   v273 = 0;
   v274 = 1;
@@ -578,7 +578,7 @@ LABEL_135:
       char * v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, (IUnknown *)8);
     else
       v96 = 0;
-    LinkedList_flat::PushFront(v262, (IUnknown *)v96);
+    ((LinkedList_flat*)v262)->PushFront((IUnknown *)v96);
   }
   if ( g_GameOptionsFlags != 1 )
   {
@@ -611,7 +611,7 @@ LABEL_156:
     goto LABEL_156;
   v98 = TerrainInitMap(v97, (RandomStruct *)&stru_830620[72248], (IUnknown *)2);
 LABEL_157:
-  LinkedList_flat::PushFront(v262, (IUnknown *)v98);
+  ((LinkedList_flat*)v262)->PushFront((IUnknown *)v98);
 LABEL_158:
   if ( g_GameStateFlags )
   {
@@ -621,7 +621,7 @@ LABEL_158:
       char * v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], v101);
     else
       v103 = 0;
-    LinkedList_flat::PushFront(v262, (IUnknown *)v103);
+    ((LinkedList_flat*)v262)->PushFront((IUnknown *)v103);
   }
   v104 = 0;
   v268 = 0;
@@ -642,7 +642,7 @@ LABEL_158:
         char * v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
       else
         v108 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v108);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v108);
       v110 = *(ObjectClass **)(v105 + 512);
       stru_830620[72147] = v106;
       eax169 = (char *)operator new(0x10u);
@@ -650,7 +650,7 @@ LABEL_158:
         char * v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (IUnknown *)v110);
       else
         v111 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v111);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v111);
       v113 = *(ObjectClass **)(v105 + 516);
       stru_830620[72155] = v106;
       eax172 = (char *)operator new(0x10u);
@@ -658,7 +658,7 @@ LABEL_158:
         char * v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (IUnknown *)v113);
       else
         v114 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v114);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v114);
       stru_830620[71979] = v106;
       v116 = *(ObjectClass **)(v105 + 488);
       eax175 = (char *)operator new(0x10u);
@@ -666,7 +666,7 @@ LABEL_158:
         char * v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (IUnknown *)v116);
       else
         v117 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v117);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v117);
       stru_830620[71987] = v106;
       v118 = v268;
       if ( dword_B779C4 == (IUnknown *)2 )
@@ -676,14 +676,14 @@ LABEL_158:
         char * v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], v118);
       else
         v120 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v120);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v120);
       stru_830620[72139] = v106;
       char * v121 = (char *)operator new(0x10u);
       if ( v121 )
         char * v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], v284[(unsigned int)v268]);
       else
         v122 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v122);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v122);
       stru_830620[72163] = v106;
       char v123 = *(unsigned char *)(v105 + 520);
       IDA_LOBYTE(v270) = 0;
@@ -694,7 +694,7 @@ LABEL_158:
         char * v125 = String::AllocAndCopy(v124, (RandomStruct *)&stru_830620[72160], v270);
       else
         v125 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v125);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v125);
       stru_830620[71995] = v106;
       v127 = *(ObjectClass **)(v105 + 90196);
       eax191 = (char *)operator new(0x10u);
@@ -702,7 +702,7 @@ LABEL_158:
         char * v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (IUnknown *)v127);
       else
         v128 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v128);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v128);
       stru_830620[72003] = v106;
       v130 = *(ObjectClass **)(*(unsigned int *)(v105 + 52) + 184);
       eax194 = (char *)operator new(0x10u);
@@ -710,7 +710,7 @@ LABEL_158:
         char * v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (IUnknown *)v130);
       else
         v131 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v131);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v131);
       stru_830620[72011] = v106;
       int v132 = (*(int (**)(int))(*(unsigned int *)(v105 + 36) + 24))(v105 + 36);
       char * v133 = (char *)operator new(0x10u);
@@ -718,7 +718,7 @@ LABEL_158:
         char * v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
       else
         v134 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v134);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v134);
       stru_830620[72059] = v106;
       stru_830620[72051] = v106;
       stru_830620[72067] = v106;
@@ -745,7 +745,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v139 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v139);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v139);
       int v140 = *(unsigned int *)(v105 + 6968);
       int v141 = 0;
       for ( v264.vfptr = 0; v141 < v140; ++v141 )
@@ -764,7 +764,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v144 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v144);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v144);
       int v145 = *(unsigned int *)(v105 + 2856);
       int v146 = 0;
       for ( v264.vfptr = 0; v146 < v145; ++v146 )
@@ -783,7 +783,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v149 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v149);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v149);
       int v150 = *(unsigned int *)(v105 + 9024);
       int v151 = 0;
       for ( v264.vfptr = 0; v151 < v150; ++v151 )
@@ -802,7 +802,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v154 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v154);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v154);
       Array::ByteSwap((u_long *)(v105 + 2864));
       Array::ByteSwap((u_long *)(v105 + 4920));
       Array::ByteSwap((u_long *)(v105 + 808));
@@ -864,7 +864,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v168 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v168);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v168);
       int v169 = *(unsigned int *)(v105 + 6968);
       int v170 = 0;
       for ( n = 0; n < v169; ++n )
@@ -878,7 +878,7 @@ LABEL_158:
         char * v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (IUnknown *)(4 * v170));
       else
         v174 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v174);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v174);
       int v175 = *(unsigned int *)(v105 + 2856);
       int v176 = 0;
       for ( ii = 0; ii < v175; ++ii )
@@ -892,7 +892,7 @@ LABEL_158:
         char * v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (IUnknown *)(4 * v176));
       else
         v180 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v180);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v180);
       int v181 = *(unsigned int *)(v105 + 9024);
       int v182 = 0;
       for ( jj = 0; jj < v181; ++jj )
@@ -906,7 +906,7 @@ LABEL_158:
         char * v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (IUnknown *)(4 * v182));
       else
         v186 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v186);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v186);
       HouseClass::NetworkConvert((unsigned int *)(v105 + 11088));
       HouseClass::NetworkConvert((unsigned int *)(v105 + 13144));
       HouseClass::NetworkConvert((unsigned int *)(v105 + 9032));
@@ -939,7 +939,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v191 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v191);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v191);
       int v192 = *(unsigned int *)(v105 + 15192);
       int v193 = 0;
       for ( kk = 0; kk < v192; ++kk )
@@ -953,7 +953,7 @@ LABEL_158:
         char * v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (IUnknown *)(4 * v193));
       else
         v197 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v197);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v197);
       int v198 = *(unsigned int *)(v105 + 11080);
       int v199 = 0;
       for ( mm = 0; mm < v198; ++mm )
@@ -967,7 +967,7 @@ LABEL_158:
         char * v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (IUnknown *)(4 * v199));
       else
         v203 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v203);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v203);
       int v204 = *(unsigned int *)(v105 + 17248);
       int v205 = 0;
       for ( nn = 0; nn < v204; ++nn )
@@ -981,7 +981,7 @@ LABEL_158:
         char * v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (IUnknown *)(4 * v205));
       else
         v209 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v209);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v209);
       stru_830620[72115] = v263;
       HouseClass::NetworkConvert((unsigned int *)(v105 + 17256));
       int v210 = *(unsigned int *)(v105 + 19304);
@@ -1002,7 +1002,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v214 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v214);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v214);
       stru_830620[72123] = v263;
       HouseClass::NetworkConvert((unsigned int *)(v105 + 19312));
       int v215 = *(unsigned int *)(v105 + 21360);
@@ -1023,7 +1023,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v219 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v219);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v219);
       char v220 = v263;
       stru_830620[72131] = v263;
       v222 = *(ObjectClass **)(v105 + 736);
@@ -1032,7 +1032,7 @@ LABEL_158:
         char * v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (IUnknown *)v222);
       else
         v223 = 0;
-      LinkedList_flat::PushFront(v262, (IUnknown *)v223);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v223);
       stru_830620[72171] = v220;
       v224 = v269;
       v225 = v268;
@@ -1057,7 +1057,7 @@ LABEL_158:
       }
       v228 = 0;
 LABEL_322:
-      LinkedList_flat::PushFront(v262, (IUnknown *)v228);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v228);
       stru_830620[72179] = v220;
       if ( v224 == v225 )
       {
@@ -1080,7 +1080,7 @@ LABEL_322:
       }
       v232 = 0;
 LABEL_328:
-      LinkedList_flat::PushFront(v262, (IUnknown *)v232);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v232);
       stru_830620[72187] = v220;
       if ( v224 == v225 )
       {
@@ -1104,7 +1104,7 @@ LABEL_333:
         v236 = NetMessage::Pack4(v237, (RandomStruct *)&stru_830620[72184], -1);
       }
 LABEL_334:
-      LinkedList_flat::PushFront(v262, (IUnknown *)v236);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v236);
       stru_830620[72195] = v220;
       if ( v224 == v225 && *(unsigned int *)&g_CellDirectionOffsets[2564] )
       {
@@ -1136,7 +1136,7 @@ LABEL_341:
         v240 = NetMessage::Pack4(v241, (RandomStruct *)&stru_830620[72192], -1);
       }
 LABEL_342:
-      LinkedList_flat::PushFront(v262, (IUnknown *)v240);
+      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v240);
 LABEL_343:
       v268 = (IUnknown *)((char *)&v225->field_0 + 1);
       if ( (char *)&v225->field_0 + 1 >= (char *)aP2 )

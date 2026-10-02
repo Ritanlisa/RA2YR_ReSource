@@ -1056,7 +1056,7 @@ char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e0d21*/
       return 0; /*0x6e0d43*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e0d25*/
+    if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6e0d25*/
       Field11 = BuildingType::FindOwnerHouse(v5); /*0x6e0d30*/
     else
       Field11 = ((HouseClass *)(v5))->FindOwner(); /*0x6e0d37*/
@@ -1476,7 +1476,7 @@ char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, I
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e31a1*/
       return 0; /*0x6e31c3*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e31a5*/
+    if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6e31a5*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e31b0*/
     else
       Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e31b7*/
@@ -1508,7 +1508,7 @@ char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnkn
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e3201*/
       return 0; /*0x6e3223*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3205*/
+    if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6e3205*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e3210*/
     else
       Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e3217*/
@@ -1540,7 +1540,7 @@ char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnk
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e3261*/
       return 0; /*0x6e3283*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3265*/
+    if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6e3265*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e3270*/
     else
       Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e3277*/
@@ -1572,7 +1572,7 @@ char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUn
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e32c1*/
       return 0; /*0x6e32e3*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e32c5*/
+    if ( (uint8_t)((BuildingType*)v5)->IsSpecialType() ) /*0x6e32c5*/
       Field11 = (HouseClass *)BuildingType::FindOwnerHouse(v5); /*0x6e32d0*/
     else
       Field11 = (HouseClass *)((HouseClass *)(v5))->FindOwner(); /*0x6e32d7*/

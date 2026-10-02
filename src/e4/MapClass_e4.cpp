@@ -3376,7 +3376,7 @@ int MapClass::LoadTerrainData(MapClass * aP1)
   {
     if ( !v13 ) /*0x585e4b*/
       break; /*0x585e4b*/
-    if ( !j->Cell_field_0x11B[1] && (uint8_t)Cell::IsEmpty(j) ) /*0x585e59*/
+    if ( !j->Cell_field_0x11B[1] && (uint8_t)((Cell*)j)->IsEmpty() ) /*0x585e59*/
       v13 = Terrain::SelectTileType((int)j, 0); /*0x585e6b*/
     result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x585e74*/
   }

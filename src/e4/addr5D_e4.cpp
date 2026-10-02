@@ -1522,7 +1522,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
     v3 = unk_A8B380; /*0x5dbe2d*/
     if ( !a2 ) /*0x5dbe32*/
     {
-      v5 = (HWND)Dialog::FindByHandle((Dialog *)0xBD); /*0x5dbe39*/
+      v5 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5dbe39*/
       EnablePlayerSlotControls(v5, 1u); /*0x5dbe42*/
     }
   }
@@ -1593,9 +1593,9 @@ void UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINICla
   v26 = 0; /*0x5dbf8c*/
   if ( v5 == -1 ) /*0x5dbf97*/
     return 0; /*0x5dbf9c*/
-  v11 = (HWND)Dialog::FindByHandle((Dialog *)0xBC); /*0x5dbfaf*/
+  v11 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5dbfaf*/
   if ( !v11 ) /*0x5dbfb3*/
-    v11 = (HWND)Dialog::FindByHandle((Dialog *)0xBD); /*0x5dbfbf*/
+    v11 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5dbfbf*/
   v12 = (int *)dword_A8DA90[v5]; /*0x5dbfc1*/
   v28 = v12; /*0x5dbfca*/
   if ( ((SessionClass *)(v12))->GetPlayerSide() != aP1 ) /*0x5dbfd9*/

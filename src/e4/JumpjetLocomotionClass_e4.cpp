@@ -576,7 +576,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       }
       Transform = Turret::GetTransform((int)((LocomotionClass *)a1), v60, a3); /*0x4b02d7*/
       Transform::Copy(v59, Transform); /*0x4b02e4*/
-      Matrix3x4::Identity(&v55); /*0x4b02ed*/
+      ((Matrix3x4*)&v55)->Identity(); /*0x4b02ed*/
       v33 = a1->Accel; /*0x4b02f2*/
       if ( v33 == 0.0 ) /*0x4b02fb*/
         goto LABEL_48; /*0x4b02fb*/
@@ -630,8 +630,8 @@ LABEL_51:
       goto LABEL_51; /*0x4b03b0*/
     }
   }
-  Matrix3x4::Identity(&v56); /*0x4afff2*/
-  Matrix3x4::Identity(&v57); /*0x4afffe*/
+  ((Matrix3x4*)&v56)->Identity(); /*0x4afff2*/
+  ((Matrix3x4*)&v57)->Identity(); /*0x4afffe*/
   v11 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 864); /*0x4b0011*/
   v49 = v11; /*0x4b0019*/
   v51 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 872); /*0x4b002f*/
@@ -668,7 +668,7 @@ LABEL_51:
     *a3 = -1; /*0x4b0187*/
   v19 = Turret::GetTransform((LocomotionClass *)a1, v65, a3); /*0x4b0197*/
   Transform::Copy(v58, v19); /*0x4b01a4*/
-  Matrix3x4::Identity(&v55); /*0x4b01ad*/
+  ((Matrix3x4*)&v55)->Identity(); /*0x4b01ad*/
   v20 = a1->Accel; /*0x4b01b2*/
   p_Climb = (Timeout *)&a1->Climb; /*0x4b01b5*/
   if ( v20 != 0.0 ) /*0x4b01be*/
@@ -1445,7 +1445,7 @@ void * JumpjetLocomotionClass::ComputeRotationMatrix(int a1, float * a2, signed 
   float v14; // [esp+0h] [ebp-3Ch]
   Matrix3x4 v15; // [esp+Ch] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(&v15); /*0x4cf619*/
+  ((Matrix3x4*)&v15)->Identity(); /*0x4cf619*/
   v3 = (int *)a3; /*0x4cf61e*/
   v4 = a1; /*0x4cf622*/
   if ( a3 ) /*0x4cf628*/
@@ -2213,8 +2213,8 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
   {
     if ( a3 ) /*0x54dd23*/
       *a3 = -1; /*0x54dd25*/
-    Matrix3x4::Identity(&v32); /*0x54dd2f*/
-    Matrix3x4::Identity(&v31); /*0x54dd38*/
+    ((Matrix3x4*)&v32)->Identity(); /*0x54dd2f*/
+    ((Matrix3x4*)&v31)->Identity(); /*0x54dd38*/
     v7 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 864); /*0x54dd4b*/
     v25 = v7; /*0x54dd53*/
     v23 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 872); /*0x54dd69*/
@@ -2344,7 +2344,7 @@ void * JumpjetLocomotionClass::ComputePitchYaw(signed int a1, float * a2, int * 
   int v12; // [esp+Ch] [ebp-34h] BYREF
   Matrix3x4 v13; // [esp+10h] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(&v13); /*0x663479*/
+  ((Matrix3x4*)&v13)->Identity(); /*0x663479*/
   v3 = a1; /*0x66347e*/
   a1 = (JumpjetLocomotionClass *)((((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)a1)[0]))->GetValue(&v12) >> 10) /*0x6634a3*/
                                                    + 1) >> 1)
@@ -2502,7 +2502,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
       }
       Transform = Turret::GetTransform((LocomotionClass *)a1, v60, a3); /*0x69f9e7*/
       Transform::Copy(v59, Transform); /*0x69f9f4*/
-      Matrix3x4::Identity(&v55); /*0x69f9fd*/
+      ((Matrix3x4*)&v55)->Identity(); /*0x69f9fd*/
       v33 = a1->Accel; /*0x69fa02*/
       if ( v33 == 0.0 ) /*0x69fa0b*/
         goto LABEL_48; /*0x69fa0b*/
@@ -2556,8 +2556,8 @@ LABEL_51:
       goto LABEL_51; /*0x69fac0*/
     }
   }
-  Matrix3x4::Identity(&v56); /*0x69f702*/
-  Matrix3x4::Identity(&v57); /*0x69f70e*/
+  ((Matrix3x4*)&v56)->Identity(); /*0x69f702*/
+  ((Matrix3x4*)&v57)->Identity(); /*0x69f70e*/
   v11 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 864); /*0x69f721*/
   v49 = v11; /*0x69f729*/
   v51 = *(double *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 872); /*0x69f73f*/
@@ -2594,7 +2594,7 @@ LABEL_51:
     *a3 = -1; /*0x69f897*/
   v19 = Turret::GetTransform((LocomotionClass *)a1, v65, a3); /*0x69f8a7*/
   Transform::Copy(v58, v19); /*0x69f8b4*/
-  Matrix3x4::Identity(&v55); /*0x69f8bd*/
+  ((Matrix3x4*)&v55)->Identity(); /*0x69f8bd*/
   v20 = a1->Accel; /*0x69f8c2*/
   p_Climb = (Timeout *)&a1->Climb; /*0x69f8c5*/
   if ( v20 != 0.0 ) /*0x69f8ce*/
@@ -2895,7 +2895,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
     slopeIndex = (uint8_t)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v22)->slopeIndex; /*0x729b8d*/
     if ( a3 && *a3 != -1 ) /*0x729b9c*/
       *a3 = slopeIndex + (*a3 << 6); /*0x729ba3*/
-    Matrix3x4::Identity(&v25); /*0x729ba9*/
+    ((Matrix3x4*)&v25)->Identity(); /*0x729ba9*/
     if ( slopeIndex ) /*0x729bb1*/
     {
       v6 = Turret::GetTransform((LocomotionClass *)a1, v30, a3); /*0x729bbc*/

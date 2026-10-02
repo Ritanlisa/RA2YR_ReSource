@@ -766,7 +766,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
         while ( 1 )
         {
           v12 = (char *)**((unsigned int **)g_VocAudioConfig + v11); /*0x75130f*/
-          v13 = v12 ? VocClass::GetSampleName(v12) : g_Str_Invalid_Voc;
+          v13 = v12 ? ((VocClass*)v12)->GetSampleName() : g_Str_Invalid_Voc;
           if ( !_strcmpi(Destination, v13) ) /*0x751327*/
             break; /*0x751327*/
           if ( ++v11 >= g_VocPlayState ) /*0x75133b*/

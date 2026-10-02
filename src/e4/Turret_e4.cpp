@@ -190,7 +190,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
   int v7; // [esp+Ch] [ebp-34h] BYREF
   Matrix3x4 v8; // [esp+10h] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(&v8); /*0x55a739*/
+  ((Matrix3x4*)&v8)->Identity(); /*0x55a739*/
   v3 = (gamemd::LocomotionClass *)(a1); /*0x55a73e*/
   a1 = (LocomotionClass *)((((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)a1->Owner)[0]))->GetValue(&v7) >> 10) + 1) >> 1) /*0x55a763*/
                             & 0x1F)

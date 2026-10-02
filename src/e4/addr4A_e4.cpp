@@ -2721,7 +2721,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
   Matrix3x4 v13; // [esp+1Ch] [ebp-60h] BYREF
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(&v13); /*0x4af9bc*/
+  ((Matrix3x4*)&v13)->Identity(); /*0x4af9bc*/
   nextObject = this->nextObject; /*0x4af9c1*/
   if ( nextObject ) /*0x4af9ca*/
   {

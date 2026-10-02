@@ -1247,7 +1247,7 @@ LABEL_162:
 LABEL_223:
                 if ( v94 )
                 {
-                  esi224 = (HWND)Dialog::FindByHandle((void *)0xEA);
+                  esi224 = (HWND)((Dialog*)((void *)0xEA))->FindByHandle();
                   if ( esi224 )
                   {
                     if ( byte_B04470 )
@@ -1390,7 +1390,7 @@ LABEL_148:
               {
                 if ( v94 )
                 {
-                  v81 = (HWND)Dialog::FindByHandle((void *)0xEA);
+                  v81 = (HWND)((Dialog*)((void *)0xEA))->FindByHandle();
                   if ( v81 )
                   {
                     if ( byte_B04470 )
@@ -1440,7 +1440,7 @@ LABEL_148:
           case 2:
             if ( v94 )
             {
-              v82 = (HWND)Dialog::FindByHandle((void *)0xEA);
+              v82 = (HWND)((Dialog*)((void *)0xEA))->FindByHandle();
               if ( v82 )
               {
                 if ( byte_B04470 )
@@ -1458,7 +1458,7 @@ LABEL_148:
           case 3:
             if ( v94 )
             {
-              v83 = (HWND)Dialog::FindByHandle((void *)0xEA);
+              v83 = (HWND)((Dialog*)((void *)0xEA))->FindByHandle();
               if ( v83 )
               {
                 if ( byte_B04470 )
@@ -1488,7 +1488,7 @@ LABEL_116:
   {
     if ( v94 )
     {
-      esi181 = (HWND)Dialog::FindByHandle((void *)0xEA);
+      esi181 = (HWND)((Dialog*)((void *)0xEA))->FindByHandle();
       if ( esi181 )
       {
         if ( byte_B04470 )
@@ -1527,7 +1527,7 @@ LABEL_116:
     }
     if ( v94 )
     {
-      v79 = (MSVQAnim *)Dialog::FindByHandle((void *)0xEA);
+      v79 = (MSVQAnim *)((Dialog*)((void *)0xEA))->FindByHandle();
       if ( v79 )
       {
         if ( byte_B04470 )
