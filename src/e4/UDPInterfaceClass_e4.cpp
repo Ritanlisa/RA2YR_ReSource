@@ -897,6 +897,7 @@ void UDPInterfaceClass_Destru_Connect()
 }
 }
 // 0x7B3890
+namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::Receive()
 {
 
@@ -931,7 +932,9 @@ LABEL_6:
   return result; /*0x7b38e3*/
 
 }
+}  // G42.18c ns repair
 // 0x7B3900
+namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::CheckStatus()
 {
 
@@ -939,7 +942,9 @@ int UDPInterfaceClass_Destru::CheckStatus()
   return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
 
 }
+}  // G42.18c ns repair
 // 0x7B3920
+namespace gamemd {  // G42.18c ns repair
 void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 {
 
@@ -978,7 +983,9 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
   }
 
 }
+}  // G42.18c ns repair
 // 0x7B4100
+namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
 
@@ -988,20 +995,25 @@ int UDPInterfaceClass_Destru::GetStatistics(int a2)
     return a2 != *((unsigned int *)this + 64540) ? 0 : 0x475;
 
 }
+}  // G42.18c ns repair
 // 0x7B4140
+namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::COMStub()
 {
 
   return *((unsigned int *)this + 64856); /*0x7b4146*/
 
 }
+}  // G42.18c ns repair
 // 0x7B40F0
+namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::COMStub_Ret2()
 {
 
   return 2; /*0x7b40f5*/
 
 }
+}  // G42.18c ns repair
 // 0x7B45D0
 DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, void *a3)
 {

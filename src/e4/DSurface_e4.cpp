@@ -962,6 +962,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
 }
 }
 // 0x4BBB00
+namespace gamemd {  // G42.18c ns repair
 void DSurface::BlitStretch(int a1, int a2, int a3)
 {
 
@@ -1011,7 +1012,9 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
   }
 
 }
+}  // G42.18c ns repair
 // 0x4BBCA0
+namespace gamemd {  // G42.18c ns repair
 Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
 
@@ -1521,7 +1524,9 @@ LABEL_71:
   return 0; /*0x4bc28d*/
 
 }
+}  // G42.18c ns repair
 // 0x4BC750
+namespace gamemd {  // G42.18c ns repair
 Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
 
@@ -1565,8 +1570,10 @@ Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned 
   int v51; // eax
   in... [41072 chars total]
 }
+}  // G42.18c ns repair
 
 // 0x4BDF00
+namespace gamemd {  // G42.18c ns repair
 void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
 
@@ -2123,7 +2130,9 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   return 1; /*0x4be59c*/
 
 }
+}  // G42.18c ns repair
 // 0x4BF750
+namespace gamemd {  // G42.18c ns repair
 void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8)
 {
 
@@ -2408,7 +2417,9 @@ LABEL_58:
   return 0; /*0x4bf94b*/
 
 }
+}  // G42.18c ns repair
 // 0x4BFD30
+namespace gamemd {  // G42.18c ns repair
 int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
 {
 
@@ -2963,7 +2974,9 @@ LABEL_121:
   return result; /*0x4c0367*/
 
 }
+}  // G42.18c ns repair
 // 0x4C0750
+namespace gamemd {  // G42.18c ns repair
 int DSurface::DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7)
 {
 
@@ -3466,7 +3479,9 @@ LABEL_155:
   return a6; /*0x4c077f*/
 
 }
+}  // G42.18c ns repair
 // 0x4C0E30
+namespace gamemd {  // G42.18c ns repair
 MouseClass * * DSurface::DrawStippledRect(unsigned int * a2, unsigned int * a3, int16_t a4, char a5)
 {
 
@@ -3902,15 +3917,19 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a2, unsigned int * a3, 
   return 1; /*0x4c0fba*/
 
 }
+}  // G42.18c ns repair
 // 0x4C1AC0
+namespace gamemd {  // G42.18c ns repair
 void * DSurface::loc_4C1AC0(std::codecvt_base *a1) 
 {
 
   return 1; /*0x4c1ab2*/
 
 }
+}  // G42.18c ns repair
 
 // 0x5D1E70
+namespace gamemd {  // G42.18c ns repair
 ObjectClass * *  DSurface::RenderToSurface(int *aP1)
 {
 
@@ -4002,7 +4021,9 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
   return result; /*0x5d1fbe*/
 
 }
+}  // G42.18c ns repair
 // 0x621B80
+namespace gamemd {  // G42.18c ns repair
 int  DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4)
 {
 
@@ -4096,7 +4117,9 @@ int  DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_
   return result; /*0x621d21*/
 
 }
+}  // G42.18c ns repair
 // 0x7BD210
+namespace gamemd {  // G42.18c ns repair
 int DSurface::LockAndPrepareRect()
 {
 
@@ -4120,7 +4143,9 @@ int DSurface::LockAndPrepareRect()
   return result; /*0x7bd262*/
 
 }
+}  // G42.18c ns repair
 // 0x7BDF80
+namespace gamemd {  // G42.18c ns repair
 int DSurface::CommitBuffers()
 {
 
@@ -4416,7 +4441,9 @@ int DSurface::CommitBuffers()
   return result; /*0x7be498*/
 
 }
+}  // G42.18c ns repair
 // 0x7C2C60
+namespace gamemd {  // G42.18c ns repair
 int DSurface::Flip()
 {
 
@@ -4454,7 +4481,9 @@ int DSurface::Flip()
   return (*(int (**)(DSurface *, int, DSurface *, unsigned int))&this->__pad_2C[24])(this, 3, this, 0); /*0x7c2cf8*/
 
 }
+}  // G42.18c ns repair
 // 0x4BA480
+namespace gamemd {  // G42.18c ns repair
 long long DSurface::ConstructFromHandle()
 {
 
@@ -4467,7 +4496,9 @@ long long DSurface::ConstructFromHandle()
   return result; /*0x4ba4b0*/
 
 }
+}  // G42.18c ns repair
 // 0x4BB080
+namespace gamemd {  // G42.18c ns repair
 int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
 {
 
@@ -4488,14 +4519,18 @@ int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
   return DSurface_field_0x0[3](this, v9); /*0x4bb0c2*/
 
 }
+}  // G42.18c ns repair
 // 0x4C1AB0
+namespace gamemd {  // G42.18c ns repair
 char DSurface::IsDSurface()
 {
 
   return 1; /*0x4c1ab2*/
 
 }
+}  // G42.18c ns repair
 // 0x5D1E50
+namespace gamemd {  // G42.18c ns repair
 int DSurface::Flip2()
 {
 
@@ -4503,7 +4538,9 @@ int DSurface::Flip2()
   return DSurface::RenderToSurface(g_DSurface_Hidden); /*0x5d1e62*/
 
 }
+}  // G42.18c ns repair
 // 0x63D400
+namespace gamemd {  // G42.18c ns repair
 int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
 {
 
@@ -4530,6 +4567,7 @@ int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
            this);
 
 }
+}  // G42.18c ns repair
 // 0x759E60
 char DSurface::FlipIfNeeded()
 {

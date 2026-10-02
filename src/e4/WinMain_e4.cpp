@@ -226,6 +226,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 }
 }
 // 0x69A1F0
+namespace gamemd {  // G42.18c ns repair
 int WinMain::Constructor_VectorClass_Wstring_()
 {
 
@@ -266,7 +267,9 @@ int WinMain::Constructor_VectorClass_Wstring_()
   return (*(int (**)(WinMain *))(*((unsigned int *)this + 2623) + 12))((unsigned int *)this + 10492); /*0x69a2ee*/
 
 }
+}  // G42.18c ns repair
 // 0x734D30
+namespace gamemd {  // G42.18c ns repair
 unsigned int * WinMain::ShutdownCleanup()
 {
 dword_B1CF74 = 0; /*0x734df7*/
@@ -336,6 +339,7 @@ dword_B1CF74 = 0; /*0x734df7*/
   return result; /*0x734e23*/
 
 }
+}  // G42.18c ns repair
 // 0x5D7E50
 namespace gamemd {
 void sub_5D7E50()
@@ -426,6 +430,7 @@ void* sub_7B84F0()
 }
 }
 // 0x49F8B0
+namespace gamemd {  // G42.18c ns repair
 LSTATUS WinMain::CleanupResource()
 {
 
@@ -448,6 +453,7 @@ LSTATUS WinMain::CleanupResource()
   return result; /*0x49f914*/
 
 }
+}  // G42.18c ns repair
 // 0x53E6B0
 namespace gamemd {
 void sub_53E6B0()

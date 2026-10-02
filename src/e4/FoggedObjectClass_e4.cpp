@@ -988,6 +988,7 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
 }
 }
 // 0x4D24A0
+namespace gamemd {  // G42.18c ns repair
 int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
@@ -1023,21 +1024,27 @@ int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
   return result; /*0x4d2504*/
 
 }
+}  // G42.18c ns repair
 // 0x4D27B0
+namespace gamemd {  // G42.18c ns repair
 int FoggedObjectClass::GetTypeIdentifier()
 {
 
   return 61; /*0x4d27b5*/
 
 }
+}  // G42.18c ns repair
 // 0x4D27C0
+namespace gamemd {  // G42.18c ns repair
 int FoggedObjectClass::GetObjectSize()
 {
 
   return 120; /*0x4d27c5*/
 
 }
+}  // G42.18c ns repair
 // 0x4D27D0
+namespace gamemd {  // G42.18c ns repair
 int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -1050,7 +1057,9 @@ int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x4d27dd*/
 
 }
+}  // G42.18c ns repair
 // 0x4D2910
+namespace gamemd {  // G42.18c ns repair
 FoggedObjectClass * FoggedObjectClass::ddtor(void * Block, char a2)
 {
 
@@ -1060,7 +1069,9 @@ FoggedObjectClass * FoggedObjectClass::ddtor(void * Block, char a2)
   return Block; /*0x4d292a*/
 
 }
+}  // G42.18c ns repair
 // 0x4D29B0
+namespace gamemd {  // G42.18c ns repair
 char FoggedObjectClass::AddRef(int a2)
 {
 
@@ -1093,7 +1104,9 @@ char FoggedObjectClass::AddRef(int a2)
   return 0; /*0x4d29f0*/
 
 }
+}  // G42.18c ns repair
 // 0x4D2D60
+namespace gamemd {  // G42.18c ns repair
 DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -1113,6 +1126,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x4d2da5*/
 
 }
+}  // G42.18c ns repair
 // 0x4E01F0
 namespace gamemd {
 void FoggedObjectClass_42::ClearBuffer(void *a1_1)

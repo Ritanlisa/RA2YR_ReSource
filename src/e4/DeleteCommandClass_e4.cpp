@@ -23,6 +23,7 @@ void DeleteCommandClass_Undo()
 }
 }
 // 0x537F10
+namespace gamemd {  // G42.18c ns repair
 unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
@@ -30,34 +31,43 @@ unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, voi
   return this->CommandClass; /*0x537f18*/
 
 }
+}  // G42.18c ns repair
 // 0x537F20
+namespace gamemd {  // G42.18c ns repair
 char * DeleteCommandClass::AddRef(void *a1)
 {
 
   return (char *)(aDelete);
 
 }
+}  // G42.18c ns repair
 // 0x537F30
+namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Release(void *a1)
 {
 
   return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
 
 }
+}  // G42.18c ns repair
 // 0x537F50
+namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
 
   return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
 
 }
+}  // G42.18c ns repair
 // 0x537F70
+namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 {
 
   return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
 
 }
+}  // G42.18c ns repair
 // 0x53C4C0
 namespace gamemd {
 void DeleteCommandClass_28::ClearBuffer(void *a1_1)

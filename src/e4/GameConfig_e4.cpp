@@ -206,6 +206,7 @@ void GameConfig::Constructor()
 }
 }
 // 0x77E7A0
+namespace gamemd {  // G42.18c ns repair
 int  GameConfig::BuildChecksum(char * Buffer)
 {
 
@@ -239,5 +240,6 @@ int  GameConfig::BuildChecksum(char * Buffer)
   return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12); /*0x77e80e*/
 
 }
+}  // G42.18c ns repair
 
 } // namespace gamemd

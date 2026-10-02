@@ -135,6 +135,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
 }
 } // namespace gamemd
 // 0x71DA80
+namespace gamemd {  // G42.18c ns repair
 TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
 {
 
@@ -207,7 +208,9 @@ LABEL_11:
   return this; /*0x71dbc2*/
 
 }
+}  // G42.18c ns repair
 // 0x71DEA0
+namespace gamemd {  // G42.18c ns repair
 int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
 
@@ -306,6 +309,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   return result; /*0x71e0a7*/
 
 }
+}  // G42.18c ns repair
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)&v23, 0); /*0x71dfdd*/

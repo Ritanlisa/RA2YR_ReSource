@@ -162,6 +162,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 }
 // 0x4A0630
+namespace gamemd {  // G42.18c ns repair
 int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * updated)
 {
 
@@ -201,7 +202,9 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
   return 0; /*0x4a0673*/
 
 }
+}  // G42.18c ns repair
 // 0x4A0700
+namespace gamemd {  // G42.18c ns repair
 int ConnectionPointClass::EnumConnections(int a1, int a2)
 {
 
@@ -239,6 +242,7 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
   return 0; /*0x4a0725*/
 
 }
+}  // G42.18c ns repair
 // 0x4A0F70
 namespace gamemd {
 int ConnectionPointClass_9::EnumConnections(int a2)

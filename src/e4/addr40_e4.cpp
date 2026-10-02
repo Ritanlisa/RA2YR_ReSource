@@ -4000,6 +4000,7 @@ int E4Recv_406310::sub_406310()
 } // namespace gamemd
 
 // 0x4064A0
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::AddSampleVocClass()
 {
 
@@ -4023,28 +4024,36 @@ int AbstractTypeClass::AddSampleVocClass()
   return 1; /*0x4064af*/
 
 }
+}  // G42.18c ns repair
 // 0x406520
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_406520()
 {
 
   *(unsigned int *)(a1 + 312) = a2; /*0x406520*/
 
 }
+}  // G42.18c ns repair
 // 0x406530
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_406530()
 {
 
   *(unsigned int *)(a1 + 316) = a2; /*0x406530*/
 
 }
+}  // G42.18c ns repair
 // 0x406540
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_406540()
 {
 
   *(unsigned int *)(a1 + 64) = a2; /*0x406540*/
 
 }
+}  // G42.18c ns repair
 // 0x406550
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406550()
 {
 
@@ -4055,7 +4064,9 @@ int AbstractTypeClass::sub_406550()
   return AudioMixer::PlaySample(v2); /*0x40655d*/
 
 }
+}  // G42.18c ns repair
 // 0x406570
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406570()
 {
 
@@ -4084,28 +4095,36 @@ int AbstractTypeClass::sub_406570()
   return result; /*0x4065b0*/
 
 }
+}  // G42.18c ns repair
 // 0x4065C0
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_4065C0()
 {
 
   *(unsigned int *)(a1 + 20) = a2; /*0x4065c0*/
 
 }
+}  // G42.18c ns repair
 // 0x4065D0
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_4065D0()
 {
 
   *(unsigned int *)(a1 + 72) = a2; /*0x4065d0*/
 
 }
+}  // G42.18c ns repair
 // 0x4065E0
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_4065E0()
 {
 
   *(unsigned int *)(a1 + 80) = a2; /*0x4065e0*/
 
 }
+}  // G42.18c ns repair
 // 0x4065F0
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_4065F0(int a2)
 {
 
@@ -4113,7 +4132,9 @@ int AbstractTypeClass::sub_4065F0(int a2)
   return a2; /*0x4065f7*/
 
 }
+}  // G42.18c ns repair
 // 0x406600
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406600()
 {
 
@@ -4122,7 +4143,9 @@ int AbstractTypeClass::sub_406600()
   return a3; /*0x40660a*/
 
 }
+}  // G42.18c ns repair
 // 0x406610
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406610()
 {
 
@@ -4131,7 +4154,9 @@ int AbstractTypeClass::sub_406610()
   return a3; /*0x40661a*/
 
 }
+}  // G42.18c ns repair
 // 0x406620
+namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406620()
 {
 
@@ -4157,13 +4182,16 @@ int AbstractTypeClass::sub_406620()
   return result; /*0x40662d*/
 
 }
+}  // G42.18c ns repair
 // 0x406640
+namespace gamemd {  // G42.18c ns repair
 void AbstractTypeClass::sub_406640()
 {
 
   *(unsigned int *)(a1 + 76) = a2; /*0x406640*/
 
 }
+}  // G42.18c ns repair
 // 0x406670
 namespace gamemd {
 int * sub_406670(void * a1, int a2)
@@ -7162,6 +7190,7 @@ int unknown_libname_9()
 } // namespace gamemd
 
 // 0x40E390
+namespace gamemd {  // G42.18c ns repair
 GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
 {
 
@@ -7189,6 +7218,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
   return Block->__pad_0; /*0x40e3d1*/
 
 }
+}  // G42.18c ns repair
 // 0x40E4A0
 namespace gamemd {
 ObjectClass *  ObjectClass::sub_40E4A0(void ** Block, char a2)

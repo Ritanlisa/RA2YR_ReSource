@@ -56,6 +56,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
 }
 } // namespace gamemd
 // 0x665650
+namespace gamemd {  // G42.18c ns repair
 RulesClass::RulesClass()
 {
 
@@ -85,8 +86,10 @@ RulesClass::RulesClass()
   this->BerzerkAllowed = 0; /*0x6656b6*/
   this->PoseDir = ... [67687 chars total]
 }
+}  // G42.18c ns repair
 
 // 0x667A30
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::DTOR(void *a1)
 {
 
@@ -131,8 +134,10 @@ int RulesClass::DTOR(void *a1)
   void *v40; // eax
   vo... [28941 chars total]
 }
+}  // G42.18c ns repair
 
 // 0x66D150
+namespace gamemd {  // G42.18c ns repair
 void* RulesClass::readAudioVisual()
 {
 
@@ -177,7 +182,9 @@ void* RulesClass::readAudioVisual()
   return (void *)(result); /*0x66d1dc*/
 
 }
+}  // G42.18c ns repair
 // 0x673E80
+namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::ReadPowerupsSection()
 {
 
@@ -270,7 +277,9 @@ INIClass * * RulesClass::ReadPowerupsSection()
   return result; /*0x673fe2*/
 
 }
+}  // G42.18c ns repair
 // 0x6743D0
+namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::readDifficulty()
 {
 
@@ -340,7 +349,9 @@ INIClass * * RulesClass::readDifficulty()
   return result; /*0x6744e4*/
 
 }
+}  // G42.18c ns repair
 // 0x674550
+namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::ReadMovies()
 {
 
@@ -392,7 +403,9 @@ INIClass * * RulesClass::ReadMovies()
   return result; /*0x67463c*/
 
 }
+}  // G42.18c ns repair
 // 0x679FA0
+namespace gamemd {  // G42.18c ns repair
 void RulesClass::readMaximums()
 {
 
@@ -409,7 +422,9 @@ void RulesClass::readMaximums()
   this->DetailBufferZoneWidth = 0; /*0x679fc7*/
 
 }
+}  // G42.18c ns repair
 // 0x679FD0
+namespace gamemd {  // G42.18c ns repair
 void RulesClass::readInfantryTypes()
 {
 
@@ -426,7 +441,9 @@ void RulesClass::readInfantryTypes()
   this->DetailBufferZoneWidth = 0; /*0x679ff7*/
 
 }
+}  // G42.18c ns repair
 // 0x67A000
+namespace gamemd {  // G42.18c ns repair
 void RulesClass::readCountries()
 {
 
@@ -443,7 +460,9 @@ void RulesClass::readCountries()
   this->DetailBufferZoneWidth = 0; /*0x67a027*/
 
 }
+}  // G42.18c ns repair
 // 0x67A060
+namespace gamemd {  // G42.18c ns repair
 void RulesClass::readVehicleTypes()
 {
 
@@ -460,7 +479,9 @@ void RulesClass::readVehicleTypes()
   this->DetailBufferZoneWidth = 0; /*0x67a087*/
 
 }
+}  // G42.18c ns repair
 // 0x67A190
+namespace gamemd {  // G42.18c ns repair
 void *  RulesClass::readAircraftTypes(int * a2)
 {
 
@@ -506,7 +527,9 @@ void *  RulesClass::readAircraftTypes(int * a2)
   return &this->DetailMinFrameRateNormal; /*0x67a204*/
 
 }
+}  // G42.18c ns repair
 // 0x67A210
+namespace gamemd {  // G42.18c ns repair
 void * RulesClass::readSuperWeaponTypes(int * a2)
 {
 
@@ -552,7 +575,9 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 
 }
+}  // G42.18c ns repair
 // 0x67A310
+namespace gamemd {  // G42.18c ns repair
 void * RulesClass::readBuildingTypes(int * a2)
 {
 
@@ -598,7 +623,9 @@ void * RulesClass::readBuildingTypes(int * a2)
   return &this->DetailMinFrameRateNormal; /*0x67a384*/
 
 }
+}  // G42.18c ns repair
 // 0x67A8B0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * RulesClass::readParticles()
 {
 
@@ -612,7 +639,9 @@ unsigned int * RulesClass::readParticles()
   return &this->DetailMinFrameRateNormal; /*0x67a8d1*/
 
 }
+}  // G42.18c ns repair
 // 0x67B480
+namespace gamemd {  // G42.18c ns repair
 int  RulesClass::readAI(unsigned int * a2)
 {
 
@@ -644,7 +673,9 @@ int  RulesClass::readAI(unsigned int * a2)
   return result; /*0x67b4b1*/
 
 }
+}  // G42.18c ns repair
 // 0x67BDD0
+namespace gamemd {  // G42.18c ns repair
 void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
 
@@ -751,7 +782,9 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
   return (void *)a1; /*0x67bf02*/
 
 }
+}  // G42.18c ns repair
 // 0x67C430
+namespace gamemd {  // G42.18c ns repair
 unsigned int * RulesClass::readIQ(int a2, int a3)
 {
 
@@ -773,21 +806,27 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   return &this->DetailMinFrameRateNormal; /*0x67c45d*/
 
 }
+}  // G42.18c ns repair
 // 0x6614F0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
 {
 
   return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)aP1 + 16))(aP1, this, 3, 0); /*0x6614ff*/
 
 }
+}  // G42.18c ns repair
 // 0x661510
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readCombatDamage(int a2)
 {
 
   return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, this, 3, 0); /*0x66151f*/
 
 }
+}  // G42.18c ns repair
 // 0x66D1F0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readSpecialWeapons()
 {
 
@@ -821,7 +860,9 @@ int RulesClass::readSpecialWeapons()
   return result; /*0x66d255*/
 
 }
+}  // G42.18c ns repair
 // 0x66D3A0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::ReadColors()
 {
 
@@ -863,7 +904,9 @@ int RulesClass::ReadColors()
   return result; /*0x66d46e*/
 
 }
+}  // G42.18c ns repair
 // 0x66D480
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::ReadColorAdd()
 {
 
@@ -916,7 +959,9 @@ int RulesClass::ReadColorAdd()
   return result; /*0x66d514*/
 
 }
+}  // G42.18c ns repair
 // 0x672280
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readCrateRules()
 {
 
@@ -944,7 +989,9 @@ int RulesClass::readCrateRules()
   return KeyCount > 0; /*0x6722dc*/
 
 }
+}  // G42.18c ns repair
 // 0x6723D0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readRadiation()
 {
 
@@ -972,7 +1019,9 @@ int RulesClass::readRadiation()
   return KeyCount > 0; /*0x67242c*/
 
 }
+}  // G42.18c ns repair
 // 0x6725F0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::ReadSidesList()
 {
 
@@ -1000,7 +1049,9 @@ int RulesClass::ReadSidesList()
   return KeyCount > 0; /*0x67264c*/
 
 }
+}  // G42.18c ns repair
 // 0x67A3C0
+namespace gamemd {  // G42.18c ns repair
 int  RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
 {
 
@@ -1021,21 +1072,27 @@ int  RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
   return result; /*0x67a404*/
 
 }
+}  // G42.18c ns repair
 // 0x67A730
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readSmudgeTypes()
 {
 
   return (int)this->LargeVisceroid; /*0x67a733*/
 
 }
+}  // G42.18c ns repair
 // 0x67A7C0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readOverlayTypes()
 {
 
   return (int)this->LargeVisceroid; /*0x67a7c3*/
 
 }
+}  // G42.18c ns repair
 // 0x67A7D0
+namespace gamemd {  // G42.18c ns repair
 int  RulesClass::readAnimations(TechnoTypeClass * aP1)
 {
 
@@ -1056,13 +1113,16 @@ int  RulesClass::readAnimations(TechnoTypeClass * aP1)
   return result; /*0x67a814*/
 
 }
+}  // G42.18c ns repair
 // 0x67A8A0
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::readWarheads()
 {
 
   return (int)this->LargeVisceroid; /*0x67a8a3*/
 
 }
+}  // G42.18c ns repair
 // 0x67A8E0
 int  RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 {

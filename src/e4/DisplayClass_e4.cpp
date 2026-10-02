@@ -66,8 +66,10 @@ int DisplayClass::UpdateDisplayTimer()
 }
 } // namespace gamemd
 // 0x487690
+namespace gamemd {  // G42.18c ns repair
 int DisplayClass::AdvanceFrameCounter()
 int DisplayClass::AdvanceFrameCounter()
+}  // G42.18c ns repair
 {
 
   void *DisplayClass_field_0x130; // esi

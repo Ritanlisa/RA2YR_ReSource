@@ -1053,13 +1053,16 @@ int XSurface_entry_3C_()
 } // namespace gamemd
 
 // 0x7BAB80
+namespace gamemd {  // G42.18c ns repair
 char XSurface::entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 
   return 0; /*0x7bab82*/
 
 }
+}  // G42.18c ns repair
 // 0x7BADC0
+namespace gamemd {  // G42.18c ns repair
 char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 {
 
@@ -1110,6 +1113,7 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
   return 1; /*0x7bae53*/
 
 }
+}  // G42.18c ns repair
 // 0x7BB340
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {

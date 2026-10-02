@@ -144,6 +144,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 } // namespace gamemd
 
 // 0x4A2E00
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 {
 
@@ -159,7 +160,9 @@ int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
            a5);
 
 }
+}  // G42.18c ns repair
 // 0x4A2E50
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Write(int a1, int a2, int a3)
 {
 
@@ -173,7 +176,9 @@ int CStreamClass::Write(int a1, int a2, int a3)
            a3);
 
 }
+}  // G42.18c ns repair
 // 0x4A2EA0
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
@@ -188,7 +193,9 @@ int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
            a6);
 
 }
+}  // G42.18c ns repair
 // 0x4A2EE0
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::SetSize(int a1, int a2)
 {
 
@@ -199,7 +206,9 @@ int CStreamClass::SetSize(int a1, int a2)
            a2);
 
 }
+}  // G42.18c ns repair
 // 0x4A2F10
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Commit(int a1)
 {
 
@@ -208,7 +217,9 @@ int CStreamClass::Commit(int a1)
   return (*(int (**)(int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 36))(a1->CStreamClass_field_0x08); /*0x4a2f2f*/
 
 }
+}  // G42.18c ns repair
 // 0x4A2F40
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
@@ -223,7 +234,9 @@ int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
            a6);
 
 }
+}  // G42.18c ns repair
 // 0x4A2F80
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
@@ -238,7 +251,9 @@ int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
            a6);
 
 }
+}  // G42.18c ns repair
 // 0x4A2FC0
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 {
 
@@ -250,7 +265,9 @@ int CStreamClass::UnlockRegion(int a1, int a2, int a3)
            a3);
 
 }
+}  // G42.18c ns repair
 // 0x4A2FF0
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Stat(int a1, int a2)
 {
 
@@ -261,27 +278,34 @@ int CStreamClass::Stat(int a1, int a2)
            a2);
 
 }
+}  // G42.18c ns repair
 // 0x4A3220
+namespace gamemd {  // G42.18c ns repair
 int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
 {
 
   return CStreamClass::QueryInterface((CStreamClass *)((char *)a1 - 4), a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x4A3230
+namespace gamemd {  // G42.18c ns repair
 LONG CStreamClass::IStreamAddRef(int a1)
 {
 
   return CStreamClass::AddRef((CStreamClass *)((char *)a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x4A3240
+namespace gamemd {  // G42.18c ns repair
 LONG CStreamClass::IStreamRelease(int a1)
 {
 
   return CStreamClass::Release((CStreamClass *)((char *)a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x4A4B20
 namespace gamemd {
 int CStreamClass_16::Seek(int a2, void *a2_2, void *a3_1)

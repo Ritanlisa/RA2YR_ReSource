@@ -3760,6 +3760,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
 }
 }
 // 0x60C4A0
+namespace gamemd {  // G42.18c ns repair
 int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
 {
 
@@ -3768,6 +3769,7 @@ int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
   return EnumChildWindows(hWndParent, (WNDENUMPROC)RepositionDialogControls, lParam); /*0x60c4d3*/
 
 }
+}  // G42.18c ns repair
 // 0x60F4B0
 namespace gamemd {
 AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)

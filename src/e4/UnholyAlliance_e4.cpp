@@ -87,6 +87,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 }
 }
 // 0x5CB540
+namespace gamemd {  // G42.18c ns repair
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -97,7 +98,9 @@ UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
   return &Block->m_Enabled; /*0x5cb560*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB3F0
+namespace gamemd {  // G42.18c ns repair
 char UnholyAlliance::Read(void *a1, void *a2)
 {
 
@@ -105,13 +108,16 @@ char UnholyAlliance::Read(void *a1, void *a2)
   return 1; /*0x5cb3f7*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB400
+namespace gamemd {  // G42.18c ns repair
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 
   return stru_A8B250.__pad_0[8] && (uint8_t)ScenarioClass::MissionStubReturnZero2((int *)&aP0->m_Enabled); /*0x5cb41c*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB430
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {

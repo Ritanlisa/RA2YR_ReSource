@@ -95,6 +95,7 @@ int MPBattleClass::vt_entry_18()
 }
 }
 // 0x5CACF0
+namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isValidMap()
 {
 dword_ABFAF8 = result; /*0x5cad1b*/
@@ -109,7 +110,9 @@ dword_ABFAF8 = result; /*0x5cad1b*/
   return result; /*0x5cad20*/
 
 }
+}  // G42.18c ns repair
 // 0x5CAD30
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::needsHouseSelection()
 {
 dbl_ABFAB0 = Math::ArcTan((double)dword_ABFAF8 * 0.00390625); /*0x5cad47*/
@@ -118,7 +121,9 @@ dbl_ABFAB0 = Math::ArcTan((double)dword_ABFAF8 * 0.00390625); /*0x5cad47*/
   dbl_ABFAB0 = Math::ArcTan((double)dword_ABFAF8 * 0.00390625); /*0x5cad47*/
 
 }
+}  // G42.18c ns repair
 // 0x5CAD60
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::validatePlayer()
 {
 dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
@@ -127,7 +132,9 @@ dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
   dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
 
 }
+}  // G42.18c ns repair
 // 0x5CAD90
+namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::startGame()
 {
 dword_ABFAEC = result; /*0x5cadb0*/
@@ -140,7 +147,9 @@ dword_ABFAEC = result; /*0x5cadb0*/
   return result; /*0x5cadb6*/
 
 }
+}  // G42.18c ns repair
 // 0x5CADC0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::stopGame()
 {
 word_ABFA98 = 0; /*0x5cadc2*/
@@ -153,7 +162,9 @@ word_ABFA9A = 0; /*0x5cadc8*/
   return 0; /*0x5cadce*/
 
 }
+}  // G42.18c ns repair
 // 0x5CADD0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::areTeamChangesAllowed()
 {
 dword_ABFAB8 = 0; /*0x5cadd2*/
@@ -169,7 +180,9 @@ dword_ABFAC0 = 0; /*0x5caddc*/
   return 0; /*0x5cade1*/
 
 }
+}  // G42.18c ns repair
 // 0x5CADF0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::isHouseAllyChangeAllowed()
 {
 dword_ABFAE8 = 0; /*0x5cadf5*/
@@ -185,7 +198,9 @@ dword_ABFAE4 = 128; /*0x5cae04*/
   return 128; /*0x5cae09*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB190
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onPlayerConnect()
 {
 dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
@@ -197,7 +212,9 @@ dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
   dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB1C0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onPlayerDisconnect()
 {
 dbl_ABFB78 = dbl_ABFB28 / 60.0; /*0x5cb1cc*/
@@ -206,7 +223,9 @@ dbl_ABFB78 = dbl_ABFB28 / 60.0; /*0x5cb1cc*/
   dbl_ABFB78 = dbl_ABFB28 / 60.0; /*0x5cb1cc*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB1E0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::getMaximumPlayers()
 {
 dbl_ABFB60 = 1.0 / dbl_ABFB78; /*0x5cb1ec*/
@@ -215,7 +234,9 @@ dbl_ABFB60 = 1.0 / dbl_ABFB78; /*0x5cb1ec*/
   dbl_ABFB60 = 1.0 / dbl_ABFB78; /*0x5cb1ec*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB200
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::getMinimumPlayers()
 {
 dbl_ABFB58 = 0.0174532925199433 * 45.0; /*0x5cb20c*/
@@ -224,7 +245,9 @@ dbl_ABFB58 = 0.0174532925199433 * 45.0; /*0x5cb20c*/
   dbl_ABFB58 = 0.0174532925199433 * 45.0; /*0x5cb20c*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB220
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::getAlliesLimit()
 {
 dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
@@ -233,7 +256,9 @@ dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
   dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB260
+namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::canAllyWith()
 {
 dword_ABFB80 = result; /*0x5cb28b*/
@@ -248,7 +273,9 @@ dword_ABFB80 = result; /*0x5cb28b*/
   return result; /*0x5cb290*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB2D0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onGameBegin()
 {
 dbl_ABFB50 = Math::ArcTan((double)(2 * dword_ABFB80) / dbl_ABFB28); /*0x5cb2f2*/
@@ -256,7 +283,9 @@ dbl_ABFB50 = Math::ArcTan((double)(2 * dword_ABFB80) / dbl_ABFB28); /*0x5cb2f2*/
   dbl_ABFB50 = Math::ArcTan((double)(2 * dword_ABFB80) / dbl_ABFB28); /*0x5cb2f2*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB380
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::isAIAllowed()
 {
 dword_ABFB10 = 0; /*0x5cb382*/
@@ -271,7 +300,9 @@ dword_ABFB1C = 0; /*0x5cb391*/
   return 0; /*0x5cb396*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB3A0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 
@@ -280,7 +311,9 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
   return this->MPGameModeClass; /*0x5cb3d0*/
 
 }
+}  // G42.18c ns repair
 // 0x5CB570
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::isTeamsAllowed()
 {
 dword_ABFB88 = 0; /*0x5cb572*/
@@ -295,7 +328,9 @@ dword_ABFB94 = 0; /*0x5cb581*/
   return 0; /*0x5cb586*/
 
 }
+}  // G42.18c ns repair
 // 0x5CEDB0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::firstValidMapIndex()
 {
 dword_ABFBB0 = 0; /*0x5cedb2*/
@@ -310,7 +345,9 @@ dword_ABFBBC = 0; /*0x5cedc1*/
   return 0; /*0x5cedc6*/
 
 }
+}  // G42.18c ns repair
 // 0x5D1A80
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::populateTeamDropdown()
 {
 dword_ABFBC0 = 0; /*0x5d1a82*/
@@ -325,7 +362,9 @@ dword_ABFBCC = 0; /*0x5d1a91*/
   return 0; /*0x5d1a96*/
 
 }
+}  // G42.18c ns repair
 // 0x5D2DE0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::drawTeamDropdown()
 {
 
@@ -336,7 +375,9 @@ int MPBattleClass::drawTeamDropdown()
   return 0; /*0x5d2df6*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3470
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::populateTeamDropdownForPlayer()
 {
 
@@ -347,35 +388,45 @@ int MPBattleClass::populateTeamDropdownForPlayer()
   return 0; /*0x5d3486*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3810
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::validateHouse()
 {
 
   dbl_ABFC80 = dbl_ABFC30 / 60.0; /*0x5d381c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3830
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::validateOwner()
 {
 
   dbl_ABFC68 = 1.0 / dbl_ABFC80; /*0x5d383c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D38F0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::validateColor()
 {
 
   dbl_ABFC40 = Math::ArcTan((double)dword_ABFC88 * 0.00390625); /*0x5d3907*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3920
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::validateStartPosition()
 {
 
   dbl_ABFC58 = Math::ArcTan((double)(2 * dword_ABFC88) / dbl_ABFC30); /*0x5d3942*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3950
+namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isDefaultFix()
 {
 
@@ -386,7 +437,9 @@ long long MPBattleClass::isDefaultFix()
   return result; /*0x5d3976*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3980
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::isDefaultAI()
 {
 
@@ -395,7 +448,9 @@ int MPBattleClass::isDefaultAI()
   return 0; /*0x5d398e*/
 
 }
+}  // G42.18c ns repair
 // 0x5D3990
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::randomHumanCountryIndex()
 {
 
@@ -405,7 +460,9 @@ int MPBattleClass::randomHumanCountryIndex()
   return 0; /*0x5d39a1*/
 
 }
+}  // G42.18c ns repair
 // 0x5D39B0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::randomAICountryIndex()
 {
 
@@ -415,7 +472,9 @@ int MPBattleClass::randomAICountryIndex()
   return 128; /*0x5d39c9*/
 
 }
+}  // G42.18c ns repair
 // 0x5D4C30
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::onDialogCreated()
 {
 
@@ -426,7 +485,9 @@ int MPBattleClass::onDialogCreated()
   return 0; /*0x5d4c46*/
 
 }
+}  // G42.18c ns repair
 // 0x5D4C50
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::onDialogDestroyed()
 {
 
@@ -440,7 +501,9 @@ int MPBattleClass::onDialogDestroyed()
   return atexit(sub_5D4C90); /*0x5d4c8c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D4CD0
+namespace gamemd {  // G42.18c ns repair
 int MPBattleClass::unfixAlliances()
 {
 
@@ -454,7 +517,9 @@ int MPBattleClass::unfixAlliances()
   return atexit(sub_5D4D10); /*0x5d4d0c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D58B0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::startingPositionsToHouseBaseCells()
 {
 
@@ -464,27 +529,34 @@ void MPBattleClass::startingPositionsToHouseBaseCells()
   dbl_ABFD58 = Math::Sqrt(v0 + v0); /*0x5d58ce*/
 
 }
+}  // G42.18c ns repair
 // 0x5D58E0
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::allyTeams()
 {
 
   dbl_ABFDC8 = dbl_ABFD58 / 60.0; /*0x5d58ec*/
 
 }
+}  // G42.18c ns repair
 // 0x5D5900
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::isMegawealthAllowed()
 {
 
   dbl_ABFD98 = 1.0 / dbl_ABFDC8; /*0x5d590c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D5920
+namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onAIJoined()
 {
 
   dbl_ABFD90 = 0.0174532925199433 * 45.0; /*0x5d592c*/
 
 }
+}  // G42.18c ns repair
 // 0x5D8170
 MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {

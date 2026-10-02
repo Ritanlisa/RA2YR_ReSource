@@ -230,6 +230,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
 }
 }
 // 0x705270
+namespace gamemd {  // G42.18c ns repair
 AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
 
@@ -415,6 +416,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   return result; /*0x705847*/
 
 }
+}  // G42.18c ns repair
 // 0x780D90
 namespace gamemd {
 wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
@@ -459,6 +461,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
 }
 }
 // 0x7C7371
+namespace gamemd {  // G42.18c ns repair
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
 {
 
@@ -1135,6 +1138,7 @@ LABEL_39:
   }
 
 }
+}  // G42.18c ns repair
 // 0x731BF0
 namespace gamemd {
 char sub_731BF0()

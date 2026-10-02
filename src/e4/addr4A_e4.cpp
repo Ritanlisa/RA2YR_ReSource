@@ -286,6 +286,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
 }
 }
 // 0x4A0B20
+namespace gamemd {  // G42.18c ns repair
 int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 
@@ -354,6 +355,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   return 0; /*0x4a0b2c*/
 
 }
+}  // G42.18c ns repair
 // 0x4A2370
 namespace gamemd {
 AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)

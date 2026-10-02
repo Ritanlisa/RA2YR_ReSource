@@ -84,6 +84,7 @@ v2 = (LPVOID)(ppv);
 }
 }
 // 0x78F7F0
+namespace gamemd {  // G42.18c ns repair
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
     unsigned int v14 = 0;  /* G37 hoist */
@@ -137,8 +138,10 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
   size_t v43; // esi
   wchar_t *v... [59148 chars total]
 }
+}  // G42.18c ns repair
 
 // 0x791B10
+namespace gamemd {  // G42.18c ns repair
 int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
 
@@ -183,6 +186,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
   wchar_t *v42; // eax
   wchar_t *v43; // e... [27756 chars total]
 }
+}  // G42.18c ns repair
 
 // 0x603F60
 namespace gamemd {

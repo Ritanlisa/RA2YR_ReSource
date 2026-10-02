@@ -438,6 +438,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
 }
 }
 // 0x7730F0
+namespace gamemd {  // G42.18c ns repair
 WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
 {
 
@@ -501,7 +502,9 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   return (WeaponTypeClass *)v3; /*0x77322c*/
 
 }
+}  // G42.18c ns repair
 // 0x475B70
+namespace gamemd {  // G42.18c ns repair
 char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
 {
 
@@ -542,7 +545,9 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
   return INIClass::SetString((char *)this, Block, a3, Source); /*0x475c61*/
 
 }
+}  // G42.18c ns repair
 // 0x475C70
+namespace gamemd {  // G42.18c ns repair
 char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Block, int a6, int16_t a7, int a8, int a9, int a10)
 {
 
@@ -578,7 +583,9 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
   return v13; /*0x475d5c*/
 
 }
+}  // G42.18c ns repair
 // 0x771F00
+namespace gamemd {  // G42.18c ns repair
 unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
 {
 
@@ -593,7 +600,9 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   return this; /*0x771f45*/
 
 }
+}  // G42.18c ns repair
 // 0x7729F0
+namespace gamemd {  // G42.18c ns repair
 int WeaponTypeClass::CalculateSpeed()
 {
 
@@ -612,7 +621,9 @@ int WeaponTypeClass::CalculateSpeed()
   return result; /*0x772a48*/
 
 }
+}  // G42.18c ns repair
 // 0x772C90
+namespace gamemd {  // G42.18c ns repair
 int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -625,13 +636,16 @@ int WeaponTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x772c9d*/
 
 }
+}  // G42.18c ns repair
 // 0x7730D0
+namespace gamemd {  // G42.18c ns repair
 int WeaponTypeClass::GetObjectSize()
 {
 
   return 352; /*0x7730d5*/
 
 }
+}  // G42.18c ns repair
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {

@@ -1951,6 +1951,7 @@ LABEL_26:
 }
 }
 // 0x40B120
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::Clear(int a2, int a3)
 {
 
@@ -1966,7 +1967,9 @@ int VectorClass_flat::Clear(int a2, int a3)
   return a2; /*0x40b139*/
 
 }
+}  // G42.18c ns repair
 // 0x40B140
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::AddRef(int a2)
 {
 
@@ -1994,7 +1997,9 @@ char VectorClass_flat::AddRef(int a2)
   return 0; /*0x40b16e*/
 
 }
+}  // G42.18c ns repair
 // 0x40B180
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Release(int a2, char * a3)
 {
 
@@ -2100,7 +2105,9 @@ char VectorClass_flat::Release(int a2, char * a3)
   }
 
 }
+}  // G42.18c ns repair
 // 0x40B270
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup5()
 {
 
@@ -2113,7 +2120,9 @@ void VectorClass_flat::Cleanup5()
   *((unsigned int *)this + 2) = 0; /*0x40b291*/
 
 }
+}  // G42.18c ns repair
 // 0x40B2A0
+namespace gamemd {  // G42.18c ns repair
 int  VectorClass_flat::GetSize(unsigned int * a2)
 {
 
@@ -2135,7 +2144,9 @@ int  VectorClass_flat::GetSize(unsigned int * a2)
   return result; /*0x40b2aa*/
 
 }
+}  // G42.18c ns repair
 // 0x40B2E0
+namespace gamemd {  // G42.18c ns repair
 unsigned int VectorClass_flat::GetCapacity(int a2)
 {
 
@@ -2145,7 +2156,9 @@ unsigned int VectorClass_flat::GetCapacity(int a2)
     return 0; /*0x40b2e7*/
 
 }
+}  // G42.18c ns repair
 // 0x40B300
+namespace gamemd {  // G42.18c ns repair
 VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -2165,6 +2178,7 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char 
   return Block; /*0x40b345*/
 
 }
+}  // G42.18c ns repair
 // 0x40B690
 namespace gamemd {
 int VectorClass_ptr_BombClass::Get(int a2, void *a2_2)
@@ -3105,12 +3119,14 @@ unsigned int VectorClass_ptr_IsometricTileClass::GetPtrOffset(int a2)
 } // namespace gamemd
 
 // 0x40CCC0
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::GetAt(int a2)
 {
 
   return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x40ccca*/
 
 }
+}  // G42.18c ns repair
 // 0x40CF00
 namespace gamemd {
 int VectorClass_ptr_IsometricTileClass::FindValue(unsigned int * a2)
@@ -5421,6 +5437,7 @@ unsigned int VectorClass_Cell::GetCapacity(int a2)
 } // namespace gamemd
 
 // 0x42F860
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
 {
 
@@ -5475,6 +5492,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
   return 1; /*0x42f918*/
 
 }
+}  // G42.18c ns repair
 // 0x42FBA0
 namespace gamemd {
 VectorClass_flat *  VectorClass_Cell::QueryInterface(unsigned int * Block, char a2)
@@ -5499,6 +5517,7 @@ VectorClass_flat *  VectorClass_Cell::QueryInterface(unsigned int * Block, char 
 } // namespace gamemd
 
 // 0x42FCB0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
 {
 
@@ -5529,6 +5548,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
   return &this->vtable0; /*0x42fce6*/
 
 }
+}  // G42.18c ns repair
 // 0x45A070
 namespace gamemd {
 void VectorClass_ptr_FoggedObjectClass::Destroy(void *a1_1)
@@ -5616,6 +5636,7 @@ int VectorClass_ptr_Reestablish::Clear(int a2)
 } // namespace gamemd
 
 // 0x45A270
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup(void *a1)
 {
 
@@ -5628,6 +5649,7 @@ void VectorClass_flat::Cleanup(void *a1)
   *((unsigned int *)this + 2) = 0; /*0x45a291*/
 
 }
+}  // G42.18c ns repair
 // 0x45A4D0
 namespace gamemd {
 void VectorClass_ptr_InfantryClass::Remove(void *a1_1)
@@ -6199,6 +6221,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
 } // namespace gamemd
 
 // 0x45AD80
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
 
@@ -6220,6 +6243,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
   return &this->vtable0; /*0x45adad*/
 
 }
+}  // G42.18c ns repair
 // 0x45AE50
 namespace gamemd {
 unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
@@ -7070,6 +7094,7 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
 } // namespace gamemd
 
 // 0x477750
+namespace gamemd {  // G42.18c ns repair
 int * VectorClass_flat::ScalarDtor(char a2)
 {
 
@@ -7079,7 +7104,9 @@ int * VectorClass_flat::ScalarDtor(char a2)
   return (int *)this->__pad_0; /*0x47776a*/
 
 }
+}  // G42.18c ns repair
 // 0x4777B0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
 {
 
@@ -7130,14 +7157,18 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   return &this->vtable0; /*0x477832*/
 
 }
+}  // G42.18c ns repair
 // 0x477890
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::GetAt_Copy(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x47789a*/
 
 }
+}  // G42.18c ns repair
 // 0x477BE0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6)
 {
 
@@ -7159,7 +7190,9 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4,
   return &this->vtable0; /*0x477c0d*/
 
 }
+}  // G42.18c ns repair
 // 0x477C70
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::vt02(int a2, unsigned int * a3)
 {
 
@@ -7207,7 +7240,9 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
   }
 
 }
+}  // G42.18c ns repair
 // 0x477D20
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Destroy(void *a1)
 {
 
@@ -7224,7 +7259,9 @@ void VectorClass_flat::Destroy(void *a1)
   return result; /*0x477d44*/
 
 }
+}  // G42.18c ns repair
 // 0x477D50
+namespace gamemd {  // G42.18c ns repair
 int  VectorClass_flat::vt04(unsigned int * a2)
 {
 
@@ -7246,7 +7283,9 @@ int  VectorClass_flat::vt04(unsigned int * a2)
   return result; /*0x477d5a*/
 
 }
+}  // G42.18c ns repair
 // 0x477D90
+namespace gamemd {  // G42.18c ns repair
 unsigned int VectorClass_flat::vt05(int a2)
 {
 
@@ -7256,7 +7295,9 @@ unsigned int VectorClass_flat::vt05(int a2)
     return 0; /*0x477d97*/
 
 }
+}  // G42.18c ns repair
 // 0x477E10
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Resize(int a2, unsigned int * a3)
 {
 
@@ -7302,7 +7343,9 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
   return 1; /*0x477eae*/
 
 }
+}  // G42.18c ns repair
 // 0x478630
+namespace gamemd {  // G42.18c ns repair
 VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
 {
 
@@ -7322,6 +7365,7 @@ VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
   return Block; /*0x478675*/
 
 }
+}  // G42.18c ns repair
 // 0x48AD10
 namespace gamemd {
 void VectorClass_ptr_DamageGroup::Destroy(void *a1_1)
@@ -7917,12 +7961,14 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
 } // namespace gamemd
 
 // 0x49FB60
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::GetCount()
 {
 
   return this->Count; /*0x49fb63*/
 
 }
+}  // G42.18c ns repair
 // 0x4A0E10
 namespace gamemd {
 DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2)
@@ -8096,6 +8142,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
 } // namespace gamemd
 
 // 0x4A10A0
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree2()
 {
 
@@ -8108,6 +8155,7 @@ void VectorClass_flat::ClearAndFree2()
   *((unsigned int *)this + 2) = 0; /*0x4a10c1*/
 
 }
+}  // G42.18c ns repair
 // 0x4A10D0
 namespace gamemd {
 int  VectorClass_UtagCONNECTDATA::GetSize(unsigned int * a2)
@@ -8233,6 +8281,7 @@ int VectorClass_UtagCONNECTDATA::FindItemIndex(unsigned int * a2)
 } // namespace gamemd
 
 // 0x4A1330
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::CleanupTyped()
 {
 
@@ -8245,6 +8294,7 @@ void VectorClass_flat::CleanupTyped()
   *((unsigned int *)this + 2) = 0; /*0x4a1351*/
 
 }
+}  // G42.18c ns repair
 // 0x4A14A0
 namespace gamemd {
 VectorClass_flat *  VectorClass_UtagCONNECTDATA::QueryInterface(unsigned int * Block, char a2)
@@ -8269,6 +8319,7 @@ VectorClass_flat *  VectorClass_UtagCONNECTDATA::QueryInterface(unsigned int * B
 } // namespace gamemd
 
 // 0x4A7FE0
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::AppendCopy(DynamicVector * aP1)
 {
 
@@ -8300,6 +8351,7 @@ char VectorClass_flat::AppendCopy(DynamicVector * aP1)
   return result; /*0x4a8011*/
 
 }
+}  // G42.18c ns repair
 // 0x4B9C30
 namespace gamemd {
 int VectorClass_ptr_CrossDissolveEffect::GetItem(int a2)
@@ -14255,6 +14307,7 @@ int VectorClass_ptr_AnimClass::GetSize(unsigned int * a2)
 } // namespace gamemd
 
 // 0x4EBFA0
+namespace gamemd {  // G42.18c ns repair
 unsigned int VectorClass_flat::GetIndex(int a2)
 {
 
@@ -14264,6 +14317,7 @@ unsigned int VectorClass_flat::GetIndex(int a2)
     return 0; /*0x4ebfa7*/
 
 }
+}  // G42.18c ns repair
 // 0x4EBFC0
 namespace gamemd {
 char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
@@ -16499,6 +16553,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
 } // namespace gamemd
 
 // 0x4ED950
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup4()
 {
 
@@ -16511,6 +16566,7 @@ void VectorClass_flat::Cleanup4()
   *((unsigned int *)this + 2) = 0; /*0x4ed971*/
 
 }
+}  // G42.18c ns repair
 // 0x4ED980
 namespace gamemd {
 int  VectorClass_ptr_BuildingTypeClass::GetSize(unsigned int * a2)
@@ -21301,6 +21357,7 @@ int VectorClass_UScoutStruct___33::GetSize(unsigned int * a2)
 } // namespace gamemd
 
 // 0x50EB70
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
 {
 
@@ -21339,6 +21396,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
   return 1; /*0x50eba1*/
 
 }
+}  // G42.18c ns repair
 // 0x50EC20
 namespace gamemd {
 char VectorClass_UAngerStruct___16::AddRef(int a2)
@@ -22266,6 +22324,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
 } // namespace gamemd
 
 // 0x50F830
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree3()
 {
 
@@ -22278,6 +22337,7 @@ void VectorClass_flat::ClearAndFree3()
   *((unsigned int *)this + 2) = 0; /*0x50f851*/
 
 }
+}  // G42.18c ns repair
 // 0x50F860
 namespace gamemd {
 int  VectorClass_BuildingType::FindItemIndex(unsigned int * a2)
@@ -23257,6 +23317,7 @@ DynamicVector * VectorClass__N_18::Constructor_0(unsigned int * Block, char a2, 
 } // namespace gamemd
 
 // 0x510550
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
 {
 
@@ -23278,7 +23339,9 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
   return &this->vtable0; /*0x51057d*/
 
 }
+}  // G42.18c ns repair
 // 0x5105A0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
 
@@ -23300,6 +23363,7 @@ unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, 
   return &this->vtable0; /*0x5105cd*/
 
 }
+}  // G42.18c ns repair
 // 0x510A50
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2(int a1, const void * a2, unsigned int * a3)
@@ -23411,6 +23475,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12(int a1)
 } // namespace gamemd
 
 // 0x512FA0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 {
 
@@ -23448,7 +23513,9 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
   return &this->vtable0; /*0x512ff5*/
 
 }
+}  // G42.18c ns repair
 // 0x5132F0
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBack(VectorClass_flat * aP1)
 {
 
@@ -23479,7 +23546,9 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
   return 1; /*0x513321*/
 
 }
+}  // G42.18c ns repair
 // 0x5134D0
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree4()
 {
 
@@ -23492,7 +23561,9 @@ void VectorClass_flat::ClearAndFree4()
   *((unsigned int *)this + 2) = 0; /*0x5134f1*/
 
 }
+}  // G42.18c ns repair
 // 0x525060
+namespace gamemd {  // G42.18c ns repair
 unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
 {
 
@@ -23530,6 +23601,7 @@ unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
   return &this->vtable0; /*0x5250b5*/
 
 }
+}  // G42.18c ns repair
 // 0x538510
 namespace gamemd {
 int VectorClass_ptr_CCINIClass::Clear(int a2)
@@ -25693,6 +25765,7 @@ VectorClass_flat * VectorClass_PBG::QueryInterface(unsigned int * Block, char a2
 } // namespace gamemd
 
 // 0x55BAE0
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
 {
 
@@ -25721,7 +25794,9 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
   return result; /*0x55bb2e*/
 
 }
+}  // G42.18c ns repair
 // 0x588C90
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::CleanupSubzone()
 {
 
@@ -25738,6 +25813,7 @@ void VectorClass_flat::CleanupSubzone()
   *((unsigned int *)this + 2) = 0; /*0x588cb4*/
 
 }
+}  // G42.18c ns repair
 // 0x588E10
 namespace gamemd {
 int VectorClass_USubzoneTrackingStruct::Clear(int a2, int a3)
@@ -27343,6 +27419,7 @@ VectorClass_flat * VectorClass_UHashObject_uint_SubzoneConn::QueryInterface(unsi
 } // namespace gamemd
 
 // 0x58AC70
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
 {
 
@@ -27406,6 +27483,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
   return &this->vtable0; /*0x58acb4*/
 
 }
+}  // G42.18c ns repair
 // 0x58AD10
 namespace gamemd {
 unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2)
@@ -29710,6 +29788,7 @@ unsigned int VectorClass_ptr_MultiplayerTeam::GetCapacity(int a2)
 } // namespace gamemd
 
 // 0x5D8640
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ddtor()
 {
 
@@ -29722,6 +29801,7 @@ void VectorClass_flat::ddtor()
   *((unsigned int *)this + 2) = 0; /*0x5d8661*/
 
 }
+}  // G42.18c ns repair
 // 0x5D8810
 namespace gamemd {
 VectorClass_flat *  VectorClass_ptr_MultiplayerTeam::QueryInterface(unsigned int * Block, char a2)
@@ -29871,6 +29951,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
 } // namespace gamemd
 
 // 0x5EED00
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup3()
 {
 
@@ -29883,6 +29964,7 @@ void VectorClass_flat::Cleanup3()
   *((unsigned int *)this + 2) = 0; /*0x5eed21*/
 
 }
+}  // G42.18c ns repair
 // 0x5EED30
 namespace gamemd {
 int  VectorClass_cptr_MultiMission::GetSize(unsigned int * a2)
@@ -30394,6 +30476,7 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
 } // namespace gamemd
 
 // 0x5FFFC0
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Destructor()
 {
 
@@ -30410,6 +30493,7 @@ void VectorClass_flat::Destructor()
   *((unsigned int *)this + 2) = 0; /*0x5fffe4*/
 
 }
+}  // G42.18c ns repair
 // 0x5FFFF0
 namespace gamemd {
 unsigned int VectorClass_ptr_SpotLightClass::GetItemIndex(int a2)
@@ -31079,6 +31163,7 @@ unsigned int VectorClass_ptr_ColorScheme::GetItemIndex_0(int a2)
 } // namespace gamemd
 
 // 0x628DF0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
 {
 
@@ -31140,6 +31225,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
   return &this->vtable0; /*0x628e38*/
 
 }
+}  // G42.18c ns repair
 // 0x628E80
 namespace gamemd {
 VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(unsigned int * Block, char a2, void *a3_1)
@@ -31461,6 +31547,7 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
 } // namespace gamemd
 
 // 0x630250
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
 {
 
@@ -31492,6 +31579,7 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
   return result; /*0x630281*/
 
 }
+}  // G42.18c ns repair
 // 0x63DB60
 namespace gamemd {
 void VectorClass_ptr_PlanningMemberClass::Destroy(void *a1_1)
@@ -31828,6 +31916,7 @@ char VectorClass_ptr_PlanningBranchClass::Add(int a2, void *a2_2, void *a3_1)
 } // namespace gamemd
 
 // 0x63E140
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup2()
 {
 
@@ -31844,6 +31933,7 @@ void VectorClass_flat::Cleanup2()
   return result; /*0x63e164*/
 
 }
+}  // G42.18c ns repair
 // 0x63E170
 namespace gamemd {
 int  VectorClass_ptr_PlanningBranchClass::GetSize(unsigned int * a2)
@@ -31955,6 +32045,7 @@ int VectorClass_ptr_PlanningMemberClass::FindItemIndex_0(unsigned int * a2)
 } // namespace gamemd
 
 // 0x63E540
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
 {
 
@@ -31986,7 +32077,9 @@ char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
   return result; /*0x63e571*/
 
 }
+}  // G42.18c ns repair
 // 0x63E900
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::EraseAt(IUnknown * aP1)
 {
 
@@ -32013,6 +32106,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   return result; /*0x63e937*/
 
 }
+}  // G42.18c ns repair
 // 0x63E950
 namespace gamemd {
 char VectorClass_ptr_PlanningTokenClass::Add(int a2, void *a2_2, void *a3_1)
@@ -32265,6 +32359,7 @@ VectorClass_flat * VectorClass_ptr_PlanningTokenClass::QueryInterface(unsigned i
 } // namespace gamemd
 
 // 0x658D60
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2)
 {
 
@@ -32295,6 +32390,7 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
   return &this->vtable0; /*0x658d96*/
 
 }
+}  // G42.18c ns repair
 // 0x65A1E0
 namespace gamemd {
 void VectorClass_ptr_RadBeam::Destroy(void *a1_1)
@@ -33187,6 +33283,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
 } // namespace gamemd
 
 // 0x679F70
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Dtor()
 {
 
@@ -33203,7 +33300,9 @@ void VectorClass_flat::Dtor()
   this->Capacity = 0; /*0x679f97*/
 
 }
+}  // G42.18c ns repair
 // 0x67A630
+namespace gamemd {  // G42.18c ns repair
 int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
 {
 
@@ -33224,7 +33323,9 @@ int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
   return result; /*0x67a674*/
 
 }
+}  // G42.18c ns repair
 // 0x67A850
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
 {
 
@@ -33245,7 +33346,9 @@ int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
   return result; /*0x67a894*/
 
 }
+}  // G42.18c ns repair
 // 0x67AA80
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 {
 
@@ -33283,7 +33386,9 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
   return &this->vtable0; /*0x67aad5*/
 
 }
+}  // G42.18c ns repair
 // 0x67AE00
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 {
 
@@ -33321,7 +33426,9 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
   return &this->vtable0; /*0x67ae55*/
 
 }
+}  // G42.18c ns repair
 // 0x67AF60
+namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree()
 {
 
@@ -33334,7 +33441,9 @@ void VectorClass_flat::ClearAndFree()
   *((unsigned int *)this + 2) = 0; /*0x67af81*/
 
 }
+}  // G42.18c ns repair
 // 0x67B180
+namespace gamemd {  // G42.18c ns repair
 unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
 {
 
@@ -33372,7 +33481,9 @@ unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
   return &this->vtable0; /*0x67b1d5*/
 
 }
+}  // G42.18c ns repair
 // 0x691160
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBack2(unsigned int * a2)
 {
 
@@ -33403,6 +33514,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
   return 1; /*0x691191*/
 
 }
+}  // G42.18c ns repair
 // 0x69C580
 namespace gamemd {
 char **  VectorClass_Wstring::Clear(char ** a2, int a3)
@@ -34571,6 +34683,7 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
 } // namespace gamemd
 
 // 0x69D7C0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
 {
 
@@ -34632,7 +34745,9 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
   return &this->vtable0; /*0x69d811*/
 
 }
+}  // G42.18c ns repair
 // 0x69E9B0
+namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
 {
 
@@ -34640,6 +34755,7 @@ int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
   return Delegate::Dispatch((Pipe *)this, aP1, aP2); /*0x69e9d0*/
 
 }
+}  // G42.18c ns repair
 // 0x6B1410
 namespace gamemd {
 void VectorClass_ptr_SlaveManagerClass::Destroy(void *a1_1)
@@ -36730,6 +36846,7 @@ VectorClass_flat * VectorClass_ptr_SubTitle::QueryInterface(unsigned int * Block
 } // namespace gamemd
 
 // 0x6CE2D0
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::RemoveAt(int a2, void *a2_2)
 {
 
@@ -36756,6 +36873,7 @@ char VectorClass_flat::RemoveAt(int a2, void *a2_2)
   return result; /*0x6ce307*/
 
 }
+}  // G42.18c ns repair
 // 0x6DC4E0
 namespace gamemd {
 void VectorClass_UDirtyAreaStruct::Destroy(void *a1_1)
@@ -37696,6 +37814,7 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
 } // namespace gamemd
 
 // 0x717D20
+namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
 {
 
@@ -37746,6 +37865,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   return &this->vtable0; /*0x717da2*/
 
 }
+}  // G42.18c ns repair
 // 0x71B240
 namespace gamemd {
 void VectorClass_ptr_TemporalClass::Destroy(void *a1_1)
@@ -40442,6 +40562,7 @@ VectorClass_flat * VectorClass_rc_ptr_WDTTerritory::QueryInterface(unsigned int 
 } // namespace gamemd
 
 // 0x7AE730
+namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Shrink()
 {
 
@@ -40486,6 +40607,7 @@ char VectorClass_flat::Shrink()
   return result; /*0x7ae742*/
 
 }
+}  // G42.18c ns repair
 // 0x7B2890
 namespace gamemd {
 int VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get(int a2, void *a2_2)

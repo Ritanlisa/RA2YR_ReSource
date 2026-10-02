@@ -67,6 +67,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
 }
 } // namespace gamemd
 // 0x7470D0
+namespace gamemd {  // G42.18c ns repair
 UnitTypeClass::UnitTypeClass(INIClass * aP1)
 {
 
@@ -165,6 +166,7 @@ LABEL_11:
   return this; /*0x7472b1*/
 
 }
+}  // G42.18c ns repair
 // 0x7474B0
 namespace gamemd {
 void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
@@ -575,6 +577,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
 }
 }
 // 0x74B960
+namespace gamemd {  // G42.18c ns repair
 VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
@@ -600,7 +603,9 @@ LABEL_6:
   return *(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * v2); /*0x74b9cf*/
 
 }
+}  // G42.18c ns repair
 // 0x747590
+namespace gamemd {  // G42.18c ns repair
 int *  UnitTypeClass::GetDimensions(int * a2)
 {
 
@@ -620,7 +625,9 @@ int *  UnitTypeClass::GetDimensions(int * a2)
   return a2; /*0x7475cd*/
 
 }
+}  // G42.18c ns repair
 // 0x7475D0
+namespace gamemd {  // G42.18c ns repair
 unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
 
@@ -633,7 +640,9 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
   return (unsigned int *)a1; /*0x7475ef*/
 
 }
+}  // G42.18c ns repair
 // 0x747EB0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
 
@@ -656,14 +665,18 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
   return (unsigned int *)a1; /*0x747f0b*/
 
 }
+}  // G42.18c ns repair
 // 0x747F20
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetGameplayValue()
 {
 
   return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5836); /*0x747f2b*/
 
 }
+}  // G42.18c ns repair
 // 0x747F30
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -676,7 +689,9 @@ int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x747f3d*/
 
 }
+}  // G42.18c ns repair
 // 0x747F70
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::PowerDrainUpdate(int * a2)
 {
 
@@ -712,7 +727,9 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   return ((Power *)((Power *)a2))->FlagProcess(v11); /*0x74800a*/
 
 }
+}  // G42.18c ns repair
 // 0x748010
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::LoadFromINI2(int a1, int a2)
 {
 
@@ -743,7 +760,9 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
   return result; /*0x7480a0*/
 
 }
+}  // G42.18c ns repair
 // 0x7480B0
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
 
@@ -755,28 +774,35 @@ int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
   return result; /*0x7480ca*/
 
 }
+}  // G42.18c ns repair
 
 // 0x748160
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetObjectSize()
 {
 
   return 3704; /*0x748165*/
 
 }
+}  // G42.18c ns repair
 // 0x748170
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetTypeIdentifier()
 {
 
   return 40; /*0x748175*/
 
 }
+}  // G42.18c ns repair
 // 0x748180
+namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetAuxField()
 {
 
   return this->ArrayIndex; /*0x748186*/
 
 }
+}  // G42.18c ns repair
 // 0x748190
 UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
 {

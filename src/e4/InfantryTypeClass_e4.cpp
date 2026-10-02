@@ -731,6 +731,7 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0)
 }
 }
 // 0x524D70
+namespace gamemd {  // G42.18c ns repair
 InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
 {
 
@@ -791,7 +792,9 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   return (int)Block; /*0x524eb7*/
 
 }
+}  // G42.18c ns repair
 // 0x524F20
+namespace gamemd {  // G42.18c ns repair
 unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
 {
 
@@ -834,7 +837,9 @@ LABEL_8:
   return this; /*0x524f81*/
 
 }
+}  // G42.18c ns repair
 // 0x772FA0
+namespace gamemd {  // G42.18c ns repair
 WeaponTypeClass * * InfantryTypeClass::Find(char *Source)
 {
 
@@ -860,7 +865,9 @@ LABEL_6:
   return (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + v2); /*0x77300f*/
 
 }
+}  // G42.18c ns repair
 // 0x523B10
+namespace gamemd {  // G42.18c ns repair
 InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 {
 
@@ -874,7 +881,9 @@ InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
     return 0; /*0x523b35*/
 
 }
+}  // G42.18c ns repair
 // 0x523C20
+namespace gamemd {  // G42.18c ns repair
 int * InfantryTypeClass::GetDimensions(int a1)
 {
 
@@ -888,7 +897,9 @@ int * InfantryTypeClass::GetDimensions(int a1)
   return (int *)&(unsigned int *)((char *)&stru_A8EB00 + 1704); /*0x523c78*/
 
 }
+}  // G42.18c ns repair
 // 0x524760
+namespace gamemd {  // G42.18c ns repair
 unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
 
@@ -901,21 +912,27 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
   return a1; /*0x52477f*/
 
 }
+}  // G42.18c ns repair
 // 0x524790
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::GetGameplayValue()
 {
 
   return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5848); /*0x52479b*/
 
 }
+}  // G42.18c ns repair
 // 0x5247A0
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::StubReturnFalse()
 {
 
   return 0; /*0x5247a2*/
 
 }
+}  // G42.18c ns repair
 // 0x5247D0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
 
@@ -938,7 +955,9 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
   return a1; /*0x52482b*/
 
 }
+}  // G42.18c ns repair
 // 0x524840
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::PowerDrainUpdate(int * a2)
 {
 
@@ -986,7 +1005,9 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   return ((Power *)((Power *)a2))->FlagProcess(v13); /*0x52494f*/
 
 }
+}  // G42.18c ns repair
 // 0x524C70
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -999,20 +1020,25 @@ int InfantryTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x524c7d*/
 
 }
+}  // G42.18c ns repair
 // 0x524D40
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::GetTypeIdentifier()
 {
 
   return 16; /*0x524d45*/
 
 }
+}  // G42.18c ns repair
 // 0x524D50
+namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::GetObjectSize()
 {
 
   return 3792; /*0x524d55*/
 
 }
+}  // G42.18c ns repair
 // 0x524D60
 int InfantryTypeClass::GetAuxField()
 {

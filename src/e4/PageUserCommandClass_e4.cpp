@@ -22,6 +22,7 @@
 #include "e4/classes/Coord_e4.hpp"
 
 // 0x537DD0
+namespace gamemd {  // G42.18c ns repair
 PageUserCommandClass::PageUserCommandClass()
 {
 
@@ -29,34 +30,43 @@ PageUserCommandClass::PageUserCommandClass()
   return this->CommandClass; /*0x537dd8*/
 
 }
+}  // G42.18c ns repair
 // 0x537DE0
+namespace gamemd {  // G42.18c ns repair
 char * PageUserCommandClass::AddRef(void *a1)
 {
 
   return (char *)(aPageuser); /*0x537de5*/
 
 }
+}  // G42.18c ns repair
 // 0x537DF0
+namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Release(void *a1)
 {
 
   return GetStringCSF(aTxtPageuser, 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
 
 }
+}  // G42.18c ns repair
 // 0x537E10
+namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::ddtor()
 {
 
   return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
 
 }
+}  // G42.18c ns repair
 // 0x537E30
+namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
 
   return GetStringCSF(aTxtPageuserDes, 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
 
 }
+}  // G42.18c ns repair
 // 0x537E50
 char PageUserCommandClass::Do(int a1)
 {

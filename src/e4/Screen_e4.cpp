@@ -61,6 +61,7 @@ v4 = (int)((unsigned int *)(a2));
 }
 }
 // 0x68F060
+namespace gamemd {  // G42.18c ns repair
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
     unsigned int v19 = 0;  /* G37 hoist */
@@ -482,7 +483,9 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   return Screen::TransitionLoop(int a1,20) ; /*0x68f884*/
 
 }
+}  // G42.18c ns repair
 // 0x690160
+namespace gamemd {  // G42.18c ns repair
 int Screen::TransitionLoop(int a2)
 {
 
@@ -585,6 +588,7 @@ int Screen::TransitionLoop(int a2)
   return result; /*0x690356*/
 
 }
+}  // G42.18c ns repair
 // 0x690360
 int Screen::CleanupTransitionObjects()
 {

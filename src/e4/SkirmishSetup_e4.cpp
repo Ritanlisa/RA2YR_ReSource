@@ -102,6 +102,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
 }
 }
 // 0x5E6920
+namespace gamemd {  // G42.18c ns repair
 int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
 {
 
@@ -437,7 +438,9 @@ LABEL_28:
   return 1; /*0x5e695c*/
 
 }
+}  // G42.18c ns repair
 // 0x608260
+namespace gamemd {  // G42.18c ns repair
 int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
 {
 
@@ -487,6 +490,7 @@ LABEL_6:
   return result; /*0x6082b8*/
 
 }
+}  // G42.18c ns repair
 // 0x5E8590
 namespace gamemd {
 AbstractClass * * SkirmishSetup_Setup_5E8590()

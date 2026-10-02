@@ -159,6 +159,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 }
 
 // 0x5C0E90
+namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
 {
 
@@ -167,7 +168,9 @@ char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int
   return 0; /*0x5c0eab*/
 
 }
+}  // G42.18c ns repair
 // 0x5C0FA0
+namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
 {
 
@@ -176,6 +179,7 @@ char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, in
   return 0; /*0x5c0fbb*/
 
 }
+}  // G42.18c ns repair
 // 0x731CE0
 int Memory::Alloc76()
 {

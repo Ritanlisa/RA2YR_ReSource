@@ -82,13 +82,16 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
 }
 }
 // 0x4886B0
+namespace gamemd {  // G42.18c ns repair
 int CheckListClass::COMStub()
 {
 
   return *((unsigned int *)this + 17); /*0x4886b3*/
 
 }
+}  // G42.18c ns repair
 // 0x557E10
+namespace gamemd {  // G42.18c ns repair
 int CheckListClass::ddtor(int a2)
 {
 
@@ -101,27 +104,34 @@ int CheckListClass::ddtor(int a2)
   return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x557e51*/
 
 }
+}  // G42.18c ns repair
 // 0x48E650
+namespace gamemd {  // G42.18c ns repair
 void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 {
 
   ; /*0x48e650*/
 
 }
+}  // G42.18c ns repair
 // 0x4AEBA0
+namespace gamemd {  // G42.18c ns repair
 int CheckListClass::COMStub_Return0()
 {
 
   return 0; /*0x4aeba2*/
 
 }
+}  // G42.18c ns repair
 // 0x4E1510
+namespace gamemd {  // G42.18c ns repair
 void CheckListClass::StubReturnVoid()
 {
 
   ; /*0x4e1510*/
 
 }
+}  // G42.18c ns repair
 // 0x4E1520
 void CheckListClass::StubReturn()
 {

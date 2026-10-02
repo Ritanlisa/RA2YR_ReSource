@@ -281,6 +281,7 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
 } // namespace gamemd
 
 // 0x477840
+namespace gamemd {  // G42.18c ns repair
 void TypeList_flat::ddtor()
 {
 
@@ -297,7 +298,9 @@ void TypeList_flat::ddtor()
   this->m_8 = 0; /*0x477864*/
 
 }
+}  // G42.18c ns repair
 // 0x477870
+namespace gamemd {  // G42.18c ns repair
 unsigned int TypeList_flat::GetCapacity(int a2)
 {
 
@@ -307,6 +310,7 @@ unsigned int TypeList_flat::GetCapacity(int a2)
     return 0; /*0x477877*/
 
 }
+}  // G42.18c ns repair
 // 0x4778F0
 namespace gamemd {
 int TypeList_TechnoType::Clear(int a2)
@@ -318,6 +322,7 @@ int TypeList_TechnoType::Clear(int a2)
 } // namespace gamemd
 
 // 0x477990
+namespace gamemd {  // G42.18c ns repair
 TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -337,7 +342,9 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
   return Block; /*0x4779d5*/
 
 }
+}  // G42.18c ns repair
 // 0x477F10
+namespace gamemd {  // G42.18c ns repair
 int TypeList_flat::GetSize(unsigned int * a2)
 {
 
@@ -357,6 +364,7 @@ int TypeList_flat::GetSize(unsigned int * a2)
   return result; /*0x477f32*/
 
 }
+}  // G42.18c ns repair
 // 0x477FC0
 namespace gamemd {
 char TypeList_TechnoType::AddRef(int a2)
@@ -517,6 +525,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
 } // namespace gamemd
 
 // 0x478720
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
 {
 
@@ -554,7 +563,9 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
   return &this->DynamicVectorClass; /*0x478775*/
 
 }
+}  // G42.18c ns repair
 // 0x478790
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
 {
 
@@ -576,6 +587,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   return &this->DynamicVectorClass; /*0x4787bd*/
 
 }
+}  // G42.18c ns repair
 // 0x5128A0
 namespace gamemd {
 void TypeList_Infantry::ddtor()
@@ -815,6 +827,7 @@ DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
 } // namespace gamemd
 
 // 0x513740
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
 {
 
@@ -865,7 +878,9 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   return &this->DynamicVectorClass; /*0x5137c2*/
 
 }
+}  // G42.18c ns repair
 // 0x5255F0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
 {
 
@@ -916,7 +931,9 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   return &this->DynamicVectorClass; /*0x525672*/
 
 }
+}  // G42.18c ns repair
 // 0x5AC400
+namespace gamemd {  // G42.18c ns repair
 CCINIClass * TypeList_flat::BuildingTypeConstructor()
 {
 
@@ -930,6 +947,7 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
   return &this->DynamicVectorClass; /*0x5ac421*/
 
 }
+}  // G42.18c ns repair
 // 0x5AC650
 namespace gamemd {
 TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *a3_1)
@@ -954,6 +972,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
 } // namespace gamemd
 
 // 0x5AD660
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
 {
 
@@ -1004,7 +1023,9 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   return &this->DynamicVectorClass; /*0x5ad6e2*/
 
 }
+}  // G42.18c ns repair
 // 0x67A030
+namespace gamemd {  // G42.18c ns repair
 void TypeList_flat::InfantryCleanup()
 {
 
@@ -1021,7 +1042,9 @@ void TypeList_flat::InfantryCleanup()
   ((unsigned int *)this)[0] = 0; /*0x67a057*/
 
 }
+}  // G42.18c ns repair
 // 0x67A090
+namespace gamemd {  // G42.18c ns repair
 int *  TypeList_flat::CopyFull( VectorClass * aP1)
 {
 
@@ -1067,7 +1090,9 @@ int *  TypeList_flat::CopyFull( VectorClass * aP1)
   return (int *)this; /*0x67a104*/
 
 }
+}  // G42.18c ns repair
 // 0x67A110
+namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 {
 
@@ -1113,7 +1138,9 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
   return (int *)this; /*0x67a184*/
 
 }
+}  // G42.18c ns repair
 // 0x67A290
+namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 {
 
@@ -1159,7 +1186,9 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
   return (int *)this; /*0x67a304*/
 
 }
+}  // G42.18c ns repair
 // 0x67A390
+namespace gamemd {  // G42.18c ns repair
 CCINIClass * TypeList_flat::VoxelAnimConstructor()
 {
 
@@ -1173,6 +1202,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
   return &this->DynamicVectorClass; /*0x67a3b1*/
 
 }
+}  // G42.18c ns repair
 // 0x67A410
 namespace gamemd {
 void TypeList_VoxelAnim::ddtor(void *a1_1)
@@ -1217,6 +1247,7 @@ int TypeList_VoxelAnim::Clear(int a2)
 } // namespace gamemd
 
 // 0x67A4F0
+namespace gamemd {  // G42.18c ns repair
 DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -1230,7 +1261,9 @@ DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4,
   return &this->DynamicVectorClass; /*0x67a511*/
 
 }
+}  // G42.18c ns repair
 // 0x67A600
+namespace gamemd {  // G42.18c ns repair
 CCINIClass * TypeList_flat::ConstructSmudge()
 {
 
@@ -1244,6 +1277,7 @@ CCINIClass * TypeList_flat::ConstructSmudge()
   return &this->DynamicVectorClass; /*0x67a621*/
 
 }
+}  // G42.18c ns repair
 // 0x67A680
 namespace gamemd {
 void TypeList_VoxelAnim::TypeList_vt03()
@@ -1278,13 +1312,16 @@ unsigned int TypeList_VoxelAnim::TypeList_vt05(int a2)
 } // namespace gamemd
 
 // 0x67A6D0
+namespace gamemd {  // G42.18c ns repair
 int TypeList_flat::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x67a6da*/
 
 }
+}  // G42.18c ns repair
 // 0x67A820
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::InfantryConstructor()
 {
 
@@ -1298,6 +1335,7 @@ unsigned int * TypeList_flat::InfantryConstructor()
   return &this->DynamicVectorClass; /*0x67a841*/
 
 }
+}  // G42.18c ns repair
 // 0x67A930
 namespace gamemd {
 void TypeList_cptr_TerrainTypeClass::GetClassIdentifier()
@@ -1603,6 +1641,7 @@ int TypeList_VoxelAnim::GetSize(unsigned int * a2)
 } // namespace gamemd
 
 // 0x67AE70
+namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::AddRef(int a2)
 {
 
@@ -1630,7 +1669,9 @@ char TypeList_flat::AddRef(int a2)
   return 0; /*0x67ae9e*/
 
 }
+}  // G42.18c ns repair
 // 0x67B050
+namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::Release(int a2, unsigned int * a3)
 {
 
@@ -1676,6 +1717,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
   return 1; /*0x67b0ee*/
 
 }
+}  // G42.18c ns repair
 // 0x67B150
 namespace gamemd {
 int TypeList_VoxelAnim::TypeList_vt04(unsigned int * a2)
@@ -2000,6 +2042,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
 } // namespace gamemd
 
 // 0x67C1F0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
 {
 
@@ -2050,6 +2093,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   return &this->DynamicVectorClass; /*0x67c272*/
 
 }
+}  // G42.18c ns repair
 // 0x717B70
 namespace gamemd {
 TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(unsigned int * Block, char a2)
@@ -2074,6 +2118,7 @@ TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(unsigned i
 } // namespace gamemd
 
 // 0x717C70
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
 {
 
@@ -2100,6 +2145,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
   return &this->DynamicVectorClass; /*0x717cc9*/
 
 }
+}  // G42.18c ns repair
 // 0x717CD0
 char TypeList_flat::PushBack(VectorClass_flat * aP1)
 {

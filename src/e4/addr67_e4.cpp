@@ -309,6 +309,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
 }
 }
 // 0x674500
+namespace gamemd {  // G42.18c ns repair
 int RulesClass::sub_674500()
 {
 
@@ -322,6 +323,7 @@ int RulesClass::sub_674500()
   return result; /*0x67453e*/
 
 }
+}  // G42.18c ns repair
 // 0x679EC0
 namespace gamemd {
 int unknown_libname_29()

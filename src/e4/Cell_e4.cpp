@@ -275,8 +275,10 @@ LABEL_25:
 }
 }
 // 0x481810
+namespace gamemd {  // G42.18c ns repair
 int Cell::GetNeighbourContent(unsigned int a2)
 int Cell::GetNeighbourContent(unsigned int a2)
+}  // G42.18c ns repair
 {
 
   void *result; // eax

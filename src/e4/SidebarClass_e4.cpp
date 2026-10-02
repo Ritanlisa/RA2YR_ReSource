@@ -829,6 +829,7 @@ int SidebarClass::initButtons2()
 }
 }
 // 0x653010
+namespace gamemd {  // G42.18c ns repair
 void SidebarClass::CreateScrollButtons()
 {
 
@@ -858,7 +859,9 @@ void SidebarClass::CreateScrollButtons()
   }
 
 }
+}  // G42.18c ns repair
 // 0x6AB990
+namespace gamemd {  // G42.18c ns repair
 int SidebarClass::select()
 {
 
@@ -876,6 +879,7 @@ int SidebarClass::select()
   return result; /*0x6ab9cf*/
 
 }
+}  // G42.18c ns repair
 // 0x6AB9E0
 int SidebarClass::deselect()
 {

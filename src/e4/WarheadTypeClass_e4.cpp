@@ -659,6 +659,7 @@ void WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
 }
 }
 // 0x75E3B0
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
@@ -682,7 +683,9 @@ LABEL_6:
   return *((unsigned int *)dword_8874C4 + v2); /*0x75e41f*/
 
 }
+}  // G42.18c ns repair
 // 0x75E440
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::GetDamage(int a2, int a3)
 {
 
@@ -715,7 +718,9 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
   return result; /*0x75e496*/
 
 }
+}  // G42.18c ns repair
 // 0x75E510
+namespace gamemd {  // G42.18c ns repair
 CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
 {
 
@@ -792,6 +797,7 @@ CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
   return &Block->Deform; /*0x75e68b*/
 
 }
+}  // G42.18c ns repair
 // 0x772080
 namespace gamemd {
 void* WarheadTypeClass_ReadINI()
@@ -1167,6 +1173,7 @@ void* WarheadTypeClass_ReadINI()
 }
 }
 // 0x524ED0
+namespace gamemd {  // G42.18c ns repair
 void WarheadTypeClass::GetClassIdentifier()
 {
 
@@ -1183,7 +1190,9 @@ void WarheadTypeClass::GetClassIdentifier()
   this->m_8 = 0; /*0x524ef4*/
 
 }
+}  // G42.18c ns repair
 // 0x524F00
+namespace gamemd {  // G42.18c ns repair
 unsigned int WarheadTypeClass::LoadTypeData(int a2)
 {
 
@@ -1193,14 +1202,18 @@ unsigned int WarheadTypeClass::LoadTypeData(int a2)
     return 0; /*0x524f07*/
 
 }
+}  // G42.18c ns repair
 // 0x524FB0
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::SaveToINI(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x524fba*/
 
 }
+}  // G42.18c ns repair
 // 0x524FC0
+namespace gamemd {  // G42.18c ns repair
 TypeList_flat * WarheadTypeClass::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -1220,7 +1233,9 @@ TypeList_flat * WarheadTypeClass::QueryInterface(unsigned int * Block, char a2)
   return Block; /*0x525005*/
 
 }
+}  // G42.18c ns repair
 // 0x5250D0
+namespace gamemd {  // G42.18c ns repair
 char WarheadTypeClass::AddRef(int a2)
 {
 
@@ -1248,7 +1263,9 @@ char WarheadTypeClass::AddRef(int a2)
   return 0; /*0x5250fe*/
 
 }
+}  // G42.18c ns repair
 // 0x525400
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::Init(unsigned int * a2, void *a2_2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
@@ -1268,7 +1285,9 @@ int WarheadTypeClass::Init(unsigned int * a2, void *a2_2, void *a3, void *a4, vo
   return result; /*0x525422*/
 
 }
+}  // G42.18c ns repair
 // 0x52AD50
+namespace gamemd {  // G42.18c ns repair
 void * WarheadTypeClass::parseModifiers(char a2)
 {
 
@@ -1321,7 +1340,9 @@ void * WarheadTypeClass::parseModifiers(char a2)
   return this; /*0x52adee*/
 
 }
+}  // G42.18c ns repair
 // 0x52AE00
+namespace gamemd {  // G42.18c ns repair
 WarheadTypeClass * WarheadTypeClass::parseAnimations(char * Block, char a2)
 {
 
@@ -1335,7 +1356,9 @@ WarheadTypeClass * WarheadTypeClass::parseAnimations(char * Block, char a2)
   return v3; /*0x52ae1a*/
 
 }
+}  // G42.18c ns repair
 // 0x672990
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::LoadType()
 {
 
@@ -1355,21 +1378,27 @@ int WarheadTypeClass::LoadType()
   return KeyCount > 0; /*0x6729e8*/
 
 }
+}  // G42.18c ns repair
 // 0x75E4F0
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::GetObjectSize()
 {
 
   return 464; /*0x75e4f5*/
 
 }
+}  // G42.18c ns repair
 // 0x75E500
+namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::GetTypeIdentifier()
 {
 
   return 50; /*0x75e505*/
 
 }
+}  // G42.18c ns repair
 // 0x75E690
+namespace gamemd {  // G42.18c ns repair
 CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
 {
 
@@ -1377,6 +1406,7 @@ CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
   return &this->Deform; /*0x75e698*/
 
 }
+}  // G42.18c ns repair
 // 0x75E6A0
 DynamicVector * WarheadTypeClass::calculateDamage(int aP1)
 {

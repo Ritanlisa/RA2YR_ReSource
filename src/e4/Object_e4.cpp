@@ -424,8 +424,10 @@ void sub_5902C0(int a1)
 }
 }
 // 0x5FC380
+namespace gamemd {  // G42.18c ns repair
 int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)
 int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
+}  // G42.18c ns repair
 {
 
   IUnknown * v5;

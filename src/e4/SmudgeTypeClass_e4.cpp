@@ -42,6 +42,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x6B5260
+namespace gamemd {  // G42.18c ns repair
 SmudgeTypeClass::SmudgeTypeClass(char * Source)
 {
 
@@ -103,7 +104,9 @@ LABEL_11:
   }
 
 }
+}  // G42.18c ns repair
 // 0x6B55F0
+namespace gamemd {  // G42.18c ns repair
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
 
@@ -135,7 +138,9 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   }
 
 }
+}  // G42.18c ns repair
 // 0x6B56D0
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 {
 
@@ -180,7 +185,9 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   return result; /*0x6b57cd*/
 
 }
+}  // G42.18c ns repair
 // 0x6B6160
+namespace gamemd {  // G42.18c ns repair
 SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 {
 
@@ -219,7 +226,9 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   return a3; /*0x6b6207*/
 
 }
+}  // G42.18c ns repair
 // 0x6B5550
+namespace gamemd {  // G42.18c ns repair
 bool SmudgeTypeClass::GetType(short * a2, int a3)
 {
 
@@ -242,7 +251,9 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
   return result; /*0x6b55a9*/
 
 }
+}  // G42.18c ns repair
 // 0x6B55C0
+namespace gamemd {  // G42.18c ns repair
 SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 {
 
@@ -255,7 +266,9 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
     return 0; /*0x6b55e7*/
 
 }
+}  // G42.18c ns repair
 // 0x6B57F0
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
 
@@ -272,7 +285,9 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 
 }
+}  // G42.18c ns repair
 // 0x6B5850
+namespace gamemd {  // G42.18c ns repair
 int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 {
 
@@ -296,7 +311,9 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
   return result; /*0x6b589f*/
 
 }
+}  // G42.18c ns repair
 // 0x6B58B0
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 
@@ -308,7 +325,9 @@ int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int
   return result; /*0x6b58ca*/
 
 }
+}  // G42.18c ns repair
 // 0x6B58D0
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -321,20 +340,25 @@ int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x6b58dd*/
 
 }
+}  // G42.18c ns repair
 // 0x6B6130
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::GetTypeIdentifier()
 {
 
   return 30; /*0x6b6135*/
 
 }
+}  // G42.18c ns repair
 // 0x6B6140
+namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::GetObjectSize()
 {
 
   return 676; /*0x6b6145*/
 
 }
+}  // G42.18c ns repair
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {

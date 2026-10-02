@@ -232,6 +232,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 }
 }
 // 0x6CF490
+namespace gamemd {  // G42.18c ns repair
 int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2)
 {
 
@@ -241,34 +242,43 @@ int SwizzleManagerClass::Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP
   return 0; /*0x6cf4a4*/
 
 }
+}  // G42.18c ns repair
 // 0x6CF4B0
+namespace gamemd {  // G42.18c ns repair
 int SwizzleManagerClass::AddRef(int a1)
 {
 
   return 1; /*0x6cf4b5*/
 
 }
+}  // G42.18c ns repair
 // 0x6CF4C0
+namespace gamemd {  // G42.18c ns repair
 int SwizzleManagerClass::Release(int a1)
 {
 
   return 1; /*0x6cf4c5*/
 
 }
+}  // G42.18c ns repair
 // 0x6CF4D0
+namespace gamemd {  // G42.18c ns repair
 int SwizzleManagerClass::Remove(int a1, int a2, int a3)
 {
 
   return -2147467263; /*0x6cf4d5*/
 
 }
+}  // G42.18c ns repair
 // 0x6CF4E0
+namespace gamemd {  // G42.18c ns repair
 int SwizzleManagerClass::Lookup(int a1, int a2, int a3, int a4)
 {
 
   return -2147467263; /*0x6cf4e5*/
 
 }
+}  // G42.18c ns repair
 // 0x6CF4F0
 namespace gamemd {
 void SwizzleManagerClass_19::ClearBuffer(void *a1_1)

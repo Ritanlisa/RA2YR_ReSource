@@ -281,6 +281,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
 }
 }
 // 0x661350
+namespace gamemd {  // G42.18c ns repair
 int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
 {
 
@@ -300,7 +301,9 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 
 }
+}  // G42.18c ns repair
 // 0x626200
+namespace gamemd {  // G42.18c ns repair
 int Palette::FindClosestColor(Palette *a2)
 {
 
@@ -329,7 +332,9 @@ int Palette::FindClosestColor(Palette *a2)
   return v8; /*0x62623d*/
 
 }
+}  // G42.18c ns repair
 // 0x632BE0
+namespace gamemd {  // G42.18c ns repair
 unsigned char * Palette::ConvertIndices(int a2)
 {
 
@@ -357,6 +362,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   return this; /*0x632c2b*/
 
 }
+}  // G42.18c ns repair
 // 0x72B820
 int Palette::LoadFile(char * Source)
 {

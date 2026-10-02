@@ -3068,6 +3068,7 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 }
 }
 // 0x4AF610
+namespace gamemd {  // G42.18c ns repair
 int   JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3131,7 +3132,9 @@ int   JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a1, unsign
   return v6; /*0x4af61a*/
 
 }
+}  // G42.18c ns repair
 // 0x4AF8E0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero(int a1, int a2)
 {
 
@@ -3144,7 +3147,9 @@ int JumpjetLocomotionClass::StubReturnZero(int a1, int a2)
   return 0; /*0x4af8ed*/
 
 }
+}  // G42.18c ns repair
 // 0x4AF930
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_0(int a1, unsigned int * a2)
 {
 
@@ -3160,7 +3165,9 @@ int JumpjetLocomotionClass::StubReturnZero_0(int a1, unsigned int * a2)
   return 0; /*0x4af93d*/
 
 }
+}  // G42.18c ns repair
 // 0x4AF970
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckPiggybackState(int a1)
 {
 
@@ -3170,7 +3177,9 @@ bool JumpjetLocomotionClass::CheckPiggybackState(int a1)
       && !*(unsigned char *)(*((unsigned int *)a1 - 3) + 1709);
 
 }
+}  // G42.18c ns repair
 // 0x4AFB40
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::InitMovementState(unsigned int * a1, int a2)
 {
 
@@ -3185,7 +3194,9 @@ unsigned int * JumpjetLocomotionClass::InitMovementState(unsigned int * a1, int 
   return &a1->PreviousRamp; /*0x4afb6e*/
 
 }
+}  // G42.18c ns repair
 // 0x4AFB80
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue(int a1)
 {
 
@@ -3195,7 +3206,9 @@ bool JumpjetLocomotionClass::StubReturnTrue(int a1)
       && (*(unsigned int *)&a1->__pad_39[3] != ((unsigned int *)&((unsigned int *)a1)[0])[0] || a1->DestinationCoords[0] != ((unsigned int *)&((unsigned int *)a1)[0])[1]);
 
 }
+}  // G42.18c ns repair
 // 0x4AFC20
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass * aP0)
 {
 
@@ -3206,7 +3219,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass * aP0)
       && (*((int (**)(FootClass *))((unsigned int *)aP0)[0]->vtable1 + 334))(((unsigned int *)aP0)[0]) > 0;
 
 }
+}  // G42.18c ns repair
 // 0x4AFC90
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetCoordinate(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3221,7 +3236,9 @@ unsigned int * JumpjetLocomotionClass::GetCoordinate(unsigned int * a1, unsigned
   return a2; /*0x4afcaf*/
 
 }
+}  // G42.18c ns repair
 // 0x4AFCC0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetRenderCoordinate(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3256,7 +3273,9 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate(unsigned int * a1, un
   }
 
 }
+}  // G42.18c ns repair
 // 0x4AFD40
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3)
 {
 
@@ -3301,7 +3320,9 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int
   return result; /*0x4afdf0*/
 
 }
+}  // G42.18c ns repair
 // 0x4AFE00
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckWindowsErrorWrapper(int a1)
 {
 
@@ -3343,7 +3364,9 @@ int JumpjetLocomotionClass::CheckWindowsErrorWrapper(int a1)
   return result; /*0x4afec3*/
 
 }
+}  // G42.18c ns repair
 // 0x4B0410
+namespace gamemd {  // G42.18c ns repair
 float * JumpjetLocomotionClass::ComputeAudio3DRotation(unsigned int * a1, float * a2, unsigned int * a3)
 {
 
@@ -3381,7 +3404,9 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation(unsigned int * a1, float 
   return a2; /*0x4b04ba*/
 
 }
+}  // G42.18c ns repair
 // 0x4B04D0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall(int * a1)
 {
 
@@ -3393,35 +3418,45 @@ int JumpjetLocomotionClass::DispatchVirtualCall(int * a1)
   return (*(int (**)(DriveLocomotionClass *, unsigned int))(v1 + 124))(a1, *(uint8_t *)(v2 + 284)); /*0x4b04f0*/
 
 }
+}  // G42.18c ns repair
 // 0x4B0EF0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x4b0f0f*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4820
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnTwo(int a1)
 {
 
   return 2; /*0x4b4825*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4870
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_1(int a1)
 {
 
   return 0; /*0x4b4872*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4880
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchCheckState(TunnelLocomotionClass * aP0)
 {
 
   return JumpjetLocomotionClass::CheckState((LocomotionClass *)aP0); /*0x4b488a*/
 
 }
+}  // G42.18c ns repair
 // 0x4B48D0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
 {
 
@@ -3433,7 +3468,9 @@ char JumpjetLocomotionClass::MoveToChecked(DriveLocomotionClass * aP0, int a2)
   return result; /*0x4b490d*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4BE0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SetByteField(int a1)
 {
 
@@ -3441,7 +3478,9 @@ int JumpjetLocomotionClass::SetByteField(int a1)
   return (int)a1->LocomotionClass; /*0x4b4be8*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4BF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SetByteField_0(int a1)
 {
 
@@ -3449,122 +3488,156 @@ int JumpjetLocomotionClass::SetByteField_0(int a1)
   return (int)a1->LocomotionClass; /*0x4b4bf8*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C00
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetField_0x54(int a1)
 {
 
   return a1->MovementSpeed[1]; /*0x4b4c07*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C10
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetField_0x58(int a1)
 {
 
   return a1->TrackNumber; /*0x4b4c17*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C20
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetField_0x48(int a1)
 {
 
   return a1->HeadToCoord[2]; /*0x4b4c27*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C60
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::MissionStub6(int a1)
 {
 
   return 0; /*0x4b4c62*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C70
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub3(int a1)
 {
 
   ; /*0x4b4c70*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C80
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub7(int a1)
 {
 
   return 0; /*0x4b4c82*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4C90
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub4(int a1)
 {
 
   ; /*0x4b4c90*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4CA0
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub5(int a1)
 {
 
   ; /*0x4b4ca0*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4CD0
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer(int a1)
 {
 
   return *(unsigned int *)(a1 + 80) != 0; /*0x4b4cde*/
 
 }
+}  // G42.18c ns repair
 // 0x4B4D90
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetField_0x78(int a1, const void * a2, int * a3)
 {
 
   return DriveLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x4B4DA0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::GetField_0x7C(int a1)
 {
 
   return DriveLocomotionClass::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x4B4DB0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::GetField_0x80(int a1)
 {
 
   return DriveLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x4B4DC0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::loc_4B4DC0(int a1, const void * a2, int * a3)
 {
 
   return DriveLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 
 }
+}  // G42.18c ns repair
 
 // 0x4B4DD0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::loc_4B4DD0(int a1)
 {
 
   return DriveLocomotionClass::AddRef(a1 - 24);
 
 }
+}  // G42.18c ns repair
 
 // 0x4B4DE0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::loc_4B4DE0(int a1)
 {
 
   return DriveLocomotionClass::Release((volatile LONG *)(a1 - 24));
 
 }
+}  // G42.18c ns repair
 
 // 0x4B5B30
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::StubReturnTrue_1(int a1)
 {
 
   return 1; /*0x4b5b32*/
 
 }
+}  // G42.18c ns repair
 // 0x4B5B40
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetSpeedCoordinate(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3579,14 +3652,18 @@ unsigned int * JumpjetLocomotionClass::GetSpeedCoordinate(unsigned int * a1, uns
   return a2; /*0x4b5b5f*/
 
 }
+}  // G42.18c ns repair
 // 0x4B63A0
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub6(int a1)
 {
 
   ; /*0x4b63a0*/
 
 }
+}  // G42.18c ns repair
 // 0x4B63B0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_3(int a1, int a2)
 {
 
@@ -3599,7 +3676,9 @@ int JumpjetLocomotionClass::StubReturnZero_3(int a1, int a2)
   return 0; /*0x4b63bd*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6400
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_4(int a1, unsigned int * a2)
 {
 
@@ -3615,21 +3694,27 @@ int JumpjetLocomotionClass::StubReturnZero_4(int a1, unsigned int * a2)
   return 0; /*0x4b640d*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6440
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckBaseClassState(int a1)
 {
 
   return !(*(uint8_t (**)(char *))(*((unsigned int *)a1 - 5) + 16))((char *)a1 - 20) && ((unsigned int *)a1)[0]; /*0x4b645c*/
 
 }
+}  // G42.18c ns repair
 // 0x4B64D0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_4B64D0(int a1)
 {
 
   return 3; /*0x4b64d5*/
 
 }
+}  // G42.18c ns repair
 // 0x4B64E0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::LoadLocomotionFromStream_0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3693,126 +3778,162 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_0(unsigned int * a1, unsign
   return v6; /*0x4b64ea*/
 
 }
+}  // G42.18c ns repair
 // 0x4B65F0
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_4B65F0(DropPodLocomotionClass * aP0)
 {
 
   return aP0->__pad_18[0] != 0; /*0x4b65fe*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6610
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::Thunk_VtableDispatch4(int a1)
 {
 
   return (*(int (**)(LocomotionClass *))(*(unsigned int *)a1->ILocomotion + 16))(a1); /*0x4b661a*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6620
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub7(int a1, int a2)
 {
 
   ; /*0x4b6620*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6630
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub8(int a1, int a2, int a3, int a4)
 {
 
   return 0; /*0x4b6632*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6640
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub9(int a1)
 {
 
   return 0; /*0x4b6642*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6650
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub8(int a1)
 {
 
   ; /*0x4b6650*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6660
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub9(int a1)
 {
 
   ; /*0x4b6660*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6670
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckState3(int a1)
 {
 
   return -1; /*0x4b6673*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6680
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckState4(int a1)
 {
 
   return -1; /*0x4b6683*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6690
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckState5(int a1)
 {
 
   return -1; /*0x4b6693*/
 
 }
+}  // G42.18c ns repair
 // 0x4B66C0
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_4B66C0(int a1)
 {
 
   return *(unsigned int *)(a1 + 20) != 0; /*0x4b66ce*/
 
 }
+}  // G42.18c ns repair
 // 0x4B6740
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_4B6740(int a1, const void * a2, int * a3)
 {
 
   return DropPodLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x4B6750
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_4B6750(int a1)
 {
 
   return DropPodLocomotionClass::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x4B6760
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_4B6760(int a1)
 {
 
   return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x4B6770
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_4B6770(int a1, const void * a2, int * a3)
 {
 
   return DropPodLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x4B6780
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_4B6780(int a1)
 {
 
   return DropPodLocomotionClass::AddRef(a1 - 24);
 
 }
+}  // G42.18c ns repair
 // 0x4B6790
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_4B6790(int a1)
 {
 
   return DropPodLocomotionClass::Release((volatile LONG *)(a1 - 24));
 
 }
+}  // G42.18c ns repair
 // 0x4CCA20
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_7(LocomotionClass * aP0, unsigned int * a1)
 {
 
@@ -3831,21 +3952,27 @@ int JumpjetLocomotionClass::StubReturnZero_7(LocomotionClass * aP0, unsigned int
   return v2; /*0x4cca5a*/
 
 }
+}  // G42.18c ns repair
 // 0x4CCA90
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ComputeFloatExpression(int a1)
 {
 
   return LOBYTE(a1->Wobbles) || ((unsigned int *)a1)[0] > 0.0; /*0x4ccab3*/
 
 }
+}  // G42.18c ns repair
 // 0x4CCAC0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::ComputeFloatExpression_0(int a1)
 {
 
   return *(double *)a1->CurrentSpeed != 0.0; /*0x4ccad6*/
 
 }
+}  // G42.18c ns repair
 // 0x4CCAE0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate(unsigned int * a1, unsigned int * a2)
 {
 
@@ -3875,7 +4002,9 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate(unsigned int * a1, 
   return result; /*0x4ccb07*/
 
 }
+}  // G42.18c ns repair
 // 0x4CCB40
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::ProcessLocomotionStep(int a1)
 {
 
@@ -3934,7 +4063,9 @@ char JumpjetLocomotionClass::ProcessLocomotionStep(int a1)
   return result; /*0x4ccbce*/
 
 }
+}  // G42.18c ns repair
 // 0x4CD510
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::IsMapCoordVisible()
 {
 
@@ -3979,7 +4110,9 @@ char JumpjetLocomotionClass::IsMapCoordVisible()
   return 1; /*0x4cd5eb*/
 
 }
+}  // G42.18c ns repair
 // 0x4CF830
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::CalculateBobOffset(int a1, unsigned int * a2)
 {
 
@@ -4053,7 +4186,9 @@ unsigned int * JumpjetLocomotionClass::CalculateBobOffset(int a1, unsigned int *
   return v11; /*0x4cf92f*/
 
 }
+}  // G42.18c ns repair
 // 0x4CF940
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::ShortFunc_4CF940(int a1, unsigned int * a2)
 {
 
@@ -4062,7 +4197,9 @@ unsigned int * JumpjetLocomotionClass::ShortFunc_4CF940(int a1, unsigned int * a
   return a2; /*0x4cf94d*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFB00
+namespace gamemd {  // G42.18c ns repair
 float * JumpjetLocomotionClass::ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3)
 {
 
@@ -4096,28 +4233,36 @@ float * JumpjetLocomotionClass::ComputeVoxelMatrix(int a1, float * a2, unsigned 
   return a2; /*0x4cfbff*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFC10
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SynchronizeFacingDirection(int a1, int a2)
 {
 
   return FacingClass::Set_SyncLog((char *)((unsigned int *)a1)[0], &a2); /*0x4cfc2f*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFD90
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::ShortFunc_4CFD90(int a1)
 {
 
   return StreamClass::GetDirty((IUnknown *)a1); /*0x4cfd9a*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFDA0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::DispatchVirtualCall_1(int a1)
 {
 
   return *(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]) + 3367) == 0; /*0x4cfdbe*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFE20
+namespace gamemd {  // G42.18c ns repair
 long long JumpjetLocomotionClass::ComputeFloatExpression_1(int a1)
 {
 
@@ -4132,7 +4277,9 @@ long long JumpjetLocomotionClass::ComputeFloatExpression_1(int a1)
   return result; /*0x4cfe3e*/
 
 }
+}  // G42.18c ns repair
 // 0x4CFE50
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_8(unsigned char * a1)
 {
 
@@ -4144,7 +4291,9 @@ int JumpjetLocomotionClass::StubReturnZero_8(unsigned char * a1)
        - ((*(uint8_t (**)(FlyLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) != 0);
 
 }
+}  // G42.18c ns repair
 // 0x4D0400
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
 {
 
@@ -4153,28 +4302,36 @@ BOOL JumpjetLocomotionClass::CheckWindowsErrorWrapper_0(int a2)
   return this->LocomotionClass[0] == 0; /*0x4d041e*/
 
 }
+}  // G42.18c ns repair
 // 0x4D0510
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetInterface(int a1, const void * a2, unsigned int * a3)
 {
 
   return LocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x4D0520
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::GetInterface2(int a1)
 {
 
   return COM::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x4D0530
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::Stub2(int a1)
 {
 
   return COM::ReleaseRef((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x5142A0
+namespace gamemd {  // G42.18c ns repair
 float * JumpjetLocomotionClass::ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3)
 {
 
@@ -4193,7 +4350,9 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation_0(int a1, float * a2, uns
   return a2; /*0x5142ff*/
 
 }
+}  // G42.18c ns repair
 // 0x514C30
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::HasScoreDisplayChanged(unsigned int * a1)
 {
 
@@ -4205,7 +4364,9 @@ BOOL JumpjetLocomotionClass::HasScoreDisplayChanged(unsigned int * a1)
       || a1->Height != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444);
 
 }
+}  // G42.18c ns repair
 // 0x514C80
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ComputeFloatExpression_2(int a1)
 {
 
@@ -4213,7 +4374,9 @@ BOOL JumpjetLocomotionClass::ComputeFloatExpression_2(int a1)
       && *(double *)&a1->LocomotionFacing[5] != 0.0;
 
 }
+}  // G42.18c ns repair
 // 0x514CB0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -4242,7 +4405,9 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0(unsigned in
   }
 
 }
+}  // G42.18c ns repair
 // 0x514D10
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514D10(unsigned int * a1, unsigned int * a2)
 {
 
@@ -4279,7 +4444,9 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_514D10(unsigned in
   }
 
 }
+}  // G42.18c ns repair
 // 0x516320
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned int * a1)
 {
 
@@ -4297,14 +4464,18 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned in
   return result; /*0x51636a*/
 
 }
+}  // G42.18c ns repair
 // 0x516370
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection_0(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x51638f*/
 
 }
+}  // G42.18c ns repair
 // 0x516CA0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
 {
 
@@ -4365,7 +4536,9 @@ char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
   return 1; /*0x516ce6*/
 
 }
+}  // G42.18c ns repair
 // 0x516E10
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int a2)
 {
 
@@ -4435,7 +4608,9 @@ char JumpjetLocomotionClass::TryMoveToAdjacentCell(unsigned int a1, unsigned int
   }
 
 }
+}  // G42.18c ns repair
 // 0x516FC0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0, HoverLocomotionClass * aP1)
 {
 
@@ -4453,14 +4628,18 @@ char JumpjetLocomotionClass::RandomizeLocomotionParam(HoverLocomotionClass * aP0
   return 1; /*0x517013*/
 
 }
+}  // G42.18c ns repair
 // 0x517100
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_517100(int a1)
 {
 
   return 2; /*0x517105*/
 
 }
+}  // G42.18c ns repair
 // 0x5171C0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_3(unsigned int * a1, int a2)
 {
 
@@ -4485,7 +4664,9 @@ int JumpjetLocomotionClass::DispatchVirtualCall_3(unsigned int * a1, int a2)
   return result; /*0x517200*/
 
 }
+}  // G42.18c ns repair
 // 0x517210
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::IsPositionWithinThreshold(int a1, int a2, int a3, int a4)
 {
 
@@ -4504,7 +4685,9 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold(int a1, int a2, int a3, i
       && (int)abs32(v5 - a4) <= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 1500);
 
 }
+}  // G42.18c ns repair
 // 0x54AD30
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::InitMovementParams(int a1, int a2)
 {
 
@@ -4536,14 +4719,18 @@ int JumpjetLocomotionClass::InitMovementParams(int a1, int a2)
   return StreamClass::ResetPosition((LocomotionClass *)v3, v2); /*0x54ae44*/
 
 }
+}  // G42.18c ns repair
 // 0x54AE50
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SmallStub_54AE50(int a1)
 {
 
   return a1->DestinationCoords[2]; /*0x54ae57*/
 
 }
+}  // G42.18c ns repair
 // 0x54AE60
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -4573,14 +4760,18 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_0(unsigned int * a1
   return result; /*0x54ae87*/
 
 }
+}  // G42.18c ns repair
 // 0x54B6E0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SynchronizeFacingDirection_0(int a1, int a2)
 {
 
   return FacingClass::Set_SyncLog((char *)((unsigned int *)a1)[0], &a2); /*0x54b6ff*/
 
 }
+}  // G42.18c ns repair
 // 0x54B710
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -4591,7 +4782,9 @@ int JumpjetLocomotionClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x54b71d*/
 
 }
+}  // G42.18c ns repair
 // 0x54B750
+namespace gamemd {  // G42.18c ns repair
 HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
 {
 
@@ -4622,7 +4815,9 @@ HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
   return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x54b7ca*/
 
 }
+}  // G42.18c ns repair
 // 0x54B7E0
+namespace gamemd {  // G42.18c ns repair
 HRESULT JumpjetLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
 
@@ -4680,7 +4875,9 @@ HRESULT JumpjetLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   return v10; /*0x54b8a3*/
 
 }
+}  // G42.18c ns repair
 // 0x54B8D0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ConvertCoordToCell_0(int a1)
 {
 
@@ -4711,7 +4908,9 @@ int JumpjetLocomotionClass::ConvertCoordToCell_0(int a1)
   return 2; /*0x54b94a*/
 
 }
+}  // G42.18c ns repair
 // 0x54D0D0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckCompositeState(int a1)
 {
 
@@ -4721,7 +4920,9 @@ bool JumpjetLocomotionClass::CheckCompositeState(int a1)
   return v1 && v1 != 2; /*0x54d0e2*/
 
 }
+}  // G42.18c ns repair
 // 0x54D820
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::GetFloorZSetContext(void *a1)
 {
 
@@ -4763,7 +4964,9 @@ int JumpjetLocomotionClass::GetFloorZSetContext(void *a1)
     return v9; /*0x54d910*/
 
 }
+}  // G42.18c ns repair
 // 0x54D930
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::DispatchVirtualCall_4(int a1, int a2)
 {
 
@@ -4794,7 +4997,9 @@ char JumpjetLocomotionClass::DispatchVirtualCall_4(int a1, int a2)
   return v2; /*0x54d9a3*/
 
 }
+}  // G42.18c ns repair
 // 0x54D9B0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetConditionedCoordinate(unsigned int * a1, unsigned int * a2)
 {
 
@@ -4823,7 +5028,9 @@ unsigned int * JumpjetLocomotionClass::GetConditionedCoordinate(unsigned int * a
   }
 
 }
+}  // G42.18c ns repair
 // 0x54DA00
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_9(int a1, int a2)
 {
 
@@ -4836,7 +5043,9 @@ int JumpjetLocomotionClass::StubReturnZero_9(int a1, int a2)
   return 0; /*0x54da0d*/
 
 }
+}  // G42.18c ns repair
 // 0x54DA50
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_10(int a1, unsigned int * a2)
 {
 
@@ -4868,7 +5077,9 @@ int JumpjetLocomotionClass::StubReturnZero_10(int a1, unsigned int * a2)
   return 0; /*0x54da5d*/
 
 }
+}  // G42.18c ns repair
 // 0x54DB00
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_2(int a1)
 {
 
@@ -4891,7 +5102,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_2(int a1)
   return result; /*0x54db3a*/
 
 }
+}  // G42.18c ns repair
 // 0x54DB50
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::LoadLocomotionFromStream_1(unsigned int * a1, unsigned int * a2)
 {
 
@@ -4955,21 +5168,27 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_1(unsigned int * a1, unsign
   return v6; /*0x54db5a*/
 
 }
+}  // G42.18c ns repair
 // 0x54DF70
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_54DF70(int a1)
 {
 
   return *(unsigned int *)(a1 + 124) != 0; /*0x54df7e*/
 
 }
+}  // G42.18c ns repair
 // 0x54DF90
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckAttachStatus()
 {
 
   return 152; /*0x54df95*/
 
 }
+}  // G42.18c ns repair
 // 0x54DFA0
+namespace gamemd {  // G42.18c ns repair
 JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char a2)
 {
 
@@ -4987,48 +5206,61 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char
   return Block->LocomotionClass; /*0x54dfe0*/
 
 }
+}  // G42.18c ns repair
 // 0x54DFF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_54DFF0(int a1, const void * a2, int * a3)
 {
 
   return JumpjetLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x54E000
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_54E000(int a1)
 {
 
   return JumpjetLocomotionClass::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x54E010
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_54E010(int a1)
 {
 
   return JumpjetLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x54E020
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_54E020(int a1, const void * a2, int * a3)
 {
 
   return JumpjetLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x54E030
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_54E030(int a1)
 {
 
   return JumpjetLocomotionClass::AddRef(a1 - 24);
 
 }
+}  // G42.18c ns repair
 // 0x54E040
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_54E040(int a1)
 {
 
   return JumpjetLocomotionClass::Release((volatile LONG *)(a1 - 24));
 
 }
+}  // G42.18c ns repair
 // 0x54E890
 namespace gamemd {
 void JumpjetLocomotionClass_26::ClearBuffer(void *a1_1)
@@ -5303,116 +5535,147 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
 } // namespace gamemd
 
 // 0x55A940
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub(int a1)
 {
 
   return 0; /*0x55a942*/
 
 }
+}  // G42.18c ns repair
 // 0x55ab70
 {
 return 0;
 }
 
 // 0x55AB70
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub2(int a1, int a2)
 {
 
   return 0; /*0x55ab72*/
 
 }
+}  // G42.18c ns repair
 // 0x55AB80
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub3(int a1, int a2)
 {
 
   return 0; /*0x55ab82*/
 
 }
+}  // G42.18c ns repair
 // 0x55AB90
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub10(int a1)
 {
 
   ; /*0x55ab90*/
 
 }
+}  // G42.18c ns repair
 // 0x55ABA0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnFalse(int a1)
 {
 
   return 0; /*0x55aba2*/
 
 }
+}  // G42.18c ns repair
 // 0x55ABB0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckState(TunnelLocomotionClass * aP0)
 {
 
   return 2; /*0x55abb5*/
 
 }
+}  // G42.18c ns repair
 // 0x55ABC0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckState2(int a1, int a2)
 {
 
   return 0; /*0x55abc2*/
 
 }
+}  // G42.18c ns repair
 // 0x55ABE0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MissionStub4(int a1)
 {
 
   return 1; /*0x55abe2*/
 
 }
+}  // G42.18c ns repair
 // 0x55ABF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::MissionStub5(int a1, int a2)
 {
 
   return 0; /*0x55abf2*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC00
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub11(int a1, int a2, int a3, int a4)
 {
 
   ; /*0x55ac00*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC10
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub12(int a1, int a2, int a3, int a4, int a5)
 {
 
   ; /*0x55ac10*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC20
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub13(int a1)
 {
 
   ; /*0x55ac20*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC30
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub14(int a1, int a2)
 {
 
   ; /*0x55ac30*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC50
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub15(int a1, int a2, int a3, int a4)
 {
 
   ; /*0x55ac50*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC60
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::StubReturnTrue_3(int a1)
 {
 
   return 1; /*0x55ac62*/
 
 }
+}  // G42.18c ns repair
 // 0x55AC70
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetGlobalCoordinate(int a1, unsigned int * a2)
 {
 
@@ -5427,42 +5690,54 @@ unsigned int * JumpjetLocomotionClass::GetGlobalCoordinate(int a1, unsigned int 
   return a2; /*0x55ac92*/
 
 }
+}  // G42.18c ns repair
 // 0x55ACD0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::StubReturnZero_11(int a1)
 {
 
   return 0; /*0x55acd2*/
 
 }
+}  // G42.18c ns repair
 // 0x55ACE0
+namespace gamemd {  // G42.18c ns repair
 void JumpjetLocomotionClass::Stub16(int a1, int a2)
 {
 
   ; /*0x55ace0*/
 
 }
+}  // G42.18c ns repair
 // 0x55ACF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::MissionStub10(int a1)
 {
 
   return 0; /*0x55acf2*/
 
 }
+}  // G42.18c ns repair
 // 0x55AD00
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::MissionStub11(int a1)
 {
 
   return 0; /*0x55ad02*/
 
 }
+}  // G42.18c ns repair
 // 0x5AFF70
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SmallStub_5AFF70(int a1)
 {
 
   return LOBYTE(a1->Accel); /*0x5aff77*/
 
 }
+}  // G42.18c ns repair
 // 0x5AFF80
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_1(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5492,7 +5767,9 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_1(unsigned int * a1
   return result; /*0x5affa7*/
 
 }
+}  // G42.18c ns repair
 // 0x5AFFE0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5529,7 +5806,9 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_0(unsigned int * a1, 
   }
 
 }
+}  // G42.18c ns repair
 // 0x5B0060
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ShortFunc_5B0060(int a1)
 {
 
@@ -5537,7 +5816,9 @@ int JumpjetLocomotionClass::ShortFunc_5B0060(int a1)
   return (*(int (**)(MechLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1); /*0x5b0075*/
 
 }
+}  // G42.18c ns repair
 // 0x5B0080
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2, IUnknown * aP3)
 {
 
@@ -5576,7 +5857,9 @@ int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2
   return result; /*0x5b0111*/
 
 }
+}  // G42.18c ns repair
 // 0x5B0120
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
 {
 
@@ -5595,14 +5878,18 @@ int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
   return result; /*0x5b016b*/
 
 }
+}  // G42.18c ns repair
 // 0x5B0170
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection_1(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x5b018f*/
 
 }
+}  // G42.18c ns repair
 // 0x5B01A0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a3, int a4)
 {
 
@@ -5612,14 +5899,18 @@ int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a
   return a2; /*0x5b01bc*/
 
 }
+}  // G42.18c ns repair
 // 0x5B19D0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_5B19D0(int a1)
 {
 
   return 2; /*0x5b19d5*/
 
 }
+}  // G42.18c ns repair
 // 0x5B19E0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
 {
 
@@ -5632,7 +5923,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
       && (*((int (**)(FootClass *))((unsigned int *)aP0)[0]->vtable1 + 334))(((unsigned int *)aP0)[0]) > 0;
 
 }
+}  // G42.18c ns repair
 // 0x5B1A50
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
 {
 
@@ -5657,7 +5950,9 @@ int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
   return result; /*0x5b1a90*/
 
 }
+}  // G42.18c ns repair
 // 0x5B1AA0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3, int a4)
 {
 
@@ -5676,14 +5971,18 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3,
       && (int)abs32(v5 - a4) <= g_MissionQueueFrame.localVariables[243];
 
 }
+}  // G42.18c ns repair
 // 0x661F50
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::HasFieldStateChanged(unsigned int * a1)
 {
 
   return ((unsigned int *)a1)[0] != dword_B04E38 || a1->TurnRate != dword_B04E3C || a1->Speed != dword_B04E40; /*0x661f7d*/
 
 }
+}  // G42.18c ns repair
 // 0x661F90
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckCompositeState_0(int a1)
 {
 
@@ -5693,7 +5992,9 @@ bool JumpjetLocomotionClass::CheckCompositeState_0(int a1)
   return v1 >= 3 && v1 <= 5; /*0x661fa3*/
 
 }
+}  // G42.18c ns repair
 // 0x661FB0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetCoordinate_0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5708,7 +6009,9 @@ unsigned int * JumpjetLocomotionClass::GetCoordinate_0(unsigned int * a1, unsign
   return a2; /*0x661fcf*/
 
 }
+}  // G42.18c ns repair
 // 0x6632E0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ComputeFloatExpression_3(int a1, int a2, int a3, int a4)
 {
 
@@ -5759,14 +6062,18 @@ int JumpjetLocomotionClass::ComputeFloatExpression_3(int a1, int a2, int a3, int
   return result; /*0x6633b2*/
 
 }
+}  // G42.18c ns repair
 // 0x663460
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_663460(int a1)
 {
 
   return 3; /*0x663465*/
 
 }
+}  // G42.18c ns repair
 // 0x69ED20
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::LoadLocomotionFromStream_2(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5830,7 +6137,9 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_2(unsigned int * a1, unsign
   return v6; /*0x69ed2a*/
 
 }
+}  // G42.18c ns repair
 // 0x69EFF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_12(int a1, int a2)
 {
 
@@ -5843,7 +6152,9 @@ int JumpjetLocomotionClass::StubReturnZero_12(int a1, int a2)
   return 0; /*0x69effd*/
 
 }
+}  // G42.18c ns repair
 // 0x69F040
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_13(int a1, unsigned int * a2)
 {
 
@@ -5859,7 +6170,9 @@ int JumpjetLocomotionClass::StubReturnZero_13(int a1, unsigned int * a2)
   return 0; /*0x69f04d*/
 
 }
+}  // G42.18c ns repair
 // 0x69F080
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckPiggybackState_0(int a1)
 {
 
@@ -5869,7 +6182,9 @@ bool JumpjetLocomotionClass::CheckPiggybackState_0(int a1)
       && !*(unsigned char *)(*((unsigned int *)a1 - 3) + 1709);
 
 }
+}  // G42.18c ns repair
 // 0x69F250
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::InitMovementState_0(unsigned int * a1, int a2)
 {
 
@@ -5884,7 +6199,9 @@ unsigned int * JumpjetLocomotionClass::InitMovementState_0(unsigned int * a1, in
   return &a1->PreviousRamp; /*0x69f27e*/
 
 }
+}  // G42.18c ns repair
 // 0x69F290
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_5(int a1)
 {
 
@@ -5894,7 +6211,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_5(int a1)
       && (*(unsigned int *)&a1->__pad_39[3] != ((unsigned int *)&((unsigned int *)a1)[0])[0] || a1->DestinationCoords[0] != ((unsigned int *)&((unsigned int *)a1)[0])[1]);
 
 }
+}  // G42.18c ns repair
 // 0x69F330
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass * aP0)
 {
 
@@ -5905,7 +6224,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass * aP0)
       && (*((int (**)(FootClass *))((unsigned int *)aP0)[0]->vtable1 + 334))(((unsigned int *)aP0)[0]) > 0;
 
 }
+}  // G42.18c ns repair
 // 0x69F3A0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetCoordinate_1(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5920,7 +6241,9 @@ unsigned int * JumpjetLocomotionClass::GetCoordinate_1(unsigned int * a1, unsign
   return a2; /*0x69f3bf*/
 
 }
+}  // G42.18c ns repair
 // 0x69F3D0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_1(unsigned int * a1, unsigned int * a2)
 {
 
@@ -5955,7 +6278,9 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_1(unsigned int * a1, 
   }
 
 }
+}  // G42.18c ns repair
 // 0x69F450
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3)
 {
 
@@ -6000,7 +6325,9 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned i
   return result; /*0x69f500*/
 
 }
+}  // G42.18c ns repair
 // 0x69F510
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(int a1)
 {
 
@@ -6042,7 +6369,9 @@ int JumpjetLocomotionClass::CheckWindowsErrorWrapper_1(int a1)
   return result; /*0x69f5d3*/
 
 }
+}  // G42.18c ns repair
 // 0x69FB20
+namespace gamemd {  // G42.18c ns repair
 float * JumpjetLocomotionClass::ComputeAudio3DRotation_1(unsigned int * a1, float * a2, unsigned int * a3)
 {
 
@@ -6080,7 +6409,9 @@ float * JumpjetLocomotionClass::ComputeAudio3DRotation_1(unsigned int * a1, floa
   return a2; /*0x69fbca*/
 
 }
+}  // G42.18c ns repair
 // 0x69FBE0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_6(int * a1)
 {
 
@@ -6092,35 +6423,45 @@ int JumpjetLocomotionClass::DispatchVirtualCall_6(int * a1)
   return (*(int (**)(ShipLocomotionClass *, unsigned int))(v1 + 124))(a1, *(uint8_t *)(v2 + 284)); /*0x69fc00*/
 
 }
+}  // G42.18c ns repair
 // 0x6A05C0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection_2(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x6a05df*/
 
 }
+}  // G42.18c ns repair
 // 0x6A3E50
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_6A3E50(int a1)
 {
 
   return 2; /*0x6a3e55*/
 
 }
+}  // G42.18c ns repair
 // 0x6A3EA0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_14(int a1)
 {
 
   return 0; /*0x6a3ea2*/
 
 }
+}  // G42.18c ns repair
 // 0x6A3EB0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchCheckState_6A3EB0(TunnelLocomotionClass * aP0)
 {
 
   return JumpjetLocomotionClass::CheckState((LocomotionClass *)aP0); /*0x6a3eba*/
 
 }
+}  // G42.18c ns repair
 // 0x6A3F00
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
 {
 
@@ -6132,7 +6473,9 @@ char JumpjetLocomotionClass::MoveToChecked_0(ShipLocomotionClass * aP0, int a2)
   return result; /*0x6a3f3d*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4210
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SetByteField_1(int a1)
 {
 
@@ -6140,7 +6483,9 @@ int JumpjetLocomotionClass::SetByteField_1(int a1)
   return (int)a1->LocomotionClass; /*0x6a4218*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4220
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SetByteField_2(int a1)
 {
 
@@ -6148,87 +6493,111 @@ int JumpjetLocomotionClass::SetByteField_2(int a1)
   return (int)a1->LocomotionClass; /*0x6a4228*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4230
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_6A4230(int a1)
 {
 
   return a1->MovementSpeed[1]; /*0x6a4237*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4240
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_6A4240(int a1)
 {
 
   return a1->TrackNumber; /*0x6a4247*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4250
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_6A4250(int a1)
 {
 
   return a1->HeadToCoord[2]; /*0x6a4257*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4280
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::GetLinkedLocomotorPointer_0(int a1)
 {
 
   return *(unsigned int *)(a1 + 80) != 0; /*0x6a428e*/
 
 }
+}  // G42.18c ns repair
 // 0x6A4300
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_6A4300(int a1, const void * a2, int * a3)
 {
 
   return ShipLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x6A4310
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_6A4310(int a1)
 {
 
   return ShipLocomotionClass::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x6A4320
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_6A4320(int a1)
 {
 
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x6A4330
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::loc_6A4330(int a1, void *a2, void *a3)
 {
 
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 
 // 0x6A4340
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::loc_6A4340(int a1)
 {
 
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 
 // 0x6A4350
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::loc_6A4350(int a1)
 {
 
   return ShipLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 
 // 0x718080
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::ShortFunc_718080(int a1)
 {
 
   return LOBYTE(a1->Wobbles) == 1; /*0x71808b*/
 
 }
+}  // G42.18c ns repair
 // 0x718090
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ShortFunc_718090()
 {
 
@@ -6239,7 +6608,9 @@ int JumpjetLocomotionClass::ShortFunc_718090()
   return result; /*0x71809e*/
 
 }
+}  // G42.18c ns repair
 // 0x7180A0
+namespace gamemd {  // G42.18c ns repair
 unsigned int *   JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * a1, unsigned int * a2)
 {
 
@@ -6268,6 +6639,7 @@ unsigned int *   JumpjetLocomotionClass::GetCoordinateConditional(unsigned int *
   return result; /*0x7180c7*/
 
 }
+}  // G42.18c ns repair
 // 0x718100
 namespace gamemd {
 {
@@ -6358,6 +6730,7 @@ namespace gamemd {
 }
 
 // 0x718230
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ResetMovementState(int a1)
 {
 
@@ -6369,14 +6742,18 @@ int JumpjetLocomotionClass::ResetMovementState(int a1)
   return (int)a1->LocomotionClass; /*0x71825a*/
 
 }
+}  // G42.18c ns repair
 // 0x7192C0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection_3(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x7192df*/
 
 }
+}  // G42.18c ns repair
 // 0x719C60
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_17(int a1, unsigned int * a2)
 {
 
@@ -6387,7 +6764,9 @@ int JumpjetLocomotionClass::StubReturnZero_17(int a1, unsigned int * a2)
   return 0; /*0x719c6d*/
 
 }
+}  // G42.18c ns repair
 // 0x719CA0
+namespace gamemd {  // G42.18c ns repair
 HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
 {
 
@@ -6424,7 +6803,9 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
   return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x719d2d*/
 
 }
+}  // G42.18c ns repair
 // 0x719D40
+namespace gamemd {  // G42.18c ns repair
 HRESULT JumpjetLocomotionClass::CheckWindowsErrorWrapper_2(int * a1, int * pPStm, int a3)
 {
 
@@ -6482,14 +6863,18 @@ HRESULT JumpjetLocomotionClass::CheckWindowsErrorWrapper_2(int * a1, int * pPStm
   return v10; /*0x719dfd*/
 
 }
+}  // G42.18c ns repair
 // 0x719E20
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_719E20(int a1)
 {
 
   return 2; /*0x719e25*/
 
 }
+}  // G42.18c ns repair
 // 0x719E30
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::UpdateAltitude(int a1, const void * a2, int * a3)
 {
 
@@ -6520,7 +6905,9 @@ int JumpjetLocomotionClass::UpdateAltitude(int a1, const void * a2, int * a3)
   return result; /*0x719e74*/
 
 }
+}  // G42.18c ns repair
 // 0x719E90
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_18(int a1, int a2)
 {
 
@@ -6533,7 +6920,9 @@ int JumpjetLocomotionClass::StubReturnZero_18(int a1, int a2)
   return 0; /*0x719e9d*/
 
 }
+}  // G42.18c ns repair
 // 0x719EE0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_19(int a1, unsigned int * a2)
 {
 
@@ -6556,7 +6945,9 @@ int JumpjetLocomotionClass::StubReturnZero_19(int a1, unsigned int * a2)
   return 0; /*0x719ef0*/
 
 }
+}  // G42.18c ns repair
 // 0x719F30
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::StubReturnTrue_7(int a1)
 {
 
@@ -6579,7 +6970,9 @@ bool JumpjetLocomotionClass::StubReturnTrue_7(int a1)
   return result; /*0x719f71*/
 
 }
+}  // G42.18c ns repair
 // 0x719F80
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::LoadLocomotionFromStream_3(unsigned int * a1, unsigned int * a2)
 {
 
@@ -6643,7 +7036,9 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_3(unsigned int * a1, unsign
   return v6; /*0x719f8a*/
 
 }
+}  // G42.18c ns repair
 // 0x71A090
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_7(unsigned int * a1, int a2)
 {
 
@@ -6668,35 +7063,45 @@ int JumpjetLocomotionClass::DispatchVirtualCall_7(unsigned int * a1, int a2)
   return result; /*0x71a0d0*/
 
 }
+}  // G42.18c ns repair
 // 0x71A0E0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::IUnknownAddRef(int a1)
 {
 
   return COM::AddRef((LocomotionClass *)a1); /*0x71a0ea*/
 
 }
+}  // G42.18c ns repair
 // 0x71A0F0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::IUnknownRelease(volatile LONG * a1)
 {
 
   return COM::ReleaseRef((LocomotionClass *)a1); /*0x71a0fa*/
 
 }
+}  // G42.18c ns repair
 // 0x71A100
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_71A100(int a1)
 {
 
   return *(unsigned int *)(a1 + 48) != 0; /*0x71a10e*/
 
 }
+}  // G42.18c ns repair
 // 0x71A120
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_71A120()
 {
 
   return 76; /*0x71a125*/
 
 }
+}  // G42.18c ns repair
 // 0x71A130
+namespace gamemd {  // G42.18c ns repair
 TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(ILocomotion ** Block, char a2)
 {
 
@@ -6711,56 +7116,72 @@ TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(ILocomotion
   return Block->LocomotionClass; /*0x71a159*/
 
 }
+}  // G42.18c ns repair
 // 0x71A160
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_71A160(int a1, const void * a2, int * a3)
 {
 
   return JumpjetLocomotionClass::UpdateAltitude(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x71A170
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A170(int a1)
 {
 
   return JumpjetLocomotionClass::IUnknownAddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x71A180
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A180(int a1)
 {
 
   return JumpjetLocomotionClass::IUnknownRelease((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x71A190
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_71A190(int a1, const void * a2, int * a3)
 {
 
   return JumpjetLocomotionClass::UpdateAltitude(a1 - 24, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x71A1A0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A1A0(int a1)
 {
 
   return JumpjetLocomotionClass::IUnknownAddRef(a1 - 24);
 
 }
+}  // G42.18c ns repair
 // 0x71A1B0
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A1B0(int a1)
 {
 
   return JumpjetLocomotionClass::IUnknownRelease((volatile LONG *)(a1 - 24));
 
 }
+}  // G42.18c ns repair
 // 0x728A50
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::ShortFunc_728A50(int a1)
 {
 
   return ((unsigned int *)a1)[0] != 0; /*0x728a5c*/
 
 }
+}  // G42.18c ns repair
 // 0x728A60
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::StubReturnZero_20(unsigned int * a1)
 {
 
@@ -6774,7 +7195,9 @@ char JumpjetLocomotionClass::StubReturnZero_20(unsigned int * a1)
   return result; /*0x728a7d*/
 
 }
+}  // G42.18c ns repair
 // 0x728A90
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetCoordinateConditional_0(unsigned int * a1, unsigned int * a2)
 {
 
@@ -6803,7 +7226,9 @@ unsigned int * JumpjetLocomotionClass::GetCoordinateConditional_0(unsigned int *
   return result; /*0x728ab7*/
 
 }
+}  // G42.18c ns repair
 // 0x728AF0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SyncMovementPosition(int a1, int a2, int a3, int a4)
 {
 
@@ -6863,7 +7288,9 @@ int JumpjetLocomotionClass::SyncMovementPosition(int a1, int a2, int a3, int a4)
   return result; /*0x728bf8*/
 
 }
+}  // G42.18c ns repair
 // 0x7291D0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_21(int a1, char a2)
 {
 
@@ -6873,7 +7300,9 @@ int JumpjetLocomotionClass::StubReturnZero_21(int a1, char a2)
     return 0; /*0x7291eb*/
 
 }
+}  // G42.18c ns repair
 // 0x72A020
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::CheckStateWithOverride(TunnelLocomotionClass * aP0)
 {
 
@@ -6886,7 +7315,9 @@ int JumpjetLocomotionClass::CheckStateWithOverride(TunnelLocomotionClass * aP0)
     return JumpjetLocomotionClass::CheckState((LocomotionClass *)aP0); /*0x72a041*/
 
 }
+}  // G42.18c ns repair
 // 0x72A060
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::IsStateInRange(int a1)
 {
 
@@ -6896,7 +7327,9 @@ bool JumpjetLocomotionClass::IsStateInRange(int a1)
   return RefCount < 2 || RefCount == 7 || RefCount == 2 || RefCount == 6; /*0x72a081*/
 
 }
+}  // G42.18c ns repair
 // 0x72A090
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ConvertCoordToCell_3(int a2, void * a3)
 {
 
@@ -6914,14 +7347,18 @@ int JumpjetLocomotionClass::ConvertCoordToCell_3(int a2, void * a3)
     return 7; /*0x72a0c8*/
 
 }
+}  // G42.18c ns repair
 // 0x72A0E0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::UpdateFacingDirection_4(int a1, int a2)
 {
 
   return FacingClass::Update((char *)((unsigned int *)a1)[0], &a2); /*0x72a0ff*/
 
 }
+}  // G42.18c ns repair
 // 0x72A1C0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::ShortFunc_72A1C0(int a1)
 {
 
@@ -6936,7 +7373,9 @@ int JumpjetLocomotionClass::ShortFunc_72A1C0(int a1)
   return result; /*0x72a1db*/
 
 }
+}  // G42.18c ns repair
 // 0x72A1E0
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_72A1E0(int a1)
 {
 
@@ -6946,14 +7385,18 @@ BOOL JumpjetLocomotionClass::ShortFunc_72A1E0(int a1)
   return RefCount == 5 || RefCount == 6; /*0x72a1f3*/
 
 }
+}  // G42.18c ns repair
 // 0x75AB30
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SmallStub_75AB30(int a1)
 {
 
   return LOBYTE(a1->Wobbles); /*0x75ab37*/
 
 }
+}  // G42.18c ns repair
 // 0x75AB40
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::ComputeFloatExpression_4(unsigned int * a1)
 {
 
@@ -6964,7 +7407,9 @@ bool JumpjetLocomotionClass::ComputeFloatExpression_4(unsigned int * a1)
        || a1->HeadToCoord[1] != g_MovieFrameState2);
 
 }
+}  // G42.18c ns repair
 // 0x75ABA0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_2(unsigned int * a1, unsigned int * a2)
 {
 
@@ -6994,7 +7439,9 @@ unsigned int * JumpjetLocomotionClass::GetMovementCoordinate_2(unsigned int * a1
   return result; /*0x75abc7*/
 
 }
+}  // G42.18c ns repair
 // 0x75AC00
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_2(unsigned int * a1, unsigned int * a2)
 {
 
@@ -7031,7 +7478,9 @@ unsigned int * JumpjetLocomotionClass::GetRenderCoordinate_2(unsigned int * a1, 
   }
 
 }
+}  // G42.18c ns repair
 // 0x75AC80
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DrawVoxelAnimation(unsigned char * a1)
 {
 
@@ -7041,7 +7490,9 @@ int JumpjetLocomotionClass::DrawVoxelAnimation(unsigned char * a1)
   return (*(int (**)(WalkLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1); /*0x75ac9d*/
 
 }
+}  // G42.18c ns repair
 // 0x75ACB0
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::ConvertCoordToCell_4(int a1, int a2, int a3, int a4)
 {
 
@@ -7095,7 +7546,9 @@ char JumpjetLocomotionClass::ConvertCoordToCell_4(int a1, int a2, int a3, int a4
   return v4; /*0x75ad5e*/
 
 }
+}  // G42.18c ns repair
 // 0x75ADA0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_8(FootClass * aP0)
 {
 
@@ -7116,14 +7569,18 @@ int JumpjetLocomotionClass::DispatchVirtualCall_8(FootClass * aP0)
   return result; /*0x75adfc*/
 
 }
+}  // G42.18c ns repair
 // 0x75AE00
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SynchronizeFacingDirection_1(int a1, int a2)
 {
 
   return FacingClass::Set_SyncLog((char *)((unsigned int *)a1)[0], &a2); /*0x75ae1f*/
 
 }
+}  // G42.18c ns repair
 // 0x75AE30
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_9(int a1, int a2, int a3, int a4)
 {
 
@@ -7151,14 +7608,18 @@ int JumpjetLocomotionClass::DispatchVirtualCall_9(int a1, int a2, int a3, int a4
   return result; /*0x75aeaa*/
 
 }
+}  // G42.18c ns repair
 // 0x75C7E0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_75C7E0(int a1)
 {
 
   return 2; /*0x75c7e5*/
 
 }
+}  // G42.18c ns repair
 // 0x75C850
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_22(int a1, int a2)
 {
 
@@ -7171,7 +7632,9 @@ int JumpjetLocomotionClass::StubReturnZero_22(int a1, int a2)
   return 0; /*0x75c85d*/
 
 }
+}  // G42.18c ns repair
 // 0x75C8A0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::StubReturnZero_23(int a1, unsigned int * a2)
 {
 
@@ -7187,7 +7650,9 @@ int JumpjetLocomotionClass::StubReturnZero_23(int a1, unsigned int * a2)
   return 0; /*0x75c8ad*/
 
 }
+}  // G42.18c ns repair
 // 0x75C8E0
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckBaseClassState_0(int a1)
 {
 
@@ -7197,7 +7662,9 @@ bool JumpjetLocomotionClass::CheckBaseClassState_0(int a1)
       && !*(unsigned char *)(*((unsigned int *)a1 - 3) + 1709);
 
 }
+}  // G42.18c ns repair
 // 0x75C920
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::LoadLocomotionFromStream_4(unsigned int * a1, unsigned int * a2)
 {
 
@@ -7261,7 +7728,9 @@ int JumpjetLocomotionClass::LoadLocomotionFromStream_4(unsigned int * a1, unsign
   return v6; /*0x75c92a*/
 
 }
+}  // G42.18c ns repair
 // 0x75CA30
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::DispatchVirtualCall_10(unsigned int * a1, int a2)
 {
 
@@ -7286,7 +7755,9 @@ int JumpjetLocomotionClass::DispatchVirtualCall_10(unsigned int * a1, int a2)
   return result; /*0x75ca70*/
 
 }
+}  // G42.18c ns repair
 // 0x75CA80
+namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::IsPositionWithinThreshold_1(int a1, int a2, int a3, int a4)
 {
 
@@ -7305,14 +7776,18 @@ bool JumpjetLocomotionClass::IsPositionWithinThreshold_1(int a1, int a2, int a3,
       && (int)abs32(v5 - a4) <= dword_B45C28;
 
 }
+}  // G42.18c ns repair
 // 0x75CB20
+namespace gamemd {  // G42.18c ns repair
 char JumpjetLocomotionClass::SmallStub_75CB20(int a1)
 {
 
   return BYTE2(a1->HeadToCoord[2]); /*0x75cb27*/
 
 }
+}  // G42.18c ns repair
 // 0x75CB30
+namespace gamemd {  // G42.18c ns repair
 unsigned int * JumpjetLocomotionClass::InitMultiFieldArray_1(unsigned int * a1)
 {
 
@@ -7325,14 +7800,18 @@ unsigned int * JumpjetLocomotionClass::InitMultiFieldArray_1(unsigned int * a1)
   return &a1->Dest[2]; /*0x75cb6e*/
 
 }
+}  // G42.18c ns repair
 // 0x75CBA0
+namespace gamemd {  // G42.18c ns repair
 BOOL JumpjetLocomotionClass::ShortFunc_75CBA0(int a1)
 {
 
   return *(unsigned int *)(a1 + 32) != 0; /*0x75cbae*/
 
 }
+}  // G42.18c ns repair
 // 0x75CBC0
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SetByteField_3(int a1)
 {
 
@@ -7340,41 +7819,52 @@ int JumpjetLocomotionClass::SetByteField_3(int a1)
   return (int)a1->LocomotionClass; /*0x75cbc8*/
 
 }
+}  // G42.18c ns repair
 // 0x75CC30
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_75CC30(int a1, const void * a2, int * a3)
 {
 
   return WalkLocomotionClass::QueryInterface(a1 - 4, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x75CC40
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_75CC40(int a1)
 {
 
   return WalkLocomotionClass::AddRef(a1 - 4);
 
 }
+}  // G42.18c ns repair
 // 0x75CC50
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_75CC50(int a1)
 {
 
   return WalkLocomotionClass::Release((volatile LONG *)(a1 - 4));
 
 }
+}  // G42.18c ns repair
 // 0x75CC60
+namespace gamemd {  // G42.18c ns repair
 int JumpjetLocomotionClass::SmallStub_75CC60(int a1, const void * a2, int * a3)
 {
 
   return WalkLocomotionClass::QueryInterface(a1 - 24, a2, a3);
 
 }
+}  // G42.18c ns repair
 // 0x75CC70
+namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_75CC70(int a1)
 {
 
   return WalkLocomotionClass::AddRef(a1 - 24);
 
 }
+}  // G42.18c ns repair
 // 0x75CC80
 LONG JumpjetLocomotionClass::SmallStub_75CC80(int a1)
 {

@@ -688,6 +688,7 @@ void MapSeedClass_18::ddtor()
 } // namespace gamemd
 
 // 0x5ACB80
+namespace gamemd {  // G42.18c ns repair
 int MapSeedClass::GenerateSeed(unsigned int * a2)
 {
 
@@ -709,6 +710,7 @@ int MapSeedClass::GenerateSeed(unsigned int * a2)
   return result; /*0x5acb8a*/
 
 }
+}  // G42.18c ns repair
 // 0x5ACBC0
 namespace gamemd {
 unsigned int MapSeedClass_18::Generate(int a2)

@@ -734,6 +734,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
 }
 }
 // 0x588CE0
+namespace gamemd {  // G42.18c ns repair
 void unknown::ddtor(void *a1)
 {
 
@@ -750,7 +751,9 @@ void unknown::ddtor(void *a1)
   this->m_8 = 0; /*0x588d04*/
 
 }
+}  // G42.18c ns repair
 // 0x5896A0
+namespace gamemd {  // G42.18c ns repair
 int  unknown::Read(unsigned short * a2, void *a2_2)
 {
 
@@ -770,6 +773,7 @@ int  unknown::Read(unsigned short * a2, void *a2_2)
   return result; /*0x5896e4*/
 
 }
+}  // G42.18c ns repair
 // 0x58B670
 namespace gamemd {
 void sub_58B670()
@@ -1339,6 +1343,7 @@ int sub_5889F0(int a1, int a2)
 } // namespace gamemd
 
 // 0x588D10
+namespace gamemd {  // G42.18c ns repair
 unsigned int unknown::Write(int a2)
 {
 
@@ -1348,7 +1353,9 @@ unsigned int unknown::Write(int a2)
     return 0; /*0x588d17*/
 
 }
+}  // G42.18c ns repair
 // 0x588D30
+namespace gamemd {  // G42.18c ns repair
 int unknown::Seek(int a2, int a3, void *a3_2)
 {
 
@@ -1362,6 +1369,7 @@ int unknown::Seek(int a2, int a3, void *a3_2)
   return a2; /*0x588d56*/
 
 }
+}  // G42.18c ns repair
 // 0x58B110
 namespace gamemd {
 int sub_58B110()

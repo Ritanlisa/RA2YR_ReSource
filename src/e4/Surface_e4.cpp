@@ -353,6 +353,7 @@ void sub_626C60()
 }
 }
 // 0x641DB0
+namespace gamemd {  // G42.18c ns repair
 AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
 {
 
@@ -414,7 +415,9 @@ LABEL_11:
   }
 
 }
+}  // G42.18c ns repair
 // 0x655250
+namespace gamemd {  // G42.18c ns repair
 int Surface::RenderRadar()
 {
 
@@ -618,7 +621,9 @@ LABEL_33:
   return result; /*0x655554*/
 
 }
+}  // G42.18c ns repair
 // 0x6BA3E0
+namespace gamemd {  // G42.18c ns repair
 int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
 
@@ -713,7 +718,9 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
   return result; /*0x6ba3fe*/
 
 }
+}  // G42.18c ns repair
 // 0x6BA580
+namespace gamemd {  // G42.18c ns repair
 int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
 
@@ -790,7 +797,9 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
   return result; /*0x6ba59f*/
 
 }
+}  // G42.18c ns repair
 // 0x6BA690
+namespace gamemd {  // G42.18c ns repair
 int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
@@ -1100,7 +1109,9 @@ LABEL_43:
   return result; /*0x6ba7cf*/
 
 }
+}  // G42.18c ns repair
 // 0x707480
+namespace gamemd {  // G42.18c ns repair
 TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 
@@ -1255,7 +1266,9 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   ((Vector *)((int)v40))->Clear(); /*0x70773f*/
 
 }
+}  // G42.18c ns repair
 // 0x7602E0
+namespace gamemd {  // G42.18c ns repair
 void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
 {
 
@@ -1619,7 +1632,9 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
   }
 
 }
+}  // G42.18c ns repair
 // 0x769330
+namespace gamemd {  // G42.18c ns repair
 int Surface::PixelToIndex(unsigned int * a2)
 {
 
@@ -1645,7 +1660,9 @@ int Surface::PixelToIndex(unsigned int * a2)
   }
 
 }
+}  // G42.18c ns repair
 // 0x7BD690
+namespace gamemd {  // G42.18c ns repair
 int Surface::CommitSurfaceBuffersAudio()
 {
 
@@ -2078,7 +2095,9 @@ LABEL_103:
   return -1; /*0x7bd6a3*/
 
 }
+}  // G42.18c ns repair
 // 0x411510
+namespace gamemd {  // G42.18c ns repair
 unsigned int *  Surface::GetRect(unsigned int * a2)
 {
 
@@ -2094,28 +2113,36 @@ unsigned int *  Surface::GetRect(unsigned int * a2)
   return a2; /*0x41152b*/
 
 }
+}  // G42.18c ns repair
 // 0x411540
+namespace gamemd {  // G42.18c ns repair
 int Surface::GetWidth()
 {
 
   return this->Width; /*0x411543*/
 
 }
+}  // G42.18c ns repair
 // 0x411550
+namespace gamemd {  // G42.18c ns repair
 int Surface::GetHeight()
 {
 
   return this->Height; /*0x411553*/
 
 }
+}  // G42.18c ns repair
 // 0x4115C0
+namespace gamemd {  // G42.18c ns repair
 char Surface::StubReturnFalse()
 {
 
   return 0; /*0x4115c2*/
 
 }
+}  // G42.18c ns repair
 // 0x4A4780
+namespace gamemd {  // G42.18c ns repair
 LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
 {
 
@@ -2172,7 +2199,9 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
   return result; /*0x4a4822*/
 
 }
+}  // G42.18c ns repair
 // 0x4AEC60
+namespace gamemd {  // G42.18c ns repair
 unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -2182,6 +2211,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
   return this->__pad_0; /*0x4aec76*/
 
 }
+}  // G42.18c ns repair
 // 0x620F60
 namespace gamemd {
 int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6)

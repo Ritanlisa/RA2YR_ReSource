@@ -524,6 +524,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render( int a2)
 }
 
 // 0x6D8DB0
+namespace gamemd {  // G42.18c ns repair
 int TacticalMap::RenderAllObjects(int a2)
 {
 
@@ -972,7 +973,9 @@ LABEL_54:
   return result; /*0x6d97bb*/
 
 }
+}  // G42.18c ns repair
 // 0x6DA180
+namespace gamemd {  // G42.18c ns repair
 int TacticalMap::DrawOccupiedRegion()
 {
 
@@ -1024,6 +1027,7 @@ int TacticalMap::DrawOccupiedRegion()
   return result; /*0x6da224*/
 
 }
+}  // G42.18c ns repair
 // 0x7BCFB0
 unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int aP3, int a5)
 {

@@ -89,6 +89,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 }
 }
 // 0x5CED70
+namespace gamemd {  // G42.18c ns repair
 MSPCXAnim * MSPCXAnim::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -104,6 +105,7 @@ MSPCXAnim * MSPCXAnim::QueryInterface(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x5ced9f*/
 
 }
+}  // G42.18c ns repair
 // 0x5D05A0
 namespace gamemd {
 void MSPCXAnim_42::FreeData()

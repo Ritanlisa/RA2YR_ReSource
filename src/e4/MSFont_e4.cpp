@@ -120,6 +120,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 }
 }
 // 0x5D3450
+namespace gamemd {  // G42.18c ns repair
 MSFont * MSFont::QueryInterface(void * Block, char a2)
 {
 
@@ -129,6 +130,7 @@ MSFont * MSFont::QueryInterface(void * Block, char a2)
   return Block; /*0x5d346a*/
 
 }
+}  // G42.18c ns repair
 // 0x5D5080
 namespace gamemd {
 void MSFont_18::ClearBuffer(void *a1_1)

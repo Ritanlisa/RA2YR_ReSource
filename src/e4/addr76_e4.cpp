@@ -3287,6 +3287,7 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 } // namespace gamemd
 
 // 0x765b50
+namespace gamemd {  // G42.18c ns repair
 unsigned int* Campaign_WorldDominationTour_24_::ddtor(void *a1)
 {
 
@@ -3294,7 +3295,9 @@ unsigned int* Campaign_WorldDominationTour_24_::ddtor(void *a1)
   return this->__pad_0; /*0x765b55*/
 
 }
+}  // G42.18c ns repair
 // 0x76f190
+namespace gamemd {  // G42.18c ns repair
 unsigned int* VectorCursor::ddtor()
 {
 
@@ -3302,7 +3305,9 @@ unsigned int* VectorCursor::ddtor()
   return this->__pad_0; /*0x76f195*/
 
 }
+}  // G42.18c ns repair
 // 0x76f170
+namespace gamemd {  // G42.18c ns repair
 unsigned int* Count::ddtor()
 {
 
@@ -3310,7 +3315,9 @@ unsigned int* Count::ddtor()
   return this->__pad_0; /*0x76f175*/
 
 }
+}  // G42.18c ns repair
 // 0x766fb0
+namespace gamemd {  // G42.18c ns repair
 unsigned int* Conflict_WorldDominationTour_26::ddtor()
 {
 
@@ -3318,6 +3325,7 @@ unsigned int* Conflict_WorldDominationTour_26::ddtor()
   return this->__pad_0; /*0x766fb5*/
 
 }
+}  // G42.18c ns repair
 // 0x76a5b0
 unsigned int* Map_WorldDominationTour_38::ddtor()
 {

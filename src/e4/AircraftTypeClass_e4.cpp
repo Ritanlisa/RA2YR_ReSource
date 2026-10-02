@@ -38,6 +38,7 @@ struct Power;  // fix_tu_missing_types
 #include "e4/classes/Random_e4.hpp"
 
 // 0x41C8B0
+namespace gamemd {  // G42.18c ns repair
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
 
@@ -108,6 +109,7 @@ LABEL_11:
   return this; /*0x41c9e3*/
 
 }
+}  // G42.18c ns repair
 // 0x41CC20
 namespace gamemd {
 AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3)
@@ -190,6 +192,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
 }
 }
 // 0x41CFE0
+namespace gamemd {  // G42.18c ns repair
 AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
 {
 
@@ -218,7 +221,9 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
   return (AircraftTypeClass *)((void **)Block); /*0x41d068*/
 
 }
+}  // G42.18c ns repair
 // 0x41CB20
+namespace gamemd {  // G42.18c ns repair
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
 
@@ -232,14 +237,18 @@ AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
     return 0; /*0x41cb45*/
 
 }
+}  // G42.18c ns repair
 // 0x41CB60
+namespace gamemd {  // G42.18c ns repair
 char AircraftTypeClass::StubReturnFalse()
 {
 
   return 0; /*0x41cb62*/
 
 }
+}  // G42.18c ns repair
 // 0x41CB70
+namespace gamemd {  // G42.18c ns repair
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
 
@@ -253,14 +262,18 @@ int * AircraftTypeClass::CreateAircraft(int a1)
   return &dword_889F20; /*0x41cbc8*/
 
 }
+}  // G42.18c ns repair
 // 0x41CBE0
+namespace gamemd {  // G42.18c ns repair
 char AircraftTypeClass::GetDimensions(int a1, int a2)
 {
 
   return 0; /*0x41cbe2*/
 
 }
+}  // G42.18c ns repair
 // 0x41CDB0
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::PowerDrainUpdate(int * a2)
 {
 
@@ -284,7 +297,9 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
   return Power::TimerProcess(*((unsigned int *)this + 894)); /*0x41ce12*/
 
 }
+}  // G42.18c ns repair
 // 0x41CE20
+namespace gamemd {  // G42.18c ns repair
 int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
 
@@ -309,7 +324,9 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
   return result; /*0x41ce80*/
 
 }
+}  // G42.18c ns repair
 // 0x41CE90
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
 
@@ -321,8 +338,10 @@ int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
   return result; /*0x41ceaa*/
 
 }
+}  // G42.18c ns repair
 
 // 0x41CEB0
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -335,27 +354,34 @@ int AircraftTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x41cebd*/
 
 }
+}  // G42.18c ns repair
 // 0x41CFB0
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetTypeIdentifier()
 {
 
   return 3; /*0x41cfb5*/
 
 }
+}  // G42.18c ns repair
 // 0x41CFC0
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetObjectSize()
 {
 
   return 3600; /*0x41cfc5*/
 
 }
+}  // G42.18c ns repair
 // 0x41CFD0
+namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetAuxField()
 {
 
   return *((unsigned int *)this + 894); /*0x41cfd6*/
 
 }
+}  // G42.18c ns repair
 // 0x712120
 int AircraftTypeClass::GetGameplayValue()
 {

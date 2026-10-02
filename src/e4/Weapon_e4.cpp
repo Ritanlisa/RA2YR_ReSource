@@ -117,6 +117,7 @@ void Weapon_Update(void * a1, void * a2)
 }
 }
 // 0x70C690
+namespace gamemd {  // G42.18c ns repair
 AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
 {
 
@@ -502,6 +503,7 @@ LABEL_55:
   return a1; /*0x70cb5c*/
 
 }
+}  // G42.18c ns repair
 // 0x53B410
 namespace gamemd {
 int sub_53B410()

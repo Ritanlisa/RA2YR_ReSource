@@ -298,12 +298,14 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 }
 }
 // 0x4114F0
+namespace gamemd {  // G42.18c ns repair
 char BSurface::Stub(int a1, int a2)
 {
 
   return 1; /*0x4114f2*/
 
 }
+}  // G42.18c ns repair
 // 0x411630
 namespace gamemd {
 int BSurface::GetBytesPerPixel()

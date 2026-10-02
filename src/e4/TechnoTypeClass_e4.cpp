@@ -1529,13 +1529,16 @@ void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 }
 }
 // 0x711E90
+namespace gamemd {  // G42.18c ns repair
 bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
 {
 
   return *(unsigned int *)&((unsigned int *)this)[1972] && !((unsigned int *)this)[1508]; /*0x711ea6*/
 
 }
+}  // G42.18c ns repair
 // 0x711EE0
+namespace gamemd {  // G42.18c ns repair
 double TechnoTypeClass::ComputeBuildTime()
 {
 
@@ -1546,7 +1549,9 @@ double TechnoTypeClass::ComputeBuildTime()
   return result;
 
 }
+}  // G42.18c ns repair
 // 0x7179A0
+namespace gamemd {  // G42.18c ns repair
 TechnoTypeClass * TechnoTypeClass::ddtor(void * Block, char a2)
 {
 
@@ -1556,7 +1561,9 @@ TechnoTypeClass * TechnoTypeClass::ddtor(void * Block, char a2)
   return Block; /*0x7179ba*/
 
 }
+}  // G42.18c ns repair
 // 0x717AF0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
@@ -1570,7 +1577,9 @@ unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *
   return this->ObjectTypeClass; /*0x717b11*/
 
 }
+}  // G42.18c ns repair
 // 0x717B20
+namespace gamemd {  // G42.18c ns repair
 int  TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
 {
 
@@ -1591,7 +1600,9 @@ int  TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
   return result; /*0x717b64*/
 
 }
+}  // G42.18c ns repair
 // 0x717BC0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3)
 {
 
@@ -1599,7 +1610,9 @@ unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, v
   return this->ObjectTypeClass; /*0x717bc8*/
 
 }
+}  // G42.18c ns repair
 // 0x717BE0
+namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
 
@@ -1607,7 +1620,9 @@ VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
   return this->ObjectTypeClass; /*0x717be8*/
 
 }
+}  // G42.18c ns repair
 // 0x717DB0
+namespace gamemd {  // G42.18c ns repair
 char TechnoTypeClass::RemoveItem(int a2, void *a2_2)
 {
 
@@ -1633,6 +1648,7 @@ char TechnoTypeClass::RemoveItem(int a2, void *a2_2)
   return 1; /*0x717dd9*/
 
 }
+}  // G42.18c ns repair
 // 0x7473D0
 namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()

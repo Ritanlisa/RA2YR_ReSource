@@ -697,6 +697,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
 } // namespace gamemd
 
 // 0x4779E0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
 {
 
@@ -747,7 +748,9 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   return this->VectorClass; /*0x477a62*/
 
 }
+}  // G42.18c ns repair
 // 0x477DB0
+namespace gamemd {  // G42.18c ns repair
 unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6)
 {
 
@@ -774,6 +777,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
   return this->VectorClass; /*0x477e09*/
 
 }
+}  // G42.18c ns repair
 // 0x49E950
 namespace gamemd {
 void DynamicVectorClass_PAD::ddtor(void *a1_1)
@@ -1240,6 +1244,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 } // namespace gamemd
 
 // 0x50EA00
+namespace gamemd {  // G42.18c ns repair
 void DynamicVectorClass_flat::Destroy(void *a1)
 {
 
@@ -1256,6 +1261,7 @@ void DynamicVectorClass_flat::Destroy(void *a1)
   return result; /*0x50ea24*/
 
 }
+}  // G42.18c ns repair
 // 0x525010
 namespace gamemd {
 VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a2, void *a3_1)
@@ -1280,6 +1286,7 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a
 } // namespace gamemd
 
 // 0x5251C0
+namespace gamemd {  // G42.18c ns repair
 void DynamicVectorClass_flat::Destroy_Alt()
 {
 
@@ -1296,6 +1303,7 @@ void DynamicVectorClass_flat::Destroy_Alt()
   return result; /*0x5251e4*/
 
 }
+}  // G42.18c ns repair
 // 0x5251F0
 namespace gamemd {
 int  DynamicVectorClass_AnimType::GetSize(unsigned int * a2)
@@ -1335,6 +1343,7 @@ unsigned int DynamicVectorClass_AnimType::Remove(int a2)
 } // namespace gamemd
 
 // 0x525250
+namespace gamemd {  // G42.18c ns repair
 unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2)
 {
 
@@ -1361,6 +1370,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   return this->VectorClass; /*0x5252a9*/
 
 }
+}  // G42.18c ns repair
 // 0x5252B0
 namespace gamemd {
 DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
@@ -1444,6 +1454,7 @@ int DynamicVectorClass_SubzoneConn::GetSize(unsigned int * a2)
 } // namespace gamemd
 
 // 0x5AC900
+namespace gamemd {  // G42.18c ns repair
 unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
 {
 
@@ -1470,6 +1481,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   return this->VectorClass; /*0x5ac959*/
 
 }
+}  // G42.18c ns repair
 // 0x5C5070
 namespace gamemd {
 void DynamicVectorClass_ptr_NodeNameType::ddtor(void *a1_1)

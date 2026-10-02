@@ -420,6 +420,7 @@ int sub_7C5FFF()
 }
 }
 // 0x48D1D0
+namespace gamemd {  // G42.18c ns repair
 char Event_Dispatch::Return0()
 {
 
@@ -427,6 +428,7 @@ char Event_Dispatch::Return0()
   return 0; /*0x48d1d7*/
 
 }
+}  // G42.18c ns repair
 // 0x601360
 namespace gamemd {
 bool Event::IsValidActionType()

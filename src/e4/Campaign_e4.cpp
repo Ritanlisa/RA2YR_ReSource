@@ -152,6 +152,7 @@ BOOL Campaign_WorldDominationTour_24::ddtor()
 }
 }
 // 0x60D380
+namespace gamemd {  // G42.18c ns repair
 LONG Campaign::Screen(char a1)
 {
 
@@ -194,6 +195,7 @@ LONG Campaign::Screen(char a1)
   return result; /*0x60d42a*/
 
 }
+}  // G42.18c ns repair
 // 0x7656D0
 namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, void *a3_2)

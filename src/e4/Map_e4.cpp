@@ -1749,12 +1749,14 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
 }
 }
 // 0x535BE0
+namespace gamemd {  // G42.18c ns repair
 unsigned int Map::IsCellFlag(int a1)
 {
 
   return (~(unsigned int)a1 >> 11) & 1; /*0x535bec*/
 
 }
+}  // G42.18c ns repair
 // 0x578D80
 namespace gamemd {
 bool sub_578D80(int a1, unsigned int a2)

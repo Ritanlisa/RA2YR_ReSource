@@ -43,6 +43,7 @@ int sub_6F2040()
 }
 }
 // 0x4371D0
+namespace gamemd {  // G42.18c ns repair
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
     unsigned int v11 = 0;  /* G37 hoist */
@@ -78,6 +79,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   return v6; /*0x4371e7*/
 
 }
+}  // G42.18c ns repair
 // 0x550240
 namespace gamemd {
 char sub_550240()

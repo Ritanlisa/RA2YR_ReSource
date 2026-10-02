@@ -65,20 +65,25 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 }
 }
 // 0x74EEE0
+namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
 
   return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x74eef4*/
 
 }
+}  // G42.18c ns repair
 // 0x74EF00
+namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::CheckStatus()
 {
 
   return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4084); /*0x74ef0b*/
 
 }
+}  // G42.18c ns repair
 // 0x74F2D0
+namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -91,20 +96,25 @@ int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x74f2dd*/
 
 }
+}  // G42.18c ns repair
 // 0x74F310
+namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::StubReturn63()
 {
 
   return 63; /*0x74f315*/
 
 }
+}  // G42.18c ns repair
 // 0x74F320
+namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::StubReturn264()
 {
 
   return 264; /*0x74f325*/
 
 }
+}  // G42.18c ns repair
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char a2)
 {
