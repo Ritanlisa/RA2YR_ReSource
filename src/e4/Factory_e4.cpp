@@ -151,7 +151,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     v75 = (int *)(v9[39]);
     v76 = (int *)(v9[40]);
     v77 = (int *)(v9[41]);
-    (*(void ((int *)(**))(int *))(*v9 + 244))(&v75); /*0x718bcf*/
+    (*(void (**))(*v9 + 244))(&v75); /*0x718bcf*/
   }
   else
   {

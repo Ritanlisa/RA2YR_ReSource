@@ -180,11 +180,11 @@ int WebBrowser::GoForward()
     (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
       this->WebBrowser_field_0x8,
       this);
-    (*(void ((void *)(**))(void *))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
+    (*(void (**))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
   }
   WebBrowser_field_0x8 = (void *)(this->WebBrowser_field_0x8);
   if ( WebBrowser_field_0x8 ) /*0x7740e2*/
-    (*(void ((void *)(**))(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
+    (*(void (**))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/

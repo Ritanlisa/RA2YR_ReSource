@@ -495,9 +495,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v45[1] = 300; /*0x4b98b8*/
   v45[2] = 190; /*0x4b98be*/
   v45[3] = 80; /*0x4b98c2*/
-  v7 = (*(int ((int *)(**))(int *))(v6 + 128))(a1); /*0x4b98d2*/
+  v7 = (*(int (**))(v6 + 128))(a1); /*0x4b98d2*/
   v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
-  v9 = (*(int ((int *)(**))(int *))(*a1 + 124))(a1); /*0x4b98f2*/
+  v9 = (*(int (**))(*a1 + 124))(a1); /*0x4b98f2*/
   v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden); /*0x4b98f6*/
   v44.Coord2D_field_0x04 = 300; /*0x4b9903*/
   v40 = (v10 - v9) / 2; /*0x4b9909*/

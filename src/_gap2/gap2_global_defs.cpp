@@ -145,7 +145,7 @@ int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
   char v15[200]; // [esp+13Ch] [ebp-190h] BYREF
   char v16[200]; // [esp+204h] [ebp-C8h] BYREF
 
-  v4 = (void (__cdecl *)(char *))(a2); /*0x403a8b*/
+  v4 = (void (__cdecl *)(a2); /*0x403a8b*/
   a2(aAudioDeviceDum); /*0x403a96*/
   sprintf(Buffer, "%s (%d)\n", **(const char ***)(a1->nextArrayIndex + 12), a1->radioLinks[3]); /*0x403ab2*/
   v4(Buffer); /*0x403abe*/
@@ -224,7 +224,7 @@ int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
       Next = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x403cbc*/
     }
     while ( Next );
-    v4 = (void (__cdecl *)(char *))(a2); /*0x403cc6*/
+    v4 = (void (__cdecl *)(a2); /*0x403cc6*/
   }
   return ((int (*)(char *))v4)(asc_815ECC); /*0x403cd2*/
 

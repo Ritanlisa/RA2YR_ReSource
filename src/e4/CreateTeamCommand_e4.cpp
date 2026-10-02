@@ -43,7 +43,7 @@ namespace gamemd {
 int CreateTeamCommand::vt02()
 {
 
-  return (*(int ((gamemd::CommandClass *)(**))(CommandClass *))(*(unsigned int *)this + 16))(this);
+  return (*(int (**))(*(unsigned int *)this + 16))(this);
 
 }
 // 0x537350

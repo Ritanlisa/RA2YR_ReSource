@@ -254,12 +254,12 @@ void* AnimTypeClass::GetWarhead(int a2)
         ImageFile = (const char *)((unsigned int *)this)[0]; /*0x427bb9*/
       _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); 
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
-      v3 = (      v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
+      v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
       ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x427bfc*/
-        v3 =        v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
+        v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
         ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427c0c*/
       }
     }
@@ -348,7 +348,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = O  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); 
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); 
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
@@ -408,19 +408,19 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v3); 
   LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
-  v5 = Power  v5 = ((Power *)((int)((Power *)a2)))->FlagProcess(v4); 
+  v5 = ((Power *)((int)((Power *)a2)))->FlagProcess(v4); 
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v5); 
   LOBYTE(v6) = this->Scorch; /*0x428a16*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v6); 
   LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power  v8 = ((Power *)((int)((Power *)a2)))->FlagProcess(v7); 
+  v8 = ((Power *)((int)((Power *)a2)))->FlagProcess(v7); 
   LOBYTE(v8) = this->Crater; /*0x428a32*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v8); 
   LOBYTE(v9) = this->Sticky; /*0x428a40*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v9); 
   LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Powe  v11 = ((Power *)((int)((Power *)a2)))->FlagProcess(v10); 
+  v11 = ((Power *)((int)((Power *)a2)))->FlagProcess(v10); 
   LOBYTE(v11) = this->Reverse; /*0x428a5c*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v11); 
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/

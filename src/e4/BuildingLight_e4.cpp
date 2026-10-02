@@ -103,7 +103,7 @@ Coord * * BuildingLight::CalculateShading(__m64)
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
         v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
         v40 = ((unsigned int *)(dword_AC1698))[v7]; /*0x5ff94a*/
-        v9 = (*(int ((gamemd::AudioStream *)(**))(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
+        v9 = (*(int (**))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
         v48[1] = 0; /*0x5ff95e*/
         v51[0] = 0; /*0x5ff962*/

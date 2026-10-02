@@ -955,7 +955,7 @@ int E4Recv_7011A0::sub_7011A0()
   int v13; // [esp+20h] [ebp-10h]
   unsigned char v14[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*((uint8_t ((gamemd::ObjectClass *)(**))(ObjectClass *))this->vtable1 + 21))(this) ) /*0x7011a9*/
+  if ( (*((uint8_t (**))this->vtable1 + 21))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
   if ( !*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6200) ) /*0x7011bd*/
     return 0; /*0x7011c8*/

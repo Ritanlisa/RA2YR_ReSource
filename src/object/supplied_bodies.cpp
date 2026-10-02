@@ -183,7 +183,7 @@ int AudioController::UpdatePlayback() {
     {
       *((unsigned int *)this + 90) = 0; /*0x4023b0*/
     }
-    v7 = (void (__thiscall *)(AudioController *))*((unsigned int *)this + 45); /*0x4023ba*/
+    v7 = (void (__thiscall *)*((unsigned int *)this + 45); /*0x4023ba*/
     if ( v7 ) /*0x4023c2*/
       v7(this); /*0x4023c6*/
     if ( *((unsigned int *)this + 90) ) /*0x4023c8*/
@@ -204,7 +204,7 @@ int AudioController::CleanupStream() {
     *((unsigned int *)this + 41) = v2; /*0x402405*/
     *((unsigned int *)this + 42) = 0; /*0x40240b*/
     AudioMixer::Init((AudioMixer *)this->__tail_10); /*0x402418*/
-    v3 = (int (__thiscall *)(AudioController *))*((unsigned int *)this + 46); /*0x40241d*/
+    v3 = (int (__thiscall *)*((unsigned int *)this + 46); /*0x40241d*/
     if ( v3 ) /*0x402425*/
       return v3(this); /*0x40242a*/
     else
@@ -6186,7 +6186,7 @@ char TechnoClass::vt_entry_4C8() {
       }
       else
       {
-        ((void (__thiscall *)(TechnoClass *))vtable0[298])(this); /*0x4df38b*/
+        ((void (__thiscall *)vtable0[298])(this); /*0x4df38b*/
         return 0; /*0x4df392*/
       }
     }
@@ -18702,7 +18702,7 @@ int TechnoClass::ProcessAIDecision() {
             }
             if ( (int)++v11 >= 8 ) /*0x74099c*/
             {
-              if ( ((double (__thiscall *)(UnitClass *))*(unsigned int *)(this->vtable0 + 692))(this) != 1.0 ) /*0x7409b3*/
+              if ( ((double (__thiscall *)*(unsigned int *)(this->vtable0 + 692))(this) != 1.0 ) /*0x7409b3*/
                 break; /*0x7409b3*/
               if ( !this->locomotor ) /*0x7409b9*/
                 WinAPI::Wrapper(-2147467261); /*0x7409c8*/

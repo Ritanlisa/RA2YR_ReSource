@@ -70,7 +70,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
     switch ( (*(int (**)(int))(*(unsigned int *)AITriggerTypeClass_field_0x18 + 44))(AITriggerTypeClass_field_0x18) ) /*0x41ed21*/
     {
       case 3: /*0x41ed21*/
-        v9 =        v9 = ((DynamicVector *)((DynamicVector *)(v6 + 21900)))->GetOrGrow((int)((void *)(v8))); 
+        v9 = ((DynamicVector *)((DynamicVector *)(v6 + 21900)))->GetOrGrow((int)((void *)(v8))); 
         goto LABEL_12; /*0x41ed73*/
       case 7: /*0x41ed21*/
         v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21840)))->GetOrGrow((int)((void *)(v8))); 
@@ -144,16 +144,16 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
     switch ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) ) /*0x41eed8*/
     {
       case 3: /*0x41eed8*/
-        v6 =        v6 = ((DynamicVector *)((DynamicVector *)(a2 + 5475)))->GetOrGrow((int)((void *)(v5))); 
+        v6 = ((DynamicVector *)((DynamicVector *)(a2 + 5475)))->GetOrGrow((int)((void *)(v5))); 
         goto LABEL_8; /*0x41ef31*/
       case 7: /*0x41eed8*/
-        v7 =        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5460)))->GetOrGrow((int)((void *)(v5))); 
+        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5460)))->GetOrGrow((int)((void *)(v5))); 
         break; /*0x41eef3*/
       case 16: /*0x41eed8*/
-        v7 =        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5470)))->GetOrGrow((int)((void *)(v5))); 
+        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5470)))->GetOrGrow((int)((void *)(v5))); 
         break; /*0x41ef1f*/
       case 40: /*0x41eed8*/
-        v7 =        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5465)))->GetOrGrow((int)((void *)(v5))); 
+        v7 = ((DynamicVector *)((DynamicVector *)(a2 + 5465)))->GetOrGrow((int)((void *)(v5))); 
         break; /*0x41ef09*/
       default:
 LABEL_8:

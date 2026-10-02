@@ -104,7 +104,7 @@ LABEL_5:
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
-  v11 = (*(int ((int *)(**))(int *))(((unsigned int *)this)[0] + 24))(((unsigned int *)this)[0]); /*0x4f6603*/
+  v11 = (*(int (**))(((unsigned int *)this)[0] + 24))(((unsigned int *)this)[0]); /*0x4f6603*/
   v38 = v11; /*0x4f6612*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                          (HouseClass *)this,

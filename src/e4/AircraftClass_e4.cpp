@@ -273,7 +273,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
     HIWORD(a3) = v9[1] / 256; /*0x417db7*/
     vtable0 = (int (**)(AircraftClass *, int **, unsigned int, int *))this->FootClass; /*0x417dc0*/
     aP1 = a3; /*0x417dc4*/
-    v7 = vta    v7 = vtable0[28](this,(int **)(&aP1), 0, v3); 
+    v7 = vtable0[28](this,(int **)(&aP1), 0, v3); 
   }
 LABEL_18:
   if ( v7 == 4 ) /*0x417dd0*/

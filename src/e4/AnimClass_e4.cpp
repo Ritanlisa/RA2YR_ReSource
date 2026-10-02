@@ -511,14 +511,14 @@ LABEL_77:
 LABEL_78:
   if ( this->__pad_194[0] ) /*0x423358*/
   {
-    v34 = ZC    v34 = ZCoordToScreenY((int)((gamemd::IUnknown *)(*(int *)v101))); 
+    v34 = ZCoordToScreenY((int)((gamemd::IUnknown *)(*(int *)v101))); 
     v35 = (int)(*a2); /*0x423384*/
     v36 = *(unsigned int *)&(&this->AnimClass_field_0xC8)[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     *(unsigned int *)v101 = v35; /*0x4233a2*/
     v38 = AnimClass_field_0x0[116](this); /*0x4233a6*/
-    v39 = ZC    v39 = ZCoordToScreenY((int)((gamemd::IUnknown *)(v38))); 
+    v39 = ZCoordToScreenY((int)((gamemd::IUnknown *)(v38))); 
     DrawToSurfaceSHP( /*0x4233e9*/
       (int)g_DSurface_Hidden_2,
       v105[0],

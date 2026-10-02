@@ -256,7 +256,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
   v5 = (gamemd::AirstrikeClass *)(Block); /*0x41dd7f*/
-  v3 = (*(in  v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
+  v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -415,7 +415,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 =  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x41d705*/
   {
     if ( aP0 ) /*0x41d709*/

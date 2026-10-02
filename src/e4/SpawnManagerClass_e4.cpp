@@ -186,7 +186,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
       __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
   }
   v3 = *((unsigned int *)this + 16); /*0x6b7063*/
-  (*(void ((gamemd::TaskManager *)(**))(TaskManager *))(*((unsigned int *)this + 14) + 12))((unsigned int *)this + 14); /*0x6b7066*/
+  (*(void (**))(*((unsigned int *)this + 14) + 12))((unsigned int *)this + 14); /*0x6b7066*/
   (*(void ((gamemd::TaskManager *)(**))(TaskManager *, int, unsigned int))(*((unsigned int *)this + 14) + 8))((unsigned int *)this + 14, v3, 0); /*0x6b7070*/
   v6 = (gamemd::TaskManager *)(this); /*0x6b7083*/
   v4 = (*(int (**)(int *, TaskManager **))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/

@@ -204,7 +204,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v30 = *(unsigned int *)(v5 + 4); /*0x5cc447*/
   v27 = v15; /*0x5cc452*/
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
-  v17 = (int *)(*(int ((gamemd::MSOverlayAnim *)(**))(MSOverlayAnim *))(v16 + 120))(aP0); /*0x5cc45a*/
+  v17 = (int *)(*(int (**))(v16 + 120))(aP0); /*0x5cc45a*/
   DrawToSurfaceSHP( /*0x5cc470*/
     (int)aP0,
     *(unsigned int *)(v5 + 32),
@@ -282,7 +282,7 @@ namespace gamemd {
 int ScenarioClass::MissionStubReturnZero3()
 {
 
-  return (*(int ((gamemd::MultiplayerGameMode *)(**))(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 108))(this);
+  return (*(int (**))(*(unsigned int *)this->__pad_0 + 108))(this);
 
 }
 // 0x5D6BE0

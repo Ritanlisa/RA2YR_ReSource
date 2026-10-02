@@ -698,7 +698,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
         v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-        if ( v7 == (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *))this->vtable1 + 15))(this) ) /*0x4d5044*/
+        if ( v7 == (*((int (**))this->vtable1 + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }

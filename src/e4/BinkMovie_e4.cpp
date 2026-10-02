@@ -465,7 +465,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
         if ( v13 ) /*0x432f89*/
           ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->AdjustSurfaceFormat(aP1); 
       }
-      v19 =       v19 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
+      v19 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
       if ( v19 ) /*0x432fa4*/
       {
         v14 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
@@ -510,11 +510,11 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
 
   if ( a5 ) /*0x4331ff*/
     ((BinkMovie *)((gamemd::DSurface *)(this)))->AdjustSurfaceFormat(aP1); 
-  v6 = (*(in  v6 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
+  v6 = ((int)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92)))(aP1, 0, 0); 
   if ( v6 ) /*0x433218*/
   {
-    v7 = (*(    v7 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
-    v8 = (*(    v8 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 128)))(aP1); 
+    v7 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 116)))(aP1); 
+    v8 = ((int)(*(int (**)(int))(*(unsigned int *)aP1 + 128)))(aP1); 
     BinkMovie_field_0x8 = (unsigned int)this->BinkMovie_field_0x8; /*0x433232*/
     if ( a5 ) /*0x433237*/
       BinkMovie_field_0x8 |= 0x80000000; /*0x433239*/

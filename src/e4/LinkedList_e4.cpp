@@ -273,14 +273,14 @@ LinkClass * * LinkedList_flat::InsertAfter(int a2)
 
   LinkedList_flat * v3;
 
-  (*(void ((gamemd::LinkClass *)(**))(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566a5*/
+  (*(void (**))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566a5*/
   v3 = (gamemd::LinkedList_flat *)(*(LinkClass **)(a2 + 4)); /*0x5566ac*/
   *(unsigned int *)(a2 + 4) = (unsigned int)(this); /*0x5566af*/
   this->m_Prev = (unsigned int)((LinkClass *)a2); /*0x5566b4*/
   this->m_Next = (unsigned int)(v3); /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
     v3->m_Prev = (unsigned int)(this); /*0x5566bc*/
-  return (*(int ((gamemd::LinkClass *)(**))(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x5566c6*/
+  return (*(int (**))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x5566c6*/
 
 }
 } // namespace gamemd
@@ -308,13 +308,13 @@ LinkClass * * LinkedList_flat::Append(int a2, void *a2_2)
   LinkClass *v3; // eax
   int v4; // eax
 
-  (*(void ((gamemd::LinkClass *)(**))(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
+  (*(void (**))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
   v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 28))(a2); /*0x55670e*/
   v3->m_Next = (gamemd::LinkClass *)(this); /*0x556711*/
   this->m_Prev = (unsigned int)(v3); /*0x556714*/
   v4 = *(unsigned int *)this->__pad_0; /*0x556717*/
   this->m_Next = 0; /*0x55671b*/
-  return (*(int ((gamemd::LinkClass *)(**))(LinkClass *))(v4 + 24))(this); /*0x556725*/
+  return (*(int (**))(v4 + 24))(this); /*0x556725*/
 
 }
 } // namespace gamemd

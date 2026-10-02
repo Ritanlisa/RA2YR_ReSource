@@ -40,7 +40,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int Prefix; // eax
 
-  Prefix = A  Prefix = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
+  Prefix = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
   return Prefix >= 0 ? 0 : Prefix;
 
 }
@@ -73,7 +73,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   Block->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   Block->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
   v6 = (gamemd::AlphaShapeClass *)(Block); /*0x42175f*/
-  v3 = (*(in  v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
+  v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/
@@ -112,7 +112,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 =  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x420df5*/
   {
     if ( aP0 ) /*0x420df9*/

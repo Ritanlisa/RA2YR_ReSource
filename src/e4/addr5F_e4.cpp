@@ -72,14 +72,14 @@ char sub_5F0070()
     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
-            v1 += this->this->((Timer *)0)->GetTicks() - g_abs_887338;
+            v1 += this->((Timer *)0)->GetTicks() - g_abs_887338;
     while ( 1 ) /*0x5f00e4*/
     {
       IDA_LOBYTE(v0) = dword_887338; /*0x5f00e4*/
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
-                v0 = this->this->((Timer *)0)->GetTicks() - g_abs_887338;
+                v0 = this->((Timer *)0)->GetTicks() - g_abs_887338;
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/

@@ -39,7 +39,7 @@ int Hash::InsertOrdered(void* table, const void* entry)
   }
   else if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] ) /*0x4f442c*/
   {
-    result =    result = ((int)(*(int (**)(int, unsigned int))(*(unsigned int *)entry + 16)))(entry, *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]); 
+    result = ((int)(*(int (**)(int, unsigned int))(*(unsigned int *)entry + 16)))(entry, *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]); 
     IDA_LOBYTE(result) = 1; /*0x4f4436*/
   }
   else

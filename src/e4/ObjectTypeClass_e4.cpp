@@ -604,8 +604,8 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   v6 = *(unsigned int *)this; /*0x5f91fe*/
   *((unsigned int *)this + 41) = 0; /*0x5f9203*/
   *((unsigned char *)this + 168) = 0; /*0x5f920d*/
-  if ( (*(int ((char *)(**))(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) == 5 )
+  if ( (*(int (**))(v6 + 44))(this) == 21 /*0x5f9227*/
+    || (*(int (**))(*(unsigned int *)this + 44))(this) == 5 )
   {
     v9 = (int)(SearchMIXFile(&Source, 1)); /*0x5f9267*/
     *((unsigned int *)this + 41) = v9; /*0x5f926e*/
@@ -615,8 +615,8 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
-    && (*(int ((char *)(**))(char *))(*(unsigned int *)this + 44))(this) != 37 )
+  if ( (*(int (**))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
+    && (*(int (**))(*(unsigned int *)this + 44))(this) != 37 )
   {
     v7 = (int)(SearchMIXFile(&Source, 0)); /*0x5f9249*/
     *((unsigned int *)this + 41) = v7; /*0x5f9250*/

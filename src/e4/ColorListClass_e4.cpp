@@ -39,7 +39,7 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((unsigned int *)this + 91) = a2; /*0x557f4c*/
-    (*(void ((gamemd::ListClass *)(**))(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
+    (*(void (**))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
     if ( *((unsigned int *)this + 91) < *((unsigned int *)this + 92) ) /*0x557f67*/
       (*(void ((gamemd::ListClass *)(**))(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, *((unsigned int *)this + 91)); /*0x557f6e*/
     v4 = *((unsigned int *)this + 20); /*0x557f74*/

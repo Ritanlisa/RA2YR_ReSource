@@ -243,7 +243,7 @@ int COMObject::Check(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2afb*/
     return 0; /*0x4e2b0d*/
   *(unsigned int *)&this->__pad_31[11] = a1; /*0x4e2afd*/
-  (*(void ((gamemd::TriColorGaugeClass *)(**))(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
+  (*(void (**))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
   return 1; /*0x4e2b0a*/
 }
 }
@@ -253,7 +253,7 @@ int COMObject::SetField(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2b2b*/
     return 0; /*0x4e2b3d*/
   *(unsigned int *)&this->__pad_31[15] = a1; /*0x4e2b2d*/
-  (*(void ((gamemd::TriColorGaugeClass *)(**))(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
+  (*(void (**))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
   return 1; /*0x4e2b3a*/
 }
 }

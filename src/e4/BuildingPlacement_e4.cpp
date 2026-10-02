@@ -200,7 +200,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         || (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell((unsigned int *)this + 16)->flags[0] & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !*((unsigned char *)this + 144)) )
       {
-        LOBYTE(v12) = (*(char ((int *)(**))(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
+        LOBYTE(v12) = (*(char (**))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
         return (gamemd::VectorClass_flat **)((char)v12); /*0x54ca4d*/
       }
       if ( !*((unsigned char *)this + 144) ) /*0x54c71a*/

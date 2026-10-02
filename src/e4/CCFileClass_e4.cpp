@@ -38,7 +38,7 @@ AudioController * * CCFileClass::Close()
     {
       v3 = (unsigned int)((gamemd::AudioController **)(a1->FileClass));
       BYTE1(a1->BufferSize) = 0; /*0x4325e1*/
-      result = (*(int ((gamemd::CCFileClass *)(**))(CCFileClass *))(*(unsigned int *)&v3 + 52))(a1); /*0x4325e5*/
+      result = (*(int (**))(*(unsigned int *)&v3 + 52))(a1); /*0x4325e5*/
       BYTE1(a1->BufferSize) = 1; /*0x4325e8*/
       BYTE2(a1->BufferOffset) = 0; /*0x4325ec*/
       BYTE1(a1->BufferOffset) = (gamemd::AudioController **)(0); /*0x4325f0*/
@@ -80,7 +80,7 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t ((gamemd::RawFileClass *)(**))(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = (DWORD)(GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0));
       if ( FileSize == -1 ) /*0x65d0f7*/
@@ -96,8 +96,8 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
     }
     else if ( (*(int ((gamemd::RawFileClass *)(**))(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int ((gamemd::RawFileClass *)(**))(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
-      (*(void ((gamemd::RawFileClass *)(**))(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
+      (*(void (**))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/

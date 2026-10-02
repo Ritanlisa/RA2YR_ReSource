@@ -130,7 +130,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = (  result = ((gamemd::INIClass *)(int))(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); 
+  result = ((gamemd::INIClass *)(int))(INIClass::BinarySearchSection((int)aP1, (uint8_t *)this->__pad_24)); 
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);

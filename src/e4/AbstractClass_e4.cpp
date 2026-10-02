@@ -240,7 +240,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 80))))->RemoveAt(v12); 
     v13 = *(unsigned int *)(v7 + 128); /*0x4fba59*/
     a4 = &v6->vtable1; /*0x4fba6c*/
-    v14 = (*    v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128,(void ***)(&a4)); 
+    v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128,(void ***)(&a4)); 
     if ( v14 != -1 ) /*0x4fba76*/
     {
       v15 = *(unsigned int *)(v7 + 144); /*0x4fba78*/
@@ -257,12 +257,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v17 = *(unsigned int *)(v7 + 152); /*0x4fba99*/
     a4 = &v6->vtable1; /*0x4fbaa9*/
-    v18 = (*    v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152,(void ***)(&a4)); 
+    v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152,(void ***)(&a4)); 
     if ( v18 != -1 ) /*0x4fbab6*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 152))))->RemoveAt(v18); 
     v19 = *(unsigned int *)(v7 + 176); /*0x4fbac0*/
     a4 = &v6->vtable1; /*0x4fbad3*/
-    v20 = (*    v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176,(void ***)(&a4)); 
+    v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176,(void ***)(&a4)); 
     if ( v20 != -1 ) /*0x4fbadd*/
     {
       v21 = *(unsigned int *)(v7 + 192); /*0x4fbadf*/
@@ -279,12 +279,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v23 = *(unsigned int *)(v7 + 200); /*0x4fbb00*/
     a4 = &v6->vtable1; /*0x4fbb10*/
-    v24 = (*    v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200,(void ***)(&a4)); 
+    v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200,(void ***)(&a4)); 
     if ( v24 != -1 ) /*0x4fbb1d*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 200))))->RemoveAt(v24); 
     v25 = *(unsigned int *)(v7 + 224); /*0x4fbb27*/
     a4 = &v6->vtable1; /*0x4fbb3a*/
-    v26 = (*    v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224,(void ***)(&a4)); 
+    v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224,(void ***)(&a4)); 
     if ( v26 != -1 ) /*0x4fbb44*/
     {
       v27 = *(unsigned int *)(v7 + 240); /*0x4fbb46*/
@@ -301,17 +301,17 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v29 = *(unsigned int *)(v7 + 248); /*0x4fbb67*/
     a4 = &v6->vtable1; /*0x4fbb77*/
-    v30 = (*    v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248,(void ***)(&a4)); 
+    v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248,(void ***)(&a4)); 
     if ( v30 != -1 ) /*0x4fbb84*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 248))))->RemoveAt(v30); 
     v31 = *(unsigned int *)(v7 + 272); /*0x4fbb8e*/
     a4 = &v6->vtable1; /*0x4fbba1*/
-    v32 = (*    v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272,(void ***)(&a4)); 
+    v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272,(void ***)(&a4)); 
     if ( v32 != -1 ) /*0x4fbbab*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 272))))->RemoveAt(v32); 
     v33 = *(unsigned int *)(v7 + 296); /*0x4fbbb5*/
     a4 = &v6->vtable1; /*0x4fbbc8*/
-    v34 = (*    v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296,(void ***)(&a4)); 
+    v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296,(void ***)(&a4)); 
     if ( v34 != -1 ) /*0x4fbbd2*/
     {
       v35 = *(unsigned int *)(v7 + 312); /*0x4fbbd4*/
@@ -328,12 +328,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     }
     v37 = *(unsigned int *)(v7 + 320); /*0x4fbbf5*/
     a4 = &v6->vtable1; /*0x4fbc05*/
-    v38 = (*    v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320,(void ***)(&a4)); 
+    v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320,(void ***)(&a4)); 
     if ( v38 != -1 ) /*0x4fbc12*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 320))))->RemoveAt(v38); 
     v39 = *(unsigned int *)(v7 + 104); /*0x4fbc1c*/
     a4 = &v6->vtable1; /*0x4fbc29*/
-    v40 = (*    v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104,(void ***)(&a4)); 
+    v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104,(void ***)(&a4)); 
     if ( v40 != -1 ) /*0x4fbc33*/
     {
       v41 = *(unsigned int *)(v7 + 120); /*0x4fbc35*/

@@ -202,7 +202,7 @@ signed int BuildingLightClass::UpdateOscillation()
   int v30; // [esp+2Ch] [ebp-8h]
   int v31; // [esp+30h] [ebp-4h]
 
-  v26 = (*(int ((void *)(**))(void *))(*(unsigned int *)((unsigned int *)this)[0] + 456))(((unsigned int *)this)[0]); /*0x513d3a*/
+  v26 = (*(int (**))(*(unsigned int *)((unsigned int *)this)[0] + 456))(((unsigned int *)this)[0]); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
   vtable3 = (unsigned int *)(((unsigned int *)this)[0]); /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/

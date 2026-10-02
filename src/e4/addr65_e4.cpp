@@ -786,7 +786,7 @@ void sub_6586D0()
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
     ((gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !this->this->((gamemd::Dialog *)0)->PumpMessages() )
+        while ( !this->((gamemd::Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/
